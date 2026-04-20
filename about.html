@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About — WaitlistKit</title>
+    <meta name="description" content="The story behind WaitlistKit — built by an indie hacker, for indie hackers.">
+    
+    <style>
+        :root {
+            --bg-primary: #0a0a0f;
+            --bg-secondary: #12121a;
+            --bg-tertiary: #1a1a25;
+            --bg-card: #15151f;
+            --text-primary: #ffffff;
+            --text-secondary: #a0a0b0;
+            --text-muted: #6b6b7b;
+            --accent: #6366f1;
+            --accent-glow: rgba(99, 102, 241, 0.3);
+            --success: #10b981;
+            --border: #2a2a3a;
+            --gradient-1: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #a855f7 100%);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.8;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            background: rgba(10, 10, 15, 0.8);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border);
+            padding: 1rem 2rem;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            background: var(--gradient-1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: var(--text-primary);
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+
+        .btn-primary {
+            background: var(--gradient-1);
+            color: white;
+            box-shadow: 0 4px 20px var(--accent-glow);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+        }
+
+        .about-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 8rem 2rem 4rem;
+        }
+
+        .about-content h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 2rem;
+            background: var(--gradient-1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .about-content h2 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin: 3rem 0 1rem;
+            color: var(--text-primary);
+        }
+
+        .about-content p {
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+        }
+
+        .about-content strong {
+            color: var(--text-primary);
+        }
+
+        .story-section {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 2rem;
+            margin: 2rem 0;
+        }
+
+        .values {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .value {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.5rem;
+        }
+
+        .value h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .value p {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            margin: 0;
+        }
+
+        .cta-section {
+            text-align: center;
+            padding: 4rem 2rem;
+            background: var(--bg-secondary);
+        }
+
+        .cta-section h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .cta-section p {
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+        }
+
+        footer {
+            padding: 2rem;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            border-top: 1px solid var(--border);
+        }
+
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .about-content h1 { font-size: 2rem; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <a href="/" class="logo">WaitlistKit</a>
+            <div class="nav-links">
+                <a href="index.html#features">Features</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="about.html">About</a>
+                <a href="blog.html">Blog</a>
+                <a href="app.html" class="btn btn-primary">Get Started Free</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="about-content">
+        <h1>Why I Built WaitlistKit</h1>
+        
+        <p>Hey, I'm the solo founder behind WaitlistKit. I built this because I made the same mistake every indie hacker makes: <strong>I built the product first, then tried to find users.</strong></p>
+
+        <p>Spoiler: it doesn't work.</p>
+
+        <div class="story-section">
+            <h2>The Problem</h2>
+            <p>I'd spent 3 months building a SaaS tool. When I launched, I had exactly 12 users. Twelve. After 90 days of work.</p>
+            <p>I looked at tools to help me build a waitlist before my next launch. Viral Loops wanted $35/month. SparkLoop wanted $99/month. For a pre-revenue indie hacker, that's insane.</p>
+            <p>So I built WaitlistKit.</p>
+        </div>
+
+        <h2>The Solution</h2>
+        <p>WaitlistKit is the tool I wished I had. A simple way to build a waitlist where every signup gets a referral link. Share to move up the list. Your waitlist grows itself.</p>
+        <p>No complex setup. No $99/month subscription. Just a beautiful waitlist that actually works.</p>
+
+        <h2>Our Values</h2>
+        <div class="values">
+            <div class="value">
+                <h3>🎯 Simple</h3>
+                <p>No feature bloat. Just the essentials that work.</p>
+            </div>
+            <div class="value">
+                <h3>💰 Fair Pricing</h3>
+                <p>$29 one-time. Because indie hackers shouldn't pay enterprise prices.</p>
+            </div>
+            <div class="value">
+                <h3>🔓 Your Data</h3>
+                <p>Export anytime. We don't lock you in.</p>
+            </div>
+            <div class="value">
+                <h3>🚀 Built in Public</h3>
+                <p>Follow our journey. We share everything.</p>
+            </div>
+        </div>
+
+        <h2>What's Next</h2>
+        <p>We're just getting started. New templates, better analytics, and integrations are coming. But we'll never lose sight of what matters: <strong>helping founders launch successfully.</strong></p>
+        <p>Got feedback? I'd love to hear it. This is a one-person show, so every message gets read.</p>
+    </div>
+
+    <section class="cta-section">
+        <h2>Ready to build your waitlist?</h2>
+        <p>Join the founders who are doing it the smart way.</p>
+        <a href="app.html" class="btn btn-primary">Create Your Waitlist →</a>
+    </section>
+
+    <footer>
+        <p>© 2024 WaitlistKit. Built with ❤️ during The $100 AI Startup Race.</p>
+    </footer>
+</body>
+</html>

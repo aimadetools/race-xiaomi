@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog — WaitlistKit</title>
+    <meta name="description" content="Tips, strategies, and stories about building viral waitlists and launching products.">
+    
+    <style>
+        :root {
+            --bg-primary: #0a0a0f;
+            --bg-secondary: #12121a;
+            --bg-tertiary: #1a1a25;
+            --bg-card: #15151f;
+            --text-primary: #ffffff;
+            --text-secondary: #a0a0b0;
+            --text-muted: #6b6b7b;
+            --accent: #6366f1;
+            --accent-glow: rgba(99, 102, 241, 0.3);
+            --border: #2a2a3a;
+            --gradient-1: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #a855f7 100%);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            background: rgba(10, 10, 15, 0.8);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border);
+            padding: 1rem 2rem;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            background: var(--gradient-1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: var(--text-primary);
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+
+        .btn-primary {
+            background: var(--gradient-1);
+            color: white;
+            box-shadow: 0 4px 20px var(--accent-glow);
+        }
+
+        .page-header {
+            padding: 8rem 2rem 4rem;
+            text-align: center;
+        }
+
+        .page-header h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+        }
+
+        .page-header p {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .blog-grid {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 2rem 6rem;
+            display: grid;
+            gap: 2rem;
+        }
+
+        .blog-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 2rem;
+            transition: all 0.3s;
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+
+        .blog-card:hover {
+            border-color: var(--accent);
+            transform: translateY(-4px);
+        }
+
+        .blog-meta {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .blog-tag {
+            background: var(--bg-tertiary);
+            padding: 0.25rem 0.75rem;
+            border-radius: 100px;
+            color: var(--accent);
+        }
+
+        .blog-card h2 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+        }
+
+        .blog-card p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        .blog-card .read-more {
+            display: inline-block;
+            margin-top: 1rem;
+            color: var(--accent);
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        footer {
+            padding: 2rem;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            border-top: 1px solid var(--border);
+        }
+
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .page-header h1 { font-size: 2rem; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <a href="/" class="logo">WaitlistKit</a>
+            <div class="nav-links">
+                <a href="index.html#features">Features</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="about.html">About</a>
+                <a href="blog.html">Blog</a>
+                <a href="app.html" class="btn btn-primary">Get Started Free</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="page-header">
+        <h1>Blog</h1>
+        <p>Tips, strategies, and stories about building viral waitlists and launching products.</p>
+    </section>
+
+    <div class="blog-grid">
+        <a href="#" class="blog-card">
+            <div class="blog-meta">
+                <span class="blog-tag">Strategy</span>
+                <span>5 min read</span>
+            </div>
+            <h2>How to Build a Viral Waitlist in 2024</h2>
+            <p>The exact playbook I used to get 2,000 signups before launching. No ads, no budget, just smart referral mechanics.</p>
+            <span class="read-more">Read more →</span>
+        </a>
+
+        <a href="#" class="blog-card">
+            <div class="blog-meta">
+                <span class="blog-tag">Launch</span>
+                <span>8 min read</span>
+            </div>
+            <h2>10 Waitlist Strategies That Actually Work</h2>
+            <p>Forget generic advice. These are the tactics that real founders used to build massive pre-launch audiences.</p>
+            <span class="read-more">Read more →</span>
+        </a>
+
+        <a href="#" class="blog-card">
+            <div class="blog-meta">
+                <span class="blog-tag">Case Study</span>
+                <span>6 min read</span>
+            </div>
+            <h2>From 0 to 500 Signups: A Waitlist Case Study</h2>
+            <p>How one indie hacker used WaitlistKit to build their audience in 2 weeks flat. Step by step breakdown.</p>
+            <span class="read-more">Read more →</span>
+        </a>
+
+        <a href="#" class="blog-card">
+            <div class="blog-meta">
+                <span class="blog-tag">Product Hunt</span>
+                <span>7 min read</span>
+            </div>
+            <h2>The Perfect Product Hunt Launch Starts With a Waitlist</h2>
+            <p>Why the most successful PH launches all had one thing in common: a pre-built audience waiting to upvote.</p>
+            <span class="read-more">Read more →</span>
+        </a>
+
+        <a href="#" class="blog-card">
+            <div class="blog-meta">
+                <span class="blog-tag">Psychology</span>
+                <span>4 min read</span>
+            </div>
+            <h2>The Psychology Behind Viral Waitlists</h2>
+            <p>Why do people share referral links? Understanding the psychology helps you design waitlists that actually go viral.</p>
+            <span class="read-more">Read more →</span>
+        </a>
+    </div>
+
+    <footer>
+        <p>© 2024 WaitlistKit. Built with ❤️ during The $100 AI Startup Race.</p>
+    </footer>
+</body>
+</html>
