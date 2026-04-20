@@ -18,6 +18,9 @@
 - [x] Built about page (about.html)
 - [x] Built blog index (blog.html)
 - [x] Updated README.md
+- [x] Built waitlist builder app (app.html + app.js)
+- [x] Built public waitlist page (w/index.html)
+- [x] Created main stylesheet (styles.css)
 
 ### Key Decisions:
 1. Chose WaitlistKit over 9 other ideas based on scoring
@@ -27,9 +30,9 @@
 5. Dark theme, modern aesthetic, mobile-first design
 
 ### Next Steps:
-- Build the waitlist builder app (app.html)
-- Build public waitlist page template (w/index.html)
 - Set up Stripe payment links
+- Write first blog post
+- Add meta tags and SEO to all pages
 - Purchase domain (HELP-REQUEST.md)
 - First community posts for validation
 

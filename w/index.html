@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join the Waitlist — WaitlistKit</title>
+    <meta name="description" content="Join the waitlist and get early access. Share your referral link to move up the list!">
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚀</text></svg>">
+    <style>
+        .waitlist-page {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            transition: background-color 0.3s ease;
+        }
+
+        .waitlist-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 1rem;
+            padding: 3rem;
+            max-width: 500px;
+            width: 100%;
+            text-align: center;
+            backdrop-filter: blur(10px);
+        }
+
+        .waitlist-logo {
+            max-width: 150px;
+            max-height: 60px;
+            margin-bottom: 1.5rem;
+        }
+
+        .waitlist-title {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            transition: color 0.3s ease;
+        }
+
+        .waitlist-tagline {
+            font-size: 1.125rem;
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+        }
+
+        .waitlist-description {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+
+        .signup-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .signup-input {
+            width: 100%;
+            padding: 1rem 1.25rem;
+            font-size: 1rem;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 0.5rem;
+            color: var(--text-primary);
+            transition: all 0.2s ease;
+        }
+
+        .signup-input:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2);
+        }
+
+        .signup-input::placeholder {
+            color: var(--text-muted);
+        }
+
+        .signup-btn {
+            width: 100%;
+            padding: 1rem 1.5rem;
+            font-size: 1rem;
+            font-weight: 600;
+            border: none;
+            border-radius: 0.5rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            background: var(--primary);
+            color: white;
+        }
+
+        .signup-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(99, 102, 241, 0.4);
+        }
+
+        .signup-btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .referral-note {
+            font-size: 0.875rem;
+            color: var(--text-muted);
+            margin-top: 1rem;
+        }
+
+        /* Success State */
+        .success-state {
+            display: none;
+        }
+
+        .success-state.active {
+            display: block;
+        }
+
+        .success-icon {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+        }
+
+        .success-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .success-message {
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+        }
+
+        .referral-box {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 0.5rem;
+            padding: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .referral-label {
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+            margin-bottom: 0.5rem;
+        }
+
+        .referral-link {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .referral-link input {
+            flex: 1;
+            padding: 0.75rem;
+            font-size: 0.875rem;
+            background: rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 0.375rem;
+            color: var(--text-primary);
+        }
+
+        .referral-link button {
+            padding: 0.75rem 1rem;
+            font-size: 0.875rem;
+            font-weight: 600;
+            background: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 0.375rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .referral-link button:hover {
+            opacity: 0.9;
+        }
+
+        .position-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(99, 102, 241, 0.2);
+            color: var(--primary);
+            padding: 0.5rem 1rem;
+            border-radius: 2rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+        }
+
+        .share-buttons {
+            display: flex;
+            gap: 0.75rem;
+            justify-content: center;
+            margin-top: 1.5rem;
+        }
+
+        .share-btn {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.25rem;
+            font-size: 0.875rem;
+            font-weight: 500;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 0.5rem;
+            color: var(--text-primary);
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+
+        .share-btn:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateY(-2px);
+        }
+
+        /* Leaderboard */
+        .leaderboard {
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .leaderboard-title {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--text-secondary);
+        }
+
+        .leaderboard-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .leaderboard-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 0.75rem;
+            background: rgba(255, 255, 255, 0.02);
+            border-radius: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .leaderboard-rank {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--text-muted);
+            min-width: 2rem;
+        }
+
+        .leaderboard-rank.top-3 {
+            color: var(--primary);
+        }
+
+        .leaderboard-email {
+            flex: 1;
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+        }
+
+        .leaderboard-referrals {
+            font-size: 0.875rem;
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        /* Error State */
+        .error-state {
+            text-align: center;
+            padding: 3rem;
+        }
+
+        .error-icon {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+        }
+
+        .error-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .error-message {
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+        }
+
+        /* Powered by */
+        .powered-by {
+            margin-top: 2rem;
+            font-size: 0.75rem;
+            color: var(--text-muted);
+        }
+
+        .powered-by a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .powered-by a:hover {
+            text-decoration: underline;
+        }
+
+        .hide-branding .powered-by {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="waitlist-page" id="waitlist-page">
+        <!-- Loading State -->
+        <div class="waitlist-card" id="loading-state">
+            <div class="spinner"></div>
+            <p style="margin-top: 1rem; color: var(--text-secondary);">Loading waitlist...</p>
+        </div>
+
+        <!-- Error State -->
+        <div class="waitlist-card error-state" id="error-state" style="display: none;">
+            <div class="error-icon">😕</div>
+            <h2 class="error-title">Waitlist Not Found</h2>
+            <p class="error-message">This waitlist doesn't exist or has been removed.</p>
+            <a href="../index.html" class="btn btn-primary">Create Your Own Waitlist</a>
+        </div>
+
+        <!-- Signup State -->
+        <div class="waitlist-card" id="signup-state" style="display: none;">
+            <img id="waitlist-logo" class="waitlist-logo" style="display: none;">
+            <h1 class="waitlist-title" id="waitlist-title">Join the Waitlist</h1>
+            <p class="waitlist-tagline" id="waitlist-tagline">Be the first to know when we launch</p>
+            <p class="waitlist-description" id="waitlist-description" style="display: none;"></p>
+            
+            <form class="signup-form" id="signup-form">
+                <input type="email" class="signup-input" id="email-input" 
+                       placeholder="Enter your email address" required>
+                <button type="submit" class="signup-btn" id="signup-btn">
+                    Join Waitlist
+                </button>
+            </form>
+            
+            <p class="referral-note" id="referral-note">
+                Get your referral link after signing up!
+            </p>
+
+            <!-- Leaderboard -->
+            <div class="leaderboard" id="leaderboard" style="display: none;">
+                <h3 class="leaderboard-title">🏆 Top Referrers</h3>
+                <ul class="leaderboard-list" id="leaderboard-list">
+                    <!-- Populated by JS -->
+                </ul>
+            </div>
+
+            <div class="powered-by" id="powered-by">
+                Powered by <a href="../index.html">WaitlistKit</a>
+            </div>
+        </div>
+
+        <!-- Success State -->
+        <div class="waitlist-card success-state" id="success-state">
+            <div class="success-icon">🎉</div>
+            <h2 class="success-title">You're on the list!</h2>
+            <p class="success-message" id="success-message">
+                Share your referral link to move up the waitlist.
+            </p>
+            
+            <div class="position-badge">
+                <span>📍</span>
+                <span>Position: <strong id="user-position">#1</strong></span>
+            </div>
+
+            <div class="referral-box">
+                <p class="referral-label">Your unique referral link:</p>
+                <div class="referral-link">
+                    <input type="text" id="referral-link" readonly>
+                    <button type="button" id="copy-referral">Copy</button>
+                </div>
+            </div>
+
+            <div class="share-buttons">
+                <a href="#" class="share-btn" id="share-twitter" target="_blank" rel="noopener">
+                    🐦 Twitter
+                </a>
+                <a href="#" class="share-btn" id="share-whatsapp" target="_blank" rel="noopener">
+                    💬 WhatsApp
+                </a>
+                <a href="#" class="share-btn" id="share-email">
+                    ✉️ Email
+                </a>
+            </div>
+
+            <div class="powered-by" id="powered-by-success">
+                Powered by <a href="../index.html">WaitlistKit</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // ============================================
+        // UTILITY FUNCTIONS
+        // ============================================
+
+        function getFromStorage(key) {
+            try {
+                const data = localStorage.getItem(key);
+                return data ? JSON.parse(data) : null;
+            } catch (e) {
+                console.error('Storage error:', e);
+                return null;
+            }
+        }
+
+        function saveToStorage(key, data) {
+            try {
+                localStorage.setItem(key, JSON.stringify(data));
+                return true;
+            } catch (e) {
+                console.error('Storage error:', e);
+                return false;
+            }
+        }
+
+        function getWaitlist(id) {
+            const waitlists = getFromStorage('waitlistkit_waitlists') || {};
+            return waitlists[id] || null;
+        }
+
+        function saveSignup(waitlistId, signup) {
+            const waitlists = getFromStorage('waitlistkit_waitlists') || {};
+            if (waitlists[waitlistId]) {
+                if (!waitlists[waitlistId].signups) {
+                    waitlists[waitlistId].signups = [];
+                }
+                waitlists[waitlistId].signups.push(signup);
+                saveToStorage('waitlistkit_waitlists', waitlists);
+                return true;
+            }
+            return false;
+        }
+
+        function generateReferralCode() {
+            return Math.random().toString(36).substr(2, 8).toUpperCase();
+        }
+
+        function getUrlParams() {
+            const params = new URLSearchParams(window.location.search);
+            return {
+                id: params.get('id'),
+                ref: params.get('ref')
+            };
+        }
+
+        // ============================================
+        // DOM ELEMENTS
+        // ============================================
+
+        const loadingState = document.getElementById('loading-state');
+        const errorState = document.getElementById('error-state');
+        const signupState = document.getElementById('signup-state');
+        const successState = document.getElementById('success-state');
+        const waitlistPage = document.getElementById('waitlist-page');
+
+        const waitlistLogo = document.getElementById('waitlist-logo');
+        const waitlistTitle = document.getElementById('waitlist-title');
+        const waitlistTagline = document.getElementById('waitlist-tagline');
+        const waitlistDescription = document.getElementById('waitlist-description');
+        const referralNote = document.getElementById('referral-note');
+        const successMessage = document.getElementById('success-message');
+        const poweredBy = document.getElementById('powered-by');
+        const poweredBySuccess = document.getElementById('powered-by-success');
+
+        const signupForm = document.getElementById('signup-form');
+        const emailInput = document.getElementById('email-input');
+        const signupBtn = document.getElementById('signup-btn');
+
+        const userPosition = document.getElementById('user-position');
+        const referralLink = document.getElementById('referral-link');
+        const copyReferral = document.getElementById('copy-referral');
+        const shareTwitter = document.getElementById('share-twitter');
+        const shareWhatsapp = document.getElementById('share-whatsapp');
+        const shareEmail = document.getElementById('share-email');
+
+        const leaderboard = document.getElementById('leaderboard');
+        const leaderboardList = document.getElementById('leaderboard-list');
+
+        // ============================================
+        // INITIALIZATION
+        // ============================================
+
+        let currentWaitlist = null;
+        let currentWaitlistId = null;
+        let referredBy = null;
+
+        function init() {
+            const params = getUrlParams();
+            currentWaitlistId = params.id;
+            referredBy = params.ref;
+
+            if (!currentWaitlistId) {
+                showError();
+                return;
+            }
+
+            currentWaitlist = getWaitlist(currentWaitlistId);
+
+            if (!currentWaitlist) {
+                showError();
+                return;
+            }
+
+            renderWaitlist();
+        }
+
+        function showError() {
+            loadingState.style.display = 'none';
+            errorState.style.display = 'block';
+        }
+
+        function renderWaitlist() {
+            // Apply custom branding
+            if (currentWaitlist.primaryColor) {
+                document.documentElement.style.setProperty('--primary', currentWaitlist.primaryColor);
+            }
+            if (currentWaitlist.bgColor) {
+                waitlistPage.style.backgroundColor = currentWaitlist.bgColor;
+            }
+
+            // Set content
+            if (currentWaitlist.logoUrl) {
+                waitlistLogo.src = currentWaitlist.logoUrl;
+                waitlistLogo.style.display = 'block';
+            }
+
+            waitlistTitle.textContent = currentWaitlist.name;
+            waitlistTitle.style.color = currentWaitlist.primaryColor || 'var(--primary)';
+            
+            waitlistTagline.textContent = currentWaitlist.tagline;
+
+            if (currentWaitlist.description) {
+                waitlistDescription.textContent = currentWaitlist.description;
+                waitlistDescription.style.display = 'block';
+            }
+
+            if (currentWaitlist.referralMessage) {
+                referralNote.textContent = currentWaitlist.referralMessage;
+            }
+
+            if (currentWaitlist.successMessage) {
+                successMessage.textContent = currentWaitlist.successMessage;
+            }
+
+            // Hide branding if disabled
+            if (currentWaitlist.hideBranding) {
+                waitlistPage.classList.add('hide-branding');
+            }
+
+            // Render leaderboard
+            renderLeaderboard();
+
+            // Show signup state
+            loadingState.style.display = 'none';
+            signupState.style.display = 'block';
+        }
+
+        function renderLeaderboard() {
+            if (!currentWaitlist.signups || currentWaitlist.signups.length === 0) {
+                leaderboard.style.display = 'none';
+                return;
+            }
+
+            // Sort by referral count
+            const sortedSignups = [...currentWaitlist.signups]
+                .sort((a, b) => (b.referralCount || 0) - (a.referralCount || 0))
+                .slice(0, 5);
+
+            if (sortedSignups[0].referralCount > 0) {
+                leaderboard.style.display = 'block';
+                leaderboardList.innerHTML = sortedSignups.map((signup, index) => `
+                    <li class="leaderboard-item">
+                        <span class="leaderboard-rank ${index < 3 ? 'top-3' : ''}">#${index + 1}</span>
+                        <span class="leaderboard-email">${maskEmail(signup.email)}</span>
+                        <span class="leaderboard-referrals">${signup.referralCount || 0} referrals</span>
+                    </li>
+                `).join('');
+            }
+        }
+
+        function maskEmail(email) {
+            const [name, domain] = email.split('@');
+            if (name.length <= 2) return email;
+            return name[0] + '***' + name[name.length - 1] + '@' + domain;
+        }
+
+        // ============================================
+        // SIGNUP HANDLING
+        // ============================================
+
+        signupForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+
+            const email = emailInput.value.trim();
+            if (!email) return;
+
+            // Check if email already exists
+            if (currentWaitlist.signups && currentWaitlist.signups.some(s => s.email === email)) {
+                alert('This email is already on the waitlist!');
+                return;
+            }
+
+            // Disable button
+            signupBtn.disabled = true;
+            signupBtn.textContent = 'Joining...';
+
+            // Create signup
+            const referralCode = generateReferralCode();
+            const signup = {
+                email: email,
+                referralCode: referralCode,
+                referredBy: referredBy || null,
+                referralCount: 0,
+                date: new Date().toISOString()
+            };
+
+            // Save signup
+            if (saveSignup(currentWaitlistId, signup)) {
+                // If this signup was referred, increment referrer's count
+                if (referredBy && currentWaitlist.signups) {
+                    const referrer = currentWaitlist.signups.find(s => s.referralCode === referredBy);
+                    if (referrer) {
+                        referrer.referralCount = (referrer.referralCount || 0) + 1;
+                        const waitlists = getFromStorage('waitlistkit_waitlists') || {};
+                        waitlists[currentWaitlistId] = currentWaitlist;
+                        saveToStorage('waitlistkit_waitlists', waitlists);
+                    }
+                }
+
+                // Show success
+                showSuccess(signup);
+            } else {
+                alert('Error signing up. Please try again.');
+                signupBtn.disabled = false;
+                signupBtn.textContent = 'Join Waitlist';
+            }
+        });
+
+        function showSuccess(signup) {
+            // Calculate position
+            const position = currentWaitlist.signups.length;
+            userPosition.textContent = '#' + position;
+
+            // Generate referral link
+            const baseUrl = window.location.origin + window.location.pathname;
+            const refUrl = `${baseUrl}?id=${currentWaitlistId}&ref=${signup.referralCode}`;
+            referralLink.value = refUrl;
+
+            // Set up share buttons
+            const shareText = encodeURIComponent(
+                `I just joined the waitlist for ${currentWaitlist.name}! ${currentWaitlist.tagline}`
+            );
+            const shareUrl = encodeURIComponent(refUrl);
+
+            shareTwitter.href = `https://twitter.com/intent/tweet?text=${shareText}&url=${shareUrl}`;
+            shareWhatsapp.href = `https://wa.me/?text=${shareText}%20${shareUrl}`;
+            shareEmail.href = `mailto:?subject=${encodeURIComponent('Check this out!')}&body=${shareText}%20${refUrl}`;
+
+            // Show success state
+            signupState.style.display = 'none';
+            successState.classList.add('active');
+        }
+
+        // ============================================
+        // COPY REFERRAL LINK
+        // ============================================
+
+        copyReferral.addEventListener('click', () => {
+            navigator.clipboard.writeText(referralLink.value).then(() => {
+                copyReferral.textContent = '✓ Copied!';
+                setTimeout(() => {
+                    copyReferral.textContent = 'Copy';
+                }, 2000);
+            }).catch(() => {
+                prompt('Copy this link:', referralLink.value);
+            });
+        });
+
+        // ============================================
+        // INITIALIZE
+        // ============================================
+
+        init();
+    </script>
+</body>
+</html>
