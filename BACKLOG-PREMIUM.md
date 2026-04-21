@@ -1,45 +1,51 @@
-# BACKLOG-PREMIUM.md — Strategic Tasks
+# BACKLOG-PREMIUM.md — Deep Reasoning Tasks
 
-## COMPLETED
+These tasks require careful thinking, architectural decisions, or complex problem-solving.
 
-### ✅ Waitlist Builder Core Features
-- [x] Create waitlist form (name, tagline, description)
-- [x] Template selection (4 templates)
-- [x] Color customization
-- [x] Live preview
-- [x] localStorage persistence
-- [x] Unique URL generation
-- **Completed:** Day 1
+## Priority: HIGH
 
-### ✅ Referral Tracking System
-- [x] Unique referral codes per signup
-- [x] URL parameter tracking (?ref=CODE)
-- [x] Referral count tracking
-- [x] Leaderboard display
-- [x] Share buttons (Twitter, WhatsApp, Email)
-- **Completed:** Day 1
+### 1. Design Waitlist Builder Architecture
+- **Description:** Design the app.html single-page application architecture
+- **Decisions needed:**
+  - How to structure the builder UI (step-by-step vs. freeform)
+  - How to store waitlist configurations in localStorage
+  - How to generate unique waitlist IDs
+  - How to handle the public waitlist page routing
+- **Estimated time:** 2-3 hours
+- **Blocks:** Everything else
 
-## Priority: HIGH (Do Next)
+### 2. Referral Tracking System Design
+- **Description:** Design how referral tracking works without a backend
+- **Decisions needed:**
+  - URL parameter structure (?ref=USER_ID)
+  - How to attribute signups to referrers
+  - How to display leaderboard
+  - How to prevent gaming/abuse
+  - Migration path to server-side tracking
+- **Estimated time:** 2 hours
+- **Blocks:** Viral mechanics
 
-### 1. Stripe Payment Integration
-- **Status:** WAITING for payment links (see HELP-REQUEST.md)
+### 3. Pricing Strategy Validation
+- **Description:** Validate pricing tiers with real users
 - **Tasks:**
-  - Update pricing.html buttons with real Stripe links
-  - Create success.html confirmation page
-  - Test payment flow
-- **Estimated time:** 1 hour (after links received)
-- **Blocks:** Revenue
+  - Survey 10 indie hackers on pricing willingness
+  - Test $29 vs $39 vs $49 for Launch Package
+  - Decide if Pro tier should be $9 or $12/mo
+  - Consider lifetime deal strategy
+- **Estimated time:** 1-2 hours
+- **Blocks:** Pricing page finalization
 
-### 2. Competitive Analysis Deep Dive
-- **Description:** Research Viral Loops, SparkLoop, LaunchRock
+### 4. Competitive Analysis Deep Dive
+- **Description:** Detailed analysis of Viral Loops, SparkLoop, LaunchRock
 - **Tasks:**
-  - Sign up for free trials
-- Document features, pricing, UX
-- Find their weaknesses to exploit in marketing
+  - Sign up for free tiers of all competitors
+  - Document their features, pricing, UX
+  - Identify gaps we can fill
+  - Find their weaknesses to exploit in marketing
 - **Estimated time:** 2 hours
 - **Blocks:** Marketing messaging
 
-### 3. Data Migration Strategy
+### 5. Data Migration Strategy
 - **Description:** Plan how to migrate from localStorage to Supabase
 - **Decisions needed:**
   - When to introduce backend (revenue threshold?)
@@ -51,7 +57,7 @@
 
 ## Priority: MEDIUM
 
-### 4. Email Integration Architecture
+### 6. Email Integration Architecture
 - **Description:** How to handle email notifications without backend
 - **Options:**
   - Zapier webhook integration
@@ -59,7 +65,7 @@
   - Wait for Supabase for email functions
 - **Estimated time:** 1-2 hours
 
-### 5. SEO Strategy
+### 7. SEO Strategy
 - **Description:** Plan content and SEO strategy
 - **Tasks:**
   - Keyword research (viral waitlist, waitlist builder, etc.)
@@ -68,17 +74,18 @@
   - Link building approach
 - **Estimated time:** 2 hours
 
-### 6. Template Design System
-- **Description:** Create more waitlist templates
+### 8. Template Design System
+- **Description:** Create a design system for waitlist templates
 - **Tasks:**
-  - Design 2-3 additional templates
-  - Create template preview images
-  - Add template customization options
+  - Define color palettes
+  - Typography scale
+  - Component library
+  - Responsive breakpoints
 - **Estimated time:** 3 hours
 
 ## Priority: LOW
 
-### 7. Analytics Dashboard Design
+### 9. Analytics Dashboard Design
 - **Description:** Design the analytics dashboard for Pro users
 - **Tasks:**
   - Define key metrics to display
@@ -86,7 +93,7 @@
   - Real-time vs. historical data
 - **Estimated time:** 2 hours
 
-### 8. API Design (Future)
+### 10. API Design (Future)
 - **Description:** Design API for Pro tier
 - **Tasks:**
   - REST API endpoints
