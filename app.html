@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Waitlist Builder — WaitlistKit</title>
+    <meta name="description" content="Create your viral waitlist in 2 minutes. Free to start.">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚀</text></svg>">
+    <style>
+        .app-container {
+            min-height: 100vh;
+            padding-top: 80px;
+        }
+
+        .app-header {
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .app-header h1 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .app-header p {
+            color: var(--text-secondary);
+        }
+
+        .builder-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 1.5rem 4rem;
+        }
+
+        .step-indicator {
+            display: flex;
+            justify-content: center;
+            gap: 0.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .step-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--bg-tertiary);
+            transition: all 0.3s ease;
+        }
+
+        .step-dot.active {
+            background: var(--primary);
+            transform: scale(1.2);
+        }
+
+        .step-dot.completed {
+            background: var(--secondary);
+        }
+
+        .builder-step {
+            display: none;
+        }
+
+        .builder-step.active {
+            display: block;
+            animation: fadeIn 0.3s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .step-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .step-description {
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+        }
+
+        .template-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .template-card {
+            background: var(--bg-secondary);
+            border: 2px solid var(--border-color);
+            border-radius: var(--radius-lg);
+            padding: 1.5rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            text-align: center;
+        }
+
+        .template-card:hover {
+            border-color: var(--primary);
+            transform: translateY(-2px);
+        }
+
+        .template-card.selected {
+            border-color: var(--primary);
+            background: rgba(99, 102, 241, 0.1);
+        }
+
+        .template-preview {
+            width: 100%;
+            height: 120px;
+            border-radius: var(--radius-md);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+        }
+
+        .template-name {
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+
+        .template-desc {
+            font-size: 0.875rem;
+            color: var(--text-muted);
+        }
+
+        .preview-section {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-lg);
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .preview-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .preview-title {
+            font-weight: 600;
+            color: var(--text-secondary);
+        }
+
+        .preview-frame {
+            background: var(--bg-primary);
+            border-radius: var(--radius-md);
+            padding: 2rem;
+            min-height: 300px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .preview-logo {
+            max-width: 100px;
+            max-height: 40px;
+            margin-bottom: 1rem;
+        }
+
+        .preview-name {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .preview-tagline {
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+        }
+
+        .preview-form {
+            width: 100%;
+            max-width: 300px;
+        }
+
+        .preview-input {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            color: var(--text-primary);
+            margin-bottom: 0.75rem;
+        }
+
+        .preview-btn {
+            width: 100%;
+            padding: 0.75rem;
+            border-radius: var(--radius-md);
+            font-weight: 600;
+            border: none;
+            cursor: default;
+        }
+
+        .success-card {
+            text-align: center;
+            padding: 3rem 2rem;
+        }
+
+        .success-icon {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+        }
+
+        .success-title {
+            font-size: 1.75rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .success-url {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            padding: 1rem;
+            margin: 1.5rem 0;
+            display: flex;
+            gap: 0.5rem;
+            align-items: center;
+        }
+
+        .success-url input {
+            flex: 1;
+            background: transparent;
+            border: none;
+            color: var(--text-primary);
+            font-size: 0.95rem;
+        }
+
+        .success-url input:focus {
+            outline: none;
+        }
+
+        .success-actions {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 1.5rem;
+        }
+
+        .my-waitlists {
+            margin-top: 3rem;
+            padding-top: 3rem;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .my-waitlists h2 {
+            font-size: 1.25rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .waitlist-list {
+            display: grid;
+            gap: 1rem;
+        }
+
+        .waitlist-item {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            padding: 1rem 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .waitlist-item-info h3 {
+            font-size: 1rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .waitlist-item-info p {
+            font-size: 0.875rem;
+            color: var(--text-muted);
+            margin: 0;
+        }
+
+        .waitlist-item-actions {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .btn-small {
+            padding: 0.5rem 1rem;
+            font-size: 0.875rem;
+        }
+
+        .upgrade-banner {
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.2) 0%, rgba(139, 92, 246, 0.2) 100%);
+            border: 1px solid var(--primary);
+            border-radius: var(--radius-lg);
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .upgrade-banner p {
+            margin: 0;
+            color: var(--text-secondary);
+        }
+
+        .upgrade-banner strong {
+            color: var(--text-primary);
+        }
+
+        .empty-state {
+            text-align: center;
+            padding: 3rem;
+            color: var(--text-muted);
+        }
+
+        .empty-state-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo">WaitlistKit</a>
+            <div class="nav-links">
+                <a href="index.html#features">Features</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="about.html">About</a>
+                <a href="blog.html">Blog</a>
+            </div>
+            <button class="mobile-menu-btn">☰</button>
+        </div>
+    </nav>
+
+    <div class="app-container">
+        <!-- Builder View -->
+        <div id="builder-view">
+            <div class="app-header">
+                <h1>Create Your Waitlist</h1>
+                <p>Build a viral waitlist in 2 minutes. No code required.</p>
+            </div>
+
+            <div class="builder-container">
+                <div class="step-indicator">
+                    <div class="step-dot active" data-step="1"></div>
+                    <div class="step-dot" data-step="2"></div>
+                    <div class="step-dot" data-step="3"></div>
+                </div>
+
+                <!-- Step 1: Basic Info -->
+                <div class="builder-step active" id="step-1">
+                    <h2 class="step-title">Name your waitlist</h2>
+                    <p class="step-description">Give your waitlist a name and tagline that excites people.</p>
+
+                    <div class="form-group">
+                        <label for="waitlist-name">Product Name *</label>
+                        <input type="text" id="waitlist-name" placeholder="e.g., My Awesome App" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="waitlist-tagline">Tagline *</label>
+                        <input type="text" id="waitlist-tagline" placeholder="e.g., The fastest way to manage your tasks">
+                        <p class="form-help">Keep it short and compelling. This is what people see first.</p>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="waitlist-description">Description (optional)</label>
+                        <textarea id="waitlist-description" rows="3" placeholder="Tell people what they're signing up for..."></textarea>
+                    </div>
+
+                    <button class="btn btn-primary btn-large btn-block" onclick="nextStep(2)">
+                        Continue →
+                    </button>
+                </div>
+
+                <!-- Step 2: Choose Template -->
+                <div class="builder-step" id="step-2">
+                    <h2 class="step-title">Choose a template</h2>
+                    <p class="step-description">Pick a style that matches your brand.</p>
+
+                    <div class="template-grid">
+                        <div class="template-card selected" data-template="dark" onclick="selectTemplate('dark')">
+                            <div class="template-preview" style="background: linear-gradient(135deg, #0a0a0f 0%, #1a1a25 100%);">
+                                🌙
+                            </div>
+                            <div class="template-name">Dark Mode</div>
+                            <div class="template-desc">Modern & sleek</div>
+                        </div>
+                        <div class="template-card" data-template="gradient" onclick="selectTemplate('gradient')">
+                            <div class="template-preview" style="background: linear-gradient(135deg, #6366f1 0%, #a855f7 100%);">
+                                🎨
+                            </div>
+                            <div class="template-name">Gradient</div>
+                            <div class="template-desc">Bold & colorful</div>
+                        </div>
+                        <div class="template-card" data-template="minimal" onclick="selectTemplate('minimal')">
+                            <div class="template-preview" style="background: #ffffff;">
+                                <span style="color: #333;">✨</span>
+                            </div>
+                            <div class="template-name">Minimal</div>
+                            <div class="template-desc">Clean & simple</div>
+                        </div>
+                        <div class="template-card" data-template="neon" onclick="selectTemplate('neon')">
+                            <div class="template-preview" style="background: #0a0a0f;">
+                                💚
+                            </div>
+                            <div class="template-name">Neon</div>
+                            <div class="template-desc">Cyberpunk vibes</div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="primary-color">Accent Color</label>
+                        <div class="color-input-wrapper">
+                            <input type="color" id="primary-color" value="#6366f1">
+                            <input type="text" id="primary-color-text" value="#6366f1" placeholder="#6366f1">
+                        </div>
+                    </div>
+
+                    <div style="display: flex; gap: 1rem;">
+                        <button class="btn btn-secondary btn-large" onclick="nextStep(1)" style="flex: 1;">
+                            ← Back
+                        </button>
+                        <button class="btn btn-primary btn-large" onclick="nextStep(3)" style="flex: 2;">
+                            Continue →
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Step 3: Preview & Launch -->
+                <div class="builder-step" id="step-3">
+                    <h2 class="step-title">Preview & Launch</h2>
+                    <p class="step-description">Here's how your waitlist will look. Ready to go live?</p>
+
+                    <div class="preview-section">
+                        <div class="preview-header">
+                            <span class="preview-title">Live Preview</span>
+                            <span style="font-size: 0.875rem; color: var(--text-muted);">Updates in real-time</span>
+                        </div>
+                        <div class="preview-frame" id="preview-frame">
+                            <div class="preview-name" id="preview-name">Your Product</div>
+                            <div class="preview-tagline" id="preview-tagline">Your amazing tagline</div>
+                            <div class="preview-form">
+                                <input type="email" class="preview-input" placeholder="Enter your email" disabled>
+                                <button class="preview-btn" id="preview-btn" style="background: #6366f1; color: white;">
+                                    Join Waitlist
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div style="display: flex; gap: 1rem;">
+                        <button class="btn btn-secondary btn-large" onclick="nextStep(2)" style="flex: 1;">
+                            ← Back
+                        </button>
+                        <button class="btn btn-primary btn-large" onclick="createWaitlist()" style="flex: 2;" id="create-btn">
+                            🚀 Launch Waitlist
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Success View -->
+        <div id="success-view" style="display: none;">
+            <div class="builder-container">
+                <div class="success-card">
+                    <div class="success-icon">🎉</div>
+                    <h2 class="success-title">Your waitlist is live!</h2>
+                    <p style="color: var(--text-secondary);">Share this link to start collecting signups.</p>
+
+                    <div class="success-url">
+                        <input type="text" id="waitlist-url" readonly>
+                        <button class="btn btn-primary btn-small" onclick="copyUrl()">Copy</button>
+                    </div>
+
+                    <div class="success-actions">
+                        <a href="#" class="btn btn-secondary" id="view-waitlist" target="_blank">
+                            👁️ View Waitlist
+                        </a>
+                        <a href="#" class="btn btn-secondary" id="share-twitter" target="_blank">
+                            🐦 Share on Twitter
+                        </a>
+                        <button class="btn btn-primary" onclick="showBuilder()">
+                            + Create Another
+                        </button>
+                    </div>
+
+                    <div class="my-waitlists" id="my-waitlists-section">
+                        <h2>Your Waitlists</h2>
+                        <div class="waitlist-list" id="waitlist-list">
+                            <!-- Populated by JS -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-brand">
+                <a href="index.html" class="logo">WaitlistKit</a>
+                <p>Build viral waitlists that grow themselves.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Product</h4>
+                <ul>
+                    <li><a href="index.html#features">Features</a></li>
+                    <li><a href="pricing.html">Pricing</a></li>
+                    <li><a href="app.html">Get Started</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Resources</h4>
+                <ul>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="about.html">About</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Legal</h4>
+                <ul>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2024 WaitlistKit. Built with ❤️ during The $100 AI Startup Race.</p>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
