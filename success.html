@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to WaitlistKit! — WaitlistKit</title>
+    <meta name="description" content="Your purchase was successful. Start building your viral waitlist now.">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .success-container {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem 1.5rem;
+        }
+        .success-card {
+            max-width: 600px;
+            width: 100%;
+            text-align: center;
+        }
+        .success-icon {
+            font-size: 5rem;
+            margin-bottom: 1.5rem;
+            animation: bounce 1s ease;
+        }
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+        .success-card h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        .success-card h1 span {
+            background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #a855f7 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .success-card .subtitle {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            margin-bottom: 2.5rem;
+        }
+        .next-steps {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            text-align: left;
+        }
+        .next-steps h2 {
+            font-size: 1.25rem;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+        .step-item {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            align-items: flex-start;
+        }
+        .step-item:last-child {
+            margin-bottom: 0;
+        }
+        .step-number {
+            width: 32px;
+            height: 32px;
+            background: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 0.875rem;
+            flex-shrink: 0;
+        }
+        .step-content h3 {
+            font-size: 1rem;
+            margin-bottom: 0.25rem;
+        }
+        .step-content p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin: 0;
+        }
+        .success-actions {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        .success-actions .btn {
+            width: 100%;
+        }
+        .help-text {
+            margin-top: 2rem;
+            color: var(--text-muted);
+            font-size: 0.875rem;
+        }
+        .help-text a {
+            color: var(--primary);
+        }
+        .features-unlocked {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        .features-unlocked h3 {
+            font-size: 1rem;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+        .features-unlocked ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.75rem;
+        }
+        .features-unlocked li {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .features-unlocked li::before {
+            content: '✓';
+            color: var(--primary);
+            font-weight: 700;
+        }
+        @media (max-width: 480px) {
+            .features-unlocked ul {
+                grid-template-columns: 1fr;
+            }
+            .success-card h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">WaitlistKit</a>
+            <div class="nav-links">
+                <a href="app.html">Builder</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="blog.html">Blog</a>
+                <a href="about.html">About</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="success-container">
+        <div class="success-card">
+            <div class="success-icon">🎉</div>
+            <h1>Welcome to <span>WaitlistKit</span>!</h1>
+            <p class="subtitle">Your purchase was successful. You've unlocked premium features to build viral waitlists that grow themselves.</p>
+
+            <div class="features-unlocked" id="features-unlocked">
+                <h3>✨ Features Unlocked</h3>
+                <ul id="features-list">
+                    <li>3 active waitlists</li>
+                    <li>Up to 1,000 signups each</li>
+                    <li>5+ premium templates</li>
+                    <li>Referral leaderboard</li>
+                    <li>CSV export</li>
+                    <li>Remove branding</li>
+                    <li>Email notifications</li>
+                    <li>Priority support</li>
+                </ul>
+            </div>
+
+            <div class="next-steps">
+                <h2>What's Next?</h2>
+                <div class="step-item">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>Create your first waitlist</h3>
+                        <p>Use the builder to set up a beautiful waitlist in 2 minutes.</p>
+                    </div>
+                </div>
+                <div class="step-item">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>Share your link</h3>
+                        <p>Post on Twitter, Reddit, or anywhere your audience hangs out.</p>
+                    </div>
+                </div>
+                <div class="step-item">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>Watch it grow</h3>
+                        <p>Every signup shares with friends. Your waitlist grows exponentially.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="success-actions">
+                <a href="app.html" class="btn btn-primary btn-large">🚀 Create Your First Waitlist</a>
+                <a href="pricing.html" class="btn btn-secondary">View All Features</a>
+            </div>
+
+            <p class="help-text">
+                Questions? Check out our <a href="blog.html">blog</a> for tips or <a href="about.html">learn more</a> about WaitlistKit.
+            </p>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="logo">WaitlistKit</a>
+                    <p>Build viral waitlists that grow themselves.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Product</h4>
+                    <a href="app.html">Builder</a>
+                    <a href="pricing.html">Pricing</a>
+                    <a href="about.html">About</a>
+                </div>
+                <div class="footer-links">
+                    <h4>Resources</h4>
+                    <a href="blog.html">Blog</a>
+                    <a href="#">Help Center</a>
+                </div>
+                <div class="footer-links">
+                    <h4>Legal</h4>
+                    <a href="#">Privacy</a>
+                    <a href="#">Terms</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 WaitlistKit. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Detect plan from URL params (for future Stripe integration)
+        const params = new URLSearchParams(window.location.search);
+        const plan = params.get('plan');
+
+        if (plan === 'pro') {
+            document.getElementById('features-list').innerHTML = `
+                <li>Unlimited waitlists</li>
+                <li>Unlimited signups</li>
+                <li>All premium templates</li>
+                <li>Custom branding</li>
+                <li>Advanced analytics</li>
+                <li>Priority support</li>
+                <li>API access (coming soon)</li>
+                <li>Early access to features</li>
+            `;
+        }
+    </script>
+</body>
+</html>
