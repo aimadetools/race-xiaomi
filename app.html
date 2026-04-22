@@ -5,8 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Waitlist Builder — WaitlistKit</title>
     <meta name="description" content="Create your viral waitlist in 2 minutes. Free to start.">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="apple-touch-icon" href="favicon.svg">
     <link rel="stylesheet" href="styles.css">
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚀</text></svg>">
     
     <!-- Vercel Web Analytics -->
     <script>
@@ -15,6 +16,128 @@
     <script defer src="/_vercel/insights/script.js"></script>
     
     <style>
+        :root {
+            --bg-primary: #0a0a0f;
+            --bg-secondary: #12121a;
+            --bg-tertiary: #1a1a25;
+            --text-primary: #ffffff;
+            --text-secondary: #a0a0b0;
+            --text-muted: #6b6b7b;
+            --primary: #6366f1;
+            --primary-hover: #818cf8;
+            --border: #2a2a3a;
+            --success: #10b981;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            background: rgba(10, 10, 15, 0.9);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border);
+            padding: 1rem 2rem;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #6366f1 0%, #a855f7 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: color 0.2s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--text-primary);
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #6366f1 0%, #a855f7 100%);
+            color: white;
+            box-shadow: 0 4px 20px rgba(99, 102, 241, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 30px rgba(99, 102, 241, 0.4);
+        }
+
+        .btn-secondary {
+            background: var(--bg-tertiary);
+            color: var(--text-primary);
+            border: 1px solid var(--border);
+        }
+
+        .btn-secondary:hover {
+            background: var(--bg-secondary);
+            border-color: var(--primary);
+        }
+
+        .btn-large {
+            padding: 1rem 2rem;
+            font-size: 1.1rem;
+        }
+
+        .btn-block {
+            width: 100%;
+        }
+
         .app-container {
             min-height: 100vh;
             padding-top: 80px;
@@ -23,6 +146,7 @@
         .app-header {
             text-align: center;
             padding: 2rem;
+            animation: fadeInDown 0.6s ease;
         }
 
         .app-header h1 {
@@ -45,6 +169,7 @@
             justify-content: center;
             gap: 0.5rem;
             margin-bottom: 2rem;
+            animation: fadeIn 0.6s ease 0.2s both;
         }
 
         .step-dot {
@@ -58,10 +183,11 @@
         .step-dot.active {
             background: var(--primary);
             transform: scale(1.2);
+            box-shadow: 0 0 10px rgba(99, 102, 241, 0.5);
         }
 
         .step-dot.completed {
-            background: var(--secondary);
+            background: var(--success);
         }
 
         .builder-step {
@@ -70,11 +196,21 @@
 
         .builder-step.active {
             display: block;
-            animation: fadeIn 0.3s ease;
+            animation: fadeInUp 0.4s ease;
         }
 
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-20px); }
             to { opacity: 1; transform: translateY(0); }
         }
 
@@ -89,37 +225,75 @@
             margin-bottom: 2rem;
         }
 
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.875rem 1rem;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            color: var(--text-primary);
+            font-size: 1rem;
+            transition: all 0.2s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2);
+        }
+
+        .form-help {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-top: 0.5rem;
+        }
+
         .template-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
             gap: 1rem;
             margin-bottom: 2rem;
         }
 
         .template-card {
             background: var(--bg-secondary);
-            border: 2px solid var(--border-color);
-            border-radius: var(--radius-lg);
-            padding: 1.5rem;
+            border: 2px solid var(--border);
+            border-radius: 12px;
+            padding: 1.25rem;
             cursor: pointer;
-            transition: all 0.2s ease;
+            transition: all 0.3s ease;
             text-align: center;
         }
 
         .template-card:hover {
             border-color: var(--primary);
-            transform: translateY(-2px);
+            transform: translateY(-4px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
         }
 
         .template-card.selected {
             border-color: var(--primary);
             background: rgba(99, 102, 241, 0.1);
+            box-shadow: 0 0 20px rgba(99, 102, 241, 0.2);
         }
 
         .template-preview {
             width: 100%;
-            height: 120px;
-            border-radius: var(--radius-md);
+            height: 100px;
+            border-radius: 8px;
             margin-bottom: 1rem;
             display: flex;
             align-items: center;
@@ -133,15 +307,41 @@
         }
 
         .template-desc {
-            font-size: 0.875rem;
+            font-size: 0.8rem;
             color: var(--text-muted);
+        }
+
+        .color-input-wrapper {
+            display: flex;
+            gap: 0.5rem;
+            align-items: center;
+        }
+
+        .color-input-wrapper input[type="color"] {
+            width: 50px;
+            height: 40px;
+            padding: 0;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            cursor: pointer;
+            background: var(--bg-secondary);
+        }
+
+        .color-input-wrapper input[type="text"] {
+            flex: 1;
+            padding: 0.75rem 1rem;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            color: var(--text-primary);
+            font-family: monospace;
         }
 
         .preview-section {
             background: var(--bg-secondary);
-            border: 1px solid var(--border-color);
-            border-radius: var(--radius-lg);
-            padding: 2rem;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.5rem;
             margin-bottom: 2rem;
         }
 
@@ -155,24 +355,19 @@
         .preview-title {
             font-weight: 600;
             color: var(--text-secondary);
+            font-size: 0.9rem;
         }
 
         .preview-frame {
             background: var(--bg-primary);
-            border-radius: var(--radius-md);
+            border-radius: 8px;
             padding: 2rem;
-            min-height: 300px;
+            min-height: 250px;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
             text-align: center;
-        }
-
-        .preview-logo {
-            max-width: 100px;
-            max-height: 40px;
-            margin-bottom: 1rem;
         }
 
         .preview-name {
@@ -184,40 +379,50 @@
         .preview-tagline {
             color: var(--text-secondary);
             margin-bottom: 1.5rem;
+            font-size: 0.95rem;
         }
 
         .preview-form {
             width: 100%;
-            max-width: 300px;
+            max-width: 280px;
         }
 
         .preview-input {
             width: 100%;
             padding: 0.75rem 1rem;
             background: var(--bg-secondary);
-            border: 1px solid var(--border-color);
-            border-radius: var(--radius-md);
+            border: 1px solid var(--border);
+            border-radius: 8px;
             color: var(--text-primary);
             margin-bottom: 0.75rem;
+            text-align: center;
         }
 
         .preview-btn {
             width: 100%;
             padding: 0.75rem;
-            border-radius: var(--radius-md);
+            border-radius: 8px;
             font-weight: 600;
             border: none;
             cursor: default;
+            transition: all 0.2s ease;
         }
 
         .success-card {
             text-align: center;
             padding: 3rem 2rem;
+            animation: fadeInUp 0.5s ease;
         }
 
         .success-icon {
             font-size: 4rem;
             margin-bottom: 1rem;
+            animation: bounce 0.6s ease;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
         }
 
         .success-title {
@@ -228,8 +433,8 @@
 
         .success-url {
             background: var(--bg-secondary);
-            border: 1px solid var(--border-color);
-            border-radius: var(--radius-md);
+            border: 1px solid var(--border);
+            border-radius: 8px;
             padding: 1rem;
             margin: 1.5rem 0;
             display: flex;
@@ -260,7 +465,8 @@
         .my-waitlists {
             margin-top: 3rem;
             padding-top: 3rem;
-            border-top: 1px solid var(--border-color);
+            border-top: 1px solid var(--border);
+            animation: fadeIn 0.6s ease 0.3s both;
         }
 
         .my-waitlists h2 {
@@ -275,12 +481,18 @@
 
         .waitlist-item {
             background: var(--bg-secondary);
-            border: 1px solid var(--border-color);
-            border-radius: var(--radius-md);
+            border: 1px solid var(--border);
+            border-radius: 8px;
             padding: 1rem 1.5rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            transition: all 0.2s ease;
+        }
+
+        .waitlist-item:hover {
+            border-color: var(--primary);
+            transform: translateX(5px);
         }
 
         .waitlist-item-info h3 {
@@ -289,7 +501,7 @@
         }
 
         .waitlist-item-info p {
-            font-size: 0.875rem;
+            font-size: 0.85rem;
             color: var(--text-muted);
             margin: 0;
         }
@@ -301,13 +513,13 @@
 
         .btn-small {
             padding: 0.5rem 1rem;
-            font-size: 0.875rem;
+            font-size: 0.85rem;
         }
 
         .upgrade-banner {
-            background: linear-gradient(135deg, rgba(99, 102, 241, 0.2) 0%, rgba(139, 92, 246, 0.2) 100%);
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.15) 0%, rgba(168, 85, 247, 0.15) 100%);
             border: 1px solid var(--primary);
-            border-radius: var(--radius-lg);
+            border-radius: 12px;
             padding: 1.5rem;
             margin-bottom: 2rem;
             display: flex;
@@ -315,6 +527,7 @@
             align-items: center;
             flex-wrap: wrap;
             gap: 1rem;
+            animation: fadeIn 0.5s ease;
         }
 
         .upgrade-banner p {
@@ -336,6 +549,75 @@
             font-size: 3rem;
             margin-bottom: 1rem;
         }
+
+        footer {
+            padding: 3rem 2rem 2rem;
+            border-top: 1px solid var(--border);
+            background: var(--bg-secondary);
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 2rem;
+        }
+
+        .footer-brand .logo {
+            display: block;
+            margin-bottom: 0.75rem;
+        }
+
+        .footer-brand p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        .footer-links h4 {
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--text-muted);
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.2s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--text-primary);
+        }
+
+        .footer-bottom {
+            max-width: 1200px;
+            margin: 2rem auto 0;
+            padding-top: 1.5rem;
+            border-top: 1px solid var(--border);
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .template-grid { grid-template-columns: repeat(2, 1fr); }
+            .success-actions { flex-direction: column; }
+            .success-actions .btn { width: 100%; }
+        }
     </style>
 </head>
 <body>
@@ -348,7 +630,6 @@
                 <a href="about.html">About</a>
                 <a href="blog.html">Blog</a>
             </div>
-            <button class="mobile-menu-btn">☰</button>
         </div>
     </nav>
 
@@ -425,7 +706,7 @@
                                 💚
                             </div>
                             <div class="template-name">Neon</div>
-                            <div class="template-desc">Cyberpunk vibes</div>
+                            <div class="template-desc">Electric &amp; bold</div>
                         </div>
                     </div>
 
@@ -455,7 +736,7 @@
                     <div class="preview-section">
                         <div class="preview-header">
                             <span class="preview-title">Live Preview</span>
-                            <span style="font-size: 0.875rem; color: var(--text-muted);">Updates in real-time</span>
+                            <span style="font-size: 0.85rem; color: var(--text-muted);">Updates in real-time</span>
                         </div>
                         <div class="preview-frame" id="preview-frame">
                             <div class="preview-name" id="preview-name">Your Product</div>
@@ -552,5 +833,28 @@
     </footer>
 
     <script src="app.js"></script>
+    <script>
+        // Add smooth scroll and hover animations
+        document.querySelectorAll('.btn').forEach(btn => {
+            btn.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-2px)';
+            });
+            btn.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+            });
+        });
+
+        // Template card selection animation
+        document.querySelectorAll('.template-card').forEach(card => {
+            card.addEventListener('click', function() {
+                document.querySelectorAll('.template-card').forEach(c => c.classList.remove('selected'));
+                this.classList.add('selected');
+                this.style.transform = 'scale(1.02)';
+                setTimeout(() => {
+                    this.style.transform = '';
+                }, 200);
+            });
+        });
+    </script>
 </body>
 </html>

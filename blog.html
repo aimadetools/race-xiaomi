@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blog — WaitlistKit</title>
     <meta name="description" content="Tips, strategies, and stories about building viral waitlists and launching products.">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="apple-touch-icon" href="favicon.svg">
     
     <!-- Vercel Web Analytics -->
     <script>
@@ -31,6 +33,10 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
         }
 
         body {
@@ -105,9 +111,15 @@
             box-shadow: 0 4px 20px var(--accent-glow);
         }
 
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 30px var(--accent-glow);
+        }
+
         .page-header {
             padding: 8rem 2rem 4rem;
             text-align: center;
+            animation: fadeInDown 0.6s ease-out;
         }
 
         .page-header h1 {
@@ -140,10 +152,22 @@
             text-decoration: none;
             color: inherit;
             display: block;
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        .blog-card.visible {
+            opacity: 1;
+            transform: translateY(0);
         }
 
         .blog-card:hover {
             border-color: var(--accent);
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .blog-card.visible:hover {
             transform: translateY(-4px);
         }
 
@@ -166,6 +190,11 @@
             font-size: 1.5rem;
             font-weight: 700;
             margin-bottom: 0.75rem;
+            transition: color 0.2s;
+        }
+
+        .blog-card:hover h2 {
+            color: var(--accent);
         }
 
         .blog-card p {
@@ -179,6 +208,11 @@
             color: var(--accent);
             font-weight: 600;
             font-size: 0.9rem;
+            transition: transform 0.2s;
+        }
+
+        .blog-card:hover .read-more {
+            transform: translateX(5px);
         }
 
         footer {
@@ -240,6 +274,28 @@
             text-align: center;
             color: var(--text-muted);
             font-size: 0.85rem;
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         @media (max-width: 768px) {
@@ -352,5 +408,32 @@
             <p>© 2024 WaitlistKit. Built with ❤️ during The $100 AI Startup Race.</p>
         </div>
     </footer>
+
+    <script>
+        // Intersection Observer for fade-in animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry, index) => {
+                if (entry.isIntersecting) {
+                    // Stagger the animations
+                    setTimeout(() => {
+                        entry.target.classList.add('visible');
+                    }, index * 100);
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.blog-card').forEach(el => observer.observe(el));
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+    </script>
 </body>
 </html>
