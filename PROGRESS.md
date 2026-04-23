@@ -703,6 +703,23 @@
 - Consistency issues fixed: 4 (footer links, paths, CSS variables, structured data)
 - Pages with JSON-LD: 6/6 (all pages now have structured data)
 
+**Footer Consistency (Audit Follow-Up):**
+- Added missing Blog link to pricing.html footer (was the only page without it)
+- Added missing Blog self-link to blog.html footer (now matches use-cases.html pattern)
+- All 7 pages now have consistent 5-link footers: Home, Use Cases, About, Blog, Pricing
+
+**Comparison Table Ordering:**
+- Reordered Google models in index.html comparison table to match select dropdown order (Pro before Flash)
+
+### Files modified:
+- `pricing.html` — Added Blog link to footer
+- `blog.html` — Added Blog self-link to footer
+- `index.html` — Reordered Google models in comparison table
+
+### Key metrics:
+- Footer consistency: 7/7 pages now have identical 5-link footers
+- Comparison table: Now matches select dropdown ordering
+
 ### Remaining items:
 - BACKLOG-CHEAP #17: Optimize Images (when added)
 - Human action needed: PostHog API key, Pro access codes, email alias
