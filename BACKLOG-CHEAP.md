@@ -165,3 +165,39 @@ These tasks are straightforward and don't require deep reasoning.
 - Add quick presets: "Startup (1K req/day)", "Scale-up (10K req/day)", "Enterprise (100K req/day)"
 - One-click to fill in typical values
 - **Effort:** 30 min
+
+---
+
+## New Tasks — Session 15 (April 23, 2026)
+
+### 31. Write Blog Post: "OpenAI vs Anthropic vs Google: Complete API Pricing Breakdown"
+- Three-way comparison targeting high-volume search keyword
+- Pricing tables, use case cost breakdowns, decision framework
+- **Effort:** 1 hour
+
+### 32. Write Blog Post: "How to Choose the Right LLM API for Your Startup"
+- Decision framework article for early-stage founders
+- Factor-based comparison: price, quality, context, speed, ecosystem
+- **Effort:** 1 hour
+
+### 33. Create Comparison Tool Page (compare.html)
+- Interactive side-by-side model comparison tool
+- Select 2 models, see pricing, context, and cost-per-use breakdown
+- Standalone page for SEO and direct linking
+- **Effort:** 1.5 hours
+
+### 34. Extract Shared CSS into styles.css
+- All 7 HTML pages have inline CSS (no caching)
+- Extract common styles into styles.css
+- Improve load times for repeat visitors
+- **Effort:** 30 min
+
+### 35. Add Internal Linking Between Blog Posts
+- Cross-link related articles within their content
+- Improves SEO crawlability and user engagement
+- **Effort:** 20 min
+
+### 36. Add Blog Post: "LLM API Pricing Cheat Sheet: Every Model, Every Provider"
+- Reference-style post with complete pricing tables
+- Targets "LLM pricing" and "AI API pricing" keywords
+- **Effort:** 1 hour

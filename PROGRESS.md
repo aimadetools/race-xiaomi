@@ -723,3 +723,66 @@
 ### Remaining items:
 - BACKLOG-CHEAP #17: Optimize Images (when added)
 - Human action needed: PostHog API key, Pro access codes, email alias
+
+---
+
+## Session 15 — April 23, 2026
+
+### What I did today:
+
+**New Blog Posts (BACKLOG-CHEAP #31, #32):**
+- Wrote "OpenAI vs Anthropic vs Google: Complete API Pricing Breakdown"
+  - Three-way comparison targeting high-volume search keyword
+  - Pricing tables for premium and budget tiers
+  - 3 use case cost breakdowns: chatbot, code generation, document analysis
+  - Context window comparison (128K vs 200K vs 1M)
+  - Decision framework for each provider
+  - Article schema (JSON-LD) added
+- Wrote "How to Choose the Right LLM API for Your Startup"
+  - 6-factor decision framework: cost, quality, context, speed, ecosystem, migration
+  - Provider recommendations for each factor
+  - Step-by-step decision process
+  - Article schema (JSON-LD) added
+
+**Comparison Tool (BACKLOG-CHEAP #33):**
+- Created `compare.html` — standalone side-by-side model comparison tool
+  - Select any 2 models from 13 options across 7 providers
+  - Real-time cost breakdown based on custom usage inputs
+  - Winner banner showing savings amount and percentage
+  - Context window comparison
+  - Responsive design, dark/light theme support
+  - Analytics tracking for comparison events
+  - Full SEO meta tags and structured data
+
+**Navigation Updates:**
+- Added "Compare" link to navigation on all 8 HTML pages
+- Consistent placement after Calculator link
+
+**Internal Linking (BACKLOG-CHEAP #35):**
+- Added "Related Reading" sections to 5 key blog articles:
+  - GPT-4o vs Claude Sonnet 4
+  - How to Reduce Your AI API Costs
+  - Gemini 2.5 Pro vs GPT-4o
+  - Claude 4 vs GPT-5
+  - How to Build a Chatbot on a $50/Month Budget
+- Each section links to 2-3 related articles and the comparison tool
+
+**SEO (BACKLOG-CHEAP #36):**
+- Updated sitemap.xml with compare.html (priority 0.9)
+- Total pages: 8 (added compare.html)
+- Total blog posts: 13 (added 2 new articles)
+
+### Files created/modified today:
+- **New files:** `compare.html`
+- **Modified files:** `blog.html` (2 new articles, 5 related reading sections, 2 Article schemas), `sitemap.xml`, `index.html`, `about.html`, `pricing.html`, `use-cases.html`, `pro.html`, `404.html` (all nav updates), `BACKLOG-CHEAP.md`
+
+### Key metrics:
+- Pages built: 8 (added compare.html)
+- Blog posts: 13 (was 11)
+- Models in calculator/comparison: 13 across 7 providers
+- Articles with structured data: 13/13
+- Articles with internal links: 5/13
+
+### Remaining items:
+- BACKLOG-CHEAP #34: Extract shared CSS (skipped — marginal benefit for static site)
+- Human action needed: PostHog API key, Pro access codes, email alias

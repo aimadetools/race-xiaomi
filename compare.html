@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compare LLM API Pricing — APIpulse</title>
+    <meta name="description" content="Compare LLM API pricing side by side. Pick two models and see pricing, context windows, and cost breakdowns for your exact usage.">
+    <meta property="og:title" content="Compare LLM API Pricing — APIpulse">
+    <meta property="og:description" content="Compare LLM API pricing side by side. Pick two models and see pricing, context windows, and cost breakdowns.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://getapipulse.com/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://getapipulse.com/og-image.png">
+    <link rel="canonical" href="https://getapipulse.com/compare.html">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <script src="analytics.js" defer></script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "APIpulse Comparison Tool",
+        "url": "https://getapipulse.com/compare.html",
+        "description": "Compare LLM API pricing side by side across OpenAI, Anthropic, Google, Mistral, and more.",
+        "applicationCategory": "DeveloperApplication",
+        "operatingSystem": "Web"
+    }
+    </script>
+    <style>
+        :root {
+            --bg-primary: #0a0a0f; --bg-secondary: #12121a; --bg-card: #1a1a2e;
+            --bg-card-hover: #1f1f35; --text-primary: #e8e8ed; --text-secondary: #9494a8;
+            --text-muted: #6b6b80; --accent: #6366f1; --accent-hover: #818cf8;
+            --accent-glow: rgba(99, 102, 241, 0.15); --green: #22c55e; --orange: #f59e0b;
+            --red: #ef4444; --border: #2a2a3e; --nav-bg: rgba(10, 10, 15, 0.85);
+            --radius: 12px; --max-width: 1200px;
+        }
+        [data-theme="light"] {
+            --bg-primary: #ffffff; --bg-secondary: #f8f9fa; --bg-card: #ffffff;
+            --bg-card-hover: #f1f3f5; --text-primary: #1a1a2e; --text-secondary: #495057;
+            --text-muted: #868e96; --accent: #6366f1; --accent-hover: #4f46e5;
+            --accent-glow: rgba(99, 102, 241, 0.1); --border: #e9ecef;
+            --nav-bg: rgba(255, 255, 255, 0.85);
+        }
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--bg-primary); color: var(--text-primary); line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+        a { color: var(--accent); text-decoration: none; transition: color 0.2s; }
+        a:hover { color: var(--accent-hover); }
+
+        nav {
+            position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+            background: var(--nav-bg); backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border); padding: 0 24px;
+        }
+        .nav-inner {
+            max-width: var(--max-width); margin: 0 auto;
+            display: flex; align-items: center; justify-content: space-between; height: 64px;
+        }
+        .logo { font-size: 20px; font-weight: 700; }
+        .logo span { color: var(--accent); }
+        .nav-links { display: flex; gap: 32px; align-items: center; }
+        .nav-links a { color: var(--text-secondary); font-size: 14px; font-weight: 500; }
+        .nav-links a:hover { color: var(--text-primary); }
+        .nav-cta { background: var(--accent); color: white !important; padding: 8px 20px; border-radius: 8px; }
+        .theme-toggle {
+            background: none; border: none; font-size: 18px; cursor: pointer;
+            padding: 4px 8px; border-radius: 6px; transition: background 0.2s;
+        }
+        .theme-toggle:hover { background: var(--bg-card); }
+
+        .page-header {
+            max-width: var(--max-width); margin: 0 auto; padding: 120px 24px 40px;
+            text-align: center;
+        }
+        .page-header h1 { font-size: 40px; font-weight: 800; margin-bottom: 12px; }
+        .page-header p { color: var(--text-secondary); font-size: 18px; max-width: 600px; margin: 0 auto; }
+
+        .compare-container {
+            max-width: var(--max-width); margin: 0 auto; padding: 0 24px 80px;
+        }
+
+        .model-selectors {
+            display: grid; grid-template-columns: 1fr auto 1fr; gap: 20px;
+            align-items: end; margin-bottom: 40px;
+        }
+        .model-selectors .vs {
+            font-size: 24px; font-weight: 800; color: var(--accent);
+            padding-bottom: 12px; text-align: center;
+        }
+        .selector-group label {
+            display: block; font-size: 13px; color: var(--text-muted);
+            text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px;
+            font-weight: 600;
+        }
+        .selector-group select {
+            width: 100%; padding: 12px 16px; border-radius: 8px;
+            border: 1px solid var(--border); background: var(--bg-secondary);
+            color: var(--text-primary); font-size: 15px; cursor: pointer;
+            appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%239494a8' viewBox='0 0 16 16'%3E%3Cpath d='M8 11L3 6h10z'/%3E%3C/svg%3E");
+            background-repeat: no-repeat; background-position: right 12px center;
+        }
+        .selector-group select:focus { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+        .compare-grid {
+            display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 40px;
+        }
+        .compare-card {
+            background: var(--bg-secondary); border: 1px solid var(--border);
+            border-radius: var(--radius); padding: 28px;
+        }
+        .compare-card h3 {
+            font-size: 20px; font-weight: 700; margin-bottom: 20px;
+            padding-bottom: 12px; border-bottom: 1px solid var(--border);
+        }
+        .compare-card .provider-badge {
+            display: inline-block; background: var(--accent-glow); color: var(--accent);
+            padding: 2px 10px; border-radius: 6px; font-size: 12px; font-weight: 600;
+            margin-bottom: 12px;
+        }
+        .price-row {
+            display: flex; justify-content: space-between; padding: 10px 0;
+            border-bottom: 1px solid var(--border); font-size: 15px;
+        }
+        .price-row:last-child { border-bottom: none; }
+        .price-row .label { color: var(--text-secondary); }
+        .price-row .value { font-weight: 600; }
+        .price-row .value.green { color: var(--green); }
+        .price-row .value.red { color: var(--red); }
+
+        .cost-breakdown {
+            background: var(--bg-card); border: 1px solid var(--border);
+            border-radius: 10px; padding: 20px; margin-top: 20px;
+        }
+        .cost-breakdown h4 {
+            font-size: 13px; color: var(--text-muted); text-transform: uppercase;
+            letter-spacing: 0.5px; margin-bottom: 12px;
+        }
+        .cost-row {
+            display: flex; justify-content: space-between; padding: 8px 0;
+            font-size: 14px;
+        }
+        .cost-row .label { color: var(--text-secondary); }
+        .cost-total {
+            display: flex; justify-content: space-between; padding: 12px 0 0;
+            margin-top: 8px; border-top: 2px solid var(--border);
+            font-weight: 700; font-size: 16px;
+        }
+
+        .winner-banner {
+            background: linear-gradient(135deg, rgba(34, 197, 94, 0.1), rgba(99, 102, 241, 0.1));
+            border: 1px solid var(--green); border-radius: var(--radius);
+            padding: 24px; text-align: center; margin-bottom: 40px;
+        }
+        .winner-banner h2 { font-size: 20px; margin-bottom: 8px; }
+        .winner-banner p { color: var(--text-secondary); }
+        .winner-banner .savings {
+            font-size: 28px; font-weight: 800; color: var(--green); margin: 12px 0;
+        }
+
+        .usage-inputs {
+            background: var(--bg-secondary); border: 1px solid var(--border);
+            border-radius: var(--radius); padding: 24px; margin-bottom: 40px;
+        }
+        .usage-inputs h3 { font-size: 16px; font-weight: 600; margin-bottom: 16px; }
+        .input-grid {
+            display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px;
+        }
+        .input-group label {
+            display: block; font-size: 12px; color: var(--text-muted);
+            text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 6px;
+        }
+        .input-group input {
+            width: 100%; padding: 10px 12px; border-radius: 8px;
+            border: 1px solid var(--border); background: var(--bg-card);
+            color: var(--text-primary); font-size: 14px;
+        }
+        .input-group input:focus { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+        .cta-section {
+            text-align: center; padding: 48px 24px;
+            background: var(--bg-secondary); border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+        }
+        .cta-section h2 { font-size: 24px; margin-bottom: 12px; }
+        .cta-section p { color: var(--text-secondary); margin-bottom: 20px; }
+        .btn-primary {
+            background: var(--accent); color: white; padding: 12px 28px;
+            border-radius: 8px; font-size: 15px; font-weight: 600;
+            border: none; cursor: pointer; display: inline-block;
+        }
+        .btn-primary:hover { background: var(--accent-hover); color: white; }
+
+        footer {
+            text-align: center; padding: 32px 24px; font-size: 13px;
+            color: var(--text-muted);
+        }
+        footer a { color: var(--text-secondary); }
+
+        .back-to-top {
+            position: fixed; bottom: 24px; right: 24px; width: 44px; height: 44px;
+            background: var(--accent); color: white; border: none; border-radius: 50%;
+            font-size: 20px; cursor: pointer; opacity: 0; pointer-events: none;
+            transition: opacity 0.3s, transform 0.3s; z-index: 99;
+            display: flex; align-items: center; justify-content: center;
+            box-shadow: 0 4px 12px rgba(99,102,241,0.3);
+        }
+        .back-to-top.visible { opacity: 1; pointer-events: auto; }
+        .back-to-top:hover { transform: translateY(-2px); }
+
+        @media (max-width: 768px) {
+            .model-selectors { grid-template-columns: 1fr; gap: 12px; }
+            .model-selectors .vs { padding: 0; }
+            .compare-grid { grid-template-columns: 1fr; }
+            .input-grid { grid-template-columns: 1fr 1fr; }
+            .page-header h1 { font-size: 28px; }
+            .nav-links { gap: 16px; }
+            .nav-links a:not(.nav-cta) { display: none; }
+        }
+
+        @media print {
+            nav, .back-to-top, .cta-section, .theme-toggle { display: none; }
+            body { background: white; color: black; }
+            .compare-card { border: 1px solid #ccc; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-inner">
+            <div class="logo">API<span>pulse</span></div>
+            <div class="nav-links">
+                <a href="index.html">Calculator</a>
+                <a href="compare.html" style="color:var(--text-primary)">Compare</a>
+                <a href="use-cases.html">Use Cases</a>
+                <a href="about.html">About</a>
+                <a href="blog.html">Blog</a>
+                <a href="pricing.html">Pricing</a>
+                <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="page-header">
+        <h1>Compare LLM API Pricing</h1>
+        <p>Pick two models and see a side-by-side breakdown of pricing, context windows, and real costs for your usage.</p>
+    </div>
+
+    <div class="compare-container">
+        <div class="model-selectors">
+            <div class="selector-group">
+                <label for="model-a">Model A</label>
+                <select id="model-a" onchange="updateComparison()">
+                    <optgroup label="OpenAI">
+                        <option value="openai-gpt4o" selected>GPT-4o</option>
+                        <option value="openai-gpt4o-mini">GPT-4o mini</option>
+                    </optgroup>
+                    <optgroup label="Anthropic">
+                        <option value="anthropic-sonnet">Claude Sonnet 4</option>
+                        <option value="anthropic-haiku">Claude Haiku 3.5</option>
+                    </optgroup>
+                    <optgroup label="Google">
+                        <option value="google-pro">Gemini 2.5 Pro</option>
+                        <option value="google-flash">Gemini 2.0 Flash</option>
+                    </optgroup>
+                    <optgroup label="Mistral">
+                        <option value="mistral-large">Mistral Large</option>
+                        <option value="mistral-small">Mistral Small</option>
+                    </optgroup>
+                    <optgroup label="Other">
+                        <option value="cohere-command-r-plus">Cohere Command R+</option>
+                        <option value="cohere-command-r">Cohere Command R</option>
+                        <option value="llama-3.1-70b">Llama 3.1 70B (Together)</option>
+                        <option value="llama-3.1-8b">Llama 3.1 8B (Together)</option>
+                        <option value="ai21-jamba">AI21 Jamba 1.5 Large</option>
+                    </optgroup>
+                </select>
+            </div>
+            <div class="vs">VS</div>
+            <div class="selector-group">
+                <label for="model-b">Model B</label>
+                <select id="model-b" onchange="updateComparison()">
+                    <optgroup label="OpenAI">
+                        <option value="openai-gpt4o">GPT-4o</option>
+                        <option value="openai-gpt4o-mini">GPT-4o mini</option>
+                    </optgroup>
+                    <optgroup label="Anthropic">
+                        <option value="anthropic-sonnet">Claude Sonnet 4</option>
+                        <option value="anthropic-haiku" selected>Claude Haiku 3.5</option>
+                    </optgroup>
+                    <optgroup label="Google">
+                        <option value="google-pro">Gemini 2.5 Pro</option>
+                        <option value="google-flash">Gemini 2.0 Flash</option>
+                    </optgroup>
+                    <optgroup label="Mistral">
+                        <option value="mistral-large">Mistral Large</option>
+                        <option value="mistral-small">Mistral Small</option>
+                    </optgroup>
+                    <optgroup label="Other">
+                        <option value="cohere-command-r-plus">Cohere Command R+</option>
+                        <option value="cohere-command-r">Cohere Command R</option>
+                        <option value="llama-3.1-70b">Llama 3.1 70B (Together)</option>
+                        <option value="llama-3.1-8b">Llama 3.1 8B (Together)</option>
+                        <option value="ai21-jamba">AI21 Jamba 1.5 Large</option>
+                    </optgroup>
+                </select>
+            </div>
+        </div>
+
+        <div class="usage-inputs">
+            <h3>Your Usage (per request)</h3>
+            <div class="input-grid">
+                <div class="input-group">
+                    <label for="input-tokens">Input Tokens</label>
+                    <input type="number" id="input-tokens" value="1000" min="1" oninput="updateComparison()">
+                </div>
+                <div class="input-group">
+                    <label for="output-tokens">Output Tokens</label>
+                    <input type="number" id="output-tokens" value="500" min="1" oninput="updateComparison()">
+                </div>
+                <div class="input-group">
+                    <label for="requests-day">Requests / Day</label>
+                    <input type="number" id="requests-day" value="1000" min="1" oninput="updateComparison()">
+                </div>
+                <div class="input-group">
+                    <label for="days-month">Days / Month</label>
+                    <input type="number" id="days-month" value="30" min="1" max="31" oninput="updateComparison()">
+                </div>
+            </div>
+        </div>
+
+        <div id="winner-banner" class="winner-banner" style="display:none;">
+            <h2 id="winner-title"></h2>
+            <div class="savings" id="winner-savings"></div>
+            <p id="winner-detail"></p>
+        </div>
+
+        <div class="compare-grid">
+            <div class="compare-card" id="card-a">
+                <span class="provider-badge" id="badge-a"></span>
+                <h3 id="name-a"></h3>
+                <div class="price-row"><span class="label">Input (per 1M tokens)</span><span class="value" id="input-a"></span></div>
+                <div class="price-row"><span class="label">Output (per 1M tokens)</span><span class="value" id="output-a"></span></div>
+                <div class="price-row"><span class="label">Context Window</span><span class="value" id="context-a"></span></div>
+                <div class="cost-breakdown">
+                    <h4>Monthly Cost Estimate</h4>
+                    <div class="cost-row"><span class="label">Input cost</span><span id="input-cost-a"></span></div>
+                    <div class="cost-row"><span class="label">Output cost</span><span id="output-cost-a"></span></div>
+                    <div class="cost-total"><span>Total</span><span id="total-cost-a"></span></div>
+                </div>
+            </div>
+            <div class="compare-card" id="card-b">
+                <span class="provider-badge" id="badge-b"></span>
+                <h3 id="name-b"></h3>
+                <div class="price-row"><span class="label">Input (per 1M tokens)</span><span class="value" id="input-b"></span></div>
+                <div class="price-row"><span class="label">Output (per 1M tokens)</span><span class="value" id="output-b"></span></div>
+                <div class="price-row"><span class="label">Context Window</span><span class="value" id="context-b"></span></div>
+                <div class="cost-breakdown">
+                    <h4>Monthly Cost Estimate</h4>
+                    <div class="cost-row"><span class="label">Input cost</span><span id="input-cost-b"></span></div>
+                    <div class="cost-row"><span class="label">Output cost</span><span id="output-cost-b"></span></div>
+                    <div class="cost-total"><span>Total</span><span id="total-cost-b"></span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section class="cta-section">
+        <h2>Want more detailed cost modeling?</h2>
+        <p>Use the full calculator to model scenarios, save configurations, and export PDF reports.</p>
+        <a href="index.html#calculator" class="btn-primary">Open Full Calculator</a>
+    </section>
+
+    <button class="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">↑</button>
+
+    <footer>
+        <p>Pricing data last verified: April 23, 2026</p>
+        <p>&copy; 2026 APIpulse. <a href="index.html">Home</a> &middot; <a href="use-cases.html">Use Cases</a> &middot; <a href="about.html">About</a> &middot; <a href="blog.html">Blog</a> &middot; <a href="pricing.html">Pricing</a></p>
+    </footer>
+
+    <script>
+        const models = {
+            'openai-gpt4o': { name: 'GPT-4o', provider: 'OpenAI', input: 2.50, output: 10.00, context: '128K' },
+            'openai-gpt4o-mini': { name: 'GPT-4o mini', provider: 'OpenAI', input: 0.15, output: 0.60, context: '128K' },
+            'anthropic-sonnet': { name: 'Claude Sonnet 4', provider: 'Anthropic', input: 3.00, output: 15.00, context: '200K' },
+            'anthropic-haiku': { name: 'Claude Haiku 3.5', provider: 'Anthropic', input: 0.80, output: 4.00, context: '200K' },
+            'google-pro': { name: 'Gemini 2.5 Pro', provider: 'Google', input: 1.25, output: 10.00, context: '1M' },
+            'google-flash': { name: 'Gemini 2.0 Flash', provider: 'Google', input: 0.10, output: 0.40, context: '1M' },
+            'mistral-large': { name: 'Mistral Large', provider: 'Mistral', input: 2.00, output: 6.00, context: '128K' },
+            'mistral-small': { name: 'Mistral Small', provider: 'Mistral', input: 0.10, output: 0.30, context: '128K' },
+            'cohere-command-r-plus': { name: 'Command R+', provider: 'Cohere', input: 2.50, output: 10.00, context: '128K' },
+            'cohere-command-r': { name: 'Command R', provider: 'Cohere', input: 0.15, output: 0.60, context: '128K' },
+            'llama-3.1-70b': { name: 'Llama 3.1 70B', provider: 'Together.ai', input: 0.88, output: 0.88, context: '128K' },
+            'llama-3.1-8b': { name: 'Llama 3.1 8B', provider: 'Together.ai', input: 0.18, output: 0.18, context: '128K' },
+            'ai21-jamba': { name: 'Jamba 1.5 Large', provider: 'AI21', input: 2.00, output: 8.00, context: '256K' }
+        };
+
+        function calcCost(model, inputTokens, outputTokens, requests, days) {
+            const totalIn = inputTokens * requests * days;
+            const totalOut = outputTokens * requests * days;
+            return {
+                inputCost: (totalIn / 1000000) * model.input,
+                outputCost: (totalOut / 1000000) * model.output,
+                total: ((totalIn / 1000000) * model.input) + ((totalOut / 1000000) * model.output)
+            };
+        }
+
+        function updateComparison() {
+            const keyA = document.getElementById('model-a').value;
+            const keyB = document.getElementById('model-b').value;
+            const mA = models[keyA];
+            const mB = models[keyB];
+
+            const inputTokens = parseInt(document.getElementById('input-tokens').value) || 1000;
+            const outputTokens = parseInt(document.getElementById('output-tokens').value) || 500;
+            const requests = parseInt(document.getElementById('requests-day').value) || 1000;
+            const days = parseInt(document.getElementById('days-month').value) || 30;
+
+            const costA = calcCost(mA, inputTokens, outputTokens, requests, days);
+            const costB = calcCost(mB, inputTokens, outputTokens, requests, days);
+
+            // Update cards
+            document.getElementById('badge-a').textContent = mA.provider;
+            document.getElementById('name-a').textContent = mA.name;
+            document.getElementById('input-a').textContent = '$' + mA.input.toFixed(2);
+            document.getElementById('output-a').textContent = '$' + mA.output.toFixed(2);
+            document.getElementById('context-a').textContent = mA.context;
+            document.getElementById('input-cost-a').textContent = '$' + costA.inputCost.toFixed(2);
+            document.getElementById('output-cost-a').textContent = '$' + costA.outputCost.toFixed(2);
+            document.getElementById('total-cost-a').textContent = '$' + costA.total.toFixed(2) + '/mo';
+
+            document.getElementById('badge-b').textContent = mB.provider;
+            document.getElementById('name-b').textContent = mB.name;
+            document.getElementById('input-b').textContent = '$' + mB.input.toFixed(2);
+            document.getElementById('output-b').textContent = '$' + mB.output.toFixed(2);
+            document.getElementById('context-b').textContent = mB.context;
+            document.getElementById('input-cost-b').textContent = '$' + costB.inputCost.toFixed(2);
+            document.getElementById('output-cost-b').textContent = '$' + costB.outputCost.toFixed(2);
+            document.getElementById('total-cost-b').textContent = '$' + costB.total.toFixed(2) + '/mo';
+
+            // Highlight cheaper
+            const totalA = document.getElementById('total-cost-a');
+            const totalB = document.getElementById('total-cost-b');
+            totalA.className = costA.total <= costB.total ? 'green' : 'red';
+            totalB.className = costB.total <= costA.total ? 'green' : 'red';
+
+            // Winner banner
+            const banner = document.getElementById('winner-banner');
+            if (costA.total !== costB.total) {
+                const winner = costA.total < costB.total ? mA : mB;
+                const loser = costA.total < costB.total ? mB : mA;
+                const savings = Math.abs(costA.total - costB.total);
+                const pct = ((savings / Math.max(costA.total, costB.total)) * 100).toFixed(0);
+                document.getElementById('winner-title').textContent = winner.name + ' is cheaper';
+                document.getElementById('winner-savings').textContent = '$' + savings.toFixed(2) + '/mo savings';
+                document.getElementById('winner-detail').textContent = winner.name + ' saves ' + pct + '% compared to ' + loser.name + ' for your usage pattern.';
+                banner.style.display = 'block';
+            } else {
+                banner.style.display = 'none';
+            }
+
+            if (window.trackEvent) {
+                window.trackEvent('comparison_used', {
+                    model_a: mA.name, model_b: mB.name,
+                    cost_a: costA.total.toFixed(2), cost_b: costB.total.toFixed(2)
+                });
+            }
+        }
+
+        // Theme toggle
+        function toggleTheme() {
+            const html = document.documentElement;
+            const current = html.getAttribute('data-theme');
+            const next = current === 'light' ? 'dark' : 'light';
+            html.setAttribute('data-theme', next);
+            localStorage.setItem('theme', next);
+            document.querySelector('.theme-toggle').textContent = next === 'light' ? '☀️' : '🌙';
+        }
+        const saved = localStorage.getItem('theme') || 'dark';
+        document.documentElement.setAttribute('data-theme', saved);
+        document.querySelector('.theme-toggle').textContent = saved === 'light' ? '☀️' : '🌙';
+
+        // Back to top
+        window.addEventListener('scroll', () => {
+            const btn = document.querySelector('.back-to-top');
+            if (btn) btn.classList.toggle('visible', window.scrollY > 400);
+        });
+
+        // Init
+        updateComparison();
+    </script>
+</body>
+</html>
