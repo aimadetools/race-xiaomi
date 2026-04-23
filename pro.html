@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pro Features — APIpulse</title>
+    <meta name="description" content="APIpulse Pro — saved scenarios, PDF export, and optimization recommendations for AI API cost planning.">
+    <meta property="og:title" content="APIpulse Pro — Premium Features">
+    <meta property="og:description" content="Saved scenarios, PDF export, and optimization recommendations.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://getapipulse.com/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://getapipulse.com/og-image.png">
+    <link rel="canonical" href="https://getapipulse.com/pro.html">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <script src="analytics.js" defer></script>
+    <style>
+        :root {
+            --bg-primary: #0a0a0f;
+            --bg-secondary: #12121a;
+            --bg-card: #1a1a2e;
+            --bg-card-hover: #1f1f35;
+            --text-primary: #e8e8ed;
+            --text-secondary: #9494a8;
+            --text-muted: #6b6b80;
+            --accent: #6366f1;
+            --accent-hover: #818cf8;
+            --accent-glow: rgba(99, 102, 241, 0.15);
+            --green: #22c55e;
+            --red: #ef4444;
+            --border: #2a2a3e;
+            --radius: 12px;
+            --max-width: 1000px;
+        }
+        [data-theme="light"] {
+            --bg-primary: #ffffff;
+            --bg-secondary: #f8f9fa;
+            --bg-card: #ffffff;
+            --bg-card-hover: #f1f3f5;
+            --text-primary: #1a1a2e;
+            --text-secondary: #495057;
+            --text-muted: #868e96;
+            --accent: #6366f1;
+            --accent-hover: #4f46e5;
+            --accent-glow: rgba(99, 102, 241, 0.1);
+            --border: #e9ecef;
+        }
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--bg-primary); color: var(--text-primary);
+            line-height: 1.6; -webkit-font-smoothing: antialiased;
+        }
+        a { color: var(--accent); text-decoration: none; }
+        a:hover { color: var(--accent-hover); }
+
+        nav {
+            position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+            background: rgba(10, 10, 15, 0.85); backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border); padding: 0 24px;
+        }
+        .nav-inner {
+            max-width: var(--max-width); margin: 0 auto;
+            display: flex; align-items: center; justify-content: space-between; height: 64px;
+        }
+        .logo { font-size: 20px; font-weight: 700; display: flex; align-items: center; gap: 8px; }
+        .logo span { color: var(--accent); }
+        .nav-links { display: flex; gap: 32px; align-items: center; }
+        .nav-links a { color: var(--text-secondary); font-size: 14px; font-weight: 500; }
+        .nav-links a:hover { color: var(--text-primary); }
+        .nav-cta {
+            background: var(--accent); color: white !important; padding: 8px 20px;
+            border-radius: 8px; font-size: 14px; font-weight: 600;
+        }
+        .theme-toggle {
+            background: none; border: none; font-size: 18px; cursor: pointer;
+            padding: 4px 8px; border-radius: 6px; transition: background 0.2s;
+        }
+        .theme-toggle:hover { background: var(--bg-card); }
+
+        .page-content { padding: 100px 24px 60px; max-width: var(--max-width); margin: 0 auto; }
+
+        /* Access gate */
+        .gate-card {
+            background: var(--bg-secondary); border: 1px solid var(--border);
+            border-radius: 16px; padding: 48px; text-align: center; max-width: 500px;
+            margin: 60px auto;
+        }
+        .gate-card h2 { font-size: 24px; margin-bottom: 12px; }
+        .gate-card p { color: var(--text-secondary); margin-bottom: 24px; font-size: 15px; }
+        .gate-input {
+            display: flex; gap: 8px; max-width: 360px; margin: 0 auto;
+        }
+        .gate-input input {
+            flex: 1; padding: 12px 16px; background: var(--bg-card);
+            border: 1px solid var(--border); border-radius: 8px;
+            color: var(--text-primary); font-size: 14px; font-family: monospace;
+        }
+        .gate-input input:focus { outline: none; border-color: var(--accent); }
+        .gate-error { color: var(--red); font-size: 13px; margin-top: 12px; display: none; }
+
+        /* Pro sections */
+        .pro-section {
+            background: var(--bg-secondary); border: 1px solid var(--border);
+            border-radius: 16px; padding: 32px; margin-bottom: 24px;
+        }
+        .pro-section h2 { font-size: 20px; font-weight: 700; margin-bottom: 8px; }
+        .pro-section > p { color: var(--text-secondary); font-size: 14px; margin-bottom: 20px; }
+
+        /* Calculator in pro page */
+        .calc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+        .calc-inputs label {
+            display: block; font-size: 13px; font-weight: 600;
+            color: var(--text-secondary); margin-bottom: 6px;
+            text-transform: uppercase; letter-spacing: 0.5px;
+        }
+        .calc-inputs input, .calc-inputs select {
+            width: 100%; padding: 10px 14px; background: var(--bg-card);
+            border: 1px solid var(--border); border-radius: 8px;
+            color: var(--text-primary); font-size: 14px;
+        }
+        .calc-inputs input:focus, .calc-inputs select:focus { outline: none; border-color: var(--accent); }
+        .calc-inputs .input-group { margin-bottom: 16px; }
+        .calc-results { background: var(--bg-card); border-radius: 12px; padding: 20px; }
+        .result-item {
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 10px 0; border-bottom: 1px solid var(--border);
+        }
+        .result-item:last-child { border-bottom: none; }
+        .result-label { color: var(--text-secondary); font-size: 13px; }
+        .result-value { font-size: 16px; font-weight: 700; }
+        .result-total {
+            margin-top: 12px; padding-top: 12px; border-top: 2px solid var(--accent);
+            display: flex; justify-content: space-between; align-items: center;
+        }
+        .result-total .result-value { font-size: 24px; color: var(--accent); }
+
+        .btn-primary {
+            background: var(--accent); color: white; padding: 10px 20px;
+            border-radius: 8px; font-size: 14px; font-weight: 600;
+            border: none; cursor: pointer; transition: all 0.2s;
+        }
+        .btn-primary:hover { background: var(--accent-hover); color: white; }
+        .btn-small {
+            background: var(--bg-card); color: var(--text-secondary); padding: 6px 14px;
+            border-radius: 6px; font-size: 12px; font-weight: 600;
+            border: 1px solid var(--border); cursor: pointer; transition: all 0.2s;
+        }
+        .btn-small:hover { border-color: var(--accent); color: var(--accent); }
+        .btn-danger { border-color: var(--red); color: var(--red); }
+        .btn-danger:hover { background: rgba(239,68,68,0.1); }
+
+        .save-bar {
+            display: flex; gap: 8px; margin-top: 16px; align-items: center;
+        }
+        .save-bar input {
+            flex: 1; padding: 8px 12px; background: var(--bg-card);
+            border: 1px solid var(--border); border-radius: 6px;
+            color: var(--text-primary); font-size: 13px;
+        }
+
+        .scenario-card {
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 12px 16px; background: var(--bg-card); border-radius: 8px;
+            margin-bottom: 8px; border: 1px solid var(--border);
+        }
+        .scenario-info { display: flex; flex-direction: column; gap: 2px; }
+        .scenario-actions { display: flex; gap: 6px; }
+
+        .rec-card {
+            padding: 16px; background: var(--bg-card); border-radius: 8px;
+            margin-bottom: 8px; border: 1px solid var(--border);
+        }
+        .rec-header { display: flex; justify-content: space-between; align-items: center; }
+        .rec-impact {
+            font-size: 12px; font-weight: 600; color: var(--green);
+            background: rgba(34,197,94,0.1); padding: 2px 8px; border-radius: 4px;
+        }
+
+        footer {
+            padding: 40px 24px; border-top: 1px solid var(--border);
+            text-align: center; color: var(--text-muted); font-size: 13px;
+        }
+        footer a { color: var(--text-secondary); }
+
+        @media (max-width: 768px) {
+            .page-content { padding: 80px 20px 40px; }
+            .calc-grid { grid-template-columns: 1fr; }
+            .gate-card { padding: 32px 20px; }
+            .gate-input { flex-direction: column; }
+            .nav-links { display: none; }
+        }
+        .skip-link {
+            position: absolute; top: -40px; left: 0; background: var(--accent);
+            color: white; padding: 8px 16px; z-index: 200; font-size: 14px;
+        }
+        .skip-link:focus { top: 0; }
+        *:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+    </style>
+</head>
+<body>
+    <a href="#main" class="skip-link">Skip to content</a>
+    <nav>
+        <div class="nav-inner">
+            <a href="index.html" class="logo">API<span>pulse</span></a>
+            <div class="nav-links">
+                <a href="index.html#calculator">Calculator</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="use-cases.html">Use Cases</a>
+                <a href="about.html">About</a>
+                <a href="blog.html">Blog</a>
+                <a href="pricing.html" class="nav-cta" onclick="if(window.trackEvent)window.trackEvent('pro_button_clicked',{source:'nav'})">Get Pro — $29</a>
+                <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
+            </div>
+        </div>
+    </nav>
+
+    <main id="main" class="page-content">
+        <!-- Access Gate -->
+        <div id="pro-gate">
+            <div class="gate-card">
+                <div style="font-size:48px;margin-bottom:16px;">🔓</div>
+                <h2>Unlock Pro Features</h2>
+                <p>Enter your access code to unlock saved scenarios, PDF export, and optimization recommendations.</p>
+                <div class="gate-input">
+                    <input type="text" id="access-code" placeholder="APIPULSE-XXXX-XXXX"
+                        onkeydown="if(event.key==='Enter')submitCode()" autofocus
+                        style="text-transform:uppercase;" aria-label="Access code">
+                    <button class="btn-primary" onclick="submitCode()">Unlock</button>
+                </div>
+                <p id="gate-error" class="gate-error">Invalid access code. Check your purchase confirmation email.</p>
+                <p style="margin-top:20px;font-size:13px;color:var(--text-muted);">
+                    Don't have a code? <a href="pricing.html">Get Pro access for $29</a>
+                </p>
+            </div>
+        </div>
+
+        <!-- Pro Content (hidden until unlocked) -->
+        <div id="pro-content" style="display:none;">
+            <h1 style="font-size:28px;font-weight:800;margin-bottom:8px;">Pro Features</h1>
+            <p style="color:var(--text-secondary);margin-bottom:32px;">Welcome back! Here are your premium tools.</p>
+
+            <!-- Calculator with Save -->
+            <div class="pro-section">
+                <h2>Cost Calculator</h2>
+                <p>Calculate costs and save scenarios for comparison.</p>
+                <div class="calc-grid">
+                    <div class="calc-inputs">
+                        <div class="input-group">
+                            <label for="provider">Provider</label>
+                            <select id="provider" onchange="calculate()">
+                                <option value="openai-gpt4o">OpenAI — GPT-4o</option>
+                                <option value="openai-gpt4o-mini">OpenAI — GPT-4o mini</option>
+                                <option value="anthropic-sonnet">Anthropic — Claude Sonnet 4</option>
+                                <option value="anthropic-haiku">Anthropic — Claude Haiku 3.5</option>
+                                <option value="google-pro">Google — Gemini 2.5 Pro</option>
+                                <option value="google-flash">Google — Gemini 2.0 Flash</option>
+                                <option value="mistral-large">Mistral — Large</option>
+                                <option value="mistral-small">Mistral — Small</option>
+                                <option value="cohere-command-r-plus">Cohere — Command R+</option>
+                                <option value="cohere-command-r">Cohere — Command R</option>
+                                <option value="llama-3.1-70b">Meta — Llama 3.1 70B</option>
+                                <option value="llama-3.1-8b">Meta — Llama 3.1 8B</option>
+                                <option value="ai21-jamba">AI21 — Jamba 1.5 Large</option>
+                            </select>
+                        </div>
+                        <div class="input-group">
+                            <label for="input-tokens">Input tokens per request</label>
+                            <input type="number" id="input-tokens" value="2000" min="0" step="100" onchange="calculate()" oninput="calculate()">
+                        </div>
+                        <div class="input-group">
+                            <label for="output-tokens">Output tokens per request</label>
+                            <input type="number" id="output-tokens" value="500" min="0" step="100" onchange="calculate()" oninput="calculate()">
+                        </div>
+                        <div class="input-group">
+                            <label for="requests">Requests per day</label>
+                            <input type="number" id="requests" value="1000" min="0" step="100" onchange="calculate()" oninput="calculate()">
+                        </div>
+                        <div class="input-group">
+                            <label for="days">Days per month</label>
+                            <input type="number" id="days" value="30" min="1" max="31" onchange="calculate()" oninput="calculate()">
+                        </div>
+                        <div class="save-bar">
+                            <input type="text" id="scenario-name" placeholder="Scenario name (e.g. Chatbot v2)">
+                            <button class="btn-primary" onclick="saveScenario(document.getElementById('scenario-name').value || 'Untitled')">Save</button>
+                        </div>
+                    </div>
+                    <div class="calc-results">
+                        <h3 style="margin-bottom:12px;font-size:15px;">Monthly Cost Estimate</h3>
+                        <div class="result-item">
+                            <span class="result-label">Input cost</span>
+                            <span class="result-value" id="input-cost">$0.00</span>
+                        </div>
+                        <div class="result-item">
+                            <span class="result-label">Output cost</span>
+                            <span class="result-value" id="output-cost">$0.00</span>
+                        </div>
+                        <div class="result-total">
+                            <span class="result-label">Monthly Total</span>
+                            <span class="result-value" id="monthly-total">$0.00</span>
+                        </div>
+                        <button class="btn-primary" style="width:100%;margin-top:16px;" onclick="exportPDF()">Export Report</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Saved Scenarios -->
+            <div class="pro-section">
+                <h2>Saved Scenarios</h2>
+                <p>Compare different configurations side by side. Save up to 10 scenarios.</p>
+                <div id="scenarios-list"></div>
+            </div>
+
+            <!-- Optimization Recommendations -->
+            <div class="pro-section">
+                <h2>Optimization Recommendations</h2>
+                <p>Personalized suggestions to reduce your API costs based on your current configuration.</p>
+                <button class="btn-primary" onclick="renderRecommendations()" style="margin-bottom:16px;">Get Recommendations</button>
+                <div id="recommendations-list"></div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>Pricing data last verified: April 23, 2026</p>
+        <p>&copy; 2026 APIpulse. <a href="about.html">About</a> · <a href="use-cases.html">Use Cases</a> · <a href="blog.html">Blog</a></p>
+    </footer>
+
+    <script src="pro-features.js"></script>
+    <script>
+        // API pricing data
+        const providers = {
+            'openai-gpt4o': { name: 'OpenAI GPT-4o', input: 2.50, output: 10.00 },
+            'openai-gpt4o-mini': { name: 'OpenAI GPT-4o mini', input: 0.15, output: 0.60 },
+            'anthropic-sonnet': { name: 'Claude Sonnet 4', input: 3.00, output: 15.00 },
+            'anthropic-haiku': { name: 'Claude Haiku 3.5', input: 0.80, output: 4.00 },
+            'google-pro': { name: 'Gemini 2.5 Pro', input: 1.25, output: 10.00 },
+            'google-flash': { name: 'Gemini 2.0 Flash', input: 0.10, output: 0.40 },
+            'mistral-large': { name: 'Mistral Large', input: 2.00, output: 6.00 },
+            'mistral-small': { name: 'Mistral Small', input: 0.10, output: 0.30 },
+            'cohere-command-r-plus': { name: 'Cohere Command R+', input: 2.50, output: 10.00 },
+            'cohere-command-r': { name: 'Cohere Command R', input: 0.15, output: 0.60 },
+            'llama-3.1-70b': { name: 'Llama 3.1 70B (Together)', input: 0.88, output: 0.88 },
+            'llama-3.1-8b': { name: 'Llama 3.1 8B (Together)', input: 0.18, output: 0.18 },
+            'ai21-jamba': { name: 'AI21 Jamba 1.5 Large', input: 2.00, output: 8.00 }
+        };
+
+        function calculate() {
+            const provider = document.getElementById('provider').value;
+            const inputTokens = parseInt(document.getElementById('input-tokens').value) || 0;
+            const outputTokens = parseInt(document.getElementById('output-tokens').value) || 0;
+            const requests = parseInt(document.getElementById('requests').value) || 0;
+            const days = parseInt(document.getElementById('days').value) || 30;
+            const p = providers[provider];
+            const inputCost = (inputTokens * requests * days / 1000000) * p.input;
+            const outputCost = (outputTokens * requests * days / 1000000) * p.output;
+            document.getElementById('input-cost').textContent = '$' + inputCost.toFixed(2);
+            document.getElementById('output-cost').textContent = '$' + outputCost.toFixed(2);
+            document.getElementById('monthly-total').textContent = '$' + (inputCost + outputCost).toFixed(2);
+        }
+
+        function submitCode() {
+            const code = document.getElementById('access-code').value;
+            if (validateCode(code)) {
+                unlockProFeatures();
+                calculate();
+                if (window.trackEvent) window.trackEvent('pro_access_granted');
+            } else {
+                document.getElementById('gate-error').style.display = 'block';
+                if (window.trackEvent) window.trackEvent('pro_access_failed');
+            }
+        }
+
+        function toggleTheme() {
+            const html = document.documentElement;
+            const current = html.getAttribute('data-theme');
+            const next = current === 'light' ? 'dark' : 'light';
+            html.setAttribute('data-theme', next);
+            localStorage.setItem('theme', next);
+            document.querySelector('.theme-toggle').textContent = next === 'light' ? '☀️' : '🌙';
+        }
+
+        // Load theme
+        const savedTheme = localStorage.getItem('theme') || 'dark';
+        document.documentElement.setAttribute('data-theme', savedTheme);
+        document.querySelector('.theme-toggle').textContent = savedTheme === 'light' ? '☀️' : '🌙';
+
+        // Auto-unlock if already pro
+        if (isProUser()) {
+            calculate();
+        }
+    </script>
+</body>
+</html>
