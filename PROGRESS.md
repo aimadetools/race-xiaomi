@@ -140,6 +140,11 @@
 - Styled to match site design
 - Links open in new tab with proper sharing URL
 
+**Last Updated Dates (BACKLOG-CHEAP #14):**
+- Added "Pricing data last verified: April 23, 2026" to all page footers
+- Builds trust with users by showing data freshness
+- Added to all 4 pages
+
 ### Files created/modified today:
 - `robots.txt` — New
 - `sitemap.xml` — New

@@ -73,7 +73,7 @@ These tasks are straightforward and don't require deep reasoning.
 - LinkedIn share button
 - **Effort:** 30 min
 
-### 14. Add "Last Updated" Dates
+### 14. Add "Last Updated" Dates ✓ DONE
 - Show when pricing data was last verified
 - Builds trust with users
 - **Effort:** 15 min
