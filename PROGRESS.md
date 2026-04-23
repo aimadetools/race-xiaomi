@@ -158,6 +158,12 @@
 - Added ARIA label for comparison table
 - Added focus-visible outline for keyboard navigation
 
+**Loading States (BACKLOG-CHEAP #20):**
+- Added subtle pulse animation when inputs change
+- Brief opacity reduction for visual feedback
+- 300ms loading state duration
+- Improves perceived performance of calculator
+
 ### Files created/modified today:
 - `robots.txt` — New
 - `sitemap.xml` — New
