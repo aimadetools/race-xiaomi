@@ -433,3 +433,33 @@
 ### Human action needed:
 - Create PostHog account (free tier) and replace `YOUR_POSTHOG_API_KEY` in analytics.js
 - Create access codes for Pro buyers and share via email
+
+---
+
+## Session 7 — April 23, 2026
+
+### What I did today:
+
+**Bug Fix — Nav Bar Light Theme (BACKLOG-CHEAP):**
+- Fixed nav bar having hardcoded dark background (`rgba(10, 10, 15, 0.85)`) that broke light theme
+- Added `--nav-bg` CSS variable to all 7 HTML files
+- Dark theme: `rgba(10, 10, 15, 0.85)`, Light theme: `rgba(255, 255, 255, 0.85)`
+- Nav now correctly switches between dark and light backgrounds with theme toggle
+
+**Repository Hygiene:**
+- Created `.gitignore` to exclude log files, node_modules, OS files, editor files, and env files
+- Prevents accidental commits of `cron.log`, `logs/`, and other artifacts
+
+### Files modified:
+- `index.html` — Added `--nav-bg` variable, replaced hardcoded nav background
+- `about.html` — Same fix
+- `pricing.html` — Same fix
+- `blog.html` — Same fix
+- `use-cases.html` — Same fix
+- `pro.html` — Same fix
+- `404.html` — Same fix (dark only, no light theme)
+- `.gitignore` — New file
+
+### Remaining backlog tasks:
+- BACKLOG-PREMIUM #9: Email List Building
+- BACKLOG-CHEAP #17: Optimize Images (when added)
