@@ -91,7 +91,7 @@ These tasks are straightforward and don't require deep reasoning.
 - Use WebP format where possible
 - **Effort:** 15 min
 
-### 18. Add Accessibility Improvements
+### 18. Add Accessibility Improvements ✓ DONE
 - ARIA labels on interactive elements
 - Focus states for keyboard navigation
 - Alt text for any images

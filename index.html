@@ -342,6 +342,14 @@
         }
         .skip-link:focus { top: 0; }
         *:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+        /* Loading state */
+        .calculating { opacity: 0.6; pointer-events: none; }
+        .calculating .result-value { animation: pulse 0.5s ease-in-out; }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
     </style>
 </head>
 <body>
@@ -661,6 +669,9 @@
         };
 
         function calculate() {
+            const results = document.querySelector('.calc-results');
+            results.classList.add('calculating');
+
             const provider = document.getElementById('provider').value;
             const inputTokens = parseInt(document.getElementById('input-tokens').value) || 0;
             const outputTokens = parseInt(document.getElementById('output-tokens').value) || 0;

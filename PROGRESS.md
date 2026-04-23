@@ -151,6 +151,13 @@
 - Optimizes typography for print readability
 - Black text on white background for clean printing
 
+**Accessibility (BACKLOG-CHEAP #18):**
+- Added skip navigation link for keyboard users
+- Added ARIA labels to calculator form elements
+- Added ARIA live region for calculation results
+- Added ARIA label for comparison table
+- Added focus-visible outline for keyboard navigation
+
 ### Files created/modified today:
 - `robots.txt` — New
 - `sitemap.xml` — New
