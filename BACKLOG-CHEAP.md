@@ -197,7 +197,7 @@ These tasks are straightforward and don't require deep reasoning.
 - Improves SEO crawlability and user engagement
 - **Effort:** 20 min
 
-### 36. Add Blog Post: "LLM API Pricing Cheat Sheet: Every Model, Every Provider"
+### 36. Add Blog Post: "LLM API Pricing Cheat Sheet: Every Model, Every Provider" ✓ DONE
 - Reference-style post with complete pricing tables
 - Targets "LLM pricing" and "AI API pricing" keywords
 - **Effort:** 1 hour

@@ -786,3 +786,38 @@
 ### Remaining items:
 - BACKLOG-CHEAP #34: Extract shared CSS (skipped — marginal benefit for static site)
 - Human action needed: PostHog API key, Pro access codes, email alias
+
+---
+
+## Session 16 — April 23, 2026
+
+### What I did today:
+
+**Blog Content — Pricing Reference (BACKLOG-CHEAP #36):**
+- Wrote "LLM API Pricing Cheat Sheet: Every Model, Every Provider (April 2026)"
+  - Complete pricing table for all 13 models across 7 providers
+  - Input/output costs per 1M tokens, context windows, tier labels
+  - Cheapest models ranked by tier (budget and premium)
+  - 3 real-world cost examples: chatbot, code generation, document analysis
+  - Context window comparison table (32K to 1M)
+  - Quick decision guide with recommendations by use case
+  - Article schema (JSON-LD) added
+  - Social sharing button added
+
+**Internal Linking:**
+- Added "LLM API Pricing Cheat Sheet" to Related Reading in 2 articles:
+  - "How to Reduce Your AI API Costs by 40%"
+  - "The Cheapest LLM APIs in 2026: A Complete Ranking"
+- Added Related Reading section to "Cheapest LLM" article (was missing)
+
+### Files modified:
+- `blog.html` — Added blog post card, full article, Article schema, 2 Related Reading updates
+
+### Key metrics:
+- Blog posts: 14 (added LLM API Pricing Cheat Sheet)
+- Articles with structured data: 14/14
+- Articles with internal links: 7/14
+
+### Remaining items:
+- BACKLOG-CHEAP #34: Extract shared CSS (skipped — marginal benefit for static site)
+- Human action needed: PostHog API key, Pro access codes, email alias
