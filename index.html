@@ -809,18 +809,44 @@
         });
 
         // Email capture
-        function saveEmail(e) {
+        async function saveEmail(e) {
             e.preventDefault();
             const email = document.getElementById('email-input').value;
-            const emails = JSON.parse(localStorage.getItem('apipulse_emails') || '[]');
-            if (!emails.includes(email)) {
-                emails.push(email);
-                localStorage.setItem('apipulse_emails', JSON.stringify(emails));
+            const msgEl = document.getElementById('email-msg');
+            const btn = e.target.querySelector('button[type="submit"]');
+
+            btn.disabled = true;
+            btn.textContent = 'Subscribing...';
+
+            try {
+                const res = await fetch('/api/subscribe', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ email })
+                });
+                const data = await res.json();
+
+                msgEl.textContent = data.message || 'Thanks! You\'ll be notified of pricing changes.';
+                msgEl.style.color = 'var(--green)';
+                msgEl.style.display = 'block';
+                document.getElementById('email-input').value = '';
+                if (window.trackEvent) window.trackEvent('email_signup');
+            } catch (err) {
+                // Fallback to localStorage if API unavailable
+                const emails = JSON.parse(localStorage.getItem('apipulse_emails') || '[]');
+                if (!emails.includes(email)) {
+                    emails.push(email);
+                    localStorage.setItem('apipulse_emails', JSON.stringify(emails));
+                }
+                msgEl.textContent = 'Thanks! You\'ll be notified of pricing changes.';
+                msgEl.style.color = 'var(--green)';
+                msgEl.style.display = 'block';
+                document.getElementById('email-input').value = '';
+                if (window.trackEvent) window.trackEvent('email_signup');
+            } finally {
+                btn.disabled = false;
+                btn.textContent = 'Subscribe';
             }
-            document.getElementById('email-msg').textContent = 'Thanks! You\'ll be notified of pricing changes.';
-            document.getElementById('email-msg').style.display = 'block';
-            document.getElementById('email-input').value = '';
-            if (window.trackEvent) window.trackEvent('email_signup');
         }
 
         // Theme toggle

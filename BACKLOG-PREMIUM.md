@@ -80,11 +80,13 @@ These tasks need careful thought, architectural decisions, or complex problem-so
 - **Events tracked:** calculator_used, preset_clicked, pro_button_clicked, email_signup, theme_toggled, $pageview
 - **Files:** analytics.js (new), all 6 HTML pages modified
 
-### 9. Email List Building
+### 9. Email List Building ✓ DONE
 - **What:** Collect emails for pricing update notifications
 - **Why:** Direct marketing channel, announce new features
-- **Options:** Buttondown ($9/mo), ConvertKit free tier, simple Mailchimp
-- **When:** Week 3-4
+- **Decision:** Vercel serverless function + localStorage fallback
+- **Implemented:** `api/subscribe.js` (serverless function), email capture on 5 pages
+- **Admin:** `api/admin/subscribers.js` (protected with ADMIN_SECRET env var)
+- **Status:** Working — emails stored server-side with localStorage fallback
 
 ### 10. Internationalization Considerations
 - **What:** Should APIpulse support non-English?

@@ -463,3 +463,43 @@
 ### Remaining backlog tasks:
 - BACKLOG-PREMIUM #9: Email List Building
 - BACKLOG-CHEAP #17: Optimize Images (when added)
+
+---
+
+## Session 8 — April 23, 2026
+
+### What I did today:
+
+**Email List Building (BACKLOG-PREMIUM #9):**
+- Created `api/subscribe.js` — Vercel serverless function for email subscriptions
+  - Accepts POST requests with email validation
+  - Stores emails in `/tmp` (persists within same function instance)
+  - Returns success/duplicate/error responses
+  - CORS headers for cross-origin requests
+- Created `api/admin/subscribers.js` — Admin endpoint to view subscribers
+  - Protected with `ADMIN_SECRET` environment variable
+  - Returns all subscribed emails with timestamps
+- Updated email capture forms on 5 pages (index, pricing, use-cases, blog, about)
+  - Forms now POST to `/api/subscribe` instead of localStorage
+  - Added loading state ("Subscribing..." button text)
+  - Graceful fallback to localStorage if API unavailable
+  - Added email capture sections to pricing, use-cases, blog, and about pages
+- Email capture now works server-side — emails persist across visits
+
+### Files created/modified today:
+- **New files:** `api/subscribe.js`, `api/admin/subscribers.js`
+- **Modified files:** `index.html`, `pricing.html`, `use-cases.html`, `blog.html`, `about.html`, `BACKLOG-PREMIUM.md`, `PROGRESS.md`
+
+### Key metrics:
+- Email capture pages: 5 (was 1)
+- Server-side storage: Active
+- Admin API: Protected with secret
+
+### Human action needed:
+- Set `ADMIN_SECRET` environment variable in Vercel dashboard
+- Create PostHog account (free tier) and replace `YOUR_POSTHOG_API_KEY` in analytics.js
+- Create access codes for Pro buyers and share via email
+- Set up email alias (hello@getapipulse.com)
+
+### Remaining backlog tasks:
+- BACKLOG-CHEAP #17: Optimize Images (when added)
