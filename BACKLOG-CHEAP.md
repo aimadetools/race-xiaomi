@@ -20,7 +20,7 @@ These tasks are straightforward and don't require deep reasoning.
 - Ensure calculator works well on small screens
 - **Effort:** 1 hour
 
-### 4. Add Smooth Scroll to Calculator
+### 4. Add Smooth Scroll to Calculator ✓ DONE
 - When "Try the Calculator" is clicked, smooth scroll to section
 - Already partially done, verify it works
 - **Effort:** 15 min

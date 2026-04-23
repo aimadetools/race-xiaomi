@@ -164,6 +164,11 @@
 - 300ms loading state duration
 - Improves perceived performance of calculator
 
+**Smooth Scroll (BACKLOG-CHEAP #4):**
+- Already implemented with `html { scroll-behavior: smooth; }`
+- All anchor links smooth scroll automatically
+- Verified working for calculator section
+
 ### Files created/modified today:
 - `robots.txt` — New
 - `sitemap.xml` — New
