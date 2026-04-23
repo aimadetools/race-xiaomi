@@ -25,7 +25,7 @@ These tasks are straightforward and don't require deep reasoning.
 - Already partially done, verify it works
 - **Effort:** 15 min
 
-### 5. Add Footer to All Pages
+### 5. Add Footer to All Pages ✓ DONE
 - Ensure consistent footer across all pages
 - Include copyright, links, social
 - **Effort:** 30 min
