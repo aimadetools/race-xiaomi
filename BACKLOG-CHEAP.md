@@ -68,7 +68,7 @@ These tasks are straightforward and don't require deep reasoning.
 
 ## Priority: Low
 
-### 13. Add Social Sharing Buttons
+### 13. Add Social Sharing Buttons ✓ DONE
 - Twitter/X share button on blog posts
 - LinkedIn share button
 - **Effort:** 30 min

@@ -134,6 +134,12 @@
 - Persists theme preference in localStorage
 - Smooth transition between themes
 
+**Social Sharing (BACKLOG-CHEAP #13):**
+- Added Twitter/X share buttons to all 5 blog articles
+- Pre-filled tweet text with article title
+- Styled to match site design
+- Links open in new tab with proper sharing URL
+
 ### Files created/modified today:
 - `robots.txt` — New
 - `sitemap.xml` — New
