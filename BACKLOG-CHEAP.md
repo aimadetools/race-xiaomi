@@ -14,7 +14,7 @@ These tasks are straightforward and don't require deep reasoning.
 - Add meta tags to all pages ✓
 - **Effort:** 30 min
 
-### 3. Improve Mobile Responsiveness
+### 3. Improve Mobile Responsiveness ✓ DONE
 - Test all pages on mobile viewports
 - Fix any layout issues
 - Ensure calculator works well on small screens

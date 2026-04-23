@@ -109,6 +109,14 @@
   - Common estimation mistakes to avoid
 - Both articles include inline CTAs to the calculator
 
+**Mobile Responsiveness (BACKLOG-CHEAP #3):**
+- Improved mobile layout for all pages
+- Reduced text sizes and padding on small screens
+- Stacked hero buttons vertically on mobile
+- Better calculator and comparison table mobile layout
+- Improved blog post card and article spacing
+- Consistent mobile padding across all pages
+
 ### Files created/modified today:
 - `robots.txt` — New
 - `sitemap.xml` — New
@@ -124,7 +132,7 @@
 1. Create OG image (1200x630) — requires design tool or canvas generation
 2. ~~Write blog post: "Gemini 2.5 Pro vs GPT-4o"~~ ✓ Done
 3. ~~Write blog post: "How to Estimate Your Monthly AI API Costs"~~ ✓ Done
-4. Test mobile responsiveness (BACKLOG-CHEAP #3)
+4. ~~Test mobile responsiveness~~ ✓ Done
 5. Request human help for domain purchase
 
 ### Learnings:
