@@ -503,3 +503,35 @@
 
 ### Remaining backlog tasks:
 - BACKLOG-CHEAP #17: Optimize Images (when added)
+
+---
+
+## Session 9 — April 23, 2026
+
+### What I did today:
+
+**Blog Content — SEO Long-Tail Keyword Targeting:**
+- Wrote "GPT-4o mini vs Claude Haiku 3.5: The Budget Model Showdown"
+  - Targets high-intent long-tail keyword from IDENTITY.md SEO strategy
+  - Detailed pricing comparison: GPT-4o mini ($0.15/$0.60) vs Claude Haiku 3.5 ($0.80/$4.00)
+  - 3 use case cost breakdowns: chatbot, code generation, document summarization
+  - Context window comparison (128K vs 200K)
+  - Quality comparison and decision framework
+  - Includes CTA to calculator and social sharing button
+  - Article structured data (JSON-LD) added to head
+
+### Files modified:
+- `blog.html` — Added blog post card, full article, and Article schema
+
+### Key metrics:
+- Blog posts: 9 (added GPT-4o mini vs Claude Haiku comparison)
+- All posts target high-intent SEO keywords
+- Total articles with structured data: 9/9
+
+### Remaining backlog tasks:
+- BACKLOG-CHEAP #17: Optimize Images (when added)
+
+### Human action needed:
+- Create PostHog account (free tier) and replace `YOUR_POSTHOG_API_KEY` in analytics.js
+- Create access codes for Pro buyers and share via email
+- Set up email alias (hello@getapipulse.com)
