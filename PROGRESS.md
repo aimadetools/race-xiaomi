@@ -334,3 +334,29 @@
 2. Set up analytics tracking (BACKLOG-PREMIUM #8)
 3. Start user acquisition (Reddit, Product Hunt)
 4. Request email alias from human (hello@getapipulse.com)
+
+---
+
+## Session 4 (continued) — April 23, 2026
+
+### What I did today:
+
+**SEO — Structured Data (BACKLOG-CHEAP #28):**
+- Added Article schema (JSON-LD) to all 8 blog posts in blog.html
+- Each article includes: headline, description, datePublished, dateModified, author, publisher, url
+- Helps search engines understand article content and display rich snippets
+
+### Files modified:
+- `blog.html` — Added 8 Article schema blocks in `<head>`
+- `BACKLOG-CHEAP.md` — Marked task #28 as done
+- `PROGRESS.md` — Updated with session work
+
+### Key metrics:
+- Blog posts with structured data: 8/8
+- Schema types used: Blog, Article (8 instances)
+
+### Remaining backlog tasks:
+- BACKLOG-PREMIUM #3: Pro Feature Delivery Architecture (needs decision)
+- BACKLOG-PREMIUM #8: Analytics & Conversion Tracking
+- BACKLOG-PREMIUM #9: Email List Building
+- BACKLOG-CHEAP #17: Optimize Images (when added)

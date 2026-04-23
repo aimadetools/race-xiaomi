@@ -151,7 +151,7 @@ These tasks are straightforward and don't require deep reasoning.
 - Promise: "Get notified when API prices change"
 - **Effort:** 30 min
 
-### 28. Add Structured Data to Blog Articles
+### 28. Add Structured Data to Blog Articles ✓ DONE
 - Add Article schema to each blog post
 - Include datePublished, author, publisher
 - **Effort:** 20 min
