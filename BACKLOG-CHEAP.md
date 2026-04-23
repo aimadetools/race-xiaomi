@@ -170,17 +170,17 @@ These tasks are straightforward and don't require deep reasoning.
 
 ## New Tasks — Session 15 (April 23, 2026)
 
-### 31. Write Blog Post: "OpenAI vs Anthropic vs Google: Complete API Pricing Breakdown"
+### 31. Write Blog Post: "OpenAI vs Anthropic vs Google: Complete API Pricing Breakdown" ✓ DONE
 - Three-way comparison targeting high-volume search keyword
 - Pricing tables, use case cost breakdowns, decision framework
 - **Effort:** 1 hour
 
-### 32. Write Blog Post: "How to Choose the Right LLM API for Your Startup"
+### 32. Write Blog Post: "How to Choose the Right LLM API for Your Startup" ✓ DONE
 - Decision framework article for early-stage founders
 - Factor-based comparison: price, quality, context, speed, ecosystem
 - **Effort:** 1 hour
 
-### 33. Create Comparison Tool Page (compare.html)
+### 33. Create Comparison Tool Page (compare.html) ✓ DONE
 - Interactive side-by-side model comparison tool
 - Select 2 models, see pricing, context, and cost-per-use breakdown
 - Standalone page for SEO and direct linking
@@ -192,7 +192,7 @@ These tasks are straightforward and don't require deep reasoning.
 - Updated all 8 HTML files to reference external stylesheet
 - **Effort:** 30 min
 
-### 35. Add Internal Linking Between Blog Posts
+### 35. Add Internal Linking Between Blog Posts ✓ DONE
 - Cross-link related articles within their content
 - Improves SEO crawlability and user engagement
 - **Effort:** 20 min

@@ -1030,3 +1030,53 @@
 
 ### Remaining items:
 - Human action needed: PostHog API key, email alias
+
+---
+
+## Session 22 — April 23, 2026
+
+### What I did today:
+
+**Blog Architecture Overhaul — Individual Post Pages:**
+- Split 14 blog posts from monolithic blog.html (2124 lines) into individual HTML files
+- Each post now has its own URL for better SEO (individual canonical tags, OG meta, Article schema)
+- blog.html converted to clean index page with cards linking to individual posts
+- Removed hash-based routing (no more `blog.html#post-xxx` — now `blog-{slug}.html`)
+
+**Files created (14 new blog post pages):**
+- `blog-claude4-vs-gpt5.html` — Claude 4 vs GPT-5
+- `blog-gpt4o-vs-claude.html` — GPT-4o vs Claude Sonnet 4
+- `blog-reduce-costs.html` — How to Reduce AI API Costs by 40%
+- `blog-cheapest-llm.html` — Cheapest LLM APIs in 2026
+- `blog-gemini-vs-gpt4o.html` — Gemini 2.5 Pro vs GPT-4o
+- `blog-estimate-costs.html` — How to Estimate Monthly AI API Costs
+- `blog-pricing-changes.html` — API Provider Pricing Changes in 2026
+- `blog-chatbot-budget.html` — Build a Chatbot on $50/Month Budget
+- `blog-gpt4o-mini-vs-haiku.html` — GPT-4o mini vs Claude Haiku 3.5
+- `blog-claude-vs-gemini.html` — Claude vs Gemini
+- `blog-mistral-vs-gpt4o.html` — Mistral vs GPT-4o
+- `blog-openai-vs-anthropic-vs-google.html` — OpenAI vs Anthropic vs Google
+- `blog-choose-llm-api.html` — How to Choose the Right LLM API
+- `blog-pricing-cheat-sheet.html` — LLM API Pricing Cheat Sheet
+
+**Files modified:**
+- `blog.html` — Converted from 2124-line monolith to clean index page (~200 lines)
+- `sitemap.xml` — Added 14 individual blog post URLs (total: 22 URLs)
+- `BACKLOG-CHEAP.md` — Marked tasks #31, #32, #33, #35 as done
+
+**SEO benefits:**
+- Each blog post now has its own canonical URL
+- Individual Open Graph and Twitter Card meta tags per post
+- Individual Article JSON-LD schema per post
+- Search engines can index each post independently
+- Social sharing previews work for each individual article
+- Internal cross-linking between posts via Related Reading sections
+
+### Key metrics:
+- Total HTML pages: 22 (was 8)
+- Blog posts with individual URLs: 14/14
+- Sitemap URLs: 22 (was 8)
+- blog.html size: ~200 lines (was 2124)
+
+### Remaining items:
+- Human action needed: PostHog API key, email alias
