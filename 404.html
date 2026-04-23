@@ -5,6 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Page Not Found — APIpulse</title>
     <meta name="description" content="The page you're looking for doesn't exist. Head back to APIpulse to compare AI API pricing.">
+    <meta property="og:title" content="Page Not Found — APIpulse">
+    <meta property="og:description" content="The page you're looking for doesn't exist. Head back to APIpulse to compare AI API pricing.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://getapipulse.com/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://getapipulse.com/og-image.png">
+    <link rel="canonical" href="https://getapipulse.com/404.html">
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <script src="analytics.js" defer></script>
     <style>
@@ -19,6 +26,16 @@
             --accent-hover: #818cf8;
             --border: #2a2a3e;
             --nav-bg: rgba(10, 10, 15, 0.85);
+        }
+        [data-theme="light"] {
+            --bg-primary: #ffffff;
+            --bg-secondary: #f8f9fa;
+            --bg-card: #f0f0f5;
+            --text-primary: #1a1a2e;
+            --text-secondary: #555568;
+            --text-muted: #888898;
+            --border: #e0e0e8;
+            --nav-bg: rgba(255, 255, 255, 0.85);
         }
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
         body {
@@ -56,6 +73,12 @@
             border-radius: 8px; font-size: 14px; font-weight: 600;
         }
         .nav-cta:hover { background: var(--accent-hover); }
+        .theme-toggle {
+            background: none; border: none; cursor: pointer;
+            font-size: 18px; padding: 4px; border-radius: 6px;
+            transition: background 0.2s;
+        }
+        .theme-toggle:hover { background: var(--bg-card); }
         .error-page {
             flex: 1;
             display: flex;
@@ -105,9 +128,11 @@
             <div class="nav-links">
                 <a href="/#calculator">Calculator</a>
                 <a href="/#pricing">Pricing</a>
+                <a href="/use-cases.html">Use Cases</a>
                 <a href="/about.html">About</a>
                 <a href="/blog.html">Blog</a>
                 <a href="/#pricing" class="nav-cta" onclick="if(window.trackEvent)window.trackEvent('pro_button_clicked',{source:'nav'})">Get Pro — $29</a>
+                <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
             </div>
         </div>
     </nav>
@@ -120,7 +145,27 @@
     </main>
 
     <footer>
-        <p>&copy; 2026 APIpulse. Built for developers, by developers. <a href="/about.html">About</a> &middot; <a href="/blog.html">Blog</a></p>
+        <p>&copy; 2026 APIpulse. Built for developers, by developers. <a href="/">Home</a> &middot; <a href="/use-cases.html">Use Cases</a> &middot; <a href="/about.html">About</a> &middot; <a href="/blog.html">Blog</a> &middot; <a href="/#pricing">Pricing</a></p>
     </footer>
+
+    <script>
+        // Theme toggle
+        function toggleTheme() {
+            const body = document.body;
+            const isDark = body.getAttribute('data-theme') !== 'light';
+            body.setAttribute('data-theme', isDark ? 'light' : 'dark');
+            localStorage.setItem('apipulse_theme', isDark ? 'light' : 'dark');
+            document.querySelector('.theme-toggle').textContent = isDark ? '☀️' : '🌙';
+        }
+        // Load saved theme
+        (function() {
+            const saved = localStorage.getItem('apipulse_theme');
+            if (saved === 'light') {
+                document.body.setAttribute('data-theme', 'light');
+                const btn = document.querySelector('.theme-toggle');
+                if (btn) btn.textContent = '☀️';
+            }
+        })();
+    </script>
 </body>
 </html>
