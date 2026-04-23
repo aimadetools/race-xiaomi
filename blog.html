@@ -291,6 +291,24 @@
         .back-to-top.visible { opacity: 1; pointer-events: auto; }
         .back-to-top:hover { transform: translateY(-2px); }
 
+        .cost-example {
+            background: var(--bg-secondary); border: 1px solid var(--border);
+            border-radius: 10px; padding: 20px; margin: 20px 0;
+        }
+        .cost-example .label {
+            font-size: 13px; color: var(--text-muted); text-transform: uppercase;
+            letter-spacing: 0.5px; margin-bottom: 12px; font-weight: 600;
+        }
+        .cost-example .cost-row {
+            display: flex; justify-content: space-between; padding: 8px 0;
+            border-bottom: 1px solid var(--border); font-size: 14px;
+        }
+        .cost-example .cost-row:last-child { border-bottom: none; }
+        .cost-example .cost-row .name { color: var(--text-secondary); }
+        .cost-example .cost-row .value { color: var(--text-primary); font-weight: 600; font-variant-numeric: tabular-nums; }
+        .cost-example .cost-total { border-top: 2px solid var(--accent); border-bottom: none; padding-top: 12px; margin-top: 4px; }
+        .cost-example .cost-total .name { color: var(--text-primary); font-weight: 600; }
+
         footer {
             padding: 40px 24px; border-top: 1px solid var(--border);
             text-align: center; color: var(--text-muted); font-size: 13px;
@@ -817,7 +835,7 @@
         <p>The market has expanded with new players:</p>
         <ul>
             <li><strong>Cohere Command R+:</strong> $2.50 input / $10.00 output — competitive with GPT-4o</li>
-            <li><strong>Meta Llama 3.1 70B:</strong> $0.88 input / $0.88 output — excellent for self-hosted users</li>
+            <li><strong>Meta Llama 3.1 70B (via Together.ai):</strong> $0.88 input / $0.88 output — excellent value for open-weight models</li>
             <li><strong>AI21 Jamba 1.5 Large:</strong> $2.00 input / $8.00 output — strong for long context</li>
         </ul>
         <p>These providers are forcing the incumbents to compete on price and features.</p>

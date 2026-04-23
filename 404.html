@@ -145,27 +145,29 @@
     </main>
 
     <footer>
-        <p>&copy; 2026 APIpulse. Built for developers, by developers. <a href="/">Home</a> &middot; <a href="/use-cases.html">Use Cases</a> &middot; <a href="/about.html">About</a> &middot; <a href="/blog.html">Blog</a> &middot; <a href="/#pricing">Pricing</a></p>
+        <p>Pricing data last verified: April 23, 2026</p>
+        <p>&copy; 2026 APIpulse. <a href="index.html">Home</a> &middot; <a href="use-cases.html">Use Cases</a> &middot; <a href="about.html">About</a> &middot; <a href="blog.html">Blog</a> &middot; <a href="index.html#pricing">Pricing</a></p>
     </footer>
 
     <script>
         // Theme toggle
         function toggleTheme() {
-            const body = document.body;
-            const isDark = body.getAttribute('data-theme') !== 'light';
-            body.setAttribute('data-theme', isDark ? 'light' : 'dark');
-            localStorage.setItem('apipulse_theme', isDark ? 'light' : 'dark');
-            document.querySelector('.theme-toggle').textContent = isDark ? '☀️' : '🌙';
+            const html = document.documentElement;
+            const currentTheme = html.getAttribute('data-theme');
+            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+            html.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            updateThemeIcon();
+        }
+        function updateThemeIcon() {
+            const theme = document.documentElement.getAttribute('data-theme');
+            const icon = document.querySelector('.theme-toggle');
+            if (icon) icon.textContent = theme === 'light' ? '☀️' : '🌙';
         }
         // Load saved theme
-        (function() {
-            const saved = localStorage.getItem('apipulse_theme');
-            if (saved === 'light') {
-                document.body.setAttribute('data-theme', 'light');
-                const btn = document.querySelector('.theme-toggle');
-                if (btn) btn.textContent = '☀️';
-            }
-        })();
+        const savedTheme = localStorage.getItem('theme') || 'dark';
+        document.documentElement.setAttribute('data-theme', savedTheme);
+        updateThemeIcon();
     </script>
 </body>
 </html>
