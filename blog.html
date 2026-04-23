@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog — APIpulse</title>
+    <meta name="description" content="Guides, comparisons, and insights on AI API pricing. Learn how to optimize your LLM costs.">
+    <style>
+        :root {
+            --bg-primary: #0a0a0f; --bg-secondary: #12121a; --bg-card: #1a1a2e;
+            --text-primary: #e8e8ed; --text-secondary: #9494a8; --text-muted: #6b6b80;
+            --accent: #6366f1; --accent-hover: #818cf8; --accent-glow: rgba(99, 102, 241, 0.15);
+            --border: #2a2a3e; --max-width: 800px;
+        }
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--bg-primary); color: var(--text-primary); line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+        a { color: var(--accent); text-decoration: none; }
+        a:hover { color: var(--accent-hover); }
+        nav {
+            position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+            background: rgba(10, 10, 15, 0.85); backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border); padding: 0 24px;
+        }
+        .nav-inner {
+            max-width: 1200px; margin: 0 auto;
+            display: flex; align-items: center; justify-content: space-between; height: 64px;
+        }
+        .logo { font-size: 20px; font-weight: 700; }
+        .logo span { color: var(--accent); }
+        .nav-links { display: flex; gap: 32px; align-items: center; }
+        .nav-links a { color: var(--text-secondary); font-size: 14px; font-weight: 500; }
+        .nav-links a:hover { color: var(--text-primary); }
+        .nav-cta { background: var(--accent); color: white !important; padding: 8px 20px; border-radius: 8px; }
+
+        .content { max-width: var(--max-width); margin: 0 auto; padding: 120px 24px 80px; }
+        h1 { font-size: 40px; font-weight: 800; margin-bottom: 12px; }
+        .subtitle { color: var(--text-secondary); font-size: 18px; margin-bottom: 48px; }
+
+        .post-card {
+            background: var(--bg-secondary); border: 1px solid var(--border);
+            border-radius: 12px; padding: 28px; margin-bottom: 20px;
+            transition: border-color 0.2s, transform 0.2s;
+        }
+        .post-card:hover { border-color: var(--accent); transform: translateY(-2px); }
+        .post-meta {
+            display: flex; gap: 16px; align-items: center; margin-bottom: 12px;
+            font-size: 13px; color: var(--text-muted);
+        }
+        .post-tag {
+            background: var(--accent-glow); color: var(--accent);
+            padding: 2px 10px; border-radius: 6px; font-size: 12px; font-weight: 600;
+        }
+        .post-card h2 { font-size: 20px; font-weight: 700; margin-bottom: 8px; }
+        .post-card h2 a { color: var(--text-primary); }
+        .post-card h2 a:hover { color: var(--accent); }
+        .post-card p { color: var(--text-secondary); font-size: 15px; margin: 0; }
+        .post-card .read-more {
+            display: inline-block; margin-top: 12px; font-size: 14px; font-weight: 600;
+        }
+
+        /* Article styles */
+        .article { max-width: 700px; margin: 0 auto; }
+        .article h1 { font-size: 36px; margin-bottom: 16px; }
+        .article h2 { font-size: 24px; font-weight: 700; margin: 32px 0 16px; }
+        .article h3 { font-size: 18px; font-weight: 600; margin: 24px 0 12px; }
+        .article p { color: var(--text-secondary); margin-bottom: 16px; }
+        .article ul, .article ol { color: var(--text-secondary); padding-left: 24px; margin-bottom: 16px; }
+        .article li { margin-bottom: 8px; }
+        .article strong { color: var(--text-primary); }
+        .article code {
+            background: var(--bg-card); padding: 2px 8px; border-radius: 4px;
+            font-size: 14px; color: var(--accent);
+        }
+        .article blockquote {
+            border-left: 3px solid var(--accent); padding-left: 20px; margin: 20px 0;
+            color: var(--text-secondary); font-style: italic;
+        }
+        .back-link {
+            display: inline-flex; align-items: center; gap: 6px;
+            font-size: 14px; color: var(--text-secondary); margin-bottom: 32px;
+        }
+        .back-link:hover { color: var(--text-primary); }
+
+        .cta-inline {
+            background: var(--bg-secondary); border: 1px solid var(--accent);
+            border-radius: 12px; padding: 24px; margin: 32px 0; text-align: center;
+        }
+        .cta-inline p { margin-bottom: 12px; }
+        .btn-primary {
+            background: var(--accent); color: white; padding: 10px 24px;
+            border-radius: 8px; font-size: 14px; font-weight: 600;
+            border: none; cursor: pointer; display: inline-block;
+        }
+        .btn-primary:hover { color: white; }
+
+        footer {
+            padding: 40px 24px; border-top: 1px solid var(--border);
+            text-align: center; color: var(--text-muted); font-size: 13px;
+        }
+        @media (max-width: 768px) { .nav-links { display: none; } }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-inner">
+            <a href="index.html" class="logo">API<span>pulse</span></a>
+            <div class="nav-links">
+                <a href="index.html#calculator">Calculator</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="about.html">About</a>
+                <a href="blog.html">Blog</a>
+                <a href="pricing.html" class="nav-cta">Get Pro — $29</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="content" id="blog-list">
+        <h1>Blog</h1>
+        <p class="subtitle">Guides, comparisons, and insights on AI API pricing.</p>
+
+        <div class="post-card">
+            <div class="post-meta">
+                <span class="post-tag">Comparison</span>
+                <span>April 23, 2026</span>
+            </div>
+            <h2><a href="#post-gpt4-vs-claude">GPT-4o vs Claude Sonnet 4: Which is Cheaper for Your Use Case?</a></h2>
+            <p>A detailed cost comparison between OpenAI's GPT-4o and Anthropic's Claude Sonnet 4 across common use cases — chatbots, code generation, and document analysis.</p>
+            <a href="#post-gpt4-vs-claude" class="read-more">Read more →</a>
+        </div>
+
+        <div class="post-card">
+            <div class="post-meta">
+                <span class="post-tag">Guide</span>
+                <span>April 23, 2026</span>
+            </div>
+            <h2><a href="#post-reduce-costs">How to Reduce Your AI API Costs by 40% (Without Losing Quality)</a></h2>
+            <p>Practical strategies for cutting LLM API costs: model selection, prompt optimization, caching, batching, and smart routing.</p>
+            <a href="#post-reduce-costs" class="read-more">Read more →</a>
+        </div>
+
+        <div class="post-card">
+            <div class="post-meta">
+                <span class="post-tag">Analysis</span>
+                <span>April 23, 2026</span>
+            </div>
+            <h2><a href="#post-cheapest-llm">The Cheapest LLM APIs in 2026: A Complete Ranking</a></h2>
+            <p>We rank every major LLM API provider by cost per quality. Find the best value for your specific workload.</p>
+            <a href="#post-cheapest-llm" class="read-more">Read more →</a>
+        </div>
+    </div>
+
+    <!-- Article: GPT-4o vs Claude -->
+    <div class="content article" id="post-gpt4-vs-claude" style="display:none;">
+        <a href="blog.html" class="back-link">← Back to blog</a>
+        <div class="post-meta" style="margin-bottom: 24px;">
+            <span class="post-tag">Comparison</span>
+            <span>April 23, 2026</span>
+        </div>
+        <h1>GPT-4o vs Claude Sonnet 4: Which is Cheaper for Your Use Case?</h1>
+
+        <p>Choosing between OpenAI's GPT-4o and Anthropic's Claude Sonnet 4 isn't just about quality — it's about cost. Let's break down the pricing for common use cases.</p>
+
+        <h2>The Pricing</h2>
+        <p>As of April 2026:</p>
+        <ul>
+            <li><strong>GPT-4o:</strong> $2.50 per 1M input tokens, $10.00 per 1M output tokens</li>
+            <li><strong>Claude Sonnet 4:</strong> $3.00 per 1M input tokens, $15.00 per 1M output tokens</li>
+        </ul>
+        <p>At first glance, GPT-4o is cheaper on both input and output. But the real picture depends on your usage pattern.</p>
+
+        <h2>Use Case 1: Chatbot (Short Q&A)</h2>
+        <p>For a typical customer support chatbot with ~500 input tokens and ~200 output tokens per request:</p>
+        <ul>
+            <li><strong>GPT-4o:</strong> $0.00135 per request</li>
+            <li><strong>Claude Sonnet 4:</strong> $0.00180 per request</li>
+        </ul>
+        <p>At 10,000 requests/day, GPT-4o costs <strong>$405/month</strong> vs Claude's <strong>$540/month</strong>. GPT-4o wins by 25%.</p>
+
+        <h2>Use Case 2: Code Generation (Long Output)</h2>
+        <p>For code generation with ~1,000 input tokens and ~2,000 output tokens:</p>
+        <ul>
+            <li><strong>GPT-4o:</strong> $0.0225 per request</li>
+            <li><strong>Claude Sonnet 4:</strong> $0.0330 per request</li>
+        </ul>
+        <p>Claude is 47% more expensive for code generation. However, if Claude produces better code with fewer retries, the effective cost gap narrows.</p>
+
+        <h2>Use Case 3: Document Analysis (Long Input)</h2>
+        <p>For analyzing long documents with ~10,000 input tokens and ~500 output tokens:</p>
+        <ul>
+            <li><strong>GPT-4o:</strong> $0.03 per request</li>
+            <li><strong>Claude Sonnet 4:</strong> $0.0375 per request</li>
+        </ul>
+        <p>Claude is 25% more expensive, but its 200K context window (vs GPT-4o's 128K) means you can analyze longer documents without chunking.</p>
+
+        <h2>The Verdict</h2>
+        <blockquote>GPT-4o is cheaper for most use cases, but Claude's larger context window and potentially higher quality can offset the cost difference.</blockquote>
+        <p>Use our <a href="index.html#calculator">cost calculator</a> to model your specific usage and find the cheapest provider.</p>
+
+        <div class="cta-inline">
+            <p><strong>Want to compare costs for your exact usage?</strong></p>
+            <a href="index.html#calculator" class="btn-primary">Try the APIpulse Calculator</a>
+        </div>
+    </div>
+
+    <!-- Article: Reduce Costs -->
+    <div class="content article" id="post-reduce-costs" style="display:none;">
+        <a href="blog.html" class="back-link">← Back to blog</a>
+        <div class="post-meta" style="margin-bottom: 24px;">
+            <span class="post-tag">Guide</span>
+            <span>April 23, 2026</span>
+        </div>
+        <h1>How to Reduce Your AI API Costs by 40% (Without Losing Quality)</h1>
+
+        <p>AI API costs can add up fast. Here are proven strategies to cut your spending without sacrificing output quality.</p>
+
+        <h2>1. Choose the Right Model</h2>
+        <p>Not every task needs GPT-4o or Claude Sonnet. For simple classification, formatting, or extraction tasks, <strong>smaller models like GPT-4o mini or Claude Haiku</strong> can be 10-20x cheaper with comparable quality.</p>
+        <p>Rule of thumb: Start with the cheapest model. Only upgrade when quality issues appear.</p>
+
+        <h2>2. Optimize Your Prompts</h2>
+        <p>Shorter prompts = lower input costs. A few techniques:</p>
+        <ul>
+            <li>Remove unnecessary instructions</li>
+            <li>Use system messages efficiently</li>
+            <li>Compress context with summaries</li>
+            <li>Use few-shot examples sparingly</li>
+        </ul>
+        <p>Reducing prompt length by 30% saves 30% on input costs.</p>
+
+        <h2>3. Batch Similar Requests</h2>
+        <p>Instead of making 100 individual API calls, batch them into fewer calls with multiple items. Many providers offer batch APIs with <strong>50% discounts</strong>.</p>
+
+        <h2>4. Implement Caching</h2>
+        <p>If you're making similar requests repeatedly, cache the results. Even a simple in-memory cache can reduce API calls by 20-40%.</p>
+
+        <h2>5. Use Streaming Wisely</h2>
+        <p>Streaming improves user experience but doesn't save money. For non-interactive use cases (batch processing, background jobs), use non-streaming mode.</p>
+
+        <h2>6. Set Token Limits</h2>
+        <p>Always set <code>max_tokens</code> to prevent runaway outputs. A model generating 4,000 tokens when you only need 500 costs 8x more than necessary.</p>
+
+        <h2>7. Compare Providers Regularly</h2>
+        <p>Pricing changes frequently. What's cheapest today might not be cheapest next month. Use tools like <a href="index.html">APIpulse</a> to stay on top of pricing changes.</p>
+
+        <div class="cta-inline">
+            <p><strong>Calculate how much you could save.</strong></p>
+            <a href="index.html#calculator" class="btn-primary">Try the APIpulse Calculator</a>
+        </div>
+    </div>
+
+    <!-- Article: Cheapest LLM -->
+    <div class="content article" id="post-cheapest-llm" style="display:none;">
+        <a href="blog.html" class="back-link">← Back to blog</a>
+        <div class="post-meta" style="margin-bottom: 24px;">
+            <span class="post-tag">Analysis</span>
+            <span>April 23, 2026</span>
+        </div>
+        <h1>The Cheapest LLM APIs in 2026: A Complete Ranking</h1>
+
+        <p>We compared every major LLM API provider to find the best value. Here's the full ranking.</p>
+
+        <h2>By Raw Cost (cheapest first)</h2>
+        <h3>Budget Tier (under $1 per 1M tokens)</h3>
+        <ol>
+            <li><strong>Mistral Small:</strong> $0.10 in / $0.30 out — Cheapest option for simple tasks</li>
+            <li><strong>Gemini 2.0 Flash:</strong> $0.10 in / $0.40 out — Best budget option with large context</li>
+            <li><strong>GPT-4o mini:</strong> $0.15 in / $0.60 out — Best budget option from OpenAI</li>
+            <li><strong>Claude Haiku 3.5:</strong> $0.80 in / $4.00 out — Premium budget option</li>
+        </ol>
+
+        <h3>Premium Tier ($1+ per 1M tokens)</h3>
+        <ol>
+            <li><strong>Mistral Large:</strong> $2.00 in / $6.00 out — Best value premium</li>
+            <li><strong>GPT-4o:</strong> $2.50 in / $10.00 out — Most popular premium</li>
+            <li><strong>Gemini 2.5 Pro:</strong> $1.25 in / $10.00 out — Best for long context</li>
+            <li><strong>Claude Sonnet 4:</strong> $3.00 in / $15.00 out — Best for complex reasoning</li>
+        </ol>
+
+        <h2>By Value (quality per dollar)</h2>
+        <p>Raw cost isn't everything. A model that's 2x more expensive but produces 3x better output is actually cheaper per unit of quality.</p>
+        <blockquote>The cheapest API is the one that gets the job done correctly on the first try.</blockquote>
+        <p>For most production workloads, we recommend starting with <strong>GPT-4o mini</strong> or <strong>Gemini 2.0 Flash</strong> and upgrading only when needed.</p>
+
+        <h2>Context Window Considerations</h2>
+        <p>If you need to process long documents, <strong>Gemini 2.5 Pro</strong> (1M tokens) and <strong>Claude Sonnet 4</strong> (200K tokens) offer significantly larger context windows, potentially eliminating the need for chunking and summarization.</p>
+
+        <div class="cta-inline">
+            <p><strong>Find the cheapest provider for your usage.</strong></p>
+            <a href="index.html#calculator" class="btn-primary">Try the APIpulse Calculator</a>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 APIpulse. <a href="index.html">Home</a> &middot; <a href="about.html">About</a> &middot; <a href="pricing.html">Pricing</a></p>
+    </footer>
+
+    <script>
+        // Simple hash-based routing for blog posts
+        function showPost() {
+            const hash = window.location.hash;
+            const list = document.getElementById('blog-list');
+            const posts = document.querySelectorAll('.article');
+
+            if (hash && hash.startsWith('#post-')) {
+                list.style.display = 'none';
+                posts.forEach(p => p.style.display = 'none');
+                const target = document.querySelector(hash);
+                if (target) target.style.display = 'block';
+            } else {
+                list.style.display = 'block';
+                posts.forEach(p => p.style.display = 'none');
+            }
+        }
+        window.addEventListener('hashchange', showPost);
+        showPost();
+    </script>
+</body>
+</html>

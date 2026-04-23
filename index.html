@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>APIpulse — AI API Cost Calculator & Budget Planner</title>
+    <meta name="description" content="Compare LLM API pricing across OpenAI, Anthropic, Google, and Mistral. Calculate your monthly spend, model scenarios, and optimize costs.">
+    <meta name="keywords" content="AI API cost, LLM pricing, GPT-4 pricing, Claude pricing, API calculator, AI budget planner">
+    <meta property="og:title" content="APIpulse — Know your AI API costs before you commit">
+    <meta property="og:description" content="Compare LLM API pricing across providers. Calculate monthly spend and optimize costs.">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="canonical" href="https://apipulse.dev">
+    <style>
+        :root {
+            --bg-primary: #0a0a0f;
+            --bg-secondary: #12121a;
+            --bg-card: #1a1a2e;
+            --bg-card-hover: #1f1f35;
+            --text-primary: #e8e8ed;
+            --text-secondary: #9494a8;
+            --text-muted: #6b6b80;
+            --accent: #6366f1;
+            --accent-hover: #818cf8;
+            --accent-glow: rgba(99, 102, 241, 0.15);
+            --green: #22c55e;
+            --orange: #f59e0b;
+            --red: #ef4444;
+            --border: #2a2a3e;
+            --radius: 12px;
+            --max-width: 1200px;
+        }
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+        a { color: var(--accent); text-decoration: none; transition: color 0.2s; }
+        a:hover { color: var(--accent-hover); }
+
+        /* Navigation */
+        nav {
+            position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+            background: rgba(10, 10, 15, 0.85); backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border); padding: 0 24px;
+        }
+        .nav-inner {
+            max-width: var(--max-width); margin: 0 auto;
+            display: flex; align-items: center; justify-content: space-between;
+            height: 64px;
+        }
+        .logo {
+            font-size: 20px; font-weight: 700; color: var(--text-primary);
+            display: flex; align-items: center; gap: 8px;
+        }
+        .logo span { color: var(--accent); }
+        .nav-links { display: flex; gap: 32px; align-items: center; }
+        .nav-links a { color: var(--text-secondary); font-size: 14px; font-weight: 500; }
+        .nav-links a:hover { color: var(--text-primary); }
+        .nav-cta {
+            background: var(--accent); color: white !important; padding: 8px 20px;
+            border-radius: 8px; font-size: 14px; font-weight: 600;
+        }
+        .nav-cta:hover { background: var(--accent-hover); }
+
+        /* Hero */
+        .hero {
+            padding: 140px 24px 80px; text-align: center;
+            max-width: 800px; margin: 0 auto;
+        }
+        .hero-badge {
+            display: inline-flex; align-items: center; gap: 8px;
+            background: var(--accent-glow); border: 1px solid rgba(99,102,241,0.3);
+            padding: 6px 16px; border-radius: 100px; font-size: 13px;
+            color: var(--accent); margin-bottom: 24px;
+        }
+        .hero h1 {
+            font-size: clamp(36px, 5vw, 56px); font-weight: 800;
+            line-height: 1.1; margin-bottom: 20px;
+            background: linear-gradient(135deg, var(--text-primary) 0%, var(--text-secondary) 100%);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .hero p {
+            font-size: 18px; color: var(--text-secondary);
+            max-width: 600px; margin: 0 auto 32px;
+        }
+        .hero-actions { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+        .btn-primary {
+            background: var(--accent); color: white; padding: 14px 32px;
+            border-radius: 10px; font-size: 16px; font-weight: 600;
+            border: none; cursor: pointer; transition: all 0.2s;
+        }
+        .btn-primary:hover { background: var(--accent-hover); transform: translateY(-1px); color: white; }
+        .btn-secondary {
+            background: var(--bg-card); color: var(--text-primary); padding: 14px 32px;
+            border-radius: 10px; font-size: 16px; font-weight: 600;
+            border: 1px solid var(--border); cursor: pointer; transition: all 0.2s;
+        }
+        .btn-secondary:hover { background: var(--bg-card-hover); transform: translateY(-1px); }
+
+        /* Calculator Section */
+        .calculator-section {
+            padding: 80px 24px; max-width: var(--max-width); margin: 0 auto;
+        }
+        .section-header {
+            text-align: center; margin-bottom: 48px;
+        }
+        .section-header h2 {
+            font-size: 32px; font-weight: 700; margin-bottom: 12px;
+        }
+        .section-header p {
+            font-size: 16px; color: var(--text-secondary); max-width: 500px; margin: 0 auto;
+        }
+        .calculator {
+            background: var(--bg-secondary); border: 1px solid var(--border);
+            border-radius: 16px; padding: 32px; max-width: 900px; margin: 0 auto;
+        }
+        .calc-grid {
+            display: grid; grid-template-columns: 1fr 1fr; gap: 32px;
+        }
+        .calc-inputs label {
+            display: block; font-size: 13px; font-weight: 600;
+            color: var(--text-secondary); margin-bottom: 6px;
+            text-transform: uppercase; letter-spacing: 0.5px;
+        }
+        .calc-inputs input, .calc-inputs select {
+            width: 100%; padding: 12px 16px; background: var(--bg-card);
+            border: 1px solid var(--border); border-radius: 8px;
+            color: var(--text-primary); font-size: 15px;
+            transition: border-color 0.2s;
+        }
+        .calc-inputs input:focus, .calc-inputs select:focus {
+            outline: none; border-color: var(--accent);
+        }
+        .calc-inputs .input-group { margin-bottom: 20px; }
+        .calc-results {
+            background: var(--bg-card); border-radius: 12px; padding: 24px;
+        }
+        .result-item {
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 12px 0; border-bottom: 1px solid var(--border);
+        }
+        .result-item:last-child { border-bottom: none; }
+        .result-label { color: var(--text-secondary); font-size: 14px; }
+        .result-value { font-size: 18px; font-weight: 700; }
+        .result-total {
+            margin-top: 16px; padding-top: 16px; border-top: 2px solid var(--accent);
+            display: flex; justify-content: space-between; align-items: center;
+        }
+        .result-total .result-label { font-size: 16px; font-weight: 600; color: var(--text-primary); }
+        .result-total .result-value { font-size: 28px; color: var(--accent); }
+        .savings-badge {
+            display: inline-block; background: rgba(34,197,94,0.1); color: var(--green);
+            padding: 4px 12px; border-radius: 6px; font-size: 13px; font-weight: 600;
+            margin-top: 12px;
+        }
+
+        /* Comparison Table */
+        .comparison-section {
+            padding: 80px 24px; max-width: var(--max-width); margin: 0 auto;
+        }
+        .comparison-table {
+            width: 100%; border-collapse: collapse;
+            background: var(--bg-secondary); border-radius: 12px; overflow: hidden;
+            border: 1px solid var(--border);
+        }
+        .comparison-table th {
+            background: var(--bg-card); padding: 16px 20px;
+            text-align: left; font-size: 13px; font-weight: 600;
+            color: var(--text-secondary); text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .comparison-table td {
+            padding: 16px 20px; border-bottom: 1px solid var(--border);
+            font-size: 14px;
+        }
+        .comparison-table tr:last-child td { border-bottom: none; }
+        .comparison-table .provider-name { font-weight: 600; color: var(--text-primary); }
+        .comparison-table .price { color: var(--accent); font-weight: 600; }
+        .comparison-table .cheapest { background: rgba(34,197,94,0.05); }
+
+        /* Features */
+        .features-section {
+            padding: 80px 24px; max-width: var(--max-width); margin: 0 auto;
+        }
+        .features-grid {
+            display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
+        }
+        .feature-card {
+            background: var(--bg-secondary); border: 1px solid var(--border);
+            border-radius: var(--radius); padding: 28px;
+            transition: border-color 0.2s, transform 0.2s;
+        }
+        .feature-card:hover {
+            border-color: var(--accent); transform: translateY(-2px);
+        }
+        .feature-icon {
+            width: 44px; height: 44px; background: var(--accent-glow);
+            border-radius: 10px; display: flex; align-items: center;
+            justify-content: center; font-size: 20px; margin-bottom: 16px;
+        }
+        .feature-card h3 { font-size: 17px; font-weight: 700; margin-bottom: 8px; }
+        .feature-card p { font-size: 14px; color: var(--text-secondary); line-height: 1.6; }
+
+        /* Pricing */
+        .pricing-section {
+            padding: 80px 24px; max-width: 800px; margin: 0 auto;
+        }
+        .pricing-grid {
+            display: grid; grid-template-columns: 1fr 1fr; gap: 24px;
+        }
+        .pricing-card {
+            background: var(--bg-secondary); border: 1px solid var(--border);
+            border-radius: 16px; padding: 32px; position: relative;
+        }
+        .pricing-card.featured {
+            border-color: var(--accent);
+            box-shadow: 0 0 40px var(--accent-glow);
+        }
+        .pricing-card .badge {
+            position: absolute; top: -12px; left: 50%; transform: translateX(-50%);
+            background: var(--accent); color: white; padding: 4px 16px;
+            border-radius: 100px; font-size: 12px; font-weight: 700;
+            text-transform: uppercase;
+        }
+        .pricing-card h3 { font-size: 20px; font-weight: 700; margin-bottom: 8px; }
+        .pricing-card .price {
+            font-size: 42px; font-weight: 800; margin-bottom: 4px;
+        }
+        .pricing-card .price-note {
+            font-size: 13px; color: var(--text-muted); margin-bottom: 24px;
+        }
+        .pricing-card ul { list-style: none; margin-bottom: 28px; }
+        .pricing-card li {
+            padding: 6px 0; font-size: 14px; color: var(--text-secondary);
+            display: flex; align-items: center; gap: 10px;
+        }
+        .pricing-card li::before { content: "✓"; color: var(--green); font-weight: 700; }
+        .pricing-card .btn-primary { width: 100%; text-align: center; display: block; }
+
+        /* CTA */
+        .cta-section {
+            padding: 80px 24px; text-align: center;
+            background: linear-gradient(180deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+        }
+        .cta-section h2 { font-size: 32px; font-weight: 700; margin-bottom: 16px; }
+        .cta-section p {
+            font-size: 16px; color: var(--text-secondary);
+            max-width: 500px; margin: 0 auto 32px;
+        }
+
+        /* Footer */
+        footer {
+            padding: 40px 24px; border-top: 1px solid var(--border);
+            text-align: center; color: var(--text-muted); font-size: 13px;
+        }
+        footer a { color: var(--text-secondary); }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .calc-grid { grid-template-columns: 1fr; }
+            .features-grid { grid-template-columns: 1fr; }
+            .pricing-grid { grid-template-columns: 1fr; }
+            .nav-links { display: none; }
+            .comparison-table { font-size: 12px; }
+            .comparison-table th, .comparison-table td { padding: 10px 12px; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-inner">
+            <div class="logo">API<span>pulse</span></div>
+            <div class="nav-links">
+                <a href="#calculator">Calculator</a>
+                <a href="#pricing">Pricing</a>
+                <a href="about.html">About</a>
+                <a href="blog.html">Blog</a>
+                <a href="#pricing" class="nav-cta">Get Pro — $29</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-badge">
+            <span>Updated for 2026 pricing</span>
+        </div>
+        <h1>Know your AI API costs before you commit.</h1>
+        <p>Compare pricing across OpenAI, Anthropic, Google, and Mistral. Calculate monthly spend, model scenarios, and find the cheapest provider for your use case.</p>
+        <div class="hero-actions">
+            <a href="#calculator" class="btn-primary">Try the Calculator — Free</a>
+            <a href="#pricing" class="btn-secondary">See Pro Features</a>
+        </div>
+    </section>
+
+    <section id="calculator" class="calculator-section">
+        <div class="section-header">
+            <h2>AI API Cost Calculator</h2>
+            <p>Enter your usage to compare costs across providers instantly.</p>
+        </div>
+        <div class="calculator">
+            <div class="calc-grid">
+                <div class="calc-inputs">
+                    <div class="input-group">
+                        <label for="provider">Provider</label>
+                        <select id="provider" onchange="calculate()">
+                            <option value="openai-gpt4o">OpenAI — GPT-4o</option>
+                            <option value="openai-gpt4o-mini">OpenAI — GPT-4o mini</option>
+                            <option value="anthropic-sonnet">Anthropic — Claude Sonnet 4</option>
+                            <option value="anthropic-haiku">Anthropic — Claude Haiku 3.5</option>
+                            <option value="google-pro">Google — Gemini 2.5 Pro</option>
+                            <option value="google-flash">Google — Gemini 2.0 Flash</option>
+                            <option value="mistral-large">Mistral — Large</option>
+                            <option value="mistral-small">Mistral — Small</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <label for="input-tokens">Input tokens per request</label>
+                        <input type="number" id="input-tokens" value="2000" min="0" step="100" onchange="calculate()" oninput="calculate()">
+                    </div>
+                    <div class="input-group">
+                        <label for="output-tokens">Output tokens per request</label>
+                        <input type="number" id="output-tokens" value="500" min="0" step="100" onchange="calculate()" oninput="calculate()">
+                    </div>
+                    <div class="input-group">
+                        <label for="requests">Requests per day</label>
+                        <input type="number" id="requests" value="1000" min="0" step="100" onchange="calculate()" oninput="calculate()">
+                    </div>
+                    <div class="input-group">
+                        <label for="days">Days per month</label>
+                        <input type="number" id="days" value="30" min="1" max="31" onchange="calculate()" oninput="calculate()">
+                    </div>
+                </div>
+                <div class="calc-results">
+                    <h3 style="margin-bottom: 16px; font-size: 16px;">Monthly Cost Estimate</h3>
+                    <div class="result-item">
+                        <span class="result-label">Input cost</span>
+                        <span class="result-value" id="input-cost">$0.00</span>
+                    </div>
+                    <div class="result-item">
+                        <span class="result-label">Output cost</span>
+                        <span class="result-value" id="output-cost">$0.00</span>
+                    </div>
+                    <div class="result-item">
+                        <span class="result-label">Total tokens/month</span>
+                        <span class="result-value" id="total-tokens">0</span>
+                    </div>
+                    <div class="result-total">
+                        <span class="result-label">Monthly Total</span>
+                        <span class="result-value" id="monthly-total">$0.00</span>
+                    </div>
+                    <div id="savings-container"></div>
+                    <p style="margin-top: 16px; font-size: 12px; color: var(--text-muted);">
+                        Based on published API pricing. Actual costs may vary.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="comparison-section">
+        <div class="section-header">
+            <h2>Provider Comparison</h2>
+            <p>Pricing per 1M tokens across major LLM API providers.</p>
+        </div>
+        <table class="comparison-table">
+            <thead>
+                <tr>
+                    <th>Provider</th>
+                    <th>Model</th>
+                    <th>Input (per 1M tokens)</th>
+                    <th>Output (per 1M tokens)</th>
+                    <th>Context Window</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="provider-name">OpenAI</td>
+                    <td>GPT-4o</td>
+                    <td class="price">$2.50</td>
+                    <td class="price">$10.00</td>
+                    <td>128K</td>
+                </tr>
+                <tr>
+                    <td class="provider-name">OpenAI</td>
+                    <td>GPT-4o mini</td>
+                    <td class="price">$0.15</td>
+                    <td class="price">$0.60</td>
+                    <td>128K</td>
+                </tr>
+                <tr>
+                    <td class="provider-name">Anthropic</td>
+                    <td>Claude Sonnet 4</td>
+                    <td class="price">$3.00</td>
+                    <td class="price">$15.00</td>
+                    <td>200K</td>
+                </tr>
+                <tr>
+                    <td class="provider-name">Anthropic</td>
+                    <td>Claude Haiku 3.5</td>
+                    <td class="price">$0.80</td>
+                    <td class="price">$4.00</td>
+                    <td>200K</td>
+                </tr>
+                <tr class="cheapest">
+                    <td class="provider-name">Google</td>
+                    <td>Gemini 2.0 Flash</td>
+                    <td class="price">$0.10</td>
+                    <td class="price">$0.40</td>
+                    <td>1M</td>
+                </tr>
+                <tr>
+                    <td class="provider-name">Google</td>
+                    <td>Gemini 2.5 Pro</td>
+                    <td class="price">$1.25</td>
+                    <td class="price">$10.00</td>
+                    <td>1M</td>
+                </tr>
+                <tr>
+                    <td class="provider-name">Mistral</td>
+                    <td>Large</td>
+                    <td class="price">$2.00</td>
+                    <td class="price">$6.00</td>
+                    <td>128K</td>
+                </tr>
+                <tr>
+                    <td class="provider-name">Mistral</td>
+                    <td>Small</td>
+                    <td class="price">$0.10</td>
+                    <td class="price">$0.30</td>
+                    <td>32K</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <section class="features-section">
+        <div class="section-header">
+            <h2>Stop overpaying for AI APIs</h2>
+            <p>Everything you need to make smart decisions about API costs.</p>
+        </div>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">⚡</div>
+                <h3>Instant Calculations</h3>
+                <p>See costs update in real-time as you adjust tokens, requests, and providers. No waiting, no loading.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">📊</div>
+                <h3>Multi-Provider Compare</h3>
+                <p>Compare pricing across OpenAI, Anthropic, Google, and Mistral side by side. Find the cheapest option.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">💡</div>
+                <h3>Cost Optimization</h3>
+                <p>Get recommendations to reduce costs by up to 40%. Switch models, batch requests, optimize prompts.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">📋</div>
+                <h3>Scenario Modeling</h3>
+                <p>Save and compare different usage scenarios. Plan for growth, test edge cases, model budgets.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">📄</div>
+                <h3>PDF Reports</h3>
+                <p>Export professional cost reports for stakeholders. Share budget plans with your team.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🔔</div>
+                <h3>Price Alerts</h3>
+                <p>Get notified when providers change pricing. Never miss a cost reduction opportunity.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="pricing" class="pricing-section">
+        <div class="section-header">
+            <h2>Simple, one-time pricing</h2>
+            <p>No subscriptions. Pay once, use forever.</p>
+        </div>
+        <div class="pricing-grid">
+            <div class="pricing-card">
+                <h3>Free</h3>
+                <div class="price">$0</div>
+                <div class="price-note">Free forever</div>
+                <ul>
+                    <li>Basic cost calculator</li>
+                    <li>8 models across 4 providers</li>
+                    <li>Provider comparison table</li>
+                    <li>Real-time calculations</li>
+                </ul>
+                <a href="#calculator" class="btn-secondary" style="width:100%;text-align:center;display:block;">Use Free Calculator</a>
+            </div>
+            <div class="pricing-card featured">
+                <div class="badge">Most Popular</div>
+                <h3>Pro</h3>
+                <div class="price">$29</div>
+                <div class="price-note">One-time payment, lifetime access</div>
+                <ul>
+                    <li>Everything in Free</li>
+                    <li>Save up to 10 scenarios</li>
+                    <li>PDF export of cost reports</li>
+                    <li>Optimization recommendations</li>
+                    <li>Historical pricing tracker</li>
+                    <li>Cost change alerts</li>
+                    <li>Priority support</li>
+                </ul>
+                <button class="btn-primary" onclick="alert('Coming soon! Join the waitlist below.')">Get Pro Access</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <h2>Ready to optimize your AI API costs?</h2>
+        <p>Join developers who are saving money on AI APIs with APIpulse.</p>
+        <div class="hero-actions">
+            <a href="#calculator" class="btn-primary">Start Calculating — Free</a>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 APIpulse. Built for developers, by developers. <a href="about.html">About</a> &middot; <a href="blog.html">Blog</a></p>
+    </footer>
+
+    <script>
+        // API pricing data (per 1M tokens)
+        const providers = {
+            'openai-gpt4o': { name: 'OpenAI GPT-4o', input: 2.50, output: 10.00 },
+            'openai-gpt4o-mini': { name: 'OpenAI GPT-4o mini', input: 0.15, output: 0.60 },
+            'anthropic-sonnet': { name: 'Claude Sonnet 4', input: 3.00, output: 15.00 },
+            'anthropic-haiku': { name: 'Claude Haiku 3.5', input: 0.80, output: 4.00 },
+            'google-pro': { name: 'Gemini 2.5 Pro', input: 1.25, output: 10.00 },
+            'google-flash': { name: 'Gemini 2.0 Flash', input: 0.10, output: 0.40 },
+            'mistral-large': { name: 'Mistral Large', input: 2.00, output: 6.00 },
+            'mistral-small': { name: 'Mistral Small', input: 0.10, output: 0.30 }
+        };
+
+        function calculate() {
+            const provider = document.getElementById('provider').value;
+            const inputTokens = parseInt(document.getElementById('input-tokens').value) || 0;
+            const outputTokens = parseInt(document.getElementById('output-tokens').value) || 0;
+            const requests = parseInt(document.getElementById('requests').value) || 0;
+            const days = parseInt(document.getElementById('days').value) || 30;
+
+            const p = providers[provider];
+            const totalInputTokens = inputTokens * requests * days;
+            const totalOutputTokens = outputTokens * requests * days;
+
+            const inputCost = (totalInputTokens / 1000000) * p.input;
+            const outputCost = (totalOutputTokens / 1000000) * p.output;
+            const totalCost = inputCost + outputCost;
+            const totalTokens = totalInputTokens + totalOutputTokens;
+
+            document.getElementById('input-cost').textContent = '$' + inputCost.toFixed(2);
+            document.getElementById('output-cost').textContent = '$' + outputCost.toFixed(2);
+            document.getElementById('total-tokens').textContent = totalTokens.toLocaleString();
+            document.getElementById('monthly-total').textContent = '$' + totalCost.toFixed(2);
+
+            // Find cheapest alternative
+            let cheapest = null;
+            let cheapestCost = Infinity;
+            for (const [key, p2] of Object.entries(providers)) {
+                if (key === provider) continue;
+                const cost = ((inputTokens * requests * days / 1000000) * p2.input) +
+                             ((outputTokens * requests * days / 1000000) * p2.output);
+                if (cost < cheapestCost) {
+                    cheapestCost = cost;
+                    cheapest = p2;
+                }
+            }
+
+            const savingsContainer = document.getElementById('savings-container');
+            if (cheapest && cheapestCost < totalCost) {
+                const savings = totalCost - cheapestCost;
+                savingsContainer.innerHTML = `<div class="savings-badge">Switch to ${cheapest.name} to save $${savings.toFixed(2)}/mo</div>`;
+            } else {
+                savingsContainer.innerHTML = '';
+            }
+        }
+
+        // Run on load
+        calculate();
+    </script>
+</body>
+</html>
