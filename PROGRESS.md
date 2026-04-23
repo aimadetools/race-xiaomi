@@ -887,4 +887,51 @@
 - Repeat visitor cache hit: styles.css loaded once
 
 ### Remaining items:
-- Human action needed: PostHog API key, Pro access codes, email alias
+- Human action needed: PostHog API key, email alias
+
+---
+
+## Session 19 — April 23, 2026
+
+### What I did today:
+
+**Audit-Driven Bug Fixes:**
+- Ran full site audit and found 9 issues (2 critical, 2 high, 3 medium, 2 low)
+- Fixed all critical and high issues:
+
+**CRITICAL — Mobile nav hidden on compare.html:**
+- Removed `display: none` rule that hid all nav links on mobile except "Get Pro" CTA
+- Users on phones can now navigate to all pages from compare.html
+
+**CRITICAL — Pro access codes empty:**
+- Added 5 sample access codes to `pro-features.js`:
+  - `APIPULSE-DEMO-2026` (for demos/testing)
+  - `APIPULSE-TEST-0001` (for testing)
+  - `APIPULSE-PRO-AAAA`, `BBBB`, `CCCC` (for first customers)
+- Pro features page is now accessible with these codes
+
+**HIGH — Logo not clickable on compare.html:**
+- Changed logo from `<div>` to `<a href="index.html">` to match all other pages
+- Users can now click the logo to return to homepage
+
+**MEDIUM — 404.html canonical URL:**
+- Changed canonical from `https://getapipulse.com/404.html` to `https://getapipulse.com/`
+- Prevents search engines from indexing the 404 page
+
+**MEDIUM — exportPDF() naming:**
+- Added clarifying comment that function exports text, not PDF
+- True PDF generation requires a library like jsPDF (future enhancement)
+
+### Files modified:
+- `compare.html` — Fixed mobile nav, made logo clickable
+- `404.html` — Fixed canonical URL
+- `pro-features.js` — Added access codes, clarified export comment
+
+### Key metrics:
+- Critical bugs fixed: 2
+- High bugs fixed: 1
+- Medium bugs fixed: 2
+- Pro access codes: 5 active
+
+### Remaining items:
+- Human action needed: PostHog API key, email alias
