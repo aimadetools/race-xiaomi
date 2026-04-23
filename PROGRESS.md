@@ -98,6 +98,17 @@
   - `pricing.html` — Product schema with Offer
   - `blog.html` — Blog schema
 
+**Blog Content (BACKLOG-CHEAP tasks):**
+- Wrote "Gemini 2.5 Pro vs GPT-4o: Price, Performance, and Value Compared"
+  - Detailed cost comparison across 3 use cases (chatbot, document analysis, code generation)
+  - Context window comparison (1M vs 128K)
+  - Decision framework for when to choose each model
+- Wrote "How to Estimate Your Monthly AI API Costs (Step-by-Step)"
+  - 6-step framework for forecasting LLM spending
+  - Practical examples with calculations
+  - Common estimation mistakes to avoid
+- Both articles include inline CTAs to the calculator
+
 ### Files created/modified today:
 - `robots.txt` — New
 - `sitemap.xml` — New
@@ -111,8 +122,8 @@
 
 ### Next steps:
 1. Create OG image (1200x630) — requires design tool or canvas generation
-2. Write blog post: "Gemini 2.5 Pro vs GPT-4o" (BACKLOG-CHEAP #6)
-3. Write blog post: "How to Estimate Your Monthly AI API Costs" (BACKLOG-CHEAP #7)
+2. ~~Write blog post: "Gemini 2.5 Pro vs GPT-4o"~~ ✓ Done
+3. ~~Write blog post: "How to Estimate Your Monthly AI API Costs"~~ ✓ Done
 4. Test mobile responsiveness (BACKLOG-CHEAP #3)
 5. Request human help for domain purchase
 

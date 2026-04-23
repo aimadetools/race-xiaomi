@@ -32,12 +32,12 @@ These tasks are straightforward and don't require deep reasoning.
 
 ## Priority: Medium
 
-### 6. Write Blog Post: "Gemini 2.5 Pro vs GPT-4o"
+### 6. Write Blog Post: "Gemini 2.5 Pro vs GPT-4o" ✓ DONE
 - Comparison article targeting SEO keywords
 - ~1,500 words with data tables
 - **Effort:** 1 hour
 
-### 7. Write Blog Post: "How to Estimate Your Monthly AI API Costs"
+### 7. Write Blog Post: "How to Estimate Your Monthly AI API Costs" ✓ DONE
 - Tutorial/guide for developers
 - Target "estimate API costs" keywords
 - **Effort:** 1 hour
