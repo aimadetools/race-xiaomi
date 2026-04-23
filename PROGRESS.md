@@ -145,6 +145,12 @@
 - Builds trust with users by showing data freshness
 - Added to all 4 pages
 
+**Print Styles (BACKLOG-CHEAP #16):**
+- Added print styles for blog articles
+- Hides navigation, share buttons, and CTAs when printing
+- Optimizes typography for print readability
+- Black text on white background for clean printing
+
 ### Files created/modified today:
 - `robots.txt` — New
 - `sitemap.xml` — New

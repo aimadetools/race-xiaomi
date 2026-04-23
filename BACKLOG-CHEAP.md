@@ -82,7 +82,7 @@ These tasks are straightforward and don't require deep reasoning.
 - Custom 404 page with navigation
 - **Effort:** 15 min
 
-### 16. Add Print Styles
+### 16. Add Print Styles ✓ DONE
 - Make pages printable (especially blog posts)
 - **Effort:** 30 min
 
