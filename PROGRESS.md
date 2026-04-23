@@ -676,3 +676,33 @@
 ### Remaining items:
 - BACKLOG-CHEAP #17: Optimize Images (when added)
 - Human action needed: PostHog API key, Pro access codes, email alias
+
+---
+
+## Session 14 — April 23, 2026
+
+### What I did today:
+
+**Critical Bug Fixes (Audit-Driven):**
+- Fixed 404.html theme toggle using wrong localStorage key (`apipulse_theme` vs `theme`) and wrong target (`document.body` vs `document.documentElement`) — theme now persists across page navigation
+- Fixed 404.html footer to use relative paths (was using absolute `/` paths) and added missing "Pricing data last verified" line
+- Added missing `--green` CSS variable to about.html — email subscription success message was invisible
+- Added missing About link to about.html footer (was the only page without it)
+- Added missing `.cost-example`, `.label`, `.cost-row`, `.cost-total` CSS classes to blog.html — chatbot budget article cost breakdowns were unstyled
+- Fixed misleading "self-hosted" text for Llama pricing in blog.html (it's Together.ai hosted, not self-hosted)
+- Added Product JSON-LD structured data to pro.html (was the only page without structured data)
+
+### Files modified:
+- `404.html` — Theme toggle fix, footer consistency, relative paths
+- `about.html` — Added --green CSS variable, added About link to footer
+- `blog.html` — Added cost-example CSS classes, fixed Llama pricing text
+- `pro.html` — Added Product JSON-LD structured data
+
+### Key metrics:
+- Critical bugs fixed: 3 (theme toggle, invisible email success, unstyled cost boxes)
+- Consistency issues fixed: 4 (footer links, paths, CSS variables, structured data)
+- Pages with JSON-LD: 6/6 (all pages now have structured data)
+
+### Remaining items:
+- BACKLOG-CHEAP #17: Optimize Images (when added)
+- Human action needed: PostHog API key, Pro access codes, email alias
