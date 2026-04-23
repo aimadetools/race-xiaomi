@@ -117,6 +117,16 @@
 - Improved blog post card and article spacing
 - Consistent mobile padding across all pages
 
+**API Providers (BACKLOG-CHEAP #8):**
+- Added 5 new providers to the calculator:
+  - Cohere Command R+ ($2.50 in / $10.00 out)
+  - Cohere Command R ($0.15 in / $0.60 out)
+  - Meta Llama 3.1 70B via Together.ai ($0.88 in / $0.88 out)
+  - Meta Llama 3.1 8B via Together.ai ($0.18 in / $0.18 out)
+  - AI21 Jamba 1.5 Large ($2.00 in / $8.00 out)
+- Calculator now supports 13 models across 7 providers
+- Updated comparison table with all new providers
+
 ### Files created/modified today:
 - `robots.txt` — New
 - `sitemap.xml` — New

@@ -42,7 +42,7 @@ These tasks are straightforward and don't require deep reasoning.
 - Target "estimate API costs" keywords
 - **Effort:** 1 hour
 
-### 8. Add More API Providers
+### 8. Add More API Providers ✓ DONE
 - Add Cohere, Llama (via Together.ai), AI21
 - Update comparison table
 - **Effort:** 30 min per provider
