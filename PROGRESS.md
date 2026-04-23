@@ -174,6 +174,13 @@
 - All pages have "Pricing data last verified" line
 - All pages have copyright and navigation links
 
+**Blog Post: Pricing Changes (BACKLOG-CHEAP #19):**
+- Wrote "API Provider Pricing Changes in 2026: What You Need to Know"
+- Covers all 7 providers: OpenAI, Anthropic, Google, Mistral, Cohere, Meta, AI21
+- Highlights key pricing trends and strategies
+- Includes comparison data and recommendations
+- Added social sharing button
+
 ### Files created/modified today:
 - `robots.txt` — New
 - `sitemap.xml` — New
