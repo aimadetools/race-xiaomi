@@ -334,9 +334,18 @@
 
             .nav-links { display: none; }
         }
+        /* Accessibility */
+        .skip-link {
+            position: absolute; top: -40px; left: 0; background: var(--accent);
+            color: white; padding: 8px 16px; z-index: 200; font-size: 14px;
+            transition: top 0.2s;
+        }
+        .skip-link:focus { top: 0; }
+        *:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
     </style>
 </head>
 <body>
+    <a href="#calculator" class="skip-link">Skip to calculator</a>
     <nav>
         <div class="nav-inner">
             <div class="logo">API<span>pulse</span></div>
@@ -368,12 +377,12 @@
             <h2>AI API Cost Calculator</h2>
             <p>Enter your usage to compare costs across providers instantly.</p>
         </div>
-        <div class="calculator">
+        <div class="calculator" role="form" aria-label="API Cost Calculator">
             <div class="calc-grid">
                 <div class="calc-inputs">
                     <div class="input-group">
                         <label for="provider">Provider</label>
-                        <select id="provider" onchange="calculate()">
+                        <select id="provider" onchange="calculate()" aria-label="Select API provider">
                             <option value="openai-gpt4o">OpenAI — GPT-4o</option>
                             <option value="openai-gpt4o-mini">OpenAI — GPT-4o mini</option>
                             <option value="anthropic-sonnet">Anthropic — Claude Sonnet 4</option>
@@ -391,22 +400,22 @@
                     </div>
                     <div class="input-group">
                         <label for="input-tokens">Input tokens per request</label>
-                        <input type="number" id="input-tokens" value="2000" min="0" step="100" onchange="calculate()" oninput="calculate()">
+                        <input type="number" id="input-tokens" value="2000" min="0" step="100" onchange="calculate()" oninput="calculate()" aria-label="Input tokens per request">
                     </div>
                     <div class="input-group">
                         <label for="output-tokens">Output tokens per request</label>
-                        <input type="number" id="output-tokens" value="500" min="0" step="100" onchange="calculate()" oninput="calculate()">
+                        <input type="number" id="output-tokens" value="500" min="0" step="100" onchange="calculate()" oninput="calculate()" aria-label="Output tokens per request">
                     </div>
                     <div class="input-group">
                         <label for="requests">Requests per day</label>
-                        <input type="number" id="requests" value="1000" min="0" step="100" onchange="calculate()" oninput="calculate()">
+                        <input type="number" id="requests" value="1000" min="0" step="100" onchange="calculate()" oninput="calculate()" aria-label="Requests per day">
                     </div>
                     <div class="input-group">
                         <label for="days">Days per month</label>
-                        <input type="number" id="days" value="30" min="1" max="31" onchange="calculate()" oninput="calculate()">
+                        <input type="number" id="days" value="30" min="1" max="31" onchange="calculate()" oninput="calculate()" aria-label="Days per month">
                     </div>
                 </div>
-                <div class="calc-results">
+                <div class="calc-results" role="region" aria-label="Cost calculation results" aria-live="polite">
                     <h3 style="margin-bottom: 16px; font-size: 16px;">Monthly Cost Estimate</h3>
                     <div class="result-item">
                         <span class="result-label">Input cost</span>
@@ -438,7 +447,7 @@
             <h2>Provider Comparison</h2>
             <p>Pricing per 1M tokens across 7 major LLM API providers.</p>
         </div>
-        <table class="comparison-table">
+        <table class="comparison-table" aria-label="API provider pricing comparison">
             <thead>
                 <tr>
                     <th>Provider</th>
