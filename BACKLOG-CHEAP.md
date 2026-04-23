@@ -47,7 +47,7 @@ These tasks are straightforward and don't require deep reasoning.
 - Update comparison table
 - **Effort:** 30 min per provider
 
-### 9. Add Dark/Light Theme Toggle
+### 9. Add Dark/Light Theme Toggle ✓ DONE
 - Some users prefer light theme
 - Add toggle button in nav
 - **Effort:** 1 hour

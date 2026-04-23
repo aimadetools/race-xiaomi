@@ -127,6 +127,13 @@
 - Calculator now supports 13 models across 7 providers
 - Updated comparison table with all new providers
 
+**Theme Toggle (BACKLOG-CHEAP #9):**
+- Added dark/light theme toggle to all pages
+- Light theme with white background and dark text
+- Toggle button in navigation (moon/sun icon)
+- Persists theme preference in localStorage
+- Smooth transition between themes
+
 ### Files created/modified today:
 - `robots.txt` — New
 - `sitemap.xml` — New
