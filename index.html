@@ -306,8 +306,11 @@
                     <div class="input-group">
                         <label for="provider">Provider</label>
                         <select id="provider" onchange="calculate()" aria-label="Select API provider">
+                            <option value="openai-gpt5">OpenAI — GPT-5</option>
+                            <option value="openai-gpt5-mini">OpenAI — GPT-5 mini</option>
                             <option value="openai-gpt4o">OpenAI — GPT-4o</option>
                             <option value="openai-gpt4o-mini">OpenAI — GPT-4o mini</option>
+                            <option value="anthropic-opus">Anthropic — Claude 4 Opus</option>
                             <option value="anthropic-sonnet">Anthropic — Claude Sonnet 4</option>
                             <option value="anthropic-haiku">Anthropic — Claude Haiku 3.5</option>
                             <option value="google-pro">Google — Gemini 2.5 Pro</option>
@@ -368,7 +371,7 @@
     <section class="comparison-section">
         <div class="section-header">
             <h2>Provider Comparison</h2>
-            <p>Pricing per 1M tokens across 7 major LLM API providers.</p>
+            <p>Pricing per 1M tokens across 7 major LLM API providers (16 models).</p>
         </div>
         <table class="comparison-table" aria-label="API provider pricing comparison">
             <thead>
@@ -383,6 +386,20 @@
             <tbody>
                 <tr>
                     <td class="provider-name">OpenAI</td>
+                    <td>GPT-5</td>
+                    <td class="price">$10.00</td>
+                    <td class="price">$30.00</td>
+                    <td>256K</td>
+                </tr>
+                <tr>
+                    <td class="provider-name">OpenAI</td>
+                    <td>GPT-5 mini</td>
+                    <td class="price">$0.40</td>
+                    <td class="price">$1.60</td>
+                    <td>256K</td>
+                </tr>
+                <tr>
+                    <td class="provider-name">OpenAI</td>
                     <td>GPT-4o</td>
                     <td class="price">$2.50</td>
                     <td class="price">$10.00</td>
@@ -394,6 +411,13 @@
                     <td class="price">$0.15</td>
                     <td class="price">$0.60</td>
                     <td>128K</td>
+                </tr>
+                <tr>
+                    <td class="provider-name">Anthropic</td>
+                    <td>Claude 4 Opus</td>
+                    <td class="price">$15.00</td>
+                    <td class="price">$75.00</td>
+                    <td>200K</td>
                 </tr>
                 <tr>
                     <td class="provider-name">Anthropic</td>
@@ -527,7 +551,7 @@
                 <div class="price-note">Free forever</div>
                 <ul>
                     <li>Basic cost calculator</li>
-                    <li>13 models across 7 providers</li>
+                    <li>16 models across 7 providers</li>
                     <li>Provider comparison table</li>
                     <li>Real-time calculations</li>
                 </ul>
@@ -584,8 +608,11 @@
     <script>
         // API pricing data (per 1M tokens)
         const providers = {
+            'openai-gpt5': { name: 'OpenAI GPT-5', input: 10.00, output: 30.00 },
+            'openai-gpt5-mini': { name: 'OpenAI GPT-5 mini', input: 0.40, output: 1.60 },
             'openai-gpt4o': { name: 'OpenAI GPT-4o', input: 2.50, output: 10.00 },
             'openai-gpt4o-mini': { name: 'OpenAI GPT-4o mini', input: 0.15, output: 0.60 },
+            'anthropic-opus': { name: 'Claude 4 Opus', input: 15.00, output: 75.00 },
             'anthropic-sonnet': { name: 'Claude Sonnet 4', input: 3.00, output: 15.00 },
             'anthropic-haiku': { name: 'Claude Haiku 3.5', input: 0.80, output: 4.00 },
             'google-pro': { name: 'Gemini 2.5 Pro', input: 1.25, output: 10.00 },

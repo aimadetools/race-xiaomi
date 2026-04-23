@@ -159,11 +159,25 @@ function getRecommendations() {
     const recs = [];
 
     // Model recommendations
+    if (provider.includes('gpt5') && !provider.includes('mini')) {
+        recs.push({
+            title: 'Consider GPT-4o for most workloads',
+            impact: 'Save ~75% on input costs',
+            detail: 'GPT-4o costs $2.50/M input vs $10.00/M for GPT-5. GPT-4o handles most tasks well at a fraction of the cost.'
+        });
+    }
     if (provider.includes('gpt4o') && !provider.includes('mini')) {
         recs.push({
             title: 'Consider GPT-4o mini for simpler tasks',
             impact: 'Save ~94% on input costs',
             detail: 'GPT-4o mini costs $0.15/M input vs $2.50/M for GPT-4o. Use it for chatbots, summaries, and simple Q&A.'
+        });
+    }
+    if (provider.includes('opus')) {
+        recs.push({
+            title: 'Consider Claude Sonnet 4 for most workloads',
+            impact: 'Save ~80% on input costs',
+            detail: 'Claude Sonnet 4 costs $3.00/M input vs $15.00/M for Opus. Sonnet handles most tasks with comparable quality.'
         });
     }
     if (provider.includes('sonnet') && !provider.includes('haiku')) {

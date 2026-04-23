@@ -187,10 +187,13 @@
                 <label for="model-a">Model A</label>
                 <select id="model-a" onchange="updateComparison()">
                     <optgroup label="OpenAI">
+                        <option value="openai-gpt5">GPT-5</option>
+                        <option value="openai-gpt5-mini">GPT-5 mini</option>
                         <option value="openai-gpt4o" selected>GPT-4o</option>
                         <option value="openai-gpt4o-mini">GPT-4o mini</option>
                     </optgroup>
                     <optgroup label="Anthropic">
+                        <option value="anthropic-opus">Claude 4 Opus</option>
                         <option value="anthropic-sonnet">Claude Sonnet 4</option>
                         <option value="anthropic-haiku">Claude Haiku 3.5</option>
                     </optgroup>
@@ -216,10 +219,13 @@
                 <label for="model-b">Model B</label>
                 <select id="model-b" onchange="updateComparison()">
                     <optgroup label="OpenAI">
+                        <option value="openai-gpt5">GPT-5</option>
+                        <option value="openai-gpt5-mini">GPT-5 mini</option>
                         <option value="openai-gpt4o">GPT-4o</option>
                         <option value="openai-gpt4o-mini">GPT-4o mini</option>
                     </optgroup>
                     <optgroup label="Anthropic">
+                        <option value="anthropic-opus">Claude 4 Opus</option>
                         <option value="anthropic-sonnet">Claude Sonnet 4</option>
                         <option value="anthropic-haiku" selected>Claude Haiku 3.5</option>
                     </optgroup>
@@ -315,8 +321,11 @@
 
     <script>
         const models = {
+            'openai-gpt5': { name: 'GPT-5', provider: 'OpenAI', input: 10.00, output: 30.00, context: '256K' },
+            'openai-gpt5-mini': { name: 'GPT-5 mini', provider: 'OpenAI', input: 0.40, output: 1.60, context: '256K' },
             'openai-gpt4o': { name: 'GPT-4o', provider: 'OpenAI', input: 2.50, output: 10.00, context: '128K' },
             'openai-gpt4o-mini': { name: 'GPT-4o mini', provider: 'OpenAI', input: 0.15, output: 0.60, context: '128K' },
+            'anthropic-opus': { name: 'Claude 4 Opus', provider: 'Anthropic', input: 15.00, output: 75.00, context: '200K' },
             'anthropic-sonnet': { name: 'Claude Sonnet 4', provider: 'Anthropic', input: 3.00, output: 15.00, context: '200K' },
             'anthropic-haiku': { name: 'Claude Haiku 3.5', provider: 'Anthropic', input: 0.80, output: 4.00, context: '200K' },
             'google-pro': { name: 'Gemini 2.5 Pro', provider: 'Google', input: 1.25, output: 10.00, context: '1M' },

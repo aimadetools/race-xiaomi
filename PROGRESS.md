@@ -990,7 +990,43 @@
 - Critical bugs fixed: 1 (XSS)
 - High bugs fixed: 5 (nav consistency x3, footer CSS, email fallback)
 - Pages modified: 9
-- Remaining known issues: PostHog placeholder key, ephemeral /tmp storage, exportPDF naming, blog references models not in calculator
+- Remaining known issues: PostHog placeholder key, ephemeral /tmp storage, exportPDF naming
+
+### Remaining items:
+- Human action needed: PostHog API key, email alias
+
+---
+
+## Session 21 — April 23, 2026
+
+### What I did today:
+
+**Calculator Model Gap Fix:**
+- Added 3 missing models to the calculator that were referenced in the "Claude 4 vs GPT-5" blog post but not available for cost estimation:
+  - **Claude 4 Opus** — $15.00 input / $75.00 output per 1M tokens, 200K context
+  - **GPT-5** — $10.00 input / $30.00 output per 1M tokens, 256K context
+  - **GPT-5 mini** — $0.40 input / $1.60 output per 1M tokens, 256K context
+- Calculator now supports **16 models across 7 providers** (was 13)
+
+**Comparison Table & Tool:**
+- Updated provider comparison table on index.html with all 3 new models
+- Updated compare.html (both model selectors and pricing data) with all 3 new models
+- Updated model count references: "13 models" → "16 models" on index.html and pricing.html
+
+**Pro Features:**
+- Added optimization recommendations for GPT-5 (suggests GPT-4o for cost savings)
+- Added optimization recommendations for Claude 4 Opus (suggests Claude Sonnet 4 for cost savings)
+
+### Files modified:
+- `index.html` — Added 3 models to select dropdown, pricing data, comparison table, model count
+- `compare.html` — Added 3 models to both select dropdowns and pricing data
+- `pricing.html` — Updated model count from 13 to 16
+- `pro-features.js` — Added recommendations for GPT-5 and Claude 4 Opus
+
+### Key metrics:
+- Calculator models: 16 (was 13)
+- Providers: 7 (unchanged)
+- Blog posts with matching calculator models: 14/14 (was 13/14)
 
 ### Remaining items:
 - Human action needed: PostHog API key, email alias
