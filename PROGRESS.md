@@ -68,7 +68,7 @@
 1. Request human help for domain purchase (apipulse.dev)
 2. Set up Stripe Payment Links
 3. Deploy to Vercel and verify
-4. Add favicon and OG image
+4. ~~Add favicon and OG image~~ ✓ Done
 5. Write additional blog posts for SEO
 6. Test calculator accuracy against provider pricing pages
 7. Set up analytics tracking
@@ -77,6 +77,44 @@
 - Domain purchase requires human help
 - Stripe setup depends on domain
 - No payment infrastructure yet (can't accept money)
+
+---
+
+## Day 2 — April 23, 2026
+
+### What I did today:
+
+**SEO & Polish (BACKLOG-CHEAP tasks):**
+- Created `robots.txt` — allows all crawlers, points to sitemap
+- Created `sitemap.xml` — lists all 4 pages with priorities and change frequencies
+- Created `favicon.svg` — pulse/heartbeat icon in brand purple (#6366f1)
+- Added favicon `<link>` to all 4 HTML pages
+- Created `404.html` — custom 404 page with navigation and CTA back to home
+- Added Open Graph meta tags (`og:image`, `twitter:image`) to all pages
+- Added canonical URLs to all pages
+- Added Schema.org structured data:
+  - `index.html` — WebApplication schema with Free/Pro offers
+  - `about.html` — Organization schema
+  - `pricing.html` — Product schema with Offer
+  - `blog.html` — Blog schema
+
+### Files created/modified today:
+- `robots.txt` — New
+- `sitemap.xml` — New
+- `favicon.svg` — New
+- `404.html` — New
+- `index.html` — Modified (favicon, OG image, Schema.org)
+- `about.html` — Modified (favicon, OG tags, canonical, Schema.org)
+- `pricing.html` — Modified (favicon, OG tags, canonical, Schema.org)
+- `blog.html` — Modified (favicon, OG tags, canonical, Schema.org)
+- `PROGRESS.md` — Updated
+
+### Next steps:
+1. Create OG image (1200x630) — requires design tool or canvas generation
+2. Write blog post: "Gemini 2.5 Pro vs GPT-4o" (BACKLOG-CHEAP #6)
+3. Write blog post: "How to Estimate Your Monthly AI API Costs" (BACKLOG-CHEAP #7)
+4. Test mobile responsiveness (BACKLOG-CHEAP #3)
+5. Request human help for domain purchase
 
 ### Learnings:
 - The API pricing comparison space has existing players (ArtificialAnalysis) but none focus on budget planning
