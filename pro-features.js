@@ -1,6 +1,12 @@
 // APIpulse Pro — Access code validation and premium features
 // Access codes are distributed manually by the APIpulse team after purchase.
 
+function escapeHtml(str) {
+    const div = document.createElement('div');
+    div.textContent = str;
+    return div.innerHTML;
+}
+
 const VALID_CODES = [
     'APIPULSE-DEMO-2026',
     'APIPULSE-TEST-0001',
@@ -90,8 +96,8 @@ function renderScenarios() {
     container.innerHTML = scenarios.map(s => `
         <div class="scenario-card">
             <div class="scenario-info">
-                <strong>${s.name}</strong>
-                <span style="color:var(--text-muted);font-size:12px;">${s.provider} · ${s.requests} req/day · Saved ${new Date(s.savedAt).toLocaleDateString()}</span>
+                <strong>${escapeHtml(s.name)}</strong>
+                <span style="color:var(--text-muted);font-size:12px;">${escapeHtml(s.provider)} · ${escapeHtml(String(s.requests))} req/day · Saved ${new Date(s.savedAt).toLocaleDateString()}</span>
             </div>
             <div class="scenario-actions">
                 <button class="btn-small" onclick="loadScenario(${s.id})">Load</button>
@@ -219,10 +225,10 @@ function renderRecommendations() {
     container.innerHTML = recs.map(r => `
         <div class="rec-card">
             <div class="rec-header">
-                <strong>${r.title}</strong>
-                <span class="rec-impact">${r.impact}</span>
+                <strong>${escapeHtml(r.title)}</strong>
+                <span class="rec-impact">${escapeHtml(r.impact)}</span>
             </div>
-            <p style="font-size:13px;color:var(--text-secondary);margin-top:6px;">${r.detail}</p>
+            <p style="font-size:13px;color:var(--text-secondary);margin-top:6px;">${escapeHtml(r.detail)}</p>
         </div>
     `).join('');
     if (window.trackEvent) window.trackEvent('recommendations_viewed', { count: recs.length });

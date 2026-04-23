@@ -143,11 +143,6 @@
         .cta-section h2 { font-size: 24px; margin-bottom: 12px; }
         .cta-section p { color: var(--text-secondary); margin-bottom: 20px; }
 
-        footer {
-            text-align: center; padding: 32px 24px; font-size: 13px;
-            color: var(--text-muted);
-        }
-
         @media (max-width: 768px) {
             .model-selectors { grid-template-columns: 1fr; gap: 12px; }
             .model-selectors .vs { padding: 0; }
@@ -169,12 +164,13 @@
         <div class="nav-inner">
             <a href="index.html" class="logo">API<span>pulse</span></a>
             <div class="nav-links">
-                <a href="index.html">Calculator</a>
-                <a href="compare.html" style="color:var(--text-primary)">Compare</a>
+                <a href="index.html#calculator">Calculator</a>
+                <a href="compare.html" style="color: var(--accent); font-weight: 600;">Compare</a>
+                <a href="pricing.html">Pricing</a>
                 <a href="use-cases.html">Use Cases</a>
                 <a href="about.html">About</a>
                 <a href="blog.html">Blog</a>
-                <a href="pricing.html">Pricing</a>
+                <a href="pricing.html" class="nav-cta" onclick="if(window.trackEvent)window.trackEvent('pro_button_clicked',{source:'nav'})">Get Pro — $29</a>
                 <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
             </div>
         </div>
