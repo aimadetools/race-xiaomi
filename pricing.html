@@ -7,7 +7,6 @@
     <meta name="description" content="Simple, honest pricing for WaitlistKit. Start free, upgrade when you're ready to launch.">
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <link rel="apple-touch-icon" href="favicon.svg">
-    <link rel="stylesheet" href="styles.css">
     
     <!-- Vercel Web Analytics -->
     <script>
@@ -89,12 +88,16 @@
             color: var(--text-secondary);
             text-decoration: none;
             font-size: 0.95rem;
-            transition: color 0.2s;
+            transition: color 0.2s ease, transform 0.2s ease;
         }
 
         .nav-links a:hover,
         .nav-links a.active {
             color: var(--text-primary);
+        }
+
+        .nav-links a:hover {
+            transform: translateY(-2px);
         }
 
         .btn {
@@ -106,7 +109,7 @@
             font-weight: 600;
             font-size: 0.95rem;
             text-decoration: none;
-            transition: all 0.2s;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             cursor: pointer;
             border: none;
         }
@@ -118,8 +121,12 @@
         }
 
         .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 30px var(--primary-glow);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 30px var(--primary-glow);
+        }
+
+        .btn-primary:active {
+            transform: translateY(-1px);
         }
 
         .btn-secondary {
@@ -131,6 +138,7 @@
         .btn-secondary:hover {
             background: var(--bg-card);
             border-color: var(--primary);
+            transform: translateY(-2px);
         }
 
         .btn-large {
@@ -177,7 +185,7 @@
             flex-direction: column;
             opacity: 0;
             transform: translateY(30px);
-            transition: all 0.3s;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         .pricing-card.visible {
@@ -187,12 +195,12 @@
 
         .pricing-card:hover {
             border-color: var(--primary);
-            transform: translateY(-4px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3), 0 0 30px var(--primary-glow);
         }
 
         .pricing-card.visible:hover {
-            transform: translateY(-4px);
+            transform: translateY(-8px);
         }
 
         .pricing-card.featured {
@@ -216,6 +224,12 @@
             font-size: 0.75rem;
             font-weight: 600;
             text-transform: uppercase;
+            animation: pulse-badge 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse-badge {
+            0%, 100% { box-shadow: 0 0 10px var(--primary-glow); }
+            50% { box-shadow: 0 0 20px var(--primary-glow); }
         }
 
         .pricing-card h2 {
@@ -285,7 +299,7 @@
             margin-bottom: 1rem;
             opacity: 0;
             transform: translateY(20px);
-            transition: all 0.3s;
+            transition: all 0.4s ease;
         }
 
         .faq-item.visible {
@@ -295,6 +309,7 @@
 
         .faq-item:hover {
             border-color: var(--primary);
+            transform: translateX(5px);
         }
 
         .faq-item h3 {
@@ -353,11 +368,13 @@
             color: var(--text-secondary);
             text-decoration: none;
             font-size: 0.9rem;
-            transition: color 0.2s;
+            transition: color 0.2s ease, transform 0.2s ease;
+            display: inline-block;
         }
 
         .footer-links a:hover {
             color: var(--text-primary);
+            transform: translateX(3px);
         }
 
         .footer-bottom {
@@ -534,13 +551,18 @@
     </footer>
 
     <script>
-        // Intersection Observer for fade-in animations
+        // Intersection Observer for fade-in animations with stagger
         const observer = new IntersectionObserver((entries) => {
-            entries.forEach((entry, index) => {
+            entries.forEach((entry) => {
                 if (entry.isIntersecting) {
+                    const siblings = entry.target.parentElement.children;
+                    const siblingIndex = Array.from(siblings).indexOf(entry.target);
+                    
                     setTimeout(() => {
                         entry.target.classList.add('visible');
-                    }, index * 100);
+                    }, siblingIndex * 100);
+                    
+                    observer.unobserve(entry.target);
                 }
             });
         }, { threshold: 0.1 });

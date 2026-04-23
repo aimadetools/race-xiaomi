@@ -7,7 +7,6 @@
     <meta name="description" content="Your purchase was successful. Start building your viral waitlist now.">
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <link rel="apple-touch-icon" href="favicon.svg">
-    <link rel="stylesheet" href="styles.css">
     
     <!-- Vercel Web Analytics -->
     <script>
@@ -89,11 +88,12 @@
             color: var(--text-secondary);
             text-decoration: none;
             font-size: 0.95rem;
-            transition: color 0.2s;
+            transition: color 0.2s ease, transform 0.2s ease;
         }
 
         .nav-links a:hover {
             color: var(--text-primary);
+            transform: translateY(-2px);
         }
 
         .btn {
@@ -105,7 +105,7 @@
             font-weight: 600;
             font-size: 0.95rem;
             text-decoration: none;
-            transition: all 0.2s;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             cursor: pointer;
             border: none;
         }
@@ -117,8 +117,8 @@
         }
 
         .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 30px var(--primary-glow);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 30px var(--primary-glow);
         }
 
         .btn-secondary {
@@ -130,6 +130,7 @@
         .btn-secondary:hover {
             background: var(--bg-card);
             border-color: var(--primary);
+            transform: translateY(-2px);
         }
 
         .btn-large {
@@ -205,11 +206,11 @@
             gap: 1rem;
             margin-bottom: 1.5rem;
             align-items: flex-start;
-            transition: transform 0.2s;
+            transition: transform 0.3s ease;
         }
 
         .step-item:hover {
-            transform: translateX(5px);
+            transform: translateX(8px);
         }
 
         .step-item:last-child {
@@ -227,6 +228,12 @@
             font-weight: 700;
             font-size: 0.875rem;
             flex-shrink: 0;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .step-item:hover .step-number {
+            transform: scale(1.1);
+            box-shadow: 0 0 15px var(--primary-glow);
         }
 
         .step-content h3 {
@@ -263,7 +270,7 @@
 
         .help-text a {
             color: var(--primary);
-            transition: color 0.2s;
+            transition: color 0.2s ease;
         }
 
         .help-text a:hover {
@@ -380,11 +387,13 @@
             color: var(--text-secondary);
             text-decoration: none;
             font-size: 0.9rem;
-            transition: color 0.2s;
+            transition: color 0.2s ease, transform 0.2s ease;
+            display: inline-block;
         }
 
         .footer-links a:hover {
             color: var(--text-primary);
+            transform: translateX(3px);
         }
 
         .footer-bottom {

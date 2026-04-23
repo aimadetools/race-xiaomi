@@ -86,11 +86,12 @@
             color: var(--text-secondary);
             text-decoration: none;
             font-size: 0.95rem;
-            transition: color 0.2s;
+            transition: color 0.2s ease, transform 0.2s ease;
         }
 
         .nav-links a:hover {
             color: var(--text-primary);
+            transform: translateY(-2px);
         }
 
         .btn {
@@ -102,7 +103,7 @@
             font-weight: 600;
             font-size: 0.95rem;
             text-decoration: none;
-            transition: all 0.2s;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         .btn-primary {
@@ -112,8 +113,8 @@
         }
 
         .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 30px var(--accent-glow);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 30px var(--accent-glow);
         }
 
         .page-header {
@@ -148,7 +149,7 @@
             border: 1px solid var(--border);
             border-radius: 16px;
             padding: 2rem;
-            transition: all 0.3s;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
             text-decoration: none;
             color: inherit;
             display: block;
@@ -163,12 +164,12 @@
 
         .blog-card:hover {
             border-color: var(--accent);
-            transform: translateY(-4px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3), 0 0 30px var(--accent-glow);
         }
 
         .blog-card.visible:hover {
-            transform: translateY(-4px);
+            transform: translateY(-8px);
         }
 
         .blog-meta {
@@ -190,7 +191,7 @@
             font-size: 1.5rem;
             font-weight: 700;
             margin-bottom: 0.75rem;
-            transition: color 0.2s;
+            transition: color 0.2s ease;
         }
 
         .blog-card:hover h2 {
@@ -208,11 +209,11 @@
             color: var(--accent);
             font-weight: 600;
             font-size: 0.9rem;
-            transition: transform 0.2s;
+            transition: transform 0.3s ease;
         }
 
         .blog-card:hover .read-more {
-            transform: translateX(5px);
+            transform: translateX(8px);
         }
 
         footer {
@@ -259,11 +260,13 @@
             color: var(--text-secondary);
             text-decoration: none;
             font-size: 0.9rem;
-            transition: color 0.2s;
+            transition: color 0.2s ease, transform 0.2s ease;
+            display: inline-block;
         }
 
         .footer-links a:hover {
             color: var(--text-primary);
+            transform: translateX(3px);
         }
 
         .footer-bottom {
@@ -410,14 +413,18 @@
     </footer>
 
     <script>
-        // Intersection Observer for fade-in animations
+        // Intersection Observer for fade-in animations with stagger
         const observer = new IntersectionObserver((entries) => {
-            entries.forEach((entry, index) => {
+            entries.forEach((entry) => {
                 if (entry.isIntersecting) {
-                    // Stagger the animations
+                    const siblings = entry.target.parentElement.children;
+                    const siblingIndex = Array.from(siblings).indexOf(entry.target);
+                    
                     setTimeout(() => {
                         entry.target.classList.add('visible');
-                    }, index * 100);
+                    }, siblingIndex * 100);
+                    
+                    observer.unobserve(entry.target);
                 }
             });
         }, { threshold: 0.1 });

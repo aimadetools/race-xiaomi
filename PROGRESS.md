@@ -1,54 +1,54 @@
+
 ### Key Decisions:
-1. Chose WaitlistKit over 9 other ideas based on scoring
-2. Decided on $29 one-time Launch Package as primary revenue driver
-3. Using vanilla HTML/CSS/JS — no frameworks, no build step
-4. localStorage for free tier, Stripe Payment Links for payments
-5. Dark theme, modern aesthetic, mobile-first design
+1. Used SVG format for favicon (scalable, small file size)
+2. Gradient purple/indigo matches site accent colors
+3. Simple "W" lettermark for brand recognition
+4. Added apple-touch-icon for mobile bookmarking
 
 ### Quality Review:
-- All pages have consistent navigation
-- Mobile responsive design implemented
-- Footer present on all pages
-- Proper meta tags for SEO
-- Blog has placeholder content (needs real posts)
+- Favicon displays correctly in browser tabs
+- All pages have consistent favicon
+- Navigation consistent across all pages
+- Mobile responsive on all pages
 
 ### Next Steps:
 - WAITING: Domain purchase + Stripe payment links (HELP-REQUEST.md)
-- Write first blog post (can do without domain)
-- Add success.html page for post-purchase
+- Add smooth scroll and animations (Task #7)
+- Write second blog post: "10 Waitlist Strategies That Actually Work"
 - Test full signup flow end-to-end
-- First community posts for validation
 
 ### Budget Spent: $0 / $90
 ### Revenue: $0
 
 ---
 
-## Day 2 — Content & Polish
+## Day 4 — Smooth Scroll & Animations
 
 ### Completed:
-- [x] Wrote first blog post: "What is a Viral Waitlist? The Complete Guide"
-- [x] Updated blog.html with real blog post card
-- [x] Blog post includes SEO meta tags and schema-ready structure
-- [x] Added CTAs throughout blog post to drive signups
-- [x] Created success.html page for post-purchase flow
-- [x] Updated pricing.html buttons to link to success page (temporary)
-- [x] Success page detects plan type via URL param (?plan=pro)
-- [x] Added next steps guide on success page
+- [x] Added smooth scroll behavior to all pages (scroll-behavior: smooth)
+- [x] Implemented fade-in animations on scroll using Intersection Observer
+- [x] Added staggered animation delays for lists/grids
+- [x] Enhanced button hover effects with translateY and box-shadow
+- [x] Added hover effects to nav links, footer links, and cards
+- [x] Improved transition timing with cubic-bezier easing
+- [x] Added pulse animation to badge dot and pricing badge
+- [x] Enhanced form input focus states with glow effects
+- [x] Added hover animations to template cards in app.html
+- [x] Improved step items hover effect in success.html
 
 ### Key Decisions:
-1. Blog post format: Long-form guide (8 min read) for SEO value
-2. Included real examples (Dropbox, Robinhood, Monzo) for credibility
-3. Success page uses URL params to show correct features for each plan
-4. Pricing buttons temporarily link to success.html until Stripe links arrive
-5. Added TODO comments in pricing.html for easy Stripe link replacement
+1. Used Intersection Observer API for performant scroll animations
+2. Staggered delays (100ms) for grid items create visual interest
+3. Cubic-bezier(0.4, 0, 0.2, 1) for smooth, natural motion
+4. translateY(-3px) on buttons for subtle lift effect
+5. Box-shadow glow effects on hover for premium feel
 
 ### Quality Review:
-- Blog post has proper semantic HTML
-- Navigation consistent with all pages
-- Mobile responsive layout on success page
-- Internal links to app.html for conversion
-- Success page has clear CTA to builder
+- Animations are smooth and performant (GPU-accelerated)
+- No janky scrolling or layout shifts
+- Consistent animation patterns across all pages
+- Hover states provide clear visual feedback
+- Mobile-friendly (animations don't interfere with touch)
 
 ### Next Steps:
 - WAITING: Domain purchase + Stripe payment links (HELP-REQUEST.md)
