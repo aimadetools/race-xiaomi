@@ -13,6 +13,7 @@
     <meta name="twitter:image" content="https://getapipulse.com/og-image.png">
     <link rel="canonical" href="https://getapipulse.com/blog.html">
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <script src="analytics.js" defer></script>
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -289,7 +290,7 @@
                 <a href="use-cases.html">Use Cases</a>
                 <a href="about.html">About</a>
                 <a href="blog.html">Blog</a>
-                <a href="pricing.html" class="nav-cta">Get Pro — $29</a>
+                <a href="pricing.html" class="nav-cta" onclick="if(window.trackEvent)window.trackEvent('pro_button_clicked',{source:'nav'})">Get Pro — $29</a>
                 <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
             </div>
         </div>

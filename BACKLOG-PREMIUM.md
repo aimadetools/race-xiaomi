@@ -67,12 +67,15 @@ These tasks need careful thought, architectural decisions, or complex problem-so
 
 ## Priority: Nice-to-Have
 
-### 8. Analytics & Conversion Tracking
+### 8. Analytics & Conversion Tracking ✓ DONE
 - **What:** Set up conversion funnel tracking
 - **Current:** Vercel Analytics (page views only)
 - **Need:** Track calculator usage → pricing page → purchase conversion
 - **Options:** Vercel Analytics Pro, PostHog (free tier), Mixpanel
 - **Decision:** PostHog free tier for MVP
+- **Implemented:** PostHog integration (placeholder key — human needs to create account) + localStorage-based event tracking
+- **Events tracked:** calculator_used, preset_clicked, pro_button_clicked, email_signup, theme_toggled, $pageview
+- **Files:** analytics.js (new), all 6 HTML pages modified
 
 ### 9. Email List Building
 - **What:** Collect emails for pricing update notifications

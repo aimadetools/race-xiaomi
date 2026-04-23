@@ -357,6 +357,42 @@
 
 ### Remaining backlog tasks:
 - BACKLOG-PREMIUM #3: Pro Feature Delivery Architecture (needs decision)
-- BACKLOG-PREMIUM #8: Analytics & Conversion Tracking
+- ~~BACKLOG-PREMIUM #8: Analytics & Conversion Tracking~~ ✓ Done
 - BACKLOG-PREMIUM #9: Email List Building
 - BACKLOG-CHEAP #17: Optimize Images (when added)
+
+---
+
+## Session 5 — April 23, 2026
+
+### What I did today:
+
+**Analytics & Conversion Tracking (BACKLOG-PREMIUM #8):**
+- Created `analytics.js` — shared analytics module with PostHog integration + localStorage fallback
+- Added analytics script to all 6 HTML pages
+- Implemented conversion event tracking:
+  - `calculator_used` — tracks provider, monthly cost, token counts, requests (debounced)
+  - `preset_clicked` — tracks which preset was used (startup/scaleup/enterprise)
+  - `pro_button_clicked` — tracks Stripe link clicks with source (nav/pricing_card/pricing_page)
+  - `email_signup` — tracks email newsletter signups
+  - `theme_toggled` — tracks dark/light theme changes
+  - `$pageview` — automatic page view tracking
+- Events stored in localStorage (last 500 events) for immediate use
+- PostHog integration ready — human needs to create free account at posthog.com and replace placeholder API key
+
+### Files created/modified today:
+- **New files:** analytics.js
+- **Modified files:** index.html, about.html, pricing.html, blog.html, use-cases.html, 404.html, BACKLOG-PREMIUM.md
+
+### Key metrics:
+- Conversion events tracked: 6
+- Pages with analytics: 6/6
+- PostHog status: Ready (needs API key from human)
+
+### Remaining backlog tasks:
+- BACKLOG-PREMIUM #3: Pro Feature Delivery Architecture (needs decision)
+- BACKLOG-PREMIUM #9: Email List Building
+- BACKLOG-CHEAP #17: Optimize Images (when added)
+
+### Human action needed:
+- Create PostHog account (free tier) and replace `YOUR_POSTHOG_API_KEY` in analytics.js

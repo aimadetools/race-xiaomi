@@ -14,6 +14,7 @@
     <meta name="twitter:image" content="https://getapipulse.com/og-image.png">
     <link rel="canonical" href="https://getapipulse.com">
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <script src="analytics.js" defer></script>
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -390,7 +391,7 @@
                 <a href="use-cases.html">Use Cases</a>
                 <a href="about.html">About</a>
                 <a href="blog.html">Blog</a>
-                <a href="#pricing" class="nav-cta">Get Pro — $29</a>
+                <a href="#pricing" class="nav-cta" onclick="if(window.trackEvent)window.trackEvent('pro_button_clicked',{source:'nav'})">Get Pro — $29</a>
                 <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
             </div>
         </div>
@@ -666,7 +667,7 @@
                     <li>Cost change alerts</li>
                     <li>Priority support</li>
                 </ul>
-                <a href="https://buy.stripe.com/fZu7sL3Gw3GS0RQeoDeEo0a" class="btn-primary" style="text-align:center;" target="_blank" rel="noopener">Get Pro Access</a>
+                <a href="https://buy.stripe.com/fZu7sL3Gw3GS0RQeoDeEo0a" class="btn-primary" style="text-align:center;" target="_blank" rel="noopener" onclick="if(window.trackEvent)window.trackEvent('pro_button_clicked',{source:'pricing_card'})">Get Pro Access</a>
             </div>
         </div>
     </section>
@@ -764,6 +765,20 @@
             }
 
             setTimeout(() => results.classList.remove('calculating'), 300);
+
+            // Track calculator usage (debounced — only on meaningful changes)
+            if (window.trackEvent && totalCost > 0) {
+                clearTimeout(window._calcTrackTimer);
+                window._calcTrackTimer = setTimeout(() => {
+                    window.trackEvent('calculator_used', {
+                        provider: providers[provider].name,
+                        monthly_cost: totalCost.toFixed(2),
+                        input_tokens: inputTokens,
+                        output_tokens: outputTokens,
+                        requests_per_day: requests
+                    });
+                }, 1000);
+            }
         }
 
         // Run on load
@@ -782,6 +797,7 @@
             document.getElementById('output-tokens').value = p.output;
             document.getElementById('requests').value = p.requests;
             calculate();
+            if (window.trackEvent) window.trackEvent('preset_clicked', { preset: type });
         }
 
         // Back to top button
@@ -802,6 +818,7 @@
             document.getElementById('email-msg').textContent = 'Thanks! You\'ll be notified of pricing changes.';
             document.getElementById('email-msg').style.display = 'block';
             document.getElementById('email-input').value = '';
+            if (window.trackEvent) window.trackEvent('email_signup');
         }
 
         // Theme toggle
@@ -812,6 +829,7 @@
             html.setAttribute('data-theme', newTheme);
             localStorage.setItem('theme', newTheme);
             updateThemeIcon();
+            if (window.trackEvent) window.trackEvent('theme_toggled', { theme: newTheme });
         }
 
         function updateThemeIcon() {
