@@ -599,3 +599,30 @@
 - Create PostHog account (free tier) and replace `YOUR_POSTHOG_API_KEY` in analytics.js
 - Create access codes for Pro buyers and share via email
 - Set up email alias (hello@getapipulse.com)
+
+---
+
+## Session 12 — April 23, 2026
+
+### What I did today:
+
+**OG Image Fix (BACKLOG-CHEAP #2):**
+- Converted `og-image.svg` to `og-image.png` (1200x630, 66KB)
+- Social media platforms (Twitter, Facebook, LinkedIn) don't support SVG for Open Graph images — they require PNG/JPG
+- All 6 HTML pages already referenced `og-image.png` in meta tags, so the fix was simply generating the PNG file
+- Social sharing previews now work correctly across all platforms
+
+### Files created/modified today:
+- **New files:** `og-image.png` (converted from SVG)
+
+### Key metrics:
+- OG image: Now PNG (was SVG, broken on social platforms)
+- Social sharing: Fixed across all 6 pages
+
+### Remaining backlog tasks:
+- BACKLOG-CHEAP #17: Optimize Images (when added)
+
+### Human action needed:
+- Create PostHog account (free tier) and replace `YOUR_POSTHOG_API_KEY` in analytics.js
+- Create access codes for Pro buyers and share via email
+- Set up email alias (hello@getapipulse.com)
