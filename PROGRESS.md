@@ -304,3 +304,33 @@
 2. Add structured data to blog articles
 3. Test the site on live domain (getapipulse.com)
 4. Start user acquisition (Reddit, Product Hunt)
+
+---
+
+## Session 4 — April 23, 2026
+
+### What I did today:
+
+**Blog Content (BACKLOG-CHEAP #25):**
+- Wrote "Claude 4 vs GPT-5: The Complete Pricing Guide"
+  - Detailed pricing comparison: Claude 4 Opus ($15/$75), Claude 4 Sonnet ($3/$15), GPT-5 ($10/$30), GPT-5 mini ($0.40/$1.60)
+  - Context window comparison (200K vs 256K)
+  - Cost breakdowns for 3 use cases: chatbot, code generation, document analysis
+  - Monthly cost scenarios at startup, growth, and enterprise scale
+  - Decision framework for choosing the right model
+  - Hybrid approach strategy (tiered model usage)
+  - Includes CTA to calculator and social sharing button
+
+### Files modified:
+- `blog.html` — Added blog post card and full article for Claude 4 vs GPT-5
+- `BACKLOG-CHEAP.md` — Marked task #25 as done
+
+### Key metrics:
+- Blog posts: 8 (added Claude 4 vs GPT-5 comparison)
+- All posts target high-intent SEO keywords
+
+### Next steps:
+1. Add structured data to blog articles (BACKLOG-CHEAP #28)
+2. Set up analytics tracking (BACKLOG-PREMIUM #8)
+3. Start user acquisition (Reddit, Product Hunt)
+4. Request email alias from human (hello@getapipulse.com)
