@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Use Cases — APIpulse</title>
+    <meta name="description" content="See how APIpulse helps chatbot builders, code generation tools, document analysis platforms, and enterprise teams optimize AI API costs.">
+    <meta property="og:title" content="Use Cases — APIpulse">
+    <meta property="og:description" content="Real-world scenarios for AI API cost optimization.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://getapipulse.com/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://getapipulse.com/og-image.png">
+    <link rel="canonical" href="https://getapipulse.com/use-cases.html">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <style>
+        :root {
+            --bg-primary: #0a0a0f; --bg-secondary: #12121a; --bg-card: #1a1a2e;
+            --text-primary: #e8e8ed; --text-secondary: #9494a8; --text-muted: #6b6b80;
+            --accent: #6366f1; --accent-hover: #818cf8; --accent-glow: rgba(99, 102, 241, 0.15);
+            --green: #22c55e; --border: #2a2a3e;
+        }
+        [data-theme="light"] {
+            --bg-primary: #ffffff; --bg-secondary: #f8f9fa; --bg-card: #ffffff;
+            --text-primary: #1a1a2e; --text-secondary: #495057; --text-muted: #868e96;
+            --accent: #6366f1; --accent-hover: #4f46e5; --accent-glow: rgba(99, 102, 241, 0.1);
+            --green: #16a34a; --border: #e9ecef;
+        }
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--bg-primary); color: var(--text-primary); line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+        a { color: var(--accent); text-decoration: none; }
+        a:hover { color: var(--accent-hover); }
+        nav {
+            position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+            background: rgba(10, 10, 15, 0.85); backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border); padding: 0 24px;
+        }
+        .nav-inner {
+            max-width: 1200px; margin: 0 auto;
+            display: flex; align-items: center; justify-content: space-between; height: 64px;
+        }
+        .logo { font-size: 20px; font-weight: 700; }
+        .logo span { color: var(--accent); }
+        .nav-links { display: flex; gap: 32px; align-items: center; }
+        .nav-links a { color: var(--text-secondary); font-size: 14px; font-weight: 500; }
+        .nav-links a:hover { color: var(--text-primary); }
+        .nav-cta { background: var(--accent); color: white !important; padding: 8px 20px; border-radius: 8px; }
+        .theme-toggle {
+            background: none; border: none; font-size: 18px; cursor: pointer;
+            padding: 4px 8px; border-radius: 6px; transition: background 0.2s;
+        }
+        .theme-toggle:hover { background: var(--bg-card); }
+
+        .content { max-width: 900px; margin: 0 auto; padding: 120px 24px 80px; }
+        h1 { font-size: 40px; font-weight: 800; text-align: center; margin-bottom: 12px; }
+        .subtitle { text-align: center; color: var(--text-secondary); font-size: 18px; margin-bottom: 64px; }
+
+        .use-case {
+            background: var(--bg-secondary); border: 1px solid var(--border);
+            border-radius: 16px; padding: 36px; margin-bottom: 32px;
+        }
+        .use-case-header { display: flex; align-items: center; gap: 16px; margin-bottom: 20px; }
+        .use-case-icon {
+            width: 52px; height: 52px; background: var(--accent-glow);
+            border-radius: 12px; display: flex; align-items: center;
+            justify-content: center; font-size: 24px; flex-shrink: 0;
+        }
+        .use-case h2 { font-size: 22px; font-weight: 700; }
+        .use-case h3 { font-size: 16px; font-weight: 700; margin: 20px 0 10px; color: var(--accent); }
+        .use-case p { color: var(--text-secondary); font-size: 15px; margin-bottom: 12px; }
+        .use-case ul { color: var(--text-secondary); padding-left: 20px; margin-bottom: 16px; }
+        .use-case li { margin-bottom: 6px; font-size: 14px; }
+        .use-case strong { color: var(--text-primary); }
+
+        .cost-example {
+            background: var(--bg-card); border-radius: 10px; padding: 20px;
+            margin: 16px 0;
+        }
+        .cost-example .label { font-size: 12px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px; }
+        .cost-row { display: flex; justify-content: space-between; padding: 6px 0; font-size: 14px; }
+        .cost-row .name { color: var(--text-secondary); }
+        .cost-row .value { font-weight: 600; color: var(--accent); }
+        .cost-total { border-top: 1px solid var(--border); padding-top: 8px; margin-top: 8px; }
+
+        .cta-inline {
+            background: var(--bg-card); border: 1px solid var(--accent);
+            border-radius: 12px; padding: 20px; margin-top: 20px; text-align: center;
+        }
+        .cta-inline p { margin-bottom: 12px; }
+        .btn-primary {
+            background: var(--accent); color: white; padding: 10px 24px;
+            border-radius: 8px; font-size: 14px; font-weight: 600;
+            border: none; cursor: pointer; display: inline-block;
+        }
+        .btn-primary:hover { background: var(--accent-hover); color: white; }
+
+        footer {
+            padding: 40px 24px; border-top: 1px solid var(--border);
+            text-align: center; color: var(--text-muted); font-size: 13px;
+        }
+        footer a { color: var(--text-secondary); }
+
+        .back-to-top {
+            position: fixed; bottom: 24px; right: 24px; width: 44px; height: 44px;
+            background: var(--accent); color: white; border: none; border-radius: 50%;
+            font-size: 20px; cursor: pointer; opacity: 0; pointer-events: none;
+            transition: opacity 0.3s, transform 0.3s; z-index: 99;
+            display: flex; align-items: center; justify-content: center;
+            box-shadow: 0 4px 12px rgba(99,102,241,0.3);
+        }
+        .back-to-top.visible { opacity: 1; pointer-events: auto; }
+        .back-to-top:hover { transform: translateY(-2px); }
+
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .content { padding: 100px 20px 60px; }
+            h1 { font-size: 28px; }
+            .subtitle { font-size: 16px; }
+            .use-case { padding: 24px; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-inner">
+            <a href="index.html" class="logo">API<span>pulse</span></a>
+            <div class="nav-links">
+                <a href="index.html#calculator">Calculator</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="about.html">About</a>
+                <a href="blog.html">Blog</a>
+                <a href="pricing.html" class="nav-cta">Get Pro — $29</a>
+                <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="content">
+        <h1>Use Cases</h1>
+        <p class="subtitle">See how developers use APIpulse to optimize AI API costs for different scenarios.</p>
+
+        <div class="use-case">
+            <div class="use-case-header">
+                <div class="use-case-icon">💬</div>
+                <h2>Chatbot Builder</h2>
+            </div>
+            <p>You're building a customer support chatbot that handles 500 conversations per day. Each conversation averages 2,000 input tokens and 500 output tokens.</p>
+
+            <h3>The Challenge</h3>
+            <p>At scale, even small per-request costs add up fast. Choosing the wrong model can cost you hundreds extra per month.</p>
+
+            <div class="cost-example">
+                <div class="label">Monthly cost comparison (500 req/day × 30 days)</div>
+                <div class="cost-row"><span class="name">GPT-4o</span><span class="value">$225.00/mo</span></div>
+                <div class="cost-row"><span class="name">Claude Sonnet 4</span><span class="value">$292.50/mo</span></div>
+                <div class="cost-row"><span class="name">GPT-4o mini</span><span class="value">$13.50/mo</span></div>
+                <div class="cost-row"><span class="name">Gemini 2.0 Flash</span><span class="value">$9.00/mo</span></div>
+                <div class="cost-row cost-total"><span class="name">Potential savings</span><span class="value" style="color:var(--green);">Up to $216/mo</span></div>
+            </div>
+
+            <h3>Recommendation</h3>
+            <p>Start with <strong>Gemini 2.0 Flash</strong> or <strong>GPT-4o mini</strong> for basic chatbot responses. Only use premium models (GPT-4o, Claude Sonnet) for complex queries that require higher reasoning.</p>
+
+            <div class="cta-inline">
+                <p>Calculate your chatbot's exact API cost</p>
+                <a href="index.html#calculator" class="btn-primary">Try the Calculator</a>
+            </div>
+        </div>
+
+        <div class="use-case">
+            <div class="use-case-header">
+                <div class="use-case-icon">💻</div>
+                <h2>Code Generation Tool</h2>
+            </div>
+            <p>You're building an AI-powered code assistant that generates code snippets, reviews pull requests, and writes documentation.</p>
+
+            <h3>The Challenge</h3>
+            <p>Code generation needs high-quality models, but output tokens are expensive. A single code review can generate 2,000+ output tokens.</p>
+
+            <div class="cost-example">
+                <div class="label">Monthly cost comparison (200 req/day × 30 days, 3K in / 2K out)</div>
+                <div class="cost-row"><span class="name">GPT-4o</span><span class="value">$330.00/mo</span></div>
+                <div class="cost-row"><span class="name">Claude Sonnet 4</span><span class="value">$450.00/mo</span></div>
+                <div class="cost-row"><span class="name">Mistral Large</span><span class="value">$252.00/mo</span></div>
+                <div class="cost-row"><span class="name">Llama 3.1 70B</span><span class="value">$105.60/mo</span></div>
+                <div class="cost-row cost-total"><span class="name">Potential savings</span><span class="value" style="color:var(--green);">Up to $344/mo</span></div>
+            </div>
+
+            <h3>Recommendation</h3>
+            <p>Use <strong>Mistral Large</strong> or <strong>Llama 3.1 70B</strong> for code generation — they offer strong coding performance at lower prices. Reserve GPT-4o and Claude for the most complex reasoning tasks.</p>
+
+            <div class="cta-inline">
+                <p>Compare code generation model costs</p>
+                <a href="index.html#calculator" class="btn-primary">Try the Calculator</a>
+            </div>
+        </div>
+
+        <div class="use-case">
+            <div class="use-case-header">
+                <div class="use-case-icon">📄</div>
+                <h2>Document Analysis Platform</h2>
+            </div>
+            <p>You're building a tool that analyzes long documents — contracts, research papers, financial reports — using AI.</p>
+
+            <h3>The Challenge</h3>
+            <p>Document analysis requires large context windows and handles massive input tokens. The input cost dominates your budget.</p>
+
+            <div class="cost-example">
+                <div class="label">Monthly cost comparison (100 req/day × 30 days, 10K in / 500 out)</div>
+                <div class="cost-row"><span class="name">GPT-4o</span><span class="value">$105.00/mo</span></div>
+                <div class="cost-row"><span class="name">Gemini 2.5 Pro</span><span class="value">$52.50/mo</span></div>
+                <div class="cost-row"><span class="name">Claude Sonnet 4</span><span class="value">$112.50/mo</span></div>
+                <div class="cost-row"><span class="name">AI21 Jamba 1.5</span><span class="value">$72.00/mo</span></div>
+                <div class="cost-row cost-total"><span class="name">Potential savings</span><span class="value" style="color:var(--green);">Up to $60/mo</span></div>
+            </div>
+
+            <h3>Recommendation</h3>
+            <p><strong>Gemini 2.5 Pro</strong> is the best value for document analysis — 1M context window at $1.25/1M input tokens. For documents under 128K tokens, <strong>GPT-4o</strong> works well too.</p>
+
+            <div class="cta-inline">
+                <p>Calculate document analysis costs</p>
+                <a href="index.html#calculator" class="btn-primary">Try the Calculator</a>
+            </div>
+        </div>
+
+        <div class="use-case">
+            <div class="use-case-header">
+                <div class="use-case-icon">🏢</div>
+                <h2>Enterprise API Budget Planning</h2>
+            </div>
+            <p>You're a CTO or engineering manager planning AI API budgets for multiple teams and use cases.</p>
+
+            <h3>The Challenge</h3>
+            <p>Different teams have different needs. You need to allocate budgets across chatbots, code tools, data analysis, and more — while keeping total costs under control.</p>
+
+            <div class="cost-example">
+                <div class="label">Sample enterprise budget (5 teams, mixed usage)</div>
+                <div class="cost-row"><span class="name">Customer Support (chatbot)</span><span class="value">$45/mo</span></div>
+                <div class="cost-row"><span class="name">Engineering (code gen)</span><span class="value">$320/mo</span></div>
+                <div class="cost-row"><span class="name">Legal (doc analysis)</span><span class="value">$105/mo</span></div>
+                <div class="cost-row"><span class="name">Marketing (content gen)</span><span class="value">$67/mo</span></div>
+                <div class="cost-row"><span class="name">Data Science (extraction)</span><span class="value">$28/mo</span></div>
+                <div class="cost-row cost-total"><span class="name">Total (naive)</span><span class="value">$565/mo</span></div>
+                <div class="cost-row cost-total"><span class="name">Optimized total</span><span class="value" style="color:var(--green);">$290/mo</span></div>
+            </div>
+
+            <h3>Recommendation</h3>
+            <p>Use APIpulse to model each team's usage separately. Often, <strong>switching 1-2 teams to cheaper models</strong> can cut total costs by 30-40% without affecting quality.</p>
+
+            <div class="cta-inline">
+                <p>Plan your enterprise API budget</p>
+                <a href="index.html#calculator" class="btn-primary">Try the Calculator</a>
+            </div>
+        </div>
+    </div>
+
+    <button class="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">↑</button>
+
+    <footer>
+        <p>Pricing data last verified: April 23, 2026</p>
+        <p>&copy; 2026 APIpulse. <a href="index.html">Home</a> &middot; <a href="about.html">About</a> &middot; <a href="blog.html">Blog</a></p>
+    </footer>
+
+    <script>
+        // Theme toggle
+        function toggleTheme() {
+            const html = document.documentElement;
+            const currentTheme = html.getAttribute('data-theme');
+            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+            html.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            updateThemeIcon();
+        }
+
+        function updateThemeIcon() {
+            const theme = document.documentElement.getAttribute('data-theme');
+            const icon = document.querySelector('.theme-toggle');
+            if (icon) {
+                icon.textContent = theme === 'light' ? '☀️' : '🌙';
+            }
+        }
+
+        const savedTheme = localStorage.getItem('theme') || 'dark';
+        document.documentElement.setAttribute('data-theme', savedTheme);
+        updateThemeIcon();
+
+        // Back to top button
+        window.addEventListener('scroll', () => {
+            const btn = document.querySelector('.back-to-top');
+            if (btn) btn.classList.toggle('visible', window.scrollY > 400);
+        });
+    </script>
+</body>
+</html>

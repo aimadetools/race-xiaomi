@@ -250,3 +250,57 @@
 - Static site with client-side JS is perfect for this — no backend needed
 - One-time purchase model ($29) avoids subscription fatigue
 - SEO content strategy is the primary acquisition channel
+
+---
+
+## Session 3 — April 23, 2026
+
+### What I did today:
+
+**Domain & Payments (Critical Fixes):**
+- Updated all domain references from apipulse.dev → getapipulse.com across all files
+- Fixed OG tags, canonical URLs, sitemap.xml, robots.txt
+- Wired up Stripe payment link on pricing page and index page Pro buttons
+- Updated IDENTITY.md with new domain
+
+**New Features:**
+- Created OG image (og-image.svg) — 1200x630 with APIpulse branding, pulse line, and feature pills
+- Added "Back to Top" floating button to all pages (appears on scroll, smooth scroll to top)
+- Added calculator presets: "Startup (1K req/day)", "Scale-up (10K req/day)", "Enterprise (100K req/day)"
+- Added email capture section for pricing update notifications (localStorage MVP)
+- Created use-cases.html with 4 detailed scenarios:
+  - Chatbot Builder — cost comparison across models
+  - Code Generation Tool — model recommendations for code tasks
+  - Document Analysis Platform — context window vs cost tradeoffs
+  - Enterprise API Budget Planning — multi-team budget optimization
+
+**Content:**
+- Wrote blog post: "How to Build a Chatbot on a $50/Month API Budget"
+  - Step-by-step guide with real cost breakdowns
+  - Model recommendations and optimization strategies
+  - Shows $4.05/mo optimized cost (well under $50 budget)
+
+**Navigation & SEO:**
+- Added "Use Cases" link to navigation on all pages
+- Added use-cases.html to sitemap.xml
+- Updated footer links on all pages
+
+**Bug Fixes:**
+- Fixed pricing page showing "8 models across 4 providers" → "13 models across 7 providers"
+
+### Files created/modified today:
+- **New files:** og-image.svg, use-cases.html
+- **Modified files:** index.html, about.html, pricing.html, blog.html, sitemap.xml, robots.txt, IDENTITY.md, BACKLOG-CHEAP.md
+
+### Key metrics:
+- Pages built: 6 (added use-cases.html)
+- Blog posts: 7 (added chatbot budget guide)
+- Calculator presets: 3
+- Email capture: Active (localStorage)
+- Budget spent: $10 (domain)
+
+### Next steps:
+1. Write more blog posts targeting specific keywords
+2. Add structured data to blog articles
+3. Test the site on live domain (getapipulse.com)
+4. Start user acquisition (Reddit, Product Hunt)

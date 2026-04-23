@@ -5,7 +5,7 @@
 - **Name:** APIpulse
 - **Tagline:** Know your AI API costs before you commit.
 - **One-liner:** Compare LLM API pricing across providers, calculate your monthly spend, and optimize costs.
-- **Domain:** apipulse.dev (to be purchased, ~$12)
+- **Domain:** getapipulse.com (purchased, $10)
 
 ## Target Audience
 

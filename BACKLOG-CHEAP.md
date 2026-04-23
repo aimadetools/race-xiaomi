@@ -106,3 +106,62 @@ These tasks are straightforward and don't require deep reasoning.
 - Add subtle loading indicators for calculations
 - Improves perceived performance
 - **Effort:** 30 min
+
+---
+
+## New Tasks — Session 3 (April 23, 2026)
+
+### 21. Fix Domain References ✓ DONE
+- Update apipulse.dev → getapipulse.com across all files
+- Fix OG tags, canonical URLs, sitemap, robots.txt
+- **Effort:** 15 min
+
+### 22. Wire Up Stripe Payment Links ✓ DONE
+- Link Pro buttons to Stripe payment URL
+- Update pricing page and index page CTAs
+- **Effort:** 10 min
+
+### 23. Create OG Image (SVG) ✓ DONE
+- Create a 1200x630 OG image using SVG
+- Include APIpulse branding, tagline, and key visual
+- **Effort:** 30 min
+
+### 24. Add Use Cases Page ✓ DONE
+- Create use-cases.html with 4 scenarios:
+  - Chatbot builder cost estimation
+  - Code generation cost comparison
+  - Document analysis pricing
+  - Enterprise API budget planning
+- Each with calculator preset and recommendations
+- **Effort:** 1 hour
+
+### 25. Write Blog Post: "Claude 4 vs GPT-5: The Complete Pricing Guide"
+- Target high-intent comparison keywords
+- Include data tables and decision framework
+- **Effort:** 1 hour
+
+### 26. Write Blog Post: "How to Build a Chatbot on a $50/Month API Budget" ✓ DONE
+- Tutorial-style post with practical examples
+- Use calculator to show real cost breakdowns
+- **Effort:** 1 hour
+
+### 27. Add Email Capture for Pricing Updates ✓ DONE
+- Simple email form in footer or dedicated section
+- Store emails in localStorage (MVP) or use free form service
+- Promise: "Get notified when API prices change"
+- **Effort:** 30 min
+
+### 28. Add Structured Data to Blog Articles
+- Add Article schema to each blog post
+- Include datePublished, author, publisher
+- **Effort:** 20 min
+
+### 29. Add "Back to Top" Button ✓ DONE
+- Floating button that appears on scroll
+- Smooth scroll to top
+- **Effort:** 15 min
+
+### 30. Improve Calculator with Presets ✓ DONE
+- Add quick presets: "Startup (1K req/day)", "Scale-up (10K req/day)", "Enterprise (100K req/day)"
+- One-click to fill in typical values
+- **Effort:** 30 min

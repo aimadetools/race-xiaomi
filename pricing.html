@@ -8,10 +8,10 @@
     <meta property="og:title" content="Pricing — APIpulse">
     <meta property="og:description" content="APIpulse pricing — free calculator and $29 one-time Pro upgrade. No subscriptions.">
     <meta property="og:type" content="website">
-    <meta property="og:image" content="https://apipulse.dev/og-image.png">
+    <meta property="og:image" content="https://getapipulse.com/og-image.png">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:image" content="https://apipulse.dev/og-image.png">
-    <link rel="canonical" href="https://apipulse.dev/pricing.html">
+    <meta name="twitter:image" content="https://getapipulse.com/og-image.png">
+    <link rel="canonical" href="https://getapipulse.com/pricing.html">
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <script type="application/ld+json">
     {
@@ -129,6 +129,16 @@
             .faq-item { padding: 16px; }
             .faq-item h3 { font-size: 16px; }
         }
+        .back-to-top {
+            position: fixed; bottom: 24px; right: 24px; width: 44px; height: 44px;
+            background: var(--accent); color: white; border: none; border-radius: 50%;
+            font-size: 20px; cursor: pointer; opacity: 0; pointer-events: none;
+            transition: opacity 0.3s, transform 0.3s; z-index: 99;
+            display: flex; align-items: center; justify-content: center;
+            box-shadow: 0 4px 12px rgba(99,102,241,0.3);
+        }
+        .back-to-top.visible { opacity: 1; pointer-events: auto; }
+        .back-to-top:hover { transform: translateY(-2px); }
     </style>
 </head>
 <body>
@@ -138,6 +148,7 @@
             <div class="nav-links">
                 <a href="index.html#calculator">Calculator</a>
                 <a href="pricing.html">Pricing</a>
+                <a href="use-cases.html">Use Cases</a>
                 <a href="about.html">About</a>
                 <a href="blog.html">Blog</a>
                 <a href="pricing.html" class="nav-cta">Get Pro — $29</a>
@@ -157,7 +168,7 @@
                 <div class="price-note">Free forever, no account needed</div>
                 <ul>
                     <li>Interactive cost calculator</li>
-                    <li>8 models across 4 providers</li>
+                    <li>13 models across 7 providers</li>
                     <li>Provider comparison table</li>
                     <li>Real-time calculations</li>
                     <li>Basic cost estimation</li>
@@ -179,7 +190,7 @@
                     <li>Priority support</li>
                     <li>Early access to new features</li>
                 </ul>
-                <button class="btn-primary" onclick="alert('Coming soon! We\'re setting up payments. Check back in a few days.')">Get Pro Access</button>
+                <a href="https://buy.stripe.com/fZu7sL3Gw3GS0RQeoDeEo0a" class="btn-primary" style="text-align:center;" target="_blank" rel="noopener">Get Pro Access</a>
             </div>
         </div>
 
@@ -212,9 +223,11 @@
         </div>
     </div>
 
+    <button class="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">↑</button>
+
     <footer>
         <p>Pricing data last verified: April 23, 2026</p>
-        <p>&copy; 2026 APIpulse. <a href="index.html">Home</a> &middot; <a href="about.html">About</a> &middot; <a href="blog.html">Blog</a></p>
+        <p>&copy; 2026 APIpulse. <a href="index.html">Home</a> &middot; <a href="use-cases.html">Use Cases</a> &middot; <a href="about.html">About</a> &middot; <a href="blog.html">Blog</a></p>
     </footer>
 
     <script>
@@ -240,6 +253,12 @@
         const savedTheme = localStorage.getItem('theme') || 'dark';
         document.documentElement.setAttribute('data-theme', savedTheme);
         updateThemeIcon();
+
+        // Back to top button
+        window.addEventListener('scroll', () => {
+            const btn = document.querySelector('.back-to-top');
+            if (btn) btn.classList.toggle('visible', window.scrollY > 400);
+        });
     </script>
 </body>
 </html>

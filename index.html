@@ -10,16 +10,16 @@
     <meta property="og:description" content="Compare LLM API pricing across providers. Calculate monthly spend and optimize costs.">
     <meta property="og:type" content="website">
     <meta name="twitter:card" content="summary_large_image">
-    <meta property="og:image" content="https://apipulse.dev/og-image.png">
-    <meta name="twitter:image" content="https://apipulse.dev/og-image.png">
-    <link rel="canonical" href="https://apipulse.dev">
+    <meta property="og:image" content="https://getapipulse.com/og-image.png">
+    <meta name="twitter:image" content="https://getapipulse.com/og-image.png">
+    <link rel="canonical" href="https://getapipulse.com">
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
         "@type": "WebApplication",
         "name": "APIpulse",
-        "url": "https://apipulse.dev",
+        "url": "https://getapipulse.com",
         "description": "Compare LLM API pricing across OpenAI, Anthropic, Google, and Mistral. Calculate your monthly spend, model scenarios, and optimize costs.",
         "applicationCategory": "DeveloperApplication",
         "operatingSystem": "Web",
@@ -350,6 +350,33 @@
             0%, 100% { opacity: 1; }
             50% { opacity: 0.5; }
         }
+
+        /* Presets */
+        .presets { display: flex; gap: 8px; margin-bottom: 24px; flex-wrap: wrap; }
+        .preset-btn {
+            background: var(--bg-card); border: 1px solid var(--border); color: var(--text-secondary);
+            padding: 6px 14px; border-radius: 8px; font-size: 13px; cursor: pointer;
+            transition: all 0.2s; font-weight: 500;
+        }
+        .preset-btn:hover { border-color: var(--accent); color: var(--accent); }
+
+        /* Back to top */
+        .back-to-top {
+            position: fixed; bottom: 24px; right: 24px; width: 44px; height: 44px;
+            background: var(--accent); color: white; border: none; border-radius: 50%;
+            font-size: 20px; cursor: pointer; opacity: 0; pointer-events: none;
+            transition: opacity 0.3s, transform 0.3s; z-index: 99;
+            display: flex; align-items: center; justify-content: center;
+            box-shadow: 0 4px 12px rgba(99,102,241,0.3);
+        }
+        .back-to-top.visible { opacity: 1; pointer-events: auto; }
+        .back-to-top:hover { transform: translateY(-2px); }
+
+        /* Email section */
+        .email-section {
+            padding: 60px 24px; background: var(--bg-secondary);
+            border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
+        }
     </style>
 </head>
 <body>
@@ -360,6 +387,7 @@
             <div class="nav-links">
                 <a href="#calculator">Calculator</a>
                 <a href="#pricing">Pricing</a>
+                <a href="use-cases.html">Use Cases</a>
                 <a href="about.html">About</a>
                 <a href="blog.html">Blog</a>
                 <a href="#pricing" class="nav-cta">Get Pro — $29</a>
@@ -386,6 +414,12 @@
             <p>Enter your usage to compare costs across providers instantly.</p>
         </div>
         <div class="calculator" role="form" aria-label="API Cost Calculator">
+            <div class="presets">
+                <span style="font-size:13px;color:var(--text-muted);align-self:center;">Quick presets:</span>
+                <button class="preset-btn" onclick="applyPreset('startup')">Startup (1K req/day)</button>
+                <button class="preset-btn" onclick="applyPreset('scaleup')">Scale-up (10K req/day)</button>
+                <button class="preset-btn" onclick="applyPreset('enterprise')">Enterprise (100K req/day)</button>
+            </div>
             <div class="calc-grid">
                 <div class="calc-inputs">
                     <div class="input-group">
@@ -632,7 +666,7 @@
                     <li>Cost change alerts</li>
                     <li>Priority support</li>
                 </ul>
-                <button class="btn-primary" onclick="alert('Coming soon! Join the waitlist below.')">Get Pro Access</button>
+                <a href="https://buy.stripe.com/fZu7sL3Gw3GS0RQeoDeEo0a" class="btn-primary" style="text-align:center;" target="_blank" rel="noopener">Get Pro Access</a>
             </div>
         </div>
     </section>
@@ -645,9 +679,25 @@
         </div>
     </section>
 
+    <section class="email-section">
+        <div style="max-width:500px;margin:0 auto;text-align:center;">
+            <h2 style="font-size:22px;font-weight:700;margin-bottom:8px;">Get notified when API prices change</h2>
+            <p style="font-size:14px;color:var(--text-secondary);margin-bottom:20px;">No spam. Only pricing updates and new features. Unsubscribe anytime.</p>
+            <form onsubmit="saveEmail(event)" style="display:flex;gap:8px;max-width:400px;margin:0 auto;">
+                <input type="email" id="email-input" placeholder="you@company.com" required
+                    style="flex:1;padding:12px 16px;background:var(--bg-card);border:1px solid var(--border);
+                    border-radius:8px;color:var(--text-primary);font-size:14px;">
+                <button type="submit" class="btn-primary" style="padding:12px 24px;white-space:nowrap;">Subscribe</button>
+            </form>
+            <p id="email-msg" style="font-size:13px;color:var(--green);margin-top:12px;display:none;"></p>
+        </div>
+    </section>
+
+    <button class="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">↑</button>
+
     <footer>
         <p>Pricing data last verified: April 23, 2026</p>
-        <p>&copy; 2026 APIpulse. Built for developers, by developers. <a href="about.html">About</a> &middot; <a href="blog.html">Blog</a></p>
+        <p>&copy; 2026 APIpulse. Built for developers, by developers. <a href="about.html">About</a> &middot; <a href="use-cases.html">Use Cases</a> &middot; <a href="blog.html">Blog</a></p>
     </footer>
 
     <script>
@@ -718,6 +768,41 @@
 
         // Run on load
         calculate();
+
+        // Presets
+        function applyPreset(type) {
+            const presets = {
+                startup: { provider: 'openai-gpt4o-mini', input: 1500, output: 400, requests: 1000 },
+                scaleup: { provider: 'anthropic-sonnet', input: 2000, output: 500, requests: 10000 },
+                enterprise: { provider: 'google-pro', input: 2000, output: 500, requests: 100000 }
+            };
+            const p = presets[type];
+            document.getElementById('provider').value = p.provider;
+            document.getElementById('input-tokens').value = p.input;
+            document.getElementById('output-tokens').value = p.output;
+            document.getElementById('requests').value = p.requests;
+            calculate();
+        }
+
+        // Back to top button
+        window.addEventListener('scroll', () => {
+            const btn = document.querySelector('.back-to-top');
+            if (btn) btn.classList.toggle('visible', window.scrollY > 400);
+        });
+
+        // Email capture
+        function saveEmail(e) {
+            e.preventDefault();
+            const email = document.getElementById('email-input').value;
+            const emails = JSON.parse(localStorage.getItem('apipulse_emails') || '[]');
+            if (!emails.includes(email)) {
+                emails.push(email);
+                localStorage.setItem('apipulse_emails', JSON.stringify(emails));
+            }
+            document.getElementById('email-msg').textContent = 'Thanks! You\'ll be notified of pricing changes.';
+            document.getElementById('email-msg').style.display = 'block';
+            document.getElementById('email-input').value = '';
+        }
 
         // Theme toggle
         function toggleTheme() {

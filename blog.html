@@ -8,17 +8,17 @@
     <meta property="og:title" content="Blog — APIpulse">
     <meta property="og:description" content="Guides, comparisons, and insights on AI API pricing. Learn how to optimize your LLM costs.">
     <meta property="og:type" content="website">
-    <meta property="og:image" content="https://apipulse.dev/og-image.png">
+    <meta property="og:image" content="https://getapipulse.com/og-image.png">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:image" content="https://apipulse.dev/og-image.png">
-    <link rel="canonical" href="https://apipulse.dev/blog.html">
+    <meta name="twitter:image" content="https://getapipulse.com/og-image.png">
+    <link rel="canonical" href="https://getapipulse.com/blog.html">
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
         "@type": "Blog",
         "name": "APIpulse Blog",
-        "url": "https://apipulse.dev/blog.html",
+        "url": "https://getapipulse.com/blog.html",
         "description": "Guides, comparisons, and insights on AI API pricing."
     }
     </script>
@@ -136,6 +136,17 @@
         }
         .btn-primary:hover { color: white; }
 
+        .back-to-top {
+            position: fixed; bottom: 24px; right: 24px; width: 44px; height: 44px;
+            background: var(--accent); color: white; border: none; border-radius: 50%;
+            font-size: 20px; cursor: pointer; opacity: 0; pointer-events: none;
+            transition: opacity 0.3s, transform 0.3s; z-index: 99;
+            display: flex; align-items: center; justify-content: center;
+            box-shadow: 0 4px 12px rgba(99,102,241,0.3);
+        }
+        .back-to-top.visible { opacity: 1; pointer-events: auto; }
+        .back-to-top:hover { transform: translateY(-2px); }
+
         footer {
             padding: 40px 24px; border-top: 1px solid var(--border);
             text-align: center; color: var(--text-muted); font-size: 13px;
@@ -171,6 +182,7 @@
             <div class="nav-links">
                 <a href="index.html#calculator">Calculator</a>
                 <a href="pricing.html">Pricing</a>
+                <a href="use-cases.html">Use Cases</a>
                 <a href="about.html">About</a>
                 <a href="blog.html">Blog</a>
                 <a href="pricing.html" class="nav-cta">Get Pro — $29</a>
@@ -242,6 +254,16 @@
             <p>A roundup of the biggest LLM API pricing changes this year. Stay informed and optimize your costs.</p>
             <a href="#post-pricing-changes" class="read-more">Read more →</a>
         </div>
+
+        <div class="post-card">
+            <div class="post-meta">
+                <span class="post-tag">Guide</span>
+                <span>April 23, 2026</span>
+            </div>
+            <h2><a href="#post-chatbot-budget">How to Build a Chatbot on a $50/Month API Budget</a></h2>
+            <p>A practical guide to building a production chatbot while keeping AI API costs under $50 per month. Includes real cost breakdowns and model recommendations.</p>
+            <a href="#post-chatbot-budget" class="read-more">Read more →</a>
+        </div>
     </div>
 
     <!-- Article: GPT-4o vs Claude -->
@@ -298,7 +320,7 @@
 
         <div class="share-section">
             <p>Found this useful? Share it:</p>
-            <a href="https://twitter.com/intent/tweet?text=GPT-4o+vs+Claude+Sonnet+4%3A+Which+is+Cheaper%3F&url=https%3A%2F%2Fapipulse.dev%2Fblog.html%23post-gpt4-vs-claude" target="_blank" rel="noopener" class="share-btn">Share on X</a>
+            <a href="https://twitter.com/intent/tweet?text=GPT-4o+vs+Claude+Sonnet+4%3A+Which+is+Cheaper%3F&url=https%3A%2F%2Fgetapipulse.com%2Fblog.html%23post-gpt4-vs-claude" target="_blank" rel="noopener" class="share-btn">Share on X</a>
         </div>
     </div>
 
@@ -349,7 +371,7 @@
 
         <div class="share-section">
             <p>Found this useful? Share it:</p>
-            <a href="https://twitter.com/intent/tweet?text=How+to+Reduce+Your+AI+API+Costs+by+40%25&url=https%3A%2F%2Fapipulse.dev%2Fblog.html%23post-reduce-costs" target="_blank" rel="noopener" class="share-btn">Share on X</a>
+            <a href="https://twitter.com/intent/tweet?text=How+to+Reduce+Your+AI+API+Costs+by+40%25&url=https%3A%2F%2Fgetapipulse.com%2Fblog.html%23post-reduce-costs" target="_blank" rel="noopener" class="share-btn">Share on X</a>
         </div>
     </div>
 
@@ -396,7 +418,7 @@
 
         <div class="share-section">
             <p>Found this useful? Share it:</p>
-            <a href="https://twitter.com/intent/tweet?text=The+Cheapest+LLM+APIs+in+2026%3A+A+Complete+Ranking&url=https%3A%2F%2Fapipulse.dev%2Fblog.html%23post-cheapest-llm" target="_blank" rel="noopener" class="share-btn">Share on X</a>
+            <a href="https://twitter.com/intent/tweet?text=The+Cheapest+LLM+APIs+in+2026%3A+A+Complete+Ranking&url=https%3A%2F%2Fgetapipulse.com%2Fblog.html%23post-cheapest-llm" target="_blank" rel="noopener" class="share-btn">Share on X</a>
         </div>
     </div>
 
@@ -477,7 +499,7 @@
 
         <div class="share-section">
             <p>Found this useful? Share it:</p>
-            <a href="https://twitter.com/intent/tweet?text=Gemini+2.5+Pro+vs+GPT-4o%3A+Price%2C+Performance%2C+and+Value+Compared&url=https%3A%2F%2Fapipulse.dev%2Fblog.html%23post-gemini-vs-gpt4o" target="_blank" rel="noopener" class="share-btn">Share on X</a>
+            <a href="https://twitter.com/intent/tweet?text=Gemini+2.5+Pro+vs+GPT-4o%3A+Price%2C+Performance%2C+and+Value+Compared&url=https%3A%2F%2Fgetapipulse.com%2Fblog.html%23post-gemini-vs-gpt4o" target="_blank" rel="noopener" class="share-btn">Share on X</a>
         </div>
     </div>
 
@@ -560,7 +582,7 @@
 
         <div class="share-section">
             <p>Found this useful? Share it:</p>
-            <a href="https://twitter.com/intent/tweet?text=How+to+Estimate+Your+Monthly+AI+API+Costs&url=https%3A%2F%2Fapipulse.dev%2Fblog.html%23post-estimate-costs" target="_blank" rel="noopener" class="share-btn">Share on X</a>
+            <a href="https://twitter.com/intent/tweet?text=How+to+Estimate+Your+Monthly+AI+API+Costs&url=https%3A%2F%2Fgetapipulse.com%2Fblog.html%23post-estimate-costs" target="_blank" rel="noopener" class="share-btn">Share on X</a>
         </div>
     </div>
 
@@ -636,13 +658,97 @@
 
         <div class="share-section">
             <p>Found this useful? Share it:</p>
-            <a href="https://twitter.com/intent/tweet?text=API+Provider+Pricing+Changes+in+2026&url=https%3A%2F%2Fapipulse.dev%2Fblog.html%23post-pricing-changes" target="_blank" rel="noopener" class="share-btn">Share on X</a>
+            <a href="https://twitter.com/intent/tweet?text=API+Provider+Pricing+Changes+in+2026&url=https%3A%2F%2Fgetapipulse.com%2Fblog.html%23post-pricing-changes" target="_blank" rel="noopener" class="share-btn">Share on X</a>
         </div>
     </div>
 
+    <!-- Article: Chatbot Budget -->
+    <div class="content article" id="post-chatbot-budget" style="display:none;">
+        <a href="blog.html" class="back-link">← Back to blog</a>
+        <div class="post-meta" style="margin-bottom: 24px;">
+            <span class="post-tag">Guide</span>
+            <span>April 23, 2026</span>
+        </div>
+        <h1>How to Build a Chatbot on a $50/Month API Budget</h1>
+
+        <p>Building an AI chatbot doesn't require a massive budget. With the right model choices and optimization strategies, you can run a production chatbot for under $50/month. Here's how.</p>
+
+        <h2>Step 1: Define Your Usage</h2>
+        <p>First, estimate your chatbot's traffic. A typical small-to-medium chatbot handles:</p>
+        <ul>
+            <li><strong>200-500 conversations per day</strong></li>
+            <li><strong>1,500-2,500 input tokens per conversation</strong> (system prompt + user message + context)</li>
+            <li><strong>300-600 output tokens per response</strong></li>
+        </ul>
+        <p>Let's use 300 conversations/day with 2,000 input tokens and 500 output tokens as our baseline.</p>
+
+        <h2>Step 2: Choose the Right Model</h2>
+        <p>Not every chatbot needs GPT-4o. Here's what different models cost for our baseline (300 req/day × 30 days):</p>
+
+        <div class="cost-example">
+            <div class="label">Monthly cost at 300 req/day, 2K in / 500 out</div>
+            <div class="cost-row"><span class="name">GPT-4o</span><span class="value">$135.00/mo</span></div>
+            <div class="cost-row"><span class="name">Claude Sonnet 4</span><span class="value">$175.50/mo</span></div>
+            <div class="cost-row"><span class="name">Gemini 2.5 Pro</span><span class="value">$67.50/mo</span></div>
+            <div class="cost-row"><span class="name">GPT-4o mini</span><span class="value">$8.10/mo</span></div>
+            <div class="cost-row"><span class="name">Gemini 2.0 Flash</span><span class="value">$5.40/mo</span></div>
+            <div class="cost-row"><span class="name">Mistral Small</span><span class="value">$3.60/mo</span></div>
+        </div>
+
+        <p><strong>GPT-4o mini</strong> at $8.10/month is the sweet spot for most chatbots. It handles conversational tasks well and costs 15x less than GPT-4o.</p>
+
+        <h2>Step 3: Optimize Your Prompts</h2>
+        <p>Input tokens are your biggest cost driver. Reduce them by:</p>
+        <ul>
+            <li>Keep system prompts under 500 tokens</li>
+            <li>Only include relevant conversation history (last 3-5 messages)</li>
+            <li>Remove redundant instructions</li>
+            <li>Use concise formatting</li>
+        </ul>
+        <p>Trimming your prompt from 2,500 to 1,500 tokens saves 40% on input costs.</p>
+
+        <h2>Step 4: Set Output Limits</h2>
+        <p>Always set <code>max_tokens</code> to prevent runaway outputs. For a chatbot, 500-800 tokens is usually enough. Without limits, the model might generate 2,000+ tokens per response, quadrupling your output costs.</p>
+
+        <h2>Step 5: Add Caching</h2>
+        <p>If users ask similar questions, cache the responses. A simple in-memory cache for the top 100 most common questions can reduce API calls by 20-30%.</p>
+
+        <h2>The $50 Budget Breakdown</h2>
+        <div class="cost-example">
+            <div class="label">Optimized chatbot budget</div>
+            <div class="cost-row"><span class="name">Model: GPT-4o mini</span><span class="value">$8.10/mo</span></div>
+            <div class="cost-row"><span class="name">Prompt optimization savings</span><span class="value">-$2.70/mo</span></div>
+            <div class="cost-row"><span class="name">Caching savings (25%)</span><span class="value">-$1.35/mo</span></div>
+            <div class="cost-row cost-total"><span class="name">Final monthly cost</span><span class="value" style="color:var(--green);">$4.05/mo</span></div>
+        </div>
+
+        <p>That's <strong>$4.05/month</strong> — well under your $50 budget. You could even upgrade to GPT-4o for complex queries and still stay under budget.</p>
+
+        <h2>When to Upgrade</h2>
+        <p>Stick with budget models unless you notice:</p>
+        <ul>
+            <li>Poor response quality on complex questions</li>
+            <li>Users complaining about inaccurate answers</li>
+            <li>Need for longer context windows</li>
+        </ul>
+        <p>When you do upgrade, use a hybrid approach: GPT-4o mini for simple queries, GPT-4o for complex ones. This keeps costs low while maintaining quality.</p>
+
+        <div class="cta-inline">
+            <p><strong>Calculate your chatbot's exact API cost.</strong></p>
+            <a href="index.html#calculator" class="btn-primary">Try the APIpulse Calculator</a>
+        </div>
+
+        <div class="share-section">
+            <p>Found this useful? Share it:</p>
+            <a href="https://twitter.com/intent/tweet?text=How+to+Build+a+Chatbot+on+a+%2450%2FMonth+API+Budget&url=https%3A%2F%2Fgetapipulse.com%2Fblog.html%23post-chatbot-budget" target="_blank" rel="noopener" class="share-btn">Share on X</a>
+        </div>
+    </div>
+
+    <button class="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">↑</button>
+
     <footer>
         <p>Pricing data last verified: April 23, 2026</p>
-        <p>&copy; 2026 APIpulse. <a href="index.html">Home</a> &middot; <a href="about.html">About</a> &middot; <a href="pricing.html">Pricing</a></p>
+        <p>&copy; 2026 APIpulse. <a href="index.html">Home</a> &middot; <a href="use-cases.html">Use Cases</a> &middot; <a href="about.html">About</a> &middot; <a href="pricing.html">Pricing</a></p>
     </footer>
 
     <script>
@@ -687,6 +793,12 @@
         const savedTheme = localStorage.getItem('theme') || 'dark';
         document.documentElement.setAttribute('data-theme', savedTheme);
         updateThemeIcon();
+
+        // Back to top button
+        window.addEventListener('scroll', () => {
+            const btn = document.querySelector('.back-to-top');
+            if (btn) btn.classList.toggle('visible', window.scrollY > 400);
+        });
     </script>
 </body>
 </html>
