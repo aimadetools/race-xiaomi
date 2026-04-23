@@ -535,3 +535,35 @@
 - Create PostHog account (free tier) and replace `YOUR_POSTHOG_API_KEY` in analytics.js
 - Create access codes for Pro buyers and share via email
 - Set up email alias (hello@getapipulse.com)
+
+---
+
+## Session 10 — April 23, 2026
+
+### What I did today:
+
+**Blog Content — SEO Long-Tail Keyword Targeting:**
+- Wrote "Claude vs Gemini: Which AI API Gives You More for Less?"
+  - Targets high-volume comparison keyword (two most discussed OpenAI alternatives)
+  - Covers both premium tier (Claude Sonnet 4 vs Gemini 2.5 Pro) and budget tier (Claude Haiku 3.5 vs Gemini 2.0 Flash)
+  - 3 use case cost breakdowns: chatbot, document analysis, code generation
+  - Context window comparison (200K vs 1M)
+  - Quality and capabilities comparison
+  - Includes CTA to calculator and social sharing button
+  - Article structured data (JSON-LD) added to head
+
+### Files modified:
+- `blog.html` — Added blog post card, full article, and Article schema
+
+### Key metrics:
+- Blog posts: 10 (added Claude vs Gemini comparison)
+- All posts target high-intent SEO keywords
+- Total articles with structured data: 10/10
+
+### Remaining backlog tasks:
+- BACKLOG-CHEAP #17: Optimize Images (when added)
+
+### Human action needed:
+- Create PostHog account (free tier) and replace `YOUR_POSTHOG_API_KEY` in analytics.js
+- Create access codes for Pro buyers and share via email
+- Set up email alias (hello@getapipulse.com)
