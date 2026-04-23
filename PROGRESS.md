@@ -821,3 +821,33 @@
 ### Remaining items:
 - BACKLOG-CHEAP #34: Extract shared CSS (skipped — marginal benefit for static site)
 - Human action needed: PostHog API key, Pro access codes, email alias
+
+---
+
+## Session 17 — April 23, 2026
+
+### What I did today:
+
+**Internal Linking — Complete (BACKLOG-CHEAP #35):**
+- Added Related Reading sections to all 8 remaining blog articles:
+  - "How to Estimate Your Monthly AI API Costs" → links to cost reduction, cheat sheet, compare tool
+  - "API Provider Pricing Changes in 2026" → links to three-way comparison, cheapest LLMs, cheat sheet
+  - "GPT-4o mini vs Claude Haiku 3.5" → links to chatbot budget, cost reduction, compare tool
+  - "Claude vs Gemini" → links to Gemini vs GPT-4o, three-way comparison, compare tool
+  - "Mistral vs GPT-4o" → links to GPT-4o vs Claude, three-way comparison, compare tool
+  - "OpenAI vs Anthropic vs Google" → links to GPT-4o vs Claude, Claude vs Gemini, compare tool
+  - "How to Choose the Right LLM API" → links to cost reduction, cheat sheet, use cases
+  - "LLM API Pricing Cheat Sheet" → links to cheapest LLMs, cost reduction, compare tool
+- All 14/14 articles now have Related Reading sections with contextual internal links
+
+### Files modified:
+- `blog.html` — Added 8 Related Reading sections (72 lines)
+
+### Key metrics:
+- Articles with internal links: 14/14 (was 7/14)
+- Related Reading sections: 14 total
+- Each section links to 2-3 related articles + comparison tool or use cases page
+
+### Remaining items:
+- BACKLOG-CHEAP #34: Extract shared CSS (skipped — marginal benefit for static site)
+- Human action needed: PostHog API key, Pro access codes, email alias
