@@ -13,72 +13,14 @@
     <meta name="twitter:image" content="https://getapipulse.com/og-image.png">
     <link rel="canonical" href="https://getapipulse.com/404.html">
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="styles.css">
     <script src="analytics.js" defer></script>
     <style>
-        :root {
-            --bg-primary: #0a0a0f;
-            --bg-secondary: #12121a;
-            --bg-card: #1a1a2e;
-            --text-primary: #e8e8ed;
-            --text-secondary: #9494a8;
-            --text-muted: #6b6b80;
-            --accent: #6366f1;
-            --accent-hover: #818cf8;
-            --border: #2a2a3e;
-            --nav-bg: rgba(10, 10, 15, 0.85);
-        }
-        [data-theme="light"] {
-            --bg-primary: #ffffff;
-            --bg-secondary: #f8f9fa;
-            --bg-card: #f0f0f5;
-            --text-primary: #1a1a2e;
-            --text-secondary: #555568;
-            --text-muted: #888898;
-            --border: #e0e0e8;
-            --nav-bg: rgba(255, 255, 255, 0.85);
-        }
-        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            background: var(--bg-primary);
-            color: var(--text-primary);
-            line-height: 1.6;
-            -webkit-font-smoothing: antialiased;
             min-height: 100vh;
             display: flex;
             flex-direction: column;
         }
-        a { color: var(--accent); text-decoration: none; transition: color 0.2s; }
-        a:hover { color: var(--accent-hover); }
-        nav {
-            position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-            background: var(--nav-bg); backdrop-filter: blur(12px);
-            border-bottom: 1px solid var(--border); padding: 0 24px;
-        }
-        .nav-inner {
-            max-width: 1200px; margin: 0 auto;
-            display: flex; align-items: center; justify-content: space-between;
-            height: 64px;
-        }
-        .logo {
-            font-size: 20px; font-weight: 700; color: var(--text-primary);
-            display: flex; align-items: center; gap: 8px;
-        }
-        .logo span { color: var(--accent); }
-        .nav-links { display: flex; gap: 32px; align-items: center; }
-        .nav-links a { color: var(--text-secondary); font-size: 14px; font-weight: 500; }
-        .nav-links a:hover { color: var(--text-primary); }
-        .nav-cta {
-            background: var(--accent); color: white !important; padding: 8px 20px;
-            border-radius: 8px; font-size: 14px; font-weight: 600;
-        }
-        .nav-cta:hover { background: var(--accent-hover); }
-        .theme-toggle {
-            background: none; border: none; cursor: pointer;
-            font-size: 18px; padding: 4px; border-radius: 6px;
-            transition: background 0.2s;
-        }
-        .theme-toggle:hover { background: var(--bg-card); }
         .error-page {
             flex: 1;
             display: flex;
@@ -107,18 +49,6 @@
             max-width: 450px;
             margin: 0 auto 32px;
         }
-        .btn-primary {
-            background: var(--accent); color: white; padding: 14px 32px;
-            border-radius: 10px; font-size: 16px; font-weight: 600;
-            border: none; cursor: pointer; transition: all 0.2s;
-            display: inline-block;
-        }
-        .btn-primary:hover { background: var(--accent-hover); transform: translateY(-1px); color: white; }
-        footer {
-            padding: 40px 24px; border-top: 1px solid var(--border);
-            text-align: center; color: var(--text-muted); font-size: 13px;
-        }
-        footer a { color: var(--text-secondary); }
     </style>
 </head>
 <body>

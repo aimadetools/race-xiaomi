@@ -186,10 +186,10 @@ These tasks are straightforward and don't require deep reasoning.
 - Standalone page for SEO and direct linking
 - **Effort:** 1.5 hours
 
-### 34. Extract Shared CSS into styles.css
-- All 7 HTML pages have inline CSS (no caching)
-- Extract common styles into styles.css
-- Improve load times for repeat visitors
+### 34. Extract Shared CSS into styles.css ✓ DONE
+- All 8 HTML pages had inline CSS (no caching)
+- Extracted common styles into styles.css (~170 lines)
+- Updated all 8 HTML files to reference external stylesheet
 - **Effort:** 30 min
 
 ### 35. Add Internal Linking Between Blog Posts

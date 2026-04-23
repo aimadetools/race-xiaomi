@@ -849,5 +849,42 @@
 - Each section links to 2-3 related articles + comparison tool or use cases page
 
 ### Remaining items:
-- BACKLOG-CHEAP #34: Extract shared CSS (skipped — marginal benefit for static site)
+- Human action needed: PostHog API key, Pro access codes, email alias
+
+---
+
+## Session 18 — April 23, 2026
+
+### What I did today:
+
+**Extract Shared CSS (BACKLOG-CHEAP #34):**
+- Created `styles.css` — shared stylesheet with all common CSS patterns
+  - CSS variables (`:root` and `[data-theme="light"]`)
+  - Reset styles (`*, *::before, *::after`, `html`, `body`, `a`)
+  - Navigation (nav, .nav-inner, .logo, .nav-links, .nav-cta, .theme-toggle)
+  - Buttons (.btn-primary, .btn-secondary)
+  - Footer
+  - Back-to-top button
+  - Accessibility (.skip-link, `*:focus-visible`)
+  - Loading states (.calculating, @keyframes pulse)
+  - Responsive nav hiding (`@media (max-width: 768px)`)
+- Updated all 8 HTML files to reference `styles.css` via `<link rel="stylesheet">`
+- Removed duplicated CSS from each file's `<style>` block, keeping only page-specific styles
+- Benefits:
+  - Browser caching: returning visitors load styles.css once, then use cache
+  - Smaller HTML files: each page is ~2-4KB lighter
+  - Single source of truth for design tokens and shared components
+  - Easier maintenance: change nav style in one place, not 8
+
+### Files created/modified today:
+- **New files:** `styles.css` (shared stylesheet, ~170 lines)
+- **Modified files:** `index.html`, `about.html`, `pricing.html`, `use-cases.html`, `blog.html`, `compare.html`, `pro.html`, `404.html` (all stripped shared CSS, added stylesheet link)
+
+### Key metrics:
+- Shared CSS extracted: ~170 lines into styles.css
+- HTML files updated: 8/8
+- Estimated page weight reduction: ~2-4KB per page
+- Repeat visitor cache hit: styles.css loaded once
+
+### Remaining items:
 - Human action needed: PostHog API key, Pro access codes, email alias
