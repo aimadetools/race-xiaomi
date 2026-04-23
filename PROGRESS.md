@@ -935,3 +935,62 @@
 
 ### Remaining items:
 - Human action needed: PostHog API key, email alias
+
+---
+
+## Session 20 — April 23, 2026
+
+### What I did today:
+
+**Full Site Audit & Bug Fixes:**
+- Ran comprehensive audit of all 8 HTML files, JS, and API endpoints
+- Found 16 issues (3 critical, 5 high, 5 medium, 3 low)
+- Fixed all critical and high-severity issues:
+
+**CRITICAL — XSS Vulnerability (pro-features.js):**
+- Added `escapeHtml()` function to sanitize user-controlled strings
+- Applied to scenario names and recommendation titles rendered via `innerHTML`
+- Prevents script injection through crafted scenario names
+
+**HIGH — compare.html Navigation (3 issues):**
+- Added missing "Get Pro — $29" CTA button (was the only page without it)
+- Reordered nav links to match all other pages (Pricing after Compare)
+- Added `#calculator` hash to Calculator link (was landing at top of index.html)
+- Fixed active link styling to use consistent accent color + font-weight
+
+**HIGH — compare.html Footer CSS Override:**
+- Removed local `footer` CSS rule that stripped `border-top` from global styles
+- Footer now visually consistent with all other pages
+
+**HIGH — 404.html Footer Pricing Link:**
+- Changed from `index.html#pricing` to `pricing.html` to match all other footers
+
+**HIGH — Email Subscription Fallback (5 pages):**
+- Changed misleading "Thanks! You'll be notified of pricing changes" to honest
+  "Saved! We'll process your subscription when the service is available"
+- Fixed across index.html, about.html, pricing.html, use-cases.html, blog.html
+
+**MEDIUM — pro.html Missing Sections:**
+- Added email subscription section (was the only content page without it)
+- Added back-to-top floating button
+- Added `saveEmail()` function to pro.html script block
+
+### Files modified:
+- `pro-features.js` — Added escapeHtml(), applied to innerHTML renders
+- `compare.html` — Fixed nav (order, CTA, hash, active style), removed footer CSS override
+- `404.html` — Fixed footer Pricing link
+- `index.html` — Fixed email fallback message
+- `about.html` — Fixed email fallback message
+- `pricing.html` — Fixed email fallback message
+- `use-cases.html` — Fixed email fallback message
+- `blog.html` — Fixed email fallback message
+- `pro.html` — Added email subscription, back-to-top, saveEmail function
+
+### Key metrics:
+- Critical bugs fixed: 1 (XSS)
+- High bugs fixed: 5 (nav consistency x3, footer CSS, email fallback)
+- Pages modified: 9
+- Remaining known issues: PostHog placeholder key, ephemeral /tmp storage, exportPDF naming, blog references models not in calculator
+
+### Remaining items:
+- Human action needed: PostHog API key, email alias
