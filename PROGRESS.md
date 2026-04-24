@@ -1303,3 +1303,42 @@
 
 ### Remaining items:
 - Human action needed: PostHog API key, email alias
+
+---
+
+## Session 25 — April 24, 2026
+
+### What I did today:
+
+**Audit-Driven Bug Fixes:**
+- Ran full site audit via subagent, found 6 issues (1 high, 3 medium, 2 low)
+- Fixed all actionable issues:
+
+**HIGH — pro.html missing 3 models:**
+- Added GPT-5, GPT-5 mini, and Claude 4 Opus to the Pro calculator dropdown
+- Added pricing data for all 3 models to the providers object
+- Pro users can now estimate costs for all 16 models across 7 providers (was 13)
+
+**MEDIUM — 404.html nav inconsistency:**
+- Changed root-relative paths (`/use-cases.html`, `/about.html`, etc.) to relative paths
+- Added missing Calculator and Pricing Index nav links to match all other pages
+- Fixed logo link and "Back to APIpulse" button to use relative paths
+
+**LOW — pro-features.js export naming:**
+- Renamed `exportPDF()` to `exportReport()` since it generates a .txt file, not a PDF
+- Updated the call in pro.html to match
+
+### Files modified:
+- `pro.html` — Added 3 models to dropdown and pricing data, updated export button
+- `404.html` — Fixed nav paths, added missing links
+- `pro-features.js` — Renamed exportPDF to exportReport
+
+### Key metrics:
+- Critical bugs fixed: 0
+- High bugs fixed: 1 (pro.html missing models)
+- Medium bugs fixed: 1 (404 nav)
+- Low fixes: 1 (export naming)
+- Pro calculator models: 16 (was 13)
+
+### Remaining items:
+- Human action needed: PostHog API key, email alias
