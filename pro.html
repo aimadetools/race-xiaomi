@@ -201,6 +201,9 @@
                                 <option value="llama-3.1-70b">Meta — Llama 3.1 70B</option>
                                 <option value="llama-3.1-8b">Meta — Llama 3.1 8B</option>
                                 <option value="ai21-jamba">AI21 — Jamba 1.5 Large</option>
+                                <option value="openai-gpt5">OpenAI — GPT-5</option>
+                                <option value="openai-gpt5-mini">OpenAI — GPT-5 mini</option>
+                                <option value="anthropic-opus">Anthropic — Claude 4 Opus</option>
                             </select>
                         </div>
                         <div class="input-group">
@@ -238,7 +241,7 @@
                             <span class="result-label">Monthly Total</span>
                             <span class="result-value" id="monthly-total">$0.00</span>
                         </div>
-                        <button class="btn-primary" style="width:100%;margin-top:16px;" onclick="exportPDF()">Export Report</button>
+                        <button class="btn-primary" style="width:100%;margin-top:16px;" onclick="exportReport()">Export Report</button>
                     </div>
                 </div>
             </div>
@@ -299,7 +302,10 @@
             'cohere-command-r': { name: 'Cohere Command R', input: 0.15, output: 0.60 },
             'llama-3.1-70b': { name: 'Llama 3.1 70B (Together)', input: 0.88, output: 0.88 },
             'llama-3.1-8b': { name: 'Llama 3.1 8B (Together)', input: 0.18, output: 0.18 },
-            'ai21-jamba': { name: 'AI21 Jamba 1.5 Large', input: 2.00, output: 8.00 }
+            'ai21-jamba': { name: 'AI21 Jamba 1.5 Large', input: 2.00, output: 8.00 },
+            'openai-gpt5': { name: 'GPT-5', input: 10.00, output: 30.00 },
+            'openai-gpt5-mini': { name: 'GPT-5 mini', input: 0.40, output: 1.60 },
+            'anthropic-opus': { name: 'Claude 4 Opus', input: 15.00, output: 75.00 }
         };
 
         function calculate() {

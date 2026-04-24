@@ -107,8 +107,8 @@ function renderScenarios() {
     `).join('');
 }
 
-// --- PDF Export ---
-function exportPDF() {
+// --- Report Export ---
+function exportReport() {
     const provider = document.getElementById('provider');
     const providerName = provider.options[provider.selectedIndex].text;
     const inputTokens = document.getElementById('input-tokens').value;
