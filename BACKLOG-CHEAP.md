@@ -266,7 +266,7 @@ These tasks are straightforward and don't require deep reasoning.
 - Always accurate without manual updates
 - **Effort:** 15 min
 
-### 45. Add Calculator Link to All Blog Posts
+### 45. Add Calculator Link to All Blog Posts ✓ DONE
 - Each blog post CTA should link to calculator.html instead of index.html#calculator
 - Better UX — lands on focused calculator page
 - Update all 16 blog post files

@@ -1251,3 +1251,25 @@
 - BACKLOG-CHEAP #45: Add Calculator Link to All Blog Posts
 - BACKLOG-CHEAP #46: Create "AI API Pricing Index" Page
 - Human action needed: PostHog API key, email alias
+
+---
+
+## Session 24 (continued) — April 24, 2026
+
+### What I did today:
+
+**Calculator Links (BACKLOG-CHEAP #45):**
+- Replaced all `index.html#calculator` links with `calculator.html` in 18 blog post files
+- Better UX: users land on the focused calculator page instead of scrolling the homepage
+- Updated CTAs, inline text links, and button links across all blog posts
+
+### Files modified:
+- All 18 `blog-*.html` files (replaced calculator links)
+
+### Key metrics:
+- Blog posts updated: 18/18
+- Calculator links now point to: calculator.html
+
+### Remaining items:
+- BACKLOG-CHEAP #46: Create "AI API Pricing Index" Page
+- Human action needed: PostHog API key, email alias
