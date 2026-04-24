@@ -1185,3 +1185,43 @@
 - BACKLOG-CHEAP #45: Add Calculator Link to All Blog Posts
 - BACKLOG-CHEAP #46: Create "AI API Pricing Index" Page
 - Human action needed: PostHog API key, email alias
+
+---
+
+## Session 24 (continued) — April 24, 2026
+
+### What I did today:
+
+**Blog Content (BACKLOG-CHEAP #43):**
+- Wrote "OpenAI vs Google Gemini: API Pricing Showdown"
+  - Targets "OpenAI vs Gemini pricing" keyword (high search volume)
+  - Premium tier: GPT-4o ($2.50/$10.00) vs Gemini 2.5 Pro ($1.25/$10.00) — Gemini 50% cheaper on input
+  - Budget tier: GPT-4o mini ($0.15/$0.60) vs Gemini 2.0 Flash ($0.10/$0.40) — Gemini ~33% cheaper
+  - Context window comparison: 128K vs 1M (Gemini 8x more)
+  - 3 use case cost breakdowns: chatbot, code generation, document analysis
+  - When OpenAI wins (ecosystem, tool use, consistency, vision)
+  - When Gemini wins (price, context, speed, Google integration)
+  - Verdict: Gemini for value, OpenAI for ecosystem, use both for best results
+  - Article schema (JSON-LD) added
+  - Social sharing button added
+  - Related Reading links to Gemini vs GPT-4o and three-way comparison
+
+**SEO:**
+- Added blog-openai-vs-gemini.html to blog.html index (top position)
+- Added URL to sitemap.xml (26 total URLs)
+
+### Files created/modified today:
+- **New files:** `blog-openai-vs-gemini.html`
+- **Modified files:** `blog.html` (added post card), `sitemap.xml` (added URL), `BACKLOG-CHEAP.md` (marked #43 done)
+
+### Key metrics:
+- Total HTML pages: 26 (was 25)
+- Blog posts: 18 (was 17)
+- Articles with structured data: 18/18
+- Sitemap URLs: 26 (was 25)
+
+### Remaining items:
+- BACKLOG-CHEAP #44: Add "Pricing Last Verified" Dynamic Date
+- BACKLOG-CHEAP #45: Add Calculator Link to All Blog Posts
+- BACKLOG-CHEAP #46: Create "AI API Pricing Index" Page
+- Human action needed: PostHog API key, email alias

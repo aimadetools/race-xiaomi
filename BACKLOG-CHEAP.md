@@ -253,7 +253,7 @@ These tasks are straightforward and don't require deep reasoning.
 - Include calculator links for each tier
 - **Effort:** 1 hour
 
-### 43. Write Blog Post: "OpenAI vs Google Gemini: API Pricing Showdown"
+### 43. Write Blog Post: "OpenAI vs Google Gemini: API Pricing Showdown" ✓ DONE
 - Targets "OpenAI vs Gemini pricing" keyword (high search volume)
 - Compare GPT-4o vs Gemini 2.5 Pro and budget tiers
 - Context window comparison (128K vs 1M)
