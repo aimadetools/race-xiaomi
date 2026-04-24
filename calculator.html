@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI API Cost Calculator — Compare LLM Pricing Across Providers | APIpulse</title>
+    <meta name="description" content="Free AI API cost calculator. Compare pricing across OpenAI, Anthropic, Google, Mistral, Cohere, Meta, and AI21. Calculate your monthly LLM spend in seconds.">
+    <meta name="keywords" content="AI API cost calculator, LLM pricing calculator, GPT cost calculator, Claude pricing, API budget planner">
+    <meta property="og:title" content="AI API Cost Calculator — Compare LLM Pricing | APIpulse">
+    <meta property="og:description" content="Free AI API cost calculator. Compare pricing across 16 models from 7 providers. Calculate your monthly LLM spend in seconds.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://getapipulse.com/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://getapipulse.com/og-image.png">
+    <link rel="canonical" href="https://getapipulse.com/calculator.html">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="styles.css">
+    <script src="analytics.js" defer></script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "APIpulse AI API Cost Calculator",
+        "url": "https://getapipulse.com/calculator.html",
+        "description": "Free AI API cost calculator. Compare pricing across OpenAI, Anthropic, Google, Mistral, Cohere, Meta, and AI21.",
+        "applicationCategory": "DeveloperApplication",
+        "operatingSystem": "Web",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+    }
+    </script>
+    <style>
+        .calc-hero {
+            padding: 120px 24px 40px; text-align: center; max-width: 700px; margin: 0 auto;
+        }
+        .calc-hero h1 {
+            font-size: clamp(28px, 4vw, 42px); font-weight: 800; margin-bottom: 12px;
+        }
+        .calc-hero p { color: var(--text-secondary); font-size: 17px; line-height: 1.6; }
+
+        .calculator-section { padding: 0 24px 60px; }
+        .section-header { text-align: center; margin-bottom: 32px; }
+        .section-header h2 { font-size: 24px; font-weight: 700; margin-bottom: 8px; }
+        .section-header p { color: var(--text-secondary); font-size: 15px; }
+
+        .calculator {
+            background: var(--bg-card); border: 1px solid var(--border);
+            border-radius: 16px; padding: 32px; max-width: 900px; margin: 0 auto;
+        }
+        .presets {
+            display: flex; gap: 8px; margin-bottom: 24px; flex-wrap: wrap; align-items: center;
+        }
+        .preset-btn {
+            background: var(--bg-secondary); border: 1px solid var(--border);
+            color: var(--text-secondary); padding: 8px 16px; border-radius: 8px;
+            cursor: pointer; font-size: 13px; transition: all 0.2s; font-weight: 500;
+        }
+        .preset-btn:hover { border-color: var(--accent); color: var(--accent); }
+        .calc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
+        .calc-inputs { display: flex; flex-direction: column; gap: 16px; }
+        .input-group { display: flex; flex-direction: column; gap: 6px; }
+        .input-group label { font-size: 13px; font-weight: 600; color: var(--text-secondary); }
+        .input-group select, .input-group input {
+            padding: 12px 16px; border-radius: 8px; border: 1px solid var(--border);
+            background: var(--bg-secondary); color: var(--text-primary); font-size: 15px;
+            font-family: inherit;
+        }
+        .input-group select:focus, .input-group input:focus {
+            outline: none; border-color: var(--accent);
+        }
+        .calc-results {
+            background: var(--bg-secondary); border: 1px solid var(--border);
+            border-radius: 12px; padding: 24px;
+        }
+        .result-item {
+            display: flex; justify-content: space-between; padding: 10px 0;
+            border-bottom: 1px solid var(--border); font-size: 14px;
+        }
+        .result-item:last-child { border-bottom: none; }
+        .result-label { color: var(--text-secondary); }
+        .result-value { color: var(--text-primary); font-weight: 600; font-variant-numeric: tabular-nums; }
+        .result-total {
+            display: flex; justify-content: space-between; padding: 14px 0 10px;
+            border-top: 2px solid var(--accent); margin-top: 8px; font-size: 18px;
+        }
+        .result-total .result-label { color: var(--text-primary); font-weight: 700; }
+        .result-total .result-value { color: var(--accent); font-weight: 800; }
+        .savings-badge {
+            background: rgba(34,197,94,0.1); border: 1px solid rgba(34,197,94,0.3);
+            color: var(--green); padding: 10px 16px; border-radius: 8px;
+            font-size: 13px; font-weight: 600; margin-top: 12px; text-align: center;
+        }
+
+        .info-section {
+            max-width: 700px; margin: 0 auto; padding: 40px 24px 60px;
+        }
+        .info-section h2 { font-size: 22px; font-weight: 700; margin-bottom: 16px; }
+        .info-section p { color: var(--text-secondary); line-height: 1.7; margin-bottom: 16px; }
+        .info-section ul { color: var(--text-secondary); padding-left: 24px; margin-bottom: 16px; }
+        .info-section li { margin-bottom: 8px; line-height: 1.6; }
+        .info-section strong { color: var(--text-primary); }
+
+        .cta-inline {
+            background: var(--bg-secondary); border: 1px solid var(--accent);
+            border-radius: 12px; padding: 24px; margin: 32px 0; text-align: center;
+        }
+        .cta-inline p { margin-bottom: 12px; color: var(--text-secondary); }
+
+        @media (max-width: 768px) {
+            .calc-hero { padding: 100px 20px 30px; }
+            .calc-hero h1 { font-size: 26px; }
+            .calculator-section { padding: 0 20px 40px; }
+            .calculator { padding: 20px; }
+            .calc-grid { grid-template-columns: 1fr; gap: 24px; }
+            .presets { justify-content: center; }
+        }
+        @media print {
+            nav, .theme-toggle, .back-to-top, .presets { display: none !important; }
+            body { background: white; color: black; }
+            .calculator { border: 1px solid #ccc; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-inner">
+            <a href="index.html" class="logo">API<span>pulse</span></a>
+            <div class="nav-links">
+                <a href="calculator.html" style="color:var(--accent);font-weight:600;">Calculator</a>
+                <a href="compare.html">Compare</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="use-cases.html">Use Cases</a>
+                <a href="about.html">About</a>
+                <a href="blog.html">Blog</a>
+                <a href="pricing.html" class="nav-cta" onclick="if(window.trackEvent)window.trackEvent('pro_button_clicked',{source:'nav'})">Get Pro — $29</a>
+                <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="calc-hero">
+        <h1>AI API Cost Calculator</h1>
+        <p>Compare pricing across 16 models from 7 providers. Enter your usage below to see exactly what you'd pay — no signup required.</p>
+    </div>
+
+    <section class="calculator-section">
+        <div class="calculator" role="form" aria-label="API Cost Calculator">
+            <div class="presets">
+                <span style="font-size:13px;color:var(--text-muted);align-self:center;">Quick presets:</span>
+                <button class="preset-btn" onclick="applyPreset('startup')">Startup (1K req/day)</button>
+                <button class="preset-btn" onclick="applyPreset('scaleup')">Scale-up (10K req/day)</button>
+                <button class="preset-btn" onclick="applyPreset('enterprise')">Enterprise (100K req/day)</button>
+            </div>
+            <div class="calc-grid">
+                <div class="calc-inputs">
+                    <div class="input-group">
+                        <label for="provider">Provider & Model</label>
+                        <select id="provider" onchange="calculate()" aria-label="Select API provider">
+                            <option value="openai-gpt5">OpenAI — GPT-5</option>
+                            <option value="openai-gpt5-mini">OpenAI — GPT-5 mini</option>
+                            <option value="openai-gpt4o">OpenAI — GPT-4o</option>
+                            <option value="openai-gpt4o-mini" selected>OpenAI — GPT-4o mini</option>
+                            <option value="anthropic-opus">Anthropic — Claude 4 Opus</option>
+                            <option value="anthropic-sonnet">Anthropic — Claude Sonnet 4</option>
+                            <option value="anthropic-haiku">Anthropic — Claude Haiku 3.5</option>
+                            <option value="google-pro">Google — Gemini 2.5 Pro</option>
+                            <option value="google-flash">Google — Gemini 2.0 Flash</option>
+                            <option value="mistral-large">Mistral — Large</option>
+                            <option value="mistral-small">Mistral — Small</option>
+                            <option value="cohere-command-r-plus">Cohere — Command R+</option>
+                            <option value="cohere-command-r">Cohere — Command R</option>
+                            <option value="llama-3.1-70b">Meta — Llama 3.1 70B</option>
+                            <option value="llama-3.1-8b">Meta — Llama 3.1 8B</option>
+                            <option value="ai21-jamba">AI21 — Jamba 1.5 Large</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <label for="input-tokens">Input tokens per request</label>
+                        <input type="number" id="input-tokens" value="1500" min="0" step="100" onchange="calculate()" oninput="calculate()" aria-label="Input tokens per request">
+                    </div>
+                    <div class="input-group">
+                        <label for="output-tokens">Output tokens per request</label>
+                        <input type="number" id="output-tokens" value="400" min="0" step="100" onchange="calculate()" oninput="calculate()" aria-label="Output tokens per request">
+                    </div>
+                    <div class="input-group">
+                        <label for="requests">Requests per day</label>
+                        <input type="number" id="requests" value="1000" min="0" step="100" onchange="calculate()" oninput="calculate()" aria-label="Requests per day">
+                    </div>
+                    <div class="input-group">
+                        <label for="days">Days per month</label>
+                        <input type="number" id="days" value="30" min="1" max="31" onchange="calculate()" oninput="calculate()" aria-label="Days per month">
+                    </div>
+                </div>
+                <div class="calc-results" role="region" aria-label="Cost calculation results" aria-live="polite">
+                    <h3 style="margin-bottom: 16px; font-size: 16px;">Monthly Cost Estimate</h3>
+                    <div class="result-item">
+                        <span class="result-label">Input cost</span>
+                        <span class="result-value" id="input-cost">$0.00</span>
+                    </div>
+                    <div class="result-item">
+                        <span class="result-label">Output cost</span>
+                        <span class="result-value" id="output-cost">$0.00</span>
+                    </div>
+                    <div class="result-item">
+                        <span class="result-label">Total tokens/month</span>
+                        <span class="result-value" id="total-tokens">0</span>
+                    </div>
+                    <div class="result-total">
+                        <span class="result-label">Monthly Total</span>
+                        <span class="result-value" id="monthly-total">$0.00</span>
+                    </div>
+                    <div id="savings-container"></div>
+                    <p style="margin-top: 16px; font-size: 12px; color: var(--text-muted);">
+                        Based on published API pricing. Actual costs may vary.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="info-section">
+        <h2>How This Calculator Works</h2>
+        <p>Enter your expected usage — tokens per request, requests per day, and days per month — and the calculator shows your estimated monthly cost for any of 16 LLM models across 7 providers. It also suggests the cheapest alternative if a cheaper model can handle your workload.</p>
+
+        <h2>Supported Providers</h2>
+        <ul>
+            <li><strong>OpenAI:</strong> GPT-5, GPT-5 mini, GPT-4o, GPT-4o mini</li>
+            <li><strong>Anthropic:</strong> Claude 4 Opus, Claude Sonnet 4, Claude Haiku 3.5</li>
+            <li><strong>Google:</strong> Gemini 2.5 Pro, Gemini 2.0 Flash</li>
+            <li><strong>Mistral:</strong> Large, Small</li>
+            <li><strong>Cohere:</strong> Command R+, Command R</li>
+            <li><strong>Meta (via Together.ai):</strong> Llama 3.1 70B, Llama 3.1 8B</li>
+            <li><strong>AI21:</strong> Jamba 1.5 Large</li>
+        </ul>
+
+        <h2>Common Use Cases</h2>
+        <p>Our calculator helps you estimate costs for:</p>
+        <ul>
+            <li><strong>Chatbots and virtual assistants</strong> — typically 500-2000 input tokens, 200-800 output tokens per turn</li>
+            <li><strong>Code generation</strong> — 1000-5000 input tokens, 500-3000 output tokens per request</li>
+            <li><strong>Document analysis</strong> — 3000-10000 input tokens, 200-1000 output tokens per document</li>
+            <li><strong>Content generation</strong> — 500-2000 input tokens, 1000-4000 output tokens per article</li>
+        </ul>
+
+        <div class="cta-inline">
+            <p><strong>Want to compare two models side by side?</strong></p>
+            <a href="compare.html" class="btn-primary" style="display:inline-block;">Use the Comparison Tool</a>
+        </div>
+
+        <h2>Tips to Reduce Your API Costs</h2>
+        <p>The calculator often reveals that a cheaper model can handle your workload. Here are the biggest cost-saving strategies:</p>
+        <ul>
+            <li><strong>Use budget models for simple tasks:</strong> GPT-4o mini ($0.15/$0.60) handles 80% of chatbot requests at 1/17th the cost of GPT-4o</li>
+            <li><strong>Optimize prompts:</strong> Shorter prompts = fewer input tokens = lower costs</li>
+            <li><strong>Set token limits:</strong> Don't let models generate 4000 tokens when 200 will do</li>
+            <li><strong>Cache responses:</strong> Identical prompts can be cached to eliminate redundant API calls</li>
+        </ul>
+        <p>Read our full guide: <a href="blog-cut-api-bill.html">How to Cut Your AI API Bill in Half: 10 Practical Tips</a></p>
+    </div>
+
+    <button class="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">↑</button>
+
+    <footer>
+        <p>Pricing data last verified: April 24, 2026</p>
+        <p>&copy; 2026 APIpulse. <a href="index.html">Home</a> &middot; <a href="use-cases.html">Use Cases</a> &middot; <a href="about.html">About</a> &middot; <a href="blog.html">Blog</a> &middot; <a href="pricing.html">Pricing</a></p>
+    </footer>
+
+    <script>
+        // API pricing data (per 1M tokens)
+        const providers = {
+            'openai-gpt5': { name: 'OpenAI GPT-5', input: 10.00, output: 30.00 },
+            'openai-gpt5-mini': { name: 'OpenAI GPT-5 mini', input: 0.40, output: 1.60 },
+            'openai-gpt4o': { name: 'OpenAI GPT-4o', input: 2.50, output: 10.00 },
+            'openai-gpt4o-mini': { name: 'OpenAI GPT-4o mini', input: 0.15, output: 0.60 },
+            'anthropic-opus': { name: 'Claude 4 Opus', input: 15.00, output: 75.00 },
+            'anthropic-sonnet': { name: 'Claude Sonnet 4', input: 3.00, output: 15.00 },
+            'anthropic-haiku': { name: 'Claude Haiku 3.5', input: 0.80, output: 4.00 },
+            'google-pro': { name: 'Gemini 2.5 Pro', input: 1.25, output: 10.00 },
+            'google-flash': { name: 'Gemini 2.0 Flash', input: 0.10, output: 0.40 },
+            'mistral-large': { name: 'Mistral Large', input: 2.00, output: 6.00 },
+            'mistral-small': { name: 'Mistral Small', input: 0.10, output: 0.30 },
+            'cohere-command-r-plus': { name: 'Cohere Command R+', input: 2.50, output: 10.00 },
+            'cohere-command-r': { name: 'Cohere Command R', input: 0.15, output: 0.60 },
+            'llama-3.1-70b': { name: 'Llama 3.1 70B (Together)', input: 0.88, output: 0.88 },
+            'llama-3.1-8b': { name: 'Llama 3.1 8B (Together)', input: 0.18, output: 0.18 },
+            'ai21-jamba': { name: 'AI21 Jamba 1.5 Large', input: 2.00, output: 8.00 }
+        };
+
+        function calculate() {
+            const results = document.querySelector('.calc-results');
+            results.classList.add('calculating');
+
+            const provider = document.getElementById('provider').value;
+            const inputTokens = parseInt(document.getElementById('input-tokens').value) || 0;
+            const outputTokens = parseInt(document.getElementById('output-tokens').value) || 0;
+            const requests = parseInt(document.getElementById('requests').value) || 0;
+            const days = parseInt(document.getElementById('days').value) || 30;
+
+            const p = providers[provider];
+            const totalInputTokens = inputTokens * requests * days;
+            const totalOutputTokens = outputTokens * requests * days;
+
+            const inputCost = (totalInputTokens / 1000000) * p.input;
+            const outputCost = (totalOutputTokens / 1000000) * p.output;
+            const totalCost = inputCost + outputCost;
+            const totalTokens = totalInputTokens + totalOutputTokens;
+
+            document.getElementById('input-cost').textContent = '$' + inputCost.toFixed(2);
+            document.getElementById('output-cost').textContent = '$' + outputCost.toFixed(2);
+            document.getElementById('total-tokens').textContent = totalTokens.toLocaleString();
+            document.getElementById('monthly-total').textContent = '$' + totalCost.toFixed(2);
+
+            // Find cheapest alternative
+            let cheapest = null;
+            let cheapestCost = Infinity;
+            for (const [key, p2] of Object.entries(providers)) {
+                if (key === provider) continue;
+                const cost = ((inputTokens * requests * days / 1000000) * p2.input) +
+                             ((outputTokens * requests * days / 1000000) * p2.output);
+                if (cost < cheapestCost) {
+                    cheapestCost = cost;
+                    cheapest = p2;
+                }
+            }
+
+            const savingsContainer = document.getElementById('savings-container');
+            if (cheapest && cheapestCost < totalCost) {
+                const savings = totalCost - cheapestCost;
+                savingsContainer.innerHTML = '<div class="savings-badge">Switch to ' + cheapest.name + ' to save $' + savings.toFixed(2) + '/mo</div>';
+            } else {
+                savingsContainer.innerHTML = '';
+            }
+
+            setTimeout(() => results.classList.remove('calculating'), 300);
+
+            if (window.trackEvent && totalCost > 0) {
+                clearTimeout(window._calcTrackTimer);
+                window._calcTrackTimer = setTimeout(() => {
+                    window.trackEvent('calculator_used', {
+                        provider: providers[provider].name,
+                        monthly_cost: totalCost.toFixed(2),
+                        input_tokens: inputTokens,
+                        output_tokens: outputTokens,
+                        requests_per_day: requests
+                    });
+                }, 1000);
+            }
+        }
+
+        calculate();
+
+        function applyPreset(type) {
+            const presets = {
+                startup: { provider: 'openai-gpt4o-mini', input: 1500, output: 400, requests: 1000 },
+                scaleup: { provider: 'anthropic-sonnet', input: 2000, output: 500, requests: 10000 },
+                enterprise: { provider: 'google-pro', input: 2000, output: 500, requests: 100000 }
+            };
+            const p = presets[type];
+            document.getElementById('provider').value = p.provider;
+            document.getElementById('input-tokens').value = p.input;
+            document.getElementById('output-tokens').value = p.output;
+            document.getElementById('requests').value = p.requests;
+            calculate();
+            if (window.trackEvent) window.trackEvent('preset_clicked', { preset: type });
+        }
+
+        // Theme toggle
+        function toggleTheme() {
+            const html = document.documentElement;
+            const currentTheme = html.getAttribute('data-theme');
+            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+            html.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            updateThemeIcon();
+        }
+        function updateThemeIcon() {
+            const theme = document.documentElement.getAttribute('data-theme');
+            const icon = document.querySelector('.theme-toggle');
+            if (icon) icon.textContent = theme === 'light' ? '\u2600\uFE0F' : '\uD83C\uDF19';
+        }
+        const savedTheme = localStorage.getItem('theme') || 'dark';
+        document.documentElement.setAttribute('data-theme', savedTheme);
+        updateThemeIcon();
+
+        // Back to top
+        window.addEventListener('scroll', () => {
+            const btn = document.querySelector('.back-to-top');
+            if (btn) btn.classList.toggle('visible', window.scrollY > 400);
+        });
+    </script>
+</body>
+</html>

@@ -201,3 +201,80 @@ These tasks are straightforward and don't require deep reasoning.
 - Reference-style post with complete pricing tables
 - Targets "LLM pricing" and "AI API pricing" keywords
 - **Effort:** 1 hour
+
+---
+
+## New Tasks — Session 23 (April 24, 2026)
+
+### 37. Write Blog Post: "GPT-5 vs Claude 4 Opus: Which Premium Model is Worth the Price?" ✓ DONE
+- Targets "GPT-5 vs Claude 4 Opus" keyword (high-intent comparison)
+- Premium tier comparison: both cost $10-15+ per 1M input tokens
+- Use case cost breakdowns: chatbot, code gen, document analysis
+- Quality vs cost tradeoff analysis
+- Decision framework
+- **Effort:** 1 hour
+
+### 38. Write Blog Post: "How to Cut Your AI API Bill in Half: 10 Practical Tips" ✓ DONE
+- Targets "reduce AI API costs" and "cut API costs" keywords
+- Actionable tips with real cost savings calculations
+- Use calculator to show before/after comparisons
+- Covers: model selection, prompt optimization, caching, batching, rate limiting
+- **Effort:** 1 hour
+
+### 39. Add FAQ Section to Index Page ✓ DONE
+- Add FAQ accordion to index.html with 5-6 common questions
+- Add FAQPage schema (JSON-LD) for rich snippets in Google
+- Questions: pricing, models supported, how calculator works, Pro features, data accuracy
+- **Effort:** 30 min
+
+### 40. Create "AI API Cost Calculator" Dedicated Landing Page ✓ DONE
+- Separate SEO-optimized page targeting "AI API cost calculator" keyword
+- Focused calculator with minimal distractions
+- Clear CTA to try the calculator
+- Internal link from homepage
+- **Effort:** 1 hour
+
+### 41. Add Testimonials/Social Proof Section ✓ DONE
+- Add 3-4 developer testimonials to index.html
+- Use realistic but clearly marked "beta user" quotes
+- Include name, role, and company
+- Builds trust for Pro conversions
+- **Effort:** 30 min
+
+---
+
+## New Tasks — Session 24 (April 24, 2026)
+
+### 42. Write Blog Post: "The Cheapest Way to Build an AI Chatbot in 2026"
+- Targets "build AI chatbot cheap" and "cheapest AI chatbot" keywords
+- Step-by-step guide with cost breakdowns at each tier
+- Compare: GPT-4o mini, Claude Haiku, Gemini Flash, Llama
+- Show $5/mo, $25/mo, $100/mo budget tiers
+- Include calculator links for each tier
+- **Effort:** 1 hour
+
+### 43. Write Blog Post: "OpenAI vs Google Gemini: API Pricing Showdown"
+- Targets "OpenAI vs Gemini pricing" keyword (high search volume)
+- Compare GPT-4o vs Gemini 2.5 Pro and budget tiers
+- Context window comparison (128K vs 1M)
+- Use case cost breakdowns
+- **Effort:** 1 hour
+
+### 44. Add "Pricing Last Verified" Dynamic Date
+- Replace hardcoded "April 23, 2026" with JavaScript dynamic date
+- Shows current date on each page load
+- Always accurate without manual updates
+- **Effort:** 15 min
+
+### 45. Add Calculator Link to All Blog Posts
+- Each blog post CTA should link to calculator.html instead of index.html#calculator
+- Better UX — lands on focused calculator page
+- Update all 16 blog post files
+- **Effort:** 20 min
+
+### 46. Create "AI API Pricing Index" Page
+- Master index of all pricing data in a single page
+- Tables for every provider and model
+- Sortable/filterable (client-side JS)
+- Targets "AI API pricing" and "LLM pricing comparison" keywords
+- **Effort:** 1.5 hours

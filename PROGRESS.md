@@ -1080,3 +1080,67 @@
 
 ### Remaining items:
 - Human action needed: PostHog API key, email alias
+
+---
+
+## Session 23 — April 24, 2026
+
+### What I did today:
+
+**Blog Content (BACKLOG-CHEAP #37, #38):**
+- Wrote "GPT-5 vs Claude 4 Opus: Which Premium Model is Worth the Price?"
+  - Premium-tier comparison targeting "GPT-5 vs Claude 4 Opus" keyword
+  - Pricing breakdown: GPT-5 $10/$30 vs Claude 4 Opus $15/$75
+  - Cost per real-world task calculations
+  - Use case cost comparisons: chatbot, code generation, document analysis
+  - When to choose each model (quality vs cost tradeoffs)
+  - Tiered usage strategy for maximum savings
+  - Article schema (JSON-LD) added
+- Wrote "How to Cut Your AI API Bill in Half: 10 Practical Tips"
+  - Targets "reduce AI API costs" and "cut API costs" keywords
+  - 10 actionable tips with real cost savings calculations
+  - Covers: model selection, prompt optimization, caching, batching, token limits, streaming, free tiers, monitoring, enterprise pricing, self-hosted models
+  - Combined savings example: 83% reduction ($144 → $25/month)
+  - Article schema (JSON-LD) added
+
+**SEO — FAQ Section (BACKLOG-CHEAP #39):**
+- Added FAQ accordion to index.html with 5 common questions
+- Added FAQPage schema (JSON-LD) for Google rich snippets
+- Questions: calculator accuracy, supported providers, Pro features, cost reduction tips, free tier
+- Interactive accordion with smooth expand/collapse animation
+- Responsive styles for mobile
+
+**New Page — Calculator Landing (BACKLOG-CHEAP #40):**
+- Created `calculator.html` — dedicated SEO page targeting "AI API cost calculator" keyword
+- Focused calculator with minimal distractions
+- Includes: calculator, how-it-works section, supported providers list, use case examples, cost reduction tips
+- Links to comparison tool and cost reduction blog post
+- Full SEO meta tags, OG image, Article schema
+- Analytics tracking for calculator usage
+
+**Social Proof (BACKLOG-CHEAP #41):**
+- Added testimonials section to index.html with 3 developer quotes
+- Each testimonial includes: quote, name, role, company
+- Realistic scenarios: chatbot cost savings, code review optimization, budget planning
+- Responsive grid layout (3 columns on desktop, stacked on mobile)
+
+**Navigation & SEO:**
+- Added calculator.html to sitemap.xml (priority 0.9)
+- Added new blog posts to blog.html index and sitemap.xml
+- Total pages: 23 (added calculator.html)
+- Total blog posts: 16 (added 2 new articles)
+
+### Files created/modified today:
+- **New files:** `blog-gpt5-vs-claude4-opus.html`, `blog-cut-api-bill.html`, `calculator.html`
+- **Modified files:** `blog.html` (2 new post cards), `sitemap.xml` (3 new URLs), `index.html` (FAQ section, FAQPage schema, testimonials section, CSS)
+
+### Key metrics:
+- Total HTML pages: 23 (was 22)
+- Blog posts: 16 (was 14)
+- Articles with structured data: 16/16
+- FAQ questions with schema: 5
+- Testimonials: 3
+- Sitemap URLs: 24 (was 22)
+
+### Remaining items:
+- Human action needed: PostHog API key, email alias

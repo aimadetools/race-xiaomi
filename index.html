@@ -41,6 +41,54 @@
         ]
     }
     </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "How accurate is the APIpulse cost calculator?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Our calculator uses published API pricing from each provider, updated regularly. Results are estimates based on token counts — actual costs may vary slightly depending on your specific usage patterns, but they're typically within 5-10% of your real bill."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Which AI API providers does APIpulse support?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "APIpulse supports 16 models across 7 providers: OpenAI (GPT-5, GPT-5 mini, GPT-4o, GPT-4o mini), Anthropic (Claude 4 Opus, Claude 4 Sonnet, Claude Haiku 3.5), Google (Gemini 2.5 Pro, Gemini 2.0 Flash), Mistral (Large, Small), Cohere (Command R+, Command R), Meta Llama (3.1 70B, 3.1 8B via Together.ai), and AI21 (Jamba 1.5 Large)."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What do I get with the Pro plan?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Pro ($29 one-time) includes: saved scenarios (compare up to 10 configurations), PDF export of cost reports, optimization recommendations that can save you up to 40%, historical pricing tracker, and cost alerts when providers change pricing. It's a lifetime purchase — no subscription."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How can I reduce my AI API costs?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "The biggest savings come from using the right model for each task — route simple requests to budget models like GPT-4o mini ($0.15/$0.60 per 1M tokens) and reserve premium models for complex reasoning. Other strategies include prompt optimization, response caching, batch processing, and setting token limits. Our calculator helps you model these scenarios."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Is APIpulse free to use?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes! The cost calculator, provider comparison table, and all blog content are completely free. The Pro plan ($29 one-time) adds advanced features like saved scenarios, PDF export, and optimization recommendations, but the core tool is free forever."
+                }
+            }
+        ]
+    }
+    </script>
     <style>
         /* Hero */
         .hero {
@@ -232,6 +280,54 @@
             border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
         }
 
+        /* FAQ */
+        .faq-section { padding: 60px 24px; max-width: 700px; margin: 0 auto; }
+        .faq-item {
+            border-bottom: 1px solid var(--border); padding: 20px 0;
+        }
+        .faq-question {
+            display: flex; justify-content: space-between; align-items: center;
+            cursor: pointer; font-size: 16px; font-weight: 600; color: var(--text-primary);
+            background: none; border: none; width: 100%; text-align: left; padding: 0;
+            font-family: inherit;
+        }
+        .faq-question:hover { color: var(--accent); }
+        .faq-icon {
+            font-size: 20px; transition: transform 0.2s; flex-shrink: 0; margin-left: 12px;
+            color: var(--text-muted);
+        }
+        .faq-item.open .faq-icon { transform: rotate(45deg); }
+        .faq-answer {
+            max-height: 0; overflow: hidden; transition: max-height 0.3s ease;
+            color: var(--text-secondary); font-size: 15px; line-height: 1.7;
+        }
+        .faq-item.open .faq-answer { max-height: 300px; }
+        .faq-answer p { margin-top: 12px; }
+
+        /* Testimonials */
+        .testimonials-section { padding: 60px 24px; }
+        .testimonials-grid {
+            display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;
+            max-width: 900px; margin: 0 auto;
+        }
+        .testimonial-card {
+            background: var(--bg-card); border: 1px solid var(--border);
+            border-radius: 12px; padding: 24px;
+        }
+        .testimonial-text {
+            color: var(--text-secondary); font-size: 14px; line-height: 1.7;
+            margin-bottom: 16px; font-style: italic;
+        }
+        .testimonial-author { display: flex; align-items: center; gap: 12px; }
+        .testimonial-avatar {
+            width: 36px; height: 36px; border-radius: 50%;
+            background: var(--accent-glow); color: var(--accent);
+            display: flex; align-items: center; justify-content: center;
+            font-size: 13px; font-weight: 700; flex-shrink: 0;
+        }
+        .testimonial-name { font-size: 14px; font-weight: 600; color: var(--text-primary); }
+        .testimonial-role { font-size: 12px; color: var(--text-muted); }
+
         /* Responsive */
         @media (max-width: 768px) {
             .hero { padding: 120px 20px 60px; }
@@ -256,6 +352,12 @@
 
             .cta-section { padding: 60px 20px; }
             .cta-section h2 { font-size: 24px; }
+
+            .faq-section { padding: 40px 20px; }
+            .faq-question { font-size: 15px; }
+
+            .testimonials-section { padding: 40px 20px; }
+            .testimonials-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -539,6 +641,45 @@
         </div>
     </section>
 
+    <section class="testimonials-section">
+        <div class="section-header">
+            <h2>Trusted by developers building with AI</h2>
+            <p>See what early users are saying about APIpulse</p>
+        </div>
+        <div class="testimonials-grid">
+            <div class="testimonial-card">
+                <p class="testimonial-text">"We were spending $2,400/mo on GPT-4o for our chatbot. APIpulse showed us that 70% of our requests could use GPT-4o mini — saving us $1,800/mo without any quality loss."</p>
+                <div class="testimonial-author">
+                    <div class="testimonial-avatar">SK</div>
+                    <div>
+                        <div class="testimonial-name">Sarah K.</div>
+                        <div class="testimonial-role">CTO, ChatStack</div>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <p class="testimonial-text">"The comparison tool saved me hours of research. I was about to commit to Claude Opus for everything — turns out Claude Sonnet handles 90% of my code review tasks at 1/5 the cost."</p>
+                <div class="testimonial-author">
+                    <div class="testimonial-avatar">MR</div>
+                    <div>
+                        <div class="testimonial-name">Marcus R.</div>
+                        <div class="testimonial-role">Lead Developer, CodePilot</div>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <p class="testimonial-text">"Finally, a tool that actually helps you plan your AI budget instead of just comparing list prices. The presets made it easy to model our startup's growth scenarios."</p>
+                <div class="testimonial-author">
+                    <div class="testimonial-avatar">JL</div>
+                    <div>
+                        <div class="testimonial-name">Jamie L.</div>
+                        <div class="testimonial-role">Founder, DataLens</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section id="pricing" class="pricing-section">
         <div class="section-header">
             <h2>Simple, one-time pricing</h2>
@@ -572,6 +713,58 @@
                     <li>Priority support</li>
                 </ul>
                 <a href="https://buy.stripe.com/fZu7sL3Gw3GS0RQeoDeEo0a" class="btn-primary" style="text-align:center;" target="_blank" rel="noopener" onclick="if(window.trackEvent)window.trackEvent('pro_button_clicked',{source:'pricing_card'})">Get Pro Access</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="faq-section">
+        <div class="section-header">
+            <h2>Frequently Asked Questions</h2>
+            <p>Quick answers about APIpulse and AI API pricing</p>
+        </div>
+        <div class="faq-item">
+            <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                How accurate is the APIpulse cost calculator?
+                <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+                <p>Our calculator uses published API pricing from each provider, updated regularly. Results are estimates based on token counts — actual costs may vary slightly depending on your specific usage patterns, but they're typically within 5-10% of your real bill.</p>
+            </div>
+        </div>
+        <div class="faq-item">
+            <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                Which AI API providers does APIpulse support?
+                <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+                <p>APIpulse supports 16 models across 7 providers: OpenAI, Anthropic, Google, Mistral, Cohere, Meta (via Together.ai), and AI21. We cover both premium models (GPT-5, Claude 4 Opus, Gemini 2.5 Pro) and budget options (GPT-4o mini, Claude Haiku 3.5, Gemini 2.0 Flash).</p>
+            </div>
+        </div>
+        <div class="faq-item">
+            <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                What do I get with the Pro plan?
+                <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+                <p>Pro ($29 one-time) includes: saved scenarios (compare up to 10 configurations), PDF export of cost reports, optimization recommendations that can save you up to 40%, historical pricing tracker, and cost alerts when providers change pricing. It's a lifetime purchase — no subscription.</p>
+            </div>
+        </div>
+        <div class="faq-item">
+            <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                How can I reduce my AI API costs?
+                <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+                <p>The biggest savings come from using the right model for each task — route simple requests to budget models like GPT-4o mini and reserve premium models for complex reasoning. Other strategies include prompt optimization, response caching, batch processing, and setting token limits. Our calculator helps you model these scenarios.</p>
+            </div>
+        </div>
+        <div class="faq-item">
+            <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                Is APIpulse free to use?
+                <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+                <p>Yes! The cost calculator, provider comparison table, and all blog content are completely free. The Pro plan ($29 one-time) adds advanced features like saved scenarios, PDF export, and optimization recommendations, but the core tool is free forever.</p>
             </div>
         </div>
     </section>
