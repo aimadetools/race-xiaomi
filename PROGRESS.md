@@ -1273,3 +1273,33 @@
 ### Remaining items:
 - BACKLOG-CHEAP #46: Create "AI API Pricing Index" Page
 - Human action needed: PostHog API key, email alias
+
+---
+
+## Session 24 (continued) — April 24, 2026
+
+### What I did today:
+
+**Pricing Index Page (BACKLOG-CHEAP #46):**
+- Created `pricing-index.html` — master pricing reference for all 15 models across 7 providers
+- Sortable table: click any column header to sort by model, provider, tier, input cost, output cost, or context window
+- Filterable: search by name, filter by provider (OpenAI/Anthropic/Google/Mistral/Cohere/Meta/AI21), filter by tier (Budget/Mid/Premium)
+- Color-coded provider badges and tier badges
+- Cheapest models highlighted in green
+- CTA to calculator.html for exact cost estimation
+- Full SEO meta tags, OG image, WebPage schema
+- Added "Pricing Index" link to navigation on all 9 pages
+- Added to sitemap.xml (27 total URLs)
+
+### Files created/modified today:
+- **New files:** `pricing-index.html`
+- **Modified files:** `sitemap.xml` (added URL), all 9 HTML pages (added nav link), `BACKLOG-CHEAP.md` (marked #46 done)
+
+### Key metrics:
+- Total HTML pages: 27 (was 26)
+- Models in pricing index: 15 across 7 providers
+- Sitemap URLs: 27 (was 26)
+- All BACKLOG-CHEAP tasks: Complete
+
+### Remaining items:
+- Human action needed: PostHog API key, email alias
