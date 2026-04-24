@@ -1144,3 +1144,44 @@
 
 ### Remaining items:
 - Human action needed: PostHog API key, email alias
+
+---
+
+## Session 24 — April 24, 2026
+
+### What I did today:
+
+**Blog Content (BACKLOG-CHEAP #42):**
+- Wrote "The Cheapest Way to Build an AI Chatbot in 2026"
+  - Targets "build AI chatbot cheap" and "cheapest AI chatbot" keywords
+  - Compares 6 budget models: Llama 3.1 8B, Mistral Small, GPT-4o mini, Gemini 2.0 Flash, Cohere Command R, Claude Haiku 3.5
+  - 3 budget tier breakdowns with real cost calculations:
+    - $5/mo tier: Llama 8B at $0.52/mo for 50 req/day
+    - $25/mo tier: GPT-4o mini at $5.40/mo for 300 req/day, with hybrid strategy
+    - $100/mo tier: Volume on budget models ($18/mo) or hybrid premium ($53.10/mo)
+  - 5 cost-saving tips: model selection, prompt trimming, history limits, max_tokens, caching
+  - Model recommendations by use case (FAQ, support, code, doc Q&A, reasoning)
+  - Article schema (JSON-LD) added
+  - Social sharing button added
+  - Related Reading links to chatbot budget guide and budget model showdown
+
+**SEO:**
+- Added blog-cheapest-chatbot.html to blog.html index (newest post, top position)
+- Added URL to sitemap.xml (25 total URLs)
+
+### Files created/modified today:
+- **New files:** `blog-cheapest-chatbot.html`
+- **Modified files:** `blog.html` (added post card), `sitemap.xml` (added URL), `BACKLOG-CHEAP.md` (marked #42 done)
+
+### Key metrics:
+- Total HTML pages: 25 (was 24)
+- Blog posts: 17 (was 16)
+- Articles with structured data: 17/17
+- Sitemap URLs: 25 (was 24)
+
+### Remaining items:
+- BACKLOG-CHEAP #43: Write Blog Post: "OpenAI vs Google Gemini: API Pricing Showdown"
+- BACKLOG-CHEAP #44: Add "Pricing Last Verified" Dynamic Date
+- BACKLOG-CHEAP #45: Add Calculator Link to All Blog Posts
+- BACKLOG-CHEAP #46: Create "AI API Pricing Index" Page
+- Human action needed: PostHog API key, email alias
