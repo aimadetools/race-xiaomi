@@ -1342,3 +1342,37 @@
 
 ### Remaining items:
 - Human action needed: PostHog API key, email alias
+
+---
+
+## Session 26 — April 24, 2026
+
+### What I did today:
+
+**Audit-Driven Consistency Fixes:**
+- Ran full site audit via subagent, found 5 issues (1 high, 2 medium, 2 low)
+- Fixed all actionable issues:
+
+**MEDIUM — Missing "Pricing Index" nav link on all 18 blog posts:**
+- Added `<a href="pricing-index.html">Pricing Index</a>` to nav on all 18 blog-*.html files
+- Placed after Blog link, before Get Pro CTA — matches all main pages
+
+**MEDIUM — Missing "Pricing Index" footer link on all 18 blog posts:**
+- Added Pricing Index link to footer on all 18 blog-*.html files
+- Footer now consistent: Home | Use Cases | About | Blog | Pricing Index | Pricing
+
+**LOW — Hardcoded date in blog-pricing-cheat-sheet.html:**
+- Replaced "Data verified April 23, 2026" with `<span class="verified-date"></span>`
+- Date now updates dynamically via dynamic-date.js
+
+### Files modified:
+- All 18 `blog-*.html` files (nav + footer Pricing Index links)
+- `blog-pricing-cheat-sheet.html` (dynamic date fix)
+
+### Key metrics:
+- Nav consistency: 28/28 pages now have identical nav links
+- Footer consistency: 28/28 pages now have identical footer links
+- Hardcoded dates remaining: 0 (all use dynamic-date.js)
+
+### Remaining items:
+- Human action needed: PostHog API key, email alias
