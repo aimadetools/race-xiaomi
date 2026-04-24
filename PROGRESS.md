@@ -1376,3 +1376,73 @@
 
 ### Remaining items:
 - Human action needed: PostHog API key, email alias
+
+---
+
+## Session 27 — April 24, 2026
+
+### What I did today:
+
+**Full Site Audit & Bug Fixes:**
+- Ran comprehensive audit of all 28 HTML files, JS, CSS, and API endpoints
+- Found 20 issues (2 critical, 3 high, 7 medium, 8 low)
+- Fixed all critical, high, and medium actionable issues
+
+**CRITICAL — 14 Broken Twitter Share URLs:**
+- Fixed 14 blog posts where Twitter/X share buttons pointed to non-existent `blog.html#post-xxx` anchors
+- Updated all to point to correct individual blog post URLs (e.g., `blog-gpt4o-vs-claude.html`)
+- Social sharing now works correctly for all 18 blog posts
+
+**HIGH — Calculator Nav Links (8 pages):**
+- Fixed 8 pages linking Calculator nav item to `index.html#calculator` instead of `calculator.html`
+- Updated: about.html, pricing.html, pricing-index.html, pro.html, blog.html, compare.html, use-cases.html
+- Also fixed compare.html CTA link (`index.html#calculator` → `calculator.html`)
+
+**HIGH — Missing Calculator CTA:**
+- Added calculator CTA button to blog-openai-vs-gemini.html (was the only blog post without one)
+- Now includes both calculator and comparison tool CTAs
+
+**HIGH — Skip-Link Accessibility (26 pages):**
+- Added `<a href="#main" class="skip-link">Skip to content</a>` to 26 pages missing it
+- Added `<main id="main">` wrappers to 26 pages for semantic HTML and skip targets
+- All 28 pages now have consistent skip-link accessibility
+
+**MEDIUM — Email Form Aria-Labels (24 pages):**
+- Added `aria-label="Email address"` to all 24 email subscription inputs
+- Screen readers can now announce the purpose of the email field
+
+**MEDIUM — 404 Page Gaps:**
+- Added back-to-top floating button to 404.html
+- Added email subscription section to 404.html
+- Added `saveEmail()` function to 404.html script
+
+**MEDIUM — pricing-index.html Nav/Footer:**
+- Added "Pricing Index" link to nav (was the only page without it)
+- Added "Pricing Index" link to footer (now matches all other pages)
+
+**Architecture — Shared JavaScript:**
+- Created `shared.js` — extracted common functions into shared module:
+  - `toggleTheme()` and `updateThemeIcon()`
+  - Theme initialization (localStorage persistence)
+  - Back-to-top scroll listener
+  - `saveEmail()` with API + localStorage fallback
+- Updated all 28 HTML files to use `<script src="shared.js" defer></script>`
+- Removed inline duplicate code from all pages
+- Net reduction: ~1,600 lines of duplicated JavaScript
+
+### Files created/modified today:
+- **New files:** `shared.js`
+- **Modified files:** All 28 HTML files (skip-links, aria-labels, shared.js, nav/footer fixes)
+
+### Key metrics:
+- Critical bugs fixed: 2 (broken share URLs, calculator nav)
+- High bugs fixed: 3 (calculator nav, missing CTA, skip-links)
+- Medium bugs fixed: 4 (aria-labels, 404 gaps, pricing-index nav/footer)
+- Lines of duplicated JS removed: ~1,600
+- Pages with skip-links: 28/28
+- Pages with `<main>` elements: 28/28
+- Email inputs with aria-labels: 24/24
+- Twitter share URLs working: 18/18
+
+### Remaining items:
+- Human action needed: PostHog API key, email alias

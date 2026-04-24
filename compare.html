@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="styles.css">
     <script src="analytics.js" defer></script>
     <script src="dynamic-date.js" defer></script>
+    <script src="shared.js" defer></script>
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -161,11 +162,12 @@
     </style>
 </head>
 <body>
+    <a href="#main" class="skip-link">Skip to content</a>
     <nav>
         <div class="nav-inner">
             <a href="index.html" class="logo">API<span>pulse</span></a>
             <div class="nav-links">
-                <a href="index.html#calculator">Calculator</a>
+                <a href="calculator.html">Calculator</a>
                 <a href="compare.html" style="color: var(--accent); font-weight: 600;">Compare</a>
                 <a href="pricing.html">Pricing</a>
                 <a href="use-cases.html">Use Cases</a>
@@ -177,6 +179,8 @@
             </div>
         </div>
     </nav>
+
+    <main id="main">
 
     <div class="page-header">
         <h1>Compare LLM API Pricing</h1>
@@ -311,10 +315,12 @@
     <section class="cta-section">
         <h2>Want more detailed cost modeling?</h2>
         <p>Use the full calculator to model scenarios, save configurations, and export PDF reports.</p>
-        <a href="index.html#calculator" class="btn-primary">Open Full Calculator</a>
+        <a href="calculator.html" class="btn-primary">Open Full Calculator</a>
     </section>
 
     <button class="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">↑</button>
+
+    </main>
 
     <footer>
         <p>Pricing data last verified: <span class="verified-date"></span></p>
@@ -412,25 +418,6 @@
                     cost_a: costA.total.toFixed(2), cost_b: costB.total.toFixed(2)
                 });
             }
-        }
-
-        // Theme toggle
-        function toggleTheme() {
-            const html = document.documentElement;
-            const current = html.getAttribute('data-theme');
-            const next = current === 'light' ? 'dark' : 'light';
-            html.setAttribute('data-theme', next);
-            localStorage.setItem('theme', next);
-            document.querySelector('.theme-toggle').textContent = next === 'light' ? '☀️' : '🌙';
-        }
-        const saved = localStorage.getItem('theme') || 'dark';
-        document.documentElement.setAttribute('data-theme', saved);
-        document.querySelector('.theme-toggle').textContent = saved === 'light' ? '☀️' : '🌙';
-
-        // Back to top
-        window.addEventListener('scroll', () => {
-            const btn = document.querySelector('.back-to-top');
-            if (btn) btn.classList.toggle('visible', window.scrollY > 400);
         });
 
         // Init

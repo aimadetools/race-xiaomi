@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="styles.css">
     <script src="analytics.js" defer></script>
     <script src="dynamic-date.js" defer></script>
+    <script src="shared.js" defer></script>
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -141,7 +142,7 @@
         <div class="nav-inner">
             <a href="index.html" class="logo">API<span>pulse</span></a>
             <div class="nav-links">
-                <a href="index.html#calculator">Calculator</a>
+                <a href="calculator.html">Calculator</a>
                 <a href="compare.html">Compare</a>
                 <a href="pricing.html">Pricing</a>
                 <a href="use-cases.html">Use Cases</a>
@@ -268,7 +269,7 @@
                 <h2 style="font-size:22px;font-weight:700;margin-bottom:8px;">Get notified when API prices change</h2>
                 <p style="font-size:14px;color:var(--text-secondary);margin-bottom:20px;">No spam. Only pricing updates and new features. Unsubscribe anytime.</p>
                 <form onsubmit="saveEmail(event)" style="display:flex;gap:8px;max-width:400px;margin:0 auto;">
-                    <input type="email" id="email-input" placeholder="you@company.com" required
+                    <input type="email" id="email-input" placeholder="you@company.com" required aria-label="Email address"
                         style="flex:1;padding:12px 16px;background:var(--bg-card);border:1px solid var(--border);
                         border-radius:8px;color:var(--text-primary);font-size:14px;">
                     <button type="submit" class="btn-primary" style="padding:12px 24px;white-space:nowrap;">Subscribe</button>
@@ -331,64 +332,6 @@
             } else {
                 document.getElementById('gate-error').style.display = 'block';
                 if (window.trackEvent) window.trackEvent('pro_access_failed');
-            }
-        }
-
-        function toggleTheme() {
-            const html = document.documentElement;
-            const current = html.getAttribute('data-theme');
-            const next = current === 'light' ? 'dark' : 'light';
-            html.setAttribute('data-theme', next);
-            localStorage.setItem('theme', next);
-            document.querySelector('.theme-toggle').textContent = next === 'light' ? '☀️' : '🌙';
-        }
-
-        // Load theme
-        const savedTheme = localStorage.getItem('theme') || 'dark';
-        document.documentElement.setAttribute('data-theme', savedTheme);
-        document.querySelector('.theme-toggle').textContent = savedTheme === 'light' ? '☀️' : '🌙';
-
-        // Auto-unlock if already pro
-        if (isProUser()) {
-            calculate();
-        }
-
-        async function saveEmail(e) {
-            e.preventDefault();
-            const email = document.getElementById('email-input').value;
-            const msgEl = document.getElementById('email-msg');
-            const btn = e.target.querySelector('button[type="submit"]');
-
-            btn.disabled = true;
-            btn.textContent = 'Subscribing...';
-
-            try {
-                const res = await fetch('/api/subscribe', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ email })
-                });
-                const data = await res.json();
-
-                msgEl.textContent = data.message || 'Thanks! You\'ll be notified of pricing changes.';
-                msgEl.style.color = 'var(--green)';
-                msgEl.style.display = 'block';
-                document.getElementById('email-input').value = '';
-                if (window.trackEvent) window.trackEvent('email_signup');
-            } catch (err) {
-                const emails = JSON.parse(localStorage.getItem('apipulse_emails') || '[]');
-                if (!emails.includes(email)) {
-                    emails.push(email);
-                    localStorage.setItem('apipulse_emails', JSON.stringify(emails));
-                }
-                msgEl.textContent = 'Saved! We\'ll process your subscription when the service is available.';
-                msgEl.style.color = 'var(--green)';
-                msgEl.style.display = 'block';
-                document.getElementById('email-input').value = '';
-                if (window.trackEvent) window.trackEvent('email_signup');
-            } finally {
-                btn.disabled = false;
-                btn.textContent = 'Subscribe';
             }
         }
     </script>

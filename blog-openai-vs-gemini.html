@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="styles.css">
     <script src="analytics.js" defer></script>
     <script src="dynamic-date.js" defer></script>
+    <script src="shared.js" defer></script>
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -138,6 +139,7 @@
     </style>
 </head>
 <body>
+    <a href="#main" class="skip-link">Skip to content</a>
     <nav>
         <div class="nav-inner">
             <a href="index.html" class="logo">API<span>pulse</span></a>
@@ -154,6 +156,8 @@
             </div>
         </div>
     </nav>
+
+    <main id="main">
 
     <div class="content article" id="post-openai-vs-gemini">
         <a href="blog.html" class="back-link">← Back to blog</a>
@@ -264,7 +268,8 @@
 
         <div class="cta-inline">
             <p><strong>See the exact cost difference for your workload.</strong></p>
-            <a href="compare.html" class="btn-primary">Compare GPT-4o vs Gemini Side-by-Side</a>
+            <a href="calculator.html" class="btn-primary">Try the APIpulse Calculator</a>
+            <a href="compare.html" class="btn-secondary">Compare GPT-4o vs Gemini Side-by-Side</a>
         </div>
 
         <div class="share-section">
@@ -286,7 +291,7 @@
         <h3 style="font-size:18px;margin-bottom:8px;">Get notified when API prices change</h3>
         <p style="font-size:14px;color:var(--text-secondary);margin-bottom:16px;">No spam. Only pricing updates and new features. Unsubscribe anytime.</p>
         <form onsubmit="saveEmail(event)" style="display:flex;gap:8px;max-width:400px;margin:0 auto;">
-            <input type="email" id="email-input" placeholder="you@company.com" required
+            <input type="email" id="email-input" placeholder="you@company.com" required aria-label="Email address"
                 style="flex:1;padding:12px 16px;border-radius:8px;border:1px solid var(--border);background:var(--bg-secondary);color:var(--text-primary);font-size:14px;">
             <button type="submit" class="btn-primary" style="padding:12px 24px;white-space:nowrap;">Subscribe</button>
         </form>
@@ -295,81 +300,11 @@
 
     <button class="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">↑</button>
 
+    </main>
     <footer>
         <p>Pricing data last verified: <span class="verified-date"></span></p>
         <p>&copy; 2026 APIpulse. <a href="index.html">Home</a> &middot; <a href="use-cases.html">Use Cases</a> &middot; <a href="about.html">About</a> &middot; <a href="blog.html">Blog</a> &middot; <a href="pricing-index.html">Pricing Index</a> &middot; <a href="pricing.html">Pricing</a></p>
     </footer>
 
-    <script>
-        // Theme toggle
-        function toggleTheme() {
-            const html = document.documentElement;
-            const currentTheme = html.getAttribute('data-theme');
-            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
-            html.setAttribute('data-theme', newTheme);
-            localStorage.setItem('theme', newTheme);
-            updateThemeIcon();
-        }
-
-        function updateThemeIcon() {
-            const theme = document.documentElement.getAttribute('data-theme');
-            const icon = document.querySelector('.theme-toggle');
-            if (icon) {
-                icon.textContent = theme === 'light' ? '\u2600\uFE0F' : '\uD83C\uDF19';
-            }
-        }
-
-        // Load saved theme
-        const savedTheme = localStorage.getItem('theme') || 'dark';
-        document.documentElement.setAttribute('data-theme', savedTheme);
-        updateThemeIcon();
-
-        // Back to top button
-        window.addEventListener('scroll', () => {
-            const btn = document.querySelector('.back-to-top');
-            if (btn) btn.classList.toggle('visible', window.scrollY > 400);
-        });
-
-        // Email capture
-        async function saveEmail(e) {
-            e.preventDefault();
-            const email = document.getElementById('email-input').value;
-            const msgEl = document.getElementById('email-msg');
-            const btn = e.target.querySelector('button[type="submit"]');
-
-            btn.disabled = true;
-            btn.textContent = 'Subscribing...';
-
-            try {
-                const res = await fetch('/api/subscribe', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ email })
-                });
-                const data = await res.json();
-
-                msgEl.textContent = data.message || 'Thanks! You\'ll be notified of pricing changes.';
-                msgEl.style.color = 'var(--green)';
-                msgEl.style.display = 'block';
-                document.getElementById('email-input').value = '';
-                if (window.trackEvent) window.trackEvent('email_signup');
-            } catch (err) {
-                // Fallback to localStorage if API unavailable
-                const emails = JSON.parse(localStorage.getItem('apipulse_emails') || '[]');
-                if (!emails.includes(email)) {
-                    emails.push(email);
-                    localStorage.setItem('apipulse_emails', JSON.stringify(emails));
-                }
-                msgEl.textContent = 'Saved! We\'ll process your subscription when the service is available.';
-                msgEl.style.color = 'var(--green)';
-                msgEl.style.display = 'block';
-                document.getElementById('email-input').value = '';
-                if (window.trackEvent) window.trackEvent('email_signup');
-            } finally {
-                btn.disabled = false;
-                btn.textContent = 'Subscribe';
-            }
-        }
-    </script>
 </body>
 </html>

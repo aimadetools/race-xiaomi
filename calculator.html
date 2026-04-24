@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="styles.css">
     <script src="analytics.js" defer></script>
     <script src="dynamic-date.js" defer></script>
+    <script src="shared.js" defer></script>
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -122,6 +123,7 @@
     </style>
 </head>
 <body>
+    <a href="#main" class="skip-link">Skip to content</a>
     <nav>
         <div class="nav-inner">
             <a href="index.html" class="logo">API<span>pulse</span></a>
@@ -138,6 +140,8 @@
             </div>
         </div>
     </nav>
+
+    <main id="main">
 
     <div class="calc-hero">
         <h1>AI API Cost Calculator</h1>
@@ -261,6 +265,8 @@
 
     <button class="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">↑</button>
 
+    </main>
+
     <footer>
         <p>Pricing data last verified: <span class="verified-date"></span></p>
         <p>&copy; 2026 APIpulse. <a href="index.html">Home</a> &middot; <a href="use-cases.html">Use Cases</a> &middot; <a href="about.html">About</a> &middot; <a href="blog.html">Blog</a>
@@ -365,30 +371,6 @@
             calculate();
             if (window.trackEvent) window.trackEvent('preset_clicked', { preset: type });
         }
-
-        // Theme toggle
-        function toggleTheme() {
-            const html = document.documentElement;
-            const currentTheme = html.getAttribute('data-theme');
-            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
-            html.setAttribute('data-theme', newTheme);
-            localStorage.setItem('theme', newTheme);
-            updateThemeIcon();
-        }
-        function updateThemeIcon() {
-            const theme = document.documentElement.getAttribute('data-theme');
-            const icon = document.querySelector('.theme-toggle');
-            if (icon) icon.textContent = theme === 'light' ? '\u2600\uFE0F' : '\uD83C\uDF19';
-        }
-        const savedTheme = localStorage.getItem('theme') || 'dark';
-        document.documentElement.setAttribute('data-theme', savedTheme);
-        updateThemeIcon();
-
-        // Back to top
-        window.addEventListener('scroll', () => {
-            const btn = document.querySelector('.back-to-top');
-            if (btn) btn.classList.toggle('visible', window.scrollY > 400);
-        });
     </script>
 </body>
 </html>
