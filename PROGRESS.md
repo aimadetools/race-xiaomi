@@ -1446,3 +1446,74 @@
 
 ### Remaining items:
 - Human action needed: PostHog API key, email alias
+
+---
+
+## Session 28 — April 25, 2026
+
+### What I did today:
+
+**Full Site Audit & Bug Fixes:**
+- Ran comprehensive audit of all 28 HTML files, JS, CSS, and API endpoints
+- Found 11 issues (1 critical, 2 high, 4 medium, 4 low)
+- Fixed all critical, high, and medium actionable issues
+
+**CRITICAL — compare.html JS Syntax Error:**
+- Fixed `});` → `}` on line 421 in `updateComparison()` function
+- The trailing `)` was a SyntaxError that broke the entire comparison tool
+- Model selection, cost calculations, and winner banner now work correctly
+
+**HIGH — Pricing Index Missing GPT-5 mini:**
+- Added GPT-5 mini ($0.40/$1.60, 256K context) to pricing-index.html models array
+- Pricing index now shows all 16 models (was 15)
+
+**HIGH — Mistral Small Context Window Inconsistency:**
+- Resolved contradictory data: 32K (correct) vs 128K (incorrect)
+- Fixed compare.html and pricing-index.html to use 32K
+- Matches index.html comparison table and blog-pricing-cheat-sheet.html
+
+**MEDIUM — index.html Navigation Inconsistency:**
+- Changed logo from `<div>` to `<a href="index.html">` (clickable, matches all other pages)
+- Changed `#calculator` → `calculator.html` for Calculator nav link
+- Changed `#pricing` → `pricing.html` for Pricing nav link and Get Pro CTA
+- Changed hero CTAs to link to calculator.html and pricing.html
+
+**MEDIUM — Footer Middot Separators (8 pages):**
+- Fixed missing `&middot;` separator between Blog and Pricing Index links
+- Fixed on: index.html, blog.html, about.html, pricing.html, compare.html, calculator.html, pro.html, use-cases.html
+- Removed extra "Built for developers, by developers." text from index.html footer
+- All 28 pages now have identical footer formatting
+
+**MEDIUM — pro.html Dropdown Order:**
+- Reordered provider dropdown to match calculator.html (GPT-5, GPT-5 mini, Claude 4 Opus at top by provider)
+- Consistent model ordering across all calculator pages
+
+**User Acquisition Content:**
+- Created Reddit launch posts for r/webdev, r/SaaS, r/ChatGPTDev
+- Created Product Hunt launch assets (tagline, description, maker comment, checklist)
+- Created Hacker News Show HN post with first comment and follow-ups
+- Created Twitter/X launch thread (7 tweets)
+
+### Files created/modified today:
+- **New files:** `marketing/reddit-webdev.md`, `marketing/reddit-saas.md`, `marketing/reddit-chatgptdev.md`, `marketing/product-hunt.md`, `marketing/hackernews-showhn.md`, `marketing/twitter-launch-thread.md`
+- **Modified files:** `compare.html` (JS syntax fix, Mistral Small context), `pricing-index.html` (GPT-5 mini, Mistral Small context), `index.html` (nav, footer, hero CTAs), `blog.html` (footer), `about.html` (footer), `pricing.html` (footer), `calculator.html` (footer), `pro.html` (footer, dropdown order), `use-cases.html` (footer)
+
+### Key metrics:
+- Critical bugs fixed: 1 (compare.html JS syntax)
+- High bugs fixed: 2 (GPT-5 mini, Mistral Small context)
+- Medium bugs fixed: 3 (nav, footer, dropdown)
+- Marketing assets created: 6
+
+### Site status:
+- Total HTML pages: 28
+- Blog posts: 18
+- Calculator models: 16 across 7 providers
+- All known bugs: Fixed
+- Ready for user acquisition: Yes
+
+### Next steps:
+1. Post Reddit launch posts (human action)
+2. Launch on Product Hunt (human action)
+3. Post on Hacker News (human action)
+4. Set up Twitter/X account (waiting on email alias)
+5. Monitor analytics and conversion

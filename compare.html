@@ -324,8 +324,7 @@
 
     <footer>
         <p>Pricing data last verified: <span class="verified-date"></span></p>
-        <p>&copy; 2026 APIpulse. <a href="index.html">Home</a> &middot; <a href="use-cases.html">Use Cases</a> &middot; <a href="about.html">About</a> &middot; <a href="blog.html">Blog</a>
-                <a href="pricing-index.html">Pricing Index</a> &middot; <a href="pricing.html">Pricing</a></p>
+        <p>&copy; 2026 APIpulse. <a href="index.html">Home</a> &middot; <a href="use-cases.html">Use Cases</a> &middot; <a href="about.html">About</a> &middot; <a href="blog.html">Blog</a> &middot; <a href="pricing-index.html">Pricing Index</a> &middot; <a href="pricing.html">Pricing</a></p>
     </footer>
 
     <script>
@@ -340,7 +339,7 @@
             'google-pro': { name: 'Gemini 2.5 Pro', provider: 'Google', input: 1.25, output: 10.00, context: '1M' },
             'google-flash': { name: 'Gemini 2.0 Flash', provider: 'Google', input: 0.10, output: 0.40, context: '1M' },
             'mistral-large': { name: 'Mistral Large', provider: 'Mistral', input: 2.00, output: 6.00, context: '128K' },
-            'mistral-small': { name: 'Mistral Small', provider: 'Mistral', input: 0.10, output: 0.30, context: '128K' },
+            'mistral-small': { name: 'Mistral Small', provider: 'Mistral', input: 0.10, output: 0.30, context: '32K' },
             'cohere-command-r-plus': { name: 'Command R+', provider: 'Cohere', input: 2.50, output: 10.00, context: '128K' },
             'cohere-command-r': { name: 'Command R', provider: 'Cohere', input: 0.15, output: 0.60, context: '128K' },
             'llama-3.1-70b': { name: 'Llama 3.1 70B', provider: 'Together.ai', input: 0.88, output: 0.88, context: '128K' },
@@ -418,7 +417,7 @@
                     cost_a: costA.total.toFixed(2), cost_b: costB.total.toFixed(2)
                 });
             }
-        });
+        }
 
         // Init
         updateComparison();

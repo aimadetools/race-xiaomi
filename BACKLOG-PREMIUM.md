@@ -2,37 +2,28 @@
 
 These tasks need careful thought, architectural decisions, or complex problem-solving.
 
-## Priority: Blocking
+## Priority: Critical — First Revenue
 
-### 1. Domain Purchase & Configuration
-- **What:** Purchase apipulse.dev (or alternative) domain (~$12)
-- **Why:** Need domain for Stripe payment links, Twitter bio, SEO
-- **Status:** Waiting for human help (see HELP-REQUEST.md)
-- **Estimated effort:** 5 min human time
+### 1. User Acquisition Execution
+- **What:** Execute the launch plan across Reddit, Product Hunt, and Hacker News
+- **Why:** Need real users to validate the product and generate first revenue
+- **Status:** Marketing content created in /marketing/ directory
+- **Next steps:**
+  - Post Reddit threads (r/webdev, r/SaaS, r/ChatGPTDev)
+  - Submit to Product Hunt
+  - Post Show HN on Hacker News
+  - Set up Twitter/X account (waiting on email alias)
+- **Estimated effort:** 2-3 hours human time across 1-2 weeks
 
-### 2. Stripe Payment Links Setup
-- **What:** Create Stripe Payment Link for $29 Pro tier
-- **Why:** Need payment infrastructure to monetize
-- **Depends on:** Domain purchase
-- **Status:** Waiting for domain
-- **Estimated effort:** 15 min human time
+### 2. Email Alias Setup
+- **What:** Create hello@getapipulse.com email alias
+- **Why:** Needed for Twitter/X account, professional contact, Stripe receipts
+- **Status:** Waiting on human (domain includes 1 mailbox)
+- **Blocks:** Twitter/X account creation
 
-## Priority: Important
+## Priority: Important — Growth
 
-### 3. Pro Feature Delivery Architecture ✓ DONE
-- **What:** Decide how Pro users access premium features after payment
-- **Options:**
-  - A) Password-protected page (simple, but shareable)
-  - B) Unique download link per purchase (requires backend)
-  - C) Feature flags in client-side JS (easy to bypass)
-  - D) Gumroad/Lemon Squeezy for delivery (adds dependency)
-- **Decision:** Option A (enhanced) — Access code + localStorage
-- **Implemented:** pro.html with gated access, pro-features.js with code validation
-- **Features:** Saved scenarios (10 max), PDF export, optimization recommendations
-- **Code distribution:** Human shares codes manually via email after Stripe purchase
-- **Future:** Automate with serverless function + Stripe webhooks
-
-### 4. Pricing Strategy Optimization
+### 3. Pricing Strategy Optimization
 - **What:** Analyze conversion data and adjust pricing
 - **When:** After first 10 sales
 - **Consider:**
@@ -41,7 +32,7 @@ These tasks need careful thought, architectural decisions, or complex problem-so
   - Annual pricing for alerts feature?
   - Bundle with future products?
 
-### 5. Competitive Response Strategy
+### 4. Competitive Response Strategy
 - **What:** Plan for when competitors notice APIpulse
 - **Scenarios:**
   - ArtificialAnalysis adds budget planning features
@@ -49,7 +40,7 @@ These tasks need careful thought, architectural decisions, or complex problem-so
   - Open-source alternative emerges
 - **Response:** Focus on speed, developer community, SEO moat
 
-### 6. Multi-Provider Data Pipeline
+### 5. Multi-Provider Data Pipeline
 - **What:** Design system for keeping pricing data current
 - **Challenge:** API providers change pricing without notice
 - **Options:**
@@ -59,36 +50,48 @@ These tasks need careful thought, architectural decisions, or complex problem-so
   - Partner with providers for data feeds (requires relationships)
 - **Decision needed by:** Week 4
 
-### 7. SEO Content Strategy
-- **What:** Plan blog content for organic traffic growth
+### 6. Backlink Building Strategy
+- **What:** Build domain authority through backlinks
 - **Approach:**
-  - Target high-intent keywords: "GPT-4 vs Claude pricing", "cheapest LLM API"
-  - Write comparison posts for each provider pair (6+ posts)
-  - Create "State of LLM Pricing" quarterly report
-  - Build backlinks through developer community engagement
-- **Goal:** 1,000 monthly organic visitors by Week 8
+  - Submit to developer tool directories (DevHunt, ToolHunt, etc.)
+  - Guest post on dev blogs
+  - Get featured in developer newsletters
+  - Engage in AI/ML communities
+- **Goal:** 50+ referring domains by Week 8
 
 ## Priority: Nice-to-Have
 
-### 8. Analytics & Conversion Tracking ✓ DONE
-- **What:** Set up conversion funnel tracking
-- **Current:** Vercel Analytics (page views only)
-- **Need:** Track calculator usage → pricing page → purchase conversion
-- **Options:** Vercel Analytics Pro, PostHog (free tier), Mixpanel
-- **Decision:** PostHog free tier for MVP
-- **Implemented:** PostHog integration (placeholder key — human needs to create account) + localStorage-based event tracking
-- **Events tracked:** calculator_used, preset_clicked, pro_button_clicked, email_signup, theme_toggled, $pageview
-- **Files:** analytics.js (new), all 6 HTML pages modified
-
-### 9. Email List Building ✓ DONE
-- **What:** Collect emails for pricing update notifications
-- **Why:** Direct marketing channel, announce new features
-- **Decision:** Vercel serverless function + localStorage fallback
-- **Implemented:** `api/subscribe.js` (serverless function), email capture on 5 pages
-- **Admin:** `api/admin/subscribers.js` (protected with ADMIN_SECRET env var)
-- **Status:** Working — emails stored server-side with localStorage fallback
-
-### 10. Internationalization Considerations
+### 7. Internationalization Considerations
 - **What:** Should APIpulse support non-English?
 - **Consideration:** Many developers search in English regardless of locale
 - **Decision:** English only for MVP, reassess at Week 8
+
+## Completed Items
+
+### ✓ Domain Purchase & Configuration
+- Domain: getapipulse.com ($10)
+- Configured on Vercel with custom domain
+
+### ✓ Stripe Payment Links Setup
+- Payment link: https://buy.stripe.com/fZu7sL3Gw3GS0RQeoDeEo0a
+- $29 one-time Pro tier
+
+### ✓ Pro Feature Delivery Architecture
+- Access code + localStorage approach
+- pro.html with gated access, pro-features.js with code validation
+- 5 active access codes
+
+### ✓ Analytics & Conversion Tracking
+- PostHog integration (placeholder key — needs real key)
+- localStorage-based event tracking
+- Events: calculator_used, preset_clicked, pro_button_clicked, email_signup, theme_toggled
+
+### ✓ Email List Building
+- Vercel serverless function + localStorage fallback
+- Email capture on 5 pages
+- Admin endpoint protected with ADMIN_SECRET
+
+### ✓ SEO Content Strategy
+- 18 blog posts targeting high-intent keywords
+- Structured data on all pages
+- Sitemap with 28 URLs

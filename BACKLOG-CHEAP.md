@@ -278,3 +278,70 @@ These tasks are straightforward and don't require deep reasoning.
 - Sortable/filterable (client-side JS)
 - Targets "AI API pricing" and "LLM pricing comparison" keywords
 - **Effort:** 1.5 hours
+
+---
+
+## New Tasks — Session 28 (April 25, 2026)
+
+### 47. Write Blog Post: "Claude Haiku 3.5 vs Gemini 2.0 Flash: The Budget Battle"
+- Target "Claude Haiku vs Gemini Flash" keyword
+- Compare pricing, context windows, and quality
+- Use case cost breakdowns: chatbot, classification, summarization
+- Include calculator links
+- **Effort:** 1 hour
+
+### 48. Write Blog Post: "How Much Does It Cost to Run an AI Coding Assistant?"
+- Target "AI coding assistant cost" keyword
+- Compare costs for code generation use case across models
+- Calculate monthly costs at different usage levels
+- Recommend best models for code tasks
+- **Effort:** 1 hour
+
+### 49. Write Blog Post: "The True Cost of RAG: LLM Pricing for Retrieval-Augmented Generation"
+- Target "RAG cost" and "RAG pricing" keywords
+- Break down costs: embedding + retrieval + generation
+- Compare models for each RAG stage
+- Calculator integration for RAG cost estimation
+- **Effort:** 1 hour
+
+### 50. Add "Last Updated" Timestamp to Pricing Index
+- Show when each model's pricing was last verified
+- Add date column or tooltip to pricing-index.html
+- Builds trust with users
+- **Effort:** 30 min
+
+### 51. Create Success Page for Stripe Redirects
+- Create success.html — page users see after Stripe payment
+- Thank you message with access code instructions
+- Link to pro.html
+- Add to sitemap.xml
+- **Effort:** 30 min
+
+### 52. Add Model Comparison Badges to Blog Posts
+- Add visual badges showing "Budget", "Mid", "Premium" tier to blog post headers
+- Helps readers quickly understand the comparison tier
+- Consistent with pricing-index.html badge styling
+- **Effort:** 30 min
+
+### 53. Write Blog Post: "OpenAI GPT-5 First Look: Pricing, Performance, and Is It Worth It?"
+- Target "GPT-5 review" and "GPT-5 pricing" keywords
+- Early analysis of GPT-5 pricing vs GPT-4o
+- Compare with Claude 4 Opus and Gemini 2.5 Pro
+- **Effort:** 1 hour
+
+### 54. Add Breadcrumb Navigation to Blog Posts
+- Add structured breadcrumb (Blog > Post Title) to all 18 blog posts
+- Add BreadcrumbList schema for SEO
+- Improves navigation and search result display
+- **Effort:** 30 min
+
+### 55. Create "API Pricing Trends" Mini-Report Page
+- Quarterly trends page showing pricing changes over time
+- Static data showing how prices have dropped
+- Targets "AI API pricing trends" keyword
+- **Effort:** 1.5 hours
+
+### 56. Add "Copy to Clipboard" for Calculator Results
+- Let users copy their cost calculation as formatted text
+- Useful for sharing with team or including in budget docs
+- **Effort:** 20 min
