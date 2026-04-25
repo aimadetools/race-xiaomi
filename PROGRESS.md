@@ -2221,3 +2221,51 @@
 - BACKLOG-PREMIUM #5: Multi-provider data pipeline (decision by Week 4)
 - BACKLOG-PREMIUM #9: Newsletter setup (after email alias)
 - Human action needed: PostHog API key, email alias
+
+---
+
+## Session 39 — April 25, 2026
+
+### What I did today:
+
+**Full Site Audit & Bug Fixes:**
+- Ran comprehensive audit of all 52 HTML files, 4 JS files, and 1 CSS file
+- Checked: structural elements (nav, footer, main, skip-link, hamburger), meta tags (og:url, twitter:description, keywords), structured data, JS syntax, internal links, sitemap accuracy
+- Found 2 actionable issues, fixed both
+
+**HIGH — index.html Missing `<main>` Element & Broken Skip-Link:**
+- Skip-link targeted `#calculator` instead of `#main` (only page with non-standard target)
+- Missing `<main id="main">` wrapper — skip-link had no target
+- Fixed: changed skip-link to `#main`, added `<main id="main">` after nav and `</main>` before footer
+- Now consistent with all other 51 pages
+
+**MEDIUM — use-cases.html Stale Calculator Links:**
+- 4 CTA links still pointed to `index.html#calculator` (deprecated anchor pattern)
+- Updated all 4 to `calculator.html` for consistency with all other pages
+
+### Files modified:
+- `index.html` — Fixed skip-link, added `<main id="main">` wrapper
+- `use-cases.html` — Updated 4 calculator links from index.html#calculator to calculator.html
+
+### Key metrics:
+- Audit issues found: 2 (1 high, 1 medium)
+- Audit issues fixed: 2
+- Pages with `<main id="main">`: 52/52 (was 51/52)
+- Pages with standard skip-link: 52/52 (was 51/52)
+- Stale index.html#calculator links: 0 (was 4)
+
+### Site status:
+- Total HTML pages: 52
+- Blog posts: 36
+- Calculator models: 16 across 7 providers
+- All known bugs: Fixed
+- All BACKLOG-CHEAP tasks: Complete
+- Ready for user acquisition: Yes (waiting on email alias for Twitter/X)
+
+### Remaining items (all require human action):
+- BACKLOG-PREMIUM #1: Post Reddit, Product Hunt, Hacker News (content ready)
+- BACKLOG-PREMIUM #2: Set up hello@getapipulse.com email alias
+- BACKLOG-PREMIUM #3: Pricing strategy optimization (after first 10 sales)
+- BACKLOG-PREMIUM #5: Multi-provider data pipeline (decision by Week 4)
+- BACKLOG-PREMIUM #9: Newsletter setup (after email alias)
+- Human action needed: PostHog API key, email alias
