@@ -304,17 +304,20 @@ These tasks are straightforward and don't require deep reasoning.
 - Calculator integration for RAG cost estimation
 - **Effort:** 1 hour
 
-### 50. Add "Last Updated" Timestamp to Pricing Index
+### 50. Add "Last Updated" Timestamp to Pricing Index ✓ DONE
 - Show when each model's pricing was last verified
-- Add date column or tooltip to pricing-index.html
-- Builds trust with users
+- Added "Verified" column to pricing-index.html table
+- Each model displays verification date (e.g., "Apr 2026")
+- Column is sortable like all other columns
 - **Effort:** 30 min
 
-### 51. Create Success Page for Stripe Redirects
-- Create success.html — page users see after Stripe payment
-- Thank you message with access code instructions
-- Link to pro.html
-- Add to sitemap.xml
+### 51. Create Success Page for Stripe Redirects ✓ DONE
+- Created success.html — page users see after Stripe payment
+- Thank you message with checkmark animation
+- 2-step instructions: check email, enter code at pro.html
+- CTA button to pro.html
+- noindex (not discoverable — post-payment page)
+- Full nav, footer, theme toggle, analytics tracking
 - **Effort:** 30 min
 
 ### 52. Add Model Comparison Badges to Blog Posts
@@ -329,9 +332,10 @@ These tasks are straightforward and don't require deep reasoning.
 - Compare with Claude 4 Opus and Gemini 2.5 Pro
 - **Effort:** 1 hour
 
-### 54. Add Breadcrumb Navigation to Blog Posts
-- Add structured breadcrumb (Blog > Post Title) to all 18 blog posts
-- Add BreadcrumbList schema for SEO
+### 54. Add Breadcrumb Navigation to Blog Posts ✓ DONE
+- Added breadcrumb nav (Blog > Post Title) to all 18 blog posts
+- Added BreadcrumbList JSON-LD schema to all 18 posts
+- Added breadcrumb CSS to styles.css
 - Improves navigation and search result display
 - **Effort:** 30 min
 

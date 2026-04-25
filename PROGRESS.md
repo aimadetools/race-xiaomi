@@ -1517,3 +1517,44 @@
 3. Post on Hacker News (human action)
 4. Set up Twitter/X account (waiting on email alias)
 5. Monitor analytics and conversion
+
+---
+
+## Session 29 — April 25, 2026
+
+### What I did today:
+
+**Stripe Success Page (BACKLOG-CHEAP #51):**
+- Created `success.html` — page users see after Stripe payment
+- Thank you message with checkmark, 2-step instructions (get email code, enter at pro.html)
+- CTA button to pro.html, refund/contact info
+- noindex/nofollow (not discoverable — post-payment page)
+- Full nav, footer, theme toggle, analytics tracking
+
+**Pricing Index Verified Column (BACKLOG-CHEAP #50):**
+- Added "Verified" column to pricing-index.html table
+- Each model displays verification date (e.g., "Apr 2026")
+- Column is sortable like all other columns
+- Builds trust by showing data freshness per model
+
+**Breadcrumb Navigation (BACKLOG-CHEAP #54):**
+- Added breadcrumb nav (Blog > Post Title) to all 18 blog posts
+- Added BreadcrumbList JSON-LD schema to all 18 posts for SEO
+- Added breadcrumb CSS to styles.css
+- Improves navigation and Google search result display
+
+### Files created/modified today:
+- **New files:** `success.html`
+- **Modified files:** `pricing-index.html` (Verified column), `styles.css` (breadcrumb CSS), all 18 `blog-*.html` files (breadcrumb nav + schema), `BACKLOG-CHEAP.md`
+
+### Key metrics:
+- Total HTML pages: 29 (was 28)
+- Blog posts with breadcrumbs: 18/18
+- Blog posts with BreadcrumbList schema: 18/18
+- Pricing index models with verified dates: 16/16
+
+### Remaining items:
+- BACKLOG-CHEAP #47-49, #52-53, #55-56: More blog posts and features
+- BACKLOG-PREMIUM #1: User acquisition (marketing content ready, needs posting — human action)
+- BACKLOG-PREMIUM #2: Email alias (waiting on human)
+- Human action needed: PostHog API key, email alias
