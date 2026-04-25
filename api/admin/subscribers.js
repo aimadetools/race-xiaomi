@@ -1,6 +1,6 @@
 // Vercel Serverless Function: Admin - View Subscribers
 // Protected with ADMIN_SECRET environment variable
-// Access: /api/admin/subscribers?secret=YOUR_SECRET
+// Access: Authorization: Bearer YOUR_SECRET
 
 const fs = require('fs');
 const path = require('path');
@@ -28,7 +28,8 @@ module.exports = async (req, res) => {
     return res.status(200).end();
   }
 
-  const { secret } = req.query || {};
+  const authHeader = req.headers.authorization || '';
+  const secret = authHeader.replace('Bearer ', '');
 
   if (!process.env.ADMIN_SECRET || secret !== process.env.ADMIN_SECRET) {
     return res.status(403).json({ error: 'Unauthorized' });

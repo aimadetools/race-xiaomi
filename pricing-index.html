@@ -21,6 +21,7 @@
     <script src="analytics.js" defer></script>
     <script src="dynamic-date.js" defer></script>
     <script src="shared.js" defer></script>
+    <script src="pricing-data.js" defer></script>
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -211,24 +212,8 @@
     </footer>
 
     <script>
-        const models = [
-            { name: 'Llama 3.1 8B', provider: 'Meta (Together.ai)', tier: 'Budget', input: 0.18, output: 0.18, context: '128K', verified: 'Apr 2026' },
-            { name: 'Mistral Small', provider: 'Mistral', tier: 'Budget', input: 0.10, output: 0.30, context: '32K', verified: 'Apr 2026' },
-            { name: 'Gemini 2.0 Flash', provider: 'Google', tier: 'Budget', input: 0.10, output: 0.40, context: '1M', verified: 'Apr 2026' },
-            { name: 'GPT-4o mini', provider: 'OpenAI', tier: 'Budget', input: 0.15, output: 0.60, context: '128K', verified: 'Apr 2026' },
-            { name: 'Cohere Command R', provider: 'Cohere', tier: 'Budget', input: 0.15, output: 0.60, context: '128K', verified: 'Apr 2026' },
-            { name: 'Llama 3.1 70B', provider: 'Meta (Together.ai)', tier: 'Mid', input: 0.88, output: 0.88, context: '128K', verified: 'Apr 2026' },
-            { name: 'Claude Haiku 3.5', provider: 'Anthropic', tier: 'Mid', input: 0.80, output: 4.00, context: '200K', verified: 'Apr 2026' },
-            { name: 'Gemini 2.5 Pro', provider: 'Google', tier: 'Mid', input: 1.25, output: 10.00, context: '1M', verified: 'Apr 2026' },
-            { name: 'Mistral Large', provider: 'Mistral', tier: 'Mid', input: 2.00, output: 6.00, context: '128K', verified: 'Apr 2026' },
-            { name: 'AI21 Jamba 1.5 Large', provider: 'AI21', tier: 'Mid', input: 2.00, output: 8.00, context: '256K', verified: 'Apr 2026' },
-            { name: 'Cohere Command R+', provider: 'Cohere', tier: 'Mid', input: 2.50, output: 10.00, context: '128K', verified: 'Apr 2026' },
-            { name: 'GPT-4o', provider: 'OpenAI', tier: 'Premium', input: 2.50, output: 10.00, context: '128K', verified: 'Apr 2026' },
-            { name: 'Claude Sonnet 4', provider: 'Anthropic', tier: 'Premium', input: 3.00, output: 15.00, context: '200K', verified: 'Apr 2026' },
-            { name: 'GPT-5', provider: 'OpenAI', tier: 'Premium', input: 10.00, output: 30.00, context: '256K', verified: 'Apr 2026' },
-            { name: 'GPT-5 mini', provider: 'OpenAI', tier: 'Budget', input: 0.40, output: 1.60, context: '256K', verified: 'Apr 2026' },
-            { name: 'Claude 4 Opus', provider: 'Anthropic', tier: 'Premium', input: 15.00, output: 75.00, context: '200K', verified: 'Apr 2026' },
-        ];
+        // Model data from centralized pricing-data.js
+        const models = getPricingIndexData();
 
         const providerClass = {
             'OpenAI': 'provider-openai', 'Anthropic': 'provider-anthropic',

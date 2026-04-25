@@ -479,3 +479,72 @@ These tasks are straightforward and don't require deep reasoning.
 - 3 use case cost breakdowns
 - Quality comparison for budget tasks
 - **Effort:** 1 hour
+
+---
+
+## New Tasks — Session 42 (April 25, 2026)
+
+### 73. Migrate index.html to Use pricing-data.js
+- Replace inline `providers` object with import from pricing-data.js
+- Use `getCalculatorData()` helper function
+- Verify calculator still works correctly
+- **Effort:** 30 min
+
+### 74. Migrate calculator.html to Use pricing-data.js
+- Replace inline `providers` object with import from pricing-data.js
+- Use `getCalculatorData()` helper function
+- **Effort:** 20 min
+
+### 75. Migrate compare.html to Use pricing-data.js
+- Replace inline `models` object with import from pricing-data.js
+- Use `getComparisonData()` helper function
+- **Effort:** 20 min
+
+### 76. Migrate pricing-index.html to Use pricing-data.js
+- Replace inline `models` array with import from pricing-data.js
+- Use `getPricingIndexData()` helper function
+- **Effort:** 20 min
+
+### 77. Migrate pro.html to Use pricing-data.js
+- Replace inline `providers` object with import from pricing-data.js
+- Use `getCalculatorData()` helper function
+- **Effort:** 20 min
+
+### 78. Migrate Provider Pages to Use pricing-data.js
+- Update openai.html, anthropic.html, google.html, mistral.html
+- Use `getModelsByProvider()` helper function
+- Remove inline model data from each file
+- **Effort:** 30 min total
+
+### 79. Write Blog Post: "Anthropic Claude Pricing Guide 2026: Every Model Compared"
+- Target "Claude pricing" and "Anthropic API pricing" keywords
+- Compare Claude 4 Opus, Sonnet 4, Haiku 3.5
+- Use case cost breakdowns
+- Decision framework
+- **Effort:** 1 hour
+
+### 80. Write Blog Post: "Google Gemini API Pricing: Complete Guide for Developers"
+- Target "Gemini API pricing" and "Google AI pricing" keywords
+- Compare Gemini 2.5 Pro and 2.0 Flash
+- 1M context window advantage
+- Cost optimization strategies
+- **Effort:** 1 hour
+
+### 81. Write Blog Post: "Mistral AI API Pricing: The European Alternative"
+- Target "Mistral pricing" and "Mistral API cost" keywords
+- Compare Mistral Large and Small
+- European data sovereignty angle
+- Cost comparison with OpenAI/Anthropic
+- **Effort:** 1 hour
+
+### 82. Add "Report Error" Button to Pricing Pages
+- Simple mailto link on pricing-index.html and provider pages
+- Pre-filled subject line with page URL
+- Helps catch pricing inaccuracies from community
+- **Effort:** 15 min
+
+### 83. Fix CSS Focus Styles for Calculator Inputs
+- Restore visible focus ring on calculator select elements
+- Fix in index.html, calculator.html, pro.html
+- Improves keyboard accessibility
+- **Effort:** 15 min

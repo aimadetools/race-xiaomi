@@ -21,6 +21,7 @@
     <script src="analytics.js" defer></script>
     <script src="dynamic-date.js" defer></script>
     <script src="shared.js" defer></script>
+    <script src="pricing-data.js" defer></script>
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -283,25 +284,8 @@
     </footer>
 
     <script>
-        // API pricing data (per 1M tokens)
-        const providers = {
-            'openai-gpt5': { name: 'OpenAI GPT-5', input: 10.00, output: 30.00 },
-            'openai-gpt5-mini': { name: 'OpenAI GPT-5 mini', input: 0.40, output: 1.60 },
-            'openai-gpt4o': { name: 'OpenAI GPT-4o', input: 2.50, output: 10.00 },
-            'openai-gpt4o-mini': { name: 'OpenAI GPT-4o mini', input: 0.15, output: 0.60 },
-            'anthropic-opus': { name: 'Claude 4 Opus', input: 15.00, output: 75.00 },
-            'anthropic-sonnet': { name: 'Claude Sonnet 4', input: 3.00, output: 15.00 },
-            'anthropic-haiku': { name: 'Claude Haiku 3.5', input: 0.80, output: 4.00 },
-            'google-pro': { name: 'Gemini 2.5 Pro', input: 1.25, output: 10.00 },
-            'google-flash': { name: 'Gemini 2.0 Flash', input: 0.10, output: 0.40 },
-            'mistral-large': { name: 'Mistral Large', input: 2.00, output: 6.00 },
-            'mistral-small': { name: 'Mistral Small', input: 0.10, output: 0.30 },
-            'cohere-command-r-plus': { name: 'Cohere Command R+', input: 2.50, output: 10.00 },
-            'cohere-command-r': { name: 'Cohere Command R', input: 0.15, output: 0.60 },
-            'llama-3.1-70b': { name: 'Llama 3.1 70B (Together)', input: 0.88, output: 0.88 },
-            'llama-3.1-8b': { name: 'Llama 3.1 8B (Together)', input: 0.18, output: 0.18 },
-            'ai21-jamba': { name: 'AI21 Jamba 1.5 Large', input: 2.00, output: 8.00 }
-        };
+        // API pricing data from centralized pricing-data.js
+        const providers = getCalculatorData();
 
         function calculate() {
             const results = document.querySelector('.calc-results');

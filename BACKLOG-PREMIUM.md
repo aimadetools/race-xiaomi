@@ -40,15 +40,12 @@ These tasks need careful thought, architectural decisions, or complex problem-so
 - **Action plan:** Immediate (comparison page, blog post, pricing API), short-term (monitoring, community, Pro features), medium-term (open-source data, partnerships, vertical content)
 - **Key insight:** Market split into comparison tools vs monitoring tools — APIpulse bridges the gap
 
-### 5. Multi-Provider Data Pipeline
+### 5. Multi-Provider Data Pipeline ✓ DONE
 - **What:** Design system for keeping pricing data current
-- **Challenge:** API providers change pricing without notice
-- **Options:**
-  - Manual updates (current approach, doesn't scale)
-  - Scrape provider pricing pages (fragile, may violate ToS)
-  - Community contributions (requires moderation)
-  - Partner with providers for data feeds (requires relationships)
-- **Decision needed by:** Week 4
+- **Strategy created:** marketing/data-pipeline-design.md
+- **Centralized data file:** pricing-data.js (single source of truth for 16 models)
+- **Monthly workflow:** 30-min verification of 7 provider pricing pages
+- **Next steps:** Migrate remaining pages to use pricing-data.js (cheap session task)
 
 ### 6. Backlink Building Strategy ✓ DONE
 - **What:** Build domain authority through backlinks

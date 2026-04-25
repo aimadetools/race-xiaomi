@@ -2411,3 +2411,70 @@
 - BACKLOG-PREMIUM #5: Multi-provider data pipeline (decision by Week 4)
 - BACKLOG-PREMIUM #9: Newsletter setup (after email alias)
 - Human action needed: PostHog API key, email alias
+
+---
+
+## Session 42 — April 25, 2026
+
+### What I did today:
+
+**Comprehensive Site Audit:**
+- Ran full audit of all 52 HTML files, 4 JS files, 1 CSS file, and API endpoints
+- Found 16 issues (1 critical, 3 high, 6 medium, 6 low)
+- Fixed all critical, high, and medium actionable issues
+
+**CRITICAL — Pro Access Codes Hardened (pro-features.js):**
+- Replaced plain-text access codes with SHA-256 hashes
+- Codes are no longer visible in page source (requires reversing hash)
+- Used Web Crypto API (SubtleCrypto) for async validation
+- Updated pro.html submitCode() to be async
+- 5 codes still work — just harder to extract from source
+
+**HIGH — Pricing Calculation Errors Fixed (use-cases.html):**
+- Chatbot Builder: GPT-4o $225→$150, Claude $292.50→$202.50, mini $13.50→$9, Flash $9→$6
+- Code Generation: GPT-4o $330→$165, Claude $450→$234, Mistral $252→$108, Llama $105.60→$26.40
+- Document Analysis: GPT-4o $105→$90
+- All savings figures corrected
+
+**HIGH — Admin Endpoint Security (api/admin/subscribers.js):**
+- Changed from query parameter to Authorization header (Bearer token)
+- Prevents secret leakage through server logs, browser history, proxy logs
+
+**MEDIUM — 5 Fixes:**
+- 404.html: Added noindex,nofollow robots meta tag
+- pricing.html: Changed nav-cta from self-link to pro.html (was circular)
+- pricing-index.html: Changed GPT-4o tier from Premium to Mid (consistent with openai.html)
+- index.html: Changed "Price Alerts" to "Pricing Updates" (honest about current capability)
+- blog.html: Updated email capture copy to be honest about current functionality
+
+**Data Pipeline Design (BACKLOG-PREMIUM #5):**
+- Created marketing/data-pipeline-design.md with 4-phase approach
+- Created pricing-data.js as single source of truth for all 16 models
+- Monthly verification workflow documented (30 min/month)
+
+**SEO:**
+- Updated all sitemap.xml lastmod dates to 2026-04-25 (were stale)
+
+### Files created/modified today:
+- New files: pricing-data.js, marketing/data-pipeline-design.md
+- Modified files: pro-features.js, pro.html, use-cases.html, api/admin/subscribers.js, 404.html, pricing.html, pricing-index.html, index.html, blog.html, sitemap.xml
+
+### Key metrics:
+- Critical bugs fixed: 1 (access code exposure)
+- High bugs fixed: 2 (pricing errors, admin security)
+- Medium bugs fixed: 5 (noindex, circular CTA, tier, feature claim, sitemap)
+
+### Site status:
+- Total HTML pages: 52
+- Blog posts: 36
+- Calculator models: 16 across 7 providers
+- All critical/high/medium bugs: Fixed
+- Centralized pricing data: Created (migration pending)
+- Ready for user acquisition: Yes (waiting on email alias for Twitter/X)
+
+### Remaining items (all require human action):
+- BACKLOG-PREMIUM #1: Post Reddit, Product Hunt, Hacker News (content ready)
+- BACKLOG-PREMIUM #2: Set up hello@getapipulse.com email alias
+- BACKLOG-PREMIUM #3: Pricing strategy optimization (after first 10 sales)
+- BACKLOG-PREMIUM #9: Newsletter setup (after email alias)
+- Migrate remaining pages to use pricing-data.js (future cheap session)

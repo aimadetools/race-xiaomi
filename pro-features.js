@@ -1,5 +1,6 @@
 // APIpulse Pro — Access code validation and premium features
 // Access codes are distributed manually by the APIpulse team after purchase.
+// Codes are stored as SHA-256 hashes to prevent casual extraction from source.
 
 function escapeHtml(str) {
     const div = document.createElement('div');
@@ -7,17 +8,26 @@ function escapeHtml(str) {
     return div.innerHTML;
 }
 
-const VALID_CODES = [
-    'APIPULSE-DEMO-2026',
-    'APIPULSE-TEST-0001',
-    'APIPULSE-PRO-AAAA',
-    'APIPULSE-PRO-BBBB',
-    'APIPULSE-PRO-CCCC',
+async function hashString(str) {
+    const encoder = new TextEncoder();
+    const data = encoder.encode(str);
+    const hashBuffer = await crypto.subtle.digest('SHA-256', data);
+    const hashArray = Array.from(new Uint8Array(hashBuffer));
+    return hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
+}
+
+const VALID_CODE_HASHES = [
+    '4e0301baa2eba1a883e35b2d3a8490aef3c652626e990ea1fbbbd18479298db3',
+    'c45a2fb70483597ad0f3fac7159735696b382ae54cdedb4b112845174b2604be',
+    '1bcd5c403e30b3dfff63be89a7a27b243dad9eace8931595e6c718471cc97030',
+    '8061651ccdeedf412b0f2a4604da52ca46ae822ef824096e50ccdb05cae4d3fb',
+    '159b2b12f05d0c2ac21c84b9b2d80d31de2510d2e252e1c4f77c8291e883d714',
 ];
 
-function validateCode(code) {
+async function validateCode(code) {
     const normalized = code.trim().toUpperCase();
-    if (VALID_CODES.includes(normalized)) {
+    const hash = await hashString(normalized);
+    if (VALID_CODE_HASHES.includes(hash)) {
         localStorage.setItem('apipulse_pro', 'true');
         localStorage.setItem('apipulse_pro_code', normalized);
         return true;
