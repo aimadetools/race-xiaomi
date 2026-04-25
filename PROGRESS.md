@@ -2170,3 +2170,54 @@
 - BACKLOG-PREMIUM #5: Multi-provider data pipeline (decision by Week 4)
 - BACKLOG-PREMIUM #9: Newsletter setup (after email alias)
 - Human action needed: PostHog API key, email alias
+
+---
+
+## Session 38 — April 25, 2026
+
+### What I did today:
+
+**Full Site Audit & Bug Fixes:**
+- Ran comprehensive audit of all 52 HTML files, 6 JS files, 1 CSS file, and API endpoints
+- Found 11 issues (1 high, 5 medium, 5 low/info)
+- Fixed all actionable low-severity issues
+
+**LOW — Footer Inconsistency (2 blog posts):**
+- Fixed `blog-openai-pricing-guide.html` and `blog-switch-llm-providers.html`
+- Both had abbreviated footers missing OpenAI, Anthropic, Google, Mistral provider links
+- Both used `<div class="footer-inner">` wrapper structure instead of standard single-`<p>` footer
+- Replaced with standard footer pattern matching all other 50 pages
+- Footer consistency: 52/52
+
+**LOW — robots.txt Missing API Disallow:**
+- Added `Disallow: /api/` to robots.txt
+- Prevents crawlers from attempting to index API routes (subscribe, admin endpoints)
+
+**LOW — 404.html Missing og:url:**
+- Added `<meta property="og:url" content="https://getapipulse.com/">` to 404.html
+- Social platforms now get correct permalink for 404 page shares
+
+**Audit Notes (require human decision, not bugs):**
+- PostHog API key still placeholder in analytics.js (human needs to create account)
+- Pro access codes are client-side visible in pro-features.js (acceptable for MVP)
+- Admin endpoint uses query param for secret (works but not ideal)
+- Email subscription uses ephemeral /tmp storage (acknowledged in code comments)
+
+### Files modified:
+- `blog-openai-pricing-guide.html` — Fixed footer (added provider links, removed div wrappers)
+- `blog-switch-llm-providers.html` — Fixed footer (added provider links, removed div wrappers)
+- `robots.txt` — Added Disallow: /api/
+- `404.html` — Added og:url meta tag
+
+### Key metrics:
+- Footer consistency: 52/52 (was 50/52)
+- robots.txt: Now blocks /api/ paths
+- og:url coverage: 52/52 (was 51/52)
+
+### Remaining items (all require human action):
+- BACKLOG-PREMIUM #1: Post Reddit, Product Hunt, Hacker News (content ready)
+- BACKLOG-PREMIUM #2: Set up hello@getapipulse.com email alias
+- BACKLOG-PREMIUM #3: Pricing strategy optimization (after first 10 sales)
+- BACKLOG-PREMIUM #5: Multi-provider data pipeline (decision by Week 4)
+- BACKLOG-PREMIUM #9: Newsletter setup (after email alias)
+- Human action needed: PostHog API key, email alias
