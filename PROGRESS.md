@@ -2099,3 +2099,74 @@
 - BACKLOG-PREMIUM #5: Multi-provider data pipeline (decision by Week 4)
 - BACKLOG-PREMIUM #9: Newsletter setup (after email alias)
 - Human action needed: PostHog API key, email alias
+
+---
+
+## Session 37 — April 25, 2026
+
+### What I did today:
+
+**Full Site Audit & Bug Fixes:**
+- Ran comprehensive audit of all 52 HTML files, 6 JS files, and 1 CSS file
+- Found 16 issues (2 critical, 4 high, 5 medium, 5 low)
+- Fixed all critical, high, and medium actionable issues
+
+**CRITICAL — Mistral Large Pricing Mismatch:**
+- Fixed mistral.html using $3.00/$9.00 for Mistral Large while every other file uses $2.00/$6.00
+- Updated HTML pricing table, calculator dropdown label, and JS pricing data
+- All 52 files now have consistent Mistral Large pricing
+
+**CRITICAL — Broken Email Subscription on anthropic.html:**
+- Fixed email form that was only tracking events but not actually saving emails
+- Changed from custom `event.preventDefault(); trackEvent(...)` to shared `saveEmail(event)` function
+- Email subscription now works correctly on all pages
+
+**HIGH — Stale Model Count on about.html:**
+- Updated "8+ models" → "16 models" to match actual calculator capacity
+
+**HIGH — Stale Blog Count on pricing.html:**
+- Updated "28" → "35" in stat counter and comparison table to match actual blog post count
+
+**HIGH — Missing twitter:description Meta Tags:**
+- Added `<meta name="twitter:description">` to all 52 HTML pages
+- Each page uses its og:description value for consistency
+- Twitter/X card previews now show descriptions
+
+**HIGH — Missing keywords Meta Tags:**
+- Added `<meta name="keywords">` to 9 pages: 404.html, about.html, blog.html, compare.html, pricing.html, pricing-index.html, pricing-trends.html, success.html, use-cases.html
+- Each page has 3-5 relevant SEO keywords
+
+**MEDIUM — Missing Provider Footer Links:**
+- Added OpenAI, Anthropic, Google, Mistral links to 404.html and success.html footers
+- All 52 pages now have consistent footer with provider links
+
+**MEDIUM — Missing JSON-LD on success.html:**
+- Added WebPage schema with publisher info to success.html
+- All pages now have structured data
+
+### Files modified:
+- `mistral.html` — Fixed pricing (table, dropdown, JS)
+- `anthropic.html` — Fixed email subscription form
+- `about.html` — Updated model count
+- `pricing.html` — Updated blog count
+- All 52 HTML files — Added twitter:description meta tag
+- 9 HTML files — Added keywords meta tag
+- `404.html` — Added provider footer links
+- `success.html` — Added provider footer links, added JSON-LD
+
+### Key metrics:
+- Critical bugs fixed: 2 (pricing mismatch, broken email)
+- High bugs fixed: 4 (stale counts, missing meta tags)
+- Medium bugs fixed: 2 (footer links, JSON-LD)
+- Pages modified: 52
+- twitter:description coverage: 52/52 (was 0/52)
+- Keywords meta tag coverage: 52/52 (was 43/52)
+- Footer consistency: 52/52
+
+### Remaining items (all require human action):
+- BACKLOG-PREMIUM #1: Post Reddit, Product Hunt, Hacker News (content ready)
+- BACKLOG-PREMIUM #2: Set up hello@getapipulse.com email alias
+- BACKLOG-PREMIUM #3: Pricing strategy optimization (after first 10 sales)
+- BACKLOG-PREMIUM #5: Multi-provider data pipeline (decision by Week 4)
+- BACKLOG-PREMIUM #9: Newsletter setup (after email alias)
+- Human action needed: PostHog API key, email alias
