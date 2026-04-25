@@ -1873,3 +1873,58 @@
 - BACKLOG-PREMIUM #3: Pricing strategy optimization (after first 10 sales)
 - BACKLOG-PREMIUM #5: Multi-provider data pipeline (decision by Week 4)
 - BACKLOG-PREMIUM #9: Newsletter setup (after email alias)
+
+---
+
+## Session 34 — April 25, 2026
+
+### What I did today:
+
+**Full Site Audit:**
+- Ran comprehensive audit of all 40 HTML files, 4 JS files, and 1 CSS file
+- Result: Zero bugs found. All JS files pass syntax checks, no broken links, consistent nav/footer across all pages, sitemap accurate
+
+**Blog Content — New SEO Posts:**
+
+**"OpenAI API Pricing Guide 2026: GPT-5, GPT-4o, and Every Model Compared":**
+- Comprehensive OpenAI pricing reference targeting "OpenAI API pricing" keyword
+- Complete pricing table for all 6 OpenAI models (GPT-5, GPT-5 mini, GPT-4o, GPT-4o mini, GPT-4 Turbo, GPT-3.5 Turbo)
+- 3 use case cost breakdowns: chatbot ($6.75-$375/mo), code generation ($7.20-$390/mo), document analysis ($3.60-$210/mo)
+- When to use each model (decision framework)
+- Hidden costs section: token counting, system prompts, conversation history, batch API
+- Cross-provider comparison table (OpenAI vs Anthropic vs Google)
+- 6 cost optimization strategies
+- Monthly cost scenarios at 4 scale levels
+- Article schema, BreadcrumbList schema, related reading, social sharing
+
+**"How to Switch LLM Providers Without Breaking Your App":**
+- Practical migration guide targeting "switch LLM provider" keyword
+- API compatibility landscape comparison table (auth, system prompts, response formats)
+- 7-step migration guide: audit, abstraction layer, model mapping, prompt adaptation, parallel testing, fallback logic, monitoring
+- Code examples for abstraction layer and fallback logic
+- Model mapping table with cost implications
+- 5 common migration pitfalls
+- Cost comparison scenarios showing savings from switching
+- Multi-provider architecture best practices
+- Article schema, BreadcrumbList schema, related reading, social sharing
+
+**SEO Updates:**
+- Added 2 new post cards to blog.html (top position, newest first)
+- Added 2 new URLs to sitemap.xml (total: 40 URLs)
+
+### Files created/modified today:
+- **New files:** `blog-openai-pricing-guide.html`, `blog-switch-llm-providers.html`
+- **Modified files:** `blog.html` (2 new post cards), `sitemap.xml` (2 new URLs)
+
+### Key metrics:
+- Total HTML pages: 41 (was 39)
+- Blog posts: 30 (was 28)
+- Articles with structured data: 30/30
+- Sitemap URLs: 40 (was 38)
+
+### Remaining items (all require human action):
+- BACKLOG-PREMIUM #1: Post Reddit, Product Hunt, Hacker News (content ready)
+- BACKLOG-PREMIUM #2: Set up hello@getapipulse.com email alias
+- BACKLOG-PREMIUM #3: Pricing strategy optimization (after first 10 sales)
+- BACKLOG-PREMIUM #5: Multi-provider data pipeline (decision by Week 4)
+- BACKLOG-PREMIUM #9: Newsletter setup (after email alias)
