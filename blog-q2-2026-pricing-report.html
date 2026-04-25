@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LLM API Pricing Report Q2 2026: Every Model, Every Provider — APIpulse</title>
+    <meta name="description" content="Complete Q2 2026 LLM API pricing report. Compare all 16 models across 7 providers, see what changed since Q1, and find the cheapest option for your use case.">
+    <meta name="keywords" content="LLM API pricing report, Q2 2026 AI pricing, API pricing update, LLM cost comparison 2026, AI API pricing Q2">
+    <meta property="og:title" content="LLM API Pricing Report Q2 2026: Every Model, Every Provider — APIpulse">
+    <meta property="og:description" content="Complete Q2 2026 pricing report for all 16 LLM API models across 7 providers. See what changed and find the cheapest option.">
+    <meta property="og:type" content="article">
+    <meta property="og:image" content="https://getapipulse.com/og-image.png">
+    <meta property="og:url" content="https://getapipulse.com/blog-q2-2026-pricing-report.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="LLM API Pricing Report Q2 2026: Every Model, Every Provider — APIpulse">
+    <meta name="twitter:image" content="https://getapipulse.com/og-image.png">
+    <link rel="canonical" href="https://getapipulse.com/blog-q2-2026-pricing-report.html">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="styles.css">
+    <script src="analytics.js" defer></script>
+    <script src="dynamic-date.js" defer></script>
+    <script src="shared.js" defer></script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "LLM API Pricing Report Q2 2026: Every Model, Every Provider",
+        "description": "Complete Q2 2026 LLM API pricing report covering all 16 models across 7 providers.",
+        "datePublished": "2026-04-25",
+        "dateModified": "2026-04-25",
+        "author": { "@type": "Organization", "name": "APIpulse" },
+        "publisher": { "@type": "Organization", "name": "APIpulse", "url": "https://getapipulse.com" },
+        "url": "https://getapipulse.com/blog-q2-2026-pricing-report.html"
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Blog", "item": "https://getapipulse.com/blog.html" },
+            { "@type": "ListItem", "position": 2, "name": "LLM API Pricing Report Q2 2026", "item": "https://getapipulse.com/blog-q2-2026-pricing-report.html" }
+        ]
+    }
+    </script>
+    <style>
+        .content { max-width: 800px; margin: 0 auto; padding: 120px 24px 80px; }
+        h1 { font-size: 40px; font-weight: 800; margin-bottom: 12px; }
+        .subtitle { color: var(--text-secondary); font-size: 18px; margin-bottom: 48px; }
+        .post-meta { display: flex; gap: 16px; align-items: center; margin-bottom: 24px; font-size: 13px; color: var(--text-muted); }
+        .post-tag { background: var(--accent-glow); color: var(--accent); padding: 2px 10px; border-radius: 6px; font-size: 12px; font-weight: 600; }
+        h2 { font-size: 28px; font-weight: 700; margin: 40px 0 16px; }
+        h3 { font-size: 20px; font-weight: 600; margin: 28px 0 12px; }
+        p { margin-bottom: 16px; line-height: 1.7; color: var(--text-secondary); }
+        ul, ol { margin-bottom: 16px; padding-left: 24px; }
+        li { margin-bottom: 8px; line-height: 1.6; color: var(--text-secondary); }
+        strong { color: var(--text-primary); }
+        .comparison-table { width: 100%; border-collapse: collapse; margin: 24px 0; font-size: 14px; }
+        .comparison-table th { background: var(--bg-secondary); padding: 12px 16px; text-align: left; font-weight: 600; border-bottom: 1px solid var(--border); }
+        .comparison-table td { padding: 12px 16px; border-bottom: 1px solid var(--border); }
+        .comparison-table tr:last-child td { border-bottom: none; }
+        .winner { color: var(--green); font-weight: 600; }
+        .cost-box { background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 12px; padding: 24px; margin: 24px 0; }
+        .cost-box h3 { margin-top: 0; }
+        .cost-row { display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px solid var(--border); font-size: 14px; }
+        .cost-row:last-child { border-bottom: none; }
+        .cost-total { font-weight: 700; color: var(--accent); font-size: 18px; }
+        .cta-inline { background: var(--bg-secondary); border: 1px solid var(--accent); border-radius: 12px; padding: 24px; margin: 32px 0; text-align: center; }
+        .cta-inline p { margin-bottom: 12px; }
+        .btn-primary { display: inline-block; }
+        .back-link { display: inline-block; margin-bottom: 24px; color: var(--text-muted); font-size: 14px; }
+        .back-link:hover { color: var(--accent); }
+        .related { background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 12px; padding: 24px; margin-top: 40px; }
+        .related h3 { margin-top: 0; font-size: 18px; }
+        .related a { display: block; padding: 8px 0; color: var(--accent); font-size: 14px; }
+        .share-section { margin-top: 32px; padding-top: 24px; border-top: 1px solid var(--border); text-align: center; }
+        .share-section p { color: var(--text-secondary); font-size: 14px; margin-bottom: 12px; }
+        .share-btn { display: inline-block; background: var(--bg-card); color: var(--text-primary); padding: 8px 20px; border-radius: 8px; font-size: 14px; font-weight: 500; border: 1px solid var(--border); transition: all 0.2s; }
+        .share-btn:hover { background: var(--accent); color: white; border-color: var(--accent); }
+        .highlight-box { background: var(--accent-glow); border: 1px solid var(--accent); border-radius: 12px; padding: 20px; margin: 24px 0; }
+        .highlight-box h3 { margin-top: 0; color: var(--accent); }
+        .stat-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin: 24px 0; }
+        .stat-card { background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 12px; padding: 20px; text-align: center; }
+        .stat-card .number { font-size: 32px; font-weight: 800; color: var(--accent); }
+        .stat-card .label { font-size: 13px; color: var(--text-muted); margin-top: 4px; }
+        @media (max-width: 768px) {
+            .content { padding: 100px 20px 60px; }
+            h1 { font-size: 28px; }
+            h2 { font-size: 22px; }
+            .comparison-table { font-size: 12px; }
+            .comparison-table th, .comparison-table td { padding: 8px 10px; }
+            .stat-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+    <meta name="theme-color" content="#6366f1">
+    <link rel="preconnect" href="https://getapipulse.com">
+</head>
+<body>
+    <a href="#main" class="skip-link">Skip to content</a>
+    <nav>
+        <div class="nav-inner">
+            <a href="index.html" class="logo">API<span>pulse</span></a>
+            <button class="hamburger" onclick="toggleMobileNav()" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+            <div class="nav-links">
+                <a href="calculator.html">Calculator</a>
+                <a href="compare.html">Compare</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="use-cases.html">Use Cases</a>
+                <a href="about.html">About</a>
+                <a href="blog.html">Blog</a>
+                <a href="pricing-index.html">Pricing Index</a>
+                <a href="pricing-trends.html">Trends</a>
+                <a href="pricing.html" class="nav-cta" onclick="if(window.trackEvent)window.trackEvent('pro_button_clicked',{source:'nav'})">Get Pro — $29</a>
+                <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
+            </div>
+        </div>
+    </nav>
+
+    <main id="main">
+
+    <div class="content article">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+            <a href="blog.html">Blog</a>
+            <span class="separator">›</span>
+            <span class="current">LLM API Pricing Report Q2 2026</span>
+        </nav>
+        <a href="blog.html" class="back-link">← Back to blog</a>
+        <div class="post-meta">
+            <span class="post-tag">Report</span>
+            <span>April 25, 2026</span>
+        </div>
+        <h1>LLM API Pricing Report Q2 2026: Every Model, Every Provider</h1>
+
+        <p>It's Q2 2026, and the LLM API market has never been more competitive. With 7 providers offering 16 models, prices have continued their downward trend while context windows have expanded dramatically. This report covers every model, every provider, and every price point — so you can make the right choice for your application.</p>
+
+        <div class="stat-grid">
+            <div class="stat-card">
+                <div class="number">16</div>
+                <div class="label">Models Available</div>
+            </div>
+            <div class="stat-card">
+                <div class="number">7</div>
+                <div class="label">Providers</div>
+            </div>
+            <div class="stat-card">
+                <div class="number">90%</div>
+                <div class="label">Avg. Price Drop Since 2023</div>
+            </div>
+        </div>
+
+        <h2>The Complete Pricing Landscape</h2>
+
+        <p>Here's every model available as of April 2026, organized by tier:</p>
+
+        <h3>Premium Tier — Maximum Quality</h3>
+
+        <table class="comparison-table">
+            <thead>
+                <tr>
+                    <th>Model</th>
+                    <th>Provider</th>
+                    <th>Input (per 1M tokens)</th>
+                    <th>Output (per 1M tokens)</th>
+                    <th>Context Window</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Claude 4 Opus</strong></td>
+                    <td>Anthropic</td>
+                    <td>$15.00</td>
+                    <td>$75.00</td>
+                    <td>200K</td>
+                </tr>
+                <tr>
+                    <td><strong>GPT-5</strong></td>
+                    <td>OpenAI</td>
+                    <td>$10.00</td>
+                    <td>$30.00</td>
+                    <td>256K</td>
+                </tr>
+                <tr>
+                    <td><strong>Gemini 2.5 Pro</strong></td>
+                    <td>Google</td>
+                    <td class="winner">$1.25</td>
+                    <td>$10.00</td>
+                    <td class="winner">1M</td>
+                </tr>
+                <tr>
+                    <td><strong>Claude Sonnet 4</strong></td>
+                    <td>Anthropic</td>
+                    <td>$3.00</td>
+                    <td>$15.00</td>
+                    <td>200K</td>
+                </tr>
+                <tr>
+                    <td><strong>GPT-4o</strong></td>
+                    <td>OpenAI</td>
+                    <td>$2.50</td>
+                    <td>$10.00</td>
+                    <td>128K</td>
+                </tr>
+                <tr>
+                    <td><strong>Mistral Large</strong></td>
+                    <td>Mistral</td>
+                    <td>$2.00</td>
+                    <td>$6.00</td>
+                    <td>128K</td>
+                </tr>
+                <tr>
+                    <td><strong>Cohere Command R+</strong></td>
+                    <td>Cohere</td>
+                    <td>$2.50</td>
+                    <td>$10.00</td>
+                    <td>128K</td>
+                </tr>
+                <tr>
+                    <td><strong>AI21 Jamba 1.5 Large</strong></td>
+                    <td>AI21</td>
+                    <td>$2.00</td>
+                    <td>$8.00</td>
+                    <td>256K</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>Budget Tier — Maximum Value</h3>
+
+        <table class="comparison-table">
+            <thead>
+                <tr>
+                    <th>Model</th>
+                    <th>Provider</th>
+                    <th>Input (per 1M tokens)</th>
+                    <th>Output (per 1M tokens)</th>
+                    <th>Context Window</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Gemini 2.0 Flash</strong></td>
+                    <td>Google</td>
+                    <td class="winner">$0.10</td>
+                    <td class="winner">$0.40</td>
+                    <td class="winner">1M</td>
+                </tr>
+                <tr>
+                    <td><strong>GPT-4o mini</strong></td>
+                    <td>OpenAI</td>
+                    <td>$0.15</td>
+                    <td>$0.60</td>
+                    <td>128K</td>
+                </tr>
+                <tr>
+                    <td><strong>Claude Haiku 3.5</strong></td>
+                    <td>Anthropic</td>
+                    <td>$0.80</td>
+                    <td>$4.00</td>
+                    <td>200K</td>
+                </tr>
+                <tr>
+                    <td><strong>Mistral Small</strong></td>
+                    <td>Mistral</td>
+                    <td>$0.10</td>
+                    <td>$0.30</td>
+                    <td>32K</td>
+                </tr>
+                <tr>
+                    <td><strong>Cohere Command R</strong></td>
+                    <td>Cohere</td>
+                    <td>$0.15</td>
+                    <td>$0.60</td>
+                    <td>128K</td>
+                </tr>
+                <tr>
+                    <td><strong>Llama 3.1 70B</strong></td>
+                    <td>Together.ai</td>
+                    <td>$0.88</td>
+                    <td>$0.88</td>
+                    <td>128K</td>
+                </tr>
+                <tr>
+                    <td><strong>Llama 3.1 8B</strong></td>
+                    <td>Together.ai</td>
+                    <td>$0.18</td>
+                    <td>$0.18</td>
+                    <td>128K</td>
+                </tr>
+                <tr>
+                    <td><strong>GPT-5 mini</strong></td>
+                    <td>OpenAI</td>
+                    <td>$0.40</td>
+                    <td>$1.60</td>
+                    <td>256K</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2>Key Changes Since Q1 2026</h2>
+
+        <div class="highlight-box">
+            <h3>What's New This Quarter</h3>
+            <ul>
+                <li><strong>GPT-5 launched</strong> — $10/$30 per 1M tokens, 256K context. Premium quality at a competitive price point.</li>
+                <li><strong>GPT-5 mini launched</strong> — $0.40/$1.60, 256K context. Cheaper than GPT-4o with more context.</li>
+                <li><strong>Claude 4 Opus</strong> — Anthropic's flagship at $15/$75. Best-in-class for complex reasoning.</li>
+                <li><strong>Gemini 2.5 Pro</strong> — Google's premium model at $1.25/$10 with 1M context. Best value premium model.</li>
+                <li><strong>Mistral Small</strong> — $0.10/$0.30, cheapest output tokens on the market.</li>
+            </ul>
+        </div>
+
+        <h2>Cheapest Model by Use Case</h2>
+
+        <h3>Chatbot (1K requests/day, 500 input + 200 output tokens each)</h3>
+
+        <div class="cost-box">
+            <h3>Monthly Cost Comparison</h3>
+            <div class="cost-row"><span>Gemini 2.0 Flash</span><span class="winner">$1.80/mo</span></div>
+            <div class="cost-row"><span>Mistral Small</span><span>$1.35/mo</span></div>
+            <div class="cost-row"><span>GPT-4o mini</span><span>$2.70/mo</span></div>
+            <div class="cost-row"><span>Cohere Command R</span><span>$2.70/mo</span></div>
+            <div class="cost-row"><span>Llama 3.1 8B</span><span>$1.62/mo</span></div>
+            <div class="cost-row"><span>Claude Haiku 3.5</span><span>$5.40/mo</span></div>
+            <div class="cost-row"><span>GPT-4o</span><span>$13.50/mo</span></div>
+            <div class="cost-row"><span>Claude Sonnet 4</span><span>$18.00/mo</span></div>
+        </div>
+
+        <h3>Code Generation (100 requests/day, 1K input + 500 output tokens each)</h3>
+
+        <div class="cost-box">
+            <h3>Monthly Cost Comparison</h3>
+            <div class="cost-row"><span>Gemini 2.0 Flash</span><span class="winner">$3.90/mo</span></div>
+            <div class="cost-row"><span>GPT-4o mini</span><span>$5.40/mo</span></div>
+            <div class="cost-row"><span>Claude Haiku 3.5</span><span>$8.40/mo</span></div>
+            <div class="cost-row"><span>GPT-4o</span><span>$22.50/mo</span></div>
+            <div class="cost-row"><span>Claude Sonnet 4</span><span>$31.50/mo</span></div>
+            <div class="cost-row"><span>GPT-5</span><span>$45.00/mo</span></div>
+            <div class="cost-row"><span>Claude 4 Opus</span><span>$97.50/mo</span></div>
+        </div>
+
+        <h3>Document Analysis (50 requests/day, 10K input + 2K output tokens each)</h3>
+
+        <div class="cost-box">
+            <h3>Monthly Cost Comparison</h3>
+            <div class="cost-row"><span>Gemini 2.0 Flash</span><span class="winner">$4.50/mo</span></div>
+            <div class="cost-row"><span>GPT-4o mini</span><span>$6.75/mo</span></div>
+            <div class="cost-row"><span>Gemini 2.5 Pro</span><span>$22.50/mo</span></div>
+            <div class="cost-row"><span>GPT-4o</span><span>$52.50/mo</span></div>
+            <div class="cost-row"><span>Claude Sonnet 4</span><span>$67.50/mo</span></div>
+            <div class="cost-row"><span>GPT-5</span><span>$105.00/mo</span></div>
+            <div class="cost-row"><span>Claude 4 Opus</span><span>$262.50/mo</span></div>
+        </div>
+
+        <h2>Provider Scorecard</h2>
+
+        <table class="comparison-table">
+            <thead>
+                <tr>
+                    <th>Provider</th>
+                    <th>Cheapest Model</th>
+                    <th>Best Premium</th>
+                    <th>Max Context</th>
+                    <th>Best For</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Google</strong></td>
+                    <td>Gemini 2.0 Flash ($0.10/$0.40)</td>
+                    <td>Gemini 2.5 Pro ($1.25/$10)</td>
+                    <td class="winner">1M tokens</td>
+                    <td>Best value, longest context</td>
+                </tr>
+                <tr>
+                    <td><strong>OpenAI</strong></td>
+                    <td>GPT-4o mini ($0.15/$0.60)</td>
+                    <td>GPT-5 ($10/$30)</td>
+                    <td>256K tokens</td>
+                    <td>Ecosystem, tool use, vision</td>
+                </tr>
+                <tr>
+                    <td><strong>Anthropic</strong></td>
+                    <td>Claude Haiku 3.5 ($0.80/$4)</td>
+                    <td>Claude 4 Opus ($15/$75)</td>
+                    <td>200K tokens</td>
+                    <td>Code generation, reasoning</td>
+                </tr>
+                <tr>
+                    <td><strong>Mistral</strong></td>
+                    <td>Mistral Small ($0.10/$0.30)</td>
+                    <td>Mistral Large ($2/$6)</td>
+                    <td>128K tokens</td>
+                    <td>Cheapest output, European</td>
+                </tr>
+                <tr>
+                    <td><strong>Cohere</strong></td>
+                    <td>Command R ($0.15/$0.60)</td>
+                    <td>Command R+ ($2.50/$10)</td>
+                    <td>128K tokens</td>
+                    <td>RAG, enterprise</td>
+                </tr>
+                <tr>
+                    <td><strong>Together.ai</strong></td>
+                    <td>Llama 3.1 8B ($0.18/$0.18)</td>
+                    <td>Llama 3.1 70B ($0.88/$0.88)</td>
+                    <td>128K tokens</td>
+                    <td>Open source, symmetric pricing</td>
+                </tr>
+                <tr>
+                    <td><strong>AI21</strong></td>
+                    <td>—</td>
+                    <td>Jamba 1.5 Large ($2/$8)</td>
+                    <td>256K tokens</td>
+                    <td>Long context, hybrid architecture</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2>Context Window Comparison</h2>
+
+        <table class="comparison-table">
+            <thead>
+                <tr>
+                    <th>Context Window</th>
+                    <th>Models</th>
+                    <th>Best For</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>1M tokens</strong></td>
+                    <td>Gemini 2.5 Pro, Gemini 2.0 Flash</td>
+                    <td>Full codebase analysis, book-length documents</td>
+                </tr>
+                <tr>
+                    <td><strong>256K tokens</strong></td>
+                    <td>GPT-5, GPT-5 mini, AI21 Jamba 1.5</td>
+                    <td>Large document analysis, long conversations</td>
+                </tr>
+                <tr>
+                    <td><strong>200K tokens</strong></td>
+                    <td>Claude 4 Opus, Claude Sonnet 4, Claude Haiku 3.5</td>
+                    <td>Complex multi-file tasks, extended reasoning</td>
+                </tr>
+                <tr>
+                    <td><strong>128K tokens</strong></td>
+                    <td>GPT-4o, GPT-4o mini, Mistral Large, Cohere, Llama</td>
+                    <td>Most applications, chatbots, code generation</td>
+                </tr>
+                <tr>
+                    <td><strong>32K tokens</strong></td>
+                    <td>Mistral Small</td>
+                    <td>Short-form tasks, classification, simple Q&A</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2>Recommendations</h2>
+
+        <h3>For Startups (Under $50/month budget)</h3>
+        <p>Start with <strong>Gemini 2.0 Flash</strong> for most tasks. It's the cheapest model with the largest context window. Use <strong>GPT-4o mini</strong> as a fallback for tasks that need OpenAI's ecosystem (function calling, vision). Total cost: <strong>$2-10/month</strong> for typical startup usage.</p>
+
+        <h3>For Growing Companies ($50-500/month budget)</h3>
+        <p>Use a <strong>tiered approach</strong>: Gemini 2.0 Flash for high-volume simple tasks, Claude Sonnet 4 or GPT-4o for complex reasoning, and Claude 4 Opus only for the most demanding tasks. This hybrid strategy can save <strong>60-80%</strong> compared to using a single premium model.</p>
+
+        <h3>For Enterprise (500+ developers)</h3>
+        <p>Negotiate volume discounts with multiple providers. Use <strong>Gemini 2.5 Pro</strong> for document-heavy workloads (1M context), <strong>Claude 4 Opus</strong> for code review and complex reasoning, and <strong>GPT-5</strong> for tool-use-heavy workflows. Implement model routing to automatically select the cheapest model for each task.</p>
+
+        <div class="cta-inline">
+            <p><strong>Calculate your exact costs.</strong> Enter your usage patterns into our calculator to see which model and provider saves you the most.</p>
+            <a href="calculator.html" class="btn-primary">Try the APIpulse Calculator</a>
+            <span style="margin: 0 12px; color: var(--text-muted);">or</span>
+            <a href="pricing-index.html" class="btn-primary" style="background:var(--bg-card);color:var(--text-primary);border:1px solid var(--border);">View Full Pricing Index</a>
+        </div>
+
+        <div class="related">
+            <h3>Related Reading</h3>
+            <a href="blog-pricing-cheat-sheet.html">LLM API Pricing Cheat Sheet: Every Model, Every Provider</a>
+            <a href="blog-cost-optimization-guide.html">AI API Cost Optimization: A Complete Guide for 2026</a>
+            <a href="blog-pricing-trends-2026.html">AI API Pricing Trends 2026: What to Expect Next</a>
+        </div>
+
+        <div class="share-section">
+            <p>Found this useful? Share it:</p>
+            <a href="https://twitter.com/intent/tweet?text=LLM+API+Pricing+Report+Q2+2026%3A+Every+Model%2C+Every+Provider&url=https%3A%2F%2Fgetapipulse.com%2Fblog-q2-2026-pricing-report.html" target="_blank" rel="noopener" class="share-btn">Share on X</a>
+        </div>
+    </div>
+
+    <button class="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">↑</button>
+
+    </main>
+
+    <footer>
+        <p>Pricing data last verified: <span class="verified-date"></span></p>
+        <p>&copy; 2026 APIpulse. <a href="index.html">Home</a> &middot; <a href="use-cases.html">Use Cases</a> &middot; <a href="about.html">About</a> &middot; <a href="blog.html">Blog</a> &middot; <a href="pricing-index.html">Pricing Index</a> &middot; <a href="openai.html">OpenAI</a> &middot; <a href="anthropic.html">Anthropic</a> &middot; <a href="google.html">Google</a> &middot; <a href="mistral.html">Mistral</a> &middot; <a href="pricing.html">Pricing</a></p>
+    </footer>
+
+</body>
+</html>

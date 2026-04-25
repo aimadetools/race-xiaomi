@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LLM API Glossary: Every Term You Need to Know (2026) — APIpulse</title>
+    <meta name="description" content="Complete glossary of LLM API pricing terms. Understand tokens, context windows, rate limits, embedding costs, and every term used in AI API pricing.">
+    <meta name="keywords" content="LLM glossary, AI API terms, token pricing explained, LLM terminology, AI API vocabulary, what are tokens">
+    <meta property="og:title" content="LLM API Glossary: Every Term You Need to Know (2026) — APIpulse">
+    <meta property="og:description" content="Complete glossary of LLM API pricing terms. Understand tokens, context windows, rate limits, and more.">
+    <meta property="og:type" content="article">
+    <meta property="og:image" content="https://getapipulse.com/og-image.png">
+    <meta property="og:url" content="https://getapipulse.com/blog-llm-glossary.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="LLM API Glossary: Every Term You Need to Know (2026) — APIpulse">
+    <meta name="twitter:image" content="https://getapipulse.com/og-image.png">
+    <link rel="canonical" href="https://getapipulse.com/blog-llm-glossary.html">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="styles.css">
+    <script src="analytics.js" defer></script>
+    <script src="dynamic-date.js" defer></script>
+    <script src="shared.js" defer></script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "LLM API Glossary: Every Term You Need to Know (2026)",
+        "description": "Complete glossary of LLM API pricing terms including tokens, context windows, rate limits, and more.",
+        "datePublished": "2026-04-25",
+        "dateModified": "2026-04-25",
+        "author": { "@type": "Organization", "name": "APIpulse" },
+        "publisher": { "@type": "Organization", "name": "APIpulse", "url": "https://getapipulse.com" },
+        "url": "https://getapipulse.com/blog-llm-glossary.html"
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Blog", "item": "https://getapipulse.com/blog.html" },
+            { "@type": "ListItem", "position": 2, "name": "LLM API Glossary", "item": "https://getapipulse.com/blog-llm-glossary.html" }
+        ]
+    }
+    </script>
+    <style>
+        .content { max-width: 800px; margin: 0 auto; padding: 120px 24px 80px; }
+        h1 { font-size: 40px; font-weight: 800; margin-bottom: 12px; }
+        .subtitle { color: var(--text-secondary); font-size: 18px; margin-bottom: 48px; }
+        .post-meta { display: flex; gap: 16px; align-items: center; margin-bottom: 24px; font-size: 13px; color: var(--text-muted); }
+        .post-tag { background: var(--accent-glow); color: var(--accent); padding: 2px 10px; border-radius: 6px; font-size: 12px; font-weight: 600; }
+        h2 { font-size: 28px; font-weight: 700; margin: 40px 0 16px; }
+        h3 { font-size: 20px; font-weight: 600; margin: 28px 0 12px; }
+        p { margin-bottom: 16px; line-height: 1.7; color: var(--text-secondary); }
+        ul, ol { margin-bottom: 16px; padding-left: 24px; }
+        li { margin-bottom: 8px; line-height: 1.6; color: var(--text-secondary); }
+        strong { color: var(--text-primary); }
+        .glossary-term { background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 12px; padding: 20px; margin: 16px 0; }
+        .glossary-term h3 { margin-top: 0; color: var(--accent); font-size: 18px; }
+        .glossary-term p { margin-bottom: 8px; }
+        .glossary-term .example { background: var(--bg-card); border-radius: 8px; padding: 12px; margin-top: 8px; font-size: 13px; color: var(--text-muted); }
+        .glossary-term .example strong { color: var(--text-secondary); }
+        .cta-inline { background: var(--bg-secondary); border: 1px solid var(--accent); border-radius: 12px; padding: 24px; margin: 32px 0; text-align: center; }
+        .cta-inline p { margin-bottom: 12px; }
+        .btn-primary { display: inline-block; }
+        .back-link { display: inline-block; margin-bottom: 24px; color: var(--text-muted); font-size: 14px; }
+        .back-link:hover { color: var(--accent); }
+        .related { background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 12px; padding: 24px; margin-top: 40px; }
+        .related h3 { margin-top: 0; font-size: 18px; }
+        .related a { display: block; padding: 8px 0; color: var(--accent); font-size: 14px; }
+        .share-section { margin-top: 32px; padding-top: 24px; border-top: 1px solid var(--border); text-align: center; }
+        .share-section p { color: var(--text-secondary); font-size: 14px; margin-bottom: 12px; }
+        .share-btn { display: inline-block; background: var(--bg-card); color: var(--text-primary); padding: 8px 20px; border-radius: 8px; font-size: 14px; font-weight: 500; border: 1px solid var(--border); transition: all 0.2s; }
+        .share-btn:hover { background: var(--accent); color: white; border-color: var(--accent); }
+        .toc { background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 12px; padding: 24px; margin: 24px 0; }
+        .toc h3 { margin-top: 0; font-size: 16px; }
+        .toc a { display: block; padding: 4px 0; color: var(--accent); font-size: 14px; text-decoration: none; }
+        .toc a:hover { text-decoration: underline; }
+        @media (max-width: 768px) {
+            .content { padding: 100px 20px 60px; }
+            h1 { font-size: 28px; }
+            h2 { font-size: 22px; }
+        }
+    </style>
+    <meta name="theme-color" content="#6366f1">
+    <link rel="preconnect" href="https://getapipulse.com">
+</head>
+<body>
+    <a href="#main" class="skip-link">Skip to content</a>
+    <nav>
+        <div class="nav-inner">
+            <a href="index.html" class="logo">API<span>pulse</span></a>
+            <button class="hamburger" onclick="toggleMobileNav()" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+            <div class="nav-links">
+                <a href="calculator.html">Calculator</a>
+                <a href="compare.html">Compare</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="use-cases.html">Use Cases</a>
+                <a href="about.html">About</a>
+                <a href="blog.html">Blog</a>
+                <a href="pricing-index.html">Pricing Index</a>
+                <a href="pricing-trends.html">Trends</a>
+                <a href="pricing.html" class="nav-cta" onclick="if(window.trackEvent)window.trackEvent('pro_button_clicked',{source:'nav'})">Get Pro — $29</a>
+                <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
+            </div>
+        </div>
+    </nav>
+
+    <main id="main">
+
+    <div class="content article">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+            <a href="blog.html">Blog</a>
+            <span class="separator">›</span>
+            <span class="current">LLM API Glossary: Every Term You Need to Know</span>
+        </nav>
+        <a href="blog.html" class="back-link">← Back to blog</a>
+        <div class="post-meta">
+            <span class="post-tag">Guide</span>
+            <span>April 25, 2026</span>
+        </div>
+        <h1>LLM API Glossary: Every Term You Need to Know (2026)</h1>
+
+        <p>Whether you're evaluating AI API providers for the first time or optimizing costs for an existing application, understanding the terminology is essential. This glossary covers every term you'll encounter in LLM API pricing, from basic concepts like tokens to advanced topics like batching and streaming.</p>
+
+        <div class="toc">
+            <h3>Table of Contents</h3>
+            <a href="#pricing">Pricing & Billing Terms</a>
+            <a href="#tokens">Token & Input Terms</a>
+            <a href="#models">Model & Architecture Terms</a>
+            <a href="#performance">Performance & Limits Terms</a>
+            <a href="#features">Feature Terms</a>
+            <a href="#optimization">Cost Optimization Terms</a>
+        </div>
+
+        <h2 id="pricing">Pricing & Billing Terms</h2>
+
+        <div class="glossary-term">
+            <h3>Per-Token Pricing</h3>
+            <p>The standard billing model for LLM APIs. You're charged based on the number of tokens processed — both input (what you send) and output (what the model generates). Prices are typically quoted per 1 million tokens.</p>
+            <div class="example"><strong>Example:</strong> GPT-4o costs $2.50 per 1M input tokens and $10.00 per 1M output tokens.</div>
+        </div>
+
+        <div class="glossary-term">
+            <h3>Input Tokens</h3>
+            <p>Tokens in your prompt — the text you send to the model. This includes your system prompt, user message, conversation history, and any context. Input tokens are always cheaper than output tokens.</p>
+            <div class="example"><strong>Example:</strong> A 500-word prompt ≈ 650 input tokens. At GPT-4o pricing ($2.50/1M), that costs $0.0016 per request.</div>
+        </div>
+
+        <div class="glossary-term">
+            <h3>Output Tokens</h3>
+            <p>Tokens the model generates in response. Output tokens are typically 3-10x more expensive than input tokens because generation requires more compute. The model generates one token at a time, sequentially.</p>
+            <div class="example"><strong>Example:</strong> A 200-word response ≈ 260 output tokens. At GPT-4o pricing ($10/1M), that costs $0.0026 per request.</div>
+        </div>
+
+        <div class="glossary-term">
+            <h3>Cost Per 1M Tokens</h3>
+            <p>The standard unit for comparing API prices. Instead of quoting per-token prices (which would be tiny fractions of a cent), providers quote cost per 1 million tokens. To calculate your actual cost: (tokens used ÷ 1,000,000) × price per 1M.</p>
+            <div class="example"><strong>Example:</strong> 50,000 input tokens × ($2.50 ÷ 1,000,000) = $0.125</div>
+        </div>
+
+        <div class="glossary-term">
+            <h3>Free Tier</h3>
+            <p>A usage allowance provided at no cost, typically with rate limits. Google Gemini offers the most generous free tier — unlimited requests with rate limiting. OpenAI and Anthropic offer $5 credits for new accounts.</p>
+            <div class="example"><strong>Example:</strong> Gemini 2.0 Flash free tier: 15 RPM (requests per minute), 1M tokens/day.</div>
+        </div>
+
+        <div class="glossary-term">
+            <h3>Rate Limit</h3>
+            <p>The maximum number of requests or tokens you can send within a time window (usually per minute or per day). Exceeding rate limits returns a 429 error. Limits vary by model, tier, and spending level.</p>
+            <div class="example"><strong>Example:</strong> GPT-4o free tier: 500 RPM, 30,000 TPM (tokens per minute).</div>
+        </div>
+
+        <div class="glossary-term">
+            <h3>Credits</h3>
+            <p>Pre-paid balance applied against API usage. Most providers offer initial credits ($5-10) for new accounts. Credits expire after a set period (usually 3-12 months) and are consumed before charging your payment method.</p>
+        </div>
+
+        <h2 id="tokens">Token & Input Terms</h2>
+
+        <div class="glossary-term">
+            <h3>Token</h3>
+            <p>The fundamental unit of text processing in LLMs. A token is roughly 4 characters or 0.75 words in English. Tokens can be whole words, parts of words, or individual characters. The exact tokenization varies by model (GPT uses tiktoken, Claude uses its own tokenizer).</p>
+            <div class="example"><strong>Rule of thumb:</strong> 1 word ≈ 1.3 tokens. "Hello, world!" = 4 tokens. A 1,000-word article ≈ 1,300 tokens.</div>
+        </div>
+
+        <div class="glossary-term">
+            <h3>Context Window</h3>
+            <p>The maximum number of tokens a model can process in a single request — including both input and output. This limits how much text you can send and receive. Larger context windows allow processing longer documents but cost more.</p>
+            <div class="example"><strong>Range in 2026:</strong> 32K (Mistral Small) to 1M (Gemini 2.5 Pro). Most models: 128K-256K.</div>
+        </div>
+
+        <div class="glossary-term">
+            <h3>System Prompt</h3>
+            <p>A special instruction sent before the user's message that defines the model's behavior, role, and constraints. System prompts are included in input token count and persist across the conversation. They're typically more expensive than user messages because they're sent with every request.</p>
+            <div class="example"><strong>Cost impact:</strong> A 500-token system prompt sent 1,000 times/day = 500K input tokens/day = $1.25/day on GPT-4o.</div>
+        </div>
+
+        <div class="glossary-term">
+            <h3>Conversation History</h3>
+            <p>The accumulated messages in a chat session. Each request typically includes the full conversation history, meaning costs grow linearly with conversation length. A 20-message conversation might use 10,000+ input tokens per request.</p>
+            <div class="example"><strong>Optimization:</strong> Limit history to the last 5-10 messages, or use summarization to compress older messages.</div>
+        </div>
+
+        <div class="glossary-term">
+            <h3>Max Tokens (Output Limit)</h3>
+            <p>A parameter you set to limit how many tokens the model can generate in its response. Setting this too low truncates responses; setting it too high wastes money if the model generates unnecessary text. Typical values: 256-4,096 tokens.</p>
+            <div class="example"><strong>Tip:</strong> For chatbots, 512-1,024 tokens is usually sufficient. For code generation, 2,048-4,096.</div>
+        </div>
+
+        <div class="glossary-term">
+            <h3>Embedding</h3>
+            <p>A numerical vector representation of text, used for semantic search, classification, and RAG systems. Embedding models are separate from generative models and have their own pricing (typically much cheaper). Embeddings are generated once and reused.</p>
+            <div class="example"><strong>Pricing:</strong> OpenAI text-embedding-3: $0.02/1M tokens. Google: free (rate limited).</div>
+        </div>
+
+        <h2 id="models">Model & Architecture Terms</h2>
+
+        <div class="glossary-term">
+            <h3>Foundation Model</h3>
+            <p>A large pre-trained model that can be adapted to many tasks. Examples: GPT-4o, Claude Sonnet 4, Gemini 2.5 Pro. Foundation models are trained on vast datasets and can perform reasoning, coding, analysis, and generation without task-specific training.</p>
+        </div>
+
+        <div class="glossary-term">
+            <h3>Model Tier</h3>
+            <p>A classification of models by capability and price. <strong>Premium</strong> models (Claude 4 Opus, GPT-5, Gemini 2.5 Pro) offer maximum quality at higher cost. <strong>Budget</strong> models (Gemini 2.0 Flash, GPT-4o mini, Mistral Small) offer good quality at minimal cost. <strong>Mid-tier</strong> models (Claude Sonnet 4, GPT-4o) balance both.</p>
+        </div>
+
+        <div class="glossary-term">
+            <h3>Open Source Model</h3>
+            <p>A model whose weights are publicly available, allowing self-hosting or use through third-party APIs. Examples: Llama 3.1 (Meta), Mistral (Mistral AI). Open source models can be cheaper at scale but require infrastructure to run.</p>
+            <div class="example"><strong>Cost comparison:</strong> Llama 3.1 8B via Together.ai: $0.18/1M tokens. Self-hosted on GPU: ~$1.50/hour (breaks even at ~2.7M requests/day).</div>
+        </div>
+
+        <div class="glossary-term">
+            <h3>Temperature</h3>
+            <p>A parameter (0.0-2.0) controlling randomness in responses. Lower values (0.0-0.3) produce more deterministic, focused outputs. Higher values (0.7-1.0) produce more creative, varied outputs. Temperature doesn't affect pricing but impacts output length and quality.</p>
+        </div>
+
+        <div class="glossary-term">
+            <h3>Function Calling / Tool Use</h3>
+            <p>The ability of a model to generate structured JSON output that triggers external functions or API calls. This enables LLMs to interact with databases, APIs, and services. Not all models support this — it's strongest in OpenAI and Anthropic models.</p>
+        </div>
+
+        <div class="glossary-term">
+            <h3>Multimodal</h3>
+            <p>Models that can process multiple types of input — text, images, audio, and sometimes video. GPT-4o and Gemini 2.5 Pro are fully multimodal. Image inputs cost more than text (typically 2-5x per token).</p>
+        </div>
+
+        <h2 id="performance">Performance & Limits Terms</h2>
+
+        <div class="glossary-term">
+            <h3>Latency</h3>
+            <p>The time between sending a request and receiving the first token of response (Time to First Token, or TTFT). Lower latency = faster perceived response. Budget models are typically faster than premium models. Streaming reduces perceived latency by showing tokens as they generate.</p>
+            <div class="example"><strong>Typical TTFT:</strong> Gemini 2.0 Flash: ~200ms. GPT-4o: ~500ms. Claude 4 Opus: ~800ms.</div>
+        </div>
+
+        <div class="glossary-term">
+            <h3>Throughput</h3>
+            <p>The number of tokens generated per second (tokens/sec). Higher throughput = faster complete responses. Important for batch processing and high-volume applications. Throughput varies by model, load, and response length.</p>
+        </div>
+
+        <div class="glossary-term">
+            <h3>Streaming</h3>
+            <p>Sending response tokens to the client as they're generated, rather than waiting for the complete response. Streaming doesn't reduce cost (you still pay for all tokens) but dramatically improves perceived performance. Most providers support Server-Sent Events (SSE) for streaming.</p>
+        </div>
+
+        <div class="glossary-term">
+            <h3>Batch API</h3>
+            <p>A bulk processing endpoint that accepts multiple requests and processes them asynchronously, typically at 50% discount. Ideal for non-time-sensitive workloads like data processing, content generation, and analysis. OpenAI and Anthropic both offer batch APIs.</p>
+            <div class="example"><strong>Savings:</strong> GPT-4o batch: $1.25 input / $5.00 output (50% off standard pricing).</div>
+        </div>
+
+        <div class="glossary-term">
+            <h3>Timeout</h3>
+            <p>The maximum time a provider will wait for a response before returning an error. Longer responses and higher max_tokens settings increase the chance of timeouts. Typical timeout: 60-120 seconds. Set appropriate timeouts in your application.</p>
+        </div>
+
+        <h2 id="features">Feature Terms</h2>
+
+        <div class="glossary-term">
+            <h3>RAG (Retrieval-Augmented Generation)</h3>
+            <p>A technique that combines document retrieval with LLM generation. Relevant documents are retrieved from a vector database and included in the prompt, allowing the model to answer questions about specific data without fine-tuning. Costs include: embedding, vector search, and generation.</p>
+            <div class="example"><strong>Cost breakdown:</strong> Embedding: $0.02/1M tokens. Vector search: ~$0.0001/query. Generation: varies by model.</div>
+        </div>
+
+        <div class="glossary-term">
+            <h3>Fine-Tuning</h3>
+            <p>Training a model on your specific data to improve performance for your use case. Fine-tuning has upfront training costs and creates a custom model with its own inference pricing. For most applications, prompt engineering + RAG is more cost-effective than fine-tuning.</p>
+        </div>
+
+        <div class="glossary-term">
+            <h3>Prompt Engineering</h3>
+            <p>The practice of designing inputs to get better, cheaper outputs from LLMs. Techniques include: clear instructions, few-shot examples, structured output formats, and chain-of-thought reasoning. Good prompt engineering can reduce token usage by 30-50%.</p>
+        </div>
+
+        <div class="glossary-term">
+            <h3>Structured Output</h3>
+            <p>Forcing the model to respond in a specific format (JSON, XML, etc.). Structured output reduces post-processing costs and improves reliability. Some providers (OpenAI, Anthropic) have dedicated structured output modes that are more reliable.</p>
+        </div>
+
+        <div class="glossary-term">
+            <h3>Safety / Content Filtering</h3>
+            <p>Built-in moderation that blocks harmful, explicit, or policy-violating content. Most providers include content filtering at no extra cost. Filters can occasionally produce false positives, blocking legitimate requests. Some providers allow adjusting filter sensitivity.</p>
+        </div>
+
+        <h2 id="optimization">Cost Optimization Terms</h2>
+
+        <div class="glossary-term">
+            <h3>Prompt Caching</h3>
+            <p>Storing frequently-used prompt prefixes (like system prompts) to avoid re-processing them. Cached tokens are charged at a discount (typically 50-90% off). Anthropic and OpenAI both support automatic prompt caching for repeated prefixes.</p>
+            <div class="example"><strong>Savings:</strong> A 1,000-token system prompt cached at 90% discount: $0.00025 instead of $0.0025 per request.</div>
+        </div>
+
+        <div class="glossary-term">
+            <h3>Model Routing</h3>
+            <p>Automatically selecting the cheapest model that can handle each specific task. Simple queries go to budget models; complex reasoning goes to premium models. Can reduce costs by 60-80% compared to using a single premium model for everything.</p>
+            <div class="example"><strong>Example:</strong> Classification → Gemini Flash ($0.10/1M). Code review → Claude Sonnet ($3/1M). Architecture → Claude Opus ($15/1M).</div>
+        </div>
+
+        <div class="glossary-term">
+            <h3>Token Budget</h3>
+            <p>A maximum token limit you set per request or per day to control costs. Setting token budgets prevents runaway costs from infinite loops or unexpectedly long responses. Combine with max_tokens and daily spending limits for full cost control.</p>
+        </div>
+
+        <div class="glossary-term">
+            <h3>Cost Per Request</h3>
+            <p>The total cost of a single API call, including input tokens, output any any additional features (function calling, image processing). Calculated as: (input_tokens × input_price + output_tokens × output_price) ÷ 1,000,000.</p>
+            <div class="example"><strong>Example:</strong> GPT-4o request with 500 input + 200 output tokens: (500 × $2.50 + 200 × $10.00) ÷ 1M = $0.00325</div>
+        </div>
+
+        <div class="glossary-term">
+            <h3>Monthly Burn Rate</h3>
+            <p>Your projected monthly API spend based on current usage patterns. Calculated as: average cost per request × requests per day × 30. Monitoring burn rate helps you stay within budget and identify cost spikes early.</p>
+            <div class="example"><strong>Example:</strong> $0.003/request × 1,000 requests/day × 30 days = $90/month.</div>
+        </div>
+
+        <div class="cta-inline">
+            <p><strong>Calculate your exact costs.</strong> Enter your usage patterns into our calculator to see your monthly burn rate and find the cheapest model for your needs.</p>
+            <a href="calculator.html" class="btn-primary">Try the APIpulse Calculator</a>
+            <span style="margin: 0 12px; color: var(--text-muted);">or</span>
+            <a href="pricing-index.html" class="btn-primary" style="background:var(--bg-card);color:var(--text-primary);border:1px solid var(--border);">View Full Pricing Index</a>
+        </div>
+
+        <div class="related">
+            <h3>Related Reading</h3>
+            <a href="blog-estimate-tokens.html">How to Estimate Token Usage for Your AI Application</a>
+            <a href="blog-cost-optimization-guide.html">AI API Cost Optimization: A Complete Guide for 2026</a>
+            <a href="blog-pricing-cheat-sheet.html">LLM API Pricing Cheat Sheet: Every Model, Every Provider</a>
+        </div>
+
+        <div class="share-section">
+            <p>Found this useful? Share it:</p>
+            <a href="https://twitter.com/intent/tweet?text=LLM+API+Glossary%3A+Every+Term+You+Need+to+Know+(2026)&url=https%3A%2F%2Fgetapipulse.com%2Fblog-llm-glossary.html" target="_blank" rel="noopener" class="share-btn">Share on X</a>
+        </div>
+    </div>
+
+    <button class="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">↑</button>
+
+    </main>
+
+    <footer>
+        <p>Pricing data last verified: <span class="verified-date"></span></p>
+        <p>&copy; 2026 APIpulse. <a href="index.html">Home</a> &middot; <a href="use-cases.html">Use Cases</a> &middot; <a href="about.html">About</a> &middot; <a href="blog.html">Blog</a> &middot; <a href="pricing-index.html">Pricing Index</a> &middot; <a href="openai.html">OpenAI</a> &middot; <a href="anthropic.html">Anthropic</a> &middot; <a href="google.html">Google</a> &middot; <a href="mistral.html">Mistral</a> &middot; <a href="pricing.html">Pricing</a></p>
+    </footer>
+
+</body>
+</html>
