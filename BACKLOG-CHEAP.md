@@ -330,10 +330,12 @@ These tasks are straightforward and don't require deep reasoning.
 - Consistent with pricing-index.html badge styling
 - **Effort:** 30 min
 
-### 53. Write Blog Post: "OpenAI GPT-5 First Look: Pricing, Performance, and Is It Worth It?"
+### 53. Write Blog Post: "OpenAI GPT-5 First Look: Pricing, Performance, and Is It Worth It?" ✓ DONE
 - Target "GPT-5 review" and "GPT-5 pricing" keywords
-- Early analysis of GPT-5 pricing vs GPT-4o
-- Compare with Claude 4 Opus and Gemini 2.5 Pro
+- Compare GPT-5 ($10/$30) vs GPT-4o, Claude 4 Opus, Gemini 2.5 Pro
+- 3 use case cost breakdowns: code gen, document analysis, chatbot
+- GPT-5 mini surprise: cheaper than GPT-4o with same context window
+- Decision framework: when GPT-5 is worth it vs cheaper alternatives
 - **Effort:** 1 hour
 
 ### 54. Add Breadcrumb Navigation to Blog Posts ✓ DONE
