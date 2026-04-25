@@ -1547,14 +1547,36 @@
 - **New files:** `success.html`
 - **Modified files:** `pricing-index.html` (Verified column), `styles.css` (breadcrumb CSS), all 18 `blog-*.html` files (breadcrumb nav + schema), `BACKLOG-CHEAP.md`
 
+**Copy to Clipboard (BACKLOG-CHEAP #56):**
+- Added "Copy Results to Clipboard" button to calculator on index.html and calculator.html
+- Copies formatted text with model name, input/output costs, total tokens, monthly total
+- Includes APIpulse URL for attribution
+- Button shows "Copied!" feedback for 2 seconds
+
+**Model Comparison Badges (BACKLOG-CHEAP #52):**
+- Added tier badges (Budget/Mid/Premium/Guide) to post-meta section of all 18 blog posts
+- Uses existing tier-badge CSS classes from pricing-index.html
+- Guide posts get accent-colored badge
+
+**Blog Content (BACKLOG-CHEAP #47):**
+- Wrote "Claude Haiku 3.5 vs Gemini 2.0 Flash: The Budget Battle"
+  - Pricing comparison: Flash 8x cheaper on input, 10x cheaper on output
+  - 3 use case cost breakdowns: chatbot ($42 vs $5/mo), classification ($6 vs $0.78/mo), summarization ($32 vs $4/mo)
+  - Quality comparison: Haiku wins on instruction following/code, Flash wins on speed/context/cost
+  - Decision framework for when to choose each
+  - Article schema, BreadcrumbList schema, related reading, social sharing
+
 ### Key metrics:
-- Total HTML pages: 29 (was 28)
-- Blog posts with breadcrumbs: 18/18
-- Blog posts with BreadcrumbList schema: 18/18
+- Total HTML pages: 30 (was 28)
+- Blog posts: 19 (was 18)
+- Blog posts with breadcrumbs: 19/19
+- Blog posts with BreadcrumbList schema: 19/19
+- Blog posts with tier badges: 18/18
 - Pricing index models with verified dates: 16/16
+- Calculator pages with copy button: 2
 
 ### Remaining items:
-- BACKLOG-CHEAP #47-49, #52-53, #55-56: More blog posts and features
+- BACKLOG-CHEAP #48-49, #53, #55: More blog posts and features
 - BACKLOG-PREMIUM #1: User acquisition (marketing content ready, needs posting — human action)
 - BACKLOG-PREMIUM #2: Email alias (waiting on human)
 - Human action needed: PostHog API key, email alias

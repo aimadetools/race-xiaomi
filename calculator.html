@@ -215,6 +215,9 @@
                         <span class="result-value" id="monthly-total">$0.00</span>
                     </div>
                     <div id="savings-container"></div>
+                    <button onclick="copyResults()" style="margin-top:16px;width:100%;padding:10px 16px;border-radius:8px;border:1px solid var(--border);background:var(--bg-secondary);color:var(--text-primary);font-size:13px;font-weight:600;cursor:pointer;transition:all 0.2s;" onmouseover="this.style.borderColor='var(--accent)'" onmouseout="this.style.borderColor='var(--border)'">
+                        <span id="copy-btn-text">Copy Results to Clipboard</span>
+                    </button>
                     <p style="margin-top: 16px; font-size: 12px; color: var(--text-muted);">
                         Based on published API pricing. Actual costs may vary.
                     </p>
@@ -352,6 +355,33 @@
                     });
                 }, 1000);
             }
+        }
+
+        function copyResults() {
+            const provider = document.getElementById('provider');
+            const selectedOption = provider.options[provider.selectedIndex].text;
+            const inputCost = document.getElementById('input-cost').textContent;
+            const outputCost = document.getElementById('output-cost').textContent;
+            const totalTokens = document.getElementById('total-tokens').textContent;
+            const monthlyTotal = document.getElementById('monthly-total').textContent;
+
+            const text = [
+                'APIpulse Cost Estimate',
+                '========================',
+                'Model: ' + selectedOption,
+                'Input cost: ' + inputCost,
+                'Output cost: ' + outputCost,
+                'Total tokens/month: ' + totalTokens,
+                'Monthly Total: ' + monthlyTotal,
+                '',
+                'https://getapipulse.com'
+            ].join('\n');
+
+            navigator.clipboard.writeText(text).then(() => {
+                const btn = document.getElementById('copy-btn-text');
+                btn.textContent = 'Copied!';
+                setTimeout(() => btn.textContent = 'Copy Results to Clipboard', 2000);
+            });
         }
 
         calculate();

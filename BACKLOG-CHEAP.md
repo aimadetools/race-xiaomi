@@ -283,11 +283,12 @@ These tasks are straightforward and don't require deep reasoning.
 
 ## New Tasks — Session 28 (April 25, 2026)
 
-### 47. Write Blog Post: "Claude Haiku 3.5 vs Gemini 2.0 Flash: The Budget Battle"
+### 47. Write Blog Post: "Claude Haiku 3.5 vs Gemini 2.0 Flash: The Budget Battle" ✓ DONE
 - Target "Claude Haiku vs Gemini Flash" keyword
 - Compare pricing, context windows, and quality
 - Use case cost breakdowns: chatbot, classification, summarization
-- Include calculator links
+- Includes calculator links, related reading, and social sharing
+- Article schema and BreadcrumbList schema added
 - **Effort:** 1 hour
 
 ### 48. Write Blog Post: "How Much Does It Cost to Run an AI Coding Assistant?"
@@ -345,7 +346,9 @@ These tasks are straightforward and don't require deep reasoning.
 - Targets "AI API pricing trends" keyword
 - **Effort:** 1.5 hours
 
-### 56. Add "Copy to Clipboard" for Calculator Results
-- Let users copy their cost calculation as formatted text
-- Useful for sharing with team or including in budget docs
+### 56. Add "Copy to Clipboard" for Calculator Results ✓ DONE
+- Added "Copy Results to Clipboard" button to index.html and calculator.html
+- Copies formatted text with model name, input/output costs, total tokens, and monthly total
+- Includes APIpulse URL for attribution
+- Button feedback: changes to "Copied!" for 2 seconds
 - **Effort:** 20 min
