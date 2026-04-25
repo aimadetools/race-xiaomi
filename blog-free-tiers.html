@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI API Free Tiers Compared: What You Can Build for Free — APIpulse</title>
+    <meta name="description" content="Compare free tiers from OpenAI, Anthropic, Google, Mistral, and Cohere. See exactly what you can build without spending a dollar on AI APIs.">
+    <meta name="keywords" content="AI API free tier, free LLM API, OpenAI free tier, Anthropic free tier, Google AI free, free AI API access">
+    <meta property="og:title" content="AI API Free Tiers Compared: What You Can Build for Free — APIpulse">
+    <meta property="og:description" content="Compare free tiers from OpenAI, Anthropic, Google, Mistral, and Cohere. See exactly what you can build without spending a dollar.">
+    <meta property="og:type" content="article">
+    <meta property="og:image" content="https://getapipulse.com/og-image.png">
+    <meta property="og:url" content="https://getapipulse.com/blog-free-tiers.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="AI API Free Tiers Compared: What You Can Build for Free — APIpulse">
+    <meta name="twitter:image" content="https://getapipulse.com/og-image.png">
+    <link rel="canonical" href="https://getapipulse.com/blog-free-tiers.html">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="styles.css">
+    <script src="analytics.js" defer></script>
+    <script src="dynamic-date.js" defer></script>
+    <script src="shared.js" defer></script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "AI API Free Tiers Compared: What You Can Build for Free",
+        "description": "Compare free tiers from OpenAI, Anthropic, Google, Mistral, and Cohere to see what you can build without spending a dollar.",
+        "datePublished": "2026-04-25",
+        "dateModified": "2026-04-25",
+        "author": { "@type": "Organization", "name": "APIpulse" },
+        "publisher": { "@type": "Organization", "name": "APIpulse", "url": "https://getapipulse.com" },
+        "url": "https://getapipulse.com/blog-free-tiers.html"
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Blog", "item": "https://getapipulse.com/blog.html" },
+            { "@type": "ListItem", "position": 2, "name": "AI API Free Tiers Compared", "item": "https://getapipulse.com/blog-free-tiers.html" }
+        ]
+    }
+    </script>
+    <style>
+        .content { max-width: 800px; margin: 0 auto; padding: 120px 24px 80px; }
+        h1 { font-size: 40px; font-weight: 800; margin-bottom: 12px; }
+        .subtitle { color: var(--text-secondary); font-size: 18px; margin-bottom: 48px; }
+        .post-meta { display: flex; gap: 16px; align-items: center; margin-bottom: 24px; font-size: 13px; color: var(--text-muted); }
+        .post-tag { background: var(--accent-glow); color: var(--accent); padding: 2px 10px; border-radius: 6px; font-size: 12px; font-weight: 600; }
+        h2 { font-size: 28px; font-weight: 700; margin: 40px 0 16px; }
+        h3 { font-size: 20px; font-weight: 600; margin: 28px 0 12px; }
+        p { margin-bottom: 16px; line-height: 1.7; color: var(--text-secondary); }
+        ul, ol { margin-bottom: 16px; padding-left: 24px; }
+        li { margin-bottom: 8px; line-height: 1.6; color: var(--text-secondary); }
+        strong { color: var(--text-primary); }
+        .comparison-table { width: 100%; border-collapse: collapse; margin: 24px 0; font-size: 14px; }
+        .comparison-table th { background: var(--bg-secondary); padding: 12px 16px; text-align: left; font-weight: 600; border-bottom: 1px solid var(--border); }
+        .comparison-table td { padding: 12px 16px; border-bottom: 1px solid var(--border); }
+        .comparison-table tr:last-child td { border-bottom: none; }
+        .winner { color: var(--green); font-weight: 600; }
+        .cost-box { background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 12px; padding: 24px; margin: 24px 0; }
+        .cost-box h3 { margin-top: 0; }
+        .cost-row { display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px solid var(--border); font-size: 14px; }
+        .cost-row:last-child { border-bottom: none; }
+        .cost-total { font-weight: 700; color: var(--accent); font-size: 18px; }
+        .cta-inline { background: var(--bg-secondary); border: 1px solid var(--accent); border-radius: 12px; padding: 24px; margin: 32px 0; text-align: center; }
+        .cta-inline p { margin-bottom: 12px; }
+        .btn-primary { display: inline-block; }
+        .back-link { display: inline-block; margin-bottom: 24px; color: var(--text-muted); font-size: 14px; }
+        .back-link:hover { color: var(--accent); }
+        .related { background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 12px; padding: 24px; margin-top: 40px; }
+        .related h3 { margin-top: 0; font-size: 18px; }
+        .related a { display: block; padding: 8px 0; color: var(--accent); font-size: 14px; }
+        .share-section { margin-top: 32px; padding-top: 24px; border-top: 1px solid var(--border); text-align: center; }
+        .share-section p { color: var(--text-secondary); font-size: 14px; margin-bottom: 12px; }
+        .share-btn { display: inline-block; background: var(--bg-card); color: var(--text-primary); padding: 8px 20px; border-radius: 8px; font-size: 14px; font-weight: 500; border: 1px solid var(--border); transition: all 0.2s; }
+        .share-btn:hover { background: var(--accent); color: white; border-color: var(--accent); }
+        @media (max-width: 768px) {
+            .content { padding: 100px 20px 60px; }
+            h1 { font-size: 28px; }
+            h2 { font-size: 22px; }
+            .comparison-table { font-size: 12px; }
+            .comparison-table th, .comparison-table td { padding: 8px 10px; }
+        }
+    </style>
+</head>
+<body>
+    <a href="#main" class="skip-link">Skip to content</a>
+    <nav>
+        <div class="nav-inner">
+            <a href="index.html" class="logo">API<span>pulse</span></a>
+            <div class="nav-links">
+                <a href="calculator.html">Calculator</a>
+                <a href="compare.html">Compare</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="use-cases.html">Use Cases</a>
+                <a href="about.html">About</a>
+                <a href="blog.html">Blog</a>
+                <a href="pricing-index.html">Pricing Index</a>
+                <a href="pricing-trends.html">Trends</a>
+                <a href="pricing.html" class="nav-cta" onclick="if(window.trackEvent)window.trackEvent('pro_button_clicked',{source:'nav'})">Get Pro — $29</a>
+                <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
+            </div>
+        </div>
+    </nav>
+
+    <main id="main">
+
+    <div class="content article">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+            <a href="blog.html">Blog</a>
+            <span class="separator">›</span>
+            <span class="current">AI API Free Tiers Compared: What You Can Build for Free</span>
+        </nav>
+        <a href="blog.html" class="back-link">← Back to blog</a>
+        <div class="post-meta">
+            <span class="post-tag">Guide</span>
+            <span>April 25, 2026</span>
+        </div>
+        <h1>AI API Free Tiers Compared: What You Can Build for Free</h1>
+
+        <p>Not ready to commit to paid API access? Every major LLM provider offers some form of free tier — but they vary wildly in what you actually get. Some give you generous daily limits, others offer one-time credits, and a few let you build real products without ever pulling out a credit card.</p>
+
+        <p>Here's a comprehensive breakdown of every major free tier in 2026, what you can realistically build with each, and when you'll hit the ceiling.</p>
+
+        <h2>Free Tier Comparison Table</h2>
+
+        <table class="comparison-table">
+            <thead>
+                <tr>
+                    <th>Provider</th>
+                    <th>Free Model(s)</th>
+                    <th>Free Limit</th>
+                    <th>Rate Limit</th>
+                    <th>Best For</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Google (Gemini)</strong></td>
+                    <td>Gemini 2.0 Flash, Gemini 2.5 Pro</td>
+                    <td class="winner">Unlimited (with rate limits)</td>
+                    <td>15 RPM / 1M TPM</td>
+                    <td>Prototyping, side projects</td>
+                </tr>
+                <tr>
+                    <td><strong>OpenAI</strong></td>
+                    <td>GPT-4o mini, GPT-4o</td>
+                    <td>$5 one-time credit</td>
+                    <td>Varies by tier</td>
+                    <td>Testing, small apps</td>
+                </tr>
+                <tr>
+                    <td><strong>Anthropic</strong></td>
+                    <td>Claude Haiku 3.5, Claude Sonnet 4</td>
+                    <td>$5 one-time credit</td>
+                    <td>Varies by tier</td>
+                    <td>Evaluation, prototyping</td>
+                </tr>
+                <tr>
+                    <td><strong>Mistral</strong></td>
+                    <td>Mistral Small, Mistral Large</td>
+                    <td>$5 one-time credit</td>
+                    <td>Varies by tier</td>
+                    <td>Testing, European compliance</td>
+                </tr>
+                <tr>
+                    <td><strong>Cohere</strong></td>
+                    <td>Command R, Command R+</td>
+                    <td>$5 one-time credit</td>
+                    <td>Varies by tier</td>
+                    <td>RAG, search, classification</td>
+                </tr>
+                <tr>
+                    <td><strong>Together.ai</strong></td>
+                    <td>Llama 3.1 8B/70B, Mixtral</td>
+                    <td>$5 one-time credit</td>
+                    <td>Varies</td>
+                    <td>Open-source models, experimentation</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <p><strong>The winner:</strong> Google's Gemini API offers the most generous free tier — effectively unlimited usage with reasonable rate limits. Everyone else gives you a $5 one-time credit that runs out quickly.</p>
+
+        <h2>Google Gemini: The Best Free Tier</h2>
+
+        <p>Google's free tier is the clear standout. You get access to both Gemini 2.0 Flash and Gemini 2.5 Pro with generous limits:</p>
+
+        <ul>
+            <li><strong>15 requests per minute</strong> — enough for most development and light production use</li>
+            <li><strong>1 million tokens per minute</strong> — handles substantial throughput</li>
+            <li><strong>No monthly cap</strong> — usage doesn't accumulate and expire</li>
+            <li><strong>Both Flash and Pro models</strong> — test with the budget model, upgrade to Pro for complex tasks</li>
+        </ul>
+
+        <div class="cost-box">
+            <h3>What You Can Build Free on Gemini</h3>
+            <div class="cost-row">
+                <span>Chatbot (100 req/day)</span>
+                <span class="cost-total">$0/mo</span>
+            </div>
+            <div class="cost-row">
+                <span>Document summarizer (50 req/day)</span>
+                <span class="cost-total">$0/mo</span>
+            </div>
+            <div class="cost-row">
+                <span>Code assistant (200 req/day)</span>
+                <span class="cost-total">$0/mo</span>
+            </div>
+            <div class="cost-row">
+                <span>Classification service (500 req/day)</span>
+                <span class="cost-total">$0/mo</span>
+            </div>
+        </div>
+
+        <p>With 15 RPM, you can handle up to ~21,600 requests per day. That's enough for a real product with moderate traffic — not just a prototype.</p>
+
+        <h2>OpenAI: $5 Credit (Runs Out Fast)</h2>
+
+        <p>OpenAI gives new accounts a $5 credit. Here's how long it lasts at different usage levels:</p>
+
+        <div class="cost-box">
+            <h3>$5 Credit Lifespan (GPT-4o mini)</h3>
+            <div class="cost-row">
+                <span>10 requests/day (light testing)</span>
+                <span><strong>~55 days</strong></span>
+            </div>
+            <div class="cost-row">
+                <span>100 requests/day (side project)</span>
+                <span><strong>~5.5 days</strong></span>
+            </div>
+            <div class="cost-row">
+                <span>500 requests/day (real product)</span>
+                <span><strong>~1 day</strong></span>
+            </div>
+        </div>
+
+        <p>With GPT-4o ($2.50/$10 per 1M tokens), the $5 credit lasts even shorter. OpenAI's free tier is really just for evaluation — you'll need to pay within a week of any real usage.</p>
+
+        <h2>Anthropic: $5 Credit (Similar Story)</h2>
+
+        <p>Anthropic also offers a $5 starting credit. Claude Haiku 3.5 at $0.80/$4.00 per 1M tokens stretches further than GPT-4o but still runs out quickly:</p>
+
+        <div class="cost-box">
+            <h3>$5 Credit Lifespan (Claude Haiku 3.5)</h3>
+            <div class="cost-row">
+                <span>10 requests/day (light testing)</span>
+                <span><strong>~80 days</strong></span>
+            </div>
+            <div class="cost-row">
+                <span>100 requests/day (side project)</span>
+                <span><strong>~8 days</strong></span>
+            </div>
+            <div class="cost-row">
+                <span>500 requests/day (real product)</span>
+                <span><strong>~1.5 days</strong></span>
+            </div>
+        </div>
+
+        <p>The credit works across all Claude models, so you can test Haiku, Sonnet, and even Opus — but at Opus pricing ($15/$75), the $5 evaporates in minutes.</p>
+
+        <h2>Mistral & Cohere: $5 Credits</h2>
+
+        <p>Both Mistral and Cohere follow the same $5 credit model. The main reasons to use their free tiers:</p>
+
+        <ul>
+            <li><strong>Mistral:</strong> European data sovereignty, competitive pricing, strong multilingual support</li>
+            <li><strong>Cohere:</strong> Best-in-class for RAG and semantic search, purpose-built enterprise features</li>
+        </ul>
+
+        <p>Neither offers a meaningful long-term free tier — these credits are for evaluation only.</p>
+
+        <h2>Together.ai: $5 for Open-Source Models</h2>
+
+        <p>Together.ai gives $5 in free credits to access open-source models like Llama 3.1, Mixtral, and others. The pricing is already low (Llama 3.1 8B at $0.18/$0.18 per 1M tokens), so $5 goes further:</p>
+
+        <div class="cost-box">
+            <h3>$5 Credit Lifespan (Llama 3.1 8B)</h3>
+            <div class="cost-row">
+                <span>100 requests/day</span>
+                <span><strong>~46 days</strong></span>
+            </div>
+            <div class="cost-row">
+                <span>500 requests/day</span>
+                <span><strong>~9 days</strong></span>
+            </div>
+            <div class="cost-row">
+                <span>1,000 requests/day</span>
+                <span><strong>~4.5 days</strong></span>
+            </div>
+        </div>
+
+        <p>Together.ai is the best option if you specifically want to use open-source models without managing your own GPU infrastructure.</p>
+
+        <h2>What Can You Actually Build for Free?</h2>
+
+        <h3>Truly Free (Google Gemini)</h3>
+        <ul>
+            <li><strong>Production chatbot</strong> — 100-500 requests/day, fully functional</li>
+            <li><strong>Content generation tool</strong> — blog drafts, social posts, product descriptions</li>
+            <li><strong>Code review bot</strong> — analyze PRs, suggest improvements</li>
+            <li><strong>Document Q&A system</strong> — internal knowledge base search</li>
+            <li><strong>Classification pipeline</strong> — categorize support tickets, emails, content</li>
+        </ul>
+
+        <h3>Free for Prototyping (OpenAI/Anthropic/Mistral)</h3>
+        <ul>
+            <li><strong>MVP validation</strong> — build and test a concept before committing to paid APIs</li>
+            <li><strong>Hackathon projects</strong> — $5 is plenty for a weekend hackathon</li>
+            <li><strong>Learning and experimentation</strong> — explore different models and prompting techniques</li>
+            <li><strong>Personal tools</strong> — low-usage utilities for yourself</li>
+        </ul>
+
+        <h2>Free Tier Limitations to Watch</h2>
+
+        <p>Free tiers come with trade-offs beyond just usage limits:</p>
+
+        <ul>
+            <li><strong>Rate limits:</strong> Google's 15 RPM means you can't handle traffic spikes</li>
+            <li><strong>No SLA:</strong> Free tiers don't come with uptime guarantees</li>
+            <li><strong>Data training:</strong> Some providers may use free-tier data for model training (check ToS)</li>
+            <li><strong>Feature restrictions:</strong> Some advanced features (function calling, system prompts) may be limited</li>
+            <li><strong>No priority:</strong> Paid users get priority during high-demand periods</li>
+        </ul>
+
+        <h2>When to Upgrade from Free</h2>
+
+        <p>You should move to a paid plan when:</p>
+
+        <ol>
+            <li><strong>You exceed rate limits</strong> — Google's 15 RPM becomes a bottleneck</li>
+            <li><strong>You need reliability</strong> — production apps need SLAs and consistent performance</li>
+            <li><strong>You need advanced features</strong> — fine-tuning, higher context windows, batch processing</li>
+            <li><strong>Your $5 credit runs out</strong> — obvious but worth stating</li>
+            <li><strong>You're making money</strong> — if your app generates revenue, invest in reliable API access</li>
+        </ol>
+
+        <div class="cta-inline">
+            <p><strong>Ready to estimate paid costs?</strong> Use our calculator to see exactly what your usage would cost across all providers.</p>
+            <a href="calculator.html" class="btn-primary">Try the APIpulse Calculator</a>
+            <span style="margin: 0 12px; color: var(--text-muted);">or</span>
+            <a href="compare.html" class="btn-primary" style="background:var(--bg-card);color:var(--text-primary);border:1px solid var(--border);">Compare Models Side-by-Side</a>
+        </div>
+
+        <div class="related">
+            <h3>Related Reading</h3>
+            <a href="blog-cheapest-chatbot.html">The Cheapest Way to Build an AI Chatbot in 2026</a>
+            <a href="blog-cheapest-llm.html">The Cheapest LLM APIs in 2026: A Complete Ranking</a>
+            <a href="blog-pricing-cheat-sheet.html">LLM API Pricing Cheat Sheet: Every Model, Every Provider</a>
+        </div>
+
+        <div class="share-section">
+            <p>Found this useful? Share it:</p>
+            <a href="https://twitter.com/intent/tweet?text=AI+API+Free+Tiers+Compared%3A+What+You+Can+Build+for+Free&url=https%3A%2F%2Fgetapipulse.com%2Fblog-free-tiers.html" target="_blank" rel="noopener" class="share-btn">Share on X</a>
+        </div>
+    </div>
+
+    <button class="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">↑</button>
+
+    </main>
+
+    <footer>
+        <p>Pricing data last verified: <span class="verified-date"></span></p>
+        <p>&copy; 2026 APIpulse. <a href="index.html">Home</a> &middot; <a href="use-cases.html">Use Cases</a> &middot; <a href="about.html">About</a> &middot; <a href="blog.html">Blog</a> &middot; <a href="pricing-index.html">Pricing Index</a> &middot; <a href="pricing.html">Pricing</a></p>
+    </footer>
+
+</body>
+</html>

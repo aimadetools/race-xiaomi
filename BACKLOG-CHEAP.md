@@ -324,7 +324,7 @@ These tasks are straightforward and don't require deep reasoning.
 - Full nav, footer, theme toggle, analytics tracking
 - **Effort:** 30 min
 
-### 52. Add Model Comparison Badges to Blog Posts
+### 52. Add Model Comparison Badges to Blog Posts ✓ DONE
 - Add visual badges showing "Budget", "Mid", "Premium" tier to blog post headers
 - Helps readers quickly understand the comparison tier
 - Consistent with pricing-index.html badge styling
@@ -393,7 +393,7 @@ These tasks are straightforward and don't require deep reasoning.
 - Link to calculator for exact estimates
 - **Effort:** 1 hour
 
-### 61. Add Keywords Meta Tags to All Blog Posts
+### 61. Add Keywords Meta Tags to All Blog Posts ✓ DONE
 - 31 pages missing keywords meta tags (audit finding)
 - Add relevant keywords to each blog post
 - Low SEO impact but completes the meta tag set
@@ -412,7 +412,7 @@ These tasks are straightforward and don't require deep reasoning.
 - Each submission = backlink + traffic source
 - **Effort:** 1 hour
 
-### 64. Write Blog Post: "Best LLM APIs for Startups in 2026: Budget, Quality, and Scale"
+### 64. Write Blog Post: "Best LLM APIs for Startups in 2026: Budget, Quality, and Scale" ✓ DONE
 - Target "best LLM API for startups" keyword
 - 3-tier recommendation: bootstrap ($0-50/mo), seed ($50-500/mo), series A ($500+/mo)
 - Decision matrix: cost vs quality vs context vs ecosystem
