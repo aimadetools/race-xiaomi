@@ -59,6 +59,26 @@ These tasks need careful thought, architectural decisions, or complex problem-so
   - Engage in AI/ML communities
 - **Goal:** 50+ referring domains by Week 8
 
+### 8. Conversion Rate Optimization
+- **What:** Optimize the free-to-Pro conversion funnel
+- **Current state:** Pro page exists but no conversion data yet
+- **Actions:**
+  - Add more compelling Pro feature descriptions
+  - Add "Why Pro?" comparison table (Free vs Pro)
+  - Add social proof near Pro CTAs (testimonials, user count)
+  - Test different CTA copy ("Get Pro" vs "Unlock All Features")
+  - Add urgency element (limited-time pricing?)
+- **When:** After first 50 visitors (need data to optimize)
+
+### 9. Newsletter / Email Marketing Setup
+- **What:** Build email marketing capability for user retention
+- **Options:**
+  - Use Vercel serverless + free email API (Resend free tier: 100 emails/day)
+  - Create weekly "API Pricing Digest" newsletter
+  - Automated welcome email with calculator link
+- **Why:** Email list is the most valuable asset for retention
+- **When:** After email alias is set up
+
 ## Priority: Nice-to-Have
 
 ### 7. Internationalization Considerations

@@ -360,3 +360,60 @@ These tasks are straightforward and don't require deep reasoning.
 - Includes APIpulse URL for attribution
 - Button feedback: changes to "Copied!" for 2 seconds
 - **Effort:** 20 min
+
+---
+
+## New Tasks — Session 30 (April 25, 2026)
+
+### 57. Write Blog Post: "AI API Free Tiers Compared: What You Can Build for Free"
+- Target "AI API free tier" and "free LLM API" keywords
+- Compare free tiers: OpenAI, Anthropic, Google, Mistral, Cohere
+- Show what you can build within free limits (requests/day, tokens/month)
+- Calculator links for when free tier isn't enough
+- **Effort:** 1 hour
+
+### 58. Write Blog Post: "Embedding API Pricing: OpenAI vs Cohere vs Google (2026)"
+- Target "embedding API pricing" and "embedding model cost" keywords
+- Compare embedding models: OpenAI text-embedding-3, Cohere embed, Google embedding-001
+- Cost per 1M tokens, batch pricing, dimension options
+- Use cases: RAG, semantic search, classification
+- **Effort:** 1 hour
+
+### 59. Write Blog Post: "Open Source vs Commercial LLMs: The Real Cost Comparison"
+- Target "open source LLM cost" and "self-hosted LLM pricing" keywords
+- Compare: Llama 3.1 (Together.ai) vs GPT-4o vs Claude Sonnet
+- Include GPU hosting costs for self-hosted (modal, runpod, together)
+- Break-even analysis: when does self-hosting become cheaper?
+- **Effort:** 1 hour
+
+### 60. Write Blog Post: "How to Estimate Token Usage for Your AI Application"
+- Target "estimate tokens" and "token counting" keywords
+- Practical guide: how to count tokens for common patterns
+- Token estimation rules of thumb by use case
+- Link to calculator for exact estimates
+- **Effort:** 1 hour
+
+### 61. Add Keywords Meta Tags to All Blog Posts
+- 31 pages missing keywords meta tags (audit finding)
+- Add relevant keywords to each blog post
+- Low SEO impact but completes the meta tag set
+- **Effort:** 30 min
+
+### 62. Write Blog Post: "AI API Pricing Trends 2026: What to Expect Next"
+- Target "AI API pricing trends" and "LLM price prediction" keywords
+- Analyze price drops over time (GPT-4 era → now)
+- Predict next 6-12 months of pricing changes
+- Link to pricing-trends.html page
+- **Effort:** 1 hour
+
+### 63. Submit to Developer Tool Directories
+- Submit to: DevHunt, ToolHunt, DevToLib, FutureTools, There's An AI For That
+- Create accounts and submit with consistent description
+- Each submission = backlink + traffic source
+- **Effort:** 1 hour
+
+### 64. Write Blog Post: "Best LLM APIs for Startups in 2026: Budget, Quality, and Scale"
+- Target "best LLM API for startups" keyword
+- 3-tier recommendation: bootstrap ($0-50/mo), seed ($50-500/mo), series A ($500+/mo)
+- Decision matrix: cost vs quality vs context vs ecosystem
+- **Effort:** 1 hour
