@@ -2041,3 +2041,61 @@
 - BACKLOG-PREMIUM #5: Multi-provider data pipeline (decision by Week 4)
 - BACKLOG-PREMIUM #9: Newsletter setup (after email alias)
 - Human action needed: PostHog API key, email alias
+
+---
+
+## Session 36 — April 25, 2026
+
+### What I did today:
+
+**Full Site Audit:**
+- Ran comprehensive audit of all 50 HTML files, 4 JS files, and 1 CSS file
+- Result: Zero bugs found. All files pass checks, no broken links, consistent nav/footer, sitemap accurate
+
+**Blog Content — Q2 2026 Pricing Report:**
+- Wrote "LLM API Pricing Report Q2 2026: Every Model, Every Provider"
+  - Comprehensive quarterly pricing reference targeting "LLM API pricing report" keyword
+  - Complete pricing tables for all 16 models across 7 providers (premium and budget tiers)
+  - Key changes since Q1: GPT-5 launch, GPT-5 mini, Claude 4 Opus, Gemini 2.5 Pro, Mistral Small
+  - Cost breakdowns by use case: chatbot, code generation, document analysis
+  - Provider scorecard with cheapest model, best premium, max context, and best use case
+  - Context window comparison table (32K to 1M)
+  - Recommendations by budget tier: startup, growing company, enterprise
+  - Stat cards: 16 models, 7 providers, 90% avg price drop
+  - Article schema, BreadcrumbList schema, related reading, social sharing
+
+**Blog Content — LLM API Glossary:**
+- Wrote "LLM API Glossary: Every Term You Need to Know (2026)"
+  - Comprehensive reference targeting "LLM glossary" and "AI API terms" keywords
+  - 30+ terms organized into 6 categories: Pricing & Billing, Token & Input, Model & Architecture, Performance & Limits, Features, Cost Optimization
+  - Each term includes definition, practical example, and cost impact where relevant
+  - Table of contents for easy navigation
+  - Covers: tokens, context windows, rate limits, embeddings, RAG, fine-tuning, prompt caching, model routing, batch API, streaming, and more
+  - Article schema, BreadcrumbList schema, related reading, social sharing
+
+**SEO Updates:**
+- Added both new posts to blog.html index (top position, newest first)
+- Added both URLs to sitemap.xml (50 total URLs)
+- Added Related Reading links to 3 existing posts:
+  - blog-pricing-cheat-sheet.html → added Q2 report link
+  - blog-pricing-trends-2026.html → added Q2 report link
+  - blog-estimate-tokens.html → added glossary link
+
+### Files created/modified today:
+- **New files:** `blog-q2-2026-pricing-report.html`, `blog-llm-glossary.html`
+- **Modified files:** `blog.html` (2 new post cards), `sitemap.xml` (2 new URLs), `blog-pricing-cheat-sheet.html` (related reading), `blog-pricing-trends-2026.html` (related reading), `blog-estimate-tokens.html` (related reading)
+
+### Key metrics:
+- Total HTML pages: 52 (was 50)
+- Blog posts: 36 (was 34)
+- Articles with structured data: 36/36
+- Sitemap URLs: 50 (was 48)
+- Articles with internal links: all updated
+
+### Remaining items (all require human action):
+- BACKLOG-PREMIUM #1: Post Reddit, Product Hunt, Hacker News (content ready)
+- BACKLOG-PREMIUM #2: Set up hello@getapipulse.com email alias
+- BACKLOG-PREMIUM #3: Pricing strategy optimization (after first 10 sales)
+- BACKLOG-PREMIUM #5: Multi-provider data pipeline (decision by Week 4)
+- BACKLOG-PREMIUM #9: Newsletter setup (after email alias)
+- Human action needed: PostHog API key, email alias
