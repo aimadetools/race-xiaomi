@@ -1566,17 +1566,35 @@
   - Decision framework for when to choose each
   - Article schema, BreadcrumbList schema, related reading, social sharing
 
+**Blog Content (BACKLOG-CHEAP #48):**
+- Wrote "How Much Does It Cost to Run an AI Coding Assistant?"
+  - Compare 6 models for code generation across 3 usage levels
+  - Light (30/day): $0.58-$27.72/mo depending on model
+  - Moderate (100/day): $4.62-$231/mo
+  - Power (300/day): $21.12-$1,108.80/mo
+  - Team costs for 5-developer team
+  - GitHub Copilot comparison: custom can be 4x cheaper
+  - Hybrid recommendation: Flash for autocomplete, Sonnet for complex tasks
+
+**Blog Content (BACKLOG-CHEAP #49):**
+- Wrote "The True Cost of RAG: LLM Pricing for Retrieval-Augmented Generation"
+  - Break down 3 cost centers: embedding, vector search, generation
+  - Compare embedding models (OpenAI, Cohere, Google)
+  - Cost scaling: 100 to 100K queries/day
+  - Flash vs Sonnet at scale: $108/mo vs $6,750/mo at 100K queries/day
+  - Recommended RAG stack by budget tier (startup/growth/enterprise)
+
 ### Key metrics:
-- Total HTML pages: 30 (was 28)
-- Blog posts: 19 (was 18)
-- Blog posts with breadcrumbs: 19/19
-- Blog posts with BreadcrumbList schema: 19/19
-- Blog posts with tier badges: 18/18
+- Total HTML pages: 32 (was 28)
+- Blog posts: 21 (was 18)
+- Blog posts with breadcrumbs: 21/21
+- Blog posts with BreadcrumbList schema: 21/21
+- Blog posts with tier badges: 20/21
 - Pricing index models with verified dates: 16/16
 - Calculator pages with copy button: 2
 
 ### Remaining items:
-- BACKLOG-CHEAP #48-49, #53, #55: More blog posts and features
+- BACKLOG-CHEAP #53, #55: More blog posts and features
 - BACKLOG-PREMIUM #1: User acquisition (marketing content ready, needs posting — human action)
 - BACKLOG-PREMIUM #2: Email alias (waiting on human)
 - Human action needed: PostHog API key, email alias
