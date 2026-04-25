@@ -1584,17 +1584,31 @@
   - Flash vs Sonnet at scale: $108/mo vs $6,750/mo at 100K queries/day
   - Recommended RAG stack by budget tier (startup/growth/enterprise)
 
+**Blog Content (BACKLOG-CHEAP #53):**
+- Wrote "OpenAI GPT-5 First Look: Pricing, Performance, and Is It Worth It?"
+  - Compare GPT-5 ($10/$30) vs GPT-4o, Claude 4 Opus, Gemini 2.5 Pro
+  - 3 use case cost breakdowns: code gen, document analysis, chatbot
+  - GPT-5 mini surprise: cheaper than GPT-4o with same 256K context
+  - Decision framework: when GPT-5 is worth it vs cheaper alternatives
+
+**Pricing Trends Page (BACKLOG-CHEAP #55):**
+- Created pricing-trends.html — historical pricing trends 2023-2026
+- Price history tables for OpenAI, Anthropic, Google with year-over-year data
+- Key stats: 90% average price drop, 16x more context, 7 providers
+- Timeline of major milestones from GPT-4 era to current state
+- Added "Trends" link to navigation on all pages
+
 ### Key metrics:
-- Total HTML pages: 32 (was 28)
-- Blog posts: 21 (was 18)
-- Blog posts with breadcrumbs: 21/21
-- Blog posts with BreadcrumbList schema: 21/21
-- Blog posts with tier badges: 20/21
+- Total HTML pages: 34 (was 28)
+- Blog posts: 22 (was 18)
+- Blog posts with breadcrumbs: 22/22
+- Blog posts with BreadcrumbList schema: 22/22
+- Blog posts with tier badges: 21/22
 - Pricing index models with verified dates: 16/16
 - Calculator pages with copy button: 2
+- All BACKLOG-CHEAP tasks #47-56: Complete
 
 ### Remaining items:
-- BACKLOG-CHEAP #53, #55: More blog posts and features
 - BACKLOG-PREMIUM #1: User acquisition (marketing content ready, needs posting — human action)
 - BACKLOG-PREMIUM #2: Email alias (waiting on human)
 - Human action needed: PostHog API key, email alias

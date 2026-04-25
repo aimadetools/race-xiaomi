@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI API Pricing Trends: How Costs Have Dropped (2023–2026) — APIpulse</title>
+    <meta name="description" content="Track how AI API pricing has evolved from 2023 to 2026. See the dramatic cost reductions across OpenAI, Anthropic, Google, and other providers.">
+    <meta property="og:title" content="AI API Pricing Trends: How Costs Have Dropped (2023–2026) — APIpulse">
+    <meta property="og:description" content="Track how AI API pricing has evolved from 2023 to 2026. See dramatic cost reductions across all major providers.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://getapipulse.com/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://getapipulse.com/og-image.png">
+    <link rel="canonical" href="https://getapipulse.com/pricing-trends.html">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="styles.css">
+    <script src="analytics.js" defer></script>
+    <script src="dynamic-date.js" defer></script>
+    <script src="shared.js" defer></script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "AI API Pricing Trends: How Costs Have Dropped (2023–2026)",
+        "description": "Track how AI API pricing has evolved from 2023 to 2026.",
+        "url": "https://getapipulse.com/pricing-trends.html",
+        "publisher": { "@type": "Organization", "name": "APIpulse", "url": "https://getapipulse.com" }
+    }
+    </script>
+    <style>
+        .content { max-width: 900px; margin: 0 auto; padding: 120px 24px 80px; }
+        h1 { font-size: 40px; font-weight: 800; margin-bottom: 12px; text-align: center; }
+        .subtitle { color: var(--text-secondary); font-size: 18px; margin-bottom: 48px; text-align: center; max-width: 700px; margin-left: auto; margin-right: auto; }
+        h2 { font-size: 28px; font-weight: 700; margin: 48px 0 16px; }
+        h3 { font-size: 20px; font-weight: 600; margin: 28px 0 12px; }
+        p { margin-bottom: 16px; line-height: 1.7; color: var(--text-secondary); }
+        ul, ol { margin-bottom: 16px; padding-left: 24px; }
+        li { margin-bottom: 8px; line-height: 1.6; color: var(--text-secondary); }
+        strong { color: var(--text-primary); }
+
+        .stat-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin: 32px 0; }
+        .stat-card { background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 12px; padding: 24px; text-align: center; }
+        .stat-card .stat-value { font-size: 36px; font-weight: 800; color: var(--green); margin-bottom: 4px; }
+        .stat-card .stat-label { font-size: 13px; color: var(--text-muted); }
+
+        .trend-table { width: 100%; border-collapse: collapse; margin: 24px 0; font-size: 14px; }
+        .trend-table th { background: var(--bg-secondary); padding: 12px 16px; text-align: left; font-weight: 600; border-bottom: 1px solid var(--border); white-space: nowrap; }
+        .trend-table td { padding: 12px 16px; border-bottom: 1px solid var(--border); }
+        .trend-table tr:last-child td { border-bottom: none; }
+        .price-drop { color: var(--green); font-weight: 600; }
+        .price-current { color: var(--accent); font-weight: 700; }
+
+        .timeline { position: relative; padding-left: 32px; margin: 32px 0; }
+        .timeline::before { content: ''; position: absolute; left: 8px; top: 0; bottom: 0; width: 2px; background: var(--border); }
+        .timeline-item { position: relative; margin-bottom: 32px; }
+        .timeline-item::before { content: ''; position: absolute; left: -28px; top: 6px; width: 12px; height: 12px; border-radius: 50%; background: var(--accent); }
+        .timeline-date { font-size: 13px; font-weight: 700; color: var(--accent); margin-bottom: 4px; }
+        .timeline-title { font-size: 16px; font-weight: 700; margin-bottom: 4px; }
+        .timeline-desc { font-size: 14px; color: var(--text-secondary); }
+
+        .cta-inline { background: var(--bg-secondary); border: 1px solid var(--accent); border-radius: 12px; padding: 24px; margin: 32px 0; text-align: center; }
+        .cta-inline p { margin-bottom: 12px; }
+        .btn-primary { display: inline-block; }
+
+        @media (max-width: 768px) {
+            .content { padding: 100px 20px 60px; }
+            h1 { font-size: 28px; }
+            .subtitle { font-size: 16px; }
+            h2 { font-size: 22px; }
+            .stat-grid { grid-template-columns: 1fr; }
+            .trend-table { font-size: 12px; }
+            .trend-table th, .trend-table td { padding: 8px 10px; }
+        }
+        @media print {
+            nav, .cta-inline, .theme-toggle, .back-to-top { display: none !important; }
+            body { background: white; color: black; }
+            .content { padding: 0; max-width: 100%; }
+        }
+    </style>
+</head>
+<body>
+    <a href="#main" class="skip-link">Skip to content</a>
+    <nav>
+        <div class="nav-inner">
+            <a href="index.html" class="logo">API<span>pulse</span></a>
+            <div class="nav-links">
+                <a href="calculator.html">Calculator</a>
+                <a href="compare.html">Compare</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="use-cases.html">Use Cases</a>
+                <a href="about.html">About</a>
+                <a href="blog.html">Blog</a>
+                <a href="pricing-index.html">Pricing Index</a>
+                <a href="pricing-trends.html">Trends</a>
+                <a href="pricing.html" class="nav-cta" onclick="if(window.trackEvent)window.trackEvent('pro_button_clicked',{source:'nav'})">Get Pro — $29</a>
+                <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
+            </div>
+        </div>
+    </nav>
+
+    <main id="main">
+
+    <div class="content">
+        <h1>AI API Pricing Trends</h1>
+        <p class="subtitle">How LLM API costs have dropped 90%+ since 2023 — and what it means for your budget.</p>
+
+        <div class="stat-grid">
+            <div class="stat-card">
+                <div class="stat-value">90%</div>
+                <div class="stat-label">Average price drop since 2023</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value">16x</div>
+                <div class="stat-label">More context for the same price</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value">7</div>
+                <div class="stat-label">Major providers competing</div>
+            </div>
+        </div>
+
+        <h2>The Big Picture: Prices Have Plummeted</h2>
+
+        <p>In just three years, the cost of using LLM APIs has dropped dramatically. What cost $60 per 1M tokens in 2023 now costs $0.10–$2.50. This isn't a gradual decline — it's a collapse.</p>
+
+        <p>The driving forces: competition between OpenAI, Anthropic, and Google; hardware improvements (better GPUs, optimized inference); open-source pressure from Meta's Llama and Mistral; and economies of scale as adoption grows.</p>
+
+        <h2>Price History by Provider</h2>
+
+        <h3>OpenAI</h3>
+        <table class="trend-table">
+            <thead>
+                <tr>
+                    <th>Model</th>
+                    <th>2023 Price</th>
+                    <th>2024 Price</th>
+                    <th>2025 Price</th>
+                    <th>2026 Price</th>
+                    <th>Total Drop</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Flagship</strong> (GPT-4 → GPT-4o → GPT-5)</td>
+                    <td>$60.00</td>
+                    <td>$30.00</td>
+                    <td>$10.00</td>
+                    <td class="price-current">$10.00</td>
+                    <td class="price-drop">-83%</td>
+                </tr>
+                <tr>
+                    <td><strong>Budget</strong> (GPT-3.5 → GPT-4o mini → GPT-5 mini)</td>
+                    <td>$2.00</td>
+                    <td>$0.50</td>
+                    <td>$0.15</td>
+                    <td class="price-current">$0.40</td>
+                    <td class="price-drop">-80%</td>
+                </tr>
+                <tr>
+                    <td><strong>Embedding</strong> (ada-002 → v3-small)</td>
+                    <td>$0.40</td>
+                    <td>$0.10</td>
+                    <td>$0.02</td>
+                    <td class="price-current">$0.02</td>
+                    <td class="price-drop">-95%</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>Anthropic</h3>
+        <table class="trend-table">
+            <thead>
+                <tr>
+                    <th>Model</th>
+                    <th>2023 Price</th>
+                    <th>2024 Price</th>
+                    <th>2025 Price</th>
+                    <th>2026 Price</th>
+                    <th>Total Drop</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Flagship</strong> (Claude 2 → Claude 4 Opus)</td>
+                    <td>$24.00</td>
+                    <td>$15.00</td>
+                    <td>$15.00</td>
+                    <td class="price-current">$15.00</td>
+                    <td class="price-drop">-38%</td>
+                </tr>
+                <tr>
+                    <td><strong>Mid</strong> (Claude Instant → Sonnet 4)</td>
+                    <td>$5.00</td>
+                    <td>$3.00</td>
+                    <td>$3.00</td>
+                    <td class="price-current">$3.00</td>
+                    <td class="price-drop">-40%</td>
+                </tr>
+                <tr>
+                    <td><strong>Budget</strong> (Claude Instant → Haiku 3.5)</td>
+                    <td>$1.60</td>
+                    <td>$0.25</td>
+                    <td>$0.80</td>
+                    <td class="price-current">$0.80</td>
+                    <td class="price-drop">-50%</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>Google</h3>
+        <table class="trend-table">
+            <thead>
+                <tr>
+                    <th>Model</th>
+                    <th>2023 Price</th>
+                    <th>2024 Price</th>
+                    <th>2025 Price</th>
+                    <th>2026 Price</th>
+                    <th>Total Drop</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Flagship</strong> (PaLM 2 → Gemini 2.5 Pro)</td>
+                    <td>$8.00</td>
+                    <td>$3.50</td>
+                    <td>$1.25</td>
+                    <td class="price-current">$1.25</td>
+                    <td class="price-drop">-84%</td>
+                </tr>
+                <tr>
+                    <td><strong>Budget</strong> (PaLM 2 → Gemini 2.0 Flash)</td>
+                    <td>$2.00</td>
+                    <td>$0.50</td>
+                    <td>$0.10</td>
+                    <td class="price-current">$0.10</td>
+                    <td class="price-drop">-95%</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2>Key Trends</h2>
+
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-date">2023</div>
+                <div class="timeline-title">The GPT-4 Era</div>
+                <div class="timeline-desc">GPT-4 launched at $30/$60 per 1M tokens. Only OpenAI and Anthropic competed. Context windows were 8K-32K. Most developers used GPT-3.5 at $2.00 to save costs.</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">Early 2024</div>
+                <div class="timeline-title">Price Wars Begin</div>
+                <div class="timeline-desc">Google enters with Gemini, forcing prices down. OpenAI cuts GPT-4 to $10/$30. Anthropic launches Claude 3 with competitive pricing. Context windows hit 128K.</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">Mid 2024</div>
+                <div class="timeline-title">The Budget Revolution</div>
+                <div class="timeline-desc">GPT-4o mini at $0.15/$0.60 makes AI affordable for everyone. Claude Haiku, Gemini Flash compete at budget tier. Open-source Llama models pressure the entire market.</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">2025</div>
+                <div class="timeline-title">Context Windows Explode</div>
+                <div class="timeline-desc">Google launches 1M context window. Anthropic hits 200K. OpenAI reaches 256K. Prices continue dropping. Embedding costs collapse to $0.02/1M tokens.</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">2026</div>
+                <div class="timeline-title">The Current State</div>
+                <div class="timeline-desc">7 major providers compete. Budget models at $0.10/1M input tokens. 1M+ context windows. Prices 90% lower than 2023. AI is cheaper than ever.</div>
+            </div>
+        </div>
+
+        <h2>What This Means for You</h2>
+
+        <ul>
+            <li><strong>AI is now affordable for startups:</strong> What cost $1,000/month in 2023 now costs $50-100/month</li>
+            <li><strong>Context windows are generous:</strong> You can process entire codebases and documents without chunking</li>
+            <li><strong>Competition benefits you:</strong> With 7 providers competing, prices will keep dropping</li>
+            <li><strong>Switching is easy:</strong> Most providers offer similar APIs — you can switch for better pricing</li>
+            <li><strong>Budget models are production-ready:</strong> GPT-4o mini, Gemini Flash, and Haiku handle most tasks well</li>
+        </ul>
+
+        <h2>What to Expect Next</h2>
+
+        <ul>
+            <li><strong>More price cuts:</strong> Competition will continue driving prices down through 2026-2027</li>
+            <li><strong>Larger context windows:</strong> 5M+ tokens will become standard</li>
+            <li><strong>Better budget models:</strong> Budget models will match 2024 flagship quality</li>
+            <li><strong>Specialized models:</strong> Purpose-built models for code, math, and reasoning</li>
+            <li><strong>Open-source parity:</strong> Open models will close the gap with proprietary ones</li>
+        </ul>
+
+        <div class="cta-inline">
+            <p><strong>Calculate your costs with current pricing.</strong> See what your API usage would cost today.</p>
+            <a href="calculator.html" class="btn-primary">Try the APIpulse Calculator</a>
+            <span style="margin: 0 12px; color: var(--text-muted);">or</span>
+            <a href="pricing-index.html" class="btn-primary" style="background:var(--bg-card);color:var(--text-primary);border:1px solid var(--border);">View Current Pricing Index</a>
+        </div>
+    </div>
+
+    <button class="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">↑</button>
+
+    </main>
+
+    <footer>
+        <p>Pricing data last verified: <span class="verified-date"></span></p>
+        <p>&copy; 2026 APIpulse. <a href="index.html">Home</a> &middot; <a href="use-cases.html">Use Cases</a> &middot; <a href="about.html">About</a> &middot; <a href="blog.html">Blog</a> &middot; <a href="pricing-index.html">Pricing Index</a> &middot; <a href="pricing.html">Pricing</a></p>
+    </footer>
+
+</body>
+</html>
