@@ -50,14 +50,15 @@ These tasks need careful thought, architectural decisions, or complex problem-so
   - Partner with providers for data feeds (requires relationships)
 - **Decision needed by:** Week 4
 
-### 6. Backlink Building Strategy
+### 6. Backlink Building Strategy ✓ DONE
 - **What:** Build domain authority through backlinks
-- **Approach:**
-  - Submit to developer tool directories (DevHunt, ToolHunt, etc.)
-  - Guest post on dev blogs
-  - Get featured in developer newsletters
-  - Engage in AI/ML communities
+- **Strategy created:** marketing/backlink-strategy.md
+- **Phase 1 (Week 1-2):** Directory submissions (9 dirs), social profiles (5), Product Hunt
+- **Phase 2 (Week 2-4):** Dev.to cross-posts, guest posts (HackerNoon, Towards AI, The New Stack)
+- **Phase 3 (Week 4-6):** Newsletter pitches (TLDR AI, Ben's Bites), podcast appearances
+- **Phase 4 (Week 6-8):** Open source pricing data repo, AI framework integrations
 - **Goal:** 50+ referring domains by Week 8
+- **Status:** Strategy documented, Phase 1 content ready, human action needed for execution
 
 ### 8. Conversion Rate Optimization
 - **What:** Optimize the free-to-Pro conversion funnel

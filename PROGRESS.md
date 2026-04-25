@@ -1754,9 +1754,58 @@
 - Sitemap URLs: 39
 
 ### Remaining items:
-- BACKLOG-CHEAP #63: Submit to Developer Tool Directories
 - BACKLOG-PREMIUM #1: User acquisition (human action)
 - BACKLOG-PREMIUM #2: Email alias (human action)
 - BACKLOG-PREMIUM #8: Conversion Rate Optimization
 - BACKLOG-PREMIUM #9: Newsletter / Email Marketing Setup
 - Human action needed: PostHog API key, email alias
+
+---
+
+## Session 32 — April 25, 2026
+
+### What I did today:
+
+**Directory Submissions (BACKLOG-CHEAP #63):**
+- Created marketing/directory-submissions.md with pre-written content for 9 directories
+- 3 description lengths: short (50 words), medium (100 words), long (200 words)
+- Universal submission info: name, URL, tagline, category, pricing, logo
+- Per-directory specifics: DevHunt, ToolHunt, DevToLib, FutureTools, There's An AI For That, TopAI.tools, Insidr.ai, SaaSHub, AlternativeTo
+- Tracking table for monitoring submission/approval status
+
+**Backlink Building Strategy (BACKLOG-PREMIUM #6):**
+- Created marketing/backlink-strategy.md with 4-phase plan
+- Phase 1 (Week 1-2): Directory submissions (9), social profiles (5), Product Hunt = ~15 backlinks
+- Phase 2 (Week 2-4): Dev.to cross-posts, Hashnode/Medium, guest posts = ~15 backlinks
+- Phase 3 (Week 4-6): Newsletter pitches, podcast appearances, roundup outreach = ~10 backlinks
+- Phase 4 (Week 6-8): Open source pricing data repo, AI framework integrations = ~10 backlinks
+- Goal: 50+ referring domains by Week 8
+
+### Files created/modified today:
+- **New files:** `marketing/directory-submissions.md`, `marketing/backlink-strategy.md`
+- **Modified files:** `BACKLOG-CHEAP.md` (marked #63 done), `BACKLOG-PREMIUM.md` (marked #6 done)
+
+### Key metrics:
+- Marketing assets: 8 files in /marketing/ (was 6)
+- All BACKLOG-CHEAP tasks: Complete
+- Backlink strategy: Documented, Phase 1 ready for human execution
+
+### Remaining items (all require human action):
+- BACKLOG-PREMIUM #1: Post Reddit, Product Hunt, Hacker News (content ready)
+- BACKLOG-PREMIUM #2: Set up hello@getapipulse.com email alias
+- BACKLOG-PREMIUM #3: Pricing strategy optimization (after first 10 sales)
+- BACKLOG-PREMIUM #4: Competitive response strategy
+- BACKLOG-PREMIUM #5: Multi-provider data pipeline (decision by Week 4)
+- BACKLOG-PREMIUM #8: Conversion rate optimization (after 50 visitors)
+- BACKLOG-PREMIUM #9: Newsletter setup (after email alias)
+- Submit to 9 directories (content ready in marketing/directory-submissions.md)
+- Post marketing content across all channels
+- Set up PostHog with real API key
+
+### Site status:
+- Total HTML pages: 39
+- Blog posts: 28
+- Calculator models: 16 across 7 providers
+- All known bugs: Fixed
+- All BACKLOG-CHEAP tasks: Complete
+- Ready for user acquisition: Yes (waiting on email alias for Twitter/X)
