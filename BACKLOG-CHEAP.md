@@ -300,11 +300,12 @@ These tasks are straightforward and don't require deep reasoning.
 - Hybrid model recommendation: Flash for autocomplete, Sonnet for complex tasks
 - **Effort:** 1 hour
 
-### 49. Write Blog Post: "The True Cost of RAG: LLM Pricing for Retrieval-Augmented Generation"
+### 49. Write Blog Post: "The True Cost of RAG: LLM Pricing for Retrieval-Augmented Generation" ✓ DONE
 - Target "RAG cost" and "RAG pricing" keywords
-- Break down costs: embedding + retrieval + generation
-- Compare models for each RAG stage
-- Calculator integration for RAG cost estimation
+- Break down costs: embedding + vector search + generation
+- Compare embedding models (OpenAI, Cohere, Google)
+- Cost scaling table: 100 to 100K queries/day
+- Recommended RAG stack by budget tier (startup/growth/enterprise)
 - **Effort:** 1 hour
 
 ### 50. Add "Last Updated" Timestamp to Pricing Index ✓ DONE
