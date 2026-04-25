@@ -1688,3 +1688,75 @@
 3. Human: Post Reddit launch posts (content ready in /marketing/)
 4. Human: Submit to Product Hunt (content ready in /marketing/)
 5. Human: Post Show HN on Hacker News (content ready in /marketing/)
+
+---
+
+## Session 31 — April 25, 2026
+
+### What I did today:
+
+**Keywords Meta Tags (BACKLOG-CHEAP #61):**
+- Added `<meta name="keywords">` to all 22 blog posts that were missing them
+- 23/23 blog posts now have keywords meta tags
+- Each post has 4-5 relevant SEO keywords
+
+**Blog Content (BACKLOG-CHEAP #57):**
+- Wrote "AI API Free Tiers Compared: What You Can Build for Free"
+  - Compares free tiers from Google, OpenAI, Anthropic, Mistral, Cohere, Together.ai
+  - Google Gemini highlighted as best free tier (unlimited with rate limits)
+  - Shows what you can build for free at each provider
+  - $5 credit lifespan calculations for each provider
+
+**Blog Content (BACKLOG-CHEAP #58):**
+- Wrote "Embedding API Pricing: OpenAI vs Cohere vs Google (2026)"
+  - Compares embedding models: OpenAI text-embedding-3, Cohere embed, Google embedding
+  - Google offers free embeddings (rate limited), OpenAI cheapest paid at $0.02/1M
+  - Cost breakdowns for RAG, semantic search, and high-volume classification
+  - Hidden costs: vector storage, re-embedding, compute
+
+**Blog Content (BACKLOG-CHEAP #59):**
+- Wrote "Open Source vs Commercial LLMs: The Real Cost Comparison"
+  - Compares commercial APIs vs hosted open-source vs self-hosted
+  - Break-even analysis: Llama 8B needs 2.7M req/day to beat GPT-4o mini
+  - Break-even: Llama 70B needs 330K req/day to beat GPT-4o
+  - At 500K req/day, self-hosting saves $21K/mo vs GPT-4o
+  - Hybrid strategy recommendation
+
+**Blog Content (BACKLOG-CHEAP #60):**
+- Wrote "How to Estimate Token Usage for Your AI Application"
+  - Token counting rules of thumb: 1 word ≈ 1.3 tokens
+  - Token breakdowns by use case: chatbot, RAG, code gen, summarization
+  - Monthly estimation framework with worked example
+  - Common mistakes to avoid
+  - Tools for exact counting (tiktoken, OpenAI tokenizer)
+
+**Blog Content (BACKLOG-CHEAP #62):**
+- Wrote "AI API Pricing Trends 2026: What to Expect Next"
+  - Historical price data: GPT-4 launch ($30/$60) to current ($2.50/$10) = 96% drop
+  - 5 forces driving prices down: efficiency, hardware, competition, open-source, inference optimization
+  - 5 predictions: premium -40-60%, budget hits $0.05/1M, 5M context, free tiers expand, specialized models
+  - Links to pricing-trends.html historical data page
+
+**SEO & Index Updates:**
+- Updated blog.html with 5 new post cards
+- Updated sitemap.xml with 2 new URLs (total: 39 URLs)
+- All new posts have: Article schema, BreadcrumbList schema, keywords, related reading, social sharing
+
+### Files created/modified today:
+- **New files:** blog-free-tiers.html, blog-embedding-pricing.html, blog-open-source-vs-commercial.html, blog-estimate-tokens.html, blog-pricing-trends-2026.html
+- **Modified files:** All 23 blog-*.html files (keywords meta tags), blog.html (5 new post cards), sitemap.xml (2 new URLs), BACKLOG-CHEAP.md (marked #57-64 done)
+
+### Key metrics:
+- Total HTML pages: 39 (was 34)
+- Blog posts: 28 (was 23)
+- Blog posts with keywords: 28/28
+- Articles with structured data: 28/28
+- Sitemap URLs: 39
+
+### Remaining items:
+- BACKLOG-CHEAP #63: Submit to Developer Tool Directories
+- BACKLOG-PREMIUM #1: User acquisition (human action)
+- BACKLOG-PREMIUM #2: Email alias (human action)
+- BACKLOG-PREMIUM #8: Conversion Rate Optimization
+- BACKLOG-PREMIUM #9: Newsletter / Email Marketing Setup
+- Human action needed: PostHog API key, email alias
