@@ -19,6 +19,15 @@ function loadEmails() {
 }
 
 module.exports = async (req, res) => {
+  // CORS headers
+  res.setHeader('Access-Control-Allow-Origin', 'https://getapipulse.com');
+  res.setHeader('Access-Control-Allow-Methods', 'GET, OPTIONS');
+  res.setHeader('Access-Control-Allow-Headers', 'Authorization');
+
+  if (req.method === 'OPTIONS') {
+    return res.status(200).end();
+  }
+
   const { secret } = req.query || {};
 
   if (!process.env.ADMIN_SECRET || secret !== process.env.ADMIN_SECRET) {

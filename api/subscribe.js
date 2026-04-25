@@ -7,6 +7,22 @@ const path = require('path');
 
 const EMAILS_FILE = path.join('/tmp', 'apipulse_emails.json');
 
+// Simple in-memory rate limiter (resets on cold start)
+const rateLimit = new Map();
+const RATE_LIMIT_WINDOW = 60 * 1000; // 1 minute
+const RATE_LIMIT_MAX = 5; // max 5 requests per window per IP
+
+function isRateLimited(ip) {
+  const now = Date.now();
+  const record = rateLimit.get(ip);
+  if (!record || now - record.start > RATE_LIMIT_WINDOW) {
+    rateLimit.set(ip, { start: now, count: 1 });
+    return false;
+  }
+  record.count++;
+  return record.count > RATE_LIMIT_MAX;
+}
+
 function loadEmails() {
   try {
     if (fs.existsSync(EMAILS_FILE)) {
@@ -38,6 +54,12 @@ module.exports = async (req, res) => {
 
   if (req.method !== 'POST') {
     return res.status(405).json({ error: 'Method not allowed' });
+  }
+
+  // Rate limit: max 5 requests per minute per IP
+  const clientIp = req.headers['x-forwarded-for'] || req.socket.remoteAddress || 'unknown';
+  if (isRateLimited(clientIp)) {
+    return res.status(429).json({ error: 'Too many requests. Please try again later.' });
   }
 
   const { email } = req.body || {};

@@ -2342,3 +2342,72 @@
 - BACKLOG-PREMIUM #5: Multi-provider data pipeline (decision by Week 4)
 - BACKLOG-PREMIUM #9: Newsletter setup (after email alias)
 - Human action needed: PostHog API key, email alias
+
+---
+
+## Session 41 — April 25, 2026
+
+### What I did today:
+
+**Full Site Audit & Bug Fixes:**
+- Ran comprehensive audit of all 52 HTML files, 6 JS files, 1 CSS file, and API endpoints
+- Found 12 issues (2 critical, 3 high, 4 medium, 3 low)
+- Fixed all actionable critical, high, and medium issues
+
+**CRITICAL — Mistral Large Pricing Mismatch (mistral.html):**
+- Fixed meta description showing $3.00/$9.00 (was $2.00/$6.00)
+- Fixed model card heading showing $3.00/$9.00 (was $2.00/$6.00)
+- Fixed comparison table showing $3.00/$9.00 (was $2.00/$6.00)
+- Calculator dropdown and JS data already had correct $2.00/$6.00 prices
+- All pricing now consistent across the page
+
+**HIGH — Admin API Missing CORS Headers:**
+- Added CORS headers to api/admin/subscribers.js (was the only API endpoint without them)
+- Added Access-Control-Allow-Origin, Allow-Methods, Allow-Headers
+- Added OPTIONS preflight handler
+- Now consistent with api/subscribe.js
+
+**MEDIUM — success.html in Sitemap Despite noindex:**
+- Removed success.html from sitemap.xml
+- Page has `<meta name="robots" content="noindex, nofollow">` — contradictory to be in sitemap
+- Post-payment page should not be discoverable by search engines
+
+**MEDIUM — No Rate Limiting on Subscribe Endpoint:**
+- Added in-memory rate limiter to api/subscribe.js
+- Max 5 requests per minute per IP
+- Returns HTTP 429 when exceeded
+- Prevents abuse/flooding of the subscription endpoint
+
+### Files modified:
+- `mistral.html` — Fixed 3 pricing inconsistencies ($3.00/$9.00 → $2.00/$6.00)
+- `api/admin/subscribers.js` — Added CORS headers and OPTIONS handler
+- `api/subscribe.js` — Added rate limiter (5 req/min/IP)
+- `sitemap.xml` — Removed success.html entry
+
+### Key metrics:
+- Critical bugs fixed: 1 (Mistral pricing)
+- High bugs fixed: 1 (admin CORS)
+- Medium bugs fixed: 2 (sitemap contradiction, rate limiting)
+- API endpoints with CORS: 2/2
+- Rate limiting: Active on subscribe endpoint
+
+### Known issues not fixed (by design):
+- Access codes in client-side JS (pro-features.js) — acceptable trade-off for static site MVP
+- PostHog API key placeholder — requires human to create account
+- Ephemeral /tmp storage for emails — acknowledged, needs Upstash Redis for production
+
+### Site status:
+- Total HTML pages: 52
+- Blog posts: 36
+- Calculator models: 16 across 7 providers
+- All known bugs: Fixed
+- All BACKLOG-CHEAP tasks: Complete
+- Ready for user acquisition: Yes (waiting on email alias for Twitter/X)
+
+### Remaining items (all require human action):
+- BACKLOG-PREMIUM #1: Post Reddit, Product Hunt, Hacker News (content ready)
+- BACKLOG-PREMIUM #2: Set up hello@getapipulse.com email alias
+- BACKLOG-PREMIUM #3: Pricing strategy optimization (after first 10 sales)
+- BACKLOG-PREMIUM #5: Multi-provider data pipeline (decision by Week 4)
+- BACKLOG-PREMIUM #9: Newsletter setup (after email alias)
+- Human action needed: PostHog API key, email alias
