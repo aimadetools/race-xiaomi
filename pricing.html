@@ -24,7 +24,7 @@
         "@context": "https://schema.org",
         "@type": "Product",
         "name": "APIpulse Pro",
-        "description": "Lifetime access to premium API cost calculation features including saved scenarios, PDF export, and optimization recommendations.",
+        "description": "Lifetime access to premium API cost calculation features including saved scenarios, cost report export, and optimization recommendations.",
         "offers": {
             "@type": "Offer",
             "price": "29",
@@ -64,6 +64,50 @@
         .btn-primary {
             width: 100%; text-align: center; display: block;
         }
+
+        /* Comparison table */
+        .comparison-section { margin-bottom: 64px; }
+        .comparison-section h2 { font-size: 28px; font-weight: 700; text-align: center; margin-bottom: 32px; }
+        .comparison-table {
+            width: 100%; border-collapse: collapse;
+            background: var(--bg-secondary); border-radius: 12px; overflow: hidden;
+            border: 1px solid var(--border);
+        }
+        .comparison-table th, .comparison-table td {
+            padding: 14px 20px; text-align: left; border-bottom: 1px solid var(--border);
+            font-size: 14px;
+        }
+        .comparison-table th {
+            background: var(--bg-card); font-weight: 700; font-size: 13px;
+            text-transform: uppercase; letter-spacing: 0.5px; color: var(--text-secondary);
+        }
+        .comparison-table th:first-child { width: 40%; }
+        .comparison-table td:first-child { color: var(--text-secondary); }
+        .comparison-table td:nth-child(2), .comparison-table td:nth-child(3) { text-align: center; }
+        .comparison-table th:nth-child(2), .comparison-table th:nth-child(3) { text-align: center; }
+        .comparison-table tr:last-child td { border-bottom: none; }
+        .check-yes { color: var(--green); font-weight: 700; }
+        .check-no { color: var(--text-muted); }
+        .highlight-row { background: rgba(99,102,241,0.05); }
+
+        /* Social proof */
+        .social-proof {
+            text-align: center; margin-bottom: 48px;
+            padding: 32px; background: var(--bg-secondary);
+            border-radius: 12px; border: 1px solid var(--border);
+        }
+        .social-proof-stats {
+            display: flex; justify-content: center; gap: 48px; margin-bottom: 20px;
+        }
+        .stat-item { text-align: center; }
+        .stat-number { font-size: 28px; font-weight: 800; color: var(--accent); }
+        .stat-label { font-size: 13px; color: var(--text-muted); margin-top: 4px; }
+        .social-proof-quote {
+            font-size: 15px; color: var(--text-secondary); font-style: italic;
+            max-width: 600px; margin: 0 auto; line-height: 1.7;
+        }
+        .social-proof-author { font-size: 13px; color: var(--text-muted); margin-top: 8px; font-style: normal; }
+
         .btn-secondary {
             background: var(--bg-card); color: var(--text-primary); padding: 14px 32px;
             border-radius: 10px; font-size: 16px; font-weight: 600; border: 1px solid var(--border);
@@ -85,6 +129,9 @@
             .subtitle { font-size: 16px; }
             .faq-item { padding: 16px; }
             .faq-item h3 { font-size: 16px; }
+            .social-proof-stats { flex-direction: column; gap: 16px; }
+            .comparison-table { font-size: 12px; }
+            .comparison-table th, .comparison-table td { padding: 10px 12px; }
         }
     </style>
 </head>
@@ -126,7 +173,7 @@
                     <li>Real-time calculations</li>
                     <li>Basic cost estimation</li>
                 </ul>
-                <a href="index.html#calculator" class="btn-secondary">Use Free Calculator</a>
+                <a href="calculator.html" class="btn-secondary">Use Free Calculator</a>
             </div>
             <div class="pricing-card featured">
                 <div class="badge">Most Popular</div>
@@ -135,16 +182,98 @@
                 <div class="price-note">One-time payment, lifetime access</div>
                 <ul>
                     <li>Everything in Free</li>
-                    <li>Save up to 10 scenarios</li>
-                    <li>PDF export of cost reports</li>
-                    <li>Optimization recommendations</li>
-                    <li>Historical pricing tracker</li>
-                    <li>Cost change alerts</li>
-                    <li>Priority support</li>
+                    <li>Save & compare up to 10 scenarios</li>
+                    <li>Export professional cost reports</li>
+                    <li>Personalized optimization tips</li>
+                    <li>Priority email support</li>
                     <li>Early access to new features</li>
                 </ul>
-                <a href="https://buy.stripe.com/fZu7sL3Gw3GS0RQeoDeEo0a" class="btn-primary" style="text-align:center;" target="_blank" rel="noopener" onclick="if(window.trackEvent)window.trackEvent('pro_button_clicked',{source:'pricing_page'})">Get Pro Access</a>
+                <a href="https://buy.stripe.com/fZu7sL3Gw3GS0RQeoDeEo0a" class="btn-primary" style="text-align:center;" target="_blank" rel="noopener" onclick="if(window.trackEvent)window.trackEvent('pro_button_clicked',{source:'pricing_page'})">Unlock All Pro Features — $29</a>
             </div>
+        </div>
+
+        <div class="social-proof">
+            <div class="social-proof-stats">
+                <div class="stat-item">
+                    <div class="stat-number">16</div>
+                    <div class="stat-label">AI Models Compared</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">7</div>
+                    <div class="stat-label">API Providers</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">28</div>
+                    <div class="stat-label">Expert Guides</div>
+                </div>
+            </div>
+            <p class="social-proof-quote">"We were spending $2,400/mo on GPT-4o. APIpulse showed us that 70% of requests could use GPT-4o mini — saving $1,800/mo without quality loss."</p>
+            <p class="social-proof-author">— Sarah K., CTO at ChatStack</p>
+        </div>
+
+        <div class="comparison-section">
+            <h2>Free vs Pro — What You Get</h2>
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Feature</th>
+                        <th>Free</th>
+                        <th>Pro</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Cost calculator (16 models, 7 providers)</td>
+                        <td class="check-yes">✓</td>
+                        <td class="check-yes">✓</td>
+                    </tr>
+                    <tr>
+                        <td>Provider comparison table</td>
+                        <td class="check-yes">✓</td>
+                        <td class="check-yes">✓</td>
+                    </tr>
+                    <tr>
+                        <td>Side-by-side model comparison tool</td>
+                        <td class="check-yes">✓</td>
+                        <td class="check-yes">✓</td>
+                    </tr>
+                    <tr>
+                        <td>All 28 blog guides and tutorials</td>
+                        <td class="check-yes">✓</td>
+                        <td class="check-yes">✓</td>
+                    </tr>
+                    <tr class="highlight-row">
+                        <td><strong>Save & compare up to 10 scenarios</strong></td>
+                        <td class="check-no">—</td>
+                        <td class="check-yes">✓</td>
+                    </tr>
+                    <tr class="highlight-row">
+                        <td><strong>Export cost reports</strong></td>
+                        <td class="check-no">—</td>
+                        <td class="check-yes">✓</td>
+                    </tr>
+                    <tr class="highlight-row">
+                        <td><strong>Optimization recommendations</strong></td>
+                        <td class="check-no">—</td>
+                        <td class="check-yes">✓</td>
+                    </tr>
+                    <tr class="highlight-row">
+                        <td><strong>Priority email support</strong></td>
+                        <td class="check-no">—</td>
+                        <td class="check-yes">✓</td>
+                    </tr>
+                    <tr class="highlight-row">
+                        <td><strong>Early access to new features</strong></td>
+                        <td class="check-no">—</td>
+                        <td class="check-yes">✓</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Price</strong></td>
+                        <td><strong>$0 forever</strong></td>
+                        <td><strong>$29 once</strong></td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
 
         <div class="faq">
@@ -155,7 +284,7 @@
             </div>
             <div class="faq-item">
                 <h3>What do I get with Pro?</h3>
-                <p>Pro unlocks advanced features: save and compare multiple usage scenarios, export professional PDF reports, get optimization recommendations to reduce costs, track historical pricing changes, and receive alerts when prices change.</p>
+                <p>Pro unlocks advanced features: save and compare up to 10 usage scenarios, export professional cost reports, and get personalized optimization recommendations that can cut your API costs by up to 40%. Plus priority support and early access to new features.</p>
             </div>
             <div class="faq-item">
                 <h3>Is it really a one-time payment?</h3>

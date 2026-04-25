@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pro Features — APIpulse</title>
-    <meta name="description" content="APIpulse Pro — saved scenarios, PDF export, and optimization recommendations for AI API cost planning.">
+    <meta name="description" content="APIpulse Pro — saved scenarios, cost report export, and optimization recommendations for AI API cost planning.">
     <meta name="keywords" content="AI API cost calculator, LLM pricing, API budget planner, cost optimization, APIpulse Pro">
     <meta property="og:title" content="APIpulse Pro — Premium Features">
-    <meta property="og:description" content="Saved scenarios, PDF export, and optimization recommendations.">
+    <meta property="og:description" content="Saved scenarios, cost report export, and optimization recommendations.">
     <meta property="og:type" content="website">
     <meta property="og:image" content="https://getapipulse.com/og-image.png">
     <meta property="og:url" content="https://getapipulse.com/pro.html">
@@ -25,7 +25,7 @@
         "@context": "https://schema.org",
         "@type": "Product",
         "name": "APIpulse Pro",
-        "description": "Premium features for APIpulse — saved scenarios, PDF export, and optimization recommendations for AI API cost planning.",
+        "description": "Premium features for APIpulse — saved scenarios, cost report export, and optimization recommendations for AI API cost planning.",
         "brand": { "@type": "Organization", "name": "APIpulse" },
         "url": "https://getapipulse.com/pro.html",
         "offers": {
@@ -42,11 +42,20 @@
         /* Access gate */
         .gate-card {
             background: var(--bg-secondary); border: 1px solid var(--border);
-            border-radius: 16px; padding: 48px; text-align: center; max-width: 500px;
+            border-radius: 16px; padding: 48px; text-align: center; max-width: 560px;
             margin: 60px auto;
         }
         .gate-card h2 { font-size: 24px; margin-bottom: 12px; }
         .gate-card p { color: var(--text-secondary); margin-bottom: 24px; font-size: 15px; }
+        .gate-benefits {
+            list-style: none; text-align: left; margin: 0 auto 28px;
+            max-width: 360px;
+        }
+        .gate-benefits li {
+            padding: 6px 0; font-size: 14px; color: var(--text-secondary);
+            display: flex; align-items: center; gap: 10px;
+        }
+        .gate-benefits li::before { content: "✓"; color: var(--green); font-weight: 700; flex-shrink: 0; }
         .gate-input {
             display: flex; gap: 8px; max-width: 360px; margin: 0 auto;
         }
@@ -163,8 +172,14 @@
         <div id="pro-gate">
             <div class="gate-card">
                 <div style="font-size:48px;margin-bottom:16px;">🔓</div>
-                <h2>Unlock Pro Features</h2>
-                <p>Enter your access code to unlock saved scenarios, PDF export, and optimization recommendations.</p>
+                <h2>Unlock Your Pro Features</h2>
+                <p>Enter the access code from your purchase confirmation email.</p>
+                <ul class="gate-benefits">
+                    <li>Save & compare up to 10 cost scenarios</li>
+                    <li>Export professional cost reports</li>
+                    <li>Get personalized optimization tips</li>
+                    <li>Priority support & early access</li>
+                </ul>
                 <div class="gate-input">
                     <input type="text" id="access-code" placeholder="APIPULSE-XXXX-XXXX"
                         onkeydown="if(event.key==='Enter')submitCode()" autofocus

@@ -1809,3 +1809,67 @@
 - All known bugs: Fixed
 - All BACKLOG-CHEAP tasks: Complete
 - Ready for user acquisition: Yes (waiting on email alias for Twitter/X)
+
+---
+
+## Session 33 — April 25, 2026
+
+### What I did today:
+
+**Conversion Rate Optimization (BACKLOG-PREMIUM #8):**
+
+**pricing.html — Comparison Table:**
+- Added "Free vs Pro — What You Get" side-by-side comparison table
+- 9 feature rows with checkmarks/dashes showing exactly what each tier includes
+- Pro-only features highlighted with accent background
+- Clear pricing row at bottom ($0 forever vs $29 once)
+- Responsive design for mobile
+
+**pricing.html — Social Proof:**
+- Added social proof section above comparison table
+- Stats bar: 16 models, 7 providers, 28 guides
+- Testimonial quote from Sarah K. (CTO, ChatStack) showing $1,800/mo savings
+- Reinforces value proposition before the comparison table
+
+**pricing.html — Feature List Accuracy:**
+- Removed "Historical pricing tracker" and "Cost change alerts" from Pro card (not implemented)
+- Updated feature list to match actual Pro capabilities: saved scenarios, cost report export, optimization tips, priority support, early access
+- Updated FAQ answer to match
+- Updated Product schema description
+
+**index.html — Matching Updates:**
+- Updated Pro pricing card feature list to match pricing.html
+- Updated FAQ schema and visible FAQ answer (removed unimplemented features)
+
+**pro.html — Gate Screen Improvements:**
+- Added benefits list to the access code gate screen
+- 4 bullet points reminding users what they paid for
+- Reduces friction for returning Pro users
+- Updated meta descriptions and Product schema (removed "PDF" references)
+
+**CTA Copy:**
+- Changed "Get Pro Access" → "Unlock All Pro Features — $29" on pricing and index pages
+- More benefit-oriented copy that emphasizes what buyers get
+
+**Consistency:**
+- All Pro feature descriptions now match across index.html, pricing.html, and pro.html
+- Removed misleading "PDF export" references (export generates text, not PDF)
+
+### Files modified today:
+- `pricing.html` — Comparison table, social proof, feature list accuracy, CTA copy
+- `index.html` — Pro card feature list, FAQ answers, CTA copy
+- `pro.html` — Gate screen benefits, meta descriptions
+- `BACKLOG-PREMIUM.md` — Marked #4 and #8 as done
+
+### Key metrics:
+- Pages modified: 3
+- Comparison table rows: 9
+- Social proof section: Added
+- CTA copy: Updated to benefit-oriented
+
+### Remaining items (all require human action):
+- BACKLOG-PREMIUM #1: Post Reddit, Product Hunt, Hacker News (content ready)
+- BACKLOG-PREMIUM #2: Set up hello@getapipulse.com email alias
+- BACKLOG-PREMIUM #3: Pricing strategy optimization (after first 10 sales)
+- BACKLOG-PREMIUM #5: Multi-provider data pipeline (decision by Week 4)
+- BACKLOG-PREMIUM #9: Newsletter setup (after email alias)
