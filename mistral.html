@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mistral AI API Pricing Guide 2026: Mistral Large and Small — APIpulse</title>
+    <meta name="description" content="Mistral AI API pricing breakdown: Mistral Large ($3.00/$9.00 per 1M tokens) and Mistral Small ($0.10/$0.30). European-built models with competitive pricing and data sovereignty.">
+    <meta name="keywords" content="Mistral AI pricing, Mistral Large cost, Mistral Small pricing, European LLM API, Mistral API 2026, Mistral vs OpenAI, Mistral API cost calculator">
+    <meta property="og:title" content="Mistral AI API Pricing Guide 2026: Mistral Large and Small — APIpulse">
+    <meta property="og:description" content="Mistral AI API pricing breakdown: Mistral Large and Mistral Small. European-built models with competitive pricing and data sovereignty.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://getapipulse.com/og-image.png">
+    <meta property="og:url" content="https://getapipulse.com/mistral.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Mistral AI API Pricing Guide 2026: Mistral Large and Small — APIpulse">
+    <meta name="twitter:image" content="https://getapipulse.com/og-image.png">
+    <link rel="canonical" href="https://getapipulse.com/mistral.html">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="styles.css">
+    <script src="analytics.js" defer></script>
+    <script src="dynamic-date.js" defer></script>
+    <script src="shared.js" defer></script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "Mistral AI API Pricing Guide 2026",
+        "description": "Mistral AI API pricing breakdown: Mistral Large and Mistral Small. European-built models with competitive pricing.",
+        "url": "https://getapipulse.com/mistral.html",
+        "publisher": { "@type": "Organization", "name": "APIpulse", "url": "https://getapipulse.com" }
+    }
+    </script>
+    <style>
+        .content { max-width: 1000px; margin: 0 auto; padding: 120px 24px 80px; }
+        h1 { font-size: 40px; font-weight: 800; margin-bottom: 12px; text-align: center; }
+        .subtitle { color: var(--text-secondary); font-size: 18px; margin-bottom: 32px; text-align: center; max-width: 700px; margin-left: auto; margin-right: auto; }
+
+        /* Quick Stats */
+        .stats-bar {
+            display: flex; justify-content: center; gap: 32px; flex-wrap: wrap;
+            margin-bottom: 48px; padding: 20px 24px;
+            background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 12px;
+        }
+        .stat-item { text-align: center; }
+        .stat-value { font-size: 24px; font-weight: 800; color: var(--accent); }
+        .stat-label { font-size: 13px; color: var(--text-muted); margin-top: 4px; }
+
+        /* Pricing Table */
+        .table-wrapper {
+            overflow-x: auto; border: 1px solid var(--border);
+            border-radius: 12px; background: var(--bg-card); margin-bottom: 48px;
+        }
+        table { width: 100%; border-collapse: collapse; font-size: 14px; }
+        th {
+            background: var(--bg-secondary); padding: 14px 16px; text-align: left;
+            font-weight: 600; font-size: 13px; text-transform: uppercase;
+            letter-spacing: 0.5px; color: var(--text-muted);
+            border-bottom: 1px solid var(--border);
+        }
+        td { padding: 14px 16px; border-bottom: 1px solid var(--border); }
+        tr:last-child td { border-bottom: none; }
+        tr:hover { background: var(--bg-secondary); }
+        .cost-cell { font-variant-numeric: tabular-nums; font-weight: 600; }
+        .tier-badge {
+            display: inline-block; padding: 2px 8px; border-radius: 4px;
+            font-size: 11px; font-weight: 600;
+        }
+        .tier-mid { background: rgba(234,179,8,0.15); color: #eab308; }
+        .tier-budget { background: rgba(34,197,94,0.15); color: #22c55e; }
+
+        /* Section Headers */
+        .section-header { text-align: center; margin-bottom: 36px; }
+        .section-header h2 { font-size: 28px; font-weight: 700; margin-bottom: 12px; }
+        .section-header p { font-size: 16px; color: var(--text-secondary); max-width: 600px; margin: 0 auto; }
+
+        /* Why Mistral */
+        .features-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-bottom: 64px; }
+        .feature-card {
+            background: var(--bg-secondary); border: 1px solid var(--border);
+            border-radius: var(--radius); padding: 28px;
+            transition: border-color 0.2s, transform 0.2s;
+        }
+        .feature-card:hover { border-color: var(--accent); transform: translateY(-2px); }
+        .feature-icon {
+            width: 44px; height: 44px; background: var(--accent-glow);
+            border-radius: 10px; display: flex; align-items: center;
+            justify-content: center; font-size: 20px; margin-bottom: 16px;
+        }
+        .feature-card h3 { font-size: 17px; font-weight: 700; margin-bottom: 8px; }
+        .feature-card p { font-size: 14px; color: var(--text-secondary); line-height: 1.6; }
+
+        /* Model Selector */
+        .model-selector { margin-bottom: 64px; }
+        .model-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+        .model-card {
+            background: var(--bg-secondary); border: 1px solid var(--border);
+            border-radius: 16px; padding: 32px;
+        }
+        .model-card h3 { font-size: 20px; font-weight: 700; margin-bottom: 8px; }
+        .model-card .price-tag { font-size: 14px; color: var(--accent); font-weight: 600; margin-bottom: 16px; }
+        .model-card ul { list-style: none; margin-bottom: 16px; }
+        .model-card li { padding: 6px 0; font-size: 14px; color: var(--text-secondary); display: flex; align-items: center; gap: 10px; }
+        .model-card li::before { content: "\2713"; color: var(--green); font-weight: 700; }
+        .model-card .use-case { font-size: 13px; color: var(--text-muted); margin-top: 12px; padding-top: 12px; border-top: 1px solid var(--border); }
+        .model-card .use-case strong { color: var(--text-primary); }
+
+        /* Calculator */
+        .calculator-section { margin-bottom: 64px; }
+        .calculator {
+            background: var(--bg-secondary); border: 1px solid var(--border);
+            border-radius: 16px; padding: 32px; max-width: 900px; margin: 0 auto;
+        }
+        .calc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
+        .calc-inputs label {
+            display: block; font-size: 13px; font-weight: 600;
+            color: var(--text-secondary); margin-bottom: 6px;
+            text-transform: uppercase; letter-spacing: 0.5px;
+        }
+        .calc-inputs input, .calc-inputs select {
+            width: 100%; padding: 12px 16px; background: var(--bg-card);
+            border: 1px solid var(--border); border-radius: 8px;
+            color: var(--text-primary); font-size: 15px;
+            transition: border-color 0.2s;
+        }
+        .calc-inputs input:focus, .calc-inputs select:focus { outline: none; border-color: var(--accent); }
+        .calc-inputs .input-group { margin-bottom: 20px; }
+        .calc-results {
+            background: var(--bg-card); border-radius: 12px; padding: 24px;
+        }
+        .result-item {
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 12px 0; border-bottom: 1px solid var(--border);
+        }
+        .result-item:last-child { border-bottom: none; }
+        .result-label { color: var(--text-secondary); font-size: 14px; }
+        .result-value { font-size: 18px; font-weight: 700; }
+        .result-total {
+            margin-top: 16px; padding-top: 16px; border-top: 2px solid var(--accent);
+            display: flex; justify-content: space-between; align-items: center;
+        }
+        .result-total .result-label { font-size: 16px; font-weight: 600; color: var(--text-primary); }
+        .result-total .result-value { font-size: 28px; color: var(--accent); }
+        .savings-badge {
+            display: inline-block; background: rgba(34,197,94,0.1); color: var(--green);
+            padding: 4px 12px; border-radius: 6px; font-size: 13px; font-weight: 600;
+            margin-top: 12px;
+        }
+
+        /* Comparison Table */
+        .comparison-section { margin-bottom: 64px; }
+        .comparison-table {
+            width: 100%; border-collapse: collapse;
+            background: var(--bg-secondary); border-radius: 12px; overflow: hidden;
+            border: 1px solid var(--border);
+        }
+        .comparison-table th {
+            background: var(--bg-card); padding: 16px 20px;
+            text-align: left; font-size: 13px; font-weight: 600;
+            color: var(--text-secondary); text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .comparison-table td {
+            padding: 16px 20px; border-bottom: 1px solid var(--border);
+            font-size: 14px;
+        }
+        .comparison-table tr:last-child td { border-bottom: none; }
+        .comparison-table .provider-name { font-weight: 600; color: var(--text-primary); }
+        .comparison-table .price { color: var(--accent); font-weight: 600; }
+        .comparison-table .highlight { background: rgba(255,119,0,0.05); }
+
+        /* Blog Posts */
+        .blog-section { margin-bottom: 64px; }
+        .post-card {
+            background: var(--bg-secondary); border: 1px solid var(--border);
+            border-radius: 12px; padding: 28px;
+            transition: border-color 0.2s, transform 0.2s;
+        }
+        .post-card:hover { border-color: var(--accent); transform: translateY(-2px); }
+        .post-meta {
+            display: flex; gap: 16px; align-items: center; margin-bottom: 12px;
+            font-size: 13px; color: var(--text-muted);
+        }
+        .post-tag {
+            background: var(--accent-glow); color: var(--accent);
+            padding: 2px 10px; border-radius: 6px; font-size: 12px; font-weight: 600;
+        }
+        .post-card h3 { font-size: 20px; font-weight: 700; margin-bottom: 8px; }
+        .post-card h3 a { color: var(--text-primary); }
+        .post-card h3 a:hover { color: var(--accent); }
+        .post-card p { color: var(--text-secondary); font-size: 15px; margin: 0; }
+        .post-card .read-more {
+            display: inline-block; margin-top: 12px; font-size: 14px; font-weight: 600;
+        }
+
+        /* CTA */
+        .cta-section {
+            padding: 60px 24px; text-align: center;
+            background: linear-gradient(180deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+            border-radius: 16px; margin-bottom: 64px;
+        }
+        .cta-section h2 { font-size: 28px; font-weight: 700; margin-bottom: 12px; }
+        .cta-section p { font-size: 16px; color: var(--text-secondary); max-width: 500px; margin: 0 auto 24px; }
+
+        /* Email */
+        .email-section {
+            padding: 60px 24px; background: var(--bg-secondary);
+            border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
+        }
+
+        /* CTA inline */
+        .cta-inline {
+            background: var(--bg-secondary); border: 1px solid var(--accent);
+            border-radius: 12px; padding: 24px; margin: 32px 0; text-align: center;
+        }
+        .cta-inline p { margin-bottom: 12px; color: var(--text-secondary); }
+
+        @media (max-width: 768px) {
+            .content { padding: 100px 16px 60px; }
+            h1 { font-size: 28px; }
+            .subtitle { font-size: 16px; }
+            .stats-bar { gap: 16px; padding: 16px; }
+            .stat-value { font-size: 20px; }
+            .features-grid { grid-template-columns: 1fr; gap: 16px; }
+            .model-cards { grid-template-columns: 1fr; gap: 16px; }
+            .calc-grid { grid-template-columns: 1fr; gap: 24px; }
+            .calculator { padding: 24px 20px; }
+            .comparison-table { font-size: 12px; min-width: 500px; }
+            .comparison-table th, .comparison-table td { padding: 10px 12px; }
+            .cta-section { padding: 40px 16px; }
+            .cta-section h2 { font-size: 22px; }
+        }
+        @media print {
+            nav, .calculator-section, .cta-inline, .cta-section, .email-section, .theme-toggle, .back-to-top { display: none !important; }
+            body { background: white; color: black; }
+            .content { padding: 0; max-width: 100%; }
+            table { font-size: 10px; }
+            th, td { padding: 6px 8px; }
+        }
+    </style>
+    <meta name="theme-color" content="#6366f1">
+    <link rel="preconnect" href="https://getapipulse.com">
+</head>
+<body>
+    <a href="#main" class="skip-link">Skip to content</a>
+    <nav>
+        <div class="nav-inner">
+            <a href="index.html" class="logo">API<span>pulse</span></a>
+            <button class="hamburger" onclick="toggleMobileNav()" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+            <div class="nav-links">
+                <a href="calculator.html">Calculator</a>
+                <a href="compare.html">Compare</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="use-cases.html">Use Cases</a>
+                <a href="about.html">About</a>
+                <a href="blog.html">Blog</a>
+                <a href="pricing-index.html">Pricing Index</a>
+                <a href="pricing-trends.html">Trends</a>
+                <a href="pricing.html" class="nav-cta" onclick="if(window.trackEvent)window.trackEvent('pro_button_clicked',{source:'nav'})">Get Pro — $29</a>
+                <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
+            </div>
+        </div>
+    </nav>
+
+    <main id="main">
+
+    <div class="content">
+
+        <!-- Hero -->
+        <h1>Mistral AI API Pricing</h1>
+        <p class="subtitle">European-built AI models with competitive pricing — Mistral Large and Mistral Small</p>
+
+        <!-- Quick Stats Bar -->
+        <div class="stats-bar">
+            <div class="stat-item">
+                <div class="stat-value">2</div>
+                <div class="stat-label">Models</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-value">$0.10–$3</div>
+                <div class="stat-label">per 1M tokens</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-value">32K–128K</div>
+                <div class="stat-label">Context window</div>
+            </div>
+        </div>
+
+        <!-- Pricing Table -->
+        <div class="table-wrapper">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Model</th>
+                        <th>Input (per 1M tokens)</th>
+                        <th>Output (per 1M tokens)</th>
+                        <th>Context Window</th>
+                        <th>Tier</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Mistral Large</strong></td>
+                        <td class="cost-cell">$3.00</td>
+                        <td class="cost-cell">$9.00</td>
+                        <td>128K</td>
+                        <td><span class="tier-badge tier-mid">Mid</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Mistral Small</strong></td>
+                        <td class="cost-cell">$0.10</td>
+                        <td class="cost-cell">$0.30</td>
+                        <td>32K</td>
+                        <td><span class="tier-badge tier-budget">Budget</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Why Mistral? -->
+        <div class="section-header">
+            <h2>Why Mistral?</h2>
+            <p>European-built AI models designed for cost-conscious developers who need reliable performance.</p>
+        </div>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">🇪🇺</div>
+                <h3>European Data Sovereignty</h3>
+                <p>Mistral is headquartered in Paris and stores data in Europe. Ideal for GDPR-sensitive workloads and EU-based companies that need to comply with strict data residency requirements.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🔓</div>
+                <h3>Open-Source Heritage</h3>
+                <p>Mistral releases open-weight models alongside their API, giving you the flexibility to self-host or switch providers. No vendor lock-in — deploy on your own infrastructure if needed.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">💰</div>
+                <h3>Competitive Pricing</h3>
+                <p>Mistral Large undercuts GPT-4o on price while delivering strong benchmark results. Mistral Small is one of the cheapest options available at $0.10/$0.30 per 1M tokens.</p>
+            </div>
+        </div>
+
+        <!-- Which Mistral Model Should You Use? -->
+        <div class="section-header model-selector">
+            <h2>Which Mistral Model Should You Use?</h2>
+            <p>Mistral offers two tiers designed for different workloads.</p>
+        </div>
+        <div class="model-cards">
+            <div class="model-card">
+                <h3>Mistral Large</h3>
+                <div class="price-tag">$3.00 input / $9.00 output per 1M tokens</div>
+                <ul>
+                    <li>128K context window</li>
+                    <li>Strong reasoning and code generation</li>
+                    <li>Complex multi-step tasks</li>
+                    <li>Document analysis and summarization</li>
+                    <li>Multilingual support</li>
+                </ul>
+                <div class="use-case"><strong>Best for:</strong> Production workloads that require high accuracy and long context. Ideal replacement for GPT-4o when cost is a priority.</div>
+            </div>
+            <div class="model-card">
+                <h3>Mistral Small</h3>
+                <div class="price-tag">$0.10 input / $0.30 output per 1M tokens</div>
+                <ul>
+                    <li>32K context window</li>
+                    <li>Fast and lightweight</li>
+                    <li>Excellent for simple classification tasks</li>
+                    <li>Cost-effective at scale</li>
+                    <li>Great for chatbots and short responses</li>
+                </ul>
+                <div class="use-case"><strong>Best for:</strong> High-volume, low-complexity tasks like classification, sentiment analysis, and simple Q&A. One of the cheapest options on the market.</div>
+            </div>
+        </div>
+
+        <!-- Cost Calculator -->
+        <div class="section-header calculator-section">
+            <h2>Mistral Cost Calculator</h2>
+            <p>Estimate your monthly spend on Mistral AI models.</p>
+        </div>
+        <div class="calculator" role="form" aria-label="Mistral API Cost Calculator">
+            <div class="calc-grid">
+                <div class="calc-inputs">
+                    <div class="input-group">
+                        <label for="calc-provider">Model</label>
+                        <select id="calc-provider" onchange="calculate()" aria-label="Select Mistral model">
+                            <option value="mistral-large">Mistral — Large ($3.00 / $9.00)</option>
+                            <option value="mistral-small">Mistral — Small ($0.10 / $0.30)</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <label for="calc-input-tokens">Input tokens per request</label>
+                        <input type="number" id="calc-input-tokens" value="1500" min="0" step="100" onchange="calculate()" oninput="calculate()" aria-label="Input tokens per request">
+                    </div>
+                    <div class="input-group">
+                        <label for="calc-output-tokens">Output tokens per request</label>
+                        <input type="number" id="calc-output-tokens" value="400" min="0" step="100" onchange="calculate()" oninput="calculate()" aria-label="Output tokens per request">
+                    </div>
+                    <div class="input-group">
+                        <label for="calc-requests">Requests per day</label>
+                        <input type="number" id="calc-requests" value="1000" min="0" step="100" onchange="calculate()" oninput="calculate()" aria-label="Requests per day">
+                    </div>
+                    <div class="input-group">
+                        <label for="calc-days">Days per month</label>
+                        <input type="number" id="calc-days" value="30" min="1" max="31" onchange="calculate()" oninput="calculate()" aria-label="Days per month">
+                    </div>
+                </div>
+                <div class="calc-results" role="region" aria-label="Cost calculation results" aria-live="polite">
+                    <h3 style="margin-bottom: 16px; font-size: 16px;">Monthly Cost Estimate</h3>
+                    <div class="result-item">
+                        <span class="result-label">Input cost</span>
+                        <span class="result-value" id="calc-input-cost">$0.00</span>
+                    </div>
+                    <div class="result-item">
+                        <span class="result-label">Output cost</span>
+                        <span class="result-value" id="calc-output-cost">$0.00</span>
+                    </div>
+                    <div class="result-item">
+                        <span class="result-label">Total tokens/month</span>
+                        <span class="result-value" id="calc-total-tokens">0</span>
+                    </div>
+                    <div class="result-total">
+                        <span class="result-label">Monthly Total</span>
+                        <span class="result-value" id="calc-monthly-total">$0.00</span>
+                    </div>
+                    <div id="calc-savings-container"></div>
+                    <button onclick="copyResults()" style="margin-top:16px;width:100%;padding:10px 16px;border-radius:8px;border:1px solid var(--border);background:var(--bg-secondary);color:var(--text-primary);font-size:13px;font-weight:600;cursor:pointer;transition:all 0.2s;" onmouseover="this.style.borderColor='var(--accent)'" onmouseout="this.style.borderColor='var(--border)'">
+                        <span id="copy-btn-text">Copy Results to Clipboard</span>
+                    </button>
+                    <p style="margin-top: 16px; font-size: 12px; color: var(--text-muted);">
+                        Based on published API pricing. Actual costs may vary.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="cta-inline">
+            <p><strong>Need the full calculator with all providers?</strong> Compare Mistral against OpenAI, Anthropic, Google, and more.</p>
+            <a href="calculator.html" class="btn-primary">Try the Full APIpulse Calculator</a>
+        </div>
+
+        <!-- Mistral vs Competitors -->
+        <div class="section-header comparison-section">
+            <h2>Mistral vs Competitors</h2>
+            <p>How Mistral pricing stacks up against other major LLM providers.</p>
+        </div>
+        <table class="comparison-table" aria-label="Mistral vs competitor pricing comparison">
+            <thead>
+                <tr>
+                    <th>Provider</th>
+                    <th>Model</th>
+                    <th>Input (per 1M tokens)</th>
+                    <th>Output (per 1M tokens)</th>
+                    <th>Context Window</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="highlight">
+                    <td class="provider-name">Mistral</td>
+                    <td>Large</td>
+                    <td class="price">$3.00</td>
+                    <td class="price">$9.00</td>
+                    <td>128K</td>
+                </tr>
+                <tr>
+                    <td class="provider-name">OpenAI</td>
+                    <td>GPT-4o</td>
+                    <td class="price">$2.50</td>
+                    <td class="price">$10.00</td>
+                    <td>128K</td>
+                </tr>
+                <tr>
+                    <td class="provider-name">Anthropic</td>
+                    <td>Claude Sonnet 4</td>
+                    <td class="price">$3.00</td>
+                    <td class="price">$15.00</td>
+                    <td>200K</td>
+                </tr>
+                <tr>
+                    <td class="provider-name">Google</td>
+                    <td>Gemini 2.5 Pro</td>
+                    <td class="price">$1.25</td>
+                    <td class="price">$10.00</td>
+                    <td>1M</td>
+                </tr>
+                <tr class="highlight">
+                    <td class="provider-name">Mistral</td>
+                    <td>Small</td>
+                    <td class="price">$0.10</td>
+                    <td class="price">$0.30</td>
+                    <td>32K</td>
+                </tr>
+                <tr>
+                    <td class="provider-name">OpenAI</td>
+                    <td>GPT-4o mini</td>
+                    <td class="price">$0.15</td>
+                    <td class="price">$0.60</td>
+                    <td>128K</td>
+                </tr>
+                <tr>
+                    <td class="provider-name">Google</td>
+                    <td>Gemini 2.0 Flash</td>
+                    <td class="price">$0.10</td>
+                    <td class="price">$0.40</td>
+                    <td>1M</td>
+                </tr>
+                <tr>
+                    <td class="provider-name">Anthropic</td>
+                    <td>Claude Haiku 3.5</td>
+                    <td class="price">$0.80</td>
+                    <td class="price">$4.00</td>
+                    <td>200K</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- Blog Posts -->
+        <div class="section-header blog-section">
+            <h2>Related Reading</h2>
+            <p>Deep dives into Mistral pricing and how it compares to other providers.</p>
+        </div>
+        <div class="post-card">
+            <div class="post-meta">
+                <span class="post-tag">Comparison</span>
+                <span class="tier-badge tier-mid">Mid</span>
+                <span>April 23, 2026</span>
+            </div>
+            <h3><a href="blog-mistral-vs-gpt4o.html">Mistral vs GPT-4o: Can the European Challenger Beat OpenAI on Price?</a></h3>
+            <p>A pricing and capability comparison between Mistral Large/Small and GPT-4o/GPT-4o mini for cost-conscious developers. Includes real-world cost breakdowns for chatbots, code generation, and document analysis.</p>
+            <a href="blog-mistral-vs-gpt4o.html" class="read-more" style="color:var(--accent);">Read the full comparison &rarr;</a>
+        </div>
+
+        <!-- CTA Section -->
+        <div class="cta-section">
+            <h2>Calculate Your Mistral Costs</h2>
+            <p>See exactly what Mistral will cost for your specific workload. Compare against other providers in seconds.</p>
+            <a href="calculator.html" class="btn-primary">Go to Calculator &rarr;</a>
+        </div>
+
+        <!-- Email Subscription -->
+        <div class="email-section" style="margin: 0 -24px; padding: 60px 24px;">
+            <div style="max-width:500px;margin:0 auto;text-align:center;">
+                <h2 style="font-size:22px;font-weight:700;margin-bottom:8px;">Get notified when Mistral prices change</h2>
+                <p style="font-size:14px;color:var(--text-secondary);margin-bottom:20px;">No spam. Only pricing updates and new features. Unsubscribe anytime.</p>
+                <form onsubmit="saveEmail(event)" style="display:flex;gap:8px;max-width:400px;margin:0 auto;">
+                    <input type="email" id="email-input" placeholder="you@company.com" required aria-label="Email address"
+                        style="flex:1;padding:12px 16px;background:var(--bg-card);border:1px solid var(--border);
+                        border-radius:8px;color:var(--text-primary);font-size:14px;">
+                    <button type="submit" class="btn-primary" style="padding:12px 24px;white-space:nowrap;">Subscribe</button>
+                </form>
+                <p id="email-msg" style="font-size:13px;color:var(--green);margin-top:12px;display:none;"></p>
+            </div>
+        </div>
+
+    </div>
+
+    <button class="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">↑</button>
+
+    </main>
+
+    <footer>
+        <p>Pricing data last verified: <span class="verified-date"></span></p>
+        <p>&copy; 2026 APIpulse. <a href="index.html">Home</a> &middot; <a href="use-cases.html">Use Cases</a> &middot; <a href="about.html">About</a> &middot; <a href="blog.html">Blog</a> &middot; <a href="pricing-index.html">Pricing Index</a> &middot; <a href="openai.html">OpenAI</a> &middot; <a href="anthropic.html">Anthropic</a> &middot; <a href="google.html">Google</a> &middot; <a href="mistral.html">Mistral</a> &middot; <a href="pricing.html">Pricing</a></p>
+    </footer>
+
+    <script>
+        // Mistral pricing data (per 1M tokens)
+        const mistralModels = {
+            'mistral-large': { name: 'Mistral Large', input: 3.00, output: 9.00 },
+            'mistral-small': { name: 'Mistral Small', input: 0.10, output: 0.30 }
+        };
+
+        function calculate() {
+            const provider = document.getElementById('calc-provider').value;
+            const inputTokens = parseInt(document.getElementById('calc-input-tokens').value) || 0;
+            const outputTokens = parseInt(document.getElementById('calc-output-tokens').value) || 0;
+            const requests = parseInt(document.getElementById('calc-requests').value) || 0;
+            const days = parseInt(document.getElementById('calc-days').value) || 30;
+
+            const p = mistralModels[provider];
+            const totalInputTokens = inputTokens * requests * days;
+            const totalOutputTokens = outputTokens * requests * days;
+
+            const inputCost = (totalInputTokens / 1000000) * p.input;
+            const outputCost = (totalOutputTokens / 1000000) * p.output;
+            const totalCost = inputCost + outputCost;
+            const totalTokens = totalInputTokens + totalOutputTokens;
+
+            document.getElementById('calc-input-cost').textContent = '$' + inputCost.toFixed(2);
+            document.getElementById('calc-output-cost').textContent = '$' + outputCost.toFixed(2);
+            document.getElementById('calc-total-tokens').textContent = totalTokens.toLocaleString();
+            document.getElementById('calc-monthly-total').textContent = '$' + totalCost.toFixed(2);
+
+            // Find cheapest Mistral alternative
+            const savingsContainer = document.getElementById('calc-savings-container');
+            let cheapest = null;
+            let cheapestCost = Infinity;
+            for (const [key, p2] of Object.entries(mistralModels)) {
+                if (key === provider) continue;
+                const cost = ((inputTokens * requests * days / 1000000) * p2.input) +
+                             ((outputTokens * requests * days / 1000000) * p2.output);
+                if (cost < cheapestCost) {
+                    cheapestCost = cost;
+                    cheapest = p2;
+                }
+            }
+
+            if (cheapest && cheapestCost < totalCost) {
+                const savings = totalCost - cheapestCost;
+                savingsContainer.innerHTML = '<div class="savings-badge">Switch to ' + cheapest.name + ' to save $' + savings.toFixed(2) + '/mo</div>';
+            } else {
+                savingsContainer.innerHTML = '';
+            }
+
+            // Track calculator usage
+            if (window.trackEvent && totalCost > 0) {
+                clearTimeout(window._calcTrackTimer);
+                window._calcTrackTimer = setTimeout(() => {
+                    window.trackEvent('calculator_used', {
+                        provider: mistralModels[provider].name,
+                        monthly_cost: totalCost.toFixed(2),
+                        input_tokens: inputTokens,
+                        output_tokens: outputTokens,
+                        requests_per_day: requests
+                    });
+                }, 1000);
+            }
+        }
+
+        function copyResults() {
+            const provider = document.getElementById('calc-provider');
+            const selectedOption = provider.options[provider.selectedIndex].text;
+            const inputCost = document.getElementById('calc-input-cost').textContent;
+            const outputCost = document.getElementById('calc-output-cost').textContent;
+            const totalTokens = document.getElementById('calc-total-tokens').textContent;
+            const monthlyTotal = document.getElementById('calc-monthly-total').textContent;
+
+            const text = [
+                'APIpulse Cost Estimate — Mistral',
+                '================================',
+                'Model: ' + selectedOption,
+                'Input cost: ' + inputCost,
+                'Output cost: ' + outputCost,
+                'Total tokens/month: ' + totalTokens,
+                'Monthly Total: ' + monthlyTotal,
+                '',
+                'https://getapipulse.com/mistral.html'
+            ].join('\n');
+
+            navigator.clipboard.writeText(text).then(() => {
+                const btn = document.getElementById('copy-btn-text');
+                btn.textContent = 'Copied!';
+                setTimeout(() => btn.textContent = 'Copy Results to Clipboard', 2000);
+            });
+        }
+
+        // Run on load
+        calculate();
+    </script>
+</body>
+</html>

@@ -419,3 +419,63 @@ These tasks are straightforward and don't require deep reasoning.
 - 3-tier recommendation: bootstrap ($0-50/mo), seed ($50-500/mo), series A ($500+/mo)
 - Decision matrix: cost vs quality vs context vs ecosystem
 - **Effort:** 1 hour
+
+---
+
+## New Tasks — Session 35 (April 25, 2026)
+
+### 65. Fix Mobile Navigation — Hamburger Menu ✓ DONE
+- Added hamburger button to all 42 HTML files
+- Added mobile nav CSS (fullscreen overlay, stacked links)
+- Added toggleMobileNav() to shared.js
+- Nav links close menu on click
+- **Effort:** 30 min
+
+### 66. Fix SVG Theme Toggle & Nav Consistency ✓ DONE
+- Fixed blog-switch-llm-providers.html and blog-openai-pricing-guide.html
+- Replaced SVG theme icons with emoji (consistent with all other pages)
+- Moved nav-cta inside nav-links (was outside, breaking mobile layout)
+- Added onclick tracking to nav-cta
+- Added .active nav class to styles.css
+- **Effort:** 20 min
+
+### 67. Write Blog Post: "How to Build a RAG Pipeline on a Budget" ✓ DONE
+- Target "RAG pipeline cost" and "cheap RAG" keywords
+- Step-by-step guide with cost at each stage
+- Compare embedding + vector DB + generation costs
+- Show $10/mo, $50/mo, $200/mo budget tiers
+- **Effort:** 1 hour
+
+### 68. Write Blog Post: "Claude 4 Sonnet vs GPT-4o: The Developer's Choice" ✓ DONE
+- Target "Claude Sonnet vs GPT-4o" keyword (high volume)
+- Compare pricing, quality, speed, context window
+- 3 use case cost breakdowns
+- Decision framework
+- **Effort:** 1 hour
+
+### 69. Write Blog Post: "AI API Cost Optimization: A Complete Guide for 2026" ✓ DONE
+- Target "AI API cost optimization" keyword
+- 15 actionable strategies with cost savings
+- Model selection, prompt engineering, caching, batching
+- Monitoring and alerting setup
+- **Effort:** 1 hour
+
+### 70. Create Provider Landing Pages ✓ DONE
+- Create openai.html, anthropic.html, google.html, mistral.html
+- Each with: provider overview, model pricing table, calculator, use cases, blog posts
+- Targets "[provider] API pricing" keywords
+- **Effort:** 30 min per page
+
+### 71. Add Performance Optimizations ✓ DONE
+- Add lazy loading for below-fold content
+- Minify inline CSS in HTML files
+- Add preconnect for external resources
+- Optimize og-image.png (compress further)
+- **Effort:** 30 min
+
+### 72. Write Blog Post: "GPT-4o mini vs Gemini 2.0 Flash: Cheapest Models Compared" ✓ DONE
+- Target "GPT-4o mini vs Gemini Flash" keyword
+- Budget tier showdown: $0.15/$0.60 vs $0.10/$0.40
+- 3 use case cost breakdowns
+- Quality comparison for budget tasks
+- **Effort:** 1 hour

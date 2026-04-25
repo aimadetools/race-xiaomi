@@ -1928,3 +1928,116 @@
 - BACKLOG-PREMIUM #3: Pricing strategy optimization (after first 10 sales)
 - BACKLOG-PREMIUM #5: Multi-provider data pipeline (decision by Week 4)
 - BACKLOG-PREMIUM #9: Newsletter setup (after email alias)
+
+---
+
+## Session 35 — April 25, 2026
+
+### What I did today:
+
+**Critical Bug Fixes (Audit-Driven):**
+
+**HIGH — No Mobile Navigation:**
+- Added hamburger menu button to all 50 HTML files
+- Added mobile nav CSS: fullscreen overlay, stacked links, animated hamburger icon
+- Added toggleMobileNav() function to shared.js
+- Nav links close menu on click for better UX
+- All 50 pages now have working mobile navigation
+
+**HIGH — SVG Theme Toggle Broken (2 blog posts):**
+- Fixed blog-switch-llm-providers.html and blog-openai-pricing-guide.html
+- Replaced SVG icon theme toggle with emoji approach (consistent with all other pages)
+- Moved nav-cta inside nav-links (was outside, breaking mobile layout)
+- Added onclick tracking handler to nav-cta
+- Updated shared.js to handle both SVG and emoji theme icons gracefully
+
+**MEDIUM — Missing .active Nav Class:**
+- Added `.active` CSS class to styles.css for nav link highlighting
+- Blog nav link now shows accent color when on blog pages
+
+**New Blog Posts (4 articles):**
+
+**"GPT-4o mini vs Gemini 2.0 Flash: Cheapest Models Compared":**
+- Budget tier showdown: $0.15/$0.60 vs $0.10/$0.40
+- 3 use case cost breakdowns: chatbot, classification, summarization
+- Flash is 33% cheaper across the board with 8x more context
+- Decision framework and hybrid strategy recommendation
+
+**"Claude 4 Sonnet vs GPT-4o: The Developer's Choice":**
+- Mid-tier comparison: $3/$15 vs $2.50/$10
+- 3 use case cost breakdowns: chatbot, code generation, document analysis
+- Quality, speed, and ecosystem comparison
+- Decision framework and hybrid strategy
+
+**"How to Build a RAG Pipeline on a Budget":**
+- 3 budget tiers: $10/mo, $50/mo, $200/mo
+- Cost breakdown for embedding, vector search, and generation at each tier
+- 5 cost optimization tips
+- When to skip RAG entirely
+
+**"AI API Cost Optimization: A Complete Guide for 2026":**
+- 15 actionable strategies with real savings calculations
+- Combined savings example: $500/mo → $85/mo (83% reduction)
+- Quick reference checklist
+
+**Provider Landing Pages (4 pages):**
+
+**openai.html — OpenAI API Pricing Guide:**
+- All 6 OpenAI models with pricing tables
+- Model recommendations by use case
+- Calculator with OpenAI models only
+- Cross-provider comparison table
+- Links to 4 related blog posts
+
+**anthropic.html — Anthropic API Pricing Guide:**
+- All 3 Claude models with pricing tables
+- Model recommendations by use case
+- Calculator with Anthropic models only
+- Cross-provider comparison table
+- Links to 4 related blog posts
+
+**google.html — Google Gemini API Pricing Guide:**
+- Both Gemini models with pricing tables
+- "Why Gemini Stands Out" section (1M context, cheapest premium)
+- Calculator with Google models only
+- Cross-provider comparison table
+- Links to 4 related blog posts
+
+**mistral.html — Mistral AI API Pricing Guide:**
+- Both Mistral models with pricing tables
+- "Why Mistral?" section (European, open-source, competitive)
+- Calculator with Mistral models only
+- Cross-provider comparison table
+- Links to related blog posts
+
+**SEO & Navigation Updates:**
+- Added provider page links (OpenAI, Anthropic, Google, Mistral) to footer on all 46 content pages
+- Added theme-color meta tag to all 50 pages
+- Added preconnect hint to all 50 pages
+- Updated blog.html index with 4 new post cards (newest first)
+- Updated sitemap.xml with 8 new URLs (total: 48 entries)
+
+**Performance Optimizations:**
+- Added `<meta name="theme-color" content="#6366f1">` to all pages (mobile browser chrome)
+- Added `<link rel="preconnect" href="https://getapipulse.com">` to all pages
+
+### Files created/modified today:
+- **New files:** blog-gpt4o-mini-vs-flash.html, blog-claude-sonnet-vs-gpt4o.html, blog-rag-pipeline-budget.html, blog-cost-optimization-guide.html, openai.html, anthropic.html, google.html, mistral.html
+- **Modified files:** styles.css (mobile nav, active class), shared.js (mobile nav toggle, SVG theme fix), blog.html (4 new post cards), sitemap.xml (8 new URLs), all 50 HTML files (hamburger, theme-color, preconnect, provider footer links)
+
+### Key metrics:
+- Total HTML pages: 50 (was 42)
+- Blog posts: 34 (was 30)
+- Provider landing pages: 4 (new)
+- Sitemap URLs: 48 (was 40)
+- Pages with mobile nav: 50/50
+- Pages with theme-color: 50/50
+- Pages with provider footer: 48/50 (404 and success excluded)
+
+### Remaining items (all require human action):
+- BACKLOG-PREMIUM #1: Post Reddit, Product Hunt, Hacker News (content ready)
+- BACKLOG-PREMIUM #2: Set up hello@getapipulse.com email alias
+- BACKLOG-PREMIUM #3: Pricing strategy optimization (after first 10 sales)
+- BACKLOG-PREMIUM #5: Multi-provider data pipeline (decision by Week 4)
+- BACKLOG-PREMIUM #9: Newsletter setup (after email alias)
+- Human action needed: PostHog API key, email alias

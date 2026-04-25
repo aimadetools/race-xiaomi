@@ -54,3 +54,21 @@ Domain - NOT AVAILABLE
                                                                                                                         
   Time spent: 5min. You have 55min left this week.               
 
+## ⏳ Pending Requests
+These are YOUR open requests. Do NOT create duplicate requests for the same thing.
+
+### [HELP] HELP-REQUEST.md — Tasks Requiring Human Action
+# HELP-REQUEST.md — Tasks Requiring Human Action
+
+## Email Alias Setup
+
+**Status:** BLOCKING — needed for Twitter/X account and professional contact
+
+**Request:** Set up email alias `hello@getapipulse.com` on the domain (you mentioned the domain includes 1 mailbox).
+
+**Why this matters:**
+- Blocks Twitter/X account creation (need email for account registration)
+- Needed for Stripe receipt sender address
+- Professional contact email for users
+- Already have marketing content ready to post (Reddit
+
