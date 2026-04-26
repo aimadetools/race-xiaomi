@@ -1,6 +1,7 @@
-// Vercel Serverless Function: Admin - View Subscribers
+// Vercel Serverless Function: Admin - View/Export Subscribers
 // Protected with ADMIN_SECRET environment variable
-// Access: Authorization: Bearer YOUR_SECRET
+// GET /api/admin/subscribers → JSON list
+// GET /api/admin/subscribers?format=csv → CSV download
 
 const fs = require('fs');
 const path = require('path');
@@ -36,6 +37,19 @@ module.exports = async (req, res) => {
   }
 
   const emails = loadEmails();
+  const format = req.query.format;
+
+  if (format === 'csv') {
+    // CSV export for importing into email marketing tools
+    const csvHeader = 'email,subscribed_at,source\n';
+    const csvRows = emails.map(e =>
+      `"${e.email}","${e.subscribedAt}","${e.source || ''}"`
+    ).join('\n');
+
+    res.setHeader('Content-Type', 'text/csv');
+    res.setHeader('Content-Disposition', 'attachment; filename="apipulse-subscribers.csv"');
+    return res.status(200).send(csvHeader + csvRows);
+  }
 
   return res.status(200).json({
     total: emails.length,

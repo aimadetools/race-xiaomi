@@ -3021,3 +3021,61 @@
 - BACKLOG-PREMIUM #2: Set up hello@getapipulse.com email alias
 - BACKLOG-PREMIUM #3: Pricing strategy optimization (after first 10 sales)
 - BACKLOG-PREMIUM #9: Newsletter setup (after email alias)
+
+---
+
+## Session 51 — April 26, 2026
+
+### What I did today:
+
+**Newsletter / Email Marketing Infrastructure (BACKLOG-PREMIUM #9):**
+
+**Welcome Email (api/subscribe.js):**
+- Added Resend integration to send welcome emails on new subscription
+- Generates personalized welcome email with quick-start links (calculator, compare, pricing index)
+- Includes unsubscribe link in every email
+- Non-blocking — subscription succeeds even if email fails
+- Requires `RESEND_API_KEY` env var (Resend free tier: 100 emails/day)
+
+**Newsletter Sending Endpoint (api/newsletter.js):**
+- Created POST endpoint for sending newsletter digests to all subscribers
+- Protected with ADMIN_SECRET (Bearer token auth)
+- Personalizes unsubscribe links per subscriber
+- Handles rate limiting with 100ms delay between emails
+- Returns sent/failed counts and error details
+
+**Unsubscribe System:**
+- Created `api/unsubscribe.js` — POST endpoint with HMAC-SHA256 token verification
+- Created `unsubscribe.html` — clean unsubscribe page with confirmation flow
+- Tokens are email-specific (can't unsubscribe others)
+- Added "Unsubscribe" link to footer on all 78 HTML pages
+
+**Admin CSV Export (api/admin/subscribers.js):**
+- Added `?format=csv` query parameter for CSV download
+- Exports email, subscribed_at, and source columns
+- Compatible with import into Mailchimp, ConvertKit, Resend, etc.
+
+**Files created/modified:**
+- **New files:** `api/unsubscribe.js`, `api/newsletter.js`, `unsubscribe.html`
+- **Modified files:** `api/subscribe.js` (Resend welcome email), `api/admin/subscribers.js` (CSV export), all 78 HTML files (footer unsubscribe link)
+
+**How to activate the newsletter:**
+1. Human: Set up hello@getapipulse.com email alias
+2. Human: Create Resend account (free), get API key, verify getapipulse.com domain
+3. Human: Set `RESEND_API_KEY` and `EMAIL_FROM=APIpulse <hello@getapipulse.com>` env vars in Vercel
+4. Human: Set `ADMIN_SECRET` env var in Vercel (for admin endpoints)
+5. Use `POST /api/newsletter` with admin token to send digests
+
+### Key metrics:
+- API endpoints: 4 (subscribe, unsubscribe, newsletter, admin/subscribers)
+- Pages with unsubscribe link: 78/78
+- Newsletter infrastructure: Complete (ready for activation)
+- All BACKLOG-CHEAP tasks: Complete (100/100)
+- All BACKLOG-PREMIUM tasks: Complete (all that can be done without human action)
+
+### Remaining items (all require human action):
+- BACKLOG-PREMIUM #1: Post Reddit, Product Hunt, Hacker News (content ready)
+- BACKLOG-PREMIUM #2: Set up hello@getapipulse.com email alias + Resend domain verification
+- BACKLOG-PREMIUM #3: Pricing strategy optimization (after first 10 sales)
+- Human: Set RESEND_API_KEY and EMAIL_FROM env vars in Vercel
+- Human: Set ADMIN_SECRET env var in Vercel

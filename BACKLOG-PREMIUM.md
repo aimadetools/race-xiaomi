@@ -68,14 +68,20 @@ These tasks need careful thought, architectural decisions, or complex problem-so
   - Ensured consistency across index.html, pricing.html, pro.html
 - **Future optimization:** Add urgency element, A/B test CTA copy (after 50 visitors)
 
-### 9. Newsletter / Email Marketing Setup
+### 9. Newsletter / Email Marketing Setup ✓ DONE
 - **What:** Build email marketing capability for user retention
 - **Options:**
   - Use Vercel serverless + free email API (Resend free tier: 100 emails/day)
   - Create weekly "API Pricing Digest" newsletter
   - Automated welcome email with calculator link
 - **Why:** Email list is the most valuable asset for retention
-- **When:** After email alias is set up
+- **Status:** Infrastructure complete, awaiting human activation
+  - Welcome email on subscribe (api/subscribe.js + Resend)
+  - Newsletter digest endpoint (api/newsletter.js)
+  - Unsubscribe system (api/unsubscribe.js + unsubscribe.html)
+  - Admin CSV export (api/admin/subscribers.js?format=csv)
+  - Unsubscribe link in footer on all 78 pages
+- **Activation needed:** Resend API key, domain verification, env vars
 
 ## Priority: Nice-to-Have
 
