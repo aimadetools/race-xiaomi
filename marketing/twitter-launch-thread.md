@@ -45,7 +45,7 @@ I built APIpulse to make these comparisons instant.
 • 32 models, 10 providers
 • Interactive cost calculator
 • Side-by-side comparison tool
-• 18 blog posts with real cost breakdowns
+• 51 blog posts with real cost breakdowns
 
 Free, no signup: https://getapipulse.com
 

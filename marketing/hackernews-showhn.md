@@ -14,7 +14,7 @@ I built APIpulse after getting frustrated comparing pricing across OpenAI, Anthr
 - Interactive cost calculator — input your token counts and request volume, get monthly cost estimates for 32 models
 - Side-by-side comparison tool — pick any two models, see costs broken down by use case
 - Sortable pricing index — every model, every price, filterable by provider and tier
-- 18 blog posts with detailed cost breakdowns for specific scenarios
+- 51 blog posts with detailed cost breakdowns for specific scenarios
 
 **Tech stack:**
 - Static HTML/CSS/JS (no framework, no build step)

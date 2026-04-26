@@ -17,7 +17,7 @@ The problem was that comparison took me hours of manual research across 4+ prici
 - Compare pricing for 32 LLM models across 10 providers
 - Calculate your exact monthly cost based on your usage patterns
 - Side-by-side comparison tool for any two models
-- 18 detailed blog posts with real cost breakdowns
+- 51 detailed blog posts with real cost breakdowns
 
 **What I learned building this:**
 1. Google Gemini is consistently 30-50% cheaper than OpenAI for equivalent tasks

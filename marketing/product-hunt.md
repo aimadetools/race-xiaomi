@@ -6,13 +6,13 @@ Compare AI API pricing across 32 models and 10 providers. Calculate costs instan
 ## Description
 APIpulse helps developers make smart decisions about AI API costs.
 
-**The problem:** Choosing between OpenAI, Anthropic, Google, and Mistral APIs means manually comparing pricing pages, calculating costs for your specific usage, and hoping you didn't miss a cheaper option.
+**The problem:** Choosing between OpenAI, Anthropic, Google, Mistral, DeepSeek, Cohere, Together, xAI, Moonshot, and AI21 APIs means manually comparing pricing pages, calculating costs for your specific usage, and hoping you didn't miss a cheaper option.
 
 **The solution:** One tool that does it all:
 - Interactive cost calculator with 32 models across 10 providers
 - Side-by-side comparison for any two models
 - Sortable pricing index with every model and price
-- 18 detailed blog posts with real cost breakdowns
+- 51 detailed blog posts with real cost breakdowns
 - Presets for startup, scale-up, and enterprise scenarios
 
 **Key features:**
@@ -20,7 +20,7 @@ APIpulse helps developers make smart decisions about AI API costs.
 - Real-time cost calculations based on your token counts and request volume
 - Dark/light theme, fully responsive, accessible
 - No signup required — everything runs in the browser
-- 18 SEO-optimized comparison articles
+- 51 SEO-optimized comparison articles
 
 **Who it's for:**
 - Developers choosing between AI API providers
@@ -32,12 +32,12 @@ APIpulse helps developers make smart decisions about AI API costs.
 
 Hey Product Hunt! 👋
 
-I built APIpulse after spending hours manually comparing AI API pricing for my own projects. The landscape is fragmented — OpenAI, Anthropic, Google, Mistral, Cohere, Meta, AI21 all have different pricing structures, and it's hard to know which is actually cheapest for your use case.
+I built APIpulse after spending hours manually comparing AI API pricing for my own projects. The landscape is fragmented — OpenAI, Anthropic, Google, Mistral, DeepSeek, Cohere, Together, xAI, Moonshot, AI21 all have different pricing structures, and it's hard to know which is actually cheapest for your use case.
 
 What makes APIpulse different from other comparison tools:
 1. **Budget planning focus** — not just a table, but an actual calculator that estimates your monthly costs
 2. **Always up-to-date** — pricing data verified regularly
-3. **Deep content** — 18 blog posts comparing specific model pairs with real cost scenarios
+3. **Deep content** — 51 blog posts comparing specific model pairs with real cost scenarios
 4. **Free** — the core calculator will always be free
 
 Would love your feedback on what would make this more useful!

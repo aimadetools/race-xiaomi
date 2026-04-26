@@ -16,7 +16,7 @@ I got tired of manually comparing pricing across OpenAI, Anthropic, Google, and 
 
 The calculator is completely free and runs entirely in the browser — no signup, no API keys, no tracking.
 
-I also wrote 18 blog posts comparing specific models (GPT-4o vs Claude Sonnet 4, Gemini vs GPT-5, cheapest chatbot options, etc.) with real cost breakdowns.
+I also wrote 51 blog posts comparing specific models (GPT-4o vs Claude Sonnet 4, Gemini vs GPT-5, cheapest chatbot options, etc.) with real cost breakdowns.
 
 Would love feedback on:
 1. Are the pricing numbers accurate for your use case?
