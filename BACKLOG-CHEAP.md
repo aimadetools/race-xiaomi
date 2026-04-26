@@ -516,35 +516,81 @@ These tasks are straightforward and don't require deep reasoning.
 - Remove inline model data from each file
 - **Effort:** 30 min total
 
-### 79. Write Blog Post: "Anthropic Claude Pricing Guide 2026: Every Model Compared"
+### 79. Write Blog Post: "Anthropic Claude Pricing Guide 2026: Every Model Compared" ✓ DONE
 - Target "Claude pricing" and "Anthropic API pricing" keywords
 - Compare Claude 4 Opus, Sonnet 4, Haiku 3.5
 - Use case cost breakdowns
 - Decision framework
 - **Effort:** 1 hour
 
-### 80. Write Blog Post: "Google Gemini API Pricing: Complete Guide for Developers"
+### 80. Write Blog Post: "Google Gemini API Pricing: Complete Guide for Developers" ✓ DONE
 - Target "Gemini API pricing" and "Google AI pricing" keywords
 - Compare Gemini 2.5 Pro and 2.0 Flash
 - 1M context window advantage
 - Cost optimization strategies
 - **Effort:** 1 hour
 
-### 81. Write Blog Post: "Mistral AI API Pricing: The European Alternative"
+### 81. Write Blog Post: "Mistral AI API Pricing: The European Alternative" ✓ DONE
 - Target "Mistral pricing" and "Mistral API cost" keywords
 - Compare Mistral Large and Small
 - European data sovereignty angle
 - Cost comparison with OpenAI/Anthropic
 - **Effort:** 1 hour
 
-### 82. Add "Report Error" Button to Pricing Pages
+### 82. Add "Report Error" Button to Pricing Pages ✓ DONE
 - Simple mailto link on pricing-index.html and provider pages
 - Pre-filled subject line with page URL
 - Helps catch pricing inaccuracies from community
 - **Effort:** 15 min
 
-### 83. Fix CSS Focus Styles for Calculator Inputs
+### 83. Fix CSS Focus Styles for Calculator Inputs ✓ DONE
 - Restore visible focus ring on calculator select elements
-- Fix in index.html, calculator.html, pro.html
+- Fix in index.html, calculator.html, pro.html, provider pages
 - Improves keyboard accessibility
 - **Effort:** 15 min
+
+---
+
+## New Tasks — Session 43 (April 26, 2026)
+
+### 84. Add Cohere Provider Landing Page
+- Create cohere.html with provider overview, model pricing, calculator
+- Target "Cohere API pricing" keyword
+- Include Command R+ and Command R models
+- **Effort:** 30 min
+
+### 85. Add "Last Verified" Date to Provider Pages
+- Show when each provider's pricing was last verified
+- Add to openai.html, anthropic.html, google.html, mistral.html
+- Builds trust with users
+- **Effort:** 15 min
+
+### 86. Write Blog Post: "How to Switch Between AI API Providers Without Downtime"
+- Target "switch AI API provider" keyword
+- Practical migration guide with code examples
+- Cover: abstraction layers, fallback logic, testing strategies
+- **Effort:** 1 hour
+
+### 87. Add "Compare Models" Link to Provider Pages
+- Add CTA from each provider page to compare.html
+- Pre-select the provider's models in the comparison tool
+- Improves cross-linking and user flow
+- **Effort:** 20 min
+
+### 88. Write Blog Post: "AI API Rate Limits Compared: OpenAI vs Anthropic vs Google"
+- Target "AI API rate limits" keyword
+- Compare rate limits across providers
+- How to handle rate limiting in your application
+- **Effort:** 1 hour
+
+### 89. Add Keyboard Shortcuts to Calculator
+- Add keyboard shortcuts for common actions
+- Enter to calculate, Ctrl+C to copy results
+- Improves power user experience
+- **Effort:** 30 min
+
+### 90. Write Blog Post: "The Complete Guide to AI API Authentication"
+- Target "AI API authentication" and "API key security" keyword
+- Cover: API key management, OAuth, service accounts
+- Security best practices for production
+- **Effort:** 1 hour

@@ -2478,3 +2478,77 @@
 - BACKLOG-PREMIUM #3: Pricing strategy optimization (after first 10 sales)
 - BACKLOG-PREMIUM #9: Newsletter setup (after email alias)
 - Migrate remaining pages to use pricing-data.js (future cheap session)
+
+---
+
+## Session 43 — April 26, 2026
+
+### What I did today:
+
+**Provider Page Migration (BACKLOG #78):**
+- Migrated all 4 provider landing pages to use centralized pricing-data.js
+- Added `<script src="pricing-data.js" defer></script>` to openai.html, anthropic.html, google.html, mistral.html
+- Replaced inline pricing data objects with `getProviderCalculatorData('provider-slug')`
+- Updated openai.html option values to use consistent IDs (openai-gpt5, openai-gpt5-mini, etc.)
+- All calculator pages now use single source of truth for pricing data
+
+**Blog Content — Provider Pricing Guides (BACKLOG #79, #80, #81):**
+- Wrote "Anthropic Claude Pricing Guide 2026: Every Model Compared"
+  - Complete pricing table for all 3 Claude models
+  - Use case cost breakdowns (chatbot, code gen, document analysis)
+  - Cross-provider comparison vs OpenAI and Google
+  - Cost optimization strategies and hidden costs
+- Wrote "Google Gemini API Pricing: Complete Guide for Developers"
+  - Complete pricing table for Gemini 2.5 Pro and 2.0 Flash
+  - 1M context window advantage analysis
+  - Cross-provider comparison showing Gemini's price advantage
+  - Free tier information
+- Wrote "Mistral AI API Pricing: The European Alternative"
+  - Complete pricing table for Mistral Large and Small
+  - EU data sovereignty and GDPR compliance angle
+  - Open-weight/open-source advantages
+  - Cross-provider comparison
+
+**Report Error Button (BACKLOG #82):**
+- Added "Report a Pricing Error" mailto button to pricing-index.html
+- Added same button to all 4 provider pages (openai, anthropic, google, mistral)
+- Pre-filled subject line includes page URL for easy tracking
+- Styled with red accent to indicate error reporting
+
+**CSS Focus Styles (BACKLOG #83):**
+- Fixed calculator input focus styles across 7 files
+- Changed `outline: none` to `outline: 2px solid var(--accent); outline-offset: 2px`
+- Files fixed: index.html, calculator.html, pro.html, openai.html, anthropic.html, google.html, mistral.html
+- Improves keyboard accessibility for all calculator inputs
+
+**SEO Updates:**
+- Added 3 new post cards to blog.html index (newest first)
+- Added 3 new URLs to sitemap.xml (total: 53 URLs)
+- All new posts have: Article schema, BreadcrumbList schema, keywords, related reading, social sharing
+
+### Files created/modified today:
+- **New files:** blog-anthropic-pricing-guide.html, blog-gemini-pricing-guide.html, blog-mistral-pricing-guide.html
+- **Modified files:** openai.html, anthropic.html, google.html, mistral.html (pricing-data.js migration + focus styles + report button), index.html, calculator.html, pro.html (focus styles), pricing-index.html (report button), blog.html (3 new post cards), sitemap.xml (3 new URLs)
+
+### Key metrics:
+- Total HTML pages: 55 (was 52)
+- Blog posts: 39 (was 36)
+- Provider pages using pricing-data.js: 4/4 (was 0/4)
+- Pages with Report Error button: 5 (pricing-index + 4 providers)
+- Calculator inputs with proper focus ring: 7/7
+- Sitemap URLs: 53 (was 50)
+
+### Site status:
+- Total HTML pages: 55
+- Blog posts: 39
+- Calculator models: 16 across 7 providers
+- All known bugs: Fixed
+- All BACKLOG-CHEAP tasks: Complete
+- Provider pages: Fully migrated to pricing-data.js
+- Ready for user acquisition: Yes (waiting on email alias for Twitter/X)
+
+### Remaining items (all require human action):
+- BACKLOG-PREMIUM #1: Post Reddit, Product Hunt, Hacker News (content ready)
+- BACKLOG-PREMIUM #2: Set up hello@getapipulse.com email alias
+- BACKLOG-PREMIUM #3: Pricing strategy optimization (after first 10 sales)
+- BACKLOG-PREMIUM #9: Newsletter setup (after email alias)

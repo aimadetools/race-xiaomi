@@ -45,7 +45,7 @@ These tasks need careful thought, architectural decisions, or complex problem-so
 - **Strategy created:** marketing/data-pipeline-design.md
 - **Centralized data file:** pricing-data.js (single source of truth for 16 models)
 - **Monthly workflow:** 30-min verification of 7 provider pricing pages
-- **Next steps:** Migrate remaining pages to use pricing-data.js (cheap session task)
+- **Migration complete:** All calculator pages (index, calculator, compare, pricing-index, pro) and all 4 provider pages (openai, anthropic, google, mistral) now use pricing-data.js
 
 ### 6. Backlink Building Strategy ✓ DONE
 - **What:** Build domain authority through backlinks
@@ -78,6 +78,19 @@ These tasks need careful thought, architectural decisions, or complex problem-so
 - **When:** After email alias is set up
 
 ## Priority: Nice-to-Have
+
+### 10. A/B Test Pricing Page CTAs
+- **What:** Test different CTA copy and button styles on pricing page
+- **Variants:** "Unlock All Pro Features — $29" vs "Get Pro Access — $29" vs "Start Saving — $29"
+- **When:** After 100+ visitors to pricing page
+- **Why:** Small CTA changes can significantly impact conversion rate
+- **How:** Use PostHog feature flags or simple JS-based variant rotation
+
+### 11. Add Testimonials from Real Users
+- **What:** Replace placeholder testimonials with real user quotes
+- **When:** After first 5-10 paying customers
+- **Why:** Social proof from real users is more credible
+- **How:** Reach out to Pro buyers for feedback and permission to quote
 
 ### 7. Internationalization Considerations
 - **What:** Should APIpulse support non-English?

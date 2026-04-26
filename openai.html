@@ -21,6 +21,7 @@
     <script src="analytics.js" defer></script>
     <script src="dynamic-date.js" defer></script>
     <script src="shared.js" defer></script>
+    <script src="pricing-data.js" defer></script>
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -112,7 +113,7 @@
             transition: border-color 0.2s;
         }
         .calc-inputs input:focus, .calc-inputs select:focus {
-            outline: none; border-color: var(--accent);
+            outline: 2px solid var(--accent); outline-offset: 2px; border-color: var(--accent);
         }
         .calc-inputs .input-group { margin-bottom: 20px; }
         .calc-results {
@@ -382,12 +383,12 @@
                         <div class="input-group">
                             <label for="oai-model">Model</label>
                             <select id="oai-model" onchange="oaiCalc()" aria-label="Select OpenAI model">
-                                <option value="gpt5">GPT-5</option>
-                                <option value="gpt5-mini">GPT-5 mini</option>
-                                <option value="gpt4o" selected>GPT-4o</option>
-                                <option value="gpt4o-mini">GPT-4o mini</option>
-                                <option value="gpt4-turbo">GPT-4 Turbo</option>
-                                <option value="gpt35-turbo">GPT-3.5 Turbo</option>
+                                <option value="openai-gpt5">GPT-5</option>
+                                <option value="openai-gpt5-mini">GPT-5 mini</option>
+                                <option value="openai-gpt4o" selected>GPT-4o</option>
+                                <option value="openai-gpt4o-mini">GPT-4o mini</option>
+                                <option value="openai-gpt4-turbo">GPT-4 Turbo</option>
+                                <option value="openai-gpt35-turbo">GPT-3.5 Turbo</option>
                             </select>
                         </div>
                         <div class="input-group">
@@ -540,6 +541,10 @@
 
     </div>
 
+    <div style="text-align:center;margin:32px 0;">
+        <a href="mailto:hello@getapipulse.com?subject=Pricing%20Error%20Report%20%E2%80%94%20openai.html" style="display:inline-block;padding:10px 20px;background:rgba(239,68,68,0.1);border:1px solid rgba(239,68,68,0.3);color:#ef4444;border-radius:8px;font-size:13px;font-weight:600;text-decoration:none;">Report a Pricing Error</a>
+    </div>
+
     <button class="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">↑</button>
 
     </main>
@@ -550,15 +555,8 @@
     </footer>
 
     <script>
-        // OpenAI-only pricing data (per 1M tokens)
-        const oaiModels = {
-            'gpt5':        { name: 'GPT-5',          input: 10.00, output: 30.00, context: '256K' },
-            'gpt5-mini':   { name: 'GPT-5 mini',     input: 0.40,  output: 1.60,  context: '256K' },
-            'gpt4o':       { name: 'GPT-4o',         input: 2.50,  output: 10.00, context: '128K' },
-            'gpt4o-mini':  { name: 'GPT-4o mini',    input: 0.15,  output: 0.60,  context: '128K' },
-            'gpt4-turbo':  { name: 'GPT-4 Turbo',    input: 10.00, output: 30.00, context: '128K' },
-            'gpt35-turbo': { name: 'GPT-3.5 Turbo',  input: 0.50,  output: 1.50,  context: '16K'  }
-        };
+        // OpenAI pricing data from centralized pricing-data.js
+        const oaiModels = getProviderCalculatorData('openai');
 
         function oaiCalc() {
             const key = document.getElementById('oai-model').value;
