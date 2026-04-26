@@ -626,7 +626,7 @@ These tasks are straightforward and don't require deep reasoning.
 - Impact on user experience and cost (latency vs price tradeoff)
 - **Effort:** 1 hour
 
-### 97. Write Blog Post: "Multi-Model Routing: How to Cut AI Costs by 60%"
+### 97. Write Blog Post: "Multi-Model Routing: How to Cut AI Costs by 60%" ✓ DONE
 - Target "multi-model routing" and "AI cost optimization strategy" keywords
 - Route simple queries to cheap models, complex to premium
 - Show before/after cost comparison with calculator

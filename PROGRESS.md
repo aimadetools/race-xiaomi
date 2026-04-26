@@ -2960,19 +2960,32 @@
   - How to measure your own latency
   - Optimization tips: region selection, prompt length, streaming, caching
 
+**Blog Content (BACKLOG-CHEAP #97):**
+- Wrote "Multi-Model Routing: How to Cut AI Costs by 60%"
+  - Targets "multi-model routing" and "AI cost optimization strategy" keywords
+  - Request classification: keyword-based, length-based, classifier model
+  - Real cost comparison: single model ($225/mo) vs routed ($54-68/mo) at 1,000 req/day
+  - Maximum savings: 76%
+  - Quality fallback pattern: automatic retry on higher model if quality drops
+  - Provider-specific routing tips for OpenAI, Anthropic, and cross-provider
+  - Success metrics: cost/request, quality score, fallback rate
+
 ### Files created/modified:
 - `blog-ai-agent-budget.html` — New blog post
 - `blog-llm-latency.html` — New blog post
-- `blog.html` — Added 2 post cards
-- `sitemap.xml` — Added 2 URLs
+- `blog-multi-model-routing.html` — New blog post
+- `blog.html` — Added 3 post cards
+- `sitemap.xml` — Added 3 URLs
 
 ### Key metrics:
-- Total HTML pages: 74 (was 72)
-- Blog posts: 49 (was 47)
-- Sitemap URLs: 68 (was 66)
+- Total HTML pages: 75 (was 72)
+- Blog posts: 50 (was 47)
+- Sitemap URLs: 69 (was 66)
 
 ### Remaining backlog tasks:
-- BACKLOG-CHEAP #97: Write Blog Post: "Multi-Model Routing: How to Cut AI Costs by 60%"
+- BACKLOG-CHEAP #98: Create "AI API Glossary" Standalone Page
+- BACKLOG-CHEAP #99: Write Blog Post: "AI API Security Best Practices for Production"
+- BACKLOG-CHEAP #100: Add "Providers" Index Page
 - BACKLOG-CHEAP #97: Write Blog Post: "Multi-Model Routing: How to Cut AI Costs by 60%"
 - BACKLOG-CHEAP #98: Create "AI API Glossary" Standalone Page
 - BACKLOG-CHEAP #99: Write Blog Post: "AI API Security Best Practices for Production"
