@@ -633,6 +633,15 @@
 
         // Run on load
         oaiCalc();
+
+        // Keyboard shortcuts
+        document.addEventListener('keydown', function(e) {
+            const tag = document.activeElement.tagName;
+            const isInput = tag === 'INPUT' || tag === 'SELECT' || tag === 'TEXTAREA';
+            if (e.key === 'Escape' && isInput) { document.activeElement.blur(); return; }
+            if (isInput) return;
+            if (e.key === 'c' || e.key === 'C') { oaiCopyResults(); }
+        });
     </script>
 </body>
 </html>

@@ -578,13 +578,13 @@ These tasks are straightforward and don't require deep reasoning.
 - Includes code patterns: exponential backoff, token bucket, multi-provider fallback
 - **Effort:** 1 hour
 
-### 89. Add Keyboard Shortcuts to Calculator
+### 89. Add Keyboard Shortcuts to Calculator ✓ DONE
 - Add keyboard shortcuts for common actions
-- Enter to calculate, Ctrl+C to copy results
-- Improves power user experience
+- 1/2/3 for presets, C to copy, ? for help, Escape to blur
+- Added to calculator.html, index.html, and provider pages
 - **Effort:** 30 min
 
-### 90. Write Blog Post: "The Complete Guide to AI API Authentication"
+### 90. Write Blog Post: "The Complete Guide to AI API Authentication" ✓ DONE
 - Target "AI API authentication" and "API key security" keyword
 - Cover: API key management, OAuth, service accounts
 - Security best practices for production

@@ -234,6 +234,40 @@
         </div>
     </section>
 
+    <div class="keyboard-hint">
+        <kbd>1</kbd> <kbd>2</kbd> <kbd>3</kbd> presets &middot; <kbd>C</kbd> copy &middot; <kbd>?</kbd> shortcuts
+    </div>
+
+    <div class="shortcuts-modal" id="shortcuts-modal" onclick="if(event.target===this)toggleShortcuts()">
+        <div class="shortcuts-content">
+            <h3>Keyboard Shortcuts</h3>
+            <div class="shortcut-row">
+                <span class="shortcut-desc">Apply Startup preset</span>
+                <span class="shortcut-keys"><kbd>1</kbd></span>
+            </div>
+            <div class="shortcut-row">
+                <span class="shortcut-desc">Apply Scale-up preset</span>
+                <span class="shortcut-keys"><kbd>2</kbd></span>
+            </div>
+            <div class="shortcut-row">
+                <span class="shortcut-desc">Apply Enterprise preset</span>
+                <span class="shortcut-keys"><kbd>3</kbd></span>
+            </div>
+            <div class="shortcut-row">
+                <span class="shortcut-desc">Copy results to clipboard</span>
+                <span class="shortcut-keys"><kbd>C</kbd></span>
+            </div>
+            <div class="shortcut-row">
+                <span class="shortcut-desc">Show this help</span>
+                <span class="shortcut-keys"><kbd>?</kbd></span>
+            </div>
+            <div class="shortcut-row">
+                <span class="shortcut-desc">Close dialog / blur input</span>
+                <span class="shortcut-keys"><kbd>Esc</kbd></span>
+            </div>
+        </div>
+    </div>
+
     <div class="info-section">
         <h2>How This Calculator Works</h2>
         <p>Enter your expected usage — tokens per request, requests per day, and days per month — and the calculator shows your estimated monthly cost for any of 16 LLM models across 7 providers. It also suggests the cheapest alternative if a cheaper model can handle your workload.</p>
@@ -391,6 +425,36 @@
             calculate();
             if (window.trackEvent) window.trackEvent('preset_clicked', { preset: type });
         }
+
+        // Keyboard shortcuts
+        function toggleShortcuts() {
+            document.getElementById('shortcuts-modal').classList.toggle('active');
+        }
+
+        document.addEventListener('keydown', function(e) {
+            const tag = document.activeElement.tagName;
+            const isInput = tag === 'INPUT' || tag === 'SELECT' || tag === 'TEXTAREA';
+
+            // Escape: close modal or blur input
+            if (e.key === 'Escape') {
+                const modal = document.getElementById('shortcuts-modal');
+                if (modal.classList.contains('active')) {
+                    modal.classList.remove('active');
+                } else if (isInput) {
+                    document.activeElement.blur();
+                }
+                return;
+            }
+
+            // Shortcuts only work when no input is focused
+            if (isInput) return;
+
+            if (e.key === '1') { applyPreset('startup'); }
+            else if (e.key === '2') { applyPreset('scaleup'); }
+            else if (e.key === '3') { applyPreset('enterprise'); }
+            else if (e.key === 'c' || e.key === 'C') { copyResults(); }
+            else if (e.key === '?') { e.preventDefault(); toggleShortcuts(); }
+        });
     </script>
 </body>
 </html>

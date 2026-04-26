@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Complete Guide to AI API Authentication (2026) — APIpulse</title>
+    <meta name="description" content="Learn how to securely authenticate with OpenAI, Anthropic, Google, and other AI APIs. Covers API keys, OAuth, service accounts, and production security best practices.">
+    <meta name="keywords" content="AI API authentication, API key security, OpenAI API key, Anthropic API key, API authentication best practices, secure API keys">
+    <meta property="og:title" content="The Complete Guide to AI API Authentication (2026) — APIpulse">
+    <meta property="og:description" content="Learn how to securely authenticate with AI APIs. Covers API keys, OAuth, service accounts, and production security best practices.">
+    <meta property="og:type" content="article">
+    <meta property="article:published_time" content="2026-04-26">
+    <meta property="article:modified_time" content="2026-04-26">
+    <meta property="article:author" content="APIpulse">
+    <meta property="og:image" content="https://getapipulse.com/og-image.png">
+    <meta property="og:url" content="https://getapipulse.com/blog-api-authentication.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="The Complete Guide to AI API Authentication (2026) — APIpulse">
+    <meta name="twitter:image" content="https://getapipulse.com/og-image.png">
+    <meta name="twitter:description" content="Learn how to securely authenticate with AI APIs. Covers API keys, OAuth, service accounts, and production security best practices.">
+    <link rel="canonical" href="https://getapipulse.com/blog-api-authentication.html">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="styles.css">
+    <script src="analytics.js" defer></script>
+    <script src="dynamic-date.js" defer></script>
+    <script src="shared.js" defer></script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "The Complete Guide to AI API Authentication (2026)",
+        "description": "Learn how to securely authenticate with OpenAI, Anthropic, Google, and other AI APIs. Covers API keys, OAuth, service accounts, and production security best practices.",
+        "datePublished": "2026-04-26",
+        "dateModified": "2026-04-26",
+        "author": { "@type": "Organization", "name": "APIpulse" },
+        "publisher": { "@type": "Organization", "name": "APIpulse", "url": "https://getapipulse.com" },
+        "url": "https://getapipulse.com/blog-api-authentication.html"
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Blog", "item": "https://getapipulse.com/blog.html" },
+            { "@type": "ListItem", "position": 2, "name": "The Complete Guide to AI API Authentication", "item": "https://getapipulse.com/blog-api-authentication.html" }
+        ]
+    }
+    </script>
+    <style>
+        .content { max-width: 800px; margin: 0 auto; padding: 120px 24px 80px; }
+        h1 { font-size: 40px; font-weight: 800; margin-bottom: 12px; }
+        .subtitle { color: var(--text-secondary); font-size: 18px; margin-bottom: 48px; }
+
+        .post-meta {
+            display: flex; gap: 16px; align-items: center; margin-bottom: 12px;
+            font-size: 13px; color: var(--text-muted);
+        }
+        .tier-badge {
+            display: inline-block; padding: 2px 8px; border-radius: 4px;
+            font-size: 11px; font-weight: 600; text-transform: uppercase;
+        }
+        .tier-badge.guide { background: rgba(99, 102, 241, 0.15); color: var(--accent); }
+
+        h2 { font-size: 28px; font-weight: 700; margin: 48px 0 16px; }
+        h3 { font-size: 22px; font-weight: 600; margin: 32px 0 12px; }
+        p { color: var(--text-secondary); line-height: 1.8; margin-bottom: 16px; }
+        a { color: var(--accent); text-decoration: none; }
+        a:hover { text-decoration: underline; }
+
+        table {
+            width: 100%; border-collapse: collapse; margin: 24px 0;
+            background: var(--bg-secondary); border-radius: 8px; overflow: hidden;
+        }
+        th {
+            background: var(--bg-card); padding: 14px 16px; text-align: left;
+            font-weight: 600; font-size: 13px; text-transform: uppercase;
+            letter-spacing: 0.5px; color: var(--text-muted);
+            border-bottom: 1px solid var(--border);
+        }
+        td { padding: 12px 16px; border-bottom: 1px solid var(--border); font-size: 14px; }
+        tr:last-child td { border-bottom: none; }
+        tr:hover { background: var(--bg-secondary); }
+
+        .highlight { background: rgba(34,197,94,0.05); }
+        .best { color: var(--green); font-weight: 600; }
+
+        ul, ol { color: var(--text-secondary); line-height: 1.8; margin-bottom: 16px; padding-left: 24px; }
+        li { margin-bottom: 8px; }
+
+        code {
+            background: var(--bg-secondary); padding: 2px 6px; border-radius: 4px;
+            font-size: 13px; font-family: 'Courier New', monospace;
+        }
+        pre {
+            background: var(--bg-secondary); padding: 20px; border-radius: 8px;
+            overflow-x: auto; margin: 16px 0; font-size: 13px; line-height: 1.6;
+        }
+        pre code { background: none; padding: 0; }
+
+        .tip-box {
+            background: rgba(99,102,241,0.08); border-left: 3px solid var(--accent);
+            padding: 16px 20px; border-radius: 0 8px 8px 0; margin: 24px 0;
+        }
+        .tip-box strong { color: var(--accent); }
+
+        .warning-box {
+            background: rgba(234,179,8,0.08); border-left: 3px solid #eab308;
+            padding: 16px 20px; border-radius: 0 8px 8px 0; margin: 24px 0;
+        }
+        .warning-box strong { color: #eab308; }
+
+        .danger-box {
+            background: rgba(239,68,68,0.08); border-left: 3px solid var(--red);
+            padding: 16px 20px; border-radius: 0 8px 8px 0; margin: 24px 0;
+        }
+        .danger-box strong { color: var(--red); }
+
+        .related-reading {
+            background: var(--bg-secondary); border: 1px solid var(--border);
+            border-radius: 12px; padding: 28px; margin: 48px 0;
+        }
+        .related-reading h3 { margin-top: 0; font-size: 18px; }
+        .related-links { display: flex; flex-direction: column; gap: 8px; margin-top: 12px; }
+        .related-links a { font-size: 14px; }
+
+        .cta-box {
+            background: linear-gradient(135deg, rgba(99,102,241,0.1), rgba(99,102,241,0.05));
+            border: 1px solid rgba(99,102,241,0.2); border-radius: 12px;
+            padding: 32px; text-align: center; margin: 48px 0;
+        }
+        .cta-box h3 { margin-top: 0; }
+
+        .email-section {
+            padding: 60px 24px; background: var(--bg-secondary);
+            border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
+            margin: 48px 0;
+        }
+
+        .checklist { list-style: none; padding-left: 0; }
+        .checklist li { padding-left: 28px; position: relative; }
+        .checklist li::before { content: "✓"; position: absolute; left: 0; color: var(--green); font-weight: 700; }
+
+        @media (max-width: 768px) {
+            .content { padding: 100px 16px 60px; }
+            h1 { font-size: 28px; }
+            table { font-size: 12px; }
+            th, td { padding: 8px 10px; }
+        }
+    </style>
+    <meta name="theme-color" content="#6366f1">
+    <link rel="preconnect" href="https://getapipulse.com">
+</head>
+<body>
+    <a href="#main" class="skip-link">Skip to content</a>
+    <nav>
+        <div class="nav-inner">
+            <a href="index.html" class="logo">API<span>pulse</span></a>
+            <button class="hamburger" onclick="toggleMobileNav()" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+            <div class="nav-links">
+                <a href="calculator.html">Calculator</a>
+                <a href="compare.html">Compare</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="use-cases.html">Use Cases</a>
+                <a href="about.html">About</a>
+                <a href="blog.html" class="active">Blog</a>
+                <a href="pricing-index.html">Pricing Index</a>
+                <a href="pricing-trends.html">Trends</a>
+                <a href="pricing.html" class="nav-cta" onclick="if(window.trackEvent)window.trackEvent('pro_button_clicked',{source:'nav'})">Get Pro — $29</a>
+                <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
+            </div>
+        </div>
+    </nav>
+
+    <main id="main">
+
+    <div class="content">
+
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+            <a href="blog.html">Blog</a> &rsaquo; The Complete Guide to AI API Authentication
+        </nav>
+
+        <div class="post-meta">
+            <span class="tier-badge guide">Guide</span>
+            <span>April 26, 2026</span>
+            <span>14 min read</span>
+        </div>
+
+        <h1>The Complete Guide to AI API Authentication (2026)</h1>
+
+        <p>Every AI API call starts with authentication. Get it right, and your application runs smoothly. Get it wrong, and you risk leaked keys, unauthorized usage, and unexpected bills that can reach thousands of dollars overnight.</p>
+
+        <p>This guide covers everything you need to know about authenticating with AI APIs — from basic API keys to OAuth flows and production-grade security practices.</p>
+
+        <h2>How AI API Authentication Works</h2>
+
+        <p>All major AI API providers (OpenAI, Anthropic, Google, Mistral, Cohere) use <strong>API key-based authentication</strong>. You include a secret key in your HTTP requests, and the provider verifies it before processing your request.</p>
+
+        <p>The basic flow looks like this:</p>
+
+        <pre><code>// Typical API request with authentication
+const response = await fetch('https://api.openai.com/v1/chat/completions', {
+    method: 'POST',
+    headers: {
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer sk-your-api-key-here'
+    },
+    body: JSON.stringify({
+        model: 'gpt-4o',
+        messages: [{ role: 'user', content: 'Hello' }]
+    })
+});</code></pre>
+
+        <p>The <code>Authorization</code> header carries your API key. The provider checks it against their database, verifies your account has sufficient credits, and processes the request.</p>
+
+        <h2>Authentication Methods by Provider</h2>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Provider</th>
+                    <th>Auth Method</th>
+                    <th>Header Format</th>
+                    <th>Key Prefix</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>OpenAI</strong></td>
+                    <td>API Key (Bearer token)</td>
+                    <td><code>Authorization: Bearer KEY</code></td>
+                    <td><code>sk-</code></td>
+                </tr>
+                <tr>
+                    <td><strong>Anthropic</strong></td>
+                    <td>API Key (custom header)</td>
+                    <td><code>x-api-key: KEY</code></td>
+                    <td><code>sk-ant-</code></td>
+                </tr>
+                <tr>
+                    <td><strong>Google Gemini</strong></td>
+                    <td>API Key (query param or header)</td>
+                    <td><code>?key=KEY</code> or <code>x-goog-api-key: KEY</code></td>
+                    <td><code>AIza</code></td>
+                </tr>
+                <tr>
+                    <td><strong>Mistral</strong></td>
+                    <td>API Key (Bearer token)</td>
+                    <td><code>Authorization: Bearer KEY</code></td>
+                    <td><code>mist-</code></td>
+                </tr>
+                <tr>
+                    <td><strong>Cohere</strong></td>
+                    <td>API Key (Bearer token)</td>
+                    <td><code>Authorization: Bearer KEY</code></td>
+                    <td><code>co- </code></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="tip-box">
+            <strong>Key difference:</strong> Anthropic uses a custom <code>x-api-key</code> header instead of the standard <code>Authorization: Bearer</code> format. Make sure your HTTP client sends the correct header for each provider.
+        </div>
+
+        <h2>Getting Your API Keys</h2>
+
+        <h3>OpenAI</h3>
+        <ol>
+            <li>Go to <a href="https://platform.openai.com/api-keys" rel="noopener">platform.openai.com/api-keys</a></li>
+            <li>Click "Create new secret key"</li>
+            <li>Copy the key immediately — it's only shown once</li>
+            <li>Set up billing at <a href="https://platform.openai.com/account/billing" rel="noopener">platform.openai.com/account/billing</a></li>
+        </ol>
+
+        <h3>Anthropic</h3>
+        <ol>
+            <li>Go to <a href="https://console.anthropic.com/settings/keys" rel="noopener">console.anthropic.com/settings/keys</a></li>
+            <li>Click "Create Key"</li>
+            <li>Name your key (e.g., "production", "development")</li>
+            <li>Copy the key — starts with <code>sk-ant-</code></li>
+        </ol>
+
+        <h3>Google Gemini</h3>
+        <ol>
+            <li>Go to <a href="https://aistudio.google.com/apikey" rel="noopener">aistudio.google.com/apikey</a></li>
+            <li>Click "Create API key"</li>
+            <li>Select or create a Google Cloud project</li>
+            <li>Copy the key — starts with <code>AIza</code></li>
+        </ol>
+
+        <h3>Mistral</h3>
+        <ol>
+            <li>Go to <a href="https://console.mistral.ai/api-keys/" rel="noopener">console.mistral.ai/api-keys</a></li>
+            <li>Click "Create new key"</li>
+            <li>Name and copy the key</li>
+        </ol>
+
+        <h3>Cohere</h3>
+        <ol>
+            <li>Go to <a href="https://dashboard.cohere.com/api-keys" rel="noopener">dashboard.cohere.com/api-keys</a></li>
+            <li>Click "Create API key"</li>
+            <li>Copy the key — starts with <code>co- </code></li>
+        </ol>
+
+        <h2>API Key Security Best Practices</h2>
+
+        <div class="danger-box">
+            <strong>Warning:</strong> API keys are like passwords. If leaked, anyone can use your account to make API calls — and you'll be billed for it. A single leaked key can result in thousands of dollars in charges within hours.
+        </div>
+
+        <h3>1. Never Hardcode Keys in Source Code</h3>
+
+        <p>This is the #1 mistake developers make. Never do this:</p>
+
+        <pre><code>// ❌ NEVER DO THIS
+const apiKey = 'sk-abc123xyz789...';  // Key in source code
+// Anyone with access to your repo can see this</code></pre>
+
+        <p>Instead, use environment variables:</p>
+
+        <pre><code>// ✅ Use environment variables
+const apiKey = process.env.OPENAI_API_KEY;
+// Key stays in your .env file, which is gitignored</code></pre>
+
+        <h3>2. Use Environment Variables</h3>
+
+        <p>Create a <code>.env</code> file in your project root (and add it to <code>.gitignore</code>):</p>
+
+        <pre><code># .env — NEVER commit this file
+OPENAI_API_KEY=sk-abc123...
+ANTHROPIC_API_KEY=sk-ant-abc123...
+GOOGLE_API_KEY=AIzaabc123...
+MISTRAL_API_KEY=mist-abc123...
+COHERE_API_KEY=co-abc123...</code></pre>
+
+        <p>Access them in your code:</p>
+
+        <pre><code>// Node.js
+require('dotenv').config();
+const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
+
+// Python
+import os
+from openai import OpenAI
+client = OpenAI(api_key=os.environ['OPENAI_API_KEY'])</code></pre>
+
+        <h3>3. Use Separate Keys for Each Environment</h3>
+
+        <p>Create different API keys for development, staging, and production:</p>
+
+        <ul>
+            <li><strong>Development:</strong> Lower spending limits, can be shared with team</li>
+            <li><strong>Staging:</strong> Moderate limits, used for testing</li>
+            <li><strong>Production:</strong> Higher limits, restricted access</li>
+        </ul>
+
+        <h3>4. Set Spending Limits</h3>
+
+        <p>All major providers allow you to set monthly spending limits. Always configure these:</p>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Provider</th>
+                    <th>Where to Set Limits</th>
+                    <th>Recommended Starting Limit</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>OpenAI</strong></td>
+                    <td>Settings → Limits → Usage limits</td>
+                    <td>$20-50/month for development</td>
+                </tr>
+                <tr>
+                    <td><strong>Anthropic</strong></td>
+                    <td>Settings → Plans & Billing → Usage limit</td>
+                    <td>$20-50/month for development</td>
+                </tr>
+                <tr>
+                    <td><strong>Google</strong></td>
+                    <td>Cloud Console → Billing → Budgets</td>
+                    <td>$20-50/month for development</td>
+                </tr>
+                <tr>
+                    <td><strong>Mistral</strong></td>
+                    <td>Dashboard → Billing → Limits</td>
+                    <td>$20-50/month for development</td>
+                </tr>
+                <tr>
+                    <td><strong>Cohere</strong></td>
+                    <td>Dashboard → Billing → Usage limits</td>
+                    <td>$20-50/month for development</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="tip-box">
+            <strong>Pro tip:</strong> Set your development limit to $20/month. If you accidentally leave a loop running, you'll lose $20 instead of $2,000.
+        </div>
+
+        <h3>5. Rotate Keys Regularly</h3>
+
+        <p>Rotate your API keys every 90 days, or immediately if you suspect a leak. Most providers make this easy:</p>
+
+        <ol>
+            <li>Create a new key</li>
+            <li>Update your environment variables</li>
+            <li>Verify the new key works</li>
+            <li>Delete the old key</li>
+        </ol>
+
+        <h3>6. Use Key Scoping (When Available)</h3>
+
+        <p>Some providers let you restrict what a key can do:</p>
+
+        <ul>
+            <li><strong>OpenAI:</strong> Create keys with restricted permissions (read-only, specific models)</li>
+            <li><strong>Google:</strong> Restrict API keys to specific APIs and IP addresses</li>
+            <li><strong>Azure OpenAI:</strong> Role-based access control (RBAC) for fine-grained permissions</li>
+        </ul>
+
+        <h2>Server-Side vs. Client-Side Authentication</h2>
+
+        <div class="danger-box">
+            <strong>Never call AI APIs directly from the browser.</strong> Client-side JavaScript is visible to anyone who opens DevTools. Your API key would be exposed immediately.
+        </div>
+
+        <p>The correct architecture uses a backend proxy:</p>
+
+        <pre><code>// ❌ WRONG: Direct client-side API call
+// Your API key is visible in the browser's Network tab
+async function askAI(prompt) {
+    const res = await fetch('https://api.openai.com/v1/chat/completions', {
+        headers: { 'Authorization': 'Bearer sk-your-key-here' },  // EXPOSED!
+        body: JSON.stringify({ model: 'gpt-4o', messages: [{ role: 'user', content: prompt }] })
+    });
+}
+
+// ✅ CORRECT: Backend proxy
+// Client calls your server, server calls the AI API
+async function askAI(prompt) {
+    const res = await fetch('/api/chat', {  // Your own endpoint
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ prompt })
+    });
+}
+
+// server.js — Your backend keeps the key safe
+app.post('/api/chat', async (req, res) => {
+    const response = await openai.chat.completions.create({
+        model: 'gpt-4o',
+        messages: [{ role: 'user', content: req.body.prompt }]
+    });
+    res.json(response.choices[0].message);
+});</code></pre>
+
+        <h2>Production Security Checklist</h2>
+
+        <ul class="checklist">
+            <li>API keys stored in environment variables (not source code)</li>
+            <li><code>.env</code> file added to <code>.gitignore</code></li>
+            <li>Separate keys for dev/staging/production</li>
+            <li>Spending limits configured on all provider dashboards</li>
+            <li>API calls made server-side only (never from browser)</li>
+            <li>Keys rotated every 90 days</li>
+            <li>Alert set up for unusual spending patterns</li>
+            <li>Access logs reviewed weekly</li>
+            <li>Team access restricted (not everyone needs production keys)</li>
+            <li>Backup keys stored in secrets manager (AWS Secrets Manager, Vault, etc.)</li>
+        </ul>
+
+        <h2>OAuth and Service Accounts (Advanced)</h2>
+
+        <p>Most AI APIs use simple API key authentication, but some scenarios require more advanced methods:</p>
+
+        <h3>Google Cloud Service Accounts</h3>
+
+        <p>For production Google Gemini usage, you might use a service account instead of an API key:</p>
+
+        <pre><code>// Using a service account with Google AI
+const { GoogleAuth } = require('google-auth-library');
+
+const auth = new GoogleAuth({
+    keyFile: 'service-account.json',
+    scopes: ['https://www.googleapis.com/auth/generative-language']
+});
+
+const client = await auth.getClient();
+const token = await client.getAccessToken();</code></pre>
+
+        <p>Service accounts offer more granular permissions and are better suited for production deployments.</p>
+
+        <h3>Azure OpenAI (OAuth 2.0)</h3>
+
+        <p>Azure OpenAI uses OAuth 2.0 with Azure Active Directory:</p>
+
+        <pre><code>// Azure OpenAI with OAuth
+const { DefaultAzureCredential } = require('@azure/identity');
+
+const credential = new DefaultAzureCredential();
+const token = await credential.getToken('https://cognitiveservices.azure.com/.default');
+
+const response = await fetch('https://your-resource.openai.azure.com/openai/deployments/gpt-4o/chat/completions?api-version=2024-02-15-preview', {
+    headers: {
+        'Authorization': `Bearer ${token.token}`,
+        'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({ messages: [{ role: 'user', content: 'Hello' }] })
+});</code></pre>
+
+        <h2>Common Authentication Errors</h2>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Error</th>
+                    <th>Cause</th>
+                    <th>Fix</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>401 Unauthorized</code></td>
+                    <td>Invalid or missing API key</td>
+                    <td>Check key is correct and included in request</td>
+                </tr>
+                <tr>
+                    <td><code>403 Forbidden</code></td>
+                    <td>Key doesn't have permission for this action</td>
+                    <td>Check key scope/permissions, or use a different key</td>
+                </tr>
+                <tr>
+                    <td><code>429 Too Many Requests</code></td>
+                    <td>Rate limit exceeded</td>
+                    <td>Implement exponential backoff, or upgrade tier</td>
+                </tr>
+                <tr>
+                    <td><code>402 Payment Required</code></td>
+                    <td>Insufficient credits or billing not set up</td>
+                    <td>Add payment method or top up credits</td>
+                </tr>
+                <tr>
+                    <td><code>400 Bad Request</code></td>
+                    <td>Malformed auth header</td>
+                    <td>Check header format (Bearer vs x-api-key)</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2>Multi-Provider Authentication Pattern</h2>
+
+        <p>If your application uses multiple AI providers, create a unified authentication layer:</p>
+
+        <pre><code>// Unified AI client with multi-provider auth
+class AIClient {
+    constructor() {
+        this.providers = {
+            openai: {
+                baseUrl: 'https://api.openai.com/v1',
+                headers: { 'Authorization': `Bearer ${process.env.OPENAI_API_KEY}` }
+            },
+            anthropic: {
+                baseUrl: 'https://api.anthropic.com/v1',
+                headers: { 'x-api-key': process.env.ANTHROPIC_API_KEY }
+            },
+            google: {
+                baseUrl: 'https://generativelanguage.googleapis.com/v1beta',
+                headers: { 'x-goog-api-key': process.env.GOOGLE_API_KEY }
+            }
+        };
+    }
+
+    async chat(provider, model, messages) {
+        const p = this.providers[provider];
+        const response = await fetch(`${p.baseUrl}/chat/completions`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json', ...p.headers },
+            body: JSON.stringify({ model, messages })
+        });
+        return response.json();
+    }
+}
+
+// Usage
+const ai = new AIClient();
+await ai.chat('openai', 'gpt-4o', [{ role: 'user', content: 'Hello' }]);</code></pre>
+
+        <div class="tip-box">
+            <strong>Why this matters:</strong> A unified auth layer makes it easy to switch providers for cost optimization. Use our <a href="compare.html">comparison tool</a> to find the cheapest provider for your use case, then swap the provider parameter.
+        </div>
+
+        <h2>Key Management for Teams</h2>
+
+        <p>When working with a team, never share API keys via Slack, email, or shared documents. Instead:</p>
+
+        <ol>
+            <li><strong>Use a secrets manager:</strong> AWS Secrets Manager, HashiCorp Vault, or Doppler</li>
+            <li><strong>Implement role-based access:</strong> Developers get dev keys, only ops gets production keys</li>
+            <li><strong>Audit key usage:</strong> Most providers show which key made each request</li>
+            <li><strong>Use CI/CD integration:</strong> Inject keys during deployment, never store them in repos</li>
+        </ol>
+
+        <h2>Cost Implications of Authentication Choices</h2>
+
+        <p>Your authentication setup can directly impact costs:</p>
+
+        <ul>
+            <li><strong>Per-key billing:</strong> Some providers track costs per API key, making it easy to identify expensive services</li>
+            <li><strong>Organization vs. personal keys:</strong> Organization keys often have higher rate limits and better billing visibility</li>
+            <li><strong>Free tier access:</strong> Some providers (Google, Mistral) offer free API keys with generous limits</li>
+        </ul>
+
+        <p>Use the <a href="calculator.html">APIpulse calculator</a> to estimate your monthly costs before committing to a provider.</p>
+
+        <div class="cta-box">
+            <h3>Calculate Your API Costs</h3>
+            <p>Before choosing a provider, estimate your monthly spend with our free calculator. Compare 16 models across 7 providers.</p>
+            <a href="calculator.html" class="btn-primary" style="display:inline-block;padding:12px 28px;">Try the Calculator</a>
+        </div>
+
+        <div class="related-reading">
+            <h3>Related Reading</h3>
+            <div class="related-links">
+                <a href="blog-rate-limits.html">AI API Rate Limits Compared: OpenAI vs Anthropic vs Google</a>
+                <a href="blog-switch-llm-providers.html">How to Switch LLM Providers Without Breaking Your App</a>
+                <a href="blog-cost-optimization-guide.html">AI API Cost Optimization: A Complete Guide for 2026</a>
+            </div>
+        </div>
+
+    </div>
+
+    <section class="email-section">
+        <div style="max-width:500px;margin:0 auto;text-align:center;">
+            <h2 style="font-size:22px;font-weight:700;margin-bottom:8px;">Get notified when API prices change</h2>
+            <p style="font-size:14px;color:var(--text-secondary);margin-bottom:20px;">No spam. Only pricing updates and new features. Unsubscribe anytime.</p>
+            <form onsubmit="saveEmail(event)" style="display:flex;gap:8px;max-width:400px;margin:0 auto;">
+                <input type="email" id="email-input" placeholder="you@company.com" required aria-label="Email address"
+                    style="flex:1;padding:12px 16px;background:var(--bg-card);border:1px solid var(--border);
+                    border-radius:8px;color:var(--text-primary);font-size:14px;">
+                <button type="submit" class="btn-primary" style="padding:12px 24px;white-space:nowrap;">Subscribe</button>
+            </form>
+            <p id="email-msg" style="font-size:13px;color:var(--green);margin-top:12px;display:none;"></p>
+        </div>
+    </section>
+
+    <button class="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">↑</button>
+
+    </main>
+
+    <footer>
+        <p>Pricing data last verified: <span class="verified-date"></span></p>
+        <p>&copy; 2026 APIpulse. <a href="index.html">Home</a> &middot; <a href="use-cases.html">Use Cases</a> &middot; <a href="about.html">About</a> &middot; <a href="blog.html">Blog</a> &middot; <a href="pricing-index.html">Pricing Index</a> &middot; <a href="openai.html">OpenAI</a> &middot; <a href="anthropic.html">Anthropic</a> &middot; <a href="google.html">Google</a> &middot; <a href="mistral.html">Mistral</a> &middot; <a href="cohere.html">Cohere</a> &middot; <a href="pricing.html">Pricing</a></p>
+    </footer>
+</body>
+</html>

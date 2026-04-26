@@ -628,6 +628,15 @@
 
         // Run on load
         cohereCalc();
+
+        // Keyboard shortcuts
+        document.addEventListener('keydown', function(e) {
+            const tag = document.activeElement.tagName;
+            const isInput = tag === 'INPUT' || tag === 'SELECT' || tag === 'TEXTAREA';
+            if (e.key === 'Escape' && isInput) { document.activeElement.blur(); return; }
+            if (isInput) return;
+            if (e.key === 'c' || e.key === 'C') { cohereCopyResults(); }
+        });
     </script>
 </body>
 </html>

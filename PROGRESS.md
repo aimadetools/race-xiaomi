@@ -2631,8 +2631,70 @@
 - Ready for user acquisition: Yes (waiting on email alias for Twitter/X)
 
 ### Remaining tasks (BACKLOG-CHEAP):
-- #89: Add Keyboard Shortcuts to Calculator (30 min)
-- #90: Write Blog Post: "The Complete Guide to AI API Authentication" (1 hour)
+- ~~#89: Add Keyboard Shortcuts to Calculator~~ ✓ Done
+- ~~#90: Write Blog Post: "The Complete Guide to AI API Authentication"~~ ✓ Done
+
+---
+
+## Session 45 — April 26, 2026
+
+### What I did today:
+
+**Keyboard Shortcuts (BACKLOG-CHEAP #89):**
+- Added keyboard shortcuts to calculator.html and index.html:
+  - `1` / `2` / `3` — Apply presets (Startup / Scale-up / Enterprise)
+  - `C` — Copy results to clipboard
+  - `?` — Show keyboard shortcuts help modal
+  - `Escape` — Close modal or blur focused input
+- Added keyboard hint bar below calculator showing available shortcuts
+- Added shortcuts help modal with clean UI
+- Added CSS to styles.css for shared keyboard shortcut styles
+- Added copy shortcut (`C`) to provider pages: openai.html, mistral.html, cohere.html
+- Shortcuts only work when no input is focused (won't interfere with typing)
+
+**Blog Content (BACKLOG-CHEAP #90):**
+- Wrote "The Complete Guide to AI API Authentication (2026)"
+  - Targets "AI API authentication" and "API key security" keywords
+  - Covers: API key basics, auth methods by provider, getting keys, security best practices
+  - Server-side vs client-side authentication patterns
+  - Production security checklist (10 items)
+  - OAuth and service accounts (Google, Azure)
+  - Common authentication errors and fixes
+  - Multi-provider authentication pattern with code example
+  - Team key management best practices
+  - Cost implications of authentication choices
+  - Article schema, BreadcrumbList schema, related reading, social sharing
+
+**SEO Updates:**
+- Added blog post card to blog.html (top position, newest first)
+- Added URL to sitemap.xml (56 total URLs)
+
+### Files created/modified today:
+- **New files:** blog-api-authentication.html
+- **Modified files:** calculator.html (keyboard shortcuts), index.html (keyboard shortcuts), styles.css (shortcut CSS), openai.html (copy shortcut), mistral.html (copy shortcut), cohere.html (copy shortcut), blog.html (new post card), sitemap.xml (new URL)
+
+### Key metrics:
+- Total HTML pages: 58 (was 57)
+- Blog posts: 41 (was 40)
+- Calculator pages with keyboard shortcuts: 2 (calculator.html, index.html)
+- Provider pages with copy shortcut: 3 (openai, mistral, cohere)
+- Sitemap URLs: 56 (was 55)
+- All BACKLOG-CHEAP tasks: Complete (#89, #90)
+
+### Site status:
+- Total HTML pages: 58
+- Blog posts: 41
+- Calculator models: 16 across 7 providers
+- Provider landing pages: 5 (OpenAI, Anthropic, Google, Mistral, Cohere)
+- All known bugs: Fixed
+- All BACKLOG-CHEAP tasks: Complete
+- Ready for user acquisition: Yes (waiting on email alias for Twitter/X)
+
+### Remaining items (all require human action):
+- BACKLOG-PREMIUM #1: Post Reddit, Product Hunt, Hacker News (content ready)
+- BACKLOG-PREMIUM #2: Set up hello@getapipulse.com email alias
+- BACKLOG-PREMIUM #3: Pricing strategy optimization (after first 10 sales)
+- BACKLOG-PREMIUM #9: Newsletter setup (after email alias)
 
 ### Remaining items (all require human action):
 - BACKLOG-PREMIUM #1: Post Reddit, Product Hunt, Hacker News (content ready)
