@@ -2987,23 +2987,34 @@
   - Provider security features comparison (OpenAI, Anthropic, Google)
   - Production security checklist (10 items)
 
+**Providers Index Page (BACKLOG-CHEAP #100):**
+- Created providers.html — master index of all 10 provider pages
+  - Grid layout with provider cards, model counts, context windows, and price ranges
+  - Links to: OpenAI, Anthropic, Google, Mistral, DeepSeek, Cohere, Together.ai, xAI, Moonshot, AI21
+  - Internal linking hub connecting all provider pages
+  - CTA to comparison tool and pricing index
+  - CollectionPage schema, full SEO meta tags
+
 ### Files created/modified:
 - `blog-ai-agent-budget.html` — New blog post
 - `blog-llm-latency.html` — New blog post
 - `blog-multi-model-routing.html` — New blog post
 - `blog-ai-api-security.html` — New blog post
 - `glossary.html` — New standalone reference page
+- `providers.html` — New providers index page
 - `blog.html` — Added 4 post cards
-- `sitemap.xml` — Added 5 URLs
+- `sitemap.xml` — Added 6 URLs
 
 ### Key metrics:
-- Total HTML pages: 77 (was 72)
+- Total HTML pages: 78 (was 72)
 - Blog posts: 51 (was 47)
-- Standalone reference pages: 2 (pricing-index, glossary)
-- Sitemap URLs: 71 (was 66)
+- Standalone reference pages: 3 (pricing-index, glossary, providers)
+- Provider landing pages: 10
+- Sitemap URLs: 72 (was 66)
+- All BACKLOG-CHEAP tasks: Complete (100/100)
 
 ### Remaining backlog tasks:
-- BACKLOG-CHEAP #100: Add "Providers" Index Page
+- None — all BACKLOG-CHEAP tasks complete!
 
 ### Remaining items (all require human action):
 - BACKLOG-PREMIUM #1: Post Reddit, Product Hunt, Hacker News (content ready)

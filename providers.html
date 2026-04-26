@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI API Providers: Compare Pricing Across 10 Providers — APIpulse</title>
+    <meta name="description" content="Compare AI API providers side by side. OpenAI, Anthropic, Google, Mistral, Cohere, DeepSeek, xAI, Moonshot, Together.ai, and AI21 — pricing, models, and features.">
+    <meta name="keywords" content="AI API providers, LLM providers comparison, OpenAI vs Anthropic, AI API pricing by provider, LLM provider list">
+    <meta property="og:title" content="AI API Providers: Compare Pricing Across 10 Providers — APIpulse">
+    <meta property="og:description" content="Compare AI API providers side by side. Pricing, models, and features for all 10 major providers.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://getapipulse.com/og-image.png">
+    <meta property="og:url" content="https://getapipulse.com/providers.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="AI API Providers: Compare Pricing Across 10 Providers — APIpulse">
+    <meta name="twitter:image" content="https://getapipulse.com/og-image.png">
+    <meta name="twitter:description" content="Compare AI API providers side by side. Pricing, models, and features for all 10 major providers.">
+    <link rel="canonical" href="https://getapipulse.com/providers.html">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="styles.css">
+    <script src="analytics.js" defer></script>
+    <script src="dynamic-date.js" defer></script>
+    <script src="shared.js" defer></script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "CollectionPage",
+        "name": "AI API Providers",
+        "description": "Compare AI API providers side by side — pricing, models, and features.",
+        "url": "https://getapipulse.com/providers.html",
+        "publisher": { "@type": "Organization", "name": "APIpulse", "url": "https://getapipulse.com" }
+    }
+    </script>
+    <style>
+        .content { max-width: 1000px; margin: 0 auto; padding: 120px 24px 80px; }
+        h1 { font-size: 40px; font-weight: 800; margin-bottom: 12px; text-align: center; }
+        .subtitle { color: var(--text-secondary); font-size: 18px; margin-bottom: 48px; text-align: center; max-width: 700px; margin-left: auto; margin-right: auto; }
+
+        .provider-grid {
+            display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px; margin-bottom: 48px;
+        }
+        .provider-card {
+            background: var(--bg-secondary); border: 1px solid var(--border);
+            border-radius: 12px; padding: 28px; transition: border-color 0.2s, transform 0.2s;
+        }
+        .provider-card:hover { border-color: var(--accent); transform: translateY(-2px); }
+        .provider-card h2 { font-size: 20px; font-weight: 700; margin-bottom: 8px; }
+        .provider-card h2 a { color: var(--text-primary); text-decoration: none; }
+        .provider-card h2 a:hover { color: var(--accent); }
+        .provider-card p { color: var(--text-secondary); font-size: 14px; line-height: 1.6; margin-bottom: 16px; }
+        .provider-card .stats {
+            display: flex; gap: 16px; font-size: 13px; color: var(--text-muted);
+        }
+        .provider-card .stats span { display: flex; align-items: center; gap: 4px; }
+        .provider-card .price-range {
+            margin-top: 12px; padding-top: 12px; border-top: 1px solid var(--border);
+            font-size: 13px; color: var(--text-muted);
+        }
+        .provider-card .price-range strong { color: var(--text-primary); }
+        .provider-card .view-link {
+            display: inline-block; margin-top: 12px; font-size: 14px;
+            font-weight: 600; color: var(--accent);
+        }
+        .provider-card .view-link:hover { text-decoration: underline; }
+
+        .cta-inline {
+            background: var(--bg-secondary); border: 1px solid var(--accent);
+            border-radius: 12px; padding: 24px; margin: 32px 0; text-align: center;
+        }
+        .cta-inline p { margin-bottom: 12px; }
+
+        @media (max-width: 768px) {
+            .content { padding: 100px 20px 60px; }
+            h1 { font-size: 28px; }
+            .subtitle { font-size: 16px; }
+            .provider-grid { grid-template-columns: 1fr; }
+        }
+        @media print {
+            nav, .cta-inline, .theme-toggle, .back-to-top { display: none !important; }
+            body { background: white; color: black; }
+            .content { padding: 0; max-width: 100%; }
+            .provider-card { border: 1px solid #ccc; page-break-inside: avoid; }
+            h1 { font-size: 24px; }
+            .provider-card h2 { font-size: 16px; }
+            .provider-card p, .provider-card .stats, .provider-card .price-range { font-size: 11px; color: #333; }
+            footer { border-top: 1px solid #ccc; padding: 10px 0; }
+        }
+    </style>
+    <meta name="theme-color" content="#6366f1">
+    <link rel="preconnect" href="https://getapipulse.com">
+</head>
+<body>
+    <a href="#main" class="skip-link">Skip to content</a>
+    <nav>
+        <div class="nav-inner">
+            <a href="index.html" class="logo">API<span>pulse</span></a>
+            <button class="hamburger" onclick="toggleMobileNav()" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+            <div class="nav-links">
+                <a href="calculator.html">Calculator</a>
+                <a href="compare.html">Compare</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="use-cases.html">Use Cases</a>
+                <a href="about.html">About</a>
+                <a href="blog.html">Blog</a>
+                <a href="pricing-index.html">Pricing Index</a>
+                <a href="pricing-trends.html">Trends</a>
+                <a href="pricing.html" class="nav-cta" onclick="if(window.trackEvent)window.trackEvent('pro_button_clicked',{source:'nav'})">Get Pro — $29</a>
+                <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
+            </div>
+        </div>
+    </nav>
+
+    <main id="main">
+
+    <div class="content">
+        <h1>AI API Providers</h1>
+        <p class="subtitle">Compare pricing, models, and features across all 10 major AI API providers. Click any provider for a full pricing breakdown and calculator.</p>
+
+        <div class="provider-grid">
+
+            <div class="provider-card">
+                <h2><a href="openai.html">OpenAI</a></h2>
+                <p>The industry leader. GPT-5.5, GPT-4o, and budget options from $0.08/1M tokens. Largest ecosystem and widest model selection.</p>
+                <div class="stats">
+                    <span>9 models</span>
+                    <span>128K–1M context</span>
+                </div>
+                <div class="price-range">Input: <strong>$0.08–$30.00</strong> per 1M tokens</div>
+                <a href="openai.html" class="view-link">View OpenAI pricing →</a>
+            </div>
+
+            <div class="provider-card">
+                <h2><a href="anthropic.html">Anthropic</a></h2>
+                <p>Claude family — known for safety and long context. Claude 4 Opus for premium reasoning, Haiku for budget tasks.</p>
+                <div class="stats">
+                    <span>4 models</span>
+                    <span>200K context</span>
+                </div>
+                <div class="price-range">Input: <strong>$0.80–$15.00</strong> per 1M tokens</div>
+                <a href="anthropic.html" class="view-link">View Anthropic pricing →</a>
+            </div>
+
+            <div class="provider-card">
+                <h2><a href="google.html">Google</a></h2>
+                <p>Gemini family — largest context windows (up to 10M tokens). Flash models are among the cheapest available.</p>
+                <div class="stats">
+                    <span>3 models</span>
+                    <span>1M–10M context</span>
+                </div>
+                <div class="price-range">Input: <strong>$0.10–$2.00</strong> per 1M tokens</div>
+                <a href="google.html" class="view-link">View Google pricing →</a>
+            </div>
+
+            <div class="provider-card">
+                <h2><a href="mistral.html">Mistral AI</a></h2>
+                <p>European AI leader. Strong open-weight models with competitive pricing and data sovereignty focus.</p>
+                <div class="stats">
+                    <span>2 models</span>
+                    <span>32K–128K context</span>
+                </div>
+                <div class="price-range">Input: <strong>$0.10–$2.00</strong> per 1M tokens</div>
+                <a href="mistral.html" class="view-link">View Mistral pricing →</a>
+            </div>
+
+            <div class="provider-card">
+                <h2><a href="deepseek.html">DeepSeek</a></h2>
+                <p>Ultra-budget Chinese AI. DeepSeek V4 Flash at $0.14/$0.28 is among the cheapest models available anywhere.</p>
+                <div class="stats">
+                    <span>3 models</span>
+                    <span>128K context</span>
+                </div>
+                <div class="price-range">Input: <strong>$0.14–$2.18</strong> per 1M tokens</div>
+                <a href="deepseek.html" class="view-link">View DeepSeek pricing →</a>
+            </div>
+
+            <div class="provider-card">
+                <h2><a href="cohere.html">Cohere</a></h2>
+                <p>Enterprise-focused with strong RAG and search capabilities. Command R+ for complex tasks, Command R for budget.</p>
+                <div class="stats">
+                    <span>2 models</span>
+                    <span>128K context</span>
+                </div>
+                <div class="price-range">Input: <strong>$0.15–$2.50</strong> per 1M tokens</div>
+                <a href="cohere.html" class="view-link">View Cohere pricing →</a>
+            </div>
+
+            <div class="provider-card">
+                <h2><a href="together.html">Together.ai</a></h2>
+                <p>Open-source models on optimized infrastructure. Llama 4 with 10M context at budget prices.</p>
+                <div class="stats">
+                    <span>4 models</span>
+                    <span>128K–10M context</span>
+                </div>
+                <div class="price-range">Input: <strong>$0.11–$0.88</strong> per 1M tokens</div>
+                <a href="together.html" class="view-link">View Together.ai pricing →</a>
+            </div>
+
+            <div class="provider-card">
+                <h2><a href="xai.html">xAI</a></h2>
+                <p>Elon Musk's AI company. Grok 3 for mid-tier tasks, Grok 3 Mini for budget. Real-time data access.</p>
+                <div class="stats">
+                    <span>2 models</span>
+                    <span>128K context</span>
+                </div>
+                <div class="price-range">Input: <strong>$0.30–$3.00</strong> per 1M tokens</div>
+                <a href="xai.html" class="view-link">View xAI pricing →</a>
+            </div>
+
+            <div class="provider-card">
+                <h2><a href="moonshot.html">Moonshot (Kimi)</a></h2>
+                <p>Chinese AI startup. Kimi K2.6 offers solid performance at budget prices with 128K context.</p>
+                <div class="stats">
+                    <span>1 model</span>
+                    <span>128K context</span>
+                </div>
+                <div class="price-range">Input: <strong>$0.60</strong> per 1M tokens</div>
+                <a href="moonshot.html" class="view-link">View Moonshot pricing →</a>
+            </div>
+
+            <div class="provider-card">
+                <h2><a href="ai21.html">AI21 Labs</a></h2>
+                <p>Hybrid SSM-Transformer architecture. Jamba 1.5 Large for enterprise with 256K context.</p>
+                <div class="stats">
+                    <span>1 model</span>
+                    <span>256K context</span>
+                </div>
+                <div class="price-range">Input: <strong>$2.00</strong> per 1M tokens</div>
+                <a href="ai21.html" class="view-link">View AI21 pricing →</a>
+            </div>
+
+        </div>
+
+        <div class="cta-inline">
+            <p><strong>Compare models across all providers.</strong></p>
+            <a href="compare.html" class="btn-primary">Side-by-Side Comparison</a>
+            <span style="margin: 0 12px; color: var(--text-muted);">or</span>
+            <a href="pricing-index.html" class="btn-primary" style="background:var(--bg-card);color:var(--text-primary);border:1px solid var(--border);">Full Pricing Index</a>
+        </div>
+
+        <div style="margin-top:40px;padding:24px;background:var(--bg-secondary);border:1px solid var(--border);border-radius:12px;">
+            <h3 style="font-size:16px;margin-bottom:12px;">Related</h3>
+            <ul style="list-style:none;padding:0;">
+                <li style="margin-bottom:8px;"><a href="pricing-trends.html">API Pricing Trends 2023–2026</a></li>
+                <li style="margin-bottom:8px;"><a href="blog-openai-vs-anthropic-vs-google.html">OpenAI vs Anthropic vs Google</a></li>
+                <li style="margin-bottom:8px;"><a href="blog-free-tiers.html">AI API Free Tiers Compared</a></li>
+                <li><a href="calculator.html">Calculate your costs →</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <button class="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">↑</button>
+
+    </main>
+    <footer>
+        <p>Pricing data last verified: <span class="verified-date"></span></p>
+        <p>&copy; 2026 APIpulse. <a href="index.html">Home</a> &middot; <a href="use-cases.html">Use Cases</a> &middot; <a href="about.html">About</a> &middot; <a href="blog.html">Blog</a> &middot; <a href="pricing-index.html">Pricing Index</a> &middot; <a href="openai.html">OpenAI</a> &middot; <a href="anthropic.html">Anthropic</a> &middot; <a href="google.html">Google</a> &middot; <a href="mistral.html">Mistral</a> &middot; <a href="cohere.html">Cohere</a> &middot; <a href="deepseek.html">DeepSeek</a> &middot; <a href="xai.html">xAI</a> &middot; <a href="moonshot.html">Moonshot</a> &middot; <a href="together.html">Together.ai</a> &middot; <a href="ai21.html">AI21</a> &middot; <a href="pricing.html">Pricing</a></p>
+    </footer>
+
+</body>
+</html>
