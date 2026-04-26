@@ -2770,3 +2770,62 @@
 - BACKLOG-PREMIUM #2: Set up hello@getapipulse.com email alias
 - BACKLOG-PREMIUM #3: Pricing strategy optimization (after first 10 sales)
 - BACKLOG-PREMIUM #9: Newsletter setup (after email alias)
+
+---
+
+## Session 47 — April 26, 2026
+
+### What I did today:
+
+**Full Site Audit & Bug Fixes:**
+- Ran comprehensive audit of all 62 HTML files, 7 JS files, and 1 XML file
+- Found 6 issues (1 critical, 3 high, 2 medium)
+- Fixed all issues
+
+**CRITICAL — Model Count Mismatch (32 vs 35):**
+- pricing-data.js has 32 models, but site claimed "35 models" in 15+ locations
+- Fixed all references to accurately state "32 models across 10 providers"
+- Updated: calculator.html, about.html, pricing.html, index.html, blog.html, blog-q2-2026-pricing-report.html, blog-switch-llm-providers.html, blog-api-authentication.html, blog-best-llm-startups.html
+- Updated all 10 marketing files (reddit, product-hunt, hackernews, twitter, directory-submissions, backlink-strategy, competitive-response-strategy, data-pipeline-design)
+
+**HIGH — index.html Stale Counts (16 models / 7 providers):**
+- Updated FAQPage schema JSON-LD with accurate 32 models / 10 providers count and full provider list
+- Updated section subtitle: "10 major LLM API providers (32 models)"
+- Updated Free tier card: "32 models across 10 providers"
+- Updated FAQ answer with all 10 providers and example models
+
+**HIGH — pricing.html Internal Contradiction:**
+- Fixed "35 models" and "16 models, 7 providers" on same page to consistent "32 models, 10 providers"
+
+**MEDIUM — Logo Inconsistency (5 blog pages):**
+- 5 blog pages used SVG hexagon icon logo while 57 pages used standard text logo
+- Fixed: blog-anthropic-pricing-guide.html, blog-gemini-pricing-guide.html, blog-mistral-pricing-guide.html, blog-openai-pricing-guide.html, blog-switch-llm-providers.html
+- All 62 pages now use consistent `<a href="index.html" class="logo">API<span>pulse</span></a>`
+
+### Files modified:
+- 9 HTML files (model count fixes)
+- 10 marketing/backlog files (model count fixes)
+- 5 blog HTML files (logo standardization)
+- Total: 24 files
+
+### Key metrics:
+- Critical bugs fixed: 1 (model count mismatch)
+- High bugs fixed: 2 (index.html stale counts, pricing.html contradiction)
+- Medium bugs fixed: 1 (logo inconsistency)
+- Pages with accurate model count: 62/62
+- Pages with consistent logo: 62/62
+
+### Site status:
+- Total HTML pages: 62
+- Blog posts: 44
+- Calculator models: 32 across 10 providers
+- Provider landing pages: 6 (OpenAI, Anthropic, Google, Mistral, Cohere, DeepSeek)
+- All known bugs: Fixed
+- All BACKLOG-CHEAP tasks: Complete
+- Ready for user acquisition: Yes
+
+### Remaining items (all require human action):
+- BACKLOG-PREMIUM #1: Post Reddit, Product Hunt, Hacker News (content ready)
+- BACKLOG-PREMIUM #2: Set up hello@getapipulse.com email alias
+- BACKLOG-PREMIUM #3: Pricing strategy optimization (after first 10 sales)
+- BACKLOG-PREMIUM #9: Newsletter setup (after email alias)

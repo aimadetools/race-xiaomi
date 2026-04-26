@@ -113,7 +113,7 @@
 
 4. **Static Site Speed** (MODERATE) — Zero JavaScript framework overhead. Our pages load in <1 second. Competitors with React/Next.js apps can't match this.
 
-5. **Data Freshness** (MODERATE) — Weekly pricing updates across 16 models and 7 providers. Most competitors update quarterly or when they remember.
+5. **Data Freshness** (MODERATE) — Weekly pricing updates across 32 models and 10 providers. Most competitors update quarterly or when they remember.
 
 6. **Use-Case Specificity** (MODERATE) — Pages for chatbot builders, code generation, RAG, enterprise budgeting. Competitors are horizontal; we go vertical.
 

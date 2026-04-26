@@ -1,7 +1,7 @@
 # Reddit Post: r/ChatGPTDev
 
 ## Title
-Built a free tool to compare GPT-5, Claude 4, Gemini pricing — 35 models, 10 providers, instant calculations
+Built a free tool to compare GPT-5, Claude 4, Gemini pricing — 32 models, 10 providers, instant calculations
 
 ## Body
 
@@ -10,7 +10,7 @@ Fellow devs,
 I built APIpulse because I was tired of switching between the OpenAI, Anthropic, and Google pricing pages trying to figure out which API would be cheapest for my project.
 
 **What's included:**
-- Interactive cost calculator with 35 models (GPT-5, GPT-5 mini, GPT-4o, Claude 4 Opus, Claude Sonnet 4, Gemini 2.5 Pro, Mistral, Llama, Cohere, AI21, etc.)
+- Interactive cost calculator with 32 models (GPT-5, GPT-5 mini, GPT-4o, Claude 4 Opus, Claude Sonnet 4, Gemini 2.5 Pro, Mistral, Llama, Cohere, AI21, etc.)
 - Side-by-side comparison tool — pick any 2 models, see costs broken down
 - Pricing Index page — every model, every price, sortable and filterable
 - 18 comparison blog posts with real-world cost scenarios

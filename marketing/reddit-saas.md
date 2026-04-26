@@ -14,7 +14,7 @@ I was spending ~$200/month on GPT-4o for a side project. After doing a deep comp
 The problem was that comparison took me hours of manual research across 4+ pricing pages. So I built APIpulse to make it instant:
 
 **What it does:**
-- Compare pricing for 16 LLM models across 7 providers
+- Compare pricing for 32 LLM models across 10 providers
 - Calculate your exact monthly cost based on your usage patterns
 - Side-by-side comparison tool for any two models
 - 18 detailed blog posts with real cost breakdowns

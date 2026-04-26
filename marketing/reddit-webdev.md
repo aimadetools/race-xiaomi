@@ -10,7 +10,7 @@ Hey r/webdev,
 I got tired of manually comparing pricing across OpenAI, Anthropic, Google, and Mistral every time I started a new AI project. So I built APIpulse — a free tool that lets you:
 
 - **Calculate monthly costs** for any combination of input/output tokens and requests
-- **Compare 16 models** across 7 providers side-by-side
+- **Compare 32 models** across 10 providers side-by-side
 - **Use presets** for common scenarios (startup, scale-up, enterprise)
 - **Find the cheapest model** for your specific use case
 

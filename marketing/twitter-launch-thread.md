@@ -1,7 +1,7 @@
 # Twitter/X Launch Thread
 
 ## Tweet 1 (Hook)
-I compared pricing for 16 AI models across 7 providers.
+I compared pricing for 32 AI models across 10 providers.
 
 Here's what I found that could save you 40-60% on your AI API costs:
 
@@ -42,7 +42,7 @@ Unless you're doing document analysis, a 32K-128K window is plenty.
 ## Tweet 6 (The Tool)
 I built APIpulse to make these comparisons instant.
 
-• 16 models, 7 providers
+• 32 models, 10 providers
 • Interactive cost calculator
 • Side-by-side comparison tool
 • 18 blog posts with real cost breakdowns

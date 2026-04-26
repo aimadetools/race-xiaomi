@@ -56,7 +56,7 @@
   - The Batch (Andrew Ng)
   - AI Tool Report
   - Ben's Bites
-- Angle: "Free tool comparing 16 LLM models across 7 providers"
+- Angle: "Free tool comparing 32 LLM models across 10 providers"
 
 ### Podcast Appearances
 - Pitch to AI/developer podcasts
