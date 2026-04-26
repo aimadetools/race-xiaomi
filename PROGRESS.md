@@ -2970,24 +2970,29 @@
   - Provider-specific routing tips for OpenAI, Anthropic, and cross-provider
   - Success metrics: cost/request, quality score, fallback rate
 
+**Standalone Page (BACKLOG-CHEAP #98):**
+- Created glossary.html — standalone AI API glossary page
+  - Targets "LLM glossary" and "AI API terms" keywords
+  - Alphabetical reference with letter navigation (A–W)
+  - 30+ terms with definitions, examples, and internal links to blog posts
+  - Cross-linked to: pricing-index, calculator, blog-estimate-tokens, blog-cost-optimization, blog-rag-cost, blog-llm-latency, blog-multi-model-routing, blog-ai-agent-budget, blog-open-source-vs-commercial, blog-embedding-pricing, blog-free-tiers, blog-rate-limits, blog-reduce-costs, blog-flagship-models-2026
+  - Linked from existing blog-llm-glossary.html post
+
 ### Files created/modified:
 - `blog-ai-agent-budget.html` — New blog post
 - `blog-llm-latency.html` — New blog post
 - `blog-multi-model-routing.html` — New blog post
+- `glossary.html` — New standalone reference page
 - `blog.html` — Added 3 post cards
-- `sitemap.xml` — Added 3 URLs
+- `sitemap.xml` — Added 4 URLs
 
 ### Key metrics:
-- Total HTML pages: 75 (was 72)
+- Total HTML pages: 76 (was 72)
 - Blog posts: 50 (was 47)
-- Sitemap URLs: 69 (was 66)
+- Standalone reference pages: 2 (pricing-index, glossary)
+- Sitemap URLs: 70 (was 66)
 
 ### Remaining backlog tasks:
-- BACKLOG-CHEAP #98: Create "AI API Glossary" Standalone Page
-- BACKLOG-CHEAP #99: Write Blog Post: "AI API Security Best Practices for Production"
-- BACKLOG-CHEAP #100: Add "Providers" Index Page
-- BACKLOG-CHEAP #97: Write Blog Post: "Multi-Model Routing: How to Cut AI Costs by 60%"
-- BACKLOG-CHEAP #98: Create "AI API Glossary" Standalone Page
 - BACKLOG-CHEAP #99: Write Blog Post: "AI API Security Best Practices for Production"
 - BACKLOG-CHEAP #100: Add "Providers" Index Page
 
