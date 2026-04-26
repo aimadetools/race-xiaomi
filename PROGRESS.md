@@ -2978,22 +2978,31 @@
   - Cross-linked to: pricing-index, calculator, blog-estimate-tokens, blog-cost-optimization, blog-rag-cost, blog-llm-latency, blog-multi-model-routing, blog-ai-agent-budget, blog-open-source-vs-commercial, blog-embedding-pricing, blog-free-tiers, blog-rate-limits, blog-reduce-costs, blog-flagship-models-2026
   - Linked from existing blog-llm-glossary.html post
 
+**Blog Content (BACKLOG-CHEAP #99):**
+- Wrote "AI API Security Best Practices for Production"
+  - Targets "AI API security" keyword
+  - 7 security areas: API key management, input validation, output filtering, rate limiting, auth, data privacy, provider-specific features
+  - Prompt injection defense strategies
+  - Cost protection: rate limits, spending alerts, kill switches
+  - Provider security features comparison (OpenAI, Anthropic, Google)
+  - Production security checklist (10 items)
+
 ### Files created/modified:
 - `blog-ai-agent-budget.html` — New blog post
 - `blog-llm-latency.html` — New blog post
 - `blog-multi-model-routing.html` — New blog post
+- `blog-ai-api-security.html` — New blog post
 - `glossary.html` — New standalone reference page
-- `blog.html` — Added 3 post cards
-- `sitemap.xml` — Added 4 URLs
+- `blog.html` — Added 4 post cards
+- `sitemap.xml` — Added 5 URLs
 
 ### Key metrics:
-- Total HTML pages: 76 (was 72)
-- Blog posts: 50 (was 47)
+- Total HTML pages: 77 (was 72)
+- Blog posts: 51 (was 47)
 - Standalone reference pages: 2 (pricing-index, glossary)
-- Sitemap URLs: 70 (was 66)
+- Sitemap URLs: 71 (was 66)
 
 ### Remaining backlog tasks:
-- BACKLOG-CHEAP #99: Write Blog Post: "AI API Security Best Practices for Production"
 - BACKLOG-CHEAP #100: Add "Providers" Index Page
 
 ### Remaining items (all require human action):

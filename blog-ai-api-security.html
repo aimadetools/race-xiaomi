@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI API Security Best Practices for Production — APIpulse</title>
+    <meta name="description" content="Secure your AI API integration in production. API key management, input validation, output filtering, rate limiting, and provider-specific security features.">
+    <meta name="keywords" content="AI API security, API key security, LLM security best practices, secure AI API, production AI security">
+    <meta property="og:title" content="AI API Security Best Practices for Production — APIpulse">
+    <meta property="og:description" content="Secure your AI API integration in production. API key management, input validation, output filtering, and more.">
+    <meta property="og:type" content="article">
+    <meta property="article:published_time" content="2026-04-26">
+    <meta property="article:modified_time" content="2026-04-26">
+    <meta property="article:author" content="APIpulse">
+    <meta property="og:image" content="https://getapipulse.com/og-image.png">
+    <meta property="og:url" content="https://getapipulse.com/blog-ai-api-security.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="AI API Security Best Practices for Production — APIpulse">
+    <meta name="twitter:image" content="https://getapipulse.com/og-image.png">
+    <meta name="twitter:description" content="Secure your AI API integration in production.">
+    <link rel="canonical" href="https://getapipulse.com/blog-ai-api-security.html">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="styles.css">
+    <script src="analytics.js" defer></script>
+    <script src="dynamic-date.js" defer></script>
+    <script src="shared.js" defer></script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "AI API Security Best Practices for Production",
+        "description": "Secure your AI API integration in production. API key management, input validation, output filtering, and more.",
+        "datePublished": "2026-04-26",
+        "dateModified": "2026-04-26",
+        "author": { "@type": "Organization", "name": "APIpulse" },
+        "publisher": { "@type": "Organization", "name": "APIpulse", "url": "https://getapipulse.com" },
+        "url": "https://getapipulse.com/blog-ai-api-security.html"
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Blog", "item": "https://getapipulse.com/blog.html" },
+            { "@type": "ListItem", "position": 2, "name": "AI API Security Best Practices for Production", "item": "https://getapipulse.com/blog-ai-api-security.html" }
+        ]
+    }
+    </script>
+    <style>
+        .content { max-width: 800px; margin: 0 auto; padding: 120px 24px 80px; }
+        h1 { font-size: 40px; font-weight: 800; margin-bottom: 12px; }
+        .subtitle { color: var(--text-secondary); font-size: 18px; margin-bottom: 48px; }
+
+        .post-card {
+            background: var(--bg-secondary); border: 1px solid var(--border);
+            border-radius: 12px; padding: 28px; margin-bottom: 20px;
+            transition: border-color 0.2s, transform 0.2s;
+        }
+        .post-card:hover { border-color: var(--accent); transform: translateY(-2px); }
+        .post-meta {
+            display: flex; gap: 16px; align-items: center; margin-bottom: 12px;
+            font-size: 13px; color: var(--text-muted);
+        }
+        .post-tag {
+            background: var(--accent-glow); color: var(--accent);
+            padding: 2px 10px; border-radius: 6px; font-size: 12px; font-weight: 600;
+        }
+
+        .article { max-width: 700px; margin: 0 auto; }
+        .article h1 { font-size: 36px; margin-bottom: 16px; }
+        .article h2 { font-size: 24px; font-weight: 700; margin: 32px 0 16px; }
+        .article h3 { font-size: 18px; font-weight: 600; margin: 24px 0 12px; }
+        .article p { color: var(--text-secondary); margin-bottom: 16px; line-height: 1.7; }
+        .article ul, .article ol { color: var(--text-secondary); padding-left: 24px; margin-bottom: 16px; }
+        .article li { margin-bottom: 8px; }
+        .article strong { color: var(--text-primary); }
+        .article code {
+            background: var(--bg-card); padding: 2px 8px; border-radius: 4px;
+            font-size: 14px; color: var(--accent);
+        }
+        .back-link {
+            display: inline-flex; align-items: center; gap: 6px;
+            font-size: 14px; color: var(--text-secondary); margin-bottom: 32px;
+        }
+        .back-link:hover { color: var(--text-primary); }
+
+        .cta-inline {
+            background: var(--bg-secondary); border: 1px solid var(--accent);
+            border-radius: 12px; padding: 24px; margin: 32px 0; text-align: center;
+        }
+        .cta-inline p { margin-bottom: 12px; }
+        .share-section {
+            margin-top: 32px; padding-top: 24px; border-top: 1px solid var(--border);
+            text-align: center;
+        }
+        .share-section p { color: var(--text-secondary); font-size: 14px; margin-bottom: 12px; }
+        .share-btn {
+            display: inline-block; background: var(--bg-card); color: var(--text-primary);
+            padding: 8px 20px; border-radius: 8px; font-size: 14px; font-weight: 500;
+            border: 1px solid var(--border); transition: all 0.2s;
+        }
+        .share-btn:hover { background: var(--accent); color: white; border-color: var(--accent); }
+
+        .cost-example {
+            background: var(--bg-secondary); border: 1px solid var(--border);
+            border-radius: 10px; padding: 20px; margin: 20px 0;
+        }
+        .cost-example .label {
+            font-size: 13px; color: var(--text-muted); text-transform: uppercase;
+            letter-spacing: 0.5px; margin-bottom: 12px; font-weight: 600;
+        }
+        .cost-example .cost-row {
+            display: flex; justify-content: space-between; padding: 8px 0;
+            border-bottom: 1px solid var(--border); font-size: 14px;
+        }
+        .cost-example .cost-row:last-child { border-bottom: none; }
+        .cost-example .cost-row .name { color: var(--text-secondary); }
+        .cost-example .cost-row .value { color: var(--text-primary); font-weight: 600; font-variant-numeric: tabular-nums; }
+
+        @media (max-width: 768px) {
+            .content { padding: 100px 20px 60px; }
+            h1 { font-size: 28px; }
+            .subtitle { font-size: 16px; }
+            .post-card { padding: 20px; }
+            .post-card h2 { font-size: 18px; }
+            .article h1 { font-size: 28px; }
+            .article h2 { font-size: 20px; }
+            .cta-inline { padding: 20px; }
+        }
+        @media print {
+            nav, .share-section, .cta-inline, .theme-toggle, .back-link { display: none !important; }
+            body { background: white; color: black; }
+            .content { padding: 0; max-width: 100%; }
+            .article h1 { font-size: 24px; margin-bottom: 8px; }
+            .article h2 { font-size: 18px; margin: 16px 0 8px; }
+            .article p, .article li { color: #333; font-size: 12px; }
+            .post-meta { display: none; }
+            a { color: black; text-decoration: underline; }
+            footer { border-top: 1px solid #ccc; padding: 10px 0; }
+        }
+    </style>
+    <meta name="theme-color" content="#6366f1">
+    <link rel="preconnect" href="https://getapipulse.com">
+</head>
+<body>
+    <a href="#main" class="skip-link">Skip to content</a>
+    <nav>
+        <div class="nav-inner">
+            <a href="index.html" class="logo">API<span>pulse</span></a>
+            <button class="hamburger" onclick="toggleMobileNav()" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+            <div class="nav-links">
+                <a href="calculator.html">Calculator</a>
+                <a href="compare.html">Compare</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="use-cases.html">Use Cases</a>
+                <a href="about.html">About</a>
+                <a href="blog.html">Blog</a>
+                <a href="pricing-index.html">Pricing Index</a>
+                <a href="pricing-trends.html">Trends</a>
+                <a href="pricing.html" class="nav-cta" onclick="if(window.trackEvent)window.trackEvent('pro_button_clicked',{source:'nav'})">Get Pro — $29</a>
+                <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
+            </div>
+        </div>
+    </nav>
+
+    <main id="main">
+
+    <div class="content article" id="post-ai-api-security">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+            <a href="blog.html">Blog</a>
+            <span class="separator">›</span>
+            <span class="current">AI API Security Best Practices for Production</span>
+        </nav>
+        <a href="blog.html" class="back-link">← Back to blog</a>
+        <div class="post-meta" style="margin-bottom: 24px;">
+            <span class="tier-badge guide">Guide</span>
+            <span class="post-tag">Security</span>
+            <span>April 26, 2026</span>
+        </div>
+        <h1>AI API Security Best Practices for Production</h1>
+
+        <p>When you put an LLM in front of users, you're opening a two-way channel between the public and your backend. Without proper security, that channel can be exploited for data leakage, prompt injection, cost attacks, and more. Here's how to secure your AI API integration for production.</p>
+
+        <h2>1. API Key Management</h2>
+        <p>Your API key is the single most sensitive credential in your AI integration. Treat it like a database password.</p>
+
+        <h3>Never Expose Keys Client-Side</h3>
+        <ul>
+            <li><strong>Always proxy requests through your backend</strong> — never call AI APIs directly from the browser</li>
+            <li>Store keys in environment variables, not in code or config files</li>
+            <li>Use secrets managers (AWS Secrets Manager, HashiCorp Vault) for production</li>
+            <li>Never commit keys to git — use <code>.env</code> files with <code>.gitignore</code></li>
+        </ul>
+
+        <h3>Key Rotation</h3>
+        <ul>
+            <li>Rotate API keys every <strong>90 days</strong> minimum</li>
+            <li>Rotate immediately if a key is suspected compromised</li>
+            <li>Use separate keys for development, staging, and production</li>
+            <li>Most providers let you create multiple keys — use them</li>
+        </ul>
+
+        <h3>Least Privilege</h3>
+        <ul>
+            <li>Use the most restrictive permissions available</li>
+            <li>If your provider supports scoping keys to specific models, do it</li>
+            <li>Disable any API capabilities you don't use</li>
+        </ul>
+
+        <h2>2. Input Validation & Sanitization</h2>
+        <p>Users will send unexpected, malicious, and adversarial inputs. Validate everything.</p>
+
+        <h3>Prompt Injection Defense</h3>
+        <p>Prompt injection is the #1 security risk for LLM applications. Attackers embed instructions in user input that override your system prompt:</p>
+        <ul>
+            <li><strong>System prompt isolation:</strong> Never concatenate user input directly into the system prompt. Use the API's message format to separate system, user, and assistant messages</li>
+            <li><strong>Input length limits:</strong> Cap input at a reasonable length (e.g., 8,000 tokens) to prevent token-flooding attacks</li>
+            <li><strong>Content filtering:</strong> Use provider-provided content filters (OpenAI, Anthropic, Google all offer them)</li>
+            <li><strong>Output monitoring:</strong> Log and review outputs for signs of successful injection</li>
+        </ul>
+
+        <h3>Input Sanitization Checklist</h3>
+        <ul>
+            <li>Strip or escape HTML/JS from user inputs</li>
+            <li>Validate input length before sending to API</li>
+            <li>Reject or sanitize special characters in structured outputs</li>
+            <li>Rate-limit per-user input to prevent abuse</li>
+        </ul>
+
+        <h2>3. Output Filtering</h2>
+        <p>LLM outputs can contain harmful content, PII, or sensitive data. Filter before returning to users.</p>
+
+        <div class="cost-example">
+            <div class="label">Output filtering layers</div>
+            <div class="cost-row"><span class="name">Provider content filter (built-in)</span><span class="value">Free</span></div>
+            <div class="cost-row"><span class="name">Custom regex for PII (emails, SSNs)</span><span class="value">~0ms overhead</span></div>
+            <div class="cost-row"><span class="name">Second LLM call for moderation</span><span class="value">$0.001–0.005/call</span></div>
+            <div class="cost-row"><span class="name">Human review queue (high-risk content)</span><span class="value">Manual</span></div>
+        </div>
+
+        <ul>
+            <li><strong>Always enable provider content filters</strong> — they're free and catch most issues</li>
+            <li>For user-facing outputs, add a secondary moderation layer</li>
+            <li>Log flagged outputs for review</li>
+            <li>Never display raw LLM output without some form of sanitization</li>
+        </ul>
+
+        <h2>4. Rate Limiting & Cost Protection</h2>
+        <p>A single attacker can run up thousands of dollars in API bills overnight. Protect yourself.</p>
+
+        <h3>Application-Level Rate Limits</h3>
+        <ul>
+            <li><strong>Per-user limits:</strong> 10-50 requests/hour per user for free tier, higher for paid</li>
+            <li><strong>Global limits:</strong> Set a hard cap on total daily/monthly spend</li>
+            <li><strong>Burst limits:</strong> Prevent rapid-fire requests (e.g., max 5 requests/second per user)</li>
+        </ul>
+
+        <h3>Spending Alerts</h3>
+        <ul>
+            <li>Set up billing alerts at 50%, 80%, and 100% of your budget</li>
+            <li>Most providers support email/SMS alerts for spending thresholds</li>
+            <li>Implement a kill switch that disables API access when limits are hit</li>
+        </ul>
+
+        <h3>Cost-Aware Architecture</h3>
+        <ul>
+            <li>Estimate cost before each request (check token count × model price)</li>
+            <li>Reject requests that would exceed per-user budgets</li>
+            <li>Use cheaper models for non-critical paths</li>
+            <li>Implement token budgets per request and per day</li>
+        </ul>
+
+        <h2>5. Authentication & Authorization</h2>
+        <p>Control who can access your AI features and what they can do.</p>
+
+        <ul>
+            <li><strong>Require authentication</strong> for all AI API endpoints</li>
+            <li><strong>Use session tokens or JWTs</strong> — not API keys — for user authentication</li>
+            <li><strong>Role-based access:</strong> Differentiate between free and Pro users</li>
+            <li><strong>Audit logging:</strong> Record who made each request, what model was used, and how many tokens</li>
+        </ul>
+
+        <h2>6. Data Privacy</h2>
+        <p>AI APIs process your users' data. Handle it responsibly.</p>
+
+        <ul>
+            <li><strong>Don't send PII to APIs unless necessary</strong> — anonymize or pseudonymize first</li>
+            <li><strong>Check provider data policies:</strong> OpenAI and Anthropic don't train on API data by default; Google does for free tier</li>
+            <li><strong>Data retention:</strong> Understand how long providers store your requests</li>
+            <li><strong>Compliance:</strong> If you're in healthcare (HIPAA), finance (SOC 2), or EU (GDPR), verify the provider's compliance certifications</li>
+            <li><strong>Self-hosted alternatives:</strong> For sensitive data, consider self-hosting open-source models</li>
+        </ul>
+
+        <h2>7. Provider-Specific Security Features</h2>
+
+        <h3>OpenAI</h3>
+        <ul>
+            <li><strong>Content moderation API:</strong> Free, built-in safety system</li>
+            <li><strong>Organization scoping:</strong> Separate projects for different environments</li>
+            <li><strong>Admin API keys:</strong> Manage keys with restricted permissions</li>
+            <li><strong>Compliance:</strong> SOC 2 Type II, GDPR, CCPA</li>
+        </ul>
+
+        <h3>Anthropic</h3>
+        <ul>
+            <li><strong>Constitutional AI:</strong> Built-in safety training</li>
+            <li><strong>Team management:</strong> Role-based access for organizations</li>
+            <li><strong>Prompt caching:</strong> Reduces repeated data processing</li>
+            <li><strong>Compliance:</strong> SOC 2 Type II, GDPR</li>
+        </ul>
+
+        <h3>Google</h3>
+        <ul>
+            <li><strong>Safety settings:</strong> Adjustable content filter sensitivity</li>
+            <li><strong>VPC Service Controls:</strong> Network-level isolation for enterprise</li>
+            <li><strong>Cloud IAM:</strong> Fine-grained access control via Google Cloud</li>
+            <li><strong>Compliance:</strong> SOC 1/2/3, ISO 27001, HIPAA (with BAA)</li>
+        </ul>
+
+        <h2>Security Checklist</h2>
+        <div class="cost-example">
+            <div class="label">Production security checklist</div>
+            <div class="cost-row"><span class="name">API keys stored in environment/secrets manager</span><span class="value">Must have</span></div>
+            <div class="cost-row"><span class="name">All API calls proxied through backend</span><span class="value">Must have</span></div>
+            <div class="cost-row"><span class="name">Per-user rate limiting</span><span class="value">Must have</span></div>
+            <div class="cost-row"><span class="name">Input length validation</span><span class="value">Must have</span></div>
+            <div class="cost-row"><span class="name">Provider content filtering enabled</span><span class="value">Must have</span></div>
+            <div class="cost-row"><span class="name">Billing alerts configured</span><span class="value">Must have</span></div>
+            <div class="cost-row"><span class="name">API key rotation schedule (90 days)</span><span class="value">Should have</span></div>
+            <div class="cost-row"><span class="name">Audit logging</span><span class="value">Should have</span></div>
+            <div class="cost-row"><span class="name">Output PII filtering</span><span class="value">Should have</span></div>
+            <div class="cost-row"><span class="name">Prompt injection detection</span><span class="value">Nice to have</span></div>
+        </div>
+
+        <h2>The Bottom Line</h2>
+        <p>AI API security isn't fundamentally different from securing any other API integration — but the attack surface is unique. Prompt injection, cost attacks, and data leakage require specific mitigations. Start with the basics: proxy all calls through your backend, rate limit aggressively, and enable content filters. Then layer on output filtering, audit logging, and prompt injection defenses as you scale.</p>
+
+        <div class="cta-inline">
+            <p><strong>Monitor your API spend in real time.</strong></p>
+            <a href="calculator.html" class="btn-primary">Calculate costs with APIpulse</a>
+        </div>
+
+        <div class="share-section">
+            <p>Found this useful? Share it:</p>
+            <a href="https://twitter.com/intent/tweet?text=AI+API+Security+Best+Practices+for+Production:+complete+checklist&url=https%3A%2F%2Fgetapipulse.com%2Fblog-ai-api-security.html" target="_blank" rel="noopener" class="share-btn">Share on X</a>
+        </div>
+
+        <div style="margin-top:40px;padding:24px;background:var(--bg-secondary);border:1px solid var(--border);border-radius:12px;">
+            <h3 style="font-size:16px;margin-bottom:12px;">Related Reading</h3>
+            <ul style="list-style:none;padding:0;">
+                <li style="margin-bottom:8px;"><a href="blog-api-authentication.html">The Complete Guide to AI API Authentication</a></li>
+                <li style="margin-bottom:8px;"><a href="blog-rate-limits.html">AI API Rate Limits Compared</a></li>
+                <li style="margin-bottom:8px;"><a href="blog-cost-optimization-guide.html">AI API Cost Optimization Guide</a></li>
+                <li><a href="glossary.html">AI API Glossary →</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div style="max-width:600px;margin:48px auto 0;padding:32px;text-align:center;background:var(--bg-card);border-radius:12px;border:1px solid var(--border);">
+        <h3 style="font-size:18px;margin-bottom:8px;">Get notified when API prices change</h3>
+        <p style="font-size:14px;color:var(--text-secondary);margin-bottom:16px;">No spam. Only pricing updates and new features. Unsubscribe anytime.</p>
+        <form onsubmit="saveEmail(event)" style="display:flex;gap:8px;max-width:400px;margin:0 auto;">
+            <input type="email" id="email-input" placeholder="you@company.com" required aria-label="Email address"
+                style="flex:1;padding:12px 16px;border-radius:8px;border:1px solid var(--border);background:var(--bg-secondary);color:var(--text-primary);font-size:14px;">
+            <button type="submit" class="btn-primary" style="padding:12px 24px;white-space:nowrap;">Subscribe</button>
+        </form>
+        <p id="email-msg" style="font-size:13px;color:var(--green);margin-top:12px;display:none;"></p>
+    </div>
+
+    <button class="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">↑</button>
+
+    </main>
+    <footer>
+        <p>Pricing data last verified: <span class="verified-date"></span></p>
+        <p>&copy; 2026 APIpulse. <a href="index.html">Home</a> &middot; <a href="use-cases.html">Use Cases</a> &middot; <a href="about.html">About</a> &middot; <a href="blog.html">Blog</a> &middot; <a href="pricing-index.html">Pricing Index</a> &middot; <a href="openai.html">OpenAI</a> &middot; <a href="anthropic.html">Anthropic</a> &middot; <a href="google.html">Google</a> &middot; <a href="mistral.html">Mistral</a> &middot; <a href="cohere.html">Cohere</a> &middot; <a href="deepseek.html">DeepSeek</a> &middot; <a href="xai.html">xAI</a> &middot; <a href="moonshot.html">Moonshot</a> &middot; <a href="together.html">Together.ai</a> &middot; <a href="ai21.html">AI21</a> &middot; <a href="pricing.html">Pricing</a></p>
+    </footer>
+
+</body>
+</html>
