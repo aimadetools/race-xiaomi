@@ -1,7 +1,7 @@
 # Hacker News — Show HN
 
 ## Title
-Show HN: APIpulse – Compare AI API pricing across 16 models and 7 providers
+Show HN: APIpulse – Compare AI API pricing across 35 models and 10 providers
 
 ## URL
 https://getapipulse.com
@@ -11,7 +11,7 @@ https://getapipulse.com
 I built APIpulse after getting frustrated comparing pricing across OpenAI, Anthropic, Google, and Mistral for a project. Every provider has different pricing structures, context windows, and capabilities, and figuring out the cheapest option for your specific use case requires opening 4+ tabs and doing math.
 
 **What it does:**
-- Interactive cost calculator — input your token counts and request volume, get monthly cost estimates for 16 models
+- Interactive cost calculator — input your token counts and request volume, get monthly cost estimates for 35 models
 - Side-by-side comparison tool — pick any two models, see costs broken down by use case
 - Sortable pricing index — every model, every price, filterable by provider and tier
 - 18 blog posts with detailed cost breakdowns for specific scenarios

@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Llama 4 API Pricing: 10M Context for Pennies — APIpulse</title>
+    <meta name="description" content="Llama 4 Scout ($0.11/$0.34) and Maverick ($0.20/$0.60) offer 10M token context windows at budget prices. Full pricing breakdown and use case analysis.">
+    <meta name="keywords" content="Llama 4 pricing, Llama 4 API cost, Llama 4 Scout, Llama 4 Maverick, 10M context, Meta Llama API, open source LLM pricing 2026">
+    <meta property="og:title" content="Llama 4 API Pricing: 10M Context for Pennies — APIpulse">
+    <meta property="og:description" content="Llama 4 Scout ($0.11/$0.34) and Maverick ($0.20/$0.60) offer 10M token context windows at budget prices.">
+    <meta property="og:type" content="article">
+    <meta property="article:published_time" content="2026-04-26">
+    <meta property="article:modified_time" content="2026-04-26">
+    <meta property="article:author" content="APIpulse">
+    <meta property="og:image" content="https://getapipulse.com/og-image.png">
+    <meta property="og:url" content="https://getapipulse.com/blog-llama4-pricing.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Llama 4 API Pricing: 10M Context for Pennies — APIpulse">
+    <meta name="twitter:image" content="https://getapipulse.com/og-image.png">
+    <meta name="twitter:description" content="Llama 4 Scout ($0.11/$0.34) and Maverick ($0.20/$0.60) offer 10M token context windows at budget prices.">
+    <link rel="canonical" href="https://getapipulse.com/blog-llama4-pricing.html">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="styles.css">
+    <script src="analytics.js" defer></script>
+    <script src="dynamic-date.js" defer></script>
+    <script src="shared.js" defer></script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "Llama 4 API Pricing: 10M Context for Pennies",
+        "description": "Llama 4 Scout ($0.11/$0.34) and Maverick ($0.20/$0.60) offer 10M token context windows at budget prices.",
+        "datePublished": "2026-04-26",
+        "dateModified": "2026-04-26",
+        "author": { "@type": "Organization", "name": "APIpulse" },
+        "publisher": { "@type": "Organization", "name": "APIpulse", "url": "https://getapipulse.com" },
+        "url": "https://getapipulse.com/blog-llama4-pricing.html"
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Blog", "item": "https://getapipulse.com/blog.html" },
+            { "@type": "ListItem", "position": 2, "name": "Llama 4 API Pricing", "item": "https://getapipulse.com/blog-llama4-pricing.html" }
+        ]
+    }
+    </script>
+    <style>
+        .content { max-width: 800px; margin: 0 auto; padding: 120px 24px 80px; }
+        h1 { font-size: 40px; font-weight: 800; margin-bottom: 12px; }
+        .subtitle { color: var(--text-secondary); font-size: 18px; margin-bottom: 48px; }
+        .post-meta { display: flex; gap: 16px; align-items: center; margin-bottom: 12px; font-size: 13px; color: var(--text-muted); }
+        .tier-badge { display: inline-block; padding: 2px 8px; border-radius: 4px; font-size: 11px; font-weight: 600; }
+        .tier-premium { background: rgba(168,85,247,0.15); color: #a855f7; }
+        .breadcrumb { font-size: 14px; color: var(--text-muted); margin-bottom: 24px; }
+        .breadcrumb a { color: var(--accent); text-decoration: none; }
+        .breadcrumb a:hover { text-decoration: underline; }
+        h2 { font-size: 28px; font-weight: 700; margin: 48px 0 16px; }
+        h3 { font-size: 22px; font-weight: 600; margin: 32px 0 12px; }
+        p { color: var(--text-secondary); line-height: 1.8; margin-bottom: 16px; font-size: 16px; }
+        .highlight-box { background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 12px; padding: 24px; margin: 24px 0; }
+        .highlight-box h3 { margin-top: 0; }
+        .comparison-table { width: 100%; border-collapse: collapse; margin: 24px 0; font-size: 14px; }
+        .comparison-table th { background: var(--bg-secondary); padding: 12px 16px; text-align: left; font-weight: 600; border-bottom: 1px solid var(--border); }
+        .comparison-table td { padding: 12px 16px; border-bottom: 1px solid var(--border); }
+        .comparison-table .winner { background: rgba(34,197,94,0.05); }
+        .comparison-table .highlight-row { background: rgba(99,102,241,0.05); }
+        .cost-box { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin: 24px 0; }
+        .cost-card { background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 12px; padding: 24px; text-align: center; }
+        .cost-card .model-name { font-size: 18px; font-weight: 700; margin-bottom: 8px; }
+        .cost-card .price { font-size: 24px; font-weight: 800; color: var(--accent); }
+        .cost-card .price-label { font-size: 13px; color: var(--text-muted); margin-top: 4px; }
+        .cost-card .context-badge { display: inline-block; margin-top: 8px; padding: 4px 12px; background: rgba(34,197,94,0.1); color: var(--green); border-radius: 6px; font-size: 13px; font-weight: 600; }
+        ul { color: var(--text-secondary); padding-left: 24px; margin-bottom: 16px; }
+        li { margin-bottom: 8px; line-height: 1.6; }
+        .cta-inline { background: var(--bg-secondary); border: 1px solid var(--accent); border-radius: 12px; padding: 24px; margin: 32px 0; text-align: center; }
+        .cta-inline p { margin-bottom: 12px; }
+        .related-reading { background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 12px; padding: 28px; margin-top: 48px; }
+        .related-reading h3 { margin-top: 0; font-size: 18px; }
+        .related-reading ul { list-style: none; padding: 0; }
+        .related-reading li { padding: 8px 0; }
+        .related-reading a { color: var(--accent); text-decoration: none; font-weight: 500; }
+        .related-reading a:hover { text-decoration: underline; }
+        .share-btn { display: inline-block; padding: 8px 16px; background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 8px; color: var(--text-primary); text-decoration: none; font-size: 13px; font-weight: 600; transition: all 0.2s; margin-top: 24px; }
+        .share-btn:hover { border-color: var(--accent); color: var(--accent); }
+        @media (max-width: 768px) { .content { padding: 100px 16px 60px; } h1 { font-size: 28px; } .cost-box { grid-template-columns: 1fr; } }
+        @media print { nav, .cta-inline, .share-btn, .related-reading, .theme-toggle, .back-to-top { display: none !important; } body { background: white; color: black; } .content { padding: 0; } }
+    </style>
+    <meta name="theme-color" content="#6366f1">
+    <link rel="preconnect" href="https://getapipulse.com">
+</head>
+<body>
+    <a href="#main" class="skip-link">Skip to content</a>
+    <nav>
+        <div class="nav-inner">
+            <a href="index.html" class="logo">API<span>pulse</span></a>
+            <button class="hamburger" onclick="toggleMobileNav()" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+            <div class="nav-links">
+                <a href="calculator.html">Calculator</a>
+                <a href="compare.html">Compare</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="use-cases.html">Use Cases</a>
+                <a href="about.html">About</a>
+                <a href="blog.html">Blog</a>
+                <a href="pricing-index.html">Pricing Index</a>
+                <a href="pricing-trends.html">Trends</a>
+                <a href="pricing.html" class="nav-cta" onclick="if(window.trackEvent)window.trackEvent('pro_button_clicked',{source:'nav'})">Get Pro — $29</a>
+                <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
+            </div>
+        </div>
+    </nav>
+
+    <main id="main">
+    <div class="content">
+
+        <div class="breadcrumb"><a href="blog.html">Blog</a> &rsaquo; Llama 4 API Pricing</div>
+
+        <div class="post-meta">
+            <span class="tier-badge tier-premium">Premium</span>
+            <span>April 26, 2026</span>
+            <span>7 min read</span>
+        </div>
+
+        <h1>Llama 4 API Pricing: 10M Context for Pennies</h1>
+        <p class="subtitle">Meta's Llama 4 Scout and Maverick both support 10 million token context windows — 50x larger than Claude, 10x larger than GPT-5.5 — at budget-tier prices. Here's what that means for your wallet.</p>
+
+        <h2>Pricing at a Glance</h2>
+        <div class="cost-box">
+            <div class="cost-card">
+                <div class="model-name">Llama 4 Scout</div>
+                <div class="price">$0.11 / $0.34</div>
+                <div class="price-label">Input / Output per 1M tokens</div>
+                <div class="context-badge">10M context</div>
+                <p style="font-size:14px;margin-top:12px;margin-bottom:0;">via Together.ai</p>
+            </div>
+            <div class="cost-card">
+                <div class="model-name">Llama 4 Maverick</div>
+                <div class="price">$0.20 / $0.60</div>
+                <div class="price-label">Input / Output per 1M tokens</div>
+                <div class="context-badge">10M context</div>
+                <p style="font-size:14px;margin-top:12px;margin-bottom:0;">via Together.ai</p>
+            </div>
+        </div>
+
+        <p>Llama 4 Scout at $0.11/$0.34 is one of the cheapest models available, and it comes with a 10M context window. That's not a typo — ten million tokens. For comparison, GPT-5.5's 1M context costs $5/$30, and Claude Opus 4.7's 200K context costs $5/$25. You're getting 50x the context of Claude at 2% of the price.</p>
+
+        <h2>Context Window Comparison</h2>
+        <div class="highlight-box">
+            <h3>What 10M tokens actually means</h3>
+            <ul>
+                <li><strong>~7.5 million words</strong> — roughly 15 full-length novels</li>
+                <li><strong>~25,000 pages</strong> of text</li>
+                <li><strong>Entire codebases</strong> — a 500K-line codebase fits comfortably</li>
+                <li><strong>Full legal corpora</strong> — analyze thousands of contracts in one request</li>
+                <li><strong>Years of chat history</strong> — maintain unlimited conversation context</li>
+            </ul>
+        </div>
+
+        <table class="comparison-table">
+            <thead><tr><th>Model</th><th>Context</th><th>Input/1M</th><th>Output/1M</th><th>Cost for 10M input</th></tr></thead>
+            <tbody>
+                <tr class="highlight-row"><td>Llama 4 Scout</td><td>10M</td><td>$0.11</td><td>$0.34</td><td><strong>$1.10</strong></td></tr>
+                <tr class="highlight-row"><td>Llama 4 Maverick</td><td>10M</td><td>$0.20</td><td>$0.60</td><td><strong>$2.00</strong></td></tr>
+                <tr><td>Gemini 3 Pro</td><td>10M</td><td>$1.25</td><td>$10.00</td><td><strong>$12.50</strong></td></tr>
+                <tr><td>GPT-5.5</td><td>1M</td><td>$5.00</td><td>$30.00</td><td><strong>$50.00</strong></td></tr>
+                <tr><td>Claude Opus 4.7</td><td>200K</td><td>$5.00</td><td>$25.00</td><td>N/A (exceeds context)</td></tr>
+            </tbody>
+        </table>
+        <p>To process 10M input tokens, Llama 4 Scout costs $1.10. GPT-5.5 would cost $50 for 1/10th the context. That's a <strong>45x cost difference</strong> for long-context workloads.</p>
+
+        <h2>Cost Comparison by Use Case</h2>
+
+        <h3>1. Codebase Analysis (50 requests/day, 50K input + 2K output tokens)</h3>
+        <table class="comparison-table">
+            <thead><tr><th>Model</th><th>Input/mo</th><th>Output/mo</th><th>Total/mo</th></tr></thead>
+            <tbody>
+                <tr class="winner"><td>Llama 4 Scout</td><td>$8.25</td><td>$1.02</td><td><strong>$9.27</strong></td></tr>
+                <tr><td>Llama 4 Maverick</td><td>$15.00</td><td>$1.80</td><td><strong>$16.80</strong></td></tr>
+                <tr><td>Gemini 3 Pro</td><td>$93.75</td><td>$3.00</td><td><strong>$96.75</strong></td></tr>
+                <tr><td>GPT-5.5</td><td>$375.00</td><td>$9.00</td><td><strong>$384.00</strong></td></tr>
+            </tbody>
+        </table>
+        <p><strong>Winner: Llama 4 Scout</strong> — $9/month to analyze 50K-token codebases daily. GPT-5.5 would cost $384 for the same workload (and can't handle codebases over 1M tokens).</p>
+
+        <h3>2. Document Processing (100 requests/day, 20K input + 1K output tokens)</h3>
+        <table class="comparison-table">
+            <thead><tr><th>Model</th><th>Input/mo</th><th>Output/mo</th><th>Total/mo</th></tr></thead>
+            <tbody>
+                <tr class="winner"><td>Llama 4 Scout</td><td>$6.60</td><td>$1.02</td><td><strong>$7.62</strong></td></tr>
+                <tr><td>Llama 4 Maverick</td><td>$12.00</td><td>$1.80</td><td><strong>$13.80</strong></td></tr>
+                <tr><td>Gemini 2.0 Flash</td><td>$60.00</td><td>$1.20</td><td><strong>$61.20</strong></td></tr>
+                <tr><td>Claude Opus 4.7</td><td>$300.00</td><td>$7.50</td><td><strong>$307.50</strong></td></tr>
+            </tbody>
+        </table>
+        <p><strong>Winner: Llama 4 Scout</strong> — processing 20K-token documents at $7.62/month. Claude Opus 4.7 costs 40x more for the same workload.</p>
+
+        <h3>3. Chatbot (500 requests/day, 1500 input + 800 output tokens)</h3>
+        <table class="comparison-table">
+            <thead><tr><th>Model</th><th>Input/mo</th><th>Output/mo</th><th>Total/mo</th></tr></thead>
+            <tbody>
+                <tr><td>DeepSeek V4 Flash</td><td>$10.50</td><td>$33.60</td><td><strong>$44.10</strong></td></tr>
+                <tr class="winner"><td>Llama 4 Scout</td><td>$8.25</td><td>$40.80</td><td><strong>$49.05</strong></td></tr>
+                <tr><td>Gemini 2.0 Flash</td><td>$7.50</td><td>$48.00</td><td><strong>$55.50</strong></td></tr>
+                <tr><td>GPT-4o mini</td><td>$11.25</td><td>$72.00</td><td><strong>$83.25</strong></td></tr>
+            </tbody>
+        </table>
+        <p><strong>Winner: DeepSeek V4 Flash</strong> — for short-context chatbots, DeepSeek edges out Llama 4 on output cost. Llama 4's advantage only kicks in when you need the long context.</p>
+
+        <h2>Scout vs Maverick: Which One?</h2>
+        <table class="comparison-table">
+            <thead><tr><th>Feature</th><th>Llama 4 Scout</th><th>Llama 4 Maverick</th></tr></thead>
+            <tbody>
+                <tr><td>Input price</td><td>$0.11/1M</td><td>$0.20/1M</td></tr>
+                <tr><td>Output price</td><td>$0.34/1M</td><td>$0.60/1M</td></tr>
+                <tr><td>Context window</td><td>10M</td><td>10M</td></tr>
+                <tr><td>Best for</td><td>High-volume, simple tasks</td><td>Complex reasoning, analysis</td></tr>
+                <tr><td>Cost difference</td><td colspan="2">Maverick is ~80% more expensive</td></tr>
+            </tbody>
+        </table>
+        <ul>
+            <li><strong>Choose Scout</strong> for classification, extraction, summarization, and other tasks where output quality is "good enough"</li>
+            <li><strong>Choose Maverick</strong> for tasks requiring stronger reasoning: code generation, detailed analysis, complex Q&A</li>
+            <li><strong>Use both:</strong> Route simple requests to Scout, complex ones to Maverick</li>
+        </ul>
+
+        <h2>The Open Source Advantage</h2>
+        <p>Llama 4 is open-weight, which means you're not locked into a single API provider. The same model is available on:</p>
+        <ul>
+            <li><strong>Together.ai</strong> — $0.11/$0.34 (Scout), $0.20/$0.60 (Maverick)</li>
+            <li><strong>Fireworks.ai</strong> — competitive pricing, check current rates</li>
+            <li><strong>Replicate</strong> — pay-per-second GPU pricing</li>
+            <li><strong>Self-hosted</strong> — run on your own infrastructure for zero API costs (hardware permitting)</li>
+        </ul>
+        <p>This competition keeps prices low. If one provider raises prices, switch to another. You can't do that with GPT or Claude.</p>
+
+        <h2>When to Choose Llama 4</h2>
+        <ul>
+            <li>You need to process very long documents (>1M tokens) at budget prices</li>
+            <li>You're doing codebase analysis or RAG over large knowledge bases</li>
+            <li>You want vendor flexibility — switch providers without changing models</li>
+            <li>Cost per token is your primary concern</li>
+            <li>You're comfortable with open-source model quality</li>
+        </ul>
+
+        <h2>When to Choose Something Else</h2>
+        <ul>
+            <li>You need the absolute best reasoning (flagship models still win)</li>
+            <li>You need multimodal capabilities (vision, audio)</li>
+            <li>You need guaranteed SLAs from a single provider</li>
+            <li>Your context is under 200K (the price advantage shrinks)</li>
+            <li>You need advanced tool use / function calling</li>
+        </ul>
+
+        <h2>Cost Optimization Tips</h2>
+        <ol>
+            <li><strong>Right-size your context:</strong> Don't feed 10M tokens if 100K will do — you're still paying per token</li>
+            <li><strong>Use Scout for batch jobs:</strong> Offline processing where speed matters less than cost</li>
+            <li><strong>Compare providers:</strong> Together.ai, Fireworks, and others have different pricing for the same model</li>
+            <li><strong>Consider self-hosting:</strong> For very high volumes, self-hosting Llama 4 can be cheaper than any API</li>
+        </ol>
+
+        <div class="cta-inline">
+            <p><strong>Calculate your Llama 4 costs:</strong> Use our free calculator to compare Llama 4 Scout and Maverick against every other model for your specific workload.</p>
+            <a href="calculator.html" class="btn-primary">Try the APIpulse Calculator</a>
+        </div>
+
+        <a href="https://twitter.com/intent/tweet?text=Llama+4+offers+10M+token+context+for+just+%240.11%2F%240.34+per+1M+tokens.+That%27s+50x+the+context+of+Claude+at+2%25+of+the+price.&url=https://getapipulse.com/blog-llama4-pricing.html" target="_blank" rel="noopener" class="share-btn">Share on X</a>
+
+        <div class="related-reading">
+            <h3>Related Reading</h3>
+            <ul>
+                <li><a href="blog-cheapest-llm.html">The Cheapest LLM APIs in 2026: A Complete Ranking</a></li>
+                <li><a href="blog-deepseek-v4-pricing.html">DeepSeek V4 API Pricing: The Cheapest AI API?</a></li>
+                <li><a href="blog-reduce-costs.html">How to Reduce Your AI API Costs by 40%</a></li>
+            </ul>
+        </div>
+
+    </div>
+    </main>
+
+    <button class="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">↑</button>
+
+    <footer>
+        <p>Pricing data last verified: <span class="verified-date"></span></p>
+        <p>&copy; 2026 APIpulse. <a href="index.html">Home</a> &middot; <a href="use-cases.html">Use Cases</a> &middot; <a href="about.html">About</a> &middot; <a href="blog.html">Blog</a> &middot; <a href="pricing-index.html">Pricing Index</a> &middot; <a href="openai.html">OpenAI</a> &middot; <a href="anthropic.html">Anthropic</a> &middot; <a href="google.html">Google</a> &middot; <a href="mistral.html">Mistral</a> &middot; <a href="cohere.html">Cohere</a> &middot; <a href="deepseek.html">DeepSeek</a> &middot; <a href="pricing.html">Pricing</a></p>
+    </footer>
+</body>
+</html>

@@ -2696,6 +2696,75 @@
 - BACKLOG-PREMIUM #3: Pricing strategy optimization (after first 10 sales)
 - BACKLOG-PREMIUM #9: Newsletter setup (after email alias)
 
+---
+
+## Session 46 — April 26, 2026
+
+### What I did today:
+
+**Competitive Research & Gap Analysis:**
+- Researched competitive landscape: APIpulse covered 7 providers vs competitors' 12-15+
+- Identified key missing providers: DeepSeek, Moonshot, xAI
+- Identified new models not yet tracked: GPT-5.5, Claude Opus 4.7, Gemini 3 Pro, Llama 4, etc.
+
+**Pricing Data Expansion (19 models → 35 models, 7 → 10 providers):**
+- Updated pricing-data.js with 16 new models across 3 new providers
+- New providers: DeepSeek (V4 Pro, V4 Flash, V3), Moonshot (Kimi K2.6), xAI (Grok 3, Grok 3 Mini)
+- New OpenAI models: GPT-5.5, GPT-5.5 Pro, GPT-5.3 Codex, GPT-oss 120B, GPT-oss 20B
+- New Anthropic models: Claude Opus 4.7, Claude Sonnet 4.6
+- New Google model: Gemini 3 Pro (10M context)
+- New Meta models: Llama 4 Scout (10M context), Llama 4 Maverick (10M context)
+
+**New Provider Page:**
+- Created deepseek.html — full provider landing page with 3 models, stats bar, pricing table, competitor comparison, calculator
+
+**Calculator & Compare Updates:**
+- Updated all calculator dropdowns (index.html, calculator.html, pro.html) with 32 model options
+- Updated compare.html with new optgroups for DeepSeek, expanded Other group
+- Updated model count references: "16 models / 7 providers" → "35 models / 10 providers"
+
+**Audit Fixes:**
+- Fixed 404.html: removed incorrect `"url"` field from JSON-LD (was `https://getapipulse.com/404`)
+- Fixed success.html: removed contradictory canonical tag (had both canonical + noindex)
+
+**Blog Content (3 new posts):**
+- "GPT-5.5 vs Claude Opus 4.7: The New Flagship Showdown" — flagship comparison with 3 use case cost tables
+- "DeepSeek V4 API Pricing: The Cheapest AI API?" — budget model analysis, V4 Flash at $0.14/$0.28
+- "Llama 4 API Pricing: 10M Context for Pennies" — 10M context window analysis at budget prices
+
+**Pricing Index Improvements:**
+- Added DeepSeek, Moonshot, xAI to provider filter dropdown
+- Added CSS provider badge styles for new providers
+- Updated providerClass JS map
+
+**Site-wide Updates (via background agents):**
+- Updated model/provider counts across ~13 files (calculator, pricing-index, pricing-trends, blog, etc.)
+- Added DeepSeek footer link to all HTML pages
+
+**SEO:**
+- Added 3 new blog post cards to blog.html (top positions)
+- Added 3 new URLs to sitemap.xml (now 59 URLs)
+
+### Files created/modified today:
+- **New files:** deepseek.html, blog-gpt55-vs-claude-opus47.html, blog-deepseek-v4-pricing.html, blog-llama4-pricing.html
+- **Modified files:** pricing-data.js (16 new models), index.html (dropdown + footer), calculator.html (dropdown + count + footer), pro.html (dropdown + footer), compare.html (dropdowns + footer), pricing-index.html (filter + CSS + footer), pricing.html (count + footer), about.html (count + footer), 404.html (JSON-LD fix + footer), success.html (canonical fix + footer), blog.html (3 new post cards), sitemap.xml (3 new URLs), plus ~13 files updated by background agents for count/footer changes
+
+### Key metrics:
+- Total HTML pages: 62 (was 58)
+- Blog posts: 44 (was 41)
+- Calculator models: 35 across 10 providers (was 16/7)
+- Provider landing pages: 6 (was 5, added DeepSeek)
+- Sitemap URLs: 59 (was 56)
+- All audit bugs: Fixed
+
+### Site status:
+- Total HTML pages: 62
+- Blog posts: 44
+- Calculator models: 35 across 10 providers
+- Provider landing pages: 6 (OpenAI, Anthropic, Google, Mistral, Cohere, DeepSeek)
+- All known bugs: Fixed
+- Ready for user acquisition: Yes
+
 ### Remaining items (all require human action):
 - BACKLOG-PREMIUM #1: Post Reddit, Product Hunt, Hacker News (content ready)
 - BACKLOG-PREMIUM #2: Set up hello@getapipulse.com email alias

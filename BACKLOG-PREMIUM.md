@@ -43,7 +43,7 @@ These tasks need careful thought, architectural decisions, or complex problem-so
 ### 5. Multi-Provider Data Pipeline ✓ DONE
 - **What:** Design system for keeping pricing data current
 - **Strategy created:** marketing/data-pipeline-design.md
-- **Centralized data file:** pricing-data.js (single source of truth for 16 models)
+- **Centralized data file:** pricing-data.js (single source of truth for 35 models)
 - **Monthly workflow:** 30-min verification of 7 provider pricing pages
 - **Migration complete:** All calculator pages (index, calculator, compare, pricing-index, pro) and all 4 provider pages (openai, anthropic, google, mistral) now use pricing-data.js
 

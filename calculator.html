@@ -7,14 +7,14 @@
     <meta name="description" content="Free AI API cost calculator. Compare pricing across OpenAI, Anthropic, Google, Mistral, Cohere, Meta, and AI21. Calculate your monthly LLM spend in seconds.">
     <meta name="keywords" content="AI API cost calculator, LLM pricing calculator, GPT cost calculator, Claude pricing, API budget planner">
     <meta property="og:title" content="AI API Cost Calculator — Compare LLM Pricing | APIpulse">
-    <meta property="og:description" content="Free AI API cost calculator. Compare pricing across 16 models from 7 providers. Calculate your monthly LLM spend in seconds.">
+    <meta property="og:description" content="Free AI API cost calculator. Compare pricing across 35 models from 10 providers. Calculate your monthly LLM spend in seconds.">
     <meta property="og:type" content="website">
     <meta property="og:image" content="https://getapipulse.com/og-image.png">
     <meta property="og:url" content="https://getapipulse.com/calculator.html">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="AI API Cost Calculator — Compare LLM Pricing | APIpulse">
     <meta name="twitter:image" content="https://getapipulse.com/og-image.png">
-    <meta name="twitter:description" content="Free AI API cost calculator. Compare pricing across 16 models from 7 providers. Calculate your monthly LLM spend in seconds.">
+    <meta name="twitter:description" content="Free AI API cost calculator. Compare pricing across 35 models from 10 providers. Calculate your monthly LLM spend in seconds.">
     <link rel="canonical" href="https://getapipulse.com/calculator.html">
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <link rel="stylesheet" href="styles.css">
@@ -153,7 +153,7 @@
 
     <div class="calc-hero">
         <h1>AI API Cost Calculator</h1>
-        <p>Compare pricing across 16 models from 7 providers. Enter your usage below to see exactly what you'd pay — no signup required.</p>
+        <p>Compare pricing across 35 models from 10 providers. Enter your usage below to see exactly what you'd pay — no signup required.</p>
     </div>
 
     <section class="calculator-section">
@@ -169,21 +169,37 @@
                     <div class="input-group">
                         <label for="provider">Provider & Model</label>
                         <select id="provider" onchange="calculate()" aria-label="Select API provider">
+                            <option value="openai-gpt55">OpenAI — GPT-5.5</option>
+                            <option value="openai-gpt55-pro">OpenAI — GPT-5.5 Pro</option>
+                            <option value="openai-gpt53-codex">OpenAI — GPT-5.3 Codex</option>
                             <option value="openai-gpt5">OpenAI — GPT-5</option>
                             <option value="openai-gpt5-mini">OpenAI — GPT-5 mini</option>
+                            <option value="openai-gpt-oss-120b">OpenAI — GPT-oss 120B</option>
+                            <option value="openai-gpt-oss-20b">OpenAI — GPT-oss 20B</option>
                             <option value="openai-gpt4o">OpenAI — GPT-4o</option>
                             <option value="openai-gpt4o-mini" selected>OpenAI — GPT-4o mini</option>
+                            <option value="anthropic-opus47">Anthropic — Claude Opus 4.7</option>
                             <option value="anthropic-opus">Anthropic — Claude 4 Opus</option>
+                            <option value="anthropic-sonnet46">Anthropic — Claude Sonnet 4.6</option>
                             <option value="anthropic-sonnet">Anthropic — Claude Sonnet 4</option>
                             <option value="anthropic-haiku">Anthropic — Claude Haiku 3.5</option>
+                            <option value="google-gemini3-pro">Google — Gemini 3 Pro</option>
                             <option value="google-pro">Google — Gemini 2.5 Pro</option>
                             <option value="google-flash">Google — Gemini 2.0 Flash</option>
+                            <option value="deepseek-v4-pro">DeepSeek — V4 Pro</option>
+                            <option value="deepseek-v4-flash">DeepSeek — V4 Flash</option>
+                            <option value="deepseek-v3">DeepSeek — V3</option>
                             <option value="mistral-large">Mistral — Large</option>
                             <option value="mistral-small">Mistral — Small</option>
                             <option value="cohere-command-r-plus">Cohere — Command R+</option>
                             <option value="cohere-command-r">Cohere — Command R</option>
+                            <option value="llama-4-scout">Meta — Llama 4 Scout</option>
+                            <option value="llama-4-maverick">Meta — Llama 4 Maverick</option>
                             <option value="llama-3.1-70b">Meta — Llama 3.1 70B</option>
                             <option value="llama-3.1-8b">Meta — Llama 3.1 8B</option>
+                            <option value="kimi-k26">Moonshot — Kimi K2.6</option>
+                            <option value="xai-grok3">xAI — Grok 3</option>
+                            <option value="xai-grok3-mini">xAI — Grok 3 Mini</option>
                             <option value="ai21-jamba">AI21 — Jamba 1.5 Large</option>
                         </select>
                     </div>
@@ -270,7 +286,7 @@
 
     <div class="info-section">
         <h2>How This Calculator Works</h2>
-        <p>Enter your expected usage — tokens per request, requests per day, and days per month — and the calculator shows your estimated monthly cost for any of 16 LLM models across 7 providers. It also suggests the cheapest alternative if a cheaper model can handle your workload.</p>
+        <p>Enter your expected usage — tokens per request, requests per day, and days per month — and the calculator shows your estimated monthly cost for any of 35 LLM models across 10 providers. It also suggests the cheapest alternative if a cheaper model can handle your workload.</p>
 
         <h2>Supported Providers</h2>
         <ul>
@@ -314,7 +330,7 @@
 
     <footer>
         <p>Pricing data last verified: <span class="verified-date"></span></p>
-        <p>&copy; 2026 APIpulse. <a href="index.html">Home</a> &middot; <a href="use-cases.html">Use Cases</a> &middot; <a href="about.html">About</a> &middot; <a href="blog.html">Blog</a> &middot; <a href="pricing-index.html">Pricing Index</a> &middot; <a href="openai.html">OpenAI</a> &middot; <a href="anthropic.html">Anthropic</a> &middot; <a href="google.html">Google</a> &middot; <a href="mistral.html">Mistral</a> &middot; <a href="cohere.html">Cohere</a> &middot; <a href="pricing.html">Pricing</a></p>
+        <p>&copy; 2026 APIpulse. <a href="index.html">Home</a> &middot; <a href="use-cases.html">Use Cases</a> &middot; <a href="about.html">About</a> &middot; <a href="blog.html">Blog</a> &middot; <a href="pricing-index.html">Pricing Index</a> &middot; <a href="openai.html">OpenAI</a> &middot; <a href="anthropic.html">Anthropic</a> &middot; <a href="google.html">Google</a> &middot; <a href="mistral.html">Mistral</a> &middot; <a href="cohere.html">Cohere</a> &middot; <a href="deepseek.html">DeepSeek</a> &middot; <a href="pricing.html">Pricing</a></p>
     </footer>
 
     <script>

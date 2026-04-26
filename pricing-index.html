@@ -6,14 +6,14 @@
     <title>AI API Pricing Index: Every Model, Every Provider (April 2026) — APIpulse</title>
     <meta name="description" content="Complete pricing index for every major LLM API. Compare input/output costs, context windows, and tiers across OpenAI, Anthropic, Google, Mistral, Cohere, Meta, and AI21.">
     <meta property="og:title" content="AI API Pricing Index: Every Model, Every Provider — APIpulse">
-    <meta property="og:description" content="Complete pricing index for every major LLM API. Compare input/output costs, context windows, and tiers across 7 providers.">
+    <meta property="og:description" content="Complete pricing index for every major LLM API. Compare input/output costs, context windows, and tiers across 10 providers.">
     <meta property="og:type" content="website">
     <meta property="og:image" content="https://getapipulse.com/og-image.png">
     <meta property="og:url" content="https://getapipulse.com/pricing-index.html">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="AI API Pricing Index: Every Model, Every Provider — APIpulse">
     <meta name="twitter:image" content="https://getapipulse.com/og-image.png">
-    <meta name="twitter:description" content="Complete pricing index for every major LLM API. Compare input/output costs, context windows, and tiers across 7 providers.">
+    <meta name="twitter:description" content="Complete pricing index for every major LLM API. Compare input/output costs, context windows, and tiers across 10 providers.">
     <meta name="keywords" content="AI API pricing index, LLM pricing table, all model prices">
     <link rel="canonical" href="https://getapipulse.com/pricing-index.html">
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
@@ -27,7 +27,7 @@
         "@context": "https://schema.org",
         "@type": "WebPage",
         "name": "AI API Pricing Index",
-        "description": "Complete pricing index for every major LLM API across 7 providers.",
+        "description": "Complete pricing index for every major LLM API across 10 providers.",
         "url": "https://getapipulse.com/pricing-index.html",
         "publisher": { "@type": "Organization", "name": "APIpulse", "url": "https://getapipulse.com" }
     }
@@ -75,6 +75,9 @@
         .provider-mistral { background: rgba(255,119,0,0.15); color: #ff7700; }
         .provider-cohere { background: rgba(168,85,247,0.15); color: #a855f7; }
         .provider-meta { background: rgba(59,130,246,0.15); color: #3b82f6; }
+        .provider-deepseek { background: rgba(59,130,246,0.15); color: #3b82f6; }
+        .provider-moonshot { background: rgba(236,72,153,0.15); color: #ec4899; }
+        .provider-xai { background: rgba(107,114,128,0.15); color: #6b7280; }
         .provider-ai21 { background: rgba(16,185,129,0.15); color: #10b981; }
 
         .tier-badge {
@@ -163,6 +166,9 @@
                 <option value="Mistral">Mistral</option>
                 <option value="Cohere">Cohere</option>
                 <option value="Meta">Meta (Together.ai)</option>
+                <option value="DeepSeek">DeepSeek</option>
+                <option value="Moonshot">Moonshot</option>
+                <option value="xAI">xAI</option>
                 <option value="AI21">AI21</option>
             </select>
             <select id="tier-filter" onchange="filterTable()">
@@ -209,7 +215,7 @@
 
     <footer>
         <p>Pricing data last verified: <span class="verified-date"></span></p>
-        <p>&copy; 2026 APIpulse. <a href="index.html">Home</a> &middot; <a href="use-cases.html">Use Cases</a> &middot; <a href="about.html">About</a> &middot; <a href="blog.html">Blog</a> &middot; <a href="pricing-index.html">Pricing Index</a> &middot; <a href="openai.html">OpenAI</a> &middot; <a href="anthropic.html">Anthropic</a> &middot; <a href="google.html">Google</a> &middot; <a href="mistral.html">Mistral</a> &middot; <a href="cohere.html">Cohere</a> &middot; <a href="pricing.html">Pricing</a></p>
+        <p>&copy; 2026 APIpulse. <a href="index.html">Home</a> &middot; <a href="use-cases.html">Use Cases</a> &middot; <a href="about.html">About</a> &middot; <a href="blog.html">Blog</a> &middot; <a href="pricing-index.html">Pricing Index</a> &middot; <a href="openai.html">OpenAI</a> &middot; <a href="anthropic.html">Anthropic</a> &middot; <a href="google.html">Google</a> &middot; <a href="mistral.html">Mistral</a> &middot; <a href="cohere.html">Cohere</a> &middot; <a href="deepseek.html">DeepSeek</a> &middot; <a href="pricing.html">Pricing</a></p>
     </footer>
 
     <script>
@@ -220,7 +226,8 @@
             'OpenAI': 'provider-openai', 'Anthropic': 'provider-anthropic',
             'Google': 'provider-google', 'Mistral': 'provider-mistral',
             'Cohere': 'provider-cohere', 'Meta (Together.ai)': 'provider-meta',
-            'AI21': 'provider-ai21'
+            'DeepSeek': 'provider-deepseek', 'Moonshot': 'provider-moonshot',
+            'xAI': 'provider-xai', 'AI21': 'provider-ai21'
         };
         const tierClass = { 'Budget': 'tier-budget', 'Mid': 'tier-mid', 'Premium': 'tier-premium' };
 

@@ -202,19 +202,32 @@
                 <label for="model-a">Model A</label>
                 <select id="model-a" onchange="updateComparison()">
                     <optgroup label="OpenAI">
+                        <option value="openai-gpt55">GPT-5.5</option>
+                        <option value="openai-gpt55-pro">GPT-5.5 Pro</option>
+                        <option value="openai-gpt53-codex">GPT-5.3 Codex</option>
                         <option value="openai-gpt5">GPT-5</option>
                         <option value="openai-gpt5-mini">GPT-5 mini</option>
+                        <option value="openai-gpt-oss-120b">GPT-oss 120B</option>
+                        <option value="openai-gpt-oss-20b">GPT-oss 20B</option>
                         <option value="openai-gpt4o" selected>GPT-4o</option>
                         <option value="openai-gpt4o-mini">GPT-4o mini</option>
                     </optgroup>
                     <optgroup label="Anthropic">
+                        <option value="anthropic-opus47">Claude Opus 4.7</option>
                         <option value="anthropic-opus">Claude 4 Opus</option>
+                        <option value="anthropic-sonnet46">Claude Sonnet 4.6</option>
                         <option value="anthropic-sonnet">Claude Sonnet 4</option>
                         <option value="anthropic-haiku">Claude Haiku 3.5</option>
                     </optgroup>
                     <optgroup label="Google">
+                        <option value="google-gemini3-pro">Gemini 3 Pro</option>
                         <option value="google-pro">Gemini 2.5 Pro</option>
                         <option value="google-flash">Gemini 2.0 Flash</option>
+                    </optgroup>
+                    <optgroup label="DeepSeek">
+                        <option value="deepseek-v4-pro">DeepSeek V4 Pro</option>
+                        <option value="deepseek-v4-flash">DeepSeek V4 Flash</option>
+                        <option value="deepseek-v3">DeepSeek V3</option>
                     </optgroup>
                     <optgroup label="Mistral">
                         <option value="mistral-large">Mistral Large</option>
@@ -223,8 +236,13 @@
                     <optgroup label="Other">
                         <option value="cohere-command-r-plus">Cohere Command R+</option>
                         <option value="cohere-command-r">Cohere Command R</option>
+                        <option value="llama-4-scout">Llama 4 Scout</option>
+                        <option value="llama-4-maverick">Llama 4 Maverick</option>
                         <option value="llama-3.1-70b">Llama 3.1 70B (Together)</option>
                         <option value="llama-3.1-8b">Llama 3.1 8B (Together)</option>
+                        <option value="kimi-k26">Kimi K2.6 (Moonshot)</option>
+                        <option value="xai-grok3">Grok 3 (xAI)</option>
+                        <option value="xai-grok3-mini">Grok 3 Mini (xAI)</option>
                         <option value="ai21-jamba">AI21 Jamba 1.5 Large</option>
                     </optgroup>
                 </select>
@@ -234,19 +252,32 @@
                 <label for="model-b">Model B</label>
                 <select id="model-b" onchange="updateComparison()">
                     <optgroup label="OpenAI">
+                        <option value="openai-gpt55">GPT-5.5</option>
+                        <option value="openai-gpt55-pro">GPT-5.5 Pro</option>
+                        <option value="openai-gpt53-codex">GPT-5.3 Codex</option>
                         <option value="openai-gpt5">GPT-5</option>
                         <option value="openai-gpt5-mini">GPT-5 mini</option>
+                        <option value="openai-gpt-oss-120b">GPT-oss 120B</option>
+                        <option value="openai-gpt-oss-20b">GPT-oss 20B</option>
                         <option value="openai-gpt4o">GPT-4o</option>
                         <option value="openai-gpt4o-mini">GPT-4o mini</option>
                     </optgroup>
                     <optgroup label="Anthropic">
+                        <option value="anthropic-opus47">Claude Opus 4.7</option>
                         <option value="anthropic-opus">Claude 4 Opus</option>
+                        <option value="anthropic-sonnet46">Claude Sonnet 4.6</option>
                         <option value="anthropic-sonnet">Claude Sonnet 4</option>
                         <option value="anthropic-haiku" selected>Claude Haiku 3.5</option>
                     </optgroup>
                     <optgroup label="Google">
+                        <option value="google-gemini3-pro">Gemini 3 Pro</option>
                         <option value="google-pro">Gemini 2.5 Pro</option>
                         <option value="google-flash">Gemini 2.0 Flash</option>
+                    </optgroup>
+                    <optgroup label="DeepSeek">
+                        <option value="deepseek-v4-pro">DeepSeek V4 Pro</option>
+                        <option value="deepseek-v4-flash">DeepSeek V4 Flash</option>
+                        <option value="deepseek-v3">DeepSeek V3</option>
                     </optgroup>
                     <optgroup label="Mistral">
                         <option value="mistral-large">Mistral Large</option>
@@ -255,8 +286,13 @@
                     <optgroup label="Other">
                         <option value="cohere-command-r-plus">Cohere Command R+</option>
                         <option value="cohere-command-r">Cohere Command R</option>
+                        <option value="llama-4-scout">Llama 4 Scout</option>
+                        <option value="llama-4-maverick">Llama 4 Maverick</option>
                         <option value="llama-3.1-70b">Llama 3.1 70B (Together)</option>
                         <option value="llama-3.1-8b">Llama 3.1 8B (Together)</option>
+                        <option value="kimi-k26">Kimi K2.6 (Moonshot)</option>
+                        <option value="xai-grok3">Grok 3 (xAI)</option>
+                        <option value="xai-grok3-mini">Grok 3 Mini (xAI)</option>
                         <option value="ai21-jamba">AI21 Jamba 1.5 Large</option>
                     </optgroup>
                 </select>
@@ -333,7 +369,7 @@
 
     <footer>
         <p>Pricing data last verified: <span class="verified-date"></span></p>
-        <p>&copy; 2026 APIpulse. <a href="index.html">Home</a> &middot; <a href="use-cases.html">Use Cases</a> &middot; <a href="about.html">About</a> &middot; <a href="blog.html">Blog</a> &middot; <a href="pricing-index.html">Pricing Index</a> &middot; <a href="openai.html">OpenAI</a> &middot; <a href="anthropic.html">Anthropic</a> &middot; <a href="google.html">Google</a> &middot; <a href="mistral.html">Mistral</a> &middot; <a href="cohere.html">Cohere</a> &middot; <a href="pricing.html">Pricing</a></p>
+        <p>&copy; 2026 APIpulse. <a href="index.html">Home</a> &middot; <a href="use-cases.html">Use Cases</a> &middot; <a href="about.html">About</a> &middot; <a href="blog.html">Blog</a> &middot; <a href="pricing-index.html">Pricing Index</a> &middot; <a href="openai.html">OpenAI</a> &middot; <a href="anthropic.html">Anthropic</a> &middot; <a href="google.html">Google</a> &middot; <a href="mistral.html">Mistral</a> &middot; <a href="cohere.html">Cohere</a> &middot; <a href="deepseek.html">DeepSeek</a> &middot; <a href="pricing.html">Pricing</a></p>
     </footer>
 
     <script>

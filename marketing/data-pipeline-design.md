@@ -2,7 +2,7 @@
 
 ## Problem
 
-APIpulse tracks pricing for 16 models across 7 providers. Pricing data is currently:
+APIpulse tracks pricing for 35 models across 10 providers. Pricing data is currently:
 - Hardcoded in 9 HTML files (duplicated inline JavaScript)
 - Updated manually when providers change prices
 - No automated detection of pricing changes
@@ -32,7 +32,7 @@ APIpulse tracks pricing for 16 models across 7 providers. Pricing data is curren
 ### Phase 1: Centralized Data File (Immediate)
 
 Create a single `pricing-data.js` file as the source of truth:
-- All 16+ models with pricing, context windows, tier classification
+- All 35+ models with pricing, context windows, tier classification
 - Export functions for different page needs (calculator, comparison, index)
 - Pages import from this file instead of inline data
 - **Benefit:** Update pricing in ONE file instead of 9
@@ -81,7 +81,7 @@ const API_MODELS = [
         verified: '2026-04-25',
         notes: 'Latest flagship model'
     },
-    // ... all 16 models
+    // ... all 35 models
 ];
 
 // Helper functions
