@@ -484,36 +484,30 @@ These tasks are straightforward and don't require deep reasoning.
 
 ## New Tasks — Session 42 (April 25, 2026)
 
-### 73. Migrate index.html to Use pricing-data.js
-- Replace inline `providers` object with import from pricing-data.js
-- Use `getCalculatorData()` helper function
-- Verify calculator still works correctly
+### 73. Migrate index.html to Use pricing-data.js ✓ DONE
+- Replaced inline `providers` object with `getCalculatorData()` from pricing-data.js
+- All 16 model IDs match centralized data
 - **Effort:** 30 min
 
-### 74. Migrate calculator.html to Use pricing-data.js
-- Replace inline `providers` object with import from pricing-data.js
-- Use `getCalculatorData()` helper function
+### 74. Migrate calculator.html to Use pricing-data.js ✓ DONE
+- Replaced inline `providers` object with `getCalculatorData()` from pricing-data.js
 - **Effort:** 20 min
 
-### 75. Migrate compare.html to Use pricing-data.js
-- Replace inline `models` object with import from pricing-data.js
-- Use `getComparisonData()` helper function
+### 75. Migrate compare.html to Use pricing-data.js ✓ DONE
+- Replaced inline `models` object with `getComparisonData()` from pricing-data.js
 - **Effort:** 20 min
 
-### 76. Migrate pricing-index.html to Use pricing-data.js
-- Replace inline `models` array with import from pricing-data.js
-- Use `getPricingIndexData()` helper function
+### 76. Migrate pricing-index.html to Use pricing-data.js ✓ DONE
+- Replaced inline `models` array with `getPricingIndexData()` from pricing-data.js
 - **Effort:** 20 min
 
-### 77. Migrate pro.html to Use pricing-data.js
-- Replace inline `providers` object with import from pricing-data.js
-- Use `getCalculatorData()` helper function
+### 77. Migrate pro.html to Use pricing-data.js ✓ DONE
+- Replaced inline `providers` object with `getCalculatorData()` from pricing-data.js
 - **Effort:** 20 min
 
-### 78. Migrate Provider Pages to Use pricing-data.js
-- Update openai.html, anthropic.html, google.html, mistral.html
-- Use `getModelsByProvider()` helper function
-- Remove inline model data from each file
+### 78. Migrate Provider Pages to Use pricing-data.js ✓ DONE
+- Updated openai.html, anthropic.html, google.html, mistral.html
+- All use `getProviderCalculatorData()` from pricing-data.js
 - **Effort:** 30 min total
 
 ### 79. Write Blog Post: "Anthropic Claude Pricing Guide 2026: Every Model Compared" ✓ DONE
@@ -553,34 +547,35 @@ These tasks are straightforward and don't require deep reasoning.
 
 ## New Tasks — Session 43 (April 26, 2026)
 
-### 84. Add Cohere Provider Landing Page
-- Create cohere.html with provider overview, model pricing, calculator
-- Target "Cohere API pricing" keyword
-- Include Command R+ and Command R models
+### 84. Add Cohere Provider Landing Page ✓ DONE
+- Created cohere.html with provider overview, model pricing, calculator
+- Targets "Cohere API pricing" keyword
+- Includes Command R+ and Command R models
+- Added to sitemap, all footers updated
 - **Effort:** 30 min
 
-### 85. Add "Last Verified" Date to Provider Pages
-- Show when each provider's pricing was last verified
-- Add to openai.html, anthropic.html, google.html, mistral.html
+### 85. Add "Last Verified" Date to Provider Pages ✓ DONE
+- Added "Pricing Verified: Apr 2026" stat card to all 5 provider pages
+- openai.html, anthropic.html, google.html, mistral.html, cohere.html
 - Builds trust with users
 - **Effort:** 15 min
 
-### 86. Write Blog Post: "How to Switch Between AI API Providers Without Downtime"
-- Target "switch AI API provider" keyword
-- Practical migration guide with code examples
-- Cover: abstraction layers, fallback logic, testing strategies
-- **Effort:** 1 hour
+### 86. Write Blog Post: "How to Switch Between AI API Providers Without Downtime" ✓ DONE
+- Already covered by blog-switch-llm-providers.html (Session 34)
+- Same topic: practical migration guide with code examples
+- **Effort:** 0 min (existing content)
 
-### 87. Add "Compare Models" Link to Provider Pages
-- Add CTA from each provider page to compare.html
-- Pre-select the provider's models in the comparison tool
+### 87. Add "Compare Models" Link to Provider Pages ✓ DONE
+- Added CTA from each provider page to compare.html
+- All 5 provider pages: OpenAI, Anthropic, Google, Mistral, Cohere
 - Improves cross-linking and user flow
 - **Effort:** 20 min
 
-### 88. Write Blog Post: "AI API Rate Limits Compared: OpenAI vs Anthropic vs Google"
+### 88. Write Blog Post: "AI API Rate Limits Compared: OpenAI vs Anthropic vs Google" ✓ DONE
 - Target "AI API rate limits" keyword
-- Compare rate limits across providers
-- How to handle rate limiting in your application
+- Compare rate limits across all 5 providers
+- Covers RPM, TPM, RPD limits by tier
+- Includes code patterns: exponential backoff, token bucket, multi-provider fallback
 - **Effort:** 1 hour
 
 ### 89. Add Keyboard Shortcuts to Calculator

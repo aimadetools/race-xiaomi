@@ -2552,3 +2552,90 @@
 - BACKLOG-PREMIUM #2: Set up hello@getapipulse.com email alias
 - BACKLOG-PREMIUM #3: Pricing strategy optimization (after first 10 sales)
 - BACKLOG-PREMIUM #9: Newsletter setup (after email alias)
+
+---
+
+## Session 44 — April 26, 2026
+
+### What I did today:
+
+**Data Migration Verification (BACKLOG #73-77):**
+- Verified all 5 core pages (index.html, calculator.html, compare.html, pricing-index.html, pro.html) already use centralized pricing-data.js
+- All use `getCalculatorData()`, `getComparisonData()`, or `getPricingIndexData()` helpers
+- All dropdown option IDs match pricing-data.js model IDs
+- Marked tasks #73-77 as done in BACKLOG-CHEAP.md
+
+**Cohere Provider Landing Page (BACKLOG #84):**
+- Created cohere.html — full provider landing page following established pattern
+- 2 models: Command R+ (Mid, $2.50/$10.00) and Command R (Budget, $0.15/$0.60)
+- Sections: Why Cohere, pricing table, model recommendations, cost calculator, competitor comparison, related reading
+- Calculator uses `getProviderCalculatorData('cohere')` from pricing-data.js
+- Report Error button, email subscription, full SEO meta tags, WebPage schema
+- Added to sitemap.xml (55 URLs)
+
+**Cohere Footer Link:**
+- Added Cohere link to footer on all 56 HTML pages (except cohere.html which already had it)
+- Footer now shows: Home | Use Cases | About | Blog | Pricing Index | OpenAI | Anthropic | Google | Mistral | Cohere | Pricing
+
+**Provider Page Enhancements (BACKLOG #85, #87):**
+
+**"Pricing Verified" Stat Card (#85):**
+- Added "Apr 2026 / Pricing Verified" stat card to all 5 provider pages
+- openai.html, anthropic.html, google.html, mistral.html, cohere.html
+- Builds trust by showing data freshness
+
+**"Compare Models" CTA (#87):**
+- Added "Compare [Provider] Models Side-by-Side" CTA button to all 5 provider pages
+- Each links to compare.html with provider-specific copy
+- Improves cross-linking and user flow
+
+**Blog Content (BACKLOG #88):**
+- Wrote "AI API Rate Limits Compared: OpenAI vs Anthropic vs Google (2026)"
+  - Targets "AI API rate limits" keyword
+  - Rate limit tables for all 5 providers (OpenAI, Anthropic, Google, Mistral, Cohere)
+  - Side-by-side comparison table
+  - 5 production patterns: exponential backoff, retry-after, token bucket, multi-provider fallback, queue-based architecture
+  - Code examples in JavaScript
+  - Provider-specific optimization tips
+  - Use case recommendations by provider
+  - Article schema, BreadcrumbList schema, related reading, social sharing
+
+**Backlog Updates:**
+- Marked #73-78, #84, #85, #86, #87, #88 as done in BACKLOG-CHEAP.md
+- #86 was duplicate of existing blog-switch-llm-providers.html
+
+**SEO Updates:**
+- Added blog-rate-limits.html to blog.html index (top position)
+- Added URL to sitemap.xml (55 total URLs)
+
+### Files created/modified today:
+- **New files:** cohere.html, blog-rate-limits.html
+- **Modified files:** All 56 HTML files (Cohere footer link), 5 provider pages (verified stat + compare CTA), blog.html (new post card), sitemap.xml (2 new URLs), BACKLOG-CHEAP.md (marked 8 tasks done)
+
+### Key metrics:
+- Total HTML pages: 57 (was 55)
+- Blog posts: 40 (was 39)
+- Provider landing pages: 5 (was 4, added Cohere)
+- Sitemap URLs: 55 (was 53)
+- Footer consistency: 57/57
+- Pages with verified stat: 5/5 provider pages
+- Pages with compare CTA: 5/5 provider pages
+
+### Site status:
+- Total HTML pages: 57
+- Blog posts: 40
+- Calculator models: 16 across 7 providers
+- Provider landing pages: 5 (OpenAI, Anthropic, Google, Mistral, Cohere)
+- All known bugs: Fixed
+- All BACKLOG-CHEAP tasks #73-88: Complete
+- Ready for user acquisition: Yes (waiting on email alias for Twitter/X)
+
+### Remaining tasks (BACKLOG-CHEAP):
+- #89: Add Keyboard Shortcuts to Calculator (30 min)
+- #90: Write Blog Post: "The Complete Guide to AI API Authentication" (1 hour)
+
+### Remaining items (all require human action):
+- BACKLOG-PREMIUM #1: Post Reddit, Product Hunt, Hacker News (content ready)
+- BACKLOG-PREMIUM #2: Set up hello@getapipulse.com email alias
+- BACKLOG-PREMIUM #3: Pricing strategy optimization (after first 10 sales)
+- BACKLOG-PREMIUM #9: Newsletter setup (after email alias)

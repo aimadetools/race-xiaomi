@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI API Rate Limits Compared: OpenAI vs Anthropic vs Google (2026) — APIpulse</title>
+    <meta name="description" content="Compare rate limits across OpenAI, Anthropic, Google, Mistral, and Cohere. Learn how to handle rate limiting, build retry logic, and optimize your API usage.">
+    <meta name="keywords" content="AI API rate limits, OpenAI rate limit, Anthropic rate limit, Google Gemini rate limit, API throttling, rate limit handling">
+    <meta property="og:title" content="AI API Rate Limits Compared: OpenAI vs Anthropic vs Google (2026) — APIpulse">
+    <meta property="og:description" content="Compare rate limits across major AI API providers. Learn how to handle rate limiting and optimize your API usage.">
+    <meta property="og:type" content="article">
+    <meta property="article:published_time" content="2026-04-26">
+    <meta property="article:modified_time" content="2026-04-26">
+    <meta property="article:author" content="APIpulse">
+    <meta property="og:image" content="https://getapipulse.com/og-image.png">
+    <meta property="og:url" content="https://getapipulse.com/blog-rate-limits.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="AI API Rate Limits Compared: OpenAI vs Anthropic vs Google (2026) — APIpulse">
+    <meta name="twitter:image" content="https://getapipulse.com/og-image.png">
+    <meta name="twitter:description" content="Compare rate limits across major AI API providers. Learn how to handle rate limiting and optimize your API usage.">
+    <link rel="canonical" href="https://getapipulse.com/blog-rate-limits.html">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="styles.css">
+    <script src="analytics.js" defer></script>
+    <script src="dynamic-date.js" defer></script>
+    <script src="shared.js" defer></script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "AI API Rate Limits Compared: OpenAI vs Anthropic vs Google (2026)",
+        "description": "Compare rate limits across OpenAI, Anthropic, Google, Mistral, and Cohere. Learn how to handle rate limiting and optimize your API usage.",
+        "datePublished": "2026-04-26",
+        "dateModified": "2026-04-26",
+        "author": { "@type": "Organization", "name": "APIpulse" },
+        "publisher": { "@type": "Organization", "name": "APIpulse", "url": "https://getapipulse.com" },
+        "url": "https://getapipulse.com/blog-rate-limits.html"
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Blog", "item": "https://getapipulse.com/blog.html" },
+            { "@type": "ListItem", "position": 2, "name": "AI API Rate Limits Compared", "item": "https://getapipulse.com/blog-rate-limits.html" }
+        ]
+    }
+    </script>
+    <style>
+        .content { max-width: 800px; margin: 0 auto; padding: 120px 24px 80px; }
+        h1 { font-size: 40px; font-weight: 800; margin-bottom: 12px; }
+        .subtitle { color: var(--text-secondary); font-size: 18px; margin-bottom: 48px; }
+
+        .post-meta {
+            display: flex; gap: 16px; align-items: center; margin-bottom: 12px;
+            font-size: 13px; color: var(--text-muted);
+        }
+        .tier-badge {
+            display: inline-block; padding: 2px 8px; border-radius: 4px;
+            font-size: 11px; font-weight: 600; text-transform: uppercase;
+        }
+        .tier-badge.guide { background: rgba(99, 102, 241, 0.15); color: var(--accent); }
+
+        h2 { font-size: 28px; font-weight: 700; margin: 48px 0 16px; }
+        h3 { font-size: 22px; font-weight: 600; margin: 32px 0 12px; }
+        p { color: var(--text-secondary); line-height: 1.8; margin-bottom: 16px; }
+        a { color: var(--accent); text-decoration: none; }
+        a:hover { text-decoration: underline; }
+
+        table {
+            width: 100%; border-collapse: collapse; margin: 24px 0;
+            background: var(--bg-secondary); border-radius: 8px; overflow: hidden;
+        }
+        th {
+            background: var(--bg-card); padding: 14px 16px; text-align: left;
+            font-weight: 600; font-size: 13px; text-transform: uppercase;
+            letter-spacing: 0.5px; color: var(--text-muted);
+            border-bottom: 1px solid var(--border);
+        }
+        td { padding: 12px 16px; border-bottom: 1px solid var(--border); font-size: 14px; }
+        tr:last-child td { border-bottom: none; }
+        tr:hover { background: var(--bg-secondary); }
+
+        .highlight { background: rgba(34,197,94,0.05); }
+        .best { color: var(--green); font-weight: 600; }
+
+        ul, ol { color: var(--text-secondary); line-height: 1.8; margin-bottom: 16px; padding-left: 24px; }
+        li { margin-bottom: 8px; }
+
+        code {
+            background: var(--bg-secondary); padding: 2px 6px; border-radius: 4px;
+            font-size: 13px; font-family: 'Courier New', monospace;
+        }
+        pre {
+            background: var(--bg-secondary); padding: 20px; border-radius: 8px;
+            overflow-x: auto; margin: 16px 0; font-size: 13px; line-height: 1.6;
+        }
+        pre code { background: none; padding: 0; }
+
+        .tip-box {
+            background: rgba(99,102,241,0.08); border-left: 3px solid var(--accent);
+            padding: 16px 20px; border-radius: 0 8px 8px 0; margin: 24px 0;
+        }
+        .tip-box strong { color: var(--accent); }
+
+        .warning-box {
+            background: rgba(234,179,8,0.08); border-left: 3px solid #eab308;
+            padding: 16px 20px; border-radius: 0 8px 8px 0; margin: 24px 0;
+        }
+        .warning-box strong { color: #eab308; }
+
+        .related-reading {
+            background: var(--bg-secondary); border: 1px solid var(--border);
+            border-radius: 12px; padding: 28px; margin: 48px 0;
+        }
+        .related-reading h3 { margin-top: 0; font-size: 18px; }
+        .related-links { display: flex; flex-direction: column; gap: 8px; margin-top: 12px; }
+        .related-links a { font-size: 14px; }
+
+        .cta-box {
+            background: linear-gradient(135deg, rgba(99,102,241,0.1), rgba(99,102,241,0.05));
+            border: 1px solid rgba(99,102,241,0.2); border-radius: 12px;
+            padding: 32px; text-align: center; margin: 48px 0;
+        }
+        .cta-box h3 { margin-top: 0; }
+
+        .email-section {
+            padding: 60px 24px; background: var(--bg-secondary);
+            border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
+            margin: 48px 0;
+        }
+
+        @media (max-width: 768px) {
+            .content { padding: 100px 16px 60px; }
+            h1 { font-size: 28px; }
+            table { font-size: 12px; }
+            th, td { padding: 8px 10px; }
+        }
+    </style>
+    <meta name="theme-color" content="#6366f1">
+    <link rel="preconnect" href="https://getapipulse.com">
+</head>
+<body>
+    <a href="#main" class="skip-link">Skip to content</a>
+    <nav>
+        <div class="nav-inner">
+            <a href="index.html" class="logo">API<span>pulse</span></a>
+            <button class="hamburger" onclick="toggleMobileNav()" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+            <div class="nav-links">
+                <a href="calculator.html">Calculator</a>
+                <a href="compare.html">Compare</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="use-cases.html">Use Cases</a>
+                <a href="about.html">About</a>
+                <a href="blog.html" class="active">Blog</a>
+                <a href="pricing-index.html">Pricing Index</a>
+                <a href="pricing-trends.html">Trends</a>
+                <a href="pricing.html" class="nav-cta" onclick="if(window.trackEvent)window.trackEvent('pro_button_clicked',{source:'nav'})">Get Pro — $29</a>
+                <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
+            </div>
+        </div>
+    </nav>
+
+    <main id="main">
+
+    <div class="content">
+
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+            <a href="blog.html">Blog</a> &rsaquo; AI API Rate Limits Compared
+        </nav>
+
+        <div class="post-meta">
+            <span class="tier-badge guide">Guide</span>
+            <span>April 26, 2026</span>
+            <span>12 min read</span>
+        </div>
+
+        <h1>AI API Rate Limits Compared: OpenAI vs Anthropic vs Google (2026)</h1>
+        <p class="subtitle">A comprehensive comparison of rate limits across every major LLM API provider — plus practical strategies for handling throttling in production.</p>
+
+        <p>Rate limits are the silent killer of AI applications. Your code works perfectly in development, then hits production traffic and starts throwing 429 errors. Understanding each provider's rate limits — and building proper handling — is essential for any production AI application.</p>
+
+        <p>In this guide, we compare rate limits across OpenAI, Anthropic, Google, Mistral, and Cohere. We'll cover RPM (requests per minute), TPM (tokens per minute), and daily limits, plus practical code patterns for handling rate limiting gracefully.</p>
+
+        <h2>Rate Limits by Provider</h2>
+
+        <p>Rate limits vary significantly between providers and between tiers within each provider. Here's the current landscape as of April 2026.</p>
+
+        <h3>OpenAI Rate Limits</h3>
+
+        <p>OpenAI uses a tiered system based on your spending history. New accounts start at Tier 1 and progress to higher tiers as usage increases.</p>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Tier</th>
+                    <th>RPM</th>
+                    <th>TPM</th>
+                    <th>RPD</th>
+                    <th>Monthly Spend Threshold</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Tier 1</strong></td>
+                    <td>60</td>
+                    <td>40,000</td>
+                    <td>500</td>
+                    <td>$0–$50</td>
+                </tr>
+                <tr>
+                    <td><strong>Tier 2</strong></td>
+                    <td>500</td>
+                    <td>80,000</td>
+                    <td>5,000</td>
+                    <td>$50–$100</td>
+                </tr>
+                <tr>
+                    <td><strong>Tier 3</strong></td>
+                    <td>5,000</td>
+                    <td>300,000</td>
+                    <td>10,000</td>
+                    <td>$100–$500</td>
+                </tr>
+                <tr>
+                    <td><strong>Tier 4</strong></td>
+                    <td>10,000</td>
+                    <td>1,000,000</td>
+                    <td>30,000</td>
+                    <td>$500–$5,000</td>
+                </tr>
+                <tr class="highlight">
+                    <td><strong>Tier 5</strong></td>
+                    <td class="best">10,000</td>
+                    <td class="best">10,000,000</td>
+                    <td class="best">No limit</td>
+                    <td>$5,000+</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="tip-box">
+            <strong>Tip:</strong> OpenAI's Batch API offers 50% lower costs and separate rate limits — ideal for non-real-time workloads like classification or summarization.
+        </div>
+
+        <h3>Anthropic Rate Limits</h3>
+
+        <p>Anthropic also uses a tiered system, but with different thresholds and limits. Their limits are generally more generous for smaller accounts.</p>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Tier</th>
+                    <th>RPM</th>
+                    <th>TPM</th>
+                    <th>Monthly Spend Threshold</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Free</strong></td>
+                    <td>5</td>
+                    <td>25,000</td>
+                    <td>$0</td>
+                </tr>
+                <tr>
+                    <td><strong>Tier 1</strong></td>
+                    <td>50</td>
+                    <td>50,000</td>
+                    <td>$5+</td>
+                </tr>
+                <tr>
+                    <td><strong>Tier 2</strong></td>
+                    <td>1,000</td>
+                    <td>100,000</td>
+                    <td>$40+</td>
+                </tr>
+                <tr>
+                    <td><strong>Tier 3</strong></td>
+                    <td>2,000</td>
+                    <td>200,000</td>
+                    <td>$200+</td>
+                </tr>
+                <tr class="highlight">
+                    <td><strong>Tier 4</strong></td>
+                    <td class="best">4,000</td>
+                    <td class="best">400,000</td>
+                    <td>$500+</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <p>Anthropic also offers <strong>prompt caching</strong> which can reduce both costs and effective rate limit usage by caching repeated system prompts and context.</p>
+
+        <h3>Google Gemini Rate Limits</h3>
+
+        <p>Google's approach is different — they offer higher base limits but with per-model variations. Free tier access is generous but comes with lower limits.</p>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Tier</th>
+                    <th>Model</th>
+                    <th>RPM</th>
+                    <th>TPM</th>
+                    <th>RPD</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Free</strong></td>
+                    <td>Gemini 2.0 Flash</td>
+                    <td>15</td>
+                    <td>1,000,000</td>
+                    <td>1,500</td>
+                </tr>
+                <tr>
+                    <td><strong>Free</strong></td>
+                    <td>Gemini 2.5 Pro</td>
+                    <td>5</td>
+                    <td>250,000</td>
+                    <td>100</td>
+                </tr>
+                <tr>
+                    <td><strong>Pay-as-you-go</strong></td>
+                    <td>Gemini 2.0 Flash</td>
+                    <td>2,000</td>
+                    <td>4,000,000</td>
+                    <td>No limit</td>
+                </tr>
+                <tr class="highlight">
+                    <td><strong>Pay-as-you-go</strong></td>
+                    <td>Gemini 2.5 Pro</td>
+                    <td class="best">1,000</td>
+                    <td class="best">4,000,000</td>
+                    <td class="best">No limit</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="tip-box">
+            <strong>Tip:</strong> Google's free tier is the most generous for low-volume applications. Gemini 2.0 Flash offers 1M TPM for free — enough for many production chatbots.
+        </div>
+
+        <h3>Mistral Rate Limits</h3>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Tier</th>
+                    <th>RPM</th>
+                    <th>TPM</th>
+                    <th>Notes</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Free</strong></td>
+                    <td>30</td>
+                    <td>50,000</td>
+                    <td>Limited to Mistral Small</td>
+                </tr>
+                <tr>
+                    <td><strong>Paid</strong></td>
+                    <td>500</td>
+                    <td>500,000</td>
+                    <td>All models</td>
+                </tr>
+                <tr class="highlight">
+                    <td><strong>Enterprise</strong></td>
+                    <td class="best">Custom</td>
+                    <td class="best">Custom</td>
+                    <td>Contact sales</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>Cohere Rate Limits</h3>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Tier</th>
+                    <th>RPM</th>
+                    <th>TPM</th>
+                    <th>Notes</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Trial</strong></td>
+                    <td>100</td>
+                    <td>100,000</td>
+                    <td>Command R only</td>
+                </tr>
+                <tr>
+                    <td><strong>Production</strong></td>
+                    <td>1,000</td>
+                    <td>1,000,000</td>
+                    <td>All models</td>
+                </tr>
+                <tr class="highlight">
+                    <td><strong>Enterprise</strong></td>
+                    <td class="best">Custom</td>
+                    <td class="best">Custom</td>
+                    <td>SLA guarantees</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2>Side-by-Side Comparison</h2>
+
+        <p>Here's a quick reference comparing paid-tier rate limits across all providers:</p>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Provider</th>
+                    <th>Paid RPM</th>
+                    <th>Paid TPM</th>
+                    <th>Free Tier?</th>
+                    <th>Batch API?</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>OpenAI</strong></td>
+                    <td>5,000–10,000</td>
+                    <td>300K–10M</td>
+                    <td>No</td>
+                    <td>Yes (50% off)</td>
+                </tr>
+                <tr>
+                    <td><strong>Anthropic</strong></td>
+                    <td>1,000–4,000</td>
+                    <td>100K–400K</td>
+                    <td>Yes (limited)</td>
+                    <td>Yes (50% off)</td>
+                </tr>
+                <tr>
+                    <td><strong>Google</strong></td>
+                    <td>1,000–2,000</td>
+                    <td>4M</td>
+                    <td>Yes (generous)</td>
+                    <td>No</td>
+                </tr>
+                <tr>
+                    <td><strong>Mistral</strong></td>
+                    <td>500</td>
+                    <td>500K</td>
+                    <td>Yes (limited)</td>
+                    <td>No</td>
+                </tr>
+                <tr>
+                    <td><strong>Cohere</strong></td>
+                    <td>1,000</td>
+                    <td>1M</td>
+                    <td>Yes (trial)</td>
+                    <td>No</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="warning-box">
+            <strong>Warning:</strong> Rate limits change frequently. Always check the provider's official documentation for current limits. These numbers are accurate as of April 2026 but may have changed since publication.
+        </div>
+
+        <h2>How to Handle Rate Limiting in Production</h2>
+
+        <p>Building robust rate limit handling is essential. Here are the key patterns every production AI application should implement.</p>
+
+        <h3>1. Exponential Backoff with Jitter</h3>
+
+        <p>The most important pattern. When you receive a 429 response, wait progressively longer before retrying:</p>
+
+        <pre><code>async function callWithRetry(fn, maxRetries = 3) {
+    for (let i = 0; i < maxRetries; i++) {
+        try {
+            return await fn();
+        } catch (error) {
+            if (error.status !== 429 || i === maxRetries - 1) throw error;
+
+            // Exponential backoff with jitter
+            const baseDelay = Math.pow(2, i) * 1000;
+            const jitter = Math.random() * 1000;
+            const delay = baseDelay + jitter;
+
+            console.log(`Rate limited. Retrying in ${Math.round(delay)}ms...`);
+            await new Promise(r => setTimeout(r, delay));
+        }
+    }
+}</code></pre>
+
+        <h3>2. Respect the Retry-After Header</h3>
+
+        <p>Most providers include a <code>Retry-After</code> header in 429 responses. Always check it:</p>
+
+        <pre><code>if (error.status === 429) {
+    const retryAfter = error.headers?.['retry-after'];
+    const delay = retryAfter
+        ? parseInt(retryAfter) * 1000
+        : Math.pow(2, attempt) * 1000;
+    await new Promise(r => setTimeout(r, delay));
+}</code></pre>
+
+        <h3>3. Implement a Token Bucket</h3>
+
+        <p>For high-throughput applications, implement a token bucket to proactively limit requests:</p>
+
+        <pre><code>class TokenBucket {
+    constructor(maxTokens, refillRate) {
+        this.tokens = maxTokens;
+        this.maxTokens = maxTokens;
+        this.refillRate = refillRate; // tokens per second
+        this.lastRefill = Date.now();
+    }
+
+    async acquire() {
+        this.refill();
+        if (this.tokens < 1) {
+            const waitTime = ((1 - this.tokens) / this.refillRate) * 1000;
+            await new Promise(r => setTimeout(r, waitTime));
+            this.refill();
+        }
+        this.tokens -= 1;
+    }
+
+    refill() {
+        const now = Date.now();
+        const elapsed = (now - this.lastRefill) / 1000;
+        this.tokens = Math.min(this.maxTokens, this.tokens + elapsed * this.refillRate);
+        this.lastRefill = now;
+    }
+}
+
+// Usage: 60 RPM = 1 request per second
+const bucket = new TokenBucket(60, 1);
+async function makeRequest() {
+    await bucket.acquire();
+    return callAPI();
+}</code></pre>
+
+        <h3>4. Multi-Provider Fallback</h3>
+
+        <p>The most resilient approach: fall back to a different provider when one is rate-limited:</p>
+
+        <pre><code>const providers = [
+    { name: 'OpenAI', call: callOpenAI },
+    { name: 'Anthropic', call: callAnthropic },
+    { name: 'Google', call: callGoogle }
+];
+
+async function callWithFallback(prompt) {
+    for (const provider of providers) {
+        try {
+            return await callWithRetry(() => provider.call(prompt));
+        } catch (error) {
+            if (error.status === 429) {
+                console.log(`${provider.name} rate limited, trying next...`);
+                continue;
+            }
+            throw error;
+        }
+    }
+    throw new Error('All providers rate limited');
+}</code></pre>
+
+        <h3>5. Queue-Based Architecture</h3>
+
+        <p>For maximum control, use a message queue to manage request rates:</p>
+
+        <ul>
+            <li><strong>Redis + Bull:</strong> Use a job queue with configurable concurrency</li>
+            <li><strong>SQS + Lambda:</strong> AWS-native approach with built-in retry</li>
+            <li><strong>Cloud Tasks:</strong> Google Cloud's managed queue with rate limiting</li>
+        </ul>
+
+        <p>This approach decouples your API endpoints from the LLM calls, allowing you to smooth out traffic spikes and respect rate limits consistently.</p>
+
+        <h2>Provider-Specific Optimization Tips</h2>
+
+        <h3>OpenAI</h3>
+        <ul>
+            <li>Use the <strong>Batch API</strong> for non-real-time workloads (50% cost savings, separate rate limits)</li>
+            <li>Upgrade tiers by increasing monthly spend — Tier 5 unlocks 10M TPM</li>
+            <li>Use <strong>streaming</strong> to reduce perceived latency without increasing rate limit usage</li>
+        </ul>
+
+        <h3>Anthropic</h3>
+        <ul>
+            <li>Enable <strong>prompt caching</strong> to reduce effective token usage and rate limit consumption</li>
+            <li>Use <strong>message batching</strong> for bulk processing</li>
+            <li>Tier upgrades are based on spending history — consistent usage unlocks higher limits</li>
+        </ul>
+
+        <h3>Google</h3>
+        <ul>
+            <li>The <strong>free tier</strong> is generous enough for many production workloads</li>
+            <li>Gemini 2.0 Flash has higher free-tier limits than Pro — use it for high-volume tasks</li>
+            <li>Context caching can reduce token usage for repeated prompts</li>
+        </ul>
+
+        <h2>How to Choose Based on Rate Limits</h2>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Use Case</th>
+                    <th>Recommended Provider</th>
+                    <th>Why</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>High-volume chatbot</strong></td>
+                    <td>Google Gemini Flash</td>
+                    <td>4M TPM paid, generous free tier</td>
+                </tr>
+                <tr>
+                    <td><strong>Enterprise with SLA needs</strong></td>
+                    <td>OpenAI Tier 5</td>
+                    <td>10M TPM, 10K RPM, no RPD limit</td>
+                </tr>
+                <tr>
+                    <td><strong>Budget startup</strong></td>
+                    <td>Google Gemini Flash (free)</td>
+                    <td>1M TPM at zero cost</td>
+                </tr>
+                <tr>
+                    <td><strong>Batch processing</strong></td>
+                    <td>OpenAI or Anthropic</td>
+                    <td>Batch API with separate limits, 50% off</td>
+                </tr>
+                <tr>
+                    <td><strong>RAG pipelines</strong></td>
+                    <td>Cohere</td>
+                    <td>1M TPM, optimized for retrieval</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="cta-box">
+            <h3>Calculate Your API Costs</h3>
+            <p>Use the APIpulse calculator to estimate your monthly spend across all providers, accounting for your expected request volume.</p>
+            <a href="calculator.html" class="btn-primary" style="display:inline-block;padding:12px 28px;">Try the Calculator</a>
+        </div>
+
+        <div class="related-reading">
+            <h3>Related Reading</h3>
+            <div class="related-links">
+                <a href="blog-switch-llm-providers.html">How to Switch LLM Providers Without Breaking Your App</a>
+                <a href="blog-cost-optimization-guide.html">AI API Cost Optimization: A Complete Guide for 2026</a>
+                <a href="blog-pricing-cheat-sheet.html">LLM API Pricing Cheat Sheet: Every Model, Every Provider</a>
+            </div>
+        </div>
+
+    </div>
+
+    <section class="email-section">
+        <div style="max-width:500px;margin:0 auto;text-align:center;">
+            <h2 style="font-size:22px;font-weight:700;margin-bottom:8px;">Get notified when API prices change</h2>
+            <p style="font-size:14px;color:var(--text-secondary);margin-bottom:20px;">No spam. Only pricing updates and new features. Unsubscribe anytime.</p>
+            <form onsubmit="saveEmail(event)" style="display:flex;gap:8px;max-width:400px;margin:0 auto;">
+                <input type="email" id="email-input" placeholder="you@company.com" required aria-label="Email address"
+                    style="flex:1;padding:12px 16px;background:var(--bg-card);border:1px solid var(--border);
+                    border-radius:8px;color:var(--text-primary);font-size:14px;">
+                <button type="submit" class="btn-primary" style="padding:12px 24px;white-space:nowrap;">Subscribe</button>
+            </form>
+            <p id="email-msg" style="font-size:13px;color:var(--green);margin-top:12px;display:none;"></p>
+        </div>
+    </section>
+
+    <button class="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">↑</button>
+
+    </main>
+
+    <footer>
+        <p>Pricing data last verified: <span class="verified-date"></span></p>
+        <p>&copy; 2026 APIpulse. <a href="index.html">Home</a> &middot; <a href="use-cases.html">Use Cases</a> &middot; <a href="about.html">About</a> &middot; <a href="blog.html">Blog</a> &middot; <a href="pricing-index.html">Pricing Index</a> &middot; <a href="openai.html">OpenAI</a> &middot; <a href="anthropic.html">Anthropic</a> &middot; <a href="google.html">Google</a> &middot; <a href="mistral.html">Mistral</a> &middot; <a href="cohere.html">Cohere</a> &middot; <a href="pricing.html">Pricing</a></p>
+    </footer>
+</body>
+</html>
