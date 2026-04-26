@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>xAI Grok API Pricing Guide 2026: Grok 3 and Grok 3 Mini — APIpulse</title>
+    <meta name="description" content="xAI Grok API pricing breakdown: Grok 3 ($3.00/$15.00 per 1M tokens) and Grok 3 Mini ($0.30/$0.50). Real-time knowledge and X/Twitter integration.">
+    <meta name="keywords" content="xAI pricing, Grok API cost, Grok 3 pricing, Grok 3 Mini pricing, xAI API 2026, Grok vs GPT-4o, cheapest AI API">
+    <meta property="og:title" content="xAI Grok API Pricing Guide 2026: Grok 3 and Grok 3 Mini — APIpulse">
+    <meta property="og:description" content="xAI Grok API pricing breakdown: Grok 3 and Grok 3 Mini. Real-time knowledge and X/Twitter integration.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://getapipulse.com/og-image.png">
+    <meta property="og:url" content="https://getapipulse.com/xai.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="xAI Grok API Pricing Guide 2026: Grok 3 and Grok 3 Mini — APIpulse">
+    <meta name="twitter:image" content="https://getapipulse.com/og-image.png">
+    <meta name="twitter:description" content="xAI Grok API pricing breakdown: Grok 3 and Grok 3 Mini. Real-time knowledge and X/Twitter integration.">
+    <link rel="canonical" href="https://getapipulse.com/xai.html">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="styles.css">
+    <script src="analytics.js" defer></script>
+    <script src="dynamic-date.js" defer></script>
+    <script src="shared.js" defer></script>
+    <script src="pricing-data.js" defer></script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "xAI Grok API Pricing Guide 2026",
+        "description": "xAI Grok API pricing breakdown: Grok 3 and Grok 3 Mini. Real-time knowledge and X/Twitter integration.",
+        "url": "https://getapipulse.com/xai.html",
+        "publisher": { "@type": "Organization", "name": "APIpulse", "url": "https://getapipulse.com" }
+    }
+    </script>
+    <style>
+        .content { max-width: 1000px; margin: 0 auto; padding: 120px 24px 80px; }
+        h1 { font-size: 40px; font-weight: 800; margin-bottom: 12px; text-align: center; }
+        .subtitle { color: var(--text-secondary); font-size: 18px; margin-bottom: 32px; text-align: center; max-width: 700px; margin-left: auto; margin-right: auto; }
+
+        .stats-bar {
+            display: flex; justify-content: center; gap: 32px; flex-wrap: wrap;
+            margin-bottom: 48px; padding: 20px 24px;
+            background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 12px;
+        }
+        .stat-item { text-align: center; }
+        .stat-value { font-size: 24px; font-weight: 800; color: var(--accent); }
+        .stat-label { font-size: 13px; color: var(--text-muted); margin-top: 4px; }
+
+        .table-wrapper {
+            overflow-x: auto; border: 1px solid var(--border);
+            border-radius: 12px; background: var(--bg-card); margin-bottom: 48px;
+        }
+        table { width: 100%; border-collapse: collapse; font-size: 14px; }
+        th {
+            background: var(--bg-secondary); padding: 14px 16px; text-align: left;
+            font-weight: 600; font-size: 13px; text-transform: uppercase;
+            letter-spacing: 0.5px; color: var(--text-muted);
+            border-bottom: 1px solid var(--border);
+        }
+        td { padding: 14px 16px; border-bottom: 1px solid var(--border); }
+        tr:last-child td { border-bottom: none; }
+        tr:hover { background: var(--bg-secondary); }
+        .cost-cell { font-variant-numeric: tabular-nums; font-weight: 600; }
+        .tier-badge {
+            display: inline-block; padding: 2px 8px; border-radius: 4px;
+            font-size: 11px; font-weight: 600;
+        }
+        .tier-mid { background: rgba(234,179,8,0.15); color: #eab308; }
+        .tier-budget { background: rgba(34,197,94,0.15); color: #22c55e; }
+
+        .section-header { text-align: center; margin-bottom: 36px; }
+        .section-header h2 { font-size: 28px; font-weight: 700; margin-bottom: 12px; }
+        .section-header p { font-size: 16px; color: var(--text-secondary); max-width: 600px; margin: 0 auto; }
+
+        .features-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-bottom: 64px; }
+        .feature-card {
+            background: var(--bg-secondary); border: 1px solid var(--border);
+            border-radius: var(--radius); padding: 28px;
+            transition: border-color 0.2s, transform 0.2s;
+        }
+        .feature-card:hover { border-color: var(--accent); transform: translateY(-2px); }
+        .feature-icon {
+            width: 44px; height: 44px; background: var(--accent-glow);
+            border-radius: 10px; display: flex; align-items: center;
+            justify-content: center; font-size: 20px; margin-bottom: 16px;
+        }
+        .feature-card h3 { font-size: 17px; font-weight: 700; margin-bottom: 8px; }
+        .feature-card p { font-size: 14px; color: var(--text-secondary); line-height: 1.6; }
+
+        .model-selector { margin-bottom: 64px; }
+        .model-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+        .model-card {
+            background: var(--bg-secondary); border: 1px solid var(--border);
+            border-radius: 16px; padding: 32px;
+        }
+        .model-card h3 { font-size: 20px; font-weight: 700; margin-bottom: 8px; }
+        .model-card .price-tag { font-size: 14px; color: var(--accent); font-weight: 600; margin-bottom: 16px; }
+        .model-card ul { list-style: none; margin-bottom: 16px; }
+        .model-card li { padding: 6px 0; font-size: 14px; color: var(--text-secondary); display: flex; align-items: center; gap: 10px; }
+        .model-card li::before { content: "\2713"; color: var(--green); font-weight: 700; }
+        .model-card .use-case { font-size: 13px; color: var(--text-muted); margin-top: 12px; padding-top: 12px; border-top: 1px solid var(--border); }
+        .model-card .use-case strong { color: var(--text-primary); }
+
+        .calculator-section { margin-bottom: 64px; }
+        .calculator {
+            background: var(--bg-secondary); border: 1px solid var(--border);
+            border-radius: 16px; padding: 32px; max-width: 900px; margin: 0 auto;
+        }
+        .calc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
+        .calc-inputs label {
+            display: block; font-size: 13px; font-weight: 600;
+            color: var(--text-secondary); margin-bottom: 6px;
+            text-transform: uppercase; letter-spacing: 0.5px;
+        }
+        .calc-inputs input, .calc-inputs select {
+            width: 100%; padding: 12px 16px; background: var(--bg-card);
+            border: 1px solid var(--border); border-radius: 8px;
+            color: var(--text-primary); font-size: 15px;
+            transition: border-color 0.2s;
+        }
+        .calc-inputs input:focus, .calc-inputs select:focus { outline: 2px solid var(--accent); outline-offset: 2px; border-color: var(--accent); }
+        .calc-inputs .input-group { margin-bottom: 20px; }
+        .calc-results {
+            background: var(--bg-card); border-radius: 12px; padding: 24px;
+        }
+        .result-item {
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 12px 0; border-bottom: 1px solid var(--border);
+        }
+        .result-item:last-child { border-bottom: none; }
+        .result-label { color: var(--text-secondary); font-size: 14px; }
+        .result-value { font-size: 18px; font-weight: 700; }
+        .result-total {
+            margin-top: 16px; padding-top: 16px; border-top: 2px solid var(--accent);
+            display: flex; justify-content: space-between; align-items: center;
+        }
+        .result-total .result-label { font-size: 16px; font-weight: 600; color: var(--text-primary); }
+        .result-total .result-value { font-size: 28px; color: var(--accent); }
+        .savings-badge {
+            display: inline-block; background: rgba(34,197,94,0.1); color: var(--green);
+            padding: 4px 12px; border-radius: 6px; font-size: 13px; font-weight: 600;
+            margin-top: 12px;
+        }
+
+        .comparison-section { margin-bottom: 64px; }
+        .comparison-table {
+            width: 100%; border-collapse: collapse;
+            background: var(--bg-secondary); border-radius: 12px; overflow: hidden;
+            border: 1px solid var(--border);
+        }
+        .comparison-table th {
+            background: var(--bg-card); padding: 16px 20px;
+            text-align: left; font-size: 13px; font-weight: 600;
+            color: var(--text-secondary); text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .comparison-table td {
+            padding: 16px 20px; border-bottom: 1px solid var(--border);
+            font-size: 14px;
+        }
+        .comparison-table tr:last-child td { border-bottom: none; }
+        .comparison-table .provider-name { font-weight: 600; color: var(--text-primary); }
+        .comparison-table .price { color: var(--accent); font-weight: 600; }
+        .comparison-table .highlight { background: rgba(255,119,0,0.05); }
+
+        .blog-section { margin-bottom: 64px; }
+        .post-card {
+            background: var(--bg-secondary); border: 1px solid var(--border);
+            border-radius: 12px; padding: 28px;
+            transition: border-color 0.2s, transform 0.2s;
+        }
+        .post-card:hover { border-color: var(--accent); transform: translateY(-2px); }
+        .post-meta {
+            display: flex; gap: 16px; align-items: center; margin-bottom: 12px;
+            font-size: 13px; color: var(--text-muted);
+        }
+        .post-tag {
+            background: var(--accent-glow); color: var(--accent);
+            padding: 2px 10px; border-radius: 6px; font-size: 12px; font-weight: 600;
+        }
+        .post-card h3 { font-size: 20px; font-weight: 700; margin-bottom: 8px; }
+        .post-card h3 a { color: var(--text-primary); }
+        .post-card h3 a:hover { color: var(--accent); }
+        .post-card p { color: var(--text-secondary); font-size: 15px; margin: 0; }
+        .post-card .read-more {
+            display: inline-block; margin-top: 12px; font-size: 14px; font-weight: 600;
+        }
+
+        .cta-section {
+            padding: 60px 24px; text-align: center;
+            background: linear-gradient(180deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+            border-radius: 16px; margin-bottom: 64px;
+        }
+        .cta-section h2 { font-size: 28px; font-weight: 700; margin-bottom: 12px; }
+        .cta-section p { font-size: 16px; color: var(--text-secondary); max-width: 500px; margin: 0 auto 24px; }
+
+        .email-section {
+            padding: 60px 24px; background: var(--bg-secondary);
+            border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
+        }
+
+        .cta-inline {
+            background: var(--bg-secondary); border: 1px solid var(--accent);
+            border-radius: 12px; padding: 24px; margin: 32px 0; text-align: center;
+        }
+        .cta-inline p { margin-bottom: 12px; color: var(--text-secondary); }
+
+        @media (max-width: 768px) {
+            .content { padding: 100px 16px 60px; }
+            h1 { font-size: 28px; }
+            .subtitle { font-size: 16px; }
+            .stats-bar { gap: 16px; padding: 16px; }
+            .stat-value { font-size: 20px; }
+            .features-grid { grid-template-columns: 1fr; gap: 16px; }
+            .model-cards { grid-template-columns: 1fr; gap: 16px; }
+            .calc-grid { grid-template-columns: 1fr; gap: 24px; }
+            .calculator { padding: 24px 20px; }
+            .comparison-table { font-size: 12px; min-width: 500px; }
+            .comparison-table th, .comparison-table td { padding: 10px 12px; }
+            .cta-section { padding: 40px 16px; }
+            .cta-section h2 { font-size: 22px; }
+        }
+        @media print {
+            nav, .calculator-section, .cta-inline, .cta-section, .email-section, .theme-toggle, .back-to-top { display: none !important; }
+            body { background: white; color: black; }
+            .content { padding: 0; max-width: 100%; }
+            table { font-size: 10px; }
+            th, td { padding: 6px 8px; }
+        }
+    </style>
+    <meta name="theme-color" content="#6366f1">
+    <link rel="preconnect" href="https://getapipulse.com">
+</head>
+<body>
+    <a href="#main" class="skip-link">Skip to content</a>
+    <nav>
+        <div class="nav-inner">
+            <a href="index.html" class="logo">API<span>pulse</span></a>
+            <button class="hamburger" onclick="toggleMobileNav()" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+            <div class="nav-links">
+                <a href="calculator.html">Calculator</a>
+                <a href="compare.html">Compare</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="use-cases.html">Use Cases</a>
+                <a href="about.html">About</a>
+                <a href="blog.html">Blog</a>
+                <a href="pricing-index.html">Pricing Index</a>
+                <a href="pricing-trends.html">Trends</a>
+                <a href="pricing.html" class="nav-cta" onclick="if(window.trackEvent)window.trackEvent('pro_button_clicked',{source:'nav'})">Get Pro — $29</a>
+                <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
+            </div>
+        </div>
+    </nav>
+
+    <main id="main">
+
+    <div class="content">
+
+        <h1>xAI Grok API Pricing</h1>
+        <p class="subtitle">Elon Musk's AI lab offering Grok models with real-time knowledge and deep X/Twitter integration</p>
+
+        <div class="stats-bar">
+            <div class="stat-item">
+                <div class="stat-value">2</div>
+                <div class="stat-label">Models</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-value">$0.30–$3.00</div>
+                <div class="stat-label">per 1M tokens</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-value">128K</div>
+                <div class="stat-label">Context window</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-value">Apr 2026</div>
+                <div class="stat-label">Pricing Verified</div>
+            </div>
+        </div>
+
+        <div class="table-wrapper">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Model</th>
+                        <th>Input (per 1M tokens)</th>
+                        <th>Output (per 1M tokens)</th>
+                        <th>Context Window</th>
+                        <th>Tier</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Grok 3</strong></td>
+                        <td class="cost-cell">$3.00</td>
+                        <td class="cost-cell">$15.00</td>
+                        <td>128K</td>
+                        <td><span class="tier-badge tier-mid">Mid</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Grok 3 Mini</strong></td>
+                        <td class="cost-cell">$0.30</td>
+                        <td class="cost-cell">$0.50</td>
+                        <td>128K</td>
+                        <td><span class="tier-badge tier-budget">Budget</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="section-header">
+            <h2>Why xAI Grok?</h2>
+            <p>Grok models bring unique capabilities with real-time world knowledge and native X/Twitter integration.</p>
+        </div>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">🌍</div>
+                <h3>Real-Time Knowledge</h3>
+                <p>Grok models have access to real-time information, making them ideal for tasks that require up-to-date knowledge about current events, trends, and breaking news.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">𝕏</div>
+                <h3>X/Twitter Integration</h3>
+                <p>Native integration with the X platform gives Grok unique access to social media data, conversations, and trending topics — useful for sentiment analysis and social listening.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">💰</div>
+                <h3>Competitive Pricing</h3>
+                <p>Grok 3 Mini at $0.30/$0.50 per 1M tokens is one of the most affordable budget-tier models. Grok 3 at $3.00/$15.00 competes directly with Claude Sonnet 4 and GPT-4o.</p>
+            </div>
+        </div>
+
+        <div class="section-header model-selector">
+            <h2>Which Grok Model Should You Use?</h2>
+            <p>Two models for different performance and cost requirements.</p>
+        </div>
+        <div class="model-cards">
+            <div class="model-card">
+                <h3>Grok 3</h3>
+                <div class="price-tag">$3.00 input / $15.00 output per 1M tokens</div>
+                <ul>
+                    <li>128K context window</li>
+                    <li>Strong reasoning and analysis</li>
+                    <li>Real-time world knowledge</li>
+                    <li>Complex multi-step tasks</li>
+                    <li>Competitive with GPT-4o and Claude Sonnet</li>
+                </ul>
+                <div class="use-case"><strong>Best for:</strong> Production workloads needing high-quality reasoning with real-time knowledge. Ideal for research, analysis, and tasks requiring current information.</div>
+            </div>
+            <div class="model-card">
+                <h3>Grok 3 Mini</h3>
+                <div class="price-tag">$0.30 input / $0.50 output per 1M tokens</div>
+                <ul>
+                    <li>128K context window</li>
+                    <li>Ultra-fast response times</li>
+                    <li>Classification and extraction</li>
+                    <li>High-volume workloads</li>
+                    <li>Budget-friendly pricing</li>
+                </ul>
+                <div class="use-case"><strong>Best for:</strong> High-throughput tasks like classification, summarization, and simple Q&A. Excellent for startups and prototyping at a low cost.</div>
+            </div>
+        </div>
+
+        <div class="section-header calculator-section">
+            <h2>xAI Grok Cost Calculator</h2>
+            <p>Estimate your monthly spend on xAI Grok models.</p>
+        </div>
+        <div class="calculator" role="form" aria-label="xAI Grok API Cost Calculator">
+            <div class="calc-grid">
+                <div class="calc-inputs">
+                    <div class="input-group">
+                        <label for="calc-provider">Model</label>
+                        <select id="calc-provider" onchange="calculate()" aria-label="Select Grok model">
+                            <option value="xai-grok3">xAI — Grok 3 ($3.00 / $15.00)</option>
+                            <option value="xai-grok3-mini">xAI — Grok 3 Mini ($0.30 / $0.50)</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <label for="calc-input-tokens">Input tokens per request</label>
+                        <input type="number" id="calc-input-tokens" value="1500" min="0" step="100" onchange="calculate()" oninput="calculate()" aria-label="Input tokens per request">
+                    </div>
+                    <div class="input-group">
+                        <label for="calc-output-tokens">Output tokens per request</label>
+                        <input type="number" id="calc-output-tokens" value="400" min="0" step="100" onchange="calculate()" oninput="calculate()" aria-label="Output tokens per request">
+                    </div>
+                    <div class="input-group">
+                        <label for="calc-requests">Requests per day</label>
+                        <input type="number" id="calc-requests" value="1000" min="0" step="100" onchange="calculate()" oninput="calculate()" aria-label="Requests per day">
+                    </div>
+                    <div class="input-group">
+                        <label for="calc-days">Days per month</label>
+                        <input type="number" id="calc-days" value="30" min="1" max="31" onchange="calculate()" oninput="calculate()" aria-label="Days per month">
+                    </div>
+                </div>
+                <div class="calc-results" role="region" aria-label="Cost calculation results" aria-live="polite">
+                    <h3 style="margin-bottom: 16px; font-size: 16px;">Monthly Cost Estimate</h3>
+                    <div class="result-item">
+                        <span class="result-label">Input cost</span>
+                        <span class="result-value" id="calc-input-cost">$0.00</span>
+                    </div>
+                    <div class="result-item">
+                        <span class="result-label">Output cost</span>
+                        <span class="result-value" id="calc-output-cost">$0.00</span>
+                    </div>
+                    <div class="result-item">
+                        <span class="result-label">Total tokens/month</span>
+                        <span class="result-value" id="calc-total-tokens">0</span>
+                    </div>
+                    <div class="result-total">
+                        <span class="result-label">Monthly Total</span>
+                        <span class="result-value" id="calc-monthly-total">$0.00</span>
+                    </div>
+                    <div id="calc-savings-container"></div>
+                    <button onclick="copyResults()" style="margin-top:16px;width:100%;padding:10px 16px;border-radius:8px;border:1px solid var(--border);background:var(--bg-secondary);color:var(--text-primary);font-size:13px;font-weight:600;cursor:pointer;transition:all 0.2s;" onmouseover="this.style.borderColor='var(--accent)'" onmouseout="this.style.borderColor='var(--border)'">
+                        <span id="copy-btn-text">Copy Results to Clipboard</span>
+                    </button>
+                    <p style="margin-top: 16px; font-size: 12px; color: var(--text-muted);">
+                        Based on published API pricing. Actual costs may vary.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="cta-inline">
+            <p><strong>Need the full calculator with all providers?</strong> Compare xAI against OpenAI, Anthropic, Google, and more.</p>
+            <a href="calculator.html" class="btn-primary">Try the Full APIpulse Calculator</a>
+        </div>
+
+        <div class="section-header comparison-section">
+            <h2>xAI Grok vs Competitors</h2>
+            <p>How xAI Grok pricing stacks up against other major LLM providers.</p>
+        </div>
+        <table class="comparison-table" aria-label="xAI Grok vs competitor pricing comparison">
+            <thead>
+                <tr>
+                    <th>Provider</th>
+                    <th>Model</th>
+                    <th>Input (per 1M tokens)</th>
+                    <th>Output (per 1M tokens)</th>
+                    <th>Context Window</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="highlight">
+                    <td class="provider-name">xAI</td>
+                    <td>Grok 3</td>
+                    <td class="price">$3.00</td>
+                    <td class="price">$15.00</td>
+                    <td>128K</td>
+                </tr>
+                <tr>
+                    <td class="provider-name">OpenAI</td>
+                    <td>GPT-4o</td>
+                    <td class="price">$2.50</td>
+                    <td class="price">$10.00</td>
+                    <td>128K</td>
+                </tr>
+                <tr>
+                    <td class="provider-name">Anthropic</td>
+                    <td>Claude Sonnet 4</td>
+                    <td class="price">$3.00</td>
+                    <td class="price">$15.00</td>
+                    <td>200K</td>
+                </tr>
+                <tr>
+                    <td class="provider-name">DeepSeek</td>
+                    <td>V4 Pro</td>
+                    <td class="price">$2.18</td>
+                    <td class="price">$8.72</td>
+                    <td>128K</td>
+                </tr>
+                <tr class="highlight">
+                    <td class="provider-name">xAI</td>
+                    <td>Grok 3 Mini</td>
+                    <td class="price">$0.30</td>
+                    <td class="price">$0.50</td>
+                    <td>128K</td>
+                </tr>
+                <tr>
+                    <td class="provider-name">OpenAI</td>
+                    <td>GPT-4o mini</td>
+                    <td class="price">$0.15</td>
+                    <td class="price">$0.60</td>
+                    <td>128K</td>
+                </tr>
+                <tr>
+                    <td class="provider-name">Google</td>
+                    <td>Gemini 2.0 Flash</td>
+                    <td class="price">$0.10</td>
+                    <td class="price">$0.40</td>
+                    <td>1M</td>
+                </tr>
+                <tr>
+                    <td class="provider-name">DeepSeek</td>
+                    <td>V4 Flash</td>
+                    <td class="price">$0.14</td>
+                    <td class="price">$0.28</td>
+                    <td>128K</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div style="text-align:center;margin:48px 0 0;">
+            <a href="compare.html" class="btn-primary" style="padding:14px 32px;font-size:16px;">Compare xAI Models Side-by-Side</a>
+            <p style="color:var(--text-muted);font-size:13px;margin-top:8px;">See how xAI Grok models stack up against OpenAI, Anthropic, and more</p>
+        </div>
+
+        <div class="section-header blog-section">
+            <h2>Related Reading</h2>
+            <p>Deep dives into AI pricing, provider comparisons, and cost optimization.</p>
+        </div>
+        <div class="post-card">
+            <div class="post-meta">
+                <span class="post-tag">Guide</span>
+                <span>April 26, 2026</span>
+            </div>
+            <h3><a href="blog-deepseek-v4-pricing.html">DeepSeek V4 Pricing Breakdown: The Cheapest Frontier Model?</a></h3>
+            <p>A detailed look at DeepSeek V4 Pro and V4 Flash pricing, and how they compare to GPT-4o and Claude Sonnet.</p>
+            <a href="blog-deepseek-v4-pricing.html" class="read-more" style="color:var(--accent);">Read the full breakdown &rarr;</a>
+        </div>
+        <div class="post-card" style="margin-top:16px;">
+            <div class="post-meta">
+                <span class="post-tag">Analysis</span>
+                <span>April 26, 2026</span>
+            </div>
+            <h3><a href="blog-best-llm-startups.html">Best LLM APIs for Startups in 2026</a></h3>
+            <p>Which AI API providers offer the best value for early-stage startups? We rank every major option by price, quality, and developer experience.</p>
+            <a href="blog-best-llm-startups.html" class="read-more" style="color:var(--accent);">Read the full ranking &rarr;</a>
+        </div>
+        <div class="post-card" style="margin-top:16px;">
+            <div class="post-meta">
+                <span class="post-tag">Strategy</span>
+                <span>April 26, 2026</span>
+            </div>
+            <h3><a href="blog-switch-llm-providers.html">How to Switch LLM Providers Without Breaking Your App</a></h3>
+            <p>A practical guide to migrating between AI API providers while minimizing downtime and code changes.</p>
+            <a href="blog-switch-llm-providers.html" class="read-more" style="color:var(--accent);">Read the full guide &rarr;</a>
+        </div>
+
+        <div class="cta-section">
+            <h2>Calculate Your xAI Grok Costs</h2>
+            <p>See exactly what xAI Grok will cost for your specific workload. Compare against other providers in seconds.</p>
+            <a href="calculator.html" class="btn-primary">Go to Calculator &rarr;</a>
+        </div>
+
+        <div class="email-section" style="margin: 0 -24px; padding: 60px 24px;">
+            <div style="max-width:500px;margin:0 auto;text-align:center;">
+                <h2 style="font-size:22px;font-weight:700;margin-bottom:8px;">Get notified when xAI prices change</h2>
+                <p style="font-size:14px;color:var(--text-secondary);margin-bottom:20px;">No spam. Only pricing updates and new features. Unsubscribe anytime.</p>
+                <form onsubmit="saveEmail(event)" style="display:flex;gap:8px;max-width:400px;margin:0 auto;">
+                    <input type="email" id="email-input" placeholder="you@company.com" required aria-label="Email address"
+                        style="flex:1;padding:12px 16px;background:var(--bg-card);border:1px solid var(--border);
+                        border-radius:8px;color:var(--text-primary);font-size:14px;">
+                    <button type="submit" class="btn-primary" style="padding:12px 24px;white-space:nowrap;">Subscribe</button>
+                </form>
+                <p id="email-msg" style="font-size:13px;color:var(--green);margin-top:12px;display:none;"></p>
+            </div>
+        </div>
+
+    </div>
+
+    <div style="text-align:center;margin:32px 0;">
+        <a href="mailto:hello@getapipulse.com?subject=Pricing%20Error%20Report%20%E2%80%94%20xai.html" style="display:inline-block;padding:10px 20px;background:rgba(239,68,68,0.1);border:1px solid rgba(239,68,68,0.3);color:#ef4444;border-radius:8px;font-size:13px;font-weight:600;text-decoration:none;">Report a Pricing Error</a>
+    </div>
+
+    <button class="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">↑</button>
+
+    </main>
+
+    <footer>
+        <p>Pricing data last verified: <span class="verified-date"></span></p>
+        <p>&copy; 2026 APIpulse. <a href="index.html">Home</a> &middot; <a href="use-cases.html">Use Cases</a> &middot; <a href="about.html">About</a> &middot; <a href="blog.html">Blog</a> &middot; <a href="pricing-index.html">Pricing Index</a> &middot; <a href="openai.html">OpenAI</a> &middot; <a href="anthropic.html">Anthropic</a> &middot; <a href="google.html">Google</a> &middot; <a href="mistral.html">Mistral</a> &middot; <a href="cohere.html">Cohere</a> &middot; <a href="deepseek.html">DeepSeek</a> &middot; <a href="pricing.html">Pricing</a></p>
+    </footer>
+
+    <script>
+        const xaiModels = getProviderCalculatorData('xai');
+
+        function calculate() {
+            const provider = document.getElementById('calc-provider').value;
+            const inputTokens = parseInt(document.getElementById('calc-input-tokens').value) || 0;
+            const outputTokens = parseInt(document.getElementById('calc-output-tokens').value) || 0;
+            const requests = parseInt(document.getElementById('calc-requests').value) || 0;
+            const days = parseInt(document.getElementById('calc-days').value) || 30;
+
+            const p = xaiModels[provider];
+            const totalInputTokens = inputTokens * requests * days;
+            const totalOutputTokens = outputTokens * requests * days;
+
+            const inputCost = (totalInputTokens / 1000000) * p.input;
+            const outputCost = (totalOutputTokens / 1000000) * p.output;
+            const totalCost = inputCost + outputCost;
+            const totalTokens = totalInputTokens + totalOutputTokens;
+
+            document.getElementById('calc-input-cost').textContent = '$' + inputCost.toFixed(2);
+            document.getElementById('calc-output-cost').textContent = '$' + outputCost.toFixed(2);
+            document.getElementById('calc-total-tokens').textContent = totalTokens.toLocaleString();
+            document.getElementById('calc-monthly-total').textContent = '$' + totalCost.toFixed(2);
+
+            // Savings suggestion
+            const container = document.getElementById('calc-savings-container');
+            container.innerHTML = '';
+            if (totalCost > 0) {
+                const cheapest = Object.entries(xaiModels).reduce((a, b) => {
+                    const aCost = (totalInputTokens / 1000000) * a[1].input + (totalOutputTokens / 1000000) * a[1].output;
+                    const bCost = (totalInputTokens / 1000000) * b[1].input + (totalOutputTokens / 1000000) * b[1].output;
+                    return aCost < bCost ? a : b;
+                });
+                if (cheapest[0] !== provider) {
+                    const cheapestCost = (totalInputTokens / 1000000) * cheapest[1].input + (totalOutputTokens / 1000000) * cheapest[1].output;
+                    const savings = totalCost - cheapestCost;
+                    if (savings > 0.01) {
+                        container.innerHTML = '<div class="savings-badge">Save $' + savings.toFixed(2) + '/mo with ' + cheapest[1].name + '</div>';
+                    }
+                }
+            }
+        }
+
+        function copyResults() {
+            const provider = document.getElementById('calc-provider');
+            const selectedOption = provider.options[provider.selectedIndex].text;
+            const monthlyTotal = document.getElementById('calc-monthly-total').textContent;
+            const inputCost = document.getElementById('calc-input-cost').textContent;
+            const outputCost = document.getElementById('calc-output-cost').textContent;
+            const totalTokens = document.getElementById('calc-total-tokens').textContent;
+
+            const text = 'xAI Grok API Cost Estimate (' + selectedOption + ')\n' +
+                'Input cost: ' + inputCost + '/mo\n' +
+                'Output cost: ' + outputCost + '/mo\n' +
+                'Total tokens: ' + totalTokens + '/mo\n' +
+                'Monthly total: ' + monthlyTotal + '\n\n' +
+                'Calculated with APIpulse — https://getapipulse.com';
+
+            navigator.clipboard.writeText(text).then(() => {
+                document.getElementById('copy-btn-text').textContent = 'Copied!';
+                setTimeout(() => { document.getElementById('copy-btn-text').textContent = 'Copy Results to Clipboard'; }, 2000);
+            });
+        }
+
+        // Initialize
+        calculate();
+    </script>
+</body>
+</html>
