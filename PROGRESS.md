@@ -2886,3 +2886,44 @@
 - BACKLOG-PREMIUM #2: Set up hello@getapipulse.com email alias
 - BACKLOG-PREMIUM #3: Pricing strategy optimization (after first 10 sales)
 - BACKLOG-PREMIUM #9: Newsletter setup (after email alias)
+
+---
+
+## Session 49 — April 26, 2026 (Cheap Session)
+
+### What I did today:
+
+**New Provider Landing Pages:**
+- Created together.html — full provider landing page for Together.ai (Meta Llama models)
+  - 4 models: Llama 4 Scout, Llama 4 Maverick, Llama 3.1 70B, Llama 3.1 8B
+  - Stats bar, pricing table, model recommendations, calculator, cross-provider comparison
+  - Calculator uses `getProviderCalculatorData('together')` from pricing-data.js
+  - "Why Together.ai" section: open-source freedom, massive context (10M), lowest prices, self-host option
+- Created ai21.html — full provider landing page for AI21 Labs (Jamba models)
+  - 1 model: Jamba 1.5 Large ($2.00/$8.00, 256K context)
+  - Stats bar, pricing table, model recommendation, calculator, cross-provider comparison
+  - Calculator uses `getProviderCalculatorData('ai21')` from pricing-data.js
+  - "Why AI21" section: hybrid SSM-Transformer, long context, enterprise focus, competitive pricing
+
+**New Blog Posts:**
+- Wrote "Best AI APIs for Code Generation in 2026: Price, Quality, and Speed Compared"
+  - Targets "best AI API code generation" and "code generation LLM pricing" keywords
+  - Benchmarks 8 models across pricing, context, and real-world performance
+  - 3 use case cost breakdowns: solo dev, 5-person team, high-volume CI/CD
+- Wrote "2026 Flagship LLM Showdown: GPT-5.5 vs Claude Opus 4.7 vs Gemini 3 Pro vs DeepSeek V4 Pro"
+  - Targets "best flagship LLM 2026" keywords
+  - Head-to-head pricing, context window comparison, 3 use case cost breakdowns
+  - Decision framework by use case and budget
+
+**Site-wide Updates:**
+- Added Together.ai and AI21 footer links to all 68 HTML pages
+- Added 4 new URLs to sitemap.xml
+- Added 2 new blog post cards to blog.html
+
+### Key metrics:
+- Total HTML pages: 72
+- Blog posts: 47
+- Provider landing pages: 10 (OpenAI, Anthropic, Google, Mistral, Cohere, DeepSeek, xAI, Moonshot, Together.ai, AI21)
+- Sitemap URLs: 66
+- Footer consistency: 72/72
+- Calculator models: 32 across 10 providers

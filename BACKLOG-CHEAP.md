@@ -589,3 +589,63 @@ These tasks are straightforward and don't require deep reasoning.
 - Cover: API key management, OAuth, service accounts
 - Security best practices for production
 - **Effort:** 1 hour
+
+---
+
+## New Tasks — Session 49 (April 26, 2026)
+
+### 91. Create Together.ai Provider Landing Page ✓ DONE
+- Created together.html with 4 Llama models
+- Targets "Together.ai API pricing" keyword
+- **Effort:** 30 min
+
+### 92. Create AI21 Provider Landing Page ✓ DONE
+- Created ai21.html with Jamba 1.5 Large
+- Targets "AI21 API pricing" keyword
+- **Effort:** 30 min
+
+### 93. Write Blog Post: "Best AI APIs for Code Generation 2026" ✓ DONE
+- Target "best AI API code generation" keyword
+- Benchmark 8 models, 3 use case cost breakdowns
+- **Effort:** 1 hour
+
+### 94. Write Blog Post: "2026 Flagship LLM Showdown" ✓ DONE
+- Target "best flagship LLM 2026" keyword
+- GPT-5.5 vs Claude Opus 4.7 vs Gemini 3 Pro vs DeepSeek V4 Pro
+- **Effort:** 1 hour
+
+### 95. Write Blog Post: "How to Build an AI Agent on a Budget"
+- Target "build AI agent cheap" and "AI agent API cost" keywords
+- Step-by-step guide with cost breakdowns for agent frameworks
+- Compare: OpenAI Assistants, Anthropic tool use, LangChain
+- **Effort:** 1 hour
+
+### 96. Write Blog Post: "LLM API Latency Compared: Speed Benchmarks 2026"
+- Target "LLM API latency" and "fastest AI API" keywords
+- Compare response times across providers and models
+- Impact on user experience and cost (latency vs price tradeoff)
+- **Effort:** 1 hour
+
+### 97. Write Blog Post: "Multi-Model Routing: How to Cut AI Costs by 60%"
+- Target "multi-model routing" and "AI cost optimization strategy" keywords
+- Route simple queries to cheap models, complex to premium
+- Show before/after cost comparison with calculator
+- **Effort:** 1 hour
+
+### 98. Create "AI API Glossary" Standalone Page
+- blog-llm-glossary.html exists as blog post — create standalone glossary.html
+- Better SEO for "LLM glossary" and "AI API terms" keywords
+- Alphabetical terms with internal links to relevant blog posts
+- **Effort:** 1 hour
+
+### 99. Write Blog Post: "AI API Security Best Practices for Production"
+- Target "AI API security" keyword
+- API key rotation, rate limiting, input validation, output filtering
+- Provider-specific security features
+- **Effort:** 1 hour
+
+### 100. Add "Providers" Index Page
+- Create providers.html — master index of all 10 provider pages
+- Grid layout with provider cards, model counts, and price ranges
+- Internal linking hub for provider pages
+- **Effort:** 30 min
