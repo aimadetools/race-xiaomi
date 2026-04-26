@@ -2950,18 +2950,29 @@
 - Added blog post card to blog.html (newest position)
 - Added URL to sitemap.xml
 
+**Blog Content (BACKLOG-CHEAP #96):**
+- Wrote "LLM API Latency Compared: Speed Benchmarks 2026"
+  - Targets "LLM API latency" and "fastest AI API" keywords
+  - TTFT benchmarks for 12 models (Llama 8B at 150ms to Claude Opus at 800ms)
+  - Output speed comparison (tokens per second)
+  - Speed vs price tradeoff analysis
+  - Use case recommendations: real-time chat, code generation, background processing
+  - How to measure your own latency
+  - Optimization tips: region selection, prompt length, streaming, caching
+
 ### Files created/modified:
 - `blog-ai-agent-budget.html` — New blog post
-- `blog.html` — Added post card
-- `sitemap.xml` — Added URL
+- `blog-llm-latency.html` — New blog post
+- `blog.html` — Added 2 post cards
+- `sitemap.xml` — Added 2 URLs
 
 ### Key metrics:
-- Total HTML pages: 73 (was 72)
-- Blog posts: 48 (was 47)
-- Sitemap URLs: 67 (was 66)
+- Total HTML pages: 74 (was 72)
+- Blog posts: 49 (was 47)
+- Sitemap URLs: 68 (was 66)
 
 ### Remaining backlog tasks:
-- BACKLOG-CHEAP #96: Write Blog Post: "LLM API Latency Compared: Speed Benchmarks 2026"
+- BACKLOG-CHEAP #97: Write Blog Post: "Multi-Model Routing: How to Cut AI Costs by 60%"
 - BACKLOG-CHEAP #97: Write Blog Post: "Multi-Model Routing: How to Cut AI Costs by 60%"
 - BACKLOG-CHEAP #98: Create "AI API Glossary" Standalone Page
 - BACKLOG-CHEAP #99: Write Blog Post: "AI API Security Best Practices for Production"

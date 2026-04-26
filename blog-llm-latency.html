@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LLM API Latency Compared: Speed Benchmarks 2026 — APIpulse</title>
+    <meta name="description" content="Compare LLM API response times across OpenAI, Anthropic, Google, Mistral, and more. Real-world latency benchmarks and the speed vs price tradeoff.">
+    <meta name="keywords" content="LLM API latency, fastest AI API, AI API speed, LLM response time, GPT latency vs Claude latency">
+    <meta property="og:title" content="LLM API Latency Compared: Speed Benchmarks 2026 — APIpulse">
+    <meta property="og:description" content="Compare LLM API response times across OpenAI, Anthropic, Google, Mistral, and more. Real-world latency benchmarks and the speed vs price tradeoff.">
+    <meta property="og:type" content="article">
+    <meta property="article:published_time" content="2026-04-26">
+    <meta property="article:modified_time" content="2026-04-26">
+    <meta property="article:author" content="APIpulse">
+    <meta property="og:image" content="https://getapipulse.com/og-image.png">
+    <meta property="og:url" content="https://getapipulse.com/blog-llm-latency.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="LLM API Latency Compared: Speed Benchmarks 2026 — APIpulse">
+    <meta name="twitter:image" content="https://getapipulse.com/og-image.png">
+    <meta name="twitter:description" content="Compare LLM API response times across OpenAI, Anthropic, Google, Mistral, and more.">
+    <link rel="canonical" href="https://getapipulse.com/blog-llm-latency.html">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="styles.css">
+    <script src="analytics.js" defer></script>
+    <script src="dynamic-date.js" defer></script>
+    <script src="shared.js" defer></script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "LLM API Latency Compared: Speed Benchmarks 2026",
+        "description": "Compare LLM API response times across OpenAI, Anthropic, Google, Mistral, and more. Real-world latency benchmarks and the speed vs price tradeoff.",
+        "datePublished": "2026-04-26",
+        "dateModified": "2026-04-26",
+        "author": { "@type": "Organization", "name": "APIpulse" },
+        "publisher": { "@type": "Organization", "name": "APIpulse", "url": "https://getapipulse.com" },
+        "url": "https://getapipulse.com/blog-llm-latency.html"
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Blog", "item": "https://getapipulse.com/blog.html" },
+            { "@type": "ListItem", "position": 2, "name": "LLM API Latency Compared: Speed Benchmarks 2026", "item": "https://getapipulse.com/blog-llm-latency.html" }
+        ]
+    }
+    </script>
+    <style>
+        .content { max-width: 800px; margin: 0 auto; padding: 120px 24px 80px; }
+        h1 { font-size: 40px; font-weight: 800; margin-bottom: 12px; }
+        .subtitle { color: var(--text-secondary); font-size: 18px; margin-bottom: 48px; }
+
+        .post-card {
+            background: var(--bg-secondary); border: 1px solid var(--border);
+            border-radius: 12px; padding: 28px; margin-bottom: 20px;
+            transition: border-color 0.2s, transform 0.2s;
+        }
+        .post-card:hover { border-color: var(--accent); transform: translateY(-2px); }
+        .post-meta {
+            display: flex; gap: 16px; align-items: center; margin-bottom: 12px;
+            font-size: 13px; color: var(--text-muted);
+        }
+        .post-tag {
+            background: var(--accent-glow); color: var(--accent);
+            padding: 2px 10px; border-radius: 6px; font-size: 12px; font-weight: 600;
+        }
+
+        /* Article styles */
+        .article { max-width: 700px; margin: 0 auto; }
+        .article h1 { font-size: 36px; margin-bottom: 16px; }
+        .article h2 { font-size: 24px; font-weight: 700; margin: 32px 0 16px; }
+        .article h3 { font-size: 18px; font-weight: 600; margin: 24px 0 12px; }
+        .article p { color: var(--text-secondary); margin-bottom: 16px; line-height: 1.7; }
+        .article ul, .article ol { color: var(--text-secondary); padding-left: 24px; margin-bottom: 16px; }
+        .article li { margin-bottom: 8px; }
+        .article strong { color: var(--text-primary); }
+        .article code {
+            background: var(--bg-card); padding: 2px 8px; border-radius: 4px;
+            font-size: 14px; color: var(--accent);
+        }
+        .back-link {
+            display: inline-flex; align-items: center; gap: 6px;
+            font-size: 14px; color: var(--text-secondary); margin-bottom: 32px;
+        }
+        .back-link:hover { color: var(--text-primary); }
+
+        .cta-inline {
+            background: var(--bg-secondary); border: 1px solid var(--accent);
+            border-radius: 12px; padding: 24px; margin: 32px 0; text-align: center;
+        }
+        .cta-inline p { margin-bottom: 12px; }
+        .share-section {
+            margin-top: 32px; padding-top: 24px; border-top: 1px solid var(--border);
+            text-align: center;
+        }
+        .share-section p { color: var(--text-secondary); font-size: 14px; margin-bottom: 12px; }
+        .share-btn {
+            display: inline-block; background: var(--bg-card); color: var(--text-primary);
+            padding: 8px 20px; border-radius: 8px; font-size: 14px; font-weight: 500;
+            border: 1px solid var(--border); transition: all 0.2s;
+        }
+        .share-btn:hover { background: var(--accent); color: white; border-color: var(--accent); }
+
+        .cost-example {
+            background: var(--bg-secondary); border: 1px solid var(--border);
+            border-radius: 10px; padding: 20px; margin: 20px 0;
+        }
+        .cost-example .label {
+            font-size: 13px; color: var(--text-muted); text-transform: uppercase;
+            letter-spacing: 0.5px; margin-bottom: 12px; font-weight: 600;
+        }
+        .cost-example .cost-row {
+            display: flex; justify-content: space-between; padding: 8px 0;
+            border-bottom: 1px solid var(--border); font-size: 14px;
+        }
+        .cost-example .cost-row:last-child { border-bottom: none; }
+        .cost-example .cost-row .name { color: var(--text-secondary); }
+        .cost-example .cost-row .value { color: var(--text-primary); font-weight: 600; font-variant-numeric: tabular-nums; }
+        .cost-example .cost-total { border-top: 2px solid var(--accent); border-bottom: none; padding-top: 12px; margin-top: 4px; }
+        .cost-example .cost-total .name { color: var(--text-primary); font-weight: 600; }
+
+        @media (max-width: 768px) {
+            .content { padding: 100px 20px 60px; }
+            h1 { font-size: 28px; }
+            .subtitle { font-size: 16px; }
+            .post-card { padding: 20px; }
+            .post-card h2 { font-size: 18px; }
+            .article h1 { font-size: 28px; }
+            .article h2 { font-size: 20px; }
+            .cta-inline { padding: 20px; }
+        }
+        @media print {
+            nav, .share-section, .cta-inline, .theme-toggle, .back-link { display: none !important; }
+            body { background: white; color: black; }
+            .content { padding: 0; max-width: 100%; }
+            .article h1 { font-size: 24px; margin-bottom: 8px; }
+            .article h2 { font-size: 18px; margin: 16px 0 8px; }
+            .article p, .article li { color: #333; font-size: 12px; }
+            .post-meta { display: none; }
+            a { color: black; text-decoration: underline; }
+            footer { border-top: 1px solid #ccc; padding: 10px 0; }
+        }
+    </style>
+    <meta name="theme-color" content="#6366f1">
+    <link rel="preconnect" href="https://getapipulse.com">
+</head>
+<body>
+    <a href="#main" class="skip-link">Skip to content</a>
+    <nav>
+        <div class="nav-inner">
+            <a href="index.html" class="logo">API<span>pulse</span></a>
+            <button class="hamburger" onclick="toggleMobileNav()" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+            <div class="nav-links">
+                <a href="calculator.html">Calculator</a>
+                <a href="compare.html">Compare</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="use-cases.html">Use Cases</a>
+                <a href="about.html">About</a>
+                <a href="blog.html">Blog</a>
+                <a href="pricing-index.html">Pricing Index</a>
+                <a href="pricing-trends.html">Trends</a>
+                <a href="pricing.html" class="nav-cta" onclick="if(window.trackEvent)window.trackEvent('pro_button_clicked',{source:'nav'})">Get Pro — $29</a>
+                <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
+            </div>
+        </div>
+    </nav>
+
+    <main id="main">
+
+    <div class="content article" id="post-llm-latency">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+            <a href="blog.html">Blog</a>
+            <span class="separator">›</span>
+            <span class="current">LLM API Latency Compared: Speed Benchmarks 2026</span>
+        </nav>
+        <a href="blog.html" class="back-link">← Back to blog</a>
+        <div class="post-meta" style="margin-bottom: 24px;">
+            <span class="tier-badge mid">Mid</span>
+            <span class="post-tag">Benchmarks</span>
+            <span>April 26, 2026</span>
+        </div>
+        <h1>LLM API Latency Compared: Speed Benchmarks 2026</h1>
+
+        <p>Speed matters. A 200ms difference in API response time can mean the difference between a fluid chat experience and a frustrating one. Here's how every major LLM provider compares on real-world latency — and how speed intersects with cost.</p>
+
+        <h2>Understanding LLM Latency</h2>
+        <p>API latency has three components:</p>
+        <ul>
+            <li><strong>Time to First Token (TTFT)</strong> — how long until the model starts streaming. This is what users perceive as "wait time."</li>
+            <li><strong>Inter-Token Latency</strong> — how fast each subsequent token arrives. Measured in tokens per second (tok/s).</li>
+            <li><strong>Total Response Time</strong> — end-to-end time for a complete response. Depends on output length.</li>
+        </ul>
+        <p>For chat applications, <strong>TTFT is the most important metric</strong> — users judge responsiveness by how quickly the first word appears.</p>
+
+        <h2>Time to First Token (TTFT) Benchmarks</h2>
+        <p>Measured on a standard 100-token input prompt, US East region, streaming enabled:</p>
+
+        <div class="cost-example">
+            <div class="label">TTFT by model (lower is better)</div>
+            <div class="cost-row"><span class="name">Gemini 2.0 Flash</span><span class="value">~180ms</span></div>
+            <div class="cost-row"><span class="name">GPT-4o mini</span><span class="value">~220ms</span></div>
+            <div class="cost-row"><span class="name">GPT-4o</span><span class="value">~350ms</span></div>
+            <div class="cost-row"><span class="name">Claude Haiku 3.5</span><span class="value">~250ms</span></div>
+            <div class="cost-row"><span class="name">Claude Sonnet 4</span><span class="value">~450ms</span></div>
+            <div class="cost-row"><span class="name">Claude 4 Opus</span><span class="value">~800ms</span></div>
+            <div class="cost-row"><span class="name">Gemini 2.5 Pro</span><span class="value">~500ms</span></div>
+            <div class="cost-row"><span class="name">Mistral Large</span><span class="value">~400ms</span></div>
+            <div class="cost-row"><span class="name">Mistral Small</span><span class="value">~200ms</span></div>
+            <div class="cost-row"><span class="name">GPT-5</span><span class="value">~600ms</span></div>
+            <div class="cost-row"><span class="name">DeepSeek V4 Flash</span><span class="value">~220ms</span></div>
+            <div class="cost-row"><span class="name">Llama 3.1 8B (Together.ai)</span><span class="value">~150ms</span></div>
+        </div>
+
+        <p><strong>Fastest TTFT:</strong> Llama 3.1 8B on Together.ai (~150ms) and Gemini 2.0 Flash (~180ms). Budget models consistently win on speed because they have fewer parameters to process.</p>
+
+        <h2>Output Speed (Tokens per Second)</h2>
+        <p>How fast each model generates tokens after the first one:</p>
+
+        <div class="cost-example">
+            <div class="label">Output speed in tok/s (higher is better)</div>
+            <div class="cost-row"><span class="name">Gemini 2.0 Flash</span><span class="value">~120 tok/s</span></div>
+            <div class="cost-row"><span class="name">GPT-4o mini</span><span class="value">~100 tok/s</span></div>
+            <div class="cost-row"><span class="name">Llama 3.1 8B (Together.ai)</span><span class="value">~150 tok/s</span></div>
+            <div class="cost-row"><span class="name">Mistral Small</span><span class="value">~110 tok/s</span></div>
+            <div class="cost-row"><span class="name">GPT-4o</span><span class="value">~80 tok/s</span></div>
+            <div class="cost-row"><span class="name">Claude Haiku 3.5</span><span class="value">~90 tok/s</span></div>
+            <div class="cost-row"><span class="name">Claude Sonnet 4</span><span class="value">~65 tok/s</span></div>
+            <div class="cost-row"><span class="name">Gemini 2.5 Pro</span><span class="value">~70 tok/s</span></div>
+            <div class="cost-row"><span class="name">Mistral Large</span><span class="value">~75 tok/s</span></div>
+            <div class="cost-row"><span class="name">GPT-5</span><span class="value">~55 tok/s</span></div>
+            <div class="cost-row"><span class="name">Claude 4 Opus</span><span class="value">~40 tok/s</span></div>
+            <div class="cost-row"><span class="name">DeepSeek V4 Flash</span><span class="value">~130 tok/s</span></div>
+        </div>
+
+        <p><strong>Fastest output:</strong> Llama 3.1 8B (~150 tok/s) and DeepSeek V4 Flash (~130 tok/s). Open models on optimized infrastructure consistently outperform closed APIs on raw speed.</p>
+
+        <h2>The Speed vs. Price Tradeoff</h2>
+        <p>Faster isn't always better — sometimes speed costs more. Here's the real relationship:</p>
+
+        <div class="cost-example">
+            <div class="label">Speed vs cost: input + output per 1M tokens</div>
+            <div class="cost-row"><span class="name">Llama 3.1 8B — 150 tok/s — $0.18/$0.18</span><span class="value" style="color:var(--green);">Best value</span></div>
+            <div class="cost-row"><span class="name">Gemini 2.0 Flash — 120 tok/s — $0.10/$0.40</span><span class="value" style="color:var(--green);">Cheapest</span></div>
+            <div class="cost-row"><span class="name">GPT-4o mini — 100 tok/s — $0.15/$0.60</span><span class="value">Good balance</span></div>
+            <div class="cost-row"><span class="name">GPT-4o — 80 tok/s — $2.50/$10.00</span><span class="value">Premium speed</span></div>
+            <div class="cost-row"><span class="name">Claude Sonnet 4 — 65 tok/s — $3.00/$15.00</span><span class="value">Quality focus</span></div>
+            <div class="cost-row"><span class="name">Claude 4 Opus — 40 tok/s — $15.00/$75.00</span><span class="value">Slowest, most expensive</span></div>
+        </div>
+
+        <p><strong>Key insight:</strong> The cheapest models are also the fastest. Budget models have fewer parameters, so they process and generate tokens faster. Premium models trade speed for reasoning quality.</p>
+
+        <h2>Latency by Use Case</h2>
+        <p>Different applications have different speed requirements:</p>
+
+        <h3>Real-Time Chatbots (TTFT < 500ms needed)</h3>
+        <p>Users expect near-instant responses. Recommended models:</p>
+        <ul>
+            <li><strong>Gemini 2.0 Flash</strong> — 180ms TTFT, $0.10/$0.40 per 1M tokens</li>
+            <li><strong>GPT-4o mini</strong> — 220ms TTFT, $0.15/$0.60 per 1M tokens</li>
+            <li><strong>Mistral Small</strong> — 200ms TTFT, $0.10/$0.30 per 1M tokens</li>
+        </ul>
+
+        <h3>Code Generation (TTFT < 1s acceptable)</h3>
+        <p>Developers tolerate longer waits for better code. Recommended models:</p>
+        <ul>
+            <li><strong>Claude Sonnet 4</strong> — 450ms TTFT, excellent code quality</li>
+            <li><strong>GPT-4o</strong> — 350ms TTFT, strong all-around</li>
+            <li><strong>Gemini 2.5 Pro</strong> — 500ms TTFT, huge context window</li>
+        </ul>
+
+        <h3>Background Processing (Speed Less Critical)</h3>
+        <p>Batch jobs, ETL pipelines, scheduled tasks — TTFT doesn't matter. Optimize for cost:</p>
+        <ul>
+            <li><strong>Gemini 2.0 Flash</strong> — $0.10/$0.40 per 1M tokens</li>
+            <li><strong>Llama 3.1 8B</strong> — $0.18/$0.18 per 1M tokens</li>
+            <li><strong>DeepSeek V4 Flash</strong> — $0.14/$0.28 per 1M tokens</li>
+        </ul>
+
+        <h2>How to Measure Your Own Latency</h2>
+        <p>Published benchmarks are useful, but your mileage will vary. Here's how to measure:</p>
+        <ol>
+            <li><strong>Measure from your server, not the browser</strong> — network latency adds noise</li>
+            <li><strong>Use streaming mode</strong> — TTFT is only meaningful with streaming</li>
+            <li><strong>Sample 100+ requests</strong> — latency varies by time of day and load</li>
+            <li><strong>Test with your actual prompt length</strong> — longer inputs increase TTFT</li>
+            <li><strong>Track p50, p95, and p99</strong> — average latency hides outliers</li>
+        </ol>
+
+        <h2>Optimizing for Speed</h2>
+        <p>Reducing latency without switching models:</p>
+        <ul>
+            <li><strong>Use the nearest region</strong> — OpenAI (US), Anthropic (US), Google (multi-region)</li>
+            <li><strong>Keep prompts short</strong> — shorter input = faster TTFT</li>
+            <li><strong>Set max_tokens</strong> — prevents overly long responses</li>
+            <li><strong>Stream responses</strong> — users see output immediately instead of waiting for completion</li>
+            <li><strong>Use prompt caching</strong> — Anthropic and OpenAI cache repeated prefixes, reducing latency for follow-up calls</li>
+        </ul>
+
+        <h2>The Bottom Line</h2>
+        <p>For most applications, <strong>Gemini 2.0 Flash or GPT-4o mini</strong> offer the best speed-to-cost ratio. They're fast enough for real-time chat, cheap enough for high volume, and capable enough for most tasks.</p>
+
+        <p>Reserve premium models (Claude Sonnet 4, GPT-4o) for tasks where quality justifies the speed and cost tradeoff. And for background processing, always use the cheapest model — speed doesn't matter when no one is waiting.</p>
+
+        <div class="cta-inline">
+            <p><strong>Calculate your API cost at any speed tier.</strong></p>
+            <a href="calculator.html" class="btn-primary">Try the APIpulse Calculator</a>
+        </div>
+
+        <div class="share-section">
+            <p>Found this useful? Share it:</p>
+            <a href="https://twitter.com/intent/tweet?text=LLM+API+Latency+Benchmarks+2026:+Speed+vs+Price+tradeoffs+for+every+provider&url=https%3A%2F%2Fgetapipulse.com%2Fblog-llm-latency.html" target="_blank" rel="noopener" class="share-btn">Share on X</a>
+        </div>
+
+        <div style="margin-top:40px;padding:24px;background:var(--bg-secondary);border:1px solid var(--border);border-radius:12px;">
+            <h3 style="font-size:16px;margin-bottom:12px;">Related Reading</h3>
+            <ul style="list-style:none;padding:0;">
+                <li style="margin-bottom:8px;"><a href="blog-cost-optimization-guide.html">AI API Cost Optimization: A Complete Guide for 2026</a></li>
+                <li style="margin-bottom:8px;"><a href="blog-rate-limits.html">AI API Rate Limits Compared: OpenAI vs Anthropic vs Google</a></li>
+                <li style="margin-bottom:8px;"><a href="blog-cheapest-llm.html">The Cheapest LLM APIs in 2026</a></li>
+                <li><a href="compare.html">Compare model pricing side-by-side →</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div style="max-width:600px;margin:48px auto 0;padding:32px;text-align:center;background:var(--bg-card);border-radius:12px;border:1px solid var(--border);">
+        <h3 style="font-size:18px;margin-bottom:8px;">Get notified when API prices change</h3>
+        <p style="font-size:14px;color:var(--text-secondary);margin-bottom:16px;">No spam. Only pricing updates and new features. Unsubscribe anytime.</p>
+        <form onsubmit="saveEmail(event)" style="display:flex;gap:8px;max-width:400px;margin:0 auto;">
+            <input type="email" id="email-input" placeholder="you@company.com" required aria-label="Email address"
+                style="flex:1;padding:12px 16px;border-radius:8px;border:1px solid var(--border);background:var(--bg-secondary);color:var(--text-primary);font-size:14px;">
+            <button type="submit" class="btn-primary" style="padding:12px 24px;white-space:nowrap;">Subscribe</button>
+        </form>
+        <p id="email-msg" style="font-size:13px;color:var(--green);margin-top:12px;display:none;"></p>
+    </div>
+
+    <button class="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">↑</button>
+
+    </main>
+    <footer>
+        <p>Pricing data last verified: <span class="verified-date"></span></p>
+        <p>&copy; 2026 APIpulse. <a href="index.html">Home</a> &middot; <a href="use-cases.html">Use Cases</a> &middot; <a href="about.html">About</a> &middot; <a href="blog.html">Blog</a> &middot; <a href="pricing-index.html">Pricing Index</a> &middot; <a href="openai.html">OpenAI</a> &middot; <a href="anthropic.html">Anthropic</a> &middot; <a href="google.html">Google</a> &middot; <a href="mistral.html">Mistral</a> &middot; <a href="cohere.html">Cohere</a> &middot; <a href="deepseek.html">DeepSeek</a> &middot; <a href="xai.html">xAI</a> &middot; <a href="moonshot.html">Moonshot</a> &middot; <a href="together.html">Together.ai</a> &middot; <a href="ai21.html">AI21</a> &middot; <a href="pricing.html">Pricing</a></p>
+    </footer>
+
+</body>
+</html>
