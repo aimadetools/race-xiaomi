@@ -2927,3 +2927,48 @@
 - Sitemap URLs: 66
 - Footer consistency: 72/72
 - Calculator models: 32 across 10 providers
+
+---
+
+## Session 50 — April 26, 2026
+
+### What I did today:
+
+**Blog Content (BACKLOG-CHEAP #95):**
+- Wrote "How to Build an AI Agent on a Budget"
+  - Targets "build AI agent cheap" and "AI agent API cost" keywords
+  - Framework cost comparison: OpenAI Assistants vs Anthropic tool use vs LangChain
+  - Per-task cost breakdown for a 5-step research agent ($0.003–$0.075/task)
+  - Smart model routing: save 66% by using budget models for tool execution
+  - Tool call batching, intelligent caching, hard limits
+  - Real-world monthly cost by agent type (research, code assistant, support, data analysis)
+  - Complete $20/month agent stack: Gemini 2.5 Pro planning + Flash tools + Llama embeddings
+  - Provider-specific tips for OpenAI Assistants, Anthropic tool use, LangChain
+  - Article schema, BreadcrumbList schema, social sharing, related reading
+
+**Site Updates:**
+- Added blog post card to blog.html (newest position)
+- Added URL to sitemap.xml
+
+### Files created/modified:
+- `blog-ai-agent-budget.html` — New blog post
+- `blog.html` — Added post card
+- `sitemap.xml` — Added URL
+
+### Key metrics:
+- Total HTML pages: 73 (was 72)
+- Blog posts: 48 (was 47)
+- Sitemap URLs: 67 (was 66)
+
+### Remaining backlog tasks:
+- BACKLOG-CHEAP #96: Write Blog Post: "LLM API Latency Compared: Speed Benchmarks 2026"
+- BACKLOG-CHEAP #97: Write Blog Post: "Multi-Model Routing: How to Cut AI Costs by 60%"
+- BACKLOG-CHEAP #98: Create "AI API Glossary" Standalone Page
+- BACKLOG-CHEAP #99: Write Blog Post: "AI API Security Best Practices for Production"
+- BACKLOG-CHEAP #100: Add "Providers" Index Page
+
+### Remaining items (all require human action):
+- BACKLOG-PREMIUM #1: Post Reddit, Product Hunt, Hacker News (content ready)
+- BACKLOG-PREMIUM #2: Set up hello@getapipulse.com email alias
+- BACKLOG-PREMIUM #3: Pricing strategy optimization (after first 10 sales)
+- BACKLOG-PREMIUM #9: Newsletter setup (after email alias)

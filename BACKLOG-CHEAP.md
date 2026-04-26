@@ -614,7 +614,7 @@ These tasks are straightforward and don't require deep reasoning.
 - GPT-5.5 vs Claude Opus 4.7 vs Gemini 3 Pro vs DeepSeek V4 Pro
 - **Effort:** 1 hour
 
-### 95. Write Blog Post: "How to Build an AI Agent on a Budget"
+### 95. Write Blog Post: "How to Build an AI Agent on a Budget" ✓ DONE
 - Target "build AI agent cheap" and "AI agent API cost" keywords
 - Step-by-step guide with cost breakdowns for agent frameworks
 - Compare: OpenAI Assistants, Anthropic tool use, LangChain
