@@ -797,10 +797,11 @@ These tasks are straightforward and don't require deep reasoning.
 - Added to blog.html, sitemap.xml
 - **Effort:** 1 hour
 
-### 123. Create "AI Model Pricing Cheat Sheet" Printable PDF
-- Generate a printable one-page pricing reference
-- All models, providers, tiers in a clean table
-- Link from blog posts and pricing index
+### 123. Create "AI Model Pricing Cheat Sheet" Printable PDF ✓ DONE
+- Created cheat-sheet.html with all 32 models, print styles, quick picks, and cost estimates
+- Full print optimization: hides nav/footer, page break control, clean typography
+- Added to nav on all 92 files, footer on 91 files, sitemap
+- Linked from blog posts and pricing index
 - **Effort:** 1 hour
 
 ### 124. Add Calculator Presets for Use Cases ✓ DONE

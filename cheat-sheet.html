@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Model Pricing Cheat Sheet — Every Model, Every Provider (2026) | APIpulse</title>
+    <meta name="description" content="Printable one-page pricing reference for all AI API models. Compare GPT-5, Claude, Gemini, DeepSeek, Mistral, and more at a glance.">
+    <meta name="keywords" content="AI pricing cheat sheet, LLM pricing reference, API cost comparison, AI model pricing 2026">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <meta property="og:title" content="AI Model Pricing Cheat Sheet — Every Model, Every Provider">
+    <meta property="og:description" content="Printable one-page pricing reference for all 32 AI models across 10 providers.">
+    <meta property="og:image" content="og-image.png">
+    <meta property="og:url" content="https://getapipulse.com/cheat-sheet.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="canonical" href="https://getapipulse.com/cheat-sheet.html">
+    <link rel="alternate" type="application/rss+xml" title="APIpulse Blog" href="rss.xml">
+    <link rel="stylesheet" href="styles.css">
+    <script src="pricing-data.js"></script>
+    <style>
+        .cheat-sheet-hero {
+            text-align: center; padding: 100px 24px 40px;
+        }
+        .cheat-sheet-hero h1 {
+            font-size: 36px; margin-bottom: 12px;
+        }
+        .cheat-sheet-hero p {
+            color: var(--text-secondary); font-size: 16px; max-width: 600px; margin: 0 auto 24px;
+        }
+        .print-btn {
+            display: inline-flex; align-items: center; gap: 8px;
+            background: var(--accent); color: white; padding: 10px 24px;
+            border-radius: 8px; font-size: 14px; font-weight: 600;
+            border: none; cursor: pointer; transition: background 0.2s;
+        }
+        .print-btn:hover { background: var(--accent-hover); }
+
+        .tier-section {
+            max-width: var(--max-width); margin: 0 auto 48px; padding: 0 24px;
+        }
+        .tier-section h2 {
+            font-size: 24px; margin-bottom: 16px; display: flex; align-items: center; gap: 10px;
+        }
+        .tier-badge {
+            display: inline-block; padding: 3px 10px; border-radius: 20px;
+            font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;
+        }
+        .tier-badge.premium { background: rgba(239,68,68,0.15); color: #ef4444; }
+        .tier-badge.mid { background: rgba(245,158,11,0.15); color: #f59e0b; }
+        .tier-badge.budget { background: rgba(34,197,94,0.15); color: #22c55e; }
+
+        .cheat-table-wrap {
+            overflow-x: auto; border-radius: var(--radius);
+            border: 1px solid var(--border); background: var(--bg-card);
+        }
+        .cheat-table {
+            width: 100%; border-collapse: collapse; font-size: 14px;
+        }
+        .cheat-table th {
+            text-align: left; padding: 12px 16px; background: var(--bg-secondary);
+            color: var(--text-secondary); font-size: 12px; font-weight: 600;
+            text-transform: uppercase; letter-spacing: 0.5px;
+            border-bottom: 2px solid var(--border);
+        }
+        .cheat-table td {
+            padding: 10px 16px; border-bottom: 1px solid var(--border);
+            color: var(--text-primary);
+        }
+        .cheat-table tr:last-child td { border-bottom: none; }
+        .cheat-table tr:hover td { background: var(--bg-card-hover); }
+        .model-name { font-weight: 600; }
+        .provider-name { color: var(--text-secondary); font-size: 13px; }
+        .price-input { color: var(--green); font-weight: 500; font-variant-numeric: tabular-nums; }
+        .price-output { color: var(--orange); font-weight: 500; font-variant-numeric: tabular-nums; }
+        .context-window { color: var(--text-secondary); font-variant-numeric: tabular-nums; }
+        .cheapest-tag {
+            display: inline-block; background: rgba(34,197,94,0.12); color: var(--green);
+            font-size: 11px; padding: 2px 6px; border-radius: 4px; font-weight: 600;
+            margin-left: 6px;
+        }
+        .premium-tag {
+            display: inline-block; background: rgba(239,68,68,0.12); color: #ef4444;
+            font-size: 11px; padding: 2px 6px; border-radius: 4px; font-weight: 600;
+            margin-left: 6px;
+        }
+
+        .quick-picks {
+            max-width: var(--max-width); margin: 0 auto 48px; padding: 0 24px;
+        }
+        .quick-picks h2 { font-size: 24px; margin-bottom: 16px; }
+        .picks-grid {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 16px;
+        }
+        .pick-card {
+            background: var(--bg-card); border: 1px solid var(--border);
+            border-radius: var(--radius); padding: 20px;
+        }
+        .pick-card h3 { font-size: 16px; margin-bottom: 6px; }
+        .pick-card .pick-model { color: var(--accent); font-weight: 600; font-size: 15px; }
+        .pick-card .pick-price { color: var(--green); font-size: 13px; margin-top: 4px; }
+        .pick-card .pick-note { color: var(--text-muted); font-size: 13px; margin-top: 8px; }
+
+        .cost-examples {
+            max-width: var(--max-width); margin: 0 auto 48px; padding: 0 24px;
+        }
+        .cost-examples h2 { font-size: 24px; margin-bottom: 16px; }
+        .examples-grid {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 16px;
+        }
+        .example-card {
+            background: var(--bg-card); border: 1px solid var(--border);
+            border-radius: var(--radius); padding: 20px;
+        }
+        .example-card h3 { font-size: 15px; margin-bottom: 12px; color: var(--text-secondary); }
+        .example-row {
+            display: flex; justify-content: space-between; padding: 6px 0;
+            font-size: 13px; border-bottom: 1px solid var(--border);
+        }
+        .example-row:last-child { border-bottom: none; }
+        .example-row .model { color: var(--text-primary); font-weight: 500; }
+        .example-row .cost { color: var(--green); font-variant-numeric: tabular-nums; }
+
+        .cta-section {
+            text-align: center; padding: 48px 24px;
+            background: var(--bg-secondary); border-top: 1px solid var(--border);
+        }
+        .cta-section h2 { font-size: 24px; margin-bottom: 12px; }
+        .cta-section p { color: var(--text-secondary); margin-bottom: 20px; }
+
+        /* Print styles */
+        @media print {
+            * { background: white !important; color: black !important; }
+            nav, footer, .back-to-top, .print-btn, .cta-section, .share-section, .keyboard-hint,
+            .hamburger, .theme-toggle, .skip-link { display: none !important; }
+            .cheat-sheet-hero { padding: 20px 0 10px; }
+            .cheat-sheet-hero h1 { font-size: 24px; }
+            .cheat-sheet-hero p { font-size: 12px; }
+            .tier-section { margin-bottom: 16px; }
+            .cheat-table { font-size: 10px; }
+            .cheat-table th, .cheat-table td { padding: 4px 8px; }
+            .cheat-table tr:nth-child(even) td { background: #f5f5f5 !important; }
+            .cheat-table-wrap { border: 1px solid #ccc; }
+            .tier-section h2 { font-size: 16px; }
+            .quick-picks, .cost-examples { page-break-inside: avoid; }
+            .picks-grid { gap: 8px; }
+            .pick-card, .example-card { border: 1px solid #ddd; padding: 10px; }
+            .pick-card h3, .example-card h3 { font-size: 12px; }
+            .cheapest-tag, .premium-tag { border: 1px solid currentColor; }
+            a { text-decoration: none; }
+            .price-input::before { content: "$"; }
+            .price-output::before { content: "$"; }
+            @page { margin: 1cm; }
+        }
+
+        @media (max-width: 768px) {
+            .cheat-sheet-hero h1 { font-size: 24px; }
+            .cheat-table { font-size: 13px; }
+            .cheat-table th, .cheat-table td { padding: 8px 10px; }
+        }
+    </style>
+</head>
+<body>
+    <a href="#main" class="skip-link">Skip to main content</a>
+
+    <nav>
+        <div class="nav-inner">
+            <a href="index.html" class="logo"><span>&#9889;</span> APIpulse</a>
+            <button class="hamburger" onclick="toggleMobileNav()" aria-label="Toggle navigation">
+                <span></span><span></span><span></span>
+            </button>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="calculator.html">Calculator</a>
+                <a href="compare.html">Compare</a>
+                <a href="pricing-index.html">Pricing Index</a>
+                <a href="providers.html">Providers</a>
+                <a href="quiz.html">Quiz</a>
+                <a href="blog.html">Blog</a>
+                <a href="use-cases.html">Use Cases</a>
+                <a href="cheat-sheet.html" class="active">Cheat Sheet</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="pro.html" class="nav-cta">Pro</a>
+                <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme"></button>
+            </div>
+        </div>
+    </nav>
+
+    <main id="main">
+        <section class="cheat-sheet-hero">
+            <h1>AI Model Pricing Cheat Sheet</h1>
+            <p>Every model, every provider, one page. Print it, bookmark it, or share it.</p>
+            <button class="print-btn" onclick="window.print()">&#128424; Print This Page</button>
+        </section>
+
+        <section class="tier-section" id="premium">
+            <h2><span class="tier-badge premium">Premium</span> Flagship Models</h2>
+            <div class="cheat-table-wrap">
+                <table class="cheat-table" aria-label="Premium AI model pricing">
+                    <thead>
+                        <tr>
+                            <th>Model</th>
+                            <th>Provider</th>
+                            <th>Input / 1M Tokens</th>
+                            <th>Output / 1M Tokens</th>
+                            <th>Context</th>
+                        </tr>
+                    </thead>
+                    <tbody id="premium-table"></tbody>
+                </table>
+            </div>
+        </section>
+
+        <section class="tier-section" id="mid">
+            <h2><span class="tier-badge mid">Mid-Tier</span> Best Value Models</h2>
+            <div class="cheat-table-wrap">
+                <table class="cheat-table" aria-label="Mid-tier AI model pricing">
+                    <thead>
+                        <tr>
+                            <th>Model</th>
+                            <th>Provider</th>
+                            <th>Input / 1M Tokens</th>
+                            <th>Output / 1M Tokens</th>
+                            <th>Context</th>
+                        </tr>
+                    </thead>
+                    <tbody id="mid-table"></tbody>
+                </table>
+            </div>
+        </section>
+
+        <section class="tier-section" id="budget">
+            <h2><span class="tier-badge budget">Budget</span> Affordable Models</h2>
+            <div class="cheat-table-wrap">
+                <table class="cheat-table" aria-label="Budget AI model pricing">
+                    <thead>
+                        <tr>
+                            <th>Model</th>
+                            <th>Provider</th>
+                            <th>Input / 1M Tokens</th>
+                            <th>Output / 1M Tokens</th>
+                            <th>Context</th>
+                        </tr>
+                    </thead>
+                    <tbody id="budget-table"></tbody>
+                </table>
+            </div>
+        </section>
+
+        <section class="quick-picks">
+            <h2>Quick Picks by Use Case</h2>
+            <div class="picks-grid">
+                <div class="pick-card">
+                    <h3>Chatbot / Customer Support</h3>
+                    <div class="pick-model">Gemini 2.0 Flash</div>
+                    <div class="pick-price">$0.10 in / $0.40 out</div>
+                    <div class="pick-note">Cheapest option with 1M context. For higher quality: GPT-4o mini.</div>
+                </div>
+                <div class="pick-card">
+                    <h3>Code Generation</h3>
+                    <div class="pick-model">Claude Sonnet 4</div>
+                    <div class="pick-price">$3.00 in / $15.00 out</div>
+                    <div class="pick-note">Best code quality/price ratio. For autocomplete: GPT-5 mini.</div>
+                </div>
+                <div class="pick-card">
+                    <h3>Document Analysis</h3>
+                    <div class="pick-model">Gemini 2.5 Pro</div>
+                    <div class="pick-price">$1.25 in / $10.00 out</div>
+                    <div class="pick-note">1M context window handles large docs. Great value for extraction.</div>
+                </div>
+                <div class="pick-card">
+                    <h3>Enterprise / Complex Reasoning</h3>
+                    <div class="pick-model">Claude Opus 4.7</div>
+                    <div class="pick-price">$5.00 in / $25.00 out</div>
+                    <div class="pick-note">Top-tier reasoning at half the cost of GPT-5 or Claude 4 Opus.</div>
+                </div>
+                <div class="pick-card">
+                    <h3>Budget-Conscious Startup</h3>
+                    <div class="pick-model">DeepSeek V4 Flash</div>
+                    <div class="pick-price">$0.14 in / $0.28 out</div>
+                    <div class="pick-note">Cheapest output tokens in the market. Great quality for the price.</div>
+                </div>
+                <div class="pick-card">
+                    <h3>Long-Context (10M tokens)</h3>
+                    <div class="pick-model">Llama 4 Scout</div>
+                    <div class="pick-price">$0.11 in / $0.34 out</div>
+                    <div class="pick-note">Open-source, 10M context, cheapest premium-context model.</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cost-examples">
+            <h2>Monthly Cost Estimates</h2>
+            <div class="examples-grid">
+                <div class="example-card">
+                    <h3>100 requests/day, 1K in / 500 out tokens</h3>
+                    <div class="example-row"><span class="model">Gemini 2.0 Flash</span><span class="cost">$0.75/mo</span></div>
+                    <div class="example-row"><span class="model">GPT-4o mini</span><span class="cost">$1.50/mo</span></div>
+                    <div class="example-row"><span class="model">Claude Haiku 3.5</span><span class="cost">$8.40/mo</span></div>
+                    <div class="example-row"><span class="model">GPT-4o</span><span class="cost">$22.50/mo</span></div>
+                </div>
+                <div class="example-card">
+                    <h3>1,000 requests/day, 1K in / 500 out tokens</h3>
+                    <div class="example-row"><span class="model">Gemini 2.0 Flash</span><span class="cost">$7.50/mo</span></div>
+                    <div class="example-row"><span class="model">GPT-4o mini</span><span class="cost">$15.00/mo</span></div>
+                    <div class="example-row"><span class="model">Claude Sonnet 4</span><span class="cost">$135/mo</span></div>
+                    <div class="example-row"><span class="model">GPT-5</span><span class="cost">$225/mo</span></div>
+                </div>
+                <div class="example-card">
+                    <h3>10,000 requests/day, 2K in / 1K out tokens</h3>
+                    <div class="example-row"><span class="model">Gemini 2.0 Flash</span><span class="cost">$150/mo</span></div>
+                    <div class="example-row"><span class="model">GPT-4o mini</span><span class="cost">$300/mo</span></div>
+                    <div class="example-row"><span class="model">Claude Sonnet 4</span><span class="cost">$1,350/mo</span></div>
+                    <div class="example-row"><span class="model">GPT-5</span><span class="cost">$2,250/mo</span></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-section">
+            <h2>Need Exact Estimates?</h2>
+            <p>Use the APIpulse calculator for precise cost projections based on your actual usage.</p>
+            <a href="calculator.html" class="btn-primary">Open Calculator</a>
+            &nbsp;&nbsp;
+            <a href="compare.html" class="btn-secondary">Compare Models</a>
+        </section>
+    </main>
+
+    <footer>
+        <div style="max-width: var(--max-width); margin: 0 auto;">
+            <p style="margin-bottom: 12px;">
+                <a href="index.html">Home</a> &middot; <a href="calculator.html">Calculator</a> &middot;
+                <a href="compare.html">Compare</a> &middot; <a href="pricing-index.html">Pricing Index</a> &middot;
+                <a href="providers.html">Providers</a> &middot; <a href="blog.html">Blog</a> &middot;
+                <a href="pricing.html">Pricing</a> &middot; <a href="about.html">About</a>
+            </p>
+            <p>Pricing data last verified: <span id="last-verified-date"></span> &middot; &copy; 2026 APIpulse</p>
+        </div>
+    </footer>
+
+    <button class="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">&#8593;</button>
+
+    <script src="shared.js"></script>
+    <script>
+        // Populate tables from pricing-data.js
+        const tables = { premium: document.getElementById('premium-table'), mid: document.getElementById('mid-table'), budget: document.getElementById('budget-table') };
+        const cheapest = {};
+        API_MODELS.forEach(m => { const key = m.tier + '_input'; if (!cheapest[key] || m.input < cheapest[key].input) cheapest[key] = m; });
+
+        API_MODELS.forEach(m => {
+            const tr = document.createElement('tr');
+            const isCheapestInTier = cheapest[m.tier + '_input'] && cheapest[m.tier + '_input'].id === m.id;
+            tr.innerHTML = `
+                <td><span class="model-name">${m.name}</span>${isCheapestInTier ? '<span class="cheapest-tag">Cheapest</span>' : ''}${m.tier === 'Premium' && m.input >= 10 ? '<span class="premium-tag">Premium</span>' : ''}</td>
+                <td><span class="provider-name">${m.provider}</span></td>
+                <td><span class="price-input">$${m.input.toFixed(2)}</span></td>
+                <td><span class="price-output">$${m.output.toFixed(2)}</span></td>
+                <td><span class="context-window">${m.context}</span></td>
+            `;
+            tables[m.tier.toLowerCase()].appendChild(tr);
+        });
+
+        // Dynamic date
+        document.getElementById('last-verified-date').textContent = new Date().toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
+
+        // Back to top
+        window.addEventListener('scroll', () => {
+            document.querySelectorAll('.back-to-top').forEach(btn => {
+                btn.classList.toggle('visible', window.scrollY > 300);
+            });
+        });
+    </script>
+</body>
+</html>
