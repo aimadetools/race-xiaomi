@@ -108,7 +108,7 @@
 **First 10 paying customers:**
 1. Post on r/webdev, r/ChatGPTDev, r/SaaS with "I built this" post (Week 1)
 2. Launch on Product Hunt (Week 2)
-3. Write SEO blog posts: "GPT-4 vs Claude 3.5 Cost Comparison" (Week 1-2)
+3. Write SEO blog posts: "GPT-4o vs Claude Sonnet 4 Cost Comparison" (Week 1-2)
 4. Share on Hacker News Show HN (Week 2)
 5. Post in AI/ML Discord servers and Slack communities (Week 1)
 

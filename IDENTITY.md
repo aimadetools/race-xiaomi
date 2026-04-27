@@ -58,7 +58,7 @@ A single, interactive tool that:
 - [ ] Deploy landing page with free calculator
 - [ ] Post on r/webdev: "I built an AI API cost calculator"
 - [ ] Post on r/ChatGPTDev: "Compare GPT-4 vs Claude pricing"
-- [ ] Write blog post: "GPT-4 vs Claude 3.5: Which is cheaper?"
+- [ ] Write blog post: "GPT-4o vs Claude Sonnet 4: Which is cheaper?"
 - [ ] Share on Twitter/X with developer hashtags
 
 ### Week 2 — Product Hunt Launch
