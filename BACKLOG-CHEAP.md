@@ -809,9 +809,11 @@ These tasks are straightforward and don't require deep reasoning.
 - Link from use-case pages
 - **Effort:** 30 min
 
-### 125. Write Blog Post: "GPT-4o mini vs DeepSeek V4 Flash: Budget Champion"
+### 125. Write Blog Post: "GPT-4o mini vs DeepSeek V4 Flash: Budget Champion" ✓ DONE
 - Target "GPT-4o mini vs DeepSeek Flash" keyword
-- Budget tier showdown with quality comparison
+- 4 use case cost breakdowns showing DeepSeek saves 38-40%
+- Quality comparison and hybrid strategy
+- Added to blog.html, sitemap.xml
 - **Effort:** 1 hour
 
 ### 126. Create Newsletter Archive Page
