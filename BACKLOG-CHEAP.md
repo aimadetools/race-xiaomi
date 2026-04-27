@@ -731,7 +731,7 @@ These tasks are straightforward and don't require deep reasoning.
 - Update share-section CSS if needed
 - **Effort:** 30 min
 
-### 113. Create "API Pricing API" — JSON Endpoint
+### 113. Create "API Pricing API" — JSON Endpoint ✓ DONE
 - Create api/pricing.js that returns pricing-data.js as JSON
 - Developers can programmatically access pricing data
 - Targets "AI API pricing API" keyword

@@ -3372,12 +3372,19 @@
 - Popular comparisons on homepage: 6
 - Files modified: 60
 
+**API Pricing Endpoint (BACKLOG-CHEAP #113):**
+- Created `api/pricing.js` — Vercel serverless function returning all 32 models as JSON
+- Supports query params: `?provider=openai`, `?tier=Budget`, `?model=openai-gpt4o`
+- CORS headers, caching, OPTIONS preflight handler
+- Use cases: developer tools, dashboards, CI/CD cost checks
+
 ### Site status:
 - Total HTML pages: 80
 - Blog posts: 53
+- API endpoints: 5 (subscribe, unsubscribe, newsletter, admin/subscribers, pricing)
 - Calculator models: 32 across 10 providers
 - All known bugs: Fixed
-- All BACKLOG-CHEAP tasks #1-100, #102, #104, #107, #110, #115, #116: Complete
+- All BACKLOG-CHEAP tasks #1-100, #102, #104, #107, #110, #113, #115, #116: Complete
 
 ### Remaining BACKLOG-CHEAP tasks:
 - #101: Add "What's New" section to pricing.html and blog.html
@@ -3387,7 +3394,6 @@
 - #108: Write Blog Post: "The Complete Guide to AI API Batch Processing"
 - #109: Add "Trending Models" Badge to Pricing Index
 - #111: Create "Which AI Model Should I Use?" Interactive Quiz
-- #113: Create "API Pricing API" — JSON Endpoint
 - #114: Write Blog Post: "AI API Pricing for RAG: Complete Cost Breakdown 2026"
 - #117: Write Blog Post: "AI API Cost Calculator: How to Plan Your AI Budget"
 - #118: Add "Compare by Use Case" Landing Pages
