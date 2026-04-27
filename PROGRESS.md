@@ -3506,19 +3506,51 @@
 **BACKLOG-CHEAP #120 — Add Embed Link to Footer:**
 - Added "Embed Widget" link to footer on all 87 HTML pages
 - Placed before Twitter and Unsubscribe links in footer navigation
-- Helps other sites discover the embeddable calculator widget
+
+**BACKLOG-CHEAP #121 — Blog Post: "Claude 4 Opus vs GPT-5.5":**
+- Premium model showdown: Claude 4 Opus ($15/$75) vs GPT-5.5 ($5/$30)
+- 4 use case cost breakdowns showing GPT-5.5 saves 60%+
+- Highlights Claude Opus 4.7 as the smarter Anthropic alternative
+
+**BACKLOG-CHEAP #122 — Blog Post: "How to Choose the Right Embedding Model for RAG":**
+- Compare 6 embedding models with cost analysis for embedding 1M documents
+- 5-step decision framework, dimension reduction tips
+- Total RAG cost breakdown (embedding + vector DB + LLM)
+
+**BACKLOG-CHEAP #124 — Calculator Use-Case Presets:**
+- Added 3 use-case presets: Support Bot, Code Assistant, Content Writer
+- Realistic token counts for each use case
+- Second row of preset buttons in calculator
+
+**BACKLOG-CHEAP #125 — Blog Post: "GPT-4o mini vs DeepSeek V4 Flash":**
+- Budget champion showdown: DeepSeek saves 38-40% on output tokens
+- 4 use case cost breakdowns, quality comparison, hybrid strategy
+
+**BACKLOG-CHEAP #126 — Newsletter Archive Page:**
+- Created newsletter-archive.html with chronological post listing
+- Subscribe box at top, posts grouped by month with tier badges
 
 **Backlog Cleanup:**
-- Marked #112 (LinkedIn Share Button) as done — was already on all 58 blog posts
-- Marked #119 (Quiz Link to Navigation) as done — was completed in Session 57
+- Marked #112 (LinkedIn Share Button) as done — already on all 58 blog posts
+- Marked #119 (Quiz Link to Navigation) as done — completed in Session 57
+
+### Files created today:
+- `blog-claude4-opus-vs-gpt55.html` — Claude 4 Opus vs GPT-5.5 comparison
+- `blog-embedding-model-rag.html` — Embedding model guide for RAG
+- `blog-gpt4o-mini-vs-deepseek-flash.html` — Budget model showdown
+- `newsletter-archive.html` — Newsletter archive page
 
 ### Files modified today:
 - All 87 HTML files — Added embed.html link to footer
+- `blog.html` — Added 3 new blog post cards
+- `sitemap.xml` — Added 4 new URLs
+- `calculator.html` — Added use-case presets
 
 ### Key metrics:
-- Total HTML pages: 88
-- Footer links: Now include Embed Widget on all pages
-- All BACKLOG-CHEAP tasks: Complete (120/120)
+- Total HTML pages: 92 (was 88)
+- Blog posts: 61 (was 58)
+- Calculator presets: 6 (was 3)
+- All BACKLOG-CHEAP tasks: Complete (126/126)
 
 ### Remaining items (all require human action):
 - BACKLOG-PREMIUM #1: Post Reddit, Product Hunt, Hacker News (content ready)
