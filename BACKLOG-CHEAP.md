@@ -649,3 +649,67 @@ These tasks are straightforward and don't require deep reasoning.
 - Grid layout with provider cards, model counts, and price ranges
 - Internal linking hub for provider pages
 - **Effort:** 30 min
+
+---
+
+## New Tasks — Session 53 (April 27, 2026)
+
+### 101. Add "What's New" Section to More Pages
+- Add the What's New section to pricing.html and blog.html
+- Shows recent updates and builds trust
+- Keep content in sync with index.html version
+- **Effort:** 30 min
+
+### 102. Write Blog Post: "How to Save 50% on OpenAI API Costs in 2026"
+- Target "save OpenAI costs" and "reduce GPT API bill" keywords
+- Focus specifically on OpenAI cost optimization
+- Include calculator links and before/after comparisons
+- **Effort:** 1 hour
+
+### 103. Write Blog Post: "DeepSeek vs OpenAI: The Budget Alternative"
+- Target "DeepSeek vs OpenAI" keyword
+- Compare DeepSeek V4 Pro vs GPT-4o pricing
+- Show cost savings at different scale levels
+- **Effort:** 1 hour
+
+### 104. Add "Share on LinkedIn" Button to Blog Posts
+- Add LinkedIn share button alongside Twitter share button
+- LinkedIn has higher engagement for B2B/developer content
+- Update share-section CSS if needed
+- **Effort:** 30 min
+
+### 105. Create "API Pricing Calculator" Embed Widget
+- Create a simple embeddable calculator widget
+- Allow other sites to embed APIpulse calculator
+- Generate embed code with iframe
+- **Effort:** 1 hour
+
+### 106. Write Blog Post: "xAI Grok vs GPT-4o: Is Grok Worth It?"
+- Target "Grok vs GPT-4o" keyword
+- Compare pricing, quality, and use cases
+- Include cost breakdowns
+- **Effort:** 1 hour
+
+### 107. Add "Popular Comparisons" Section to Homepage
+- Add a grid of popular model comparisons
+- Link to compare.html with pre-selected models
+- Examples: GPT-4o vs Claude Sonnet, Gemini Flash vs GPT-4o mini
+- **Effort:** 30 min
+
+### 108. Write Blog Post: "The Complete Guide to AI API Batch Processing"
+- Target "AI API batch" and "batch API pricing" keywords
+- Compare batch pricing across providers
+- Show cost savings from batching
+- **Effort:** 1 hour
+
+### 109. Add "Trending Models" Badge to Pricing Index
+- Add visual indicator for popular/trending models
+- Based on blog post views or calculator usage
+- Helps users discover relevant models
+- **Effort:** 30 min
+
+### 110. Write Blog Post: "How to Choose Between Claude Sonnet and GPT-4o"
+- Target "Claude Sonnet vs GPT-4o" keyword (high volume)
+- Detailed comparison with real-world examples
+- Include calculator links
+- **Effort:** 1 hour

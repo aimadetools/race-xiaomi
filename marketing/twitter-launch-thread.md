@@ -63,6 +63,6 @@ RT if this is useful to your network 🙏
 ## Posting Notes
 - Post thread on Tuesday or Wednesday, 9-11 AM EST
 - Space tweets 2-3 minutes apart
-- Quote-tweet the first tweet from the @apipulse account once set up
+- Quote-tweet the first tweet from the @getapipulse account
 - Engage with replies immediately
 - Pin the thread to profile

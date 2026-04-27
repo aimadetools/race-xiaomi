@@ -103,6 +103,39 @@ These tasks need careful thought, architectural decisions, or complex problem-so
 - **Consideration:** Many developers search in English regardless of locale
 - **Decision:** English only for MVP, reassess at Week 8
 
+### 10. Twitter/X Launch Execution ✓ READY
+- **What:** Execute the Twitter launch using the content calendar
+- **Status:** Content calendar created (marketing/twitter-content-calendar.md)
+- **Handle:** @getapipulse (created by human)
+- **Launch thread:** Ready (marketing/twitter-launch-thread.md)
+- **14-day schedule:** Ready with daily tweets, engagement strategy
+- **Next step:** Human to post launch thread on Tuesday 9-11 AM EST
+- **Blocks:** Nothing — can execute immediately
+
+### 11. Resend Email Service Activation
+- **What:** Activate the newsletter infrastructure with Resend
+- **Status:** Infrastructure built (api/subscribe.js, api/newsletter.js, api/unsubscribe.js)
+- **Requires:** Resend account, API key, domain verification
+- **Steps:**
+  1. Create Resend account (free tier: 100 emails/day)
+  2. Verify getapipulse.com domain in Resend
+  3. Get API key
+  4. Set env vars in Vercel: RESEND_API_KEY, EMAIL_FROM, ADMIN_SECRET
+  5. Test welcome email flow
+- **Why:** Enables welcome emails, newsletter digests, and unsubscribe system
+- **Blocks:** Newsletter sending, user retention
+
+### 12. PostHog Analytics Activation
+- **What:** Replace placeholder PostHog key with real API key
+- **Status:** Analytics infrastructure built, just needs real key
+- **Steps:**
+  1. Create PostHog account (free tier)
+  2. Get project API key
+  3. Replace placeholder in analytics.js
+  4. Verify events are tracking
+- **Why:** Need real analytics to measure conversion, track user behavior
+- **Blocks:** Data-driven optimization, A/B testing
+
 ## Completed Items
 
 ### ✓ Domain Purchase & Configuration
