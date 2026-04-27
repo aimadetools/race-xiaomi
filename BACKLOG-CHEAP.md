@@ -816,8 +816,9 @@ These tasks are straightforward and don't require deep reasoning.
 - Added to blog.html, sitemap.xml
 - **Effort:** 1 hour
 
-### 126. Create Newsletter Archive Page
-- Archive all blog posts in a newsletter-style layout
-- Monthly digest format
-- Targets "AI API pricing newsletter" keyword
+### 126. Create Newsletter Archive Page ✓ DONE
+- Created newsletter-archive.html with chronological post listing
+- Subscribe box at top for email capture
+- Posts grouped by month with tier badges
+- Added to sitemap.xml
 - **Effort:** 1 hour
