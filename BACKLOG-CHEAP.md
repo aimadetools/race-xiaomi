@@ -725,11 +725,9 @@ These tasks are straightforward and don't require deep reasoning.
 - Targets "which AI model should I use" keyword
 - **Effort:** 1.5 hours
 
-### 112. Add LinkedIn Share Button to Blog Posts
-- Add LinkedIn share button alongside Twitter share button
-- LinkedIn has higher engagement for B2B/developer content
-- Update share-section CSS if needed
-- **Effort:** 30 min
+### 112. Add LinkedIn Share Button to Blog Posts ✓ DONE
+- LinkedIn share button already present on all 58 blog posts
+- **Effort:** 0 min (already done)
 
 ### 113. Create "API Pricing API" — JSON Endpoint ✓ DONE
 - Create api/pricing.js that returns pricing-data.js as JSON
@@ -773,13 +771,14 @@ These tasks are straightforward and don't require deep reasoning.
 
 ## New Tasks — Session 57 (April 27, 2026)
 
-### 119. Add Quiz Link to Navigation
-- Add "Quiz" link to nav on all HTML pages
+### 119. Add Quiz Link to Navigation ✓ DONE
+- Added "Quiz" link to nav on all 88 HTML pages
 - Helps users discover the interactive model selector
 - **Effort:** 20 min
 
-### 120. Add Embed Link to Footer or Docs Page
-- Link to embed.html from footer or a "Developer Tools" section
+### 120. Add Embed Link to Footer or Docs Page ✓ DONE
+- Added "Embed Widget" link to footer on all 87 HTML pages
+- Placed before Twitter and Unsubscribe links
 - Helps other sites discover the embeddable widget
 - **Effort:** 15 min
 

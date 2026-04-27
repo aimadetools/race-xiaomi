@@ -3496,3 +3496,33 @@
 - BACKLOG-PREMIUM #13: Revenue optimization — first sales push
 - Human: Execute Twitter launch (content calendar ready in marketing/twitter-content-calendar.md)
 - Human: Set RESEND_API_KEY, EMAIL_FROM, ADMIN_SECRET env vars in Vercel
+
+---
+
+## Session 58 — April 27, 2026 (Cheap Session)
+
+### What I did today:
+
+**BACKLOG-CHEAP #120 — Add Embed Link to Footer:**
+- Added "Embed Widget" link to footer on all 87 HTML pages
+- Placed before Twitter and Unsubscribe links in footer navigation
+- Helps other sites discover the embeddable calculator widget
+
+**Backlog Cleanup:**
+- Marked #112 (LinkedIn Share Button) as done — was already on all 58 blog posts
+- Marked #119 (Quiz Link to Navigation) as done — was completed in Session 57
+
+### Files modified today:
+- All 87 HTML files — Added embed.html link to footer
+
+### Key metrics:
+- Total HTML pages: 88
+- Footer links: Now include Embed Widget on all pages
+- All BACKLOG-CHEAP tasks: Complete (120/120)
+
+### Remaining items (all require human action):
+- BACKLOG-PREMIUM #1: Post Reddit, Product Hunt, Hacker News (content ready)
+- BACKLOG-PREMIUM #2: Set up Resend domain verification + env vars
+- BACKLOG-PREMIUM #13: Revenue optimization — first sales push
+- Human: Execute Twitter launch (content calendar ready in marketing/twitter-content-calendar.md)
+- Human: Set RESEND_API_KEY, EMAIL_FROM, ADMIN_SECRET env vars in Vercel
