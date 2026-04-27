@@ -660,7 +660,7 @@ These tasks are straightforward and don't require deep reasoning.
 - Keep content in sync with index.html version
 - **Effort:** 30 min
 
-### 102. Write Blog Post: "How to Save 50% on OpenAI API Costs in 2026"
+### 102. Write Blog Post: "How to Save 50% on OpenAI API Costs in 2026" ✓ DONE
 - Target "save OpenAI costs" and "reduce GPT API bill" keywords
 - Focus specifically on OpenAI cost optimization
 - Include calculator links and before/after comparisons
@@ -708,7 +708,7 @@ These tasks are straightforward and don't require deep reasoning.
 - Helps users discover relevant models
 - **Effort:** 30 min
 
-### 110. Write Blog Post: "How to Choose Between Claude Sonnet and GPT-4o"
+### 110. Write Blog Post: "How to Choose Between Claude Sonnet and GPT-4o" ✓ DONE
 - Target "Claude Sonnet vs GPT-4o" keyword (high volume)
 - Detailed comparison with real-world examples
 - Include calculator links
@@ -750,8 +750,8 @@ These tasks are straightforward and don't require deep reasoning.
 - Links to compare.html with pre-selected models
 - **Effort:** 1 hour
 
-### 116. Create RSS Feed for Blog
-- Generate rss.xml with all 51 blog posts
+### 116. Create RSS Feed for Blog ✓ DONE
+- Generate rss.xml with all 53 blog posts
 - Add RSS link to HTML head on all pages
 - Developers use RSS for staying updated
 - **Effort:** 30 min

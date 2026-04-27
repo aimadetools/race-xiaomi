@@ -3373,25 +3373,22 @@
 - Files modified: 60
 
 ### Site status:
-- Total HTML pages: 78
-- Blog posts: 51
+- Total HTML pages: 80
+- Blog posts: 53
 - Calculator models: 32 across 10 providers
 - All known bugs: Fixed
-- All BACKLOG-CHEAP tasks #1-100, #104, #107, #115: Complete
+- All BACKLOG-CHEAP tasks #1-100, #102, #104, #107, #110, #115, #116: Complete
 
 ### Remaining BACKLOG-CHEAP tasks:
 - #101: Add "What's New" section to pricing.html and blog.html
-- #102: Write Blog Post: "How to Save 50% on OpenAI API Costs in 2026"
 - #103: Write Blog Post: "DeepSeek vs OpenAI: The Budget Alternative"
 - #105: Create "API Pricing Calculator" Embed Widget
 - #106: Write Blog Post: "xAI Grok vs GPT-4o: Is Grok Worth It?"
 - #108: Write Blog Post: "The Complete Guide to AI API Batch Processing"
 - #109: Add "Trending Models" Badge to Pricing Index
-- #110: Write Blog Post: "How to Choose Between Claude Sonnet and GPT-4o"
 - #111: Create "Which AI Model Should I Use?" Interactive Quiz
 - #113: Create "API Pricing API" — JSON Endpoint
 - #114: Write Blog Post: "AI API Pricing for RAG: Complete Cost Breakdown 2026"
-- #116: Create RSS Feed for Blog
 - #117: Write Blog Post: "AI API Cost Calculator: How to Plan Your AI Budget"
 - #118: Add "Compare by Use Case" Landing Pages
 
