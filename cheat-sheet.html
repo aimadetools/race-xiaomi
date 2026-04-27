@@ -15,7 +15,9 @@
     <link rel="canonical" href="https://getapipulse.com/cheat-sheet.html">
     <link rel="alternate" type="application/rss+xml" title="APIpulse Blog" href="rss.xml">
     <link rel="stylesheet" href="styles.css">
-    <script src="pricing-data.js"></script>
+    <script src="analytics.js" defer></script>
+    <script src="dynamic-date.js" defer></script>
+    <script src="pricing-data.js" defer></script>
     <style>
         .cheat-sheet-hero {
             text-align: center; padding: 100px 24px 40px;
@@ -165,23 +167,21 @@
 
     <nav>
         <div class="nav-inner">
-            <a href="index.html" class="logo"><span>&#9889;</span> APIpulse</a>
-            <button class="hamburger" onclick="toggleMobileNav()" aria-label="Toggle navigation">
-                <span></span><span></span><span></span>
-            </button>
+            <a href="index.html" class="logo">API<span>pulse</span></a>
+            <button class="hamburger" onclick="toggleMobileNav()" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
             <div class="nav-links">
-                <a href="index.html">Home</a>
                 <a href="calculator.html">Calculator</a>
                 <a href="compare.html">Compare</a>
-                <a href="pricing-index.html">Pricing Index</a>
-                <a href="providers.html">Providers</a>
-                <a href="quiz.html">Quiz</a>
-                <a href="blog.html">Blog</a>
-                <a href="use-cases.html">Use Cases</a>
-                <a href="cheat-sheet.html" class="active">Cheat Sheet</a>
                 <a href="pricing.html">Pricing</a>
-                <a href="pro.html" class="nav-cta">Pro</a>
-                <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme"></button>
+                <a href="use-cases.html">Use Cases</a>
+                <a href="about.html">About</a>
+                <a href="blog.html">Blog</a>
+                <a href="quiz.html">Quiz</a>
+                <a href="pricing-index.html">Pricing Index</a>
+                <a href="pricing-trends.html">Trends</a>
+                <a href="cheat-sheet.html" class="active">Cheat Sheet</a>
+                <a href="pricing.html" class="nav-cta" onclick="if(window.trackEvent)window.trackEvent('pro_button_clicked',{source:'nav'})">Get Pro — $29</a>
+                <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
             </div>
         </div>
     </nav>
@@ -326,15 +326,9 @@
     </main>
 
     <footer>
-        <div style="max-width: var(--max-width); margin: 0 auto;">
-            <p style="margin-bottom: 12px;">
-                <a href="index.html">Home</a> &middot; <a href="calculator.html">Calculator</a> &middot;
-                <a href="compare.html">Compare</a> &middot; <a href="pricing-index.html">Pricing Index</a> &middot;
-                <a href="providers.html">Providers</a> &middot; <a href="blog.html">Blog</a> &middot;
-                <a href="pricing.html">Pricing</a> &middot; <a href="about.html">About</a>
-            </p>
-            <p>Pricing data last verified: <span id="last-verified-date"></span> &middot; &copy; 2026 APIpulse</p>
-        </div>
+        <p>Pricing data last verified: <span class="verified-date"></span></p>
+        <p>&copy; 2026 APIpulse. <a href="index.html">Home</a> &middot; <a href="use-cases.html">Use Cases</a> &middot; <a href="about.html">About</a> &middot; <a href="blog.html">Blog</a>
+<a href="pricing-index.html">Pricing Index</a> &middot; <a href="openai.html">OpenAI</a> &middot; <a href="anthropic.html">Anthropic</a> &middot; <a href="google.html">Google</a> &middot; <a href="mistral.html">Mistral</a> &middot; <a href="cohere.html">Cohere</a> &middot; <a href="deepseek.html">DeepSeek</a> &middot; <a href="xai.html">xAI</a> &middot; <a href="moonshot.html">Moonshot</a> &middot; <a href="together.html">Together.ai</a> &middot; <a href="ai21.html">AI21</a> &middot; <a href="pricing.html">Pricing</a> &middot; <a href="embed.html">Embed Widget</a> &middot; <a href="cheat-sheet.html">Cheat Sheet</a> &middot; <a href="https://x.com/getapipulse" target="_blank" rel="noopener">Twitter</a> &middot; <a href="unsubscribe.html">Unsubscribe</a></p>
     </footer>
 
     <button class="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">&#8593;</button>

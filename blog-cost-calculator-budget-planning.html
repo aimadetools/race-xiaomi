@@ -209,7 +209,7 @@
         <p>In this guide, we will walk through how to use the APIpulse cost calculator to estimate your monthly spend, compare models, and make smart decisions about where to allocate your AI budget.</p>
 
         <h2>Why Budget Planning Matters for AI APIs</h2>
-        <p>Unlike traditional cloud services where you can set fixed instance sizes and know roughly what you will pay, AI API costs are usage-based and vary significantly across providers. A single GPT-4o call might cost $0.003 while a Claude 3.5 Sonnet call for the same task costs $0.005. Multiply that across thousands of requests per day, and the difference becomes thousands of dollars per month.</p>
+        <p>Unlike traditional cloud services where you can set fixed instance sizes and know roughly what you will pay, AI API costs are usage-based and vary significantly across providers. A single GPT-4o call might cost $0.003 while a Claude Sonnet 4 call for the same task costs $0.005. Multiply that across thousands of requests per day, and the difference becomes thousands of dollars per month.</p>
 
         <p>Without a budget plan, teams often face these problems:</p>
         <ul>
@@ -228,9 +228,9 @@
         <p>The calculator includes a dropdown with every major AI model from OpenAI, Anthropic, Google, Mistral, Cohere, DeepSeek, and others. Each model entry shows its current pricing per 1M input and output tokens.</p>
         <p>When selecting a model, consider:</p>
         <ul>
-            <li><strong>Task complexity:</strong> Simple classification can use GPT-4o-mini or Claude 3.5 Haiku. Complex reasoning needs GPT-4o or Claude 4 Sonnet.</li>
+            <li><strong>Task complexity:</strong> Simple classification can use GPT-4o mini or Claude Haiku 3.5. Complex reasoning needs GPT-4o or Claude Sonnet 4.</li>
             <li><strong>Context window needs:</strong> If you need to process long documents, factor in the context limit — models with larger windows may save you from chunking overhead.</li>
-            <li><strong>Pricing tier:</strong> Budget models like DeepSeek V3 or Gemini 1.5 Flash are 10-50x cheaper than flagship models for many tasks.</li>
+            <li><strong>Pricing tier:</strong> Budget models like DeepSeek V3 or Gemini 2.0 Flash are 10-50x cheaper than flagship models for many tasks.</li>
         </ul>
 
         <h3>Step 2: Estimate Your Usage (Tokens Per Request)</h3>
@@ -266,8 +266,8 @@
             <p>At $50/month, you are in the territory of side projects, prototypes, and low-traffic applications. Here is what fits:</p>
             <ul>
                 <li><strong>What you can build:</strong> A personal chatbot, a code assistant for your own use, a summarization tool, or an internal knowledge base Q&A system</li>
-                <li><strong>Best models for this budget:</strong> GPT-4o-mini ($0.15/$0.60 per 1M tokens), Claude 3.5 Haiku ($0.80/$4.00 per 1M tokens), or Gemini 1.5 Flash ($0.075/$0.30 per 1M tokens)</li>
-                <li><strong>Example workload:</strong> ~500 requests/day with ~500 input tokens and ~300 output tokens. On GPT-4o-mini, this costs roughly $30/month. On Gemini 1.5 Flash, closer to $12/month.</li>
+                <li><strong>Best models for this budget:</strong> GPT-4o mini ($0.15/$0.60 per 1M tokens), Claude Haiku 3.5 ($0.80/$4.00 per 1M tokens), or Gemini 2.0 Flash ($0.10/$0.40 per 1M tokens)</li>
+                <li><strong>Example workload:</strong> ~500 requests/day with ~500 input tokens and ~300 output tokens. On GPT-4o mini, this costs roughly $30/month. On Gemini 2.0 Flash, closer to $12/month.</li>
             </ul>
             <p><strong>Tip:</strong> Start with a budget model and only upgrade to a flagship model if quality is genuinely insufficient for your use case. Many tasks do not need GPT-4o or Claude 4 Sonnet.</p>
         </div>
@@ -288,7 +288,7 @@
             <p>With $500 or more per month, you can run serious production workloads with premium models across the board.</p>
             <ul>
                 <li><strong>What you can build:</strong> A full-scale SaaS feature, enterprise document processing pipeline, large-scale code generation system, or a production AI agent</li>
-                <li><strong>Best models for this budget:</strong> GPT-4o or Claude 4 Sonnet for primary tasks, with Claude 3.5 Opus or GPT-4o for complex reasoning. Budget models still make sense for volume tasks.</li>
+                <li><strong>Best models for this budget:</strong> GPT-4o or Claude Sonnet 4 for primary tasks, with Claude Opus 4.7 or GPT-5 for complex reasoning. Budget models still make sense for volume tasks.</li>
                 <li><strong>Example workload:</strong> 5,000 requests/day with an average of 1,000 input tokens and 500 output tokens. On Claude 4 Sonnet, this costs approximately $450/month. On GPT-4o, closer to $325/month.</li>
             </ul>
             <p><strong>Tip:</strong> At this budget level, consider APIpulse Pro ($29/month) for real-time price tracking, alerts when costs change, and usage dashboards. The $29 investment can easily save you hundreds by catching price increases early and helping you optimize model selection.</p>
