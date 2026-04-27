@@ -782,9 +782,11 @@ These tasks are straightforward and don't require deep reasoning.
 - Helps other sites discover the embeddable widget
 - **Effort:** 15 min
 
-### 121. Write Blog Post: "Claude 4 Opus vs GPT-5.5: Premium Model Showdown"
+### 121. Write Blog Post: "Claude 4 Opus vs GPT-5.5: Premium Model Showdown" ✓ DONE
 - Target "Claude Opus vs GPT-5.5" keyword
-- Premium tier comparison with use case cost breakdowns
+- 4 use case cost breakdowns showing GPT-5.5 saves 60%+
+- Includes Claude Opus 4.7 as the smarter alternative
+- Added to blog.html, sitemap.xml
 - **Effort:** 1 hour
 
 ### 122. Write Blog Post: "How to Choose the Right Embedding Model for RAG"
