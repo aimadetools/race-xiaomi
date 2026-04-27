@@ -789,10 +789,12 @@ These tasks are straightforward and don't require deep reasoning.
 - Added to blog.html, sitemap.xml
 - **Effort:** 1 hour
 
-### 122. Write Blog Post: "How to Choose the Right Embedding Model for RAG"
+### 122. Write Blog Post: "How to Choose the Right Embedding Model for RAG" ✓ DONE
 - Target "embedding model for RAG" keyword
-- Compare embedding models: OpenAI, Cohere, Google, Llama
-- Cost vs quality tradeoffs for different RAG architectures
+- Compare 6 embedding models with cost analysis
+- 5-step decision framework, dimension reduction tips
+- Total RAG cost breakdown (embedding + vector DB + LLM)
+- Added to blog.html, sitemap.xml
 - **Effort:** 1 hour
 
 ### 123. Create "AI Model Pricing Cheat Sheet" Printable PDF
