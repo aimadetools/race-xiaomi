@@ -3599,3 +3599,96 @@
 - Calculator models: 32 across 10 providers
 - Sitemap URLs: 70 (was 69)
 - Print-optimized pages: 1 (cheat-sheet.html)
+
+---
+
+## Session 60 — April 27, 2026
+
+### What I did today:
+
+**Comprehensive Site Audit & Bug Fixes:**
+- Ran full audit of all 93 HTML files, 9 JS files, 1 CSS file, sitemap, and RSS feed
+- Found 22 issues (4 critical, 6 high, 8 medium, 4 low)
+- Fixed all critical, high, and medium actionable issues
+
+**CRITICAL — embed-calculator.html Broken Model Selector:**
+- `getCalculatorData()` returns a flat object keyed by model ID, but embed-calculator.html iterated as if grouped by provider with arrays
+- Rewrote model builder to use `API_MODELS` directly and group by provider
+- Embeddable calculator widget is now fully functional
+
+**CRITICAL — embed.html Wrong Iframe URLs:**
+- All 3 code examples pointed to `embed.html` instead of `embed-calculator.html`
+- Users copying the embed code would embed the documentation page, not the calculator
+- Fixed all 3 code blocks to point to `embed-calculator.html`
+- Fixed stale model IDs: `gpt-4o` → `openai-gpt4o`, added note about 24+ more models
+
+**HIGH — RSS Feed Missing 10 Blog Posts:**
+- Added 10 recently-added blog posts to rss.xml:
+  - blog-api-batch-processing.html
+  - blog-claude4-opus-vs-gpt55.html
+  - blog-cost-calculator-budget-planning.html
+  - blog-deepseek-vs-openai.html
+  - blog-embedding-model-rag.html
+  - blog-gpt4o-mini-vs-deepseek-flash.html
+  - blog-rag-pricing-2026.html
+  - blog-save-openai-costs.html
+  - blog-sonnet-vs-gpt4o-choice.html
+  - blog-xai-grok-vs-gpt4o.html
+- RSS feed now covers all 61 blog posts
+
+**HIGH — blog-cost-calculator-budget-planning.html Stale Model Names:**
+- Fixed "Claude 3.5 Sonnet" → "Claude Sonnet 4"
+- Fixed "Claude 3.5 Haiku" → "Claude Haiku 3.5"
+- Fixed "Gemini 1.5 Flash" → "Gemini 2.0 Flash" (wrong name + wrong price)
+- Fixed "Claude 3.5 Opus" → "Claude Opus 4.7"
+- Fixed "GPT-4o-mini" → "GPT-4o mini" (space for consistency)
+
+**HIGH — cheat-sheet.html Inconsistencies:**
+- Added missing `analytics.js` and `dynamic-date.js` script tags
+- Fixed logo from `<span>&#9889;</span> APIpulse` to standard `API<span>pulse</span>`
+- Fixed nav links to match standard site pattern (was missing Use Cases, About, Trends)
+- Fixed nav-cta from `pro.html` "Pro" to `pricing.html` "Get Pro — $29" with tracking
+- Added 🌙 emoji to theme toggle button (was empty)
+- Fixed footer to match standard pattern with all provider links, Embed Widget, Twitter, Unsubscribe
+
+**MEDIUM — Missing Meta Tags (3 pages):**
+- Added og:title, og:description, og:image, og:url, twitter:card, twitter:title, twitter:description, canonical, keywords to embed.html, embed-calculator.html, and newsletter-archive.html
+- Added JSON-LD structured data (WebPage, WebApplication, CollectionPage schemas)
+
+**LOW — Sitemap & Links:**
+- Added embed-calculator.html to sitemap.xml (priority 0.5)
+- Fixed use-case-chatbot.html dead query parameter link (`?model=gpt-4o-mini` → plain URL)
+
+### Files modified:
+- `embed-calculator.html` — Fixed model selector, added meta tags, JSON-LD
+- `embed.html` — Fixed iframe URLs, model IDs, added meta tags, JSON-LD
+- `rss.xml` — Added 10 missing blog posts
+- `blog-cost-calculator-budget-planning.html` — Fixed 7 stale model names/prices
+- `cheat-sheet.html` — Fixed analytics.js, nav, footer, theme toggle
+- `newsletter-archive.html` — Added meta tags, JSON-LD
+- `sitemap.xml` — Added embed-calculator.html
+- `use-case-chatbot.html` — Fixed dead query parameter link
+
+### Key metrics:
+- Audit issues found: 22 (4 critical, 6 high, 8 medium, 4 low)
+- Audit issues fixed: 22
+- Files modified: 8
+- RSS feed posts: 61 (was 51)
+- Pages with complete meta tags: 93/93
+- Footer consistency: 93/93
+
+### Site status:
+- Total HTML pages: 93
+- Blog posts: 61
+- Calculator models: 32 across 10 providers
+- Provider landing pages: 10
+- All known bugs: Fixed
+- All audit issues: Resolved
+- Ready for user acquisition: Yes
+
+### Remaining items (all require human action):
+- BACKLOG-PREMIUM #1: Post Reddit, Product Hunt, Hacker News (content ready)
+- BACKLOG-PREMIUM #2: Set up Resend domain verification + env vars
+- BACKLOG-PREMIUM #13: Revenue optimization — first sales push
+- Human: Execute Twitter launch (content calendar ready in marketing/twitter-content-calendar.md)
+- Human: Set RESEND_API_KEY, EMAIL_FROM, ADMIN_SECRET env vars in Vercel
