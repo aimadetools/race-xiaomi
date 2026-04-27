@@ -116,6 +116,18 @@
         }
         .danger-box strong { color: var(--red); }
 
+        .share-section {
+            max-width: 700px; margin: 0 auto; padding: 30px 24px; text-align: center;
+            border-top: 1px solid var(--border);
+        }
+        .share-section p { color: var(--text-secondary); font-size: 14px; margin-bottom: 12px; }
+        .share-btn {
+            display: inline-block; padding: 8px 16px; border: 1px solid var(--border);
+            border-radius: 6px; font-size: 13px; color: var(--text-secondary);
+            text-decoration: none; margin: 0 4px; transition: all 0.2s;
+        }
+        .share-btn:hover { background: var(--accent); color: white; border-color: var(--accent); }
+
         .related-reading {
             background: var(--bg-secondary); border: 1px solid var(--border);
             border-radius: 12px; padding: 28px; margin: 48px 0;
@@ -618,6 +630,12 @@ await ai.chat('openai', 'gpt-4o', [{ role: 'user', content: 'Hello' }]);</code><
             <h3>Calculate Your API Costs</h3>
             <p>Before choosing a provider, estimate your monthly spend with our free calculator. Compare 32 models across 10 providers.</p>
             <a href="calculator.html" class="btn-primary" style="display:inline-block;padding:12px 28px;">Try the Calculator</a>
+        </div>
+
+        <div class="share-section">
+            <p>Found this useful? Share it:</p>
+            <a href="https://twitter.com/intent/tweet?text=The%20Complete%20Guide%20to%20AI%20API%20Authentication&url=https%3A%2F%2Fgetapipulse.com%2Fblog-api-authentication.html" target="_blank" rel="noopener" class="share-btn">Share on X</a>
+            <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fgetapipulse.com%2Fblog-api-authentication.html" target="_blank" rel="noopener" class="share-btn">Share on LinkedIn</a>
         </div>
 
         <div class="related-reading">

@@ -176,6 +176,27 @@
             padding: 4px 12px; border-radius: 6px; font-size: 13px; font-weight: 600;
             margin-top: 12px;
         }
+        .recommendations { margin-top: 16px; }
+        .recommendations h3 { font-size: 15px; font-weight: 700; margin-bottom: 10px; color: var(--text-primary); }
+        .rec-card {
+            background: rgba(34,197,94,0.05); border: 1px solid rgba(34,197,94,0.2);
+            border-radius: 8px; padding: 12px 14px; margin-bottom: 8px;
+            display: flex; justify-content: space-between; align-items: center; gap: 12px;
+        }
+        .rec-card:last-child { margin-bottom: 0; }
+        .rec-info { flex: 1; }
+        .rec-name { font-size: 14px; font-weight: 600; color: var(--text-primary); }
+        .rec-meta { font-size: 12px; color: var(--text-secondary); margin-top: 2px; }
+        .rec-savings {
+            background: rgba(34,197,94,0.15); color: var(--green);
+            padding: 4px 10px; border-radius: 6px; font-size: 13px; font-weight: 700;
+            white-space: nowrap;
+        }
+        .rec-compare {
+            display: inline-block; margin-top: 10px; font-size: 13px;
+            color: var(--accent); text-decoration: none; font-weight: 600;
+        }
+        .rec-compare:hover { text-decoration: underline; }
 
         /* Comparison Table */
         .comparison-section {
@@ -200,6 +221,31 @@
         .comparison-table .provider-name { font-weight: 600; color: var(--text-primary); }
         .comparison-table .price { color: var(--accent); font-weight: 600; }
         .comparison-table .cheapest { background: rgba(34,197,94,0.05); }
+
+        /* Popular Comparisons */
+        .popular-comparisons { padding: 60px 24px; max-width: var(--max-width); margin: 0 auto; }
+        .popular-comparisons .section-header { text-align: center; margin-bottom: 32px; }
+        .popular-comparisons .section-header h2 { font-size: 24px; font-weight: 700; margin-bottom: 8px; }
+        .popular-comparisons .section-header p { color: var(--text-secondary); font-size: 15px; }
+        .comparisons-grid {
+            display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 16px;
+        }
+        .comparison-card {
+            background: var(--bg-secondary); border: 1px solid var(--border);
+            border-radius: 12px; padding: 20px; text-decoration: none;
+            transition: transform 0.2s, border-color 0.2s;
+        }
+        .comparison-card:hover { transform: translateY(-2px); border-color: var(--accent); }
+        .comparison-card h3 { font-size: 16px; font-weight: 700; margin-bottom: 6px; color: var(--text-primary); }
+        .comparison-card .card-meta { font-size: 13px; color: var(--text-secondary); margin-bottom: 10px; }
+        .comparison-card .card-vs {
+            display: inline-block; background: rgba(99,102,241,0.1); color: var(--accent);
+            padding: 2px 8px; border-radius: 4px; font-size: 12px; font-weight: 600;
+        }
+        .comparison-card .card-cta {
+            display: block; margin-top: 12px; font-size: 13px; color: var(--accent);
+            font-weight: 600;
+        }
 
         /* Features */
         .features-section {
@@ -667,6 +713,51 @@
         </table>
     </section>
 
+    <section class="popular-comparisons">
+        <div class="section-header">
+            <h2>Popular Model Comparisons</h2>
+            <p>See how the most compared models stack up on price, context, and value.</p>
+        </div>
+        <div class="comparisons-grid">
+            <a href="compare.html?m1=openai-gpt4o&m2=anthropic-sonnet" class="comparison-card">
+                <h3>GPT-4o vs Claude Sonnet 4</h3>
+                <div class="card-meta">The two most popular mid-tier models</div>
+                <span class="card-vs">$2.50/$10 vs $3/$15 per 1M tokens</span>
+                <span class="card-cta">Compare →</span>
+            </a>
+            <a href="compare.html?m1=openai-gpt4o-mini&m2=google-flash" class="comparison-card">
+                <h3>GPT-4o mini vs Gemini Flash</h3>
+                <div class="card-meta">Budget-tier showdown for high-volume apps</div>
+                <span class="card-vs">$0.15/$0.60 vs $0.10/$0.40 per 1M tokens</span>
+                <span class="card-cta">Compare →</span>
+            </a>
+            <a href="compare.html?m1=google-pro&m2=anthropic-sonnet" class="comparison-card">
+                <h3>Gemini 2.5 Pro vs Claude Sonnet 4</h3>
+                <div class="card-meta">Best value premium models head-to-head</div>
+                <span class="card-vs">$1.25/$10 vs $3/$15 per 1M tokens</span>
+                <span class="card-cta">Compare →</span>
+            </a>
+            <a href="compare.html?m1=deepseek-v4-pro&m2=openai-gpt4o" class="comparison-card">
+                <h3>DeepSeek V4 Pro vs GPT-4o</h3>
+                <div class="card-meta">Budget challenger vs established leader</div>
+                <span class="card-vs">$2.18/$8.72 vs $2.50/$10 per 1M tokens</span>
+                <span class="card-cta">Compare →</span>
+            </a>
+            <a href="compare.html?m1=anthropic-opus&m2=openai-gpt5" class="comparison-card">
+                <h3>Claude 4 Opus vs GPT-5</h3>
+                <div class="card-meta">Premium flagships — is the quality worth the price?</div>
+                <span class="card-vs">$15/$75 vs $10/$30 per 1M tokens</span>
+                <span class="card-cta">Compare →</span>
+            </a>
+            <a href="compare.html?m1=llama-4-scout&m2=deepseek-v4-flash" class="comparison-card">
+                <h3>Llama 4 Scout vs DeepSeek V4 Flash</h3>
+                <div class="card-meta">Ultra-budget models with massive context</div>
+                <span class="card-vs">$0.11/$0.34 vs $0.14/$0.28 per 1M tokens</span>
+                <span class="card-cta">Compare →</span>
+            </a>
+        </div>
+    </section>
+
     <section class="features-section">
         <div class="section-header">
             <h2>Stop overpaying for AI APIs</h2>
@@ -937,25 +1028,18 @@
             document.getElementById('total-tokens').textContent = totalTokens.toLocaleString();
             document.getElementById('monthly-total').textContent = '$' + totalCost.toFixed(2);
 
-            // Find cheapest alternative
-            let cheapest = null;
-            let cheapestCost = Infinity;
-            for (const [key, p2] of Object.entries(providers)) {
-                if (key === provider) continue;
-                const cost = ((inputTokens * requests * days / 1000000) * p2.input) +
-                             ((outputTokens * requests * days / 1000000) * p2.output);
-                if (cost < cheapestCost) {
-                    cheapestCost = cost;
-                    cheapest = p2;
-                }
-            }
-
+            // Recommended alternatives
             const savingsContainer = document.getElementById('savings-container');
-            if (cheapest && cheapestCost < totalCost) {
-                const savings = totalCost - cheapestCost;
-                savingsContainer.innerHTML = `<div class="savings-badge">Switch to ${cheapest.name} to save $${savings.toFixed(2)}/mo</div>`;
+            const recs = typeof getRecommendations === 'function' ? getRecommendations(provider, inputTokens, outputTokens, requests, days, 3) : [];
+            if (recs.length > 0) {
+                let html = '<div class="recommendations"><h3>Recommended For You</h3>';
+                recs.forEach(r => {
+                    html += `<div class="rec-card"><div class="rec-info"><div class="rec-name">${r.provider} ${r.name}</div><div class="rec-meta">${r.tier} · $${r.input}/$${r.output} per 1M · ${r.context} context</div></div><div class="rec-savings">Save $${r.savings.toFixed(2)}/mo (${Math.round(r.savingsPct)}%)</div></div>`;
+                });
+                html += '<a href="compare.html" class="rec-compare">Compare these models →</a></div>';
+                savingsContainer.innerHTML = html;
             } else {
-                savingsContainer.innerHTML = '';
+                savingsContainer.innerHTML = '<div class="savings-badge">This is already the cheapest option for your usage!</div>';
             }
 
             setTimeout(() => results.classList.remove('calculating'), 300);

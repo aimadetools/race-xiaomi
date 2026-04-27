@@ -219,6 +219,28 @@
             .cta-section { padding: 40px 16px; }
             .cta-section h2 { font-size: 22px; }
         }
+        .recommendations { margin-top: 16px; }
+        .recommendations h3 { font-size: 15px; font-weight: 700; margin-bottom: 10px; color: var(--text-primary); }
+        .rec-card {
+            background: rgba(34,197,94,0.05); border: 1px solid rgba(34,197,94,0.2);
+            border-radius: 8px; padding: 12px 14px; margin-bottom: 8px;
+            display: flex; justify-content: space-between; align-items: center; gap: 12px;
+        }
+        .rec-card:last-child { margin-bottom: 0; }
+        .rec-info { flex: 1; }
+        .rec-name { font-size: 14px; font-weight: 600; color: var(--text-primary); }
+        .rec-meta { font-size: 12px; color: var(--text-secondary); margin-top: 2px; }
+        .rec-savings {
+            background: rgba(34,197,94,0.15); color: var(--green);
+            padding: 4px 10px; border-radius: 6px; font-size: 13px; font-weight: 700;
+            white-space: nowrap;
+        }
+        .rec-compare {
+            display: inline-block; margin-top: 10px; font-size: 13px;
+            color: var(--accent); text-decoration: none; font-weight: 600;
+        }
+        .rec-compare:hover { text-decoration: underline; }
+
         @media print {
             nav, .calculator-section, .cta-inline, .cta-section, .email-section, .theme-toggle, .back-to-top { display: none !important; }
             body { background: white; color: black; }
@@ -549,22 +571,18 @@
             document.getElementById('calc-total-tokens').textContent = totalTokens.toLocaleString();
             document.getElementById('calc-monthly-total').textContent = '$' + totalCost.toFixed(2);
 
-            // Savings suggestion
-            const container = document.getElementById('calc-savings-container');
-            container.innerHTML = '';
-            if (totalCost > 0) {
-                const cheapest = Object.entries(moonshotModels).reduce((a, b) => {
-                    const aCost = (totalInputTokens / 1000000) * a[1].input + (totalOutputTokens / 1000000) * a[1].output;
-                    const bCost = (totalInputTokens / 1000000) * b[1].input + (totalOutputTokens / 1000000) * b[1].output;
-                    return aCost < bCost ? a : b;
+            // Recommended alternatives
+            const savingsContainer = document.getElementById('calc-savings-container');
+            const recs = typeof getRecommendations === 'function' ? getRecommendations(provider, inputTokens, outputTokens, requests, days, 3) : [];
+            if (recs.length > 0) {
+                let html = '<div class="recommendations"><h3>Recommended For You</h3>';
+                recs.forEach(r => {
+                    html += '<div class="rec-card"><div class="rec-info"><div class="rec-name">' + r.provider + ' ' + r.name + '</div><div class="rec-meta">' + r.tier + ' · $' + r.input + '/$' + r.output + ' per 1M · ' + r.context + ' context</div></div><div class="rec-savings">Save $' + r.savings.toFixed(2) + '/mo (' + Math.round(r.savingsPct) + '%)</div></div>';
                 });
-                if (cheapest[0] !== provider) {
-                    const cheapestCost = (totalInputTokens / 1000000) * cheapest[1].input + (totalOutputTokens / 1000000) * cheapest[1].output;
-                    const savings = totalCost - cheapestCost;
-                    if (savings > 0.01) {
-                        container.innerHTML = '<div class="savings-badge">Save $' + savings.toFixed(2) + '/mo with ' + cheapest[1].name + '</div>';
-                    }
-                }
+                html += '<a href="compare.html" class="rec-compare">Compare these models →</a></div>';
+                savingsContainer.innerHTML = html;
+            } else {
+                savingsContainer.innerHTML = '<div style="background:rgba(34,197,94,0.1);border:1px solid rgba(34,197,94,0.3);color:#22c55e;padding:10px 16px;border-radius:8px;font-size:13px;font-weight:600;margin-top:12px;text-align:center;">This is already the cheapest option!</div>';
             }
         }
 

@@ -121,3 +121,36 @@ function getProviderCalculatorData(providerSlug) {
     });
     return result;
 }
+
+// Helper: Get top N cheaper recommendations for a given model and usage
+function getRecommendations(currentModelId, inputTokens, outputTokens, requests, days, count) {
+    count = count || 3;
+    const current = getModelById(currentModelId);
+    if (!current) return [];
+    const totalInput = inputTokens * requests * days;
+    const totalOutput = outputTokens * requests * days;
+    const currentCost = (totalInput / 1000000) * current.input + (totalOutput / 1000000) * current.output;
+
+    const alternatives = API_MODELS
+        .filter(m => m.id !== currentModelId)
+        .map(m => {
+            const cost = (totalInput / 1000000) * m.input + (totalOutput / 1000000) * m.output;
+            return {
+                id: m.id,
+                name: m.name,
+                provider: m.provider,
+                providerSlug: m.providerSlug,
+                tier: m.tier,
+                input: m.input,
+                output: m.output,
+                context: m.context,
+                cost: cost,
+                savings: currentCost - cost,
+                savingsPct: currentCost > 0 ? ((currentCost - cost) / currentCost * 100) : 0
+            };
+        })
+        .filter(a => a.savings > 0)
+        .sort((a, b) => b.savings - a.savings);
+
+    return alternatives.slice(0, count);
+}

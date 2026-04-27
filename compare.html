@@ -448,6 +448,15 @@
             }
         }
 
+        // Pre-select models from query parameters
+        const params = new URLSearchParams(window.location.search);
+        if (params.get('m1') && models[params.get('m1')]) {
+            document.getElementById('model-a').value = params.get('m1');
+        }
+        if (params.get('m2') && models[params.get('m2')]) {
+            document.getElementById('model-b').value = params.get('m2');
+        }
+
         // Init
         updateComparison();
     </script>

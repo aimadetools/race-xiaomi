@@ -672,7 +672,7 @@ These tasks are straightforward and don't require deep reasoning.
 - Show cost savings at different scale levels
 - **Effort:** 1 hour
 
-### 104. Add "Share on LinkedIn" Button to Blog Posts
+### 104. Add "Share on LinkedIn" Button to Blog Posts ✓ DONE
 - Add LinkedIn share button alongside Twitter share button
 - LinkedIn has higher engagement for B2B/developer content
 - Update share-section CSS if needed
@@ -690,7 +690,7 @@ These tasks are straightforward and don't require deep reasoning.
 - Include cost breakdowns
 - **Effort:** 1 hour
 
-### 107. Add "Popular Comparisons" Section to Homepage
+### 107. Add "Popular Comparisons" Section to Homepage ✓ DONE
 - Add a grid of popular model comparisons
 - Link to compare.html with pre-selected models
 - Examples: GPT-4o vs Claude Sonnet, Gemini Flash vs GPT-4o mini
@@ -713,3 +713,58 @@ These tasks are straightforward and don't require deep reasoning.
 - Detailed comparison with real-world examples
 - Include calculator links
 - **Effort:** 1 hour
+
+---
+
+## New Tasks — Session 55 (April 27, 2026)
+
+### 111. Create "Which AI Model Should I Use?" Interactive Quiz
+- Build a simple interactive quiz (5 questions) that recommends the best model
+- Questions: use case, budget, context needs, quality requirements, provider preference
+- Results page with top 3 recommendations + calculator link
+- Targets "which AI model should I use" keyword
+- **Effort:** 1.5 hours
+
+### 112. Add LinkedIn Share Button to Blog Posts
+- Add LinkedIn share button alongside Twitter share button
+- LinkedIn has higher engagement for B2B/developer content
+- Update share-section CSS if needed
+- **Effort:** 30 min
+
+### 113. Create "API Pricing API" — JSON Endpoint
+- Create api/pricing.js that returns pricing-data.js as JSON
+- Developers can programmatically access pricing data
+- Targets "AI API pricing API" keyword
+- Use case: tools, dashboards, CI/CD cost checks
+- **Effort:** 1 hour
+
+### 114. Write Blog Post: "AI API Pricing for RAG: Complete Cost Breakdown 2026"
+- Update RAG cost analysis with latest model prices
+- Include Llama 4, DeepSeek V4, Gemini 3 Pro
+- Cost comparison tables at 3 scale levels
+- **Effort:** 1 hour
+
+### 115. Add "Recommended For You" Section to Calculator Results ✓ DONE
+- After calculating costs, show 2-3 cheaper alternatives
+- "Save X% by switching to [model]" recommendations
+- Links to compare.html with pre-selected models
+- **Effort:** 1 hour
+
+### 116. Create RSS Feed for Blog
+- Generate rss.xml with all 51 blog posts
+- Add RSS link to HTML head on all pages
+- Developers use RSS for staying updated
+- **Effort:** 30 min
+
+### 117. Write Blog Post: "AI API Cost Calculator: How to Plan Your AI Budget"
+- Self-referential post targeting "AI API cost calculator" keyword
+- Show how to use APIpulse for budget planning
+- 3 real-world budget planning scenarios
+- **Effort:** 1 hour
+
+### 118. Add "Compare by Use Case" Landing Pages
+- Create use-case-specific comparison pages
+- "Best AI API for Chatbots" — compare models for chatbot workloads
+- "Best AI API for Code Generation" — compare models for code tasks
+- Each with pre-filled calculator and recommendations
+- **Effort:** 1 hour per page
