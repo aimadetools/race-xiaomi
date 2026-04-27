@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Which AI Model Should I Use? — Free Quiz — APIpulse</title>
+    <meta name="description" content="Answer 5 quick questions and get a personalized AI model recommendation based on your use case, budget, and quality needs. Compare pricing instantly.">
+    <meta name="keywords" content="which AI model should I use, AI model selector, LLM recommendation, best AI model for my use case">
+    <meta property="og:title" content="Which AI Model Should I Use? — Free Quiz — APIpulse">
+    <meta property="og:description" content="Answer 5 quick questions and get a personalized AI model recommendation based on your use case, budget, and quality needs.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://getapipulse.com/og-image.png">
+    <meta property="og:url" content="https://getapipulse.com/quiz.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Which AI Model Should I Use? — Free Quiz — APIpulse">
+    <meta name="twitter:image" content="https://getapipulse.com/og-image.png">
+    <meta name="twitter:description" content="Answer 5 quick questions and get a personalized AI model recommendation.">
+    <link rel="canonical" href="https://getapipulse.com/quiz.html">
+    <link rel="alternate" type="application/rss+xml" title="APIpulse Blog" href="https://getapipulse.com/rss.xml">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="styles.css">
+    <script src="analytics.js" defer></script>
+    <script src="dynamic-date.js" defer></script>
+    <script src="shared.js" defer></script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "Which AI Model Should I Use? — Free Quiz",
+        "description": "Answer 5 quick questions and get a personalized AI model recommendation based on your use case, budget, and quality needs.",
+        "url": "https://getapipulse.com/quiz.html",
+        "publisher": { "@type": "Organization", "name": "APIpulse", "url": "https://getapipulse.com" }
+    }
+    </script>
+    <style>
+        .content { max-width: 700px; margin: 0 auto; padding: 120px 24px 80px; }
+        h1 { font-size: 40px; font-weight: 800; text-align: center; margin-bottom: 12px; }
+        .subtitle { text-align: center; color: var(--text-secondary); font-size: 18px; margin-bottom: 48px; }
+
+        .quiz-container { display: none; }
+        .quiz-container.active { display: block; }
+
+        .question-card {
+            background: var(--bg-secondary); border: 1px solid var(--border);
+            border-radius: 16px; padding: 32px; margin-bottom: 24px;
+        }
+        .question-number { font-size: 13px; color: var(--accent); font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px; }
+        .question-text { font-size: 20px; font-weight: 700; margin-bottom: 20px; }
+
+        .options { display: grid; gap: 10px; }
+        .option-btn {
+            display: block; width: 100%; text-align: left; padding: 14px 18px;
+            background: var(--bg-card); border: 1px solid var(--border); border-radius: 10px;
+            color: var(--text-primary); font-size: 15px; cursor: pointer; transition: all 0.2s;
+        }
+        .option-btn:hover { border-color: var(--accent); background: var(--accent-glow); }
+        .option-btn.selected { border-color: var(--accent); background: var(--accent-glow); font-weight: 600; }
+
+        .progress-bar { height: 4px; background: var(--bg-secondary); border-radius: 2px; margin-bottom: 32px; overflow: hidden; }
+        .progress-fill { height: 100%; background: var(--accent); border-radius: 2px; transition: width 0.3s; }
+
+        .results { display: none; }
+        .results.active { display: block; }
+        .result-card {
+            background: var(--bg-secondary); border: 1px solid var(--border);
+            border-radius: 16px; padding: 32px; margin-bottom: 20px;
+        }
+        .result-card.top-pick { border-color: var(--accent); border-width: 2px; }
+        .result-rank { font-size: 13px; color: var(--accent); font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 4px; }
+        .result-name { font-size: 22px; font-weight: 700; margin-bottom: 4px; }
+        .result-provider { font-size: 14px; color: var(--text-secondary); margin-bottom: 12px; }
+        .result-reason { font-size: 14px; color: var(--text-secondary); margin-bottom: 16px; line-height: 1.6; }
+        .result-pricing { display: flex; gap: 16px; flex-wrap: wrap; }
+        .result-price { font-size: 14px; }
+        .result-price strong { color: var(--accent); }
+
+        .restart-btn {
+            display: inline-block; margin-top: 24px; padding: 12px 24px;
+            background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 8px;
+            color: var(--text-primary); font-size: 14px; font-weight: 600; cursor: pointer; transition: all 0.2s;
+        }
+        .restart-btn:hover { border-color: var(--accent); color: var(--accent); }
+
+        @media (max-width: 768px) {
+            .content { padding: 100px 16px 60px; }
+            h1 { font-size: 28px; }
+            .question-card { padding: 24px; }
+        }
+    </style>
+    <meta name="theme-color" content="#6366f1">
+    <link rel="preconnect" href="https://getapipulse.com">
+</head>
+<body>
+    <a href="#main" class="skip-link">Skip to content</a>
+    <nav>
+        <div class="nav-inner">
+            <a href="index.html" class="logo">API<span>pulse</span></a>
+            <button class="hamburger" onclick="toggleMobileNav()" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+            <div class="nav-links">
+                <a href="calculator.html">Calculator</a>
+                <a href="compare.html">Compare</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="use-cases.html">Use Cases</a>
+                <a href="about.html">About</a>
+                <a href="blog.html">Blog</a>
+                <a href="pricing-index.html">Pricing Index</a>
+                <a href="pricing-trends.html">Trends</a>
+                <a href="pricing.html" class="nav-cta" onclick="if(window.trackEvent)window.trackEvent('pro_button_clicked',{source:'nav'})">Get Pro — $29</a>
+                <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
+            </div>
+        </div>
+    </nav>
+
+    <main id="main">
+    <div class="content">
+        <h1>Which AI Model Should I Use?</h1>
+        <p class="subtitle">Answer 5 quick questions. Get a personalized recommendation with pricing.</p>
+
+        <div class="progress-bar"><div class="progress-fill" id="progress-fill" style="width: 0%"></div></div>
+
+        <!-- Question 1 -->
+        <div class="quiz-container active" id="q1">
+            <div class="question-card">
+                <div class="question-number">Question 1 of 5</div>
+                <div class="question-text">What are you building?</div>
+                <div class="options">
+                    <button class="option-btn" onclick="answer(1,'chatbot')">Customer support chatbot</button>
+                    <button class="option-btn" onclick="answer(1,'code')">Code generation / assistant</button>
+                    <button class="option-btn" onclick="answer(1,'content')">Content generation / writing</button>
+                    <button class="option-btn" onclick="answer(1,'data')">Data analysis / extraction</button>
+                    <button class="option-btn" onclick="answer(1,'rag')">RAG / knowledge base</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Question 2 -->
+        <div class="quiz-container" id="q2">
+            <div class="question-card">
+                <div class="question-number">Question 2 of 5</div>
+                <div class="question-text">What's your monthly budget?</div>
+                <div class="options">
+                    <button class="option-btn" onclick="answer(2,'free')">Free / under $10/mo</button>
+                    <button class="option-btn" onclick="answer(2,'low')">$10 – $50/mo</button>
+                    <button class="option-btn" onclick="answer(2,'mid')">$50 – $200/mo</button>
+                    <button class="option-btn" onclick="answer(2,'high')">$200 – $500/mo</button>
+                    <button class="option-btn" onclick="answer(2,'unlimited')">$500+/mo — cost isn't the main concern</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Question 3 -->
+        <div class="quiz-container" id="q3">
+            <div class="question-card">
+                <div class="question-number">Question 3 of 5</div>
+                <div class="question-text">How important is output quality vs. speed?</div>
+                <div class="options">
+                    <button class="option-btn" onclick="answer(3,'speed')">Speed matters most — real-time responses</button>
+                    <button class="option-btn" onclick="answer(3,'balance')">Good balance of both</button>
+                    <button class="option-btn" onclick="answer(3,'quality')">Quality matters most — take your time</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Question 4 -->
+        <div class="quiz-container" id="q4">
+            <div class="question-card">
+                <div class="question-number">Question 4 of 5</div>
+                <div class="question-text">How much context (input) does each request need?</div>
+                <div class="options">
+                    <button class="option-btn" onclick="answer(4,'short')">Short — a few sentences (< 1K tokens)</button>
+                    <button class="option-btn" onclick="answer(4,'medium')">Medium — a page or two (1K–10K tokens)</button>
+                    <button class="option-btn" onclick="answer(4,'long')">Long — documents or code (10K–100K tokens)</button>
+                    <button class="option-btn" onclick="answer(4,'massive')">Massive — entire codebase (100K+ tokens)</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Question 5 -->
+        <div class="quiz-container" id="q5">
+            <div class="question-card">
+                <div class="question-number">Question 5 of 5</div>
+                <div class="question-text">Do you have a provider preference?</div>
+                <div class="options">
+                    <button class="option-btn" onclick="answer(5,'any')">No preference — show me the best options</button>
+                    <button class="option-btn" onclick="answer(5,'openai')">OpenAI (GPT ecosystem)</button>
+                    <button class="option-btn" onclick="answer(5,'anthropic')">Anthropic (Claude)</button>
+                    <button class="option-btn" onclick="answer(5,'google')">Google (Gemini)</button>
+                    <button class="option-btn" onclick="answer(5,'budget')">Cheapest provider — I don't care who</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Results -->
+        <div class="results" id="results"></div>
+
+    </div>
+
+    <button class="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">↑</button>
+    </main>
+
+    <footer>
+        <p>Pricing data last verified: <span class="verified-date"></span></p>
+        <p>&copy; 2026 APIpulse. <a href="index.html">Home</a> &middot; <a href="use-cases.html">Use Cases</a> &middot; <a href="about.html">About</a> &middot; <a href="blog.html">Blog</a> &middot; <a href="pricing-index.html">Pricing Index</a> &middot; <a href="openai.html">OpenAI</a> &middot; <a href="anthropic.html">Anthropic</a> &middot; <a href="google.html">Google</a> &middot; <a href="mistral.html">Mistral</a> &middot; <a href="cohere.html">Cohere</a> &middot; <a href="deepseek.html">DeepSeek</a> &middot; <a href="xai.html">xAI</a> &middot; <a href="moonshot.html">Moonshot</a> &middot; <a href="together.html">Together.ai</a> &middot; <a href="ai21.html">AI21</a> &middot; <a href="pricing.html">Pricing</a> &middot; <a href="https://x.com/getapipulse" target="_blank" rel="noopener">Twitter</a> &middot; <a href="unsubscribe.html">Unsubscribe</a></p>
+    </footer>
+
+    <script>
+    const answers = {};
+    let currentQ = 1;
+
+    function answer(q, val) {
+        answers[q] = val;
+        // Highlight selected
+        const btns = document.querySelectorAll(`#q${q} .option-btn`);
+        btns.forEach(b => b.classList.remove('selected'));
+        event.target.classList.add('selected');
+
+        setTimeout(() => {
+            if (q < 5) {
+                document.getElementById(`q${q}`).classList.remove('active');
+                document.getElementById(`q${q+1}`).classList.add('active');
+                currentQ = q + 1;
+                document.getElementById('progress-fill').style.width = `${(currentQ - 1) * 20}%`;
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            } else {
+                document.getElementById(`q${q}`).classList.remove('active');
+                document.getElementById('progress-fill').style.width = '100%';
+                showResults();
+            }
+        }, 300);
+    }
+
+    function showResults() {
+        const models = [
+            { name: 'GPT-4o mini', provider: 'OpenAI', tier: 'Budget', input: 0.15, output: 0.60, context: '128K', scores: { code: 7, chatbot: 8, content: 7, data: 7, rag: 7, speed: 9, quality: 6, balance: 8, short: 9, medium: 8, long: 7, massive: 5 } },
+            { name: 'Gemini 2.0 Flash', provider: 'Google', tier: 'Budget', input: 0.10, output: 0.40, context: '1M', scores: { code: 6, chatbot: 7, content: 6, data: 7, rag: 8, speed: 9, quality: 5, balance: 7, short: 9, medium: 8, long: 9, massive: 9 } },
+            { name: 'DeepSeek V4 Pro', provider: 'DeepSeek', tier: 'Mid', input: 0.55, output: 2.19, context: '128K', scores: { code: 9, chatbot: 7, content: 7, data: 8, rag: 7, speed: 7, quality: 8, balance: 8, short: 8, medium: 8, long: 7, massive: 5 } },
+            { name: 'Claude Sonnet 4', provider: 'Anthropic', tier: 'Mid', input: 3.00, output: 15.00, context: '200K', scores: { code: 9, chatbot: 8, content: 9, data: 9, rag: 8, speed: 6, quality: 9, balance: 7, short: 8, medium: 9, long: 9, massive: 7 } },
+            { name: 'GPT-4o', provider: 'OpenAI', tier: 'Mid', input: 2.50, output: 10.00, context: '128K', scores: { code: 8, chatbot: 9, content: 8, data: 8, rag: 8, speed: 7, quality: 9, balance: 8, short: 9, medium: 9, long: 8, massive: 5 } },
+            { name: 'Gemini 2.5 Pro', provider: 'Google', tier: 'Mid', input: 1.25, output: 10.00, context: '1M', scores: { code: 8, chatbot: 8, content: 8, data: 9, rag: 9, speed: 6, quality: 8, balance: 7, short: 8, medium: 9, long: 10, massive: 10 } },
+            { name: 'Claude Haiku 3.5', provider: 'Anthropic', tier: 'Budget', input: 0.80, output: 4.00, context: '200K', scores: { code: 7, chatbot: 8, content: 7, data: 7, rag: 7, speed: 8, quality: 7, balance: 8, short: 9, medium: 8, long: 8, massive: 6 } },
+            { name: 'DeepSeek V4 Flash', provider: 'DeepSeek', tier: 'Budget', input: 0.14, output: 0.28, context: '128K', scores: { code: 6, chatbot: 7, content: 6, data: 7, rag: 7, speed: 9, quality: 5, balance: 7, short: 9, medium: 8, long: 7, massive: 5 } },
+            { name: 'Claude Opus 4', provider: 'Anthropic', tier: 'Premium', input: 15.00, output: 75.00, context: '200K', scores: { code: 10, chatbot: 9, content: 10, data: 10, rag: 9, speed: 4, quality: 10, balance: 5, short: 7, medium: 9, long: 9, massive: 7 } },
+            { name: 'GPT-5', provider: 'OpenAI', tier: 'Premium', input: 10.00, output: 30.00, context: '128K', scores: { code: 10, chatbot: 9, content: 9, data: 9, rag: 9, speed: 5, quality: 10, balance: 6, short: 8, medium: 9, long: 8, massive: 5 } },
+            { name: 'Llama 4 Scout', provider: 'Meta (Together.ai)', tier: 'Budget', input: 0.08, output: 0.08, context: '10M', scores: { code: 7, chatbot: 6, content: 6, data: 7, rag: 8, speed: 8, quality: 6, balance: 7, short: 8, medium: 7, long: 9, massive: 10 } },
+            { name: 'Mistral Small', provider: 'Mistral', tier: 'Budget', input: 0.10, output: 0.30, context: '128K', scores: { code: 6, chatbot: 7, content: 6, data: 7, rag: 7, speed: 8, quality: 6, balance: 7, short: 9, medium: 8, long: 7, massive: 5 } }
+        ];
+
+        // Score each model based on answers
+        const scored = models.map(m => {
+            let score = 0;
+            // Use case weight
+            score += (m.scores[answers[1]] || 5) * 3;
+            // Budget filter
+            const budget = answers[2];
+            if (budget === 'free' && m.input > 0.5) score -= 20;
+            if (budget === 'low' && m.input > 3) score -= 15;
+            if (budget === 'mid' && m.input > 10) score -= 10;
+            if (budget === 'unlimited') score += 5;
+            // Speed/quality preference
+            score += (m.scores[answers[3]] || 5) * 2;
+            // Context length
+            score += (m.scores[answers[4]] || 5) * 2;
+            // Provider preference
+            if (answers[5] === 'openai' && m.provider === 'OpenAI') score += 10;
+            if (answers[5] === 'anthropic' && m.provider === 'Anthropic') score += 10;
+            if (answers[5] === 'google' && m.provider === 'Google') score += 10;
+            if (answers[5] === 'budget') score += (m.tier === 'Budget' ? 10 : m.tier === 'Mid' ? 5 : -5);
+            return { ...m, score };
+        }).sort((a, b) => b.score - a.score);
+
+        const top3 = scored.slice(0, 3);
+        const resultsEl = document.getElementById('results');
+        resultsEl.innerHTML = `
+            <h2 style="font-size:24px;font-weight:700;margin-bottom:24px;">Your Top 3 Recommendations</h2>
+            ${top3.map((m, i) => `
+                <div class="result-card${i === 0 ? ' top-pick' : ''}">
+                    <div class="result-rank">${i === 0 ? '🏆 Best Pick' : `#${i + 1} Runner-Up`}</div>
+                    <div class="result-name">${m.name}</div>
+                    <div class="result-provider">${m.provider} — ${m.tier} Tier</div>
+                    <div class="result-reason">${getReason(m, answers)}</div>
+                    <div class="result-pricing">
+                        <div class="result-price">Input: <strong>$${m.input.toFixed(2)}/1M</strong></div>
+                        <div class="result-price">Output: <strong>$${m.output.toFixed(2)}/1M</strong></div>
+                        <div class="result-price">Context: <strong>${m.context}</strong></div>
+                    </div>
+                    <a href="calculator.html" style="display:inline-block;margin-top:12px;font-size:13px;color:var(--accent);text-decoration:none;font-weight:600;">Calculate exact cost →</a>
+                </div>
+            `).join('')}
+            <div style="text-align:center;margin-top:32px;">
+                <button class="restart-btn" onclick="restart()">Take the Quiz Again</button>
+                <a href="compare.html" style="display:inline-block;margin-left:12px;padding:12px 24px;background:var(--accent);color:white;border-radius:8px;font-size:14px;font-weight:600;text-decoration:none;">Compare All Models</a>
+            </div>
+        `;
+        resultsEl.classList.add('active');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+        if (window.trackEvent) window.trackEvent('quiz_completed', answers);
+    }
+
+    function getReason(m, a) {
+        const useCase = a[1];
+        const budget = a[2];
+        const reasons = {
+            chatbot: `${m.name} excels at conversational AI with natural, helpful responses.`,
+            code: `${m.name} provides strong code generation and understanding capabilities.`,
+            content: `${m.name} produces high-quality written content with good style.`,
+            data: `${m.name} handles structured data extraction and analysis well.`,
+            rag: `${m.name} works great for retrieval-augmented generation workflows.`
+        };
+        let r = reasons[useCase] || `${m.name} is a strong all-around choice.`;
+        if (budget === 'free' || budget === 'low') r += ` Fits your budget at just $${m.input.toFixed(2)}/$${m.output.toFixed(2)} per 1M tokens.`;
+        return r;
+    }
+
+    function restart() {
+        Object.keys(answers).forEach(k => delete answers[k]);
+        document.querySelectorAll('.quiz-container').forEach(el => el.classList.remove('active'));
+        document.getElementById('results').classList.remove('active');
+        document.getElementById('results').innerHTML = '';
+        document.getElementById('q1').classList.add('active');
+        document.getElementById('progress-fill').style.width = '0%';
+        currentQ = 1;
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+    </script>
+</body>
+</html>

@@ -91,6 +91,12 @@
 
         .cost-cell { font-variant-numeric: tabular-nums; font-weight: 600; }
         .cheapest { color: var(--green); }
+        .trending-badge {
+            display: inline-block; padding: 1px 6px; border-radius: 4px;
+            font-size: 10px; font-weight: 700; text-transform: uppercase;
+            background: rgba(239,68,68,0.15); color: #ef4444; margin-left: 6px;
+            vertical-align: middle;
+        }
 
         .cta-inline {
             background: var(--bg-secondary); border: 1px solid var(--accent);
@@ -231,6 +237,7 @@
             'xAI': 'provider-xai', 'AI21': 'provider-ai21'
         };
         const tierClass = { 'Budget': 'tier-budget', 'Mid': 'tier-mid', 'Premium': 'tier-premium' };
+        const trending = new Set(['GPT-4o', 'GPT-4o mini', 'Claude Sonnet 4', 'Gemini 2.5 Pro', 'Gemini 2.0 Flash', 'DeepSeek V4 Pro', 'Llama 4 Scout']);
 
         function renderTable(data) {
             const tbody = document.getElementById('pricing-body');
@@ -238,7 +245,7 @@
             const minOutput = Math.min(...data.map(m => m.output));
             tbody.innerHTML = data.map(m => `
                 <tr>
-                    <td><strong>${m.name}</strong></td>
+                    <td><strong>${m.name}</strong>${trending.has(m.name) ? '<span class="trending-badge">Trending</span>' : ''}</td>
                     <td><span class="provider-badge ${providerClass[m.provider] || ''}">${m.provider}</span></td>
                     <td><span class="tier-badge ${tierClass[m.tier] || ''}">${m.tier}</span></td>
                     <td class="cost-cell ${m.input === minInput ? 'cheapest' : ''}">$${m.input.toFixed(2)}</td>

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI API Cost Calculator</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="styles.css">
+    <script src="analytics.js" defer></script>
+    <script src="dynamic-date.js" defer></script>
+    <script src="pricing-data.js" defer></script>
+    <style>
+        body { background: var(--bg-primary); color: var(--text-primary); font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; margin: 0; padding: 16px; }
+        .embed-calc { max-width: 400px; margin: 0 auto; }
+        .embed-calc h2 { font-size: 18px; font-weight: 700; margin-bottom: 16px; text-align: center; }
+        .form-group { margin-bottom: 14px; }
+        .form-group label { display: block; font-size: 13px; font-weight: 600; color: var(--text-secondary); margin-bottom: 4px; }
+        .form-group select, .form-group input {
+            width: 100%; padding: 10px 12px; border-radius: 8px; border: 1px solid var(--border);
+            background: var(--bg-secondary); color: var(--text-primary); font-size: 14px;
+        }
+        .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+        .calc-btn {
+            width: 100%; padding: 12px; border-radius: 8px; border: none;
+            background: var(--accent); color: white; font-size: 15px; font-weight: 600;
+            cursor: pointer; transition: opacity 0.2s;
+        }
+        .calc-btn:hover { opacity: 0.9; }
+        .results { margin-top: 16px; background: var(--bg-secondary); border-radius: 10px; padding: 16px; display: none; }
+        .results h3 { font-size: 14px; font-weight: 700; margin-bottom: 12px; }
+        .result-row { display: flex; justify-content: space-between; padding: 6px 0; font-size: 14px; border-bottom: 1px solid var(--border); }
+        .result-row:last-child { border-bottom: none; }
+        .result-label { color: var(--text-secondary); }
+        .result-value { font-weight: 600; color: var(--accent); }
+        .result-total { font-size: 18px; padding-top: 10px; margin-top: 6px; border-top: 2px solid var(--accent); }
+        .powered-by { text-align: center; margin-top: 12px; font-size: 11px; color: var(--text-muted); }
+        .powered-by a { color: var(--accent); text-decoration: none; }
+    </style>
+</head>
+<body>
+    <div class="embed-calc">
+        <h2>AI API Cost Calculator</h2>
+        <div class="form-group">
+            <label>Model</label>
+            <select id="model" onchange="updatePricing()"></select>
+        </div>
+        <div class="form-row">
+            <div class="form-group">
+                <label>Input $/1M</label>
+                <input type="text" id="input-price" readonly style="background:var(--bg-primary);font-weight:600;color:var(--accent);">
+            </div>
+            <div class="form-group">
+                <label>Output $/1M</label>
+                <input type="text" id="output-price" readonly style="background:var(--bg-primary);font-weight:600;color:var(--accent);">
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group">
+                <label>Requests/Day</label>
+                <input type="number" id="req-day" value="100" min="1">
+            </div>
+            <div class="form-group">
+                <label>Input Tokens/Req</label>
+                <input type="number" id="input-tokens" value="500" min="1">
+            </div>
+        </div>
+        <div class="form-group">
+            <label>Output Tokens/Req</label>
+            <input type="number" id="output-tokens" value="1000" min="1">
+        </div>
+        <button class="calc-btn" onclick="calculate()">Calculate Monthly Cost</button>
+        <div class="results" id="results">
+            <h3>Estimated Monthly Cost</h3>
+            <div class="result-row"><span class="result-label">Input tokens/month</span><span class="result-value" id="r-input-tokens">—</span></div>
+            <div class="result-row"><span class="result-label">Output tokens/month</span><span class="result-value" id="r-output-tokens">—</span></div>
+            <div class="result-row"><span class="result-label">Input cost</span><span class="result-value" id="r-input-cost">—</span></div>
+            <div class="result-row"><span class="result-label">Output cost</span><span class="result-value" id="r-output-cost">—</span></div>
+            <div class="result-row result-total"><span class="result-label">Total</span><span class="result-value" id="r-total">—</span></div>
+        </div>
+        <div class="powered-by">Powered by <a href="https://getapipulse.com" target="_blank" rel="noopener">APIpulse</a></div>
+    </div>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const select = document.getElementById('model');
+        const data = getCalculatorData();
+        const providers = Object.keys(data);
+        providers.forEach(p => {
+            const group = document.createElement('optgroup');
+            group.label = p;
+            data[p].forEach(m => {
+                const opt = document.createElement('option');
+                opt.value = m.id;
+                opt.textContent = `${m.name} ($${m.input.toFixed(2)}/$${m.output.toFixed(2)})`;
+                opt.dataset.input = m.input;
+                opt.dataset.output = m.output;
+                group.appendChild(opt);
+            });
+            select.appendChild(group);
+        });
+        // Check URL for pre-selected model
+        const params = new URLSearchParams(window.location.search);
+        const preModel = params.get('model');
+        if (preModel) {
+            const opt = select.querySelector(`option[value="${preModel}"]`);
+            if (opt) { select.value = preModel; }
+        }
+        updatePricing();
+    });
+
+    function updatePricing() {
+        const sel = document.getElementById('model');
+        const opt = sel.options[sel.selectedIndex];
+        document.getElementById('input-price').value = '$' + parseFloat(opt.dataset.input).toFixed(2);
+        document.getElementById('output-price').value = '$' + parseFloat(opt.dataset.output).toFixed(2);
+    }
+
+    function calculate() {
+        const sel = document.getElementById('model');
+        const opt = sel.options[sel.selectedIndex];
+        const inputPrice = parseFloat(opt.dataset.input);
+        const outputPrice = parseFloat(opt.dataset.output);
+        const reqDay = parseInt(document.getElementById('req-day').value) || 0;
+        const inputTokens = parseInt(document.getElementById('input-tokens').value) || 0;
+        const outputTokens = parseInt(document.getElementById('output-tokens').value) || 0;
+
+        const inputTotal = (reqDay * 30 * inputTokens) / 1e6 * inputPrice;
+        const outputTotal = (reqDay * 30 * outputTokens) / 1e6 * outputPrice;
+        const total = inputTotal + outputTotal;
+
+        document.getElementById('r-input-tokens').textContent = ((reqDay * 30 * inputTokens) / 1e6).toFixed(1) + 'M';
+        document.getElementById('r-output-tokens').textContent = ((reqDay * 30 * outputTokens) / 1e6).toFixed(1) + 'M';
+        document.getElementById('r-input-cost').textContent = '$' + inputTotal.toFixed(2);
+        document.getElementById('r-output-cost').textContent = '$' + outputTotal.toFixed(2);
+        document.getElementById('r-total').textContent = '$' + total.toFixed(2);
+        document.getElementById('results').style.display = 'block';
+    }
+    </script>
+</body>
+</html>
