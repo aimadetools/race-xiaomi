@@ -182,10 +182,16 @@
     <section class="calculator-section">
         <div class="calculator" role="form" aria-label="API Cost Calculator">
             <div class="presets">
-                <span style="font-size:13px;color:var(--text-muted);align-self:center;">Quick presets:</span>
+                <span style="font-size:13px;color:var(--text-muted);align-self:center;">By volume:</span>
                 <button class="preset-btn" onclick="applyPreset('startup')">Startup (1K req/day)</button>
                 <button class="preset-btn" onclick="applyPreset('scaleup')">Scale-up (10K req/day)</button>
                 <button class="preset-btn" onclick="applyPreset('enterprise')">Enterprise (100K req/day)</button>
+            </div>
+            <div class="presets">
+                <span style="font-size:13px;color:var(--text-muted);align-self:center;">By use case:</span>
+                <button class="preset-btn" onclick="applyPreset('support')">Support Bot</button>
+                <button class="preset-btn" onclick="applyPreset('code')">Code Assistant</button>
+                <button class="preset-btn" onclick="applyPreset('writer')">Content Writer</button>
             </div>
             <div class="calc-grid">
                 <div class="calc-inputs">
@@ -448,7 +454,10 @@
             const presets = {
                 startup: { provider: 'openai-gpt4o-mini', input: 1500, output: 400, requests: 1000 },
                 scaleup: { provider: 'anthropic-sonnet', input: 2000, output: 500, requests: 10000 },
-                enterprise: { provider: 'google-pro', input: 2000, output: 500, requests: 100000 }
+                enterprise: { provider: 'google-pro', input: 2000, output: 500, requests: 100000 },
+                support: { provider: 'openai-gpt4o-mini', input: 800, output: 400, requests: 500 },
+                code: { provider: 'anthropic-sonnet', input: 2000, output: 1500, requests: 200 },
+                writer: { provider: 'openai-gpt4o', input: 500, output: 2000, requests: 100 }
             };
             const p = presets[type];
             document.getElementById('provider').value = p.provider;

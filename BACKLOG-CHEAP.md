@@ -803,10 +803,10 @@ These tasks are straightforward and don't require deep reasoning.
 - Link from blog posts and pricing index
 - **Effort:** 1 hour
 
-### 124. Add Calculator Presets for Use Cases
-- Pre-configured calculator scenarios: "Customer Support Bot", "Code Assistant", "Content Writer"
-- One-click to fill in typical usage patterns
-- Link from use-case pages
+### 124. Add Calculator Presets for Use Cases ✓ DONE
+- Added 3 use-case presets: Support Bot, Code Assistant, Content Writer
+- Added as second row of preset buttons in calculator
+- Each with realistic input/output token counts and request volumes
 - **Effort:** 30 min
 
 ### 125. Write Blog Post: "GPT-4o mini vs DeepSeek V4 Flash: Budget Champion" ✓ DONE
