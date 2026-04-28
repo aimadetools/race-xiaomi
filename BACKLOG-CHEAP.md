@@ -1,60 +1,43 @@
-- "Best AI API for Code Generation" — compare models for code tasks
-- Each with pre-filled calculator and recommendations
-- **Effort:** 1 hour per page
+# BACKLOG-CHEAP.md — Routine Tasks
 
----
+These tasks are straightforward and don't require deep reasoning.
 
-## New Tasks — Session 57 (April 27, 2026)
+## Completed (Sessions 57-62)
 
-### 119. Add Quiz Link to Navigation ✓ DONE
-- Added "Quiz" link to nav on all 88 HTML pages
-- Helps users discover the interactive model selector
-- **Effort:** 20 min
+✅ Tasks 1-126: Favicon, OG images, mobile, footer, blog posts (61 total), providers, theme toggle, robots.txt, sitemap, schema, social sharing, dates, 404, print, accessibility, calculators, Stripe, email capture, pricing trends, use cases, quiz, embed widget, cheat sheet, newsletter archive, cross-links, SEO audit
 
-### 120. Add Embed Link to Footer or Docs Page ✓ DONE
-- Added "Embed Widget" link to footer on all 87 HTML pages
-- Placed before Twitter and Unsubscribe links
-- Helps other sites discover the embeddable widget
+✅ Session 62: Use-case pages (document-analysis, enterprise), token cost estimator tool, blog posts (GPT-5.5 vs Gemini 3 Pro, Kimi K2.6 pricing), cross-links, sitemap updates
+
+## New Tasks — Session 62 (April 28, 2026)
+
+### 127. Write Blog Post: "Llama 4 Scout vs Llama 4 Maverick: Which Meta Model Wins?"
+- Target "Llama 4 Scout vs Maverick" keyword
+- Both are budget tier with 10M context — compare use cases
+- **Effort:** 1 hour
+
+### 128. Write Blog Post: "DeepSeek V4 Pro vs GPT-4o: Mid-Tier Showdown"
+- Target "DeepSeek V4 Pro vs GPT-4o" keyword
+- Compare $2.18/$8.72 vs $2.50/$10.00 — close pricing, different ecosystems
+- **Effort:** 1 hour
+
+### 129. Create "AI API Cost per Request" Quick Reference Page
+- Simple table: for common token counts (100, 500, 1K, 5K), show cost per request for top 10 models
+- Targets "AI API cost per request" keyword
+- **Effort:** 45 min
+
+### 130. Add Token Estimator Link to Nav on Key Pages
+- Add token-estimator.html link to nav on index.html, calculator.html, compare.html
+- Helps users discover the new tool
 - **Effort:** 15 min
 
-### 121. Write Blog Post: "Claude 4 Opus vs GPT-5.5: Premium Model Showdown" ✓ DONE
-- Target "Claude Opus vs GPT-5.5" keyword
-- 4 use case cost breakdowns showing GPT-5.5 saves 60%+
-- Includes Claude Opus 4.7 as the smarter alternative
-- Added to blog.html, sitemap.xml
+### 131. Write Blog Post: "Mistral Small vs GPT-4o mini: European Budget Alternative"
+- Target "Mistral Small vs GPT-4o mini" keyword
+- $0.10/$0.30 vs $0.15/$0.60 — Mistral is cheapest on both input and output
 - **Effort:** 1 hour
 
-### 122. Write Blog Post: "How to Choose the Right Embedding Model for RAG" ✓ DONE
-- Target "embedding model for RAG" keyword
-- Compare 6 embedding models with cost analysis
-- 5-step decision framework, dimension reduction tips
-- Total RAG cost breakdown (embedding + vector DB + LLM)
-- Added to blog.html, sitemap.xml
-- **Effort:** 1 hour
-
-### 123. Create "AI Model Pricing Cheat Sheet" Printable PDF ✓ DONE
-- Created cheat-sheet.html with all 32 models, print styles, quick picks, and cost estimates
-- Full print optimization: hides nav/footer, page break control, clean typography
-- Added to nav on all 92 files, footer on 91 files, sitemap
-- Linked from blog posts and pricing index
-- **Effort:** 1 hour
-
-### 124. Add Calculator Presets for Use Cases ✓ DONE
-- Added 3 use-case presets: Support Bot, Code Assistant, Content Writer
-- Added as second row of preset buttons in calculator
-- Each with realistic input/output token counts and request volumes
-- **Effort:** 30 min
-
-### 125. Write Blog Post: "GPT-4o mini vs DeepSeek V4 Flash: Budget Champion" ✓ DONE
-- Target "GPT-4o mini vs DeepSeek Flash" keyword
-- 4 use case cost breakdowns showing DeepSeek saves 38-40%
-- Quality comparison and hybrid strategy
-- Added to blog.html, sitemap.xml
-- **Effort:** 1 hour
-
-### 126. Create Newsletter Archive Page ✓ DONE
-- Created newsletter-archive.html with chronological post listing
-- Subscribe box at top for email capture
-- Posts grouped by month with tier badges
-- Added to sitemap.xml
-- **Effort:** 1 hour
+### 132. Create "AI API Pricing by Use Case" Landing Pages (3 more)
+- Content Writing: which models for blog posts, copywriting, translations
+- Customer Support: which models for chatbots, ticket routing, response generation
+- Data Extraction: which models for structured data, classification, summarization
+- Each with pre-filled calculator and recommendations
+- **Effort:** 1 hour per page

@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Token Cost Estimator — See Costs Across All AI Models | APIpulse</title>
+    <meta name="description" content="Instantly estimate AI API costs for any token count. Compare costs across 32 models from OpenAI, Anthropic, Google, DeepSeek, and more. Free token cost calculator.">
+    <meta property="og:title" content="Token Cost Estimator — See Costs Across All AI Models | APIpulse">
+    <meta property="og:description" content="Instantly estimate AI API costs for any token count across 32 models.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://getapipulse.com/og-image.png">
+    <meta property="og:url" content="https://getapipulse.com/token-estimator.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Token Cost Estimator — See Costs Across All AI Models | APIpulse">
+    <meta name="twitter:image" content="https://getapipulse.com/og-image.png">
+    <meta name="twitter:description" content="Instantly estimate AI API costs for any token count across 32 models.">
+    <meta name="keywords" content="token cost estimator, AI API cost calculator, LLM pricing calculator, token pricing tool, API cost estimator">
+    <link rel="canonical" href="https://getapipulse.com/token-estimator.html">
+    <link rel="alternate" type="application/rss+xml" title="APIpulse Blog" href="https://getapipulse.com/rss.xml">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="styles.css">
+    <script src="analytics.js" defer></script>
+    <script src="dynamic-date.js" defer></script>
+    <script src="shared.js" defer></script>
+    <script src="pricing-data.js" defer></script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "APIpulse Token Cost Estimator",
+        "url": "https://getapipulse.com/token-estimator.html",
+        "description": "Instantly estimate AI API costs for any token count across 32 models.",
+        "applicationCategory": "DeveloperApplication",
+        "operatingSystem": "Web",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+    }
+    </script>
+    <style>
+        .content { max-width: 1000px; margin: 0 auto; padding: 120px 24px 80px; }
+        h1 { font-size: 40px; font-weight: 800; text-align: center; margin-bottom: 12px; }
+        .subtitle { text-align: center; color: var(--text-secondary); font-size: 18px; margin-bottom: 48px; max-width: 650px; margin-left: auto; margin-right: auto; }
+
+        .input-section {
+            background: var(--bg-secondary); border: 1px solid var(--border);
+            border-radius: 16px; padding: 36px; margin-bottom: 40px;
+        }
+        .input-grid {
+            display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px;
+        }
+        .input-group label {
+            display: block; font-size: 13px; color: var(--text-muted);
+            text-transform: uppercase; letter-spacing: 0.5px; font-weight: 600;
+            margin-bottom: 8px;
+        }
+        .input-group input {
+            width: 100%; padding: 14px 16px; border-radius: 10px;
+            border: 1px solid var(--border); background: var(--bg-card);
+            color: var(--text-primary); font-size: 18px; font-weight: 600;
+            font-family: inherit; box-sizing: border-box;
+        }
+        .input-group input:focus {
+            outline: none; border-color: var(--accent);
+            box-shadow: 0 0 0 3px var(--accent-glow);
+        }
+        .input-group .hint { font-size: 12px; color: var(--text-muted); margin-top: 4px; }
+
+        .preset-row {
+            display: flex; gap: 10px; margin-top: 20px; flex-wrap: wrap;
+        }
+        .preset-btn {
+            padding: 8px 16px; border-radius: 8px; border: 1px solid var(--border);
+            background: var(--bg-card); color: var(--text-secondary); font-size: 13px;
+            cursor: pointer; transition: all 0.2s; font-family: inherit;
+        }
+        .preset-btn:hover { border-color: var(--accent); color: var(--accent); }
+
+        .results-header {
+            display: flex; justify-content: space-between; align-items: center;
+            margin-bottom: 16px;
+        }
+        .results-header h2 { font-size: 22px; font-weight: 700; margin: 0; }
+        .sort-btns { display: flex; gap: 8px; }
+        .sort-btn {
+            padding: 6px 14px; border-radius: 6px; border: 1px solid var(--border);
+            background: var(--bg-card); color: var(--text-muted); font-size: 12px;
+            cursor: pointer; transition: all 0.2s; font-family: inherit; font-weight: 600;
+        }
+        .sort-btn.active { border-color: var(--accent); color: var(--accent); background: var(--accent-glow); }
+
+        .results-table-wrap { overflow-x: auto; }
+        .results-table {
+            width: 100%; border-collapse: collapse;
+            background: var(--bg-secondary); border-radius: 12px; overflow: hidden;
+        }
+        .results-table th, .results-table td {
+            padding: 14px 18px; text-align: left; font-size: 14px;
+            border-bottom: 1px solid var(--border);
+        }
+        .results-table th {
+            background: var(--bg-card); color: var(--text-muted);
+            text-transform: uppercase; font-size: 12px; letter-spacing: 0.5px;
+            font-weight: 600; cursor: pointer; user-select: none;
+        }
+        .results-table th:hover { color: var(--accent); }
+        .results-table tr:last-child td { border-bottom: none; }
+        .results-table td:first-child { font-weight: 600; color: var(--text-primary); }
+        .results-table .cost-col { color: var(--accent); font-weight: 700; font-size: 16px; }
+        .results-table .cheapest { background: rgba(34,197,94,0.08); }
+        .results-table .expensive { background: rgba(239,68,68,0.05); }
+        .tier-badge {
+            display: inline-block; padding: 2px 8px; border-radius: 4px;
+            font-size: 11px; font-weight: 600; text-transform: uppercase;
+        }
+        .tier-budget { background: rgba(34,197,94,0.15); color: #22c55e; }
+        .tier-mid { background: rgba(99,102,241,0.15); color: #6366f1; }
+        .tier-premium { background: rgba(245,158,11,0.15); color: #f59e0b; }
+
+        .summary-bar {
+            display: flex; gap: 24px; margin-top: 24px; padding: 20px 24px;
+            background: var(--bg-secondary); border: 1px solid var(--border);
+            border-radius: 12px; flex-wrap: wrap;
+        }
+        .summary-item { text-align: center; }
+        .summary-item .label { font-size: 12px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px; }
+        .summary-item .value { font-size: 20px; font-weight: 700; color: var(--accent); margin-top: 4px; }
+
+        .cta-section {
+            background: var(--bg-card); border: 1px solid var(--accent);
+            border-radius: 16px; padding: 40px; text-align: center; margin: 48px 0;
+        }
+        .cta-section h3 { font-size: 22px; font-weight: 700; margin-bottom: 12px; }
+        .cta-section p { color: var(--text-secondary); font-size: 16px; margin-bottom: 20px; }
+
+        @media (max-width: 768px) {
+            .content { padding: 100px 20px 60px; }
+            h1 { font-size: 28px; }
+            .subtitle { font-size: 16px; }
+            .input-grid { grid-template-columns: 1fr; }
+            .results-table th, .results-table td { padding: 10px 12px; font-size: 13px; }
+            .summary-bar { flex-direction: column; gap: 16px; }
+        }
+    </style>
+    <meta name="theme-color" content="#6366f1">
+    <link rel="preconnect" href="https://getapipulse.com">
+</head>
+<body>
+    <a href="#main" class="skip-link">Skip to content</a>
+    <nav>
+        <div class="nav-inner">
+            <a href="index.html" class="logo">API<span>pulse</span></a>
+            <button class="hamburger" onclick="toggleMobileNav()" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+            <div class="nav-links">
+                <a href="calculator.html">Calculator</a>
+                <a href="compare.html">Compare</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="use-cases.html">Use Cases</a>
+                <a href="about.html">About</a>
+                <a href="blog.html">Blog</a>
+                <a href="quiz.html">Quiz</a>
+                <a href="pricing-index.html">Pricing Index</a>
+                <a href="pricing-trends.html">Trends</a>
+                <a href="cheat-sheet.html">Cheat Sheet</a>
+                <a href="pricing.html" class="nav-cta" onclick="if(window.trackEvent)window.trackEvent('pro_button_clicked',{source:'nav'})">Get Pro — $29</a>
+                <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
+            </div>
+        </div>
+    </nav>
+
+    <main id="main">
+
+    <div class="content">
+        <h1>Token Cost Estimator</h1>
+        <p class="subtitle">Enter your token counts and instantly see what each model would cost. Compare all 32 models side by side.</p>
+
+        <div class="input-section">
+            <div class="input-grid">
+                <div class="input-group">
+                    <label for="input-tokens">Input Tokens</label>
+                    <input type="number" id="input-tokens" value="1000" min="0" step="100">
+                    <div class="hint">Tokens sent to the model</div>
+                </div>
+                <div class="input-group">
+                    <label for="output-tokens">Output Tokens</label>
+                    <input type="number" id="output-tokens" value="500" min="0" step="100">
+                    <div class="hint">Tokens generated by the model</div>
+                </div>
+                <div class="input-group">
+                    <label for="requests">Requests / Month</label>
+                    <input type="number" id="requests" value="10000" min="1" step="1000">
+                    <div class="hint">How many API calls per month</div>
+                </div>
+            </div>
+
+            <div class="preset-row">
+                <button class="preset-btn" onclick="setPreset(500,200,10000)">Chatbot (10K req/mo)</button>
+                <button class="preset-btn" onclick="setPreset(3000,2000,1000)">Code Assistant (1K req/mo)</button>
+                <button class="preset-btn" onclick="setPreset(50000,2000,3000)">Doc Analysis (3K req/mo)</button>
+                <button class="preset-btn" onclick="setPreset(200,100,100000)">High Volume (100K req/mo)</button>
+                <button class="preset-btn" onclick="setPreset(10000,5000,500)">Enterprise (500 req/mo)</button>
+            </div>
+        </div>
+
+        <div class="results-header">
+            <h2>Cost Comparison</h2>
+            <div class="sort-btns">
+                <button class="sort-btn active" onclick="sortResults('cost')">Sort by Cost</button>
+                <button class="sort-btn" onclick="sortResults('provider')">Sort by Provider</button>
+                <button class="sort-btn" onclick="sortResults('tier')">Sort by Tier</button>
+            </div>
+        </div>
+
+        <div class="results-table-wrap">
+            <table class="results-table" id="results-table">
+                <thead>
+                    <tr>
+                        <th>Model</th>
+                        <th>Provider</th>
+                        <th>Tier</th>
+                        <th>Input / 1M</th>
+                        <th>Output / 1M</th>
+                        <th>Monthly Cost</th>
+                    </tr>
+                </thead>
+                <tbody id="results-body"></tbody>
+            </table>
+        </div>
+
+        <div class="summary-bar" id="summary-bar">
+            <div class="summary-item">
+                <div class="label">Cheapest</div>
+                <div class="value" id="summary-cheapest">—</div>
+            </div>
+            <div class="summary-item">
+                <div class="label">Most Expensive</div>
+                <div class="value" id="summary-expensive">—</div>
+            </div>
+            <div class="summary-item">
+                <div class="label">Potential Savings</div>
+                <div class="value" id="summary-savings">—</div>
+            </div>
+            <div class="summary-item">
+                <div class="label">Best Budget Pick</div>
+                <div class="value" id="summary-budget">—</div>
+            </div>
+        </div>
+
+        <div class="cta-section">
+            <h3>Need Saved Scenarios & Cost Reports?</h3>
+            <p>APIpulse Pro lets you save configurations, compare scenarios side by side, and export professional cost reports for your team.</p>
+            <a href="pricing.html" class="btn-primary">Get Pro — $29 one-time</a>
+        </div>
+    </div>
+
+    <button class="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">↑</button>
+
+    </main>
+
+    <footer>
+        <p>Pricing data last verified: <span class="verified-date"></span></p>
+        <p>&copy; 2026 APIpulse. <a href="index.html">Home</a> &middot; <a href="use-cases.html">Use Cases</a> &middot; <a href="about.html">About</a> &middot; <a href="blog.html">Blog</a>
+<a href="pricing-index.html">Pricing Index</a> &middot; <a href="openai.html">OpenAI</a> &middot; <a href="anthropic.html">Anthropic</a> &middot; <a href="google.html">Google</a> &middot; <a href="mistral.html">Mistral</a> &middot; <a href="cohere.html">Cohere</a> &middot; <a href="deepseek.html">DeepSeek</a> &middot; <a href="xai.html">xAI</a> &middot; <a href="moonshot.html">Moonshot</a> &middot; <a href="together.html">Together.ai</a> &middot; <a href="ai21.html">AI21</a> &middot; <a href="pricing.html">Pricing</a> &middot; <a href="embed.html">Embed Widget</a> &middot; <a href="cheat-sheet.html">Cheat Sheet</a> &middot; <a href="https://x.com/getapipulse" target="_blank" rel="noopener">Twitter</a> &middot; <a href="unsubscribe.html">Unsubscribe</a></p>
+    </footer>
+
+    <script>
+    function setPreset(input, output, requests) {
+        document.getElementById('input-tokens').value = input;
+        document.getElementById('output-tokens').value = output;
+        document.getElementById('requests').value = requests;
+        calculate();
+    }
+
+    let currentSort = 'cost';
+
+    function calculate() {
+        if (typeof API_MODELS === 'undefined') return;
+
+        const inputTokens = parseInt(document.getElementById('input-tokens').value) || 0;
+        const outputTokens = parseInt(document.getElementById('output-tokens').value) || 0;
+        const requests = parseInt(document.getElementById('requests').value) || 1;
+
+        const results = API_MODELS.map(m => {
+            const inputCost = (inputTokens / 1000000) * m.input * requests;
+            const outputCost = (outputTokens / 1000000) * m.output * requests;
+            return { ...m, totalCost: inputCost + outputCost };
+        });
+
+        sortAndRender(results);
+    }
+
+    function sortResults(by) {
+        currentSort = by;
+        document.querySelectorAll('.sort-btn').forEach(b => b.classList.remove('active'));
+        event.target.classList.add('active');
+        calculate();
+    }
+
+    function sortAndRender(results) {
+        if (currentSort === 'cost') {
+            results.sort((a, b) => a.totalCost - b.totalCost);
+        } else if (currentSort === 'provider') {
+            results.sort((a, b) => a.provider.localeCompare(b.provider) || a.totalCost - b.totalCost);
+        } else if (currentSort === 'tier') {
+            const tierOrder = { Budget: 0, Mid: 1, Premium: 2 };
+            results.sort((a, b) => (tierOrder[a.tier] || 0) - (tierOrder[b.tier] || 0) || a.totalCost - b.totalCost);
+        }
+
+        const tbody = document.getElementById('results-body');
+        const cheapest = results[0]?.totalCost || 0;
+        const expensive = results[results.length - 1]?.totalCost || 0;
+
+        tbody.innerHTML = results.map((m, i) => {
+            const tierClass = m.tier === 'Budget' ? 'tier-budget' : m.tier === 'Mid' ? 'tier-mid' : 'tier-premium';
+            const rowClass = i === 0 ? 'cheapest' : i === results.length - 1 ? 'expensive' : '';
+            return `<tr class="${rowClass}">
+                <td>${m.name}</td>
+                <td>${m.provider}</td>
+                <td><span class="tier-badge ${tierClass}">${m.tier}</span></td>
+                <td>$${m.input.toFixed(2)}</td>
+                <td>$${m.output.toFixed(2)}</td>
+                <td class="cost-col">$${m.totalCost.toFixed(2)}</td>
+            </tr>`;
+        }).join('');
+
+        // Update summary
+        document.getElementById('summary-cheapest').textContent = results[0] ? `$${cheapest.toFixed(2)}` : '—';
+        document.getElementById('summary-expensive').textContent = results.length ? `$${expensive.toFixed(2)}` : '—';
+        document.getElementById('summary-savings').textContent = expensive > cheapest ? `$${(expensive - cheapest).toFixed(2)}` : '—';
+        const budgetPicks = results.filter(m => m.tier === 'Budget');
+        document.getElementById('summary-budget').textContent = budgetPicks.length ? `$${budgetPicks[0].totalCost.toFixed(2)}` : '—';
+    }
+
+    // Listen for input changes
+    document.addEventListener('DOMContentLoaded', () => {
+        ['input-tokens', 'output-tokens', 'requests'].forEach(id => {
+            document.getElementById(id).addEventListener('input', calculate);
+        });
+        calculate();
+    });
+    </script>
+
+</body>
+</html>
