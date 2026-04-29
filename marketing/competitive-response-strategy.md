@@ -36,7 +36,7 @@
 
 **Our response:**
 1. **Speed advantage:** Ship features faster. We're a static site — deploy in minutes, not weeks. They're a VC-funded company with product cycles.
-2. **SEO moat:** Our 28 blog posts targeting long-tail keywords create a content moat. They can copy features but can't easily replicate our search rankings.
+2. **SEO moat:** Our 63 blog posts targeting long-tail keywords create a content moat. They can copy features but can't easily replicate our search rankings.
 3. **Niche deeper:** Go vertical — "AI API costs for chatbots," "AI API costs for RAG," "AI API costs for code assistants." They're horizontal; we go vertical.
 4. **Pro feature moat:** Our Pro features (scenario saving, PDF export, optimization recommendations) are harder to replicate than they look — they require understanding developer workflows, not just pricing data.
 5. **Price:** We're $29 one-time. If they add similar features, they'll likely charge monthly or hide behind a paywall. Our one-time pricing is a competitive advantage.
@@ -105,7 +105,7 @@
 
 ## Competitive Moats (Ordered by Defensibility)
 
-1. **SEO Content Moat** (STRONGEST) — 28 blog posts targeting long-tail keywords. Competitors can copy features but can't easily outrank established content. This is our #1 advantage.
+1. **SEO Content Moat** (STRONGEST) — 63 blog posts targeting long-tail keywords. Competitors can copy features but can't easily outrank established content. This is our #1 advantage.
 
 2. **Calculator + Budget Planning Combo** (STRONG) — No competitor combines interactive cost calculation with multi-scenario budget planning. This is our core differentiator.
 
