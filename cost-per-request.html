@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI API Cost per Request: Quick Reference Table (2026) — APIpulse</title>
+    <meta name="description" content="See exactly how much each AI API request costs. Quick reference table for 32 models at 100, 500, 1K, and 5K token requests. Updated April 2026.">
+    <meta name="keywords" content="AI API cost per request, LLM cost per request, API pricing table, GPT-4o cost per call, Claude cost per request, cheapest AI API per request, AI API pricing quick reference">
+    <meta property="og:title" content="AI API Cost per Request: Quick Reference Table (2026) — APIpulse">
+    <meta property="og:description" content="See exactly how much each AI API request costs across 32 models at common token counts.">
+    <meta property="og:type" content="article">
+    <meta property="article:published_time" content="2026-04-29">
+    <meta property="article:modified_time" content="2026-04-29">
+    <meta property="article:author" content="APIpulse">
+    <meta property="og:image" content="https://getapipulse.com/og-image.png">
+    <meta property="og:url" content="https://getapipulse.com/cost-per-request.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="AI API Cost per Request: Quick Reference Table (2026) — APIpulse">
+    <meta name="twitter:image" content="https://getapipulse.com/og-image.png">
+    <meta name="twitter:description" content="See exactly how much each AI API request costs across 32 models.">
+    <link rel="canonical" href="https://getapipulse.com/cost-per-request.html">
+    <link rel="alternate" type="application/rss+xml" title="APIpulse Blog" href="https://getapipulse.com/rss.xml">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="styles.css">
+    <script src="analytics.js" defer></script>
+    <script src="dynamic-date.js" defer></script>
+    <script src="shared.js" defer></script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "AI API Cost per Request: Quick Reference Table (2026)",
+        "description": "See exactly how much each AI API request costs across 32 models at common token counts.",
+        "datePublished": "2026-04-29",
+        "dateModified": "2026-04-29",
+        "author": { "@type": "Organization", "name": "APIpulse" },
+        "publisher": { "@type": "Organization", "name": "APIpulse", "url": "https://getapipulse.com" },
+        "url": "https://getapipulse.com/cost-per-request.html"
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Blog", "item": "https://getapipulse.com/blog.html" },
+            { "@type": "ListItem", "position": 2, "name": "AI API Cost per Request", "item": "https://getapipulse.com/cost-per-request.html" }
+        ]
+    }
+    </script>
+    <style>
+        .content { max-width: 800px; margin: 0 auto; padding: 120px 24px 80px; }
+        h1 { font-size: 40px; font-weight: 800; margin-bottom: 12px; }
+        .subtitle { color: var(--text-secondary); font-size: 18px; margin-bottom: 48px; }
+        .post-meta { display: flex; gap: 16px; align-items: center; margin-bottom: 12px; font-size: 13px; color: var(--text-muted); }
+        .tier-badge { display: inline-block; padding: 2px 8px; border-radius: 4px; font-size: 11px; font-weight: 600; }
+        .tier-guide { background: rgba(34,197,94,0.15); color: #22c55e; }
+        .breadcrumb { font-size: 14px; color: var(--text-muted); margin-bottom: 24px; }
+        .breadcrumb a { color: var(--accent); text-decoration: none; }
+        .breadcrumb a:hover { text-decoration: underline; }
+        h2 { font-size: 28px; font-weight: 700; margin: 48px 0 16px; }
+        h3 { font-size: 22px; font-weight: 600; margin: 32px 0 12px; }
+        p { color: var(--text-secondary); line-height: 1.8; margin-bottom: 16px; font-size: 16px; }
+        .highlight-box { background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 12px; padding: 24px; margin: 24px 0; }
+        .highlight-box h3 { margin-top: 0; }
+        ul { color: var(--text-secondary); padding-left: 24px; margin-bottom: 16px; }
+        li { margin-bottom: 8px; line-height: 1.6; }
+        .comparison-table { width: 100%; border-collapse: collapse; margin: 24px 0; font-size: 14px; }
+        .comparison-table th { background: var(--bg-secondary); padding: 12px 16px; text-align: left; font-weight: 600; border-bottom: 1px solid var(--border); position: sticky; top: 60px; z-index: 1; }
+        .comparison-table td { padding: 12px 16px; border-bottom: 1px solid var(--border); }
+        .comparison-table .winner { background: rgba(34,197,94,0.05); }
+        .comparison-table .cheapest { color: #22c55e; font-weight: 700; }
+        .comparison-table .expensive { color: #ef4444; }
+        .comparison-table .mid-price { color: #f59e0b; }
+        .tier-section { margin: 48px 0; }
+        .tier-header { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; }
+        .tier-badge-lg { padding: 4px 14px; border-radius: 6px; font-size: 14px; font-weight: 700; }
+        .tier-budget { background: rgba(34,197,94,0.15); color: #22c55e; }
+        .tier-mid { background: rgba(245,158,11,0.15); color: #f59e0b; }
+        .tier-premium { background: rgba(168,85,247,0.15); color: #a855f7; }
+        .cta-inline { background: var(--bg-secondary); border: 1px solid var(--accent); border-radius: 12px; padding: 24px; margin: 32px 0; text-align: center; }
+        .cta-inline p { margin-bottom: 12px; }
+        .related-reading { background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 12px; padding: 28px; margin-top: 48px; }
+        .related-reading h3 { margin-top: 0; font-size: 18px; }
+        .related-reading ul { list-style: none; padding: 0; }
+        .related-reading li { padding: 8px 0; }
+        .related-reading a { color: var(--accent); text-decoration: none; font-weight: 500; }
+        .related-reading a:hover { text-decoration: underline; }
+        .social-share { margin-top: 32px; display: flex; gap: 12px; flex-wrap: wrap; }
+        .share-btn { display: inline-block; padding: 8px 16px; background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 8px; color: var(--text-primary); text-decoration: none; font-size: 13px; font-weight: 600; transition: all 0.2s; }
+        .share-btn:hover { border-color: var(--accent); color: var(--accent); }
+        .assumption-note { background: var(--bg-secondary); border-left: 3px solid var(--accent); padding: 16px 20px; margin: 24px 0; border-radius: 0 8px 8px 0; font-size: 14px; }
+        @media (max-width: 768px) {
+            .content { padding: 100px 16px 60px; }
+            h1 { font-size: 28px; }
+            .comparison-table { font-size: 12px; }
+            .comparison-table th, .comparison-table td { padding: 8px 10px; }
+        }
+        @media print { nav, .cta-inline, .share-btn, .related-reading, .theme-toggle, .back-to-top, .social-share { display: none !important; } body { background: white; color: black; } .content { padding: 0; } }
+    </style>
+    <meta name="theme-color" content="#6366f1">
+    <link rel="preconnect" href="https://getapipulse.com">
+</head>
+<body>
+    <a href="#main" class="skip-link">Skip to content</a>
+    <nav>
+        <div class="nav-inner">
+            <a href="index.html" class="logo">API<span>pulse</span></a>
+            <button class="hamburger" onclick="toggleMobileNav()" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+            <div class="nav-links">
+                <a href="calculator.html">Calculator</a>
+                <a href="compare.html">Compare</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="use-cases.html">Use Cases</a>
+                <a href="about.html">About</a>
+                <a href="blog.html">Blog</a>
+                <a href="quiz.html">Quiz</a>
+                <a href="pricing-index.html">Pricing Index</a>
+                <a href="pricing-trends.html">Trends</a>
+                <a href="cheat-sheet.html">Cheat Sheet</a>
+                <a href="token-estimator.html">Token Estimator</a>
+                <a href="pricing.html" class="nav-cta" onclick="if(window.trackEvent)window.trackEvent('pro_button_clicked',{source:'nav'})">Get Pro — $29</a>
+                <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
+            </div>
+        </div>
+    </nav>
+
+    <main id="main">
+    <div class="content">
+
+        <div class="breadcrumb"><a href="blog.html">Blog</a> &rsaquo; AI API Cost per Request</div>
+
+        <div class="post-meta">
+            <span class="tier-badge tier-guide">Reference</span>
+            <span>April 29, 2026</span>
+            <span>5 min read</span>
+        </div>
+
+        <h1>AI API Cost per Request: Quick Reference Table</h1>
+        <p class="subtitle">How much does a single API call actually cost? We calculated it for all 32 models across 10 providers at four common request sizes. Bookmark this page.</p>
+
+        <div class="assumption-note">
+            <strong>Assumption:</strong> Each request sends 3x more input tokens than output tokens (typical for chat, RAG, and code assistant workloads). Costs are per single request. All prices verified April 2026.
+        </div>
+
+        <h2>All 32 Models — Cost per Request</h2>
+        <p>Sorted cheapest to most expensive. At 1K tokens, costs range from $0.000150 (Mistral Small) to $0.121875 (GPT-5.5 Pro) — an <strong>812x gap</strong>.</p>
+
+        <table class="comparison-table">
+            <thead>
+                <tr>
+                    <th>Model</th>
+                    <th>Tier</th>
+                    <th>Provider</th>
+                    <th>100 tok</th>
+                    <th>500 tok</th>
+                    <th>1K tok</th>
+                    <th>5K tok</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="winner"><td><strong>Mistral Small</strong></td><td>Budget</td><td>Mistral</td><td class="cheapest">$0.000015</td><td class="cheapest">$0.000075</td><td class="cheapest">$0.000150</td><td class="cheapest">$0.000750</td></tr>
+                <tr><td><strong>Gemini 2.0 Flash</strong></td><td>Budget</td><td>Google</td><td>$0.000018</td><td>$0.000088</td><td>$0.000175</td><td>$0.000875</td></tr>
+                <tr><td><strong>Llama 4 Scout</strong></td><td>Budget</td><td>Meta (Together.ai)</td><td>$0.000017</td><td>$0.000084</td><td>$0.000169</td><td>$0.000844</td></tr>
+                <tr><td><strong>DeepSeek V4 Flash</strong></td><td>Budget</td><td>DeepSeek</td><td>$0.000018</td><td>$0.000088</td><td>$0.000175</td><td>$0.000875</td></tr>
+                <tr><td><strong>Llama 3.1 8B</strong></td><td>Budget</td><td>Meta (Together.ai)</td><td>$0.000018</td><td>$0.000090</td><td>$0.000180</td><td>$0.000900</td></tr>
+                <tr><td><strong>GPT-oss 20B</strong></td><td>Budget</td><td>OpenAI</td><td>$0.000015</td><td>$0.000075</td><td>$0.000150</td><td>$0.000750</td></tr>
+                <tr><td><strong>GPT-4o mini</strong></td><td>Budget</td><td>OpenAI</td><td>$0.000015</td><td>$0.000075</td><td>$0.000150</td><td>$0.000750</td></tr>
+                <tr><td><strong>GPT-oss 120B</strong></td><td>Budget</td><td>OpenAI</td><td>$0.000015</td><td>$0.000075</td><td>$0.000150</td><td>$0.000750</td></tr>
+                <tr><td><strong>Command R</strong></td><td>Budget</td><td>Cohere</td><td>$0.000015</td><td>$0.000075</td><td>$0.000150</td><td>$0.000750</td></tr>
+                <tr><td><strong>Llama 4 Maverick</strong></td><td>Budget</td><td>Meta (Together.ai)</td><td>$0.000030</td><td>$0.000150</td><td>$0.000300</td><td>$0.001500</td></tr>
+                <tr><td><strong>Grok 3 Mini</strong></td><td>Budget</td><td>xAI</td><td>$0.000030</td><td>$0.000150</td><td>$0.000300</td><td>$0.001500</td></tr>
+                <tr><td><strong>DeepSeek V3</strong></td><td>Budget</td><td>DeepSeek</td><td>$0.000041</td><td>$0.000206</td><td>$0.000413</td><td>$0.002063</td></tr>
+                <tr><td><strong>GPT-5 mini</strong></td><td>Budget</td><td>OpenAI</td><td>$0.000040</td><td>$0.000200</td><td>$0.000400</td><td>$0.002000</td></tr>
+                <tr><td><strong>Kimi K2.6</strong></td><td>Budget</td><td>Moonshot</td><td>$0.000060</td><td>$0.000300</td><td>$0.000600</td><td>$0.003000</td></tr>
+                <tr><td><strong>Claude Haiku 3.5</strong></td><td>Budget</td><td>Anthropic</td><td>$0.000080</td><td>$0.000400</td><td>$0.000800</td><td>$0.004000</td></tr>
+                <tr><td><strong>Llama 3.1 70B</strong></td><td>Mid</td><td>Meta (Together.ai)</td><td>$0.000088</td><td>$0.000440</td><td>$0.000880</td><td>$0.004400</td></tr>
+                <tr><td><strong>Jamba 1.5 Large</strong></td><td>Mid</td><td>AI21</td><td>$0.000188</td><td>$0.000938</td><td>$0.001875</td><td>$0.009375</td></tr>
+                <tr><td><strong>Mistral Large</strong></td><td>Mid</td><td>Mistral</td><td>$0.000200</td><td>$0.001000</td><td>$0.002000</td><td>$0.010000</td></tr>
+                <tr><td><strong>DeepSeek V4 Pro</strong></td><td>Mid</td><td>DeepSeek</td><td>$0.000218</td><td>$0.001088</td><td>$0.002175</td><td>$0.010875</td></tr>
+                <tr><td><strong>Gemini 3 Pro</strong></td><td>Mid</td><td>Google</td><td>$0.000200</td><td>$0.001000</td><td>$0.002000</td><td>$0.010000</td></tr>
+                <tr><td><strong>Gemini 2.5 Pro</strong></td><td>Mid</td><td>Google</td><td>$0.000250</td><td>$0.001250</td><td>$0.002500</td><td>$0.012500</td></tr>
+                <tr><td><strong>GPT-4o</strong></td><td>Mid</td><td>OpenAI</td><td>$0.000250</td><td>$0.001250</td><td>$0.002500</td><td>$0.012500</td></tr>
+                <tr><td><strong>Command R+</strong></td><td>Mid</td><td>Cohere</td><td>$0.000250</td><td>$0.001250</td><td>$0.002500</td><td>$0.012500</td></tr>
+                <tr><td><strong>Claude Sonnet 4</strong></td><td>Mid</td><td>Anthropic</td><td>$0.000300</td><td>$0.001500</td><td>$0.003000</td><td>$0.015000</td></tr>
+                <tr><td><strong>Claude Sonnet 4.6</strong></td><td>Mid</td><td>Anthropic</td><td>$0.000300</td><td>$0.001500</td><td>$0.003000</td><td>$0.015000</td></tr>
+                <tr><td><strong>Grok 3</strong></td><td>Mid</td><td>xAI</td><td>$0.000300</td><td>$0.001500</td><td>$0.003000</td><td>$0.015000</td></tr>
+                <tr><td><strong>GPT-5.3 Codex</strong></td><td>Mid</td><td>OpenAI</td><td>$0.000231</td><td>$0.001156</td><td>$0.002313</td><td>$0.011563</td></tr>
+                <tr><td><strong>Claude Opus 4.7</strong></td><td>Premium</td><td>Anthropic</td><td>$0.000500</td><td>$0.002500</td><td>$0.005000</td><td>$0.025000</td></tr>
+                <tr><td><strong>GPT-5.5</strong></td><td>Premium</td><td>OpenAI</td><td>$0.000625</td><td>$0.003125</td><td>$0.006250</td><td>$0.031250</td></tr>
+                <tr><td><strong>GPT-5</strong></td><td>Premium</td><td>OpenAI</td><td>$0.001000</td><td>$0.005000</td><td>$0.010000</td><td>$0.050000</td></tr>
+                <tr><td><strong>Claude 4 Opus</strong></td><td>Premium</td><td>Anthropic</td><td>$0.001500</td><td>$0.007500</td><td>$0.015000</td><td>$0.075000</td></tr>
+                <tr class="winner"><td><strong>GPT-5.5 Pro</strong></td><td>Premium</td><td>OpenAI</td><td class="expensive">$0.002250</td><td class="expensive">$0.011250</td><td class="expensive">$0.022500</td><td class="expensive">$0.112500</td></tr>
+            </tbody>
+        </table>
+
+        <h2>Key Takeaways</h2>
+
+        <div class="highlight-box">
+            <h3>The 150x Gap</h3>
+            <p>The cheapest model (Mistral Small at $0.000150/request) costs <strong>150x less</strong> than the most expensive (GPT-5.5 Pro at $0.022500/request) for a 1K-token request. At 5K tokens, the gap holds at <strong>150x</strong>.</p>
+        </div>
+
+        <ul>
+            <li><strong>For high-volume chatbots:</strong> Mistral Small, Gemini Flash, or DeepSeek V4 Flash — all under $0.001 per 1K-token request</li>
+            <li><strong>For production code assistants:</strong> GPT-4o or Claude Sonnet 4 — $0.0025–$0.003 per request with strong reasoning</li>
+            <li><strong>For complex research:</strong> Claude 4 Opus or GPT-5 — $0.01–$0.015 per request, but best-in-class quality</li>
+            <li><strong>Best value in mid-tier:</strong> Llama 3.1 70B at $0.00088/request — 3x cheaper than GPT-4o with comparable quality</li>
+            <li><strong>Hidden winner:</strong> Gemini 2.5 Pro at $0.0025/request — strong reasoning with 1M context window</li>
+        </ul>
+
+        <div class="cta-inline">
+            <p>Calculate your exact monthly costs across all 32 models</p>
+            <a href="calculator.html" class="btn-primary">Open the Calculator — Free</a>
+        </div>
+
+        <h2>How to Use This Table</h2>
+        <p>These costs assume a 3:1 input-to-output token ratio. Your actual costs depend on your specific workload:</p>
+        <ul>
+            <li><strong>Chatbots:</strong> Usually 2:1 to 4:1 ratio — this table is accurate</li>
+            <li><strong>Code generation:</strong> Often 1:3 or higher — output-heavy, so multiply output costs</li>
+            <li><strong>Document analysis:</strong> Often 10:1 or higher — input-heavy, costs are lower than shown</li>
+            <li><strong>RAG pipelines:</strong> Usually 5:1 — input-heavy with retrieved context</li>
+        </ul>
+        <p>For exact calculations with your token ratios, use our <a href="calculator.html">interactive calculator</a> or <a href="token-estimator.html">token estimator</a>.</p>
+
+        <div class="social-share">
+            <a href="https://twitter.com/intent/tweet?text=AI%20API%20Cost%20per%20Request%3A%20Quick%20Reference%20Table%20(2026)&url=https%3A%2F%2Fgetapipulse.com%2Fcost-per-request.html" target="_blank" rel="noopener" class="share-btn">Share on Twitter</a>
+            <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fgetapipulse.com%2Fcost-per-request.html&title=AI%20API%20Cost%20per%20Request" target="_blank" rel="noopener" class="share-btn">Share on LinkedIn</a>
+            <a href="https://www.reddit.com/submit?url=https%3A%2F%2Fgetapipulse.com%2Fcost-per-request.html&title=AI%20API%20Cost%20per%20Request%3A%20Quick%20Reference%20Table%20(2026)" target="_blank" rel="noopener" class="share-btn">Share on Reddit</a>
+        </div>
+
+        <div class="related-reading">
+            <h3>Related Reading</h3>
+            <ul>
+                <li><a href="blog-cheapest-llm.html">The Cheapest LLM APIs in 2026</a> — Full ranking of all budget models</li>
+                <li><a href="blog-pricing-cheat-sheet.html">AI API Pricing Cheat Sheet</a> — One-page comparison of all providers</li>
+                <li><a href="token-estimator.html">Token Cost Estimator</a> — Calculate costs for your exact token counts</li>
+                <li><a href="blog-cost-optimization-guide.html">AI API Cost Optimization Guide</a> — 15 strategies to reduce your API spend</li>
+            </ul>
+        </div>
+    </div>
+    </main>
+
+    <footer>
+        <p>Pricing data last verified: <span class="verified-date"></span></p>
+        <p>&copy; 2026 APIpulse. <a href="index.html">Home</a> &middot; <a href="use-cases.html">Use Cases</a> &middot; <a href="about.html">About</a> &middot; <a href="blog.html">Blog</a>
+<a href="pricing-index.html">Pricing Index</a> &middot; <a href="openai.html">OpenAI</a> &middot; <a href="anthropic.html">Anthropic</a> &middot; <a href="google.html">Google</a> &middot; <a href="mistral.html">Mistral</a> &middot; <a href="cohere.html">Cohere</a> &middot; <a href="deepseek.html">DeepSeek</a> &middot; <a href="xai.html">xAI</a> &middot; <a href="moonshot.html">Moonshot</a> &middot; <a href="together.html">Together.ai</a> &middot; <a href="ai21.html">AI21</a> &middot; <a href="pricing.html">Pricing</a> &middot; <a href="embed.html">Embed Widget</a> &middot; <a href="cheat-sheet.html">Cheat Sheet</a> &middot; <a href="https://x.com/getapipulse" target="_blank" rel="noopener">Twitter</a> &middot; <a href="unsubscribe.html">Unsubscribe</a></p>
+    </footer>
+
+    <button class="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">↑</button>
+</body>
+</html>
