@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LLM Pricing API — Free AI API Pricing Data | APIpulse</title>
+    <meta name="description" content="Free JSON API for LLM pricing data. Get current costs for GPT-5, Claude, Gemini, DeepSeek, and 32+ models. Use in your tools, dashboards, and cost calculators.">
+    <meta name="keywords" content="LLM pricing API, AI API pricing JSON, GPT cost API, Claude pricing API, LLM price comparison API, AI model pricing data">
+    <meta property="og:title" content="LLM Pricing API — Free AI API Pricing Data | APIpulse">
+    <meta property="og:description" content="Free JSON API for LLM pricing data across 32 models from 10 providers. Use in your tools, dashboards, and cost calculators.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://getapipulse.com/og-image.png">
+    <meta property="og:url" content="https://getapipulse.com/api-docs.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="LLM Pricing API — Free AI API Pricing Data | APIpulse">
+    <meta name="twitter:image" content="https://getapipulse.com/og-image.png">
+    <meta name="twitter:description" content="Free JSON API for LLM pricing data across 32 models from 10 providers.">
+    <link rel="canonical" href="https://getapipulse.com/api-docs.html">
+    <link rel="alternate" type="application/rss+xml" title="APIpulse Blog" href="https://getapipulse.com/rss.xml">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="styles.css">
+    <script src="analytics.js" defer></script>
+    <script src="dynamic-date.js" defer></script>
+    <script src="shared.js" defer></script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebAPI",
+        "name": "APIpulse LLM Pricing API",
+        "description": "Free JSON API for LLM pricing data across 32 models from 10 providers.",
+        "url": "https://getapipulse.com/api-docs.html",
+        "documentation": "https://getapipulse.com/api-docs.html",
+        "provider": { "@type": "Organization", "name": "APIpulse" }
+    }
+    </script>
+    <style>
+        .content { max-width: 900px; margin: 0 auto; padding: 120px 24px 80px; }
+        h1 { font-size: clamp(28px, 4vw, 42px); font-weight: 800; text-align: center; margin-bottom: 12px; }
+        .subtitle { text-align: center; color: var(--text-secondary); font-size: 18px; margin-bottom: 48px; line-height: 1.6; }
+        .badge { display: inline-block; background: var(--accent); color: white; padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 16px; }
+
+        .section { margin-bottom: 48px; }
+        .section h2 { font-size: 22px; font-weight: 700; margin-bottom: 12px; }
+        .section h3 { font-size: 17px; font-weight: 700; margin: 20px 0 8px; color: var(--accent); }
+        .section p { color: var(--text-secondary); font-size: 15px; line-height: 1.7; margin-bottom: 12px; }
+
+        .endpoint-card {
+            background: var(--bg-secondary); border: 1px solid var(--border);
+            border-radius: 12px; padding: 20px; margin-bottom: 16px;
+        }
+        .endpoint-method {
+            display: inline-block; background: var(--green); color: white;
+            padding: 2px 8px; border-radius: 4px; font-size: 12px; font-weight: 700;
+            font-family: monospace; margin-right: 8px;
+        }
+        .endpoint-url {
+            font-family: monospace; font-size: 14px; color: var(--text-primary);
+        }
+        .endpoint-desc { color: var(--text-secondary); font-size: 14px; margin-top: 8px; }
+
+        .code-block {
+            background: #1a1a2e; border: 1px solid var(--border); border-radius: 10px;
+            padding: 20px; font-family: 'Menlo', 'Monaco', 'Courier New', monospace;
+            font-size: 13px; line-height: 1.6; overflow-x: auto; color: #e2e8f0;
+            position: relative; margin-bottom: 16px;
+        }
+        .code-block .copy-btn {
+            position: absolute; top: 8px; right: 8px; padding: 4px 10px;
+            background: rgba(99,102,241,0.2); border: 1px solid rgba(99,102,241,0.3);
+            border-radius: 6px; color: #a5b4fc; font-size: 11px; cursor: pointer;
+        }
+        .code-block .copy-btn:hover { background: rgba(99,102,241,0.4); }
+        .code-block code { white-space: pre; }
+        .code-comment { color: #6b7280; }
+        .code-string { color: #86efac; }
+        .code-key { color: #a5b4fc; }
+        .code-number { color: #fbbf24; }
+
+        table { width: 100%; border-collapse: collapse; margin: 12px 0; }
+        th, td { text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--border); font-size: 14px; }
+        th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 12px; text-transform: uppercase; letter-spacing: 0.5px; }
+        td code { background: var(--bg-card); padding: 2px 6px; border-radius: 4px; font-size: 13px; }
+
+        .try-it {
+            background: var(--bg-secondary); border: 1px solid var(--border);
+            border-radius: 16px; padding: 32px; margin-bottom: 24px;
+        }
+        .try-it h2 { font-size: 20px; font-weight: 700; margin-bottom: 16px; }
+        .try-row { display: flex; gap: 12px; margin-bottom: 16px; flex-wrap: wrap; }
+        .try-row input, .try-row select {
+            padding: 10px 14px; background: var(--bg-card); border: 1px solid var(--border);
+            border-radius: 8px; color: var(--text-primary); font-size: 14px; font-family: monospace;
+        }
+        .try-row input:focus, .try-row select:focus { outline: 2px solid var(--accent); outline-offset: 2px; border-color: var(--accent); }
+        .try-result {
+            background: #1a1a2e; border-radius: 10px; padding: 16px;
+            font-family: monospace; font-size: 13px; color: #e2e8f0;
+            white-space: pre-wrap; overflow-x: auto; max-height: 400px; overflow-y: auto;
+        }
+
+        .feature-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; margin: 20px 0; }
+        .feature-item {
+            background: var(--bg-secondary); border: 1px solid var(--border);
+            border-radius: 10px; padding: 16px;
+        }
+        .feature-item h4 { font-size: 14px; font-weight: 700; margin-bottom: 4px; }
+        .feature-item p { font-size: 13px; color: var(--text-secondary); margin: 0; }
+
+        .btn-primary {
+            background: var(--accent); color: white; padding: 10px 20px;
+            border-radius: 8px; font-size: 14px; font-weight: 600;
+            border: none; cursor: pointer; transition: all 0.2s;
+        }
+        .btn-primary:hover { background: var(--accent-hover); }
+
+        @media (max-width: 768px) {
+            .content { padding: 80px 20px 40px; }
+            .try-row { flex-direction: column; }
+        }
+    </style>
+    <meta name="theme-color" content="#6366f1">
+    <link rel="preconnect" href="https://getapipulse.com">
+</head>
+<body>
+    <a href="#main" class="skip-link">Skip to content</a>
+    <nav>
+        <div class="nav-inner">
+            <a href="index.html" class="logo">API<span>pulse</span></a>
+            <button class="hamburger" onclick="toggleMobileNav()" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+            <div class="nav-links">
+                <a href="calculator.html">Calculator</a>
+                <a href="compare.html">Compare</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="use-cases.html">Use Cases</a>
+                <a href="about.html">About</a>
+                <a href="blog.html">Blog</a>
+                <a href="quiz.html">Quiz</a>
+                <a href="pricing-index.html">Pricing Index</a>
+                <a href="api-docs.html" style="color:var(--accent);">API</a>
+                <a href="pricing.html" class="nav-cta" onclick="if(window.trackEvent)window.trackEvent('pro_button_clicked',{source:'nav'})">Get Pro — $29</a>
+                <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
+            </div>
+        </div>
+    </nav>
+
+    <main id="main" class="content">
+        <div style="text-align:center;">
+            <span class="badge">Free &middot; No Auth Required</span>
+        </div>
+        <h1>LLM Pricing API</h1>
+        <p class="subtitle">Get current pricing for 32 AI models from 10 providers. Use it in your tools, dashboards, CI/CD pipelines, and cost calculators.</p>
+
+        <div class="feature-grid">
+            <div class="feature-item">
+                <h4>32 Models</h4>
+                <p>GPT-5, Claude 4, Gemini 3, DeepSeek V4, Llama 4, and more</p>
+            </div>
+            <div class="feature-item">
+                <h4>10 Providers</h4>
+                <p>OpenAI, Anthropic, Google, Mistral, Cohere, Meta, DeepSeek, xAI, Moonshot, AI21</p>
+            </div>
+            <div class="feature-item">
+                <h4>Always Free</h4>
+                <p>No API key, no rate limits, no signup required</p>
+            </div>
+            <div class="feature-item">
+                <h4>REST JSON</h4>
+                <p>Simple GET requests, standard JSON responses, CORS enabled</p>
+            </div>
+        </div>
+
+        <!-- Endpoints -->
+        <div class="section">
+            <h2>Endpoints</h2>
+
+            <div class="endpoint-card">
+                <div><span class="endpoint-method">GET</span> <span class="endpoint-url">/api/pricing</span></div>
+                <p class="endpoint-desc">Get all 32 models with pricing data, or filter by provider/tier.</p>
+            </div>
+
+            <h3>Query Parameters</h3>
+            <table>
+                <thead>
+                    <tr><th>Parameter</th><th>Type</th><th>Description</th><th>Example</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td><code>provider</code></td><td>string</td><td>Filter by provider slug</td><td><code>?provider=openai</code></td></tr>
+                    <tr><td><code>tier</code></td><td>string</td><td>Filter by pricing tier (Budget, Mid, Premium)</td><td><code>?tier=budget</code></td></tr>
+                    <tr><td><code>model</code></td><td>string</td><td>Get a single model by ID</td><td><code>?model=openai-gpt5</code></td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Quick Start -->
+        <div class="section">
+            <h2>Quick Start</h2>
+
+            <h3>Get all models</h3>
+            <div class="code-block">
+                <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                <code><span class="code-comment">// JavaScript</span>
+<span class="code-key">const</span> res = <span class="code-key">await</span> fetch(<span class="code-string">'https://getapipulse.com/api/pricing'</span>);
+<span class="code-key">const</span> { models, meta } = <span class="code-key">await</span> res.json();
+console.log(meta.count); <span class="code-comment">// 32</span>
+console.log(models[<span class="code-number">0</span>].name); <span class="code-comment">// "GPT-5.5"</span></code>
+            </div>
+
+            <h3>Filter by provider</h3>
+            <div class="code-block">
+                <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                <code><span class="code-comment"># cURL</span>
+curl <span class="code-string">"https://getapipulse.com/api/pricing?provider=anthropic"</span></code>
+            </div>
+
+            <h3>Get a single model</h3>
+            <div class="code-block">
+                <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                <code><span class="code-comment"># Python</span>
+<span class="code-key">import</span> requests
+r = requests.get(<span class="code-string">"https://getapipulse.com/api/pricing?model=openai-gpt4o-mini"</span>)
+model = r.json()[<span class="code-string">"model"</span>]
+print(f<span class="code-string">"${model['input']}/1M input, ${model['output']}/1M output"</span>)</code>
+            </div>
+
+            <h3>Filter by tier</h3>
+            <div class="code-block">
+                <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                <code><span class="code-comment">// Get all budget models</span>
+<span class="code-key">const</span> res = <span class="code-key">await</span> fetch(<span class="code-string">'https://getapipulse.com/api/pricing?tier=budget'</span>);
+<span class="code-key">const</span> { models } = <span class="code-key">await</span> res.json();
+<span class="code-comment">// Returns: GPT-4o mini, GPT-oss, Gemini Flash, DeepSeek V4 Flash, etc.</span></code>
+            </div>
+        </div>
+
+        <!-- Response Format -->
+        <div class="section">
+            <h2>Response Format</h2>
+
+            <h3>Single model</h3>
+            <div class="code-block">
+                <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                <code>{
+  <span class="code-key">"model"</span>: {
+    <span class="code-key">"id"</span>: <span class="code-string">"openai-gpt4o-mini"</span>,
+    <span class="code-key">"name"</span>: <span class="code-string">"GPT-4o mini"</span>,
+    <span class="code-key">"provider"</span>: <span class="code-string">"OpenAI"</span>,
+    <span class="code-key">"providerSlug"</span>: <span class="code-string">"openai"</span>,
+    <span class="code-key">"tier"</span>: <span class="code-string">"Budget"</span>,
+    <span class="code-key">"input"</span>: <span class="code-number">0.15</span>,
+    <span class="code-key">"output"</span>: <span class="code-number">0.60</span>,
+    <span class="code-key">"context"</span>: <span class="code-string">"128K"</span>,
+    <span class="code-key">"verified"</span>: <span class="code-string">"Apr 2026"</span>
+  },
+  <span class="code-key">"source"</span>: <span class="code-string">"https://getapipulse.com"</span>,
+  <span class="code-key">"docs"</span>: <span class="code-string">"https://getapipulse.com/pricing-index.html"</span>
+}</code>
+            </div>
+
+            <h3>Collection response</h3>
+            <div class="code-block">
+                <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                <code>{
+  <span class="code-key">"models"</span>: [ ... ],
+  <span class="code-key">"meta"</span>: {
+    <span class="code-key">"count"</span>: <span class="code-number">32</span>,
+    <span class="code-key">"providers"</span>: [<span class="code-string">"OpenAI"</span>, <span class="code-string">"Anthropic"</span>, ...],
+    <span class="code-key">"tiers"</span>: [<span class="code-string">"Budget"</span>, <span class="code-string">"Mid"</span>, <span class="code-string">"Premium"</span>],
+    <span class="code-key">"lastUpdated"</span>: <span class="code-string">"2026-04-27"</span>,
+    <span class="code-key">"source"</span>: <span class="code-string">"https://getapipulse.com"</span>,
+    <span class="code-key">"docs"</span>: <span class="code-string">"https://getapipulse.com/pricing-index.html"</span>
+  }
+}</code>
+            </div>
+
+            <h3>Model fields</h3>
+            <table>
+                <thead>
+                    <tr><th>Field</th><th>Type</th><th>Description</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td><code>id</code></td><td>string</td><td>Unique model identifier (e.g. <code>openai-gpt5</code>)</td></tr>
+                    <tr><td><code>name</code></td><td>string</td><td>Display name (e.g. "GPT-5")</td></tr>
+                    <tr><td><code>provider</code></td><td>string</td><td>Provider name (e.g. "OpenAI")</td></tr>
+                    <tr><td><code>providerSlug</code></td><td>string</td><td>URL-friendly provider ID (e.g. "openai")</td></tr>
+                    <tr><td><code>tier</code></td><td>string</td><td>Pricing tier: Budget, Mid, or Premium</td></tr>
+                    <tr><td><code>input</code></td><td>number</td><td>Input token cost per 1M tokens (USD)</td></tr>
+                    <tr><td><code>output</code></td><td>number</td><td>Output token cost per 1M tokens (USD)</td></tr>
+                    <tr><td><code>context</code></td><td>string</td><td>Context window size (e.g. "128K", "1M")</td></tr>
+                    <tr><td><code>verified</code></td><td>string</td><td>When pricing was last verified</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Available Providers -->
+        <div class="section">
+            <h2>Available Providers</h2>
+            <table>
+                <thead>
+                    <tr><th>Slug</th><th>Provider</th><th>Models</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td><code>openai</code></td><td>OpenAI</td><td>9 models (GPT-5.5, GPT-5, GPT-4o, GPT-oss, etc.)</td></tr>
+                    <tr><td><code>anthropic</code></td><td>Anthropic</td><td>5 models (Claude Opus 4.7, Sonnet 4.6, Haiku 3.5, etc.)</td></tr>
+                    <tr><td><code>google</code></td><td>Google</td><td>3 models (Gemini 3 Pro, 2.5 Pro, 2.0 Flash)</td></tr>
+                    <tr><td><code>deepseek</code></td><td>DeepSeek</td><td>3 models (V4 Pro, V4 Flash, V3)</td></tr>
+                    <tr><td><code>mistral</code></td><td>Mistral</td><td>2 models (Large, Small)</td></tr>
+                    <tr><td><code>cohere</code></td><td>Cohere</td><td>2 models (Command R+, Command R)</td></tr>
+                    <tr><td><code>together</code></td><td>Meta (Together.ai)</td><td>4 models (Llama 4 Scout/Maverick, Llama 3.1 70B/8B)</td></tr>
+                    <tr><td><code>moonshot</code></td><td>Moonshot</td><td>1 model (Kimi K2.6)</td></tr>
+                    <tr><td><code>xai</code></td><td>xAI</td><td>2 models (Grok 3, Grok 3 Mini)</td></tr>
+                    <tr><td><code>ai21</code></td><td>AI21</td><td>1 model (Jamba 1.5 Large)</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Try It -->
+        <div class="try-it">
+            <h2>Try It Live</h2>
+            <p style="color:var(--text-secondary);font-size:14px;margin-bottom:16px;">Test the API directly from your browser.</p>
+            <div class="try-row">
+                <select id="try-provider" onchange="updateTryUrl()">
+                    <option value="">All providers</option>
+                    <option value="openai">OpenAI</option>
+                    <option value="anthropic">Anthropic</option>
+                    <option value="google">Google</option>
+                    <option value="deepseek">DeepSeek</option>
+                    <option value="mistral">Mistral</option>
+                    <option value="cohere">Cohere</option>
+                    <option value="together">Meta (Together.ai)</option>
+                    <option value="moonshot">Moonshot</option>
+                    <option value="xai">xAI</option>
+                    <option value="ai21">AI21</option>
+                </select>
+                <select id="try-tier" onchange="updateTryUrl()">
+                    <option value="">All tiers</option>
+                    <option value="budget">Budget</option>
+                    <option value="mid">Mid</option>
+                    <option value="premium">Premium</option>
+                </select>
+                <button class="btn-primary" onclick="tryApi()">Send Request</button>
+            </div>
+            <div id="try-url" style="font-family:monospace;font-size:13px;color:var(--accent);margin-bottom:12px;"></div>
+            <div id="try-result" class="try-result" style="display:none;"></div>
+        </div>
+
+        <!-- Use Cases -->
+        <div class="section">
+            <h2>Use Cases</h2>
+            <div class="feature-grid">
+                <div class="feature-item">
+                    <h4>Cost Dashboards</h4>
+                    <p>Build internal dashboards that track AI spending across your organization.</p>
+                </div>
+                <div class="feature-item">
+                    <h4>CI/CD Cost Checks</h4>
+                    <p>Alert your team when a model's price changes before deploying to production.</p>
+                </div>
+                <div class="feature-item">
+                    <h4>Budget Calculators</h4>
+                    <p>Power your own cost estimation tools with real-time pricing data.</p>
+                </div>
+                <div class="feature-item">
+                    <h4>Model Selection</h4>
+                    <p>Programmatically pick the cheapest model that meets your quality requirements.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Attribution -->
+        <div class="section">
+            <h2>Attribution</h2>
+            <p>This API is free to use. We appreciate a link back to <a href="https://getapipulse.com">getapipulse.com</a> when possible.</p>
+            <div class="code-block">
+                <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                <code>Pricing data provided by <span class="code-string"><a href="https://getapipulse.com" style="color:#86efac;">APIpulse</a></span></code>
+            </div>
+        </div>
+
+        <!-- Related Tools -->
+        <div class="section">
+            <h2>Related Tools</h2>
+            <div class="feature-grid">
+                <div class="feature-item">
+                    <h4><a href="calculator.html">Cost Calculator</a></h4>
+                    <p>Calculate monthly costs for any model with our interactive calculator.</p>
+                </div>
+                <div class="feature-item">
+                    <h4><a href="compare.html">Model Compare</a></h4>
+                    <p>Compare pricing across models side by side.</p>
+                </div>
+                <div class="feature-item">
+                    <h4><a href="token-estimator.html">Token Estimator</a></h4>
+                    <p>Estimate costs across all 32 models instantly.</p>
+                </div>
+                <div class="feature-item">
+                    <h4><a href="embed.html">Embed Widget</a></h4>
+                    <p>Add our calculator to your own site.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <button class="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">↑</button>
+
+    <footer>
+        <p>Pricing data last verified: <span class="verified-date"></span></p>
+        <p>&copy; 2026 APIpulse. <a href="index.html">Home</a> &middot; <a href="use-cases.html">Use Cases</a> &middot; <a href="about.html">About</a> &middot; <a href="blog.html">Blog</a>
+<a href="pricing-index.html">Pricing Index</a> &middot; <a href="openai.html">OpenAI</a> &middot; <a href="anthropic.html">Anthropic</a> &middot; <a href="google.html">Google</a> &middot; <a href="mistral.html">Mistral</a> &middot; <a href="cohere.html">Cohere</a> &middot; <a href="deepseek.html">DeepSeek</a> &middot; <a href="xai.html">xAI</a> &middot; <a href="moonshot.html">Moonshot</a> &middot; <a href="together.html">Together.ai</a> &middot; <a href="ai21.html">AI21</a> &middot; <a href="api-docs.html">API</a> &middot; <a href="pricing.html">Pricing</a> &middot; <a href="embed.html">Embed Widget</a> &middot; <a href="cheat-sheet.html">Cheat Sheet</a> &middot; <a href="https://x.com/getapipulse" target="_blank" rel="noopener">Twitter</a> &middot; <a href="unsubscribe.html">Unsubscribe</a></p>
+    </footer>
+
+    <script>
+        const baseUrl = 'https://getapipulse.com/api/pricing';
+
+        function updateTryUrl() {
+            const provider = document.getElementById('try-provider').value;
+            const tier = document.getElementById('try-tier').value;
+            const params = new URLSearchParams();
+            if (provider) params.set('provider', provider);
+            if (tier) params.set('tier', tier);
+            const url = params.toString() ? `${baseUrl}?${params}` : baseUrl;
+            document.getElementById('try-url').textContent = url;
+        }
+
+        async function tryApi() {
+            const provider = document.getElementById('try-provider').value;
+            const tier = document.getElementById('try-tier').value;
+            const params = new URLSearchParams();
+            if (provider) params.set('provider', provider);
+            if (tier) params.set('tier', tier);
+            const url = params.toString() ? `${baseUrl}?${params}` : baseUrl;
+
+            const resultEl = document.getElementById('try-result');
+            resultEl.style.display = 'block';
+            resultEl.textContent = 'Loading...';
+
+            try {
+                const res = await fetch(url);
+                const data = await res.json();
+                resultEl.textContent = JSON.stringify(data, null, 2);
+            } catch (err) {
+                resultEl.textContent = 'Error: ' + err.message;
+            }
+        }
+
+        function copyCode(btn) {
+            const code = btn.parentElement.querySelector('code');
+            navigator.clipboard.writeText(code.textContent).then(() => {
+                btn.textContent = 'Copied!';
+                setTimeout(() => btn.textContent = 'Copy', 2000);
+            });
+        }
+
+        updateTryUrl();
+    </script>
+</body>
+</html>

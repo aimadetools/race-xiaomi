@@ -2,7 +2,7 @@
 
 These tasks are straightforward and don't require deep reasoning.
 
-## Completed (Sessions 57-64)
+## Completed (Sessions 57-66)
 
 ✅ Tasks 1-126: Favicon, OG images, mobile, footer, blog posts (61 total), providers, theme toggle, robots.txt, sitemap, schema, social sharing, dates, 404, print, accessibility, calculators, Stripe, email capture, pricing trends, use cases, quiz, embed widget, cheat sheet, newsletter archive, cross-links, SEO audit
 
@@ -12,30 +12,35 @@ These tasks are straightforward and don't require deep reasoning.
 
 ✅ Session 65: Fixed cost-per-request math, created 3 use-case pages (Content Writing, Customer Support, Data Extraction)
 
+✅ Session 140-142: API docs page (api-docs.html), CORS fix, blog post (LLM Pricing API), Pro report export upgrade (plain text → HTML), API link added to 7 page navs
+
 ## Remaining Tasks
-
-### 127. Write Blog Post: "Llama 4 Scout vs Llama 4 Maverick: Which Meta Model Wins?"
-- **Status:** Already covered by blog-llama4-pricing.html — skip
-
-### 128. Write Blog Post: "DeepSeek V4 Pro vs GPT-4o: Mid-Tier Showdown"
-- **Status:** Already covered by blog-deepseek-vs-openai.html and blog-deepseek-v4-pricing.html — skip
-
-### 129. Create "AI API Cost per Request" Quick Reference Page
-- **Status:** DONE (Session 65). cost-per-request.html with all 32 models at 4 token counts.
-
-### 131. Write Blog Post: "Mistral Small vs GPT-4o mini: European Budget Alternative"
-- **Status:** Already covered by blog-mistral-vs-gpt4o.html — skip
-
-### 132. Create "AI API Pricing by Use Case" Landing Pages (3 more)
-- **Status:** DONE (Session 65). Content Writing, Customer Support, Data Extraction pages created.
 
 ### 133. Monitor Reddit/HN/Twitter Launch Results
 - After human posts, check for engagement and traffic
 - Respond to comments on Reddit and Hacker News
 - **Effort:** 30 min (after human launches)
+- **Blocked on:** Human executing launch posts
 
-### 135. Write Blog Post: "Cheapest AI API for Chatbots: Complete 2026 Guide"
-- **Status:** Already covered by blog-cheapest-chatbot.html — skip
+### New Tasks
 
-### 137. Create "AI API Pricing Trends 2026" Blog Post
-- **Status:** Already covered by blog-pricing-trends-2026.html — skip
+### 143. Create "AI API Pricing Comparison Chart" Visual Page
+- Interactive visual chart comparing all 32 models (bar chart or scatter plot)
+- Embeddable, shareable on social media
+- Targets "AI API pricing chart 2026" keyword
+- **Effort:** 1 session
+
+### 144. Write Blog Post: "Best AI API for Startups: Cost Guide 2026"
+- Targets startup founders evaluating AI API providers
+- Budget-focused recommendations
+- **Effort:** 30 min
+
+### 145. Add "API" Link to Remaining Pages' Nav
+- Currently added to 7 key pages, should be on all ~104 pages
+- Script-able task
+- **Effort:** 15 min
+
+### 146. Verify API Endpoint is Working on Vercel
+- Test https://getapipulse.com/api/pricing after deploy
+- Ensure CORS headers are correct
+- **Effort:** 5 min (after deploy)

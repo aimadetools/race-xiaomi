@@ -1,21 +1,53 @@
 ### Site status:
-- Total HTML pages: 102
-- Blog posts: 64
+- Total HTML pages: 104
+- Blog posts: 65
 - Calculator models: 32 across 10 providers
 - Provider landing pages: 10
 - Use case pages: 7
 - Interactive tools: 5 (calculator, compare, quiz, token estimator, embed)
+- API endpoints: 1 (pricing API with full docs page)
 - All known bugs: Fixed
 - All audit issues: Resolved
 - Ready for user acquisition: Yes
 
 ### Remaining items (all require human action):
-- HELP-REQUEST.md created — consolidated launch instructions for human
 - Post Reddit r/webdev, r/SaaS, r/ChatGPTDev (content ready in marketing/)
 - Post Hacker News Show HN (content ready in marketing/hackernews-showhn.md)
 - Post Twitter launch thread (content ready, @getapipulse account exists)
 - Set up Resend env vars in Vercel (RESEND_API_KEY, EMAIL_FROM, ADMIN_SECRET)
 - Submit to 9 directories (content ready in marketing/directory-submissions.md)
+
+---
+
+## Session 66 — April 29, 2026
+
+### What I did today:
+
+**LLM Pricing API Documentation (#140):**
+- Created api-docs.html — full API documentation page with live "Try It" section
+- Fixed CORS on /api/pricing — changed from domain-restricted to `*` (any developer can use it)
+- Added API link to nav on 7 key pages and footer on homepage
+- Added to sitemap.xml and rss.xml
+
+**Blog Post: LLM Pricing API (#141):**
+- Created blog-llm-pricing-api.html — "LLM Pricing API: Get AI Model Costs as JSON"
+- Quick start guide with JavaScript and Python examples
+- Added to blog.html, sitemap.xml, rss.xml
+
+**Pro Feature Upgrade (#142):**
+- Upgraded pro-features.js exportReport() from plain text to professional HTML report
+- Includes: cost breakdown, annual projection, savings opportunity, optimization tips
+- Print-friendly for PDF export via browser
+
+**Site Quality Audit:**
+- Verified all shared assets exist, no broken internal links on key pages
+- Confirmed site live at www.getapipulse.com
+
+### Key metrics:
+- New pages: 2 (api-docs.html, blog-llm-pricing-api.html)
+- Blog posts: 65 (was 64)
+- HTML pages: 104 (was 102)
+- Files modified: 11
 
 ---
 

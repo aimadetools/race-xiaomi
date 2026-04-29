@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LLM Pricing API: Get AI Model Costs as JSON | APIpulse</title>
+    <meta name="description" content="Free LLM pricing API — get current costs for GPT-5, Claude 4, Gemini 3, DeepSeek V4, and 28 more models as JSON. No API key required. Use in dashboards, CI/CD, and cost calculators.">
+    <meta name="keywords" content="LLM pricing API, AI API pricing JSON, GPT cost API, Claude pricing API, LLM price comparison API, AI model pricing data, OpenAI pricing API">
+    <meta property="og:title" content="LLM Pricing API: Get AI Model Costs as JSON | APIpulse">
+    <meta property="og:description" content="Free LLM pricing API — get current costs for 32 models across 10 providers as JSON. No API key required.">
+    <meta property="og:type" content="article">
+    <meta property="og:image" content="https://getapipulse.com/og-image.png">
+    <meta property="og:url" content="https://getapipulse.com/blog-llm-pricing-api.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="LLM Pricing API: Get AI Model Costs as JSON | APIpulse">
+    <meta name="twitter:image" content="https://getapipulse.com/og-image.png">
+    <meta name="twitter:description" content="Free LLM pricing API — get current costs for 32 models across 10 providers as JSON.">
+    <link rel="canonical" href="https://getapipulse.com/blog-llm-pricing-api.html">
+    <link rel="alternate" type="application/rss+xml" title="APIpulse Blog" href="https://getapipulse.com/rss.xml">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="styles.css">
+    <script src="analytics.js" defer></script>
+    <script src="dynamic-date.js" defer></script>
+    <script src="shared.js" defer></script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": "LLM Pricing API: Get AI Model Costs as JSON",
+        "description": "Free LLM pricing API — get current costs for 32 models across 10 providers as JSON.",
+        "datePublished": "2026-04-29",
+        "author": { "@type": "Organization", "name": "APIpulse" },
+        "publisher": { "@type": "Organization", "name": "APIpulse" }
+    }
+    </script>
+    <style>
+        .article { max-width: 800px; margin: 0 auto; padding: 120px 24px 80px; }
+        .article-meta { display: flex; gap: 12px; align-items: center; margin-bottom: 24px; font-size: 14px; color: var(--text-muted); }
+        .article h1 { font-size: clamp(28px, 4vw, 40px); font-weight: 800; line-height: 1.2; margin-bottom: 16px; }
+        .article h2 { font-size: 22px; font-weight: 700; margin: 40px 0 12px; }
+        .article h3 { font-size: 17px; font-weight: 700; margin: 24px 0 8px; color: var(--accent); }
+        .article p { color: var(--text-secondary); font-size: 16px; line-height: 1.8; margin-bottom: 16px; }
+        .article ul, .article ol { color: var(--text-secondary); font-size: 16px; line-height: 1.8; margin: 0 0 16px 24px; }
+        .article li { margin-bottom: 8px; }
+        .code-block {
+            background: #1a1a2e; border: 1px solid var(--border); border-radius: 10px;
+            padding: 20px; font-family: 'Menlo', 'Monaco', 'Courier New', monospace;
+            font-size: 13px; line-height: 1.6; overflow-x: auto; color: #e2e8f0;
+            position: relative; margin: 16px 0;
+        }
+        .code-block .copy-btn {
+            position: absolute; top: 8px; right: 8px; padding: 4px 10px;
+            background: rgba(99,102,241,0.2); border: 1px solid rgba(99,102,241,0.3);
+            border-radius: 6px; color: #a5b4fc; font-size: 11px; cursor: pointer;
+        }
+        .code-block .copy-btn:hover { background: rgba(99,102,241,0.4); }
+        .code-block code { white-space: pre; }
+        .callout {
+            background: var(--bg-secondary); border: 1px solid var(--border);
+            border-left: 4px solid var(--accent); border-radius: 8px;
+            padding: 16px 20px; margin: 20px 0;
+        }
+        .callout p { margin: 0; font-size: 15px; }
+        .cta-box {
+            background: var(--bg-secondary); border: 1px solid var(--border);
+            border-radius: 12px; padding: 32px; text-align: center; margin: 40px 0;
+        }
+        .cta-box h3 { margin-bottom: 8px; }
+        .cta-box p { color: var(--text-secondary); font-size: 15px; margin-bottom: 16px; }
+        .related { margin-top: 48px; padding-top: 32px; border-top: 1px solid var(--border); }
+        .related h3 { font-size: 18px; margin-bottom: 16px; }
+        .related a { display: block; padding: 8px 0; color: var(--accent); font-size: 15px; }
+        table { width: 100%; border-collapse: collapse; margin: 16px 0; }
+        th, td { text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--border); font-size: 14px; }
+        th { background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 12px; text-transform: uppercase; letter-spacing: 0.5px; }
+        td code { background: var(--bg-card); padding: 2px 6px; border-radius: 4px; font-size: 13px; }
+        @media (max-width: 768px) { .article { padding: 80px 20px 40px; } }
+    </style>
+    <meta name="theme-color" content="#6366f1">
+    <link rel="preconnect" href="https://getapipulse.com">
+</head>
+<body>
+    <a href="#main" class="skip-link">Skip to content</a>
+    <nav>
+        <div class="nav-inner">
+            <a href="index.html" class="logo">API<span>pulse</span></a>
+            <button class="hamburger" onclick="toggleMobileNav()" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+            <div class="nav-links">
+                <a href="calculator.html">Calculator</a>
+                <a href="compare.html">Compare</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="blog.html">Blog</a>
+                <a href="api-docs.html" style="color:var(--accent);">API</a>
+                <a href="pricing.html" class="nav-cta" onclick="if(window.trackEvent)window.trackEvent('pro_button_clicked',{source:'nav'})">Get Pro — $29</a>
+                <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
+            </div>
+        </div>
+    </nav>
+
+    <main id="main" class="article">
+        <div class="article-meta">
+            <span class="tier-badge guide">Guide</span>
+            <span>April 29, 2026</span>
+            <span>&middot; 5 min read</span>
+        </div>
+
+        <h1>LLM Pricing API: Get AI Model Costs as JSON</h1>
+
+        <p>Need to access LLM pricing data programmatically? Whether you're building a cost dashboard, a CI/CD pipeline that checks for price changes, or a model selection tool — you need reliable, up-to-date pricing data in a machine-readable format.</p>
+
+        <p>That's why we built the <strong>APIpulse LLM Pricing API</strong> — a free, no-auth JSON endpoint that returns current pricing for 32 AI models across 10 providers.</p>
+
+        <h2>Quick Start</h2>
+
+        <p>Get all models with a single GET request:</p>
+
+        <div class="code-block">
+            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            <code>curl "https://getapipulse.com/api/pricing"</code>
+        </div>
+
+        <p>Response includes 32 models with input/output costs, context windows, and provider metadata:</p>
+
+        <div class="code-block">
+            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            <code>{
+  "models": [
+    {
+      "id": "openai-gpt55",
+      "name": "GPT-5.5",
+      "provider": "OpenAI",
+      "tier": "Premium",
+      "input": 5.00,
+      "output": 30.00,
+      "context": "1M"
+    },
+    ...
+  ],
+  "meta": {
+    "count": 32,
+    "providers": ["OpenAI", "Anthropic", "Google", ...],
+    "lastUpdated": "2026-04-27"
+  }
+}</code>
+        </div>
+
+        <h2>Filter by Provider</h2>
+
+        <p>Narrow results to a specific provider:</p>
+
+        <div class="code-block">
+            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            <code><span class="code-comment"># Get all OpenAI models</span>
+curl "https://getapipulse.com/api/pricing?provider=openai"
+
+<span class="code-comment"># Get all Anthropic models</span>
+curl "https://getapipulse.com/api/pricing?provider=anthropic"
+
+<span class="code-comment"># Get all budget-tier models</span>
+curl "https://getapipulse.com/api/pricing?tier=budget"</code>
+        </div>
+
+        <h2>Get a Single Model</h2>
+
+        <p>Fetch pricing for a specific model by ID:</p>
+
+        <div class="code-block">
+            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            <code>curl "https://getapipulse.com/api/pricing?model=openai-gpt4o-mini"</code>
+        </div>
+
+        <h2>Use It in JavaScript</h2>
+
+        <div class="code-block">
+            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            <code><span class="code-comment">// Find the cheapest model for your workload</span>
+<span class="code-key">const</span> res = <span class="code-key">await</span> fetch(<span class="code-string">'https://getapipulse.com/api/pricing?tier=budget'</span>);
+<span class="code-key">const</span> { models } = <span class="code-key">await</span> res.json();
+
+<span class="code-key">const</span> inputTokens = <span class="code-number">2000</span>, outputTokens = <span class="code-number">500</span>;
+<span class="code-key">const</span> monthlyRequests = <span class="code-number">30000</span>;
+
+<span class="code-key">const</span> costs = models.map(m => ({
+  name: m.name,
+  monthlyCost: (inputTokens * monthlyRequests / <span class="code-number">1e6</span>) * m.input
+             + (outputTokens * monthlyRequests / <span class="code-number">1e6</span>) * m.output
+})).sort((a, b) => a.monthlyCost - b.monthlyCost);
+
+console.log(`Cheapest: ${costs[<span class="code-number">0</span>].name} at $${costs[<span class="code-number">0</span>].monthlyCost.toFixed(<span class="code-number">2</span>}/mo`);</code>
+        </div>
+
+        <h2>Use It in Python</h2>
+
+        <div class="code-block">
+            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            <code><span class="code-key">import</span> requests
+
+<span class="code-comment"># Get all models and find the cheapest for chatbot workloads</span>
+r = requests.get(<span class="code-string">"https://getapipulse.com/api/pricing"</span>)
+models = r.json()[<span class="code-string">"models"</span>]
+
+<span class="code-key">for</span> m <span class="code-key">in</span> sorted(models, key=<span class="code-key">lambda</span> x: x[<span class="code-string">"input"</span>]):
+    print(f<span class="code-string">"{m['name']:25s} ${m['input']:.2f}/${m['output']:.2f} per 1M tokens"</span>)</code>
+        </div>
+
+        <h2>Use Cases</h2>
+
+        <div class="callout">
+            <p><strong>Cost Dashboards</strong> — Build internal tools that track AI spending across teams and projects.</p>
+        </div>
+
+        <div class="callout">
+            <p><strong>CI/CD Price Checks</strong> — Alert your team when a model's price changes before deploying to production.</p>
+        </div>
+
+        <div class="callout">
+            <p><strong>Model Selection</strong> — Programmatically pick the cheapest model that meets your quality requirements.</p>
+        </div>
+
+        <div class="callout">
+            <p><strong>Budget Calculators</strong> — Power your own cost estimation tools with real-time pricing data.</p>
+        </div>
+
+        <h2>Supported Providers</h2>
+
+        <table>
+            <thead>
+                <tr><th>Provider</th><th>Slug</th><th>Models</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>OpenAI</td><td><code>openai</code></td><td>9 (GPT-5.5, GPT-5, GPT-4o, GPT-oss, etc.)</td></tr>
+                <tr><td>Anthropic</td><td><code>anthropic</code></td><td>5 (Claude Opus 4.7, Sonnet 4.6, Haiku 3.5)</td></tr>
+                <tr><td>Google</td><td><code>google</code></td><td>3 (Gemini 3 Pro, 2.5 Pro, 2.0 Flash)</td></tr>
+                <tr><td>DeepSeek</td><td><code>deepseek</code></td><td>3 (V4 Pro, V4 Flash, V3)</td></tr>
+                <tr><td>Mistral</td><td><code>mistral</code></td><td>2 (Large, Small)</td></tr>
+                <tr><td>Cohere</td><td><code>cohere</code></td><td>2 (Command R+, Command R)</td></tr>
+                <tr><td>Meta (Together.ai)</td><td><code>together</code></td><td>4 (Llama 4 Scout/Maverick, Llama 3.1)</td></tr>
+                <tr><td>Moonshot</td><td><code>moonshot</code></td><td>1 (Kimi K2.6)</td></tr>
+                <tr><td>xAI</td><td><code>xai</code></td><td>2 (Grok 3, Grok 3 Mini)</td></tr>
+                <tr><td>AI21</td><td><code>ai21</code></td><td>1 (Jamba 1.5 Large)</td></tr>
+            </tbody>
+        </table>
+
+        <h2>Why Use This API?</h2>
+
+        <ul>
+            <li><strong>Free forever</strong> — No API key, no rate limits, no signup</li>
+            <li><strong>Always current</strong> — Pricing data verified monthly against provider pages</li>
+            <li><strong>CORS enabled</strong> — Use directly from browser-based tools</li>
+            <li><strong>32 models</strong> — The most comprehensive LLM pricing dataset available</li>
+            <li><strong>10 providers</strong> — OpenAI, Anthropic, Google, DeepSeek, Mistral, Cohere, Meta, Moonshot, xAI, AI21</li>
+        </ul>
+
+        <h2>Attribution</h2>
+
+        <p>This API is free to use. We appreciate a link back to <a href="https://getapipulse.com">getapipulse.com</a> when possible.</p>
+
+        <div class="cta-box">
+            <h3>Try the Full Calculator</h3>
+            <p>Need more than raw pricing data? Our calculator estimates monthly costs for your specific usage patterns.</p>
+            <a href="calculator.html" class="btn-primary" style="display:inline-block;text-decoration:none;">Open Cost Calculator →</a>
+        </div>
+
+        <div class="related">
+            <h3>Related Resources</h3>
+            <a href="api-docs.html">Full API Documentation →</a>
+            <a href="pricing-index.html">Pricing Index (all 32 models) →</a>
+            <a href="cost-per-request.html">Cost per Request Reference →</a>
+            <a href="token-estimator.html">Token Cost Estimator →</a>
+            <a href="compare.html">Model Comparison Tool →</a>
+        </div>
+    </main>
+
+    <button class="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">↑</button>
+
+    <footer>
+        <p>Pricing data last verified: <span class="verified-date"></span></p>
+        <p>&copy; 2026 APIpulse. <a href="index.html">Home</a> &middot; <a href="use-cases.html">Use Cases</a> &middot; <a href="about.html">About</a> &middot; <a href="blog.html">Blog</a>
+<a href="pricing-index.html">Pricing Index</a> &middot; <a href="api-docs.html">API</a> &middot; <a href="pricing.html">Pricing</a> &middot; <a href="embed.html">Embed Widget</a> &middot; <a href="cheat-sheet.html">Cheat Sheet</a> &middot; <a href="https://x.com/getapipulse" target="_blank" rel="noopener">Twitter</a> &middot; <a href="unsubscribe.html">Unsubscribe</a></p>
+    </footer>
+
+    <script>
+        function copyCode(btn) {
+            const code = btn.parentElement.querySelector('code');
+            navigator.clipboard.writeText(code.textContent).then(() => {
+                btn.textContent = 'Copied!';
+                setTimeout(() => btn.textContent = 'Copy', 2000);
+            });
+        }
+    </script>
+</body>
+</html>
