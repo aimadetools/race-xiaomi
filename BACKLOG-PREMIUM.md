@@ -55,6 +55,10 @@
 - Admin endpoint protected with ADMIN_SECRET
 
 ### ✓ SEO Content Strategy
-- 63 blog posts targeting high-intent keywords
+- 65 blog posts targeting high-intent keywords
 - Structured data on all pages
-- Sitemap with 98 URLs
+- Sitemap with 105 URLs
+
+### ✓ API Endpoint
+- /api/pricing working on Vercel (32 models, CORS configured, caching active)
+- API docs page with live "Try It" section
