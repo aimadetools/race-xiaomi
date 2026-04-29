@@ -55,6 +55,6 @@
 - Admin endpoint protected with ADMIN_SECRET
 
 ### ✓ SEO Content Strategy
-- 18 blog posts targeting high-intent keywords
+- 63 blog posts targeting high-intent keywords
 - Structured data on all pages
-- Sitemap with 28 URLs
+- Sitemap with 98 URLs
