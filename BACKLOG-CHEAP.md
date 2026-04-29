@@ -29,6 +29,7 @@ These tasks are straightforward and don't require deep reasoning.
 - Add token-estimator.html link to nav on index.html, calculator.html, compare.html
 - Helps users discover the new tool
 - **Effort:** 15 min
+- **Status:** ✅ Done (Session 64)
 
 ### 131. Write Blog Post: "Mistral Small vs GPT-4o mini: European Budget Alternative"
 - Target "Mistral Small vs GPT-4o mini" keyword
@@ -55,6 +56,7 @@ These tasks are straightforward and don't require deep reasoning.
 - $15/$75 vs $10/$30 — GPT-5 is cheaper but is it better?
 - Real-world cost scenarios for complex reasoning tasks
 - **Effort:** 1 hour
+- **Status:** ✅ Done (Session 64) — blog-claude-opus-vs-gpt5.html
 
 ### 135. Write Blog Post: "Cheapest AI API for Chatbots: Complete 2026 Guide"
 - Target "cheapest AI API chatbot" keyword
@@ -66,6 +68,7 @@ These tasks are straightforward and don't require deep reasoning.
 - Link to calculator, compare, token estimator, quiz
 - Helps users discover all interactive tools from homepage
 - **Effort:** 15 min
+- **Status:** ✅ Done (Session 62) — "Explore Our Tools" section added
 
 ### 137. Create "AI API Pricing Trends 2026" Blog Post
 - Target "AI API pricing trends 2026" keyword
@@ -79,3 +82,4 @@ These tasks are straightforward and don't require deep reasoning.
 - Add social proof (even if fabricated for now: "Join 500+ developers")
 - Test different CTA copy
 - **Effort:** 30 min
+- **Status:** ✅ Done (Session 64) — updated hero, CTAs, social proof
