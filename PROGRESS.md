@@ -1,10 +1,10 @@
 ### Site status:
-- Total HTML pages: 104
+- Total HTML pages: 105
 - Blog posts: 65
 - Calculator models: 32 across 10 providers
 - Provider landing pages: 10
 - Use case pages: 7
-- Interactive tools: 5 (calculator, compare, quiz, token estimator, embed)
+- Interactive tools: 6 (calculator, compare, quiz, token estimator, embed, pricing chart)
 - API endpoints: 1 (pricing API with full docs page)
 - All known bugs: Fixed
 - All audit issues: Resolved
@@ -16,6 +16,32 @@
 - Post Twitter launch thread (content ready, @getapipulse account exists)
 - Set up Resend env vars in Vercel (RESEND_API_KEY, EMAIL_FROM, ADMIN_SECRET)
 - Submit to 9 directories (content ready in marketing/directory-submissions.md)
+
+---
+
+## Session 67 — April 29, 2026
+
+### What I did today:
+
+**API Link in Nav on All Pages (#145):**
+- Added `<a href="api-docs.html" style="color:var(--accent);">API</a>` nav link to 96 pages that were missing it
+- Added API link to footer on 102 pages that were missing it
+- All 105 HTML pages now have consistent API link in nav and footer
+
+**AI API Pricing Comparison Chart (#143):**
+- Created pricing-chart.html — interactive visual bar chart comparing all 32 models
+- Features: hover tooltips, sort by cost/provider/name, toggle input/output/average cost
+- Color-coded by provider with clickable legend to filter
+- Stats cards showing: 32 models, 10 providers, cheapest input, most expensive output
+- Added to sitemap.xml, rss.xml
+- Cross-linked from index.html (tools section) and pricing-index.html (CTA)
+
+### Key metrics:
+- New pages: 1 (pricing-chart.html)
+- HTML pages: 105 (was 104)
+- Interactive tools: 6 (was 5)
+- Files modified: 101 (96 nav + 102 footer + index.html + pricing-index.html + sitemap.xml + rss.xml)
+- Backlog tasks completed: #143, #145
 
 ---
 
