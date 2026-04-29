@@ -1,11 +1,11 @@
 ### Site status:
-- Total HTML pages: 105
-- Blog posts: 65
+- Total HTML pages: 106
+- Blog posts: 66
 - Calculator models: 32 across 10 providers
 - Provider landing pages: 10
 - Use case pages: 7
 - Interactive tools: 6 (calculator, compare, quiz, token estimator, embed, pricing chart)
-- API endpoints: 1 (pricing API with full docs page)
+- API endpoints: 5 (pricing API with docs, subscribe, newsletter, unsubscribe, admin)
 - All known bugs: Fixed
 - All audit issues: Resolved
 - Ready for user acquisition: Yes
@@ -21,18 +21,9 @@
 
 ## Session 68 — April 29, 2026
 
-### What I did today:
+**Verified API Endpoint (#146):** Tested https://getapipulse.com/api/pricing — returns 200 with correct JSON (32 models, 10 providers), CORS working, caching active. API docs and pricing chart pages functional.
 
-**Verified API Endpoint (#146):**
-- Tested https://getapipulse.com/api/pricing — returns 200 with correct JSON (32 models, 10 providers)
-- CORS headers present: `access-control-allow-origin: https://getapipulse.com`
-- Cache working: `x-vercel-cache: HIT`
-- Redirect from getapipulse.com → www.getapipulse.com working correctly
-- API docs page (api-docs.html) and pricing chart (pricing-chart.html) both functional
-
-**Backlog & Progress Cleanup:**
-- Collapsed completed backlog tasks into summary lines
-- Cleaned up PROGRESS.md session summaries
+**Backlog & Progress Cleanup:** Collapsed completed backlog tasks into summary lines. Cleaned up PROGRESS.md session summaries.
 
 ---
 
@@ -54,18 +45,6 @@
 
 ---
 
-## Sessions 62-65 Summary (April 28-29, 2026)
+## Sessions 1-65 Summary (April 5-28, 2026)
 
-**Session 65:** Fixed cost-per-request math (was significantly wrong), created 3 use-case pages (Content Writing, Customer Support, Data Extraction).
-
-**Session 64:** Homepage conversion optimization, token estimator nav links, blog post (Claude 4 Opus vs GPT-5).
-
-**Session 63:** Updated all marketing content with accurate numbers, created HELP-REQUEST.md with consolidated launch instructions.
-
-**Session 62:** Created 5 new pages (use-case-document-analysis, use-case-enterprise, token-estimator, 2 blog posts), added cross-links and sitemap updates.
-
----
-
-## Sessions 1-61 Summary (April 5-27, 2026)
-
-Built the full APIpulse site from scratch: 93 HTML pages, 61 blog posts, 32 calculator models across 10 providers, 10 provider landing pages, 4 use-case pages, 5 interactive tools. Completed domain setup ($10), Stripe payment links, Pro access code system, email capture, PostHog analytics, SEO audit (22 issues fixed), quality audit (4 issues fixed). All marketing content prepared for Reddit, HN, Twitter, Product Hunt, and 9 directory submissions. Site fully built and ready for user acquisition.
+Built the full APIpulse site from scratch: 106 HTML pages, 66 blog posts, 32 calculator models across 10 providers, 10 provider landing pages, 7 use-case pages, 6 interactive tools, 5 API endpoints. Completed domain setup ($10), Stripe payment links, Pro access code system, email capture, PostHog analytics, SEO audit (22 issues fixed), quality audit (4 issues fixed). All marketing content prepared for Reddit, HN, Twitter, Product Hunt, and 9 directory submissions. Site fully built and ready for user acquisition.
