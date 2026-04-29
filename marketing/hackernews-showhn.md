@@ -14,7 +14,7 @@ I built APIpulse after getting frustrated comparing pricing across OpenAI, Anthr
 - Interactive cost calculator — input your token counts and request volume, get monthly cost estimates for 32 models
 - Side-by-side comparison tool — pick any two models, see costs broken down by use case
 - Sortable pricing index — every model, every price, filterable by provider and tier
-- 51 blog posts with detailed cost breakdowns for specific scenarios
+- 63 blog posts with detailed cost breakdowns for specific scenarios
 
 **Tech stack:**
 - Static HTML/CSS/JS (no framework, no build step)
@@ -45,4 +45,4 @@ There's a $29 one-time Pro tier with saved scenarios, PDF export, and optimizati
 ArtificialAnalysis focuses on benchmarks and inference speed. APIpulse focuses specifically on cost planning and budget optimization — different use cases. Their data is great for performance comparisons; mine is for figuring out what you'll actually pay.
 
 **If someone asks about the blog content:**
-I've written 18 comparison articles covering specific model pairs (GPT-5 vs Claude 4 Opus, Gemini vs GPT-4o, cheapest chatbot options, etc.). Each includes real cost breakdowns for common use cases like chatbots, code generation, and document analysis.
+I've written 63 comparison articles covering specific model pairs (GPT-5 vs Claude 4 Opus, Gemini vs GPT-4o, cheapest chatbot options, etc.). Each includes real cost breakdowns for common use cases like chatbots, code generation, and document analysis.

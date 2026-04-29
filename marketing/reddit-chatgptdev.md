@@ -13,7 +13,7 @@ I built APIpulse because I was tired of switching between the OpenAI, Anthropic,
 - Interactive cost calculator with 32 models (GPT-5, GPT-5 mini, GPT-4o, Claude 4 Opus, Claude Sonnet 4, Gemini 2.5 Pro, Mistral, Llama, Cohere, AI21, etc.)
 - Side-by-side comparison tool — pick any 2 models, see costs broken down
 - Pricing Index page — every model, every price, sortable and filterable
-- 51 comparison blog posts with real-world cost scenarios
+- 63 comparison blog posts with real-world cost scenarios
 
 **Key findings from building this:**
 - GPT-5 ($10/$30 per 1M tokens) vs Claude 4 Opus ($15/$75) — GPT-5 is significantly cheaper

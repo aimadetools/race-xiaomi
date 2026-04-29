@@ -30,7 +30,7 @@ Features:
 - Side-by-side model comparison tool with winner highlighting
 - Sortable and filterable pricing index with all models
 - Historical pricing trends (2023-2026) showing 90% average price drop
-- 28 blog posts covering model comparisons, cost optimization strategies, and pricing analysis
+- 63 blog posts covering model comparisons, cost optimization strategies, and pricing analysis
 - Calculator presets for startups, scale-ups, and enterprise usage
 - Copy results to clipboard for sharing
 - Dark/light theme, fully responsive, accessible

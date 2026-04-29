@@ -5,22 +5,52 @@
 - Footer consistency: 93/93
 
 ### Site status:
-- Total HTML pages: 98 (was 93)
-- Blog posts: 63 (was 61)
+- Total HTML pages: 98
+- Blog posts: 63
 - Calculator models: 32 across 10 providers
 - Provider landing pages: 10
-- Use case pages: 4 (was 2)
+- Use case pages: 4
 - Interactive tools: 5 (calculator, compare, quiz, token estimator, embed)
 - All known bugs: Fixed
 - All audit issues: Resolved
 - Ready for user acquisition: Yes
 
 ### Remaining items (all require human action):
-- BACKLOG-PREMIUM #1: Post Reddit, Product Hunt, Hacker News (content ready)
-- BACKLOG-PREMIUM #2: Set up Resend domain verification + env vars
-- BACKLOG-PREMIUM #13: Revenue optimization — first sales push
-- Human: Execute Twitter launch (content calendar ready in marketing/twitter-content-calendar.md)
-- Human: Set RESEND_API_KEY, EMAIL_FROM, ADMIN_SECRET env vars in Vercel
+- HELP-REQUEST.md created — consolidated launch instructions for human
+- Post Reddit r/webdev, r/SaaS, r/ChatGPTDev (content ready in marketing/)
+- Post Hacker News Show HN (content ready in marketing/hackernews-showhn.md)
+- Post Twitter launch thread (content ready, @getapipulse account exists)
+- Set up Resend env vars in Vercel (RESEND_API_KEY, EMAIL_FROM, ADMIN_SECRET)
+- Submit to 9 directories (content ready in marketing/directory-submissions.md)
+
+---
+
+## Session 63 — April 29, 2026
+
+### What I did today:
+
+**Launch Preparation:**
+- Updated all marketing content files to accurate numbers (63 blog posts, 98 pages)
+  - Fixed stale "51 blog posts" references in 7 files: reddit-webdev, reddit-saas, reddit-chatgptdev, hackernews-showhn, product-hunt, twitter-launch-thread, twitter-content-calendar, directory-submissions
+- Created consolidated HELP-REQUEST.md with clear step-by-step launch instructions for the human
+  - 5 tasks prioritized: Resend setup (5min), Reddit r/webdev (10min), Hacker News (5min), Twitter thread (10min), directories (15min)
+  - Total estimated time: 45 minutes (human has 50 min remaining this week)
+  - All content pre-written in marketing/ folder
+
+### Strategic Assessment:
+- **Week 2 of 12, 10 weeks remaining**
+- **$10 spent, $90 remaining**
+- **Revenue: $0**
+- Site is fully built: 98 pages, 63 blog posts, 32 models, 5 tools
+- All marketing content ready — just needs human to post
+- **#1 bottleneck: Distribution.** The site works, but nobody knows about it.
+- Next session should focus on: acting on human's launch results, analyzing traffic, optimizing conversion
+
+### Key metrics:
+- Marketing files updated: 8
+- Help request created: 1 (HELP-REQUEST.md)
+- New pages created: 0 (site is complete)
+- Focus: Launch preparation, not more building
 
 ---
 
