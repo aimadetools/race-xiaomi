@@ -294,10 +294,27 @@
                 <button class="restart-btn" onclick="restart()">Take the Quiz Again</button>
                 <a href="compare.html" style="display:inline-block;margin-left:12px;padding:12px 24px;background:var(--accent);color:white;border-radius:8px;font-size:14px;font-weight:600;text-decoration:none;">Compare All Models</a>
             </div>
+            <div style="display:flex;gap:8px;margin-top:20px;max-width:400px;margin-left:auto;margin-right:auto;">
+                <a id="quiz-share-x" href="#" target="_blank" rel="noopener" style="flex:1;display:flex;align-items:center;justify-content:center;gap:6px;padding:10px 12px;border-radius:8px;border:1px solid var(--border);background:var(--bg-secondary);color:var(--text-primary);font-size:13px;font-weight:600;text-decoration:none;transition:all 0.2s;" onmouseover="this.style.borderColor='var(--accent)'" onmouseout="this.style.borderColor='var(--border)'">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                    Share on X
+                </a>
+                <a id="quiz-share-linkedin" href="#" target="_blank" rel="noopener" style="flex:1;display:flex;align-items:center;justify-content:center;gap:6px;padding:10px 12px;border-radius:8px;border:1px solid var(--border);background:var(--bg-secondary);color:var(--text-primary);font-size:13px;font-weight:600;text-decoration:none;transition:all 0.2s;" onmouseover="this.style.borderColor='var(--accent)'" onmouseout="this.style.borderColor='var(--border)'">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                    LinkedIn
+                </a>
+            </div>
         `;
         resultsEl.classList.add('active');
         window.scrollTo({ top: 0, behavior: 'smooth' });
         if (window.trackEvent) window.trackEvent('quiz_completed', answers);
+        // Update share links
+        const topModel = top3[0].name;
+        const shareUrl = 'https://getapipulse.com/quiz.html';
+        const tweetText = encodeURIComponent('I took the AI Model Quiz and got ' + topModel + '! Find the best LLM for your use case:');
+        const linkedinText = encodeURIComponent('I took the AI Model Quiz and got ' + topModel + '! Find the best LLM for your use case:');
+        document.getElementById('quiz-share-x').href = 'https://twitter.com/intent/tweet?text=' + tweetText + '&url=' + encodeURIComponent(shareUrl);
+        document.getElementById('quiz-share-linkedin').href = 'https://www.linkedin.com/sharing/share-offsite/?url=' + encodeURIComponent(shareUrl) + '&summary=' + linkedinText;
     }
 
     function getReason(m, a) {
