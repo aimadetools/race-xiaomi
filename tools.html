@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free AI API Tools — Calculator, Compare, Quiz & More | APIpulse</title>
+    <meta name="description" content="Free tools to compare AI API pricing, calculate costs, and optimize your LLM spending. 32 models, 10 providers, instant results.">
+    <meta name="keywords" content="AI API calculator, LLM pricing tool, AI cost estimator, model comparison tool, AI API tools">
+    <meta property="og:title" content="Free AI API Tools — Calculator, Compare, Quiz & More | APIpulse">
+    <meta property="og:description" content="Free tools to compare AI API pricing, calculate costs, and optimize your LLM spending.">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta property="og:image" content="https://getapipulse.com/og-image.png">
+    <meta property="og:url" content="https://getapipulse.com/tools.html">
+    <meta name="twitter:image" content="https://getapipulse.com/og-image.png">
+    <link rel="canonical" href="https://getapipulse.com/tools.html">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="styles.css">
+    <script src="analytics.js" defer></script>
+    <script src="dynamic-date.js" defer></script>
+    <script src="shared.js" defer></script>
+    <style>
+        .tools-hero {
+            padding: 120px 24px 60px; text-align: center; max-width: 800px; margin: 0 auto;
+        }
+        .tools-hero h1 { font-size: clamp(32px, 5vw, 48px); font-weight: 800; margin-bottom: 16px; }
+        .tools-hero p { font-size: 18px; color: var(--text-secondary); max-width: 600px; margin: 0 auto 40px; }
+        .tools-grid {
+            max-width: 1000px; margin: 0 auto; padding: 0 24px 80px;
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px;
+        }
+        .tool-card {
+            background: var(--bg-card); border: 1px solid var(--border);
+            border-radius: 16px; padding: 32px; transition: all 0.3s;
+            display: flex; flex-direction: column;
+        }
+        .tool-card:hover {
+            border-color: var(--accent); transform: translateY(-4px);
+            box-shadow: 0 8px 32px rgba(99, 102, 241, 0.15);
+        }
+        .tool-icon {
+            width: 56px; height: 56px; border-radius: 14px;
+            background: var(--accent-glow); display: flex; align-items: center;
+            justify-content: center; font-size: 28px; margin-bottom: 20px;
+        }
+        .tool-card h2 { font-size: 20px; font-weight: 700; margin-bottom: 8px; }
+        .tool-card p { font-size: 14px; color: var(--text-secondary); line-height: 1.6; margin-bottom: 20px; flex: 1; }
+        .tool-card .tool-features {
+            list-style: none; padding: 0; margin-bottom: 20px;
+        }
+        .tool-card .tool-features li {
+            font-size: 13px; color: var(--text-muted); padding: 4px 0;
+            display: flex; align-items: center; gap: 8px;
+        }
+        .tool-card .tool-features li::before {
+            content: '✓'; color: var(--green); font-weight: 700; font-size: 12px;
+        }
+        .tool-card a {
+            display: inline-block; background: var(--accent); color: white;
+            padding: 10px 24px; border-radius: 8px; font-size: 14px; font-weight: 600;
+            text-align: center; transition: all 0.2s;
+        }
+        .tool-card a:hover { background: var(--accent-hover); transform: translateY(-1px); color: white; }
+        .tool-tag {
+            display: inline-block; padding: 2px 10px; border-radius: 6px;
+            font-size: 11px; font-weight: 600; margin-bottom: 12px;
+        }
+        .tag-free { background: rgba(34,197,94,0.15); color: var(--green); }
+        .tag-pro { background: rgba(99,102,241,0.15); color: var(--accent); }
+        .tools-cta {
+            text-align: center; padding: 60px 24px; max-width: 600px; margin: 0 auto;
+        }
+        .tools-cta h2 { font-size: 28px; margin-bottom: 12px; }
+        .tools-cta p { color: var(--text-secondary); margin-bottom: 24px; }
+        @media (max-width: 768px) {
+            .tools-hero { padding: 100px 20px 40px; }
+            .tools-hero h1 { font-size: 28px; }
+            .tools-grid { grid-template-columns: 1fr; padding: 0 20px 60px; }
+        }
+    </style>
+    <meta name="theme-color" content="#6366f1">
+</head>
+<body>
+    <nav>
+        <div class="nav-inner">
+            <a href="index.html" class="logo">API<span>pulse</span></a>
+            <button class="hamburger" onclick="toggleMobileNav()" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+            <div class="nav-links">
+                <a href="calculator.html">Calculator</a>
+                <a href="compare.html">Compare</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="use-cases.html">Use Cases</a>
+                <a href="about.html">About</a>
+                <a href="blog.html">Blog</a>
+                <a href="tools.html" class="active">Tools</a>
+                <a href="pricing-index.html">Pricing Index</a>
+                <a href="api-docs.html" style="color:var(--accent);">API</a>
+                <a href="pricing.html" class="nav-cta">Get Pro — $29</a>
+                <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <section class="tools-hero">
+            <h1>Free tools to make smarter AI API decisions</h1>
+            <p>Calculate costs, compare models, find the cheapest provider, and build smarter — all for free.</p>
+        </section>
+
+        <div class="tools-grid">
+            <div class="tool-card">
+                <div class="tool-icon">📊</div>
+                <span class="tool-tag tag-free">Free</span>
+                <h2>Cost Calculator</h2>
+                <p>Enter your token counts and request volume. Get instant cost estimates across all 32 models from 10 providers.</p>
+                <ul class="tool-features">
+                    <li>32 models across 10 providers</li>
+                    <li>Input/output token pricing</li>
+                    <li>Monthly cost estimates</li>
+                    <li>Shareable result URLs</li>
+                </ul>
+                <a href="calculator.html">Try Calculator →</a>
+            </div>
+
+            <div class="tool-card">
+                <div class="tool-icon">⚖️</div>
+                <span class="tool-tag tag-free">Free</span>
+                <h2>Model Compare</h2>
+                <p>Compare any two models side by side. See cost, quality, speed, and context window differences at a glance.</p>
+                <ul class="tool-features">
+                    <li>Side-by-side comparison</li>
+                    <li>Cost, quality, speed metrics</li>
+                    <li>Context window comparison</li>
+                    <li>Shareable comparison URLs</li>
+                </ul>
+                <a href="compare.html">Compare Models →</a>
+            </div>
+
+            <div class="tool-card">
+                <div class="tool-icon">🧠</div>
+                <span class="tool-tag tag-free">Free</span>
+                <h2>AI Model Quiz</h2>
+                <p>Answer 5 questions about your use case. Get a personalized recommendation for the best model and provider.</p>
+                <ul class="tool-features">
+                    <li>5-question assessment</li>
+                    <li>Personalized recommendation</li>
+                    <li>Cost estimate included</li>
+                    <li>Shareable results</li>
+                </ul>
+                <a href="quiz.html">Take the Quiz →</a>
+            </div>
+
+            <div class="tool-card">
+                <div class="tool-icon">🔢</div>
+                <span class="tool-tag tag-free">Free</span>
+                <h2>Token Estimator</h2>
+                <p>Paste your text and see how many tokens it uses. Estimate costs before you send a single API request.</p>
+                <ul class="tool-features">
+                    <li>Real-time token counting</li>
+                    <li>Cost estimate per request</li>
+                    <li>Compare across models</li>
+                    <li>Works offline</li>
+                </ul>
+                <a href="token-estimator.html">Estimate Tokens →</a>
+            </div>
+
+            <div class="tool-card">
+                <div class="tool-icon">📋</div>
+                <span class="tool-tag tag-free">Free</span>
+                <h2>Pricing Index</h2>
+                <p>Every model, every price, sortable and searchable. The most complete LLM pricing database on the web.</p>
+                <ul class="tool-features">
+                    <li>32 models, sortable</li>
+                    <li>Filter by provider</li>
+                    <li>Input/output/context</li>
+                    <li>Always up-to-date</li>
+                </ul>
+                <a href="pricing-index.html">View Pricing Index →</a>
+            </div>
+
+            <div class="tool-card">
+                <div class="tool-icon">🔌</div>
+                <span class="tool-tag tag-free">Free</span>
+                <h2>Pricing API</h2>
+                <p>Programmatic access to all pricing data. Build your own dashboards, cost optimizers, and budget tools.</p>
+                <ul class="tool-features">
+                    <li>JSON response</li>
+                    <li>No API key required</li>
+                    <li>All 32 models</li>
+                    <li>Free forever</li>
+                </ul>
+                <a href="api-docs.html">View API Docs →</a>
+            </div>
+        </div>
+
+        <section class="tools-cta">
+            <h2>Ready to optimize your AI costs?</h2>
+            <p>Start with the calculator — it takes 30 seconds and could save you hundreds per month.</p>
+            <a href="calculator.html" class="btn-primary" style="padding:14px 36px;">Calculate My Costs — Free</a>
+        </section>
+    </main>
+
+    <footer>
+        <p>Pricing data last verified: <span class="verified-date"></span></p>
+        <p>&copy; 2026 APIpulse. <a href="index.html">Home</a> &middot; <a href="use-cases.html">Use Cases</a> &middot; <a href="about.html">About</a> &middot; <a href="blog.html">Blog</a>
+<a href="pricing-index.html">Pricing Index</a> &middot; <a href="openai.html">OpenAI</a> &middot; <a href="anthropic.html">Anthropic</a> &middot; <a href="google.html">Google</a> &middot; <a href="mistral.html">Mistral</a> &middot; <a href="cohere.html">Cohere</a> &middot; <a href="deepseek.html">DeepSeek</a> &middot; <a href="xai.html">xAI</a> &middot; <a href="moonshot.html">Moonshot</a> &middot; <a href="together.html">Together.ai</a> &middot; <a href="ai21.html">AI21</a> &middot; <a href="pricing.html">Pricing</a> &middot; <a href="embed.html">Embed Widget</a> &middot; <a href="cheat-sheet.html">Cheat Sheet</a> &middot; <a href="api-docs.html">API</a> &middot; <a href="https://x.com/getapipulse" target="_blank" rel="noopener">Twitter</a> &middot; <a href="unsubscribe.html">Unsubscribe</a></p>
+    </footer>
+
+</body>
+</html>
