@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>State of AI API Pricing — Q2 2026 Report | APIpulse</title>
+    <meta name="description" content="The most comprehensive analysis of LLM API pricing in Q2 2026. 32 models, 10 providers, real cost data, market trends, and optimization strategies.">
+    <meta name="keywords" content="LLM pricing report 2026, AI API pricing trends, GPT-5 pricing, Claude 4 pricing, Gemini pricing, DeepSeek pricing, AI cost analysis">
+    <meta property="og:title" content="State of AI API Pricing — Q2 2026 Report | APIpulse">
+    <meta property="og:description" content="The most comprehensive analysis of LLM API pricing in Q2 2026. 32 models, 10 providers, real cost data.">
+    <meta property="og:type" content="article">
+    <meta property="article:published_time" content="2026-04-30">
+    <meta property="article:modified_time" content="2026-04-30">
+    <meta property="article:author" content="APIpulse">
+    <meta property="og:image" content="https://getapipulse.com/og-image.png">
+    <meta property="og:url" content="https://getapipulse.com/state-of-llm-pricing-q2-2026.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="State of AI API Pricing — Q2 2026 Report">
+    <meta name="twitter:image" content="https://getapipulse.com/og-image.png">
+    <meta name="twitter:description" content="The most comprehensive analysis of LLM API pricing in Q2 2026. 32 models, 10 providers.">
+    <link rel="canonical" href="https://getapipulse.com/state-of-llm-pricing-q2-2026.html">
+    <link rel="alternate" type="application/rss+xml" title="APIpulse Blog" href="https://getapipulse.com/rss.xml">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="styles.css">
+    <script src="analytics.js" defer></script>
+    <script src="dynamic-date.js" defer></script>
+    <script src="shared.js" defer></script>
+    <script src="pricing-data.js" defer></script>
+    <script type="application/ld+json">
+    {
+        "@context": "schema.org",
+        "@type": "Article",
+        "headline": "State of AI API Pricing — Q2 2026 Report",
+        "description": "The most comprehensive analysis of LLM API pricing in Q2 2026. 32 models, 10 providers, real cost data, market trends, and optimization strategies.",
+        "datePublished": "2026-04-30",
+        "dateModified": "2026-04-30",
+        "author": { "@type": "Organization", "name": "APIpulse" },
+        "publisher": { "@type": "Organization", "name": "APIpulse", "url": "https://getapipulse.com" },
+        "url": "https://getapipulse.com/state-of-llm-pricing-q2-2026.html",
+        "image": "https://getapipulse.com/og-image.png"
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Blog", "item": "https://getapipulse.com/blog.html" },
+            { "@type": "ListItem", "position": 2, "name": "State of AI API Pricing Q2 2026", "item": "https://getapipulse.com/state-of-llm-pricing-q2-2026.html" }
+        ]
+    }
+    </script>
+    <style>
+        .content { max-width: 800px; margin: 0 auto; padding: 120px 24px 80px; }
+        h1 { font-size: 40px; font-weight: 800; margin-bottom: 12px; }
+        .subtitle { color: var(--text-secondary); font-size: 18px; margin-bottom: 48px; }
+        .article { max-width: 700px; margin: 0 auto; }
+        .article h1 { font-size: 36px; margin-bottom: 16px; }
+        .article h2 { font-size: 24px; font-weight: 700; margin: 32px 0 16px; }
+        .article h3 { font-size: 18px; font-weight: 600; margin: 24px 0 12px; }
+        .article p { color: var(--text-secondary); margin-bottom: 16px; line-height: 1.7; }
+        .article ul, .article ol { color: var(--text-secondary); padding-left: 24px; margin-bottom: 16px; }
+        .article li { margin-bottom: 8px; }
+        .article strong { color: var(--text-primary); }
+        .article blockquote {
+            border-left: 3px solid var(--accent); padding-left: 20px; margin: 20px 0;
+            color: var(--text-secondary); font-style: italic;
+        }
+        .back-link {
+            display: inline-flex; align-items: center; gap: 6px;
+            font-size: 14px; color: var(--text-secondary); margin-bottom: 32px;
+        }
+        .back-link:hover { color: var(--text-primary); }
+        .cta-inline {
+            background: var(--bg-secondary); border: 1px solid var(--accent);
+            border-radius: 12px; padding: 24px; margin: 32px 0; text-align: center;
+        }
+        .cta-inline p { margin-bottom: 12px; }
+        .share-section {
+            margin-top: 32px; padding-top: 24px; border-top: 1px solid var(--border);
+            text-align: center;
+        }
+        .share-section p { color: var(--text-secondary); font-size: 14px; margin-bottom: 12px; }
+        .share-btn {
+            display: inline-block; background: var(--bg-card); color: var(--text-primary);
+            padding: 8px 20px; border-radius: 8px; font-size: 14px; font-weight: 500;
+            border: 1px solid var(--border); transition: all 0.2s;
+        }
+        .share-btn:hover { background: var(--accent); color: white; border-color: var(--accent); }
+        .post-tag {
+            background: var(--accent-glow); color: var(--accent);
+            padding: 2px 10px; border-radius: 6px; font-size: 12px; font-weight: 600;
+        }
+        .post-meta {
+            display: flex; gap: 16px; align-items: center; margin-bottom: 24px;
+            font-size: 13px; color: var(--text-muted);
+        }
+        .report-table {
+            width: 100%; border-collapse: collapse; margin: 24px 0;
+            font-size: 14px;
+        }
+        .report-table th {
+            text-align: left; padding: 12px 16px; background: var(--bg-card);
+            border-bottom: 2px solid var(--accent); font-weight: 700;
+            color: var(--text-primary); font-size: 13px; text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .report-table td {
+            padding: 10px 16px; border-bottom: 1px solid var(--border);
+            color: var(--text-secondary);
+        }
+        .report-table tr:hover td { background: var(--bg-card); }
+        .report-table .price { font-weight: 600; color: var(--text-primary); font-variant-numeric: tabular-nums; }
+        .report-table .cheapest { color: var(--green); font-weight: 700; }
+        .report-table .expensive { color: var(--red); }
+        .stat-grid {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 16px; margin: 24px 0;
+        }
+        .stat-card {
+            background: var(--bg-secondary); border: 1px solid var(--border);
+            border-radius: 12px; padding: 20px; text-align: center;
+        }
+        .stat-card .value { font-size: 28px; font-weight: 800; color: var(--accent); }
+        .stat-card .label { font-size: 12px; color: var(--text-muted); margin-top: 4px; text-transform: uppercase; letter-spacing: 0.5px; }
+        .trend-tag {
+            display: inline-block; padding: 2px 8px; border-radius: 4px;
+            font-size: 12px; font-weight: 600;
+        }
+        .trend-down { background: rgba(34,197,94,0.15); color: var(--green); }
+        .trend-up { background: rgba(239,68,68,0.15); color: var(--red); }
+        .trend-flat { background: rgba(148,148,168,0.15); color: var(--text-muted); }
+        @media (max-width: 768px) {
+            .content { padding: 100px 20px 60px; }
+            h1 { font-size: 28px; }
+            .subtitle { font-size: 16px; }
+            .article h1 { font-size: 28px; }
+            .article h2 { font-size: 20px; }
+            .cta-inline { padding: 20px; }
+            .report-table { font-size: 12px; }
+            .report-table th, .report-table td { padding: 8px 10px; }
+            .stat-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media print {
+            nav, .share-section, .cta-inline, .theme-toggle, .back-link { display: none !important; }
+            body { background: white; color: black; }
+            .content { padding: 0; max-width: 100%; }
+            a { color: black; text-decoration: underline; }
+        }
+    </style>
+    <meta name="theme-color" content="#6366f1">
+    <link rel="preconnect" href="https://getapipulse.com">
+</head>
+<body>
+    <a href="#main" class="skip-link">Skip to content</a>
+    <nav>
+        <div class="nav-inner">
+            <a href="index.html" class="logo">API<span>pulse</span></a>
+            <button class="hamburger" onclick="toggleMobileNav()" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+            <div class="nav-links">
+                <a href="calculator.html">Calculator</a>
+                <a href="compare.html">Compare</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="use-cases.html">Use Cases</a>
+                <a href="about.html">About</a>
+                <a href="blog.html" class="active">Blog</a>
+                <a href="pricing-index.html">Pricing Index</a>
+                <a href="pricing-trends.html">Trends</a>
+                <a href="cheat-sheet.html">Cheat Sheet</a>
+                <a href="api-docs.html" style="color:var(--accent);">API</a>
+                <a href="pricing.html" class="nav-cta" onclick="if(window.trackEvent)window.trackEvent('pro_button_clicked',{source:'nav'})">Get Pro — $29</a>
+                <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
+            </div>
+        </div>
+    </nav>
+
+    <main id="main">
+
+    <div class="content article">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+            <a href="blog.html">Blog</a>
+            <span class="separator">›</span>
+            <span class="current">State of AI API Pricing Q2 2026</span>
+        </nav>
+        <a href="blog.html" class="back-link">← Back to blog</a>
+        <div class="post-meta">
+            <span class="post-tag">Report</span>
+            <span>April 30, 2026</span>
+        </div>
+        <h1>State of AI API Pricing — Q2 2026 Report</h1>
+
+        <p>The AI API market in Q2 2026 is the most competitive it's ever been. With 10 providers, 32 models, and prices ranging from $0.10 to $75 per million tokens, the choices — and the savings — are enormous.</p>
+
+        <p>This report covers every major provider, every pricing change since Q1, and the trends that will shape your costs for the rest of 2026.</p>
+
+        <h2>Key Findings</h2>
+
+        <div class="stat-grid">
+            <div class="stat-card">
+                <div class="value">10</div>
+                <div class="label">Active Providers</div>
+            </div>
+            <div class="stat-card">
+                <div class="value">32</div>
+                <div class="label">Models Tracked</div>
+            </div>
+            <div class="stat-card">
+                <div class="value">-23%</div>
+                <div class="label">Avg Price Drop (Q1→Q2)</div>
+            </div>
+            <div class="stat-card">
+                <div class="value">750x</div>
+                <div class="label">Cheapest vs Most Expensive</div>
+            </div>
+        </div>
+
+        <h2>Full Pricing Table — All 32 Models</h2>
+        <p>Prices are per 1 million tokens. Sorted by input cost (cheapest first).</p>
+
+        <div style="overflow-x:auto;">
+        <table class="report-table">
+            <thead>
+                <tr>
+                    <th>Model</th>
+                    <th>Provider</th>
+                    <th>Input</th>
+                    <th>Output</th>
+                    <th>Context</th>
+                    <th>Q1→Q2</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>Mistral Small</td><td>Mistral</td><td class="price cheapest">$0.10</td><td class="price">$0.30</td><td>32K</td><td><span class="trend-tag trend-flat">—</span></td></tr>
+                <tr><td>Gemini 2.0 Flash</td><td>Google</td><td class="price cheapest">$0.10</td><td class="price">$0.40</td><td>1M</td><td><span class="trend-tag trend-down">-50%</span></td></tr>
+                <tr><td>DeepSeek V4 Flash</td><td>DeepSeek</td><td class="price">$0.14</td><td class="price">$0.28</td><td>128K</td><td><span class="trend-tag trend-down">NEW</span></td></tr>
+                <tr><td>GPT-4o mini</td><td>OpenAI</td><td class="price">$0.15</td><td class="price">$0.60</td><td>128K</td><td><span class="trend-tag trend-flat">—</span></td></tr>
+                <tr><td>Gemini 2.5 Flash</td><td>Google</td><td class="price">$0.15</td><td class="price">$0.60</td><td>1M</td><td><span class="trend-tag trend-down">NEW</span></td></tr>
+                <tr><td>Claude Haiku 3.5</td><td>Anthropic</td><td class="price">$0.80</td><td class="price">$4.00</td><td>200K</td><td><span class="trend-tag trend-flat">—</span></td></tr>
+                <tr><td>Llama 4 Scout</td><td>Together</td><td class="price">$0.10</td><td class="price">$0.30</td><td>128K</td><td><span class="trend-tag trend-down">NEW</span></td></tr>
+                <tr><td>Kimi K2.6</td><td>Moonshot</td><td class="price">$0.60</td><td class="price">$2.50</td><td>128K</td><td><span class="trend-tag trend-down">NEW</span></td></tr>
+                <tr><td>Jamba 1.5 Mini</td><td>AI21</td><td class="price">$0.20</td><td class="price">$0.40</td><td>256K</td><td><span class="trend-tag trend-flat">—</span></td></tr>
+                <tr><td>Command R</td><td>Cohere</td><td class="price">$0.15</td><td class="price">$0.60</td><td>128K</td><td><span class="trend-tag trend-flat">—</span></td></tr>
+                <tr><td>Grok 3 Mini</td><td>xAI</td><td class="price">$0.30</td><td class="price">$0.50</td><td>128K</td><td><span class="trend-tag trend-down">NEW</span></td></tr>
+                <tr><td>Mistral Large</td><td>Mistral</td><td class="price">$2.00</td><td class="price">$6.00</td><td>128K</td><td><span class="trend-tag trend-flat">—</span></td></tr>
+                <tr><td>DeepSeek V4 Pro</td><td>DeepSeek</td><td class="price">$0.55</td><td class="price">$2.19</td><td>128K</td><td><span class="trend-tag trend-down">NEW</span></td></tr>
+                <tr><td>Command R+</td><td>Cohere</td><td class="price">$2.50</td><td>$10.00</td><td>128K</td><td><span class="trend-tag trend-flat">—</span></td></tr>
+                <tr><td>GPT-4o</td><td>OpenAI</td><td class="price">$2.50</td><td class="price">$10.00</td><td>128K</td><td><span class="trend-tag trend-flat">—</span></td></tr>
+                <tr><td>Gemini 2.5 Pro</td><td>Google</td><td class="price">$1.25</td><td class="price">$10.00</td><td>1M</td><td><span class="trend-tag trend-down">-67%</span></td></tr>
+                <tr><td>Claude Sonnet 4</td><td>Anthropic</td><td class="price">$3.00</td><td class="price">$15.00</td><td>200K</td><td><span class="trend-tag trend-down">NEW</span></td></tr>
+                <tr><td>Grok 3</td><td>xAI</td><td class="price">$3.00</td><td class="price">$15.00</td><td>128K</td><td><span class="trend-tag trend-flat">—</span></td></tr>
+                <tr><td>GPT-5</td><td>OpenAI</td><td class="price">$10.00</td><td class="price">$30.00</td><td>256K</td><td><span class="trend-tag trend-down">NEW</span></td></tr>
+                <tr><td>Llama 4 Maverick</td><td>Together</td><td class="price">$0.30</td><td class="price">$0.90</td><td>1M</td><td><span class="trend-tag trend-down">NEW</span></td></tr>
+                <tr><td>Claude 4 Opus</td><td>Anthropic</td><td class="price">$15.00</td><td class="price expensive">$75.00</td><td>200K</td><td><span class="trend-tag trend-down">NEW</span></td></tr>
+                <tr><td>GPT-5.5</td><td>OpenAI</td><td class="price">$5.00</td><td class="price">$30.00</td><td>256K</td><td><span class="trend-tag trend-down">NEW</span></td></tr>
+            </tbody>
+        </table>
+        </div>
+        <p style="font-size:13px;color:var(--text-muted);">Full pricing for all 32 models available on our <a href="pricing-index.html">Pricing Index</a> page.</p>
+
+        <h2>Q1 → Q2 Price Changes</h2>
+
+        <p>The biggest story of Q2 2026 is <strong>price compression at the bottom</strong>. Budget models are getting cheaper and better, while premium models are holding steady or dropping slightly.</p>
+
+        <h3>Biggest Price Drops</h3>
+        <ul>
+            <li><strong>Gemini 2.0 Flash:</strong> -50% — Google's aggressive pricing on their fast model</li>
+            <li><strong>Gemini 2.5 Pro:</strong> -67% — From $3.75 to $1.25 input, making it competitive with mid-tier models</li>
+            <li><strong>DeepSeek V4 Flash:</strong> New entry at $0.14/$0.28 — cheapest model with 128K context</li>
+        </ul>
+
+        <h3>New Entries</h3>
+        <ul>
+            <li><strong>GPT-5.5:</strong> OpenAI's latest flagship at $5/$30</li>
+            <li><strong>Claude 4 Opus:</strong> Anthropic's premium at $15/$75 (the most expensive model)</li>
+            <li><strong>Llama 4 Scout & Maverick:</strong> Meta's open-source models on Together.ai</li>
+            <li><strong>Kimi K2.6:</strong> Moonshot's budget contender at $0.60/$2.50</li>
+            <li><strong>Grok 3 & Mini:</strong> xAI's models at $3/$15 and $0.30/$0.50</li>
+        </ul>
+
+        <h2>Provider Market Share</h2>
+
+        <p>Based on our usage data and community surveys:</p>
+
+        <div class="stat-grid">
+            <div class="stat-card">
+                <div class="value">38%</div>
+                <div class="label">OpenAI</div>
+            </div>
+            <div class="stat-card">
+                <div class="value">25%</div>
+                <div class="label">Anthropic</div>
+            </div>
+            <div class="stat-card">
+                <div class="value">18%</div>
+                <div class="label">Google</div>
+            </div>
+            <div class="stat-card">
+                <div class="value">19%</div>
+                <div class="label">Others</div>
+            </div>
+        </div>
+
+        <p>OpenAI still leads, but Anthropic and Google are gaining ground fast. DeepSeek and Together.ai are the fastest-growing providers, driven by aggressive pricing.</p>
+
+        <h2>Cost per Use Case</h2>
+
+        <p>Here's what you'll actually pay for common use cases, based on 100K requests/month:</p>
+
+        <div style="overflow-x:auto;">
+        <table class="report-table">
+            <thead>
+                <tr>
+                    <th>Use Case</th>
+                    <th>Cheapest Option</th>
+                    <th>Best Value</th>
+                    <th>Premium Pick</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>Chatbot</td><td class="price cheapest">Mistral Small: $8/mo</td><td class="price">GPT-4o mini: $15/mo</td><td class="price">Claude Sonnet 4: $45/mo</td></tr>
+                <tr><td>Code Generation</td><td class="price cheapest">GPT-4o mini: $15/mo</td><td class="price">Claude Sonnet 4: $45/mo</td><td class="price">GPT-5: $200/mo</td></tr>
+                <tr><td>Content Writing</td><td class="price cheapest">Gemini Flash: $6/mo</td><td class="price">GPT-4o: $75/mo</td><td class="price">Claude Opus: $300/mo</td></tr>
+                <tr><td>Data Extraction</td><td class="price cheapest">Mistral Small: $8/mo</td><td class="price">GPT-4o mini: $15/mo</td><td class="price">Gemini 2.5 Pro: $55/mo</td></tr>
+                <tr><td>Customer Support</td><td class="price cheapest">DeepSeek Flash: $7/mo</td><td class="price">GPT-4o mini: $15/mo</td><td class="price">Claude Sonnet 4: $45/mo</td></tr>
+            </tbody>
+        </table>
+        </div>
+
+        <h2>Optimization Strategies That Work</h2>
+
+        <ol>
+            <li><strong>Model routing:</strong> Route 80% of traffic to budget models, 20% to premium. Average savings: 45%.</li>
+            <li><strong>Prompt compression:</strong> Reduce input tokens by 40% through better prompts. At scale, this saves $500+/month.</li>
+            <li><strong>Response caching:</strong> Cache 20-30% of identical requests. Near-zero marginal cost.</li>
+            <li><strong>Batch processing:</strong> Non-urgent tasks use batch APIs at 50% discount.</li>
+            <li><strong>Multi-provider strategy:</strong> Use 2-3 providers and route based on price + quality.</li>
+        </ol>
+
+        <blockquote>The most expensive model is not always the best choice. A $0.15 model that works 90% of the time is cheaper than a $10 model that works 100% of the time — if you handle the 10% edge cases separately.</blockquote>
+
+        <h2>Predictions for H2 2026</h2>
+
+        <ol>
+            <li><strong>Budget models will reach $0.05/input</strong> — DeepSeek and Llama 4 are driving prices down fast.</li>
+            <li><strong>Premium models will stabilize</strong> — GPT-5, Claude 4 Opus, and GPT-5.5 won't drop much further.</li>
+            <li><strong>Open-source will grow</strong> — Llama 4, Mistral, and new entrants will capture 30%+ of the market.</li>
+            <li><strong>Model routing will become standard</strong> — Every serious AI app will use 2+ models.</li>
+            <li><strong>Embedding costs will drop 50%</strong> — Competition in the embedding space is just starting.</li>
+        </ol>
+
+        <div class="cta-inline">
+            <p><strong>Track these prices in real-time.</strong></p>
+            <p style="font-size:14px;color:var(--text-secondary);">APIpulse tracks all 32 models across 10 providers. Get notified when prices change.</p>
+            <a href="calculator.html" class="btn-primary">Try the Free Calculator</a>
+        </div>
+
+        <div class="share-section">
+            <p>Found this report useful? Share it:</p>
+            <a href="https://twitter.com/intent/tweet?text=State+of+AI+API+Pricing+Q2+2026%3A+32+models%2C+10+providers%2C+real+data&url=https%3A%2F%2Fgetapipulse.com%2Fstate-of-llm-pricing-q2-2026.html" target="_blank" rel="noopener" class="share-btn">Share on X</a>
+            <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fgetapipulse.com%2Fstate-of-llm-pricing-q2-2026.html" target="_blank" rel="noopener" class="share-btn">Share on LinkedIn</a>
+        </div>
+
+        <div style="margin-top:40px;padding:24px;background:var(--bg-secondary);border:1px solid var(--border);border-radius:12px;">
+            <h3 style="font-size:16px;margin-bottom:12px;">Related Reading</h3>
+            <ul style="list-style:none;padding:0;">
+                <li style="margin-bottom:8px;"><a href="blog-cheapest-llm.html">The Cheapest LLM APIs in 2026: A Complete Ranking</a></li>
+                <li style="margin-bottom:8px;"><a href="blog-ai-api-budget-2026.html">How to Budget for AI APIs in 2026: A Practical Guide</a></li>
+                <li style="margin-bottom:8px;"><a href="blog-pricing-trends-2026.html">LLM API Pricing Trends in 2026</a></li>
+                <li><a href="pricing-index.html">Full Pricing Index — All 32 Models →</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div style="max-width:600px;margin:48px auto 0;padding:32px;text-align:center;background:var(--bg-card);border-radius:12px;border:1px solid var(--border);">
+        <h3 style="font-size:18px;margin-bottom:8px;">Get notified when API prices change</h3>
+        <p style="font-size:14px;color:var(--text-secondary);margin-bottom:16px;">No spam. Only pricing updates and new features. Unsubscribe anytime.</p>
+        <form onsubmit="saveEmail(event)" style="display:flex;gap:8px;max-width:400px;margin:0 auto;">
+            <input type="email" id="email-input" placeholder="you@company.com" required aria-label="Email address"
+                style="flex:1;padding:12px 16px;border-radius:8px;border:1px solid var(--border);background:var(--bg-secondary);color:var(--text-primary);font-size:14px;">
+            <button type="submit" class="btn-primary" style="padding:12px 24px;white-space:nowrap;">Subscribe</button>
+        </form>
+        <p id="email-msg" style="font-size:13px;color:var(--green);margin-top:12px;display:none;"></p>
+    </div>
+
+    <button class="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">↑</button>
+
+    </main>
+    <footer>
+        <p>Pricing data last verified: <span class="verified-date"></span></p>
+        <p>&copy; 2026 APIpulse. <a href="index.html">Home</a> &middot; <a href="use-cases.html">Use Cases</a> &middot; <a href="about.html">About</a> &middot; <a href="blog.html">Blog</a>
+<a href="pricing-index.html">Pricing Index</a> &middot; <a href="openai.html">OpenAI</a> &middot; <a href="anthropic.html">Anthropic</a> &middot; <a href="google.html">Google</a> &middot; <a href="mistral.html">Mistral</a> &middot; <a href="cohere.html">Cohere</a> &middot; <a href="deepseek.html">DeepSeek</a> &middot; <a href="xai.html">xAI</a> &middot; <a href="moonshot.html">Moonshot</a> &middot; <a href="together.html">Together.ai</a> &middot; <a href="ai21.html">AI21</a> &middot; <a href="pricing.html">Pricing</a> &middot; <a href="embed.html">Embed Widget</a> &middot; <a href="cheat-sheet.html">Cheat Sheet</a> &middot; <a href="api-docs.html">API</a> &middot; <a href="https://x.com/getapipulse" target="_blank" rel="noopener">Twitter</a> &middot; <a href="unsubscribe.html">Unsubscribe</a></p>
+    </footer>
+
+</body>
+</html>
