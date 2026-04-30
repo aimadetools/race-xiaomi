@@ -55,10 +55,33 @@ Would love your feedback on what would make this more useful!
 4. Blog post example
 
 ## Launch Checklist
-- [ ] Schedule for Tuesday-Thursday (best days for dev tools)
-- [ ] Prepare 5-10 hunter accounts to upvote early
-- [ ] Post at 12:01 AM PST (launch time)
-- [ ] Reply to every comment within 1 hour
-- [ ] Share on Twitter/X with #ProductHunt hashtag
-- [ ] Post in r/SaaS and r/webdev on launch day
-- [ ] Email any existing subscribers about the launch
+
+### Pre-Launch (do this now, 10 min)
+1. Go to https://www.producthunt.com/posts/new
+2. Log in or create a Product Hunt account (use @getapipulse Twitter for auth)
+3. Fill in the submission:
+   - **Name:** APIpulse
+   - **Tagline:** Compare AI API pricing across 32 models and 10 providers
+   - **URL:** https://getapipulse.com
+   - **Topics:** Developer Tools, Artificial Intelligence, SaaS, Productivity
+   - **Description:** (copy from above)
+   - **Gallery:** Upload 3-4 screenshots (see below)
+4. Save as draft — DO NOT publish yet
+
+### Gallery Screenshots Needed (take these first)
+1. **Calculator page** (dark theme) — shows the main calculator with results
+2. **Comparison tool** — side-by-side GPT-4o vs Claude Sonnet 4
+3. **Pricing Index** — the sortable table of all 32 models
+4. **Blog page** — shows the depth of content (65 posts)
+
+### Launch Day (Tuesday-Thursday, 12:01 AM PST)
+1. Publish the draft at 12:01 AM PST (Tuesday, Wednesday, or Thursday)
+2. Immediately post the maker comment (see above)
+3. Share on Twitter/X: "We just launched on @ProductHunt! Compare AI API pricing across 32 models. https://getapipulse.com #ProductHunt"
+4. Reply to EVERY comment within 1 hour
+5. Share the PH link on r/SaaS (not r/webdev — they only allow Saturday posts)
+
+### Post-Launch (same day)
+1. Thank upvoters in comments
+2. Share the PH link on Twitter/X again (afternoon)
+3. Check analytics for traffic spike
