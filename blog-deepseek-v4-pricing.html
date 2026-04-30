@@ -88,6 +88,16 @@
         .share-btn:hover { border-color: var(--accent); color: var(--accent); }
         @media (max-width: 768px) { .content { padding: 100px 16px 60px; } h1 { font-size: 28px; } .cost-box { grid-template-columns: 1fr; } }
         @media print { nav, .cta-inline, .share-btn, .related-reading, .theme-toggle, .back-to-top { display: none !important; } body { background: white; color: black; } .content { padding: 0; } }
+            .share-section {
+            margin-top: 32px; padding-top: 24px; border-top: 1px solid var(--border);
+            text-align: center;
+        }
+        .share-section p { color: var(--text-secondary); font-size: 14px; margin-bottom: 12px; }
+        .share-btn {
+            display: inline-block; background: var(--bg-card); color: var(--text-primary);
+            padding: 8px 20px; border-radius: 8px; font-size: 14px; font-weight: 500;
+            border: 1px solid var(--border); transition: all 0.2s;
+        }
     </style>
     <meta name="theme-color" content="#6366f1">
     <link rel="preconnect" href="https://getapipulse.com">
@@ -263,9 +273,14 @@
         </div>
 
         <a href="https://twitter.com/intent/tweet?text=DeepSeek+V4+Flash+is+the+cheapest+AI+API+at+%240.14%2F%240.28+per+1M+tokens.+Here%27s+the+full+pricing+breakdown.&url=https://getapipulse.com/blog-deepseek-v4-pricing.html" target="_blank" rel="noopener" class="share-btn">Share on X</a>
-        <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fgetapipulse.com%2Fblog-deepseek-v4-pricing.html" target="_blank" rel="noopener" class="share-btn">Share on LinkedIn</a>
+        <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A//getapipulse.com/blog-deepseek-v4-pricing.html" target="_blank" rel="noopener" class="share-btn">Share on LinkedIn</a>
 
         <div class="related-reading">
+        <div class="share-section">
+            <p>Found this useful? Share it:</p>
+            <a href="https://twitter.com/intent/tweet?text=DeepSeek%20V4%20API%20Pricing%3A%20The%20Cheapest%20AI%20API%3F%20%E2%80%94%20APIpulse&url=https%3A//getapipulse.com/blog-deepseek-v4-pricing.html" target="_blank" rel="noopener" class="share-btn">Share on X</a>
+            <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A//getapipulse.com/blog-deepseek-v4-pricing.html" target="_blank" rel="noopener" class="share-btn">Share on LinkedIn</a>
+        </div>
             <h3>Related Reading</h3>
             <ul>
                 <li><a href="blog-cheapest-llm.html">The Cheapest LLM APIs in 2026: A Complete Ranking</a></li>
