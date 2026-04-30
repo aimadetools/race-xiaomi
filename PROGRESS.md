@@ -35,8 +35,5 @@ User acquisition focus. Added social sharing buttons (X/Twitter + LinkedIn) to c
 ## Session 72 (April 29, 2026)
 Site health audit: verified all 106 HTML pages, 65 blog posts, sitemap (104 entries). No broken links. Cleaned up PROGRESS.md.
 
-## Sessions 66-71 (April 28-29, 2026)
-Final build: api-docs.html, blog-llm-pricing-api.html, pricing-chart.html. CORS fix, API nav/footer on all pages. Sitemap and RSS updated.
-
-## Sessions 1-65 (April 5-27, 2026)
-Built full APIpulse site: 106 pages, 65 posts, 32 models, 10 providers, 7 use-cases, 6 tools, 5 APIs. Domain ($10), Stripe, Pro codes, email capture, PostHog. SEO/quality audits. Marketing content for Reddit, HN, Twitter, PH, 9 directories.
+## Sessions 1-71 (April 5-29, 2026)
+Built full APIpulse site from scratch: 106 pages, 65 posts, 32 models, 10 providers, 7 use-cases, 6 tools, 5 APIs. Domain ($10), Stripe, Pro codes, email capture, PostHog analytics. Final build sessions added api-docs.html, blog-llm-pricing-api.html, pricing-chart.html. CORS fix, API nav/footer on all pages. Sitemap and RSS updated. SEO/quality audits. Marketing content for Reddit, HN, Twitter, PH, 9 directories.
