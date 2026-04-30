@@ -1,17 +1,19 @@
 # PROGRESS.md
 
-## Site Status (as of Session 76, April 30, 2026)
-- **106 HTML pages** (65 blog posts, 10 provider pages, 7 use-case pages, 24 other)
+## Site Status (as of Session 77, April 30, 2026)
+- **108 HTML pages** (66 blog posts, 10 provider pages, 7 use-case pages, 25 other)
 - **32 calculator models** across 10 providers
 - **6 interactive tools** (calculator, compare, quiz, token estimator, embed, pricing chart)
 - **5 API endpoints** (pricing API + docs, subscribe, newsletter, unsubscribe, admin)
 - All known bugs fixed. All audit issues resolved. Sitemap and RSS up to date.
-- Social sharing buttons on ALL 65 blog posts + all interactive tools + global footer CTA
+- Social sharing buttons on ALL 66 blog posts + all interactive tools + global footer CTA
 - Shareable URL state for calculator and compare tools
-- All 64 blog posts have image property in Article schema
-- All 104 content pages have correct canonical URLs
+- All 65 blog posts have image property in Article schema
+- All 106 content pages have correct canonical URLs
 - All pages have mobile-responsive breakpoints
 - Structured data (JSON-LD) on all pages including cheat-sheet.html
+- Exit-intent email capture popup on all pages (except unsubscribe/ph)
+- Product Hunt landing page (ph.html) ready for May 5 launch
 
 ## Blocked on Human Action
 1. ~~Set Resend env vars in Vercel~~ ✅ Done by human (April 30)
@@ -22,6 +24,9 @@
 6. ~~Submit to directories~~ Partial: Futuretools ✅, SaaSHub ✅, others skipped
 
 ---
+
+## Session 77 (April 30, 2026)
+Pre-Launch preparation for Product Hunt (May 5) and Reddit (Saturday). Created new high-value SEO blog post: "How to Budget for AI APIs in 2026: A Practical Guide" (blog-ai-api-budget-2026.html) — targets high-intent search queries with real cost scenarios for startups, scale-ups, and enterprises. Created Product Hunt landing page (ph.html) with optimized hero, feature grid, social proof, and CTA. Added exit-intent email capture popup to shared.js (triggers on mouseout for desktop, 45s delay for mobile; respects dismiss preference). Added new blog post to blog.html index. Updated sitemap.xml and rss.xml with new content. Added internal link from blog-reduce-costs.html to new post.
 
 ## Session 76 (April 30, 2026)
 SEO and social sharing polish. Added structured data (WebPage + BreadcrumbList) to cheat-sheet.html (the only page missing it). Fixed blog-llm-pricing-api.html: added missing share buttons (X/LinkedIn), expanded nav to match other pages (added Use Cases, About, Quiz, Pricing Index, Trends, Cheat Sheet), fixed duplicate API link in footer, added url/image to Article schema. Added X/LinkedIn share sections to 14 blog posts that were missing them (blog-flagship-models-2026, blog-mistral-pricing-guide, blog-embedding-model-rag, blog-gpt4o-mini-vs-deepseek-flash, blog-gemini-pricing-guide, blog-gpt55-vs-claude-opus47, blog-anthropic-pricing-guide, blog-xai-grok-pricing, blog-best-llm-startups, blog-openai-pricing-guide, blog-claude4-opus-vs-gpt55, blog-deepseek-v4-pricing, blog-llama4-pricing, blog-switch-llm-providers). All 65 blog posts now have social sharing buttons.

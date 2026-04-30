@@ -108,3 +108,95 @@ async function saveEmail(e) {
         btn.textContent = 'Subscribe';
     }
 }
+
+// Exit-intent popup for email capture
+(function() {
+    if (window.location.pathname.includes('unsubscribe') || window.location.pathname.includes('ph.html')) return;
+    if (localStorage.getItem('apipulse_popup_dismissed')) return;
+
+    let popupShown = false;
+    function showExitPopup() {
+        if (popupShown || localStorage.getItem('apipulse_popup_dismissed')) return;
+        popupShown = true;
+
+        const overlay = document.createElement('div');
+        overlay.id = 'exit-popup-overlay';
+        overlay.style.cssText = 'position:fixed;inset:0;background:rgba(0,0,0,0.7);z-index:9999;display:flex;align-items:center;justify-content:center;padding:20px;animation:fadeIn 0.3s ease;';
+
+        const popup = document.createElement('div');
+        popup.style.cssText = 'background:var(--bg-card);border:1px solid var(--accent);border-radius:16px;padding:40px;max-width:440px;width:100%;position:relative;box-shadow:0 24px 64px rgba(0,0,0,0.5);';
+
+        popup.innerHTML = `
+            <button onclick="document.getElementById('exit-popup-overlay').remove();localStorage.setItem('apipulse_popup_dismissed','1');" style="position:absolute;top:12px;right:12px;background:none;border:none;color:var(--text-muted);font-size:20px;cursor:pointer;padding:4px 8px;border-radius:6px;" onmouseover="this.style.color='var(--text-primary)'" onmouseout="this.style.color='var(--text-muted)'">&times;</button>
+            <div style="text-align:center;">
+                <div style="font-size:40px;margin-bottom:16px;">🚀</div>
+                <h3 style="font-size:22px;font-weight:700;margin-bottom:8px;">Get 40% off AI API costs</h3>
+                <p style="font-size:14px;color:var(--text-secondary);margin-bottom:24px;line-height:1.6;">Join 200+ developers who use our free pricing data to optimize their AI spending. Get notified when prices change.</p>
+                <form id="exit-popup-form" style="display:flex;gap:8px;margin-bottom:12px;">
+                    <input type="email" id="exit-popup-email" placeholder="you@company.com" required aria-label="Email address"
+                        style="flex:1;padding:12px 16px;border-radius:8px;border:1px solid var(--border);background:var(--bg-secondary);color:var(--text-primary);font-size:14px;">
+                    <button type="submit" style="background:var(--accent);color:white;padding:12px 24px;border-radius:8px;font-size:14px;font-weight:600;border:none;cursor:pointer;white-space:nowrap;">Get Updates</button>
+                </form>
+                <p id="exit-popup-msg" style="font-size:13px;color:var(--green);margin-top:8px;display:none;"></p>
+                <p style="font-size:12px;color:var(--text-muted);margin-top:12px;">No spam. Unsubscribe anytime.</p>
+            </div>
+        `;
+
+        overlay.appendChild(popup);
+        document.body.appendChild(overlay);
+
+        overlay.addEventListener('click', function(e) {
+            if (e.target === overlay) {
+                overlay.remove();
+                localStorage.setItem('apipulse_popup_dismissed', '1');
+            }
+        });
+
+        document.getElementById('exit-popup-form').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            const emailInput = document.getElementById('exit-popup-email');
+            const msgEl = document.getElementById('exit-popup-msg');
+            const btn = e.target.querySelector('button[type="submit"]');
+            btn.disabled = true;
+            btn.textContent = 'Saving...';
+            try {
+                const res = await fetch('/api/subscribe', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ email: emailInput.value })
+                });
+                const data = await res.json();
+                msgEl.textContent = data.message || 'Thanks! You\'ll get pricing updates.';
+                msgEl.style.color = 'var(--green)';
+                msgEl.style.display = 'block';
+                emailInput.value = '';
+                if (window.trackEvent) window.trackEvent('exit_popup_signup');
+                setTimeout(function() { overlay.remove(); localStorage.setItem('apipulse_popup_dismissed', '1'); }, 2000);
+            } catch (err) {
+                const emails = JSON.parse(localStorage.getItem('apipulse_emails') || '[]');
+                if (!emails.includes(emailInput.value)) {
+                    emails.push(emailInput.value);
+                    localStorage.setItem('apipulse_emails', JSON.stringify(emails));
+                }
+                msgEl.textContent = 'Saved! We\'ll notify you of pricing changes.';
+                msgEl.style.color = 'var(--green)';
+                msgEl.style.display = 'block';
+                emailInput.value = '';
+                if (window.trackEvent) window.trackEvent('exit_popup_signup');
+                setTimeout(function() { overlay.remove(); localStorage.setItem('apipulse_popup_dismissed', '1'); }, 2000);
+            } finally {
+                btn.disabled = false;
+                btn.textContent = 'Get Updates';
+            }
+        });
+    }
+
+    document.addEventListener('mouseout', function(e) {
+        if (e.clientY <= 0 && !popupShown) showExitPopup();
+    });
+
+    // Also show after 45 seconds on mobile (no mouseout on mobile)
+    setTimeout(function() {
+        if (!popupShown && 'ontouchstart' in window) showExitPopup();
+    }, 45000);
+})();
