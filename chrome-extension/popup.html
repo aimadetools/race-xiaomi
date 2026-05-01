@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=380">
+  <title>APIpulse</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="header">
+    <div class="logo">API<span>pulse</span></div>
+    <a href="https://getapipulse.com" target="_blank" class="site-link">getapipulse.com</a>
+  </div>
+
+  <div class="search-box">
+    <input type="text" id="search" placeholder="Search models (e.g. GPT-4o, Claude, Gemini...)" autofocus>
+  </div>
+
+  <div class="quick-filters">
+    <button class="filter active" data-filter="all">All</button>
+    <button class="filter" data-filter="Budget">Budget</button>
+    <button class="filter" data-filter="Mid">Mid</button>
+    <button class="filter" data-filter="Premium">Premium</button>
+  </div>
+
+  <div id="model-list" class="model-list"></div>
+
+  <div class="calculator" id="calculator" style="display:none">
+    <div class="calc-header">
+      <span id="calc-model-name"></span>
+      <button id="calc-close" class="calc-close">&times;</button>
+    </div>
+    <div class="calc-inputs">
+      <label>
+        Input tokens
+        <input type="number" id="input-tokens" value="1000" min="0">
+      </label>
+      <label>
+        Output tokens
+        <input type="number" id="output-tokens" value="500" min="0">
+      </label>
+      <label>
+        Requests/day
+        <input type="number" id="requests-day" value="100" min="0">
+      </label>
+    </div>
+    <div class="calc-results">
+      <div class="cost-line">Per request: <strong id="cost-request">$0.00000</strong></div>
+      <div class="cost-line">Daily: <strong id="cost-daily">$0.00</strong></div>
+      <div class="cost-line">Monthly: <strong id="cost-monthly">$0.00</strong></div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <a href="https://getapipulse.com/calculator.html" target="_full calculator">Full calculator</a>
+    <span class="sep">|</span>
+    <span>Data verified May 2026</span>
+  </div>
+
+  <script src="models.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>

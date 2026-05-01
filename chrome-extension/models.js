@@ -1,0 +1,38 @@
+// APIpulse Chrome Extension — Embedded Pricing Data
+// Synced with pricing-data.js from getapipulse.com
+// Last verified: May 1, 2026
+
+const MODELS = [
+  { name: 'GPT-5.5', provider: 'OpenAI', tier: 'Premium', input: 5.00, output: 30.00, context: '1M' },
+  { name: 'GPT-5.5 Pro', provider: 'OpenAI', tier: 'Premium', input: 30.00, output: 180.00, context: '1M' },
+  { name: 'GPT-5.3 Codex', provider: 'OpenAI', tier: 'Mid', input: 1.75, output: 14.00, context: '400K' },
+  { name: 'GPT-5', provider: 'OpenAI', tier: 'Premium', input: 10.00, output: 30.00, context: '256K' },
+  { name: 'GPT-5 mini', provider: 'OpenAI', tier: 'Budget', input: 0.40, output: 1.60, context: '256K' },
+  { name: 'GPT-oss 120B', provider: 'OpenAI', tier: 'Budget', input: 0.15, output: 0.60, context: '128K' },
+  { name: 'GPT-oss 20B', provider: 'OpenAI', tier: 'Budget', input: 0.08, output: 0.35, context: '128K' },
+  { name: 'GPT-4o', provider: 'OpenAI', tier: 'Mid', input: 2.50, output: 10.00, context: '128K' },
+  { name: 'GPT-4o mini', provider: 'OpenAI', tier: 'Budget', input: 0.15, output: 0.60, context: '128K' },
+  { name: 'Claude Opus 4.7', provider: 'Anthropic', tier: 'Premium', input: 5.00, output: 25.00, context: '1M' },
+  { name: 'Claude 4 Opus', provider: 'Anthropic', tier: 'Premium', input: 15.00, output: 75.00, context: '200K' },
+  { name: 'Claude Sonnet 4.6', provider: 'Anthropic', tier: 'Mid', input: 3.00, output: 15.00, context: '1M' },
+  { name: 'Claude Sonnet 4', provider: 'Anthropic', tier: 'Mid', input: 3.00, output: 15.00, context: '200K' },
+  { name: 'Claude Haiku 3.5', provider: 'Anthropic', tier: 'Budget', input: 0.80, output: 4.00, context: '200K' },
+  { name: 'Gemini 3.1 Pro', provider: 'Google', tier: 'Mid', input: 2.00, output: 12.00, context: '1M' },
+  { name: 'Gemini 2.5 Pro', provider: 'Google', tier: 'Mid', input: 1.25, output: 10.00, context: '1M' },
+  { name: 'Gemini 2.0 Flash', provider: 'Google', tier: 'Budget', input: 0.10, output: 0.40, context: '1M' },
+  { name: 'DeepSeek V4 Pro', provider: 'DeepSeek', tier: 'Budget', input: 0.44, output: 0.87, context: '1M' },
+  { name: 'DeepSeek V4 Flash', provider: 'DeepSeek', tier: 'Budget', input: 0.14, output: 0.28, context: '1M' },
+  { name: 'DeepSeek V3', provider: 'DeepSeek', tier: 'Budget', input: 0.27, output: 1.10, context: '128K' },
+  { name: 'Mistral Large 3', provider: 'Mistral', tier: 'Budget', input: 0.50, output: 1.50, context: '128K' },
+  { name: 'Mistral Small 4', provider: 'Mistral', tier: 'Budget', input: 0.15, output: 0.60, context: '128K' },
+  { name: 'Command R+', provider: 'Cohere', tier: 'Mid', input: 2.50, output: 10.00, context: '128K' },
+  { name: 'Command R', provider: 'Cohere', tier: 'Budget', input: 0.50, output: 1.50, context: '128K' },
+  { name: 'Llama 4 Scout', provider: 'Meta (Together.ai)', tier: 'Budget', input: 0.11, output: 0.34, context: '10M' },
+  { name: 'Llama 4 Maverick', provider: 'Meta (Together.ai)', tier: 'Budget', input: 0.20, output: 0.60, context: '10M' },
+  { name: 'Llama 3.1 70B', provider: 'Meta (Together.ai)', tier: 'Mid', input: 0.88, output: 0.88, context: '128K' },
+  { name: 'Llama 3.1 8B', provider: 'Meta (Together.ai)', tier: 'Budget', input: 0.10, output: 0.10, context: '128K' },
+  { name: 'Kimi K2.6', provider: 'Moonshot', tier: 'Budget', input: 0.90, output: 3.75, context: '256K' },
+  { name: 'Grok 3', provider: 'xAI', tier: 'Premium', input: 30.00, output: 150.00, context: '128K' },
+  { name: 'Grok 3 Mini', provider: 'xAI', tier: 'Mid', input: 3.00, output: 5.00, context: '128K' },
+  { name: 'Jamba 1.5 Large', provider: 'AI21', tier: 'Mid', input: 2.00, output: 8.00, context: '256K' },
+];
