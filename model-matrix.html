@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LLM Model Comparison Matrix: All 32 Models Side by Side (2026) — APIpulse</title>
+    <meta name="description" content="Compare all 32 LLM models side by side. Sort by price, context window, or provider. Find the cheapest model for your exact use case. Updated May 2026.">
+    <meta name="keywords" content="LLM comparison matrix, model comparison table, AI API models side by side, GPT vs Claude vs Gemini comparison, cheapest LLM model, LLM pricing matrix">
+    <meta property="og:title" content="LLM Model Comparison Matrix: All 32 Models Side by Side (2026) — APIpulse">
+    <meta property="og:description" content="Compare all 32 LLM models side by side. Sort by price, context window, or provider.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://getapipulse.com/og-image.png">
+    <meta property="og:url" content="https://getapipulse.com/model-matrix.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="LLM Model Comparison Matrix: All 32 Models Side by Side (2026) — APIpulse">
+    <meta name="twitter:image" content="https://getapipulse.com/og-image.png">
+    <meta name="twitter:description" content="Compare all 32 LLM models side by side. Sort by price, context window, or provider.">
+    <link rel="canonical" href="https://getapipulse.com/model-matrix.html">
+    <link rel="alternate" type="application/rss+xml" title="APIpulse Blog" href="https://getapipulse.com/rss.xml">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="styles.css">
+    <script src="analytics.js" defer></script>
+    <script src="dynamic-date.js" defer></script>
+    <script src="shared.js" defer></script>
+    <script src="pricing-data.js" defer></script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "APIpulse Model Matrix",
+        "url": "https://getapipulse.com/model-matrix.html",
+        "description": "Compare all 32 LLM models side by side. Sort by price, context window, or provider.",
+        "applicationCategory": "DeveloperApplication",
+        "operatingSystem": "Web"
+    }
+    </script>
+    <style>
+        .page-header { max-width: var(--max-width); margin: 0 auto; padding: 120px 24px 40px; text-align: center; }
+        .page-header h1 { font-size: 40px; font-weight: 800; margin-bottom: 12px; }
+        .page-header p { color: var(--text-secondary); font-size: 18px; max-width: 600px; margin: 0 auto; }
+
+        .matrix-container { max-width: var(--max-width); margin: 0 auto; padding: 0 24px 80px; }
+
+        .filters { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 24px; align-items: center; }
+        .filter-group { display: flex; flex-direction: column; gap: 4px; }
+        .filter-group label { font-size: 11px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px; font-weight: 600; }
+        .filter-group select, .filter-group input {
+            background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 8px;
+            padding: 8px 12px; color: var(--text-primary); font-size: 14px; min-width: 160px;
+        }
+        .filter-group select:focus, .filter-group input:focus { border-color: var(--accent); outline: none; }
+
+        .matrix-table { width: 100%; border-collapse: collapse; font-size: 14px; }
+        .matrix-table th {
+            background: var(--bg-secondary); padding: 12px 16px; text-align: left;
+            font-weight: 600; border-bottom: 2px solid var(--border); position: sticky;
+            top: 64px; z-index: 2; cursor: pointer; user-select: none; white-space: nowrap;
+        }
+        .matrix-table th:hover { color: var(--accent); }
+        .matrix-table th .sort-arrow { margin-left: 4px; font-size: 10px; }
+        .matrix-table td { padding: 12px 16px; border-bottom: 1px solid var(--border); }
+        .matrix-table tr:hover { background: var(--bg-card-hover); }
+        .matrix-table .cheapest { color: #22c55e; font-weight: 700; }
+        .matrix-table .expensive { color: #ef4444; }
+        .matrix-table .mid-price { color: #f59e0b; }
+        .tier-badge { display: inline-block; padding: 2px 8px; border-radius: 4px; font-size: 11px; font-weight: 600; }
+        .tier-budget { background: rgba(34,197,94,0.15); color: #22c55e; }
+        .tier-mid { background: rgba(245,158,11,0.15); color: #f59e0b; }
+        .tier-premium { background: rgba(168,85,247,0.15); color: #a855f7; }
+        .provider-link { color: var(--accent); text-decoration: none; font-weight: 500; }
+        .provider-link:hover { text-decoration: underline; }
+        .context-badge { background: var(--bg-secondary); padding: 2px 8px; border-radius: 4px; font-size: 12px; font-weight: 600; }
+        .cost-bar { height: 6px; border-radius: 3px; margin-top: 4px; }
+        .cost-bar-input { background: var(--accent); }
+        .cost-bar-output { background: #a855f7; }
+        .rank-badge { display: inline-flex; align-items: center; justify-content: center; width: 24px; height: 24px; border-radius: 50%; font-size: 11px; font-weight: 700; }
+        .rank-1 { background: rgba(34,197,94,0.2); color: #22c55e; }
+        .rank-2 { background: rgba(34,197,94,0.15); color: #22c55e; }
+        .rank-3 { background: rgba(245,158,11,0.15); color: #f59e0b; }
+        .rank-other { background: var(--bg-secondary); color: var(--text-muted); }
+
+        .summary-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 16px; margin-bottom: 32px; }
+        .summary-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; padding: 20px; text-align: center; }
+        .summary-card .label { font-size: 12px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px; }
+        .summary-card .value { font-size: 28px; font-weight: 800; margin-top: 8px; }
+        .summary-card .sublabel { font-size: 13px; color: var(--text-secondary); margin-top: 4px; }
+
+        .matrix-note { background: var(--bg-secondary); border-left: 3px solid var(--accent); padding: 16px 20px; margin-bottom: 24px; border-radius: 0 8px 8px 0; font-size: 14px; color: var(--text-secondary); }
+
+        @media (max-width: 768px) {
+            .page-header { padding: 100px 16px 32px; }
+            .page-header h1 { font-size: 28px; }
+            .matrix-container { padding: 0 12px 60px; }
+            .matrix-table { font-size: 12px; }
+            .matrix-table th, .matrix-table td { padding: 8px 10px; }
+            .filters { flex-direction: column; }
+            .filter-group select, .filter-group input { width: 100%; min-width: unset; }
+            .summary-cards { grid-template-columns: 1fr 1fr; }
+        }
+        @media print { nav, .theme-toggle, .back-to-top, .filters { display: none !important; } body { background: white; color: black; } }
+    </style>
+    <meta name="theme-color" content="#6366f1">
+    <link rel="preconnect" href="https://getapipulse.com">
+</head>
+<body>
+    <a href="#main" class="skip-link">Skip to content</a>
+    <nav>
+        <div class="nav-inner">
+            <a href="index.html" class="logo">API<span>pulse</span></a>
+            <button class="hamburger" onclick="toggleMobileNav()" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+            <div class="nav-links">
+                <a href="calculator.html">Calculator</a>
+                <a href="compare.html">Compare</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="use-cases.html">Use Cases</a>
+                <a href="about.html">About</a>
+                <a href="blog.html">Blog</a>
+                <a href="quiz.html">Quiz</a>
+                <a href="pricing-index.html">Pricing Index</a>
+                <a href="pricing-trends.html">Trends</a>
+                <a href="cheat-sheet.html">Cheat Sheet</a>
+                <a href="api-docs.html" style="color:var(--accent);">API</a>
+                <a href="token-estimator.html">Token Estimator</a>
+                <a href="pricing.html" class="nav-cta" onclick="if(window.trackEvent)window.trackEvent('pro_button_clicked',{source:'nav'})">Get Pro — $29</a>
+                <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
+            </div>
+        </div>
+    </nav>
+
+    <main id="main">
+        <div class="page-header">
+            <h1>LLM Model Comparison Matrix</h1>
+            <p>All 32 models from 10 providers in one sortable table. Filter by tier, provider, or context window. Find the right model in seconds.</p>
+        </div>
+
+        <div class="matrix-container">
+
+            <div class="summary-cards" id="summary-cards"></div>
+
+            <div class="matrix-note">
+                All prices are per 1M tokens. Verified May 2026. Click any column header to sort. Use filters to narrow results.
+            </div>
+
+            <div class="filters">
+                <div class="filter-group">
+                    <label>Provider</label>
+                    <select id="filter-provider" onchange="filterMatrix()">
+                        <option value="all">All Providers</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label>Tier</label>
+                    <select id="filter-tier" onchange="filterMatrix()">
+                        <option value="all">All Tiers</option>
+                        <option value="Budget">Budget</option>
+                        <option value="Mid">Mid</option>
+                        <option value="Premium">Premium</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label>Context Window</label>
+                    <select id="filter-context" onchange="filterMatrix()">
+                        <option value="all">All Sizes</option>
+                        <option value="10M">10M+</option>
+                        <option value="1M">1M+</option>
+                        <option value="256K">256K+</option>
+                        <option value="200K">200K+</option>
+                        <option value="128K">128K+</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label>Search</label>
+                    <input type="text" id="filter-search" placeholder="Model name..." oninput="filterMatrix()">
+                </div>
+            </div>
+
+            <div style="overflow-x: auto;">
+                <table class="matrix-table" id="matrix-table">
+                    <thead>
+                        <tr>
+                            <th onclick="sortMatrix('rank')" data-col="rank"># <span class="sort-arrow"></span></th>
+                            <th onclick="sortMatrix('name')" data-col="name">Model <span class="sort-arrow"></span></th>
+                            <th onclick="sortMatrix('provider')" data-col="provider">Provider <span class="sort-arrow"></span></th>
+                            <th onclick="sortMatrix('tier')" data-col="tier">Tier <span class="sort-arrow"></span></th>
+                            <th onclick="sortMatrix('input')" data-col="input">Input $/1M <span class="sort-arrow"></span></th>
+                            <th onclick="sortMatrix('output')" data-col="output">Output $/1M <span class="sort-arrow"></span></th>
+                            <th onclick="sortMatrix('avg')" data-col="avg">Avg Cost <span class="sort-arrow"></span></th>
+                            <th onclick="sortMatrix('context')" data-col="context">Context <span class="sort-arrow"></span></th>
+                        </tr>
+                    </thead>
+                    <tbody id="matrix-body"></tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 APIpulse. Built with data, not hype.</p>
+    </footer>
+
+    <button class="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">&uarr;</button>
+
+    <script>
+    let currentSort = { col: 'avg', dir: 'asc' };
+    let filteredModels = [];
+
+    function contextToNum(ctx) {
+        const s = ctx.replace(/,/g, '');
+        if (s.endsWith('M')) return parseFloat(s) * 1000000;
+        if (s.endsWith('K')) return parseFloat(s) * 1000;
+        return parseFloat(s);
+    }
+
+    function formatContext(ctx) {
+        return ctx;
+    }
+
+    function initMatrix() {
+        // Populate provider filter
+        const providers = getProviders();
+        const providerSelect = document.getElementById('filter-provider');
+        providers.forEach(p => {
+            const opt = document.createElement('option');
+            opt.value = p.slug;
+            opt.textContent = p.name;
+            providerSelect.appendChild(opt);
+        });
+
+        // Calculate avg cost (3:1 input:output ratio)
+        filteredModels = API_MODELS.map(m => ({
+            ...m,
+            avgCost: (m.input * 3 + m.output) / 4,
+            contextNum: contextToNum(m.context)
+        }));
+
+        // Summary cards
+        updateSummary();
+        renderMatrix();
+    }
+
+    function updateSummary() {
+        const sorted = [...filteredModels].sort((a, b) => a.avgCost - b.avgCost);
+        const cheapest = sorted[0];
+        const mostExpensive = sorted[sorted.length - 1];
+        const avgInput = filteredModels.reduce((s, m) => s + m.input, 0) / filteredModels.length;
+        const avgOutput = filteredModels.reduce((s, m) => s + m.output, 0) / filteredModels.length;
+
+        document.getElementById('summary-cards').innerHTML = `
+            <div class="summary-card">
+                <div class="label">Cheapest Model</div>
+                <div class="value" style="color:var(--green)">${cheapest.name}</div>
+                <div class="sublabel">${cheapest.provider} &middot; $${cheapest.avgCost.toFixed(3)}/req avg</div>
+            </div>
+            <div class="summary-card">
+                <div class="label">Most Expensive</div>
+                <div class="value" style="color:var(--red)">${mostExpensive.name}</div>
+                <div class="sublabel">${mostExpensive.provider} &middot; $${mostExpensive.avgCost.toFixed(3)}/req avg</div>
+            </div>
+            <div class="summary-card">
+                <div class="label">Price Range</div>
+                <div class="value" style="color:var(--orange)">${(mostExpensive.avgCost / cheapest.avgCost).toFixed(0)}x</div>
+                <div class="sublabel">Gap between cheapest &amp; most expensive</div>
+            </div>
+            <div class="summary-card">
+                <div class="label">Models Tracked</div>
+                <div class="value">${filteredModels.length}</div>
+                <div class="sublabel">Across ${getProviders().length} providers</div>
+            </div>
+        `;
+    }
+
+    function filterMatrix() {
+        const provider = document.getElementById('filter-provider').value;
+        const tier = document.getElementById('filter-tier').value;
+        const context = document.getElementById('filter-context').value;
+        const search = document.getElementById('filter-search').value.toLowerCase();
+
+        const minContext = context === 'all' ? 0 : contextToNum(context);
+
+        filteredModels = API_MODELS.map(m => ({
+            ...m,
+            avgCost: (m.input * 3 + m.output) / 4,
+            contextNum: contextToNum(m.context)
+        })).filter(m => {
+            if (provider !== 'all' && m.providerSlug !== provider) return false;
+            if (tier !== 'all' && m.tier !== tier) return false;
+            if (minContext > 0 && m.contextNum < minContext) return false;
+            if (search && !m.name.toLowerCase().includes(search) && !m.provider.toLowerCase().includes(search)) return false;
+            return true;
+        });
+
+        updateSummary();
+        renderMatrix();
+    }
+
+    function sortMatrix(col) {
+        if (currentSort.col === col) {
+            currentSort.dir = currentSort.dir === 'asc' ? 'desc' : 'asc';
+        } else {
+            currentSort = { col, dir: 'asc' };
+        }
+
+        // Update sort arrows
+        document.querySelectorAll('.matrix-table th').forEach(th => {
+            const arrow = th.querySelector('.sort-arrow');
+            if (th.dataset.col === col) {
+                arrow.textContent = currentSort.dir === 'asc' ? '▲' : '▼';
+            } else {
+                arrow.textContent = '';
+            }
+        });
+
+        renderMatrix();
+    }
+
+    function renderMatrix() {
+        const sorted = [...filteredModels].sort((a, b) => {
+            let va, vb;
+            switch (currentSort.col) {
+                case 'rank': case 'avg': va = a.avgCost; vb = b.avgCost; break;
+                case 'name': va = a.name; vb = b.name; break;
+                case 'provider': va = a.provider; vb = b.provider; break;
+                case 'tier': va = a.tier; vb = b.tier; break;
+                case 'input': va = a.input; vb = b.input; break;
+                case 'output': va = a.output; vb = b.output; break;
+                case 'context': va = a.contextNum; vb = b.contextNum; break;
+                default: va = a.avgCost; vb = b.avgCost;
+            }
+            if (typeof va === 'string') {
+                return currentSort.dir === 'asc' ? va.localeCompare(vb) : vb.localeCompare(va);
+            }
+            return currentSort.dir === 'asc' ? va - vb : vb - va;
+        });
+
+        const cheapest = Math.min(...sorted.map(m => m.avgCost));
+        const expensive = Math.max(...sorted.map(m => m.avgCost));
+
+        const tbody = document.getElementById('matrix-body');
+        tbody.innerHTML = sorted.map((m, i) => {
+            const costClass = m.avgCost <= cheapest * 1.1 ? 'cheapest' :
+                             m.avgCost >= expensive * 0.9 ? 'expensive' : 'mid-price';
+            const rankClass = i === 0 ? 'rank-1' : i === 1 ? 'rank-2' : i === 2 ? 'rank-3' : 'rank-other';
+            const providerSlug = m.providerSlug;
+            const providerUrl = providerSlug === 'together' ? 'together.html' :
+                               providerSlug === 'moonshot' ? 'moonshot.html' :
+                               providerSlug + '.html';
+
+            return `<tr>
+                <td><span class="rank-badge ${rankClass}">${i + 1}</span></td>
+                <td><strong>${m.name}</strong></td>
+                <td><a href="${providerUrl}" class="provider-link">${m.provider}</a></td>
+                <td><span class="tier-badge tier-${m.tier.toLowerCase()}">${m.tier}</span></td>
+                <td>$${m.input.toFixed(2)}</td>
+                <td>$${m.output.toFixed(2)}</td>
+                <td class="${costClass}"><strong>$${m.avgCost.toFixed(3)}</strong></td>
+                <td><span class="context-badge">${m.context}</span></td>
+            </tr>`;
+        }).join('');
+    }
+
+    document.addEventListener('DOMContentLoaded', initMatrix);
+    </script>
+</body>
+</html>

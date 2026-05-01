@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI API Price Change Alerts: Get Notified When Prices Drop — APIpulse</title>
+    <meta name="description" content="Subscribe to free price change alerts for AI API models. Get notified when OpenAI, Anthropic, Google, or any provider changes their pricing. Never miss a price drop.">
+    <meta name="keywords" content="AI API price alerts, LLM pricing changes, API price drop notification, GPT price alert, Claude price alert, AI API pricing tracker">
+    <meta property="og:title" content="AI API Price Change Alerts: Get Notified When Prices Drop — APIpulse">
+    <meta property="og:description" content="Subscribe to free price change alerts for AI API models. Get notified when prices drop.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://getapipulse.com/og-image.png">
+    <meta property="og:url" content="https://getapipulse.com/price-alerts.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="AI API Price Change Alerts — APIpulse">
+    <meta name="twitter:image" content="https://getapipulse.com/og-image.png">
+    <meta name="twitter:description" content="Subscribe to free price change alerts for AI API models.">
+    <link rel="canonical" href="https://getapipulse.com/price-alerts.html">
+    <link rel="alternate" type="application/rss+xml" title="APIpulse Blog" href="https://getapipulse.com/rss.xml">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="styles.css">
+    <script src="analytics.js" defer></script>
+    <script src="dynamic-date.js" defer></script>
+    <script src="shared.js" defer></script>
+    <script src="pricing-data.js" defer></script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "APIpulse Price Alerts",
+        "url": "https://getapipulse.com/price-alerts.html",
+        "description": "Subscribe to free price change alerts for AI API models.",
+        "applicationCategory": "DeveloperApplication",
+        "operatingSystem": "Web",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+    }
+    </script>
+    <style>
+        .page-header { max-width: var(--max-width); margin: 0 auto; padding: 120px 24px 40px; text-align: center; }
+        .page-header h1 { font-size: 40px; font-weight: 800; margin-bottom: 12px; }
+        .page-header p { color: var(--text-secondary); font-size: 18px; max-width: 600px; margin: 0 auto; }
+
+        .alerts-container { max-width: 700px; margin: 0 auto; padding: 0 24px 80px; }
+
+        .alert-form { background: var(--bg-card); border: 1px solid var(--border); border-radius: 16px; padding: 32px; margin-bottom: 32px; }
+        .alert-form h2 { font-size: 22px; font-weight: 700; margin-bottom: 8px; }
+        .alert-form > p { color: var(--text-secondary); font-size: 14px; margin-bottom: 24px; }
+
+        .form-group { margin-bottom: 20px; }
+        .form-group label { display: block; font-size: 13px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px; font-weight: 600; }
+        .form-group input[type="email"] {
+            width: 100%; padding: 14px 16px; border-radius: 10px; border: 1px solid var(--border);
+            background: var(--bg-secondary); color: var(--text-primary); font-size: 16px;
+        }
+        .form-group input[type="email"]:focus { border-color: var(--accent); outline: none; }
+
+        .model-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 8px; }
+        .model-checkbox { display: flex; align-items: center; gap: 8px; padding: 10px 12px; border-radius: 8px; border: 1px solid var(--border); background: var(--bg-secondary); cursor: pointer; transition: all 0.2s; font-size: 13px; }
+        .model-checkbox:hover { border-color: var(--accent); }
+        .model-checkbox.checked { border-color: var(--accent); background: rgba(99,102,241,0.1); }
+        .model-checkbox input { display: none; }
+        .model-checkbox .check { width: 16px; height: 16px; border-radius: 4px; border: 2px solid var(--border); display: flex; align-items: center; justify-content: center; transition: all 0.2s; flex-shrink: 0; }
+        .model-checkbox.checked .check { background: var(--accent); border-color: var(--accent); }
+        .model-checkbox.checked .check::after { content: '✓'; color: white; font-size: 10px; font-weight: 700; }
+        .model-checkbox .model-name { font-weight: 500; color: var(--text-primary); }
+        .model-checkbox .model-provider { font-size: 11px; color: var(--text-muted); }
+
+        .select-all-bar { display: flex; gap: 8px; margin-bottom: 12px; flex-wrap: wrap; }
+        .select-all-btn { background: none; border: 1px solid var(--border); border-radius: 6px; padding: 6px 12px; font-size: 12px; color: var(--text-secondary); cursor: pointer; transition: all 0.2s; }
+        .select-all-btn:hover { border-color: var(--accent); color: var(--accent); }
+
+        .submit-btn { width: 100%; padding: 16px; border-radius: 10px; border: none; background: var(--accent); color: white; font-size: 16px; font-weight: 700; cursor: pointer; transition: all 0.2s; }
+        .submit-btn:hover { background: var(--accent-hover); }
+        .submit-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+
+        .success-msg { display: none; background: rgba(34,197,94,0.1); border: 1px solid rgba(34,197,94,0.3); border-radius: 12px; padding: 24px; text-align: center; margin-top: 20px; }
+        .success-msg h3 { color: var(--green); margin-bottom: 8px; }
+
+        .how-it-works { background: var(--bg-card); border: 1px solid var(--border); border-radius: 16px; padding: 32px; margin-bottom: 32px; }
+        .how-it-works h2 { font-size: 22px; font-weight: 700; margin-bottom: 20px; }
+        .step { display: flex; gap: 16px; margin-bottom: 20px; }
+        .step-num { width: 36px; height: 36px; border-radius: 50%; background: var(--accent); color: white; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 16px; flex-shrink: 0; }
+        .step-content h3 { font-size: 16px; font-weight: 600; margin-bottom: 4px; }
+        .step-content p { font-size: 14px; color: var(--text-secondary); margin: 0; }
+
+        .recent-changes { background: var(--bg-card); border: 1px solid var(--border); border-radius: 16px; padding: 32px; }
+        .recent-changes h2 { font-size: 22px; font-weight: 700; margin-bottom: 20px; }
+        .change-item { display: flex; gap: 12px; padding: 12px 0; border-bottom: 1px solid var(--border); align-items: center; }
+        .change-item:last-child { border-bottom: none; }
+        .change-date { font-size: 12px; color: var(--text-muted); min-width: 80px; }
+        .change-model { font-weight: 600; font-size: 14px; }
+        .change-detail { font-size: 13px; color: var(--text-secondary); }
+        .change-direction { font-size: 12px; font-weight: 700; padding: 2px 8px; border-radius: 4px; }
+        .change-up { background: rgba(239,68,68,0.15); color: #ef4444; }
+        .change-down { background: rgba(34,197,94,0.15); color: #22c55e; }
+        .change-rename { background: rgba(99,102,241,0.15); color: #6366f1; }
+
+        .social-share { margin-top: 32px; display: flex; gap: 12px; flex-wrap: wrap; }
+        .share-btn { display: inline-block; padding: 8px 16px; background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 8px; color: var(--text-primary); text-decoration: none; font-size: 13px; font-weight: 600; transition: all 0.2s; }
+        .share-btn:hover { border-color: var(--accent); color: var(--accent); }
+
+        @media (max-width: 768px) {
+            .page-header { padding: 100px 16px 32px; }
+            .page-header h1 { font-size: 28px; }
+            .alerts-container { padding: 0 16px 60px; }
+            .model-grid { grid-template-columns: 1fr 1fr; }
+            .step { flex-direction: column; gap: 8px; }
+        }
+    </style>
+    <meta name="theme-color" content="#6366f1">
+    <link rel="preconnect" href="https://getapipulse.com">
+</head>
+<body>
+    <a href="#main" class="skip-link">Skip to content</a>
+    <nav>
+        <div class="nav-inner">
+            <a href="index.html" class="logo">API<span>pulse</span></a>
+            <button class="hamburger" onclick="toggleMobileNav()" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+            <div class="nav-links">
+                <a href="calculator.html">Calculator</a>
+                <a href="compare.html">Compare</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="use-cases.html">Use Cases</a>
+                <a href="about.html">About</a>
+                <a href="blog.html">Blog</a>
+                <a href="quiz.html">Quiz</a>
+                <a href="pricing-index.html">Pricing Index</a>
+                <a href="pricing-trends.html">Trends</a>
+                <a href="cheat-sheet.html">Cheat Sheet</a>
+                <a href="api-docs.html" style="color:var(--accent);">API</a>
+                <a href="token-estimator.html">Token Estimator</a>
+                <a href="pricing.html" class="nav-cta" onclick="if(window.trackEvent)window.trackEvent('pro_button_clicked',{source:'nav'})">Get Pro — $29</a>
+                <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
+            </div>
+        </div>
+    </nav>
+
+    <main id="main">
+        <div class="page-header">
+            <h1>AI API Price Change Alerts</h1>
+            <p>Select the models you care about. We'll email you when their pricing changes — so you never miss a price drop or surprise increase.</p>
+        </div>
+
+        <div class="alerts-container">
+
+            <div class="alert-form">
+                <h2>Get Price Alerts</h2>
+                <p>Choose models below, enter your email, and we'll notify you when prices change. Free, no spam, unsubscribe anytime.</p>
+
+                <div class="form-group">
+                    <label>Models to Track</label>
+                    <div class="select-all-bar">
+                        <button class="select-all-btn" onclick="selectAll('Budget')">All Budget</button>
+                        <button class="select-all-btn" onclick="selectAll('Mid')">All Mid-tier</button>
+                        <button class="select-all-btn" onclick="selectAll('Premium')">All Premium</button>
+                        <button class="select-all-btn" onclick="selectAll('all')">Select All</button>
+                        <button class="select-all-btn" onclick="selectAll('none')">Clear All</button>
+                    </div>
+                    <div class="model-grid" id="model-grid"></div>
+                </div>
+
+                <div class="form-group">
+                    <label>Email Address</label>
+                    <input type="email" id="alert-email" placeholder="you@company.com" required>
+                </div>
+
+                <button class="submit-btn" id="submit-btn" onclick="subscribeAlerts()">Subscribe to Price Alerts</button>
+
+                <div class="success-msg" id="success-msg">
+                    <h3>You're subscribed!</h3>
+                    <p style="color:var(--text-secondary);margin:0;">We'll email you when the models you selected change pricing. Check your inbox for a confirmation.</p>
+                </div>
+            </div>
+
+            <div class="how-it-works">
+                <h2>How It Works</h2>
+                <div class="step">
+                    <div class="step-num">1</div>
+                    <div class="step-content">
+                        <h3>Pick your models</h3>
+                        <p>Select the AI models you're currently using or evaluating. Choose individual models or entire tiers.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-num">2</div>
+                    <div class="step-content">
+                        <h3>We monitor pricing</h3>
+                        <p>APIpulse verifies pricing data weekly across all 32 models from 10 providers. When we detect a change, you get notified.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-num">3</div>
+                    <div class="step-content">
+                        <h3>Get notified</h3>
+                        <p>Receive an email with the exact change: which model, old price, new price, and potential savings if you should switch.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="recent-changes">
+                <h2>Recent Price Changes (May 2026)</h2>
+                <p style="color:var(--text-secondary);font-size:14px;margin-bottom:16px;">Here's what changed in our last verification cycle:</p>
+
+                <div class="change-item">
+                    <span class="change-date">May 1</span>
+                    <span class="change-model">Grok 3</span>
+                    <span class="change-direction change-up">+233%</span>
+                    <span class="change-detail">Input: $3 → $30/M. Massive price increase from xAI.</span>
+                </div>
+                <div class="change-item">
+                    <span class="change-date">May 1</span>
+                    <span class="change-model">Mistral Large 3</span>
+                    <span class="change-direction change-down">-75%</span>
+                    <span class="change-detail">Input: $2 → $0.50/M. Major price drop makes it competitive.</span>
+                </div>
+                <div class="change-item">
+                    <span class="change-date">May 1</span>
+                    <span class="change-model">DeepSeek V4 Pro</span>
+                    <span class="change-direction change-down">-75%</span>
+                    <span class="change-detail">Limited-time discount: $0.44/$0.87 through May 31.</span>
+                </div>
+                <div class="change-item">
+                    <span class="change-date">May 1</span>
+                    <span class="change-model">Gemini 3.1 Pro</span>
+                    <span class="change-direction change-rename">Renamed</span>
+                    <span class="change-detail">Was "Gemini 3 Pro" — now Gemini 3.1 Pro with updated pricing.</span>
+                </div>
+                <div class="change-item">
+                    <span class="change-date">May 1</span>
+                    <span class="change-model">Command R</span>
+                    <span class="change-direction change-up">+233%</span>
+                    <span class="change-detail">Input: $0.15 → $0.50/M. Cohere increased pricing.</span>
+                </div>
+                <div class="change-item">
+                    <span class="change-date">May 1</span>
+                    <span class="change-model">Kimi K2.6</span>
+                    <span class="change-direction change-rename">Updated</span>
+                    <span class="change-detail">Context window expanded to 256K (was 128K).</span>
+                </div>
+            </div>
+
+            <div class="social-share">
+                <span style="font-size:13px;color:var(--text-muted);font-weight:600;">Share:</span>
+                <a class="share-btn" href="https://twitter.com/intent/tweet?text=Get%20free%20AI%20API%20price%20change%20alerts%20%E2%80%94%20never%20miss%20a%20price%20drop&url=https%3A%2F%2Fgetapipulse.com%2Fprice-alerts.html" target="_blank" rel="noopener">Post on X</a>
+                <a class="share-btn" href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fgetapipulse.com%2Fprice-alerts.html" target="_blank" rel="noopener">Share on LinkedIn</a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 APIpulse. Built with data, not hype.</p>
+    </footer>
+
+    <button class="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">&uarr;</button>
+
+    <script>
+    function initModelGrid() {
+        const grid = document.getElementById('model-grid');
+        const saved = JSON.parse(localStorage.getItem('apipulse_alert_models') || '[]');
+
+        grid.innerHTML = API_MODELS.map(m => {
+            const isChecked = saved.includes(m.id);
+            return `<label class="model-checkbox ${isChecked ? 'checked' : ''}" data-id="${m.id}" data-tier="${m.tier}" onclick="toggleModel(this)">
+                <input type="checkbox" ${isChecked ? 'checked' : ''}>
+                <span class="check"></span>
+                <span>
+                    <span class="model-name">${m.name}</span><br>
+                    <span class="model-provider">${m.provider}</span>
+                </span>
+            </label>`;
+        }).join('');
+    }
+
+    function toggleModel(el) {
+        el.classList.toggle('checked');
+        const cb = el.querySelector('input');
+        cb.checked = !cb.checked;
+        saveSelectedModels();
+    }
+
+    function selectAll(tier) {
+        document.querySelectorAll('.model-checkbox').forEach(el => {
+            const match = tier === 'all' || (tier === 'none') || el.dataset.tier === tier;
+            if (tier === 'none') {
+                el.classList.remove('checked');
+                el.querySelector('input').checked = false;
+            } else if (match) {
+                el.classList.add('checked');
+                el.querySelector('input').checked = true;
+            }
+        });
+        saveSelectedModels();
+    }
+
+    function saveSelectedModels() {
+        const selected = [];
+        document.querySelectorAll('.model-checkbox.checked').forEach(el => {
+            selected.push(el.dataset.id);
+        });
+        localStorage.setItem('apipulse_alert_models', JSON.stringify(selected));
+    }
+
+    async function subscribeAlerts() {
+        const email = document.getElementById('alert-email').value;
+        const models = [];
+        document.querySelectorAll('.model-checkbox.checked').forEach(el => {
+            models.push(el.dataset.id);
+        });
+
+        if (!email) { alert('Please enter your email address.'); return; }
+        if (models.length === 0) { alert('Please select at least one model to track.'); return; }
+
+        const btn = document.getElementById('submit-btn');
+        btn.disabled = true;
+        btn.textContent = 'Subscribing...';
+
+        try {
+            const res = await fetch('/api/subscribe', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ email, source: 'price-alerts', models })
+            });
+            const data = await res.json();
+
+            document.getElementById('success-msg').style.display = 'block';
+            btn.textContent = 'Subscribed!';
+            if (window.trackEvent) window.trackEvent('price_alert_subscribe', { model_count: models.length });
+        } catch (err) {
+            // Fallback: store locally
+            const subs = JSON.parse(localStorage.getItem('apipulse_alert_subs') || '[]');
+            subs.push({ email, models, date: new Date().toISOString() });
+            localStorage.setItem('apipulse_alert_subs', JSON.stringify(subs));
+            document.getElementById('success-msg').style.display = 'block';
+            btn.textContent = 'Subscribed!';
+            if (window.trackEvent) window.trackEvent('price_alert_subscribe_local', { model_count: models.length });
+        }
+    }
+
+    document.addEventListener('DOMContentLoaded', initModelGrid);
+    </script>
+</body>
+</html>

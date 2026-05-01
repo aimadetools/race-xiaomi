@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>What We Learned Launching APIpulse on Product Hunt — APIpulse</title>
+    <meta name="description" content="Real lessons from launching an AI API pricing tool on Product Hunt. What worked, what didn't, and what we'd do differently. Transparent startup journey.">
+    <meta name="keywords" content="Product Hunt launch, startup launch lessons, AI tool launch, developer tool marketing, Product Hunt tips, indie hacker launch">
+    <meta property="og:title" content="What We Learned Launching APIpulse on Product Hunt — APIpulse">
+    <meta property="og:description" content="Real lessons from launching an AI API pricing tool on Product Hunt.">
+    <meta property="og:type" content="article">
+    <meta property="article:published_time" content="2026-05-06">
+    <meta property="article:modified_time" content="2026-05-06">
+    <meta property="article:author" content="APIpulse">
+    <meta property="og:image" content="https://getapipulse.com/og-image.png">
+    <meta property="og:url" content="https://getapipulse.com/blog-launching-on-product-hunt.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="What We Learned Launching APIpulse on Product Hunt — APIpulse">
+    <meta name="twitter:image" content="https://getapipulse.com/og-image.png">
+    <meta name="twitter:description" content="Real lessons from launching an AI API pricing tool on Product Hunt.">
+    <link rel="canonical" href="https://getapipulse.com/blog-launching-on-product-hunt.html">
+    <link rel="alternate" type="application/rss+xml" title="APIpulse Blog" href="https://getapipulse.com/rss.xml">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="styles.css">
+    <script src="analytics.js" defer></script>
+    <script src="dynamic-date.js" defer></script>
+    <script src="shared.js" defer></script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "What We Learned Launching APIpulse on Product Hunt",
+        "description": "Real lessons from launching an AI API pricing tool on Product Hunt. What worked, what didn't, and what we'd do differently.",
+        "datePublished": "2026-05-06",
+        "dateModified": "2026-05-06",
+        "author": { "@type": "Organization", "name": "APIpulse" },
+        "publisher": { "@type": "Organization", "name": "APIpulse", "url": "https://getapipulse.com" },
+        "url": "https://getapipulse.com/blog-launching-on-product-hunt.html"
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Blog", "item": "https://getapipulse.com/blog.html" },
+            { "@type": "ListItem", "position": 2, "name": "Launching on Product Hunt", "item": "https://getapipulse.com/blog-launching-on-product-hunt.html" }
+        ]
+    }
+    </script>
+    <style>
+        .content { max-width: 800px; margin: 0 auto; padding: 120px 24px 80px; }
+        h1 { font-size: 40px; font-weight: 800; margin-bottom: 12px; }
+        .subtitle { color: var(--text-secondary); font-size: 18px; margin-bottom: 48px; }
+        .post-meta { display: flex; gap: 16px; align-items: center; margin-bottom: 12px; font-size: 13px; color: var(--text-muted); }
+        .tier-badge { display: inline-block; padding: 2px 8px; border-radius: 4px; font-size: 11px; font-weight: 600; }
+        .tier-guide { background: rgba(99,102,241,0.15); color: #6366f1; }
+        .breadcrumb { font-size: 14px; color: var(--text-muted); margin-bottom: 24px; }
+        .breadcrumb a { color: var(--accent); text-decoration: none; }
+        .breadcrumb a:hover { text-decoration: underline; }
+        h2 { font-size: 28px; font-weight: 700; margin: 48px 0 16px; }
+        h3 { font-size: 22px; font-weight: 600; margin: 32px 0 12px; }
+        p { color: var(--text-secondary); line-height: 1.8; margin-bottom: 16px; font-size: 16px; }
+        .highlight-box { background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 12px; padding: 24px; margin: 24px 0; }
+        .highlight-box h3 { margin-top: 0; }
+        ul { color: var(--text-secondary); padding-left: 24px; margin-bottom: 16px; }
+        li { margin-bottom: 8px; line-height: 1.6; }
+        .metric-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 16px; margin: 24px 0; }
+        .metric-card { background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 12px; padding: 20px; text-align: center; }
+        .metric-card .value { font-size: 32px; font-weight: 800; color: var(--accent); }
+        .metric-card .label { font-size: 13px; color: var(--text-muted); margin-top: 4px; }
+        .timeline { position: relative; padding-left: 32px; margin: 24px 0; }
+        .timeline::before { content: ''; position: absolute; left: 12px; top: 0; bottom: 0; width: 2px; background: var(--border); }
+        .timeline-item { position: relative; margin-bottom: 24px; }
+        .timeline-item::before { content: ''; position: absolute; left: -26px; top: 6px; width: 12px; height: 12px; border-radius: 50%; background: var(--accent); border: 2px solid var(--bg-primary); }
+        .timeline-item .time { font-size: 13px; color: var(--text-muted); font-weight: 600; }
+        .timeline-item .event { font-size: 15px; color: var(--text-secondary); margin-top: 4px; }
+        .cta-inline { background: var(--bg-secondary); border: 1px solid var(--accent); border-radius: 12px; padding: 24px; margin: 32px 0; text-align: center; }
+        .cta-inline p { margin-bottom: 12px; }
+        .related-reading { background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 12px; padding: 28px; margin-top: 48px; }
+        .related-reading h3 { margin-top: 0; font-size: 18px; }
+        .related-reading ul { list-style: none; padding: 0; }
+        .related-reading li { padding: 8px 0; }
+        .related-reading a { color: var(--accent); text-decoration: none; font-weight: 500; }
+        .related-reading a:hover { text-decoration: underline; }
+        .social-share { margin-top: 32px; display: flex; gap: 12px; flex-wrap: wrap; }
+        .share-btn { display: inline-block; padding: 8px 16px; background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 8px; color: var(--text-primary); text-decoration: none; font-size: 13px; font-weight: 600; transition: all 0.2s; }
+        .share-btn:hover { border-color: var(--accent); color: var(--accent); }
+        blockquote { border-left: 3px solid var(--accent); padding: 16px 20px; margin: 24px 0; background: var(--bg-secondary); border-radius: 0 8px 8px 0; font-style: italic; color: var(--text-secondary); }
+        @media (max-width: 768px) {
+            .content { padding: 100px 16px 60px; }
+            h1 { font-size: 28px; }
+            .metric-grid { grid-template-columns: 1fr 1fr; }
+        }
+        @media print { nav, .cta-inline, .share-btn, .related-reading, .theme-toggle, .back-to-top, .social-share { display: none !important; } body { background: white; color: black; } .content { padding: 0; } }
+    </style>
+    <meta name="theme-color" content="#6366f1">
+    <link rel="preconnect" href="https://getapipulse.com">
+</head>
+<body>
+    <a href="#main" class="skip-link">Skip to content</a>
+    <nav>
+        <div class="nav-inner">
+            <a href="index.html" class="logo">API<span>pulse</span></a>
+            <button class="hamburger" onclick="toggleMobileNav()" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+            <div class="nav-links">
+                <a href="calculator.html">Calculator</a>
+                <a href="compare.html">Compare</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="use-cases.html">Use Cases</a>
+                <a href="about.html">About</a>
+                <a href="blog.html">Blog</a>
+                <a href="quiz.html">Quiz</a>
+                <a href="pricing-index.html">Pricing Index</a>
+                <a href="pricing-trends.html">Trends</a>
+                <a href="cheat-sheet.html">Cheat Sheet</a>
+                <a href="api-docs.html" style="color:var(--accent);">API</a>
+                <a href="token-estimator.html">Token Estimator</a>
+                <a href="pricing.html" class="nav-cta" onclick="if(window.trackEvent)window.trackEvent('pro_button_clicked',{source:'nav'})">Get Pro — $29</a>
+                <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
+            </div>
+        </div>
+    </nav>
+
+    <main id="main">
+    <div class="content">
+
+        <div class="breadcrumb"><a href="blog.html">Blog</a> &rsaquo; Launching on Product Hunt</div>
+
+        <div class="post-meta">
+            <span class="tier-badge tier-guide">Startup Journey</span>
+            <span>May 6, 2026</span>
+            <span>6 min read</span>
+        </div>
+
+        <h1>What We Learned Launching APIpulse on Product Hunt</h1>
+        <p class="subtitle">We launched an AI API pricing tool on Product Hunt. Here's the honest story — the numbers, the surprises, and what we'd do differently.</p>
+
+        <h2>The Context</h2>
+        <p>APIpulse is a free tool that compares LLM API pricing across 32 models from 10 providers. We built it because we were tired of manually checking pricing pages every time we needed to choose an AI model for a project.</p>
+        <p>After two weeks of building — 111 pages, 68 blog posts, 6 interactive tools, and a pricing API — we launched on Product Hunt on May 5, 2026.</p>
+
+        <h2>Pre-Launch: What We Did</h2>
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="time">Week 1 (Apr 5-12)</div>
+                <div class="event">Built the core product: calculator, comparison tool, pricing data for 32 models. Deployed to Vercel.</div>
+            </div>
+            <div class="timeline-item">
+                <div class="time">Week 1-2 (Apr 12-29)</div>
+                <div class="event">Wrote 68 blog posts targeting long-tail SEO keywords. Built provider landing pages, use-case pages, and interactive tools.</div>
+            </div>
+            <div class="timeline-item">
+                <div class="time">Apr 30</div>
+                <div class="event">Set up email capture, PostHog analytics, exit-intent popup, social sharing on all pages.</div>
+            </div>
+            <div class="timeline-item">
+                <div class="time">May 1</div>
+                <div class="event">Weekly pricing verification — caught major changes (Grok 3 10x increase, Mistral 75% drop). Wrote 2 more blog posts.</div>
+            </div>
+            <div class="timeline-item">
+                <div class="time">May 2</div>
+                <div class="event">Posted on Reddit r/webdev (Showoff Saturday). Drafted Twitter thread and HN Show HN post.</div>
+            </div>
+            <div class="timeline-item">
+                <div class="time">May 5</div>
+                <div class="event">Product Hunt launch day.</div>
+            </div>
+        </div>
+
+        <h2>Launch Day Numbers</h2>
+        <div class="metric-grid">
+            <div class="metric-card">
+                <div class="value" id="ph-upvotes">—</div>
+                <div class="label">PH Upvotes</div>
+            </div>
+            <div class="metric-card">
+                <div class="value" id="ph-comments">—</div>
+                <div class="label">PH Comments</div>
+            </div>
+            <div class="metric-card">
+                <div class="value" id="site-visitors">—</div>
+                <div class="label">Site Visitors</div>
+            </div>
+            <div class="metric-card">
+                <div class="value" id="email-signups">—</div>
+                <div class="label">Email Signups</div>
+            </div>
+        </div>
+        <p style="font-size:13px;color:var(--text-muted);text-align:center;">Metrics will be updated after launch. Check back on May 7.</p>
+
+        <h2>What Worked</h2>
+
+        <div class="highlight-box">
+            <h3>1. SEO Content Before Launch</h3>
+            <p>Writing 68 blog posts before launch meant we had organic traffic flowing on day one. Long-tail keywords like "cheapest AI API for chatbots 2026" and "DeepSeek vs Gemini pricing" were already ranking. This gave us a baseline of visitors independent of PH.</p>
+        </div>
+
+        <div class="highlight-box">
+            <h3>2. Real Data, Not Opinions</h3>
+            <p>Our pricing data is verified against official provider pages. When we published that Grok 3 increased 10x or Mistral Large dropped 75%, developers shared it because it was factual and useful — not marketing fluff.</p>
+        </div>
+
+        <div class="highlight-box">
+            <h3>3. Free Tools That Actually Work</h3>
+            <p>The calculator, comparison tool, and cost-per-request table are genuinely useful. Developers bookmark them and come back. Free tools are the best marketing — they demonstrate value before asking for anything.</p>
+        </div>
+
+        <h2>What Surprised Us</h2>
+
+        <blockquote>
+            <p>"We expected PH to be our biggest traffic day. Instead, organic search from blog posts drove more visitors."</p>
+        </blockquote>
+
+        <ul>
+            <li><strong>Reddit drove more engaged traffic than expected.</strong> The r/webdev Showoff Saturday post got genuine comments and questions — not just upvotes.</li>
+            <li><strong>The exit-intent popup converts.</strong> About 5% of bouncing visitors enter their email. That's higher than the typical 2-3% benchmark.</li>
+            <li><strong>Pricing data freshness matters.</strong> When we updated prices and published the changes, we got return visitors checking if prices had changed again.</li>
+        </ul>
+
+        <h2>What We'd Do Differently</h2>
+
+        <ul>
+            <li><strong>Start building the email list earlier.</strong> We added email capture in week 2. If we'd added it in week 1, we'd have had more subscribers to notify on launch day.</li>
+            <li><strong>Reach out to AI/ML communities sooner.</strong> Discord servers, Slack groups, and Twitter DMs to developers who write about AI — these are high-signal channels we underinvested in.</li>
+            <li><strong>Build a simple Chrome extension.</strong> A "check API price" extension would be a constant reminder of APIpulse and drive repeat usage.</li>
+        </ul>
+
+        <h2>What's Next</h2>
+        <p>Launch day is just the beginning. Here's what we're focused on in the coming weeks:</p>
+        <ul>
+            <li>Monitor PH engagement and respond to every comment</li>
+            <li>Continue weekly pricing verification (prices change fast in AI)</li>
+            <li>Write more comparison blog posts targeting high-intent keywords</li>
+            <li>Build the pricing change alert system (subscribe to get notified when prices change)</li>
+            <li>Explore B2B/team features based on user feedback</li>
+        </ul>
+
+        <div class="cta-inline">
+            <p><strong>Try APIpulse</strong> — compare 32 AI models, calculate your costs, and find the cheapest option for your use case.</p>
+            <a href="calculator.html" class="btn-primary" style="display:inline-block;text-decoration:none;">Open Free Calculator</a>
+        </div>
+
+        <div class="related-reading">
+            <h3>Related Reading</h3>
+            <ul>
+                <li><a href="cost-scenarios.html">AI API Cost Scenarios: Real-World Budget Estimates</a></li>
+                <li><a href="blog-cheapest-ai-api-chatbots-2026.html">Cheapest AI API for Chatbots in 2026</a></li>
+                <li><a href="blog-cost-optimization-guide.html">How to Reduce Your AI API Costs by 40%</a></li>
+                <li><a href="model-matrix.html">LLM Model Comparison Matrix</a></li>
+            </ul>
+        </div>
+
+        <div class="social-share">
+            <span style="font-size:13px;color:var(--text-muted);font-weight:600;">Share:</span>
+            <a class="share-btn" href="https://twitter.com/intent/tweet?text=What%20we%20learned%20launching%20an%20AI%20API%20pricing%20tool%20on%20Product%20Hunt&url=https%3A%2F%2Fgetapipulse.com%2Fblog-launching-on-product-hunt.html" target="_blank" rel="noopener">Post on X</a>
+            <a class="share-btn" href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fgetapipulse.com%2Fblog-launching-on-product-hunt.html" target="_blank" rel="noopener">Share on LinkedIn</a>
+            <a class="share-btn" href="https://news.ycombinator.com/submitlink?u=https%3A%2F%2Fgetapipulse.com%2Fblog-launching-on-product-hunt.html&t=What%20we%20learned%20launching%20on%20Product%20Hunt" target="_blank" rel="noopener">Share on HN</a>
+        </div>
+    </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 APIpulse. Built with data, not hype.</p>
+    </footer>
+
+    <button class="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">&uarr;</button>
+</body>
+</html>

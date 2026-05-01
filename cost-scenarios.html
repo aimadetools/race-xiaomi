@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI API Cost Scenarios: Real-World Budget Estimates (2026) — APIpulse</title>
+    <meta name="description" content="Real-world AI API cost estimates for chatbots, RAG pipelines, code assistants, and content generation. See exactly what you'll pay at 1K, 10K, and 100K daily requests across 32 models.">
+    <meta name="keywords" content="AI API cost estimate, LLM cost scenario, chatbot API cost, RAG pipeline cost, code assistant API cost, AI content generation cost, LLM budget planning, API pricing scenario">
+    <meta property="og:title" content="AI API Cost Scenarios: Real-World Budget Estimates (2026) — APIpulse">
+    <meta property="og:description" content="Real-world AI API cost estimates for chatbots, RAG pipelines, code assistants, and content generation across 32 models.">
+    <meta property="og:type" content="article">
+    <meta property="article:published_time" content="2026-05-01">
+    <meta property="article:modified_time" content="2026-05-01">
+    <meta property="article:author" content="APIpulse">
+    <meta property="og:image" content="https://getapipulse.com/og-image.png">
+    <meta property="og:url" content="https://getapipulse.com/cost-scenarios.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="AI API Cost Scenarios: Real-World Budget Estimates (2026) — APIpulse">
+    <meta name="twitter:image" content="https://getapipulse.com/og-image.png">
+    <meta name="twitter:description" content="Real-world AI API cost estimates for chatbots, RAG pipelines, code assistants, and content generation.">
+    <link rel="canonical" href="https://getapipulse.com/cost-scenarios.html">
+    <link rel="alternate" type="application/rss+xml" title="APIpulse Blog" href="https://getapipulse.com/rss.xml">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="styles.css">
+    <script src="analytics.js" defer></script>
+    <script src="dynamic-date.js" defer></script>
+    <script src="shared.js" defer></script>
+    <script src="pricing-data.js" defer></script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "AI API Cost Scenarios: Real-World Budget Estimates (2026)",
+        "description": "Real-world AI API cost estimates for chatbots, RAG pipelines, code assistants, and content generation across 32 models.",
+        "datePublished": "2026-05-01",
+        "dateModified": "2026-05-01",
+        "author": { "@type": "Organization", "name": "APIpulse" },
+        "publisher": { "@type": "Organization", "name": "APIpulse", "url": "https://getapipulse.com" },
+        "url": "https://getapipulse.com/cost-scenarios.html"
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Blog", "item": "https://getapipulse.com/blog.html" },
+            { "@type": "ListItem", "position": 2, "name": "AI API Cost Scenarios", "item": "https://getapipulse.com/cost-scenarios.html" }
+        ]
+    }
+    </script>
+    <style>
+        .content { max-width: 900px; margin: 0 auto; padding: 120px 24px 80px; }
+        h1 { font-size: 40px; font-weight: 800; margin-bottom: 12px; }
+        .subtitle { color: var(--text-secondary); font-size: 18px; margin-bottom: 48px; }
+        .post-meta { display: flex; gap: 16px; align-items: center; margin-bottom: 12px; font-size: 13px; color: var(--text-muted); }
+        .tier-badge { display: inline-block; padding: 2px 8px; border-radius: 4px; font-size: 11px; font-weight: 600; }
+        .tier-guide { background: rgba(34,197,94,0.15); color: #22c55e; }
+        .breadcrumb { font-size: 14px; color: var(--text-muted); margin-bottom: 24px; }
+        .breadcrumb a { color: var(--accent); text-decoration: none; }
+        .breadcrumb a:hover { text-decoration: underline; }
+        h2 { font-size: 28px; font-weight: 700; margin: 48px 0 16px; }
+        h3 { font-size: 22px; font-weight: 600; margin: 32px 0 12px; }
+        p { color: var(--text-secondary); line-height: 1.8; margin-bottom: 16px; font-size: 16px; }
+        .highlight-box { background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 12px; padding: 24px; margin: 24px 0; }
+        .highlight-box h3 { margin-top: 0; }
+        ul { color: var(--text-secondary); padding-left: 24px; margin-bottom: 16px; }
+        li { margin-bottom: 8px; line-height: 1.6; }
+        .comparison-table { width: 100%; border-collapse: collapse; margin: 24px 0; font-size: 14px; }
+        .comparison-table th { background: var(--bg-secondary); padding: 12px 16px; text-align: left; font-weight: 600; border-bottom: 1px solid var(--border); position: sticky; top: 60px; z-index: 1; }
+        .comparison-table td { padding: 12px 16px; border-bottom: 1px solid var(--border); }
+        .comparison-table .winner { background: rgba(34,197,94,0.05); }
+        .comparison-table .cheapest { color: #22c55e; font-weight: 700; }
+        .comparison-table .expensive { color: #ef4444; }
+        .comparison-table .mid-price { color: #f59e0b; }
+        .scenario-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 16px; padding: 32px; margin: 32px 0; }
+        .scenario-card h3 { margin-top: 0; font-size: 24px; }
+        .scenario-params { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; margin: 20px 0; }
+        .param { background: var(--bg-secondary); border-radius: 8px; padding: 16px; }
+        .param-label { font-size: 12px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 4px; }
+        .param-value { font-size: 20px; font-weight: 700; color: var(--text-primary); }
+        .scale-selector { display: flex; gap: 8px; margin: 20px 0; flex-wrap: wrap; }
+        .scale-btn { background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 8px; padding: 8px 16px; font-size: 13px; font-weight: 600; color: var(--text-secondary); cursor: pointer; transition: all 0.2s; }
+        .scale-btn:hover { border-color: var(--accent); color: var(--accent); }
+        .scale-btn.active { background: var(--accent); color: white; border-color: var(--accent); }
+        .cta-inline { background: var(--bg-secondary); border: 1px solid var(--accent); border-radius: 12px; padding: 24px; margin: 32px 0; text-align: center; }
+        .cta-inline p { margin-bottom: 12px; }
+        .related-reading { background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 12px; padding: 28px; margin-top: 48px; }
+        .related-reading h3 { margin-top: 0; font-size: 18px; }
+        .related-reading ul { list-style: none; padding: 0; }
+        .related-reading li { padding: 8px 0; }
+        .related-reading a { color: var(--accent); text-decoration: none; font-weight: 500; }
+        .related-reading a:hover { text-decoration: underline; }
+        .social-share { margin-top: 32px; display: flex; gap: 12px; flex-wrap: wrap; }
+        .share-btn { display: inline-block; padding: 8px 16px; background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 8px; color: var(--text-primary); text-decoration: none; font-size: 13px; font-weight: 600; transition: all 0.2s; }
+        .share-btn:hover { border-color: var(--accent); color: var(--accent); }
+        .assumption-note { background: var(--bg-secondary); border-left: 3px solid var(--accent); padding: 16px 20px; margin: 24px 0; border-radius: 0 8px 8px 0; font-size: 14px; }
+        .monthly-total { font-size: 32px; font-weight: 800; color: var(--accent); margin: 16px 0 8px; }
+        .monthly-label { font-size: 14px; color: var(--text-muted); }
+        .cost-breakdown { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin: 24px 0; }
+        .breakdown-item { text-align: center; }
+        .breakdown-item .label { font-size: 12px; color: var(--text-muted); text-transform: uppercase; }
+        .breakdown-item .value { font-size: 18px; font-weight: 700; margin-top: 4px; }
+        @media (max-width: 768px) {
+            .content { padding: 100px 16px 60px; }
+            h1 { font-size: 28px; }
+            .comparison-table { font-size: 12px; }
+            .comparison-table th, .comparison-table td { padding: 8px 10px; }
+            .scenario-params { grid-template-columns: 1fr 1fr; }
+            .cost-breakdown { grid-template-columns: 1fr; }
+        }
+        @media print { nav, .cta-inline, .share-btn, .related-reading, .theme-toggle, .back-to-top, .social-share, .scale-selector { display: none !important; } body { background: white; color: black; } .content { padding: 0; } }
+    </style>
+    <meta name="theme-color" content="#6366f1">
+    <link rel="preconnect" href="https://getapipulse.com">
+</head>
+<body>
+    <a href="#main" class="skip-link">Skip to content</a>
+    <nav>
+        <div class="nav-inner">
+            <a href="index.html" class="logo">API<span>pulse</span></a>
+            <button class="hamburger" onclick="toggleMobileNav()" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+            <div class="nav-links">
+                <a href="calculator.html">Calculator</a>
+                <a href="compare.html">Compare</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="use-cases.html">Use Cases</a>
+                <a href="about.html">About</a>
+                <a href="blog.html">Blog</a>
+                <a href="quiz.html">Quiz</a>
+                <a href="pricing-index.html">Pricing Index</a>
+                <a href="pricing-trends.html">Trends</a>
+                <a href="cheat-sheet.html">Cheat Sheet</a>
+                <a href="api-docs.html" style="color:var(--accent);">API</a>
+                <a href="token-estimator.html">Token Estimator</a>
+                <a href="pricing.html" class="nav-cta" onclick="if(window.trackEvent)window.trackEvent('pro_button_clicked',{source:'nav'})">Get Pro — $29</a>
+                <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
+            </div>
+        </div>
+    </nav>
+
+    <main id="main">
+    <div class="content">
+
+        <div class="breadcrumb"><a href="blog.html">Blog</a> &rsaquo; AI API Cost Scenarios</div>
+
+        <div class="post-meta">
+            <span class="tier-badge tier-guide">Reference</span>
+            <span>May 1, 2026</span>
+            <span>8 min read</span>
+        </div>
+
+        <h1>AI API Cost Scenarios: What You'll Actually Pay</h1>
+        <p class="subtitle">Forget abstract per-token prices. Here are real-world cost estimates for four common AI workloads — at small, medium, and production scale.</p>
+
+        <div class="assumption-note">
+            <strong>How this works:</strong> Each scenario defines a realistic workload (tokens per request, requests per day). We calculate monthly costs across all 32 models at three scale levels. All prices verified May 2026.
+        </div>
+
+        <!-- Scenario 1: Customer Support Chatbot -->
+        <div class="scenario-card" id="scenario-chatbot">
+            <h3>1. Customer Support Chatbot</h3>
+            <p>A conversational AI that handles customer questions. Each interaction: ~800 input tokens (system prompt + conversation history + user message) and ~300 output tokens (response).</p>
+
+            <div class="scenario-params">
+                <div class="param">
+                    <div class="param-label">Input tokens/request</div>
+                    <div class="param-value">800</div>
+                </div>
+                <div class="param">
+                    <div class="param-label">Output tokens/request</div>
+                    <div class="param-value">300</div>
+                </div>
+                <div class="param">
+                    <div class="param-label">Avg conversation length</div>
+                    <div class="param-value">5 turns</div>
+                </div>
+            </div>
+
+            <div class="scale-selector">
+                <button class="scale-btn active" onclick="updateScenario('chatbot', 500)">500 req/day (Startup)</button>
+                <button class="scale-btn" onclick="updateScenario('chatbot', 5000)">5K req/day (Growing)</button>
+                <button class="scale-btn" onclick="updateScenario('chatbot', 50000)">50K req/day (Production)</button>
+            </div>
+
+            <div id="chatbot-results"></div>
+        </div>
+
+        <!-- Scenario 2: RAG Pipeline -->
+        <div class="scenario-card" id="scenario-rag">
+            <h3>2. RAG Pipeline (Retrieval-Augmented Generation)</h3>
+            <p>A search-augmented system that retrieves relevant documents and generates answers. Heavier input (retrieved context + query), shorter output (focused answer).</p>
+
+            <div class="scenario-params">
+                <div class="param">
+                    <div class="param-label">Input tokens/request</div>
+                    <div class="param-value">2,500</div>
+                </div>
+                <div class="param">
+                    <div class="param-label">Output tokens/request</div>
+                    <div class="param-value">500</div>
+                </div>
+                <div class="param">
+                    <div class="param-label">Context chunks retrieved</div>
+                    <div class="param-value">5</div>
+                </div>
+            </div>
+
+            <div class="scale-selector">
+                <button class="scale-btn active" onclick="updateScenario('rag', 200)">200 req/day (Internal tool)</button>
+                <button class="scale-btn" onclick="updateScenario('rag', 2000)">2K req/day (Team)</button>
+                <button class="scale-btn" onclick="updateScenario('rag', 20000)">20K req/day (Product)</button>
+            </div>
+
+            <div id="rag-results"></div>
+        </div>
+
+        <!-- Scenario 3: Code Assistant -->
+        <div class="scenario-card" id="scenario-code">
+            <h3>3. Code Assistant (IDE Integration)</h3>
+            <p>AI-powered code completion and chat for a development team. Longer inputs (file context + instructions), moderate outputs (code suggestions).</p>
+
+            <div class="scenario-params">
+                <div class="param">
+                    <div class="param-label">Input tokens/request</div>
+                    <div class="param-value">3,000</div>
+                </div>
+                <div class="param">
+                    <div class="param-label">Output tokens/request</div>
+                    <div class="param-value">800</div>
+                </div>
+                <div class="param">
+                    <div class="param-label">Requests per dev/day</div>
+                    <div class="param-value">200</div>
+                </div>
+            </div>
+
+            <div class="scale-selector">
+                <button class="scale-btn active" onclick="updateScenario('code', 10)">10 devs (Small team)</button>
+                <button class="scale-btn" onclick="updateScenario('code', 50)">50 devs (Mid-size)</button>
+                <button class="scale-btn" onclick="updateScenario('code', 200)">200 devs (Enterprise)</button>
+            </div>
+
+            <div id="code-results"></div>
+        </div>
+
+        <!-- Scenario 4: Content Generation -->
+        <div class="scenario-card" id="scenario-content">
+            <h3>4. AI Content Generation at Scale</h3>
+            <p>Automated content production: blog posts, product descriptions, marketing copy. Long outputs, moderate inputs.</p>
+
+            <div class="scenario-params">
+                <div class="param">
+                    <div class="param-label">Input tokens/request</div>
+                    <div class="param-value">1,500</div>
+                </div>
+                <div class="param">
+                    <div class="param-label">Output tokens/request</div>
+                    <div class="param-value">2,000</div>
+                </div>
+                <div class="param">
+                    <div class="param-label">Content pieces/day</div>
+                    <div class="param-value">Varies</div>
+                </div>
+            </div>
+
+            <div class="scale-selector">
+                <button class="scale-btn active" onclick="updateScenario('content', 50)">50 pieces/day (Blog)</button>
+                <button class="scale-btn" onclick="updateScenario('content', 500)">500 pieces/day (E-commerce)</button>
+                <button class="scale-btn" onclick="updateScenario('content', 5000)">5K pieces/day (Agency)</button>
+            </div>
+
+            <div id="content-results"></div>
+        </div>
+
+        <h2>How to Use These Estimates</h2>
+        <div class="highlight-box">
+            <h3>Key Takeaways</h3>
+            <ul>
+                <li><strong>At low scale (hundreds of requests/day), model choice barely matters</strong> — even premium models cost under $50/month. Don't over-optimize early.</li>
+                <li><strong>At medium scale (thousands/day), the gap widens significantly</strong> — switching from GPT-5 to Gemini 2.0 Flash can save 90%+.</li>
+                <li><strong>At production scale (tens of thousands/day), model choice is a budget decision</strong> — the difference between cheapest and most expensive can be $10,000+/month.</li>
+                <li><strong>Input-heavy workloads (RAG) benefit most from cheap input pricing</strong> — models like Llama 3.1 8B ($0.10/M input) shine here.</li>
+                <li><strong>Output-heavy workloads (content gen) benefit most from cheap output pricing</strong> — Gemini 2.0 Flash ($0.40/M output) and Llama models dominate.</li>
+            </ul>
+        </div>
+
+        <h2>Optimization Strategies</h2>
+
+        <div class="highlight-box">
+            <h3>1. Tiered Model Routing</h3>
+            <p>Use cheap models for simple queries, expensive models for complex ones. Route 80% of requests to budget models and 20% to premium. This alone can cut costs by 60-70%.</p>
+        </div>
+
+        <div class="highlight-box">
+            <h3>2. Prompt Caching</h3>
+            <p>Cache repeated system prompts and context. Many providers offer prompt caching discounts (Anthropic: 90% off cached input tokens). This is especially valuable for RAG workloads.</p>
+        </div>
+
+        <div class="highlight-box">
+            <h3>3. Batch Processing</h3>
+            <p>Non-urgent workloads (content generation, data processing) can use batch APIs at 50% discount. OpenAI, Anthropic, and Google all offer batch pricing.</p>
+        </div>
+
+        <div class="highlight-box">
+            <h3>4. Output Length Control</h3>
+            <p>Set max_tokens conservatively. Many models default to generating more tokens than needed. Shorter outputs = lower costs, especially for output-heavy workloads.</p>
+        </div>
+
+        <h2>Which Model Should You Pick?</h2>
+        <p>It depends on your workload. Here's a quick guide:</p>
+        <table class="comparison-table">
+            <thead>
+                <tr>
+                    <th>Workload Type</th>
+                    <th>Best Value</th>
+                    <th>Best Quality</th>
+                    <th>Cheapest</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Customer Support Chatbot</td>
+                    <td class="cheapest">Gemini 2.0 Flash</td>
+                    <td>Claude Sonnet 4.6</td>
+                    <td class="cheapest">Llama 3.1 8B</td>
+                </tr>
+                <tr>
+                    <td>RAG Pipeline</td>
+                    <td class="cheapest">DeepSeek V4 Flash</td>
+                    <td>Gemini 2.5 Pro</td>
+                    <td class="cheapest">Llama 3.1 8B</td>
+                </tr>
+                <tr>
+                    <td>Code Assistant</td>
+                    <td class="cheapest">DeepSeek V4 Pro</td>
+                    <td>Claude Sonnet 4.6</td>
+                    <td class="cheapest">GPT-4o mini</td>
+                </tr>
+                <tr>
+                    <td>Content Generation</td>
+                    <td class="cheapest">Gemini 2.0 Flash</td>
+                    <td>GPT-5 mini</td>
+                    <td class="cheapest">Llama 3.1 8B</td>
+                </tr>
+                <tr>
+                    <td>Complex Reasoning</td>
+                    <td class="cheapest">Gemini 2.5 Pro</td>
+                    <td>Claude Opus 4.7</td>
+                    <td class="cheapest">DeepSeek V4 Pro</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="cta-inline">
+            <p><strong>Need a custom estimate?</strong> Use our <a href="calculator.html">free cost calculator</a> to model your exact workload with any of our 32 tracked models.</p>
+            <a href="calculator.html" class="btn-primary" style="display:inline-block;text-decoration:none;">Open Calculator</a>
+        </div>
+
+        <div class="related-reading">
+            <h3>Related Reading</h3>
+            <ul>
+                <li><a href="cost-per-request.html">AI API Cost per Request: Quick Reference Table</a></li>
+                <li><a href="blog-cheapest-ai-api-chatbots-2026.html">Cheapest AI API for Chatbots in 2026</a></li>
+                <li><a href="blog-deepseek-vs-gemini-pricing-2026.html">DeepSeek vs Gemini Pricing 2026</a></li>
+                <li><a href="blog-cost-optimization-guide.html">How to Reduce Your AI API Costs by 40%</a></li>
+                <li><a href="blog-cheapest-llm.html">The Cheapest LLM APIs: Complete Guide</a></li>
+            </ul>
+        </div>
+
+        <div class="social-share">
+            <span style="font-size:13px;color:var(--text-muted);font-weight:600;">Share:</span>
+            <a class="share-btn" href="https://twitter.com/intent/tweet?text=Real-world%20AI%20API%20cost%20estimates%20for%20chatbots%2C%20RAG%2C%20code%20assistants%20%26%20content%20gen%20%E2%80%94%2032%20models%20compared&url=https%3A%2F%2Fgetapipulse.com%2Fcost-scenarios.html" target="_blank" rel="noopener">Post on X</a>
+            <a class="share-btn" href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fgetapipulse.com%2Fcost-scenarios.html" target="_blank" rel="noopener">Share on LinkedIn</a>
+            <a class="share-btn" href="https://news.ycombinator.com/submitlink?u=https%3A%2F%2Fgetapipulse.com%2Fcost-scenarios.html&t=Real-world%20AI%20API%20cost%20estimates%20for%204%20common%20workloads" target="_blank" rel="noopener">Share on HN</a>
+        </div>
+    </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 APIpulse. Built with data, not hype.</p>
+    </footer>
+
+    <button class="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">&uarr;</button>
+
+    <script>
+    // Scenario configurations
+    const scenarios = {
+        chatbot: {
+            inputTokens: 800,
+            outputTokens: 300,
+            requestsMultiplier: 1, // requests per day
+            label: 'requests/day',
+            devCount: null
+        },
+        rag: {
+            inputTokens: 2500,
+            outputTokens: 500,
+            requestsMultiplier: 1,
+            label: 'requests/day',
+            devCount: null
+        },
+        code: {
+            inputTokens: 3000,
+            outputTokens: 800,
+            requestsMultiplier: 200, // per dev
+            label: 'developers',
+            devCount: true
+        },
+        content: {
+            inputTokens: 1500,
+            outputTokens: 2000,
+            requestsMultiplier: 1,
+            label: 'pieces/day',
+            devCount: null
+        }
+    };
+
+    function calculateCost(inputTokens, outputTokens, inputPrice, outputPrice) {
+        return (inputTokens / 1000000) * inputPrice + (outputTokens / 1000000) * outputPrice;
+    }
+
+    function formatCost(cost) {
+        if (cost < 0.01) return '$' + cost.toFixed(4);
+        if (cost < 1) return '$' + cost.toFixed(3);
+        if (cost < 100) return '$' + cost.toFixed(2);
+        return '$' + Math.round(cost).toLocaleString();
+    }
+
+    function getCostClass(cost, cheapest, expensive) {
+        if (cost <= cheapest * 1.1) return 'cheapest';
+        if (cost >= expensive * 0.9) return 'expensive';
+        return 'mid-price';
+    }
+
+    function updateScenario(type, scale) {
+        const config = scenarios[type];
+        const container = document.getElementById(type + '-results');
+
+        // Update active button
+        const card = document.getElementById('scenario-' + type);
+        card.querySelectorAll('.scale-btn').forEach(btn => btn.classList.remove('active'));
+        event.target.classList.add('active');
+
+        // Calculate daily requests
+        let dailyRequests;
+        if (config.devCount) {
+            dailyRequests = scale * config.requestsMultiplier;
+        } else {
+            dailyRequests = scale;
+        }
+        const monthlyRequests = dailyRequests * 30;
+
+        // Calculate costs for all models
+        const results = API_MODELS.map(m => {
+            const costPerRequest = calculateCost(config.inputTokens, config.outputTokens, m.input, m.output);
+            const monthlyCost = costPerRequest * monthlyRequests;
+            return {
+                ...m,
+                costPerRequest,
+                monthlyCost
+            };
+        }).sort((a, b) => a.monthlyCost - b.monthlyCost);
+
+        const cheapest = results[0].monthlyCost;
+        const expensive = results[results.length - 1].monthlyCost;
+
+        // Build top 10 + cheapest budget + cheapest mid
+        const top10 = results.slice(0, 10);
+        const budgetPick = results.filter(m => m.tier === 'Budget').sort((a, b) => a.monthlyCost - b.monthlyCost)[0];
+        const midPick = results.filter(m => m.tier === 'Mid').sort((a, b) => a.monthlyCost - b.monthlyCost)[0];
+        const premiumPick = results.filter(m => m.tier === 'Premium').sort((a, b) => a.monthlyCost - b.monthlyCost)[0];
+
+        // Deduplicate
+        const displayModels = [...top10];
+        [budgetPick, midPick, premiumPick].forEach(pick => {
+            if (pick && !displayModels.find(m => m.id === pick.id)) {
+                displayModels.push(pick);
+            }
+        });
+        displayModels.sort((a, b) => a.monthlyCost - b.monthlyCost);
+
+        let html = '<table class="comparison-table"><thead><tr>';
+        html += '<th>Model</th><th>Provider</th><th>Tier</th><th>Cost/Request</th><th>Monthly Cost</th>';
+        html += '</tr></thead><tbody>';
+
+        displayModels.forEach(m => {
+            const costClass = getCostClass(m.monthlyCost, cheapest, expensive);
+            html += `<tr>`;
+            html += `<td><strong>${m.name}</strong></td>`;
+            html += `<td>${m.provider}</td>`;
+            html += `<td><span class="tier-badge tier-${m.tier.toLowerCase()}">${m.tier}</span></td>`;
+            html += `<td>${formatCost(m.costPerRequest)}</td>`;
+            html += `<td class="${costClass}"><strong>${formatCost(m.monthlyCost)}</strong></td>`;
+            html += `</tr>`;
+        });
+
+        html += '</tbody></table>';
+
+        // Summary stats
+        html += '<div class="cost-breakdown">';
+        html += `<div class="breakdown-item"><div class="label">Cheapest Option</div><div class="value" style="color:var(--green)">${formatCost(cheapest)}/mo</div></div>`;
+        html += `<div class="breakdown-item"><div class="label">Most Expensive</div><div class="value" style="color:var(--red)">${formatCost(expensive)}/mo</div></div>`;
+        html += `<div class="breakdown-item"><div class="label">Price Gap</div><div class="value" style="color:var(--orange)">${(expensive / cheapest).toFixed(0)}x</div></div>`;
+        html += '</div>';
+
+        container.innerHTML = html;
+    }
+
+    // Initialize all scenarios
+    document.addEventListener('DOMContentLoaded', function() {
+        updateScenario('chatbot', 500);
+        updateScenario('rag', 200);
+        updateScenario('code', 10);
+        updateScenario('content', 50);
+    });
+    </script>
+</body>
+</html>

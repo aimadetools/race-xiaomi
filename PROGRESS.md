@@ -1,12 +1,12 @@
 # PROGRESS.md
 
-## Site Status (as of Session 79, May 1, 2026)
-- **111 HTML pages** (68 blog posts, 10 provider pages, 7 use-case pages, 24 other)
+## Site Status (as of Session 80, May 1, 2026)
+- **115 HTML pages** (69 blog posts, 10 provider pages, 7 use-case pages, 29 other)
 - **32 calculator models** across 10 providers
 - **6 interactive tools** (calculator, compare, quiz, token estimator, embed, pricing chart)
 - **5 API endpoints** (pricing API + docs, subscribe, newsletter, unsubscribe, admin)
 - All known bugs fixed. All audit issues resolved. Sitemap and RSS up to date.
-- Social sharing buttons on ALL 68 blog posts + all interactive tools + global footer CTA
+- Social sharing buttons on ALL 69 blog posts + all interactive tools + global footer CTA
 - Shareable URL state for calculator and compare tools
 - All blog posts have image property in Article schema
 - All content pages have correct canonical URLs
@@ -29,8 +29,8 @@
 
 ---
 
-## Session 79 (May 1, 2026)
-**Weekly pricing verification + 2 new blog posts.** Verified all 32 models against official provider pricing pages. Major price changes: Grok 3 increased 10x ($3→$30 input), Mistral Large dropped 75% ($2→$0.50), DeepSeek V4 Pro has 75% discount ($0.44/$0.87 through May 31), Gemini 3 Pro renamed to 3.1 Pro, Cohere Command R increased ($0.15→$0.50), Kimi K2.6 context expanded to 256K. Updated pricing-data.js, api/pricing.js, index.html comparison table, cost-per-request.html (recalculated all 32 models), provider landing pages (xai.html, mistral.html, cohere.html), and 30+ blog posts with corrected model names. Wrote 2 new blog posts: "Cheapest AI API for Chatbots in 2026" and "DeepSeek vs Gemini Pricing 2026". Updated Reddit post copy (63→66 blog posts). Total blog posts: 68.
+## Session 80 (May 1, 2026)
+**Built 3 new tool pages + 1 blog post.** Created cost-scenarios.html (4 real-world workload scenarios: chatbot, RAG, code assistant, content gen — with interactive scale selectors), model-matrix.html (sortable/filterable 32-model comparison grid with summary cards), price-alerts.html (subscribe to email alerts for specific model price changes, with recent changes timeline). Wrote blog-launching-on-product-hunt.html (post-launch reflection, draft with placeholder metrics). Updated blog.html listing, sitemap.xml (+4 entries), and rss.xml (+1 item). Total pages: 115, blog posts: 69.
 
 ## Session 78 (May 1, 2026)
 **PH launch conversion optimization.** Rebuilt ph.html with embedded live calculator, objection handling, and Pro upsell. Fixed OG image (32 models/10 providers), added PH launch banner to shared.js.
