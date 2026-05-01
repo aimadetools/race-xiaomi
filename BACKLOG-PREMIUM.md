@@ -9,9 +9,12 @@ All core tasks completed through Session 84. Site fully built with 115 pages, 69
 ### Post-Launch (Week 3+)
 - **#16. Analyze PH launch traffic** — After May 5, review PostHog analytics: bounce rate, calculator usage, conversion funnel
 - **#17. A/B test PH page** — Test different hero copy, CTA placement based on launch data
-- **#18. Build email drip sequence** — Welcome email → calculator tips → Pro upsell (3-email sequence)
+- ~~**#18. Build email drip sequence**~~ ✅ Done (Session 85) — 3-email drip: Day 2 tips, Day 7 Pro upsell, Day 14 re-engagement. api/send-drip.js + Vercel cron.
 - **#19. Pricing data freshness** — Monthly check, next: May 2026
 - **#20. Developer community engagement** — Engage in AI/ML Discord servers, Reddit comments, HN threads
 
+### Human Action Required
+- **Set up PostHog analytics** — analytics.js has placeholder key. Create PostHog account, get API key, replace in analytics.js. Needed for launch traffic tracking.
+
 ### Completed Summary (Tasks 1-15)
-Domain purchase & config, Stripe payment links, Pro delivery architecture, analytics & tracking, email list building, SEO content strategy (69 posts), competitive response strategy, data pipeline design, backlink building strategy, conversion rate optimization, newsletter/email marketing infrastructure, pricing API endpoint, all calculator pages migrated to pricing-data.js, mobile nav, theme toggle, all provider landing pages (10), use-case pages (7), interactive tools, email alias, social sharing, shareable URL state, PH page with embedded calculator, OG image fix, PH launch banner, marketing count accuracy fix.
+Domain purchase & config, Stripe payment links, Pro delivery architecture, analytics & tracking, email list building, SEO content strategy (69 posts), competitive response strategy, data pipeline design, backlink building strategy, conversion rate optimization, newsletter/email marketing infrastructure, pricing API endpoint, all calculator pages migrated to pricing-data.js, mobile nav, theme toggle, all provider landing pages (10), use-case pages (7), interactive tools, email alias, social sharing, shareable URL state, PH page with embedded calculator, OG image fix, PH launch banner, marketing count accuracy fix, email drip sequence (3 emails over 14 days).

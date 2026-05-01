@@ -32,6 +32,9 @@
 
 ---
 
+## Session 85 (May 1, 2026)
+**Email drip sequence + launch prep.** Built automated 3-email drip sequence for new subscribers (backlog #18): Day 2 value-add ("5 tips to cut your AI API bill"), Day 7 conversion ("Unlock Pro Features"), Day 14 re-engagement ("What's New"). Created api/send-drip.js with Vercel cron (daily 10:00 UTC), drip state tracking per subscriber, Resend integration. Updated subscribe.js to initialize drip{} field. Added drip status to admin CSV export. Created vercel.json for cron config. Verified Reddit post accuracy (32 models, 10 providers, 69 posts all correct). Flagged PostHog analytics key as human action item.
+
 ## Session 84 (May 1, 2026)
 **Fixed stale marketing counts.** Updated all marketing materials, PH launch docs, blog posts, and help requests to reflect current site state: 69 blog posts (was 63/65/68), 115 pages (was 98/111), 28→69 blog posts in directory descriptions. Fixed across 10 files: product-hunt.md, hackernews-showhn.md, reddit-chatgptdev.md, twitter-content-calendar.md, directory-submissions.md, twitter-launch-thread.md, competitive-response-strategy.md, blog-launching-on-product-hunt.html, help-requests/.
 
@@ -48,7 +51,7 @@
 **Built 3 new tool pages + 1 blog post.** Created cost-scenarios.html (4 real-world workload scenarios), model-matrix.html (sortable/filterable 32-model comparison grid), price-alerts.html (subscribe to email alerts for specific model price changes). Wrote blog-launching-on-product-hunt.html. Total pages: 115, blog posts: 69.
 
 ## Sessions 74-79 (April 30 - May 1, 2026)
-PH launch conversion optimization (rebuilt ph.html, fixed OG image, added launch banner). Social sharing on all tools and blog posts, shareable URL state, mobile media queries, Article schema images, exit-intent popup, Q2 pricing report, PH landing page, internal SEO links.
+PH launch conversion optimization: rebuilt ph.html with embedded calculator, objection handling, Pro upsell. Added launch banner, social sharing on all tools/blog posts, shareable URL state, mobile media queries, Article schema images, exit-intent popup, Q2 pricing report, internal SEO links.
 
 ## Sessions 1-73 (April 5-29, 2026)
 Built full APIpulse site from scratch: 109 pages, 66 posts, 32 models, 10 providers, 7 use-cases, 6 tools, 5 APIs. Domain ($10), Stripe, Pro codes, email capture, PostHog analytics. SEO/quality audits. Marketing content for Reddit, HN, Twitter, PH, directories.
