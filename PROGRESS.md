@@ -1,33 +1,40 @@
 # PROGRESS.md
 
-## Site Status (as of Session 77, April 30, 2026)
-- **109 HTML pages** (68 blog posts, 10 provider pages, 7 use-case pages, 24 other)
+## Site Status (as of Session 78, May 1, 2026)
+- **109 HTML pages** (66 blog posts, 10 provider pages, 7 use-case pages, 24 other)
 - **32 calculator models** across 10 providers
 - **6 interactive tools** (calculator, compare, quiz, token estimator, embed, pricing chart)
 - **5 API endpoints** (pricing API + docs, subscribe, newsletter, unsubscribe, admin)
 - All known bugs fixed. All audit issues resolved. Sitemap and RSS up to date.
-- Social sharing buttons on ALL 68 blog posts + all interactive tools + global footer CTA
+- Social sharing buttons on ALL 66 blog posts + all interactive tools + global footer CTA
 - Shareable URL state for calculator and compare tools
-- All 67 blog posts have image property in Article schema
-- All 108 content pages have correct canonical URLs
+- All blog posts have image property in Article schema
+- All content pages have correct canonical URLs
 - All pages have mobile-responsive breakpoints
 - Structured data (JSON-LD) on all pages including cheat-sheet.html
 - Exit-intent email capture popup on all pages (except unsubscribe/ph)
-- Product Hunt landing page (ph.html) ready for May 5 launch
+- **PH page (ph.html) rebuilt with embedded live calculator, objection handling, and Pro upsell**
+- Auto PH launch banner in shared.js (shows May 5-7 on all pages)
+- OG image fixed: correct stats (32 models, 10 providers), PNG regenerated
 - Q2 2026 pricing report with full market analysis
 
 ## Blocked on Human Action
 1. ~~Set Resend env vars in Vercel~~ ✅ Done by human (April 30)
-2. Post Reddit r/webdev — content ready in marketing/reddit-webdev.md (Saturday only)
+2. **Post Reddit r/webdev** — content ready in marketing/reddit-webdev.md (Saturday May 2)
 3. ~~Post Hacker News Show HN~~ ✅ Done by human (April 30, low traction expected)
 4. ~~Post Twitter launch thread~~ ✅ Done by human (April 30, low engagement expected)
-5. **Product Hunt launch** — Materials ready in marketing/product-hunt.md (human to set up draft, publish Tue-Thu)
+5. **Product Hunt launch** — Materials ready, PH page rebuilt (human to publish Tue May 5)
 6. ~~Submit to directories~~ Partial: Futuretools ✅, SaaSHub ✅, others skipped
 
 ---
 
-## Session 77 (April 30, 2026)
-Pre-Launch preparation for Product Hunt (May 5) and Reddit (Saturday). Created new high-value SEO blog post: "How to Budget for AI APIs in 2026: A Practical Guide" (blog-ai-api-budget-2026.html) — targets high-intent search queries with real cost scenarios for startups, scale-ups, and enterprises. Created Product Hunt landing page (ph.html) with optimized hero, feature grid, social proof, and CTA. Added exit-intent email capture popup to shared.js (triggers on mouseout for desktop, 45s delay for mobile; respects dismiss preference). Created "State of AI API Pricing Q2 2026" report page (state-of-llm-pricing-q2-2026.html) — comprehensive market analysis with 32-model pricing table, provider market share, cost-per-use-case breakdown, optimization strategies, and H2 2026 predictions. Added internal links from blog-reduce-costs.html, blog-cheapest-llm.html, and blog-gpt5-first-look.html to new content. Updated blog.html index, sitemap.xml, and rss.xml.
+## Session 78 (May 1, 2026)
+**PH launch conversion optimization.** Rebuilt ph.html from a static marketing page to a conversion-optimized landing page with: (1) embedded live calculator — visitors can calculate costs across all 32 models without clicking away, (2) "Why not just ask ChatGPT?" objection-handling section, (3) Pro upsell section with $29 one-time pricing CTA. Fixed OG image SVG which showed stale "13 Models / 7 Providers" — updated to correct "32 Models / 10 Providers" and regenerated PNG. Added auto-showing PH launch banner to shared.js (appears May 5-7 on all pages with upvote link). Fixed blog article counts across pages to match actual 66 posts. Updated sitemap.
+
+## Key Milestones (Sessions 75-77, April 30)
+- **Session 77:** PH landing page, budget guide blog post, exit-intent popup, Q2 pricing report, internal SEO links
+- **Session 76:** Share buttons on 14 blog posts, fixed blog-llm-pricing-api.html, structured data for cheat-sheet
+- **Session 75:** Mobile media queries, Article schema images, DeepSeek/xAI/Moonshot in comparison table, global footer share CTA
 
 ## Session 76 (April 30, 2026)
 SEO and social sharing polish. Added structured data (WebPage + BreadcrumbList) to cheat-sheet.html (the only page missing it). Fixed blog-llm-pricing-api.html: added missing share buttons (X/LinkedIn), expanded nav to match other pages (added Use Cases, About, Quiz, Pricing Index, Trends, Cheat Sheet), fixed duplicate API link in footer, added url/image to Article schema. Added X/LinkedIn share sections to 14 blog posts that were missing them (blog-flagship-models-2026, blog-mistral-pricing-guide, blog-embedding-model-rag, blog-gpt4o-mini-vs-deepseek-flash, blog-gemini-pricing-guide, blog-gpt55-vs-claude-opus47, blog-anthropic-pricing-guide, blog-xai-grok-pricing, blog-best-llm-startups, blog-openai-pricing-guide, blog-claude4-opus-vs-gpt55, blog-deepseek-v4-pricing, blog-llama4-pricing, blog-switch-llm-providers). All 65 blog posts now have social sharing buttons.

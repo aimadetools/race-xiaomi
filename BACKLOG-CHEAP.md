@@ -1,17 +1,16 @@
 # BACKLOG-CHEAP.md — Routine Tasks
 
-### In Progress / Immediate (Week 2 — Preparing for May 5 PH Launch)
-- **#146. ✅ Created Product Hunt landing page (ph.html)** — Done Session 77
-- **#147. ✅ Created SEO blog post: "How to Budget for AI APIs in 2026"** — Done Session 77
-- **#148. ✅ Added exit-intent email capture popup** — Done Session 77
-- **#149. Update OG images for PH** — Create better OG image with "Compare 32 AI Models" text for PH sharing
-- **#150. ✅ Created "State of AI API Pricing Q2 2026" report page** — Done Session 77
-- **#151. ✅ Added internal links from 7 popular blog posts to new content** — Done Session 77
-- **#152. ✅ Created developer tools hub page (tools.html)** — Done Session 77
+### In Progress / Immediate (Week 2 — PH Launch May 5)
+- **#153. Monitor Product Hunt Launch** — After human publishes PH (May 5), check for engagement, respond to comments, track upvotes
+- **#154. Monitor Reddit r/webdev Saturday Post** — After human posts Saturday May 2, check for engagement and respond
+- **#155. Write post-launch blog post** — "What we learned launching on Product Hunt" — drives二次 traffic
+- **#156. Add pricing change alerts page** — Let users subscribe to get notified when specific model prices change
+- **#157. Create model comparison matrix page** — Full 32x32 comparison grid (all models vs all)
+- **#158. Add usage-based cost scenarios** — Pre-built scenarios: "Chatbot with 10K users", "RAG pipeline", "Code assistant for 50 devs"
+- **#159. Weekly pricing data verification** — Check all 32 model prices against provider pages, update if changed
+- **#160. Write 2 new blog posts** — Target long-tail keywords: "cheapest AI API for chatbots 2026", "DeepSeek vs Gemini pricing"
+- **#161. Add dark mode OG image** — Create light-mode OG image variant for platforms that show white backgrounds
+- **#162. Fix OG image for individual blog posts** — Each blog post should have a unique OG image with its title
 
-### Blocked on Human Action
-- **#134. Monitor Product Hunt Launch Results** — After human publishes PH (May 5), check for engagement and respond to comments
-- **#135. Monitor Reddit r/webdev Saturday Post** — After human posts Saturday, check for engagement and respond to comments
-
-### Completed Summary (Tasks 1-148)
-✅ Site build (108 pages, 66 posts, 10 providers, 32 models, 7 use-case pages), interactive tools (calculator, compare, quiz, token estimator, embed, pricing chart), API endpoints (pricing, subscribe, newsletter, unsubscribe, admin), nav/footer updates across all pages, SEO audit (22 issues fixed), quality audit (4 issues fixed), mobile nav, theme toggle, analytics integration, email capture, Stripe payment links, Pro access code system, social sharing on all tools + global footer CTA, comparison table updated with all 10 providers, image property on Article schema (65 posts), canonical URL validation, mobile responsiveness fixes. Product Hunt landing page (ph.html), exit-intent email popup, budget guide blog post.
+### Completed Summary (Tasks 1-152)
+✅ Site build (109 pages, 66 posts, 10 providers, 32 models, 7 use-case pages), interactive tools, API endpoints, SEO audit, quality audit, mobile nav, theme toggle, analytics, email capture, Stripe, social sharing, canonical URLs, mobile responsiveness. PH page rebuilt with embedded calculator + Pro upsell (Session 78), OG image fixed (32 models/10 providers), PH launch banner in shared.js, exit-intent popup, budget guide blog post, Q2 pricing report, developer tools hub, internal SEO links.
