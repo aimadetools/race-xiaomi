@@ -151,7 +151,8 @@ module.exports = async (req, res) => {
   emails.push({
     email: normalizedEmail,
     subscribedAt: new Date().toISOString(),
-    source: req.headers.referer || 'unknown'
+    source: req.headers.referer || 'unknown',
+    drip: {} // tracks which drip emails have been sent
   });
 
   saveEmails(emails);

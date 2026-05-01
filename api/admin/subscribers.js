@@ -41,10 +41,11 @@ module.exports = async (req, res) => {
 
   if (format === 'csv') {
     // CSV export for importing into email marketing tools
-    const csvHeader = 'email,subscribed_at,source\n';
-    const csvRows = emails.map(e =>
-      `"${e.email}","${e.subscribedAt}","${e.source || ''}"`
-    ).join('\n');
+    const csvHeader = 'email,subscribed_at,source,drip_day2,drip_day7,drip_day14\n';
+    const csvRows = emails.map(e => {
+      const d = e.drip || {};
+      return `"${e.email}","${e.subscribedAt}","${e.source || ''}","${d.day2 || ''}","${d.day7 || ''}","${d.day14 || ''}"`;
+    }).join('\n');
 
     res.setHeader('Content-Type', 'text/csv');
     res.setHeader('Content-Disposition', 'attachment; filename="apipulse-subscribers.csv"');
