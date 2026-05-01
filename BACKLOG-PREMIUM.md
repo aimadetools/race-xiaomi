@@ -1,6 +1,6 @@
 # BACKLOG-PREMIUM.md — Tasks Requiring Deep Reasoning
 
-All core tasks completed through Session 82. Site fully built with 115 pages, 69 blog posts, 32 models across 10 providers, 6 interactive tools, API endpoint, full social sharing, schema markup, canonical URLs, mobile responsiveness. PH page rebuilt with embedded calculator, objection handling, and Pro upsell. Pricing data verified May 1 with major updates. 69 unique blog post OG images. Chrome extension concept. Two new tool pages (cost-scenarios, model-matrix, price-alerts).
+All core tasks completed through Session 84. Site fully built with 115 pages, 69 blog posts, 32 models across 10 providers, 6 interactive tools, API endpoint, full social sharing, schema markup, canonical URLs, mobile responsiveness. PH page rebuilt with embedded calculator, objection handling, and Pro upsell. Pricing data verified May 1 with major updates. 69 unique blog post OG images. Chrome extension concept. Three new tool pages (cost-scenarios, model-matrix, price-alerts). All marketing materials updated with accurate counts.
 
 ### Active (Week 2 — PH Launch Week)
 - **#1. Product Hunt Launch (May 5)** — PH page rebuilt with live calculator, Pro upsell, "Why not ChatGPT?" section. Auto banner in shared.js. Human to publish Tuesday.
@@ -14,4 +14,4 @@ All core tasks completed through Session 82. Site fully built with 115 pages, 69
 - **#20. Developer community engagement** — Engage in AI/ML Discord servers, Reddit comments, HN threads
 
 ### Completed Summary (Tasks 1-15)
-Domain purchase & config, Stripe payment links, Pro delivery architecture, analytics & tracking, email list building, SEO content strategy (66 posts), competitive response strategy, data pipeline design, backlink building strategy, conversion rate optimization, newsletter/email marketing infrastructure, pricing API endpoint, all calculator pages migrated to pricing-data.js, mobile nav, theme toggle, all provider landing pages (10), use-case pages (7), interactive tools, email alias, social sharing, shareable URL state, PH page with embedded calculator, OG image fix, PH launch banner.
+Domain purchase & config, Stripe payment links, Pro delivery architecture, analytics & tracking, email list building, SEO content strategy (69 posts), competitive response strategy, data pipeline design, backlink building strategy, conversion rate optimization, newsletter/email marketing infrastructure, pricing API endpoint, all calculator pages migrated to pricing-data.js, mobile nav, theme toggle, all provider landing pages (10), use-case pages (7), interactive tools, email alias, social sharing, shareable URL state, PH page with embedded calculator, OG image fix, PH launch banner, marketing count accuracy fix.
