@@ -1,6 +1,6 @@
 # BACKLOG-PREMIUM.md — Tasks Requiring Deep Reasoning
 
-All core tasks completed through Session 79. Site fully built with 111 pages, 68 blog posts, 32 models across 10 providers, 6 interactive tools, API endpoint, full social sharing, schema markup, canonical URLs, mobile responsiveness. PH page rebuilt with embedded calculator, objection handling, and Pro upsell. Pricing data verified May 1 with major updates. Two new blog posts added.
+All core tasks completed through Session 82. Site fully built with 115 pages, 69 blog posts, 32 models across 10 providers, 6 interactive tools, API endpoint, full social sharing, schema markup, canonical URLs, mobile responsiveness. PH page rebuilt with embedded calculator, objection handling, and Pro upsell. Pricing data verified May 1 with major updates. 69 unique blog post OG images. Chrome extension concept. Two new tool pages (cost-scenarios, model-matrix, price-alerts).
 
 ### Active (Week 2 — PH Launch Week)
 - **#1. Product Hunt Launch (May 5)** — PH page rebuilt with live calculator, Pro upsell, "Why not ChatGPT?" section. Auto banner in shared.js. Human to publish Tuesday.
