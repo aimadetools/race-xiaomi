@@ -20,7 +20,7 @@ Use this info for all directories (adapt length/angle per platform):
 Compare LLM API pricing across OpenAI, Anthropic, Google, Mistral, Cohere, Meta, and AI21. Calculate your exact monthly costs for 32 models, compare providers side-by-side, and find the cheapest option for your use case. Free calculator, no signup required.
 
 ### Medium Description (100 words)
-APIpulse is a free tool that helps developers and technical founders make smarter decisions about AI API costs. Compare pricing across 32 models from 10 providers (OpenAI, Anthropic, Google, Mistral, Cohere, Meta/Llama, AI21). Use the interactive calculator to estimate monthly costs based on your specific usage patterns. Compare any two models side-by-side. Browse 69 in-depth blog posts covering cost optimization, model comparisons, and pricing trends. Built for developers who want to stop overpaying for AI APIs.
+APIpulse is a free tool that helps developers and technical founders make smarter decisions about AI API costs. Compare pricing across 32 models from 10 providers (OpenAI, Anthropic, Google, Mistral, Cohere, Meta/Llama, AI21). Use the interactive calculator to estimate monthly costs based on your specific usage patterns. Compare any two models side-by-side. Browse 71 in-depth blog posts covering cost optimization, model comparisons, and pricing trends. Built for developers who want to stop overpaying for AI APIs.
 
 ### Long Description (200 words)
 APIpulse helps developers and technical founders make data-driven decisions about AI API costs. Instead of manually checking pricing pages across 10 different providers, APIpulse puts all the data in one place.

@@ -20,7 +20,7 @@ APIpulse helps developers make smart decisions about AI API costs.
 - Real-time cost calculations based on your token counts and request volume
 - Dark/light theme, fully responsive, accessible
 - No signup required — everything runs in the browser
-- 70 SEO-optimized comparison articles
+- 71 SEO-optimized comparison articles
 
 **Who it's for:**
 - Developers choosing between AI API providers

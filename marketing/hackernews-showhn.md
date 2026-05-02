@@ -45,4 +45,4 @@ There's a $29 one-time Pro tier with saved scenarios, PDF export, and optimizati
 ArtificialAnalysis focuses on benchmarks and inference speed. APIpulse focuses specifically on cost planning and budget optimization — different use cases. Their data is great for performance comparisons; mine is for figuring out what you'll actually pay.
 
 **If someone asks about the blog content:**
-I've written 69 comparison articles covering specific model pairs (GPT-5 vs Claude 4 Opus, Gemini vs GPT-4o, cheapest chatbot options, etc.). Each includes real cost breakdowns for common use cases like chatbots, code generation, and document analysis.
+I've written 71 comparison articles covering specific model pairs (GPT-5 vs Claude 4 Opus, Gemini vs GPT-4o, cheapest chatbot options, etc.). Each includes real cost breakdowns for common use cases like chatbots, code generation, and document analysis.
