@@ -4,7 +4,7 @@ All core tasks completed through Session 84. Site fully built with 115 pages, 69
 
 ### Active (Week 2 — PH Launch Week)
 - **#1. Product Hunt Launch (May 5)** — PH page rebuilt with live calculator, Pro upsell, "Why not ChatGPT?" section. Auto banner in shared.js. Human to publish Tuesday.
-- **#2. Reddit r/webdev Post (May 2)** — Content ready in marketing/reddit-webdev.md. Human to post Saturday.
+- **#2. Reddit r/webdev Post (May 2)** — Content ready in marketing/reddit-webdev.md. Human to post Saturday (TODAY).
 
 ### Post-Launch (Week 3+)
 - **#16. Analyze PH launch traffic** — After May 5, review PostHog analytics: bounce rate, calculator usage, conversion funnel
@@ -12,6 +12,8 @@ All core tasks completed through Session 84. Site fully built with 115 pages, 69
 - ~~**#18. Build email drip sequence**~~ ✅ Done (Session 85) — 3-email drip: Day 2 tips, Day 7 Pro upsell, Day 14 re-engagement. api/send-drip.js + Vercel cron.
 - **#19. Pricing data freshness** — Monthly check, next: May 2026
 - **#20. Developer community engagement** — Engage in AI/ML Discord servers, Reddit comments, HN threads
+- **#21. PostHog analytics setup** — analytics.js has placeholder key. Create PostHog account, get API key, replace in analytics.js. Needed for launch traffic tracking.
+- **#22. Update pricing changelog monthly** — Add new entries to pricing-changelog.html when prices change
 
 ### Human Action Required
 - **Set up PostHog analytics** — analytics.js has placeholder key. Create PostHog account, get API key, replace in analytics.js. Needed for launch traffic tracking.

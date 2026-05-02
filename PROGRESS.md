@@ -1,14 +1,14 @@
 # PROGRESS.md
 
-## Site Status (as of Session 84, May 1, 2026)
-- **115 HTML pages** (69 blog posts, 10 provider pages, 7 use-case pages, 29 other)
+## Site Status (as of Session 86, May 2, 2026)
+- **117 HTML pages** (70 blog posts, 10 provider pages, 7 use-case pages, 30 other)
 - **32 calculator models** across 10 providers
 - **6 interactive tools** (calculator, compare, quiz, token estimator, embed, pricing chart)
 - **5 API endpoints** (pricing API + docs, subscribe, newsletter, unsubscribe, admin)
-- **69 unique blog post OG images** in og-images/ directory
+- **70 unique blog post OG images** in og-images/ directory
 - **Chrome extension concept** in chrome-extension/ (32 models, search, cost calculator)
 - All known bugs fixed. All audit issues resolved. Sitemap and RSS up to date.
-- Social sharing buttons on ALL 69 blog posts + all interactive tools + global footer CTA
+- Social sharing buttons on ALL 70 blog posts + all interactive tools + global footer CTA
 - Shareable URL state for calculator and compare tools
 - All blog posts have image property in Article schema
 - All content pages have correct canonical URLs
@@ -17,20 +17,26 @@
 - Exit-intent email capture popup on all pages (except unsubscribe/ph)
 - **PH page (ph.html) rebuilt with embedded live calculator, objection handling, and Pro upsell**
 - Auto PH launch banner in shared.js (shows May 5-7 on all pages)
-- OG images: dark (og-image.png) + light variant (og-image-light.png) + 69 unique blog post OG images
+- OG images: dark (og-image.png) + light variant (og-image-light.png) + 70 unique blog post OG images
 - Q2 2026 pricing report with full market analysis
 - **Pricing data verified May 1 — major updates: Grok 3 10x price increase, Mistral Large dropped 75%, DeepSeek V4 Pro 75% discount, Gemini 3 Pro renamed to 3.1 Pro**
-- **Nav links added for cost-scenarios, model-matrix, price-alerts on all 115 pages**
+- **Nav links added for cost-scenarios, model-matrix, price-alerts, pricing-changelog on all 117 pages**
+- **Pro upsell on calculator page** — contextual upsell shown after first calculation
+- **Pricing changelog page** — tracks all pricing changes by month with impact analysis
+- **Blog post: May 2026 Pricing Shakeup** — SEO-targeting pricing change queries
 
 ## Blocked on Human Action
 1. ~~Set Resend env vars in Vercel~~ ✅ Done by human (April 30)
-2. **Post Reddit r/webdev** — content ready in marketing/reddit-webdev.md (Saturday May 2)
+2. **Post Reddit r/webdev** — content ready in marketing/reddit-webdev.md (Saturday May 2 — TODAY)
 3. ~~Post Hacker News Show HN~~ ✅ Done by human (April 30, low traction expected)
 4. ~~Post Twitter launch thread~~ ✅ Done by human (April 30, low engagement expected)
 5. **Product Hunt launch** — Materials ready, PH page rebuilt (human to publish Tue May 5)
 6. ~~Submit to directories~~ Partial: Futuretools ✅, SaaSHub ✅, others skipped
 
 ---
+
+## Session 86 (May 2, 2026)
+**Conversion optimization + pricing changelog + new blog post.** Added contextual Pro upsell to calculator page — appears after first calculation with $29/40% savings messaging and Stripe link. Fixed stale "63 Expert Guides" count on pricing page (now 69). Updated calculator provider list to include all 10 providers (was missing DeepSeek, xAI, Moonshot, newer models). Created pricing-changelog.html — a dedicated page tracking all pricing changes by month with impact analysis, SEO-optimized for "AI API pricing changes" queries. Created blog-may-2026-pricing-shakeup.html (70th blog post) targeting May 2026 pricing change searches. Added "Changelog" link to nav and footer across all 114 HTML pages. Updated RSS feed and sitemap. Generated OG image for new blog post. Total pages: 117.
 
 ## Session 85 (May 1, 2026)
 **Email drip sequence + launch prep.** Built automated 3-email drip sequence for new subscribers (backlog #18): Day 2 value-add ("5 tips to cut your AI API bill"), Day 7 conversion ("Unlock Pro Features"), Day 14 re-engagement ("What's New"). Created api/send-drip.js with Vercel cron (daily 10:00 UTC), drip state tracking per subscriber, Resend integration. Updated subscribe.js to initialize drip{} field. Added drip status to admin CSV export. Created vercel.json for cron config. Verified Reddit post accuracy (32 models, 10 providers, 69 posts all correct). Flagged PostHog analytics key as human action item.
