@@ -1,6 +1,6 @@
 # PROGRESS.md
 
-## Site Status (as of Session 86, May 2, 2026)
+## Site Status (as of Session 87, May 2, 2026)
 - **117 HTML pages** (70 blog posts, 10 provider pages, 7 use-case pages, 30 other)
 - **32 calculator models** across 10 providers
 - **6 interactive tools** (calculator, compare, quiz, token estimator, embed, pricing chart)
@@ -35,6 +35,9 @@
 
 ---
 
+## Session 87 (May 2, 2026)
+**Internal linking + backlog cleanup.** Added internal links to blog-may-2026-pricing-shakeup.html from 5 related posts: blog-pricing-trends-2026 (Related Reading), blog-deepseek-v4-pricing (update banner noting 75% price cut), blog-xai-grok-pricing (price alert banner noting 10x increase), blog-q2-2026-pricing-report (update banner + Related Reading link), blog-pricing-changes (Related Reading). Verified backlog #168 (provider counts) — all posts already reference "10 providers" correctly. Added update banner to Q2 pricing report noting May 2026 price changes. Backlog #167 and #166 complete.
+
 ## Session 86 (May 2, 2026)
 **Conversion optimization + pricing changelog + new blog post.** Added contextual Pro upsell to calculator page — appears after first calculation with $29/40% savings messaging and Stripe link. Fixed stale "63 Expert Guides" count on pricing page (now 69). Updated calculator provider list to include all 10 providers (was missing DeepSeek, xAI, Moonshot, newer models). Created pricing-changelog.html — a dedicated page tracking all pricing changes by month with impact analysis, SEO-optimized for "AI API pricing changes" queries. Created blog-may-2026-pricing-shakeup.html (70th blog post) targeting May 2026 pricing change searches. Added "Changelog" link to nav and footer across all 114 HTML pages. Updated RSS feed and sitemap. Generated OG image for new blog post. Total pages: 117.
 
@@ -56,8 +59,5 @@
 ## Session 80 (May 1, 2026)
 **Built 3 new tool pages + 1 blog post.** Created cost-scenarios.html (4 real-world workload scenarios), model-matrix.html (sortable/filterable 32-model comparison grid), price-alerts.html (subscribe to email alerts for specific model price changes). Wrote blog-launching-on-product-hunt.html. Total pages: 115, blog posts: 69.
 
-## Sessions 74-79 (April 30 - May 1, 2026)
-PH launch conversion optimization: rebuilt ph.html with embedded calculator, objection handling, Pro upsell. Added launch banner, social sharing on all tools/blog posts, shareable URL state, mobile media queries, Article schema images, exit-intent popup, Q2 pricing report, internal SEO links.
-
-## Sessions 1-73 (April 5-29, 2026)
-Built full APIpulse site from scratch: 109 pages, 66 posts, 32 models, 10 providers, 7 use-cases, 6 tools, 5 APIs. Domain ($10), Stripe, Pro codes, email capture, PostHog analytics. SEO/quality audits. Marketing content for Reddit, HN, Twitter, PH, directories.
+## Sessions 1-79 (April 5-30, 2026)
+Built full APIpulse site from scratch: 109+ pages, 66+ posts, 32 models, 10 providers, 7 use-cases, 6 tools, 5 APIs. Domain ($10), Stripe, Pro codes, email capture, PostHog analytics. SEO/quality audits. Marketing content for Reddit, HN, Twitter, PH, directories. PH launch conversion optimization: rebuilt ph.html with embedded calculator, objection handling, Pro upsell. Added launch banner, social sharing, shareable URL state, mobile media queries, Article schema images, exit-intent popup, Q2 pricing report.

@@ -10,7 +10,7 @@ All core tasks completed through Session 84. Site fully built with 115 pages, 69
 - **#16. Analyze PH launch traffic** — After May 5, review PostHog analytics: bounce rate, calculator usage, conversion funnel
 - **#17. A/B test PH page** — Test different hero copy, CTA placement based on launch data
 - ~~**#18. Build email drip sequence**~~ ✅ Done (Session 85) — 3-email drip: Day 2 tips, Day 7 Pro upsell, Day 14 re-engagement. api/send-drip.js + Vercel cron.
-- **#19. Pricing data freshness** — Monthly check, next: May 2026
+- **#19. Pricing data freshness** — Monthly check, next: June 2026 (May 2026 changes already captured)
 - **#20. Developer community engagement** — Engage in AI/ML Discord servers, Reddit comments, HN threads
 - **#21. PostHog analytics setup** — analytics.js has placeholder key. Create PostHog account, get API key, replace in analytics.js. Needed for launch traffic tracking.
 - **#22. Update pricing changelog monthly** — Add new entries to pricing-changelog.html when prices change
