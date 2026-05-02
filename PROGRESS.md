@@ -1,6 +1,6 @@
 # PROGRESS.md
 
-## Site Status (as of Session 90, May 2, 2026)
+## Site Status (as of Session 91, May 2, 2026)
 - **119 HTML pages** (71 blog posts, 10 provider pages, 7 use-case pages, 31 other)
 - **32 calculator models** across 10 providers
 - **6 interactive tools** (calculator, compare, quiz, token estimator, embed, pricing chart)
@@ -37,6 +37,9 @@
 6. ~~Submit to directories~~ Partial: Futuretools ✅, SaaSHub ✅, others skipped
 
 ---
+
+## Session 91 (May 2, 2026)
+**Stale count cleanup.** Fixed stale blog post counts: "69 blog posts" → 71 in api/send-drip.js (email drip template), and three instances of "70" → 71 in ph.html (hero stat, feature card, social proof). Sitemap verified correct at 118 entries (119 HTML pages, 4 intentionally excluded). All 71 blog posts confirmed to have OG images.
 
 ## Session 90 (May 2, 2026)
 **Footer fix + new blog post + social proof widget.** Fixed corrupted footer HTML across 109+ pages (duplicated Scenarios/Price Alerts links, missing middot characters). Created blog-ai-cost-per-request.html (71st blog post) — targets high-value "AI API cost per request" keyword with real per-request breakdowns for 3 scenarios (chatbot, code assistant, RAG pipeline) across budget/mid/premium tiers. Added social proof counter to PH page ("Calculations Today" stat using localStorage). Updated blog.html, sitemap.xml, rss.xml with new post. Updated all 70→71 blog post references and 117→119 page references across 14 files.
