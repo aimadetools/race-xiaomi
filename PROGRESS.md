@@ -1,6 +1,6 @@
 # PROGRESS.md
 
-## Site Status (as of Session 88, May 2, 2026)
+## Site Status (as of Session 89, May 2, 2026)
 - **117 HTML pages** (70 blog posts, 10 provider pages, 7 use-case pages, 30 other)
 - **32 calculator models** across 10 providers
 - **6 interactive tools** (calculator, compare, quiz, token estimator, embed, pricing chart)
@@ -26,6 +26,7 @@
 - **Blog post: May 2026 Pricing Shakeup** — SEO-targeting pricing change queries
 - **Sitemap includes index.html** (was missing, fixed Session 88)
 - **All marketing materials updated to 70 posts / 117 pages** (was stale at 69/115)
+- **PH engagement templates ready** in marketing/product-hunt-templates.md for May 5 launch
 
 ## Blocked on Human Action
 1. ~~Set Resend env vars in Vercel~~ ✅ Done by human (April 30)
@@ -36,6 +37,9 @@
 6. ~~Submit to directories~~ Partial: Futuretools ✅, SaaSHub ✅, others skipped
 
 ---
+
+## Session 89 (May 2, 2026)
+**PH launch prep + stale count sweep.** Fixed stale blog post counts across 6 files that were missed in previous updates: ph.html (66→70 in 3 locations: hero stat, feature card, social proof), blog.html (63→70), index.html (63→70), pricing.html (63→70). Fixed product-hunt.md (63→70 in 2 places, 69→70 in gallery notes). Fixed reddit-saas.md (63→70). Created marketing/product-hunt-templates.md — pre-written engagement responses for PH launch comments (positive feedback, technical questions, feature requests, skeptical comments, Pro plan questions, competitor mentions). Verified ph.html is launch-ready (embedded calculator, objection handling, Pro upsell all intact). Verified Reddit post content is accurate for today's Showoff Saturday.
 
 ## Session 88 (May 2, 2026)
 **SEO audit + stale count cleanup.** Fixed missing index.html in sitemap.xml (was 116 URLs, now 117 — homepage was absent). Updated stale blog post counts from 69→70 and page counts from 115→117 across 8 files: blog-launching-on-product-hunt.html (3 refs), marketing/hackernews-showhn.md, marketing/twitter-content-calendar.md, marketing/directory-submissions.md, marketing/product-hunt.md, marketing/twitter-launch-thread.md, marketing/competitive-response-strategy.md (2 refs), help-requests/20260429-180004-HELP-REQUEST.md, BACKLOG-PREMIUM.md. Updated PROGRESS.md site status.
