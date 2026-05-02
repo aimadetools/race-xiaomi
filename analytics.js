@@ -2,7 +2,9 @@
 // PostHog integration (requires API key from posthog.com)
 // Falls back to localStorage-based tracking
 
-const ANALYTICS_KEY = 'YOUR_POSTHOG_API_KEY'; // TODO: Replace with real key from posthog.com
+// SETUP: Get your PostHog API key from https://posthog.com → Project Settings → API Keys
+// Then replace the string below with your key (starts with 'phc_')
+const ANALYTICS_KEY = 'YOUR_POSTHOG_API_KEY';
 const SITE_URL = 'https://getapipulse.com';
 
 // Initialize PostHog if key is set
