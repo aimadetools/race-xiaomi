@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI API Pricing Changelog — Every Price Change Tracked | APIpulse</title>
+    <meta name="description" content="Track every AI API pricing change in 2026. Grok 3 10x increase, Mistral Large 75% drop, DeepSeek V4 Pro 75% discount, and more. Updated weekly.">
+    <meta name="keywords" content="AI API pricing changes, LLM price changes 2026, API pricing updates, OpenAI price change, Anthropic pricing update, AI model pricing changelog">
+    <meta property="og:title" content="AI API Pricing Changelog — Every Price Change Tracked">
+    <meta property="og:description" content="Track every AI API pricing change in 2026. Updated weekly.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://getapipulse.com/og-image.png">
+    <meta property="og:url" content="https://getapipulse.com/pricing-changelog.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="AI API Pricing Changelog — Every Price Change Tracked">
+    <meta name="twitter:image" content="https://getapipulse.com/og-image.png">
+    <meta name="twitter:description" content="Track every AI API pricing change in 2026. Updated weekly.">
+    <link rel="canonical" href="https://getapipulse.com/pricing-changelog.html">
+    <link rel="alternate" type="application/rss+xml" title="APIpulse Blog" href="https://getapipulse.com/rss.xml">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="styles.css">
+    <script src="analytics.js" defer></script>
+    <script src="dynamic-date.js" defer></script>
+    <script src="shared.js" defer></script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "AI API Pricing Changelog",
+        "description": "Track every AI API pricing change in 2026.",
+        "url": "https://getapipulse.com/pricing-changelog.html",
+        "publisher": { "@type": "Organization", "name": "APIpulse", "url": "https://getapipulse.com" }
+    }
+    </script>
+    <style>
+        .content { max-width: 900px; margin: 0 auto; padding: 120px 24px 80px; }
+        h1 { font-size: clamp(28px, 4.5vw, 42px); font-weight: 800; margin-bottom: 12px; text-align: center; }
+        .subtitle { color: var(--text-secondary); font-size: 17px; margin-bottom: 16px; text-align: center; max-width: 700px; margin-left: auto; margin-right: auto; line-height: 1.6; }
+        .last-updated { text-align: center; font-size: 13px; color: var(--text-muted); margin-bottom: 48px; }
+
+        .summary-cards { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-bottom: 48px; }
+        .summary-card {
+            background: var(--bg-secondary); border: 1px solid var(--border);
+            border-radius: 12px; padding: 20px; text-align: center;
+        }
+        .summary-card .num { font-size: 28px; font-weight: 800; margin-bottom: 4px; }
+        .summary-card .num.drop { color: var(--green); }
+        .summary-card .num.up { color: #ef4444; }
+        .summary-card .num.new { color: var(--accent); }
+        .summary-card .label { font-size: 12px; color: var(--text-muted); }
+
+        .month-section { margin-bottom: 48px; }
+        .month-header {
+            font-size: 20px; font-weight: 700; margin-bottom: 20px;
+            padding-bottom: 12px; border-bottom: 2px solid var(--border);
+            display: flex; align-items: center; gap: 12px;
+        }
+        .month-header .badge {
+            font-size: 11px; font-weight: 700; padding: 3px 10px;
+            border-radius: 20px; text-transform: uppercase; letter-spacing: 0.5px;
+        }
+        .badge-drop { background: rgba(34,197,94,0.15); color: var(--green); }
+        .badge-up { background: rgba(239,68,68,0.15); color: #ef4444; }
+        .badge-new { background: rgba(99,102,241,0.15); color: var(--accent); }
+        .badge-rename { background: rgba(234,179,8,0.15); color: #eab308; }
+
+        .change-list { display: flex; flex-direction: column; gap: 12px; }
+        .change-item {
+            background: var(--bg-secondary); border: 1px solid var(--border);
+            border-radius: 12px; padding: 20px;
+            display: grid; grid-template-columns: auto 1fr auto; gap: 16px;
+            align-items: center;
+        }
+        .change-icon {
+            width: 40px; height: 40px; border-radius: 10px;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 18px; font-weight: 800; flex-shrink: 0;
+        }
+        .change-icon.drop { background: rgba(34,197,94,0.12); color: var(--green); }
+        .change-icon.up { background: rgba(239,68,68,0.12); color: #ef4444; }
+        .change-icon.new { background: rgba(99,102,241,0.12); color: var(--accent); }
+        .change-icon.rename { background: rgba(234,179,8,0.12); color: #eab308; }
+        .change-info h3 { font-size: 15px; font-weight: 700; margin-bottom: 4px; }
+        .change-info p { font-size: 13px; color: var(--text-secondary); line-height: 1.5; margin: 0; }
+        .change-meta { text-align: right; flex-shrink: 0; }
+        .change-date { font-size: 12px; color: var(--text-muted); }
+        .change-impact {
+            font-size: 13px; font-weight: 700; margin-top: 4px;
+            padding: 3px 10px; border-radius: 6px; display: inline-block;
+        }
+        .impact-major { background: rgba(239,68,68,0.1); color: #ef4444; }
+        .impact-moderate { background: rgba(234,179,8,0.1); color: #eab308; }
+        .impact-minor { background: rgba(34,197,94,0.1); color: var(--green); }
+
+        .cta-section {
+            background: linear-gradient(135deg, rgba(99,102,241,0.08), rgba(34,197,94,0.06));
+            border: 1px solid var(--accent); border-radius: 16px;
+            padding: 32px; text-align: center; margin-top: 48px;
+        }
+        .cta-section h2 { font-size: 22px; font-weight: 800; margin-bottom: 8px; }
+        .cta-section p { color: var(--text-secondary); font-size: 15px; margin-bottom: 20px; }
+
+        .related-links { margin-top: 48px; }
+        .related-links h2 { font-size: 20px; font-weight: 700; margin-bottom: 16px; }
+        .related-links ul { list-style: none; padding: 0; }
+        .related-links li { margin-bottom: 8px; }
+        .related-links a { color: var(--accent); text-decoration: none; font-weight: 500; }
+        .related-links a:hover { text-decoration: underline; }
+
+        @media (max-width: 768px) {
+            .summary-cards { grid-template-columns: repeat(2, 1fr); }
+            .change-item { grid-template-columns: 1fr; gap: 12px; }
+            .change-meta { text-align: left; }
+        }
+    </style>
+    <meta name="theme-color" content="#6366f1">
+</head>
+<body>
+    <a href="#main" class="skip-link">Skip to content</a>
+    <nav>
+        <div class="nav-inner">
+            <a href="index.html" class="logo">API<span>pulse</span></a>
+            <button class="hamburger" onclick="toggleMobileNav()" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+            <div class="nav-links">
+                <a href="calculator.html">Calculator</a>
+                <a href="compare.html">Compare</a>
+                <a href="cost-scenarios.html">Scenarios</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="use-cases.html">Use Cases</a>
+                <a href="about.html">About</a>
+                <a href="blog.html">Blog</a>
+                <a href="quiz.html">Quiz</a>
+                <a href="pricing-index.html">Pricing Index</a>
+                <a href="model-matrix.html">Model Matrix</a>
+                <a href="pricing-trends.html">Trends</a>
+                <a href="pricing-changelog.html">Changelog</a>
+                <a href="price-alerts.html">Price Alerts</a>
+                <a href="cheat-sheet.html">Cheat Sheet</a>
+                <a href="api-docs.html" style="color:var(--accent);">API</a>
+                <a href="token-estimator.html">Token Estimator</a>
+                <a href="pricing.html" class="nav-cta" onclick="if(window.trackEvent)window.trackEvent('pro_button_clicked',{source:'nav'})">Get Pro — $29</a>
+                <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
+            </div>
+        </div>
+    </nav>
+
+    <main id="main">
+
+    <div class="content">
+        <h1>AI API Pricing Changelog</h1>
+        <p class="subtitle">Every price change across OpenAI, Anthropic, Google, DeepSeek, Mistral, and more. We track it so you don't have to.</p>
+        <p class="last-updated">Last updated: May 1, 2026 &middot; Next update: June 2026</p>
+
+        <!-- Summary Cards -->
+        <div class="summary-cards">
+            <div class="summary-card">
+                <div class="num drop">-75%</div>
+                <div class="label">Mistral Large price drop</div>
+            </div>
+            <div class="summary-card">
+                <div class="num up">+10x</div>
+                <div class="label">Grok 3 price increase</div>
+            </div>
+            <div class="summary-card">
+                <div class="num drop">-75%</div>
+                <div class="label">DeepSeek V4 Pro discount</div>
+            </div>
+            <div class="summary-card">
+                <div class="num new">4</div>
+                <div class="label">New models added</div>
+            </div>
+        </div>
+
+        <!-- May 2026 -->
+        <section class="month-section">
+            <div class="month-header">
+                May 2026
+                <span class="badge badge-drop">Major Price Drops</span>
+            </div>
+            <div class="change-list">
+                <div class="change-item">
+                    <div class="change-icon drop">↓</div>
+                    <div class="change-info">
+                        <h3>DeepSeek V4 Pro — 75% Price Cut</h3>
+                        <p>DeepSeek dropped V4 Pro pricing from $1.75/$7.00 to <strong>$0.44/$0.87</strong> per 1M tokens. Now cheaper than GPT-4o mini for many workloads. Available via DeepSeek API.</p>
+                    </div>
+                    <div class="change-meta">
+                        <div class="change-date">May 2026</div>
+                        <div class="change-impact impact-major">Major</div>
+                    </div>
+                </div>
+                <div class="change-item">
+                    <div class="change-icon rename">↻</div>
+                    <div class="change-info">
+                        <h3>Gemini 3 Pro renamed to Gemini 3.1 Pro</h3>
+                        <p>Google renamed Gemini 3 Pro to Gemini 3.1 Pro. Pricing unchanged at <strong>$2.00/$12.00</strong> per 1M tokens. Model ID updated in our system.</p>
+                    </div>
+                    <div class="change-meta">
+                        <div class="change-date">May 2026</div>
+                        <div class="change-impact impact-minor">Rename</div>
+                    </div>
+                </div>
+                <div class="change-item">
+                    <div class="change-icon up">↑</div>
+                    <div class="change-info">
+                        <h3>xAI Grok 3 — 10x Price Increase</h3>
+                        <p>xAI increased Grok 3 pricing from $3.00/$15.00 to <strong>$30.00/$150.00</strong> per 1M tokens — a 10x increase. Now the most expensive model in our database. Grok 3 Mini remains at $3.00/$5.00.</p>
+                    </div>
+                    <div class="change-meta">
+                        <div class="change-date">May 2026</div>
+                        <div class="change-impact impact-major">Major</div>
+                    </div>
+                </div>
+                <div class="change-item">
+                    <div class="change-icon drop">↓</div>
+                    <div class="change-info">
+                        <h3>Mistral Large 3 — 75% Price Drop</h3>
+                        <p>Mistral dropped Large 3 pricing from $2.00/$6.00 to <strong>$0.50/$1.50</strong> per 1M tokens. Now positioned as a budget-tier model with mid-tier capabilities.</p>
+                    </div>
+                    <div class="change-meta">
+                        <div class="change-date">May 2026</div>
+                        <div class="change-impact impact-major">Major</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- April 2026 -->
+        <section class="month-section">
+            <div class="month-header">
+                April 2026
+                <span class="badge badge-new">New Models</span>
+            </div>
+            <div class="change-list">
+                <div class="change-item">
+                    <div class="change-icon new">+</div>
+                    <div class="change-info">
+                        <h3>Claude Opus 4.7 Released</h3>
+                        <p>Anthropic launched Claude Opus 4.7 at <strong>$5.00/$25.00</strong> per 1M tokens with 1M context window. Positioned below Claude 4 Opus ($15/$75) as a more accessible premium option.</p>
+                    </div>
+                    <div class="change-meta">
+                        <div class="change-date">Apr 2026</div>
+                        <div class="change-impact impact-moderate">New Model</div>
+                    </div>
+                </div>
+                <div class="change-item">
+                    <div class="change-icon new">+</div>
+                    <div class="change-info">
+                        <h3>Claude Sonnet 4.6 Released</h3>
+                        <p>Anthropic released Claude Sonnet 4.6 at <strong>$3.00/$15.00</strong> per 1M tokens with 1M context. Same pricing as Sonnet 4 but with improved capabilities.</p>
+                    </div>
+                    <div class="change-meta">
+                        <div class="change-date">Apr 2026</div>
+                        <div class="change-impact impact-moderate">New Model</div>
+                    </div>
+                </div>
+                <div class="change-item">
+                    <div class="change-icon new">+</div>
+                    <div class="change-info">
+                        <h3>OpenAI GPT-5.5 and GPT-5.5 Pro</h3>
+                        <p>OpenAI released GPT-5.5 at <strong>$5.00/$30.00</strong> and GPT-5.5 Pro at <strong>$30.00/$180.00</strong> per 1M tokens. Both with 1M context windows.</p>
+                    </div>
+                    <div class="change-meta">
+                        <div class="change-date">Apr 2026</div>
+                        <div class="change-impact impact-moderate">New Models</div>
+                    </div>
+                </div>
+                <div class="change-item">
+                    <div class="change-icon new">+</div>
+                    <div class="change-info">
+                        <h3>GPT-5.3 Codex Released</h3>
+                        <p>OpenAI's code-specialized model at <strong>$1.75/$14.00</strong> per 1M tokens. 400K context window. Optimized for code generation and analysis tasks.</p>
+                    </div>
+                    <div class="change-meta">
+                        <div class="change-date">Apr 2026</div>
+                        <div class="change-impact impact-moderate">New Model</div>
+                    </div>
+                </div>
+                <div class="change-item">
+                    <div class="change-icon new">+</div>
+                    <div class="change-info">
+                        <h3>DeepSeek V4 Pro and V4 Flash</h3>
+                        <p>DeepSeek launched V4 Pro at <strong>$1.75/$7.00</strong> (later reduced to $0.44/$0.87) and V4 Flash at <strong>$0.14/$0.28</strong> per 1M tokens. Both with 1M context windows.</p>
+                    </div>
+                    <div class="change-meta">
+                        <div class="change-date">Apr 2026</div>
+                        <div class="change-impact impact-moderate">New Models</div>
+                    </div>
+                </div>
+                <div class="change-item">
+                    <div class="change-icon new">+</div>
+                    <div class="change-info">
+                        <h3>Kimi K2.6 from Moonshot</h3>
+                        <p>Moonshot released Kimi K2.6 at <strong>$0.90/$3.75</strong> per 1M tokens with 256K context. Competitive mid-tier option from the Chinese AI lab.</p>
+                    </div>
+                    <div class="change-meta">
+                        <div class="change-date">Apr 2026</div>
+                        <div class="change-impact impact-minor">New Model</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Historical Context -->
+        <section class="month-section">
+            <div class="month-header">
+                The Big Picture: 2023–2026
+            </div>
+            <div class="change-list">
+                <div class="change-item">
+                    <div class="change-icon drop">↓</div>
+                    <div class="change-info">
+                        <h3>90% Average Price Drop Since 2023</h3>
+                        <p>When GPT-4 launched in March 2023, it cost <strong>$60 per 1M tokens</strong>. Today, comparable models cost $2.50–$5.00. Budget models like GPT-4o mini ($0.15/$0.60) have made AI accessible to every developer.</p>
+                    </div>
+                    <div class="change-meta">
+                        <div class="change-date">2023–2026</div>
+                        <div class="change-impact impact-major">Trend</div>
+                    </div>
+                </div>
+                <div class="change-item">
+                    <div class="change-icon new">+</div>
+                    <div class="change-info">
+                        <h3>Context Windows: 8K → 1M+</h3>
+                        <p>Maximum context windows grew from 8K tokens (GPT-3.5) to 1M+ tokens (Gemini, Claude). This enables entirely new use cases — full codebase analysis, long document processing, and multi-turn conversations without memory limits.</p>
+                    </div>
+                    <div class="change-meta">
+                        <div class="change-date">2023–2026</div>
+                        <div class="change-impact impact-major">Trend</div>
+                    </div>
+                </div>
+                <div class="change-item">
+                    <div class="change-icon drop">↓</div>
+                    <div class="change-info">
+                        <h3>Open-Source Models Closed the Gap</h3>
+                        <p>Llama 4 Scout ($0.11/$0.34) and DeepSeek V4 Flash ($0.14/$0.28) now compete with proprietary models on many tasks. The cost advantage of open-source inference is driving prices down across the industry.</p>
+                    </div>
+                    <div class="change-meta">
+                        <div class="change-date">2024–2026</div>
+                        <div class="change-impact impact-moderate">Trend</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <div class="cta-section">
+            <h2>Never Miss a Price Change</h2>
+            <p>Get notified when AI API prices drop (or increase). We check weekly and send alerts for significant changes.</p>
+            <a href="price-alerts.html" class="btn-primary" style="display:inline-block;">Subscribe to Price Alerts</a>
+        </div>
+
+        <!-- Related Links -->
+        <div class="related-links">
+            <h2>Related Resources</h2>
+            <ul>
+                <li><a href="pricing-trends.html">AI API Pricing Trends (2023–2026)</a> — Full historical analysis with charts</li>
+                <li><a href="calculator.html">Cost Calculator</a> — Calculate your monthly spend with current prices</li>
+                <li><a href="compare.html">Model Comparison</a> — Side-by-side comparison of any two models</li>
+                <li><a href="blog-pricing-trends-2026.html">Blog: LLM Pricing Trends in 2026</a> — Deep dive into what's driving prices down</li>
+                <li><a href="cheat-sheet.html">Pricing Cheat Sheet</a> — Printable reference card with all model prices</li>
+                <li><a href="model-matrix.html">Model Matrix</a> — Sortable grid of all 32 models across 10 providers</li>
+            </ul>
+        </div>
+    </div>
+
+    <button class="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">↑</button>
+
+    </main>
+
+    <footer>
+        <p>Pricing data last verified: <span class="verified-date"></span></p>
+        <p>&copy; 2026 APIpulse. <a href="index.html">Home</a> &middot; <a href="use-cases.html">Use Cases</a> &middot; <a href="about.html">About</a> &middot; <a href="blog.html">Blog</a>
+<a href="pricing-index.html">Pricing Index</a> &middot; <a href="model-matrix.html">Model Matrix</a> &middot; <a href="cost-scenarios.html">Scenarios</a> <a href="cost-scenarios.html">Scenarios</a> &middot; <a href="price-alerts.html">Price Alerts</a>middot; <a href="price-alerts.html">Price Alerts</a> <a href="cost-scenarios.html">Scenarios</a> &middot; <a href="price-alerts.html">Price Alerts</a>middot; <a href="pricing-changelog.html">Changelog</a> &middot; <a href="openai.html">OpenAI</a> &middot; <a href="anthropic.html">Anthropic</a> &middot; <a href="google.html">Google</a> &middot; <a href="mistral.html">Mistral</a> &middot; <a href="cohere.html">Cohere</a> &middot; <a href="deepseek.html">DeepSeek</a> &middot; <a href="xai.html">xAI</a> &middot; <a href="moonshot.html">Moonshot</a> &middot; <a href="together.html">Together.ai</a> &middot; <a href="ai21.html">AI21</a> &middot; <a href="pricing.html">Pricing</a> &middot; <a href="embed.html">Embed Widget</a> &middot; <a href="cheat-sheet.html">Cheat Sheet</a> &middot; <a href="api-docs.html">API</a> &middot; <a href="https://x.com/getapipulse" target="_blank" rel="noopener">Twitter</a> &middot; <a href="unsubscribe.html">Unsubscribe</a></p>
+    </footer>
+</body>
+</html>

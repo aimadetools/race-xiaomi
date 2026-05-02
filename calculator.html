@@ -168,6 +168,7 @@
                 <a href="pricing-index.html">Pricing Index</a>
                 <a href="model-matrix.html">Model Matrix</a>
                 <a href="pricing-trends.html">Trends</a>
+                <a href="pricing-changelog.html">Changelog</a>
                 <a href="price-alerts.html">Price Alerts</a>
                 <a href="cheat-sheet.html">Cheat Sheet</a>
                 <a href="api-docs.html" style="color:var(--accent);">API</a>
@@ -329,18 +330,41 @@
         </div>
     </div>
 
+    <!-- Pro Upsell — shown after calculator interaction -->
+    <section id="pro-upsell" style="max-width:700px;margin:0 auto;padding:0 24px 40px;display:none;">
+        <div style="background:linear-gradient(135deg, rgba(99,102,241,0.08), rgba(34,197,94,0.06));border:1px solid var(--accent);border-radius:16px;padding:32px;text-align:center;">
+            <h2 style="font-size:22px;font-weight:800;margin-bottom:8px;">Save more with APIpulse Pro</h2>
+            <p style="color:var(--text-secondary);font-size:15px;margin-bottom:20px;line-height:1.6;">You just found a cheaper model — now imagine having <strong>10 saved scenarios</strong>, <strong>PDF cost reports</strong> for your team, and <strong>personalized optimization tips</strong> that could cut your bill by up to 40%.</p>
+            <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin-bottom:20px;">
+                <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:10px;padding:14px 20px;min-width:160px;">
+                    <div style="font-size:22px;font-weight:800;color:var(--accent);">$29</div>
+                    <div style="font-size:12px;color:var(--text-muted);margin-top:2px;">one-time, lifetime</div>
+                </div>
+                <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:10px;padding:14px 20px;min-width:160px;">
+                    <div style="font-size:22px;font-weight:800;color:var(--green);">40%</div>
+                    <div style="font-size:12px;color:var(--text-muted);margin-top:2px;">avg. savings with tips</div>
+                </div>
+            </div>
+            <a href="https://buy.stripe.com/fZu7sL3Gw3GS0RQeoDeEo0a" class="btn-primary" style="display:inline-block;font-size:16px;padding:14px 32px;" target="_blank" rel="noopener" onclick="if(window.trackEvent)window.trackEvent('pro_button_clicked',{source:'calculator_upsell'})">Unlock Pro Features — $29</a>
+            <p style="font-size:12px;color:var(--text-muted);margin-top:12px;">No subscription. No account needed. Instant access.</p>
+        </div>
+    </section>
+
     <div class="info-section">
         <h2>How This Calculator Works</h2>
         <p>Enter your expected usage — tokens per request, requests per day, and days per month — and the calculator shows your estimated monthly cost for any of 32 LLM models across 10 providers. It also suggests the cheapest alternative if a cheaper model can handle your workload.</p>
 
         <h2>Supported Providers</h2>
         <ul>
-            <li><strong>OpenAI:</strong> GPT-5, GPT-5 mini, GPT-4o, GPT-4o mini</li>
-            <li><strong>Anthropic:</strong> Claude 4 Opus, Claude Sonnet 4, Claude Haiku 3.5</li>
-            <li><strong>Google:</strong> Gemini 2.5 Pro, Gemini 2.0 Flash</li>
-            <li><strong>Mistral:</strong> Large, Small</li>
+            <li><strong>OpenAI:</strong> GPT-5.5, GPT-5.5 Pro, GPT-5.3 Codex, GPT-5, GPT-5 mini, GPT-4o, GPT-4o mini, GPT-oss 120B/20B</li>
+            <li><strong>Anthropic:</strong> Claude Opus 4.7, Claude 4 Opus, Claude Sonnet 4.6, Claude Sonnet 4, Claude Haiku 3.5</li>
+            <li><strong>Google:</strong> Gemini 3.1 Pro, Gemini 2.5 Pro, Gemini 2.0 Flash</li>
+            <li><strong>DeepSeek:</strong> V4 Pro, V4 Flash, V3</li>
+            <li><strong>Mistral:</strong> Large 3, Small 4</li>
             <li><strong>Cohere:</strong> Command R+, Command R</li>
-            <li><strong>Meta (via Together.ai):</strong> Llama 3.1 70B, Llama 3.1 8B</li>
+            <li><strong>Meta (Together.ai):</strong> Llama 4 Scout, Llama 4 Maverick, Llama 3.1 70B, Llama 3.1 8B</li>
+            <li><strong>Moonshot:</strong> Kimi K2.6</li>
+            <li><strong>xAI:</strong> Grok 3, Grok 3 Mini</li>
             <li><strong>AI21:</strong> Jamba 1.5 Large</li>
         </ul>
 
@@ -384,7 +408,7 @@
     <footer>
         <p>Pricing data last verified: <span class="verified-date"></span></p>
         <p>&copy; 2026 APIpulse. <a href="index.html">Home</a> &middot; <a href="use-cases.html">Use Cases</a> &middot; <a href="about.html">About</a> &middot; <a href="blog.html">Blog</a>
-<a href="pricing-index.html">Pricing Index</a> &middot; <a href="model-matrix.html">Model Matrix</a> &middot; <a href="cost-scenarios.html">Scenarios</a> &middot; <a href="price-alerts.html">Price Alerts</a> &middot; <a href="openai.html">OpenAI</a> &middot; <a href="anthropic.html">Anthropic</a> &middot; <a href="google.html">Google</a> &middot; <a href="mistral.html">Mistral</a> &middot; <a href="cohere.html">Cohere</a> &middot; <a href="deepseek.html">DeepSeek</a> &middot; <a href="xai.html">xAI</a> &middot; <a href="moonshot.html">Moonshot</a> &middot; <a href="together.html">Together.ai</a> &middot; <a href="ai21.html">AI21</a> &middot; <a href="pricing.html">Pricing</a> &middot; <a href="embed.html">Embed Widget</a> &middot; <a href="cheat-sheet.html">Cheat Sheet</a> &middot; <a href="api-docs.html">API</a> &middot; <a href="https://x.com/getapipulse" target="_blank" rel="noopener">Twitter</a> &middot; <a href="unsubscribe.html">Unsubscribe</a></p>
+<a href="pricing-index.html">Pricing Index</a> &middot; <a href="model-matrix.html">Model Matrix</a> &middot; <a href="cost-scenarios.html">Scenarios</a> <a href="cost-scenarios.html">Scenarios</a> &middot; <a href="price-alerts.html">Price Alerts</a>middot; <a href="price-alerts.html">Price Alerts</a> <a href="cost-scenarios.html">Scenarios</a> &middot; <a href="price-alerts.html">Price Alerts</a>middot; <a href="pricing-changelog.html">Changelog</a> &middot; <a href="openai.html">OpenAI</a> &middot; <a href="anthropic.html">Anthropic</a> &middot; <a href="google.html">Google</a> &middot; <a href="mistral.html">Mistral</a> &middot; <a href="cohere.html">Cohere</a> &middot; <a href="deepseek.html">DeepSeek</a> &middot; <a href="xai.html">xAI</a> &middot; <a href="moonshot.html">Moonshot</a> &middot; <a href="together.html">Together.ai</a> &middot; <a href="ai21.html">AI21</a> &middot; <a href="pricing.html">Pricing</a> &middot; <a href="embed.html">Embed Widget</a> &middot; <a href="cheat-sheet.html">Cheat Sheet</a> &middot; <a href="api-docs.html">API</a> &middot; <a href="https://x.com/getapipulse" target="_blank" rel="noopener">Twitter</a> &middot; <a href="unsubscribe.html">Unsubscribe</a></p>
     </footer>
 
     <script>
@@ -430,6 +454,13 @@
             }
 
             setTimeout(() => results.classList.remove('calculating'), 300);
+
+            // Show Pro upsell after first meaningful calculation
+            if (totalCost > 0 && !window._upsellShown) {
+                window._upsellShown = true;
+                const upsell = document.getElementById('pro-upsell');
+                if (upsell) upsell.style.display = 'block';
+            }
 
             if (window.trackEvent && totalCost > 0) {
                 clearTimeout(window._calcTrackTimer);
