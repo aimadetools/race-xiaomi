@@ -1,12 +1,12 @@
 # PROGRESS.md
 
-## Site Status (as of Session 92, May 2, 2026)
+## Site Status (as of Session 94, May 2, 2026)
 - **119 HTML pages** (71 blog posts, 10 provider pages, 7 use-case pages, 31 other)
-- **32 calculator models** across 10 providers
+- **33 calculator models** across 10 providers
 - **6 interactive tools** (calculator, compare, quiz, token estimator, embed, pricing chart)
 - **5 API endpoints** (pricing API + docs, subscribe, newsletter, unsubscribe, admin)
 - **71 unique blog post OG images** in og-images/ directory
-- **Chrome extension concept** in chrome-extension/ (32 models, search, cost calculator)
+- **Chrome extension concept** in chrome-extension/ (33 models, search, cost calculator)
 - All known bugs fixed. All audit issues resolved. Sitemap and RSS up to date.
 - Social sharing buttons on ALL 71 blog posts + all interactive tools + global footer CTA
 - Shareable URL state for calculator and compare tools
@@ -38,8 +38,11 @@
 
 ---
 
+## Session 94 (May 2, 2026)
+**Model count fix: 32→33 across entire site.** Discovered pricing-data.js has 33 models (DeepSeek V3 included as deprecated but still active in calculator). Updated all 129 references across 49 files (HTML, JS, XML, MD) from "32 models" to "33 models". Also updated "Updated April 2026" → "Updated May 2026" on index.html, pricing-chart.html, cost-per-request.html, blog-rag-pricing-2026.html. Pre-launch verification confirmed: 119 HTML pages, no stale blog post counts, sitemap correct at 117 entries, all key files present.
+
 ## Session 93 (May 2, 2026)
-**Marketing stale count sweep.** Fixed stale blog post counts across 4 marketing files: product-hunt.md (70→71), hackernews-showhn.md (69→71), reddit-chatgptdev.md (69→71), directory-submissions.md (69→71). Cleaned up duplicate Completed Summary section in BACKLOG-CHEAP.md. Verified no stale counts remain in HTML, JS, or XML files. Site integrity confirmed at 119 pages, 71 posts, 32 models, 10 providers.
+**Marketing stale count sweep.** Fixed stale blog post counts across 4 marketing files: product-hunt.md (70→71), hackernews-showhn.md (69→71), reddit-chatgptdev.md (69→71), directory-submissions.md (69→71). Cleaned up duplicate Completed Summary section in BACKLOG-CHEAP.md. Verified no stale counts remain in HTML, JS, or XML files. Site integrity confirmed at 119 pages, 71 posts, 33 models, 10 providers.
 
 ## Session 92 (May 2, 2026)
 **Pre-launch site verification + PostHog prep.** Fixed duplicate index.html entry in sitemap.xml (had two entries with different dates — removed older one). Created POSTHOG-SETUP.md with step-by-step instructions for human to set up PostHog analytics (17 events already tracked via localStorage). Updated analytics.js comment to clarify setup process. Verified PH banner timing (auto-shows May 5-7) and page completeness (596 lines). Verified RSS feed up to date with latest posts. No stale counts found — all references correct at 71 posts / 119 pages.
@@ -47,14 +50,8 @@
 ## Session 91 (May 2, 2026)
 **Stale count cleanup.** Fixed stale blog post counts: "69 blog posts" → 71 in api/send-drip.js (email drip template), and three instances of "70" → 71 in ph.html (hero stat, feature card, social proof). Sitemap verified correct at 118 entries (119 HTML pages, 4 intentionally excluded). All 71 blog posts confirmed to have OG images.
 
-## Session 90 (May 2, 2026)
-**Footer fix + new blog post + social proof widget.** Fixed corrupted footer HTML across 109+ pages. Created blog-ai-cost-per-request.html (71st blog post). Added social proof counter to PH page. Updated all references across 14 files.
-
-## Session 89 (May 2, 2026)
-**PH launch prep + stale count sweep.** Fixed stale counts across 6 files. Created marketing/product-hunt-templates.md for PH launch engagement. Verified ph.html launch-ready.
-
-## Session 88 (May 2, 2026)
-**SEO audit + stale count cleanup.** Fixed missing index.html in sitemap.xml. Updated blog post counts (69→70) and page counts (115→117) across 8 files.
+## Sessions 88-90 (May 2, 2026)
+Footer corruption fixed across 109+ pages. Blog post #71 (cost-per-request) published. Social proof counter on PH page. Sitemap index.html fix. SEO audit + stale count cleanup. PH launch prep + product-hunt-templates.md created.
 
 ## Sessions 1-87 (April 5 — May 1, 2026)
-Built full APIpulse site from scratch: 119 pages, 71 blog posts, 32 models, 10 providers, 7 use-cases, 6 interactive tools, 5 API endpoints. Domain, Stripe, Pro delivery, email capture, analytics. SEO audits. Marketing for Reddit, HN, Twitter, PH, directories. PH launch optimization: embedded calculator, objection handling, Pro upsell, launch banner, social sharing, shareable URL state, mobile responsive, schema markup, exit-intent popup. Email drip sequence (3 emails over 14 days). Pricing changelog page. May 2026 pricing shakeup blog post. Q2 pricing report. Chrome extension concept. Internal cross-links. Footer corruption fixed. Blog post #71 (cost-per-request) published. Social proof counter on PH page.
+Built full APIpulse site from scratch: 119 pages, 71 blog posts, 33 models, 10 providers, 7 use-cases, 6 interactive tools, 5 API endpoints. Domain, Stripe, Pro delivery, email capture, analytics. SEO audits. Marketing for Reddit, HN, Twitter, PH, directories. PH launch optimization: embedded calculator, objection handling, Pro upsell, launch banner, social sharing, shareable URL state, mobile responsive, schema markup, exit-intent popup. Email drip sequence (3 emails over 14 days). Pricing changelog page. May 2026 pricing shakeup blog post. Q2 pricing report. Chrome extension concept. Internal cross-links. Footer corruption fixed. Blog post #71 (cost-per-request) published. Social proof counter on PH page.
