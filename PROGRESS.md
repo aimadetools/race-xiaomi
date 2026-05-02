@@ -1,6 +1,6 @@
 # PROGRESS.md
 
-## Site Status (as of Session 91, May 2, 2026)
+## Site Status (as of Session 92, May 2, 2026)
 - **119 HTML pages** (71 blog posts, 10 provider pages, 7 use-case pages, 31 other)
 - **32 calculator models** across 10 providers
 - **6 interactive tools** (calculator, compare, quiz, token estimator, embed, pricing chart)
@@ -37,6 +37,9 @@
 6. ~~Submit to directories~~ Partial: Futuretools ✅, SaaSHub ✅, others skipped
 
 ---
+
+## Session 92 (May 2, 2026)
+**Pre-launch site verification + PostHog prep.** Fixed duplicate index.html entry in sitemap.xml (had two entries with different dates — removed older one). Created POSTHOG-SETUP.md with step-by-step instructions for human to set up PostHog analytics (17 events already tracked via localStorage). Updated analytics.js comment to clarify setup process. Verified PH banner timing (auto-shows May 5-7) and page completeness (596 lines). Verified RSS feed up to date with latest posts. No stale counts found — all references correct at 71 posts / 119 pages.
 
 ## Session 91 (May 2, 2026)
 **Stale count cleanup.** Fixed stale blog post counts: "69 blog posts" → 71 in api/send-drip.js (email drip template), and three instances of "70" → 71 in ph.html (hero stat, feature card, social proof). Sitemap verified correct at 118 entries (119 HTML pages, 4 intentionally excluded). All 71 blog posts confirmed to have OG images.
