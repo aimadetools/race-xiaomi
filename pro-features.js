@@ -281,9 +281,9 @@ function getRecommendations() {
     }
     if (provider.includes('sonnet') && !provider.includes('haiku')) {
         recs.push({
-            title: 'Consider Claude Haiku 3.5 for high-volume tasks',
-            impact: 'Save ~73% on input costs',
-            detail: 'Haiku costs $0.80/M input vs $3.00/M for Sonnet. Great for classification, extraction, and simple generation.'
+            title: 'Consider Claude Haiku 4.5 for high-volume tasks',
+            impact: 'Save ~67% on input costs',
+            detail: 'Haiku costs $1.00/M input vs $3.00/M for Sonnet. Great for classification, extraction, and simple generation.'
         });
     }
     if (provider.includes('google-pro') && !provider.includes('flash')) {

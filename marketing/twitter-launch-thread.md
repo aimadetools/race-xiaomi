@@ -14,7 +14,7 @@ But pricing varies WILDLY:
 
 • GPT-4o: $2.50/$10 per 1M tokens
 • Gemini 2.5 Pro: $1.25/$10 per 1M tokens
-• Claude Haiku 3.5: $0.80/$4.00 per 1M tokens
+• Claude Haiku 4.5: $1.00/$5.00 per 1M tokens
 
 Same capabilities. Very different prices.
 

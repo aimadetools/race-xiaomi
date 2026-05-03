@@ -151,7 +151,7 @@ Thread 🧵
 Tweet 2:
 Budget tier:
 • GPT-4o mini: $0.15/$0.60 per 1M tokens
-• Claude Haiku 3.5: $0.80/$4.00 per 1M tokens
+• Claude Haiku 4.5: $1.00/$5.00 per 1M tokens
 • Gemini 2.0 Flash: $0.10/$0.40 per 1M tokens
 
 Winner: Google Gemini Flash — 33% cheaper than GPT-4o mini

@@ -16,7 +16,7 @@ const MODELS = [
   { name: 'Claude 4 Opus', provider: 'Anthropic', tier: 'Premium', input: 15.00, output: 75.00, context: '200K' },
   { name: 'Claude Sonnet 4.6', provider: 'Anthropic', tier: 'Mid', input: 3.00, output: 15.00, context: '1M' },
   { name: 'Claude Sonnet 4', provider: 'Anthropic', tier: 'Mid', input: 3.00, output: 15.00, context: '200K' },
-  { name: 'Claude Haiku 3.5', provider: 'Anthropic', tier: 'Budget', input: 0.80, output: 4.00, context: '200K' },
+  { name: 'Claude Haiku 4.5', provider: 'Anthropic', tier: 'Budget', input: 1.00, output: 5.00, context: '200K' },
   { name: 'Gemini 3.1 Pro', provider: 'Google', tier: 'Mid', input: 2.00, output: 12.00, context: '1M' },
   { name: 'Gemini 2.5 Pro', provider: 'Google', tier: 'Mid', input: 1.25, output: 10.00, context: '1M' },
   { name: 'Gemini 2.0 Flash', provider: 'Google', tier: 'Budget', input: 0.10, output: 0.40, context: '1M' },
