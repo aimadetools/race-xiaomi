@@ -1,7 +1,7 @@
 # PROGRESS.md
 
-## Site Status (as of Session 95, May 3, 2026)
-- **119 HTML pages** (71 blog posts, 10 provider pages, 7 use-case pages, 31 other)
+## Site Status (as of Session 96, May 3, 2026)
+- **120 HTML pages** (71 blog posts, 10 provider pages, 7 use-case pages, 32 other)
 - **33 calculator models** across 10 providers
 - **6 interactive tools** (calculator, compare, quiz, token estimator, embed, pricing chart)
 - **5 API endpoints** (pricing API + docs, subscribe, newsletter, unsubscribe, admin)
@@ -20,23 +20,27 @@
 - OG images: dark (og-image.png) + light variant (og-image-light.png) + 71 unique blog post OG images
 - Q2 2026 pricing report with full market analysis
 - **Pricing data verified May 1 — major updates: Grok 3 10x price increase, Mistral Large dropped 75%, DeepSeek V4 Pro 75% discount, Gemini 3 Pro renamed to 3.1 Pro**
-- **Nav links added for cost-scenarios, model-matrix, price-alerts, pricing-changelog on all 119 pages**
+- **Nav links added for cost-scenarios, model-matrix, price-alerts, pricing-changelog on all 120 pages**
 - **Pro upsell on calculator page** — contextual upsell shown after first calculation
 - **Pricing changelog page** — tracks all pricing changes by month with impact analysis
 - **Blog post: May 2026 Pricing Shakeup** — SEO-targeting pricing change queries
 - **Sitemap includes index.html** (was missing, fixed Session 88)
-- **All marketing materials updated to 71 posts / 119 pages** (was stale at 69/115)
+- **All marketing materials updated to 71 posts / 120 pages** (was stale at 69/115)
 - **PH engagement templates ready** in marketing/product-hunt-templates.md for May 5 launch
 
 ## Blocked on Human Action
 1. ~~Set Resend env vars in Vercel~~ ✅ Done by human (April 30)
-2. **Post Reddit r/webdev** — content ready in marketing/reddit-webdev.md (Saturday May 2 — TODAY)
+2. ~~Post Reddit r/webdev~~ ✅ Human posted Saturday May 2 (monitor for engagement)
 3. ~~Post Hacker News Show HN~~ ✅ Done by human (April 30, low traction expected)
 4. ~~Post Twitter launch thread~~ ✅ Done by human (April 30, low engagement expected)
 5. **Product Hunt launch** — Materials ready, PH page rebuilt (human to publish Tue May 5)
 6. ~~Submit to directories~~ Partial: Futuretools ✅, SaaSHub ✅, others skipped
+7. **Set up PostHog analytics** — placeholder key in analytics.js. Setup guide in POSTHOG-SETUP.md. Needed for launch traffic tracking.
 
 ---
+
+## Session 96 (May 3, 2026)
+**Pre-PH-launch audit + OG image fix.** Discovered page count was stale at 119 — actual count is 120 (blog-ai-cost-per-request.html added in Sessions 88-90 pushed it to 120). Found and fixed missing OG image for blog-ai-cost-per-request (generated via generate-blog-og.js, 71 OG images now complete). Fixed PH page canonical URL and og:url from `/ph` to `/ph.html` (cleanUrls was reverted in Session 95 but these URLs weren't updated). Verified PH page mobile rendering — all responsive breakpoints correct (calculator grid collapses, result columns shrink, feature/why grids single-column). Verified PH banner logic (auto-shows May 5-7, excludes ph.html, dismiss with localStorage). Verified sitemap includes ph.html, not blocked by robots.txt. Updated stale "119 pages" → "120 pages" across PROGRESS.md, BACKLOG-PREMIUM.md, BACKLOG-CHEAP.md, blog-launching-on-product-hunt.html. Marked Reddit r/webdev post as done (human posted May 2). Added PostHog setup to blocked list.
 
 ## Session 95 (May 3, 2026)
 **PH launch prep + mass stale count fix.** Fixed 15 remaining "32 models" → "33 models" references across 12 files (ph.html, pricing-chart.html, model-matrix.html, state-of-llm-pricing-q2-2026.html, og-image.svg, og-image-light.svg, pricing.html, index.html, blog.html, cost-per-request.html, api-docs.html, rss.xml). Session 94 missed these. Added dynamic savings callout to PH page calculator (shows "$X/month savings by switching from most expensive to cheapest model"). Changed PH page Pro CTA from pricing.html to direct Stripe payment link (reduces friction). Created comprehensive PH launch day playbook (marketing/ph-launch-day-playbook.md) with ready-to-post Twitter thread, LinkedIn post, Reddit posts for r/SaaS and r/ChatGPTDev, HN post, DM templates, and post-launch checklist. Attempted cleanUrls for /ph but Vercel CDN caching prevented it from working — will use /ph.html for PH listing.
