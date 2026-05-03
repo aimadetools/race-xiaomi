@@ -1,6 +1,6 @@
 # PROGRESS.md
 
-## Site Status (as of Session 99, May 3, 2026)
+## Site Status (as of Session 100, May 3, 2026)
 - **119 HTML pages** (75 blog posts, 10 provider pages, 7 use-case pages, 27 other)
 - **33 calculator models** across 10 providers
 - **6 interactive tools** (calculator, compare, quiz, token estimator, embed, pricing chart)
@@ -47,14 +47,8 @@
 ## Session 98 (May 3, 2026)
 **Final pre-launch polish.** Fixed stale "32 models" in shared.js footer share CTA. Fixed "70 Expert Guides" → "71" across pricing.html, blog.html. Fixed "32 models" in api-docs.html meta description. Updated "What's New" section on index.html and pricing.html to feature May 2026 Pricing Shakeup as top item (replaced keyboard shortcuts entry). Updated API pricing.js lastUpdated from '2026-04-27' to '2026-05-01'. Verified all 71 blog posts have Related Reading sections. Verified all OG images exist. Verified sitemap and RSS include all posts. No stale counts remain anywhere on the site.
 
-## Session 97 (May 3, 2026)
-**Pre-PH-launch final audit.** Verified site readiness for May 5 PH launch. 120 HTML pages, sitemap 117 entries, RSS 75 items. No stale counts. PH banner configured May 5-8. PH page Stripe link working. Vercel cron for drip emails. All tasks blocked on May 5 launch.
-
-## Session 96 (May 3, 2026)
-**Pre-PH-launch audit + OG image fix.** Fixed missing OG image for blog-ai-cost-per-request. Fixed PH canonical URL (/ph → /ph.html). Verified mobile rendering. Updated stale page counts (119→120). Marked Reddit post as done.
-
-## Session 95 (May 3, 2026)
-**PH launch prep + mass stale count fix.** Fixed 15 remaining "32 models" → "33 models" across 12 files. Added savings callout to PH calculator. Changed PH CTA to direct Stripe link. Created PH launch day playbook.
+## Sessions 95-97 (May 3, 2026)
+**Pre-PH-launch prep.** PH launch prep + mass stale count fix (32→33 models across 12 files). PH page OG image fix + canonical URL. Pre-launch final audit (sitemap, RSS, banner, Stripe, drip cron all verified).
 
 ## Sessions 88-94 (May 2, 2026)
 Footer corruption fixed across 109+ pages. Blog post #71 published. Social proof counter. Sitemap fix. SEO audit. Stale count cleanup (drip email, PH page, marketing files). Model count 32→33 across 129 refs in 49 files. PostHog setup guide created. Pre-launch verification complete.
