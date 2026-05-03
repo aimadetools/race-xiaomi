@@ -100,7 +100,7 @@ module.exports = function handler(req, res) {
             count: data.length,
             providers: providers,
             tiers: tiers,
-            lastUpdated: '2026-04-27',
+            lastUpdated: '2026-05-01',
             source: 'https://getapipulse.com',
             docs: 'https://getapipulse.com/pricing-index.html'
         }
