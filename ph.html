@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>APIpulse — Compare AI API Pricing Across 32 Models | Product Hunt</title>
+    <title>APIpulse — Compare AI API Pricing Across 33 Models | Product Hunt</title>
     <meta name="description" content="Compare LLM API pricing across OpenAI, Anthropic, Google, Mistral, and 6 more providers. 33 models. Instant cost calculations. Free forever.">
-    <meta property="og:title" content="APIpulse — Compare AI API Pricing Across 32 Models">
+    <meta property="og:title" content="APIpulse — Compare AI API Pricing Across 33 Models">
     <meta property="og:description" content="Compare LLM API pricing across 10 providers. Calculate monthly spend and optimize costs.">
     <meta property="og:type" content="website">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="APIpulse — Compare AI API Pricing Across 32 Models">
+    <meta name="twitter:title" content="APIpulse — Compare AI API Pricing Across 33 Models">
     <meta property="og:image" content="https://getapipulse.com/og-image.png">
     <meta property="og:url" content="https://getapipulse.com/ph">
     <meta name="twitter:image" content="https://getapipulse.com/og-image.png">
@@ -289,7 +289,7 @@
             </div>
             <div class="hero-stats">
                 <div class="hero-stat">
-                    <div class="number">32</div>
+                    <div class="number">33</div>
                     <div class="label">Models Tracked</div>
                 </div>
                 <div class="hero-stat">
@@ -345,6 +345,7 @@
                     <div id="ph-results"></div>
                 </div>
             </div>
+            <div id="ph-savings"></div>
             <div class="live-calc-cta">
                 <a href="calculator.html">Open full calculator with recommendations, sharing & more →</a>
             </div>
@@ -361,7 +362,7 @@
                 </div>
                 <div class="why-card">
                     <h3>Real calculations, not estimates</h3>
-                    <p>Enter your actual token counts and request volume. Get exact dollar amounts per model. ChatGPT can't do math with 32 pricing tables simultaneously.</p>
+                    <p>Enter your actual token counts and request volume. Get exact dollar amounts per model. ChatGPT can't do math with 33 pricing tables simultaneously.</p>
                 </div>
                 <div class="why-card">
                     <h3>Side-by-side comparison</h3>
@@ -412,7 +413,7 @@
             <h2>Built for developers who build with AI</h2>
             <div class="proof-grid">
                 <div class="proof-item">
-                    <div class="metric">32</div>
+                    <div class="metric">33</div>
                     <div class="desc">Models across 10 providers</div>
                 </div>
                 <div class="proof-item">
@@ -456,7 +457,7 @@
                     <span class="pro-amount">$29</span>
                     <span class="pro-period">one-time, lifetime access</span>
                 </div>
-                <a href="pricing.html" class="btn-primary" style="padding:14px 40px;font-size:16px;" onclick="if(window.trackEvent)window.trackEvent('pro_button_clicked',{source:'ph_page'})">Get Pro Access</a>
+                <a href="https://buy.stripe.com/fZu7sL3Gw3GS0RQeoDeEo0a" class="btn-primary" style="padding:14px 40px;font-size:16px;" target="_blank" rel="noopener" onclick="if(window.trackEvent)window.trackEvent('pro_button_clicked',{source:'ph_page'})">Get Pro Access — $29</a>
                 <p style="font-size:13px;color:var(--text-muted);margin-top:12px;">No subscription. Pay once, use forever.</p>
             </div>
         </section>
@@ -529,6 +530,20 @@
                     '<div class="model-total">$' + m.totalCost.toFixed(2) + '</div>' +
                     '</div>';
             }).join('');
+
+            // Savings callout
+            const cheapest = models[0];
+            const mostExpensive = models[models.length - 1];
+            const savings = mostExpensive.totalCost - cheapest.totalCost;
+            const savingsYearly = savings * 12;
+            const savingsEl = document.getElementById('ph-savings');
+            if (savingsEl && savings > 0) {
+                const pct = ((savings / mostExpensive.totalCost) * 100).toFixed(0);
+                savingsEl.innerHTML = '<div style="background:rgba(34,197,94,0.08);border:1px solid rgba(34,197,94,0.2);border-radius:12px;padding:16px 20px;margin-top:16px;text-align:center;">' +
+                    '<div style="font-size:15px;font-weight:700;color:var(--green);">Switching from ' + mostExpensive.name + ' to ' + cheapest.name + ' saves you <strong>$' + savings.toFixed(2) + '/month</strong></div>' +
+                    '<div style="font-size:13px;color:var(--text-muted);margin-top:4px;">That\'s $' + savingsYearly.toFixed(2) + '/year — ' + pct + '% cheaper. <a href="calculator.html" style="color:var(--accent);text-decoration:underline;">See full breakdown →</a></div>' +
+                    '</div>';
+            }
 
             // Update header with per-1M label
             const header = document.querySelector('.live-result-header');

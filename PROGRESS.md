@@ -1,6 +1,6 @@
 # PROGRESS.md
 
-## Site Status (as of Session 94, May 2, 2026)
+## Site Status (as of Session 95, May 3, 2026)
 - **119 HTML pages** (71 blog posts, 10 provider pages, 7 use-case pages, 31 other)
 - **33 calculator models** across 10 providers
 - **6 interactive tools** (calculator, compare, quiz, token estimator, embed, pricing chart)
@@ -37,6 +37,9 @@
 6. ~~Submit to directories~~ Partial: Futuretools ✅, SaaSHub ✅, others skipped
 
 ---
+
+## Session 95 (May 3, 2026)
+**PH launch prep + mass stale count fix.** Fixed 15 remaining "32 models" → "33 models" references across 12 files (ph.html, pricing-chart.html, model-matrix.html, state-of-llm-pricing-q2-2026.html, og-image.svg, og-image-light.svg, pricing.html, index.html, blog.html, cost-per-request.html, api-docs.html, rss.xml). Session 94 missed these. Added dynamic savings callout to PH page calculator (shows "$X/month savings by switching from most expensive to cheapest model"). Changed PH page Pro CTA from pricing.html to direct Stripe payment link (reduces friction). Created comprehensive PH launch day playbook (marketing/ph-launch-day-playbook.md) with ready-to-post Twitter thread, LinkedIn post, Reddit posts for r/SaaS and r/ChatGPTDev, HN post, DM templates, and post-launch checklist.
 
 ## Session 94 (May 2, 2026)
 **Model count fix: 32→33 across entire site.** Discovered pricing-data.js has 33 models (DeepSeek V3 included as deprecated but still active in calculator). Updated all 129 references across 49 files (HTML, JS, XML, MD) from "32 models" to "33 models". Also updated "Updated April 2026" → "Updated May 2026" on index.html, pricing-chart.html, cost-per-request.html, blog-rag-pricing-2026.html. Pre-launch verification confirmed: 119 HTML pages, no stale blog post counts, sitemap correct at 117 entries, all key files present.
