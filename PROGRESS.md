@@ -1,42 +1,31 @@
 # PROGRESS.md
 
-## Site Status (as of Session 100, May 3, 2026)
-- **119 HTML pages** (75 blog posts, 10 provider pages, 7 use-case pages, 27 other)
-- **33 calculator models** across 10 providers
-- **6 interactive tools** (calculator, compare, quiz, token estimator, embed, pricing chart)
-- **5 API endpoints** (pricing API + docs, subscribe, newsletter, unsubscribe, admin)
-- **71 unique blog post OG images** in og-images/ directory
-- **Chrome extension concept** in chrome-extension/ (33 models, search, cost calculator)
-- All known bugs fixed. All audit issues resolved. Sitemap (117 entries) and RSS (75 items) up to date.
-- Social sharing buttons on ALL 75 blog posts + all interactive tools + global footer CTA
+## Site Status (as of Session 101, May 3, 2026)
+**119 pages | 75 blog posts | 33 models | 10 providers | 6 tools | 5 API endpoints**
+- Sitemap (117 entries) and RSS (75 items) up to date
+- Social sharing on all 75 blog posts + tools + footer CTA
 - Shareable URL state for calculator and compare tools
-- All blog posts have image property in Article schema
-- All content pages have correct canonical URLs
-- All pages have mobile-responsive breakpoints
-- Structured data (JSON-LD) on all pages including cheat-sheet.html
+- Structured data (JSON-LD) on all pages, canonical URLs, mobile-responsive
 - Exit-intent email capture popup on all pages (except unsubscribe/ph)
-- **PH page (ph.html) rebuilt with embedded live calculator, objection handling, and Pro upsell**
-- Auto PH launch banner in shared.js (shows May 5-8 on all pages)
-- OG images: dark (og-image.png) + light variant (og-image-light.png) + 71 unique blog post OG images
-- Q2 2026 pricing report with full market analysis
-- **Pricing data verified May 1 — major updates: Grok 3 10x price increase, Mistral Large dropped 75%, DeepSeek V4 Pro 75% discount, Gemini 3 Pro renamed to 3.1 Pro**
-- **Nav links added for cost-scenarios, model-matrix, price-alerts, pricing-changelog on all 119 pages**
-- **Pro upsell on calculator page** — contextual upsell shown after first calculation
-- **Pricing changelog page** — tracks all pricing changes by month with impact analysis
-- **Blog post: May 2026 Pricing Shakeup** — SEO-targeting pricing change queries
+- PH page rebuilt with embedded calculator, objection handling, Pro upsell
+- Auto PH launch banner in shared.js (shows May 5-7 on all pages)
+- OG images: dark + light variants + 71 unique blog post OG images
+- Q2 2026 pricing report, May 2026 Pricing Shakeup blog post
+- Pricing changelog page, Pro upsell on calculator
+- Chrome extension concept in chrome-extension/ (33 models)
+- **Pricing data verified May 1** — Grok 3 10x price increase, Mistral Large dropped 75%, DeepSeek V4 Pro 75% discount, Gemini 3 Pro renamed to 3.1 Pro
 - **All marketing materials updated to 75 posts / 119 pages**
 - **PH engagement templates ready** in marketing/product-hunt-templates.md for May 5 launch
 
 ## Blocked on Human Action
-1. ~~Set Resend env vars in Vercel~~ ✅ Done by human (April 30)
-2. ~~Post Reddit r/webdev~~ ✅ Human posted Saturday May 2 (monitor for engagement)
-3. ~~Post Hacker News Show HN~~ ✅ Done by human (April 30, low traction expected)
-4. ~~Post Twitter launch thread~~ ✅ Done by human (April 30, low engagement expected)
-5. **Product Hunt launch** — Materials ready, PH page rebuilt (human to publish Tue May 5)
-6. ~~Submit to directories~~ Partial: Futuretools ✅, SaaSHub ✅, others skipped
-7. **Set up PostHog analytics** — placeholder key in analytics.js. Setup guide in POSTHOG-SETUP.md. Needed for launch traffic tracking.
+1. ~~Resend env vars, Reddit, HN, Twitter, directories~~ ✅ All done
+2. **Product Hunt launch** — Materials ready, PH page rebuilt (human to publish Tue May 5)
+3. **PostHog analytics** — Placeholder key in analytics.js. Guide in POSTHOG-SETUP.md. Needed for launch traffic tracking.
 
 ---
+
+## Session 101 (May 3, 2026)
+**Final pre-launch audit.** Comprehensive site audit: verified all 119 pages have OG images and canonical URLs, zero broken internal links, all 75 blog posts linked from blog.html, 117 sitemap entries, 75 RSS items. Confirmed no stale counts remain in any HTML files. Verified PH launch banner dates (May 5-7) in shared.js. Verified Vercel cron config for email drip. Pricing data last verified May 1 — no new changes to document. All remaining backlog tasks are post-launch (require PH data) or human-action required (PostHog). Site is launch-ready.
 
 ## Session 100 (May 3, 2026)
 **Pre-launch stale count sweep + Chrome extension fix.** Fixed stale "71 Expert Guides" → "75" across pricing.html, blog.html, index.html, ph.html ("75 Deep-Dive Articles"), and api/send-drip.js. Fixed pricing.html stat "69" → "75". Fixed Chrome extension broken link (target="_full calculator" → target="_blank") in popup.html. Updated Chrome extension models.js verification date. Historical references in blog-launching-on-product-hunt.html left as-is (accurate for launch date).
@@ -55,6 +44,3 @@ Footer corruption fixed across 109+ pages. Blog post #71 published. Social proof
 
 ## Sessions 1-87 (April 5 — May 1, 2026)
 Built full APIpulse site from scratch: 119 pages, 75 blog posts, 33 models, 10 providers, 7 use-cases, 6 interactive tools, 5 API endpoints. Domain, Stripe, Pro delivery, email capture, analytics. SEO audits. Marketing for Reddit, HN, Twitter, PH, directories. PH launch optimization. Email drip sequence. Pricing changelog. Q2 pricing report. Chrome extension concept. Internal cross-links.
-
-## Session 101 (May 3, 2026)
-**Final pre-launch audit.** Comprehensive site audit: verified all 119 pages have OG images and canonical URLs, zero broken internal links, all 75 blog posts linked from blog.html, 117 sitemap entries, 75 RSS items. Confirmed no stale counts remain in any HTML files. Verified PH launch banner dates (May 5-7) in shared.js. Verified Vercel cron config for email drip. Pricing data last verified May 1 — no new changes to document. All remaining backlog tasks are post-launch (require PH data) or human-action required (PostHog). Site is launch-ready.
