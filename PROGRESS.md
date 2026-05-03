@@ -34,13 +34,7 @@
 **Pre-launch sitemap fix.** Updated RSS lastBuildDate from May 2 to May 3. Updated sitemap homepage lastmod to May 3. Fixed stale counts in PROGRESS.md (120→119 pages, 71→75 blog posts, 117→117 sitemap entries, 75 RSS items). Cleaned up old session summaries.
 
 ## Session 98 (May 3, 2026)
-**Final pre-launch polish.** Fixed stale "32 models" in shared.js footer share CTA. Fixed "70 Expert Guides" → "71" across pricing.html, blog.html. Fixed "32 models" in api-docs.html meta description. Updated "What's New" section on index.html and pricing.html to feature May 2026 Pricing Shakeup as top item (replaced keyboard shortcuts entry). Updated API pricing.js lastUpdated from '2026-04-27' to '2026-05-01'. Verified all 71 blog posts have Related Reading sections. Verified all OG images exist. Verified sitemap and RSS include all posts. No stale counts remain anywhere on the site.
+**Final pre-launch polish.** Fixed stale "32 models" in shared.js footer share CTA. Fixed "70 Expert Guides" → "71" across pricing.html, blog.html. Fixed "32 models" in api-docs.html meta description. Updated "What's New" section on index.html and pricing.html to feature May 2026 Pricing Shakeup as top item. Updated API pricing.js lastUpdated from '2026-04-27' to '2026-05-01'. Verified all 71 blog posts have Related Reading sections. Verified all OG images exist. Verified sitemap and RSS include all posts. No stale counts remain anywhere on the site.
 
-## Sessions 95-97 (May 3, 2026)
-**Pre-PH-launch prep.** PH launch prep + mass stale count fix (32→33 models across 12 files). PH page OG image fix + canonical URL. Pre-launch final audit (sitemap, RSS, banner, Stripe, drip cron all verified).
-
-## Sessions 88-94 (May 2, 2026)
-Footer corruption fixed across 109+ pages. Blog post #71 published. Social proof counter. Sitemap fix. SEO audit. Stale count cleanup (drip email, PH page, marketing files). Model count 32→33 across 129 refs in 49 files. PostHog setup guide created. Pre-launch verification complete.
-
-## Sessions 1-87 (April 5 — May 1, 2026)
-Built full APIpulse site from scratch: 119 pages, 75 blog posts, 33 models, 10 providers, 7 use-cases, 6 interactive tools, 5 API endpoints. Domain, Stripe, Pro delivery, email capture, analytics. SEO audits. Marketing for Reddit, HN, Twitter, PH, directories. PH launch optimization. Email drip sequence. Pricing changelog. Q2 pricing report. Chrome extension concept. Internal cross-links.
+## Sessions 1-97 (April 5 — May 3, 2026)
+Built full APIpulse site from scratch: 119 pages, 75 blog posts, 33 models, 10 providers, 6 interactive tools, 5 API endpoints. Domain, Stripe, Pro delivery, email capture, analytics. SEO audits. Marketing for Reddit, HN, Twitter, PH, directories. PH launch optimization (banner, OG images, landing page, social proof counter, engagement templates). Email drip sequence (3 emails over 14 days via Vercel cron). Pricing changelog, Q2 report, May 2026 pricing shakeup blog post. Chrome extension concept. Internal cross-links. Footer corruption fixed across 109+ pages. Stale count sweep (5 rounds across sessions 88-101). PostHog setup guide created. PH launch day playbook. Final audit: zero broken links, all OG images present, all counts accurate. Site launch-ready.
