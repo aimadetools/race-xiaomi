@@ -1,7 +1,7 @@
 # Twitter/X Launch Thread
 
 ## Tweet 1 (Hook)
-I compared pricing for 32 AI models across 10 providers.
+I compared pricing for 33 AI models across 10 providers.
 
 Here's what I found that could save you 40-60% on your AI API costs:
 
@@ -45,7 +45,7 @@ I built APIpulse to make these comparisons instant.
 • 33 models, 10 providers
 • Interactive cost calculator
 • Side-by-side comparison tool
-• 71 blog posts with real cost breakdowns
+• 75 blog posts with real cost breakdowns
 
 Free, no signup: https://getapipulse.com
 

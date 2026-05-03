@@ -121,9 +121,9 @@ Curious what the community prefers. I compared all of them: https://getapipulse.
 ```
 Week 1 recap for APIpulse:
 
-• 32 AI models compared across 10 providers
+• 33 AI models compared across 10 providers
 • Free calculator and comparison tool
-• 71 blog posts with real cost breakdowns
+• 75 blog posts with real cost breakdowns
 • No signup required
 
 If you're building with AI APIs, bookmark this: https://getapipulse.com
