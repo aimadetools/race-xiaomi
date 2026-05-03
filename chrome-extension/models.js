@@ -1,6 +1,6 @@
 // APIpulse Chrome Extension — Embedded Pricing Data
 // Synced with pricing-data.js from getapipulse.com
-// Last verified: May 1, 2026
+// Last verified: May 3, 2026
 
 const MODELS = [
   { name: 'GPT-5.5', provider: 'OpenAI', tier: 'Premium', input: 5.00, output: 30.00, context: '1M' },

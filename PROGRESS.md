@@ -38,6 +38,9 @@
 
 ---
 
+## Session 100 (May 3, 2026)
+**Pre-launch stale count sweep + Chrome extension fix.** Fixed stale "71 Expert Guides" → "75" across pricing.html, blog.html, index.html, ph.html ("75 Deep-Dive Articles"), and api/send-drip.js. Fixed pricing.html stat "69" → "75". Fixed Chrome extension broken link (target="_full calculator" → target="_blank") in popup.html. Updated Chrome extension models.js verification date. Historical references in blog-launching-on-product-hunt.html left as-is (accurate for launch date).
+
 ## Session 99 (May 3, 2026)
 **Pre-launch sitemap fix.** Updated RSS lastBuildDate from May 2 to May 3. Updated sitemap homepage lastmod to May 3. Fixed stale counts in PROGRESS.md (120→119 pages, 71→75 blog posts, 117→117 sitemap entries, 75 RSS items). Cleaned up old session summaries.
 
