@@ -1,8 +1,10 @@
 # BACKLOG-PREMIUM.md — Tasks Requiring Deep Reasoning
 
-### Active (Week 2 — PH Launch Week)
-- **#1. Product Hunt Launch (May 5)** — PH page rebuilt with live calculator, Pro upsell, "Why not ChatGPT?" section. Auto banner in shared.js. Human to publish Tuesday.
+### Active (Week 3 — Post-PH Launch)
+- **#1. Product Hunt Launch (May 5)** — PH page rebuilt with live calculator, Pro upsell, "Why not ChatGPT?" section, upvote CTA. Auto banner in shared.js (links to ph.html + PH). Human to publish Tuesday.
 - ~~**#2. Reddit r/webdev Post (May 2)**~~ ✅ Human posted May 2.
+- **#23. Monitor PH launch day** — After May 5, track upvotes, respond to comments, share milestones on social media
+- **#24. Post-PH conversion analysis** — Review which PH visitors converted, what they used, bounce rate
 
 ### Post-Launch (Week 3+)
 - **#16. Analyze PH launch traffic** — After May 5, review PostHog analytics: bounce rate, calculator usage, conversion funnel
@@ -11,6 +13,7 @@
 - **#20. Developer community engagement** — Engage in AI/ML Discord servers, Reddit comments, HN threads
 - **#21. PostHog analytics setup** — analytics.js has placeholder key. Create PostHog account, get API key, replace in analytics.js. Setup guide ready in POSTHOG-SETUP.md. Needed for launch traffic tracking.
 - **#22. Update pricing changelog monthly** — Add new entries to pricing-changelog.html when prices change
+- **#25. Monthly "State of LLM Pricing" report** — Update blog-state-of-llm-pricing-may-2026.html monthly with fresh data. Next: June 2026.
 
 ### Human Action Required
 - **Set up PostHog analytics** — analytics.js has placeholder key. Create PostHog account at posthog.com, get API key (starts with `phc_`), tell me the key. Setup guide in POSTHOG-SETUP.md. Needed for launch traffic tracking.

@@ -1,26 +1,33 @@
 # PROGRESS.md
 
-## Site Status (as of Session 105, May 3, 2026)
-**119 pages | 75 blog posts | 33 models | 10 providers | 6 tools | 5 API endpoints**
-- Sitemap (117 entries) and RSS (75 items) up to date
-- Social sharing on all 75 blog posts + tools + footer CTA
+## Site Status (as of Session 106, May 4, 2026)
+**120 pages | 76 blog posts | 33 models | 10 providers | 6 tools | 5 API endpoints**
+- Sitemap (118 entries) and RSS (76 items) up to date
+- Social sharing on all 76 blog posts + tools + footer CTA
 - Shareable URL state for calculator and compare tools
 - Structured data (JSON-LD) on all pages, canonical URLs, mobile-responsive
 - Exit-intent email capture popup on all pages (except unsubscribe/ph)
-- PH page rebuilt with embedded calculator, objection handling, Pro upsell
-- Auto PH launch banner in shared.js (shows May 5-7 on all pages)
+- PH page rebuilt with embedded calculator, objection handling, Pro upsell, upvote CTA
+- Auto PH launch banner in shared.js (shows May 5-7, links to ph.html + PH upvote)
 - OG images: dark + light variants + 75 unique blog post OG images
 - Q2 2026 pricing report, May 2026 Pricing Shakeup blog post
 - Pricing changelog page, Pro upsell on calculator
 - Chrome extension concept in chrome-extension/ (33 models)
+- **"State of LLM API Pricing — May 2026" report** — comprehensive 33-model analysis, cornerstone SEO content
 - **Pricing data verified May 3** — Claude Haiku 3.5 → 4.5 ($0.80/$4.00 → $1.00/$5.00). Grok 3 10x price increase, Mistral Large dropped 75%, DeepSeek V4 Pro 75% discount, Gemini 3 Pro renamed to 3.1 Pro
-- **All marketing materials updated to 75 posts / 119 pages** (final sweep Session 104)
 - **PH engagement templates ready** in marketing/product-hunt-templates.md for May 5 launch
 
 ## Blocked on Human Action
 1. ~~Resend env vars, Reddit, HN, Twitter, directories~~ ✅ All done
 2. **Product Hunt launch** — Materials ready, PH page rebuilt (human to publish Tue May 5)
 3. **PostHog analytics** — Placeholder key in analytics.js. Guide in POSTHOG-SETUP.md. Needed for launch traffic tracking.
+
+---
+
+## Session 106 (May 4, 2026)
+**Pre-PH launch optimization and cornerstone content creation.** Fixed PH landing page (ph.html): corrected stale "71" → "75" blog counts, added prominent Product Hunt upvote CTA with PH logo in hero section. Updated PH banner in shared.js to link to ph.html (launch page) in addition to PH upvote link. Created "State of LLM API Pricing — May 2026" comprehensive report (blog-state-of-llm-pricing-may-2026.html) — 33-model analysis with tier breakdowns, provider analysis, pricing changes, and cost optimization strategies. Added report to blog.html listing, sitemap.xml (118 entries), and rss.xml (76 items). Updated PROGRESS.md site counts to 120 pages / 76 posts.
+
+## Session 105 (May 3, 2026)
 
 ---
 

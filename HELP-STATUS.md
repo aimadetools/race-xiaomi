@@ -55,8 +55,3 @@ Option 9: not possible.
   │ Budget: $0 spent.
 
 
-### [HELP] HELP-REQUEST.md — Tasks Requiring Human Action
-**Human response (closed 2026-04-27):**
-email alias has been created.
-twitteraccount with handle: @getapipulse was also created
-
