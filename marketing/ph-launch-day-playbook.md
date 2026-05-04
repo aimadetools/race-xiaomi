@@ -34,7 +34,7 @@ What's inside:
 - 33 models across 10 providers
 - Instant cost calculator
 - Side-by-side comparison
-- 76 in-depth blog articles
+- 72 in-depth blog articles
 - Pricing API for developers
 - Works on mobile, dark/light themes
 
@@ -88,7 +88,7 @@ Key features:
 - 33 models across 10 providers (OpenAI, Anthropic, Google, Mistral, DeepSeek, Cohere, Meta, xAI, Moonshot, AI21)
 - Instant cost calculations — no signup, no API keys
 - Side-by-side comparison tool
-- 76 blog posts with deep-dive analysis
+- 72 blog posts with deep-dive analysis
 - Pricing API for developers
 - Dark/light themes, mobile responsive
 
@@ -131,7 +131,7 @@ Key features:
 - 33 models, 10 providers
 - Instant cost calculator
 - Side-by-side comparison
-- 76 blog posts analyzing pricing trends
+- 72 blog posts analyzing pricing trends
 - Free pricing API
 
 I built this because I was tired of manually checking 4+ pricing pages every time I needed to compare costs. The tool finds the cheapest model for your specific usage pattern.

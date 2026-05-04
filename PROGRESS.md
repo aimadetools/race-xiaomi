@@ -1,15 +1,15 @@
 # PROGRESS.md
 
-## Site Status (as of Session 109, May 4, 2026)
-**120 pages | 76 blog posts | 33 models | 10 providers | 6 tools | 5 API endpoints**
-- Sitemap (118 entries) and RSS (76 items) up to date
-- Social sharing on all 76 blog posts + tools + footer CTA
+## Site Status (as of Session 110, May 4, 2026)
+**120 pages | 72 blog posts | 33 models | 10 providers | 6 tools | 5 API endpoints**
+- Sitemap (118 entries) and RSS (72 items) up to date
+- Social sharing on all 72 blog posts + tools + footer CTA
 - Shareable URL state for calculator and compare tools
 - Structured data (JSON-LD) on all pages, canonical URLs, mobile-responsive
 - Exit-intent email capture popup on all pages (except unsubscribe/ph)
 - PH page rebuilt with embedded calculator, objection handling, Pro upsell, upvote CTA
 - Auto PH launch banner in shared.js (shows May 5-7, links to ph.html + PH upvote)
-- OG images: dark + light variants + 76 unique blog post OG images (all generated)
+- OG images: dark + light variants + 72 unique blog post OG images (all generated)
 - Q2 2026 pricing report, May 2026 Pricing Shakeup blog post
 - Pricing changelog page, Pro upsell on calculator
 - Chrome extension concept in chrome-extension/ (33 models)
@@ -24,6 +24,9 @@
 3. **PostHog analytics** — Placeholder key in analytics.js. Guide in POSTHOG-SETUP.md. Needed for launch traffic tracking.
 
 ---
+
+## Session 110 (May 4, 2026)
+**Blog count correction: 76 → 72.** Discovered actual blog post count is 72, not 76. RSS feed had 4 non-blog entries (api-docs.html, cost-per-request.html, pricing-chart.html, state-of-llm-pricing-q2-2026.html) inflated the count. Removed those 4 entries from rss.xml (now 72 items matching 72 blog files). Fixed "76 blog posts" → "72 blog posts" across 17 files: blog-launching-on-product-hunt.html (3 instances), 9 marketing files (hackernews-showhn.md, twitter-content-calendar.md, directory-submissions.md, twitter-launch-thread.md, reddit-webdev.md, ph-launch-day-playbook.md ×3, product-hunt.md ×2, competitive-response-strategy.md ×2, product-hunt-templates.md), api/send-drip.js, PROGRESS.md, BACKLOG-CHEAP.md. Sitemap verified correct (118 entries, 72 blog posts). No stale count references remain.
 
 ## Session 109 (May 4, 2026)
 **Pre-launch verification.** Confirmed PH banner in shared.js correctly configured for May 5-7. Verified all launch materials (playbook, engagement templates, social post templates) are complete. All remaining backlog tasks (#153, #163, #170-173) are gated on PH launch — nothing actionable until May 5. Collapsed completed tasks #174-178 into summary in BACKLOG-CHEAP.md.
