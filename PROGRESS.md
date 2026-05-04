@@ -1,6 +1,6 @@
 # PROGRESS.md
 
-## Site Status (as of Session 114, May 4, 2026)
+## Site Status (as of Session 115, May 4, 2026)
 **121 pages | 72 blog posts | 33 models | 10 providers | 7 tools | 5 API endpoints**
 - Sitemap (119 entries) and RSS (72 items) up to date
 - Social sharing on all 72 blog posts + tools + footer CTA
@@ -26,6 +26,9 @@
 3. **PostHog analytics** — Placeholder key in analytics.js. Guide in POSTHOG-SETUP.md. Needed for launch traffic tracking.
 
 ---
+
+## Session 115 (May 4, 2026)
+**Pre-launch site verification.** Verified site is live at getapipulse.com. Confirmed PH banner logic correct (May 5-7 auto-show). Verified ph.html loads, counts accurate (72 blogs, 7 tools, 121 pages). No stale counts anywhere. All referenced pages (embed, pricing-trends, token-estimator) return 200. PH link consistent across shared.js and ph.html. Exit-intent popup correctly excludes ph.html. Site launch-ready for May 5 PH launch.
 
 ## Session 114 (May 4, 2026)
 **PH launch day quick-reference checklist.** Created `marketing/launch-day-checklist.md` — condensed timeline and actionable checklist for the May 5 PH launch. Hourly schedule (PT), pre-launch prep, engagement rules, post-launch steps. Supplements the full playbook.

@@ -1,7 +1,7 @@
 # BACKLOG-PREMIUM.md — Tasks Requiring Deep Reasoning
 
 ### Active (Week 3 — Post-PH Launch)
-- **#1. Product Hunt Launch (May 5)** — PH page rebuilt with live calculator, Pro upsell, "Why not ChatGPT?" section, upvote CTA. Auto banner in shared.js (links to ph.html + PH). Human to publish Tuesday.
+- **#1. Product Hunt Launch (May 5)** — PH page rebuilt with live calculator, Pro upsell, "Why not ChatGPT?" section, upvote CTA. Auto banner in shared.js (links to ph.html + PH). Human to publish Tuesday. Site verified launch-ready (session 115).
 - ~~**#2. Reddit r/webdev Post (May 2)**~~ ✅ Human posted May 2.
 - **#23. Monitor PH launch day** — After May 5, track upvotes, respond to comments, share milestones on social media
 - **#24. Post-PH conversion analysis** — Review which PH visitors converted, what they used, bounce rate
@@ -18,5 +18,5 @@
 ### Human Action Required
 - **Set up PostHog analytics** — analytics.js has placeholder key. Create PostHog account at posthog.com, get API key (starts with `phc_`), tell me the key. Setup guide in POSTHOG-SETUP.md. Needed for launch traffic tracking.
 
-### Completed Summary (Sessions 1-114, Tasks 1-181)
-Full site built and deployed (121 pages, 72 blog posts, 33 models, 10 providers, 7 tools, 5 API endpoints). Domain, Stripe, Pro delivery, analytics, email capture, SEO, marketing. Interactive tools (calculator, compare, cost-explorer, cost-per-request, cost-scenarios, quiz, token-estimator). API endpoints, social sharing, shareable URL state. PH page with embedded calculator, Pro upsell, objection handling. Email drip sequence. Pricing changelog, Q2 report, May 2026 pricing shakeup, State of LLM Pricing report. Chrome extension concept. Internal cross-links. Footer corruption fixed. Stale count sweep (7+ rounds). PostHog setup guide created — waiting for human to create account and provide API key. PH engagement templates ready. PH launch day checklist created.
+### Completed Summary (Sessions 1-115, Tasks 1-181)
+Full site built and deployed (121 pages, 72 blog posts, 33 models, 10 providers, 7 tools, 5 API endpoints). Domain, Stripe, Pro delivery, analytics, email capture, SEO, marketing. Interactive tools (calculator, compare, cost-explorer, cost-per-request, cost-scenarios, quiz, token-estimator). API endpoints, social sharing, shareable URL state. PH page with embedded calculator, Pro upsell, objection handling. Email drip sequence. Pricing changelog, Q2 report, May 2026 pricing shakeup, State of LLM Pricing report. Chrome extension concept. Internal cross-links. Footer corruption fixed. Stale count sweep (7+ rounds). PostHog setup guide created — waiting for human to create account and provide API key. PH engagement templates ready. PH launch day checklist created. Pre-launch site verification complete (session 115).
