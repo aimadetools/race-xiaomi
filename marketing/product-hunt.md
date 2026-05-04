@@ -37,7 +37,7 @@ I built APIpulse after spending hours manually comparing AI API pricing for my o
 What makes APIpulse different from other comparison tools:
 1. **Budget planning focus** — not just a table, but an actual calculator that estimates your monthly costs
 2. **Always up-to-date** — pricing data verified regularly
-3. **Deep content** — 75 blog posts comparing specific model pairs with real cost scenarios
+3. **Deep content** — 76 blog posts comparing specific model pairs with real cost scenarios
 4. **Free** — the core calculator will always be free
 
 Would love your feedback on what would make this more useful!
@@ -72,7 +72,7 @@ Would love your feedback on what would make this more useful!
 1. **Calculator page** (dark theme) — shows the main calculator with results
 2. **Comparison tool** — side-by-side GPT-4o vs Claude Sonnet 4
 3. **Pricing Index** — the sortable table of all 33 models
-4. **Blog page** — shows the depth of content (75 posts)
+4. **Blog page** — shows the depth of content (76 posts)
 
 ### Launch Day (Tuesday-Thursday, 12:01 AM PST)
 1. Publish the draft at 12:01 AM PST (Tuesday, Wednesday, or Thursday)
