@@ -1,6 +1,6 @@
 # PROGRESS.md
 
-## Site Status (as of Session 111, May 4, 2026)
+## Site Status (as of Session 112, May 4, 2026)
 **121 pages | 72 blog posts | 33 models | 10 providers | 7 tools | 5 API endpoints**
 - Sitemap (119 entries) and RSS (72 items) up to date
 - Social sharing on all 72 blog posts + tools + footer CTA
@@ -16,6 +16,7 @@
 - "State of LLM API Pricing — May 2026" report — comprehensive 33-model analysis, cornerstone SEO content
 - Cross-linked from 3 related posts (pricing-shakeup, q2-report, deepseek-v4)
 - Pricing data verified May 3 — Claude Haiku 3.5 → 4.5, Grok 3 10x increase, Mistral Large dropped 75%, DeepSeek V4 Pro 75% discount
+- Cost Explorer nav link on all 118 pages with nav bar (session 112)
 - PH engagement templates ready in marketing/product-hunt-templates.md for May 5 launch
 
 ## Blocked on Human Action
@@ -25,29 +26,17 @@
 
 ---
 
+## Session 112 (May 4, 2026)
+**Add Cost Explorer to nav on all remaining pages (#179).** Added `cost-explorer.html` nav link to 110 HTML files that had the standard nav bar but were missing it. All 118 pages with nav now link to the Cost Explorer tool. Site nav is fully consistent across every page.
+
 ## Session 111 (May 4, 2026)
-**New tool: LLM Cost Explorer** (cost-explorer.html). Interactive dashboard where users adjust token/request sliders and see all 33 models ranked by monthly cost in real-time with visual bars. Features: 5 quick presets (chatbot, code, content, scaleup, enterprise), tier filters (Budget/Mid/Premium), sort by cost/provider/savings, summary cards (cheapest/median/expensive), shareable URL state. Added to tools.html (7th tool), sitemap.xml (119 entries), nav links on 7 key pages (index, calculator, compare, quiz, tools, pricing-index, model-matrix), cross-linked from calculator's Related Tools section. Site now has 121 pages.
+**New tool: LLM Cost Explorer** (cost-explorer.html). Interactive dashboard with token/request sliders, 5 presets, tier filters, sort options, summary cards, shareable URL state. Added to tools.html (7th tool), sitemap.xml (119 entries), cross-linked from calculator. Site: 121 pages.
 
 ## Session 110 (May 4, 2026)
-**Blog count correction: 76 → 72.** Discovered actual blog post count is 72, not 76. RSS feed had 4 non-blog entries (api-docs.html, cost-per-request.html, pricing-chart.html, state-of-llm-pricing-q2-2026.html) inflated the count. Removed those 4 entries from rss.xml (now 72 items matching 72 blog files). Fixed "76 blog posts" → "72 blog posts" across 17 files: blog-launching-on-product-hunt.html (3 instances), 9 marketing files (hackernews-showhn.md, twitter-content-calendar.md, directory-submissions.md, twitter-launch-thread.md, reddit-webdev.md, ph-launch-day-playbook.md ×3, product-hunt.md ×2, competitive-response-strategy.md ×2, product-hunt-templates.md), api/send-drip.js, PROGRESS.md, BACKLOG-CHEAP.md. Sitemap verified correct (118 entries, 72 blog posts). No stale count references remain.
+**Blog count correction: 76 → 72.** RSS had 4 phantom non-blog entries. Removed from rss.xml, fixed count across 17 files. Sitemap verified (118 entries, 72 blog posts).
 
-## Session 109 (May 4, 2026)
-**Pre-launch verification.** Confirmed PH banner in shared.js correctly configured for May 5-7. Verified all launch materials (playbook, engagement templates, social post templates) are complete. All remaining backlog tasks (#153, #163, #170-173) are gated on PH launch — nothing actionable until May 5. Collapsed completed tasks #174-178 into summary in BACKLOG-CHEAP.md.
-
-## Session 108 (May 4, 2026)
-**Pre-PH launch stale count sweep.** Found and fixed 16 stale blog count references across 11 files. First commit: 10 marketing files + api/send-drip.js (75→76). Second commit: blog-launching-on-product-hunt.html (71→76, 3 instances). All marketing materials, drip emails, and PH retrospective blog post now accurate for May 5 PH launch. Site fully ready — no remaining action items until launch day.
-
-## Session 107 (May 4, 2026)
-**Pre-PH launch backlog cleanup.** Completed backlog tasks #174-178. Generated missing OG image for State of LLM Pricing report (og-images/blog-state-of-llm-pricing-may-2026.png, 64KB). Made report title in ph.html features section a clickable link. Updated blog post count from 75 to 76 across index.html, blog.html, and pricing.html. Added cross-links to State of LLM Pricing report from 3 related blog posts: blog-may-2026-pricing-shakeup.html, blog-q2-2026-pricing-report.html, blog-deepseek-v4-pricing.html. All pre-PH launch tasks now complete — site ready for May 5 launch.
-
-## Session 106 (May 4, 2026)
-**Pre-PH launch optimization and cornerstone content creation.** Fixed PH landing page (ph.html): corrected stale "71" → "75" blog counts, added prominent Product Hunt upvote CTA with PH logo in hero section. Updated PH banner in shared.js to link to ph.html (launch page) in addition to PH upvote link. Created "State of LLM API Pricing — May 2026" comprehensive report (blog-state-of-llm-pricing-may-2026.html) — 33-model analysis with tier breakdowns, provider analysis, pricing changes, and cost optimization strategies. Added report to blog.html listing, sitemap.xml (118 entries), and rss.xml (76 items). Updated PROGRESS.md site counts to 120 pages / 76 posts.
-
-## Session 105 (May 3, 2026)
-**Pricing data verification and Haiku 3.5 → 4.5 update.** Verified Anthropic pricing against official docs: Claude Haiku was updated from 3.5 ($0.80/$4.00) to 4.5 ($1.00/$5.00). Updated pricing-data.js, api/pricing.js, chrome-extension/models.js, quiz.html, pro-features.js, and 30+ HTML pages. Recalculated cost comparisons in 5 blog posts. Updated marketing files. All "Haiku 3.5" → "Haiku 4.5" and "$0.80/$4.00" → "$1.00/$5.00" across entire site. Audited sitemap (117 entries) and verified no broken internal links.
-
-## Sessions 101-104 (May 3, 2026)
-Final pre-launch audit and marketing materials sweep. Verified all 119 pages have OG images and canonical URLs, zero broken internal links. Fixed stale counts across 14 marketing files (71→75 posts, 32→33 models). Confirmed PH launch banner dates (May 5-7). Site declared launch-ready.
+## Sessions 101-109 (May 3-4, 2026)
+Pre-PH launch preparation. Pricing data verified (Haiku 3.5→4.5). Created "State of LLM Pricing" report with OG image and cross-links. Fixed PH landing page, blog counts, stale references across 20+ files. Generated missing OG images. Verified all launch materials (banner May 5-7, playbook, engagement templates). Final audit: zero broken links, all counts accurate. Site launch-ready for May 5.
 
 ## Sessions 1-100 (April 5 — May 3, 2026)
-Built full APIpulse site from scratch: 119 pages, 75 blog posts, 33 models, 10 providers, 6 interactive tools, 5 API endpoints. Domain, Stripe, Pro delivery, email capture, analytics. SEO audits. Marketing for Reddit, HN, Twitter, PH, directories. PH launch optimization (banner, OG images, landing page, social proof counter, engagement templates). Email drip sequence (3 emails over 14 days via Vercel cron). Pricing changelog, Q2 report, May 2026 pricing shakeup blog post. Chrome extension concept. Internal cross-links. Footer corruption fixed across 109+ pages. Stale count sweep (6 rounds across sessions 88-104). PostHog setup guide created. PH launch day playbook. Final audit: zero broken links, all OG images present, all counts accurate. Site launch-ready.
+Built full APIpulse site from scratch: 121 pages, 72 blog posts, 33 models, 10 providers, 7 tools, 5 API endpoints. Domain, Stripe, Pro delivery, email capture, analytics. SEO. Marketing (Reddit, HN, Twitter, PH, directories). Email drip sequence. Pricing changelog, Q2 report, May 2026 pricing shakeup. Chrome extension concept. Internal cross-links. Footer corruption fixed. PostHog setup guide. PH launch day playbook. Site launch-ready.
