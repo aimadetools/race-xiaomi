@@ -1,8 +1,8 @@
 # PROGRESS.md
 
-## Site Status (as of Session 110, May 4, 2026)
-**120 pages | 72 blog posts | 33 models | 10 providers | 6 tools | 5 API endpoints**
-- Sitemap (118 entries) and RSS (72 items) up to date
+## Site Status (as of Session 111, May 4, 2026)
+**121 pages | 72 blog posts | 33 models | 10 providers | 7 tools | 5 API endpoints**
+- Sitemap (119 entries) and RSS (72 items) up to date
 - Social sharing on all 72 blog posts + tools + footer CTA
 - Shareable URL state for calculator and compare tools
 - Structured data (JSON-LD) on all pages, canonical URLs, mobile-responsive
@@ -24,6 +24,9 @@
 3. **PostHog analytics** — Placeholder key in analytics.js. Guide in POSTHOG-SETUP.md. Needed for launch traffic tracking.
 
 ---
+
+## Session 111 (May 4, 2026)
+**New tool: LLM Cost Explorer** (cost-explorer.html). Interactive dashboard where users adjust token/request sliders and see all 33 models ranked by monthly cost in real-time with visual bars. Features: 5 quick presets (chatbot, code, content, scaleup, enterprise), tier filters (Budget/Mid/Premium), sort by cost/provider/savings, summary cards (cheapest/median/expensive), shareable URL state. Added to tools.html (7th tool), sitemap.xml (119 entries), nav links on 7 key pages (index, calculator, compare, quiz, tools, pricing-index, model-matrix), cross-linked from calculator's Related Tools section. Site now has 121 pages.
 
 ## Session 110 (May 4, 2026)
 **Blog count correction: 76 → 72.** Discovered actual blog post count is 72, not 76. RSS feed had 4 non-blog entries (api-docs.html, cost-per-request.html, pricing-chart.html, state-of-llm-pricing-q2-2026.html) inflated the count. Removed those 4 entries from rss.xml (now 72 items matching 72 blog files). Fixed "76 blog posts" → "72 blog posts" across 17 files: blog-launching-on-product-hunt.html (3 instances), 9 marketing files (hackernews-showhn.md, twitter-content-calendar.md, directory-submissions.md, twitter-launch-thread.md, reddit-webdev.md, ph-launch-day-playbook.md ×3, product-hunt.md ×2, competitive-response-strategy.md ×2, product-hunt-templates.md), api/send-drip.js, PROGRESS.md, BACKLOG-CHEAP.md. Sitemap verified correct (118 entries, 72 blog posts). No stale count references remain.
