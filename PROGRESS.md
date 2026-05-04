@@ -1,6 +1,6 @@
 # PROGRESS.md
 
-## Site Status (as of Session 107, May 4, 2026)
+## Site Status (as of Session 108, May 4, 2026)
 **120 pages | 76 blog posts | 33 models | 10 providers | 6 tools | 5 API endpoints**
 - Sitemap (118 entries) and RSS (76 items) up to date
 - Social sharing on all 76 blog posts + tools + footer CTA
@@ -24,6 +24,9 @@
 3. **PostHog analytics** — Placeholder key in analytics.js. Guide in POSTHOG-SETUP.md. Needed for launch traffic tracking.
 
 ---
+
+## Session 108 (May 4, 2026)
+**Pre-PH launch stale count sweep.** Found and fixed 16 stale blog count references across 11 files. First commit: 10 marketing files + api/send-drip.js (75→76). Second commit: blog-launching-on-product-hunt.html (71→76, 3 instances). All marketing materials, drip emails, and PH retrospective blog post now accurate for May 5 PH launch. Site fully ready — no remaining action items until launch day.
 
 ## Session 107 (May 4, 2026)
 **Pre-PH launch backlog cleanup.** Completed backlog tasks #174-178. Generated missing OG image for State of LLM Pricing report (og-images/blog-state-of-llm-pricing-may-2026.png, 64KB). Made report title in ph.html features section a clickable link. Updated blog post count from 75 to 76 across index.html, blog.html, and pricing.html. Added cross-links to State of LLM Pricing report from 3 related blog posts: blog-may-2026-pricing-shakeup.html, blog-q2-2026-pricing-report.html, blog-deepseek-v4-pricing.html. All pre-PH launch tasks now complete — site ready for May 5 launch.
