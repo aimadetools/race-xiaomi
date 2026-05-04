@@ -1,6 +1,6 @@
 # PROGRESS.md
 
-## Site Status (as of Session 112, May 4, 2026)
+## Site Status (as of Session 113, May 4, 2026)
 **121 pages | 72 blog posts | 33 models | 10 providers | 7 tools | 5 API endpoints**
 - Sitemap (119 entries) and RSS (72 items) up to date
 - Social sharing on all 72 blog posts + tools + footer CTA
@@ -25,6 +25,9 @@
 3. **PostHog analytics** — Placeholder key in analytics.js. Guide in POSTHOG-SETUP.md. Needed for launch traffic tracking.
 
 ---
+
+## Session 113 (May 4, 2026)
+**Fix stale counts on PH launch page.** ph.html showed "76 Blog Articles" and "6 Interactive tools" — corrected to 72 and 7 respectively (3 locations in ph.html, 1 in blog-launching-on-product-hunt.html). Page count in blog post corrected 120→121.
 
 ## Session 112 (May 4, 2026)
 **Add Cost Explorer to nav on all remaining pages (#179).** Added `cost-explorer.html` nav link to 110 HTML files that had the standard nav bar but were missing it. All 118 pages with nav now link to the Cost Explorer tool. Site nav is fully consistent across every page.
