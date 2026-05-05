@@ -20,7 +20,7 @@
 ---
 
 ## Session 125 (May 5, 2026)
-**PH Launch Day — date bug fix, stale counts, pricing verification.** Fixed blog-launching-on-product-hunt.html published date from May 6 to May 5 (launch day). Fixed "72 in-depth blog articles" → "73" in PH-LAUNCH-DAY-POSTS.md and ph-launch-day-playbook.md. Verified site health (all key pages returning 200). Weekly pricing verification: Anthropic/Google/DeepSeek prices match. GPT-5 pricing flagged (LiteLLM shows $1.25/$10 vs our $10/$30 — needs direct OpenAI verification, site returned 403). Gemini 2.0 Flash/Flash-Lite deprecated (shutdown June 1, 2026). New preview models available.
+**PH Launch Day — date bug fix, stale counts, pricing verification, GPT-5 pricing correction.** Fixed blog-launching-on-product-hunt.html published date from May 6 to May 5. Fixed "72 in-depth blog articles" → "73" in 2 marketing files. Verified site health. Weekly pricing verification: Anthropic/Google/DeepSeek prices match. GPT-5 pricing corrected ($10/$30 → $1.25/$10) and GPT-5 mini ($0.40/$1.60 → $0.25/$2.00) based on LiteLLM data (OpenAI site returned 403). Updated pricing-data.js, openai.html, and all blog post references. Gemini 2.0 Flash/Flash-Lite deprecated (shutdown June 1, 2026).
 
 ## Session 124 (May 5, 2026)
 **Model count fix + documentation cleanup.** Discovered pricing-data.js had 32 models but site claimed 33. Added Gemini 2.0 Flash Lite ($0.075/$0.30) as 33rd model. Updated hardcoded dropdowns in 5 HTML files. Fixed "29 more models" → "30 more models" in 2 blog files. Collapsed Sessions 101-119 in PROGRESS.md. Cleaned up "Blocked on Human Action" section. Collapsed completed sections in both BACKLOG files into concise summaries. Fixed stale "118 pages" → "121 pages" in BACKLOG-CHEAP.md.
