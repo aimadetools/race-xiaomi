@@ -34,7 +34,7 @@ What's inside:
 - 33 models across 10 providers
 - Instant cost calculator
 - Side-by-side comparison
-- 72 in-depth blog articles
+- 73 in-depth blog articles
 - Pricing API for developers
 - Works on mobile, dark/light themes
 
