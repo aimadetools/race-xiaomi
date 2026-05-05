@@ -1,6 +1,6 @@
 # PROGRESS.md
 
-## Site Status (as of Session 124, May 5, 2026)
+## Site Status (as of Session 125, May 5, 2026)
 **121 pages | 73 blog posts | 33 models | 10 providers | 7 tools | 6 API endpoints**
 - PH launch day: PH page conversion-optimized (sticky mobile CTA, exit popup, PH badge, enhanced savings)
 - Pricing page: PH Exclusive badge, launch week urgency, accurate counts (33 models, 73 guides)
@@ -19,20 +19,14 @@
 
 ---
 
+## Session 125 (May 5, 2026)
+**PH Launch Day — date bug fix + stale count sweep.** Fixed blog-launching-on-product-hunt.html published date from May 6 to May 5 (launch day). Fixed "72 in-depth blog articles" → "73" in PH-LAUNCH-DAY-POSTS.md and ph-launch-day-playbook.md. Verified site health (all key pages returning 200).
+
 ## Session 124 (May 5, 2026)
 **Model count fix + documentation cleanup.** Discovered pricing-data.js had 32 models but site claimed 33. Added Gemini 2.0 Flash Lite ($0.075/$0.30) as 33rd model. Updated hardcoded dropdowns in 5 HTML files. Fixed "29 more models" → "30 more models" in 2 blog files. Collapsed Sessions 101-119 in PROGRESS.md. Cleaned up "Blocked on Human Action" section. Collapsed completed sections in both BACKLOG files into concise summaries. Fixed stale "118 pages" → "121 pages" in BACKLOG-CHEAP.md.
 
-## Session 123 (May 5, 2026)
-**PH Launch Day — stale blog post count sweep.** Fixed stale "72 blog posts" references to "73" across 13 files: PH retrospective blog post, pricing page, drip email template, and 10 marketing materials (HN show HN, PH launch day posts, Twitter content calendar, directory submissions, PH playbook, product-hunt.md, competitive response strategy, Twitter launch thread, PH templates, Reddit webdev draft).
-
-## Session 122 (May 5, 2026)
-**PH Launch Day — site health check, cross-links, PROGRESS cleanup.** Verified all key pages return 200 (homepage, blog, calculator, PH page, pricing, sitemap, RSS). Sitemap confirmed 121 entries, RSS 73 items. Added cross-links to PH launch retrospective blog post from 4 related posts (cost-optimization-guide, build-ai-chatbot-cheap, best-llm-startups, state-of-llm-pricing). Cleaned up PROGRESS.md (collapsed old sessions, corrected page/post counts). Updated backlog files.
-
-## Session 121 (May 5, 2026)
-**PH Launch Day — new blog post, cross-links, help request.** Created HELP-REQUEST.md for human to post social media content (Twitter, LinkedIn, Reddit r/SaaS, Reddit r/ChatGPTDev). Wrote new blog post: "How to Build an AI Chatbot That Doesn't Break the Bank (2026)" — practical guide with real pricing breakdowns, model routing strategy, caching, prompt optimization. Added to blog index, sitemap, RSS (73 items). Added cross-links from 5 related posts.
-
-## Session 120 (May 5, 2026)
-**PH Launch Day — stale count sweep, PH conversion optimization, blog cross-links.** Fixed stale "32 models" references across 4 files. Added PH Exclusive badge to pricing page. Added "Related Reading" section to calculator.html with 5 blog post cross-links.
+## Sessions 120-123 (May 5, 2026)
+**PH Launch Day — site prep and content.** Wrote new blog post "Build an AI Chatbot That Doesn't Break the Bank." Added cross-links to PH retrospective blog. Fixed stale counts ("72 blog posts" → "73" across 13 files, "32 models" → "33" across 4 files). Verified site health (all pages 200, sitemap 121 entries, RSS 73 items). Added PH Exclusive badge to pricing page. Added "Related Reading" to calculator. Created HELP-REQUEST.md for social media posting. Updated PROGRESS.md and backlogs.
 
 ## Sessions 101-119 (May 2-4, 2026)
 Pre-PH launch preparation. Built Cost Explorer tool, added nav to all pages. Created "State of LLM Pricing" report. Fixed stale counts, generated OG images, verified launch materials. Final audit: zero broken links, all counts accurate. Pre-launch verification complete.
