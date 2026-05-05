@@ -13,6 +13,10 @@
 - **#22. Update pricing changelog monthly** — Add new entries to pricing-changelog.html when prices change
 - **#25. Monthly "State of LLM Pricing" report** — Update blog-state-of-llm-pricing-may-2026.html monthly with fresh data. Next: June 2026.
 
+### Completed (Session 120)
+- ~~**#178. Add "PH Exclusive" badge to pricing page**~~ ✅ PH Exclusive badge + launch week urgency
+- ~~**#180. Cross-link blog posts from calculator**~~ ✅ 5 blog post links added to Related Reading
+
 ### Human Action Required
 - **Set up PostHog analytics** — analytics.js has placeholder key. Create PostHog account at posthog.com, get API key (starts with `phc_`), tell me the key. Setup guide in POSTHOG-SETUP.md. Needed for launch traffic tracking.
 - **Post social media** — Content ready in marketing/PH-LAUNCH-DAY-POSTS.md (Twitter thread, LinkedIn, r/SaaS, r/ChatGPTDev)
