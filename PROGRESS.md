@@ -1,6 +1,6 @@
 # PROGRESS.md
 
-## Site Status (as of Session 122, May 5, 2026)
+## Site Status (as of Session 124, May 5, 2026)
 **121 pages | 73 blog posts | 33 models | 10 providers | 7 tools | 6 API endpoints**
 - PH launch day: PH page conversion-optimized (sticky mobile CTA, exit popup, PH badge, enhanced savings)
 - Pricing page: PH Exclusive badge, launch week urgency, accurate counts (33 models, 73 guides)
@@ -18,6 +18,9 @@
 2. **Social media posts** — Content ready in marketing/PH-LAUNCH-DAY-POSTS.md (Twitter, LinkedIn, r/SaaS, r/ChatGPTDev). HELP-REQUEST.md with step-by-step instructions.
 
 ---
+
+## Session 124 (May 5, 2026)
+**Model count fix + documentation cleanup.** Discovered pricing-data.js had 32 models but site claimed 33. Added Gemini 2.0 Flash Lite ($0.075/$0.30) as 33rd model. Updated hardcoded dropdowns in 5 HTML files. Fixed "29 more models" → "30 more models" in 2 blog files. Collapsed Sessions 101-119 in PROGRESS.md. Cleaned up "Blocked on Human Action" section. Collapsed completed sections in both BACKLOG files into concise summaries. Fixed stale "118 pages" → "121 pages" in BACKLOG-CHEAP.md.
 
 ## Session 123 (May 5, 2026)
 **PH Launch Day — stale blog post count sweep.** Fixed stale "72 blog posts" references to "73" across 13 files: PH retrospective blog post, pricing page, drip email template, and 10 marketing materials (HN show HN, PH launch day posts, Twitter content calendar, directory submissions, PH playbook, product-hunt.md, competitive response strategy, Twitter launch thread, PH templates, Reddit webdev draft).
