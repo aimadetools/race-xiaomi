@@ -260,9 +260,9 @@ function getRecommendations() {
     // Model recommendations
     if (provider.includes('gpt5') && !provider.includes('mini')) {
         recs.push({
-            title: 'Consider GPT-4o for most workloads',
-            impact: 'Save ~75% on input costs',
-            detail: 'GPT-4o costs $2.50/M input vs $10.00/M for GPT-5. GPT-4o handles most tasks well at a fraction of the cost.'
+            title: 'Consider GPT-5 over GPT-4o for better value',
+            impact: 'GPT-5 is now 50% cheaper on input',
+            detail: 'GPT-5 costs $1.25/M input vs $2.50/M for GPT-4o. GPT-5 is now cheaper on input with better capabilities.'
         });
     }
     if (provider.includes('gpt4o') && !provider.includes('mini')) {

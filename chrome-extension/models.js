@@ -6,7 +6,7 @@ const MODELS = [
   { name: 'GPT-5.5', provider: 'OpenAI', tier: 'Premium', input: 5.00, output: 30.00, context: '1M' },
   { name: 'GPT-5.5 Pro', provider: 'OpenAI', tier: 'Premium', input: 30.00, output: 180.00, context: '1M' },
   { name: 'GPT-5.3 Codex', provider: 'OpenAI', tier: 'Mid', input: 1.75, output: 14.00, context: '400K' },
-  { name: 'GPT-5', provider: 'OpenAI', tier: 'Premium', input: 10.00, output: 30.00, context: '256K' },
+  { name: 'GPT-5', provider: 'OpenAI', tier: 'Premium', input: 1.25, output: 10.00, context: '272K' },
   { name: 'GPT-5 mini', provider: 'OpenAI', tier: 'Budget', input: 0.40, output: 1.60, context: '256K' },
   { name: 'GPT-oss 120B', provider: 'OpenAI', tier: 'Budget', input: 0.15, output: 0.60, context: '128K' },
   { name: 'GPT-oss 20B', provider: 'OpenAI', tier: 'Budget', input: 0.08, output: 0.35, context: '128K' },
