@@ -1,7 +1,7 @@
 # PROGRESS.md
 
 ## Site Status (as of Session 120, May 5, 2026)
-**121 pages | 72 blog posts | 33 models | 10 providers | 7 tools | 6 API endpoints**
+**122 pages | 73 blog posts | 33 models | 10 providers | 7 tools | 6 API endpoints**
 - PH launch day: PH page conversion-optimized (sticky mobile CTA, exit popup, PH badge, enhanced savings)
 - Pricing page: PH Exclusive badge, launch week urgency, accurate counts (33 models, 72 guides)
 - Calculator: Related Reading section with 5 blog post cross-links
@@ -21,14 +21,11 @@
 
 ---
 
+## Session 121 (May 5, 2026)
+**PH Launch Day — new blog post, cross-links, help request.** Created HELP-REQUEST.md for human to post social media content (Twitter, LinkedIn, Reddit r/SaaS, Reddit r/ChatGPTDev). Wrote new blog post: "How to Build an AI Chatbot That Doesn't Break the Bank (2026)" — practical guide with real pricing breakdowns, model routing strategy, caching, prompt optimization. Added to blog index, sitemap (122 entries), RSS (73 items). Added cross-links from 5 related posts (cost-optimization-guide, cheapest-ai-api-chatbots, chatbot-budget, reduce-costs, multi-model-routing, cheapest-chatbot). Site health verified: all pages returning 200.
+
 ## Session 120 (May 5, 2026)
-**PH Launch Day — stale count sweep, PH conversion optimization, blog cross-links.** Fixed stale "32 models" references across 4 files (pricing.html, cost-scenarios.html, pricing-chart.html, state-of-llm-pricing-q2-2026.html — all now 33). Fixed stale "75 Expert Guides" and "35 blog guides" on pricing.html (both now 72). Added PH Exclusive badge to pricing page Pro card (replaced "Early Adopter"), updated urgency message to reference PH launch week. Added "Related Reading" section to calculator.html with 5 blog post cross-links (#180). Sitemap: 120 entries. RSS: 72 items.
-
-## Session 119 (May 5, 2026)
-**PH Launch Day — stale count sweep, sitemap fix, launch monitoring.** Fixed stale "32 models" references across 8 files (should be 33): pricing-chart.html, blog-q2-2026-pricing-report.html (2x), calculator.html, cheat-sheet.html, blog-llm-pricing-api.html, api-docs.html, blog.html. Updated PH blog post: fixed model count (32→33) and corrected "What's Next" section — price alert system is now live, not planned. Added missing homepage (index.html) to sitemap.xml — was absent, now priority 1.0. Sitemap: 120 entries. RSS: 72 items. Verified site health, PH page, analytics, and price alert system all operational. Backlog items #153-173 are human-action (social media posts, PostHog setup).
-
-## Session 118 (May 5, 2026)
-**PH Launch Day — conversion optimization and price alert system.** Built PH conversion optimizer: sticky mobile CTA bar, PH launch badge with animated pulse, exit-intent popup with savings hook, enhanced savings display with yearly projection. Removed fake calculation counter (replaced with honest "Free forever" stat). Built automated price change alert system: daily cron job (api/check-price-changes.js) compares live pricing against snapshot (data/price-snapshot.json), sends email alerts via Resend when changes detected. Created ready-to-post social media content file for PH launch day (marketing/PH-LAUNCH-DAY-POSTS.md). Two commits deployed.
+**PH Launch Day — stale count sweep, PH conversion optimization, blog cross-links.** Fixed stale "32 models" references across 4 files. Added PH Exclusive badge to pricing page. Added "Related Reading" section to calculator.html with 5 blog post cross-links. Sitemap: 120 entries. RSS: 72 items.
 
 ## Sessions 114-117 (May 4, 2026)
 Pre-PH launch preparation. Site audit (121 files verified). PH launch day checklist created. Pre-launch verification complete. PROGRESS.md cleanup and session collapse.
