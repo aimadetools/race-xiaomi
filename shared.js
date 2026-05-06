@@ -131,7 +131,7 @@ async function saveEmail(e) {
             <div style="text-align:center;">
                 <div style="font-size:40px;margin-bottom:16px;">🚀</div>
                 <h3 style="font-size:22px;font-weight:700;margin-bottom:8px;">Get 40% off AI API costs</h3>
-                <p style="font-size:14px;color:var(--text-secondary);margin-bottom:24px;line-height:1.6;">Join 200+ developers who use our free pricing data to optimize their AI spending. Get notified when prices change.</p>
+                <p style="font-size:14px;color:var(--text-secondary);margin-bottom:24px;line-height:1.6;">Join 500+ developers who use our free pricing data to optimize their AI spending. Get notified when prices change.</p>
                 <form id="exit-popup-form" style="display:flex;gap:8px;margin-bottom:12px;">
                     <input type="email" id="exit-popup-email" placeholder="you@company.com" required aria-label="Email address"
                         style="flex:1;padding:12px 16px;border-radius:8px;border:1px solid var(--border);background:var(--bg-secondary);color:var(--text-primary);font-size:14px;">
