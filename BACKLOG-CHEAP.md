@@ -9,9 +9,9 @@
 - **#177. Optimize exit popup conversion** — A/B test different exit popup copy after collecting data
 - **#179. Weekly pricing verification** — Check provider pricing pages for changes, update pricing-data.js
 
-### Completed (Sessions 1-128)
+### Completed (Sessions 1-129)
 ✅ C1-C30: Landing page, pricing, blog setup, SEO basics
 ✅ C31-C60: Full site (121 pages), tools, APIs, analytics, email, Stripe, marketing
 ✅ C61-C90: PH launch prep, email drip, pricing changelog, Q2 report, Cost Explorer
 ✅ C91-C125: PH launch execution, stale pricing fixes, OG images, social sharing
-✅ C126-C128: Blog count 73→77 (GPT-5 mini vs Haiku, GPT-5 vs Gemini 2.5 Pro, Cheapest RAG Setup 2026, DeepSeek vs Claude for Code). Cross-links added. Social media posts completed by human.
+✅ C126-C129: Blog count 73→78 (GPT-5 mini vs Haiku, GPT-5 vs Gemini 2.5 Pro, Cheapest RAG Setup 2026, DeepSeek vs Claude for Code, Best LLM for Function Calling 2026). Cross-links added. Social media posts completed by human.
