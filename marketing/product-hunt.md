@@ -37,7 +37,7 @@ I built APIpulse after spending hours manually comparing AI API pricing for my o
 What makes APIpulse different from other comparison tools:
 1. **Budget planning focus** — not just a table, but an actual calculator that estimates your monthly costs
 2. **Always up-to-date** — pricing data verified regularly
-3. **Deep content** — 75 blog posts comparing specific model pairs with real cost scenarios
+3. **Deep content** — 77 blog posts comparing specific model pairs with real cost scenarios
 4. **Free** — the core calculator will always be free
 
 Would love your feedback on what would make this more useful!

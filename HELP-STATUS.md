@@ -3,22 +3,62 @@
 ## ✅ Completed Requests
 The human has completed these requests. Read the responses carefully and act on them.
 
+### [HELP] HELP REQUEST — PH Launch Day Social Media Posts
+**Human response (closed 2026-05-06):**
+Done. Twitter thread posted from @getapipulse, LinkedIn post published, Reddit posts on r/SaaS and r/ChatGPTDev.
+  Checked PH comments and replied. Note: these went out 1 day after launch day so momentum is reduced. New social
+  accounts get heavily penalized by algorithms — don't expect significant traction from these posts. 30 min used (30
+  min remaining this week).
+
 ### [HELP] Help Request — Product Hunt Launch + Reddit Saturday
-Result: Completed. Check details: https://github.com/aimadetools/race-xiaomi/issues/6
+**Human response (closed 2026-04-30):**
+ │ Done ✅
+  │ 
+  │ **Product Hunt:** Launch created and scheduled for Tuesday May 5. You'll get a notification when it goes live.
+  │ 
+  │ **Reddit r/webdev:** Draft saved. Will post on Saturday (Showoff Saturday is the only day r/webdev allows
+  project posts).
+  │ 
+  │ Time spent: 15 min. You have 5 min human help left this week. Use them wisely — weekly budget resets Monday.
+  │ Budget: $0 spent.
+
+
 
 ### [HELP] HELP REQUEST — Launch Execution (Week 2)
-Result: Completed. Check details: https://github.com/aimadetools/race-xiaomi/issues/5
+**Human response (closed 2026-04-30):**
+│ Done ✅ — Partial completion.
+  │ 
+  │ **Task 1: Resend + Vercel env vars — DONE ✅**
+  │ - `RESEND_API_KEY` — set (getapipulse.com domain verified, SPF/DKIM passing)
+  │ - `EMAIL_FROM` — set to `APIpulse <hello@getapipulse.com>`
+  │ - `ADMIN_SECRET` — set
+  │ - Site will pick up the new vars on next deploy (push any commit to trigger)
+  │ 
+  │ **Task 2: Reddit r/webdev — NOT DONE**
+  │ - Rules only allow project posts on "Showoff Saturday." Will post this Saturday if you remind me, or you can add it to
+  next week's help request.
+  │ 
+  │ **Task 3: Show HN — DONE ✅**
+  │ - Posted. Low traction — this is expected. HN requires account karma and history before posts gain visibility. New
+  accounts rarely get upvotes on first submissions. Don't count on HN as a launch channel until the account has more
+  activity.
+  │ 
+  │ **Task 4: Twitter/X thread — DONE ✅**
+  │ - Posted. Low engagement — also expected. New accounts with no followers get near-zero reach on X. The algorithm
+  suppresses posts from accounts without engagement history. This will improve over time but isn't a viable launch channel
+  yet.
+  │ 
+  │ **Tasks 5-9: Tool directories — PARTIAL**
+Option 1 was paying 50$ - I did not do that
+OPtion 2-3 urls did not exist
+Option 4 Futuretools: Submitted
+Option 5 & 6 & 7: 50$ did not do that
+Option 8: SaasHub done
+Option 9: not possible.
+  │ 
 
-## ⏳ Pending Requests
-These are YOUR open requests. Do NOT create duplicate requests for the same thing.
+  │ 
+  │ Time spent: 35 min. You have 25 min human help left this week.
+  │ Budget: $0 spent.
 
-### [HELP] HELP REQUEST — PH Launch Day Social Media Posts
-# HELP REQUEST — PH Launch Day Social Media Posts
-
-## What
-Post the prepared social media content for the Product Hunt launch day (May 5, 2026). These are copy-paste ready in `marketing/PH-LAUNCH-DAY-POSTS.md`. The PH page is live at https://getapipulse.com/ph.html and the PH listing is at https://www.producthunt.com/posts/apipulse
-
-## Steps
-
-1. **Twitter/X thread** — Post the 4-tweet thread from `marketing/PH-LAUNCH-DAY-POSTS.md` (section "Twitter/X Thread"). Replace [PH LINK] with `https://www
 

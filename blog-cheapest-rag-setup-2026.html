@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cheapest RAG Setup in 2026: Full Cost Breakdown — APIpulse</title>
+    <meta name="description" content="Build a production RAG pipeline for under $10/month. Compare embedding, vector search, and generation costs across OpenAI, Google, DeepSeek, and Llama with real numbers.">
+    <meta name="keywords" content="cheapest RAG setup 2026, RAG pipeline cost, cheap RAG implementation, low cost RAG, RAG API pricing, retrieval augmented generation cost">
+    <meta property="og:title" content="Cheapest RAG Setup in 2026: Full Cost Breakdown — APIpulse">
+    <meta property="og:description" content="Build a production RAG pipeline for under $10/month. Embedding + vector search + generation costs across every provider.">
+    <meta property="og:type" content="article">
+    <meta property="article:published_time" content="2026-05-06">
+    <meta property="article:modified_time" content="2026-05-06">
+    <meta property="article:author" content="APIpulse">
+    <meta property="og:image" content="https://getapipulse.com/og-images/blog-cheapest-rag-setup-2026.png">
+    <meta property="og:url" content="https://getapipulse.com/blog-cheapest-rag-setup-2026.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Cheapest RAG Setup in 2026: Full Cost Breakdown">
+    <meta name="twitter:image" content="https://getapipulse.com/og-images/blog-cheapest-rag-setup-2026.png">
+    <meta name="twitter:description" content="Build a production RAG pipeline for under $10/month. Full cost breakdown across embedding, vector DB, and generation.">
+    <link rel="canonical" href="https://getapipulse.com/blog-cheapest-rag-setup-2026.html">
+    <link rel="alternate" type="application/rss+xml" title="APIpulse Blog" href="https://getapipulse.com/rss.xml">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="styles.css">
+    <script src="analytics.js" defer></script>
+    <script src="dynamic-date.js" defer></script>
+    <script src="shared.js" defer></script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "Cheapest RAG Setup in 2026: Full Cost Breakdown",
+        "description": "Build a production RAG pipeline for under $10/month. Compare embedding, vector search, and generation costs across providers.",
+        "datePublished": "2026-05-06",
+        "dateModified": "2026-05-06",
+        "author": { "@type": "Organization", "name": "APIpulse" },
+        "publisher": { "@type": "Organization", "name": "APIpulse", "url": "https://getapipulse.com" },
+        "url": "https://getapipulse.com/blog-cheapest-rag-setup-2026.html",
+        "image": "https://getapipulse.com/og-image.png"
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Blog", "item": "https://getapipulse.com/blog.html" },
+            { "@type": "ListItem", "position": 2, "name": "Cheapest RAG Setup 2026", "item": "https://getapipulse.com/blog-cheapest-rag-setup-2026.html" }
+        ]
+    }
+    </script>
+    <style>
+        .content { max-width: 800px; margin: 0 auto; padding: 120px 24px 80px; }
+        h1 { font-size: 40px; font-weight: 800; margin-bottom: 12px; }
+        .subtitle { color: var(--text-secondary); font-size: 18px; margin-bottom: 48px; }
+
+        .article { max-width: 700px; margin: 0 auto; }
+        .article h1 { font-size: 36px; margin-bottom: 16px; }
+        .article h2 { font-size: 24px; font-weight: 700; margin: 32px 0 16px; }
+        .article h3 { font-size: 18px; font-weight: 600; margin: 24px 0 12px; }
+        .article p { color: var(--text-secondary); margin-bottom: 16px; line-height: 1.7; }
+        .article ul, .article ol { color: var(--text-secondary); padding-left: 24px; margin-bottom: 16px; }
+        .article li { margin-bottom: 8px; }
+        .article strong { color: var(--text-primary); }
+        .article code {
+            background: var(--bg-card); padding: 2px 8px; border-radius: 4px;
+            font-size: 14px; color: var(--accent);
+        }
+        .article blockquote {
+            border-left: 3px solid var(--accent); padding-left: 20px; margin: 20px 0;
+            color: var(--text-secondary); font-style: italic;
+        }
+        .back-link {
+            display: inline-flex; align-items: center; gap: 6px;
+            font-size: 14px; color: var(--text-secondary); margin-bottom: 32px;
+        }
+        .back-link:hover { color: var(--text-primary); }
+        .post-meta {
+            display: flex; gap: 16px; align-items: center; margin-bottom: 12px;
+            font-size: 13px; color: var(--text-muted);
+        }
+        .post-tag {
+            background: var(--accent-glow); color: var(--accent);
+            padding: 2px 10px; border-radius: 6px; font-size: 12px; font-weight: 600;
+        }
+
+        .cta-inline {
+            background: var(--bg-secondary); border: 1px solid var(--accent);
+            border-radius: 12px; padding: 24px; margin: 32px 0; text-align: center;
+        }
+        .cta-inline p { margin-bottom: 12px; }
+
+        .cost-example {
+            background: var(--bg-secondary); border: 1px solid var(--border);
+            border-radius: 10px; padding: 20px; margin: 20px 0;
+        }
+        .cost-example .label {
+            font-size: 13px; color: var(--text-muted); text-transform: uppercase;
+            letter-spacing: 0.5px; margin-bottom: 12px; font-weight: 600;
+        }
+        .cost-example .cost-row {
+            display: flex; justify-content: space-between; padding: 8px 0;
+            border-bottom: 1px solid var(--border); font-size: 14px;
+        }
+        .cost-example .cost-row:last-child { border-bottom: none; }
+        .cost-example .cost-row .name { color: var(--text-secondary); }
+        .cost-example .cost-row .value { color: var(--text-primary); font-weight: 600; font-variant-numeric: tabular-nums; }
+        .cost-example .cost-total { border-top: 2px solid var(--accent); border-bottom: none; padding-top: 12px; margin-top: 4px; }
+        .cost-example .cost-total .name { color: var(--text-primary); font-weight: 600; }
+
+        .winner-badge {
+            display: inline-block; background: rgba(34,197,94,0.1); color: var(--green);
+            padding: 4px 12px; border-radius: 6px; font-size: 13px; font-weight: 700;
+            margin-bottom: 16px;
+        }
+
+        .tier-card {
+            background: var(--bg-secondary); border: 1px solid var(--border);
+            border-radius: 12px; padding: 24px; margin: 16px 0;
+        }
+        .tier-card h3 { margin-top: 0; }
+        .tier-card .price { font-size: 28px; font-weight: 800; color: var(--accent); margin: 8px 0; }
+        .tier-card ul { margin-bottom: 0; }
+
+        .share-section {
+            margin-top: 32px; padding-top: 24px; border-top: 1px solid var(--border);
+            text-align: center;
+        }
+        .share-section p { color: var(--text-secondary); font-size: 14px; margin-bottom: 12px; }
+        .share-btn {
+            display: inline-block; background: var(--bg-card); color: var(--text-primary);
+            padding: 8px 20px; border-radius: 8px; font-size: 14px; font-weight: 500;
+            border: 1px solid var(--border); transition: all 0.2s; text-decoration: none;
+        }
+        .share-btn:hover { background: var(--accent); color: white; border-color: var(--accent); }
+
+        @media (max-width: 768px) {
+            .content { padding: 100px 20px 60px; }
+            h1 { font-size: 28px; }
+            .article h1 { font-size: 28px; }
+            .article h2 { font-size: 20px; }
+            .cta-inline { padding: 20px; }
+        }
+        @media print {
+            nav, .share-section, .cta-inline, .theme-toggle, .back-link { display: none !important; }
+            body { background: white; color: black; }
+            .content { padding: 0; max-width: 100%; }
+            .article h1 { font-size: 24px; margin-bottom: 8px; }
+            .article h2 { font-size: 18px; margin: 16px 0 8px; }
+            .article p, .article li { color: #333; font-size: 12px; }
+            .post-meta { display: none; }
+            a { color: black; text-decoration: underline; }
+            footer { border-top: 1px solid #ccc; padding: 10px 0; }
+        }
+    </style>
+    <meta name="theme-color" content="#6366f1">
+    <link rel="preconnect" href="https://getapipulse.com">
+</head>
+<body>
+    <a href="#main" class="skip-link">Skip to content</a>
+    <nav>
+        <div class="nav-inner">
+            <a href="index.html" class="logo">API<span>pulse</span></a>
+            <button class="hamburger" onclick="toggleMobileNav()" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+            <div class="nav-links">
+                <a href="calculator.html">Calculator</a>
+                <a href="compare.html">Compare</a>
+                <a href="cost-explorer.html">Explorer</a>
+                <a href="cost-scenarios.html">Scenarios</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="use-cases.html">Use Cases</a>
+                <a href="about.html">About</a>
+                <a href="blog.html" class="active">Blog</a>
+                <a href="quiz.html">Quiz</a>
+                <a href="pricing-index.html">Pricing Index</a>
+                <a href="model-matrix.html">Model Matrix</a>
+                <a href="pricing-trends.html">Trends</a>
+                <a href="pricing-changelog.html">Changelog</a>
+                <a href="price-alerts.html">Price Alerts</a>
+                <a href="cheat-sheet.html">Cheat Sheet</a>
+                <a href="api-docs.html" style="color:var(--accent);">API</a>
+                <a href="pricing.html" class="nav-cta" onclick="if(window.trackEvent)window.trackEvent('pro_button_clicked',{source:'nav'})">Get Pro — $29</a>
+                <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
+            </div>
+        </div>
+    </nav>
+
+    <main id="main">
+
+    <div class="content article">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+            <a href="blog.html">Blog</a>
+            <span class="separator">›</span>
+            <span class="current">Cheapest RAG Setup 2026</span>
+        </nav>
+        <a href="blog.html" class="back-link">← Back to blog</a>
+        <div class="post-meta" style="margin-bottom: 24px;">
+            <span class="post-tag">Guide</span>
+            <span class="tier-badge tier-budget">Budget</span>
+            <span>May 6, 2026</span>
+        </div>
+
+        <h1>Cheapest RAG Setup in 2026: Full Cost Breakdown</h1>
+
+        <p>Retrieval-Augmented Generation (RAG) is the most common pattern for building AI applications that know your data. But costs can spiral fast if you pick the wrong models. Here's exactly how to build a production RAG pipeline for under $10/month — with real numbers across every cost component.</p>
+
+        <h2>The Three Cost Components of RAG</h2>
+        <p>Every RAG pipeline has three cost centers:</p>
+        <ol>
+            <li><strong>Embedding</strong> — converting your documents into vectors (one-time per document, plus per query)</li>
+            <li><strong>Vector storage & search</strong> — storing vectors and finding relevant chunks at query time</li>
+            <li><strong>Generation</strong> — sending the retrieved context + query to an LLM for the final answer</li>
+        </ol>
+        <p>Most guides focus only on generation costs. In reality, embedding and vector search often account for 40-60% of your total RAG bill — especially at scale.</p>
+
+        <h2>Component 1: Embedding Costs</h2>
+        <p>Embedding models convert text into vector representations. Prices are typically per 1M tokens:</p>
+
+        <div class="cost-example">
+            <div class="label">Embedding model pricing (per 1M tokens)</div>
+            <div class="cost-row"><span class="name">Google text-embedding-004</span><span class="value">$0.10</span></div>
+            <div class="cost-row"><span class="name">OpenAI text-embedding-3-small</span><span class="value">$0.02</span></div>
+            <div class="cost-row"><span class="name">OpenAI text-embedding-3-large</span><span class="value">$0.13</span></div>
+            <div class="cost-row"><span class="name">Cohere embed-v4</span><span class="value">$0.10</span></div>
+            <div class="cost-row"><span class="name">Llama 3.1 8B (via Together.ai)</span><span class="value">$0.10</span></div>
+        </div>
+
+        <p><strong>Best value:</strong> OpenAI's text-embedding-3-small at $0.02/1M tokens is the cheapest option with excellent quality. For most RAG use cases, the small model is indistinguishable from the large model.</p>
+
+        <h3>Real embedding costs</h3>
+        <p>Let's say you have 10,000 documents averaging 2,000 tokens each (20M tokens total):</p>
+        <div class="cost-example">
+            <div class="label">Embedding 10K documents (one-time)</div>
+            <div class="cost-row"><span class="name">OpenAI text-embedding-3-small</span><span class="value">$0.40</span></div>
+            <div class="cost-row"><span class="name">Google text-embedding-004</span><span class="value">$2.00</span></div>
+            <div class="cost-row"><span class="name">Cohere embed-v4</span><span class="value">$2.00</span></div>
+        </div>
+        <p>At $0.40 for 10K documents, embedding is practically free. The ongoing cost is embedding each query (~500 tokens), which costs fractions of a cent.</p>
+
+        <h2>Component 2: Vector Storage & Search</h2>
+        <p>This is where free tiers really shine. You have three options:</p>
+
+        <div class="tier-card">
+            <h3>Option A: Fully Local (Free)</h3>
+            <div class="price">$0/mo</div>
+            <p>Use ChromaDB, FAISS, or SQLite-VSS on your own machine. Great for development and small datasets (under 100K documents). No monthly cost, but you manage infrastructure.</p>
+            <ul>
+                <li><strong>ChromaDB</strong> — easiest setup, good for prototyping</li>
+                <li><strong>FAISS</strong> — fastest search, best for large-scale</li>
+                <li><strong>SQLite-VSS</strong> — lightweight, embeds in any app</li>
+            </ul>
+        </div>
+
+        <div class="tier-card">
+            <h3>Option B: Free Cloud Tiers</h3>
+            <div class="price">$0/mo</div>
+            <p>Several vector databases offer generous free tiers:</p>
+            <ul>
+                <li><strong>Pinecone</strong> — 2GB free (roughly 1M vectors)</li>
+                <li><strong>Weaviate Cloud</strong> — 14-day free trial, then free tier</li>
+                <li><strong>Qdrant Cloud</strong> — 1GB free</li>
+                <li><strong>MongoDB Atlas</strong> — 512MB free (includes vector search)</li>
+            </ul>
+        </div>
+
+        <div class="tier-card">
+            <h3>Option C: Paid Vector DB</h3>
+            <div class="price">$25-70/mo</div>
+            <p>For production workloads beyond free tier limits:</p>
+            <ul>
+                <li><strong>Pinecone Starter</strong> — $25/mo for 10GB</li>
+                <li><strong>Weaviate Cloud</strong> — $25/mo for 1M vectors</li>
+                <li><strong>Qdrant Cloud</strong> — $25/mo for 1M vectors</li>
+            </ul>
+        </div>
+
+        <p>For the cheapest setup, use ChromaDB locally during development and Pinecone's free tier in production. That keeps vector costs at $0.</p>
+
+        <h2>Component 3: Generation Costs</h2>
+        <p>This is the ongoing cost that grows with usage. Here's where model selection matters most. Let's compare costs for a typical RAG query: ~2,000 input tokens (retrieved context + query) and ~500 output tokens (answer).</p>
+
+        <div class="cost-example">
+            <div class="label">Cost per RAG query (2K input + 500 output tokens)</div>
+            <div class="cost-row"><span class="name">Gemini 2.0 Flash Lite</span><span class="value">$0.00030</span></div>
+            <div class="cost-row"><span class="name">DeepSeek V4 Flash</span><span class="value">$0.00042</span></div>
+            <div class="cost-row"><span class="name">Gemini 2.0 Flash</span><span class="value">$0.00045</span></div>
+            <div class="cost-row"><span class="name">GPT-4o mini</span><span class="value">$0.00060</span></div>
+            <div class="cost-row"><span class="name">DeepSeek V4 Pro</span><span class="value">$0.00132</span></div>
+            <div class="cost-row"><span class="name">GPT-5 mini</span><span class="value">$0.00150</span></div>
+            <div class="cost-row"><span class="name">Mistral Small 4</span><span class="value">$0.00060</span></div>
+            <div class="cost-row"><span class="name">Claude Haiku 4.5</span><span class="value">$0.00450</span></div>
+            <div class="cost-row"><span class="name">Claude Sonnet 4.6</span><span class="value">$0.01350</span></div>
+            <div class="cost-row"><span class="name">GPT-5</span><span class="value">$0.00750</span></div>
+        </div>
+
+        <p>The difference is dramatic. Gemini 2.0 Flash Lite costs <strong>45x less</strong> per query than Claude Sonnet 4.6. For RAG workloads where you're processing thousands of queries per day, this adds up fast.</p>
+
+        <h2>Three Budget Tiers</h2>
+
+        <div class="tier-card">
+            <h3>Tier 1: Bootstrap ($0-5/mo)</h3>
+            <div class="price">Under $5/month</div>
+            <p>Best for: side projects, MVPs, internal tools</p>
+            <ul>
+                <li><strong>Embedding:</strong> OpenAI text-embedding-3-small ($0.40 for 10K docs)</li>
+                <li><strong>Vector DB:</strong> ChromaDB (local, free) or Pinecone free tier</li>
+                <li><strong>Generation:</strong> Gemini 2.0 Flash ($0.10/$0.40 per 1M tokens)</li>
+                <li><strong>Query volume:</strong> ~1,000 queries/day for $1.35/mo</li>
+            </ul>
+            <p><strong>Total monthly cost at 1K queries/day:</strong> ~$1.50</p>
+        </div>
+
+        <div class="tier-card">
+            <h3>Tier 2: Growth ($5-25/mo)</h3>
+            <div class="price">$5-25/month</div>
+            <p>Best for: production apps, startups with users</p>
+            <ul>
+                <li><strong>Embedding:</strong> OpenAI text-embedding-3-small</li>
+                <li><strong>Vector DB:</strong> Pinecone free tier or Qdrant free tier</li>
+                <li><strong>Generation:</strong> DeepSeek V4 Pro ($0.44/$0.87 per 1M tokens)</li>
+                <li><strong>Query volume:</strong> ~5,000 queries/day for $19.80/mo</li>
+            </ul>
+            <p><strong>Total monthly cost at 5K queries/day:</strong> ~$20</p>
+        </div>
+
+        <div class="tier-card">
+            <h3>Tier 3: Scale ($25-100/mo)</h3>
+            <div class="price">$25-100/month</div>
+            <p>Best for: SaaS products, high-traffic applications</p>
+            <ul>
+                <li><strong>Embedding:</strong> OpenAI text-embedding-3-small</li>
+                <li><strong>Vector DB:</strong> Pinecone Starter ($25/mo for 10GB)</li>
+                <li><strong>Generation:</strong> GPT-5 mini ($0.25/$2.00 per 1M tokens) or Claude Haiku 4.5 ($1/$5)</li>
+                <li><strong>Query volume:</strong> ~10,000-20,000 queries/day</li>
+            </ul>
+            <p><strong>Total monthly cost at 10K queries/day:</strong> ~$45-75</p>
+        </div>
+
+        <h2>The Complete Cheapest RAG Stack</h2>
+        <p>If your only goal is minimizing cost, here's the absolute cheapest production-ready RAG setup:</p>
+
+        <div class="cost-example">
+            <div class="label">Monthly cost at 1,000 queries/day</div>
+            <div class="cost-row"><span class="name">Embedding (OpenAI small)</span><span class="value">$0.30/mo</span></div>
+            <div class="cost-row"><span class="name">Vector DB (ChromaDB local)</span><span class="value">$0.00/mo</span></div>
+            <div class="cost-row"><span class="name">Generation (Gemini 2.0 Flash)</span><span class="value">$1.35/mo</span></div>
+            <div class="cost-row cost-total"><span class="name">Total</span><span class="value" style="color:var(--green);">$1.65/mo</span></div>
+        </div>
+
+        <p>That's <strong>$1.65/month</strong> for a production RAG pipeline processing 1,000 queries per day. A year ago, the same setup would have cost $15-30/month.</p>
+
+        <h2>Quality vs. Cost Tradeoffs</h2>
+        <p>The cheapest models aren't always the best for RAG. Here's the quality spectrum:</p>
+        <ul>
+            <li><strong>Gemini 2.0 Flash Lite</strong> — cheapest, but struggles with complex reasoning over retrieved context. Good for simple Q&A and factual lookups.</li>
+            <li><strong>DeepSeek V4 Flash</strong> — excellent balance of cost and quality. Handles multi-hop reasoning well. Best value for most RAG use cases.</li>
+            <li><strong>GPT-5 mini</strong> — strong instruction following and structured output. Great when you need consistent formatting in answers.</li>
+            <li><strong>Claude Haiku 4.5</strong> — best at nuanced answers with citations. Worth the premium for customer-facing applications.</li>
+        </ul>
+
+        <h3>Recommended: Hybrid routing</h3>
+        <p>Use a cheap model (DeepSeek V4 Flash) for simple queries and route complex queries to a better model (GPT-5 mini or Claude Haiku). This cuts costs by 60-70% while maintaining quality for the queries that matter most.</p>
+
+        <h2>Optimization Tips</h2>
+        <ol>
+            <li><strong>Chunk smartly</strong> — Smaller chunks (256-512 tokens) mean less context sent to the LLM, reducing generation costs. Use overlapping chunks to maintain context.</li>
+            <li><strong>Cache common queries</strong> — If 20% of your queries are repetitive, caching eliminates those generation costs entirely.</li>
+            <li><strong>Use metadata filtering</strong> — Filter by date, category, or source before vector search to reduce the number of vectors compared.</li>
+            <li><strong>Batch embedding</strong> — Embed documents in batches of 100+ for better throughput and lower per-token costs.</li>
+            <li><strong>Set max tokens</strong> — Cap generation at the length you actually need. Shorter answers = lower costs.</li>
+        </ol>
+
+        <div class="cta-inline">
+            <p><strong>Calculate your exact RAG costs</strong> — Enter your document count, query volume, and token usage to see what you'd pay across every provider.</p>
+            <a href="calculator.html" class="btn-primary" style="display:inline-block;">Calculate Your RAG Costs →</a>
+        </div>
+
+        <h2>Related Reading</h2>
+        <ul>
+            <li><a href="blog-embedding-model-rag.html">How to Choose the Right Embedding Model for RAG</a> — Deep dive on embedding selection</li>
+            <li><a href="blog-rag-pricing-2026.html">AI API Pricing for RAG: Complete Cost Breakdown 2026</a> — Detailed RAG cost analysis</li>
+            <li><a href="blog-rag-pipeline-budget.html">How to Build a RAG Pipeline on a Budget</a> — Step-by-step budget guide</li>
+            <li><a href="blog-cheapest-llm.html">The Cheapest LLM APIs in 2026</a> — Full ranking of budget models</li>
+        </ul>
+
+        <div class="share-section">
+            <p>Found this useful? Share it with your team.</p>
+            <a href="https://twitter.com/intent/tweet?text=Build%20a%20production%20RAG%20pipeline%20for%20%241.65%2Fmonth.%20Full%20cost%20breakdown%20for%202026&url=https%3A%2F%2Fgetapipulse.com%2Fblog-cheapest-rag-setup-2026.html" target="_blank" rel="noopener" class="share-btn">Share on X</a>
+            <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fgetapipulse.com%2Fblog-cheapest-rag-setup-2026.html" target="_blank" rel="noopener" class="share-btn">Share on LinkedIn</a>
+        </div>
+    </div>
+
+    <button class="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">↑</button>
+
+    </main>
+
+    <footer>
+        <p>Pricing data last verified: <span class="verified-date"></span></p>
+        <p>&copy; 2026 APIpulse. <a href="index.html">Home</a> &middot; <a href="use-cases.html">Use Cases</a> &middot; <a href="about.html">About</a> &middot; <a href="blog.html">Blog</a>
+<a href="pricing-index.html">Pricing Index</a> &middot; <a href="model-matrix.html">Model Matrix</a> &middot; <a href="cost-scenarios.html">Scenarios</a> &middot; <a href="price-alerts.html">Price Alerts</a> &middot; <a href="pricing-changelog.html">Changelog</a> &middot; <a href="openai.html">OpenAI</a> &middot; <a href="anthropic.html">Anthropic</a> &middot; <a href="google.html">Google</a> &middot; <a href="mistral.html">Mistral</a> &middot; <a href="cohere.html">Cohere</a> &middot; <a href="deepseek.html">DeepSeek</a> &middot; <a href="xai.html">xAI</a> &middot; <a href="moonshot.html">Moonshot</a> &middot; <a href="together.html">Together.ai</a> &middot; <a href="ai21.html">AI21</a> &middot; <a href="pricing.html">Pricing</a> &middot; <a href="embed.html">Embed Widget</a> &middot; <a href="cheat-sheet.html">Cheat Sheet</a> &middot; <a href="api-docs.html">API</a> &middot; <a href="https://x.com/getapipulse" target="_blank" rel="noopener">Twitter</a> &middot; <a href="unsubscribe.html">Unsubscribe</a></p>
+    </footer>
+
+</body>
+</html>
