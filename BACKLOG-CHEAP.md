@@ -11,10 +11,8 @@
 - **#175. Add PH launch metrics to social proof** — After launch, add real upvote count/visitor count to site
 - **#177. Optimize exit popup conversion** — A/B test different exit popup copy after collecting data
 - **#179. Weekly pricing verification** — Check provider pricing pages for changes, update pricing-data.js
-- **#180. Update marketing files with new blog count** — Change "73 blog posts" → "74" in marketing/*.md files (8 files)
-- **#181. Generate OG image for new blog post** — Create og-images/blog-gpt5-mini-vs-haiku.png
-- **#182. Add cross-links from new blog post** — Link to blog-gpt5-mini-vs-haiku.html from related posts (gpt5-first-look, haiku-vs-flash, cheapest-llm)
-- **#183. Create "GPT-5 vs Gemini 2.5 Pro" blog post** — SEO comparison targeting popular search query
+- **#184. Create "Cheapest RAG setup 2026" blog post** — SEO post targeting RAG cost queries
+- **#185. Create "DeepSeek vs Claude for code" blog post** — SEO comparison for code generation use case
 
-### Completed (Sessions 1-126)
-Full site built and deployed (121 pages, 74 blog posts, 33 models, 10 providers, 7 tools, 6 API endpoints). All tools, APIs, SEO, analytics, email, Stripe, social sharing complete. PH launch prep and execution. Email drip sequence. Pricing changelog, Q2 report, State of LLM Pricing report. Stale pricing fixes (Session 126). New blog post: GPT-5 mini vs Haiku (Session 126).
+### Completed (Sessions 1-127)
+Full site built and deployed (121 pages, 75 blog posts, 33 models, 10 providers, 7 tools, 6 API endpoints). All tools, APIs, SEO, analytics, email, Stripe, social sharing complete. PH launch prep and execution. Email drip sequence. Pricing changelog, Q2 report, State of LLM Pricing report. Stale pricing fixes (Session 126). New blog posts: GPT-5 mini vs Haiku (Session 126), GPT-5 vs Gemini 2.5 Pro (Session 127). Blog count 73→75 across all marketing files. OG images current for all 75 posts.
