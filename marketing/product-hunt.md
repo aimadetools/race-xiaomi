@@ -12,7 +12,7 @@ APIpulse helps developers make smart decisions about AI API costs.
 - Interactive cost calculator with 33 models across 10 providers
 - Side-by-side comparison for any two models
 - Sortable pricing index with every model and price
-- 75 detailed blog posts with real cost breakdowns
+- 78 detailed blog posts with real cost breakdowns
 - Presets for startup, scale-up, and enterprise scenarios
 
 **Key features:**

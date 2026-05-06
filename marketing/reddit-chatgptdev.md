@@ -13,10 +13,10 @@ I built APIpulse because I was tired of switching between the OpenAI, Anthropic,
 - Interactive cost calculator with 33 models (GPT-5, GPT-5 mini, GPT-4o, Claude 4 Opus, Claude Sonnet 4, Gemini 2.5 Pro, Mistral, Llama, Cohere, AI21, etc.)
 - Side-by-side comparison tool — pick any 2 models, see costs broken down
 - Pricing Index page — every model, every price, sortable and filterable
-- 75 comparison blog posts with real-world cost scenarios
+- 78 comparison blog posts with real-world cost scenarios
 
 **Key findings from building this:**
-- GPT-5 ($10/$30 per 1M tokens) vs Claude 4 Opus ($15/$75) — GPT-5 is significantly cheaper
+- GPT-5 ($1.25/$10 per 1M tokens) vs Claude 4 Opus ($15/$75) — GPT-5 is significantly cheaper
 - GPT-4o mini ($0.15/$0.60) is the sweet spot for most chatbot use cases
 - Gemini 2.0 Flash ($0.10/$0.40) is the absolute cheapest for high-volume
 - Llama 3.1 8B via Together.ai ($0.18/$0.18) wins for self-hosted-like pricing
