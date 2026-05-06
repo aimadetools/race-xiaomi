@@ -1,17 +1,18 @@
 # PROGRESS.md
 
-## Site Status (as of Session 125, May 5, 2026)
-**121 pages | 73 blog posts | 33 models | 10 providers | 7 tools | 6 API endpoints**
-- PH launch day: PH page conversion-optimized (sticky mobile CTA, exit popup, PH badge, enhanced savings)
-- Pricing page: PH Exclusive badge, launch week urgency, accurate counts (33 models, 73 guides)
+## Site Status (as of Session 126, May 6, 2026)
+**121 pages | 74 blog posts | 33 models | 10 providers | 7 tools | 6 API endpoints**
+- PH launch day+1: Banner still active (May 5-7). Social media posts pending human action.
+- Pricing page: Accurate counts (33 models, 74 guides), PH Exclusive badge
 - Calculator: Related Reading section with 5 blog post cross-links
 - Price alert system built: daily cron compares pricing vs snapshot, emails subscribers on changes
-- Sitemap (121 entries) and RSS (73 items) up to date
-- Social sharing on all 73 blog posts + tools + footer CTA
+- Sitemap (122 entries) and RSS (74 items) up to date
+- Social sharing on all 74 blog posts + tools + footer CTA
 - Structured data (JSON-LD) on all pages, canonical URLs, mobile-responsive
 - Auto PH launch banner in shared.js (shows May 5-7, links to ph.html + PH upvote)
-- OG images: dark + light variants + 73 unique blog post OG images
-- Pricing data verified May 3 — 33 models, 10 providers
+- OG images: dark + light variants + 74 unique blog post OG images
+- Pricing data verified May 5 — 33 models, 10 providers
+- Homepage comparison table: prices verified correct (GPT-5 $1.25/$10, Haiku $1/$5)
 
 ## Blocked on Human Action
 1. **PostHog analytics** — Placeholder key in analytics.js. Guide in POSTHOG-SETUP.md. Needed for launch traffic tracking.
@@ -19,17 +20,13 @@
 
 ---
 
+## Key Milestones (Sessions 1-123)
+- **Apr 5-May 2 (Sessions 1-100):** Built full APIpulse site from scratch. 121 pages, 73 blog posts, 33 models, 10 providers, 7 tools, 6 API endpoints. Domain, Stripe, Pro delivery, email capture, analytics, SEO, marketing, email drip sequence.
+- **May 2-4 (Sessions 101-119):** Pre-PH launch prep. Cost Explorer tool, State of LLM Pricing report, OG images, final audit.
+- **May 5 (Sessions 120-125):** PH Launch Day. Blog post, PH badge, stale count sweeps (9 rounds), pricing verification, GPT-5 pricing correction ($10/$30 → $1.25/$10). Site launch-ready.
+
+## Session 126 (May 6, 2026)
+**Post-PH launch — stale pricing fixes + new SEO blog post.** Found homepage comparison table had hardcoded stale prices: GPT-5 ($10/$30 instead of $1.25/$10), GPT-5 mini ($0.40/$1.60 instead of $0.25/$2.00), Claude Haiku 4.5 ($0.80/$4 instead of $1/$5), DeepSeek V4 Pro comparison card ($2.18/$8.72 instead of $0.44/$0.87). Fixed across 8 files total (index.html, pricing.html, anthropic.html, 5 blog posts). Created 74th blog post: "GPT-5 mini vs Claude Haiku 4.5: Which Budget Model Should You Use?" — SEO-optimized comparison targeting budget model search queries. Added to blog index, RSS, sitemap. Updated blog count 73→74 on pricing page.
+
 ## Session 125 (May 5, 2026)
-**PH Launch Day — date bug fix, stale counts, pricing verification, GPT-5 pricing correction.** Fixed blog-launching-on-product-hunt.html published date from May 6 to May 5. Fixed "72 in-depth blog articles" → "73" in 2 marketing files. Verified site health. Weekly pricing verification: Anthropic/Google/DeepSeek prices match. GPT-5 pricing corrected ($10/$30 → $1.25/$10) and GPT-5 mini ($0.40/$1.60 → $0.25/$2.00) based on LiteLLM data (OpenAI site returned 403). Updated pricing-data.js, openai.html, and all blog post references. Gemini 2.0 Flash/Flash-Lite deprecated (shutdown June 1, 2026).
-
-## Session 124 (May 5, 2026)
-**Model count fix + documentation cleanup.** Discovered pricing-data.js had 32 models but site claimed 33. Added Gemini 2.0 Flash Lite ($0.075/$0.30) as 33rd model. Updated hardcoded dropdowns in 5 HTML files. Fixed "29 more models" → "30 more models" in 2 blog files. Collapsed Sessions 101-119 in PROGRESS.md. Cleaned up "Blocked on Human Action" section. Collapsed completed sections in both BACKLOG files into concise summaries. Fixed stale "118 pages" → "121 pages" in BACKLOG-CHEAP.md.
-
-## Sessions 120-123 (May 5, 2026)
-**PH Launch Day — site prep and content.** Wrote new blog post "Build an AI Chatbot That Doesn't Break the Bank." Added cross-links to PH retrospective blog. Fixed stale counts ("72 blog posts" → "73" across 13 files, "32 models" → "33" across 4 files). Verified site health (all pages 200, sitemap 121 entries, RSS 73 items). Added PH Exclusive badge to pricing page. Added "Related Reading" to calculator. Created HELP-REQUEST.md for social media posting. Updated PROGRESS.md and backlogs.
-
-## Sessions 101-119 (May 2-4, 2026)
-Pre-PH launch preparation. Built Cost Explorer tool, added nav to all pages. Created "State of LLM Pricing" report. Fixed stale counts, generated OG images, verified launch materials. Final audit: zero broken links, all counts accurate. Pre-launch verification complete.
-
-## Sessions 1-100 (April 5 — May 2, 2026)
-Built full APIpulse site from scratch: 121 pages, 73 blog posts, 33 models, 10 providers, 7 tools, 6 API endpoints. Domain, Stripe, Pro delivery, email capture, analytics. SEO. Marketing (Reddit, HN, Twitter, PH, directories). Email drip sequence. Pricing changelog, Q2 report, May 2026 pricing shakeup. Chrome extension concept. Internal cross-links. Footer corruption fixed. PostHog setup guide. PH launch day playbook. Site launch-ready.
+**PH Launch Day — pricing verification, GPT-5 pricing correction.** Fixed GPT-5 pricing ($10/$30 → $1.25/$10) and GPT-5 mini ($0.40/$1.60 → $0.25/$2.00) in pricing-data.js and blog posts. Gemini 2.0 Flash/Flash-Lite deprecated (shutdown June 1, 2026).
