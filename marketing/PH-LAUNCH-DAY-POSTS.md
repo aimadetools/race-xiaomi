@@ -80,7 +80,7 @@ Key features:
 - 33 models across 10 providers (OpenAI, Anthropic, Google, Mistral, DeepSeek, Cohere, Meta, xAI, Moonshot, AI21)
 - Instant cost calculations — no signup, no API keys
 - Side-by-side comparison tool
-- 78 blog posts with deep-dive analysis
+- 79 blog posts with deep-dive analysis
 - Pricing API for developers
 - Dark/light themes, mobile responsive
 

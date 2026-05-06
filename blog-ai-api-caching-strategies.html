@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI API Caching Strategies: Reduce LLM Costs by 60%+ — APIpulse</title>
+    <meta name="description" content="Complete guide to AI API caching: exact-match, semantic, and prompt caching strategies to cut LLM costs by 40-70%. Implementation examples for OpenAI, Anthropic, and Google.">
+    <meta name="keywords" content="AI API caching, LLM caching, reduce API costs, prompt caching, semantic caching, OpenAI cache, Anthropic cache, AI API cost savings, LLM cost optimization">
+    <meta property="og:title" content="AI API Caching Strategies: Reduce LLM Costs by 60%+ — APIpulse">
+    <meta property="og:description" content="Complete guide to AI API caching: exact-match, semantic, and prompt caching strategies to cut LLM costs by 40-70%.">
+    <meta property="og:type" content="article">
+    <meta property="article:published_time" content="2026-05-06">
+    <meta property="article:modified_time" content="2026-05-06">
+    <meta property="article:author" content="APIpulse">
+    <meta property="og:image" content="https://getapipulse.com/og-images/blog-ai-api-caching-strategies.png">
+    <meta property="og:url" content="https://getapipulse.com/blog-ai-api-caching-strategies.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="AI API Caching Strategies: Reduce LLM Costs by 60%+ — APIpulse">
+    <meta name="twitter:image" content="https://getapipulse.com/og-images/blog-ai-api-caching-strategies.png">
+    <meta name="twitter:description" content="Complete guide to AI API caching: exact-match, semantic, and prompt caching strategies to cut LLM costs by 40-70%.">
+    <link rel="canonical" href="https://getapipulse.com/blog-ai-api-caching-strategies.html">
+    <link rel="alternate" type="application/rss+xml" title="APIpulse Blog" href="https://getapipulse.com/rss.xml">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="styles.css">
+    <script src="analytics.js" defer></script>
+    <script src="dynamic-date.js" defer></script>
+    <script src="shared.js" defer></script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "AI API Caching Strategies: Reduce LLM Costs by 60%+",
+        "description": "Complete guide to AI API caching: exact-match, semantic, and prompt caching strategies to cut LLM costs by 40-70%.",
+        "datePublished": "2026-05-06",
+        "dateModified": "2026-05-06",
+        "author": { "@type": "Organization", "name": "APIpulse" },
+        "publisher": { "@type": "Organization", "name": "APIpulse", "url": "https://getapipulse.com" },
+        "url": "https://getapipulse.com/blog-ai-api-caching-strategies.html",
+        "image": "https://getapipulse.com/og-image.png"
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Blog", "item": "https://getapipulse.com/blog.html" },
+            { "@type": "ListItem", "position": 2, "name": "AI API Caching Strategies", "item": "https://getapipulse.com/blog-ai-api-caching-strategies.html" }
+        ]
+    }
+    </script>
+    <style>
+        .content { max-width: 800px; margin: 0 auto; padding: 120px 24px 80px; }
+        h1 { font-size: 40px; font-weight: 800; margin-bottom: 12px; }
+        .subtitle { color: var(--text-secondary); font-size: 18px; margin-bottom: 48px; }
+
+        .post-card {
+            background: var(--bg-secondary); border: 1px solid var(--border);
+            border-radius: 12px; padding: 28px; margin-bottom: 20px;
+            transition: border-color 0.2s, transform 0.2s;
+        }
+        .post-card:hover { border-color: var(--accent); transform: translateY(-2px); }
+        .post-meta {
+            display: flex; gap: 16px; align-items: center; margin-bottom: 12px;
+            font-size: 13px; color: var(--text-muted);
+        }
+        .post-tag {
+            background: var(--accent-glow); color: var(--accent);
+            padding: 2px 10px; border-radius: 6px; font-size: 12px; font-weight: 600;
+        }
+        .post-card h2 { font-size: 20px; font-weight: 700; margin-bottom: 8px; }
+        .post-card h2 a { color: var(--text-primary); }
+        .post-card h2 a:hover { color: var(--accent); }
+        .post-card p { color: var(--text-secondary); font-size: 15px; margin: 0; }
+        .post-card .read-more {
+            display: inline-block; margin-top: 12px; font-size: 14px; font-weight: 600;
+        }
+
+        .article { max-width: 700px; margin: 0 auto; }
+        .article h1 { font-size: 36px; margin-bottom: 16px; }
+        .article h2 { font-size: 24px; font-weight: 700; margin: 32px 0 16px; }
+        .article h3 { font-size: 18px; font-weight: 600; margin: 24px 0 12px; }
+        .article p { color: var(--text-secondary); margin-bottom: 16px; line-height: 1.7; }
+        .article ul, .article ol { color: var(--text-secondary); padding-left: 24px; margin-bottom: 16px; }
+        .article li { margin-bottom: 8px; }
+        .article strong { color: var(--text-primary); }
+        .article code {
+            background: var(--bg-card); padding: 2px 8px; border-radius: 4px;
+            font-size: 14px; color: var(--accent);
+        }
+        .article blockquote {
+            border-left: 3px solid var(--accent); padding-left: 20px; margin: 20px 0;
+            color: var(--text-secondary); font-style: italic;
+        }
+        .back-link {
+            display: inline-flex; align-items: center; gap: 6px;
+            font-size: 14px; color: var(--text-secondary); margin-bottom: 32px;
+        }
+        .back-link:hover { color: var(--text-primary); }
+
+        .cta-inline {
+            background: var(--bg-secondary); border: 1px solid var(--accent);
+            border-radius: 12px; padding: 24px; margin: 32px 0; text-align: center;
+        }
+        .cta-inline p { margin-bottom: 12px; }
+        .share-section {
+            margin-top: 32px; padding-top: 24px; border-top: 1px solid var(--border);
+            text-align: center;
+        }
+        .share-section p { color: var(--text-secondary); font-size: 14px; margin-bottom: 12px; }
+        .share-btn {
+            display: inline-block; background: var(--bg-card); color: var(--text-primary);
+            padding: 8px 20px; border-radius: 8px; font-size: 14px; font-weight: 500;
+            border: 1px solid var(--border); transition: all 0.2s;
+        }
+        .share-btn:hover { background: var(--accent); color: white; border-color: var(--accent); }
+
+        .cost-example {
+            background: var(--bg-secondary); border: 1px solid var(--border);
+            border-radius: 10px; padding: 20px; margin: 20px 0;
+        }
+        .cost-example .label {
+            font-size: 13px; color: var(--text-muted); text-transform: uppercase;
+            letter-spacing: 0.5px; margin-bottom: 12px; font-weight: 600;
+        }
+        .cost-example .cost-row {
+            display: flex; justify-content: space-between; padding: 8px 0;
+            border-bottom: 1px solid var(--border); font-size: 14px;
+        }
+        .cost-example .cost-row:last-child { border-bottom: none; }
+        .cost-example .cost-row .name { color: var(--text-secondary); }
+        .cost-example .cost-row .value { color: var(--text-primary); font-weight: 600; font-variant-numeric: tabular-nums; }
+        .cost-example .cost-total { border-top: 2px solid var(--accent); border-bottom: none; padding-top: 12px; margin-top: 4px; }
+        .cost-example .cost-total .name { color: var(--text-primary); font-weight: 600; }
+
+        .checklist {
+            background: var(--bg-secondary); border: 1px solid var(--border);
+            border-radius: 10px; padding: 24px; margin: 20px 0;
+        }
+        .checklist h3 { font-size: 18px; font-weight: 700; margin-bottom: 16px; }
+        .checklist ul { list-style: none; padding: 0; }
+        .checklist li { padding: 6px 0; color: var(--text-secondary); font-size: 14px; }
+        .checklist li::before { content: "\2610 "; color: var(--accent); margin-right: 8px; font-size: 16px; }
+
+        table.comparison {
+            width: 100%; border-collapse: collapse; margin: 20px 0;
+            background: var(--bg-secondary); border-radius: 10px; overflow: hidden;
+        }
+        table.comparison th {
+            background: var(--bg-card); padding: 12px 16px; text-align: left;
+            font-size: 13px; font-weight: 600; color: var(--text-primary);
+            border-bottom: 1px solid var(--border);
+        }
+        table.comparison td {
+            padding: 10px 16px; font-size: 14px; color: var(--text-secondary);
+            border-bottom: 1px solid var(--border);
+        }
+        table.comparison tr:last-child td { border-bottom: none; }
+        table.comparison tr:hover td { background: var(--bg-card); }
+
+        pre {
+            background: var(--bg-card); border: 1px solid var(--border);
+            border-radius: 8px; padding: 16px; margin: 16px 0;
+            overflow-x: auto; font-size: 13px; line-height: 1.6;
+        }
+        pre code { background: none; padding: 0; color: var(--text-primary); }
+
+        @media (max-width: 768px) {
+            .content { padding: 100px 20px 60px; }
+            h1 { font-size: 28px; }
+            .subtitle { font-size: 16px; }
+            .post-card { padding: 20px; }
+            .post-card h2 { font-size: 18px; }
+            .article h1 { font-size: 28px; }
+            .article h2 { font-size: 20px; }
+            .cta-inline { padding: 20px; }
+            table.comparison { font-size: 12px; }
+            table.comparison th, table.comparison td { padding: 8px 10px; }
+        }
+        @media print {
+            nav, .share-section, .cta-inline, .theme-toggle, .back-link { display: none !important; }
+            body { background: white; color: black; }
+            .content { padding: 0; max-width: 100%; }
+            .article h1 { font-size: 24px; margin-bottom: 8px; }
+            .article h2 { font-size: 18px; margin: 16px 0 8px; }
+            .article p, .article li { color: #333; font-size: 12px; }
+            .post-meta { display: none; }
+            a { color: black; text-decoration: underline; }
+            footer { border-top: 1px solid #ccc; padding: 10px 0; }
+        }
+    </style>
+    <meta name="theme-color" content="#6366f1">
+    <link rel="preconnect" href="https://getapipulse.com">
+</head>
+<body>
+    <a href="#main" class="skip-link">Skip to content</a>
+    <nav>
+        <div class="nav-inner">
+            <a href="index.html" class="logo">API<span>pulse</span></a>
+            <button class="hamburger" onclick="toggleMobileNav()" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+            <div class="nav-links">
+                <a href="calculator.html">Calculator</a>
+                <a href="compare.html">Compare</a>
+                <a href="cost-explorer.html">Explorer</a>
+                <a href="cost-scenarios.html">Scenarios</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="use-cases.html">Use Cases</a>
+                <a href="about.html">About</a>
+                <a href="blog.html" class="active">Blog</a>
+                <a href="pricing-index.html">Pricing Index</a>
+                <a href="model-matrix.html">Model Matrix</a>
+                <a href="pricing-trends.html">Trends</a>
+                <a href="pricing-changelog.html">Changelog</a>
+                <a href="price-alerts.html">Price Alerts</a>
+                <a href="cheat-sheet.html">Cheat Sheet</a>
+                <a href="api-docs.html" style="color:var(--accent);">API</a>
+                <a href="pricing.html" class="nav-cta" onclick="if(window.trackEvent)window.trackEvent('pro_button_clicked',{source:'nav'})">Get Pro — $29</a>
+                <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
+            </div>
+        </div>
+    </nav>
+
+    <main id="main">
+
+    <div class="content article" id="post-ai-api-caching-strategies">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+            <a href="blog.html">Blog</a>
+            <span class="separator">›</span>
+            <span class="current">AI API Caching Strategies</span>
+        </nav>
+        <a href="blog.html" class="back-link">← Back to blog</a>
+        <div class="post-meta" style="margin-bottom: 24px;">
+            <span class="post-tag">Guide</span>
+            <span>May 6, 2026</span>
+            <span>· 12 min read</span>
+        </div>
+        <h1>AI API Caching Strategies: Reduce LLM Costs by 60%+</h1>
+
+        <p>Caching is the highest-ROI cost optimization technique for AI APIs. A well-implemented cache can eliminate 30-70% of your API calls entirely — zero cost, zero latency penalty on cache hits. This guide covers three caching strategies with real implementation examples and cost breakdowns.</p>
+
+        <h2>Why Caching Works So Well for LLMs</h2>
+        <p>Most AI API workloads have significant request overlap. A customer support bot sees the same questions repeatedly. A content generator processes similar prompts. A classification pipeline handles recurring patterns. Every duplicate request that hits your cache instead of the API is pure savings.</p>
+
+        <blockquote>A SaaS company processing 15,000 chat requests/day implemented exact-match caching and immediately reduced their API bill from $450/month to $210/month — a 53% reduction with zero quality loss.</blockquote>
+
+        <p>The key insight: LLM APIs charge per token. If you can serve a response from cache, you pay nothing for that request. Even a 30% cache hit rate means 30% of your costs disappear overnight.</p>
+
+        <h2>Strategy 1: Exact-Match Caching</h2>
+        <p>The simplest and most reliable caching approach. Store the full prompt + response. If the exact same request comes in again, return the cached result without calling the API.</p>
+
+        <h3>How it works</h3>
+        <ol>
+            <li>Hash the request (system prompt + user message + model + parameters)</li>
+            <li>Check if hash exists in your cache store (Redis, SQLite, or even a dictionary)</li>
+            <li>On hit: return cached response immediately</li>
+            <li>On miss: call the API, store the response with the hash, return it</li>
+        </ol>
+
+        <pre><code>import hashlib, json, redis
+
+r = redis.Redis()
+
+def cached_completion(messages, model="gpt-4o-mini", **kwargs):
+    # Create a cache key from the full request
+    cache_input = json.dumps({"messages": messages, "model": model, **kwargs}, sort_keys=True)
+    cache_key = f"llm:{hashlib.sha256(cache_input.encode()).hexdigest()}"
+
+    # Check cache
+    cached = r.get(cache_key)
+    if cached:
+        return json.loads(cached)
+
+    # Cache miss — call the API
+    response = openai.chat.completions.create(messages=messages, model=model, **kwargs)
+    result = response.model_dump()
+
+    # Store in cache (expire after 24 hours)
+    r.setex(cache_key, 86400, json.dumps(result))
+    return result</code></pre>
+
+        <h3>When exact-match caching works best</h3>
+        <ul>
+            <li><strong>FAQ chatbots</strong> — same questions asked repeatedly (40-60% hit rates common)</li>
+            <li><strong>Template-based generation</strong> — same inputs produce same outputs</li>
+            <li><strong>Classification pipelines</strong> — identical documents reclassified</li>
+            <li><strong>Code completion</strong> — same context triggers same suggestions</li>
+        </ul>
+
+        <h3>When it falls short</h3>
+        <p>Exact-match requires identical inputs. If users phrase the same question differently ("What's the price?" vs "How much does it cost?"), they won't match. That's where semantic caching comes in.</p>
+
+        <div class="cost-example">
+            <div class="label">Exact-match caching impact</div>
+            <div class="cost-row">
+                <span class="name">10,000 requests/day, GPT-4o mini</span>
+                <span class="value">$45/mo</span>
+            </div>
+            <div class="cost-row">
+                <span class="name">With 35% exact-match hit rate</span>
+                <span class="value">$29/mo</span>
+            </div>
+            <div class="cost-row cost-total">
+                <span class="name">Monthly savings</span>
+                <span class="value" style="color:var(--green);">$16/mo (35% reduction)</span>
+            </div>
+        </div>
+
+        <h2>Strategy 2: Semantic Caching</h2>
+        <p>Semantic caching matches requests by meaning, not exact text. "How do I reset my password?" and "I forgot my password, how do I fix it?" would both hit the same cache entry because they're semantically equivalent.</p>
+
+        <h3>How it works</h3>
+        <ol>
+            <li>Generate an embedding vector for each request using a cheap embedding model</li>
+            <li>Store the embedding + response in a vector database</li>
+            <li>On new requests, search for the nearest embedding (cosine similarity above a threshold)</li>
+            <li>On hit: return cached response; On miss: call API, store embedding + response</li>
+        </ol>
+
+        <pre><code>import numpy as np
+from openai import OpenAI
+
+client = OpenAI()
+
+def get_embedding(text):
+    response = client.embeddings.create(input=text, model="text-embedding-3-small")
+    return response.data[0].embedding
+
+def semantic_cached_completion(messages, model="gpt-4o-mini",
+                                similarity_threshold=0.92, **kwargs):
+    # Combine messages into a single query string for embedding
+    query_text = " ".join(m["content"] for m in messages)
+    query_embedding = get_embedding(query_text)
+
+    # Search vector DB for similar cached queries
+    similar = vector_db.search(query_embedding, top_k=1,
+                                threshold=similarity_threshold)
+
+    if similar:
+        return similar[0]["response"]
+
+    # Cache miss
+    response = client.chat.completions.create(
+        messages=messages, model=model, **kwargs
+    )
+    result = response.model_dump()
+
+    # Store embedding + response
+    vector_db.insert(query_embedding, {
+        "response": result,
+        "query": query_text,
+        "model": model
+    })
+    return result</code></pre>
+
+        <h3>Semantic caching trade-offs</h3>
+        <table class="comparison">
+            <thead>
+                <tr>
+                    <th>Factor</th>
+                    <th>Exact-Match</th>
+                    <th>Semantic</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Hit rate</strong></td>
+                    <td>20-40%</td>
+                    <td>40-65%</td>
+                </tr>
+                <tr>
+                    <td><strong>Quality risk</strong></td>
+                    <td>None (exact response)</td>
+                    <td>Low (similar but not identical query)</td>
+                </tr>
+                <tr>
+                    <td><strong>Infrastructure</strong></td>
+                    <td>Redis or in-memory</td>
+                    <td>Vector DB (Pinecone, Weaviate, pgvector)</td>
+                </tr>
+                <tr>
+                    <td><strong>Added latency</strong></td>
+                    <td>&lt;1ms (hash lookup)</td>
+                    <td>5-20ms (embedding + vector search)</td>
+                </tr>
+                <tr>
+                    <td><strong>Cost to run</strong></td>
+                    <td>Near zero</td>
+                    <td>Embedding cost (~$0.02/1M tokens)</td>
+                </tr>
+                <tr>
+                    <td><strong>Best for</strong></td>
+                    <td>FAQ bots, templates</td>
+                    <td>Conversational, varied phrasing</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>Tuning the similarity threshold</h3>
+        <p>The threshold controls how "similar" queries need to be to count as a cache hit. Too low and you'll return wrong answers; too high and you'll miss real matches.</p>
+        <ul>
+            <li><strong>0.95+</strong> — Very conservative. Almost exact meaning. Low risk of wrong answers.</li>
+            <li><strong>0.90-0.95</strong> — Balanced. Good hit rates with minimal quality risk.</li>
+            <li><strong>0.85-0.90</strong> — Aggressive. Higher hit rates but risk of semantically different queries matching.</li>
+        </ul>
+        <p>Start at 0.92 and adjust based on your quality metrics. For support bots where accuracy matters, stay above 0.93.</p>
+
+        <div class="cost-example">
+            <div class="label">Semantic caching impact (15,000 requests/day)</div>
+            <div class="cost-row">
+                <span class="name">Without caching (GPT-4o)</span>
+                <span class="value">$675/mo</span>
+            </div>
+            <div class="cost-row">
+                <span class="name">Exact-match only (35% hit rate)</span>
+                <span class="value">$439/mo</span>
+            </div>
+            <div class="cost-row">
+                <span class="name">Semantic caching (55% hit rate)</span>
+                <span class="value">$304/mo</span>
+            </div>
+            <div class="cost-row cost-total">
+                <span class="name">Total savings with semantic caching</span>
+                <span class="value" style="color:var(--green);">$371/mo (55% reduction)</span>
+            </div>
+        </div>
+
+        <h2>Strategy 3: Provider Prompt Caching</h2>
+        <p>Both OpenAI and Anthropic now offer built-in prompt caching at the API level. This automatically caches the prefix of your prompts and gives you a discount on subsequent requests that share the same prefix.</p>
+
+        <h3>OpenAI Prompt Caching</h3>
+        <ul>
+            <li>Automatically caches prompts longer than 1,024 tokens (GPT-4o) or 2,048 tokens (GPT-4o mini)</li>
+            <li><strong>90% discount</strong> on cached input tokens (you pay only 10% of the input price)</li>
+            <li>Cache entries expire after 5-10 minutes of inactivity</li>
+            <li>No code changes needed — it's automatic for supported models</li>
+        </ul>
+
+        <h3>Anthropic Prompt Caching</h3>
+        <ul>
+            <li>Cache prefixes up to 4,096 tokens with explicit caching markers</li>
+            <li><strong>90% discount</strong> on cached input tokens</li>
+            <li>Cache TTL is 5 minutes (extended on each hit)</li>
+            <li>Requires adding <code>cache_control</code> parameter to mark the cache breakpoint</li>
+        </ul>
+
+        <pre><code># Anthropic prompt caching example
+response = client.messages.create(
+    model="claude-sonnet-4-6-20250514",
+    max_tokens=1024,
+    system=[
+        {
+            "type": "text",
+            "text": "You are a helpful assistant for Acme Corp. [long system prompt...]",
+            "cache_control": {"type": "ephemeral"}  # Cache this prefix
+        }
+    ],
+    messages=[{"role": "user", "content": "What's the return policy?"}]
+)</code></pre>
+
+        <h3>When provider caching helps most</h3>
+        <ul>
+            <li><strong>Long system prompts</strong> — if your system prompt is 500+ tokens, every request after the first pays 10% instead of 100%</li>
+            <li><strong>Multi-turn conversations</strong> — conversation history is the prefix; only new messages are full price</li>
+            <li><strong>RAG applications</strong> — large context documents in the prompt get cached automatically</li>
+        </ul>
+
+        <div class="cost-example">
+            <div class="label">Provider prompt caching impact (1,000 requests/day with 800-token system prompt)</div>
+            <div class="cost-row">
+                <span class="name">Without caching (GPT-4o, $2.50/M input)</span>
+                <span class="value">$600/mo</span>
+            </div>
+            <div class="cost-row">
+                <span class="name">With provider caching (90% discount on prefix)</span>
+                <span class="value">$108/mo</span>
+            </div>
+            <div class="cost-row cost-total">
+                <span class="name">Monthly savings</span>
+                <span class="value" style="color:var(--green);">$492/mo (82% reduction)</span>
+            </div>
+        </div>
+
+        <h2>Combining Strategies for Maximum Savings</h2>
+        <p>The best results come from layering multiple caching approaches. Here's a production architecture that combines all three:</p>
+
+        <ol>
+            <li><strong>Layer 1 — Exact-match cache</strong> (Redis). Fast, zero-cost lookups. Catches duplicate requests.</li>
+            <li><strong>Layer 2 — Semantic cache</strong> (Vector DB). Catches paraphrased versions of cached queries.</li>
+            <li><strong>Layer 3 — Provider prompt caching</strong> (Automatic). Even on cache misses, the system prompt prefix is cached by the provider at 90% off.</li>
+        </ol>
+
+        <p>On a cache miss at Layer 1, you check Layer 2. If both miss, the API call still benefits from provider caching on the prompt prefix. The result: you rarely pay full price for any request.</p>
+
+        <div class="cost-example">
+            <div class="label">Combined caching: 20,000 requests/day, GPT-4o, 600-token system prompt</div>
+            <div class="cost-row">
+                <span class="name">No caching</span>
+                <span class="value">$900/mo</span>
+            </div>
+            <div class="cost-row">
+                <span class="name">Exact-match only (35% hit rate)</span>
+                <span class="value">$585/mo</span>
+            </div>
+            <div class="cost-row">
+                <span class="name">Exact + semantic (55% hit rate)</span>
+                <span class="value">$405/mo</span>
+            </div>
+            <div class="cost-row">
+                <span class="name">All three layers (55% hit + provider caching on misses)</span>
+                <span class="value">$162/mo</span>
+            </div>
+            <div class="cost-row cost-total">
+                <span class="name">Maximum savings</span>
+                <span class="value" style="color:var(--green);">$738/mo (82% reduction)</span>
+            </div>
+        </div>
+
+        <h2>Cache Invalidation: The Hard Part</h2>
+        <p>Caching is easy. Invalidating caches correctly is where most teams struggle. Strategies:</p>
+
+        <ul>
+            <li><strong>Time-based expiration (TTL)</strong> — simplest approach. Set 1-24 hour TTLs based on how stale your data can be. Pricing data? 24 hours is fine. Real-time support? 5-15 minutes.</li>
+            <li><strong>Event-driven invalidation</strong> — when your data changes (new pricing, updated docs), invalidate affected cache entries. More complex but more precise.</li>
+            <li><strong>Version-prefixed keys</strong> — include a version number in cache keys: <code>v2:hash(prompt)</code>. Bump the version to invalidate everything at once.</li>
+            <li><strong>Write-through caching</strong> — update cache and DB simultaneously on writes. Ensures consistency but adds write latency.</li>
+        </ul>
+
+        <p><strong>Rule of thumb:</strong> Use TTL for most cases. Only build event-driven invalidation if stale responses would cause user-facing issues.</p>
+
+        <h2>Measuring Cache Performance</h2>
+        <p>Track these metrics to know if your caching is working:</p>
+
+        <table class="comparison">
+            <thead>
+                <tr>
+                    <th>Metric</th>
+                    <th>What It Tells You</th>
+                    <th>Target</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Hit rate</strong></td>
+                    <td>% of requests served from cache</td>
+                    <td>30%+ (exact), 50%+ (semantic)</td>
+                </tr>
+                <tr>
+                    <td><strong>Cost per request</strong></td>
+                    <td>Average API cost divided by total requests</td>
+                    <td>Decreasing over time</td>
+                </tr>
+                <tr>
+                    <td><strong>Cache latency</strong></td>
+                    <td>Time to serve a cached response</td>
+                    <td>&lt;5ms (exact), &lt;25ms (semantic)</td>
+                </tr>
+                <tr>
+                    <td><strong>Stale response rate</strong></td>
+                    <td>% of cached responses that were outdated</td>
+                    <td>&lt;1%</td>
+                </tr>
+                <tr>
+                    <td><strong>Cache size</strong></td>
+                    <td>Storage used by cache entries</td>
+                    <td>Monitor growth, set eviction policies</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="cta-inline">
+            <p><strong>See how much you could save with caching.</strong></p>
+            <p style="font-size:14px;color:var(--text-secondary);">Enter your current API usage and get a personalized cost projection with and without caching.</p>
+            <a href="calculator.html" class="btn-primary">Try the APIpulse Calculator</a>
+        </div>
+
+        <div class="checklist">
+            <h3>Implementation Checklist</h3>
+            <ul>
+                <li>Identify which request types have high repetition (FAQ, templates, classification)</li>
+                <li>Start with exact-match caching — it's the easiest win</li>
+                <li>Measure your natural hit rate before optimizing</li>
+                <li>Add semantic caching if exact-match hit rate is below 30%</li>
+                <li>Enable provider prompt caching (it's free and automatic)</li>
+                <li>Set appropriate TTLs based on data freshness requirements</li>
+                <li>Monitor hit rate, cost per request, and stale response rate</li>
+                <li>Implement cache invalidation for data-sensitive workloads</li>
+                <li>Consider combining all three layers for maximum savings</li>
+                <li>Use <a href="calculator.html">APIpulse</a> to track your cost-per-request trends</li>
+            </ul>
+        </div>
+
+        <div class="share-section">
+            <p>Found this useful? Share it:</p>
+            <a href="https://twitter.com/intent/tweet?text=AI+API+Caching+Strategies:+Reduce+LLM+Costs+by+60%25+-+exact+match,+semantic,+and+provider+caching&url=https%3A%2F%2Fgetapipulse.com%2Fblog-ai-api-caching-strategies.html" target="_blank" rel="noopener" class="share-btn">Share on X</a>
+            <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fgetapipulse.com%2Fblog-ai-api-caching-strategies.html" target="_blank" rel="noopener" class="share-btn">Share on LinkedIn</a>
+        </div>
+
+        <div style="margin-top:40px;padding:24px;background:var(--bg-secondary);border:1px solid var(--border);border-radius:12px;">
+            <h3 style="font-size:16px;margin-bottom:12px;">Related Reading</h3>
+            <ul style="list-style:none;padding:0;">
+                <li style="margin-bottom:8px;"><a href="blog-cost-optimization-guide.html">AI API Cost Optimization: A Complete Guide for 2026</a></li>
+                <li style="margin-bottom:8px;"><a href="blog-api-batch-processing.html">The Complete Guide to AI API Batch Processing</a></li>
+                <li style="margin-bottom:8px;"><a href="blog-reduce-costs.html">How to Reduce Your AI API Costs by 40% (Without Losing Quality)</a></li>
+                <li style="margin-bottom:8px;"><a href="blog-cut-api-bill.html">How to Cut Your AI API Bill in Half</a></li>
+                <li style="margin-bottom:8px;"><a href="blog-multi-model-routing.html">Multi-Model Routing: Use the Right LLM for Each Task</a></li>
+                <li style="margin-bottom:8px;"><a href="blog-ai-cost-per-request.html">AI API Cost Per Request: How Much Does Each LLM Call Actually Cost?</a></li>
+                <li><a href="blog-cheapest-rag-setup-2026.html">Cheapest RAG Setup in 2026: Full Cost Breakdown</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div style="max-width:600px;margin:48px auto 0;padding:32px;text-align:center;background:var(--bg-card);border-radius:12px;border:1px solid var(--border);">
+        <h3 style="font-size:18px;margin-bottom:8px;">Get notified when API prices change</h3>
+        <p style="font-size:14px;color:var(--text-secondary);margin-bottom:16px;">No spam. Only pricing updates and new features. Unsubscribe anytime.</p>
+        <form onsubmit="saveEmail(event)" style="display:flex;gap:8px;max-width:400px;margin:0 auto;">
+            <input type="email" id="email-input" placeholder="you@company.com" required aria-label="Email address"
+                style="flex:1;padding:12px 16px;border-radius:8px;border:1px solid var(--border);background:var(--bg-secondary);color:var(--text-primary);font-size:14px;">
+            <button type="submit" class="btn-primary" style="padding:12px 24px;white-space:nowrap;">Subscribe</button>
+        </form>
+        <p id="email-msg" style="font-size:13px;color:var(--green);margin-top:12px;display:none;"></p>
+    </div>
+
+    <button class="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">↑</button>
+
+    </main>
+    <footer>
+        <p>Pricing data last verified: <span class="verified-date"></span></p>
+        <p>&copy; 2026 APIpulse. <a href="index.html">Home</a> &middot; <a href="use-cases.html">Use Cases</a> &middot; <a href="about.html">About</a> &middot; <a href="blog.html">Blog</a>
+<a href="pricing-index.html">Pricing Index</a> &middot; <a href="model-matrix.html">Model Matrix</a> &middot; <a href="cost-scenarios.html">Scenarios</a> &middot; <a href="price-alerts.html">Price Alerts</a> &middot; <a href="pricing-changelog.html">Changelog</a> &middot; <a href="openai.html">OpenAI</a> &middot; <a href="anthropic.html">Anthropic</a> &middot; <a href="google.html">Google</a> &middot; <a href="mistral.html">Mistral</a> &middot; <a href="cohere.html">Cohere</a> &middot; <a href="deepseek.html">DeepSeek</a> &middot; <a href="xai.html">xAI</a> &middot; <a href="moonshot.html">Moonshot</a> &middot; <a href="together.html">Together.ai</a> &middot; <a href="ai21.html">AI21</a> &middot; <a href="pricing.html">Pricing</a> &middot; <a href="embed.html">Embed Widget</a> &middot; <a href="cheat-sheet.html">Cheat Sheet</a> &middot; <a href="api-docs.html">API</a> &middot; <a href="https://x.com/getapipulse" target="_blank" rel="noopener">Twitter</a> &middot; <a href="unsubscribe.html">Unsubscribe</a></p>
+    </footer>
+
+</body>
+</html>
