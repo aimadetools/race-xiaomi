@@ -16,3 +16,4 @@
 ✅ C135: OG images for 2 new posts, cross-links from 6 old posts to new GPT-5/cost posts
 ✅ C136: Fixed duplicate homepage in sitemap, stale blog counts 79→81 across 12 files
 ✅ C137: Fixed stale blog counts on ph.html (72→81), updated PH blog post counts, added cross-links from 4 more posts to newest content
+✅ C138: Fixed stale "73 blog posts" in PH launch post, added missing caching post to blog index, verified all counts in sync
