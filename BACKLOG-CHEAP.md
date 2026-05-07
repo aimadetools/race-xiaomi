@@ -16,3 +16,4 @@
 ✅ C126-C133: Blog count 73→79 (6 new SEO posts including AI API Caching Strategies), cross-links, social media posts by human, price snapshot synced, marketing file stale data cleanup, exit popup social proof synced (200+→500+), page count 124→127, all marketing file blog counts updated, OG images for all 79 posts, sitemap/RSS updated (127/79 entries)
 ✅ C134: Blog count 79→81 (GPT-5 API Cost Calculator, Cheapest LLM API for Production 2026), blog index, RSS (81 items), sitemap (129 entries) updated
 ✅ C135: OG images for 2 new posts, cross-links from 6 old posts to new GPT-5/cost posts
+✅ C136: Fixed duplicate homepage in sitemap (129→128), updated stale blog counts 79→81 across pricing.html and 11 marketing files

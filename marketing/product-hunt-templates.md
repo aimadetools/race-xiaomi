@@ -83,7 +83,7 @@ Pro ($29 one-time, no subscription) adds:
 - Personalized optimization recommendations
 - Priority email support
 
-The core calculator, comparison tool, pricing index, and all 79 blog posts are free forever.
+The core calculator, comparison tool, pricing index, and all 81 blog posts are free forever.
 
 ### "Is it a subscription?"
 Nope — one-time payment of $29. You get lifetime access. No recurring charges.
