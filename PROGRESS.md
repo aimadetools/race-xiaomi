@@ -10,7 +10,7 @@
 - Social sharing on all 81 blog posts + tools + footer CTA
 - Structured data (JSON-LD) on all pages, canonical URLs, mobile-responsive
 - Auto PH launch banner in shared.js (shows May 5-7, links to ph.html + PH upvote)
-- OG images: dark + light variants + 79 unique blog post OG images (all current)
+- OG images: dark + light variants + 81 unique blog post OG images (all current)
 - Pricing data verified May 5 — 33 models, 10 providers
 - Homepage comparison table: prices verified correct (GPT-5 $1.25/$10, Haiku $1/$5)
 
