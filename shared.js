@@ -201,6 +201,15 @@ async function saveEmail(e) {
     }, 45000);
 })();
 
+// Pricing freshness badge — renders "Updated May 5, 2026" badge into target element
+function renderPricingFreshness(containerId) {
+    var container = document.getElementById(containerId);
+    if (!container || typeof PRICING_LAST_UPDATED === 'undefined') return;
+    container.innerHTML = '<span style="display:inline-flex;align-items:center;gap:6px;background:rgba(34,197,94,0.08);border:1px solid rgba(34,197,94,0.25);padding:5px 14px;border-radius:100px;font-size:12px;font-weight:600;color:var(--green);">' +
+        '<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>' +
+        'Pricing updated ' + PRICING_LAST_UPDATED + '</span>';
+}
+
 // Product Hunt launch banner (auto-shows May 5-7, 2026)
 (function() {
     if (localStorage.getItem('apipulse_ph_banner_dismissed')) return;

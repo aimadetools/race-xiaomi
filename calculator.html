@@ -185,6 +185,7 @@
     <div class="calc-hero">
         <h1>AI API Cost Calculator</h1>
         <p>Compare pricing across 33 models from 10 providers. Enter your usage below to see exactly what you'd pay — no signup required.</p>
+        <div id="pricing-freshness" style="margin-top:16px;"></div>
     </div>
 
     <section class="calculator-section">
@@ -615,5 +616,6 @@
             else if (e.key === '?') { e.preventDefault(); toggleShortcuts(); }
         });
     </script>
+    <script>document.addEventListener('DOMContentLoaded', function() { renderPricingFreshness('pricing-freshness'); });</script>
 </body>
 </html>

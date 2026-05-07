@@ -169,6 +169,7 @@
     <div class="content">
         <h1>AI API Pricing Index</h1>
         <p class="subtitle">Every model, every provider, one table. Sort by cost, filter by provider, and find the cheapest option for your workload.</p>
+        <div id="pricing-freshness" style="text-align:center;margin-bottom:24px;"></div>
 
         <div class="controls">
             <input type="text" id="search" placeholder="Search models..." oninput="filterTable()">
@@ -293,6 +294,7 @@
 
         // Initial render
         renderTable(models);
+        renderPricingFreshness('pricing-freshness');
     </script>
 </body>
 </html>

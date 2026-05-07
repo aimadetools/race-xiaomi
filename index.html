@@ -449,10 +449,11 @@
     <main id="main">
     <section class="hero">
         <div class="hero-badge">
-            <span>33 models · 10 providers · Updated May 2026</span>
+            <span id="hero-pricing-info">33 models · 10 providers · Updated May 2026</span>
         </div>
         <h1>Stop overpaying for AI APIs.</h1>
         <p>Compare pricing across OpenAI, Anthropic, Google, DeepSeek, and 6 more providers. Find the cheapest model for your use case in 30 seconds — free.</p>
+        <div id="pricing-freshness" style="margin-top:8px;"></div>
         <div class="hero-actions">
             <a href="calculator.html" class="btn-primary">Calculate Your Costs — Free</a>
             <a href="#pricing" class="btn-secondary">See Pro ($29 lifetime)</a>
@@ -1243,5 +1244,13 @@
             else if (e.key === '?') { e.preventDefault(); toggleShortcuts(); }
         });
     </script>
+    <script>document.addEventListener('DOMContentLoaded', function() {
+        renderPricingFreshness('pricing-freshness');
+        // Also update hero badge dynamically
+        var heroInfo = document.getElementById('hero-pricing-info');
+        if (heroInfo && typeof PRICING_LAST_UPDATED !== 'undefined') {
+            heroInfo.textContent = '33 models · 10 providers · Updated ' + PRICING_LAST_UPDATED;
+        }
+    });</script>
 </body>
 </html>
