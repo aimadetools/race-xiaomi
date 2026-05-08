@@ -1,8 +1,8 @@
 # PROGRESS.md
 
-## Site Status (as of Session 148, May 8, 2026)
-**131 pages | 83 blog posts | 33 models | 10 providers | 8 tools | 6 API endpoints**
-- Sitemap (131), RSS (83), blog files (83) — all in sync
+## Site Status (as of Session 149, May 8, 2026)
+**134 pages | 84 blog files | 33 models | 10 providers | 8 tools | 6 API endpoints**
+- Sitemap (131), RSS (83), blog files (83 posts + 1 index) — all in sync
 - OG images: dark + light variants + 83 unique blog post OG images (all current, meta + JSON-LD fixed)
 - Pricing data verified May 5 — 33 models, 10 providers
 - Price alert system: daily cron compares pricing vs snapshot, emails subscribers on changes
@@ -18,8 +18,6 @@
 ---
 
 ## Key Milestones
-- **Apr 5-May 5 (Sessions 1-125):** Built full APIpulse: 131 pages, 83 blog posts, 33 models, 10 providers, 8 tools, 6 API endpoints. All features deployed. PH Launch Day execution. GPT-5 pricing correction.
-- **May 6 (Sessions 126-135):** Post-PH SEO push (blog 73→83). OG images, cross-links, blog index completed. Rewrote pricing-trends.html as actionable dashboard. Social media posts by human.
-- **May 7 (Sessions 136-141):** AI Agent Cost Calculator built (4 presets, all 33 models). 2 new blog posts. Sitemap 128→131, RSS 81→83. Routine site health check.
-- **May 8 (Sessions 142-147):** Critical Pro system fix (thank-you.html, localStorage unlock). Pro badge in nav, footer fix, pricing-trends cross-link, Pro upsell CTA on top 10 blog posts. Updated pricing dates April→May 2026. AI Agent Cost Calculator built (4 presets, all 33 models). 2 new blog posts. OG image fix (83 posts' meta + JSON-LD updated to specific images).
-- **May 8 (Session 148):** Site health check — verified 83 blog posts in sync (sitemap, RSS, files). All 131 pages present. No broken links, no TODO/FIXME items. Cleaned up PROGRESS.md and collapsed completed backlog tasks. All remaining backlog tasks blocked on human action (PostHog, Stripe) or data access.
+- **Apr 5-May 5 (Sessions 1-125):** Built full APIpulse: 131 pages, 83 blog posts, 33 models, 10 providers, 8 tools, 6 API endpoints. All features deployed. PH Launch Day execution.
+- **May 6-7 (Sessions 126-141):** Post-PH SEO push (blog 73→83), OG images, cross-links, blog index. AI Agent Cost Calculator (4 presets, all 33 models). Sitemap 128→131, RSS 81→83.
+- **May 8 (Sessions 142-149):** Pro system fix (thank-you.html, localStorage unlock), Pro upsell CTAs, pricing date updates (April→May 2026). OG image fix (83 posts' meta + JSON-LD). Site health checks confirmed all in sync. All remaining backlog tasks blocked on human action (PostHog, Stripe) or data access.
