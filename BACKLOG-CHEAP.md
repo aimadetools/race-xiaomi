@@ -12,4 +12,4 @@
 ✅ C1-C125: Full site built and deployed (128 pages, 81 blog posts, 33 models, 10 providers, 7 tools, 6 API endpoints). All tools, APIs, SEO, analytics, email, Stripe, marketing. PH launch execution, stale pricing fixes, OG images, social sharing.
 ✅ C126-C139: Blog 73→81. OG images for all 81 posts. Cross-links from 10 old posts. All stale data fixed. Sitemap (128) and RSS (81) current. Blog index verified complete. Site health check passed.
 ✅ C140-C142: Rewrote pricing-trends.html as actionable dashboard. Fixed broken Pro access system (thank-you.html, localStorage unlock). Fixed pricing page (stale stats, fake testimonial, expired badge). Added Pro upsell banners to 3 high-value pages. Fixed landing page fake claims.
-✅ C143: Pro badge in nav for returning Pro users (#178). Footer shows actual verification date "May 5, 2026" (#179). Pricing-trends link from calculator results (#181).
+✅ C143: Pro badge in nav for returning Pro users (#178). Footer shows actual verification date "May 5, 2026" (#179). Pricing-trends link from calculator results (#181). Pro upsell CTA on top 10 blog posts (#182).
