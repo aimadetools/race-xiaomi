@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Agent Cost Calculator — Estimate Your Agent's API Spend | APIpulse</title>
+    <meta name="description" content="Calculate the real cost of running AI agents. Estimate API spend for coding agents, research agents, and autonomous workflows across 33 models from 10 providers.">
+    <meta name="keywords" content="AI agent cost, AI agent API cost, agentic AI pricing, AI coding agent cost, autonomous AI cost calculator">
+    <meta property="og:title" content="AI Agent Cost Calculator — Estimate Your Agent's API Spend">
+    <meta property="og:description" content="Calculate the real cost of running AI agents. Estimate API spend across 33 models from 10 providers.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://getapipulse.com/og-image.png">
+    <meta property="og:url" content="https://getapipulse.com/agent-cost-calculator.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="AI Agent Cost Calculator — Estimate Your Agent's API Spend">
+    <meta name="twitter:image" content="https://getapipulse.com/og-image.png">
+    <meta name="twitter:description" content="Calculate the real cost of running AI agents. Estimate API spend across 33 models from 10 providers.">
+    <link rel="canonical" href="https://getapipulse.com/agent-cost-calculator.html">
+    <link rel="alternate" type="application/rss+xml" title="APIpulse Blog" href="https://getapipulse.com/rss.xml">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="styles.css">
+    <script src="analytics.js" defer></script>
+    <script src="dynamic-date.js" defer></script>
+    <script src="shared.js" defer></script>
+    <script src="pricing-data.js" defer></script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "AI Agent Cost Calculator",
+        "url": "https://getapipulse.com/agent-cost-calculator.html",
+        "description": "Calculate the real cost of running AI agents. Estimate API spend across 33 models from 10 providers.",
+        "applicationCategory": "DeveloperApplication",
+        "operatingSystem": "Web",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+    }
+    </script>
+    <style>
+        .content { max-width: 900px; margin: 0 auto; padding: 120px 24px 80px; }
+        h1 { font-size: clamp(28px, 5vw, 40px); font-weight: 800; margin-bottom: 12px; }
+        .subtitle { color: var(--text-secondary); font-size: 18px; margin-bottom: 40px; line-height: 1.6; }
+
+        .calc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 32px; }
+        .input-group { display: flex; flex-direction: column; gap: 6px; }
+        .input-group label { font-size: 13px; font-weight: 600; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.5px; }
+        .input-group input, .input-group select {
+            padding: 12px 16px; border-radius: 8px; border: 1px solid var(--border);
+            background: var(--bg-secondary); color: var(--text-primary); font-size: 15px;
+            font-family: inherit; transition: border-color 0.2s;
+        }
+        .input-group input:focus, .input-group select:focus { outline: none; border-color: var(--accent); }
+        .input-group .hint { font-size: 12px; color: var(--text-muted); }
+
+        .preset-btns { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 24px; }
+        .preset-btn {
+            padding: 8px 16px; border-radius: 8px; border: 1px solid var(--border);
+            background: var(--bg-secondary); color: var(--text-secondary); font-size: 13px;
+            font-weight: 500; cursor: pointer; transition: all 0.2s;
+        }
+        .preset-btn:hover { border-color: var(--accent); color: var(--accent); }
+        .preset-btn.active { border-color: var(--accent); background: var(--accent-glow); color: var(--accent); }
+
+        .results-section { margin-top: 32px; }
+        .results-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; }
+        .results-header h2 { font-size: 20px; font-weight: 700; margin: 0; }
+        .sort-btn {
+            padding: 6px 12px; border-radius: 6px; border: 1px solid var(--border);
+            background: var(--bg-secondary); color: var(--text-secondary); font-size: 12px;
+            cursor: pointer; transition: all 0.2s;
+        }
+        .sort-btn:hover { border-color: var(--accent); color: var(--accent); }
+
+        .cost-table { width: 100%; border-collapse: collapse; }
+        .cost-table th {
+            text-align: left; padding: 12px 16px; font-size: 12px; font-weight: 600;
+            color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px;
+            border-bottom: 2px solid var(--border);
+        }
+        .cost-table td {
+            padding: 14px 16px; border-bottom: 1px solid var(--border); font-size: 14px;
+        }
+        .cost-table tr:hover { background: var(--accent-glow); }
+        .cost-table .rank { color: var(--text-muted); font-weight: 600; width: 40px; }
+        .cost-table .model-name { font-weight: 600; color: var(--text-primary); }
+        .cost-table .provider { color: var(--text-secondary); font-size: 13px; }
+        .cost-table .cost { font-weight: 700; font-variant-numeric: tabular-nums; }
+        .cost-table .cost.cheapest { color: var(--green); }
+        .cost-table .cost.mid { color: var(--accent); }
+        .cost-table .cost.expensive { color: var(--red, #ef4444); }
+        .cost-table .tier-badge {
+            display: inline-block; padding: 2px 8px; border-radius: 4px; font-size: 11px; font-weight: 600;
+        }
+        .tier-budget { background: rgba(34,197,94,0.15); color: var(--green); }
+        .tier-mid { background: rgba(99,102,241,0.15); color: var(--accent); }
+        .tier-premium { background: rgba(239,68,68,0.15); color: var(--red, #ef4444); }
+
+        .summary-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; margin-bottom: 32px; }
+        .summary-card {
+            background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 12px; padding: 20px; text-align: center;
+        }
+        .summary-card .label { font-size: 12px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px; }
+        .summary-card .value { font-size: 24px; font-weight: 800; color: var(--accent); }
+        .summary-card .sub { font-size: 13px; color: var(--text-secondary); margin-top: 4px; }
+
+        .architecture-section {
+            background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 12px; padding: 24px; margin-top: 32px;
+        }
+        .architecture-section h3 { font-size: 16px; margin-bottom: 12px; }
+        .arch-row { display: flex; gap: 12px; align-items: center; margin-bottom: 12px; flex-wrap: wrap; }
+        .arch-row label { font-size: 13px; color: var(--text-secondary); min-width: 120px; }
+        .arch-row input, .arch-row select {
+            padding: 8px 12px; border-radius: 6px; border: 1px solid var(--border);
+            background: var(--bg-card); color: var(--text-primary); font-size: 14px; width: 100px;
+        }
+
+        .cta-inline {
+            background: var(--bg-secondary); border: 1px solid var(--accent);
+            border-radius: 12px; padding: 24px; margin: 40px 0; text-align: center;
+        }
+        .cta-inline p { margin-bottom: 12px; }
+
+        .related-section {
+            background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 12px; padding: 28px; margin-top: 48px;
+        }
+        .related-section h3 { margin-top: 0; font-size: 18px; }
+        .related-section ul { list-style: none; padding: 0; }
+        .related-section li { padding: 8px 0; }
+        .related-section a { color: var(--accent); text-decoration: none; font-weight: 500; }
+
+        .share-section { margin-top: 32px; padding-top: 24px; border-top: 1px solid var(--border); text-align: center; }
+        .share-section p { color: var(--text-secondary); font-size: 14px; margin-bottom: 12px; }
+        .share-btn {
+            display: inline-block; background: var(--bg-card); color: var(--text-primary);
+            padding: 8px 20px; border-radius: 8px; font-size: 14px; font-weight: 500;
+            border: 1px solid var(--border); transition: all 0.2s; text-decoration: none; margin: 0 4px;
+        }
+        .share-btn:hover { background: var(--accent); color: white; border-color: var(--accent); }
+
+        @media (max-width: 768px) {
+            .content { padding: 100px 20px 60px; }
+            .calc-grid { grid-template-columns: 1fr; }
+            .cost-table { font-size: 13px; }
+            .cost-table th, .cost-table td { padding: 10px 8px; }
+            .summary-cards { grid-template-columns: 1fr 1fr; }
+        }
+    </style>
+    <meta name="theme-color" content="#6366f1">
+</head>
+<body>
+    <nav>
+        <div class="nav-inner">
+            <a href="index.html" class="logo">API<span>pulse</span></a>
+            <button class="hamburger" onclick="toggleMobileNav()" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+            <div class="nav-links">
+                <a href="calculator.html">Calculator</a>
+                <a href="compare.html">Compare</a>
+                <a href="cost-explorer.html">Explorer</a>
+                <a href="agent-cost-calculator.html" class="active">Agents</a>
+                <a href="cost-scenarios.html">Scenarios</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="blog.html">Blog</a>
+                <a href="tools.html">Tools</a>
+                <a href="api-docs.html" style="color:var(--accent);">API</a>
+                <a href="pricing.html" class="nav-cta">Get Pro — $29</a>
+                <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <div class="content">
+            <h1>AI Agent Cost Calculator</h1>
+            <p class="subtitle">Building an AI agent? Estimate the real API cost before you ship. Select a preset or configure your agent architecture below.</p>
+
+            <div class="preset-btns">
+                <button class="preset-btn active" onclick="applyPreset('coding')">🤖 Coding Agent</button>
+                <button class="preset-btn" onclick="applyPreset('research')">🔍 Research Agent</button>
+                <button class="preset-btn" onclick="applyPreset('support')">💬 Support Agent</button>
+                <button class="preset-btn" onclick="applyPreset('data')">📊 Data Agent</button>
+                <button class="preset-btn" onclick="applyPreset('custom')">⚙️ Custom</button>
+            </div>
+
+            <div class="calc-grid">
+                <div class="input-group">
+                    <label>Tasks per day</label>
+                    <input type="number" id="tasksPerDay" value="100" min="1" max="1000000" oninput="calculate()">
+                    <span class="hint">How many agent tasks run daily</span>
+                </div>
+                <div class="input-group">
+                    <label>Steps per task</label>
+                    <input type="number" id="stepsPerTask" value="5" min="1" max="100" oninput="calculate()">
+                    <span class="hint">API calls the agent makes per task</span>
+                </div>
+                <div class="input-group">
+                    <label>Avg input tokens per step</label>
+                    <input type="number" id="inputTokens" value="2000" min="1" max="1000000" oninput="calculate()">
+                    <span class="hint">Prompt + context per API call</span>
+                </div>
+                <div class="input-group">
+                    <label>Avg output tokens per step</label>
+                    <input type="number" id="outputTokens" value="500" min="1" max="100000" oninput="calculate()">
+                    <span class="hint">Model response per API call</span>
+                </div>
+                <div class="input-group">
+                    <label>Monthly cost target</label>
+                    <select id="budgetTier" onchange="calculate()">
+                        <option value="all">Show all models</option>
+                        <option value="budget">Budget only (under $50/mo)</option>
+                        <option value="mid">Mid-tier (under $200/mo)</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <label>Sort by</label>
+                    <select id="sortBy" onchange="calculate()">
+                        <option value="cost">Monthly cost</option>
+                        <option value="quality">Quality tier</option>
+                        <option value="provider">Provider</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="summary-cards" id="summaryCards">
+                <div class="summary-card">
+                    <div class="label">Cheapest Option</div>
+                    <div class="value" id="cheapestCost">—</div>
+                    <div class="sub" id="cheapestModel">—</div>
+                </div>
+                <div class="summary-card">
+                    <div class="label">Best Value</div>
+                    <div class="value" id="bestValueCost">—</div>
+                    <div class="sub" id="bestValueModel">—</div>
+                </div>
+                <div class="summary-card">
+                    <div class="label">API Calls/Month</div>
+                    <div class="value" id="totalCalls">—</div>
+                    <div class="sub" id="totalTokens">—</div>
+                </div>
+                <div class="summary-card">
+                    <div class="label">Premium Pick</div>
+                    <div class="value" id="premiumCost">—</div>
+                    <div class="sub" id="premiumModel">—</div>
+                </div>
+            </div>
+
+            <div class="results-section">
+                <div class="results-header">
+                    <h2>All Models Ranked by Agent Cost</h2>
+                </div>
+                <div style="overflow-x:auto;">
+                    <table class="cost-table">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Model</th>
+                                <th>Provider</th>
+                                <th>Tier</th>
+                                <th>Per Task</th>
+                                <th>Monthly</th>
+                                <th>Annual</th>
+                            </tr>
+                        </thead>
+                        <tbody id="resultsBody"></tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="cta-inline">
+                <p><strong>Need to compare specific models?</strong> Use our side-by-side comparison tool.</p>
+                <a href="compare.html" class="btn-primary" onclick="if(window.trackEvent)window.trackEvent('agent_calc_cta_compare')">Compare Models →</a>
+            </div>
+
+            <div class="share-section">
+                <p>Found this useful? Share it:</p>
+                <a href="https://twitter.com/intent/tweet?text=Calculate+the+real+cost+of+running+AI+agents+across+33+models&url=https%3A%2F%2Fgetapipulse.com%2Fagent-cost-calculator.html" target="_blank" rel="noopener" class="share-btn">Share on X</a>
+                <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fgetapipulse.com%2Fagent-cost-calculator.html" target="_blank" rel="noopener" class="share-btn">Share on LinkedIn</a>
+            </div>
+
+            <div class="related-section">
+                <h3>Related Reading</h3>
+                <ul>
+                    <li><a href="blog-ai-agent-budget.html">AI Agent Budget Guide: How Much Does an AI Agent Cost?</a></li>
+                    <li><a href="blog-ai-coding-assistant-cost.html">AI Coding Assistant Cost: Claude Code vs GitHub Copilot vs Cursor</a></li>
+                    <li><a href="blog-multi-model-routing.html">Multi-Model Routing: Save 40% on AI Agent Costs</a></li>
+                    <li><a href="blog-ai-api-caching-strategies.html">AI API Caching Strategies: Cut Agent Costs by 60%</a></li>
+                    <li><a href="calculator.html">Standard Cost Calculator →</a></li>
+                    <li><a href="cost-explorer.html">Cost Explorer Dashboard →</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div style="max-width:600px;margin:48px auto 0;padding:32px;text-align:center;background:var(--bg-card);border-radius:12px;border:1px solid var(--border);">
+            <h3 style="font-size:18px;margin-bottom:8px;">Get notified when API prices change</h3>
+            <p style="font-size:14px;color:var(--text-secondary);margin-bottom:16px;">No spam. Only pricing updates and new features. Unsubscribe anytime.</p>
+            <form onsubmit="saveEmail(event)" style="display:flex;gap:8px;max-width:400px;margin:0 auto;">
+                <input type="email" id="email-input" placeholder="you@company.com" required aria-label="Email address"
+                    style="flex:1;padding:12px 16px;border-radius:8px;border:1px solid var(--border);background:var(--bg-secondary);color:var(--text-primary);font-size:14px;">
+                <button type="submit" class="btn-primary" style="padding:12px 24px;white-space:nowrap;">Subscribe</button>
+            </form>
+            <p id="email-msg" style="font-size:13px;color:var(--green);margin-top:12px;display:none;"></p>
+        </div>
+
+        <button class="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">↑</button>
+    </main>
+    <footer>
+        <p>Pricing data last verified: <span class="verified-date"></span></p>
+        <p>&copy; 2026 APIpulse. <a href="index.html">Home</a> &middot; <a href="tools.html">Tools</a> &middot; <a href="blog.html">Blog</a> &middot; <a href="about.html">About</a> &middot; <a href="pricing.html">Pricing</a> &middot; <a href="https://x.com/getapipulse" target="_blank" rel="noopener">Twitter</a></p>
+    </footer>
+
+    <script>
+    const PRESETS = {
+        coding: { tasks: 50, steps: 8, input: 3000, output: 1000, label: 'Coding Agent' },
+        research: { tasks: 30, steps: 12, input: 5000, output: 800, label: 'Research Agent' },
+        support: { tasks: 500, steps: 3, input: 1500, output: 400, label: 'Support Agent' },
+        data: { tasks: 200, steps: 4, input: 2000, output: 600, label: 'Data Agent' },
+        custom: { tasks: 100, steps: 5, input: 2000, output: 500, label: 'Custom Agent' }
+    };
+
+    function applyPreset(name) {
+        const p = PRESETS[name];
+        document.getElementById('tasksPerDay').value = p.tasks;
+        document.getElementById('stepsPerTask').value = p.steps;
+        document.getElementById('inputTokens').value = p.input;
+        document.getElementById('outputTokens').value = p.output;
+        document.querySelectorAll('.preset-btn').forEach(b => b.classList.remove('active'));
+        event.target.classList.add('active');
+        calculate();
+    }
+
+    function calculate() {
+        const tasksPerDay = parseInt(document.getElementById('tasksPerDay').value) || 100;
+        const stepsPerTask = parseInt(document.getElementById('stepsPerTask').value) || 5;
+        const inputTokens = parseInt(document.getElementById('inputTokens').value) || 2000;
+        const outputTokens = parseInt(document.getElementById('outputTokens').value) || 500;
+        const budgetTier = document.getElementById('budgetTier').value;
+        const sortBy = document.getElementById('sortBy').value;
+
+        const totalCallsPerDay = tasksPerDay * stepsPerTask;
+        const totalCallsPerMonth = totalCallsPerDay * 30;
+        const totalInputPerMonth = totalCallsPerMonth * inputTokens;
+        const totalOutputPerMonth = totalCallsPerMonth * outputTokens;
+
+        // Calculate costs
+        let results = API_MODELS.map(m => {
+            const costPerTask = ((inputTokens * m.input + outputTokens * m.output) * stepsPerTask) / 1_000_000;
+            const monthlyCost = costPerTask * tasksPerDay * 30;
+            const annualCost = monthlyCost * 12;
+            return { ...m, costPerTask, monthlyCost, annualCost };
+        });
+
+        // Filter by budget tier
+        if (budgetTier === 'budget') results = results.filter(r => r.monthlyCost < 50);
+        else if (budgetTier === 'mid') results = results.filter(r => r.monthlyCost < 200);
+
+        // Sort
+        if (sortBy === 'cost') results.sort((a, b) => a.monthlyCost - b.monthlyCost);
+        else if (sortBy === 'quality') {
+            const tierOrder = { Budget: 0, Mid: 1, Premium: 2 };
+            results.sort((a, b) => tierOrder[a.tier] - tierOrder[b.tier] || a.monthlyCost - b.monthlyCost);
+        }
+        else if (sortBy === 'provider') results.sort((a, b) => a.provider.localeCompare(b.provider) || a.monthlyCost - b.monthlyCost);
+
+        // Summary cards
+        const cheapest = results[0];
+        const premium = [...results].reverse().find(r => r.tier === 'Premium') || results[results.length - 1];
+        const midTier = results.find(r => r.tier === 'Mid' && r.monthlyCost > (cheapest?.monthlyCost || 0));
+
+        document.getElementById('cheapestCost').textContent = cheapest ? '$' + cheapest.monthlyCost.toFixed(2) : '—';
+        document.getElementById('cheapestModel').textContent = cheapest ? cheapest.name + ' (' + cheapest.provider + ')' : '—';
+        document.getElementById('bestValueCost').textContent = midTier ? '$' + midTier.monthlyCost.toFixed(2) : '—';
+        document.getElementById('bestValueModel').textContent = midTier ? midTier.name + ' (' + midTier.provider + ')' : '—';
+        document.getElementById('totalCalls').textContent = totalCallsPerMonth.toLocaleString();
+        document.getElementById('totalTokens').textContent = ((totalInputPerMonth + totalOutputPerMonth) / 1_000_000).toFixed(1) + 'M tokens/mo';
+        document.getElementById('premiumCost').textContent = premium ? '$' + premium.monthlyCost.toFixed(2) : '—';
+        document.getElementById('premiumModel').textContent = premium ? premium.name + ' (' + premium.provider + ')' : '—';
+
+        // Render table
+        const tbody = document.getElementById('resultsBody');
+        tbody.innerHTML = results.map((r, i) => {
+            const costClass = r.monthlyCost < 30 ? 'cheapest' : r.monthlyCost < 150 ? 'mid' : 'expensive';
+            const tierClass = r.tier === 'Budget' ? 'tier-budget' : r.tier === 'Mid' ? 'tier-mid' : 'tier-premium';
+            return `<tr>
+                <td class="rank">${i + 1}</td>
+                <td><span class="model-name">${r.name}</span></td>
+                <td><span class="provider">${r.provider}</span></td>
+                <td><span class="tier-badge ${tierClass}">${r.tier}</span></td>
+                <td>$${r.costPerTask.toFixed(4)}</td>
+                <td><span class="cost ${costClass}">$${r.monthlyCost.toFixed(2)}</span></td>
+                <td>$${r.annualCost.toFixed(2)}</td>
+            </tr>`;
+        }).join('');
+
+        if (window.trackEvent) window.trackEvent('agent_calc_calculated', { tasksPerDay, stepsPerTask, models: results.length });
+    }
+
+    // Initial calculation
+    document.addEventListener('DOMContentLoaded', calculate);
+    </script>
+</body>
+</html>

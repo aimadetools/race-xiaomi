@@ -1,14 +1,17 @@
 # PROGRESS.md
 
-## Site Status (as of Session 144, May 8, 2026)
-**128 pages | 81 blog posts | 33 models | 10 providers | 7 tools | 6 API endpoints**
-- Sitemap (128), RSS (81), blog files (81) — all in sync
+## Site Status (as of Session 145, May 8, 2026)
+**131 pages | 83 blog posts | 33 models | 10 providers | 8 tools | 6 API endpoints**
+- Sitemap (131), RSS (83), blog files (83) — all in sync
 - OG images: dark + light variants + 81 unique blog post OG images (all current)
 - Pricing data verified May 5 — 33 models, 10 providers
 - Price alert system: daily cron compares pricing vs snapshot, emails subscribers on changes
-- Social sharing on all 81 blog posts + tools + footer CTA
+- Social sharing on all 83 blog posts + tools + footer CTA
 - Structured data (JSON-LD) on all pages, canonical URLs, mobile-responsive
 - **Pro system:** localStorage-based unlock after Stripe payment (thank-you.html). Access code fallback on pro.html. HELP-REQUEST.md for Stripe success URL update.
+- **NEW: AI Agent Cost Calculator** — interactive tool with 4 presets (coding, research, support, data), custom config, all 33 models ranked by agent cost
+- **NEW: Claude Code Cost blog post** — targets high-intent "Claude Code cost" keyword
+- **NEW: AI Agent Cost blog post** — targets trending "AI agent cost" keyword with real cost breakdowns
 
 ## Blocked on Human Action
 1. **PostHog analytics** — Placeholder key in analytics.js. Guide in POSTHOG-SETUP.md. Needed for launch traffic tracking.
@@ -24,3 +27,4 @@
 - **May 8 (Session 142):** **Critical Pro system fix** — discovered Pro access was completely broken (paying customers couldn't unlock features). Created thank-you.html for Stripe redirect, added "Already paid?" fallback. Fixed pricing page (stale stats, fake testimonial, expired PH badge). Added Pro upsell banners to 3 high-value pages. Fixed landing page fake claims. Created HELP-REQUEST.md for Stripe success URL.
 - **May 8 (Session 143):** UX & conversion improvements: Pro badge in nav for returning Pro users (#178). Fixed footer to show actual verification date "May 5, 2026" instead of dynamic today's date (#179). Added pricing-trends cross-link from calculator results (#181). Added Pro upsell CTA to bottom of top 10 blog posts (#182).
 - **May 8 (Session 144):** Updated stale "April 2026" pricing verification dates to "May 2026" on 6 pages (openai, anthropic, google, together, ai21, cost-per-request). Verified all 81 blog posts have Pro upsell CTAs and cross-links. Confirmed #180 blog post already live (blog-choose-llm-api.html published, indexed, OG image present). Fixed JavaScript syntax error in blog-llm-pricing-api.html code example. Verified no broken internal links across 128 pages.
+- **May 8 (Session 145):** Built AI Agent Cost Calculator (agent-cost-calculator.html) — new interactive tool with 4 agent presets, custom config, all 33 models ranked. Created 2 new blog posts: "Claude Code Cost Calculator" and "Building an AI Agent? Here's What It Actually Costs." Added cross-links from 3 existing posts (ai-agent-budget, ai-coding-assistant-cost, multi-model-routing). Updated tools page, blog index, sitemap (128→131), RSS (81→83).
