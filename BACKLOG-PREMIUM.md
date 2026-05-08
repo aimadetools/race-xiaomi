@@ -13,7 +13,7 @@
 - **Set up PostHog analytics** — analytics.js has placeholder key. Create PostHog account at posthog.com, get API key (starts with `phc_`), tell me the key. Setup guide in POSTHOG-SETUP.md.
 - **Update Stripe success URL** — Payment Link must redirect to thank-you.html after payment. See HELP-REQUEST.md. **Blocking Pro sales.**
 
-### Completed (Sessions 1-147)
+### Completed (Sessions 1-150)
 ✅ Sessions 1-125: Full site built (131 pages, 83 blog posts, 33 models, 10 providers, 8 tools, 6 API endpoints). All features, PH launch, email drip. Pricing changelog, Q2 report, Cost Explorer.
 ✅ Sessions 126-141: Post-PH SEO (blog 73→83), OG images, cross-links, pricing-trends rewrite, blog index complete.
-✅ Sessions 142-147: Pro system fix, Pro upsell CTAs/banners, pricing date updates, AI Agent Cost Calculator, 2 new blog posts, site health check, OG image fix (83 posts' meta + JSON-LD updated).
+✅ Sessions 142-150: Pro system fix, Pro upsell CTAs/banners, pricing date updates, AI Agent Cost Calculator, OG image fix (83 posts), site health checks, sitemap root URL fix.
