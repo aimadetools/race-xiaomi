@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to APIpulse Pro!</title>
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="styles.css">
+    <script src="analytics.js" defer></script>
+    <style>
+        .content { max-width: 600px; margin: 0 auto; padding: 120px 24px 80px; text-align: center; }
+        .checkmark { width: 80px; height: 80px; background: rgba(34,197,94,0.15); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 24px; font-size: 40px; }
+        h1 { font-size: 32px; font-weight: 800; margin-bottom: 12px; }
+        .subtitle { color: var(--text-secondary); font-size: 16px; margin-bottom: 32px; line-height: 1.6; }
+        .features { text-align: left; background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 12px; padding: 24px; margin-bottom: 32px; }
+        .features h3 { font-size: 16px; margin-bottom: 12px; }
+        .features li { padding: 8px 0; color: var(--text-secondary); font-size: 14px; display: flex; align-items: center; gap: 10px; }
+        .features li::before { content: "✓"; color: var(--green); font-weight: 700; }
+        .actions { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-inner">
+            <a href="index.html" class="logo">API<span>pulse</span></a>
+        </div>
+    </nav>
+
+    <main>
+        <div class="content">
+            <div class="checkmark">✓</div>
+            <h1>Welcome to APIpulse Pro!</h1>
+            <p class="subtitle">Your payment was successful. You now have lifetime access to all Pro features.</p>
+
+            <div class="features">
+                <h3>Your Pro features are now unlocked:</h3>
+                <ul style="list-style:none;padding:0;">
+                    <li>Save & compare up to 10 cost scenarios</li>
+                    <li>Export professional cost reports (HTML)</li>
+                    <li>Personalized optimization recommendations</li>
+                    <li>Priority email support</li>
+                    <li>Early access to new features</li>
+                </ul>
+            </div>
+
+            <div class="actions">
+                <a href="pro.html" class="btn-primary" style="display:inline-block;padding:14px 32px;">Open Pro Dashboard</a>
+                <a href="calculator.html" class="btn-secondary" style="display:inline-block;padding:14px 32px;">Try the Calculator</a>
+            </div>
+
+            <p style="margin-top:32px;font-size:13px;color:var(--text-muted);">Your Pro access is saved in this browser. Bookmark this site to access your features anytime.</p>
+        </div>
+    </main>
+
+    <script>
+        // Auto-unlock Pro features on payment confirmation
+        localStorage.setItem('apipulse_pro', 'true');
+        localStorage.setItem('apipulse_pro_date', new Date().toISOString());
+        if (window.trackEvent) window.trackEvent('pro_purchase_completed');
+    </script>
+</body>
+</html>

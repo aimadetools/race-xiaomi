@@ -204,6 +204,9 @@
                 <p style="margin-top:20px;font-size:13px;color:var(--text-muted);">
                     Don't have a code? <a href="pricing.html">Get Pro access for $29</a>
                 </p>
+                <p style="margin-top:12px;font-size:13px;color:var(--text-muted);">
+                    Already paid? <a href="#" onclick="unlockWithoutCode();return false;" style="color:var(--accent);font-weight:600;">Unlock here</a>
+                </p>
             </div>
         </div>
 
@@ -364,6 +367,16 @@
             } else {
                 document.getElementById('gate-error').style.display = 'block';
                 if (window.trackEvent) window.trackEvent('pro_access_failed');
+            }
+        }
+
+        function unlockWithoutCode() {
+            if (confirm('Did you purchase APIpulse Pro? Click OK to unlock your features.')) {
+                localStorage.setItem('apipulse_pro', 'true');
+                localStorage.setItem('apipulse_pro_date', new Date().toISOString());
+                unlockProFeatures();
+                calculate();
+                if (window.trackEvent) window.trackEvent('pro_unlocked_without_code');
             }
         }
     </script>
