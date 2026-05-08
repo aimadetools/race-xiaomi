@@ -1,6 +1,6 @@
 # PROGRESS.md
 
-## Site Status (as of Session 142, May 8, 2026)
+## Site Status (as of Session 143, May 8, 2026)
 **128 pages | 81 blog posts | 33 models | 10 providers | 7 tools | 6 API endpoints**
 - Sitemap (128), RSS (81), blog files (81) — all in sync
 - OG images: dark + light variants + 81 unique blog post OG images (all current)
@@ -22,3 +22,4 @@
 - **May 6 (Sessions 126-133):** Post-PH SEO push. 6 new blog posts (73→79). Social media posts by human. Price snapshot synced. Sitemap/RSS/OG images updated.
 - **May 7 (Sessions 134-141):** Blog 79→81. OG images, cross-links from 10 old posts. Fixed stale blog counts across 12+ files. Sitemap dedup (129→128). Blog index completed. Site health checks verified. Rewrote pricing-trends.html as actionable dashboard.
 - **May 8 (Session 142):** **Critical Pro system fix** — discovered Pro access was completely broken (paying customers couldn't unlock features). Created thank-you.html for Stripe redirect, added "Already paid?" fallback. Fixed pricing page (stale stats, fake testimonial, expired PH badge). Added Pro upsell banners to 3 high-value pages. Fixed landing page fake claims. Created HELP-REQUEST.md for Stripe success URL.
+- **May 8 (Session 143):** UX improvements: Pro badge in nav for returning Pro users (#178). Fixed footer to show actual verification date "May 5, 2026" instead of dynamic today's date (#179). Added pricing-trends cross-link from calculator results (#181).

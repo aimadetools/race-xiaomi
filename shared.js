@@ -201,6 +201,18 @@ async function saveEmail(e) {
     }, 45000);
 })();
 
+// Pro badge in nav — show "Pro ✓" indicator for returning Pro users
+document.addEventListener('DOMContentLoaded', function() {
+    if (localStorage.getItem('apipulse_pro') !== 'true') return;
+    var navCta = document.querySelector('.nav-cta');
+    if (!navCta) return;
+    navCta.textContent = 'Pro ✓';
+    navCta.href = 'pro.html';
+    navCta.style.background = 'rgba(34,197,94,0.15)';
+    navCta.style.borderColor = 'var(--green)';
+    navCta.style.color = 'var(--green)';
+});
+
 // Pricing freshness badge — renders "Updated May 5, 2026" badge into target element
 function renderPricingFreshness(containerId) {
     var container = document.getElementById(containerId);
