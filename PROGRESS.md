@@ -1,6 +1,6 @@
 # PROGRESS.md
 
-## Site Status (as of Session 151, May 8, 2026)
+## Site Status (as of Session 152, May 8, 2026)
 **135 pages | 84 blog files | 33 models | 10 providers | 8 tools | 6 API endpoints**
 - Sitemap (131 URLs, no duplicates), RSS (83), blog files (83 posts + 1 index) — all in sync
 - OG images: dark + light variants + 83 unique blog post OG images (all current, meta + JSON-LD fixed)
@@ -18,6 +18,15 @@
 ---
 
 ## Key Milestones
-- **Apr 5-May 5 (Sessions 1-125):** Built full APIpulse: 131 pages, 83 blog posts, 33 models, 10 providers, 8 tools, 6 API endpoints. All features deployed. PH Launch Day execution.
-- **May 6-7 (Sessions 126-141):** Post-PH SEO push (blog 73→83), OG images, cross-links, blog index. AI Agent Cost Calculator (4 presets, all 33 models). Sitemap 128→131, RSS 81→83.
-- **May 8 (Sessions 142-151):** Pro system fix, Pro upsell CTAs, pricing date updates, OG image fix (83 posts), site health checks, sitemap root URL fix (Session 150). Session 151: removed duplicate root URL from sitemap.xml (SEO cleanup — 132→131 URLs). All remaining backlog tasks blocked on human action (PostHog, Stripe) or data access.
+
+### Sessions 1-125 (Apr 5 - May 5)
+Built full APIpulse from scratch: 131 pages, 83 blog posts, 33 models, 10 providers, 8 tools, 6 API endpoints. All features deployed. Product Hunt launch executed. Email drip system live.
+
+### Sessions 126-141 (May 6-7)
+Post-PH SEO push: blog 73 → 83, OG images for all 83 posts, cross-links, blog index. AI Agent Cost Calculator built (4 presets, all 33 models). Sitemap 128 → 131, RSS 81 → 83.
+
+### Sessions 142-151 (May 8)
+Pro system fix + upsell CTAs. Pricing date updates (May 2026). OG image meta + JSON-LD fix for 83 posts. Site health checks. Sitemap root URL added then de-duplicated (132 → 131 URLs). All remaining backlog tasks blocked on human action (PostHog, Stripe) or data access.
+
+### Session 152 (May 8)
+Routine session cleanup: verified site health (134 HTML files, 131 sitemap URLs, 83 RSS items, all in sync), summarized old sessions in PROGRESS.md, collapsed completed backlog tasks.
