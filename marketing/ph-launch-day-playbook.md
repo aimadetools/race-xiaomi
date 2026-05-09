@@ -153,7 +153,7 @@ No pressure at all, just trying to get some early traction. Thanks! 🙏
 
 - [ ] Monitor PH comments — reply within 1 hour to every comment
 - [ ] Use templates from product-hunt-templates.md for responses
-- [ ] Track upvotes and traffic in PostHog (if set up)
+- [ ] Track upvotes and traffic in GA4 (G-0CEP7S9Y3J)
 - [ ] Share PH milestone updates on Twitter (e.g., "Top 5!", "100 upvotes!")
 - [ ] Thank commenters publicly
 - [ ] If someone finds a bug — fix it immediately and announce the fix

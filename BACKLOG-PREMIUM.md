@@ -10,7 +10,6 @@
 - **#22. Update pricing changelog monthly** — Add new entries to pricing-changelog.html when prices change
 
 ### Human Action Required
-- **Set up PostHog analytics** — analytics.js has placeholder key. Create PostHog account at posthog.com, get API key (starts with `phc_`), tell me the key. Setup guide in POSTHOG-SETUP.md.
 - **Update Stripe success URL** — Payment Link must redirect to thank-you.html after payment. See HELP-REQUEST.md. **Blocking Pro sales.**
 
 ### Completed (Sessions 1-152)

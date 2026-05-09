@@ -56,7 +56,7 @@ Quick reference. Full details in `ph-launch-day-playbook.md`.
 - [ ] Track upvotes and traffic
 - [ ] Post follow-up results on Twitter
 - [ ] Fill in real metrics in `blog-launching-on-product-hunt.html`
-- [ ] Review PostHog analytics (if set up)
+- [ ] Review GA4 analytics (G-0CEP7S9Y3J)
 - [ ] Plan Reddit r/webdev post for Saturday "Showoff Saturday"
 
 ---

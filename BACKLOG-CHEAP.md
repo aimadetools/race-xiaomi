@@ -3,7 +3,7 @@
 ### Post-Launch (Week 3+)
 - **#153. Monitor PH engagement** — Check upvotes, respond to comments, track engagement (blocked: Cloudflare)
 - **#163. Update PH blog post with real metrics** — Blocked: web search unavailable, can't fetch live PH metrics
-- **#175. Add PH launch metrics to social proof** — Blocked: needs real analytics data (PostHog not set up)
+- **#175. Add PH launch metrics to social proof** — Blocked: needs real analytics data (GA4 just deployed, wait for traffic data)
 - **#177. Optimize exit popup conversion** — A/B test different exit popup copy after collecting data
 
 ### Completed (Sessions 1-152)

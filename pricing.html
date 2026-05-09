@@ -19,9 +19,18 @@
     <link rel="alternate" type="application/rss+xml" title="APIpulse Blog" href="https://getapipulse.com/rss.xml">
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <link rel="stylesheet" href="styles.css">
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0CEP7S9Y3J"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-0CEP7S9Y3J');
+    </script>
     <script src="analytics.js" defer></script>
     <script src="dynamic-date.js" defer></script>
     <script src="shared.js" defer></script>
+    <script src="pricing-data.js" defer></script>
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -174,6 +183,7 @@
     <div class="content">
         <h1>Simple, transparent pricing</h1>
         <p class="subtitle">No subscriptions. No hidden fees. Pay once, use forever.</p>
+        <div id="pricing-freshness" style="text-align:center;margin-bottom:24px;"></div>
 
         <div class="pricing-grid">
             <div class="pricing-card">
@@ -384,6 +394,12 @@
     <button class="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">↑</button>
 
     </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            renderPricingFreshness('pricing-freshness');
+        });
+    </script>
 
     <footer>
         <p>Pricing data last verified: <span class="verified-date"></span></p>
