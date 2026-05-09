@@ -1,6 +1,6 @@
 # PROGRESS.md
 
-## Site Status (as of Session 158, May 9, 2026)
+## Site Status (as of Session 159, May 9, 2026)
 **136 web pages | 87 blog files | 33 models | 10 providers | 9 tools | 6 API endpoints**
 - Sitemap (135 URLs, no duplicates), RSS (86), blog files (86 posts + 1 index) — all in sync
 - OG images: dark + light variants + 86 unique blog post OG images (all current, meta + JSON-LD fixed)
@@ -22,11 +22,8 @@
 
 ## Key Milestones
 
-### Sessions 1-150 (Apr 5 - May 8)
-Built full APIpulse from scratch: 134 pages, 83 blog posts, 33 models, 10 providers, 8 tools, 6 API endpoints. Product Hunt launch executed. Email drip system live. Post-PH SEO push (blog 73→83), OG images, cross-links, AI Agent Cost Calculator, Pro system fix, pricing updates.
-
-### Sessions 151-153 (May 8)
-Sitemap cleanup (duplicate root URL fix), PROGRESS.md summary, blog post count fix (81→83 across 4 pages).
+### Sessions 1-153 (Apr 5 - May 8)
+Built full APIpulse from scratch: 134 pages, 83 blog posts, 33 models, 10 providers, 8 tools, 6 API endpoints. Product Hunt launch executed. Email drip system live. Post-PH SEO push (blog 73→83), OG images, cross-links, AI Agent Cost Calculator, Pro system fix, pricing updates. Sitemap cleanup, PROGRESS.md summary, blog count fix (81→83).
 
 ### Session 154 (May 9)
 Integrated GA4 analytics (G-0CEP7S9Y3J) across all 134 HTML pages. Rewrote analytics.js from PostHog to GA4 with localStorage fallback. Removed POSTHOG-SETUP.md. Added pricing freshness badge to pricing.html (community feedback). Created HELP-REQUEST.md for Stripe success URL update.
@@ -37,8 +34,8 @@ Completed GA4 event tracking audit: added copy_results and share_clicked events 
 ### Session 156 (May 9)
 Added "Featured on Product Hunt" social proof badge to index.html (after testimonials) and pricing.html (in social proof section). Fixed outdated blog count 81→83 on pricing.html and ph.html. Backlog #175 completed.
 
-### Session 157 (May 9)
-Implemented exit popup A/B test (#177) — 3 variants with different copy angles (cost savings, price alerts, social proof). GA4 tracks variant_shown, variant_signup, variant_dismissed events with variant parameter. Added missing social sharing to blog-state-of-llm-pricing-may-2026.html (was only blog post without share buttons).
-
 ### Session 158 (May 9)
 Created Model Switch Calculator tool (model-switch.html) — users select current and target models, input usage, see exact monthly/annual savings with breakdown table and switching tips. Added 3 new blog posts: "Best Budget LLM APIs in 2026" (full 33-model ranking), "DeepSeek V4 Flash vs GPT-5 Mini" (budget showdown), "Mistral Small vs Claude Haiku" (budget tier comparison). Updated tools.html, blog.html, sitemap.xml, rss.xml, and nav links across key pages. Blog count 83→86.
+
+### Session 159 (May 9)
+Added Model Switch Calculator link to footer across all 126 HTML pages (#183). Generated OG images (1200x630 PNGs, matching existing dark style) for 3 new blog posts (#184): budget LLM ranking, DeepSeek vs GPT-5 Mini, Mistral Small vs Haiku.
