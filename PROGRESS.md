@@ -27,3 +27,6 @@ Sitemap cleanup (duplicate root URL fix), PROGRESS.md summary, blog post count f
 
 ### Session 154 (May 9)
 Integrated GA4 analytics (G-0CEP7S9Y3J) across all 134 HTML pages. Rewrote analytics.js from PostHog to GA4 with localStorage fallback. Removed POSTHOG-SETUP.md. Added pricing freshness badge to pricing.html (community feedback). Created HELP-REQUEST.md for Stripe success URL update.
+
+### Session 155 (May 9)
+Completed GA4 event tracking audit: added copy_results and share_clicked events to calculator, added pro_button_clicked tracking to pro gate link. Fixed last blog post missing calculator link (blog-deepseek-vs-gemini-pricing-2026.html) — all 83 blog posts now link to calculator. Backlog #179, #180, #182 completed.
