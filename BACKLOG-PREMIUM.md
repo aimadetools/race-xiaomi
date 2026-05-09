@@ -11,6 +11,5 @@
 
 ### Completed
 ✅ Sessions 1-153: Full site built (134 pages, 83 blog posts, 33 models, 10 providers, 8 tools, 6 API endpoints). PH launch, email drip, SEO push, OG images, AI Agent Cost Calculator, Pro system, sitemap cleanup.
-✅ Session 154: GA4 analytics integration (all 134 pages), PostHog cleanup, pricing freshness badge on pricing.html.
-✅ Session 155: GA4 event tracking audit complete. All 83 blog posts link to calculator.
-✅ Session 156 (#20): Community engagement playbook created — target communities, draft posts, engagement guidelines.
+✅ Sessions 154-157: GA4 analytics integration, PostHog cleanup, event audit, PH badge, exit popup A/B test.
+✅ Sessions 158-161: Model Switch Calculator, 3 new blog posts (86 total), footer links, OG images, cross-links, Agent Cost Calculator links across all 86 blog posts.

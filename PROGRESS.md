@@ -43,3 +43,6 @@ Added Model Switch Calculator link to footer across all 126 HTML pages (#183). G
 
 ### Session 160 (May 9)
 Added internal cross-links to 3 new blog posts from 5 relevant existing posts for SEO: "Best Budget LLM APIs" linked from cheapest-llm and cheapest-llm-api-production; "DeepSeek V4 Flash vs GPT-5 Mini" linked from gpt4o-mini-vs-deepseek-flash; "Mistral Small vs Claude Haiku" linked from haiku-vs-flash and mistral-vs-gpt4o. Verified sitemap (135 URLs), RSS (86 items), and all 86 blog OG images are in sync.
+
+### Session 161 (May 9)
+Added Agent Cost Calculator link (agent-cost-calculator.html) to all 86 blog posts' Related Reading/Resources sections. 81 posts were missing this link — now all 86 blog posts link to both Calculator and Agent Cost Calculator tools, improving internal linking and tool discoverability.
