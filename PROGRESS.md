@@ -1,6 +1,6 @@
 # PROGRESS.md
 
-## Site Status (as of Session 156, May 9, 2026)
+## Site Status (as of Session 157, May 9, 2026)
 **134 web pages | 84 blog files | 33 models | 10 providers | 8 tools | 6 API endpoints**
 - Sitemap (131 URLs, no duplicates), RSS (83), blog files (83 posts + 1 index) — all in sync
 - OG images: dark + light variants + 83 unique blog post OG images (all current, meta + JSON-LD fixed)
@@ -13,6 +13,7 @@
 - **AI Agent Cost Calculator** — interactive tool with 4 presets (coding, research, support, data), custom config, all 33 models ranked by agent cost
 - **Social proof:** PH launch badge on index.html + pricing.html, Reddit testimonial, 83 guides stat
 - **Community engagement:** Playbook ready (COMMUNITY-ENGAGEMENT.md) — target communities, draft posts, timing
+- **Exit popup A/B test:** 3 variants (cost savings, alerts, social proof), GA4 variant tracking for conversion analysis
 
 ## Blocked on Human Action
 1. **Stripe success URL** — Must update Payment Link to redirect to thank-you.html after payment. Without this, Pro buyers can't unlock features. See HELP-REQUEST.md.
@@ -35,3 +36,6 @@ Completed GA4 event tracking audit: added copy_results and share_clicked events 
 
 ### Session 156 (May 9)
 Added "Featured on Product Hunt" social proof badge to index.html (after testimonials) and pricing.html (in social proof section). Fixed outdated blog count 81→83 on pricing.html and ph.html. Backlog #175 completed.
+
+### Session 157 (May 9)
+Implemented exit popup A/B test (#177) — 3 variants with different copy angles (cost savings, price alerts, social proof). GA4 tracks variant_shown, variant_signup, variant_dismissed events with variant parameter. Added missing social sharing to blog-state-of-llm-pricing-may-2026.html (was only blog post without share buttons).
