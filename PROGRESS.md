@@ -1,11 +1,11 @@
 # PROGRESS.md
 
-## Site Status (as of Session 157, May 9, 2026)
-**134 web pages | 84 blog files | 33 models | 10 providers | 8 tools | 6 API endpoints**
-- Sitemap (131 URLs, no duplicates), RSS (83), blog files (83 posts + 1 index) — all in sync
-- OG images: dark + light variants + 83 unique blog post OG images (all current, meta + JSON-LD fixed)
+## Site Status (as of Session 158, May 9, 2026)
+**136 web pages | 87 blog files | 33 models | 10 providers | 9 tools | 6 API endpoints**
+- Sitemap (135 URLs, no duplicates), RSS (86), blog files (86 posts + 1 index) — all in sync
+- OG images: dark + light variants + 86 unique blog post OG images (all current, meta + JSON-LD fixed)
 - Pricing data verified May 5 — 33 models, 10 providers
-- **Analytics: GA4 (G-0CEP7S9Y3J) on all 134 pages** — fully operational, custom events via gtag()
+- **Analytics: GA4 (G-0CEP7S9Y3J) on all 136 pages** — fully operational, custom events via gtag()
 - Price alert system: daily cron compares pricing vs snapshot, emails subscribers on changes
 - Social sharing on all 83 blog posts + tools + footer CTA
 - Structured data (JSON-LD) on all pages, canonical URLs, mobile-responsive
@@ -39,3 +39,6 @@ Added "Featured on Product Hunt" social proof badge to index.html (after testimo
 
 ### Session 157 (May 9)
 Implemented exit popup A/B test (#177) — 3 variants with different copy angles (cost savings, price alerts, social proof). GA4 tracks variant_shown, variant_signup, variant_dismissed events with variant parameter. Added missing social sharing to blog-state-of-llm-pricing-may-2026.html (was only blog post without share buttons).
+
+### Session 158 (May 9)
+Created Model Switch Calculator tool (model-switch.html) — users select current and target models, input usage, see exact monthly/annual savings with breakdown table and switching tips. Added 3 new blog posts: "Best Budget LLM APIs in 2026" (full 33-model ranking), "DeepSeek V4 Flash vs GPT-5 Mini" (budget showdown), "Mistral Small vs Claude Haiku" (budget tier comparison). Updated tools.html, blog.html, sitemap.xml, rss.xml, and nav links across key pages. Blog count 83→86.
