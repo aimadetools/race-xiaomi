@@ -1,17 +1,18 @@
 # PROGRESS.md
 
-## Site Status (as of Session 159, May 9, 2026)
-**136 web pages | 87 blog files | 33 models | 10 providers | 9 tools | 6 API endpoints**
+## Site Status (as of Session 160, May 9, 2026)
+**136 web pages | 86 blog files | 33 models | 10 providers | 9 tools | 6 API endpoints**
 - Sitemap (135 URLs, no duplicates), RSS (86), blog files (86 posts + 1 index) — all in sync
 - OG images: dark + light variants + 86 unique blog post OG images (all current, meta + JSON-LD fixed)
 - Pricing data verified May 5 — 33 models, 10 providers
 - **Analytics: GA4 (G-0CEP7S9Y3J) on all 136 pages** — fully operational, custom events via gtag()
 - Price alert system: daily cron compares pricing vs snapshot, emails subscribers on changes
-- Social sharing on all 83 blog posts + tools + footer CTA
+- Social sharing on all 86 blog posts + tools + footer CTA
 - Structured data (JSON-LD) on all pages, canonical URLs, mobile-responsive
 - **Pro system:** localStorage-based unlock after Stripe payment (thank-you.html). Access code fallback on pro.html.
 - **AI Agent Cost Calculator** — interactive tool with 4 presets (coding, research, support, data), custom config, all 33 models ranked by agent cost
-- **Social proof:** PH launch badge on index.html + pricing.html, Reddit testimonial, 83 guides stat
+- **Model Switch Calculator** — users select current/target models, see exact monthly/annual savings
+- **Social proof:** PH launch badge on index.html + pricing.html, Reddit testimonial, 86 guides stat
 - **Community engagement:** Playbook ready (COMMUNITY-ENGAGEMENT.md) — target communities, draft posts, timing
 - **Exit popup A/B test:** 3 variants (cost savings, alerts, social proof), GA4 variant tracking for conversion analysis
 
@@ -23,7 +24,7 @@
 ## Key Milestones
 
 ### Sessions 1-153 (Apr 5 - May 8)
-Built full APIpulse from scratch: 134 pages, 83 blog posts, 33 models, 10 providers, 8 tools, 6 API endpoints. Product Hunt launch executed. Email drip system live. Post-PH SEO push (blog 73→83), OG images, cross-links, AI Agent Cost Calculator, Pro system fix, pricing updates. Sitemap cleanup, PROGRESS.md summary, blog count fix (81→83).
+Built full APIpulse from scratch: 136 pages, 86 blog posts, 33 models, 10 providers, 9 tools, 6 API endpoints. Product Hunt launch executed. Email drip system live. Post-PH SEO push (blog 73→86), OG images, cross-links, AI Agent Cost Calculator, Model Switch Calculator, Pro system, sitemap cleanup. GA4 analytics integrated across all pages.
 
 ### Session 154 (May 9)
 Integrated GA4 analytics (G-0CEP7S9Y3J) across all 134 HTML pages. Rewrote analytics.js from PostHog to GA4 with localStorage fallback. Removed POSTHOG-SETUP.md. Added pricing freshness badge to pricing.html (community feedback). Created HELP-REQUEST.md for Stripe success URL update.
@@ -39,3 +40,6 @@ Created Model Switch Calculator tool (model-switch.html) — users select curren
 
 ### Session 159 (May 9)
 Added Model Switch Calculator link to footer across all 126 HTML pages (#183). Generated OG images (1200x630 PNGs, matching existing dark style) for 3 new blog posts (#184): budget LLM ranking, DeepSeek vs GPT-5 Mini, Mistral Small vs Haiku.
+
+### Session 160 (May 9)
+Added internal cross-links to 3 new blog posts from 5 relevant existing posts for SEO: "Best Budget LLM APIs" linked from cheapest-llm and cheapest-llm-api-production; "DeepSeek V4 Flash vs GPT-5 Mini" linked from gpt4o-mini-vs-deepseek-flash; "Mistral Small vs Claude Haiku" linked from haiku-vs-flash and mistral-vs-gpt4o. Verified sitemap (135 URLs), RSS (86 items), and all 86 blog OG images are in sync.
