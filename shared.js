@@ -109,15 +109,33 @@ async function saveEmail(e) {
     }
 }
 
-// Exit-intent popup for email capture
+// Exit-intent popup for email capture — A/B test with 3 variants
 (function() {
     if (window.location.pathname.includes('unsubscribe') || window.location.pathname.includes('ph.html')) return;
     if (localStorage.getItem('apipulse_popup_dismissed')) return;
+
+    // A/B test variants
+    var popupVariants = {
+        A: { emoji: '🚀', headline: 'Get 40% off AI API costs', subtext: 'Join 500+ developers who use our free pricing data to optimize their AI spending. Get notified when prices change.', cta: 'Get Updates' },
+        B: { emoji: '🔔', headline: 'Never miss an AI price change', subtext: 'We track pricing across 33 models and 10 providers. Get instant alerts when costs shift — so you can switch before overpaying.', cta: 'Get Alerts' },
+        C: { emoji: '📊', headline: 'Join 500+ developers saving on AI', subtext: 'Our free calculator shows exactly what you\'ll pay per request. Compare Claude, GPT, Gemini, and 30 more models side by side.', cta: 'Start Saving' }
+    };
+
+    // Assign or retrieve variant
+    var variant = localStorage.getItem('apipulse_popup_variant');
+    if (!variant || !popupVariants[variant]) {
+        variant = ['A', 'B', 'C'][Math.floor(Math.random() * 3)];
+        localStorage.setItem('apipulse_popup_variant', variant);
+    }
+    var v = popupVariants[variant];
 
     let popupShown = false;
     function showExitPopup() {
         if (popupShown || localStorage.getItem('apipulse_popup_dismissed')) return;
         popupShown = true;
+
+        // Track which variant was shown
+        if (window.trackEvent) window.trackEvent('exit_popup_variant_shown', { variant: variant });
 
         const overlay = document.createElement('div');
         overlay.id = 'exit-popup-overlay';
@@ -127,15 +145,15 @@ async function saveEmail(e) {
         popup.style.cssText = 'background:var(--bg-card);border:1px solid var(--accent);border-radius:16px;padding:40px;max-width:440px;width:100%;position:relative;box-shadow:0 24px 64px rgba(0,0,0,0.5);';
 
         popup.innerHTML = `
-            <button onclick="document.getElementById('exit-popup-overlay').remove();localStorage.setItem('apipulse_popup_dismissed','1');" style="position:absolute;top:12px;right:12px;background:none;border:none;color:var(--text-muted);font-size:20px;cursor:pointer;padding:4px 8px;border-radius:6px;" onmouseover="this.style.color='var(--text-primary)'" onmouseout="this.style.color='var(--text-muted)'">&times;</button>
+            <button id="exit-popup-close" style="position:absolute;top:12px;right:12px;background:none;border:none;color:var(--text-muted);font-size:20px;cursor:pointer;padding:4px 8px;border-radius:6px;" onmouseover="this.style.color='var(--text-primary)'" onmouseout="this.style.color='var(--text-muted)'">&times;</button>
             <div style="text-align:center;">
-                <div style="font-size:40px;margin-bottom:16px;">🚀</div>
-                <h3 style="font-size:22px;font-weight:700;margin-bottom:8px;">Get 40% off AI API costs</h3>
-                <p style="font-size:14px;color:var(--text-secondary);margin-bottom:24px;line-height:1.6;">Join 500+ developers who use our free pricing data to optimize their AI spending. Get notified when prices change.</p>
+                <div style="font-size:40px;margin-bottom:16px;">${v.emoji}</div>
+                <h3 style="font-size:22px;font-weight:700;margin-bottom:8px;">${v.headline}</h3>
+                <p style="font-size:14px;color:var(--text-secondary);margin-bottom:24px;line-height:1.6;">${v.subtext}</p>
                 <form id="exit-popup-form" style="display:flex;gap:8px;margin-bottom:12px;">
                     <input type="email" id="exit-popup-email" placeholder="you@company.com" required aria-label="Email address"
                         style="flex:1;padding:12px 16px;border-radius:8px;border:1px solid var(--border);background:var(--bg-secondary);color:var(--text-primary);font-size:14px;">
-                    <button type="submit" style="background:var(--accent);color:white;padding:12px 24px;border-radius:8px;font-size:14px;font-weight:600;border:none;cursor:pointer;white-space:nowrap;">Get Updates</button>
+                    <button type="submit" style="background:var(--accent);color:white;padding:12px 24px;border-radius:8px;font-size:14px;font-weight:600;border:none;cursor:pointer;white-space:nowrap;">${v.cta}</button>
                 </form>
                 <p id="exit-popup-msg" style="font-size:13px;color:var(--green);margin-top:8px;display:none;"></p>
                 <p style="font-size:12px;color:var(--text-muted);margin-top:12px;">No spam. Unsubscribe anytime.</p>
@@ -145,8 +163,15 @@ async function saveEmail(e) {
         overlay.appendChild(popup);
         document.body.appendChild(overlay);
 
+        document.getElementById('exit-popup-close').addEventListener('click', function() {
+            if (window.trackEvent) window.trackEvent('exit_popup_dismissed', { variant: variant });
+            overlay.remove();
+            localStorage.setItem('apipulse_popup_dismissed', '1');
+        });
+
         overlay.addEventListener('click', function(e) {
             if (e.target === overlay) {
+                if (window.trackEvent) window.trackEvent('exit_popup_dismissed', { variant: variant });
                 overlay.remove();
                 localStorage.setItem('apipulse_popup_dismissed', '1');
             }
@@ -170,7 +195,7 @@ async function saveEmail(e) {
                 msgEl.style.color = 'var(--green)';
                 msgEl.style.display = 'block';
                 emailInput.value = '';
-                if (window.trackEvent) window.trackEvent('exit_popup_signup');
+                if (window.trackEvent) window.trackEvent('exit_popup_signup', { variant: variant });
                 setTimeout(function() { overlay.remove(); localStorage.setItem('apipulse_popup_dismissed', '1'); }, 2000);
             } catch (err) {
                 const emails = JSON.parse(localStorage.getItem('apipulse_emails') || '[]');
@@ -182,11 +207,11 @@ async function saveEmail(e) {
                 msgEl.style.color = 'var(--green)';
                 msgEl.style.display = 'block';
                 emailInput.value = '';
-                if (window.trackEvent) window.trackEvent('exit_popup_signup');
+                if (window.trackEvent) window.trackEvent('exit_popup_signup', { variant: variant });
                 setTimeout(function() { overlay.remove(); localStorage.setItem('apipulse_popup_dismissed', '1'); }, 2000);
             } finally {
                 btn.disabled = false;
-                btn.textContent = 'Get Updates';
+                btn.textContent = v.cta;
             }
         });
     }
