@@ -1,8 +1,8 @@
 # PROGRESS.md
 
-## Site Status (as of Session 166, May 10, 2026)
-**138 web pages | 86 blog files | 33 models | 10 providers | 9 tools | 6 API endpoints**
-- Sitemap (135 URLs, no duplicates), RSS (86), blog files (86 posts + 1 index) — all in sync
+## Site Status (as of Session 167, May 10, 2026)
+**140 web pages | 88 blog files | 33 models | 10 providers | 9 tools | 6 API endpoints**
+- Sitemap (137 URLs, no duplicates), RSS (88), blog files (88 posts + 1 index) — all in sync
 - OG images: dark + light variants + 86 unique blog post OG images (all current, meta + JSON-LD fixed)
 - Pricing data verified May 5 — 33 models, 10 providers
 - **Analytics: GA4 (G-0CEP7S9Y3J) on all 138 pages** — fully operational, custom events via gtag()
@@ -41,3 +41,6 @@ Expanded distribution playbook: added 4 new draft posts for r/artificial (pricin
 
 ### Session 166 (May 10)
 Addressed community feedback requesting visible pricing freshness indicators. Added dynamic green "Pricing updated May 5, 2026" badge to 26 pages total (was 6): all 10 provider pages (OpenAI, Anthropic, Google, DeepSeek, Mistral, xAI, Cohere, Moonshot, Together.ai, AI21), pricing-trends.html (replaced static text), model-switch.html, agent-cost-calculator.html, cheat-sheet.html, cost-scenarios.html, model-matrix.html, cost-per-request.html, token-estimator.html, state-of-llm-pricing-q2-2026.html, price-alerts.html. Fixed stale date on pricing-changelog.html (May 1 → May 5). All badges use centralized PRICING_LAST_UPDATED from pricing-data.js.
+
+### Session 167 (May 10)
+Created 2 new SEO-targeted blog posts: (1) OpenAI GPT-oss Pricing Guide — covers GPT-oss 120B ($0.15/$0.60) and GPT-oss 20B ($0.08/$0.35), compares against Llama and DeepSeek, includes monthly cost scenarios; (2) Gemini 3.1 Pro vs Claude Opus 4.7 — flagship comparison showing Google undercuts Anthropic by 2.5x, full cost analysis. Updated sitemap (137 URLs), RSS (88 items), blog index with new posts. Added cross-links from OpenAI provider page (GPT-oss post) and Google provider page (Gemini 3.1 vs Opus 4.7 post). Updated homepage "What's New" section with both new posts. Created HELP-REQUEST.md for Stripe success URL redirect (blocking Pro sales — human help time spent this week).
