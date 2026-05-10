@@ -105,6 +105,133 @@ All static HTML/JS, no backend, no signup. Deployed on Vercel.
 
 URL: https://getapipulse.com/pricing-trends.html?utm_source=hn&utm_medium=show_hn&utm_campaign=pricing_trends
 
+### Reddit r/artificial — Pricing Data Insights
+**Title**: "AI API pricing in 2026: GPT-4o dropped 67%, Mistral dropped 75%, Grok 3 jumped 10x"
+
+I've been tracking AI API pricing changes across all major providers. Here's what's happened:
+
+Biggest drops:
+- GPT-4o: $10 → $2.50/1M input (-67%)
+- Mistral Large: $2 → $0.50 (-75%)
+- DeepSeek V4 Pro: $1.75 → $0.44 (-75%)
+
+The outlier:
+- Grok 3: $3 → $30/1M input (+10x) — biggest price hike in the market
+
+Budget models are now production-viable:
+- Gemini 2.0 Flash Lite at $0.075/1M input
+- Llama 3.1 8B at $0.10/1M via Together.ai
+- DeepSeek V4 Flash at $0.14/1M with 1M context
+
+I built a free tool to track all this: https://getapipulse.com/pricing-trends.html?utm_source=reddit&utm_medium=post&utm_campaign=r_artificial_pricing
+
+Full comparison of 33 models across 10 providers. Would be curious to hear what models everyone's actually using in production.
+
+### Reddit r/LocalLLaMA — Open-Source vs Commercial
+**Title**: "Open-source vs commercial AI APIs in 2026 — cost comparison with real numbers"
+
+I've been comparing open-source hosted APIs vs commercial providers. Here's the breakdown:
+
+Open-source (via hosted APIs):
+- Llama 3.1 8B (Together.ai): $0.10/$0.10 per 1M tokens
+- Llama 4 Scout: $0.11/$0.33 — 10M context window
+- Llama 4 Maverick: $0.22/$0.66
+
+Commercial budget tier:
+- Gemini 2.0 Flash Lite: $0.075/$0.30 (cheapest overall)
+- DeepSeek V4 Flash: $0.14/$0.28
+- GPT-4o mini: $0.15/$0.60
+
+The gap is closing fast. Gemini Flash Lite at $0.075 is actually cheaper than most open-source hosted options. But open-source gives you self-hosting flexibility and no vendor lock-in.
+
+For self-hosters: the break-even point vs API calls depends heavily on utilization. At >80% GPU utilization, self-hosting wins. Below 50%, APIs are usually cheaper when you factor in ops overhead.
+
+Full comparison: https://getapipulse.com?utm_source=reddit&utm_medium=post&utm_campaign=r_localllama_oss
+
+### Reddit r/startups — Build in Public
+**Title**: "Building a startup on $100 — Week 3 update (AI API pricing tool)"
+
+I'm 3 weeks into a 12-week challenge: build a real startup with only $100.
+
+What I built: APIpulse — a free tool that compares AI API pricing across 33 models and 10 providers. Interactive calculators, savings comparisons, pricing trends.
+
+Week 1-2: Built the entire site (138 pages, 86 blog posts). Launched on Product Hunt.
+Week 3: Distribution push. Added savings calculator, exit popup A/B test, community engagement.
+
+Lessons so far:
+- Static HTML + Vercel = $0 hosting, instant deploys
+- Free tools drive more traffic than blog posts
+- SEO content before launch = organic traffic from day one
+- Reddit feedback shaped the product more than any other channel
+
+Revenue: $0 so far (Pro tier at $29 but Stripe integration needs fixing).
+Traffic: Growing steadily from PH launch and organic SEO.
+
+Next up: Community distribution, newsletter pitches, conversion optimization.
+
+The tool: https://getapipulse.com?utm_source=reddit&utm_medium=post&utm_campaign=r_startups_journey
+
+Happy to share specifics about the build process, tech stack, or PH launch strategy.
+
+### Reddit r/MachineLearning — Data-Driven Analysis
+**Title**: "AI API pricing analysis: 33 models, 10 providers — who's actually cheapest in 2026?"
+
+I analyzed current AI API pricing across all major providers. Key findings:
+
+1. **Budget tier is production-viable**: Gemini 2.0 Flash Lite ($0.075/1M) and DeepSeek V4 Flash ($0.14/1M) now match 2024 flagship quality at 1/20th the price.
+
+2. **Context windows exploded**: Budget models now offer 1M+ context (Gemini Flash, DeepSeek V4 Pro). Premium models at 200K-1M.
+
+3. **Price volatility is real**: Grok 3 increased 10x. GPT-4o dropped 67%. If you haven't re-evaluated your provider in 6 months, you're likely overpaying.
+
+4. **Multi-model pipelines are optimal**: Route simple tasks to Gemini Flash ($0.10), code to DeepSeek V4 Pro ($0.44), complex reasoning to GPT-5 ($1.25). Under $2/1M tokens average.
+
+5. **The cheapest option depends on workload**: For high-volume classification, Llama 3.1 8B ($0.10) wins. For long-context analysis, Gemini Flash ($0.10/1M, 1M context) wins. For code, DeepSeek V4 Pro ($0.44/1M, 1M context) wins.
+
+Full data with interactive calculators: https://getapipulse.com/pricing-trends.html?utm_source=reddit&utm_medium=post&utm_campaign=r_ml_analysis
+
+Data covers input/output pricing, context windows, and cost-per-workload comparisons.
+
+---
+
+## Newsletter Pitches
+
+### TLDR Newsletter
+**Subject**: Free tool: Compare AI API pricing across 33 models
+
+Hi TLDR team,
+
+I built APIpulse — a free tool that helps developers compare AI API costs across 33 models from OpenAI, Anthropic, Google, DeepSeek, Mistral, and more.
+
+Key data points for your readers:
+- GPT-4o dropped 67% ($10 → $2.50/1M input)
+- Budget models (Gemini Flash at $0.075/1M) are now production-viable
+- Grok 3 increased 10x — biggest price hike in the market
+
+Interactive tools: cost calculator, model comparison, savings calculator, pricing trends.
+
+Site: https://getapipulse.com/pricing-trends.html?utm_source=tldr&utm_medium=newsletter&utm_campaign=pitch
+
+Happy to provide any data or quotes for a piece.
+
+### Bytes.dev Newsletter
+**Subject**: AI API pricing has changed dramatically — here's a free tracker
+
+Hey Bytes team,
+
+The AI API pricing landscape has shifted massively in 2025-2026. I built APIpulse to help developers navigate it:
+
+- 33 models across 10 providers
+- Interactive savings calculator
+- Pricing trends with every major price move
+- 86 comparison blog posts
+
+Would be a great fit for your developer audience. Free tool, no signup required.
+
+Site: https://getapipulse.com?utm_source=bytes&utm_medium=newsletter&utm_campaign=pitch
+
+Let me know if you'd like any data or a guest contribution.
+
 ---
 
 ## Engagement Guidelines
