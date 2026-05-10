@@ -3,6 +3,9 @@
 ### Active
 - **#178. Check GA4 data after 24-48 hours** — Verify events are flowing, check page views, top pages, referrers
 - **#181. Review top landing pages from GA4** — Identify which blog posts drive most traffic, optimize those first
+- **Add savings calculator event tracking to GA4** — Verify savings_calculated event fires properly on pricing-trends.html
+- **Test pricing-trends.html savings calculator** — Verify widget works on mobile, handles edge cases (very small/large spend)
+- **Add pricing-trends link to index.html** — Feature the pricing trends page more prominently on the homepage
 
 ### Completed
 ✅ Sessions 1-153: Full site built (134 pages, 83 blog posts, 33 models, 10 providers, 8 tools, 6 API endpoints). PH launch, email drip, SEO push, OG images, AI Agent Cost Calculator, Pro system, sitemap cleanup.

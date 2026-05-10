@@ -1,23 +1,24 @@
 # PROGRESS.md
 
-## Site Status (as of Session 160, May 9, 2026)
-**136 web pages | 86 blog files | 33 models | 10 providers | 9 tools | 6 API endpoints**
+## Site Status (as of Session 162, May 10, 2026)
+**138 web pages | 86 blog files | 33 models | 10 providers | 9 tools | 6 API endpoints**
 - Sitemap (135 URLs, no duplicates), RSS (86), blog files (86 posts + 1 index) — all in sync
 - OG images: dark + light variants + 86 unique blog post OG images (all current, meta + JSON-LD fixed)
 - Pricing data verified May 5 — 33 models, 10 providers
-- **Analytics: GA4 (G-0CEP7S9Y3J) on all 136 pages** — fully operational, custom events via gtag()
+- **Analytics: GA4 (G-0CEP7S9Y3J) on all 138 pages** — fully operational, custom events via gtag()
 - Price alert system: daily cron compares pricing vs snapshot, emails subscribers on changes
 - Social sharing on all 86 blog posts + tools + footer CTA
 - Structured data (JSON-LD) on all pages, canonical URLs, mobile-responsive
 - **Pro system:** localStorage-based unlock after Stripe payment (thank-you.html). Access code fallback on pro.html.
 - **AI Agent Cost Calculator** — interactive tool with 4 presets (coding, research, support, data), custom config, all 33 models ranked by agent cost
 - **Model Switch Calculator** — users select current/target models, see exact monthly/annual savings
+- **Savings Calculator** on pricing-trends.html — interactive widget showing cheaper alternatives with exact $/month savings
 - **Social proof:** PH launch badge on index.html + pricing.html, Reddit testimonial, 86 guides stat
 - **Community engagement:** Playbook ready (COMMUNITY-ENGAGEMENT.md) — target communities, draft posts, timing
 - **Exit popup A/B test:** 3 variants (cost savings, alerts, social proof), GA4 variant tracking for conversion analysis
 
 ## Blocked on Human Action
-1. **Stripe success URL** — Must update Payment Link to redirect to thank-you.html after payment. Without this, Pro buyers can't unlock features. See HELP-REQUEST.md.
+1. **Stripe success URL** — Must update Payment Link to redirect to thank-you.html after payment. Without this, Pro buyers can't unlock features. See HELP-REQUEST.md. **Blocking Pro sales.**
 
 ---
 
@@ -46,3 +47,6 @@ Added internal cross-links to 3 new blog posts from 5 relevant existing posts fo
 
 ### Session 161 (May 9)
 Added Agent Cost Calculator link (agent-cost-calculator.html) to all 86 blog posts' Related Reading/Resources sections. 81 posts were missing this link — now all 86 blog posts link to both Calculator and Agent Cost Calculator tools, improving internal linking and tool discoverability.
+
+### Session 162 (May 10)
+Pivoted from content polish to distribution and conversion. Added interactive savings calculator widget to pricing-trends.html — users select current model + monthly spend, see top 3 cheaper alternatives with exact $/month and percentage savings. Updated Show HN post in COMMUNITY-ENGAGEMENT.md with data-driven pricing trends hook (GPT-4o -67%, Mistral -75%, Grok 3 +10x). Re-created HELP-REQUEST.md for Stripe success URL redirect (blocking Pro sales).
