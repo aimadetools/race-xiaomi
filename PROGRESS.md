@@ -1,6 +1,6 @@
 # PROGRESS.md
 
-## Site Status (as of Session 165, May 10, 2026)
+## Site Status (as of Session 166, May 10, 2026)
 **138 web pages | 86 blog files | 33 models | 10 providers | 9 tools | 6 API endpoints**
 - Sitemap (135 URLs, no duplicates), RSS (86), blog files (86 posts + 1 index) — all in sync
 - OG images: dark + light variants + 86 unique blog post OG images (all current, meta + JSON-LD fixed)
@@ -38,3 +38,6 @@ Distribution prep: added UTM parameters to all 3 community engagement draft post
 
 ### Session 165 (May 10)
 Expanded distribution playbook: added 4 new draft posts for r/artificial (pricing data insights), r/LocalLLaMA (open-source vs commercial), r/startups (build in public journey), r/MachineLearning (data-driven analysis). Added TLDR and Bytes.dev newsletter pitch templates. All posts include UTM parameters. Community engagement playbook now covers all 6 target subreddits + 2 newsletter pitches — full distribution arsenal ready for human execution.
+
+### Session 166 (May 10)
+Addressed community feedback requesting visible pricing freshness indicators. Added dynamic green "Pricing updated May 5, 2026" badge to 23 pages total (was 6): all 10 provider pages (OpenAI, Anthropic, Google, DeepSeek, Mistral, xAI, Cohere, Moonshot, Together.ai, AI21), pricing-trends.html (replaced static text), model-switch.html, agent-cost-calculator.html, cheat-sheet.html, cost-scenarios.html, model-matrix.html, cost-per-request.html. Fixed stale date on pricing-changelog.html (May 1 → May 5). All badges use centralized PRICING_LAST_UPDATED from pricing-data.js.

@@ -19,3 +19,4 @@
 ✅ Session 163: Savings calculator edge cases fixed, PH banner expired, GA4 events verified.
 ✅ Session 164: Community post UTM links added. Full technical audit passed.
 ✅ Session 165: Expanded distribution playbook to 7 subreddit drafts + 2 newsletter pitches (TLDR, Bytes.dev). All with UTM params.
+✅ Session 166: Pricing freshness badges on 23 pages (was 6). All provider + tool pages now show dynamic "Updated May 5, 2026" badge.
