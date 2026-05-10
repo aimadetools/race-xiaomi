@@ -330,6 +330,9 @@
                     <div class="label">Maximum annual savings by switching</div>
                 </div>
                 <div class="savings-alt" id="savings-alternatives"></div>
+                <div style="text-align:center;margin-top:16px;">
+                    <a id="share-savings" href="#" target="_blank" rel="noopener" class="btn-primary" style="display:inline-block;padding:10px 24px;font-size:14px;" onclick="if(window.trackEvent)window.trackEvent('savings_shared')">Share your savings on X</a>
+                </div>
             </div>
         </div>
 
@@ -705,6 +708,15 @@
                 '<div class="alt-pct">Save ' + pct + '%</div>' +
                 '</div>';
         }).join('');
+
+        // Update share link
+        const bestAlt = alternatives[0];
+        const shareText = encodeURIComponent(
+            'I could save $' + maxAnnual.toFixed(0) + '/year on AI APIs by switching from ' +
+            current.name + ' to ' + bestAlt.model.name + '. ' +
+            'Check your savings: https://getapipulse.com/pricing-trends.html'
+        );
+        document.getElementById('share-savings').href = 'https://twitter.com/intent/tweet?text=' + shareText;
 
         if (window.trackEvent) window.trackEvent('savings_calculated', {
             current_model: modelId,
