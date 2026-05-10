@@ -247,8 +247,9 @@ function renderPricingFreshness(containerId) {
         'Pricing updated ' + PRICING_LAST_UPDATED + '</span>';
 }
 
-// Product Hunt launch banner (auto-shows May 5-7, 2026)
+// Product Hunt launch banner (auto-shows May 5-9, 2026) — expired
 (function() {
+    return; // Banner period ended
     if (localStorage.getItem('apipulse_ph_banner_dismissed')) return;
     var now = new Date();
     var launchStart = new Date('2026-05-05T00:00:00');

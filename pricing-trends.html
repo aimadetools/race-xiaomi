@@ -320,7 +320,7 @@
                 </div>
                 <div>
                     <label for="monthly-spend">Monthly spend (USD)</label>
-                    <input type="number" id="monthly-spend" value="100" min="1" step="10" oninput="calcSavings()">
+                    <input type="number" id="monthly-spend" value="100" min="1" max="1000000" step="10" oninput="calcSavings()">
                 </div>
                 <button class="btn-primary" onclick="calcSavings()" style="padding:12px 24px;">Calculate</button>
             </div>
@@ -657,8 +657,9 @@
 
     function calcSavings() {
         const modelId = document.getElementById('current-model').value;
-        const spend = parseFloat(document.getElementById('monthly-spend').value) || 0;
+        let spend = parseFloat(document.getElementById('monthly-spend').value) || 0;
         if (!modelId || spend <= 0) return;
+        spend = Math.min(Math.max(spend, 1), 1000000);
 
         const current = typeof getModelById === 'function' ? getModelById(modelId) : null;
         if (!current) return;
@@ -690,29 +691,39 @@
 
         const resultsDiv = document.getElementById('savings-results');
         if (alternatives.length === 0) {
-            resultsDiv.classList.remove('active');
+            resultsDiv.classList.add('active');
+            document.getElementById('max-savings').textContent = '✓';
+            document.getElementById('savings-alternatives').innerHTML =
+                '<div class="savings-alt-card" style="grid-column:1/-1;">' +
+                '<div class="alt-model">You\'re already on one of the cheapest models!</div>' +
+                '<div class="alt-price">No cheaper alternatives for your usage pattern.</div>' +
+                '</div>';
+            document.getElementById('share-savings').style.display = 'none';
             return;
         }
         resultsDiv.classList.add('active');
+        document.getElementById('share-savings').style.display = '';
 
         const maxAnnual = alternatives[0].annualSave;
-        document.getElementById('max-savings').textContent = '$' + maxAnnual.toFixed(0);
+        document.getElementById('max-savings').textContent = '$' + (maxAnnual >= 10 ? maxAnnual.toFixed(0) : maxAnnual.toFixed(2));
 
         const altDiv = document.getElementById('savings-alternatives');
         altDiv.innerHTML = alternatives.map(a => {
             const pct = ((a.monthlySave / spend) * 100).toFixed(0);
+            const monthlyStr = a.monthlySave >= 1 ? '$' + a.monthlySave.toFixed(0) : '$' + a.monthlySave.toFixed(2);
             return '<div class="savings-alt-card">' +
                 '<div class="alt-model">' + a.model.name + '</div>' +
                 '<div class="alt-price">' + a.model.provider + ' — $' + a.model.input + '/1M input</div>' +
-                '<div class="alt-save">$' + a.monthlySave.toFixed(0) + '/mo</div>' +
+                '<div class="alt-save">' + monthlyStr + '/mo</div>' +
                 '<div class="alt-pct">Save ' + pct + '%</div>' +
                 '</div>';
         }).join('');
 
         // Update share link
         const bestAlt = alternatives[0];
+        const annualStr = maxAnnual >= 10 ? '$' + maxAnnual.toFixed(0) : '$' + maxAnnual.toFixed(2);
         const shareText = encodeURIComponent(
-            'I could save $' + maxAnnual.toFixed(0) + '/year on AI APIs by switching from ' +
+            'I could save ' + annualStr + '/year on AI APIs by switching from ' +
             current.name + ' to ' + bestAlt.model.name + '. ' +
             'Check your savings: https://getapipulse.com/pricing-trends.html'
         );
