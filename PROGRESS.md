@@ -1,8 +1,8 @@
 # PROGRESS.md
 
-## Site Status (as of Session 169, May 10, 2026)
-**142 web pages | 92 blog files | 33 models | 10 providers | 9 tools | 6 API endpoints**
-- Sitemap (141 URLs, no duplicates), RSS (92), blog files (92 posts + 1 index) — all in sync
+## Site Status (as of Session 170, May 10, 2026)
+**144 web pages | 94 blog files | 33 models | 10 providers | 9 tools | 6 API endpoints**
+- Sitemap (143 URLs, no duplicates), RSS (94), blog files (94 posts + 1 index) — all in sync
 - OG images: dark + light variants + 86 unique blog post OG images (all current, meta + JSON-LD fixed)
 - Pricing data verified May 5 — 33 models, 10 providers
 - **Analytics: GA4 (G-0CEP7S9Y3J) on all 138 pages** — fully operational, custom events via gtag()
@@ -41,3 +41,6 @@ Created 2 more high-intent SEO blog posts targeting "cheapest GPT-5 API" and "AI
 
 ### Session 169 (May 10)
 Created 2 more high-intent SEO blog posts targeting "GPT-5 vs Gemini 3.1 Pro" and "OpenAI API alternatives" keywords: (1) GPT-5 vs Gemini 3.1 Pro — head-to-head comparison of mid-tier flagships, GPT-5 at $1.25 is 37% cheaper but Gemini at $2 offers 3.7x more context (1M vs 272K), includes cost scenarios at 3 workload sizes and budget alternatives; (2) OpenAI API Alternatives: 7 Cheaper Options — ranks 7 alternatives by cost (Gemini Flash Lite saves 94%, DeepSeek V4 Flash saves 89%, Llama 4 saves 91%), includes quality vs cost analysis, practical switching guide, monthly cost comparison at 10K requests/day. Updated sitemap (141 URLs), RSS (92 items), blog index (92 posts). Added cross-links from OpenAI provider page (alternatives post) and Google provider page (GPT-5 vs Gemini post). Updated homepage "What's New" with both new posts and "86 Expert Guides" → "92 Expert Guides".
+
+### Session 170 (May 10)
+Created 2 more high-intent SEO blog posts targeting "Claude Sonnet 4.6 vs GPT-5" and "best AI API for production" keywords: (1) Claude Sonnet 4.6 vs GPT-5 — mid-tier model comparison, GPT-5 at $1.25 is 58% cheaper but Sonnet 4.6 at $3 offers 3.7x more context (1M vs 272K) and better coding, includes cost scenarios at 3 workload sizes and budget alternatives; (2) Best AI API for Production 2026 — ranked guide covering top 5 production APIs (GPT-5, Claude Sonnet 4.6, Gemini 3.1 Pro, DeepSeek V4 Pro, GPT-5 mini) by reliability, cost, context, and speed, includes decision framework and cost scenarios at 3 workload sizes. Updated sitemap (143 URLs), RSS (94 items), blog index (94 posts). Added cross-links from Anthropic provider page (Sonnet 4.6 vs GPT-5 post) and OpenAI provider page (production guide post). Updated homepage "What's New" with both new posts and "92 Expert Guides" → "94 Expert Guides".
