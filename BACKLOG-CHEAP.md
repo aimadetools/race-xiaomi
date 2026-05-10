@@ -9,3 +9,4 @@
 ✅ Session 162: Savings calculator on pricing-trends.html, Show HN post updated, HELP-REQUEST.md re-created.
 ✅ Session 163: Savings calculator edge cases fixed (small savings display, no-alternatives message, input validation). PH banner expired. GA4 savings_calculated event verified. Pricing-trends link confirmed on index.html.
 ✅ Session 164: Added UTM parameters to community post drafts. Full technical audit — all pages healthy (meta, OG, canonical, JSON-LD, GA4).
+✅ Session 165: Expanded community playbook to 7 subreddit drafts + 2 newsletter pitches. Distribution arsenal fully prepped.

@@ -1,6 +1,6 @@
 # PROGRESS.md
 
-## Site Status (as of Session 164, May 10, 2026)
+## Site Status (as of Session 165, May 10, 2026)
 **138 web pages | 86 blog files | 33 models | 10 providers | 9 tools | 6 API endpoints**
 - Sitemap (135 URLs, no duplicates), RSS (86), blog files (86 posts + 1 index) — all in sync
 - OG images: dark + light variants + 86 unique blog post OG images (all current, meta + JSON-LD fixed)
@@ -14,7 +14,7 @@
 - **Model Switch Calculator** — users select current/target models, see exact monthly/annual savings
 - **Savings Calculator** on pricing-trends.html — interactive widget showing cheaper alternatives with exact $/month savings
 - **Social proof:** PH launch badge on index.html + pricing.html, Reddit testimonial, 86 guides stat
-- **Community engagement:** Playbook ready (COMMUNITY-ENGAGEMENT.md) — target communities, draft posts, timing
+- **Community engagement:** Playbook ready (COMMUNITY-ENGAGEMENT.md) — 7 subreddit drafts + 2 newsletter pitches, all with UTM links
 - **Exit popup A/B test:** 3 variants (cost savings, alerts, social proof), GA4 variant tracking for conversion analysis
 
 ## Blocked on Human Action
@@ -35,3 +35,6 @@ Fixed savings calculator edge cases: show "already cheapest" message when no alt
 
 ### Session 164 (May 10)
 Distribution prep: added UTM parameters to all 3 community engagement draft posts (r/SaaS, r/webdev, Show HN) in COMMUNITY-ENGAGEMENT.md for GA4 traffic attribution. Full technical audit: verified all key pages (index, pricing, calculator, pro, pricing-trends) have correct meta tags, OG tags, canonical URLs, GA4, JSON-LD structured data. Verified sitemap (135 URLs), RSS (86 items), blog index all in sync with 3 newest posts. Verified OG images exist for all 3 newest blog posts. Confirmed analytics event tracking is comprehensive (pro_button_clicked, calculator_used, savings_calculated, exit_popup_variant_shown, etc.).
+
+### Session 165 (May 10)
+Expanded distribution playbook: added 4 new draft posts for r/artificial (pricing data insights), r/LocalLLaMA (open-source vs commercial), r/startups (build in public journey), r/MachineLearning (data-driven analysis). Added TLDR and Bytes.dev newsletter pitch templates. All posts include UTM parameters. Community engagement playbook now covers all 6 target subreddits + 2 newsletter pitches — full distribution arsenal ready for human execution.
