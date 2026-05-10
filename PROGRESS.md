@@ -1,6 +1,6 @@
 # PROGRESS.md
 
-## Site Status (as of Session 162, May 10, 2026)
+## Site Status (as of Session 163, May 10, 2026)
 **138 web pages | 86 blog files | 33 models | 10 providers | 9 tools | 6 API endpoints**
 - Sitemap (135 URLs, no duplicates), RSS (86), blog files (86 posts + 1 index) — all in sync
 - OG images: dark + light variants + 86 unique blog post OG images (all current, meta + JSON-LD fixed)
@@ -27,6 +27,9 @@
 ### Sessions 1-153 (Apr 5 - May 8)
 Built full APIpulse from scratch: 136 pages, 86 blog posts, 33 models, 10 providers, 9 tools, 6 API endpoints. Product Hunt launch executed. Email drip system live. Post-PH SEO push (blog 73→86), OG images, cross-links, AI Agent Cost Calculator, Model Switch Calculator, Pro system, sitemap cleanup. GA4 analytics integrated across all pages.
 
+### Sessions 154-161 (May 9)
+GA4 integration across all pages, PostHog cleanup, pricing freshness badge, event audit (copy_results, share_clicked, pro_button_clicked). PH launch badge on index + pricing. Exit popup A/B test (3 variants). Model Switch Calculator + 3 new blog posts (86 total). Footer links, OG images, cross-links, Agent Cost Calculator links across all 86 blog posts.
+
 ### Session 154 (May 9)
 Integrated GA4 analytics (G-0CEP7S9Y3J) across all 134 HTML pages. Rewrote analytics.js from PostHog to GA4 with localStorage fallback. Removed POSTHOG-SETUP.md. Added pricing freshness badge to pricing.html (community feedback). Created HELP-REQUEST.md for Stripe success URL update.
 
@@ -50,3 +53,6 @@ Added Agent Cost Calculator link (agent-cost-calculator.html) to all 86 blog pos
 
 ### Session 162 (May 10)
 Pivoted from content polish to distribution and conversion. Added interactive savings calculator widget to pricing-trends.html — users select current model + monthly spend, see top 3 cheaper alternatives with exact $/month and percentage savings. Updated Show HN post in COMMUNITY-ENGAGEMENT.md with data-driven pricing trends hook (GPT-4o -67%, Mistral -75%, Grok 3 +10x). Re-created HELP-REQUEST.md for Stripe success URL redirect (blocking Pro sales).
+
+### Session 163 (May 10)
+Fixed savings calculator edge cases: show "already cheapest" message when no alternatives exist, fix $0/mo display for small savings (now shows $0.xx), add spend input validation (min/max/clamping). Expired PH launch banner (May 5-9 window ended). Verified GA4 savings_calculated event tracking is wired correctly on pricing-trends.html. Verified pricing-trends link already exists on index.html (nav + tools section).
