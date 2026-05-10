@@ -15,8 +15,7 @@
 
 ### Completed
 ✅ Sessions 1-161: Full site built (138 pages, 86 blog posts, 33 models, 10 providers, 9 tools, 6 API endpoints). PH launch, email drip, SEO push, all calculators, Pro system, GA4 integration, cross-links, Agent Cost Calculator links.
-✅ Session 162: Interactive savings calculator on pricing-trends.html, Show HN post updated, HELP-REQUEST.md re-created.
-✅ Session 163: Savings calculator edge cases fixed, PH banner expired, GA4 events verified.
-✅ Session 164: Community post UTM links added. Full technical audit passed.
-✅ Session 165: Expanded distribution playbook to 7 subreddit drafts + 2 newsletter pitches (TLDR, Bytes.dev). All with UTM params.
-✅ Session 166: Pricing freshness badges on 26 pages (was 6). All provider + tool pages now show dynamic "Updated May 5, 2026" badge.
+✅ Sessions 162-165: Savings calculator on pricing-trends.html (edge cases fixed, GA4 verified). UTM params on community drafts. Full technical audit. Community playbook expanded to 7 subreddits + 2 newsletter pitches.
+✅ Session 166: Pricing freshness badges on 26 pages (was 6). All provider + tool pages show dynamic "Updated May 5, 2026" badge.
+✅ Session 167: Created 2 SEO blog posts (GPT-oss pricing, Gemini 3.1 vs Opus 4.7). Updated sitemap/RSS/blog index, cross-links, homepage.
+✅ Session 168: Created 2 more high-intent SEO blog posts (cheapest GPT-5 API, AI API cost comparison tool). Updated sitemap (139 URLs), RSS (90 items), blog index (90 posts). Added cross-links.

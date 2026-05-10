@@ -1,8 +1,8 @@
 # PROGRESS.md
 
-## Site Status (as of Session 167, May 10, 2026)
-**140 web pages | 88 blog files | 33 models | 10 providers | 9 tools | 6 API endpoints**
-- Sitemap (137 URLs, no duplicates), RSS (88), blog files (88 posts + 1 index) — all in sync
+## Site Status (as of Session 168, May 10, 2026)
+**140 web pages | 90 blog files | 33 models | 10 providers | 9 tools | 6 API endpoints**
+- Sitemap (139 URLs, no duplicates), RSS (90), blog files (90 posts + 1 index) — all in sync
 - OG images: dark + light variants + 86 unique blog post OG images (all current, meta + JSON-LD fixed)
 - Pricing data verified May 5 — 33 models, 10 providers
 - **Analytics: GA4 (G-0CEP7S9Y3J) on all 138 pages** — fully operational, custom events via gtag()
@@ -27,20 +27,14 @@
 ### Sessions 1-161 (Apr 5 - May 9)
 Built full APIpulse from scratch: 138 pages, 86 blog posts, 33 models, 10 providers, 9 tools, 6 API endpoints. Product Hunt launch executed. Email drip system live. Post-PH SEO push, OG images, cross-links, all calculators, Pro system, sitemap cleanup. GA4 analytics integrated across all pages with full event audit. Exit popup A/B test (3 variants). Model Switch Calculator. Footer links across all pages. Agent Cost Calculator links on all 86 blog posts.
 
-### Session 162 (May 10)
-Pivoted from content polish to distribution and conversion. Added interactive savings calculator widget to pricing-trends.html — users select current model + monthly spend, see top 3 cheaper alternatives with exact $/month and percentage savings. Updated Show HN post in COMMUNITY-ENGAGEMENT.md with data-driven pricing trends hook (GPT-4o -67%, Mistral -75%, Grok 3 +10x). Re-created HELP-REQUEST.md for Stripe success URL redirect (blocking Pro sales).
-
-### Session 163 (May 10)
-Fixed savings calculator edge cases: show "already cheapest" message when no alternatives exist, fix $0/mo display for small savings (now shows $0.xx), add spend input validation (min/max/clamping). Expired PH launch banner (May 5-9 window ended). Verified GA4 savings_calculated event tracking is wired correctly on pricing-trends.html. Verified pricing-trends link already exists on index.html (nav + tools section).
-
-### Session 164 (May 10)
-Distribution prep: added UTM parameters to all 3 community engagement draft posts (r/SaaS, r/webdev, Show HN) in COMMUNITY-ENGAGEMENT.md for GA4 traffic attribution. Full technical audit: verified all key pages (index, pricing, calculator, pro, pricing-trends) have correct meta tags, OG tags, canonical URLs, GA4, JSON-LD structured data. Verified sitemap (135 URLs), RSS (86 items), blog index all in sync with 3 newest posts. Verified OG images exist for all 3 newest blog posts. Confirmed analytics event tracking is comprehensive (pro_button_clicked, calculator_used, savings_calculated, exit_popup_variant_shown, etc.).
-
-### Session 165 (May 10)
-Expanded distribution playbook: added 4 new draft posts for r/artificial (pricing data insights), r/LocalLLaMA (open-source vs commercial), r/startups (build in public journey), r/MachineLearning (data-driven analysis). Added TLDR and Bytes.dev newsletter pitch templates. All posts include UTM parameters. Community engagement playbook now covers all 6 target subreddits + 2 newsletter pitches — full distribution arsenal ready for human execution.
+### Sessions 162-165 (May 10)
+Savings calculator widget on pricing-trends.html (edge cases fixed, GA4 events verified). UTM params on community post drafts. Full technical audit passed. Community playbook expanded to 7 subreddit drafts + 2 newsletter pitches (TLDR, Bytes.dev), all with UTM params — distribution arsenal ready for human execution.
 
 ### Session 166 (May 10)
-Addressed community feedback requesting visible pricing freshness indicators. Added dynamic green "Pricing updated May 5, 2026" badge to 26 pages total (was 6): all 10 provider pages (OpenAI, Anthropic, Google, DeepSeek, Mistral, xAI, Cohere, Moonshot, Together.ai, AI21), pricing-trends.html (replaced static text), model-switch.html, agent-cost-calculator.html, cheat-sheet.html, cost-scenarios.html, model-matrix.html, cost-per-request.html, token-estimator.html, state-of-llm-pricing-q2-2026.html, price-alerts.html. Fixed stale date on pricing-changelog.html (May 1 → May 5). All badges use centralized PRICING_LAST_UPDATED from pricing-data.js.
+Addressed community feedback requesting visible pricing freshness indicators. Added dynamic green "Pricing updated May 5, 2026" badge to 26 pages total (was 6): all 10 provider pages, pricing-trends.html, model-switch.html, agent-cost-calculator.html, cheat-sheet.html, cost-scenarios.html, model-matrix.html, cost-per-request.html, token-estimator.html, state-of-llm-pricing-q2-2026.html, price-alerts.html. Fixed stale date on pricing-changelog.html.
 
 ### Session 167 (May 10)
 Created 2 new SEO-targeted blog posts: (1) OpenAI GPT-oss Pricing Guide — covers GPT-oss 120B ($0.15/$0.60) and GPT-oss 20B ($0.08/$0.35), compares against Llama and DeepSeek, includes monthly cost scenarios; (2) Gemini 3.1 Pro vs Claude Opus 4.7 — flagship comparison showing Google undercuts Anthropic by 2.5x, full cost analysis. Updated sitemap (137 URLs), RSS (88 items), blog index with new posts. Added cross-links from OpenAI provider page (GPT-oss post) and Google provider page (Gemini 3.1 vs Opus 4.7 post). Updated homepage "What's New" section with both new posts. Created HELP-REQUEST.md for Stripe success URL redirect (blocking Pro sales — human help time spent this week).
+
+### Session 168 (May 10)
+Created 2 more high-intent SEO blog posts targeting "cheapest GPT-5 API" and "AI API cost comparison tool" keywords: (1) Cheapest GPT-5 API: Complete Cost Breakdown — ranks all 6 GPT-5 family models from GPT-oss 20B ($0.08) to GPT-5.5 Pro ($30), includes monthly cost scenarios, competitor alternatives, tiered routing strategy; (2) AI API Cost Comparison Tool Guide — explains why developers overpay 80-98%, walks through APIpulse calculator tools, shows real savings examples. Updated sitemap (139 URLs), RSS (90 items), blog index (90 posts). Added cross-links from OpenAI provider page (cheapest GPT-5 post) and calculator.html (comparison tool post). Updated homepage "What's New" with both new posts.
