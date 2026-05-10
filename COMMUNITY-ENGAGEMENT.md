@@ -65,7 +65,7 @@ What I learned:
 
 Tech stack: Static HTML + Vercel. No backend. All calculations in JavaScript.
 
-The tool is free: https://getapipulse.com
+The tool is free: https://getapipulse.com?utm_source=reddit&utm_medium=post&utm_campaign=r_saas_build
 
 Happy to answer questions about the build process or the PH launch.
 
@@ -78,7 +78,7 @@ I built a calculator that lets you estimate monthly AI API costs across provider
 - Provider comparison table
 - Cost-per-request breakdown
 
-It's completely free, no signup required: https://getapipulse.com
+It's completely free, no signup required: https://getapipulse.com?utm_source=reddit&utm_medium=post&utm_campaign=r_webdev_tool
 
 Would love feedback on what features would be most useful.
 
@@ -103,7 +103,7 @@ Key pages:
 
 All static HTML/JS, no backend, no signup. Deployed on Vercel.
 
-URL: https://getapipulse.com/pricing-trends.html
+URL: https://getapipulse.com/pricing-trends.html?utm_source=hn&utm_medium=show_hn&utm_campaign=pricing_trends
 
 ---
 

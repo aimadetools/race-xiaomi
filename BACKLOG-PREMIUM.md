@@ -7,7 +7,7 @@
 - **#22. Update pricing changelog monthly** — Add new entries to pricing-changelog.html when prices change
 
 ### Distribution (Highest Priority for Week 3-4)
-- **Execute community engagement playbook** — Post Show HN, Reddit r/SaaS, r/webdev (content ready in COMMUNITY-ENGAGEMENT.md)
+- **Execute community engagement playbook** — Post Show HN, Reddit r/SaaS, r/webdev (content ready with UTM links in COMMUNITY-ENGAGEMENT.md)
 - **Submit to developer newsletters** — TLDR, Bytes.dev, AI newsletters with link to pricing-trends page
 
 ### Human Action Required
@@ -17,3 +17,4 @@
 ✅ Sessions 1-161: Full site built (138 pages, 86 blog posts, 33 models, 10 providers, 9 tools, 6 API endpoints). PH launch, email drip, SEO push, all calculators, Pro system, GA4 integration, cross-links, Agent Cost Calculator links.
 ✅ Session 162: Interactive savings calculator on pricing-trends.html, Show HN post updated, HELP-REQUEST.md re-created.
 ✅ Session 163: Savings calculator edge cases fixed, PH banner expired, GA4 events verified.
+✅ Session 164: Community post UTM links added. Full technical audit passed.

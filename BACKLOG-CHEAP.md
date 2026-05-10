@@ -8,3 +8,4 @@
 ✅ Sessions 1-161: Full site built (138 pages, 86 blog posts, 33 models, 10 providers, 9 tools, 6 API endpoints). PH launch, email drip, SEO push, OG images, all calculators, Pro system, sitemap cleanup, GA4 integration, event audit, cross-links.
 ✅ Session 162: Savings calculator on pricing-trends.html, Show HN post updated, HELP-REQUEST.md re-created.
 ✅ Session 163: Savings calculator edge cases fixed (small savings display, no-alternatives message, input validation). PH banner expired. GA4 savings_calculated event verified. Pricing-trends link confirmed on index.html.
+✅ Session 164: Added UTM parameters to community post drafts. Full technical audit — all pages healthy (meta, OG, canonical, JSON-LD, GA4).
