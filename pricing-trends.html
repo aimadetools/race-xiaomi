@@ -30,6 +30,7 @@
     <script src="analytics.js" defer></script>
     <script src="dynamic-date.js" defer></script>
     <script src="shared.js" defer></script>
+    <script src="pricing-data.js" defer></script>
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -124,6 +125,40 @@
         .btn-primary { display: inline-block; }
 
         .section-intro { font-size: 16px; margin-bottom: 24px; }
+
+        /* Savings Calculator Widget */
+        .savings-widget {
+            background: linear-gradient(135deg, rgba(99,102,241,0.06), rgba(34,197,94,0.04));
+            border: 1px solid var(--accent); border-radius: 16px; padding: 32px; margin: 40px 0;
+        }
+        .savings-widget h2 { font-size: 24px; margin-bottom: 8px; }
+        .savings-widget > p { color: var(--text-secondary); margin-bottom: 24px; }
+        .savings-form { display: grid; grid-template-columns: 1fr 1fr auto; gap: 16px; align-items: end; margin-bottom: 24px; }
+        .savings-form label { display: block; font-size: 13px; font-weight: 600; color: var(--text-secondary); margin-bottom: 6px; text-transform: uppercase; letter-spacing: 0.5px; }
+        .savings-form select, .savings-form input {
+            width: 100%; padding: 12px 16px; background: var(--bg-card);
+            border: 1px solid var(--border); border-radius: 8px;
+            color: var(--text-primary); font-size: 15px;
+        }
+        .savings-form select:focus, .savings-form input:focus { outline: 2px solid var(--accent); outline-offset: 2px; border-color: var(--accent); }
+        .savings-results { display: none; }
+        .savings-results.active { display: block; }
+        .savings-hero { text-align: center; padding: 24px; background: rgba(34,197,94,0.08); border: 1px solid rgba(34,197,94,0.2); border-radius: 12px; margin-bottom: 20px; }
+        .savings-hero .amount { font-size: 48px; font-weight: 800; color: var(--green); }
+        .savings-hero .label { font-size: 14px; color: var(--text-secondary); margin-top: 4px; }
+        .savings-alt { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+        .savings-alt-card {
+            background: var(--bg-card); border: 1px solid var(--border); border-radius: 10px; padding: 16px; text-align: center;
+        }
+        .savings-alt-card .alt-model { font-size: 15px; font-weight: 700; margin-bottom: 4px; }
+        .savings-alt-card .alt-price { font-size: 13px; color: var(--text-secondary); margin-bottom: 8px; }
+        .savings-alt-card .alt-save { font-size: 20px; font-weight: 800; color: var(--green); }
+        .savings-alt-card .alt-pct { font-size: 12px; color: var(--green); }
+        @media (max-width: 768px) {
+            .savings-form { grid-template-columns: 1fr; }
+            .savings-alt { grid-template-columns: 1fr; }
+            .savings-hero .amount { font-size: 36px; }
+        }
 
         @media (max-width: 768px) {
             .content { padding: 100px 20px 60px; }
@@ -269,6 +304,32 @@
                 </div>
                 <div class="move-bar"><div class="move-bar-fill" style="width: 100%"></div></div>
                 <div class="move-note">Biggest increase in the market. Grok 3 Mini ($3.00) is the sensible alternative.</div>
+            </div>
+        </div>
+
+        <!-- SAVINGS CALCULATOR -->
+        <div class="savings-widget">
+            <h2>How Much Could You Save?</h2>
+            <p>Select your current model and monthly spend to see exact savings from switching.</p>
+            <div class="savings-form">
+                <div>
+                    <label for="current-model">Your current model</label>
+                    <select id="current-model" onchange="calcSavings()">
+                        <option value="">Select a model...</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="monthly-spend">Monthly spend (USD)</label>
+                    <input type="number" id="monthly-spend" value="100" min="1" step="10" oninput="calcSavings()">
+                </div>
+                <button class="btn-primary" onclick="calcSavings()" style="padding:12px 24px;">Calculate</button>
+            </div>
+            <div id="savings-results" class="savings-results">
+                <div class="savings-hero">
+                    <div class="amount" id="max-savings">$0</div>
+                    <div class="label">Maximum annual savings by switching</div>
+                </div>
+                <div class="savings-alt" id="savings-alternatives"></div>
             </div>
         </div>
 
@@ -571,5 +632,86 @@
 <a href="pricing-index.html">Pricing Index</a> &middot; <a href="model-matrix.html">Model Matrix</a> &middot; <a href="cost-scenarios.html">Scenarios</a> &middot; <a href="price-alerts.html">Price Alerts</a> &middot; <a href="pricing-changelog.html">Changelog</a> &middot; <a href="openai.html">OpenAI</a> &middot; <a href="anthropic.html">Anthropic</a> &middot; <a href="google.html">Google</a> &middot; <a href="mistral.html">Mistral</a> &middot; <a href="cohere.html">Cohere</a> &middot; <a href="deepseek.html">DeepSeek</a> &middot; <a href="xai.html">xAI</a> &middot; <a href="moonshot.html">Moonshot</a> &middot; <a href="together.html">Together.ai</a> &middot; <a href="ai21.html">AI21</a> &middot; <a href="pricing.html">Pricing</a> &middot; <a href="embed.html">Embed Widget</a> &middot; <a href="cheat-sheet.html">Cheat Sheet</a> &middot; <a href="model-switch.html">Model Switch</a> &middot; <a href="api-docs.html">API</a> &middot; <a href="https://x.com/getapipulse" target="_blank" rel="noopener">Twitter</a> &middot; <a href="unsubscribe.html">Unsubscribe</a></p>
     </footer>
 
+    <script>
+    // Populate model dropdown from centralized pricing data
+    (function() {
+        const sel = document.getElementById('current-model');
+        if (typeof API_MODELS === 'undefined') return;
+        const tiers = { Premium: [], Mid: [], Budget: [] };
+        API_MODELS.forEach(m => { if (tiers[m.tier]) tiers[m.tier].push(m); });
+        ['Premium', 'Mid', 'Budget'].forEach(tier => {
+            const optgroup = document.createElement('optgroup');
+            optgroup.label = tier + ' Tier';
+            tiers[tier].sort((a, b) => a.input - b.input).forEach(m => {
+                const opt = document.createElement('option');
+                opt.value = m.id;
+                opt.textContent = m.name + ' (' + m.provider + ') — $' + m.input + '/1M';
+                optgroup.appendChild(opt);
+            });
+            sel.appendChild(optgroup);
+        });
+    })();
+
+    function calcSavings() {
+        const modelId = document.getElementById('current-model').value;
+        const spend = parseFloat(document.getElementById('monthly-spend').value) || 0;
+        if (!modelId || spend <= 0) return;
+
+        const current = typeof getModelById === 'function' ? getModelById(modelId) : null;
+        if (!current) return;
+
+        // Calculate current token volumes from spend
+        // Assume 80/20 input/output ratio (typical for most workloads)
+        const inputRatio = 0.8;
+        const outputRatio = 0.2;
+        // spend = (inputTokens * inputPrice + outputTokens * outputPrice) / 1M
+        // With inputTokens = k * inputRatio, outputTokens = k * outputRatio
+        // spend = k * (inputRatio * inputPrice + outputRatio * outputPrice) / 1M
+        // k = spend * 1M / (inputRatio * inputPrice + outputRatio * outputPrice)
+        const effectivePrice = inputRatio * current.input + outputRatio * current.output;
+        if (effectivePrice === 0) return;
+        const totalTokens = (spend * 1000000) / effectivePrice;
+
+        // Find cheaper alternatives
+        const alternatives = API_MODELS
+            .filter(m => m.id !== modelId && m.tier !== 'Premium')
+            .map(m => {
+                const altEffective = inputRatio * m.input + outputRatio * m.output;
+                const altCost = (totalTokens * altEffective) / 1000000;
+                const monthlySave = spend - altCost;
+                return { model: m, monthlySave, annualSave: monthlySave * 12, newCost: altCost };
+            })
+            .filter(a => a.monthlySave > 0.01)
+            .sort((a, b) => b.monthlySave - a.monthlySave)
+            .slice(0, 3);
+
+        const resultsDiv = document.getElementById('savings-results');
+        if (alternatives.length === 0) {
+            resultsDiv.classList.remove('active');
+            return;
+        }
+        resultsDiv.classList.add('active');
+
+        const maxAnnual = alternatives[0].annualSave;
+        document.getElementById('max-savings').textContent = '$' + maxAnnual.toFixed(0);
+
+        const altDiv = document.getElementById('savings-alternatives');
+        altDiv.innerHTML = alternatives.map(a => {
+            const pct = ((a.monthlySave / spend) * 100).toFixed(0);
+            return '<div class="savings-alt-card">' +
+                '<div class="alt-model">' + a.model.name + '</div>' +
+                '<div class="alt-price">' + a.model.provider + ' — $' + a.model.input + '/1M input</div>' +
+                '<div class="alt-save">$' + a.monthlySave.toFixed(0) + '/mo</div>' +
+                '<div class="alt-pct">Save ' + pct + '%</div>' +
+                '</div>';
+        }).join('');
+
+        if (window.trackEvent) window.trackEvent('savings_calculated', {
+            current_model: modelId,
+            monthly_spend: spend,
+            max_annual_savings: maxAnnual.toFixed(0)
+        });
+    }
+    </script>
 </body>
 </html>

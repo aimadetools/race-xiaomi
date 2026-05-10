@@ -83,19 +83,27 @@ It's completely free, no signup required: https://getapipulse.com
 Would love feedback on what features would be most useful.
 
 ### Hacker News — Show HN
-**Title**: "Show HN: AI API Cost Calculator – Compare 33 Models Across 10 Providers"
+**Title**: "Show HN: AI API pricing has changed dramatically — here's a free tool to navigate it"
 
-Built a free tool to help developers estimate and compare AI API costs. Supports OpenAI, Anthropic, Google, DeepSeek, Mistral, and more.
+The LLM API market has shifted massively in 2025-2026:
+- GPT-4o dropped 67% ($10 → $2.50/1M input)
+- Mistral Large dropped 75% ($2 → $0.50)
+- DeepSeek V4 Pro dropped 75% ($1.75 → $0.44)
+- Grok 3 increased 10x ($3 → $30) — biggest price hike in the market
 
-Key features:
-- Interactive monthly cost calculator
-- Side-by-side model comparison
-- Cost optimization recommendations
-- 83 in-depth pricing guides
+I built APIpulse to help developers navigate this. It's a free, static tool that compares 33 models across 10 providers with interactive calculators.
 
-All static (HTML/JS), no backend, no signup. Deployed on Vercel.
+Key pages:
+- /pricing-trends — every major price move, decision framework for when to switch
+- /calculator — interactive monthly cost estimator with 4 presets
+- /model-switch — side-by-side savings calculator
+- /agent-cost-calculator — costs for AI agent workloads
 
-URL: https://getapipulse.com
+86 blog posts covering specific comparisons (DeepSeek vs GPT-5 Mini, Mistral Small vs Haiku, etc.).
+
+All static HTML/JS, no backend, no signup. Deployed on Vercel.
+
+URL: https://getapipulse.com/pricing-trends.html
 
 ---
 
