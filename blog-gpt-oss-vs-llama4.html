@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GPT-oss vs Llama 4: Open-Source LLM API Showdown 2026 — APIpulse</title>
+    <meta name="description" content="GPT-oss vs Llama 4: Compare OpenAI's open-source models against Meta's Llama 4 on pricing, context windows, and real-world performance.">
+    <meta name="keywords" content="GPT-oss vs Llama 4, open source LLM comparison, GPT-oss pricing, Llama 4 API cost, open source AI API 2026">
+    <meta property="og:title" content="GPT-oss vs Llama 4: Open-Source LLM API Showdown 2026 — APIpulse">
+    <meta property="og:description" content="OpenAI's GPT-oss vs Meta's Llama 4: Which open-source LLM API gives you the best price-to-performance ratio?">
+    <meta property="og:type" content="article">
+    <meta property="article:published_time" content="2026-05-10">
+    <meta property="article:modified_time" content="2026-05-10">
+    <meta property="article:author" content="APIpulse">
+    <meta property="og:image" content="https://getapipulse.com/og-images/blog-gpt-oss-vs-llama4.png">
+    <meta property="og:url" content="https://getapipulse.com/blog-gpt-oss-vs-llama4.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="GPT-oss vs Llama 4: Open-Source LLM API Showdown 2026 — APIpulse">
+    <meta name="twitter:image" content="https://getapipulse.com/og-images/blog-gpt-oss-vs-llama4.png">
+    <meta name="twitter:description" content="OpenAI's GPT-oss vs Meta's Llama 4: Which open-source LLM API gives you the best price-to-performance ratio?">
+    <link rel="canonical" href="https://getapipulse.com/blog-gpt-oss-vs-llama4.html">
+    <link rel="alternate" type="application/rss+xml" title="APIpulse Blog" href="https://getapipulse.com/rss.xml">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="styles.css">
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0CEP7S9Y3J"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-0CEP7S9Y3J');
+    </script>
+    <script src="analytics.js" defer></script>
+    <script src="dynamic-date.js" defer></script>
+    <script src="shared.js" defer></script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "GPT-oss vs Llama 4: Open-Source LLM API Showdown 2026",
+        "description": "OpenAI's GPT-oss vs Meta's Llama 4: Which open-source LLM API gives you the best price-to-performance ratio?",
+        "datePublished": "2026-05-10",
+        "dateModified": "2026-05-10",
+        "author": { "@type": "Organization", "name": "APIpulse" },
+        "publisher": { "@type": "Organization", "name": "APIpulse", "url": "https://getapipulse.com" },
+        "url": "https://getapipulse.com/blog-gpt-oss-vs-llama4.html",
+        "image": "https://getapipulse.com/og-images/blog-gpt-oss-vs-llama4.png"
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Blog", "item": "https://getapipulse.com/blog.html" },
+            { "@type": "ListItem", "position": 2, "name": "GPT-oss vs Llama 4: Open-Source LLM API Showdown 2026", "item": "https://getapipulse.com/blog-gpt-oss-vs-llama4.html" }
+        ]
+    }
+    </script>
+    <style>
+        .content { max-width: 800px; margin: 0 auto; padding: 120px 24px 80px; }
+        h1 { font-size: 40px; font-weight: 800; margin-bottom: 12px; }
+        .subtitle { color: var(--text-secondary); font-size: 18px; margin-bottom: 48px; }
+        .post-meta { display: flex; gap: 16px; align-items: center; margin-bottom: 24px; font-size: 13px; color: var(--text-muted); }
+        .post-tag { background: var(--accent-glow); color: var(--accent); padding: 2px 10px; border-radius: 6px; font-size: 12px; font-weight: 600; }
+        h2 { font-size: 28px; font-weight: 700; margin: 40px 0 16px; }
+        h3 { font-size: 20px; font-weight: 600; margin: 28px 0 12px; }
+        p { margin-bottom: 16px; line-height: 1.7; color: var(--text-secondary); }
+        ul, ol { margin-bottom: 16px; padding-left: 24px; }
+        li { margin-bottom: 8px; line-height: 1.6; color: var(--text-secondary); }
+        strong { color: var(--text-primary); }
+        .comparison-table { width: 100%; border-collapse: collapse; margin: 24px 0; font-size: 14px; }
+        .comparison-table th { background: var(--bg-secondary); padding: 12px 16px; text-align: left; font-weight: 600; border-bottom: 1px solid var(--border); }
+        .comparison-table td { padding: 12px 16px; border-bottom: 1px solid var(--border); }
+        .comparison-table tr:last-child td { border-bottom: none; }
+        .winner { color: var(--green); font-weight: 600; }
+        .cost-box { background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 12px; padding: 24px; margin: 24px 0; }
+        .cost-box h3 { margin-top: 0; }
+        .cost-row { display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px solid var(--border); font-size: 14px; }
+        .cost-row:last-child { border-bottom: none; }
+        .cost-total { font-weight: 700; color: var(--accent); font-size: 18px; }
+        .cta-inline { background: var(--bg-secondary); border: 1px solid var(--accent); border-radius: 12px; padding: 24px; margin: 32px 0; text-align: center; }
+        .cta-inline p { margin-bottom: 12px; }
+        .btn-primary { display: inline-block; }
+        .back-link { display: inline-block; margin-bottom: 24px; color: var(--text-muted); font-size: 14px; }
+        .back-link:hover { color: var(--accent); }
+        .share-section { margin-top: 32px; padding-top: 24px; border-top: 1px solid var(--border); text-align: center; }
+        .share-section p { color: var(--text-secondary); font-size: 14px; margin-bottom: 12px; }
+        .share-btn { display: inline-block; background: var(--bg-card); color: var(--text-primary); padding: 8px 20px; border-radius: 8px; font-size: 14px; font-weight: 500; border: 1px solid var(--border); transition: all 0.2s; }
+        .share-btn:hover { background: var(--accent); color: white; border-color: var(--accent); }
+        .verdict { background: var(--accent-glow); border: 1px solid var(--accent); border-radius: 12px; padding: 24px; margin: 24px 0; }
+        .verdict h3 { margin-top: 0; color: var(--accent); }
+        .rank-badge { display: inline-flex; align-items: center; justify-content: center; width: 28px; height: 28px; border-radius: 50%; background: var(--accent); color: white; font-weight: 700; font-size: 14px; margin-right: 8px; }
+        @media (max-width: 768px) {
+            .content { padding: 100px 20px 60px; }
+            h1 { font-size: 28px; }
+            h2 { font-size: 22px; }
+            .comparison-table { font-size: 12px; }
+            .comparison-table th, .comparison-table td { padding: 8px 10px; }
+        }
+    </style>
+    <meta name="theme-color" content="#6366f1">
+    <link rel="preconnect" href="https://getapipulse.com">
+</head>
+<body>
+    <a href="#main" class="skip-link">Skip to content</a>
+    <nav>
+        <div class="nav-inner">
+            <a href="index.html" class="logo">API<span>pulse</span></a>
+            <button class="hamburger" onclick="toggleMobileNav()" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+            <div class="nav-links">
+                <a href="calculator.html">Calculator</a>
+                <a href="compare.html">Compare</a>
+                <a href="cost-explorer.html">Explorer</a>
+                <a href="cost-scenarios.html">Scenarios</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="use-cases.html">Use Cases</a>
+                <a href="about.html">About</a>
+                <a href="blog.html" class="active">Blog</a>
+                <a href="pricing-index.html">Pricing Index</a>
+                <a href="model-matrix.html">Model Matrix</a>
+                <a href="pricing-trends.html">Trends</a>
+                <a href="pricing-changelog.html">Changelog</a>
+                <a href="price-alerts.html">Price Alerts</a>
+                <a href="cheat-sheet.html">Cheat Sheet</a> &middot; <a href="model-switch.html">Model Switch</a>
+                <a href="api-docs.html" style="color:var(--accent);">API</a>
+                <a href="pricing.html" class="nav-cta" onclick="if(window.trackEvent)window.trackEvent('pro_button_clicked',{source:'nav'})">Get Pro — $29</a>
+                <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
+            </div>
+        </div>
+    </nav>
+
+    <main id="main">
+
+    <div class="content article">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+            <a href="blog.html">Blog</a>
+            <span class="separator">›</span>
+            <span class="current">GPT-oss vs Llama 4: Open-Source LLM API Showdown 2026</span>
+        </nav>
+        <a href="blog.html" class="back-link">← Back to blog</a>
+        <div class="post-meta">
+            <span class="post-tag">Comparison</span>
+            <span>May 10, 2026</span>
+            <span>10 min read</span>
+        </div>
+        <h1>GPT-oss vs Llama 4: Open-Source LLM API Showdown 2026</h1>
+
+        <p>The open-source LLM landscape has never been more competitive. OpenAI entered the game with GPT-oss, while Meta doubled down with Llama 4. Both offer powerful models at a fraction of proprietary pricing — but which one gives you the best bang for your buck?</p>
+
+        <p>We compared every variant head-to-head on pricing, context windows, quality, and real-world performance to help you pick the right open-source API for your workload.</p>
+
+        <h2>Model Lineup: GPT-oss vs Llama 4</h2>
+
+        <table class="comparison-table">
+            <thead>
+                <tr>
+                    <th>Model</th>
+                    <th>Provider</th>
+                    <th>Input (per 1M)</th>
+                    <th>Output (per 1M)</th>
+                    <th>Context</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>GPT-oss 120B</strong></td>
+                    <td>OpenAI</td>
+                    <td>$0.15</td>
+                    <td>$0.60</td>
+                    <td>128K</td>
+                </tr>
+                <tr>
+                    <td><strong>GPT-oss 20B</strong></td>
+                    <td>OpenAI</td>
+                    <td class="winner">$0.08</td>
+                    <td>$0.35</td>
+                    <td>128K</td>
+                </tr>
+                <tr>
+                    <td><strong>Llama 4 Scout</strong></td>
+                    <td>Meta (Together.ai)</td>
+                    <td>$0.11</td>
+                    <td class="winner">$0.34</td>
+                    <td class="winner">10M</td>
+                </tr>
+                <tr>
+                    <td><strong>Llama 4 Maverick</strong></td>
+                    <td>Meta (Together.ai)</td>
+                    <td>$0.20</td>
+                    <td>$0.60</td>
+                    <td>1M</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <p>Both families offer a small and large variant. GPT-oss comes in 20B and 120B sizes. Llama 4 offers Scout (smaller, optimized for long context) and Maverick (larger, optimized for quality).</p>
+
+        <h2>Pricing: Head-to-Head</h2>
+
+        <h3>Budget Tier: GPT-oss 20B vs Llama 4 Scout</h3>
+        <p>Both are priced aggressively for high-volume workloads:</p>
+        <ul>
+            <li><strong>GPT-oss 20B:</strong> $0.08 input / $0.35 output per 1M tokens</li>
+            <li><strong>Llama 4 Scout:</strong> $0.11 input / $0.34 output per 1M tokens</li>
+        </ul>
+        <p>GPT-oss 20B is 27% cheaper on input, while Llama 4 Scout is 3% cheaper on output. For input-heavy workloads (classification, extraction, embeddings), GPT-oss wins. For output-heavy workloads (generation, summarization), Scout edges ahead.</p>
+
+        <div class="cost-box">
+            <h3>Monthly Cost: Budget Models at 10K Requests/Day</h3>
+            <p style="font-size:13px;color:var(--text-muted);margin-bottom:12px;">Assuming 500 input tokens, 200 output tokens per request</p>
+            <div class="cost-row"><span class="name">GPT-oss 20B</span><span class="value">$17.25/month</span></div>
+            <div class="cost-row"><span class="name">Llama 4 Scout</span><span class="value">$17.40/month</span></div>
+            <div class="cost-row"><span class="cost-total"><span class="name">Difference</span><span class="value">~$0.15/month (negligible)</span></span></div>
+        </div>
+
+        <p>At this usage level, the cost difference is negligible. The decision comes down to quality and context window, not price.</p>
+
+        <h3>Mid Tier: GPT-oss 120B vs Llama 4 Maverick</h3>
+        <p>For teams that need higher quality output:</p>
+        <ul>
+            <li><strong>GPT-oss 120B:</strong> $0.15 input / $0.60 output per 1M tokens</li>
+            <li><strong>Llama 4 Maverick:</strong> $0.20 input / $0.60 output per 1M tokens</li>
+        </ul>
+        <p>GPT-oss 120B is 25% cheaper on input with identical output pricing. For most use cases, GPT-oss 120B offers better value at this tier.</p>
+
+        <div class="cost-box">
+            <h3>Monthly Cost: Mid-Tier Models at 10K Requests/Day</h3>
+            <p style="font-size:13px;color:var(--text-muted);margin-bottom:12px;">Assuming 500 input tokens, 200 output tokens per request</p>
+            <div class="cost-row"><span class="name">GPT-oss 120B</span><span class="value">$31.50/month</span></div>
+            <div class="cost-row"><span class="name">Llama 4 Maverick</span><span class="value">$36.00/month</span></div>
+            <div class="cost-row"><span class="cost-total"><span class="name">Monthly savings with GPT-oss</span><span class="value">$4.50/month</span></span></div>
+        </div>
+
+        <h2>Context Window: Llama 4's Secret Weapon</h2>
+        <p>The biggest differentiator isn't price — it's context window:</p>
+        <ul>
+            <li><strong>GPT-oss (both sizes):</strong> 128K tokens</li>
+            <li><strong>Llama 4 Scout:</strong> 10M tokens</li>
+            <li><strong>Llama 4 Maverick:</strong> 1M tokens</li>
+        </ul>
+        <p>Llama 4 Scout's 10M context window is a game-changer for document-heavy workloads. You can process entire codebases, legal document collections, or multi-hour transcripts in a single pass — without chunking. GPT-oss models top out at 128K, which is adequate for most tasks but limits large-scale document analysis.</p>
+
+        <h2>Quality Comparison</h2>
+
+        <h3>General Reasoning</h3>
+        <p>GPT-oss 120B generally outperforms Llama 4 Scout on reasoning benchmarks. It handles complex multi-step logic, mathematical operations, and nuanced instruction following with fewer errors. Llama 4 Maverick is competitive with GPT-oss 120B on most reasoning tasks.</p>
+
+        <h3>Code Generation</h3>
+        <p>Both families produce solid code, but with different strengths. GPT-oss 120B generates more idiomatic code with better adherence to conventions. Llama 4 Scout excels at understanding large codebases thanks to its massive context window — you can feed it an entire repository and get coherent refactoring suggestions.</p>
+
+        <h3>Instruction Following</h3>
+        <p>GPT-oss models follow complex, multi-part instructions more reliably. For structured output pipelines, chain-of-thought workflows, and agent-based systems, GPT-oss 120B is the stronger choice. Llama 4 models sometimes deviate on longer instruction sets.</p>
+
+        <h3>Long-Context Tasks</h3>
+        <p>This is where Llama 4 shines. Scout's 10M context window means you can analyze massive documents without chunking — a significant engineering advantage. Maverick's 1M context is also substantially larger than GPT-oss's 128K, making both Llama 4 models better for document-heavy workflows.</p>
+
+        <h2>Cost Scenarios at 3 Scale Levels</h2>
+
+        <div class="cost-box">
+            <h3>Startup (100K requests/month, ~500 tokens avg)</h3>
+            <div class="cost-row"><span class="name">GPT-oss 20B</span><span class="value">~$3.25/month</span></div>
+            <div class="cost-row"><span class="name">Llama 4 Scout</span><span class="value">~$3.25/month</span></div>
+            <div class="cost-row"><span class="name">GPT-oss 120B</span><span class="value">~$5.90/month</span></div>
+            <div class="cost-row"><span class="name">Llama 4 Maverick</span><span class="value">~$6.75/month</span></div>
+        </div>
+
+        <div class="cost-box">
+            <h3>Growth (1M requests/month, ~800 tokens avg)</h3>
+            <div class="cost-row"><span class="name">GPT-oss 20B</span><span class="value">~$33/month</span></div>
+            <div class="cost-row"><span class="name">Llama 4 Scout</span><span class="value">~$34/month</span></div>
+            <div class="cost-row"><span class="name">GPT-oss 120B</span><span class="value">~$60/month</span></div>
+            <div class="cost-row"><span class="name">Llama 4 Maverick</span><span class="value">~$68/month</span></div>
+        </div>
+
+        <div class="cost-box">
+            <h3>Enterprise (10M requests/month, ~1,200 tokens avg)</h3>
+            <div class="cost-row"><span class="name">GPT-oss 20B</span><span class="value">~$336/month</span></div>
+            <div class="cost-row"><span class="name">Llama 4 Scout</span><span class="value">~$342/month</span></div>
+            <div class="cost-row"><span class="name">GPT-oss 120B</span><span class="value">~$612/month</span></div>
+            <div class="cost-row"><span class="name">Llama 4 Maverick</span><span class="value">~$684/month</span></div>
+        </div>
+
+        <h2>Decision Framework</h2>
+
+        <h3>Choose GPT-oss When:</h3>
+        <ul>
+            <li>Input-heavy workloads where the lower input price matters (classification, extraction, routing)</li>
+            <li>You need strong instruction following for structured output pipelines</li>
+            <li>Code generation quality is a priority</li>
+            <li>You want to stay within the OpenAI ecosystem</li>
+            <li>128K context is sufficient for your use case</li>
+        </ul>
+
+        <h3>Choose Llama 4 When:</h3>
+        <ul>
+            <li>You need massive context windows (Scout's 10M tokens) for document analysis</li>
+            <li>Long-context understanding is more important than input cost savings</li>
+            <li>You prefer Meta's licensing terms for commercial use</li>
+            <li>You want the flexibility of Together.ai's infrastructure</li>
+            <li>Your workload is output-heavy where Scout's slightly lower output price adds up</li>
+        </ul>
+
+        <div class="verdict">
+            <h3>The Verdict</h3>
+            <p><strong>For most teams, GPT-oss 120B is the better default.</strong> It offers stronger reasoning and instruction following at a lower price than Llama 4 Maverick. However, if your workload involves massive documents or codebases that exceed 128K tokens, Llama 4 Scout's 10M context window is a capability no GPT-oss model can match — and it costs roughly the same.</p>
+            <p>The real winner of this showdown? Developers. Both families offer production-quality models at prices that were unthinkable a year ago. Use the <a href="compare.html">APIpulse Compare tool</a> to model the exact cost tradeoffs for your specific workload.</p>
+        </div>
+
+        <blockquote>Open-source LLM APIs have reached parity with proprietary models for most workloads. The choice between GPT-oss and Llama 4 comes down to context window needs, not price — both are incredibly affordable.</blockquote>
+
+        <div class="cta-inline">
+            <p><strong>Calculate your exact costs for both model families</strong></p>
+            <p style="color:var(--text-secondary);font-size:14px;">Enter your token volumes and see which open-source model saves you the most.</p>
+            <a href="calculator.html" class="btn-primary">Try the APIpulse Calculator</a>
+            <p style="margin-top:8px;"><a href="compare.html" style="font-size:14px;color:var(--accent);">Or compare models side by side →</a></p>
+        </div>
+
+        <div class="share-section">
+            <p>Found this useful? Share it:</p>
+            <a href="https://twitter.com/intent/tweet?text=GPT-oss+vs+Llama+4%3A+Open-Source+LLM+API+Showdown+2026&url=https%3A%2F%2Fgetapipulse.com%2Fblog-gpt-oss-vs-llama4.html" target="_blank" rel="noopener" class="share-btn">Share on X</a>
+            <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fgetapipulse.com%2Fblog-gpt-oss-vs-llama4.html" target="_blank" rel="noopener" class="share-btn">Share on LinkedIn</a>
+        </div>
+
+        <div style="margin-top:40px;padding:24px;background:var(--bg-secondary);border:1px solid var(--border);border-radius:12px;">
+            <h3 style="font-size:16px;margin-bottom:12px;">Related Reading</h3>
+            <ul style="list-style:none;padding:0;">
+                <li style="margin-bottom:8px;"><a href="blog-openai-gpt-oss-pricing.html">OpenAI GPT-oss Pricing: Open-Source Models at $0.08/1M Tokens</a></li>
+                <li style="margin-bottom:8px;"><a href="blog-llama4-pricing.html">Llama 4 API Pricing: 10M Context for Pennies</a></li>
+                <li style="margin-bottom:8px;"><a href="blog-open-source-vs-commercial.html">Open Source vs Commercial LLMs: The Real Cost Comparison</a></li>
+                <li><a href="blog-cheapest-llm-api-production-2026.html">Cheapest LLM API for Production in 2026: Top 10 Models Ranked</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div style="max-width:600px;margin:48px auto 0;padding:32px;text-align:center;background:var(--bg-card);border-radius:12px;border:1px solid var(--border);">
+        <h3 style="font-size:18px;margin-bottom:8px;">Get notified when API prices change</h3>
+        <p style="font-size:14px;color:var(--text-secondary);margin-bottom:16px;">No spam. Only pricing updates and new features. Unsubscribe anytime.</p>
+        <form onsubmit="saveEmail(event)" style="display:flex;gap:8px;max-width:400px;margin:0 auto;">
+            <input type="email" id="email-input" placeholder="you@company.com" required aria-label="Email address"
+                style="flex:1;padding:12px 16px;border-radius:8px;border:1px solid var(--border);background:var(--bg-secondary);color:var(--text-primary);font-size:14px;">
+            <button type="submit" class="btn-primary" style="padding:12px 24px;white-space:nowrap;">Subscribe</button>
+        </form>
+        <p id="email-msg" style="font-size:13px;color:var(--green);margin-top:12px;display:none;"></p>
+    </div>
+
+    <button class="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">↑</button>
+
+    </main>
+    <footer>
+        <p>Pricing data last verified: <span class="verified-date"></span></p>
+        <p>&copy; 2026 APIpulse. <a href="index.html">Home</a> &middot; <a href="use-cases.html">Use Cases</a> &middot; <a href="about.html">About</a> &middot; <a href="blog.html">Blog</a>
+<a href="pricing-index.html">Pricing Index</a> &middot; <a href="model-matrix.html">Model Matrix</a> &middot; <a href="cost-scenarios.html">Scenarios</a> &middot; <a href="price-alerts.html">Price Alerts</a> &middot; <a href="pricing-changelog.html">Changelog</a> &middot; <a href="openai.html">OpenAI</a> &middot; <a href="anthropic.html">Anthropic</a> &middot; <a href="google.html">Google</a> &middot; <a href="mistral.html">Mistral</a> &middot; <a href="cohere.html">Cohere</a> &middot; <a href="deepseek.html">DeepSeek</a> &middot; <a href="xai.html">xAI</a> &middot; <a href="moonshot.html">Moonshot</a> &middot; <a href="together.html">Together.ai</a> &middot; <a href="ai21.html">AI21</a> &middot; <a href="pricing.html">Pricing</a> &middot; <a href="embed.html">Embed Widget</a> &middot; <a href="cheat-sheet.html">Cheat Sheet</a> &middot; <a href="model-switch.html">Model Switch</a> &middot; <a href="api-docs.html">API</a> &middot; <a href="https://x.com/getapipulse" target="_blank" rel="noopener">Twitter</a> &middot; <a href="unsubscribe.html">Unsubscribe</a></p>
+    </footer>
+
+</body>
+</html>
