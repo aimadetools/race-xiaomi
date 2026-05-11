@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI API Rate Limits Compared: OpenAI vs Anthropic vs Google (2026) — APIpulse</title>
-    <meta name="description" content="Compare rate limits across OpenAI, Anthropic, Google, Mistral, and Cohere. Learn how to handle rate limiting, build retry logic, and optimize your API usage.">
-    <meta name="keywords" content="AI API rate limits, OpenAI rate limit, Anthropic rate limit, Google Gemini rate limit, API throttling, rate limit handling">
-    <meta property="og:title" content="AI API Rate Limits Compared: OpenAI vs Anthropic vs Google (2026) — APIpulse">
-    <meta property="og:description" content="Compare rate limits across major AI API providers. Learn how to handle rate limiting and optimize your API usage.">
+    <title>AI API Rate Limits Compared: Every Provider's Limits in 2026 — APIpulse</title>
+    <meta name="description" content="Compare rate limits across OpenAI, Anthropic, Google, DeepSeek, xAI, Mistral, Cohere, AI21, Together.ai, and Moonshot. Learn how to handle rate limiting, build retry logic, and optimize your API usage.">
+    <meta name="keywords" content="AI API rate limits, OpenAI rate limit, Anthropic rate limit, Google Gemini rate limit, DeepSeek rate limit, xAI rate limit, API throttling, rate limit handling">
+    <meta property="og:title" content="AI API Rate Limits Compared: Every Provider's Limits in 2026 — APIpulse">
+    <meta property="og:description" content="Compare rate limits across all 10 major AI API providers. Learn how to handle rate limiting and optimize your API usage.">
     <meta property="og:type" content="article">
     <meta property="article:published_time" content="2026-04-26">
     <meta property="article:modified_time" content="2026-05-11">
@@ -15,7 +15,7 @@
     <meta property="og:image" content="https://getapipulse.com/og-images/blog-rate-limits.png">
     <meta property="og:url" content="https://getapipulse.com/blog-rate-limits.html">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="AI API Rate Limits Compared: OpenAI vs Anthropic vs Google (2026) — APIpulse">
+    <meta name="twitter:title" content="AI API Rate Limits Compared: Every Provider's Limits in 2026 — APIpulse">
     <meta name="twitter:image" content="https://getapipulse.com/og-images/blog-rate-limits.png">
     <meta name="twitter:description" content="Compare rate limits across major AI API providers. Learn how to handle rate limiting and optimize your API usage.">
     <link rel="canonical" href="https://getapipulse.com/blog-rate-limits.html">
@@ -37,8 +37,8 @@
     {
         "@context": "https://schema.org",
         "@type": "Article",
-        "headline": "AI API Rate Limits Compared: OpenAI vs Anthropic vs Google (2026)",
-        "description": "Compare rate limits across OpenAI, Anthropic, Google, Mistral, and Cohere. Learn how to handle rate limiting and optimize your API usage.",
+        "headline": "AI API Rate Limits Compared: Every Provider's Limits in 2026",
+        "description": "Compare rate limits across OpenAI, Anthropic, Google, DeepSeek, xAI, Mistral, Cohere, AI21, Together.ai, and Moonshot. Learn how to handle rate limiting, build retry logic, and optimize your API usage.",
         "datePublished": "2026-04-26",
         "dateModified": "2026-05-11",
         "author": { "@type": "Organization", "name": "APIpulse" },
@@ -194,12 +194,12 @@
             <span>12 min read</span>
         </div>
 
-        <h1>AI API Rate Limits Compared: OpenAI vs Anthropic vs Google (2026)</h1>
+        <h1>AI API Rate Limits Compared: Every Provider's Limits in 2026</h1>
         <p class="subtitle">A comprehensive comparison of rate limits across every major LLM API provider — plus practical strategies for handling throttling in production.</p>
 
         <p>Rate limits are the silent killer of AI applications. Your code works perfectly in development, then hits production traffic and starts throwing 429 errors. Understanding each provider's rate limits — and building proper handling — is essential for any production AI application.</p>
 
-        <p>In this guide, we compare rate limits across OpenAI, Anthropic, Google, Mistral, and Cohere. We'll cover RPM (requests per minute), TPM (tokens per minute), and daily limits, plus practical code patterns for handling rate limiting gracefully.</p>
+        <p>In this guide, we compare rate limits across all 10 major LLM API providers — OpenAI, Anthropic, Google, Mistral, Cohere, DeepSeek, xAI, AI21, Together.ai, and Moonshot. We'll cover RPM (requests per minute), TPM (tokens per minute), and daily limits, plus practical code patterns for handling rate limiting gracefully.</p>
 
         <h2>Rate Limits by Provider</h2>
 
@@ -427,9 +427,180 @@
             </tbody>
         </table>
 
+        <h3>DeepSeek Rate Limits</h3>
+
+        <p>DeepSeek offers aggressive pricing with rate limits that scale with usage. Their limits are generally generous for the price point.</p>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Model</th>
+                    <th>RPM</th>
+                    <th>TPM</th>
+                    <th>Notes</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>DeepSeek V4 Pro</strong></td>
+                    <td>1,000</td>
+                    <td>200,000</td>
+                    <td>Default limits</td>
+                </tr>
+                <tr>
+                    <td><strong>DeepSeek Flash</strong></td>
+                    <td>2,000</td>
+                    <td>500,000</td>
+                    <td>Higher throughput tier</td>
+                </tr>
+                <tr class="highlight">
+                    <td><strong>Enterprise</strong></td>
+                    <td class="best">Custom</td>
+                    <td class="best">Custom</td>
+                    <td>Contact sales</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="tip-box">
+            <strong>Tip:</strong> DeepSeek's rate limits are competitive for the price. At $0.44/$0.87 per 1M tokens for V4 Pro, you get solid throughput for budget-conscious applications.
+        </div>
+
+        <h3>xAI (Grok) Rate Limits</h3>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Tier</th>
+                    <th>RPM</th>
+                    <th>TPM</th>
+                    <th>Notes</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Free</strong></td>
+                    <td>5</td>
+                    <td>25,000</td>
+                    <td>Limited to Grok-3 Mini</td>
+                </tr>
+                <tr>
+                    <td><strong>Paid</strong></td>
+                    <td>500</td>
+                    <td>500,000</td>
+                    <td>All models</td>
+                </tr>
+                <tr class="highlight">
+                    <td><strong>Enterprise</strong></td>
+                    <td class="best">Custom</td>
+                    <td class="best">Custom</td>
+                    <td>Higher limits available</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>AI21 (Jurassic/Jamba) Rate Limits</h3>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Tier</th>
+                    <th>RPM</th>
+                    <th>TPM</th>
+                    <th>Notes</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Free</strong></td>
+                    <td>20</td>
+                    <td>40,000</td>
+                    <td>Jamba-1.5 Mini only</td>
+                </tr>
+                <tr>
+                    <td><strong>Paid</strong></td>
+                    <td>500</td>
+                    <td>500,000</td>
+                    <td>All models</td>
+                </tr>
+                <tr class="highlight">
+                    <td><strong>Enterprise</strong></td>
+                    <td class="best">Custom</td>
+                    <td class="best">Custom</td>
+                    <td>SLA guarantees</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>Together.ai Rate Limits</h3>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Tier</th>
+                    <th>RPM</th>
+                    <th>TPM</th>
+                    <th>Notes</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Free</strong></td>
+                    <td>60</td>
+                    <td>100,000</td>
+                    <td>Limited model selection</td>
+                </tr>
+                <tr>
+                    <td><strong>Paid</strong></td>
+                    <td>1,000</td>
+                    <td>1,000,000</td>
+                    <td>All models including Llama, Mixtral</td>
+                </tr>
+                <tr class="highlight">
+                    <td><strong>Enterprise</strong></td>
+                    <td class="best">Custom</td>
+                    <td class="best">Custom</td>
+                    <td>Dedicated endpoints</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>Moonshot (Kimi) Rate Limits</h3>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Tier</th>
+                    <th>RPM</th>
+                    <th>TPM</th>
+                    <th>Notes</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Free</strong></td>
+                    <td>10</td>
+                    <td>20,000</td>
+                    <td>Kimi K2.6 limited</td>
+                </tr>
+                <tr>
+                    <td><strong>Paid</strong></td>
+                    <td>200</td>
+                    <td>200,000</td>
+                    <td>All models</td>
+                </tr>
+                <tr class="highlight">
+                    <td><strong>Enterprise</strong></td>
+                    <td class="best">Custom</td>
+                    <td class="best">Custom</td>
+                    <td>Contact sales</td>
+                </tr>
+            </tbody>
+        </table>
+
         <h2>Side-by-Side Comparison</h2>
 
-        <p>Here's a quick reference comparing paid-tier rate limits across all providers:</p>
+        <p>Here's a quick reference comparing paid-tier rate limits across all 10 providers:</p>
 
         <table>
             <thead>
@@ -477,11 +648,46 @@
                     <td>Yes (trial)</td>
                     <td>No</td>
                 </tr>
+                <tr>
+                    <td><strong>DeepSeek</strong></td>
+                    <td>1,000–2,000</td>
+                    <td>200K–500K</td>
+                    <td>No</td>
+                    <td>No</td>
+                </tr>
+                <tr>
+                    <td><strong>xAI</strong></td>
+                    <td>500</td>
+                    <td>500K</td>
+                    <td>Yes (limited)</td>
+                    <td>No</td>
+                </tr>
+                <tr>
+                    <td><strong>AI21</strong></td>
+                    <td>500</td>
+                    <td>500K</td>
+                    <td>Yes (limited)</td>
+                    <td>No</td>
+                </tr>
+                <tr>
+                    <td><strong>Together.ai</strong></td>
+                    <td>1,000</td>
+                    <td>1M</td>
+                    <td>Yes (limited)</td>
+                    <td>No</td>
+                </tr>
+                <tr>
+                    <td><strong>Moonshot</strong></td>
+                    <td>200</td>
+                    <td>200K</td>
+                    <td>Yes (limited)</td>
+                    <td>No</td>
+                </tr>
             </tbody>
         </table>
 
         <div class="warning-box">
-            <strong>Warning:</strong> Rate limits change frequently. Always check the provider's official documentation for current limits. These numbers are accurate as of April 2026 but may have changed since publication.
+            <strong>Warning:</strong> Rate limits change frequently. Always check the provider's official documentation for current limits. These numbers are accurate as of May 2026 but may have changed since publication.
         </div>
 
         <h2>How to Handle Rate Limiting in Production</h2>
@@ -619,6 +825,41 @@ async function callWithFallback(prompt) {
             <li>Context caching can reduce token usage for repeated prompts</li>
         </ul>
 
+        <h3>DeepSeek</h3>
+        <ul>
+            <li>Excellent <strong>price-to-throughput ratio</strong> — $0.44/$0.87 per 1M tokens with 1K+ RPM</li>
+            <li>Flash model offers higher RPM for high-volume workloads</li>
+            <li>No built-in batch API — use multi-provider routing for overflow</li>
+        </ul>
+
+        <h3>xAI (Grok)</h3>
+        <ul>
+            <li>Competitive pricing with <strong>500 RPM</strong> on paid tier</li>
+            <li>Good option for real-time applications needing fast responses</li>
+            <li>Free tier available for prototyping with Grok-3 Mini</li>
+        </ul>
+
+        <h3>AI21</h3>
+        <ul>
+            <li>Strong for <strong>long-context workloads</strong> — Jamba models support extended context</li>
+            <li>500 RPM paid tier is suitable for most production applications</li>
+            <li>Enterprise tier offers SLA guarantees for mission-critical workloads</li>
+        </ul>
+
+        <h3>Together.ai</h3>
+        <ul>
+            <li>Access to <strong>open-source models</strong> (Llama, Mixtral) with managed infrastructure</li>
+            <li>1M TPM paid tier — good for high-volume inference</li>
+            <li>Dedicated endpoints available for consistent performance</li>
+        </ul>
+
+        <h3>Moonshot (Kimi)</h3>
+        <ul>
+            <li>Strong <strong>long-context capabilities</strong> with Kimi K2.6</li>
+            <li>Lower RPM (200) — best for low-to-medium volume applications</li>
+            <li>Competitive pricing for Chinese-language workloads</li>
+        </ul>
+
         <h2>How to Choose Based on Rate Limits</h2>
 
         <table>
@@ -642,8 +883,8 @@ async function callWithFallback(prompt) {
                 </tr>
                 <tr>
                     <td><strong>Budget startup</strong></td>
-                    <td>Google Gemini Flash (free)</td>
-                    <td>1M TPM at zero cost</td>
+                    <td>DeepSeek V4 Pro</td>
+                    <td>$0.44/$0.87 per 1M, 1K RPM</td>
                 </tr>
                 <tr>
                     <td><strong>Batch processing</strong></td>
@@ -652,8 +893,18 @@ async function callWithFallback(prompt) {
                 </tr>
                 <tr>
                     <td><strong>RAG pipelines</strong></td>
-                    <td>Cohere</td>
-                    <td>1M TPM, optimized for retrieval</td>
+                    <td>Cohere or Together.ai</td>
+                    <td>1M TPM, optimized for retrieval and open-source models</td>
+                </tr>
+                <tr>
+                    <td><strong>Open-source models</strong></td>
+                    <td>Together.ai</td>
+                    <td>Managed Llama/Mixtral with 1M TPM</td>
+                </tr>
+                <tr>
+                    <td><strong>Long-context analysis</strong></td>
+                    <td>Moonshot (Kimi) or DeepSeek</td>
+                    <td>Extended context windows with competitive pricing</td>
                 </tr>
             </tbody>
         </table>
@@ -666,7 +917,7 @@ async function callWithFallback(prompt) {
 
         <div class="share-section">
             <p>Found this useful? Share it:</p>
-            <a href="https://twitter.com/intent/tweet?text=AI+API+Rate+Limits+Compared:+OpenAI+vs+Anthropic+vs+Google+(2026)&url=https%3A%2F%2Fgetapipulse.com%2Fblog-rate-limits.html" target="_blank" rel="noopener" class="share-btn">Share on X</a>
+            <a href="https://twitter.com/intent/tweet?text=AI+API+Rate+Limits+Compared:+Every+Provider's+Limits+in+2026&url=https%3A%2F%2Fgetapipulse.com%2Fblog-rate-limits.html" target="_blank" rel="noopener" class="share-btn">Share on X</a>
             <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fgetapipulse.com%2Fblog-rate-limits.html" target="_blank" rel="noopener" class="share-btn">Share on LinkedIn</a>
         </div>
 
