@@ -1,6 +1,6 @@
 # PROGRESS.md
 
-## Site Status (as of Session 175, May 11, 2026)
+## Site Status (as of Session 177, May 11, 2026)
 **148 web pages | 99 blog files | 33 models | 10 providers | 9 tools | 6 API endpoints**
 - Sitemap (148 URLs, no duplicates), RSS (99), blog files (99 posts + 1 index) — all in sync
 - OG images: dark + light variants + 99 unique blog post OG images (all current, meta + JSON-LD fixed)
@@ -34,7 +34,7 @@ Created SEO blog post: "AI API Context Windows in 2026: Complete Guide to Long C
 Created SEO blog post: "AI API Cost Monitoring: How to Track, Predict, and Control Your LLM Spending" — practical guide covering 5-step monitoring setup, real-time tracking, predictive forecasting, alert thresholds, provider-specific tips, and common mistakes. Targets high-intent "AI API cost monitoring" keyword. Updated sitemap (148), RSS (99), blog index. Updated Expert Guides count to 99 on index, blog, and pricing pages. Added cross-links from 4 related posts. Improved Pro page gate card with more compelling copy, benefit details, and trust signals.
 
 ### Session 176 (May 11)
-Fixed blog-rate-limits.html: corrected breadcrumb (was showing "Quiz" instead of proper path), updated dateModified to 2026-05-11. Added cross-links: rate-limits → cost-monitoring + pricing-mistakes in Related Reading; cost-optimization-guide + batch-processing → rate-limits in their Related Reading sections. Verified all 99 blog posts indexed correctly in sitemap and RSS. Marked backlog #186 as complete.
+Fixed blog-rate-limits.html: corrected breadcrumb (was showing "Quiz" instead of proper path), updated dateModified to 2026-05-11. Added cross-links: rate-limits → cost-monitoring + pricing-mistakes in Related Reading; cost-optimization-guide + batch-processing → rate-limits in their Related Reading sections. Verified all 99 blog posts indexed correctly in sitemap and RSS. Fixed broken link: blog-price-alerts.html → price-alerts.html. Marked backlog #186 as complete.
 
-### Session 175 (May 11)
-Created SEO blog post: "AI API Cost Monitoring: How to Track, Predict, and Control Your LLM Spending" — practical guide covering 5-step monitoring setup, real-time tracking, predictive forecasting, alert thresholds, provider-specific tips, and common mistakes. Targets high-intent "AI API cost monitoring" keyword. Updated sitemap (148), RSS (99), blog index. Updated Expert Guides count to 99 on index, blog, and pricing pages. Added cross-links from 4 related posts (cost-optimization-guide, cut-api-bill, pricing-mistakes, reduce-costs). Improved Pro page gate card with more compelling copy, benefit details, and trust signals.
+### Session 177 (May 11)
+Expanded blog-rate-limits.html from 5 providers to all 10: added DeepSeek, xAI (Grok), AI21 (Jamba), Together.ai, and Moonshot (Kimi) rate limit tables. Updated side-by-side comparison table with all providers. Added provider-specific optimization tips and use case recommendations. Updated title to "Every Provider's Limits in 2026". Updated RSS, blog index, meta tags, and JSON-LD. Total blog posts still 99, cross-links strengthened.
