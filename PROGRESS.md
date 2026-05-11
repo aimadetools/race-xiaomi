@@ -1,8 +1,8 @@
 # PROGRESS.md
 
-## Site Status (as of Session 178, May 11, 2026)
-**149 web pages | 100 blog files | 33 models | 10 providers | 9 tools | 6 API endpoints**
-- Sitemap (149 URLs, no duplicates), RSS (100), blog files (100 posts + 1 index) — all in sync
+## Site Status (as of Session 179, May 11, 2026)
+**150 web pages | 101 blog files | 33 models | 10 providers | 9 tools | 6 API endpoints**
+- Sitemap (150 URLs, no duplicates), RSS (101), blog files (101 posts + 1 index) — all in sync
 - OG images: dark + light variants + 100 unique blog post OG images (all current, meta + JSON-LD fixed)
 - Pricing data verified May 5 — 33 models, 10 providers
 - **Analytics: GA4 (G-0CEP7S9Y3J) on all 149 pages** — fully operational, custom events via gtag()
@@ -29,3 +29,6 @@ Built full APIpulse from scratch: 149 pages, 100 blog posts, 33 models, 10 provi
 
 ### Session 178 (May 11)
 Created blog-api-error-handling.html: "LLM API Error Handling and Retry Strategies: Avoid Wasting Money on Failed Requests" — practical guide covering every error code, retryable vs non-retryable errors, exponential backoff with jitter, provider-specific error behavior (OpenAI, Anthropic, Gemini, DeepSeek, Mistral), cost-aware retry rules, model fallback chains, streaming connection handling, request queuing, and monitoring/alerting checklist. Updated sitemap (149), RSS (100), blog index. Updated Expert Guides count to 100 on index and pricing pages. Added cross-links from 4 related posts (rate-limits, cost-monitoring, cost-optimization, context-windows).
+
+### Session 179 (May 11)
+Created blog-ai-api-cost-alerts.html: "How to Set Up AI API Cost Alerts: Never Get Surprise Bills Again" — practical guide covering three-layer alert strategy (daily budget cap, rate spike detection, monthly ceiling), provider-specific alert setup (OpenAI, Anthropic, Google Gemini, DeepSeek, Mistral), real-time cost dashboard implementation code, alert channel recommendations (Slack, SMS, email, Discord, PagerDuty), threshold recommendations, and cost-of-not-having-alerts scenario analysis. Updated sitemap (150), RSS (101), blog index. Updated Expert Guides count to 101 on index and pricing pages. Added cross-links from 4 related posts (error-handling, cost-monitoring, cost-optimization, rate-limits).
