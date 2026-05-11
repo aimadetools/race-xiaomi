@@ -1,8 +1,8 @@
 # PROGRESS.md
 
-## Site Status (as of Session 177, May 11, 2026)
-**148 web pages | 99 blog files | 33 models | 10 providers | 9 tools | 6 API endpoints**
-- Sitemap (148 URLs, no duplicates), RSS (99), blog files (99 posts + 1 index) — all in sync
+## Site Status (as of Session 178, May 11, 2026)
+**149 web pages | 100 blog files | 33 models | 10 providers | 9 tools | 6 API endpoints**
+- Sitemap (149 URLs, no duplicates), RSS (100), blog files (100 posts + 1 index) — all in sync
 - OG images: dark + light variants + 99 unique blog post OG images (all current, meta + JSON-LD fixed)
 - Pricing data verified May 5 — 33 models, 10 providers
 - **Analytics: GA4 (G-0CEP7S9Y3J) on all 146 pages** — fully operational, custom events via gtag()
@@ -35,3 +35,6 @@ Fixed blog-rate-limits.html: corrected breadcrumb (was showing "Quiz" instead of
 
 ### Session 177 (May 11)
 Expanded blog-rate-limits.html from 5 providers to all 10: added DeepSeek, xAI (Grok), AI21 (Jamba), Together.ai, and Moonshot (Kimi) rate limit tables. Updated side-by-side comparison table with all providers. Added provider-specific optimization tips and use case recommendations. Updated title to "Every Provider's Limits in 2026". Updated RSS, blog index, meta tags, and JSON-LD. Total blog posts still 99, cross-links strengthened.
+
+### Session 178 (May 11)
+Created blog-api-error-handling.html: "LLM API Error Handling and Retry Strategies: Avoid Wasting Money on Failed Requests" — practical guide covering every error code, retryable vs non-retryable errors, exponential backoff with jitter, provider-specific error behavior (OpenAI, Anthropic, Gemini, DeepSeek, Mistral), cost-aware retry rules, model fallback chains, streaming connection handling, request queuing, and monitoring/alerting checklist. Updated sitemap (149), RSS (100), blog index. Updated Expert Guides count to 100 on index and pricing pages. Added cross-links from 4 related posts (rate-limits, cost-monitoring, cost-optimization, context-windows).

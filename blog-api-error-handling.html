@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LLM API Error Handling and Retry Strategies: Avoid Wasting Money on Failed Requests — APIpulse</title>
+    <meta name="description" content="Master LLM API error handling with retry strategies, exponential backoff, and cost-aware error management. Reduce wasted spend on failed requests across OpenAI, Anthropic, Google, and more.">
+    <meta name="keywords" content="LLM API error handling, API retry strategy, exponential backoff LLM, OpenAI error handling, Anthropic retry, API rate limit retry, LLM cost wasted errors">
+    <meta property="og:title" content="LLM API Error Handling and Retry Strategies: Avoid Wasting Money on Failed Requests — APIpulse">
+    <meta property="og:description" content="Master LLM API error handling with retry strategies, exponential backoff, and cost-aware error management.">
+    <meta property="og:type" content="article">
+    <meta property="article:published_time" content="2026-05-11">
+    <meta property="article:modified_time" content="2026-05-11">
+    <meta property="article:author" content="APIpulse">
+    <meta property="og:image" content="https://getapipulse.com/og-images/blog-api-error-handling.png">
+    <meta property="og:url" content="https://getapipulse.com/blog-api-error-handling.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="LLM API Error Handling and Retry Strategies — APIpulse">
+    <meta name="twitter:image" content="https://getapipulse.com/og-images/blog-api-error-handling.png">
+    <meta name="twitter:description" content="Master LLM API error handling with retry strategies and cost-aware error management.">
+    <link rel="canonical" href="https://getapipulse.com/blog-api-error-handling.html">
+    <link rel="alternate" type="application/rss+xml" title="APIpulse Blog" href="https://getapipulse.com/rss.xml">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="styles.css">
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0CEP7S9Y3J"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-0CEP7S9Y3J');
+    </script>
+    <script src="analytics.js" defer></script>
+    <script src="dynamic-date.js" defer></script>
+    <script src="shared.js" defer></script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "LLM API Error Handling and Retry Strategies: Avoid Wasting Money on Failed Requests",
+        "description": "Master LLM API error handling with retry strategies, exponential backoff, and cost-aware error management across all major providers.",
+        "datePublished": "2026-05-11",
+        "dateModified": "2026-05-11",
+        "author": { "@type": "Organization", "name": "APIpulse" },
+        "publisher": { "@type": "Organization", "name": "APIpulse", "url": "https://getapipulse.com" },
+        "url": "https://getapipulse.com/blog-api-error-handling.html",
+        "image": "https://getapipulse.com/og-images/blog-api-error-handling.png"
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Blog", "item": "https://getapipulse.com/blog.html" },
+            { "@type": "ListItem", "position": 2, "name": "LLM API Error Handling", "item": "https://getapipulse.com/blog-api-error-handling.html" }
+        ]
+    }
+    </script>
+    <style>
+        .content { max-width: 800px; margin: 0 auto; padding: 120px 24px 80px; }
+        h1 { font-size: 40px; font-weight: 800; margin-bottom: 12px; }
+        .subtitle { color: var(--text-secondary); font-size: 18px; margin-bottom: 48px; }
+        .post-meta {
+            display: flex; gap: 16px; align-items: center; margin-bottom: 12px;
+            font-size: 13px; color: var(--text-muted);
+        }
+        .post-tag {
+            background: var(--accent-glow); color: var(--accent);
+            padding: 2px 10px; border-radius: 6px; font-size: 12px; font-weight: 600;
+        }
+        .article { max-width: 700px; margin: 0 auto; }
+        .article h1 { font-size: 36px; margin-bottom: 16px; }
+        .article h2 { font-size: 24px; font-weight: 700; margin: 32px 0 16px; }
+        .article h3 { font-size: 18px; font-weight: 600; margin: 24px 0 12px; }
+        .article p { color: var(--text-secondary); margin-bottom: 16px; line-height: 1.7; }
+        .article ul, .article ol { color: var(--text-secondary); padding-left: 24px; margin-bottom: 16px; }
+        .article li { margin-bottom: 8px; }
+        .article strong { color: var(--text-primary); }
+        .article code {
+            background: var(--bg-card); padding: 2px 8px; border-radius: 4px;
+            font-size: 14px; color: var(--accent);
+        }
+        .article pre {
+            background: var(--bg-card); border: 1px solid var(--border);
+            border-radius: 8px; padding: 16px; overflow-x: auto;
+            margin: 16px 0; font-size: 13px; line-height: 1.5;
+        }
+        .article pre code { background: none; padding: 0; color: var(--text-primary); }
+        .back-link {
+            display: inline-flex; align-items: center; gap: 6px;
+            font-size: 14px; color: var(--text-secondary); margin-bottom: 32px;
+        }
+        .back-link:hover { color: var(--text-primary); }
+        .cta-inline {
+            background: var(--bg-secondary); border: 1px solid var(--accent);
+            border-radius: 12px; padding: 24px; margin: 32px 0; text-align: center;
+        }
+        .cta-inline p { margin-bottom: 12px; }
+        .share-section {
+            margin-top: 32px; padding-top: 24px; border-top: 1px solid var(--border);
+            text-align: center;
+        }
+        .share-section p { color: var(--text-secondary); font-size: 14px; margin-bottom: 12px; }
+        .share-btn {
+            display: inline-block; background: var(--bg-card); color: var(--text-primary);
+            padding: 8px 20px; border-radius: 8px; font-size: 14px; font-weight: 500;
+            border: 1px solid var(--border); transition: all 0.2s;
+        }
+        .share-btn:hover { background: var(--accent); color: white; border-color: var(--accent); }
+        .cost-example {
+            background: var(--bg-secondary); border: 1px solid var(--border);
+            border-radius: 10px; padding: 20px; margin: 20px 0;
+        }
+        .cost-example .label {
+            font-size: 13px; color: var(--text-muted); text-transform: uppercase;
+            letter-spacing: 0.5px; margin-bottom: 12px; font-weight: 600;
+        }
+        .cost-example .cost-row {
+            display: flex; justify-content: space-between; padding: 8px 0;
+            border-bottom: 1px solid var(--border); font-size: 14px;
+        }
+        .cost-example .cost-row:last-child { border-bottom: none; }
+        .cost-example .cost-row .name { color: var(--text-secondary); }
+        .cost-example .cost-row .value { color: var(--text-primary); font-weight: 600; font-variant-numeric: tabular-nums; }
+        .error-table {
+            width: 100%; border-collapse: collapse; margin: 20px 0;
+            font-size: 14px;
+        }
+        .error-table th {
+            text-align: left; padding: 10px 12px; border-bottom: 2px solid var(--border);
+            color: var(--text-muted); font-size: 12px; text-transform: uppercase;
+            letter-spacing: 0.5px; font-weight: 600;
+        }
+        .error-table td {
+            padding: 10px 12px; border-bottom: 1px solid var(--border);
+            color: var(--text-secondary);
+        }
+        .error-table tr:last-child td { border-bottom: none; }
+        .retry-badge {
+            display: inline-block; padding: 2px 8px; border-radius: 4px;
+            font-size: 11px; font-weight: 600; text-transform: uppercase;
+        }
+        .retry-badge.yes { background: rgba(34,197,94,0.15); color: #22c55e; }
+        .retry-badge.no { background: rgba(239,68,68,0.15); color: #ef4444; }
+        .retry-badge.depends { background: rgba(251,191,36,0.15); color: #fbbf24; }
+        .verdict-box {
+            background: rgba(99,102,241,0.08); border: 1px solid rgba(99,102,241,0.2);
+            border-radius: 10px; padding: 20px; margin: 20px 0;
+        }
+        .verdict-box .verdict-label {
+            font-size: 12px; font-weight: 700; color: var(--accent);
+            text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px;
+        }
+        @media (max-width: 768px) {
+            .content { padding: 100px 20px 60px; }
+            h1 { font-size: 28px; }
+            .article h1 { font-size: 28px; }
+            .article h2 { font-size: 20px; }
+            .cta-inline { padding: 20px; }
+            .error-table { font-size: 12px; }
+            .error-table th, .error-table td { padding: 8px; }
+        }
+        @media print {
+            nav, .share-section, .cta-inline, .theme-toggle, .back-link { display: none !important; }
+            body { background: white; color: black; }
+            .content { padding: 0; max-width: 100%; }
+            .article h1 { font-size: 24px; margin-bottom: 8px; }
+            .article h2 { font-size: 18px; margin: 16px 0 8px; }
+            .article p, .article li { color: #333; font-size: 12px; }
+            .post-meta { display: none; }
+            a { color: black; text-decoration: underline; }
+            footer { border-top: 1px solid #ccc; padding: 10px 0; }
+        }
+    </style>
+    <meta name="theme-color" content="#6366f1">
+    <link rel="preconnect" href="https://getapipulse.com">
+</head>
+<body>
+    <a href="#main" class="skip-link">Skip to content</a>
+    <nav>
+        <div class="nav-inner">
+            <a href="index.html" class="logo">API<span>pulse</span></a>
+            <button class="hamburger" onclick="toggleMobileNav()" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+            <div class="nav-links">
+                <a href="calculator.html">Calculator</a>
+                <a href="compare.html">Compare</a>
+                <a href="pricing-trends.html">Trends</a>
+                <a href="blog.html" class="active">Blog</a>
+                <a href="pro.html" class="nav-pro">Pro</a>
+                <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
+            </div>
+        </div>
+    </nav>
+
+    <main id="main">
+        <div class="content">
+            <a href="blog.html" class="back-link">← Back to Blog</a>
+            <div class="post-meta">
+                <span class="post-tag">Guide</span>
+                <span>May 11, 2026</span>
+                <span>7 min read</span>
+            </div>
+            <div class="article">
+                <h1>LLM API Error Handling and Retry Strategies: Avoid Wasting Money on Failed Requests</h1>
+                <p class="subtitle">Failed API requests cost you tokens without results. Here's how to handle errors properly, retry intelligently, and stop wasting money on requests that don't need to fail.</p>
+
+                <p>Every failed LLM API request is wasted money. You paid for input tokens, waited for a response, and got an error. If you're not handling this correctly, <strong>5-15% of your API spend</strong> could be going to requests that fail and shouldn't have — or succeed but get retried anyway.</p>
+
+                <p>This guide covers error handling across all 10 major providers, retry strategies that actually save money, and the code patterns that prevent common failures.</p>
+
+                <h2>Every Error Code and What It Means</h2>
+
+                <p>Not all errors are equal. Some are retryable, some are not, and some will cost you money if you retry them. Here's the breakdown:</p>
+
+                <table class="error-table">
+                    <thead>
+                        <tr>
+                            <th>Error Code</th>
+                            <th>Name</th>
+                            <th>Retryable?</th>
+                            <th>Cost Impact</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><code>429</code></td>
+                            <td>Rate Limit / Too Many Requests</td>
+                            <td><span class="retry-badge yes">Yes</span></td>
+                            <td>Input tokens billed, no output</td>
+                        </tr>
+                        <tr>
+                            <td><code>500</code></td>
+                            <td>Internal Server Error</td>
+                            <td><span class="retry-badge yes">Yes</span></td>
+                            <td>Usually no charge</td>
+                        </tr>
+                        <tr>
+                            <td><code>502</code></td>
+                            <td>Bad Gateway</td>
+                            <td><span class="retry-badge yes">Yes</span></td>
+                            <td>Usually no charge</td>
+                        </tr>
+                        <tr>
+                            <td><code>503</code></td>
+                            <td>Service Unavailable</td>
+                            <td><span class="retry-badge yes">Yes</span></td>
+                            <td>Usually no charge</td>
+                        </tr>
+                        <tr>
+                            <td><code>408</code></td>
+                            <td>Request Timeout</td>
+                            <td><span class="retry-badge depends">Depends</span></td>
+                            <td>Input tokens may be billed</td>
+                        </tr>
+                        <tr>
+                            <td><code>401</code></td>
+                            <td>Unauthorized</td>
+                            <td><span class="retry-badge no">No</span></td>
+                            <td>No charge</td>
+                        </tr>
+                        <tr>
+                            <td><code>403</code></td>
+                            <td>Forbidden</td>
+                            <td><span class="retry-badge no">No</span></td>
+                            <td>No charge</td>
+                        </tr>
+                        <tr>
+                            <td><code>400</code></td>
+                            <td>Bad Request</td>
+                            <td><span class="retry-badge no">No</span></td>
+                            <td>No charge</td>
+                        </tr>
+                        <tr>
+                            <td><code>404</code></td>
+                            <td>Model Not Found</td>
+                            <td><span class="retry-badge no">No</span></td>
+                            <td>No charge</td>
+                        </tr>
+                        <tr>
+                            <td><code>413</code></td>
+                            <td>Payload Too Large</td>
+                            <td><span class="retry-badge no">No</span></td>
+                            <td>No charge</td>
+                        </tr>
+                        <tr>
+                            <td><code>529</code></td>
+                            <td>Overloaded (Anthropic)</td>
+                            <td><span class="retry-badge yes">Yes</span></td>
+                            <td>Usually no charge</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3>The cost trap: 429 errors</h3>
+                <p>Rate limit errors are the sneakiest. OpenAI and Anthropic both <strong>bill you for input tokens even on 429 errors</strong> in some cases — especially if the request was partially processed before being rejected. If you send a 10K token request and hit a rate limit, you might still be charged for those input tokens with no output to show for it.</p>
+
+                <p>Google's Gemini and DeepSeek are generally more generous — 429 errors typically don't incur charges. But don't assume: always check your billing after a spike in rate limit errors.</p>
+
+                <h2>The Exponential Backoff Pattern</h2>
+
+                <p>The standard retry strategy for LLM APIs is exponential backoff with jitter. Here's the pattern that works across all providers:</p>
+
+                <pre><code>async function callWithRetry(fn, maxRetries = 3) {
+  for (let attempt = 0; attempt <= maxRetries; attempt++) {
+    try {
+      return await fn();
+    } catch (error) {
+      if (attempt === maxRetries) throw error;
+      if (!isRetryable(error.status)) throw error;
+
+      const baseDelay = Math.pow(2, attempt) * 1000; // 1s, 2s, 4s
+      const jitter = Math.random() * 1000;            // 0-1s random
+      const delay = baseDelay + jitter;
+
+      await new Promise(r => setTimeout(r, delay));
+    }
+  }
+}
+
+function isRetryable(status) {
+  return [429, 500, 502, 503, 529].includes(status);
+}</code></pre>
+
+                <p>Key points:</p>
+                <ul>
+                    <li><strong>Only retry on retryable errors</strong> — 400, 401, 403, 404 should never be retried</li>
+                    <li><strong>Add jitter</strong> — Without jitter, all clients retry at the same time, causing a thundering herd</li>
+                    <li><strong>Cap retries at 3</strong> — If 3 retries fail, the problem is likely persistent</li>
+                    <li><strong>Respect Retry-After headers</strong> — Some providers include them in 429 responses</li>
+                </ul>
+
+                <h2>Provider-Specific Error Behavior</h2>
+
+                <p>Each provider handles errors differently. Here's what you need to know:</p>
+
+                <div class="cost-example">
+                    <div class="label">Provider Error Behavior Comparison</div>
+                    <div class="cost-row"><span class="name">OpenAI — 429</span><span class="value">Bills input tokens on partial processing. Use Retry-After header.</span></div>
+                    <div class="cost-row"><span class="name">OpenAI — 500/502/503</span><span class="value">No charge. Safe to retry immediately.</span></div>
+                    <div class="cost-row"><span class="name">Anthropic — 429</span><span class="value">No charge on 429. Has built-in retry in SDK.</span></div>
+                    <div class="cost-row"><span class="name">Anthropic — 529</span><span class="value">Overloaded. No charge. Retry with backoff.</span></div>
+                    <div class="cost-row"><span class="name">Google Gemini — 429</span><span class="value">No charge. Generous default quotas.</span></div>
+                    <div class="cost-row"><span class="name">DeepSeek — 429</span><span class="value">No charge. Aggressive rate limits on free tier.</span></div>
+                    <div class="cost-row"><span class="name">Mistral — 429</span><span class="value">No charge. Limits based on subscription tier.</span></div>
+                </div>
+
+                <h2>Common Failure Patterns and Fixes</h2>
+
+                <h3>1. Context window overflow</h3>
+                <p>The most expensive error. You build a massive prompt, send it, and get a 400 error because you exceeded the model's context window. The fix: <strong>always count tokens before sending</strong>.</p>
+
+                <pre><code>// Before sending, validate token count
+const maxTokens = {
+  'gpt-4o': 128000, 'gpt-5': 272000, 'gpt-5.5': 1000000,
+  'claude-sonnet-4.6': 1000000, 'claude-haiku-4.5': 200000,
+  'gemini-2.0-flash': 1000000, 'deepseek-v4-pro': 1000000
+};
+
+const limit = maxTokens[model] || 128000;
+if (estimatedTokens > limit * 0.9) {
+  // Truncate or summarize before sending
+  prompt = truncateToTokenLimit(prompt, limit * 0.85);
+}</code></pre>
+
+                <h3>2. Streaming connection drops</h3>
+                <p>Streaming responses (SSE) can disconnect mid-response, especially on long outputs. The result: you've consumed input tokens but get no complete output. Fix: implement <strong>streaming resume</strong> or fall back to non-streaming for critical requests.</p>
+
+                <pre><code>// Streaming error handling
+const controller = new AbortController();
+const timeout = setTimeout(() => controller.abort(), 60000);
+
+try {
+  const stream = await fetch(url, {
+    ...options,
+    signal: controller.signal
+  });
+
+  let fullResponse = '';
+  for await (const chunk of stream.body) {
+    fullResponse += parseChunk(chunk);
+    clearTimeout(timeout); // Reset timeout on each chunk
+  }
+} catch (error) {
+  if (error.name === 'AbortError') {
+    // Timeout — retry with non-streaming
+    return await callWithRetry(() => fetchNonStreaming(options));
+  }
+  throw error;
+}</code></pre>
+
+                <h3>3. Concurrent request collisions</h3>
+                <p>Sending many requests simultaneously often triggers rate limits. The fix: <strong>implement a request queue</strong> with concurrency limits.</p>
+
+                <pre><code>class RequestQueue {
+  constructor(concurrency = 5) {
+    this.concurrency = concurrency;
+    this.running = 0;
+    this.queue = [];
+  }
+
+  async add(fn) {
+    if (this.running >= this.concurrency) {
+      await new Promise(resolve => this.queue.push(resolve));
+    }
+    this.running++;
+    try {
+      return await fn();
+    } finally {
+      this.running--;
+      if (this.queue.length) this.queue.shift()();
+    }
+  }
+}</code></pre>
+
+                <h2>Cost-Aware Error Handling</h2>
+
+                <p>The biggest mistake: retrying expensive requests blindly. If you're retrying a request that costs $0.50 per attempt, three retries cost $1.50 for a single logical operation.</p>
+
+                <div class="verdict-box">
+                    <div class="verdict-label">Cost-Aware Retry Rules</div>
+                    <ul style="color:var(--text-secondary);margin:0;">
+                        <li><strong>Low-cost requests</strong> (&lt;$0.01): Retry up to 3 times, aggressive backoff</li>
+                        <li><strong>Mid-cost requests</strong> ($0.01-$0.10): Retry up to 2 times, conservative backoff</li>
+                        <li><strong>High-cost requests</strong> (&gt;$0.10): Retry once, then fall back to a cheaper model</li>
+                        <li><strong>Always</strong>: Set a max budget per operation, abort if retries exceed it</li>
+                    </ul>
+                </div>
+
+                <h3>Model fallback chains</h3>
+                <p>When your primary model fails, falling back to a cheaper model saves both time and money:</p>
+
+                <div class="cost-example">
+                    <div class="label">Recommended Fallback Chains</div>
+                    <div class="cost-row"><span class="name">Premium chain</span><span class="value">GPT-5 → Claude Sonnet 4.6 → Gemini 2.5 Pro</span></div>
+                    <div class="cost-row"><span class="name">Mid-tier chain</span><span class="value">GPT-5 mini → Claude Haiku 4.5 → Gemini 2.0 Flash</span></div>
+                    <div class="cost-row"><span class="name">Budget chain</span><span class="value">DeepSeek V4 Pro → Gemini Flash Lite → GPT-4o mini</span></div>
+                    <div class="cost-row"><span class="name">Free/cheap chain</span><span class="value">Gemini Flash Lite → GPT-oss 20B → Llama 3.1 8B</span></div>
+                </div>
+
+                <div class="cta-inline">
+                    <p><strong>Calculate the real cost of your error rate</strong></p>
+                    <p>If 10% of your requests fail and you retry them, you're paying double for that 10%. Use our calculator to see the impact.</p>
+                    <a href="calculator.html" class="btn-primary">Open Calculator →</a>
+                </div>
+
+                <h2>Monitoring and Alerting</h2>
+
+                <p>Handle errors in code, but monitor them in production. Set up alerts for:</p>
+
+                <ul>
+                    <li><strong>Error rate &gt;5%</strong> — Indicates a systemic issue, not random failures</li>
+                    <li><strong>Retry rate &gt;20%</strong> — You're retrying too aggressively, wasting money</li>
+                    <li><strong>P95 latency &gt;30s</strong> — Approaching timeout thresholds</li>
+                    <li><strong>Monthly error cost &gt;$50</strong> — Set a hard cap and alert on it</li>
+                </ul>
+
+                <p>Use our <a href="blog-ai-api-cost-monitoring.html">AI API cost monitoring guide</a> to set up real-time tracking of error-related spend.</p>
+
+                <h2>Provider-Specific SDK Retry Defaults</h2>
+
+                <p>Most providers have built-in retry logic in their official SDKs. Here's what you get by default:</p>
+
+                <table class="error-table">
+                    <thead>
+                        <tr>
+                            <th>Provider</th>
+                            <th>SDK Retries</th>
+                            <th>Default Strategy</th>
+                            <th>Customizable</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>OpenAI</td>
+                            <td>2</td>
+                            <td>Exponential backoff</td>
+                            <td>Yes — maxRetries param</td>
+                        </tr>
+                        <tr>
+                            <td>Anthropic</td>
+                            <td>2</td>
+                            <td>Exponential backoff</td>
+                            <td>Yes — maxRetries param</td>
+                        </tr>
+                        <tr>
+                            <td>Google Gemini</td>
+                            <td>0 (manual)</td>
+                            <td>N/A — implement yourself</td>
+                            <td>N/A</td>
+                        </tr>
+                        <tr>
+                            <td>DeepSeek</td>
+                            <td>0 (manual)</td>
+                            <td>N/A — implement yourself</td>
+                            <td>N/A</td>
+                        </tr>
+                        <tr>
+                            <td>Mistral</td>
+                            <td>0 (manual)</td>
+                            <td>N/A — implement yourself</td>
+                            <td>N/A</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <p><strong>Important:</strong> Don't rely solely on SDK defaults. OpenAI and Anthropic retry on 429 and 500 errors, but they won't implement cost-aware retry logic or model fallbacks. Build your own wrapper on top.</p>
+
+                <h2>The Complete Error Handler</h2>
+
+                <p>Here's a production-ready error handler that combines everything:</p>
+
+                <pre><code>async function resilientLLMCall(options) {
+  const { model, prompt, maxCost = 0.50 } = options;
+  const costPerToken = getModelCost(model);
+  let totalCost = 0;
+
+  const fallbackChain = getFallbackChain(model);
+
+  for (const currentModel of fallbackChain) {
+    const cost = getModelCost(currentModel);
+    if (totalCost + cost > maxCost) break;
+
+    try {
+      const result = await callWithRetry(
+        () => callLLM(currentModel, prompt),
+        currentModel.includes('gpt') || currentModel.includes('claude') ? 2 : 1
+      );
+      return { ...result, model: currentModel };
+    } catch (error) {
+      totalCost += cost;
+      console.warn(`${currentModel} failed: ${error.message}. Falling back.`);
+    }
+  }
+
+  throw new Error('All models in fallback chain failed');
+}</code></pre>
+
+                <div class="cta-inline">
+                    <p><strong>Track your error costs in real time</strong></p>
+                    <p>See exactly how much failed requests are costing you across all providers.</p>
+                    <a href="pricing-trends.html" class="btn-primary">View Pricing Trends →</a>
+                </div>
+
+                <h2>Quick Reference: Error Handling Checklist</h2>
+
+                <ul>
+                    <li><strong>Do</strong>: Retry 429, 500, 502, 503, 529 with exponential backoff</li>
+                    <li><strong>Do</strong>: Add jitter to prevent thundering herd</li>
+                    <li><strong>Do</strong>: Set a max budget per operation</li>
+                    <li><strong>Do</strong>: Implement model fallback chains</li>
+                    <li><strong>Do</strong>: Validate token count before sending</li>
+                    <li><strong>Do</strong>: Monitor error rates and costs</li>
+                    <li><strong>Don't</strong>: Retry 400, 401, 403, 404 errors</li>
+                    <li><strong>Don't</strong>: Retry without checking if input tokens were billed</li>
+                    <li><strong>Don't</strong>: Use the same retry count for expensive and cheap models</li>
+                    <li><strong>Don't</strong>: Ignore Retry-After headers</li>
+                </ul>
+
+                <div style="margin-top:40px;padding:24px;background:var(--bg-secondary);border:1px solid var(--border);border-radius:12px;">
+                    <h3 style="font-size:16px;margin-bottom:12px;">Related Reading</h3>
+                    <ul style="list-style:none;padding:0;">
+                        <li style="margin-bottom:8px;"><a href="blog-rate-limits.html">AI API Rate Limits Compared: Every Provider's Limits in 2026</a></li>
+                        <li style="margin-bottom:8px;"><a href="blog-ai-api-cost-monitoring.html">AI API Cost Monitoring: How to Track, Predict, and Control Spending</a></li>
+                        <li style="margin-bottom:8px;"><a href="blog-cost-optimization-guide.html">AI API Cost Optimization: The Complete Guide</a></li>
+                        <li style="margin-bottom:8px;"><a href="blog-pricing-mistakes.html">7 AI API Pricing Mistakes That Cost Developers Thousands</a></li>
+                        <li><a href="compare.html">Compare model prices side by side →</a></li>
+                    </ul>
+                </div>
+
+                <div class="share-section">
+                    <p>Found this useful? Share it:</p>
+                    <a href="https://twitter.com/intent/tweet?text=LLM+API+Error+Handling+and+Retry+Strategies&url=https://getapipulse.com/blog-api-error-handling.html" target="_blank" rel="noopener" class="share-btn">Share on X</a>
+                    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fgetapipulse.com%2Fblog-api-error-handling.html" target="_blank" rel="noopener" class="share-btn">Share on LinkedIn</a>
+                    <a href="https://news.ycombinator.com/submitlink?u=https://getapipulse.com/blog-api-error-handling.html&t=LLM+API+Error+Handling+and+Retry+Strategies" target="_blank" rel="noopener" class="share-btn">Share on HN</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <button class="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">↑</button>
+
+    <footer>
+        <p>Pricing data last verified: <span class="verified-date"></span></p>
+        <p>&copy; 2026 APIpulse. <a href="index.html">Home</a> &middot; <a href="use-cases.html">Use Cases</a> &middot; <a href="about.html">About</a> &middot; <a href="blog.html">Blog</a>
+<a href="pricing-index.html">Pricing Index</a> &middot; <a href="model-matrix.html">Model Matrix</a> &middot; <a href="cost-scenarios.html">Scenarios</a> &middot; <a href="price-alerts.html">Price Alerts</a> &middot; <a href="pricing-changelog.html">Changelog</a> &middot; <a href="openai.html">OpenAI</a> &middot; <a href="anthropic.html">Anthropic</a> &middot; <a href="google.html">Google</a> &middot; <a href="mistral.html">Mistral</a> &middot; <a href="cohere.html">Cohere</a> &middot; <a href="deepseek.html">DeepSeek</a> &middot; <a href="xai.html">xAI</a> &middot; <a href="moonshot.html">Moonshot</a> &middot; <a href="together.html">Together.ai</a> &middot; <a href="ai21.html">AI21</a> &middot; <a href="pricing.html">Pricing</a> &middot; <a href="embed.html">Embed Widget</a> &middot; <a href="cheat-sheet.html">Cheat Sheet</a> &middot; <a href="model-switch.html">Model Switch</a> &middot; <a href="api-docs.html">API</a> &middot; <a href="https://x.com/getapipulse" target="_blank" rel="noopener">Twitter</a> &middot; <a href="unsubscribe.html">Unsubscribe</a></p>
+    </footer>
+</body>
+</html>
