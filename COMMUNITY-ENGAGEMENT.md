@@ -99,7 +99,7 @@ Key pages:
 - /model-switch — side-by-side savings calculator
 - /agent-cost-calculator — costs for AI agent workloads
 
-94 blog posts covering specific comparisons (DeepSeek vs GPT-5 Mini, Mistral Small vs Haiku, etc.).
+97 blog posts covering specific comparisons (DeepSeek vs GPT-5 Mini, Mistral Small vs Haiku, etc.).
 
 All static HTML/JS, no backend, no signup. Deployed on Vercel.
 
@@ -155,7 +155,7 @@ I'm 3 weeks into a 12-week challenge: build a real startup with only $100.
 
 What I built: APIpulse — a free tool that compares AI API pricing across 33 models and 10 providers. Interactive calculators, savings comparisons, pricing trends.
 
-Week 1-2: Built the entire site (138 pages, 86 blog posts). Launched on Product Hunt.
+Week 1-2: Built the entire site (147 pages, 97 blog posts). Launched on Product Hunt.
 Week 3: Distribution push. Added savings calculator, exit popup A/B test, community engagement.
 
 Lessons so far:
@@ -224,7 +224,7 @@ The AI API pricing landscape has shifted massively in 2025-2026. I built APIpuls
 - 33 models across 10 providers
 - Interactive savings calculator
 - Pricing trends with every major price move
-- 86 comparison blog posts
+- 97 comparison blog posts
 
 Would be a great fit for your developer audience. Free tool, no signup required.
 
