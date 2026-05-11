@@ -80,6 +80,8 @@ I built a calculator that lets you estimate monthly AI API costs across provider
 
 It's completely free, no signup required: https://getapipulse.com?utm_source=reddit&utm_medium=post&utm_campaign=r_webdev_tool
 
+For weekly pricing updates: https://getapipulse.com/newsletter.html?utm_source=reddit&utm_medium=post&utm_campaign=r_webdev_tool
+
 Would love feedback on what features would be most useful.
 
 ### Hacker News — Show HN
@@ -211,6 +213,7 @@ Key data points for your readers:
 Interactive tools: cost calculator, model comparison, savings calculator, pricing trends.
 
 Site: https://getapipulse.com/pricing-trends.html?utm_source=tldr&utm_medium=newsletter&utm_campaign=pitch
+Newsletter signup: https://getapipulse.com/newsletter.html
 
 Happy to provide any data or quotes for a piece.
 
@@ -229,6 +232,7 @@ The AI API pricing landscape has shifted massively in 2025-2026. I built APIpuls
 Would be a great fit for your developer audience. Free tool, no signup required.
 
 Site: https://getapipulse.com?utm_source=bytes&utm_medium=newsletter&utm_campaign=pitch
+Newsletter signup: https://getapipulse.com/newsletter.html
 
 Let me know if you'd like any data or a guest contribution.
 

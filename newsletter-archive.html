@@ -107,10 +107,11 @@
         <div class="subscribe-box">
             <h2>Get the API Pricing Digest</h2>
             <p>Weekly updates on AI API pricing changes, new models, and cost optimization tips. No spam.</p>
-            <form class="subscribe-form" onsubmit="event.preventDefault(); subscribe(this);">
-                <input type="email" placeholder="your@email.com" required aria-label="Email address">
+            <form class="subscribe-form" onsubmit="saveEmail(event)">
+                <input type="email" id="email-input" placeholder="your@email.com" required aria-label="Email address">
                 <button type="submit">Subscribe</button>
             </form>
+            <p id="email-msg" style="font-size:13px;color:var(--green);margin-top:12px;display:none;"></p>
         </div>
 
         <div class="month-section">

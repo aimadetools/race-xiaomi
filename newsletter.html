@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI API Pricing Digest — Weekly Updates on LLM Costs | APIpulse</title>
+    <meta name="description" content="Get weekly updates on AI API pricing changes, new models, and cost optimization tips. Track GPT, Claude, Gemini, DeepSeek pricing changes before they affect your budget.">
+    <meta name="keywords" content="AI API pricing newsletter, LLM pricing updates, AI cost optimization digest, GPT pricing changes, Claude pricing updates">
+    <meta property="og:title" content="AI API Pricing Digest — Weekly Updates on LLM Costs">
+    <meta property="og:description" content="Get weekly updates on AI API pricing changes, new models, and cost optimization tips.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="og-image.png">
+    <meta property="og:url" content="https://getapipulse.com/newsletter.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="AI API Pricing Digest — Weekly Updates on LLM Costs">
+    <meta name="twitter:description" content="Get weekly updates on AI API pricing changes, new models, and cost optimization tips.">
+    <meta name="twitter:image" content="og-image.png">
+    <link rel="canonical" href="https://getapipulse.com/newsletter.html">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="styles.css">
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0CEP7S9Y3J"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-0CEP7S9Y3J');
+    </script>
+    <script src="analytics.js" defer></script>
+    <script src="dynamic-date.js" defer></script>
+    <script src="shared.js" defer></script>
+    <style>
+        .newsletter-hero {
+            padding: 140px 24px 80px; text-align: center; max-width: 800px; margin: 0 auto;
+        }
+        .newsletter-hero h1 {
+            font-size: clamp(32px, 5vw, 48px); font-weight: 800; line-height: 1.1; margin-bottom: 20px;
+            background: linear-gradient(135deg, var(--text-primary) 0%, var(--text-secondary) 100%);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+        }
+        .newsletter-hero p {
+            font-size: 18px; color: var(--text-secondary); max-width: 600px; margin: 0 auto 32px; line-height: 1.6;
+        }
+        .subscribe-card {
+            background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 16px;
+            padding: 40px; max-width: 520px; margin: 0 auto 64px; text-align: center;
+        }
+        .subscribe-card h2 { font-size: 22px; font-weight: 700; margin-bottom: 12px; }
+        .subscribe-card p { color: var(--text-secondary); margin-bottom: 24px; font-size: 15px; }
+        .subscribe-form { display: flex; gap: 8px; max-width: 420px; margin: 0 auto; }
+        .subscribe-form input {
+            flex: 1; padding: 14px 16px; border-radius: 8px; border: 1px solid var(--border);
+            background: var(--bg-card); color: var(--text-primary); font-size: 15px;
+        }
+        .subscribe-form input:focus { outline: 2px solid var(--accent); outline-offset: 2px; border-color: var(--accent); }
+        .subscribe-form button {
+            padding: 14px 28px; border-radius: 8px; border: none; background: var(--accent);
+            color: white; font-weight: 700; cursor: pointer; font-size: 15px; white-space: nowrap;
+            transition: opacity 0.2s;
+        }
+        .subscribe-form button:hover { opacity: 0.9; }
+        #email-msg { font-size: 13px; margin-top: 12px; display: none; }
+        .benefits {
+            max-width: 800px; margin: 0 auto; padding: 0 24px 80px;
+        }
+        .benefits h2 { font-size: 28px; font-weight: 700; text-align: center; margin-bottom: 40px; }
+        .benefits-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 24px; }
+        .benefit-card {
+            background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 12px;
+            padding: 24px; text-align: center;
+        }
+        .benefit-icon { font-size: 32px; margin-bottom: 12px; }
+        .benefit-card h3 { font-size: 16px; font-weight: 700; margin-bottom: 8px; }
+        .benefit-card p { font-size: 14px; color: var(--text-secondary); line-height: 1.5; }
+        .recent-changes {
+            max-width: 800px; margin: 0 auto; padding: 0 24px 80px;
+        }
+        .recent-changes h2 { font-size: 28px; font-weight: 700; text-align: center; margin-bottom: 12px; }
+        .recent-changes .subtitle { text-align: center; color: var(--text-secondary); margin-bottom: 32px; font-size: 15px; }
+        .change-list { display: flex; flex-direction: column; gap: 16px; }
+        .change-item {
+            background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 12px;
+            padding: 20px; display: flex; align-items: center; gap: 16px;
+        }
+        .change-badge {
+            display: inline-block; padding: 4px 10px; border-radius: 6px; font-size: 12px; font-weight: 700;
+            white-space: nowrap;
+        }
+        .badge-drop { background: rgba(34,197,94,0.15); color: #22c55e; }
+        .badge-hike { background: rgba(239,68,68,0.15); color: #ef4444; }
+        .badge-new { background: rgba(99,102,241,0.15); color: #6366f1; }
+        .change-item h3 { font-size: 15px; font-weight: 600; margin: 0; flex: 1; }
+        .change-item .detail { font-size: 13px; color: var(--text-muted); }
+        .social-proof {
+            max-width: 600px; margin: 0 auto; padding: 0 24px 80px; text-align: center;
+        }
+        .social-proof h2 { font-size: 24px; font-weight: 700; margin-bottom: 16px; }
+        .stats-row { display: flex; justify-content: center; gap: 40px; margin-bottom: 24px; }
+        .stat-item .stat-number { font-size: 32px; font-weight: 800; color: var(--accent); }
+        .stat-item .stat-label { font-size: 13px; color: var(--text-muted); margin-top: 4px; }
+        @media (max-width: 768px) {
+            .newsletter-hero { padding: 100px 16px 60px; }
+            .newsletter-hero h1 { font-size: 28px; }
+            .subscribe-form { flex-direction: column; }
+            .benefits-grid { grid-template-columns: 1fr; }
+            .change-item { flex-direction: column; align-items: flex-start; gap: 8px; }
+            .stats-row { flex-direction: column; gap: 20px; }
+        }
+        @media print { nav, .theme-toggle, .back-to-top, .subscribe-card { display: none !important; } body { background: white; color: black; } }
+    </style>
+    <meta name="theme-color" content="#6366f1">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "AI API Pricing Digest — Weekly Updates on LLM Costs",
+        "description": "Get weekly updates on AI API pricing changes, new models, and cost optimization tips.",
+        "url": "https://getapipulse.com/newsletter.html",
+        "publisher": {
+            "@type": "Organization",
+            "name": "APIpulse",
+            "url": "https://getapipulse.com"
+        }
+    }
+    </script>
+</head>
+<body>
+    <a href="#main" class="skip-link">Skip to content</a>
+    <nav>
+        <div class="nav-inner">
+            <a href="index.html" class="logo">API<span>pulse</span></a>
+            <button class="hamburger" onclick="toggleMobileNav()" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+            <div class="nav-links">
+                <a href="calculator.html">Calculator</a>
+                <a href="compare.html">Compare</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="pricing-trends.html">Trends</a>
+                <a href="blog.html">Blog</a>
+                <a href="about.html">About</a>
+                <a href="pricing.html" class="nav-cta" onclick="if(window.trackEvent)window.trackEvent('pro_button_clicked',{source:'nav'})">Get Pro — $29</a>
+                <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
+            </div>
+        </div>
+    </nav>
+
+    <main id="main">
+    <div class="newsletter-hero">
+        <h1>AI API Pricing Moves Fast.<br>Stay Ahead of Every Change.</h1>
+        <p>Get weekly updates on pricing changes, new models, and cost optimization strategies across OpenAI, Anthropic, Google, DeepSeek, Mistral, and 5 more providers.</p>
+    </div>
+
+    <div class="subscribe-card">
+        <h2>Join the API Pricing Digest</h2>
+        <p>One email per week. Pricing changes, cost tips, new model launches. No spam, unsubscribe anytime.</p>
+        <form class="subscribe-form" onsubmit="saveEmail(event)">
+            <input type="email" id="email-input" placeholder="you@company.com" required aria-label="Email address">
+            <button type="submit">Subscribe</button>
+        </form>
+        <p id="email-msg" style="font-size:13px;color:var(--green);margin-top:12px;display:none;"></p>
+    </div>
+
+    <div class="benefits">
+        <h2>What You Get Every Week</h2>
+        <div class="benefits-grid">
+            <div class="benefit-card">
+                <div class="benefit-icon">🔔</div>
+                <h3>Price Change Alerts</h3>
+                <p>Know the instant a provider raises or drops prices. No more surprise bills.</p>
+            </div>
+            <div class="benefit-card">
+                <div class="benefit-icon">💡</div>
+                <h3>Cost Optimization Tips</h3>
+                <p>Concrete strategies to cut your API bill — model routing, caching, batch processing.</p>
+            </div>
+            <div class="benefit-card">
+                <div class="benefit-icon">📊</div>
+                <h3>New Model Analysis</h3>
+                <p>Is the new model worth switching? We break down the pricing and performance tradeoffs.</p>
+            </div>
+            <div class="benefit-card">
+                <div class="benefit-icon">🏆</div>
+                <h3>Best Deals Ranked</h3>
+                <p>Which provider is cheapest for your workload this week? Updated rankings every Friday.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="recent-changes">
+        <h2>Recent Pricing Changes We Caught</h2>
+        <p class="subtitle">Here's what happened in the last 30 days across AI API providers.</p>
+        <div class="change-list">
+            <div class="change-item">
+                <span class="change-badge badge-drop">-67%</span>
+                <div>
+                    <h3>GPT-4o input price dropped</h3>
+                    <div class="detail">$10.00 → $2.50 per 1M tokens — biggest drop of 2026</div>
+                </div>
+            </div>
+            <div class="change-item">
+                <span class="change-badge badge-hike">+10x</span>
+                <div>
+                    <h3>Grok 3 price increased</h3>
+                    <div class="detail">$3.00 → $30.00 per 1M tokens — largest price hike in the market</div>
+                </div>
+            </div>
+            <div class="change-item">
+                <span class="change-badge badge-drop">-75%</span>
+                <div>
+                    <h3>Mistral Large dropped</h3>
+                    <div class="detail">$2.00 → $0.50 per 1M tokens — now competitive with budget models</div>
+                </div>
+            </div>
+            <div class="change-item">
+                <span class="change-badge badge-new">NEW</span>
+                <div>
+                    <h3>Gemini 2.0 Flash Lite launched</h3>
+                    <div class="detail">$0.075/1M input — cheapest production-viable model available</div>
+                </div>
+            </div>
+            <div class="change-item">
+                <span class="change-badge badge-drop">-75%</span>
+                <div>
+                    <h3>DeepSeek V4 Pro dropped</h3>
+                    <div class="detail">$1.75 → $0.44 per 1M tokens — 1M context at budget price</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="social-proof">
+        <h2>Trusted by Developers Tracking AI Costs</h2>
+        <div class="stats-row">
+            <div class="stat-item">
+                <div class="stat-number">33</div>
+                <div class="stat-label">Models Tracked</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">10</div>
+                <div class="stat-label">Providers</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">101</div>
+                <div class="stat-label">Expert Guides</div>
+            </div>
+        </div>
+        <p style="color:var(--text-secondary);font-size:15px;">Pricing data verified <span class="verified-date"></span>. Updated weekly.</p>
+    </div>
+
+    <section style="padding:0 24px 80px;text-align:center;">
+        <a href="pricing-trends.html" class="btn-primary" style="display:inline-block;padding:14px 32px;font-size:16px;font-weight:700;">See All Pricing Trends →</a>
+    </section>
+    </main>
+
+    <button class="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">↑</button>
+
+    <footer>
+        <p>Pricing data last verified: <span class="verified-date"></span></p>
+        <p>&copy; 2026 APIpulse. <a href="index.html">Home</a> · <a href="pricing.html">Pricing</a> · <a href="blog.html">Blog</a> · <a href="about.html">About</a> · <a href="newsletter.html">Newsletter</a> · <a href="unsubscribe.html">Unsubscribe</a></p>
+    </footer>
+</body>
+</html>
