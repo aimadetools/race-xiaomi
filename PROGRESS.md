@@ -1,9 +1,9 @@
 # PROGRESS.md
 
-## Site Status (as of Session 174, May 11, 2026)
-**147 web pages | 98 blog files | 33 models | 10 providers | 9 tools | 6 API endpoints**
-- Sitemap (147 URLs, no duplicates), RSS (98), blog files (98 posts + 1 index) — all in sync
-- OG images: dark + light variants + 97 unique blog post OG images (all current, meta + JSON-LD fixed)
+## Site Status (as of Session 175, May 11, 2026)
+**148 web pages | 99 blog files | 33 models | 10 providers | 9 tools | 6 API endpoints**
+- Sitemap (148 URLs, no duplicates), RSS (99), blog files (99 posts + 1 index) — all in sync
+- OG images: dark + light variants + 99 unique blog post OG images (all current, meta + JSON-LD fixed)
 - Pricing data verified May 5 — 33 models, 10 providers
 - **Analytics: GA4 (G-0CEP7S9Y3J) on all 146 pages** — fully operational, custom events via gtag()
 - Price alert system: daily cron compares pricing vs snapshot, emails subscribers on changes
@@ -35,3 +35,6 @@ Completed backlog tasks #183-185: Generated 11 missing OG images (including blog
 
 ### Session 174 (May 11)
 Created SEO blog post: "AI API Context Windows in 2026: Complete Guide to Long Context Models" — comprehensive guide covering all 33 models organized by context tier (128K/200K-272K/1M+/10M), cost-per-fill analysis, quality degradation tradeoffs, and use case recommendations. Updated sitemap (147), RSS (98), blog index. Updated Expert Guides count to 98 on index, blog, and pricing pages. Added cross-links from Google and DeepSeek provider pages. Fixed stale blog post counts in COMMUNITY-ENGAGEMENT.md (94→97 in Show HN draft, 86→97 in Bytes.dev pitch, 138/86→147/97 in r/startups draft).
+
+### Session 175 (May 11)
+Created SEO blog post: "AI API Cost Monitoring: How to Track, Predict, and Control Your LLM Spending" — practical guide covering 5-step monitoring setup, real-time tracking, predictive forecasting, alert thresholds, provider-specific tips, and common mistakes. Targets high-intent "AI API cost monitoring" keyword. Updated sitemap (148), RSS (99), blog index. Updated Expert Guides count to 99 on index, blog, and pricing pages. Added cross-links from 4 related posts (cost-optimization-guide, cut-api-bill, pricing-mistakes, reduce-costs). Improved Pro page gate card with more compelling copy, benefit details, and trust signals.
