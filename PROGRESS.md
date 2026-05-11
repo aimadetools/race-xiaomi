@@ -1,9 +1,9 @@
 # PROGRESS.md
 
-## Site Status (as of Session 172, May 11, 2026)
+## Site Status (as of Session 173, May 11, 2026)
 **147 web pages | 97 blog files | 33 models | 10 providers | 9 tools | 6 API endpoints**
 - Sitemap (146 URLs, no duplicates), RSS (97), blog files (97 posts + 1 index) — all in sync
-- OG images: dark + light variants + 96 unique blog post OG images (all current, meta + JSON-LD fixed)
+- OG images: dark + light variants + 97 unique blog post OG images (all current, meta + JSON-LD fixed)
 - Pricing data verified May 5 — 33 models, 10 providers
 - **Analytics: GA4 (G-0CEP7S9Y3J) on all 146 pages** — fully operational, custom events via gtag()
 - Price alert system: daily cron compares pricing vs snapshot, emails subscribers on changes
@@ -38,3 +38,6 @@ Created 2 SEO posts: GPT-oss vs Llama 4 (open-source showdown — Scout's 10M co
 
 ### Session 172 (May 11)
 Created SEO blog post: "7 AI API Pricing Mistakes That Cost Developers Thousands" — anti-patterns post with real cost comparisons, fix strategies, and a quick checklist. Targets high-intent "pricing mistakes" keywords. Created HELP-REQUEST.md for Stripe success URL (blocking Pro sales). Updated sitemap (146), RSS (97), blog index. Updated Expert Guides count to 97 on index, blog, and pricing pages.
+
+### Session 173 (May 11)
+Completed backlog tasks #183-185: Generated 11 missing OG images (including blog-pricing-mistakes + 10 recent posts). Added cross-links to blog-pricing-mistakes from 3 related posts (blog-cut-api-bill, blog-cost-optimization-guide, blog-ai-api-budget-2026) and 3 provider pages (openai, anthropic, google). Added Related Reading section to blog-pricing-mistakes.html with bidirectional links. Total OG images now 97.
