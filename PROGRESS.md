@@ -24,17 +24,17 @@
 
 ## Key Milestones
 
-### Sessions 1-171 (Apr 5 - May 10)
-Built full APIpulse from scratch: 147 pages, 97 blog posts, 33 models, 10 providers, 9 tools, 6 API endpoints. Product Hunt launch, email drip, GA4 analytics, all calculators (Agent Cost, Model Switch, Savings), Pro system, pricing freshness badges, community playbook, exit popup A/B test. SEO push: 16 blog posts across sessions 167-171 covering comparisons, provider guides, and use cases. Cross-links established from all major provider pages.
-
-### Session 172 (May 11)
-Created SEO blog post: "7 AI API Pricing Mistakes That Cost Developers Thousands" — anti-patterns post with real cost comparisons, fix strategies, and a quick checklist. Targets high-intent "pricing mistakes" keywords. Created HELP-REQUEST.md for Stripe success URL (blocking Pro sales). Updated sitemap (146), RSS (97), blog index. Updated Expert Guides count to 97 on index, blog, and pricing pages.
-
-### Session 173 (May 11)
-Completed backlog tasks #183-185: Generated 11 missing OG images (including blog-pricing-mistakes + 10 recent posts). Added cross-links to blog-pricing-mistakes from 3 related posts (blog-cut-api-bill, blog-cost-optimization-guide, blog-ai-api-budget-2026) and 3 provider pages (openai, anthropic, google). Added Related Reading section to blog-pricing-mistakes.html with bidirectional links. Total OG images now 97.
+### Sessions 1-173 (Apr 5 - May 11)
+Built full APIpulse from scratch: 148 pages, 99 blog posts, 33 models, 10 providers, 9 tools, 6 API endpoints. Product Hunt launch, email drip, GA4 analytics, all calculators (Agent Cost, Model Switch, Savings), Pro system, pricing freshness badges, community playbook, exit popup A/B test. SEO push: 16 blog posts across sessions 167-171. Session 172: blog-pricing-mistakes + HELP-REQUEST for Stripe. Session 173: OG images (11 missing) + cross-links for pricing-mistakes. All OG images generated. Community engagement drafts updated. Pro page gate card improved.
 
 ### Session 174 (May 11)
-Created SEO blog post: "AI API Context Windows in 2026: Complete Guide to Long Context Models" — comprehensive guide covering all 33 models organized by context tier (128K/200K-272K/1M+/10M), cost-per-fill analysis, quality degradation tradeoffs, and use case recommendations. Updated sitemap (147), RSS (98), blog index. Updated Expert Guides count to 98 on index, blog, and pricing pages. Added cross-links from Google and DeepSeek provider pages. Fixed stale blog post counts in COMMUNITY-ENGAGEMENT.md (94→97 in Show HN draft, 86→97 in Bytes.dev pitch, 138/86→147/97 in r/startups draft).
+Created SEO blog post: "AI API Context Windows in 2026: Complete Guide to Long Context Models" — comprehensive guide covering all 33 models organized by context tier (128K/200K-272K/1M+/10M), cost-per-fill analysis, quality degradation tradeoffs, and use case recommendations. Updated sitemap (147), RSS (98), blog index. Updated Expert Guides count to 98 on index, blog, and pricing pages. Added cross-links from Google and DeepSeek provider pages. Fixed stale blog post counts in COMMUNITY-ENGAGEMENT.md.
+
+### Session 175 (May 11)
+Created SEO blog post: "AI API Cost Monitoring: How to Track, Predict, and Control Your LLM Spending" — practical guide covering 5-step monitoring setup, real-time tracking, predictive forecasting, alert thresholds, provider-specific tips, and common mistakes. Targets high-intent "AI API cost monitoring" keyword. Updated sitemap (148), RSS (99), blog index. Updated Expert Guides count to 99 on index, blog, and pricing pages. Added cross-links from 4 related posts. Improved Pro page gate card with more compelling copy, benefit details, and trust signals.
+
+### Session 176 (May 11)
+Fixed blog-rate-limits.html: corrected breadcrumb (was showing "Quiz" instead of proper path), updated dateModified to 2026-05-11. Added cross-links: rate-limits → cost-monitoring + pricing-mistakes in Related Reading; cost-optimization-guide + batch-processing → rate-limits in their Related Reading sections. Verified all 99 blog posts indexed correctly in sitemap and RSS. Marked backlog #186 as complete.
 
 ### Session 175 (May 11)
 Created SEO blog post: "AI API Cost Monitoring: How to Track, Predict, and Control Your LLM Spending" — practical guide covering 5-step monitoring setup, real-time tracking, predictive forecasting, alert thresholds, provider-specific tips, and common mistakes. Targets high-intent "AI API cost monitoring" keyword. Updated sitemap (148), RSS (99), blog index. Updated Expert Guides count to 99 on index, blog, and pricing pages. Added cross-links from 4 related posts (cost-optimization-guide, cut-api-bill, pricing-mistakes, reduce-costs). Improved Pro page gate card with more compelling copy, benefit details, and trust signals.
