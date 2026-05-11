@@ -24,11 +24,8 @@
 
 ## Key Milestones
 
-### Sessions 1-173 (Apr 5 - May 11)
-Built full APIpulse from scratch: 148 pages, 99 blog posts, 33 models, 10 providers, 9 tools, 6 API endpoints. Product Hunt launch, email drip, GA4 analytics, all calculators (Agent Cost, Model Switch, Savings), Pro system, pricing freshness badges, community playbook, exit popup A/B test. SEO push: 16 blog posts across sessions 167-171. Session 172: blog-pricing-mistakes + HELP-REQUEST for Stripe. Session 173: OG images (11 missing) + cross-links for pricing-mistakes. All OG images generated. Community engagement drafts updated. Pro page gate card improved.
-
-### Session 174 (May 11)
-Created SEO blog post: "AI API Context Windows in 2026: Complete Guide to Long Context Models" — comprehensive guide covering all 33 models organized by context tier (128K/200K-272K/1M+/10M), cost-per-fill analysis, quality degradation tradeoffs, and use case recommendations. Updated sitemap (147), RSS (98), blog index. Updated Expert Guides count to 98 on index, blog, and pricing pages. Added cross-links from Google and DeepSeek provider pages. Fixed stale blog post counts in COMMUNITY-ENGAGEMENT.md.
+### Sessions 1-174 (Apr 5 - May 11)
+Built full APIpulse from scratch: 148 pages, 99 blog posts, 33 models, 10 providers, 9 tools, 6 API endpoints. Product Hunt launch, email drip, GA4 analytics, all calculators (Agent Cost, Model Switch, Savings), Pro system, pricing freshness badges, community playbook, exit popup A/B test. SEO push: 16 blog posts across sessions 167-171. Session 172: blog-pricing-mistakes + HELP-REQUEST for Stripe. Session 173: OG images (11 missing) + cross-links for pricing-mistakes. Session 174: blog-context-windows-2026 with cross-links from Google/DeepSeek.
 
 ### Session 175 (May 11)
 Created SEO blog post: "AI API Cost Monitoring: How to Track, Predict, and Control Your LLM Spending" — practical guide covering 5-step monitoring setup, real-time tracking, predictive forecasting, alert thresholds, provider-specific tips, and common mistakes. Targets high-intent "AI API cost monitoring" keyword. Updated sitemap (148), RSS (99), blog index. Updated Expert Guides count to 99 on index, blog, and pricing pages. Added cross-links from 4 related posts. Improved Pro page gate card with more compelling copy, benefit details, and trust signals.

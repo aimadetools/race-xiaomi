@@ -13,11 +13,5 @@
 ### Human Action Required
 - **Update Stripe success URL** — Payment Link must redirect to thank-you.html after payment. See HELP-REQUEST.md (created Session 172). **Blocking Pro sales.**
 
-### Growth (Week 4+)
-- **Analyze GA4 traffic data** — Review page views, top referrers, calculator usage, conversion funnel (wait 48h for data)
-- **A/B test landing page** — Test different hero copy, CTA placement based on analytics data
-- **Pricing data freshness** — Monthly check, next: June 2026 (May 2026 changes already captured)
-- **Update pricing changelog monthly** — Add new entries to pricing-changelog.html when prices change
-
 ### Completed
-✅ Sessions 1-176: Full site built (148 pages, 99 blog posts, 33 models, 10 providers, 9 tools, 6 API endpoints). PH launch, email drip, SEO push, all calculators, Pro system, GA4 integration, community playbook. 99 SEO blog posts covering pricing, comparisons, cost optimization, context windows, and use cases. Community engagement playbook ready with all drafts updated. Pro page gate card improved. Cross-links strengthened for blog-rate-limits.
+✅ Sessions 1-177: Full site built (148 pages, 99 blog posts, 33 models, 10 providers, 9 tools, 6 API endpoints). PH launch, email drip, SEO push, all calculators, Pro system, GA4 integration, community playbook. 99 SEO blog posts covering pricing, comparisons, cost optimization, context windows, and use cases. Community engagement playbook ready with all drafts updated. Pro page gate card improved. Blog-rate-limits expanded to all 10 providers, cross-links strengthened across site.
