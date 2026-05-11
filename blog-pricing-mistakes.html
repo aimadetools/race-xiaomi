@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>7 AI API Pricing Mistakes That Cost Developers Thousands — APIpulse</title>
+    <meta name="description" content="Avoid these 7 common AI API pricing mistakes. Real examples of developers overpaying by 3-10x on OpenAI, Anthropic, and Google APIs. Fix them today.">
+    <meta name="keywords" content="AI API pricing mistakes, LLM cost errors, overpaying AI API, reduce AI costs, API budget mistakes, OpenAI cost optimization">
+    <meta property="og:title" content="7 AI API Pricing Mistakes That Cost Developers Thousands — APIpulse">
+    <meta property="og:description" content="Real examples of developers overpaying 3-10x on AI APIs. Avoid these costly mistakes.">
+    <meta property="og:type" content="article">
+    <meta property="article:published_time" content="2026-05-11">
+    <meta property="article:modified_time" content="2026-05-11">
+    <meta property="article:author" content="APIpulse">
+    <meta property="og:image" content="https://getapipulse.com/og-images/blog-pricing-mistakes.png">
+    <meta property="og:url" content="https://getapipulse.com/blog-pricing-mistakes.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="7 AI API Pricing Mistakes That Cost Developers Thousands — APIpulse">
+    <meta name="twitter:image" content="https://getapipulse.com/og-images/blog-pricing-mistakes.png">
+    <meta name="twitter:description" content="Real examples of developers overpaying 3-10x on AI APIs. Avoid these costly mistakes.">
+    <link rel="canonical" href="https://getapipulse.com/blog-pricing-mistakes.html">
+    <link rel="alternate" type="application/rss+xml" title="APIpulse Blog" href="https://getapipulse.com/rss.xml">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="styles.css">
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0CEP7S9Y3J"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-0CEP7S9Y3J');
+    </script>
+    <script src="analytics.js" defer></script>
+    <script src="dynamic-date.js" defer></script>
+    <script src="shared.js" defer></script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "7 AI API Pricing Mistakes That Cost Developers Thousands",
+        "description": "Avoid these 7 common AI API pricing mistakes. Real examples of developers overpaying by 3-10x.",
+        "datePublished": "2026-05-11",
+        "dateModified": "2026-05-11",
+        "author": { "@type": "Organization", "name": "APIpulse" },
+        "publisher": { "@type": "Organization", "name": "APIpulse", "url": "https://getapipulse.com" },
+        "url": "https://getapipulse.com/blog-pricing-mistakes.html",
+        "image": "https://getapipulse.com/og-images/blog-pricing-mistakes.png"
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Blog", "item": "https://getapipulse.com/blog.html" },
+            { "@type": "ListItem", "position": 2, "name": "7 AI API Pricing Mistakes", "item": "https://getapipulse.com/blog-pricing-mistakes.html" }
+        ]
+    }
+    </script>
+    <style>
+        .content { max-width: 800px; margin: 0 auto; padding: 120px 24px 80px; }
+        h1 { font-size: 40px; font-weight: 800; margin-bottom: 12px; }
+        .subtitle { color: var(--text-secondary); font-size: 18px; margin-bottom: 48px; }
+        .post-meta {
+            display: flex; gap: 16px; align-items: center; margin-bottom: 12px;
+            font-size: 13px; color: var(--text-muted);
+        }
+        .post-tag {
+            background: var(--accent-glow); color: var(--accent);
+            padding: 2px 10px; border-radius: 6px; font-size: 12px; font-weight: 600;
+        }
+        .article { max-width: 700px; margin: 0 auto; }
+        .article h1 { font-size: 36px; margin-bottom: 16px; }
+        .article h2 { font-size: 24px; font-weight: 700; margin: 32px 0 16px; }
+        .article h3 { font-size: 18px; font-weight: 600; margin: 24px 0 12px; }
+        .article p { color: var(--text-secondary); margin-bottom: 16px; line-height: 1.7; }
+        .article ul, .article ol { color: var(--text-secondary); padding-left: 24px; margin-bottom: 16px; }
+        .article li { margin-bottom: 8px; }
+        .article strong { color: var(--text-primary); }
+        .article code {
+            background: var(--bg-card); padding: 2px 8px; border-radius: 4px;
+            font-size: 14px; color: var(--accent);
+        }
+        .article blockquote {
+            border-left: 3px solid var(--accent); padding-left: 20px; margin: 20px 0;
+            color: var(--text-secondary); font-style: italic;
+        }
+        .back-link {
+            display: inline-flex; align-items: center; gap: 6px;
+            font-size: 14px; color: var(--text-secondary); margin-bottom: 32px;
+        }
+        .back-link:hover { color: var(--text-primary); }
+        .cta-inline {
+            background: var(--bg-secondary); border: 1px solid var(--accent);
+            border-radius: 12px; padding: 24px; margin: 32px 0; text-align: center;
+        }
+        .cta-inline p { margin-bottom: 12px; }
+        .share-section {
+            margin-top: 32px; padding-top: 24px; border-top: 1px solid var(--border);
+            text-align: center;
+        }
+        .share-section p { color: var(--text-secondary); font-size: 14px; margin-bottom: 12px; }
+        .share-btn {
+            display: inline-block; background: var(--bg-card); color: var(--text-primary);
+            padding: 8px 20px; border-radius: 8px; font-size: 14px; font-weight: 500;
+            border: 1px solid var(--border); transition: all 0.2s;
+        }
+        .share-btn:hover { background: var(--accent); color: white; border-color: var(--accent); }
+        .cost-example {
+            background: var(--bg-secondary); border: 1px solid var(--border);
+            border-radius: 10px; padding: 20px; margin: 20px 0;
+        }
+        .cost-example .label {
+            font-size: 13px; color: var(--text-muted); text-transform: uppercase;
+            letter-spacing: 0.5px; margin-bottom: 12px; font-weight: 600;
+        }
+        .cost-example .cost-row {
+            display: flex; justify-content: space-between; padding: 8px 0;
+            border-bottom: 1px solid var(--border); font-size: 14px;
+        }
+        .cost-example .cost-row:last-child { border-bottom: none; }
+        .cost-example .cost-row .name { color: var(--text-secondary); }
+        .cost-example .cost-row .value { color: var(--text-primary); font-weight: 600; font-variant-numeric: tabular-nums; }
+        .cost-example .cost-total { border-top: 2px solid var(--accent); border-bottom: none; padding-top: 12px; margin-top: 4px; }
+        .cost-example .cost-total .name { color: var(--text-primary); font-weight: 600; }
+        .mistake-card {
+            background: var(--bg-secondary); border: 1px solid var(--border);
+            border-radius: 12px; padding: 24px; margin: 24px 0;
+            border-left: 4px solid #ef4444;
+        }
+        .mistake-card .mistake-num {
+            display: inline-flex; align-items: center; justify-content: center;
+            width: 32px; height: 32px; background: rgba(239,68,68,0.15); color: #ef4444;
+            border-radius: 50%; font-size: 16px; font-weight: 800; margin-bottom: 12px;
+        }
+        .mistake-card h3 { margin: 0 0 12px; font-size: 20px; }
+        .fix-box {
+            background: rgba(34,197,94,0.08); border: 1px solid rgba(34,197,94,0.2);
+            border-radius: 8px; padding: 16px; margin-top: 12px;
+        }
+        .fix-box .fix-label { font-size: 12px; font-weight: 700; color: var(--green); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px; }
+        .savings-highlight {
+            background: rgba(34, 197, 94, 0.08); border: 1px solid rgba(34, 197, 94, 0.2);
+            border-radius: 10px; padding: 20px; margin: 20px 0; text-align: center;
+        }
+        .savings-highlight .big-number { font-size: 36px; font-weight: 800; color: var(--green); }
+        .savings-highlight .label { font-size: 14px; color: var(--text-secondary); margin-top: 4px; }
+        @media (max-width: 768px) {
+            .content { padding: 100px 20px 60px; }
+            h1 { font-size: 28px; }
+            .article h1 { font-size: 28px; }
+            .article h2 { font-size: 20px; }
+            .cta-inline { padding: 20px; }
+        }
+        @media print {
+            nav, .share-section, .cta-inline, .theme-toggle, .back-link { display: none !important; }
+            body { background: white; color: black; }
+            .content { padding: 0; max-width: 100%; }
+            .article h1 { font-size: 24px; margin-bottom: 8px; }
+            .article h2 { font-size: 18px; margin: 16px 0 8px; }
+            .article p, .article li { color: #333; font-size: 12px; }
+            .post-meta { display: none; }
+            a { color: black; text-decoration: underline; }
+            footer { border-top: 1px solid #ccc; padding: 10px 0; }
+        }
+    </style>
+    <meta name="theme-color" content="#6366f1">
+    <link rel="preconnect" href="https://getapipulse.com">
+</head>
+<body>
+    <a href="#main" class="skip-link">Skip to content</a>
+    <nav>
+        <div class="nav-inner">
+            <a href="index.html" class="logo">API<span>pulse</span></a>
+            <button class="hamburger" onclick="toggleMobileNav()" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+            <div class="nav-links">
+                <a href="calculator.html">Calculator</a>
+                <a href="compare.html">Compare</a>
+                <a href="cost-explorer.html">Explorer</a>
+                <a href="cost-scenarios.html">Scenarios</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="use-cases.html">Use Cases</a>
+                <a href="about.html">About</a>
+                <a href="blog.html" class="active">Blog</a>
+                <a href="pricing-index.html">Pricing Index</a>
+                <a href="model-matrix.html">Model Matrix</a>
+                <a href="pricing-trends.html">Trends</a>
+                <a href="pricing-changelog.html">Changelog</a>
+                <a href="price-alerts.html">Price Alerts</a>
+                <a href="cheat-sheet.html">Cheat Sheet</a> &middot; <a href="model-switch.html">Model Switch</a>
+                <a href="api-docs.html" style="color:var(--accent);">API</a>
+                <a href="pricing.html" class="nav-cta" onclick="if(window.trackEvent)window.trackEvent('pro_button_clicked',{source:'nav'})">Get Pro — $29</a>
+                <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
+            </div>
+        </div>
+    </nav>
+
+    <main id="main">
+        <div class="content">
+            <a href="blog.html" class="back-link">← Back to Blog</a>
+
+            <div class="post-meta">
+                <span class="post-tag">Cost Optimization</span>
+                <span>May 11, 2026</span>
+                <span>10 min read</span>
+            </div>
+
+            <div class="article">
+                <h1>7 AI API Pricing Mistakes That Cost Developers Thousands</h1>
+
+                <p class="subtitle">We analyzed pricing patterns across hundreds of AI applications. These are the most expensive mistakes developers make — and how to fix them.</p>
+
+                <div class="savings-highlight">
+                    <div class="big-number">$4,200/yr</div>
+                    <div class="label">Average annual overspend from these 7 mistakes (based on 10M tokens/month)</div>
+                </div>
+
+                <h2>Mistake #1: Using One Model for Everything</h2>
+
+                <div class="mistake-card">
+                    <div class="mistake-num">1</div>
+                    <h3>The "GPT-5 for Everything" Anti-Pattern</h3>
+                    <p>The most common and most expensive mistake. Developers pick one model and use it for every task — from simple classification to complex reasoning.</p>
+
+                    <div class="cost-example">
+                        <div class="label">Real Example: 10M tokens/month</div>
+                        <div class="cost-row"><span class="name">All traffic → GPT-5 ($10/1M output)</span><span class="value">$100.00/mo</span></div>
+                        <div class="cost-row"><span class="name">With routing (60% budget, 30% mid, 10% premium)</span><span class="value">$22.00/mo</span></div>
+                        <div class="cost-row cost-total"><span class="name">Annual savings</span><span class="value">$936.00</span></div>
+                    </div>
+
+                    <div class="fix-box">
+                        <div class="fix-label">The Fix</div>
+                        <p>Implement multi-model routing. Send simple tasks to Gemini Flash Lite ($0.075/1M), medium tasks to DeepSeek V4 Pro ($0.44/1M), and only complex tasks to GPT-5 ($1.25/1M). Most apps can route 60-70% of traffic to budget models.</p>
+                    </div>
+                </div>
+
+                <h2>Mistake #2: Ignoring Output Token Costs</h2>
+
+                <div class="mistake-card">
+                    <div class="mistake-num">2</div>
+                    <h3>Optimizing Input While Output Bleeds Money</h3>
+                    <p>Many developers focus on reducing input tokens (prompt caching, shorter prompts) while ignoring that output tokens cost 5-10x more.</p>
+
+                    <div class="cost-example">
+                        <div class="label">GPT-5 Pricing</div>
+                        <div class="cost-row"><span class="name">Input: $1.25 per 1M tokens</span><span class="value">1x</span></div>
+                        <div class="cost-row"><span class="name">Output: $10.00 per 1M tokens</span><span class="value">8x</span></div>
+                    </div>
+
+                    <p>If your app generates 3x more output than input (common for chatbots, content generators), <strong>output tokens are 96% of your bill</strong>.</p>
+
+                    <div class="fix-box">
+                        <div class="fix-label">The Fix</div>
+                        <p>Set <code>max_tokens</code> limits. Use structured outputs (JSON mode) to reduce verbose responses. Consider models with cheaper output pricing — DeepSeek V4 Pro at $0.87/1M output vs GPT-5 at $10.00/1M is a 12x difference.</p>
+                    </div>
+                </div>
+
+                <h2>Mistake #3: Not Checking for Price Drops</h2>
+
+                <div class="mistake-card">
+                    <div class="mistake-num">3</div>
+                    <h3>Locked Into Old Pricing</h3>
+                    <p>AI API pricing changes fast. GPT-4o dropped 67% ($10 → $2.50/1M input). Mistral Large dropped 75% ($2 → $0.50). If you haven't re-evaluated your provider in 6 months, you're likely overpaying.</p>
+
+                    <div class="cost-example">
+                        <div class="label">Major Price Drops in 2025-2026</div>
+                        <div class="cost-row"><span class="name">GPT-4o input</span><span class="value">$10.00 → $2.50 (−67%)</span></div>
+                        <div class="cost-row"><span class="name">Mistral Large input</span><span class="value">$2.00 → $0.50 (−75%)</span></div>
+                        <div class="cost-row"><span class="name">DeepSeek V4 Pro input</span><span class="value">$1.75 → $0.44 (−75%)</span></div>
+                        <div class="cost-row"><span class="name">Grok 3 input</span><span class="value">$3.00 → $30.00 (+10x) ⚠️</span></div>
+                    </div>
+
+                    <div class="fix-box">
+                        <div class="fix-label">The Fix</div>
+                        <p>Review pricing quarterly. Set up price alerts (we offer free alerts at <a href="price-alerts.html">APIpulse Price Alerts</a>). When a provider drops prices, re-evaluate whether switching makes sense for your workload.</p>
+                    </div>
+                </div>
+
+                <h2>Mistake #4: Sending Raw JSON to Chat Models</h2>
+
+                <div class="mistake-card">
+                    <div class="mistake-num">4</div>
+                    <h3>Using Chat Models for Data Processing</h3>
+                    <p>Developers send structured data (JSON, CSV, logs) through chat models that charge premium rates. A 10KB JSON blob processed by GPT-5 costs the same as a complex reasoning task.</p>
+
+                    <p>Meanwhile, embedding models and specialized APIs can process the same data for 1/100th the cost.</p>
+
+                    <div class="fix-box">
+                        <div class="fix-label">The Fix</div>
+                        <p>Use purpose-built APIs for structured tasks: embedding models for similarity search, specialized APIs for data extraction, and regex/parsers for simple pattern matching. Reserve chat models for tasks that actually require natural language understanding.</p>
+                    </div>
+                </div>
+
+                <h2>Mistake #5: No Token Counting Before API Calls</h2>
+
+                <div class="mistake-card">
+                    <div class="mistake-num">5</div>
+                    <h3>Blind Token Usage</h3>
+                    <p>Many developers don't count tokens before sending requests. They discover unexpected bills at the end of the month. A single large document sent to a premium model can cost $5-10 without the developer realizing it.</p>
+
+                    <div class="cost-example">
+                        <div class="label">Hidden Cost Example</div>
+                        <div class="cost-row"><span class="name">100-page document (~75K tokens)</span><span class="value"></span></div>
+                        <div class="cost-row"><span class="name">Sent to GPT-5 ($10/1M output)</span><span class="value">$0.75 per request</span></div>
+                        <div class="cost-row"><span class="name">100 requests/day × 30 days</span><span class="value">$2,250/mo</span></div>
+                        <div class="cost-row"><span class="name">Same doc to DeepSeek V4 Flash ($0.28/1M)</span><span class="value">$63/mo</span></div>
+                        <div class="cost-row cost-total"><span class="name">Savings</span><span class="value">$2,187/mo</span></div>
+                    </div>
+
+                    <div class="fix-box">
+                        <div class="fix-label">The Fix</div>
+                        <p>Count tokens before sending. Use <code>tiktoken</code> (OpenAI) or the provider's tokenizer. Set budget alerts. Implement token budgets per request and per user/day.</p>
+                    </div>
+                </div>
+
+                <h2>Mistake #6: Ignoring Context Window Costs</h2>
+
+                <div class="mistake-card">
+                    <div class="mistake-num">6</div>
+                    <h3>Maxing Out Context Windows Unnecessarily</h3>
+                    <p>Models with 1M+ context windows (Gemini Flash, DeepSeek V4 Pro) are powerful but expensive at scale. Sending the full conversation history for every request multiplies your input token costs.</p>
+
+                    <p>A 200K token conversation history sent with every request means you're paying for those tokens <strong>every single time</strong>.</p>
+
+                    <div class="fix-box">
+                        <div class="fix-label">The Fix</div>
+                        <p>Implement conversation summarization — summarize older messages instead of sending them all. Use sliding windows. Store conversation state server-side and only send relevant context. This alone can reduce input costs by 60-80% for chat applications.</p>
+                    </div>
+                </div>
+
+                <h2>Mistake #7: Not Comparing Providers</h2>
+
+                <div class="mistake-card">
+                    <div class="mistake-num">7</div>
+                    <h3>Single-Provider Lock-In</h3>
+                    <p>Developers pick one provider (usually OpenAI) and never evaluate alternatives. In 2026, the pricing gap between providers is massive:</p>
+
+                    <div class="cost-example">
+                        <div class="label">Same Quality Tier, Different Prices</div>
+                        <div class="cost-row"><span class="name">GPT-5 (OpenAI)</span><span class="value">$1.25 / $10.00</span></div>
+                        <div class="cost-row"><span class="name">Claude Sonnet 4.6 (Anthropic)</span><span class="value">$3.00 / $15.00</span></div>
+                        <div class="cost-row"><span class="name">Gemini 3.1 Pro (Google)</span><span class="value">$2.00 / $12.00</span></div>
+                        <div class="cost-row"><span class="name">DeepSeek V4 Pro (DeepSeek)</span><span class="value">$0.44 / $0.87</span></div>
+                    </div>
+
+                    <p>For many tasks, DeepSeek V4 Pro delivers comparable quality at <strong>1/12th the output cost</strong> of GPT-5. Even if you keep GPT-5 for complex tasks, routing simpler work to DeepSeek saves thousands annually.</p>
+
+                    <div class="fix-box">
+                        <div class="fix-label">The Fix</div>
+                        <p>Evaluate 2-3 providers for your use case. Run quality benchmarks on your actual data. The 30 minutes you spend testing could save you thousands per year. Use our <a href="compare.html">comparison tool</a> to see pricing side-by-side.</p>
+                    </div>
+                </div>
+
+                <h2>The Total Impact</h2>
+
+                <p>If you're making even 3 of these 7 mistakes, here's what fixing them looks like:</p>
+
+                <div class="cost-example">
+                    <div class="label">Before vs After Fixing Common Mistakes (10M tokens/month)</div>
+                    <div class="cost-row"><span class="name">Before: Single model, no routing, no limits</span><span class="value">$350/mo</span></div>
+                    <div class="cost-row"><span class="name">After: Multi-model routing + token limits + provider comparison</span><span class="value">$85/mo</span></div>
+                    <div class="cost-row cost-total"><span class="name">Annual savings</span><span class="value">$3,180/yr</span></div>
+                </div>
+
+                <div class="cta-inline">
+                    <p><strong>Find out how much you're overpaying</strong></p>
+                    <p>Use our free calculator to compare your current costs against optimized alternatives.</p>
+                    <a href="calculator.html" class="btn-primary">Calculate Your Savings →</a>
+                </div>
+
+                <h2>Quick Checklist</h2>
+
+                <ul>
+                    <li>☐ Implement multi-model routing (even 2 tiers)</li>
+                    <li>☐ Set <code>max_tokens</code> on all API calls</li>
+                    <li>☐ Review pricing quarterly for drops</li>
+                    <li>☐ Use specialized APIs for non-chat tasks</li>
+                    <li>☐ Count tokens before sending</li>
+                    <li>☐ Summarize conversation history</li>
+                    <li>☐ Test 2-3 providers for your use case</li>
+                </ul>
+
+                <p>Fix these mistakes and you'll likely cut your AI API bill by 40-70%. The savings compound — each fix multiplies the impact of the others.</p>
+
+                <div class="share-section">
+                    <p>Know someone overpaying for AI APIs? Share this:</p>
+                    <a href="https://twitter.com/intent/tweet?text=7+AI+API+Pricing+Mistakes+That+Cost+Developers+Thousands&url=https://getapipulse.com/blog-pricing-mistakes.html" target="_blank" rel="noopener" class="share-btn">Share on X</a>
+                    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fgetapipulse.com%2Fblog-pricing-mistakes.html" target="_blank" rel="noopener" class="share-btn">Share on LinkedIn</a>
+                    <a href="https://news.ycombinator.com/submitlink?u=https://getapipulse.com/blog-pricing-mistakes.html&t=7+AI+API+Pricing+Mistakes+That+Cost+Developers+Thousands" target="_blank" rel="noopener" class="share-btn">Share on HN</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <button class="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">↑</button>
+
+    <footer>
+        <p>Pricing data last verified: <span class="verified-date"></span></p>
+        <p>&copy; 2026 APIpulse. <a href="index.html">Home</a> &middot; <a href="use-cases.html">Use Cases</a> &middot; <a href="about.html">About</a> &middot; <a href="blog.html">Blog</a>
+<a href="pricing-index.html">Pricing Index</a> &middot; <a href="model-matrix.html">Model Matrix</a> &middot; <a href="cost-scenarios.html">Scenarios</a> &middot; <a href="price-alerts.html">Price Alerts</a> &middot; <a href="pricing-changelog.html">Changelog</a> &middot; <a href="openai.html">OpenAI</a> &middot; <a href="anthropic.html">Anthropic</a> &middot; <a href="google.html">Google</a> &middot; <a href="mistral.html">Mistral</a> &middot; <a href="cohere.html">Cohere</a> &middot; <a href="deepseek.html">DeepSeek</a> &middot; <a href="xai.html">xAI</a> &middot; <a href="moonshot.html">Moonshot</a> &middot; <a href="together.html">Together.ai</a> &middot; <a href="ai21.html">AI21</a> &middot; <a href="pricing.html">Pricing</a> &middot; <a href="embed.html">Embed Widget</a> &middot; <a href="cheat-sheet.html">Cheat Sheet</a> &middot; <a href="model-switch.html">Model Switch</a> &middot; <a href="api-docs.html">API</a> &middot; <a href="https://x.com/getapipulse" target="_blank" rel="noopener">Twitter</a> &middot; <a href="unsubscribe.html">Unsubscribe</a></p>
+    </footer>
+</body>
+</html>

@@ -1,8 +1,8 @@
 # PROGRESS.md
 
-## Site Status (as of Session 171, May 10, 2026)
-**146 web pages | 96 blog files | 33 models | 10 providers | 9 tools | 6 API endpoints**
-- Sitemap (145 URLs, no duplicates), RSS (96), blog files (96 posts + 1 index) — all in sync
+## Site Status (as of Session 172, May 11, 2026)
+**147 web pages | 97 blog files | 33 models | 10 providers | 9 tools | 6 API endpoints**
+- Sitemap (146 URLs, no duplicates), RSS (97), blog files (97 posts + 1 index) — all in sync
 - OG images: dark + light variants + 96 unique blog post OG images (all current, meta + JSON-LD fixed)
 - Pricing data verified May 5 — 33 models, 10 providers
 - **Analytics: GA4 (G-0CEP7S9Y3J) on all 146 pages** — fully operational, custom events via gtag()
@@ -18,7 +18,7 @@
 - **Exit popup A/B test:** 3 variants (cost savings, alerts, social proof), GA4 variant tracking for conversion analysis
 
 ## Blocked on Human Action
-1. **Stripe success URL** — Must update Payment Link to redirect to thank-you.html after payment. Without this, Pro buyers can't unlock features. See HELP-REQUEST.md. **Blocking Pro sales.**
+1. **Stripe success URL** — Must update Payment Link to redirect to thank-you.html after payment. Without this, Pro buyers can't unlock features. See HELP-REQUEST.md (created Session 172). **Blocking Pro sales.**
 
 ---
 
@@ -35,3 +35,6 @@ Created 2 SEO posts: Claude Sonnet 4.6 vs GPT-5 (GPT-5 58% cheaper, Sonnet 4.6 3
 
 ### Session 171 (May 10)
 Created 2 SEO posts: GPT-oss vs Llama 4 (open-source showdown — Scout's 10M context vs GPT-oss's lower input pricing) + Best AI API for Summarization 2026 (Gemini Flash ranked #1 for value, 6 models compared with cost scenarios). Updated sitemap (145), RSS (96), blog index. Added cross-links from OpenAI, Together.ai, and Google provider pages. Updated Expert Guides count to 96 on index, blog, and pricing pages.
+
+### Session 172 (May 11)
+Created SEO blog post: "7 AI API Pricing Mistakes That Cost Developers Thousands" — anti-patterns post with real cost comparisons, fix strategies, and a quick checklist. Targets high-intent "pricing mistakes" keywords. Created HELP-REQUEST.md for Stripe success URL (blocking Pro sales). Updated sitemap (146), RSS (97), blog index. Updated Expert Guides count to 97 on index, blog, and pricing pages.
