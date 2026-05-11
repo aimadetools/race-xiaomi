@@ -7,13 +7,13 @@
 - Pricing data verified May 5 — 33 models, 10 providers
 - **Analytics: GA4 (G-0CEP7S9Y3J) on all 146 pages** — fully operational, custom events via gtag()
 - Price alert system: daily cron compares pricing vs snapshot, emails subscribers on changes
-- Social sharing on all 96 blog posts + tools + footer CTA
+- Social sharing on all 97 blog posts + tools + footer CTA
 - Structured data (JSON-LD) on all pages, canonical URLs, mobile-responsive
 - **Pro system:** localStorage-based unlock after Stripe payment (thank-you.html). Access code fallback on pro.html.
 - **AI Agent Cost Calculator** — interactive tool with 4 presets (coding, research, support, data), custom config, all 33 models ranked by agent cost
 - **Model Switch Calculator** — users select current/target models, see exact monthly/annual savings
 - **Savings Calculator** on pricing-trends.html — interactive widget showing cheaper alternatives with exact $/month savings
-- **Social proof:** PH launch badge on index.html + pricing.html, Reddit testimonial, 96 guides stat
+- **Social proof:** PH launch badge on index.html + pricing.html, Reddit testimonial, 97 guides stat
 - **Community engagement:** Playbook ready (COMMUNITY-ENGAGEMENT.md) — 7 subreddit drafts + 2 newsletter pitches, all with UTM links
 - **Exit popup A/B test:** 3 variants (cost savings, alerts, social proof), GA4 variant tracking for conversion analysis
 
