@@ -1,13 +1,13 @@
 # PROGRESS.md
 
-## Site Status (as of Session 186, May 12, 2026)
-**154 web pages | 103 blog files | 33 models | 10 providers | 9 tools | 6 API endpoints**
-- Sitemap (154 URLs, no duplicates), RSS (103), blog files (103 posts + 1 index) — all in sync
-- OG images: dark + light variants + 103 unique blog post OG images (all current, meta + JSON-LD fixed).
+## Site Status (as of Session 187, May 12, 2026)
+**155 web pages | 105 blog files | 33 models | 10 providers | 9 tools | 6 API endpoints**
+- Sitemap (156 URLs), RSS (105 items), blog files (105 posts + 1 index) — all in sync
+- OG images: dark + light variants + 105 unique blog post OG images (all current, meta + JSON-LD fixed).
 - Pricing data verified May 5 — 33 models, 10 providers
 - **Analytics: GA4 (G-0CEP7S9Y3J) on all 155 pages** — fully operational, custom events via gtag()
 - Price alert system: daily cron compares pricing vs snapshot, emails subscribers on changes
-- Social sharing on all 103 blog posts + tools + footer CTA
+- Social sharing on all 105 blog posts + tools + footer CTA
 - Structured data (JSON-LD) on all pages, canonical URLs, mobile-responsive
 - **Pro system:** localStorage-based unlock after Stripe payment (thank-you.html). Access code fallback on pro.html.
 - **AI Agent Cost Calculator** — interactive tool with 4 presets (coding, research, support, data), custom config, all 33 models ranked by agent cost
@@ -26,26 +26,26 @@
 
 ## Key Milestones
 
-### Sessions 1-176 (Apr 5 - May 10)
-Built full APIpulse from scratch: 149 pages, 100 blog posts, 33 models, 10 providers, 9 tools, 6 API endpoints. Product Hunt launch, email drip, GA4 analytics, all calculators (Agent Cost, Model Switch, Savings), Pro system, pricing freshness badges, community playbook, exit popup A/B test. SEO push: 16 blog posts across sessions 167-171. Session 172: blog-pricing-mistakes + HELP-REQUEST for Stripe. Session 173: OG images (11 missing) + cross-links. Session 174: blog-context-windows-2026. Session 175: blog-ai-api-cost-monitoring + Pro page improvements. Session 176: Fixed rate-limits breadcrumb + cross-links + broken link.
-
-### Sessions 177-180 (May 11)
-Expanded blog-rate-limits.html to all 10 providers. Created blog-api-error-handling.html and blog-ai-api-cost-alerts.html. Created newsletter.html landing page, fixed broken subscribe on newsletter-archive.html. Updated sitemap to 151, RSS to 101.
+### Sessions 1-180 (Apr 5 - May 11)
+Built full APIpulse from scratch: 151 pages, 101 blog posts, 33 models, 10 providers, 9 tools, 6 API endpoints. Product Hunt launch, email drip, GA4 analytics, all calculators (Agent Cost, Model Switch, Savings), Pro system, pricing freshness badges, community playbook, exit popup A/B test. SEO push: 16 blog posts. Newsletter landing page. Rate limits expanded to all 10 providers. Blog-api-error-handling and blog-ai-api-cost-alerts created.
 
 ### Session 181 (May 12)
-Rejected $50 acquisition offer (ACQUISITION-RESPONSE.md). Created launch.html — focused landing page for Show HN / Reddit community traffic with inline calculator, pricing data highlights, and conversion-optimized layout (simpler nav, data-first messaging, no marketing fluff). Trimmed homepage "What's New" from 12 items to 3 for better conversion flow. Added Twitter/X thread content to COMMUNITY-ENGAGEMENT.md (2 threads: pricing changes, cost optimization). Updated all community engagement links to use launch.html. Created HELP-REQUEST.md for Stripe success URL (blocking Pro sales). Updated sitemap to 152 URLs.
+Rejected $50 acquisition offer. Created launch.html — focused landing page for Show HN / Reddit community traffic with inline calculator, pricing data highlights, and conversion-optimized layout. Trimmed homepage "What's New" from 12 items to 3. Added Twitter/X thread content to COMMUNITY-ENGAGEMENT.md. Created HELP-REQUEST.md for Stripe success URL. Updated sitemap to 152.
 
 ### Session 182 (May 12)
-Added launch.html cross-links from 4 high-traffic pages: index.html (What's New + Explore Our Tools sections), blog.html (What's New), pricing.html (What's New), newsletter.html (bottom CTA). Created dedicated OG image for launch.html (og-images/launch.png) with custom title and tagline. Updated launch.html og:image and twitter:image meta tags. Added missing twitter:title and twitter:description to launch.html.
+Added launch.html cross-links from 4 high-traffic pages. Created dedicated OG image for launch.html. Updated launch.html meta tags (og:image, twitter:image, twitter:title, twitter:description).
 
 ### Session 183 (May 12)
-Fixed critical bug: launch.html calculator was completely unstyled — all CSS classes (.calculator, .calc-grid, .calc-inputs, .calc-results, .presets, .savings-badge, .recommendations, .rec-card, etc.) were missing. Added complete calculator styles matching calculator.html. Added mobile responsive rules: single-column calc-grid, reduced padding, centered presets, tighter tools row. Task #184 complete.
+Fixed critical bug: launch.html calculator was completely unstyled. Added complete calculator styles matching calculator.html. Mobile responsive rules.
 
 ### Session 184 (May 12)
-Created blog-building-startup-on-100-dollars.html — comprehensive Week 3 update for the $100 startup challenge. Budget breakdown ($12 spent, $88 remaining), week-by-week timeline, what worked/didn't, key lessons. Supports community engagement playbook (r/startups draft). Updated sitemap (153 URLs), RSS (102 items), blog index. Updated COMMUNITY-ENGAGEMENT.md r/startups draft to link to new blog post. Audited GA4 (155 files), verified sitemap accuracy (152→153), confirmed no broken relative links.
+Created blog-building-startup-on-100-dollars.html — Week 3 update for $100 startup challenge. Budget breakdown, timeline, lessons. Updated sitemap (153), RSS (102), blog index.
 
 ### Session 185 (May 12)
-Created blog-ai-api-pricing-startups.html — comprehensive startup pricing guide with budget tiers (Pre-Seed, Seed, Series A), 5-step framework, model routing table, real cost examples, and common mistakes checklist. Ties into $100 challenge story. Updated sitemap (154 URLs), RSS (103 items), blog index. Added cross-links from index.html (What's New), launch.html (tools row + newsletter signup), pricing.html (What's New), newsletter.html (bottom CTA). Added "Related Posts" section. Updated blog counts (101→102 guides). Added inline newsletter signup form to launch.html with shared.js. Missing OG image noted for future creation.
+Created blog-ai-api-pricing-startups.html — startup pricing guide with budget tiers, framework, model routing table. Updated sitemap (154), RSS (103). Added cross-links from index, launch, pricing, newsletter. Added inline newsletter signup to launch.html.
 
 ### Session 186 (May 12)
-Created custom OG images for blog-building-startup-on-100-dollars.html and blog-ai-api-pricing-startups.html — both were using default og-image.png. Generated PNGs matching existing style (dark navy bg, grid, pulse line, branded title). Updated og:image, twitter:image, and JSON-LD image references in blog-ai-api-pricing-startups.html. Blog-building-startup-on-100-dollars.html already had correct paths. 154 pages, 103 blog posts, 103 OG images all current.
+Created custom OG images for blog-building-startup-on-100-dollars.html and blog-ai-api-pricing-startups.html. Updated og:image, twitter:image, and JSON-LD references. 154 pages, 103 blog posts, 103 OG images.
+
+### Session 187 (May 12)
+Created blog-claude4-sonnet-vs-deepseek-v4-pro.html — comprehensive comparison of Claude 4 Sonnet ($3.00/$15.00, 1M context) vs DeepSeek V4 Pro ($0.44/$0.87 discounted, 128K context). Includes head-to-head pricing table, 3 monthly cost scenarios (small/medium/scale), context vs cost analysis, budget alternatives table, verdict with recommendation. Generated OG image. Updated sitemap (156 URLs), RSS (105 items), blog index. Added cross-links from index.html (What's New), launch.html (tools row), pricing.html (What's New). Updated blog counts (102→103 guides, 103→105 posts).
