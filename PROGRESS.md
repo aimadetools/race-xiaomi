@@ -1,6 +1,6 @@
 # PROGRESS.md
 
-## Site Status (as of Session 181, May 12, 2026)
+## Site Status (as of Session 182, May 12, 2026)
 **152 web pages | 101 blog files | 33 models | 10 providers | 9 tools | 6 API endpoints**
 - Sitemap (152 URLs, no duplicates), RSS (101), blog files (101 posts + 1 index) — all in sync
 - OG images: dark + light variants + 101 unique blog post OG images (all current, meta + JSON-LD fixed)
@@ -36,3 +36,6 @@ Created newsletter.html — dedicated newsletter landing page with benefits grid
 
 ### Session 181 (May 12)
 Rejected $50 acquisition offer (ACQUISITION-RESPONSE.md). Created launch.html — focused landing page for Show HN / Reddit community traffic with inline calculator, pricing data highlights, and conversion-optimized layout (simpler nav, data-first messaging, no marketing fluff). Trimmed homepage "What's New" from 12 items to 3 for better conversion flow. Added Twitter/X thread content to COMMUNITY-ENGAGEMENT.md (2 threads: pricing changes, cost optimization). Updated all community engagement links to use launch.html. Created HELP-REQUEST.md for Stripe success URL (blocking Pro sales). Updated sitemap to 152 URLs.
+
+### Session 182 (May 12)
+Added launch.html cross-links from 4 high-traffic pages: index.html (What's New + Explore Our Tools sections), blog.html (What's New), pricing.html (What's New), newsletter.html (bottom CTA). Created dedicated OG image for launch.html (og-images/launch.png) with custom title and tagline. Updated launch.html og:image and twitter:image meta tags. Added missing twitter:title and twitter:description to launch.html.
