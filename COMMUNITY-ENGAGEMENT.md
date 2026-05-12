@@ -65,7 +65,7 @@ What I learned:
 
 Tech stack: Static HTML + Vercel. No backend. All calculations in JavaScript.
 
-The tool is free: https://getapipulse.com?utm_source=reddit&utm_medium=post&utm_campaign=r_saas_build
+The tool is free: https://getapipulse.com/launch.html?utm_source=reddit&utm_medium=post&utm_campaign=r_saas_build
 
 Happy to answer questions about the build process or the PH launch.
 
@@ -78,7 +78,7 @@ I built a calculator that lets you estimate monthly AI API costs across provider
 - Provider comparison table
 - Cost-per-request breakdown
 
-It's completely free, no signup required: https://getapipulse.com?utm_source=reddit&utm_medium=post&utm_campaign=r_webdev_tool
+It's completely free, no signup required: https://getapipulse.com/launch.html?utm_source=reddit&utm_medium=post&utm_campaign=r_webdev_tool
 
 For weekly pricing updates: https://getapipulse.com/newsletter.html?utm_source=reddit&utm_medium=post&utm_campaign=r_webdev_tool
 
@@ -105,7 +105,7 @@ Key pages:
 
 All static HTML/JS, no backend, no signup. Deployed on Vercel.
 
-URL: https://getapipulse.com/pricing-trends.html?utm_source=hn&utm_medium=show_hn&utm_campaign=pricing_trends
+URL: https://getapipulse.com/launch.html?utm_source=hn&utm_medium=show_hn&utm_campaign=pricing_trends
 
 ### Reddit r/artificial — Pricing Data Insights
 **Title**: "AI API pricing in 2026: GPT-4o dropped 67%, Mistral dropped 75%, Grok 3 jumped 10x"
@@ -125,7 +125,7 @@ Budget models are now production-viable:
 - Llama 3.1 8B at $0.10/1M via Together.ai
 - DeepSeek V4 Flash at $0.14/1M with 1M context
 
-I built a free tool to track all this: https://getapipulse.com/pricing-trends.html?utm_source=reddit&utm_medium=post&utm_campaign=r_artificial_pricing
+I built a free tool to track all this: https://getapipulse.com/launch.html?utm_source=reddit&utm_medium=post&utm_campaign=r_artificial_pricing
 
 Full comparison of 33 models across 10 providers. Would be curious to hear what models everyone's actually using in production.
 
@@ -148,7 +148,7 @@ The gap is closing fast. Gemini Flash Lite at $0.075 is actually cheaper than mo
 
 For self-hosters: the break-even point vs API calls depends heavily on utilization. At >80% GPU utilization, self-hosting wins. Below 50%, APIs are usually cheaper when you factor in ops overhead.
 
-Full comparison: https://getapipulse.com?utm_source=reddit&utm_medium=post&utm_campaign=r_localllama_oss
+Full comparison: https://getapipulse.com/launch.html?utm_source=reddit&utm_medium=post&utm_campaign=r_localllama_oss
 
 ### Reddit r/startups — Build in Public
 **Title**: "Building a startup on $100 — Week 3 update (AI API pricing tool)"
@@ -171,7 +171,7 @@ Traffic: Growing steadily from PH launch and organic SEO.
 
 Next up: Community distribution, newsletter pitches, conversion optimization.
 
-The tool: https://getapipulse.com?utm_source=reddit&utm_medium=post&utm_campaign=r_startups_journey
+The tool: https://getapipulse.com/launch.html?utm_source=reddit&utm_medium=post&utm_campaign=r_startups_journey
 
 Happy to share specifics about the build process, tech stack, or PH launch strategy.
 
@@ -190,9 +190,91 @@ I analyzed current AI API pricing across all major providers. Key findings:
 
 5. **The cheapest option depends on workload**: For high-volume classification, Llama 3.1 8B ($0.10) wins. For long-context analysis, Gemini Flash ($0.10/1M, 1M context) wins. For code, DeepSeek V4 Pro ($0.44/1M, 1M context) wins.
 
-Full data with interactive calculators: https://getapipulse.com/pricing-trends.html?utm_source=reddit&utm_medium=post&utm_campaign=r_ml_analysis
+Full data with interactive calculators: https://getapipulse.com/launch.html?utm_source=reddit&utm_medium=post&utm_campaign=r_ml_analysis
 
 Data covers input/output pricing, context windows, and cost-per-workload comparisons.
+
+---
+
+## Twitter/X Threads
+
+### Thread 1: Pricing Changes (highest engagement potential)
+**Tweet 1:**
+AI API pricing changed dramatically in 2026. Here's what happened to your budget:
+
+🧵 Thread ↓
+
+**Tweet 2:**
+The biggest drops:
+• GPT-4o: $10 → $2.50/1M (-67%)
+• Mistral Large: $2 → $0.50 (-75%)
+• DeepSeek V4 Pro: $1.75 → $0.44 (-75%)
+
+If you haven't re-evaluated your provider in 6 months, you're overpaying.
+
+**Tweet 3:**
+The outlier: Grok 3 went from $3 → $30/1M input.
+
+That's a 10x price increase. Biggest price hike in the market.
+
+**Tweet 4:**
+Budget models are now production-viable:
+• Gemini 2.0 Flash Lite: $0.075/1M
+• Llama 3.1 8B: $0.10/1M
+• DeepSeek V4 Flash: $0.14/1M
+
+That's 1/20th the cost of 2024 flagships.
+
+**Tweet 5:**
+The optimal strategy in 2026: multi-model pipelines.
+
+• Simple tasks → Gemini Flash ($0.10/1M)
+• Code → DeepSeek V4 Pro ($0.44/1M)
+• Complex reasoning → GPT-5 ($1.25/1M)
+
+Average: under $2/1M tokens.
+
+**Tweet 6:**
+I built a free tool to track all of this — 33 models, 10 providers, interactive calculators.
+
+Calculate your exact monthly cost: https://getapipulse.com/launch.html?utm_source=x&utm_medium=thread&utm_campaign=pricing_changes
+
+No signup. No tracking. Just data.
+
+### Thread 2: Cost Optimization Tips
+**Tweet 1:**
+How to cut your AI API bill by 40% (with real numbers):
+
+🧵 ↓
+
+**Tweet 2:**
+Strategy 1: Model routing.
+
+80% of chatbot requests work fine on GPT-4o mini ($0.15/1M) instead of GPT-4o ($2.50/1M).
+
+That's a 17x cost reduction for most of your traffic.
+
+**Tweet 3:**
+Strategy 2: Prompt optimization.
+
+Average prompt has 40% unnecessary tokens. Trimming from 2000 to 1200 input tokens = 40% savings on every request.
+
+**Tweet 4:**
+Strategy 3: Response caching.
+
+If 30% of requests are similar/identical, caching saves 30% of output costs. For GPT-4o at $10/1M output, that's $3/1M saved.
+
+**Tweet 5:**
+Strategy 4: Batch processing.
+
+OpenAI offers 50% discount for batch API. If your workload isn't time-sensitive, batch everything.
+
+**Tweet 6:**
+I built a free calculator that models all of these strategies:
+
+https://getapipulse.com/launch.html?utm_source=x&utm_medium=thread&utm_campaign=cost_optimization
+
+33 models, 10 providers. See your exact savings.
 
 ---
 
@@ -212,7 +294,7 @@ Key data points for your readers:
 
 Interactive tools: cost calculator, model comparison, savings calculator, pricing trends.
 
-Site: https://getapipulse.com/pricing-trends.html?utm_source=tldr&utm_medium=newsletter&utm_campaign=pitch
+Site: https://getapipulse.com/launch.html?utm_source=tldr&utm_medium=newsletter&utm_campaign=pitch
 Newsletter signup: https://getapipulse.com/newsletter.html
 
 Happy to provide any data or quotes for a piece.
@@ -231,7 +313,7 @@ The AI API pricing landscape has shifted massively in 2025-2026. I built APIpuls
 
 Would be a great fit for your developer audience. Free tool, no signup required.
 
-Site: https://getapipulse.com?utm_source=bytes&utm_medium=newsletter&utm_campaign=pitch
+Site: https://getapipulse.com/launch.html?utm_source=bytes&utm_medium=newsletter&utm_campaign=pitch
 Newsletter signup: https://getapipulse.com/newsletter.html
 
 Let me know if you'd like any data or a guest contribution.
@@ -255,3 +337,4 @@ Let me know if you'd like any data or a guest contribution.
 Use GA4 to track referral traffic from each community:
 - `utm_source=reddit&utm_medium=post&utm_campaign=r_saas`
 - `utm_source=hn&utm_medium=show_hn`
+- **Landing page**: Use `launch.html` for all community traffic (focused, conversion-optimized, inline calculator)

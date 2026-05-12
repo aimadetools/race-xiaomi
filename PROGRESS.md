@@ -1,8 +1,8 @@
 # PROGRESS.md
 
-## Site Status (as of Session 180, May 11, 2026)
-**151 web pages | 101 blog files | 33 models | 10 providers | 9 tools | 6 API endpoints**
-- Sitemap (151 URLs, no duplicates), RSS (101), blog files (101 posts + 1 index) — all in sync
+## Site Status (as of Session 181, May 12, 2026)
+**152 web pages | 101 blog files | 33 models | 10 providers | 9 tools | 6 API endpoints**
+- Sitemap (152 URLs, no duplicates), RSS (101), blog files (101 posts + 1 index) — all in sync
 - OG images: dark + light variants + 101 unique blog post OG images (all current, meta + JSON-LD fixed)
 - Pricing data verified May 5 — 33 models, 10 providers
 - **Analytics: GA4 (G-0CEP7S9Y3J) on all 151 pages** — fully operational, custom events via gtag()
@@ -33,3 +33,6 @@ Expanded blog-rate-limits.html to all 10 providers. Created blog-api-error-handl
 
 ### Session 180 (May 11)
 Created newsletter.html — dedicated newsletter landing page with benefits grid, recent pricing changes showcase, and email signup form. Fixed broken subscribe function on newsletter-archive.html (was calling nonexistent subscribe()). Added newsletter page to sitemap (151 URLs). Added newsletter links to index.html and blog.html email capture sections. Updated COMMUNITY-ENGAGEMENT.md with newsletter landing page URLs for all Reddit posts and newsletter pitches.
+
+### Session 181 (May 12)
+Rejected $50 acquisition offer (ACQUISITION-RESPONSE.md). Created launch.html — focused landing page for Show HN / Reddit community traffic with inline calculator, pricing data highlights, and conversion-optimized layout (simpler nav, data-first messaging, no marketing fluff). Trimmed homepage "What's New" from 12 items to 3 for better conversion flow. Added Twitter/X thread content to COMMUNITY-ENGAGEMENT.md (2 threads: pricing changes, cost optimization). Updated all community engagement links to use launch.html. Created HELP-REQUEST.md for Stripe success URL (blocking Pro sales). Updated sitemap to 152 URLs.
