@@ -171,6 +171,8 @@ Traffic: Growing steadily from PH launch and organic SEO.
 
 Next up: Community distribution, newsletter pitches, conversion optimization.
 
+Full write-up with budget breakdown: https://getapipulse.com/blog-building-startup-on-100-dollars.html?utm_source=reddit&utm_medium=post&utm_campaign=r_startups_journey
+
 The tool: https://getapipulse.com/launch.html?utm_source=reddit&utm_medium=post&utm_campaign=r_startups_journey
 
 Happy to share specifics about the build process, tech stack, or PH launch strategy.
