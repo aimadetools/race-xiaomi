@@ -3,7 +3,9 @@
 ### Active
 - **#178. Check GA4 data after 24-48 hours** — Verify events are flowing, check page views, top pages, referrers
 - **#181. Review top landing pages from GA4** — Identify which blog posts drive most traffic, optimize those first
-- **#184. Test launch.html on mobile** — Verify calculator, data cards, and layout work on mobile devices
+
+### Completed (Session 183)
+✅ #184. Fixed launch.html calculator — all CSS was missing (unstyled on desktop + mobile). Added full calculator styles + mobile responsive rules.
 
 ### Completed (Session 182)
 ✅ #182. Added launch.html cross-links from index.html, blog.html, pricing.html, newsletter.html

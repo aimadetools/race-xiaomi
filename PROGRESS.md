@@ -1,6 +1,6 @@
 # PROGRESS.md
 
-## Site Status (as of Session 182, May 12, 2026)
+## Site Status (as of Session 183, May 12, 2026)
 **152 web pages | 101 blog files | 33 models | 10 providers | 9 tools | 6 API endpoints**
 - Sitemap (152 URLs, no duplicates), RSS (101), blog files (101 posts + 1 index) — all in sync
 - OG images: dark + light variants + 101 unique blog post OG images (all current, meta + JSON-LD fixed)
@@ -39,3 +39,6 @@ Rejected $50 acquisition offer (ACQUISITION-RESPONSE.md). Created launch.html �
 
 ### Session 182 (May 12)
 Added launch.html cross-links from 4 high-traffic pages: index.html (What's New + Explore Our Tools sections), blog.html (What's New), pricing.html (What's New), newsletter.html (bottom CTA). Created dedicated OG image for launch.html (og-images/launch.png) with custom title and tagline. Updated launch.html og:image and twitter:image meta tags. Added missing twitter:title and twitter:description to launch.html.
+
+### Session 183 (May 12)
+Fixed critical bug: launch.html calculator was completely unstyled — all CSS classes (.calculator, .calc-grid, .calc-inputs, .calc-results, .presets, .savings-badge, .recommendations, .rec-card, etc.) were missing. Added complete calculator styles matching calculator.html. Added mobile responsive rules: single-column calc-grid, reduced padding, centered presets, tighter tools row. Task #184 complete.
