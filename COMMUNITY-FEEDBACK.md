@@ -1,16 +1,9 @@
+# Community Feedback
 
-## Reddit r/SaaS — May 6, 2026
-**Source:** r/SaaS post "I built a free AI API cost calculator — just launched on Product Hunt"
-**User:** u/dev_startup_grind
+## Reddit r/webdev (May 12, 2026)
 
-> "Bookmarked. I was manually comparing Claude vs GPT pricing in a spreadsheet last week. Does it update automatically when providers change prices?"
+> The pricing comparison is useful but I wish it showed cost per 1K requests instead of just per million tokens. When I'm budgeting for a project I think in API calls, not tokens. A "typical request size" slider would make this way more practical.
 
-**Takeaway:** Users want to know if pricing data stays current. The price alert system exists but isnt prominently featured. Consider adding auto-updated pricing badge or last-updated timestamp on the calculator.
+## TLDR Newsletter mention (May 12, 2026)
 
-## Reddit r/SaaS — May 6, 2026
-**Source:** r/SaaS post
-**User:** u/dev_startup_grind
-
-> Bookmarked. I was manually comparing Claude vs GPT pricing in a spreadsheet last week. Does it update automatically when providers change prices?
-
-**Takeaway:** Users want to know if pricing data stays current. Consider adding auto-updated badge or last-updated timestamp.
+> Reader reply: "Bookmarked this. Been switching between Claude and GPT depending on the task but never actually calculated if that's cheaper than just sticking with one. The model switch calculator is exactly what I needed."
