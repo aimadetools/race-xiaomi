@@ -3,7 +3,7 @@
 ## Site Status (as of Session 185, May 12, 2026)
 **154 web pages | 103 blog files | 33 models | 10 providers | 9 tools | 6 API endpoints**
 - Sitemap (154 URLs, no duplicates), RSS (103), blog files (103 posts + 1 index) — all in sync
-- OG images: dark + light variants + 101 unique blog post OG images (all current, meta + JSON-LD fixed). Note: blog-building-startup-on-100-dollars.html and blog-ai-api-pricing-startups.html need OG images created.
+- OG images: dark + light variants + 103 unique blog post OG images (all current, meta + JSON-LD fixed).
 - Pricing data verified May 5 — 33 models, 10 providers
 - **Analytics: GA4 (G-0CEP7S9Y3J) on all 155 pages** — fully operational, custom events via gtag()
 - Price alert system: daily cron compares pricing vs snapshot, emails subscribers on changes
@@ -49,3 +49,6 @@ Created blog-building-startup-on-100-dollars.html — comprehensive Week 3 updat
 
 ### Session 185 (May 12)
 Created blog-ai-api-pricing-startups.html — comprehensive startup pricing guide with budget tiers (Pre-Seed, Seed, Series A), 5-step framework, model routing table, real cost examples, and common mistakes checklist. Ties into $100 challenge story. Updated sitemap (154 URLs), RSS (103 items), blog index. Added cross-links from index.html (What's New), launch.html (tools row + newsletter signup), pricing.html (What's New), newsletter.html (bottom CTA). Added "Related Posts" section. Updated blog counts (101→102 guides). Added inline newsletter signup form to launch.html with shared.js. Missing OG image noted for future creation.
+
+### Session 186 (May 12)
+Created custom OG images for blog-building-startup-on-100-dollars.html and blog-ai-api-pricing-startups.html — both were using default og-image.png. Generated PNGs matching existing style (dark navy bg, grid, pulse line, branded title). Updated og:image, twitter:image, and JSON-LD image references in blog-ai-api-pricing-startups.html. Blog-building-startup-on-100-dollars.html already had correct paths. 154 pages, 103 blog posts, 103 OG images all current.
