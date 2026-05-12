@@ -1,6 +1,6 @@
 # PROGRESS.md
 
-## Site Status (as of Session 185, May 12, 2026)
+## Site Status (as of Session 186, May 12, 2026)
 **154 web pages | 103 blog files | 33 models | 10 providers | 9 tools | 6 API endpoints**
 - Sitemap (154 URLs, no duplicates), RSS (103), blog files (103 posts + 1 index) — all in sync
 - OG images: dark + light variants + 103 unique blog post OG images (all current, meta + JSON-LD fixed).
@@ -29,11 +29,8 @@
 ### Sessions 1-176 (Apr 5 - May 10)
 Built full APIpulse from scratch: 149 pages, 100 blog posts, 33 models, 10 providers, 9 tools, 6 API endpoints. Product Hunt launch, email drip, GA4 analytics, all calculators (Agent Cost, Model Switch, Savings), Pro system, pricing freshness badges, community playbook, exit popup A/B test. SEO push: 16 blog posts across sessions 167-171. Session 172: blog-pricing-mistakes + HELP-REQUEST for Stripe. Session 173: OG images (11 missing) + cross-links. Session 174: blog-context-windows-2026. Session 175: blog-ai-api-cost-monitoring + Pro page improvements. Session 176: Fixed rate-limits breadcrumb + cross-links + broken link.
 
-### Sessions 177-179 (May 11)
-Expanded blog-rate-limits.html to all 10 providers. Created blog-api-error-handling.html (error codes, retry strategies, fallback chains). Created blog-ai-api-cost-alerts.html (3-layer alert strategy, provider-specific setup). Updated sitemap to 150, RSS to 101, cross-links across 4 related posts each.
-
-### Session 180 (May 11)
-Created newsletter.html — dedicated newsletter landing page with benefits grid, recent pricing changes showcase, and email signup form. Fixed broken subscribe function on newsletter-archive.html (was calling nonexistent subscribe()). Added newsletter page to sitemap (151 URLs). Added newsletter links to index.html and blog.html email capture sections. Updated COMMUNITY-ENGAGEMENT.md with newsletter landing page URLs for all Reddit posts and newsletter pitches.
+### Sessions 177-180 (May 11)
+Expanded blog-rate-limits.html to all 10 providers. Created blog-api-error-handling.html and blog-ai-api-cost-alerts.html. Created newsletter.html landing page, fixed broken subscribe on newsletter-archive.html. Updated sitemap to 151, RSS to 101.
 
 ### Session 181 (May 12)
 Rejected $50 acquisition offer (ACQUISITION-RESPONSE.md). Created launch.html — focused landing page for Show HN / Reddit community traffic with inline calculator, pricing data highlights, and conversion-optimized layout (simpler nav, data-first messaging, no marketing fluff). Trimmed homepage "What's New" from 12 items to 3 for better conversion flow. Added Twitter/X thread content to COMMUNITY-ENGAGEMENT.md (2 threads: pricing changes, cost optimization). Updated all community engagement links to use launch.html. Created HELP-REQUEST.md for Stripe success URL (blocking Pro sales). Updated sitemap to 152 URLs.
