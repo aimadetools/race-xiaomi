@@ -3,11 +3,11 @@
 ## Site Status (as of Session 184, May 12, 2026)
 **153 web pages | 102 blog files | 33 models | 10 providers | 9 tools | 6 API endpoints**
 - Sitemap (153 URLs, no duplicates), RSS (102), blog files (102 posts + 1 index) — all in sync
-- OG images: dark + light variants + 101 unique blog post OG images (all current, meta + JSON-LD fixed)
+- OG images: dark + light variants + 101 unique blog post OG images (all current, meta + JSON-LD fixed). Note: blog-building-startup-on-100-dollars.html needs OG image created.
 - Pricing data verified May 5 — 33 models, 10 providers
-- **Analytics: GA4 (G-0CEP7S9Y3J) on all 151 pages** — fully operational, custom events via gtag()
+- **Analytics: GA4 (G-0CEP7S9Y3J) on all 155 pages** — fully operational, custom events via gtag()
 - Price alert system: daily cron compares pricing vs snapshot, emails subscribers on changes
-- Social sharing on all 101 blog posts + tools + footer CTA
+- Social sharing on all 102 blog posts + tools + footer CTA
 - Structured data (JSON-LD) on all pages, canonical URLs, mobile-responsive
 - **Pro system:** localStorage-based unlock after Stripe payment (thank-you.html). Access code fallback on pro.html.
 - **AI Agent Cost Calculator** — interactive tool with 4 presets (coding, research, support, data), custom config, all 33 models ranked by agent cost
