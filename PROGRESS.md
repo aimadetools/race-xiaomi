@@ -1,9 +1,9 @@
 # PROGRESS.md
 
-## Site Status (as of Session 189, May 13, 2026)
-**161 web pages | 107 blog files | 33 models | 10 providers | 9 tools | 6 API endpoints**
-- Sitemap (158 URLs), RSS (107 items), blog files (107 posts + 1 index) — all in sync
-- OG images: dark + light variants + 105 unique blog post OG images (all current, meta + JSON-LD fixed).
+## Site Status (as of Session 190, May 13, 2026)
+**163 web pages | 109 blog files | 33 models | 10 providers | 9 tools | 6 API endpoints**
+- Sitemap (160 URLs), RSS (109 items), blog files (109 posts + 1 index) — all in sync
+- OG images: dark + light variants + 107 unique blog post OG images (all current, meta + JSON-LD fixed).
 - Pricing data verified May 5 — 33 models, 10 providers
 - **Analytics: GA4 (G-0CEP7S9Y3J) on all 155 pages** — fully operational, custom events via gtag()
 - Price alert system: daily cron compares pricing vs snapshot, emails subscribers on changes
@@ -52,3 +52,11 @@ Created blog-claude4-sonnet-vs-deepseek-v4-pro.html — comprehensive comparison
 - **Blog post: blog-gpt4o-mini-vs-haiku-cost-per-request.html** — GPT-4o mini vs Claude Haiku showdown, 7.6x cost difference, 4 workload scenarios (#191)
 - Updated sitemap (158 URLs), RSS (107 items), blog index, cross-links from index and pricing
 - Updated blog counts (104→105 guides, 106→107 posts)
+
+### Session 190 (May 13)
+**Two new flagship comparison blog posts:**
+- **Blog post: blog-gpt5-vs-claude4-sonnet.html** — GPT-5 vs Claude 4 Sonnet flagship comparison. Pricing ($1.25/$10 vs $3.00/$15), context windows, 3 use-case cost breakdowns, quality analysis, multi-model routing strategy
+- **Blog post: blog-gemini3-pro-vs-gpt5.html** — Gemini 3 Pro vs GPT-5 Google vs OpenAI comparison. Pricing ($2.00/$12 vs $1.25/$10), 1M vs 272K context, multimodal capabilities, 3 use-case breakdowns
+- Generated OG images for both new blog posts
+- Updated sitemap (160 URLs), RSS (109 items), blog index, cross-links from index.html and launch.html
+- Updated page count (161→163), blog count (107→109)
