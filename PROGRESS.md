@@ -1,9 +1,9 @@
 # PROGRESS.md
 
-## Site Status (as of Session 194, May 13, 2026)
-**167 web pages | 113 blog files | 33 models | 10 providers | 9 tools | 6 API endpoints**
-- Sitemap (164 URLs), RSS (113 items), blog files (113 posts + 1 index) — all in sync
-- OG images: dark + light variants + 113 unique blog post OG images (all current, meta + JSON-LD fixed).
+## Site Status (as of Session 195, May 13, 2026)
+**168 web pages | 114 blog files | 33 models | 10 providers | 9 tools | 6 API endpoints**
+- Sitemap (165 URLs), RSS (114 items), blog files (114 posts + 1 index) — all in sync
+- OG images: dark + light variants + 114 unique blog post OG images (all current, meta + JSON-LD fixed).
 - Pricing data verified May 5 — 33 models, 10 providers
 - **Analytics: GA4 (G-0CEP7S9Y3J) on all 166 pages** — fully operational, custom events via gtag()
 - Price alert system: daily cron compares pricing vs snapshot, emails subscribers on changes
@@ -29,23 +29,9 @@
 ### Sessions 1-191 (Apr 5 - May 13)
 Built full APIpulse from scratch: 166 pages, 112 blog posts, 33 models, 10 providers, 9 tools, 6 API endpoints. Product Hunt launch, email drip, GA4 analytics, all calculators (Agent Cost, Model Switch, Savings), Pro system, pricing freshness badges, community playbook, exit popup A/B test. Newsletter landing page. Rate limits expanded to all 10 providers. Created launch.html for community traffic. 12 SEO blog posts including cost-per-request guide, GPT-5 Mini cost breakdown, Claude 4 Sonnet vs Gemini 3 Pro. Added cost-per-request view to all calculator tools with 5 request-type presets.
 
-### Session 192 (May 13)
-**GPT-5 Mini cost breakdown blog post:**
-- **Blog post: blog-gpt5-mini-cost-breakdown.html** — Complete GPT-5 Mini pricing guide. Cost per request across 6 request types, cost per 1K requests table, monthly estimates for 5 workloads (chatbot, code gen, RAG, content writing, classification). Comparison table with 8 budget alternatives. Batch API analysis. When-to-use decision framework.
-- Generated OG image for new blog post
-- Updated sitemap (162 URLs), RSS (111 items), blog index (111 guides), cross-links from index.html and launch.html
-- Updated page count (164→165), blog count (110→111)
-
-### Session 193 (May 13)
-**Claude 4 Sonnet vs Gemini 3 Pro blog post:**
-- **Blog post: blog-claude4-sonnet-vs-gemini3-pro.html** — Mid-tier showdown comparison. Pricing overview ($3/$15 vs $2/$12), key differences table (price, context, multimodal, tool use, coding). Cost per request across 7 request types. Monthly cost breakdowns for 5 workloads (chatbot, code gen, RAG, document analysis, content writing). Quality comparison (Sonnet wins: instruction following, tool use, coding, batch API; Gemini wins: context, multimodal, price, Google ecosystem). Batch API factor analysis showing Claude cheaper at 50% off. Decision framework.
-- Generated OG image, updated sitemap (163 URLs), RSS (112 items), blog index (112 guides)
+### Session 195 (May 13)
+**Grok 3 vs Claude 4 Sonnet blog post:**
+- **Blog post: blog-grok3-vs-claude4-sonnet.html** — Mid-tier showdown. Same price ($3/$15), radically different strengths. Grok 3: real-time X/Twitter data, fewer content restrictions, 131K context. Claude 4 Sonnet: 200K context, batch API at 50% off, superior instruction following and tool use. Cost per request across 7 request types (identical pricing). Monthly cost breakdowns for 5 workloads (chatbot, code review, RAG, content generation, data analysis) — all equal at standard pricing, Sonnet 50% cheaper via Batch API. Quality comparison (Grok wins: real-time X data, content freedom, cultural context; Sonnet wins: context window, instruction following, tool use, coding, batch pricing). Decision framework.
+- Generated OG image, updated sitemap (165 URLs), RSS (114 items), blog index (114 guides)
 - Cross-links from index.html and launch.html
-- Updated page count (165→166), blog count (111→112)
-
-### Session 194 (May 13)
-**GPT-5 Mini vs Claude 4 Haiku blog post:**
-- **Blog post: blog-gpt5-mini-vs-claude4-haiku.html** — Budget tier showdown. Pricing overview ($0.25/$2.00 vs $1.00/$5.00), key differences table. Cost per request across 7 request types (GPT-5 Mini 57-69% cheaper). Monthly cost breakdowns for 5 workloads (chatbot, classification, RAG, code gen, email auto-responder). Quality comparison (GPT-5 Mini wins: price, speed, simple tasks; Haiku wins: instruction following, tool use, coding, context, batch API). Batch API factor analysis. Even cheaper alternatives table (Flash Lite, Llama 4 Scout, DeepSeek Flash, GPT-4o Mini, Mistral Small). Decision framework.
-- Generated OG image, updated sitemap (164 URLs), RSS (113 items), blog index (113 guides)
-- Cross-links from index.html and launch.html
-- Updated page count (166→167), blog count (112→113)
+- Updated page count (167→168), blog count (113→114)
