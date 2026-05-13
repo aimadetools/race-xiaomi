@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Claude 4 Sonnet vs Gemini 3 Pro: Mid-Tier API Showdown 2026 — APIpulse</title>
+    <meta name="description" content="Claude 4 Sonnet ($3/$15) vs Gemini 3 Pro ($2/$12): pricing, context windows, quality, and real cost breakdowns for production workloads in 2026.">
+    <meta name="keywords" content="Claude Sonnet vs Gemini Pro, Claude 4 Sonnet pricing, Gemini 3 Pro cost, mid-tier LLM API, Anthropic vs Google 2026">
+    <meta property="og:title" content="Claude 4 Sonnet vs Gemini 3 Pro: Mid-Tier API Showdown 2026 — APIpulse">
+    <meta property="og:description" content="Claude 4 Sonnet ($3/$15) vs Gemini 3 Pro ($2/$12): full cost comparison with real workload breakdowns. 200K vs 1M context, reasoning vs multimodal.">
+    <meta property="og:type" content="article">
+    <meta property="article:published_time" content="2026-05-13">
+    <meta property="article:modified_time" content="2026-05-13">
+    <meta property="article:author" content="APIpulse">
+    <meta property="og:image" content="https://getapipulse.com/og-images/blog-claude4-sonnet-vs-gemini3-pro.png">
+    <meta property="og:url" content="https://getapipulse.com/blog-claude4-sonnet-vs-gemini3-pro.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Claude 4 Sonnet vs Gemini 3 Pro: Mid-Tier API Showdown 2026">
+    <meta name="twitter:image" content="https://getapipulse.com/og-images/blog-claude4-sonnet-vs-gemini3-pro.png">
+    <meta name="twitter:description" content="Claude 4 Sonnet ($3/$15) vs Gemini 3 Pro ($2/$12): full cost comparison with real workload breakdowns.">
+    <link rel="canonical" href="https://getapipulse.com/blog-claude4-sonnet-vs-gemini3-pro.html">
+    <link rel="alternate" type="application/rss+xml" title="APIpulse Blog" href="https://getapipulse.com/rss.xml">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="styles.css">
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0CEP7S9Y3J"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-0CEP7S9Y3J');
+    </script>
+    <script src="analytics.js" defer></script>
+    <script src="dynamic-date.js" defer></script>
+    <script src="shared.js" defer></script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "Claude 4 Sonnet vs Gemini 3 Pro: Mid-Tier API Showdown 2026",
+        "description": "Claude 4 Sonnet ($3/$15) vs Gemini 3 Pro ($2/$12): pricing, context windows, quality, and real cost breakdowns for production workloads.",
+        "datePublished": "2026-05-13",
+        "dateModified": "2026-05-13",
+        "author": { "@type": "Organization", "name": "APIpulse" },
+        "publisher": { "@type": "Organization", "name": "APIpulse", "url": "https://getapipulse.com" },
+        "url": "https://getapipulse.com/blog-claude4-sonnet-vs-gemini3-pro.html",
+        "image": "https://getapipulse.com/og-images/blog-claude4-sonnet-vs-gemini3-pro.png"
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Blog", "item": "https://getapipulse.com/blog.html" },
+            { "@type": "ListItem", "position": 2, "name": "Claude 4 Sonnet vs Gemini 3 Pro", "item": "https://getapipulse.com/blog-claude4-sonnet-vs-gemini3-pro.html" }
+        ]
+    }
+    </script>
+    <style>
+        .content { max-width: 800px; margin: 0 auto; padding: 120px 24px 80px; }
+        h1 { font-size: 40px; font-weight: 800; margin-bottom: 12px; }
+        .subtitle { color: var(--text-secondary); font-size: 18px; margin-bottom: 48px; }
+
+        .article { max-width: 700px; margin: 0 auto; }
+        .article h1 { font-size: 36px; margin-bottom: 16px; }
+        .article h2 { font-size: 24px; font-weight: 700; margin: 32px 0 16px; }
+        .article h3 { font-size: 18px; font-weight: 600; margin: 24px 0 12px; }
+        .article p { color: var(--text-secondary); margin-bottom: 16px; line-height: 1.7; }
+        .article ul, .article ol { color: var(--text-secondary); padding-left: 24px; margin-bottom: 16px; }
+        .article li { margin-bottom: 8px; }
+        .article strong { color: var(--text-primary); }
+        .article code {
+            background: var(--bg-card); padding: 2px 8px; border-radius: 4px;
+            font-size: 14px; color: var(--accent);
+        }
+        .back-link {
+            display: inline-flex; align-items: center; gap: 6px;
+            font-size: 14px; color: var(--text-secondary); margin-bottom: 32px;
+        }
+        .back-link:hover { color: var(--text-primary); }
+        .post-meta {
+            display: flex; gap: 16px; align-items: center; margin-bottom: 12px;
+            font-size: 13px; color: var(--text-muted);
+        }
+        .post-tag {
+            background: var(--accent-glow); color: var(--accent);
+            padding: 2px 10px; border-radius: 6px; font-size: 12px; font-weight: 600;
+        }
+
+        .cta-inline {
+            background: var(--bg-secondary); border: 1px solid var(--accent);
+            border-radius: 12px; padding: 24px; margin: 32px 0; text-align: center;
+        }
+        .cta-inline p { margin-bottom: 12px; }
+
+        .cost-example {
+            background: var(--bg-secondary); border: 1px solid var(--border);
+            border-radius: 10px; padding: 20px; margin: 20px 0;
+        }
+        .cost-example .label {
+            font-size: 13px; color: var(--text-muted); text-transform: uppercase;
+            letter-spacing: 0.5px; margin-bottom: 12px; font-weight: 600;
+        }
+        .cost-example .cost-row {
+            display: flex; justify-content: space-between; padding: 8px 0;
+            border-bottom: 1px solid var(--border); font-size: 14px;
+        }
+        .cost-example .cost-row:last-child { border-bottom: none; }
+        .cost-example .cost-row .name { color: var(--text-secondary); }
+        .cost-example .cost-row .value { color: var(--text-primary); font-weight: 600; font-variant-numeric: tabular-nums; }
+        .cost-example .cost-total { border-top: 2px solid var(--accent); border-bottom: none; padding-top: 12px; margin-top: 4px; }
+        .cost-example .cost-total .name { color: var(--text-primary); font-weight: 600; }
+
+        .winner-badge {
+            display: inline-block; background: rgba(34,197,94,0.1); color: var(--green);
+            padding: 4px 12px; border-radius: 6px; font-size: 13px; font-weight: 700;
+            margin-bottom: 16px;
+        }
+
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 14px; }
+        th { background: var(--bg-card); padding: 12px; text-align: left; font-weight: 600; color: var(--text-primary); border-bottom: 2px solid var(--border); }
+        td { padding: 12px; border-bottom: 1px solid var(--border); color: var(--text-secondary); }
+        tr:hover { background: var(--bg-secondary); }
+        .highlight { color: var(--green); font-weight: 600; }
+        .dim { color: var(--text-muted); }
+
+        .share-section {
+            margin-top: 32px; padding-top: 24px; border-top: 1px solid var(--border);
+            text-align: center;
+        }
+        .share-section p { color: var(--text-secondary); font-size: 14px; margin-bottom: 12px; }
+        .share-btn {
+            display: inline-block; background: var(--bg-card); color: var(--text-primary);
+            padding: 8px 20px; border-radius: 8px; font-size: 14px; font-weight: 500;
+            border: 1px solid var(--border); transition: all 0.2s; text-decoration: none;
+        }
+        .share-btn:hover { background: var(--accent); color: white; border-color: var(--accent); }
+
+        @media (max-width: 768px) {
+            .content { padding: 100px 20px 60px; }
+            h1 { font-size: 28px; }
+            .article h1 { font-size: 28px; }
+            .article h2 { font-size: 20px; }
+            .cta-inline { padding: 20px; }
+            table { font-size: 13px; }
+            th, td { padding: 8px 6px; }
+        }
+        @media print {
+            nav, .share-section, .cta-inline, .theme-toggle, .back-link { display: none !important; }
+            body { background: white; color: black; }
+            .content { padding: 0; max-width: 100%; }
+            .article h1 { font-size: 24px; margin-bottom: 8px; }
+            .article h2 { font-size: 18px; margin: 16px 0 8px; }
+            .article p, .article li { color: #333; font-size: 12px; }
+            .post-meta { display: none; }
+            a { color: black; text-decoration: underline; }
+            footer { border-top: 1px solid #ccc; padding: 10px 0; }
+        }
+    </style>
+    <meta name="theme-color" content="#6366f1">
+    <link rel="preconnect" href="https://getapipulse.com">
+</head>
+<body>
+    <a href="#main" class="skip-link">Skip to content</a>
+    <nav>
+        <div class="nav-inner">
+            <a href="index.html" class="logo">API<span>pulse</span></a>
+            <button class="hamburger" onclick="toggleMobileNav()" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+            <div class="nav-links">
+                <a href="calculator.html">Calculator</a>
+                <a href="compare.html">Compare</a>
+                <a href="cost-explorer.html">Explorer</a>
+                <a href="cost-scenarios.html">Scenarios</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="use-cases.html">Use Cases</a>
+                <a href="about.html">About</a>
+                <a href="blog.html" class="active">Blog</a>
+                <a href="quiz.html">Quiz</a>
+                <a href="pricing-index.html">Pricing Index</a>
+                <a href="model-matrix.html">Model Matrix</a>
+                <a href="pricing-trends.html">Trends</a>
+                <a href="pricing-changelog.html">Changelog</a>
+                <a href="price-alerts.html">Price Alerts</a>
+                <a href="cheat-sheet.html">Cheat Sheet</a> &middot; <a href="model-switch.html">Model Switch</a>
+                <a href="api-docs.html" style="color:var(--accent);">API</a>
+                <a href="pricing.html" class="nav-cta" onclick="if(window.trackEvent)window.trackEvent('pro_button_clicked',{source:'nav'})">Get Pro — $29</a>
+                <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
+            </div>
+        </div>
+    </nav>
+
+    <main id="main">
+
+    <div class="content article">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+            <a href="blog.html">Blog</a>
+            <span class="separator">›</span>
+            <span class="current">Claude 4 Sonnet vs Gemini 3 Pro</span>
+        </nav>
+        <a href="blog.html" class="back-link">← Back to blog</a>
+        <div class="post-meta" style="margin-bottom: 24px;">
+            <span class="post-tag">Comparison</span>
+            <span class="tier-badge tier-mid">Mid-Tier</span>
+            <span>May 13, 2026</span>
+        </div>
+
+        <h1>Claude 4 Sonnet vs Gemini 3 Pro: The Mid-Tier API Showdown 2026</h1>
+
+        <p>Claude 4 Sonnet and Gemini 3 Pro are the two most popular mid-tier LLM APIs in 2026. Both sit in the $2-3/1M input range — affordable enough for production, powerful enough for complex tasks. But they have fundamentally different strengths. Here's a head-to-head comparison with real cost breakdowns to help you pick the right one.</p>
+
+        <h2>Pricing Overview</h2>
+        <div class="cost-example">
+            <div class="label">Pricing Comparison (per 1M tokens)</div>
+            <div class="cost-row"><span class="name"></span><span class="value" style="font-weight:700;">Claude 4 Sonnet</span><span class="value" style="font-weight:700;">Gemini 3.1 Pro</span></div>
+            <div class="cost-row"><span class="name">Input tokens</span><span class="value">$3.00</span><span class="value">$2.00</span></div>
+            <div class="cost-row"><span class="name">Output tokens</span><span class="value">$15.00</span><span class="value">$12.00</span></div>
+            <div class="cost-row"><span class="name">Context window</span><span class="value">200K</span><span class="value">1M</span></div>
+            <div class="cost-row"><span class="name">Batch API discount</span><span class="value">50% off</span><span class="value">No batch API</span></div>
+        </div>
+
+        <p><strong>Gemini 3 Pro is 33% cheaper on input and 20% cheaper on output.</strong> But pricing alone doesn't tell the full story — context window, quality, and ecosystem matter just as much.</p>
+
+        <h2>Key Differences at a Glance</h2>
+        <table>
+            <thead>
+                <tr><th>Feature</th><th>Claude 4 Sonnet</th><th>Gemini 3.1 Pro</th></tr>
+            </thead>
+            <tbody>
+                <tr><td><strong>Input price</strong></td><td>$3.00/1M</td><td class="highlight">$2.00/1M</td></tr>
+                <tr><td><strong>Output price</strong></td><td>$15.00/1M</td><td class="highlight">$12.00/1M</td></tr>
+                <tr><td><strong>Context window</strong></td><td>200K</td><td class="highlight">1M tokens</td></tr>
+                <tr><td><strong>Multimodal</strong></td><td>Text + images</td><td class="highlight">Text + images + video + audio</td></tr>
+                <tr><td><strong>Tool use</strong></td><td class="highlight">Excellent (native)</td><td>Good (Function Calling)</td></tr>
+                <tr><td><strong>Coding</strong></td><td class="highlight">Excellent</td><td>Very good</td></tr>
+                <tr><td><strong>Instruction following</strong></td><td class="highlight">Excellent</td><td>Very good</td></tr>
+                <tr><td><strong>Long-context reasoning</strong></td><td>Good (200K limit)</td><td class="highlight">Excellent (1M native)</td></tr>
+                <tr><td><strong>Batch API</strong></td><td class="highlight">Yes (50% off)</td><td>No</td></tr>
+                <tr><td><strong>Ecosystem</strong></td><td>API, Workbench</td><td class="highlight">Vertex AI, Google Cloud</td></tr>
+            </tbody>
+        </table>
+
+        <h2>Cost Per Request</h2>
+        <p>Here's what a single API call costs with each model:</p>
+
+        <table>
+            <thead>
+                <tr><th>Request Type</th><th>Input Tokens</th><th>Output Tokens</th><th>Claude 4 Sonnet</th><th>Gemini 3.1 Pro</th><th>Savings</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Short chat message</td><td>100</td><td>150</td><td>$0.00255</td><td class="highlight">$0.00200</td><td>22%</td></tr>
+                <tr><td>Medium chat response</td><td>500</td><td>500</td><td>$0.00900</td><td class="highlight">$0.00700</td><td>22%</td></tr>
+                <tr><td>Code generation</td><td>1,000</td><td>800</td><td>$0.01500</td><td class="highlight">$0.01160</td><td>23%</td></tr>
+                <tr><td>Document analysis</td><td>3,000</td><td>500</td><td>$0.01650</td><td class="highlight">$0.01200</td><td>27%</td></tr>
+                <tr><td>Long-form content</td><td>2,000</td><td>2,000</td><td>$0.03600</td><td class="highlight">$0.02800</td><td>22%</td></tr>
+                <tr><td>RAG query (context + question)</td><td>2,000</td><td>300</td><td>$0.01050</td><td class="highlight">$0.00760</td><td>28%</td></tr>
+                <tr><td>Long-context analysis</td><td>10,000</td><td>1,000</td><td>$0.04500</td><td class="highlight">$0.03200</td><td>29%</td></tr>
+            </tbody>
+        </table>
+
+        <p><strong>Gemini 3 Pro saves 22-29% on every request type.</strong> The gap widens for input-heavy workloads (document analysis, RAG, long-context) because Gemini's input price is 33% lower.</p>
+
+        <h2>Monthly Cost Breakdowns</h2>
+
+        <h3>1. Customer Support Chatbot</h3>
+        <p>500 input tokens, 200 output tokens, 1,000 conversations/day.</p>
+        <div class="cost-example">
+            <div class="label">Monthly cost — Customer support chatbot</div>
+            <div class="cost-row"><span class="name">Claude 4 Sonnet</span><span class="value">$67.50/mo</span></div>
+            <div class="cost-row"><span class="name">Gemini 3.1 Pro</span><span class="value highlight">$52.50/mo</span></div>
+            <div class="cost-row cost-total"><span class="name">Gemini saves</span><span class="value highlight">$15.00/mo (22%)</span></div>
+        </div>
+
+        <h3>2. Code Generation Assistant</h3>
+        <p>1,000 input tokens, 800 output tokens, 500 requests/day.</p>
+        <div class="cost-example">
+            <div class="label">Monthly cost — Code generation</div>
+            <div class="cost-row"><span class="name">Claude 4 Sonnet</span><span class="value">$112.50/mo</span></div>
+            <div class="cost-row"><span class="name">Gemini 3.1 Pro</span><span class="value highlight">$87.00/mo</span></div>
+            <div class="cost-row cost-total"><span class="name">Gemini saves</span><span class="value highlight">$25.50/mo (23%)</span></div>
+        </div>
+
+        <h3>3. RAG Pipeline</h3>
+        <p>2,000 input tokens, 300 output tokens, 2,000 queries/day.</p>
+        <div class="cost-example">
+            <div class="label">Monthly cost — RAG pipeline</div>
+            <div class="cost-row"><span class="name">Claude 4 Sonnet</span><span class="value">$63.00/mo</span></div>
+            <div class="cost-row"><span class="name">Gemini 3.1 Pro</span><span class="value highlight">$45.60/mo</span></div>
+            <div class="cost-row cost-total"><span class="name">Gemini saves</span><span class="value highlight">$17.40/mo (28%)</span></div>
+        </div>
+
+        <h3>4. Document Analysis (Long Context)</h3>
+        <p>10,000 input tokens (long documents), 1,000 output tokens, 200 requests/day.</p>
+        <div class="cost-example">
+            <div class="label">Monthly cost — Document analysis</div>
+            <div class="cost-row"><span class="name">Claude 4 Sonnet</span><span class="value">$27.00/mo</span></div>
+            <div class="cost-row"><span class="name">Gemini 3.1 Pro</span><span class="value highlight">$19.20/mo</span></div>
+            <div class="cost-row cost-total"><span class="name">Gemini saves</span><span class="value highlight">$7.80/mo (29%)</span></div>
+        </div>
+
+        <h3>5. Content Writing</h3>
+        <p>2,000 input tokens, 2,000 output tokens, 200 requests/day.</p>
+        <div class="cost-example">
+            <div class="label">Monthly cost — Content writing</div>
+            <div class="cost-row"><span class="name">Claude 4 Sonnet</span><span class="value">$21.60/mo</span></div>
+            <div class="cost-row"><span class="name">Gemini 3.1 Pro</span><span class="value highlight">$16.80/mo</span></div>
+            <div class="cost-row cost-total"><span class="name">Gemini saves</span><span class="value highlight">$4.80/mo (22%)</span></div>
+        </div>
+
+        <h2>Quality Comparison</h2>
+        <p>Price isn't everything. Here's where each model excels:</p>
+
+        <h3>Claude 4 Sonnet Wins At:</h3>
+        <ul>
+            <li><strong>Instruction following</strong> — More precise adherence to complex, multi-step prompts. Fewer "creative interpretations" of your instructions.</li>
+            <li><strong>Tool use / function calling</strong> — Native tool use is more reliable for agentic workflows. Better at chaining multiple tool calls.</li>
+            <li><strong>Coding</strong> — Slightly stronger on complex code generation, refactoring, and debugging. Better at following style guides.</li>
+            <li><strong>Safety and alignment</strong> — More predictable outputs. Less likely to produce unexpected content.</li>
+            <li><strong>Batch API</strong> — 50% discount for non-real-time workloads. Gemini has no batch API.</li>
+        </ul>
+
+        <h3>Gemini 3.1 Pro Wins At:</h3>
+        <ul>
+            <li><strong>Context window</strong> — 1M tokens vs 200K. Analyze entire codebases, books, or multi-hour transcripts without chunking.</li>
+            <li><strong>Multimodal</strong> — Native video and audio understanding. Claude only handles text and images.</li>
+            <li><strong>Price</strong> — 22-29% cheaper across all workloads. The savings add up at scale.</li>
+            <li><strong>Google ecosystem</strong> — Tight integration with Vertex AI, BigQuery, and Google Cloud. Better for teams already on GCP.</li>
+            <li><strong>Long-context reasoning</strong> — Handles 1M context natively without the quality degradation you sometimes see with long contexts.</li>
+        </ul>
+
+        <h2>When to Pick Claude 4 Sonnet</h2>
+        <ul>
+            <li>You need <strong>reliable tool use and agentic workflows</strong> — Claude's function calling is more dependable for multi-step automation</li>
+            <li><strong>Code generation is your primary use case</strong> — Claude 4 Sonnet edges out Gemini on complex coding tasks</li>
+            <li>You want <strong>batch processing at 50% off</strong> — Gemini has no batch API; Claude's is half-price</li>
+            <li><strong>Predictability matters more than cost</strong> — Claude's outputs are more consistent and aligned</li>
+            <li>You're building <strong>customer-facing products</strong> where output quality and safety are critical</li>
+        </ul>
+
+        <h2>When to Pick Gemini 3.1 Pro</h2>
+        <ul>
+            <li>You need <strong>massive context windows</strong> — 1M tokens for analyzing large documents, codebases, or transcripts</li>
+            <li><strong>Multimodal is required</strong> — Video, audio, and image understanding in a single API call</li>
+            <li><strong>Budget is a constraint</strong> — 22-29% cheaper across the board, meaningful at scale</li>
+            <li>You're <strong>already on Google Cloud</strong> — Vertex AI integration, no additional vendor</li>
+            <li>Your workload is <strong>input-heavy</strong> (RAG, document analysis) — Gemini's lower input price compounds</li>
+        </ul>
+
+        <h2>The Batch API Factor</h2>
+        <p>Claude 4 Sonnet offers a Batch API at <strong>50% off</strong> standard pricing. This changes the math significantly for non-real-time workloads:</p>
+
+        <table>
+            <thead>
+                <tr><th>Workload</th><th>Claude 4 Sonnet (Standard)</th><th>Claude 4 Sonnet (Batch)</th><th>Gemini 3.1 Pro</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Customer support chatbot</td><td>$67.50/mo</td><td class="highlight">$33.75/mo</td><td>$52.50/mo</td></tr>
+                <tr><td>Code generation</td><td>$112.50/mo</td><td class="highlight">$56.25/mo</td><td>$87.00/mo</td></tr>
+                <tr><td>RAG pipeline</td><td>$63.00/mo</td><td class="highlight">$31.50/mo</td><td>$45.60/mo</td></tr>
+                <tr><td>Document analysis</td><td>$27.00/mo</td><td class="highlight">$13.50/mo</td><td>$19.20/mo</td></tr>
+                <tr><td>Content writing</td><td>$21.60/mo</td><td class="highlight">$10.80/mo</td><td>$16.80/mo</td></tr>
+            </tbody>
+        </table>
+
+        <p><strong>With Batch API, Claude 4 Sonnet is cheaper than Gemini for every workload.</strong> If your tasks can tolerate 24-hour turnaround ( overnight processing, data enrichment, bulk analysis), Claude's batch pricing wins.</p>
+
+        <h2>The Bottom Line</h2>
+        <p>Claude 4 Sonnet and Gemini 3 Pro are both excellent mid-tier models — you can't go wrong with either. The choice comes down to your priorities:</p>
+
+        <ul>
+            <li><strong>Choose Gemini 3 Pro</strong> if you need massive context, multimodal capabilities, or the lowest possible price for real-time workloads. It's the better value for most production use cases.</li>
+            <li><strong>Choose Claude 4 Sonnet</strong> if you need superior tool use, more reliable coding, or batch processing. For agentic workflows and code-heavy applications, Claude's quality premium is worth the extra cost.</li>
+        </ul>
+
+        <p>For many teams, the answer is <strong>both</strong>: Claude for agent workflows and code generation, Gemini for document analysis and long-context tasks. Multi-model routing saves 40-60% compared to using a single premium model for everything.</p>
+
+        <div class="cta-inline">
+            <h3>Calculate Your Exact Costs</h3>
+            <p>Enter your request volume and token counts to compare monthly bills side by side.</p>
+            <p><a href="compare.html?utm_source=blog&utm_medium=post&utm_campaign=claude4_sonnet_vs_gemini3_pro" class="btn-primary">Open Comparison Tool →</a></p>
+        </div>
+
+        <div class="share-section">
+            <p>Share this analysis</p>
+            <a href="https://x.com/intent/tweet?text=Claude+4+Sonnet+vs+Gemini+3+Pro%3A+mid-tier+showdown.+Gemini+22-25%25+cheaper+but+Claude+batch+API+reverses+the+math.&url=https://getapipulse.com/blog-claude4-sonnet-vs-gemini3-pro.html" target="_blank" rel="noopener" class="share-btn">Share on X</a>
+            <a href="https://www.reddit.com/submit?url=https://getapipulse.com/blog-claude4-sonnet-vs-gemini3-pro.html&title=Claude+4+Sonnet+vs+Gemini+3+Pro:+Mid-Tier+API+Showdown+2026" target="_blank" rel="noopener" class="share-btn">Share on Reddit</a>
+        </div>
+
+        <div style="margin-top:40px;padding-top:24px;border-top:1px solid var(--border);">
+            <h3 style="margin-bottom:12px;">Related Reading</h3>
+            <ul style="list-style:none;padding:0;">
+                <li style="margin-bottom:8px;"><a href="blog-gpt5-vs-claude4-sonnet.html" style="color:var(--accent);">GPT-5 vs Claude 4 Sonnet</a> — flagship comparison</li>
+                <li style="margin-bottom:8px;"><a href="blog-gemini3-pro-vs-gpt5.html" style="color:var(--accent);">Gemini 3 Pro vs GPT-5</a> — Google vs OpenAI flagship</li>
+                <li style="margin-bottom:8px;"><a href="blog-cost-per-request.html" style="color:var(--accent);">AI API Cost Per Request</a> — the metric developers actually need</li>
+                <li style="margin-bottom:8px;"><a href="blog-multi-model-routing.html" style="color:var(--accent);">Multi-Model Routing</a> — cut costs 40-60% by mixing models</li>
+                <li><a href="calculator.html" style="color:var(--accent);">Cost Calculator</a> — calculate your exact monthly bill</li>
+            </ul>
+        </div>
+    </div>
+
+    </main>
+
+    <footer>
+        <p>Pricing data last verified: <span class="verified-date"></span></p>
+        <p>&copy; 2026 APIpulse. <a href="index.html">Home</a> &middot; <a href="use-cases.html">Use Cases</a> &middot; <a href="about.html">About</a> &middot; <a href="blog.html">Blog</a>
+<a href="pricing-index.html">Pricing Index</a> &middot; <a href="model-matrix.html">Model Matrix</a> &middot; <a href="cost-scenarios.html">Scenarios</a> &middot; <a href="price-alerts.html">Price Alerts</a> &middot; <a href="pricing-changelog.html">Changelog</a> &middot; <a href="openai.html">OpenAI</a> &middot; <a href="anthropic.html">Anthropic</a> &middot; <a href="google.html">Google</a> &middot; <a href="mistral.html">Mistral</a> &middot; <a href="cohere.html">Cohere</a> &middot; <a href="deepseek.html">DeepSeek</a> &middot; <a href="xai.html">xAI</a> &middot; <a href="moonshot.html">Moonshot</a> &middot; <a href="together.html">Together.ai</a> &middot; <a href="ai21.html">AI21</a> &middot; <a href="pricing.html">Pricing</a> &middot; <a href="embed.html">Embed Widget</a> &middot; <a href="cheat-sheet.html">Cheat Sheet</a> &middot; <a href="model-switch.html">Model Switch</a> &middot; <a href="api-docs.html">API</a> &middot; <a href="https://x.com/getapipulse" target="_blank" rel="noopener">Twitter</a> &middot; <a href="unsubscribe.html">Unsubscribe</a></p>
+    </footer>
+
+</body>
+</html>

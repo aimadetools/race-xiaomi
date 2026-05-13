@@ -1,13 +1,13 @@
 # PROGRESS.md
 
-## Site Status (as of Session 192, May 13, 2026)
-**165 web pages | 111 blog files | 33 models | 10 providers | 9 tools | 6 API endpoints**
-- Sitemap (162 URLs), RSS (111 items), blog files (111 posts + 1 index) — all in sync
-- OG images: dark + light variants + 111 unique blog post OG images (all current, meta + JSON-LD fixed).
+## Site Status (as of Session 193, May 13, 2026)
+**166 web pages | 112 blog files | 33 models | 10 providers | 9 tools | 6 API endpoints**
+- Sitemap (163 URLs), RSS (112 items), blog files (112 posts + 1 index) — all in sync
+- OG images: dark + light variants + 112 unique blog post OG images (all current, meta + JSON-LD fixed).
 - Pricing data verified May 5 — 33 models, 10 providers
-- **Analytics: GA4 (G-0CEP7S9Y3J) on all 165 pages** — fully operational, custom events via gtag()
+- **Analytics: GA4 (G-0CEP7S9Y3J) on all 166 pages** — fully operational, custom events via gtag()
 - Price alert system: daily cron compares pricing vs snapshot, emails subscribers on changes
-- Social sharing on all 111 blog posts + tools + footer CTA
+- Social sharing on all 112 blog posts + tools + footer CTA
 - Structured data (JSON-LD) on all pages, canonical URLs, mobile-responsive
 - **Pro system:** localStorage-based unlock after Stripe payment (thank-you.html). Access code fallback on pro.html.
 - **AI Agent Cost Calculator** — interactive tool with 4 presets (coding, research, support, data), custom config, all 33 models ranked by agent cost
@@ -41,3 +41,10 @@ Content expansion push: 5 new blog posts (Claude 4 Sonnet vs DeepSeek V4 Pro, co
 - Generated OG image for new blog post
 - Updated sitemap (162 URLs), RSS (111 items), blog index (111 guides), cross-links from index.html and launch.html
 - Updated page count (164→165), blog count (110→111)
+
+### Session 193 (May 13)
+**Claude 4 Sonnet vs Gemini 3 Pro blog post:**
+- **Blog post: blog-claude4-sonnet-vs-gemini3-pro.html** — Mid-tier showdown comparison. Pricing overview ($3/$15 vs $2/$12), key differences table (price, context, multimodal, tool use, coding). Cost per request across 7 request types. Monthly cost breakdowns for 5 workloads (chatbot, code gen, RAG, document analysis, content writing). Quality comparison (Sonnet wins: instruction following, tool use, coding, batch API; Gemini wins: context, multimodal, price, Google ecosystem). Batch API factor analysis showing Claude cheaper at 50% off. Decision framework.
+- Generated OG image, updated sitemap (163 URLs), RSS (112 items), blog index (112 guides)
+- Cross-links from index.html and launch.html
+- Updated page count (165→166), blog count (111→112)
