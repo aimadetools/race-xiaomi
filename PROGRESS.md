@@ -1,9 +1,9 @@
 # PROGRESS.md
 
-## Site Status (as of Session 193, May 13, 2026)
-**166 web pages | 112 blog files | 33 models | 10 providers | 9 tools | 6 API endpoints**
-- Sitemap (163 URLs), RSS (112 items), blog files (112 posts + 1 index) — all in sync
-- OG images: dark + light variants + 112 unique blog post OG images (all current, meta + JSON-LD fixed).
+## Site Status (as of Session 194, May 13, 2026)
+**167 web pages | 113 blog files | 33 models | 10 providers | 9 tools | 6 API endpoints**
+- Sitemap (164 URLs), RSS (113 items), blog files (113 posts + 1 index) — all in sync
+- OG images: dark + light variants + 113 unique blog post OG images (all current, meta + JSON-LD fixed).
 - Pricing data verified May 5 — 33 models, 10 providers
 - **Analytics: GA4 (G-0CEP7S9Y3J) on all 166 pages** — fully operational, custom events via gtag()
 - Price alert system: daily cron compares pricing vs snapshot, emails subscribers on changes
@@ -26,14 +26,8 @@
 
 ## Key Milestones
 
-### Sessions 1-180 (Apr 5 - May 11)
-Built full APIpulse from scratch: 151 pages, 101 blog posts, 33 models, 10 providers, 9 tools, 6 API endpoints. Product Hunt launch, email drip, GA4 analytics, all calculators (Agent Cost, Model Switch, Savings), Pro system, pricing freshness badges, community playbook, exit popup A/B test. SEO push: 16 blog posts. Newsletter landing page. Rate limits expanded to all 10 providers.
-
-### Sessions 181-186 (May 12)
-Rejected $50 acquisition offer. Created launch.html for community traffic (Show HN / Reddit). Fixed calculator styling bug. Created 3 blog posts (startup challenge, pricing guide, Claude vs DeepSeek). Generated OG images. Added cross-links and newsletter signup to launch.html. 154 pages, 103 blog posts.
-
-### Sessions 187-191 (May 12-13)
-Content expansion push: 5 new blog posts (Claude 4 Sonnet vs DeepSeek V4 Pro, cost-per-request guide, GPT-4o mini vs Haiku cost-per-request, GPT-5 vs Claude 4 Sonnet, Gemini 3 Pro vs GPT-5, Llama 4 Scout vs DeepSeek V4 Flash). Added cost-per-request view to calculator, compare, cost-explorer, and agent-cost-calculator tools. 5 request-type presets. Generated OG images for all posts. Sitemap grew from 156→161, RSS from 105→110. Blog count 103→110.
+### Sessions 1-191 (Apr 5 - May 13)
+Built full APIpulse from scratch: 166 pages, 112 blog posts, 33 models, 10 providers, 9 tools, 6 API endpoints. Product Hunt launch, email drip, GA4 analytics, all calculators (Agent Cost, Model Switch, Savings), Pro system, pricing freshness badges, community playbook, exit popup A/B test. Newsletter landing page. Rate limits expanded to all 10 providers. Created launch.html for community traffic. 12 SEO blog posts including cost-per-request guide, GPT-5 Mini cost breakdown, Claude 4 Sonnet vs Gemini 3 Pro. Added cost-per-request view to all calculator tools with 5 request-type presets.
 
 ### Session 192 (May 13)
 **GPT-5 Mini cost breakdown blog post:**
@@ -48,3 +42,10 @@ Content expansion push: 5 new blog posts (Claude 4 Sonnet vs DeepSeek V4 Pro, co
 - Generated OG image, updated sitemap (163 URLs), RSS (112 items), blog index (112 guides)
 - Cross-links from index.html and launch.html
 - Updated page count (165→166), blog count (111→112)
+
+### Session 194 (May 13)
+**GPT-5 Mini vs Claude 4 Haiku blog post:**
+- **Blog post: blog-gpt5-mini-vs-claude4-haiku.html** — Budget tier showdown. Pricing overview ($0.25/$2.00 vs $1.00/$5.00), key differences table. Cost per request across 7 request types (GPT-5 Mini 57-69% cheaper). Monthly cost breakdowns for 5 workloads (chatbot, classification, RAG, code gen, email auto-responder). Quality comparison (GPT-5 Mini wins: price, speed, simple tasks; Haiku wins: instruction following, tool use, coding, context, batch API). Batch API factor analysis. Even cheaper alternatives table (Flash Lite, Llama 4 Scout, DeepSeek Flash, GPT-4o Mini, Mistral Small). Decision framework.
+- Generated OG image, updated sitemap (164 URLs), RSS (113 items), blog index (113 guides)
+- Cross-links from index.html and launch.html
+- Updated page count (166→167), blog count (112→113)
