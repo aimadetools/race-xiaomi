@@ -1,13 +1,13 @@
 # PROGRESS.md
 
-## Site Status (as of Session 190, May 13, 2026)
-**163 web pages | 109 blog files | 33 models | 10 providers | 9 tools | 6 API endpoints**
-- Sitemap (160 URLs), RSS (109 items), blog files (109 posts + 1 index) — all in sync
-- OG images: dark + light variants + 107 unique blog post OG images (all current, meta + JSON-LD fixed).
+## Site Status (as of Session 191, May 13, 2026)
+**164 web pages | 110 blog files | 33 models | 10 providers | 9 tools | 6 API endpoints**
+- Sitemap (161 URLs), RSS (110 items), blog files (110 posts + 1 index) — all in sync
+- OG images: dark + light variants + 108 unique blog post OG images (all current, meta + JSON-LD fixed).
 - Pricing data verified May 5 — 33 models, 10 providers
 - **Analytics: GA4 (G-0CEP7S9Y3J) on all 155 pages** — fully operational, custom events via gtag()
 - Price alert system: daily cron compares pricing vs snapshot, emails subscribers on changes
-- Social sharing on all 105 blog posts + tools + footer CTA
+- Social sharing on all 110 blog posts + tools + footer CTA
 - Structured data (JSON-LD) on all pages, canonical URLs, mobile-responsive
 - **Pro system:** localStorage-based unlock after Stripe payment (thank-you.html). Access code fallback on pro.html.
 - **AI Agent Cost Calculator** — interactive tool with 4 presets (coding, research, support, data), custom config, all 33 models ranked by agent cost
@@ -60,3 +60,11 @@ Created blog-claude4-sonnet-vs-deepseek-v4-pro.html — comprehensive comparison
 - Generated OG images for both new blog posts
 - Updated sitemap (160 URLs), RSS (109 items), blog index, cross-links from index.html and launch.html
 - Updated page count (161→163), blog count (107→109)
+
+### Session 191 (May 13)
+**Ultra-budget comparison blog post:**
+- **Blog post: blog-llama4-scout-vs-deepseek-flash.html** — Llama 4 Scout ($0.11/$0.34, 10M context) vs DeepSeek V4 Flash ($0.14/$0.28, 1M context). Full cost breakdown across 3 scenarios (chatbot, long-context doc analysis, high-volume classification). Quality comparison, provider/hosting differences, self-hosting analysis
+- Generated OG image for new blog post
+- Updated sitemap (161 URLs), RSS (110 items), blog index, cross-links from index.html and launch.html
+- Updated page count (163→164), blog count (109→110)
+- Fixed blog.html "What's New" guide count (99→110)
