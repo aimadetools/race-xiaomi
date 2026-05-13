@@ -102,7 +102,7 @@
 
         .model-list { display: flex; flex-direction: column; gap: 8px; }
         .model-row {
-            display: grid; grid-template-columns: 32px 1fr 100px 1fr 100px; gap: 16px;
+            display: grid; grid-template-columns: 32px 1fr 100px 1fr 100px 100px; gap: 16px;
             align-items: center; padding: 14px 20px;
             background: var(--bg-card); border: 1px solid var(--border);
             border-radius: 10px; transition: all 0.2s; cursor: default;
@@ -129,6 +129,7 @@
         .model-bar.expensive { background: linear-gradient(90deg, rgba(239,68,68,0.3), rgba(239,68,68,0.6)); }
         .model-cost { font-size: 15px; font-weight: 700; color: var(--text-primary); text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
         .model-row.cheapest .model-cost { color: var(--green); }
+        .model-cpr { font-size: 13px; font-weight: 600; color: var(--accent); text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
 
         .summary-bar {
             max-width: 900px; margin: 0 auto 24px; padding: 0 24px;
@@ -166,6 +167,7 @@
             .results-section { padding: 0 16px 40px; }
             .model-row { grid-template-columns: 28px 1fr 80px; gap: 10px; padding: 12px 14px; }
             .model-bar-container { display: none; }
+            .model-cpr { display: none; }
             .summary-bar { grid-template-columns: 1fr; padding: 0 16px; }
         }
     </style>
@@ -356,7 +358,8 @@
 
             let models = API_MODELS.map(m => ({
                 ...m,
-                monthlyCost: getMonthlyCost(m, inputTokens, outputTokens, requests, days)
+                monthlyCost: getMonthlyCost(m, inputTokens, outputTokens, requests, days),
+                costPerRequest: m.input * (inputTokens / 1e6) + m.output * (outputTokens / 1e6)
             }));
 
             // Filter
@@ -404,6 +407,8 @@
                 const rowClass = isCheapest ? 'cheapest' : (isExpensive ? 'expensive' : '');
                 const barClass = isCheapest ? 'cheapest' : (isExpensive ? 'expensive' : 'mid');
 
+                const cpr = m.costPerRequest;
+                const cprStr = cpr < 0.01 ? '$' + cpr.toFixed(4) : '$' + cpr.toFixed(4);
                 html += '<div class="model-row ' + rowClass + '">' +
                     '<div class="model-rank">' + (i + 1) + '</div>' +
                     '<div class="model-info">' +
@@ -411,6 +416,7 @@
                         '<div class="model-provider">' + m.provider + ' &middot; ' + m.tier + ' &middot; ' + m.context + ' ctx</div>' +
                     '</div>' +
                     '<div class="model-bar-container"><div class="model-bar ' + barClass + '" style="width:' + barPct + '%"></div></div>' +
+                    '<div class="model-cpr">' + cprStr + '</div>' +
                     '<div class="model-cost">$' + m.monthlyCost.toFixed(2) + '/mo</div>' +
                 '</div>';
             });

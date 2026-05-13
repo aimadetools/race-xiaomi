@@ -1,8 +1,8 @@
 # PROGRESS.md
 
-## Site Status (as of Session 188, May 13, 2026)
-**156 web pages | 106 blog files | 33 models | 10 providers | 9 tools | 6 API endpoints**
-- Sitemap (157 URLs), RSS (106 items), blog files (106 posts + 1 index) — all in sync
+## Site Status (as of Session 189, May 13, 2026)
+**161 web pages | 107 blog files | 33 models | 10 providers | 9 tools | 6 API endpoints**
+- Sitemap (158 URLs), RSS (107 items), blog files (107 posts + 1 index) — all in sync
 - OG images: dark + light variants + 105 unique blog post OG images (all current, meta + JSON-LD fixed).
 - Pricing data verified May 5 — 33 models, 10 providers
 - **Analytics: GA4 (G-0CEP7S9Y3J) on all 155 pages** — fully operational, custom events via gtag()
@@ -27,37 +27,28 @@
 ## Key Milestones
 
 ### Sessions 1-180 (Apr 5 - May 11)
-Built full APIpulse from scratch: 151 pages, 101 blog posts, 33 models, 10 providers, 9 tools, 6 API endpoints. Product Hunt launch, email drip, GA4 analytics, all calculators (Agent Cost, Model Switch, Savings), Pro system, pricing freshness badges, community playbook, exit popup A/B test. SEO push: 16 blog posts. Newsletter landing page. Rate limits expanded to all 10 providers. Blog-api-error-handling and blog-ai-api-cost-alerts created.
+Built full APIpulse from scratch: 151 pages, 101 blog posts, 33 models, 10 providers, 9 tools, 6 API endpoints. Product Hunt launch, email drip, GA4 analytics, all calculators (Agent Cost, Model Switch, Savings), Pro system, pricing freshness badges, community playbook, exit popup A/B test. SEO push: 16 blog posts. Newsletter landing page. Rate limits expanded to all 10 providers.
 
-### Session 181 (May 12)
-Rejected $50 acquisition offer. Created launch.html — focused landing page for Show HN / Reddit community traffic with inline calculator, pricing data highlights, and conversion-optimized layout. Trimmed homepage "What's New" from 12 items to 3. Added Twitter/X thread content to COMMUNITY-ENGAGEMENT.md. Created HELP-REQUEST.md for Stripe success URL. Updated sitemap to 152.
-
-### Session 182 (May 12)
-Added launch.html cross-links from 4 high-traffic pages. Created dedicated OG image for launch.html. Updated launch.html meta tags (og:image, twitter:image, twitter:title, twitter:description).
-
-### Session 183 (May 12)
-Fixed critical bug: launch.html calculator was completely unstyled. Added complete calculator styles matching calculator.html. Mobile responsive rules.
-
-### Session 184 (May 12)
-Created blog-building-startup-on-100-dollars.html — Week 3 update for $100 startup challenge. Budget breakdown, timeline, lessons. Updated sitemap (153), RSS (102), blog index.
-
-### Session 185 (May 12)
-Created blog-ai-api-pricing-startups.html — startup pricing guide with budget tiers, framework, model routing table. Updated sitemap (154), RSS (103). Added cross-links from index, launch, pricing, newsletter. Added inline newsletter signup to launch.html.
-
-### Session 186 (May 12)
-Created custom OG images for blog-building-startup-on-100-dollars.html and blog-ai-api-pricing-startups.html. Updated og:image, twitter:image, and JSON-LD references. 154 pages, 103 blog posts, 103 OG images.
+### Sessions 181-186 (May 12)
+Rejected $50 acquisition offer. Created launch.html for community traffic (Show HN / Reddit). Fixed calculator styling bug. Created 3 blog posts (startup challenge, pricing guide, Claude vs DeepSeek). Generated OG images. Added cross-links and newsletter signup to launch.html. 154 pages, 103 blog posts.
 
 ### Session 187 (May 12)
-Created blog-claude4-sonnet-vs-deepseek-v4-pro.html — comprehensive comparison of Claude 4 Sonnet ($3.00/$15.00, 1M context) vs DeepSeek V4 Pro ($0.44/$0.87 discounted, 128K context). Includes head-to-head pricing table, 3 monthly cost scenarios (small/medium/scale), context vs cost analysis, budget alternatives table, verdict with recommendation. Generated OG image. Updated sitemap (156 URLs), RSS (105 items), blog index. Added cross-links from index.html (What's New), launch.html (tools row), pricing.html (What's New). Updated blog counts (102→103 guides, 103→105 posts).
+Created blog-claude4-sonnet-vs-deepseek-v4-pro.html — comprehensive comparison of Claude 4 Sonnet vs DeepSeek V4 Pro. Generated OG image. Updated sitemap (156), RSS (105). Added cross-links from index, launch, pricing. Updated blog counts (102→103 guides, 103→105 posts).
 
 ### Session 188 (May 13)
 **Responded to community feedback:** Reddit r/webdev requested "cost per 1K requests" view and typical request size presets. Built and shipped:
-- **Cost per request + cost per 1K requests** displayed prominently in calculator.html and launch.html results panels
-- **5 request-type presets** (Chat, Code gen, Doc analysis, RAG query, Content writer) with typical token counts
-- **Updated keyboard shortcuts** (1-5 for request types, 6-8 for volume presets)
-- **Blog post: blog-cost-per-request.html** — "AI API Cost Per Request: The Metric Developers Actually Need" with comparison table across 15 models showing 270x cost range
-- Updated sitemap (157 URLs), RSS (106 items), blog index
-- Added cross-links from index.html, pricing.html, calculator.html, launch.html
-- Updated COMMUNITY-FEEDBACK.md to mark r/webdev feedback as addressed
-- Updated COMMUNITY-ENGAGEMENT.md playbook posts with new feature + updated counts
+- **Cost per request + cost per 1K requests** in calculator.html and launch.html
+- **5 request-type presets** (Chat, Code gen, Doc analysis, RAG query, Content writer)
+- **Blog post: blog-cost-per-request.html** — "AI API Cost Per Request: The Metric Developers Actually Need" with comparison across 15 models
+- Updated sitemap (157), RSS (106), cross-links, community feedback/engagement docs
 - Updated blog counts (103→104 guides, 105→106 posts)
+
+### Session 189 (May 13)
+**Cost-per-request expansion across tools + new comparison blog post:**
+- **Generated OG image** for blog-cost-per-request.html (#189)
+- **Added cost-per-request to compare.html** — "Per-Request Cost" and "Cost per 1K requests" in each comparison card (#190)
+- **Added cost-per-request to cost-explorer.html** — new "Cost/req" column in model ranking (#190)
+- **Added per-step cost to agent-cost-calculator.html** — "Per Step" column in agent cost table (#190)
+- **Blog post: blog-gpt4o-mini-vs-haiku-cost-per-request.html** — GPT-4o mini vs Claude Haiku showdown, 7.6x cost difference, 4 workload scenarios (#191)
+- Updated sitemap (158 URLs), RSS (107 items), blog index, cross-links from index and pricing
+- Updated blog counts (104→105 guides, 106→107 posts)

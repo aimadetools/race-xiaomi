@@ -263,6 +263,7 @@
                                 <th>Model</th>
                                 <th>Provider</th>
                                 <th>Tier</th>
+                                <th>Per Step</th>
                                 <th>Per Task</th>
                                 <th>Monthly</th>
                                 <th>Annual</th>
@@ -291,6 +292,7 @@
                     <li><a href="blog-ai-coding-assistant-cost.html">AI Coding Assistant Cost: Claude Code vs GitHub Copilot vs Cursor</a></li>
                     <li><a href="blog-multi-model-routing.html">Multi-Model Routing: Save 40% on AI Agent Costs</a></li>
                     <li><a href="blog-ai-api-caching-strategies.html">AI API Caching Strategies: Cut Agent Costs by 60%</a></li>
+                    <li><a href="blog-cost-per-request.html">AI API Cost Per Request: The Metric Developers Actually Need</a></li>
                     <li><a href="calculator.html">Standard Cost Calculator →</a></li>
                     <li><a href="cost-explorer.html">Cost Explorer Dashboard →</a></li>
                 </ul>
@@ -353,10 +355,11 @@
 
         // Calculate costs
         let results = API_MODELS.map(m => {
-            const costPerTask = ((inputTokens * m.input + outputTokens * m.output) * stepsPerTask) / 1_000_000;
+            const costPerStep = (inputTokens * m.input + outputTokens * m.output) / 1_000_000;
+            const costPerTask = costPerStep * stepsPerTask;
             const monthlyCost = costPerTask * tasksPerDay * 30;
             const annualCost = monthlyCost * 12;
-            return { ...m, costPerTask, monthlyCost, annualCost };
+            return { ...m, costPerStep, costPerTask, monthlyCost, annualCost };
         });
 
         // Filter by budget tier
@@ -395,6 +398,7 @@
                 <td><span class="model-name">${r.name}</span></td>
                 <td><span class="provider">${r.provider}</span></td>
                 <td><span class="tier-badge ${tierClass}">${r.tier}</span></td>
+                <td style="color:var(--accent);font-weight:600;font-variant-numeric:tabular-nums;">$${r.costPerStep.toFixed(4)}</td>
                 <td>$${r.costPerTask.toFixed(4)}</td>
                 <td><span class="cost ${costClass}">$${r.monthlyCost.toFixed(2)}</span></td>
                 <td>$${r.annualCost.toFixed(2)}</td>

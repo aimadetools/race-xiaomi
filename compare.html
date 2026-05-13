@@ -356,6 +356,11 @@
                 <div class="price-row"><span class="label">Output (per 1M tokens)</span><span class="value" id="output-a"></span></div>
                 <div class="price-row"><span class="label">Context Window</span><span class="value" id="context-a"></span></div>
                 <div class="cost-breakdown">
+                    <h4>Per-Request Cost</h4>
+                    <div class="cost-row"><span class="label">Cost per request</span><span id="cpr-a" style="color:var(--accent);font-weight:700;"></span></div>
+                    <div class="cost-row"><span class="label">Cost per 1K requests</span><span id="cp1k-a" style="font-weight:700;"></span></div>
+                </div>
+                <div class="cost-breakdown" style="margin-top:12px;">
                     <h4>Monthly Cost Estimate</h4>
                     <div class="cost-row"><span class="label">Input cost</span><span id="input-cost-a"></span></div>
                     <div class="cost-row"><span class="label">Output cost</span><span id="output-cost-a"></span></div>
@@ -369,6 +374,11 @@
                 <div class="price-row"><span class="label">Output (per 1M tokens)</span><span class="value" id="output-b"></span></div>
                 <div class="price-row"><span class="label">Context Window</span><span class="value" id="context-b"></span></div>
                 <div class="cost-breakdown">
+                    <h4>Per-Request Cost</h4>
+                    <div class="cost-row"><span class="label">Cost per request</span><span id="cpr-b" style="color:var(--accent);font-weight:700;"></span></div>
+                    <div class="cost-row"><span class="label">Cost per 1K requests</span><span id="cp1k-b" style="font-weight:700;"></span></div>
+                </div>
+                <div class="cost-breakdown" style="margin-top:12px;">
                     <h4>Monthly Cost Estimate</h4>
                     <div class="cost-row"><span class="label">Input cost</span><span id="input-cost-b"></span></div>
                     <div class="cost-row"><span class="label">Output cost</span><span id="output-cost-b"></span></div>
@@ -443,6 +453,11 @@
             document.getElementById('output-cost-a').textContent = '$' + costA.outputCost.toFixed(2);
             document.getElementById('total-cost-a').textContent = '$' + costA.total.toFixed(2) + '/mo';
 
+            // Cost per request
+            const cprA = mA.input * (inputTokens / 1e6) + mA.output * (outputTokens / 1e6);
+            document.getElementById('cpr-a').textContent = cprA < 0.01 ? '$' + cprA.toFixed(4) : '$' + cprA.toFixed(4);
+            document.getElementById('cp1k-a').textContent = '$' + (cprA * 1000).toFixed(2);
+
             document.getElementById('badge-b').textContent = mB.provider;
             document.getElementById('name-b').textContent = mB.name;
             document.getElementById('input-b').textContent = '$' + mB.input.toFixed(2);
@@ -451,6 +466,11 @@
             document.getElementById('input-cost-b').textContent = '$' + costB.inputCost.toFixed(2);
             document.getElementById('output-cost-b').textContent = '$' + costB.outputCost.toFixed(2);
             document.getElementById('total-cost-b').textContent = '$' + costB.total.toFixed(2) + '/mo';
+
+            // Cost per request
+            const cprB = mB.input * (inputTokens / 1e6) + mB.output * (outputTokens / 1e6);
+            document.getElementById('cpr-b').textContent = cprB < 0.01 ? '$' + cprB.toFixed(4) : '$' + cprB.toFixed(4);
+            document.getElementById('cp1k-b').textContent = '$' + (cprB * 1000).toFixed(2);
 
             // Highlight cheaper
             const totalA = document.getElementById('total-cost-a');
