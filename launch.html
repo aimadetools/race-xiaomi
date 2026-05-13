@@ -362,10 +362,18 @@
         </div>
         <div class="calculator" role="form" aria-label="API Cost Calculator">
             <div class="presets">
-                <span style="font-size:13px;color:var(--text-muted);align-self:center;">Quick presets:</span>
-                <button class="preset-btn" onclick="applyPreset('startup')">Startup (1K req/day)</button>
-                <button class="preset-btn" onclick="applyPreset('scaleup')">Scale-up (10K req/day)</button>
-                <button class="preset-btn" onclick="applyPreset('enterprise')">Enterprise (100K req/day)</button>
+                <span style="font-size:13px;color:var(--text-muted);align-self:center;">Typical request:</span>
+                <button class="preset-btn" onclick="applyPreset('chat')" title="500 in / 300 out tokens">Chat</button>
+                <button class="preset-btn" onclick="applyPreset('code')" title="2000 in / 1500 out tokens">Code gen</button>
+                <button class="preset-btn" onclick="applyPreset('analysis')" title="4000 in / 500 out tokens">Doc analysis</button>
+                <button class="preset-btn" onclick="applyPreset('rag')" title="3000 in / 600 out tokens">RAG query</button>
+                <button class="preset-btn" onclick="applyPreset('writer')" title="500 in / 2000 out tokens">Writer</button>
+            </div>
+            <div class="presets">
+                <span style="font-size:13px;color:var(--text-muted);align-self:center;">By volume:</span>
+                <button class="preset-btn" onclick="applyPreset('startup')">Startup (1K/day)</button>
+                <button class="preset-btn" onclick="applyPreset('scaleup')">Scale-up (10K/day)</button>
+                <button class="preset-btn" onclick="applyPreset('enterprise')">Enterprise (100K/day)</button>
             </div>
             <div class="calc-grid">
                 <div class="calc-inputs">
@@ -425,13 +433,21 @@
                     </div>
                 </div>
                 <div class="calc-results" role="region" aria-label="Cost calculation results" aria-live="polite">
-                    <h3 style="margin-bottom: 16px; font-size: 16px;">Monthly Cost Estimate</h3>
+                    <h3 style="margin-bottom: 16px; font-size: 16px;">Cost Estimate</h3>
+                    <div class="result-item" style="background:var(--accent-glow);margin:-4px -8px 8px;padding:10px 8px;border-radius:8px;border:1px solid rgba(99,102,241,0.2);">
+                        <span class="result-label" style="font-weight:600;color:var(--text-primary);">Cost per request</span>
+                        <span class="result-value" id="cost-per-request" style="color:var(--accent);font-size:16px;">$0.0000</span>
+                    </div>
+                    <div class="result-item" style="background:rgba(34,197,94,0.05);margin:-4px -8px 8px;padding:10px 8px;border-radius:8px;border:1px solid rgba(34,197,94,0.15);">
+                        <span class="result-label" style="font-weight:600;color:var(--text-primary);">Cost per 1K requests</span>
+                        <span class="result-value" id="cost-per-1k" style="color:var(--green);font-size:16px;">$0.00</span>
+                    </div>
                     <div class="result-item">
-                        <span class="result-label">Input cost</span>
+                        <span class="result-label">Input cost (monthly)</span>
                         <span class="result-value" id="input-cost">$0.00</span>
                     </div>
                     <div class="result-item">
-                        <span class="result-label">Output cost</span>
+                        <span class="result-label">Output cost (monthly)</span>
                         <span class="result-value" id="output-cost">$0.00</span>
                     </div>
                     <div class="result-item">
@@ -457,8 +473,8 @@
         <a href="pricing-trends.html">📈 Price Trends</a>
         <a href="agent-cost-calculator.html">🤖 Agent Costs</a>
         <a href="pricing.html">📋 Full Pricing</a>
+        <a href="blog-cost-per-request.html">💰 Cost Per Request</a>
         <a href="blog-ai-api-pricing-startups.html">🚀 Startup Guide</a>
-        <a href="blog-claude4-sonnet-vs-deepseek-v4-pro.html">⚡ Sonnet vs DeepSeek</a>
     </section>
 
     <section class="launch-cta">
@@ -511,6 +527,10 @@
             const totalCost = inputCost + outputCost;
             const totalTokens = totalInputTokens + totalOutputTokens;
 
+            const costPerRequest = p.input * (inputTokens / 1000000) + p.output * (outputTokens / 1000000);
+            const costPer1K = costPerRequest * 1000;
+            document.getElementById('cost-per-request').textContent = '$' + costPerRequest.toFixed(4);
+            document.getElementById('cost-per-1k').textContent = '$' + costPer1K.toFixed(2);
             document.getElementById('input-cost').textContent = '$' + inputCost.toFixed(2);
             document.getElementById('output-cost').textContent = '$' + outputCost.toFixed(2);
             document.getElementById('total-tokens').textContent = totalTokens.toLocaleString();
@@ -563,6 +583,11 @@
 
         function applyPreset(type) {
             const presets = {
+                chat: { input: 500, output: 300, requests: 1000, days: 30 },
+                code: { input: 2000, output: 1500, requests: 200, days: 30 },
+                analysis: { input: 4000, output: 500, requests: 500, days: 30 },
+                rag: { input: 3000, output: 600, requests: 500, days: 30 },
+                writer: { input: 500, output: 2000, requests: 100, days: 30 },
                 startup: { input: 1500, output: 400, requests: 1000, days: 30 },
                 scaleup: { input: 2000, output: 600, requests: 10000, days: 30 },
                 enterprise: { input: 3000, output: 1000, requests: 100000, days: 30 }

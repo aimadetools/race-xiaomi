@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI API Cost Per Request: The Metric Developers Actually Need — APIpulse</title>
+    <meta name="description" content="Stop thinking in tokens. Learn how to calculate AI API cost per request, compare models by cost-per-call, and budget your LLM usage like a real engineering expense.">
+    <meta name="keywords" content="AI API cost per request, LLM cost per call, API pricing per request, GPT cost per request, Claude cost per call, AI API budget per request">
+    <meta property="og:title" content="AI API Cost Per Request: The Metric Developers Actually Need — APIpulse">
+    <meta property="og:description" content="Stop thinking in tokens. Calculate AI API cost per request across 33 models and budget your LLM usage like a real engineering expense.">
+    <meta property="og:type" content="article">
+    <meta property="article:published_time" content="2026-05-13">
+    <meta property="article:modified_time" content="2026-05-13">
+    <meta property="article:author" content="APIpulse">
+    <meta property="og:image" content="https://getapipulse.com/og-images/blog-cost-per-request.png">
+    <meta property="og:url" content="https://getapipulse.com/blog-cost-per-request.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="AI API Cost Per Request: The Metric Developers Actually Need">
+    <meta name="twitter:image" content="https://getapipulse.com/og-images/blog-cost-per-request.png">
+    <meta name="twitter:description" content="Stop thinking in tokens. Calculate AI API cost per request across 33 models.">
+    <link rel="canonical" href="https://getapipulse.com/blog-cost-per-request.html">
+    <link rel="alternate" type="application/rss+xml" title="APIpulse Blog" href="https://getapipulse.com/rss.xml">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="styles.css">
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0CEP7S9Y3J"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-0CEP7S9Y3J');
+    </script>
+    <script src="analytics.js" defer></script>
+    <script src="dynamic-date.js" defer></script>
+    <script src="shared.js" defer></script>
+    <script src="pricing-data.js" defer></script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "AI API Cost Per Request: The Metric Developers Actually Need",
+        "description": "Stop thinking in tokens. Learn how to calculate AI API cost per request, compare models by cost-per-call, and budget your LLM usage like a real engineering expense.",
+        "datePublished": "2026-05-13",
+        "dateModified": "2026-05-13",
+        "author": { "@type": "Organization", "name": "APIpulse" },
+        "publisher": { "@type": "Organization", "name": "APIpulse", "url": "https://getapipulse.com" },
+        "url": "https://getapipulse.com/blog-cost-per-request.html",
+        "image": "https://getapipulse.com/og-images/blog-cost-per-request.png"
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Blog", "item": "https://getapipulse.com/blog.html" },
+            { "@type": "ListItem", "position": 2, "name": "AI API Cost Per Request", "item": "https://getapipulse.com/blog-cost-per-request.html" }
+        ]
+    }
+    </script>
+    <style>
+        .content { max-width: 800px; margin: 0 auto; padding: 120px 24px 80px; }
+        h1 { font-size: clamp(28px, 4vw, 40px); font-weight: 800; margin-bottom: 12px; }
+        .subtitle { color: var(--text-secondary); font-size: 18px; margin-bottom: 48px; line-height: 1.6; }
+        .article { max-width: 700px; margin: 0 auto; }
+        .article h2 { font-size: 24px; font-weight: 700; margin: 32px 0 16px; }
+        .article h3 { font-size: 18px; font-weight: 600; margin: 24px 0 12px; }
+        .article p { color: var(--text-secondary); margin-bottom: 16px; line-height: 1.7; }
+        .article ul, .article ol { color: var(--text-secondary); padding-left: 24px; margin-bottom: 16px; }
+        .article li { margin-bottom: 8px; }
+        .article strong { color: var(--text-primary); }
+        .article code {
+            background: var(--bg-card); padding: 2px 8px; border-radius: 4px;
+            font-size: 14px; color: var(--accent);
+        }
+        .back-link {
+            display: inline-flex; align-items: center; gap: 6px;
+            font-size: 14px; color: var(--text-secondary); margin-bottom: 32px;
+        }
+        .back-link:hover { color: var(--text-primary); }
+        .cta-inline {
+            background: var(--bg-secondary); border: 1px solid var(--accent);
+            border-radius: 12px; padding: 24px; margin: 32px 0; text-align: center;
+        }
+        .cta-inline p { margin-bottom: 12px; }
+        .share-section {
+            margin-top: 32px; padding-top: 24px; border-top: 1px solid var(--border);
+            text-align: center;
+        }
+        .share-section p { color: var(--text-secondary); font-size: 14px; margin-bottom: 12px; }
+        .share-btn {
+            display: inline-block; background: var(--bg-card); color: var(--text-primary);
+            padding: 8px 20px; border-radius: 8px; font-size: 14px; font-weight: 500;
+            border: 1px solid var(--border); transition: all 0.2s;
+        }
+        .share-btn:hover { background: var(--accent); color: white; border-color: var(--accent); }
+        table.comparison {
+            width: 100%; border-collapse: collapse; margin: 20px 0;
+            background: var(--bg-secondary); border-radius: 10px; overflow: hidden;
+        }
+        table.comparison th {
+            background: var(--bg-card); padding: 12px 16px; text-align: left;
+            font-size: 13px; color: var(--text-muted); font-weight: 600;
+            text-transform: uppercase; letter-spacing: 0.5px;
+        }
+        table.comparison td {
+            padding: 12px 16px; border-bottom: 1px solid var(--border);
+            font-size: 14px; color: var(--text-secondary);
+        }
+        table.comparison tr:last-child td { border-bottom: none; }
+        table.comparison td strong { color: var(--text-primary); }
+        table.comparison .highlight { color: var(--green); font-weight: 700; }
+        .cost-callout {
+            background: linear-gradient(135deg, rgba(99,102,241,0.08), rgba(34,197,94,0.06));
+            border: 1px solid var(--accent); border-radius: 12px; padding: 24px;
+            margin: 24px 0; text-align: center;
+        }
+        .cost-callout .big-number {
+            font-size: 36px; font-weight: 800; color: var(--accent);
+            font-variant-numeric: tabular-nums;
+        }
+        .cost-callout .label { font-size: 14px; color: var(--text-secondary); margin-top: 4px; }
+        .related-posts {
+            margin-top: 48px; padding-top: 32px; border-top: 1px solid var(--border);
+        }
+        .related-posts h2 { font-size: 20px; margin-bottom: 16px; }
+        .related-posts a { display: block; padding: 8px 0; font-size: 15px; }
+        @media (max-width: 768px) {
+            .content { padding: 100px 20px 60px; }
+            table.comparison { font-size: 13px; }
+            table.comparison th, table.comparison td { padding: 10px 12px; }
+        }
+    </style>
+    <meta name="theme-color" content="#6366f1">
+</head>
+<body>
+    <a href="#main" class="skip-link">Skip to content</a>
+    <nav>
+        <div class="nav-inner">
+            <a href="index.html" class="logo">API<span>pulse</span></a>
+            <button class="hamburger" onclick="toggleMobileNav()" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+            <div class="nav-links">
+                <a href="calculator.html">Calculator</a>
+                <a href="compare.html">Compare</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="blog.html" style="color:var(--accent);font-weight:600;">Blog</a>
+                <a href="pricing.html" class="nav-cta" onclick="if(window.trackEvent)window.trackEvent('pro_button_clicked',{source:'nav'})">Get Pro — $29</a>
+                <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
+            </div>
+        </div>
+    </nav>
+
+    <main id="main">
+    <div class="content">
+        <a href="blog.html" class="back-link">← Back to Blog</a>
+
+        <article class="article">
+            <h1>AI API Cost Per Request: The Metric Developers Actually Need</h1>
+            <p class="subtitle">Token-based pricing is confusing. Here's how to think about LLM costs in terms developers actually use — cost per API call.</p>
+
+            <p><em>Published: May 13, 2026 &middot; 6 min read</em></p>
+
+            <p>When you're budgeting for an AI-powered feature, nobody asks "how many tokens will this use?" They ask: <strong>"How much does each API call cost?"</strong></p>
+
+            <p>Yet every LLM provider prices by tokens — millions of them. That's like a gas station selling fuel by the milliliter. Technically accurate, but not how people think.</p>
+
+            <p>Let's fix that.</p>
+
+            <h2>What Is Cost Per Request?</h2>
+
+            <p>Cost per request is the total price of a single API call to an LLM. It's calculated from two things:</p>
+
+            <ul>
+                <li><strong>Input tokens</strong> — what you send to the model (your prompt, system instructions, context)</li>
+                <li><strong>Output tokens</strong> — what the model generates back (the response)</li>
+            </ul>
+
+            <p>The formula is straightforward:</p>
+
+            <p><code>cost = (input_tokens / 1,000,000) × input_price + (output_tokens / 1,000,000) × output_price</code></p>
+
+            <p>For example, a typical chat request with 500 input tokens and 300 output tokens on GPT-4o mini ($0.15/$0.60 per 1M):</p>
+
+            <div class="cost-callout">
+                <div class="big-number">$0.00026</div>
+                <div class="label">per request — or $0.26 per 1,000 requests</div>
+            </div>
+
+            <p>That's the number that matters when you're planning a feature. Not "tokens per million" — but "dollars per call."</p>
+
+            <h2>Cost Per Request Across 33 Models</h2>
+
+            <p>Here's what a typical chat request (500 input / 300 output tokens) costs across popular models:</p>
+
+            <table class="comparison">
+                <thead>
+                    <tr>
+                        <th>Model</th>
+                        <th>Provider</th>
+                        <th>Cost per Request</th>
+                        <th>Cost per 1K</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Gemini 2.0 Flash Lite</strong></td>
+                        <td>Google</td>
+                        <td class="highlight">$0.00013</td>
+                        <td class="highlight">$0.13</td>
+                    </tr>
+                    <tr>
+                        <td><strong>GPT-oss 20B</strong></td>
+                        <td>OpenAI</td>
+                        <td class="highlight">$0.00015</td>
+                        <td class="highlight">$0.15</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Llama 3.1 8B</strong></td>
+                        <td>Meta (Together.ai)</td>
+                        <td class="highlight">$0.00011</td>
+                        <td class="highlight">$0.11</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Gemini 2.0 Flash</strong></td>
+                        <td>Google</td>
+                        <td>$0.00017</td>
+                        <td>$0.17</td>
+                    </tr>
+                    <tr>
+                        <td><strong>DeepSeek V4 Flash</strong></td>
+                        <td>DeepSeek</td>
+                        <td>$0.00015</td>
+                        <td>$0.15</td>
+                    </tr>
+                    <tr>
+                        <td><strong>GPT-4o mini</strong></td>
+                        <td>OpenAI</td>
+                        <td>$0.00026</td>
+                        <td>$0.26</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Mistral Small 4</strong></td>
+                        <td>Mistral</td>
+                        <td>$0.00026</td>
+                        <td>$0.26</td>
+                    </tr>
+                    <tr>
+                        <td><strong>DeepSeek V4 Pro</strong></td>
+                        <td>DeepSeek</td>
+                        <td>$0.00048</td>
+                        <td>$0.48</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Claude Haiku 4.5</strong></td>
+                        <td>Anthropic</td>
+                        <td>$0.00200</td>
+                        <td>$2.00</td>
+                    </tr>
+                    <tr>
+                        <td><strong>GPT-5 mini</strong></td>
+                        <td>OpenAI</td>
+                        <td>$0.00073</td>
+                        <td>$0.73</td>
+                    </tr>
+                    <tr>
+                        <td><strong>GPT-5</strong></td>
+                        <td>OpenAI</td>
+                        <td>$0.00363</td>
+                        <td>$3.63</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Claude Sonnet 4</strong></td>
+                        <td>Anthropic</td>
+                        <td>$0.00600</td>
+                        <td>$6.00</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Gemini 2.5 Pro</strong></td>
+                        <td>Google</td>
+                        <td>$0.00363</td>
+                        <td>$3.63</td>
+                    </tr>
+                    <tr>
+                        <td><strong>GPT-5.5</strong></td>
+                        <td>OpenAI</td>
+                        <td>$0.01150</td>
+                        <td>$11.50</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Claude 4 Opus</strong></td>
+                        <td>Anthropic</td>
+                        <td>$0.03000</td>
+                        <td>$30.00</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p>The range is massive: <strong>$0.00011 to $0.03000 per request</strong> — a 270x difference between the cheapest and most expensive model for the same workload.</p>
+
+            <h2>Why Cost Per Request Matters More Than Token Pricing</h2>
+
+            <h3>1. It's what you actually budget against</h3>
+            <p>When your PM asks "how much will this chatbot feature cost?", the answer is never "3 million tokens per month." It's "$50/month at 1,000 requests per day" or "$0.05 per conversation."</p>
+
+            <h3>2. It makes model comparison intuitive</h3>
+            <p>Is GPT-5 mini worth the premium over GPT-4o mini? At $0.00073 vs $0.00026 per request, that's a 2.8x cost increase. Now you can decide if the quality improvement justifies 2.8x the price.</p>
+
+            <h3>3. It reveals hidden costs in your architecture</h3>
+            <p>If your RAG pipeline makes 3 LLM calls per user query (classify → retrieve → generate), your true cost per user interaction is 3x the single-request cost. Token-based thinking hides this; request-based thinking exposes it.</p>
+
+            <h3>4. It scales linearly with users</h3>
+            <p>1,000 users × 5 requests each = 5,000 requests. Multiply by cost per request. Done. No need to estimate token distributions.</p>
+
+            <h2>Common Request Types and Their Costs</h2>
+
+            <p>Different workloads have very different token profiles. Here are typical patterns:</p>
+
+            <table class="comparison">
+                <thead>
+                    <tr>
+                        <th>Request Type</th>
+                        <th>Input Tokens</th>
+                        <th>Output Tokens</th>
+                        <th>GPT-4o mini</th>
+                        <th>Claude Sonnet 4</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Chat message</strong></td>
+                        <td>500</td>
+                        <td>300</td>
+                        <td>$0.00026</td>
+                        <td>$0.00600</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Code generation</strong></td>
+                        <td>2,000</td>
+                        <td>1,500</td>
+                        <td>$0.00120</td>
+                        <td>$0.02850</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Document analysis</strong></td>
+                        <td>4,000</td>
+                        <td>500</td>
+                        <td>$0.00090</td>
+                        <td>$0.01950</td>
+                    </tr>
+                    <tr>
+                        <td><strong>RAG query</strong></td>
+                        <td>3,000</td>
+                        <td>600</td>
+                        <td>$0.00081</td>
+                        <td>$0.01800</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Content writing</strong></td>
+                        <td>500</td>
+                        <td>2,000</td>
+                        <td>$0.00128</td>
+                        <td>$0.03150</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p>A code generation request costs 4-5x more than a simple chat message because it produces many more output tokens. This is obvious once you see it in request-level terms — but easy to miss when you're thinking in raw token counts.</p>
+
+            <h2>How to Calculate Your Cost Per Request</h2>
+
+            <p>Three steps:</p>
+
+            <ol>
+                <li><strong>Measure your typical request.</strong> Log input and output token counts for a sample of real requests. Find the median (not average — outliers skew it).</li>
+                <li><strong>Look up the model's pricing.</strong> Input price per 1M tokens, output price per 1M tokens.</li>
+                <li><strong>Apply the formula.</strong> <code>(median_input / 1M × input_price) + (median_output / 1M × output_price)</code></li>
+            </ol>
+
+            <p>Or just use our <a href="calculator.html">cost calculator</a> — enter your typical token counts and it shows cost per request, cost per 1K requests, and monthly total instantly.</p>
+
+            <h2>Cost Optimization Strategies (In Request Terms)</h2>
+
+            <h3>Reduce input tokens per request</h3>
+            <p>Shorter system prompts, smarter context selection, and prompt compression all reduce the input side. Cutting input from 3,000 to 1,500 tokens on Claude Sonnet 4 saves $0.0045 per request — that's $4.50 per 1,000 requests.</p>
+
+            <h3>Limit output tokens per request</h3>
+            <p>Set <code>max_tokens</code> appropriately. If your chatbot typically needs 200 tokens, don't leave the default at 4,096. The model stops generating when it's done, but a lower limit prevents runaway responses.</p>
+
+            <h3>Use the cheapest model that works</h3>
+            <p>Not every request needs GPT-5. Route simple queries to GPT-4o mini ($0.00026/request) and complex ones to GPT-5 ($0.00363/request). A smart routing strategy can cut costs by 60-80%.</p>
+
+            <h3>Batch similar requests</h3>
+            <p>If you're processing 100 documents, batch them into fewer API calls with multiple documents per prompt. Fewer requests = fewer per-request overhead costs.</p>
+
+            <div class="cta-inline">
+                <p><strong>Calculate your exact cost per request</strong></p>
+                <p>Enter your typical token counts and see cost per request, per 1K requests, and monthly total across 33 models.</p>
+                <a href="calculator.html" class="btn-primary" style="display:inline-block;">Open the Calculator</a>
+            </div>
+
+            <h2>The Bottom Line</h2>
+
+            <p>Token-based pricing is how providers charge. But <strong>request-based thinking is how engineers budget.</strong></p>
+
+            <p>When you know that each API call costs $0.00026 on GPT-4o mini or $0.006 on Claude Sonnet 4, you can make real architectural decisions: which model to use, how many calls to make per user interaction, whether to cache responses, and when to batch requests.</p>
+
+            <p>The 270x cost difference between the cheapest and most expensive model isn't visible in token pricing tables. It's crystal clear when you see it as cost per request.</p>
+
+            <div class="share-section">
+                <p>Found this useful? Share it with your team:</p>
+                <a href="https://twitter.com/intent/tweet?text=AI%20API%20Cost%20Per%20Request%3A%20The%20metric%20developers%20actually%20need%20for%20budgeting%20LLM%20costs&url=https%3A%2F%2Fgetapipulse.com%2Fblog-cost-per-request.html" class="share-btn" target="_blank" rel="noopener">Share on X</a>
+                <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fgetapipulse.com%2Fblog-cost-per-request.html" class="share-btn" target="_blank" rel="noopener" style="margin-left:8px;">LinkedIn</a>
+            </div>
+
+            <div class="related-posts">
+                <h2>Related Reading</h2>
+                <a href="calculator.html">AI API Cost Calculator — Calculate cost per request across 33 models</a>
+                <a href="blog-cost-optimization-guide.html">The Complete Guide to LLM Cost Optimization</a>
+                <a href="blog-cheapest-llm.html">Cheapest LLM APIs in 2026</a>
+                <a href="blog-estimate-costs.html">How to Estimate Your AI API Costs</a>
+                <a href="compare.html">Compare Two Models Side by Side</a>
+            </div>
+        </article>
+    </div>
+    </main>
+
+    <footer>
+        <p>Pricing data last verified: <span class="verified-date"></span></p>
+        <p>&copy; 2026 APIpulse. <a href="index.html">Home</a> &middot; <a href="blog.html">Blog</a> &middot; <a href="about.html">About</a> &middot; <a href="https://x.com/getapipulse" target="_blank" rel="noopener">Twitter</a></p>
+    </footer>
+</body>
+</html>

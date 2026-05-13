@@ -61,7 +61,8 @@ What I learned:
 - SEO content before launch = organic traffic on day one
 - Free tools are the best marketing (developers bookmark and return)
 - Pricing data freshness matters more than I expected
-- Reddit r/SaaS feedback shaped the product (added pricing freshness badge after u/dev_startup_grind's comment)
+- Reddit feedback shaped the product: r/webdev asked for "cost per request" instead of just tokens, so I added it
+- Community feedback is the best product roadmap
 
 Tech stack: Static HTML + Vercel. No backend. All calculations in JavaScript.
 
@@ -74,9 +75,11 @@ Happy to answer questions about the build process or the PH launch.
 
 I built a calculator that lets you estimate monthly AI API costs across providers. Features:
 - 33 models, 10 providers
-- Interactive calculator with presets (coding, research, chatbot, data analysis)
+- **Cost per request** and **cost per 1K requests** — the metrics developers actually budget against
+- Request-type presets: chat message, code gen, doc analysis, RAG query, content writer
+- Monthly cost estimator with volume presets
 - Provider comparison table
-- Cost-per-request breakdown
+- Cheaper alternative recommendations
 
 It's completely free, no signup required: https://getapipulse.com/launch.html?utm_source=reddit&utm_medium=post&utm_campaign=r_webdev_tool
 
@@ -96,12 +99,12 @@ The LLM API market has shifted massively in 2025-2026:
 I built APIpulse to help developers navigate this. It's a free, static tool that compares 33 models across 10 providers with interactive calculators.
 
 Key pages:
+- /calculator — shows cost per request, cost per 1K requests, and monthly total. New: request-type presets (chat, code gen, doc analysis, RAG, content writer)
 - /pricing-trends — every major price move, decision framework for when to switch
-- /calculator — interactive monthly cost estimator with 4 presets
 - /model-switch — side-by-side savings calculator
 - /agent-cost-calculator — costs for AI agent workloads
 
-99 blog posts covering specific comparisons (DeepSeek vs GPT-5 Mini, Mistral Small vs Haiku, etc.).
+105 blog posts covering specific comparisons (DeepSeek vs GPT-5 Mini, Mistral Small vs Haiku, cost per request analysis, etc.).
 
 All static HTML/JS, no backend, no signup. Deployed on Vercel.
 
@@ -151,25 +154,27 @@ For self-hosters: the break-even point vs API calls depends heavily on utilizati
 Full comparison: https://getapipulse.com/launch.html?utm_source=reddit&utm_medium=post&utm_campaign=r_localllama_oss
 
 ### Reddit r/startups — Build in Public
-**Title**: "Building a startup on $100 — Week 3 update (AI API pricing tool)"
+**Title**: "Building a startup on $100 — Week 4 update (AI API pricing tool)"
 
-I'm 3 weeks into a 12-week challenge: build a real startup with only $100.
+I'm 4 weeks into a 12-week challenge: build a real startup with only $100.
 
-What I built: APIpulse — a free tool that compares AI API pricing across 33 models and 10 providers. Interactive calculators, savings comparisons, pricing trends.
+What I built: APIpulse — a free tool that compares AI API pricing across 33 models and 10 providers. Interactive calculators, savings comparisons, pricing trends, and now cost-per-request breakdowns.
 
-Week 1-2: Built the entire site (148 pages, 99 blog posts). Launched on Product Hunt.
+Week 1-2: Built the entire site (155 pages, 105 blog posts). Launched on Product Hunt.
 Week 3: Distribution push. Added savings calculator, exit popup A/B test, community engagement.
+Week 4: Responded to community feedback — added cost-per-request view and request-type presets. Rejected $50 acquisition offer.
 
 Lessons so far:
 - Static HTML + Vercel = $0 hosting, instant deploys
 - Free tools drive more traffic than blog posts
 - SEO content before launch = organic traffic from day one
 - Reddit feedback shaped the product more than any other channel
+- The $100 budget forces creative solutions (and that's a feature, not a bug)
 
-Revenue: $0 so far (Pro tier at $29 but Stripe integration needs fixing).
+Revenue: $0 so far (Pro tier at $29, Stripe needs config fix).
 Traffic: Growing steadily from PH launch and organic SEO.
 
-Next up: Community distribution, newsletter pitches, conversion optimization.
+Next up: Community distribution (Show HN, Reddit posts), newsletter pitches, conversion optimization.
 
 Full write-up with budget breakdown: https://getapipulse.com/blog-building-startup-on-100-dollars.html?utm_source=reddit&utm_medium=post&utm_campaign=r_startups_journey
 

@@ -200,16 +200,18 @@
     <section class="calculator-section">
         <div class="calculator" role="form" aria-label="API Cost Calculator">
             <div class="presets">
+                <span style="font-size:13px;color:var(--text-muted);align-self:center;">Typical request:</span>
+                <button class="preset-btn" onclick="applyPreset('chat')" title="500 in / 300 out tokens">Chat message</button>
+                <button class="preset-btn" onclick="applyPreset('code')" title="2000 in / 1500 out tokens">Code gen</button>
+                <button class="preset-btn" onclick="applyPreset('analysis')" title="4000 in / 500 out tokens">Doc analysis</button>
+                <button class="preset-btn" onclick="applyPreset('rag')" title="3000 in / 600 out tokens">RAG query</button>
+                <button class="preset-btn" onclick="applyPreset('writer')" title="500 in / 2000 out tokens">Content writer</button>
+            </div>
+            <div class="presets">
                 <span style="font-size:13px;color:var(--text-muted);align-self:center;">By volume:</span>
                 <button class="preset-btn" onclick="applyPreset('startup')">Startup (1K req/day)</button>
                 <button class="preset-btn" onclick="applyPreset('scaleup')">Scale-up (10K req/day)</button>
                 <button class="preset-btn" onclick="applyPreset('enterprise')">Enterprise (100K req/day)</button>
-            </div>
-            <div class="presets">
-                <span style="font-size:13px;color:var(--text-muted);align-self:center;">By use case:</span>
-                <button class="preset-btn" onclick="applyPreset('support')">Support Bot</button>
-                <button class="preset-btn" onclick="applyPreset('code')">Code Assistant</button>
-                <button class="preset-btn" onclick="applyPreset('writer')">Content Writer</button>
             </div>
             <div class="calc-grid">
                 <div class="calc-inputs">
@@ -269,13 +271,21 @@
                     </div>
                 </div>
                 <div class="calc-results" role="region" aria-label="Cost calculation results" aria-live="polite">
-                    <h3 style="margin-bottom: 16px; font-size: 16px;">Monthly Cost Estimate</h3>
+                    <h3 style="margin-bottom: 16px; font-size: 16px;">Cost Estimate</h3>
+                    <div class="result-item" style="background:var(--accent-glow);margin:-4px -8px 8px;padding:10px 8px;border-radius:8px;border:1px solid rgba(99,102,241,0.2);">
+                        <span class="result-label" style="font-weight:600;color:var(--text-primary);">Cost per request</span>
+                        <span class="result-value" id="cost-per-request" style="color:var(--accent);font-size:16px;">$0.0000</span>
+                    </div>
+                    <div class="result-item" style="background:rgba(34,197,94,0.05);margin:-4px -8px 8px;padding:10px 8px;border-radius:8px;border:1px solid rgba(34,197,94,0.15);">
+                        <span class="result-label" style="font-weight:600;color:var(--text-primary);">Cost per 1K requests</span>
+                        <span class="result-value" id="cost-per-1k" style="color:var(--green);font-size:16px;">$0.00</span>
+                    </div>
                     <div class="result-item">
-                        <span class="result-label">Input cost</span>
+                        <span class="result-label">Input cost (monthly)</span>
                         <span class="result-value" id="input-cost">$0.00</span>
                     </div>
                     <div class="result-item">
-                        <span class="result-label">Output cost</span>
+                        <span class="result-label">Output cost (monthly)</span>
                         <span class="result-value" id="output-cost">$0.00</span>
                     </div>
                     <div class="result-item">
@@ -313,23 +323,43 @@
     </section>
 
     <div class="keyboard-hint">
-        <kbd>1</kbd> <kbd>2</kbd> <kbd>3</kbd> presets &middot; <kbd>C</kbd> copy &middot; <kbd>?</kbd> shortcuts
+        <kbd>1</kbd>-<kbd>5</kbd> request types &middot; <kbd>6</kbd>-<kbd>8</kbd> volume &middot; <kbd>C</kbd> copy &middot; <kbd>?</kbd> shortcuts
     </div>
 
     <div class="shortcuts-modal" id="shortcuts-modal" onclick="if(event.target===this)toggleShortcuts()">
         <div class="shortcuts-content">
             <h3>Keyboard Shortcuts</h3>
             <div class="shortcut-row">
-                <span class="shortcut-desc">Apply Startup preset</span>
+                <span class="shortcut-desc">Chat message preset</span>
                 <span class="shortcut-keys"><kbd>1</kbd></span>
             </div>
             <div class="shortcut-row">
-                <span class="shortcut-desc">Apply Scale-up preset</span>
+                <span class="shortcut-desc">Code generation preset</span>
                 <span class="shortcut-keys"><kbd>2</kbd></span>
             </div>
             <div class="shortcut-row">
-                <span class="shortcut-desc">Apply Enterprise preset</span>
+                <span class="shortcut-desc">Document analysis preset</span>
                 <span class="shortcut-keys"><kbd>3</kbd></span>
+            </div>
+            <div class="shortcut-row">
+                <span class="shortcut-desc">RAG query preset</span>
+                <span class="shortcut-keys"><kbd>4</kbd></span>
+            </div>
+            <div class="shortcut-row">
+                <span class="shortcut-desc">Content writer preset</span>
+                <span class="shortcut-keys"><kbd>5</kbd></span>
+            </div>
+            <div class="shortcut-row">
+                <span class="shortcut-desc">Startup volume (1K/day)</span>
+                <span class="shortcut-keys"><kbd>6</kbd></span>
+            </div>
+            <div class="shortcut-row">
+                <span class="shortcut-desc">Scale-up volume (10K/day)</span>
+                <span class="shortcut-keys"><kbd>7</kbd></span>
+            </div>
+            <div class="shortcut-row">
+                <span class="shortcut-desc">Enterprise volume (100K/day)</span>
+                <span class="shortcut-keys"><kbd>8</kbd></span>
             </div>
             <div class="shortcut-row">
                 <span class="shortcut-desc">Copy results to clipboard</span>
@@ -368,7 +398,7 @@
 
     <div class="info-section">
         <h2>How This Calculator Works</h2>
-        <p>Enter your expected usage — tokens per request, requests per day, and days per month — and the calculator shows your estimated monthly cost for any of 33 LLM models across 10 providers. It also suggests the cheapest alternative if a cheaper model can handle your workload.</p>
+        <p>Enter your expected usage — tokens per request, requests per day, and days per month — and the calculator shows your estimated cost per request, cost per 1K requests, and monthly total for any of 33 LLM models across 10 providers. Use the "Typical request" presets to quickly see what common workloads cost. It also suggests the cheapest alternative if a cheaper model can handle your workload.</p>
 
         <h2>Supported Providers</h2>
         <ul>
@@ -419,6 +449,7 @@
 
         <h2>Related Reading</h2>
         <ul>
+            <li><a href="blog-cost-per-request.html">AI API Cost Per Request</a> — The metric developers actually need for budgeting LLM costs</li>
             <li><a href="blog-cost-optimization-guide.html">The Complete Guide to LLM Cost Optimization</a> — Strategies to cut your API spend by 40%+</li>
             <li><a href="blog-cheapest-llm.html">Cheapest LLM APIs in 2026</a> — Full ranking of every model by price</li>
             <li><a href="blog-pricing-cheat-sheet.html">LLM Pricing Cheat Sheet</a> — Quick reference for all 33 models</li>
@@ -461,6 +492,12 @@
             const totalCost = inputCost + outputCost;
             const totalTokens = totalInputTokens + totalOutputTokens;
 
+            // Per-request costs
+            const costPerRequest = p.input * (inputTokens / 1000000) + p.output * (outputTokens / 1000000);
+            const costPer1K = costPerRequest * 1000;
+
+            document.getElementById('cost-per-request').textContent = costPerRequest < 0.01 ? '$' + costPerRequest.toFixed(4) : '$' + costPerRequest.toFixed(4);
+            document.getElementById('cost-per-1k').textContent = '$' + costPer1K.toFixed(2);
             document.getElementById('input-cost').textContent = '$' + inputCost.toFixed(2);
             document.getElementById('output-cost').textContent = '$' + outputCost.toFixed(2);
             document.getElementById('total-tokens').textContent = totalTokens.toLocaleString();
@@ -495,6 +532,7 @@
                     window.trackEvent('calculator_used', {
                         provider: providers[provider].name,
                         monthly_cost: totalCost.toFixed(2),
+                        cost_per_request: costPerRequest.toFixed(6),
                         input_tokens: inputTokens,
                         output_tokens: outputTokens,
                         requests_per_day: requests
@@ -511,12 +549,16 @@
             const totalTokens = document.getElementById('total-tokens').textContent;
             const monthlyTotal = document.getElementById('monthly-total').textContent;
 
+            const costPerReq = document.getElementById('cost-per-request').textContent;
+            const costPer1k = document.getElementById('cost-per-1k').textContent;
             const text = [
                 'APIpulse Cost Estimate',
                 '========================',
                 'Model: ' + selectedOption,
-                'Input cost: ' + inputCost,
-                'Output cost: ' + outputCost,
+                'Cost per request: ' + costPerReq,
+                'Cost per 1K requests: ' + costPer1k,
+                'Input cost (monthly): ' + inputCost,
+                'Output cost (monthly): ' + outputCost,
                 'Total tokens/month: ' + totalTokens,
                 'Monthly Total: ' + monthlyTotal,
                 '',
@@ -562,8 +604,9 @@
             const provider = document.getElementById('provider');
             const model = provider.options[provider.selectedIndex].text;
             const total = document.getElementById('monthly-total').textContent;
-            const tweetText = encodeURIComponent('My estimated AI API cost for ' + model + ' is ' + total + '/mo. Calculate yours:');
-            const linkedinText = encodeURIComponent('AI API Cost Estimate: ' + model + ' at ' + total + '/mo. Compare LLM pricing across 33 models from 10 providers:');
+            const costPerReq = document.getElementById('cost-per-request').textContent;
+            const tweetText = encodeURIComponent(model + ' costs ' + costPerReq + '/request (' + total + '/mo). Calculate your AI API costs:');
+            const linkedinText = encodeURIComponent('AI API Cost Estimate: ' + model + ' at ' + costPerReq + '/request (' + total + '/mo). Compare 33 models from 10 providers:');
             document.getElementById('share-x').href = 'https://twitter.com/intent/tweet?text=' + tweetText + '&url=' + encodeURIComponent(url);
             document.getElementById('share-linkedin').href = 'https://www.linkedin.com/sharing/share-offsite/?url=' + encodeURIComponent(url);
         }
@@ -585,12 +628,14 @@
 
         function applyPreset(type) {
             const presets = {
+                chat: { provider: 'openai-gpt4o-mini', input: 500, output: 300, requests: 1000 },
+                code: { provider: 'anthropic-sonnet', input: 2000, output: 1500, requests: 200 },
+                analysis: { provider: 'openai-gpt4o-mini', input: 4000, output: 500, requests: 500 },
+                rag: { provider: 'anthropic-haiku', input: 3000, output: 600, requests: 500 },
+                writer: { provider: 'openai-gpt4o', input: 500, output: 2000, requests: 100 },
                 startup: { provider: 'openai-gpt4o-mini', input: 1500, output: 400, requests: 1000 },
                 scaleup: { provider: 'anthropic-sonnet', input: 2000, output: 500, requests: 10000 },
-                enterprise: { provider: 'google-pro', input: 2000, output: 500, requests: 100000 },
-                support: { provider: 'openai-gpt4o-mini', input: 800, output: 400, requests: 500 },
-                code: { provider: 'anthropic-sonnet', input: 2000, output: 1500, requests: 200 },
-                writer: { provider: 'openai-gpt4o', input: 500, output: 2000, requests: 100 }
+                enterprise: { provider: 'google-pro', input: 2000, output: 500, requests: 100000 }
             };
             const p = presets[type];
             document.getElementById('provider').value = p.provider;
@@ -624,9 +669,14 @@
             // Shortcuts only work when no input is focused
             if (isInput) return;
 
-            if (e.key === '1') { applyPreset('startup'); }
-            else if (e.key === '2') { applyPreset('scaleup'); }
-            else if (e.key === '3') { applyPreset('enterprise'); }
+            if (e.key === '1') { applyPreset('chat'); }
+            else if (e.key === '2') { applyPreset('code'); }
+            else if (e.key === '3') { applyPreset('analysis'); }
+            else if (e.key === '4') { applyPreset('rag'); }
+            else if (e.key === '5') { applyPreset('writer'); }
+            else if (e.key === '6') { applyPreset('startup'); }
+            else if (e.key === '7') { applyPreset('scaleup'); }
+            else if (e.key === '8') { applyPreset('enterprise'); }
             else if (e.key === 'c' || e.key === 'C') { copyResults(); }
             else if (e.key === '?') { e.preventDefault(); toggleShortcuts(); }
         });

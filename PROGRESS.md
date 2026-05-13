@@ -1,8 +1,8 @@
 # PROGRESS.md
 
-## Site Status (as of Session 187, May 12, 2026)
-**155 web pages | 105 blog files | 33 models | 10 providers | 9 tools | 6 API endpoints**
-- Sitemap (156 URLs), RSS (105 items), blog files (105 posts + 1 index) — all in sync
+## Site Status (as of Session 188, May 13, 2026)
+**156 web pages | 106 blog files | 33 models | 10 providers | 9 tools | 6 API endpoints**
+- Sitemap (157 URLs), RSS (106 items), blog files (106 posts + 1 index) — all in sync
 - OG images: dark + light variants + 105 unique blog post OG images (all current, meta + JSON-LD fixed).
 - Pricing data verified May 5 — 33 models, 10 providers
 - **Analytics: GA4 (G-0CEP7S9Y3J) on all 155 pages** — fully operational, custom events via gtag()
@@ -49,3 +49,15 @@ Created custom OG images for blog-building-startup-on-100-dollars.html and blog-
 
 ### Session 187 (May 12)
 Created blog-claude4-sonnet-vs-deepseek-v4-pro.html — comprehensive comparison of Claude 4 Sonnet ($3.00/$15.00, 1M context) vs DeepSeek V4 Pro ($0.44/$0.87 discounted, 128K context). Includes head-to-head pricing table, 3 monthly cost scenarios (small/medium/scale), context vs cost analysis, budget alternatives table, verdict with recommendation. Generated OG image. Updated sitemap (156 URLs), RSS (105 items), blog index. Added cross-links from index.html (What's New), launch.html (tools row), pricing.html (What's New). Updated blog counts (102→103 guides, 103→105 posts).
+
+### Session 188 (May 13)
+**Responded to community feedback:** Reddit r/webdev requested "cost per 1K requests" view and typical request size presets. Built and shipped:
+- **Cost per request + cost per 1K requests** displayed prominently in calculator.html and launch.html results panels
+- **5 request-type presets** (Chat, Code gen, Doc analysis, RAG query, Content writer) with typical token counts
+- **Updated keyboard shortcuts** (1-5 for request types, 6-8 for volume presets)
+- **Blog post: blog-cost-per-request.html** — "AI API Cost Per Request: The Metric Developers Actually Need" with comparison table across 15 models showing 270x cost range
+- Updated sitemap (157 URLs), RSS (106 items), blog index
+- Added cross-links from index.html, pricing.html, calculator.html, launch.html
+- Updated COMMUNITY-FEEDBACK.md to mark r/webdev feedback as addressed
+- Updated COMMUNITY-ENGAGEMENT.md playbook posts with new feature + updated counts
+- Updated blog counts (103→104 guides, 105→106 posts)
