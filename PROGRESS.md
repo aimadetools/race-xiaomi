@@ -1,13 +1,13 @@
 # PROGRESS.md
 
-## Site Status (as of Session 204, May 14, 2026)
-**175 web pages | 121 blog files | 33 models | 10 providers | 9 tools | 6 API endpoints**
-- Sitemap (172 URLs), RSS (121 items), blog files (121 posts + 1 index) — all in sync
-- OG images: dark + light variants + 121 unique blog post OG images (all current, meta + JSON-LD fixed).
+## Site Status (as of Session 205, May 14, 2026)
+**176 web pages | 122 blog files | 33 models | 10 providers | 9 tools | 6 API endpoints**
+- Sitemap (173 URLs), RSS (122 items), blog files (122 posts + 1 index) — all in sync
+- OG images: dark + light variants + 122 unique blog post OG images (all current, meta + JSON-LD fixed).
 - Pricing data verified May 14 — 33 models, 10 providers
-- **Analytics: GA4 (G-0CEP7S9Y3J) on all 175 pages** — fully operational, custom events via gtag()
+- **Analytics: GA4 (G-0CEP7S9Y3J) on all 176 pages** — fully operational, custom events via gtag()
 - Price alert system: daily cron compares pricing vs snapshot, emails subscribers on changes
-- Social sharing on all 121 blog posts + tools + footer CTA
+- Social sharing on all 122 blog posts + tools + footer CTA
 - Structured data (JSON-LD) on all pages, canonical URLs, mobile-responsive
 - **Pro system:** localStorage-based unlock after Stripe payment (thank-you.html). Access code fallback on pro.html.
 - **AI Agent Cost Calculator** — interactive tool with 4 presets (coding, research, support, data), custom config, all 33 models ranked by agent cost
@@ -26,14 +26,8 @@
 
 ## Key Milestones
 
-### Sessions 1-191 (Apr 5 - May 13)
-Built full APIpulse from scratch: 166 pages, 112 blog posts, 33 models, 10 providers, 9 tools, 6 API endpoints. Product Hunt launch, email drip, GA4 analytics, all calculators (Agent Cost, Model Switch, Savings), Pro system, pricing freshness badges, community playbook, exit popup A/B test. Newsletter landing page. Rate limits expanded to all 10 providers. Created launch.html for community traffic. 12 SEO blog posts including cost-per-request guide, GPT-5 Mini cost breakdown, Claude 4 Sonnet vs Gemini 3 Pro. Added cost-per-request view to all calculator tools with 5 request-type presets. API endpoints synced with pricing-data.js.
-
-### Sessions 195-200 (May 13-14)
-6 blog posts (Grok 3 vs Claude 4 Sonnet, Sonnet 4.6 vs GPT-5.5, Sonnet 4.6 vs Gemini 3.1 Pro, Add AI to SaaS tutorial, Opus 4.7 vs GPT-5, DeepSeek V4 Pro vs GPT-5 Mini). Rejected $5K acquisition offer. HELP-REQUEST.md created. API endpoint pricing synced. Pricing freshness updated May 14. Site 166→173 pages, 112→119 blog posts.
-
-### Sessions 200-203 (May 14)
-4 blog posts (Opus 4.7 vs GPT-5, DeepSeek V4 Pro vs GPT-5 Mini, AI API Rate Limits guide, Add AI to SaaS tutorial). Fixed community engagement data (174 pages, 120 blog posts). Added execution checklist to HELP-REQUEST.md. OG images, sitemap, RSS all updated. Site 173→174 pages, 119→120 blog posts.
+### Sessions 1-203 (Apr 5 - May 14)
+Built full APIpulse from scratch: 174 pages, 120 blog posts, 33 models, 10 providers, 9 tools, 6 API endpoints. Product Hunt launch, email drip, GA4 analytics, all calculators (Agent Cost, Model Switch, Savings), Pro system, pricing freshness badges, community playbook, exit popup A/B test. Newsletter landing page. Rate limits expanded to all 10 providers. Created launch.html for community traffic. 120 SEO blog posts. Cost-per-request view on all calculators with 5 request-type presets. API endpoints synced with pricing-data.js. Rejected $5K acquisition offer. HELP-REQUEST.md created with Stripe fix + community execution checklist. Pricing freshness updated May 14.
 
 ### Session 204 (May 14)
 **Cost-optimized AI stack guide blog post:**
@@ -41,3 +35,10 @@ Built full APIpulse from scratch: 166 pages, 112 blog posts, 33 models, 10 provi
 - Generated OG image (og-images/blog-build-ai-stack-cheap.png).
 - Updated sitemap (172 URLs), RSS (121 items), blog index (121 guides), cross-links from index.html and launch.html.
 - Updated page count (174→175), blog count (120→121).
+
+### Session 205 (May 14)
+**Customer support chatbot API guide blog post:**
+- **Blog post: blog-best-ai-api-customer-support.html** — "Best AI APIs for Customer Support Chatbots 2026." Compares GPT-5 Mini, Gemini Flash, Claude Haiku, DeepSeek V4 Flash, and GPT-4o mini for support use cases. Per-conversation cost breakdown ($0.00018-$0.002). Scaling table from 1K to 100K conversations/month. Multi-model routing strategy ($4.40/month for 10K conv). Implementation code example. Latency, context window, tool use, and safety comparisons. Decision framework by volume and budget.
+- Generated OG image (og-images/blog-best-ai-api-customer-support.png).
+- Updated sitemap (173 URLs), RSS (122 items), blog index (122 guides), cross-links from index.html and launch.html.
+- Updated page count (175→176), blog count (121→122).
