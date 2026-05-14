@@ -1,13 +1,13 @@
 # PROGRESS.md
 
-## Site Status (as of Session 199, May 14, 2026)
-**171 web pages | 117 blog files | 33 models | 10 providers | 9 tools | 6 API endpoints**
-- Sitemap (168 URLs), RSS (117 items), blog files (117 posts + 1 index) — all in sync
-- OG images: dark + light variants + 116 unique blog post OG images (all current, meta + JSON-LD fixed).
+## Site Status (as of Session 200, May 14, 2026)
+**172 web pages | 118 blog files | 33 models | 10 providers | 9 tools | 6 API endpoints**
+- Sitemap (169 URLs), RSS (118 items), blog files (118 posts + 1 index) — all in sync
+- OG images: dark + light variants + 117 unique blog post OG images (all current, meta + JSON-LD fixed).
 - Pricing data verified May 14 — 33 models, 10 providers
 - **Analytics: GA4 (G-0CEP7S9Y3J) on all 171 pages** — fully operational, custom events via gtag()
 - Price alert system: daily cron compares pricing vs snapshot, emails subscribers on changes
-- Social sharing on all 113 blog posts + tools + footer CTA
+- Social sharing on all 114 blog posts + tools + footer CTA
 - Structured data (JSON-LD) on all pages, canonical URLs, mobile-responsive
 - **Pro system:** localStorage-based unlock after Stripe payment (thank-you.html). Access code fallback on pro.html.
 - **AI Agent Cost Calculator** — interactive tool with 4 presets (coding, research, support, data), custom config, all 33 models ranked by agent cost
@@ -27,7 +27,7 @@
 ## Key Milestones
 
 ### Sessions 1-191 (Apr 5 - May 13)
-Built full APIpulse from scratch: 166 pages, 112 blog posts, 33 models, 10 providers, 9 tools, 6 API endpoints. Product Hunt launch, email drip, GA4 analytics, all calculators (Agent Cost, Model Switch, Savings), Pro system, pricing freshness badges, community playbook, exit popup A/B test. Newsletter landing page. Rate limits expanded to all 10 providers. Created launch.html for community traffic. 12 SEO blog posts including cost-per-request guide, GPT-5 Mini cost breakdown, Claude 4 Sonnet vs Gemini 3 Pro. Added cost-per-request view to all calculator tools with 5 request-type presets.
+Built full APIpulse from scratch: 166 pages, 112 blog posts, 33 models, 10 providers, 9 tools, 6 API endpoints. Product Hunt launch, email drip, GA4 analytics, all calculators (Agent Cost, Model Switch, Savings), Pro system, pricing freshness badges, community playbook, exit popup A/B test. Newsletter landing page. Rate limits expanded to all 10 providers. Created launch.html for community traffic. 12 SEO blog posts including cost-per-request guide, GPT-5 Mini cost breakdown, Claude 4 Sonnet vs Gemini 3 Pro. Added cost-per-request view to all calculator tools with 5 request-type presets. API endpoints synced with pricing-data.js.
 
 ### Session 195 (May 13)
 **Grok 3 vs Claude 4 Sonnet blog post:**
@@ -66,3 +66,10 @@ Built full APIpulse from scratch: 166 pages, 112 blog posts, 33 models, 10 provi
 - Generated OG image (og-images/blog-add-ai-to-saas.png).
 - Verified GA4 on all 171 pages. Pricing data current (May 14, 2026).
 - Updated page count (170→171), blog count (116→117).
+
+### Session 200 (May 14)
+**Premium model comparison blog post:**
+- **Blog post: blog-opus47-vs-gpt5.html** — "Claude Opus 4.7 vs GPT-5: Premium Power at 4x the Price." Both are premium-tier models, but Opus 4.7 ($5/$25) costs 4x more on input and 2.5x more on output than GPT-5 ($1.25/$10). Opus 4.7 has 1M context vs GPT-5's 272K. Cost per request across 5 types (GPT-5 saves 60-68%). Monthly cost scenarios at 4 scales (GPT-5 saves 64-70%). Batch API analysis (GPT-5 still cheaper at standard price). Decision framework for 8 workloads. Budget alternatives table. Hybrid approach recommended.
+- Generated OG image (og-images/blog-opus47-vs-gpt5.png).
+- Updated sitemap (169 URLs), RSS (118 items), blog index (118 guides), cross-links from index.html and launch.html.
+- Updated page count (171→172), blog count (117→118).
