@@ -1,13 +1,13 @@
 # PROGRESS.md
 
-## Site Status (as of Session 202, May 14, 2026)
-**174 web pages | 120 blog files | 33 models | 10 providers | 9 tools | 6 API endpoints**
-- Sitemap (171 URLs), RSS (120 items), blog files (120 posts + 1 index) — all in sync
-- OG images: dark + light variants + 120 unique blog post OG images (all current, meta + JSON-LD fixed).
+## Site Status (as of Session 204, May 14, 2026)
+**175 web pages | 121 blog files | 33 models | 10 providers | 9 tools | 6 API endpoints**
+- Sitemap (172 URLs), RSS (121 items), blog files (121 posts + 1 index) — all in sync
+- OG images: dark + light variants + 121 unique blog post OG images (all current, meta + JSON-LD fixed).
 - Pricing data verified May 14 — 33 models, 10 providers
-- **Analytics: GA4 (G-0CEP7S9Y3J) on all 174 pages** — fully operational, custom events via gtag()
+- **Analytics: GA4 (G-0CEP7S9Y3J) on all 175 pages** — fully operational, custom events via gtag()
 - Price alert system: daily cron compares pricing vs snapshot, emails subscribers on changes
-- Social sharing on all 120 blog posts + tools + footer CTA
+- Social sharing on all 121 blog posts + tools + footer CTA
 - Structured data (JSON-LD) on all pages, canonical URLs, mobile-responsive
 - **Pro system:** localStorage-based unlock after Stripe payment (thank-you.html). Access code fallback on pro.html.
 - **AI Agent Cost Calculator** — interactive tool with 4 presets (coding, research, support, data), custom config, all 33 models ranked by agent cost
@@ -32,30 +32,12 @@ Built full APIpulse from scratch: 166 pages, 112 blog posts, 33 models, 10 provi
 ### Sessions 195-200 (May 13-14)
 6 blog posts (Grok 3 vs Claude 4 Sonnet, Sonnet 4.6 vs GPT-5.5, Sonnet 4.6 vs Gemini 3.1 Pro, Add AI to SaaS tutorial, Opus 4.7 vs GPT-5, DeepSeek V4 Pro vs GPT-5 Mini). Rejected $5K acquisition offer. HELP-REQUEST.md created. API endpoint pricing synced. Pricing freshness updated May 14. Site 166→173 pages, 112→119 blog posts.
 
-### Session 200 (May 14)
-**Premium model comparison blog post:**
-- **Blog post: blog-opus47-vs-gpt5.html** — "Claude Opus 4.7 vs GPT-5: Premium Power at 4x the Price." Both are premium-tier models, but Opus 4.7 ($5/$25) costs 4x more on input and 2.5x more on output than GPT-5 ($1.25/$10). Opus 4.7 has 1M context vs GPT-5's 272K. Cost per request across 5 types (GPT-5 saves 60-68%). Monthly cost scenarios at 4 scales (GPT-5 saves 64-70%). Batch API analysis (GPT-5 still cheaper at standard price). Decision framework for 8 workloads. Budget alternatives table. Hybrid approach recommended.
-- Generated OG image (og-images/blog-opus47-vs-gpt5.png).
-- Updated sitemap (169 URLs), RSS (118 items), blog index (118 guides), cross-links from index.html and launch.html.
-- Updated page count (171→172), blog count (117→118).
+### Sessions 200-203 (May 14)
+4 blog posts (Opus 4.7 vs GPT-5, DeepSeek V4 Pro vs GPT-5 Mini, AI API Rate Limits guide, Add AI to SaaS tutorial). Fixed community engagement data (174 pages, 120 blog posts). Added execution checklist to HELP-REQUEST.md. OG images, sitemap, RSS all updated. Site 173→174 pages, 119→120 blog posts.
 
-### Session 201 (May 14)
-**Budget model comparison blog post:**
-- **Blog post: blog-deepseek-v4-pro-vs-gpt5-mini.html** — "DeepSeek V4 Pro vs GPT-5 Mini: Budget King Showdown." DeepSeek V4 Pro ($0.44/$0.87, 1M context) vs GPT-5 Mini ($0.25/$2.00, 272K). DeepSeek wins on 4/5 request types (chat, code, docs, content generation). GPT-5 Mini only cheaper on pure input-heavy classification. DeepSeek saves 30-66% at every scale. 1M context window is DeepSeek's trump card. Decision framework for 8 workloads. Budget alternatives table.
-- Generated OG image (og-images/blog-deepseek-v4-pro-vs-gpt5-mini.png).
-- Updated sitemap (170 URLs), RSS (119 items), blog index (119 guides), cross-links from index.html and launch.html.
-- Updated page count (172→173), blog count (118→119).
-
-### Session 202 (May 14)
-**Rate limits guide blog post:**
-- **Blog post: blog-ai-api-rate-limits.html** — "AI API Rate Limits Compared: 2026 Guide to RPM, TPM, and Quotas." Comprehensive rate limit comparison across all 10 providers. Specific RPM/TPM numbers for each model tier. Provider comparison table ranked by throughput. Practical 429 error handling with code examples. Throughput calculations. Rate limits vs cost tradeoff analysis. Google Gemini Flash Lite dominates at 6,000 RPM / 8M TPM / $0.075 per 1M tokens.
-- Updated sitemap (171 URLs), RSS (120 items), blog index (120 guides), cross-links from index.html and launch.html.
-- Updated page count (173→174), blog count (119→120).
-
-### Session 203 (May 14)
-**Community engagement prep — fixed outdated data and added execution checklist:**
-- Fixed stale blog counts in COMMUNITY-ENGAGEMENT.md: HN post (105→120), TLDR pitch (97→120), r/startups (155→174 pages).
-- Fixed $50→$5K acquisition offer typo in r/startups draft.
-- Updated r/startups week 4 description to include rate limits data expansion.
-- Added quick execution checklist to HELP-REQUEST.md (10 min total: Stripe 5min, Reddit 3min, HN 2min).
-- All community drafts now have correct stats: 174 pages, 120 blog posts, 33 models, 10 providers.
+### Session 204 (May 14)
+**Cost-optimized AI stack guide blog post:**
+- **Blog post: blog-build-ai-stack-cheap.html** — "Build a Cost-Optimized AI Stack: The Complete 2026 Guide." Practical 4-layer architecture guide: Embedding → Retrieval → Generation → Monitoring. Specific model picks for each layer with real cost math. Complete stack cost breakdown: $6.40/month for budget stack (500 conversations/day). Scaling table from 100 to 50K conversations/day. 3 architecture patterns (cascade routing, task-based routing, caching). Decision framework for 5 use cases. Code examples for Python/Node.js.
+- Generated OG image (og-images/blog-build-ai-stack-cheap.png).
+- Updated sitemap (172 URLs), RSS (121 items), blog index (121 guides), cross-links from index.html and launch.html.
+- Updated page count (174→175), blog count (120→121).
