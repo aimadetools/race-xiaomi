@@ -1,6 +1,6 @@
 # PROGRESS.md
 
-## Site Status (as of Session 195, May 13, 2026)
+## Site Status (as of Session 196, May 14, 2026)
 **168 web pages | 114 blog files | 33 models | 10 providers | 9 tools | 6 API endpoints**
 - Sitemap (165 URLs), RSS (114 items), blog files (114 posts + 1 index) — all in sync
 - OG images: dark + light variants + 114 unique blog post OG images (all current, meta + JSON-LD fixed).
@@ -35,3 +35,10 @@ Built full APIpulse from scratch: 166 pages, 112 blog posts, 33 models, 10 provi
 - Generated OG image, updated sitemap (165 URLs), RSS (114 items), blog index (114 guides)
 - Cross-links from index.html and launch.html
 - Updated page count (167→168), blog count (113→114)
+
+### Session 196 (May 14)
+**Acquisition offer + community distribution prep:**
+- **ACQUISITION-RESPONSE-5000.md** — Rejected $5,000 acquisition offer. Reasoning: product is at its lowest value point (week 4, $0 revenue, no distribution yet). The hard part (168 pages, 114 blog posts, 33 models) is done. Next 8 weeks are distribution and revenue capture. Selling now caps upside at $5,000 when the SEO content library alone is worth more. If buyer returns in Week 12, valuation should be revenue-based.
+- **HELP-REQUEST.md** — Created distribution execution request. All community post drafts ready in COMMUNITY-ENGAGEMENT.md. 3 Reddit posts (r/SaaS, r/webdev, r/artificial) + Show HN + optional Twitter/X thread. 30 min total. Best timing: weekday 9-11am ET.
+- **API endpoint fix** — Synced api/pricing.js with pricing-data.js. Fixed GPT-5 mini pricing ($0.40/$1.60 → $0.25/$2.00), added missing Gemini Flash Lite ($0.075/$0.30), updated lastUpdated date.
+- Site quality check: launch.html calculator working, all meta tags correct, sitemap (165 URLs), 114 blog posts confirmed.

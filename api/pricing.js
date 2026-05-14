@@ -9,7 +9,7 @@ const API_MODELS = [
     { id: 'openai-gpt55-pro', name: 'GPT-5.5 Pro', provider: 'OpenAI', providerSlug: 'openai', tier: 'Premium', input: 30.00, output: 180.00, context: '1M', verified: 'Apr 2026' },
     { id: 'openai-gpt53-codex', name: 'GPT-5.3 Codex', provider: 'OpenAI', providerSlug: 'openai', tier: 'Mid', input: 1.75, output: 14.00, context: '400K', verified: 'Apr 2026' },
     { id: 'openai-gpt5', name: 'GPT-5', provider: 'OpenAI', providerSlug: 'openai', tier: 'Premium', input: 1.25, output: 10.00, context: '272K', verified: 'May 2026' },
-    { id: 'openai-gpt5-mini', name: 'GPT-5 mini', provider: 'OpenAI', providerSlug: 'openai', tier: 'Budget', input: 0.40, output: 1.60, context: '256K', verified: 'Apr 2026' },
+    { id: 'openai-gpt5-mini', name: 'GPT-5 mini', provider: 'OpenAI', providerSlug: 'openai', tier: 'Budget', input: 0.25, output: 2.00, context: '272K', verified: 'May 2026' },
     { id: 'openai-gpt-oss-120b', name: 'GPT-oss 120B', provider: 'OpenAI', providerSlug: 'openai', tier: 'Budget', input: 0.15, output: 0.60, context: '128K', verified: 'Apr 2026' },
     { id: 'openai-gpt-oss-20b', name: 'GPT-oss 20B', provider: 'OpenAI', providerSlug: 'openai', tier: 'Budget', input: 0.08, output: 0.35, context: '128K', verified: 'Apr 2026' },
     { id: 'openai-gpt4o', name: 'GPT-4o', provider: 'OpenAI', providerSlug: 'openai', tier: 'Mid', input: 2.50, output: 10.00, context: '128K', verified: 'Apr 2026' },
@@ -24,6 +24,7 @@ const API_MODELS = [
     { id: 'google-gemini3-pro', name: 'Gemini 3.1 Pro', provider: 'Google', providerSlug: 'google', tier: 'Mid', input: 2.00, output: 12.00, context: '1M', verified: 'May 2026' },
     { id: 'google-pro', name: 'Gemini 2.5 Pro', provider: 'Google', providerSlug: 'google', tier: 'Mid', input: 1.25, output: 10.00, context: '1M', verified: 'Apr 2026' },
     { id: 'google-flash', name: 'Gemini 2.0 Flash', provider: 'Google', providerSlug: 'google', tier: 'Budget', input: 0.10, output: 0.40, context: '1M', verified: 'May 2026' },
+    { id: 'google-flash-lite', name: 'Gemini 2.0 Flash Lite', provider: 'Google', providerSlug: 'google', tier: 'Budget', input: 0.075, output: 0.30, context: '1M', verified: 'May 2026' },
     // DeepSeek
     { id: 'deepseek-v4-pro', name: 'DeepSeek V4 Pro', provider: 'DeepSeek', providerSlug: 'deepseek', tier: 'Budget', input: 0.44, output: 0.87, context: '1M', verified: 'May 2026' },
     { id: 'deepseek-v4-flash', name: 'DeepSeek V4 Flash', provider: 'DeepSeek', providerSlug: 'deepseek', tier: 'Budget', input: 0.14, output: 0.28, context: '1M', verified: 'May 2026' },
@@ -100,7 +101,7 @@ module.exports = function handler(req, res) {
             count: data.length,
             providers: providers,
             tiers: tiers,
-            lastUpdated: '2026-05-01',
+            lastUpdated: '2026-05-05',
             source: 'https://getapipulse.com',
             docs: 'https://getapipulse.com/pricing-index.html'
         }

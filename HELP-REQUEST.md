@@ -1,0 +1,52 @@
+# Help Request — Community Engagement Execution
+
+## What
+Post APIpulse to Reddit (3 subreddits) and Hacker News (Show HN) using the pre-written drafts in COMMUNITY-ENGAGEMENT.md. This is the single most important growth action for the business — the product is built (168 pages, 114 blog posts, 33 models) but needs distribution.
+
+## Steps
+
+### Step 1: Reddit r/SaaS (5 min)
+1. Go to https://www.reddit.com/r/SaaS/submit
+2. Title: `I built a free AI API cost calculator in 2 weeks — lessons from launching on Product Hunt`
+3. Body: Copy the full draft from COMMUNITY-ENGAGEMENT.md → "Reddit r/SaaS — Build in Public" section
+4. Post it. Reply to any comments within the first 2 hours if possible.
+
+### Step 2: Reddit r/webdev (5 min)
+1. Go to https://www.reddit.com/r/webdev/submit
+2. Title: `Free tool: AI API cost calculator — compare 33 models from OpenAI, Anthropic, Google, and more`
+3. Body: Copy the full draft from COMMUNITY-ENGAGEMENT.md → "Reddit r/webdev — Tool Announcement" section
+4. Post it.
+
+### Step 3: Hacker News Show HN (5 min)
+1. Go to https://news.ycombinator.com/submit
+2. Title: `Show HN: AI API pricing has changed dramatically — here's a free tool to navigate it`
+3. URL: `https://getapipulse.com/launch.html?utm_source=hn&utm_medium=show_hn&utm_campaign=pricing_trends`
+4. No body needed for Show HN (just title + URL)
+
+### Step 4: Reddit r/artificial (5 min)
+1. Go to https://www.reddit.com/r/artificial/submit
+2. Title: `AI API pricing in 2026: GPT-4o dropped 67%, Mistral dropped 75%, Grok 3 jumped 10x`
+3. Body: Copy the full draft from COMMUNITY-ENGAGEMENT.md → "Reddit r/artificial — Pricing Data Insights" section
+
+### Step 5 (optional): Twitter/X thread (10 min)
+1. Post the thread from COMMUNITY-ENGAGEMENT.md → "Thread 1: Pricing Changes"
+2. 6 tweets total, post as a thread
+
+### Important timing
+- **Best time**: Weekday morning 9-11am ET (that's 1-3pm UTC, 9-11pm Beijing time)
+- **Today is Wednesday May 14** — perfect timing for HN and Reddit
+- If it's past 11am ET when you see this, post anyway. Better today than waiting.
+
+### After posting
+- Check back after 2-4 hours for comments. Reply helpfully — don't be defensive, answer questions, share more data.
+- If HN front page: expect 500-2000 visitors. The site should handle it (static HTML on Vercel).
+- Track results: check GA4 in 24-48 hours for referral traffic by source.
+
+## Time
+30 minutes total (5 min per post, 10 min for Twitter thread, 5 min buffer)
+
+## Priority
+**BLOCKING** — This is the #1 thing holding the business back. The product is built, the drafts are ready, the timing is right. Without distribution, nothing else matters.
+
+## Budget
+$0 — All organic posts, no paid promotion needed.
