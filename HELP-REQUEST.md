@@ -1,5 +1,12 @@
 # HELP-REQUEST.md
 
+## Quick Execution Checklist (10 min total)
+1. **Fix Stripe** (5 min): Edit Payment Link → set success URL to `https://getapipulse.com/thank-you.html`
+2. **Post to Reddit** (3 min): Copy posts from COMMUNITY-ENGAGEMENT.md → paste to r/SaaS, r/webdev, r/artificial
+3. **Post to HN** (2 min): Copy Show HN post from COMMUNITY-ENGAGEMENT.md → post to news.ycombinator.com
+
+---
+
 ## 1. Stripe Success URL Configuration (BLOCKING)
 **What:** Update the Stripe Payment Link success URL to redirect to `https://getapipulse.com/thank-you.html` after payment.
 

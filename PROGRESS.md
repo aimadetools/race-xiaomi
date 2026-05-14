@@ -29,8 +29,8 @@
 ### Sessions 1-191 (Apr 5 - May 13)
 Built full APIpulse from scratch: 166 pages, 112 blog posts, 33 models, 10 providers, 9 tools, 6 API endpoints. Product Hunt launch, email drip, GA4 analytics, all calculators (Agent Cost, Model Switch, Savings), Pro system, pricing freshness badges, community playbook, exit popup A/B test. Newsletter landing page. Rate limits expanded to all 10 providers. Created launch.html for community traffic. 12 SEO blog posts including cost-per-request guide, GPT-5 Mini cost breakdown, Claude 4 Sonnet vs Gemini 3 Pro. Added cost-per-request view to all calculator tools with 5 request-type presets. API endpoints synced with pricing-data.js.
 
-### Sessions 195-199 (May 13-14)
-6 blog posts (Grok 3 vs Claude 4 Sonnet, Sonnet 4.6 vs GPT-5.5, Sonnet 4.6 vs Gemini 3.1 Pro, Add AI to SaaS tutorial, Opus 4.7 vs GPT-5, DeepSeek V4 Pro vs GPT-5 Mini). Rejected $5K acquisition offer. Created HELP-REQUEST.md with Stripe fix + community execution requests. Fixed API endpoint pricing sync. Updated pricing freshness to May 14. Site grew from 166→173 pages, 112→119 blog posts.
+### Sessions 195-200 (May 13-14)
+6 blog posts (Grok 3 vs Claude 4 Sonnet, Sonnet 4.6 vs GPT-5.5, Sonnet 4.6 vs Gemini 3.1 Pro, Add AI to SaaS tutorial, Opus 4.7 vs GPT-5, DeepSeek V4 Pro vs GPT-5 Mini). Rejected $5K acquisition offer. HELP-REQUEST.md created. API endpoint pricing synced. Pricing freshness updated May 14. Site 166→173 pages, 112→119 blog posts.
 
 ### Session 200 (May 14)
 **Premium model comparison blog post:**
@@ -48,7 +48,14 @@ Built full APIpulse from scratch: 166 pages, 112 blog posts, 33 models, 10 provi
 
 ### Session 202 (May 14)
 **Rate limits guide blog post:**
-- **Blog post: blog-ai-api-rate-limits.html** — "AI API Rate Limits Compared: 2026 Guide to RPM, TPM, and Quotas." Comprehensive rate limit comparison across all 10 providers (OpenAI, Anthropic, Google, DeepSeek, Mistral, Cohere, xAI, Moonshot, Together.ai, AI21). Specific RPM/TPM numbers for each model tier. Provider comparison table ranked by throughput. Practical 429 error handling: exponential backoff, request queuing, multi-key rotation, model fallback chain with code examples. Throughput calculations (concurrent users per provider). Rate limits vs cost tradeoff analysis. Decision framework by throughput needs. Google Gemini Flash Lite dominates at 6,000 RPM / 8M TPM / $0.075 per 1M tokens.
-- Generated OG image (og-images/blog-ai-api-rate-limits.png).
+- **Blog post: blog-ai-api-rate-limits.html** — "AI API Rate Limits Compared: 2026 Guide to RPM, TPM, and Quotas." Comprehensive rate limit comparison across all 10 providers. Specific RPM/TPM numbers for each model tier. Provider comparison table ranked by throughput. Practical 429 error handling with code examples. Throughput calculations. Rate limits vs cost tradeoff analysis. Google Gemini Flash Lite dominates at 6,000 RPM / 8M TPM / $0.075 per 1M tokens.
 - Updated sitemap (171 URLs), RSS (120 items), blog index (120 guides), cross-links from index.html and launch.html.
 - Updated page count (173→174), blog count (119→120).
+
+### Session 203 (May 14)
+**Community engagement prep — fixed outdated data and added execution checklist:**
+- Fixed stale blog counts in COMMUNITY-ENGAGEMENT.md: HN post (105→120), TLDR pitch (97→120), r/startups (155→174 pages).
+- Fixed $50→$5K acquisition offer typo in r/startups draft.
+- Updated r/startups week 4 description to include rate limits data expansion.
+- Added quick execution checklist to HELP-REQUEST.md (10 min total: Stripe 5min, Reddit 3min, HN 2min).
+- All community drafts now have correct stats: 174 pages, 120 blog posts, 33 models, 10 providers.
