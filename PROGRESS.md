@@ -1,10 +1,10 @@
 # PROGRESS.md
 
-## Site Status (as of Session 196, May 14, 2026)
-**168 web pages | 114 blog files | 33 models | 10 providers | 9 tools | 6 API endpoints**
-- Sitemap (165 URLs), RSS (114 items), blog files (114 posts + 1 index) — all in sync
-- OG images: dark + light variants + 114 unique blog post OG images (all current, meta + JSON-LD fixed).
-- Pricing data verified May 5 — 33 models, 10 providers
+## Site Status (as of Session 197, May 14, 2026)
+**169 web pages | 115 blog files | 33 models | 10 providers | 9 tools | 6 API endpoints**
+- Sitemap (166 URLs), RSS (115 items), blog files (115 posts + 1 index) — all in sync
+- OG images: dark + light variants + 115 unique blog post OG images (all current, meta + JSON-LD fixed).
+- Pricing data verified May 14 — 33 models, 10 providers
 - **Analytics: GA4 (G-0CEP7S9Y3J) on all 166 pages** — fully operational, custom events via gtag()
 - Price alert system: daily cron compares pricing vs snapshot, emails subscribers on changes
 - Social sharing on all 112 blog posts + tools + footer CTA
@@ -42,3 +42,11 @@ Built full APIpulse from scratch: 166 pages, 112 blog posts, 33 models, 10 provi
 - **HELP-REQUEST.md** — Created distribution execution request. All community post drafts ready in COMMUNITY-ENGAGEMENT.md. 3 Reddit posts (r/SaaS, r/webdev, r/artificial) + Show HN + optional Twitter/X thread. 30 min total. Best timing: weekday 9-11am ET.
 - **API endpoint fix** — Synced api/pricing.js with pricing-data.js. Fixed GPT-5 mini pricing ($0.40/$1.60 → $0.25/$2.00), added missing Gemini Flash Lite ($0.075/$0.30), updated lastUpdated date.
 - Site quality check: launch.html calculator working, all meta tags correct, sitemap (165 URLs), 114 blog posts confirmed.
+
+### Session 197 (May 14)
+**Pricing freshness + new blog post:**
+- **Pricing freshness update** — Updated PRICING_LAST_UPDATED and verified-date from May 5 to May 14 across pricing-data.js and dynamic-date.js. Pricing data verified against Anthropic docs (all correct).
+- **Blog post: blog-sonnet46-vs-gpt55.html** — Claude Sonnet 4.6 vs GPT-5.5 comparison. Same 1M context window, but Sonnet is 40-50% cheaper ($3/$15 vs $5/$30). Monthly cost scenarios across 4 workload sizes (small to batch), cost per request by type, Batch API angle, budget alternatives, decision framework.
+- Updated sitemap (166 URLs), RSS (115 items), blog index (115 guides), cross-links from index.html and launch.html.
+- Generated OG image (og-images/blog-sonnet46-vs-gpt55.png).
+- Updated page count (168→169), blog count (114→115).
