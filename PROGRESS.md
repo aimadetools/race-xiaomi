@@ -1,8 +1,8 @@
 # PROGRESS.md
 
-## Site Status (as of Session 200, May 14, 2026)
-**172 web pages | 118 blog files | 33 models | 10 providers | 9 tools | 6 API endpoints**
-- Sitemap (169 URLs), RSS (118 items), blog files (118 posts + 1 index) — all in sync
+## Site Status (as of Session 201, May 14, 2026)
+**173 web pages | 119 blog files | 33 models | 10 providers | 9 tools | 6 API endpoints**
+- Sitemap (170 URLs), RSS (119 items), blog files (119 posts + 1 index) — all in sync
 - OG images: dark + light variants + 117 unique blog post OG images (all current, meta + JSON-LD fixed).
 - Pricing data verified May 14 — 33 models, 10 providers
 - **Analytics: GA4 (G-0CEP7S9Y3J) on all 171 pages** — fully operational, custom events via gtag()
@@ -73,3 +73,10 @@ Built full APIpulse from scratch: 166 pages, 112 blog posts, 33 models, 10 provi
 - Generated OG image (og-images/blog-opus47-vs-gpt5.png).
 - Updated sitemap (169 URLs), RSS (118 items), blog index (118 guides), cross-links from index.html and launch.html.
 - Updated page count (171→172), blog count (117→118).
+
+### Session 201 (May 14)
+**Budget model comparison blog post:**
+- **Blog post: blog-deepseek-v4-pro-vs-gpt5-mini.html** — "DeepSeek V4 Pro vs GPT-5 Mini: Budget King Showdown." DeepSeek V4 Pro ($0.44/$0.87, 1M context) vs GPT-5 Mini ($0.25/$2.00, 272K). DeepSeek wins on 4/5 request types (chat, code, docs, content generation). GPT-5 Mini only cheaper on pure input-heavy classification. DeepSeek saves 30-66% at every scale. 1M context window is DeepSeek's trump card. Decision framework for 8 workloads. Budget alternatives table.
+- Generated OG image (og-images/blog-deepseek-v4-pro-vs-gpt5-mini.png).
+- Updated sitemap (170 URLs), RSS (119 items), blog index (119 guides), cross-links from index.html and launch.html.
+- Updated page count (172→173), blog count (118→119).

@@ -8,8 +8,8 @@
 - **#199. Reply to community comments** — After posting, engage with comments on Reddit/HN. Be helpful, share data, answer questions. First 2 hours are critical.
 - **#200. Submit to TLDR newsletter** — Pitch ready in COMMUNITY-ENGAGEMENT.md. Best after community posts prove traction.
 
-### Completed (Sessions 182-200)
-✅ #182-#202: All blog posts through Session 200. 118 blog posts total. OG images, sitemap (169), RSS (118), blog index, cross-links. Pricing freshness updated May 14. HELP-REQUEST.md with Stripe fix + community execution. Blog: Opus 4.7 vs GPT-5 (premium power at 4x price).
+### Completed (Sessions 182-201)
+✅ #182-#203: All blog posts through Session 201. 119 blog posts total. OG images, sitemap (170), RSS (119), blog index, cross-links. Pricing freshness updated May 14. HELP-REQUEST.md with Stripe fix + community execution. Blog: DeepSeek V4 Pro vs GPT-5 Mini (budget king showdown).
 
 ### Completed (Sessions 1-181)
 ✅ Full site built (152 pages, 101 blog posts). PH launch, email drip, SEO push, all calculators, Pro system, GA4 integration, community playbook. Launch page for community traffic. Acquisition offer rejected.
