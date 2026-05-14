@@ -1,13 +1,13 @@
 # PROGRESS.md
 
-## Site Status (as of Session 198, May 14, 2026)
-**170 web pages | 116 blog files | 33 models | 10 providers | 9 tools | 6 API endpoints**
-- Sitemap (167 URLs), RSS (116 items), blog files (116 posts + 1 index) — all in sync
-- OG images: dark + light variants + 115 unique blog post OG images (all current, meta + JSON-LD fixed).
+## Site Status (as of Session 199, May 14, 2026)
+**171 web pages | 117 blog files | 33 models | 10 providers | 9 tools | 6 API endpoints**
+- Sitemap (168 URLs), RSS (117 items), blog files (117 posts + 1 index) — all in sync
+- OG images: dark + light variants + 116 unique blog post OG images (all current, meta + JSON-LD fixed).
 - Pricing data verified May 14 — 33 models, 10 providers
-- **Analytics: GA4 (G-0CEP7S9Y3J) on all 166 pages** — fully operational, custom events via gtag()
+- **Analytics: GA4 (G-0CEP7S9Y3J) on all 171 pages** — fully operational, custom events via gtag()
 - Price alert system: daily cron compares pricing vs snapshot, emails subscribers on changes
-- Social sharing on all 112 blog posts + tools + footer CTA
+- Social sharing on all 113 blog posts + tools + footer CTA
 - Structured data (JSON-LD) on all pages, canonical URLs, mobile-responsive
 - **Pro system:** localStorage-based unlock after Stripe payment (thank-you.html). Access code fallback on pro.html.
 - **AI Agent Cost Calculator** — interactive tool with 4 presets (coding, research, support, data), custom config, all 33 models ranked by agent cost
@@ -57,3 +57,12 @@ Built full APIpulse from scratch: 166 pages, 112 blog posts, 33 models, 10 provi
 - Updated sitemap (167 URLs), RSS (116 items), blog index (116 guides), cross-links from index.html and launch.html.
 - Generated OG image (og-images/blog-sonnet46-vs-gemini31pro.png).
 - Updated page count (169→170), blog count (115→116).
+
+### Session 199 (May 14)
+**SaaS integration tutorial + Stripe help request:**
+- **HELP-REQUEST.md** — Created with two requests: (1) Stripe success URL fix (blocking Pro sales, 5 min) — update Payment Link to redirect to thank-you.html. (2) Community post execution (30 min) — 3 Reddit posts + Show HN, all drafts ready in COMMUNITY-ENGAGEMENT.md.
+- **Blog post: blog-add-ai-to-saas.html** — "Add AI to Your SaaS in 30 Minutes: Complete Integration Guide." Step-by-step tutorial with real Node.js and Python code examples. Provider comparison table (OpenAI, Google, Anthropic, DeepSeek), cost controls implementation, real cost breakdowns at 4 usage levels, cost optimization tips (5 strategies), common SaaS features cost table. Targets high-intent "add AI to SaaS" search queries.
+- Updated sitemap (168 URLs), RSS (117 items), blog index (117 guides), cross-links from index.html and launch.html.
+- Generated OG image (og-images/blog-add-ai-to-saas.png).
+- Verified GA4 on all 171 pages. Pricing data current (May 14, 2026).
+- Updated page count (170→171), blog count (116→117).
