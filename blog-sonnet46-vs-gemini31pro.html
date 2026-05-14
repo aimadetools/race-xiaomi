@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Claude Sonnet 4.6 vs Gemini 3.1 Pro: Two 1M Context Models Compared (2026) — APIpulse</title>
+    <meta name="description" content="Claude Sonnet 4.6 ($3/$15) vs Gemini 3.1 Pro ($2/$12): both have 1M context, but Gemini is 20-33% cheaper. Full pricing, monthly costs, Batch API angle, and when each wins.">
+    <meta name="keywords" content="Claude Sonnet 4.6 vs Gemini 3.1 Pro, Sonnet 4.6 pricing, Gemini 3.1 Pro cost, Anthropic vs Google 2026, 1M context LLM, mid-tier API comparison">
+    <meta property="og:title" content="Claude Sonnet 4.6 vs Gemini 3.1 Pro: Two 1M Context Models Compared (2026) — APIpulse">
+    <meta property="og:description" content="Claude Sonnet 4.6 ($3/$15) vs Gemini 3.1 Pro ($2/$12): both have 1M context, but Gemini is 20-33% cheaper on standard pricing. Batch API changes the math.">
+    <meta property="og:type" content="article">
+    <meta property="article:published_time" content="2026-05-14">
+    <meta property="article:modified_time" content="2026-05-14">
+    <meta property="article:author" content="APIpulse">
+    <meta property="og:image" content="https://getapipulse.com/og-images/blog-sonnet46-vs-gemini31pro.png">
+    <meta property="og:url" content="https://getapipulse.com/blog-sonnet46-vs-gemini31pro.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Claude Sonnet 4.6 vs Gemini 3.1 Pro: Two 1M Context Models Compared (2026)">
+    <meta name="twitter:image" content="https://getapipulse.com/og-images/blog-sonnet46-vs-gemini31pro.png">
+    <meta name="twitter:description" content="Claude Sonnet 4.6 ($3/$15) vs Gemini 3.1 Pro ($2/$12): 1M context showdown. Gemini is cheaper standard, Sonnet wins with Batch API.">
+    <link rel="canonical" href="https://getapipulse.com/blog-sonnet46-vs-gemini31pro.html">
+    <link rel="alternate" type="application/rss+xml" title="APIpulse Blog" href="https://getapipulse.com/rss.xml">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="styles.css">
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0CEP7S9Y3J"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-0CEP7S9Y3J');
+    </script>
+    <script src="analytics.js" defer></script>
+    <script src="dynamic-date.js" defer></script>
+    <script src="shared.js" defer></script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "Claude Sonnet 4.6 vs Gemini 3.1 Pro: Two 1M Context Models Compared (2026)",
+        "description": "Claude Sonnet 4.6 ($3/$15) vs Gemini 3.1 Pro ($2/$12): both have 1M context, but Gemini is 20-33% cheaper on standard pricing. Batch API changes the math.",
+        "datePublished": "2026-05-14",
+        "dateModified": "2026-05-14",
+        "author": { "@type": "Organization", "name": "APIpulse" },
+        "publisher": { "@type": "Organization", "name": "APIpulse", "url": "https://getapipulse.com" },
+        "url": "https://getapipulse.com/blog-sonnet46-vs-gemini31pro.html",
+        "image": "https://getapipulse.com/og-images/blog-sonnet46-vs-gemini31pro.png"
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Blog", "item": "https://getapipulse.com/blog.html" },
+            { "@type": "ListItem", "position": 2, "name": "Claude Sonnet 4.6 vs Gemini 3.1 Pro", "item": "https://getapipulse.com/blog-sonnet46-vs-gemini31pro.html" }
+        ]
+    }
+    </script>
+    <style>
+        .content { max-width: 800px; margin: 0 auto; padding: 120px 24px 80px; }
+        h1 { font-size: 40px; font-weight: 800; margin-bottom: 12px; }
+        .subtitle { color: var(--text-secondary); font-size: 18px; margin-bottom: 48px; }
+        .post-meta { display: flex; gap: 16px; align-items: center; margin-bottom: 24px; font-size: 13px; color: var(--text-muted); }
+        .post-tag { background: var(--accent-glow); color: var(--accent); padding: 2px 10px; border-radius: 6px; font-size: 12px; font-weight: 600; }
+        h2 { font-size: 28px; font-weight: 700; margin: 40px 0 16px; }
+        h3 { font-size: 20px; font-weight: 600; margin: 28px 0 12px; }
+        p { margin-bottom: 16px; line-height: 1.7; color: var(--text-secondary); }
+        ul, ol { margin-bottom: 16px; padding-left: 24px; }
+        li { margin-bottom: 8px; line-height: 1.6; color: var(--text-secondary); }
+        strong { color: var(--text-primary); }
+        .comparison-table { width: 100%; border-collapse: collapse; margin: 24px 0; font-size: 14px; }
+        .comparison-table th { background: var(--bg-secondary); padding: 12px 16px; text-align: left; font-weight: 600; border-bottom: 1px solid var(--border); }
+        .comparison-table td { padding: 12px 16px; border-bottom: 1px solid var(--border); }
+        .comparison-table tr:last-child td { border-bottom: none; }
+        .winner { color: var(--green); font-weight: 600; }
+        .cost-box { background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 12px; padding: 24px; margin: 24px 0; }
+        .cost-box h3 { margin-top: 0; }
+        .cost-row { display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px solid var(--border); font-size: 14px; }
+        .cost-row:last-child { border-bottom: none; }
+        .cost-total { font-weight: 700; color: var(--accent); font-size: 18px; }
+        .cta-inline { background: var(--bg-secondary); border: 1px solid var(--accent); border-radius: 12px; padding: 24px; margin: 32px 0; text-align: center; }
+        .cta-inline p { margin-bottom: 12px; }
+        .btn-primary { display: inline-block; }
+        .back-link { display: inline-block; margin-bottom: 24px; color: var(--text-muted); font-size: 14px; }
+        .back-link:hover { color: var(--accent); }
+        .related { background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 12px; padding: 24px; margin-top: 40px; }
+        .related h3 { margin-top: 0; font-size: 18px; }
+        .related a { display: block; padding: 8px 0; color: var(--accent); font-size: 14px; }
+        .share-section { margin-top: 32px; padding-top: 24px; border-top: 1px solid var(--border); text-align: center; }
+        .share-section p { color: var(--text-secondary); font-size: 14px; margin-bottom: 12px; }
+        .share-btn { display: inline-block; background: var(--bg-card); color: var(--text-primary); padding: 8px 20px; border-radius: 8px; font-size: 14px; font-weight: 500; border: 1px solid var(--border); transition: all 0.2s; }
+        .share-btn:hover { background: var(--accent); color: white; border-color: var(--accent); }
+        .verdict { background: var(--accent-glow); border: 1px solid var(--accent); border-radius: 12px; padding: 24px; margin: 24px 0; }
+        .verdict h3 { margin-top: 0; color: var(--accent); }
+        @media (max-width: 768px) {
+            .content { padding: 100px 20px 60px; }
+            h1 { font-size: 28px; }
+            h2 { font-size: 22px; }
+            .comparison-table { font-size: 12px; }
+            .comparison-table th, .comparison-table td { padding: 8px 10px; }
+        }
+    </style>
+    <meta name="theme-color" content="#6366f1">
+    <link rel="preconnect" href="https://getapipulse.com">
+</head>
+<body>
+    <a href="#main" class="skip-link">Skip to content</a>
+    <nav>
+        <div class="nav-inner">
+            <a href="index.html" class="logo">API<span>pulse</span></a>
+            <button class="hamburger" onclick="toggleMobileNav()" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+            <div class="nav-links">
+                <a href="calculator.html">Calculator</a>
+                <a href="compare.html">Compare</a>
+                <a href="cost-explorer.html">Explorer</a>
+                <a href="cost-scenarios.html">Scenarios</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="use-cases.html">Use Cases</a>
+                <a href="about.html">About</a>
+                <a href="blog.html" class="active">Blog</a>
+                <a href="pricing-index.html">Pricing Index</a>
+                <a href="model-matrix.html">Model Matrix</a>
+                <a href="pricing-trends.html">Trends</a>
+                <a href="pricing-changelog.html">Changelog</a>
+                <a href="price-alerts.html">Price Alerts</a>
+                <a href="cheat-sheet.html">Cheat Sheet</a> &middot; <a href="model-switch.html">Model Switch</a>
+                <a href="api-docs.html" style="color:var(--accent);">API</a>
+                <a href="pricing.html" class="nav-cta" onclick="if(window.trackEvent)window.trackEvent('pro_button_clicked',{source:'nav'})">Get Pro — $29</a>
+                <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
+            </div>
+        </div>
+    </nav>
+
+    <main id="main">
+
+    <div class="content article">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+            <a href="blog.html">Blog</a>
+            <span class="separator">›</span>
+            <span class="current">Claude Sonnet 4.6 vs Gemini 3.1 Pro</span>
+        </nav>
+        <a href="blog.html" class="back-link">← Back to blog</a>
+        <div class="post-meta">
+            <span class="post-tag">Comparison</span>
+            <span>May 14, 2026</span>
+        </div>
+        <h1>Claude Sonnet 4.6 vs Gemini 3.1 Pro: Two 1M Context Models Compared</h1>
+
+        <p>For developers building long-context applications, the mid-tier market now offers two compelling options with identical 1M token context windows: Claude Sonnet 4.6 at $3/$15 per million tokens and Gemini 3.1 Pro at $2/$12. Gemini is 33% cheaper on input and 20% cheaper on output — but Sonnet's Batch API and coding reputation change the equation for many workloads.</p>
+
+        <p>This comparison breaks down standard pricing, Batch API economics, quality differences, and when each model is the right choice.</p>
+
+        <h2>Head-to-Head: Pricing Comparison</h2>
+
+        <table class="comparison-table">
+            <thead>
+                <tr>
+                    <th>Feature</th>
+                    <th>Claude Sonnet 4.6 (Anthropic)</th>
+                    <th>Gemini 3.1 Pro (Google)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Input ($/1M tokens)</strong></td>
+                    <td>$3.00</td>
+                    <td class="winner">$2.00</td>
+                </tr>
+                <tr>
+                    <td><strong>Output ($/1M tokens)</strong></td>
+                    <td>$15.00</td>
+                    <td class="winner">$12.00</td>
+                </tr>
+                <tr>
+                    <td><strong>Context Window</strong></td>
+                    <td>1M tokens</td>
+                    <td>1M tokens</td>
+                </tr>
+                <tr>
+                    <td><strong>Max Output</strong></td>
+                    <td>64K tokens</td>
+                    <td>64K tokens</td>
+                </tr>
+                <tr>
+                    <td><strong>Tier</strong></td>
+                    <td>Mid</td>
+                    <td>Mid</td>
+                </tr>
+                <tr>
+                    <td><strong>Batch API</strong></td>
+                    <td class="winner">50% off ($1.50/$7.50)</td>
+                    <td>Not available</td>
+                </tr>
+                <tr>
+                    <td><strong>Input cost vs competitor</strong></td>
+                    <td>50% more expensive</td>
+                    <td class="winner">33% cheaper</td>
+                </tr>
+                <tr>
+                    <td><strong>Output cost vs competitor</strong></td>
+                    <td>25% more expensive</td>
+                    <td class="winner">20% cheaper</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <p><strong>On standard pricing, Gemini 3.1 Pro wins on cost across the board.</strong> It's $1 cheaper per million input tokens and $3 cheaper per million output tokens. At scale, these differences add up fast. But Sonnet 4.6 has one card Gemini doesn't: a Batch API at 50% off.</p>
+
+        <h2>Monthly Cost Scenarios</h2>
+
+        <h3>Small App: 100 requests/day, 2K tokens avg (500 in / 1.5K out)</h3>
+        <div class="cost-box">
+            <div class="cost-row">
+                <span>Claude Sonnet 4.6</span>
+                <span>$72.00/mo</span>
+            </div>
+            <div class="cost-row">
+                <span>Gemini 3.1 Pro</span>
+                <span class="cost-total">$57.00/mo</span>
+            </div>
+            <div class="cost-row">
+                <span><strong>Savings with Gemini</strong></span>
+                <span class="winner">$15.00/mo (21%)</span>
+            </div>
+        </div>
+
+        <h3>Medium App: 1K requests/day, 3K tokens avg (1K in / 2K out)</h3>
+        <div class="cost-box">
+            <div class="cost-row">
+                <span>Claude Sonnet 4.6</span>
+                <span>$990.00/mo</span>
+            </div>
+            <div class="cost-row">
+                <span>Gemini 3.1 Pro</span>
+                <span class="cost-total">$780.00/mo</span>
+            </div>
+            <div class="cost-row">
+                <span><strong>Savings with Gemini</strong></span>
+                <span class="winner">$210.00/mo (21%)</span>
+            </div>
+        </div>
+
+        <h3>Scale App: 5K requests/day, 2K tokens avg (500 in / 1.5K out)</h3>
+        <div class="cost-box">
+            <div class="cost-row">
+                <span>Claude Sonnet 4.6</span>
+                <span>$3,600/mo</span>
+            </div>
+            <div class="cost-row">
+                <span>Gemini 3.1 Pro</span>
+                <span class="cost-total">$2,850/mo</span>
+            </div>
+            <div class="cost-row">
+                <span><strong>Savings with Gemini</strong></span>
+                <span class="winner">$750/mo (21%)</span>
+            </div>
+        </div>
+
+        <h3>Batch Processing: 10K requests/day, 1K tokens avg (non-urgent)</h3>
+        <div class="cost-box">
+            <div class="cost-row">
+                <span>Claude Sonnet 4.6 (Batch API)</span>
+                <span class="cost-total">$2,700/mo</span>
+            </div>
+            <div class="cost-row">
+                <span>Gemini 3.1 Pro (Standard)</span>
+                <span>$4,200/mo</span>
+            </div>
+            <div class="cost-row">
+                <span><strong>Savings with Sonnet Batch</strong></span>
+                <span class="winner">$1,500/mo (36%)</span>
+            </div>
+        </div>
+
+        <p>On standard pricing, <strong>Gemini 3.1 Pro saves 21% across all scales</strong>. At the scale tier, that's $9,000/year. But the batch processing scenario flips the script entirely — Sonnet's Batch API at $1.50/$7.50 makes it <strong>36% cheaper than Gemini's standard pricing</strong> for non-urgent workloads.</p>
+
+        <h2>The Batch API Changes Everything</h2>
+
+        <p>This is the most important nuance in this comparison. Claude Sonnet 4.6 offers a Batch API at 50% off standard pricing:</p>
+
+        <table class="comparison-table">
+            <thead>
+                <tr>
+                    <th>Pricing Tier</th>
+                    <th>Sonnet 4.6</th>
+                    <th>Gemini 3.1 Pro</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Standard Input</strong></td>
+                    <td>$3.00</td>
+                    <td class="winner">$2.00</td>
+                </tr>
+                <tr>
+                    <td><strong>Standard Output</strong></td>
+                    <td>$15.00</td>
+                    <td class="winner">$12.00</td>
+                </tr>
+                <tr>
+                    <td><strong>Batch Input</strong></td>
+                    <td class="winner">$1.50</td>
+                    <td>N/A</td>
+                </tr>
+                <tr>
+                    <td><strong>Batch Output</strong></td>
+                    <td class="winner">$7.50</td>
+                    <td>N/A</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <p><strong>Sonnet 4.6 Batch output ($7.50) is 37% cheaper than Gemini 3.1 Pro standard output ($12.00).</strong> If your workload can tolerate batch processing delays (typically minutes, not hours), Sonnet is actually the cheaper option. This applies to: data processing, content generation, document analysis, bulk classification, and RAG indexing.</p>
+
+        <h2>Cost per Request by Type</h2>
+
+        <table class="comparison-table">
+            <thead>
+                <tr>
+                    <th>Request Type</th>
+                    <th>Avg Tokens (in/out)</th>
+                    <th>Sonnet 4.6</th>
+                    <th>Gemini 3.1 Pro</th>
+                    <th>Cheaper</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Chat message</td>
+                    <td>500 / 500</td>
+                    <td>$0.009</td>
+                    <td class="winner">$0.007</td>
+                    <td class="winner">Gemini (22%)</td>
+                </tr>
+                <tr>
+                    <td>Code generation</td>
+                    <td>1K / 2K</td>
+                    <td>$0.033</td>
+                    <td class="winner">$0.026</td>
+                    <td class="winner">Gemini (21%)</td>
+                </tr>
+                <tr>
+                    <td>Document analysis</td>
+                    <td>5K / 1K</td>
+                    <td>$0.030</td>
+                    <td class="winner">$0.022</td>
+                    <td class="winner">Gemini (27%)</td>
+                </tr>
+                <tr>
+                    <td>RAG query</td>
+                    <td>3K / 500</td>
+                    <td>$0.017</td>
+                    <td class="winner">$0.012</td>
+                    <td class="winner">Gemini (29%)</td>
+                </tr>
+                <tr>
+                    <td>Content generation</td>
+                    <td>500 / 3K</td>
+                    <td>$0.047</td>
+                    <td class="winner">$0.037</td>
+                    <td class="winner">Gemini (21%)</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <p>On standard pricing, <strong>Gemini 3.1 Pro is 21-29% cheaper per request</strong> across all types. The savings are largest on input-heavy workloads (document analysis, RAG) where Gemini's $2 input price matters most.</p>
+
+        <h2>When Gemini 3.1 Pro Wins: Cost and Multimodal</h2>
+
+        <p>Gemini 3.1 Pro is Google's strongest mid-tier offering:</p>
+
+        <ul>
+            <li><strong>Cheaper on standard pricing:</strong> 33% less on input, 20% less on output. For real-time applications where batch processing isn't viable, Gemini is the clear cost winner</li>
+            <li><strong>Multimodal native:</strong> Stronger at image, video, and audio understanding natively — not just text</li>
+            <li><strong>Google Search grounding:</strong> Can be grounded in Google Search results for real-time information, useful for research and Q&A applications</li>
+            <li><strong>Gemini ecosystem:</strong> Native integration with Google Cloud, Vertex AI, and Google Workspace. Easier deployment if you're already on GCP</li>
+            <li><strong>1M context at lower price:</strong> You get the same 1M context window for $1/M less on input and $3/M less on output</li>
+        </ul>
+
+        <h2>When Claude Sonnet 4.6 Wins: Code and Quality</h2>
+
+        <p>Claude Sonnet 4.6 is Anthropic's best value model for demanding workloads:</p>
+
+        <ul>
+            <li><strong>Superior coding:</strong> Widely regarded as the best coding model in the mid-tier. Excels at code generation, refactoring, debugging, and multi-file edits</li>
+            <li><strong>Extended thinking:</strong> Supports extended thinking for complex reasoning chains — useful for math, logic, and multi-step planning</li>
+            <li><strong>Batch API:</strong> 50% off for non-urgent workloads. Makes Sonnet cheaper than Gemini for batch processing ($1.50/$7.50 vs $2/$12)</li>
+            <li><strong>Instruction following:</strong> More precise at following complex prompts with many constraints and formatting requirements</li>
+            <li><strong>Tool use:</strong> Stronger at function calling and structured output, critical for AI agent applications</li>
+            <li><strong>Consistency:</strong> Less variance across runs — important for production reliability</li>
+        </ul>
+
+        <h2>The Decision Framework</h2>
+
+        <p>Choose based on your primary workload:</p>
+
+        <table class="comparison-table">
+            <thead>
+                <tr>
+                    <th>Workload</th>
+                    <th>Best Choice</th>
+                    <th>Why</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Real-time chatbot</td>
+                    <td class="winner">Gemini 3.1 Pro</td>
+                    <td>21% cheaper, can't use batch API for real-time</td>
+                </tr>
+                <tr>
+                    <td>Code generation/IDE</td>
+                    <td class="winner">Claude Sonnet 4.6</td>
+                    <td>Superior coding quality, worth the 25% premium</td>
+                </tr>
+                <tr>
+                    <td>Batch data processing</td>
+                    <td class="winner">Claude Sonnet 4.6</td>
+                    <td>Batch API at $1.50/$7.50 beats Gemini's $2/$12</td>
+                </tr>
+                <tr>
+                    <td>Multimodal (image/video)</td>
+                    <td class="winner">Gemini 3.1 Pro</td>
+                    <td>Native multimodal, cheaper</td>
+                </tr>
+                <tr>
+                    <td>AI agents / tool use</td>
+                    <td class="winner">Claude Sonnet 4.6</td>
+                    <td>Stronger function calling and tool orchestration</td>
+                </tr>
+                <tr>
+                    <td>Document analysis at scale</td>
+                    <td class="winner">Claude Sonnet 4.6</td>
+                    <td>Batch API = 37% cheaper for non-urgent analysis</td>
+                </tr>
+                <tr>
+                    <td>Search-grounded Q&A</td>
+                    <td class="winner">Gemini 3.1 Pro</td>
+                    <td>Google Search grounding built in</td>
+                </tr>
+                <tr>
+                    <td>Content generation</td>
+                    <td>Tie</td>
+                    <td>Gemini cheaper standard, Sonnet cheaper batch</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2>Budget Alternatives</h2>
+
+        <p>If $2-3/M is still too expensive, there are much cheaper options with 1M context:</p>
+
+        <table class="comparison-table">
+            <thead>
+                <tr>
+                    <th>Model</th>
+                    <th>Input ($/1M)</th>
+                    <th>Output ($/1M)</th>
+                    <th>Context</th>
+                    <th>vs Sonnet 4.6</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="winner">Gemini 2.0 Flash Lite</td>
+                    <td class="winner">$0.075</td>
+                    <td class="winner">$0.30</td>
+                    <td>1M</td>
+                    <td>97% cheaper</td>
+                </tr>
+                <tr>
+                    <td>Gemini 2.0 Flash</td>
+                    <td>$0.10</td>
+                    <td>$0.40</td>
+                    <td>1M</td>
+                    <td>97% cheaper</td>
+                </tr>
+                <tr>
+                    <td>DeepSeek V4 Pro</td>
+                    <td>$0.44</td>
+                    <td>$0.87</td>
+                    <td>1M</td>
+                    <td>85% cheaper</td>
+                </tr>
+                <tr>
+                    <td>DeepSeek V4 Flash</td>
+                    <td>$0.14</td>
+                    <td>$0.28</td>
+                    <td>1M</td>
+                    <td>95% cheaper</td>
+                </tr>
+                <tr>
+                    <td>Claude Haiku 4.5</td>
+                    <td>$1.00</td>
+                    <td>$5.00</td>
+                    <td>200K</td>
+                    <td>67% cheaper</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <p><strong>Gemini 2.0 Flash Lite at $0.075/$0.30 with 1M context is 97% cheaper than either model.</strong> For many workloads — classification, summarization, simple Q&A — a budget model will perform adequately. Test a budget model first before paying 30-40x more for mid-tier capability.</p>
+
+        <div class="verdict">
+            <h3>The Bottom Line</h3>
+            <p><strong>Choose Gemini 3.1 Pro</strong> for real-time applications where cost matters most. At $2/$12, it's 21-29% cheaper than Sonnet on standard pricing with the same 1M context window. Best for: chatbots, multimodal apps, Google Cloud deployments, search-grounded Q&A, cost-sensitive production.</p>
+            <p><strong>Choose Claude Sonnet 4.6</strong> when code quality, tool use, or batch economics matter. At $3/$15 standard or $1.50/$7.50 batch, it offers the best coding capability in the mid-tier and is actually cheaper than Gemini for non-urgent workloads. Best for: code generation, AI agents, batch processing, instruction-heavy applications.</p>
+            <p><strong>The smartest play:</strong> Use Gemini 3.1 Pro for real-time user-facing features and Sonnet 4.6 Batch API for background processing. This hybrid approach gets you the best of both worlds — low latency costs and high-quality batch output. Use the <a href="calculator.html">APIpulse calculator</a> to model your exact workload.</p>
+        </div>
+
+        <div class="cta-inline">
+            <p><strong>Modeling Sonnet 4.6 vs Gemini 3.1 Pro for your workload?</strong> Enter your usage patterns and see exact monthly costs for both models — plus 31 others.</p>
+            <a href="calculator.html" class="btn-primary">Calculate Your Costs</a>
+            <span style="margin: 0 12px; color: var(--text-muted);">or</span>
+            <a href="compare.html" class="btn-primary" style="background:var(--bg-card);color:var(--text-primary);border:1px solid var(--border);">Compare All Models</a>
+        </div>
+
+        <div class="related">
+            <h3>Related Reading</h3>
+            <a href="blog-sonnet46-vs-gpt55.html">Claude Sonnet 4.6 vs GPT-5.5: Same Context, Half the Price</a>
+            <a href="blog-claude4-sonnet-vs-gemini3-pro.html">Claude 4 Sonnet vs Gemini 3 Pro: The Previous Generation</a>
+            <a href="blog-gemini3-pro-vs-claude-opus47.html">Gemini 3.1 Pro vs Claude Opus 4.7: Premium Showdown</a>
+            <a href="blog-deepseek-vs-gemini-pricing-2026.html">DeepSeek vs Gemini Pricing 2026</a>
+            <a href="blog-cost-per-request.html">Cost per Request: The Metric That Matters</a>
+            <a href="model-switch.html">Model Switch Calculator — See Your Exact Savings →</a>
+        </div>
+
+        <div class="share-section">
+            <p>Found this useful? Share it:</p>
+            <a href="https://twitter.com/intent/tweet?text=Claude+Sonnet+4.6+vs+Gemini+3.1+Pro%3A+Two+1M+Context+Models+Compared+%282026%29&url=https%3A%2F%2Fgetapipulse.com%2Fblog-sonnet46-vs-gemini31pro.html" target="_blank" rel="noopener" class="share-btn">Share on X</a>
+            <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fgetapipulse.com%2Fblog-sonnet46-vs-gemini31pro.html" target="_blank" rel="noopener" class="share-btn">Share on LinkedIn</a>
+        </div>
+    </div>
+
+    <div style="background:linear-gradient(135deg,rgba(99,102,241,0.08),rgba(34,197,94,0.08));border:1px solid var(--accent);border-radius:12px;padding:24px;margin:32px 0;text-align:center;">
+            <p style="font-size:16px;font-weight:700;margin-bottom:8px;color:var(--text-primary);">Want to optimize your AI API costs?</p>
+            <p style="font-size:14px;color:var(--text-secondary);margin-bottom:16px;line-height:1.6;">APIpulse Pro ($29 one-time) includes saved scenarios, cost report exports, and personalized recommendations that can save you up to 40%.</p>
+            <a href="pro.html" style="display:inline-block;background:var(--accent);color:white;padding:12px 28px;border-radius:8px;font-size:14px;font-weight:700;text-decoration:none;transition:all 0.2s;" onclick="if(window.trackEvent)window.trackEvent('pro_button_clicked',{source:'blog_post'})">Get Pro — $29</a>
+        </div>
+    <button class="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">↑</button>
+
+    </main>
+
+    <footer>
+        <p>Pricing data last verified: <span class="verified-date"></span></p>
+        <p>&copy; 2026 APIpulse. <a href="index.html">Home</a> &middot; <a href="use-cases.html">Use Cases</a> &middot; <a href="about.html">About</a> &middot; <a href="blog.html">Blog</a>
+<a href="pricing-index.html">Pricing Index</a> &middot; <a href="model-matrix.html">Model Matrix</a> &middot; <a href="cost-scenarios.html">Scenarios</a> &middot; <a href="price-alerts.html">Price Alerts</a> &middot; <a href="pricing-changelog.html">Changelog</a> &middot; <a href="openai.html">OpenAI</a> &middot; <a href="anthropic.html">Anthropic</a> &middot; <a href="google.html">Google</a> &middot; <a href="mistral.html">Mistral</a> &middot; <a href="cohere.html">Cohere</a> &middot; <a href="deepseek.html">DeepSeek</a> &middot; <a href="xai.html">xAI</a> &middot; <a href="moonshot.html">Moonshot</a> &middot; <a href="together.html">Together.ai</a> &middot; <a href="ai21.html">AI21</a> &middot; <a href="pricing.html">Pricing</a> &middot; <a href="embed.html">Embed Widget</a> &middot; <a href="cheat-sheet.html">Cheat Sheet</a> &middot; <a href="model-switch.html">Model Switch</a> &middot; <a href="api-docs.html">API</a> &middot; <a href="https://x.com/getapipulse" target="_blank" rel="noopener">Twitter</a> &middot; <a href="unsubscribe.html">Unsubscribe</a></p>
+    </footer>
+
+</body>
+</html>

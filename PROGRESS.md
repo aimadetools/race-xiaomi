@@ -1,8 +1,8 @@
 # PROGRESS.md
 
-## Site Status (as of Session 197, May 14, 2026)
-**169 web pages | 115 blog files | 33 models | 10 providers | 9 tools | 6 API endpoints**
-- Sitemap (166 URLs), RSS (115 items), blog files (115 posts + 1 index) — all in sync
+## Site Status (as of Session 198, May 14, 2026)
+**170 web pages | 116 blog files | 33 models | 10 providers | 9 tools | 6 API endpoints**
+- Sitemap (167 URLs), RSS (116 items), blog files (116 posts + 1 index) — all in sync
 - OG images: dark + light variants + 115 unique blog post OG images (all current, meta + JSON-LD fixed).
 - Pricing data verified May 14 — 33 models, 10 providers
 - **Analytics: GA4 (G-0CEP7S9Y3J) on all 166 pages** — fully operational, custom events via gtag()
@@ -50,3 +50,10 @@ Built full APIpulse from scratch: 166 pages, 112 blog posts, 33 models, 10 provi
 - Updated sitemap (166 URLs), RSS (115 items), blog index (115 guides), cross-links from index.html and launch.html.
 - Generated OG image (og-images/blog-sonnet46-vs-gpt55.png).
 - Updated page count (168→169), blog count (114→115).
+
+### Session 198 (May 14)
+**New blog post — mid-tier 1M context comparison:**
+- **Blog post: blog-sonnet46-vs-gemini31pro.html** — Claude Sonnet 4.6 vs Gemini 3.1 Pro. Both mid-tier with 1M context windows. Gemini 3.1 Pro is 20-33% cheaper on standard pricing ($2/$12 vs $3/$15). Key insight: Sonnet Batch API ($1.50/$7.50) makes it 36% cheaper than Gemini for non-urgent workloads. Cost per request across 5 types, monthly cost scenarios at 4 scales, decision framework (Gemini wins: real-time, multimodal, Google ecosystem; Sonnet wins: coding, batch processing, tool use, AI agents). Budget alternatives section.
+- Updated sitemap (167 URLs), RSS (116 items), blog index (116 guides), cross-links from index.html and launch.html.
+- Generated OG image (og-images/blog-sonnet46-vs-gemini31pro.png).
+- Updated page count (169→170), blog count (115→116).
