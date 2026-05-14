@@ -1,0 +1,902 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI API Rate Limits Compared: 2026 Guide to RPM, TPM, and Quotas — APIpulse</title>
+    <meta name="description" content="Compare AI API rate limits across OpenAI, Anthropic, Google, DeepSeek, Mistral, and more. RPM, TPM, and RPD limits for every major model — plus strategies to handle 429 errors.">
+    <meta name="keywords" content>AI API rate limits, OpenAI rate limits, Anthropic RPM, Gemini rate limits, DeepSeek rate limits, API 429 errors, TPM limits, LLM rate limits 2026">
+    <meta property="og:title" content="AI API Rate Limits Compared: 2026 Guide — APIpulse">
+    <meta property="og:description" content="RPM, TPM, and RPD limits for every major AI provider. Compare rate limits, handle 429 errors, and choose the right provider for your throughput needs.">
+    <meta property="og:type" content="article">
+    <meta property="article:published_time" content="2026-05-14">
+    <meta property="article:modified_time" content="2026-05-14">
+    <meta property="article:author" content="APIpulse">
+    <meta property="og:image" content="https://getapipulse.com/og-images/blog-ai-api-rate-limits.png">
+    <meta property="og:url" content="https://getapipulse.com/blog-ai-api-rate-limits.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="AI API Rate Limits Compared: 2026 Guide">
+    <meta name="twitter:image" content="https://getapipulse.com/og-images/blog-ai-api-rate-limits.png">
+    <meta name="twitter:description" content="RPM, TPM, and RPD limits for every major AI provider. Compare rate limits and handle 429 errors.">
+    <link rel="canonical" href="https://getapipulse.com/blog-ai-api-rate-limits.html">
+    <link rel="alternate" type="application/rss+xml" title="APIpulse Blog" href="https://getapipulse.com/rss.xml">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="styles.css">
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0CEP7S9Y3J"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-0CEP7S9Y3J');
+    </script>
+    <script src="analytics.js" defer></script>
+    <script src="dynamic-date.js" defer></script>
+    <script src="shared.js" defer></script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "AI API Rate Limits Compared: 2026 Guide to RPM, TPM, and Quotas",
+        "description": "Compare AI API rate limits across OpenAI, Anthropic, Google, DeepSeek, Mistral, and more. RPM, TPM, and RPD limits for every major model.",
+        "datePublished": "2026-05-14",
+        "dateModified": "2026-05-14",
+        "author": { "@type": "Organization", "name": "APIpulse" },
+        "publisher": { "@type": "Organization", "name": "APIpulse", "url": "https://getapipulse.com" },
+        "url": "https://getapipulse.com/blog-ai-api-rate-limits.html",
+        "image": "https://getapipulse.com/og-images/blog-ai-api-rate-limits.png"
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Blog", "item": "https://getapipulse.com/blog.html" },
+            { "@type": "ListItem", "position": 2, "name": "AI API Rate Limits", "item": "https://getapipulse.com/blog-ai-api-rate-limits.html" }
+        ]
+    }
+    </script>
+    <style>
+        .content { max-width: 800px; margin: 0 auto; padding: 120px 24px 80px; }
+        h1 { font-size: 40px; font-weight: 800; margin-bottom: 12px; }
+        .subtitle { color: var(--text-secondary); font-size: 18px; margin-bottom: 48px; }
+        .post-meta { display: flex; gap: 16px; align-items: center; margin-bottom: 24px; font-size: 13px; color: var(--text-muted); }
+        .post-tag { background: var(--accent-glow); color: var(--accent); padding: 2px 10px; border-radius: 6px; font-size: 12px; font-weight: 600; }
+        h2 { font-size: 28px; font-weight: 700; margin: 40px 0 16px; }
+        h3 { font-size: 20px; font-weight: 600; margin: 28px 0 12px; }
+        p { margin-bottom: 16px; line-height: 1.7; color: var(--text-secondary); }
+        ul, ol { margin-bottom: 16px; padding-left: 24px; }
+        li { margin-bottom: 8px; line-height: 1.6; color: var(--text-secondary); }
+        strong { color: var(--text-primary); }
+        .comparison-table { width: 100%; border-collapse: collapse; margin: 24px 0; font-size: 14px; }
+        .comparison-table th { background: var(--bg-secondary); padding: 12px 16px; text-align: left; font-weight: 600; border-bottom: 1px solid var(--border); }
+        .comparison-table td { padding: 12px 16px; border-bottom: 1px solid var(--border); }
+        .comparison-table tr:last-child td { border-bottom: none; }
+        .winner { color: var(--green); font-weight: 600; }
+        .cost-box { background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 12px; padding: 24px; margin: 24px 0; }
+        .cost-box h3 { margin-top: 0; }
+        .cost-row { display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px solid var(--border); font-size: 14px; }
+        .cost-row:last-child { border-bottom: none; }
+        .cost-total { font-weight: 700; color: var(--accent); font-size: 18px; }
+        .cta-inline { background: var(--bg-secondary); border: 1px solid var(--accent); border-radius: 12px; padding: 24px; margin: 32px 0; text-align: center; }
+        .cta-inline p { margin-bottom: 12px; }
+        .btn-primary { display: inline-block; }
+        .back-link { display: inline-block; margin-bottom: 24px; color: var(--text-muted); font-size: 14px; }
+        .back-link:hover { color: var(--accent); }
+        .related { background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 12px; padding: 24px; margin-top: 40px; }
+        .related h3 { margin-top: 0; font-size: 18px; }
+        .related a { display: block; padding: 8px 0; color: var(--accent); font-size: 14px; }
+        .share-section { margin-top: 32px; padding-top: 24px; border-top: 1px solid var(--border); text-align: center; }
+        .share-section p { color: var(--text-secondary); font-size: 14px; margin-bottom: 12px; }
+        .share-btn { display: inline-block; background: var(--bg-card); color: var(--text-primary); padding: 8px 20px; border-radius: 8px; font-size: 14px; font-weight: 500; border: 1px solid var(--border); transition: all 0.2s; }
+        .share-btn:hover { background: var(--accent); color: white; border-color: var(--accent); }
+        .verdict { background: var(--accent-glow); border: 1px solid var(--accent); border-radius: 12px; padding: 24px; margin: 24px 0; }
+        .verdict h3 { margin-top: 0; color: var(--accent); }
+        .tip-box { background: rgba(34,197,94,0.08); border: 1px solid rgba(34,197,94,0.3); border-radius: 12px; padding: 20px; margin: 24px 0; }
+        .tip-box h4 { margin-top: 0; color: var(--green); font-size: 15px; }
+        .warn-box { background: rgba(251,191,36,0.08); border: 1px solid rgba(251,191,36,0.3); border-radius: 12px; padding: 20px; margin: 24px 0; }
+        .warn-box h4 { margin-top: 0; color: #f59e0b; font-size: 15px; }
+        code { background: var(--bg-secondary); padding: 2px 6px; border-radius: 4px; font-size: 13px; }
+        pre { background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 8px; padding: 16px; overflow-x: auto; margin: 16px 0; font-size: 13px; line-height: 1.5; }
+        pre code { background: none; padding: 0; }
+        @media (max-width: 768px) {
+            .content { padding: 100px 20px 60px; }
+            h1 { font-size: 28px; }
+            h2 { font-size: 22px; }
+            .comparison-table { font-size: 12px; }
+            .comparison-table th, .comparison-table td { padding: 8px 10px; }
+        }
+    </style>
+    <meta name="theme-color" content="#6366f1">
+    <link rel="preconnect" href="https://getapipulse.com">
+</head>
+<body>
+    <a href="#main" class="skip-link">Skip to content</a>
+    <nav>
+        <div class="nav-inner">
+            <a href="index.html" class="logo">API<span>pulse</span></a>
+            <button class="hamburger" onclick="toggleMobileNav()" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+            <div class="nav-links">
+                <a href="calculator.html">Calculator</a>
+                <a href="compare.html">Compare</a>
+                <a href="cost-explorer.html">Explorer</a>
+                <a href="cost-scenarios.html">Scenarios</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="use-cases.html">Use Cases</a>
+                <a href="about.html">About</a>
+                <a href="blog.html" class="active">Blog</a>
+                <a href="pricing-index.html">Pricing Index</a>
+                <a href="model-matrix.html">Model Matrix</a>
+                <a href="pricing-trends.html">Trends</a>
+                <a href="pricing-changelog.html">Changelog</a>
+                <a href="price-alerts.html">Price Alerts</a>
+                <a href="cheat-sheet.html">Cheat Sheet</a> &middot; <a href="model-switch.html">Model Switch</a>
+                <a href="api-docs.html" style="color:var(--accent);">API</a>
+                <a href="pricing.html" class="nav-cta" onclick="if(window.trackEvent)window.trackEvent('pro_button_clicked',{source:'nav'})">Get Pro — $29</a>
+                <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
+            </div>
+        </div>
+    </nav>
+
+    <main id="main">
+
+    <div class="content article">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+            <a href="blog.html">Blog</a>
+            <span class="separator">›</span>
+            <span class="current">AI API Rate Limits</span>
+        </nav>
+        <a href="blog.html" class="back-link">← Back to blog</a>
+        <div class="post-meta">
+            <span class="post-tag">Guide</span>
+            <span>May 14, 2026</span>
+        </div>
+        <h1>AI API Rate Limits Compared: 2026 Guide to RPM, TPM, and Quotas</h1>
+
+        <p>Your AI API integration works perfectly in development — then you hit production and start seeing <strong>429 Too Many Requests</strong> errors. Rate limits are the invisible ceiling that determines how fast your app can scale, and every provider handles them differently.</p>
+
+        <p>This guide compares rate limits across all major AI API providers — OpenAI, Anthropic, Google, DeepSeek, Mistral, Cohere, xAI, and others — with specific numbers for each model tier. Plus practical strategies to handle rate limits without losing users.</p>
+
+        <h2>Rate Limit Basics: RPM, TPM, and RPD</h2>
+
+        <p>Every AI API provider enforces rate limits using three primary metrics:</p>
+
+        <table class="comparison-table">
+            <thead>
+                <tr>
+                    <th>Metric</th>
+                    <th>Full Name</th>
+                    <th>What It Measures</th>
+                    <th>Why It Matters</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>RPM</strong></td>
+                    <td>Requests per Minute</td>
+                    <td>How many API calls you can make in 60 seconds</td>
+                    <td>Limits concurrent users and real-time features</td>
+                </tr>
+                <tr>
+                    <td><strong>TPM</strong></td>
+                    <td>Tokens per Minute</td>
+                    <td>Total tokens (input + output) processed per minute</td>
+                    <td>Limits throughput for long-context or high-volume workloads</td>
+                </tr>
+                <tr>
+                    <td><strong>RPD</strong></td>
+                    <td>Requests per Day</td>
+                    <td>Total API calls allowed in a 24-hour window</td>
+                    <td>Limits daily batch processing and cron jobs</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <p><strong>Most providers enforce all three simultaneously.</strong> You might hit the TPM limit before RPM, or vice versa. The tightest constraint is your actual bottleneck.</p>
+
+        <div class="tip-box">
+            <h4>Quick Rule of Thumb</h4>
+            <p>If you're processing <strong>short requests</strong> (chat, classification), RPM is your bottleneck. If you're processing <strong>long requests</strong> (document analysis, code generation), TPM is your bottleneck. Plan for both.</p>
+        </div>
+
+        <h2>Provider Rate Limits: Complete Comparison</h2>
+
+        <h3>OpenAI Rate Limits</h3>
+
+        <p>OpenAI uses a <strong>tiered system</strong> based on your total spend. Higher tiers unlock higher limits. New accounts start at Tier 1.</p>
+
+        <table class="comparison-table">
+            <thead>
+                <tr>
+                    <th>Model</th>
+                    <th>Tier 1 RPM</th>
+                    <th>Tier 2 RPM</th>
+                    <th>Tier 3 RPM</th>
+                    <th>Tier 4 RPM</th>
+                    <th>Tier 5 RPM</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>GPT-5.5</strong></td>
+                    <td>500</td>
+                    <td>2,000</td>
+                    <td>5,000</td>
+                    <td>8,000</td>
+                    <td class="winner">10,000</td>
+                </tr>
+                <tr>
+                    <td><strong>GPT-5</strong></td>
+                    <td>500</td>
+                    <td>2,000</td>
+                    <td>5,000</td>
+                    <td>8,000</td>
+                    <td class="winner">10,000</td>
+                </tr>
+                <tr>
+                    <td><strong>GPT-5 Mini</strong></td>
+                    <td>1,000</td>
+                    <td>4,000</td>
+                    <td>10,000</td>
+                    <td>15,000</td>
+                    <td class="winner">20,000</td>
+                </tr>
+                <tr>
+                    <td><strong>GPT-4o</strong></td>
+                    <td>500</td>
+                    <td>2,000</td>
+                    <td>5,000</td>
+                    <td>8,000</td>
+                    <td class="winner">10,000</td>
+                </tr>
+                <tr>
+                    <td><strong>GPT-4o mini</strong></td>
+                    <td>1,000</td>
+                    <td>4,000</td>
+                    <td>10,000</td>
+                    <td>15,000</td>
+                    <td class="winner">20,000</td>
+                </tr>
+                <tr>
+                    <td><strong>GPT-oss 120B</strong></td>
+                    <td>500</td>
+                    <td>2,000</td>
+                    <td>5,000</td>
+                    <td>8,000</td>
+                    <td>10,000</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <p><strong>OpenAI TPM limits:</strong> Tier 1 starts at 40K TPM for GPT-5, scaling to 2M TPM at Tier 5. GPT-5 Mini gets 2x the TPM of GPT-5 at each tier. Budget models (GPT-oss, GPT-4o mini) get higher limits than flagship models.</p>
+
+        <p><strong>How to tier up:</strong> Spend $5+ for Tier 2, $50+ for Tier 3, $100+ for Tier 4, $250+ for Tier 5. Tiers unlock automatically based on cumulative spend.</p>
+
+        <h3>Anthropic Rate Limits</h3>
+
+        <p>Anthropic uses a <strong>simpler tier system</strong> based on spend. Limits are per-model and scale aggressively with usage.</p>
+
+        <table class="comparison-table">
+            <thead>
+                <tr>
+                    <th>Model</th>
+                    <th>Tier 1 RPM</th>
+                    <th>Tier 2 RPM</th>
+                    <th>Tier 3 RPM</th>
+                    <th>Tier 4 RPM</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Claude Opus 4.7</strong></td>
+                    <td>200</td>
+                    <td>1,000</td>
+                    <td>2,000</td>
+                    <td class="winner">4,000</td>
+                </tr>
+                <tr>
+                    <td><strong>Claude Sonnet 4.6</strong></td>
+                    <td>500</td>
+                    <td>2,000</td>
+                    <td>4,000</td>
+                    <td class="winner">8,000</td>
+                </tr>
+                <tr>
+                    <td><strong>Claude Haiku 4.5</strong></td>
+                    <td>1,000</td>
+                    <td>4,000</td>
+                    <td>8,000</td>
+                    <td class="winner">15,000</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <p><strong>Anthropic TPM limits:</strong> Tier 1 starts at 40K TPM for Opus, 80K for Sonnet, and 100K for Haiku. Tier 4 scales to 2M TPM for Sonnet and Haiku, 1M for Opus.</p>
+
+        <p><strong>Batch API bonus:</strong> Anthropic's Batch API has separate, higher rate limits — typically 2-3x the standard limits. If you have non-urgent workloads, Batch API gives you both 50% cost savings AND higher throughput.</p>
+
+        <h3>Google Gemini Rate Limits</h3>
+
+        <p>Google offers the <strong>most generous free-tier limits</strong> of any provider. Paid tiers scale to very high RPM.</p>
+
+        <table class="comparison-table">
+            <thead>
+                <tr>
+                    <th>Model</th>
+                    <th>Free RPM</th>
+                    <th>Pay-as-you-go RPM</th>
+                    <th>Free TPM</th>
+                    <th>Pay TPM</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Gemini 3.1 Pro</strong></td>
+                    <td>5</td>
+                    <td class="winner">2,000</td>
+                    <td>32K</td>
+                    <td class="winner">4M</td>
+                </tr>
+                <tr>
+                    <td><strong>Gemini 2.5 Pro</strong></td>
+                    <td>5</td>
+                    <td class="winner">2,000</td>
+                    <td>32K</td>
+                    <td class="winner">4M</td>
+                </tr>
+                <tr>
+                    <td><strong>Gemini 2.0 Flash</strong></td>
+                    <td>15</td>
+                    <td class="winner">4,000</td>
+                    <td>1M</td>
+                    <td class="winner">8M</td>
+                </tr>
+                <tr>
+                    <td><strong>Gemini 2.0 Flash Lite</strong></td>
+                    <td>30</td>
+                    <td class="winner">6,000</td>
+                    <td>1M</td>
+                    <td class="winner">8M</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <p><strong>Google's free tier is unmatched.</strong> Gemini 2.0 Flash Lite gives you 30 RPM for free — enough for side projects and prototypes. No other provider offers this. The pay-as-you-go TPM limits (4-8M) are also the highest in the industry.</p>
+
+        <h3>DeepSeek Rate Limits</h3>
+
+        <p>DeepSeek uses a <strong>flat rate limit system</strong> — no tiers, no spend-based scaling. Simple and predictable.</p>
+
+        <table class="comparison-table">
+            <thead>
+                <tr>
+                    <th>Model</th>
+                    <th>RPM</th>
+                    <th>TPM</th>
+                    <th>Notes</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>DeepSeek V4 Pro</strong></td>
+                    <td>60</td>
+                    <td>100K</td>
+                    <td>Same limits for all users</td>
+                </tr>
+                <tr>
+                    <td><strong>DeepSeek V4 Flash</strong></td>
+                    <td>60</td>
+                    <td>100K</td>
+                    <td>Same limits for all users</td>
+                </tr>
+                <tr>
+                    <td><strong>DeepSeek V3</strong></td>
+                    <td>60</td>
+                    <td>100K</td>
+                    <td>Legacy model</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="warn-box">
+            <h4>DeepSeek Limitation</h4>
+            <p>DeepSeek's 60 RPM is the <strong>lowest of any major provider</strong>. For a chatbot handling 100 concurrent users making 1 request/minute each, you'd need 100 RPM — exceeding DeepSeek's limit. At scale, you'll need request queuing or multiple API keys.</p>
+        </div>
+
+        <h3>Mistral Rate Limits</h3>
+
+        <table class="comparison-table">
+            <thead>
+                <tr>
+                    <th>Model</th>
+                    <th>RPM</th>
+                    <th>TPM</th>
+                    <th>Notes</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Mistral Large 3</strong></td>
+                    <td>60</td>
+                    <td>200K</td>
+                    <td>Scale plan available</td>
+                </tr>
+                <tr>
+                    <td><strong>Mistral Small 4</strong></td>
+                    <td>60</td>
+                    <td>200K</td>
+                    <td>Scale plan available</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>Other Providers</h3>
+
+        <table class="comparison-table">
+            <thead>
+                <tr>
+                    <th>Provider</th>
+                    <th>Model</th>
+                    <th>RPM</th>
+                    <th>TPM</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>xAI</strong></td>
+                    <td>Grok 3</td>
+                    <td>60</td>
+                    <td>100K</td>
+                </tr>
+                <tr>
+                    <td><strong>Moonshot</strong></td>
+                    <td>Kimi K2.6</td>
+                    <td>60</td>
+                    <td>100K</td>
+                </tr>
+                <tr>
+                    <td><strong>Cohere</strong></td>
+                    <td>Command R+</td>
+                    <td>100</td>
+                    <td>200K</td>
+                </tr>
+                <tr>
+                    <td><strong>Cohere</strong></td>
+                    <td>Command R</td>
+                    <td>100</td>
+                    <td>200K</td>
+                </tr>
+                <tr>
+                    <td><strong>AI21</strong></td>
+                    <td>Jamba 1.5 Large</td>
+                    <td>60</td>
+                    <td>200K</td>
+                </tr>
+                <tr>
+                    <td><strong>Together.ai</strong></td>
+                    <td>Llama 3.1 70B</td>
+                    <td>60</td>
+                    <td>200K</td>
+                </tr>
+                <tr>
+                    <td><strong>Together.ai</strong></td>
+                    <td>Llama 3.1 8B</td>
+                    <td>60</td>
+                    <td>200K</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2>RPM Comparison: All Providers Side by Side</h2>
+
+        <p>Here's the <strong>base-tier RPM</strong> (lowest paid tier) for each provider's flagship model:</p>
+
+        <table class="comparison-table">
+            <thead>
+                <tr>
+                    <th>Provider</th>
+                    <th>Flagship Model</th>
+                    <th>Base RPM</th>
+                    <th>Max RPM</th>
+                    <th>Base TPM</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="winner">Google</td>
+                    <td>Gemini 2.0 Flash Lite</td>
+                    <td class="winner">6,000</td>
+                    <td class="winner">6,000</td>
+                    <td class="winner">8M</td>
+                </tr>
+                <tr>
+                    <td>Google</td>
+                    <td>Gemini 2.0 Flash</td>
+                    <td>4,000</td>
+                    <td>4,000</td>
+                    <td>8M</td>
+                </tr>
+                <tr>
+                    <td>OpenAI</td>
+                    <td>GPT-5 Mini</td>
+                    <td>1,000</td>
+                    <td>20,000</td>
+                    <td>40K</td>
+                </tr>
+                <tr>
+                    <td>Anthropic</td>
+                    <td>Claude Haiku 4.5</td>
+                    <td>1,000</td>
+                    <td>15,000</td>
+                    <td>100K</td>
+                </tr>
+                <tr>
+                    <td>OpenAI</td>
+                    <td>GPT-5</td>
+                    <td>500</td>
+                    <td>10,000</td>
+                    <td>40K</td>
+                </tr>
+                <tr>
+                    <td>Anthropic</td>
+                    <td>Claude Sonnet 4.6</td>
+                    <td>500</td>
+                    <td>8,000</td>
+                    <td>80K</td>
+                </tr>
+                <tr>
+                    <td>Cohere</td>
+                    <td>Command R+</td>
+                    <td>100</td>
+                    <td>100</td>
+                    <td>200K</td>
+                </tr>
+                <tr>
+                    <td>DeepSeek</td>
+                    <td>DeepSeek V4 Pro</td>
+                    <td>60</td>
+                    <td>60</td>
+                    <td>100K</td>
+                </tr>
+                <tr>
+                    <td>Mistral</td>
+                    <td>Mistral Large 3</td>
+                    <td>60</td>
+                    <td>60</td>
+                    <td>200K</td>
+                </tr>
+                <tr>
+                    <td>xAI</td>
+                    <td>Grok 3</td>
+                    <td>60</td>
+                    <td>60</td>
+                    <td>100K</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <p><strong>Google dominates on rate limits.</strong> Gemini 2.0 Flash Lite at 6,000 RPM and 8M TPM is 100x DeepSeek's RPM and 80x its TPM. If throughput is your primary constraint, Google is the clear winner. OpenAI scales well with spend. Anthropic is solid in the middle. DeepSeek, Mistral, and xAI all cap at 60 RPM.</p>
+
+        <h2>How to Handle 429 Rate Limit Errors</h2>
+
+        <p>When you hit a rate limit, the API returns a <code>429 Too Many Requests</code> status code with a <code>Retry-After</code> header. Here's how to handle it gracefully:</p>
+
+        <h3>1. Exponential Backoff</h3>
+
+        <p>The standard approach: wait longer after each failed attempt.</p>
+
+<pre><code>async function callWithRetry(apiCall, maxRetries = 5) {
+  for (let i = 0; i < maxRetries; i++) {
+    try {
+      return await apiCall();
+    } catch (error) {
+      if (error.status === 429 && i < maxRetries - 1) {
+        const delay = Math.pow(2, i) * 1000; // 1s, 2s, 4s, 8s, 16s
+        const retryAfter = error.headers?.['retry-after'];
+        const waitMs = retryAfter ? retryAfter * 1000 : delay;
+        console.log(`Rate limited. Retrying in ${waitMs}ms...`);
+        await new Promise(r => setTimeout(r, waitMs));
+      } else {
+        throw error;
+      }
+    }
+  }
+}</code></pre>
+
+        <h3>2. Request Queue</h3>
+
+        <p>For high-volume applications, queue requests and process them at a controlled rate:</p>
+
+<pre><code>class RateLimiter {
+  constructor(rpm) {
+    this.interval = 60000 / rpm; // ms between requests
+    this.queue = [];
+    this.processing = false;
+  }
+
+  async add(apiCall) {
+    return new Promise((resolve, reject) => {
+      this.queue.push({ apiCall, resolve, reject });
+      if (!this.processing) this.process();
+    });
+  }
+
+  async process() {
+    this.processing = true;
+    while (this.queue.length > 0) {
+      const { apiCall, resolve, reject } = this.queue.shift();
+      try {
+        const result = await apiCall();
+        resolve(result);
+      } catch (e) {
+        reject(e);
+      }
+      if (this.queue.length > 0) {
+        await new Promise(r => setTimeout(r, this.interval));
+      }
+    }
+    this.processing = false;
+  }
+}
+
+// Usage: Stay under DeepSeek's 60 RPM
+const limiter = new RateLimiter(55); // 55 RPM (buffer)
+const result = await limiter.add(() => callDeepSeek(prompt));</code></pre>
+
+        <h3>3. Multi-Key Rotation</h3>
+
+        <p>For providers with low RPM (DeepSeek, Mistral), use multiple API keys to multiply your effective rate limit:</p>
+
+<pre><code>const keys = [process.env.KEY_1, process.env.KEY_2, process.env.KEY_3];
+let keyIndex = 0;
+
+function getNextKey() {
+  const key = keys[keyIndex];
+  keyIndex = (keyIndex + 1) % keys.length;
+  return key;
+}
+
+// Effective RPM: 60 x 3 keys = 180 RPM</code></pre>
+
+        <h3>4. Model Fallback Chain</h3>
+
+        <p>When your primary model is rate-limited, fall back to a cheaper alternative:</p>
+
+<pre><code>const fallbackChain = [
+  { model: 'claude-sonnet-4.6', rpm: 500 },
+  { model: 'gpt-5-mini', rpm: 1000 },
+  { model: 'gemini-2.0-flash', rpm: 4000 },
+];
+
+async function callWithFallback(prompt) {
+  for (const { model } of fallbackChain) {
+    try {
+      return await callModel(model, prompt);
+    } catch (e) {
+      if (e.status === 429) continue;
+      throw e;
+    }
+  }
+  throw new Error('All models rate-limited');
+}</code></pre>
+
+        <div class="tip-box">
+            <h4>Pro Tip: Combine Strategies</h4>
+            <p>The most robust approach combines all four: a request queue keeps you under the limit, exponential backoff handles spikes, multi-key rotation multiplies capacity, and a fallback chain ensures availability. Start with a queue + backoff, add multi-key if you need more throughput.</p>
+        </div>
+
+        <h2>Rate Limits vs Cost: The Tradeoff</h2>
+
+        <p>Higher rate limits often come with higher costs. Here's how rate limits correlate with pricing for each provider's budget model:</p>
+
+        <table class="comparison-table">
+            <thead>
+                <tr>
+                    <th>Model</th>
+                    <th>Input ($/1M)</th>
+                    <th>Output ($/1M)</th>
+                    <th>Base RPM</th>
+                    <th>Cost per 1K Requests</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Gemini 2.0 Flash Lite</td>
+                    <td class="winner">$0.075</td>
+                    <td class="winner">$0.30</td>
+                    <td class="winner">6,000</td>
+                    <td class="winner">$0.08</td>
+                </tr>
+                <tr>
+                    <td>DeepSeek V4 Flash</td>
+                    <td>$0.14</td>
+                    <td>$0.28</td>
+                    <td>60</td>
+                    <td>$0.10</td>
+                </tr>
+                <tr>
+                    <td>GPT-oss 20B</td>
+                    <td>$0.08</td>
+                    <td>$0.35</td>
+                    <td>500</td>
+                    <td>$0.11</td>
+                </tr>
+                <tr>
+                    <td>GPT-4o mini</td>
+                    <td>$0.15</td>
+                    <td>$0.60</td>
+                    <td>1,000</td>
+                    <td>$0.18</td>
+                </tr>
+                <tr>
+                    <td>Mistral Small 4</td>
+                    <td>$0.15</td>
+                    <td>$0.60</td>
+                    <td>60</td>
+                    <td>$0.18</td>
+                </tr>
+                <tr>
+                    <td>GPT-5 Mini</td>
+                    <td>$0.25</td>
+                    <td>$2.00</td>
+                    <td>1,000</td>
+                    <td>$0.58</td>
+                </tr>
+                <tr>
+                    <td>DeepSeek V4 Pro</td>
+                    <td>$0.44</td>
+                    <td>$0.87</td>
+                    <td>60</td>
+                    <td>$0.26</td>
+                </tr>
+                <tr>
+                    <td>Claude Haiku 4.5</td>
+                    <td>$1.00</td>
+                    <td>$5.00</td>
+                    <td>1,000</td>
+                    <td>$1.50</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <p><strong>Gemini 2.0 Flash Lite is the clear winner on both cost AND rate limits.</strong> At $0.075/$0.30 per million tokens and 6,000 RPM, it's the cheapest AND fastest option available. For high-throughput, cost-sensitive workloads, Flash Lite is unbeatable.</p>
+
+        <h2>Choosing a Provider by Throughput Needs</h2>
+
+        <table class="comparison-table">
+            <thead>
+                <tr>
+                    <th>Your Throughput Need</th>
+                    <th>Best Provider</th>
+                    <th>Why</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Prototype / Side project</td>
+                    <td class="winner">Google (Free tier)</td>
+                    <td>30 RPM free, no credit card required</td>
+                </tr>
+                <tr>
+                    <td>Chatbot (100-500 users)</td>
+                    <td class="winner">Google or OpenAI</td>
+                    <td>4,000-6,000 RPM handles concurrent users</td>
+                </tr>
+                <tr>
+                    <td>High-volume API (>1K RPM)</td>
+                    <td class="winner">Google Gemini Flash</td>
+                    <td>6,000 RPM at $0.075/$0.30</td>
+                </tr>
+                <tr>
+                    <td>Enterprise (10K+ RPM)</td>
+                    <td class="winner">OpenAI (Tier 5)</td>
+                    <td>20,000 RPM for GPT-5 Mini with spend</td>
+                </tr>
+                <tr>
+                    <td>Batch processing</td>
+                    <td class="winner">Any provider</td>
+                    <td>Batch APIs have separate, higher limits</td>
+                </tr>
+                <tr>
+                    <td>Budget + moderate throughput</td>
+                    <td>DeepSeek or Mistral</td>
+                    <td>60 RPM is enough for most apps under 100 users</td>
+                </tr>
+                <tr>
+                    <td>Quality + moderate throughput</td>
+                    <td>Anthropic</td>
+                    <td>500-1,000 RPM for Sonnet/Haiku at good prices</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2>Practical Throughput Calculations</h2>
+
+        <p>How many concurrent users can each provider handle? Assume <strong>2 requests per user per minute</strong> (typical for a chatbot):</p>
+
+        <div class="cost-box">
+            <h3>Concurrent Users at Base Tier</h3>
+            <div class="cost-row">
+                <span>Google Flash Lite (6,000 RPM)</span>
+                <span class="cost-total">3,000 users</span>
+            </div>
+            <div class="cost-row">
+                <span>Google Flash (4,000 RPM)</span>
+                <span>2,000 users</span>
+            </div>
+            <div class="cost-row">
+                <span>OpenAI GPT-5 Mini Tier 1 (1,000 RPM)</span>
+                <span>500 users</span>
+            </div>
+            <div class="cost-row">
+                <span>Anthropic Haiku Tier 1 (1,000 RPM)</span>
+                <span>500 users</span>
+            </div>
+            <div class="cost-row">
+                <span>OpenAI GPT-5 Tier 1 (500 RPM)</span>
+                <span>250 users</span>
+            </div>
+            <div class="cost-row">
+                <span>Anthropic Sonnet Tier 1 (500 RPM)</span>
+                <span>250 users</span>
+            </div>
+            <div class="cost-row">
+                <span>DeepSeek V4 Pro (60 RPM)</span>
+                <span>30 users</span>
+            </div>
+            <div class="cost-row">
+                <span>Mistral Large (60 RPM)</span>
+                <span>30 users</span>
+            </div>
+        </div>
+
+        <p><strong>At 2 requests per user per minute, DeepSeek can only handle 30 concurrent users.</strong> That's fine for internal tools and small chatbots, but not for production apps with real traffic. Google Flash Lite handles 100x more users at 1/10th the cost.</p>
+
+        <div class="verdict">
+            <h3>The Bottom Line</h3>
+            <p><strong>For most developers, rate limits are not the bottleneck — cost is.</strong> But if you're building a high-traffic chatbot or real-time API, rate limits become critical. Google Gemini Flash Lite offers the best combination of high RPM (6,000), high TPM (8M), and low cost ($0.075/$0.30). OpenAI scales well with spend. DeepSeek and Mistral are limited to 60 RPM — fine for low-traffic apps, but you'll hit the ceiling fast.</p>
+            <p><strong>Strategy:</strong> Start with the cheapest model that meets your quality needs. If you hit rate limits, add request queuing and exponential backoff before switching providers. If you still need more throughput, use multi-key rotation or upgrade to a provider with higher limits. Use the <a href="calculator.html">APIpulse calculator</a> to model costs at your target throughput.</p>
+        </div>
+
+        <div class="cta-inline">
+            <p><strong>Modeling AI API costs at your target throughput?</strong> Enter your usage patterns and see exact monthly costs — plus rate limit guidance for every model.</p>
+            <a href="calculator.html" class="btn-primary">Calculate Your Costs</a>
+            <span style="margin: 0 12px; color: var(--text-muted);">or</span>
+            <a href="compare.html" class="btn-primary" style="background:var(--bg-card);color:var(--text-primary);border:1px solid var(--border);">Compare All Models</a>
+        </div>
+
+        <div class="related">
+            <h3>Related Reading</h3>
+            <a href="blog-cost-optimization-guide.html">AI API Cost Optimization: 5 Strategies That Work</a>
+            <a href="blog-api-error-handling.html">API Error Handling: Retries, Timeouts, and Fallbacks</a>
+            <a href="blog-multi-model-routing.html">Multi-Model Routing: Use the Right Model for Every Request</a>
+            <a href="blog-cheapest-llm.html">Cheapest LLM APIs in 2026</a>
+            <a href="blog-api-batch-processing.html">Batch Processing: Cut API Costs by 50%</a>
+            <a href="model-switch.html">Model Switch Calculator — See Your Exact Savings →</a>
+        </div>
+
+        <div class="share-section">
+            <p>Found this useful? Share it:</p>
+            <a href="https://twitter.com/intent/tweet?text=AI+API+Rate+Limits+Compared%3A+2026+Guide+to+RPM%2C+TPM%2C+and+Quotas&url=https%3A%2F%2Fgetapipulse.com%2Fblog-ai-api-rate-limits.html" target="_blank" rel="noopener" class="share-btn">Share on X</a>
+            <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fgetapipulse.com%2Fblog-ai-api-rate-limits.html" target="_blank" rel="noopener" class="share-btn">Share on LinkedIn</a>
+        </div>
+    </div>
+
+    <div style="background:linear-gradient(135deg,rgba(99,102,241,0.08),rgba(34,197,94,0.08));border:1px solid var(--accent);border-radius:12px;padding:24px;margin:32px 0;text-align:center;">
+            <p style="font-size:16px;font-weight:700;margin-bottom:8px;color:var(--text-primary);">Want to optimize your AI API costs?</p>
+            <p style="font-size:14px;color:var(--text-secondary);margin-bottom:16px;line-height:1.6;">APIpulse Pro ($29 one-time) includes saved scenarios, cost report exports, and personalized recommendations that can save you up to 40%.</p>
+            <a href="pro.html" style="display:inline-block;background:var(--accent);color:white;padding:12px 28px;border-radius:8px;font-size:14px;font-weight:700;text-decoration:none;transition:all 0.2s;" onclick="if(window.trackEvent)window.trackEvent('pro_button_clicked',{source:'blog_post'})">Get Pro — $29</a>
+        </div>
+    <button class="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">↑</button>
+
+    </main>
+
+    <footer>
+        <p>Pricing data last verified: <span class="verified-date"></span></p>
+        <p>&copy; 2026 APIpulse. <a href="index.html">Home</a> &middot; <a href="use-cases.html">Use Cases</a> &middot; <a href="about.html">About</a> &middot; <a href="blog.html">Blog</a>
+<a href="pricing-index.html">Pricing Index</a> &middot; <a href="model-matrix.html">Model Matrix</a> &middot; <a href="cost-scenarios.html">Scenarios</a> &middot; <a href="price-alerts.html">Price Alerts</a> &middot; <a href="pricing-changelog.html">Changelog</a> &middot; <a href="openai.html">OpenAI</a> &middot; <a href="anthropic.html">Anthropic</a> &middot; <a href="google.html">Google</a> &middot; <a href="mistral.html">Mistral</a> &middot; <a href="cohere.html">Cohere</a> &middot; <a href="deepseek.html">DeepSeek</a> &middot; <a href="xai.html">xAI</a> &middot; <a href="moonshot.html">Moonshot</a> &middot; <a href="together.html">Together.ai</a> &middot; <a href="ai21.html">AI21</a> &middot; <a href="pricing.html">Pricing</a> &middot; <a href="embed.html">Embed Widget</a> &middot; <a href="cheat-sheet.html">Cheat Sheet</a> &middot; <a href="model-switch.html">Model Switch</a> &middot; <a href="api-docs.html">API</a> &middot; <a href="https://x.com/getapipulse" target="_blank" rel="noopener">Twitter</a> &middot; <a href="unsubscribe.html">Unsubscribe</a></p>
+    </footer>
+
+</body>
+</html>
