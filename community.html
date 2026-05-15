@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Community Post Helper — Execute the Engagement Playbook | APIpulse</title>
+    <meta name="description" content="One-click copy for all community posts — Reddit, Hacker News, and more. Pre-formatted with UTM links.">
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="styles.css">
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0CEP7S9Y3J"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-0CEP7S9Y3J');
+    </script>
+    <script src="analytics.js" defer></script>
+    <style>
+        .hero { padding: 120px 24px 60px; text-align: center; max-width: 800px; margin: 0 auto; }
+        .hero h1 { font-size: clamp(28px, 5vw, 42px); font-weight: 800; margin-bottom: 16px; }
+        .hero p { font-size: 16px; color: var(--text-secondary); max-width: 600px; margin: 0 auto; line-height: 1.6; }
+        .progress-bar { max-width: 600px; margin: 24px auto 0; background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 12px; padding: 16px 20px; }
+        .progress-label { display: flex; justify-content: space-between; margin-bottom: 8px; font-size: 14px; }
+        .progress-label span:first-child { color: var(--text-secondary); }
+        .progress-label span:last-child { color: var(--green); font-weight: 700; }
+        .progress-track { height: 8px; background: var(--border); border-radius: 4px; overflow: hidden; }
+        .progress-fill { height: 100%; background: var(--green); border-radius: 4px; transition: width 0.3s ease; }
+
+        .container { max-width: 900px; margin: 0 auto; padding: 0 24px 80px; }
+
+        .section-header { display: flex; align-items: center; gap: 12px; margin: 48px 0 24px; }
+        .section-header h2 { font-size: 22px; font-weight: 700; }
+        .section-badge { background: var(--accent); color: white; font-size: 12px; font-weight: 700; padding: 4px 10px; border-radius: 20px; }
+
+        .timing-card { background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 12px; padding: 20px; margin-bottom: 24px; }
+        .timing-card h3 { font-size: 15px; font-weight: 700; margin-bottom: 8px; }
+        .timing-card p { font-size: 14px; color: var(--text-secondary); line-height: 1.5; }
+        .timing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; }
+        .timing-item { display: flex; align-items: center; gap: 10px; }
+        .timing-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+        .timing-dot.green { background: var(--green); }
+        .timing-dot.orange { background: var(--orange); }
+        .timing-dot.red { background: var(--red); }
+
+        .post-card { background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 12px; margin-bottom: 16px; overflow: hidden; }
+        .post-header { display: flex; align-items: center; justify-content: space-between; padding: 16px 20px; cursor: pointer; }
+        .post-header:hover { background: var(--bg-card-hover); }
+        .post-left { display: flex; align-items: center; gap: 12px; }
+        .post-checkbox { width: 20px; height: 20px; border-radius: 4px; border: 2px solid var(--border); cursor: pointer; display: flex; align-items: center; justify-content: center; flex-shrink: 0; transition: all 0.2s; }
+        .post-checkbox.checked { background: var(--green); border-color: var(--green); }
+        .post-checkbox.checked::after { content: "✓"; color: white; font-size: 12px; font-weight: 700; }
+        .post-subreddit { font-size: 13px; color: var(--accent); font-weight: 600; }
+        .post-title-text { font-size: 15px; font-weight: 600; }
+        .post-right { display: flex; gap: 8px; }
+        .copy-btn { padding: 8px 16px; border-radius: 6px; border: 1px solid var(--border); background: var(--bg-card); color: var(--text-primary); font-size: 13px; font-weight: 600; cursor: pointer; transition: all 0.2s; white-space: nowrap; }
+        .copy-btn:hover { background: var(--accent); border-color: var(--accent); color: white; }
+        .copy-btn.copied { background: var(--green); border-color: var(--green); color: white; }
+        .expand-btn { padding: 8px 12px; border-radius: 6px; border: 1px solid var(--border); background: var(--bg-card); color: var(--text-secondary); font-size: 13px; cursor: pointer; transition: all 0.2s; }
+        .expand-btn:hover { background: var(--bg-card-hover); }
+        .post-body { display: none; padding: 0 20px 20px; }
+        .post-body.open { display: block; }
+        .post-content { background: var(--bg-card); border: 1px solid var(--border); border-radius: 8px; padding: 16px; font-size: 14px; color: var(--text-secondary); line-height: 1.7; white-space: pre-wrap; word-wrap: break-word; max-height: 400px; overflow-y: auto; }
+        .utm-link { display: block; margin-top: 12px; padding: 10px 14px; background: var(--bg-card); border: 1px solid var(--border); border-radius: 6px; font-size: 13px; color: var(--accent); word-break: break-all; }
+        .utm-link strong { color: var(--text-primary); }
+
+        .guidelines { background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 12px; padding: 24px; margin-top: 48px; }
+        .guidelines h3 { font-size: 16px; font-weight: 700; margin-bottom: 16px; }
+        .guidelines li { color: var(--text-secondary); font-size: 14px; margin-bottom: 8px; line-height: 1.5; }
+        .guidelines li strong { color: var(--text-primary); }
+
+        @media (max-width: 640px) {
+            .post-header { flex-direction: column; align-items: flex-start; gap: 12px; }
+            .post-right { width: 100%; }
+            .copy-btn, .expand-btn { flex: 1; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-inner">
+            <a href="index.html" class="logo">API<span>pulse</span></a>
+        </div>
+    </nav>
+
+    <main>
+        <div class="hero">
+            <h1>Community Post Helper</h1>
+            <p>One-click copy for all Reddit and Hacker News posts. Pre-formatted with UTM links for traffic tracking.</p>
+            <div class="progress-bar">
+                <div class="progress-label">
+                    <span>Posts completed</span>
+                    <span id="progress-count">0 / 8</span>
+                </div>
+                <div class="progress-track">
+                    <div class="progress-fill" id="progress-fill" style="width: 0%"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <!-- Timing -->
+            <div class="timing-card">
+                <h3>Best Posting Times</h3>
+                <div class="timing-grid" style="margin-top: 12px;">
+                    <div class="timing-item"><div class="timing-dot green"></div><span style="font-size:14px;color:var(--text-secondary)">Reddit: Weekday 9-11am ET</span></div>
+                    <div class="timing-item"><div class="timing-dot green"></div><span style="font-size:14px;color:var(--text-secondary)">HN: Tue-Thu 9-11am ET</span></div>
+                    <div class="timing-item"><div class="timing-dot orange"></div><span style="font-size:14px;color:var(--text-secondary)">1 post per community/week max</span></div>
+                </div>
+            </div>
+
+            <!-- Reddit Posts -->
+            <div class="section-header">
+                <h2>Reddit Posts</h2>
+                <span class="section-badge">6 posts</span>
+            </div>
+
+            <!-- Post 1: r/SaaS -->
+            <div class="post-card" data-post="1">
+                <div class="post-header" onclick="togglePost(1)">
+                    <div class="post-left">
+                        <div class="post-checkbox" onclick="event.stopPropagation();toggleCheck(1)" data-check="1"></div>
+                        <div>
+                            <div class="post-subreddit">r/SaaS</div>
+                            <div class="post-title-text">I built a free AI API cost calculator in 2 weeks — lessons from launching on Product Hunt</div>
+                        </div>
+                    </div>
+                    <div class="post-right">
+                        <button class="copy-btn" onclick="event.stopPropagation();copyPost(1)">Copy Title</button>
+                        <button class="copy-btn" onclick="event.stopPropagation();copyFull(1)">Copy Full</button>
+                        <button class="expand-btn" onclick="event.stopPropagation();togglePost(1)">▼</button>
+                    </div>
+                </div>
+                <div class="post-body" id="post-body-1">
+                    <div class="post-content" id="post-content-1">I was tired of manually comparing Claude vs GPT pricing in spreadsheets. So I built APIpulse — a free tool that compares 33 AI models across 10 providers.
+
+What I learned:
+- SEO content before launch = organic traffic on day one
+- Free tools are the best marketing (developers bookmark and return)
+- Pricing data freshness matters more than I expected
+- Reddit feedback shaped the product: r/webdev asked for "cost per request" instead of just tokens, so I added it. r/MachineLearning asked for batch vs streaming toggle, so I added it
+- Community feedback is the best product roadmap
+
+Tech stack: Static HTML + Vercel. No backend. All calculations in JavaScript.
+
+The tool is free: https://getapipulse.com/?utm_source=reddit&utm_medium=post&utm_campaign=r_saas_build
+
+Happy to answer questions about the build process or the PH launch.</div>
+                    <div class="utm-link"><strong>Title:</strong> I built a free AI API cost calculator in 2 weeks — lessons from launching on Product Hunt</div>
+                </div>
+            </div>
+
+            <!-- Post 2: r/webdev -->
+            <div class="post-card" data-post="2">
+                <div class="post-header" onclick="togglePost(2)">
+                    <div class="post-left">
+                        <div class="post-checkbox" onclick="event.stopPropagation();toggleCheck(2)" data-check="2"></div>
+                        <div>
+                            <div class="post-subreddit">r/webdev</div>
+                            <div class="post-title-text">Free tool: AI API cost calculator — compare 33 models from OpenAI, Anthropic, Google, and more</div>
+                        </div>
+                    </div>
+                    <div class="post-right">
+                        <button class="copy-btn" onclick="event.stopPropagation();copyPost(2)">Copy Title</button>
+                        <button class="copy-btn" onclick="event.stopPropagation();copyFull(2)">Copy Full</button>
+                        <button class="expand-btn" onclick="event.stopPropagation();togglePost(2)">▼</button>
+                    </div>
+                </div>
+                <div class="post-body" id="post-body-2">
+                    <div class="post-content" id="post-content-2">I built a calculator that lets you estimate monthly AI API costs across providers. Features:
+- 33 models, 10 providers
+- **Cost per request** and **cost per 1K requests** — the metrics developers actually budget against
+- Request-type presets: chat message, code gen, doc analysis, RAG query, content writer
+- **Batch vs streaming toggle** — see how streaming overhead (+10% tokens) or Batch API discounts (-50%) affect your costs
+- Monthly cost estimator with volume presets
+- Provider comparison table
+- Cheaper alternative recommendations
+
+It's completely free, no signup required: https://getapipulse.com/?utm_source=reddit&utm_medium=post&utm_campaign=r_webdev_tool
+
+For weekly pricing updates: https://getapipulse.com/newsletter.html?utm_source=reddit&utm_medium=post&utm_campaign=r_webdev_tool
+
+Would love feedback on what features would be most useful.</div>
+                    <div class="utm-link"><strong>Title:</strong> Free tool: AI API cost calculator — compare 33 models from OpenAI, Anthropic, Google, and more</div>
+                </div>
+            </div>
+
+            <!-- Post 3: r/artificial -->
+            <div class="post-card" data-post="3">
+                <div class="post-header" onclick="togglePost(3)">
+                    <div class="post-left">
+                        <div class="post-checkbox" onclick="event.stopPropagation();toggleCheck(3)" data-check="3"></div>
+                        <div>
+                            <div class="post-subreddit">r/artificial</div>
+                            <div class="post-title-text">AI API pricing in 2026: GPT-4o dropped 67%, Mistral dropped 75%, Grok 3 jumped 10x</div>
+                        </div>
+                    </div>
+                    <div class="post-right">
+                        <button class="copy-btn" onclick="event.stopPropagation();copyPost(3)">Copy Title</button>
+                        <button class="copy-btn" onclick="event.stopPropagation();copyFull(3)">Copy Full</button>
+                        <button class="expand-btn" onclick="event.stopPropagation();togglePost(3)">▼</button>
+                    </div>
+                </div>
+                <div class="post-body" id="post-body-3">
+                    <div class="post-content" id="post-content-3">I've been tracking AI API pricing changes across all major providers. Here's what's happened:
+
+Biggest drops:
+- GPT-4o: $10 → $2.50/1M input (-67%)
+- Mistral Large: $2 → $0.50 (-75%)
+- DeepSeek V4 Pro: $1.75 → $0.44 (-75%)
+
+The outlier:
+- Grok 3: $3 → $30/1M input (+10x) — biggest price hike in the market
+
+Budget models are now production-viable:
+- Gemini 2.0 Flash Lite at $0.075/1M input
+- Llama 3.1 8B at $0.10/1M via Together.ai
+- DeepSeek V4 Flash at $0.14/1M with 1M context
+
+I built a free tool to track all this: https://getapipulse.com/?utm_source=reddit&utm_medium=post&utm_campaign=r_artificial_pricing
+
+Full comparison of 33 models across 10 providers. Would be curious to hear what models everyone's actually using in production.</div>
+                    <div class="utm-link"><strong>Title:</strong> AI API pricing in 2026: GPT-4o dropped 67%, Mistral dropped 75%, Grok 3 jumped 10x</div>
+                </div>
+            </div>
+
+            <!-- Post 4: r/LocalLLaMA -->
+            <div class="post-card" data-post="4">
+                <div class="post-header" onclick="togglePost(4)">
+                    <div class="post-left">
+                        <div class="post-checkbox" onclick="event.stopPropagation();toggleCheck(4)" data-check="4"></div>
+                        <div>
+                            <div class="post-subreddit">r/LocalLLaMA</div>
+                            <div class="post-title-text">Open-source vs commercial AI APIs in 2026 — cost comparison with real numbers</div>
+                        </div>
+                    </div>
+                    <div class="post-right">
+                        <button class="copy-btn" onclick="event.stopPropagation();copyPost(4)">Copy Title</button>
+                        <button class="copy-btn" onclick="event.stopPropagation();copyFull(4)">Copy Full</button>
+                        <button class="expand-btn" onclick="event.stopPropagation();togglePost(4)">▼</button>
+                    </div>
+                </div>
+                <div class="post-body" id="post-body-4">
+                    <div class="post-content" id="post-content-4">I've been comparing open-source hosted APIs vs commercial providers. Here's the breakdown:
+
+Open-source (via hosted APIs):
+- Llama 3.1 8B (Together.ai): $0.10/$0.10 per 1M tokens
+- Llama 4 Scout: $0.11/$0.33 — 10M context window
+- Llama 4 Maverick: $0.22/$0.66
+
+Commercial budget tier:
+- Gemini 2.0 Flash Lite: $0.075/$0.30 (cheapest overall)
+- DeepSeek V4 Flash: $0.14/$0.28
+- GPT-4o mini: $0.15/$0.60
+
+The gap is closing fast. Gemini Flash Lite at $0.075 is actually cheaper than most open-source hosted options. But open-source gives you self-hosting flexibility and no vendor lock-in.
+
+For self-hosters: the break-even point vs API calls depends heavily on utilization. At >80% GPU utilization, self-hosting wins. Below 50%, APIs are usually cheaper when you factor in ops overhead.
+
+Full comparison: https://getapipulse.com/?utm_source=reddit&utm_medium=post&utm_campaign=r_localllama_oss</div>
+                    <div class="utm-link"><strong>Title:</strong> Open-source vs commercial AI APIs in 2026 — cost comparison with real numbers</div>
+                </div>
+            </div>
+
+            <!-- Post 5: r/startups -->
+            <div class="post-card" data-post="5">
+                <div class="post-header" onclick="togglePost(5)">
+                    <div class="post-left">
+                        <div class="post-checkbox" onclick="event.stopPropagation();toggleCheck(5)" data-check="5"></div>
+                        <div>
+                            <div class="post-subreddit">r/startups</div>
+                            <div class="post-title-text">Building a startup on $100 — Week 4 update (AI API pricing tool)</div>
+                        </div>
+                    </div>
+                    <div class="post-right">
+                        <button class="copy-btn" onclick="event.stopPropagation();copyPost(5)">Copy Title</button>
+                        <button class="copy-btn" onclick="event.stopPropagation();copyFull(5)">Copy Full</button>
+                        <button class="expand-btn" onclick="event.stopPropagation();togglePost(5)">▼</button>
+                    </div>
+                </div>
+                <div class="post-body" id="post-body-5">
+                    <div class="post-content" id="post-content-5">I'm 4 weeks into a 12-week challenge: build a real startup with only $100.
+
+What I built: APIpulse — a free tool that compares AI API pricing across 33 models and 10 providers. Interactive calculators, savings comparisons, pricing trends, and now cost-per-request breakdowns.
+
+Week 1-2: Built the entire site (174 pages, 120 blog posts). Launched on Product Hunt.
+Week 3: Distribution push. Added savings calculator, exit popup A/B test, community engagement.
+Week 4: Responded to community feedback — added cost-per-request view, request-type presets, and batch vs streaming toggle. Rejected $5K acquisition offer. Expanded to 10 providers with rate limits data.
+
+Lessons so far:
+- Static HTML + Vercel = $0 hosting, instant deploys
+- Free tools drive more traffic than blog posts
+- SEO content before launch = organic traffic from day one
+- Reddit feedback shaped the product more than any other channel
+- The $100 budget forces creative solutions (and that's a feature, not a bug)
+
+Revenue: $0 so far (Pro tier at $29, Stripe needs config fix).
+Traffic: Growing steadily from PH launch and organic SEO.
+
+Next up: Community distribution (Show HN, Reddit posts), newsletter pitches, conversion optimization.
+
+Full write-up with budget breakdown: https://getapipulse.com/blog-building-startup-on-100-dollars.html?utm_source=reddit&utm_medium=post&utm_campaign=r_startups_journey
+
+The tool: https://getapipulse.com/?utm_source=reddit&utm_medium=post&utm_campaign=r_startups_journey
+
+Happy to share specifics about the build process, tech stack, or PH launch strategy.</div>
+                    <div class="utm-link"><strong>Title:</strong> Building a startup on $100 — Week 4 update (AI API pricing tool)</div>
+                </div>
+            </div>
+
+            <!-- Post 6: r/MachineLearning -->
+            <div class="post-card" data-post="6">
+                <div class="post-header" onclick="togglePost(6)">
+                    <div class="post-left">
+                        <div class="post-checkbox" onclick="event.stopPropagation();toggleCheck(6)" data-check="6"></div>
+                        <div>
+                            <div class="post-subreddit">r/MachineLearning</div>
+                            <div class="post-title-text">AI API pricing analysis: 33 models, 10 providers — who's actually cheapest in 2026?</div>
+                        </div>
+                    </div>
+                    <div class="post-right">
+                        <button class="copy-btn" onclick="event.stopPropagation();copyPost(6)">Copy Title</button>
+                        <button class="copy-btn" onclick="event.stopPropagation();copyFull(6)">Copy Full</button>
+                        <button class="expand-btn" onclick="event.stopPropagation();togglePost(6)">▼</button>
+                    </div>
+                </div>
+                <div class="post-body" id="post-body-6">
+                    <div class="post-content" id="post-content-6">I analyzed current AI API pricing across all major providers. Key findings:
+
+1. **Budget tier is production-viable**: Gemini 2.0 Flash Lite ($0.075/1M) and DeepSeek V4 Flash ($0.14/1M) now match 2024 flagship quality at 1/20th the price.
+
+2. **Context windows exploded**: Budget models now offer 1M+ context (Gemini Flash, DeepSeek V4 Pro). Premium models at 200K-1M.
+
+3. **Price volatility is real**: Grok 3 increased 10x. GPT-4o dropped 67%. If you haven't re-evaluated your provider in 6 months, you're likely overpaying.
+
+4. **Multi-model pipelines are optimal**: Route simple tasks to Gemini Flash ($0.10), code to DeepSeek V4 Pro ($0.44), complex reasoning to GPT-5 ($1.25). Under $2/1M tokens average.
+
+5. **The cheapest option depends on workload**: For high-volume classification, Llama 3.1 8B ($0.10) wins. For long-context analysis, Gemini Flash ($0.10/1M, 1M context) wins. For code, DeepSeek V4 Pro ($0.44/1M, 1M context) wins.
+
+**New feature** (thanks to r/MachineLearning feedback): Batch vs streaming toggle. Streaming responses typically use ~10% more tokens due to overhead. OpenAI's Batch API offers 50% off. The calculator now shows both modes so you can budget accurately.
+
+Full data with interactive calculators: https://getapipulse.com/?utm_source=reddit&utm_medium=post&utm_campaign=r_ml_analysis
+
+Data covers input/output pricing, context windows, and cost-per-workload comparisons.</div>
+                    <div class="utm-link"><strong>Title:</strong> AI API pricing analysis: 33 models, 10 providers — who's actually cheapest in 2026?</div>
+                </div>
+            </div>
+
+            <!-- Hacker News -->
+            <div class="section-header">
+                <h2>Hacker News</h2>
+                <span class="section-badge">Show HN</span>
+            </div>
+
+            <!-- Post 7: Show HN -->
+            <div class="post-card" data-post="7">
+                <div class="post-header" onclick="togglePost(7)">
+                    <div class="post-left">
+                        <div class="post-checkbox" onclick="event.stopPropagation();toggleCheck(7)" data-check="7"></div>
+                        <div>
+                            <div class="post-subreddit">Show HN</div>
+                            <div class="post-title-text">Show HN: AI API pricing has changed dramatically — here's a free tool to navigate it</div>
+                        </div>
+                    </div>
+                    <div class="post-right">
+                        <button class="copy-btn" onclick="event.stopPropagation();copyPost(7)">Copy Title</button>
+                        <button class="copy-btn" onclick="event.stopPropagation();copyFull(7)">Copy Full</button>
+                        <button class="expand-btn" onclick="event.stopPropagation();togglePost(7)">▼</button>
+                    </div>
+                </div>
+                <div class="post-body" id="post-body-7">
+                    <div class="post-content" id="post-content-7">The LLM API market has shifted massively in 2025-2026:
+- GPT-4o dropped 67% ($10 → $2.50/1M input)
+- Mistral Large dropped 75% ($2 → $0.50)
+- DeepSeek V4 Pro dropped 75% ($1.75 → $0.44)
+- Grok 3 increased 10x ($3 → $30) — biggest price hike in the market
+
+I built APIpulse to help developers navigate this. It's a free, static tool that compares 33 models across 10 providers with interactive calculators.
+
+Key pages:
+- /calculator — cost per request, cost per 1K requests, monthly total. Request-type presets (chat, code gen, doc analysis, RAG, content writer). New: batch vs streaming toggle (streaming +10% tokens, Batch API -50% cost)
+- /pricing-trends — every major price move, decision framework for when to switch
+- /model-switch — side-by-side savings calculator
+- /agent-cost-calculator — costs for AI agent workloads
+
+126 blog posts covering specific comparisons (DeepSeek vs GPT-5 Mini, Mistral Small vs Haiku, cost per request analysis, AI API rate limits, Opus 4.7 vs GPT-5, etc.).
+
+All static HTML/JS, no backend, no signup. Deployed on Vercel.
+
+URL: https://getapipulse.com/?utm_source=hn&utm_medium=show_hn&utm_campaign=pricing_trends</div>
+                    <div class="utm-link"><strong>Title:</strong> Show HN: AI API pricing has changed dramatically — here's a free tool to navigate it</div>
+                </div>
+            </div>
+
+            <!-- Newsletter Pitches -->
+            <div class="section-header">
+                <h2>Newsletter Pitches</h2>
+                <span class="section-badge">Email</span>
+            </div>
+
+            <!-- Post 8: TLDR -->
+            <div class="post-card" data-post="8">
+                <div class="post-header" onclick="togglePost(8)">
+                    <div class="post-left">
+                        <div class="post-checkbox" onclick="event.stopPropagation();toggleCheck(8)" data-check="8"></div>
+                        <div>
+                            <div class="post-subreddit">TLDR Newsletter</div>
+                            <div class="post-title-text">Free tool: Compare AI API pricing across 33 models</div>
+                        </div>
+                    </div>
+                    <div class="post-right">
+                        <button class="copy-btn" onclick="event.stopPropagation();copyPost(8)">Copy Subject</button>
+                        <button class="copy-btn" onclick="event.stopPropagation();copyFull(8)">Copy Full</button>
+                        <button class="expand-btn" onclick="event.stopPropagation();togglePost(8)">▼</button>
+                    </div>
+                </div>
+                <div class="post-body" id="post-body-8">
+                    <div class="post-content" id="post-content-8">Hi TLDR team,
+
+I built APIpulse — a free tool that helps developers compare AI API costs across 33 models from OpenAI, Anthropic, Google, DeepSeek, Mistral, and more.
+
+Key data points for your readers:
+- GPT-4o dropped 67% ($10 → $2.50/1M input)
+- Budget models (Gemini Flash at $0.075/1M) are now production-viable
+- Grok 3 increased 10x — biggest price hike in the market
+
+Interactive tools: cost calculator, model comparison, savings calculator, pricing trends.
+
+Site: https://getapipulse.com/?utm_source=tldr&utm_medium=newsletter&utm_campaign=pitch
+Newsletter signup: https://getapipulse.com/newsletter.html
+
+Happy to provide any data or quotes for a piece.</div>
+                    <div class="utm-link"><strong>Subject:</strong> Free tool: Compare AI API pricing across 33 models</div>
+                </div>
+            </div>
+
+            <!-- Guidelines -->
+            <div class="guidelines">
+                <h3>Engagement Guidelines</h3>
+                <ul style="list-style:none;padding:0;">
+                    <li><strong>1.</strong> Be helpful first — answer questions, share knowledge. Don't just drop links.</li>
+                    <li><strong>2.</strong> Be honest — share real numbers, admit mistakes. Authenticity builds trust.</li>
+                    <li><strong>3.</strong> Don't spam — one post per community per week max. Engage in comments.</li>
+                    <li><strong>4.</strong> Add value — every post should teach something or solve a problem.</li>
+                    <li><strong>5.</strong> Follow community rules — read sidebar rules before posting. Some subs have "Show" days.</li>
+                    <li><strong>6.</strong> First 2 hours are critical — reply to every comment quickly.</li>
+                </ul>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-inner">
+            <div class="footer-brand">API<span>pulse</span></div>
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="calculator.html">Calculator</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="blog.html">Blog</a>
+                <a href="newsletter.html">Newsletter</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+    var posts = {
+        1: { title: "I built a free AI API cost calculator in 2 weeks — lessons from launching on Product Hunt", sub: "r/SaaS" },
+        2: { title: "Free tool: AI API cost calculator — compare 33 models from OpenAI, Anthropic, Google, and more", sub: "r/webdev" },
+        3: { title: "AI API pricing in 2026: GPT-4o dropped 67%, Mistral dropped 75%, Grok 3 jumped 10x", sub: "r/artificial" },
+        4: { title: "Open-source vs commercial AI APIs in 2026 — cost comparison with real numbers", sub: "r/LocalLLaMA" },
+        5: { title: "Building a startup on $100 — Week 4 update (AI API pricing tool)", sub: "r/startups" },
+        6: { title: "AI API pricing analysis: 33 models, 10 providers — who's actually cheapest in 2026?", sub: "r/MachineLearning" },
+        7: { title: "Show HN: AI API pricing has changed dramatically — here's a free tool to navigate it", sub: "Show HN" },
+        8: { title: "Free tool: Compare AI API pricing across 33 models", sub: "TLDR Newsletter" }
+    };
+
+    function togglePost(id) {
+        var body = document.getElementById('post-body-' + id);
+        body.classList.toggle('open');
+    }
+
+    function toggleCheck(id) {
+        var cb = document.querySelector('[data-check="' + id + '"]');
+        cb.classList.toggle('checked');
+        saveState();
+        updateProgress();
+        if (typeof gtag === 'function') {
+            gtag('event', 'community_post_completed', { post_id: id, subreddit: posts[id].sub });
+        }
+    }
+
+    function copyPost(id) {
+        var text = posts[id].title;
+        navigator.clipboard.writeText(text).then(function() {
+            var btns = document.querySelectorAll('[data-post="' + id + '"] .copy-btn');
+            btns[0].textContent = 'Copied!';
+            btns[0].classList.add('copied');
+            setTimeout(function() { btns[0].textContent = 'Copy Title'; btns[0].classList.remove('copied'); }, 2000);
+        });
+        if (typeof gtag === 'function') {
+            gtag('event', 'community_post_copied', { post_id: id, type: 'title', subreddit: posts[id].sub });
+        }
+    }
+
+    function copyFull(id) {
+        var content = document.getElementById('post-content-' + id).textContent;
+        var title = posts[id].title;
+        var full = title + '\n\n' + content;
+        navigator.clipboard.writeText(full).then(function() {
+            var btns = document.querySelectorAll('[data-post="' + id + '"] .copy-btn');
+            btns[1].textContent = 'Copied!';
+            btns[1].classList.add('copied');
+            setTimeout(function() { btns[1].textContent = 'Copy Full'; btns[1].classList.remove('copied'); }, 2000);
+        });
+        if (typeof gtag === 'function') {
+            gtag('event', 'community_post_copied', { post_id: id, type: 'full', subreddit: posts[id].sub });
+        }
+    }
+
+    function saveState() {
+        var checks = {};
+        document.querySelectorAll('.post-checkbox').forEach(function(cb) {
+            checks[cb.dataset.check] = cb.classList.contains('checked');
+        });
+        localStorage.setItem('community_checks', JSON.stringify(checks));
+    }
+
+    function loadState() {
+        var saved = localStorage.getItem('community_checks');
+        if (saved) {
+            var checks = JSON.parse(saved);
+            Object.keys(checks).forEach(function(id) {
+                if (checks[id]) {
+                    document.querySelector('[data-check="' + id + '"]').classList.add('checked');
+                }
+            });
+        }
+        updateProgress();
+    }
+
+    function updateProgress() {
+        var total = document.querySelectorAll('.post-checkbox').length;
+        var done = document.querySelectorAll('.post-checkbox.checked').length;
+        document.getElementById('progress-count').textContent = done + ' / ' + total;
+        document.getElementById('progress-fill').style.width = (done / total * 100) + '%';
+    }
+
+    loadState();
+    </script>
+</body>
+</html>

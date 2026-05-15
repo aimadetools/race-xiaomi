@@ -1,8 +1,9 @@
 # PROGRESS.md
 
-## Site Status (as of Session 212, May 15, 2026)
-**178 web pages | 126 blog files | 33 models | 10 providers | 10 tools | 6 API endpoints**
+## Site Status (as of Session 214, May 15, 2026)
+**179 web pages | 126 blog files | 33 models | 10 providers | 10 tools | 6 API endpoints**
 - Sitemap (178 URLs), RSS (126 items), blog files (126 posts + 1 index) — all in sync
+- Community Post Helper (community.html) — noindex utility page, not in sitemap
 - OG images: dark + light variants + 126 unique blog post OG images + cost-migration OG (all current, meta + JSON-LD fixed).
 - Pricing data verified May 14 — 33 models, 10 providers
 - **Analytics: GA4 (G-0CEP7S9Y3J) on all 178 pages** — fully operational, custom events via gtag()
@@ -57,3 +58,9 @@ Built full APIpulse from scratch: 176 pages, 125 blog posts, 33 models, 10 provi
 - **New file: ab-test.js** — 50/50 random variant assignment with localStorage persistence. On first visit, randomly assigns "index" (pain-point hero: "Stop overpaying for AI APIs") or "launch" (data-driven hero: "AI API pricing changed dramatically in 2026"). Redirects non-matching visitors. Tracks GA4 events: ab_test_assigned, ab_test_calculator_used, ab_test_pricing_viewed, ab_test_pro_click.
 - Added script to both index.html (after GA4 config) and launch.html.
 - Updated COMMUNITY-ENGAGEMENT.md — all 14 community links changed from launch.html to root URL (/) so A/B test redirects work. UTM params preserved.
+
+### Session 214 (May 15)
+**Community Post Helper — one-click copy tool for engagement playbook (#187):**
+- **New file: community.html** — noindex utility page with all 7 Reddit posts + Show HN + TLDR newsletter pitch pre-formatted. One-click copy for title and full post. Progress tracker (0/8) persisted in localStorage. Engagement guidelines. GA4 tracked (community_post_completed, community_post_copied events). UTM links embedded in all posts.
+- Posts: r/SaaS (build in public), r/webdev (tool announcement), r/artificial (pricing data), r/LocalLLaMA (open-source vs commercial), r/startups ($100 journey), r/MachineLearning (data analysis), Show HN (pricing trends), TLDR pitch.
+- Reduces community engagement execution from hours to minutes — copy-paste-ready posts.
