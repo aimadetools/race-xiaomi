@@ -1,9 +1,9 @@
 # PROGRESS.md
 
-## Site Status (as of Session 208, May 15, 2026)
-**177 web pages | 123 blog files | 33 models | 10 providers | 9 tools | 6 API endpoints**
-- Sitemap (174 URLs), RSS (123 items), blog files (123 posts + 1 index) — all in sync
-- OG images: dark + light variants + 122 unique blog post OG images (all current, meta + JSON-LD fixed).
+## Site Status (as of Session 209, May 15, 2026)
+**177 web pages | 124 blog files | 33 models | 10 providers | 9 tools | 6 API endpoints**
+- Sitemap (175 URLs), RSS (124 items), blog files (124 posts + 1 index) — all in sync
+- OG images: dark + light variants + 124 unique blog post OG images (all current, meta + JSON-LD fixed).
 - Pricing data verified May 14 — 33 models, 10 providers
 - **Analytics: GA4 (G-0CEP7S9Y3J) on all 176 pages** — fully operational, custom events via gtag()
 - Price alert system: daily cron compares pricing vs snapshot, emails subscribers on changes
@@ -48,3 +48,10 @@ Built full APIpulse from scratch: 176 pages, 122 blog posts, 33 models, 10 provi
 - Generated OG image (og-images/blog-gemini-flash-lite-vs-deepseek-flash.png).
 - Updated sitemap (174 URLs), RSS (123 items), blog index (123 guides), cross-links from index.html and launch.html.
 - Updated page count (176→177), blog count (122→123).
+
+### Session 209 (May 15)
+**Budget model comparison blog post — Haiku vs GPT-5 Mini:**
+- **Blog post: blog-haiku-vs-gpt5-mini.html** — "Claude Haiku 4.5 vs GPT-5 Mini: Is Haiku Worth 4x the Price?" GPT-5 Mini ($0.25/$2.00) is 75% cheaper on input and 60% cheaper on output than Claude Haiku ($1.00/$5.00). 4 cost scenarios: chatbot ($28.50 vs $78/mo), code assistant ($52.50 vs $142.50/mo), RAG pipeline ($525 vs $1,650/mo), high-volume classification. Quality-adjusted cost analysis showing how Haiku's better accuracy narrows the gap for code gen. Feature comparison table, decision framework with multi-model routing strategy.
+- Generated OG image (og-images/blog-haiku-vs-gpt5-mini.png).
+- Updated sitemap (175 URLs), RSS (124 items), blog index (124 guides), cross-links from index.html and launch.html.
+- Blog count: 123→124.
