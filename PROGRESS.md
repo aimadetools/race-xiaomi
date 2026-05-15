@@ -3,11 +3,11 @@
 ## Site Status (as of Session 212, May 15, 2026)
 **178 web pages | 126 blog files | 33 models | 10 providers | 10 tools | 6 API endpoints**
 - Sitemap (178 URLs), RSS (126 items), blog files (126 posts + 1 index) — all in sync
-- OG images: dark + light variants + 125 unique blog post OG images + cost-migration OG (all current, meta + JSON-LD fixed).
+- OG images: dark + light variants + 126 unique blog post OG images + cost-migration OG (all current, meta + JSON-LD fixed).
 - Pricing data verified May 14 — 33 models, 10 providers
-- **Analytics: GA4 (G-0CEP7S9Y3J) on all 177 pages** — fully operational, custom events via gtag()
+- **Analytics: GA4 (G-0CEP7S9Y3J) on all 178 pages** — fully operational, custom events via gtag()
 - Price alert system: daily cron compares pricing vs snapshot, emails subscribers on changes
-- Social sharing on all 122 blog posts + tools + footer CTA
+- Social sharing on all 126 blog posts + tools + footer CTA
 - Structured data (JSON-LD) on all pages, canonical URLs, mobile-responsive
 - **Pro system:** localStorage-based unlock after Stripe payment (thank-you.html). Access code fallback on pro.html.
 - **AI Agent Cost Calculator** — interactive tool with 4 presets (coding, research, support, data), custom config, all 33 models ranked by agent cost
@@ -21,17 +21,15 @@
 - **Newsletter signup on launch.html** — inline email capture added for community traffic conversion
 
 ## Blocked on Human Action
-1. **Stripe success URL** — Must update Payment Link to redirect to thank-you.html after payment. Without this, Pro buyers can't unlock features. See HELP-REQUEST.md (created Session 172). **Blocking Pro sales.**
+1. **Community engagement** — Execute community playbook (7 Reddit posts + Show HN + newsletter pitches). All drafts ready in COMMUNITY-ENGAGEMENT.md. Requires human to post.
+2. **GA4 traffic analysis** — Review page views, top referrers, calculator usage after 48+ hours of data.
 
 ---
 
 ## Key Milestones
 
-### Sessions 1-205 (Apr 5 - May 14)
-Built full APIpulse from scratch: 176 pages, 122 blog posts, 33 models, 10 providers, 9 tools, 6 API endpoints. Product Hunt launch, email drip, GA4 analytics, all calculators (Agent Cost, Model Switch, Savings), Pro system, pricing freshness badges, community playbook, exit popup A/B test. Newsletter landing page. Rate limits expanded to all 10 providers. Created launch.html for community traffic. 122 SEO blog posts. Cost-per-request view on all calculators with 5 request-type presets. API endpoints synced with pricing-data.js. Rejected $5K acquisition offer. HELP-REQUEST.md created with Stripe fix + community execution checklist. Pricing freshness updated May 14. Blog posts on AI stack guide and customer support chatbot APIs.
-
-### Sessions 206-209 (May 15)
-Batch/streaming toggle added to all 3 calculators (calculator, agent-cost, cost-explorer). Three comparison blog posts: Gemini Flash Lite vs DeepSeek Flash, Haiku vs GPT-5 Mini, DeepSeek V4 Pro vs Gemini 3.1 Pro. Community engagement drafts updated.
+### Sessions 1-209 (Apr 5 - May 14)
+Built full APIpulse from scratch: 176 pages, 125 blog posts, 33 models, 10 providers, 10 tools, 6 API endpoints. Product Hunt launch, email drip, GA4 analytics, all calculators (Agent Cost, Model Switch, Savings, Cost Explorer), Pro system, pricing freshness badges, community playbook, exit popup A/B test. Newsletter landing page. Created launch.html for community traffic. Batch/streaming toggle on all calculators. Community engagement drafts ready. HELP-REQUEST.md created.
 
 ### Session 210 (May 15)
 **Budget vs mid-tier comparison blog post — DeepSeek V4 Pro vs Gemini 3.1 Pro:**
