@@ -66,7 +66,7 @@ What I learned:
 
 Tech stack: Static HTML + Vercel. No backend. All calculations in JavaScript.
 
-The tool is free: https://getapipulse.com/launch.html?utm_source=reddit&utm_medium=post&utm_campaign=r_saas_build
+The tool is free: https://getapipulse.com/?utm_source=reddit&utm_medium=post&utm_campaign=r_saas_build
 
 Happy to answer questions about the build process or the PH launch.
 
@@ -82,7 +82,7 @@ I built a calculator that lets you estimate monthly AI API costs across provider
 - Provider comparison table
 - Cheaper alternative recommendations
 
-It's completely free, no signup required: https://getapipulse.com/launch.html?utm_source=reddit&utm_medium=post&utm_campaign=r_webdev_tool
+It's completely free, no signup required: https://getapipulse.com/?utm_source=reddit&utm_medium=post&utm_campaign=r_webdev_tool
 
 For weekly pricing updates: https://getapipulse.com/newsletter.html?utm_source=reddit&utm_medium=post&utm_campaign=r_webdev_tool
 
@@ -109,7 +109,7 @@ Key pages:
 
 All static HTML/JS, no backend, no signup. Deployed on Vercel.
 
-URL: https://getapipulse.com/launch.html?utm_source=hn&utm_medium=show_hn&utm_campaign=pricing_trends
+URL: https://getapipulse.com/?utm_source=hn&utm_medium=show_hn&utm_campaign=pricing_trends
 
 ### Reddit r/artificial — Pricing Data Insights
 **Title**: "AI API pricing in 2026: GPT-4o dropped 67%, Mistral dropped 75%, Grok 3 jumped 10x"
@@ -129,7 +129,7 @@ Budget models are now production-viable:
 - Llama 3.1 8B at $0.10/1M via Together.ai
 - DeepSeek V4 Flash at $0.14/1M with 1M context
 
-I built a free tool to track all this: https://getapipulse.com/launch.html?utm_source=reddit&utm_medium=post&utm_campaign=r_artificial_pricing
+I built a free tool to track all this: https://getapipulse.com/?utm_source=reddit&utm_medium=post&utm_campaign=r_artificial_pricing
 
 Full comparison of 33 models across 10 providers. Would be curious to hear what models everyone's actually using in production.
 
@@ -152,7 +152,7 @@ The gap is closing fast. Gemini Flash Lite at $0.075 is actually cheaper than mo
 
 For self-hosters: the break-even point vs API calls depends heavily on utilization. At >80% GPU utilization, self-hosting wins. Below 50%, APIs are usually cheaper when you factor in ops overhead.
 
-Full comparison: https://getapipulse.com/launch.html?utm_source=reddit&utm_medium=post&utm_campaign=r_localllama_oss
+Full comparison: https://getapipulse.com/?utm_source=reddit&utm_medium=post&utm_campaign=r_localllama_oss
 
 ### Reddit r/startups — Build in Public
 **Title**: "Building a startup on $100 — Week 4 update (AI API pricing tool)"
@@ -179,7 +179,7 @@ Next up: Community distribution (Show HN, Reddit posts), newsletter pitches, con
 
 Full write-up with budget breakdown: https://getapipulse.com/blog-building-startup-on-100-dollars.html?utm_source=reddit&utm_medium=post&utm_campaign=r_startups_journey
 
-The tool: https://getapipulse.com/launch.html?utm_source=reddit&utm_medium=post&utm_campaign=r_startups_journey
+The tool: https://getapipulse.com/?utm_source=reddit&utm_medium=post&utm_campaign=r_startups_journey
 
 Happy to share specifics about the build process, tech stack, or PH launch strategy.
 
@@ -200,7 +200,7 @@ I analyzed current AI API pricing across all major providers. Key findings:
 
 **New feature** (thanks to r/MachineLearning feedback): Batch vs streaming toggle. Streaming responses typically use ~10% more tokens due to overhead. OpenAI's Batch API offers 50% off. The calculator now shows both modes so you can budget accurately.
 
-Full data with interactive calculators: https://getapipulse.com/launch.html?utm_source=reddit&utm_medium=post&utm_campaign=r_ml_analysis
+Full data with interactive calculators: https://getapipulse.com/?utm_source=reddit&utm_medium=post&utm_campaign=r_ml_analysis
 
 Data covers input/output pricing, context windows, and cost-per-workload comparisons.
 
@@ -247,7 +247,7 @@ Average: under $2/1M tokens.
 **Tweet 6:**
 I built a free tool to track all of this — 33 models, 10 providers, interactive calculators.
 
-Calculate your exact monthly cost: https://getapipulse.com/launch.html?utm_source=x&utm_medium=thread&utm_campaign=pricing_changes
+Calculate your exact monthly cost: https://getapipulse.com/?utm_source=x&utm_medium=thread&utm_campaign=pricing_changes
 
 No signup. No tracking. Just data.
 
@@ -282,7 +282,7 @@ OpenAI offers 50% discount for batch API. If your workload isn't time-sensitive,
 **Tweet 6:**
 I built a free calculator that models all of these strategies:
 
-https://getapipulse.com/launch.html?utm_source=x&utm_medium=thread&utm_campaign=cost_optimization
+https://getapipulse.com/?utm_source=x&utm_medium=thread&utm_campaign=cost_optimization
 
 33 models, 10 providers. See your exact savings.
 
@@ -304,7 +304,7 @@ Key data points for your readers:
 
 Interactive tools: cost calculator, model comparison, savings calculator, pricing trends.
 
-Site: https://getapipulse.com/launch.html?utm_source=tldr&utm_medium=newsletter&utm_campaign=pitch
+Site: https://getapipulse.com/?utm_source=tldr&utm_medium=newsletter&utm_campaign=pitch
 Newsletter signup: https://getapipulse.com/newsletter.html
 
 Happy to provide any data or quotes for a piece.
@@ -323,7 +323,7 @@ The AI API pricing landscape has shifted massively in 2025-2026. I built APIpuls
 
 Would be a great fit for your developer audience. Free tool, no signup required.
 
-Site: https://getapipulse.com/launch.html?utm_source=bytes&utm_medium=newsletter&utm_campaign=pitch
+Site: https://getapipulse.com/?utm_source=bytes&utm_medium=newsletter&utm_campaign=pitch
 Newsletter signup: https://getapipulse.com/newsletter.html
 
 Let me know if you'd like any data or a guest contribution.
