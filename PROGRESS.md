@@ -1,6 +1,6 @@
 # PROGRESS.md
 
-## Site Status (as of Session 205, May 14, 2026)
+## Site Status (as of Session 206, May 15, 2026)
 **176 web pages | 122 blog files | 33 models | 10 providers | 9 tools | 6 API endpoints**
 - Sitemap (173 URLs), RSS (122 items), blog files (122 posts + 1 index) — all in sync
 - OG images: dark + light variants + 122 unique blog post OG images (all current, meta + JSON-LD fixed).
@@ -42,3 +42,10 @@ Built full APIpulse from scratch: 174 pages, 120 blog posts, 33 models, 10 provi
 - Generated OG image (og-images/blog-best-ai-api-customer-support.png).
 - Updated sitemap (173 URLs), RSS (122 items), blog index (122 guides), cross-links from index.html and launch.html.
 - Updated page count (175→176), blog count (121→122).
+
+### Session 206 (May 15)
+**Batch vs streaming toggle — community feedback response:**
+- **Calculator feature: API mode toggle** — Added Standard, Streaming (+10% tokens), Batch API (-50% cost) toggle to calculator.html. Directly responds to r/MachineLearning feedback requesting batch vs streaming comparison.
+- Mode persists in shareable URLs, tracked in GA4 events, shown in copy results and social share text.
+- Updated COMMUNITY-ENGAGEMENT.md: all draft posts (r/SaaS, r/webdev, r/MachineLearning, Show HN) now mention batch/streaming feature.
+- Updated HELP-REQUEST.md: clear execution checklist for human (Stripe fix + community posting + newsletter pitches).
