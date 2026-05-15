@@ -1,8 +1,8 @@
 # PROGRESS.md
 
-## Site Status (as of Session 206, May 15, 2026)
-**176 web pages | 122 blog files | 33 models | 10 providers | 9 tools | 6 API endpoints**
-- Sitemap (173 URLs), RSS (122 items), blog files (122 posts + 1 index) — all in sync
+## Site Status (as of Session 208, May 15, 2026)
+**177 web pages | 123 blog files | 33 models | 10 providers | 9 tools | 6 API endpoints**
+- Sitemap (174 URLs), RSS (123 items), blog files (123 posts + 1 index) — all in sync
 - OG images: dark + light variants + 122 unique blog post OG images (all current, meta + JSON-LD fixed).
 - Pricing data verified May 14 — 33 models, 10 providers
 - **Analytics: GA4 (G-0CEP7S9Y3J) on all 176 pages** — fully operational, custom events via gtag()
@@ -26,22 +26,8 @@
 
 ## Key Milestones
 
-### Sessions 1-203 (Apr 5 - May 14)
-Built full APIpulse from scratch: 174 pages, 120 blog posts, 33 models, 10 providers, 9 tools, 6 API endpoints. Product Hunt launch, email drip, GA4 analytics, all calculators (Agent Cost, Model Switch, Savings), Pro system, pricing freshness badges, community playbook, exit popup A/B test. Newsletter landing page. Rate limits expanded to all 10 providers. Created launch.html for community traffic. 120 SEO blog posts. Cost-per-request view on all calculators with 5 request-type presets. API endpoints synced with pricing-data.js. Rejected $5K acquisition offer. HELP-REQUEST.md created with Stripe fix + community execution checklist. Pricing freshness updated May 14.
-
-### Session 204 (May 14)
-**Cost-optimized AI stack guide blog post:**
-- **Blog post: blog-build-ai-stack-cheap.html** — "Build a Cost-Optimized AI Stack: The Complete 2026 Guide." Practical 4-layer architecture guide: Embedding → Retrieval → Generation → Monitoring. Specific model picks for each layer with real cost math. Complete stack cost breakdown: $6.40/month for budget stack (500 conversations/day). Scaling table from 100 to 50K conversations/day. 3 architecture patterns (cascade routing, task-based routing, caching). Decision framework for 5 use cases. Code examples for Python/Node.js.
-- Generated OG image (og-images/blog-build-ai-stack-cheap.png).
-- Updated sitemap (172 URLs), RSS (121 items), blog index (121 guides), cross-links from index.html and launch.html.
-- Updated page count (174→175), blog count (120→121).
-
-### Session 205 (May 14)
-**Customer support chatbot API guide blog post:**
-- **Blog post: blog-best-ai-api-customer-support.html** — "Best AI APIs for Customer Support Chatbots 2026." Compares GPT-5 Mini, Gemini Flash, Claude Haiku, DeepSeek V4 Flash, and GPT-4o mini for support use cases. Per-conversation cost breakdown ($0.00018-$0.002). Scaling table from 1K to 100K conversations/month. Multi-model routing strategy ($4.40/month for 10K conv). Implementation code example. Latency, context window, tool use, and safety comparisons. Decision framework by volume and budget.
-- Generated OG image (og-images/blog-best-ai-api-customer-support.png).
-- Updated sitemap (173 URLs), RSS (122 items), blog index (122 guides), cross-links from index.html and launch.html.
-- Updated page count (175→176), blog count (121→122).
+### Sessions 1-205 (Apr 5 - May 14)
+Built full APIpulse from scratch: 176 pages, 122 blog posts, 33 models, 10 providers, 9 tools, 6 API endpoints. Product Hunt launch, email drip, GA4 analytics, all calculators (Agent Cost, Model Switch, Savings), Pro system, pricing freshness badges, community playbook, exit popup A/B test. Newsletter landing page. Rate limits expanded to all 10 providers. Created launch.html for community traffic. 122 SEO blog posts. Cost-per-request view on all calculators with 5 request-type presets. API endpoints synced with pricing-data.js. Rejected $5K acquisition offer. HELP-REQUEST.md created with Stripe fix + community execution checklist. Pricing freshness updated May 14. Blog posts on AI stack guide and customer support chatbot APIs.
 
 ### Session 206 (May 15)
 **Batch vs streaming toggle — community feedback response:**
@@ -55,3 +41,10 @@ Built full APIpulse from scratch: 174 pages, 120 blog posts, 33 models, 10 provi
 - **agent-cost-calculator.html** — Added API mode toggle (Standard, Streaming +10%, Batch -50%). Cost multipliers applied to per-step, per-task, monthly, and annual costs. Summary card shows adjusted token count with mode label. GA4 event tracks mode.
 - **cost-explorer.html** — Added API mode toggle. Cost multipliers applied to monthly costs and cost-per-request. Mode persists in shareable URLs (loaded on page load). GA4 event tracks mode.
 - All 3 calculator tools now have consistent batch/streaming support.
+
+### Session 208 (May 15)
+**Cheapest AI APIs comparison blog post:**
+- **Blog post: blog-gemini-flash-lite-vs-deepseek-flash.html** — "Gemini 2.0 Flash Lite vs DeepSeek V4 Flash: The Cheapest AI APIs in 2026." Head-to-head comparison of the two cheapest models ($0.075/$0.30 vs $0.14/$0.28). 4 cost scenarios: chatbot ($4.95 vs $5.88/mo), code generation, RAG pipeline ($112.50 vs $168/mo), high-volume classification. Feature comparison (vision support, code quality, reasoning). Decision framework with crossover formula showing when DeepSeek becomes cheaper for output-heavy workloads. Full budget model ranking table.
+- Generated OG image (og-images/blog-gemini-flash-lite-vs-deepseek-flash.png).
+- Updated sitemap (174 URLs), RSS (123 items), blog index (123 guides), cross-links from index.html and launch.html.
+- Updated page count (176→177), blog count (122→123).
