@@ -1,8 +1,8 @@
 # PROGRESS.md
 
-## Site Status (as of Session 215, May 15, 2026)
-**180 web pages | 127 blog files | 33 models | 10 providers | 10 tools | 6 API endpoints**
-- Sitemap (179 URLs), RSS (127 items), blog files (127 posts + 1 index) — all in sync
+## Site Status (as of Session 216, May 15, 2026)
+**181 web pages | 127 blog files | 33 models | 10 providers | 11 tools | 6 API endpoints**
+- Sitemap (180 URLs), RSS (127 items), blog files (127 posts + 1 index) — all in sync
 - Community Post Helper (community.html) — noindex utility page, not in sitemap
 - OG images: dark + light variants + 126 unique blog post OG images + cost-migration OG (all current, meta + JSON-LD fixed).
 - Pricing data verified May 14 — 33 models, 10 providers
@@ -20,6 +20,7 @@
 - **Exit popup A/B test:** 3 variants (cost savings, alerts, social proof), GA4 variant tracking for conversion analysis
 - **Newsletter landing page** (newsletter.html) — dedicated signup page with benefits grid, recent pricing changes, social proof. Ready for community distribution.
 - **Newsletter signup on launch.html** — inline email capture added for community traffic conversion
+- **Multi-Model Pipeline Cost Calculator** (pipeline.html) — build AI pipelines step by step, pick models per task, compare multi-model vs single-model costs. 10 task types, 4 presets (RAG, Agent, Chatbot, Content), optimization tips.
 
 ## Blocked on Human Action
 1. **Community engagement** — Execute community playbook (7 Reddit posts + Show HN + newsletter pitches). All drafts ready in COMMUNITY-ENGAGEMENT.md. Requires human to post.
@@ -71,3 +72,10 @@ Built full APIpulse from scratch: 178 pages, 126 blog posts, 33 models, 10 provi
 - Generated OG image (og-images/blog-best-ai-api-data-analysis.png).
 - Updated sitemap (179 URLs), RSS (127 items), blog index (127 guides), cross-links from launch.html and community.html.
 - Blog count: 126→127. Page count: 179→180.
+
+### Session 216 (May 15)
+**Multi-Model Pipeline Cost Calculator — new interactive tool (#11 tool):**
+- **New tool: pipeline.html** — "Multi-Model Pipeline Cost Calculator" Users build AI pipelines step by step, selecting task type and model for each step. 10 task types (embedding, retrieval, classification, chat, code gen, reasoning, summarization, content gen, data extraction, translation) with recommended models and default token counts. 4 presets (RAG Pipeline, AI Agent, Chatbot, Content Gen). Volume selector (1K/10K/100K requests/month). Calculates per-step and total costs, compares multi-model routing vs cheapest single model, shows optimization tips (downgrade premium, batch API, caching). GA4 tracked (pipeline_calculated event). Share on X/LinkedIn.
+- Added cost-migration.html and pipeline.html to tools.html (10→12 tools listed).
+- Updated sitemap (180 URLs), cross-links from index.html (nav + tools grid) and launch.html (nav + tools row).
+- Page count: 180→181. Tool count: 10→11.
