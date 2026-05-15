@@ -1,9 +1,9 @@
 # PROGRESS.md
 
-## Site Status (as of Session 209, May 15, 2026)
-**177 web pages | 124 blog files | 33 models | 10 providers | 9 tools | 6 API endpoints**
-- Sitemap (175 URLs), RSS (124 items), blog files (124 posts + 1 index) — all in sync
-- OG images: dark + light variants + 124 unique blog post OG images (all current, meta + JSON-LD fixed).
+## Site Status (as of Session 210, May 15, 2026)
+**177 web pages | 125 blog files | 33 models | 10 providers | 9 tools | 6 API endpoints**
+- Sitemap (176 URLs), RSS (125 items), blog files (125 posts + 1 index) — all in sync
+- OG images: dark + light variants + 125 unique blog post OG images (all current, meta + JSON-LD fixed).
 - Pricing data verified May 14 — 33 models, 10 providers
 - **Analytics: GA4 (G-0CEP7S9Y3J) on all 176 pages** — fully operational, custom events via gtag()
 - Price alert system: daily cron compares pricing vs snapshot, emails subscribers on changes
@@ -55,3 +55,10 @@ Built full APIpulse from scratch: 176 pages, 122 blog posts, 33 models, 10 provi
 - Generated OG image (og-images/blog-haiku-vs-gpt5-mini.png).
 - Updated sitemap (175 URLs), RSS (124 items), blog index (124 guides), cross-links from index.html and launch.html.
 - Blog count: 123→124.
+
+### Session 210 (May 15)
+**Budget vs mid-tier comparison blog post — DeepSeek V4 Pro vs Gemini 3.1 Pro:**
+- **Blog post: blog-deepseek-v4-pro-vs-gemini3-pro.html** — "DeepSeek V4 Pro vs Gemini 3.1 Pro: Can a Budget Model Match Google's Latest?" DeepSeek V4 Pro ($0.44/$0.87) is 78% cheaper on input and 93% cheaper on output than Gemini 3.1 Pro ($2.00/$12.00). 4 cost scenarios: coding assistant ($32.78 vs $330/mo), RAG pipeline ($526.50 vs $3,600/mo), chatbot ($18.36 vs $180/mo), content generation ($177.72 vs $2,256/mo). Quality analysis: 90% of Gemini's capability at 13% of the price. Feature comparison including multimodal, search grounding, code execution. Annual savings table showing $47K/year at 100M tokens.
+- Generated OG image (og-images/blog-deepseek-v4-pro-vs-gemini3-pro.png).
+- Updated sitemap (176 URLs), RSS (125 items), blog index (125 guides), cross-links from index.html and launch.html.
+- Blog count: 124→125.
