@@ -188,6 +188,12 @@
                 <button class="preset-btn" onclick="applyPreset('data')">📊 Data Agent</button>
                 <button class="preset-btn" onclick="applyPreset('custom')">⚙️ Custom</button>
             </div>
+            <div class="preset-btns">
+                <span style="font-size:13px;color:var(--text-muted);align-self:center;">API mode:</span>
+                <button class="preset-btn active" id="mode-standard" onclick="setApiMode('standard')">Standard</button>
+                <button class="preset-btn" id="mode-streaming" onclick="setApiMode('streaming')" title="Streaming responses use ~10% more tokens due to overhead">Streaming (+10% tokens)</button>
+                <button class="preset-btn" id="mode-batch" onclick="setApiMode('batch')" title="OpenAI Batch API: 50% discount, results in 24h">Batch API (50% off)</button>
+            </div>
 
             <div class="calc-grid">
                 <div class="input-group">
@@ -329,13 +335,25 @@
         custom: { tasks: 100, steps: 5, input: 2000, output: 500, label: 'Custom Agent' }
     };
 
+    // API mode: standard, streaming (+10% tokens), batch (-50% cost)
+    let currentApiMode = 'standard';
+
+    function setApiMode(mode) {
+        currentApiMode = mode;
+        document.getElementById('mode-standard').classList.toggle('active', mode === 'standard');
+        document.getElementById('mode-streaming').classList.toggle('active', mode === 'streaming');
+        document.getElementById('mode-batch').classList.toggle('active', mode === 'batch');
+        calculate();
+        if (window.trackEvent) window.trackEvent('api_mode_changed', { mode: mode, tool: 'agent_cost_calculator' });
+    }
+
     function applyPreset(name) {
         const p = PRESETS[name];
         document.getElementById('tasksPerDay').value = p.tasks;
         document.getElementById('stepsPerTask').value = p.steps;
         document.getElementById('inputTokens').value = p.input;
         document.getElementById('outputTokens').value = p.output;
-        document.querySelectorAll('.preset-btn').forEach(b => b.classList.remove('active'));
+        document.querySelectorAll('.preset-btns:first-child .preset-btn').forEach(b => b.classList.remove('active'));
         event.target.classList.add('active');
         calculate();
     }
@@ -353,9 +371,18 @@
         const totalInputPerMonth = totalCallsPerMonth * inputTokens;
         const totalOutputPerMonth = totalCallsPerMonth * outputTokens;
 
+        // Apply API mode adjustments
+        let inputMult = 1, outputMult = 1, costMult = 1;
+        if (currentApiMode === 'streaming') {
+            inputMult = 1.10;
+            outputMult = 1.10;
+        } else if (currentApiMode === 'batch') {
+            costMult = 0.50;
+        }
+
         // Calculate costs
         let results = API_MODELS.map(m => {
-            const costPerStep = (inputTokens * m.input + outputTokens * m.output) / 1_000_000;
+            const costPerStep = (inputTokens * inputMult * m.input + outputTokens * outputMult * m.output) / 1_000_000 * costMult;
             const costPerTask = costPerStep * stepsPerTask;
             const monthlyCost = costPerTask * tasksPerDay * 30;
             const annualCost = monthlyCost * 12;
@@ -384,7 +411,8 @@
         document.getElementById('bestValueCost').textContent = midTier ? '$' + midTier.monthlyCost.toFixed(2) : '—';
         document.getElementById('bestValueModel').textContent = midTier ? midTier.name + ' (' + midTier.provider + ')' : '—';
         document.getElementById('totalCalls').textContent = totalCallsPerMonth.toLocaleString();
-        document.getElementById('totalTokens').textContent = ((totalInputPerMonth + totalOutputPerMonth) / 1_000_000).toFixed(1) + 'M tokens/mo';
+        const adjustedTotalTokens = (totalInputPerMonth * inputMult + totalOutputPerMonth * outputMult) / 1_000_000;
+        document.getElementById('totalTokens').textContent = adjustedTotalTokens.toFixed(1) + 'M tokens/mo' + (currentApiMode !== 'standard' ? ' (' + currentApiMode + ')' : '');
         document.getElementById('premiumCost').textContent = premium ? '$' + premium.monthlyCost.toFixed(2) : '—';
         document.getElementById('premiumModel').textContent = premium ? premium.name + ' (' + premium.provider + ')' : '—';
 
@@ -405,7 +433,7 @@
             </tr>`;
         }).join('');
 
-        if (window.trackEvent) window.trackEvent('agent_calc_calculated', { tasksPerDay, stepsPerTask, models: results.length });
+        if (window.trackEvent) window.trackEvent('agent_calc_calculated', { tasksPerDay, stepsPerTask, models: results.length, api_mode: currentApiMode });
     }
 
     // Initial calculation

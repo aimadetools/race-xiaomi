@@ -243,6 +243,12 @@
                     <button class="preset-btn" onclick="applyPreset('scaleup')">Scale-up (10K req/day)</button>
                     <button class="preset-btn" onclick="applyPreset('enterprise')">Enterprise (100K req/day)</button>
                 </div>
+                <div class="presets-bar">
+                    <span style="font-size:12px;color:var(--text-muted);align-self:center;font-weight:600;">API mode:</span>
+                    <button class="preset-btn active" id="mode-standard" onclick="setApiMode('standard')">Standard</button>
+                    <button class="preset-btn" id="mode-streaming" onclick="setApiMode('streaming')" title="Streaming responses use ~10% more tokens due to overhead">Streaming (+10% tokens)</button>
+                    <button class="preset-btn" id="mode-batch" onclick="setApiMode('batch')" title="OpenAI Batch API: 50% discount, results in 24h">Batch API (50% off)</button>
+                </div>
             </div>
         </div>
 
@@ -332,11 +338,28 @@
     <script>
         let currentSort = 'cost';
         let currentFilter = 'all';
+        let currentApiMode = 'standard';
+
+        function setApiMode(mode) {
+            currentApiMode = mode;
+            document.getElementById('mode-standard').classList.toggle('active', mode === 'standard');
+            document.getElementById('mode-streaming').classList.toggle('active', mode === 'streaming');
+            document.getElementById('mode-batch').classList.toggle('active', mode === 'batch');
+            updateAll();
+            if (window.trackEvent) window.trackEvent('api_mode_changed', { mode: mode, tool: 'cost_explorer' });
+        }
 
         function getMonthlyCost(model, inputTokens, outputTokens, requests, days) {
-            const totalInput = inputTokens * requests * days;
-            const totalOutput = outputTokens * requests * days;
-            return (totalInput / 1e6) * model.input + (totalOutput / 1e6) * model.output;
+            let inputMult = 1, outputMult = 1, costMult = 1;
+            if (currentApiMode === 'streaming') {
+                inputMult = 1.10;
+                outputMult = 1.10;
+            } else if (currentApiMode === 'batch') {
+                costMult = 0.50;
+            }
+            const totalInput = inputTokens * inputMult * requests * days;
+            const totalOutput = outputTokens * outputMult * requests * days;
+            return ((totalInput / 1e6) * model.input + (totalOutput / 1e6) * model.output) * costMult;
         }
 
         function formatNum(n) {
@@ -356,10 +379,14 @@
             document.getElementById('requests-display').textContent = formatNum(requests);
             document.getElementById('days-display').textContent = days;
 
+            let inputMult = 1, outputMult = 1, costMult = 1;
+            if (currentApiMode === 'streaming') { inputMult = 1.10; outputMult = 1.10; }
+            else if (currentApiMode === 'batch') { costMult = 0.50; }
+
             let models = API_MODELS.map(m => ({
                 ...m,
                 monthlyCost: getMonthlyCost(m, inputTokens, outputTokens, requests, days),
-                costPerRequest: m.input * (inputTokens / 1e6) + m.output * (outputTokens / 1e6)
+                costPerRequest: (m.input * (inputTokens * inputMult / 1e6) + m.output * (outputTokens * outputMult / 1e6)) * costMult
             }));
 
             // Filter
@@ -428,6 +455,7 @@
             params.set('o', outputTokens);
             params.set('r', requests);
             params.set('d', days);
+            if (currentApiMode !== 'standard') params.set('mode', currentApiMode);
             history.replaceState(null, '', '?' + params.toString());
 
             if (window.trackEvent && models.length > 0) {
@@ -438,7 +466,8 @@
                         output_tokens: outputTokens,
                         requests_per_day: requests,
                         cheapest_model: sorted[0]?.name,
-                        cheapest_cost: minCost.toFixed(2)
+                        cheapest_cost: minCost.toFixed(2),
+                        api_mode: currentApiMode
                     });
                 }, 1500);
             }
@@ -480,6 +509,14 @@
             if (params.has('o')) document.getElementById('output-tokens').value = params.get('o');
             if (params.has('r')) document.getElementById('requests').value = params.get('r');
             if (params.has('d')) document.getElementById('days').value = params.get('d');
+            if (params.has('mode')) {
+                const mode = params.get('mode');
+                if (mode === 'streaming' || mode === 'batch') {
+                    currentApiMode = mode;
+                    document.getElementById('mode-standard').classList.remove('active');
+                    document.getElementById('mode-' + mode).classList.add('active');
+                }
+            }
         })();
 
         updateAll();
