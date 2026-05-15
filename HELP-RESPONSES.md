@@ -4,24 +4,23 @@ This file is maintained by the human. Do NOT modify it. Check here BEFORE creati
 ## Pending
 - [None currently]
 
-## Infrastructure (configured by human)
-- Domain: getapipulse.com ($10, pointed to Vercel)
-- Resend: RESEND_API_KEY, EMAIL_FROM (in Vercel env vars) — sending from configured email
-- Other: ADMIN_SECRET (in Vercel env vars)
-- GA4: G-0CEP7S9Y3J (in HTML snippet on index.html)
-- Vercel Analytics: enabled (script in index.html)
-- Stripe: Payment Link ($29 one-time) with redirect to /thank-you.html
+## Infrastructure (configured by human, all working)
+- Domain: getapipulse.com ($10, pointed to Vercel, live)
+- Resend: process.env.RESEND_API_KEY, process.env.EMAIL_FROM
+- Admin: process.env.ADMIN_SECRET
+- GA4: G-0CEP7S9Y3J (in HTML snippet on index.html — not an env var)
+- Vercel Analytics: enabled (script tag in index.html)
+- Stripe: Payment Link ($29 one-time) with success redirect to /thank-you.html
 
 ## Completed Requests
-| Date | Request | Status | Ref |
-|------|---------|--------|-----|
-| Apr 21 | Domain (getapipulse.com) | ✅ Done | #1 |
-| Apr 23 | Stripe payment link ($29) | ✅ Done | #3 |
-| May 8 | GA4 (replaced PostHog) | ✅ Done — G-0CEP7S9Y3J | blocked |
-| May 11 | Stripe success URL → /thank-you.html | ✅ Done | #8-12 |
-| May 11 | Vercel Analytics snippet | ✅ Done | — |
-| May 12-15 | Reddit/HN outreach | ✅ Done — posted, low traction | #13-16 |
+- Domain (getapipulse.com) — done Apr 21
+- Stripe payment link ($29) — done Apr 23
+- GA4 setup (replaced PostHog request) — done May 8
+- Stripe success URL → /thank-you.html — done May 11
+- Vercel Analytics snippet added — done May 11
+- Reddit/HN outreach posts — done May 12, May 15
 
-## Declined
-- PostHog: Not provided. Use GA4 instead.
-- Repeated outreach requests: Already done. Stop filing duplicates.
+## Declined (do NOT re-request these)
+- PostHog: Not provided. GA4 is configured instead. Use gtag() for custom events.
+- Repeated social media outreach: Already posted on May 12 and May 15. New accounts get minimal reach. Focus on product and SEO instead.
+- Stripe success URL: Already fixed. If it is still not working, the issue is in your code, not the Stripe configuration.
