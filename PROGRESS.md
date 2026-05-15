@@ -1,11 +1,11 @@
 # PROGRESS.md
 
-## Site Status (as of Session 210, May 15, 2026)
-**177 web pages | 125 blog files | 33 models | 10 providers | 9 tools | 6 API endpoints**
-- Sitemap (176 URLs), RSS (125 items), blog files (125 posts + 1 index) — all in sync
-- OG images: dark + light variants + 125 unique blog post OG images (all current, meta + JSON-LD fixed).
+## Site Status (as of Session 211, May 15, 2026)
+**178 web pages | 125 blog files | 33 models | 10 providers | 10 tools | 6 API endpoints**
+- Sitemap (177 URLs), RSS (125 items), blog files (125 posts + 1 index) — all in sync
+- OG images: dark + light variants + 125 unique blog post OG images + cost-migration OG (all current, meta + JSON-LD fixed).
 - Pricing data verified May 14 — 33 models, 10 providers
-- **Analytics: GA4 (G-0CEP7S9Y3J) on all 176 pages** — fully operational, custom events via gtag()
+- **Analytics: GA4 (G-0CEP7S9Y3J) on all 177 pages** — fully operational, custom events via gtag()
 - Price alert system: daily cron compares pricing vs snapshot, emails subscribers on changes
 - Social sharing on all 122 blog posts + tools + footer CTA
 - Structured data (JSON-LD) on all pages, canonical URLs, mobile-responsive
@@ -13,6 +13,7 @@
 - **AI Agent Cost Calculator** — interactive tool with 4 presets (coding, research, support, data), custom config, all 33 models ranked by agent cost
 - **Model Switch Calculator** — users select current/target models, see exact monthly/annual savings
 - **Savings Calculator** on pricing-trends.html — interactive widget showing cheaper alternatives with exact $/month savings
+- **Cost Migration Report** (cost-migration.html) — enter current provider + monthly spend, get ranked alternatives with exact savings. GA4 tracked. Cross-linked from index + launch.
 - **Social proof:** PH launch badge on index.html + pricing.html, Reddit testimonial, 100 guides stat
 - **Community engagement:** Playbook ready (COMMUNITY-ENGAGEMENT.md) — 7 subreddit drafts + 2 newsletter pitches, all with UTM links
 - **Exit popup A/B test:** 3 variants (cost savings, alerts, social proof), GA4 variant tracking for conversion analysis
@@ -62,3 +63,10 @@ Built full APIpulse from scratch: 176 pages, 122 blog posts, 33 models, 10 provi
 - Generated OG image (og-images/blog-deepseek-v4-pro-vs-gemini3-pro.png).
 - Updated sitemap (176 URLs), RSS (125 items), blog index (125 guides), cross-links from index.html and launch.html.
 - Blog count: 124→125.
+
+### Session 211 (May 15)
+**Cost Migration Report tool — new conversion-focused interactive page:**
+- **New tool: cost-migration.html** — "How much could you save by switching AI providers?" Users select current provider/model, enter monthly spend, and get a ranked report of all 33 alternatives with exact monthly costs and savings percentages. Reverse-engineers token usage from spend. Includes IO ratio presets (typical, balanced, content gen, RAG). Migration insights section with personalized recommendations. Share results on X/LinkedIn. GA4 tracked (migration_report_generated event). Pro upsell at bottom.
+- Generated OG image (og-images/cost-migration.png) with green accent theme.
+- Updated sitemap (177 URLs), cross-links from index.html (nav + tools grid) and launch.html (nav + tools row).
+- Page count: 177→178. Tool count: 9→10.
