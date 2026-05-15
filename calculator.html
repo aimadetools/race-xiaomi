@@ -70,6 +70,7 @@
             cursor: pointer; font-size: 13px; transition: all 0.2s; font-weight: 500;
         }
         .preset-btn:hover { border-color: var(--accent); color: var(--accent); }
+        .preset-btn.active-preset { background: var(--accent); color: white; border-color: var(--accent); }
         .calc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
         .calc-inputs { display: flex; flex-direction: column; gap: 16px; }
         .input-group { display: flex; flex-direction: column; gap: 6px; }
@@ -212,6 +213,12 @@
                 <button class="preset-btn" onclick="applyPreset('startup')">Startup (1K req/day)</button>
                 <button class="preset-btn" onclick="applyPreset('scaleup')">Scale-up (10K req/day)</button>
                 <button class="preset-btn" onclick="applyPreset('enterprise')">Enterprise (100K req/day)</button>
+            </div>
+            <div class="presets">
+                <span style="font-size:13px;color:var(--text-muted);align-self:center;">API mode:</span>
+                <button class="preset-btn active-preset" id="mode-standard" onclick="setApiMode('standard')">Standard</button>
+                <button class="preset-btn" id="mode-streaming" onclick="setApiMode('streaming')" title="Streaming responses use ~10% more tokens due to overhead">Streaming (+10% tokens)</button>
+                <button class="preset-btn" id="mode-batch" onclick="setApiMode('batch')" title="OpenAI Batch API: 50% discount, results in 24h">Batch API (50% off)</button>
             </div>
             <div class="calc-grid">
                 <div class="calc-inputs">
@@ -473,6 +480,18 @@
         // API pricing data from centralized pricing-data.js
         const providers = getCalculatorData();
 
+        // API mode: standard, streaming (+10% tokens), batch (-50% cost)
+        let currentApiMode = 'standard';
+
+        function setApiMode(mode) {
+            currentApiMode = mode;
+            document.getElementById('mode-standard').classList.toggle('active-preset', mode === 'standard');
+            document.getElementById('mode-streaming').classList.toggle('active-preset', mode === 'streaming');
+            document.getElementById('mode-batch').classList.toggle('active-preset', mode === 'batch');
+            calculate();
+            if (window.trackEvent) window.trackEvent('api_mode_changed', { mode: mode });
+        }
+
         function calculate() {
             const results = document.querySelector('.calc-results');
             results.classList.add('calculating');
@@ -484,16 +503,26 @@
             const days = parseInt(document.getElementById('days').value) || 30;
 
             const p = providers[provider];
-            const totalInputTokens = inputTokens * requests * days;
-            const totalOutputTokens = outputTokens * requests * days;
 
-            const inputCost = (totalInputTokens / 1000000) * p.input;
-            const outputCost = (totalOutputTokens / 1000000) * p.output;
+            // Apply API mode adjustments
+            let inputMult = 1, outputMult = 1, costMult = 1;
+            if (currentApiMode === 'streaming') {
+                inputMult = 1.10; // Streaming uses ~10% more tokens
+                outputMult = 1.10;
+            } else if (currentApiMode === 'batch') {
+                costMult = 0.50; // Batch API: 50% discount
+            }
+
+            const totalInputTokens = inputTokens * requests * days * inputMult;
+            const totalOutputTokens = outputTokens * requests * days * outputMult;
+
+            const inputCost = (totalInputTokens / 1000000) * p.input * costMult;
+            const outputCost = (totalOutputTokens / 1000000) * p.output * costMult;
             const totalCost = inputCost + outputCost;
             const totalTokens = totalInputTokens + totalOutputTokens;
 
             // Per-request costs
-            const costPerRequest = p.input * (inputTokens / 1000000) + p.output * (outputTokens / 1000000);
+            const costPerRequest = (p.input * (inputTokens * inputMult / 1000000) + p.output * (outputTokens * outputMult / 1000000)) * costMult;
             const costPer1K = costPerRequest * 1000;
 
             document.getElementById('cost-per-request').textContent = costPerRequest < 0.01 ? '$' + costPerRequest.toFixed(4) : '$' + costPerRequest.toFixed(4);
@@ -535,7 +564,8 @@
                         cost_per_request: costPerRequest.toFixed(6),
                         input_tokens: inputTokens,
                         output_tokens: outputTokens,
-                        requests_per_day: requests
+                        requests_per_day: requests,
+                        api_mode: currentApiMode
                     });
                 }, 1000);
             }
@@ -551,10 +581,11 @@
 
             const costPerReq = document.getElementById('cost-per-request').textContent;
             const costPer1k = document.getElementById('cost-per-1k').textContent;
+            const modeLabel = currentApiMode === 'streaming' ? ' (Streaming +10% tokens)' : currentApiMode === 'batch' ? ' (Batch API -50%)' : '';
             const text = [
                 'APIpulse Cost Estimate',
                 '========================',
-                'Model: ' + selectedOption,
+                'Model: ' + selectedOption + modeLabel,
                 'Cost per request: ' + costPerReq,
                 'Cost per 1K requests: ' + costPer1k,
                 'Input cost (monthly): ' + inputCost,
@@ -581,6 +612,7 @@
             params.set('o', document.getElementById('output-tokens').value);
             params.set('r', document.getElementById('requests').value);
             params.set('d', document.getElementById('days').value);
+            if (currentApiMode !== 'standard') params.set('mode', currentApiMode);
             return 'https://getapipulse.com/calculator.html?' + params.toString();
         }
 
@@ -596,6 +628,7 @@
             if (params.has('o')) document.getElementById('output-tokens').value = params.get('o');
             if (params.has('r')) document.getElementById('requests').value = params.get('r');
             if (params.has('d')) document.getElementById('days').value = params.get('d');
+            if (params.has('mode')) setApiMode(params.get('mode'));
             return true;
         }
 
@@ -605,8 +638,9 @@
             const model = provider.options[provider.selectedIndex].text;
             const total = document.getElementById('monthly-total').textContent;
             const costPerReq = document.getElementById('cost-per-request').textContent;
-            const tweetText = encodeURIComponent(model + ' costs ' + costPerReq + '/request (' + total + '/mo). Calculate your AI API costs:');
-            const linkedinText = encodeURIComponent('AI API Cost Estimate: ' + model + ' at ' + costPerReq + '/request (' + total + '/mo). Compare 33 models from 10 providers:');
+            const modeSuffix = currentApiMode === 'streaming' ? ' (streaming)' : currentApiMode === 'batch' ? ' (batch API)' : '';
+            const tweetText = encodeURIComponent(model + ' costs ' + costPerReq + '/request' + modeSuffix + ' (' + total + '/mo). Calculate your AI API costs:');
+            const linkedinText = encodeURIComponent('AI API Cost Estimate: ' + model + ' at ' + costPerReq + '/request' + modeSuffix + ' (' + total + '/mo). Compare 33 models from 10 providers:');
             document.getElementById('share-x').href = 'https://twitter.com/intent/tweet?text=' + tweetText + '&url=' + encodeURIComponent(url);
             document.getElementById('share-linkedin').href = 'https://www.linkedin.com/sharing/share-offsite/?url=' + encodeURIComponent(url);
         }

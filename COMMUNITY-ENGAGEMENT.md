@@ -61,7 +61,7 @@ What I learned:
 - SEO content before launch = organic traffic on day one
 - Free tools are the best marketing (developers bookmark and return)
 - Pricing data freshness matters more than I expected
-- Reddit feedback shaped the product: r/webdev asked for "cost per request" instead of just tokens, so I added it
+- Reddit feedback shaped the product: r/webdev asked for "cost per request" instead of just tokens, so I added it. r/MachineLearning asked for batch vs streaming toggle, so I added it
 - Community feedback is the best product roadmap
 
 Tech stack: Static HTML + Vercel. No backend. All calculations in JavaScript.
@@ -77,6 +77,7 @@ I built a calculator that lets you estimate monthly AI API costs across provider
 - 33 models, 10 providers
 - **Cost per request** and **cost per 1K requests** — the metrics developers actually budget against
 - Request-type presets: chat message, code gen, doc analysis, RAG query, content writer
+- **Batch vs streaming toggle** — see how streaming overhead (+10% tokens) or Batch API discounts (-50%) affect your costs
 - Monthly cost estimator with volume presets
 - Provider comparison table
 - Cheaper alternative recommendations
@@ -99,12 +100,12 @@ The LLM API market has shifted massively in 2025-2026:
 I built APIpulse to help developers navigate this. It's a free, static tool that compares 33 models across 10 providers with interactive calculators.
 
 Key pages:
-- /calculator — shows cost per request, cost per 1K requests, and monthly total. New: request-type presets (chat, code gen, doc analysis, RAG, content writer)
+- /calculator — cost per request, cost per 1K requests, monthly total. Request-type presets (chat, code gen, doc analysis, RAG, content writer). New: batch vs streaming toggle (streaming +10% tokens, Batch API -50% cost)
 - /pricing-trends — every major price move, decision framework for when to switch
 - /model-switch — side-by-side savings calculator
 - /agent-cost-calculator — costs for AI agent workloads
 
-120 blog posts covering specific comparisons (DeepSeek vs GPT-5 Mini, Mistral Small vs Haiku, cost per request analysis, AI API rate limits, Opus 4.7 vs GPT-5, etc.).
+122 blog posts covering specific comparisons (DeepSeek vs GPT-5 Mini, Mistral Small vs Haiku, cost per request analysis, AI API rate limits, Opus 4.7 vs GPT-5, etc.).
 
 All static HTML/JS, no backend, no signup. Deployed on Vercel.
 
@@ -162,7 +163,7 @@ What I built: APIpulse — a free tool that compares AI API pricing across 33 mo
 
 Week 1-2: Built the entire site (174 pages, 120 blog posts). Launched on Product Hunt.
 Week 3: Distribution push. Added savings calculator, exit popup A/B test, community engagement.
-Week 4: Responded to community feedback — added cost-per-request view and request-type presets. Rejected $5K acquisition offer. Expanded to 10 providers with rate limits data.
+Week 4: Responded to community feedback — added cost-per-request view, request-type presets, and batch vs streaming toggle. Rejected $5K acquisition offer. Expanded to 10 providers with rate limits data.
 
 Lessons so far:
 - Static HTML + Vercel = $0 hosting, instant deploys
@@ -196,6 +197,8 @@ I analyzed current AI API pricing across all major providers. Key findings:
 4. **Multi-model pipelines are optimal**: Route simple tasks to Gemini Flash ($0.10), code to DeepSeek V4 Pro ($0.44), complex reasoning to GPT-5 ($1.25). Under $2/1M tokens average.
 
 5. **The cheapest option depends on workload**: For high-volume classification, Llama 3.1 8B ($0.10) wins. For long-context analysis, Gemini Flash ($0.10/1M, 1M context) wins. For code, DeepSeek V4 Pro ($0.44/1M, 1M context) wins.
+
+**New feature** (thanks to r/MachineLearning feedback): Batch vs streaming toggle. Streaming responses typically use ~10% more tokens due to overhead. OpenAI's Batch API offers 50% off. The calculator now shows both modes so you can budget accurately.
 
 Full data with interactive calculators: https://getapipulse.com/launch.html?utm_source=reddit&utm_medium=post&utm_campaign=r_ml_analysis
 
