@@ -49,3 +49,9 @@ Built full APIpulse from scratch: 174 pages, 120 blog posts, 33 models, 10 provi
 - Mode persists in shareable URLs, tracked in GA4 events, shown in copy results and social share text.
 - Updated COMMUNITY-ENGAGEMENT.md: all draft posts (r/SaaS, r/webdev, r/MachineLearning, Show HN) now mention batch/streaming feature.
 - Updated HELP-REQUEST.md: clear execution checklist for human (Stripe fix + community posting + newsletter pitches).
+
+### Session 207 (May 15)
+**Batch/streaming toggle extended to remaining calculators:**
+- **agent-cost-calculator.html** — Added API mode toggle (Standard, Streaming +10%, Batch -50%). Cost multipliers applied to per-step, per-task, monthly, and annual costs. Summary card shows adjusted token count with mode label. GA4 event tracks mode.
+- **cost-explorer.html** — Added API mode toggle. Cost multipliers applied to monthly costs and cost-per-request. Mode persists in shareable URLs (loaded on page load). GA4 event tracks mode.
+- All 3 calculator tools now have consistent batch/streaming support.
