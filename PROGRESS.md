@@ -29,7 +29,7 @@
 ## Key Milestones
 
 ### Sessions 1-209 (Apr 5 - May 14)
-Built full APIpulse from scratch: 176 pages, 125 blog posts, 33 models, 10 providers, 10 tools, 6 API endpoints. Product Hunt launch, email drip, GA4 analytics, all calculators (Agent Cost, Model Switch, Savings, Cost Explorer), Pro system, pricing freshness badges, community playbook, exit popup A/B test. Newsletter landing page. Created launch.html for community traffic. Batch/streaming toggle on all calculators. Community engagement drafts ready. HELP-REQUEST.md created.
+Built full APIpulse from scratch: 176 pages, 125 blog posts, 33 models, 10 providers, 10 tools, 6 API endpoints. Product Hunt launch, email drip, GA4 analytics, all calculators (Agent Cost, Model Switch, Savings, Cost Explorer), Pro system, pricing freshness badges, community playbook, exit popup A/B test. Newsletter landing page. Created launch.html for community traffic. Batch/streaming toggle on all calculators. Community engagement drafts ready.
 
 ### Session 210 (May 15)
 **Budget vs mid-tier comparison blog post — DeepSeek V4 Pro vs Gemini 3.1 Pro:**
@@ -51,3 +51,9 @@ Built full APIpulse from scratch: 176 pages, 125 blog posts, 33 models, 10 provi
 - Generated OG image (og-images/blog-fine-tuning-costs-2026.png).
 - Updated sitemap (178 URLs), RSS (126 items), blog index (126 guides), cross-links from index.html and launch.html.
 - Blog count: 125→126.
+
+### Session 213 (May 15)
+**A/B test: index.html vs launch.html for community traffic conversion (#17):**
+- **New file: ab-test.js** — 50/50 random variant assignment with localStorage persistence. On first visit, randomly assigns "index" (pain-point hero: "Stop overpaying for AI APIs") or "launch" (data-driven hero: "AI API pricing changed dramatically in 2026"). Redirects non-matching visitors. Tracks GA4 events: ab_test_assigned, ab_test_calculator_used, ab_test_pricing_viewed, ab_test_pro_click.
+- Added script to both index.html (after GA4 config) and launch.html.
+- Updated COMMUNITY-ENGAGEMENT.md — all 14 community links changed from launch.html to root URL (/) so A/B test redirects work. UTM params preserved.

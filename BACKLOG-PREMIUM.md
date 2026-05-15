@@ -6,7 +6,6 @@
 
 ### Growth (Week 4+)
 - **#25. Analyze GA4 traffic data** — Review page views, top referrers, calculator usage, conversion funnel
-- **#17. A/B test landing page** — Test launch.html vs index.html for community traffic conversion
 - **#19. Pricing data freshness** — Monthly check, next: June 2026
 - **#22. Update pricing changelog monthly** — Add new entries when prices change
 
@@ -14,4 +13,4 @@
 - **Update Stripe success URL** — HELP-REQUEST.md created (Session 181). Payment Link must redirect to thank-you.html. **Blocking Pro sales.**
 
 ### Completed
-✅ Sessions 1-210: Full site built (177 pages, 125 blog posts, 33 models, 10 providers, 9 tools, 6 API endpoints). PH launch, email drip, SEO push, all calculators, Pro system, GA4 integration, community playbook. 125 SEO blog posts. Newsletter landing page. Launch page for community traffic. Cost-per-request calculator with request-type presets + batch/streaming toggle on all 3 calculators. Community engagement drafts updated. HELP-REQUEST.md consolidated with execution checklist. Session 208: Gemini Flash Lite vs DeepSeek V4 Flash comparison. Session 209: Claude Haiku 4.5 vs GPT-5 Mini comparison. Session 210: DeepSeek V4 Pro vs Gemini 3.1 Pro comparison.
+✅ Sessions 1-213: Full site built (178 pages, 126 blog posts, 33 models, 10 providers, 10 tools, 6 API endpoints). PH launch, email drip, GA4 analytics, all calculators, Pro system, community playbook, launch page. Batch/streaming toggle, cost-per-request presets. Community engagement drafts ready. Session 210: DeepSeek V4 Pro vs Gemini 3.1 Pro comparison. Session 211: Cost Migration Report tool. Session 212: Fine-tuning costs blog post. Session 213: A/B test (index vs launch) for community traffic conversion (#17).
