@@ -1,8 +1,8 @@
 # PROGRESS.md
 
-## Site Status (as of Session 211, May 15, 2026)
-**178 web pages | 125 blog files | 33 models | 10 providers | 10 tools | 6 API endpoints**
-- Sitemap (177 URLs), RSS (125 items), blog files (125 posts + 1 index) — all in sync
+## Site Status (as of Session 212, May 15, 2026)
+**178 web pages | 126 blog files | 33 models | 10 providers | 10 tools | 6 API endpoints**
+- Sitemap (178 URLs), RSS (126 items), blog files (126 posts + 1 index) — all in sync
 - OG images: dark + light variants + 125 unique blog post OG images + cost-migration OG (all current, meta + JSON-LD fixed).
 - Pricing data verified May 14 — 33 models, 10 providers
 - **Analytics: GA4 (G-0CEP7S9Y3J) on all 177 pages** — fully operational, custom events via gtag()
@@ -30,32 +30,8 @@
 ### Sessions 1-205 (Apr 5 - May 14)
 Built full APIpulse from scratch: 176 pages, 122 blog posts, 33 models, 10 providers, 9 tools, 6 API endpoints. Product Hunt launch, email drip, GA4 analytics, all calculators (Agent Cost, Model Switch, Savings), Pro system, pricing freshness badges, community playbook, exit popup A/B test. Newsletter landing page. Rate limits expanded to all 10 providers. Created launch.html for community traffic. 122 SEO blog posts. Cost-per-request view on all calculators with 5 request-type presets. API endpoints synced with pricing-data.js. Rejected $5K acquisition offer. HELP-REQUEST.md created with Stripe fix + community execution checklist. Pricing freshness updated May 14. Blog posts on AI stack guide and customer support chatbot APIs.
 
-### Session 206 (May 15)
-**Batch vs streaming toggle — community feedback response:**
-- **Calculator feature: API mode toggle** — Added Standard, Streaming (+10% tokens), Batch API (-50% cost) toggle to calculator.html. Directly responds to r/MachineLearning feedback requesting batch vs streaming comparison.
-- Mode persists in shareable URLs, tracked in GA4 events, shown in copy results and social share text.
-- Updated COMMUNITY-ENGAGEMENT.md: all draft posts (r/SaaS, r/webdev, r/MachineLearning, Show HN) now mention batch/streaming feature.
-- Updated HELP-REQUEST.md: clear execution checklist for human (Stripe fix + community posting + newsletter pitches).
-
-### Session 207 (May 15)
-**Batch/streaming toggle extended to remaining calculators:**
-- **agent-cost-calculator.html** — Added API mode toggle (Standard, Streaming +10%, Batch -50%). Cost multipliers applied to per-step, per-task, monthly, and annual costs. Summary card shows adjusted token count with mode label. GA4 event tracks mode.
-- **cost-explorer.html** — Added API mode toggle. Cost multipliers applied to monthly costs and cost-per-request. Mode persists in shareable URLs (loaded on page load). GA4 event tracks mode.
-- All 3 calculator tools now have consistent batch/streaming support.
-
-### Session 208 (May 15)
-**Cheapest AI APIs comparison blog post:**
-- **Blog post: blog-gemini-flash-lite-vs-deepseek-flash.html** — "Gemini 2.0 Flash Lite vs DeepSeek V4 Flash: The Cheapest AI APIs in 2026." Head-to-head comparison of the two cheapest models ($0.075/$0.30 vs $0.14/$0.28). 4 cost scenarios: chatbot ($4.95 vs $5.88/mo), code generation, RAG pipeline ($112.50 vs $168/mo), high-volume classification. Feature comparison (vision support, code quality, reasoning). Decision framework with crossover formula showing when DeepSeek becomes cheaper for output-heavy workloads. Full budget model ranking table.
-- Generated OG image (og-images/blog-gemini-flash-lite-vs-deepseek-flash.png).
-- Updated sitemap (174 URLs), RSS (123 items), blog index (123 guides), cross-links from index.html and launch.html.
-- Updated page count (176→177), blog count (122→123).
-
-### Session 209 (May 15)
-**Budget model comparison blog post — Haiku vs GPT-5 Mini:**
-- **Blog post: blog-haiku-vs-gpt5-mini.html** — "Claude Haiku 4.5 vs GPT-5 Mini: Is Haiku Worth 4x the Price?" GPT-5 Mini ($0.25/$2.00) is 75% cheaper on input and 60% cheaper on output than Claude Haiku ($1.00/$5.00). 4 cost scenarios: chatbot ($28.50 vs $78/mo), code assistant ($52.50 vs $142.50/mo), RAG pipeline ($525 vs $1,650/mo), high-volume classification. Quality-adjusted cost analysis showing how Haiku's better accuracy narrows the gap for code gen. Feature comparison table, decision framework with multi-model routing strategy.
-- Generated OG image (og-images/blog-haiku-vs-gpt5-mini.png).
-- Updated sitemap (175 URLs), RSS (124 items), blog index (124 guides), cross-links from index.html and launch.html.
-- Blog count: 123→124.
+### Sessions 206-209 (May 15)
+Batch/streaming toggle added to all 3 calculators (calculator, agent-cost, cost-explorer). Three comparison blog posts: Gemini Flash Lite vs DeepSeek Flash, Haiku vs GPT-5 Mini, DeepSeek V4 Pro vs Gemini 3.1 Pro. Community engagement drafts updated.
 
 ### Session 210 (May 15)
 **Budget vs mid-tier comparison blog post — DeepSeek V4 Pro vs Gemini 3.1 Pro:**
@@ -70,3 +46,10 @@ Built full APIpulse from scratch: 176 pages, 122 blog posts, 33 models, 10 provi
 - Generated OG image (og-images/cost-migration.png) with green accent theme.
 - Updated sitemap (177 URLs), cross-links from index.html (nav + tools grid) and launch.html (nav + tools row).
 - Page count: 177→178. Tool count: 9→10.
+
+### Session 212 (May 15)
+**Fine-tuning costs blog post — filling content gap:**
+- **Blog post: blog-fine-tuning-costs-2026.html** — "AI API Fine-Tuning Costs in 2026: Who's Actually Worth It?" Comprehensive comparison of fine-tuning training and inference costs across OpenAI (GPT-4o $25/M, GPT-4o mini $3/M), Google (Gemini Flash $0.025/M), Mistral ($0.003-$0.008/M), Cohere ($0.004/M), and open-source via Together.ai (free training). Training cost scenarios ($3-$625 for 1M-25M token datasets). Inference premium analysis (OpenAI charges 50-100%, Google/Mistral charge 0%). Two break-even scenarios: GPT-4o→GPT-4o mini (6.8M tokens), GPT-4o→Gemini Flash (54K tokens). Decision framework, alternatives (prompt engineering, RAG, multi-model routing), provider value ranking.
+- Generated OG image (og-images/blog-fine-tuning-costs-2026.png).
+- Updated sitemap (178 URLs), RSS (126 items), blog index (126 guides), cross-links from index.html and launch.html.
+- Blog count: 125→126.
