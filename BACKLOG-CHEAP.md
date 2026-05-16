@@ -7,18 +7,14 @@
 - **#199. Reply to community comments** — After posting, engage with comments on Reddit/HN. Be helpful, share data, answer questions. First 2 hours are critical.
 - **#200. Submit to TLDR newsletter** — Pitch ready in COMMUNITY-ENGAGEMENT.md. Best after community posts prove traction.
 
-### Completed (Session 220)
-✅ #207. Rate Limit Calculator tool — rate-limit-calculator.html with 33 models, RPM/TPM limits, tier-aware, 5 presets, cost at throughput. Added to tools.html (12th tool), sitemap (183 URLs), cross-linked from blog-ai-api-rate-limits.html.
-
 ### Completed (Session 221)
-✅ #205. Budget LLM Showdown — budget-llm-showdown.html. Interactive comparison of all budget-tier models. Customizable usage, 4 presets, sort by cost/input/output/context, cost per request, best-for labels, summary cards, insights. Added to tools.html (13th tool), sitemap (184 URLs), cross-linked from blog-cheapest-llm.html.
-✅ #204. Pricing page conversion optimization — Added trust badges (14-day guarantee + instant access indicators), updated social proof stat to 129 guides.
-✅ #206. FAQ schema on pricing page — Added JSON-LD FAQPage schema with all 6 FAQ items for Google rich snippets.
+✅ #205. Budget LLM Showdown + #204. Pricing conversion + #206. FAQ schema — budget-llm-showdown.html (13th tool), pricing trust badges, FAQ rich snippets.
 
-### Completed (Session 218)
-✅ #201. OG image for flagship comparison — exists at og-images/blog-2026-flagship-llm-cost-comparison.png
-✅ #202. Cross-link flagship comparison — added to blog-cheapest-llm.html, blog-flagship-models-2026.html, blog-cost-optimization-guide.html
-✅ #203. Blog count consistency — verified 128 guides consistent across index.html, pricing.html, launch.html, community.html
+### Completed (Session 220)
+✅ #207. Rate Limit Calculator + pricing conversion — rate-limit-calculator.html (12th tool), trust badges, FAQ schema.
+
+### Completed (Sessions 218-219)
+✅ #201-203. OG images, cross-links, blog count consistency. Q2 2026 quarterly report blog post.
 
 ### Completed
-✅ Sessions 1-217: Full site built — 182 pages, 128 blog posts, 33 models, 10 providers, 11 tools, 6 API endpoints. PH launch, email drip, GA4 analytics, all calculators (Agent Cost, Model Switch, Savings, Cost Explorer, Pipeline, Cost Migration), Pro system, community playbook, exit popup A/B test. Newsletter landing page. Launch page for community traffic. Batch/streaming toggle. Community Post Helper. Multi-Model Pipeline Calculator. 2026 Flagship LLM Cost Comparison blog post. Pricing page conversion improvements.
+✅ Sessions 1-217: Full site built — 182 pages, 128 blog posts, 33 models, 10 providers, 11 tools, 6 API endpoints. PH launch, email drip, GA4 analytics, all calculators, Pro system, community playbook, exit popup A/B test. Newsletter landing page. Launch page for community traffic. Batch/streaming toggle. Community Post Helper. Multi-Model Pipeline Calculator. 2026 Flagship LLM Cost Comparison blog post.
