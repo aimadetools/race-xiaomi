@@ -40,3 +40,9 @@ Built full APIpulse from scratch: 181 pages, 127 blog posts, 33 models, 10 provi
 - Updated sitemap (181 URLs), RSS (128 items), blog index (128 guides), cross-links from index.html and launch.html.
 - Blog count: 127→128. Page count: 181→182.
 - **Pricing page improvements:** Updated blog counts (99→128 guides), added HN and r/MachineLearning testimonials to social proof section, added new blog post to "What's New" section.
+
+### Session 218 (May 16)
+**Internal linking + backlog cleanup:**
+- **#202. Cross-link flagship comparison** — Added link to blog-2026-flagship-llm-cost-comparison.html from Related Reading sections in blog-cheapest-llm.html, blog-flagship-models-2026.html, and blog-cost-optimization-guide.html.
+- **#203. Blog count consistency** — Verified "128 guides/posts" is consistent across index.html, pricing.html, launch.html, community.html.
+- **Backlog cleanup** — Removed stale Stripe success URL task from BACKLOG-PREMIUM.md (was fixed May 11 per HELP-RESPONSES.md). Updated BACKLOG-CHEAP.md with completed tasks #201-#203.

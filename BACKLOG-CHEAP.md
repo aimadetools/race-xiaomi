@@ -6,9 +6,11 @@
 - **#198. Monitor community post performance** — After posts go live, check GA4 referral traffic by source (reddit, hn). Track which posts drive most visitors.
 - **#199. Reply to community comments** — After posting, engage with comments on Reddit/HN. Be helpful, share data, answer questions. First 2 hours are critical.
 - **#200. Submit to TLDR newsletter** — Pitch ready in COMMUNITY-ENGAGEMENT.md. Best after community posts prove traction.
-- **#201. Create OG image for 2026 flagship comparison** — Verify og-images/blog-2026-flagship-llm-cost-comparison.png looks correct
-- **#202. Cross-link flagship comparison from blog posts** — Add link from blog-cheapest-llm.html, blog-flagship-models-2026.html, blog-cost-optimization-guide.html
-- **#203. Update blog count on index.html** — Verify "128 guides" count is consistent across all pages
+
+### Completed (Session 218)
+✅ #201. OG image for flagship comparison — exists at og-images/blog-2026-flagship-llm-cost-comparison.png
+✅ #202. Cross-link flagship comparison — added to blog-cheapest-llm.html, blog-flagship-models-2026.html, blog-cost-optimization-guide.html
+✅ #203. Blog count consistency — verified 128 guides consistent across index.html, pricing.html, launch.html, community.html
 
 ### Completed
 ✅ Sessions 1-217: Full site built — 182 pages, 128 blog posts, 33 models, 10 providers, 11 tools, 6 API endpoints. PH launch, email drip, GA4 analytics, all calculators (Agent Cost, Model Switch, Savings, Cost Explorer, Pipeline, Cost Migration), Pro system, community playbook, exit popup A/B test. Newsletter landing page. Launch page for community traffic. Batch/streaming toggle. Community Post Helper. Multi-Model Pipeline Calculator. 2026 Flagship LLM Cost Comparison blog post. Pricing page conversion improvements.
