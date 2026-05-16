@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI API Rate Limit Calculator — Check RPM & TPM Limits | APIpulse</title>
+    <meta name="description" content="Check AI API rate limits for your workload. Enter your RPM and tokens per request to see which providers can handle your traffic. 33 models compared.">
+    <meta name="keywords" content>AI API rate limit calculator, RPM calculator, TPM limits, API rate limit checker, OpenAI rate limits, Anthropic rate limits, Gemini rate limits">
+    <meta property="og:title" content="AI API Rate Limit Calculator — APIpulse">
+    <meta property="og:description" content="Check if your AI API provider can handle your traffic. Compare RPM and TPM limits across 33 models.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://getapipulse.com/og-image.png">
+    <meta property="og:url" content="https://getapipulse.com/rate-limit-calculator.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="AI API Rate Limit Calculator — APIpulse">
+    <meta name="twitter:description" content="Check if your AI API provider can handle your traffic. Compare RPM and TPM limits across 33 models.">
+    <meta name="twitter:image" content="https://getapipulse.com/og-image.png">
+    <link rel="canonical" href="https://getapipulse.com/rate-limit-calculator.html">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="styles.css">
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0CEP7S9Y3J"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-0CEP7S9Y3J');
+    </script>
+    <script src="analytics.js" defer></script>
+    <script src="dynamic-date.js" defer></script>
+    <script src="shared.js" defer></script>
+    <script src="pricing-data.js" defer></script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "APIpulse Rate Limit Calculator",
+        "url": "https://getapipulse.com/rate-limit-calculator.html",
+        "description": "Check AI API rate limits for your workload. Enter RPM and tokens to see which providers can handle your traffic.",
+        "applicationCategory": "DeveloperApplication",
+        "operatingSystem": "Web",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+    }
+    </script>
+    <style>
+        .calc-hero { padding: 120px 24px 40px; text-align: center; max-width: 800px; margin: 0 auto; }
+        .calc-hero h1 { font-size: clamp(28px, 5vw, 44px); font-weight: 800; margin-bottom: 12px; }
+        .calc-hero p { font-size: 18px; color: var(--text-secondary); max-width: 600px; margin: 0 auto 32px; }
+        .calc-container { max-width: 900px; margin: 0 auto; padding: 0 24px 80px; }
+        .input-section {
+            background: var(--bg-card); border: 1px solid var(--border);
+            border-radius: 16px; padding: 32px; margin-bottom: 32px;
+        }
+        .input-section h2 { font-size: 20px; font-weight: 700; margin-bottom: 20px; }
+        .input-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 20px; }
+        .input-group label { display: block; font-size: 14px; font-weight: 600; margin-bottom: 6px; color: var(--text-primary); }
+        .input-group .hint { font-size: 12px; color: var(--text-muted); margin-bottom: 6px; }
+        .input-group input, .input-group select {
+            width: 100%; padding: 12px 16px; border-radius: 8px;
+            border: 1px solid var(--border); background: var(--bg-secondary);
+            color: var(--text-primary); font-size: 16px; outline: none;
+            transition: border-color 0.2s;
+        }
+        .input-group input:focus, .input-group select:focus { border-color: var(--accent); }
+        .preset-chips { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 20px; }
+        .preset-chip {
+            padding: 6px 14px; border-radius: 20px; font-size: 13px; font-weight: 500;
+            border: 1px solid var(--border); background: var(--bg-secondary);
+            color: var(--text-secondary); cursor: pointer; transition: all 0.2s;
+        }
+        .preset-chip:hover, .preset-chip.active { border-color: var(--accent); color: var(--accent); background: var(--accent-glow); }
+        .results-section { margin-top: 32px; }
+        .results-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; }
+        .results-header h2 { font-size: 20px; font-weight: 700; margin: 0; }
+        .results-count { font-size: 14px; color: var(--text-muted); }
+        .sort-btns { display: flex; gap: 8px; }
+        .sort-btn {
+            padding: 6px 12px; border-radius: 6px; font-size: 12px; font-weight: 600;
+            border: 1px solid var(--border); background: var(--bg-secondary);
+            color: var(--text-secondary); cursor: pointer; transition: all 0.2s;
+        }
+        .sort-btn.active { border-color: var(--accent); color: var(--accent); background: var(--accent-glow); }
+        .model-results { display: flex; flex-direction: column; gap: 12px; }
+        .model-card {
+            background: var(--bg-card); border: 1px solid var(--border);
+            border-radius: 12px; padding: 20px; display: grid;
+            grid-template-columns: 1fr auto; gap: 16px; align-items: center;
+            transition: all 0.2s;
+        }
+        .model-card:hover { border-color: var(--accent); }
+        .model-card.can-handle { border-left: 3px solid var(--green); }
+        .model-card.cannot-handle { border-left: 3px solid #ef4444; opacity: 0.7; }
+        .model-card.warning { border-left: 3px solid #f59e0b; }
+        .model-name { font-size: 16px; font-weight: 700; margin-bottom: 4px; }
+        .model-provider { font-size: 13px; color: var(--text-muted); margin-bottom: 8px; }
+        .model-limits { display: flex; gap: 16px; flex-wrap: wrap; }
+        .limit-badge {
+            display: inline-flex; align-items: center; gap: 4px;
+            padding: 4px 10px; border-radius: 6px; font-size: 12px; font-weight: 600;
+        }
+        .limit-badge.ok { background: rgba(34,197,94,0.1); color: var(--green); }
+        .limit-badge.warn { background: rgba(251,191,36,0.1); color: #f59e0b; }
+        .limit-badge.fail { background: rgba(239,68,68,0.1); color: #ef4444; }
+        .model-cost { text-align: right; }
+        .cost-per-minute { font-size: 18px; font-weight: 700; color: var(--accent); }
+        .cost-per-month { font-size: 12px; color: var(--text-muted); }
+        .cost-label { font-size: 11px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px; }
+        .summary-box {
+            background: var(--accent-glow); border: 1px solid var(--accent);
+            border-radius: 12px; padding: 24px; margin-top: 32px;
+        }
+        .summary-box h3 { margin: 0 0 12px; font-size: 18px; color: var(--accent); }
+        .summary-box p { margin: 0 0 8px; font-size: 14px; color: var(--text-secondary); line-height: 1.6; }
+        .summary-box strong { color: var(--text-primary); }
+        .tip-section { margin-top: 32px; }
+        .tip-section h2 { font-size: 20px; font-weight: 700; margin-bottom: 16px; }
+        .tips-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 16px; }
+        .tip-card {
+            background: var(--bg-card); border: 1px solid var(--border);
+            border-radius: 12px; padding: 20px;
+        }
+        .tip-card h4 { font-size: 15px; font-weight: 700; margin-bottom: 8px; color: var(--accent); }
+        .tip-card p { font-size: 13px; color: var(--text-secondary); line-height: 1.6; margin: 0; }
+        .cta-box {
+            text-align: center; padding: 40px 24px; margin-top: 40px;
+            background: var(--bg-card); border: 1px solid var(--border); border-radius: 16px;
+        }
+        .cta-box h3 { font-size: 22px; margin-bottom: 12px; }
+        .cta-box p { color: var(--text-secondary); margin-bottom: 20px; }
+        .cta-box a { display: inline-block; }
+        @media (max-width: 768px) {
+            .calc-hero { padding: 100px 20px 30px; }
+            .input-grid { grid-template-columns: 1fr; }
+            .model-card { grid-template-columns: 1fr; }
+            .model-cost { text-align: left; }
+            .sort-btns { flex-wrap: wrap; }
+        }
+    </style>
+    <meta name="theme-color" content="#6366f1">
+</head>
+<body>
+    <nav>
+        <div class="nav-inner">
+            <a href="index.html" class="logo">API<span>pulse</span></a>
+            <button class="hamburger" onclick="toggleMobileNav()" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+            <div class="nav-links">
+                <a href="calculator.html">Calculator</a>
+                <a href="compare.html">Compare</a>
+                <a href="cost-explorer.html">Explorer</a>
+                <a href="agent-cost-calculator.html">Agents</a>
+                <a href="cost-scenarios.html">Scenarios</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="use-cases.html">Use Cases</a>
+                <a href="about.html">About</a>
+                <a href="blog.html">Blog</a>
+                <a href="tools.html" class="active">Tools</a>
+                <a href="pricing-index.html">Pricing Index</a>
+                <a href="model-matrix.html">Model Matrix</a>
+                <a href="api-docs.html" style="color:var(--accent);">API</a>
+                <a href="pricing.html" class="nav-cta">Get Pro — $29</a>
+                <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <section class="calc-hero">
+            <h1>AI API Rate Limit Calculator</h1>
+            <p>Enter your expected traffic. See which providers can handle it — and what it'll cost.</p>
+        </section>
+
+        <div class="calc-container">
+            <div class="input-section">
+                <h2>Your Workload</h2>
+                <div class="preset-chips">
+                    <button class="preset-chip" onclick="applyPreset('hobby')">Hobby (10 RPM)</button>
+                    <button class="preset-chip" onclick="applyPreset('startup')">Startup (50 RPM)</button>
+                    <button class="preset-chip" onclick="applyPreset('growth')">Growth (200 RPM)</button>
+                    <button class="preset-chip" onclick="applyPreset('scale')">Scale (1K RPM)</button>
+                    <button class="preset-chip" onclick="applyPreset('enterprise')">Enterprise (5K RPM)</button>
+                </div>
+                <div class="input-grid">
+                    <div class="input-group">
+                        <label>Requests per Minute (RPM)</label>
+                        <div class="hint">How many API calls your app makes per minute</div>
+                        <input type="number" id="rpm-input" value="50" min="1" max="100000" oninput="calculate()">
+                    </div>
+                    <div class="input-group">
+                        <label>Average Tokens per Request</label>
+                        <div class="hint">Total tokens (input + output) per API call</div>
+                        <input type="number" id="tokens-input" value="500" min="1" max="1000000" oninput="calculate()">
+                    </div>
+                    <div class="input-group">
+                        <label>Provider Tier</label>
+                        <div class="hint">Your current spending tier (affects OpenAI/Anthropic limits)</div>
+                        <select id="tier-select" onchange="calculate()">
+                            <option value="1" selected>Tier 1 (New account)</option>
+                            <option value="2">Tier 2 ($5+ spent)</option>
+                            <option value="3">Tier 3 ($50+ spent)</option>
+                            <option value="4">Tier 4 ($100+ spent)</option>
+                            <option value="5">Tier 5 ($250+ spent)</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <label>Priority</label>
+                        <div class="hint">What matters most to you?</div>
+                        <select id="priority-select" onchange="calculate()">
+                            <option value="cost">Lowest Cost</option>
+                            <option value="throughput">Highest Throughput</option>
+                            <option value="quality">Best Quality</option>
+                            <option value="balanced">Balanced</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="results-section">
+                <div class="results-header">
+                    <h2>Results</h2>
+                    <span class="results-count" id="results-count"></span>
+                </div>
+                <div class="sort-btns">
+                    <button class="sort-btn active" onclick="setSort('score')" id="sort-score">Best Match</button>
+                    <button class="sort-btn" onclick="setSort('cost')" id="sort-cost">Cheapest</button>
+                    <button class="sort-btn" onclick="setSort('rpm')" id="sort-rpm">Highest RPM</button>
+                    <button class="sort-btn" onclick="setSort('name')" id="sort-name">Name</button>
+                </div>
+                <div class="model-results" id="model-results"></div>
+            </div>
+
+            <div class="summary-box" id="summary-box" style="display:none;"></div>
+
+            <div class="tip-section">
+                <h2>How to Handle Rate Limits</h2>
+                <div class="tips-grid">
+                    <div class="tip-card">
+                        <h4>Request Queuing</h4>
+                        <p>Add a queue layer (BullMQ, AWS SQS) to buffer requests when you hit RPM limits. Smooths out traffic spikes without losing requests.</p>
+                    </div>
+                    <div class="tip-card">
+                        <h4>Multi-Key Rotation</h4>
+                        <p>Use multiple API keys and rotate between them. Effectively multiplies your RPM limit. Common pattern for high-throughput apps.</p>
+                    </div>
+                    <div class="tip-card">
+                        <h4>Model Routing</h4>
+                        <p>Route simple requests to high-RPM budget models (Gemini Flash: 4K RPM) and complex requests to flagships. Reduces load on expensive endpoints.</p>
+                    </div>
+                    <div class="tip-card">
+                        <h4>Batch API</h4>
+                        <p>For non-urgent workloads, use Batch APIs (OpenAI, Anthropic). They have separate, higher rate limits AND cost 50% less.</p>
+                    </div>
+                    <div class="tip-card">
+                        <h4>Exponential Backoff</h4>
+                        <p>When you get a 429 error, wait and retry with exponential backoff (1s, 2s, 4s, 8s). Most SDKs handle this automatically.</p>
+                    </div>
+                    <div class="tip-card">
+                        <h4>Response Caching</h4>
+                        <p>Cache identical or similar responses. Reduces API calls by 20-40% for chatbot workloads with repeated queries.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cta-box">
+                <h3>Calculate Your Full Monthly Cost</h3>
+                <p>Rate limits are just one factor. See the complete picture — cost per request, monthly spend, and savings opportunities across all 33 models.</p>
+                <a href="calculator.html" class="btn-primary" style="padding:14px 36px;">Try Cost Calculator →</a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>Pricing data last verified: <span class="verified-date"></span></p>
+        <p>&copy; 2026 APIpulse. <a href="index.html">Home</a> &middot; <a href="use-cases.html">Use Cases</a> &middot; <a href="about.html">About</a> &middot; <a href="blog.html">Blog</a>
+<a href="pricing-index.html">Pricing Index</a> &middot; <a href="model-matrix.html">Model Matrix</a> &middot; <a href="cost-scenarios.html">Scenarios</a> &middot; <a href="price-alerts.html">Price Alerts</a> &middot; <a href="pricing-changelog.html">Changelog</a> &middot; <a href="openai.html">OpenAI</a> &middot; <a href="anthropic.html">Anthropic</a> &middot; <a href="google.html">Google</a> &middot; <a href="mistral.html">Mistral</a> &middot; <a href="cohere.html">Cohere</a> &middot; <a href="deepseek.html">DeepSeek</a> &middot; <a href="xai.html">xAI</a> &middot; <a href="moonshot.html">Moonshot</a> &middot; <a href="together.html">Together.ai</a> &middot; <a href="ai21.html">AI21</a> &middot; <a href="pricing.html">Pricing</a> &middot; <a href="embed.html">Embed Widget</a> &middot; <a href="cheat-sheet.html">Cheat Sheet</a> &middot; <a href="model-switch.html">Model Switch</a> &middot; <a href="api-docs.html">API</a> &middot; <a href="https://x.com/getapipulse" target="_blank" rel="noopener">Twitter</a> &middot; <a href="unsubscribe.html">Unsubscribe</a></p>
+    </footer>
+
+    <script>
+    // Rate limit data (base tier / free tier limits)
+    // Source: provider documentation as of May 2026
+    const RATE_LIMITS = [
+        // OpenAI — Tiered by spend. Data = Tier 1 (new account)
+        { id: 'openai-gpt55', name: 'GPT-5.5', provider: 'OpenAI', rpm: [500, 2000, 5000, 8000, 10000], tpm: [40000, 150000, 400000, 800000, 2000000], tiered: true },
+        { id: 'openai-gpt5', name: 'GPT-5', provider: 'OpenAI', rpm: [500, 2000, 5000, 8000, 10000], tpm: [40000, 150000, 400000, 800000, 2000000], tiered: true },
+        { id: 'openai-gpt5-mini', name: 'GPT-5 Mini', provider: 'OpenAI', rpm: [1000, 4000, 10000, 15000, 20000], tpm: [80000, 300000, 800000, 1500000, 4000000], tiered: true },
+        { id: 'openai-gpt4o', name: 'GPT-4o', provider: 'OpenAI', rpm: [500, 2000, 5000, 8000, 10000], tpm: [40000, 150000, 400000, 800000, 2000000], tiered: true },
+        { id: 'openai-gpt4o-mini', name: 'GPT-4o mini', provider: 'OpenAI', rpm: [1000, 4000, 10000, 15000, 20000], tpm: [80000, 300000, 800000, 1500000, 4000000], tiered: true },
+        { id: 'openai-gpt-oss-120b', name: 'GPT-oss 120B', provider: 'OpenAI', rpm: [500, 2000, 5000, 8000, 10000], tpm: [40000, 150000, 400000, 800000, 2000000], tiered: true },
+        { id: 'openai-gpt-oss-20b', name: 'GPT-oss 20B', provider: 'OpenAI', rpm: [500, 2000, 5000, 8000, 10000], tpm: [40000, 150000, 400000, 800000, 2000000], tiered: true },
+        // Anthropic — Tiered by spend
+        { id: 'anthropic-opus47', name: 'Claude Opus 4.7', provider: 'Anthropic', rpm: [200, 1000, 2000, 4000], tpm: [40000, 200000, 500000, 1000000], tiered: true },
+        { id: 'anthropic-sonnet46', name: 'Claude Sonnet 4.6', provider: 'Anthropic', rpm: [500, 2000, 4000, 8000], tpm: [80000, 300000, 800000, 2000000], tiered: true },
+        { id: 'anthropic-haiku', name: 'Claude Haiku 4.5', provider: 'Anthropic', rpm: [1000, 4000, 8000, 15000], tpm: [100000, 400000, 1000000, 2000000], tiered: true },
+        // Google — Free tier + Pay-as-you-go
+        { id: 'google-gemini3-pro', name: 'Gemini 3.1 Pro', provider: 'Google', rpm: [5, 2000], tpm: [32000, 4000000], tiered: false },
+        { id: 'google-pro', name: 'Gemini 2.5 Pro', provider: 'Google', rpm: [5, 2000], tpm: [32000, 4000000], tiered: false },
+        { id: 'google-flash', name: 'Gemini 2.0 Flash', provider: 'Google', rpm: [15, 4000], tpm: [1000000, 8000000], tiered: false },
+        { id: 'google-flash-lite', name: 'Gemini 2.0 Flash Lite', provider: 'Google', rpm: [30, 6000], tpm: [1000000, 8000000], tiered: false },
+        // DeepSeek — Flat
+        { id: 'deepseek-v4-pro', name: 'DeepSeek V4 Pro', provider: 'DeepSeek', rpm: [60], tpm: [100000], tiered: false },
+        { id: 'deepseek-v4-flash', name: 'DeepSeek V4 Flash', provider: 'DeepSeek', rpm: [60], tpm: [100000], tiered: false },
+        { id: 'deepseek-v3', name: 'DeepSeek V3', provider: 'DeepSeek', rpm: [60], tpm: [100000], tiered: false },
+        // Mistral — Flat
+        { id: 'mistral-large', name: 'Mistral Large 3', provider: 'Mistral', rpm: [60], tpm: [200000], tiered: false },
+        { id: 'mistral-small', name: 'Mistral Small 4', provider: 'Mistral', rpm: [60], tpm: [200000], tiered: false },
+        // Cohere — Flat
+        { id: 'cohere-command-r-plus', name: 'Command R+', provider: 'Cohere', rpm: [100], tpm: [200000], tiered: false },
+        { id: 'cohere-command-r', name: 'Command R', provider: 'Cohere', rpm: [100], tpm: [200000], tiered: false },
+        // Together.ai — Flat
+        { id: 'llama-4-scout', name: 'Llama 4 Scout', provider: 'Together.ai', rpm: [60], tpm: [200000], tiered: false },
+        { id: 'llama-4-maverick', name: 'Llama 4 Maverick', provider: 'Together.ai', rpm: [60], tpm: [200000], tiered: false },
+        { id: 'llama-3.1-70b', name: 'Llama 3.1 70B', provider: 'Together.ai', rpm: [60], tpm: [200000], tiered: false },
+        { id: 'llama-3.1-8b', name: 'Llama 3.1 8B', provider: 'Together.ai', rpm: [60], tpm: [200000], tiered: false },
+        // Moonshot — Flat
+        { id: 'kimi-k26', name: 'Kimi K2.6', provider: 'Moonshot', rpm: [60], tpm: [100000], tiered: false },
+        // xAI — Flat
+        { id: 'xai-grok3', name: 'Grok 3', provider: 'xAI', rpm: [60], tpm: [100000], tiered: false },
+        { id: 'xai-grok3-mini', name: 'Grok 3 Mini', provider: 'xAI', rpm: [60], tpm: [100000], tiered: false },
+        // AI21 — Flat
+        { id: 'ai21-jamba', name: 'Jamba 1.5 Large', provider: 'AI21', rpm: [60], tpm: [200000], tiered: false },
+    ];
+
+    let currentSort = 'score';
+
+    function getModelPrice(id) {
+        const m = API_MODELS.find(m => m.id === id);
+        return m ? { input: m.input, output: m.output, tier: m.tier } : null;
+    }
+
+    function getLimits(modelId, tierIndex) {
+        const rl = RATE_LIMITS.find(r => r.id === modelId);
+        if (!rl) return null;
+        if (rl.tiered) {
+            const ti = Math.min(tierIndex, rl.rpm.length - 1);
+            return { rpm: rl.rpm[ti], tpm: rl.tpm[ti] };
+        }
+        // Google: index 0 = free, index 1 = paid
+        return { rpm: rl.rpm[rl.rpm.length - 1], tpm: rl.tpm[rl.tpm.length - 1] };
+    }
+
+    function applyPreset(name) {
+        const presets = {
+            hobby: { rpm: 10, tokens: 300 },
+            startup: { rpm: 50, tokens: 500 },
+            growth: { rpm: 200, tokens: 800 },
+            scale: { rpm: 1000, tokens: 1000 },
+            enterprise: { rpm: 5000, tokens: 1500 }
+        };
+        const p = presets[name];
+        document.getElementById('rpm-input').value = p.rpm;
+        document.getElementById('tokens-input').value = p.tokens;
+        document.querySelectorAll('.preset-chip').forEach(c => c.classList.remove('active'));
+        event.target.classList.add('active');
+        calculate();
+    }
+
+    function setSort(sort) {
+        currentSort = sort;
+        document.querySelectorAll('.sort-btn').forEach(b => b.classList.remove('active'));
+        document.getElementById('sort-' + sort).classList.add('active');
+        calculate();
+    }
+
+    function calculate() {
+        const rpm = parseInt(document.getElementById('rpm-input').value) || 1;
+        const tokensPerReq = parseInt(document.getElementById('tokens-input').value) || 1;
+        const tier = parseInt(document.getElementById('tier-select').value) - 1;
+        const priority = document.getElementById('priority-select').value;
+        const tpmNeeded = rpm * tokensPerReq;
+
+        let results = [];
+        for (const rl of RATE_LIMITS) {
+            const price = getModelPrice(rl.id);
+            if (!price) continue;
+            const limits = getLimits(rl.id, tier);
+            if (!limits) continue;
+
+            const rpmOk = rpm <= limits.rpm;
+            const tpmOk = tpmNeeded <= limits.tpm;
+            const rpmRatio = rpm / limits.rpm;
+            const tpmRatio = tpmNeeded / limits.tpm;
+            const bottleneck = rpmRatio > tpmRatio ? 'RPM' : 'TPM';
+            const maxRatio = Math.max(rpmRatio, tpmRatio);
+
+            // Cost per minute at this throughput
+            const inputTokens = tokensPerReq * 0.4; // assume 40% input
+            const outputTokens = tokensPerReq * 0.6; // assume 60% output
+            const costPerReq = (price.input * inputTokens + price.output * outputTokens) / 1000000;
+            const costPerMin = costPerReq * rpm;
+            const costPerMonth = costPerMin * 60 * 24 * 30;
+
+            // Score: combines rate limit headroom, cost, and quality
+            let score = 0;
+            if (rpmOk && tpmOk) {
+                score = 100 - (maxRatio * 30); // more headroom = better
+                if (priority === 'cost') score += (1 - Math.min(costPerMonth / 100, 1)) * 50;
+                else if (priority === 'throughput') score += (1 - maxRatio) * 50;
+                else if (priority === 'quality') score += (price.tier === 'Premium' ? 30 : price.tier === 'Mid' ? 20 : 10);
+                else score += (1 - Math.min(costPerMonth / 100, 1)) * 20 + (1 - maxRatio) * 20;
+            } else {
+                score = -100 + (rpmOk ? 10 : 0) + (tpmOk ? 10 : 0);
+            }
+
+            let status = 'ok';
+            if (!rpmOk && !tpmOk) status = 'fail';
+            else if (maxRatio > 0.8) status = 'warn';
+
+            results.push({
+                ...rl, limits, rpmOk, tpmOk, rpmRatio, tpmRatio,
+                bottleneck, costPerReq, costPerMin, costPerMonth,
+                score, status, tier: price.tier, input: price.input, output: price.output
+            });
+        }
+
+        // Sort
+        if (currentSort === 'score') results.sort((a, b) => b.score - a.score);
+        else if (currentSort === 'cost') results.sort((a, b) => a.costPerMonth - b.costPerMonth);
+        else if (currentSort === 'rpm') results.sort((a, b) => b.limits.rpm - a.limits.rpm);
+        else results.sort((a, b) => a.name.localeCompare(b.name));
+
+        // Render
+        const container = document.getElementById('model-results');
+        container.innerHTML = results.map(r => {
+            const rpmClass = r.rpmOk ? (r.rpmRatio > 0.8 ? 'warn' : 'ok') : 'fail';
+            const tpmClass = r.tpmOk ? (r.tpmRatio > 0.8 ? 'warn' : 'ok') : 'fail';
+            const cardClass = r.status === 'ok' ? 'can-handle' : r.status === 'warn' ? 'warning' : 'cannot-handle';
+            const statusIcon = r.status === 'ok' ? '&#10003;' : r.status === 'warn' ? '!' : '&#10007;';
+
+            return `<div class="model-card ${cardClass}">
+                <div>
+                    <div class="model-name">${r.name}</div>
+                    <div class="model-provider">${r.provider} &middot; ${r.tier} tier</div>
+                    <div class="model-limits">
+                        <span class="limit-badge ${rpmClass}">RPM: ${r.limits.rpm.toLocaleString()} ${r.rpmOk ? (r.rpmRatio > 0.8 ? ' tight' : ' OK') : ' EXCEEDED'}</span>
+                        <span class="limit-badge ${tpmClass}">TPM: ${(r.limits.tpm/1000).toFixed(0)}K ${r.tpmOk ? (r.tpmRatio > 0.8 ? ' tight' : ' OK') : ' EXCEEDED'}</span>
+                        ${!r.rpmOk || !r.tpmOk ? `<span class="limit-badge fail">Bottleneck: ${r.bottleneck}</span>` : ''}
+                    </div>
+                </div>
+                <div class="model-cost">
+                    <div class="cost-label">Cost at ${rpm.toLocaleString()} RPM</div>
+                    <div class="cost-per-minute">$${r.costPerMin < 0.01 ? '<0.01' : r.costPerMin.toFixed(2)}/min</div>
+                    <div class="cost-per-month">$${r.costPerMonth < 1 ? '<1' : r.costPerMonth.toFixed(0)}/month</div>
+                </div>
+            </div>`;
+        }).join('');
+
+        const canHandle = results.filter(r => r.status === 'ok').length;
+        const warning = results.filter(r => r.status === 'warn').length;
+        document.getElementById('results-count').textContent = `${canHandle} can handle · ${warning} tight · ${results.length - canHandle - warning} exceeded`;
+
+        // Summary
+        const summary = document.getElementById('summary-box');
+        const best = results.find(r => r.status === 'ok');
+        const cheapest = results.filter(r => r.status === 'ok').sort((a, b) => a.costPerMonth - b.costPerMonth)[0];
+
+        if (best) {
+            summary.style.display = 'block';
+            summary.innerHTML = `<h3>Summary</h3>
+                <p><strong>${rpm.toLocaleString()} RPM</strong> with <strong>${tokensPerReq.toLocaleString()} tokens/request</strong> = <strong>${(tpmNeeded/1000).toFixed(0)}K TPM</strong></p>
+                <p>${canHandle} of ${results.length} models can handle this workload at Tier ${tier + 1}.</p>
+                ${cheapest ? `<p><strong>Cheapest option:</strong> ${cheapest.name} (${cheapest.provider}) at $${cheapest.costPerMonth < 1 ? '<1' : cheapest.costPerMonth.toFixed(0)}/month.</p>` : ''}
+                <p style="margin-top:12px;"><a href="calculator.html" style="color:var(--accent);">Calculate full monthly costs →</a> &middot; <a href="cost-migration.html" style="color:var(--accent);">Get migration report →</a></p>`;
+        } else {
+            summary.style.display = 'block';
+            summary.innerHTML = `<h3>High Traffic Workload</h3>
+                <p>At <strong>${rpm.toLocaleString()} RPM</strong>, most base-tier plans can't keep up. You'll need to:</p>
+                <p>1. <strong>Upgrade tiers</strong> — OpenAI Tier 5 gives 10K-20K RPM. Anthropic Tier 4 gives 4K-15K RPM.</p>
+                <p>2. <strong>Use high-RPM models</strong> — Gemini Flash Lite supports 6K RPM at pay-as-you-go.</p>
+                <p>3. <strong>Add request queuing</strong> — Buffer excess requests and process them smoothly.</p>`;
+        }
+    }
+
+    // Initialize
+    document.addEventListener('DOMContentLoaded', calculate);
+    </script>
+</body>
+</html>
