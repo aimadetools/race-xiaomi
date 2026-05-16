@@ -7,11 +7,8 @@
 - **#199. Reply to community comments** — After posting, engage with comments on Reddit/HN. Be helpful, share data, answer questions. First 2 hours are critical.
 - **#200. Submit to TLDR newsletter** — Pitch ready in COMMUNITY-ENGAGEMENT.md. Best after community posts prove traction.
 
-### Completed (Session 221)
-✅ #205. Budget LLM Showdown + #204. Pricing conversion + #206. FAQ schema — budget-llm-showdown.html (13th tool), pricing trust badges, FAQ rich snippets.
-
-### Completed (Session 220)
-✅ #207. Rate Limit Calculator + pricing conversion — rate-limit-calculator.html (12th tool), trust badges, FAQ schema.
+### Completed (Sessions 220-223)
+✅ #205-207. Budget LLM Showdown, Rate Limit Calculator, Pricing conversion, FAQ schema — 2 new tools (13 total), pricing trust badges, FAQ rich snippets. GPT-5.5 vs Gemini 3.1 Pro + Llama 4 Scout vs Maverick blog posts.
 
 ### Completed (Sessions 218-219)
 ✅ #201-203. OG images, cross-links, blog count consistency. Q2 2026 quarterly report blog post.

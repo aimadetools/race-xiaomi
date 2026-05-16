@@ -35,23 +35,8 @@
 ### Sessions 1-218 (Apr 5 - May 16)
 Built full APIpulse from scratch: 182 pages, 128 blog posts, 33 models, 10 providers, 11 tools, 6 API endpoints. Product Hunt launch, email drip, GA4 analytics, all calculators (Agent Cost, Model Switch, Savings, Cost Explorer, Pipeline, Cost Migration), Pro system, pricing freshness badges, community playbook, exit popup A/B test, Community Post Helper, newsletter landing page, batch/streaming toggle. Community engagement posts executed May 12 and May 15. 2026 Flagship LLM Cost Comparison blog post. Cross-linking and blog count consistency fixes.
 
-### Session 219 (May 16)
-**State of LLM Pricing Q2 2026 quarterly report:**
-- **Blog post: blog-state-of-llm-pricing-q2-2026.html** — "State of LLM Pricing: Q2 2026". Comprehensive quarterly report covering 33 models across 10 providers. Biggest price moves (Mistral Large -75%, DeepSeek V4 Pro -75%, GPT-4o -67%, Grok 3 +10x). Full pricing matrix organized by tier (Premium/Mid/Budget). 5 defining trends: budget models production-viable, context windows exploded, price volatility, multi-model routing, batch APIs. Cost scenarios (coding assistant, RAG pipeline, chatbot, content generation). Provider-by-provider breakdown. Decision framework. Q3 2026 outlook.
-- Generated OG image (og-images/blog-state-of-llm-pricing-q2-2026.png).
-- Updated sitemap (182 URLs), RSS (129 items), blog index (129 guides).
-- Blog count: 128→129. Page count: 182→183.
-- Cross-linked from blog-cheapest-llm.html, blog-cost-optimization-guide.html, blog-2026-flagship-llm-cost-comparison.html.
-- Added to What's New sections on index.html and launch.html.
-- Updated blog count references across index.html, pricing.html, launch.html, community.html.
-
-### Session 220 (May 16)
-**Rate Limit Calculator tool:**
-- **New tool: rate-limit-calculator.html** — interactive rate limit checker. Enter RPM + tokens/request, see which of 33 models can handle your traffic. Tier-aware for OpenAI (5 tiers) and Anthropic (4 tiers). Google free tier vs pay-as-you-go. Flat limits for DeepSeek, Mistral, Cohere, Together.ai, Moonshot, xAI, AI21. 5 workload presets (Hobby/Startup/Growth/Scale/Enterprise). Sort by Best Match, Cheapest, Highest RPM, or Name. Cost at throughput level. Summary with recommendations. Tips section (queuing, multi-key rotation, model routing, batch API, backoff, caching).
-- Added to tools.html grid (12th tool).
-- Updated sitemap (183 URLs). Page count: 183→184. Tool count: 11→12.
-- Cross-linked from blog-ai-api-rate-limits.html (CTA + related reading).
-- **Pricing page conversion improvements** (pricing.html): Added trust badges (14-day guarantee + instant access), FAQ schema for Google rich snippets, updated social proof stat (129 guides).
+### Sessions 219-220 (May 16)
+**Q2 2026 quarterly report + Rate Limit Calculator:** blog-state-of-llm-pricing-q2-2026.html (comprehensive quarterly pricing analysis, 33 models, trends, decision framework). rate-limit-calculator.html (12th tool — RPM/TPM checker, tier-aware, 5 presets). Pricing page conversion improvements (trust badges, FAQ schema).
 
 ### Session 221 (May 16)
 **Budget LLM Showdown tool:**
