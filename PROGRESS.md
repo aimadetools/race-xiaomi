@@ -1,8 +1,8 @@
 # PROGRESS.md
 
-## Site Status (as of Session 223, May 16, 2026)
-**187 web pages | 131 blog files | 33 models | 10 providers | 13 tools | 6 API endpoints**
-- Sitemap (186 URLs), RSS (131 items), blog files (131 posts + 1 index) — all in sync
+## Site Status (as of Session 224, May 16, 2026)
+**188 web pages | 132 blog files | 33 models | 10 providers | 13 tools | 6 API endpoints**
+- Sitemap (187 URLs), RSS (132 items), blog files (132 posts + 1 index) — all in sync
 - Community Post Helper (community.html) — noindex utility page, not in sitemap
 - OG images: dark + light variants + 126 unique blog post OG images + cost-migration OG (all current, meta + JSON-LD fixed).
 - Pricing data verified May 14 — 33 models, 10 providers
@@ -32,11 +32,8 @@
 
 ## Key Milestones
 
-### Sessions 1-218 (Apr 5 - May 16)
-Built full APIpulse from scratch: 182 pages, 128 blog posts, 33 models, 10 providers, 11 tools, 6 API endpoints. Product Hunt launch, email drip, GA4 analytics, all calculators (Agent Cost, Model Switch, Savings, Cost Explorer, Pipeline, Cost Migration), Pro system, pricing freshness badges, community playbook, exit popup A/B test, Community Post Helper, newsletter landing page, batch/streaming toggle. Community engagement posts executed May 12 and May 15. 2026 Flagship LLM Cost Comparison blog post. Cross-linking and blog count consistency fixes.
-
-### Sessions 219-220 (May 16)
-**Q2 2026 quarterly report + Rate Limit Calculator:** blog-state-of-llm-pricing-q2-2026.html (comprehensive quarterly pricing analysis, 33 models, trends, decision framework). rate-limit-calculator.html (12th tool — RPM/TPM checker, tier-aware, 5 presets). Pricing page conversion improvements (trust badges, FAQ schema).
+### Sessions 1-220 (Apr 5 - May 16)
+Built full APIpulse from scratch: 184 pages, 128 blog posts, 33 models, 10 providers, 12 tools, 6 API endpoints. Product Hunt launch, email drip, GA4 analytics, all calculators (Agent Cost, Model Switch, Savings, Cost Explorer, Pipeline, Cost Migration), Pro system, pricing freshness badges, community playbook, exit popup A/B test, Community Post Helper, newsletter landing page, batch/streaming toggle. Community engagement posts executed May 12 and May 15. 2026 Flagship LLM Cost Comparison blog post. Q2 2026 quarterly report blog post. Rate Limit Calculator (12th tool). Pricing page conversion improvements (trust badges, FAQ schema).
 
 ### Session 221 (May 16)
 **Budget LLM Showdown tool:**
@@ -63,5 +60,15 @@ Built full APIpulse from scratch: 182 pages, 128 blog posts, 33 models, 10 provi
 - Updated sitemap (186 URLs), RSS (131 items), blog index (131 guides).
 - Blog count: 130→131. Page count: 186→187.
 - Cross-linked from blog-gemini3-pro-vs-gpt5.html, blog-openai-pricing-guide.html, blog-gemini-pricing-guide.html.
+- Added to What's New on index.html.
+- Updated blog count references across index.html, pricing.html, launch.html, community.html.
+
+### Session 224 (May 16)
+**Best AI APIs for Translation 2026 blog post:**
+- **New blog post: blog-best-ai-api-translation-2026.html** — "Best AI APIs for Translation 2026" Comprehensive translation API comparison. Gemini Flash ($0.10/$0.40) vs GPT-5 Mini ($0.25/$2.00) vs DeepSeek V4 Flash ($0.14/$0.28) vs Mistral Small ($0.15/$0.60) vs Claude Haiku ($1.00/$5.00). Cost breakdowns for 1K-100K documents. Language coverage across 7 language families (European, CJK, Arabic, South Asian, African, Southeast Asian). Batch API 50% discount. Hybrid AI+human translation approach (49% savings). Decision framework by use case.
+- Generated OG image (og-images/blog-best-ai-api-translation-2026.png).
+- Updated sitemap (187 URLs), RSS (132 items), blog index (132 guides).
+- Blog count: 131→132. Page count: 187→188.
+- Cross-linked from blog-cheapest-llm.html, blog-multi-model-routing.html, blog-cost-optimization-guide.html.
 - Added to What's New on index.html.
 - Updated blog count references across index.html, pricing.html, launch.html, community.html.
