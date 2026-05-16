@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>State of LLM Pricing Q2 2026: 33 Models, 10 Providers, One Clear Winner — APIpulse</title>
+    <meta name="description" content="Comprehensive Q2 2026 LLM pricing analysis. GPT-4o dropped 67%, Mistral dropped 75%, Grok 3 jumped 10x. Budget models are now production-viable. Full data on 33 models across 10 providers.">
+    <meta name="keywords" content="LLM pricing 2026, AI API cost analysis, Q2 2026 LLM report, cheapest AI API, GPT pricing, Claude pricing, Gemini pricing, DeepSeek pricing, AI cost optimization">
+    <meta property="og:title" content="State of LLM Pricing Q2 2026: 33 Models, 10 Providers — APIpulse">
+    <meta property="og:description" content="GPT-4o dropped 67%. Grok 3 jumped 10x. Budget models now cost less than $0.10/1M tokens. The full Q2 2026 pricing report.">
+    <meta property="og:type" content="article">
+    <meta property="article:published_time" content="2026-05-16">
+    <meta property="article:modified_time" content="2026-05-16">
+    <meta property="article:author" content="APIpulse">
+    <meta property="og:image" content="https://getapipulse.com/og-images/blog-state-of-llm-pricing-q2-2026.png">
+    <meta property="og:url" content="https://getapipulse.com/blog-state-of-llm-pricing-q2-2026.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="State of LLM Pricing Q2 2026: 33 Models, 10 Providers">
+    <meta name="twitter:image" content="https://getapipulse.com/og-images/blog-state-of-llm-pricing-q2-2026.png">
+    <meta name="twitter:description" content="The definitive Q2 2026 LLM pricing report. Every price move, every provider, every model ranked.">
+    <link rel="canonical" href="https://getapipulse.com/blog-state-of-llm-pricing-q2-2026.html">
+    <link rel="alternate" type="application/rss+xml" title="APIpulse Blog" href="https://getapipulse.com/rss.xml">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="styles.css">
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0CEP7S9Y3J"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-0CEP7S9Y3J');
+    </script>
+    <script src="analytics.js" defer></script>
+    <script src="dynamic-date.js" defer></script>
+    <script src="shared.js" defer></script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "State of LLM Pricing Q2 2026: 33 Models, 10 Providers, One Clear Winner",
+        "description": "Comprehensive Q2 2026 LLM pricing analysis covering 33 models across 10 providers. GPT-4o dropped 67%, Grok 3 jumped 10x, budget models now production-viable.",
+        "datePublished": "2026-05-16",
+        "dateModified": "2026-05-16",
+        "author": { "@type": "Organization", "name": "APIpulse" },
+        "publisher": { "@type": "Organization", "name": "APIpulse", "url": "https://getapipulse.com" },
+        "url": "https://getapipulse.com/blog-state-of-llm-pricing-q2-2026.html",
+        "image": "https://getapipulse.com/og-images/blog-state-of-llm-pricing-q2-2026.png"
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Blog", "item": "https://getapipulse.com/blog.html" },
+            { "@type": "ListItem", "position": 2, "name": "State of LLM Pricing Q2 2026", "item": "https://getapipulse.com/blog-state-of-llm-pricing-q2-2026.html" }
+        ]
+    }
+    </script>
+    <style>
+        .content { max-width: 800px; margin: 0 auto; padding: 120px 24px 80px; }
+        h1 { font-size: 40px; font-weight: 800; margin-bottom: 12px; }
+        .subtitle { color: var(--text-secondary); font-size: 18px; margin-bottom: 48px; }
+        .post-meta { display: flex; gap: 16px; align-items: center; margin-bottom: 12px; font-size: 13px; color: var(--text-muted); }
+        .breadcrumb { font-size: 14px; color: var(--text-muted); margin-bottom: 24px; }
+        .breadcrumb a { color: var(--accent); text-decoration: none; }
+        .breadcrumb a:hover { text-decoration: underline; }
+        h2 { font-size: 28px; font-weight: 700; margin: 48px 0 16px; }
+        h3 { font-size: 22px; font-weight: 600; margin: 32px 0 12px; }
+        p { color: var(--text-secondary); line-height: 1.8; margin-bottom: 16px; font-size: 16px; }
+        .highlight-box { background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 12px; padding: 24px; margin: 24px 0; }
+        .highlight-box h3 { margin-top: 0; }
+        .comparison-table { width: 100%; border-collapse: collapse; margin: 24px 0; font-size: 14px; }
+        .comparison-table th { background: var(--bg-secondary); padding: 12px 16px; text-align: left; font-weight: 600; border-bottom: 1px solid var(--border); }
+        .comparison-table td { padding: 12px 16px; border-bottom: 1px solid var(--border); }
+        .comparison-table .winner { background: rgba(34,197,94,0.05); }
+        .comparison-table .cheapest { background: rgba(34,197,94,0.1); font-weight: 700; }
+        .comparison-table .expensive { background: rgba(239,68,68,0.05); }
+        .stat-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin: 32px 0; }
+        .stat-card { background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 12px; padding: 20px; text-align: center; }
+        .stat-card .stat-value { font-size: 32px; font-weight: 800; margin-bottom: 4px; }
+        .stat-card .stat-label { font-size: 12px; color: var(--text-muted); line-height: 1.4; }
+        .stat-card.green .stat-value { color: var(--green); }
+        .stat-card.red .stat-value { color: #ef4444; }
+        .stat-card.accent .stat-value { color: var(--accent); }
+        .cost-box { display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 16px; margin: 24px 0; }
+        .cost-card { background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 12px; padding: 20px; text-align: center; }
+        .cost-card .model-name { font-size: 14px; font-weight: 700; margin-bottom: 4px; }
+        .cost-card .provider { font-size: 12px; color: var(--text-muted); margin-bottom: 12px; }
+        .cost-card .price { font-size: 24px; font-weight: 800; color: var(--accent); }
+        .cost-card .price-note { font-size: 12px; color: var(--text-muted); margin-top: 4px; }
+        .cost-card.best { border-color: var(--green); box-shadow: 0 0 20px rgba(34,197,94,0.15); }
+        .cost-card.best .price { color: var(--green); }
+        .savings-highlight { background: rgba(34,197,94,0.08); border: 1px solid rgba(34,197,94,0.2); border-radius: 12px; padding: 24px; margin: 24px 0; text-align: center; }
+        .savings-highlight .big-number { font-size: 48px; font-weight: 800; color: var(--green); }
+        .savings-highlight p { margin-bottom: 0; }
+        .scenario-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin: 24px 0; }
+        .scenario-card { background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 12px; padding: 24px; }
+        .scenario-card h4 { font-size: 16px; font-weight: 700; margin-bottom: 8px; }
+        .scenario-card .desc { font-size: 13px; color: var(--text-muted); margin-bottom: 16px; }
+        .scenario-card .costs { font-size: 14px; }
+        .scenario-card .costs div { display: flex; justify-content: space-between; padding: 4px 0; }
+        .scenario-card .costs .model { color: var(--text-secondary); }
+        .scenario-card .costs .amount { font-weight: 600; }
+        .scenario-card .costs .amount.best { color: var(--green); }
+        .verdict { background: linear-gradient(135deg, rgba(99,102,241,0.08), rgba(34,197,94,0.06)); border: 1px solid var(--accent); border-radius: 16px; padding: 32px; margin: 32px 0; }
+        .verdict h3 { margin-top: 0; color: var(--accent); }
+        ul, ol { color: var(--text-secondary); padding-left: 24px; margin-bottom: 16px; }
+        li { margin-bottom: 8px; line-height: 1.6; }
+        strong { color: var(--text-primary); }
+        .cta-inline { background: var(--bg-secondary); border: 1px solid var(--accent); border-radius: 12px; padding: 24px; margin: 32px 0; text-align: center; }
+        .cta-inline p { margin-bottom: 12px; }
+        .social-share { display: flex; gap: 8px; margin: 32px 0; }
+        .social-share a { display: flex; align-items: center; gap: 6px; padding: 10px 16px; border-radius: 8px; border: 1px solid var(--border); background: var(--bg-secondary); color: var(--text-primary); font-size: 13px; font-weight: 600; text-decoration: none; transition: all 0.2s; }
+        .social-share a:hover { border-color: var(--accent); }
+        .tier-section { margin: 32px 0; }
+        .tier-badge { display: inline-block; font-size: 12px; font-weight: 700; padding: 4px 12px; border-radius: 6px; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 12px; }
+        .tier-premium { background: rgba(239,68,68,0.1); color: #ef4444; }
+        .tier-mid { background: rgba(234,179,8,0.1); color: #eab308; }
+        .tier-budget { background: rgba(34,197,94,0.1); color: var(--green); }
+        @media (max-width: 768px) {
+            .content { padding: 100px 16px 60px; }
+            h1 { font-size: 28px; }
+            .stat-grid { grid-template-columns: repeat(2, 1fr); }
+            .cost-box { grid-template-columns: 1fr 1fr; }
+            .scenario-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+    <meta name="theme-color" content="#6366f1">
+</head>
+<body>
+    <a href="#main" class="skip-link">Skip to content</a>
+    <nav>
+        <div class="nav-inner">
+            <a href="index.html" class="logo">API<span>pulse</span></a>
+            <button class="hamburger" onclick="toggleMobileNav()" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+            <div class="nav-links">
+                <a href="calculator.html">Calculator</a>
+                <a href="compare.html">Compare</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="blog.html" style="color:var(--accent);font-weight:600;">Blog</a>
+                <a href="pricing.html" class="nav-cta" onclick="if(window.trackEvent)window.trackEvent('pro_button_clicked',{source:'nav'})">Get Pro — $29</a>
+                <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
+            </div>
+        </div>
+    </nav>
+
+    <main id="main">
+    <article class="content">
+        <div class="breadcrumb"><a href="blog.html">Blog</a> / State of LLM Pricing Q2 2026</div>
+        <div class="post-meta">
+            <span>May 16, 2026</span>
+            <span>·</span>
+            <span>12 min read</span>
+        </div>
+
+        <h1>State of LLM Pricing: Q2 2026</h1>
+        <p class="subtitle">33 models. 10 providers. The definitive quarterly report on what's cheap, what's expensive, and what's changed since last quarter.</p>
+
+        <p>The LLM API market in Q2 2026 looks nothing like it did six months ago. Prices have cratered for some models and skyrocketed for others. Budget-tier models now match 2024 flagship quality. And the smartest teams have stopped picking one model — they're routing dynamically based on task complexity.</p>
+
+        <p>We track every price across every provider. Here's the full picture.</p>
+
+        <h2>Q2 2026 at a Glance</h2>
+
+        <div class="stat-grid">
+            <div class="stat-card green">
+                <div class="stat-value">-75%</div>
+                <div class="stat-label">Biggest price drop<br>(Mistral Large, DeepSeek V4 Pro)</div>
+            </div>
+            <div class="stat-card red">
+                <div class="stat-value">+10x</div>
+                <div class="stat-label">Biggest price hike<br>(Grok 3)</div>
+            </div>
+            <div class="stat-card accent">
+                <div class="stat-value">$0.075</div>
+                <div class="stat-label">Cheapest input<br>(Gemini Flash Lite)</div>
+            </div>
+            <div class="stat-card accent">
+                <div class="stat-value">33</div>
+                <div class="stat-label">Models tracked<br>across 10 providers</div>
+            </div>
+        </div>
+
+        <h2>The Biggest Price Moves</h2>
+
+        <p>If you haven't re-evaluated your AI provider in the last quarter, you're almost certainly overpaying. Here are the moves that matter:</p>
+
+        <h3>The Drops</h3>
+
+        <table class="comparison-table">
+            <thead>
+                <tr>
+                    <th>Model</th>
+                    <th>Old Price (input)</th>
+                    <th>New Price (input)</th>
+                    <th>Change</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Mistral Large 3</strong></td>
+                    <td>$2.00/1M</td>
+                    <td class="cheapest">$0.50/1M</td>
+                    <td class="cheapest">-75%</td>
+                </tr>
+                <tr>
+                    <td><strong>DeepSeek V4 Pro</strong></td>
+                    <td>$1.75/1M</td>
+                    <td class="cheapest">$0.44/1M</td>
+                    <td class="cheapest">-75%</td>
+                </tr>
+                <tr>
+                    <td><strong>GPT-4o</strong></td>
+                    <td>$10.00/1M</td>
+                    <td>$2.50/1M</td>
+                    <td class="cheapest">-67%</td>
+                </tr>
+                <tr>
+                    <td><strong>Claude Opus 4.7</strong></td>
+                    <td>$15.00/1M</td>
+                    <td>$5.00/1M</td>
+                    <td class="cheapest">-67%</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>The Hike</h3>
+
+        <table class="comparison-table">
+            <thead>
+                <tr>
+                    <th>Model</th>
+                    <th>Old Price (input)</th>
+                    <th>New Price (input)</th>
+                    <th>Change</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="expensive">
+                    <td><strong>Grok 3</strong></td>
+                    <td>$3.00/1M</td>
+                    <td>$30.00/1M</td>
+                    <td style="color:#ef4444;font-weight:700;">+10x</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <p>Grok 3's 10x price increase is the largest single-model price hike we've ever tracked. At $30/$150 per 1M tokens, it's now the most expensive model in our database — pricier than GPT-5.5 and Claude Opus 4.7 combined. If you were using Grok 3 for production workloads, it's time to switch.</p>
+
+        <h2>Full Pricing Matrix: Every Model, Every Provider</h2>
+
+        <p>Here's the complete current pricing as of May 2026, organized by tier.</p>
+
+        <div class="tier-section">
+            <span class="tier-badge tier-premium">Premium Tier</span>
+            <p style="font-size:14px;color:var(--text-muted);margin-bottom:16px;">Maximum capability. Best for complex reasoning, multimodal tasks, and high-stakes outputs.</p>
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Model</th>
+                        <th>Provider</th>
+                        <th>Input</th>
+                        <th>Output</th>
+                        <th>Context</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>GPT-5.5 Pro</strong></td>
+                        <td>OpenAI</td>
+                        <td>$30.00</td>
+                        <td>$180.00</td>
+                        <td>1M</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Grok 3</strong></td>
+                        <td>xAI</td>
+                        <td>$30.00</td>
+                        <td>$150.00</td>
+                        <td>128K</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Claude 4 Opus</strong></td>
+                        <td>Anthropic</td>
+                        <td>$15.00</td>
+                        <td>$75.00</td>
+                        <td>200K</td>
+                    </tr>
+                    <tr>
+                        <td><strong>GPT-5.5</strong></td>
+                        <td>OpenAI</td>
+                        <td>$5.00</td>
+                        <td>$30.00</td>
+                        <td>1M</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Claude Opus 4.7</strong></td>
+                        <td>Anthropic</td>
+                        <td>$5.00</td>
+                        <td>$25.00</td>
+                        <td>1M</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="tier-section">
+            <span class="tier-badge tier-mid">Mid Tier</span>
+            <p style="font-size:14px;color:var(--text-muted);margin-bottom:16px;">Strong performance at reasonable cost. The sweet spot for most production workloads.</p>
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Model</th>
+                        <th>Provider</th>
+                        <th>Input</th>
+                        <th>Output</th>
+                        <th>Context</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Claude Sonnet 4.6</strong></td>
+                        <td>Anthropic</td>
+                        <td>$3.00</td>
+                        <td>$15.00</td>
+                        <td>1M</td>
+                    </tr>
+                    <tr>
+                        <td><strong>GPT-4o</strong></td>
+                        <td>OpenAI</td>
+                        <td>$2.50</td>
+                        <td>$10.00</td>
+                        <td>128K</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Command R+</strong></td>
+                        <td>Cohere</td>
+                        <td>$2.50</td>
+                        <td>$10.00</td>
+                        <td>128K</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Gemini 3.1 Pro</strong></td>
+                        <td>Google</td>
+                        <td>$2.00</td>
+                        <td>$12.00</td>
+                        <td>1M</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Jamba 1.5 Large</strong></td>
+                        <td>AI21</td>
+                        <td>$2.00</td>
+                        <td>$8.00</td>
+                        <td>256K</td>
+                    </tr>
+                    <tr>
+                        <td><strong>GPT-5.3 Codex</strong></td>
+                        <td>OpenAI</td>
+                        <td>$1.75</td>
+                        <td>$14.00</td>
+                        <td>400K</td>
+                    </tr>
+                    <tr>
+                        <td><strong>GPT-5</strong></td>
+                        <td>OpenAI</td>
+                        <td>$1.25</td>
+                        <td>$10.00</td>
+                        <td>272K</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Gemini 2.5 Pro</strong></td>
+                        <td>Google</td>
+                        <td>$1.25</td>
+                        <td>$10.00</td>
+                        <td>1M</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Claude Haiku 4.5</strong></td>
+                        <td>Anthropic</td>
+                        <td>$1.00</td>
+                        <td>$5.00</td>
+                        <td>200K</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Llama 3.1 70B</strong></td>
+                        <td>Meta (Together.ai)</td>
+                        <td>$0.88</td>
+                        <td>$0.88</td>
+                        <td>128K</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="tier-section">
+            <span class="tier-badge tier-budget">Budget Tier</span>
+            <p style="font-size:14px;color:var(--text-muted);margin-bottom:16px;">Production-viable quality at rock-bottom prices. The biggest story of Q2 2026.</p>
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Model</th>
+                        <th>Provider</th>
+                        <th>Input</th>
+                        <th>Output</th>
+                        <th>Context</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Kimi K2.6</strong></td>
+                        <td>Moonshot</td>
+                        <td>$0.90</td>
+                        <td>$3.75</td>
+                        <td>256K</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Mistral Large 3</strong></td>
+                        <td>Mistral</td>
+                        <td>$0.50</td>
+                        <td>$1.50</td>
+                        <td>128K</td>
+                    </tr>
+                    <tr>
+                        <td><strong>DeepSeek V4 Pro</strong></td>
+                        <td>DeepSeek</td>
+                        <td class="cheapest">$0.44</td>
+                        <td class="cheapest">$0.87</td>
+                        <td>1M</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Command R</strong></td>
+                        <td>Cohere</td>
+                        <td>$0.50</td>
+                        <td>$1.50</td>
+                        <td>128K</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Gemini 2.0 Flash</strong></td>
+                        <td>Google</td>
+                        <td>$0.10</td>
+                        <td>$0.40</td>
+                        <td>1M</td>
+                    </tr>
+                    <tr>
+                        <td><strong>DeepSeek V4 Flash</strong></td>
+                        <td>DeepSeek</td>
+                        <td>$0.14</td>
+                        <td>$0.28</td>
+                        <td>1M</td>
+                    </tr>
+                    <tr>
+                        <td><strong>GPT-5 mini</strong></td>
+                        <td>OpenAI</td>
+                        <td>$0.25</td>
+                        <td>$2.00</td>
+                        <td>272K</td>
+                    </tr>
+                    <tr>
+                        <td><strong>GPT-4o mini</strong></td>
+                        <td>OpenAI</td>
+                        <td>$0.15</td>
+                        <td>$0.60</td>
+                        <td>128K</td>
+                    </tr>
+                    <tr>
+                        <td><strong>GPT-oss 120B</strong></td>
+                        <td>OpenAI</td>
+                        <td>$0.15</td>
+                        <td>$0.60</td>
+                        <td>128K</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Mistral Small 4</strong></td>
+                        <td>Mistral</td>
+                        <td>$0.15</td>
+                        <td>$0.60</td>
+                        <td>128K</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Llama 4 Scout</strong></td>
+                        <td>Meta (Together.ai)</td>
+                        <td>$0.11</td>
+                        <td>$0.34</td>
+                        <td>10M</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Llama 4 Maverick</strong></td>
+                        <td>Meta (Together.ai)</td>
+                        <td>$0.20</td>
+                        <td>$0.60</td>
+                        <td>10M</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Llama 3.1 8B</strong></td>
+                        <td>Meta (Together.ai)</td>
+                        <td>$0.10</td>
+                        <td>$0.10</td>
+                        <td>128K</td>
+                    </tr>
+                    <tr>
+                        <td><strong>GPT-oss 20B</strong></td>
+                        <td>OpenAI</td>
+                        <td>$0.08</td>
+                        <td>$0.35</td>
+                        <td>128K</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Gemini 2.0 Flash Lite</strong></td>
+                        <td>Google</td>
+                        <td class="cheapest">$0.075</td>
+                        <td>$0.30</td>
+                        <td>1M</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="savings-highlight">
+            <div class="big-number">400x</div>
+            <p>Price difference between the most expensive model (GPT-5.5 Pro at $30/$180) and the cheapest (Gemini Flash Lite at $0.075/$0.30)</p>
+        </div>
+
+        <h2>Five Trends Defining Q2 2026</h2>
+
+        <h3>1. Budget Models Are Now Production-Viable</h3>
+        <p>This is the biggest story of the quarter. Models like Gemini 2.0 Flash Lite ($0.075/1M), Llama 3.1 8B ($0.10/1M), and DeepSeek V4 Flash ($0.14/1M) deliver quality that matches or exceeds 2024's GPT-4 — at <strong>1/20th the price</strong>. For classification, summarization, and simple chat, there's no reason to pay premium prices anymore.</p>
+
+        <h3>2. Context Windows Exploded</h3>
+        <p>1M token context windows are now standard across premium and mid-tier models. Budget models are catching up: Llama 4 Scout offers <strong>10M tokens</strong> of context via Together.ai. DeepSeek V4 Pro and V4 Flash both support 1M. If you're still chunking documents to fit 128K windows, you're leaving money on the table.</p>
+
+        <h3>3. Price Volatility Is the New Normal</h3>
+        <p>Grok 3 went up 10x. DeepSeek V4 Pro went down 75%. GPT-4o dropped 67%. These aren't incremental adjustments — they're seismic shifts. The era of stable, predictable AI pricing is over. If you're not checking prices quarterly, you're flying blind.</p>
+
+        <h3>4. Multi-Model Routing Is the Optimal Strategy</h3>
+        <p>The best teams in 2026 don't pick one model. They route dynamically:</p>
+        <ul>
+            <li><strong>Simple tasks</strong> (classification, extraction) → Gemini Flash Lite ($0.075/1M) or Llama 3.1 8B ($0.10/1M)</li>
+            <li><strong>Standard workloads</strong> (chat, summarization) → DeepSeek V4 Pro ($0.44/1M) or GPT-4o mini ($0.15/1M)</li>
+            <li><strong>Complex reasoning</strong> (code generation, analysis) → GPT-5 ($1.25/1M) or Claude Sonnet 4.6 ($3.00/1M)</li>
+            <li><strong>Critical outputs</strong> (customer-facing, high-stakes) → Claude Opus 4.7 ($5.00/1M) or GPT-5.5 ($5.00/1M)</li>
+        </ul>
+        <p>A blended cost of <strong>under $2/1M tokens</strong> is achievable for most workloads.</p>
+
+        <h3>5. Batch APIs Changed the Math</h3>
+        <p>OpenAI's Batch API offers a 50% discount. Anthropic and Google offer similar batch pricing. If your workload isn't time-sensitive — data labeling, content generation, document processing — batch everything. The savings are massive at scale.</p>
+
+        <h2>Cost Comparison: Real Workloads</h2>
+
+        <p>Let's see what these prices actually mean for production systems. Here are four common workloads compared across price tiers:</p>
+
+        <div class="scenario-grid">
+            <div class="scenario-card">
+                <h4>AI Coding Assistant</h4>
+                <div class="desc">2K input + 1.5K output tokens, 500 requests/day</div>
+                <div class="costs">
+                    <div><span class="model">Premium (GPT-5.5)</span><span class="amount">$247.50/mo</span></div>
+                    <div><span class="model">Mid (Claude Sonnet 4.6)</span><span class="amount">$142.50/mo</span></div>
+                    <div><span class="model">Budget (DeepSeek V4 Pro)</span><span class="amount best">$7.88/mo</span></div>
+                </div>
+            </div>
+            <div class="scenario-card">
+                <h4>RAG Pipeline</h4>
+                <div class="desc">5K input + 800 output tokens, 1K requests/day</div>
+                <div class="costs">
+                    <div><span class="model">Premium (GPT-5.5)</span><span class="amount">$750.00/mo</span></div>
+                    <div><span class="model">Mid (Gemini 3.1 Pro)</span><span class="amount">$264.00/mo</span></div>
+                    <div><span class="model">Budget (DeepSeek V4 Pro)</span><span class="amount best">$21.33/mo</span></div>
+                </div>
+            </div>
+            <div class="scenario-card">
+                <h4>Customer Support Chatbot</h4>
+                <div class="desc">1.5K input + 500 output tokens, 2K requests/day</div>
+                <div class="costs">
+                    <div><span class="model">Premium (Claude Opus 4.7)</span><span class="amount">$420.00/mo</span></div>
+                    <div><span class="model">Mid (GPT-4o)</span><span class="amount">$195.00/mo</span></div>
+                    <div><span class="model">Budget (Gemini Flash)</span><span class="amount best">$13.20/mo</span></div>
+                </div>
+            </div>
+            <div class="scenario-card">
+                <h4>Content Generation</h4>
+                <div class="desc">1K input + 3K output tokens, 200 requests/day</div>
+                <div class="costs">
+                    <div><span class="model">Premium (GPT-5.5)</span><span class="amount">$570.00/mo</span></div>
+                    <div><span class="model">Mid (Claude Sonnet 4.6)</span><span class="amount">$288.00/mo</span></div>
+                    <div><span class="model">Budget (DeepSeek V4 Pro)</span><span class="amount best">$16.27/mo</span></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="savings-highlight">
+            <div class="big-number">$564K</div>
+            <p>Annual savings switching from GPT-5.5 to DeepSeek V4 Pro at 100M tokens/day</p>
+        </div>
+
+        <h2>Provider-by-Provider Breakdown</h2>
+
+        <h3>OpenAI</h3>
+        <p>The broadest model lineup (8 models). GPT-4o's 67% price drop made it a mid-tier option. GPT-5.5 remains the reasoning king at $5/$30. The new GPT-oss models (20B and 120B) are OpenAI's first budget-tier open-weight offerings. <strong>Best for:</strong> Complex reasoning, multimodal tasks, code generation.</p>
+
+        <h3>Anthropic</h3>
+        <p>Claude Opus 4.7 dropped from $15 to $5 input — a 67% reduction. Claude Sonnet 4.6 at $3/$15 is the best mid-tier value for long-context work (1M tokens). Haiku 4.5 at $1/$5 fills the budget gap. <strong>Best for:</strong> Long-form writing, analysis, extended context tasks.</p>
+
+        <h3>Google</h3>
+        <p>Gemini 2.0 Flash Lite ($0.075/$0.30) is the cheapest model in our database. Gemini 3.1 Pro ($2/$12) offers flagship quality at mid-tier pricing. All models support 1M context. <strong>Best for:</strong> High-volume budget workloads, long-context analysis.</p>
+
+        <h3>DeepSeek</h3>
+        <p>The price-to-performance champion. V4 Pro at $0.44/$0.87 with 1M context is absurdly cheap for its capability level. V4 Flash at $0.14/$0.28 is even cheaper. <strong>Best for:</strong> Cost-sensitive production workloads, high-volume processing.</p>
+
+        <h3>Mistral</h3>
+        <p>Mistral Large 3's 75% price drop (from $2 to $0.50) repositioned it as a budget model. Mistral Small 4 at $0.15/$0.60 competes directly with GPT-4o mini. <strong>Best for:</strong> European compliance needs, budget workloads.</p>
+
+        <h3>xAI</h3>
+        <p>Grok 3's 10x price hike ($3 → $30) makes it the most expensive model in our database. Grok 3 Mini at $3/$5 is more reasonable. <strong>Verdict:</strong> Hard to recommend at current pricing unless you need Grok-specific capabilities.</p>
+
+        <h3>Meta (via Together.ai)</h3>
+        <p>Llama 4 Scout ($0.11/$0.34) with 10M context is excellent for long-document workloads. Llama 3.1 8B ($0.10/$0.10) remains the cheapest model for simple tasks. <strong>Best for:</strong> Self-hosted flexibility, massive context windows.</p>
+
+        <h2>Decision Framework</h2>
+
+        <div class="verdict">
+            <h3>Which Model Should You Use?</h3>
+            <ul>
+                <li><strong>Tightest budget, simple tasks:</strong> Gemini 2.0 Flash Lite ($0.075/1M) — cheapest option, 1M context</li>
+                <li><strong>Best value for general use:</strong> DeepSeek V4 Pro ($0.44/1M) — 91% cheaper than GPT-5.5 with 1M context</li>
+                <li><strong>Best mid-tier quality:</strong> Claude Sonnet 4.6 ($3/1M) or GPT-5 ($1.25/1M) — strong reasoning at reasonable cost</li>
+                <li><strong>Maximum capability:</strong> GPT-5.5 ($5/1M) or Claude Opus 4.7 ($5/1M) — top-tier for complex tasks</li>
+                <li><strong>Longest context:</strong> Llama 4 Scout ($0.11/1M) — 10M context via Together.ai</li>
+                <li><strong>Code-heavy workloads:</strong> DeepSeek V4 Pro ($0.44/1M) or GPT-5.3 Codex ($1.75/1M)</li>
+                <li><strong>Batch processing:</strong> Any model via Batch API for 50% off — route to cheapest that meets quality needs</li>
+            </ul>
+        </div>
+
+        <h2>What to Watch in Q3 2026</h2>
+
+        <ul>
+            <li><strong>OpenAI GPT-6:</strong> Rumored for late Q2/Q3. Expect premium pricing at launch, with GPT-5.5 likely dropping to mid-tier.</li>
+            <li><strong>Anthropic Claude 5:</strong> Next-generation model expected to push context windows further.</li>
+            <li><strong>Google Gemini 4:</strong> Could reset the budget tier entirely if Flash pricing holds.</li>
+            <li><strong>DeepSeek V5:</strong> If the V4 trend continues, expect another 50%+ price cut.</li>
+            <li><strong>More batch APIs:</strong> Every provider will likely offer batch discounts by Q3.</li>
+        </ul>
+
+        <p>The trend is clear: prices will keep falling for budget and mid-tier models, while premium models hold steady or increase. The gap between "cheapest viable" and "best available" will keep widening.</p>
+
+        <h2>Methodology</h2>
+
+        <p>All pricing data is sourced directly from provider documentation and verified against API responses. Prices shown are per 1M tokens unless otherwise noted. Context windows reflect the maximum supported by each model. Data was last verified on May 14, 2026.</p>
+
+        <p>We track 33 models across 10 providers: OpenAI, Anthropic, Google, DeepSeek, Mistral, Cohere, Meta (via Together.ai), Moonshot, xAI, and AI21. Prices are checked monthly and updated in our <a href="pricing-changelog.html" style="color:var(--accent);">pricing changelog</a>.</p>
+
+        <div class="cta-inline">
+            <p><strong>Calculate your exact costs across all 33 models</strong></p>
+            <p style="font-size:14px;">Interactive calculators, savings comparisons, and model recommendations — free, no signup.</p>
+            <a href="calculator.html" class="btn-primary" style="display:inline-block;">Try the Calculator — Free</a>
+        </div>
+
+        <div class="social-share">
+            <a href="https://twitter.com/intent/tweet?text=State+of+LLM+Pricing+Q2+2026%3A+33+models%2C+10+providers.+GPT-4o+dropped+67%25%2C+Grok+3+jumped+10x.+Budget+models+now+under+%240.10%2F1M+tokens.&url=https%3A%2F%2Fgetapipulse.com%2Fblog-state-of-llm-pricing-q2-2026.html" target="_blank" rel="noopener" onclick="if(window.trackEvent)window.trackEvent('share_clicked',{platform:'x',post:'q2-pricing-report'})">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                Share on X
+            </a>
+            <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fgetapipulse.com%2Fblog-state-of-llm-pricing-q2-2026.html" target="_blank" rel="noopener" onclick="if(window.trackEvent)window.trackEvent('share_clicked',{platform:'linkedin',post:'q2-pricing-report'})">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                LinkedIn
+            </a>
+        </div>
+
+        <h2>Related Articles</h2>
+        <ul>
+            <li><a href="blog-2026-flagship-llm-cost-comparison.html">2026 Flagship LLM Cost Comparison</a> — GPT-5.5 vs Claude Opus 4.7 vs Gemini 3.1 Pro vs DeepSeek V4 Pro</li>
+            <li><a href="blog-cheapest-llm.html">Cheapest LLM APIs in 2026</a> — Full ranking of every model by price</li>
+            <li><a href="blog-cost-optimization-guide.html">The Complete Guide to LLM Cost Optimization</a> — 10 strategies to cut your API spend</li>
+            <li><a href="blog-multi-model-routing.html">Multi-Model Routing</a> — How to save 60% by routing requests intelligently</li>
+            <li><a href="blog-best-budget-llm-apis-2026.html">Best Budget LLM APIs</a> — If you need the cheapest option, start here</li>
+        </ul>
+    </article>
+    </main>
+
+    <footer>
+        <p>Pricing data last verified: <span class="verified-date"></span></p>
+        <p>&copy; 2026 APIpulse. <a href="index.html">Home</a> &middot; <a href="blog.html">Blog</a> &middot; <a href="about.html">About</a> &middot; <a href="pricing.html">Pricing</a></p>
+    </footer>
+</body>
+</html>

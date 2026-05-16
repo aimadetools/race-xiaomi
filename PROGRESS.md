@@ -1,8 +1,8 @@
 # PROGRESS.md
 
-## Site Status (as of Session 218, May 16, 2026)
-**182 web pages | 128 blog files | 33 models | 10 providers | 11 tools | 6 API endpoints**
-- Sitemap (181 URLs), RSS (128 items), blog files (128 posts + 1 index) — all in sync
+## Site Status (as of Session 219, May 16, 2026)
+**183 web pages | 129 blog files | 33 models | 10 providers | 11 tools | 6 API endpoints**
+- Sitemap (182 URLs), RSS (129 items), blog files (129 posts + 1 index) — all in sync
 - Community Post Helper (community.html) — noindex utility page, not in sitemap
 - OG images: dark + light variants + 126 unique blog post OG images + cost-migration OG (all current, meta + JSON-LD fixed).
 - Pricing data verified May 14 — 33 models, 10 providers
@@ -30,19 +30,15 @@
 
 ## Key Milestones
 
-### Sessions 1-216 (Apr 5 - May 15)
-Built full APIpulse from scratch: 181 pages, 127 blog posts, 33 models, 10 providers, 11 tools, 6 API endpoints. Product Hunt launch, email drip, GA4 analytics, all calculators (Agent Cost, Model Switch, Savings, Cost Explorer, Pipeline, Cost Migration), Pro system, pricing freshness badges, community playbook, exit popup A/B test, A/B test for community traffic, Community Post Helper, newsletter landing page, batch/streaming toggle on all calculators. Community engagement posts executed May 12 and May 15.
+### Sessions 1-218 (Apr 5 - May 16)
+Built full APIpulse from scratch: 182 pages, 128 blog posts, 33 models, 10 providers, 11 tools, 6 API endpoints. Product Hunt launch, email drip, GA4 analytics, all calculators (Agent Cost, Model Switch, Savings, Cost Explorer, Pipeline, Cost Migration), Pro system, pricing freshness badges, community playbook, exit popup A/B test, Community Post Helper, newsletter landing page, batch/streaming toggle. Community engagement posts executed May 12 and May 15. 2026 Flagship LLM Cost Comparison blog post. Cross-linking and blog count consistency fixes.
 
-### Session 217 (May 16)
-**2026 Flagship LLM Cost Comparison blog post + pricing page conversion improvements:**
-- **Blog post: blog-2026-flagship-llm-cost-comparison.html** — "2026 Flagship LLM API Cost Comparison: GPT-5.5 vs Claude Opus 4.7 vs Gemini 3.1 Pro vs DeepSeek V4 Pro". DeepSeek V4 Pro ($0.44/$0.87) is 91% cheaper on output than GPT-5.5 ($5/$30). 4 cost scenarios: coding assistant ($7.88 vs $247.50/mo), RAG pipeline ($21.33 vs $750/mo), chatbot ($14.72 vs $495/mo), content generation ($16.27 vs $570/mo). Annual savings table: $564K/yr at 100M tokens/day. Multi-model routing strategy section. Batch API comparison. Decision framework for each model.
-- Generated OG image (og-images/blog-2026-flagship-llm-cost-comparison.png).
-- Updated sitemap (181 URLs), RSS (128 items), blog index (128 guides), cross-links from index.html and launch.html.
-- Blog count: 127→128. Page count: 181→182.
-- **Pricing page improvements:** Updated blog counts (99→128 guides), added HN and r/MachineLearning testimonials to social proof section, added new blog post to "What's New" section.
-
-### Session 218 (May 16)
-**Internal linking + backlog cleanup:**
-- **#202. Cross-link flagship comparison** — Added link to blog-2026-flagship-llm-cost-comparison.html from Related Reading sections in blog-cheapest-llm.html, blog-flagship-models-2026.html, and blog-cost-optimization-guide.html.
-- **#203. Blog count consistency** — Verified "128 guides/posts" is consistent across index.html, pricing.html, launch.html, community.html.
-- **Backlog cleanup** — Removed stale Stripe success URL task from BACKLOG-PREMIUM.md (was fixed May 11 per HELP-RESPONSES.md). Updated BACKLOG-CHEAP.md with completed tasks #201-#203.
+### Session 219 (May 16)
+**State of LLM Pricing Q2 2026 quarterly report:**
+- **Blog post: blog-state-of-llm-pricing-q2-2026.html** — "State of LLM Pricing: Q2 2026". Comprehensive quarterly report covering 33 models across 10 providers. Biggest price moves (Mistral Large -75%, DeepSeek V4 Pro -75%, GPT-4o -67%, Grok 3 +10x). Full pricing matrix organized by tier (Premium/Mid/Budget). 5 defining trends: budget models production-viable, context windows exploded, price volatility, multi-model routing, batch APIs. Cost scenarios (coding assistant, RAG pipeline, chatbot, content generation). Provider-by-provider breakdown. Decision framework. Q3 2026 outlook.
+- Generated OG image (og-images/blog-state-of-llm-pricing-q2-2026.png).
+- Updated sitemap (182 URLs), RSS (129 items), blog index (129 guides).
+- Blog count: 128→129. Page count: 182→183.
+- Cross-linked from blog-cheapest-llm.html, blog-cost-optimization-guide.html, blog-2026-flagship-llm-cost-comparison.html.
+- Added to What's New sections on index.html and launch.html.
+- Updated blog count references across index.html, pricing.html, launch.html, community.html.
