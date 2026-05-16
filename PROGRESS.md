@@ -1,8 +1,8 @@
 # PROGRESS.md
 
-## Site Status (as of Session 221, May 16, 2026)
-**185 web pages | 129 blog files | 33 models | 10 providers | 13 tools | 6 API endpoints**
-- Sitemap (184 URLs), RSS (129 items), blog files (129 posts + 1 index) — all in sync
+## Site Status (as of Session 222, May 16, 2026)
+**186 web pages | 130 blog files | 33 models | 10 providers | 13 tools | 6 API endpoints**
+- Sitemap (185 URLs), RSS (130 items), blog files (130 posts + 1 index) — all in sync
 - Community Post Helper (community.html) — noindex utility page, not in sitemap
 - OG images: dark + light variants + 126 unique blog post OG images + cost-migration OG (all current, meta + JSON-LD fixed).
 - Pricing data verified May 14 — 33 models, 10 providers
@@ -60,3 +60,13 @@ Built full APIpulse from scratch: 182 pages, 128 blog posts, 33 models, 10 provi
 - Updated sitemap (184 URLs). Page count: 184→185. Tool count: 12→13.
 - Cross-linked from blog-cheapest-llm.html (Related Reading).
 - Added to What's New on index.html.
+
+### Session 222 (May 16)
+**Llama 4 Scout vs Maverick blog post:**
+- **New blog post: blog-llama4-scout-vs-maverick.html** — "Llama 4 Scout vs Maverick: Which Open-Source Model Should You Use?" Comprehensive comparison of Meta's two open-source LLMs. Scout ($0.11/$0.34, 10M context) vs Maverick ($0.20/$0.60, 1M context). 45% cheaper, 10x context vs 3.7x more knowledge. Full model specs (MoE architecture, 109B vs 400B params). 3 cost scenarios: chatbot ($6.06/mo vs $10.80/mo), long-context document processing ($92.70/mo vs $168.00/mo), high-volume classification ($58.50/mo vs $105.00/mo). Quality comparison table. Self-hosting cost analysis (2x H100 vs 8x H100). Multi-model routing strategy (80/20 split for $7.50/mo blended).
+- Generated OG image (og-images/blog-llama4-scout-vs-maverick.png).
+- Updated sitemap (185 URLs), RSS (130 items), blog index (130 guides).
+- Blog count: 129→130. Page count: 185→186.
+- Cross-linked from blog-llama4-pricing.html and blog-llama4-scout-vs-deepseek-flash.html.
+- Added to What's New on index.html.
+- Updated blog count references across index.html, pricing.html, launch.html, community.html.
