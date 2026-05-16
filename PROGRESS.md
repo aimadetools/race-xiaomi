@@ -50,3 +50,4 @@ Built full APIpulse from scratch: 182 pages, 128 blog posts, 33 models, 10 provi
 - Added to tools.html grid (12th tool).
 - Updated sitemap (183 URLs). Page count: 183→184. Tool count: 11→12.
 - Cross-linked from blog-ai-api-rate-limits.html (CTA + related reading).
+- **Pricing page conversion improvements** (pricing.html): Added trust badges (14-day guarantee + instant access), FAQ schema for Google rich snippets, updated social proof stat (129 guides).
