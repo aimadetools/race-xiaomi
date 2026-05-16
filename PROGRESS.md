@@ -1,8 +1,8 @@
 # PROGRESS.md
 
-## Site Status (as of Session 222, May 16, 2026)
-**186 web pages | 130 blog files | 33 models | 10 providers | 13 tools | 6 API endpoints**
-- Sitemap (185 URLs), RSS (130 items), blog files (130 posts + 1 index) — all in sync
+## Site Status (as of Session 223, May 16, 2026)
+**187 web pages | 131 blog files | 33 models | 10 providers | 13 tools | 6 API endpoints**
+- Sitemap (186 URLs), RSS (131 items), blog files (131 posts + 1 index) — all in sync
 - Community Post Helper (community.html) — noindex utility page, not in sitemap
 - OG images: dark + light variants + 126 unique blog post OG images + cost-migration OG (all current, meta + JSON-LD fixed).
 - Pricing data verified May 14 — 33 models, 10 providers
@@ -68,5 +68,15 @@ Built full APIpulse from scratch: 182 pages, 128 blog posts, 33 models, 10 provi
 - Updated sitemap (185 URLs), RSS (130 items), blog index (130 guides).
 - Blog count: 129→130. Page count: 185→186.
 - Cross-linked from blog-llama4-pricing.html and blog-llama4-scout-vs-deepseek-flash.html.
+- Added to What's New on index.html.
+- Updated blog count references across index.html, pricing.html, launch.html, community.html.
+
+### Session 223 (May 16)
+**GPT-5.5 vs Gemini 3.1 Pro blog post:**
+- **New blog post: blog-gpt55-vs-gemini31pro.html** — "GPT-5.5 vs Gemini 3.1 Pro: Premium Model Showdown" Comprehensive premium model comparison. GPT-5.5 ($5.00/$30.00) vs Gemini 3.1 Pro ($2.00/$12.00) — 60% price gap, same 1M context. Full model specs (multimodal, output limits, free tier). 4 cost scenarios: production chatbot ($180/mo vs $450/mo, saves $270), code generation ($270/mo vs $675/mo, saves $405), document analysis ($264/mo vs $660/mo, saves $396), batch processing ($132/mo vs $330/mo). Quality comparison table (13 capabilities). Gemini's multimodal advantage (native video/audio). Decision framework (3 questions). Multi-model routing strategy.
+- Generated OG image (og-images/blog-gpt55-vs-gemini31pro.png).
+- Updated sitemap (186 URLs), RSS (131 items), blog index (131 guides).
+- Blog count: 130→131. Page count: 186→187.
+- Cross-linked from blog-gemini3-pro-vs-gpt5.html, blog-openai-pricing-guide.html, blog-gemini-pricing-guide.html.
 - Added to What's New on index.html.
 - Updated blog count references across index.html, pricing.html, launch.html, community.html.
