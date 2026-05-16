@@ -6,10 +6,12 @@
 - **#198. Monitor community post performance** — After posts go live, check GA4 referral traffic by source (reddit, hn). Track which posts drive most visitors.
 - **#199. Reply to community comments** — After posting, engage with comments on Reddit/HN. Be helpful, share data, answer questions. First 2 hours are critical.
 - **#200. Submit to TLDR newsletter** — Pitch ready in COMMUNITY-ENGAGEMENT.md. Best after community posts prove traction.
-- **#205. Create "Budget LLM Showdown" comparison page** — Dedicated interactive page comparing all budget-tier models ($0.075-$0.60/1M) side by side. Targets "cheapest LLM API" keyword.
 
 ### Completed (Session 220)
 ✅ #207. Rate Limit Calculator tool — rate-limit-calculator.html with 33 models, RPM/TPM limits, tier-aware, 5 presets, cost at throughput. Added to tools.html (12th tool), sitemap (183 URLs), cross-linked from blog-ai-api-rate-limits.html.
+
+### Completed (Session 221)
+✅ #205. Budget LLM Showdown — budget-llm-showdown.html. Interactive comparison of all budget-tier models. Customizable usage, 4 presets, sort by cost/input/output/context, cost per request, best-for labels, summary cards, insights. Added to tools.html (13th tool), sitemap (184 URLs), cross-linked from blog-cheapest-llm.html.
 ✅ #204. Pricing page conversion optimization — Added trust badges (14-day guarantee + instant access indicators), updated social proof stat to 129 guides.
 ✅ #206. FAQ schema on pricing page — Added JSON-LD FAQPage schema with all 6 FAQ items for Google rich snippets.
 
