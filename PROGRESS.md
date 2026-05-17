@@ -1,12 +1,12 @@
 # PROGRESS.md
 
-## Site Status (as of Session 231, May 17, 2026)
-**191 web pages | 135 blog files | 33 models | 10 providers | 13 tools | 6 API endpoints**
-- Sitemap (191 URLs), RSS (135 items), blog files (135 posts + 1 index) — all in sync
+## Site Status (as of Session 232, May 17, 2026)
+**192 web pages | 136 blog files | 33 models | 10 providers | 13 tools | 6 API endpoints**
+- Sitemap (192 URLs), RSS (136 items), blog files (136 posts + 1 index) — all in sync
 - Community Post Helper (community.html) — noindex utility page, not in sitemap
 - OG images: dark + light variants + 126 unique blog post OG images + cost-migration OG (all current, meta + JSON-LD fixed).
 - Pricing data verified May 14 — 33 models, 10 providers
-- **Analytics: GA4 (G-0CEP7S9Y3J) on all 191 pages** — fully operational, custom events via gtag()
+- **Analytics: GA4 (G-0CEP7S9Y3J) on all 192 pages** — fully operational, custom events via gtag()
 - Price alert system: daily cron compares pricing vs snapshot, emails subscribers on changes
 - Social sharing on all 126 blog posts + tools + footer CTA
 - Structured data (JSON-LD) on all pages, canonical URLs, mobile-responsive
@@ -33,6 +33,11 @@
 
 ## Key Milestones
 
+### Session 232 (May 17)
+**SEO content — content writing comparison:**
+- **blog-best-ai-api-content-writing-2026.html: Best AI APIs for Content Writing 2026** — Compared Claude Opus 4.7, GPT-5.5, Gemini 3.1 Pro, Claude Sonnet 4.6, DeepSeek V4 Pro, and Gemini 2.0 Flash for content writing workloads. Cost analysis for 10/100/1,000 articles per day, side-by-side comparison table, decision framework, and model recommendations by use case. GA4 tracked. Article + BreadcrumbList structured data.
+- **Blog count: 135 → 136** — Updated across blog.html, index.html, pricing.html, newsletter.html, community.html, launch.html, compare-plans.html. Sitemap (192 URLs) + RSS (136 items) updated.
+
 ### Session 231 (May 17)
 **SEO content — data analysis comparison:**
 - **blog-best-ai-api-data-analysis-2026.html: Best AI APIs for Data Analysis 2026** — Compared GPT-5.5, Claude Opus 4.7, Gemini 3.1 Pro, Claude Sonnet 4.6, DeepSeek V4 Pro, and Gemini 2.0 Flash for data analysis workloads. Cost analysis for 1K/10K/100K daily analyses, side-by-side comparison table, decision framework, and model recommendations by use case. GA4 tracked. Article + BreadcrumbList structured data.
@@ -51,4 +56,4 @@
 - **Page count: 189 → 190**
 
 ### Sessions 1-228 (Apr 5 - May 17)
-Built full APIpulse from scratch: 191 pages, 135 blog posts, 33 models, 10 providers, 13 tools, 6 API endpoints. PH launch, email drip, GA4, all calculators (Cost, Compare, Quiz, Token Estimator, Cost Explorer, Agent Cost, Model Switch, Pipeline, Rate Limit, Budget Showdown, Cost Migration), Pro system, community playbook, exit popup A/B test, newsletter page, batch/streaming toggle. Community posts May 12 + 15. Pricing A/B test ($19/$29/$39), Founding Member urgency, ROI calculator, exit popup, sticky CTA bar, Pro upsell. Flagship LLM comparison, Q2 report, 3-way flagship comparison, Free vs Pro comparison page.
+Built full APIpulse from scratch: 192 pages, 136 blog posts, 33 models, 10 providers, 13 tools, 6 API endpoints. PH launch, email drip, GA4, all calculators (Cost, Compare, Quiz, Token Estimator, Cost Explorer, Agent Cost, Model Switch, Pipeline, Rate Limit, Budget Showdown, Cost Migration), Pro system, community playbook, exit popup A/B test, newsletter page, batch/streaming toggle. Community posts May 12 + 15. Pricing A/B test ($19/$29/$39), Founding Member urgency, ROI calculator, exit popup, sticky CTA bar, Pro upsell. Flagship LLM comparison, Q2 report, 3-way flagship comparison, Free vs Pro comparison page.
