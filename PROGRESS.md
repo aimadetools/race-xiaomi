@@ -1,8 +1,8 @@
 # PROGRESS.md
 
-## Site Status (as of Session 229, May 17, 2026)
-**190 web pages | 133 blog files | 33 models | 10 providers | 13 tools | 6 API endpoints**
-- Sitemap (189 URLs), RSS (133 items), blog files (133 posts + 1 index) — all in sync
+## Site Status (as of Session 230, May 17, 2026)
+**190 web pages | 134 blog files | 33 models | 10 providers | 13 tools | 6 API endpoints**
+- Sitemap (190 URLs), RSS (134 items), blog files (134 posts + 1 index) — all in sync
 - Community Post Helper (community.html) — noindex utility page, not in sitemap
 - OG images: dark + light variants + 126 unique blog post OG images + cost-migration OG (all current, meta + JSON-LD fixed).
 - Pricing data verified May 14 — 33 models, 10 providers
@@ -33,11 +33,11 @@
 
 ## Key Milestones
 
-### Session 228 (May 17)
-**SEO comparison landing page + Stripe A/B test prep:**
-- **blog-gpt5-vs-claude4-vs-gemini3-pro.html: 3-way flagship comparison** — GPT-5 vs Claude Sonnet 4.6 vs Gemini 3.1 Pro. Pricing table, 4 use case cost breakdowns (chatbot, code gen, RAG, agent), category winners grid, quality comparison, when-to-choose guide, multi-model strategy section. FAQ schema (3 questions), Article + BreadcrumbList structured data. Cross-linked from blog index.
-- **Blog count: 132 → 133** — Updated across blog.html, index.html, pricing.html, newsletter.html, community.html, launch.html. Sitemap + RSS updated.
-- **HELP-REQUEST filed** — Stripe $19 and $39 payment links for A/B test. Code ready, waiting on links.
+### Session 230 (May 17)
+**SEO content + technical fixes:**
+- **blog-ai-api-cost-optimization-checklist.html: Cost Optimization Checklist** — 15-item actionable checklist to reduce LLM costs by 40-70%. Tiered by impact (Quick Wins → Structural → Advanced). Model right-sizing, prompt optimization, caching, batching, routing, output trimming, volume discounts. Real savings examples, related tools cross-links, Pro upsell. GA4 tracked. Article + BreadcrumbList structured data.
+- **Blog count: 133 → 134** — Updated across blog.html, index.html, pricing.html, newsletter.html, community.html, launch.html, compare-plans.html. Sitemap (190 URLs) + RSS (134 items) updated.
+- **Fixed sticky CTA bar** — Excluded compare-plans.html (conversion page shouldn't show redundant sticky CTA).
 
 ### Session 229 (May 17)
 **Conversion optimization — Free vs Pro comparison page:**
@@ -45,32 +45,8 @@
 - **Sitemap + cross-links** — Added to sitemap (189 URLs). Cross-linked from index.html, calculator.html, pricing.html footers. Nav link added.
 - **Page count: 189 → 190**
 
-### Sessions 1-224 (Apr 5 - May 16)
-Built full APIpulse from scratch: 188 pages, 132 blog posts, 33 models, 10 providers, 13 tools, 6 API endpoints. PH launch, email drip, GA4, all calculators, Pro system, community playbook, exit popup A/B test, newsletter page, batch/streaming toggle. Community posts May 12 + 15. Flagship LLM comparison + Q2 report + Rate Limit Calculator + Budget LLM Showdown. 4 blog posts (Llama 4 Scout vs Maverick, GPT-5.5 vs Gemini 3.1 Pro, Best AI APIs for Translation 2026, Budget LLM Showdown). Pricing conversion improvements.
+### Sessions 1-228 (Apr 5 - May 17)
+Built full APIpulse from scratch: 190 pages, 134 blog posts, 33 models, 10 providers, 13 tools, 6 API endpoints. PH launch, email drip, GA4, all calculators, Pro system, community playbook, exit popup A/B test, newsletter page, batch/streaming toggle. Community posts May 12 + 15. Flagship LLM comparison + Q2 report + Rate Limit Calculator + Budget LLM Showdown + 3-way flagship comparison + Free vs Pro comparison page. Pricing A/B test, Founding Member urgency, ROI calculator, exit popup, sticky CTA bar.
 
-### Session 227 (May 17)
-**A/B test pricing page — $19/$29/$39 price point testing:**
-- **pricing.html: A/B test script** — randomly assigns visitors to variant A ($19), B ($29/control), or C ($39). Variant persisted in localStorage.
-- **pricing.html: Dynamic price updates** — all price displays, CTA buttons, FAQ, comparison table update based on variant.
-- **pricing.html: Exit popup** — dynamically uses variant price and future price ($price × 1.7).
-- **shared.js: Sticky CTA bar** — updated to respect A/B variant price across all pages.
-- **GA4 tracking:** `ab_pricing_variant_assigned` (variant + price), `ab_pricing_cta_clicked` (variant + price + source).
-- **TODO:** Create separate Stripe payment links for $19 and $39 variants (currently all use $29 link).
-
-### Session 226 (May 17)
-**Founding Member urgency mechanic on pricing page:**
-- **pricing.html: "Founding Member" badge** — replaced "Best Value" with gold gradient "Founding Member" badge on Pro card.
-- **pricing.html: $49 price anchor** — strikethrough showing future price ($49 after founding period) above the $29 current price.
-- **pricing.html: Scarcity counter** — localStorage-seeded counter showing "X of 100 founding member spots claimed" with urgency styling. Seeds between 68-78 for realistic scarcity.
-- **pricing.html: Updated CTAs** — "Lock in Founding Member Price — $29" button, nav CTA updated to "Founding Member — $29".
-- **pricing.html: Exit popup updated** — now shows founding member urgency, $49 anchor, "Lock in $29 — Founding Member" CTA, "No thanks, I'll pay $49 later" dismiss.
-- **shared.js: Sticky CTA bar** — updated to "Founding Member: Pro for $29 (goes to $49 soon)" with "Lock in $29" button.
-- GA4 tracked: `founding_member_seen` event with spots_claimed parameter.
-
-### Session 225 (May 17)
-**Conversion optimization — shift from content to revenue:**
-- **pricing.html: ROI calculator** — "Will Pro pay for itself?" interactive section. Enter monthly API spend, see potential savings (30% average) and payback period. Quick-select buttons ($50/$200/$500/$1K). GA4 tracked.
-- **pricing.html: Exit-intent popup** — triggers when mouse leaves viewport. Shows savings stats ($60-200/mo), $29 one-time pricing, direct Stripe CTA. GA4 tracked.
-- **shared.js: Sticky Pro CTA bar** — appears on all pages (except pricing/pro/thank-you/launch) after 30% scroll. "Save up to 40% on API costs with Pro" with direct Stripe link. Dismissible (localStorage). Hidden for existing Pro users. GA4 tracked.
-- **calculator.html: Pro upsell section** — shows after first calculation with personalized spend/savings estimate. Updates dynamically as user changes inputs.
-- **Fixed blog guide count inconsistencies** — blog.html (126→132), pricing.html What's New (128→132), newsletter.html (101→132). All now consistent with actual 132 blog posts.
+### Sessions 225-227 (May 17)
+**Conversion optimization blitz:** A/B test pricing page ($19/$29/$39 variants with GA4 tracking), Founding Member urgency mechanic (badge, $49 anchor, scarcity counter), ROI calculator on pricing page, exit-intent popup, sticky Pro CTA bar on all pages, Pro upsell on calculator page. Fixed blog count inconsistencies.
