@@ -1,6 +1,6 @@
 # PROGRESS.md
 
-## Site Status (as of Session 224, May 16, 2026)
+## Site Status (as of Session 225, May 17, 2026)
 **188 web pages | 132 blog files | 33 models | 10 providers | 13 tools | 6 API endpoints**
 - Sitemap (187 URLs), RSS (132 items), blog files (132 posts + 1 index) — all in sync
 - Community Post Helper (community.html) — noindex utility page, not in sitemap
@@ -72,3 +72,11 @@ Built full APIpulse from scratch: 184 pages, 128 blog posts, 33 models, 10 provi
 - Cross-linked from blog-cheapest-llm.html, blog-multi-model-routing.html, blog-cost-optimization-guide.html.
 - Added to What's New on index.html.
 - Updated blog count references across index.html, pricing.html, launch.html, community.html.
+
+### Session 225 (May 17)
+**Conversion optimization — shift from content to revenue:**
+- **pricing.html: ROI calculator** — "Will Pro pay for itself?" interactive section. Enter monthly API spend, see potential savings (30% average) and payback period. Quick-select buttons ($50/$200/$500/$1K). GA4 tracked.
+- **pricing.html: Exit-intent popup** — triggers when mouse leaves viewport. Shows savings stats ($60-200/mo), $29 one-time pricing, direct Stripe CTA. GA4 tracked.
+- **shared.js: Sticky Pro CTA bar** — appears on all pages (except pricing/pro/thank-you/launch) after 30% scroll. "Save up to 40% on API costs with Pro" with direct Stripe link. Dismissible (localStorage). Hidden for existing Pro users. GA4 tracked.
+- **calculator.html: Pro upsell section** — shows after first calculation with personalized spend/savings estimate. Updates dynamically as user changes inputs.
+- **Fixed blog guide count inconsistencies** — blog.html (126→132), pricing.html What's New (128→132), newsletter.html (101→132). All now consistent with actual 132 blog posts.
