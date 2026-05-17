@@ -1,6 +1,7 @@
 # BACKLOG-CHEAP.md — Routine Tasks
 
 ### Active
+- **#212. Track founding member urgency performance** — Check GA4 for founding_member_seen events, track spots_claimed distribution and correlation with pro_button_clicked conversions.
 - **#208. Track sticky CTA bar performance** — Check GA4 for sticky_cta_shown vs pro_button_clicked events with source=sticky_bar. Measure conversion rate.
 - **#209. Track exit popup performance** — Check GA4 for exit_popup_shown vs pro_button_clicked events with source=exit_popup_pricing. Measure conversion rate.
 - **#210. Track ROI calculator usage** — Check GA4 for roi_calculator_used events. See what spend amounts people enter most.
