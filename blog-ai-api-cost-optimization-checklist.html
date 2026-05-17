@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI API Cost Optimization Checklist: 15 Ways to Cut Your LLM Bill — APIpulse</title>
+    <meta name="description" content="Actionable checklist to reduce AI API costs by 40-70%. Model selection, caching, prompt optimization, batching, and monitoring strategies with real savings examples.">
+    <meta name="keywords" content="AI API cost optimization, reduce LLM costs, AI API savings, prompt optimization, model selection, API caching, cost monitoring, LLM cost reduction checklist">
+    <meta property="og:title" content="AI API Cost Optimization Checklist: 15 Ways to Cut Your LLM Bill — APIpulse">
+    <meta property="og:description" content="Actionable checklist to reduce AI API costs by 40-70%. Model selection, caching, prompt optimization, batching, and monitoring strategies.">
+    <meta property="og:type" content="article">
+    <meta property="article:published_time" content="2026-05-17">
+    <meta property="article:modified_time" content="2026-05-17">
+    <meta property="article:author" content="APIpulse">
+    <meta property="og:image" content="https://getapipulse.com/og-images/blog-ai-api-cost-optimization-checklist.png">
+    <meta property="og:url" content="https://getapipulse.com/blog-ai-api-cost-optimization-checklist.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="AI API Cost Optimization Checklist: 15 Ways to Cut Your LLM Bill — APIpulse">
+    <meta name="twitter:image" content="https://getapipulse.com/og-images/blog-ai-api-cost-optimization-checklist.png">
+    <meta name="twitter:description" content="Actionable checklist to reduce AI API costs by 40-70%. Model selection, caching, prompt optimization, batching, and monitoring strategies.">
+    <link rel="canonical" href="https://getapipulse.com/blog-ai-api-cost-optimization-checklist.html">
+    <link rel="alternate" type="application/rss+xml" title="APIpulse Blog" href="https://getapipulse.com/rss.xml">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="styles.css">
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0CEP7S9Y3J"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-0CEP7S9Y3J');
+    </script>
+    <script src="analytics.js" defer></script>
+    <script src="dynamic-date.js" defer></script>
+    <script src="shared.js" defer></script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "AI API Cost Optimization Checklist: 15 Ways to Cut Your LLM Bill",
+        "description": "Actionable checklist to reduce AI API costs by 40-70%. Model selection, caching, prompt optimization, batching, and monitoring strategies.",
+        "datePublished": "2026-05-17",
+        "dateModified": "2026-05-17",
+        "author": { "@type": "Organization", "name": "APIpulse" },
+        "publisher": { "@type": "Organization", "name": "APIpulse", "url": "https://getapipulse.com" },
+        "url": "https://getapipulse.com/blog-ai-api-cost-optimization-checklist.html",
+        "image": "https://getapipulse.com/og-images/blog-ai-api-cost-optimization-checklist.png"
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Blog", "item": "https://getapipulse.com/blog.html" },
+            { "@type": "ListItem", "position": 2, "name": "AI API Cost Optimization Checklist", "item": "https://getapipulse.com/blog-ai-api-cost-optimization-checklist.html" }
+        ]
+    }
+    </script>
+    <style>
+        .content { max-width: 800px; margin: 0 auto; padding: 120px 24px 80px; }
+        h1 { font-size: 40px; font-weight: 800; margin-bottom: 12px; }
+        .subtitle { color: var(--text-secondary); font-size: 18px; margin-bottom: 48px; }
+
+        .article { max-width: 700px; margin: 0 auto; }
+        .article h1 { font-size: 36px; margin-bottom: 16px; }
+        .article h2 { font-size: 24px; font-weight: 700; margin: 32px 0 16px; }
+        .article h3 { font-size: 18px; font-weight: 600; margin: 24px 0 12px; }
+        .article p { color: var(--text-secondary); margin-bottom: 16px; line-height: 1.7; }
+        .article ul, .article ol { color: var(--text-secondary); padding-left: 24px; margin-bottom: 16px; }
+        .article li { margin-bottom: 8px; }
+        .article strong { color: var(--text-primary); }
+        .article code {
+            background: var(--bg-card); padding: 2px 8px; border-radius: 4px;
+            font-size: 14px; color: var(--accent);
+        }
+        .article blockquote {
+            border-left: 3px solid var(--accent); padding-left: 20px; margin: 20px 0;
+            color: var(--text-secondary); font-style: italic;
+        }
+        .back-link {
+            display: inline-flex; align-items: center; gap: 6px;
+            font-size: 14px; color: var(--text-secondary); margin-bottom: 32px;
+        }
+        .back-link:hover { color: var(--text-primary); }
+
+        .cta-inline {
+            background: var(--bg-secondary); border: 1px solid var(--accent);
+            border-radius: 12px; padding: 24px; margin: 32px 0; text-align: center;
+        }
+        .cta-inline p { margin-bottom: 12px; }
+        .share-section {
+            margin-top: 32px; padding-top: 24px; border-top: 1px solid var(--border);
+            text-align: center;
+        }
+        .share-section p { color: var(--text-secondary); font-size: 14px; margin-bottom: 12px; }
+        .share-btn {
+            display: inline-block; background: var(--bg-card); color: var(--text-primary);
+            padding: 8px 20px; border-radius: 8px; font-size: 14px; font-weight: 500;
+            border: 1px solid var(--border); transition: all 0.2s;
+        }
+        .share-btn:hover { background: var(--accent); color: white; border-color: var(--accent); }
+
+        .checklist-item {
+            background: var(--bg-secondary); border: 1px solid var(--border);
+            border-radius: 10px; padding: 20px; margin: 16px 0;
+        }
+        .checklist-item h3 { margin-top: 0; }
+        .checklist-item .impact {
+            display: inline-block; background: rgba(34,197,94,0.15); color: var(--green);
+            padding: 2px 10px; border-radius: 6px; font-size: 12px; font-weight: 600;
+            margin-bottom: 8px;
+        }
+        .checklist-item .impact.high { background: rgba(239,68,68,0.15); color: #ef4444; }
+        .checklist-item .impact.medium { background: rgba(234,179,8,0.15); color: #eab308; }
+
+        .savings-example {
+            background: var(--bg-card); border: 1px solid var(--border);
+            border-radius: 8px; padding: 16px; margin: 12px 0;
+            font-size: 14px;
+        }
+        .savings-example .before { color: #ef4444; text-decoration: line-through; }
+        .savings-example .after { color: var(--green); font-weight: 700; }
+
+        .related-tools {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 12px; margin: 20px 0;
+        }
+        .related-tool {
+            background: var(--bg-secondary); border: 1px solid var(--border);
+            border-radius: 10px; padding: 16px; text-align: center;
+            transition: border-color 0.2s;
+        }
+        .related-tool:hover { border-color: var(--accent); }
+        .related-tool a { color: var(--text-primary); text-decoration: none; font-weight: 600; }
+        .related-tool p { color: var(--text-muted); font-size: 13px; margin: 4px 0 0; }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="/" class="nav-logo">⚡ APIpulse</a>
+            <div class="nav-links">
+                <a href="/pricing.html">Pricing</a>
+                <a href="/calculator.html">Calculator</a>
+                <a href="/tools.html">Tools</a>
+                <a href="/blog.html">Blog</a>
+                <a href="/compare-plans.html" class="nav-cta">Compare Plans</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="content">
+        <a href="/blog.html" class="back-link">← Back to Blog</a>
+
+        <article class="article">
+            <h1>AI API Cost Optimization Checklist: 15 Ways to Cut Your LLM Bill</h1>
+            <p class="subtitle">A practical, prioritized checklist to reduce your AI API spending by 40-70% without sacrificing quality. Each item includes expected savings and implementation difficulty.</p>
+
+            <p>Most developers overpay for AI APIs by 2-5x. Not because the prices are wrong, but because they're using the same model for everything, sending bloated prompts, and not monitoring their spending. This checklist fixes that.</p>
+
+            <p>We've helped teams save <strong>$2,000-$15,000/month</strong> on their AI API bills using these exact strategies. Work through them in order — the first 5 items typically deliver 60% of the savings.</p>
+
+            <!-- Tier 1: Quick Wins -->
+            <h2>Tier 1: Quick Wins (Do These First — 60% of Savings)</h2>
+
+            <div class="checklist-item">
+                <span class="impact high">HIGH IMPACT</span>
+                <h3>1. Right-Size Your Models</h3>
+                <p>You don't need GPT-5 for every task. Most requests can be handled by smaller, cheaper models with identical output quality.</p>
+                <ul>
+                    <li><strong>Classification tasks:</strong> Use GPT-5 Mini ($0.15/1M input) instead of GPT-5 ($2.50/1M input) — <strong>94% cheaper</strong></li>
+                    <li><strong>Summarization:</strong> Claude Haiku 4.5 often matches Sonnet quality at 1/5 the cost</li>
+                    <li><strong>Simple Q&A:</strong> Gemini 2.0 Flash Lite at $0.0375/1M tokens handles most chatbot use cases</li>
+                </ul>
+                <div class="savings-example">
+                    <strong>Example:</strong> A customer support bot handling 10K requests/day<br>
+                    <span class="before">All GPT-5: $750/month</span> → <span class="after">GPT-5 Mini for simple + GPT-5 for complex: $120/month</span>
+                </div>
+                <p><strong>Tool:</strong> Use the <a href="/calculator.html">API Cost Calculator</a> to compare costs across all 33 models for your specific workload.</p>
+            </div>
+
+            <div class="checklist-item">
+                <span class="impact high">HIGH IMPACT</span>
+                <h3>2. Optimize Your Prompts</h3>
+                <p>Prompt bloat is the #1 hidden cost. Every token in your prompt is charged at input rates — and most prompts are 3-5x longer than they need to be.</p>
+                <ul>
+                    <li><strong>Remove system prompt padding:</strong> "You are a helpful, friendly, professional assistant who..." → just state the task</li>
+                    <li><strong>Cut examples:</strong> One good example beats three mediocre ones</li>
+                    <li><strong>Use structured output:</strong> JSON mode reduces output tokens by 40-60% vs. natural language</li>
+                    <li><strong>Truncate history:</strong> Keep last 3-5 messages, not 20</li>
+                </ul>
+                <div class="savings-example">
+                    <strong>Example:</strong> RAG pipeline with 2K context tokens per request<br>
+                    <span class="before">Bloated prompt (1,800 tokens): $0.54/1K requests</span> → <span class="after">Optimized prompt (600 tokens): $0.18/1K requests</span>
+                </div>
+            </div>
+
+            <div class="checklist-item">
+                <span class="impact high">HIGH IMPACT</span>
+                <h3>3. Implement Prompt Caching</h3>
+                <p>Both OpenAI and Anthropic offer prompt caching — identical prefix tokens are cached and charged at <strong>90% discount</strong>. This is free money.</p>
+                <ul>
+                    <li><strong>OpenAI:</strong> Automatic for prompts >1024 tokens (GPT-4o, GPT-5). Cache hits cost 0.1x input price</li>
+                    <li><strong>Anthropic:</strong> Automatic for prompts >2048 tokens (Claude Sonnet/Opus). Cache hits cost 0.1x input price</li>
+                    <li><strong>Structure your prompts:</strong> Put static content (system prompt, context) at the beginning, dynamic content at the end</li>
+                </ul>
+                <div class="savings-example">
+                    <strong>Example:</strong> 5K token system prompt, called 5K times/day<br>
+                    <span class="before">Without caching: $375/month</span> → <span class="after">With caching (90% cache hit): $56/month</span>
+                </div>
+            </div>
+
+            <div class="checklist-item">
+                <span class="impact high">HIGH IMPACT</span>
+                <h3>4. Batch Your Requests</h3>
+                <p>Batch processing lets you send multiple requests in one API call, reducing overhead and often getting bulk discounts.</p>
+                <ul>
+                    <li><strong>OpenAI Batch API:</strong> 50% discount on all models for non-real-time workloads</li>
+                    <li><strong>Group similar tasks:</strong> Send 10 summarization requests in one batch call instead of 10 separate calls</li>
+                    <li><strong>Use for:</strong> Data processing, content generation, offline analysis, nightly jobs</li>
+                </ul>
+                <div class="savings-example">
+                    <strong>Example:</strong> Nightly data processing (100K tokens/day)<br>
+                    <span class="before">Real-time API: $75/month</span> → <span class="after">Batch API: $37.50/month</span>
+                </div>
+            </div>
+
+            <div class="checklist-item">
+                <span class="impact high">HIGH IMPACT</span>
+                <h3>5. Route by Complexity</h3>
+                <p>Don't use a sledgehammer for every nail. Implement a router that sends simple requests to cheap models and complex ones to premium models.</p>
+                <ul>
+                    <li><strong>Tier 1 (simple):</strong> Gemini Flash Lite, GPT-5 Mini, DeepSeek Flash — $0.03-0.15/1M tokens</li>
+                    <li><strong>Tier 2 (moderate):</strong> Claude Haiku, GPT-5 Mini, Mistral Small — $0.15-0.80/1M tokens</li>
+                    <li><strong>Tier 3 (complex):</strong> GPT-5, Claude Sonnet, Gemini Pro — $2-5/1M tokens</li>
+                    <li><strong>Tier 4 (premium):</strong> Claude Opus, GPT-5.5 — $10-15/1M tokens (rare use only)</li>
+                </ul>
+                <p><strong>Tool:</strong> Use the <a href="/pipeline.html">Multi-Model Pipeline Calculator</a> to build cost-optimized routing strategies.</p>
+            </div>
+
+            <!-- Tier 2: Structural Improvements -->
+            <h2>Tier 2: Structural Improvements (Next 25% of Savings)</h2>
+
+            <div class="checklist-item">
+                <span class="impact medium">MEDIUM IMPACT</span>
+                <h3>6. Implement Response Caching</h3>
+                <p>Cache identical or similar responses to avoid re-computing. Works best for deterministic outputs and frequently repeated queries.</p>
+                <ul>
+                    <li><strong>Exact-match cache:</strong> Hash the prompt, store the response. 100% hit rate for repeated queries</li>
+                    <li><strong>Semantic cache:</strong> Use embeddings to find similar past queries. 70-85% hit rate for natural language</li>
+                    <li><strong>TTL strategy:</strong> Cache for 1-24 hours depending on data freshness needs</li>
+                </ul>
+                <div class="savings-example">
+                    <strong>Example:</strong> FAQ chatbot with 500 common questions<br>
+                    <span class="before">All API calls: $200/month</span> → <span class="after">Cached responses: $40/month (80% cache hit rate)</span>
+                </div>
+            </div>
+
+            <div class="checklist-item">
+                <span class="impact medium">MEDIUM IMPACT</span>
+                <h3>7. Trim Output Tokens</h3>
+                <p>You're paying for every output token. Set <code>max_tokens</code> appropriately and use stop sequences to prevent runaway generation.</p>
+                <ul>
+                    <li><strong>Set max_tokens:</strong> Classifications need 10-50 tokens, not 4096</li>
+                    <li><strong>Use stop sequences:</strong> Stop at "Answer:" or "\n\n" to prevent elaboration</li>
+                    <li><strong>Temperature 0:</strong> More deterministic = less wasted output tokens</li>
+                </ul>
+            </div>
+
+            <div class="checklist-item">
+                <span class="impact medium">MEDIUM IMPACT</span>
+                <h3>8. Use Streaming for UX, Not Cost</h3>
+                <p>Streaming doesn't save money — it's the same total tokens. But it improves perceived performance, which means you can use smaller models without users noticing.</p>
+                <ul>
+                    <li><strong>First-token latency</strong> matters more than total time for user satisfaction</li>
+                    <li>Consider: stream from a fast cheap model vs. wait for a slow expensive one</li>
+                </ul>
+            </div>
+
+            <div class="checklist-item">
+                <span class="impact medium">MEDIUM IMPACT</span>
+                <h3>9. Negotiate Volume Discounts</h3>
+                <p>If you're spending $500+/month, you're likely eligible for volume pricing. Most providers offer 10-30% discounts at commitment levels.</p>
+                <ul>
+                    <li><strong>OpenAI:</strong> Tier 3 ($1K+) and Tier 4 ($10K+) get progressive discounts</li>
+                    <li><strong>Anthropic:</strong> Enterprise pricing available for $1K+/month</li>
+                    <li><strong>Google:</strong> Committed use discounts for Gemini API</li>
+                    <li><strong>DeepSeek:</strong> Already the cheapest — focus on model selection instead</li>
+                </ul>
+            </div>
+
+            <div class="checklist-item">
+                <span class="impact medium">MEDIUM IMPACT</span>
+                <h3>10. Switch Providers for Specific Use Cases</h3>
+                <p>Different providers win at different price points. Mix and match instead of going all-in on one.</p>
+                <ul>
+                    <li><strong>Cheapest chatbot:</strong> DeepSeek V4 Flash ($0.07/1M input)</li>
+                    <li><strong>Cheapest code:</strong> DeepSeek V4 Pro ($0.27/1M input)</li>
+                    <li><strong>Best quality/price:</strong> Claude Sonnet 4.6 ($3/1M input) — often matches GPT-5 at 60% of the cost</li>
+                    <li><strong>Best for agents:</strong> Gemini 3.1 Pro ($1.25/1M input) with 1M context</li>
+                </ul>
+                <p><strong>Tool:</strong> Use the <a href="/cost-migration.html">Cost Migration Report</a> to find cheaper alternatives for your current spend.</p>
+            </div>
+
+            <!-- Tier 3: Advanced Optimizations -->
+            <h2>Tier 3: Advanced Optimizations (Final 15% of Savings)</h2>
+
+            <div class="checklist-item">
+                <span class="impact">STANDARD</span>
+                <h3>11. Implement Token Budgets</h3>
+                <p>Set hard limits per request and per user. Prevents runaway costs from edge cases.</p>
+                <ul>
+                    <li><strong>Per-request limit:</strong> 4K tokens max for most use cases</li>
+                    <li><strong>Per-user daily limit:</strong> Prevent abuse and surprise bills</li>
+                    <li><strong>Circuit breaker:</strong> Stop and fallback if token count exceeds threshold</li>
+                </ul>
+            </div>
+
+            <div class="checklist-item">
+                <span class="impact">STANDARD</span>
+                <h3>12. Use Smaller Context Windows</h3>
+                <p>A 128K context window costs the same per token as a 4K window — but you're more likely to fill it with irrelevant context. Use the smallest window that fits your use case.</p>
+                <ul>
+                    <li><strong>Chat:</strong> 8-16K is usually sufficient</li>
+                    <li><strong>RAG:</strong> 32K covers most retrieval scenarios</li>
+                    <li><strong>Document analysis:</strong> 128K+ only when needed</li>
+                </ul>
+            </div>
+
+            <div class="checklist-item">
+                <span class="impact">STANDARD</span>
+                <h3>13. Compress Context with Summarization</h3>
+                <p>Instead of sending full conversation history, periodically summarize it. A 10-message conversation can be compressed to 1-2 summary tokens.</p>
+                <ul>
+                    <li><strong>Summarize every 5 messages</strong> into a running summary</li>
+                    <li><strong>Use a cheap model</strong> (GPT-5 Mini) for the summarization step</li>
+                    <li><strong>Keep last 2 messages</strong> verbatim for continuity</li>
+                </ul>
+            </div>
+
+            <div class="checklist-item">
+                <span class="impact">STANDARD</span>
+                <h3>14. Monitor and Alert on Anomalies</h3>
+                <p>You can't optimize what you don't measure. Set up cost alerts before you get a surprise bill.</p>
+                <ul>
+                    <li><strong>Daily spend alerts:</strong> Get notified if daily cost exceeds 1.5x average</li>
+                    <li><strong>Per-endpoint tracking:</strong> Know which API endpoints cost the most</li>
+                    <li><strong>Weekly reports:</strong> Review cost trends and identify optimization opportunities</li>
+                </ul>
+                <p><strong>Tool:</strong> Set up <a href="/price-alerts.html">Price Alerts</a> to get notified when model prices change.</p>
+            </div>
+
+            <div class="checklist-item">
+                <span class="impact">STANDARD</span>
+                <h3>15. Evaluate Fine-Tuning for High-Volume Tasks</h3>
+                <p>For tasks you run 10K+ times/month with consistent patterns, fine-tuning a smaller model can be 10x cheaper than using a large model.</p>
+                <ul>
+                    <li><strong>Best candidates:</strong> Classification, extraction, structured output, style matching</li>
+                    <li><strong>Use fine-tuned GPT-5 Mini</strong> instead of GPT-5 for specific tasks</li>
+                    <li><strong>ROI calculator:</strong> Fine-tuning cost ÷ monthly savings = payback period</li>
+                </ul>
+            </div>
+
+            <!-- Savings Summary -->
+            <h2>Expected Savings by Tier</h2>
+
+            <div class="cost-example">
+                <h3>Typical Savings Breakdown</h3>
+                <p><strong>Tier 1 (Quick Wins):</strong> 40-60% reduction<br>
+                Model right-sizing + prompt optimization + caching + batching</p>
+                <p><strong>Tier 2 (Structural):</strong> Additional 15-25% reduction<br>
+                Response caching + output trimming + provider mixing</p>
+                <p><strong>Tier 3 (Advanced):</strong> Additional 5-10% reduction<br>
+                Token budgets + context compression + monitoring + fine-tuning</p>
+                <p><strong>Total potential:</strong> 55-75% cost reduction for most teams</p>
+            </div>
+
+            <!-- CTA -->
+            <div class="cta-inline">
+                <h3>Ready to Start Saving?</h3>
+                <p>Use our free calculators to find your biggest optimization opportunities:</p>
+                <div class="related-tools">
+                    <div class="related-tool">
+                        <a href="/calculator.html">Cost Calculator</a>
+                        <p>Compare costs across 33 models</p>
+                    </div>
+                    <div class="related-tool">
+                        <a href="/model-switch.html">Model Switch</a>
+                        <p>See exact savings from switching</p>
+                    </div>
+                    <div class="related-tool">
+                        <a href="/cost-migration.html">Cost Migration</a>
+                        <p>Find cheaper alternatives now</p>
+                    </div>
+                    <div class="related-tool">
+                        <a href="/pipeline.html">Pipeline Calculator</a>
+                        <p>Optimize multi-model workflows</p>
+                    </div>
+                </div>
+                <p style="margin-top: 16px;"><strong>Want automated cost tracking?</strong> <a href="/compare-plans.html">APIpulse Pro</a> monitors your spending, alerts on anomalies, and suggests optimizations in real-time.</p>
+            </div>
+
+            <!-- Related Reading -->
+            <h2>Related Reading</h2>
+            <ul>
+                <li><a href="/blog-ai-api-caching-strategies.html">AI API Caching Strategies: Reduce LLM Costs by 60%+</a></li>
+                <li><a href="/blog-pricing-mistakes.html">7 AI API Pricing Mistakes That Cost Developers Thousands</a></li>
+                <li><a href="/blog-cost-per-request.html">AI API Cost Per Request: The Metric Developers Actually Need</a></li>
+                <li><a href="/blog-ai-api-cost-monitoring.html">AI API Cost Monitoring: How to Track, Predict, and Control Spending</a></li>
+                <li><a href="/blog-ai-api-cost-alerts.html">How to Set Up AI API Cost Alerts</a></li>
+                <li><a href="/blog-api-error-handling.html">LLM API Error Handling and Retry Strategies</a></li>
+            </ul>
+
+            <!-- Share -->
+            <div class="share-section">
+                <p>Found this useful? Share it with your team:</p>
+                <a class="share-btn" href="https://twitter.com/intent/tweet?text=AI%20API%20Cost%20Optimization%20Checklist%3A%2015%20Ways%20to%20Cut%20Your%20LLM%20Bill&url=https%3A%2F%2Fgetapipulse.com%2Fblog-ai-api-cost-optimization-checklist.html" target="_blank" rel="noopener">Share on Twitter</a>
+                <a class="share-btn" href="https://www.reddit.com/submit?url=https%3A%2F%2Fgetapipulse.com%2Fblog-ai-api-cost-optimization-checklist.html&title=AI%20API%20Cost%20Optimization%20Checklist%3A%2015%20Ways%20to%20Cut%20Your%20LLM%20Bill" target="_blank" rel="noopener">Share on Reddit</a>
+                <a class="share-btn" href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fgetapipulse.com%2Fblog-ai-api-cost-optimization-checklist.html&title=AI%20API%20Cost%20Optimization%20Checklist" target="_blank" rel="noopener">Share on LinkedIn</a>
+            </div>
+        </article>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>APIpulse</h4>
+                    <p>Track, compare, and optimize AI API pricing across 10+ providers.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Tools</h4>
+                    <a href="/calculator.html">Cost Calculator</a>
+                    <a href="/compare.html">Model Comparison</a>
+                    <a href="/cost-migration.html">Cost Migration</a>
+                    <a href="/pipeline.html">Pipeline Calculator</a>
+                    <a href="/rate-limit-calculator.html">Rate Limit Calculator</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Resources</h4>
+                    <a href="/blog.html">Blog</a>
+                    <a href="/glossary.html">Glossary</a>
+                    <a href="/providers.html">Providers</a>
+                    <a href="/tools.html">All Tools</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Company</h4>
+                    <a href="/about.html">About</a>
+                    <a href="/pricing.html">Pricing</a>
+                    <a href="/newsletter.html">Newsletter</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 APIpulse. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

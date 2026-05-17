@@ -272,7 +272,7 @@ function renderPricingFreshness(containerId) {
 // Sticky Pro CTA bar — shows on scroll for non-pricing pages (respects A/B price variant)
 (function() {
     var path = window.location.pathname;
-    if (path.includes('pricing.html') || path.includes('pro.html') || path.includes('thank-you.html') || path.includes('launch.html')) return;
+    if (path.includes('pricing.html') || path.includes('pro.html') || path.includes('thank-you.html') || path.includes('launch.html') || path.includes('compare-plans.html')) return;
     if (localStorage.getItem('apipulse_pro_cta_dismissed')) return;
     if (localStorage.getItem('apipulse_pro') === 'true') return;
 
