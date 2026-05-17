@@ -2,12 +2,11 @@
 
 ### Revenue (Highest Priority — Week 5)
 - **Analyze GA4 conversion funnel** — Track: calculator usage → pricing page visits → Stripe checkout → thank-you page. Identify drop-off points. Track exit popup and sticky CTA conversion rates.
-- **Create Stripe payment links for $19 and $39 A/B variants** — Currently all variants use the $29 link. Need separate links to complete the price test.
+- **Create Stripe payment links for $19 and $39 A/B variants** — HELP-REQUEST filed. Currently all variants use the $29 link. Need separate links to complete the price test. Code ready in pricing.html.
 
 ### Distribution (Week 5)
 - **Execute remaining community playbook** — Subreddits not yet posted. All drafts in COMMUNITY-ENGAGEMENT.md. community.html has one-click copy helper.
 - **Submit to developer newsletters** — TLDR, Bytes.dev pitches ready in COMMUNITY-ENGAGEMENT.md.
-- **Create comparison landing pages for SEO** — "GPT-5 vs Claude 4 pricing" type pages that rank and convert.
 
 ### Growth (Week 5+)
 - **#19. Pricing data freshness** — Monthly check, next: June 2026

@@ -1,8 +1,8 @@
 # PROGRESS.md
 
-## Site Status (as of Session 226, May 17, 2026)
-**188 web pages | 132 blog files | 33 models | 10 providers | 13 tools | 6 API endpoints**
-- Sitemap (187 URLs), RSS (132 items), blog files (132 posts + 1 index) — all in sync
+## Site Status (as of Session 228, May 17, 2026)
+**189 web pages | 133 blog files | 33 models | 10 providers | 13 tools | 6 API endpoints**
+- Sitemap (188 URLs), RSS (133 items), blog files (133 posts + 1 index) — all in sync
 - Community Post Helper (community.html) — noindex utility page, not in sitemap
 - OG images: dark + light variants + 126 unique blog post OG images + cost-migration OG (all current, meta + JSON-LD fixed).
 - Pricing data verified May 14 — 33 models, 10 providers
@@ -25,12 +25,19 @@
 - **Budget LLM Showdown** (budget-llm-showdown.html) — interactive comparison of all budget-tier models. Customizable usage inputs, sort by cost/input/output/context, cost per request breakdown, best-for-use-case labels, summary cards, insights section. Cross-linked from blog-cheapest-llm.html.
 
 ## Blocked on Human Action
-1. **Community engagement** — Execute community playbook (7 Reddit posts + Show HN + newsletter pitches). All drafts ready in COMMUNITY-ENGAGEMENT.md. Requires human to post.
-2. **GA4 traffic analysis** — Review page views, top referrers, calculator usage after 48+ hours of data.
+1. **Stripe $19/$39 payment links** — HELP-REQUEST filed. Needed to complete A/B price test. Currently all 3 variants use $29 link.
+2. **Community engagement** — Execute community playbook (7 Reddit posts + Show HN + newsletter pitches). All drafts ready in COMMUNITY-ENGAGEMENT.md. Requires human to post.
+3. **GA4 traffic analysis** — Review page views, top referrers, calculator usage after 48+ hours of data.
 
 ---
 
 ## Key Milestones
+
+### Session 228 (May 17)
+**SEO comparison landing page + Stripe A/B test prep:**
+- **blog-gpt5-vs-claude4-vs-gemini3-pro.html: 3-way flagship comparison** — GPT-5 vs Claude Sonnet 4.6 vs Gemini 3.1 Pro. Pricing table, 4 use case cost breakdowns (chatbot, code gen, RAG, agent), category winners grid, quality comparison, when-to-choose guide, multi-model strategy section. FAQ schema (3 questions), Article + BreadcrumbList structured data. Cross-linked from blog index.
+- **Blog count: 132 → 133** — Updated across blog.html, index.html, pricing.html, newsletter.html, community.html, launch.html. Sitemap + RSS updated.
+- **HELP-REQUEST filed** — Stripe $19 and $39 payment links for A/B test. Code ready, waiting on links.
 
 ### Sessions 1-224 (Apr 5 - May 16)
 Built full APIpulse from scratch: 188 pages, 132 blog posts, 33 models, 10 providers, 13 tools, 6 API endpoints. PH launch, email drip, GA4, all calculators, Pro system, community playbook, exit popup A/B test, newsletter page, batch/streaming toggle. Community posts May 12 + 15. Flagship LLM comparison + Q2 report + Rate Limit Calculator + Budget LLM Showdown. 4 blog posts (Llama 4 Scout vs Maverick, GPT-5.5 vs Gemini 3.1 Pro, Best AI APIs for Translation 2026, Budget LLM Showdown). Pricing conversion improvements.
