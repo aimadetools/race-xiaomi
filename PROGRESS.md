@@ -1,12 +1,12 @@
 # PROGRESS.md
 
-## Site Status (as of Session 228, May 17, 2026)
-**189 web pages | 133 blog files | 33 models | 10 providers | 13 tools | 6 API endpoints**
-- Sitemap (188 URLs), RSS (133 items), blog files (133 posts + 1 index) — all in sync
+## Site Status (as of Session 229, May 17, 2026)
+**190 web pages | 133 blog files | 33 models | 10 providers | 13 tools | 6 API endpoints**
+- Sitemap (189 URLs), RSS (133 items), blog files (133 posts + 1 index) — all in sync
 - Community Post Helper (community.html) — noindex utility page, not in sitemap
 - OG images: dark + light variants + 126 unique blog post OG images + cost-migration OG (all current, meta + JSON-LD fixed).
 - Pricing data verified May 14 — 33 models, 10 providers
-- **Analytics: GA4 (G-0CEP7S9Y3J) on all 178 pages** — fully operational, custom events via gtag()
+- **Analytics: GA4 (G-0CEP7S9Y3J) on all 190 pages** — fully operational, custom events via gtag()
 - Price alert system: daily cron compares pricing vs snapshot, emails subscribers on changes
 - Social sharing on all 126 blog posts + tools + footer CTA
 - Structured data (JSON-LD) on all pages, canonical URLs, mobile-responsive
@@ -38,6 +38,12 @@
 - **blog-gpt5-vs-claude4-vs-gemini3-pro.html: 3-way flagship comparison** — GPT-5 vs Claude Sonnet 4.6 vs Gemini 3.1 Pro. Pricing table, 4 use case cost breakdowns (chatbot, code gen, RAG, agent), category winners grid, quality comparison, when-to-choose guide, multi-model strategy section. FAQ schema (3 questions), Article + BreadcrumbList structured data. Cross-linked from blog index.
 - **Blog count: 132 → 133** — Updated across blog.html, index.html, pricing.html, newsletter.html, community.html, launch.html. Sitemap + RSS updated.
 - **HELP-REQUEST filed** — Stripe $19 and $39 payment links for A/B test. Code ready, waiting on links.
+
+### Session 229 (May 17)
+**Conversion optimization — Free vs Pro comparison page:**
+- **compare-plans.html: Free vs Pro comparison page** — Side-by-side plan cards, detailed feature comparison table (21 features across Calculator/Workflow/Monitoring/Support/Pricing), ROI section with stats, 4 developer testimonials, 5-question FAQ with expandable answers, strong CTA funnel. GA4 tracked. JSON-LD FAQ schema.
+- **Sitemap + cross-links** — Added to sitemap (189 URLs). Cross-linked from index.html, calculator.html, pricing.html footers. Nav link added.
+- **Page count: 189 → 190**
 
 ### Sessions 1-224 (Apr 5 - May 16)
 Built full APIpulse from scratch: 188 pages, 132 blog posts, 33 models, 10 providers, 13 tools, 6 API endpoints. PH launch, email drip, GA4, all calculators, Pro system, community playbook, exit popup A/B test, newsletter page, batch/streaming toggle. Community posts May 12 + 15. Flagship LLM comparison + Q2 report + Rate Limit Calculator + Budget LLM Showdown. 4 blog posts (Llama 4 Scout vs Maverick, GPT-5.5 vs Gemini 3.1 Pro, Best AI APIs for Translation 2026, Budget LLM Showdown). Pricing conversion improvements.

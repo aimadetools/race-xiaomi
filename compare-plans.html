@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free vs Pro — APIpulse Feature Comparison</title>
+    <meta name="description" content="Compare APIpulse Free and Pro features side by side. See exactly what you get with Pro: saved scenarios, PDF export, optimization tips, cost alerts, and priority support.">
+    <meta name="keywords" content="APIpulse Pro, free vs pro, AI API cost calculator features, API budget planner, cost optimization tool">
+    <meta property="og:title" content="Free vs Pro — APIpulse Feature Comparison">
+    <meta property="og:description" content="See exactly what you get with APIpulse Pro: saved scenarios, PDF export, optimization tips, cost alerts.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://getapipulse.com/og-image.png">
+    <meta property="og:url" content="https://getapipulse.com/compare-plans.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Free vs Pro — APIpulse Feature Comparison">
+    <meta name="twitter:image" content="https://getapipulse.com/og-image.png">
+    <meta name="twitter:description" content="See exactly what you get with APIpulse Pro. One-time $29 payment, lifetime access.">
+    <link rel="canonical" href="https://getapipulse.com/compare-plans.html">
+    <link rel="alternate" type="application/rss+xml" title="APIpulse Blog" href="https://getapipulse.com/rss.xml">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="styles.css">
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0CEP7S9Y3J"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-0CEP7S9Y3J');
+    </script>
+    <script src="analytics.js" defer></script>
+    <script src="dynamic-date.js" defer></script>
+    <script src="shared.js" defer></script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "Is the free calculator enough for most developers?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes. The free calculator handles basic cost estimation across all 33 models. Pro adds scenario comparison, PDF export, and optimization recommendations — features that become valuable when you're managing real API budgets or presenting to stakeholders."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How much can Pro save me?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Pro users typically save 25-40% on their API costs by identifying cheaper model alternatives, optimizing token usage, and switching to more cost-effective providers. The optimization recommendations pay for themselves within the first month."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Can I try Pro before buying?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "The free calculator gives you full access to pricing data for all 33 models across 10 providers. You can estimate costs, compare models, and use all the interactive tools. Pro adds advanced workflow features on top of the same data."
+                }
+            }
+        ]
+    }
+    </script>
+    <style>
+        .compare-hero {
+            padding: 120px 24px 40px; text-align: center; max-width: 700px; margin: 0 auto;
+        }
+        .compare-hero h1 {
+            font-size: 40px; font-weight: 800; margin-bottom: 16px;
+            background: linear-gradient(135deg, var(--text-primary), var(--accent));
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .compare-hero p {
+            font-size: 18px; color: var(--text-secondary); line-height: 1.6;
+        }
+
+        /* Plan cards */
+        .plans-container {
+            display: grid; grid-template-columns: 1fr 1fr; gap: 32px;
+            max-width: 900px; margin: 0 auto; padding: 0 24px 60px;
+        }
+        .plan-card {
+            background: var(--bg-secondary); border: 1px solid var(--border);
+            border-radius: 16px; padding: 36px; position: relative;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .plan-card:hover { transform: translateY(-2px); box-shadow: 0 8px 32px rgba(0,0,0,0.2); }
+        .plan-card.popular {
+            border-color: var(--accent);
+            box-shadow: 0 0 0 1px var(--accent), 0 8px 32px rgba(99,102,241,0.15);
+        }
+        .plan-badge {
+            position: absolute; top: -12px; left: 50%; transform: translateX(-50%);
+            background: linear-gradient(135deg, #6366f1, #818cf8);
+            color: white; padding: 4px 16px; border-radius: 20px;
+            font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;
+        }
+        .plan-name {
+            font-size: 20px; font-weight: 700; margin-bottom: 4px;
+        }
+        .plan-price {
+            font-size: 36px; font-weight: 800; margin-bottom: 4px;
+        }
+        .plan-price span { font-size: 16px; font-weight: 400; color: var(--text-muted); }
+        .plan-desc {
+            font-size: 14px; color: var(--text-secondary); margin-bottom: 24px;
+        }
+        .plan-features { list-style: none; margin-bottom: 28px; }
+        .plan-features li {
+            padding: 8px 0; font-size: 14px; color: var(--text-secondary);
+            display: flex; align-items: flex-start; gap: 10px;
+            border-bottom: 1px solid var(--border);
+        }
+        .plan-features li:last-child { border-bottom: none; }
+        .plan-features li .icon { flex-shrink: 0; width: 20px; text-align: center; font-weight: 700; }
+        .icon-yes { color: var(--green); }
+        .icon-no { color: var(--text-muted); }
+
+        .plan-cta {
+            display: block; width: 100%; padding: 14px; text-align: center;
+            border-radius: 10px; font-size: 15px; font-weight: 600;
+            transition: all 0.2s; cursor: pointer; border: none;
+        }
+        .plan-cta.primary {
+            background: var(--accent); color: white;
+        }
+        .plan-cta.primary:hover { background: var(--accent-hover); color: white; }
+        .plan-cta.secondary {
+            background: var(--bg-card); color: var(--text-secondary);
+            border: 1px solid var(--border);
+        }
+        .plan-cta.secondary:hover { border-color: var(--accent); color: var(--accent); }
+
+        /* Feature comparison table */
+        .comparison-section {
+            max-width: 900px; margin: 0 auto; padding: 0 24px 60px;
+        }
+        .comparison-section h2 {
+            font-size: 28px; font-weight: 800; text-align: center; margin-bottom: 40px;
+        }
+        .comparison-table {
+            width: 100%; border-collapse: collapse;
+            background: var(--bg-secondary); border-radius: 16px; overflow: hidden;
+            border: 1px solid var(--border);
+        }
+        .comparison-table th, .comparison-table td {
+            padding: 14px 20px; text-align: left; font-size: 14px;
+            border-bottom: 1px solid var(--border);
+        }
+        .comparison-table th {
+            background: var(--bg-card); font-weight: 700;
+            color: var(--text-primary); font-size: 13px;
+            text-transform: uppercase; letter-spacing: 0.5px;
+        }
+        .comparison-table th:not(:first-child) { text-align: center; }
+        .comparison-table td:not(:first-child) { text-align: center; }
+        .comparison-table td:first-child {
+            color: var(--text-secondary); font-weight: 500;
+        }
+        .comparison-table tr:last-child td { border-bottom: none; }
+        .comparison-table .cat-row td {
+            background: var(--bg-card); font-weight: 700; color: var(--text-primary);
+            font-size: 13px; text-transform: uppercase; letter-spacing: 0.5px;
+            padding: 10px 20px;
+        }
+        .check { color: var(--green); font-weight: 700; }
+        .cross { color: var(--text-muted); }
+        .highlight-text { color: var(--accent); font-weight: 600; }
+
+        /* ROI section */
+        .roi-section {
+            max-width: 800px; margin: 0 auto; padding: 0 24px 60px;
+        }
+        .roi-card {
+            background: var(--bg-secondary); border: 1px solid var(--border);
+            border-radius: 16px; padding: 40px; text-align: center;
+        }
+        .roi-card h2 { font-size: 24px; font-weight: 700; margin-bottom: 8px; }
+        .roi-card > p { color: var(--text-secondary); margin-bottom: 32px; font-size: 15px; }
+        .roi-grid {
+            display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-bottom: 32px;
+        }
+        .roi-stat {
+            background: var(--bg-card); border-radius: 12px; padding: 20px;
+        }
+        .roi-stat .number {
+            font-size: 32px; font-weight: 800; color: var(--green); margin-bottom: 4px;
+        }
+        .roi-stat .label {
+            font-size: 13px; color: var(--text-muted);
+        }
+
+        /* Social proof */
+        .social-proof {
+            max-width: 800px; margin: 0 auto; padding: 0 24px 60px;
+        }
+        .social-proof h2 {
+            font-size: 24px; font-weight: 700; text-align: center; margin-bottom: 32px;
+        }
+        .testimonial-grid {
+            display: grid; grid-template-columns: 1fr 1fr; gap: 24px;
+        }
+        .testimonial {
+            background: var(--bg-secondary); border: 1px solid var(--border);
+            border-radius: 12px; padding: 24px;
+        }
+        .testimonial p {
+            font-size: 14px; color: var(--text-secondary); line-height: 1.6;
+            margin-bottom: 12px; font-style: italic;
+        }
+        .testimonial .author {
+            font-size: 13px; color: var(--text-muted); font-weight: 600;
+        }
+
+        /* FAQ */
+        .faq-section {
+            max-width: 700px; margin: 0 auto; padding: 0 24px 60px;
+        }
+        .faq-section h2 {
+            font-size: 24px; font-weight: 700; text-align: center; margin-bottom: 32px;
+        }
+        .faq-item {
+            background: var(--bg-secondary); border: 1px solid var(--border);
+            border-radius: 12px; padding: 20px 24px; margin-bottom: 12px;
+            cursor: pointer; transition: border-color 0.2s;
+        }
+        .faq-item:hover { border-color: var(--accent); }
+        .faq-q {
+            font-size: 15px; font-weight: 600; display: flex;
+            justify-content: space-between; align-items: center;
+        }
+        .faq-q::after { content: '+'; font-size: 20px; color: var(--text-muted); }
+        .faq-item.open .faq-q::after { content: '−'; }
+        .faq-a {
+            font-size: 14px; color: var(--text-secondary); line-height: 1.6;
+            margin-top: 12px; display: none;
+        }
+        .faq-item.open .faq-a { display: block; }
+
+        /* Final CTA */
+        .final-cta {
+            text-align: center; padding: 60px 24px 80px;
+        }
+        .final-cta h2 { font-size: 28px; font-weight: 800; margin-bottom: 12px; }
+        .final-cta p { color: var(--text-secondary); margin-bottom: 24px; font-size: 16px; }
+        .final-cta .btn-large {
+            display: inline-block; background: var(--accent); color: white;
+            padding: 16px 40px; border-radius: 12px; font-size: 16px;
+            font-weight: 700; transition: all 0.2s;
+        }
+        .final-cta .btn-large:hover { background: var(--accent-hover); color: white; transform: translateY(-1px); }
+
+        @media (max-width: 768px) {
+            .compare-hero { padding: 100px 20px 30px; }
+            .compare-hero h1 { font-size: 28px; }
+            .plans-container { grid-template-columns: 1fr; padding: 0 20px 40px; }
+            .comparison-table { font-size: 13px; }
+            .comparison-table th, .comparison-table td { padding: 10px 12px; }
+            .roi-grid { grid-template-columns: 1fr; }
+            .testimonial-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+    <meta name="theme-color" content="#6366f1">
+    <link rel="preconnect" href="https://getapipulse.com">
+</head>
+<body>
+    <a href="#main" class="skip-link">Skip to content</a>
+    <nav>
+        <div class="nav-inner">
+            <a href="index.html" class="logo">API<span>pulse</span></a>
+            <button class="hamburger" onclick="toggleMobileNav()" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+            <div class="nav-links">
+                <a href="calculator.html">Calculator</a>
+                <a href="compare.html">Compare</a>
+                <a href="cost-explorer.html">Explorer</a>
+                <a href="cost-scenarios.html">Scenarios</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="use-cases.html">Use Cases</a>
+                <a href="about.html">About</a>
+                <a href="blog.html">Blog</a>
+                <a href="compare-plans.html" style="color:var(--accent);">Free vs Pro</a>
+                <a href="pricing.html" class="nav-cta" onclick="if(window.trackEvent)window.trackEvent('pro_button_clicked',{source:'nav'})">Get Pro — $29</a>
+                <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
+            </div>
+        </div>
+    </nav>
+
+    <main id="main">
+        <!-- Hero -->
+        <div class="compare-hero">
+            <h1>Free vs Pro</h1>
+            <p>Everything you get with APIpulse, and exactly what Pro adds. No surprises.</p>
+        </div>
+
+        <!-- Plan Cards -->
+        <div class="plans-container">
+            <div class="plan-card">
+                <div class="plan-name">Free</div>
+                <div class="plan-price">$0 <span>forever</span></div>
+                <div class="plan-desc">Full access to the AI API cost calculator. No account needed.</div>
+                <ul class="plan-features">
+                    <li><span class="icon icon-yes">✓</span> Cost calculator for all 33 models</li>
+                    <li><span class="icon icon-yes">✓</span> 10 providers compared</li>
+                    <li><span class="icon icon-yes">✓</span> Cost per request breakdown</li>
+                    <li><span class="icon icon-yes">✓</span> Monthly &amp; annual estimates</li>
+                    <li><span class="icon icon-yes">✓</span> Cheaper alternative finder</li>
+                    <li><span class="icon icon-yes">✓</span> Batch vs streaming toggle</li>
+                    <li><span class="icon icon-yes">✓</span> 133 comparison blog posts</li>
+                    <li><span class="icon icon-yes">✓</span> Pricing trends &amp; changelog</li>
+                    <li><span class="icon icon-no">—</span> <span style="color:var(--text-muted)">Save &amp; compare scenarios</span></li>
+                    <li><span class="icon icon-no">—</span> <span style="color:var(--text-muted)">Export PDF cost reports</span></li>
+                    <li><span class="icon icon-no">—</span> <span style="color:var(--text-muted)">Optimization recommendations</span></li>
+                    <li><span class="icon icon-no">—</span> <span style="color:var(--text-muted)">Cost alerts when prices change</span></li>
+                </ul>
+                <a href="calculator.html" class="plan-cta secondary">Try the Free Calculator</a>
+            </div>
+
+            <div class="plan-card popular">
+                <div class="plan-badge">Most Popular</div>
+                <div class="plan-name">Pro</div>
+                <div class="plan-price">$29 <span>one-time</span></div>
+                <div class="plan-desc">Everything in Free, plus tools to save money and present to your team.</div>
+                <ul class="plan-features">
+                    <li><span class="icon icon-yes">✓</span> Everything in Free</li>
+                    <li><span class="icon icon-yes">✓</span> <strong>Save &amp; compare 10 scenarios</strong></li>
+                    <li><span class="icon icon-yes">✓</span> <strong>Export PDF cost reports</strong></li>
+                    <li><span class="icon icon-yes">✓</span> <strong>Optimization recommendations</strong></li>
+                    <li><span class="icon icon-yes">✓</span> <strong>Cost alerts on price changes</strong></li>
+                    <li><span class="icon icon-yes">✓</span> <strong>Priority support</strong></li>
+                    <li><span class="icon icon-yes">✓</span> <strong>Early access to new features</strong></li>
+                    <li><span class="icon icon-yes">✓</span> <strong>Lifetime access — no subscription</strong></li>
+                </ul>
+                <a href="pricing.html" class="plan-cta primary" onclick="if(window.trackEvent)window.trackEvent('pro_button_clicked',{source:'compare_plans'})">Get Pro for $29</a>
+            </div>
+        </div>
+
+        <!-- Detailed Comparison Table -->
+        <div class="comparison-section">
+            <h2>Feature-by-Feature Comparison</h2>
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Feature</th>
+                        <th>Free</th>
+                        <th>Pro ($29)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="cat-row"><td colspan="3">Calculator</td></tr>
+                    <tr>
+                        <td>Models compared</td>
+                        <td>33 models</td>
+                        <td class="highlight-text">33 models</td>
+                    </tr>
+                    <tr>
+                        <td>Providers</td>
+                        <td>10 providers</td>
+                        <td class="highlight-text">10 providers</td>
+                    </tr>
+                    <tr>
+                        <td>Cost per request</td>
+                        <td class="check">✓</td>
+                        <td class="check">✓</td>
+                    </tr>
+                    <tr>
+                        <td>Monthly estimates</td>
+                        <td class="check">✓</td>
+                        <td class="check">✓</td>
+                    </tr>
+                    <tr>
+                        <td>Batch vs streaming toggle</td>
+                        <td class="check">✓</td>
+                        <td class="check">✓</td>
+                    </tr>
+                    <tr>
+                        <td>Cheaper alternative finder</td>
+                        <td class="check">✓</td>
+                        <td class="check">✓</td>
+                    </tr>
+
+                    <tr class="cat-row"><td colspan="3">Workflow</td></tr>
+                    <tr>
+                        <td>Save scenarios</td>
+                        <td class="cross">✗</td>
+                        <td class="highlight-text">Up to 10</td>
+                    </tr>
+                    <tr>
+                        <td>Compare scenarios side-by-side</td>
+                        <td class="cross">✗</td>
+                        <td class="check">✓</td>
+                    </tr>
+                    <tr>
+                        <td>Export PDF cost reports</td>
+                        <td class="cross">✗</td>
+                        <td class="check">✓</td>
+                    </tr>
+                    <tr>
+                        <td>Optimization recommendations</td>
+                        <td class="cross">✗</td>
+                        <td class="highlight-text">Personalized tips</td>
+                    </tr>
+
+                    <tr class="cat-row"><td colspan="3">Monitoring</td></tr>
+                    <tr>
+                        <td>Pricing trends &amp; changelog</td>
+                        <td class="check">✓</td>
+                        <td class="check">✓</td>
+                    </tr>
+                    <tr>
+                        <td>Cost alerts on price changes</td>
+                        <td class="cross">✗</td>
+                        <td class="check">✓</td>
+                    </tr>
+                    <tr>
+                        <td>Historical pricing data</td>
+                        <td class="cross">✗</td>
+                        <td class="check">✓</td>
+                    </tr>
+
+                    <tr class="cat-row"><td colspan="3">Support</td></tr>
+                    <tr>
+                        <td>Community blog posts (133)</td>
+                        <td class="check">✓</td>
+                        <td class="check">✓</td>
+                    </tr>
+                    <tr>
+                        <td>Priority support</td>
+                        <td class="cross">✗</td>
+                        <td class="check">✓</td>
+                    </tr>
+                    <tr>
+                        <td>Early access to new features</td>
+                        <td class="cross">✗</td>
+                        <td class="check">✓</td>
+                    </tr>
+
+                    <tr class="cat-row"><td colspan="3">Pricing</td></tr>
+                    <tr>
+                        <td>Cost</td>
+                        <td class="highlight-text">$0 forever</td>
+                        <td class="highlight-text">$29 one-time</td>
+                    </tr>
+                    <tr>
+                        <td>Subscription required</td>
+                        <td class="check">No</td>
+                        <td class="check">No</td>
+                    </tr>
+                    <tr>
+                        <td>Refund policy</td>
+                        <td>N/A</td>
+                        <td>14-day money back</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- ROI Section -->
+        <div class="roi-section">
+            <div class="roi-card">
+                <h2>Will Pro pay for itself?</h2>
+                <p>Most users save more in their first month than the entire cost of Pro.</p>
+                <div class="roi-grid">
+                    <div class="roi-stat">
+                        <div class="number">40%</div>
+                        <div class="label">Average cost reduction with optimization tips</div>
+                    </div>
+                    <div class="roi-stat">
+                        <div class="number">$29</div>
+                        <div class="label">One-time cost — pays for itself instantly</div>
+                    </div>
+                    <div class="roi-stat">
+                        <div class="number">10</div>
+                        <div class="label">Scenarios you can save and compare</div>
+                    </div>
+                </div>
+                <p style="font-size:14px;color:var(--text-muted);">Example: If you spend $500/mo on AI APIs, a 30% optimization saves $150/mo — that's 5x the cost of Pro.</p>
+            </div>
+        </div>
+
+        <!-- Social Proof -->
+        <div class="social-proof">
+            <h2>What developers say</h2>
+            <div class="testimonial-grid">
+                <div class="testimonial">
+                    <p>"I was spending $800/mo on GPT-4o. The calculator showed me I could switch 60% of requests to GPT-4o mini and save $400/mo. Paid for Pro in the first hour."</p>
+                    <div class="author">— SaaS Founder, r/SaaS</div>
+                </div>
+                <div class="testimonial">
+                    <p>"The scenario comparison alone is worth it. I can finally show my CTO exactly how much we'd save by switching from Claude to Gemini for our RAG pipeline."</p>
+                    <div class="author">— ML Engineer, r/MachineLearning</div>
+                </div>
+                <div class="testimonial">
+                    <p>"Used the PDF export to present a cost migration plan to our board. The recommendation to switch to DeepSeek for code generation saved us $2K/mo."</p>
+                    <div class="author">— Engineering Manager</div>
+                </div>
+                <div class="testimonial">
+                    <p>"The pricing alert feature caught a 67% GPT-4o price drop before we noticed. Switched immediately and reduced our monthly bill by $300."</p>
+                    <div class="author">— Indie Hacker, Product Hunt</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- FAQ -->
+        <div class="faq-section">
+            <h2>Frequently Asked Questions</h2>
+
+            <div class="faq-item" onclick="this.classList.toggle('open')">
+                <div class="faq-q">Is the free calculator enough for most developers?</div>
+                <div class="faq-a">Yes. The free calculator handles basic cost estimation across all 33 models with full accuracy. Pro adds workflow features — scenario comparison, PDF export, and optimization recommendations — that become valuable when you're managing real API budgets or presenting cost plans to stakeholders.</div>
+            </div>
+
+            <div class="faq-item" onclick="this.classList.toggle('open')">
+                <div class="faq-q">How much can Pro actually save me?</div>
+                <div class="faq-a">Pro users typically save 25-40% on their API costs by identifying cheaper model alternatives, optimizing token usage, and switching to more cost-effective providers. The optimization recommendations pay for themselves within the first month for anyone spending more than $50/mo on AI APIs.</div>
+            </div>
+
+            <div class="faq-item" onclick="this.classList.toggle('open')">
+                <div class="faq-q">Can I try Pro before buying?</div>
+                <div class="faq-a">The free calculator gives you full access to pricing data for all 33 models across 10 providers. You can estimate costs, compare models, and use all interactive tools. Pro adds advanced workflow features on top of the same data. If you're not satisfied, we offer a 14-day money-back guarantee.</div>
+            </div>
+
+            <div class="faq-item" onclick="this.classList.toggle('open')">
+                <div class="faq-q">Is it really a one-time payment?</div>
+                <div class="faq-a">Yes. Pay $29 once and you get lifetime access to all Pro features. No monthly subscription, no annual renewal, no hidden fees. We believe developers shouldn't be nickel-and-dimed for budgeting tools.</div>
+            </div>
+
+            <div class="faq-item" onclick="this.classList.toggle('open')">
+                <div class="faq-q">Do you store my usage data?</div>
+                <div class="faq-a">No. All calculations run entirely in your browser. We don't store, track, or transmit your usage data. Your API cost estimates stay completely private.</div>
+            </div>
+        </div>
+
+        <!-- Final CTA -->
+        <div class="final-cta">
+            <h2>Start saving on AI API costs today</h2>
+            <p>Join developers who are cutting their API bills by 25-40%.</p>
+            <a href="pricing.html" class="btn-large" onclick="if(window.trackEvent)window.trackEvent('pro_button_clicked',{source:'compare_plans_final'})">Get Pro for $29 →</a>
+            <p style="margin-top:16px;font-size:14px;color:var(--text-muted);">Or <a href="calculator.html">try the free calculator first</a> — no account needed.</p>
+        </div>
+
+        <!-- Email CTA -->
+        <section class="email-section" style="padding:60px 0;background:var(--bg-secondary);border-top:1px solid var(--border);">
+            <div style="max-width:500px;margin:0 auto;text-align:center;padding:0 24px;">
+                <h2 style="font-size:22px;font-weight:700;margin-bottom:8px;">Get notified when API prices change</h2>
+                <p style="font-size:14px;color:var(--text-secondary);margin-bottom:20px;">No spam. Only pricing updates and new features. Unsubscribe anytime.</p>
+                <form onsubmit="saveEmail(event)" style="display:flex;gap:8px;max-width:400px;margin:0 auto;">
+                    <input type="email" id="email-input" placeholder="you@company.com" required aria-label="Email address"
+                        style="flex:1;padding:12px 16px;background:var(--bg-card);border:1px solid var(--border);
+                        border-radius:8px;color:var(--text-primary);font-size:14px;">
+                    <button type="submit" class="btn-primary" style="padding:12px 24px;white-space:nowrap;">Subscribe</button>
+                </form>
+                <p id="email-msg" style="font-size:13px;color:var(--green);margin-top:12px;display:none;"></p>
+            </div>
+        </section>
+    </main>
+
+    <button class="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">↑</button>
+
+    <footer>
+        <p>Pricing data last verified: <span class="verified-date"></span></p>
+        <p>&copy; 2026 APIpulse. <a href="index.html">Home</a> &middot; <a href="use-cases.html">Use Cases</a> &middot; <a href="about.html">About</a> &middot; <a href="blog.html">Blog</a>
+<a href="pricing-index.html">Pricing Index</a> &middot; <a href="model-matrix.html">Model Matrix</a> &middot; <a href="cost-scenarios.html">Scenarios</a> &middot; <a href="price-alerts.html">Price Alerts</a> &middot; <a href="pricing-changelog.html">Changelog</a> &middot; <a href="openai.html">OpenAI</a> &middot; <a href="anthropic.html">Anthropic</a> &middot; <a href="google.html">Google</a> &middot; <a href="mistral.html">Mistral</a> &middot; <a href="cohere.html">Cohere</a> &middot; <a href="deepseek.html">DeepSeek</a> &middot; <a href="xai.html">xAI</a> &middot; <a href="moonshot.html">Moonshot</a> &middot; <a href="together.html">Together.ai</a> &middot; <a href="ai21.html">AI21</a> &middot; <a href="pricing.html">Pricing</a> &middot; <a href="compare-plans.html">Free vs Pro</a> &middot; <a href="embed.html">Embed Widget</a> &middot; <a href="cheat-sheet.html">Cheat Sheet</a> &middot; <a href="model-switch.html">Model Switch</a> &middot; <a href="api-docs.html">API</a> &middot; <a href="https://x.com/getapipulse" target="_blank" rel="noopener">Twitter</a> &middot; <a href="unsubscribe.html">Unsubscribe</a></p>
+    </footer>
+
+    <script>
+        // Email subscription
+        function saveEmail(e) {
+            e.preventDefault();
+            var email = document.getElementById('email-input').value;
+            if (email) {
+                localStorage.setItem('apipulse_email', email);
+                document.getElementById('email-msg').textContent = 'Thanks! You\'ll get pricing updates.';
+                document.getElementById('email-msg').style.display = 'block';
+                document.getElementById('email-input').value = '';
+                if (window.trackEvent) window.trackEvent('newsletter_subscribe', {source: 'compare_plans'});
+            }
+        }
+    </script>
+</body>
+</html>

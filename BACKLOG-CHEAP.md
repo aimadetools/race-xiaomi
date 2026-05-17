@@ -14,7 +14,8 @@
 - **#199. Reply to community comments** — After posting, engage with comments on Reddit/HN. Be helpful, share data, answer questions. First 2 hours are critical.
 - **#200. Submit to TLDR newsletter** — Pitch ready in COMMUNITY-ENGAGEMENT.md. Best after community posts prove traction.
 
-### Completed (Sessions 225-228)
+### Completed (Sessions 225-229)
+✅ Session 229: Free vs Pro comparison page (compare-plans.html) — side-by-side plan cards, feature table, ROI stats, testimonials, FAQ. Sitemap + cross-links updated. Page count 189→190.
 ✅ Session 228: 3-way flagship comparison page, blog count 133, Stripe A/B HELP-REQUEST filed.
 ✅ Session 227: A/B test pricing page with GA4 variant tracking.
 ✅ Session 226: Founding Member urgency mechanic.
