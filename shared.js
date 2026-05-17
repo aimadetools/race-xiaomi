@@ -269,12 +269,16 @@ function renderPricingFreshness(containerId) {
     document.body.style.paddingTop = '44px';
 })();
 
-// Sticky Pro CTA bar — shows on scroll for non-pricing pages
+// Sticky Pro CTA bar — shows on scroll for non-pricing pages (respects A/B price variant)
 (function() {
     var path = window.location.pathname;
     if (path.includes('pricing.html') || path.includes('pro.html') || path.includes('thank-you.html') || path.includes('launch.html')) return;
     if (localStorage.getItem('apipulse_pro_cta_dismissed')) return;
     if (localStorage.getItem('apipulse_pro') === 'true') return;
+
+    var price = window._abPrice || 29;
+    var futurePrice = Math.round(price * 1.7);
+    var variant = window._abVariant || 'B';
 
     var shown = false;
     window.addEventListener('scroll', function() {
@@ -286,11 +290,11 @@ function renderPricingFreshness(containerId) {
         var bar = document.createElement('div');
         bar.id = 'sticky-pro-cta';
         bar.style.cssText = 'position:fixed;bottom:0;left:0;right:0;z-index:9999;background:linear-gradient(135deg,#4f46e5,#6366f1);padding:12px 20px;display:flex;align-items:center;justify-content:center;gap:16px;box-shadow:0 -4px 20px rgba(0,0,0,0.3);transform:translateY(100%);transition:transform 0.3s ease;';
-        bar.innerHTML = '<span style="color:white;font-size:14px;font-weight:600;">Founding Member: Pro for $29 <span style="opacity:0.7;font-weight:400;font-size:12px;">(goes to $49 soon)</span></span>' +
-            '<a href="https://buy.stripe.com/fZu7sL3Gw3GS0RQeoDeEo0a" target="_blank" rel="noopener" style="background:white;color:#4f46e5;padding:8px 20px;border-radius:8px;font-size:13px;font-weight:700;text-decoration:none;white-space:nowrap;" onclick="if(window.trackEvent)window.trackEvent(\'pro_button_clicked\',{source:\'sticky_bar\'})">Lock in $29</a>' +
+        bar.innerHTML = '<span style="color:white;font-size:14px;font-weight:600;">Founding Member: Pro for $' + price + ' <span style="opacity:0.7;font-weight:400;font-size:12px;">(goes to $' + futurePrice + ' soon)</span></span>' +
+            '<a href="https://buy.stripe.com/fZu7sL3Gw3GS0RQeoDeEo0a" target="_blank" rel="noopener" style="background:white;color:#4f46e5;padding:8px 20px;border-radius:8px;font-size:13px;font-weight:700;text-decoration:none;white-space:nowrap;" onclick="if(window.trackEvent)window.trackEvent(\'pro_button_clicked\',{source:\'sticky_bar\',variant:\'' + variant + '\',price:' + price + '})">Lock in $' + price + '</a>' +
             '<button onclick="document.getElementById(\'sticky-pro-cta\').remove();localStorage.setItem(\'apipulse_pro_cta_dismissed\',\'1\');" style="background:none;border:none;color:rgba(255,255,255,0.7);font-size:18px;cursor:pointer;padding:0 4px;" aria-label="Dismiss">&times;</button>';
         document.body.appendChild(bar);
         requestAnimationFrame(function() { bar.style.transform = 'translateY(0)'; });
-        if(window.trackEvent) window.trackEvent('sticky_cta_shown');
+        if(window.trackEvent) window.trackEvent('sticky_cta_shown', {variant: variant, price: price});
     });
 })();

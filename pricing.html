@@ -595,18 +595,95 @@
             if(window.trackEvent)window.trackEvent('founding_member_seen',{spots_claimed:claimed});
         })();
 
-        // Exit intent popup for pricing page
+        // A/B Test: Price point testing ($19 vs $29 vs $39)
+        // TODO: Create Stripe payment links for $19 and $39 variants, then update STRIPE_LINKS below
+        (function(){
+            var VARIANTS={A:{price:19,label:'Budget',futurePrice:39},B:{price:29,label:'Control',futurePrice:49},C:{price:39,label:'Premium',futurePrice:59}};
+            var STRIPE_LINKS={A:'https://buy.stripe.com/fZu7sL3Gw3GS0RQeoDeEo0a',B:'https://buy.stripe.com/fZu7sL3Gw3GS0RQeoDeEo0a',C:'https://buy.stripe.com/fZu7sL3Gw3GS0RQeoDeEo0a'};
+            var KEY='ab_pricing_variant';
+            var variant=localStorage.getItem(KEY);
+            if(!variant||!VARIANTS[variant]){
+                var r=Math.random();
+                variant=r<0.334?'A':r<0.667?'B':'C';
+                localStorage.setItem(KEY,variant);
+            }
+            var v=VARIANTS[variant];
+            window._abVariant=variant;
+            window._abPrice=v.price;
+
+            // Update price displays
+            var priceEl=document.querySelector('.pricing-card.featured .price');
+            if(priceEl)priceEl.textContent='$'+v.price;
+            var futureEl=document.querySelector('.pricing-card.featured .price-note[style*="line-through"]');
+            if(futureEl)futureEl.textContent='$'+v.futurePrice+' after founding period';
+
+            // Update CTA buttons
+            var ctaBtn=document.querySelector('.pricing-card.featured .btn-primary');
+            if(ctaBtn){
+                ctaBtn.textContent='Lock in Founding Member Price — $'+v.price;
+                ctaBtn.href=STRIPE_LINKS[variant];
+                ctaBtn.setAttribute('onclick',ctaBtn.getAttribute('onclick').replace(/source:'pricing_page'/,"source:'pricing_page',variant:'"+variant+"',price:"+v.price));
+            }
+            var navCta=document.querySelector('.nav-cta');
+            if(navCta){
+                navCta.textContent='Founding Member — $'+v.price;
+                navCta.setAttribute('onclick',navCta.getAttribute('onclick').replace(/source:'nav'/,"source:'nav',variant:'"+variant+"',price:"+v.price));
+            }
+
+            // Update exit popup price (rebuild popup handler with variant price)
+            var popupOverlay=document.getElementById('pricing-exit-popup');
+            if(popupOverlay)popupOverlay.remove();
+
+            // Update ROI calculator default
+            var roiPaybackNote=document.querySelector('.pricing-card.featured .price-note + .price-note');
+            // Update FAQ price reference
+            document.querySelectorAll('.faq-item p').forEach(function(p){
+                if(p.textContent.includes('$29 once')){
+                    p.innerHTML=p.innerHTML.replace('$29 once','$'+v.price+' once');
+                }
+            });
+
+            // Update comparison table price
+            var compRows=document.querySelectorAll('.comparison-table tr');
+            compRows.forEach(function(row){
+                var cells=row.querySelectorAll('td');
+                if(cells.length>=3&&cells[0].textContent.includes('Price')){
+                    cells[2].innerHTML='<strong>$'+v.price+' once</strong>';
+                }
+            });
+
+            // Track variant assignment
+            if(window.trackEvent)window.trackEvent('ab_pricing_variant_assigned',{variant:variant,price:v.price});
+
+            // Track CTA clicks with variant
+            document.querySelectorAll('a[href*="stripe"]').forEach(function(a){
+                a.addEventListener('click',function(){
+                    if(window.trackEvent)window.trackEvent('ab_pricing_cta_clicked',{variant:variant,price:v.price,source:a.closest('.pricing-card')?'card':'other'});
+                });
+            });
+        })();
+
+        // Exit intent popup for pricing page (respects A/B variant)
         (function(){
             var shown=false;
+            var price=window._abPrice||29;
+            var futurePrice=Math.round(price*1.7);
+            var variant=window._abVariant||'B';
             document.addEventListener('mouseleave',function(e){
                 if(shown||e.clientY>0)return;
                 shown=true;
                 var overlay=document.createElement('div');
                 overlay.id='pricing-exit-popup';
                 overlay.style.cssText='position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.7);z-index:10000;display:flex;align-items:center;justify-content:center;';
-                overlay.innerHTML='<div style="background:var(--bg-secondary);border:1px solid var(--border);border-radius:16px;padding:40px;max-width:480px;text-align:center;margin:20px;"><h2 style="font-size:24px;font-weight:800;margin-bottom:12px;">Wait — before you go</h2><p style="color:var(--text-secondary);font-size:15px;margin-bottom:20px;line-height:1.6;">Most developers save <strong style="color:var(--green);">$60-200/month</strong> after using APIpulse Pro optimization recommendations. That\'s $720-2,400/year.</p><div style="background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:16px;margin-bottom:12px;"><div style="font-size:36px;font-weight:800;color:var(--accent);">$29</div><div style="font-size:13px;color:var(--text-muted);text-decoration:line-through;">$49 after founding period</div><div style="font-size:13px;color:var(--text-muted);">one-time, lifetime access</div></div><div style="background:rgba(245,158,11,0.08);border:1px solid rgba(245,158,11,0.3);border-radius:8px;padding:10px 14px;margin-bottom:20px;font-size:13px;color:#d97706;">🔥 Founding member pricing — lock in $29 before it goes to $49</div><a href="https://buy.stripe.com/fZu7sL3Gw3GS0RQeoDeEo0a" class="btn-primary" style="display:block;text-align:center;margin-bottom:12px;" target="_blank" rel="noopener" onclick="if(window.trackEvent)window.trackEvent(\'pro_button_clicked\',{source:\'exit_popup_pricing\'})">Lock in $29 — Founding Member</a><button onclick="document.getElementById(\'pricing-exit-popup\').remove()" style="background:none;border:none;color:var(--text-muted);cursor:pointer;font-size:13px;">No thanks, I\'ll pay $49 later</button></div>';
+                var popup=document.createElement('div');
+                popup.style.cssText='background:var(--bg-secondary);border:1px solid var(--border);border-radius:16px;padding:40px;max-width:480px;text-align:center;margin:20px;';
+                popup.innerHTML='<h2 style="font-size:24px;font-weight:800;margin-bottom:12px;">Wait — before you go</h2><p style="color:var(--text-secondary);font-size:15px;margin-bottom:20px;line-height:1.6;">Most developers save <strong style="color:var(--green);">$60-200/month</strong> after using APIpulse Pro optimization recommendations. That\'s $720-2,400/year.</p><div style="background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:16px;margin-bottom:12px;"><div style="font-size:36px;font-weight:800;color:var(--accent);">$'+price+'</div><div style="font-size:13px;color:var(--text-muted);text-decoration:line-through;">$'+futurePrice+' after founding period</div><div style="font-size:13px;color:var(--text-muted);">one-time, lifetime access</div></div><div style="background:rgba(245,158,11,0.08);border:1px solid rgba(245,158,11,0.3);border-radius:8px;padding:10px 14px;margin-bottom:20px;font-size:13px;color:#d97706;">🔥 Founding member pricing — lock in $'+price+' before it goes to $'+futurePrice+'</div><a href="https://buy.stripe.com/fZu7sL3Gw3GS0RQeoDeEo0a" class="btn-primary" style="display:block;text-align:center;margin-bottom:12px;" target="_blank" rel="noopener" id="exit-popup-cta">Lock in $'+price+' — Founding Member</a><button onclick="document.getElementById(\'pricing-exit-popup\').remove()" style="background:none;border:none;color:var(--text-muted);cursor:pointer;font-size:13px;">No thanks, I\'ll pay $'+futurePrice+' later</button>';
+                overlay.appendChild(popup);
                 document.body.appendChild(overlay);
-                if(window.trackEvent)window.trackEvent('exit_popup_shown',{page:'pricing'});
+                document.getElementById('exit-popup-cta').addEventListener('click',function(){
+                    if(window.trackEvent)window.trackEvent('pro_button_clicked',{source:'exit_popup_pricing',variant:variant,price:price});
+                });
+                if(window.trackEvent)window.trackEvent('exit_popup_shown',{page:'pricing',variant:variant});
             });
         })();
     </script>
