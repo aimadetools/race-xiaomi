@@ -268,3 +268,29 @@ function renderPricingFreshness(containerId) {
     // Push body content down so banner doesn't overlap nav
     document.body.style.paddingTop = '44px';
 })();
+
+// Sticky Pro CTA bar — shows on scroll for non-pricing pages
+(function() {
+    var path = window.location.pathname;
+    if (path.includes('pricing.html') || path.includes('pro.html') || path.includes('thank-you.html') || path.includes('launch.html')) return;
+    if (localStorage.getItem('apipulse_pro_cta_dismissed')) return;
+    if (localStorage.getItem('apipulse_pro') === 'true') return;
+
+    var shown = false;
+    window.addEventListener('scroll', function() {
+        if (shown) return;
+        var scrollPct = window.scrollY / (document.documentElement.scrollHeight - window.innerHeight);
+        if (scrollPct < 0.3) return;
+        shown = true;
+
+        var bar = document.createElement('div');
+        bar.id = 'sticky-pro-cta';
+        bar.style.cssText = 'position:fixed;bottom:0;left:0;right:0;z-index:9999;background:linear-gradient(135deg,#4f46e5,#6366f1);padding:12px 20px;display:flex;align-items:center;justify-content:center;gap:16px;box-shadow:0 -4px 20px rgba(0,0,0,0.3);transform:translateY(100%);transition:transform 0.3s ease;';
+        bar.innerHTML = '<span style="color:white;font-size:14px;font-weight:600;">Save up to 40% on API costs with Pro</span>' +
+            '<a href="https://buy.stripe.com/fZu7sL3Gw3GS0RQeoDeEo0a" target="_blank" rel="noopener" style="background:white;color:#4f46e5;padding:8px 20px;border-radius:8px;font-size:13px;font-weight:700;text-decoration:none;white-space:nowrap;" onclick="if(window.trackEvent)window.trackEvent(\'pro_button_clicked\',{source:\'sticky_bar\'})">Get Pro — $29</a>' +
+            '<button onclick="document.getElementById(\'sticky-pro-cta\').remove();localStorage.setItem(\'apipulse_pro_cta_dismissed\',\'1\');" style="background:none;border:none;color:rgba(255,255,255,0.7);font-size:18px;cursor:pointer;padding:0 4px;" aria-label="Dismiss">&times;</button>';
+        document.body.appendChild(bar);
+        requestAnimationFrame(function() { bar.style.transform = 'translateY(0)'; });
+        if(window.trackEvent) window.trackEvent('sticky_cta_shown');
+    });
+})();
