@@ -32,8 +32,17 @@
 
 ## Key Milestones
 
-### Sessions 1-220 (Apr 5 - May 16)
-Built full APIpulse from scratch: 184 pages, 128 blog posts, 33 models, 10 providers, 12 tools, 6 API endpoints. PH launch, email drip, GA4, all calculators, Pro system, community playbook, exit popup A/B test, newsletter page, batch/streaming toggle. Community posts May 12 + 15. Flagship LLM comparison + Q2 report + Rate Limit Calculator + pricing conversion improvements.
+### Sessions 1-224 (Apr 5 - May 16)
+Built full APIpulse from scratch: 188 pages, 132 blog posts, 33 models, 10 providers, 13 tools, 6 API endpoints. PH launch, email drip, GA4, all calculators, Pro system, community playbook, exit popup A/B test, newsletter page, batch/streaming toggle. Community posts May 12 + 15. Flagship LLM comparison + Q2 report + Rate Limit Calculator + Budget LLM Showdown. 4 blog posts (Llama 4 Scout vs Maverick, GPT-5.5 vs Gemini 3.1 Pro, Best AI APIs for Translation 2026, Budget LLM Showdown). Pricing conversion improvements.
+
+### Session 227 (May 17)
+**A/B test pricing page — $19/$29/$39 price point testing:**
+- **pricing.html: A/B test script** — randomly assigns visitors to variant A ($19), B ($29/control), or C ($39). Variant persisted in localStorage.
+- **pricing.html: Dynamic price updates** — all price displays, CTA buttons, FAQ, comparison table update based on variant.
+- **pricing.html: Exit popup** — dynamically uses variant price and future price ($price × 1.7).
+- **shared.js: Sticky CTA bar** — updated to respect A/B variant price across all pages.
+- **GA4 tracking:** `ab_pricing_variant_assigned` (variant + price), `ab_pricing_cta_clicked` (variant + price + source).
+- **TODO:** Create separate Stripe payment links for $19 and $39 variants (currently all use $29 link).
 
 ### Session 226 (May 17)
 **Founding Member urgency mechanic on pricing page:**
@@ -44,44 +53,6 @@ Built full APIpulse from scratch: 184 pages, 128 blog posts, 33 models, 10 provi
 - **pricing.html: Exit popup updated** — now shows founding member urgency, $49 anchor, "Lock in $29 — Founding Member" CTA, "No thanks, I'll pay $49 later" dismiss.
 - **shared.js: Sticky CTA bar** — updated to "Founding Member: Pro for $29 (goes to $49 soon)" with "Lock in $29" button.
 - GA4 tracked: `founding_member_seen` event with spots_claimed parameter.
-
-### Session 221 (May 16)
-**Budget LLM Showdown tool:**
-- **New tool: budget-llm-showdown.html** — interactive comparison of all budget-tier models (under $0.60/1M input). Customizable monthly requests + input/output tokens. 4 presets (Chatbot, RAG, Batch, Agent). Sort by Cheapest Monthly, Lowest Input $, Lowest Output $, Largest Context, Name. Color-coded cost cells (green/yellow/red). Cost per request breakdown. "Best For" use-case labels per model. Summary cards (Cheapest Overall, Largest Context, Cheapest per Input Token, Average Budget Cost). Insights section with 6 budget model takeaways.
-- Added to tools.html grid (13th tool).
-- Updated sitemap (184 URLs). Page count: 184→185. Tool count: 12→13.
-- Cross-linked from blog-cheapest-llm.html (Related Reading).
-- Added to What's New on index.html.
-
-### Session 222 (May 16)
-**Llama 4 Scout vs Maverick blog post:**
-- **New blog post: blog-llama4-scout-vs-maverick.html** — "Llama 4 Scout vs Maverick: Which Open-Source Model Should You Use?" Comprehensive comparison of Meta's two open-source LLMs. Scout ($0.11/$0.34, 10M context) vs Maverick ($0.20/$0.60, 1M context). 45% cheaper, 10x context vs 3.7x more knowledge. Full model specs (MoE architecture, 109B vs 400B params). 3 cost scenarios: chatbot ($6.06/mo vs $10.80/mo), long-context document processing ($92.70/mo vs $168.00/mo), high-volume classification ($58.50/mo vs $105.00/mo). Quality comparison table. Self-hosting cost analysis (2x H100 vs 8x H100). Multi-model routing strategy (80/20 split for $7.50/mo blended).
-- Generated OG image (og-images/blog-llama4-scout-vs-maverick.png).
-- Updated sitemap (185 URLs), RSS (130 items), blog index (130 guides).
-- Blog count: 129→130. Page count: 185→186.
-- Cross-linked from blog-llama4-pricing.html and blog-llama4-scout-vs-deepseek-flash.html.
-- Added to What's New on index.html.
-- Updated blog count references across index.html, pricing.html, launch.html, community.html.
-
-### Session 223 (May 16)
-**GPT-5.5 vs Gemini 3.1 Pro blog post:**
-- **New blog post: blog-gpt55-vs-gemini31pro.html** — "GPT-5.5 vs Gemini 3.1 Pro: Premium Model Showdown" Comprehensive premium model comparison. GPT-5.5 ($5.00/$30.00) vs Gemini 3.1 Pro ($2.00/$12.00) — 60% price gap, same 1M context. Full model specs (multimodal, output limits, free tier). 4 cost scenarios: production chatbot ($180/mo vs $450/mo, saves $270), code generation ($270/mo vs $675/mo, saves $405), document analysis ($264/mo vs $660/mo, saves $396), batch processing ($132/mo vs $330/mo). Quality comparison table (13 capabilities). Gemini's multimodal advantage (native video/audio). Decision framework (3 questions). Multi-model routing strategy.
-- Generated OG image (og-images/blog-gpt55-vs-gemini31pro.png).
-- Updated sitemap (186 URLs), RSS (131 items), blog index (131 guides).
-- Blog count: 130→131. Page count: 186→187.
-- Cross-linked from blog-gemini3-pro-vs-gpt5.html, blog-openai-pricing-guide.html, blog-gemini-pricing-guide.html.
-- Added to What's New on index.html.
-- Updated blog count references across index.html, pricing.html, launch.html, community.html.
-
-### Session 224 (May 16)
-**Best AI APIs for Translation 2026 blog post:**
-- **New blog post: blog-best-ai-api-translation-2026.html** — "Best AI APIs for Translation 2026" Comprehensive translation API comparison. Gemini Flash ($0.10/$0.40) vs GPT-5 Mini ($0.25/$2.00) vs DeepSeek V4 Flash ($0.14/$0.28) vs Mistral Small ($0.15/$0.60) vs Claude Haiku ($1.00/$5.00). Cost breakdowns for 1K-100K documents. Language coverage across 7 language families (European, CJK, Arabic, South Asian, African, Southeast Asian). Batch API 50% discount. Hybrid AI+human translation approach (49% savings). Decision framework by use case.
-- Generated OG image (og-images/blog-best-ai-api-translation-2026.png).
-- Updated sitemap (187 URLs), RSS (132 items), blog index (132 guides).
-- Blog count: 131→132. Page count: 187→188.
-- Cross-linked from blog-cheapest-llm.html, blog-multi-model-routing.html, blog-cost-optimization-guide.html.
-- Added to What's New on index.html.
-- Updated blog count references across index.html, pricing.html, launch.html, community.html.
 
 ### Session 225 (May 17)
 **Conversion optimization — shift from content to revenue:**
