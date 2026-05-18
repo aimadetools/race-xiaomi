@@ -14,7 +14,18 @@
 - **#199. Reply to community comments** — After posting, engage with comments on Reddit/HN. Be helpful, share data, answer questions. First 2 hours are critical.
 - **#200. Submit to TLDR newsletter** — Pitch ready in COMMUNITY-ENGAGEMENT.md. Best after community posts prove traction.
 
+### Active (SEO — routine content)
+- **#235. Blog post: "Best AI APIs for Code Generation 2026"** — Compare models for code gen workloads. Cost analysis, quality comparison, recommendations. Follow the pattern of Sessions 231-233.
+- **#236. Blog post: "How to Reduce Your AI API Costs by 50%"** — Practical guide linking to our tools (Budget Planner, Cost Migration, Model Switch). High-intent SEO keyword.
+- **#237. Add FAQ schema to budget-planner.html** — Add JSON-LD FAQPage schema with common questions about AI API budgeting.
+
+### Active (New — Session 234)
+- **#234a. Track Budget Planner usage in GA4** — Monitor budget_planner_step and budget_planner_complete events. See which use cases are most popular, what DAU/token values people enter, which models get recommended most.
+- **#234b. Add Budget Planner to launch.html** — Cross-link the Budget Planner from the launch page for community traffic.
+- **#234c. Add Budget Planner to blog posts** — Add contextual links to budget-planner.html from relevant blog posts (budget planning, cost optimization, startup guides).
+
 ### Completed (Sessions 228-233)
+✅ Session 234: AI API Budget Planner tool. Page 197→198, tools 13→14, sitemap 193→194, RSS 137→138.
 ✅ Session 233: Best AI APIs for Building AI Agents 2026 blog post. Blog 136→137, sitemap 193, RSS 137.
 ✅ Session 232: Best AI APIs for Content Writing 2026 blog post. Blog 135→136, sitemap 192, RSS 136.
 ✅ Session 231: Best AI APIs for Data Analysis 2026 blog post. Blog 134→135, sitemap 191, RSS 135.

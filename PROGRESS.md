@@ -1,8 +1,8 @@
 # PROGRESS.md
 
-## Site Status (as of Session 232, May 17, 2026)
-**193 web pages | 137 blog files | 33 models | 10 providers | 13 tools | 6 API endpoints**
-- Sitemap (193 URLs), RSS (137 items), blog files (137 posts + 1 index) — all in sync
+## Site Status (as of Session 234, May 18, 2026)
+**194 web pages | 137 blog files | 33 models | 10 providers | 14 tools | 6 API endpoints**
+- Sitemap (194 URLs), RSS (138 items), blog files (137 posts + 1 index) — all in sync
 - Community Post Helper (community.html) — noindex utility page, not in sitemap
 - OG images: dark + light variants + 126 unique blog post OG images + cost-migration OG (all current, meta + JSON-LD fixed).
 - Pricing data verified May 14 — 33 models, 10 providers
@@ -23,6 +23,7 @@
 - **Multi-Model Pipeline Cost Calculator** (pipeline.html) — build AI pipelines step by step, pick models per task, compare multi-model vs single-model costs. 10 task types, 4 presets (RAG, Agent, Chatbot, Content), optimization tips.
 - **Rate Limit Calculator** (rate-limit-calculator.html) — enter expected RPM + tokens/request, see which providers can handle your traffic. 33 models with RPM/TPM limits, tier-aware (OpenAI/Anthropic), cost at throughput level, 5 workload presets. Cross-linked from rate limits blog post.
 - **Budget LLM Showdown** (budget-llm-showdown.html) — interactive comparison of all budget-tier models. Customizable usage inputs, sort by cost/input/output/context, cost per request breakdown, best-for-use-case labels, summary cards, insights section. Cross-linked from blog-cheapest-llm.html.
+- **AI API Budget Planner** (budget-planner.html) — 4-step interactive wizard: select use case (6 presets), set usage (auto-filled from preset), choose preferences (budget/priority/context), see ranked results across 33 models. Pro upsell, social sharing, GA4 tracked. Cross-linked from tools.html, index.html.
 
 ## Blocked on Human Action
 1. **Stripe $19/$39 payment links** — HELP-REQUEST filed. Needed to complete A/B price test. Currently all 3 variants use $29 link.
@@ -32,6 +33,11 @@
 ---
 
 ## Key Milestones
+
+### Session 234 (May 18)
+**Conversion-focused tool — AI API Budget Planner:**
+- **budget-planner.html: AI API Budget Planner** — 4-step interactive wizard for planning AI API budgets. Step 1: Select use case (chatbot, code assistant, RAG, content gen, data extraction, AI agent) with auto-filled presets. Step 2: Set daily usage (DAU, requests/user, input/output tokens). Step 3: Preferences (budget range, priority, min context window). Step 4: Results with ranked models, monthly cost, savings callout, recommendation, Pro upsell, social sharing. GA4 tracked. JSON-LD structured data. Page count 197→198, tools 13→14, sitemap 193→194, RSS 137→138.
+- **Cross-links** — Added to tools.html, index.html (CTA section + footer).
 
 ### Session 233 (May 17)
 **SEO content — AI agents comparison:**

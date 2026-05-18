@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI API Budget Planner — Plan Your LLM Costs | APIpulse</title>
+    <meta name="description" content="Free interactive AI API budget planner. Describe your app, get a monthly cost estimate across 33 models. Find the cheapest LLM for your workload and plan your AI budget.">
+    <meta name="keywords" content="AI API budget planner, LLM cost planner, AI budget calculator, monthly AI API cost, plan AI spending, LLM budget tool">
+    <meta property="og:title" content="AI API Budget Planner — Plan Your LLM Costs | APIpulse">
+    <meta property="og:description" content="Describe your app, get a monthly cost estimate. Find the cheapest LLM for your workload.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://getapipulse.com/og-image.png">
+    <meta property="og:url" content="https://getapipulse.com/budget-planner.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="AI API Budget Planner — Plan Your LLM Costs">
+    <meta name="twitter:description" content="Describe your app, get a monthly cost estimate across 33 LLM models.">
+    <meta name="twitter:image" content="https://getapipulse.com/og-image.png">
+    <link rel="canonical" href="https://getapipulse.com/budget-planner.html">
+    <link rel="alternate" type="application/rss+xml" title="APIpulse Blog" href="https://getapipulse.com/rss.xml">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="styles.css">
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0CEP7S9Y3J"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-0CEP7S9Y3J');
+    </script>
+    <script src="analytics.js" defer></script>
+    <script src="dynamic-date.js" defer></script>
+    <script src="shared.js" defer></script>
+    <script src="pricing-data.js" defer></script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "AI API Budget Planner",
+        "url": "https://getapipulse.com/budget-planner.html",
+        "description": "Free interactive AI API budget planner. Describe your app, get monthly cost estimates across 33 models.",
+        "applicationCategory": "DeveloperApplication",
+        "operatingSystem": "Web",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+    }
+    </script>
+    <style>
+        .planner-hero {
+            padding: 100px 24px 40px;
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        .planner-hero .badge {
+            display: inline-block;
+            background: var(--accent);
+            color: white;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 20px;
+        }
+        .planner-hero h1 {
+            font-size: clamp(28px, 4vw, 44px);
+            font-weight: 800;
+            line-height: 1.15;
+            margin-bottom: 16px;
+        }
+        .planner-hero p {
+            font-size: 18px;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        /* Steps */
+        .steps-bar {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            margin: 32px auto;
+            max-width: 500px;
+            padding: 0 24px;
+        }
+        .step-dot {
+            width: 40px;
+            height: 4px;
+            border-radius: 2px;
+            background: var(--border);
+            transition: background 0.3s;
+        }
+        .step-dot.active { background: var(--accent); }
+        .step-dot.done { background: var(--green); }
+
+        /* Planner Container */
+        .planner-container {
+            max-width: 700px;
+            margin: 0 auto 60px;
+            padding: 0 24px;
+        }
+        .planner-step {
+            display: none;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 36px;
+            animation: fadeIn 0.3s ease;
+        }
+        .planner-step.active { display: block; }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .planner-step h2 {
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+        .planner-step .step-desc {
+            color: var(--text-secondary);
+            font-size: 15px;
+            margin-bottom: 28px;
+            line-height: 1.6;
+        }
+
+        /* Preset Cards */
+        .preset-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 14px;
+            margin-bottom: 24px;
+        }
+        .preset-card {
+            background: var(--bg-secondary);
+            border: 2px solid var(--border);
+            border-radius: 12px;
+            padding: 20px;
+            cursor: pointer;
+            transition: all 0.2s;
+            text-align: center;
+        }
+        .preset-card:hover {
+            border-color: var(--accent);
+            background: var(--accent-glow);
+        }
+        .preset-card.selected {
+            border-color: var(--accent);
+            background: var(--accent-glow);
+            box-shadow: 0 0 20px rgba(99,102,241,0.15);
+        }
+        .preset-card .preset-icon {
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+        .preset-card h3 {
+            font-size: 15px;
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+        .preset-card p {
+            font-size: 12px;
+            color: var(--text-muted);
+        }
+
+        /* Form Elements */
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-group label {
+            display: block;
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--text-secondary);
+            margin-bottom: 8px;
+        }
+        .form-group input, .form-group select {
+            width: 100%;
+            padding: 12px 16px;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            color: var(--text-primary);
+            font-size: 15px;
+        }
+        .form-group input:focus, .form-group select:focus {
+            outline: none;
+            border-color: var(--accent);
+            box-shadow: 0 0 0 3px rgba(99,102,241,0.1);
+        }
+        .form-hint {
+            font-size: 12px;
+            color: var(--text-muted);
+            margin-top: 6px;
+        }
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+
+        /* Buttons */
+        .btn-row {
+            display: flex;
+            gap: 12px;
+            margin-top: 28px;
+        }
+        .btn-primary {
+            background: var(--accent);
+            color: white;
+            padding: 12px 28px;
+            border-radius: 10px;
+            font-size: 15px;
+            font-weight: 700;
+            border: none;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .btn-primary:hover {
+            background: var(--accent-hover);
+            transform: translateY(-1px);
+        }
+        .btn-secondary {
+            background: transparent;
+            color: var(--text-secondary);
+            padding: 12px 28px;
+            border-radius: 10px;
+            font-size: 15px;
+            font-weight: 600;
+            border: 1px solid var(--border);
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .btn-secondary:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+        }
+
+        /* Results */
+        .results-header {
+            text-align: center;
+            margin-bottom: 32px;
+        }
+        .results-header h2 {
+            font-size: 28px;
+            margin-bottom: 8px;
+        }
+        .results-header .total-cost {
+            font-size: 48px;
+            font-weight: 800;
+            color: var(--green);
+            margin: 12px 0;
+        }
+        .results-header .total-label {
+            font-size: 14px;
+            color: var(--text-muted);
+        }
+        .results-header .savings-callout {
+            display: inline-block;
+            background: rgba(34,197,94,0.15);
+            color: var(--green);
+            padding: 6px 16px;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 700;
+            margin-top: 12px;
+        }
+
+        /* Results Table */
+        .results-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 24px 0;
+            font-size: 14px;
+        }
+        .results-table th {
+            text-align: left;
+            padding: 12px 16px;
+            background: var(--bg-secondary);
+            font-weight: 700;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--text-muted);
+            border-bottom: 2px solid var(--border);
+        }
+        .results-table td {
+            padding: 12px 16px;
+            border-bottom: 1px solid var(--border);
+        }
+        .results-table tr:hover { background: var(--bg-card-hover); }
+        .results-table .model-name {
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+        .results-table .provider-cell {
+            color: var(--text-secondary);
+            font-size: 13px;
+        }
+        .results-table .cost-cell {
+            font-family: 'SF Mono', 'Monaco', 'Menlo', monospace;
+            font-weight: 700;
+        }
+        .results-table .cheapest-row td {
+            background: rgba(34,197,94,0.05);
+        }
+        .results-table .cheapest-row .cost-cell {
+            color: var(--green);
+        }
+        .results-table .tier-badge {
+            display: inline-block;
+            padding: 2px 10px;
+            border-radius: 6px;
+            font-size: 11px;
+            font-weight: 700;
+        }
+        .tier-Premium { background: rgba(239,68,68,0.15); color: var(--red); }
+        .tier-Mid { background: rgba(245,158,11,0.15); color: var(--orange); }
+        .tier-Budget { background: rgba(34,197,94,0.15); color: var(--green); }
+
+        /* Recommendation */
+        .recommendation {
+            background: var(--bg-secondary);
+            border: 1px solid var(--accent);
+            border-radius: 14px;
+            padding: 24px;
+            margin: 24px 0;
+            text-align: center;
+        }
+        .recommendation h3 {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: var(--accent);
+        }
+        .recommendation p {
+            color: var(--text-secondary);
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        /* Pro Upsell */
+        .pro-upsell {
+            background: linear-gradient(135deg, rgba(99,102,241,0.1) 0%, rgba(99,102,241,0.05) 100%);
+            border: 1px solid rgba(99,102,241,0.3);
+            border-radius: 16px;
+            padding: 32px;
+            margin: 32px 0;
+            text-align: center;
+        }
+        .pro-upsell h3 {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+        .pro-upsell p {
+            color: var(--text-secondary);
+            font-size: 15px;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+        .pro-upsell .cta-btn {
+            display: inline-block;
+            background: var(--accent);
+            color: white;
+            padding: 12px 28px;
+            border-radius: 10px;
+            font-size: 15px;
+            font-weight: 700;
+            transition: all 0.2s;
+        }
+        .pro-upsell .cta-btn:hover {
+            background: var(--accent-hover);
+            transform: translateY(-2px);
+            color: white;
+        }
+
+        /* Share */
+        .share-bar {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            margin: 32px 0;
+        }
+        .share-btn {
+            padding: 8px 20px;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+            background: var(--bg-card);
+            color: var(--text-secondary);
+            font-size: 13px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .share-btn:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+        }
+
+        @media (max-width: 768px) {
+            .form-row { grid-template-columns: 1fr; }
+            .preset-grid { grid-template-columns: 1fr 1fr; }
+            .planner-step { padding: 24px; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-inner">
+            <a href="/" class="logo">API<span>pulse</span></a>
+            <div class="nav-links">
+                <a href="/tools.html">Tools</a>
+                <a href="/pricing.html">Pricing</a>
+                <a href="/blog.html">Blog</a>
+                <a href="/budget-planner.html" style="color:var(--accent)">Budget Planner</a>
+                <a href="/compare-plans.html" class="nav-cta">Get Pro</a>
+                <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">
+                    <svg class="moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+                    <svg class="sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:none"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+                </button>
+                <button class="hamburger" onclick="toggleMobileNav()" aria-label="Menu"><span></span><span></span><span></span></button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="planner-hero">
+        <div class="badge">Free Tool</div>
+        <h1>Plan Your AI API Budget</h1>
+        <p>Describe your app, set your usage, and get instant cost estimates across 33 models. Find the cheapest LLM for your exact workload.</p>
+    </div>
+
+    <div class="steps-bar" id="steps-bar">
+        <div class="step-dot active" data-step="1"></div>
+        <div class="step-dot" data-step="2"></div>
+        <div class="step-dot" data-step="3"></div>
+        <div class="step-dot" data-step="4"></div>
+    </div>
+
+    <div class="planner-container">
+        <!-- Step 1: Use Case -->
+        <div class="planner-step active" id="step-1">
+            <h2>What are you building?</h2>
+            <p class="step-desc">Select the use case that best matches your application. This helps us recommend the right models.</p>
+            <div class="preset-grid">
+                <div class="preset-card" data-usecase="chatbot" onclick="selectUseCase(this)">
+                    <div class="preset-icon">💬</div>
+                    <h3>Chatbot</h3>
+                    <p>Customer support, FAQ, conversational AI</p>
+                </div>
+                <div class="preset-card" data-usecase="coding" onclick="selectUseCase(this)">
+                    <div class="preset-icon">💻</div>
+                    <h3>Code Assistant</h3>
+                    <p>Code generation, review, debugging</p>
+                </div>
+                <div class="preset-card" data-usecase="rag" onclick="selectUseCase(this)">
+                    <div class="preset-icon">📚</div>
+                    <h3>RAG / Q&A</h3>
+                    <p>Document search, knowledge base</p>
+                </div>
+                <div class="preset-card" data-usecase="content" onclick="selectUseCase(this)">
+                    <div class="preset-icon">✍️</div>
+                    <h3>Content Gen</h3>
+                    <p>Blog posts, marketing, copywriting</p>
+                </div>
+                <div class="preset-card" data-usecase="extraction" onclick="selectUseCase(this)">
+                    <div class="preset-icon">📊</div>
+                    <h3>Data Extraction</h3>
+                    <p>Parsing, classification, structured output</p>
+                </div>
+                <div class="preset-card" data-usecase="agent" onclick="selectUseCase(this)">
+                    <div class="preset-icon">🤖</div>
+                    <h3>AI Agent</h3>
+                    <p>Multi-step workflows, tool use</p>
+                </div>
+            </div>
+            <div class="btn-row">
+                <button class="btn-primary" onclick="goToStep(2)" id="step1-next" disabled>Continue</button>
+            </div>
+        </div>
+
+        <!-- Step 2: Usage -->
+        <div class="planner-step" id="step-2">
+            <h2>How much will you use it?</h2>
+            <p class="step-desc">Estimate your daily usage. Don't worry — you can adjust these numbers later.</p>
+            <div class="form-row">
+                <div class="form-group">
+                    <label>Daily Active Users</label>
+                    <input type="number" id="dau" value="100" min="1">
+                    <p class="form-hint">How many users per day?</p>
+                </div>
+                <div class="form-group">
+                    <label>Requests per User per Day</label>
+                    <input type="number" id="rpu" value="5" min="1">
+                    <p class="form-hint">Average API calls per user</p>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label>Avg Input Tokens per Request</label>
+                    <input type="number" id="input-tokens" value="500" min="1">
+                    <p class="form-hint">Including system prompt + user input</p>
+                </div>
+                <div class="form-group">
+                    <label>Avg Output Tokens per Request</label>
+                    <input type="number" id="output-tokens" value="200" min="1">
+                    <p class="form-hint">Model's response length</p>
+                </div>
+            </div>
+            <div class="btn-row">
+                <button class="btn-secondary" onclick="goToStep(1)">Back</button>
+                <button class="btn-primary" onclick="goToStep(3)">Continue</button>
+            </div>
+        </div>
+
+        <!-- Step 3: Preferences -->
+        <div class="planner-step" id="step-3">
+            <h2>Any preferences?</h2>
+            <p class="step-desc">Help us narrow down the best options for you.</p>
+            <div class="form-group">
+                <label>Budget Range (Monthly)</label>
+                <select id="budget-range">
+                    <option value="any">No budget limit</option>
+                    <option value="50">Under $50/month</option>
+                    <option value="200">Under $200/month</option>
+                    <option value="500">Under $500/month</option>
+                    <option value="1000">Under $1,000/month</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Priority</label>
+                <select id="priority">
+                    <option value="cost">Lowest cost (budget-friendly)</option>
+                    <option value="quality">Best quality (premium models)</option>
+                    <option value="balanced">Balanced (best value)</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Minimum Context Window</label>
+                <select id="min-context">
+                    <option value="0">No minimum</option>
+                    <option value="128">128K+ tokens</option>
+                    <option value="200">200K+ tokens</option>
+                    <option value="1000">1M+ tokens</option>
+                </select>
+            </div>
+            <div class="btn-row">
+                <button class="btn-secondary" onclick="goToStep(2)">Back</button>
+                <button class="btn-primary" onclick="calculateBudget()">See Results</button>
+            </div>
+        </div>
+
+        <!-- Step 4: Results -->
+        <div class="planner-step" id="step-4">
+            <div class="results-header">
+                <h2>Your Budget Estimate</h2>
+                <p class="total-label">Monthly cost for your cheapest option</p>
+                <div class="total-cost" id="result-total">—</div>
+                <div class="savings-callout" id="result-savings">—</div>
+            </div>
+
+            <div id="result-recommendation" class="recommendation"></div>
+
+            <div style="overflow-x:auto">
+                <table class="results-table">
+                    <thead>
+                        <tr>
+                            <th>Model</th>
+                            <th>Provider</th>
+                            <th>Tier</th>
+                            <th>Monthly Cost</th>
+                            <th>vs. Cheapest</th>
+                        </tr>
+                    </thead>
+                    <tbody id="results-body"></tbody>
+                </table>
+            </div>
+
+            <div class="pro-upsell">
+                <h3>Save this budget plan & track costs</h3>
+                <p>Pro users can save up to 10 budget scenarios, export PDF reports, and get alerts when pricing changes. One-time $29 — lifetime access.</p>
+                <a href="/compare-plans.html" class="cta-btn">Unlock Pro — $29</a>
+            </div>
+
+            <div class="share-bar">
+                <button class="share-btn" onclick="shareTwitter()">Share on X</button>
+                <button class="share-btn" onclick="shareHN()">Share on HN</button>
+                <button class="share-btn" onclick="copyLink()">Copy Link</button>
+            </div>
+
+            <div class="btn-row" style="justify-content:center">
+                <button class="btn-secondary" onclick="goToStep(1)">Start Over</button>
+                <a href="/calculator.html" class="btn-primary" style="text-decoration:none;display:inline-flex;align-items:center">Detailed Calculator</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Related -->
+    <div class="planner-container" style="margin-bottom:80px">
+        <h2 style="font-size:22px;font-weight:700;margin-bottom:20px;text-align:center">More Tools</h2>
+        <div class="preset-grid" style="max-width:700px;margin:0 auto">
+            <a href="/calculator.html" class="preset-card" style="text-decoration:none">
+                <div class="preset-icon">🧮</div>
+                <h3>Cost Calculator</h3>
+                <p>Detailed per-model estimates</p>
+            </a>
+            <a href="/compare.html" class="preset-card" style="text-decoration:none">
+                <div class="preset-icon">⚖️</div>
+                <h3>Model Compare</h3>
+                <p>Side-by-side comparison</p>
+            </a>
+            <a href="/cost-migration.html" class="preset-card" style="text-decoration:none">
+                <div class="preset-icon">🔄</div>
+                <h3>Migration Report</h3>
+                <p>Switch & save</p>
+            </a>
+        </div>
+    </div>
+
+    <div id="footer-placeholder"></div>
+
+    <script>
+    let currentStep = 1;
+    let selectedUseCase = null;
+
+    const PRESETS = {
+        chatbot: { inputTokens: 300, outputTokens: 150, rpu: 8, label: 'Chatbot' },
+        coding: { inputTokens: 1000, outputTokens: 500, rpu: 3, label: 'Code Assistant' },
+        rag: { inputTokens: 2000, outputTokens: 300, rpu: 4, label: 'RAG / Q&A' },
+        content: { inputTokens: 500, outputTokens: 1500, rpu: 2, label: 'Content Generation' },
+        extraction: { inputTokens: 800, outputTokens: 100, rpu: 10, label: 'Data Extraction' },
+        agent: { inputTokens: 1500, outputTokens: 400, rpu: 5, label: 'AI Agent' }
+    };
+
+    function selectUseCase(el) {
+        document.querySelectorAll('.preset-card').forEach(c => c.classList.remove('selected'));
+        el.classList.add('selected');
+        selectedUseCase = el.dataset.usecase;
+        document.getElementById('step1-next').disabled = false;
+
+        // Auto-fill usage based on preset
+        const preset = PRESETS[selectedUseCase];
+        if (preset) {
+            document.getElementById('input-tokens').value = preset.inputTokens;
+            document.getElementById('output-tokens').value = preset.outputTokens;
+            document.getElementById('rpu').value = preset.rpu;
+        }
+    }
+
+    function goToStep(step) {
+        currentStep = step;
+        document.querySelectorAll('.planner-step').forEach(s => s.classList.remove('active'));
+        document.getElementById('step-' + step).classList.add('active');
+
+        document.querySelectorAll('.step-dot').forEach(dot => {
+            const s = parseInt(dot.dataset.step);
+            dot.classList.remove('active', 'done');
+            if (s === step) dot.classList.add('active');
+            else if (s < step) dot.classList.add('done');
+        });
+
+        trackEvent('budget_planner_step', { step: step, use_case: selectedUseCase || 'none' });
+    }
+
+    function calculateBudget() {
+        const dau = parseInt(document.getElementById('dau').value) || 100;
+        const rpu = parseInt(document.getElementById('rpu').value) || 5;
+        const inputTokens = parseInt(document.getElementById('input-tokens').value) || 500;
+        const outputTokens = parseInt(document.getElementById('output-tokens').value) || 200;
+        const budgetRange = document.getElementById('budget-range').value;
+        const priority = document.getElementById('priority').value;
+        const minContext = parseInt(document.getElementById('min-context').value) || 0;
+
+        const dailyRequests = dau * rpu;
+        const monthlyRequests = dailyRequests * 30;
+        const totalInput = inputTokens * monthlyRequests;
+        const totalOutput = outputTokens * monthlyRequests;
+
+        // Calculate costs for all models
+        let models = API_MODELS.map(m => {
+            const monthlyCost = (totalInput / 1000000) * m.input + (totalOutput / 1000000) * m.output;
+            return { ...m, monthlyCost };
+        });
+
+        // Filter by context window
+        if (minContext > 0) {
+            models = models.filter(m => parseFloat(m.context) >= minContext);
+        }
+
+        // Filter by budget
+        if (budgetRange !== 'any') {
+            const maxBudget = parseInt(budgetRange);
+            // Don't filter, but mark as over budget
+        }
+
+        // Sort based on priority
+        if (priority === 'cost') {
+            models.sort((a, b) => a.monthlyCost - b.monthlyCost);
+        } else if (priority === 'quality') {
+            const tierOrder = { Premium: 0, Mid: 1, Budget: 2 };
+            models.sort((a, b) => tierOrder[a.tier] - tierOrder[b.tier] || a.monthlyCost - b.monthlyCost);
+        } else {
+            // Balanced: weight cost and tier
+            const tierWeight = { Premium: 3, Mid: 2, Budget: 1 };
+            models.sort((a, b) => {
+                const scoreA = a.monthlyCost * (4 - tierWeight[a.tier]);
+                const scoreB = b.monthlyCost * (4 - tierWeight[b.tier]);
+                return scoreA - scoreB;
+            });
+        }
+
+        if (models.length === 0) {
+            document.getElementById('result-total').textContent = 'No models match';
+            document.getElementById('result-savings').textContent = 'Try adjusting your context window requirement';
+            goToStep(4);
+            return;
+        }
+
+        const cheapest = models[0];
+        const mostExpensive = models[models.length - 1];
+        const savings = mostExpensive.monthlyCost - cheapest.monthlyCost;
+
+        document.getElementById('result-total').textContent = '$' + cheapest.monthlyCost.toFixed(2) + '/mo';
+        document.getElementById('result-savings').textContent = 'Save up to $' + savings.toFixed(2) + '/mo vs. the most expensive option';
+
+        // Recommendation
+        const rec = document.getElementById('result-recommendation');
+        const useCaseLabel = PRESETS[selectedUseCase]?.label || 'your workload';
+        rec.innerHTML = `
+            <h3>Recommended for ${useCaseLabel}</h3>
+            <p><strong>${cheapest.name}</strong> (${cheapest.provider}) at $${cheapest.monthlyCost.toFixed(2)}/month.
+            ${cheapest.tier === 'Budget' ? 'This budget model handles most ' + useCaseLabel.toLowerCase() + ' workloads well.' : ''}
+            ${cheapest.tier === 'Mid' ? 'A solid mid-tier choice balancing quality and cost.' : ''}
+            ${cheapest.tier === 'Premium' ? 'Premium quality for demanding workloads.' : ''}
+            </p>
+        `;
+
+        // Results table (top 10)
+        const topModels = models.slice(0, 12);
+        const tbody = document.getElementById('results-body');
+        tbody.innerHTML = topModels.map((m, i) => `
+            <tr class="${i === 0 ? 'cheapest-row' : ''}">
+                <td class="model-name">${m.name}${i === 0 ? ' ⭐' : ''}</td>
+                <td class="provider-cell">${m.provider}</td>
+                <td><span class="tier-badge tier-${m.tier}">${m.tier}</span></td>
+                <td class="cost-cell">$${m.monthlyCost.toFixed(2)}</td>
+                <td class="cost-cell" style="color:${i === 0 ? 'var(--green)' : 'var(--text-muted)'}">${i === 0 ? 'Cheapest' : '+$' + (m.monthlyCost - cheapest.monthlyCost).toFixed(2)}</td>
+            </tr>
+        `).join('');
+
+        goToStep(4);
+
+        trackEvent('budget_planner_complete', {
+            use_case: selectedUseCase,
+            dau: dau,
+            monthly_cost: cheapest.monthlyCost.toFixed(2),
+            recommended_model: cheapest.name,
+            priority: priority
+        });
+    }
+
+    function shareTwitter() {
+        const cost = document.getElementById('result-total').textContent;
+        const url = encodeURIComponent(window.location.href);
+        const text = encodeURIComponent(`I just planned my AI API budget with APIpulse. ${cost}/month for my workload. Compare 33 LLM models:`);
+        window.open(`https://twitter.com/intent/tweet?url=${url}&text=${text}`, '_blank');
+        trackEvent('share_click', { platform: 'twitter', page: 'budget-planner' });
+    }
+    function shareHN() {
+        const url = encodeURIComponent(window.location.href);
+        const title = encodeURIComponent('AI API Budget Planner — Plan Your LLM Costs');
+        window.open(`https://news.ycombinator.com/submitlink?u=${url}&t=${title}`, '_blank');
+        trackEvent('share_click', { platform: 'hn', page: 'budget-planner' });
+    }
+    function copyLink() {
+        navigator.clipboard.writeText(window.location.href).then(() => {
+            const btn = event.target;
+            btn.textContent = 'Copied!';
+            setTimeout(() => btn.textContent = 'Copy Link', 2000);
+        });
+        trackEvent('share_click', { platform: 'copy', page: 'budget-planner' });
+    }
+    </script>
+</body>
+</html>
