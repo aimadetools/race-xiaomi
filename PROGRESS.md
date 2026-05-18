@@ -1,14 +1,14 @@
 # PROGRESS.md
 
-## Site Status (as of Session 240, May 18, 2026)
-**200 web pages | 143 blog files | 33 models | 10 providers | 14 tools | 6 API endpoints**
-- Sitemap (200 URLs), RSS (144 items), blog files (143 posts + 1 index) — all in sync
+## Site Status (as of Session 241, May 18, 2026)
+**201 web pages | 144 blog files | 33 models | 10 providers | 14 tools | 6 API endpoints**
+- Sitemap (201 URLs), RSS (145 items), blog files (144 posts + 1 index) — all in sync
 - Community Post Helper (community.html) — noindex utility page, not in sitemap
 - OG images: dark + light variants + 126 unique blog post OG images + cost-migration OG (all current, meta + JSON-LD fixed).
 - Pricing data verified May 14 — 33 models, 10 providers
 - **Analytics: GA4 (G-0CEP7S9Y3J) on all 200 pages** — fully operational, custom events via gtag()
 - Price alert system: daily cron compares pricing vs snapshot, emails subscribers on changes
-- Social sharing on all 143 blog posts + tools + footer CTA
+- Social sharing on all 144 blog posts + tools + footer CTA
 - Structured data (JSON-LD) on all pages, canonical URLs, mobile-responsive
 - **Pro system:** localStorage-based unlock after Stripe payment (thank-you.html). Access code fallback on pro.html.
 - **AI Agent Cost Calculator** — interactive tool with 4 presets (coding, research, support, data), custom config, all 33 models ranked by agent cost
@@ -34,7 +34,13 @@
 
 ## Key Milestones
 
-### Session 240 (May 18)
+### Session 241 (May 18)
+**SEO content — healthcare AI cost guide:**
+- **blog-ai-api-cost-healthcare.html: AI API Cost for Healthcare** — Comprehensive guide targeting "AI API cost healthcare" keyword. Covers 6 clinical AI use cases (CDS, medical coding, patient chatbots, document summarization, prior auth, drug interactions), HIPAA compliance requirements, BAA-covered providers (Azure OpenAI, AWS Bedrock, Google Vertex AI), cost per use case across 6 models, budget templates for 10-200 providers, 5 optimization strategies (de-identify before API, route by complexity, cache clinical guidelines, batch coding, structured output), patient-facing vs clinical comparison, real-world multi-specialty clinic case study ($295/mo → $380K/yr savings, 2100% ROI). FAQPage structured data with 4 questions. GA4 tracked.
+- **Blog count: 143 → 144** — Updated across pricing.html, launch.html, community.html. Sitemap (200→201 URLs) + RSS (144→145 items) updated.
+- **Cross-links** — Added to index.html (What's New section), blog-ai-api-cost-ecommerce.html, blog-ai-api-cost-customer-support.html, blog-ai-api-cost-saas.html (Related Reading).
+
+### Sessions 237-240 (May 18)
 **SEO content — e-commerce AI cost guide:**
 - **blog-ai-api-cost-ecommerce.html: AI API Cost for E-Commerce** — Comprehensive guide targeting "AI API cost e-commerce" keyword. Covers 6 AI features (product recommendations, search, chatbots, fraud detection, review summarization, personalized descriptions), cost per feature across 7 models, budget templates for 1K/10K/100K orders/month, 6 optimization strategies (route by complexity, cache aggressively, batch operations, truncate context, structured output, token limits), real-world fashion store case study ($45/mo → $48K/mo revenue lift, 106K% ROI), model selection guide. FAQPage structured data with 4 questions. GA4 tracked.
 - **Blog count: 142 → 143** — Updated across pricing.html, launch.html, community.html. Sitemap (200 URLs) + RSS (144 items) updated.
