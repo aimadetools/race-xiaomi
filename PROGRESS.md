@@ -1,8 +1,8 @@
 # PROGRESS.md
 
-## Site Status (as of Session 241, May 18, 2026)
-**201 web pages | 144 blog files | 33 models | 10 providers | 14 tools | 6 API endpoints**
-- Sitemap (201 URLs), RSS (145 items), blog files (144 posts + 1 index) — all in sync
+## Site Status (as of Session 242, May 18, 2026)
+**202 web pages | 145 blog files | 33 models | 10 providers | 14 tools | 6 API endpoints**
+- Sitemap (202 URLs), RSS (146 items), blog files (145 posts + 1 index) — all in sync
 - Community Post Helper (community.html) — noindex utility page, not in sitemap
 - OG images: dark + light variants + 126 unique blog post OG images + cost-migration OG (all current, meta + JSON-LD fixed).
 - Pricing data verified May 14 — 33 models, 10 providers
@@ -34,17 +34,17 @@
 
 ## Key Milestones
 
-### Session 241 (May 18)
-**SEO content — healthcare AI cost guide:**
-- **blog-ai-api-cost-healthcare.html: AI API Cost for Healthcare** — Comprehensive guide targeting "AI API cost healthcare" keyword. Covers 6 clinical AI use cases (CDS, medical coding, patient chatbots, document summarization, prior auth, drug interactions), HIPAA compliance requirements, BAA-covered providers (Azure OpenAI, AWS Bedrock, Google Vertex AI), cost per use case across 6 models, budget templates for 10-200 providers, 5 optimization strategies (de-identify before API, route by complexity, cache clinical guidelines, batch coding, structured output), patient-facing vs clinical comparison, real-world multi-specialty clinic case study ($295/mo → $380K/yr savings, 2100% ROI). FAQPage structured data with 4 questions. GA4 tracked.
-- **Blog count: 143 → 144** — Updated across pricing.html, launch.html, community.html. Sitemap (200→201 URLs) + RSS (144→145 items) updated.
-- **Cross-links** — Added to index.html (What's New section), blog-ai-api-cost-ecommerce.html, blog-ai-api-cost-customer-support.html, blog-ai-api-cost-saas.html (Related Reading).
+### Session 242 (May 18)
+**SEO content — legal AI cost guide:**
+- **blog-ai-api-cost-legal.html: AI API Cost for Legal** — Comprehensive guide targeting "AI API cost legal" keyword. Covers 6 legal AI use cases (document review, contract analysis, legal research, due diligence, case law analysis, compliance monitoring), confidentiality/privilege requirements, BAA-covered providers (Azure OpenAI, AWS Bedrock, Google Vertex AI), cost per use case across 5 models, budget templates for solo to enterprise firms (1-100+ attorneys), 5 optimization strategies (tiered model routing, cache standard legal language, batch similar documents, structured output for billable entries, pre-filter before premium analysis), client-facing vs internal AI comparison, real-world 50-attorney litigation firm case study ($2.8K/mo → $2.78M/yr savings, 2742% ROI). FAQPage structured data with 4 questions. GA4 tracked. OG image generated.
+- **Blog count: 144 → 145** — Updated across pricing.html, launch.html, community.html. Sitemap (201→202 URLs) + RSS (145→146 items) updated.
+- **Cross-links** — Added to index.html (What's New section), blog-ai-api-cost-healthcare.html, blog-ai-api-cost-ecommerce.html, blog-ai-api-cost-customer-support.html, blog-ai-api-cost-saas.html (Related Reading).
 
-### Sessions 237-240 (May 18)
-Built e-commerce cost guide, customer support cost guide, SaaS cost optimization guide, streaming costs blog, Budget Planner cross-links (9 posts). Blog 139→143, pages 197→200, RSS 141→144. FAQ schemas, cross-links, blog count updates.
+### Sessions 237-241 (May 18)
+Built healthcare cost guide, e-commerce cost guide, customer support cost guide, SaaS cost optimization guide, streaming costs blog, Budget Planner cross-links (10 posts). Blog 139→144, pages 197→201, RSS 141→145. FAQ schemas, cross-links, blog count updates.
 
-### Sessions 232-235 (May 17-18)
-Built Budget Planner tool (4-step wizard, 14th tool), code generation comparison blog, cost reduction guide blog, streaming costs blog, content writing comparison, AI agents comparison. Blog 132→140, pages 190→197. FAQ schemas, cross-links, social sharing updates.
+### Sessions 232-236 (May 17-18)
+Built Budget Planner tool (4-step wizard, 14th tool), code generation comparison blog, cost reduction guide blog, streaming costs blog, content writing comparison, AI agents comparison. Blog 132→139, pages 190→197. FAQ schemas, cross-links, social sharing updates.
 
 ### Sessions 1-231 (Apr 5 - May 17)
-Built full APIpulse from scratch: 190 pages, 135 blog posts, 33 models, 10 providers, 13 tools, 6 API endpoints. PH launch, email drip, GA4, all calculators (Cost, Compare, Quiz, Token Estimator, Cost Explorer, Agent Cost, Model Switch, Pipeline, Rate Limit, Budget Showdown, Cost Migration), Pro system, community playbook, exit popup A/B test, newsletter page, batch/streaming toggle. Community posts May 12 + 15. Pricing A/B test ($19/$29/$39), Founding Member urgency, ROI calculator, exit popup, sticky CTA bar, Pro upsell. Flagship LLM comparison, Q2 report, 3-way flagship comparison, Free vs Pro comparison page. SEO content: data analysis, cost optimization checklist, content writing comparison.
+Built full APIpulse from scratch: 190 pages, 132 blog posts, 33 models, 10 providers, 13 tools, 6 API endpoints. PH launch, email drip, GA4, all calculators (Cost, Compare, Quiz, Token Estimator, Cost Explorer, Agent Cost, Model Switch, Pipeline, Rate Limit, Budget Showdown, Cost Migration), Pro system, community playbook, exit popup A/B test, newsletter page, batch/streaming toggle. Community posts May 12 + 15. Pricing A/B test ($19/$29/$39), Founding Member urgency, ROI calculator, exit popup, sticky CTA bar, Pro upsell. Flagship LLM comparison, Q2 report, 3-way flagship comparison, Free vs Pro comparison page. SEO content: data analysis, cost optimization checklist, content writing comparison.
