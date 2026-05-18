@@ -6,7 +6,7 @@
 - Community Post Helper (community.html) — noindex utility page, not in sitemap
 - OG images: dark + light variants + 126 unique blog post OG images + cost-migration OG (all current, meta + JSON-LD fixed).
 - Pricing data verified May 14 — 33 models, 10 providers
-- **Analytics: GA4 (G-0CEP7S9Y3J) on all 200 pages** — fully operational, custom events via gtag()
+- **Analytics: GA4 (G-0CEP7S9Y3J) on all 201 pages** — fully operational, custom events via gtag()
 - Price alert system: daily cron compares pricing vs snapshot, emails subscribers on changes
 - Social sharing on all 144 blog posts + tools + footer CTA
 - Structured data (JSON-LD) on all pages, canonical URLs, mobile-responsive
@@ -41,13 +41,7 @@
 - **Cross-links** — Added to index.html (What's New section), blog-ai-api-cost-ecommerce.html, blog-ai-api-cost-customer-support.html, blog-ai-api-cost-saas.html (Related Reading).
 
 ### Sessions 237-240 (May 18)
-**SEO content — e-commerce AI cost guide:**
-- **blog-ai-api-cost-ecommerce.html: AI API Cost for E-Commerce** — Comprehensive guide targeting "AI API cost e-commerce" keyword. Covers 6 AI features (product recommendations, search, chatbots, fraud detection, review summarization, personalized descriptions), cost per feature across 7 models, budget templates for 1K/10K/100K orders/month, 6 optimization strategies (route by complexity, cache aggressively, batch operations, truncate context, structured output, token limits), real-world fashion store case study ($45/mo → $48K/mo revenue lift, 106K% ROI), model selection guide. FAQPage structured data with 4 questions. GA4 tracked.
-- **Blog count: 142 → 143** — Updated across pricing.html, launch.html, community.html. Sitemap (200 URLs) + RSS (144 items) updated.
-- **Cross-links** — Added to index.html (What's New section), blog-ai-api-cost-customer-support.html, blog-ai-api-cost-saas.html (Related Reading).
-
-### Sessions 237-240 (May 18)
-Built Budget Planner cross-links (9 posts), streaming costs blog, SaaS cost optimization blog, customer support cost blog, e-commerce cost blog. Blog 139→143, pages 197→200, RSS 141→144. FAQ schemas, cross-links, blog count updates.
+Built e-commerce cost guide, customer support cost guide, SaaS cost optimization guide, streaming costs blog, Budget Planner cross-links (9 posts). Blog 139→143, pages 197→200, RSS 141→144. FAQ schemas, cross-links, blog count updates.
 
 ### Sessions 232-235 (May 17-18)
 Built Budget Planner tool (4-step wizard, 14th tool), code generation comparison blog, cost reduction guide blog, streaming costs blog, content writing comparison, AI agents comparison. Blog 132→140, pages 190→197. FAQ schemas, cross-links, social sharing updates.
