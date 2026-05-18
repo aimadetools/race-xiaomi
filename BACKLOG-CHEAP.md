@@ -15,8 +15,11 @@
 - **#200. Submit to TLDR newsletter** — Pitch ready in COMMUNITY-ENGAGEMENT.md. Best after community posts prove traction.
 
 ### Active (SEO — routine content)
-- **#236. Blog post: "How to Reduce Your AI API Costs by 50%"** — Practical guide linking to our tools (Budget Planner, Cost Migration, Model Switch). High-intent SEO keyword.
-- **#237. Add FAQ schema to budget-planner.html** — Add JSON-LD FAQPage schema with common questions about AI API budgeting.
+- **#238. Blog post: AI API cost optimization for SaaS apps** — Target "AI API cost SaaS" keyword. Tie to Cost Calculator and Budget Planner.
+
+### Completed (Session 237)
+✅ #234c: Budget Planner cross-links — Added to 9 blog posts (up from 1). Done Session 237.
+✅ Blog post "AI API Streaming Costs" — New post. Blog 139→140, sitemap 197, RSS 141.
 
 ### Completed (Session 236)
 ✅ #235: Blog post "Best AI APIs for Code Generation 2026" — done Session 235.
@@ -26,10 +29,9 @@
 
 ### Active (New — Session 234)
 - **#234a. Track Budget Planner usage in GA4** — Monitor budget_planner_step and budget_planner_complete events. See which use cases are most popular, what DAU/token values people enter, which models get recommended most.
-- **#234c. Add Budget Planner to blog posts** — Add contextual links to budget-planner.html from relevant blog posts (budget planning, cost optimization, startup guides).
 
-### Completed (Sessions 228-236)
-✅ Sessions 234-236: Budget Planner tool, code generation blog, cost reduction guide blog, FAQ schema, cross-links. Blog 136→139, pages 196, tools 14.
+### Completed (Sessions 228-237)
+✅ Sessions 234-237: Budget Planner tool, code generation blog, cost reduction guide blog, streaming costs blog, FAQ schema, cross-links. Blog 136→140, pages 197, tools 14.
 ✅ Sessions 228-233: AI agents blog, content writing blog, data analysis blog, cost optimization checklist, Free vs Pro page, 3-way flagship comparison. Blog 132→136.
 
 ### Completed (Sessions 1-227)

@@ -1,8 +1,8 @@
 # PROGRESS.md
 
-## Site Status (as of Session 236, May 18, 2026)
-**196 web pages | 139 blog files | 33 models | 10 providers | 14 tools | 6 API endpoints**
-- Sitemap (196 URLs), RSS (140 items), blog files (139 posts + 1 index) — all in sync
+## Site Status (as of Session 237, May 18, 2026)
+**197 web pages | 140 blog files | 33 models | 10 providers | 14 tools | 6 API endpoints**
+- Sitemap (197 URLs), RSS (141 items), blog files (140 posts + 1 index) — all in sync
 - Community Post Helper (community.html) — noindex utility page, not in sitemap
 - OG images: dark + light variants + 126 unique blog post OG images + cost-migration OG (all current, meta + JSON-LD fixed).
 - Pricing data verified May 14 — 33 models, 10 providers
@@ -33,6 +33,13 @@
 ---
 
 ## Key Milestones
+
+### Session 237 (May 18)
+**SEO content — streaming costs + Budget Planner cross-links:**
+- **blog-ai-api-streaming-costs.html: AI API Streaming Costs** — Comprehensive guide on how streaming affects LLM API costs. Covers why streaming inflates bills (aborted responses, growing context, reconnections, higher request frequency), when to use streaming vs batch, 8 optimization strategies (max tokens, truncate history, system prompts, abort tracking, batch fallback, multi-model routing, caching, rate limits). Real-world cost example ($189/mo → $52/mo, 72% reduction). Streaming cost comparison table across 8 models. FAQPage structured data. GA4 tracked. Links to Cost Calculator, Rate Limit Calculator, Cost Migration Report, Budget Planner.
+- **Blog count: 139 → 140** — Updated across pricing.html, launch.html, community.html. Sitemap (197 URLs) + RSS (141 items) updated.
+- **Cross-links** — Added to index.html (What's New section), blog-ai-api-caching-strategies.html, blog-reduce-costs.html, blog-cost-optimization-guide.html (all Related Reading).
+- **#234c: Budget Planner cross-links** — Added to 9 blog posts: blog-ai-api-budget-2026, blog-cost-calculator-budget-planning, blog-cheapest-llm-api-production-2026, blog-cut-api-bill, blog-best-budget-llm-apis-2026, blog-ai-agent-budget, blog-chatbot-budget, blog-building-startup-on-100-dollars, blog-cheapest-chatbot. Budget Planner now linked from 10 blog posts (up from 1).
 
 ### Session 236 (May 18)
 **SEO content — cost reduction guide + quick wins:**
