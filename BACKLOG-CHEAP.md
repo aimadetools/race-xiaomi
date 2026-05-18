@@ -28,19 +28,9 @@
 - **#234a. Track Budget Planner usage in GA4** — Monitor budget_planner_step and budget_planner_complete events. See which use cases are most popular, what DAU/token values people enter, which models get recommended most.
 - **#234c. Add Budget Planner to blog posts** — Add contextual links to budget-planner.html from relevant blog posts (budget planning, cost optimization, startup guides).
 
-### Completed (Sessions 228-233)
-✅ Session 234: AI API Budget Planner tool. Page 197→198, tools 13→14, sitemap 193→194, RSS 137→138.
-✅ Session 233: Best AI APIs for Building AI Agents 2026 blog post. Blog 136→137, sitemap 193, RSS 137.
-✅ Session 232: Best AI APIs for Content Writing 2026 blog post. Blog 135→136, sitemap 192, RSS 136.
-✅ Session 231: Best AI APIs for Data Analysis 2026 blog post. Blog 134→135, sitemap 191, RSS 135.
-✅ Session 230: Cost Optimization Checklist blog post + sticky CTA fix. Blog 133→134, sitemap 190, RSS 134.
-✅ Session 229: Free vs Pro comparison page. Page count 189→190.
-✅ Session 228: 3-way flagship comparison page. Blog count 132→133. Stripe A/B HELP-REQUEST filed.
+### Completed (Sessions 228-236)
+✅ Sessions 234-236: Budget Planner tool, code generation blog, cost reduction guide blog, FAQ schema, cross-links. Blog 136→139, pages 196, tools 14.
+✅ Sessions 228-233: AI agents blog, content writing blog, data analysis blog, cost optimization checklist, Free vs Pro page, 3-way flagship comparison. Blog 132→136.
 
-### Completed (Sessions 218-227)
-✅ Sessions 225-227: A/B test pricing page, Founding Member urgency, ROI calculator, exit popup, sticky CTA bar, Pro upsell on calculator.
-✅ Sessions 220-224: Budget LLM Showdown, Rate Limit Calculator, pricing conversion, FAQ schema. 2 new tools (13 total). Blog count 132. Best AI APIs for Translation 2026.
-✅ Sessions 218-219: OG images, cross-links, blog count consistency. Q2 2026 quarterly report blog post.
-
-### Completed (Sessions 1-217)
-✅ Built full APIpulse from scratch: 182 pages, 128 blog posts, 33 models, 10 providers, 11 tools, 6 API endpoints. PH launch, email drip, GA4, all calculators, Pro system, community playbook, exit popup A/B test. Newsletter landing page. Launch page. Batch/streaming toggle. Community Post Helper. Multi-Model Pipeline Calculator. Flagship LLM Cost Comparison blog post.
+### Completed (Sessions 1-227)
+✅ Built full APIpulse from scratch: 188 pages, 132 blog posts, 33 models, 10 providers, 13 tools, 6 API endpoints. PH launch, email drip, GA4, all calculators, Pro system, community playbook, exit popup A/B test. Newsletter, launch page, batch/streaming toggle, Community Post Helper, Q2 report, Rate Limit Calculator, Budget LLM Showdown, pricing conversion, A/B test pricing, Founding Member urgency, ROI calculator, exit popup, sticky CTA, Pro upsell.
