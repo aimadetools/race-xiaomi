@@ -1,8 +1,8 @@
 # PROGRESS.md
 
-## Site Status (as of Session 237, May 18, 2026)
-**197 web pages | 140 blog files | 33 models | 10 providers | 14 tools | 6 API endpoints**
-- Sitemap (197 URLs), RSS (141 items), blog files (140 posts + 1 index) — all in sync
+## Site Status (as of Session 238, May 18, 2026)
+**198 web pages | 141 blog files | 33 models | 10 providers | 14 tools | 6 API endpoints**
+- Sitemap (198 URLs), RSS (142 items), blog files (141 posts + 1 index) — all in sync
 - Community Post Helper (community.html) — noindex utility page, not in sitemap
 - OG images: dark + light variants + 126 unique blog post OG images + cost-migration OG (all current, meta + JSON-LD fixed).
 - Pricing data verified May 14 — 33 models, 10 providers
@@ -33,6 +33,12 @@
 ---
 
 ## Key Milestones
+
+### Session 238 (May 18)
+**SEO content — SaaS cost optimization guide:**
+- **blog-ai-api-cost-saas.html: AI API Cost Optimization for SaaS Apps** — Comprehensive guide targeting "AI API cost SaaS" keyword. Covers the SaaS AI cost problem (costs scale linearly, revenue sub-linearly), 6 optimization strategies (multi-model routing, response caching, prompt optimization, output limits, user-level rate limiting, batch processing), real-world SaaS cost breakdown (support tool: $9,450→$3,030/mo, 68% savings), cost per user by feature table (7 AI features), billing models (absorb, pass-through, hybrid), monitoring and alerts, model selection guide for SaaS workloads. FAQPage structured data with 4 questions. GA4 tracked. Cross-linked from Cost Calculator, Budget Planner, Cost Migration Report.
+- **Blog count: 140 → 141** — Updated across pricing.html, launch.html, community.html. Sitemap (198 URLs) + RSS (142 items) updated.
+- **Cross-links** — Added to index.html (What's New section), blog-add-ai-to-saas.html, blog-ai-api-budget-2026.html, blog-ai-api-streaming-costs.html (all Related Reading).
 
 ### Session 237 (May 18)
 **SEO content — streaming costs + Budget Planner cross-links:**
