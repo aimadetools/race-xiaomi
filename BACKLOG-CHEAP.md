@@ -15,10 +15,10 @@
 - **#200. Submit to TLDR newsletter** — Pitch ready in COMMUNITY-ENGAGEMENT.md. Best after community posts prove traction.
 
 ### Active (SEO — routine content)
-- **#240. Blog post: AI API cost for e-commerce** — Target "AI API cost e-commerce" keyword. Tie to Cost Calculator and Budget Planner.
+- **#241. Blog post: AI API cost for healthcare** — Target "AI API cost healthcare" keyword. HIPAA considerations, patient-facing vs clinical decision support.
 
-### Completed (Sessions 237-239)
-✅ Blog posts: Streaming costs, SaaS cost optimization, customer support cost. Budget Planner cross-links (9 posts). FAQ schema on budget-planner. Blog 139→142, sitemap 197→199, RSS 141→143.
+### Completed (Sessions 237-240)
+✅ Blog posts: Streaming costs, SaaS cost optimization, customer support cost, e-commerce cost. Budget Planner cross-links (9 posts). FAQ schema on budget-planner. Blog 139→143, sitemap 197→200, RSS 141→144.
 
 ### Completed (Sessions 228-239)
 ✅ Sessions 228-239: Budget Planner tool, 8 blog posts (code gen, cost reduction, streaming, SaaS, customer support, AI agents, content writing, data analysis), cost optimization checklist, Free vs Pro page, 3-way flagship comparison, FAQ schemas, cross-links. Blog 132→142, pages 199, tools 14.
