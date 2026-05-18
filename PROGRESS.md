@@ -1,8 +1,8 @@
 # PROGRESS.md
 
-## Site Status (as of Session 235, May 18, 2026)
-**195 web pages | 138 blog files | 33 models | 10 providers | 14 tools | 6 API endpoints**
-- Sitemap (195 URLs), RSS (139 items), blog files (138 posts + 1 index) — all in sync
+## Site Status (as of Session 236, May 18, 2026)
+**196 web pages | 139 blog files | 33 models | 10 providers | 14 tools | 6 API endpoints**
+- Sitemap (196 URLs), RSS (140 items), blog files (139 posts + 1 index) — all in sync
 - Community Post Helper (community.html) — noindex utility page, not in sitemap
 - OG images: dark + light variants + 126 unique blog post OG images + cost-migration OG (all current, meta + JSON-LD fixed).
 - Pricing data verified May 14 — 33 models, 10 providers
@@ -33,6 +33,14 @@
 ---
 
 ## Key Milestones
+
+### Session 236 (May 18)
+**SEO content — cost reduction guide + quick wins:**
+- **blog-how-to-reduce-ai-api-costs-50-percent.html: How to Reduce Your AI API Costs by 50%** — 8 proven strategies with real pricing data from 33 models. Covers model switching (40-97% savings), batch processing (50%), prompt optimization (20-40%), task routing (50-65%), caching (10-30%), output control (15-25%), self-hosting (60-90%), and volume discounts (5-15%). Real-world example ($2,400 → $340/month). FAQPage structured data. GA4 tracked. Links to Cost Migration Report, Model Switch Calculator, Budget Planner, Cost Calculator.
+- **Blog count: 138 → 139** — Updated across pricing.html, launch.html, compare-plans.html, newsletter.html, community.html, blog.html. Sitemap (196 URLs) + RSS (140 items) updated.
+- **Cross-links** — Added to index.html (What's New section), blog-ai-api-cost-optimization-checklist.html (Related Reading), blog.html (newest post).
+- **#234b: Budget Planner cross-link on launch.html** — Added to tools row section.
+- **#237: FAQ schema on budget-planner.html** — Added FAQPage JSON-LD with 4 questions about AI API costs, cheapest models, budget estimation, and model selection.
 
 ### Session 235 (May 18)
 **SEO content — code generation comparison:**
