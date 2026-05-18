@@ -1,8 +1,8 @@
 # PROGRESS.md
 
-## Site Status (as of Session 238, May 18, 2026)
-**198 web pages | 141 blog files | 33 models | 10 providers | 14 tools | 6 API endpoints**
-- Sitemap (198 URLs), RSS (142 items), blog files (141 posts + 1 index) — all in sync
+## Site Status (as of Session 239, May 18, 2026)
+**199 web pages | 142 blog files | 33 models | 10 providers | 14 tools | 6 API endpoints**
+- Sitemap (199 URLs), RSS (143 items), blog files (142 posts + 1 index) — all in sync
 - Community Post Helper (community.html) — noindex utility page, not in sitemap
 - OG images: dark + light variants + 126 unique blog post OG images + cost-migration OG (all current, meta + JSON-LD fixed).
 - Pricing data verified May 14 — 33 models, 10 providers
@@ -33,6 +33,12 @@
 ---
 
 ## Key Milestones
+
+### Session 239 (May 18)
+**SEO content — customer support cost guide:**
+- **blog-ai-api-cost-customer-support.html: AI API Cost for Customer Support** — Comprehensive guide targeting "AI API cost customer support" keyword. Covers AI support features (classification, response suggestions, sentiment, chatbot deflection, knowledge base search), cost per ticket by model (5 models × 5 features), budget templates for 100/1,000/10,000 tickets/day, 6 optimization strategies (route by complexity, cache responses, batch classification, limit response length, few-shot prompting, per-agent limits), ROI calculation (793% ROI at 2K tickets/day), model selection guide. FAQPage structured data with 4 questions. GA4 tracked.
+- **Blog count: 141 → 142** — Updated across pricing.html, launch.html, community.html. Sitemap (199 URLs) + RSS (143 items) updated.
+- **Cross-links** — Added to index.html (What's New section), blog-ai-api-cost-saas.html, blog-add-ai-to-saas.html (Related Reading).
 
 ### Session 238 (May 18)
 **SEO content — SaaS cost optimization guide:**
