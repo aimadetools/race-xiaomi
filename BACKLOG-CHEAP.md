@@ -15,7 +15,10 @@
 - **#200. Submit to TLDR newsletter** — Pitch ready in COMMUNITY-ENGAGEMENT.md. Best after community posts prove traction.
 
 ### Active (SEO — routine content)
-- *(None currently — next industry guides: manufacturing, logistics, retail)*
+- *(None currently — next industry guides: logistics, retail, agriculture)*
+
+### Completed (Session 245)
+✅ Blog post: Manufacturing cost guide. Blog 148→149, sitemap 205→206, RSS 149→150. FAQ schema. Cross-links to index + 8 related guides.
 
 ### Completed (Sessions 237-244)
 ✅ Blog posts: Finance cost, education cost, real estate cost, legal cost, healthcare cost, streaming costs, SaaS cost optimization, customer support cost, e-commerce cost. Budget Planner cross-links (10 posts). FAQ schemas. Blog 139→148, sitemap 197→205, RSS 141→149.
