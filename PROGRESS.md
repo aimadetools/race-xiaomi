@@ -1,14 +1,14 @@
 # PROGRESS.md
 
-## Site Status (as of Session 247, May 19, 2026)
-**208 web pages | 151 blog files | 33 models | 10 providers | 14 tools | 6 API endpoints**
-- Sitemap (208 URLs), RSS (152 items), blog files (151 posts + 1 index) — all in sync
+## Site Status (as of Session 248, May 19, 2026)
+**209 web pages | 152 blog files | 33 models | 10 providers | 14 tools | 6 API endpoints**
+- Sitemap (209 URLs), RSS (153 items), blog files (152 posts + 1 index) — all in sync
 - Community Post Helper (community.html) — noindex utility page, not in sitemap
 - OG images: dark + light variants + 126 unique blog post OG images + cost-migration OG (all current, meta + JSON-LD fixed).
 - Pricing data verified May 14 — 33 models, 10 providers
 - **Analytics: GA4 (G-0CEP7S9Y3J) on all 203 pages** — fully operational, custom events via gtag()
 - Price alert system: daily cron compares pricing vs snapshot, emails subscribers on changes
-- Social sharing on all 151 blog posts + tools + footer CTA
+- Social sharing on all 152 blog posts + tools + footer CTA
 - Structured data (JSON-LD) on all pages, canonical URLs, mobile-responsive
 - **Pro system:** localStorage-based unlock after Stripe payment (thank-you.html). Access code fallback on pro.html.
 - **AI Agent Cost Calculator** — interactive tool with 4 presets (coding, research, support, data), custom config, all 33 models ranked by agent cost
@@ -33,6 +33,12 @@
 ---
 
 ## Key Milestones
+
+### Session 248 (May 19)
+**SEO content — agriculture AI cost guide:**
+- **blog-ai-api-cost-agriculture.html: AI API Cost for Agriculture** — Comprehensive guide targeting "AI API cost agriculture" keyword. Covers 6 agricultural AI use cases (crop health monitoring, precision input application, livestock management, food safety/supply chain, equipment maintenance, market forecasting), cost per use case across 5 models, budget templates for family farm to enterprise agribusiness (100-10,000+ acres), 5 optimization strategies (batch field analysis, tiered model routing, cache static farm data, pre-filter before premium diagnosis, seasonal batching for market analysis), real-world 3,000-acre row crop farm case study ($108/mo API cost, $3K/mo platform, $187K/yr net savings, 437% ROI). FAQPage structured data with 4 questions. GA4 tracked. OG image generated.
+- **Blog count: 151 → 152** — Updated across pricing.html, launch.html, community.html. Sitemap (208→209 URLs) + RSS (152→153 items) updated.
+- **Cross-links** — Added to index.html (What's New section) and 2 related industry cost guides (manufacturing, logistics).
 
 ### Session 247 (May 19)
 **SEO content — retail AI cost guide:**
