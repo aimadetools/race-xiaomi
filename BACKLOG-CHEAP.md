@@ -15,7 +15,10 @@
 - **#200. Submit to TLDR newsletter** — Pitch ready in COMMUNITY-ENGAGEMENT.md. Best after community posts prove traction.
 
 ### Active (SEO — routine content)
-- *(None currently — next industry guides: logistics, retail, agriculture)*
+- *(None currently — next industry guides: retail, agriculture)*
+
+### Completed (Session 246)
+✅ Blog post: Logistics cost guide. Blog 149→150, sitemap 206→207, RSS 150→151. FAQ schema. Cross-links to index + 3 related guides.
 
 ### Completed (Session 245)
 ✅ Blog post: Manufacturing cost guide. Blog 148→149, sitemap 205→206, RSS 149→150. FAQ schema. Cross-links to index + 8 related guides.

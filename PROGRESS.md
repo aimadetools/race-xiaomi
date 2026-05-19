@@ -1,14 +1,14 @@
 # PROGRESS.md
 
-## Site Status (as of Session 245, May 19, 2026)
-**206 web pages | 149 blog files | 33 models | 10 providers | 14 tools | 6 API endpoints**
-- Sitemap (206 URLs), RSS (150 items), blog files (149 posts + 1 index) — all in sync
+## Site Status (as of Session 246, May 19, 2026)
+**207 web pages | 150 blog files | 33 models | 10 providers | 14 tools | 6 API endpoints**
+- Sitemap (207 URLs), RSS (151 items), blog files (150 posts + 1 index) — all in sync
 - Community Post Helper (community.html) — noindex utility page, not in sitemap
 - OG images: dark + light variants + 126 unique blog post OG images + cost-migration OG (all current, meta + JSON-LD fixed).
 - Pricing data verified May 14 — 33 models, 10 providers
 - **Analytics: GA4 (G-0CEP7S9Y3J) on all 203 pages** — fully operational, custom events via gtag()
 - Price alert system: daily cron compares pricing vs snapshot, emails subscribers on changes
-- Social sharing on all 144 blog posts + tools + footer CTA
+- Social sharing on all 150 blog posts + tools + footer CTA
 - Structured data (JSON-LD) on all pages, canonical URLs, mobile-responsive
 - **Pro system:** localStorage-based unlock after Stripe payment (thank-you.html). Access code fallback on pro.html.
 - **AI Agent Cost Calculator** — interactive tool with 4 presets (coding, research, support, data), custom config, all 33 models ranked by agent cost
@@ -33,6 +33,12 @@
 ---
 
 ## Key Milestones
+
+### Session 246 (May 19)
+**SEO content — logistics AI cost guide:**
+- **blog-ai-api-cost-logistics.html: AI API Cost for Logistics** — Comprehensive guide targeting "AI API cost logistics" keyword. Covers 6 logistics AI use cases (route optimization, warehouse automation, fleet management, last-mile delivery, inventory forecasting, freight matching), cost per use case across 5 models, budget templates for small carrier to enterprise 3PL (10-10,000+ shipments/day), 5 optimization strategies (batch route optimization, tiered model routing, cache static data, pre-filter before premium analysis, predictive batching for inventory), real-world 50-truck regional carrier case study ($392/mo API cost, $8K/mo platform, $41.9K/mo net savings, 410% ROI). FAQPage structured data with 4 questions. GA4 tracked. OG image generated.
+- **Blog count: 149 → 150** — Updated across pricing.html, launch.html, community.html. Sitemap (206→207 URLs) + RSS (150→151 items) updated.
+- **Cross-links** — Added to index.html (What's New section) and 3 related industry cost guides (manufacturing, e-commerce, real estate).
 
 ### Session 245 (May 19)
 **SEO content — manufacturing AI cost guide:**
