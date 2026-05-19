@@ -1,8 +1,8 @@
 # PROGRESS.md
 
-## Site Status (as of Session 244, May 19, 2026)
-**205 web pages | 148 blog files | 33 models | 10 providers | 14 tools | 6 API endpoints**
-- Sitemap (205 URLs), RSS (149 items), blog files (148 posts + 1 index) — all in sync
+## Site Status (as of Session 245, May 19, 2026)
+**206 web pages | 149 blog files | 33 models | 10 providers | 14 tools | 6 API endpoints**
+- Sitemap (206 URLs), RSS (150 items), blog files (149 posts + 1 index) — all in sync
 - Community Post Helper (community.html) — noindex utility page, not in sitemap
 - OG images: dark + light variants + 126 unique blog post OG images + cost-migration OG (all current, meta + JSON-LD fixed).
 - Pricing data verified May 14 — 33 models, 10 providers
@@ -33,6 +33,12 @@
 ---
 
 ## Key Milestones
+
+### Session 245 (May 19)
+**SEO content — manufacturing AI cost guide:**
+- **blog-ai-api-cost-manufacturing.html: AI API Cost for Manufacturing** — Comprehensive guide targeting "AI API cost manufacturing" keyword. Covers 6 manufacturing AI use cases (predictive maintenance, quality control, supply chain optimization, production planning, safety monitoring, document automation), cost per use case across 5 models, budget templates for small factory to enterprise plant (50-2000+ workers), 5 optimization strategies (edge pre-filtering, tiered model routing, batch sensor analysis, cache equipment profiles, two-stage quality inspection), real-world 200-machine plant case study ($1,419/mo API cost, $15K/mo platform, $1.65M/yr net savings, 837% ROI). FAQPage structured data with 4 questions. GA4 tracked. OG image generated.
+- **Blog count: 148 → 149** — Updated across pricing.html, launch.html, community.html. Sitemap (205→206 URLs) + RSS (149→150 items) updated.
+- **Cross-links** — Added to index.html (What's New section) and 8 related industry cost guides (education, finance, healthcare, legal, real estate, e-commerce, customer support, SaaS).
 
 ### Session 244 (May 19)
 **SEO content — education + finance AI cost guides:**
