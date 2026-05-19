@@ -17,11 +17,11 @@
 ### Active (SEO — routine content)
 - *(None currently — all planned industry guides complete)*
 
-### Completed (Sessions 249-253, May 19)
-✅ Blog posts: Telecom, hospitality, transportation, energy cost guides. Blog 152→156, sitemap 209→213, RSS 153→157. FAQ schemas. Cross-links to index + 6-12 related guides each.
+### Completed (Sessions 249-254, May 19)
+✅ Blog posts: Advertising & marketing, telecom, hospitality, transportation, energy cost guides. Blog 152→157, sitemap 209→214, RSS 153→158. FAQ schemas. Cross-links to index + 5-12 related guides each.
 
 ### Completed (Sessions 244-248, May 18-19)
 ✅ Blog posts: Agriculture, retail, logistics, manufacturing, education, finance, legal, healthcare, e-commerce, customer support, SaaS, streaming, content writing guides. Budget Planner cross-links. Blog 132→152, pages 197→209, RSS 141→153.
 
 ### Completed (Sessions 1-243, Apr 5 - May 18)
-✅ Built full APIpulse from scratch: 213 pages, 156 blog posts, 33 models, 10 providers, 14 tools, 6 API endpoints. PH launch, email drip, GA4, all calculators, Pro system, community playbook, exit popup A/B test. Newsletter, launch page, batch/streaming toggle, Community Post Helper, Q2 report, Rate Limit Calculator, Budget LLM Showdown, Budget Planner, pricing conversion, A/B test pricing, Founding Member urgency, ROI calculator, exit popup, sticky CTA, Pro upsell.
+✅ Built full APIpulse from scratch: 214 pages, 157 blog posts, 33 models, 10 providers, 14 tools, 6 API endpoints. PH launch, email drip, GA4, all calculators, Pro system, community playbook, exit popup A/B test. Newsletter, launch page, batch/streaming toggle, Community Post Helper, Q2 report, Rate Limit Calculator, Budget LLM Showdown, Budget Planner, pricing conversion, A/B test pricing, Founding Member urgency, ROI calculator, exit popup, sticky CTA, Pro upsell.

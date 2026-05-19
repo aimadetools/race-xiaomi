@@ -1,14 +1,14 @@
 # PROGRESS.md
 
-## Site Status (as of Session 253, May 19, 2026)
-**213 web pages | 156 blog files | 33 models | 10 providers | 14 tools | 6 API endpoints**
-- Sitemap (213 URLs), RSS (157 items), blog files (156 posts + 1 index) — all in sync
+## Site Status (as of Session 254, May 19, 2026)
+**214 web pages | 157 blog files | 33 models | 10 providers | 14 tools | 6 API endpoints**
+- Sitemap (214 URLs), RSS (158 items), blog files (157 posts + 1 index) — all in sync
 - Community Post Helper (community.html) — noindex utility page, not in sitemap
 - OG images: dark + light variants + 129 unique blog post OG images + cost-migration OG (all current, meta + JSON-LD fixed).
 - Pricing data verified May 14 — 33 models, 10 providers
 - **Analytics: GA4 (G-0CEP7S9Y3J) on all 212 pages** — fully operational, custom events via gtag()
 - Price alert system: daily cron compares pricing vs snapshot, emails subscribers on changes
-- Social sharing on all 156 blog posts + tools + footer CTA
+- Social sharing on all 157 blog posts + tools + footer CTA
 - Structured data (JSON-LD) on all pages, canonical URLs, mobile-responsive
 - **Pro system:** localStorage-based unlock after Stripe payment (thank-you.html). Access code fallback on pro.html.
 - **AI Agent Cost Calculator** — interactive tool with 4 presets (coding, research, support, data), custom config, all 33 models ranked by agent cost
@@ -33,6 +33,12 @@
 ---
 
 ## Key Milestones
+
+### Session 254 (May 19)
+**SEO content — advertising & marketing AI cost guide:**
+- **blog-ai-api-cost-advertising-marketing.html: AI API Cost for Advertising & Marketing** — Comprehensive guide targeting "AI API cost advertising" keyword. Covers 6 marketing AI use cases (ad copy generation, campaign optimization, content marketing, email personalization, social media management, analytics/reporting), cost per use case across 5 models, budget templates for freelancer (1-5 clients) to enterprise brand (100+ campaigns/month), 5 optimization strategies (batch content generation, tiered model routing, cache brand voice/style guides, pre-filter before premium generation, overnight batch reporting), real-world 40-client mid-size agency case study ($120/mo API cost, $1K/mo platform, $807K/yr net savings, 4935% ROI). FAQPage structured data with 4 questions. GA4 tracked. OG image generated.
+- **Blog count: 156 → 157** — Updated across pricing.html, launch.html, community.html. Sitemap (213→214 URLs) + RSS (157→158 items) updated.
+- **Cross-links** — Added to index.html (What's New section) and 5 related industry cost guides (e-commerce, customer support, SaaS, retail, finance).
 
 ### Session 253 (May 19)
 **SEO content — telecommunications AI cost guide:**
