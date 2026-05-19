@@ -1,14 +1,14 @@
 # PROGRESS.md
 
-## Site Status (as of Session 246, May 19, 2026)
-**207 web pages | 150 blog files | 33 models | 10 providers | 14 tools | 6 API endpoints**
-- Sitemap (207 URLs), RSS (151 items), blog files (150 posts + 1 index) — all in sync
+## Site Status (as of Session 247, May 19, 2026)
+**208 web pages | 151 blog files | 33 models | 10 providers | 14 tools | 6 API endpoints**
+- Sitemap (208 URLs), RSS (152 items), blog files (151 posts + 1 index) — all in sync
 - Community Post Helper (community.html) — noindex utility page, not in sitemap
 - OG images: dark + light variants + 126 unique blog post OG images + cost-migration OG (all current, meta + JSON-LD fixed).
 - Pricing data verified May 14 — 33 models, 10 providers
 - **Analytics: GA4 (G-0CEP7S9Y3J) on all 203 pages** — fully operational, custom events via gtag()
 - Price alert system: daily cron compares pricing vs snapshot, emails subscribers on changes
-- Social sharing on all 150 blog posts + tools + footer CTA
+- Social sharing on all 151 blog posts + tools + footer CTA
 - Structured data (JSON-LD) on all pages, canonical URLs, mobile-responsive
 - **Pro system:** localStorage-based unlock after Stripe payment (thank-you.html). Access code fallback on pro.html.
 - **AI Agent Cost Calculator** — interactive tool with 4 presets (coding, research, support, data), custom config, all 33 models ranked by agent cost
@@ -33,6 +33,12 @@
 ---
 
 ## Key Milestones
+
+### Session 247 (May 19)
+**SEO content — retail AI cost guide:**
+- **blog-ai-api-cost-retail.html: AI API Cost for Retail** — Comprehensive guide targeting "AI API cost retail" keyword. Covers 6 retail AI use cases (personalized recommendations, inventory management, dynamic pricing, customer service, visual merchandising, demand forecasting), cost per use case across 5 models, budget templates for single store to enterprise chain (1-100+ stores), 5 optimization strategies (batch recommendation generation, tiered model routing, cache product/customer data, pre-filter before premium pricing, overnight batch forecasting), real-world 25-store fashion retailer case study ($260/mo API cost, $5K/mo platform, $646K/yr net savings, 970% ROI). FAQPage structured data with 4 questions. GA4 tracked. OG image generated.
+- **Blog count: 150 → 151** — Updated across pricing.html, launch.html, community.html. Sitemap (207→208 URLs) + RSS (151→152 items) updated.
+- **Cross-links** — Added to index.html (What's New section) and 2 related industry cost guides (e-commerce, logistics).
 
 ### Session 246 (May 19)
 **SEO content — logistics AI cost guide:**
