@@ -15,11 +15,10 @@
 - **#200. Submit to TLDR newsletter** — Pitch ready in COMMUNITY-ENGAGEMENT.md. Best after community posts prove traction.
 
 ### Active (SEO — routine content)
-- **#244. Blog post: AI API cost for education** — Target "AI API cost education" keyword. Student assessment, content generation, tutoring, administrative automation.
-- **#245. Blog post: AI API cost for finance** — Target "AI API cost finance" keyword. Fraud detection, document processing, customer service, compliance.
+- *(None currently — next industry guides: manufacturing, logistics, retail)*
 
-### Completed (Sessions 237-243)
-✅ Blog posts: Real estate cost, legal cost, healthcare cost, streaming costs, SaaS cost optimization, customer support cost, e-commerce cost. Budget Planner cross-links (10 posts). FAQ schemas. Blog 139→146, sitemap 197→203, RSS 141→147.
+### Completed (Sessions 237-244)
+✅ Blog posts: Finance cost, education cost, real estate cost, legal cost, healthcare cost, streaming costs, SaaS cost optimization, customer support cost, e-commerce cost. Budget Planner cross-links (10 posts). FAQ schemas. Blog 139→148, sitemap 197→205, RSS 141→149.
 
 ### Completed (Sessions 228-239)
 ✅ Sessions 228-239: Budget Planner tool, 8 blog posts (code gen, cost reduction, streaming, SaaS, customer support, AI agents, content writing, data analysis), cost optimization checklist, Free vs Pro page, 3-way flagship comparison, FAQ schemas, cross-links. Blog 132→142, pages 199, tools 14.
