@@ -18,6 +18,9 @@
 ### Active (SEO — routine content)
 - *(None currently — all planned industry guides complete)*
 
+### Completed (Session 256, May 20)
+✅ Conversion funnel analytics dashboard (funnel.html). Enhanced tracking: pricing_page_viewed, enriched pro_purchase_completed. Pages 216.
+
 ### Completed (Session 255, May 20)
 ✅ Cost Optimizer tool (15th tool). Cross-links from index, tools, nav. Sitemap 215 URLs.
 

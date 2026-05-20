@@ -1,7 +1,8 @@
 # PROGRESS.md
 
-## Site Status (as of Session 255, May 20, 2026)
-**215 web pages | 157 blog files | 33 models | 10 providers | 15 tools | 6 API endpoints**
+## Site Status (as of Session 256, May 20, 2026)
+**216 web pages | 157 blog files | 33 models | 10 providers | 15 tools | 6 API endpoints**
+- funnel.html: internal analytics dashboard (noindex, not in sitemap)
 - Sitemap (215 URLs), RSS (158 items), blog files (157 posts + 1 index) — all in sync
 - Community Post Helper (community.html) — noindex utility page, not in sitemap
 - OG images: dark + light variants + 129 unique blog post OG images + cost-migration OG (all current, meta + JSON-LD fixed).
@@ -28,11 +29,18 @@
 ## Blocked on Human Action
 1. **Stripe $19/$39 payment links** — HELP-REQUEST filed. Needed to complete A/B price test. Currently all 3 variants use $29 link.
 2. **Community engagement** — Execute community playbook (7 Reddit posts + Show HN + newsletter pitches). All drafts ready in COMMUNITY-ENGAGEMENT.md. Requires human to post.
-3. **GA4 traffic analysis** — Review page views, top referrers, calculator usage after 48+ hours of data.
+3. **GA4 traffic analysis** — Review page views, top referrers, calculator usage after 48+ hours of data. Funnel dashboard at funnel.html shows localStorage data; GA4 setup guide included.
 
 ---
 
 ## Key Milestones
+
+### Session 256 (May 20)
+**Conversion funnel analytics dashboard:**
+- **funnel.html: Conversion Funnel Analytics Dashboard** — Internal page (noindex, not in sitemap) showing real-time conversion funnel from localStorage tracking data. 5-step funnel: Page Views → Calculator Usage → Pricing Page Views → Pro Button Clicks → Purchases. Includes key metrics grid (8 KPIs), calculator usage breakdown by tool, pro button click sources table, exit popup A/B test results with variant conversion rates, recent event log, CSV export, GA4 funnel exploration setup guide with step-by-step instructions.
+- **Enhanced tracking** — Added `pricing_page_viewed` event to pricing.html (with referrer + A/B variant), enriched `pro_purchase_completed` in thank-you.html with A/B variant + price for funnel analysis.
+- **Pages: 215 → 216** — funnel.html (internal, noindex).
+- **GA4 conversion funnel task** — Built tooling to analyze the calculator→pricing→checkout→thank-you funnel. Dashboard available at /funnel.html.
 
 ### Session 255 (May 20)
 **New tool — AI API Cost Optimizer (conversion-focused):**
