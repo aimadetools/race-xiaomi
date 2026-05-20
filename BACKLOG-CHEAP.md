@@ -19,7 +19,7 @@
 - *(None currently — all planned industry guides complete)*
 
 ### Completed (Session 257, May 20)
-✅ Cost Optimizer conversion: inline upsell, founding member urgency, enhanced gate overlay, personalized exit popup.
+✅ Cost Optimizer conversion + founding member urgency + exit popups on 6 tool pages. GA4 tracked.
 
 ### Completed (Sessions 255-256, May 20)
 ✅ Cost Optimizer tool (15th tool), conversion funnel dashboard (funnel.html), social proof, cross-links. Pages 216.

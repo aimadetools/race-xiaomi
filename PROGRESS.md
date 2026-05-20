@@ -36,11 +36,15 @@
 ## Key Milestones
 
 ### Session 257 (May 20)
-**Cost Optimizer conversion optimization:**
-- **Inline upsell** — Compact CTA banner right after savings hero (peak motivation moment). GA4 tracked as source `cost_optimizer_inline`.
-- **Founding member urgency** — Added "73/100 spots claimed" counter to pro-upsell and gate overlay (same pattern as pricing.html).
-- **Enhanced gate overlay** — Stronger headline ("Unlock Your Full Savings Report"), risk reversal with checkmark guarantees (money-back, lifetime, one-time).
-- **Personalized exit popup** — Mouse-leave popup showing user's calculated savings amount. Only triggers after user sees results. GA4 tracked as `exit_popup_optimizer`. Hidden for Pro users.
+**Cost Optimizer conversion optimization + tool-wide urgency/exit popups:**
+- **Cost Optimizer** — Inline upsell after savings hero, founding member urgency counter, enhanced gate overlay with stronger copy, personalized exit popup showing calculated savings. GA4 tracked.
+- **Calculator** — Founding member urgency badge in Pro upsell, personalized exit popup showing user's monthly spend. GA4 tracked.
+- **Budget Planner** — Founding member urgency badge, exit popup with save scenarios messaging.
+- **Pipeline** — Founding member urgency badge, exit popup with save pipeline messaging.
+- **Compare** — Exit popup with save comparisons messaging (triggers after model selection).
+- **Rate Limit Calculator** — Exit popup with routing/throughput messaging.
+- **Budget LLM Showdown** — Exit popup with budget model/export messaging.
+- All exit popups GA4 tracked per page. Founding member counter synced across all pages via localStorage.
 
 ### Session 256 (May 20)
 **Conversion funnel analytics + cost optimizer conversion:**

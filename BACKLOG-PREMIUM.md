@@ -15,7 +15,7 @@
 - *(None currently)*
 
 ### Completed
-✅ Session 257: Cost Optimizer conversion optimization. Inline upsell after savings hero, founding member urgency counter, enhanced gate overlay, personalized exit popup. GA4 tracked.
+✅ Session 257: Cost Optimizer conversion + tool-wide urgency/exit popups. Inline upsell, founding member urgency, enhanced gate overlay, personalized exit popups on 6 tool pages (calculator, budget-planner, pipeline, compare, rate-limit-calculator, budget-llm-showdown). GA4 tracked.
 ✅ Sessions 255-256: Cost Optimizer tool (15th tool), conversion funnel dashboard (funnel.html), social proof, cross-links from 3 blog posts. Pages 216, tools 15.
 ✅ Sessions 228-254: Budget Planner tool, 26 industry cost guides, cost optimization checklist, Free vs Pro page, FAQ schemas, cross-links. Blog 132→157, pages 214, tools 14.
 ✅ Sessions 1-227: Full site built (188 pages, 132 blog posts, 33 models, 10 providers, 13 tools, 6 API endpoints). All calculators, Pro system, community playbook, exit popup A/B test, newsletter, GA4, pricing A/B test.
