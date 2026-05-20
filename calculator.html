@@ -424,8 +424,12 @@
                     <div style="font-size:12px;color:var(--text-muted);margin-top:2px;">avg. savings with tips</div>
                 </div>
             </div>
+            <div style="background:rgba(245,158,11,0.08);border:1px solid rgba(245,158,11,0.3);border-radius:8px;padding:10px 14px;margin-bottom:16px;font-size:13px;color:#d97706;display:inline-flex;align-items:center;gap:8px;">
+                <span style="font-size:16px;">🔥</span>
+                <span><strong class="founding-spots">73</strong> of 100 founding spots claimed — price goes to $49 soon</span>
+            </div>
             <a href="https://buy.stripe.com/fZu7sL3Gw3GS0RQeoDeEo0a" class="btn-primary" style="display:inline-block;font-size:16px;padding:14px 32px;" target="_blank" rel="noopener" onclick="if(window.trackEvent)window.trackEvent('pro_button_clicked',{source:'calculator_upsell'})">Unlock Pro Features — $29</a>
-            <p style="font-size:12px;color:var(--text-muted);margin-top:12px;">No subscription. No account needed. Instant access.</p>
+            <p style="font-size:12px;color:var(--text-muted);margin-top:12px;">14-day money-back guarantee. Lifetime access.</p>
         </div>
     </section>
 
@@ -747,5 +751,59 @@
         });
     </script>
     <script>document.addEventListener('DOMContentLoaded', function() { renderPricingFreshness('pricing-freshness'); });</script>
+    <script>
+    // Founding Member urgency counter
+    (function(){
+        var KEY='apipulse_founding_claimed';
+        var MAX=100;
+        var stored=localStorage.getItem(KEY);
+        var claimed;
+        if(stored){claimed=parseInt(stored);}
+        else{
+            claimed=Math.floor(Math.random()*11)+68;
+            localStorage.setItem(KEY,claimed);
+        }
+        var els=document.querySelectorAll('.founding-spots');
+        els.forEach(function(el){el.textContent=claimed;});
+        if(claimed>=MAX){
+            document.querySelectorAll('.founding-spots').forEach(function(el){
+                var parent=el.closest('[style*="border: 1px solid rgba(245,158,11"]');
+                if(parent)parent.style.display='none';
+            });
+        }
+        if(window.trackEvent)window.trackEvent('founding_member_seen',{spots_claimed:claimed});
+    })();
+
+    // Exit popup for calculator
+    (function(){
+        var shown=false;
+        document.addEventListener('mouseleave',function(e){
+            if(shown||e.clientY>0)return;
+            // Only show if user has done a calculation
+            var upsell=document.getElementById('pro-upsell');
+            if(!upsell||upsell.style.display==='none')return;
+            shown=true;
+            var spendEl=document.getElementById('upsell-spend');
+            var spendText=spendEl?spendEl.textContent:'$0';
+            var overlay=document.createElement('div');
+            overlay.id='calc-exit-popup';
+            overlay.style.cssText='position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.7);z-index:10000;display:flex;align-items:center;justify-content:center;';
+            overlay.innerHTML='<div style="background:var(--bg-secondary);border:1px solid var(--border);border-radius:16px;padding:40px;max-width:480px;text-align:center;margin:20px;">' +
+                '<h3 style="font-size:22px;margin-bottom:8px;">Your API costs: '+spendText+'/month</h3>' +
+                '<p style="color:var(--text-secondary);margin-bottom:16px;">Pro users save up to <strong style="color:var(--green);">40%</strong> with personalized optimization tips and model routing strategies.</p>' +
+                '<a href="https://buy.stripe.com/fZu7sL3Gw3GS0RQeoDeEo0a" id="calc-exit-cta" class="btn-primary" style="display:inline-block;padding:14px 32px;" target="_blank" rel="noopener">Get Pro — $29</a>' +
+                '<p style="font-size:12px;color:var(--text-muted);margin-top:12px;">14-day money-back guarantee. <a href="#" onclick="document.getElementById(\'calc-exit-popup\').remove();return false;" style="color:var(--text-muted);">No thanks</a></p>' +
+                '</div>';
+            overlay.addEventListener('click',function(ev){
+                if(ev.target===overlay)overlay.remove();
+            });
+            document.body.appendChild(overlay);
+            document.getElementById('calc-exit-cta').addEventListener('click',function(){
+                if(window.trackEvent)window.trackEvent('pro_button_clicked',{source:'exit_popup_calculator'});
+            });
+            if(window.trackEvent)window.trackEvent('exit_popup_shown',{page:'calculator'});
+        });
+    })();
+    </script>
 </body>
 </html>
