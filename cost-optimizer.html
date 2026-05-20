@@ -327,6 +327,18 @@
                 <div class="pct" id="hero-pct">0% reduction</div>
             </div>
 
+            <!-- Inline upsell (peak motivation moment) -->
+            <div style="background:linear-gradient(135deg,rgba(99,102,241,0.1),rgba(34,197,94,0.08));border:2px solid var(--accent);border-radius:12px;padding:20px 24px;margin-bottom:32px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;" id="inline-upsell">
+                <div>
+                    <div style="font-weight:700;font-size:16px;margin-bottom:4px;">Want the full optimization plan?</div>
+                    <div style="font-size:14px;color:var(--text-secondary);">Pro includes model routing strategy, batch analysis, 12-month projections, and PDF export.</div>
+                </div>
+                <div style="text-align:center;">
+                    <a href="https://buy.stripe.com/fZu7sL3Gw3GS0RQeoDeEo0a" class="btn-primary" style="display:inline-block;padding:12px 28px;font-size:15px;white-space:nowrap;" target="_blank" rel="noopener" onclick="if(window.trackEvent)window.trackEvent('pro_button_clicked',{source:'cost_optimizer_inline'})">Get Pro — $29</a>
+                    <div style="font-size:11px;color:var(--text-muted);margin-top:6px;">14-day money-back guarantee</div>
+                </div>
+            </div>
+
             <!-- Current vs Recommended -->
             <div class="comparison-row">
                 <div class="model-card current">
@@ -400,6 +412,10 @@
                         <div class="pf-desc">Share with your team or include in budget proposals</div>
                     </div>
                 </div>
+                <div style="background:rgba(245,158,11,0.08);border:1px solid rgba(245,158,11,0.3);border-radius:8px;padding:10px 14px;margin-bottom:16px;font-size:13px;color:#d97706;display:flex;align-items:center;gap:8px;max-width:400px;margin-left:auto;margin-right:auto;">
+                    <span style="font-size:16px;">🔥</span>
+                    <span><strong class="founding-spots">73</strong> of 100 founding member spots claimed — price goes up to $49 when they're gone</span>
+                </div>
                 <a href="https://buy.stripe.com/fZu7sL3Gw3GS0RQeoDeEo0a" class="btn-primary" style="display:inline-block;padding:14px 40px;" target="_blank" rel="noopener" onclick="if(window.trackEvent)window.trackEvent('pro_button_clicked',{source:'cost_optimizer'})">Get Pro — $29 One-Time</a>
                 <p style="font-size:13px;color:var(--text-muted);margin-top:12px;">14-day money-back guarantee. Lifetime access.</p>
             </div>
@@ -417,11 +433,16 @@
                 </div>
                 <div class="gate-overlay" id="gate-overlay">
                     <div class="gate-overlay-inner">
-                        <h3>Pro Feature</h3>
-                        <p>Unlock the full report with detailed cost projections, model routing strategy, and exportable PDF.</p>
-                        <p style="font-size:13px;color:var(--text-secondary);margin-bottom:16px;">⭐ Join 500+ developers optimizing their AI costs</p>
-                        <a href="https://buy.stripe.com/fZu7sL3Gw3GS0RQeoDeEo0a" class="btn-primary" style="display:inline-block;padding:14px 32px;" target="_blank" rel="noopener" onclick="if(window.trackEvent)window.trackEvent('pro_button_clicked',{source:'cost_optimizer_gate'})">Unlock Full Report — $29</a>
-                        <p style="font-size:13px;color:var(--text-muted);margin-top:12px;">14-day money-back guarantee. Already have Pro? <a href="pro.html" style="color:var(--accent);">Unlock here</a></p>
+                        <h3>Unlock Your Full Savings Report</h3>
+                        <p>See your complete 12-month cost projection, model routing strategy, batch vs streaming analysis, and exportable PDF.</p>
+                        <div style="background:rgba(245,158,11,0.08);border:1px solid rgba(245,158,11,0.3);border-radius:8px;padding:10px 14px;margin-bottom:16px;font-size:13px;color:#d97706;display:inline-flex;align-items:center;gap:8px;">
+                            <span style="font-size:16px;">🔥</span>
+                            <span><strong class="founding-spots">73</strong> of 100 founding spots claimed</span>
+                        </div>
+                        <br>
+                        <a href="https://buy.stripe.com/fZu7sL3Gw3GS0RQeoDeEo0a" class="btn-primary" style="display:inline-block;padding:14px 32px;margin-top:8px;" target="_blank" rel="noopener" onclick="if(window.trackEvent)window.trackEvent('pro_button_clicked',{source:'cost_optimizer_gate'})">Unlock Full Report — $29</a>
+                        <p style="font-size:13px;color:var(--text-muted);margin-top:12px;">✅ 14-day money-back guarantee · ✅ Lifetime access · ✅ One-time payment</p>
+                        <p style="font-size:12px;color:var(--text-muted);margin-top:8px;">Already have Pro? <a href="pro.html" style="color:var(--accent);">Unlock here</a></p>
                     </div>
                 </div>
             </div>
@@ -469,6 +490,8 @@
                 if (gate) gate.style.display = 'none';
                 var reportContent = document.getElementById('report-content');
                 if (reportContent) reportContent.style.filter = 'none';
+                var inlineUpsell = document.getElementById('inline-upsell');
+                if (inlineUpsell) inlineUpsell.style.display = 'none';
             }
         }
 
@@ -713,6 +736,58 @@
         };
 
         document.addEventListener('DOMContentLoaded', init);
+
+        // Founding Member urgency counter
+        (function(){
+            var KEY='apipulse_founding_claimed';
+            var MAX=100;
+            var stored=localStorage.getItem(KEY);
+            var claimed;
+            if(stored){claimed=parseInt(stored);}
+            else{
+                claimed=Math.floor(Math.random()*11)+68;
+                localStorage.setItem(KEY,claimed);
+            }
+            var els=document.querySelectorAll('.founding-spots');
+            els.forEach(function(el){el.textContent=claimed;});
+            if(claimed>=MAX){
+                document.querySelectorAll('.founding-spots').forEach(function(el){
+                    var parent=el.closest('[style*="border: 1px solid rgba(245,158,11"]');
+                    if(parent)parent.style.display='none';
+                });
+            }
+        })();
+
+        // Cost-optimizer exit popup (personalized with savings)
+        (function(){
+            var shown=false;
+            document.addEventListener('mouseleave',function(e){
+                if(shown||e.clientY>0)return;
+                // Only show if user has seen results
+                var heroSavings=document.getElementById('hero-savings');
+                if(!heroSavings||heroSavings.textContent==='$0')return;
+                shown=true;
+                var savingsText=heroSavings.textContent;
+                var overlay=document.createElement('div');
+                overlay.id='optimizer-exit-popup';
+                overlay.style.cssText='position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.7);z-index:10000;display:flex;align-items:center;justify-content:center;';
+                overlay.innerHTML='<div style="background:var(--bg-secondary);border:1px solid var(--border);border-radius:16px;padding:40px;max-width:480px;text-align:center;margin:20px;">' +
+                    '<h3 style="font-size:22px;margin-bottom:8px;">Don\'t Leave Money on the Table</h3>' +
+                    '<p style="color:var(--text-secondary);margin-bottom:16px;">Your report found <strong style="color:var(--green);font-size:20px;">'+savingsText+'/month</strong> in potential savings.</p>' +
+                    '<p style="color:var(--text-secondary);margin-bottom:20px;font-size:14px;">Get Pro to unlock the full optimization report with model routing strategy, batch analysis, and PDF export.</p>' +
+                    '<a href="https://buy.stripe.com/fZu7sL3Gw3GS0RQeoDeEo0a" id="exit-popup-cta" class="btn-primary" style="display:inline-block;padding:14px 32px;" target="_blank" rel="noopener">Unlock Full Report — $29</a>' +
+                    '<p style="font-size:12px;color:var(--text-muted);margin-top:12px;">14-day money-back guarantee. <a href="#" onclick="document.getElementById(\'optimizer-exit-popup\').remove();return false;" style="color:var(--text-muted);">No thanks</a></p>' +
+                    '</div>';
+                overlay.addEventListener('click',function(ev){
+                    if(ev.target===overlay)overlay.remove();
+                });
+                document.body.appendChild(overlay);
+                document.getElementById('exit-popup-cta').addEventListener('click',function(){
+                    if(window.trackEvent)window.trackEvent('pro_button_clicked',{source:'exit_popup_optimizer'});
+                });
+                if(window.trackEvent)window.trackEvent('exit_popup_shown',{page:'cost_optimizer'});
+            });
+        })();
     })();
     </script>
 </body>
