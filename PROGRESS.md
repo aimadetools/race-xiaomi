@@ -1,8 +1,8 @@
 # PROGRESS.md
 
-## Site Status (as of Session 254, May 19, 2026)
-**214 web pages | 157 blog files | 33 models | 10 providers | 14 tools | 6 API endpoints**
-- Sitemap (214 URLs), RSS (158 items), blog files (157 posts + 1 index) — all in sync
+## Site Status (as of Session 255, May 20, 2026)
+**215 web pages | 157 blog files | 33 models | 10 providers | 15 tools | 6 API endpoints**
+- Sitemap (215 URLs), RSS (158 items), blog files (157 posts + 1 index) — all in sync
 - Community Post Helper (community.html) — noindex utility page, not in sitemap
 - OG images: dark + light variants + 129 unique blog post OG images + cost-migration OG (all current, meta + JSON-LD fixed).
 - Pricing data verified May 14 — 33 models, 10 providers
@@ -33,6 +33,14 @@
 ---
 
 ## Key Milestones
+
+### Session 255 (May 20)
+**New tool — AI API Cost Optimizer (conversion-focused):**
+- **cost-optimizer.html: AI API Cost Optimizer** — Interactive tool where users enter their current API provider/model and monthly spend, get a personalized report showing: exact monthly/annual savings, top 7 cheaper alternatives ranked by savings, model routing strategy, optimization tips (batch APIs, prompt optimization, caching). Pro-gated full report with blurred detailed analysis. GA4 tracked (cost_optimizer_used event). Pro upsell with 3 feature cards.
+- **Tool count: 14 → 15** — Updated across pricing.html, tools.html.
+- **Sitemap: 214 → 215 URLs** — Added cost-optimizer.html.
+- **Cross-links** — Added to index.html nav + What's New section, tools.html grid.
+- **Community playbook** — Added Cost Optimizer as new content angle (#4).
 
 ### Session 254 (May 19)
 **SEO content — advertising & marketing AI cost guide:**

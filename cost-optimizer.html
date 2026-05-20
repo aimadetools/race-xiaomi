@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI API Cost Optimizer — Free Personalized Report | APIpulse</title>
+    <meta name="description" content="Get a personalized AI API cost optimization report. Enter your current provider and spend to see exactly how much you can save by switching models.">
+    <meta property="og:title" content="AI API Cost Optimizer — Free Personalized Report">
+    <meta property="og:description" content="Enter your current API setup. See exact savings from switching to cheaper models. 33 models compared.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://getapipulse.com/og-image.png">
+    <meta property="og:url" content="https://getapipulse.com/cost-optimizer.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="AI API Cost Optimizer — Free Personalized Report">
+    <meta name="twitter:image" content="https://getapipulse.com/og-image.png">
+    <meta name="twitter:description" content="Enter your current API setup. See exact savings from switching to cheaper models.">
+    <meta name="keywords" content="AI API cost optimization, reduce AI costs, LLM cost savings, API spending optimizer">
+    <link rel="canonical" href="https://getapipulse.com/cost-optimizer.html">
+    <link rel="alternate" type="application/rss+xml" title="APIpulse Blog" href="https://getapipulse.com/rss.xml">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="styles.css">
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0CEP7S9Y3J"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-0CEP7S9Y3J');
+    </script>
+    <script src="analytics.js" defer></script>
+    <script src="dynamic-date.js" defer></script>
+    <script src="shared.js" defer></script>
+    <script src="pricing-data.js" defer></script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "AI API Cost Optimizer",
+        "url": "https://getapipulse.com/cost-optimizer.html",
+        "description": "Get a personalized AI API cost optimization report. Enter your current provider and spend to see exactly how much you can save.",
+        "applicationCategory": "DeveloperApplication",
+        "operatingSystem": "Web",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+    }
+    </script>
+    <style>
+        .content { max-width: 960px; margin: 0 auto; padding: 120px 24px 80px; }
+        h1 { font-size: 40px; font-weight: 800; text-align: center; margin-bottom: 12px; }
+        .subtitle { text-align: center; color: var(--text-secondary); font-size: 18px; margin-bottom: 40px; max-width: 650px; margin-left: auto; margin-right: auto; }
+
+        /* Steps indicator */
+        .steps { display: flex; justify-content: center; gap: 8px; margin-bottom: 40px; }
+        .step-dot { width: 40px; height: 4px; border-radius: 2px; background: var(--border); transition: background 0.3s; }
+        .step-dot.active { background: var(--accent); }
+        .step-dot.done { background: var(--green); }
+
+        /* Input section */
+        .optimizer-card {
+            background: var(--bg-secondary); border: 1px solid var(--border);
+            border-radius: 16px; padding: 40px; margin-bottom: 32px;
+        }
+        .optimizer-card h2 { font-size: 24px; font-weight: 700; margin-bottom: 8px; }
+        .optimizer-card .card-desc { color: var(--text-secondary); font-size: 15px; margin-bottom: 28px; }
+
+        .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 24px; }
+        .form-group label {
+            display: block; font-size: 13px; font-weight: 600;
+            color: var(--text-secondary); margin-bottom: 8px;
+            text-transform: uppercase; letter-spacing: 0.5px;
+        }
+        .form-group select, .form-group input {
+            width: 100%; padding: 14px 16px; background: var(--bg-card);
+            border: 1px solid var(--border); border-radius: 10px;
+            color: var(--text-primary); font-size: 16px;
+            transition: border-color 0.2s;
+        }
+        .form-group select:focus, .form-group input:focus {
+            outline: none; border-color: var(--accent);
+            box-shadow: 0 0 0 3px var(--accent-glow);
+        }
+        .preset-btns { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 8px; }
+        .preset-btn {
+            padding: 6px 14px; background: var(--bg-card); border: 1px solid var(--border);
+            border-radius: 6px; color: var(--text-secondary); font-size: 12px;
+            cursor: pointer; transition: all 0.2s;
+        }
+        .preset-btn:hover { border-color: var(--accent); color: var(--accent); }
+
+        .analyze-btn {
+            display: block; width: 100%; padding: 16px;
+            background: var(--accent); color: white; border: none;
+            border-radius: 10px; font-size: 18px; font-weight: 700;
+            cursor: pointer; transition: all 0.2s;
+        }
+        .analyze-btn:hover { background: var(--accent-hover); transform: translateY(-1px); }
+        .analyze-btn:disabled { opacity: 0.5; cursor: not-allowed; transform: none; }
+
+        /* Results */
+        .results { display: none; }
+        .results.active { display: block; }
+
+        /* Hero savings */
+        .savings-hero {
+            text-align: center; padding: 40px; margin-bottom: 32px;
+            background: linear-gradient(135deg, rgba(34,197,94,0.08), rgba(99,102,241,0.06));
+            border: 1px solid rgba(34,197,94,0.2); border-radius: 16px;
+        }
+        .savings-hero .label { font-size: 14px; color: var(--text-secondary); margin-bottom: 8px; }
+        .savings-hero .amount { font-size: 64px; font-weight: 800; color: var(--green); line-height: 1; }
+        .savings-hero .annual { font-size: 18px; color: var(--text-secondary); margin-top: 8px; }
+        .savings-hero .pct { font-size: 20px; font-weight: 700; color: var(--green); margin-top: 4px; }
+
+        /* Current vs recommended */
+        .comparison-row {
+            display: grid; grid-template-columns: 1fr auto 1fr; gap: 24px;
+            align-items: center; margin-bottom: 32px;
+        }
+        .model-card {
+            background: var(--bg-secondary); border: 1px solid var(--border);
+            border-radius: 12px; padding: 24px; text-align: center;
+        }
+        .model-card.current { border-color: rgba(239,68,68,0.3); }
+        .model-card.recommended { border-color: rgba(34,197,94,0.3); box-shadow: 0 0 20px rgba(34,197,94,0.1); }
+        .model-card .model-name { font-size: 20px; font-weight: 700; margin-bottom: 4px; }
+        .model-card .model-provider { font-size: 13px; color: var(--text-muted); margin-bottom: 12px; }
+        .model-card .model-price { font-size: 28px; font-weight: 800; }
+        .model-card .model-price small { font-size: 14px; font-weight: 400; color: var(--text-muted); }
+        .model-card .model-label {
+            display: inline-block; padding: 4px 12px; border-radius: 6px;
+            font-size: 11px; font-weight: 700; text-transform: uppercase; margin-top: 12px;
+        }
+        .model-card.current .model-label { background: rgba(239,68,68,0.1); color: #ef4444; }
+        .model-card.recommended .model-label { background: rgba(34,197,94,0.1); color: var(--green); }
+        .arrow-icon { font-size: 32px; color: var(--text-muted); }
+
+        /* Alternatives table */
+        .alternatives-section { margin-bottom: 32px; }
+        .alternatives-section h3 { font-size: 20px; font-weight: 700; margin-bottom: 16px; }
+        .alt-table { width: 100%; border-collapse: collapse; font-size: 14px; }
+        .alt-table th {
+            background: var(--bg-secondary); padding: 12px 16px; text-align: left;
+            font-weight: 600; font-size: 12px; text-transform: uppercase;
+            letter-spacing: 0.5px; color: var(--text-muted);
+            border-bottom: 2px solid var(--border);
+        }
+        .alt-table td { padding: 12px 16px; border-bottom: 1px solid var(--border); }
+        .alt-table tr:last-child td { border-bottom: none; }
+        .alt-table .save-cell { color: var(--green); font-weight: 700; }
+        .alt-table .loss-cell { color: #ef4444; font-weight: 700; }
+        .alt-table .current-row { background: rgba(239,68,68,0.04); }
+        .alt-table .best-row { background: rgba(34,197,94,0.06); }
+        .alt-table .best-row td:first-child::before { content: ''; }
+        .tier-badge {
+            font-size: 11px; font-weight: 700; padding: 2px 8px;
+            border-radius: 4px; text-transform: uppercase; letter-spacing: 0.5px;
+        }
+        .tier-premium { background: rgba(239,68,68,0.1); color: #ef4444; }
+        .tier-mid { background: rgba(234,179,8,0.1); color: #eab308; }
+        .tier-budget { background: rgba(34,197,94,0.1); color: var(--green); }
+
+        /* Optimization tips */
+        .tips-section { margin-bottom: 32px; }
+        .tips-section h3 { font-size: 20px; font-weight: 700; margin-bottom: 16px; }
+        .tip-card {
+            background: var(--bg-secondary); border: 1px solid var(--border);
+            border-radius: 12px; padding: 20px; margin-bottom: 12px;
+            display: flex; gap: 16px; align-items: flex-start;
+        }
+        .tip-icon {
+            width: 40px; height: 40px; flex-shrink: 0;
+            background: var(--accent-glow); border-radius: 10px;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 18px;
+        }
+        .tip-title { font-weight: 700; margin-bottom: 4px; }
+        .tip-desc { font-size: 14px; color: var(--text-secondary); line-height: 1.5; }
+        .tip-savings { font-size: 13px; color: var(--green); font-weight: 600; margin-top: 4px; }
+
+        /* Pro upsell */
+        .pro-upsell {
+            background: linear-gradient(135deg, rgba(99,102,241,0.08), rgba(34,197,94,0.06));
+            border: 2px solid var(--accent); border-radius: 16px;
+            padding: 40px; text-align: center; margin-bottom: 32px;
+        }
+        .pro-upsell h3 { font-size: 24px; font-weight: 700; margin-bottom: 8px; }
+        .pro-upsell p { color: var(--text-secondary); margin-bottom: 24px; max-width: 500px; margin-left: auto; margin-right: auto; }
+        .pro-features-grid {
+            display: grid; grid-template-columns: repeat(3, 1fr);
+            gap: 16px; margin-bottom: 24px;
+        }
+        .pro-feature {
+            background: var(--bg-card); border: 1px solid var(--border);
+            border-radius: 10px; padding: 16px; text-align: center;
+        }
+        .pro-feature .pf-icon { font-size: 24px; margin-bottom: 8px; }
+        .pro-feature .pf-title { font-size: 13px; font-weight: 700; margin-bottom: 4px; }
+        .pro-feature .pf-desc { font-size: 12px; color: var(--text-muted); }
+
+        /* Full report (Pro gated) */
+        .report-gate {
+            position: relative; margin-bottom: 32px;
+        }
+        .report-gate .report-content {
+            filter: blur(6px); pointer-events: none; user-select: none;
+        }
+        .report-gate .gate-overlay {
+            position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+            display: flex; align-items: center; justify-content: center;
+            background: rgba(10,10,15,0.7); border-radius: 12px;
+        }
+        .gate-overlay-inner {
+            text-align: center; padding: 32px;
+        }
+        .gate-overlay-inner h3 { font-size: 22px; margin-bottom: 8px; }
+        .gate-overlay-inner p { color: var(--text-secondary); margin-bottom: 20px; }
+
+        @media (max-width: 768px) {
+            .content { padding: 100px 20px 60px; }
+            h1 { font-size: 28px; }
+            .subtitle { font-size: 16px; }
+            .form-grid { grid-template-columns: 1fr; }
+            .comparison-row { grid-template-columns: 1fr; }
+            .arrow-icon { transform: rotate(90deg); justify-self: center; }
+            .savings-hero .amount { font-size: 48px; }
+            .pro-features-grid { grid-template-columns: 1fr; }
+            .alt-table { font-size: 12px; }
+            .alt-table th, .alt-table td { padding: 8px 10px; }
+        }
+        @media print {
+            nav, .cta-inline, .theme-toggle, .back-to-top, .pro-upsell { display: none !important; }
+            body { background: white; color: black; }
+            .content { padding: 0; max-width: 100%; }
+        }
+    </style>
+    <meta name="theme-color" content="#6366f1">
+</head>
+<body>
+    <a href="#main" class="skip-link">Skip to content</a>
+    <nav>
+        <div class="nav-inner">
+            <a href="index.html" class="logo">API<span>pulse</span></a>
+            <button class="hamburger" onclick="toggleMobileNav()" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+            <div class="nav-links">
+                <a href="calculator.html">Calculator</a>
+                <a href="compare.html">Compare</a>
+                <a href="cost-optimizer.html">Optimizer</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="blog.html">Blog</a>
+                <a href="pricing.html" class="nav-cta" onclick="if(window.trackEvent)window.trackEvent('pro_button_clicked',{source:'nav'})">Get Pro — $29</a>
+                <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
+            </div>
+        </div>
+    </nav>
+
+    <main id="main">
+
+    <div class="content">
+        <h1>AI API Cost Optimizer</h1>
+        <p class="subtitle">Enter your current API setup. Get a personalized report showing exactly how much you can save — with specific model recommendations.</p>
+
+        <div class="steps">
+            <div class="step-dot active" id="step-1"></div>
+            <div class="step-dot" id="step-2"></div>
+            <div class="step-dot" id="step-3"></div>
+        </div>
+
+        <!-- STEP 1: Current Setup -->
+        <div class="optimizer-card" id="input-section">
+            <h2>Your Current API Setup</h2>
+            <p class="card-desc">Tell us what you're using now. We'll find cheaper alternatives that match your needs.</p>
+
+            <div class="form-grid">
+                <div class="form-group">
+                    <label>Current Provider</label>
+                    <select id="current-provider" onchange="updateModelOptions()">
+                        <option value="">Select provider...</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Current Model</label>
+                    <select id="current-model" onchange="updateSpendPresets()">
+                        <option value="">Select model...</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Monthly API Spend</label>
+                    <input type="number" id="monthly-spend" placeholder="e.g. 500" min="1" max="100000">
+                    <div class="preset-btns">
+                        <button class="preset-btn" onclick="setSpend(50)">$50</button>
+                        <button class="preset-btn" onclick="setSpend(200)">$200</button>
+                        <button class="preset-btn" onclick="setSpend(500)">$500</button>
+                        <button class="preset-btn" onclick="setSpend(1000)">$1K</button>
+                        <button class="preset-btn" onclick="setSpend(5000)">$5K</button>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Primary Use Case</label>
+                    <select id="use-case">
+                        <option value="general">General / Mixed</option>
+                        <option value="chat">Chatbot / Conversational AI</option>
+                        <option value="code">Code Generation</option>
+                        <option value="content">Content Writing</option>
+                        <option value="analysis">Data Analysis / RAG</option>
+                        <option value="classification">Classification / Extraction</option>
+                    </select>
+                </div>
+            </div>
+
+            <button class="analyze-btn" id="analyze-btn" onclick="analyzeCosts()" disabled>
+                Analyze My Costs
+            </button>
+        </div>
+
+        <!-- RESULTS -->
+        <div class="results" id="results-section">
+
+            <!-- Hero savings -->
+            <div class="savings-hero">
+                <div class="label">Your Estimated Monthly Savings</div>
+                <div class="amount" id="hero-savings">$0</div>
+                <div class="annual" id="hero-annual">$0/year</div>
+                <div class="pct" id="hero-pct">0% reduction</div>
+            </div>
+
+            <!-- Current vs Recommended -->
+            <div class="comparison-row">
+                <div class="model-card current">
+                    <div class="model-name" id="current-name">—</div>
+                    <div class="model-provider" id="current-provider-label">—</div>
+                    <div class="model-price" id="current-price">—<small>/1M input</small></div>
+                    <div class="model-label">Your Current Model</div>
+                </div>
+                <div class="arrow-icon">→</div>
+                <div class="model-card recommended">
+                    <div class="model-name" id="rec-name">—</div>
+                    <div class="model-provider" id="rec-provider-label">—</div>
+                    <div class="model-price" id="rec-price">—<small>/1M input</small></div>
+                    <div class="model-label">Best Alternative</div>
+                </div>
+            </div>
+
+            <!-- Top 3 Recommendations -->
+            <div class="alternatives-section">
+                <h3>Top Alternatives for Your Workload</h3>
+                <table class="alt-table">
+                    <thead>
+                        <tr>
+                            <th>Model</th>
+                            <th>Tier</th>
+                            <th>Input</th>
+                            <th>Output</th>
+                            <th>Context</th>
+                            <th>Est. Monthly</th>
+                            <th>Savings</th>
+                        </tr>
+                    </thead>
+                    <tbody id="alt-tbody">
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Optimization Tips -->
+            <div class="tips-section">
+                <h3>Optimization Strategies</h3>
+                <div id="tips-container"></div>
+            </div>
+
+            <!-- Pro Upsell -->
+            <div class="pro-upsell">
+                <h3>Unlock Your Full Optimization Report</h3>
+                <p>Get the complete breakdown: detailed cost projections, model routing strategy, batch vs streaming analysis, and exportable PDF report.</p>
+                <div class="pro-features-grid">
+                    <div class="pro-feature">
+                        <div class="pf-icon">📊</div>
+                        <div class="pf-title">Full Report</div>
+                        <div class="pf-desc">Detailed cost breakdown by model, provider, and workload</div>
+                    </div>
+                    <div class="pro-feature">
+                        <div class="pf-icon">🔄</div>
+                        <div class="pf-title">Model Routing</div>
+                        <div class="pf-desc">Multi-model strategy to minimize costs across tasks</div>
+                    </div>
+                    <div class="pro-feature">
+                        <div class="pf-icon">📥</div>
+                        <div class="pf-title">Export PDF</div>
+                        <div class="pf-desc">Share with your team or include in budget proposals</div>
+                    </div>
+                </div>
+                <a href="https://buy.stripe.com/fZu7sL3Gw3GS0RQeoDeEo0a" class="btn-primary" style="display:inline-block;padding:14px 40px;" target="_blank" rel="noopener" onclick="if(window.trackEvent)window.trackEvent('pro_button_clicked',{source:'cost_optimizer'})">Get Pro — $29 One-Time</a>
+                <p style="font-size:13px;color:var(--text-muted);margin-top:12px;">14-day money-back guarantee. Lifetime access.</p>
+            </div>
+
+            <!-- Full Report (Pro-gated, blurred) -->
+            <div class="report-gate" id="report-gate">
+                <div class="report-content" id="report-content">
+                    <div class="optimizer-card">
+                        <h2>Full Optimization Report</h2>
+                        <p class="card-desc">Detailed analysis of your API costs with specific recommendations.</p>
+                        <div id="full-report-body" style="min-height:300px;">
+                            <!-- Filled by JS -->
+                        </div>
+                    </div>
+                </div>
+                <div class="gate-overlay" id="gate-overlay">
+                    <div class="gate-overlay-inner">
+                        <h3>Pro Feature</h3>
+                        <p>Unlock the full report with detailed cost projections, model routing strategy, and exportable PDF.</p>
+                        <a href="https://buy.stripe.com/fZu7sL3Gw3GS0RQeoDeEo0a" class="btn-primary" style="display:inline-block;padding:14px 32px;" target="_blank" rel="noopener" onclick="if(window.trackEvent)window.trackEvent('pro_button_clicked',{source:'cost_optimizer_gate'})">Unlock Full Report — $29</a>
+                        <p style="font-size:13px;color:var(--text-muted);margin-top:12px;">Already have Pro? <a href="pro.html" style="color:var(--accent);">Unlock here</a></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Share -->
+            <div style="text-align:center;padding:24px;background:var(--bg-secondary);border-radius:12px;border:1px solid var(--border);">
+                <p style="font-size:15px;font-weight:600;margin-bottom:12px;">Found this useful? Share it with your team</p>
+                <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
+                    <a href="https://twitter.com/intent/tweet?text=I+just+found+out+I+can+save+%240%2Fmonth+on+AI+API+costs.+Get+your+free+optimization+report:&url=https://getapipulse.com/cost-optimizer.html" target="_blank" rel="noopener" class="btn-secondary" style="padding:10px 20px;font-size:14px;">Share on X</a>
+                    <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://getapipulse.com/cost-optimizer.html" target="_blank" rel="noopener" class="btn-secondary" style="padding:10px 20px;font-size:14px;">Share on LinkedIn</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <button class="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">↑</button>
+
+    </main>
+
+    <script>
+    (function() {
+        var models = [];
+        var providers = [];
+        var currentModel = null;
+
+        function init() {
+            if (typeof API_MODELS === 'undefined') {
+                setTimeout(init, 100);
+                return;
+            }
+            models = API_MODELS;
+            providers = getProviders();
+
+            var provSelect = document.getElementById('current-provider');
+            providers.forEach(function(p) {
+                var opt = document.createElement('option');
+                opt.value = p.slug;
+                opt.textContent = p.name;
+                provSelect.appendChild(opt);
+            });
+
+            // Check if Pro
+            if (localStorage.getItem('apipulse_pro') === 'true') {
+                var gate = document.getElementById('gate-overlay');
+                if (gate) gate.style.display = 'none';
+                var reportContent = document.getElementById('report-content');
+                if (reportContent) reportContent.style.filter = 'none';
+            }
+        }
+
+        window.updateModelOptions = function() {
+            var provSlug = document.getElementById('current-provider').value;
+            var modelSelect = document.getElementById('current-model');
+            modelSelect.innerHTML = '<option value="">Select model...</option>';
+            document.getElementById('analyze-btn').disabled = true;
+
+            if (!provSlug) return;
+
+            var provModels = models.filter(function(m) { return m.providerSlug === provSlug; });
+            provModels.forEach(function(m) {
+                var opt = document.createElement('option');
+                opt.value = m.id;
+                opt.textContent = m.name + ' ($' + m.input + '/$' + m.output + ' per 1M)';
+                modelSelect.appendChild(opt);
+            });
+        };
+
+        window.updateSpendPresets = function() {
+            var modelId = document.getElementById('current-model').value;
+            document.getElementById('analyze-btn').disabled = !modelId;
+        };
+
+        window.setSpend = function(v) {
+            document.getElementById('monthly-spend').value = v;
+        };
+
+        window.analyzeCosts = function() {
+            var modelId = document.getElementById('current-model').value;
+            var spend = parseFloat(document.getElementById('monthly-spend').value) || 200;
+            var useCase = document.getElementById('use-case').value;
+
+            currentModel = models.find(function(m) { return m.id === modelId; });
+            if (!currentModel) return;
+
+            // Track event
+            if (window.trackEvent) {
+                window.trackEvent('cost_optimizer_used', {
+                    current_model: currentModel.name,
+                    monthly_spend: spend,
+                    use_case: useCase
+                });
+            }
+
+            // Calculate costs: assume 70% input / 30% output token split
+            var inputRatio = 0.7;
+            var outputRatio = 0.3;
+
+            // Estimate tokens from spend
+            // spend = (inputTokens/1M * inputPrice) + (outputTokens/1M * outputPrice)
+            // With inputRatio:inputTokens = inputRatio * totalTokens
+            // spend = totalTokens/1M * (inputRatio*inputPrice + outputRatio*outputPrice)
+            var blendedCurrent = inputRatio * currentModel.input + outputRatio * currentModel.output;
+
+            // Find alternatives: cheaper models that could work for the use case
+            var alternatives = models.filter(function(m) {
+                return m.id !== currentModel.id;
+            }).map(function(m) {
+                var blended = inputRatio * m.input + outputRatio * m.output;
+                var estMonthly = (spend / blendedCurrent) * blended;
+                var savings = spend - estMonthly;
+                return {
+                    model: m,
+                    blended: blended,
+                    estMonthly: estMonthly,
+                    savings: savings,
+                    pct: spend > 0 ? (savings / spend * 100) : 0
+                };
+            });
+
+            // Sort by savings (highest first)
+            alternatives.sort(function(a, b) { return b.savings - a.savings; });
+
+            // Best alternative (cheapest that saves money)
+            var best = alternatives.find(function(a) { return a.savings > 0; });
+
+            // Update step indicators
+            document.getElementById('step-1').classList.add('done');
+            document.getElementById('step-1').classList.remove('active');
+            document.getElementById('step-2').classList.add('done');
+            document.getElementById('step-2').classList.remove('active');
+            document.getElementById('step-3').classList.add('active');
+
+            // Show results
+            document.getElementById('results-section').classList.add('active');
+
+            // Hero savings
+            var monthlySave = best ? best.savings : 0;
+            var annualSave = monthlySave * 12;
+            var pctSave = best ? best.pct : 0;
+            document.getElementById('hero-savings').textContent = '$' + Math.round(monthlySave).toLocaleString();
+            document.getElementById('hero-annual').textContent = '$' + Math.round(annualSave).toLocaleString() + '/year';
+            document.getElementById('hero-pct').textContent = Math.round(pctSave) + '% reduction';
+
+            // Update share link
+            var shareText = 'I+just+found+out+I+can+save+%24' + Math.round(monthlySave) + '%2Fmonth+on+AI+API+costs.+Get+your+free+optimization+report:';
+            var tweetLink = document.querySelector('a[href*="twitter.com/intent/tweet"]');
+            if (tweetLink) {
+                tweetLink.href = 'https://twitter.com/intent/tweet?text=' + shareText + '&url=https://getapipulse.com/cost-optimizer.html';
+            }
+
+            // Current vs Recommended
+            document.getElementById('current-name').textContent = currentModel.name;
+            document.getElementById('current-provider-label').textContent = currentModel.provider;
+            document.getElementById('current-price').innerHTML = '$' + currentModel.input + '<small>/1M input</small>';
+
+            if (best) {
+                document.getElementById('rec-name').textContent = best.model.name;
+                document.getElementById('rec-provider-label').textContent = best.model.provider;
+                document.getElementById('rec-price').innerHTML = '$' + best.model.input + '<small>/1M input</small>';
+            }
+
+            // Build alternatives table (top 8)
+            var tbody = document.getElementById('alt-tbody');
+            tbody.innerHTML = '';
+
+            // Add current model first
+            var currentEstMonthly = spend;
+            var currentRow = '<tr class="current-row">' +
+                '<td><strong>' + currentModel.name + '</strong></td>' +
+                '<td><span class="tier-badge tier-' + currentModel.tier.toLowerCase() + '">' + currentModel.tier + '</span></td>' +
+                '<td>$' + currentModel.input + '</td>' +
+                '<td>$' + currentModel.output + '</td>' +
+                '<td>' + currentModel.context + '</td>' +
+                '<td>$' + Math.round(currentEstMonthly) + '</td>' +
+                '<td>—</td></tr>';
+            tbody.innerHTML += currentRow;
+
+            // Top 7 alternatives
+            var topAlts = alternatives.slice(0, 7);
+            topAlts.forEach(function(alt, i) {
+                var isBest = i === 0 && alt.savings > 0;
+                var rowClass = isBest ? 'best-row' : '';
+                var saveClass = alt.savings > 0 ? 'save-cell' : 'loss-cell';
+                var saveText = alt.savings > 0 ? '-$' + Math.round(alt.savings) : '+$' + Math.round(Math.abs(alt.savings));
+                var row = '<tr class="' + rowClass + '">' +
+                    '<td>' + (isBest ? '<strong>' : '') + alt.model.name + (isBest ? '</strong>' : '') + '</td>' +
+                    '<td><span class="tier-badge tier-' + alt.model.tier.toLowerCase() + '">' + alt.model.tier + '</span></td>' +
+                    '<td>$' + alt.model.input + '</td>' +
+                    '<td>$' + alt.model.output + '</td>' +
+                    '<td>' + alt.model.context + '</td>' +
+                    '<td>$' + Math.round(alt.estMonthly) + '</td>' +
+                    '<td class="' + saveClass + '">' + saveText + '</td></tr>';
+                tbody.innerHTML += row;
+            });
+
+            // Optimization tips
+            var tipsContainer = document.getElementById('tips-container');
+            tipsContainer.innerHTML = '';
+
+            var tips = [];
+
+            // Tip 1: Model switching
+            if (best && best.savings > 0) {
+                tips.push({
+                    icon: '🔄',
+                    title: 'Switch to ' + best.model.name,
+                    desc: 'Your current model costs $' + currentModel.input + '/1M input. ' + best.model.name + ' costs $' + best.model.input + '/1M input — ' + Math.round(best.pct) + '% cheaper with similar capabilities.',
+                    savings: 'Save $' + Math.round(best.savings) + '/month'
+                });
+            }
+
+            // Tip 2: Model routing
+            if (spend > 100) {
+                var routeSavings = Math.round(spend * 0.2);
+                tips.push({
+                    icon: '🔀',
+                    title: 'Use Model Routing',
+                    desc: 'Route simple tasks to budget models (Gemini Flash at $0.10/1M) and only use premium models for complex reasoning. Most workloads are 80% simple tasks.',
+                    savings: 'Save ~$' + routeSavings + '/month (20% typical)'
+                });
+            }
+
+            // Tip 3: Batch processing
+            tips.push({
+                icon: '📦',
+                title: 'Use Batch APIs',
+                desc: 'OpenAI offers 50% off for batch processing. If your workload isn\'t time-sensitive, batch everything.',
+                savings: 'Save up to 50% on eligible workloads'
+            });
+
+            // Tip 4: Prompt optimization
+            tips.push({
+                icon: '✂️',
+                title: 'Optimize Your Prompts',
+                desc: 'Average prompts have 40% unnecessary tokens. Trimming system prompts and reducing context saves on every request.',
+                savings: 'Save ~15-25% on input costs'
+            });
+
+            // Tip 5: Caching
+            if (useCase === 'chat' || useCase === 'general') {
+                tips.push({
+                    icon: '💾',
+                    title: 'Cache Repeated Responses',
+                    desc: 'If 20-30% of your requests are similar, caching saves on output costs. Implement semantic caching for FAQ-style queries.',
+                    savings: 'Save ~20% on output costs'
+                });
+            }
+
+            tips.forEach(function(tip) {
+                var tipHtml = '<div class="tip-card">' +
+                    '<div class="tip-icon">' + tip.icon + '</div>' +
+                    '<div><div class="tip-title">' + tip.title + '</div>' +
+                    '<div class="tip-desc">' + tip.desc + '</div>' +
+                    '<div class="tip-savings">' + tip.savings + '</div></div></div>';
+                tipsContainer.innerHTML += tipHtml;
+            });
+
+            // Full report content (Pro-gated)
+            var reportBody = document.getElementById('full-report-body');
+            reportBody.innerHTML = '<div style="padding:20px;">' +
+                '<h4 style="margin-bottom:16px;">Cost Analysis Summary</h4>' +
+                '<p style="color:var(--text-secondary);margin-bottom:12px;">Current setup: <strong>' + currentModel.name + '</strong> at <strong>$' + spend + '/month</strong></p>' +
+                '<p style="color:var(--text-secondary);margin-bottom:12px;">Recommended: <strong>' + (best ? best.model.name : 'N/A') + '</strong> at <strong>$' + (best ? Math.round(best.estMonthly) : spend) + '/month</strong></p>' +
+                '<p style="color:var(--text-secondary);margin-bottom:24px;">Annual savings: <strong style="color:var(--green);">$' + Math.round(monthlySave * 12) + '</strong></p>' +
+                '<h4 style="margin-bottom:16px;">Model Routing Strategy</h4>' +
+                '<div style="background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:16px;margin-bottom:16px;">' +
+                '<p style="color:var(--text-secondary);font-size:14px;">Route 80% of requests to <strong>' + (best ? best.model.name : 'budget model') + '</strong> ($' + (best ? best.model.input : '0') + '/1M input)</p>' +
+                '<p style="color:var(--text-secondary);font-size:14px;margin-top:8px;">Route 20% complex requests to <strong>' + currentModel.name + '</strong> ($' + currentModel.input + '/1M input)</p>' +
+                '<p style="color:var(--text-secondary);font-size:14px;margin-top:8px;">Blended cost: <strong>$' + (best ? (0.8 * best.model.input + 0.2 * currentModel.input).toFixed(2) : currentModel.input) + '/1M input</strong></p>' +
+                '</div>' +
+                '<h4 style="margin-bottom:16px;">Batch vs Streaming</h4>' +
+                '<div style="background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:16px;margin-bottom:16px;">' +
+                '<p style="color:var(--text-secondary);font-size:14px;">Streaming adds ~10% token overhead. For non-interactive workloads, use batch APIs.</p>' +
+                '<p style="color:var(--text-secondary);font-size:14px;margin-top:8px;">OpenAI Batch API: <strong>50% discount</strong> on all models</p>' +
+                '</div>' +
+                '<h4 style="margin-bottom:16px;">12-Month Projection</h4>' +
+                '<div style="background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:16px;">' +
+                '<p style="color:var(--text-secondary);font-size:14px;">Current path: <strong>$' + (spend * 12).toLocaleString() + '/year</strong></p>' +
+                '<p style="color:var(--text-secondary);font-size:14px;margin-top:8px;">Optimized path: <strong>$' + (best ? Math.round(best.estMonthly * 12).toLocaleString() : (spend * 12).toLocaleString()) + '/year</strong></p>' +
+                '<p style="color:var(--green);font-size:14px;margin-top:8px;font-weight:700;">Total annual savings: $' + Math.round(monthlySave * 12).toLocaleString() + '</p>' +
+                '</div></div>';
+
+            // Scroll to results
+            document.getElementById('results-section').scrollIntoView({ behavior: 'smooth', block: 'start' });
+        };
+
+        document.addEventListener('DOMContentLoaded', init);
+    })();
+    </script>
+</body>
+</html>

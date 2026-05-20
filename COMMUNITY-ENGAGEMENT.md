@@ -43,7 +43,14 @@
 - Honest numbers, lessons learned
 - Works on: r/SaaS, r/startups, Indie Hackers
 
-### 4. Tool Announcements
+### 4. Cost Optimizer Tool
+**Hook**: "I built a free tool that shows exactly how much you're overpaying for AI APIs"
+- Personalized savings report — enter your current setup, get exact $ savings
+- Model routing strategy + optimization tips
+- Works on: r/webdev, r/SaaS, r/MachineLearning
+- Link: https://getapipulse.com/cost-optimizer.html
+
+### 5. Tool Announcements
 **Hook**: "Free tool: Compare AI API costs across 33 models"
 - Direct value proposition
 - Works on: r/webdev, r/SaaS
@@ -155,15 +162,16 @@ For self-hosters: the break-even point vs API calls depends heavily on utilizati
 Full comparison: https://getapipulse.com/?utm_source=reddit&utm_medium=post&utm_campaign=r_localllama_oss
 
 ### Reddit r/startups — Build in Public
-**Title**: "Building a startup on $100 — Week 4 update (AI API pricing tool)"
+**Title**: "Building a startup on $100 — Week 5 update (AI API pricing tool)"
 
-I'm 4 weeks into a 12-week challenge: build a real startup with only $100.
+I'm 5 weeks into a 12-week challenge: build a real startup with only $100.
 
-What I built: APIpulse — a free tool that compares AI API pricing across 33 models and 10 providers. Interactive calculators, savings comparisons, pricing trends, and now cost-per-request breakdowns.
+What I built: APIpulse — a free tool that compares AI API pricing across 33 models and 10 providers. Interactive calculators, savings comparisons, pricing trends, and now a personalized cost optimizer.
 
 Week 1-2: Built the entire site (174 pages, 120 blog posts). Launched on Product Hunt.
 Week 3: Distribution push. Added savings calculator, exit popup A/B test, community engagement.
-Week 4: Responded to community feedback — added cost-per-request view, request-type presets, and batch vs streaming toggle. Rejected $5K acquisition offer. Expanded to 10 providers with rate limits data.
+Week 4: Responded to community feedback — added cost-per-request view, request-type presets, and batch vs streaming toggle. Expanded to 10 providers with rate limits data. 157 blog posts covering every industry.
+Week 5: Built a cost optimizer tool — enter your current API setup, get a personalized savings report. Focusing on conversion optimization.
 
 Lessons so far:
 - Static HTML + Vercel = $0 hosting, instant deploys

@@ -6,6 +6,7 @@
 - **#209. Track exit popup performance** — Check GA4 for exit_popup_shown vs pro_button_clicked events with source=exit_popup_pricing. Measure conversion rate.
 - **#210. Track ROI calculator usage** — Check GA4 for roi_calculator_used events. See what spend amounts people enter most.
 - **#211. Monitor calculator upsell section** — Track pro_button_clicked events with source=calculator_upsell. See if personalized savings drives clicks.
+- **#213. Track cost optimizer usage** — Check GA4 for cost_optimizer_used events. See which models/spend amounts people enter. Track cost_optimizer → pro_button_clicked conversion.
 - **#178. Check GA4 data after 24-48 hours** — Verify events are flowing, check page views, top pages, referrers
 - **#181. Review top landing pages from GA4** — Identify which blog posts drive most traffic, optimize those first
 - **#198. Monitor community post performance** — After posts go live, check GA4 referral traffic by source (reddit, hn). Track which posts drive most visitors.
@@ -16,6 +17,9 @@
 
 ### Active (SEO — routine content)
 - *(None currently — all planned industry guides complete)*
+
+### Completed (Session 255, May 20)
+✅ Cost Optimizer tool (15th tool). Cross-links from index, tools, nav. Sitemap 215 URLs.
 
 ### Completed (Sessions 249-254, May 19)
 ✅ Blog posts: Advertising & marketing, telecom, hospitality, transportation, energy cost guides. Blog 152→157, sitemap 209→214, RSS 153→158. FAQ schemas. Cross-links to index + 5-12 related guides each.
