@@ -563,6 +563,11 @@
         document.addEventListener('DOMContentLoaded', function() {
             renderPricingFreshness('pricing-freshness');
             initRoiCalculator();
+            // Track pricing page visit for conversion funnel
+            if (window.trackEvent) window.trackEvent('pricing_page_viewed', {
+                referrer: document.referrer || 'direct',
+                ab_variant: localStorage.getItem('ab_pricing_variant') || 'unknown'
+            });
         });
 
         function setRoiSpend(v){document.getElementById('roi-spend').value=v;updateRoi();}

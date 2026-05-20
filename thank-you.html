@@ -65,7 +65,10 @@
         // Auto-unlock Pro features on payment confirmation
         localStorage.setItem('apipulse_pro', 'true');
         localStorage.setItem('apipulse_pro_date', new Date().toISOString());
-        if (window.trackEvent) window.trackEvent('pro_purchase_completed');
+        if (window.trackEvent) window.trackEvent('pro_purchase_completed', {
+            ab_variant: localStorage.getItem('ab_pricing_variant') || 'unknown',
+            price: window._abPrice || 29
+        });
     </script>
 </body>
 </html>
