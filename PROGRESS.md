@@ -79,11 +79,8 @@ New tool: AI API Cost Optimizer (15th tool), Pro-gated report with savings, mode
 ### Session 254 (May 19)
 Advertising & marketing cost guide. Blog 157, pages 214.
 
-### Session 253 (May 19)
-Telecommunications cost guide. Blog 156, pages 213.
-
-### Sessions 249-252 (May 19)
-Built hospitality, transportation, energy cost guides. Blog 152→155, pages 209→212, RSS 153→156. FAQ schemas, cross-links.
+### Sessions 249-253 (May 19)
+Telecommunications, hospitality, transportation, energy cost guides. Blog 152→157, pages 209→214, RSS 153→158.
 
 ### Sessions 1-248 (Apr 5 - May 18)
 Built full APIpulse from scratch: 212 pages, 152 blog posts, 33 models, 10 providers, 14 tools, 6 API endpoints. All calculators, Pro system, community playbook, exit popup A/B test, newsletter, PH launch, GA4, pricing A/B test, Founding Member urgency. Budget Planner tool, 20+ industry cost guides, cost optimization checklist, Free vs Pro page.
