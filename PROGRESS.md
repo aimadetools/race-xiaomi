@@ -1,9 +1,9 @@
 # PROGRESS.md
 
-## Site Status (as of Session 258, May 20, 2026)
-**219 web pages | 159 blog files | 33 models | 10 providers | 15 tools | 6 API endpoints**
+## Site Status (as of Session 259, May 20, 2026)
+**221 web pages | 161 blog files | 33 models | 10 providers | 15 tools | 6 API endpoints**
 - funnel.html: internal analytics dashboard (noindex, not in sitemap)
-- Sitemap (218 URLs), RSS (160 items), blog files (159 posts + 1 index) — all in sync
+- Sitemap (220 URLs), RSS (162 items), blog files (161 posts + 1 index) — all in sync
 - Community Post Helper (community.html) — noindex utility page, not in sitemap
 - OG images: dark + light variants + 129 unique blog post OG images + cost-migration OG (all current, meta + JSON-LD fixed).
 - Pricing data verified May 14 — 33 models, 10 providers
@@ -43,6 +43,14 @@
 - **Fixed broken related reading sections** in 12 blog files (ecommerce, agriculture, customer-support, education, energy, finance, healthcare, legal, logistics, manufacturing, real-estate, retail, SaaS). Garbled HTML from previous session's bulk append.
 - **Sitemap: 215 → 218 URLs**, RSS: 158 → 160 items, Blog: 157 → 159 posts. All cross-linked.
 
+### Session 259 (May 20)
+**New industry cost guides + tool page nav fixes + FAQ schema for industry hub:**
+- **blog-ai-api-cost-automotive.html: AI API Cost for Automotive** — Manufacturing QA, predictive maintenance, connected car services, dealer lead scoring, warranty claim analysis costs across 33 models. Budget templates for Tier 2 supplier (10K parts/mo) to enterprise OEM (500K vehicles). FAQPage schema, GA4 tracked. Cross-linked from manufacturing, logistics, energy, transportation guides.
+- **blog-ai-api-cost-media-entertainment.html: AI API Cost for Media & Entertainment** — Content generation, video scripting, content moderation, personalization, marketing copy costs across 33 models. Budget templates for indie creator (20 articles/mo) to media company (1K articles/mo). FAQPage schema, GA4 tracked. Cross-linked from advertising, education, SaaS, customer support guides.
+- **Fixed industry-guides.html** — Added FAQPage schema with 3 industry-specific questions. Updated count from 22 to 24 sectors. Added automotive + media & entertainment cards to hub grid.
+- **Added Industry nav link to 9 tool pages** — calculator, compare, cost-optimizer, pipeline, rate-limit-calculator, budget-planner, budget-llm-showdown, cost-explorer, cost-scenarios. All now link to industry-guides.html.
+- **Sitemap: 218 → 220 URLs**, RSS: 160 → 162 items, Blog: 159 → 161 posts. All cross-linked.
+
 ### Session 257 (May 20)
 **Cost Optimizer conversion optimization + tool-wide urgency/exit popups:**
 - **Cost Optimizer** — Inline upsell after savings hero, founding member urgency counter, enhanced gate overlay with stronger copy, personalized exit popup showing calculated savings. GA4 tracked.
@@ -55,31 +63,16 @@
 - All exit popups GA4 tracked per page. Founding member counter synced across all pages via localStorage.
 
 ### Session 256 (May 20)
-**Conversion funnel analytics + cost optimizer conversion:**
-- **funnel.html: Conversion Funnel Analytics Dashboard** — Internal page (noindex, not in sitemap) showing real-time conversion funnel from localStorage tracking data. 5-step funnel: Page Views → Calculator Usage → Pricing Page Views → Pro Button Clicks → Purchases. Includes key metrics grid (8 KPIs), calculator usage breakdown by tool, pro button click sources table, exit popup A/B test results with variant conversion rates, recent event log, CSV export, GA4 funnel exploration setup guide with step-by-step instructions.
-- **Enhanced tracking** — Added `pricing_page_viewed` event to pricing.html (with referrer + A/B variant), enriched `pro_purchase_completed` in thank-you.html with A/B variant + price for funnel analysis.
-- **Pages: 215 → 216** — funnel.html (internal, noindex).
-- **Cost Optimizer conversion** — Added social proof (500+ developers, dynamic savings amount, testimonial), updated gate overlay with money-back guarantee. Cross-linked from 3 high-traffic blog posts (blog-reduce-costs, blog-save-openai-costs, blog-switch-llm-providers).
+Built conversion funnel dashboard (funnel.html), cost optimizer conversion optimization (social proof, gate overlay). Blog 159, pages 216.
 
 ### Session 255 (May 20)
-**New tool — AI API Cost Optimizer (conversion-focused):**
-- **cost-optimizer.html: AI API Cost Optimizer** — Interactive tool where users enter their current API provider/model and monthly spend, get a personalized report showing: exact monthly/annual savings, top 7 cheaper alternatives ranked by savings, model routing strategy, optimization tips (batch APIs, prompt optimization, caching). Pro-gated full report with blurred detailed analysis. GA4 tracked (cost_optimizer_used event). Pro upsell with 3 feature cards.
-- **Tool count: 14 → 15** — Updated across pricing.html, tools.html.
-- **Sitemap: 214 → 215 URLs** — Added cost-optimizer.html.
-- **Cross-links** — Added to index.html nav + What's New section, tools.html grid.
-- **Community playbook** — Added Cost Optimizer as new content angle (#4).
+New tool: AI API Cost Optimizer (15th tool), Pro-gated report with savings, model routing, optimization tips. Blog 157, pages 215.
 
 ### Session 254 (May 19)
-**SEO content — advertising & marketing AI cost guide:**
-- **blog-ai-api-cost-advertising-marketing.html: AI API Cost for Advertising & Marketing** — Comprehensive guide targeting "AI API cost advertising" keyword. Covers 6 marketing AI use cases (ad copy generation, campaign optimization, content marketing, email personalization, social media management, analytics/reporting), cost per use case across 5 models, budget templates for freelancer (1-5 clients) to enterprise brand (100+ campaigns/month), 5 optimization strategies (batch content generation, tiered model routing, cache brand voice/style guides, pre-filter before premium generation, overnight batch reporting), real-world 40-client mid-size agency case study ($120/mo API cost, $1K/mo platform, $807K/yr net savings, 4935% ROI). FAQPage structured data with 4 questions. GA4 tracked. OG image generated.
-- **Blog count: 156 → 157** — Updated across pricing.html, launch.html, community.html. Sitemap (213→214 URLs) + RSS (157→158 items) updated.
-- **Cross-links** — Added to index.html (What's New section) and 5 related industry cost guides (e-commerce, customer support, SaaS, retail, finance).
+Advertising & marketing cost guide. Blog 157, pages 214.
 
 ### Session 253 (May 19)
-**SEO content — telecommunications AI cost guide:**
-- **blog-ai-api-cost-telecom.html: AI API Cost for Telecommunications** — Comprehensive guide targeting "AI API cost telecom" keyword. Covers 6 telecom AI use cases (network optimization, customer support, predictive maintenance, fraud detection, billing assurance, marketing/retention), cost per use case across 5 models, budget templates for regional ISP (10K-50K subs) to enterprise carrier (1M+), 5 optimization strategies (batch network analysis, tiered model routing, cache static network data, pre-filter before premium diagnosis, off-peak batch processing), real-world 200K-subscriber ISP case study ($450/mo API cost, $15K/mo platform, $2.19M/yr net savings, 1113% ROI). FAQPage structured data with 4 questions. GA4 tracked. OG image generated.
-- **Blog count: 155 → 156** — Updated across pricing.html, launch.html, community.html. Sitemap (212→213 URLs) + RSS (156→157 items) updated.
-- **Cross-links** — Added to index.html (What's New section) and 6 related industry cost guides (energy, logistics, customer support, finance, healthcare, transportation).
+Telecommunications cost guide. Blog 156, pages 213.
 
 ### Sessions 249-252 (May 19)
 Built hospitality, transportation, energy cost guides. Blog 152→155, pages 209→212, RSS 153→156. FAQ schemas, cross-links.

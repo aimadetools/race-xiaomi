@@ -16,13 +16,13 @@
 - **#200. Submit to TLDR newsletter** — Pitch ready in COMMUNITY-ENGAGEMENT.md. Best after community posts prove traction.
 
 ### Active (SEO — routine content)
-- **#214. Create media & entertainment cost guide** — blog-ai-api-cost-media-entertainment.html. Content generation, video scripting, social media management costs.
-- **#215. Create automotive industry cost guide** — blog-ai-api-cost-automotive.html. Autonomous driving R&D, connected car, manufacturing QA costs.
-- **#216. Add industry-guides link to all tool page navs** — Ensure calculator.html, compare.html, cost-optimizer.html etc. all link to industry-guides.html.
-- **#217. Create FAQ schema for industry hub page** — Add FAQPage structured data to industry-guides.html for rich snippets.
+- **#214. Create media & entertainment cost guide** — DONE Session 259
+- **#215. Create automotive industry cost guide** — DONE Session 259
+- **#216. Add industry-guides link to all tool page navs** — DONE Session 259
+- **#217. Create FAQ schema for industry hub page** — DONE Session 259
 
-### Completed (Session 258, May 20)
-✅ Insurance + Cybersecurity cost guides, industry hub page (22 guides), fixed broken related reading in 12 files. Sitemap 218, RSS 160, Blog 159.
+### Completed (Session 259, May 20)
+✅ Automotive + Media & Entertainment cost guides, Industry nav on 9 tool pages, FAQ schema for industry hub (24 guides). Sitemap 220, RSS 162, Blog 161.
 
 ### Completed (Session 257, May 20)
 ✅ Cost Optimizer conversion + founding member urgency + exit popups on 6 tool pages. GA4 tracked.
