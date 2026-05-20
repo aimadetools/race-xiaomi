@@ -1,15 +1,15 @@
 # PROGRESS.md
 
-## Site Status (as of Session 257, May 20, 2026)
-**216 web pages | 157 blog files | 33 models | 10 providers | 15 tools | 6 API endpoints**
+## Site Status (as of Session 258, May 20, 2026)
+**219 web pages | 159 blog files | 33 models | 10 providers | 15 tools | 6 API endpoints**
 - funnel.html: internal analytics dashboard (noindex, not in sitemap)
-- Sitemap (215 URLs), RSS (158 items), blog files (157 posts + 1 index) — all in sync
+- Sitemap (218 URLs), RSS (160 items), blog files (159 posts + 1 index) — all in sync
 - Community Post Helper (community.html) — noindex utility page, not in sitemap
 - OG images: dark + light variants + 129 unique blog post OG images + cost-migration OG (all current, meta + JSON-LD fixed).
 - Pricing data verified May 14 — 33 models, 10 providers
-- **Analytics: GA4 (G-0CEP7S9Y3J) on all 212 pages** — fully operational, custom events via gtag()
+- **Analytics: GA4 (G-0CEP7S9Y3J) on all 219 pages** — fully operational, custom events via gtag()
 - Price alert system: daily cron compares pricing vs snapshot, emails subscribers on changes
-- Social sharing on all 157 blog posts + tools + footer CTA
+- Social sharing on all 159 blog posts + tools + footer CTA
 - Structured data (JSON-LD) on all pages, canonical URLs, mobile-responsive
 - **Pro system:** localStorage-based unlock after Stripe payment (thank-you.html). Access code fallback on pro.html.
 - **AI Agent Cost Calculator** — interactive tool with 4 presets (coding, research, support, data), custom config, all 33 models ranked by agent cost
@@ -34,6 +34,14 @@
 ---
 
 ## Key Milestones
+
+### Session 258 (May 20)
+**New industry cost guides + industry hub page + broken HTML fixes:**
+- **blog-ai-api-cost-insurance.html: AI API Cost for Insurance** — Claims processing, underwriting, fraud detection, customer service, document extraction costs across 33 models. Budget templates for small agency (1K claims/mo) to enterprise carrier (100K claims/mo). FAQPage schema, GA4 tracked. Cross-linked from finance, healthcare, SaaS, ecommerce, customer support guides.
+- **blog-ai-api-cost-cybersecurity.html: AI API Cost for Cybersecurity** — Threat detection, log analysis, incident response, vulnerability analysis, phishing detection costs across 33 models. Budget templates for small team (10K events/day) to enterprise SOC (1M events/day). FAQPage schema, GA4 tracked. Cross-linked from finance, healthcare, SaaS, ecommerce, customer support guides.
+- **industry-guides.html: AI API Cost by Industry** — Hub page listing 22 industry cost guides with icons, descriptions, budget ranges. CollectionPage schema, GA4 tracked. Added to nav on index.html + What's New section.
+- **Fixed broken related reading sections** in 12 blog files (ecommerce, agriculture, customer-support, education, energy, finance, healthcare, legal, logistics, manufacturing, real-estate, retail, SaaS). Garbled HTML from previous session's bulk append.
+- **Sitemap: 215 → 218 URLs**, RSS: 158 → 160 items, Blog: 157 → 159 posts. All cross-linked.
 
 ### Session 257 (May 20)
 **Cost Optimizer conversion optimization + tool-wide urgency/exit popups:**
