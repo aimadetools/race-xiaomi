@@ -1,6 +1,6 @@
 # PROGRESS.md
 
-## Site Status (as of Session 256, May 20, 2026)
+## Site Status (as of Session 257, May 20, 2026)
 **216 web pages | 157 blog files | 33 models | 10 providers | 15 tools | 6 API endpoints**
 - funnel.html: internal analytics dashboard (noindex, not in sitemap)
 - Sitemap (215 URLs), RSS (158 items), blog files (157 posts + 1 index) — all in sync
@@ -35,6 +35,13 @@
 
 ## Key Milestones
 
+### Session 257 (May 20)
+**Cost Optimizer conversion optimization:**
+- **Inline upsell** — Compact CTA banner right after savings hero (peak motivation moment). GA4 tracked as source `cost_optimizer_inline`.
+- **Founding member urgency** — Added "73/100 spots claimed" counter to pro-upsell and gate overlay (same pattern as pricing.html).
+- **Enhanced gate overlay** — Stronger headline ("Unlock Your Full Savings Report"), risk reversal with checkmark guarantees (money-back, lifetime, one-time).
+- **Personalized exit popup** — Mouse-leave popup showing user's calculated savings amount. Only triggers after user sees results. GA4 tracked as `exit_popup_optimizer`. Hidden for Pro users.
+
 ### Session 256 (May 20)
 **Conversion funnel analytics + cost optimizer conversion:**
 - **funnel.html: Conversion Funnel Analytics Dashboard** — Internal page (noindex, not in sitemap) showing real-time conversion funnel from localStorage tracking data. 5-step funnel: Page Views → Calculator Usage → Pricing Page Views → Pro Button Clicks → Purchases. Includes key metrics grid (8 KPIs), calculator usage breakdown by tool, pro button click sources table, exit popup A/B test results with variant conversion rates, recent event log, CSV export, GA4 funnel exploration setup guide with step-by-step instructions.
@@ -63,13 +70,7 @@
 - **Cross-links** — Added to index.html (What's New section) and 6 related industry cost guides (energy, logistics, customer support, finance, healthcare, transportation).
 
 ### Sessions 249-252 (May 19)
-Built hospitality, transportation, energy cost guides. Blog 152→155, pages 209→212, RSS 153→156. FAQ schemas, cross-links to index + 6-12 related guides each.
+Built hospitality, transportation, energy cost guides. Blog 152→155, pages 209→212, RSS 153→156. FAQ schemas, cross-links.
 
-### Sessions 244-248 (May 18-19)
-Built agriculture, retail, logistics, manufacturing, education, finance, legal, healthcare, e-commerce, customer support, SaaS, streaming, content writing cost guides. Blog 132→152, pages 197→209, RSS 141→153.
-
-### Sessions 232-243 (May 17-18)
-Budget Planner tool (14th tool), code gen comparison, cost reduction guide, streaming costs, content writing comparison, AI agents comparison. Blog 132→139, pages 190→197.
-
-### Sessions 1-231 (Apr 5 - May 17)
-Built full APIpulse: 209 pages, 132 blog posts, 33 models, 10 providers, 14 tools, 6 API endpoints. All calculators, Pro system, community playbook, exit popup A/B test, newsletter, PH launch, GA4, pricing A/B test, Founding Member urgency.
+### Sessions 1-248 (Apr 5 - May 18)
+Built full APIpulse from scratch: 212 pages, 152 blog posts, 33 models, 10 providers, 14 tools, 6 API endpoints. All calculators, Pro system, community playbook, exit popup A/B test, newsletter, PH launch, GA4, pricing A/B test, Founding Member urgency. Budget Planner tool, 20+ industry cost guides, cost optimization checklist, Free vs Pro page.
