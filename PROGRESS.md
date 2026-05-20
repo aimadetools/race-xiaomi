@@ -1,9 +1,9 @@
 # PROGRESS.md
 
-## Site Status (as of Session 260, May 20, 2026)
-**224 web pages | 164 blog files | 33 models | 10 providers | 15 tools | 6 API endpoints**
+## Site Status (as of Session 261, May 20, 2026)
+**227 web pages | 167 blog files | 33 models | 10 providers | 15 tools | 6 API endpoints**
 - funnel.html: internal analytics dashboard (noindex, not in sitemap)
-- Sitemap (223 URLs), RSS (165 items), blog files (164 posts + 1 index) — all in sync
+- Sitemap (226 URLs), RSS (168 items), blog files (167 posts + 1 index) — all in sync
 - Community Post Helper (community.html) — noindex utility page, not in sitemap
 - OG images: dark + light variants + 129 unique blog post OG images + cost-migration OG (all current, meta + JSON-LD fixed).
 - Pricing data verified May 14 — 33 models, 10 providers
@@ -35,6 +35,14 @@
 
 ## Key Milestones
 
+### Session 261 (May 20)
+**3 new industry cost guides + hub updated to 30 sectors + metadata fix:**
+- **blog-ai-api-cost-nonprofit.html: AI API Cost for Non-Profits** — Donor outreach, grant writing, impact reporting, volunteer coordination, program evaluation costs across 33 models. Budget templates for small nonprofits (50 comms/mo) to large organizations (5K comms/mo). FAQPage schema, GA4 tracked. Cross-linked from education, healthcare, government, customer support, HR tech guides.
+- **blog-ai-api-cost-sports.html: AI API Cost for Sports & Recreation** — Player performance analytics, fan engagement, ticket pricing optimization, talent scouting, sports betting analysis costs across 33 models. Budget templates for local clubs (100 interactions/mo) to major league franchises (10K interactions/mo). FAQPage schema, GA4 tracked. Cross-linked from media/entertainment, advertising, ecommerce, customer support, hospitality guides.
+- **blog-ai-api-cost-aerospace.html: AI API Cost for Aerospace & Defense** — Predictive maintenance, flight operations, supply chain management, compliance reporting, mission planning costs across 33 models. Budget templates for small MRO providers (50 reports/mo) to defense contractors (5K reports/mo). FAQPage schema, GA4 tracked. Cross-linked from manufacturing, automotive, energy, logistics, cybersecurity guides.
+- **Updated industry-guides.html** — Count from 27 to 30 sectors. Added Non-Profit, Sports & Recreation, Aerospace & Defense cards to hub grid. Updated FAQ answer with new industries. Fixed Twitter card metadata (was 24, now 30).
+- **Sitemap: 223 → 226 URLs**, RSS: 165 → 168 items, Blog: 164 → 167 posts. All cross-linked.
+
 ### Session 260 (May 20)
 **3 new industry cost guides + hub page updated to 27 sectors:**
 - **blog-ai-api-cost-government.html: AI API Cost for Government & Public Sector** — Citizen service automation, document processing, fraud detection, compliance monitoring, procurement analysis costs across 33 models. Budget templates for local agency (5K requests/mo) to federal department (500K requests/mo). FAQPage schema, GA4 tracked. Cross-linked from finance, healthcare, legal, cybersecurity, customer support guides.
@@ -60,24 +68,10 @@
 - **Sitemap: 218 → 220 URLs**, RSS: 160 → 162 items, Blog: 159 → 161 posts. All cross-linked.
 
 ### Session 257 (May 20)
-**Cost Optimizer conversion optimization + tool-wide urgency/exit popups:**
-- **Cost Optimizer** — Inline upsell after savings hero, founding member urgency counter, enhanced gate overlay with stronger copy, personalized exit popup showing calculated savings. GA4 tracked.
-- **Calculator** — Founding member urgency badge in Pro upsell, personalized exit popup showing user's monthly spend. GA4 tracked.
-- **Budget Planner** — Founding member urgency badge, exit popup with save scenarios messaging.
-- **Pipeline** — Founding member urgency badge, exit popup with save pipeline messaging.
-- **Compare** — Exit popup with save comparisons messaging (triggers after model selection).
-- **Rate Limit Calculator** — Exit popup with routing/throughput messaging.
-- **Budget LLM Showdown** — Exit popup with budget model/export messaging.
-- All exit popups GA4 tracked per page. Founding member counter synced across all pages via localStorage.
+Cost Optimizer conversion optimization + tool-wide urgency/exit popups on 7 tool pages. GA4 tracked.
 
-### Session 256 (May 20)
-Built conversion funnel dashboard (funnel.html), cost optimizer conversion optimization (social proof, gate overlay). Blog 159, pages 216.
-
-### Session 255 (May 20)
-New tool: AI API Cost Optimizer (15th tool), Pro-gated report with savings, model routing, optimization tips. Blog 157, pages 215.
-
-### Session 254 (May 19)
-Advertising & marketing cost guide. Blog 157, pages 214.
+### Sessions 254-256 (May 19-20)
+Cost Optimizer tool (15th tool), conversion funnel dashboard (funnel.html), advertising & marketing cost guide. Blog 157, pages 214-216.
 
 ### Sessions 249-253 (May 19)
 Telecommunications, hospitality, transportation, energy cost guides. Blog 152→157, pages 209→214, RSS 153→158.
