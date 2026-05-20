@@ -20,6 +20,13 @@
 - **#215. Create automotive industry cost guide** — DONE Session 259
 - **#216. Add industry-guides link to all tool page navs** — DONE Session 259
 - **#217. Create FAQ schema for industry hub page** — DONE Session 259
+- **#218. Create government & public sector cost guide** — DONE Session 260
+- **#219. Create HR tech cost guide** — DONE Session 260
+- **#220. Create construction industry cost guide** — DONE Session 260
+- **#221. Update industry hub page to 27 sectors** — DONE Session 260
+
+### Completed (Session 260, May 20)
+✅ Government, HR Tech, Construction cost guides (27 total). Hub page updated, sitemap 223, RSS 165, Blog 164.
 
 ### Completed (Session 259, May 20)
 ✅ Automotive + Media & Entertainment cost guides, Industry nav on 9 tool pages, FAQ schema for industry hub (24 guides). Sitemap 220, RSS 162, Blog 161.

@@ -1,9 +1,9 @@
 # PROGRESS.md
 
-## Site Status (as of Session 259, May 20, 2026)
-**221 web pages | 161 blog files | 33 models | 10 providers | 15 tools | 6 API endpoints**
+## Site Status (as of Session 260, May 20, 2026)
+**224 web pages | 164 blog files | 33 models | 10 providers | 15 tools | 6 API endpoints**
 - funnel.html: internal analytics dashboard (noindex, not in sitemap)
-- Sitemap (220 URLs), RSS (162 items), blog files (161 posts + 1 index) — all in sync
+- Sitemap (223 URLs), RSS (165 items), blog files (164 posts + 1 index) — all in sync
 - Community Post Helper (community.html) — noindex utility page, not in sitemap
 - OG images: dark + light variants + 129 unique blog post OG images + cost-migration OG (all current, meta + JSON-LD fixed).
 - Pricing data verified May 14 — 33 models, 10 providers
@@ -34,6 +34,14 @@
 ---
 
 ## Key Milestones
+
+### Session 260 (May 20)
+**3 new industry cost guides + hub page updated to 27 sectors:**
+- **blog-ai-api-cost-government.html: AI API Cost for Government & Public Sector** — Citizen service automation, document processing, fraud detection, compliance monitoring, procurement analysis costs across 33 models. Budget templates for local agency (5K requests/mo) to federal department (500K requests/mo). FAQPage schema, GA4 tracked. Cross-linked from finance, healthcare, legal, cybersecurity, customer support guides.
+- **blog-ai-api-cost-hr-tech.html: AI API Cost for HR Tech** — Resume screening, employee support chatbot, performance review analysis, compliance monitoring, workforce planning costs across 33 models. Budget templates for startup (50 employees) to enterprise (10K employees). FAQPage schema, GA4 tracked. Cross-linked from customer support, education, SaaS, legal, finance guides.
+- **blog-ai-api-cost-construction.html: AI API Cost for Construction** — Cost estimation, safety compliance, project document processing, BIM analysis, bid management costs across 33 models. Budget templates for small contractor (20 bids/mo) to large firm (2K bids/mo). FAQPage schema, GA4 tracked. Cross-linked from manufacturing, logistics, energy, real estate, automotive guides.
+- **Updated industry-guides.html** — Count from 24 to 27 sectors. Added Government, HR Tech, Construction cards to hub grid. Updated FAQ answer with new industries.
+- **Sitemap: 220 → 223 URLs**, RSS: 162 → 165 items, Blog: 161 → 164 posts. All cross-linked.
 
 ### Session 258 (May 20)
 **New industry cost guides + industry hub page + broken HTML fixes:**
