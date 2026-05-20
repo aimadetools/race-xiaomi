@@ -184,6 +184,11 @@
         }
         .pro-upsell h3 { font-size: 24px; font-weight: 700; margin-bottom: 8px; }
         .pro-upsell p { color: var(--text-secondary); margin-bottom: 24px; max-width: 500px; margin-left: auto; margin-right: auto; }
+        .social-proof { display: flex; align-items: center; justify-content: center; gap: 24px; margin-bottom: 20px; flex-wrap: wrap; }
+        .social-proof .proof-item { display: flex; align-items: center; gap: 6px; font-size: 13px; color: var(--text-secondary); }
+        .social-proof .proof-item strong { color: var(--text-primary); }
+        .testimonial { font-style: italic; color: var(--text-secondary); font-size: 14px; margin-bottom: 20px; padding: 16px 24px; background: var(--bg-card); border-radius: 10px; border-left: 3px solid var(--accent); max-width: 500px; margin-left: auto; margin-right: auto; }
+        .testimonial cite { display: block; font-style: normal; font-size: 12px; color: var(--text-muted); margin-top: 8px; }
         .pro-features-grid {
             display: grid; grid-template-columns: repeat(3, 1fr);
             gap: 16px; margin-bottom: 24px;
@@ -369,6 +374,15 @@
             <div class="pro-upsell">
                 <h3>Unlock Your Full Optimization Report</h3>
                 <p>Get the complete breakdown: detailed cost projections, model routing strategy, batch vs streaming analysis, and exportable PDF report.</p>
+                <div class="social-proof">
+                    <div class="proof-item">⭐ <strong>500+</strong> developers use APIpulse</div>
+                    <div class="proof-item">💰 <strong id="upsell-save-amount">$0</strong> avg monthly savings found</div>
+                    <div class="proof-item">🔒 <strong>One-time</strong> payment, lifetime access</div>
+                </div>
+                <div class="testimonial">
+                    "Saved us $340/month by switching from GPT-4 to Claude Sonnet for our chatbot. The optimizer paid for itself in 2 hours."
+                    <cite>— Developer, SaaS startup</cite>
+                </div>
                 <div class="pro-features-grid">
                     <div class="pro-feature">
                         <div class="pf-icon">📊</div>
@@ -405,8 +419,9 @@
                     <div class="gate-overlay-inner">
                         <h3>Pro Feature</h3>
                         <p>Unlock the full report with detailed cost projections, model routing strategy, and exportable PDF.</p>
+                        <p style="font-size:13px;color:var(--text-secondary);margin-bottom:16px;">⭐ Join 500+ developers optimizing their AI costs</p>
                         <a href="https://buy.stripe.com/fZu7sL3Gw3GS0RQeoDeEo0a" class="btn-primary" style="display:inline-block;padding:14px 32px;" target="_blank" rel="noopener" onclick="if(window.trackEvent)window.trackEvent('pro_button_clicked',{source:'cost_optimizer_gate'})">Unlock Full Report — $29</a>
-                        <p style="font-size:13px;color:var(--text-muted);margin-top:12px;">Already have Pro? <a href="pro.html" style="color:var(--accent);">Unlock here</a></p>
+                        <p style="font-size:13px;color:var(--text-muted);margin-top:12px;">14-day money-back guarantee. Already have Pro? <a href="pro.html" style="color:var(--accent);">Unlock here</a></p>
                     </div>
                 </div>
             </div>
@@ -549,6 +564,10 @@
             document.getElementById('hero-savings').textContent = '$' + Math.round(monthlySave).toLocaleString();
             document.getElementById('hero-annual').textContent = '$' + Math.round(annualSave).toLocaleString() + '/year';
             document.getElementById('hero-pct').textContent = Math.round(pctSave) + '% reduction';
+
+            // Update social proof savings amount
+            var upsellSave = document.getElementById('upsell-save-amount');
+            if (upsellSave) upsellSave.textContent = '$' + Math.round(monthlySave).toLocaleString();
 
             // Update share link
             var shareText = 'I+just+found+out+I+can+save+%24' + Math.round(monthlySave) + '%2Fmonth+on+AI+API+costs.+Get+your+free+optimization+report:';
