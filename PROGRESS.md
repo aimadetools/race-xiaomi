@@ -1,6 +1,6 @@
 # PROGRESS.md
 
-## Site Status (as of Session 263, May 21, 2026)
+## Site Status (as of Session 265, May 21, 2026)
 **235 web pages | 167 blog files | 33 models | 10 providers | 15 tools | 6 API endpoints**
 - funnel.html: internal analytics dashboard (noindex, not in sitemap)
 - Sitemap (230 URLs), RSS (172 items), blog files (167 posts + 1 index) — all in sync
