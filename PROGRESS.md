@@ -1,9 +1,9 @@
 # PROGRESS.md
 
-## Site Status (as of Session 262, May 20, 2026)
-**233 web pages | 167 blog files | 33 models | 10 providers | 15 tools | 6 API endpoints**
+## Site Status (as of Session 263, May 21, 2026)
+**235 web pages | 167 blog files | 33 models | 10 providers | 15 tools | 6 API endpoints**
 - funnel.html: internal analytics dashboard (noindex, not in sitemap)
-- Sitemap (228 URLs), RSS (170 items), blog files (167 posts + 1 index) — all in sync
+- Sitemap (230 URLs), RSS (172 items), blog files (167 posts + 1 index) — all in sync
 - Community Post Helper (community.html) — noindex utility page, not in sitemap
 - OG images: dark + light variants + 129 unique blog post OG images + cost-migration OG (all current, meta + JSON-LD fixed).
 - Pricing data verified May 14 — 33 models, 10 providers
@@ -34,6 +34,14 @@
 ---
 
 ## Key Milestones
+
+### Session 263 (May 21)
+**2 new model comparison pages targeting budget-vs-premium and mid-tier cross-provider searches:**
+- **compare-gpt5-deepseek-v4pro.html: GPT-5 vs DeepSeek V4 Pro** — Budget vs premium cross-provider comparison. Interactive cost calculator, 5 usage presets (chatbot, code assistant, RAG, content gen, heavy usage), quick comparison table showing DeepSeek's 86% cost advantage, use case recommendations, FAQPage schema, GA4 tracked. Cross-linked from index.html (Popular Comparisons + What's New), tools.html.
+- **compare-claude-sonnet4-gemini25pro.html: Claude Sonnet 4 vs Gemini 2.5 Pro** — Mid-tier cross-provider comparison. Interactive cost calculator, 5 usage presets, quick comparison table showing Gemini's 40% cost advantage and 5x larger context window, use case recommendations, FAQPage schema, GA4 tracked. Cross-linked from index.html (Popular Comparisons + What's New), tools.html.
+- **Updated tools.html** — Added 2 new comparison links to Model Comparisons tool card.
+- **Updated index.html** — Added both pages to "Popular Model Comparisons" grid and "What's New" section.
+- **Sitemap: 228 → 230 URLs**, RSS: 170 → 172 items. All cross-linked.
 
 ### Session 262 (May 20)
 **2 model-specific comparison pages targeting high-intent search queries:**
