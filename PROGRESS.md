@@ -35,6 +35,13 @@
 
 ## Key Milestones
 
+### Session 265 (May 21)
+**SEO: Added Related Comparisons cross-links to all 4 model comparison pages:**
+- Each comparison page now links to the other 3 via a "Related Comparisons" grid section.
+- Pages updated: GPT-5 vs Claude Sonnet 4, GPT-5.5 vs Claude Opus 4.7, GPT-5 vs DeepSeek V4 Pro, Claude Sonnet 4 vs Gemini 2.5 Pro.
+- Updated sitemap dates for GPT-5 vs Claude Sonnet 4 and GPT-5.5 vs Claude Opus 4.7 (2026-05-20 → 2026-05-21).
+- Improved internal link graph: 12 new cross-links between comparison pages.
+
 ### Session 264 (May 21)
 **Backlog cleanup and PROGRESS.md maintenance:**
 - Collapsed Sessions 249-261 into summary block (was 45+ lines, now 3 lines).
