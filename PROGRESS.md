@@ -1,9 +1,9 @@
 # PROGRESS.md
 
-## Site Status (as of Session 261, May 20, 2026)
-**227 web pages | 167 blog files | 33 models | 10 providers | 15 tools | 6 API endpoints**
+## Site Status (as of Session 262, May 20, 2026)
+**233 web pages | 167 blog files | 33 models | 10 providers | 15 tools | 6 API endpoints**
 - funnel.html: internal analytics dashboard (noindex, not in sitemap)
-- Sitemap (226 URLs), RSS (168 items), blog files (167 posts + 1 index) — all in sync
+- Sitemap (228 URLs), RSS (170 items), blog files (167 posts + 1 index) — all in sync
 - Community Post Helper (community.html) — noindex utility page, not in sitemap
 - OG images: dark + light variants + 129 unique blog post OG images + cost-migration OG (all current, meta + JSON-LD fixed).
 - Pricing data verified May 14 — 33 models, 10 providers
@@ -34,6 +34,14 @@
 ---
 
 ## Key Milestones
+
+### Session 262 (May 20)
+**2 model-specific comparison pages targeting high-intent search queries:**
+- **compare-gpt5-claude-sonnet4.html: GPT-5 vs Claude Sonnet 4** — Head-to-head pricing comparison with interactive cost calculator, 5 usage presets (chatbot, code assistant, RAG, content gen, heavy usage), quick comparison table, use case recommendations, FAQPage schema, GA4 tracked. Cross-linked from index.html (Popular Comparisons + What's New), tools.html.
+- **compare-gpt55-claude-opus47.html: GPT-5.5 vs Claude Opus 4.7** — Premium tier comparison with interactive cost calculator, 5 usage presets (research, complex coding, long document, AI agent, enterprise), other premium models section (GPT-5.5 Pro, Claude 4 Opus, Grok 3), use case recommendations, FAQPage schema, GA4 tracked. Cross-linked from index.html (Popular Comparisons + What's New), tools.html.
+- **Updated tools.html** — Added "Model Comparisons" tool card linking to both comparison pages.
+- **Updated index.html** — Added both pages to "Popular Model Comparisons" grid and "What's New" section.
+- **Sitemap: 226 → 228 URLs**, RSS: 168 → 170 items. All cross-linked.
 
 ### Session 261 (May 20)
 **3 new industry cost guides + hub updated to 30 sectors + metadata fix:**

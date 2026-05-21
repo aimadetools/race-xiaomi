@@ -1,5 +1,10 @@
 # BACKLOG-CHEAP.md — Routine Tasks
 
+### Active (Content — new model comparison pages)
+- **Build GPT-5 vs DeepSeek V4 Pro comparison page** — Budget vs premium cross-provider comparison. Target "GPT-5 vs DeepSeek" search queries.
+- **Build Claude Sonnet 4 vs Gemini 2.5 Pro comparison page** — Mid-tier cross-provider comparison. Target "Claude vs Gemini" search queries.
+- **Add comparison page links to relevant blog posts** — Cross-link from blog-gpt5-vs-claude4-sonnet.html and other comparison blog posts.
+
 ### Active (GA4 Analytics — need human to review)
 - **#212. Track founding member urgency performance** — Check GA4 for founding_member_seen events, track spots_claimed distribution and correlation with pro_button_clicked conversions.
 - **#208. Track sticky CTA bar performance** — Check GA4 for sticky_cta_shown vs pro_button_clicked events with source=sticky_bar. Measure conversion rate.
