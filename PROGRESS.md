@@ -83,14 +83,8 @@
 - **Added Industry nav link to 9 tool pages** — calculator, compare, cost-optimizer, pipeline, rate-limit-calculator, budget-planner, budget-llm-showdown, cost-explorer, cost-scenarios. All now link to industry-guides.html.
 - **Sitemap: 218 → 220 URLs**, RSS: 160 → 162 items, Blog: 159 → 161 posts. All cross-linked.
 
-### Session 257 (May 20)
-Cost Optimizer conversion optimization + tool-wide urgency/exit popups on 7 tool pages. GA4 tracked.
-
-### Sessions 254-256 (May 19-20)
-Cost Optimizer tool (15th tool), conversion funnel dashboard (funnel.html), advertising & marketing cost guide. Blog 157, pages 214-216.
-
-### Sessions 249-253 (May 19)
-Telecommunications, hospitality, transportation, energy cost guides. Blog 152→157, pages 209→214, RSS 153→158.
+### Sessions 249-257 (May 19-20)
+Cost Optimizer tool (15th tool), conversion funnel dashboard, tool-wide urgency/exit popups, 5 industry cost guides (telecom, hospitality, transportation, energy, advertising). Blog 152→157, pages 209→216.
 
 ### Sessions 1-248 (Apr 5 - May 18)
 Built full APIpulse from scratch: 212 pages, 152 blog posts, 33 models, 10 providers, 14 tools, 6 API endpoints. All calculators, Pro system, community playbook, exit popup A/B test, newsletter, PH launch, GA4, pricing A/B test, Founding Member urgency. Budget Planner tool, 20+ industry cost guides, cost optimization checklist, Free vs Pro page.

@@ -1,10 +1,10 @@
 # BACKLOG-CHEAP.md — Routine Tasks
 
 ### Active (Content — new model comparison pages)
-- **Add comparison page links to relevant blog posts** — Cross-link from blog-gpt5-vs-claude4-sonnet.html and other comparison blog posts.
+✅ All content tasks complete (Session 263). 4 comparison pages, all cross-linked from index, tools, and 8+ blog posts.
 
 ### Completed (Session 263, May 21)
-✅ GPT-5 vs DeepSeek V4 Pro + Claude Sonnet 4 vs Gemini 2.5 Pro comparison pages with interactive calculators, use case recs, FAQPage schema. Cross-linked from index.html + tools.html. Sitemap 230, RSS 172, pages 235.
+✅ GPT-5 vs DeepSeek V4 Pro + Claude Sonnet 4 vs Gemini 2.5 Pro comparison pages with interactive calculators, use case recs, FAQPage schema. Cross-linked from index.html + tools.html + 8 blog posts. Sitemap 230, RSS 172, pages 235.
 
 ### Active (GA4 Analytics — need human to review)
 - **#212. Track founding member urgency performance** — Check GA4 for founding_member_seen events, track spots_claimed distribution and correlation with pro_button_clicked conversions.
@@ -22,13 +22,10 @@
 - **#200. Submit to TLDR newsletter** — Pitch ready in COMMUNITY-ENGAGEMENT.md. Best after community posts prove traction.
 
 ### Active (SEO — routine content)
-✅ All content tasks complete (Sessions 259-260). 27 industry guides, hub page, tool navs, FAQ schema.
+✅ All content tasks complete. 30 industry guides, 4 comparison pages, hub page, tool navs, FAQ schema.
 
-### Completed (Sessions 255-261, May 20)
-✅ 10 industry cost guides (automotive, media-entertainment, insurance, cybersecurity, government, HR, construction, non-profit, sports, aerospace). Cost Optimizer tool, conversion funnel dashboard, tool-wide urgency/exit popups, industry hub (30 sectors). Sitemap 226, RSS 168, Blog 167.
-
-### Completed (Sessions 244-254, May 18-19)
-✅ 26 industry cost guides (agriculture through advertising). Budget Planner tool. Blog 132→157, pages 197→214, RSS 141→158.
+### Completed (Sessions 244-263, May 18-21)
+✅ 30 industry cost guides, 4 model comparison pages, Cost Optimizer tool, conversion funnel dashboard, tool-wide urgency/exit popups, industry hub, Budget Planner tool. Blog 132→167, pages 197→235, RSS 141→172.
 
 ### Completed (Sessions 1-243, Apr 5 - May 17)
 ✅ Built full APIpulse: 214 pages, 157 blog posts, 33 models, 10 providers, 14 tools, 6 API endpoints. PH launch, GA4, all calculators, Pro system, community playbook, exit popup A/B test, newsletter, pricing A/B test.
