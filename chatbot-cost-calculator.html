@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Chatbot Cost Calculator — Estimate Your API Spend | APIpulse</title>
+    <meta name="description" content="Free calculator to estimate your AI chatbot API costs. Compare 33 models from 10 providers. See exactly what ChatGPT, Claude, Gemini, and DeepSeek cost for your chatbot.">
+    <meta name="keywords" content="AI chatbot cost, chatbot API pricing, ChatGPT chatbot cost, Claude chatbot cost, AI chatbot budget, chatbot API calculator, LLM chatbot cost">
+    <meta property="og:title" content="AI Chatbot Cost Calculator — Estimate Your API Spend | APIpulse">
+    <meta property="og:description" content="Free calculator: estimate your AI chatbot costs across 33 models. See monthly spend, cost per message, and cheapest alternatives.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://getapipulse.com/og-image.png">
+    <meta property="og:url" content="https://getapipulse.com/chatbot-cost-calculator.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="AI Chatbot Cost Calculator — Estimate Your API Spend | APIpulse">
+    <meta name="twitter:image" content="https://getapipulse.com/og-image.png">
+    <meta name="twitter:description" content="Free calculator: estimate your AI chatbot costs across 33 models.">
+    <link rel="canonical" href="https://getapipulse.com/chatbot-cost-calculator.html">
+    <link rel="alternate" type="application/rss+xml" title="APIpulse Blog" href="https://getapipulse.com/rss.xml">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="styles.css">
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0CEP7S9Y3J"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-0CEP7S9Y3J');
+    </script>
+    <script src="analytics.js" defer></script>
+    <script src="dynamic-date.js" defer></script>
+    <script src="shared.js" defer></script>
+    <script src="pricing-data.js" defer></script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "APIpulse AI Chatbot Cost Calculator",
+        "url": "https://getapipulse.com/chatbot-cost-calculator.html",
+        "description": "Free calculator to estimate AI chatbot API costs across 33 models from 10 providers.",
+        "applicationCategory": "DeveloperApplication",
+        "operatingSystem": "Web",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "How much does it cost to run an AI chatbot?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "It depends on volume and model. A chatbot handling 1,000 messages/day with ~500 input and ~300 output tokens per message costs $0.90-$45/month on budget models like Gemini 2.0 Flash Lite or GPT-4o mini, but $75-$450/month on premium models like GPT-5.5 or Claude Opus 4.7. Use our calculator above to model your exact usage."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What is the cheapest AI model for a chatbot?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Google Gemini 2.0 Flash Lite ($0.075/$0.30 per 1M tokens) and Llama 3.1 8B ($0.10/$0.10) are the cheapest options. For better quality at a low cost, GPT-4o mini ($0.15/$0.60) and DeepSeek V4 Flash ($0.14/$0.28) offer excellent value. The right choice depends on your quality requirements."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How do I reduce my chatbot API costs?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Key strategies: (1) Use cheaper models for simple queries and reserve premium models for complex ones (model routing), (2) Cache frequent questions to avoid duplicate API calls, (3) Limit output tokens to prevent runaway generation, (4) Use prompt templates to reduce input token count, (5) Consider batch API endpoints where providers offer 50% discounts."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Which is cheaper for chatbots: ChatGPT or Claude?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "At the budget tier, GPT-4o mini ($0.15/$0.60) is cheaper than Claude Haiku 4.5 ($1.00/$5.00). At mid-tier, GPT-5 ($1.25/$10.00) undercuts Claude Sonnet 4 ($3.00/$15.00). However, DeepSeek V4 Flash ($0.14/$0.28) beats both budget options. Use our calculator to compare with your specific token counts."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How many tokens does a typical chatbot message use?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "A typical customer support chatbot uses 300-800 input tokens (system prompt + conversation history + user message) and 100-400 output tokens (assistant response). A sales chatbot with longer responses uses 500-1500 output tokens. An internal assistant with RAG context uses 1000-3000 input tokens."
+                }
+            }
+        ]
+    }
+    </script>
+    <style>
+        .calc-hero { padding: 120px 24px 40px; text-align: center; max-width: 700px; margin: 0 auto; }
+        .calc-hero h1 { font-size: clamp(28px, 4vw, 42px); font-weight: 800; margin-bottom: 12px; }
+        .calc-hero p { color: var(--text-secondary); font-size: 17px; line-height: 1.6; }
+
+        .calculator-section { padding: 0 24px 60px; }
+        .calculator { background: var(--bg-card); border: 1px solid var(--border); border-radius: 16px; padding: 32px; max-width: 900px; margin: 0 auto; }
+
+        .presets { display: flex; gap: 8px; margin-bottom: 24px; flex-wrap: wrap; align-items: center; }
+        .preset-label { font-size: 13px; color: var(--text-muted); }
+        .preset-btn {
+            background: var(--bg-secondary); border: 1px solid var(--border);
+            color: var(--text-secondary); padding: 8px 16px; border-radius: 8px;
+            cursor: pointer; font-size: 13px; transition: all 0.2s; font-weight: 500;
+        }
+        .preset-btn:hover { border-color: var(--accent); color: var(--accent); }
+        .preset-btn.active-preset { background: var(--accent); color: white; border-color: var(--accent); }
+
+        .calc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
+        .calc-inputs { display: flex; flex-direction: column; gap: 16px; }
+        .input-group { display: flex; flex-direction: column; gap: 6px; }
+        .input-group label { font-size: 13px; font-weight: 600; color: var(--text-secondary); }
+        .input-group input {
+            padding: 12px 16px; border-radius: 8px; border: 1px solid var(--border);
+            background: var(--bg-secondary); color: var(--text-primary); font-size: 15px; font-family: inherit;
+        }
+        .input-group input:focus { outline: 2px solid var(--accent); outline-offset: 2px; border-color: var(--accent); }
+        .input-hint { font-size: 12px; color: var(--text-muted); margin-top: 2px; }
+
+        .calc-results { background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 12px; padding: 24px; }
+        .result-item { display: flex; justify-content: space-between; padding: 10px 0; border-bottom: 1px solid var(--border); font-size: 14px; }
+        .result-item:last-child { border-bottom: none; }
+        .result-label { color: var(--text-secondary); }
+        .result-value { color: var(--text-primary); font-weight: 600; font-variant-numeric: tabular-nums; }
+        .result-total { display: flex; justify-content: space-between; padding: 14px 0 10px; border-top: 2px solid var(--accent); margin-top: 8px; font-size: 18px; }
+        .result-total .result-label { color: var(--text-primary); font-weight: 700; }
+        .result-total .result-value { color: var(--accent); font-weight: 800; }
+
+        /* Ranked models table */
+        .ranking-section { max-width: 900px; margin: 0 auto; padding: 0 24px 60px; }
+        .ranking-section h2 { font-size: 24px; font-weight: 700; text-align: center; margin-bottom: 8px; }
+        .ranking-subtitle { text-align: center; color: var(--text-secondary); font-size: 15px; margin-bottom: 32px; }
+        .ranking-table { width: 100%; border-collapse: collapse; background: var(--bg-card); border-radius: 12px; overflow: hidden; border: 1px solid var(--border); }
+        .ranking-table th { background: var(--bg-secondary); padding: 14px 16px; text-align: left; font-size: 12px; font-weight: 600; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px; }
+        .ranking-table td { padding: 14px 16px; border-bottom: 1px solid var(--border); font-size: 14px; }
+        .ranking-table tr:last-child td { border-bottom: none; }
+        .ranking-table tr:hover { background: var(--accent-glow); }
+        .rank-num { font-weight: 700; color: var(--accent); width: 40px; }
+        .rank-badge { display: inline-block; padding: 2px 8px; border-radius: 4px; font-size: 11px; font-weight: 700; }
+        .rank-cheapest { background: rgba(34,197,94,0.15); color: var(--green); }
+        .rank-budget { background: rgba(59,130,246,0.15); color: #3b82f6; }
+        .rank-mid { background: rgba(168,85,247,0.15); color: #a855f7; }
+        .rank-premium { background: rgba(245,158,11,0.15); color: #f59e0b; }
+        .cost-monthly { font-weight: 700; font-variant-numeric: tabular-nums; }
+        .cost-message { color: var(--text-secondary); font-size: 13px; }
+        .savings-pct { color: var(--green); font-weight: 600; }
+
+        /* Insights */
+        .insights { max-width: 700px; margin: 0 auto; padding: 0 24px 60px; }
+        .insight-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; padding: 24px; margin-bottom: 16px; }
+        .insight-card h3 { font-size: 16px; font-weight: 700; margin-bottom: 8px; }
+        .insight-card p { font-size: 14px; color: var(--text-secondary); line-height: 1.7; }
+        .insight-card a { color: var(--accent); font-weight: 600; }
+
+        /* Pro upsell */
+        .pro-upsell { max-width: 700px; margin: 0 auto; padding: 0 24px 60px; }
+        .pro-card { background: linear-gradient(135deg, rgba(99,102,241,0.08), rgba(34,197,94,0.06)); border: 1px solid var(--accent); border-radius: 16px; padding: 32px; text-align: center; }
+
+        /* CTA inline */
+        .cta-inline { background: var(--bg-secondary); border: 1px solid var(--accent); border-radius: 12px; padding: 24px; margin: 32px 0; text-align: center; }
+        .cta-inline p { margin-bottom: 12px; color: var(--text-secondary); }
+
+        /* Content section */
+        .info-section { max-width: 700px; margin: 0 auto; padding: 0 24px 60px; }
+        .info-section h2 { font-size: 22px; font-weight: 700; margin-bottom: 16px; margin-top: 32px; }
+        .info-section p { color: var(--text-secondary); line-height: 1.7; margin-bottom: 16px; }
+        .info-section ul { color: var(--text-secondary); padding-left: 24px; margin-bottom: 16px; }
+        .info-section li { margin-bottom: 8px; line-height: 1.6; }
+        .info-section strong { color: var(--text-primary); }
+
+        @media (max-width: 768px) {
+            .calc-hero { padding: 100px 20px 30px; }
+            .calc-hero h1 { font-size: 26px; }
+            .calculator-section { padding: 0 20px 40px; }
+            .calculator { padding: 20px; }
+            .calc-grid { grid-template-columns: 1fr; gap: 24px; }
+            .presets { justify-content: center; }
+            .ranking-table { font-size: 12px; }
+            .ranking-table th, .ranking-table td { padding: 10px 8px; }
+        }
+    </style>
+    <meta name="theme-color" content="#6366f1">
+    <link rel="preconnect" href="https://getapipulse.com">
+</head>
+<body>
+    <a href="#main" class="skip-link">Skip to content</a>
+    <nav>
+        <div class="nav-inner">
+            <a href="index.html" class="logo">API<span>pulse</span></a>
+            <button class="hamburger" onclick="toggleMobileNav()" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+            <div class="nav-links">
+                <a href="calculator.html">Calculator</a>
+                <a href="compare.html">Compare</a>
+                <a href="cost-explorer.html">Explorer</a>
+                <a href="model-switch.html">Switch</a>
+                <a href="cost-scenarios.html">Scenarios</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="use-cases.html">Use Cases</a>
+                <a href="blog.html">Blog</a>
+                <a href="quiz.html">Quiz</a>
+                <a href="api-docs.html" style="color:var(--accent);">API</a>
+                <a href="pricing.html" class="nav-cta" onclick="if(window.trackEvent)window.trackEvent('pro_button_clicked',{source:'nav'})">Get Pro — $29</a>
+                <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
+            </div>
+        </div>
+    </nav>
+
+    <main id="main">
+    <div class="calc-hero">
+        <h1>AI Chatbot Cost Calculator</h1>
+        <p>Building a chatbot? See exactly what it'll cost across 33 AI models. Enter your expected messages and token counts — get instant monthly cost estimates and find the cheapest provider for your volume.</p>
+        <div id="pricing-freshness" style="margin-top:16px;"></div>
+    </div>
+
+    <section class="calculator-section">
+        <div class="calculator" role="form" aria-label="Chatbot Cost Calculator">
+            <div class="presets">
+                <span class="preset-label">Chatbot type:</span>
+                <button class="preset-btn active-preset" onclick="applyChatbotPreset('support')">Customer Support</button>
+                <button class="preset-btn" onclick="applyChatbotPreset('sales')">Sales Bot</button>
+                <button class="preset-btn" onclick="applyChatbotPreset('internal')">Internal Assistant</button>
+                <button class="preset-btn" onclick="applyChatbotPreset('creative')">Creative Writer</button>
+            </div>
+            <div class="presets">
+                <span class="preset-label">Volume:</span>
+                <button class="preset-btn" onclick="applyVolumePreset(100)">100 msgs/day</button>
+                <button class="preset-btn active-preset" onclick="applyVolumePreset(1000)">1K msgs/day</button>
+                <button class="preset-btn" onclick="applyVolumePreset(10000)">10K msgs/day</button>
+                <button class="preset-btn" onclick="applyVolumePreset(100000)">100K msgs/day</button>
+            </div>
+            <div class="calc-grid">
+                <div class="calc-inputs">
+                    <div class="input-group">
+                        <label for="input-tokens">System prompt + user message (tokens)</label>
+                        <input type="number" id="input-tokens" value="500" min="0" step="50" oninput="calculate()" aria-label="Input tokens per message">
+                        <div class="input-hint">System prompt + conversation history + user message</div>
+                    </div>
+                    <div class="input-group">
+                        <label for="output-tokens">Assistant response (tokens)</label>
+                        <input type="number" id="output-tokens" value="300" min="0" step="50" oninput="calculate()" aria-label="Output tokens per message">
+                        <div class="input-hint">Typical chatbot response: 100-500 tokens</div>
+                    </div>
+                    <div class="input-group">
+                        <label for="messages-day">Messages per day</label>
+                        <input type="number" id="messages-day" value="1000" min="0" step="100" oninput="calculate()" aria-label="Messages per day">
+                    </div>
+                    <div class="input-group">
+                        <label for="days-month">Days per month</label>
+                        <input type="number" id="days-month" value="30" min="1" max="31" oninput="calculate()" aria-label="Days per month">
+                    </div>
+                </div>
+                <div class="calc-results" role="region" aria-label="Cost calculation results" aria-live="polite">
+                    <h3 style="margin-bottom: 16px; font-size: 16px;">Your Chatbot Cost</h3>
+                    <div class="result-item" style="background:var(--accent-glow);margin:-4px -8px 8px;padding:10px 8px;border-radius:8px;border:1px solid rgba(99,102,241,0.2);">
+                        <span class="result-label" style="font-weight:600;color:var(--text-primary);">Cost per message</span>
+                        <span class="result-value" id="cost-per-msg" style="color:var(--accent);font-size:16px;">$0.0000</span>
+                    </div>
+                    <div class="result-item" style="background:rgba(34,197,94,0.05);margin:-4px -8px 8px;padding:10px 8px;border-radius:8px;border:1px solid rgba(34,197,94,0.15);">
+                        <span class="result-label" style="font-weight:600;color:var(--text-primary);">Cost per 1K messages</span>
+                        <span class="result-value" id="cost-per-1k" style="color:var(--green);font-size:16px;">$0.00</span>
+                    </div>
+                    <div class="result-item">
+                        <span class="result-label">Input cost (monthly)</span>
+                        <span class="result-value" id="input-cost">$0.00</span>
+                    </div>
+                    <div class="result-item">
+                        <span class="result-label">Output cost (monthly)</span>
+                        <span class="result-value" id="output-cost">$0.00</span>
+                    </div>
+                    <div class="result-total">
+                        <span class="result-label">Monthly Total</span>
+                        <span class="result-value" id="monthly-total">$0.00</span>
+                    </div>
+                    <div id="annual-cost" style="text-align:center;font-size:13px;color:var(--text-muted);margin-top:8px;"></div>
+                    <div id="savings-container"></div>
+                    <div style="display:flex;gap:8px;margin-top:16px;">
+                        <a id="share-x" href="#" target="_blank" rel="noopener" style="flex:1;display:flex;align-items:center;justify-content:center;gap:6px;padding:10px 12px;border-radius:8px;border:1px solid var(--border);background:var(--bg-card);color:var(--text-primary);font-size:13px;font-weight:600;text-decoration:none;transition:all 0.2s;" onmouseover="this.style.borderColor='var(--accent)'" onmouseout="this.style.borderColor='var(--border)'">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                            Share on X
+                        </a>
+                        <button onclick="copyResults()" style="flex:1;display:flex;align-items:center;justify-content:center;gap:6px;padding:10px 12px;border-radius:8px;border:1px solid var(--border);background:var(--bg-card);color:var(--text-primary);font-size:13px;font-weight:600;cursor:pointer;transition:all 0.2s;" onmouseover="this.style.borderColor='var(--accent)'" onmouseout="this.style.borderColor='var(--border)'">
+                            <span id="copy-btn-text">Copy Results</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ranked models table -->
+    <section class="ranking-section">
+        <h2>All 33 Models Ranked by Chatbot Cost</h2>
+        <p class="ranking-subtitle">Sorted from cheapest to most expensive for your current settings. The green badge shows how much you save vs. the most expensive model.</p>
+        <div style="overflow-x:auto;">
+            <table class="ranking-table">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Model</th>
+                        <th>Provider</th>
+                        <th>Tier</th>
+                        <th>Cost/Message</th>
+                        <th>Monthly Cost</th>
+                        <th>Annual Cost</th>
+                        <th>Savings vs Most Expensive</th>
+                    </tr>
+                </thead>
+                <tbody id="ranking-body"></tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- Insights -->
+    <section class="insights">
+        <div class="insight-card" id="insight-card">
+            <h3>💡 Key Insight</h3>
+            <p id="insight-text"></p>
+        </div>
+    </section>
+
+    <!-- Pro upsell -->
+    <section class="pro-upsell">
+        <div class="pro-card">
+            <h2 style="font-size:22px;font-weight:800;margin-bottom:8px;">Want to optimize your chatbot costs?</h2>
+            <p style="color:var(--text-secondary);font-size:15px;margin-bottom:20px;line-height:1.6;">Pro gives you <strong>model routing recommendations</strong> (use cheap models for simple queries, premium for complex ones) that can cut your chatbot API bill by up to 40%.</p>
+            <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin-bottom:20px;">
+                <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:10px;padding:14px 20px;min-width:140px;">
+                    <div style="font-size:22px;font-weight:800;color:var(--accent);">$29</div>
+                    <div style="font-size:12px;color:var(--text-muted);margin-top:2px;">one-time, lifetime</div>
+                </div>
+                <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:10px;padding:14px 20px;min-width:140px;">
+                    <div style="font-size:22px;font-weight:800;color:var(--green);">40%</div>
+                    <div style="font-size:12px;color:var(--text-muted);margin-top:2px;">avg. savings</div>
+                </div>
+            </div>
+            <a href="https://buy.stripe.com/fZu7sL3Gw3GS0RQeoDeEo0a" class="btn-primary" style="display:inline-block;font-size:16px;padding:14px 32px;" target="_blank" rel="noopener" onclick="if(window.trackEvent)window.trackEvent('pro_button_clicked',{source:'chatbot_calculator_upsell'})">Unlock Pro Features — $29</a>
+            <p style="font-size:12px;color:var(--text-muted);margin-top:12px;">14-day money-back guarantee. Lifetime access.</p>
+        </div>
+    </section>
+
+    <!-- Content section -->
+    <div class="info-section">
+        <h2>How to Estimate Your AI Chatbot Costs</h2>
+        <p>Running an AI chatbot means paying per API call. Every message costs tokens — the system prompt, conversation history, user message, and assistant response all count. Here's how to plan your budget:</p>
+
+        <h2>Typical Token Counts by Chatbot Type</h2>
+        <ul>
+            <li><strong>Customer support bot:</strong> 300-800 input tokens (system prompt + history + question), 100-400 output tokens (answer)</li>
+            <li><strong>Sales/lead gen bot:</strong> 500-1,200 input tokens, 200-800 output tokens (longer, persuasive responses)</li>
+            <li><strong>Internal assistant (RAG):</strong> 1,000-3,000 input tokens (context documents), 200-600 output tokens</li>
+            <li><strong>Creative writer:</strong> 200-600 input tokens, 500-2,000 output tokens (long-form generation)</li>
+        </ul>
+
+        <h2>Model Selection Strategy</h2>
+        <p>Not every message needs a premium model. The most cost-effective approach is <strong>model routing</strong>:</p>
+        <ul>
+            <li><strong>Tier 1 (simple queries):</strong> Route to budget models like GPT-4o mini ($0.15/$0.60) or Gemini 2.0 Flash ($0.10/$0.40) — handles ~60% of chatbot traffic at 1/10th the cost</li>
+            <li><strong>Tier 2 (complex queries):</strong> Use mid-tier models like GPT-5 ($1.25/$10.00) or Claude Sonnet 4 ($3.00/$15.00) for ~30% of traffic</li>
+            <li><strong>Tier 3 (critical queries):</strong> Reserve premium models like GPT-5.5 ($5.00/$30.00) or Claude Opus 4.7 ($5.00/$25.00) for ~10% of traffic</li>
+        </ul>
+        <p>This hybrid approach typically costs 40-60% less than using a single model for everything.</p>
+
+        <h2>Cost-Saving Tips for Chatbot Builders</h2>
+        <ul>
+            <li><strong>Cache frequent questions:</strong> If 30% of users ask the same 5 questions, cache those responses and save 30% on API costs</li>
+            <li><strong>Optimize system prompts:</strong> A 500-token system prompt on every message adds up fast — keep it concise</li>
+            <li><strong>Set max output tokens:</strong> Prevent runaway responses by setting a token limit (e.g., 500 tokens max)</li>
+            <li><strong>Use conversation summarization:</strong> Instead of sending full history, summarize older messages to reduce input tokens</li>
+            <li><strong>Batch API endpoints:</strong> OpenAI offers 50% discounts for batch processing — ideal for non-real-time chatbot tasks</li>
+        </ul>
+
+        <div class="cta-inline">
+            <p><strong>Want to compare two models side by side?</strong></p>
+            <a href="compare.html" class="btn-primary" style="display:inline-block;">Use the Comparison Tool →</a>
+        </div>
+
+        <h2>Related Tools</h2>
+        <ul>
+            <li><a href="calculator.html">AI API Cost Calculator</a> — General-purpose calculator with all 33 models</li>
+            <li><a href="compare.html">Model Comparison</a> — Side-by-side model comparison</li>
+            <li><a href="cost-explorer.html">Cost Explorer</a> — See all 33 models ranked by cost</li>
+            <li><a href="cost-optimizer.html">Cost Optimizer</a> — Get personalized savings recommendations</li>
+            <li><a href="model-switch.html">Model Switch Calculator</a> — See savings from switching models</li>
+            <li><a href="budget-planner.html">Budget Planner</a> — Step-by-step wizard for your AI budget</li>
+            <li><a href="quiz.html">Model Selector Quiz</a> — Answer 5 questions to find the right model</li>
+        </ul>
+
+        <h2>Related Reading</h2>
+        <ul>
+            <li><a href="blog-cost-per-request.html">AI API Cost Per Request</a> — The metric developers actually need</li>
+            <li><a href="blog-cost-optimization-guide.html">Complete Guide to LLM Cost Optimization</a> — Strategies to cut your API spend by 40%+</li>
+            <li><a href="blog-cheapest-llm.html">Cheapest LLM APIs in 2026</a> — Full ranking of every model by price</li>
+            <li><a href="blog-ai-api-cost-customer-support.html">AI API Cost for Customer Support</a> — How support bots use AI APIs</li>
+            <li><a href="blog-ai-api-cost-saas.html">AI API Cost for SaaS</a> — Budgeting AI features in your SaaS product</li>
+        </ul>
+    </div>
+
+    <button class="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">↑</button>
+    </main>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        renderPricingFreshness('pricing-freshness');
+        calculate();
+        if (window.trackEvent) window.trackEvent('chatbot_calculator_viewed');
+    });
+
+    // Chatbot presets
+    var chatbotPresets = {
+        support:  { input: 500,  output: 300,  label: 'Customer Support' },
+        sales:    { input: 800,  output: 600,  label: 'Sales Bot' },
+        internal: { input: 1500, output: 400,  label: 'Internal Assistant' },
+        creative: { input: 400,  output: 1200, label: 'Creative Writer' }
+    };
+
+    function applyChatbotPreset(key) {
+        var p = chatbotPresets[key];
+        if (!p) return;
+        document.getElementById('input-tokens').value = p.input;
+        document.getElementById('output-tokens').value = p.output;
+        document.querySelectorAll('.presets:first-of-type .preset-btn').forEach(function(btn) {
+            btn.classList.remove('active-preset');
+        });
+        event.target.classList.add('active-preset');
+        calculate();
+        if (window.trackEvent) window.trackEvent('chatbot_preset_used', { type: key });
+    }
+
+    function applyVolumePreset(msgs) {
+        document.getElementById('messages-day').value = msgs;
+        document.querySelectorAll('.presets:nth-of-type(2) .preset-btn').forEach(function(btn) {
+            btn.classList.remove('active-preset');
+        });
+        event.target.classList.add('active-preset');
+        calculate();
+    }
+
+    function calculate() {
+        var inputTokens = parseInt(document.getElementById('input-tokens').value) || 0;
+        var outputTokens = parseInt(document.getElementById('output-tokens').value) || 0;
+        var msgsPerDay = parseInt(document.getElementById('messages-day').value) || 0;
+        var daysPerMonth = parseInt(document.getElementById('days-month').value) || 30;
+
+        var totalInput = inputTokens * msgsPerDay * daysPerMonth;
+        var totalOutput = outputTokens * msgsPerDay * daysPerMonth;
+        var totalMessages = msgsPerDay * daysPerMonth;
+
+        // Calculate costs for all models
+        var results = API_MODELS.map(function(m) {
+            var cost = (totalInput / 1000000) * m.input + (totalOutput / 1000000) * m.output;
+            var costPerMsg = totalMessages > 0 ? cost / totalMessages : 0;
+            return {
+                id: m.id, name: m.name, provider: m.provider, tier: m.tier,
+                input: m.input, output: m.output,
+                cost: cost, costPerMsg: costPerMsg, annualCost: cost * 12
+            };
+        });
+
+        results.sort(function(a, b) { return a.cost - b.cost; });
+
+        var cheapest = results[0];
+        var mostExpensive = results[results.length - 1];
+
+        // Update summary (uses cheapest model for the quick summary)
+        document.getElementById('cost-per-msg').textContent = '$' + cheapest.costPerMsg.toFixed(6);
+        document.getElementById('cost-per-1k').textContent = '$' + (cheapest.costPerMsg * 1000).toFixed(2);
+        document.getElementById('input-cost').textContent = '$' + ((totalInput / 1000000) * cheapest.input).toFixed(2);
+        document.getElementById('output-cost').textContent = '$' + ((totalOutput / 1000000) * cheapest.output).toFixed(2);
+        document.getElementById('monthly-total').textContent = '$' + cheapest.cost.toFixed(2);
+        document.getElementById('annual-cost').textContent = 'That\'s $' + cheapest.annualCost.toFixed(0) + '/year';
+
+        // Savings vs most expensive
+        var maxCost = mostExpensive.cost;
+        if (maxCost > cheapest.cost) {
+            var savings = maxCost - cheapest.cost;
+            var savingsPct = ((savings / maxCost) * 100).toFixed(0);
+            document.getElementById('savings-container').innerHTML =
+                '<div class="savings-badge" style="background:rgba(34,197,94,0.1);border:1px solid rgba(34,197,94,0.3);color:var(--green);padding:10px 16px;border-radius:8px;font-size:13px;font-weight:600;margin-top:12px;text-align:center;">' +
+                'Switching from ' + mostExpensive.name + ' to ' + cheapest.name + ' saves $' + savings.toFixed(2) + '/mo (' + savingsPct + '%)</div>';
+        } else {
+            document.getElementById('savings-container').innerHTML = '';
+        }
+
+        // Ranking table
+        var tbody = document.getElementById('ranking-body');
+        var html = '';
+        results.forEach(function(r, i) {
+            var tierClass = r.tier === 'Budget' ? 'rank-budget' : r.tier === 'Mid' ? 'rank-mid' : 'rank-premium';
+            var savingsVsMax = maxCost > 0 ? ((maxCost - r.cost) / maxCost * 100).toFixed(0) : 0;
+            var savingsClass = i === 0 ? 'rank-cheapest' : '';
+            var savingsLabel = i === 0 ? 'BEST VALUE' : (savingsVsMax > 0 ? savingsVsMax + '% cheaper' : '—');
+            html += '<tr' + (i === 0 ? ' style="background:rgba(34,197,94,0.05);"' : '') + '>' +
+                '<td class="rank-num">' + (i + 1) + '</td>' +
+                '<td><strong>' + r.name + '</strong></td>' +
+                '<td>' + r.provider + '</td>' +
+                '<td><span class="rank-badge ' + tierClass + '">' + r.tier + '</span></td>' +
+                '<td class="cost-message">$' + r.costPerMsg.toFixed(6) + '</td>' +
+                '<td class="cost-monthly">$' + r.cost.toFixed(2) + '</td>' +
+                '<td>$' + r.annualCost.toFixed(0) + '</td>' +
+                '<td><span class="savings-pct ' + savingsClass + '">' + savingsLabel + '</span></td>' +
+                '</tr>';
+        });
+        tbody.innerHTML = html;
+
+        // Insight
+        var insightEl = document.getElementById('insight-text');
+        var budgetModels = results.filter(function(r) { return r.tier === 'Budget'; });
+        var premiumModels = results.filter(function(r) { return r.tier === 'Premium'; });
+        if (budgetModels.length > 0 && premiumModels.length > 0) {
+            var budgetAvg = budgetModels.reduce(function(s, r) { return s + r.cost; }, 0) / budgetModels.length;
+            var premiumAvg = premiumModels.reduce(function(s, r) { return s + r.cost; }, 0) / premiumModels.length;
+            var ratio = premiumAvg / budgetAvg;
+            insightEl.innerHTML = 'At your current volume, premium models cost <strong>' + ratio.toFixed(0) + 'x more</strong> than budget models. ' +
+                'The cheapest option (<strong>' + cheapest.name + '</strong>) costs <strong>$' + cheapest.cost.toFixed(2) + '/month</strong>, ' +
+                'while the most expensive (<strong>' + mostExpensive.name + '</strong>) costs <strong>$' + mostExpensive.cost.toFixed(2) + '/month</strong>. ' +
+                'Consider using budget models for simple queries and premium models for complex ones to optimize cost vs. quality.';
+        }
+
+        // Share on X
+        var shareText = encodeURIComponent('Just calculated my AI chatbot API costs on @getapipulse: ' +
+            cheapest.name + ' at $' + cheapest.cost.toFixed(2) + '/month for ' +
+            msgsPerDay.toLocaleString() + ' msgs/day. ' +
+            (maxCost > cheapest.cost ? 'Could save ' + (((maxCost - cheapest.cost) / maxCost) * 100).toFixed(0) + '% vs ' + mostExpensive.name + '.' : '') +
+            ' #AIApi #Chatbot');
+        document.getElementById('share-x').href = 'https://twitter.com/intent/tweet?text=' + shareText;
+
+        // Track
+        if (window.trackEvent) window.trackEvent('chatbot_calculated', {
+            input_tokens: inputTokens, output_tokens: outputTokens,
+            messages_day: msgsPerDay, cheapest_model: cheapest.id,
+            monthly_cost: cheapest.cost
+        });
+    }
+
+    function copyResults() {
+        var inputTokens = parseInt(document.getElementById('input-tokens').value) || 0;
+        var outputTokens = parseInt(document.getElementById('output-tokens').value) || 0;
+        var msgsPerDay = parseInt(document.getElementById('messages-day').value) || 0;
+        var daysPerMonth = parseInt(document.getElementById('days-month').value) || 30;
+
+        var totalInput = inputTokens * msgsPerDay * daysPerMonth;
+        var totalOutput = outputTokens * msgsPerDay * daysPerMonth;
+        var totalMessages = msgsPerDay * daysPerMonth;
+
+        var results = API_MODELS.map(function(m) {
+            var cost = (totalInput / 1000000) * m.input + (totalOutput / 1000000) * m.output;
+            return { name: m.name, provider: m.provider, cost: cost };
+        }).sort(function(a, b) { return a.cost - b.cost; });
+
+        var text = 'AI Chatbot Cost Estimate (via APIpulse)\n';
+        text += 'Settings: ' + inputTokens + ' in / ' + outputTokens + ' out tokens, ' + msgsPerDay + ' msgs/day\n\n';
+        text += 'Top 5 cheapest models:\n';
+        results.slice(0, 5).forEach(function(r, i) {
+            text += (i + 1) + '. ' + r.name + ' (' + r.provider + '): $' + r.cost.toFixed(2) + '/month\n';
+        });
+        text += '\nFull comparison: https://getapipulse.com/chatbot-cost-calculator.html';
+
+        navigator.clipboard.writeText(text).then(function() {
+            var btn = document.getElementById('copy-btn-text');
+            btn.textContent = 'Copied!';
+            setTimeout(function() { btn.textContent = 'Copy Results'; }, 2000);
+        });
+    }
+    </script>
+</body>
+</html>

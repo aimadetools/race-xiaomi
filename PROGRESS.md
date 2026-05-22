@@ -1,9 +1,9 @@
 # PROGRESS.md
 
-## Site Status (as of Session 265, May 21, 2026)
-**235 web pages | 167 blog files | 33 models | 10 providers | 15 tools | 6 API endpoints**
+## Site Status (as of Session 266, May 22, 2026)
+**236 web pages | 167 blog files | 33 models | 10 providers | 16 tools | 6 API endpoints**
 - funnel.html: internal analytics dashboard (noindex, not in sitemap)
-- Sitemap (230 URLs), RSS (172 items), blog files (167 posts + 1 index) — all in sync
+- Sitemap (231 URLs), RSS (173 items), blog files (167 posts + 1 index) — all in sync
 - Community Post Helper (community.html) — noindex utility page, not in sitemap
 - OG images: dark + light variants + 129 unique blog post OG images + cost-migration OG (all current, meta + JSON-LD fixed).
 - Pricing data verified May 14 — 33 models, 10 providers
@@ -25,6 +25,7 @@
 - **Rate Limit Calculator** (rate-limit-calculator.html) — enter expected RPM + tokens/request, see which providers can handle your traffic. 33 models with RPM/TPM limits, tier-aware (OpenAI/Anthropic), cost at throughput level, 5 workload presets. Cross-linked from rate limits blog post.
 - **Budget LLM Showdown** (budget-llm-showdown.html) — interactive comparison of all budget-tier models. Customizable usage inputs, sort by cost/input/output/context, cost per request breakdown, best-for-use-case labels, summary cards, insights section. Cross-linked from blog-cheapest-llm.html.
 - **AI API Budget Planner** (budget-planner.html) — 4-step interactive wizard: select use case (6 presets), set usage (auto-filled from preset), choose preferences (budget/priority/context), see ranked results across 33 models. Pro upsell, social sharing, GA4 tracked. Cross-linked from tools.html, index.html.
+- **AI Chatbot Cost Calculator** (chatbot-cost-calculator.html) — use-case-specific calculator for chatbot builders. 4 presets (customer support, sales, internal, creative), cost per message breakdown, all 33 models ranked by chatbot cost, annual projections, FAQPage schema. Cross-linked from index.html, tools.html, customer-support blog, SaaS blog.
 
 ## Blocked on Human Action
 1. **Stripe $19/$39 payment links** — HELP-REQUEST filed. Needed to complete A/B price test. Currently all 3 variants use $29 link.
@@ -34,6 +35,16 @@
 ---
 
 ## Key Milestones
+
+### Session 266 (May 22)
+**New tool: AI Chatbot Cost Calculator (16th tool):**
+- Built chatbot-cost-calculator.html — use-case-specific calculator targeting "AI chatbot cost" search query.
+- 4 chatbot presets (customer support, sales bot, internal assistant, creative writer), 4 volume presets.
+- Cost per message breakdown, all 33 models ranked by chatbot cost, annual projections.
+- Share on X button, copy results button, insights section.
+- FAQPage schema (5 questions), GA4 tracked.
+- Cross-linked from index.html (What's New), tools.html (new tool card), blog-ai-api-cost-customer-support.html, blog-ai-api-cost-saas.html.
+- Sitemap 230→231 URLs, RSS 172→173 items.
 
 ### Session 265 (May 21)
 **SEO: Added Related Comparisons cross-links to all 4 model comparison pages:**
