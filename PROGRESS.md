@@ -1,7 +1,7 @@
 # PROGRESS.md
 
-## Site Status (as of Session 268, May 22, 2026)
-**238 web pages | 167 blog files | 33 models | 10 providers | 17 tools | 6 API endpoints**
+## Site Status (as of Session 269, May 22, 2026)
+**239 web pages | 167 blog files | 33 models | 10 providers | 18 tools | 6 API endpoints**
 - funnel.html: internal analytics dashboard (noindex, not in sitemap)
 - Sitemap (232 URLs), RSS (174 items), blog files (167 posts + 1 index) — all in sync
 - Community Post Helper (community.html) — noindex utility page, not in sitemap
@@ -35,6 +35,20 @@
 ---
 
 ## Key Milestones
+
+### Session 269 (May 22)
+**New tool: AI Provider Comparison (19th tool):**
+- Built compare-providers.html — compare AI API providers side by side.
+- Interactive provider selector: pick any 2 of 10 providers (OpenAI, Anthropic, Google, DeepSeek, Mistral, Cohere, Together.ai, xAI, Moonshot, AI21).
+- Provider overview cards: model count, cheapest pricing, max context, strengths.
+- Full model listing per provider with tier badges (Budget/Mid/Premium) and pricing.
+- Interactive cost calculator: 4 presets (Light/Moderate/Heavy/Scale), model selection per provider, monthly cost breakdown, savings banner.
+- Use case recommendations: chatbot, code gen, document analysis, enterprise.
+- Provider insights: cheapest option, largest context, best average price.
+- 5 FAQPage schema questions (cheapest provider, OpenAI vs Anthropic, largest context, multi-provider strategy, best for coding).
+- Share on X/LinkedIn, GA4 tracked.
+- Cross-linked from index.html (Popular Comparisons), tools.html (new tool card), openai.html.
+- Sitemap 232→234 URLs, RSS 174→176 items.
 
 ### Session 268 (May 22)
 **New tool: Try Pro Free for 24 Hours trial (backlog #216):**

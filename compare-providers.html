@@ -1,0 +1,769 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Provider Comparison — OpenAI vs Anthropic vs Google vs Mistral | APIpulse</title>
+    <meta name="description" content="Compare AI API providers side by side. See models, pricing, context windows, and features across OpenAI, Anthropic, Google, Mistral, DeepSeek, and more. Interactive cost calculator included.">
+    <meta name="keywords" content="OpenAI vs Anthropic vs Google, AI provider comparison, LLM provider comparison, AI API pricing comparison, best AI provider 2026">
+    <meta property="og:title" content="AI Provider Comparison — OpenAI vs Anthropic vs Google | APIpulse">
+    <meta property="og:description" content="Compare AI API providers side by side. See models, pricing, context windows, and features across OpenAI, Anthropic, Google, Mistral, DeepSeek, and more.">
+    <meta property="og:type" content="article">
+    <meta property="og:image" content="https://getapipulse.com/og-image.png">
+    <meta property="og:url" content="https://getapipulse.com/compare-providers.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="AI Provider Comparison — OpenAI vs Anthropic vs Google | APIpulse">
+    <meta name="twitter:image" content="https://getapipulse.com/og-image.png">
+    <meta name="twitter:description" content="Compare AI API providers side by side. See models, pricing, and features across all major providers.">
+    <link rel="canonical" href="https://getapipulse.com/compare-providers.html">
+    <link rel="alternate" type="application/rss+xml" title="APIpulse Blog" href="https://getapipulse.com/rss.xml">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="styles.css">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0CEP7S9Y3J"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-0CEP7S9Y3J');
+    </script>
+    <script src="analytics.js" defer></script>
+    <script src="dynamic-date.js" defer></script>
+    <script src="shared.js" defer></script>
+    <script src="pricing-data.js" defer></script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "AI Provider Comparison — OpenAI vs Anthropic vs Google vs Mistral",
+        "description": "Compare AI API providers side by side. See models, pricing, context windows, and features across all major providers.",
+        "url": "https://getapipulse.com/compare-providers.html",
+        "publisher": {
+            "@type": "Organization",
+            "name": "APIpulse",
+            "url": "https://getapipulse.com"
+        },
+        "datePublished": "2026-05-22",
+        "dateModified": "2026-05-22"
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "Which AI provider is the cheapest in 2026?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "DeepSeek V4 Flash ($0.14/$0.28 per 1M tokens) and Google Gemini 2.0 Flash Lite ($0.075/$0.30) are the cheapest AI API providers in 2026. For a workload of 1M input + 500K output tokens/month, DeepSeek V4 Flash costs $0.28 vs GPT-5's $6.25 — a 95% savings. However, cheapest isn't always best — consider quality, speed, context window, and ecosystem support for your use case."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What is the difference between OpenAI and Anthropic pricing?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "OpenAI's flagship GPT-5 costs $1.25/$10 per 1M tokens, while Anthropic's Claude Sonnet 4 costs $3/$15 per 1M tokens. OpenAI is cheaper on both input (58% less) and output (33% less) tokens. However, Anthropic's Claude models offer strong performance in coding and instruction-following tasks. OpenAI has more models across budget/mid/premium tiers (9 models vs 5), giving more flexibility for cost optimization."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Which AI provider has the largest context window?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Meta's Llama 4 models via Together.ai offer the largest context window at 10M tokens. Among proprietary API providers, Google Gemini 2.5 Pro and Gemini 2.0 Flash both offer 1M token context windows. OpenAI's GPT-5.5 and GPT-5 offer 1M and 272K respectively. Anthropic's Claude Opus 4.7 offers 1M tokens. Larger context windows allow processing longer documents and maintaining extended conversations."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Should I use multiple AI providers?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes, using multiple AI providers is a smart cost optimization strategy. Route simple tasks (classification, summarization) to budget models like DeepSeek V4 Flash or Gemini 2.0 Flash, and reserve premium models (GPT-5, Claude Opus 4.7) for complex reasoning tasks. This 'model routing' approach can cut costs by 60-80% while maintaining quality where it matters. Use the pipeline calculator to model your exact savings."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Which AI provider is best for coding?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "For coding tasks, the best value depends on your budget. Anthropic's Claude Sonnet 4 ($3/$15) is widely regarded as excellent for code generation and instruction following. OpenAI's GPT-5 ($1.25/$10) offers strong coding performance at a lower price. For budget-conscious teams, DeepSeek V4 Pro ($0.44/$0.87) provides surprisingly capable coding at 80% less cost. Consider a hybrid approach: use budget models for autocomplete and premium models for complex refactoring."
+                }
+            }
+        ]
+    }
+    </script>
+    <style>
+        .compare-hero {
+            max-width: var(--max-width); margin: 0 auto; padding: 120px 24px 40px;
+            text-align: center;
+        }
+        .compare-hero h1 { font-size: clamp(28px, 4.5vw, 44px); font-weight: 800; margin-bottom: 16px; line-height: 1.2; }
+        .compare-hero h1 .vs { color: var(--accent); }
+        .compare-hero .subtitle { font-size: 18px; color: var(--text-secondary); max-width: 700px; margin: 0 auto 24px; }
+        .compare-hero .last-updated { font-size: 13px; color: var(--text-muted); }
+
+        .provider-selector {
+            max-width: 700px; margin: 0 auto 48px; padding: 0 24px;
+            display: flex; gap: 16px; align-items: center; justify-content: center;
+            flex-wrap: wrap;
+        }
+        .provider-select {
+            flex: 1; min-width: 200px; max-width: 300px;
+            padding: 14px 16px; border-radius: 10px;
+            border: 2px solid var(--border); background: var(--bg-card);
+            color: var(--text-primary); font-size: 16px; font-weight: 600;
+            cursor: pointer; transition: all 0.2s;
+        }
+        .provider-select:focus { outline: 2px solid var(--accent); outline-offset: 2px; }
+        .provider-select:hover { border-color: var(--accent); }
+        .vs-badge {
+            font-size: 20px; font-weight: 800; color: var(--accent);
+            background: var(--accent-glow); width: 48px; height: 48px;
+            border-radius: 50%; display: flex; align-items: center; justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .provider-overview {
+            max-width: 1000px; margin: 0 auto 48px; padding: 0 24px;
+            display: grid; grid-template-columns: 1fr 1fr; gap: 24px;
+        }
+        .overview-card {
+            background: var(--bg-card); border: 1px solid var(--border);
+            border-radius: var(--radius); padding: 28px; text-align: center;
+            transition: all 0.3s;
+        }
+        .overview-card.winner { border-color: var(--green); box-shadow: 0 0 24px rgba(34,197,94,0.1); }
+        .overview-card .provider-name { font-size: 24px; font-weight: 800; margin-bottom: 8px; }
+        .overview-card .model-count { font-size: 14px; color: var(--text-muted); margin-bottom: 20px; }
+        .overview-card .stat-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; text-align: left; }
+        .stat-item { padding: 12px; background: var(--bg-secondary); border-radius: 8px; }
+        .stat-item .stat-label { font-size: 11px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px; }
+        .stat-item .stat-value { font-size: 16px; font-weight: 700; margin-top: 4px; }
+        .stat-item .stat-value.cheaper { color: var(--green); }
+
+        .models-comparison {
+            max-width: 1000px; margin: 0 auto 48px; padding: 0 24px;
+        }
+        .models-comparison h2 { font-size: 28px; font-weight: 800; margin-bottom: 8px; text-align: center; }
+        .models-comparison .section-sub { color: var(--text-secondary); text-align: center; margin-bottom: 32px; }
+        .models-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+        .provider-models {
+            background: var(--bg-card); border: 1px solid var(--border);
+            border-radius: var(--radius); overflow: hidden;
+        }
+        .provider-models-header {
+            padding: 16px 20px; background: var(--bg-secondary);
+            border-bottom: 1px solid var(--border); font-weight: 700; font-size: 16px;
+        }
+        .model-row {
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 12px 20px; border-bottom: 1px solid var(--border); font-size: 14px;
+        }
+        .model-row:last-child { border-bottom: none; }
+        .model-row .model-name { font-weight: 600; flex: 1; }
+        .model-row .model-tier {
+            font-size: 11px; padding: 2px 8px; border-radius: 4px;
+            font-weight: 600; text-transform: uppercase; letter-spacing: 0.3px;
+            margin-right: 12px;
+        }
+        .tier-budget { background: rgba(34,197,94,0.15); color: var(--green); }
+        .tier-mid { background: rgba(234,179,8,0.15); color: #eab308; }
+        .tier-premium { background: rgba(239,68,68,0.15); color: #ef4444; }
+        .model-row .model-price { font-weight: 600; text-align: right; min-width: 100px; }
+
+        .calculator-section {
+            max-width: 900px; margin: 0 auto 48px; padding: 0 24px;
+        }
+        .calculator-section h2 { font-size: 28px; font-weight: 800; margin-bottom: 8px; text-align: center; }
+        .calculator-section .section-sub { color: var(--text-secondary); text-align: center; margin-bottom: 32px; }
+
+        .usage-presets {
+            display: flex; gap: 8px; flex-wrap: wrap; justify-content: center; margin-bottom: 24px;
+        }
+        .preset-btn {
+            padding: 8px 16px; border-radius: 8px; border: 1px solid var(--border);
+            background: var(--bg-card); color: var(--text-secondary); font-size: 13px;
+            font-weight: 600; cursor: pointer; transition: all 0.2s;
+        }
+        .preset-btn:hover, .preset-btn.active {
+            border-color: var(--accent); color: var(--accent); background: var(--accent-glow);
+        }
+
+        .calc-grid {
+            display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 32px;
+        }
+        .input-group { margin-bottom: 16px; }
+        .input-group label {
+            display: block; font-size: 12px; color: var(--text-muted);
+            text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 6px; font-weight: 600;
+        }
+        .input-group input, .input-group select {
+            width: 100%; padding: 12px 14px; border-radius: 8px;
+            border: 1px solid var(--border); background: var(--bg-card);
+            color: var(--text-primary); font-size: 15px;
+        }
+        .input-group input:focus, .input-group select:focus { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+        .results-grid {
+            display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 32px;
+        }
+        .result-card {
+            background: var(--bg-secondary); border: 1px solid var(--border);
+            border-radius: var(--radius); padding: 28px; text-align: center;
+        }
+        .result-card.winner { border-color: var(--green); box-shadow: 0 0 24px rgba(34,197,94,0.1); }
+        .result-card .provider { font-size: 12px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 4px; }
+        .result-card .model-name { font-size: 20px; font-weight: 800; margin-bottom: 16px; }
+        .result-card .price-big { font-size: 36px; font-weight: 800; margin-bottom: 4px; }
+        .result-card .price-label { font-size: 13px; color: var(--text-muted); margin-bottom: 20px; }
+        .result-card .breakdown { text-align: left; }
+        .result-card .breakdown-row {
+            display: flex; justify-content: space-between; padding: 8px 0;
+            border-bottom: 1px solid var(--border); font-size: 14px;
+        }
+        .result-card .breakdown-row:last-child { border-bottom: none; }
+        .result-card .breakdown-row .label { color: var(--text-secondary); }
+        .result-card .breakdown-row .val { font-weight: 600; }
+        .winner-badge {
+            display: inline-block; background: rgba(34,197,94,0.15); color: var(--green);
+            padding: 4px 12px; border-radius: 6px; font-size: 12px; font-weight: 700;
+            margin-bottom: 12px; text-transform: uppercase; letter-spacing: 0.5px;
+        }
+
+        .savings-banner {
+            text-align: center; padding: 24px;
+            background: linear-gradient(135deg, rgba(34,197,94,0.1), rgba(99,102,241,0.1));
+            border: 1px solid var(--green); border-radius: var(--radius);
+            margin-bottom: 48px;
+        }
+        .savings-banner .amount { font-size: 32px; font-weight: 800; color: var(--green); }
+        .savings-banner .detail { color: var(--text-secondary); margin-top: 8px; }
+
+        .use-cases {
+            max-width: 900px; margin: 0 auto 48px; padding: 0 24px;
+        }
+        .use-cases h2 { font-size: 24px; font-weight: 800; margin-bottom: 24px; text-align: center; }
+        .use-case-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+        .use-case-card {
+            background: var(--bg-secondary); border: 1px solid var(--border);
+            border-radius: var(--radius); padding: 24px;
+        }
+        .use-case-card h3 { font-size: 16px; font-weight: 700; margin-bottom: 8px; }
+        .use-case-card p { font-size: 14px; color: var(--text-secondary); line-height: 1.6; }
+        .use-case-card .recommendation {
+            margin-top: 12px; padding-top: 12px; border-top: 1px solid var(--border);
+            font-size: 13px; font-weight: 600;
+        }
+
+        .insights-section {
+            max-width: 900px; margin: 0 auto 48px; padding: 0 24px;
+        }
+        .insights-section h2 { font-size: 24px; font-weight: 800; margin-bottom: 24px; text-align: center; }
+        .insight-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; }
+        .insight-card {
+            background: var(--bg-secondary); border: 1px solid var(--border);
+            border-radius: var(--radius); padding: 20px; text-align: center;
+        }
+        .insight-card .insight-value { font-size: 28px; font-weight: 800; color: var(--accent); }
+        .insight-card .insight-label { font-size: 13px; color: var(--text-muted); margin-top: 4px; }
+
+        .pro-upsell {
+            max-width: 700px; margin: 0 auto 48px; padding: 32px;
+            background: var(--bg-card); border: 1px solid var(--accent);
+            border-radius: var(--radius); text-align: center;
+        }
+        .pro-upsell h2 { font-size: 24px; margin-bottom: 8px; }
+        .pro-upsell p { color: var(--text-secondary); margin-bottom: 20px; }
+
+        .share-section {
+            max-width: 700px; margin: 0 auto 48px; padding: 0 24px;
+            text-align: center;
+        }
+        .share-section h2 { font-size: 20px; font-weight: 700; margin-bottom: 16px; }
+        .share-buttons { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+        .share-btn {
+            display: inline-flex; align-items: center; gap: 6px;
+            padding: 10px 20px; border-radius: 8px; border: 1px solid var(--border);
+            background: var(--bg-card); color: var(--text-primary);
+            font-size: 14px; font-weight: 600; text-decoration: none; transition: all 0.2s;
+        }
+        .share-btn:hover { border-color: var(--accent); transform: translateY(-1px); }
+
+        .faq-section {
+            max-width: 800px; margin: 0 auto 48px; padding: 0 24px;
+        }
+        .faq-section h2 { font-size: 24px; font-weight: 800; margin-bottom: 24px; text-align: center; }
+        .faq-item { margin-bottom: 20px; }
+        .faq-item h3 { font-size: 16px; font-weight: 700; margin-bottom: 8px; cursor: pointer; }
+        .faq-item p { font-size: 14px; color: var(--text-secondary); line-height: 1.7; }
+
+        .related-tools {
+            max-width: 900px; margin: 0 auto 48px; padding: 0 24px;
+            display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;
+        }
+        .related-card {
+            background: var(--bg-secondary); border: 1px solid var(--border);
+            border-radius: var(--radius); padding: 20px; text-align: center;
+            transition: all 0.2s;
+        }
+        .related-card:hover { border-color: var(--accent); transform: translateY(-2px); }
+        .related-card h3 { font-size: 15px; font-weight: 700; margin-bottom: 6px; }
+        .related-card p { font-size: 13px; color: var(--text-muted); }
+        .related-card a { text-decoration: none; color: inherit; }
+
+        @media (max-width: 768px) {
+            .compare-hero { padding: 100px 20px 30px; }
+            .provider-overview, .models-grid, .calc-grid, .results-grid, .use-case-grid, .insight-grid { grid-template-columns: 1fr; }
+            .related-tools { grid-template-columns: 1fr; }
+            .provider-selector { flex-direction: column; }
+            .vs-badge { width: 40px; height: 40px; font-size: 16px; }
+        }
+    </style>
+    <meta name="theme-color" content="#6366f1">
+</head>
+<body>
+    <a href="#main" class="skip-link">Skip to content</a>
+    <nav>
+        <div class="nav-inner">
+            <a href="index.html" class="logo">API<span>pulse</span></a>
+            <button class="hamburger" onclick="toggleMobileNav()" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+            <div class="nav-links">
+                <a href="calculator.html">Calculator</a>
+                <a href="compare.html">Compare</a>
+                <a href="cost-explorer.html">Explorer</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="blog.html">Blog</a>
+                <a href="pricing.html" class="nav-cta" onclick="if(window.trackEvent)window.trackEvent('pro_button_clicked',{source:'nav'})">Get Pro — $29</a>
+                <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
+            </div>
+        </div>
+    </nav>
+
+    <main id="main">
+
+    <div class="compare-hero">
+        <h1>AI Provider <span class="vs">vs</span> AI Provider</h1>
+        <p class="subtitle">Compare AI API providers side by side. See models, pricing, context windows, and features across all major providers. Find the cheapest option for your exact workload.</p>
+        <p class="last-updated">Pricing data verified: <span class="verified-date"></span></p>
+    </div>
+
+    <!-- Provider Selector -->
+    <div class="provider-selector">
+        <select class="provider-select" id="providerA" onchange="updateComparison()">
+            <option value="openai">OpenAI</option>
+            <option value="anthropic">Anthropic</option>
+            <option value="google">Google</option>
+            <option value="deepseek">DeepSeek</option>
+            <option value="mistral">Mistral</option>
+            <option value="cohere">Cohere</option>
+            <option value="together">Meta (Together.ai)</option>
+            <option value="xai">xAI</option>
+            <option value="moonshot">Moonshot</option>
+            <option value="ai21">AI21</option>
+        </select>
+        <div class="vs-badge">VS</div>
+        <select class="provider-select" id="providerB" onchange="updateComparison()">
+            <option value="openai">OpenAI</option>
+            <option value="anthropic">Anthropic</option>
+            <option value="google" selected>Google</option>
+            <option value="deepseek">DeepSeek</option>
+            <option value="mistral">Mistral</option>
+            <option value="cohere">Cohere</option>
+            <option value="together">Meta (Together.ai)</option>
+            <option value="xai">xAI</option>
+            <option value="moonshot">Moonshot</option>
+            <option value="ai21">AI21</option>
+        </select>
+    </div>
+
+    <!-- Provider Overview Cards -->
+    <div class="provider-overview" id="providerOverview"></div>
+
+    <!-- Models Comparison -->
+    <div class="models-comparison">
+        <h2>Models by Provider</h2>
+        <p class="section-sub">Every model from each provider with pricing and tier information.</p>
+        <div class="models-grid" id="modelsGrid"></div>
+    </div>
+
+    <!-- Calculator Section -->
+    <div class="calculator-section">
+        <h2>Cost Calculator</h2>
+        <p class="section-sub">Enter your usage and see exactly which provider saves you more money.</p>
+
+        <div class="usage-presets">
+            <button class="preset-btn active" onclick="setPreset(500000, 100000, 1000, 'Light Use')">Light Use</button>
+            <button class="preset-btn" onclick="setPreset(2000000, 500000, 5000, 'Moderate Use')">Moderate Use</button>
+            <button class="preset-btn" onclick="setPreset(5000000, 2000000, 10000, 'Heavy Use')">Heavy Use</button>
+            <button class="preset-btn" onclick="setPreset(10000000, 5000000, 50000, 'Scale')">Scale</button>
+        </div>
+
+        <div class="calc-grid">
+            <div>
+                <div class="input-group">
+                    <label>Monthly Input Tokens</label>
+                    <input type="number" id="inputTokens" value="500000" onchange="calculate()" oninput="calculate()">
+                </div>
+                <div class="input-group">
+                    <label>Monthly Output Tokens</label>
+                    <input type="number" id="outputTokens" value="100000" onchange="calculate()" oninput="calculate()">
+                </div>
+            </div>
+            <div>
+                <div class="input-group">
+                    <label>Monthly Requests</label>
+                    <input type="number" id="requests" value="1000" onchange="calculate()" oninput="calculate()">
+                </div>
+                <div class="input-group">
+                    <label>Preferred Model (A)</label>
+                    <select id="modelA" onchange="calculate()"></select>
+                </div>
+                <div class="input-group">
+                    <label>Preferred Model (B)</label>
+                    <select id="modelB" onchange="calculate()"></select>
+                </div>
+            </div>
+        </div>
+
+        <div class="results-grid" id="calcResults"></div>
+
+        <div class="savings-banner" id="savingsBanner"></div>
+    </div>
+
+    <!-- Use Case Recommendations -->
+    <div class="use-cases">
+        <h2>Best Provider by Use Case</h2>
+        <div class="use-case-grid">
+            <div class="use-case-card">
+                <h3>Customer Support Chatbot</h3>
+                <p>High volume, low cost per message. Needs fast responses and good instruction following.</p>
+                <div class="recommendation">
+                    <span style="color:var(--green)">Best Value:</span> DeepSeek V4 Flash ($0.14/$0.28) or Gemini 2.0 Flash ($0.10/$0.40)
+                </div>
+            </div>
+            <div class="use-case-card">
+                <h3>Code Generation</h3>
+                <p>Complex reasoning, large context for understanding codebases. Quality matters most.</p>
+                <div class="recommendation">
+                    <span style="color:var(--accent)">Best Quality:</span> Claude Sonnet 4 ($3/$15) or GPT-5 ($1.25/$10)
+                </div>
+            </div>
+            <div class="use-case-card">
+                <h3>Document Analysis (RAG)</h3>
+                <p>Large context window needed for long documents. Budget-friendly for high throughput.</p>
+                <div class="recommendation">
+                    <span style="color:var(--green)">Best Value:</span> Gemini 2.5 Pro ($1.25/$10, 1M context) or DeepSeek V4 Pro ($0.44/$0.87)
+                </div>
+            </div>
+            <div class="use-case-card">
+                <h3>Enterprise / Premium</h3>
+                <p>Highest quality, largest context, maximum reliability. Budget is secondary.</p>
+                <div class="recommendation">
+                    <span style="color:var(--accent)">Best Quality:</span> GPT-5.5 ($5/$30) or Claude Opus 4.7 ($5/$25)
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Provider Insights -->
+    <div class="insights-section">
+        <h2>Provider Insights</h2>
+        <div class="insight-grid" id="insightGrid"></div>
+    </div>
+
+    <!-- Pro Upsell -->
+    <div class="pro-upsell">
+        <h2>Unlock Full Comparison Reports</h2>
+        <p>Get detailed cost projections, export PDFs, and save comparison scenarios with APIpulse Pro.</p>
+        <a href="pricing.html" class="btn-primary" style="padding:14px 36px;" onclick="if(window.trackEvent)window.trackEvent('pro_button_clicked',{source:'provider_comparison_upsell'})">Get Pro — $29</a>
+    </div>
+
+    <!-- Share Section -->
+    <div class="share-section">
+        <h2>Share This Comparison</h2>
+        <div class="share-buttons">
+            <a class="share-btn" id="shareX" href="#" target="_blank" rel="noopener" onclick="shareOnX()">Share on X</a>
+            <a class="share-btn" id="shareLinkedIn" href="#" target="_blank" rel="noopener" onclick="shareOnLinkedIn()">Share on LinkedIn</a>
+        </div>
+    </div>
+
+    <!-- FAQ Section -->
+    <div class="faq-section">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-item">
+            <h3>Which AI provider is the cheapest in 2026?</h3>
+            <p>DeepSeek V4 Flash ($0.14/$0.28 per 1M tokens) and Google Gemini 2.0 Flash Lite ($0.075/$0.30) are the cheapest AI API providers in 2026. For a workload of 1M input + 500K output tokens/month, DeepSeek V4 Flash costs $0.28 vs GPT-5's $6.25 — a 95% savings. However, cheapest isn't always best — consider quality, speed, context window, and ecosystem support for your use case.</p>
+        </div>
+        <div class="faq-item">
+            <h3>What is the difference between OpenAI and Anthropic pricing?</h3>
+            <p>OpenAI's flagship GPT-5 costs $1.25/$10 per 1M tokens, while Anthropic's Claude Sonnet 4 costs $3/$15 per 1M tokens. OpenAI is cheaper on both input (58% less) and output (33% less) tokens. However, Anthropic's Claude models offer strong performance in coding and instruction-following tasks. OpenAI has more models across budget/mid/premium tiers (9 models vs 5), giving more flexibility for cost optimization.</p>
+        </div>
+        <div class="faq-item">
+            <h3>Which AI provider has the largest context window?</h3>
+            <p>Meta's Llama 4 models via Together.ai offer the largest context window at 10M tokens. Among proprietary API providers, Google Gemini 2.5 Pro and Gemini 2.0 Flash both offer 1M token context windows. OpenAI's GPT-5.5 and GPT-5 offer 1M and 272K respectively. Anthropic's Claude Opus 4.7 offers 1M tokens. Larger context windows allow processing longer documents and maintaining extended conversations.</p>
+        </div>
+        <div class="faq-item">
+            <h3>Should I use multiple AI providers?</h3>
+            <p>Yes, using multiple AI providers is a smart cost optimization strategy. Route simple tasks (classification, summarization) to budget models like DeepSeek V4 Flash or Gemini 2.0 Flash, and reserve premium models (GPT-5, Claude Opus 4.7) for complex reasoning tasks. This "model routing" approach can cut costs by 60-80% while maintaining quality where it matters. Use the pipeline calculator to model your exact savings.</p>
+        </div>
+        <div class="faq-item">
+            <h3>Which AI provider is best for coding?</h3>
+            <p>For coding tasks, the best value depends on your budget. Anthropic's Claude Sonnet 4 ($3/$15) is widely regarded as excellent for code generation and instruction following. OpenAI's GPT-5 ($1.25/$10) offers strong coding performance at a lower price. For budget-conscious teams, DeepSeek V4 Pro ($0.44/$0.87) provides surprisingly capable coding at 80% less cost. Consider a hybrid approach: use budget models for autocomplete and premium models for complex refactoring.</p>
+        </div>
+    </div>
+
+    <!-- Related Tools -->
+    <div class="related-tools">
+        <div class="related-card">
+            <a href="compare.html">
+                <h3>Model Compare</h3>
+                <p>Compare any two models side by side</p>
+            </a>
+        </div>
+        <div class="related-card">
+            <a href="cost-optimizer.html">
+                <h3>Cost Optimizer</h3>
+                <p>Get personalized savings recommendations</p>
+            </a>
+        </div>
+        <div class="related-card">
+            <a href="cost-migration.html">
+                <h3>Cost Migration Report</h3>
+                <p>Find cheaper alternatives to your current setup</p>
+            </a>
+        </div>
+    </div>
+
+    </main>
+
+    <footer>
+        <p>Pricing data last verified: <span class="verified-date"></span></p>
+        <p>&copy; 2026 APIpulse. <a href="index.html">Home</a> &middot; <a href="use-cases.html">Use Cases</a> &middot; <a href="about.html">About</a> &middot; <a href="blog.html">Blog</a>
+<a href="pricing-index.html">Pricing Index</a> &middot; <a href="model-matrix.html">Model Matrix</a> &middot; <a href="cost-scenarios.html">Scenarios</a> &middot; <a href="price-alerts.html">Price Alerts</a> &middot; <a href="pricing-changelog.html">Changelog</a> &middot; <a href="openai.html">OpenAI</a> &middot; <a href="anthropic.html">Anthropic</a> &middot; <a href="google.html">Google</a> &middot; <a href="mistral.html">Mistral</a> &middot; <a href="cohere.html">Cohere</a> &middot; <a href="deepseek.html">DeepSeek</a> &middot; <a href="xai.html">xAI</a> &middot; <a href="moonshot.html">Moonshot</a> &middot; <a href="together.html">Together.ai</a> &middot; <a href="ai21.html">AI21</a> &middot; <a href="pricing.html">Pricing</a> &middot; <a href="embed.html">Embed Widget</a> &middot; <a href="cheat-sheet.html">Cheat Sheet</a> &middot; <a href="model-switch.html">Model Switch</a> &middot; <a href="api-docs.html">API</a> &middot; <a href="https://x.com/getapipulse" target="_blank" rel="noopener">Twitter</a> &middot; <a href="unsubscribe.html">Unsubscribe</a></p>
+    </footer>
+
+    <button class="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">↑</button>
+
+    <script>
+    // Provider data
+    const PROVIDER_INFO = {
+        openai: { name: 'OpenAI', models: 'GPT-5.5, GPT-5, GPT-5 mini, GPT-oss, GPT-4o, GPT-4o mini', features: ['Function calling', 'Vision', 'Fine-tuning', 'Batch API', 'Assistants API'], strengths: 'Largest model selection, strongest ecosystem' },
+        anthropic: { name: 'Anthropic', models: 'Claude Opus 4.7, Claude 4 Opus, Claude Sonnet 4.6, Claude Sonnet 4, Claude Haiku 4.5', features: ['Tool use', 'Vision', '200K context', 'Artifacts', 'Projects'], strengths: 'Best instruction following, coding excellence' },
+        google: { name: 'Google', models: 'Gemini 3.1 Pro, Gemini 2.5 Pro, Gemini 2.0 Flash, Gemini 2.0 Flash Lite', features: ['1M context', 'Vision', 'Code execution', 'Grounding', 'Multimodal'], strengths: 'Largest context window, fastest models' },
+        deepseek: { name: 'DeepSeek', models: 'DeepSeek V4 Pro, DeepSeek V4 Flash, DeepSeek V3', features: ['1M context', 'Code generation', 'Reasoning', 'Open weights'], strengths: 'Cheapest API, open source models' },
+        mistral: { name: 'Mistral', models: 'Mistral Large 3, Mistral Small 4', features: ['Function calling', 'Vision', '128K context', 'EU data sovereignty'], strengths: 'European provider, competitive pricing' },
+        cohere: { name: 'Cohere', models: 'Command R+, Command R', features: ['RAG native', 'Grounding', 'Citations', '128K context'], strengths: 'Built for enterprise RAG workflows' },
+        together: { name: 'Meta (Together.ai)', models: 'Llama 4 Scout, Llama 4 Maverick, Llama 3.1 70B, Llama 3.1 8B', features: ['10M context (Scout)', 'Open source', 'Fine-tuning', 'Self-hosting'], strengths: 'Open source, largest context, cheapest' },
+        xai: { name: 'xAI', models: 'Grok 3, Grok 3 Mini', features: ['128K context', 'Real-time data', 'X/Twitter integration'], strengths: 'Real-time information access' },
+        moonshot: { name: 'Moonshot', models: 'Kimi K2.6', features: ['256K context', 'Long document processing', 'Chinese + English'], strengths: 'Long context, competitive pricing' },
+        ai21: { name: 'AI21', models: 'Jamba 1.5 Large', features: ['256K context', 'Mamba architecture', 'Long document'], strengths: 'Mamba architecture, efficient long-context' }
+    };
+
+    function updateComparison() {
+        const slugA = document.getElementById('providerA').value;
+        const slugB = document.getElementById('providerB').value;
+        const infoA = PROVIDER_INFO[slugA];
+        const infoB = PROVIDER_INFO[slugB];
+
+        if (slugA === slugB) {
+            document.getElementById('providerB').style.borderColor = '#ef4444';
+        } else {
+            document.getElementById('providerB').style.borderColor = '';
+        }
+
+        renderOverview(slugA, slugB, infoA, infoB);
+        renderModels(slugA, slugB);
+        populateModelSelects(slugA, slugB);
+        calculate();
+        renderInsights(slugA, slugB);
+        if (window.trackEvent) window.trackEvent('provider_comparison_used', { providerA: slugA, providerB: slugB });
+    }
+
+    function renderOverview(slugA, slugB, infoA, infoB) {
+        const modelsA = API_MODELS.filter(m => m.providerSlug === slugA);
+        const modelsB = API_MODELS.filter(m => m.providerSlug === slugB);
+        const cheapestA = Math.min(...modelsA.map(m => m.input));
+        const cheapestB = Math.min(...modelsB.map(m => m.input));
+        const maxContextA = modelsA.map(m => parseInt(m.context.replace(/[^0-9]/g, '')) || 0).sort((a,b)=>b-a)[0];
+        const maxContextB = modelsB.map(m => parseInt(m.context.replace(/[^0-9]/g, '')) || 0).sort((a,b)=>b-a)[0];
+        const cheapestInput = cheapestA < cheapestB ? 'A' : 'B';
+
+        const fmt = n => n >= 1000000 ? (n/1000000)+'M' : n >= 1000 ? (n/1000)+'K' : n;
+
+        document.getElementById('providerOverview').innerHTML = `
+            <div class="overview-card ${cheapestInput === 'A' ? 'winner' : ''}">
+                <div class="provider-name">${infoA.name}</div>
+                <div class="model-count">${modelsA.length} models</div>
+                <div class="stat-grid">
+                    <div class="stat-item"><div class="stat-label">Cheapest Input</div><div class="stat-value ${cheapestInput === 'A' ? 'cheaper' : ''}">$${cheapestA.toFixed(2)}/1M</div></div>
+                    <div class="stat-item"><div class="stat-label">Cheapest Output</div><div class="stat-value">$${Math.min(...modelsA.map(m => m.output)).toFixed(2)}/1M</div></div>
+                    <div class="stat-item"><div class="stat-label">Max Context</div><div class="stat-value">${fmt(maxContextA)} tokens</div></div>
+                    <div class="stat-item"><div class="stat-label">Strengths</div><div class="stat-value" style="font-size:12px">${infoA.strengths}</div></div>
+                </div>
+            </div>
+            <div class="overview-card ${cheapestInput === 'B' ? 'winner' : ''}">
+                <div class="provider-name">${infoB.name}</div>
+                <div class="model-count">${modelsB.length} models</div>
+                <div class="stat-grid">
+                    <div class="stat-item"><div class="stat-label">Cheapest Input</div><div class="stat-value ${cheapestInput === 'B' ? 'cheaper' : ''}">$${cheapestB.toFixed(2)}/1M</div></div>
+                    <div class="stat-item"><div class="stat-label">Cheapest Output</div><div class="stat-value">$${Math.min(...modelsB.map(m => m.output)).toFixed(2)}/1M</div></div>
+                    <div class="stat-item"><div class="stat-label">Max Context</div><div class="stat-value">${fmt(maxContextB)} tokens</div></div>
+                    <div class="stat-item"><div class="stat-label">Strengths</div><div class="stat-value" style="font-size:12px">${infoB.strengths}</div></div>
+                </div>
+            </div>
+        `;
+    }
+
+    function renderModels(slugA, slugB) {
+        const modelsA = API_MODELS.filter(m => m.providerSlug === slugA);
+        const modelsB = API_MODELS.filter(m => m.providerSlug === slugB);
+        const infoA = PROVIDER_INFO[slugA];
+        const infoB = PROVIDER_INFO[slugB];
+
+        function modelRows(models) {
+            return models.map(m => `
+                <div class="model-row">
+                    <span class="model-tier tier-${m.tier.toLowerCase()}">${m.tier}</span>
+                    <span class="model-name">${m.name}</span>
+                    <span class="model-price">$${m.input.toFixed(2)}/$${m.output.toFixed(2)}</span>
+                </div>
+            `).join('');
+        }
+
+        document.getElementById('modelsGrid').innerHTML = `
+            <div class="provider-models">
+                <div class="provider-models-header">${infoA.name} (${modelsA.length} models)</div>
+                ${modelRows(modelsA)}
+            </div>
+            <div class="provider-models">
+                <div class="provider-models-header">${infoB.name} (${modelsB.length} models)</div>
+                ${modelRows(modelsB)}
+            </div>
+        `;
+    }
+
+    function populateModelSelects(slugA, slugB) {
+        const modelsA = API_MODELS.filter(m => m.providerSlug === slugA);
+        const modelsB = API_MODELS.filter(m => m.providerSlug === slugB);
+
+        const selA = document.getElementById('modelA');
+        const selB = document.getElementById('modelB');
+
+        selA.innerHTML = modelsA.map(m => `<option value="${m.id}">${m.name} ($${m.input}/$${m.output})</option>`).join('');
+        selB.innerHTML = modelsB.map(m => `<option value="${m.id}">${m.name} ($${m.input}/$${m.output})</option>`).join('');
+
+        // Pre-select cheapest model from each provider
+        const cheapestA = modelsA.sort((a,b) => a.input - b.input)[0];
+        const cheapestB = modelsB.sort((a,b) => a.input - b.input)[0];
+        selA.value = cheapestA.id;
+        selB.value = cheapestB.id;
+    }
+
+    function setPreset(input, output, requests, label) {
+        document.getElementById('inputTokens').value = input;
+        document.getElementById('outputTokens').value = output;
+        document.getElementById('requests').value = requests;
+        document.querySelectorAll('.preset-btn').forEach(b => b.classList.remove('active'));
+        event.target.classList.add('active');
+        calculate();
+    }
+
+    function calculate() {
+        const inputTokens = parseInt(document.getElementById('inputTokens').value) || 0;
+        const outputTokens = parseInt(document.getElementById('outputTokens').value) || 0;
+        const modelA = getModelById(document.getElementById('modelA').value);
+        const modelB = getModelById(document.getElementById('modelB').value);
+
+        if (!modelA || !modelB) return;
+
+        const costA = (inputTokens / 1000000) * modelA.input + (outputTokens / 1000000) * modelA.output;
+        const costB = (inputTokens / 1000000) * modelB.input + (outputTokens / 1000000) * modelB.output;
+
+        const winner = costA < costB ? 'A' : costB < costA ? 'B' : 'tie';
+        const savings = Math.abs(costA - costB);
+        const cheaperModel = winner === 'A' ? modelA : modelB;
+        const pricierModel = winner === 'A' ? modelB : modelA;
+
+        document.getElementById('calcResults').innerHTML = `
+            <div class="result-card ${winner === 'A' ? 'winner' : ''}">
+                ${winner === 'A' ? '<div class="winner-badge">Cheaper</div>' : ''}
+                <div class="provider">${modelA.provider}</div>
+                <div class="model-name">${modelA.name}</div>
+                <div class="price-big" style="color:${winner === 'A' ? 'var(--green)' : 'var(--text-primary)'}">$${costA.toFixed(2)}</div>
+                <div class="price-label">per month</div>
+                <div class="breakdown">
+                    <div class="breakdown-row"><span class="label">Input cost</span><span class="val">$${((inputTokens/1000000)*modelA.input).toFixed(2)}</span></div>
+                    <div class="breakdown-row"><span class="label">Output cost</span><span class="val">$${((outputTokens/1000000)*modelA.output).toFixed(2)}</span></div>
+                    <div class="breakdown-row"><span class="label">Input price</span><span class="val">$${modelA.input}/1M</span></div>
+                    <div class="breakdown-row"><span class="label">Output price</span><span class="val">$${modelA.output}/1M</span></div>
+                    <div class="breakdown-row"><span class="label">Context</span><span class="val">${modelA.context}</span></div>
+                </div>
+            </div>
+            <div class="result-card ${winner === 'B' ? 'winner' : ''}">
+                ${winner === 'B' ? '<div class="winner-badge">Cheaper</div>' : ''}
+                <div class="provider">${modelB.provider}</div>
+                <div class="model-name">${modelB.name}</div>
+                <div class="price-big" style="color:${winner === 'B' ? 'var(--green)' : 'var(--text-primary)'}">$${costB.toFixed(2)}</div>
+                <div class="price-label">per month</div>
+                <div class="breakdown">
+                    <div class="breakdown-row"><span class="label">Input cost</span><span class="val">$${((inputTokens/1000000)*modelB.input).toFixed(2)}</span></div>
+                    <div class="breakdown-row"><span class="label">Output cost</span><span class="val">$${((outputTokens/1000000)*modelB.output).toFixed(2)}</span></div>
+                    <div class="breakdown-row"><span class="label">Input price</span><span class="val">$${modelB.input}/1M</span></div>
+                    <div class="breakdown-row"><span class="label">Output price</span><span class="val">$${modelB.output}/1M</span></div>
+                    <div class="breakdown-row"><span class="label">Context</span><span class="val">${modelB.context}</span></div>
+                </div>
+            </div>
+        `;
+
+        if (winner === 'tie') {
+            document.getElementById('savingsBanner').innerHTML = `<div class="amount">Same Price</div><div class="detail">Both models cost $${costA.toFixed(2)}/month for this workload</div>`;
+        } else {
+            const pct = ((savings / Math.max(costA, costB)) * 100).toFixed(0);
+            document.getElementById('savingsBanner').innerHTML = `<div class="amount">Save $${savings.toFixed(2)}/month (${pct}%)</div><div class="detail">${cheaperModel.provider} ${cheaperModel.name} saves you $${savings.toFixed(2)}/month vs ${pricierModel.provider} ${pricierModel.name}</div>`;
+        }
+
+        // Track calculator usage
+        if (window.trackEvent) window.trackEvent('provider_calculator_used', { providerA: modelA.provider, providerB: modelB.provider, costA, costB });
+    }
+
+    function renderInsights(slugA, slugB) {
+        const modelsA = API_MODELS.filter(m => m.providerSlug === slugA);
+        const modelsB = API_MODELS.filter(m => m.providerSlug === slugB);
+
+        const cheapestA = Math.min(...modelsA.map(m => m.input));
+        const cheapestB = Math.min(...modelsB.map(m => m.input));
+        const cheapestOverall = cheapestA < cheapestB ? PROVIDER_INFO[slugA].name : PROVIDER_INFO[slugB].name;
+
+        const maxCtxA = Math.max(...modelsA.map(m => parseInt(m.context.replace(/[^0-9]/g, '')) || 0));
+        const maxCtxB = Math.max(...modelsB.map(m => parseInt(m.context.replace(/[^0-9]/g, '')) || 0));
+        const largestCtx = maxCtxA > maxCtxB ? PROVIDER_INFO[slugA].name : PROVIDER_INFO[slugB].name;
+
+        const avgInputA = modelsA.reduce((s,m) => s + m.input, 0) / modelsA.length;
+        const avgInputB = modelsB.reduce((s,m) => s + m.input, 0) / modelsB.length;
+        const betterAvg = avgInputA < avgInputB ? PROVIDER_INFO[slugA].name : PROVIDER_INFO[slugB].name;
+
+        document.getElementById('insightGrid').innerHTML = `
+            <div class="insight-card"><div class="insight-value">${cheapestOverall}</div><div class="insight-label">Cheapest Option</div></div>
+            <div class="insight-card"><div class="insight-value">${largestCtx}</div><div class="insight-label">Largest Context</div></div>
+            <div class="insight-card"><div class="insight-value">${betterAvg}</div><div class="insight-label">Best Average Price</div></div>
+        `;
+    }
+
+    function shareOnX() {
+        const text = encodeURIComponent('Compare AI API providers side by side — see models, pricing, and features across OpenAI, Anthropic, Google, DeepSeek and more');
+        window.open(`https://twitter.com/intent/tweet?text=${text}&url=${encodeURIComponent('https://getapipulse.com/compare-providers.html')}`, '_blank');
+    }
+
+    function shareOnLinkedIn() {
+        window.open(`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent('https://getapipulse.com/compare-providers.html')}`, '_blank');
+    }
+
+    // Initialize
+    document.addEventListener('DOMContentLoaded', () => {
+        updateComparison();
+    });
+    </script>
+</body>
+</html>
