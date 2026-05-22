@@ -1,7 +1,8 @@
 # BACKLOG-CHEAP.md — Routine Tasks
 
-### Active (New Tool — Session 266)
-✅ AI Chatbot Cost Calculator (chatbot-cost-calculator.html) — 16th tool, cross-linked from index, tools, 2 blog posts. Sitemap 231, RSS 173, pages 236.
+### Active (New Tools — Sessions 266-267)
+✅ AI Chatbot Cost Calculator (chatbot-cost-calculator.html) — 16th tool, cross-linked from index, tools, 2 blog posts.
+✅ AI Coding Assistant Cost Comparison (compare-ai-coding-assistants.html) — 17th tool, compares 7 coding assistants, cross-linked from index, tools, 2 blog posts. Sitemap 232, RSS 174, pages 237.
 
 ### Active (GA4 Analytics — need human to review)
 - **#212. Track founding member urgency performance** — Check GA4 for founding_member_seen events, track spots_claimed distribution and correlation with pro_button_clicked conversions.
@@ -23,11 +24,10 @@
 
 ### Active (New — need execution)
 - **#214. Create "Open Source vs Commercial LLM" cost comparison page** — Targets high-intent search "self-hosted vs API LLM cost". Compare GPU hosting costs vs API costs at different scales. Unique content angle not covered by existing pages.
-- **#215. Create "AI Coding Assistant Cost Comparison" page** — Compare Copilot, Cursor, Claude Code, Windsurf pricing. High search volume, not currently covered.
 - **#216. Add "Try Pro Free for 24 Hours" trial feature** — Conversion optimization. Let visitors体验 Pro features before buying. localStorage-based, no backend needed.
 
-### Completed (Sessions 244-266, May 18-22)
-✅ 30 industry cost guides, 4 model comparison pages, Cost Optimizer tool, conversion funnel dashboard, tool-wide urgency/exit popups, industry hub, Budget Planner tool, AI Chatbot Cost Calculator (16th tool). Blog 132→167, pages 197→236, RSS 141→173.
+### Completed (Sessions 244-267, May 18-22)
+✅ 30 industry cost guides, 4 model comparison pages, Cost Optimizer tool, conversion funnel dashboard, tool-wide urgency/exit popups, industry hub, Budget Planner tool, AI Chatbot Cost Calculator, AI Coding Assistant Cost Comparison (17th tool). Blog 132→167, pages 197→237, RSS 141→174.
 
 ### Completed (Sessions 1-243, Apr 5 - May 17)
 ✅ Built full APIpulse: 214 pages, 157 blog posts, 33 models, 10 providers, 14 tools, 6 API endpoints. PH launch, GA4, all calculators, Pro system, community playbook, exit popup A/B test, newsletter, pricing A/B test.

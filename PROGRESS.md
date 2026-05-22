@@ -1,7 +1,7 @@
 # PROGRESS.md
 
-## Site Status (as of Session 266, May 22, 2026)
-**236 web pages | 167 blog files | 33 models | 10 providers | 16 tools | 6 API endpoints**
+## Site Status (as of Session 267, May 22, 2026)
+**237 web pages | 167 blog files | 33 models | 10 providers | 16 tools | 6 API endpoints**
 - funnel.html: internal analytics dashboard (noindex, not in sitemap)
 - Sitemap (231 URLs), RSS (173 items), blog files (167 posts + 1 index) — all in sync
 - Community Post Helper (community.html) — noindex utility page, not in sitemap
@@ -35,6 +35,17 @@
 ---
 
 ## Key Milestones
+
+### Session 267 (May 22)
+**New comparison page: AI Coding Assistant Cost Comparison (backlog #215):**
+- Built compare-ai-coding-assistants.html — targets "AI coding assistant cost comparison" search query.
+- Compares 7 tools: GitHub Copilot, Cursor, Claude Code, Windsurf, Cody, Cline, Aider.
+- Quick comparison table: free tiers, individual plans, pro/business plans, models, best-for use case.
+- Interactive calculator: 4 presets (light/moderate/heavy/power user), subscription + API cost breakdown, savings banner.
+- Use case recommendations: autocomplete coder, chat power user, terminal native, cost-conscious, enterprise, large codebase.
+- FAQPage schema (5 questions), GA4 tracked, social sharing.
+- Cross-linked from index.html (Popular Comparisons + What's New), tools.html (new tool card), blog-ai-coding-assistant-cost.html, blog-best-code-generation-api.html.
+- Sitemap 231→232 URLs, RSS 173→174 items.
 
 ### Session 266 (May 22)
 **New tool: AI Chatbot Cost Calculator (16th tool):**
