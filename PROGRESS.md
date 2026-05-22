@@ -37,6 +37,16 @@
 ## Key Milestones
 
 ### Session 268 (May 22)
+**New tool: Try Pro Free for 24 Hours trial (backlog #216):**
+- Added 24-hour free trial feature to pro.html — localStorage-based, no backend needed.
+- "Try Pro Free for 24 Hours" button on the Pro gate page, with gradient styling.
+- Trial sets `apipulse_pro_trial` + `apipulse_pro_trial_expiry` in localStorage.
+- Pro features auto-lock when trial expires, with auto-revert via setTimeout.
+- Trial banner shows remaining time (e.g. "Expires in 23h 45m") with upgrade CTA.
+- Added trial mention + "Start Free Trial" CTA on pricing.html.
+- GA4 tracking: `pro_trial_started`, `pro_trial_expired` events.
+- No credit card required, full access to save scenarios, export reports, recommendations.
+
 **New comparison page: Open Source vs Commercial LLM Cost Comparison (backlog #214):**
 - Built compare-open-source-vs-commercial-llm.html — targets "self-hosted vs API LLM cost" search query.
 - Compares self-hosted open source models (Llama 4 Scout/Maverick, DeepSeek V4, Mistral Large, Phi-4 Mini) vs commercial APIs (GPT-4o-mini, GPT-4o, Claude Sonnet 4, DeepSeek V4 API, Gemini 2.5 Pro).

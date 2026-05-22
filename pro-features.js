@@ -36,7 +36,47 @@ async function validateCode(code) {
 }
 
 function isProUser() {
-    return localStorage.getItem('apipulse_pro') === 'true';
+    if (localStorage.getItem('apipulse_pro') === 'true') {
+        // Check if trial has expired
+        const trialExpiry = localStorage.getItem('apipulse_pro_trial_expiry');
+        if (trialExpiry) {
+            const expiry = new Date(trialExpiry);
+            if (new Date() > expiry) {
+                // Trial expired — lock and clear
+                localStorage.removeItem('apipulse_pro');
+                localStorage.removeItem('apipulse_pro_trial_expiry');
+                localStorage.removeItem('apipulse_pro_trial');
+                return false;
+            }
+        }
+        return true;
+    }
+    return false;
+}
+
+function isTrialUser() {
+    return localStorage.getItem('apipulse_pro_trial') === 'true';
+}
+
+function getTrialTimeRemaining() {
+    const expiry = localStorage.getItem('apipulse_pro_trial_expiry');
+    if (!expiry) return null;
+    const remaining = new Date(expiry) - new Date();
+    if (remaining <= 0) return null;
+    const hours = Math.floor(remaining / 3600000);
+    const mins = Math.floor((remaining % 3600000) / 60000);
+    return { hours, mins, ms: remaining };
+}
+
+function startTrial() {
+    const expiry = new Date(Date.now() + 24 * 60 * 60 * 1000);
+    localStorage.setItem('apipulse_pro', 'true');
+    localStorage.setItem('apipulse_pro_trial', 'true');
+    localStorage.setItem('apipulse_pro_trial_expiry', expiry.toISOString());
+    localStorage.setItem('apipulse_pro_date', new Date().toISOString());
+    unlockProFeatures();
+    if (typeof calculate === 'function') calculate();
+    if (window.trackEvent) window.trackEvent('pro_trial_started');
 }
 
 function unlockProFeatures() {
@@ -351,6 +391,33 @@ function renderRecommendations() {
 document.addEventListener('DOMContentLoaded', () => {
     if (isProUser()) {
         unlockProFeatures();
+        // Show trial banner if in trial mode
+        if (isTrialUser()) {
+            const remaining = getTrialTimeRemaining();
+            if (remaining) {
+                const content = document.getElementById('pro-content');
+                if (content) {
+                    const banner = document.createElement('div');
+                    banner.id = 'trial-banner';
+                    banner.style.cssText = 'background:linear-gradient(135deg,rgba(99,102,241,0.1),rgba(34,197,94,0.1));border:1px solid var(--accent);border-radius:12px;padding:16px 20px;margin-bottom:24px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;';
+                    banner.innerHTML = `
+                        <div>
+                            <div style="font-weight:700;font-size:15px;">Free Trial Active</div>
+                            <div style="font-size:13px;color:var(--text-secondary);">Expires in ${remaining.hours}h ${remaining.mins}m · <a href="pricing.html" style="color:var(--accent);font-weight:600;">Get lifetime access for $29</a></div>
+                        </div>
+                    `;
+                    content.insertBefore(banner, content.firstChild);
+                }
+                // Auto-lock when trial expires
+                setTimeout(() => {
+                    localStorage.removeItem('apipulse_pro');
+                    localStorage.removeItem('apipulse_pro_trial');
+                    localStorage.removeItem('apipulse_pro_trial_expiry');
+                    lockProFeatures();
+                    if (window.trackEvent) window.trackEvent('pro_trial_expired');
+                }, remaining.ms);
+            }
+        }
     }
     renderScenarios();
 });
