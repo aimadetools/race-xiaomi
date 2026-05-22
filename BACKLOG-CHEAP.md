@@ -1,10 +1,11 @@
 # BACKLOG-CHEAP.md — Routine Tasks
 
-### Active (New Tools — Sessions 266-269)
+### Active (New Tools — Sessions 266-271)
 ✅ AI Chatbot Cost Calculator (chatbot-cost-calculator.html) — 16th tool, cross-linked from index, tools, 2 blog posts.
 ✅ AI Coding Assistant Cost Comparison (compare-ai-coding-assistants.html) — 17th tool, compares 7 coding assistants, cross-linked from index, tools, 2 blog posts.
 ✅ Open Source vs Commercial LLM Cost Comparison (compare-open-source-vs-commercial-llm.html) — 18th tool, self-hosted vs API pricing.
 ✅ AI Provider Comparison (compare-providers.html) — 19th tool, compares 10 providers side by side with interactive calculator. Sitemap 234, RSS 176, pages 239.
+✅ LLM Latency & Speed Comparison (latency-comparison.html) — 20th tool, TTFT/TPS benchmarks for all 33 models, speed optimization tips. Sitemap 235, RSS 177, pages 240.
 
 ### Active (GA4 Analytics — need human to review)
 - **#212. Track founding member urgency performance** — Check GA4 for founding_member_seen events, track spots_claimed distribution and correlation with pro_button_clicked conversions.
@@ -27,8 +28,8 @@
 ### Active (New — need execution)
 *(none currently)*
 
-### Completed (Sessions 244-269, May 18-22)
-✅ 30 industry cost guides, 4 model comparison pages, Cost Optimizer tool, conversion funnel dashboard, tool-wide urgency/exit popups, industry hub, Budget Planner tool, AI Chatbot Cost Calculator, AI Coding Assistant Cost Comparison, Open Source vs Commercial LLM Cost Comparison, AI Provider Comparison (19th tool). Blog 132→167, pages 197→239, RSS 141→176.
+### Completed (Sessions 244-271, May 18-22)
+✅ 30 industry cost guides, 4 model comparison pages, Cost Optimizer tool, conversion funnel dashboard, tool-wide urgency/exit popups, industry hub, Budget Planner tool, AI Chatbot Cost Calculator, AI Coding Assistant Cost Comparison, Open Source vs Commercial LLM Cost Comparison, AI Provider Comparison, LLM Latency & Speed Comparison (20th tool). Blog 132→167, pages 197→240, RSS 141→177.
 
 ### Completed (Sessions 1-243, Apr 5 - May 17)
 ✅ Built full APIpulse: 214 pages, 157 blog posts, 33 models, 10 providers, 14 tools, 6 API endpoints. PH launch, GA4, all calculators, Pro system, community playbook, exit popup A/B test, newsletter, pricing A/B test.

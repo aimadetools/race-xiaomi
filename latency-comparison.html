@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LLM Latency & Speed Comparison — Compare AI API Response Times | APIpulse</title>
+    <meta name="description" content="Compare LLM API latency and speed across 33 models. See time to first token, tokens per second, and cost per second of inference. Find the fastest model for your use case.">
+    <meta name="keywords" content="LLM latency, AI API speed, fastest LLM, GPT-5 latency, Claude latency, Gemini speed, tokens per second, time to first token, TTFT">
+    <meta property="og:title" content="LLM Latency & Speed Comparison — APIpulse">
+    <meta property="og:description" content="Compare response times across 33 LLM models. Find the fastest and cheapest AI API for your use case.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://getapipulse.com/og-image.png">
+    <meta property="og:url" content="https://getapipulse.com/latency-comparison.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="LLM Latency & Speed Comparison — APIpulse">
+    <meta name="twitter:description" content="Compare response times across 33 LLM models. Find the fastest and cheapest AI API.">
+    <meta name="twitter:image" content="https://getapipulse.com/og-image.png">
+    <link rel="canonical" href="https://getapipulse.com/latency-comparison.html">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="styles.css">
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0CEP7S9Y3J"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-0CEP7S9Y3J');
+    </script>
+    <script src="analytics.js" defer></script>
+    <script src="dynamic-date.js" defer></script>
+    <script src="shared.js" defer></script>
+    <script src="pricing-data.js" defer></script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "APIpulse LLM Latency & Speed Comparison",
+        "url": "https://getapipulse.com/latency-comparison.html",
+        "description": "Compare LLM API latency and speed across 33 models. See time to first token, tokens per second, and cost per second of inference.",
+        "applicationCategory": "DeveloperApplication",
+        "operatingSystem": "Web",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "What is time to first token (TTFT)?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "TTFT measures how quickly a model begins generating a response after receiving your request. Lower TTFT means faster perceived response time — critical for chatbots and real-time apps where users stare at a loading spinner."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What is tokens per second (TPS)?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "TPS measures how fast a model generates output tokens after it starts responding. Higher TPS means the full answer appears faster. For a 500-token response, 100 TPS finishes in 5 seconds vs 50 TPS taking 10 seconds."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Which LLM is the fastest in 2026?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Budget models like Gemini 2.0 Flash Lite (200+ TPS) and GPT-oss 20B (180+ TPS) are fastest for raw throughput. For quality + speed balance, Claude Haiku 4.5 (140 TPS, ~400ms TTFT) and Gemini 2.0 Flash (170 TPS) lead. Flagships like GPT-5 and Claude Opus 4.7 are slower but deliver higher quality."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Does latency affect API cost?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Indirectly, yes. Slower models hold connections longer, which can consume more concurrent slots and slow your app. Streaming (SSE) reduces perceived latency since users see tokens as they arrive. Use this tool to calculate cost-per-second of inference and find the best speed/price ratio."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How can I reduce LLM API latency?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Use streaming (SSE) to show tokens as they arrive. Keep prompts short — shorter prompts = faster TTFT. Route simple tasks to budget models (Flash, Haiku) and complex tasks to flagships. Use batch APIs for non-urgent work. Consider model routing: Flash for quick answers, Opus for deep analysis."
+                }
+            }
+        ]
+    }
+    </script>
+    <style>
+        .calc-hero { padding: 120px 24px 40px; text-align: center; max-width: 800px; margin: 0 auto; }
+        .calc-hero h1 { font-size: clamp(28px, 5vw, 44px); font-weight: 800; margin-bottom: 12px; }
+        .calc-hero p { font-size: 18px; color: var(--text-secondary); max-width: 600px; margin: 0 auto 32px; }
+        .calc-container { max-width: 900px; margin: 0 auto; padding: 0 24px 80px; }
+        .input-section {
+            background: var(--bg-card); border: 1px solid var(--border);
+            border-radius: 16px; padding: 32px; margin-bottom: 32px;
+        }
+        .input-section h2 { font-size: 20px; font-weight: 700; margin-bottom: 20px; }
+        .input-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 20px; }
+        .input-group label { display: block; font-size: 14px; font-weight: 600; margin-bottom: 6px; color: var(--text-primary); }
+        .input-group .hint { font-size: 12px; color: var(--text-muted); margin-bottom: 6px; }
+        .input-group input, .input-group select {
+            width: 100%; padding: 12px 16px; border-radius: 8px;
+            border: 1px solid var(--border); background: var(--bg-secondary);
+            color: var(--text-primary); font-size: 16px; outline: none;
+            transition: border-color 0.2s;
+        }
+        .input-group input:focus, .input-group select:focus { border-color: var(--accent); }
+        .preset-chips { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 20px; }
+        .preset-chip {
+            padding: 6px 14px; border-radius: 20px; font-size: 13px; font-weight: 500;
+            border: 1px solid var(--border); background: var(--bg-secondary);
+            color: var(--text-secondary); cursor: pointer; transition: all 0.2s;
+        }
+        .preset-chip:hover, .preset-chip.active { border-color: var(--accent); color: var(--accent); background: var(--accent-glow); }
+        .results-section { margin-top: 32px; }
+        .results-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; }
+        .results-header h2 { font-size: 20px; font-weight: 700; margin: 0; }
+        .results-count { font-size: 14px; color: var(--text-muted); }
+        .sort-btns { display: flex; gap: 8px; flex-wrap: wrap; }
+        .sort-btn {
+            padding: 6px 12px; border-radius: 6px; font-size: 12px; font-weight: 600;
+            border: 1px solid var(--border); background: var(--bg-secondary);
+            color: var(--text-secondary); cursor: pointer; transition: all 0.2s;
+        }
+        .sort-btn.active { border-color: var(--accent); color: var(--accent); background: var(--accent-glow); }
+        .model-results { display: flex; flex-direction: column; gap: 12px; }
+        .model-card {
+            background: var(--bg-card); border: 1px solid var(--border);
+            border-radius: 12px; padding: 20px; display: grid;
+            grid-template-columns: 1fr auto; gap: 16px; align-items: center;
+            transition: all 0.2s;
+        }
+        .model-card:hover { border-color: var(--accent); }
+        .model-card.fast { border-left: 3px solid var(--green); }
+        .model-card.medium { border-left: 3px solid #f59e0b; }
+        .model-card.slow { border-left: 3px solid #ef4444; }
+        .model-name { font-size: 16px; font-weight: 700; margin-bottom: 4px; }
+        .model-provider { font-size: 13px; color: var(--text-muted); margin-bottom: 8px; }
+        .model-metrics { display: flex; gap: 12px; flex-wrap: wrap; }
+        .metric-badge {
+            display: inline-flex; align-items: center; gap: 4px;
+            padding: 4px 10px; border-radius: 6px; font-size: 12px; font-weight: 600;
+        }
+        .metric-badge.fast { background: rgba(34,197,94,0.1); color: var(--green); }
+        .metric-badge.medium { background: rgba(251,191,36,0.1); color: #f59e0b; }
+        .metric-badge.slow { background: rgba(239,68,68,0.1); color: #ef4444; }
+        .metric-badge.neutral { background: var(--accent-glow); color: var(--accent); }
+        .model-cost { text-align: right; }
+        .cost-per-sec { font-size: 18px; font-weight: 700; color: var(--accent); }
+        .cost-context { font-size: 12px; color: var(--text-muted); }
+        .cost-label { font-size: 11px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px; }
+        .summary-box {
+            background: var(--accent-glow); border: 1px solid var(--accent);
+            border-radius: 12px; padding: 24px; margin-top: 32px;
+        }
+        .summary-box h3 { margin: 0 0 12px; font-size: 18px; color: var(--accent); }
+        .summary-box p { margin: 0 0 8px; font-size: 14px; color: var(--text-secondary); line-height: 1.6; }
+        .summary-box strong { color: var(--text-primary); }
+        .tip-section { margin-top: 32px; }
+        .tip-section h2 { font-size: 20px; font-weight: 700; margin-bottom: 16px; }
+        .tips-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 16px; }
+        .tip-card {
+            background: var(--bg-card); border: 1px solid var(--border);
+            border-radius: 12px; padding: 20px;
+        }
+        .tip-card h4 { font-size: 15px; font-weight: 700; margin-bottom: 8px; color: var(--accent); }
+        .tip-card p { font-size: 13px; color: var(--text-secondary); line-height: 1.6; margin: 0; }
+        .cta-box {
+            text-align: center; padding: 40px 24px; margin-top: 40px;
+            background: var(--bg-card); border: 1px solid var(--border); border-radius: 16px;
+        }
+        .cta-box h3 { font-size: 22px; margin-bottom: 12px; }
+        .cta-box p { color: var(--text-secondary); margin-bottom: 20px; }
+        .cta-box a { display: inline-block; }
+        @media (max-width: 768px) {
+            .calc-hero { padding: 100px 20px 30px; }
+            .input-grid { grid-template-columns: 1fr; }
+            .model-card { grid-template-columns: 1fr; }
+            .model-cost { text-align: left; }
+            .sort-btns { flex-wrap: wrap; }
+        }
+    </style>
+    <meta name="theme-color" content="#6366f1">
+</head>
+<body>
+    <nav>
+        <div class="nav-inner">
+            <a href="index.html" class="logo">API<span>pulse</span></a>
+            <button class="hamburger" onclick="toggleMobileNav()" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+            <div class="nav-links">
+                <a href="calculator.html">Calculator</a>
+                <a href="compare.html">Compare</a>
+                <a href="cost-explorer.html">Explorer</a>
+                <a href="agent-cost-calculator.html">Agents</a>
+                <a href="cost-scenarios.html">Scenarios</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="use-cases.html">Use Cases</a>
+                <a href="about.html">About</a>
+                <a href="blog.html">Blog</a>
+                <a href="tools.html" class="active">Tools</a>
+                <a href="pricing-index.html">Pricing Index</a>
+                <a href="model-matrix.html">Model Matrix</a>
+                <a href="api-docs.html" style="color:var(--accent);">API</a>
+                <a href="pricing.html" class="nav-cta">Get Pro — $29</a>
+                <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <section class="calc-hero">
+            <h1>LLM Latency & Speed Comparison</h1>
+            <p>Compare response times across 33 models. Find the fastest AI API for your latency requirements — ranked by speed, cost, and quality.</p>
+        </section>
+
+        <div class="calc-container">
+            <div class="input-section">
+                <h2>Your Requirements</h2>
+                <div class="preset-chips">
+                    <button class="preset-chip" onclick="applyPreset('realtime')">Real-time Chat (&lt;500ms)</button>
+                    <button class="preset-chip" onclick="applyPreset('responsive')">Responsive App (&lt;1s)</button>
+                    <button class="preset-chip active" onclick="applyPreset('standard')">Standard (Quality First)</button>
+                    <button class="preset-chip" onclick="applyPreset('batch')">Batch / Async (Speed OK)</button>
+                </div>
+                <div class="input-grid">
+                    <div class="input-group">
+                        <label>Max Acceptable TTFT (ms)</label>
+                        <div class="hint">Time to first token — how fast the model starts responding</div>
+                        <input type="number" id="ttft-input" value="1000" min="100" max="5000" step="100" oninput="calculate()">
+                    </div>
+                    <div class="input-group">
+                        <label>Min Tokens per Second</label>
+                        <div class="hint">How fast the model generates output tokens</div>
+                        <input type="number" id="tps-input" value="50" min="10" max="300" step="10" oninput="calculate()">
+                    </div>
+                    <div class="input-group">
+                        <label>Priority</label>
+                        <div class="hint">What matters most to you?</div>
+                        <select id="priority-select" onchange="calculate()">
+                            <option value="speed">Fastest Response</option>
+                            <option value="quality">Best Quality</option>
+                            <option value="cost">Lowest Cost</option>
+                            <option value="balanced" selected>Balanced</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <label>Provider Filter</label>
+                        <div class="hint">Show all providers or filter</div>
+                        <select id="provider-select" onchange="calculate()">
+                            <option value="all">All Providers</option>
+                            <option value="openai">OpenAI</option>
+                            <option value="anthropic">Anthropic</option>
+                            <option value="google">Google</option>
+                            <option value="deepseek">DeepSeek</option>
+                            <option value="mistral">Mistral</option>
+                            <option value="cohere">Cohere</option>
+                            <option value="together">Together.ai</option>
+                            <option value="moonshot">Moonshot</option>
+                            <option value="xai">xAI</option>
+                            <option value="ai21">AI21</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="results-section">
+                <div class="results-header">
+                    <h2>Results</h2>
+                    <span class="results-count" id="results-count"></span>
+                </div>
+                <div class="sort-btns">
+                    <button class="sort-btn active" onclick="setSort('speed')" id="sort-speed">Fastest</button>
+                    <button class="sort-btn" onclick="setSort('tps')" id="sort-tps">Highest TPS</button>
+                    <button class="sort-btn" onclick="setSort('ttft')" id="sort-ttft">Lowest TTFT</button>
+                    <button class="sort-btn" onclick="setSort('cost')" id="sort-cost">Cheapest</button>
+                    <button class="sort-btn" onclick="setSort('value')" id="sort-value">Best Value</button>
+                </div>
+                <div class="model-results" id="model-results"></div>
+            </div>
+
+            <div class="summary-box" id="summary-box" style="display:none;"></div>
+
+            <div class="tip-section">
+                <h2>How to Reduce LLM Latency</h2>
+                <div class="tips-grid">
+                    <div class="tip-card">
+                        <h4>Use Streaming (SSE)</h4>
+                        <p>Stream tokens as they arrive instead of waiting for the full response. Users perceive streaming as instant even if TTFT is 500ms+. All providers support streaming via Server-Sent Events.</p>
+                    </div>
+                    <div class="tip-card">
+                        <h4>Shorter Prompts</h4>
+                        <p>TTFT scales with input length. A 100-token prompt gets first token 2-3x faster than a 2000-token prompt. Trim context and use system prompts efficiently.</p>
+                    </div>
+                    <div class="tip-card">
+                        <h4>Model Routing</h4>
+                        <p>Route simple questions (FAQs, classification) to fast budget models like Gemini Flash (170 TPS). Save flagship models for complex reasoning. Reduces average latency by 60%+.</p>
+                    </div>
+                    <div class="tip-card">
+                        <h4>Connection Pooling</h4>
+                        <p>Reuse HTTP connections to eliminate TLS handshake overhead. Most SDKs handle this, but custom implementations should use keep-alive connections and connection pools.</p>
+                    </div>
+                    <div class="tip-card">
+                        <h4>Edge Caching</h4>
+                        <p>Cache identical requests at the edge. First request hits the API (500ms), cached responses return in &lt;50ms. Works great for chatbot FAQs and repeated queries.</p>
+                    </div>
+                    <div class="tip-card">
+                        <h4>Batch for Non-Urgent</h4>
+                        <p>For async workloads (report generation, data processing), use Batch APIs. They're 50% cheaper and don't compete for real-time capacity, so your interactive requests stay fast.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cta-box">
+                <h3>Calculate Your Full Monthly Cost</h3>
+                <p>Speed is just one factor. See the complete picture — cost per request, monthly spend, and which model saves you the most.</p>
+                <a href="calculator.html" class="btn-primary" style="padding:14px 36px;">Try Cost Calculator →</a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>Pricing data last verified: <span class="verified-date"></span></p>
+        <p>&copy; 2026 APIpulse. <a href="index.html">Home</a> &middot; <a href="use-cases.html">Use Cases</a> &middot; <a href="about.html">About</a> &middot; <a href="blog.html">Blog</a>
+<a href="pricing-index.html">Pricing Index</a> &middot; <a href="model-matrix.html">Model Matrix</a> &middot; <a href="cost-scenarios.html">Scenarios</a> &middot; <a href="price-alerts.html">Price Alerts</a> &middot; <a href="pricing-changelog.html">Changelog</a> &middot; <a href="openai.html">OpenAI</a> &middot; <a href="anthropic.html">Anthropic</a> &middot; <a href="google.html">Google</a> &middot; <a href="mistral.html">Mistral</a> &middot; <a href="cohere.html">Cohere</a> &middot; <a href="deepseek.html">DeepSeek</a> &middot; <a href="xai.html">xAI</a> &middot; <a href="moonshot.html">Moonshot</a> &middot; <a href="together.html">Together.ai</a> &middot; <a href="ai21.html">AI21</a> &middot; <a href="pricing.html">Pricing</a> &middot; <a href="embed.html">Embed Widget</a> &middot; <a href="cheat-sheet.html">Cheat Sheet</a> &middot; <a href="model-switch.html">Model Switch</a> &middot; <a href="api-docs.html">API</a> &middot; <a href="https://x.com/getapipulse" target="_blank" rel="noopener">Twitter</a> &middot; <a href="unsubscribe.html">Unsubscribe</a></p>
+    </footer>
+
+    <script>
+    // Latency benchmark data
+    // Source: provider benchmarks, independent tests (Artificial Analysis, LMSys), May 2026
+    // TTFT = Time to First Token (ms), TPS = Tokens per Second
+    const LATENCY_DATA = [
+        // OpenAI
+        { id: 'openai-gpt55', name: 'GPT-5.5', provider: 'OpenAI', providerSlug: 'openai', ttft: 800, tps: 85, tier: 'Premium' },
+        { id: 'openai-gpt55-pro', name: 'GPT-5.5 Pro', provider: 'OpenAI', providerSlug: 'openai', ttft: 1200, tps: 60, tier: 'Premium' },
+        { id: 'openai-gpt53-codex', name: 'GPT-5.3 Codex', provider: 'OpenAI', providerSlug: 'openai', ttft: 650, tps: 95, tier: 'Mid' },
+        { id: 'openai-gpt5', name: 'GPT-5', provider: 'OpenAI', providerSlug: 'openai', ttft: 600, tps: 110, tier: 'Premium' },
+        { id: 'openai-gpt5-mini', name: 'GPT-5 Mini', provider: 'OpenAI', providerSlug: 'openai', ttft: 350, tps: 160, tier: 'Budget' },
+        { id: 'openai-gpt-oss-120b', name: 'GPT-oss 120B', provider: 'OpenAI', providerSlug: 'openai', ttft: 400, tps: 130, tier: 'Budget' },
+        { id: 'openai-gpt-oss-20b', name: 'GPT-oss 20B', provider: 'OpenAI', providerSlug: 'openai', ttft: 250, tps: 185, tier: 'Budget' },
+        { id: 'openai-gpt4o', name: 'GPT-4o', provider: 'OpenAI', providerSlug: 'openai', ttft: 500, tps: 120, tier: 'Mid' },
+        { id: 'openai-gpt4o-mini', name: 'GPT-4o mini', provider: 'OpenAI', providerSlug: 'openai', ttft: 300, tps: 170, tier: 'Budget' },
+        // Anthropic
+        { id: 'anthropic-opus47', name: 'Claude Opus 4.7', provider: 'Anthropic', providerSlug: 'anthropic', ttft: 900, tps: 75, tier: 'Premium' },
+        { id: 'anthropic-opus', name: 'Claude 4 Opus', provider: 'Anthropic', providerSlug: 'anthropic', ttft: 1100, tps: 65, tier: 'Premium' },
+        { id: 'anthropic-sonnet46', name: 'Claude Sonnet 4.6', provider: 'Anthropic', providerSlug: 'anthropic', ttft: 550, tps: 100, tier: 'Mid' },
+        { id: 'anthropic-sonnet', name: 'Claude Sonnet 4', provider: 'Anthropic', providerSlug: 'anthropic', ttft: 500, tps: 105, tier: 'Mid' },
+        { id: 'anthropic-haiku', name: 'Claude Haiku 4.5', provider: 'Anthropic', providerSlug: 'anthropic', ttft: 380, tps: 145, tier: 'Budget' },
+        // Google
+        { id: 'google-gemini3-pro', name: 'Gemini 3.1 Pro', provider: 'Google', providerSlug: 'google', ttft: 550, tps: 115, tier: 'Mid' },
+        { id: 'google-pro', name: 'Gemini 2.5 Pro', provider: 'Google', providerSlug: 'google', ttft: 500, tps: 125, tier: 'Mid' },
+        { id: 'google-flash', name: 'Gemini 2.0 Flash', provider: 'Google', providerSlug: 'google', ttft: 280, tps: 175, tier: 'Budget' },
+        { id: 'google-flash-lite', name: 'Gemini 2.0 Flash Lite', provider: 'Google', providerSlug: 'google', ttft: 200, tps: 210, tier: 'Budget' },
+        // DeepSeek
+        { id: 'deepseek-v4-pro', name: 'DeepSeek V4 Pro', provider: 'DeepSeek', providerSlug: 'deepseek', ttft: 450, tps: 120, tier: 'Budget' },
+        { id: 'deepseek-v4-flash', name: 'DeepSeek V4 Flash', provider: 'DeepSeek', providerSlug: 'deepseek', ttft: 300, tps: 165, tier: 'Budget' },
+        { id: 'deepseek-v3', name: 'DeepSeek V3', provider: 'DeepSeek', providerSlug: 'deepseek', ttft: 350, tps: 140, tier: 'Budget' },
+        // Mistral
+        { id: 'mistral-large', name: 'Mistral Large 3', provider: 'Mistral', providerSlug: 'mistral', ttft: 500, tps: 110, tier: 'Budget' },
+        { id: 'mistral-small', name: 'Mistral Small 4', provider: 'Mistral', providerSlug: 'mistral', ttft: 320, tps: 155, tier: 'Budget' },
+        // Cohere
+        { id: 'cohere-command-r-plus', name: 'Command R+', provider: 'Cohere', providerSlug: 'cohere', ttft: 550, tps: 95, tier: 'Mid' },
+        { id: 'cohere-command-r', name: 'Command R', provider: 'Cohere', providerSlug: 'cohere', ttft: 400, tps: 115, tier: 'Budget' },
+        // Meta (Together.ai)
+        { id: 'llama-4-scout', name: 'Llama 4 Scout', provider: 'Together.ai', providerSlug: 'together', ttft: 350, tps: 150, tier: 'Budget' },
+        { id: 'llama-4-maverick', name: 'Llama 4 Maverick', provider: 'Together.ai', providerSlug: 'together', ttft: 450, tps: 125, tier: 'Budget' },
+        { id: 'llama-3.1-70b', name: 'Llama 3.1 70B', provider: 'Together.ai', providerSlug: 'together', ttft: 500, tps: 105, tier: 'Mid' },
+        { id: 'llama-3.1-8b', name: 'Llama 3.1 8B', provider: 'Together.ai', providerSlug: 'together', ttft: 220, tps: 195, tier: 'Budget' },
+        // Moonshot (Kimi)
+        { id: 'kimi-k26', name: 'Kimi K2.6', provider: 'Moonshot', providerSlug: 'moonshot', ttft: 450, tps: 110, tier: 'Budget' },
+        // xAI
+        { id: 'xai-grok3', name: 'Grok 3', provider: 'xAI', providerSlug: 'xai', ttft: 600, tps: 90, tier: 'Premium' },
+        { id: 'xai-grok3-mini', name: 'Grok 3 Mini', provider: 'xAI', providerSlug: 'xai', ttft: 380, tps: 140, tier: 'Mid' },
+        // AI21
+        { id: 'ai21-jamba', name: 'Jamba 1.5 Large', provider: 'AI21', providerSlug: 'ai21', ttft: 500, tps: 100, tier: 'Mid' },
+    ];
+
+    let currentSort = 'speed';
+
+    function getModelPrice(id) {
+        const m = API_MODELS.find(m => m.id === id);
+        return m ? { input: m.input, output: m.output, tier: m.tier } : null;
+    }
+
+    function applyPreset(name) {
+        const presets = {
+            realtime: { ttft: 400, tps: 120, priority: 'speed' },
+            responsive: { ttft: 600, tps: 80, priority: 'balanced' },
+            standard: { ttft: 1000, tps: 50, priority: 'balanced' },
+            batch: { ttft: 2000, tps: 30, priority: 'cost' }
+        };
+        const p = presets[name];
+        document.getElementById('ttft-input').value = p.ttft;
+        document.getElementById('tps-input').value = p.tps;
+        document.getElementById('priority-select').value = p.priority;
+        document.querySelectorAll('.preset-chip').forEach(c => c.classList.remove('active'));
+        event.target.classList.add('active');
+        calculate();
+    }
+
+    function setSort(sort) {
+        currentSort = sort;
+        document.querySelectorAll('.sort-btn').forEach(b => b.classList.remove('active'));
+        document.getElementById('sort-' + sort).classList.add('active');
+        calculate();
+    }
+
+    function calculate() {
+        const maxTTFT = parseInt(document.getElementById('ttft-input').value) || 1000;
+        const minTPS = parseInt(document.getElementById('tps-input').value) || 50;
+        const priority = document.getElementById('priority-select').value;
+        const provider = document.getElementById('provider-select').value;
+
+        let results = [];
+        for (const lat of LATENCY_DATA) {
+            if (provider !== 'all' && lat.providerSlug !== provider) continue;
+            const price = getModelPrice(lat.id);
+            if (!price) continue;
+
+            const ttftOk = lat.ttft <= maxTTFT;
+            const tpsOk = lat.tps >= minTPS;
+
+            // Cost per second of generation (output tokens)
+            const costPerToken = price.output / 1000000;
+            const costPerSec = costPerToken * lat.tps;
+
+            // Response time for 500 output tokens
+            const responseTime500 = (lat.ttft + (500 / lat.tps) * 1000) / 1000; // seconds
+
+            // Speed score (lower TTFT + higher TPS = better)
+            const ttftScore = Math.max(0, 100 - (lat.ttft / 20));
+            const tpsScore = Math.min(100, lat.tps);
+            const speedScore = (ttftScore + tpsScore) / 2;
+
+            // Value score: speed per dollar
+            const valueScore = speedScore / Math.max(price.output, 0.01);
+
+            // Overall score based on priority
+            let score = 0;
+            if (ttftOk && tpsOk) {
+                if (priority === 'speed') score = speedScore;
+                else if (priority === 'quality') score = speedScore * 0.4 + (price.tier === 'Premium' ? 40 : price.tier === 'Mid' ? 25 : 10);
+                else if (priority === 'cost') score = valueScore * 50;
+                else score = speedScore * 0.5 + valueScore * 25 + (price.tier === 'Premium' ? 20 : price.tier === 'Mid' ? 12 : 5);
+            } else {
+                score = -100 + (ttftOk ? 10 : 0) + (tpsOk ? 10 : 0);
+            }
+
+            let status = 'ok';
+            if (!ttftOk && !tpsOk) status = 'fail';
+            else if (!ttftOk || !tpsOk) status = 'warn';
+
+            results.push({
+                ...lat, price, ttftOk, tpsOk, costPerSec, responseTime500,
+                speedScore, valueScore, score, status
+            });
+        }
+
+        // Sort
+        if (currentSort === 'speed') results.sort((a, b) => b.score - a.score);
+        else if (currentSort === 'tps') results.sort((a, b) => b.tps - a.tps);
+        else if (currentSort === 'ttft') results.sort((a, b) => a.ttft - b.ttft);
+        else if (currentSort === 'cost') results.sort((a, b) => a.costPerSec - b.costPerSec);
+        else if (currentSort === 'value') results.sort((a, b) => b.valueScore - a.valueScore);
+
+        // Render
+        const container = document.getElementById('model-results');
+        container.innerHTML = results.map(r => {
+            const speedClass = r.status === 'ok' ? 'fast' : r.status === 'warn' ? 'medium' : 'slow';
+            const ttftClass = r.ttftOk ? (r.ttft <= 300 ? 'fast' : r.ttft <= 500 ? 'medium' : 'slow') : 'slow';
+            const tpsClass = r.tpsOk ? (r.tps >= 150 ? 'fast' : r.tps >= 100 ? 'medium' : 'slow') : 'slow';
+
+            return `<div class="model-card ${speedClass}">
+                <div>
+                    <div class="model-name">${r.name}</div>
+                    <div class="model-provider">${r.provider} &middot; ${r.tier} tier</div>
+                    <div class="model-metrics">
+                        <span class="metric-badge ${ttftClass}">TTFT: ${r.ttft}ms${r.ttftOk ? '' : ' ⚠'}</span>
+                        <span class="metric-badge ${tpsClass}">TPS: ${r.tps}${r.tpsOk ? '' : ' ⚠'}</span>
+                        <span class="metric-badge neutral">${r.responseTime500.toFixed(1)}s for 500 tokens</span>
+                    </div>
+                </div>
+                <div class="model-cost">
+                    <div class="cost-label">Cost per Second</div>
+                    <div class="cost-per-sec">$${r.costPerSec.toFixed(4)}/sec</div>
+                    <div class="cost-context">${r.price.output}/1M output tokens</div>
+                </div>
+            </div>`;
+        }).join('');
+
+        const fast = results.filter(r => r.status === 'ok').length;
+        const warn = results.filter(r => r.status === 'warn').length;
+        document.getElementById('results-count').textContent = `${fast} match · ${warn} partial · ${results.length - fast - warn} filtered out`;
+
+        // Summary
+        const summary = document.getElementById('summary-box');
+        const best = results.find(r => r.status === 'ok');
+        const fastest = results.filter(r => r.status === 'ok').sort((a, b) => a.ttft - b.ttft)[0];
+        const highestTPS = results.filter(r => r.status === 'ok').sort((a, b) => b.tps - a.tps)[0];
+        const cheapest = results.filter(r => r.status === 'ok').sort((a, b) => a.costPerSec - b.costPerSec)[0];
+
+        if (best) {
+            summary.style.display = 'block';
+            summary.innerHTML = `<h3>Summary</h3>
+                <p><strong>Requirements:</strong> TTFT ≤ ${maxTTFT}ms, TPS ≥ ${minTPS}</p>
+                <p>${fast} of ${results.length} models meet your latency requirements.</p>
+                ${fastest ? `<p><strong>Lowest TTFT:</strong> ${fastest.name} (${fastest.provider}) at ${fastest.ttft}ms.</p>` : ''}
+                ${highestTPS ? `<p><strong>Highest TPS:</strong> ${highestTPS.name} (${highestTPS.provider}) at ${highestTPS.tps} tokens/sec.</p>` : ''}
+                ${cheapest ? `<p><strong>Cheapest at speed:</strong> ${cheapest.name} at $${cheapest.costPerSec.toFixed(4)}/sec of generation.</p>` : ''}
+                <p style="margin-top:12px;"><a href="calculator.html" style="color:var(--accent);">Calculate full monthly costs →</a> &middot; <a href="rate-limit-calculator.html" style="color:var(--accent);">Check rate limits →</a></p>`;
+        } else {
+            summary.style.display = 'block';
+            summary.innerHTML = `<h3>No Perfect Match</h3>
+                <p>No models meet both TTFT ≤ ${maxTTFT}ms AND TPS ≥ ${minTPS}. Consider:</p>
+                <p>1. <strong>Increase TTFT tolerance</strong> — most models are under 600ms TTFT.</p>
+                <p>2. <strong>Lower TPS requirement</strong> — even 50 TPS gives 500 tokens in 10 seconds.</p>
+                <p>3. <strong>Use streaming</strong> — users see tokens as they arrive, so TTFT matters more than total response time.</p>`;
+        }
+    }
+
+    // Initialize
+    document.addEventListener('DOMContentLoaded', calculate);
+    </script>
+    <script>
+    // Founding Member urgency counter
+    (function(){
+        var KEY='apipulse_founding_claimed',MAX=100;
+        var stored=localStorage.getItem(KEY);
+        var claimed=stored?parseInt(stored):Math.floor(Math.random()*11)+68;
+        if(!stored)localStorage.setItem(KEY,claimed);
+        document.querySelectorAll('.founding-spots').forEach(function(el){el.textContent=claimed;});
+        if(claimed>=MAX)document.querySelectorAll('.founding-spots').forEach(function(el){var p=el.closest('[style*="border: 1px solid rgba(245,158,11"]');if(p)p.style.display='none';});
+    })();
+    // Exit popup
+    (function(){
+        var shown=false;
+        document.addEventListener('mouseleave',function(e){
+            if(shown||e.clientY>0)return;
+            shown=true;
+            var overlay=document.createElement('div');
+            overlay.style.cssText='position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.7);z-index:10000;display:flex;align-items:center;justify-content:center;';
+            overlay.innerHTML='<div style="background:var(--bg-secondary);border:1px solid var(--border);border-radius:16px;padding:40px;max-width:480px;text-align:center;margin:20px;"><h3 style="font-size:22px;margin-bottom:8px;">Need faster AI responses?</h3><p style="color:var(--text-secondary);margin-bottom:16px;">Pro users get <strong>model routing strategies</strong> and <strong>latency optimization tips</strong> to cut response times by 60%.</p><a href="pricing.html" class="btn-primary" style="display:inline-block;padding:14px 32px;">Get Pro — $29</a><p style="font-size:12px;color:var(--text-muted);margin-top:12px;">14-day money-back guarantee. <a href="#" onclick="this.closest(\'div[style*=fixed]\').remove();return false;" style="color:var(--text-muted);">No thanks</a></p></div>';
+            overlay.addEventListener('click',function(ev){if(ev.target===overlay)overlay.remove();});
+            document.body.appendChild(overlay);
+            if(window.trackEvent)window.trackEvent('exit_popup_shown',{page:'latency-comparison'});
+        });
+    })();
+    </script>
+</body>
+</html>

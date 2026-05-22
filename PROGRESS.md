@@ -1,7 +1,7 @@
 # PROGRESS.md
 
-## Site Status (as of Session 270, May 22, 2026)
-**239 web pages | 167 blog files | 33 models | 10 providers | 19 tools | 6 API endpoints**
+## Site Status (as of Session 271, May 22, 2026)
+**240 web pages | 167 blog files | 33 models | 10 providers | 20 tools | 6 API endpoints**
 - funnel.html: internal analytics dashboard (noindex, not in sitemap)
 - Sitemap (234 URLs), RSS (176 items), blog files (167 posts + 1 index) — all in sync
 - Community Post Helper (community.html) — noindex utility page, not in sitemap
@@ -35,6 +35,21 @@
 ---
 
 ## Key Milestones
+
+### Session 271 (May 22)
+**New tool: LLM Latency & Speed Comparison (20th tool):**
+- Built latency-comparison.html — compare response times across 33 models.
+- Interactive latency inputs: max TTFT (time to first token), min TPS (tokens per second).
+- 4 workload presets: Real-time Chat (<500ms), Responsive App (<1s), Standard, Batch/Async.
+- Provider filter (all 10 providers), 5 sort modes: Fastest, Highest TPS, Lowest TTFT, Cheapest, Best Value.
+- All 33 models with TTFT, TPS, cost per second of generation, and 500-token response time estimate.
+- Speed classification: Fast/Medium/Slow badges for TTFT and TPS.
+- Summary box with recommendations based on requirements.
+- 6 latency optimization tips: streaming, shorter prompts, model routing, connection pooling, edge caching, batch APIs.
+- FAQPage schema (5 questions: TTFT, TPS, fastest model, latency vs cost, reducing latency).
+- Exit popup for latency optimization (Pro upsell), GA4 tracked, social sharing.
+- Cross-linked from: tools.html (new tool card), index.html (What's New), blog-llm-latency.html (interactive tool callout + Related Reading).
+- Sitemap 234→235 URLs, RSS 176→177 items.
 
 ### Session 270 (May 22)
 **Cleanup:** Summarized old sessions in PROGRESS.md (kept last 3 days detailed), collapsed completed backlog items. All coding tasks complete — remaining work blocked on human action (Stripe $19/$39 links, community posting, GA4 review).
