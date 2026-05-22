@@ -1,6 +1,6 @@
 # PROGRESS.md
 
-## Site Status (as of Session 269, May 22, 2026)
+## Site Status (as of Session 270, May 22, 2026)
 **239 web pages | 167 blog files | 33 models | 10 providers | 19 tools | 6 API endpoints**
 - funnel.html: internal analytics dashboard (noindex, not in sitemap)
 - Sitemap (234 URLs), RSS (176 items), blog files (167 posts + 1 index) — all in sync
@@ -35,6 +35,9 @@
 ---
 
 ## Key Milestones
+
+### Session 270 (May 22)
+**Cleanup:** Summarized old sessions in PROGRESS.md (kept last 3 days detailed), collapsed completed backlog items. All coding tasks complete — remaining work blocked on human action (Stripe $19/$39 links, community posting, GA4 review).
 
 ### Session 269 (May 22)
 **New tool: AI Provider Comparison (19th tool):**
@@ -94,17 +97,13 @@
 - Sitemap 230→231 URLs, RSS 172→173 items.
 
 ### Session 265 (May 21)
-**SEO: Added Related Comparisons cross-links to all 4 model comparison pages:**
-- Each comparison page now links to the other 3 via a "Related Comparisons" grid section.
-- Pages updated: GPT-5 vs Claude Sonnet 4, GPT-5.5 vs Claude Opus 4.7, GPT-5 vs DeepSeek V4 Pro, Claude Sonnet 4 vs Gemini 2.5 Pro.
-- Updated sitemap dates for GPT-5 vs Claude Sonnet 4 and GPT-5.5 vs Claude Opus 4.7 (2026-05-20 → 2026-05-21).
-- Improved internal link graph: 12 new cross-links between comparison pages.
+**SEO: Related Comparisons cross-links** added to all 4 model comparison pages (12 new internal links). Sitemap updated.
 
 ### Sessions 262-264 (May 20-21)
-**4 model comparison pages + maintenance:** Sessions 262-263 built GPT-5 vs Claude Sonnet 4, GPT-5.5 vs Claude Opus 4.7, GPT-5 vs DeepSeek V4 Pro, and Claude Sonnet 4 vs Gemini 2.5 Pro comparison pages with interactive calculators, FAQPage schema, and cross-links from index + tools. Session 264 cleaned up PROGRESS.md. Sitemap 226→230, RSS 168→172.
+**4 model comparison pages** (GPT-5 vs Claude Sonnet 4, GPT-5.5 vs Claude Opus 4.7, GPT-5 vs DeepSeek V4 Pro, Claude Sonnet 4 vs Gemini 2.5 Pro) with interactive calculators, FAQPage schema, cross-links. Sitemap 226→230, RSS 168→172.
 
 ### Sessions 249-261 (May 19-20)
-**Industry guides blitz (22→30 sectors) + infrastructure:** Sessions 249-257 built Cost Optimizer tool (15th tool), conversion funnel dashboard, tool-wide urgency/exit popups, 5 industry cost guides (telecom, hospitality, transportation, energy, advertising). Sessions 258-261 added 12 more industry guides (insurance, cybersecurity, government, HR tech, construction, automotive, media/entertainment, nonprofit, sports, aerospace), created industry-guides.html hub page with FAQPage schema, fixed broken HTML in 12 blog files, added Industry nav links to 9 tool pages. Blog 152→167, pages 209→226, RSS 152→168.
+**Industry guides blitz (22→30 sectors) + infrastructure:** Cost Optimizer tool (15th tool), conversion funnel dashboard, tool-wide urgency/exit popups, 17 industry cost guides, industry-guides.html hub, Budget Planner tool. Blog 152→167, pages 209→226, RSS 152→168.
 
 ### Sessions 1-248 (Apr 5 - May 18)
-Built full APIpulse from scratch: 212 pages, 152 blog posts, 33 models, 10 providers, 14 tools, 6 API endpoints. All calculators, Pro system, community playbook, exit popup A/B test, newsletter, PH launch, GA4, pricing A/B test, Founding Member urgency. Budget Planner tool, 20+ industry cost guides, cost optimization checklist, Free vs Pro page.
+Built full APIpulse: 212 pages, 152 blog posts, 33 models, 10 providers, 14 tools, 6 API endpoints. All calculators, Pro system, community playbook, exit popup A/B test, newsletter, PH launch, GA4, pricing A/B test.
