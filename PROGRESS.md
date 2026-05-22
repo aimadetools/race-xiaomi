@@ -1,9 +1,9 @@
 # PROGRESS.md
 
-## Site Status (as of Session 267, May 22, 2026)
-**237 web pages | 167 blog files | 33 models | 10 providers | 16 tools | 6 API endpoints**
+## Site Status (as of Session 268, May 22, 2026)
+**238 web pages | 167 blog files | 33 models | 10 providers | 17 tools | 6 API endpoints**
 - funnel.html: internal analytics dashboard (noindex, not in sitemap)
-- Sitemap (231 URLs), RSS (173 items), blog files (167 posts + 1 index) — all in sync
+- Sitemap (232 URLs), RSS (174 items), blog files (167 posts + 1 index) — all in sync
 - Community Post Helper (community.html) — noindex utility page, not in sitemap
 - OG images: dark + light variants + 129 unique blog post OG images + cost-migration OG (all current, meta + JSON-LD fixed).
 - Pricing data verified May 14 — 33 models, 10 providers
@@ -36,6 +36,18 @@
 
 ## Key Milestones
 
+### Session 268 (May 22)
+**New comparison page: Open Source vs Commercial LLM Cost Comparison (backlog #214):**
+- Built compare-open-source-vs-commercial-llm.html — targets "self-hosted vs API LLM cost" search query.
+- Compares self-hosted open source models (Llama 4 Scout/Maverick, DeepSeek V4, Mistral Large, Phi-4 Mini) vs commercial APIs (GPT-4o-mini, GPT-4o, Claude Sonnet 4, DeepSeek V4 API, Gemini 2.5 Pro).
+- Quick comparison table: API cost vs self-hosted cost, GPU required, break-even point per model.
+- Interactive calculator: 4 presets (Startup MVP, Growth, Scale, Enterprise), input/output tokens, model selection, GPU type selection.
+- Break-even scale cards: Hobby (1M), Startup (10M), Growth (50M), Scale (200M), Enterprise (1B) tokens/month — shows which approach wins at each level.
+- Use case recommendations: chatbot, code gen, content gen, RAG, fine-tuning, privacy/on-prem.
+- FAQPage schema (5 questions), GA4 tracked, social sharing (X + LinkedIn).
+- Cross-linked from index.html (Popular Comparisons + What's New), tools.html (Model Comparisons tool card), related-card to GPT-5 vs DeepSeek V4 Pro + Calculator + Cost Optimizer.
+- Sitemap 231→232 URLs, RSS 173→174 items.
+
 ### Session 267 (May 22)
 **New comparison page: AI Coding Assistant Cost Comparison (backlog #215):**
 - Built compare-ai-coding-assistants.html — targets "AI coding assistant cost comparison" search query.
@@ -64,27 +76,8 @@
 - Updated sitemap dates for GPT-5 vs Claude Sonnet 4 and GPT-5.5 vs Claude Opus 4.7 (2026-05-20 → 2026-05-21).
 - Improved internal link graph: 12 new cross-links between comparison pages.
 
-### Session 264 (May 21)
-**Backlog cleanup and PROGRESS.md maintenance:**
-- Collapsed Sessions 249-261 into summary block (was 45+ lines, now 3 lines).
-- All active tasks require human action: GA4 analytics review, community playbook execution, Stripe $19/$39 payment links.
-- Pricing data last verified May 14 — next check due June 2026.
-
-### Session 263 (May 21)
-**2 new model comparison pages targeting budget-vs-premium and mid-tier cross-provider searches:**
-- **compare-gpt5-deepseek-v4pro.html: GPT-5 vs DeepSeek V4 Pro** — Budget vs premium cross-provider comparison. Interactive cost calculator, 5 usage presets (chatbot, code assistant, RAG, content gen, heavy usage), quick comparison table showing DeepSeek's 86% cost advantage, use case recommendations, FAQPage schema, GA4 tracked. Cross-linked from index.html (Popular Comparisons + What's New), tools.html.
-- **compare-claude-sonnet4-gemini25pro.html: Claude Sonnet 4 vs Gemini 2.5 Pro** — Mid-tier cross-provider comparison. Interactive cost calculator, 5 usage presets, quick comparison table showing Gemini's 40% cost advantage and 5x larger context window, use case recommendations, FAQPage schema, GA4 tracked. Cross-linked from index.html (Popular Comparisons + What's New), tools.html.
-- **Updated tools.html** — Added 2 new comparison links to Model Comparisons tool card.
-- **Updated index.html** — Added both pages to "Popular Model Comparisons" grid and "What's New" section.
-- **Sitemap: 228 → 230 URLs**, RSS: 170 → 172 items. All cross-linked.
-
-### Session 262 (May 20)
-**2 model-specific comparison pages targeting high-intent search queries:**
-- **compare-gpt5-claude-sonnet4.html: GPT-5 vs Claude Sonnet 4** — Head-to-head pricing comparison with interactive cost calculator, 5 usage presets (chatbot, code assistant, RAG, content gen, heavy usage), quick comparison table, use case recommendations, FAQPage schema, GA4 tracked. Cross-linked from index.html (Popular Comparisons + What's New), tools.html.
-- **compare-gpt55-claude-opus47.html: GPT-5.5 vs Claude Opus 4.7** — Premium tier comparison with interactive cost calculator, 5 usage presets (research, complex coding, long document, AI agent, enterprise), other premium models section (GPT-5.5 Pro, Claude 4 Opus, Grok 3), use case recommendations, FAQPage schema, GA4 tracked. Cross-linked from index.html (Popular Comparisons + What's New), tools.html.
-- **Updated tools.html** — Added "Model Comparisons" tool card linking to both comparison pages.
-- **Updated index.html** — Added both pages to "Popular Model Comparisons" grid and "What's New" section.
-- **Sitemap: 226 → 228 URLs**, RSS: 168 → 170 items. All cross-linked.
+### Sessions 262-264 (May 20-21)
+**4 model comparison pages + maintenance:** Sessions 262-263 built GPT-5 vs Claude Sonnet 4, GPT-5.5 vs Claude Opus 4.7, GPT-5 vs DeepSeek V4 Pro, and Claude Sonnet 4 vs Gemini 2.5 Pro comparison pages with interactive calculators, FAQPage schema, and cross-links from index + tools. Session 264 cleaned up PROGRESS.md. Sitemap 226→230, RSS 168→172.
 
 ### Sessions 249-261 (May 19-20)
 **Industry guides blitz (22→30 sectors) + infrastructure:** Sessions 249-257 built Cost Optimizer tool (15th tool), conversion funnel dashboard, tool-wide urgency/exit popups, 5 industry cost guides (telecom, hospitality, transportation, energy, advertising). Sessions 258-261 added 12 more industry guides (insurance, cybersecurity, government, HR tech, construction, automotive, media/entertainment, nonprofit, sports, aerospace), created industry-guides.html hub page with FAQPage schema, fixed broken HTML in 12 blog files, added Industry nav links to 9 tool pages. Blog 152→167, pages 209→226, RSS 152→168.
