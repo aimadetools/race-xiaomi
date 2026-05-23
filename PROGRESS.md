@@ -80,43 +80,8 @@
 - Cross-linked from: index.html (Popular Comparisons + What's New), tools.html (Model Comparisons card), compare.html (Popular Comparisons grid), 2 blog posts (mistral-pricing-guide, deepseek-v4-pricing).
 - Sitemap 244→245 URLs, RSS 186→187 items.
 
-### Session 277 (May 23)
-**New comparison page: Premium AI Models (GPT-5.5 vs Claude Opus 4.7 vs Gemini 3.1 Pro):**
-- Built compare-premium-ai-models.html — targets "GPT-5.5 vs Claude Opus vs Gemini Pro" search query.
-- All premium/mid-tier models: GPT-5.5, Claude Sonnet 4.6, Claude Opus 4.7, Gemini 2.5 Pro, Gemini 3.1 Pro.
-- Summary cards: cheapest premium (Gemini 3.1 Pro at $2/M), all have 1M context, cheapest output (Gemini).
-- Interactive calculator with 5 presets (research, coding, analysis, production, heavy).
-- Use case recommendations: research (Claude Opus), production (GPT-5.5), cost-sensitive (Gemini), long docs (Gemini), code gen (GPT-5.5), multi-model pipeline.
-- FAQPage schema (5 questions: cheapest premium, Opus vs GPT-5.5, monthly costs, context windows, cheaper alternatives).
-- Cross-linked from: compare.html (Popular Comparisons grid), tools.html (Model Comparisons card).
-- Sitemap 243→244 URLs, RSS 185→186 items.
-
-**New comparison page: GPT-5 vs Claude vs Gemini (three-way):**
-- Built compare-gpt5-vs-claude-vs-gemini.html — targets "GPT-5 vs Claude vs Gemini" search query.
-- All GPT-5 models (GPT-5, GPT-5 mini, GPT-5.5) vs all Claude models (Haiku 4.5, Sonnet 4.6, Opus 4.7) vs all Gemini models (Flash Lite, Flash, 2.5 Pro, 3.1 Pro).
-- Summary cards: cheapest model (Gemini Flash Lite at $0.075/M), best context (tie at 1M), best value mid-tier (tie GPT-5 & Gemini 2.5 Pro at $1.25/M).
-- Interactive calculator with 5 presets (chatbot, coding, RAG, content, heavy) and 3 model selectors.
-- Use case recommendations: chatbot (Gemini), code gen (OpenAI/Gemini), long doc analysis (Gemini), complex reasoning (Claude), high-volume data (Gemini), multi-model pipeline (all three).
-- FAQPage schema (5 questions: cheapest overall, cheapest per provider, context windows, mid-tier comparison, mixing models).
-- Cross-linked from: index.html (Popular Comparisons), tools.html (Model Comparisons card), compare.html (Popular Comparisons grid).
-- Sitemap 242→243 URLs, RSS 184→185 items.
-
-### Session 276 (May 23)
-**New tool: Free AI API Tier Comparison (21st tool):**
-- Built free-tier-comparison.html — interactive tool comparing free tiers from 6 providers (Google, OpenAI, Anthropic, Mistral, Cohere, Together.ai).
-- Provider cards with free tier details: Google (unlimited, 15 RPM), others ($5 one-time credits).
-- Interactive credit lifespan calculator: enter daily requests, tokens, model tier → see how long each free tier lasts.
-- 4 usage presets: hobby (10 req/day), prototype (50), side project (200), light production (1000).
-- Detailed comparison table: provider, model, input/output pricing, days until exhausted, total requests.
-- Use case recommendations: chatbot, RAG, code gen, content, classification, learning.
-- 4 insight cards: Google is only viable long-term option, use credits for quality testing, budget models stretch credits 10-50x, stack free tiers for maximum runway.
-- FAQPage schema (5 questions: best free tier, OpenAI credit lifespan, production on free tiers, Google Gemini free?, what happens when credit runs out).
-- Exit popup Pro upsell, social sharing (X/LinkedIn), GA4 tracked (free_tier_calculated, free_tier_preset_applied events).
-- Cross-linked from: index.html (What's New), tools.html (new tool card), blog-free-tiers.html (CTA + Related Reading), blog-cheapest-llm.html (Related Reading).
-- Sitemap 241→242 URLs, RSS 183→184 items.
-
-### Sessions 265-277 (May 21-23)
-Built 6 tools (Chatbot Cost Calculator, AI Coding Assistants, Open Source vs Commercial, AI Provider Comparison, LLM Latency & Speed, Free Tier Comparison), 8 comparison pages (Claude vs ChatGPT, Gemini vs ChatGPT, Claude vs DeepSeek, Gemini vs Claude, Gemini vs DeepSeek, ChatGPT vs DeepSeek, Premium AI Models, GPT-5 vs Claude vs Gemini three-way), social sharing on all pages. Blog 132→167, pages 197→251, sitemap 230→246, RSS 172→188.
+### Sessions 265-278 (May 21-23)
+Built 6 tools (Chatbot Cost Calculator, AI Coding Assistants, Open Source vs Commercial, AI Provider Comparison, LLM Latency & Speed, Free Tier Comparison), 8 comparison pages (Claude vs ChatGPT, Gemini vs ChatGPT, Claude vs DeepSeek, Gemini vs Claude, Gemini vs DeepSeek, ChatGPT vs DeepSeek, Premium AI Models, GPT-5 vs Claude vs Gemini three-way, Mistral vs DeepSeek), social sharing on all pages. Blog 132→167, pages 197→251, sitemap 230→246, RSS 172→188.
 
 ### Sessions 1-264 (Apr 5 - May 21)
 Built full APIpulse: 214 pages, 157 blog posts, 33 models, 10 providers, 14 tools, 6 API endpoints. All calculators, Pro system, community playbook, exit popup A/B test, newsletter, PH launch, GA4, pricing A/B test.

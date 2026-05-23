@@ -1,9 +1,5 @@
 # BACKLOG-CHEAP.md — Routine Tasks
 
-### Active (New Tools — Sessions 266-280)
-✅ 6 new tools (16th-21st): Chatbot Cost Calculator, AI Coding Assistants, Open Source vs Commercial, AI Provider Comparison, LLM Latency & Speed, Free Tier Comparison.
-✅ 10 comparison pages (Sessions 270-281): Claude vs ChatGPT, Gemini vs ChatGPT, Claude vs DeepSeek, Gemini vs Claude, Gemini vs DeepSeek, ChatGPT vs DeepSeek, GPT-5 vs Claude vs Gemini (three-way), Premium AI Models, Mistral vs DeepSeek, OpenAI vs Google, xAI Grok vs OpenAI, OpenAI vs Anthropic — all high-intent SEO with FAQPage schema.
-
 ### Active (GA4 Analytics — need human to review)
 - **#212. Track founding member urgency performance** — Check GA4 for founding_member_seen events, track spots_claimed distribution and correlation with pro_button_clicked conversions.
 - **#208. Track sticky CTA bar performance** — Check GA4 for sticky_cta_shown vs pro_button_clicked events with source=sticky_bar. Measure conversion rate.
