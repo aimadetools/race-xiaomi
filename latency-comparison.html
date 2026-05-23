@@ -184,6 +184,19 @@
             .model-cost { text-align: left; }
             .sort-btns { flex-wrap: wrap; }
         }
+        .share-section {
+            max-width: 700px; margin: 0 auto 48px; padding: 0 24px;
+            text-align: center;
+        }
+        .share-section h2 { font-size: 20px; font-weight: 700; margin-bottom: 16px; }
+        .share-buttons { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+        .share-btn {
+            display: inline-flex; align-items: center; gap: 6px;
+            padding: 10px 20px; border-radius: 8px; border: 1px solid var(--border);
+            background: var(--bg-card); color: var(--text-primary);
+            font-size: 14px; font-weight: 600; text-decoration: none; transition: all 0.2s;
+        }
+        .share-btn:hover { border-color: var(--accent); transform: translateY(-1px); }
     </style>
     <meta name="theme-color" content="#6366f1">
 </head>
@@ -321,6 +334,16 @@
                 <a href="calculator.html" class="btn-primary" style="padding:14px 36px;">Try Cost Calculator →</a>
             </div>
         </div>
+
+    <!-- Share Section -->
+    <div class="share-section">
+        <h2>Share This Tool</h2>
+        <div class="share-buttons">
+            <a class="share-btn" id="shareX" href="#" target="_blank" rel="noopener" onclick="shareOnX()">Share on X</a>
+            <a class="share-btn" id="shareLinkedIn" href="#" target="_blank" rel="noopener" onclick="shareOnLinkedIn()">Share on LinkedIn</a>
+        </div>
+    </div>
+
     </main>
 
     <footer>
@@ -520,6 +543,17 @@
                 <p>2. <strong>Lower TPS requirement</strong> — even 50 TPS gives 500 tokens in 10 seconds.</p>
                 <p>3. <strong>Use streaming</strong> — users see tokens as they arrive, so TTFT matters more than total response time.</p>`;
         }
+    }
+
+    function shareOnX() {
+        const text = encodeURIComponent('Compare LLM response times across 33 models — TTFT, tokens/sec, and cost per second. Find the fastest model for your budget.');
+        window.open(`https://twitter.com/intent/tweet?text=${text}&url=${encodeURIComponent('https://getapipulse.com/latency-comparison.html')}`, '_blank');
+        if (window.trackEvent) window.trackEvent('share_clicked', {platform: 'x', page: 'latency_comparison'});
+    }
+
+    function shareOnLinkedIn() {
+        window.open(`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent('https://getapipulse.com/latency-comparison.html')}`, '_blank');
+        if (window.trackEvent) window.trackEvent('share_clicked', {platform: 'linkedin', page: 'latency_comparison'});
     }
 
     // Initialize

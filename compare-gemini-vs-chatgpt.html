@@ -297,6 +297,19 @@
             .quick-table { font-size: 13px; }
             .quick-table td, .quick-table th { padding: 10px 12px; }
         }
+        .share-section {
+            max-width: 700px; margin: 0 auto 48px; padding: 0 24px;
+            text-align: center;
+        }
+        .share-section h2 { font-size: 20px; font-weight: 700; margin-bottom: 16px; }
+        .share-buttons { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+        .share-btn {
+            display: inline-flex; align-items: center; gap: 6px;
+            padding: 10px 20px; border-radius: 8px; border: 1px solid var(--border);
+            background: var(--bg-card); color: var(--text-primary);
+            font-size: 14px; font-weight: 600; text-decoration: none; transition: all 0.2s;
+        }
+        .share-btn:hover { border-color: var(--accent); transform: translateY(-1px); }
     </style>
     <meta name="theme-color" content="#6366f1">
 </head>
@@ -616,6 +629,15 @@
         </div>
     </div>
 
+    <!-- Share Section -->
+    <div class="share-section">
+        <h2>Share This Comparison</h2>
+        <div class="share-buttons">
+            <a class="share-btn" id="shareX" href="#" target="_blank" rel="noopener" onclick="shareOnX()">Share on X</a>
+            <a class="share-btn" id="shareLinkedIn" href="#" target="_blank" rel="noopener" onclick="shareOnLinkedIn()">Share on LinkedIn</a>
+        </div>
+    </div>
+
     <!-- Related Tools -->
     <div class="related-tools">
         <a href="compare-claude-vs-chatgpt.html" class="related-card">
@@ -781,6 +803,17 @@
                 monthly_requests: totalRequests
             });
         }
+    }
+
+    function shareOnX() {
+        const text = encodeURIComponent('Gemini vs ChatGPT pricing comparison — Gemini Flash Lite at $0.075/M is the cheapest model available. See all API costs side by side.');
+        window.open(`https://twitter.com/intent/tweet?text=${text}&url=${encodeURIComponent('https://getapipulse.com/compare-gemini-vs-chatgpt.html')}`, '_blank');
+        if (window.trackEvent) window.trackEvent('share_clicked', {platform: 'x', page: 'gemini_vs_chatgpt'});
+    }
+
+    function shareOnLinkedIn() {
+        window.open(`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent('https://getapipulse.com/compare-gemini-vs-chatgpt.html')}`, '_blank');
+        if (window.trackEvent) window.trackEvent('share_clicked', {platform: 'linkedin', page: 'gemini_vs_chatgpt'});
     }
 
     ['chatgptModel', 'geminiModel', 'inputTokens', 'outputTokens', 'requestsPerDay', 'daysPerMonth'].forEach(id => {
