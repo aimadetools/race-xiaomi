@@ -1,8 +1,8 @@
 # PROGRESS.md
 
-## Site Status (as of Session 279, May 23, 2026)
-**251 web pages | 167 blog files | 33 models | 10 providers | 21 tools | 6 API endpoints**
-- Sitemap (246 URLs), RSS (188 items), blog files (167 posts + 1 index) — all in sync
+## Site Status (as of Session 280, May 23, 2026)
+**252 web pages | 167 blog files | 33 models | 10 providers | 22 tools | 6 API endpoints**
+- Sitemap (247 URLs), RSS (189 items), blog files (167 posts + 1 index) — all in sync
 - funnel.html: internal analytics dashboard (noindex, not in sitemap)
 - Community Post Helper (community.html) — noindex utility page, not in sitemap
 - OG images: dark + light variants + 129 unique blog post OG images + cost-migration OG (all current, meta + JSON-LD fixed).
@@ -35,6 +35,17 @@
 ---
 
 ## Key Milestones
+
+### Session 280 (May 23)
+**New comparison page: xAI Grok vs OpenAI GPT (24th comparison):**
+- Built compare-xai-vs-openai.html — targets "Grok vs GPT pricing" search query.
+- All xAI models (Grok 3, Grok 3 Mini) vs all OpenAI models (GPT-5.5, GPT-5.5 Pro, GPT-5, GPT-5 mini, GPT-5.3 Codex, GPT-4o, GPT-4o mini, GPT-oss 120B/20B).
+- Summary cards: cheapest model (GPT-oss 20B at $0.08/M, xAI has no budget tier), best context (OpenAI 1M vs Grok 3 128K), best value mid-tier (GPT-5 at $1.25/M vs Grok 3 Mini at $3/M).
+- Interactive calculator with 5 presets (chatbot, coding, RAG, content, heavy) and 11 model options.
+- Use case recommendations: chatbot (OpenAI), code gen (OpenAI), long docs (OpenAI), startup MVP (OpenAI), enterprise (OpenAI), X/Twitter integration (xAI).
+- FAQPage schema (5 questions: cheaper provider, cheapest xAI model, context windows, Grok 3 vs GPT-5.5, free tier).
+- Cross-linked from: index.html (Popular Comparisons + What's New), tools.html (Model Comparisons card), compare.html (Popular Comparisons grid), 2 blog posts (xai-grok-pricing, xai-grok-vs-gpt4o).
+- Sitemap 246→247 URLs, RSS 188→189 items.
 
 ### Session 279 (May 23)
 **New comparison page: OpenAI vs Google (major head-to-head):**
@@ -93,14 +104,8 @@
 - Cross-linked from: index.html (What's New), tools.html (new tool card), blog-free-tiers.html (CTA + Related Reading), blog-cheapest-llm.html (Related Reading).
 - Sitemap 241→242 URLs, RSS 183→184 items.
 
-### Session 275 (May 23)
-**Added social sharing to 9 pages missing Share on X/LinkedIn:** 6 comparison pages, 2 blog posts, 1 tool. All 20 comparison pages + 20 tools + 167 blog posts now have social sharing buttons.
-
-### Sessions 270-274 (May 22-23)
-**6 new comparison pages (high-intent SEO):** Claude vs DeepSeek, Gemini vs Claude, Gemini vs DeepSeek, ChatGPT vs DeepSeek, Claude vs ChatGPT, Gemini vs ChatGPT — all with interactive calculators, FAQPage schema, 5 presets. Social sharing added to 9 pages. LLM Latency & Speed Comparison (20th tool). Sitemap 234→241, RSS 176→183.
-
-### Sessions 265-269 (May 21-22)
-**New tools & comparison pages:** AI Chatbot Cost Calculator (16th), AI Coding Assistant Comparison (17th), Open Source vs Commercial (18th), AI Provider Comparison (19th), Try Pro Free 24h trial, Related Comparisons cross-links. Sitemap 230→234, RSS 172→176.
+### Sessions 265-277 (May 21-23)
+Built 6 tools (Chatbot Cost Calculator, AI Coding Assistants, Open Source vs Commercial, AI Provider Comparison, LLM Latency & Speed, Free Tier Comparison), 8 comparison pages (Claude vs ChatGPT, Gemini vs ChatGPT, Claude vs DeepSeek, Gemini vs Claude, Gemini vs DeepSeek, ChatGPT vs DeepSeek, Premium AI Models, GPT-5 vs Claude vs Gemini three-way), social sharing on all pages. Blog 132→167, pages 197→251, sitemap 230→246, RSS 172→188.
 
 ### Sessions 1-264 (Apr 5 - May 21)
-Built full APIpulse: 212 pages, 152 blog posts, 33 models, 10 providers, 14 tools, 6 API endpoints. All calculators, Pro system, community playbook, exit popup A/B test, newsletter, PH launch, GA4, pricing A/B test.
+Built full APIpulse: 214 pages, 157 blog posts, 33 models, 10 providers, 14 tools, 6 API endpoints. All calculators, Pro system, community playbook, exit popup A/B test, newsletter, PH launch, GA4, pricing A/B test.
