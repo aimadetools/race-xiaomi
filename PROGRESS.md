@@ -95,39 +95,8 @@
 - Cross-linked from: index.html (Popular Comparisons + What's New), tools.html (Model Comparisons card), compare.html (new Popular Comparisons section), 4 blog posts (claude4-vs-gpt5, gpt5-mini-vs-claude4-haiku, gemini-pricing-guide, anthropic-pricing-guide).
 - Sitemap 237→239 URLs, RSS 179→181 items.
 
-### Session 272 (May 23)
-**New comparison pages: Claude vs ChatGPT + Gemini vs ChatGPT (high-intent SEO):**
-- Built compare-claude-vs-chatgpt.html — targets "Claude vs ChatGPT pricing" (highest-intent search query).
-- All Claude models (Opus 4.7, Sonnet 4, Sonnet 4.6, Haiku 4.5, Claude 4 Opus) vs all ChatGPT models (GPT-5.5, GPT-5, GPT-5 mini, GPT-4o, GPT-4o mini).
-- Summary cards: cheapest model, best context window, best value mid-tier.
-- Full comparison table ranked by input price with provider/tier badges.
-- Interactive calculator: model selectors for both providers, 5 presets (chatbot, coding, RAG, content, heavy).
-- Use case recommendations: chatbot, code gen, long doc analysis, complex reasoning, data processing, multi-model.
-- FAQPage schema (5 questions: cheapest overall, cheapest per provider, context windows, Sonnet 4 vs GPT-5, multi-model strategy).
-- Built compare-gemini-vs-chatgpt.html — targets "Gemini vs ChatGPT pricing".
-- All Gemini models (Flash Lite, Flash, 2.5 Pro, 3.1 Pro) vs all ChatGPT models.
-- Gemini Flash Lite at $0.075/M highlighted as cheapest model in market.
-- Same interactive calculator, use cases, FAQPage schema structure.
-- Cross-linked from: index.html (Popular Comparisons + What's New), tools.html (Model Comparisons card), 4 blog posts (gpt4o-vs-claude, openai-vs-anthropic-vs-google, gemini-vs-gpt4o, openai-vs-gemini).
-- Sitemap 235→237 URLs, RSS 177→179 items.
-
-### Session 271 (May 22)
-**New tool: LLM Latency & Speed Comparison (20th tool):**
-- Built latency-comparison.html — compare response times across 33 models.
-- Interactive latency inputs: max TTFT (time to first token), min TPS (tokens per second).
-- 4 workload presets: Real-time Chat (<500ms), Responsive App (<1s), Standard, Batch/Async.
-- Provider filter (all 10 providers), 5 sort modes: Fastest, Highest TPS, Lowest TTFT, Cheapest, Best Value.
-- All 33 models with TTFT, TPS, cost per second of generation, and 500-token response time estimate.
-- Speed classification: Fast/Medium/Slow badges for TTFT and TPS.
-- Summary box with recommendations based on requirements.
-- 6 latency optimization tips: streaming, shorter prompts, model routing, connection pooling, edge caching, batch APIs.
-- FAQPage schema (5 questions: TTFT, TPS, fastest model, latency vs cost, reducing latency).
-- Exit popup for latency optimization (Pro upsell), GA4 tracked, social sharing.
-- Cross-linked from: tools.html (new tool card), index.html (What's New), blog-llm-latency.html (interactive tool callout + Related Reading).
-- Sitemap 234→235 URLs, RSS 176→177 items.
-
-### Session 270 (May 22)
-**Cleanup:** Summarized old sessions in PROGRESS.md, collapsed completed backlog items.
+### Sessions 270-272 (May 22-23)
+**New tools & comparison pages:** Claude vs ChatGPT, Gemini vs ChatGPT (high-intent SEO comparison pages with interactive calculators, FAQPage schema), LLM Latency & Speed Comparison (20th tool). Cleanup of PROGRESS.md. Sitemap 234→237, RSS 176→179.
 
 ### Sessions 265-269 (May 21-22)
 **New tools & comparison pages:** AI Chatbot Cost Calculator (16th), AI Coding Assistant Comparison (17th), Open Source vs Commercial (18th), AI Provider Comparison (19th), Try Pro Free 24h trial, Related Comparisons cross-links. Sitemap 230→234, RSS 172→176.
