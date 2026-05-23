@@ -1,6 +1,6 @@
 # PROGRESS.md
 
-## Site Status (as of Session 274, May 23, 2026)
+## Site Status (as of Session 275, May 23, 2026)
 **246 web pages | 167 blog files | 33 models | 10 providers | 20 tools | 6 API endpoints**
 - funnel.html: internal analytics dashboard (noindex, not in sitemap)
 - Sitemap (241 URLs), RSS (183 items), blog files (167 posts + 1 index) — all in sync
@@ -35,6 +35,14 @@
 ---
 
 ## Key Milestones
+
+### Session 275 (May 23)
+**Added social sharing to 9 pages missing Share on X/LinkedIn:**
+- 6 comparison pages: Claude vs ChatGPT, Gemini vs ChatGPT, Claude vs DeepSeek, Gemini vs Claude, Gemini vs DeepSeek, ChatGPT vs DeepSeek.
+- 2 blog posts: blog-best-ai-api-customer-support.html, blog-best-ai-api-data-analysis.html.
+- 1 tool: latency-comparison.html (LLM Latency & Speed Comparison).
+- All pages now have consistent social sharing with GA4 tracking (share_clicked events).
+- All 20 comparison pages + 20 tools + 167 blog posts now have social sharing buttons.
 
 ### Session 274 (May 23)
 **New comparison pages: Gemini vs DeepSeek + ChatGPT vs DeepSeek (high-intent SEO):**
