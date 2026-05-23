@@ -1,8 +1,8 @@
 # PROGRESS.md
 
-## Site Status (as of Session 277, May 23, 2026)
-**249 web pages | 167 blog files | 33 models | 10 providers | 21 tools | 6 API endpoints**
-- Sitemap (244 URLs), RSS (186 items), blog files (167 posts + 1 index) — all in sync
+## Site Status (as of Session 278, May 23, 2026)
+**250 web pages | 167 blog files | 33 models | 10 providers | 21 tools | 6 API endpoints**
+- Sitemap (245 URLs), RSS (187 items), blog files (167 posts + 1 index) — all in sync
 - funnel.html: internal analytics dashboard (noindex, not in sitemap)
 - Community Post Helper (community.html) — noindex utility page, not in sitemap
 - OG images: dark + light variants + 129 unique blog post OG images + cost-migration OG (all current, meta + JSON-LD fixed).
@@ -35,6 +35,17 @@
 ---
 
 ## Key Milestones
+
+### Session 278 (May 23)
+**New comparison page: Mistral vs DeepSeek (budget providers head-to-head):**
+- Built compare-mistral-vs-deepseek.html — targets "Mistral vs DeepSeek pricing" search query.
+- All Mistral models (Large 3, Small 4) vs all DeepSeek models (V4 Pro, V4 Flash).
+- Summary cards: cheapest model (DeepSeek V4 Flash at $0.14/M), best context (DeepSeek 1M vs Mistral 128K), best value mid-tier (DeepSeek V4 Pro at $0.44/M).
+- Interactive calculator with 5 presets (chatbot, coding, RAG, content, heavy).
+- Use case recommendations: chatbot (DeepSeek), code gen (DeepSeek), long docs (DeepSeek), EU data sovereignty (Mistral), high-volume (DeepSeek), startup MVP (DeepSeek).
+- FAQPage schema (5 questions: cheaper provider, cheapest model, context windows, Large 3 vs V4 Pro, production readiness).
+- Cross-linked from: index.html (Popular Comparisons + What's New), tools.html (Model Comparisons card), compare.html (Popular Comparisons grid), 2 blog posts (mistral-pricing-guide, deepseek-v4-pricing).
+- Sitemap 244→245 URLs, RSS 186→187 items.
 
 ### Session 277 (May 23)
 **New comparison page: Premium AI Models (GPT-5.5 vs Claude Opus 4.7 vs Gemini 3.1 Pro):**
@@ -72,51 +83,14 @@
 - Sitemap 241→242 URLs, RSS 183→184 items.
 
 ### Session 275 (May 23)
-
-### Session 275 (May 23)
 **Added social sharing to 9 pages missing Share on X/LinkedIn:**
 - 6 comparison pages: Claude vs ChatGPT, Gemini vs ChatGPT, Claude vs DeepSeek, Gemini vs Claude, Gemini vs DeepSeek, ChatGPT vs DeepSeek.
 - 2 blog posts: blog-best-ai-api-customer-support.html, blog-best-ai-api-data-analysis.html.
 - 1 tool: latency-comparison.html (LLM Latency & Speed Comparison).
-- All pages now have consistent social sharing with GA4 tracking (share_clicked events).
 - All 20 comparison pages + 20 tools + 167 blog posts now have social sharing buttons.
 
-### Session 274 (May 23)
-**New comparison pages: Gemini vs DeepSeek + ChatGPT vs DeepSeek (high-intent SEO):**
-- Built compare-gemini-vs-deepseek.html — targets "Gemini vs DeepSeek pricing" search query.
-- All Gemini models (Flash Lite, Flash, 2.5 Pro, 3.1 Pro) vs DeepSeek models (V4 Pro, V4 Flash, V3).
-- Gemini Flash Lite at $0.075/M is cheapest overall; DeepSeek V4 Pro is 65-91% cheaper than Gemini 2.5 Pro.
-- Summary cards: cheapest model (Gemini Flash Lite), best context (tie at 1M), best value mid-tier (DeepSeek V4 Pro).
-- Interactive calculator with 5 presets (chatbot, coding, RAG, content, heavy).
-- Use case recommendations: chatbot, code gen, long doc analysis, high-volume data, enterprise, startup MVP.
-- FAQPage schema (5 questions: cheapest overall, cheapest per provider, context windows, Gemini 2.5 Pro vs V4 Pro, code gen quality).
-- Built compare-chatgpt-vs-deepseek.html — targets "ChatGPT vs DeepSeek pricing".
-- All OpenAI models (GPT-5.5, GPT-5, GPT-5 mini, GPT-4o, GPT-4o mini, GPT-oss) vs DeepSeek models.
-- GPT-oss 20B at $0.08/M is cheapest OpenAI; DeepSeek V4 Pro is 65-91% cheaper than GPT-5.
-- Same interactive calculator, use cases, FAQPage schema structure.
-- Cross-linked from: index.html (Popular Comparisons + What's New), tools.html (Model Comparisons card), compare.html (Popular Comparisons), 2 blog posts (deepseek-vs-openai, deepseek-vs-gemini-pricing-2026).
-- Sitemap 239→241 URLs, RSS 181→183 items.
-- Completed all 8 possible cross-provider comparison pages (Claude vs ChatGPT, Claude vs DeepSeek, Claude vs Gemini, ChatGPT vs DeepSeek, ChatGPT vs Gemini, Gemini vs DeepSeek + 2 model-specific).
-
-### Session 273 (May 23)
-**New comparison pages: Claude vs DeepSeek + Gemini vs Claude (high-intent SEO):**
-- Built compare-claude-vs-deepseek.html — targets "Claude vs DeepSeek pricing" search query.
-- All Claude models (Opus 4.7, Sonnet 4, Sonnet 4.6, Haiku 4.5, Claude 4 Opus) vs DeepSeek models (V4 Pro, V4 Flash).
-- DeepSeek is 86-97% cheaper across all tiers — dramatic cost savings highlighted.
-- Summary cards: cheapest model (DeepSeek), best context (tie at 1M), best value mid-tier (DeepSeek V4 Pro at $0.44/M).
-- Interactive calculator with 5 presets (chatbot, coding, RAG, content, heavy).
-- Use case recommendations: chatbot, code gen, long doc analysis, high-volume data, enterprise, startup MVP.
-- FAQPage schema (5 questions: cheapest overall, cheapest per provider, context windows, Sonnet 4 vs V4 Pro, code gen quality).
-- Built compare-gemini-vs-claude.html — targets "Gemini vs Claude pricing".
-- All Gemini models (Flash Lite, Flash, 2.5 Pro, 3.1 Pro) vs all Claude models.
-- Gemini Flash Lite at $0.075/M highlighted as 92% cheaper than Claude Haiku.
-- All Gemini models have 1M context — even budget tier ($0.075/M) gets 1M tokens.
-- Same interactive calculator, use cases, FAQPage schema structure.
-- Cross-linked from: index.html (Popular Comparisons + What's New), tools.html (Model Comparisons card), compare.html (new Popular Comparisons section), 4 blog posts (claude4-vs-gpt5, gpt5-mini-vs-claude4-haiku, gemini-pricing-guide, anthropic-pricing-guide).
-- Sitemap 237→239 URLs, RSS 179→181 items.
-
-### Sessions 270-272 (May 22-23)
-**New tools & comparison pages:** Claude vs ChatGPT, Gemini vs ChatGPT (high-intent SEO comparison pages with interactive calculators, FAQPage schema), LLM Latency & Speed Comparison (20th tool). Cleanup of PROGRESS.md. Sitemap 234→237, RSS 176→179.
+### Sessions 270-274 (May 22-23)
+**6 new comparison pages (high-intent SEO):** Claude vs DeepSeek, Gemini vs Claude, Gemini vs DeepSeek, ChatGPT vs DeepSeek, Claude vs ChatGPT, Gemini vs ChatGPT — all with interactive calculators, FAQPage schema, 5 presets. Social sharing added to 9 pages. LLM Latency & Speed Comparison (20th tool). Sitemap 234→241, RSS 176→183.
 
 ### Sessions 265-269 (May 21-22)
 **New tools & comparison pages:** AI Chatbot Cost Calculator (16th), AI Coding Assistant Comparison (17th), Open Source vs Commercial (18th), AI Provider Comparison (19th), Try Pro Free 24h trial, Related Comparisons cross-links. Sitemap 230→234, RSS 172→176.
