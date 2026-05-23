@@ -1,8 +1,8 @@
 # PROGRESS.md
 
 ## Site Status (as of Session 277, May 23, 2026)
-**248 web pages | 167 blog files | 33 models | 10 providers | 21 tools | 6 API endpoints**
-- Sitemap (243 URLs), RSS (185 items), blog files (167 posts + 1 index) — all in sync
+**249 web pages | 167 blog files | 33 models | 10 providers | 21 tools | 6 API endpoints**
+- Sitemap (244 URLs), RSS (186 items), blog files (167 posts + 1 index) — all in sync
 - funnel.html: internal analytics dashboard (noindex, not in sitemap)
 - Community Post Helper (community.html) — noindex utility page, not in sitemap
 - OG images: dark + light variants + 129 unique blog post OG images + cost-migration OG (all current, meta + JSON-LD fixed).
@@ -37,6 +37,16 @@
 ## Key Milestones
 
 ### Session 277 (May 23)
+**New comparison page: Premium AI Models (GPT-5.5 vs Claude Opus 4.7 vs Gemini 3.1 Pro):**
+- Built compare-premium-ai-models.html — targets "GPT-5.5 vs Claude Opus vs Gemini Pro" search query.
+- All premium/mid-tier models: GPT-5.5, Claude Sonnet 4.6, Claude Opus 4.7, Gemini 2.5 Pro, Gemini 3.1 Pro.
+- Summary cards: cheapest premium (Gemini 3.1 Pro at $2/M), all have 1M context, cheapest output (Gemini).
+- Interactive calculator with 5 presets (research, coding, analysis, production, heavy).
+- Use case recommendations: research (Claude Opus), production (GPT-5.5), cost-sensitive (Gemini), long docs (Gemini), code gen (GPT-5.5), multi-model pipeline.
+- FAQPage schema (5 questions: cheapest premium, Opus vs GPT-5.5, monthly costs, context windows, cheaper alternatives).
+- Cross-linked from: compare.html (Popular Comparisons grid), tools.html (Model Comparisons card).
+- Sitemap 243→244 URLs, RSS 185→186 items.
+
 **New comparison page: GPT-5 vs Claude vs Gemini (three-way):**
 - Built compare-gpt5-vs-claude-vs-gemini.html — targets "GPT-5 vs Claude vs Gemini" search query.
 - All GPT-5 models (GPT-5, GPT-5 mini, GPT-5.5) vs all Claude models (Haiku 4.5, Sonnet 4.6, Opus 4.7) vs all Gemini models (Flash Lite, Flash, 2.5 Pro, 3.1 Pro).
