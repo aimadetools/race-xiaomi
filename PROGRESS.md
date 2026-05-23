@@ -147,11 +147,8 @@
 ### Session 265 (May 21)
 **SEO: Related Comparisons cross-links** added to all 4 model comparison pages (12 new internal links). Sitemap updated.
 
-### Sessions 262-264 (May 20-21)
-**4 model comparison pages** (GPT-5 vs Claude Sonnet 4, GPT-5.5 vs Claude Opus 4.7, GPT-5 vs DeepSeek V4 Pro, Claude Sonnet 4 vs Gemini 2.5 Pro) with interactive calculators, FAQPage schema, cross-links. Sitemap 226→230, RSS 168→172.
-
-### Sessions 249-261 (May 19-20)
-**Industry guides blitz (22→30 sectors) + infrastructure:** Cost Optimizer tool (15th tool), conversion funnel dashboard, tool-wide urgency/exit popups, 17 industry cost guides, industry-guides.html hub, Budget Planner tool. Blog 152→167, pages 209→226, RSS 152→168.
+### Sessions 249-264 (May 19-21)
+**Comparison pages + industry guides + infrastructure:** 4 model comparison pages (GPT-5 vs Sonnet 4, GPT-5.5 vs Opus 4.7, GPT-5 vs DeepSeek V4 Pro, Sonnet 4 vs Gemini 2.5 Pro), 30 industry cost guides, Cost Optimizer tool (15th tool), conversion funnel dashboard, tool-wide urgency/exit popups, industry hub, Budget Planner tool. Blog 152→167, pages 209→230, RSS 152→172.
 
 ### Sessions 1-248 (Apr 5 - May 18)
 Built full APIpulse: 212 pages, 152 blog posts, 33 models, 10 providers, 14 tools, 6 API endpoints. All calculators, Pro system, community playbook, exit popup A/B test, newsletter, PH launch, GA4, pricing A/B test.
