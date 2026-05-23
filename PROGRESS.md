@@ -1,9 +1,9 @@
 # PROGRESS.md
 
-## Site Status (as of Session 271, May 22, 2026)
-**240 web pages | 167 blog files | 33 models | 10 providers | 20 tools | 6 API endpoints**
+## Site Status (as of Session 272, May 23, 2026)
+**242 web pages | 167 blog files | 33 models | 10 providers | 20 tools | 6 API endpoints**
 - funnel.html: internal analytics dashboard (noindex, not in sitemap)
-- Sitemap (234 URLs), RSS (176 items), blog files (167 posts + 1 index) — all in sync
+- Sitemap (237 URLs), RSS (179 items), blog files (167 posts + 1 index) — all in sync
 - Community Post Helper (community.html) — noindex utility page, not in sitemap
 - OG images: dark + light variants + 129 unique blog post OG images + cost-migration OG (all current, meta + JSON-LD fixed).
 - Pricing data verified May 14 — 33 models, 10 providers
@@ -35,6 +35,22 @@
 ---
 
 ## Key Milestones
+
+### Session 272 (May 23)
+**New comparison pages: Claude vs ChatGPT + Gemini vs ChatGPT (high-intent SEO):**
+- Built compare-claude-vs-chatgpt.html — targets "Claude vs ChatGPT pricing" (highest-intent search query).
+- All Claude models (Opus 4.7, Sonnet 4, Sonnet 4.6, Haiku 4.5, Claude 4 Opus) vs all ChatGPT models (GPT-5.5, GPT-5, GPT-5 mini, GPT-4o, GPT-4o mini).
+- Summary cards: cheapest model, best context window, best value mid-tier.
+- Full comparison table ranked by input price with provider/tier badges.
+- Interactive calculator: model selectors for both providers, 5 presets (chatbot, coding, RAG, content, heavy).
+- Use case recommendations: chatbot, code gen, long doc analysis, complex reasoning, data processing, multi-model.
+- FAQPage schema (5 questions: cheapest overall, cheapest per provider, context windows, Sonnet 4 vs GPT-5, multi-model strategy).
+- Built compare-gemini-vs-chatgpt.html — targets "Gemini vs ChatGPT pricing".
+- All Gemini models (Flash Lite, Flash, 2.5 Pro, 3.1 Pro) vs all ChatGPT models.
+- Gemini Flash Lite at $0.075/M highlighted as cheapest model in market.
+- Same interactive calculator, use cases, FAQPage schema structure.
+- Cross-linked from: index.html (Popular Comparisons + What's New), tools.html (Model Comparisons card), 4 blog posts (gpt4o-vs-claude, openai-vs-anthropic-vs-google, gemini-vs-gpt4o, openai-vs-gemini).
+- Sitemap 235→237 URLs, RSS 177→179 items.
 
 ### Session 271 (May 22)
 **New tool: LLM Latency & Speed Comparison (20th tool):**
