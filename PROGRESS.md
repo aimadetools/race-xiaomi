@@ -1,8 +1,8 @@
 # PROGRESS.md
 
-## Site Status (as of Session 280, May 23, 2026)
-**252 web pages | 167 blog files | 33 models | 10 providers | 22 tools | 6 API endpoints**
-- Sitemap (247 URLs), RSS (189 items), blog files (167 posts + 1 index) — all in sync
+## Site Status (as of Session 281, May 23, 2026)
+**253 web pages | 167 blog files | 33 models | 10 providers | 22 tools | 6 API endpoints**
+- Sitemap (248 URLs), RSS (190 items), blog files (167 posts + 1 index) — all in sync
 - funnel.html: internal analytics dashboard (noindex, not in sitemap)
 - Community Post Helper (community.html) — noindex utility page, not in sitemap
 - OG images: dark + light variants + 129 unique blog post OG images + cost-migration OG (all current, meta + JSON-LD fixed).
@@ -35,6 +35,17 @@
 ---
 
 ## Key Milestones
+
+### Session 281 (May 23)
+**New comparison page: OpenAI vs Anthropic (25th comparison):**
+- Built compare-openai-vs-anthropic.html — targets "OpenAI vs Anthropic pricing" search query.
+- All OpenAI models (GPT-5.5, GPT-5.5 Pro, GPT-5.3 Codex, GPT-5, GPT-5 mini, GPT-oss 120B/20B, GPT-4o, GPT-4o mini) vs all Anthropic models (Claude Opus 4.7, Claude 4 Opus, Claude Sonnet 4.6, Claude Sonnet 4, Claude Haiku 4.5).
+- Summary cards: cheapest model (GPT-oss 20B at $0.08/M vs Anthropic's cheapest $1/M), best context (tie at 1M for GPT-5.5, Opus 4.7, Sonnet 4.6), premium value (Opus 4.7 $5/$25 is 17% cheaper on output than GPT-5.5 $5/$30).
+- Interactive calculator with 5 presets (chatbot, coding, RAG, content, heavy) and 14 model options.
+- Use case recommendations: chatbot (OpenAI), code gen (OpenAI), long docs (Anthropic — Sonnet 4.6 1M context at $3/M), startup MVP (OpenAI), enterprise (Anthropic), multi-model pipeline (OpenAI — more tier granularity).
+- FAQPage schema (5 questions: cheaper provider, cheapest Anthropic model, context windows, Opus vs GPT-5.5 for coding, free tier).
+- Cross-linked from: index.html (Popular Comparisons + What's New), tools.html (Model Comparisons card), compare.html (Popular Comparisons grid), 3 blog posts (openai-vs-anthropic-vs-google, claude4-vs-gpt5, gpt5-vs-claude4-opus).
+- Sitemap 247→248 URLs, RSS 189→190 items.
 
 ### Session 280 (May 23)
 **New comparison page: xAI Grok vs OpenAI GPT (24th comparison):**
