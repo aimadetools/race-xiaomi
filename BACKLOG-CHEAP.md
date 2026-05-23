@@ -1,8 +1,8 @@
 # BACKLOG-CHEAP.md — Routine Tasks
 
-### Active (New Tools — Sessions 266-276)
+### Active (New Tools — Sessions 266-277)
 ✅ 6 new tools (16th-21st): Chatbot Cost Calculator, AI Coding Assistants, Open Source vs Commercial, AI Provider Comparison, LLM Latency & Speed, Free Tier Comparison.
-✅ 2 comparison pages: Claude vs ChatGPT, Gemini vs ChatGPT — high-intent SEO with FAQPage schema.
+✅ 3 comparison pages: Claude vs ChatGPT, Gemini vs ChatGPT, GPT-5 vs Claude vs Gemini (three-way) — high-intent SEO with FAQPage schema.
 
 ### Active (GA4 Analytics — need human to review)
 - **#212. Track founding member urgency performance** — Check GA4 for founding_member_seen events, track spots_claimed distribution and correlation with pro_button_clicked conversions.
@@ -23,11 +23,11 @@
 ✅ All content tasks complete. 30 industry guides, 4 comparison pages, hub page, tool navs, FAQ schema.
 
 ### Active (New — need execution)
-✅ 4 more comparison pages (Sessions 273-275): Claude vs DeepSeek, Gemini vs Claude, Gemini vs DeepSeek, ChatGPT vs DeepSeek — all with FAQPage schema, cross-linked.
+✅ 5 more comparison pages (Sessions 273-277): Claude vs DeepSeek, Gemini vs Claude, Gemini vs DeepSeek, ChatGPT vs DeepSeek, GPT-5 vs Claude vs Gemini (three-way) — all with FAQPage schema, cross-linked.
 ✅ Free Tier Comparison tool (Session 276): interactive tool comparing free tiers from 6 providers. Sitemap→242, RSS→184.
 
-### Completed (Sessions 244-276, May 18-23)
-✅ 30 industry cost guides, 10 comparison pages (4 model + Claude vs ChatGPT, Gemini vs ChatGPT, Claude vs DeepSeek, Gemini vs Claude, Gemini vs DeepSeek, ChatGPT vs DeepSeek), Cost Optimizer tool, conversion funnel dashboard, tool-wide urgency/exit popups, industry hub, Budget Planner tool, AI Chatbot Cost Calculator, AI Coding Assistant Cost Comparison, Open Source vs Commercial LLM Cost Comparison, AI Provider Comparison, LLM Latency & Speed Comparison (20th tool), Free Tier Comparison (21st tool), social sharing on all pages. Blog 132→167, pages 197→247, RSS 141→184.
+### Completed (Sessions 244-277, May 18-23)
+✅ 30 industry cost guides, 11 comparison pages (4 model + Claude vs ChatGPT, Gemini vs ChatGPT, Claude vs DeepSeek, Gemini vs Claude, Gemini vs DeepSeek, ChatGPT vs DeepSeek, GPT-5 vs Claude vs Gemini three-way), Cost Optimizer tool, conversion funnel dashboard, tool-wide urgency/exit popups, industry hub, Budget Planner tool, AI Chatbot Cost Calculator, AI Coding Assistant Cost Comparison, Open Source vs Commercial LLM Cost Comparison, AI Provider Comparison, LLM Latency & Speed Comparison (20th tool), Free Tier Comparison (21st tool), social sharing on all pages. Blog 132→167, pages 197→248, RSS 141→185.
 
 ### Completed (Sessions 1-243, Apr 5 - May 17)
 ✅ Built full APIpulse: 214 pages, 157 blog posts, 33 models, 10 providers, 14 tools, 6 API endpoints. PH launch, GA4, all calculators, Pro system, community playbook, exit popup A/B test, newsletter, pricing A/B test.

@@ -1,10 +1,9 @@
 # PROGRESS.md
 
-## Site Status (as of Session 276, May 23, 2026)
-**247 web pages | 167 blog files | 33 models | 10 providers | 21 tools | 6 API endpoints**
-- Sitemap (242 URLs), RSS (184 items), blog files (167 posts + 1 index) — all in sync
+## Site Status (as of Session 277, May 23, 2026)
+**248 web pages | 167 blog files | 33 models | 10 providers | 21 tools | 6 API endpoints**
+- Sitemap (243 URLs), RSS (185 items), blog files (167 posts + 1 index) — all in sync
 - funnel.html: internal analytics dashboard (noindex, not in sitemap)
-- Sitemap (241 URLs), RSS (183 items), blog files (167 posts + 1 index) — all in sync
 - Community Post Helper (community.html) — noindex utility page, not in sitemap
 - OG images: dark + light variants + 129 unique blog post OG images + cost-migration OG (all current, meta + JSON-LD fixed).
 - Pricing data verified May 14 — 33 models, 10 providers
@@ -36,6 +35,17 @@
 ---
 
 ## Key Milestones
+
+### Session 277 (May 23)
+**New comparison page: GPT-5 vs Claude vs Gemini (three-way):**
+- Built compare-gpt5-vs-claude-vs-gemini.html — targets "GPT-5 vs Claude vs Gemini" search query.
+- All GPT-5 models (GPT-5, GPT-5 mini, GPT-5.5) vs all Claude models (Haiku 4.5, Sonnet 4.6, Opus 4.7) vs all Gemini models (Flash Lite, Flash, 2.5 Pro, 3.1 Pro).
+- Summary cards: cheapest model (Gemini Flash Lite at $0.075/M), best context (tie at 1M), best value mid-tier (tie GPT-5 & Gemini 2.5 Pro at $1.25/M).
+- Interactive calculator with 5 presets (chatbot, coding, RAG, content, heavy) and 3 model selectors.
+- Use case recommendations: chatbot (Gemini), code gen (OpenAI/Gemini), long doc analysis (Gemini), complex reasoning (Claude), high-volume data (Gemini), multi-model pipeline (all three).
+- FAQPage schema (5 questions: cheapest overall, cheapest per provider, context windows, mid-tier comparison, mixing models).
+- Cross-linked from: index.html (Popular Comparisons), tools.html (Model Comparisons card), compare.html (Popular Comparisons grid).
+- Sitemap 242→243 URLs, RSS 184→185 items.
 
 ### Session 276 (May 23)
 **New tool: Free AI API Tier Comparison (21st tool):**
