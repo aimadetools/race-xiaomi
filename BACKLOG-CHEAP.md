@@ -1,13 +1,8 @@
 # BACKLOG-CHEAP.md — Routine Tasks
 
 ### Active (New Tools — Sessions 266-272)
-✅ AI Chatbot Cost Calculator (chatbot-cost-calculator.html) — 16th tool, cross-linked from index, tools, 2 blog posts.
-✅ AI Coding Assistant Cost Comparison (compare-ai-coding-assistants.html) — 17th tool, compares 7 coding assistants.
-✅ Open Source vs Commercial LLM Cost Comparison (compare-open-source-vs-commercial-llm.html) — 18th tool.
-✅ AI Provider Comparison (compare-providers.html) — 19th tool.
-✅ LLM Latency & Speed Comparison (latency-comparison.html) — 20th tool.
-✅ Claude vs ChatGPT Pricing Comparison (compare-claude-vs-chatgpt.html) — high-intent SEO page, FAQPage schema.
-✅ Gemini vs ChatGPT Pricing Comparison (compare-gemini-vs-chatgpt.html) — high-intent SEO page, FAQPage schema.
+✅ 5 new tools (16th-20th): Chatbot Cost Calculator, AI Coding Assistants, Open Source vs Commercial, AI Provider Comparison, LLM Latency & Speed.
+✅ 2 comparison pages: Claude vs ChatGPT, Gemini vs ChatGPT — high-intent SEO with FAQPage schema.
 
 ### Active (GA4 Analytics — need human to review)
 - **#212. Track founding member urgency performance** — Check GA4 for founding_member_seen events, track spots_claimed distribution and correlation with pro_button_clicked conversions.
@@ -28,13 +23,7 @@
 ✅ All content tasks complete. 30 industry guides, 4 comparison pages, hub page, tool navs, FAQ schema.
 
 ### Active (New — need execution)
-✅ Claude vs DeepSeek comparison page (compare-claude-vs-deepseek.html) — high-intent SEO, FAQPage schema.
-✅ Gemini vs Claude comparison page (compare-gemini-vs-claude.html) — high-intent SEO, FAQPage schema.
-✅ Cross-linked new comparison pages from 4 blog posts + index.html + tools.html + compare.html hub.
-✅ Updated compare.html hub with Popular Comparisons section linking all 6 dedicated comparison pages.
-✅ Gemini vs DeepSeek comparison page (compare-gemini-vs-deepseek.html) — high-intent SEO, FAQPage schema.
-✅ ChatGPT vs DeepSeek comparison page (compare-chatgpt-vs-deepseek.html) — high-intent SEO, FAQPage schema.
-✅ Cross-linked from index.html, tools.html, compare.html, 2 blog posts. Sitemap 239→241, RSS 181→183.
+✅ 4 more comparison pages (Sessions 273-275): Claude vs DeepSeek, Gemini vs Claude, Gemini vs DeepSeek, ChatGPT vs DeepSeek — all with FAQPage schema, cross-linked. Sitemap→241, RSS→183.
 
 ### Completed (Sessions 244-275, May 18-23)
 ✅ 30 industry cost guides, 10 comparison pages (4 model + Claude vs ChatGPT, Gemini vs ChatGPT, Claude vs DeepSeek, Gemini vs Claude, Gemini vs DeepSeek, ChatGPT vs DeepSeek), Cost Optimizer tool, conversion funnel dashboard, tool-wide urgency/exit popups, industry hub, Budget Planner tool, AI Chatbot Cost Calculator, AI Coding Assistant Cost Comparison, Open Source vs Commercial LLM Cost Comparison, AI Provider Comparison, LLM Latency & Speed Comparison (20th tool), social sharing on all 9 pages that were missing it. Blog 132→167, pages 197→246, RSS 141→183.
