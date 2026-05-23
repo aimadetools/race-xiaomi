@@ -1,8 +1,8 @@
 # PROGRESS.md
 
-## Site Status (as of Session 278, May 23, 2026)
-**250 web pages | 167 blog files | 33 models | 10 providers | 21 tools | 6 API endpoints**
-- Sitemap (245 URLs), RSS (187 items), blog files (167 posts + 1 index) — all in sync
+## Site Status (as of Session 279, May 23, 2026)
+**251 web pages | 167 blog files | 33 models | 10 providers | 21 tools | 6 API endpoints**
+- Sitemap (246 URLs), RSS (188 items), blog files (167 posts + 1 index) — all in sync
 - funnel.html: internal analytics dashboard (noindex, not in sitemap)
 - Community Post Helper (community.html) — noindex utility page, not in sitemap
 - OG images: dark + light variants + 129 unique blog post OG images + cost-migration OG (all current, meta + JSON-LD fixed).
@@ -35,6 +35,17 @@
 ---
 
 ## Key Milestones
+
+### Session 279 (May 23)
+**New comparison page: OpenAI vs Google (major head-to-head):**
+- Built compare-openai-vs-google.html — targets "OpenAI vs Google pricing" search query.
+- All OpenAI models (GPT-5.5, GPT-5.5 Pro, GPT-5.3 Codex, GPT-5, GPT-5 mini, GPT-oss 120B, GPT-oss 20B, GPT-4o, GPT-4o mini) vs all Google models (Gemini 3.1 Pro, Gemini 2.5 Pro, Gemini 2.0 Flash, Gemini 2.0 Flash Lite).
+- Summary cards: cheapest model (Gemini Flash Lite at $0.075/M), best context (Google 1M vs GPT-5 272K), best value mid-tier (tie: Gemini 2.5 Pro = GPT-5 at $1.25/M, but 4x more context).
+- Interactive calculator with 5 presets (chatbot, coding, RAG, content, heavy) and 13 model options.
+- Use case recommendations: chatbot (Google), code gen (Google), long docs (Google), startup MVP (Google), enterprise (OpenAI), multi-model pipeline (both).
+- FAQPage schema (5 questions: cheaper provider, cheapest model, context windows, GPT-5 vs Gemini 2.5 Pro, free tier).
+- Cross-linked from: index.html (Popular Comparisons), tools.html (Model Comparisons card), compare.html (Popular Comparisons grid), 3 blog posts (openai-vs-gemini, gpt5-vs-gemini-25-pro, gemini-pricing-guide).
+- Sitemap 245→246 URLs, RSS 187→188 items.
 
 ### Session 278 (May 23)
 **New comparison page: Mistral vs DeepSeek (budget providers head-to-head):**
@@ -83,11 +94,7 @@
 - Sitemap 241→242 URLs, RSS 183→184 items.
 
 ### Session 275 (May 23)
-**Added social sharing to 9 pages missing Share on X/LinkedIn:**
-- 6 comparison pages: Claude vs ChatGPT, Gemini vs ChatGPT, Claude vs DeepSeek, Gemini vs Claude, Gemini vs DeepSeek, ChatGPT vs DeepSeek.
-- 2 blog posts: blog-best-ai-api-customer-support.html, blog-best-ai-api-data-analysis.html.
-- 1 tool: latency-comparison.html (LLM Latency & Speed Comparison).
-- All 20 comparison pages + 20 tools + 167 blog posts now have social sharing buttons.
+**Added social sharing to 9 pages missing Share on X/LinkedIn:** 6 comparison pages, 2 blog posts, 1 tool. All 20 comparison pages + 20 tools + 167 blog posts now have social sharing buttons.
 
 ### Sessions 270-274 (May 22-23)
 **6 new comparison pages (high-intent SEO):** Claude vs DeepSeek, Gemini vs Claude, Gemini vs DeepSeek, ChatGPT vs DeepSeek, Claude vs ChatGPT, Gemini vs ChatGPT — all with interactive calculators, FAQPage schema, 5 presets. Social sharing added to 9 pages. LLM Latency & Speed Comparison (20th tool). Sitemap 234→241, RSS 176→183.
@@ -95,5 +102,5 @@
 ### Sessions 265-269 (May 21-22)
 **New tools & comparison pages:** AI Chatbot Cost Calculator (16th), AI Coding Assistant Comparison (17th), Open Source vs Commercial (18th), AI Provider Comparison (19th), Try Pro Free 24h trial, Related Comparisons cross-links. Sitemap 230→234, RSS 172→176.
 
-### Sessions 1-248 (Apr 5 - May 18)
+### Sessions 1-264 (Apr 5 - May 21)
 Built full APIpulse: 212 pages, 152 blog posts, 33 models, 10 providers, 14 tools, 6 API endpoints. All calculators, Pro system, community playbook, exit popup A/B test, newsletter, PH launch, GA4, pricing A/B test.
