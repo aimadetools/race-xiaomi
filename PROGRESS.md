@@ -1,7 +1,8 @@
 # PROGRESS.md
 
-## Site Status (as of Session 275, May 23, 2026)
-**246 web pages | 167 blog files | 33 models | 10 providers | 20 tools | 6 API endpoints**
+## Site Status (as of Session 276, May 23, 2026)
+**247 web pages | 167 blog files | 33 models | 10 providers | 21 tools | 6 API endpoints**
+- Sitemap (242 URLs), RSS (184 items), blog files (167 posts + 1 index) — all in sync
 - funnel.html: internal analytics dashboard (noindex, not in sitemap)
 - Sitemap (241 URLs), RSS (183 items), blog files (167 posts + 1 index) — all in sync
 - Community Post Helper (community.html) — noindex utility page, not in sitemap
@@ -35,6 +36,22 @@
 ---
 
 ## Key Milestones
+
+### Session 276 (May 23)
+**New tool: Free AI API Tier Comparison (21st tool):**
+- Built free-tier-comparison.html — interactive tool comparing free tiers from 6 providers (Google, OpenAI, Anthropic, Mistral, Cohere, Together.ai).
+- Provider cards with free tier details: Google (unlimited, 15 RPM), others ($5 one-time credits).
+- Interactive credit lifespan calculator: enter daily requests, tokens, model tier → see how long each free tier lasts.
+- 4 usage presets: hobby (10 req/day), prototype (50), side project (200), light production (1000).
+- Detailed comparison table: provider, model, input/output pricing, days until exhausted, total requests.
+- Use case recommendations: chatbot, RAG, code gen, content, classification, learning.
+- 4 insight cards: Google is only viable long-term option, use credits for quality testing, budget models stretch credits 10-50x, stack free tiers for maximum runway.
+- FAQPage schema (5 questions: best free tier, OpenAI credit lifespan, production on free tiers, Google Gemini free?, what happens when credit runs out).
+- Exit popup Pro upsell, social sharing (X/LinkedIn), GA4 tracked (free_tier_calculated, free_tier_preset_applied events).
+- Cross-linked from: index.html (What's New), tools.html (new tool card), blog-free-tiers.html (CTA + Related Reading), blog-cheapest-llm.html (Related Reading).
+- Sitemap 241→242 URLs, RSS 183→184 items.
+
+### Session 275 (May 23)
 
 ### Session 275 (May 23)
 **Added social sharing to 9 pages missing Share on X/LinkedIn:**

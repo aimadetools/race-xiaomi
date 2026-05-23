@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free AI API Tier Comparison — Build for Free in 2026 | APIpulse</title>
+    <meta name="description" content="Compare free tiers from Google, OpenAI, Anthropic, Mistral, Cohere, and Together.ai. See which provider lets you build the most without paying. Interactive calculator shows how long free credits last.">
+    <meta name="keywords" content="free AI API, free LLM tier, free Gemini API, free OpenAI credit, free Claude API, free AI API access, free tier comparison, AI API free trial">
+    <meta property="og:title" content="Free AI API Tier Comparison — Build for Free in 2026 | APIpulse">
+    <meta property="og:description" content="Compare free tiers from 6 providers. Interactive calculator shows how long free credits last at your usage level.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://getapipulse.com/og-image.png">
+    <meta property="og:url" content="https://getapipulse.com/free-tier-comparison.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Free AI API Tier Comparison — Build for Free in 2026 | APIpulse">
+    <meta name="twitter:image" content="https://getapipulse.com/og-image.png">
+    <meta name="twitter:description" content="Compare free tiers from 6 providers. See which lets you build the most for free.">
+    <link rel="canonical" href="https://getapipulse.com/free-tier-comparison.html">
+    <link rel="alternate" type="application/rss+xml" title="APIpulse Blog" href="https://getapipulse.com/rss.xml">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="styles.css">
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0CEP7S9Y3J"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-0CEP7S9Y3J');
+    </script>
+    <script src="analytics.js" defer></script>
+    <script src="dynamic-date.js" defer></script>
+    <script src="shared.js" defer></script>
+    <script src="pricing-data.js" defer></script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "APIpulse Free AI API Tier Comparison",
+        "url": "https://getapipulse.com/free-tier-comparison.html",
+        "description": "Interactive tool to compare free AI API tiers from Google, OpenAI, Anthropic, Mistral, Cohere, and Together.ai.",
+        "applicationCategory": "DeveloperApplication",
+        "operatingSystem": "Web",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "Which AI API has the best free tier in 2026?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Google Gemini offers the best free tier — effectively unlimited usage with 15 RPM and 1M TPM rate limits, no monthly cap. All other major providers (OpenAI, Anthropic, Mistral, Cohere, Together.ai) offer $5 one-time credits that run out within days to weeks depending on usage."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How long does the OpenAI $5 free credit last?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "With GPT-4o mini ($0.15/$0.60 per 1M tokens), the $5 credit lasts about 55 days at 10 requests/day, 5.5 days at 100 requests/day, or just 1 day at 500 requests/day. With GPT-4o ($2.50/$10.00), it runs out 4-6x faster."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Can I build a production app on free AI API tiers?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Only on Google Gemini. Their free tier allows up to 15 requests per minute (~21,600/day) with no monthly cap — enough for a real product with moderate traffic. All other providers' $5 credits are for evaluation only; you'll need to pay within days of any real usage."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Is the Google Gemini API really free?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes. Google offers free access to Gemini 2.0 Flash and Gemini 2.5 Pro with generous rate limits (15 RPM, 1M TPM). There is no monthly usage cap. You need a Google Cloud account but no credit card. The free tier is suitable for prototyping, side projects, and even light production use."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What happens when my free AI API credit runs out?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "When a $5 credit runs out, API calls return errors until you add a payment method. Most providers don't auto-charge — you must explicitly upgrade. Google Gemini's free tier doesn't 'run out' since it's rate-limited, not credit-based. To continue after credits expire, switch to a paid plan or use Google's free tier as a fallback."
+                }
+            }
+        ]
+    }
+    </script>
+    <style>
+        .calc-hero { padding: 120px 24px 40px; text-align: center; max-width: 750px; margin: 0 auto; }
+        .calc-hero h1 { font-size: clamp(28px, 4vw, 42px); font-weight: 800; margin-bottom: 12px; }
+        .calc-hero p { color: var(--text-secondary); font-size: 17px; line-height: 1.6; }
+
+        /* Provider cards */
+        .providers-section { max-width: 1000px; margin: 0 auto; padding: 0 24px 40px; }
+        .providers-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+        .provider-card {
+            background: var(--bg-card); border: 1px solid var(--border); border-radius: 16px;
+            padding: 28px; position: relative; transition: all 0.3s;
+        }
+        .provider-card:hover { border-color: var(--accent); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(99,102,241,0.1); }
+        .provider-card.best-pick { border-color: var(--green); }
+        .provider-card.best-pick::after {
+            content: 'BEST FREE TIER'; position: absolute; top: -10px; right: 16px;
+            background: var(--green); color: #000; font-size: 10px; font-weight: 800;
+            padding: 3px 10px; border-radius: 6px; letter-spacing: 0.5px;
+        }
+        .provider-name { font-size: 20px; font-weight: 700; margin-bottom: 4px; }
+        .provider-type { font-size: 13px; color: var(--text-muted); margin-bottom: 16px; }
+        .tier-detail { display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px solid var(--border); font-size: 14px; }
+        .tier-detail:last-child { border-bottom: none; }
+        .tier-label { color: var(--text-secondary); }
+        .tier-value { font-weight: 600; color: var(--text-primary); }
+        .tier-value.highlight { color: var(--green); }
+        .tier-value.warn { color: var(--orange); }
+        .provider-models { margin-top: 12px; font-size: 13px; color: var(--text-muted); }
+        .provider-models strong { color: var(--text-secondary); }
+
+        /* Calculator section */
+        .calc-section { padding: 0 24px 60px; }
+        .calculator { background: var(--bg-card); border: 1px solid var(--border); border-radius: 16px; padding: 32px; max-width: 900px; margin: 0 auto; }
+        .calc-header { text-align: center; margin-bottom: 28px; }
+        .calc-header h2 { font-size: 24px; font-weight: 700; margin-bottom: 8px; }
+        .calc-header p { color: var(--text-secondary); font-size: 15px; }
+
+        .presets { display: flex; gap: 8px; margin-bottom: 24px; flex-wrap: wrap; align-items: center; justify-content: center; }
+        .preset-label { font-size: 13px; color: var(--text-muted); }
+        .preset-btn {
+            background: var(--bg-secondary); border: 1px solid var(--border);
+            color: var(--text-secondary); padding: 8px 16px; border-radius: 8px;
+            cursor: pointer; font-size: 13px; transition: all 0.2s; font-weight: 500;
+        }
+        .preset-btn:hover { border-color: var(--accent); color: var(--accent); }
+        .preset-btn.active-preset { background: var(--accent); color: white; border-color: var(--accent); }
+
+        .calc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
+        .calc-inputs { display: flex; flex-direction: column; gap: 16px; }
+        .input-group { display: flex; flex-direction: column; gap: 6px; }
+        .input-group label { font-size: 13px; font-weight: 600; color: var(--text-secondary); }
+        .input-group input, .input-group select {
+            padding: 12px 16px; border-radius: 8px; border: 1px solid var(--border);
+            background: var(--bg-secondary); color: var(--text-primary); font-size: 15px; font-family: inherit;
+        }
+        .input-group input:focus, .input-group select:focus { outline: 2px solid var(--accent); outline-offset: 2px; border-color: var(--accent); }
+        .input-hint { font-size: 12px; color: var(--text-muted); margin-top: 2px; }
+
+        .calc-results { background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 12px; padding: 24px; }
+        .result-item { display: flex; justify-content: space-between; padding: 10px 0; border-bottom: 1px solid var(--border); font-size: 14px; }
+        .result-item:last-child { border-bottom: none; }
+        .result-label { color: var(--text-secondary); }
+        .result-value { color: var(--text-primary); font-weight: 600; font-variant-numeric: tabular-nums; }
+
+        /* Credit lifespan results */
+        .credit-results { max-width: 900px; margin: 0 auto; padding: 0 24px 60px; }
+        .credit-results h2 { font-size: 24px; font-weight: 700; text-align: center; margin-bottom: 8px; }
+        .credit-subtitle { text-align: center; color: var(--text-secondary); font-size: 15px; margin-bottom: 32px; }
+        .credit-table { width: 100%; border-collapse: collapse; background: var(--bg-card); border-radius: 12px; overflow: hidden; border: 1px solid var(--border); }
+        .credit-table th { background: var(--bg-secondary); padding: 14px 16px; text-align: left; font-size: 12px; font-weight: 600; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px; }
+        .credit-table td { padding: 14px 16px; border-bottom: 1px solid var(--border); font-size: 14px; }
+        .credit-table tr:last-child td { border-bottom: none; }
+        .credit-table tr:hover { background: var(--accent-glow); }
+        .provider-badge { display: inline-block; padding: 2px 8px; border-radius: 4px; font-size: 11px; font-weight: 700; }
+        .badge-google { background: rgba(34,197,94,0.15); color: var(--green); }
+        .badge-openai { background: rgba(99,102,241,0.15); color: var(--accent); }
+        .badge-anthropic { background: rgba(245,158,11,0.15); color: var(--orange); }
+        .badge-mistral { background: rgba(236,72,153,0.15); color: #ec4899; }
+        .badge-cohere { background: rgba(168,85,247,0.15); color: #a855f7; }
+        .badge-together { background: rgba(59,130,246,0.15); color: #3b82f6; }
+        .days-badge { display: inline-block; padding: 2px 8px; border-radius: 4px; font-size: 12px; font-weight: 700; }
+        .days-unlimited { background: rgba(34,197,94,0.15); color: var(--green); }
+        .days-long { background: rgba(59,130,246,0.15); color: #3b82f6; }
+        .days-medium { background: rgba(245,158,11,0.15); color: var(--orange); }
+        .days-short { background: rgba(239,68,68,0.15); color: var(--red); }
+
+        /* Use case recommendations */
+        .use-case-section { max-width: 900px; margin: 0 auto; padding: 0 24px 60px; }
+        .use-case-section h2 { font-size: 24px; font-weight: 700; text-align: center; margin-bottom: 8px; }
+        .use-case-subtitle { text-align: center; color: var(--text-secondary); font-size: 15px; margin-bottom: 32px; }
+        .use-case-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; }
+        .use-case-card {
+            background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; padding: 24px;
+        }
+        .use-case-card h3 { font-size: 16px; font-weight: 700; margin-bottom: 8px; }
+        .use-case-card p { font-size: 13px; color: var(--text-secondary); line-height: 1.6; margin-bottom: 12px; }
+        .use-case-card .pick { font-size: 13px; font-weight: 600; color: var(--green); }
+
+        /* Insights */
+        .insights { max-width: 700px; margin: 0 auto; padding: 0 24px 60px; }
+        .insight-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; padding: 24px; margin-bottom: 16px; }
+        .insight-card h3 { font-size: 16px; font-weight: 700; margin-bottom: 8px; }
+        .insight-card p { font-size: 14px; color: var(--text-secondary); line-height: 1.7; }
+        .insight-card a { color: var(--accent); font-weight: 600; }
+
+        /* Pro upsell */
+        .pro-upsell { max-width: 700px; margin: 0 auto; padding: 0 24px 60px; text-align: center; }
+        .pro-card { background: linear-gradient(135deg, rgba(99,102,241,0.08), rgba(34,197,94,0.06)); border: 1px solid var(--accent); border-radius: 16px; padding: 32px; }
+        .pro-card h3 { font-size: 20px; font-weight: 700; margin-bottom: 8px; }
+        .pro-card p { color: var(--text-secondary); margin-bottom: 16px; }
+
+        /* Share section */
+        .share-section { margin-top: 32px; padding-top: 24px; border-top: 1px solid var(--border); text-align: center; }
+        .share-section p { color: var(--text-secondary); font-size: 14px; margin-bottom: 12px; }
+        .share-btn { display: inline-block; background: var(--bg-card); color: var(--text-primary); padding: 8px 20px; border-radius: 8px; font-size: 14px; font-weight: 500; border: 1px solid var(--border); transition: all 0.2s; cursor: pointer; }
+        .share-btn:hover { background: var(--accent); color: white; border-color: var(--accent); }
+
+        /* Related */
+        .related { max-width: 700px; margin: 0 auto; padding: 0 24px 60px; }
+        .related h2 { font-size: 20px; font-weight: 700; margin-bottom: 16px; }
+        .related a { display: block; padding: 8px 0; color: var(--accent); font-size: 14px; border-bottom: 1px solid var(--border); }
+        .related a:last-child { border-bottom: none; }
+
+        @media (max-width: 768px) {
+            .calc-hero { padding: 100px 20px 30px; }
+            .calc-hero h1 { font-size: 26px; }
+            .providers-grid { grid-template-columns: 1fr; }
+            .calc-section { padding: 0 20px 40px; }
+            .calculator { padding: 20px; }
+            .calc-grid { grid-template-columns: 1fr; gap: 24px; }
+            .presets { justify-content: center; }
+            .credit-table { font-size: 12px; }
+            .credit-table th, .credit-table td { padding: 10px 8px; }
+            .use-case-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+    <meta name="theme-color" content="#6366f1">
+    <link rel="preconnect" href="https://getapipulse.com">
+</head>
+<body>
+    <a href="#main" class="skip-link">Skip to content</a>
+    <nav>
+        <div class="nav-inner">
+            <a href="index.html" class="logo">API<span>pulse</span></a>
+            <button class="hamburger" onclick="toggleMobileNav()" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+            <div class="nav-links">
+                <a href="calculator.html">Calculator</a>
+                <a href="compare.html">Compare</a>
+                <a href="cost-explorer.html">Explorer</a>
+                <a href="model-switch.html">Switch</a>
+                <a href="cost-scenarios.html">Scenarios</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="use-cases.html">Use Cases</a>
+                <a href="blog.html">Blog</a>
+                <a href="quiz.html">Quiz</a>
+                <a href="api-docs.html" style="color:var(--accent);">API</a>
+                <a href="pricing.html" class="nav-cta" onclick="if(window.trackEvent)window.trackEvent('pro_button_clicked',{source:'nav'})">Get Pro — $29</a>
+                <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
+            </div>
+        </div>
+    </nav>
+
+    <main id="main">
+    <div class="calc-hero">
+        <h1>Free AI API Tier Comparison</h1>
+        <p>Every major LLM provider offers free access — but they vary wildly. Compare free tiers, see how long credits last, and find the best option for your project.</p>
+        <div id="pricing-freshness" style="margin-top:16px;"></div>
+    </div>
+
+    <!-- Provider Cards -->
+    <section class="providers-section">
+        <div class="providers-grid">
+            <div class="provider-card best-pick">
+                <div class="provider-name">Google Gemini</div>
+                <div class="provider-type">Rate-limited free tier (no credit)</div>
+                <div class="tier-detail"><span class="tier-label">Free model(s)</span><span class="tier-value">Gemini 2.0 Flash, 2.5 Pro</span></div>
+                <div class="tier-detail"><span class="tier-label">Free limit</span><span class="tier-value highlight">Unlimited (rate-limited)</span></div>
+                <div class="tier-detail"><span class="tier-label">Rate limit</span><span class="tier-value">15 RPM / 1M TPM</span></div>
+                <div class="tier-detail"><span class="tier-label">Max daily requests</span><span class="tier-value highlight">~21,600</span></div>
+                <div class="tier-detail"><span class="tier-label">Credit card required</span><span class="tier-value">No</span></div>
+                <div class="provider-models"><strong>Best for:</strong> Prototyping, side projects, light production</div>
+            </div>
+            <div class="provider-card">
+                <div class="provider-name">OpenAI</div>
+                <div class="provider-type">$5 one-time credit</div>
+                <div class="tier-detail"><span class="tier-label">Free model(s)</span><span class="tier-value">GPT-4o mini, GPT-4o</span></div>
+                <div class="tier-detail"><span class="tier-label">Free credit</span><span class="tier-value warn">$5 one-time</span></div>
+                <div class="tier-detail"><span class="tier-label">Rate limit</span><span class="tier-value">Varies by tier</span></div>
+                <div class="tier-detail"><span class="tier-label">Estimated lifespan</span><span class="tier-value warn">1-55 days</span></div>
+                <div class="tier-detail"><span class="tier-label">Credit card required</span><span class="tier-value">No</span></div>
+                <div class="provider-models"><strong>Best for:</strong> Evaluation, testing specific GPT features</div>
+            </div>
+            <div class="provider-card">
+                <div class="provider-name">Anthropic</div>
+                <div class="provider-type">$5 one-time credit</div>
+                <div class="tier-detail"><span class="tier-label">Free model(s)</span><span class="tier-value">Claude Haiku 4.5, Sonnet 4</span></div>
+                <div class="tier-detail"><span class="tier-label">Free credit</span><span class="tier-value warn">$5 one-time</span></div>
+                <div class="tier-detail"><span class="tier-label">Rate limit</span><span class="tier-value">Varies by tier</span></div>
+                <div class="tier-detail"><span class="tier-label">Estimated lifespan</span><span class="tier-value warn">1.5-80 days</span></div>
+                <div class="tier-detail"><span class="tier-label">Credit card required</span><span class="tier-value">No</span></div>
+                <div class="provider-models"><strong>Best for:</strong> Evaluating Claude quality, testing long context</div>
+            </div>
+            <div class="provider-card">
+                <div class="provider-name">Mistral</div>
+                <div class="provider-type">$5 one-time credit</div>
+                <div class="tier-detail"><span class="tier-label">Free model(s)</span><span class="tier-value">Mistral Small 4, Large 3</span></div>
+                <div class="tier-detail"><span class="tier-label">Free credit</span><span class="tier-value warn">$5 one-time</span></div>
+                <div class="tier-detail"><span class="tier-label">Rate limit</span><span class="tier-value">Varies by tier</span></div>
+                <div class="tier-detail"><span class="tier-label">Estimated lifespan</span><span class="tier-value warn">2-70 days</span></div>
+                <div class="tier-detail"><span class="tier-label">Credit card required</span><span class="tier-value">No</span></div>
+                <div class="provider-models"><strong>Best for:</strong> European compliance, multilingual apps</div>
+            </div>
+            <div class="provider-card">
+                <div class="provider-name">Cohere</div>
+                <div class="provider-type">$5 one-time credit</div>
+                <div class="tier-detail"><span class="tier-label">Free model(s)</span><span class="tier-value">Command R, Command R+</span></div>
+                <div class="tier-detail"><span class="tier-label">Free credit</span><span class="tier-value warn">$5 one-time</span></div>
+                <div class="tier-detail"><span class="tier-label">Rate limit</span><span class="tier-value">Varies by tier</span></div>
+                <div class="tier-detail"><span class="tier-label">Estimated lifespan</span><span class="tier-value warn">2-70 days</span></div>
+                <div class="tier-detail"><span class="tier-label">Credit card required</span><span class="tier-value">No</span></div>
+                <div class="provider-models"><strong>Best for:</strong> RAG, semantic search, classification</div>
+            </div>
+            <div class="provider-card">
+                <div class="provider-name">Together.ai</div>
+                <div class="provider-type">$5 one-time credit</div>
+                <div class="tier-detail"><span class="tier-label">Free model(s)</span><span class="tier-value">Llama 3.1 8B/70B, Mixtral</span></div>
+                <div class="tier-detail"><span class="tier-label">Free credit</span><span class="tier-value warn">$5 one-time</span></div>
+                <div class="tier-detail"><span class="tier-label">Rate limit</span><span class="tier-value">Varies</span></div>
+                <div class="tier-detail"><span class="tier-label">Estimated lifespan</span><span class="tier-value warn">3-100 days</span></div>
+                <div class="tier-detail"><span class="tier-label">Credit card required</span><span class="tier-value">No</span></div>
+                <div class="provider-models"><strong>Best for:</strong> Open-source models, experimentation</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Credit Calculator -->
+    <section class="calc-section">
+        <div class="calculator" role="form" aria-label="Free Credit Lifespan Calculator">
+            <div class="calc-header">
+                <h2>How Long Will Free Credits Last?</h2>
+                <p>Enter your expected usage to see how long each provider's free tier lasts</p>
+            </div>
+            <div class="presets">
+                <span class="preset-label">Use case:</span>
+                <button class="preset-btn" onclick="applyPreset('hobby')">Hobby project</button>
+                <button class="preset-btn active-preset" onclick="applyPreset('prototype')">Prototyping</button>
+                <button class="preset-btn" onclick="applyPreset('sideproject')">Side project</button>
+                <button class="preset-btn" onclick="applyPreset('production')">Light production</button>
+            </div>
+            <div class="calc-grid">
+                <div class="calc-inputs">
+                    <div class="input-group">
+                        <label for="req-per-day">Requests per day</label>
+                        <input type="number" id="req-per-day" value="50" min="1" step="10" oninput="calculateCredits()">
+                        <div class="input-hint">API calls you expect to make daily</div>
+                    </div>
+                    <div class="input-group">
+                        <label for="avg-input-tokens">Avg input tokens per request</label>
+                        <input type="number" id="avg-input-tokens" value="500" min="1" step="100" oninput="calculateCredits()">
+                        <div class="input-hint">System prompt + user message + context</div>
+                    </div>
+                    <div class="input-group">
+                        <label for="avg-output-tokens">Avg output tokens per request</label>
+                        <input type="number" id="avg-output-tokens" value="300" min="1" step="100" oninput="calculateCredits()">
+                        <div class="input-hint">Model's response length</div>
+                    </div>
+                    <div class="input-group">
+                        <label for="model-choice">Preferred model tier</label>
+                        <select id="model-choice" onchange="calculateCredits()">
+                            <option value="budget">Budget (cheapest per provider)</option>
+                            <option value="mid" selected>Mid-tier (best balance)</option>
+                            <option value="premium">Premium (highest quality)</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="calc-results" role="region" aria-label="Credit lifespan results" aria-live="polite">
+                    <h3 style="margin-bottom: 16px; font-size: 16px;">Free Credit Lifespan</h3>
+                    <div id="credit-results-inner"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Detailed Comparison Table -->
+    <section class="credit-results">
+        <h2>Detailed Comparison</h2>
+        <p class="credit-subtitle">All free tier options ranked by how long they last at your usage level</p>
+        <table class="credit-table" id="comparison-table">
+            <thead>
+                <tr>
+                    <th>Provider</th>
+                    <th>Free Model</th>
+                    <th>Free Type</th>
+                    <th>Input $/M</th>
+                    <th>Output $/M</th>
+                    <th>Days Until Exhausted</th>
+                    <th>Requests Until Exhausted</th>
+                </tr>
+            </thead>
+            <tbody id="comparison-tbody"></tbody>
+        </table>
+    </section>
+
+    <!-- Use Case Recommendations -->
+    <section class="use-case-section">
+        <h2>Best Free Tier by Use Case</h2>
+        <p class="use-case-subtitle">Not sure which provider to start with? Match your project to the best free option.</p>
+        <div class="use-case-grid">
+            <div class="use-case-card">
+                <h3>Chatbot / Conversational AI</h3>
+                <p>Need low latency and high daily volume. Google's free tier handles 21K+ requests/day with no cost.</p>
+                <div class="pick">Pick: Google Gemini (unlimited)</div>
+            </div>
+            <div class="use-case-card">
+                <h3>RAG / Document Q&A</h3>
+                <p>Long context windows matter. Gemini 2.5 Pro offers 1M context free. Cohere excels at retrieval.</p>
+                <div class="pick">Pick: Google Gemini or Cohere</div>
+            </div>
+            <div class="use-case-card">
+                <h3>Code Generation</h3>
+                <p>Quality matters most. Test Claude Sonnet 4 and GPT-4o with $5 credits, then pick the better fit.</p>
+                <div class="pick">Pick: Anthropic + OpenAI (test both)</div>
+            </div>
+            <div class="use-case-card">
+                <h3>Content Generation</h3>
+                <p>High volume, moderate quality. Google's unlimited free tier is the only viable long-term option.</p>
+                <div class="pick">Pick: Google Gemini (unlimited)</div>
+            </div>
+            <div class="use-case-card">
+                <h3>Data Classification</h3>
+                <p>Short inputs, short outputs, high volume. Budget models on Google's free tier work perfectly.</p>
+                <div class="pick">Pick: Google Gemini Flash (free)</div>
+            </div>
+            <div class="use-case-card">
+                <h3>Learning / Education</h3>
+                <p>Experimenting with different models. Use all $5 credits to compare quality, then settle on Google.</p>
+                <div class="pick">Pick: All providers (use all credits)</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Insights -->
+    <section class="insights">
+        <div class="insight-card">
+            <h3>Google is the only viable long-term free option</h3>
+            <p>Every other provider's $5 credit runs out within days of real usage. If you're building something you want to run for free for more than a week, Google Gemini is your only choice. The 15 RPM limit is enough for most side projects.</p>
+        </div>
+        <div class="insight-card">
+            <h3>Use $5 credits for quality testing, not production</h3>
+            <p>The smart strategy: use OpenAI, Anthropic, and Mistral credits to test which model produces the best output for your use case. Then commit to one paid provider (or use Google free tier) for production.</p>
+        </div>
+        <div class="insight-card">
+            <h3>Budget models stretch credits 10-50x further</h3>
+            <p>Using GPT-4o mini instead of GPT-4o makes your $5 credit last 10x longer. Using Claude Haiku instead of Opus stretches it 50x. Always start with budget models during evaluation.</p>
+        </div>
+        <div class="insight-card">
+            <h3>Stack free tiers for maximum runway</h3>
+            <p>Sign up for all 6 providers: you get $25 in total credits (5 providers x $5) plus unlimited Google Gemini. That's enough to prototype for months without spending a dollar.</p>
+        </div>
+    </section>
+
+    <!-- Pro upsell -->
+    <section class="pro-upsell">
+        <div class="pro-card">
+            <h3>Ready to go beyond free tiers?</h3>
+            <p>APIpulse Pro gives you cost optimization reports, multi-model strategies, and alerts when cheaper alternatives emerge.</p>
+            <a href="pricing.html" class="btn-primary" onclick="if(window.trackEvent)window.trackEvent('pro_button_clicked',{source:'free_tier_tool'})">Get Pro — $29 one-time</a>
+        </div>
+    </section>
+
+    <!-- Share -->
+    <section class="pro-upsell">
+        <div class="share-section">
+            <p>Help other developers find free AI APIs</p>
+            <a href="https://twitter.com/intent/tweet?text=Compare%20free%20AI%20API%20tiers%20%E2%80%94%20Google%20Gemini%20is%20the%20only%20viable%20long-term%20option.%20See%20the%20full%20comparison:&url=https%3A%2F%2Fgetapipulse.com%2Ffree-tier-comparison.html" target="_blank" rel="noopener" class="share-btn" onclick="if(window.trackEvent)window.trackEvent('share_clicked',{platform:'twitter',page:'free-tier-comparison'})">Share on X</a>
+            <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fgetapipulse.com%2Ffree-tier-comparison.html" target="_blank" rel="noopener" class="share-btn" onclick="if(window.trackEvent)window.trackEvent('share_clicked',{platform:'linkedin',page:'free-tier-comparison'})">Share on LinkedIn</a>
+        </div>
+    </section>
+
+    <!-- Related -->
+    <section class="related">
+        <h2>Related Tools & Guides</h2>
+        <a href="budget-planner.html">AI API Budget Planner</a>
+        <a href="budget-llm-showdown.html">Budget LLM Showdown</a>
+        <a href="calculator.html">API Cost Calculator</a>
+        <a href="blog-free-tiers.html">Blog: AI API Free Tiers Compared</a>
+        <a href="blog-cheapest-llm.html">Blog: Cheapest LLM APIs in 2026</a>
+        <a href="blog-best-budget-llm-apis-2026.html">Blog: Best Budget LLM APIs</a>
+        <a href="tools.html">All Tools</a>
+    </section>
+
+    </main>
+
+    <footer>
+        <div class="footer-inner">
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="calculator.html">Calculator</a>
+                <a href="compare.html">Compare</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="blog.html">Blog</a>
+                <a href="about.html">About</a>
+            </div>
+            <p style="font-size:13px;color:var(--text-muted);">APIpulse — AI API pricing data for developers. 33 models, 10 providers.</p>
+        </div>
+    </footer>
+
+    <script>
+    // Free tier data
+    const FREE_TIERS = [
+        {
+            provider: 'Google Gemini', slug: 'google', badge: 'badge-google',
+            type: 'rate-limited', credit: null, rpm: 15, tpm: 1000000,
+            models: [
+                { name: 'Gemini 2.0 Flash', tier: 'budget', input: 0.10, output: 0.40 },
+                { name: 'Gemini 2.5 Pro', tier: 'mid', input: 1.25, output: 10.00 }
+            ]
+        },
+        {
+            provider: 'OpenAI', slug: 'openai', badge: 'badge-openai',
+            type: 'credit', credit: 5,
+            models: [
+                { name: 'GPT-4o mini', tier: 'budget', input: 0.15, output: 0.60 },
+                { name: 'GPT-4o', tier: 'mid', input: 2.50, output: 10.00 },
+                { name: 'GPT-5', tier: 'premium', input: 1.25, output: 10.00 }
+            ]
+        },
+        {
+            provider: 'Anthropic', slug: 'anthropic', badge: 'badge-anthropic',
+            type: 'credit', credit: 5,
+            models: [
+                { name: 'Claude Haiku 4.5', tier: 'budget', input: 1.00, output: 5.00 },
+                { name: 'Claude Sonnet 4', tier: 'mid', input: 3.00, output: 15.00 },
+                { name: 'Claude Opus 4.7', tier: 'premium', input: 5.00, output: 25.00 }
+            ]
+        },
+        {
+            provider: 'Mistral', slug: 'mistral', badge: 'badge-mistral',
+            type: 'credit', credit: 5,
+            models: [
+                { name: 'Mistral Small 4', tier: 'budget', input: 0.15, output: 0.60 },
+                { name: 'Mistral Large 3', tier: 'mid', input: 0.50, output: 1.50 }
+            ]
+        },
+        {
+            provider: 'Cohere', slug: 'cohere', badge: 'badge-cohere',
+            type: 'credit', credit: 5,
+            models: [
+                { name: 'Command R', tier: 'budget', input: 0.50, output: 1.50 },
+                { name: 'Command R+', tier: 'mid', input: 2.50, output: 10.00 }
+            ]
+        },
+        {
+            provider: 'Together.ai', slug: 'together', badge: 'badge-together',
+            type: 'credit', credit: 5,
+            models: [
+                { name: 'Llama 3.1 8B', tier: 'budget', input: 0.10, output: 0.10 },
+                { name: 'Llama 3.1 70B', tier: 'mid', input: 0.88, output: 0.88 }
+            ]
+        }
+    ];
+
+    const PRESETS = {
+        hobby: { reqPerDay: 10, inputTokens: 300, outputTokens: 200, tier: 'budget' },
+        prototype: { reqPerDay: 50, inputTokens: 500, outputTokens: 300, tier: 'mid' },
+        sideproject: { reqPerDay: 200, inputTokens: 800, outputTokens: 400, tier: 'mid' },
+        production: { reqPerDay: 1000, inputTokens: 600, outputTokens: 300, tier: 'budget' }
+    };
+
+    function applyPreset(name) {
+        const p = PRESETS[name];
+        document.getElementById('req-per-day').value = p.reqPerDay;
+        document.getElementById('avg-input-tokens').value = p.inputTokens;
+        document.getElementById('avg-output-tokens').value = p.outputTokens;
+        document.getElementById('model-choice').value = p.tier;
+        document.querySelectorAll('.presets .preset-btn').forEach(b => b.classList.remove('active-preset'));
+        event.target.classList.add('active-preset');
+        calculateCredits();
+        if (window.trackEvent) window.trackEvent('free_tier_preset_applied', { preset: name });
+    }
+
+    function getModelForTier(provider, tier) {
+        const tierOrder = { budget: 0, mid: 1, premium: 2 };
+        const targetTier = tierOrder[tier];
+        // Find the model closest to (but not exceeding) the requested tier
+        let best = provider.models[0];
+        for (const m of provider.models) {
+            if (tierOrder[m.tier] <= targetTier && tierOrder[m.tier] >= tierOrder[best.tier]) {
+                best = m;
+            }
+        }
+        return best;
+    }
+
+    function calculateCredits() {
+        const reqPerDay = parseInt(document.getElementById('req-per-day').value) || 50;
+        const inputTokens = parseInt(document.getElementById('avg-input-tokens').value) || 500;
+        const outputTokens = parseInt(document.getElementById('avg-output-tokens').value) || 300;
+        const tier = document.getElementById('model-choice').value;
+
+        const results = [];
+        const tableRows = [];
+
+        FREE_TIERS.forEach(provider => {
+            const model = getModelForTier(provider, tier);
+            // Cost per request in dollars
+            const costPerRequest = (model.input * inputTokens / 1000000) + (model.output * outputTokens / 1000000);
+            const costPerDay = costPerRequest * reqPerDay;
+
+            if (provider.type === 'rate-limited') {
+                // Google: unlimited but rate-limited
+                const maxReqPerDay = provider.rpm * 60 * 24;
+                const canSustain = reqPerDay <= maxReqPerDay;
+                results.push({
+                    provider: provider.provider,
+                    slug: provider.slug,
+                    badge: provider.badge,
+                    model: model.name,
+                    days: canSustain ? Infinity : Math.floor(maxReqPerDay / reqPerDay),
+                    totalRequests: canSustain ? Infinity : maxReqPerDay,
+                    costPerRequest: costPerRequest,
+                    note: canSustain ? 'Unlimited (within rate limits)' : `Rate limit: ${provider.rpm} RPM`
+                });
+                tableRows.push({
+                    provider: provider.provider, slug: provider.slug, badge: provider.badge,
+                    model: model.name, input: model.input, output: model.output,
+                    freeType: 'Rate-limited', days: canSustain ? 'Unlimited' : `${Math.floor(maxReqPerDay / reqPerDay)} days`,
+                    totalReq: canSustain ? `~${(maxReqPerDay).toLocaleString()}/day max` : maxReqPerDay.toLocaleString(),
+                    daysNum: canSustain ? 999999 : Math.floor(maxReqPerDay / reqPerDay)
+                });
+            } else {
+                // Credit-based
+                const totalRequests = Math.floor(provider.credit / costPerRequest);
+                const days = Math.floor(totalRequests / reqPerDay);
+                results.push({
+                    provider: provider.provider,
+                    slug: provider.slug,
+                    badge: provider.badge,
+                    model: model.name,
+                    days: days,
+                    totalRequests: totalRequests,
+                    costPerRequest: costPerRequest,
+                    note: `$${provider.credit} credit`
+                });
+                tableRows.push({
+                    provider: provider.provider, slug: provider.slug, badge: provider.badge,
+                    model: model.name, input: model.input, output: model.output,
+                    freeType: `$${provider.credit} credit`, days: `${days} days`,
+                    totalReq: totalRequests.toLocaleString(),
+                    daysNum: days
+                });
+            }
+        });
+
+        // Sort: unlimited first, then by days descending
+        results.sort((a, b) => {
+            if (a.days === Infinity && b.days !== Infinity) return -1;
+            if (b.days === Infinity && a.days !== Infinity) return 1;
+            return b.days - a.days;
+        });
+        tableRows.sort((a, b) => b.daysNum - a.daysNum);
+
+        // Render credit results
+        const inner = document.getElementById('credit-results-inner');
+        inner.innerHTML = results.map(r => {
+            const daysClass = r.days === Infinity ? 'days-unlimited' : r.days > 30 ? 'days-long' : r.days > 7 ? 'days-medium' : 'days-short';
+            const daysText = r.days === Infinity ? 'Unlimited' : r.days > 365 ? '1+ year' : `${r.days} days`;
+            return `
+                <div class="result-item">
+                    <span class="result-label"><span class="provider-badge ${r.badge}">${r.provider}</span> ${r.model}</span>
+                    <span class="result-value"><span class="days-badge ${daysClass}">${daysText}</span></span>
+                </div>
+            `;
+        }).join('');
+
+        // Render table
+        const tbody = document.getElementById('comparison-tbody');
+        tbody.innerHTML = tableRows.map(r => `
+            <tr>
+                <td><span class="provider-badge ${r.badge}">${r.provider}</span></td>
+                <td>${r.model}</td>
+                <td>${r.freeType}</td>
+                <td>$${r.input.toFixed(2)}</td>
+                <td>$${r.output.toFixed(2)}</td>
+                <td>${typeof r.days === 'string' ? r.days : r.days + ' days'}</td>
+                <td>${typeof r.totalReq === 'string' ? r.totalReq : r.totalReq.toLocaleString()}</td>
+            </tr>
+        `).join('');
+
+        if (window.trackEvent) {
+            window.trackEvent('free_tier_calculated', {
+                requests_per_day: reqPerDay,
+                input_tokens: inputTokens,
+                output_tokens: outputTokens,
+                tier: tier
+            });
+        }
+    }
+
+    // Init
+    document.addEventListener('DOMContentLoaded', calculateCredits);
+    </script>
+</body>
+</html>
