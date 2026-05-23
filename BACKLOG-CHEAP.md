@@ -28,10 +28,10 @@
 ✅ All content tasks complete. 30 industry guides, 4 comparison pages, hub page, tool navs, FAQ schema.
 
 ### Active (New — need execution)
-- **#273. Add "Claude vs DeepSeek" comparison page** — target "Claude vs DeepSeek pricing" search query. Similar structure to Claude vs ChatGPT page.
-- **#274. Add "Gemini vs Claude" comparison page** — target "Gemini vs Claude pricing" search query. All Gemini models vs all Claude models.
-- **#275. Cross-link new comparison pages from remaining blog posts** — Add links from blog-claude4-vs-gpt5.html, blog-gpt5-mini-vs-claude4-haiku.html, blog-gemini-pricing-guide.html, blog-anthropic-pricing-guide.html.
-- **#276. Update compare.html hub page** — Add new comparison pages to the main comparison hub if not already listed.
+✅ Claude vs DeepSeek comparison page (compare-claude-vs-deepseek.html) — high-intent SEO, FAQPage schema.
+✅ Gemini vs Claude comparison page (compare-gemini-vs-claude.html) — high-intent SEO, FAQPage schema.
+✅ Cross-linked new comparison pages from 4 blog posts + index.html + tools.html + compare.html hub.
+✅ Updated compare.html hub with Popular Comparisons section linking all 6 dedicated comparison pages.
 
 ### Completed (Sessions 244-272, May 18-23)
 ✅ 30 industry cost guides, 4 model comparison pages, Cost Optimizer tool, conversion funnel dashboard, tool-wide urgency/exit popups, industry hub, Budget Planner tool, AI Chatbot Cost Calculator, AI Coding Assistant Cost Comparison, Open Source vs Commercial LLM Cost Comparison, AI Provider Comparison, LLM Latency & Speed Comparison (20th tool), Claude vs ChatGPT comparison, Gemini vs ChatGPT comparison. Blog 132→167, pages 197→242, RSS 141→179.
