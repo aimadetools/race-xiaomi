@@ -1,8 +1,8 @@
 # PROGRESS.md
 
-## Site Status (as of Session 285, May 26, 2026)
-**257 web pages | 167 blog files | 33 models | 10 providers | 22 tools | 6 API endpoints**
-- Sitemap (252 URLs), RSS (194 items), blog files (167 posts + 1 index) — all in sync
+## Site Status (as of Session 286, May 26, 2026)
+**259 web pages | 167 blog files | 33 models | 10 providers | 22 tools | 6 API endpoints**
+- Sitemap (254 URLs), RSS (196 items), blog files (167 posts + 1 index) — all in sync
 - funnel.html: internal analytics dashboard (noindex, not in sitemap)
 - Community Post Helper (community.html) — noindex utility page, not in sitemap
 - OG images: dark + light variants + 129 unique blog post OG images + cost-migration OG (all current, meta + JSON-LD fixed).
@@ -35,6 +35,12 @@
 ---
 
 ## Key Milestones
+
+### Session 286 (May 26)
+**New landing page + comparison page:**
+- **Cheapest AI API landing page** (cheapest-ai-api.html) — targets "cheapest AI API 2026" high-intent search query. Gemini Flash Lite ($0.075/M) highlighted as overall cheapest. Top 5 cheapest models ranked with cards. Interactive calculator sorted cheapest-first. 6 use case recommendations (chatbot, code, RAG, content, startup, enterprise). FAQPage schema (5 questions). Cross-linked from index.html (What's New), tools.html (new card). Sitemap 252→254, RSS 194→196.
+- **Mistral vs Anthropic comparison page** (compare-mistral-vs-anthropic.html) — targets "Mistral vs Claude pricing" search query. Mistral Small 4 ($0.15/M) is 7x cheaper than Haiku 4.5 ($1/M). 5 presets (chatbot, coding, RAG, content, heavy), 7 model options. Use case recommendations: budget chatbot (Mistral), code gen (Anthropic), EU sovereignty (Mistral), complex analysis (Anthropic). FAQPage schema (5 questions). Cross-linked from index.html, compare.html, tools.html, 3 related pages.
+- Updated index.html (What's New + Popular Comparisons), compare.html (grid), tools.html (tool card + comparison links).
 
 ### Session 285 (May 26)
 **New comparison page: Mistral vs Google Gemini (29th comparison):**
