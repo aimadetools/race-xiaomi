@@ -1,8 +1,8 @@
 # PROGRESS.md
 
-## Site Status (as of Session 283, May 26, 2026)
-**255 web pages | 167 blog files | 33 models | 10 providers | 22 tools | 6 API endpoints**
-- Sitemap (250 URLs), RSS (192 items), blog files (167 posts + 1 index) — all in sync
+## Site Status (as of Session 284, May 26, 2026)
+**256 web pages | 167 blog files | 33 models | 10 providers | 22 tools | 6 API endpoints**
+- Sitemap (251 URLs), RSS (193 items), blog files (167 posts + 1 index) — all in sync
 - funnel.html: internal analytics dashboard (noindex, not in sitemap)
 - Community Post Helper (community.html) — noindex utility page, not in sitemap
 - OG images: dark + light variants + 129 unique blog post OG images + cost-migration OG (all current, meta + JSON-LD fixed).
@@ -35,6 +35,17 @@
 ---
 
 ## Key Milestones
+
+### Session 284 (May 26)
+**New comparison page: Anthropic vs Google (28th comparison):**
+- Built compare-anthropic-vs-google.html — targets "Claude vs Gemini pricing" and "Anthropic vs Google API" search queries.
+- All Anthropic models (Opus 4.7, Claude 4 Opus, Sonnet 4.6, Sonnet 4, Haiku 4.5) vs all Google models (Gemini 3.1 Pro, 2.5 Pro, 2.0 Flash, Flash Lite).
+- Summary cards: cheapest model (Gemini Flash Lite at $0.075/M, 13x cheaper than Haiku 4.5 at $1/M), best context per dollar (Flash Lite: 1M at $0.075 vs Sonnet 4.6: 1M at $3), premium quality (Anthropic — Opus 4.7 and Sonnet 4.6 lead on reasoning).
+- Interactive calculator with 5 presets (chatbot, coding, RAG, content, heavy) and 9 model options.
+- Use case recommendations: chatbot (Google), code gen (Anthropic), long docs (Google), startup MVP (Google), enterprise (Anthropic), multi-model pipeline (Google).
+- FAQPage schema (5 questions).
+- Cross-linked from: index.html (Popular Comparisons + What's New), tools.html (Model Comparisons card), compare.html (Popular Comparisons grid), 5 blog posts (claude-vs-gemini, openai-vs-anthropic-vs-google, claude4-sonnet-vs-gemini3-pro, gemini3-pro-vs-claude-opus47, sonnet46-vs-gemini31pro).
+- Sitemap 250→251 URLs, RSS 192→193 items.
 
 ### Session 283 (May 26)
 **New comparison page: OpenAI vs DeepSeek (27th comparison):**

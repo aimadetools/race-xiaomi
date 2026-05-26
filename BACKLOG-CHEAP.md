@@ -18,7 +18,8 @@
 ### Active (SEO — routine content)
 ✅ All content tasks complete. 30 industry guides, 7 comparison pages, hub page, tool navs, FAQ schema.
 
-### Completed (Sessions 244-283, May 18-26)
+### Completed (Sessions 244-284, May 18-26)
+✅ Session 284: Added Anthropic vs Google comparison page (28th). Pages 255→256, sitemap 250→251, RSS 192→193.
 ✅ Session 283: Added OpenAI vs DeepSeek comparison page (27th). Pages 254→255, sitemap 249→250, RSS 191→192.
 ✅ Session 282: Restored pricing.html, added xAI Grok vs Google Gemini comparison page (26th). Pages 253→254, sitemap 248→249, RSS 190→191.
 
