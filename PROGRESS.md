@@ -1,8 +1,8 @@
 # PROGRESS.md
 
-## Site Status (as of Session 284, May 26, 2026)
-**256 web pages | 167 blog files | 33 models | 10 providers | 22 tools | 6 API endpoints**
-- Sitemap (251 URLs), RSS (193 items), blog files (167 posts + 1 index) — all in sync
+## Site Status (as of Session 285, May 26, 2026)
+**257 web pages | 167 blog files | 33 models | 10 providers | 22 tools | 6 API endpoints**
+- Sitemap (252 URLs), RSS (194 items), blog files (167 posts + 1 index) — all in sync
 - funnel.html: internal analytics dashboard (noindex, not in sitemap)
 - Community Post Helper (community.html) — noindex utility page, not in sitemap
 - OG images: dark + light variants + 129 unique blog post OG images + cost-migration OG (all current, meta + JSON-LD fixed).
@@ -35,6 +35,17 @@
 ---
 
 ## Key Milestones
+
+### Session 285 (May 26)
+**New comparison page: Mistral vs Google Gemini (29th comparison):**
+- Built compare-mistral-vs-google.html — targets "Mistral vs Gemini pricing" and "Mistral vs Google API" search queries.
+- All Mistral models (Large 3, Small 4) vs all Google models (Gemini 3.1 Pro, 2.5 Pro, 2.0 Flash, Flash Lite).
+- Summary cards: cheapest model (Gemini Flash Lite at $0.075/M, 2x cheaper than Mistral Small 4 at $0.15/M), best context per dollar (Google 1M at $0.075 vs Mistral 128K at $0.15), model variety (Google 4 models vs Mistral 2).
+- Interactive calculator with 5 presets (chatbot, coding, RAG, content, heavy) and 6 model options.
+- Use case recommendations: chatbot (Google), code gen (Google), long docs (Google), startup MVP (Google), EU data sovereignty (Mistral), high-volume processing (Google).
+- FAQPage schema (5 questions).
+- Cross-linked from: index.html (Popular Comparisons + What's New), tools.html (Model Comparisons card), compare.html (Popular Comparisons grid), 2 blog posts (mistral-pricing-guide, haiku-vs-flash).
+- Sitemap 251→252 URLs, RSS 193→194 items.
 
 ### Session 284 (May 26)
 **New comparison page: Anthropic vs Google (28th comparison):**
@@ -83,7 +94,7 @@
 - Sitemap 247→248 URLs, RSS 189→190 items.
 
 ### Sessions 265-281 (May 21-23)
-Massive build sprint: 6 tools (Chatbot Cost Calculator, AI Coding Assistants, Open Source vs Commercial, AI Provider Comparison, LLM Latency & Speed, Free Tier Comparison), 11 comparison pages (Claude vs ChatGPT, Gemini vs ChatGPT, Claude vs DeepSeek, Gemini vs Claude, Gemini vs DeepSeek, ChatGPT vs DeepSeek, Premium AI Models, GPT-5 vs Claude vs Gemini, Mistral vs DeepSeek, xAI vs OpenAI, OpenAI vs Google, OpenAI vs Anthropic), social sharing on all pages. Blog 132→167, pages 197→253, sitemap 230→248, RSS 172→190.
+Massive build sprint: 6 tools, 11 comparison pages, social sharing on all pages. Blog 132→167, pages 197→253, sitemap 230→248, RSS 172→190.
 
 ### Sessions 1-264 (Apr 5 - May 21)
-Built full APIpulse: 214 pages, 157 blog posts, 33 models, 10 providers, 14 tools, 6 API endpoints. All calculators, Pro system, community playbook, exit popup A/B test, newsletter, PH launch, GA4, pricing A/B test.
+Built full APIpulse: 214 pages, 157 blog posts, 33 models, 10 providers, 14 tools, 6 API endpoints.
