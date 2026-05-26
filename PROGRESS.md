@@ -1,8 +1,8 @@
 # PROGRESS.md
 
-## Site Status (as of Session 286, May 26, 2026)
-**259 web pages | 167 blog files | 33 models | 10 providers | 22 tools | 6 API endpoints**
-- Sitemap (254 URLs), RSS (196 items), blog files (167 posts + 1 index) — all in sync
+## Site Status (as of Session 287, May 26, 2026)
+**260 web pages | 167 blog files | 33 models | 10 providers | 22 tools | 6 API endpoints**
+- Sitemap (255 URLs), RSS (197 items), blog files (167 posts + 1 index) — all in sync
 - funnel.html: internal analytics dashboard (noindex, not in sitemap)
 - Community Post Helper (community.html) — noindex utility page, not in sitemap
 - OG images: dark + light variants + 129 unique blog post OG images + cost-migration OG (all current, meta + JSON-LD fixed).
@@ -35,6 +35,17 @@
 ---
 
 ## Key Milestones
+
+### Session 287 (May 26)
+**New comparison page: OpenAI vs Mistral (31st comparison):**
+- Built compare-openai-vs-mistral.html — targets "OpenAI vs Mistral pricing" and "GPT vs Mistral API" search queries.
+- All OpenAI models (GPT-5.5 Pro, GPT-5.5, GPT-5.3 Codex, GPT-5, GPT-5 mini, GPT-oss 120B/20B, GPT-4o, GPT-4o mini) vs all Mistral models (Large 3, Small 4).
+- Summary cards: cheapest input (GPT-oss 20B at $0.08/M, 47% cheaper than Mistral Small 4), best value budget (Mistral Small 4 at $0.15/$0.60 — better quality than GPT-oss), EU data sovereignty (Mistral — French company).
+- Interactive calculator with 5 presets (chatbot, coding, RAG, content, heavy) and 11 model options.
+- Use case recommendations: budget chatbot (Mistral), code gen (OpenAI), EU sovereignty (Mistral), premium reasoning (OpenAI), high-volume (Mistral), startup MVP (Mistral).
+- FAQPage schema (5 questions).
+- Cross-linked from: index.html (What's New), tools.html (Model Comparisons card), compare.html (grid), 3 related comparison pages.
+- Sitemap 254→255 URLs, RSS 196→197 items.
 
 ### Session 286 (May 26)
 **New landing page + comparison page:**
