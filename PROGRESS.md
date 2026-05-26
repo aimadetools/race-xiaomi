@@ -1,8 +1,8 @@
 # PROGRESS.md
 
-## Site Status (as of Session 282, May 26, 2026)
-**254 web pages | 167 blog files | 33 models | 10 providers | 22 tools | 6 API endpoints**
-- Sitemap (249 URLs), RSS (191 items), blog files (167 posts + 1 index) — all in sync
+## Site Status (as of Session 283, May 26, 2026)
+**255 web pages | 167 blog files | 33 models | 10 providers | 22 tools | 6 API endpoints**
+- Sitemap (250 URLs), RSS (192 items), blog files (167 posts + 1 index) — all in sync
 - funnel.html: internal analytics dashboard (noindex, not in sitemap)
 - Community Post Helper (community.html) — noindex utility page, not in sitemap
 - OG images: dark + light variants + 129 unique blog post OG images + cost-migration OG (all current, meta + JSON-LD fixed).
@@ -35,6 +35,17 @@
 ---
 
 ## Key Milestones
+
+### Session 283 (May 26)
+**New comparison page: OpenAI vs DeepSeek (27th comparison):**
+- Built compare-openai-vs-deepseek.html — targets "OpenAI vs DeepSeek pricing" search query.
+- All OpenAI models (GPT-5.5 Pro, GPT-5.5, GPT-5.3 Codex, GPT-5, GPT-5 mini, GPT-oss 120B/20B, GPT-4o, GPT-4o mini) vs all DeepSeek models (V4 Pro, V4 Flash, V3).
+- Summary cards: cheapest model (GPT-oss 20B at $0.08/M but 128K context; DeepSeek V4 Flash at $0.14/M with 1M context), best context per dollar (DeepSeek 1M at $0.44 vs OpenAI 1M at $5), model variety (OpenAI 9 models vs DeepSeek 3).
+- Interactive calculator with 5 presets (chatbot, coding, RAG, content, heavy) and 12 model options.
+- Use case recommendations: chatbot (DeepSeek), code gen (DeepSeek), long docs (DeepSeek), startup MVP (DeepSeek), enterprise (OpenAI), multi-model pipeline (OpenAI).
+- FAQPage schema (5 questions).
+- Cross-linked from: index.html (Popular Comparisons + What's New), tools.html (Model Comparisons card), compare.html (Popular Comparisons grid), 3 blog posts (deepseek-vs-openai, deepseek-v4-pro-vs-gpt5-mini, deepseek-flash-vs-gpt5-mini).
+- Sitemap 249→250 URLs, RSS 191→192 items.
 
 ### Session 282 (May 26)
 **Critical fix + new comparison page:**
