@@ -1,12 +1,12 @@
 # PROGRESS.md
 
-## Site Status (as of Session 290, May 26, 2026)
-**262 web pages | 167 blog files | 33 models | 10 providers | 22 tools | 6 API endpoints**
-- Sitemap (257 URLs), RSS (199 items), blog files (167 posts + 1 index) — all in sync
+## Site Status (as of Session 291, May 26, 2026)
+**263 web pages | 167 blog files | 33 models | 10 providers | 22 tools | 6 API endpoints**
+- Sitemap (258 URLs), RSS (200 items), blog files (167 posts + 1 index) — all in sync
 - Pricing data verified May 14 — 33 models, 10 providers
 - **Analytics: GA4 (G-0CEP7S9Y3J)** — fully operational, custom events via gtag()
 - **Pro system:** localStorage-based unlock after Stripe payment. Access code fallback on pro.html.
-- **13 comparison pages** (33 total) — all providers covered, interactive calculators, FAQPage schema
+- **14 comparison pages** (34 total) — all providers covered, interactive calculators, FAQPage schema
 - **8 interactive tools** — calculators, optimizer, planner, pipeline, rate limit, budget showdown, chatbot cost, model switch
 - **Social proof:** PH launch badge, Reddit testimonial, newsletter, exit popup A/B test
 - **Community playbook:** 7 subreddit drafts + 2 newsletter pitches ready in COMMUNITY-ENGAGEMENT.md
@@ -20,14 +20,18 @@
 
 ## Key Milestones
 
+### Session 291 (May 26)
+**GPT-5.5 vs Gemini 3.1 Pro comparison (34th):**
+- compare-gpt55-vs-gemini31pro.html. Gemini 3.1 Pro ($2/$12) is 2.5x cheaper than GPT-5.5 ($5/$30). 4 OpenAI models vs 4 Google models. 5 presets, FAQPage schema. Sitemap 257→258, RSS 199→200.
+
 ### Session 290 (May 26)
 **Anthropic vs DeepSeek comparison (33rd):**
 - compare-anthropic-vs-deepseek.html. DeepSeek V4 Pro ($0.44/M) is 11x cheaper than Claude Opus 4.7 ($5/M). Both offer 1M context. 5 Anthropic models vs 2 DeepSeek. 5 presets, FAQPage schema. Sitemap 256→257, RSS 198→199.
 
-### Sessions 286-289 (May 26)
-4 comparison pages (OpenAI vs Mistral, xAI vs Mistral, cheapest AI API + Mistral vs Anthropic) + PROGRESS.md cleanup and backlog collapse. Completes provider matrix — all 10 providers. Pages 257→262, sitemap 252→257, RSS 194→199.
+### Sessions 286-289 (May 24-26)
+4 comparison pages (OpenAI vs Mistral, xAI vs Mistral, cheapest AI API + Mistral vs Anthropic) + PROGRESS.md cleanup and backlog collapse. Completes provider matrix — all 10 providers. Pages 257→261, sitemap 252→256, RSS 194→198.
 
-### Sessions 281-285 (May 23-26)
+### Sessions 281-285 (May 23-24)
 5 comparison pages: xAI vs Google, OpenAI vs Anthropic, OpenAI vs DeepSeek, Anthropic vs Google, Mistral vs Google. Restored pricing.html. Pages 253→257, sitemap 248→252, RSS 190→194.
 
 ### Sessions 1-280 (Apr 5 - May 23)

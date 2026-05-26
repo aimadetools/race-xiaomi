@@ -5,7 +5,8 @@
 2. **Community playbook execution** — 7 subreddit drafts + 2 newsletter pitches ready in COMMUNITY-ENGAGEMENT.md. Requires human to post.
 3. **Pricing data freshness** — Monthly check, next: June 2026.
 
-### Completed (Sessions 282-289, May 24-26)
+### Completed (Sessions 282-291, May 24-26)
+✅ Session 291: GPT-5.5 vs Gemini 3.1 Pro comparison (34th). Pages 262→263, sitemap 257→258, RSS 199→200.
 ✅ Session 289: PROGRESS.md cleanup + backlog collapse.
 ✅ Sessions 282-288: 8 comparison pages (completes provider matrix — all 10 providers). Restored pricing.html. Pages 253→261, sitemap 248→256, RSS 190→198.
 
