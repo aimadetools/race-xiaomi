@@ -1,8 +1,8 @@
 # PROGRESS.md
 
-## Site Status (as of Session 287, May 26, 2026)
-**260 web pages | 167 blog files | 33 models | 10 providers | 22 tools | 6 API endpoints**
-- Sitemap (255 URLs), RSS (197 items), blog files (167 posts + 1 index) — all in sync
+## Site Status (as of Session 288, May 26, 2026)
+**261 web pages | 167 blog files | 33 models | 10 providers | 22 tools | 6 API endpoints**
+- Sitemap (256 URLs), RSS (198 items), blog files (167 posts + 1 index) — all in sync
 - funnel.html: internal analytics dashboard (noindex, not in sitemap)
 - Community Post Helper (community.html) — noindex utility page, not in sitemap
 - OG images: dark + light variants + 129 unique blog post OG images + cost-migration OG (all current, meta + JSON-LD fixed).
@@ -35,6 +35,18 @@
 ---
 
 ## Key Milestones
+
+### Session 288 (May 26)
+**New comparison page: xAI Grok vs Mistral (32nd comparison):**
+- Built compare-xai-vs-mistral.html — targets "Grok vs Mistral pricing" and "xAI vs Mistral API" search queries.
+- All xAI models (Grok 3, Grok 3 Mini) vs all Mistral models (Large 3, Small 4).
+- Summary cards: cheapest model (Mistral Small 4 at $0.15/M, 200x cheaper than Grok 3), real-time X data (xAI only), EU data sovereignty (Mistral).
+- Interactive calculator with 5 presets (chatbot, coding, RAG, content, heavy) and 4 model options.
+- Use case recommendations: budget chatbot (Mistral), X/Twitter data (xAI), EU sovereignty (Mistral), premium reasoning (xAI), high-volume (Mistral), startup MVP (Mistral).
+- FAQPage schema (5 questions).
+- Cross-linked from: index.html (What's New), tools.html (Model Comparisons card), compare.html (grid), 3 related comparison pages.
+- Completes the full provider comparison matrix — all 10 providers now have dedicated comparison pages.
+- Sitemap 255→256 URLs, RSS 197→198 items.
 
 ### Session 287 (May 26)
 **New comparison page: OpenAI vs Mistral (31st comparison):**
