@@ -1,8 +1,8 @@
 # PROGRESS.md
 
-## Site Status (as of Session 281, May 23, 2026)
-**253 web pages | 167 blog files | 33 models | 10 providers | 22 tools | 6 API endpoints**
-- Sitemap (248 URLs), RSS (190 items), blog files (167 posts + 1 index) — all in sync
+## Site Status (as of Session 282, May 26, 2026)
+**254 web pages | 167 blog files | 33 models | 10 providers | 22 tools | 6 API endpoints**
+- Sitemap (249 URLs), RSS (191 items), blog files (167 posts + 1 index) — all in sync
 - funnel.html: internal analytics dashboard (noindex, not in sitemap)
 - Community Post Helper (community.html) — noindex utility page, not in sitemap
 - OG images: dark + light variants + 129 unique blog post OG images + cost-migration OG (all current, meta + JSON-LD fixed).
@@ -36,6 +36,19 @@
 
 ## Key Milestones
 
+### Session 282 (May 26)
+**Critical fix + new comparison page:**
+- **Restored pricing.html** — last commit (9d8c0bc) accidentally deleted the entire 718-line pricing page. Recovered from git history and committed fix.
+- **New comparison page: xAI Grok vs Google Gemini (26th comparison):**
+  - Built compare-xai-vs-google.html — targets "Grok vs Gemini pricing" search query.
+  - All xAI models (Grok 3, Grok 3 Mini) vs all Google models (Gemini 2.0 Flash Lite, Flash, 2.5 Pro, 3.1 Pro).
+  - Summary cards: cheapest model (Gemini Flash Lite at $0.075/M, 400x cheaper than Grok 3), best context (Google 1M vs Grok 128K), model variety (Google 4 models vs xAI 2).
+  - Interactive calculator with 5 presets (chatbot, coding, RAG, content, heavy) and 6 model options.
+  - Use case recommendations: chatbot (Google), code gen (Google), long docs (Google), startup MVP (Google), X/Twitter integration (xAI), multi-model pipeline (Google).
+  - FAQPage schema (5 questions).
+  - Cross-linked from: index.html, tools.html, compare.html, 2 blog posts.
+  - Sitemap 248→249 URLs, RSS 190→191 items.
+
 ### Session 281 (May 23)
 **New comparison page: OpenAI vs Anthropic (25th comparison):**
 - Built compare-openai-vs-anthropic.html — targets "OpenAI vs Anthropic pricing" search query.
@@ -47,40 +60,10 @@
 - Cross-linked from: index.html (Popular Comparisons + What's New), tools.html (Model Comparisons card), compare.html (Popular Comparisons grid), 3 blog posts (openai-vs-anthropic-vs-google, claude4-vs-gpt5, gpt5-vs-claude4-opus).
 - Sitemap 247→248 URLs, RSS 189→190 items.
 
-### Session 280 (May 23)
-**New comparison page: xAI Grok vs OpenAI GPT (24th comparison):**
-- Built compare-xai-vs-openai.html — targets "Grok vs GPT pricing" search query.
-- All xAI models (Grok 3, Grok 3 Mini) vs all OpenAI models (GPT-5.5, GPT-5.5 Pro, GPT-5, GPT-5 mini, GPT-5.3 Codex, GPT-4o, GPT-4o mini, GPT-oss 120B/20B).
-- Summary cards: cheapest model (GPT-oss 20B at $0.08/M, xAI has no budget tier), best context (OpenAI 1M vs Grok 3 128K), best value mid-tier (GPT-5 at $1.25/M vs Grok 3 Mini at $3/M).
-- Interactive calculator with 5 presets (chatbot, coding, RAG, content, heavy) and 11 model options.
-- Use case recommendations: chatbot (OpenAI), code gen (OpenAI), long docs (OpenAI), startup MVP (OpenAI), enterprise (OpenAI), X/Twitter integration (xAI).
-- FAQPage schema (5 questions: cheaper provider, cheapest xAI model, context windows, Grok 3 vs GPT-5.5, free tier).
-- Cross-linked from: index.html (Popular Comparisons + What's New), tools.html (Model Comparisons card), compare.html (Popular Comparisons grid), 2 blog posts (xai-grok-pricing, xai-grok-vs-gpt4o).
-- Sitemap 246→247 URLs, RSS 188→189 items.
+### Sessions 278-280 (May 23)
+Built 3 comparison pages: xAI Grok vs OpenAI GPT (24th), OpenAI vs Google (23rd), Mistral vs DeepSeek (22nd). Each with interactive calculator, 5 presets, FAQPage schema, cross-links. Sitemap 244→247, RSS 186→189.
 
-### Session 279 (May 23)
-**New comparison page: OpenAI vs Google (major head-to-head):**
-- Built compare-openai-vs-google.html — targets "OpenAI vs Google pricing" search query.
-- All OpenAI models (GPT-5.5, GPT-5.5 Pro, GPT-5.3 Codex, GPT-5, GPT-5 mini, GPT-oss 120B, GPT-oss 20B, GPT-4o, GPT-4o mini) vs all Google models (Gemini 3.1 Pro, Gemini 2.5 Pro, Gemini 2.0 Flash, Gemini 2.0 Flash Lite).
-- Summary cards: cheapest model (Gemini Flash Lite at $0.075/M), best context (Google 1M vs GPT-5 272K), best value mid-tier (tie: Gemini 2.5 Pro = GPT-5 at $1.25/M, but 4x more context).
-- Interactive calculator with 5 presets (chatbot, coding, RAG, content, heavy) and 13 model options.
-- Use case recommendations: chatbot (Google), code gen (Google), long docs (Google), startup MVP (Google), enterprise (OpenAI), multi-model pipeline (both).
-- FAQPage schema (5 questions: cheaper provider, cheapest model, context windows, GPT-5 vs Gemini 2.5 Pro, free tier).
-- Cross-linked from: index.html (Popular Comparisons), tools.html (Model Comparisons card), compare.html (Popular Comparisons grid), 3 blog posts (openai-vs-gemini, gpt5-vs-gemini-25-pro, gemini-pricing-guide).
-- Sitemap 245→246 URLs, RSS 187→188 items.
-
-### Session 278 (May 23)
-**New comparison page: Mistral vs DeepSeek (budget providers head-to-head):**
-- Built compare-mistral-vs-deepseek.html — targets "Mistral vs DeepSeek pricing" search query.
-- All Mistral models (Large 3, Small 4) vs all DeepSeek models (V4 Pro, V4 Flash).
-- Summary cards: cheapest model (DeepSeek V4 Flash at $0.14/M), best context (DeepSeek 1M vs Mistral 128K), best value mid-tier (DeepSeek V4 Pro at $0.44/M).
-- Interactive calculator with 5 presets (chatbot, coding, RAG, content, heavy).
-- Use case recommendations: chatbot (DeepSeek), code gen (DeepSeek), long docs (DeepSeek), EU data sovereignty (Mistral), high-volume (DeepSeek), startup MVP (DeepSeek).
-- FAQPage schema (5 questions: cheaper provider, cheapest model, context windows, Large 3 vs V4 Pro, production readiness).
-- Cross-linked from: index.html (Popular Comparisons + What's New), tools.html (Model Comparisons card), compare.html (Popular Comparisons grid), 2 blog posts (mistral-pricing-guide, deepseek-v4-pricing).
-- Sitemap 244→245 URLs, RSS 186→187 items.
-
-### Sessions 265-278 (May 21-23)
+### Sessions 265-277 (May 21-23)
 Built 6 tools (Chatbot Cost Calculator, AI Coding Assistants, Open Source vs Commercial, AI Provider Comparison, LLM Latency & Speed, Free Tier Comparison), 8 comparison pages (Claude vs ChatGPT, Gemini vs ChatGPT, Claude vs DeepSeek, Gemini vs Claude, Gemini vs DeepSeek, ChatGPT vs DeepSeek, Premium AI Models, GPT-5 vs Claude vs Gemini three-way, Mistral vs DeepSeek), social sharing on all pages. Blog 132→167, pages 197→251, sitemap 230→246, RSS 172→188.
 
 ### Sessions 1-264 (Apr 5 - May 21)
