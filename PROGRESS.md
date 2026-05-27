@@ -1,8 +1,8 @@
 # PROGRESS.md
 
-## Site Status (as of Session 292, May 27, 2026)
-**263 web pages | 167 blog files | 33 models | 10 providers | 22 tools | 6 API endpoints | 1 embeddable widget**
-- Sitemap (258 URLs), RSS (200 items), blog files (167 posts + 1 index) — all in sync
+## Site Status (as of Session 293, May 27, 2026)
+**264 web pages | 168 blog files | 33 models | 10 providers | 22 tools | 6 API endpoints | 1 embeddable widget**
+- Sitemap (259 URLs), RSS (201 items), blog files (168 posts + 1 index) — all in sync
 - Pricing data verified May 14 — 33 models, 10 providers
 - **Analytics: GA4 (G-0CEP7S9Y3J)** — fully operational, custom events via gtag()
 - **Pro system:** localStorage-based unlock after Stripe payment. Access code fallback on pro.html.
@@ -19,6 +19,12 @@
 ---
 
 ## Key Milestones
+
+### Session 293 (May 27)
+**Widget discoverability and distribution:**
+- Added widget embed examples to API docs Quick Start section (pricing table, badge, comparison code snippets).
+- Added "Widgets" link to main nav via shared.js (auto-injected on all 228 pages) + hardcoded on index, api-docs, embed pages.
+- Created blog post: "How to Embed Live LLM Pricing in Your Docs" (blog-embed-pricing-widget.html). Targets "embed pricing widget" keyword. Live previews of all 3 widget types. Sitemap 258→259, RSS 200→201, blog 167→168.
 
 ### Session 292 (May 27)
 **Embeddable pricing widgets for distribution:**

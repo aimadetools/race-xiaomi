@@ -148,6 +148,7 @@
                 <a href="pricing-index.html">Pricing Index</a>
                 <a href="model-matrix.html">Model Matrix</a>
                 <a href="api-docs.html" style="color:var(--accent);">API</a>
+                <a href="embed.html">Widgets</a>
                 <a href="pricing.html" class="nav-cta" onclick="if(window.trackEvent)window.trackEvent('pro_button_clicked',{source:'nav'})">Get Pro — $29</a>
                 <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
             </div>
@@ -240,6 +241,22 @@ print(f<span class="code-string">"${model['input']}/1M input, ${model['output']}
 <span class="code-key">const</span> res = <span class="code-key">await</span> fetch(<span class="code-string">'https://getapipulse.com/api/pricing?tier=budget'</span>);
 <span class="code-key">const</span> { models } = <span class="code-key">await</span> res.json();
 <span class="code-comment">// Returns: GPT-4o mini, GPT-oss, Gemini Flash, DeepSeek V4 Flash, etc.</span></code>
+            </div>
+
+            <h3>Embed a pricing widget</h3>
+            <p style="color:var(--text-secondary);font-size:14px;margin-bottom:12px;">Don't want to build your own UI? Drop a live pricing table, badge, or comparison chart into any page with one script tag. <a href="embed.html" style="color:var(--accent);">Full widget docs &rarr;</a></p>
+            <div class="code-block">
+                <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                <code><span class="code-comment">&lt;!-- Embed a pricing table for any providers --&gt;</span>
+&lt;div class="apipulse-widget" data-type="table" data-providers="openai,anthropic,google"&gt;&lt;/div&gt;
+&lt;script src="https://getapipulse.com/widget.js" async&gt;&lt;/script&gt;
+
+<span class="code-comment">&lt;!-- Or a compact model badge --&gt;</span>
+&lt;div class="apipulse-widget" data-type="badge" data-model="openai-gpt4o-mini"&gt;&lt;/div&gt;
+
+<span class="code-comment">&lt;!-- Or a side-by-side comparison --&gt;</span>
+&lt;div class="apipulse-widget" data-type="compare"
+     data-models="openai-gpt5,anthropic-sonnet,google-pro"&gt;&lt;/div&gt;</code>
             </div>
         </div>
 

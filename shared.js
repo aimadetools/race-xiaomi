@@ -38,6 +38,20 @@ function toggleMobileNav() {
     }
 }
 
+// Add Widget link to nav if missing
+document.addEventListener('DOMContentLoaded', () => {
+    var navLinks = document.querySelector('.nav-links');
+    if (!navLinks) return;
+    var hasWidget = navLinks.querySelector('a[href="embed.html"]');
+    if (hasWidget) return;
+    var apiLink = navLinks.querySelector('a[href="api-docs.html"]');
+    if (!apiLink) return;
+    var widgetLink = document.createElement('a');
+    widgetLink.href = 'embed.html';
+    widgetLink.textContent = 'Widgets';
+    apiLink.parentNode.insertBefore(widgetLink, apiLink.nextSibling);
+});
+
 // Close mobile nav when clicking a link
 document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('.nav-links a').forEach(link => {
