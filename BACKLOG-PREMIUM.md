@@ -9,8 +9,9 @@
 ### New This Session (Session 292, May 27)
 ✅ Embeddable pricing widgets (widget.js) — 3 types: table, badge, compare. Distribution channel via developer embeds.
 
-### Completed (Sessions 282-291, May 24-26)
+### Completed (Sessions 282-292, May 24-27)
 ✅ Session 291: GPT-5.5 vs Gemini 3.1 Pro comparison (34th). Pages 262→263, sitemap 257→258, RSS 199→200.
+✅ Session 292: Embeddable pricing widgets (widget.js). Distribution channel via developer embeds. API lastUpdated fix.
 ✅ Session 289: PROGRESS.md cleanup + backlog collapse.
 ✅ Sessions 282-288: 8 comparison pages (completes provider matrix — all 10 providers). Restored pricing.html. Pages 253→261, sitemap 248→256, RSS 190→198.
 
