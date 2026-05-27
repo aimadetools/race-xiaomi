@@ -2,7 +2,10 @@
 
 ### New Follow-up Tasks (from Session 293)
 - Create a GitHub Gist with widget quick-start examples — **WIDGET-QUICKSTART.md ready, needs human to upload** (PAT lacks gist scope)
-- Submit API to public-apis GitHub repo — **entry + PR template ready in DIRECTORY-SUBMISSIONS.md, needs human to fork/PR** (PAT lacks fork scope)
+- Submit API to public-apis GitHub repo — **entry + PR template ready in DIRECTORY-SUBMISSIONS.md, needs human to fork/PR** (PAT lacks gist scope)
+
+### Completed (Session 297, May 27)
+✅ AI Model Advisor: model-advisor.html (4-step wizard, 8 use cases, 4 priorities, budget slider, 33-model scoring engine, personalized top-5 recommendations with cost tables) + blog-ai-model-advisor.html (8-min guide with 4-factor framework, use-case table, cost comparisons, routing strategy). Sitemap 263→265, RSS 205→206, blog 170→171.
 
 ### Completed (Session 296, May 27)
 ✅ AI Stack Builder: ai-stack-builder.html (4-step wizard, 8 use cases, 4 priorities, volume slider, personalized multi-model recommendations with costs) + blog-ai-stack-builder.html (8-min guide with framework, examples, implementation patterns). Sitemap 261→263, RSS 203→205, blog 169→170.

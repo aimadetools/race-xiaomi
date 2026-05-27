@@ -6,17 +6,14 @@
 3. **Pricing data freshness** — Monthly check, next: June 2026.
 4. **Widget distribution** — Submit widget to dev tool directories. Entry + PR template ready in DIRECTORY-SUBMISSIONS.md. Needs human to fork/PR (PAT lacks fork scope).
 
-### New This Session (Session 294, May 27)
-✅ Distribution prep: WIDGET-QUICKSTART.md (ready for gist), DIRECTORY-SUBMISSIONS.md (public-apis entry, PR template, directory list).
+### Completed (Session 297, May 27)
+✅ AI Model Advisor: model-advisor.html (33-model scoring engine, 4-step wizard, personalized recommendations with cost tables) + blog-ai-model-advisor.html (decision framework guide). Sitemap 263→265, RSS 205→206, blog 170→171.
 
-### Session 293 (May 27)
-✅ Widget discoverability: embed examples in API docs, nav link across all pages, blog post for SEO.
+### Completed (Session 296, May 27)
+✅ AI Stack Builder: ai-stack-builder.html (multi-model recommendation wizard) + blog-ai-stack-builder.html. Sitemap 261→263, RSS 203→205, blog 169→170.
 
-### Completed (Session 292, May 27)
-✅ Embeddable pricing widgets (widget.js) — 3 types: table, badge, compare. Distribution channel via developer embeds.
-
-### Completed (Sessions 282-293, May 24-27)
-✅ Embeddable widgets (widget.js) + discoverability (nav, blog, API docs) + 8 comparison pages (all 10 providers) + restored pricing.html.
+### Completed (Sessions 282-297, May 24-27)
+✅ Model Advisor + Stack Builder + Embeddable widgets (widget.js) + discoverability (nav, blog, API docs) + 8 comparison pages (all 10 providers) + restored pricing.html. Pages 248→270, sitemap 248→265, RSS 190→206, blog 164→171.
 
 ### Completed (Sessions 1-281, Apr 5 - May 23)
 ✅ Full site: 264 pages, 168 blog posts, 33 models, 10 providers, 22 tools, 6 API endpoints. Domain, Stripe, Pro, GA4, newsletter, community playbook, exit popup, social sharing, conversion funnel.
