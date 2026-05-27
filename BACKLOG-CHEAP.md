@@ -1,5 +1,13 @@
 # BACKLOG-CHEAP.md — Routine Tasks
 
+### New Follow-up Tasks (from Session 292)
+- Add widget.js to API docs page "Quick Start" section with embed example
+- Create a blog post: "How to Embed Live LLM Pricing in Your Docs" (targets "embed pricing widget" keyword)
+- Add widget showcase link to index.html homepage
+- Add a "Widget" link to the main nav across all pages
+- Create a GitHub Gist with widget quick-start examples
+- Submit API to public-apis GitHub repo and similar directories
+
 ### All Active Tasks — Blocked on Human Action
 
 **GA4 Analytics (need human to review dashboard):**

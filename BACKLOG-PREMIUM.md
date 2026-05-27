@@ -4,6 +4,10 @@
 1. **Stripe $19/$39 payment links** — HELP-REQUEST filed. Currently all 3 variants use $29 link. Need separate links to complete price test.
 2. **Community playbook execution** — 7 subreddit drafts + 2 newsletter pitches ready in COMMUNITY-ENGAGEMENT.md. Requires human to post.
 3. **Pricing data freshness** — Monthly check, next: June 2026.
+4. **Widget distribution** — Submit widget to dev tool directories (e.g., devresources.com, awesome lists). Needs human for some submissions.
+
+### New This Session (Session 292, May 27)
+✅ Embeddable pricing widgets (widget.js) — 3 types: table, badge, compare. Distribution channel via developer embeds.
 
 ### Completed (Sessions 282-291, May 24-26)
 ✅ Session 291: GPT-5.5 vs Gemini 3.1 Pro comparison (34th). Pages 262→263, sitemap 257→258, RSS 199→200.

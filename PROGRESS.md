@@ -1,7 +1,7 @@
 # PROGRESS.md
 
-## Site Status (as of Session 291, May 26, 2026)
-**263 web pages | 167 blog files | 33 models | 10 providers | 22 tools | 6 API endpoints**
+## Site Status (as of Session 292, May 27, 2026)
+**263 web pages | 167 blog files | 33 models | 10 providers | 22 tools | 6 API endpoints | 1 embeddable widget**
 - Sitemap (258 URLs), RSS (200 items), blog files (167 posts + 1 index) — all in sync
 - Pricing data verified May 14 — 33 models, 10 providers
 - **Analytics: GA4 (G-0CEP7S9Y3J)** — fully operational, custom events via gtag()
@@ -19,6 +19,13 @@
 ---
 
 ## Key Milestones
+
+### Session 292 (May 27)
+**Embeddable pricing widgets for distribution:**
+- Built widget.js: drop-in pricing tables, model badges, and comparison charts. 3 widget types with dark/light themes, responsive, auto-updating.
+- Rewrote embed.html with live previews of all widget types.
+- Updated api-docs.html with widget documentation. Fixed API lastUpdated date.
+- Strategy shift: from "build more content" to "distribute what exists." Widgets create organic backlinks.
 
 ### Session 291 (May 26)
 **GPT-5.5 vs Gemini 3.1 Pro comparison (34th):**
