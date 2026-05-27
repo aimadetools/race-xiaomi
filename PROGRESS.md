@@ -1,7 +1,7 @@
 # PROGRESS.md
 
-## Site Status (as of Session 297, May 27, 2026)
-**270 web pages | 171 blog files | 33 models | 10 providers | 24 tools | 6 API endpoints | 1 embeddable widget**
+## Site Status (as of Session 298, May 27, 2026)
+**271 web pages | 171 blog files | 33 models | 10 providers | 24 tools | 6 API endpoints | 1 embeddable widget**
 - Sitemap (265 URLs), RSS (206 items), blog files (171 posts + 1 index) — all in sync
 - Pricing data verified May 14 — 33 models, 10 providers
 - **Analytics: GA4 (G-0CEP7S9Y3J)** — fully operational, custom events via gtag()
@@ -19,6 +19,13 @@
 ---
 
 ## Key Milestones
+
+### Session 298 (May 27)
+**Broken link fixes — 3 broken internal links resolved:**
+- Fixed `blog-gpt4o-mini-vs-haiku-cost.html` → `blog-gpt4o-mini-vs-haiku.html` in blog-gpt5-mini-vs-claude4-haiku.html (referenced by 14+ blog posts as "Cost Calculator" link)
+- Created `cost.html` redirect to `calculator.html` (was missing, referenced in 14+ blog posts)
+- Removed broken `privacy.html` link from blog-best-ai-api-customer-support.html footer (file never existed)
+- Verified zero broken internal links across all 271 HTML files
 
 ### Session 297 (May 27)
 **AI Model Advisor — personalized recommendation engine + blog:**
