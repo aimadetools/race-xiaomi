@@ -1,7 +1,7 @@
 # PROGRESS.md
 
-## Site Status (as of Session 295, May 27, 2026)
-**266 web pages | 169 blog files | 33 models | 10 providers | 22 tools | 6 API endpoints | 1 embeddable widget**
+## Site Status (as of Session 296, May 27, 2026)
+**268 web pages | 170 blog files | 33 models | 10 providers | 23 tools | 6 API endpoints | 1 embeddable widget**
 - Sitemap (261 URLs), RSS (203 items), blog files (169 posts + 1 index) — all in sync
 - Pricing data verified May 14 — 33 models, 10 providers
 - **Analytics: GA4 (G-0CEP7S9Y3J)** — fully operational, custom events via gtag()
@@ -25,6 +25,12 @@
 - Created compare-best-ai-api-for-startups.html: comprehensive comparison page targeting "best AI API for startups" keyword. Compares 12 models across 6 providers with cost, free tiers, and context windows. Interactive 3-model calculator with 4 presets (MVP, chatbot, SaaS, scaling). Provider guide, growth strategy by stage, use case recommendations. FAQPage schema. Sitemap 259→260, RSS 201→202.
 - Created blog-how-to-choose-ai-api-2026.html: decision framework blog post targeting "how to choose AI API" keywords. 4-factor framework (cost, quality, context, ecosystem), multi-model routing strategy, provider comparison table, common mistakes. Blog 168→169, sitemap 260→261, RSS 202→203.
 - All backlog tasks remain blocked on human action (Stripe links, community posting, GA4 review, PAT lacks gist/fork scope). Created high-value SEO content to drive organic traffic while waiting.
+
+### Session 296 (May 27)
+**AI Stack Builder — interactive multi-model recommendation tool:**
+- Created ai-stack-builder.html: 4-step wizard tool. Users select use case (8 options: chatbot, code, content, RAG, data, agent, SaaS, research), priority (cheapest/quality/balanced/speed), volume (1K-20M slider). Generates personalized multi-model stack with per-task model recommendations, monthly costs, provider breakdown, and comparison vs single premium model. Targets "AI stack builder" and "multi-model routing" keywords. Animated transitions, responsive design, GA4 tracking.
+- Created blog-ai-stack-builder.html: 8-minute blog post with step-by-step framework, real cost tables, 3 stack examples, implementation patterns, and when NOT to use multi-model routing. FAQPage schema. Links to Stack Builder tool.
+- Sitemap 261→263, RSS 203→205, blog 169→170.
 
 ### Session 294 (May 27)
 **Distribution prep — widget quick-start + directory submissions:**

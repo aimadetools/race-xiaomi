@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Stack Builder — Build Your Optimal Multi-Model AI Stack | APIpulse</title>
+    <meta name="description" content="Build your optimal AI API stack in 60 seconds. Get personalized multi-model recommendations with exact monthly costs across 33 models and 10 providers.">
+    <meta property="og:title" content="AI Stack Builder — Build Your Optimal AI Stack">
+    <meta property="og:description" content="Answer 4 questions. Get a personalized multi-model AI stack with exact costs. Free tool.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://getapipulse.com/og-image.png">
+    <meta property="og:url" content="https://getapipulse.com/ai-stack-builder.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="AI Stack Builder — Build Your Optimal AI Stack">
+    <meta name="twitter:image" content="https://getapipulse.com/og-image.png">
+    <meta name="twitter:description" content="Answer 4 questions. Get a personalized multi-model AI stack with exact costs.">
+    <meta name="keywords" content="AI stack builder, multi-model AI, AI API optimization, LLM routing, cost optimization, AI architecture">
+    <link rel="canonical" href="https://getapipulse.com/ai-stack-builder.html">
+    <link rel="alternate" type="application/rss+xml" title="APIpulse Blog" href="https://getapipulse.com/rss.xml">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="styles.css">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0CEP7S9Y3J"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-0CEP7S9Y3J');
+    </script>
+    <script src="analytics.js" defer></script>
+    <script src="dynamic-date.js" defer></script>
+    <script src="shared.js" defer></script>
+    <script src="pricing-data.js" defer></script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "AI Stack Builder",
+        "url": "https://getapipulse.com/ai-stack-builder.html",
+        "description": "Build your optimal AI API stack in 60 seconds with personalized multi-model recommendations.",
+        "applicationCategory": "DeveloperApplication",
+        "operatingSystem": "Web",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+    }
+    </script>
+    <style>
+        .content { max-width: 800px; margin: 0 auto; padding: 120px 24px 80px; }
+        h1 { font-size: 40px; font-weight: 800; text-align: center; margin-bottom: 12px; }
+        .subtitle { text-align: center; color: var(--text-secondary); font-size: 18px; margin-bottom: 40px; max-width: 600px; margin-left: auto; margin-right: auto; }
+
+        /* Wizard steps */
+        .wizard-steps { display: flex; justify-content: center; gap: 8px; margin-bottom: 40px; }
+        .wizard-step { width: 48px; height: 4px; border-radius: 2px; background: var(--border); transition: all 0.3s; }
+        .wizard-step.active { background: var(--accent); width: 64px; }
+        .wizard-step.done { background: var(--green); }
+
+        /* Cards */
+        .wizard-card {
+            background: var(--bg-secondary); border: 1px solid var(--border);
+            border-radius: 16px; padding: 40px; margin-bottom: 24px;
+            animation: fadeIn 0.3s ease;
+        }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
+        .wizard-card h2 { font-size: 24px; font-weight: 700; margin-bottom: 6px; }
+        .wizard-card .step-num { font-size: 13px; font-weight: 600; color: var(--accent); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; }
+        .wizard-card .card-desc { color: var(--text-secondary); font-size: 15px; margin-bottom: 28px; }
+
+        /* Option grid */
+        .option-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 12px; margin-bottom: 24px; }
+        .option-btn {
+            background: var(--bg-card); border: 2px solid var(--border);
+            border-radius: 12px; padding: 20px 16px; cursor: pointer;
+            transition: all 0.2s; text-align: center;
+        }
+        .option-btn:hover { border-color: var(--accent); background: var(--bg-card-hover); }
+        .option-btn.selected { border-color: var(--accent); background: var(--accent-glow); }
+        .option-btn .opt-icon { font-size: 28px; margin-bottom: 8px; display: block; }
+        .option-btn .opt-title { font-size: 15px; font-weight: 600; color: var(--text-primary); margin-bottom: 4px; }
+        .option-btn .opt-desc { font-size: 12px; color: var(--text-muted); line-height: 1.4; }
+
+        /* Nav buttons */
+        .wizard-nav { display: flex; justify-content: space-between; gap: 12px; }
+        .wizard-nav .btn-primary, .wizard-nav .btn-secondary { min-width: 140px; text-align: center; }
+
+        /* Results */
+        .result-header { text-align: center; margin-bottom: 32px; }
+        .result-header h2 { font-size: 28px; margin-bottom: 8px; }
+        .result-header .savings-badge {
+            display: inline-block; background: rgba(34, 197, 94, 0.15);
+            color: var(--green); padding: 8px 20px; border-radius: 20px;
+            font-size: 16px; font-weight: 700; margin-top: 12px;
+        }
+
+        .stack-card {
+            background: var(--bg-card); border: 1px solid var(--border);
+            border-radius: 12px; padding: 24px; margin-bottom: 16px;
+        }
+        .stack-card .task-label {
+            font-size: 11px; font-weight: 700; text-transform: uppercase;
+            letter-spacing: 1px; color: var(--accent); margin-bottom: 8px;
+        }
+        .stack-card .model-row {
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 12px 0; border-bottom: 1px solid var(--border);
+        }
+        .stack-card .model-row:last-child { border-bottom: none; }
+        .stack-card .model-name { font-weight: 600; font-size: 16px; }
+        .stack-card .model-provider { font-size: 13px; color: var(--text-muted); }
+        .stack-card .model-cost { text-align: right; }
+        .stack-card .model-cost .cost-total { font-weight: 700; font-size: 16px; color: var(--green); }
+        .stack-card .model-cost .cost-unit { font-size: 12px; color: var(--text-muted); }
+        .stack-card .model-reason { font-size: 13px; color: var(--text-secondary); margin-top: 4px; font-style: italic; }
+
+        /* Cost summary */
+        .cost-summary {
+            background: var(--bg-secondary); border: 1px solid var(--border);
+            border-radius: 12px; padding: 28px; margin-top: 24px;
+            text-align: center;
+        }
+        .cost-summary .total-label { font-size: 14px; color: var(--text-secondary); margin-bottom: 4px; }
+        .cost-summary .total-amount { font-size: 36px; font-weight: 800; color: var(--text-primary); }
+        .cost-summary .total-unit { font-size: 14px; color: var(--text-muted); }
+        .cost-breakdown { display: flex; justify-content: center; gap: 32px; margin-top: 16px; flex-wrap: wrap; }
+        .cost-breakdown .cb-item { text-align: center; }
+        .cost-breakdown .cb-label { font-size: 12px; color: var(--text-muted); }
+        .cost-breakdown .cb-value { font-size: 18px; font-weight: 700; }
+
+        /* Comparison table */
+        .comparison-table { width: 100%; border-collapse: collapse; margin-top: 16px; }
+        .comparison-table th {
+            font-size: 12px; font-weight: 600; color: var(--text-muted);
+            text-transform: uppercase; letter-spacing: 0.5px;
+            padding: 12px 16px; text-align: left;
+            border-bottom: 2px solid var(--border);
+        }
+        .comparison-table td {
+            padding: 14px 16px; border-bottom: 1px solid var(--border);
+            font-size: 14px;
+        }
+        .comparison-table tr:hover { background: var(--bg-card-hover); }
+        .highlight-row { background: rgba(34, 197, 94, 0.08) !important; }
+        .comparison-table .price { font-weight: 600; color: var(--green); font-family: monospace; }
+        .comparison-table .winner { color: var(--green); font-weight: 700; }
+
+        /* Volume slider */
+        .volume-display { text-align: center; margin: 20px 0; }
+        .volume-display .vol-num { font-size: 32px; font-weight: 800; color: var(--accent); }
+        .volume-display .vol-label { font-size: 14px; color: var(--text-secondary); }
+        .volume-presets { display: flex; justify-content: center; gap: 8px; margin-bottom: 16px; }
+        .vol-preset {
+            background: var(--bg-card); border: 1px solid var(--border);
+            border-radius: 8px; padding: 8px 16px; cursor: pointer;
+            font-size: 13px; color: var(--text-secondary); transition: all 0.2s;
+        }
+        .vol-preset:hover, .vol-preset.active { border-color: var(--accent); color: var(--accent); }
+        input[type="range"] {
+            width: 100%; height: 6px; border-radius: 3px; background: var(--border);
+            outline: none; -webkit-appearance: none; margin: 16px 0;
+        }
+        input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none; width: 22px; height: 22px;
+            border-radius: 50%; background: var(--accent); cursor: pointer;
+            border: 3px solid var(--bg-primary); box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+        }
+
+        .hidden { display: none !important; }
+        .back-link { display: inline-flex; align-items: center; gap: 6px; margin-bottom: 24px; font-size: 14px; color: var(--text-muted); }
+        .back-link:hover { color: var(--accent); }
+
+        .cta-section { text-align: center; margin-top: 40px; padding: 32px; background: var(--bg-secondary); border-radius: 16px; border: 1px solid var(--border); }
+        .cta-section h3 { font-size: 20px; margin-bottom: 8px; }
+        .cta-section p { color: var(--text-secondary); margin-bottom: 20px; }
+
+        @media (max-width: 640px) {
+            h1 { font-size: 28px; }
+            .option-grid { grid-template-columns: 1fr 1fr; }
+            .wizard-card { padding: 24px; }
+            .cost-summary .total-amount { font-size: 28px; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-inner">
+            <a href="/" class="logo">API<span>pulse</span></a>
+            <button class="hamburger" onclick="toggleMobileNav()" aria-label="Menu">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M3 12h18M3 6h18M3 18h18"/>
+                </svg>
+            </button>
+            <div class="nav-links">
+                <a href="calculator.html">Calculator</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="blog.html">Blog</a>
+                <a href="api-docs.html">API</a>
+                <a href="pro.html" class="nav-cta">Pro</a>
+                <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">
+                    <svg class="moon" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 009.002-5.998z"/></svg>
+                    <svg class="sun" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style="display:none"><path d="M12 2.25a.75.75 0 01.75.75v2.25a.75.75 0 01-1.5 0V3a.75.75 0 01.75-.75zM7.5 12a4.5 4.5 0 119 0 4.5 4.5 0 01-9 0zM18.894 6.166a.75.75 0 00-1.06-1.06l-1.591 1.59a.75.75 0 101.06 1.061l1.591-1.59zM21.75 12a.75.75 0 01-.75.75h-2.25a.75.75 0 010-1.5H21a.75.75 0 01.75.75zM17.834 18.894a.75.75 0 001.06-1.06l-1.59-1.591a.75.75 0 10-1.061 1.06l1.59 1.591zM12 18a.75.75 0 01.75.75V21a.75.75 0 01-1.5 0v-2.25A.75.75 0 0112 18zM7.758 17.303a.75.75 0 00-1.061-1.06l-1.591 1.59a.75.75 0 001.06 1.061l1.591-1.59zM6 12a.75.75 0 01-.75.75H3a.75.75 0 010-1.5h2.25A.75.75 0 016 12zM6.697 7.757a.75.75 0 001.06-1.06l-1.59-1.591a.75.75 0 00-1.061 1.06l1.59 1.591z"/></svg>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="content">
+        <h1>AI Stack Builder</h1>
+        <p class="subtitle">Build your optimal multi-model AI stack in 60 seconds. Get personalized recommendations with exact monthly costs.</p>
+
+        <div class="wizard-steps" id="wizardSteps">
+            <div class="wizard-step active" data-step="1"></div>
+            <div class="wizard-step" data-step="2"></div>
+            <div class="wizard-step" data-step="3"></div>
+            <div class="wizard-step" data-step="4"></div>
+        </div>
+
+        <!-- Step 1: Use Case -->
+        <div class="wizard-card" id="step1">
+            <div class="step-num">Step 1 of 4</div>
+            <h2>What are you building?</h2>
+            <p class="card-desc">Select your primary use case. We'll recommend the optimal models for each part of your stack.</p>
+            <div class="option-grid">
+                <button class="option-btn" data-value="chatbot" onclick="selectOption(this, 'usecase')">
+                    <span class="opt-icon">💬</span>
+                    <div class="opt-title">AI Chatbot</div>
+                    <div class="opt-desc">Customer support, FAQ, conversational AI</div>
+                </button>
+                <button class="option-btn" data-value="code" onclick="selectOption(this, 'usecase')">
+                    <span class="opt-icon">🧑‍💻</span>
+                    <div class="opt-title">Code Assistant</div>
+                    <div class="opt-desc">Code gen, review, completion, debugging</div>
+                </button>
+                <button class="option-btn" data-value="content" onclick="selectOption(this, 'usecase')">
+                    <span class="opt-icon">✍️</span>
+                    <div class="opt-title">Content Generation</div>
+                    <div class="opt-desc">Blog posts, marketing copy, emails</div>
+                </button>
+                <button class="option-btn" data-value="rag" onclick="selectOption(this, 'usecase')">
+                    <span class="opt-icon">🔍</span>
+                    <div class="opt-title">RAG / Search</div>
+                    <div class="opt-desc">Document Q&A, knowledge base, retrieval</div>
+                </button>
+                <button class="option-btn" data-value="data" onclick="selectOption(this, 'usecase')">
+                    <span class="opt-icon">📊</span>
+                    <div class="opt-title">Data Analysis</div>
+                    <div class="opt-desc">Summarization, classification, extraction</div>
+                </button>
+                <button class="option-btn" data-value="agent" onclick="selectOption(this, 'usecase')">
+                    <span class="opt-icon">🤖</span>
+                    <div class="opt-title">AI Agent</div>
+                    <div class="opt-desc">Tool use, multi-step reasoning, automation</div>
+                </button>
+                <button class="option-btn" data-value="saas" onclick="selectOption(this, 'usecase')">
+                    <span class="opt-icon">🚀</span>
+                    <div class="opt-title">SaaS Feature</div>
+                    <div class="opt-desc">AI-powered product feature, embedded AI</div>
+                </button>
+                <button class="option-btn" data-value="research" onclick="selectOption(this, 'usecase')">
+                    <span class="opt-icon">🔬</span>
+                    <div class="opt-title">Research / Analysis</div>
+                    <div class="opt-desc">Long docs, reports, complex reasoning</div>
+                </button>
+            </div>
+            <div class="wizard-nav">
+                <div></div>
+                <button class="btn-primary" id="next1" onclick="goStep(2)" disabled>Next →</button>
+            </div>
+        </div>
+
+        <!-- Step 2: Priority -->
+        <div class="wizard-card hidden" id="step2">
+            <div class="step-num">Step 2 of 4</div>
+            <h2>What matters most?</h2>
+            <p class="card-desc">This determines which models we prioritize in your stack.</p>
+            <div class="option-grid">
+                <button class="option-btn" data-value="cheapest" onclick="selectOption(this, 'priority')">
+                    <span class="opt-icon">💰</span>
+                    <div class="opt-title">Cheapest</div>
+                    <div class="opt-desc">Minimize cost, good enough quality</div>
+                </button>
+                <button class="option-btn" data-value="quality" onclick="selectOption(this, 'priority')">
+                    <span class="opt-icon">⭐</span>
+                    <div class="opt-title">Best Quality</div>
+                    <div class="opt-desc">Top models, worth the premium</div>
+                </button>
+                <button class="option-btn" data-value="balanced" onclick="selectOption(this, 'priority')">
+                    <span class="opt-icon">⚖️</span>
+                    <div class="opt-title">Balanced</div>
+                    <div class="opt-desc">Best value for money across the board</div>
+                </button>
+                <button class="option-btn" data-value="speed" onclick="selectOption(this, 'priority')">
+                    <span class="opt-icon">⚡</span>
+                    <div class="opt-title">Fastest</div>
+                    <div class="opt-desc">Low latency, fast inference</div>
+                </button>
+            </div>
+            <div class="wizard-nav">
+                <button class="btn-secondary" onclick="goStep(1)">← Back</button>
+                <button class="btn-primary" id="next2" onclick="goStep(3)" disabled>Next →</button>
+            </div>
+        </div>
+
+        <!-- Step 3: Volume -->
+        <div class="wizard-card hidden" id="step3">
+            <div class="step-num">Step 3 of 4</div>
+            <h2>What's your monthly volume?</h2>
+            <p class="card-desc">Approximate number of API requests per month.</p>
+            <div class="volume-presets">
+                <button class="vol-preset" onclick="setVolume(10000, this)">10K</button>
+                <button class="vol-preset active" onclick="setVolume(100000, this)">100K</button>
+                <button class="vol-preset" onclick="setVolume(500000, this)">500K</button>
+                <button class="vol-preset" onclick="setVolume(1000000, this)">1M</button>
+                <button class="vol-preset" onclick="setVolume(10000000, this)">10M</button>
+            </div>
+            <input type="range" id="volumeSlider" min="1000" max="20000000" value="100000" step="1000" oninput="updateVolume(this.value)">
+            <div class="volume-display">
+                <div class="vol-num" id="volumeNum">100,000</div>
+                <div class="vol-label">requests / month</div>
+            </div>
+            <div class="wizard-nav">
+                <button class="btn-secondary" onclick="goStep(2)">← Back</button>
+                <button class="btn-primary" onclick="goStep(4)">Build My Stack →</button>
+            </div>
+        </div>
+
+        <!-- Step 4: Results -->
+        <div class="wizard-card hidden" id="step4">
+            <a href="#" class="back-link" onclick="goStep(3); return false;">← Change volume</a>
+            <div class="result-header">
+                <h2 id="resultTitle">Your Optimal AI Stack</h2>
+                <div class="savings-badge" id="savingsBadge"></div>
+            </div>
+            <div id="stackResults"></div>
+            <div class="cost-summary">
+                <div class="total-label">Estimated Monthly Cost</div>
+                <div class="total-amount" id="totalCost">$0.00</div>
+                <div class="total-unit">/month at <span id="totalVolume">100,000</span> requests</div>
+                <div class="cost-breakdown" id="costBreakdown"></div>
+            </div>
+            <div id="comparisonSection" style="margin-top:32px;"></div>
+            <div class="cta-section">
+                <h3>Want the full breakdown?</h3>
+                <p>APIpulse compares 33 models across 10 providers with interactive calculators.</p>
+                <a href="calculator.html" class="btn-primary" style="display:inline-block;">Open Cost Calculator →</a>
+            </div>
+        </div>
+    </div>
+
+    <footer style="padding:40px 24px;text-align:center;border-top:1px solid var(--border);color:var(--text-muted);font-size:14px;">
+        <p>&copy; 2026 APIpulse. Built with $100 budget.</p>
+    </footer>
+
+    <button class="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top" style="position:fixed;bottom:24px;right:24px;width:44px;height:44px;border-radius:50%;background:var(--accent);color:white;border:none;font-size:20px;cursor:pointer;opacity:0;transition:opacity 0.3s;z-index:50;display:flex;align-items:center;justify-content:center;">
+        ↑
+    </button>
+
+    <script>
+    // State
+    var state = { usecase: null, priority: null, volume: 100000 };
+
+    function selectOption(el, field) {
+        el.closest('.option-grid').querySelectorAll('.option-btn').forEach(b => b.classList.remove('selected'));
+        el.classList.add('selected');
+        state[field] = el.dataset.value;
+        var nextBtn = document.getElementById('next' + (field === 'usecase' ? '1' : '2'));
+        if (nextBtn) nextBtn.disabled = false;
+    }
+
+    function setVolume(val, el) {
+        state.volume = val;
+        document.getElementById('volumeSlider').value = val;
+        document.getElementById('volumeNum').textContent = val.toLocaleString();
+        document.querySelectorAll('.vol-preset').forEach(p => p.classList.remove('active'));
+        if (el) el.classList.add('active');
+    }
+
+    function updateVolume(val) {
+        state.volume = parseInt(val);
+        document.getElementById('volumeNum').textContent = state.volume.toLocaleString();
+        document.querySelectorAll('.vol-preset').forEach(p => {
+            p.classList.toggle('active', parseInt(p.textContent.replace(/[K,M]/g, function(m) { return m === 'K' ? 'e3' : 'e6'; })) === state.volume);
+        });
+    }
+
+    function goStep(n) {
+        document.querySelectorAll('.wizard-card').forEach(c => c.classList.add('hidden'));
+        document.getElementById('step' + n).classList.remove('hidden');
+        document.querySelectorAll('.wizard-step').forEach(s => {
+            var sn = parseInt(s.dataset.step);
+            s.classList.remove('active', 'done');
+            if (sn < n) s.classList.add('done');
+            if (sn === n) s.classList.add('active');
+        });
+        if (n === 4) buildStack();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    // Model recommendations by use case + priority
+    function getModels() {
+        var u = state.usecase;
+        var p = state.priority;
+        var stacks = {
+            chatbot: {
+                cheap: [
+                    { task: 'Classify Intent', model: 'Gemini 2.0 Flash Lite', provider: 'Google', input: 0.075, output: 0.30, tokensIn: 400, tokensOut: 20, reason: 'Lightweight classification at lowest cost' },
+                    { task: 'Generate Response', model: 'DeepSeek V4 Flash', provider: 'DeepSeek', input: 0.14, output: 0.28, tokensIn: 800, tokensOut: 300, reason: 'Best quality-to-cost ratio for chat' },
+                    { task: 'Handle Complex Queries', model: 'Gemini 2.0 Flash', provider: 'Google', input: 0.10, output: 0.40, tokensIn: 1200, tokensOut: 500, reason: 'Good reasoning at budget price' }
+                ],
+                quality: [
+                    { task: 'Classify Intent', model: 'Claude Sonnet 4.6', provider: 'Anthropic', input: 3.00, output: 15.00, tokensIn: 400, tokensOut: 20, reason: 'Excellent instruction following' },
+                    { task: 'Generate Response', model: 'Claude Opus 4.7', provider: 'Anthropic', input: 5.00, output: 25.00, tokensIn: 800, tokensOut: 300, reason: 'Best quality responses' },
+                    { task: 'Handle Complex Queries', model: 'GPT-5.5', provider: 'OpenAI', input: 5.00, output: 30.00, tokensIn: 1200, tokensOut: 500, reason: 'Top-tier reasoning for edge cases' }
+                ],
+                balanced: [
+                    { task: 'Classify Intent', model: 'Gemini 2.0 Flash', provider: 'Google', input: 0.10, output: 0.40, tokensIn: 400, tokensOut: 20, reason: 'Fast, cheap, accurate enough' },
+                    { task: 'Generate Response', model: 'GPT-4o mini', provider: 'OpenAI', input: 0.15, output: 0.60, tokensIn: 800, tokensOut: 300, reason: 'Solid quality at low cost' },
+                    { task: 'Handle Complex Queries', model: 'Claude Haiku 4.5', provider: 'Anthropic', input: 1.00, output: 5.00, tokensIn: 1200, tokensOut: 500, reason: 'Good reasoning for hard cases' }
+                ],
+                speed: [
+                    { task: 'Classify Intent', model: 'Gemini 2.0 Flash Lite', provider: 'Google', input: 0.075, output: 0.30, tokensIn: 400, tokensOut: 20, reason: 'Fastest inference, lowest latency' },
+                    { task: 'Generate Response', model: 'Gemini 2.0 Flash', provider: 'Google', input: 0.10, output: 0.40, tokensIn: 800, tokensOut: 300, reason: 'Fast streaming, good quality' },
+                    { task: 'Handle Complex Queries', model: 'GPT-4o mini', provider: 'OpenAI', input: 0.15, output: 0.60, tokensIn: 1200, tokensOut: 500, reason: 'Fast with decent reasoning' }
+                ]
+            },
+            code: {
+                cheap: [
+                    { task: 'Code Completion', model: 'DeepSeek V4 Flash', provider: 'DeepSeek', input: 0.14, output: 0.28, tokensIn: 500, tokensOut: 200, reason: 'Best budget code model' },
+                    { task: 'Code Generation', model: 'DeepSeek V4 Pro', provider: 'DeepSeek', input: 0.44, output: 0.87, tokensIn: 1000, tokensOut: 500, reason: 'Strong coding at low cost' },
+                    { task: 'Code Review / Debug', model: 'Mistral Small 4', provider: 'Mistral', input: 0.15, output: 0.60, tokensIn: 1500, tokensOut: 400, reason: 'Good analysis at budget price' }
+                ],
+                quality: [
+                    { task: 'Code Completion', model: 'GPT-5 mini', provider: 'OpenAI', input: 0.25, output: 2.00, tokensIn: 500, tokensOut: 200, reason: 'Fast, high-quality completions' },
+                    { task: 'Code Generation', model: 'Claude Opus 4.7', provider: 'Anthropic', input: 5.00, output: 25.00, tokensIn: 1000, tokensOut: 500, reason: 'Best code generation quality' },
+                    { task: 'Code Review / Debug', model: 'GPT-5.5', provider: 'OpenAI', input: 5.00, output: 30.00, tokensIn: 1500, tokensOut: 400, reason: 'Top reasoning for complex bugs' }
+                ],
+                balanced: [
+                    { task: 'Code Completion', model: 'GPT-oss 120B', provider: 'OpenAI', input: 0.15, output: 0.60, tokensIn: 500, tokensOut: 200, reason: 'Good open-source completion' },
+                    { task: 'Code Generation', model: 'DeepSeek V4 Pro', provider: 'DeepSeek', input: 0.44, output: 0.87, tokensIn: 1000, tokensOut: 500, reason: 'Excellent code quality for the price' },
+                    { task: 'Code Review / Debug', model: 'Claude Haiku 4.5', provider: 'Anthropic', input: 1.00, output: 5.00, tokensIn: 1500, tokensOut: 400, reason: 'Good reasoning at moderate cost' }
+                ],
+                speed: [
+                    { task: 'Code Completion', model: 'Gemini 2.0 Flash', provider: 'Google', input: 0.10, output: 0.40, tokensIn: 500, tokensOut: 200, reason: 'Fast completions' },
+                    { task: 'Code Generation', model: 'GPT-4o mini', provider: 'OpenAI', input: 0.15, output: 0.60, tokensIn: 1000, tokensOut: 500, reason: 'Fast, decent code quality' },
+                    { task: 'Code Review / Debug', model: 'GPT-4o', provider: 'OpenAI', input: 2.50, output: 10.00, tokensIn: 1500, tokensOut: 400, reason: 'Fast with good analysis' }
+                ]
+            },
+            content: {
+                cheap: [
+                    { task: 'Outline / Research', model: 'DeepSeek V4 Flash', provider: 'DeepSeek', input: 0.14, output: 0.28, tokensIn: 600, tokensOut: 300, reason: 'Good planning at lowest cost' },
+                    { task: 'Draft Content', model: 'Mistral Small 4', provider: 'Mistral', input: 0.15, output: 0.60, tokensIn: 1000, tokensOut: 800, reason: 'Good writing quality at budget' },
+                    { task: 'Edit / Polish', model: 'Gemini 2.0 Flash', provider: 'Google', input: 0.10, output: 0.40, tokensIn: 1500, tokensOut: 600, reason: 'Fast editing pass' }
+                ],
+                quality: [
+                    { task: 'Outline / Research', model: 'Claude Sonnet 4.6', provider: 'Anthropic', input: 3.00, output: 15.00, tokensIn: 600, tokensOut: 300, reason: 'Excellent planning' },
+                    { task: 'Draft Content', model: 'Claude Opus 4.7', provider: 'Anthropic', input: 5.00, output: 25.00, tokensIn: 1000, tokensOut: 800, reason: 'Best writing quality' },
+                    { task: 'Edit / Polish', model: 'Claude Sonnet 4.6', provider: 'Anthropic', input: 3.00, output: 15.00, tokensIn: 1500, tokensOut: 600, reason: 'Nuanced editing' }
+                ],
+                balanced: [
+                    { task: 'Outline / Research', model: 'Gemini 2.0 Flash', provider: 'Google', input: 0.10, output: 0.40, tokensIn: 600, tokensOut: 300, reason: 'Good research at low cost' },
+                    { task: 'Draft Content', model: 'Claude Haiku 4.5', provider: 'Anthropic', input: 1.00, output: 5.00, tokensIn: 1000, tokensOut: 800, reason: 'Good writing for the price' },
+                    { task: 'Edit / Polish', model: 'GPT-4o mini', provider: 'OpenAI', input: 0.15, output: 0.60, tokensIn: 1500, tokensOut: 600, reason: 'Solid editing at low cost' }
+                ],
+                speed: [
+                    { task: 'Outline / Research', model: 'Gemini 2.0 Flash Lite', provider: 'Google', input: 0.075, output: 0.30, tokensIn: 600, tokensOut: 300, reason: 'Fastest outline generation' },
+                    { task: 'Draft Content', model: 'Gemini 2.0 Flash', provider: 'Google', input: 0.10, output: 0.40, tokensIn: 1000, tokensOut: 800, reason: 'Fast streaming content' },
+                    { task: 'Edit / Polish', model: 'GPT-4o mini', provider: 'OpenAI', input: 0.15, output: 0.60, tokensIn: 1500, tokensOut: 600, reason: 'Quick edit pass' }
+                ]
+            },
+            rag: {
+                cheap: [
+                    { task: 'Embed Documents', model: 'Gemini 2.0 Flash Lite', provider: 'Google', input: 0.075, output: 0.0, tokensIn: 500, tokensOut: 0, reason: 'Cheapest embedding path' },
+                    { task: 'Retrieve & Rank', model: 'DeepSeek V4 Flash', provider: 'DeepSeek', input: 0.14, output: 0.28, tokensIn: 2000, tokensOut: 100, reason: 'Good retrieval at low cost' },
+                    { task: 'Generate Answer', model: 'DeepSeek V4 Flash', provider: 'DeepSeek', input: 0.14, output: 0.28, tokensIn: 3000, tokensOut: 500, reason: 'Best value for RAG answers' }
+                ],
+                quality: [
+                    { task: 'Embed Documents', model: 'Claude Haiku 4.5', provider: 'Anthropic', input: 1.00, output: 5.00, tokensIn: 500, tokensOut: 0, reason: 'High-quality embeddings' },
+                    { task: 'Retrieve & Rank', model: 'Claude Sonnet 4.6', provider: 'Anthropic', input: 3.00, output: 15.00, tokensIn: 2000, tokensOut: 100, reason: 'Best retrieval accuracy' },
+                    { task: 'Generate Answer', model: 'Claude Opus 4.7', provider: 'Anthropic', input: 5.00, output: 25.00, tokensIn: 3000, tokensOut: 500, reason: 'Best answer quality' }
+                ],
+                balanced: [
+                    { task: 'Embed Documents', model: 'Gemini 2.0 Flash', provider: 'Google', input: 0.10, output: 0.40, tokensIn: 500, tokensOut: 0, reason: 'Good embeddings, cheap' },
+                    { task: 'Retrieve & Rank', model: 'GPT-4o mini', provider: 'OpenAI', input: 0.15, output: 0.60, tokensIn: 2000, tokensOut: 100, reason: 'Solid retrieval' },
+                    { task: 'Generate Answer', model: 'Claude Haiku 4.5', provider: 'Anthropic', input: 1.00, output: 5.00, tokensIn: 3000, tokensOut: 500, reason: 'Good answers at moderate cost' }
+                ],
+                speed: [
+                    { task: 'Embed Documents', model: 'Gemini 2.0 Flash Lite', provider: 'Google', input: 0.075, output: 0.0, tokensIn: 500, tokensOut: 0, reason: 'Fastest embedding' },
+                    { task: 'Retrieve & Rank', model: 'Gemini 2.0 Flash', provider: 'Google', input: 0.10, output: 0.40, tokensIn: 2000, tokensOut: 100, reason: 'Fast retrieval' },
+                    { task: 'Generate Answer', model: 'Gemini 2.0 Flash', provider: 'Google', input: 0.10, output: 0.40, tokensIn: 3000, tokensOut: 500, reason: 'Fast streaming answers' }
+                ]
+            },
+            data: {
+                cheap: [
+                    { task: 'Extract Data', model: 'DeepSeek V4 Flash', provider: 'DeepSeek', input: 0.14, output: 0.28, tokensIn: 1000, tokensOut: 300, reason: 'Good extraction at lowest cost' },
+                    { task: 'Classify / Label', model: 'Gemini 2.0 Flash Lite', provider: 'Google', input: 0.075, output: 0.30, tokensIn: 400, tokensOut: 50, reason: 'Cheapest classification' },
+                    { task: 'Summarize', model: 'Mistral Small 4', provider: 'Mistral', input: 0.15, output: 0.60, tokensIn: 2000, tokensOut: 300, reason: 'Good summaries at budget price' }
+                ],
+                quality: [
+                    { task: 'Extract Data', model: 'Claude Sonnet 4.6', provider: 'Anthropic', input: 3.00, output: 15.00, tokensIn: 1000, tokensOut: 300, reason: 'Best extraction accuracy' },
+                    { task: 'Classify / Label', model: 'GPT-5', provider: 'OpenAI', input: 1.25, output: 10.00, tokensIn: 400, tokensOut: 50, reason: 'Most accurate classification' },
+                    { task: 'Summarize', model: 'Claude Opus 4.7', provider: 'Anthropic', input: 5.00, output: 25.00, tokensIn: 2000, tokensOut: 300, reason: 'Best summarization quality' }
+                ],
+                balanced: [
+                    { task: 'Extract Data', model: 'DeepSeek V4 Pro', provider: 'DeepSeek', input: 0.44, output: 0.87, tokensIn: 1000, tokensOut: 300, reason: 'Good accuracy at low cost' },
+                    { task: 'Classify / Label', model: 'Gemini 2.0 Flash', provider: 'Google', input: 0.10, output: 0.40, tokensIn: 400, tokensOut: 50, reason: 'Fast, accurate classification' },
+                    { task: 'Summarize', model: 'GPT-4o mini', provider: 'OpenAI', input: 0.15, output: 0.60, tokensIn: 2000, tokensOut: 300, reason: 'Good summaries at low cost' }
+                ],
+                speed: [
+                    { task: 'Extract Data', model: 'Gemini 2.0 Flash', provider: 'Google', input: 0.10, output: 0.40, tokensIn: 1000, tokensOut: 300, reason: 'Fast extraction' },
+                    { task: 'Classify / Label', model: 'Gemini 2.0 Flash Lite', provider: 'Google', input: 0.075, output: 0.30, tokensIn: 400, tokensOut: 50, reason: 'Fastest classification' },
+                    { task: 'Summarize', model: 'Gemini 2.0 Flash', provider: 'Google', input: 0.10, output: 0.40, tokensIn: 2000, tokensOut: 300, reason: 'Fast summarization' }
+                ]
+            },
+            agent: {
+                cheap: [
+                    { task: 'Plan / Reason', model: 'DeepSeek V4 Pro', provider: 'DeepSeek', input: 0.44, output: 0.87, tokensIn: 1500, tokensOut: 500, reason: 'Good reasoning at low cost' },
+                    { task: 'Execute Tools', model: 'DeepSeek V4 Flash', provider: 'DeepSeek', input: 0.14, output: 0.28, tokensIn: 800, tokensOut: 200, reason: 'Fast tool calls' },
+                    { task: 'Synthesize Results', model: 'Mistral Small 4', provider: 'Mistral', input: 0.15, output: 0.60, tokensIn: 1000, tokensOut: 400, reason: 'Good synthesis at budget' }
+                ],
+                quality: [
+                    { task: 'Plan / Reason', model: 'Claude Opus 4.7', provider: 'Anthropic', input: 5.00, output: 25.00, tokensIn: 1500, tokensOut: 500, reason: 'Best reasoning quality' },
+                    { task: 'Execute Tools', model: 'GPT-5', provider: 'OpenAI', input: 1.25, output: 10.00, tokensIn: 800, tokensOut: 200, reason: 'Reliable tool use' },
+                    { task: 'Synthesize Results', model: 'Claude Sonnet 4.6', provider: 'Anthropic', input: 3.00, output: 15.00, tokensIn: 1000, tokensOut: 400, reason: 'Best output quality' }
+                ],
+                balanced: [
+                    { task: 'Plan / Reason', model: 'Claude Haiku 4.5', provider: 'Anthropic', input: 1.00, output: 5.00, tokensIn: 1500, tokensOut: 500, reason: 'Good reasoning, fair price' },
+                    { task: 'Execute Tools', model: 'GPT-4o mini', provider: 'OpenAI', input: 0.15, output: 0.60, tokensIn: 800, tokensOut: 200, reason: 'Reliable, cheap tool calls' },
+                    { task: 'Synthesize Results', model: 'GPT-4o mini', provider: 'OpenAI', input: 0.15, output: 0.60, tokensIn: 1000, tokensOut: 400, reason: 'Solid output at low cost' }
+                ],
+                speed: [
+                    { task: 'Plan / Reason', model: 'Gemini 2.0 Flash', provider: 'Google', input: 0.10, output: 0.40, tokensIn: 1500, tokensOut: 500, reason: 'Fast planning' },
+                    { task: 'Execute Tools', model: 'Gemini 2.0 Flash Lite', provider: 'Google', input: 0.075, output: 0.30, tokensIn: 800, tokensOut: 200, reason: 'Fastest tool execution' },
+                    { task: 'Synthesize Results', model: 'Gemini 2.0 Flash', provider: 'Google', input: 0.10, output: 0.40, tokensIn: 1000, tokensOut: 400, reason: 'Fast synthesis' }
+                ]
+            },
+            saas: {
+                cheap: [
+                    { task: 'User Input Processing', model: 'Gemini 2.0 Flash Lite', provider: 'Google', input: 0.075, output: 0.30, tokensIn: 400, tokensOut: 100, reason: 'Cheapest input handling' },
+                    { task: 'Core AI Feature', model: 'DeepSeek V4 Flash', provider: 'DeepSeek', input: 0.14, output: 0.28, tokensIn: 1000, tokensOut: 500, reason: 'Best value for core features' },
+                    { task: 'Output Formatting', model: 'Gemini 2.0 Flash Lite', provider: 'Google', input: 0.075, output: 0.30, tokensIn: 500, tokensOut: 200, reason: 'Cheap formatting layer' }
+                ],
+                quality: [
+                    { task: 'User Input Processing', model: 'Claude Haiku 4.5', provider: 'Anthropic', input: 1.00, output: 5.00, tokensIn: 400, tokensOut: 100, reason: 'Accurate input parsing' },
+                    { task: 'Core AI Feature', model: 'Claude Sonnet 4.6', provider: 'Anthropic', input: 3.00, output: 15.00, tokensIn: 1000, tokensOut: 500, reason: 'Best feature quality' },
+                    { task: 'Output Formatting', model: 'Claude Haiku 4.5', provider: 'Anthropic', input: 1.00, output: 5.00, tokensIn: 500, tokensOut: 200, reason: 'Reliable formatting' }
+                ],
+                balanced: [
+                    { task: 'User Input Processing', model: 'Gemini 2.0 Flash', provider: 'Google', input: 0.10, output: 0.40, tokensIn: 400, tokensOut: 100, reason: 'Fast, cheap parsing' },
+                    { task: 'Core AI Feature', model: 'GPT-4o mini', provider: 'OpenAI', input: 0.15, output: 0.60, tokensIn: 1000, tokensOut: 500, reason: 'Good quality, low cost' },
+                    { task: 'Output Formatting', model: 'Gemini 2.0 Flash Lite', provider: 'Google', input: 0.075, output: 0.30, tokensIn: 500, tokensOut: 200, reason: 'Cheap output layer' }
+                ],
+                speed: [
+                    { task: 'User Input Processing', model: 'Gemini 2.0 Flash Lite', provider: 'Google', input: 0.075, output: 0.30, tokensIn: 400, tokensOut: 100, reason: 'Fastest parsing' },
+                    { task: 'Core AI Feature', model: 'Gemini 2.0 Flash', provider: 'Google', input: 0.10, output: 0.40, tokensIn: 1000, tokensOut: 500, reason: 'Fast core feature' },
+                    { task: 'Output Formatting', model: 'Gemini 2.0 Flash Lite', provider: 'Google', input: 0.075, output: 0.30, tokensIn: 500, tokensOut: 200, reason: 'Fastest formatting' }
+                ]
+            },
+            research: {
+                cheap: [
+                    { task: 'Document Analysis', model: 'DeepSeek V4 Pro', provider: 'DeepSeek', input: 0.44, output: 0.87, tokensIn: 5000, tokensOut: 500, reason: '1M context at low cost' },
+                    { task: 'Synthesis / Reasoning', model: 'DeepSeek V4 Pro', provider: 'DeepSeek', input: 0.44, output: 0.87, tokensIn: 3000, tokensOut: 1000, reason: 'Good reasoning with huge context' },
+                    { task: 'Report Generation', model: 'Mistral Small 4', provider: 'Mistral', input: 0.15, output: 0.60, tokensIn: 2000, tokensOut: 1500, reason: 'Budget report writing' }
+                ],
+                quality: [
+                    { task: 'Document Analysis', model: 'Claude Opus 4.7', provider: 'Anthropic', input: 5.00, output: 25.00, tokensIn: 5000, tokensOut: 500, reason: 'Best analysis quality' },
+                    { task: 'Synthesis / Reasoning', model: 'GPT-5.5', provider: 'OpenAI', input: 5.00, output: 30.00, tokensIn: 3000, tokensOut: 1000, reason: 'Top reasoning capability' },
+                    { task: 'Report Generation', model: 'Claude Sonnet 4.6', provider: 'Anthropic', input: 3.00, output: 15.00, tokensIn: 2000, tokensOut: 1500, reason: 'Best report quality' }
+                ],
+                balanced: [
+                    { task: 'Document Analysis', model: 'Gemini 2.5 Pro', provider: 'Google', input: 1.25, output: 10.00, tokensIn: 5000, tokensOut: 500, reason: 'Good analysis, 1M context' },
+                    { task: 'Synthesis / Reasoning', model: 'Claude Haiku 4.5', provider: 'Anthropic', input: 1.00, output: 5.00, tokensIn: 3000, tokensOut: 1000, reason: 'Solid reasoning at fair price' },
+                    { task: 'Report Generation', model: 'GPT-4o mini', provider: 'OpenAI', input: 0.15, output: 0.60, tokensIn: 2000, tokensOut: 1500, reason: 'Good reports at low cost' }
+                ],
+                speed: [
+                    { task: 'Document Analysis', model: 'Gemini 2.0 Flash', provider: 'Google', input: 0.10, output: 0.40, tokensIn: 5000, tokensOut: 500, reason: 'Fast analysis with 1M context' },
+                    { task: 'Synthesis / Reasoning', model: 'Gemini 2.0 Flash', provider: 'Google', input: 0.10, output: 0.40, tokensIn: 3000, tokensOut: 1000, reason: 'Fast synthesis' },
+                    { task: 'Report Generation', model: 'GPT-4o mini', provider: 'OpenAI', input: 0.15, output: 0.60, tokensIn: 2000, tokensOut: 1500, reason: 'Fast report generation' }
+                ]
+            }
+        };
+        return stacks[u] && stacks[u][p] ? stacks[u][p] : stacks[u]['balanced'];
+    }
+
+    function getSingleModelCost(usecase) {
+        // What it would cost with a single premium model
+        var singleModel = { input: 5.00, output: 25.00 }; // Claude Opus 4.7 as baseline
+        var avgTokensIn = 1200;
+        var avgTokensOut = 400;
+        return (singleModel.input * avgTokensIn / 1e6 + singleModel.output * avgTokensOut / 1e6);
+    }
+
+    function buildStack() {
+        var stack = getModels();
+        var vol = state.volume;
+        var resultsEl = document.getElementById('stackResults');
+        var totalEl = document.getElementById('totalCost');
+        var breakdownEl = document.getElementById('costBreakdown');
+        var volumeEl = document.getElementById('totalVolume');
+        var savingsEl = document.getElementById('savingsBadge');
+
+        volumeEl.textContent = vol.toLocaleString();
+
+        var totalMonthly = 0;
+        var html = '';
+
+        stack.forEach(function(item) {
+            var costPerReq = (item.input * item.tokensIn / 1e6) + (item.output * item.tokensOut / 1e6);
+            var monthly = costPerReq * vol;
+            totalMonthly += monthly;
+
+            html += '<div class="stack-card">';
+            html += '<div class="task-label">' + item.task + '</div>';
+            html += '<div class="model-row">';
+            html += '<div><div class="model-name">' + item.model + '</div>';
+            html += '<div class="model-provider">' + item.provider + '</div>';
+            html += '<div class="model-reason">' + item.reason + '</div></div>';
+            html += '<div class="model-cost"><div class="cost-total">$' + monthly.toFixed(2) + '</div>';
+            html += '<div class="cost-unit">$' + (costPerReq * 1000).toFixed(4) + '/1K req</div></div>';
+            html += '</div></div>';
+        });
+
+        resultsEl.innerHTML = html;
+
+        // Total
+        totalEl.textContent = '$' + totalMonthly.toFixed(2);
+
+        // Savings vs single model
+        var singleCost = getSingleModelCost() * vol;
+        var savings = ((1 - totalMonthly / singleCost) * 100).toFixed(0);
+        if (savings > 0) {
+            savingsEl.textContent = 'Saves ' + savings + '% vs single premium model ($' + singleCost.toFixed(2) + '/mo)';
+            savingsEl.style.display = 'inline-block';
+        } else {
+            savingsEl.style.display = 'none';
+        }
+
+        // Breakdown
+        var breakdownHtml = '';
+        var providers = {};
+        stack.forEach(function(item) {
+            var cost = ((item.input * item.tokensIn / 1e6) + (item.output * item.tokensOut / 1e6)) * vol;
+            providers[item.provider] = (providers[item.provider] || 0) + cost;
+        });
+        Object.keys(providers).forEach(function(prov) {
+            breakdownHtml += '<div class="cb-item"><div class="cb-value">$' + providers[prov].toFixed(2) + '</div><div class="cb-label">' + prov + '</div></div>';
+        });
+        breakdownEl.innerHTML = breakdownHtml;
+
+        // Comparison table: single model vs stack
+        var compHtml = '<div class="stack-card">';
+        compHtml += '<div class="task-label">Comparison: Single Model vs Multi-Model Stack</div>';
+        compHtml += '<table class="comparison-table"><thead><tr><th>Approach</th><th>Model(s)</th><th>Monthly Cost</th><th>Quality</th></tr></thead><tbody>';
+        compHtml += '<tr><td>Single premium model</td><td>Claude Opus 4.7 (all tasks)</td><td class="price">$' + singleCost.toFixed(2) + '</td><td>High everywhere</td></tr>';
+        compHtml += '<tr class="highlight-row"><td class="winner">Multi-model stack</td><td>' + stack.map(function(s) { return s.model; }).join(', ') + '</td><td class="price winner">$' + totalMonthly.toFixed(2) + '</td><td class="winner">Optimized per task</td></tr>';
+        compHtml += '</tbody></table></div>';
+        document.getElementById('comparisonSection').innerHTML = compHtml;
+
+        // GA4 event
+        if (typeof gtag === 'function') {
+            gtag('event', 'stack_builder_complete', {
+                usecase: state.usecase,
+                priority: state.priority,
+                volume: state.volume,
+                monthly_cost: totalMonthly.toFixed(2)
+            });
+        }
+    }
+    </script>
+</body>
+</html>

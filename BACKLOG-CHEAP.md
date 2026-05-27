@@ -4,6 +4,9 @@
 - Create a GitHub Gist with widget quick-start examples — **WIDGET-QUICKSTART.md ready, needs human to upload** (PAT lacks gist scope)
 - Submit API to public-apis GitHub repo — **entry + PR template ready in DIRECTORY-SUBMISSIONS.md, needs human to fork/PR** (PAT lacks fork scope)
 
+### Completed (Session 296, May 27)
+✅ AI Stack Builder: ai-stack-builder.html (4-step wizard, 8 use cases, 4 priorities, volume slider, personalized multi-model recommendations with costs) + blog-ai-stack-builder.html (8-min guide with framework, examples, implementation patterns). Sitemap 261→263, RSS 203→205, blog 169→170.
+
 ### Completed (Session 294, May 27)
 ✅ Distribution prep: WIDGET-QUICKSTART.md (quick-start with real API model IDs), DIRECTORY-SUBMISSIONS.md (public-apis entry, PR template, other directories).
 
