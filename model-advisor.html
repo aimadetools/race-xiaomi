@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Model Advisor — Find the Perfect Model for Your Use Case | APIpulse</title>
+    <meta name="description" content="Tell us your use case, budget, and quality needs. Get a personalized AI model recommendation from 33 models across 10 providers. Free, instant, no signup.">
+    <meta property="og:title" content="AI Model Advisor — Find the Perfect Model for Your Use Case">
+    <meta property="og:description" content="Get personalized AI model recommendations based on your use case, budget, and quality needs. 33 models, 10 providers.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://getapipulse.com/og-image.png">
+    <meta property="og:url" content="https://getapipulse.com/model-advisor.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="AI Model Advisor — Find the Perfect Model">
+    <meta name="twitter:image" content="https://getapipulse.com/og-image.png">
+    <meta name="twitter:description" content="Personalized AI model recommendations from 33 models across 10 providers.">
+    <meta name="keywords" content="AI model advisor, which AI model should I use, AI model selector, best AI model for my use case, LLM recommendation tool">
+    <link rel="canonical" href="https://getapipulse.com/model-advisor.html">
+    <link rel="alternate" type="application/rss+xml" title="APIpulse Blog" href="https://getapipulse.com/rss.xml">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="styles.css">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0CEP7S9Y3J"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-0CEP7S9Y3J');
+    </script>
+    <script src="analytics.js" defer></script>
+    <script src="dynamic-date.js" defer></script>
+    <script src="shared.js" defer></script>
+    <script src="pricing-data.js" defer></script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "AI Model Advisor",
+        "url": "https://getapipulse.com/model-advisor.html",
+        "description": "Find the perfect AI model for your use case. Personalized recommendations from 33 models across 10 providers.",
+        "applicationCategory": "DeveloperApplication",
+        "operatingSystem": "Web",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "How does the AI Model Advisor work?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "The AI Model Advisor asks about your use case, monthly budget, quality needs, and context requirements. It then scores all 33 models across 10 providers against your criteria and returns the top 5 matches with cost breakdowns and reasoning."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Which models does the advisor recommend?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "The advisor evaluates 33 models from OpenAI, Anthropic, Google, DeepSeek, Mistral, Cohere, Meta, Moonshot, xAI, and AI21. It considers input/output pricing, context windows, provider reputation, and use-case fit to generate personalized recommendations."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Is the AI Model Advisor free?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes, the AI Model Advisor is completely free. No signup required. You can use it as many times as you want to find the best model for different use cases and budgets."
+                }
+            }
+        ]
+    }
+    </script>
+    <style>
+        .content { max-width: 800px; margin: 0 auto; padding: 120px 24px 80px; }
+        h1 { font-size: 40px; font-weight: 800; text-align: center; margin-bottom: 12px; }
+        .subtitle { text-align: center; color: var(--text-secondary); font-size: 18px; margin-bottom: 40px; max-width: 600px; margin-left: auto; margin-right: auto; }
+
+        /* Wizard */
+        .wizard-steps { display: flex; justify-content: center; gap: 8px; margin-bottom: 40px; }
+        .wizard-step { width: 48px; height: 4px; border-radius: 2px; background: var(--border); transition: all 0.3s; }
+        .wizard-step.active { background: var(--accent); width: 64px; }
+        .wizard-step.done { background: var(--green); }
+
+        .wizard-card {
+            background: var(--bg-secondary); border: 1px solid var(--border);
+            border-radius: 16px; padding: 40px; margin-bottom: 24px;
+            animation: fadeIn 0.3s ease;
+        }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
+        .wizard-card h2 { font-size: 24px; font-weight: 700; margin-bottom: 6px; }
+        .wizard-card .step-num { font-size: 13px; font-weight: 600; color: var(--accent); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; }
+        .wizard-card .card-desc { color: var(--text-secondary); font-size: 15px; margin-bottom: 28px; }
+
+        .option-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 12px; margin-bottom: 24px; }
+        .option-btn {
+            background: var(--bg-card); border: 2px solid var(--border);
+            border-radius: 12px; padding: 20px 16px; cursor: pointer;
+            transition: all 0.2s; text-align: center;
+        }
+        .option-btn:hover { border-color: var(--accent); background: var(--bg-card-hover); }
+        .option-btn.selected { border-color: var(--accent); background: var(--accent-glow); }
+        .option-btn .opt-icon { font-size: 28px; margin-bottom: 8px; display: block; }
+        .option-btn .opt-title { font-size: 15px; font-weight: 600; color: var(--text-primary); margin-bottom: 4px; }
+        .option-btn .opt-desc { font-size: 12px; color: var(--text-muted); line-height: 1.4; }
+
+        /* Budget slider */
+        .budget-display { text-align: center; margin-bottom: 20px; }
+        .budget-amount { font-size: 48px; font-weight: 800; color: var(--accent); }
+        .budget-label { font-size: 14px; color: var(--text-secondary); }
+        .budget-slider { width: 100%; margin: 16px 0; accent-color: var(--accent); }
+        .budget-ticks { display: flex; justify-content: space-between; font-size: 12px; color: var(--text-muted); }
+
+        .wizard-nav { display: flex; justify-content: space-between; gap: 12px; }
+        .wizard-nav .btn-primary, .wizard-nav .btn-secondary { min-width: 140px; text-align: center; }
+
+        /* Results */
+        .results { display: none; }
+        .results.active { display: block; }
+        .result-header { text-align: center; margin-bottom: 32px; }
+        .result-header h2 { font-size: 28px; margin-bottom: 8px; }
+
+        .rec-card {
+            background: var(--bg-card); border: 1px solid var(--border);
+            border-radius: 16px; padding: 28px; margin-bottom: 16px;
+            transition: all 0.3s;
+        }
+        .rec-card.top-pick { border-color: var(--accent); border-width: 2px; box-shadow: 0 4px 20px rgba(99, 102, 241, 0.15); }
+        .rec-card:hover { transform: translateY(-2px); }
+        .rec-rank { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--accent); margin-bottom: 4px; }
+        .rec-rank.top { color: var(--green); }
+        .rec-name { font-size: 22px; font-weight: 700; margin-bottom: 2px; }
+        .rec-provider { font-size: 14px; color: var(--text-secondary); margin-bottom: 12px; }
+        .rec-score { display: inline-block; background: var(--accent-glow); color: var(--accent); padding: 4px 12px; border-radius: 6px; font-size: 13px; font-weight: 700; margin-bottom: 12px; }
+        .rec-reason { font-size: 14px; color: var(--text-secondary); line-height: 1.6; margin-bottom: 16px; }
+
+        .rec-specs { display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 12px; margin-bottom: 16px; }
+        .spec-item { background: var(--bg-secondary); border-radius: 8px; padding: 12px; text-align: center; }
+        .spec-label { font-size: 11px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 4px; }
+        .spec-value { font-size: 16px; font-weight: 700; }
+        .spec-value.cost { color: var(--green); }
+
+        .rec-cost-table { width: 100%; border-collapse: collapse; margin-top: 12px; }
+        .rec-cost-table th { font-size: 12px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px; padding: 8px 0; text-align: left; border-bottom: 1px solid var(--border); }
+        .rec-cost-table td { font-size: 14px; padding: 8px 0; border-bottom: 1px solid var(--border); }
+        .rec-cost-table tr:last-child td { border-bottom: none; }
+
+        .advice-box {
+            background: var(--bg-secondary); border: 1px solid var(--border);
+            border-radius: 12px; padding: 24px; margin-top: 24px;
+        }
+        .advice-box h3 { font-size: 18px; font-weight: 700; margin-bottom: 12px; }
+        .advice-box ul { padding-left: 20px; margin: 0; }
+        .advice-box li { font-size: 14px; color: var(--text-secondary); line-height: 1.8; }
+
+        .restart-btn {
+            display: inline-block; margin-top: 24px; padding: 12px 24px;
+            background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 8px;
+            color: var(--text-primary); font-size: 14px; font-weight: 600; cursor: pointer; transition: all 0.2s;
+        }
+        .restart-btn:hover { border-color: var(--accent); color: var(--accent); }
+
+        @media (max-width: 768px) {
+            .content { padding: 100px 16px 60px; }
+            h1 { font-size: 28px; }
+            .wizard-card { padding: 24px; }
+            .option-grid { grid-template-columns: 1fr 1fr; }
+            .rec-specs { grid-template-columns: 1fr 1fr; }
+        }
+    </style>
+    <meta name="theme-color" content="#6366f1">
+</head>
+<body>
+    <nav>
+        <div class="nav-inner">
+            <a href="index.html" class="logo">API<span>pulse</span></a>
+            <button class="hamburger" onclick="toggleMobileNav()" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+            <div class="nav-links">
+                <a href="calculator.html">Calculator</a>
+                <a href="compare.html">Compare</a>
+                <a href="cost-explorer.html">Explorer</a>
+                <a href="agent-cost-calculator.html">Agents</a>
+                <a href="cost-scenarios.html">Scenarios</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="use-cases.html">Use Cases</a>
+                <a href="about.html">About</a>
+                <a href="blog.html">Blog</a>
+                <a href="tools.html">Tools</a>
+                <a href="model-advisor.html" class="active" style="color:var(--accent);">Advisor</a>
+                <a href="api-docs.html" style="color:var(--accent);">API</a>
+                <a href="pricing.html" class="nav-cta">Get Pro — $29</a>
+                <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="content">
+        <h1>Which AI model is right for you?</h1>
+        <p class="subtitle">Answer 4 quick questions. Get a personalized recommendation from 33 models across 10 providers — with exact costs.</p>
+
+        <div class="wizard-steps" id="wizardSteps">
+            <div class="wizard-step active"></div>
+            <div class="wizard-step"></div>
+            <div class="wizard-step"></div>
+            <div class="wizard-step"></div>
+        </div>
+
+        <!-- Step 1: Use Case -->
+        <div class="wizard-card" id="step1">
+            <div class="step-num">Step 1 of 4</div>
+            <h2>What are you building?</h2>
+            <p class="card-desc">Select the primary use case for your AI API calls.</p>
+            <div class="option-grid">
+                <div class="option-btn" data-value="chatbot" onclick="selectOption(this, 'usecase')">
+                    <span class="opt-icon">💬</span>
+                    <div class="opt-title">Chatbot</div>
+                    <div class="opt-desc">Customer support, sales, or general Q&A</div>
+                </div>
+                <div class="option-btn" data-value="code" onclick="selectOption(this, 'usecase')">
+                    <span class="opt-icon">💻</span>
+                    <div class="opt-title">Code Generation</div>
+                    <div class="opt-desc">Autocomplete, code review, debugging</div>
+                </div>
+                <div class="option-btn" data-value="content" onclick="selectOption(this, 'usecase')">
+                    <span class="opt-icon">✍️</span>
+                    <div class="opt-title">Content Writing</div>
+                    <div class="opt-desc">Blog posts, marketing copy, emails</div>
+                </div>
+                <div class="option-btn" data-value="analysis" onclick="selectOption(this, 'usecase')">
+                    <span class="opt-icon">📊</span>
+                    <div class="opt-title">Data Analysis</div>
+                    <div class="opt-desc">Summarization, extraction, classification</div>
+                </div>
+                <div class="option-btn" data-value="rag" onclick="selectOption(this, 'usecase')">
+                    <span class="opt-icon">🔍</span>
+                    <div class="opt-title">RAG / Search</div>
+                    <div class="opt-desc">Retrieval-augmented generation, Q&A over docs</div>
+                </div>
+                <div class="option-btn" data-value="agent" onclick="selectOption(this, 'usecase')">
+                    <span class="opt-icon">🤖</span>
+                    <div class="opt-title">AI Agent</div>
+                    <div class="opt-desc">Tool use, planning, multi-step reasoning</div>
+                </div>
+                <div class="option-btn" data-value="creative" onclick="selectOption(this, 'usecase')">
+                    <span class="opt-icon">🎨</span>
+                    <div class="opt-title">Creative / Writing</div>
+                    <div class="opt-desc">Stories, scripts, long-form content</div>
+                </div>
+                <div class="option-btn" data-value="translation" onclick="selectOption(this, 'usecase')">
+                    <span class="opt-icon">🌐</span>
+                    <div class="opt-title">Translation</div>
+                    <div class="opt-desc">Multi-language translation and localization</div>
+                </div>
+            </div>
+            <div class="wizard-nav">
+                <div></div>
+                <button class="btn-primary" onclick="nextStep(2)" id="next1" disabled>Next →</button>
+            </div>
+        </div>
+
+        <!-- Step 2: Budget -->
+        <div class="wizard-card" id="step2" style="display:none;">
+            <div class="step-num">Step 2 of 4</div>
+            <h2>What's your monthly budget?</h2>
+            <p class="card-desc">Drag the slider to set your approximate monthly API spend target.</p>
+            <div class="budget-display">
+                <div class="budget-amount" id="budgetDisplay">$100</div>
+                <div class="budget-label">per month</div>
+            </div>
+            <input type="range" class="budget-slider" id="budgetSlider" min="0" max="10000" value="100" step="10" oninput="updateBudget(this.value)">
+            <div class="budget-ticks">
+                <span>$0</span>
+                <span>$1K</span>
+                <span>$5K</span>
+                <span>$10K+</span>
+            </div>
+            <div class="wizard-nav" style="margin-top:24px;">
+                <button class="btn-secondary" onclick="prevStep(1)">← Back</button>
+                <button class="btn-primary" onclick="nextStep(3)">Next →</button>
+            </div>
+        </div>
+
+        <!-- Step 3: Priority -->
+        <div class="wizard-card" id="step3" style="display:none;">
+            <div class="step-num">Step 3 of 4</div>
+            <h2>What matters most?</h2>
+            <p class="card-desc">Choose your top priority. This affects which models rank highest.</p>
+            <div class="option-grid">
+                <div class="option-btn" data-value="cheapest" onclick="selectOption(this, 'priority')">
+                    <span class="opt-icon">💰</span>
+                    <div class="opt-title">Lowest Cost</div>
+                    <div class="opt-desc">Minimize spend, accept lower quality</div>
+                </div>
+                <div class="option-btn" data-value="quality" onclick="selectOption(this, 'priority')">
+                    <span class="opt-icon">⭐</span>
+                    <div class="opt-title">Best Quality</div>
+                    <div class="opt-desc">Best outputs regardless of cost</div>
+                </div>
+                <div class="option-btn" data-value="balanced" onclick="selectOption(this, 'priority')">
+                    <span class="opt-icon">⚖️</span>
+                    <div class="opt-title">Balanced</div>
+                    <div class="opt-desc">Good quality at reasonable cost</div>
+                </div>
+                <div class="option-btn" data-value="speed" onclick="selectOption(this, 'priority')">
+                    <span class="opt-icon">⚡</span>
+                    <div class="opt-title">Fastest</div>
+                    <div class="opt-desc">Low latency, fast response times</div>
+                </div>
+            </div>
+            <div class="wizard-nav">
+                <button class="btn-secondary" onclick="prevStep(2)">← Back</button>
+                <button class="btn-primary" onclick="nextStep(4)" id="next3" disabled>Next →</button>
+            </div>
+        </div>
+
+        <!-- Step 4: Context -->
+        <div class="wizard-card" id="step4" style="display:none;">
+            <div class="step-num">Step 4 of 4</div>
+            <h2>How much context do you need?</h2>
+            <p class="card-desc">Average input size per request (prompt + conversation history).</p>
+            <div class="option-grid">
+                <div class="option-btn" data-value="short" onclick="selectOption(this, 'context')">
+                    <span class="opt-icon">📝</span>
+                    <div class="opt-title">Short (&lt;1K tokens)</div>
+                    <div class="opt-desc">Simple questions, short prompts</div>
+                </div>
+                <div class="option-btn" data-value="medium" onclick="selectOption(this, 'context')">
+                    <span class="opt-icon">📄</span>
+                    <div class="opt-title">Medium (1K-10K)</div>
+                    <div class="opt-desc">Typical conversations, articles</div>
+                </div>
+                <div class="option-btn" data-value="long" onclick="selectOption(this, 'context')">
+                    <span class="opt-icon">📚</span>
+                    <div class="opt-title">Long (10K-100K)</div>
+                    <div class="opt-desc">Large documents, codebases</div>
+                </div>
+                <div class="option-btn" data-value="massive" onclick="selectOption(this, 'context')">
+                    <span class="opt-icon">🏛️</span>
+                    <div class="opt-title">Massive (100K+)</div>
+                    <div class="opt-desc">Entire repos, book-length input</div>
+                </div>
+            </div>
+            <div class="wizard-nav">
+                <button class="btn-secondary" onclick="prevStep(3)">← Back</button>
+                <button class="btn-primary" onclick="showResults()" id="next4" disabled>Get Recommendations →</button>
+            </div>
+        </div>
+
+        <!-- Results -->
+        <div class="results" id="results">
+            <div class="result-header">
+                <h2>Your Top Model Recommendations</h2>
+                <p id="resultSummary" style="color:var(--text-secondary);"></p>
+            </div>
+            <div id="recCards"></div>
+            <div class="advice-box" id="adviceBox">
+                <h3>💡 Optimization Tips</h3>
+                <ul id="adviceList"></ul>
+            </div>
+            <button class="restart-btn" onclick="restart()">↻ Start Over</button>
+        </div>
+
+        <section style="text-align:center; padding:60px 0 0;">
+            <h2 style="font-size:24px; margin-bottom:12px;">Want to compare models side by side?</h2>
+            <p style="color:var(--text-secondary); margin-bottom:24px;">Use our Cost Calculator for detailed token-level cost estimates across all 33 models.</p>
+            <a href="calculator.html" class="btn-primary" style="padding:14px 36px;">Open Cost Calculator →</a>
+        </section>
+    </main>
+
+    <footer>
+        <p>Pricing data last verified: <span class="verified-date"></span></p>
+        <p>&copy; 2026 APIpulse. <a href="index.html">Home</a> &middot; <a href="use-cases.html">Use Cases</a> &middot; <a href="about.html">About</a> &middot; <a href="blog.html">Blog</a>
+<a href="pricing-index.html">Pricing Index</a> &middot; <a href="model-matrix.html">Model Matrix</a> &middot; <a href="cost-scenarios.html">Scenarios</a> &middot; <a href="price-alerts.html">Price Alerts</a> &middot; <a href="pricing-changelog.html">Changelog</a> &middot; <a href="openai.html">OpenAI</a> &middot; <a href="anthropic.html">Anthropic</a> &middot; <a href="google.html">Google</a> &middot; <a href="mistral.html">Mistral</a> &middot; <a href="cohere.html">Cohere</a> &middot; <a href="deepseek.html">DeepSeek</a> &middot; <a href="xai.html">xAI</a> &middot; <a href="moonshot.html">Moonshot</a> &middot; <a href="together.html">Together.ai</a> &middot; <a href="ai21.html">AI21</a> &middot; <a href="pricing.html">Pricing</a> &middot; <a href="embed.html">Embed Widget</a> &middot; <a href="cheat-sheet.html">Cheat Sheet</a> &middot; <a href="model-switch.html">Model Switch</a> &middot; <a href="api-docs.html">API</a> &middot; <a href="https://x.com/getapipulse" target="_blank" rel="noopener">Twitter</a> &middot; <a href="unsubscribe.html">Unsubscribe</a></p>
+    </footer>
+
+    <script>
+    // State
+    const state = { usecase: null, budget: 100, priority: null, context: null };
+
+    // Use case scoring weights: how well each model fits each use case
+    const usecaseScores = {
+        chatbot: {
+            // Premium chatbots
+            'anthropic-sonnet46': 95, 'anthropic-sonnet': 93, 'openai-gpt5': 90, 'openai-gpt5-mini': 85,
+            'google-gemini3-pro': 88, 'google-pro': 86,
+            // Mid-range
+            'anthropic-haiku': 82, 'openai-gpt4o': 80, 'openai-gpt4o-mini': 78,
+            'mistral-large': 75, 'mistral-small': 70, 'deepseek-v4-pro': 72,
+            // Budget
+            'google-flash': 78, 'google-flash-lite': 65, 'deepseek-v4-flash': 68,
+            'openai-gpt-oss-120b': 60, 'openai-gpt-oss-20b': 50,
+            'llama-4-scout': 62, 'llama-4-maverick': 58, 'llama-3.1-70b': 55, 'llama-3.1-8b': 40,
+            'cohere-command-r-plus': 70, 'cohere-command-r': 55,
+            'kimi-k26': 60, 'xai-grok3': 85, 'xai-grok3-mini': 72, 'ai21-jamba': 65,
+            'openai-gpt55': 92, 'openai-gpt55-pro': 88, 'openai-gpt53-codex': 70,
+            'anthropic-opus47': 94, 'anthropic-opus': 90
+        },
+        code: {
+            'openai-gpt53-codex': 98, 'openai-gpt5': 92, 'openai-gpt55': 95,
+            'deepseek-v4-pro': 94, 'anthropic-sonnet46': 90, 'anthropic-sonnet': 88,
+            'anthropic-opus47': 96, 'anthropic-opus': 94,
+            'openai-gpt5-mini': 80, 'openai-gpt4o': 78,
+            'google-gemini3-pro': 82, 'google-pro': 80,
+            'mistral-large': 72, 'deepseek-v4-flash': 70,
+            'llama-4-scout': 65, 'llama-4-maverick': 62,
+            'openai-gpt55-pro': 90, 'openai-gpt4o-mini': 60,
+            'anthropic-haiku': 72, 'google-flash': 65, 'google-flash-lite': 50,
+            'openai-gpt-oss-120b': 58, 'openai-gpt-oss-20b': 45,
+            'mistral-small': 60, 'llama-3.1-70b': 55, 'llama-3.1-8b': 38,
+            'cohere-command-r-plus': 65, 'cohere-command-r': 48,
+            'kimi-k26': 62, 'xai-grok3': 82, 'xai-grok3-mini': 70, 'ai21-jamba': 60
+        },
+        content: {
+            'openai-gpt5': 92, 'openai-gpt55': 95, 'anthropic-sonnet46': 94,
+            'anthropic-sonnet': 92, 'anthropic-opus47': 96, 'anthropic-opus': 95,
+            'google-gemini3-pro': 88, 'google-pro': 86,
+            'openai-gpt5-mini': 80, 'openai-gpt4o': 82,
+            'mistral-large': 75, 'deepseek-v4-pro': 72,
+            'anthropic-haiku': 75, 'openai-gpt4o-mini': 70,
+            'google-flash': 72, 'llama-4-scout': 60,
+            'openai-gpt55-pro': 90, 'openai-gpt53-codex': 70,
+            'deepseek-v4-flash': 62, 'mistral-small': 65,
+            'google-flash-lite': 55, 'openai-gpt-oss-120b': 55, 'openai-gpt-oss-20b': 42,
+            'llama-4-maverick': 58, 'llama-3.1-70b': 52, 'llama-3.1-8b': 35,
+            'cohere-command-r-plus': 68, 'cohere-command-r': 50,
+            'kimi-k26': 60, 'xai-grok3': 85, 'xai-grok3-mini': 70, 'ai21-jamba': 62
+        },
+        analysis: {
+            'openai-gpt5': 92, 'openai-gpt55': 95, 'anthropic-opus47': 96,
+            'anthropic-sonnet46': 90, 'anthropic-sonnet': 88, 'anthropic-opus': 94,
+            'google-gemini3-pro': 90, 'google-pro': 88,
+            'openai-gpt5-mini': 82, 'openai-gpt4o': 80,
+            'deepseek-v4-pro': 85, 'mistral-large': 72,
+            'anthropic-haiku': 75, 'openai-gpt4o-mini': 68,
+            'google-flash': 75, 'deepseek-v4-flash': 72,
+            'openai-gpt55-pro': 92, 'openai-gpt53-codex': 72,
+            'mistral-small': 62, 'llama-4-scout': 65,
+            'google-flash-lite': 58, 'openai-gpt-oss-120b': 55, 'openai-gpt-oss-20b': 42,
+            'llama-4-maverick': 60, 'llama-3.1-70b': 52, 'llama-3.1-8b': 35,
+            'cohere-command-r-plus': 68, 'cohere-command-r': 50,
+            'kimi-k26': 62, 'xai-grok3': 82, 'xai-grok3-mini': 70, 'ai21-jamba': 62
+        },
+        rag: {
+            'google-gemini3-pro': 95, 'google-pro': 93, 'openai-gpt5': 90,
+            'anthropic-sonnet46': 92, 'anthropic-sonnet': 90, 'anthropic-opus47': 94,
+            'openai-gpt55': 92, 'deepseek-v4-pro': 85,
+            'openai-gpt5-mini': 82, 'openai-gpt4o': 80,
+            'anthropic-opus': 92, 'mistral-large': 75,
+            'anthropic-haiku': 78, 'openai-gpt4o-mini': 70,
+            'google-flash': 78, 'deepseek-v4-flash': 72,
+            'openai-gpt55-pro': 90, 'openai-gpt53-codex': 68,
+            'mistral-small': 65, 'llama-4-scout': 70,
+            'google-flash-lite': 60, 'openai-gpt-oss-120b': 55, 'openai-gpt-oss-20b': 42,
+            'llama-4-maverick': 65, 'llama-3.1-70b': 55, 'llama-3.1-8b': 38,
+            'cohere-command-r-plus': 75, 'cohere-command-r': 58,
+            'kimi-k26': 65, 'xai-grok3': 82, 'xai-grok3-mini': 70, 'ai21-jamba': 68
+        },
+        agent: {
+            'openai-gpt5': 94, 'openai-gpt55': 96, 'anthropic-opus47': 98,
+            'anthropic-sonnet46': 92, 'anthropic-sonnet': 90, 'anthropic-opus': 96,
+            'google-gemini3-pro': 88, 'google-pro': 86,
+            'openai-gpt5-mini': 80, 'openai-gpt4o': 78,
+            'deepseek-v4-pro': 82, 'mistral-large': 70,
+            'openai-gpt55-pro': 94, 'openai-gpt53-codex': 80,
+            'anthropic-haiku': 72, 'openai-gpt4o-mini': 65,
+            'google-flash': 72, 'deepseek-v4-flash': 65,
+            'mistral-small': 60, 'llama-4-scout': 62,
+            'google-flash-lite': 50, 'openai-gpt-oss-120b': 52, 'openai-gpt-oss-20b': 38,
+            'llama-4-maverick': 58, 'llama-3.1-70b': 50, 'llama-3.1-8b': 32,
+            'cohere-command-r-plus': 65, 'cohere-command-r': 45,
+            'kimi-k26': 58, 'xai-grok3': 85, 'xai-grok3-mini': 72, 'ai21-jamba': 60
+        },
+        creative: {
+            'anthropic-opus47': 98, 'anthropic-opus': 97, 'openai-gpt55': 95,
+            'openai-gpt5': 92, 'anthropic-sonnet46': 90, 'anthropic-sonnet': 88,
+            'google-gemini3-pro': 85, 'google-pro': 83,
+            'openai-gpt5-mini': 78, 'openai-gpt4o': 80,
+            'mistral-large': 72, 'deepseek-v4-pro': 68,
+            'openai-gpt55-pro': 93, 'anthropic-haiku': 72,
+            'openai-gpt4o-mini': 65, 'google-flash': 68,
+            'openai-gpt53-codex': 60, 'mistral-small': 60,
+            'google-flash-lite': 50, 'openai-gpt-oss-120b': 50, 'openai-gpt-oss-20b': 38,
+            'deepseek-v4-flash': 55, 'llama-4-scout': 55,
+            'llama-4-maverick': 52, 'llama-3.1-70b': 48, 'llama-3.1-8b': 30,
+            'cohere-command-r-plus': 65, 'cohere-command-r': 48,
+            'kimi-k26': 55, 'xai-grok3': 82, 'xai-grok3-mini': 68, 'ai21-jamba': 58
+        },
+        translation: {
+            'google-gemini3-pro': 95, 'google-pro': 93, 'openai-gpt5': 92,
+            'openai-gpt55': 94, 'anthropic-sonnet46': 90, 'anthropic-sonnet': 88,
+            'deepseek-v4-pro': 88, 'mistral-large': 85,
+            'openai-gpt5-mini': 85, 'openai-gpt4o': 82,
+            'anthropic-opus47': 92, 'anthropic-opus': 90,
+            'anthropic-haiku': 80, 'openai-gpt4o-mini': 78,
+            'google-flash': 82, 'deepseek-v4-flash': 78,
+            'openai-gpt55-pro': 92, 'openai-gpt53-codex': 60,
+            'mistral-small': 75, 'llama-4-scout': 70,
+            'google-flash-lite': 72, 'openai-gpt-oss-120b': 62, 'openai-gpt-oss-20b': 50,
+            'llama-4-maverick': 65, 'llama-3.1-70b': 60, 'llama-3.1-8b': 45,
+            'cohere-command-r-plus': 78, 'cohere-command-r': 65,
+            'kimi-k26': 72, 'xai-grok3': 80, 'xai-grok3-mini': 70, 'ai21-jamba': 70
+        }
+    };
+
+    // Context requirements — minimum context window needed
+    const contextRequirements = {
+        short: 8,    // 8K is fine
+        medium: 32,  // 32K
+        long: 128,   // 128K
+        massive: 200 // 200K+
+    };
+
+    // Speed tiers (lower TTFT = faster)
+    const speedTier = {
+        'openai-gpt-oss-20b': 1, 'openai-gpt-oss-120b': 1, 'openai-gpt4o-mini': 1,
+        'google-flash': 1, 'google-flash-lite': 1, 'deepseek-v4-flash': 1,
+        'mistral-small': 1, 'llama-3.1-8b': 1, 'llama-4-scout': 1,
+        'openai-gpt5-mini': 2, 'openai-gpt4o': 2, 'deepseek-v4-pro': 2,
+        'mistral-large': 2, 'llama-3.1-70b': 2, 'llama-4-maverick': 2,
+        'anthropic-haiku': 2, 'cohere-command-r': 2, 'kimi-k26': 2,
+        'openai-gpt5': 3, 'openai-gpt55': 3, 'anthropic-sonnet46': 3,
+        'anthropic-sonnet': 3, 'google-gemini3-pro': 3, 'google-pro': 3,
+        'cohere-command-r-plus': 3, 'xai-grok3-mini': 3, 'ai21-jamba': 3,
+        'openai-gpt53-codex': 3, 'openai-gpt55-pro': 3,
+        'anthropic-opus47': 4, 'anthropic-opus': 4, 'xai-grok3': 4
+    };
+
+    function parseContext(ctx) {
+        if (!ctx) return 0;
+        const s = ctx.replace(/[^0-9.KM]/gi, '').toLowerCase();
+        if (s.includes('m')) return parseFloat(s) * 1000;
+        if (s.includes('k')) return parseFloat(s);
+        return parseFloat(s) || 0;
+    }
+
+    function selectOption(el, field) {
+        el.parentElement.querySelectorAll('.option-btn').forEach(b => b.classList.remove('selected'));
+        el.classList.add('selected');
+        state[field] = el.dataset.value;
+        // Enable next buttons
+        if (field === 'usecase') document.getElementById('next1').disabled = false;
+        if (field === 'priority') document.getElementById('next3').disabled = false;
+        if (field === 'context') document.getElementById('next4').disabled = false;
+    }
+
+    function updateBudget(val) {
+        state.budget = parseInt(val);
+        const display = document.getElementById('budgetDisplay');
+        if (val >= 1000) {
+            display.textContent = '$' + (val / 1000).toFixed(val % 1000 === 0 ? 0 : 1) + 'K';
+        } else {
+            display.textContent = '$' + val;
+        }
+    }
+
+    function nextStep(n) {
+        document.querySelectorAll('.wizard-card').forEach(c => c.style.display = 'none');
+        document.getElementById('step' + n).style.display = 'block';
+        const steps = document.querySelectorAll('.wizard-step');
+        steps.forEach((s, i) => {
+            s.classList.remove('active', 'done');
+            if (i < n - 1) s.classList.add('done');
+            if (i === n - 1) s.classList.add('active');
+        });
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function prevStep(n) { nextStep(n); }
+
+    function showResults() {
+        const minCtx = contextRequirements[state.context];
+
+        // Score each model
+        const scored = API_MODELS.map(m => {
+            const ucScore = (usecaseScores[state.usecase] && usecaseScores[state.usecase][m.id]) || 50;
+            const modelCtx = parseContext(m.context);
+
+            // Context fit: 0 if insufficient, scaled if sufficient
+            let ctxScore = 0;
+            if (modelCtx >= minCtx) {
+                ctxScore = 100;
+                // Bonus for excess context (but diminishing returns)
+                if (modelCtx >= minCtx * 4) ctxScore = 90; // too much = paying for unused
+            } else if (modelCtx >= minCtx * 0.5) {
+                ctxScore = 60; // tight but workable
+            } else {
+                ctxScore = 10; // likely insufficient
+            }
+
+            // Cost score — lower cost = higher score, relative to budget
+            const avgCost = (m.input + m.output) / 2;
+            let costScore;
+            if (state.budget === 0) {
+                costScore = m.input === 0 ? 100 : Math.max(0, 100 - avgCost * 20);
+            } else {
+                // Estimate monthly tokens based on budget
+                const estTokens = (state.budget / avgCost) * 1000000;
+                costScore = Math.min(100, (estTokens / 1000000) * 10); // more tokens = more affordable
+                costScore = Math.max(0, Math.min(100, 100 - (avgCost * 30)));
+            }
+
+            // Priority weighting
+            let priorityWeight = { usecase: 0.35, cost: 0.25, context: 0.25, speed: 0.15 };
+            if (state.priority === 'cheapest') priorityWeight = { usecase: 0.20, cost: 0.45, context: 0.25, speed: 0.10 };
+            if (state.priority === 'quality') priorityWeight = { usecase: 0.45, cost: 0.10, context: 0.25, speed: 0.20 };
+            if (state.priority === 'speed') priorityWeight = { usecase: 0.30, cost: 0.15, context: 0.20, speed: 0.35 };
+            if (state.priority === 'balanced') priorityWeight = { usecase: 0.30, cost: 0.25, context: 0.25, speed: 0.20 };
+
+            const spd = speedTier[m.id] || 3;
+            const speedScore = Math.max(0, 100 - (spd - 1) * 25);
+
+            const total = Math.round(
+                ucScore * priorityWeight.usecase +
+                costScore * priorityWeight.cost +
+                ctxScore * priorityWeight.context +
+                speedScore * priorityWeight.speed
+            );
+
+            // Estimate monthly cost at budget
+            const monthlyInputTokens = Math.round((state.budget * 0.4) / m.input * 1000000) || 0;
+            const monthlyOutputTokens = Math.round((state.budget * 0.6) / m.output * 1000000) || 0;
+            const estimatedMonthly = state.budget > 0 ? state.budget : 10;
+
+            return { ...m, total, ucScore, costScore, ctxScore, speedScore, modelCtx, estimatedMonthly };
+        });
+
+        scored.sort((a, b) => b.total - a.total);
+        const top5 = scored.slice(0, 5);
+
+        // Render results
+        const usecaseNames = {
+            chatbot: 'Chatbot', code: 'Code Generation', content: 'Content Writing',
+            analysis: 'Data Analysis', rag: 'RAG / Search', agent: 'AI Agent',
+            creative: 'Creative Writing', translation: 'Translation'
+        };
+        const priorityNames = { cheapest: 'Lowest Cost', quality: 'Best Quality', balanced: 'Balanced', speed: 'Fastest' };
+        const contextNames = { short: 'Short (<1K)', medium: 'Medium (1K-10K)', long: 'Long (10K-100K)', massive: 'Massive (100K+)' };
+
+        document.getElementById('resultSummary').textContent =
+            `For ${usecaseNames[state.usecase]} with ${priorityNames[state.priority]} priority, ${contextNames[state.context]} context, $${state.budget}/mo budget.`;
+
+        let cardsHtml = '';
+        top5.forEach((m, i) => {
+            const isTop = i === 0;
+            cardsHtml += `
+                <div class="rec-card ${isTop ? 'top-pick' : ''}">
+                    <div class="rec-rank ${isTop ? 'top' : ''}">${isTop ? '🏆 Top Pick' : '#' + (i + 1) + ' Recommendation'}</div>
+                    <div class="rec-name">${m.name}</div>
+                    <div class="rec-provider">${m.provider} · ${m.tier} tier</div>
+                    <div class="rec-score">Score: ${m.total}/100</div>
+                    <div class="rec-reason">${getReason(m, state)}</div>
+                    <div class="rec-specs">
+                        <div class="spec-item"><div class="spec-label">Input</div><div class="spec-value">$${m.input}/M</div></div>
+                        <div class="spec-item"><div class="spec-label">Output</div><div class="spec-value">$${m.output}/M</div></div>
+                        <div class="spec-item"><div class="spec-label">Context</div><div class="spec-value">${m.context}</div></div>
+                        <div class="spec-item"><div class="spec-label">Use Case</div><div class="spec-value">${m.ucScore}/100</div></div>
+                    </div>
+                    <table class="rec-cost-table">
+                        <tr><th>Usage Level</th><th>Input Cost</th><th>Output Cost</th><th>Total/mo</th></tr>
+                        <tr><td>Light (10K req/mo)</td><td>$${(m.input * 10).toFixed(2)}</td><td>$${(m.output * 20).toFixed(2)}</td><td>$${(m.input * 10 + m.output * 20).toFixed(2)}</td></tr>
+                        <tr><td>Medium (100K req/mo)</td><td>$${(m.input * 100).toFixed(2)}</td><td>$${(m.output * 200).toFixed(2)}</td><td>$${(m.input * 100 + m.output * 200).toFixed(2)}</td></tr>
+                        <tr><td>Heavy (1M req/mo)</td><td>$${(m.input * 1000).toFixed(0)}</td><td>$${(m.output * 2000).toFixed(0)}</td><td>$${(m.input * 1000 + m.output * 2000).toFixed(0)}</td></tr>
+                    </table>
+                </div>`;
+        });
+        document.getElementById('recCards').innerHTML = cardsHtml;
+
+        // Advice
+        const advice = getAdvice(top5, state);
+        document.getElementById('adviceList').innerHTML = advice.map(a => `<li>${a}</li>`).join('');
+
+        // Show results
+        document.querySelectorAll('.wizard-card').forEach(c => c.style.display = 'none');
+        document.getElementById('results').classList.add('active');
+        document.querySelectorAll('.wizard-step').forEach(s => { s.classList.remove('active'); s.classList.add('done'); });
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+
+        // GA4
+        if (typeof gtag === 'function') {
+            gtag('event', 'model_advisor_complete', {
+                usecase: state.usecase,
+                priority: state.priority,
+                context: state.context,
+                budget: state.budget,
+                top_model: top5[0].id
+            });
+        }
+    }
+
+    function getReason(m, st) {
+        const reasons = [];
+        if (m.ucScore >= 90) reasons.push(`Excellent fit for ${st.usecase}`);
+        else if (m.ucScore >= 75) reasons.push(`Good fit for ${st.usecase}`);
+        if (m.costScore >= 80) reasons.push('very affordable');
+        else if (m.costScore >= 50) reasons.push('reasonably priced');
+        if (m.ctxScore >= 90) reasons.push(`${m.context} context window`);
+        if (m.speedScore >= 80) reasons.push('fast inference');
+        if (m.tier === 'Premium') reasons.push('premium quality');
+        if (m.tier === 'Budget') reasons.push('budget-friendly');
+        return reasons.length ? reasons.join(' · ') : `Solid all-around choice for your needs.`;
+    }
+
+    function getAdvice(top5, st) {
+        const tips = [];
+        const cheapest = top5.reduce((a, b) => a.input + a.output < b.input + b.output ? a : b);
+        const best = top5[0];
+
+        if (st.priority === 'cheapest') {
+            tips.push(`<strong>${cheapest.name}</strong> is your cheapest option at $${cheapest.input}/M input, $${cheapest.output}/M output.`);
+            if (cheapest.input <= 0.15) tips.push('At this price point, consider batching requests and using caching to reduce costs further.');
+        } else if (st.priority === 'quality') {
+            tips.push(`<strong>${best.name}</strong> scored highest for quality in your use case. Premium models shine for complex reasoning and nuanced outputs.`);
+        } else {
+            tips.push(`For a balance of cost and quality, <strong>${best.name}</strong> is your best bet.`);
+        }
+
+        if (st.usecase === 'chatbot') tips.push('For chatbots, route simple FAQ queries to cheaper models (Flash, Haiku) and escalate complex ones to premium models.');
+        if (st.usecase === 'code') tips.push('For code generation, DeepSeek V4 Pro offers near-premium quality at budget prices. Consider it for autocomplete tasks.');
+        if (st.usecase === 'agent') tips.push('AI agents make many sequential calls. Use model routing: cheaper models for planning, premium for execution.');
+        if (st.usecase === 'rag') tips.push('For RAG, context window matters most. Gemini models lead with 1M context at affordable prices.');
+
+        if (st.budget < 50) tips.push('With a tight budget, focus on prompt optimization — shorter prompts = fewer input tokens = lower costs.');
+        if (st.budget > 1000) tips.push('At your budget level, consider batch processing discounts (OpenAI offers 50% off for batch API).');
+
+        tips.push('Use the <a href="cost-optimizer.html">Cost Optimizer</a> for a personalized savings report based on your actual usage.');
+        return tips;
+    }
+
+    function restart() {
+        state.usecase = null; state.priority = null; state.context = null; state.budget = 100;
+        document.querySelectorAll('.option-btn').forEach(b => b.classList.remove('selected'));
+        document.getElementById('budgetSlider').value = 100;
+        updateBudget(100);
+        document.getElementById('next1').disabled = true;
+        document.getElementById('next3').disabled = true;
+        document.getElementById('next4').disabled = true;
+        document.getElementById('results').classList.remove('active');
+        nextStep(1);
+    }
+    </script>
+</body>
+</html>
