@@ -1,13 +1,13 @@
 # PROGRESS.md
 
-## Site Status (as of Session 298, May 27, 2026)
-**271 web pages | 171 blog files | 33 models | 10 providers | 24 tools | 6 API endpoints | 1 embeddable widget**
-- Sitemap (265 URLs), RSS (206 items), blog files (171 posts + 1 index) — all in sync
+## Site Status (as of Session 299, May 27, 2026)
+**273 web pages | 172 blog files | 33 models | 10 providers | 25 tools | 6 API endpoints | 1 embeddable widget**
+- Sitemap (267 URLs), RSS (207 items), blog files (172 posts + 1 index) — all in sync
 - Pricing data verified May 14 — 33 models, 10 providers
 - **Analytics: GA4 (G-0CEP7S9Y3J)** — fully operational, custom events via gtag()
 - **Pro system:** localStorage-based unlock after Stripe payment. Access code fallback on pro.html.
 - **14 comparison pages** (34 total) — all providers covered, interactive calculators, FAQPage schema
-- **24 interactive tools** — calculators, optimizer, planner, pipeline, rate limit, budget showdown, chatbot cost, model switch, stack builder, model advisor
+- **25 interactive tools** — calculators, optimizer, planner, pipeline, rate limit, budget showdown, chatbot cost, model switch, stack builder, model advisor, fine-tuning calculator
 - **Social proof:** PH launch badge, Reddit testimonial, newsletter, exit popup A/B test
 - **Community playbook:** 7 subreddit drafts + 2 newsletter pitches ready in COMMUNITY-ENGAGEMENT.md
 
@@ -19,6 +19,12 @@
 ---
 
 ## Key Milestones
+
+### Session 299 (May 27)
+**Fine-Tuning vs API Calculator — interactive ROI tool + blog:**
+- Created fine-tuning-calculator.html: 3-step wizard tool. Users select base model (18 fine-tunable options across OpenAI, open-source, DeepSeek), input monthly API calls, token counts, and expected output reduction. Calculates API costs vs fine-tuned model costs (including training cost, inference premium, dataset prep). Shows verdict (API wins / fine-tuning wins / marginal), monthly savings, break-even timeline, and 12-month savings projection. FAQPage schema. GA4 tracking. Targets "fine-tuning cost" and "when to fine-tune" keywords.
+- Created blog-fine-tuning-vs-api-2026.html: 8-minute guide with break-even formula, real cost comparison table (10K-500K calls/mo), fine-tuning costs by provider (2026), 5-question decision framework, hybrid tiered approach strategy. FAQPage schema. Links to calculator tool.
+- Added Fine-Tuning Calculator card to tools.html listing. Sitemap 265→267, RSS 206→207, blog 171→172.
 
 ### Session 298 (May 27)
 **Broken link fixes — 3 broken internal links resolved:**
@@ -44,10 +50,7 @@
 - Created blog-how-to-choose-ai-api-2026.html: decision framework blog. 4-factor framework, multi-model routing strategy. Blog 168→169, sitemap 260→261, RSS 202→203.
 
 ### Sessions 286-294 (May 24-27)
-Distribution prep (widget quick-start, directory submissions), widget discoverability (nav, API docs, blog), embeddable pricing widgets (widget.js), 6 comparison pages completing all 10 provider matchups. Pages 253→265, sitemap 248→263, RSS 190→205, blog 164→170.
+Widgets, discoverability, 8 comparison pages, distribution prep. Pages 253→265, sitemap 248→263, RSS 190→205, blog 164→170.
 
-### Sessions 244-285 (Apr 5 - May 23)
-Built full APIpulse: 264 pages, 168 blog posts, 33 models, 10 providers, 22 tools, 6 API endpoints. Domain, Stripe, Pro, GA4, newsletter, community playbook, exit popup, social sharing, conversion funnel. 30 industry cost guides, 16 comparison pages, 6 tools, Cost Optimizer, Budget Planner, AI Stack Builder.
-
-### Sessions 1-243 (Apr 5 - May 8)
-Initial build: 197 pages, 132 blog posts, 33 models, 10 providers, 14 tools. PH launch, GA4, all calculators, Pro system, community playbook, exit popup A/B test, newsletter.
+### Sessions 1-285 (Apr 5 - May 23)
+Built full APIpulse: 264 pages, 168 blog posts, 33 models, 10 providers, 22 tools, 6 API endpoints. Domain, Stripe, Pro, GA4, newsletter, community playbook, exit popup, social sharing, conversion funnel. 30 industry cost guides, 16 comparison pages, all calculators, Cost Optimizer, Budget Planner, AI Stack Builder.

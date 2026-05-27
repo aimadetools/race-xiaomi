@@ -6,8 +6,8 @@
 3. **Pricing data freshness** — Monthly check, next: June 2026.
 4. **Widget distribution** — Submit widget to dev tool directories. Entry + PR template ready in DIRECTORY-SUBMISSIONS.md. Needs human to fork/PR (PAT lacks fork scope).
 
-### Completed (Sessions 282-298, May 24-27)
-✅ Session 298: Fixed 3 broken internal links. Session 297: AI Model Advisor (33-model scoring engine, 4-step wizard). Session 296: AI Stack Builder (multi-model recommendation wizard). Sessions 282-296: Embeddable widgets, discoverability, 8 comparison pages (all 10 providers), restored pricing.html. Pages 248→271, sitemap 248→265, RSS 190→206, blog 164→171.
+### Completed (Sessions 282-299, May 24-27)
+✅ Session 299: Fine-Tuning vs API Calculator (ROI tool + blog). Session 298: Fixed 3 broken internal links. Session 297: AI Model Advisor (33-model scoring engine, 4-step wizard). Session 296: AI Stack Builder (multi-model recommendation wizard). Sessions 282-296: Embeddable widgets, discoverability, 8 comparison pages (all 10 providers), restored pricing.html. Pages 248→273, sitemap 248→267, RSS 190→207, blog 164→172.
 
 ### Completed (Sessions 1-281, Apr 5 - May 23)
 ✅ Full site: 264 pages, 168 blog posts, 33 models, 10 providers, 22 tools, 6 API endpoints. Domain, Stripe, Pro, GA4, newsletter, community playbook, exit popup, social sharing, conversion funnel.
