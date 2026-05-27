@@ -1,8 +1,8 @@
 # PROGRESS.md
 
-## Site Status (as of Session 294, May 27, 2026)
-**264 web pages | 168 blog files | 33 models | 10 providers | 22 tools | 6 API endpoints | 1 embeddable widget**
-- Sitemap (259 URLs), RSS (201 items), blog files (168 posts + 1 index) — all in sync
+## Site Status (as of Session 295, May 27, 2026)
+**266 web pages | 169 blog files | 33 models | 10 providers | 22 tools | 6 API endpoints | 1 embeddable widget**
+- Sitemap (261 URLs), RSS (203 items), blog files (169 posts + 1 index) — all in sync
 - Pricing data verified May 14 — 33 models, 10 providers
 - **Analytics: GA4 (G-0CEP7S9Y3J)** — fully operational, custom events via gtag()
 - **Pro system:** localStorage-based unlock after Stripe payment. Access code fallback on pro.html.
@@ -19,6 +19,12 @@
 ---
 
 ## Key Milestones
+
+### Session 295 (May 27)
+**SEO content — startup AI API guide + decision framework blog:**
+- Created compare-best-ai-api-for-startups.html: comprehensive comparison page targeting "best AI API for startups" keyword. Compares 12 models across 6 providers with cost, free tiers, and context windows. Interactive 3-model calculator with 4 presets (MVP, chatbot, SaaS, scaling). Provider guide, growth strategy by stage, use case recommendations. FAQPage schema. Sitemap 259→260, RSS 201→202.
+- Created blog-how-to-choose-ai-api-2026.html: decision framework blog post targeting "how to choose AI API" keywords. 4-factor framework (cost, quality, context, ecosystem), multi-model routing strategy, provider comparison table, common mistakes. Blog 168→169, sitemap 260→261, RSS 202→203.
+- All backlog tasks remain blocked on human action (Stripe links, community posting, GA4 review, PAT lacks gist/fork scope). Created high-value SEO content to drive organic traffic while waiting.
 
 ### Session 294 (May 27)
 **Distribution prep — widget quick-start + directory submissions:**
