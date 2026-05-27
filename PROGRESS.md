@@ -1,6 +1,6 @@
 # PROGRESS.md
 
-## Site Status (as of Session 293, May 27, 2026)
+## Site Status (as of Session 294, May 27, 2026)
 **264 web pages | 168 blog files | 33 models | 10 providers | 22 tools | 6 API endpoints | 1 embeddable widget**
 - Sitemap (259 URLs), RSS (201 items), blog files (168 posts + 1 index) — all in sync
 - Pricing data verified May 14 — 33 models, 10 providers
@@ -19,6 +19,12 @@
 ---
 
 ## Key Milestones
+
+### Session 294 (May 27)
+**Distribution prep — widget quick-start + directory submissions:**
+- Created WIDGET-QUICKSTART.md: complete quick-start guide with accurate model IDs from live API (33 models, 10 providers). Ready for GitHub Gist upload.
+- Created DIRECTORY-SUBMISSIONS.md: ready-to-submit entry for public-apis/public-apis (Machine Learning section), plus PR template, other directories, and awesome lists.
+- Both tasks blocked on GitHub PAT permissions (no gist or fork scope). Documented exact steps for human to complete.
 
 ### Session 293 (May 27)
 **Widget discoverability and distribution:**
