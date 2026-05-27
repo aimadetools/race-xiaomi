@@ -377,6 +377,25 @@ print(f<span class="code-string">"${model['input']}/1M input, ${model['output']}
             </div>
         </div>
 
+        <!-- Embeddable Widgets -->
+        <div class="section">
+            <h2>Embeddable Widgets</h2>
+            <p>Don't want to build your own UI? Use our drop-in widgets to add live pricing to your site, blog, or docs with one script tag.</p>
+            <div class="code-block">
+                <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                <code><span class="code-comment">&lt;!-- Pricing table for OpenAI, Anthropic, Google --&gt;</span>
+&lt;div class="apipulse-widget" data-type="table" data-providers="openai,anthropic,google"&gt;&lt;/div&gt;
+&lt;script src="https://getapipulse.com/widget.js" async&gt;&lt;/script&gt;
+
+<span class="code-comment">&lt;!-- Model badge --&gt;</span>
+&lt;div class="apipulse-widget" data-type="badge" data-model="openai-gpt4o-mini"&gt;&lt;/div&gt;
+
+<span class="code-comment">&lt;!-- Side-by-side comparison --&gt;</span>
+&lt;div class="apipulse-widget" data-type="compare" data-models="openai-gpt5,anthropic-sonnet,google-pro"&gt;&lt;/div&gt;</code>
+            </div>
+            <p style="margin-top:8px;font-size:14px;">See <a href="embed.html" style="color:var(--accent);">full widget documentation</a> for all options, themes, and live previews.</p>
+        </div>
+
         <!-- Attribution -->
         <div class="section">
             <h2>Attribution</h2>
@@ -404,8 +423,8 @@ print(f<span class="code-string">"${model['input']}/1M input, ${model['output']}
                     <p>Estimate costs across all 33 models instantly.</p>
                 </div>
                 <div class="feature-item">
-                    <h4><a href="embed.html">Embed Widget</a></h4>
-                    <p>Add our calculator to your own site.</p>
+                    <h4><a href="embed.html">Embed Widgets</a></h4>
+                    <p>Pricing tables, badges, and comparisons for your site or README.</p>
                 </div>
             </div>
         </div>

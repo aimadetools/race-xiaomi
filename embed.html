@@ -3,17 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>APIpulse Embed — AI API Cost Calculator Widget</title>
-    <meta name="description" content="Embed the APIpulse AI API cost calculator on your site. Free widget for developers to estimate LLM API costs.">
-    <meta name="keywords" content="embed AI calculator, API cost widget, LLM pricing widget">
-    <meta property="og:title" content="APIpulse Embed — AI API Cost Calculator Widget">
-    <meta property="og:description" content="Embed the APIpulse AI API cost calculator on your site. Free widget for developers.">
-    <meta property="og:image" content="og-image.png">
+    <title>Embed Widgets — Pricing Tables, Badges & Comparisons | APIpulse</title>
+    <meta name="description" content="Free embeddable widgets for AI API pricing. Add live pricing tables, model badges, and comparison charts to your blog, docs, or README. Auto-updating, no API key needed.">
+    <meta name="keywords" content="embed AI pricing, LLM pricing widget, API cost badge, embed pricing table, AI model comparison widget, GitHub README pricing">
+    <meta property="og:title" content="Embed Widgets — AI API Pricing Tables & Badges | APIpulse">
+    <meta property="og:description" content="Add live AI API pricing to your site with one script tag. Tables, badges, and comparisons. Auto-updating.">
+    <meta property="og:image" content="https://getapipulse.com/og-image.png">
     <meta property="og:url" content="https://getapipulse.com/embed.html">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="APIpulse Embed — AI API Cost Calculator Widget">
-    <meta name="twitter:description" content="Embed the APIpulse AI API cost calculator on your site.">
+    <meta name="twitter:title" content="Embed Widgets — AI API Pricing | APIpulse">
+    <meta name="twitter:image" content="https://getapipulse.com/og-image.png">
+    <meta name="twitter:description" content="Add live AI API pricing to your site with one script tag.">
     <link rel="canonical" href="https://getapipulse.com/embed.html">
+    <link rel="alternate" type="application/rss+xml" title="APIpulse Blog" href="https://getapipulse.com/rss.xml">
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <link rel="stylesheet" href="styles.css">
     <!-- Google Analytics 4 -->
@@ -27,16 +29,28 @@
     <script src="analytics.js" defer></script>
     <script src="dynamic-date.js" defer></script>
     <script src="shared.js" defer></script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "APIpulse Embeddable Widgets",
+        "description": "Free embeddable widgets for AI API pricing data. Tables, badges, and comparisons.",
+        "url": "https://getapipulse.com/embed.html",
+        "publisher": { "@type": "Organization", "name": "APIpulse", "url": "https://getapipulse.com" }
+    }
+    </script>
     <style>
-        .content { max-width: 800px; margin: 0 auto; padding: 120px 24px 80px; }
-        h1 { font-size: 36px; font-weight: 800; text-align: center; margin-bottom: 12px; }
-        .subtitle { text-align: center; color: var(--text-secondary); font-size: 18px; margin-bottom: 48px; }
+        .content { max-width: 900px; margin: 0 auto; padding: 120px 24px 80px; }
+        h1 { font-size: clamp(28px, 4vw, 42px); font-weight: 800; text-align: center; margin-bottom: 12px; }
+        .subtitle { text-align: center; color: var(--text-secondary); font-size: 18px; margin-bottom: 48px; line-height: 1.6; }
+        .badge-free { display: inline-block; background: var(--accent); color: white; padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 16px; }
 
-        .embed-demo {
+        .widget-section {
             background: var(--bg-secondary); border: 1px solid var(--border);
-            border-radius: 16px; padding: 32px; margin-bottom: 40px;
+            border-radius: 16px; padding: 32px; margin-bottom: 32px;
         }
-        .embed-demo h2 { font-size: 20px; font-weight: 700; margin-bottom: 16px; }
+        .widget-section h2 { font-size: 22px; font-weight: 700; margin-bottom: 8px; }
+        .widget-section .desc { color: var(--text-secondary); font-size: 15px; margin-bottom: 20px; line-height: 1.6; }
 
         .code-block {
             background: #1a1a2e; border: 1px solid var(--border); border-radius: 10px;
@@ -54,41 +68,45 @@
         .code-tag { color: #f472b6; }
         .code-attr { color: #a5b4fc; }
         .code-val { color: #86efac; }
+        .code-comment { color: #6b7280; }
 
-        .features { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; margin-bottom: 40px; }
-        .feature-card {
-            background: var(--bg-secondary); border: 1px solid var(--border);
-            border-radius: 12px; padding: 24px;
+        .live-preview {
+            background: var(--bg-card); border: 1px solid var(--border);
+            border-radius: 12px; padding: 24px; margin-top: 16px;
         }
-        .feature-card h3 { font-size: 16px; font-weight: 700; margin-bottom: 8px; }
-        .feature-card p { font-size: 14px; color: var(--text-secondary); }
+        .live-preview h3 { font-size: 14px; font-weight: 600; color: var(--text-secondary); margin-bottom: 12px; text-transform: uppercase; letter-spacing: 0.5px; }
 
-        .preview-section {
-            background: var(--bg-secondary); border: 1px solid var(--border);
-            border-radius: 16px; padding: 32px; margin-bottom: 40px;
+        .options-table { width: 100%; border-collapse: collapse; margin: 16px 0; }
+        .options-table th, .options-table td { text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--border); font-size: 14px; }
+        .options-table th { background: var(--bg-card); font-weight: 600; font-size: 12px; text-transform: uppercase; color: var(--text-secondary); }
+        .options-table td code { background: var(--bg-card); padding: 2px 6px; border-radius: 4px; font-size: 13px; }
+
+        .feature-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; margin: 24px 0; }
+        .feature-item {
+            background: var(--bg-card); border: 1px solid var(--border);
+            border-radius: 10px; padding: 16px; text-align: center;
         }
-        .preview-section h2 { font-size: 20px; font-weight: 700; margin-bottom: 16px; }
+        .feature-item h4 { font-size: 14px; font-weight: 700; margin-bottom: 4px; }
+        .feature-item p { font-size: 13px; color: var(--text-secondary); margin: 0; }
+
+        .type-tabs { display: flex; gap: 8px; margin-bottom: 24px; flex-wrap: wrap; }
+        .type-tab {
+            padding: 10px 20px; border-radius: 8px; border: 1px solid var(--border);
+            background: var(--bg-card); color: var(--text-secondary); font-size: 14px;
+            font-weight: 600; cursor: pointer; transition: all 0.2s;
+        }
+        .type-tab:hover { border-color: var(--accent); color: var(--accent); }
+        .type-tab.active { background: var(--accent); color: white; border-color: var(--accent); }
 
         @media (max-width: 768px) {
             .content { padding: 100px 16px 60px; }
-            h1 { font-size: 28px; }
+            h1 { font-size: 26px; }
+            .widget-section { padding: 20px; }
+            .feature-grid { grid-template-columns: 1fr 1fr; }
         }
     </style>
     <meta name="theme-color" content="#6366f1">
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "WebPage",
-        "name": "APIpulse Embed — AI API Cost Calculator Widget",
-        "description": "Embed the APIpulse AI API cost calculator on your site. Free widget for developers to estimate LLM API costs.",
-        "url": "https://getapipulse.com/embed.html",
-        "publisher": {
-            "@type": "Organization",
-            "name": "APIpulse",
-            "url": "https://getapipulse.com"
-        }
-    }
-    </script>
+    <link rel="preconnect" href="https://getapipulse.com">
 </head>
 <body>
     <a href="#main" class="skip-link">Skip to content</a>
@@ -100,6 +118,7 @@
                 <a href="calculator.html">Calculator</a>
                 <a href="compare.html">Compare</a>
                 <a href="cost-explorer.html">Explorer</a>
+                <a href="model-switch.html">Switch</a>
                 <a href="cost-scenarios.html">Scenarios</a>
                 <a href="pricing.html">Pricing</a>
                 <a href="use-cases.html">Use Cases</a>
@@ -108,10 +127,6 @@
                 <a href="quiz.html">Quiz</a>
                 <a href="pricing-index.html">Pricing Index</a>
                 <a href="model-matrix.html">Model Matrix</a>
-                <a href="pricing-trends.html">Trends</a>
-                <a href="pricing-changelog.html">Changelog</a>
-                <a href="price-alerts.html">Price Alerts</a>
-                <a href="cheat-sheet.html">Cheat Sheet</a> &middot; <a href="model-switch.html">Model Switch</a>
                 <a href="api-docs.html" style="color:var(--accent);">API</a>
                 <a href="pricing.html" class="nav-cta" onclick="if(window.trackEvent)window.trackEvent('pro_button_clicked',{source:'nav'})">Get Pro — $29</a>
                 <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
@@ -121,90 +136,156 @@
 
     <main id="main">
     <div class="content">
-        <h1>Embed the APIpulse Calculator</h1>
-        <p class="subtitle">Add a free AI API cost calculator to your blog, docs, or landing page. Your visitors can estimate LLM costs without leaving your site.</p>
+        <div style="text-align:center;">
+            <span class="badge-free">Free &middot; No API Key</span>
+        </div>
+        <h1>Embeddable Pricing Widgets</h1>
+        <p class="subtitle">Add live AI API pricing to your blog, docs, or README with one script tag. Auto-updating, responsive, dark/light themes.</p>
 
-        <div class="features">
-            <div class="feature-card">
-                <h3>Free to Use</h3>
-                <p>No API key required. Works entirely client-side with our published pricing data.</p>
+        <div class="feature-grid">
+            <div class="feature-item">
+                <h4>33 Models</h4>
+                <p>Every major LLM provider</p>
             </div>
-            <div class="feature-card">
-                <h3>Responsive</h3>
-                <p>Automatically adapts to any width — works in sidebars, footers, or full-width layouts.</p>
+            <div class="feature-item">
+                <h4>Auto-Updates</h4>
+                <p>Pricing data stays current</p>
             </div>
-            <div class="feature-card">
-                <h3>Always Updated</h3>
-                <p>Pricing data is maintained by APIpulse. Your embed always shows current prices.</p>
+            <div class="feature-item">
+                <h4>No API Key</h4>
+                <p>Just a script tag</p>
             </div>
-            <div class="feature-card">
-                <h3>Dark & Light</h3>
-                <p>Detects your site's theme and adapts automatically. Works with any color scheme.</p>
+            <div class="feature-item">
+                <h4>Dark & Light</h4>
+                <p>Matches your site</p>
             </div>
         </div>
 
-        <div class="embed-demo">
-            <h2>Quick Start — Copy & Paste</h2>
-            <p style="color:var(--text-secondary);font-size:14px;margin-bottom:16px;">Add this iframe anywhere on your site:</p>
+        <!-- Widget Type 1: Pricing Table -->
+        <div class="widget-section" id="table-widget">
+            <h2>Pricing Table</h2>
+            <p class="desc">Show a filterable pricing table for any set of providers. Great for blog posts, documentation, and comparison articles.</p>
+
             <div class="code-block">
-                <button class="copy-btn" onclick="copyEmbed(this)">Copy</button>
+                <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                <code><span class="code-comment">&lt;!-- Add this where you want the table --&gt;</span>
+<span class="code-tag">&lt;div</span> <span class="code-attr">class</span>=<span class="code-val">"apipulse-widget"</span>
+     <span class="code-attr">data-type</span>=<span class="code-val">"table"</span>
+     <span class="code-attr">data-providers</span>=<span class="code-val">"openai,anthropic,google"</span>
+     <span class="code-attr">data-theme</span>=<span class="code-val">"dark"</span><span class="code-tag">&gt;&lt;/div&gt;</span>
+<span class="code-tag">&lt;script</span> <span class="code-attr">src</span>=<span class="code-val">"https://getapipulse.com/widget.js"</span> <span class="code-attr">async</span><span class="code-tag">&gt;&lt;/script&gt;</span></code>
+            </div>
+
+            <h3 style="font-size:16px;font-weight:700;margin:20px 0 12px;">Options</h3>
+            <table class="options-table">
+                <thead><tr><th>Attribute</th><th>Values</th><th>Description</th></tr></thead>
+                <tbody>
+                    <tr><td><code>data-providers</code></td><td>openai, anthropic, google, deepseek, mistral, cohere, together, moonshot, xai, ai21</td><td>Comma-separated provider slugs. Omit for all.</td></tr>
+                    <tr><td><code>data-tier</code></td><td>budget, mid, premium</td><td>Filter by pricing tier.</td></tr>
+                    <tr><td><code>data-theme</code></td><td>dark, light</td><td>Color theme. Default: dark.</td></tr>
+                </tbody>
+            </table>
+
+            <div class="live-preview">
+                <h3>Live Preview</h3>
+                <div class="apipulse-widget" data-type="table" data-providers="openai,anthropic,google" data-tier="budget"></div>
+            </div>
+        </div>
+
+        <!-- Widget Type 2: Model Badge -->
+        <div class="widget-section" id="badge-widget">
+            <h2>Model Badge</h2>
+            <p class="desc">A compact inline badge showing a model's pricing. Perfect for README files, inline references, and sidebars.</p>
+
+            <div class="code-block">
+                <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                <code><span class="code-comment">&lt;!-- Compact pricing badge --&gt;</span>
+<span class="code-tag">&lt;div</span> <span class="code-attr">class</span>=<span class="code-val">"apipulse-widget"</span>
+     <span class="code-attr">data-type</span>=<span class="code-val">"badge"</span>
+     <span class="code-attr">data-model</span>=<span class="code-val">"openai-gpt4o-mini"</span><span class="code-tag">&gt;&lt;/div&gt;</span>
+<span class="code-tag">&lt;script</span> <span class="code-attr">src</span>=<span class="code-val">"https://getapipulse.com/widget.js"</span> <span class="code-attr">async</span><span class="code-tag">&gt;&lt;/script&gt;</span></code>
+            </div>
+
+            <div class="live-preview">
+                <h3>Live Preview</h3>
+                <div style="display:flex;flex-wrap:wrap;gap:12px;">
+                    <div class="apipulse-widget" data-type="badge" data-model="openai-gpt4o-mini"></div>
+                    <div class="apipulse-widget" data-type="badge" data-model="anthropic-sonnet"></div>
+                    <div class="apipulse-widget" data-type="badge" data-model="deepseek-v4-pro"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Widget Type 3: Model Comparison -->
+        <div class="widget-section" id="compare-widget">
+            <h2>Model Comparison</h2>
+            <p class="desc">Compare specific models side by side. The cheapest model is highlighted. Great for "which model should I use" articles.</p>
+
+            <div class="code-block">
+                <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                <code><span class="code-comment">&lt;!-- Side-by-side comparison --&gt;</span>
+<span class="code-tag">&lt;div</span> <span class="code-attr">class</span>=<span class="code-val">"apipulse-widget"</span>
+     <span class="code-attr">data-type</span>=<span class="code-val">"compare"</span>
+     <span class="code-attr">data-models</span>=<span class="code-val">"openai-gpt5,anthropic-sonnet,google-pro,deepseek-v4-pro"</span><span class="code-tag">&gt;&lt;/div&gt;</span>
+<span class="code-tag">&lt;script</span> <span class="code-attr">src</span>=<span class="code-val">"https://getapipulse.com/widget.js"</span> <span class="code-attr">async</span><span class="code-tag">&gt;&lt;/script&gt;</span></code>
+            </div>
+
+            <div class="live-preview">
+                <h3>Live Preview</h3>
+                <div class="apipulse-widget" data-type="compare" data-models="openai-gpt5,anthropic-sonnet,google-pro,deepseek-v4-pro"></div>
+            </div>
+        </div>
+
+        <!-- Calculator Embed (existing) -->
+        <div class="widget-section" id="calculator-widget">
+            <h2>Full Calculator</h2>
+            <p class="desc">Embed the complete interactive cost calculator. Users can select models, enter token counts, and see cost estimates.</p>
+
+            <div class="code-block">
+                <button class="copy-btn" onclick="copyCode(this)">Copy</button>
                 <code><span class="code-tag">&lt;iframe</span>
   <span class="code-attr">src</span>=<span class="code-val">"https://getapipulse.com/embed-calculator.html"</span>
   <span class="code-attr">width</span>=<span class="code-val">"100%"</span>
   <span class="code-attr">height</span>=<span class="code-val">"600"</span>
   <span class="code-attr">frameborder</span>=<span class="code-val">"0"</span>
-  <span class="code-attr">style</span>=<span class="code-val">"border:1px solid #e5e7eb;border-radius:12px;"</span>
+  <span class="code-attr">style</span>=<span class="code-val">"border:1px solid var(--border);border-radius:12px;"</span>
   <span class="code-attr">loading</span>=<span class="code-val">"lazy"</span>
-  <span class="code-attr">title</span>=<span class="code-val">"AI API Cost Calculator — Powered by APIpulse"</span>
+  <span class="code-attr">title</span>=<span class="code-val">"AI API Cost Calculator"</span>
 <span class="code-tag">&gt;&lt;/iframe&gt;</span></code>
+            </div>
+
+            <div class="live-preview">
+                <h3>Live Preview</h3>
+                <iframe src="embed-calculator.html" width="100%" height="700" frameborder="0" style="border:1px solid var(--border);border-radius:12px;" loading="lazy" title="Calculator Preview"></iframe>
             </div>
         </div>
 
-        <div class="embed-demo">
-            <h2>With Pre-selected Model</h2>
-            <p style="color:var(--text-secondary);font-size:14px;margin-bottom:16px;">Pre-fill the calculator with a specific model:</p>
-            <div class="code-block">
-                <button class="copy-btn" onclick="copyEmbed(this)">Copy</button>
-                <code><span class="code-tag">&lt;iframe</span>
-  <span class="code-attr">src</span>=<span class="code-val">"https://getapipulse.com/embed-calculator.html?model=openai-gpt4o"</span>
-  <span class="code-attr">width</span>=<span class="code-val">"100%"</span>
-  <span class="code-attr">height</span>=<span class="code-val">"600"</span>
-  <span class="code-attr">frameborder</span>=<span class="code-val">"0"</span>
-  <span class="code-attr">style</span>=<span class="code-val">"border:1px solid #e5e7eb;border-radius:12px;"</span>
-  <span class="code-attr">loading</span>=<span class="code-val">"lazy"</span>
-  <span class="code-attr">title</span>=<span class="code-val">"AI API Cost Calculator — Powered by APIpulse"</span>
-<span class="code-tag">&gt;&lt;/iframe&gt;</span></code>
-            </div>
-            <p style="color:var(--text-muted);font-size:13px;margin-top:8px;">Supported models: openai-gpt4o, openai-gpt4o-mini, anthropic-sonnet, anthropic-haiku, google-flash, google-pro, deepseek-v4-pro, llama-4-scout, and 24 more</p>
+        <!-- Available Model IDs -->
+        <div class="widget-section">
+            <h2>Available Model IDs</h2>
+            <p class="desc">Use these IDs in <code>data-model</code> and <code>data-models</code> attributes.</p>
+            <table class="options-table">
+                <thead><tr><th>Provider</th><th>Model IDs</th></tr></thead>
+                <tbody>
+                    <tr><td>OpenAI</td><td><code>openai-gpt55</code>, <code>openai-gpt5</code>, <code>openai-gpt5-mini</code>, <code>openai-gpt4o</code>, <code>openai-gpt4o-mini</code>, <code>openai-gpt-oss-120b</code>, <code>openai-gpt-oss-20b</code></td></tr>
+                    <tr><td>Anthropic</td><td><code>anthropic-opus47</code>, <code>anthropic-opus</code>, <code>anthropic-sonnet46</code>, <code>anthropic-sonnet</code>, <code>anthropic-haiku</code></td></tr>
+                    <tr><td>Google</td><td><code>google-gemini3-pro</code>, <code>google-pro</code>, <code>google-flash</code>, <code>google-flash-lite</code></td></tr>
+                    <tr><td>DeepSeek</td><td><code>deepseek-v4-pro</code>, <code>deepseek-v4-flash</code></td></tr>
+                    <tr><td>Mistral</td><td><code>mistral-large</code>, <code>mistral-small</code></td></tr>
+                    <tr><td>Cohere</td><td><code>cohere-command-r-plus</code>, <code>cohere-command-r</code></td></tr>
+                    <tr><td>Meta</td><td><code>llama-4-scout</code>, <code>llama-4-maverick</code>, <code>llama-3.1-70b</code>, <code>llama-3.1-8b</code></td></tr>
+                    <tr><td>xAI</td><td><code>xai-grok3</code>, <code>xai-grok3-mini</code></td></tr>
+                    <tr><td>Moonshot</td><td><code>kimi-k26</code></td></tr>
+                    <tr><td>AI21</td><td><code>ai21-jamba</code></td></tr>
+                </tbody>
+            </table>
         </div>
 
-        <div class="embed-demo">
-            <h2>Custom Height</h2>
-            <p style="color:var(--text-secondary);font-size:14px;margin-bottom:16px;">Adjust the height for your layout:</p>
-            <div class="code-block">
-                <button class="copy-btn" onclick="copyEmbed(this)">Copy</button>
-                <code><span class="code-tag">&lt;iframe</span>
-  <span class="code-attr">src</span>=<span class="code-val">"https://getapipulse.com/embed-calculator.html"</span>
-  <span class="code-attr">width</span>=<span class="code-val">"400"</span>
-  <span class="code-attr">height</span>=<span class="code-val">"500"</span>
-  <span class="code-attr">frameborder</span>=<span class="code-val">"0"</span>
-  <span class="code-attr">style</span>=<span class="code-val">"border:1px solid #e5e7eb;border-radius:12px;"</span>
-  <span class="code-attr">loading</span>=<span class="code-val">"lazy"</span>
-<span class="code-tag">&gt;&lt;/iframe&gt;</span></code>
-            </div>
-        </div>
-
-        <div class="preview-section">
-            <h2>Live Preview</h2>
-            <p style="color:var(--text-secondary);font-size:14px;margin-bottom:16px;">Here's what the embedded calculator looks like:</p>
-            <iframe src="embed-calculator.html" width="100%" height="700" frameborder="0" style="border:1px solid var(--border);border-radius:12px;" loading="lazy" title="AI API Cost Calculator Preview"></iframe>
-            <p style="color:var(--text-muted);font-size:13px;margin-top:12px;text-align:center;">Powered by <a href="index.html" style="color:var(--accent);">APIpulse</a> — Know your AI API costs before you commit.</p>
-        </div>
-
+        <!-- CTA -->
         <div style="text-align:center;padding:40px 0;">
-            <h2 style="font-size:24px;font-weight:700;margin-bottom:12px;">Questions about embedding?</h2>
-            <p style="color:var(--text-secondary);margin-bottom:20px;">Email us at <a href="mailto:hello@getapipulse.com" style="color:var(--accent);">hello@getapipulse.com</a></p>
-            <a href="calculator.html" class="btn-primary" style="display:inline-block;">Try the Full Calculator</a>
+            <h2 style="font-size:24px;font-weight:700;margin-bottom:12px;">Need a custom widget?</h2>
+            <p style="color:var(--text-secondary);margin-bottom:20px;">We can build custom embeds for your specific use case.</p>
+            <a href="mailto:hello@getapipulse.com" class="btn-primary" style="display:inline-block;">Contact Us</a>
         </div>
     </div>
 
@@ -214,17 +295,19 @@
     <footer>
         <p>Pricing data last verified: <span class="verified-date"></span></p>
         <p>&copy; 2026 APIpulse. <a href="index.html">Home</a> &middot; <a href="use-cases.html">Use Cases</a> &middot; <a href="about.html">About</a> &middot; <a href="blog.html">Blog</a>
-<a href="pricing-index.html">Pricing Index</a> &middot; <a href="model-matrix.html">Model Matrix</a> &middot; <a href="cost-scenarios.html">Scenarios</a> &middot; <a href="price-alerts.html">Price Alerts</a> &middot; <a href="pricing-changelog.html">Changelog</a> &middot; <a href="openai.html">OpenAI</a> &middot; <a href="anthropic.html">Anthropic</a> &middot; <a href="google.html">Google</a> &middot; <a href="mistral.html">Mistral</a> &middot; <a href="cohere.html">Cohere</a> &middot; <a href="deepseek.html">DeepSeek</a> &middot; <a href="xai.html">xAI</a> &middot; <a href="moonshot.html">Moonshot</a> &middot; <a href="together.html">Together.ai</a> &middot; <a href="ai21.html">AI21</a> &middot; <a href="pricing.html">Pricing</a> &middot; <a href="embed.html">Embed Widget</a> &middot; <a href="cheat-sheet.html">Cheat Sheet</a> &middot; <a href="model-switch.html">Model Switch</a> &middot; <a href="api-docs.html">API</a> &middot; <a href="https://x.com/getapipulse" target="_blank" rel="noopener">Twitter</a> &middot; <a href="unsubscribe.html">Unsubscribe</a></p>
+<a href="pricing-index.html">Pricing Index</a> &middot; <a href="model-matrix.html">Model Matrix</a> &middot; <a href="cost-scenarios.html">Scenarios</a> &middot; <a href="price-alerts.html">Price Alerts</a> &middot; <a href="pricing-changelog.html">Changelog</a> &middot; <a href="openai.html">OpenAI</a> &middot; <a href="anthropic.html">Anthropic</a> &middot; <a href="google.html">Google</a> &middot; <a href="mistral.html">Mistral</a> &middot; <a href="cohere.html">Cohere</a> &middot; <a href="deepseek.html">DeepSeek</a> &middot; <a href="xai.html">xAI</a> &middot; <a href="moonshot.html">Moonshot</a> &middot; <a href="together.html">Together.ai</a> &middot; <a href="ai21.html">AI21</a> &middot; <a href="embed.html">Embed Widget</a> &middot; <a href="api-docs.html">API</a> &middot; <a href="pricing.html">Pricing</a> &middot; <a href="https://x.com/getapipulse" target="_blank" rel="noopener">Twitter</a> &middot; <a href="unsubscribe.html">Unsubscribe</a></p>
     </footer>
 
+    <!-- Load widget script for live previews -->
+    <script src="widget.js" defer></script>
     <script>
-    function copyEmbed(btn) {
-        const code = btn.parentElement.querySelector('code').textContent;
-        navigator.clipboard.writeText(code).then(() => {
-            btn.textContent = 'Copied!';
-            setTimeout(() => btn.textContent = 'Copy', 2000);
-        });
-    }
+        function copyCode(btn) {
+            var code = btn.parentElement.querySelector('code');
+            navigator.clipboard.writeText(code.textContent).then(function() {
+                btn.textContent = 'Copied!';
+                setTimeout(function() { btn.textContent = 'Copy'; }, 2000);
+            });
+        }
     </script>
 </body>
 </html>
