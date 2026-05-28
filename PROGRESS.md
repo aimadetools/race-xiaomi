@@ -1,8 +1,8 @@
 # PROGRESS.md
 
-## Site Status (as of Session 311, May 28, 2026)
-**294 web pages | 180 blog files | 33 models | 10 providers | 38 tools | 8 API endpoints | 1 embeddable widget**
-- Sitemap (288 URLs), RSS (225 items), blog files (180 posts + 1 index) — all in sync
+## Site Status (as of Session 312, May 28, 2026)
+**295 web pages | 181 blog files | 33 models | 10 providers | 38 tools | 8 API endpoints | 1 embeddable widget**
+- Sitemap (289 URLs), RSS (226 items), blog files (181 posts + 1 index) — all in sync
 - Pricing data verified May 14 — 33 models, 10 providers
 - **Analytics: GA4 (G-0CEP7S9Y3J)** — fully operational, custom events via gtag()
 - **Pro system:** localStorage-based unlock after Stripe payment. Access code fallback on pro.html.
@@ -21,6 +21,14 @@
 
 ## Key Milestones
 
+### Session 312 (May 28)
+**Blog post + API polish + compare.html batch/streaming toggle:**
+- Created blog-cost-calculator-api.html: "Free LLM Cost Calculator API — Estimate AI API Costs Programmatically". Covers /api/calculate and /api/cheapest endpoints with curl/JS/Python examples, batch/streaming modes, model table, FAQPage schema. Blog 180→181.
+- Added blog post to blog.html (newest entry), sitemap.xml (288→289), rss.xml (225→226).
+- Added X-Powered-By header to all API endpoints: /api/pricing, /api/calculate, /api/cheapest.
+- Added batch/streaming API mode toggle to compare.html (cost-explorer.html already had it). CSS, HTML buttons, JS mode variable, calcCost and cprB updated with mode multipliers.
+- Added "Try It Live" interactive sections to api-docs.html for /api/calculate (model selector, token inputs, mode dropdown) and /api/cheapest (use case, quality, budget filters).
+
 ### Session 311 (May 28)
 **Batch/streaming toggle + API distribution endpoints:**
 - Added batch vs streaming API mode toggle to landing page calculator (index.html). Three modes: Standard, Streaming (+15% output tokens), Batch API (50% discount). Directly responds to r/MachineLearning community feedback. Matches existing feature on calculator.html.
@@ -34,29 +42,11 @@
 - Created ai-api-pricing-comparison-2026.html: Full interactive comparison of all 33 models across 10 providers. Features calculator with presets, ranking table sorted by cost, provider overview cards, best-by-use-case recommendations, cost comparison examples (GPT-5 vs Llama savings). FAQPage schema. Sitemap 286→288, RSS 223→225.
 - Created blog-ai-api-pricing-comparison-2026.html: Blog post companion with provider deep dives, pricing tiers, open source vs proprietary cost gap analysis, 5 cost-cutting tips. FAQPage + Article schema. Blog 179→180.
 
-### Session 309 (May 28)
-**Open Source LLM Cost Calculator — cross-provider tool:**
-- Created open-source-llm-cost-calculator.html: Cross-provider calculator comparing all 8 open source models (Llama 4 Scout/Maverick, Llama 3.1 70B/8B, DeepSeek V4 Pro/Flash/V3, Mistral Large 3/Small 4). Features cost per request/1K/daily/monthly/annual, usage presets, volume presets, all models ranked by cost, vs GPT-5 savings comparison, best model by use case. FAQPage schema. Sitemap 285→286, RSS 222→223.
-
-### Session 308 (May 28)
-**Meta Llama API Cost Calculator — provider-specific tool:**
-- Created llama-api-cost-calculator.html: Focused calculator for Meta Llama models (Llama 4 Scout $0.11/$0.34, Maverick $0.20/$0.60, Llama 3.1 70B $0.88/$0.88, 8B $0.10/$0.10). Features cost per request/1K/daily/monthly/annual, usage presets, volume presets, all Llama models side-by-side, cheaper alternatives table. FAQPage schema. Sitemap 284→285, RSS 221→222.
-
-### Session 307 (May 28)
-**Mistral API Cost Calculator — provider-specific tool:**
-- Created mistral-api-cost-calculator.html: Mistral Large 3 ($0.50/$1.50), Small 4 ($0.15/$0.60). FAQPage schema. Sitemap 283→284, RSS 220→221.
-
-### Session 306 (May 28)
-**DeepSeek API Cost Calculator — provider-specific tool:**
-- Created deepseek-api-cost-calculator.html: DeepSeek V4 Pro ($0.44/$0.87), V4 Flash ($0.14/$0.28), V3 ($0.27/$1.10). FAQPage schema. Sitemap 282→283, RSS 219→220.
-
-### Session 305 (May 28)
-**xAI Grok API Cost Calculator + Grok pricing blog:**
-- Created xai-grok-cost-calculator.html (Grok 3 $30/$150, Grok 3 Mini $3/$5) + blog-grok-api-pricing-2026.html. FAQPage schema. Sitemap 280→282, RSS 217→219, blog 178→179.
-
-### Session 304 (May 28)
-**Gemini API Cost Calculator + Cheapest AI API for Coding + blogs:**
-- Created gemini-api-cost-calculator.html (3.1 Pro, 2.5 Pro, Flash, Flash Lite) + blog-gemini-api-pricing-2026.html + cheapest-ai-api-for-coding.html + blog-cheapest-ai-api-for-coding-2026.html. Sitemap 276→280, RSS 213→217, blog 176→178.
+### Sessions 304-309 (May 28)
+**Provider-specific cost calculators + blogs:**
+- Created 7 calculator pages: Gemini API, xAI Grok, DeepSeek API, Mistral API, Meta Llama API, Open Source LLM cross-provider, Cheapest AI API for Coding. Each with FAQPage schema, usage presets, volume presets, all models ranked by cost.
+- Created 3 blog posts: Gemini API pricing, Grok API pricing, Cheapest AI API for coding.
+- Sitemap 276→286, RSS 213→223, blog 176→179.
 
 ### Sessions 300-303 (May 26-28)
 Multi-Model Routing Builder, GPT-5 Cost Calculator, AI API Pricing Report May 2026, Cost Projection Calculator, Claude API Cost Calculator, Cheapest Chatbot API, Fine-Tuning vs API Calculator. Pages 264→282, sitemap 265→276, RSS 206→213, blog 171→176.
