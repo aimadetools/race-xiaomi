@@ -1,13 +1,13 @@
 # PROGRESS.md
 
-## Site Status (as of Session 307, May 28, 2026)
-**290 web pages | 179 blog files | 33 models | 10 providers | 35 tools | 6 API endpoints | 1 embeddable widget**
-- Sitemap (284 URLs), RSS (221 items), blog files (179 posts + 1 index) — all in sync
+## Site Status (as of Session 308, May 28, 2026)
+**291 web pages | 179 blog files | 33 models | 10 providers | 36 tools | 6 API endpoints | 1 embeddable widget**
+- Sitemap (285 URLs), RSS (222 items), blog files (179 posts + 1 index) — all in sync
 - Pricing data verified May 14 — 33 models, 10 providers
 - **Analytics: GA4 (G-0CEP7S9Y3J)** — fully operational, custom events via gtag()
 - **Pro system:** localStorage-based unlock after Stripe payment. Access code fallback on pro.html.
 - **14 comparison pages** (34 total) — all providers covered, interactive calculators, FAQPage schema
-- **35 interactive tools** — calculators, optimizer, planner, pipeline, rate limit, budget showdown, chatbot cost, model switch, stack builder, model advisor, fine-tuning calculator, Claude API cost calculator, cost projection, Gemini API cost calculator, cheapest AI API for coding, xAI Grok cost calculator, DeepSeek API cost calculator, Mistral API cost calculator
+- **36 interactive tools** — calculators, optimizer, planner, pipeline, rate limit, budget showdown, chatbot cost, model switch, stack builder, model advisor, fine-tuning calculator, Claude API cost calculator, cost projection, Gemini API cost calculator, cheapest AI API for coding, xAI Grok cost calculator, DeepSeek API cost calculator, Mistral API cost calculator, Meta Llama API cost calculator
 - **Social proof:** PH launch badge, Reddit testimonial, newsletter, exit popup A/B test
 - **Community playbook:** 7 subreddit drafts + 2 newsletter pitches ready in COMMUNITY-ENGAGEMENT.md
 
@@ -19,6 +19,11 @@
 ---
 
 ## Key Milestones
+
+### Session 308 (May 28)
+**Meta Llama API Cost Calculator — provider-specific tool:**
+- Created llama-api-cost-calculator.html: Focused calculator for Meta Llama models (Llama 4 Scout at $0.11/$0.34, Llama 4 Maverick at $0.20/$0.60, Llama 3.1 70B at $0.88/$0.88, Llama 3.1 8B at $0.10/$0.10). Features: cost per request/per 1K/daily/monthly/annual, usage presets (chat, code, analysis, summarization, RAG), volume presets, all Llama models side-by-side with cost comparison, cheaper alternatives table. FAQPage schema targeting "Llama API cost" and "Llama 4 pricing". GA4 tracking. Shareable URLs.
+- Added Llama Calculator card to tools.html. Sitemap 284→285, RSS 221→222.
 
 ### Session 307 (May 28)
 **Mistral API Cost Calculator — provider-specific tool:**
