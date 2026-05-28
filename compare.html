@@ -137,6 +137,13 @@
             border-radius: var(--radius); padding: 24px; margin-bottom: 40px;
         }
         .usage-inputs h3 { font-size: 16px; font-weight: 600; margin-bottom: 16px; }
+        .preset-btn {
+            background: var(--bg-secondary); border: 1px solid var(--border);
+            color: var(--text-secondary); padding: 8px 16px; border-radius: 8px;
+            cursor: pointer; font-size: 13px; transition: all 0.2s; font-weight: 500;
+        }
+        .preset-btn:hover { border-color: var(--accent); color: var(--accent); }
+        .preset-btn.active-preset { background: var(--accent); color: white; border-color: var(--accent); }
         .input-grid {
             display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px;
         }
@@ -323,6 +330,12 @@
 
         <div class="usage-inputs">
             <h3>Your Usage (per request)</h3>
+            <div class="presets" style="display:flex;gap:8px;margin-bottom:16px;flex-wrap:wrap;align-items:center;">
+                <span style="font-size:13px;color:var(--text-muted);align-self:center;font-weight:600;">API mode:</span>
+                <button class="preset-btn active-preset" id="mode-standard" onclick="setApiMode('standard')">Standard</button>
+                <button class="preset-btn" id="mode-streaming" onclick="setApiMode('streaming')" title="Streaming responses use ~10% more tokens due to overhead">Streaming (+10% tokens)</button>
+                <button class="preset-btn" id="mode-batch" onclick="setApiMode('batch')" title="OpenAI Batch API: 50% discount, results in 24h">Batch API (50% off)</button>
+            </div>
             <div class="input-grid">
                 <div class="input-group">
                     <label for="input-tokens">Input Tokens</label>
@@ -515,13 +528,28 @@
         // Model data from centralized pricing-data.js
         const models = getComparisonData();
 
+        // API mode: standard, streaming (+10% tokens), batch (-50% cost)
+        let currentApiMode = 'standard';
+
+        function setApiMode(mode) {
+            currentApiMode = mode;
+            document.getElementById('mode-standard').classList.toggle('active-preset', mode === 'standard');
+            document.getElementById('mode-streaming').classList.toggle('active-preset', mode === 'streaming');
+            document.getElementById('mode-batch').classList.toggle('active-preset', mode === 'batch');
+            updateComparison();
+            if (window.trackEvent) window.trackEvent('api_mode_changed', { mode: mode, tool: 'compare' });
+        }
+
         function calcCost(model, inputTokens, outputTokens, requests, days) {
-            const totalIn = inputTokens * requests * days;
-            const totalOut = outputTokens * requests * days;
+            let inputMult = 1, outputMult = 1, costMult = 1;
+            if (currentApiMode === 'streaming') { inputMult = 1.10; outputMult = 1.10; }
+            else if (currentApiMode === 'batch') { costMult = 0.50; }
+            const totalIn = inputTokens * inputMult * requests * days;
+            const totalOut = outputTokens * outputMult * requests * days;
             return {
-                inputCost: (totalIn / 1000000) * model.input,
-                outputCost: (totalOut / 1000000) * model.output,
-                total: ((totalIn / 1000000) * model.input) + ((totalOut / 1000000) * model.output)
+                inputCost: (totalIn / 1000000) * model.input * costMult,
+                outputCost: (totalOut / 1000000) * model.output * costMult,
+                total: ((totalIn / 1000000) * model.input + (totalOut / 1000000) * model.output) * costMult
             };
         }
 
@@ -550,7 +578,10 @@
             document.getElementById('total-cost-a').textContent = '$' + costA.total.toFixed(2) + '/mo';
 
             // Cost per request
-            const cprA = mA.input * (inputTokens / 1e6) + mA.output * (outputTokens / 1e6);
+            let cprInputMult = 1, cprOutputMult = 1, cprCostMult = 1;
+            if (currentApiMode === 'streaming') { cprInputMult = 1.10; cprOutputMult = 1.10; }
+            else if (currentApiMode === 'batch') { cprCostMult = 0.50; }
+            const cprA = (mA.input * (inputTokens * cprInputMult / 1e6) + mA.output * (outputTokens * cprOutputMult / 1e6)) * cprCostMult;
             document.getElementById('cpr-a').textContent = cprA < 0.01 ? '$' + cprA.toFixed(4) : '$' + cprA.toFixed(4);
             document.getElementById('cp1k-a').textContent = '$' + (cprA * 1000).toFixed(2);
 
@@ -564,7 +595,7 @@
             document.getElementById('total-cost-b').textContent = '$' + costB.total.toFixed(2) + '/mo';
 
             // Cost per request
-            const cprB = mB.input * (inputTokens / 1e6) + mB.output * (outputTokens / 1e6);
+            const cprB = (mB.input * (inputTokens * cprInputMult / 1e6) + mB.output * (outputTokens * cprOutputMult / 1e6)) * cprCostMult;
             document.getElementById('cpr-b').textContent = cprB < 0.01 ? '$' + cprB.toFixed(4) : '$' + cprB.toFixed(4);
             document.getElementById('cp1k-b').textContent = '$' + (cprB * 1000).toFixed(2);
 

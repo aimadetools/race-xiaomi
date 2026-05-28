@@ -416,10 +416,10 @@ console.log(recommendations[<span class="code-number">0</span>].name); <span cla
             </table>
         </div>
 
-        <!-- Try It -->
+        <!-- Try It: Pricing -->
         <div class="try-it">
-            <h2>Try It Live</h2>
-            <p style="color:var(--text-secondary);font-size:14px;margin-bottom:16px;">Test the API directly from your browser.</p>
+            <h2>Try It Live — Pricing Data</h2>
+            <p style="color:var(--text-secondary);font-size:14px;margin-bottom:16px;">Get raw pricing data for all models.</p>
             <div class="try-row">
                 <select id="try-provider" onchange="updateTryUrl()">
                     <option value="">All providers</option>
@@ -444,6 +444,63 @@ console.log(recommendations[<span class="code-number">0</span>].name); <span cla
             </div>
             <div id="try-url" style="font-family:monospace;font-size:13px;color:var(--accent);margin-bottom:12px;"></div>
             <div id="try-result" class="try-result" style="display:none;"></div>
+        </div>
+
+        <!-- Try It: Cost Calculator -->
+        <div class="try-it">
+            <h2>Try It Live — Cost Calculator</h2>
+            <p style="color:var(--text-secondary);font-size:14px;margin-bottom:16px;">Calculate costs for a model with your exact usage.</p>
+            <div class="try-row">
+                <select id="calc-model">
+                    <option value="openai-gpt5">GPT-5</option>
+                    <option value="openai-gpt5-mini">GPT-5 mini</option>
+                    <option value="openai-gpt4o-mini">GPT-4o mini</option>
+                    <option value="anthropic-sonnet46">Claude Sonnet 4.6</option>
+                    <option value="anthropic-haiku">Claude Haiku 4.5</option>
+                    <option value="google-flash">Gemini 2.0 Flash</option>
+                    <option value="deepseek-v4-pro">DeepSeek V4 Pro</option>
+                    <option value="deepseek-v4-flash">DeepSeek V4 Flash</option>
+                    <option value="mistral-large">Mistral Large 3</option>
+                    <option value="llama-4-scout">Llama 4 Scout</option>
+                </select>
+                <input type="number" id="calc-input" value="2000" min="1" placeholder="Input tokens" style="width:120px;">
+                <input type="number" id="calc-output" value="500" min="1" placeholder="Output tokens" style="width:120px;">
+                <input type="number" id="calc-requests" value="1000" min="1" placeholder="Req/day" style="width:100px;">
+                <select id="calc-mode">
+                    <option value="standard">Standard</option>
+                    <option value="streaming">Streaming (+15%)</option>
+                    <option value="batch">Batch (50% off)</option>
+                </select>
+                <button class="btn-primary" onclick="tryCalcApi()">Calculate</button>
+            </div>
+            <div id="calc-url" style="font-family:monospace;font-size:13px;color:var(--accent);margin-bottom:12px;"></div>
+            <div id="calc-result" class="try-result" style="display:none;"></div>
+        </div>
+
+        <!-- Try It: Cheapest -->
+        <div class="try-it">
+            <h2>Try It Live — Find Cheapest Model</h2>
+            <p style="color:var(--text-secondary);font-size:14px;margin-bottom:16px;">Find the cheapest model for your use case.</p>
+            <div class="try-row">
+                <select id="cheap-usecase">
+                    <option value="">Any use case</option>
+                    <option value="coding">Coding</option>
+                    <option value="chat">Chat</option>
+                    <option value="classification">Classification</option>
+                    <option value="reasoning">Reasoning</option>
+                    <option value="analysis">Analysis</option>
+                </select>
+                <select id="cheap-quality">
+                    <option value="">All tiers</option>
+                    <option value="high">High quality</option>
+                    <option value="budget">Budget only</option>
+                </select>
+                <input type="number" id="cheap-budget" placeholder="Max $/mo" style="width:100px;">
+                <input type="number" id="cheap-requests" value="1000" min="1" placeholder="Req/day" style="width:100px;">
+                <button class="btn-primary" onclick="tryCheapApi()">Find Cheapest</button>
+            </div>
+            <div id="cheap-url" style="font-family:monospace;font-size:13px;color:var(--accent);margin-bottom:12px;"></div>
+            <div id="cheap-result" class="try-result" style="display:none;"></div>
         </div>
 
         <!-- Use Cases -->
@@ -555,6 +612,51 @@ console.log(recommendations[<span class="code-number">0</span>].name); <span cla
             resultEl.style.display = 'block';
             resultEl.textContent = 'Loading...';
 
+            try {
+                const res = await fetch(url);
+                const data = await res.json();
+                resultEl.textContent = JSON.stringify(data, null, 2);
+            } catch (err) {
+                resultEl.textContent = 'Error: ' + err.message;
+            }
+        }
+
+        async function tryCalcApi() {
+            const model = document.getElementById('calc-model').value;
+            const inputTokens = document.getElementById('calc-input').value;
+            const outputTokens = document.getElementById('calc-output').value;
+            const requests = document.getElementById('calc-requests').value;
+            const mode = document.getElementById('calc-mode').value;
+            const params = new URLSearchParams({ model, input_tokens: inputTokens, output_tokens: outputTokens, requests, mode });
+            const url = `https://getapipulse.com/api/calculate?${params}`;
+            document.getElementById('calc-url').textContent = url;
+            const resultEl = document.getElementById('calc-result');
+            resultEl.style.display = 'block';
+            resultEl.textContent = 'Loading...';
+            try {
+                const res = await fetch(url);
+                const data = await res.json();
+                resultEl.textContent = JSON.stringify(data, null, 2);
+            } catch (err) {
+                resultEl.textContent = 'Error: ' + err.message;
+            }
+        }
+
+        async function tryCheapApi() {
+            const useCase = document.getElementById('cheap-usecase').value;
+            const quality = document.getElementById('cheap-quality').value;
+            const budget = document.getElementById('cheap-budget').value;
+            const requests = document.getElementById('cheap-requests').value;
+            const params = new URLSearchParams();
+            if (useCase) params.set('use_case', useCase);
+            if (quality) params.set('quality', quality);
+            if (budget) params.set('budget', budget);
+            if (requests) params.set('requests', requests);
+            const url = `https://getapipulse.com/api/cheapest?${params}`;
+            document.getElementById('cheap-url').textContent = url;
+            const resultEl = document.getElementById('cheap-result');
+            resultEl.style.display = 'block';
+            resultEl.textContent = 'Loading...';
             try {
                 const res = await fetch(url);
                 const data = await res.json();
