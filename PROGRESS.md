@@ -1,13 +1,13 @@
 # PROGRESS.md
 
-## Site Status (as of Session 304, May 28, 2026)
-**286 web pages | 178 blog files | 33 models | 10 providers | 32 tools | 6 API endpoints | 1 embeddable widget**
-- Sitemap (280 URLs), RSS (217 items), blog files (178 posts + 1 index) — all in sync
+## Site Status (as of Session 305, May 28, 2026)
+**288 web pages | 179 blog files | 33 models | 10 providers | 33 tools | 6 API endpoints | 1 embeddable widget**
+- Sitemap (282 URLs), RSS (219 items), blog files (179 posts + 1 index) — all in sync
 - Pricing data verified May 14 — 33 models, 10 providers
 - **Analytics: GA4 (G-0CEP7S9Y3J)** — fully operational, custom events via gtag()
 - **Pro system:** localStorage-based unlock after Stripe payment. Access code fallback on pro.html.
 - **14 comparison pages** (34 total) — all providers covered, interactive calculators, FAQPage schema
-- **32 interactive tools** — calculators, optimizer, planner, pipeline, rate limit, budget showdown, chatbot cost, model switch, stack builder, model advisor, fine-tuning calculator, Claude API cost calculator, cost projection, Gemini API cost calculator, cheapest AI API for coding
+- **33 interactive tools** — calculators, optimizer, planner, pipeline, rate limit, budget showdown, chatbot cost, model switch, stack builder, model advisor, fine-tuning calculator, Claude API cost calculator, cost projection, Gemini API cost calculator, cheapest AI API for coding, xAI Grok cost calculator
 - **Social proof:** PH launch badge, Reddit testimonial, newsletter, exit popup A/B test
 - **Community playbook:** 7 subreddit drafts + 2 newsletter pitches ready in COMMUNITY-ENGAGEMENT.md
 
@@ -19,6 +19,12 @@
 ---
 
 ## Key Milestones
+
+### Session 305 (May 28)
+**xAI Grok API Cost Calculator + Grok pricing blog — provider-specific tool + blog:**
+- Created xai-grok-cost-calculator.html: Focused calculator for xAI Grok models (Grok 3 at $30/$150, Grok 3 Mini at $3/$5). Features: cost per request/per 1K/daily/monthly/annual, usage presets (chat, real-time X data, analysis, summarization), volume presets, all xAI models side-by-side with cost comparison, cheaper alternatives table. FAQPage schema targeting "xAI Grok cost" and "Grok 3 pricing". GA4 tracking. Shareable URLs.
+- Created blog-grok-api-pricing-2026.html: Comprehensive Grok pricing guide — full pricing table, cost-per-request examples, monthly projections, Grok vs competitors (GPT-5, Claude Sonnet 4.6, Gemini 3.1 Pro), free tier details, 5 optimization tips. FAQPage schema. Links to Grok calculator.
+- Added xAI Grok Calculator card to tools.html, Grok blog entry to blog.html. Sitemap 280→282, RSS 217→219, blog 178→179.
 
 ### Session 304 (May 28)
 **Gemini API Cost Calculator + Cheapest AI API for Coding — provider-specific tools + blog:**
