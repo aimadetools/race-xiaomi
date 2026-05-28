@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Claude API Cost Calculator — Estimate Anthropic API Pricing | APIpulse</title>
+    <meta name="description" content="Free Claude API cost calculator. Estimate your Anthropic API spend across Claude Opus 4.7, Sonnet 4.6, Sonnet 4, and Haiku 4.5. See cost per request and monthly totals.">
+    <meta name="keywords" content="Claude API cost, Anthropic API pricing, Claude cost calculator, Claude Opus cost, Claude Sonnet cost, Claude Haiku pricing">
+    <meta property="og:title" content="Claude API Cost Calculator — Estimate Anthropic API Pricing | APIpulse">
+    <meta property="og:description" content="Free Claude API cost calculator. Estimate your Anthropic API spend across Claude Opus 4.7, Sonnet 4.6, Sonnet 4, and Haiku 4.5.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://getapipulse.com/og-image.png">
+    <meta property="og:url" content="https://getapipulse.com/claude-api-cost-calculator.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Claude API Cost Calculator — Estimate Anthropic API Pricing">
+    <meta name="twitter:image" content="https://getapipulse.com/og-image.png">
+    <meta name="twitter:description" content="Free Claude API cost calculator. Estimate your Anthropic API spend across all Claude models.">
+    <link rel="canonical" href="https://getapipulse.com/claude-api-cost-calculator.html">
+    <link rel="alternate" type="application/rss+xml" title="APIpulse Blog" href="https://getapipulse.com/rss.xml">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="styles.css">
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0CEP7S9Y3J"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-0CEP7S9Y3J');
+    </script>
+    <script src="analytics.js" defer></script>
+    <script src="dynamic-date.js" defer></script>
+    <script src="shared.js" defer></script>
+    <script src="pricing-data.js" defer></script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "APIpulse Claude API Cost Calculator",
+        "url": "https://getapipulse.com/claude-api-cost-calculator.html",
+        "description": "Free Claude API cost calculator. Estimate Anthropic API spend across Claude Opus 4.7, Sonnet 4.6, Sonnet 4, and Haiku 4.5.",
+        "applicationCategory": "DeveloperApplication",
+        "operatingSystem": "Web",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "How much does the Claude API cost?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Claude API pricing varies by model: Claude Opus 4.7 costs $5/$25 per 1M tokens (input/output), Claude Sonnet 4.6 costs $3/$15, Claude Sonnet 4 costs $3/$15, and Claude Haiku 4.5 costs $1/$5. The cheapest Claude model is Haiku 4.5 at $1 per 1M input tokens."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Which Claude model is cheapest?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Claude Haiku 4.5 is the cheapest Claude model at $1/$5 per 1M tokens (input/output). It's 5x cheaper than Opus 4.7 and handles most chatbot and content tasks well."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How much does Claude API cost per request?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "A typical Claude API request (1,500 input tokens, 400 output tokens) costs: Opus 4.7 ~$0.0175, Sonnet 4.6 ~$0.0105, Haiku 4.5 ~$0.0035. Use the calculator above to estimate costs for your specific usage patterns."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Is Claude API cheaper than GPT?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Claude Sonnet 4 ($3/$15) is comparable to GPT-4o ($2.50/$10) but more expensive. Claude Haiku 4.5 ($1/$5) is more expensive than GPT-4o mini ($0.15/$0.60). For budget workloads, GPT-4o mini and Gemini Flash are significantly cheaper. Claude excels at reasoning and code quality, so the value equation depends on your use case."
+                }
+            }
+        ]
+    }
+    </script>
+    <style>
+        .calc-hero {
+            padding: 120px 24px 40px; text-align: center; max-width: 700px; margin: 0 auto;
+        }
+        .calc-hero h1 { font-size: clamp(28px, 4vw, 42px); font-weight: 800; margin-bottom: 12px; }
+        .calc-hero p { color: var(--text-secondary); font-size: 17px; line-height: 1.6; }
+
+        .calculator-section { padding: 0 24px 60px; }
+        .section-header { text-align: center; margin-bottom: 32px; }
+        .section-header h2 { font-size: 24px; font-weight: 700; margin-bottom: 8px; }
+        .section-header p { color: var(--text-secondary); font-size: 15px; }
+
+        .calculator {
+            background: var(--bg-card); border: 1px solid var(--border);
+            border-radius: 16px; padding: 32px; max-width: 900px; margin: 0 auto;
+        }
+        .presets {
+            display: flex; gap: 8px; margin-bottom: 24px; flex-wrap: wrap; align-items: center;
+        }
+        .preset-btn {
+            background: var(--bg-secondary); border: 1px solid var(--border);
+            color: var(--text-secondary); padding: 8px 16px; border-radius: 8px;
+            cursor: pointer; font-size: 13px; transition: all 0.2s; font-weight: 500;
+        }
+        .preset-btn:hover { border-color: var(--accent); color: var(--accent); }
+        .preset-btn.active-preset { background: var(--accent); color: white; border-color: var(--accent); }
+        .calc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
+        .calc-inputs { display: flex; flex-direction: column; gap: 16px; }
+        .input-group { display: flex; flex-direction: column; gap: 6px; }
+        .input-group label { font-size: 13px; font-weight: 600; color: var(--text-secondary); }
+        .input-group select, .input-group input {
+            padding: 12px 16px; border-radius: 8px; border: 1px solid var(--border);
+            background: var(--bg-secondary); color: var(--text-primary); font-size: 15px;
+            font-family: inherit;
+        }
+        .input-group select:focus, .input-group input:focus {
+            outline: 2px solid var(--accent); outline-offset: 2px; border-color: var(--accent);
+        }
+        .calc-results {
+            background: var(--bg-secondary); border: 1px solid var(--border);
+            border-radius: 12px; padding: 24px;
+        }
+        .result-item {
+            display: flex; justify-content: space-between; padding: 10px 0;
+            border-bottom: 1px solid var(--border); font-size: 14px;
+        }
+        .result-item:last-child { border-bottom: none; }
+        .result-label { color: var(--text-secondary); }
+        .result-value { color: var(--text-primary); font-weight: 600; font-variant-numeric: tabular-nums; }
+        .result-total {
+            display: flex; justify-content: space-between; padding: 14px 0 10px;
+            border-top: 2px solid var(--accent); margin-top: 8px; font-size: 18px;
+        }
+        .result-total .result-label { color: var(--text-primary); font-weight: 700; }
+        .result-total .result-value { color: var(--accent); font-weight: 800; }
+
+        .model-cards { margin-top: 24px; display: grid; gap: 12px; }
+        .model-card {
+            background: var(--bg-card); border: 1px solid var(--border);
+            border-radius: 12px; padding: 20px; transition: all 0.2s;
+        }
+        .model-card:hover { border-color: var(--accent); }
+        .model-card-header {
+            display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;
+        }
+        .model-card-name { font-size: 16px; font-weight: 700; }
+        .model-card-tier {
+            padding: 3px 10px; border-radius: 6px; font-size: 11px; font-weight: 600;
+        }
+        .tier-premium { background: rgba(99,102,241,0.15); color: var(--accent); }
+        .tier-mid { background: rgba(34,197,94,0.15); color: var(--green); }
+        .tier-budget { background: rgba(245,158,11,0.15); color: var(--orange); }
+        .model-card-prices {
+            display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; margin-bottom: 12px;
+        }
+        .model-price-item { text-align: center; }
+        .model-price-label { font-size: 11px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px; }
+        .model-price-value { font-size: 18px; font-weight: 700; margin-top: 4px; }
+        .model-card-cost {
+            background: var(--bg-secondary); border-radius: 8px; padding: 12px;
+            display: flex; justify-content: space-between; align-items: center;
+        }
+        .model-card-cost-label { font-size: 13px; color: var(--text-secondary); }
+        .model-card-cost-value { font-size: 16px; font-weight: 700; color: var(--accent); }
+        .model-card-cost.cheapest { border: 1px solid rgba(34,197,94,0.3); }
+        .model-card-cost.cheapest .model-card-cost-value { color: var(--green); }
+
+        .comparison-section {
+            max-width: 900px; margin: 0 auto; padding: 40px 24px 60px;
+        }
+        .comparison-section h2 { font-size: 24px; font-weight: 700; margin-bottom: 16px; text-align: center; }
+        .comparison-section p { color: var(--text-secondary); line-height: 1.7; margin-bottom: 16px; }
+        .comparison-section strong { color: var(--text-primary); }
+
+        .info-section {
+            max-width: 700px; margin: 0 auto; padding: 0 24px 60px;
+        }
+        .info-section h2 { font-size: 22px; font-weight: 700; margin-bottom: 16px; }
+        .info-section p { color: var(--text-secondary); line-height: 1.7; margin-bottom: 16px; }
+        .info-section ul { color: var(--text-secondary); padding-left: 24px; margin-bottom: 16px; }
+        .info-section li { margin-bottom: 8px; line-height: 1.6; }
+        .info-section strong { color: var(--text-primary); }
+
+        .cta-inline {
+            background: var(--bg-secondary); border: 1px solid var(--accent);
+            border-radius: 12px; padding: 24px; margin: 32px 0; text-align: center;
+        }
+        .cta-inline p { margin-bottom: 12px; color: var(--text-secondary); }
+
+        @media (max-width: 768px) {
+            .calc-hero { padding: 100px 20px 30px; }
+            .calc-hero h1 { font-size: 26px; }
+            .calculator-section { padding: 0 20px 40px; }
+            .calculator { padding: 20px; }
+            .calc-grid { grid-template-columns: 1fr; gap: 24px; }
+            .presets { justify-content: center; }
+            .model-card-prices { grid-template-columns: 1fr; gap: 8px; }
+        }
+        @media print {
+            nav, .theme-toggle, .back-to-top, .presets { display: none !important; }
+            body { background: white; color: black; }
+            .calculator { border: 1px solid #ccc; }
+        }
+    </style>
+    <meta name="theme-color" content="#6366f1">
+    <link rel="preconnect" href="https://getapipulse.com">
+</head>
+<body>
+    <a href="#main" class="skip-link">Skip to content</a>
+    <nav>
+        <div class="nav-inner">
+            <a href="index.html" class="logo">API<span>pulse</span></a>
+            <button class="hamburger" onclick="toggleMobileNav()" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+            <div class="nav-links">
+                <a href="calculator.html">Calculator</a>
+                <a href="compare.html">Compare</a>
+                <a href="cost-explorer.html">Explorer</a>
+                <a href="model-switch.html">Switch</a>
+                <a href="cost-scenarios.html">Scenarios</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="use-cases.html">Use Cases</a>
+                <a href="about.html">About</a>
+                <a href="blog.html">Blog</a>
+                <a href="tools.html">Tools</a>
+                <a href="pricing-index.html">Pricing Index</a>
+                <a href="model-matrix.html">Model Matrix</a>
+                <a href="api-docs.html" style="color:var(--accent);">API</a>
+                <a href="pricing.html" class="nav-cta" onclick="if(window.trackEvent)window.trackEvent('pro_button_clicked',{source:'nav'})">Get Pro — $29</a>
+                <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
+            </div>
+        </div>
+    </nav>
+
+    <main id="main">
+    <div class="calc-hero">
+        <h1>Claude API Cost Calculator</h1>
+        <p>Estimate your Anthropic API spend across Claude Opus 4.7, Sonnet 4.6, Sonnet 4, and Haiku 4.5. See cost per request, cost per 1K requests, and monthly totals.</p>
+    </div>
+
+    <section class="calculator-section">
+        <div class="calculator" role="form" aria-label="Claude API Cost Calculator">
+            <div class="presets">
+                <span style="font-size:13px;color:var(--text-muted);align-self:center;">Typical request:</span>
+                <button class="preset-btn" onclick="applyPreset('chat')">Chat message</button>
+                <button class="preset-btn" onclick="applyPreset('code')">Code generation</button>
+                <button class="preset-btn" onclick="applyPreset('analysis')">Document analysis</button>
+                <button class="preset-btn" onclick="applyPreset('rag')">RAG query</button>
+                <button class="preset-btn" onclick="applyPreset('writing')">Long-form writing</button>
+            </div>
+            <div class="presets">
+                <span style="font-size:13px;color:var(--text-muted);align-self:center;">By volume:</span>
+                <button class="preset-btn" onclick="applyPreset('startup')">Startup (1K/day)</button>
+                <button class="preset-btn" onclick="applyPreset('scaleup')">Scale-up (10K/day)</button>
+                <button class="preset-btn" onclick="applyPreset('enterprise')">Enterprise (100K/day)</button>
+            </div>
+            <div class="presets">
+                <span style="font-size:13px;color:var(--text-muted);align-self:center;">API mode:</span>
+                <button class="preset-btn active-preset" id="mode-standard" onclick="setApiMode('standard')">Standard</button>
+                <button class="preset-btn" id="mode-streaming" onclick="setApiMode('streaming')" title="Streaming responses use ~10% more tokens due to overhead">Streaming (+10%)</button>
+            </div>
+            <div class="calc-grid">
+                <div class="calc-inputs">
+                    <div class="input-group">
+                        <label for="model">Claude Model</label>
+                        <select id="model" onchange="calculate()" aria-label="Select Claude model">
+                            <option value="anthropic-opus47">Claude Opus 4.7 — $5/$25 per 1M</option>
+                            <option value="anthropic-opus">Claude 4 Opus — $15/$75 per 1M</option>
+                            <option value="anthropic-sonnet46" selected>Claude Sonnet 4.6 — $3/$15 per 1M</option>
+                            <option value="anthropic-sonnet">Claude Sonnet 4 — $3/$15 per 1M</option>
+                            <option value="anthropic-haiku">Claude Haiku 4.5 — $1/$5 per 1M</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <label for="input-tokens">Input tokens per request</label>
+                        <input type="number" id="input-tokens" value="1500" min="0" step="100" onchange="calculate()" oninput="calculate()" aria-label="Input tokens per request">
+                    </div>
+                    <div class="input-group">
+                        <label for="output-tokens">Output tokens per request</label>
+                        <input type="number" id="output-tokens" value="400" min="0" step="100" onchange="calculate()" oninput="calculate()" aria-label="Output tokens per request">
+                    </div>
+                    <div class="input-group">
+                        <label for="requests">Requests per day</label>
+                        <input type="number" id="requests" value="1000" min="0" step="100" onchange="calculate()" oninput="calculate()" aria-label="Requests per day">
+                    </div>
+                    <div class="input-group">
+                        <label for="days">Days per month</label>
+                        <input type="number" id="days" value="30" min="1" max="31" onchange="calculate()" oninput="calculate()" aria-label="Days per month">
+                    </div>
+                </div>
+                <div class="calc-results" role="region" aria-label="Cost calculation results" aria-live="polite">
+                    <h3 style="margin-bottom: 16px; font-size: 16px;">Cost Estimate</h3>
+                    <div class="result-item" style="background:var(--accent-glow);margin:-4px -8px 8px;padding:10px 8px;border-radius:8px;border:1px solid rgba(99,102,241,0.2);">
+                        <span class="result-label" style="font-weight:600;color:var(--text-primary);">Cost per request</span>
+                        <span class="result-value" id="cost-per-request" style="color:var(--accent);font-size:16px;">$0.0000</span>
+                    </div>
+                    <div class="result-item" style="background:rgba(34,197,94,0.05);margin:-4px -8px 8px;padding:10px 8px;border-radius:8px;border:1px solid rgba(34,197,94,0.15);">
+                        <span class="result-label" style="font-weight:600;color:var(--text-primary);">Cost per 1K requests</span>
+                        <span class="result-value" id="cost-per-1k" style="color:var(--green);font-size:16px;">$0.00</span>
+                    </div>
+                    <div class="result-item">
+                        <span class="result-label">Input cost (monthly)</span>
+                        <span class="result-value" id="input-cost">$0.00</span>
+                    </div>
+                    <div class="result-item">
+                        <span class="result-label">Output cost (monthly)</span>
+                        <span class="result-value" id="output-cost">$0.00</span>
+                    </div>
+                    <div class="result-item">
+                        <span class="result-label">Total tokens/month</span>
+                        <span class="result-value" id="total-tokens">0</span>
+                    </div>
+                    <div class="result-total">
+                        <span class="result-label">Monthly Total</span>
+                        <span class="result-value" id="monthly-total">$0.00</span>
+                    </div>
+                    <div id="savings-container"></div>
+                    <button onclick="copyResults()" style="margin-top:16px;width:100%;padding:10px 16px;border-radius:8px;border:1px solid var(--border);background:var(--bg-secondary);color:var(--text-primary);font-size:13px;font-weight:600;cursor:pointer;transition:all 0.2s;" onmouseover="this.style.borderColor='var(--accent)'" onmouseout="this.style.borderColor='var(--border)'">
+                        <span id="copy-btn-text">Copy Results to Clipboard</span>
+                    </button>
+                    <div style="display:flex;gap:8px;margin-top:10px;">
+                        <a id="share-x" href="#" target="_blank" rel="noopener" style="flex:1;display:flex;align-items:center;justify-content:center;gap:6px;padding:10px 12px;border-radius:8px;border:1px solid var(--border);background:var(--bg-secondary);color:var(--text-primary);font-size:13px;font-weight:600;text-decoration:none;transition:all 0.2s;" onmouseover="this.style.borderColor='var(--accent)'" onmouseout="this.style.borderColor='var(--border)'" onclick="if(window.trackEvent)window.trackEvent('share_clicked',{platform:'x',tool:'claude_calc'})">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                            Share on X
+                        </a>
+                        <a id="share-linkedin" href="#" target="_blank" rel="noopener" onclick="if(window.trackEvent)window.trackEvent('share_clicked',{platform:'linkedin',tool:'claude_calc'})" style="flex:1;display:flex;align-items:center;justify-content:center;gap:6px;padding:10px 12px;border-radius:8px;border:1px solid var(--border);background:var(--bg-secondary);color:var(--text-primary);font-size:13px;font-weight:600;text-decoration:none;transition:all 0.2s;" onmouseover="this.style.borderColor='var(--accent)'" onmouseout="this.style.borderColor='var(--border)'">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                            LinkedIn
+                        </a>
+                    </div>
+                    <p style="margin-top: 16px; font-size: 12px; color: var(--text-muted);">
+                        Based on published Anthropic API pricing. Actual costs may vary.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- All Claude Models Comparison -->
+    <section class="calculator-section">
+        <div class="section-header">
+            <h2>All Claude Models — Side by Side</h2>
+            <p>Compare costs across every Claude model for your usage pattern</p>
+        </div>
+        <div class="model-cards" id="model-cards" style="max-width:900px;margin:0 auto;"></div>
+    </section>
+
+    <!-- Claude vs Competitors -->
+    <section class="comparison-section">
+        <h2>Claude vs Competitor Pricing</h2>
+        <p>How do Claude models compare to alternatives from OpenAI, Google, and DeepSeek?</p>
+        <div id="competitor-comparison" style="margin-top:20px;"></div>
+    </section>
+
+    <!-- Pro Upsell -->
+    <section style="max-width:700px;margin:0 auto;padding:0 24px 40px;" id="pro-upsell-section">
+        <div style="background:linear-gradient(135deg, rgba(99,102,241,0.08), rgba(34,197,94,0.06));border:1px solid var(--accent);border-radius:16px;padding:32px;text-align:center;">
+            <h2 style="font-size:22px;font-weight:800;margin-bottom:8px;">Optimize your Claude costs</h2>
+            <p style="color:var(--text-secondary);font-size:15px;margin-bottom:20px;line-height:1.6;">APIpulse Pro gives you <strong>10 saved scenarios</strong>, <strong>PDF cost reports</strong>, and <strong>personalized optimization tips</strong> that could cut your Anthropic bill by up to 40%.</p>
+            <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin-bottom:20px;">
+                <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:10px;padding:14px 20px;min-width:160px;">
+                    <div style="font-size:22px;font-weight:800;color:var(--accent);">$29</div>
+                    <div style="font-size:12px;color:var(--text-muted);margin-top:2px;">one-time, lifetime</div>
+                </div>
+                <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:10px;padding:14px 20px;min-width:160px;">
+                    <div style="font-size:22px;font-weight:800;color:var(--green);">40%</div>
+                    <div style="font-size:12px;color:var(--text-muted);margin-top:2px;">avg. savings with tips</div>
+                </div>
+            </div>
+            <div style="background:rgba(245,158,11,0.08);border:1px solid rgba(245,158,11,0.3);border-radius:8px;padding:10px 14px;margin-bottom:16px;font-size:13px;color:#d97706;display:inline-flex;align-items:center;gap:8px;">
+                <span style="font-size:16px;">🔥</span>
+                <span><strong class="founding-spots">73</strong> of 100 founding spots claimed — price goes to $49 soon</span>
+            </div>
+            <a href="https://buy.stripe.com/fZu7sL3Gw3GS0RQeoDeEo0a" class="btn-primary" style="display:inline-block;font-size:16px;padding:14px 32px;" target="_blank" rel="noopener" onclick="if(window.trackEvent)window.trackEvent('pro_button_clicked',{source:'claude_calc_upsell'})">Unlock Pro Features — $29</a>
+            <p style="font-size:12px;color:var(--text-muted);margin-top:12px;">14-day money-back guarantee. Lifetime access.</p>
+        </div>
+    </section>
+
+    <div class="info-section">
+        <h2>How Claude API Pricing Works</h2>
+        <p>Anthropic prices Claude models based on <strong>input tokens</strong> (your prompts) and <strong>output tokens</strong> (model responses). Pricing is per 1 million tokens. There are no monthly fees — you pay only for what you use.</p>
+        <p>Claude models are priced in tiers: <strong>Premium</strong> (Opus 4.7, 4 Opus) for complex reasoning, <strong>Mid-tier</strong> (Sonnet 4.6, Sonnet 4) for balanced performance, and <strong>Budget</strong> (Haiku 4.5) for high-volume simple tasks.</p>
+
+        <h2>Claude API Pricing (2026)</h2>
+        <ul>
+            <li><strong>Claude Opus 4.7:</strong> $5.00 input / $25.00 output per 1M tokens — 1M context, best for complex reasoning</li>
+            <li><strong>Claude 4 Opus:</strong> $15.00 input / $75.00 output per 1M tokens — 200K context, legacy premium</li>
+            <li><strong>Claude Sonnet 4.6:</strong> $3.00 input / $15.00 output per 1M tokens — 1M context, best value for most tasks</li>
+            <li><strong>Claude Sonnet 4:</strong> $3.00 input / $15.00 output per 1M tokens — 200K context, previous gen</li>
+            <li><strong>Claude Haiku 4.5:</strong> $1.00 input / $5.00 output per 1M tokens — 200K context, cheapest Claude</li>
+        </ul>
+
+        <h2>When to Use Each Claude Model</h2>
+        <p><strong>Claude Opus 4.7</strong> — Use for complex multi-step reasoning, nuanced analysis, and tasks where quality is paramount. Worth the premium for legal, medical, or research applications.</p>
+        <p><strong>Claude Sonnet 4.6</strong> — The sweet spot for most developers. Excellent at code generation, content writing, RAG, and chatbots. 3x cheaper than Opus with 90% of the capability.</p>
+        <p><strong>Claude Haiku 4.5</strong> — Best for high-volume, simpler tasks: classification, routing, summarization, and chatbot responses. 5x cheaper than Opus.</p>
+
+        <h2>How to Reduce Claude API Costs</h2>
+        <ul>
+            <li><strong>Use Haiku for simple tasks:</strong> Route classification, routing, and simple chat to Haiku at $1/$5 — 5x cheaper than Opus</li>
+            <li><strong>Optimize prompts:</strong> Shorter, more specific prompts reduce input tokens</li>
+            <li><strong>Set max_tokens:</strong> Don't let Claude generate 4000 tokens when 200 will do</li>
+            <li><strong>Use streaming:</strong> Streaming responses let users see results faster, reducing perceived latency</li>
+        </ul>
+        <p>Read our full guide: <a href="blog-how-to-reduce-ai-api-costs-50-percent.html">How to Cut Your AI API Bill by 50%</a></p>
+
+        <h2>Related Tools</h2>
+        <ul>
+            <li><a href="calculator.html">AI API Cost Calculator</a> — Compare all 33 models across 10 providers</li>
+            <li><a href="compare-claude-vs-chatgpt.html">Claude vs ChatGPT</a> — Side-by-side cost and feature comparison</li>
+            <li><a href="cost-explorer.html">Cost Explorer</a> — See all models ranked by cost for your usage</li>
+            <li><a href="model-switch.html">Model Switch Calculator</a> — Calculate savings from switching models</li>
+            <li><a href="cost-optimizer.html">Cost Optimizer</a> — Get a personalized savings report</li>
+        </ul>
+
+        <h2>Related Reading</h2>
+        <ul>
+            <li><a href="anthropic.html">Anthropic Pricing Guide</a> — Complete Anthropic API pricing breakdown</li>
+            <li><a href="blog-openai-pricing-guide.html">OpenAI Pricing Guide</a> — How OpenAI API pricing compares</li>
+            <li><a href="blog-cost-per-request.html">AI API Cost Per Request</a> — The metric developers actually need</li>
+            <li><a href="blog-cheapest-llm-api-production-2026.html">Cheapest LLM APIs in 2026</a> — Full ranking of every model</li>
+        </ul>
+
+        <div class="cta-inline">
+            <p><strong>Not sure which Claude model to use?</strong></p>
+            <a href="model-advisor.html" class="btn-primary" style="display:inline-block;">Get a Personalized Recommendation</a>
+        </div>
+    </div>
+
+    <button class="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">↑</button>
+
+    </main>
+
+    <footer>
+        <p>Pricing data last verified: <span class="verified-date"></span></p>
+        <p>&copy; 2026 APIpulse. <a href="index.html">Home</a> &middot; <a href="use-cases.html">Use Cases</a> &middot; <a href="about.html">About</a> &middot; <a href="blog.html">Blog</a>
+<a href="pricing-index.html">Pricing Index</a> &middot; <a href="model-matrix.html">Model Matrix</a> &middot; <a href="cost-scenarios.html">Scenarios</a> &middot; <a href="price-alerts.html">Price Alerts</a> &middot; <a href="pricing-changelog.html">Changelog</a> &middot; <a href="openai.html">OpenAI</a> &middot; <a href="anthropic.html">Anthropic</a> &middot; <a href="google.html">Google</a> &middot; <a href="mistral.html">Mistral</a> &middot; <a href="cohere.html">Cohere</a> &middot; <a href="deepseek.html">DeepSeek</a> &middot; <a href="xai.html">xAI</a> &middot; <a href="moonshot.html">Moonshot</a> &middot; <a href="together.html">Together.ai</a> &middot; <a href="ai21.html">AI21</a> &middot; <a href="pricing.html">Pricing</a> &middot; <a href="compare-plans.html">Free vs Pro</a> &middot; <a href="embed.html">Embed Widget</a> &middot; <a href="cheat-sheet.html">Cheat Sheet</a> &middot; <a href="model-switch.html">Model Switch</a> &middot; <a href="api-docs.html">API</a> &middot; <a href="https://x.com/getapipulse" target="_blank" rel="noopener">Twitter</a> &middot; <a href="unsubscribe.html">Unsubscribe</a></p>
+    </footer>
+
+    <script>
+        // Claude models from centralized pricing-data.js
+        const claudeModels = [
+            { id: 'anthropic-opus47', name: 'Claude Opus 4.7', tier: 'Premium', input: 5.00, output: 25.00, context: '1M', ctxNum: 1000000 },
+            { id: 'anthropic-opus', name: 'Claude 4 Opus', tier: 'Premium', input: 15.00, output: 75.00, context: '200K', ctxNum: 200000 },
+            { id: 'anthropic-sonnet46', name: 'Claude Sonnet 4.6', tier: 'Mid', input: 3.00, output: 15.00, context: '1M', ctxNum: 1000000 },
+            { id: 'anthropic-sonnet', name: 'Claude Sonnet 4', tier: 'Mid', input: 3.00, output: 15.00, context: '200K', ctxNum: 200000 },
+            { id: 'anthropic-haiku', name: 'Claude Haiku 4.5', tier: 'Budget', input: 1.00, output: 5.00, context: '200K', ctxNum: 200000 }
+        ];
+
+        // Cheaper competitors for comparison
+        const competitors = [
+            { name: 'GPT-4o mini (OpenAI)', input: 0.15, output: 0.60, tier: 'Budget' },
+            { name: 'Gemini 2.0 Flash (Google)', input: 0.10, output: 0.40, tier: 'Budget' },
+            { name: 'DeepSeek V4 Flash', input: 0.14, output: 0.28, tier: 'Budget' },
+            { name: 'GPT-4o (OpenAI)', input: 2.50, output: 10.00, tier: 'Mid' },
+            { name: 'Gemini 2.5 Pro (Google)', input: 1.25, output: 10.00, tier: 'Mid' }
+        ];
+
+        let currentApiMode = 'standard';
+
+        function setApiMode(mode) {
+            currentApiMode = mode;
+            document.getElementById('mode-standard').classList.toggle('active-preset', mode === 'standard');
+            document.getElementById('mode-streaming').classList.toggle('active-preset', mode === 'streaming');
+            calculate();
+            if (window.trackEvent) window.trackEvent('api_mode_changed', { mode: mode, tool: 'claude_calc' });
+        }
+
+        function applyPreset(type) {
+            var presets = {
+                chat: { input: 500, output: 300, requests: 1000 },
+                code: { input: 2000, output: 1500, requests: 500 },
+                analysis: { input: 4000, output: 500, requests: 200 },
+                rag: { input: 3000, output: 600, requests: 800 },
+                writing: { input: 500, output: 2000, requests: 300 },
+                startup: { input: 1500, output: 400, requests: 1000 },
+                scaleup: { input: 1500, output: 400, requests: 10000 },
+                enterprise: { input: 1500, output: 400, requests: 100000 }
+            };
+            var p = presets[type];
+            if (!p) return;
+            document.getElementById('input-tokens').value = p.input;
+            document.getElementById('output-tokens').value = p.output;
+            document.getElementById('requests').value = p.requests;
+            calculate();
+            if (window.trackEvent) window.trackEvent('preset_applied', { preset: type, tool: 'claude_calc' });
+        }
+
+        function calculate() {
+            var selectedId = document.getElementById('model').value;
+            var inputTokens = parseInt(document.getElementById('input-tokens').value) || 0;
+            var outputTokens = parseInt(document.getElementById('output-tokens').value) || 0;
+            var requests = parseInt(document.getElementById('requests').value) || 0;
+            var days = parseInt(document.getElementById('days').value) || 30;
+
+            var model = claudeModels.find(function(m) { return m.id === selectedId; });
+            if (!model) return;
+
+            var inputMult = currentApiMode === 'streaming' ? 1.10 : 1;
+            var outputMult = currentApiMode === 'streaming' ? 1.10 : 1;
+
+            var totalInputTokens = inputTokens * requests * days * inputMult;
+            var totalOutputTokens = outputTokens * requests * days * outputMult;
+
+            var inputCost = (totalInputTokens / 1000000) * model.input;
+            var outputCost = (totalOutputTokens / 1000000) * model.output;
+            var totalCost = inputCost + outputCost;
+            var totalTokens = totalInputTokens + totalOutputTokens;
+
+            var costPerRequest = model.input * (inputTokens * inputMult / 1000000) + model.output * (outputTokens * outputMult / 1000000);
+            var costPer1K = costPerRequest * 1000;
+
+            document.getElementById('cost-per-request').textContent = '$' + costPerRequest.toFixed(4);
+            document.getElementById('cost-per-1k').textContent = '$' + costPer1K.toFixed(2);
+            document.getElementById('input-cost').textContent = '$' + inputCost.toFixed(2);
+            document.getElementById('output-cost').textContent = '$' + outputCost.toFixed(2);
+            document.getElementById('total-tokens').textContent = totalTokens.toLocaleString();
+            document.getElementById('monthly-total').textContent = '$' + totalCost.toFixed(2);
+
+            // Show savings from cheaper Claude models
+            var savingsContainer = document.getElementById('savings-container');
+            var cheaperModels = claudeModels.filter(function(m) {
+                return m.id !== selectedId && m.input < model.input;
+            }).sort(function(a, b) { return a.input - b.input; });
+
+            if (cheaperModels.length > 0) {
+                var html = '<div style="margin-top:16px;"><h3 style="font-size:14px;font-weight:700;margin-bottom:10px;color:var(--text-primary);">Cheaper Claude Alternatives</h3>';
+                cheaperModels.forEach(function(m) {
+                    var mInputCost = (totalInputTokens / 1000000) * m.input;
+                    var mOutputCost = (totalOutputTokens / 1000000) * m.output;
+                    var mTotal = mInputCost + mOutputCost;
+                    var savings = totalCost - mTotal;
+                    var pct = totalCost > 0 ? (savings / totalCost * 100) : 0;
+                    html += '<div style="background:rgba(34,197,94,0.05);border:1px solid rgba(34,197,94,0.2);border-radius:8px;padding:10px 14px;margin-bottom:8px;display:flex;justify-content:space-between;align-items:center;">';
+                    html += '<div><div style="font-size:14px;font-weight:600;">' + m.name + '</div>';
+                    html += '<div style="font-size:12px;color:var(--text-secondary);">$' + m.input + '/$' + m.output + ' per 1M · ' + m.context + ' context</div></div>';
+                    html += '<div style="background:rgba(34,197,94,0.15);color:var(--green);padding:4px 10px;border-radius:6px;font-size:13px;font-weight:700;white-space:nowrap;">Save $' + savings.toFixed(2) + '/mo (' + Math.round(pct) + '%)</div>';
+                    html += '</div>';
+                });
+                html += '</div>';
+                savingsContainer.innerHTML = html;
+            } else {
+                savingsContainer.innerHTML = '<div style="background:rgba(34,197,94,0.1);border:1px solid rgba(34,197,94,0.3);color:var(--green);padding:10px 16px;border-radius:8px;font-size:13px;font-weight:600;margin-top:16px;text-align:center;">This is already the cheapest Claude model for your usage!</div>';
+            }
+
+            // Update model cards
+            renderModelCards(inputTokens, outputTokens, requests, days, selectedId);
+            renderCompetitorComparison(inputTokens, outputTokens, requests, days);
+
+            if (window.trackEvent && totalCost > 0) {
+                clearTimeout(window._calcTrackTimer);
+                window._calcTrackTimer = setTimeout(function() {
+                    window.trackEvent('calculator_used', {
+                        model: model.name,
+                        monthly_cost: totalCost.toFixed(2),
+                        cost_per_request: costPerRequest.toFixed(6),
+                        tool: 'claude_calc'
+                    });
+                }, 1000);
+            }
+        }
+
+        function renderModelCards(inputTokens, outputTokens, requests, days, selectedId) {
+            var container = document.getElementById('model-cards');
+            var inputMult = currentApiMode === 'streaming' ? 1.10 : 1;
+            var outputMult = currentApiMode === 'streaming' ? 1.10 : 1;
+            var totalInput = inputTokens * requests * days * inputMult;
+            var totalOutput = outputTokens * requests * days * outputMult;
+
+            // Find cheapest
+            var cheapestId = null;
+            var cheapestCost = Infinity;
+            claudeModels.forEach(function(m) {
+                var cost = (totalInput / 1000000) * m.input + (totalOutput / 1000000) * m.output;
+                if (cost < cheapestCost) { cheapestCost = cost; cheapestId = m.id; }
+            });
+
+            var html = '';
+            claudeModels.forEach(function(m) {
+                var cost = (totalInput / 1000000) * m.input + (totalOutput / 1000000) * m.output;
+                var isSelected = m.id === selectedId;
+                var isCheapest = m.id === cheapestId;
+                var tierClass = m.tier === 'Premium' ? 'tier-premium' : m.tier === 'Mid' ? 'tier-mid' : 'tier-budget';
+
+                html += '<div class="model-card" style="' + (isSelected ? 'border-color:var(--accent);' : '') + '">';
+                html += '<div class="model-card-header">';
+                html += '<span class="model-card-name">' + m.name + '</span>';
+                html += '<span class="model-card-tier ' + tierClass + '">' + m.tier + '</span>';
+                html += '</div>';
+                html += '<div class="model-card-prices">';
+                html += '<div class="model-price-item"><div class="model-price-label">Input / 1M</div><div class="model-price-value">$' + m.input.toFixed(2) + '</div></div>';
+                html += '<div class="model-price-item"><div class="model-price-label">Output / 1M</div><div class="model-price-value">$' + m.output.toFixed(2) + '</div></div>';
+                html += '<div class="model-price-item"><div class="model-price-label">Context</div><div class="model-price-value">' + m.context + '</div></div>';
+                html += '</div>';
+                html += '<div class="model-card-cost' + (isCheapest ? ' cheapest' : '') + '">';
+                html += '<span class="model-card-cost-label">Monthly cost for your usage</span>';
+                html += '<span class="model-card-cost-value">$' + cost.toFixed(2) + '</span>';
+                html += '</div>';
+                html += '</div>';
+            });
+            container.innerHTML = html;
+        }
+
+        function renderCompetitorComparison(inputTokens, outputTokens, requests, days) {
+            var container = document.getElementById('competitor-comparison');
+            var inputMult = currentApiMode === 'streaming' ? 1.10 : 1;
+            var outputMult = currentApiMode === 'streaming' ? 1.10 : 1;
+            var totalInput = inputTokens * requests * days * inputMult;
+            var totalOutput = outputTokens * requests * days * outputMult;
+
+            var html = '<div style="background:var(--bg-card);border:1px solid var(--border);border-radius:12px;padding:20px;">';
+            html += '<div style="display:grid;grid-template-columns:1fr auto auto;gap:8px;font-size:13px;margin-bottom:8px;padding-bottom:8px;border-bottom:1px solid var(--border);">';
+            html += '<span style="font-weight:600;color:var(--text-secondary);">Model</span>';
+            html += '<span style="font-weight:600;color:var(--text-secondary);text-align:right;">Monthly Cost</span>';
+            html += '<span style="font-weight:600;color:var(--text-secondary);text-align:right;">vs Claude Sonnet 4.6</span>';
+            html += '</div>';
+
+            // Claude Sonnet 4.6 as baseline
+            var sonnetCost = (totalInput / 1000000) * 3.00 + (totalOutput / 1000000) * 15.00;
+
+            // Add Claude models
+            claudeModels.forEach(function(m) {
+                var cost = (totalInput / 1000000) * m.input + (totalOutput / 1000000) * m.output;
+                var diff = cost - sonnetCost;
+                var pct = sonnetCost > 0 ? (diff / sonnetCost * 100) : 0;
+                var diffText = m.id === 'anthropic-sonnet46' ? '—' : (diff > 0 ? '+' : '') + Math.round(pct) + '%';
+                var diffColor = diff > 0 ? 'var(--red)' : diff < 0 ? 'var(--green)' : 'var(--text-muted)';
+                html += '<div style="display:grid;grid-template-columns:1fr auto auto;gap:8px;font-size:14px;padding:8px 0;border-bottom:1px solid rgba(42,42,62,0.5);">';
+                html += '<span style="font-weight:600;">' + m.name + '</span>';
+                html += '<span style="text-align:right;font-weight:600;font-variant-numeric:tabular-nums;">$' + cost.toFixed(2) + '</span>';
+                html += '<span style="text-align:right;color:' + diffColor + ';font-weight:600;width:60px;">' + diffText + '</span>';
+                html += '</div>';
+            });
+
+            // Competitors
+            competitors.forEach(function(m) {
+                var cost = (totalInput / 1000000) * m.input + (totalOutput / 1000000) * m.output;
+                var diff = cost - sonnetCost;
+                var pct = sonnetCost > 0 ? (diff / sonnetCost * 100) : 0;
+                var diffText = (diff > 0 ? '+' : '') + Math.round(pct) + '%';
+                var diffColor = diff > 0 ? 'var(--red)' : 'var(--green)';
+                html += '<div style="display:grid;grid-template-columns:1fr auto auto;gap:8px;font-size:14px;padding:8px 0;border-bottom:1px solid rgba(42,42,62,0.5);">';
+                html += '<span style="color:var(--text-secondary);">' + m.name + '</span>';
+                html += '<span style="text-align:right;font-weight:600;font-variant-numeric:tabular-nums;color:var(--text-secondary);">$' + cost.toFixed(2) + '</span>';
+                html += '<span style="text-align:right;color:' + diffColor + ';font-weight:600;width:60px;">' + diffText + '</span>';
+                html += '</div>';
+            });
+
+            html += '</div>';
+            container.innerHTML = html;
+        }
+
+        function copyResults() {
+            var model = document.getElementById('model');
+            var selectedText = model.options[model.selectedIndex].text;
+            var text = [
+                'Claude API Cost Estimate',
+                '========================',
+                'Model: ' + selectedText,
+                'Cost per request: ' + document.getElementById('cost-per-request').textContent,
+                'Cost per 1K requests: ' + document.getElementById('cost-per-1k').textContent,
+                'Input cost (monthly): ' + document.getElementById('input-cost').textContent,
+                'Output cost (monthly): ' + document.getElementById('output-cost').textContent,
+                'Monthly Total: ' + document.getElementById('monthly-total').textContent,
+                '',
+                'Calculate yours: ' + getShareUrl()
+            ].join('\n');
+
+            navigator.clipboard.writeText(text).then(function() {
+                var btn = document.getElementById('copy-btn-text');
+                btn.textContent = 'Copied!';
+                setTimeout(function() { btn.textContent = 'Copy Results to Clipboard'; }, 2000);
+                if (window.trackEvent) window.trackEvent('copy_results', { tool: 'claude_calc' });
+            });
+        }
+
+        function getShareUrl() {
+            var params = new URLSearchParams();
+            params.set('m', document.getElementById('model').value);
+            params.set('i', document.getElementById('input-tokens').value);
+            params.set('o', document.getElementById('output-tokens').value);
+            params.set('r', document.getElementById('requests').value);
+            params.set('d', document.getElementById('days').value);
+            if (currentApiMode !== 'standard') params.set('mode', currentApiMode);
+            return 'https://getapipulse.com/claude-api-cost-calculator.html?' + params.toString();
+        }
+
+        function loadFromUrl() {
+            var params = new URLSearchParams(window.location.search);
+            if (!params.has('m')) return;
+            var m = params.get('m');
+            var select = document.getElementById('model');
+            if (select.querySelector('option[value="' + m + '"]')) select.value = m;
+            if (params.has('i')) document.getElementById('input-tokens').value = params.get('i');
+            if (params.has('o')) document.getElementById('output-tokens').value = params.get('o');
+            if (params.has('r')) document.getElementById('requests').value = params.get('r');
+            if (params.has('d')) document.getElementById('days').value = params.get('d');
+            if (params.has('mode')) setApiMode(params.get('mode'));
+        }
+
+        // Init
+        document.addEventListener('DOMContentLoaded', function() {
+            loadFromUrl();
+            calculate();
+        });
+    </script>
+</body>
+</html>

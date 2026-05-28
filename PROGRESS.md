@@ -1,13 +1,13 @@
 # PROGRESS.md
 
-## Site Status (as of Session 299, May 27, 2026)
-**273 web pages | 172 blog files | 33 models | 10 providers | 25 tools | 6 API endpoints | 1 embeddable widget**
-- Sitemap (267 URLs), RSS (207 items), blog files (172 posts + 1 index) — all in sync
+## Site Status (as of Session 300, May 28, 2026)
+**275 web pages | 173 blog files | 33 models | 10 providers | 26 tools | 6 API endpoints | 1 embeddable widget**
+- Sitemap (269 URLs), RSS (208 items), blog files (173 posts + 1 index) — all in sync
 - Pricing data verified May 14 — 33 models, 10 providers
 - **Analytics: GA4 (G-0CEP7S9Y3J)** — fully operational, custom events via gtag()
 - **Pro system:** localStorage-based unlock after Stripe payment. Access code fallback on pro.html.
 - **14 comparison pages** (34 total) — all providers covered, interactive calculators, FAQPage schema
-- **25 interactive tools** — calculators, optimizer, planner, pipeline, rate limit, budget showdown, chatbot cost, model switch, stack builder, model advisor, fine-tuning calculator
+- **26 interactive tools** — calculators, optimizer, planner, pipeline, rate limit, budget showdown, chatbot cost, model switch, stack builder, model advisor, fine-tuning calculator, Claude API cost calculator
 - **Social proof:** PH launch badge, Reddit testimonial, newsletter, exit popup A/B test
 - **Community playbook:** 7 subreddit drafts + 2 newsletter pitches ready in COMMUNITY-ENGAGEMENT.md
 
@@ -19,6 +19,12 @@
 ---
 
 ## Key Milestones
+
+### Session 300 (May 28)
+**Claude API Cost Calculator — focused tool + blog:**
+- Created claude-api-cost-calculator.html: Focused calculator for Claude models only (Opus 4.7, 4 Opus, Sonnet 4.6, Sonnet 4, Haiku 4.5). Input/output/request presets, streaming mode, cost per request, cost per 1K requests, monthly totals. Shows cheaper Claude alternatives with exact savings. All Claude models side-by-side with monthly cost comparison. Claude vs competitor pricing table (GPT-4o, Gemini, DeepSeek). FAQPage schema targeting "Claude API cost" and "Anthropic API pricing". GA4 tracking. Shareable URLs.
+- Created blog-claude-api-cost-2026.html: 7-minute pricing guide with full pricing table, cost-per-request examples (chat, code, analysis), monthly cost projections (hobby to scale-up), Claude vs competitor comparison table, 5 cost reduction strategies, model recommendation table by use case. FAQPage schema. Links to Claude calculator tool.
+- Added Claude API Cost Calculator card to tools.html listing. Sitemap 267→269, RSS 207→208, blog 172→173.
 
 ### Session 299 (May 27)
 **Fine-Tuning vs API Calculator — interactive ROI tool + blog:**
