@@ -1,13 +1,13 @@
 # PROGRESS.md
 
-## Site Status (as of Session 306, May 28, 2026)
-**289 web pages | 179 blog files | 33 models | 10 providers | 34 tools | 6 API endpoints | 1 embeddable widget**
-- Sitemap (283 URLs), RSS (220 items), blog files (179 posts + 1 index) — all in sync
+## Site Status (as of Session 307, May 28, 2026)
+**290 web pages | 179 blog files | 33 models | 10 providers | 35 tools | 6 API endpoints | 1 embeddable widget**
+- Sitemap (284 URLs), RSS (221 items), blog files (179 posts + 1 index) — all in sync
 - Pricing data verified May 14 — 33 models, 10 providers
 - **Analytics: GA4 (G-0CEP7S9Y3J)** — fully operational, custom events via gtag()
 - **Pro system:** localStorage-based unlock after Stripe payment. Access code fallback on pro.html.
 - **14 comparison pages** (34 total) — all providers covered, interactive calculators, FAQPage schema
-- **34 interactive tools** — calculators, optimizer, planner, pipeline, rate limit, budget showdown, chatbot cost, model switch, stack builder, model advisor, fine-tuning calculator, Claude API cost calculator, cost projection, Gemini API cost calculator, cheapest AI API for coding, xAI Grok cost calculator, DeepSeek API cost calculator
+- **35 interactive tools** — calculators, optimizer, planner, pipeline, rate limit, budget showdown, chatbot cost, model switch, stack builder, model advisor, fine-tuning calculator, Claude API cost calculator, cost projection, Gemini API cost calculator, cheapest AI API for coding, xAI Grok cost calculator, DeepSeek API cost calculator, Mistral API cost calculator
 - **Social proof:** PH launch badge, Reddit testimonial, newsletter, exit popup A/B test
 - **Community playbook:** 7 subreddit drafts + 2 newsletter pitches ready in COMMUNITY-ENGAGEMENT.md
 
@@ -19,6 +19,11 @@
 ---
 
 ## Key Milestones
+
+### Session 307 (May 28)
+**Mistral API Cost Calculator — provider-specific tool:**
+- Created mistral-api-cost-calculator.html: Focused calculator for Mistral models (Large 3 at $0.50/$1.50, Small 4 at $0.15/$0.60). Features: cost per request/per 1K/daily/monthly/annual, usage presets (chat, code, analysis, summarization, translation), volume presets, all Mistral models side-by-side with cost comparison, cheaper alternatives table. FAQPage schema targeting "Mistral API cost" and "Mistral pricing". GA4 tracking. Shareable URLs.
+- Added Mistral Calculator card to tools.html. Sitemap 283→284, RSS 220→221.
 
 ### Session 306 (May 28)
 **DeepSeek API Cost Calculator — provider-specific tool:**
