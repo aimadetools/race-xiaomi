@@ -2,7 +2,7 @@
 
 ## Site Status (as of Session 312, May 28, 2026)
 **295 web pages | 181 blog files | 33 models | 10 providers | 38 tools | 8 API endpoints | 1 embeddable widget**
-- Sitemap (289 URLs), RSS (226 items), blog files (181 posts + 1 index) — all in sync
+- Sitemap (290 URLs), RSS (226 items), blog files (181 posts + 1 index) — all in sync
 - Pricing data verified May 14 — 33 models, 10 providers
 - **Analytics: GA4 (G-0CEP7S9Y3J)** — fully operational, custom events via gtag()
 - **Pro system:** localStorage-based unlock after Stripe payment. Access code fallback on pro.html.
@@ -27,6 +27,7 @@
 - Added 16 industry vertical cost guides: Advertising/Marketing, Aerospace, Agriculture, Education, Energy, Finance, Healthcare, Hospitality, Legal, Logistics, Manufacturing, Non-Profit, Retail, Sports, Telecom, Transportation.
 - Added 4 guide/comparison posts: AI API Pricing Comparison 2026, Multi-Model AI Stack Builder, Best AI APIs for Building Agents 2026, How to Choose AI API 2026.
 - All entries placed in correct chronological positions (May 18-27). blog.html now has 186 post-cards (181 blog + 5 comparison pages), matching all files on disk.
+- Added homepage (index.html) to sitemap.xml — was missing! Sitemap 289→290 URLs.
 
 ### Session 312 (May 28)
 **Blog post + API polish + compare.html batch/streaming toggle:**
