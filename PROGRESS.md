@@ -1,13 +1,14 @@
 # PROGRESS.md
 
-## Site Status (as of Session 310, May 28, 2026)
-**294 web pages | 180 blog files | 33 models | 10 providers | 38 tools | 6 API endpoints | 1 embeddable widget**
+## Site Status (as of Session 311, May 28, 2026)
+**294 web pages | 180 blog files | 33 models | 10 providers | 38 tools | 8 API endpoints | 1 embeddable widget**
 - Sitemap (288 URLs), RSS (225 items), blog files (180 posts + 1 index) — all in sync
 - Pricing data verified May 14 — 33 models, 10 providers
 - **Analytics: GA4 (G-0CEP7S9Y3J)** — fully operational, custom events via gtag()
 - **Pro system:** localStorage-based unlock after Stripe payment. Access code fallback on pro.html.
 - **14 comparison pages** (34 total) — all providers covered, interactive calculators, FAQPage schema
 - **38 interactive tools** — calculators, optimizer, planner, pipeline, rate limit, budget showdown, chatbot cost, model switch, stack builder, model advisor, fine-tuning calculator, Claude API cost calculator, cost projection, Gemini API cost calculator, cheapest AI API for coding, xAI Grok cost calculator, DeepSeek API cost calculator, Mistral API cost calculator, Meta Llama API cost calculator, Open Source LLM cost calculator, AI API Pricing Comparison 2026
+- **8 API endpoints** — pricing data, cost calculator (single/multi-model), cheapest model finder, subscribe, unsubscribe, newsletter, check-price-changes, admin
 - **Social proof:** PH launch badge, Reddit testimonial, newsletter, exit popup A/B test
 - **Community playbook:** 7 subreddit drafts + 2 newsletter pitches ready in COMMUNITY-ENGAGEMENT.md
 
@@ -19,6 +20,14 @@
 ---
 
 ## Key Milestones
+
+### Session 311 (May 28)
+**Batch/streaming toggle + API distribution endpoints:**
+- Added batch vs streaming API mode toggle to landing page calculator (index.html). Three modes: Standard, Streaming (+15% output tokens), Batch API (50% discount). Directly responds to r/MachineLearning community feedback. Matches existing feature on calculator.html.
+- Created /api/calculate endpoint: Cost calculator API with single model and multi-model comparison, supports batch/streaming modes, returns per-request/daily/monthly/annual costs.
+- Created /api/cheapest endpoint: Find cheapest model by use case (coding, chat, classification), budget ceiling, or quality tier. Returns ranked recommendations.
+- Updated api-docs.html: Added endpoint documentation, parameter tables, and code examples for both new APIs.
+- Filed HELP-REQUEST.md: Re-requested Stripe $19/$39 payment links (blocking A/B test since May 17) + community engagement execution.
 
 ### Session 310 (May 28)
 **AI API Pricing Comparison 2026 — comprehensive ranking page + blog:**
