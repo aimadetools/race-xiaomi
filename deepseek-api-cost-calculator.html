@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DeepSeek API Cost Calculator — V4 Pro & V4 Flash Pricing | APIpulse</title>
+    <meta name="description" content="Free DeepSeek API cost calculator. Estimate your spend across DeepSeek V4 Pro and V4 Flash. See cost per request, per 1K requests, and monthly totals. The cheapest AI API.">
+    <meta name="keywords" content="DeepSeek API cost, DeepSeek V4 pricing, DeepSeek V4 Pro calculator, DeepSeek V4 Flash cost, DeepSeek API calculator 2026, cheapest AI API">
+    <meta property="og:title" content="DeepSeek API Cost Calculator — V4 Pro & V4 Flash Pricing | APIpulse">
+    <meta property="og:description" content="Free DeepSeek API cost calculator. Estimate spend across V4 Pro and V4 Flash. From $0.14/1M tokens.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://getapipulse.com/og-image.png">
+    <meta property="og:url" content="https://getapipulse.com/deepseek-api-cost-calculator.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="DeepSeek API Cost Calculator — V4 Pro & V4 Flash Pricing">
+    <meta name="twitter:image" content="https://getapipulse.com/og-image.png">
+    <meta name="twitter:description" content="Free DeepSeek API cost calculator. Estimate spend across V4 Pro and V4 Flash.">
+    <link rel="canonical" href="https://getapipulse.com/deepseek-api-cost-calculator.html">
+    <link rel="alternate" type="application/rss+xml" title="APIpulse Blog" href="https://getapipulse.com/rss.xml">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="styles.css">
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0CEP7S9Y3J"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-0CEP7S9Y3J');
+    </script>
+    <script src="analytics.js" defer></script>
+    <script src="dynamic-date.js" defer></script>
+    <script src="shared.js" defer></script>
+    <script src="pricing-data.js" defer></script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "APIpulse DeepSeek API Cost Calculator",
+        "url": "https://getapipulse.com/deepseek-api-cost-calculator.html",
+        "description": "Free DeepSeek API cost calculator. Estimate spend across DeepSeek V4 Pro and V4 Flash.",
+        "applicationCategory": "DeveloperApplication",
+        "operatingSystem": "Web",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "How much does the DeepSeek API cost?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "DeepSeek API pricing: V4 Pro costs $0.44/$0.87 per 1M tokens (input/output), and V4 Flash costs $0.14/$0.28 per 1M tokens. DeepSeek V3 costs $0.27/$1.10 per 1M tokens but is deprecated in favor of V4 Flash. DeepSeek V4 Flash is one of the cheapest AI APIs available."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Is DeepSeek cheaper than GPT-5?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes, significantly. DeepSeek V4 Pro ($0.44/$0.87 per 1M tokens) is 96% cheaper than GPT-5 ($1.25/$10.00) for input tokens and 91% cheaper for output tokens. DeepSeek V4 Flash ($0.14/$0.28) is even cheaper — 89% less than GPT-5 for input and 97% less for output."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How much does DeepSeek cost per month?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Monthly DeepSeek costs depend on usage: 100 requests/day (~3K/mo) costs ~$4/month on V4 Pro and ~$1.30/month on V4 Flash. 1,000 requests/day (~30K/mo) costs ~$40/month on V4 Pro and ~$13/month on V4 Flash. At 10,000 requests/day, costs are ~$400/month on V4 Pro and ~$130/month on V4 Flash."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What is DeepSeek V4 Flash used for?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "DeepSeek V4 Flash ($0.14/$0.28 per 1M tokens) is ideal for high-volume tasks: chatbots, content moderation, classification, summarization, translation, and data extraction. It offers the lowest cost per request among premium-tier models with a 1M context window."
+                }
+            }
+        ]
+    }
+    </script>
+    <style>
+        .calc-hero {
+            padding: 120px 24px 40px; text-align: center; max-width: 700px; margin: 0 auto;
+        }
+        .calc-hero h1 { font-size: clamp(28px, 4vw, 42px); font-weight: 800; margin-bottom: 12px; }
+        .calc-hero p { color: var(--text-secondary); font-size: 17px; line-height: 1.6; }
+
+        .calculator-section { padding: 0 24px 60px; }
+        .section-header { text-align: center; margin-bottom: 32px; }
+        .section-header h2 { font-size: 24px; font-weight: 700; margin-bottom: 8px; }
+        .section-header p { color: var(--text-secondary); font-size: 15px; }
+
+        .calculator {
+            background: var(--bg-card); border: 1px solid var(--border);
+            border-radius: 16px; padding: 32px; max-width: 900px; margin: 0 auto;
+        }
+        .presets {
+            display: flex; gap: 8px; margin-bottom: 24px; flex-wrap: wrap; align-items: center;
+        }
+        .preset-btn {
+            background: var(--bg-secondary); border: 1px solid var(--border);
+            color: var(--text-secondary); padding: 8px 16px; border-radius: 8px;
+            cursor: pointer; font-size: 13px; transition: all 0.2s; font-weight: 500;
+        }
+        .preset-btn:hover { border-color: var(--accent); color: var(--accent); }
+        .preset-btn.active-preset { background: var(--accent); color: white; border-color: var(--accent); }
+        .calc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
+        .calc-inputs { display: flex; flex-direction: column; gap: 16px; }
+        .input-group { display: flex; flex-direction: column; gap: 6px; }
+        .input-group label { font-size: 13px; font-weight: 600; color: var(--text-secondary); }
+        .input-group select, .input-group input {
+            padding: 12px 16px; border-radius: 8px; border: 1px solid var(--border);
+            background: var(--bg-secondary); color: var(--text-primary); font-size: 15px;
+            font-family: inherit;
+        }
+        .input-group select:focus, .input-group input:focus {
+            outline: 2px solid var(--accent); outline-offset: 2px; border-color: var(--accent);
+        }
+        .hint { font-size: 12px; color: var(--text-muted); }
+        .calc-results {
+            background: var(--bg-secondary); border: 1px solid var(--border);
+            border-radius: 12px; padding: 24px;
+        }
+        .result-item {
+            display: flex; justify-content: space-between; padding: 10px 0;
+            border-bottom: 1px solid var(--border); font-size: 14px;
+        }
+        .result-item:last-child { border-bottom: none; }
+        .result-label { color: var(--text-secondary); }
+        .result-value { color: var(--text-primary); font-weight: 600; font-variant-numeric: tabular-nums; }
+        .result-total {
+            display: flex; justify-content: space-between; padding: 14px 0 10px;
+            border-top: 2px solid var(--accent); margin-top: 8px; font-size: 18px;
+        }
+        .result-total .result-label { color: var(--text-primary); font-weight: 700; }
+        .result-total .result-value { color: var(--accent); font-weight: 800; }
+
+        .model-cards { margin-top: 24px; display: grid; gap: 12px; }
+        .model-card {
+            background: var(--bg-card); border: 1px solid var(--border);
+            border-radius: 12px; padding: 20px; transition: all 0.2s;
+        }
+        .model-card:hover { border-color: var(--accent); }
+        .model-card-header {
+            display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;
+        }
+        .model-card-name { font-size: 16px; font-weight: 700; }
+        .model-card-tier {
+            padding: 3px 10px; border-radius: 6px; font-size: 11px; font-weight: 600;
+        }
+        .tier-premium { background: rgba(99,102,241,0.15); color: var(--accent); }
+        .tier-mid { background: rgba(34,197,94,0.15); color: var(--green); }
+        .tier-budget { background: rgba(245,158,11,0.15); color: var(--orange); }
+        .model-card-prices {
+            display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; margin-bottom: 12px;
+        }
+        .model-price-item { text-align: center; }
+        .model-price-label { font-size: 11px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px; }
+        .model-price-value { font-size: 18px; font-weight: 700; margin-top: 4px; }
+        .model-card-cost {
+            background: var(--bg-secondary); border-radius: 8px; padding: 12px;
+            display: flex; justify-content: space-between; align-items: center;
+        }
+        .model-card-cost-label { font-size: 13px; color: var(--text-secondary); }
+        .model-card-cost-value { font-size: 16px; font-weight: 700; color: var(--accent); }
+        .model-card-cost.cheapest { border: 1px solid rgba(34,197,94,0.3); }
+        .model-card-cost.cheapest .model-card-cost-value { color: var(--green); }
+
+        .alternatives-section {
+            max-width: 900px; margin: 0 auto; padding: 40px 24px 60px;
+        }
+        .alternatives-section h2 { font-size: 24px; font-weight: 700; margin-bottom: 16px; text-align: center; }
+        .alt-table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+        .alt-table th { text-align: left; padding: 12px 16px; font-size: 12px; font-weight: 700; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px; border-bottom: 2px solid var(--border); }
+        .alt-table td { padding: 12px 16px; border-bottom: 1px solid rgba(42,42,62,0.5); font-size: 14px; }
+        .alt-table tr:hover td { background: rgba(99,102,241,0.03); }
+        .alt-table .savings { color: var(--green); font-weight: 700; }
+
+        .info-section {
+            max-width: 700px; margin: 0 auto; padding: 0 24px 60px;
+        }
+        .info-section h2 { font-size: 22px; font-weight: 700; margin-bottom: 16px; }
+        .info-section p { color: var(--text-secondary); line-height: 1.7; margin-bottom: 16px; }
+        .info-section ul { color: var(--text-secondary); padding-left: 24px; margin-bottom: 16px; }
+        .info-section li { margin-bottom: 8px; line-height: 1.6; }
+        .info-section strong { color: var(--text-primary); }
+
+        .cta-inline {
+            background: var(--bg-secondary); border: 1px solid var(--accent);
+            border-radius: 12px; padding: 24px; margin: 32px 0; text-align: center;
+        }
+        .cta-inline p { margin-bottom: 12px; color: var(--text-secondary); }
+
+        .share-row { display: flex; gap: 8px; margin-top: 16px; }
+        .share-btn {
+            flex: 1; display: flex; align-items: center; justify-content: center; gap: 6px;
+            padding: 10px 12px; border-radius: 8px; border: 1px solid var(--border);
+            background: var(--bg-secondary); color: var(--text-primary);
+            font-size: 13px; font-weight: 600; text-decoration: none; transition: all 0.2s; cursor: pointer;
+        }
+        .share-btn:hover { border-color: var(--accent); }
+
+        @media (max-width: 768px) {
+            .calc-hero { padding: 100px 20px 30px; }
+            .calc-hero h1 { font-size: 26px; }
+            .calculator-section { padding: 0 20px 40px; }
+            .calculator { padding: 20px; }
+            .calc-grid { grid-template-columns: 1fr; gap: 24px; }
+            .presets { justify-content: center; }
+            .model-card-prices { grid-template-columns: 1fr; gap: 8px; }
+        }
+        @media print {
+            nav, .theme-toggle, .back-to-top, .presets { display: none !important; }
+            body { background: white; color: black; }
+            .calculator { border: 1px solid #ccc; }
+        }
+    </style>
+    <meta name="theme-color" content="#6366f1">
+    <link rel="preconnect" href="https://getapipulse.com">
+</head>
+<body>
+    <a href="#main" class="skip-link">Skip to content</a>
+    <nav>
+        <div class="nav-inner">
+            <a href="index.html" class="logo">API<span>pulse</span></a>
+            <button class="hamburger" onclick="toggleMobileNav()" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+            <div class="nav-links">
+                <a href="calculator.html">Calculator</a>
+                <a href="compare.html">Compare</a>
+                <a href="cost-explorer.html">Explorer</a>
+                <a href="agent-cost-calculator.html">Agents</a>
+                <a href="cost-scenarios.html">Scenarios</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="use-cases.html">Use Cases</a>
+                <a href="about.html">About</a>
+                <a href="blog.html">Blog</a>
+                <a href="tools.html">Tools</a>
+                <a href="pricing-index.html">Pricing Index</a>
+                <a href="model-matrix.html">Model Matrix</a>
+                <a href="api-docs.html" style="color:var(--accent);">API</a>
+                <a href="pricing.html" class="nav-cta" onclick="if(window.trackEvent)window.trackEvent('pro_button_clicked',{source:'nav'})">Get Pro — $29</a>
+                <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
+            </div>
+        </div>
+    </nav>
+
+    <main id="main">
+    <div class="calc-hero">
+        <h1>DeepSeek API Cost Calculator</h1>
+        <p>Estimate your DeepSeek spend across V4 Pro and V4 Flash. See cost per request, per 1K requests, and monthly totals. The cheapest AI API with a 1M context window.</p>
+    </div>
+
+    <section class="calculator-section">
+        <div class="calculator" role="form" aria-label="DeepSeek API Cost Calculator">
+            <div class="presets">
+                <span style="font-size:13px;color:var(--text-muted);align-self:center;">Typical request:</span>
+                <button class="preset-btn" onclick="applyPreset('chat')">Chat message</button>
+                <button class="preset-btn" onclick="applyPreset('code')">Code generation</button>
+                <button class="preset-btn" onclick="applyPreset('analysis')">Data analysis</button>
+                <button class="preset-btn" onclick="applyPreset('summarization')">Summarization</button>
+                <button class="preset-btn" onclick="applyPreset('translation')">Translation</button>
+            </div>
+            <div class="presets">
+                <span style="font-size:13px;color:var(--text-muted);align-self:center;">By volume:</span>
+                <button class="preset-btn" onclick="applyPreset('hobby')">Hobby (100/day)</button>
+                <button class="preset-btn" onclick="applyPreset('startup')">Startup (1K/day)</button>
+                <button class="preset-btn" onclick="applyPreset('scaleup')">Scale-up (10K/day)</button>
+            </div>
+            <div class="calc-grid">
+                <div class="calc-inputs">
+                    <div class="input-group">
+                        <label for="model">DeepSeek Model</label>
+                        <select id="model" onchange="calculate()" aria-label="Select DeepSeek model"></select>
+                    </div>
+                    <div class="input-group">
+                        <label for="input-tokens">Input tokens per request</label>
+                        <input type="number" id="input-tokens" value="1500" min="0" step="100" onchange="calculate()" oninput="calculate()">
+                    </div>
+                    <div class="input-group">
+                        <label for="output-tokens">Output tokens per request</label>
+                        <input type="number" id="output-tokens" value="400" min="0" step="100" onchange="calculate()" oninput="calculate()">
+                    </div>
+                    <div class="input-group">
+                        <label for="requests-day">Requests per day</label>
+                        <input type="number" id="requests-day" value="1000" min="0" step="100" onchange="calculate()" oninput="calculate()">
+                    </div>
+                </div>
+                <div class="calc-results" role="region" aria-label="Cost results" aria-live="polite">
+                    <h3 style="margin-bottom: 16px; font-size: 16px;">Cost Estimate</h3>
+                    <div class="result-item">
+                        <span class="result-label">Input cost per request</span>
+                        <span class="result-value" id="input-cost-req">$0.0000</span>
+                    </div>
+                    <div class="result-item">
+                        <span class="result-label">Output cost per request</span>
+                        <span class="result-value" id="output-cost-req">$0.0000</span>
+                    </div>
+                    <div class="result-item" style="background:var(--accent-glow);margin:-4px -8px 8px;padding:10px 8px;border-radius:8px;border:1px solid rgba(99,102,241,0.2);">
+                        <span class="result-label" style="font-weight:600;color:var(--text-primary);">Total cost per request</span>
+                        <span class="result-value" id="total-cost-req" style="color:var(--accent);font-size:16px;">$0.0000</span>
+                    </div>
+                    <div class="result-item">
+                        <span class="result-label">Cost per 1,000 requests</span>
+                        <span class="result-value" id="cost-per-1k">$0.00</span>
+                    </div>
+                    <div class="result-item">
+                        <span class="result-label">Daily cost</span>
+                        <span class="result-value" id="daily-cost">$0.00</span>
+                    </div>
+                    <div class="result-total">
+                        <span class="result-label">Monthly cost</span>
+                        <span class="result-value" id="monthly-cost">$0.00</span>
+                    </div>
+                    <div class="result-item">
+                        <span class="result-label">Annual cost</span>
+                        <span class="result-value" id="annual-cost">$0.00</span>
+                    </div>
+                    <div class="share-row">
+                        <button class="share-btn" onclick="copyResults()"><span id="copy-btn-text">Copy Results</span></button>
+                        <a id="share-x" href="#" target="_blank" rel="noopener" class="share-btn">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                            X
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- All DeepSeek Models -->
+    <section class="calculator-section">
+        <div class="section-header">
+            <h2>All DeepSeek Models — Cost Comparison</h2>
+            <p>See how your costs compare across all DeepSeek models with your current settings</p>
+        </div>
+        <div class="model-cards" id="deepseek-models"></div>
+    </section>
+
+    <!-- Cheaper Alternatives -->
+    <section class="alternatives-section">
+        <h2>Cheaper Alternatives from Other Providers</h2>
+        <p>These models from other providers offer similar capabilities at lower prices:</p>
+        <div style="overflow-x:auto;">
+            <table class="alt-table">
+                <thead>
+                    <tr>
+                        <th>Model</th>
+                        <th>Provider</th>
+                        <th>Input/1M</th>
+                        <th>Output/1M</th>
+                        <th>Your Cost/Req</th>
+                        <th>Savings vs Selected</th>
+                    </tr>
+                </thead>
+                <tbody id="alternatives-tbody"></tbody>
+            </table>
+        </div>
+    </section>
+
+    <div class="info-section">
+        <h2>DeepSeek API Pricing Explained</h2>
+        <p>DeepSeek offers some of the most cost-effective AI models available. <strong>V4 Pro ($0.44/$0.87 per 1M tokens)</strong> delivers strong reasoning and coding performance at a fraction of the cost of GPT-5 or Claude. <strong>V4 Flash ($0.14/$0.28)</strong> is optimized for speed and cost — ideal for high-volume production workloads.</p>
+
+        <h2>When to Use Each DeepSeek Model</h2>
+        <ul>
+            <li><strong>V4 Pro ($0.44/$0.87):</strong> Best for complex reasoning, code generation, analysis, and tasks requiring strong instruction following. 1M context window. Excellent for RAG pipelines and multi-step workflows.</li>
+            <li><strong>V4 Flash ($0.14/$0.28):</strong> Budget-friendly option for chatbots, summarization, classification, translation, and high-volume tasks. 1M context window. The cheapest premium-tier AI API available.</li>
+        </ul>
+
+        <h2>DeepSeek vs Competitors</h2>
+        <p>DeepSeek's biggest advantage is <strong>price</strong>. V4 Pro costs 96% less than GPT-5 for input tokens while delivering competitive quality. V4 Flash is even cheaper — often 10-50x less than comparable models from OpenAI, Anthropic, or Google. For tasks where cost is the primary concern, DeepSeek is hard to beat.</p>
+
+        <h2>How to Reduce Your DeepSeek API Costs</h2>
+        <ul>
+            <li><strong>Use V4 Flash for simple tasks:</strong> Route classification, summarization, and simple chat to Flash ($0.14/$0.28) and reserve V4 Pro ($0.44/$0.87) for complex reasoning. Saves 68%+.</li>
+            <li><strong>Leverage the 1M context window:</strong> Include all relevant context in a single request instead of making multiple smaller calls.</li>
+            <li><strong>Set token limits:</strong> Control output length with max_tokens to avoid surprise costs on verbose responses.</li>
+            <li><strong>Batch requests:</strong> Process multiple items in a single prompt to reduce per-request overhead.</li>
+            <li><strong>Monitor usage:</strong> Track your API usage to identify cost spikes and optimize patterns.</li>
+        </ul>
+
+        <h2>DeepSeek Free Tier</h2>
+        <p>DeepSeek offers <strong>$5 in free credits for new accounts</strong>. This is enough for approximately 11.4M input tokens on V4 Pro or 35.7M input tokens on V4 Flash. Great for prototyping and evaluation.</p>
+
+        <h2>Related Tools</h2>
+        <ul>
+            <li><a href="gpt5-api-cost-calculator.html">GPT-5 API Cost Calculator</a> — Compare OpenAI pricing</li>
+            <li><a href="claude-api-cost-calculator.html">Claude API Cost Calculator</a> — Compare Anthropic pricing</li>
+            <li><a href="gemini-api-cost-calculator.html">Gemini API Cost Calculator</a> — Compare Google pricing</li>
+            <li><a href="xai-grok-cost-calculator.html">xAI Grok Cost Calculator</a> — Compare xAI pricing</li>
+            <li><a href="blog-deepseek-v4-pricing.html">DeepSeek V4 Pricing Guide</a> — Full pricing breakdown</li>
+            <li><a href="cost-optimizer.html">Cost Optimizer</a> — Get a personalized optimization report</li>
+        </ul>
+
+        <div class="cta-inline">
+            <p><strong>Want to compare DeepSeek with other providers?</strong></p>
+            <a href="compare-claude-vs-deepseek.html" class="btn-primary" style="display:inline-block;">Claude vs DeepSeek →</a>
+        </div>
+    </div>
+
+    <button class="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">↑</button>
+
+    </main>
+
+    <footer>
+        <p>Pricing data last verified: <span class="verified-date"></span></p>
+        <p>&copy; 2026 APIpulse. <a href="index.html">Home</a> &middot; <a href="use-cases.html">Use Cases</a> &middot; <a href="about.html">About</a> &middot; <a href="blog.html">Blog</a>
+<a href="pricing-index.html">Pricing Index</a> &middot; <a href="model-matrix.html">Model Matrix</a> &middot; <a href="cost-scenarios.html">Scenarios</a> &middot; <a href="price-alerts.html">Price Alerts</a> &middot; <a href="pricing-changelog.html">Changelog</a> &middot; <a href="openai.html">OpenAI</a> &middot; <a href="anthropic.html">Anthropic</a> &middot; <a href="google.html">Google</a> &middot; <a href="mistral.html">Mistral</a> &middot; <a href="cohere.html">Cohere</a> &middot; <a href="deepseek.html">DeepSeek</a> &middot; <a href="xai.html">xAI</a> &middot; <a href="moonshot.html">Moonshot</a> &middot; <a href="together.html">Together.ai</a> &middot; <a href="ai21.html">AI21</a> &middot; <a href="pricing.html">Pricing</a> &middot; <a href="compare-plans.html">Free vs Pro</a> &middot; <a href="embed.html">Embed Widget</a> &middot; <a href="cheat-sheet.html">Cheat Sheet</a> &middot; <a href="model-switch.html">Model Switch</a> &middot; <a href="api-docs.html">API</a> &middot; <a href="https://x.com/getapipulse" target="_blank" rel="noopener">Twitter</a> &middot; <a href="unsubscribe.html">Unsubscribe</a></p>
+    </footer>
+
+    <script>
+        function populateModels() {
+            var select = document.getElementById('model');
+            var dsModels = API_MODELS.filter(function(m) { return m.providerSlug === 'deepseek'; });
+            var html = '';
+            dsModels.forEach(function(m) {
+                html += '<option value="' + m.id + '">' + m.name + ' — $' + m.input.toFixed(2) + '/$' + m.output.toFixed(2) + ' per 1M</option>';
+            });
+            select.innerHTML = html;
+            select.value = 'deepseek-v4-flash';
+        }
+
+        function applyPreset(type) {
+            document.querySelectorAll('.preset-btn').forEach(function(b) { b.classList.remove('active-preset'); });
+            event.target.classList.add('active-preset');
+            var presets = {
+                chat:          { model: 'deepseek-v4-flash', input: 800, output: 250 },
+                code:          { model: 'deepseek-v4-pro', input: 2500, output: 1000 },
+                analysis:      { model: 'deepseek-v4-pro', input: 4000, output: 600 },
+                summarization: { model: 'deepseek-v4-flash', input: 3000, output: 500 },
+                translation:   { model: 'deepseek-v4-flash', input: 1500, output: 1500 },
+                hobby:         { model: 'deepseek-v4-flash', input: 1000, output: 300, requests: 100 },
+                startup:       { model: 'deepseek-v4-flash', input: 1500, output: 400, requests: 1000 },
+                scaleup:       { model: 'deepseek-v4-flash', input: 2000, output: 500, requests: 10000 }
+            };
+            var p = presets[type];
+            if (p.model) document.getElementById('model').value = p.model;
+            if (p.input) document.getElementById('input-tokens').value = p.input;
+            if (p.output) document.getElementById('output-tokens').value = p.output;
+            if (p.requests) document.getElementById('requests-day').value = p.requests;
+            calculate();
+            if (window.trackEvent) window.trackEvent('preset_applied', { preset: type, tool: 'deepseek_cost_calculator' });
+        }
+
+        function calculate() {
+            var modelId = document.getElementById('model').value;
+            var model = API_MODELS.find(function(m) { return m.id === modelId; });
+            if (!model) return;
+
+            var inputTokens = parseInt(document.getElementById('input-tokens').value) || 0;
+            var outputTokens = parseInt(document.getElementById('output-tokens').value) || 0;
+            var requestsDay = parseInt(document.getElementById('requests-day').value) || 0;
+
+            var inputCostReq = (inputTokens * model.input) / 1000000;
+            var outputCostReq = (outputTokens * model.output) / 1000000;
+            var totalCostReq = inputCostReq + outputCostReq;
+            var costPer1k = totalCostReq * 1000;
+            var dailyCost = totalCostReq * requestsDay;
+            var monthlyCost = dailyCost * 30;
+            var annualCost = dailyCost * 365;
+
+            document.getElementById('input-cost-req').textContent = '$' + inputCostReq.toFixed(6);
+            document.getElementById('output-cost-req').textContent = '$' + outputCostReq.toFixed(6);
+            document.getElementById('total-cost-req').textContent = '$' + totalCostReq.toFixed(6);
+            document.getElementById('cost-per-1k').textContent = '$' + costPer1k.toFixed(4);
+            document.getElementById('daily-cost').textContent = '$' + dailyCost.toFixed(2);
+            document.getElementById('monthly-cost').textContent = '$' + monthlyCost.toFixed(2);
+            document.getElementById('annual-cost').textContent = '$' + annualCost.toFixed(2);
+
+            // All DeepSeek models comparison
+            var dsModels = API_MODELS.filter(function(m) { return m.providerSlug === 'deepseek'; });
+            var container = document.getElementById('deepseek-models');
+            var html = '';
+            var cheapestCost = Infinity;
+
+            dsModels.forEach(function(m) {
+                var cost = (inputTokens * m.input + outputTokens * m.output) / 1000000;
+                if (cost < cheapestCost) cheapestCost = cost;
+            });
+
+            dsModels.forEach(function(m) {
+                var cost = (inputTokens * m.input + outputTokens * m.output) / 1000000;
+                var monthly = cost * requestsDay * 30;
+                var isCheapest = cost === cheapestCost;
+                var tierClass = m.tier === 'Premium' ? 'tier-premium' : m.tier === 'Mid' ? 'tier-mid' : 'tier-budget';
+
+                html += '<div class="model-card">' +
+                    '<div class="model-card-header">' +
+                        '<span class="model-card-name">' + m.name + '</span>' +
+                        '<span class="model-card-tier ' + tierClass + '">' + m.tier + '</span>' +
+                    '</div>' +
+                    '<div class="model-card-prices">' +
+                        '<div class="model-price-item"><div class="model-price-label">Input/1M</div><div class="model-price-value">$' + m.input.toFixed(2) + '</div></div>' +
+                        '<div class="model-price-item"><div class="model-price-label">Output/1M</div><div class="model-price-value">$' + m.output.toFixed(2) + '</div></div>' +
+                        '<div class="model-price-item"><div class="model-price-label">Context</div><div class="model-price-value">' + m.context + '</div></div>' +
+                    '</div>' +
+                    '<div class="model-card-cost' + (isCheapest ? ' cheapest' : '') + '">' +
+                        '<span class="model-card-cost-label">Your cost per request</span>' +
+                        '<span class="model-card-cost-value">$' + cost.toFixed(6) + '</span>' +
+                    '</div>' +
+                    '<div class="model-card-cost" style="margin-top:8px;">' +
+                        '<span class="model-card-cost-label">Monthly (' + requestsDay + '/day)</span>' +
+                        '<span class="model-card-cost-value">$' + monthly.toFixed(2) + '</span>' +
+                    '</div>' +
+                '</div>';
+            });
+            container.innerHTML = html;
+
+            // Cheaper alternatives
+            var currentCost = totalCostReq;
+            var alternatives = API_MODELS.filter(function(m) {
+                var cost = (inputTokens * m.input + outputTokens * m.output) / 1000000;
+                return cost < currentCost && m.providerSlug !== 'deepseek';
+            }).sort(function(a, b) {
+                var costA = (inputTokens * a.input + outputTokens * a.output) / 1000000;
+                var costB = (inputTokens * b.input + outputTokens * b.output) / 1000000;
+                return costA - costB;
+            }).slice(0, 8);
+
+            var tbody = document.getElementById('alternatives-tbody');
+            var altHtml = '';
+            alternatives.forEach(function(m) {
+                var cost = (inputTokens * m.input + outputTokens * m.output) / 1000000;
+                var savings = ((currentCost - cost) / currentCost * 100).toFixed(0);
+                altHtml += '<tr>' +
+                    '<td style="font-weight:600;">' + m.name + '</td>' +
+                    '<td>' + m.provider + '</td>' +
+                    '<td>$' + m.input.toFixed(2) + '</td>' +
+                    '<td>$' + m.output.toFixed(2) + '</td>' +
+                    '<td style="font-weight:600;">$' + cost.toFixed(6) + '</td>' +
+                    '<td class="savings">-' + savings + '%</td>' +
+                '</tr>';
+            });
+            tbody.innerHTML = altHtml || '<tr><td colspan="6" style="text-align:center;color:var(--text-muted);padding:20px;">No cheaper alternatives found for this model.</td></tr>';
+
+            // Share
+            var shareText = 'My DeepSeek API cost estimate: $' + monthlyCost.toFixed(2) + '/mo for ' + requestsDay + ' requests/day. Calculated with @getapipulse';
+            document.getElementById('share-x').href = 'https://twitter.com/intent/tweet?text=' + encodeURIComponent(shareText) + '&url=' + encodeURIComponent('https://getapipulse.com/deepseek-api-cost-calculator.html');
+        }
+
+        function copyResults() {
+            var model = document.getElementById('model').value;
+            var modelObj = API_MODELS.find(function(m) { return m.id === model; });
+            var text = 'DeepSeek API Cost Estimate — APIpulse\n' +
+                'Model: ' + (modelObj ? modelObj.name : model) + '\n' +
+                'Cost per request: ' + document.getElementById('total-cost-req').textContent + '\n' +
+                'Monthly cost: ' + document.getElementById('monthly-cost').textContent + '\n' +
+                'Calculated at https://getapipulse.com/deepseek-api-cost-calculator.html';
+            navigator.clipboard.writeText(text).then(function() {
+                document.getElementById('copy-btn-text').textContent = 'Copied!';
+                setTimeout(function() { document.getElementById('copy-btn-text').textContent = 'Copy Results'; }, 2000);
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            populateModels();
+            calculate();
+        });
+    </script>
+</body>
+</html>

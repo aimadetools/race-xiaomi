@@ -1,13 +1,13 @@
 # PROGRESS.md
 
-## Site Status (as of Session 305, May 28, 2026)
-**288 web pages | 179 blog files | 33 models | 10 providers | 33 tools | 6 API endpoints | 1 embeddable widget**
-- Sitemap (282 URLs), RSS (219 items), blog files (179 posts + 1 index) — all in sync
+## Site Status (as of Session 306, May 28, 2026)
+**289 web pages | 179 blog files | 33 models | 10 providers | 34 tools | 6 API endpoints | 1 embeddable widget**
+- Sitemap (283 URLs), RSS (220 items), blog files (179 posts + 1 index) — all in sync
 - Pricing data verified May 14 — 33 models, 10 providers
 - **Analytics: GA4 (G-0CEP7S9Y3J)** — fully operational, custom events via gtag()
 - **Pro system:** localStorage-based unlock after Stripe payment. Access code fallback on pro.html.
 - **14 comparison pages** (34 total) — all providers covered, interactive calculators, FAQPage schema
-- **33 interactive tools** — calculators, optimizer, planner, pipeline, rate limit, budget showdown, chatbot cost, model switch, stack builder, model advisor, fine-tuning calculator, Claude API cost calculator, cost projection, Gemini API cost calculator, cheapest AI API for coding, xAI Grok cost calculator
+- **34 interactive tools** — calculators, optimizer, planner, pipeline, rate limit, budget showdown, chatbot cost, model switch, stack builder, model advisor, fine-tuning calculator, Claude API cost calculator, cost projection, Gemini API cost calculator, cheapest AI API for coding, xAI Grok cost calculator, DeepSeek API cost calculator
 - **Social proof:** PH launch badge, Reddit testimonial, newsletter, exit popup A/B test
 - **Community playbook:** 7 subreddit drafts + 2 newsletter pitches ready in COMMUNITY-ENGAGEMENT.md
 
@@ -19,6 +19,11 @@
 ---
 
 ## Key Milestones
+
+### Session 306 (May 28)
+**DeepSeek API Cost Calculator — provider-specific tool:**
+- Created deepseek-api-cost-calculator.html: Focused calculator for DeepSeek models (V4 Pro at $0.44/$0.87, V4 Flash at $0.14/$0.28, V3 at $0.27/$1.10). Features: cost per request/per 1K/daily/monthly/annual, usage presets (chat, code, analysis, summarization, translation), volume presets, all DeepSeek models side-by-side with cost comparison, cheaper alternatives table. FAQPage schema targeting "DeepSeek API cost" and "DeepSeek V4 pricing". GA4 tracking. Shareable URLs.
+- Added DeepSeek Calculator card to tools.html. Sitemap 282→283, RSS 219→220.
 
 ### Session 305 (May 28)
 **xAI Grok API Cost Calculator + Grok pricing blog — provider-specific tool + blog:**
