@@ -1,8 +1,8 @@
 # PROGRESS.md
 
-## Site Status (as of Session 302, May 28, 2026)
-**279 web pages | 175 blog files | 33 models | 10 providers | 28 tools | 6 API endpoints | 1 embeddable widget**
-- Sitemap (273 URLs), RSS (210 items), blog files (175 posts + 1 index) — all in sync
+## Site Status (as of Session 303, May 28, 2026)
+**281 web pages | 176 blog files | 33 models | 10 providers | 29 tools | 6 API endpoints | 1 embeddable widget**
+- Sitemap (275 URLs), RSS (212 items), blog files (176 posts + 1 index) — all in sync
 - Pricing data verified May 14 — 33 models, 10 providers
 - **Analytics: GA4 (G-0CEP7S9Y3J)** — fully operational, custom events via gtag()
 - **Pro system:** localStorage-based unlock after Stripe payment. Access code fallback on pro.html.
@@ -19,6 +19,12 @@
 ---
 
 ## Key Milestones
+
+### Session 303 (May 28)
+**Multi-Model Routing Strategy Builder + blog:**
+- Created multi-model-routing.html: Interactive tool to design multi-model routing strategies. Users define routing rules (simple/medium/complex), assign models to each tier, set traffic percentages, and see exact savings vs single-model approach. Features: 4 presets (chatbot, SaaS, agent, content), visual cost breakdown bar, detailed per-route table, annual savings projection, shareable results. FAQPage schema targeting "AI model routing" and "multi-model strategy" keywords. GA4 tracking.
+- Created blog-multi-model-routing-strategy-2026.html: 8-minute guide on 3-tier routing strategy, real-world savings example (64% reduction), 3 classification approaches (rule-based, classifier, hybrid), implementation checklist, model recommendations by tier, common mistakes. FAQPage schema. Links to Routing Builder tool.
+- Added tool card to tools.html. Sitemap 273→275, RSS 210→212, blog 175→176.
 
 ### Session 302 (May 28)
 **AI API Pricing Report: May 2026 — monthly pricing digest blog post:**
