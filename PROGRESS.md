@@ -21,6 +21,13 @@
 
 ## Key Milestones
 
+### Session 313 (May 28)
+**Blog index sync — added 20 missing blog posts to blog.html:**
+- Discovered 20 blog files (181 total) existed on disk and were in sitemap.xml + rss.xml but were NOT listed in blog.html — making them invisible from the blog index page.
+- Added 16 industry vertical cost guides: Advertising/Marketing, Aerospace, Agriculture, Education, Energy, Finance, Healthcare, Hospitality, Legal, Logistics, Manufacturing, Non-Profit, Retail, Sports, Telecom, Transportation.
+- Added 4 guide/comparison posts: AI API Pricing Comparison 2026, Multi-Model AI Stack Builder, Best AI APIs for Building Agents 2026, How to Choose AI API 2026.
+- All entries placed in correct chronological positions (May 18-27). blog.html now has 186 post-cards (181 blog + 5 comparison pages), matching all files on disk.
+
 ### Session 312 (May 28)
 **Blog post + API polish + compare.html batch/streaming toggle:**
 - Created blog-cost-calculator-api.html: "Free LLM Cost Calculator API — Estimate AI API Costs Programmatically". Covers /api/calculate and /api/cheapest endpoints with curl/JS/Python examples, batch/streaming modes, model table, FAQPage schema. Blog 180→181.
