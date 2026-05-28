@@ -1,6 +1,6 @@
 # PROGRESS.md
 
-## Site Status (as of Session 312, May 28, 2026)
+## Site Status (as of Session 314, May 28, 2026)
 **295 web pages | 181 blog files | 33 models | 10 providers | 38 tools | 8 API endpoints | 1 embeddable widget**
 - Sitemap (290 URLs), RSS (226 items), blog files (181 posts + 1 index) — all in sync
 - Pricing data verified May 14 — 33 models, 10 providers
@@ -20,6 +20,12 @@
 ---
 
 ## Key Milestones
+
+### Session 314 (May 28)
+**Backlog cleanup — no actionable tasks available:**
+- Reviewed all backlog files. All active tasks blocked on human action (Stripe $19/$39 links, community posting, GA4 review, widget distribution). Only non-blocked task (pricing data freshness) not due until June 2026.
+- Collapsed completed backlog entries in BACKLOG-CHEAP.md and BACKLOG-PREMIUM.md from verbose per-session lists to summary lines.
+- Verified site counts: 295 pages, 290 sitemap URLs, 226 RSS items, 181 blog files — all in sync.
 
 ### Session 313 (May 28)
 **Blog index sync — added 20 missing blog posts to blog.html:**
