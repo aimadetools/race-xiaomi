@@ -190,6 +190,16 @@
                 <p class="endpoint-desc">Get all 33 models with pricing data, or filter by provider/tier.</p>
             </div>
 
+            <div class="endpoint-card">
+                <div><span class="endpoint-method">GET</span> <span class="endpoint-url">/api/calculate</span></div>
+                <p class="endpoint-desc">Calculate estimated costs for any model. Supports single model or multi-model comparison. Includes batch/streaming mode.</p>
+            </div>
+
+            <div class="endpoint-card">
+                <div><span class="endpoint-method">GET</span> <span class="endpoint-url">/api/cheapest</span></div>
+                <p class="endpoint-desc">Find the cheapest model for your use case. Filter by budget, quality tier, or use case (coding, chat, classification, etc.).</p>
+            </div>
+
             <h3>Query Parameters</h3>
             <table>
                 <thead>
@@ -199,6 +209,38 @@
                     <tr><td><code>provider</code></td><td>string</td><td>Filter by provider slug</td><td><code>?provider=openai</code></td></tr>
                     <tr><td><code>tier</code></td><td>string</td><td>Filter by pricing tier (Budget, Mid, Premium)</td><td><code>?tier=budget</code></td></tr>
                     <tr><td><code>model</code></td><td>string</td><td>Get a single model by ID</td><td><code>?model=openai-gpt5</code></td></tr>
+                </tbody>
+            </table>
+
+            <h3><code>/api/calculate</code> Parameters</h3>
+            <table>
+                <thead>
+                    <tr><th>Parameter</th><th>Type</th><th>Description</th><th>Default</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td><code>model</code></td><td>string</td><td>Model ID (single model)</td><td>required</td></tr>
+                    <tr><td><code>models</code></td><td>string</td><td>Comma-separated model IDs (comparison, max 10)</td><td>—</td></tr>
+                    <tr><td><code>input_tokens</code></td><td>number</td><td>Input tokens per request</td><td>2000</td></tr>
+                    <tr><td><code>output_tokens</code></td><td>number</td><td>Output tokens per request</td><td>500</td></tr>
+                    <tr><td><code>requests</code></td><td>number</td><td>Requests per day</td><td>1000</td></tr>
+                    <tr><td><code>days</code></td><td>number</td><td>Days per month</td><td>30</td></tr>
+                    <tr><td><code>mode</code></td><td>string</td><td><code>standard</code>, <code>streaming</code> (+15% output), or <code>batch</code> (50% off)</td><td>standard</td></tr>
+                </tbody>
+            </table>
+
+            <h3><code>/api/cheapest</code> Parameters</h3>
+            <table>
+                <thead>
+                    <tr><th>Parameter</th><th>Type</th><th>Description</th><th>Default</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td><code>input_tokens</code></td><td>number</td><td>Input tokens per request</td><td>2000</td></tr>
+                    <tr><td><code>output_tokens</code></td><td>number</td><td>Output tokens per request</td><td>500</td></tr>
+                    <tr><td><code>requests</code></td><td>number</td><td>Requests per day</td><td>1000</td></tr>
+                    <tr><td><code>budget</code></td><td>number</td><td>Max monthly budget (USD)</td><td>—</td></tr>
+                    <tr><td><code>use_case</code></td><td>string</td><td>Filter by use case: coding, chat, classification, extraction, reasoning, analysis</td><td>—</td></tr>
+                    <tr><td><code>quality</code></td><td>string</td><td><code>high</code> (Premium+Mid) or <code>budget</code> (Budget only)</td><td>all</td></tr>
+                    <tr><td><code>limit</code></td><td>number</td><td>Max results (1-10)</td><td>5</td></tr>
                 </tbody>
             </table>
         </div>
@@ -241,6 +283,39 @@ print(f<span class="code-string">"${model['input']}/1M input, ${model['output']}
 <span class="code-key">const</span> res = <span class="code-key">await</span> fetch(<span class="code-string">'https://getapipulse.com/api/pricing?tier=budget'</span>);
 <span class="code-key">const</span> { models } = <span class="code-key">await</span> res.json();
 <span class="code-comment">// Returns: GPT-4o mini, GPT-oss, Gemini Flash, DeepSeek V4 Flash, etc.</span></code>
+            </div>
+
+            <h3>Calculate costs for a model</h3>
+            <div class="code-block">
+                <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                <code><span class="code-comment">// Calculate monthly cost for GPT-5 with 10K requests/day</span>
+<span class="code-key">const</span> res = <span class="code-key">await</span> fetch(<span class="code-string">'https://getapipulse.com/api/calculate?model=openai-gpt5&requests=10000'</span>);
+<span class="code-key">const</span> data = <span class="code-key">await</span> res.json();
+console.log(data.costs.monthly); <span class="code-comment">// e.g. $4875.00</span></code>
+            </div>
+
+            <h3>Compare multiple models</h3>
+            <div class="code-block">
+                <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                <code><span class="code-comment"># Python — compare 3 models for your workload</span>
+<span class="code-key">import</span> requests
+r = requests.get(<span class="code-string">"https://getapipulse.com/api/calculate"</span>, params={
+    <span class="code-string">"models"</span>: <span class="code-string">"openai-gpt5,anthropic-sonnet,deepseek-v4-pro"</span>,
+    <span class="code-string">"requests"</span>: <span class="code-number">5000</span>,
+    <span class="code-string">"input_tokens"</span>: <span class="code-number">3000</span>,
+    <span class="code-string">"output_tokens"</span>: <span class="code-number">800</span>
+})
+<span class="code-key">for</span> m <span class="code-key">in</span> r.json()[<span class="code-string">"results"</span>]:
+    print(f<span class="code-string">"{m['name']}: ${m['costs']['monthly']}/mo"</span>)</code>
+            </div>
+
+            <h3>Find cheapest model for coding</h3>
+            <div class="code-block">
+                <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                <code><span class="code-comment">// Find cheapest coding model under $100/mo</span>
+<span class="code-key">const</span> res = <span class="code-key">await</span> fetch(<span class="code-string">'https://getapipulse.com/api/cheapest?use_case=coding&budget=100'</span>);
+<span class="code-key">const</span> { recommendations } = <span class="code-key">await</span> res.json();
+console.log(recommendations[<span class="code-number">0</span>].name); <span class="code-comment">// Cheapest coding model</span></code>
             </div>
 
             <h3>Embed a pricing widget</h3>
