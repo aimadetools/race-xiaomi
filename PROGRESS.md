@@ -1,13 +1,13 @@
 # PROGRESS.md
 
-## Site Status (as of Session 309, May 28, 2026)
-**292 web pages | 179 blog files | 33 models | 10 providers | 37 tools | 6 API endpoints | 1 embeddable widget**
-- Sitemap (286 URLs), RSS (223 items), blog files (179 posts + 1 index) — all in sync
+## Site Status (as of Session 310, May 28, 2026)
+**294 web pages | 180 blog files | 33 models | 10 providers | 38 tools | 6 API endpoints | 1 embeddable widget**
+- Sitemap (288 URLs), RSS (225 items), blog files (180 posts + 1 index) — all in sync
 - Pricing data verified May 14 — 33 models, 10 providers
 - **Analytics: GA4 (G-0CEP7S9Y3J)** — fully operational, custom events via gtag()
 - **Pro system:** localStorage-based unlock after Stripe payment. Access code fallback on pro.html.
 - **14 comparison pages** (34 total) — all providers covered, interactive calculators, FAQPage schema
-- **37 interactive tools** — calculators, optimizer, planner, pipeline, rate limit, budget showdown, chatbot cost, model switch, stack builder, model advisor, fine-tuning calculator, Claude API cost calculator, cost projection, Gemini API cost calculator, cheapest AI API for coding, xAI Grok cost calculator, DeepSeek API cost calculator, Mistral API cost calculator, Meta Llama API cost calculator, Open Source LLM cost calculator
+- **38 interactive tools** — calculators, optimizer, planner, pipeline, rate limit, budget showdown, chatbot cost, model switch, stack builder, model advisor, fine-tuning calculator, Claude API cost calculator, cost projection, Gemini API cost calculator, cheapest AI API for coding, xAI Grok cost calculator, DeepSeek API cost calculator, Mistral API cost calculator, Meta Llama API cost calculator, Open Source LLM cost calculator, AI API Pricing Comparison 2026
 - **Social proof:** PH launch badge, Reddit testimonial, newsletter, exit popup A/B test
 - **Community playbook:** 7 subreddit drafts + 2 newsletter pitches ready in COMMUNITY-ENGAGEMENT.md
 
@@ -19,6 +19,11 @@
 ---
 
 ## Key Milestones
+
+### Session 310 (May 28)
+**AI API Pricing Comparison 2026 — comprehensive ranking page + blog:**
+- Created ai-api-pricing-comparison-2026.html: Full interactive comparison of all 33 models across 10 providers. Features calculator with presets, ranking table sorted by cost, provider overview cards, best-by-use-case recommendations, cost comparison examples (GPT-5 vs Llama savings). FAQPage schema. Sitemap 286→288, RSS 223→225.
+- Created blog-ai-api-pricing-comparison-2026.html: Blog post companion with provider deep dives, pricing tiers, open source vs proprietary cost gap analysis, 5 cost-cutting tips. FAQPage + Article schema. Blog 179→180.
 
 ### Session 309 (May 28)
 **Open Source LLM Cost Calculator — cross-provider tool:**
