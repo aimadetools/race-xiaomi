@@ -1,8 +1,8 @@
 # PROGRESS.md
 
 ## Site Status (as of Session 303, May 28, 2026)
-**281 web pages | 176 blog files | 33 models | 10 providers | 29 tools | 6 API endpoints | 1 embeddable widget**
-- Sitemap (275 URLs), RSS (212 items), blog files (176 posts + 1 index) — all in sync
+**282 web pages | 176 blog files | 33 models | 10 providers | 30 tools | 6 API endpoints | 1 embeddable widget**
+- Sitemap (276 URLs), RSS (213 items), blog files (176 posts + 1 index) — all in sync
 - Pricing data verified May 14 — 33 models, 10 providers
 - **Analytics: GA4 (G-0CEP7S9Y3J)** — fully operational, custom events via gtag()
 - **Pro system:** localStorage-based unlock after Stripe payment. Access code fallback on pro.html.
@@ -24,7 +24,8 @@
 **Multi-Model Routing Strategy Builder + blog:**
 - Created multi-model-routing.html: Interactive tool to design multi-model routing strategies. Users define routing rules (simple/medium/complex), assign models to each tier, set traffic percentages, and see exact savings vs single-model approach. Features: 4 presets (chatbot, SaaS, agent, content), visual cost breakdown bar, detailed per-route table, annual savings projection, shareable results. FAQPage schema targeting "AI model routing" and "multi-model strategy" keywords. GA4 tracking.
 - Created blog-multi-model-routing-strategy-2026.html: 8-minute guide on 3-tier routing strategy, real-world savings example (64% reduction), 3 classification approaches (rule-based, classifier, hybrid), implementation checklist, model recommendations by tier, common mistakes. FAQPage schema. Links to Routing Builder tool.
-- Added tool card to tools.html. Sitemap 273→275, RSS 210→212, blog 175→176.
+- Created gpt5-api-cost-calculator.html: Focused calculator for all OpenAI models (GPT-5.5 Pro, GPT-5.5, GPT-5.3 Codex, GPT-5, GPT-5 mini, GPT-oss 120B/20B, GPT-4o, GPT-4o mini). Features: cost per request/per 1K/daily/monthly/annual, usage presets, volume presets, all OpenAI models side-by-side, cheaper alternatives table with savings %. FAQPage schema targeting "GPT-5 API cost". GA4 tracking.
+- Added tool cards to tools.html. Sitemap 273→276, RSS 210→213, blog 175→176.
 
 ### Session 302 (May 28)
 **AI API Pricing Report: May 2026 — monthly pricing digest blog post:**
