@@ -1,0 +1,779 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multi-Model Routing Strategy Builder — Save 40-80% on AI API Costs | APIpulse</title>
+    <meta name="description" content="Build a multi-model routing strategy. Route simple requests to cheap models, complex ones to premium. See exact savings across 33 models from 10 providers.">
+    <meta name="keywords" content="AI model routing, multi-model strategy, LLM cost optimization, AI API routing, model routing strategy, AI cost reduction">
+    <meta property="og:title" content="Multi-Model Routing Strategy Builder — Save 40-80% on AI API Costs | APIpulse">
+    <meta property="og:description" content="Build a multi-model routing strategy. Route simple requests to cheap models, complex ones to premium. See exact savings across 33 models.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://getapipulse.com/og-image.png">
+    <meta property="og:url" content="https://getapipulse.com/multi-model-routing.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Multi-Model Routing Strategy Builder">
+    <meta name="twitter:image" content="https://getapipulse.com/og-image.png">
+    <meta name="twitter:description" content="Build a multi-model routing strategy to save 40-80% on AI API costs. Free calculator.">
+    <link rel="canonical" href="https://getapipulse.com/multi-model-routing.html">
+    <link rel="alternate" type="application/rss+xml" title="APIpulse Blog" href="https://getapipulse.com/rss.xml">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="styles.css">
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0CEP7S9Y3J"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-0CEP7S9Y3J');
+    </script>
+    <script src="analytics.js" defer></script>
+    <script src="dynamic-date.js" defer></script>
+    <script src="shared.js" defer></script>
+    <script src="pricing-data.js" defer></script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "APIpulse Multi-Model Routing Strategy Builder",
+        "url": "https://getapipulse.com/multi-model-routing.html",
+        "description": "Build a multi-model routing strategy to save 40-80% on AI API costs. Route simple requests to cheap models, complex ones to premium.",
+        "applicationCategory": "DeveloperApplication",
+        "operatingSystem": "Web",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "What is multi-model routing for AI APIs?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Multi-model routing is a cost optimization strategy where you route different types of requests to different AI models based on complexity. Simple tasks (classification, extraction, formatting) go to cheap models like GPT-4o mini or Gemini Flash. Complex tasks (reasoning, code generation, analysis) go to premium models like GPT-5 or Claude Opus. This typically saves 40-80% compared to using a single premium model for everything."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How much can I save with model routing?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Most teams save 40-80% on AI API costs by implementing model routing. For example, if 70% of your requests are simple tasks routed to a budget model ($0.15/M input) instead of a premium model ($5/M input), you save 97% on those requests. The exact savings depend on your traffic mix and which models you choose."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How do I implement model routing?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Implement model routing by: 1) Classifying incoming requests by complexity (use a cheap model or rule-based classifier), 2) Routing simple requests to budget models (GPT-4o mini, Gemini Flash, DeepSeek V4 Flash), 3) Routing complex requests to premium models (GPT-5, Claude Opus, Gemini Pro), 4) Monitoring quality and adjusting thresholds. Start with a simple 2-tier strategy and expand as you learn your traffic patterns."
+                }
+            }
+        ]
+    }
+    </script>
+    <style>
+        .calc-hero {
+            padding: 120px 24px 40px; text-align: center; max-width: 700px; margin: 0 auto;
+        }
+        .calc-hero h1 { font-size: clamp(28px, 4vw, 42px); font-weight: 800; margin-bottom: 12px; }
+        .calc-hero p { color: var(--text-secondary); font-size: 17px; line-height: 1.6; }
+
+        .calculator-section { padding: 0 24px 60px; }
+        .section-header { text-align: center; margin-bottom: 32px; }
+        .section-header h2 { font-size: 24px; font-weight: 700; margin-bottom: 8px; }
+        .section-header p { color: var(--text-secondary); font-size: 15px; }
+
+        .calculator {
+            background: var(--bg-card); border: 1px solid var(--border);
+            border-radius: 16px; padding: 32px; max-width: 1000px; margin: 0 auto;
+        }
+        .presets {
+            display: flex; gap: 8px; margin-bottom: 24px; flex-wrap: wrap; align-items: center;
+        }
+        .preset-btn {
+            background: var(--bg-secondary); border: 1px solid var(--border);
+            color: var(--text-secondary); padding: 8px 16px; border-radius: 8px;
+            cursor: pointer; font-size: 13px; transition: all 0.2s; font-weight: 500;
+        }
+        .preset-btn:hover { border-color: var(--accent); color: var(--accent); }
+        .preset-btn.active-preset { background: var(--accent); color: white; border-color: var(--accent); }
+
+        .global-settings {
+            display: grid; grid-template-columns: 1fr 1fr; gap: 16px;
+            margin-bottom: 24px; padding-bottom: 24px; border-bottom: 1px solid var(--border);
+        }
+        .input-group { display: flex; flex-direction: column; gap: 6px; }
+        .input-group label { font-size: 13px; font-weight: 600; color: var(--text-secondary); }
+        .input-group select, .input-group input {
+            padding: 12px 16px; border-radius: 8px; border: 1px solid var(--border);
+            background: var(--bg-secondary); color: var(--text-primary); font-size: 15px;
+            font-family: inherit;
+        }
+        .input-group select:focus, .input-group input:focus {
+            outline: 2px solid var(--accent); outline-offset: 2px; border-color: var(--accent);
+        }
+        .input-group .hint { font-size: 11px; color: var(--text-muted); margin-top: -2px; }
+
+        .routes-container { display: flex; flex-direction: column; gap: 16px; margin-bottom: 24px; }
+        .route-row {
+            background: var(--bg-secondary); border: 1px solid var(--border);
+            border-radius: 12px; padding: 20px;
+            display: grid; grid-template-columns: 2fr 2fr 1fr 1fr auto; gap: 12px; align-items: end;
+        }
+        .route-row .route-header {
+            grid-column: 1 / -1; display: flex; justify-content: space-between; align-items: center;
+            margin-bottom: 4px; padding-bottom: 8px; border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+        .route-label {
+            font-size: 14px; font-weight: 700; color: var(--text-primary);
+            display: flex; align-items: center; gap: 8px;
+        }
+        .route-badge {
+            display: inline-block; padding: 2px 8px; border-radius: 6px;
+            font-size: 11px; font-weight: 600;
+        }
+        .badge-simple { background: rgba(34,197,94,0.15); color: var(--green); }
+        .badge-medium { background: rgba(245,158,11,0.15); color: var(--orange); }
+        .badge-complex { background: rgba(239,68,68,0.15); color: #ef4444; }
+        .remove-route {
+            background: none; border: 1px solid var(--border); color: var(--text-muted);
+            padding: 4px 10px; border-radius: 6px; cursor: pointer; font-size: 12px;
+            transition: all 0.2s;
+        }
+        .remove-route:hover { border-color: #ef4444; color: #ef4444; }
+        .route-cost {
+            font-size: 13px; color: var(--text-muted); padding-top: 4px;
+        }
+        .route-cost strong { color: var(--accent); }
+
+        .add-route-btn {
+            background: var(--bg-secondary); border: 2px dashed var(--border);
+            color: var(--text-muted); padding: 16px; border-radius: 12px;
+            cursor: pointer; font-size: 14px; font-weight: 600; transition: all 0.2s;
+            text-align: center;
+        }
+        .add-route-btn:hover { border-color: var(--accent); color: var(--accent); }
+
+        .results-panel {
+            background: var(--bg-card); border: 1px solid var(--border);
+            border-radius: 16px; padding: 32px; max-width: 1000px; margin: 0 auto 40px;
+        }
+        .results-grid {
+            display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-bottom: 24px;
+        }
+        .result-card {
+            background: var(--bg-secondary); border: 1px solid var(--border);
+            border-radius: 12px; padding: 20px; text-align: center;
+        }
+        .result-card.highlight { border-color: var(--green); background: rgba(34,197,94,0.05); }
+        .result-card.warn { border-color: var(--orange); background: rgba(245,158,11,0.05); }
+        .result-card-label { font-size: 12px; font-weight: 700; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px; }
+        .result-card-value { font-size: 28px; font-weight: 800; }
+        .result-card-sub { font-size: 13px; color: var(--text-secondary); margin-top: 4px; }
+
+        .comparison-bar {
+            background: var(--bg-secondary); border: 1px solid var(--border);
+            border-radius: 12px; padding: 24px; margin-bottom: 24px;
+        }
+        .comparison-bar h3 { font-size: 16px; font-weight: 700; margin-bottom: 16px; }
+        .bar-visual {
+            display: flex; height: 40px; border-radius: 8px; overflow: hidden;
+            margin-bottom: 12px; position: relative;
+        }
+        .bar-segment {
+            display: flex; align-items: center; justify-content: center;
+            font-size: 11px; font-weight: 700; color: white; min-width: 40px;
+            transition: width 0.5s ease;
+        }
+        .bar-legend {
+            display: flex; gap: 20px; flex-wrap: wrap; font-size: 13px;
+        }
+        .bar-legend-item {
+            display: flex; align-items: center; gap: 6px;
+        }
+        .bar-legend-dot {
+            width: 12px; height: 12px; border-radius: 3px;
+        }
+
+        .breakdown-table {
+            width: 100%; border-collapse: collapse; font-size: 14px;
+        }
+        .breakdown-table th {
+            text-align: left; padding: 12px 16px; font-size: 12px; font-weight: 700;
+            color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px;
+            border-bottom: 2px solid var(--border);
+        }
+        .breakdown-table td {
+            padding: 12px 16px; border-bottom: 1px solid rgba(42,42,62,0.5);
+            font-variant-numeric: tabular-nums;
+        }
+        .breakdown-table tr:hover td { background: rgba(99,102,241,0.03); }
+        .breakdown-table .total-row td {
+            border-top: 2px solid var(--accent); font-weight: 700;
+        }
+
+        .share-row {
+            display: flex; gap: 8px; margin-top: 16px;
+        }
+        .share-btn {
+            flex: 1; display: flex; align-items: center; justify-content: center; gap: 6px;
+            padding: 10px 12px; border-radius: 8px; border: 1px solid var(--border);
+            background: var(--bg-secondary); color: var(--text-primary);
+            font-size: 13px; font-weight: 600; text-decoration: none; transition: all 0.2s; cursor: pointer;
+        }
+        .share-btn:hover { border-color: var(--accent); }
+
+        .info-section {
+            max-width: 700px; margin: 0 auto; padding: 0 24px 60px;
+        }
+        .info-section h2 { font-size: 22px; font-weight: 700; margin-bottom: 16px; }
+        .info-section p { color: var(--text-secondary); line-height: 1.7; margin-bottom: 16px; }
+        .info-section ul { color: var(--text-secondary); padding-left: 24px; margin-bottom: 16px; }
+        .info-section li { margin-bottom: 8px; line-height: 1.6; }
+        .info-section strong { color: var(--text-primary); }
+
+        .cta-inline {
+            background: var(--bg-secondary); border: 1px solid var(--accent);
+            border-radius: 12px; padding: 24px; margin: 32px 0; text-align: center;
+        }
+        .cta-inline p { margin-bottom: 12px; color: var(--text-secondary); }
+
+        @media (max-width: 768px) {
+            .calc-hero { padding: 100px 20px 30px; }
+            .calc-hero h1 { font-size: 26px; }
+            .calculator-section { padding: 0 20px 40px; }
+            .calculator { padding: 20px; }
+            .global-settings { grid-template-columns: 1fr; }
+            .route-row { grid-template-columns: 1fr; }
+            .results-grid { grid-template-columns: 1fr; }
+            .presets { justify-content: center; }
+        }
+        @media print {
+            nav, .theme-toggle, .back-to-top, .presets, .add-route-btn, .remove-route, .share-row { display: none !important; }
+            body { background: white; color: black; }
+            .calculator { border: 1px solid #ccc; }
+        }
+    </style>
+    <meta name="theme-color" content="#6366f1">
+    <link rel="preconnect" href="https://getapipulse.com">
+</head>
+<body>
+    <a href="#main" class="skip-link">Skip to content</a>
+    <nav>
+        <div class="nav-inner">
+            <a href="index.html" class="logo">API<span>pulse</span></a>
+            <button class="hamburger" onclick="toggleMobileNav()" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+            <div class="nav-links">
+                <a href="calculator.html">Calculator</a>
+                <a href="compare.html">Compare</a>
+                <a href="cost-explorer.html">Explorer</a>
+                <a href="agent-cost-calculator.html">Agents</a>
+                <a href="cost-scenarios.html">Scenarios</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="use-cases.html">Use Cases</a>
+                <a href="about.html">About</a>
+                <a href="blog.html">Blog</a>
+                <a href="tools.html">Tools</a>
+                <a href="pricing-index.html">Pricing Index</a>
+                <a href="model-matrix.html">Model Matrix</a>
+                <a href="api-docs.html" style="color:var(--accent);">API</a>
+                <a href="pricing.html" class="nav-cta" onclick="if(window.trackEvent)window.trackEvent('pro_button_clicked',{source:'nav'})">Get Pro — $29</a>
+                <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
+            </div>
+        </div>
+    </nav>
+
+    <main id="main">
+    <div class="calc-hero">
+        <h1>Multi-Model Routing Strategy Builder</h1>
+        <p>Route simple requests to cheap models, complex ones to premium. Design your routing strategy and see exactly how much you'll save.</p>
+    </div>
+
+    <section class="calculator-section">
+        <div class="calculator" role="form" aria-label="Multi-Model Routing Strategy Builder">
+            <div class="presets">
+                <span style="font-size:13px;color:var(--text-muted);align-self:center;">Quick start:</span>
+                <button class="preset-btn" onclick="applyPreset('chatbot')">Chatbot</button>
+                <button class="preset-btn" onclick="applyPreset('saas')">SaaS App</button>
+                <button class="preset-btn" onclick="applyPreset('agent')">AI Agent</button>
+                <button class="preset-btn" onclick="applyPreset('content')">Content Gen</button>
+            </div>
+
+            <div class="global-settings">
+                <div class="input-group">
+                    <label for="total-requests">Total requests per month</label>
+                    <input type="number" id="total-requests" value="50000" min="100" step="1000" onchange="calculate()" oninput="calculate()">
+                    <span class="hint">All routes combined</span>
+                </div>
+                <div class="input-group">
+                    <label for="avg-input">Avg. input tokens per request</label>
+                    <input type="number" id="avg-input" value="1200" min="10" step="100" onchange="calculate()" oninput="calculate()">
+                </div>
+                <div class="input-group">
+                    <label for="avg-output">Avg. output tokens per request</label>
+                    <input type="number" id="avg-output" value="400" min="10" step="100" onchange="calculate()" oninput="calculate()">
+                </div>
+                <div class="input-group">
+                    <label for="baseline-model">Baseline (single-model comparison)</label>
+                    <select id="baseline-model" onchange="calculate()"></select>
+                    <span class="hint">What you'd pay without routing</span>
+                </div>
+            </div>
+
+            <h3 style="font-size:16px;font-weight:700;margin-bottom:16px;">Routing Rules</h3>
+            <div class="routes-container" id="routes-container"></div>
+            <button class="add-route-btn" onclick="addRoute()">+ Add Routing Rule</button>
+        </div>
+    </section>
+
+    <section class="calculator-section">
+        <div class="results-panel" id="results-panel">
+            <h2 style="font-size:20px;font-weight:700;margin-bottom:24px;text-align:center;">Routing Strategy Results</h2>
+            <div class="results-grid">
+                <div class="result-card highlight">
+                    <div class="result-card-label">Routed Cost</div>
+                    <div class="result-card-value" id="routed-cost" style="color:var(--green);">$0</div>
+                    <div class="result-card-sub" id="routed-per-req">$0.0000 per request</div>
+                </div>
+                <div class="result-card warn">
+                    <div class="result-card-label">Single-Model Cost</div>
+                    <div class="result-card-value" id="baseline-cost">$0</div>
+                    <div class="result-card-sub" id="baseline-per-req">$0.0000 per request</div>
+                </div>
+                <div class="result-card highlight">
+                    <div class="result-card-label">Monthly Savings</div>
+                    <div class="result-card-value" id="savings-amount" style="color:var(--green);">$0</div>
+                    <div class="result-card-sub" id="savings-percent">0% reduction</div>
+                </div>
+            </div>
+
+            <div class="comparison-bar">
+                <h3>Cost Breakdown by Route</h3>
+                <div class="bar-visual" id="cost-bar"></div>
+                <div class="bar-legend" id="cost-legend"></div>
+            </div>
+
+            <h3 style="font-size:16px;font-weight:700;margin-bottom:16px;">Detailed Breakdown</h3>
+            <div style="overflow-x:auto;">
+                <table class="breakdown-table">
+                    <thead>
+                        <tr>
+                            <th>Route</th>
+                            <th>Model</th>
+                            <th>Traffic %</th>
+                            <th>Requests/Mo</th>
+                            <th>Cost/Request</th>
+                            <th>Monthly Cost</th>
+                        </tr>
+                    </thead>
+                    <tbody id="breakdown-tbody"></tbody>
+                </table>
+            </div>
+
+            <div class="share-row">
+                <button class="share-btn" onclick="copyResults()">
+                    <span id="copy-btn-text">Copy Results</span>
+                </button>
+                <a id="share-x" href="#" target="_blank" rel="noopener" class="share-btn">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                    Share on X
+                </a>
+                <a id="share-linkedin" href="#" target="_blank" rel="noopener" class="share-btn">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                    LinkedIn
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Annual Projection -->
+    <section class="calculator-section">
+        <div class="section-header">
+            <h2>Annual Savings Projection</h2>
+            <p>How much you'd save over 12 months with this routing strategy</p>
+        </div>
+        <div style="max-width:600px;margin:0 auto;">
+            <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:16px;padding:32px;text-align:center;">
+                <div style="font-size:14px;color:var(--text-muted);margin-bottom:8px;font-weight:600;">ANNUAL SAVINGS</div>
+                <div id="annual-savings" style="font-size:48px;font-weight:800;color:var(--green);margin-bottom:8px;">$0</div>
+                <div id="annual-detail" style="font-size:15px;color:var(--text-secondary);margin-bottom:24px;">$0/yr routed vs $0/yr single-model</div>
+                <div style="display:flex;gap:16px;justify-content:center;">
+                    <div style="background:var(--bg-secondary);border:1px solid var(--border);border-radius:10px;padding:14px 20px;min-width:140px;">
+                        <div style="font-size:20px;font-weight:800;color:var(--accent);" id="annual-routed">$0</div>
+                        <div style="font-size:12px;color:var(--text-muted);margin-top:2px;">Routed (12 mo)</div>
+                    </div>
+                    <div style="background:var(--bg-secondary);border:1px solid var(--border);border-radius:10px;padding:14px 20px;min-width:140px;">
+                        <div style="font-size:20px;font-weight:800;" id="annual-baseline">$0</div>
+                        <div style="font-size:12px;color:var(--text-muted);margin-top:2px;">Single-model (12 mo)</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="info-section">
+        <h2>What Is Multi-Model Routing?</h2>
+        <p>Multi-model routing is a cost optimization strategy where you <strong>route different types of requests to different AI models</strong> based on their complexity. Instead of sending every request to an expensive premium model, you classify requests and use the cheapest model that can handle each task well.</p>
+
+        <h2>The 3-Tier Routing Strategy</h2>
+        <ul>
+            <li><strong>Tier 1 — Simple (60-70% of traffic):</strong> Classification, extraction, formatting, simple Q&A. Use <strong>GPT-4o mini, Gemini Flash, or DeepSeek V4 Flash</strong> ($0.075-$0.15/M input).</li>
+            <li><strong>Tier 2 — Medium (20-30% of traffic):</strong> Summarization, translation, moderate reasoning. Use <strong>Claude Haiku, GPT-4o, or Mistral Large</strong> ($1-$2.50/M input).</li>
+            <li><strong>Tier 3 — Complex (5-15% of traffic):</strong> Code generation, deep analysis, multi-step reasoning. Use <strong>GPT-5, Claude Opus, or Gemini Pro</strong> ($1.25-$5/M input).</li>
+        </ul>
+
+        <h2>How to Classify Requests</h2>
+        <p>The key to model routing is <strong>accurate request classification</strong>. Common approaches:</p>
+        <ul>
+            <li><strong>Rule-based:</strong> Route by endpoint, user tier, or request length. Simple and fast.</li>
+            <li><strong>Classifier model:</strong> Use a cheap model (GPT-4o mini) to classify complexity before routing. Adds ~$0.0001 per request.</li>
+            <li><strong>Hybrid:</strong> Rules for obvious cases, classifier for ambiguous ones. Best balance of speed and accuracy.</li>
+        </ul>
+
+        <h2>Real-World Savings Example</h2>
+        <p>A SaaS app processing <strong>50,000 requests/month</strong> with an average of 1,200 input / 400 output tokens:</p>
+        <ul>
+            <li><strong>Without routing (all GPT-5):</strong> $1,125/month</li>
+            <li><strong>With 3-tier routing:</strong> $189/month — <strong>83% savings</strong></li>
+            <li><strong>Annual savings:</strong> $11,232</li>
+        </ul>
+
+        <h2>Related Tools</h2>
+        <ul>
+            <li><a href="cost-optimizer.html">Cost Optimizer</a> — Get a personalized optimization report</li>
+            <li><a href="model-advisor.html">AI Model Advisor</a> — Find the best model for each use case</li>
+            <li><a href="pipeline.html">Pipeline Cost Calculator</a> — Design multi-step AI pipelines</li>
+            <li><a href="cost-projection.html">Cost Projection Calculator</a> — Forecast your spending over time</li>
+        </ul>
+
+        <div class="cta-inline">
+            <p><strong>Want a personalized routing strategy?</strong></p>
+            <a href="cost-optimizer.html" class="btn-primary" style="display:inline-block;">Get a Free Optimization Report</a>
+        </div>
+    </div>
+
+    <button class="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">↑</button>
+
+    </main>
+
+    <footer>
+        <p>Pricing data last verified: <span class="verified-date"></span></p>
+        <p>&copy; 2026 APIpulse. <a href="index.html">Home</a> &middot; <a href="use-cases.html">Use Cases</a> &middot; <a href="about.html">About</a> &middot; <a href="blog.html">Blog</a>
+<a href="pricing-index.html">Pricing Index</a> &middot; <a href="model-matrix.html">Model Matrix</a> &middot; <a href="cost-scenarios.html">Scenarios</a> &middot; <a href="price-alerts.html">Price Alerts</a> &middot; <a href="pricing-changelog.html">Changelog</a> &middot; <a href="openai.html">OpenAI</a> &middot; <a href="anthropic.html">Anthropic</a> &middot; <a href="google.html">Google</a> &middot; <a href="mistral.html">Mistral</a> &middot; <a href="cohere.html">Cohere</a> &middot; <a href="deepseek.html">DeepSeek</a> &middot; <a href="xai.html">xAI</a> &middot; <a href="moonshot.html">Moonshot</a> &middot; <a href="together.html">Together.ai</a> &middot; <a href="ai21.html">AI21</a> &middot; <a href="pricing.html">Pricing</a> &middot; <a href="compare-plans.html">Free vs Pro</a> &middot; <a href="embed.html">Embed Widget</a> &middot; <a href="cheat-sheet.html">Cheat Sheet</a> &middot; <a href="model-switch.html">Model Switch</a> &middot; <a href="api-docs.html">API</a> &middot; <a href="https://x.com/getapipulse" target="_blank" rel="noopener">Twitter</a> &middot; <a href="unsubscribe.html">Unsubscribe</a></p>
+    </footer>
+
+    <script>
+        var routeColors = ['#6366f1', '#22c55e', '#f59e0b', '#ef4444', '#8b5cf6', '#06b6d4', '#ec4899', '#14b8a6'];
+        var routeCounter = 0;
+
+        function populateBaselineModels() {
+            var select = document.getElementById('baseline-model');
+            var providers = {};
+            API_MODELS.forEach(function(m) {
+                if (!providers[m.provider]) providers[m.provider] = [];
+                providers[m.provider].push(m);
+            });
+            var html = '';
+            Object.keys(providers).forEach(function(provider) {
+                html += '<optgroup label="' + provider + '">';
+                providers[provider].forEach(function(m) {
+                    html += '<option value="' + m.id + '">' + m.name + ' — $' + m.input.toFixed(2) + '/$' + m.output.toFixed(2) + ' per 1M</option>';
+                });
+                html += '</optgroup>';
+            });
+            select.innerHTML = html;
+            select.value = 'openai-gpt5';
+        }
+
+        function populateRouteModelSelect(selectEl, defaultId) {
+            var providers = {};
+            API_MODELS.forEach(function(m) {
+                if (!providers[m.provider]) providers[m.provider] = [];
+                providers[m.provider].push(m);
+            });
+            var html = '';
+            Object.keys(providers).forEach(function(provider) {
+                html += '<optgroup label="' + provider + '">';
+                providers[provider].forEach(function(m) {
+                    html += '<option value="' + m.id + '">' + m.name + ' — $' + m.input.toFixed(2) + '/$' + m.output.toFixed(2) + '</option>';
+                });
+                html += '</optgroup>';
+            });
+            selectEl.innerHTML = html;
+            if (defaultId) selectEl.value = defaultId;
+        }
+
+        function getComplexityBadge(complexity) {
+            if (complexity === 'simple') return '<span class="route-badge badge-simple">Simple</span>';
+            if (complexity === 'medium') return '<span class="route-badge badge-medium">Medium</span>';
+            return '<span class="route-badge badge-complex">Complex</span>';
+        }
+
+        function addRoute(config) {
+            routeCounter++;
+            var container = document.getElementById('routes-container');
+            var div = document.createElement('div');
+            div.className = 'route-row';
+            div.id = 'route-' + routeCounter;
+
+            var name = (config && config.name) || 'Route ' + routeCounter;
+            var complexity = (config && config.complexity) || 'simple';
+            var modelId = (config && config.model) || 'openai-gpt4o-mini';
+            var traffic = (config && config.traffic) || 50;
+            var inputMult = (config && config.inputMult) || 1.0;
+            var outputMult = (config && config.outputMult) || 1.0;
+
+            div.innerHTML =
+                '<div class="route-header">' +
+                    '<span class="route-label">' + getComplexityBadge(complexity) + ' <input type="text" value="' + name + '" style="background:none;border:none;color:var(--text-primary);font-size:14px;font-weight:700;width:180px;padding:0;" onchange="calculate()" oninput="calculate()"></span>' +
+                    '<button class="remove-route" onclick="removeRoute(\'route-' + routeCounter + '\')">Remove</button>' +
+                '</div>' +
+                '<div class="input-group">' +
+                    '<label>Complexity</label>' +
+                    '<select class="route-complexity" onchange="updateComplexity(this);calculate()">' +
+                        '<option value="simple"' + (complexity === 'simple' ? ' selected' : '') + '>Simple — classification, extraction</option>' +
+                        '<option value="medium"' + (complexity === 'medium' ? ' selected' : '') + '>Medium — summarization, translation</option>' +
+                        '<option value="complex"' + (complexity === 'complex' ? ' selected' : '') + '>Complex — reasoning, code gen</option>' +
+                    '</select>' +
+                '</div>' +
+                '<div class="input-group">' +
+                    '<label>Model</label>' +
+                    '<select class="route-model" onchange="calculate()"></select>' +
+                '</div>' +
+                '<div class="input-group">' +
+                    '<label>Traffic %</label>' +
+                    '<input type="number" class="route-traffic" value="' + traffic + '" min="1" max="100" onchange="calculate()" oninput="calculate()">' +
+                '</div>' +
+                '<div class="input-group">' +
+                    '<label>Token multiplier</label>' +
+                    '<input type="number" class="route-mult" value="' + inputMult + '" min="0.1" max="5" step="0.1" onchange="calculate()" oninput="calculate()">' +
+                    '<span class="hint">Relative to avg tokens</span>' +
+                '</div>' +
+                '<div class="route-cost">Est: <strong>$0/mo</strong></div>';
+
+            container.appendChild(div);
+
+            var modelSelect = div.querySelector('.route-model');
+            populateRouteModelSelect(modelSelect, modelId);
+
+            calculate();
+        }
+
+        function removeRoute(id) {
+            var el = document.getElementById(id);
+            if (el) {
+                el.remove();
+                calculate();
+            }
+        }
+
+        function updateComplexity(selectEl) {
+            var row = selectEl.closest('.route-row');
+            var badge = row.querySelector('.route-badge');
+            var val = selectEl.value;
+            badge.className = 'route-badge';
+            if (val === 'simple') { badge.classList.add('badge-simple'); badge.textContent = 'Simple'; }
+            else if (val === 'medium') { badge.classList.add('badge-medium'); badge.textContent = 'Medium'; }
+            else { badge.classList.add('badge-complex'); badge.textContent = 'Complex'; }
+        }
+
+        function applyPreset(type) {
+            document.querySelectorAll('.preset-btn').forEach(function(b) { b.classList.remove('active-preset'); });
+            event.target.classList.add('active-preset');
+
+            // Clear existing routes
+            document.getElementById('routes-container').innerHTML = '';
+            routeCounter = 0;
+
+            var presets = {
+                chatbot: {
+                    requests: 100000, input: 800, output: 250, baseline: 'openai-gpt5',
+                    routes: [
+                        { name: 'Simple FAQ replies', complexity: 'simple', model: 'openai-gpt4o-mini', traffic: 65, inputMult: 0.6, outputMult: 0.6 },
+                        { name: 'Moderate support', complexity: 'medium', model: 'anthropic-haiku', traffic: 25, inputMult: 1.0, outputMult: 1.0 },
+                        { name: 'Complex escalations', complexity: 'complex', model: 'anthropic-sonnet46', traffic: 10, inputMult: 1.5, outputMult: 1.5 }
+                    ]
+                },
+                saas: {
+                    requests: 50000, input: 1200, output: 400, baseline: 'openai-gpt5',
+                    routes: [
+                        { name: 'Data extraction', complexity: 'simple', model: 'google-flash', traffic: 50, inputMult: 0.8, outputMult: 0.5 },
+                        { name: 'Content generation', complexity: 'medium', model: 'openai-gpt4o', traffic: 35, inputMult: 1.0, outputMult: 1.2 },
+                        { name: 'Complex analysis', complexity: 'complex', model: 'anthropic-opus47', traffic: 15, inputMult: 1.5, outputMult: 1.5 }
+                    ]
+                },
+                agent: {
+                    requests: 20000, input: 2000, output: 800, baseline: 'anthropic-opus47',
+                    routes: [
+                        { name: 'Tool routing', complexity: 'simple', model: 'deepseek-v4-flash', traffic: 40, inputMult: 0.5, outputMult: 0.3 },
+                        { name: 'Task execution', complexity: 'medium', model: 'anthropic-sonnet46', traffic: 40, inputMult: 1.0, outputMult: 1.0 },
+                        { name: 'Complex reasoning', complexity: 'complex', model: 'anthropic-opus47', traffic: 20, inputMult: 2.0, outputMult: 2.0 }
+                    ]
+                },
+                content: {
+                    requests: 30000, input: 1500, output: 600, baseline: 'openai-gpt5',
+                    routes: [
+                        { name: 'Outlines & drafts', complexity: 'simple', model: 'mistral-small', traffic: 40, inputMult: 0.7, outputMult: 0.8 },
+                        { name: 'Full articles', complexity: 'medium', model: 'openai-gpt4o', traffic: 40, inputMult: 1.0, outputMult: 1.2 },
+                        { name: 'Technical content', complexity: 'complex', model: 'openai-gpt5', traffic: 20, inputMult: 1.5, outputMult: 1.5 }
+                    ]
+                }
+            };
+
+            var p = presets[type];
+            document.getElementById('total-requests').value = p.requests;
+            document.getElementById('avg-input').value = p.input;
+            document.getElementById('avg-output').value = p.output;
+            document.getElementById('baseline-model').value = p.baseline;
+
+            p.routes.forEach(function(r) { addRoute(r); });
+
+            if (window.trackEvent) window.trackEvent('preset_applied', { preset: type, tool: 'multi_model_routing' });
+        }
+
+        function calculate() {
+            var totalRequests = parseInt(document.getElementById('total-requests').value) || 0;
+            var avgInput = parseInt(document.getElementById('avg-input').value) || 0;
+            var avgOutput = parseInt(document.getElementById('avg-output').value) || 0;
+            var baselineId = document.getElementById('baseline-model').value;
+            var baseline = API_MODELS.find(function(m) { return m.id === baselineId; });
+            if (!baseline) return;
+
+            var rows = document.querySelectorAll('.route-row');
+            var routes = [];
+            var totalTraffic = 0;
+
+            rows.forEach(function(row) {
+                var modelId = row.querySelector('.route-model').value;
+                var model = API_MODELS.find(function(m) { return m.id === modelId; });
+                var traffic = parseFloat(row.querySelector('.route-traffic').value) || 0;
+                var mult = parseFloat(row.querySelector('.route-mult').value) || 1.0;
+                var nameInput = row.querySelector('input[type="text"]');
+                var name = nameInput ? nameInput.value : 'Route';
+
+                if (model && traffic > 0) {
+                    var routeInput = avgInput * mult;
+                    var routeOutput = avgOutput * mult;
+                    var costPerReq = (routeInput * model.input + routeOutput * model.output) / 1000000;
+                    var routeRequests = totalRequests * (traffic / 100);
+                    var monthlyCost = costPerReq * routeRequests;
+
+                    routes.push({
+                        name: name, model: model, traffic: traffic,
+                        requests: routeRequests, costPerReq: costPerReq, monthlyCost: monthlyCost, mult: mult
+                    });
+                    totalTraffic += traffic;
+
+                    // Update per-route cost
+                    var costEl = row.querySelector('.route-cost strong');
+                    if (costEl) costEl.textContent = '$' + monthlyCost.toFixed(2) + '/mo';
+                }
+            });
+
+            // Baseline cost
+            var baselineCostPerReq = (avgInput * baseline.input + avgOutput * baseline.output) / 1000000;
+            var baselineMonthly = baselineCostPerReq * totalRequests;
+
+            // Routed cost
+            var routedMonthly = 0;
+            routes.forEach(function(r) { routedMonthly += r.monthlyCost; });
+
+            // Handle unmatched traffic (use baseline)
+            if (totalTraffic < 100) {
+                var unmatchedPct = 100 - totalTraffic;
+                var unmatchedReqs = totalRequests * (unmatchedPct / 100);
+                var unmatchedCost = baselineCostPerReq * unmatchedReqs;
+                routedMonthly += unmatchedCost;
+                routes.push({
+                    name: 'Unmatched traffic', model: baseline, traffic: unmatchedPct,
+                    requests: unmatchedReqs, costPerReq: baselineCostPerReq, monthlyCost: unmatchedCost, mult: 1
+                });
+            }
+
+            var savings = baselineMonthly - routedMonthly;
+            var savingsPct = baselineMonthly > 0 ? (savings / baselineMonthly * 100) : 0;
+
+            // Update results
+            document.getElementById('routed-cost').textContent = '$' + routedMonthly.toFixed(2);
+            document.getElementById('routed-per-req').textContent = '$' + (totalRequests > 0 ? (routedMonthly / totalRequests).toFixed(6) : '0') + ' per request';
+            document.getElementById('baseline-cost').textContent = '$' + baselineMonthly.toFixed(2);
+            document.getElementById('baseline-per-req').textContent = '$' + baselineCostPerReq.toFixed(6) + ' per request';
+            document.getElementById('savings-amount').textContent = '$' + savings.toFixed(2);
+            document.getElementById('savings-percent').textContent = savingsPct.toFixed(1) + '% reduction';
+
+            // Annual
+            document.getElementById('annual-savings').textContent = '$' + (savings * 12).toFixed(2);
+            document.getElementById('annual-detail').textContent = '$' + (routedMonthly * 12).toFixed(2) + '/yr routed vs $' + (baselineMonthly * 12).toFixed(2) + '/yr single-model';
+            document.getElementById('annual-routed').textContent = '$' + (routedMonthly * 12).toFixed(2);
+            document.getElementById('annual-baseline').textContent = '$' + (baselineMonthly * 12).toFixed(2);
+
+            // Cost breakdown bar
+            var barHtml = '';
+            var legendHtml = '';
+            routes.forEach(function(r, i) {
+                var pct = routedMonthly > 0 ? (r.monthlyCost / routedMonthly * 100) : 0;
+                var color = routeColors[i % routeColors.length];
+                barHtml += '<div class="bar-segment" style="width:' + Math.max(pct, 3) + '%;background:' + color + ';">' + (pct > 8 ? pct.toFixed(0) + '%' : '') + '</div>';
+                legendHtml += '<div class="bar-legend-item"><div class="bar-legend-dot" style="background:' + color + ';"></div>' + r.name + ' — $' + r.monthlyCost.toFixed(2) + ' (' + pct.toFixed(1) + '%)</div>';
+            });
+            document.getElementById('cost-bar').innerHTML = barHtml;
+            document.getElementById('cost-legend').innerHTML = legendHtml;
+
+            // Breakdown table
+            var tbody = document.getElementById('breakdown-tbody');
+            var tableHtml = '';
+            routes.forEach(function(r) {
+                tableHtml += '<tr>' +
+                    '<td style="font-weight:600;">' + r.name + '</td>' +
+                    '<td>' + r.model.name + ' <span style="color:var(--text-muted);font-size:11px;">(' + r.model.provider + ')</span></td>' +
+                    '<td>' + r.traffic.toFixed(0) + '%</td>' +
+                    '<td>' + r.requests.toFixed(0).replace(/\B(?=(\d{3})+(?!\d))/g, ',') + '</td>' +
+                    '<td>$' + r.costPerReq.toFixed(6) + '</td>' +
+                    '<td style="font-weight:600;color:var(--accent);">$' + r.monthlyCost.toFixed(2) + '</td>' +
+                '</tr>';
+            });
+            tableHtml += '<tr class="total-row">' +
+                '<td colspan="5" style="text-align:right;font-size:15px;">Total Routed</td>' +
+                '<td style="font-size:15px;color:var(--accent);">$' + routedMonthly.toFixed(2) + '</td>' +
+            '</tr>';
+            tableHtml += '<tr>' +
+                '<td colspan="5" style="text-align:right;color:var(--text-muted);">Single-model (' + baseline.name + ')</td>' +
+                '<td style="color:var(--text-muted);">$' + baselineMonthly.toFixed(2) + '</td>' +
+            '</tr>';
+            tbody.innerHTML = tableHtml;
+
+            // Update share links
+            var shareText = 'I just built a multi-model routing strategy that saves ' + savingsPct.toFixed(0) + '% on AI API costs ($' + savings.toFixed(2) + '/mo). Built with @getapipulse';
+            document.getElementById('share-x').href = 'https://twitter.com/intent/tweet?text=' + encodeURIComponent(shareText) + '&url=' + encodeURIComponent('https://getapipulse.com/multi-model-routing.html');
+            document.getElementById('share-linkedin').href = 'https://www.linkedin.com/sharing/share-offsite/?url=' + encodeURIComponent('https://getapipulse.com/multi-model-routing.html');
+        }
+
+        function copyResults() {
+            var routed = document.getElementById('routed-cost').textContent;
+            var baseline = document.getElementById('baseline-cost').textContent;
+            var savings = document.getElementById('savings-amount').textContent;
+            var pct = document.getElementById('savings-percent').textContent;
+            var text = 'Multi-Model Routing Strategy — APIpulse\n' +
+                'Routed cost: ' + routed + '/mo\n' +
+                'Single-model cost: ' + baseline + '/mo\n' +
+                'Savings: ' + savings + '/mo (' + pct + ')\n' +
+                'Built at https://getapipulse.com/multi-model-routing.html';
+            navigator.clipboard.writeText(text).then(function() {
+                document.getElementById('copy-btn-text').textContent = 'Copied!';
+                setTimeout(function() { document.getElementById('copy-btn-text').textContent = 'Copy Results'; }, 2000);
+            });
+        }
+
+        // Init
+        document.addEventListener('DOMContentLoaded', function() {
+            populateBaselineModels();
+            // Load default preset
+            applyPreset('saas');
+        });
+    </script>
+</body>
+</html>
