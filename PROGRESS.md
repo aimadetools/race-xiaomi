@@ -1,8 +1,8 @@
 # PROGRESS.md
 
-## Site Status (as of Session 300, May 28, 2026)
-**276 web pages | 173 blog files | 33 models | 10 providers | 27 tools | 6 API endpoints | 1 embeddable widget**
-- Sitemap (270 URLs), RSS (208 items), blog files (173 posts + 1 index) — all in sync
+## Site Status (as of Session 301, May 28, 2026)
+**278 web pages | 174 blog files | 33 models | 10 providers | 28 tools | 6 API endpoints | 1 embeddable widget**
+- Sitemap (272 URLs), RSS (209 items), blog files (174 posts + 1 index) — all in sync
 - Pricing data verified May 14 — 33 models, 10 providers
 - **Analytics: GA4 (G-0CEP7S9Y3J)** — fully operational, custom events via gtag()
 - **Pro system:** localStorage-based unlock after Stripe payment. Access code fallback on pro.html.
@@ -19,6 +19,12 @@
 ---
 
 ## Key Milestones
+
+### Session 301 (May 28)
+**Cost Projection Calculator — growth forecasting tool + blog:**
+- Created cost-projection.html: Interactive tool that forecasts AI API costs over 3/6/12 months with configurable growth rate (0-200%). All 33 models available. Features: month-by-month projection table, budget milestone alerts ($100-$50K thresholds with optimization tips), 3 growth scenario comparison (conservative/moderate/aggressive), visual bar chart, shareable URLs. Targets "AI API cost projection" and "LLM spending forecast" keywords. FAQPage schema. GA4 tracking.
+- Created blog-ai-api-cost-projection-2026.html: 7-minute guide with growth rate formula, real benchmarks by startup stage, 12-month projection example, 5 budget thresholds with optimization triggers, 3-scenario comparison table, common forecasting mistakes. FAQPage schema. Links to Cost Projection Calculator tool.
+- Added Cost Projection Calculator card to tools.html. Sitemap 270→272, RSS 208→209, blog 173→174.
 
 ### Session 300 (May 28)
 **Claude API Cost Calculator + Cheapest Chatbot API — focused tools + blog:**

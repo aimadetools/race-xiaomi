@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI API Cost Projection Calculator — Forecast Your LLM Spend | APIpulse</title>
+    <meta name="description" content="Free AI API cost projection calculator. Forecast your monthly LLM spend over 3, 6, or 12 months as your usage grows. See when costs hit budget thresholds and when to optimize.">
+    <meta name="keywords" content="AI API cost projection, LLM cost forecast, API spending forecast, AI budget projection, LLM scaling costs">
+    <meta property="og:title" content="AI API Cost Projection Calculator — Forecast Your LLM Spend | APIpulse">
+    <meta property="og:description" content="Free calculator to forecast AI API costs over 3, 6, or 12 months as usage grows. See budget milestones and optimization triggers.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://getapipulse.com/og-image.png">
+    <meta property="og:url" content="https://getapipulse.com/cost-projection.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="AI API Cost Projection Calculator">
+    <meta name="twitter:image" content="https://getapipulse.com/og-image.png">
+    <meta name="twitter:description" content="Forecast your AI API costs as your usage grows. Free calculator with 33 models.">
+    <link rel="canonical" href="https://getapipulse.com/cost-projection.html">
+    <link rel="alternate" type="application/rss+xml" title="APIpulse Blog" href="https://getapipulse.com/rss.xml">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="styles.css">
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0CEP7S9Y3J"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-0CEP7S9Y3J');
+    </script>
+    <script src="analytics.js" defer></script>
+    <script src="dynamic-date.js" defer></script>
+    <script src="shared.js" defer></script>
+    <script src="pricing-data.js" defer></script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "APIpulse AI API Cost Projection Calculator",
+        "url": "https://getapipulse.com/cost-projection.html",
+        "description": "Free AI API cost projection calculator. Forecast LLM spend over 3, 6, or 12 months as usage grows.",
+        "applicationCategory": "DeveloperApplication",
+        "operatingSystem": "Web",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "How do I forecast AI API costs?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "To forecast AI API costs, multiply your expected monthly requests by the cost per request for your chosen model. Account for growth — most startups see 15-30% monthly usage increases. Use the APIpulse Cost Projection Calculator to model different growth scenarios and see when costs hit budget thresholds."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What is the average monthly cost for AI API usage?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "AI API costs vary widely: hobby projects spend $5-50/month, startups typically spend $100-1,000/month, and production apps can reach $1,000-50,000/month. A typical chatbot serving 10K users costs $200-800/month with budget models like GPT-4o mini, or $2,000-8,000 with premium models like GPT-5."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "When should I switch to a cheaper AI model?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Consider switching to a cheaper model when: your monthly bill exceeds 10% of revenue, you're using premium models for simple tasks (routing, classification), or your costs are growing faster than revenue. The APIpulse Cost Projection Calculator shows the exact moment each optimization becomes worthwhile."
+                }
+            }
+        ]
+    }
+    </script>
+    <style>
+        .calc-hero {
+            padding: 120px 24px 40px; text-align: center; max-width: 700px; margin: 0 auto;
+        }
+        .calc-hero h1 { font-size: clamp(28px, 4vw, 42px); font-weight: 800; margin-bottom: 12px; }
+        .calc-hero p { color: var(--text-secondary); font-size: 17px; line-height: 1.6; }
+
+        .calculator-section { padding: 0 24px 60px; }
+        .section-header { text-align: center; margin-bottom: 32px; }
+        .section-header h2 { font-size: 24px; font-weight: 700; margin-bottom: 8px; }
+        .section-header p { color: var(--text-secondary); font-size: 15px; }
+
+        .calculator {
+            background: var(--bg-card); border: 1px solid var(--border);
+            border-radius: 16px; padding: 32px; max-width: 900px; margin: 0 auto;
+        }
+        .presets {
+            display: flex; gap: 8px; margin-bottom: 24px; flex-wrap: wrap; align-items: center;
+        }
+        .preset-btn {
+            background: var(--bg-secondary); border: 1px solid var(--border);
+            color: var(--text-secondary); padding: 8px 16px; border-radius: 8px;
+            cursor: pointer; font-size: 13px; transition: all 0.2s; font-weight: 500;
+        }
+        .preset-btn:hover { border-color: var(--accent); color: var(--accent); }
+        .preset-btn.active-preset { background: var(--accent); color: white; border-color: var(--accent); }
+        .calc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
+        .calc-inputs { display: flex; flex-direction: column; gap: 16px; }
+        .input-group { display: flex; flex-direction: column; gap: 6px; }
+        .input-group label { font-size: 13px; font-weight: 600; color: var(--text-secondary); }
+        .input-group select, .input-group input {
+            padding: 12px 16px; border-radius: 8px; border: 1px solid var(--border);
+            background: var(--bg-secondary); color: var(--text-primary); font-size: 15px;
+            font-family: inherit;
+        }
+        .input-group select:focus, .input-group input:focus {
+            outline: 2px solid var(--accent); outline-offset: 2px; border-color: var(--accent);
+        }
+        .input-group .hint { font-size: 11px; color: var(--text-muted); margin-top: -2px; }
+        .calc-results {
+            background: var(--bg-secondary); border: 1px solid var(--border);
+            border-radius: 12px; padding: 24px;
+        }
+        .result-item {
+            display: flex; justify-content: space-between; padding: 10px 0;
+            border-bottom: 1px solid var(--border); font-size: 14px;
+        }
+        .result-item:last-child { border-bottom: none; }
+        .result-label { color: var(--text-secondary); }
+        .result-value { color: var(--text-primary); font-weight: 600; font-variant-numeric: tabular-nums; }
+        .result-total {
+            display: flex; justify-content: space-between; padding: 14px 0 10px;
+            border-top: 2px solid var(--accent); margin-top: 8px; font-size: 18px;
+        }
+        .result-total .result-label { color: var(--text-primary); font-weight: 700; }
+        .result-total .result-value { color: var(--accent); font-weight: 800; }
+
+        .projection-table {
+            max-width: 900px; margin: 0 auto; overflow-x: auto;
+        }
+        .projection-table table {
+            width: 100%; border-collapse: collapse; font-size: 14px;
+        }
+        .projection-table th {
+            text-align: left; padding: 12px 16px; font-size: 12px; font-weight: 700;
+            color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px;
+            border-bottom: 2px solid var(--border);
+        }
+        .projection-table td {
+            padding: 12px 16px; border-bottom: 1px solid rgba(42,42,62,0.5);
+            font-variant-numeric: tabular-nums;
+        }
+        .projection-table tr:hover td { background: rgba(99,102,241,0.03); }
+        .projection-table .month-label { font-weight: 600; color: var(--text-primary); }
+        .projection-table .cost-value { font-weight: 600; }
+        .projection-table .milestone-row td {
+            background: rgba(245,158,11,0.06); border-left: 3px solid var(--orange);
+        }
+        .projection-table .milestone-label {
+            display: inline-flex; align-items: center; gap: 6px;
+            background: rgba(245,158,11,0.15); color: var(--orange);
+            padding: 2px 10px; border-radius: 6px; font-size: 11px; font-weight: 700;
+        }
+
+        .scenarios-grid {
+            display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;
+            max-width: 900px; margin: 0 auto;
+        }
+        .scenario-card {
+            background: var(--bg-card); border: 1px solid var(--border);
+            border-radius: 12px; padding: 24px; text-align: center;
+        }
+        .scenario-card.highlighted { border-color: var(--accent); background: var(--accent-glow); }
+        .scenario-label { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px; }
+        .scenario-rate { font-size: 28px; font-weight: 800; margin-bottom: 4px; }
+        .scenario-cost { font-size: 20px; font-weight: 700; color: var(--accent); }
+        .scenario-period { font-size: 12px; color: var(--text-muted); margin-top: 4px; }
+
+        .chart-container {
+            max-width: 900px; margin: 0 auto; background: var(--bg-card);
+            border: 1px solid var(--border); border-radius: 16px; padding: 24px;
+        }
+        .bar-chart { display: flex; align-items: flex-end; gap: 4px; height: 200px; padding: 0 8px; }
+        .bar-wrapper { flex: 1; display: flex; flex-direction: column; align-items: center; height: 100%; justify-content: flex-end; }
+        .bar {
+            width: 100%; max-width: 48px; border-radius: 4px 4px 0 0;
+            transition: height 0.5s ease; position: relative;
+        }
+        .bar:hover { opacity: 0.85; }
+        .bar-label { font-size: 10px; color: var(--text-muted); margin-top: 6px; text-align: center; }
+        .bar-cost { font-size: 10px; color: var(--text-secondary); font-weight: 600; margin-bottom: 4px; }
+
+        .info-section {
+            max-width: 700px; margin: 0 auto; padding: 0 24px 60px;
+        }
+        .info-section h2 { font-size: 22px; font-weight: 700; margin-bottom: 16px; }
+        .info-section p { color: var(--text-secondary); line-height: 1.7; margin-bottom: 16px; }
+        .info-section ul { color: var(--text-secondary); padding-left: 24px; margin-bottom: 16px; }
+        .info-section li { margin-bottom: 8px; line-height: 1.6; }
+        .info-section strong { color: var(--text-primary); }
+
+        .cta-inline {
+            background: var(--bg-secondary); border: 1px solid var(--accent);
+            border-radius: 12px; padding: 24px; margin: 32px 0; text-align: center;
+        }
+        .cta-inline p { margin-bottom: 12px; color: var(--text-secondary); }
+
+        @media (max-width: 768px) {
+            .calc-hero { padding: 100px 20px 30px; }
+            .calc-hero h1 { font-size: 26px; }
+            .calculator-section { padding: 0 20px 40px; }
+            .calculator { padding: 20px; }
+            .calc-grid { grid-template-columns: 1fr; gap: 24px; }
+            .presets { justify-content: center; }
+            .scenarios-grid { grid-template-columns: 1fr; }
+            .bar-chart { height: 150px; }
+        }
+        @media print {
+            nav, .theme-toggle, .back-to-top, .presets { display: none !important; }
+            body { background: white; color: black; }
+            .calculator { border: 1px solid #ccc; }
+        }
+    </style>
+    <meta name="theme-color" content="#6366f1">
+    <link rel="preconnect" href="https://getapipulse.com">
+</head>
+<body>
+    <a href="#main" class="skip-link">Skip to content</a>
+    <nav>
+        <div class="nav-inner">
+            <a href="index.html" class="logo">API<span>pulse</span></a>
+            <button class="hamburger" onclick="toggleMobileNav()" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+            <div class="nav-links">
+                <a href="calculator.html">Calculator</a>
+                <a href="compare.html">Compare</a>
+                <a href="cost-explorer.html">Explorer</a>
+                <a href="model-switch.html">Switch</a>
+                <a href="cost-scenarios.html">Scenarios</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="use-cases.html">Use Cases</a>
+                <a href="about.html">About</a>
+                <a href="blog.html">Blog</a>
+                <a href="tools.html">Tools</a>
+                <a href="pricing-index.html">Pricing Index</a>
+                <a href="model-matrix.html">Model Matrix</a>
+                <a href="api-docs.html" style="color:var(--accent);">API</a>
+                <a href="pricing.html" class="nav-cta" onclick="if(window.trackEvent)window.trackEvent('pro_button_clicked',{source:'nav'})">Get Pro — $29</a>
+                <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
+            </div>
+        </div>
+    </nav>
+
+    <main id="main">
+    <div class="calc-hero">
+        <h1>AI API Cost Projection Calculator</h1>
+        <p>Forecast your monthly AI API spend as your usage grows. See when costs hit budget thresholds and when it's time to optimize.</p>
+    </div>
+
+    <section class="calculator-section">
+        <div class="calculator" role="form" aria-label="AI API Cost Projection Calculator">
+            <div class="presets">
+                <span style="font-size:13px;color:var(--text-muted);align-self:center;">Quick start:</span>
+                <button class="preset-btn" onclick="applyPreset('mvp')">MVP ($50/mo)</button>
+                <button class="preset-btn" onclick="applyPreset('growth')">Growth ($500/mo)</button>
+                <button class="preset-btn" onclick="applyPreset('scale')">Scale ($5K/mo)</button>
+                <button class="preset-btn" onclick="applyPreset('enterprise')">Enterprise ($20K/mo)</button>
+            </div>
+            <div class="calc-grid">
+                <div class="calc-inputs">
+                    <div class="input-group">
+                        <label for="model">AI Model</label>
+                        <select id="model" onchange="calculate()" aria-label="Select AI model"></select>
+                    </div>
+                    <div class="input-group">
+                        <label for="input-tokens">Input tokens per request</label>
+                        <input type="number" id="input-tokens" value="1500" min="0" step="100" onchange="calculate()" oninput="calculate()">
+                    </div>
+                    <div class="input-group">
+                        <label for="output-tokens">Output tokens per request</label>
+                        <input type="number" id="output-tokens" value="400" min="0" step="100" onchange="calculate()" oninput="calculate()">
+                    </div>
+                    <div class="input-group">
+                        <label for="requests-day">Requests per day (starting)</label>
+                        <input type="number" id="requests-day" value="500" min="0" step="50" onchange="calculate()" oninput="calculate()">
+                    </div>
+                    <div class="input-group">
+                        <label for="growth-rate">Monthly growth rate</label>
+                        <input type="number" id="growth-rate" value="20" min="0" max="200" step="5" onchange="calculate()" oninput="calculate()">
+                        <span class="hint">Typical: 15-30% for startups, 5-10% for established products</span>
+                    </div>
+                    <div class="input-group">
+                        <label for="projection-months">Projection period</label>
+                        <select id="projection-months" onchange="calculate()">
+                            <option value="3">3 months</option>
+                            <option value="6" selected>6 months</option>
+                            <option value="12">12 months</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="calc-results" role="region" aria-label="Cost projection results" aria-live="polite">
+                    <h3 style="margin-bottom: 16px; font-size: 16px;">Projection Summary</h3>
+                    <div class="result-item" style="background:var(--accent-glow);margin:-4px -8px 8px;padding:10px 8px;border-radius:8px;border:1px solid rgba(99,102,241,0.2);">
+                        <span class="result-label" style="font-weight:600;color:var(--text-primary);">Month 1 cost</span>
+                        <span class="result-value" id="month1-cost" style="color:var(--accent);font-size:16px;">$0.00</span>
+                    </div>
+                    <div class="result-item">
+                        <span class="result-label">Final month cost</span>
+                        <span class="result-value" id="final-month-cost">$0.00</span>
+                    </div>
+                    <div class="result-item">
+                        <span class="result-label">Cost increase</span>
+                        <span class="result-value" id="cost-increase">+0%</span>
+                    </div>
+                    <div class="result-item">
+                        <span class="result-label">Total spend (period)</span>
+                        <span class="result-value" id="total-spend" style="color:var(--accent);">$0.00</span>
+                    </div>
+                    <div class="result-item">
+                        <span class="result-label">Avg. monthly cost</span>
+                        <span class="result-value" id="avg-monthly">$0.00</span>
+                    </div>
+                    <div class="result-total">
+                        <span class="result-label">Total Period Cost</span>
+                        <span class="result-value" id="period-total">$0.00</span>
+                    </div>
+                    <div id="milestones-container"></div>
+                    <button onclick="copyResults()" style="margin-top:16px;width:100%;padding:10px 16px;border-radius:8px;border:1px solid var(--border);background:var(--bg-secondary);color:var(--text-primary);font-size:13px;font-weight:600;cursor:pointer;transition:all 0.2s;" onmouseover="this.style.borderColor='var(--accent)'" onmouseout="this.style.borderColor='var(--border)'">
+                        <span id="copy-btn-text">Copy Results to Clipboard</span>
+                    </button>
+                    <div style="display:flex;gap:8px;margin-top:10px;">
+                        <a id="share-x" href="#" target="_blank" rel="noopener" style="flex:1;display:flex;align-items:center;justify-content:center;gap:6px;padding:10px 12px;border-radius:8px;border:1px solid var(--border);background:var(--bg-secondary);color:var(--text-primary);font-size:13px;font-weight:600;text-decoration:none;transition:all 0.2s;" onmouseover="this.style.borderColor='var(--accent)'" onmouseout="this.style.borderColor='var(--border)'">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                            Share on X
+                        </a>
+                        <a id="share-linkedin" href="#" target="_blank" rel="noopener" style="flex:1;display:flex;align-items:center;justify-content:center;gap:6px;padding:10px 12px;border-radius:8px;border:1px solid var(--border);background:var(--bg-secondary);color:var(--text-primary);font-size:13px;font-weight:600;text-decoration:none;transition:all 0.2s;" onmouseover="this.style.borderColor='var(--accent)'" onmouseout="this.style.borderColor='var(--border)'">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                            LinkedIn
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Growth Scenarios -->
+    <section class="calculator-section">
+        <div class="section-header">
+            <h2>Growth Scenario Comparison</h2>
+            <p>See how your costs change across conservative, moderate, and aggressive growth rates</p>
+        </div>
+        <div class="scenarios-grid" id="scenarios-grid"></div>
+    </section>
+
+    <!-- Bar Chart -->
+    <section class="calculator-section">
+        <div class="section-header">
+            <h2>Monthly Cost Breakdown</h2>
+            <p>Visual projection of your spending over time</p>
+        </div>
+        <div class="chart-container">
+            <div class="bar-chart" id="bar-chart"></div>
+        </div>
+    </section>
+
+    <!-- Month-by-Month Table -->
+    <section class="calculator-section">
+        <div class="section-header">
+            <h2>Month-by-Month Projection</h2>
+            <p>Detailed breakdown of requests, tokens, and costs for each month</p>
+        </div>
+        <div class="projection-table">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Month</th>
+                        <th>Requests/Day</th>
+                        <th>Requests/Month</th>
+                        <th>Total Tokens</th>
+                        <th>Monthly Cost</th>
+                        <th>Cumulative</th>
+                    </tr>
+                </thead>
+                <tbody id="projection-tbody"></tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- Pro Upsell -->
+    <section style="max-width:700px;margin:0 auto;padding:0 24px 40px;" id="pro-upsell-section">
+        <div style="background:linear-gradient(135deg, rgba(99,102,241,0.08), rgba(34,197,94,0.06));border:1px solid var(--accent);border-radius:16px;padding:32px;text-align:center;">
+            <h2 style="font-size:22px;font-weight:800;margin-bottom:8px;">Save scenarios and get optimization alerts</h2>
+            <p style="color:var(--text-secondary);font-size:15px;margin-bottom:20px;line-height:1.6;">APIpulse Pro saves your projections, alerts you when optimization thresholds are hit, and recommends the cheapest model at each growth stage.</p>
+            <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin-bottom:20px;">
+                <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:10px;padding:14px 20px;min-width:160px;">
+                    <div style="font-size:22px;font-weight:800;color:var(--accent);">$29</div>
+                    <div style="font-size:12px;color:var(--text-muted);margin-top:2px;">one-time, lifetime</div>
+                </div>
+                <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:10px;padding:14px 20px;min-width:160px;">
+                    <div style="font-size:22px;font-weight:800;color:var(--green);">40%</div>
+                    <div style="font-size:12px;color:var(--text-muted);margin-top:2px;">avg. savings with tips</div>
+                </div>
+            </div>
+            <a href="https://buy.stripe.com/fZu7sL3Gw3GS0RQeoDeEo0a" class="btn-primary" style="display:inline-block;font-size:16px;padding:14px 32px;" target="_blank" rel="noopener" onclick="if(window.trackEvent)window.trackEvent('pro_button_clicked',{source:'cost_projection_upsell'})">Unlock Pro — $29</a>
+            <p style="font-size:12px;color:var(--text-muted);margin-top:12px;">14-day money-back guarantee. Lifetime access.</p>
+        </div>
+    </section>
+
+    <div class="info-section">
+        <h2>How to Forecast AI API Costs</h2>
+        <p>Forecasting AI API costs requires three inputs: <strong>cost per request</strong>, <strong>current volume</strong>, and <strong>growth rate</strong>. Most startups underestimate growth — a 20% monthly increase means your costs <strong>triple</strong> in 6 months.</p>
+
+        <h2>The Cost Projection Formula</h2>
+        <p>Monthly cost = (requests/day × 30) × (input_tokens × input_price + output_tokens × output_price) / 1,000,000</p>
+        <p>With growth: Month N cost = Month 1 cost × (1 + growth_rate)^(N-1)</p>
+
+        <h2>Typical Growth Rates by Stage</h2>
+        <ul>
+            <li><strong>MVP / Pre-launch:</strong> 30-50% monthly — rapid user acquisition</li>
+            <li><strong>Early traction:</strong> 15-30% monthly — organic growth + word of mouth</li>
+            <li><strong>Growth stage:</strong> 10-20% monthly — scaling with marketing</li>
+            <li><strong>Established product:</strong> 5-10% monthly — incremental feature usage</li>
+            <li><strong>Enterprise:</strong> 2-5% monthly — existing customer usage growth</li>
+        </ul>
+
+        <h2>When to Optimize Your AI Costs</h2>
+        <ul>
+            <li><strong>At $100/month:</strong> Start tracking costs per feature — you need visibility before it grows</li>
+            <li><strong>At $500/month:</strong> Compare budget models — GPT-4o mini or Gemini Flash can replace premium models for 80% of tasks</li>
+            <li><strong>At $1,000/month:</strong> Implement model routing — use Haiku/Flash for simple tasks, premium for complex ones</li>
+            <li><strong>At $5,000/month:</strong> Negotiate volume discounts or explore fine-tuning for high-volume patterns</li>
+            <li><strong>At $10,000+/month:</strong> Consider dedicated inference (Together.ai, Fireworks) or self-hosting open-source models</li>
+        </ul>
+
+        <h2>Related Tools</h2>
+        <ul>
+            <li><a href="calculator.html">AI API Cost Calculator</a> — Estimate costs for a single month</li>
+            <li><a href="cost-optimizer.html">Cost Optimizer</a> — Find the cheapest model for your workload</li>
+            <li><a href="budget-planner.html">Budget Planner</a> — Plan your AI spend by use case</li>
+            <li><a href="model-advisor.html">AI Model Advisor</a> — Get personalized model recommendations</li>
+        </ul>
+
+        <div class="cta-inline">
+            <p><strong>Already spending too much?</strong></p>
+            <a href="cost-optimizer.html" class="btn-primary" style="display:inline-block;">Get a Free Optimization Report</a>
+        </div>
+    </div>
+
+    <button class="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">↑</button>
+
+    </main>
+
+    <footer>
+        <p>Pricing data last verified: <span class="verified-date"></span></p>
+        <p>&copy; 2026 APIpulse. <a href="index.html">Home</a> &middot; <a href="use-cases.html">Use Cases</a> &middot; <a href="about.html">About</a> &middot; <a href="blog.html">Blog</a>
+<a href="pricing-index.html">Pricing Index</a> &middot; <a href="model-matrix.html">Model Matrix</a> &middot; <a href="cost-scenarios.html">Scenarios</a> &middot; <a href="price-alerts.html">Price Alerts</a> &middot; <a href="pricing-changelog.html">Changelog</a> &middot; <a href="openai.html">OpenAI</a> &middot; <a href="anthropic.html">Anthropic</a> &middot; <a href="google.html">Google</a> &middot; <a href="mistral.html">Mistral</a> &middot; <a href="cohere.html">Cohere</a> &middot; <a href="deepseek.html">DeepSeek</a> &middot; <a href="xai.html">xAI</a> &middot; <a href="moonshot.html">Moonshot</a> &middot; <a href="together.html">Together.ai</a> &middot; <a href="ai21.html">AI21</a> &middot; <a href="pricing.html">Pricing</a> &middot; <a href="compare-plans.html">Free vs Pro</a> &middot; <a href="embed.html">Embed Widget</a> &middot; <a href="cheat-sheet.html">Cheat Sheet</a> &middot; <a href="model-switch.html">Model Switch</a> &middot; <a href="api-docs.html">API</a> &middot; <a href="https://x.com/getapipulse" target="_blank" rel="noopener">Twitter</a> &middot; <a href="unsubscribe.html">Unsubscribe</a></p>
+    </footer>
+
+    <script>
+        // Populate model dropdown from centralized data
+        function populateModels() {
+            var select = document.getElementById('model');
+            var providers = {};
+            API_MODELS.forEach(function(m) {
+                if (!providers[m.provider]) providers[m.provider] = [];
+                providers[m.provider].push(m);
+            });
+            var html = '';
+            Object.keys(providers).forEach(function(provider) {
+                html += '<optgroup label="' + provider + '">';
+                providers[provider].forEach(function(m) {
+                    html += '<option value="' + m.id + '">' + m.name + ' — $' + m.input.toFixed(2) + '/$' + m.output.toFixed(2) + ' per 1M</option>';
+                });
+                html += '</optgroup>';
+            });
+            select.innerHTML = html;
+            // Default to a mid-tier model
+            select.value = 'openai-gpt4o';
+        }
+
+        function applyPreset(type) {
+            document.querySelectorAll('.preset-btn').forEach(function(b) { b.classList.remove('active-preset'); });
+            event.target.classList.add('active-preset');
+            var presets = {
+                mvp:     { model: 'openai-gpt4o-mini', input: 800, output: 300, requests: 100, growth: 30 },
+                growth:  { model: 'openai-gpt4o',      input: 1200, output: 400, requests: 500, growth: 20 },
+                scale:   { model: 'openai-gpt5',       input: 1500, output: 500, requests: 3000, growth: 15 },
+                enterprise: { model: 'anthropic-sonnet46', input: 2000, output: 600, requests: 10000, growth: 8 }
+            };
+            var p = presets[type];
+            document.getElementById('model').value = p.model;
+            document.getElementById('input-tokens').value = p.input;
+            document.getElementById('output-tokens').value = p.output;
+            document.getElementById('requests-day').value = p.requests;
+            document.getElementById('growth-rate').value = p.growth;
+            calculate();
+            if (window.trackEvent) window.trackEvent('preset_applied', { preset: type, tool: 'cost_projection' });
+        }
+
+        function calculate() {
+            var modelId = document.getElementById('model').value;
+            var model = API_MODELS.find(function(m) { return m.id === modelId; });
+            if (!model) return;
+
+            var inputTokens = parseInt(document.getElementById('input-tokens').value) || 0;
+            var outputTokens = parseInt(document.getElementById('output-tokens').value) || 0;
+            var requestsDay = parseInt(document.getElementById('requests-day').value) || 0;
+            var growthRate = parseFloat(document.getElementById('growth-rate').value) || 0;
+            var months = parseInt(document.getElementById('projection-months').value) || 6;
+
+            var growthMult = 1 + (growthRate / 100);
+            var monthData = [];
+            var cumulative = 0;
+            var month1Cost = 0;
+            var finalCost = 0;
+
+            for (var m = 1; m <= months; m++) {
+                var rpd = requestsDay * Math.pow(growthMult, m - 1);
+                var rpm = rpd * 30;
+                var totalIn = rpm * inputTokens;
+                var totalOut = rpm * outputTokens;
+                var cost = (totalIn / 1e6) * model.input + (totalOut / 1e6) * model.output;
+                cumulative += cost;
+                monthData.push({ month: m, rpd: rpd, rpm: rpm, totalTokens: totalIn + totalOut, cost: cost, cumulative: cumulative });
+                if (m === 1) month1Cost = cost;
+                if (m === months) finalCost = cost;
+            }
+
+            // Update summary
+            document.getElementById('month1-cost').textContent = '$' + month1Cost.toFixed(2);
+            document.getElementById('final-month-cost').textContent = '$' + finalCost.toFixed(2);
+            var increase = month1Cost > 0 ? ((finalCost - month1Cost) / month1Cost * 100) : 0;
+            document.getElementById('cost-increase').textContent = '+' + Math.round(increase) + '%';
+            document.getElementById('total-spend').textContent = '$' + cumulative.toFixed(2);
+            document.getElementById('avg-monthly').textContent = '$' + (cumulative / months).toFixed(2);
+            document.getElementById('period-total').textContent = '$' + cumulative.toFixed(2);
+
+            // Milestones
+            renderMilestones(monthData, model.name);
+
+            // Scenarios
+            renderScenarios(inputTokens, outputTokens, requestsDay, months, model);
+
+            // Chart
+            renderChart(monthData);
+
+            // Table
+            renderTable(monthData);
+
+            // Share URLs
+            updateShareUrls();
+
+            if (window.trackEvent && cumulative > 0) {
+                clearTimeout(window._projTrackTimer);
+                window._projTrackTimer = setTimeout(function() {
+                    window.trackEvent('calculator_used', {
+                        model: model.name,
+                        total_spend: cumulative.toFixed(2),
+                        growth_rate: growthRate,
+                        months: months,
+                        tool: 'cost_projection'
+                    });
+                }, 1000);
+            }
+        }
+
+        function renderMilestones(monthData, modelName) {
+            var container = document.getElementById('milestones-container');
+            var thresholds = [100, 500, 1000, 2500, 5000, 10000, 25000, 50000];
+            var hits = [];
+            var foundCosts = {};
+
+            thresholds.forEach(function(t) {
+                for (var i = 0; i < monthData.length; i++) {
+                    if (monthData[i].cost >= t && !foundCosts[t]) {
+                        foundCosts[t] = i + 1;
+                        hits.push({ threshold: t, month: i + 1 });
+                        break;
+                    }
+                }
+            });
+
+            if (hits.length === 0) {
+                container.innerHTML = '<div style="background:rgba(34,197,94,0.1);border:1px solid rgba(34,197,94,0.3);color:var(--green);padding:10px 16px;border-radius:8px;font-size:13px;font-weight:600;margin-top:16px;text-align:center;">Your costs stay under $100/mo for this projection period — great for budget control!</div>';
+                return;
+            }
+
+            var html = '<div style="margin-top:16px;"><h3 style="font-size:14px;font-weight:700;margin-bottom:10px;color:var(--text-primary);">Budget Milestones</h3>';
+            hits.forEach(function(h) {
+                var tips = {
+                    100: 'Start tracking costs per feature',
+                    500: 'Compare budget models — GPT-4o mini saves 90%+',
+                    1000: 'Implement model routing — Haiku for simple tasks',
+                    2500: 'Consider volume discounts or caching',
+                    5000: 'Explore fine-tuning for high-volume patterns',
+                    10000: 'Evaluate dedicated inference or self-hosting',
+                    25000: 'Negotiate enterprise pricing with providers',
+                    50000: 'Consider a hybrid approach with self-hosted models'
+                };
+                html += '<div style="background:rgba(245,158,11,0.05);border:1px solid rgba(245,158,11,0.2);border-radius:8px;padding:10px 14px;margin-bottom:8px;display:flex;justify-content:space-between;align-items:center;">';
+                html += '<div><div style="font-size:14px;font-weight:600;">Hit $' + h.threshold.toLocaleString() + '/mo at month ' + h.month + '</div>';
+                html += '<div style="font-size:12px;color:var(--text-secondary);">' + (tips[h.threshold] || '') + '</div></div>';
+                html += '<div style="background:rgba(245,158,11,0.15);color:var(--orange);padding:4px 10px;border-radius:6px;font-size:12px;font-weight:700;">Month ' + h.month + '</div>';
+                html += '</div>';
+            });
+            html += '</div>';
+            container.innerHTML = html;
+        }
+
+        function renderScenarios(inputTokens, outputTokens, requestsDay, months, model) {
+            var container = document.getElementById('scenarios-grid');
+            var rates = [
+                { label: 'Conservative', rate: 5, color: 'var(--green)' },
+                { label: 'Moderate', rate: 20, color: 'var(--accent)' },
+                { label: 'Aggressive', rate: 40, color: 'var(--orange)' }
+            ];
+
+            var html = '';
+            rates.forEach(function(s) {
+                var totalCost = 0;
+                var finalMonth = 0;
+                for (var m = 1; m <= months; m++) {
+                    var rpd = requestsDay * Math.pow(1 + s.rate / 100, m - 1);
+                    var cost = (rpd * 30 * inputTokens / 1e6) * model.input + (rpd * 30 * outputTokens / 1e6) * model.output;
+                    totalCost += cost;
+                    if (m === months) finalMonth = cost;
+                }
+                var isCurrent = s.rate === parseFloat(document.getElementById('growth-rate').value);
+                html += '<div class="scenario-card' + (isCurrent ? ' highlighted' : '') + '">';
+                html += '<div class="scenario-label" style="color:' + s.color + ';">' + s.label + '</div>';
+                html += '<div class="scenario-rate">' + s.rate + '%/mo</div>';
+                html += '<div class="scenario-cost">$' + totalCost.toFixed(0) + '</div>';
+                html += '<div class="scenario-period">total over ' + months + ' months</div>';
+                html += '<div style="font-size:12px;color:var(--text-muted);margin-top:8px;">Final month: $' + finalMonth.toFixed(0) + '/mo</div>';
+                html += '</div>';
+            });
+            container.innerHTML = html;
+        }
+
+        function renderChart(monthData) {
+            var container = document.getElementById('bar-chart');
+            var maxCost = Math.max.apply(null, monthData.map(function(d) { return d.cost; }));
+            var colors = ['#6366f1', '#818cf8', '#a5b4fc', '#6366f1', '#818cf8', '#a5b4fc', '#6366f1', '#818cf8', '#a5b4fc', '#6366f1', '#818cf8', '#a5b4fc'];
+
+            var html = '';
+            monthData.forEach(function(d) {
+                var height = maxCost > 0 ? (d.cost / maxCost * 180) : 0;
+                var color = colors[(d.month - 1) % colors.length];
+                html += '<div class="bar-wrapper">';
+                html += '<div class="bar-cost">$' + (d.cost >= 1000 ? (d.cost / 1000).toFixed(1) + 'k' : d.cost.toFixed(0)) + '</div>';
+                html += '<div class="bar" style="height:' + Math.max(height, 2) + 'px;background:' + color + ';"></div>';
+                html += '<div class="bar-label">M' + d.month + '</div>';
+                html += '</div>';
+            });
+            container.innerHTML = html;
+        }
+
+        function renderTable(monthData) {
+            var tbody = document.getElementById('projection-tbody');
+            var html = '';
+            monthData.forEach(function(d) {
+                html += '<tr>';
+                html += '<td class="month-label">Month ' + d.month + '</td>';
+                html += '<td>' + Math.round(d.rpd).toLocaleString() + '</td>';
+                html += '<td>' + Math.round(d.rpm).toLocaleString() + '</td>';
+                html += '<td>' + d.totalTokens.toLocaleString() + '</td>';
+                html += '<td class="cost-value" style="color:var(--accent);">$' + d.cost.toFixed(2) + '</td>';
+                html += '<td class="cost-value">$' + d.cumulative.toFixed(2) + '</td>';
+                html += '</tr>';
+            });
+            tbody.innerHTML = html;
+        }
+
+        function updateShareUrls() {
+            var params = new URLSearchParams();
+            params.set('m', document.getElementById('model').value);
+            params.set('i', document.getElementById('input-tokens').value);
+            params.set('o', document.getElementById('output-tokens').value);
+            params.set('r', document.getElementById('requests-day').value);
+            params.set('g', document.getElementById('growth-rate').value);
+            params.set('p', document.getElementById('projection-months').value);
+            var url = 'https://getapipulse.com/cost-projection.html?' + params.toString();
+            document.getElementById('share-x').href = 'https://x.com/intent/tweet?text=' + encodeURIComponent('Forecasting my AI API costs with @APIpulse — here\'s my ' + document.getElementById('projection-months').value + '-month projection: ' + url);
+            document.getElementById('share-linkedin').href = 'https://www.linkedin.com/sharing/share-offsite/?url=' + encodeURIComponent(url);
+        }
+
+        function copyResults() {
+            var model = document.getElementById('model');
+            var selectedText = model.options[model.selectedIndex].text;
+            var text = [
+                'AI API Cost Projection',
+                '======================',
+                'Model: ' + selectedText,
+                'Month 1: ' + document.getElementById('month1-cost').textContent,
+                'Final month: ' + document.getElementById('final-month-cost').textContent,
+                'Total spend: ' + document.getElementById('total-spend').textContent,
+                'Avg monthly: ' + document.getElementById('avg-monthly').textContent,
+                '',
+                'Project yours: ' + window.location.href
+            ].join('\n');
+
+            navigator.clipboard.writeText(text).then(function() {
+                var btn = document.getElementById('copy-btn-text');
+                btn.textContent = 'Copied!';
+                setTimeout(function() { btn.textContent = 'Copy Results to Clipboard'; }, 2000);
+                if (window.trackEvent) window.trackEvent('copy_results', { tool: 'cost_projection' });
+            });
+        }
+
+        function loadFromUrl() {
+            var params = new URLSearchParams(window.location.search);
+            if (!params.has('m')) return;
+            var m = params.get('m');
+            var select = document.getElementById('model');
+            if (select.querySelector('option[value="' + m + '"]')) select.value = m;
+            if (params.has('i')) document.getElementById('input-tokens').value = params.get('i');
+            if (params.has('o')) document.getElementById('output-tokens').value = params.get('o');
+            if (params.has('r')) document.getElementById('requests-day').value = params.get('r');
+            if (params.has('g')) document.getElementById('growth-rate').value = params.get('g');
+            if (params.has('p')) document.getElementById('projection-months').value = params.get('p');
+        }
+
+        // Init
+        document.addEventListener('DOMContentLoaded', function() {
+            populateModels();
+            loadFromUrl();
+            calculate();
+        });
+    </script>
+</body>
+</html>
