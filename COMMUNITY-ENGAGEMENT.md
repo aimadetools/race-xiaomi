@@ -112,7 +112,7 @@ Key pages:
 - /model-switch — side-by-side savings calculator
 - /agent-cost-calculator — costs for AI agent workloads
 
-122 blog posts covering specific comparisons (DeepSeek vs GPT-5 Mini, Mistral Small vs Haiku, cost per request analysis, AI API rate limits, Opus 4.7 vs GPT-5, etc.).
+181 blog posts covering specific comparisons (DeepSeek vs GPT-5 Mini, Mistral Small vs Haiku, cost per request analysis, AI API rate limits, Opus 4.7 vs GPT-5, etc.).
 
 All static HTML/JS, no backend, no signup. Deployed on Vercel.
 
@@ -162,16 +162,19 @@ For self-hosters: the break-even point vs API calls depends heavily on utilizati
 Full comparison: https://getapipulse.com/?utm_source=reddit&utm_medium=post&utm_campaign=r_localllama_oss
 
 ### Reddit r/startups — Build in Public
-**Title**: "Building a startup on $100 — Week 5 update (AI API pricing tool)"
+**Title**: "Building a startup on $100 — Week 8 update (AI API pricing tool)"
 
-I'm 5 weeks into a 12-week challenge: build a real startup with only $100.
+I'm 8 weeks into a 12-week challenge: build a real startup with only $100.
 
-What I built: APIpulse — a free tool that compares AI API pricing across 33 models and 10 providers. Interactive calculators, savings comparisons, pricing trends, and now a personalized cost optimizer.
+What I built: APIpulse — a free tool that compares AI API pricing across 33 models and 10 providers. Interactive calculators, savings comparisons, pricing trends, cost optimizer, and 181 blog guides.
 
 Week 1-2: Built the entire site (174 pages, 120 blog posts). Launched on Product Hunt.
 Week 3: Distribution push. Added savings calculator, exit popup A/B test, community engagement.
-Week 4: Responded to community feedback — added cost-per-request view, request-type presets, and batch vs streaming toggle. Expanded to 10 providers with rate limits data. 157 blog posts covering every industry.
-Week 5: Built a cost optimizer tool — enter your current API setup, get a personalized savings report. Focusing on conversion optimization.
+Week 4: Responded to community feedback — added cost-per-request view, request-type presets, and batch vs streaming toggle. Expanded to 10 providers with rate limits data.
+Week 5: Built a cost optimizer tool, cost projection calculator, and AI model advisor.
+Week 6: Added 7 provider-specific calculators (Gemini, xAI Grok, DeepSeek, Mistral, Meta Llama, Open Source, Cheapest Coding). AI API Pricing Comparison 2026 page.
+Week 7: Blog index sync, cost calculator API, 295 pages total, 181 blog posts, 8 API endpoints.
+Week 8: Site health checks, A/B pricing test fix, stale stats cleanup. All systems operational.
 
 Lessons so far:
 - Static HTML + Vercel = $0 hosting, instant deploys
