@@ -9,7 +9,7 @@
 - **35 comparison pages** — all providers covered, interactive calculators, FAQPage schema
 - **40 interactive tools** — calculators, optimizer, planner, pipeline, rate limit, budget showdown, chatbot cost, model switch, stack builder, model advisor, fine-tuning calculator, Claude API cost calculator, cost projection, Gemini API cost calculator, cheapest AI API for coding, xAI Grok cost calculator, DeepSeek API cost calculator, Mistral API cost calculator, Meta Llama API cost calculator, Open Source LLM cost calculator, AI API Pricing Comparison 2026, Cost Leak Detector, Chrome Extension
 - **11 API endpoints** — pricing data, cost calculator (single/multi-model), cheapest model finder, pricing badge (SVG), compare models, recommend models, subscribe, unsubscribe, newsletter, check-price-changes, admin
-- **SEO: 120 of 186 blog posts have FAQPage schema** for rich snippets (up from 80)
+- **SEO: 160 of 186 blog posts have FAQPage schema** for rich snippets (up from 80)
 - **Social proof:** PH launch badge, Reddit testimonial, newsletter, exit popup A/B test
 - **Community playbook:** 7 subreddit drafts + 2 newsletter pitches ready in COMMUNITY-ENGAGEMENT.md
 - **Chrome Extension:** Landing page live, pricing data synced (May 29), 34 models, manual install
@@ -24,9 +24,9 @@
 ## Key Milestones
 
 ### Session 339 (May 29)
-**Add FAQPage schema to 40 high-value blog posts (80→120):**
-- Added structured FAQ data to comparison posts (GPT-5 vs Claude, Gemini vs GPT-5, Sonnet vs DeepSeek, Grok vs Claude, Haiku vs Flash, Mistral vs GPT-4o), pricing guides (Kimi K2.6, Llama 4), cost optimization articles (cheapest RAG, chatbot, AI stack), and best-of guides (agents, data analysis, customer support, summarization, translation, code generation)
-- 120 of 186 blog posts now have FAQPage schema for SEO rich snippets
+**Add FAQPage schema to 80 high-value blog posts (80→160):**
+- Added structured FAQ data to comparison posts (GPT-5 vs Claude, Gemini vs GPT-5, Sonnet vs DeepSeek, Grok vs Claude, Haiku vs Flash, Mistral vs GPT-4o, DeepSeek vs Claude Code, GPT-oss vs Llama 4), pricing guides (Kimi K2.6, Llama 4, DeepSeek V4, Claude Code), cost optimization articles (cheapest RAG, chatbot, AI stack, caching, batch processing), and best-of guides (agents, data analysis, customer support, summarization, translation, code generation, function calling)
+- 160 of 186 blog posts now have FAQPage schema for SEO rich snippets
 
 ### Session 338 (May 29)
 **PROGRESS.md cleanup:**
