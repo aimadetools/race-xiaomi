@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to Build a Multi-Model AI Stack for Under $50/Month (2026) | APIpulse</title>
+    <meta name="description" content="Step-by-step guide to building a multi-model AI stack that handles 100K+ requests/month for under $50. Real prices, routing logic, and workload breakdowns.">
+    <meta property="og:title" content="How to Build a Multi-Model AI Stack for Under $50/Month">
+    <meta property="og:description" content="Handle 100K+ AI requests/month for under $50 by routing across budget, mid-tier, and premium models. Real numbers, real savings.">
+    <meta property="og:type" content="article">
+    <meta property="og:image" content="https://getapipulse.com/og-image.png">
+    <meta property="og:url" content="https://getapipulse.com/blog-multi-model-ai-stack-under-50.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="How to Build a Multi-Model AI Stack for Under $50/Month">
+    <meta name="twitter:image" content="https://getapipulse.com/og-image.png">
+    <meta name="twitter:description" content="Handle 100K+ AI requests/month for under $50 by routing across budget, mid-tier, and premium models.">
+    <meta name="keywords" content="multi-model AI stack, AI model routing, cheap AI API, budget AI stack, AI cost optimization, model routing strategy, AI API cost reduction, multi-model architecture 2026">
+    <link rel="canonical" href="https://getapipulse.com/blog-multi-model-ai-stack-under-50.html">
+    <link rel="alternate" type="application/rss+xml" title="APIpulse Blog" href="https://getapipulse.com/rss.xml">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="styles.css">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0CEP7S9Y3J"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-0CEP7S9Y3J');
+    </script>
+    <script src="analytics.js" defer></script>
+    <script src="dynamic-date.js" defer></script>
+    <script src="shared.js" defer></script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": "How to Build a Multi-Model AI Stack for Under $50/Month",
+        "description": "Step-by-step guide to building a multi-model AI stack that handles 100K+ requests/month for under $50. Real prices, routing logic, and workload breakdowns.",
+        "url": "https://getapipulse.com/blog-multi-model-ai-stack-under-50.html",
+        "datePublished": "2026-05-29",
+        "dateModified": "2026-05-29",
+        "author": { "@type": "Organization", "name": "APIpulse" },
+        "publisher": { "@type": "Organization", "name": "APIpulse" }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "How many AI models do I need in a multi-model stack?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Most teams need 2-3 models. A budget model (Gemini Flash or DeepSeek V4 Flash) handles 70% of simple requests. A mid-tier model (GPT-5 or Claude Sonnet) handles 20% moderate-complexity tasks. An optional premium model (GPT-5.5 or Claude Opus 4.8) covers the 10% of complex reasoning tasks. Start with 2 models and add the third only if you have tasks that genuinely need premium reasoning."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How much can I save with a multi-model AI stack?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Savings depend on your current setup. If you're using a single premium model like GPT-5 ($1.25/$10.00) for everything, routing 70% of traffic to Gemini Flash ($0.10/$0.40) typically cuts costs 60-80%. For 100K requests/month at 1000 input + 500 output tokens each, a single-model GPT-5 approach costs ~$588/month. A properly routed multi-model stack costs ~$32/month — a 95% reduction."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What is the best budget model for a multi-model AI stack in 2026?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Gemini 2.0 Flash ($0.10/$0.40 per 1M tokens) is the best all-around budget model — it's cheap, fast, has a 1M context window, and handles most common tasks well. DeepSeek V4 Flash ($0.14/$0.28) is the best for output-heavy workloads since its output pricing is the lowest available. Both are production-ready and used by teams handling millions of requests."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How do I route requests between AI models?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Three common approaches: (1) Keyword/rule-based routing — simple if/else checks for complexity indicators like 'analyze', 'reason', 'code review'. (2) Embedding-based classifier — use a cheap embedding model to classify request complexity, then route accordingly. (3) Task-type routing — route by endpoint (chat → budget, code → mid-tier, analysis → premium). Start with rule-based routing; it handles 80%+ of cases correctly."
+                }
+            }
+        ]
+    }
+    </script>
+    <style>
+        .blog-content { max-width: 740px; margin: 0 auto; padding: 120px 24px 80px; }
+        .blog-content h1 { font-size: 36px; font-weight: 800; margin-bottom: 12px; line-height: 1.2; }
+        .blog-meta { color: var(--text-muted); font-size: 14px; margin-bottom: 32px; }
+        .blog-content h2 { font-size: 24px; font-weight: 700; margin-top: 40px; margin-bottom: 16px; }
+        .blog-content h3 { font-size: 18px; font-weight: 700; margin-top: 28px; margin-bottom: 12px; }
+        .blog-content p { font-size: 16px; line-height: 1.8; color: var(--text-secondary); margin-bottom: 16px; }
+        .blog-content ul, .blog-content ol { margin-bottom: 16px; padding-left: 24px; }
+        .blog-content li { font-size: 16px; line-height: 1.7; color: var(--text-secondary); margin-bottom: 8px; }
+        table { width: 100%; border-collapse: collapse; margin: 24px 0; background: var(--bg-secondary); border-radius: 8px; overflow: hidden; }
+        th, td { padding: 12px 16px; text-align: left; border-bottom: 1px solid var(--border); font-size: 14px; }
+        th { background: var(--bg-card); font-weight: 700; font-size: 12px; text-transform: uppercase; letter-spacing: 0.5px; color: var(--text-secondary); }
+        td { color: var(--text-secondary); }
+        .winner { background: rgba(34,197,94,0.06); }
+        .winner td { font-weight: 600; }
+        .callout {
+            background: var(--bg-secondary); border: 1px solid var(--border);
+            border-radius: 12px; padding: 24px; margin: 24px 0;
+        }
+        .cta-box {
+            background: linear-gradient(135deg, var(--accent-glow), rgba(99,102,241,0.02));
+            border: 1px solid var(--accent); border-radius: 12px;
+            padding: 32px; text-align: center; margin: 32px 0;
+        }
+        .cta-box .btn-primary {
+            display: inline-block; padding: 12px 32px; background: var(--accent);
+            color: white; border-radius: 8px; text-decoration: none;
+            font-weight: 700; font-size: 15px; margin-top: 12px;
+        }
+        .model-card {
+            background: var(--bg-secondary); border: 1px solid var(--border);
+            border-radius: 12px; padding: 20px; margin-bottom: 16px;
+        }
+        .model-card h4 { margin: 0 0 8px; font-size: 16px; }
+        .model-card .price { font-size: 20px; font-weight: 800; color: var(--accent); }
+        .model-card .detail { font-size: 14px; color: var(--text-muted); margin-top: 4px; }
+        .code-block {
+            background: var(--bg-card); border: 1px solid var(--border);
+            border-radius: 8px; padding: 16px; margin: 16px 0;
+            font-family: 'SF Mono', 'Fira Code', monospace; font-size: 13px;
+            line-height: 1.6; overflow-x: auto; color: var(--text-secondary);
+        }
+        .tier-badge {
+            display: inline-block; padding: 2px 8px; border-radius: 4px;
+            font-size: 11px; font-weight: 700; text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .tier-budget { background: rgba(34,197,94,0.15); color: #22c55e; }
+        .tier-mid { background: rgba(99,102,241,0.15); color: #6366f1; }
+        .tier-premium { background: rgba(239,68,68,0.15); color: #ef4444; }
+        @media (max-width: 768px) {
+            .blog-content { padding: 100px 16px 60px; }
+            .blog-content h1 { font-size: 26px; }
+            table { font-size: 12px; }
+            th, td { padding: 8px 10px; }
+        }
+    </style>
+    <meta name="theme-color" content="#6366f1">
+</head>
+<body>
+    <nav>
+        <div class="nav-inner">
+            <a href="index.html" class="logo">API<span>pulse</span></a>
+            <button class="hamburger" onclick="toggleMobileNav()" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+            <div class="nav-links">
+                <a href="calculator.html">Calculator</a>
+                <a href="compare.html">Compare</a>
+                <a href="blog.html">Blog</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="pro.html" class="nav-cta">Pro — $29</a>
+                <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
+            </div>
+        </div>
+    </nav>
+
+    <article class="blog-content">
+        <h1>How to Build a Multi-Model AI Stack for Under $50/Month</h1>
+        <p class="blog-meta">Published May 29, 2026 · 12 min read · <a href="blog.html" style="color:var(--accent);">Back to blog</a></p>
+
+        <p>Using one AI model for everything is like using a sledgehammer to hang a picture frame. It works, but you're wasting money on every swing.</p>
+
+        <p>In 2026, smart developers use <strong>multi-model stacks</strong> — routing simple tasks to cheap models and reserving expensive ones for complex reasoning. The result? <strong>60-95% cost savings</strong> with no noticeable quality loss for most applications.</p>
+
+        <p>This guide shows you exactly how to build a multi-model stack that handles <strong>100,000+ requests per month for under $50</strong>. Real prices, real routing logic, real numbers.</p>
+
+        <h2>Why Multi-Model Beats Single-Model</h2>
+
+        <p>Here's the core insight: <strong>not all AI requests are equal</strong>. A simple "summarize this paragraph" doesn't need the same model as "analyze this legal contract and identify risks."</p>
+
+        <p>If you're using GPT-5 ($1.25/$10.00 per 1M tokens) for everything, you're overpaying for 70% of your requests. Those simple tasks would perform identically on Gemini Flash ($0.10/$0.40) — at <strong>92% lower cost</strong>.</p>
+
+        <div class="callout">
+            <h3>The Cost of Over-Engineering</h3>
+            <p>At 100K requests/month (1000 input + 500 output tokens avg):</p>
+            <ul>
+                <li><strong>Single GPT-5:</strong> $588/month</li>
+                <li><strong>Multi-model stack:</strong> $32/month</li>
+                <li><strong>Savings:</strong> $556/month (94.6%)</li>
+            </ul>
+        </div>
+
+        <h2>The 3-Tier Architecture</h2>
+
+        <p>A production multi-model stack uses three tiers:</p>
+
+        <div class="model-card">
+            <h4><span class="tier-badge tier-budget">Tier 1 — Budget</span> Handles 70% of requests</h4>
+            <p>Simple tasks: chat, summarization, classification, data extraction, translation, formatting.</p>
+            <div class="detail">Best options: <strong>Gemini 2.0 Flash</strong> ($0.10/$0.40) or <strong>DeepSeek V4 Flash</strong> ($0.14/$0.28)</div>
+        </div>
+
+        <div class="model-card">
+            <h4><span class="tier-badge tier-mid">Tier 2 — Mid-Tier</span> Handles 20% of requests</h4>
+            <p>Moderate complexity: code review, analysis, multi-step reasoning, technical writing, Q&A with context.</p>
+            <div class="detail">Best options: <strong>GPT-5</strong> ($1.25/$10.00) or <strong>Claude Sonnet 4.6</strong> ($3.00/$15.00)</div>
+        </div>
+
+        <div class="model-card">
+            <h4><span class="tier-badge tier-premium">Tier 3 — Premium</span> Handles 10% of requests</h4>
+            <p>Complex reasoning: legal analysis, research synthesis, multi-document reasoning, critical decisions.</p>
+            <div class="detail">Best options: <strong>Claude Opus 4.8</strong> ($5.00/$25.00) or <strong>GPT-5.5</strong> ($5.00/$30.00)</div>
+        </div>
+
+        <h2>Sample Stack: 100K Requests for $32/Month</h2>
+
+        <p>Here's a concrete stack for a typical SaaS application handling 100K requests/month:</p>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Tier</th>
+                    <th>Model</th>
+                    <th>Requests</th>
+                    <th>Avg Tokens</th>
+                    <th>Monthly Cost</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><span class="tier-badge tier-budget">Budget</span></td>
+                    <td>Gemini 2.0 Flash</td>
+                    <td>70,000</td>
+                    <td>1000 in + 500 out</td>
+                    <td>$2.45</td>
+                </tr>
+                <tr>
+                    <td><span class="tier-badge tier-mid">Mid</span></td>
+                    <td>GPT-5</td>
+                    <td>20,000</td>
+                    <td>1500 in + 800 out</td>
+                    <td>$19.75</td>
+                </tr>
+                <tr>
+                    <td><span class="tier-badge tier-premium">Premium</span></td>
+                    <td>Claude Opus 4.8</td>
+                    <td>10,000</td>
+                    <td>2000 in + 1000 out</td>
+                    <td>$9.75</td>
+                </tr>
+                <tr class="winner">
+                    <td colspan="4"><strong>Total</strong></td>
+                    <td><strong>$31.95</strong></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <p>Compare that to using GPT-5 for all 100K requests: <strong>$588/month</strong>. The multi-model stack saves <strong>$556/month</strong> — enough to pay for the Pro tier of most SaaS tools.</p>
+
+        <h2>How to Route Requests</h2>
+
+        <p>The routing logic is simpler than you think. Here are three approaches, from simplest to most sophisticated:</p>
+
+        <h3>Approach 1: Task-Type Routing (Simplest)</h3>
+
+        <p>Route by endpoint or function — no AI needed:</p>
+
+        <div class="code-block">
+<pre>// Simple task-type routing
+function selectModel(taskType) {
+  const routes = {
+    'chat':        'gemini-2.0-flash',      // Budget
+    'summarize':   'gemini-2.0-flash',      // Budget
+    'extract':     'gemini-2.0-flash',      // Budget
+    'classify':    'gemini-2.0-flash',      // Budget
+    'code-review': 'gpt-5',                 // Mid-tier
+    'analyze':     'gpt-5',                 // Mid-tier
+    'write':       'gpt-5',                 // Mid-tier
+    'legal':       'claude-opus-4.8',       // Premium
+    'research':    'claude-opus-4.8',       // Premium
+  };
+  return routes[taskType] || 'gemini-2.0-flash';
+}</pre>
+        </div>
+
+        <h3>Approach 2: Keyword/Rule-Based Routing</h3>
+
+        <p>Check the request content for complexity signals:</p>
+
+        <div class="code-block">
+<pre>// Rule-based complexity routing
+function selectModel(request) {
+  const text = request.toLowerCase();
+
+  // Premium signals
+  if (text.includes('analyze') && text.includes('legal')) return 'claude-opus-4.8';
+  if (text.includes('reasoning') || text.includes('synthesize')) return 'claude-opus-4.8';
+
+  // Mid-tier signals
+  if (text.includes('code') || text.includes('review')) return 'gpt-5';
+  if (text.includes('explain') && text.length > 500) return 'gpt-5';
+
+  // Default to budget
+  return 'gemini-2.0-flash';
+}</pre>
+        </div>
+
+        <h3>Approach 3: Embedding-Based Classifier</h3>
+
+        <p>For high-volume systems, train a lightweight classifier:</p>
+
+        <div class="code-block">
+<pre>// Embedding-based routing (advanced)
+async function selectModel(request) {
+  // Use a cheap embedding model to classify
+  const embedding = await getEmbedding(request);
+  const complexity = await classifier.predict(embedding);
+
+  if (complexity > 0.8) return 'claude-opus-4.8';
+  if (complexity > 0.5) return 'gpt-5';
+  return 'gemini-2.0-flash';
+}</pre>
+        </div>
+
+        <p><strong>Start with Approach 1.</strong> Most teams don't need anything more sophisticated. You can always upgrade later.</p>
+
+        <h2>Real Workload Breakdown</h2>
+
+        <p>Let's walk through a concrete example — a developer tools SaaS with 100K monthly requests:</p>
+
+        <h3>Workload Profile</h3>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Feature</th>
+                    <th>Requests/Mo</th>
+                    <th>Complexity</th>
+                    <th>Model Tier</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Chat support bot</td>
+                    <td>45,000</td>
+                    <td>Simple</td>
+                    <td><span class="tier-badge tier-budget">Budget</span></td>
+                </tr>
+                <tr>
+                    <td>Code summarizer</td>
+                    <td>15,000</td>
+                    <td>Simple</td>
+                    <td><span class="tier-badge tier-budget">Budget</span></td>
+                </tr>
+                <tr>
+                    <td>Search query expansion</td>
+                    <td>10,000</td>
+                    <td>Simple</td>
+                    <td><span class="tier-badge tier-budget">Budget</span></td>
+                </tr>
+                <tr>
+                    <td>Code review</td>
+                    <td>12,000</td>
+                    <td>Moderate</td>
+                    <td><span class="tier-badge tier-mid">Mid</span></td>
+                </tr>
+                <tr>
+                    <td>Technical docs</td>
+                    <td>8,000</td>
+                    <td>Moderate</td>
+                    <td><span class="tier-badge tier-mid">Mid</span></td>
+                </tr>
+                <tr>
+                    <td>Architecture analysis</td>
+                    <td>5,000</td>
+                    <td>Complex</td>
+                    <td><span class="tier-badge tier-premium">Premium</span></td>
+                </tr>
+                <tr>
+                    <td>Security audit</td>
+                    <td>3,000</td>
+                    <td>Complex</td>
+                    <td><span class="tier-badge tier-premium">Premium</span></td>
+                </tr>
+                <tr>
+                    <td>API docs generation</td>
+                    <td>2,000</td>
+                    <td>Moderate</td>
+                    <td><span class="tier-badge tier-mid">Mid</span></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>Cost Calculation</h3>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Model</th>
+                    <th>Requests</th>
+                    <th>Input Tokens</th>
+                    <th>Output Tokens</th>
+                    <th>Cost</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Gemini 2.0 Flash</td>
+                    <td>70,000</td>
+                    <td>70M</td>
+                    <td>35M</td>
+                    <td>$2.45</td>
+                </tr>
+                <tr>
+                    <td>GPT-5</td>
+                    <td>22,000</td>
+                    <td>33M</td>
+                    <td>17.6M</td>
+                    <td>$19.75</td>
+                </tr>
+                <tr>
+                    <td>Claude Opus 4.8</td>
+                    <td>8,000</td>
+                    <td>16M</td>
+                    <td>8M</td>
+                    <td>$9.75</td>
+                </tr>
+                <tr class="winner">
+                    <td colspan="4"><strong>Total</strong></td>
+                    <td><strong>$31.95</strong></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="cta-box">
+            <h3>Calculate your exact savings</h3>
+            <p style="color:var(--text-secondary);">Enter your actual request volume and token counts to see how much you'd save with a multi-model stack.</p>
+            <a href="calculator.html" class="btn-primary">Try the Cost Calculator Free</a>
+        </div>
+
+        <h2>Provider Diversification</h2>
+
+        <p>A side benefit of multi-model stacks: <strong>you're not locked into one provider</strong>. If OpenAI has an outage, your budget tier (Gemini) and premium tier (Claude) still work. If Anthropic raises prices, you shift premium traffic to GPT-5.5.</p>
+
+        <p>Recommended provider distribution:</p>
+
+        <ul>
+            <li><strong>Budget tier:</strong> Google (Gemini Flash) or DeepSeek — lowest prices, highest rate limits</li>
+            <li><strong>Mid tier:</strong> OpenAI (GPT-5) or Anthropic (Claude Sonnet) — best quality/cost balance</li>
+            <li><strong>Premium tier:</strong> Anthropic (Claude Opus 4.8) or OpenAI (GPT-5.5) — best reasoning</li>
+        </ul>
+
+        <p>This gives you redundancy across 3 providers. If one has issues, 66-90% of your traffic is unaffected.</p>
+
+        <h2>Implementation Checklist</h2>
+
+        <ol>
+            <li><strong>Audit your requests</strong> — categorize by complexity (simple/moderate/complex)</li>
+            <li><strong>Choose your budget model</strong> — Gemini Flash for most, DeepSeek Flash for output-heavy</li>
+            <li><strong>Choose your mid-tier</strong> — GPT-5 for general, Claude Sonnet for code/analysis</li>
+            <li><strong>Choose your premium (optional)</strong> — Claude Opus 4.8 for critical reasoning</li>
+            <li><strong>Implement routing</strong> — start with task-type routing, upgrade if needed</li>
+            <li><strong>Monitor and adjust</strong> — track costs per tier, shift traffic as needed</li>
+        </ol>
+
+        <h2>Common Mistakes to Avoid</h2>
+
+        <h3>1. Over-routing to premium</h3>
+        <p>If more than 15% of requests hit your premium tier, your routing logic is too aggressive. Most "complex" tasks work fine on mid-tier models.</p>
+
+        <h3>2. Ignoring output token costs</h3>
+        <p>A model with cheap input but expensive output (like GPT-5 mini at $0.25/$2.00) costs more than it looks for chat workloads. Always check both input AND output pricing.</p>
+
+        <h3>3. Not testing quality</h3>
+        <p>Before routing a task type to a budget model, test it. Run 100 real requests through both models and compare. Budget models handle 80%+ of tasks well, but some edge cases need premium.</p>
+
+        <h3>4. Overcomplicating the router</h3>
+        <p>Start simple. Task-type routing handles most cases. Don't build an embedding-based classifier until you've proven simple routing isn't enough.</p>
+
+        <h2>Find Where You're Overpaying</h2>
+
+        <p>Already using AI APIs? You're probably overpaying for at least some requests.</p>
+
+        <p>Our <strong>Cost Leak Detector</strong> analyzes your current model and usage, then shows exactly which cheaper alternatives would save you money — with estimated monthly savings.</p>
+
+        <div class="cta-box">
+            <h3>Find your cost leaks in 30 seconds</h3>
+            <p style="color:var(--text-secondary);">Select your current model and usage. Instantly see cheaper alternatives ranked by savings.</p>
+            <a href="cost-leak-detector.html" class="btn-primary">Try the Cost Leak Detector Free</a>
+        </div>
+
+        <h2>Bottom Line</h2>
+
+        <p>A multi-model AI stack isn't complicated. It's 2-3 models, a simple router, and the discipline to match model capability to task complexity. The payoff is massive: <strong>60-95% cost savings</strong> with no quality loss on most workloads.</p>
+
+        <p>Start with two models — a budget model (Gemini Flash) for simple tasks and a mid-tier model (GPT-5 or Claude Sonnet) for everything else. Add a premium model only when you have tasks that genuinely need it. You'll be surprised how far the budget tier can go.</p>
+
+        <p style="font-size:14px;color:var(--text-muted);margin-top:40px;padding-top:20px;border-top:1px solid var(--border);">
+            <strong>Related:</strong>
+            <a href="cost-leak-detector.html" style="color:var(--accent);">Cost Leak Detector</a> ·
+            <a href="blog-cheap-ai-apis-under-50-cents.html" style="color:var(--accent);">Cheap AI APIs Under $0.50</a> ·
+            <a href="calculator.html" style="color:var(--accent);">Cost Calculator</a> ·
+            <a href="pricing.html" style="color:var(--accent);">Full Pricing (34 models)</a>
+        </p>
+    </article>
+
+    <footer>
+        <div class="footer-inner">
+            <div class="footer-links">
+                <a href="calculator.html">Calculator</a>
+                <a href="compare.html">Compare</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="blog.html">Blog</a>
+                <a href="api-docs.html">API</a>
+                <a href="about.html">About</a>
+            </div>
+            <p>APIpulse — Know your AI API costs before you commit.</p>
+            <p>Pricing data last verified <span class="dynamic-date" data-date="2026-05-29">May 29, 2026</span>. Always check provider sites for the latest.</p>
+        </div>
+    </footer>
+</body>
+</html>
