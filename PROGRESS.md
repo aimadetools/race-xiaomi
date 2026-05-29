@@ -28,14 +28,8 @@
 - Added structured FAQ data to all 106 remaining blog posts across comparison posts, pricing guides, cost optimization articles, best-of guides, and reference content
 - 186 of 186 blog posts now have FAQPage schema for SEO rich snippets
 
-### Session 338 (May 29)
-**PROGRESS.md cleanup:**
-- Collapsed Sessions 333-336 into the Sessions 300-337 summary block
-- Removed redundant blog post list from Session 337 detail
-- Updated backlog completed session counts
-
-### Sessions 300-337 (May 26-29)
-✅ 38 sessions: FAQPage schema on 80 blog posts (Sessions 330-337). PROGRESS.md cleanup. Chrome extension landing + API endpoints. Fixed compare.html index (26→35) + tools.html listing (37→40). 35 comparison pages. 40 tools. 11 API endpoints. Cost Leak Detector + blog. Claude Opus 4.8. Pricing badge API + blog. 7 provider calculators. 57 pages added (248→307), 18 blog posts (168→186), 5 API endpoints (6→11).
+### Sessions 300-338 (May 26-29)
+✅ 39 sessions: FAQPage schema on all 186 blog posts (Sessions 330-339). PROGRESS.md cleanup. Chrome extension landing + API endpoints. Fixed compare.html index (26→35) + tools.html listing (37→40). 35 comparison pages. 40 tools. 11 API endpoints. Cost Leak Detector + blog. Claude Opus 4.8. Pricing badge API + blog. 7 provider calculators. 57 pages added (248→307), 18 blog posts (168→186), 5 API endpoints (6→11).
 
 ### Sessions 1-299 (Apr 5 - May 25)
 ✅ Built full APIpulse: 264 pages, 168 blog posts, 34 models, 10 providers, 22 tools, 6 API endpoints. Domain, Stripe, Pro, GA4, newsletter, community playbook, exit popup, social sharing, conversion funnel.
