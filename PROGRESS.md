@@ -22,28 +22,17 @@
 
 ## Key Milestones
 
-### Session 335 (May 29)
-**Fix compare index + tools listing:**
-- Added 9 missing comparison pages to compare.html index (26→35): Anthropic vs DeepSeek, Claude Sonnet 4 vs Gemini 2.5 Pro, GPT-5.5 vs Claude Opus 4.7/4.8, GPT-5 vs DeepSeek V4 Pro, AI Coding Assistants, Best AI API for Startups, Free vs Pro
-- Added 3 missing tool cards to tools.html (37→40): Cost Leak Detector, AI API Pricing Comparison 2026, Cost Scenarios
+### Session 336 (May 29)
+**Add FAQPage schema to 10 high-value blog posts (50→60):**
+- Added FAQ structured data to pricing guides, comparison posts, and cost optimization articles
+- Posts: Anthropic pricing guide, OpenAI pricing guide, Gemini pricing guide, Best budget LLM APIs 2026, Mistral pricing guide, Cost optimization guide, RAG cost, Best AI API for production 2026, Flagship models 2026, OpenAI API alternatives
+- 60 of 186 blog posts now have FAQPage schema for SEO rich snippets
 
-### Session 334 (May 29)
-**Clean up PROGRESS.md:** Collapsed completed sessions into summaries.
-
-### Session 333 (May 29)
-**Chrome extension landing page + new API endpoints:**
-- Fixed Chrome extension models.js: synced pricing with pricing-data.js (GPT-5 mini $0.40→$0.25, added Claude Opus 4.8, Gemini 2.0 Flash Lite)
-- Created chrome-extension.html landing page with features, install steps, model table
-- Added Chrome Extension card to tools.html (40 tools total)
-- Created /api/compare endpoint: side-by-side model comparison with cost calculations
-- Created /api/recommend endpoint: personalized model recommendations by use case/budget/quality
-- Added Claude Opus 4.8 to /api/pricing and /api/cheapest endpoints (11 endpoints total)
-- Updated api-docs.html with new endpoints, parameter tables, and code examples
-- Updated sitemap.xml (300→301 URLs)
-- Added Chrome extension link to footers of index, tools, pricing pages
+### Sessions 333-335 (May 29)
+✅ Chrome extension landing page + API endpoints (compare, recommend). Fixed compare.html index (26→35) + tools.html listing (37→40). 35 comparison pages, 40 tools, 11 API endpoints.
 
 ### Sessions 300-332 (May 26-29)
-✅ 33 sessions: Chrome extension landing page + API endpoints (compare, recommend). 35 comparison pages. 40 tools. 11 API endpoints. Cost Leak Detector + blog. "Cheap AI APIs Under $0.50" blog. Multi-model AI stack blog. GPT-5 mini vs DeepSeek V4 Flash comparison. FAQPage schema on 5 blog posts. Claude Opus 4.8 added ($5/$25, 1M context). Model count 33→34. Pricing badge API + blog. 7 provider calculators, AI API Pricing Comparison 2026, batch/streaming toggle. Stale stats cleanup, sitemap 289→301, RSS 226→234, blog 181→186.
+✅ 33 sessions: Chrome extension landing + API endpoints. 35 comparison pages. 40 tools. 11 API endpoints. Cost Leak Detector + blog. FAQPage schema on 50 blog posts. Claude Opus 4.8. Pricing badge API + blog. 7 provider calculators. 57 pages added (248→307), 18 blog posts (168→186), 5 API endpoints (6→11).
 
 ### Sessions 1-299 (Apr 5 - May 25)
 ✅ Built full APIpulse: 264 pages, 168 blog posts, 34 models, 10 providers, 22 tools, 6 API endpoints. Domain, Stripe, Pro, GA4, newsletter, community playbook, exit popup, social sharing, conversion funnel.

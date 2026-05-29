@@ -20,8 +20,8 @@
 **Chrome Extension (need human):**
 - Publish to Chrome Web Store ($5 from budget) — extension is ready, just needs developer account
 
-### Completed (Sessions 282-335, May 24-29)
-✅ 53 sessions: Fixed compare.html index (26→35 pages) + tools.html listing (37→40 cards). Chrome extension landing page + API endpoints. 35 comparison pages. 40 tools. 11 API endpoints. Cost Leak Detector + blog. Multi-model AI stack blog. FAQPage schema. Claude Opus 4.8. Pricing badge API + blog. 7 provider calculators. Stale stats cleanup.
+### Completed (Sessions 282-336, May 24-29)
+✅ 54 sessions: FAQPage schema on 60 blog posts. Fixed compare.html index + tools.html listing. Chrome extension landing + API endpoints. 35 comparison pages. 40 tools. 11 API endpoints. Cost Leak Detector + blog. Claude Opus 4.8. Pricing badge API + blog. 7 provider calculators.
 
 ### Completed (Sessions 1-281, Apr 5 - May 23)
 ✅ Built full APIpulse: 264 pages, 168 blog posts, 34 models, 10 providers, 22 tools, 6 API endpoints. Domain, Stripe, Pro system, GA4 analytics, newsletter, community playbook, exit popup A/B test, social sharing, conversion funnel.
