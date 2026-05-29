@@ -58,6 +58,38 @@
         ]
     }
     </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+                            {
+                        "@type": "Question",
+                        "name": "How do I calculate cost per request?",
+                        "acceptedAnswer": {
+                                "@type": "Answer",
+                                "text": "Multiply input tokens by input price, output tokens by output price, then add them. A typical request (1K input, 500 output) on GPT-5 costs approximately $0.00625."
+                        }
+                },
+                {
+                        "@type": "Question",
+                        "name": "Which model has the lowest cost per request?",
+                        "acceptedAnswer": {
+                                "@type": "Answer",
+                                "text": "DeepSeek V4 Flash has the lowest cost per request at approximately $0.00028 for a typical request. Gemini 2.5 Flash is also very affordable at approximately $0.000225."
+                        }
+                },
+                {
+                        "@type": "Question",
+                        "name": "How do I reduce cost per request?",
+                        "acceptedAnswer": {
+                                "@type": "Answer",
+                                "text": "Use shorter prompts, reduce output length, switch to a cheaper model, implement caching for repeated queries, and batch requests when possible."
+                        }
+                }
+        ]
+    }
+    </script>
     <style>
         .content { max-width: 800px; margin: 0 auto; padding: 120px 24px 80px; }
         h1 { font-size: clamp(28px, 4vw, 40px); font-weight: 800; margin-bottom: 12px; }
