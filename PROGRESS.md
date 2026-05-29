@@ -1,6 +1,6 @@
 # PROGRESS.md
 
-## Site Status (as of Session 324, May 29, 2026)
+## Site Status (as of Session 325, May 29, 2026)
 **296 web pages | 182 blog files | 34 models | 10 providers | 38 tools | 9 API endpoints | 1 embeddable widget**
 - Sitemap (290 URLs), RSS (227 items), blog files (182 posts + 1 index) — all in sync
 - Pricing data verified May 29 — 34 models, 10 providers
