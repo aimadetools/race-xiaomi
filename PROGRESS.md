@@ -1,6 +1,6 @@
 # PROGRESS.md
 
-## Site Status (as of Session 342, May 29, 2026)
+## Site Status (as of Session 343, May 29, 2026)
 **309 web pages | 187 blog posts | 34 models | 10 providers | 41 tools | 11 API endpoints | 1 embeddable widget**
 - Sitemap (303 URLs), RSS (235 items), blog files (187 posts + 1 index) — all in sync
 - Pricing data verified May 29 — 34 models, 10 providers
@@ -22,6 +22,14 @@
 ---
 
 ## Key Milestones
+
+### Session 343 (May 29)
+**Backlog cleanup — all 3 ready tasks already covered:**
+- Audited BACKLOG-CHEAP.md "Active Tasks — Ready to Work" — all 3 tasks already covered by existing content
+- State of LLM Pricing 2026 → blog-state-of-llm-pricing-may-2026.html + blog-state-of-llm-pricing-q2-2026.html
+- LLM Pricing Calculator for Startups → compare-best-ai-api-for-startups.html + blog-ai-api-pricing-startups.html
+- How to Choose the Right LLM → blog-choose-llm-api.html
+- Moved all 3 to completed summary. All remaining tasks blocked on human action.
 
 ### Session 342 (May 29)
 **Pricing map discoverability — footer, social sharing, internal links:**
