@@ -13,6 +13,7 @@ const API_MODELS = [
     { id: 'openai-gpt5-mini', name: 'GPT-5 mini', provider: 'OpenAI', tier: 'Budget', input: 0.25, output: 2.00, context: '272K', strengths: ['general', 'chat', 'classification'] },
     { id: 'openai-gpt4o', name: 'GPT-4o', provider: 'OpenAI', tier: 'Mid', input: 2.50, output: 10.00, context: '128K', strengths: ['multimodal', 'general', 'vision'] },
     { id: 'openai-gpt4o-mini', name: 'GPT-4o mini', provider: 'OpenAI', tier: 'Budget', input: 0.15, output: 0.60, context: '128K', strengths: ['chat', 'classification', 'extraction'] },
+    { id: 'anthropic-opus48', name: 'Claude Opus 4.8', provider: 'Anthropic', tier: 'Premium', input: 5.00, output: 25.00, context: '1M', strengths: ['reasoning', 'analysis', 'coding'] },
     { id: 'anthropic-opus47', name: 'Claude Opus 4.7', provider: 'Anthropic', tier: 'Premium', input: 5.00, output: 25.00, context: '1M', strengths: ['reasoning', 'analysis', 'coding'] },
     { id: 'anthropic-opus', name: 'Claude 4 Opus', provider: 'Anthropic', tier: 'Premium', input: 15.00, output: 75.00, context: '200K', strengths: ['reasoning', 'analysis', 'creative'] },
     { id: 'anthropic-sonnet46', name: 'Claude Sonnet 4.6', provider: 'Anthropic', tier: 'Mid', input: 3.00, output: 15.00, context: '1M', strengths: ['coding', 'analysis', 'general'] },

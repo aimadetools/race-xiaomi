@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chrome Extension — AI API Price Checker | APIpulse</title>
+    <meta name="description" content="Free Chrome extension to check AI API pricing for 34 models across 10 providers. Instant cost estimates, model comparison, and budget calculator — right from your browser toolbar.">
+    <meta name="keywords" content="Chrome extension AI pricing, LLM cost checker, AI API price Chrome, GPT pricing extension, Claude pricing extension">
+    <meta property="og:title" content="Chrome Extension — AI API Price Checker | APIpulse">
+    <meta property="og:description" content="Free Chrome extension to check AI API pricing for 34 models. Instant cost estimates from your toolbar.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://getapipulse.com/og-image.png">
+    <meta property="og:url" content="https://getapipulse.com/chrome-extension.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Chrome Extension — AI API Price Checker | APIpulse">
+    <meta name="twitter:image" content="https://getapipulse.com/og-image.png">
+    <meta name="twitter:description" content="Free Chrome extension to check AI API pricing for 34 models. Instant cost estimates from your toolbar.">
+    <link rel="canonical" href="https://getapipulse.com/chrome-extension.html">
+    <link rel="alternate" type="application/rss+xml" title="APIpulse Blog" href="https://getapipulse.com/rss.xml">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="styles.css">
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0CEP7S9Y3J"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-0CEP7S9Y3J');
+    </script>
+    <script src="analytics.js" defer></script>
+    <script src="dynamic-date.js" defer></script>
+    <script src="shared.js" defer></script>
+    <style>
+        .content { max-width: 800px; margin: 0 auto; padding: 120px 24px 80px; }
+        h1 { font-size: clamp(28px, 4vw, 42px); font-weight: 800; text-align: center; margin-bottom: 16px; }
+        .subtitle { text-align: center; color: var(--text-secondary); font-size: 18px; margin-bottom: 40px; line-height: 1.6; }
+        .badge { display: inline-block; background: var(--accent); color: white; padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 16px; }
+        .hero-actions { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-bottom: 48px; }
+        .btn-primary {
+            display: inline-block; background: var(--accent); color: white;
+            padding: 14px 32px; border-radius: 10px; font-size: 16px; font-weight: 700;
+            transition: all 0.2s; border: none; cursor: pointer;
+        }
+        .btn-primary:hover { background: var(--accent-hover); transform: translateY(-2px); color: white; }
+        .btn-secondary {
+            display: inline-block; background: transparent; color: var(--accent);
+            padding: 14px 32px; border-radius: 10px; font-size: 16px; font-weight: 700;
+            border: 2px solid var(--accent); transition: all 0.2s; cursor: pointer;
+        }
+        .btn-secondary:hover { background: var(--accent-glow); transform: translateY(-2px); }
+
+        /* Extension Preview */
+        .preview-container {
+            display: flex; justify-content: center; margin-bottom: 60px;
+        }
+        .extension-preview {
+            background: var(--bg-secondary); border: 1px solid var(--border);
+            border-radius: 16px; padding: 24px; max-width: 420px; width: 100%;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+        .preview-header {
+            display: flex; justify-content: space-between; align-items: center;
+            margin-bottom: 16px; padding-bottom: 12px; border-bottom: 1px solid var(--border);
+        }
+        .preview-logo { font-size: 18px; font-weight: 800; }
+        .preview-logo span { color: var(--accent); }
+        .preview-search {
+            width: 100%; padding: 10px 14px; border-radius: 8px;
+            border: 1px solid var(--border); background: var(--bg-card);
+            color: var(--text-primary); font-size: 13px; margin-bottom: 12px;
+        }
+        .preview-filters { display: flex; gap: 6px; margin-bottom: 12px; }
+        .preview-filter {
+            padding: 4px 10px; border-radius: 12px; font-size: 11px;
+            border: 1px solid var(--border); color: var(--text-muted);
+        }
+        .preview-filter.active { background: var(--accent); border-color: var(--accent); color: white; }
+        .preview-model {
+            padding: 10px 12px; margin-bottom: 6px; border-radius: 8px;
+            border: 1px solid var(--border); background: var(--bg-card);
+        }
+        .preview-model-name { font-size: 14px; font-weight: 600; margin-bottom: 2px; }
+        .preview-model-info { font-size: 11px; color: var(--text-muted); margin-bottom: 4px; }
+        .preview-model-prices { display: flex; gap: 12px; font-size: 12px; }
+        .preview-model-prices .label { color: var(--text-muted); }
+        .preview-model-prices .value { color: var(--accent); font-weight: 600; }
+        .tier-badge {
+            display: inline-block; padding: 1px 6px; border-radius: 4px;
+            font-size: 10px; font-weight: 600; margin-left: 6px;
+        }
+        .tier-Budget { background: rgba(34,197,94,0.15); color: var(--green); }
+        .tier-Mid { background: var(--accent-glow); color: var(--accent); }
+        .tier-Premium { background: rgba(244,114,182,0.15); color: #f472b6; }
+
+        /* Features Grid */
+        .features-section { margin-bottom: 60px; }
+        .features-section h2 { font-size: 28px; font-weight: 700; text-align: center; margin-bottom: 32px; }
+        .features-grid {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px;
+        }
+        .feature-card {
+            background: var(--bg-secondary); border: 1px solid var(--border);
+            border-radius: 12px; padding: 24px;
+        }
+        .feature-icon { font-size: 28px; margin-bottom: 12px; }
+        .feature-card h3 { font-size: 16px; font-weight: 700; margin-bottom: 8px; }
+        .feature-card p { font-size: 14px; color: var(--text-secondary); line-height: 1.6; }
+
+        /* Install Steps */
+        .install-section { margin-bottom: 60px; }
+        .install-section h2 { font-size: 28px; font-weight: 700; text-align: center; margin-bottom: 12px; }
+        .install-section > p { text-align: center; color: var(--text-secondary); margin-bottom: 32px; }
+        .install-steps {
+            max-width: 600px; margin: 0 auto;
+        }
+        .install-step {
+            display: flex; gap: 16px; margin-bottom: 24px;
+            background: var(--bg-secondary); border: 1px solid var(--border);
+            border-radius: 12px; padding: 20px;
+        }
+        .step-number {
+            flex-shrink: 0; width: 36px; height: 36px;
+            background: var(--accent); color: white; border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 16px; font-weight: 700;
+        }
+        .step-content h3 { font-size: 16px; font-weight: 700; margin-bottom: 4px; }
+        .step-content p { font-size: 14px; color: var(--text-secondary); line-height: 1.6; }
+        .step-content code {
+            background: var(--bg-card); padding: 2px 6px; border-radius: 4px;
+            font-size: 13px; color: var(--accent);
+        }
+
+        /* Models Table */
+        .models-section { margin-bottom: 60px; }
+        .models-section h2 { font-size: 28px; font-weight: 700; text-align: center; margin-bottom: 12px; }
+        .models-section > p { text-align: center; color: var(--text-secondary); margin-bottom: 32px; }
+        .models-table {
+            width: 100%; border-collapse: collapse;
+            background: var(--bg-secondary); border-radius: 12px; overflow: hidden;
+            border: 1px solid var(--border);
+        }
+        .models-table th {
+            background: var(--bg-card); padding: 12px 16px;
+            text-align: left; font-size: 12px; font-weight: 600;
+            color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px;
+        }
+        .models-table td {
+            padding: 10px 16px; border-bottom: 1px solid var(--border); font-size: 14px;
+        }
+        .models-table tr:last-child td { border-bottom: none; }
+        .models-table .price { color: var(--accent); font-weight: 600; }
+
+        /* CTA */
+        .cta-section {
+            text-align: center; padding: 60px 24px;
+            background: var(--bg-secondary); border-radius: 16px;
+            border: 1px solid var(--border); margin-bottom: 60px;
+        }
+        .cta-section h2 { font-size: 28px; font-weight: 700; margin-bottom: 12px; }
+        .cta-section p { color: var(--text-secondary); margin-bottom: 24px; font-size: 16px; }
+
+        @media (max-width: 768px) {
+            .content { padding: 100px 20px 60px; }
+            .features-grid { grid-template-columns: 1fr; }
+            .hero-actions { flex-direction: column; align-items: center; }
+            .models-table { font-size: 13px; }
+            .models-table th, .models-table td { padding: 8px 10px; }
+        }
+    </style>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "APIpulse — AI API Price Checker",
+        "applicationCategory": "DeveloperApplication",
+        "operatingSystem": "Chrome",
+        "description": "Free Chrome extension to check AI API pricing for 34 models across 10 providers. Instant cost estimates, model comparison, and budget calculator.",
+        "url": "https://getapipulse.com/chrome-extension.html",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        }
+    }
+    </script>
+    <meta name="theme-color" content="#6366f1">
+</head>
+<body>
+    <a href="#main" class="skip-link">Skip to content</a>
+    <nav>
+        <div class="nav-inner">
+            <a href="index.html" class="logo">API<span>pulse</span></a>
+            <button class="hamburger" onclick="toggleMobileNav()" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+            <div class="nav-links">
+                <a href="calculator.html">Calculator</a>
+                <a href="compare.html">Compare</a>
+                <a href="cost-explorer.html">Explorer</a>
+                <a href="cost-scenarios.html">Scenarios</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="use-cases.html">Use Cases</a>
+                <a href="about.html">About</a>
+                <a href="blog.html">Blog</a>
+                <a href="tools.html">Tools</a>
+                <a href="pricing-index.html">Pricing Index</a>
+                <a href="model-matrix.html">Model Matrix</a>
+                <a href="api-docs.html" style="color:var(--accent);">API</a>
+                <a href="pricing.html" class="nav-cta" onclick="if(window.trackEvent)window.trackEvent('pro_button_clicked',{source:'nav'})">Get Pro — $29</a>
+                <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
+            </div>
+        </div>
+    </nav>
+
+    <main id="main">
+    <div class="content">
+        <div style="text-align:center;">
+            <span class="badge">Free Chrome Extension</span>
+        </div>
+        <h1>AI API Price Checker</h1>
+        <p class="subtitle">Check AI API pricing for 34 models across 10 providers — right from your browser toolbar. Instant cost estimates, model comparison, and budget calculator.</p>
+
+        <div class="hero-actions">
+            <a href="#install" class="btn-primary">Install Extension</a>
+            <a href="calculator.html" class="btn-secondary">Use Web Calculator</a>
+        </div>
+
+        <!-- Extension Preview -->
+        <div class="preview-container">
+            <div class="extension-preview">
+                <div class="preview-header">
+                    <div class="preview-logo">API<span>pulse</span></div>
+                    <a href="https://getapipulse.com" target="_blank" style="font-size:12px;color:var(--accent);">getapipulse.com</a>
+                </div>
+                <input type="text" class="preview-search" placeholder="Search models (e.g. GPT-5, Claude, Gemini...)" readonly>
+                <div class="preview-filters">
+                    <span class="preview-filter active">All</span>
+                    <span class="preview-filter">Budget</span>
+                    <span class="preview-filter">Mid</span>
+                    <span class="preview-filter">Premium</span>
+                </div>
+                <div class="preview-model">
+                    <div class="preview-model-name">GPT-5 <span class="tier-badge tier-Premium">Premium</span></div>
+                    <div class="preview-model-info">OpenAI · 272K context</div>
+                    <div class="preview-model-prices">
+                        <span><span class="label">In:</span> <span class="value">$1.25/M</span></span>
+                        <span><span class="label">Out:</span> <span class="value">$10.00/M</span></span>
+                    </div>
+                </div>
+                <div class="preview-model">
+                    <div class="preview-model-name">Claude Sonnet 4.6 <span class="tier-badge tier-Mid">Mid</span></div>
+                    <div class="preview-model-info">Anthropic · 1M context</div>
+                    <div class="preview-model-prices">
+                        <span><span class="label">In:</span> <span class="value">$3.00/M</span></span>
+                        <span><span class="label">Out:</span> <span class="value">$15.00/M</span></span>
+                    </div>
+                </div>
+                <div class="preview-model">
+                    <div class="preview-model-name">DeepSeek V4 Flash <span class="tier-badge tier-Budget">Budget</span></div>
+                    <div class="preview-model-info">DeepSeek · 1M context</div>
+                    <div class="preview-model-prices">
+                        <span><span class="label">In:</span> <span class="value">$0.14/M</span></span>
+                        <span><span class="label">Out:</span> <span class="value">$0.28/M</span></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Features -->
+        <section class="features-section">
+            <h2>What you get</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🔍</div>
+                    <h3>Instant Price Lookup</h3>
+                    <p>Search any model by name or provider. See input/output pricing and context window at a glance.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🧮</div>
+                    <h3>Built-in Calculator</h3>
+                    <p>Click any model to open the calculator. Enter your token counts and requests/day — get per-request, daily, and monthly costs instantly.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🏷️</div>
+                    <h3>Tier Filtering</h3>
+                    <p>Filter by Budget, Mid, or Premium tier. Find the right model for your use case and budget in seconds.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📊</div>
+                    <h3>34 Models, 10 Providers</h3>
+                    <p>OpenAI, Anthropic, Google, DeepSeek, Mistral, Cohere, Meta, Moonshot, xAI, and AI21 — all in one place.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔄</div>
+                    <h3>Always Up-to-Date</h3>
+                    <p>Pricing data synced with getapipulse.com. Updated whenever providers change their prices.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔒</div>
+                    <h3>Privacy-First</h3>
+                    <p>No accounts, no tracking, no data sent anywhere. Everything runs locally in your browser.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Install Steps -->
+        <section class="install-section" id="install">
+            <h2>How to install</h2>
+            <p>The extension is available for manual installation. It takes about 60 seconds.</p>
+            <div class="install-steps">
+                <div class="install-step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>Download the extension</h3>
+                        <p>Download the <a href="chrome-extension.zip" download>APIpulse Chrome Extension zip file</a> and extract it to a folder on your computer.</p>
+                    </div>
+                </div>
+                <div class="install-step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>Open Chrome Extensions</h3>
+                        <p>Navigate to <code>chrome://extensions</code> in your Chrome address bar. Enable <strong>Developer mode</strong> using the toggle in the top-right corner.</p>
+                    </div>
+                </div>
+                <div class="install-step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>Load the extension</h3>
+                        <p>Click <strong>"Load unpacked"</strong> and select the extracted extension folder. The APIpulse icon will appear in your toolbar.</p>
+                    </div>
+                </div>
+                <div class="install-step">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h3>Start checking prices</h3>
+                        <p>Click the APIpulse icon in your toolbar. Search for any model, filter by tier, and calculate costs instantly.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Supported Models -->
+        <section class="models-section">
+            <h2>All 34 supported models</h2>
+            <p>Every major LLM API, with current pricing data.</p>
+            <div style="overflow-x:auto;">
+            <table class="models-table">
+                <thead>
+                    <tr>
+                        <th>Model</th>
+                        <th>Provider</th>
+                        <th>Tier</th>
+                        <th>Input</th>
+                        <th>Output</th>
+                        <th>Context</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>GPT-5.5</td><td>OpenAI</td><td><span class="tier-badge tier-Premium">Premium</span></td><td class="price">$5.00</td><td class="price">$30.00</td><td>1M</td></tr>
+                    <tr><td>GPT-5</td><td>OpenAI</td><td><span class="tier-badge tier-Premium">Premium</span></td><td class="price">$1.25</td><td class="price">$10.00</td><td>272K</td></tr>
+                    <tr><td>GPT-5 mini</td><td>OpenAI</td><td><span class="tier-badge tier-Budget">Budget</span></td><td class="price">$0.25</td><td class="price">$2.00</td><td>272K</td></tr>
+                    <tr><td>GPT-4o</td><td>OpenAI</td><td><span class="tier-badge tier-Mid">Mid</span></td><td class="price">$2.50</td><td class="price">$10.00</td><td>128K</td></tr>
+                    <tr><td>GPT-4o mini</td><td>OpenAI</td><td><span class="tier-badge tier-Budget">Budget</span></td><td class="price">$0.15</td><td class="price">$0.60</td><td>128K</td></tr>
+                    <tr><td>Claude Opus 4.8</td><td>Anthropic</td><td><span class="tier-badge tier-Premium">Premium</span></td><td class="price">$5.00</td><td class="price">$25.00</td><td>1M</td></tr>
+                    <tr><td>Claude Sonnet 4.6</td><td>Anthropic</td><td><span class="tier-badge tier-Mid">Mid</span></td><td class="price">$3.00</td><td class="price">$15.00</td><td>1M</td></tr>
+                    <tr><td>Claude Haiku 4.5</td><td>Anthropic</td><td><span class="tier-badge tier-Budget">Budget</span></td><td class="price">$1.00</td><td class="price">$5.00</td><td>200K</td></tr>
+                    <tr><td>Gemini 3.1 Pro</td><td>Google</td><td><span class="tier-badge tier-Mid">Mid</span></td><td class="price">$2.00</td><td class="price">$12.00</td><td>1M</td></tr>
+                    <tr><td>Gemini 2.0 Flash</td><td>Google</td><td><span class="tier-badge tier-Budget">Budget</span></td><td class="price">$0.10</td><td class="price">$0.40</td><td>1M</td></tr>
+                    <tr><td>DeepSeek V4 Pro</td><td>DeepSeek</td><td><span class="tier-badge tier-Budget">Budget</span></td><td class="price">$0.44</td><td class="price">$0.87</td><td>1M</td></tr>
+                    <tr><td>DeepSeek V4 Flash</td><td>DeepSeek</td><td><span class="tier-badge tier-Budget">Budget</span></td><td class="price">$0.14</td><td class="price">$0.28</td><td>1M</td></tr>
+                    <tr><td>Mistral Large 3</td><td>Mistral</td><td><span class="tier-badge tier-Budget">Budget</span></td><td class="price">$0.50</td><td class="price">$1.50</td><td>128K</td></tr>
+                    <tr><td>Llama 4 Scout</td><td>Meta</td><td><span class="tier-badge tier-Budget">Budget</span></td><td class="price">$0.11</td><td class="price">$0.34</td><td>10M</td></tr>
+                    <tr><td>Grok 3</td><td>xAI</td><td><span class="tier-badge tier-Premium">Premium</span></td><td class="price">$30.00</td><td class="price">$150.00</td><td>128K</td></tr>
+                    <tr><td>Command R+</td><td>Cohere</td><td><span class="tier-badge tier-Mid">Mid</span></td><td class="price">$2.50</td><td class="price">$10.00</td><td>128K</td></tr>
+                    <tr><td>Kimi K2.6</td><td>Moonshot</td><td><span class="tier-badge tier-Budget">Budget</span></td><td class="price">$0.90</td><td class="price">$3.75</td><td>256K</td></tr>
+                    <tr><td>Jamba 1.5 Large</td><td>AI21</td><td><span class="tier-badge tier-Mid">Mid</span></td><td class="price">$2.00</td><td class="price">$8.00</td><td>256K</td></tr>
+                </tbody>
+            </table>
+            </div>
+            <p style="text-align:center;margin-top:16px;font-size:13px;color:var(--text-muted);">Prices per 1M tokens. <a href="pricing-index.html">View full pricing index →</a></p>
+        </section>
+
+        <!-- CTA -->
+        <div class="cta-section">
+            <h2>Prefer the web version?</h2>
+            <p>Use the full APIpulse calculator with saved scenarios, cost reports, and optimization recommendations.</p>
+            <a href="calculator.html" class="btn-primary">Open Web Calculator</a>
+        </div>
+    </div>
+
+    <footer>
+        <p>Pricing data last verified: <span class="verified-date"></span></p>
+        <p>&copy; 2026 APIpulse. <a href="index.html">Home</a> &middot; <a href="use-cases.html">Use Cases</a> &middot; <a href="about.html">About</a> &middot; <a href="blog.html">Blog</a>
+<a href="pricing-index.html">Pricing Index</a> &middot; <a href="model-matrix.html">Model Matrix</a> &middot; <a href="cost-scenarios.html">Scenarios</a> &middot; <a href="price-alerts.html">Price Alerts</a> &middot; <a href="pricing-changelog.html">Changelog</a> &middot; <a href="chrome-extension.html">Chrome Extension</a> &middot; <a href="api-docs.html">API</a> &middot; <a href="https://x.com/getapipulse" target="_blank" rel="noopener">Twitter</a> &middot; <a href="unsubscribe.html">Unsubscribe</a></p>
+    </footer>
+    </main>
+</body>
+</html>

@@ -1,16 +1,17 @@
 # PROGRESS.md
 
-## Site Status (as of Session 332, May 29, 2026)
-**306 web pages | 186 blog posts | 34 models | 10 providers | 39 tools | 9 API endpoints | 1 embeddable widget**
-- Sitemap (300 URLs), RSS (235 items), blog files (186 posts + 1 index) — all in sync
+## Site Status (as of Session 333, May 29, 2026)
+**307 web pages | 186 blog posts | 34 models | 10 providers | 40 tools | 11 API endpoints | 1 embeddable widget**
+- Sitemap (301 URLs), RSS (235 items), blog files (186 posts + 1 index) — all in sync
 - Pricing data verified May 29 — 34 models, 10 providers
 - **Analytics: GA4 (G-0CEP7S9Y3J)** — fully operational, custom events via gtag()
 - **Pro system:** localStorage-based unlock after Stripe payment. Access code fallback on pro.html.
 - **35 comparison pages** — all providers covered, interactive calculators, FAQPage schema
-- **39 interactive tools** — calculators, optimizer, planner, pipeline, rate limit, budget showdown, chatbot cost, model switch, stack builder, model advisor, fine-tuning calculator, Claude API cost calculator, cost projection, Gemini API cost calculator, cheapest AI API for coding, xAI Grok cost calculator, DeepSeek API cost calculator, Mistral API cost calculator, Meta Llama API cost calculator, Open Source LLM cost calculator, AI API Pricing Comparison 2026, Cost Leak Detector
-- **9 API endpoints** — pricing data, cost calculator (single/multi-model), cheapest model finder, pricing badge (SVG), subscribe, unsubscribe, newsletter, check-price-changes, admin
+- **40 interactive tools** — calculators, optimizer, planner, pipeline, rate limit, budget showdown, chatbot cost, model switch, stack builder, model advisor, fine-tuning calculator, Claude API cost calculator, cost projection, Gemini API cost calculator, cheapest AI API for coding, xAI Grok cost calculator, DeepSeek API cost calculator, Mistral API cost calculator, Meta Llama API cost calculator, Open Source LLM cost calculator, AI API Pricing Comparison 2026, Cost Leak Detector, Chrome Extension
+- **11 API endpoints** — pricing data, cost calculator (single/multi-model), cheapest model finder, pricing badge (SVG), compare models, recommend models, subscribe, unsubscribe, newsletter, check-price-changes, admin
 - **Social proof:** PH launch badge, Reddit testimonial, newsletter, exit popup A/B test
 - **Community playbook:** 7 subreddit drafts + 2 newsletter pitches ready in COMMUNITY-ENGAGEMENT.md
+- **Chrome Extension:** Landing page live, pricing data synced (May 29), 34 models, manual install
 
 ## Blocked on Human Action
 1. **Stripe $19/$39 payment links** — HELP-REQUEST re-filed May 28. Currently all 3 variants use $29 link. A/B test disabled on pricing.html until links are created.
@@ -20,6 +21,18 @@
 ---
 
 ## Key Milestones
+
+### Session 333 (May 29)
+**Chrome extension landing page + new API endpoints:**
+- Fixed Chrome extension models.js: synced pricing with pricing-data.js (GPT-5 mini $0.40→$0.25, added Claude Opus 4.8, Gemini 2.0 Flash Lite)
+- Created chrome-extension.html landing page with features, install steps, model table
+- Added Chrome Extension card to tools.html (40 tools total)
+- Created /api/compare endpoint: side-by-side model comparison with cost calculations
+- Created /api/recommend endpoint: personalized model recommendations by use case/budget/quality
+- Added Claude Opus 4.8 to /api/pricing and /api/cheapest endpoints (11 endpoints total)
+- Updated api-docs.html with new endpoints, parameter tables, and code examples
+- Updated sitemap.xml (300→301 URLs)
+- Added Chrome extension link to footers of index, tools, pricing pages
 
 ### Session 332 (May 29)
 **Comparison page count + stale blog count fixes:**

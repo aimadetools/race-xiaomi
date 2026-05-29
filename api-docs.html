@@ -160,7 +160,7 @@
             <span class="badge">Free &middot; No Auth Required</span>
         </div>
         <h1>LLM Pricing API</h1>
-        <p class="subtitle">Get current pricing for 33 AI models from 10 providers. Use it in your tools, dashboards, CI/CD pipelines, and cost calculators.</p>
+        <p class="subtitle">Get current pricing for 34 AI models from 10 providers. Use it in your tools, dashboards, CI/CD pipelines, and cost calculators.</p>
 
         <div class="feature-grid">
             <div class="feature-item">
@@ -203,6 +203,16 @@
             <div class="endpoint-card">
                 <div><span class="endpoint-method">GET</span> <span class="endpoint-url">/api/badge</span></div>
                 <p class="endpoint-desc">Get an SVG pricing badge for any model. Embed in READMEs, docs, and blogs. Like shields.io but for AI API costs.</p>
+            </div>
+
+            <div class="endpoint-card">
+                <div><span class="endpoint-method">GET</span> <span class="endpoint-url">/api/compare</span></div>
+                <p class="endpoint-desc">Compare 2+ models side by side with cost calculations. Returns per-request, daily, monthly, and yearly costs with savings summary.</p>
+            </div>
+
+            <div class="endpoint-card">
+                <div><span class="endpoint-method">GET</span> <span class="endpoint-url">/api/recommend</span></div>
+                <p class="endpoint-desc">Get personalized model recommendations based on use case, budget, quality, and context requirements.</p>
             </div>
 
             <h3>Query Parameters</h3>
@@ -258,6 +268,35 @@
                     <tr><td><code>model</code></td><td>string</td><td>Model ID (required)</td><td>required</td></tr>
                     <tr><td><code>style</code></td><td>string</td><td>Badge style: <code>flat</code> (default) or <code>flat-square</code></td><td>flat</td></tr>
                     <tr><td><code>format</code></td><td>string</td><td>Response format: SVG image (default), <code>json</code>, <code>md</code>, or <code>url</code></td><td>SVG</td></tr>
+                </tbody>
+            </table>
+
+            <h3><code>/api/compare</code> Parameters</h3>
+            <table>
+                <thead>
+                    <tr><th>Parameter</th><th>Type</th><th>Description</th><th>Default</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td><code>models</code></td><td>string</td><td>Comma-separated model IDs (required, 2-10)</td><td>required</td></tr>
+                    <tr><td><code>input_tokens</code></td><td>number</td><td>Input tokens per request</td><td>1000</td></tr>
+                    <tr><td><code>output_tokens</code></td><td>number</td><td>Output tokens per request</td><td>500</td></tr>
+                    <tr><td><code>requests_per_day</code></td><td>number</td><td>Requests per day</td><td>1000</td></tr>
+                </tbody>
+            </table>
+
+            <h3><code>/api/recommend</code> Parameters</h3>
+            <table>
+                <thead>
+                    <tr><th>Parameter</th><th>Type</th><th>Description</th><th>Default</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td><code>use_case</code></td><td>string</td><td>Use case: coding, chat, classification, extraction, reasoning, analysis, creative, general, speed, long-context, multimodal, vision, summarization, multilingual</td><td>—</td></tr>
+                    <tr><td><code>budget</code></td><td>string</td><td>Budget tier: low/budget, mid/medium, high/premium</td><td>all</td></tr>
+                    <tr><td><code>quality</code></td><td>number</td><td>Minimum quality score (1-5)</td><td>—</td></tr>
+                    <tr><td><code>max_cost</code></td><td>number</td><td>Max cost per request (USD)</td><td>—</td></tr>
+                    <tr><td><code>min_context</code></td><td>number</td><td>Minimum context window (tokens)</td><td>—</td></tr>
+                    <tr><td><code>input_tokens</code></td><td>number</td><td>Input tokens for cost calculation</td><td>1000</td></tr>
+                    <tr><td><code>output_tokens</code></td><td>number</td><td>Output tokens for cost calculation</td><td>500</td></tr>
                 </tbody>
             </table>
 
@@ -332,6 +371,29 @@ r = requests.get(<span class="code-string">"https://getapipulse.com/api/calculat
 <span class="code-key">const</span> res = <span class="code-key">await</span> fetch(<span class="code-string">'https://getapipulse.com/api/cheapest?use_case=coding&budget=100'</span>);
 <span class="code-key">const</span> { recommendations } = <span class="code-key">await</span> res.json();
 console.log(recommendations[<span class="code-number">0</span>].name); <span class="code-comment">// Cheapest coding model</span></code>
+            </div>
+
+            <h3>Compare models side by side</h3>
+            <div class="code-block">
+                <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                <code><span class="code-comment"># Compare GPT-5 vs Claude Sonnet vs DeepSeek for your workload</span>
+curl <span class="code-string">"https://getapipulse.com/api/compare?models=openai-gpt5,anthropic-sonnet46,deepseek-v4-pro&input_tokens=2000&output_tokens=500&requests_per_day=10000"</span>
+
+<span class="code-comment">// Response includes per-request, daily, monthly, yearly costs</span>
+<span class="code-comment">// and a summary with cheapest model and savings amount</span></code>
+            </div>
+
+            <h3>Get model recommendations</h3>
+            <div class="code-block">
+                <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                <code><span class="code-comment">// Get top 5 models for coding with high quality</span>
+<span class="code-key">const</span> res = <span class="code-key">await</span> fetch(
+    <span class="code-string">'https://getapipulse.com/api/recommend?use_case=coding&budget=low&quality=4'</span>
+);
+<span class="code-key">const</span> { recommendations } = <span class="code-key">await</span> res.json();
+recommendations.forEach(m => {
+    console.log(<span class="code-string">`${m.name}: $${m.costPerRequest.toFixed(6)}/req`</span>);
+});</code>
             </div>
 
             <h3>Embed a pricing widget</h3>
