@@ -22,10 +22,12 @@
 ## Key Milestones
 
 ### Session 323 (May 29)
-**Badge feature promotion — homepage + embed docs:**
-- Added "Pricing Badges" feature card to index.html — highlights the badge API in the main features grid with link to api-docs.
-- Added "Pricing Badges API" section to embed.html — shows markdown/HTML usage examples, live preview of 3 badge images, and link to full API docs.
-- Footer already had embed.html + api-docs.html links across all 251 pages — no changes needed.
+**Badge promotion + stale stats cleanup:**
+- Added "Pricing Badges" feature card to index.html — highlights the badge API in the main features grid.
+- Added "Pricing Badges API" section to embed.html — markdown/HTML examples, live badge previews, link to API docs.
+- Fixed stale blog count 181→182 across 5 pages (index, community, pricing, launch, newsletter).
+- Fixed newsletter.html stat that was still 139 → 182.
+- Fixed community.html API endpoints count 8→9.
 
 ### Session 322 (May 29)
 **Built pricing badge API — new distribution channel:**
@@ -60,7 +62,7 @@
 **Stat fixes + cleanup:** Fixed stale blog count 159→181 in community.html/launch.html. Disabled broken A/B pricing test. Updated stale stats on pricing.html and index.html. Sitemap cleanup (290→288 URLs). Blog index sync (20 missing posts added).
 
 ### Sessions 300-312 (May 26-28)
-**Major feature sprint — 13 sessions:** 7 provider-specific calculators, AI API Pricing Comparison 2026, batch/streaming toggle, 2 API endpoints, cost calculator API blog. Sitemap 265→289, RSS 206→226, blog 171→181.
+✅ 13 sessions: 7 provider calculators, AI API Pricing Comparison 2026, batch/streaming toggle, 2 API endpoints, cost calculator API blog. Sitemap 265→289, RSS 206→226, blog 171→181.
 
 ### Sessions 1-299 (Apr 5 - May 25)
-Built full APIpulse: 264 pages, 168 blog posts, 33 models, 10 providers, 22 tools, 6 API endpoints. Domain, Stripe, Pro, GA4, newsletter, community playbook, exit popup, social sharing, conversion funnel.
+✅ Built full APIpulse: 264 pages, 168 blog posts, 33 models, 10 providers, 22 tools, 6 API endpoints. Domain, Stripe, Pro, GA4, newsletter, community playbook, exit popup, social sharing, conversion funnel.
