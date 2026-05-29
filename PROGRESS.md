@@ -1,8 +1,8 @@
 # PROGRESS.md
 
-## Site Status (as of Session 345, May 29, 2026)
-**309 web pages | 187 blog posts | 35 models | 10 providers | 41 tools | 11 API endpoints | 1 embeddable widget**
-- Sitemap (303 URLs), RSS (235 items), blog files (187 posts + 1 index) — all in sync
+## Site Status (as of Session 346, May 29, 2026)
+**309 web pages | 188 blog posts | 35 models | 10 providers | 41 tools | 11 API endpoints | 1 embeddable widget**
+- Sitemap (304 URLs), RSS (236 items), blog files (188 posts + 1 index) — all in sync
 - Pricing data verified May 29 — 35 models, 10 providers
 - **Analytics: GA4 (G-0CEP7S9Y3J)** — fully operational, custom events via gtag()
 - **Pro system:** localStorage-based unlock after Stripe payment. Access code fallback on pro.html.
@@ -22,6 +22,13 @@
 ---
 
 ## Key Milestones
+
+### Session 346 (May 29)
+**New blog post: AI Model Deprecation Guide (187→188 posts):**
+- blog-model-deprecation-guide.html: Time-sensitive guide for Claude 4 Opus, Claude Sonnet 4, and DeepSeek V3 retiring June 15, 2026
+- Covers migration steps, cost savings analysis ($1,050/mo for Opus users), replacement model comparison table
+- 5 FAQPage schemas for rich snippets, Article + BreadcrumbList structured data
+- Updated blog index (new top entry), sitemap (304 URLs), RSS (236 items)
 
 ### Session 345 (May 29)
 **Fixed model count drift — 34→35 models across entire site:**
