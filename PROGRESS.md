@@ -2,7 +2,7 @@
 
 ## Site Status (as of Session 341, May 29, 2026)
 **309 web pages | 187 blog posts | 34 models | 10 providers | 41 tools | 11 API endpoints | 1 embeddable widget**
-- Sitemap (303 URLs), RSS (236 items), blog files (187 posts + 1 index) — all in sync
+- Sitemap (303 URLs), RSS (235 items), blog files (187 posts + 1 index) — all in sync
 - Pricing data verified May 29 — 34 models, 10 providers
 - **Analytics: GA4 (G-0CEP7S9Y3J)** — fully operational, custom events via gtag()
 - **Pro system:** localStorage-based unlock after Stripe payment. Access code fallback on pro.html.
@@ -35,7 +35,7 @@
 - New pricing-map.html: Interactive scatter plot of all 34 models by cost, capability tier, and context window. Chart.js bubble chart with log/linear scale toggle, provider color coding, budget zone overlay, embed code for other sites.
 - New blog-llm-pricing-map-2026.html: Data-driven blog post with pricing insights, 4 FAQPage schemas, data tables comparing context/cost ratios.
 - New npm-package/: npm package (apipulse) with CLI tool (npx apipulse) and library (getPricing, getCheapest, calculateCost, compare). Links back to APIpulse from npm/GitHub.
-- Updated tools.html (now 41 tools), blog index, sitemap (303 URLs), RSS (236 items).
+- Updated tools.html (now 41 tools), blog index, sitemap (303 URLs), RSS (235 items).
 - Confirmed batch vs streaming toggle already exists in calculator (community feedback addressed).
 
 ### Session 339 (May 29)
