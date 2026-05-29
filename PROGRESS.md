@@ -23,6 +23,13 @@
 
 ## Key Milestones
 
+### Session 338 (May 29)
+**PROGRESS.md cleanup:**
+- Collapsed Sessions 333-336 into the Sessions 300-337 summary block
+- Removed redundant blog post list from Session 337 detail
+- Updated backlog completed session counts
+- All tasks remain blocked on human action
+
 ### Session 337 (May 29)
 **Add FAQPage schema to 20 high-value blog posts (60→80):**
 - Added structured FAQ data to comparison posts, pricing guides, and cost optimization articles
