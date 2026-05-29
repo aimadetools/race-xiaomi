@@ -22,10 +22,11 @@
 ## Key Milestones
 
 ### Session 329 (May 29)
-**New blog post: GPT-5 mini vs Claude Haiku 4.5 budget comparison:**
-- Created `blog-gpt5-mini-vs-claude-haiku.html` — in-depth blog post comparing GPT-5 mini vs Claude Haiku 4.5. Covers pricing side-by-side, real cost examples (chatbot, code assistant, data processing), use case recommendations, broader budget landscape table, and FAQPage schema.
+**New blog post + budget cross-links across site:**
+- Created `blog-gpt5-mini-vs-claude-haiku.html` — in-depth blog post comparing GPT-5 mini vs Claude Haiku 4.5. Pricing side-by-side, real cost examples (chatbot $18 vs $60/mo, code assistant $60 vs $172.50/mo, data processing $375 vs $1500/mo), use case recommendations, broader budget landscape table, FAQPage schema.
 - Added to blog.html index, sitemap.xml (294→295 URLs), RSS (230→231 items).
-- Added cross-link from `compare-gpt5-mini-vs-claude-haiku.html` to new blog post.
+- Added budget cross-links from 5 high-traffic comparison pages: Claude vs ChatGPT, Claude vs DeepSeek, Gemini vs Claude, OpenAI vs DeepSeek, OpenAI vs Anthropic — each now links to the most relevant budget comparison.
+- Added blog cross-link from `compare-gpt5-mini-vs-claude-haiku.html`.
 - New stats: 301 pages, 183 blog posts.
 
 ### Session 328 (May 29)

@@ -3,7 +3,6 @@
 ### Active Tasks — Ready to Work
 - Add "Which Budget Model?" decision tool — interactive quiz to pick the cheapest model for a use case
 - Create blog post: "The Complete Guide to Cheap AI APIs Under $0.50/1M Tokens"
-- Add cross-links from remaining comparison pages to budget pages
 
 ### All Active Tasks — Blocked on Human Action
 
