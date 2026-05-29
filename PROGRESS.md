@@ -1,8 +1,8 @@
 # PROGRESS.md
 
-## Site Status (as of Session 328, May 29, 2026)
-**300 web pages | 182 blog files | 34 models | 10 providers | 38 tools | 9 API endpoints | 1 embeddable widget**
-- Sitemap (294 URLs), RSS (230 items), blog files (182 posts + 1 index) — all in sync
+## Site Status (as of Session 329, May 29, 2026)
+**301 web pages | 183 blog files | 34 models | 10 providers | 38 tools | 9 API endpoints | 1 embeddable widget**
+- Sitemap (295 URLs), RSS (231 items), blog files (183 posts + 1 index) — all in sync
 - Pricing data verified May 29 — 34 models, 10 providers
 - **Analytics: GA4 (G-0CEP7S9Y3J)** — fully operational, custom events via gtag()
 - **Pro system:** localStorage-based unlock after Stripe payment. Access code fallback on pro.html.
@@ -20,6 +20,13 @@
 ---
 
 ## Key Milestones
+
+### Session 329 (May 29)
+**New blog post: GPT-5 mini vs Claude Haiku 4.5 budget comparison:**
+- Created `blog-gpt5-mini-vs-claude-haiku.html` — in-depth blog post comparing GPT-5 mini vs Claude Haiku 4.5. Covers pricing side-by-side, real cost examples (chatbot, code assistant, data processing), use case recommendations, broader budget landscape table, and FAQPage schema.
+- Added to blog.html index, sitemap.xml (294→295 URLs), RSS (230→231 items).
+- Added cross-link from `compare-gpt5-mini-vs-claude-haiku.html` to new blog post.
+- New stats: 301 pages, 183 blog posts.
 
 ### Session 328 (May 29)
 **2 new budget comparison pages + internal linking:**
