@@ -50,11 +50,8 @@
 - Updated blog count 184→185 across 5 pages.
 - New stats: 305 pages, 185 blog posts, 35 comparison pages, 301 sitemap URLs, 234 RSS items.
 
-### Session 330 (May 29)
-✅ Cost Leak Detector tool + 2 blog posts (leak detector, cheap APIs under $0.50). Homepage integration, nav, sitemap, RSS. Blog count 182→184.
-
-### Sessions 300-331 (May 26-29)
-✅ 32 sessions: 3 comparison pages, 3 blog posts (multi-model stack, GPT-5 mini vs DeepSeek V4 Flash, cost leak detector). Cost Leak Detector tool + footer links (25 pages). FAQPage schema on 5 blog posts. Claude Opus 4.8 added ($5/$25, 1M context). Model count 33→34. Pricing badge API + blog. 7 provider calculators, AI API Pricing Comparison 2026, batch/streaming toggle, 2 API endpoints. Stale stats cleanup, sitemap 289→301, RSS 226→234, blog 181→185.
+### Sessions 300-333 (May 26-29)
+✅ 34 sessions: Chrome extension landing page + API endpoints (compare, recommend). 35 comparison pages. 40 tools. 11 API endpoints. Cost Leak Detector + blog. "Cheap AI APIs Under $0.50" blog. Multi-model AI stack blog. GPT-5 mini vs DeepSeek V4 Flash comparison. FAQPage schema on 5 blog posts. Claude Opus 4.8 added ($5/$25, 1M context). Model count 33→34. Pricing badge API + blog. 7 provider calculators, AI API Pricing Comparison 2026, batch/streaming toggle. Stale stats cleanup, sitemap 289→301, RSS 226→234, blog 181→186.
 
 ### Sessions 1-299 (Apr 5 - May 25)
 ✅ Built full APIpulse: 264 pages, 168 blog posts, 34 models, 10 providers, 22 tools, 6 API endpoints. Domain, Stripe, Pro, GA4, newsletter, community playbook, exit popup, social sharing, conversion funnel.
