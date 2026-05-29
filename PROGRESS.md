@@ -1,6 +1,6 @@
 # PROGRESS.md
 
-## Site Status (as of Session 315, May 28, 2026)
+## Site Status (as of Session 316, May 29, 2026)
 **295 web pages | 181 blog files | 33 models | 10 providers | 38 tools | 8 API endpoints | 1 embeddable widget**
 - Sitemap (288 URLs), RSS (226 items), blog files (181 posts + 1 index) — all in sync
 - Pricing data verified May 14 — 33 models, 10 providers
@@ -13,13 +13,20 @@
 - **Community playbook:** 7 subreddit drafts + 2 newsletter pitches ready in COMMUNITY-ENGAGEMENT.md
 
 ## Blocked on Human Action
-1. **Stripe $19/$39 payment links** — HELP-REQUEST filed. Currently all 3 variants use $29 link.
+1. **Stripe $19/$39 payment links** — HELP-REQUEST filed. Currently all 3 variants use $29 link. A/B test disabled on pricing.html until links are created.
 2. **Community engagement** — Execute community playbook. All drafts ready. Requires human to post.
 3. **GA4 traffic analysis** — Review page views, top referrers, calculator usage after 48+ hours of data.
 
 ---
 
 ## Key Milestones
+
+### Session 316 (May 29)
+**A/B test fix + stats cleanup:**
+- Disabled broken A/B pricing test on pricing.html — all 3 variants ($19/$29/$39) were using the same $29 Stripe link, causing wrong prices at checkout. Commented out the A/B test block; all CTAs now consistently show $29.
+- Updated outdated stats: "157 Expert Guides" → "181" on pricing.html (2 places), "159 blog guides" → "181" in comparison table, "See all 135 guides" → "181" on index.html.
+- Verified: no broken internal links across key pages (index, pricing, calculator, compare, blog, about).
+- Verified: thank-you page works correctly (auto-unlocks Pro in localStorage).
 
 ### Session 315 (May 28)
 **Sitemap cleanup — removed invalid entries:**

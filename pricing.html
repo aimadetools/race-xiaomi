@@ -304,7 +304,7 @@
                     <div class="stat-label">API Providers</div>
                 </div>
                 <div class="stat-item">
-                    <div class="stat-number">157</div>
+                    <div class="stat-number">181</div>
                     <div class="stat-label">Expert Guides</div>
                 </div>
             </div>
@@ -373,7 +373,7 @@
                         <td class="check-yes">✓</td>
                     </tr>
                     <tr>
-                        <td>All 159 blog guides and tutorials</td>
+                        <td>All 181 blog guides and tutorials</td>
                         <td class="check-yes">✓</td>
                         <td class="check-yes">✓</td>
                     </tr>
@@ -544,7 +544,7 @@
                 <div style="display:flex;gap:16px;padding:16px;background:var(--bg-card);border:1px solid var(--border);border-radius:12px;">
                     <div style="flex-shrink:0;width:48px;height:48px;background:var(--accent-glow);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:20px;">📊</div>
                     <div>
-                        <div style="font-weight:600;margin-bottom:4px;">157 Expert Guides</div>
+                        <div style="font-weight:600;margin-bottom:4px;">181 Expert Guides</div>
                         <div style="font-size:14px;color:var(--text-secondary);">Comprehensive blog posts covering every provider, use case, and cost optimization strategy.</div>
                         <div style="font-size:12px;color:var(--text-muted);margin-top:8px;">Ongoing</div>
                     </div>
@@ -616,10 +616,13 @@
         })();
 
         // A/B Test: Price point testing ($19 vs $29 vs $39)
-        // TODO: Create Stripe payment links for $19 and $39 variants, then update STRIPE_LINKS below
+        // DISABLED until Stripe payment links for $19 and $39 are created.
+        // To re-enable: create $19/$39 links in Stripe Dashboard, update STRIPE_LINKS below, and uncomment the block.
+        // All CTAs now use $29 (the only working Stripe link) to avoid showing wrong price at checkout.
+        /*
         (function(){
             var VARIANTS={A:{price:19,label:'Budget',futurePrice:39},B:{price:29,label:'Control',futurePrice:49},C:{price:39,label:'Premium',futurePrice:59}};
-            var STRIPE_LINKS={A:'https://buy.stripe.com/fZu7sL3Gw3GS0RQeoDeEo0a',B:'https://buy.stripe.com/fZu7sL3Gw3GS0RQeoDeEo0a',C:'https://buy.stripe.com/fZu7sL3Gw3GS0RQeoDeEo0a'};
+            var STRIPE_LINKS={A:'STRIPE_LINK_FOR_$19_HERE',B:'https://buy.stripe.com/fZu7sL3Gw3GS0RQeoDeEo0a',C:'STRIPE_LINK_FOR_$39_HERE'};
             var KEY='ab_pricing_variant';
             var variant=localStorage.getItem(KEY);
             if(!variant||!VARIANTS[variant]){
@@ -682,6 +685,7 @@
                 });
             });
         })();
+        */
 
         // Exit intent popup for pricing page (respects A/B variant)
         (function(){
