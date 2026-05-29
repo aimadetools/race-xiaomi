@@ -1,0 +1,840 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DeepSeek V4 Flash vs Gemini 2.0 Flash Lite — Ultra-Budget AI API Pricing 2026 | APIpulse</title>
+    <meta name="description" content="DeepSeek V4 Flash vs Gemini 2.0 Flash Lite API pricing comparison. The two cheapest AI models head to head — $0.14/$0.28 vs $0.075/$0.30 per 1M tokens. Interactive calculator.">
+    <meta name="keywords" content="DeepSeek V4 Flash vs Gemini Flash Lite, cheapest AI API, ultra budget AI model, DeepSeek pricing, Gemini Flash Lite pricing, AI API cost comparison 2026">
+    <meta property="og:title" content="DeepSeek V4 Flash vs Gemini 2.0 Flash Lite — Ultra-Budget AI API Pricing 2026">
+    <meta property="og:description" content="The two cheapest AI models head to head. Gemini Flash Lite is cheapest on input, DeepSeek V4 Flash cheapest on output.">
+    <meta property="og:type" content="article">
+    <meta property="og:image" content="https://getapipulse.com/og-image.png">
+    <meta property="og:url" content="https://getapipulse.com/compare-deepseek-v4-flash-vs-gemini-flash-lite.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="DeepSeek V4 Flash vs Gemini 2.0 Flash Lite — Ultra-Budget AI Pricing">
+    <meta name="twitter:image" content="https://getapipulse.com/og-image.png">
+    <meta name="twitter:description" content="The two cheapest AI models. Compare DeepSeek V4 Flash and Gemini Flash Lite pricing.">
+    <link rel="canonical" href="https://getapipulse.com/compare-deepseek-v4-flash-vs-gemini-flash-lite.html">
+    <link rel="alternate" type="application/rss+xml" title="APIpulse Blog" href="https://getapipulse.com/rss.xml">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="styles.css">
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0CEP7S9Y3J"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-0CEP7S9Y3J');
+    </script>
+    <script src="analytics.js" defer></script>
+    <script src="dynamic-date.js" defer></script>
+    <script src="shared.js" defer></script>
+    <script src="pricing-data.js" defer></script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "DeepSeek V4 Flash vs Gemini 2.0 Flash Lite — Ultra-Budget AI API Pricing 2026",
+        "description": "Compare DeepSeek V4 Flash and Gemini 2.0 Flash Lite API pricing. The two cheapest models head to head with interactive calculator.",
+        "url": "https://getapipulse.com/compare-deepseek-v4-flash-vs-gemini-flash-lite.html",
+        "publisher": {
+            "@type": "Organization",
+            "name": "APIpulse",
+            "url": "https://getapipulse.com"
+        },
+        "datePublished": "2026-05-29",
+        "dateModified": "2026-05-29"
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "Which is cheaper, DeepSeek V4 Flash or Gemini 2.0 Flash Lite?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "It depends on your usage. Gemini 2.0 Flash Lite has the cheapest input at $0.075/1M tokens (vs DeepSeek's $0.14), but DeepSeek V4 Flash has the cheapest output at $0.28/1M tokens (vs Gemini's $0.30). For output-heavy workloads like content generation, DeepSeek is slightly cheaper. For input-heavy workloads like RAG or classification, Gemini Flash Lite wins."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What is the cheapest AI API model for input tokens?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Gemini 2.0 Flash Lite at $0.075 per 1M tokens is the cheapest input pricing available. For comparison, DeepSeek V4 Flash costs $0.14, GPT-oss 20B costs $0.08, and GPT-5 mini costs $0.25. At 10M input tokens/month, Gemini Flash Lite costs $0.75 vs DeepSeek's $1.40."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What is the cheapest AI API model for output tokens?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "DeepSeek V4 Flash at $0.28 per 1M tokens has the cheapest output pricing among major providers. Gemini 2.0 Flash Lite costs $0.30, Gemini 2.0 Flash costs $0.40, and Llama 3.1 8B costs $0.10 (open-source via Together.ai). At 10M output tokens/month, DeepSeek costs $2.80 vs Gemini Flash Lite's $3.00."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "DeepSeek V4 Flash vs Gemini Flash Lite for chatbots?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Both are excellent for chatbots. Gemini Flash Lite at $0.075/$0.30 with 1M context is ideal for high-volume, short-response chatbots. DeepSeek V4 Flash at $0.14/$0.28 with 1M context has slightly better output pricing. For most chatbot workloads, Gemini Flash Lite's cheaper input makes it the better choice since input tokens dominate in conversational use cases."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Are DeepSeek and Gemini Flash Lite available worldwide?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Gemini 2.0 Flash Lite is available globally through Google AI Studio and Vertex AI. DeepSeek V4 Flash is available through DeepSeek's API and some third-party providers. Check APIpulse's provider pages for current availability and regional restrictions. Both models are in Budget tier, making them the cheapest options from their respective providers."
+                }
+            }
+        ]
+    }
+    </script>
+    <style>
+        .compare-hero {
+            max-width: var(--max-width); margin: 0 auto; padding: 120px 24px 40px;
+            text-align: center;
+        }
+        .compare-hero h1 { font-size: clamp(28px, 4.5vw, 44px); font-weight: 800; margin-bottom: 16px; line-height: 1.2; }
+        .compare-hero h1 .vs { color: var(--accent); }
+        .compare-hero .subtitle { font-size: 18px; color: var(--text-secondary); max-width: 700px; margin: 0 auto 24px; }
+        .compare-hero .last-updated { font-size: 13px; color: var(--text-muted); }
+
+        /* Summary Cards */
+        .summary-cards {
+            max-width: 900px; margin: 0 auto 48px; padding: 0 24px;
+            display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px;
+        }
+        .summary-card {
+            background: var(--bg-secondary); border: 1px solid var(--border);
+            border-radius: var(--radius); padding: 24px; text-align: center;
+        }
+        .summary-card .label { font-size: 12px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px; }
+        .summary-card .value { font-size: 28px; font-weight: 800; }
+        .summary-card .detail { font-size: 13px; color: var(--text-secondary); margin-top: 4px; }
+        .summary-card .winner { color: var(--green); }
+        .summary-card .tie { color: var(--accent); }
+
+        /* Quick Comparison Table */
+        .quick-comparison {
+            max-width: 1000px; margin: 0 auto 48px; padding: 0 24px;
+        }
+        .quick-comparison h2 { font-size: 28px; font-weight: 800; margin-bottom: 8px; text-align: center; }
+        .quick-comparison .section-sub { color: var(--text-secondary); text-align: center; margin-bottom: 24px; }
+        .quick-table {
+            width: 100%; border-collapse: collapse;
+            background: var(--bg-secondary); border-radius: var(--radius); overflow: hidden;
+            border: 1px solid var(--border);
+        }
+        .quick-table th {
+            padding: 16px 20px; text-align: left; font-size: 13px;
+            color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px;
+            background: var(--bg-card); border-bottom: 1px solid var(--border);
+        }
+        .quick-table td {
+            padding: 14px 20px; border-bottom: 1px solid var(--border); font-size: 14px;
+        }
+        .quick-table tr:last-child td { border-bottom: none; }
+        .quick-table .model-name { font-weight: 700; }
+        .quick-table .provider-badge {
+            display: inline-block; padding: 2px 8px; border-radius: 4px;
+            font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;
+        }
+        .quick-table .badge-google { background: rgba(66,133,244,0.15); color: #4285f4; }
+        .quick-table .badge-deepseek { background: rgba(59,130,246,0.15); color: #3b82f6; }
+        .quick-table .badge-openai { background: rgba(16,163,127,0.15); color: #10a37f; }
+        .quick-table .badge-anthropic { background: rgba(217,119,87,0.15); color: #d97757; }
+        .quick-table .cheaper { color: var(--green); font-weight: 700; }
+        .quick-table .tier-badge {
+            display: inline-block; padding: 2px 8px; border-radius: 4px;
+            font-size: 11px; font-weight: 600;
+        }
+        .tier-budget { background: rgba(34,197,94,0.15); color: var(--green); }
+
+        /* Calculator */
+        .calculator-section {
+            max-width: 900px; margin: 0 auto 48px; padding: 0 24px;
+        }
+        .calculator-section h2 { font-size: 28px; font-weight: 800; margin-bottom: 8px; text-align: center; }
+        .calculator-section .section-sub { color: var(--text-secondary); text-align: center; margin-bottom: 32px; }
+
+        .usage-presets {
+            display: flex; gap: 8px; flex-wrap: wrap; justify-content: center; margin-bottom: 24px;
+        }
+        .preset-btn {
+            padding: 8px 16px; border-radius: 8px; border: 1px solid var(--border);
+            background: var(--bg-card); color: var(--text-secondary); font-size: 13px;
+            font-weight: 600; cursor: pointer; transition: all 0.2s;
+        }
+        .preset-btn:hover, .preset-btn.active {
+            border-color: var(--accent); color: var(--accent); background: var(--accent-glow);
+        }
+
+        .model-select-row {
+            display: grid; grid-template-columns: 1fr auto 1fr; gap: 16px; align-items: end;
+            margin-bottom: 24px;
+        }
+        .model-select-row .vs-divider {
+            font-size: 20px; font-weight: 800; color: var(--accent); align-self: center; padding-bottom: 8px;
+        }
+        .select-group { margin-bottom: 0; }
+        .select-group label {
+            display: block; font-size: 12px; color: var(--text-muted);
+            text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 6px; font-weight: 600;
+        }
+        .select-group select {
+            width: 100%; padding: 12px 14px; border-radius: 8px;
+            border: 1px solid var(--border); background: var(--bg-card);
+            color: var(--text-primary); font-size: 14px; cursor: pointer;
+        }
+        .select-group select:focus { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+        .calc-grid {
+            display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 32px;
+        }
+        .input-group { margin-bottom: 16px; }
+        .input-group label {
+            display: block; font-size: 12px; color: var(--text-muted);
+            text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 6px; font-weight: 600;
+        }
+        .input-group input {
+            width: 100%; padding: 12px 14px; border-radius: 8px;
+            border: 1px solid var(--border); background: var(--bg-card);
+            color: var(--text-primary); font-size: 15px;
+        }
+        .input-group input:focus { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+        .results-grid {
+            display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 32px;
+        }
+        .result-card {
+            background: var(--bg-secondary); border: 1px solid var(--border);
+            border-radius: var(--radius); padding: 28px; text-align: center;
+        }
+        .result-card.winner { border-color: var(--green); box-shadow: 0 0 24px rgba(34,197,94,0.1); }
+        .result-card .provider { font-size: 12px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 4px; }
+        .result-card .model-name { font-size: 20px; font-weight: 800; margin-bottom: 16px; }
+        .result-card .price-big { font-size: 36px; font-weight: 800; margin-bottom: 4px; }
+        .result-card .price-label { font-size: 13px; color: var(--text-muted); margin-bottom: 20px; }
+        .result-card .breakdown { text-align: left; }
+        .result-card .breakdown-row {
+            display: flex; justify-content: space-between; padding: 8px 0;
+            border-bottom: 1px solid var(--border); font-size: 14px;
+        }
+        .result-card .breakdown-row:last-child { border-bottom: none; }
+        .result-card .breakdown-row .label { color: var(--text-secondary); }
+        .result-card .breakdown-row .val { font-weight: 600; }
+        .winner-badge {
+            display: inline-block; background: rgba(34,197,94,0.15); color: var(--green);
+            padding: 4px 12px; border-radius: 6px; font-size: 12px; font-weight: 700;
+            margin-bottom: 12px; text-transform: uppercase; letter-spacing: 0.5px;
+        }
+
+        .savings-banner {
+            text-align: center; padding: 24px;
+            background: linear-gradient(135deg, rgba(34,197,94,0.1), rgba(99,102,241,0.1));
+            border: 1px solid var(--green); border-radius: var(--radius);
+            margin-bottom: 48px;
+        }
+        .savings-banner .amount { font-size: 32px; font-weight: 800; color: var(--green); }
+        .savings-banner .detail { color: var(--text-secondary); margin-top: 8px; }
+
+        /* Use Cases */
+        .use-cases {
+            max-width: 900px; margin: 0 auto 48px; padding: 0 24px;
+        }
+        .use-cases h2 { font-size: 24px; font-weight: 800; margin-bottom: 24px; text-align: center; }
+        .use-case-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+        .use-case-card {
+            background: var(--bg-secondary); border: 1px solid var(--border);
+            border-radius: var(--radius); padding: 24px;
+        }
+        .use-case-card h3 { font-size: 16px; font-weight: 700; margin-bottom: 8px; }
+        .use-case-card p { font-size: 14px; color: var(--text-secondary); line-height: 1.6; }
+        .use-case-card .recommendation {
+            margin-top: 12px; padding-top: 12px; border-top: 1px solid var(--border);
+            font-size: 13px; font-weight: 600;
+        }
+        .use-case-card .recommendation .pick-gemini { color: #4285f4; }
+        .use-case-card .recommendation .pick-deepseek { color: #3b82f6; }
+
+        /* Pro Upsell */
+        .pro-upsell {
+            max-width: 700px; margin: 0 auto 48px; padding: 32px;
+            background: var(--bg-card); border: 1px solid var(--accent);
+            border-radius: var(--radius); text-align: center;
+        }
+        .pro-upsell h2 { font-size: 24px; margin-bottom: 8px; }
+        .pro-upsell p { color: var(--text-secondary); margin-bottom: 20px; }
+        .pro-upsell .features { display: flex; gap: 24px; justify-content: center; flex-wrap: wrap; margin-bottom: 24px; }
+        .pro-upsell .feature { font-size: 14px; color: var(--text-secondary); }
+        .pro-upsell .feature strong { color: var(--text-primary); }
+
+        /* FAQ */
+        .faq-section {
+            max-width: 800px; margin: 0 auto 48px; padding: 0 24px;
+        }
+        .faq-section h2 { font-size: 24px; font-weight: 800; margin-bottom: 24px; text-align: center; }
+        .faq-item { margin-bottom: 20px; }
+        .faq-item h3 { font-size: 16px; font-weight: 700; margin-bottom: 8px; cursor: pointer; }
+        .faq-item p { font-size: 14px; color: var(--text-secondary); line-height: 1.7; }
+
+        /* Related Tools */
+        .related-tools {
+            max-width: 900px; margin: 0 auto 48px; padding: 0 24px;
+            display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;
+        }
+        .related-card {
+            background: var(--bg-secondary); border: 1px solid var(--border);
+            border-radius: var(--radius); padding: 20px; text-align: center;
+            transition: all 0.2s;
+        }
+        .related-card:hover { border-color: var(--accent); transform: translateY(-2px); }
+        .related-card h3 { font-size: 15px; font-weight: 700; margin-bottom: 6px; }
+        .related-card p { font-size: 13px; color: var(--text-muted); }
+        .related-card a { text-decoration: none; color: inherit; }
+
+        @media (max-width: 768px) {
+            .compare-hero { padding: 100px 20px 30px; }
+            .calc-grid, .results-grid, .use-case-grid { grid-template-columns: 1fr; }
+            .summary-cards { grid-template-columns: 1fr; }
+            .model-select-row { grid-template-columns: 1fr; }
+            .model-select-row .vs-divider { text-align: center; padding: 0; }
+            .related-tools { grid-template-columns: 1fr; }
+            .quick-table { font-size: 13px; }
+            .quick-table td, .quick-table th { padding: 10px 12px; }
+        }
+        .share-section {
+            max-width: 700px; margin: 0 auto 48px; padding: 0 24px;
+            text-align: center;
+        }
+        .share-section h2 { font-size: 20px; font-weight: 700; margin-bottom: 16px; }
+        .share-buttons { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+        .share-btn {
+            display: inline-flex; align-items: center; gap: 6px;
+            padding: 10px 20px; border-radius: 8px; border: 1px solid var(--border);
+            background: var(--bg-card); color: var(--text-primary);
+            font-size: 14px; font-weight: 600; text-decoration: none; transition: all 0.2s;
+        }
+        .share-btn:hover { border-color: var(--accent); transform: translateY(-1px); }
+    </style>
+    <meta name="theme-color" content="#6366f1">
+</head>
+<body>
+    <a href="#main" class="skip-link">Skip to content</a>
+    <nav>
+        <div class="nav-inner">
+            <a href="index.html" class="logo">API<span>pulse</span></a>
+            <button class="hamburger" onclick="toggleMobileNav()" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+            <div class="nav-links">
+                <a href="calculator.html">Calculator</a>
+                <a href="compare.html">Compare</a>
+                <a href="cost-explorer.html">Explorer</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="blog.html">Blog</a>
+                <a href="pricing.html" class="nav-cta" onclick="if(window.trackEvent)window.trackEvent('pro_button_clicked',{source:'nav'})">Get Pro — $29</a>
+                <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
+            </div>
+        </div>
+    </nav>
+
+    <main id="main">
+
+    <!-- Hero -->
+    <div class="compare-hero">
+        <h1>DeepSeek V4 Flash <span class="vs">vs</span> Gemini 2.0 Flash Lite — Ultra-Budget Pricing</h1>
+        <p class="subtitle">The two cheapest AI models head to head. Gemini Flash Lite wins on input ($0.075), DeepSeek V4 Flash wins on output ($0.28). Both have 1M context windows.</p>
+        <p class="last-updated">Pricing data verified: May 29, 2026</p>
+    </div>
+
+    <!-- Summary Cards -->
+    <div class="summary-cards">
+        <div class="summary-card">
+            <div class="label">Cheapest Input</div>
+            <div class="value winner">Gemini Flash Lite</div>
+            <div class="detail">$0.075 vs $0.14 per 1M tokens</div>
+        </div>
+        <div class="summary-card">
+            <div class="label">Cheapest Output</div>
+            <div class="value winner">DeepSeek V4 Flash</div>
+            <div class="detail">$0.28 vs $0.30 per 1M tokens</div>
+        </div>
+        <div class="summary-card">
+            <div class="label">Context Window</div>
+            <div class="value tie">Tie — 1M</div>
+            <div class="detail">Both offer 1M token context</div>
+        </div>
+    </div>
+
+    <!-- Quick Comparison Table -->
+    <div class="quick-comparison">
+        <h2>All Ultra-Budget Models Compared</h2>
+        <p class="section-sub">The cheapest AI models available, ranked by input price.</p>
+        <table class="quick-table">
+            <thead>
+                <tr>
+                    <th>Model</th>
+                    <th>Provider</th>
+                    <th>Tier</th>
+                    <th>Input (per 1M)</th>
+                    <th>Output (per 1M)</th>
+                    <th>Context</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr style="background:rgba(66,133,244,0.05);">
+                    <td class="model-name">Gemini 2.0 Flash Lite</td>
+                    <td><span class="provider-badge badge-google">Google</span></td>
+                    <td><span class="tier-badge tier-budget">Budget</span></td>
+                    <td class="cheaper">$0.075</td>
+                    <td>$0.30</td>
+                    <td>1M</td>
+                </tr>
+                <tr>
+                    <td class="model-name">GPT-oss 20B</td>
+                    <td><span class="provider-badge badge-openai">OpenAI</span></td>
+                    <td><span class="tier-badge tier-budget">Budget</span></td>
+                    <td class="cheaper">$0.08</td>
+                    <td>$0.35</td>
+                    <td>128K</td>
+                </tr>
+                <tr>
+                    <td class="model-name">Gemini 2.0 Flash</td>
+                    <td><span class="provider-badge badge-google">Google</span></td>
+                    <td><span class="tier-badge tier-budget">Budget</span></td>
+                    <td class="cheaper">$0.10</td>
+                    <td>$0.40</td>
+                    <td>1M</td>
+                </tr>
+                <tr>
+                    <td class="model-name">Llama 3.1 8B</td>
+                    <td><span class="provider-badge" style="background:rgba(139,92,246,0.15);color:#8b5cf6;">Meta</span></td>
+                    <td><span class="tier-badge tier-budget">Budget</span></td>
+                    <td class="cheaper">$0.10</td>
+                    <td class="cheaper">$0.10</td>
+                    <td>128K</td>
+                </tr>
+                <tr style="background:rgba(59,130,246,0.05);">
+                    <td class="model-name">DeepSeek V4 Flash</td>
+                    <td><span class="provider-badge badge-deepseek">DeepSeek</span></td>
+                    <td><span class="tier-badge tier-budget">Budget</span></td>
+                    <td>$0.14</td>
+                    <td class="cheaper">$0.28</td>
+                    <td>1M</td>
+                </tr>
+                <tr>
+                    <td class="model-name">GPT-oss 120B</td>
+                    <td><span class="provider-badge badge-openai">OpenAI</span></td>
+                    <td><span class="tier-badge tier-budget">Budget</span></td>
+                    <td>$0.15</td>
+                    <td>$0.60</td>
+                    <td>128K</td>
+                </tr>
+                <tr>
+                    <td class="model-name">GPT-4o mini</td>
+                    <td><span class="provider-badge badge-openai">OpenAI</span></td>
+                    <td><span class="tier-badge tier-budget">Budget</span></td>
+                    <td>$0.15</td>
+                    <td>$0.60</td>
+                    <td>128K</td>
+                </tr>
+                <tr>
+                    <td class="model-name">GPT-5 mini</td>
+                    <td><span class="provider-badge badge-openai">OpenAI</span></td>
+                    <td><span class="tier-badge tier-budget">Budget</span></td>
+                    <td>$0.25</td>
+                    <td>$2.00</td>
+                    <td>272K</td>
+                </tr>
+                <tr>
+                    <td class="model-name">Claude Haiku 4.5</td>
+                    <td><span class="provider-badge badge-anthropic">Anthropic</span></td>
+                    <td><span class="tier-badge tier-budget">Budget</span></td>
+                    <td>$1.00</td>
+                    <td>$5.00</td>
+                    <td>200K</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Interactive Calculator -->
+    <div class="calculator-section">
+        <h2>Calculate Your Exact Costs</h2>
+        <p class="section-sub">Pick your models, enter your usage, see which ultra-budget model saves you more.</p>
+
+        <div class="usage-presets">
+            <button class="preset-btn" onclick="applyPreset('chatbot')">Chatbot</button>
+            <button class="preset-btn" onclick="applyPreset('coding')">Code Assistant</button>
+            <button class="preset-btn" onclick="applyPreset('rag')">RAG Pipeline</button>
+            <button class="preset-btn" onclick="applyPreset('content')">Content Gen</button>
+            <button class="preset-btn" onclick="applyPreset('heavy')">Heavy Usage</button>
+        </div>
+
+        <div class="model-select-row">
+            <div class="select-group">
+                <label>Google Model</label>
+                <select id="googleModel">
+                    <option value="google-flash-lite" selected>Gemini 2.0 Flash Lite ($0.075/$0.30)</option>
+                    <option value="google-flash">Gemini 2.0 Flash ($0.10/$0.40)</option>
+                </select>
+            </div>
+            <div class="vs-divider">vs</div>
+            <div class="select-group">
+                <label>DeepSeek Model</label>
+                <select id="deepseekModel">
+                    <option value="deepseek-v4-flash" selected>DeepSeek V4 Flash ($0.14/$0.28)</option>
+                    <option value="deepseek-v4-pro">DeepSeek V4 Pro ($0.44/$0.87)</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="calc-grid">
+            <div class="input-group">
+                <label>Input Tokens per Request</label>
+                <input type="number" id="inputTokens" value="2000" min="100" step="100">
+            </div>
+            <div class="input-group">
+                <label>Output Tokens per Request</label>
+                <input type="number" id="outputTokens" value="500" min="50" step="50">
+            </div>
+            <div class="input-group">
+                <label>Requests per Day</label>
+                <input type="number" id="requestsPerDay" value="1000" min="1" step="100">
+            </div>
+            <div class="input-group">
+                <label>Days per Month</label>
+                <input type="number" id="daysPerMonth" value="30" min="1" max="31">
+            </div>
+        </div>
+
+        <div class="results-grid">
+            <div class="result-card" id="googleResult">
+                <div class="provider">Google</div>
+                <div class="model-name" id="googleModelName">Gemini 2.0 Flash Lite</div>
+                <div class="price-big" id="googlePrice">$0.00</div>
+                <div class="price-label">per month</div>
+                <div class="breakdown">
+                    <div class="breakdown-row">
+                        <span class="label">Input cost</span>
+                        <span class="val" id="googleInput">$0.00</span>
+                    </div>
+                    <div class="breakdown-row">
+                        <span class="label">Output cost</span>
+                        <span class="val" id="googleOutput">$0.00</span>
+                    </div>
+                    <div class="breakdown-row">
+                        <span class="label">Per request</span>
+                        <span class="val" id="googlePerReq">$0.00</span>
+                    </div>
+                </div>
+            </div>
+            <div class="result-card" id="deepseekResult">
+                <div class="provider">DeepSeek</div>
+                <div class="model-name" id="deepseekModelName">DeepSeek V4 Flash</div>
+                <div class="price-big" id="deepseekPrice">$0.00</div>
+                <div class="price-label">per month</div>
+                <div class="breakdown">
+                    <div class="breakdown-row">
+                        <span class="label">Input cost</span>
+                        <span class="val" id="deepseekInput">$0.00</span>
+                    </div>
+                    <div class="breakdown-row">
+                        <span class="label">Output cost</span>
+                        <span class="val" id="deepseekOutput">$0.00</span>
+                    </div>
+                    <div class="breakdown-row">
+                        <span class="label">Per request</span>
+                        <span class="val" id="deepseekPerReq">$0.00</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="savings-banner" id="savingsBanner">
+            <div class="amount" id="savingsAmount">—</div>
+            <div class="detail" id="savingsDetail">Enter your usage above to see savings.</div>
+        </div>
+    </div>
+
+    <!-- Use Cases -->
+    <div class="use-cases">
+        <h2>Which Should You Choose?</h2>
+        <div class="use-case-grid">
+            <div class="use-case-card">
+                <h3>Chatbot / Customer Support</h3>
+                <p>High volume, short responses. Input tokens dominate. Cost per message matters most.</p>
+                <div class="recommendation"><span class="pick-gemini">Pick Gemini Flash Lite:</span> At $0.075/$0.30 it's 46% cheaper on input than DeepSeek. At 1M requests/month: $3.75 vs $7.00.</div>
+            </div>
+            <div class="use-case-card">
+                <h3>Content Generation</h3>
+                <p>Long outputs, summarization, writing. Output tokens dominate. Cost per generation matters most.</p>
+                <div class="recommendation"><span class="pick-deepseek">Pick DeepSeek V4 Flash:</span> At $0.14/$0.28, the output is 7% cheaper than Gemini Flash Lite. At 10M output tokens/month: $2.80 vs $3.00.</div>
+            </div>
+            <div class="use-case-card">
+                <h3>RAG Pipeline / Classification</h3>
+                <p>Large input contexts, short responses. Input-heavy workloads. Classification, extraction, tagging.</p>
+                <div class="recommendation"><span class="pick-gemini">Pick Gemini Flash Lite:</span> 46% cheaper on input at $0.075 vs $0.14. Both have 1M context. At 10M input tokens/month: $0.75 vs $1.40.</div>
+            </div>
+            <div class="use-case-card">
+                <h3>Code Generation</h3>
+                <p>Mixed input/output. Longer outputs for code. Both handle most coding tasks well.</p>
+                <div class="recommendation"><span class="pick-gemini">Pick Gemini Flash Lite:</span> 46% cheaper input at $0.075 vs $0.14. Output is close ($0.30 vs $0.28). For typical code workloads, the input savings win.</div>
+            </div>
+            <div class="use-case-card">
+                <h3>Long Document Analysis</h3>
+                <p>Processing large documents with minimal output. Input-heavy. Both have 1M context.</p>
+                <div class="recommendation"><span class="pick-gemini">Pick Gemini Flash Lite:</span> 46% cheaper input at $0.075 vs $0.14 with the same 1M context. Clear winner for document-heavy workloads.</div>
+            </div>
+            <div class="use-case-card">
+                <h3>Startup MVP / Side Project</h3>
+                <p>Minimize costs while building. Need reliable API at the absolute lowest price point.</p>
+                <div class="recommendation"><span class="pick-gemini">Pick Gemini Flash Lite:</span> At $0.075/M input, it's the cheapest model from a major provider. 1.9x cheaper input than DeepSeek for your MVP.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Pro Upsell -->
+    <div class="pro-upsell">
+        <h2>Save More with APIpulse Pro</h2>
+        <p>Get personalized cost optimization recommendations for your specific workload.</p>
+        <div class="features">
+            <div class="feature"><strong>Save scenarios</strong> — compare up to 10 configs</div>
+            <div class="feature"><strong>Export reports</strong> — PDF cost analysis</div>
+            <div class="feature"><strong>Optimization tips</strong> — save up to 40%</div>
+        </div>
+        <a href="pricing.html" class="btn-primary" onclick="if(window.trackEvent)window.trackEvent('pro_button_clicked',{source:'deepseek_v4flash_vs_gemini_flashlite'})">Get Pro — $29</a>
+    </div>
+
+    <!-- FAQ -->
+    <div class="faq-section">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-item">
+            <h3>Which is cheaper, DeepSeek V4 Flash or Gemini 2.0 Flash Lite?</h3>
+            <p>It depends on your usage. Gemini 2.0 Flash Lite has the cheapest input at $0.075/1M tokens (vs DeepSeek's $0.14), but DeepSeek V4 Flash has the cheapest output at $0.28/1M tokens (vs Gemini's $0.30). For output-heavy workloads like content generation, DeepSeek is slightly cheaper. For input-heavy workloads like RAG or classification, Gemini Flash Lite wins.</p>
+        </div>
+        <div class="faq-item">
+            <h3>What is the cheapest AI API model for input tokens?</h3>
+            <p>Gemini 2.0 Flash Lite at $0.075 per 1M tokens is the cheapest input pricing available. For comparison, DeepSeek V4 Flash costs $0.14, GPT-oss 20B costs $0.08, and GPT-5 mini costs $0.25. At 10M input tokens/month, Gemini Flash Lite costs $0.75 vs DeepSeek's $1.40.</p>
+        </div>
+        <div class="faq-item">
+            <h3>What is the cheapest AI API model for output tokens?</h3>
+            <p>DeepSeek V4 Flash at $0.28 per 1M tokens has the cheapest output pricing among major providers. Gemini 2.0 Flash Lite costs $0.30, Gemini 2.0 Flash costs $0.40, and Llama 3.1 8B costs $0.10 (open-source via Together.ai). At 10M output tokens/month, DeepSeek costs $2.80 vs Gemini Flash Lite's $3.00.</p>
+        </div>
+        <div class="faq-item">
+            <h3>DeepSeek V4 Flash vs Gemini Flash Lite for chatbots?</h3>
+            <p>Both are excellent for chatbots. Gemini Flash Lite at $0.075/$0.30 with 1M context is ideal for high-volume, short-response chatbots. DeepSeek V4 Flash at $0.14/$0.28 with 1M context has slightly better output pricing. For most chatbot workloads, Gemini Flash Lite's cheaper input makes it the better choice since input tokens dominate in conversational use cases.</p>
+        </div>
+        <div class="faq-item">
+            <h3>Are DeepSeek and Gemini Flash Lite available worldwide?</h3>
+            <p>Gemini 2.0 Flash Lite is available globally through Google AI Studio and Vertex AI. DeepSeek V4 Flash is available through DeepSeek's API and some third-party providers. Check APIpulse's provider pages for current availability and regional restrictions. Both models are in Budget tier, making them the cheapest options from their respective providers.</p>
+        </div>
+    </div>
+
+    <!-- Share Section -->
+    <div class="share-section">
+        <h2>Share This Comparison</h2>
+        <div class="share-buttons">
+            <a class="share-btn" id="shareX" href="#" target="_blank" rel="noopener" onclick="shareOnX()">Share on X</a>
+            <a class="share-btn" id="shareLinkedIn" href="#" target="_blank" rel="noopener" onclick="shareOnLinkedIn()">Share on LinkedIn</a>
+        </div>
+    </div>
+
+    <!-- Related Tools -->
+    <div class="related-tools">
+        <a href="compare-gpt5-mini-vs-gemini-flash.html" class="related-card">
+            <h3>GPT-5 mini vs Gemini Flash</h3>
+            <p>OpenAI vs Google budget models</p>
+        </a>
+        <a href="cost-optimizer.html" class="related-card">
+            <h3>Cost Optimizer</h3>
+            <p>Find your optimal model mix</p>
+        </a>
+        <a href="calculator.html" class="related-card">
+            <h3>Cost Calculator</h3>
+            <p>Calculate costs for any model</p>
+        </a>
+    </div>
+
+    </main>
+
+    <footer>
+        <div class="footer-inner">
+            <div class="footer-col">
+                <div class="footer-logo">API<span>pulse</span></div>
+                <p>Know your AI API costs before you commit.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Tools</h4>
+                <a href="calculator.html">Cost Calculator</a>
+                <a href="compare.html">Model Comparison</a>
+                <a href="cost-optimizer.html">Cost Optimizer</a>
+                <a href="tools.html">All Tools</a>
+            </div>
+            <div class="footer-col">
+                <h4>Compare</h4>
+                <a href="compare-claude-vs-chatgpt.html">Claude vs ChatGPT</a>
+                <a href="compare-claude-vs-deepseek.html">Claude vs DeepSeek</a>
+                <a href="compare-providers.html">Provider Comparison</a>
+                <a href="compare.html">All Comparisons</a>
+            </div>
+            <div class="footer-col">
+                <h4>Resources</h4>
+                <a href="blog.html">Blog</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="pricing-trends.html">Pricing Trends</a>
+                <a href="newsletter.html">Newsletter</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 APIpulse. Built with static HTML. No tracking beyond analytics.</p>
+        </div>
+    </footer>
+
+    <script>
+    // Model data
+    const MODELS = {
+        'google-flash-lite': { name: 'Gemini 2.0 Flash Lite', provider: 'Google', input: 0.075, output: 0.30 },
+        'google-flash': { name: 'Gemini 2.0 Flash', provider: 'Google', input: 0.10, output: 0.40 },
+        'deepseek-v4-flash': { name: 'DeepSeek V4 Flash', provider: 'DeepSeek', input: 0.14, output: 0.28 },
+        'deepseek-v4-pro': { name: 'DeepSeek V4 Pro', provider: 'DeepSeek', input: 0.44, output: 0.87 }
+    };
+
+    const PRESETS = {
+        chatbot: { input: 800, output: 200, reqPerDay: 5000 },
+        coding: { input: 4000, output: 1500, reqPerDay: 500 },
+        rag: { input: 3000, output: 800, reqPerDay: 2000 },
+        content: { input: 1500, output: 2000, reqPerDay: 300 },
+        heavy: { input: 5000, output: 2000, reqPerDay: 10000 }
+    };
+
+    function applyPreset(name) {
+        const p = PRESETS[name];
+        document.getElementById('inputTokens').value = p.input;
+        document.getElementById('outputTokens').value = p.output;
+        document.getElementById('requestsPerDay').value = p.reqPerDay;
+        document.querySelectorAll('.preset-btn').forEach(b => b.classList.remove('active'));
+        event.target.classList.add('active');
+        calculate();
+    }
+
+    function calculate() {
+        const googleId = document.getElementById('googleModel').value;
+        const deepseekId = document.getElementById('deepseekModel').value;
+        const inputTokens = parseInt(document.getElementById('inputTokens').value) || 0;
+        const outputTokens = parseInt(document.getElementById('outputTokens').value) || 0;
+        const reqPerDay = parseInt(document.getElementById('requestsPerDay').value) || 0;
+        const daysPerMonth = parseInt(document.getElementById('daysPerMonth').value) || 30;
+
+        const google = MODELS[googleId];
+        const deepseek = MODELS[deepseekId];
+
+        const totalRequests = reqPerDay * daysPerMonth;
+        const totalInputTokens = inputTokens * totalRequests;
+        const totalOutputTokens = outputTokens * totalRequests;
+
+        // Google costs
+        const googleInputCost = (totalInputTokens / 1000000) * google.input;
+        const googleOutputCost = (totalOutputTokens / 1000000) * google.output;
+        const googleTotal = googleInputCost + googleOutputCost;
+        const googlePerReq = totalRequests > 0 ? googleTotal / totalRequests : 0;
+
+        // DeepSeek costs
+        const deepseekInputCost = (totalInputTokens / 1000000) * deepseek.input;
+        const deepseekOutputCost = (totalOutputTokens / 1000000) * deepseek.output;
+        const deepseekTotal = deepseekInputCost + deepseekOutputCost;
+        const deepseekPerReq = totalRequests > 0 ? deepseekTotal / totalRequests : 0;
+
+        // Update UI
+        document.getElementById('googleModelName').textContent = google.name;
+        document.getElementById('deepseekModelName').textContent = deepseek.name;
+
+        document.getElementById('googlePrice').textContent = '$' + googleTotal.toFixed(2);
+        document.getElementById('deepseekPrice').textContent = '$' + deepseekTotal.toFixed(2);
+
+        document.getElementById('googleInput').textContent = '$' + googleInputCost.toFixed(2);
+        document.getElementById('googleOutput').textContent = '$' + googleOutputCost.toFixed(2);
+        document.getElementById('googlePerReq').textContent = '$' + googlePerReq.toFixed(6);
+
+        document.getElementById('deepseekInput').textContent = '$' + deepseekInputCost.toFixed(2);
+        document.getElementById('deepseekOutput').textContent = '$' + deepseekOutputCost.toFixed(2);
+        document.getElementById('deepseekPerReq').textContent = '$' + deepseekPerReq.toFixed(6);
+
+        // Winner
+        const googleCard = document.getElementById('googleResult');
+        const deepseekCard = document.getElementById('deepseekResult');
+        googleCard.classList.remove('winner');
+        deepseekCard.classList.remove('winner');
+
+        // Remove existing badges
+        googleCard.querySelectorAll('.winner-badge').forEach(b => b.remove());
+        deepseekCard.querySelectorAll('.winner-badge').forEach(b => b.remove());
+
+        if (googleTotal < deepseekTotal) {
+            googleCard.classList.add('winner');
+            const badge = document.createElement('div');
+            badge.className = 'winner-badge';
+            badge.textContent = 'Cheaper';
+            googleCard.querySelector('.model-name').insertAdjacentElement('afterend', badge);
+        } else if (deepseekTotal < googleTotal) {
+            deepseekCard.classList.add('winner');
+            const badge = document.createElement('div');
+            badge.className = 'winner-badge';
+            badge.textContent = 'Cheaper';
+            deepseekCard.querySelector('.model-name').insertAdjacentElement('afterend', badge);
+        }
+
+        // Savings
+        const savingsBanner = document.getElementById('savingsBanner');
+        const savingsAmount = document.getElementById('savingsAmount');
+        const savingsDetail = document.getElementById('savingsDetail');
+
+        if (googleTotal !== deepseekTotal) {
+            const diff = Math.abs(googleTotal - deepseekTotal);
+            const pct = ((diff / Math.max(googleTotal, deepseekTotal)) * 100).toFixed(0);
+            const cheaper = googleTotal < deepseekTotal ? google.name : deepseek.name;
+            const expensive = googleTotal < deepseekTotal ? deepseek.name : google.name;
+            savingsAmount.textContent = 'Save $' + diff.toFixed(2) + '/month (' + pct + '%)';
+            savingsDetail.textContent = cheaper + ' is ' + pct + '% cheaper than ' + expensive + ' for your usage.';
+        } else {
+            savingsAmount.textContent = 'Same cost';
+            savingsDetail.textContent = 'Both models cost the same for your usage pattern.';
+        }
+
+        // GA4 tracking
+        if (window.trackEvent) {
+            window.trackEvent('calculator_used', {
+                tool: 'deepseek_v4flash_vs_gemini_flashlite',
+                google_model: googleId,
+                deepseek_model: deepseekId,
+                monthly_requests: totalRequests
+            });
+        }
+    }
+
+    function shareOnX() {
+        const text = encodeURIComponent('DeepSeek V4 Flash vs Gemini 2.0 Flash Lite — The two cheapest AI models head to head. $0.14/$0.28 vs $0.075/$0.30 per 1M tokens.');
+        window.open(`https://twitter.com/intent/tweet?text=${text}&url=${encodeURIComponent('https://getapipulse.com/compare-deepseek-v4-flash-vs-gemini-flash-lite.html')}`, '_blank');
+        if (window.trackEvent) window.trackEvent('share_clicked', {platform: 'x', page: 'deepseek_v4flash_vs_gemini_flashlite'});
+    }
+
+    function shareOnLinkedIn() {
+        window.open(`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent('https://getapipulse.com/compare-deepseek-v4-flash-vs-gemini-flash-lite.html')}`, '_blank');
+        if (window.trackEvent) window.trackEvent('share_clicked', {platform: 'linkedin', page: 'deepseek_v4flash_vs_gemini_flashlite'});
+    }
+
+    // Event listeners
+    ['googleModel', 'deepseekModel', 'inputTokens', 'outputTokens', 'requestsPerDay', 'daysPerMonth'].forEach(id => {
+        document.getElementById(id).addEventListener('input', calculate);
+    });
+
+    // Initial calculation
+    calculate();
+    </script>
+</body>
+</html>
