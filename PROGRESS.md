@@ -1,6 +1,6 @@
 # PROGRESS.md
 
-## Site Status (as of Session 340, May 29, 2026)
+## Site Status (as of Session 341, May 29, 2026)
 **309 web pages | 187 blog posts | 34 models | 10 providers | 41 tools | 11 API endpoints | 1 embeddable widget**
 - Sitemap (303 URLs), RSS (236 items), blog files (187 posts + 1 index) — all in sync
 - Pricing data verified May 29 — 34 models, 10 providers
@@ -22,6 +22,13 @@
 ---
 
 ## Key Milestones
+
+### Session 341 (May 29)
+**Data hygiene: Synced price-snapshot.json with pricing-data.js:**
+- Added missing `anthropic-opus48` (Claude Opus 4.8) to price-snapshot.json
+- Updated snapshotDate from May 6 to May 29 to match pricing-data.js
+- All 3 data sources now in sync: pricing-data.js (34 models), price-snapshot.json (34 models), chrome-extension/models.js (34 models)
+- Verified sitemap accuracy: 303 URLs correct (6 excluded pages are utility/redirect pages: 404, cost, funnel, success, thank-you, unsubscribe)
 
 ### Session 340 (May 29)
 **Built Interactive LLM Pricing Map + blog post + npm package:**
