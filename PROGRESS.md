@@ -1,13 +1,13 @@
 # PROGRESS.md
 
-## Site Status (as of Session 329, May 29, 2026)
-**301 web pages | 183 blog files | 34 models | 10 providers | 38 tools | 9 API endpoints | 1 embeddable widget**
-- Sitemap (295 URLs), RSS (231 items), blog files (183 posts + 1 index) — all in sync
+## Site Status (as of Session 330, May 29, 2026)
+**303 web pages | 184 blog posts | 34 models | 10 providers | 39 tools | 9 API endpoints | 1 embeddable widget**
+- Sitemap (299 URLs), RSS (233 items), blog files (184 posts + 1 index) — all in sync
 - Pricing data verified May 29 — 34 models, 10 providers
 - **Analytics: GA4 (G-0CEP7S9Y3J)** — fully operational, custom events via gtag()
 - **Pro system:** localStorage-based unlock after Stripe payment. Access code fallback on pro.html.
-- **34 comparison pages** (was 32) — all providers covered, interactive calculators, FAQPage schema
-- **38 interactive tools** — calculators, optimizer, planner, pipeline, rate limit, budget showdown, chatbot cost, model switch, stack builder, model advisor, fine-tuning calculator, Claude API cost calculator, cost projection, Gemini API cost calculator, cheapest AI API for coding, xAI Grok cost calculator, DeepSeek API cost calculator, Mistral API cost calculator, Meta Llama API cost calculator, Open Source LLM cost calculator, AI API Pricing Comparison 2026
+- **34 comparison pages** — all providers covered, interactive calculators, FAQPage schema
+- **39 interactive tools** — calculators, optimizer, planner, pipeline, rate limit, budget showdown, chatbot cost, model switch, stack builder, model advisor, fine-tuning calculator, Claude API cost calculator, cost projection, Gemini API cost calculator, cheapest AI API for coding, xAI Grok cost calculator, DeepSeek API cost calculator, Mistral API cost calculator, Meta Llama API cost calculator, Open Source LLM cost calculator, AI API Pricing Comparison 2026, **Cost Leak Detector** (new)
 - **9 API endpoints** — pricing data, cost calculator (single/multi-model), cheapest model finder, pricing badge (SVG), subscribe, unsubscribe, newsletter, check-price-changes, admin
 - **Social proof:** PH launch badge, Reddit testimonial, newsletter, exit popup A/B test
 - **Community playbook:** 7 subreddit drafts + 2 newsletter pitches ready in COMMUNITY-ENGAGEMENT.md
@@ -21,13 +21,17 @@
 
 ## Key Milestones
 
-### Session 329 (May 29)
-**New blog post + budget cross-links across site:**
-- Created `blog-gpt5-mini-vs-claude-haiku.html` — in-depth blog post comparing GPT-5 mini vs Claude Haiku 4.5. Pricing side-by-side, real cost examples (chatbot $18 vs $60/mo, code assistant $60 vs $172.50/mo, data processing $375 vs $1500/mo), use case recommendations, broader budget landscape table, FAQPage schema.
-- Added to blog.html index, sitemap.xml (294→295 URLs), RSS (230→231 items).
-- Added budget cross-links from 5 high-traffic comparison pages: Claude vs ChatGPT, Claude vs DeepSeek, Gemini vs Claude, OpenAI vs DeepSeek, OpenAI vs Anthropic — each now links to the most relevant budget comparison.
-- Added blog cross-link from `compare-gpt5-mini-vs-claude-haiku.html`.
-- New stats: 301 pages, 183 blog posts.
+### Session 330 (May 29)
+**New conversion tool + 2 SEO blog posts:**
+- Built `cost-leak-detector.html` — interactive tool where developers select their current model + usage, instantly see cheaper alternatives ranked by savings. Shows top 3 alternatives free, locks remaining behind Pro upsell. GA4 event tracking. FAQPage schema.
+- Created `blog-cost-leak-detector.html` — "Are You Overpaying for AI APIs? How to Find and Fix Cost Leaks." BlogPosting + FAQPage schema. Promotes the leak detector tool.
+- Created `blog-cheap-ai-apis-under-50-cents.html` — "Cheap AI APIs Under $0.50/1M Tokens — The Complete 2026 Guide." 12 models ranked, real workload cost comparisons, model routing strategy (70/20/10 rule). Targets long-tail SEO keyword.
+- Added leak detector to homepage feature cards + tools section, nav, sitemap, RSS, blog index.
+- Updated blog count 182→184 across 5 pages.
+- New stats: 303 pages, 184 blog posts, 39 tools, 299 sitemap URLs, 233 RSS items.
+
+### Sessions 327-329 (May 29)
+✅ 3 sessions: 2 budget comparison pages (GPT-5 mini vs Gemini Flash, DeepSeek V4 Flash vs Gemini Flash Lite). Blog post (GPT-5 mini vs Claude Haiku). Cross-links from 5 comparison pages. Added Claude Opus 4.8. Badge promotion + stale stats cleanup.
 
 ### Session 328 (May 29)
 **2 new budget comparison pages + internal linking:**
