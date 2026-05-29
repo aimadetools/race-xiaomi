@@ -57,7 +57,31 @@
         ]
     }
     </script>
-    <style>
+        <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+                {
+                        "@type": "Question",
+                        "name": "How much does a RAG system cost to run?",
+                        "acceptedAnswer": {
+                                "@type": "Answer",
+                                "text": "A RAG system serving 1K queries/day with 10K document chunks costs approximately: Embedding (one-time): $5-20 depending on document size. Vector database (Pinecone/Weaviate): $70-200/month for managed, free if self-hosted. LLM inference per query: $0.001-0.01 depending on model. Total monthly: $100-500 for managed, $20-100 for self-hosted infrastructure."
+                        }
+                },
+                {
+                        "@type": "Question",
+                        "name": "What is the cheapest way to build a RAG system?",
+                        "acceptedAnswer": {
+                                "@type": "Answer",
+                                "text": "Cheapest RAG stack: 1) Embeddings: Use free tiers from Cohere or sentence-transformers (self-hosted). 2) Vector DB: ChromaDB or Qdrant (self-hosted, free). 3) LLM: DeepSeek V4 Flash ($0.07/$0.27) for retrieval-augmented generation. 4) Cache frequent queries to reduce LLM calls. This stack costs under $10/month for moderate traffic."
+                        }
+                }
+        ]
+}
+    </script>
+<style>
         .content { max-width: 800px; margin: 0 auto; padding: 120px 24px 80px; }
         h1 { font-size: 40px; font-weight: 800; margin-bottom: 12px; }
         .subtitle { color: var(--text-secondary); font-size: 18px; margin-bottom: 48px; }

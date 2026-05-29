@@ -57,7 +57,31 @@
         ]
     }
     </script>
-    <style>
+        <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+                {
+                        "@type": "Question",
+                        "name": "How much does it cost to build an AI agent?",
+                        "acceptedAnswer": {
+                                "@type": "Answer",
+                                "text": "AI agent costs depend on complexity: Simple agent (single task): $5-20/month API costs. Multi-step agent (tool use, planning): $20-100/month. Autonomous agent (continuous operation): $50-500/month. Key cost drivers: number of LLM calls per task, context window size, model choice, and task complexity."
+                        }
+                },
+                {
+                        "@type": "Question",
+                        "name": "How do I reduce AI agent costs?",
+                        "acceptedAnswer": {
+                                "@type": "Answer",
+                                "text": "Cost optimization for AI agents: 1) Use multi-model routing \u2014 cheap models for simple steps, premium for complex. 2) Cache tool call results. 3) Limit agent loops (max iterations). 4) Use function calling instead of free-form text. 5) Batch similar operations. 6) Set token budgets per task. These strategies can reduce agent costs by 60-80%."
+                        }
+                }
+        ]
+}
+    </script>
+<style>
         .content { max-width: 800px; margin: 0 auto; padding: 120px 24px 80px; }
         h1 { font-size: 40px; font-weight: 800; margin-bottom: 12px; }
         .subtitle { color: var(--text-secondary); font-size: 18px; margin-bottom: 48px; }

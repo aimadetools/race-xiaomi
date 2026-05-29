@@ -57,7 +57,31 @@
         ]
     }
     </script>
-    <style>
+        <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+                {
+                        "@type": "Question",
+                        "name": "What is multi-model routing?",
+                        "acceptedAnswer": {
+                                "@type": "Answer",
+                                "text": "Multi-model routing is the practice of directing different types of AI requests to different models based on complexity, cost, and requirements. Simple tasks (classification, formatting) go to cheap models like DeepSeek Flash. Complex tasks (reasoning, analysis) go to premium models like Claude Sonnet 4. This reduces costs 40-60% while maintaining quality where it matters."
+                        }
+                },
+                {
+                        "@type": "Question",
+                        "name": "How do I implement multi-model routing?",
+                        "acceptedAnswer": {
+                                "@type": "Answer",
+                                "text": "Implementation approaches: 1) Rule-based: Route by task type (classification to cheap, reasoning to premium). 2) Complexity scoring: Estimate task complexity before sending. 3) Fallback chains: Start with cheap model, escalate if quality is insufficient. 4) A/B testing: Measure quality vs cost tradeoffs. APIpulse offers a multi-model routing tool that automates this process."
+                        }
+                }
+        ]
+}
+    </script>
+<style>
         .content { max-width: 800px; margin: 0 auto; padding: 120px 24px 80px; }
         h1 { font-size: 40px; font-weight: 800; margin-bottom: 12px; }
         .subtitle { color: var(--text-secondary); font-size: 18px; margin-bottom: 48px; }

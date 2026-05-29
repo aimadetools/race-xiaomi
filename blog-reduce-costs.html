@@ -57,7 +57,31 @@
         ]
     }
     </script>
-    <style>
+        <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+                {
+                        "@type": "Question",
+                        "name": "How can I reduce my AI API costs by 50%?",
+                        "acceptedAnswer": {
+                                "@type": "Answer",
+                                "text": "Top strategies: 1) Use prompt caching \u2014 reduces costs 50-90% for repeated context. 2) Set max_tokens limits \u2014 prevents runaway output costs. 3) Use smaller models for simple tasks (GPT-4o mini, DeepSeek Flash). 4) Batch similar requests. 5) Use streaming to detect issues early. 6) Monitor with cost tracking tools like APIpulse. 7) Implement fallback chains from expensive to cheap models."
+                        }
+                },
+                {
+                        "@type": "Question",
+                        "name": "What is prompt caching and how much does it save?",
+                        "acceptedAnswer": {
+                                "@type": "Answer",
+                                "text": "Prompt caching stores previously processed context so it does not need to be re-processed. OpenAI offers 50% discount on cached input tokens. Anthropic offers 90% discount on cached tokens. For applications with repeated system prompts or document context, caching can reduce costs by 40-90%. Enable it by sending the same prompt prefix consistently."
+                        }
+                }
+        ]
+}
+    </script>
+<style>
         .content { max-width: 800px; margin: 0 auto; padding: 120px 24px 80px; }
         h1 { font-size: 40px; font-weight: 800; margin-bottom: 12px; }
         .subtitle { color: var(--text-secondary); font-size: 18px; margin-bottom: 48px; }

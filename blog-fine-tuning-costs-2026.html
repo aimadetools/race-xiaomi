@@ -57,7 +57,31 @@
         ]
     }
     </script>
-    <style>
+        <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+                {
+                        "@type": "Question",
+                        "name": "How much does fine-tuning cost in 2026?",
+                        "acceptedAnswer": {
+                                "@type": "Answer",
+                                "text": "Fine-tuning costs vary by provider: OpenAI GPT-4o fine-tuning: $3.75/$15 per 1M tokens (training/input). Google Gemini fine-tuning: $2.50/$12.50 per 1M tokens. Open-source models (Llama, Mistral) can be fine-tuned for free on your own GPU infrastructure. For 10K training examples (~5M tokens), expect $20-100 for training."
+                        }
+                },
+                {
+                        "@type": "Question",
+                        "name": "Is fine-tuning worth it compared to prompting?",
+                        "acceptedAnswer": {
+                                "@type": "Answer",
+                                "text": "Fine-tuning is worth it when: 1) You need consistent output format across thousands of calls. 2) Prompt engineering alone cannot achieve required accuracy. 3) You want to reduce token usage (shorter prompts after fine-tuning). 4) You have domain-specific data. For most use cases, good prompting plus few-shot examples is 80% as effective at 0% additional cost."
+                        }
+                }
+        ]
+}
+    </script>
+<style>
         .content { max-width: 800px; margin: 0 auto; padding: 120px 24px 80px; }
         h1 { font-size: 40px; font-weight: 800; margin-bottom: 12px; }
         .subtitle { color: var(--text-secondary); font-size: 18px; margin-bottom: 48px; }

@@ -57,7 +57,39 @@
         ]
     }
     </script>
-    <style>
+        <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+                {
+                        "@type": "Question",
+                        "name": "Is DeepSeek cheaper than OpenAI?",
+                        "acceptedAnswer": {
+                                "@type": "Answer",
+                                "text": "Yes, DeepSeek is significantly cheaper. DeepSeek V4 Pro costs $0.55/$2.19 per 1M tokens vs GPT-4o at $2.50/$10. DeepSeek V4 Flash costs $0.07/$0.27 per 1M tokens, making it one of the cheapest options available. For budget-conscious teams, DeepSeek V4 Flash is 35x cheaper than GPT-4o for output tokens."
+                        }
+                },
+                {
+                        "@type": "Question",
+                        "name": "How does DeepSeek V4 compare to GPT-4o quality?",
+                        "acceptedAnswer": {
+                                "@type": "Answer",
+                                "text": "DeepSeek V4 Pro matches or exceeds GPT-4o on many benchmarks including coding and math. DeepSeek V4 Flash is comparable to GPT-4o mini at a fraction of the cost. For most production use cases, DeepSeek V4 delivers 80-90% of GPT-4o quality at 20-40% of the cost."
+                        }
+                },
+                {
+                        "@type": "Question",
+                        "name": "Can I use DeepSeek as a drop-in replacement for OpenAI?",
+                        "acceptedAnswer": {
+                                "@type": "Answer",
+                                "text": "DeepSeek offers an OpenAI-compatible API, so switching requires minimal code changes. Update your base URL to api.deepseek.com and use your DeepSeek API key. Most OpenAI SDK wrappers work with DeepSeek out of the box. Test thoroughly with your specific use case before switching production traffic."
+                        }
+                }
+        ]
+}
+    </script>
+<style>
         .content { max-width: 800px; margin: 0 auto; padding: 120px 24px 80px; }
         h1 { font-size: 40px; font-weight: 800; margin-bottom: 12px; }
         .subtitle { color: var(--text-secondary); font-size: 18px; margin-bottom: 48px; }

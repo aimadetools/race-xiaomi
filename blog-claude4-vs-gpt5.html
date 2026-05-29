@@ -57,7 +57,39 @@
         ]
     }
     </script>
-    <style>
+        <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+                {
+                        "@type": "Question",
+                        "name": "Is Claude 4 better than GPT-5?",
+                        "acceptedAnswer": {
+                                "@type": "Answer",
+                                "text": "Claude 4 Opus excels at complex reasoning and long-context tasks with its 200K context window. GPT-5 offers strong general performance with a 128K context window. Claude 4 Opus costs $15/$75 per 1M tokens while GPT-5 costs $1.25/$10, making GPT-5 significantly cheaper. For most production use cases, Claude Sonnet 4 ($3/$15) offers the best balance of quality and cost."
+                        }
+                },
+                {
+                        "@type": "Question",
+                        "name": "How much does Claude 4 cost compared to GPT-5?",
+                        "acceptedAnswer": {
+                                "@type": "Answer",
+                                "text": "Claude 4 Opus: $15 input / $75 output per 1M tokens (200K context). GPT-5: $1.25 input / $10 output per 1M tokens (128K context). Claude Opus 4.7/4.8: $5/$25 with 1M context. Claude Sonnet 4: $3/$15. GPT-5 mini: $0.25/$2. GPT-5 is 12x cheaper for input tokens but Claude offers larger context windows."
+                        }
+                },
+                {
+                        "@type": "Question",
+                        "name": "Which model is best for code generation, Claude 4 or GPT-5?",
+                        "acceptedAnswer": {
+                                "@type": "Answer",
+                                "text": "Both models are excellent for code generation. Claude 4 Opus handles complex multi-file refactoring better due to its 200K context window. GPT-5 is faster and cheaper for individual function-level tasks. For production code generation, Claude Sonnet 4 at $3/$15 offers the best cost-to-quality ratio."
+                        }
+                }
+        ]
+}
+    </script>
+<style>
         .content { max-width: 800px; margin: 0 auto; padding: 120px 24px 80px; }
         h1 { font-size: 40px; font-weight: 800; margin-bottom: 12px; }
         .subtitle { color: var(--text-secondary); font-size: 18px; margin-bottom: 48px; }

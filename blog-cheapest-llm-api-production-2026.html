@@ -57,7 +57,39 @@
         ]
     }
     </script>
-    <style>
+        <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+                {
+                        "@type": "Question",
+                        "name": "What is the cheapest LLM API for production in 2026?",
+                        "acceptedAnswer": {
+                                "@type": "Answer",
+                                "text": "The cheapest production-ready LLM APIs in 2026: DeepSeek V4 Flash ($0.07/$0.27 per 1M tokens), Gemini 2.5 Flash ($0.075/$0.30), GPT-4o mini ($0.15/$0.60), and Llama 4 Scout (self-hosted, free). For managed APIs, DeepSeek V4 Flash offers the best price-to-quality ratio for high-volume production workloads."
+                        }
+                },
+                {
+                        "@type": "Question",
+                        "name": "Can I run LLMs for free in production?",
+                        "acceptedAnswer": {
+                                "@type": "Answer",
+                                "text": "Open-source models like Llama 4 Scout, Mistral Small, and Qwen can be self-hosted for free on your own infrastructure. Cloud providers offer free tiers: Google Cloud gives $300 credits, and some providers offer always-free quotas. For low-volume production, use free tiers from OpenAI, Anthropic, or Google. For high-volume, self-hosting open-source models is most cost-effective."
+                        }
+                },
+                {
+                        "@type": "Question",
+                        "name": "How much does it cost to run an AI chatbot in production?",
+                        "acceptedAnswer": {
+                                "@type": "Answer",
+                                "text": "A production chatbot serving 10K conversations/month (avg 2K tokens each) costs approximately: DeepSeek V4 Flash: $2-5/month, GPT-4o mini: $10-25/month, Claude Haiku 4.5: $25-50/month, GPT-4o: $50-100/month. Costs vary based on conversation length, complexity, and whether you use caching or batching optimizations."
+                        }
+                }
+        ]
+}
+    </script>
+<style>
         .content { max-width: 800px; margin: 0 auto; padding: 120px 24px 80px; }
         h1 { font-size: 40px; font-weight: 800; margin-bottom: 12px; }
         .subtitle { color: var(--text-secondary); font-size: 18px; margin-bottom: 48px; }

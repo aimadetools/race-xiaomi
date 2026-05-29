@@ -57,7 +57,31 @@
         ]
     }
     </script>
-    <style>
+        <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+                {
+                        "@type": "Question",
+                        "name": "Why is my AI API bill so high?",
+                        "acceptedAnswer": {
+                                "@type": "Answer",
+                                "text": "Common causes of high API bills: 1) Sending full conversation history instead of context window. 2) Not using max_tokens limits. 3) Using premium models for simple tasks. 4) No prompt caching for repeated content. 5) Redundant API calls (retries, duplicates). 6) Large system prompts sent with every request. Use APIpulse cost leak detector to identify waste."
+                        }
+                },
+                {
+                        "@type": "Question",
+                        "name": "What is the fastest way to cut my API bill?",
+                        "acceptedAnswer": {
+                                "@type": "Answer",
+                                "text": "Immediate wins: 1) Add max_tokens limits (saves 20-40%). 2) Switch simple tasks to GPT-4o mini or DeepSeek Flash (saves 60-80%). 3) Enable prompt caching (saves 40-90% on input). 4) Remove unnecessary system prompt content. 5) Implement request deduplication. Most teams can cut bills 50-70% in one day with these changes."
+                        }
+                }
+        ]
+}
+    </script>
+<style>
         .content { max-width: 800px; margin: 0 auto; padding: 120px 24px 80px; }
         h1 { font-size: 40px; font-weight: 800; margin-bottom: 12px; }
         .subtitle { color: var(--text-secondary); font-size: 18px; margin-bottom: 48px; }
