@@ -1,8 +1,8 @@
 # PROGRESS.md
 
-## Site Status (as of Session 325, May 29, 2026)
-**296 web pages | 182 blog files | 34 models | 10 providers | 38 tools | 9 API endpoints | 1 embeddable widget**
-- Sitemap (290 URLs), RSS (227 items), blog files (182 posts + 1 index) — all in sync
+## Site Status (as of Session 326, May 29, 2026)
+**297 web pages | 182 blog files | 34 models | 10 providers | 38 tools | 9 API endpoints | 1 embeddable widget**
+- Sitemap (291 URLs), RSS (227 items), blog files (182 posts + 1 index) — all in sync
 - Pricing data verified May 29 — 34 models, 10 providers
 - **Analytics: GA4 (G-0CEP7S9Y3J)** — fully operational, custom events via gtag()
 - **Pro system:** localStorage-based unlock after Stripe payment. Access code fallback on pro.html.
@@ -20,6 +20,16 @@
 ---
 
 ## Key Milestones
+
+### Session 326 (May 29)
+**Claude Opus 4.8 coverage across site — new comparison page + model selectors:**
+- Created `compare-gpt55-claude-opus48.html` — new GPT-5.5 vs Claude Opus 4.8 premium comparison page with interactive calculator, FAQPage schema, use cases.
+- Updated `compare-premium-ai-models.html` — added Opus 4.8 to title, meta, hero, comparison table, calculator dropdown, FAQ, related links.
+- Added Opus 4.8 to model selectors in 10+ pages: calculator, index, pro, launch, compare, claude-api-cost-calculator, fine-tuning-calculator, compare-claude-vs-deepseek, compare-claude-vs-chatgpt, compare-gemini-vs-claude, compare-gpt5-vs-claude-vs-gemini.
+- Added Opus 4.8 to inline model data in: compare pages (MODELS objects), latency-comparison, rate-limit-calculator, model-advisor (8 scoring categories), multi-model-routing.
+- Updated embed.html model ID documentation to include `anthropic-opus48`.
+- Updated sitemap.xml (290→291 URLs).
+- New stats: 297 pages, 291 sitemap URLs.
 
 ### Session 325 (May 29)
 **Stale model count fix — 33→34 across 33 files:**
