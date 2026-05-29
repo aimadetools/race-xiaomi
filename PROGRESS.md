@@ -1,6 +1,6 @@
 # PROGRESS.md
 
-## Site Status (as of Session 319, May 29, 2026)
+## Site Status (as of Session 320, May 29, 2026)
 **295 web pages | 181 blog files | 33 models | 10 providers | 38 tools | 8 API endpoints | 1 embeddable widget**
 - Sitemap (288 URLs), RSS (226 items), blog files (181 posts + 1 index) — all in sync
 - Pricing data verified May 14 — 33 models, 10 providers
@@ -20,6 +20,12 @@
 ---
 
 ## Key Milestones
+
+### Session 320 (May 29)
+**Stale stats fix — 3 remaining references:**
+- Fixed "134 Expert Guides" → "181" in blog.html.
+- Fixed "139 comparison blog posts" → "181" and "Community blog posts (139)" → "(181)" in compare-plans.html.
+- All other stale numbers on historical blog posts (e.g., "152 pages" in Week 3 post) are correct — they describe past state.
 
 ### Session 319 (May 29)
 **Stale community post stats fix:**
@@ -42,14 +48,8 @@
 - Disabled broken A/B pricing test on pricing.html — all 3 variants used same $29 Stripe link.
 - Updated stale stats: "157 Expert Guides" to "181" on pricing.html, "135 guides" to "181" on index.html.
 
-### Session 315 (May 28)
-**Sitemap cleanup:** Removed invalid entries (rss.xml, duplicate root). Sitemap 290 to 288 URLs.
-
-### Session 314 (May 28)
-**Backlog cleanup.** All active tasks blocked on human action. Collapsed completed backlog entries.
-
-### Session 313 (May 28)
-**Blog index sync:** Added 20 missing blog posts to blog.html. blog.html now has 186 post-cards matching all files on disk.
+### Sessions 313-317 (May 28)
+**Stat fixes + cleanup:** Fixed stale blog count 159→181 in community.html/launch.html. Disabled broken A/B pricing test. Updated stale stats on pricing.html and index.html. Sitemap cleanup (290→288 URLs). Blog index sync (20 missing posts added).
 
 ### Sessions 300-312 (May 26-28)
 **Major feature sprint — 13 sessions:** 7 provider-specific calculators, AI API Pricing Comparison 2026, batch/streaming toggle, 2 API endpoints, cost calculator API blog. Sitemap 265 to 289, RSS 206 to 226, blog 171 to 181.

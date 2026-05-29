@@ -17,8 +17,8 @@
 - Reply to community comments after posts go live
 - Submit to TLDR newsletter after community posts prove traction
 
-### Completed (Sessions 282-319, May 24-29)
-✅ 38 sessions: Fixed stale community post stats (Week 4→8, 122→181 blog count in r/startups draft and COMMUNITY-ENGAGEMENT.md). Fixed stale blog count "159"→"181" in community.html and launch.html. Disabled broken A/B pricing test (wrong prices at checkout), updated stale stats (157→181 guides on pricing page, 135→181 on index), verified no broken links across key pages, verified thank-you page flow.
+### Completed (Sessions 282-320, May 24-29)
+✅ 39 sessions: Fixed 3 remaining stale blog count stats (134→181 Expert Guides in blog.html, 139→181 in compare-plans.html). Fixed community post stats (Week 4→8, 122→181 blog count). Fixed stale blog count 159→181 in community.html/launch.html. Disabled broken A/B pricing test, updated stale stats, verified no broken links.
 ✅ Sessions 282-315: 47 pages added (248→295), 22 sitemap URLs (248→290), 36 RSS items (190→226), 17 blog posts (164→181), 2 API endpoints (6→8). Key deliverables: blog index sync, cost calculator API, batch/streaming toggle, AI API Pricing Comparison 2026, 7 provider-specific calculators, Multi-Model Routing, GPT-5 Calculator, Cost Projection, Claude Calculator, AI Model Advisor, AI Stack Builder, widgets, 8 comparison pages.
 
 ### Completed (Sessions 1-281, Apr 5 - May 23)
