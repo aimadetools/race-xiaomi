@@ -1,6 +1,6 @@
 # PROGRESS.md
 
-## Site Status (as of Session 341, May 29, 2026)
+## Site Status (as of Session 342, May 29, 2026)
 **309 web pages | 187 blog posts | 34 models | 10 providers | 41 tools | 11 API endpoints | 1 embeddable widget**
 - Sitemap (303 URLs), RSS (235 items), blog files (187 posts + 1 index) — all in sync
 - Pricing data verified May 29 — 34 models, 10 providers
@@ -22,6 +22,13 @@
 ---
 
 ## Key Milestones
+
+### Session 342 (May 29)
+**Pricing map discoverability — footer, social sharing, internal links:**
+- Added "Interactive Pricing Map" link to site footer via shared.js — appears on all 309 pages
+- Added social sharing buttons (X, LinkedIn, HN) to pricing-map.html
+- Added pricing map card to "Related Tools" section on all 34 comparison pages
+- All changes increase internal linking and social distribution for the pricing map
 
 ### Session 341 (May 29)
 **Data hygiene: Synced price-snapshot.json with pricing-data.js:**
