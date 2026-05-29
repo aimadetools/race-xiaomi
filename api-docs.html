@@ -200,6 +200,11 @@
                 <p class="endpoint-desc">Find the cheapest model for your use case. Filter by budget, quality tier, or use case (coding, chat, classification, etc.).</p>
             </div>
 
+            <div class="endpoint-card">
+                <div><span class="endpoint-method">GET</span> <span class="endpoint-url">/api/badge</span></div>
+                <p class="endpoint-desc">Get an SVG pricing badge for any model. Embed in READMEs, docs, and blogs. Like shields.io but for AI API costs.</p>
+            </div>
+
             <h3>Query Parameters</h3>
             <table>
                 <thead>
@@ -243,7 +248,18 @@
                     <tr><td><code>limit</code></td><td>number</td><td>Max results (1-10)</td><td>5</td></tr>
                 </tbody>
             </table>
-        </div>
+
+            <h3><code>/api/badge</code> Parameters</h3>
+            <table>
+                <thead>
+                    <tr><th>Parameter</th><th>Type</th><th>Description</th><th>Default</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td><code>model</code></td><td>string</td><td>Model ID (required)</td><td>required</td></tr>
+                    <tr><td><code>style</code></td><td>string</td><td>Badge style: <code>flat</code> (default) or <code>flat-square</code></td><td>flat</td></tr>
+                    <tr><td><code>format</code></td><td>string</td><td>Response format: SVG image (default), <code>json</code>, <code>md</code>, or <code>url</code></td><td>SVG</td></tr>
+                </tbody>
+            </table>
 
         <!-- Quick Start -->
         <div class="section">
@@ -332,6 +348,32 @@ console.log(recommendations[<span class="code-number">0</span>].name); <span cla
 <span class="code-comment">&lt;!-- Or a side-by-side comparison --&gt;</span>
 &lt;div class="apipulse-widget" data-type="compare"
      data-models="openai-gpt5,anthropic-sonnet,google-pro"&gt;&lt;/div&gt;</code>
+            </div>
+
+            <h3>Add a pricing badge to your README</h3>
+            <p style="color:var(--text-secondary);font-size:14px;margin-bottom:12px;">Show live model pricing in any GitHub README, docs page, or blog post. Auto-updates when prices change.</p>
+            <div class="code-block">
+                <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                <code><span class="code-comment">## Markdown — add to any README</span>
+[![GPT-5 Pricing](https://getapipulse.com/api/badge?model=openai-gpt5)](https://getapipulse.com)
+[![Claude Sonnet](https://getapipulse.com/api/badge?model=anthropic-sonnet)](https://getapipulse.com)
+[![Gemini Flash](https://getapipulse.com/api/badge?model=google-flash)](https://getapipulse.com)
+
+<span class="code-comment">## HTML — for docs and blogs</span>
+&lt;a href="https://getapipulse.com"&gt;
+  &lt;img src="https://getapipulse.com/api/badge?model=openai-gpt5" alt="GPT-5 Pricing"&gt;
+&lt;/a&gt;
+
+<span class="code-comment">## Get embed code as JSON</span>
+curl "https://getapipulse.com/api/badge?model=openai-gpt5&amp;format=json"
+<span class="code-comment">// Returns: { embed: { markdown, html, rst }, badge_url, pricing }</span></code>
+            </div>
+            <div style="margin:16px 0;padding:16px;background:var(--bg-secondary);border:1px solid var(--border);border-radius:10px;">
+                <p style="font-size:14px;font-weight:600;margin-bottom:8px;">Live Preview:</p>
+                <img src="/api/badge?model=openai-gpt5" alt="GPT-5 Pricing Badge" style="margin-right:8px;">
+                <img src="/api/badge?model=anthropic-sonnet" alt="Claude Sonnet Pricing Badge" style="margin-right:8px;">
+                <img src="/api/badge?model=google-flash" alt="Gemini Flash Pricing Badge" style="margin-right:8px;">
+                <img src="/api/badge?model=deepseek-v4-pro" alt="DeepSeek V4 Pro Pricing Badge">
             </div>
         </div>
 
@@ -503,6 +545,37 @@ console.log(recommendations[<span class="code-number">0</span>].name); <span cla
             <div id="cheap-result" class="try-result" style="display:none;"></div>
         </div>
 
+        <!-- Try It: Badge -->
+        <div class="try-it">
+            <h2>Try It Live — Pricing Badge</h2>
+            <p style="color:var(--text-secondary);font-size:14px;margin-bottom:16px;">Generate an SVG pricing badge for your README or docs.</p>
+            <div class="try-row">
+                <select id="badge-model">
+                    <option value="openai-gpt5">GPT-5</option>
+                    <option value="openai-gpt5-mini">GPT-5 mini</option>
+                    <option value="openai-gpt4o-mini">GPT-4o mini</option>
+                    <option value="anthropic-sonnet46">Claude Sonnet 4.6</option>
+                    <option value="anthropic-haiku">Claude Haiku 4.5</option>
+                    <option value="google-flash">Gemini 2.0 Flash</option>
+                    <option value="deepseek-v4-pro">DeepSeek V4 Pro</option>
+                    <option value="deepseek-v4-flash">DeepSeek V4 Flash</option>
+                    <option value="mistral-large">Mistral Large 3</option>
+                    <option value="llama-4-scout">Llama 4 Scout</option>
+                    <option value="xai-grok3-mini">Grok 3 Mini</option>
+                </select>
+                <select id="badge-format">
+                    <option value="">SVG Image</option>
+                    <option value="json">JSON (embed code)</option>
+                    <option value="md">Markdown</option>
+                    <option value="url">URL only</option>
+                </select>
+                <button class="btn-primary" onclick="tryBadgeApi()">Generate Badge</button>
+            </div>
+            <div id="badge-url" style="font-family:monospace;font-size:13px;color:var(--accent);margin-bottom:12px;"></div>
+            <div id="badge-preview" style="margin-bottom:12px;"></div>
+            <div id="badge-result" class="try-result" style="display:none;"></div>
+        </div>
+
         <!-- Use Cases -->
         <div class="section">
             <h2>Use Cases</h2>
@@ -663,6 +736,40 @@ console.log(recommendations[<span class="code-number">0</span>].name); <span cla
                 resultEl.textContent = JSON.stringify(data, null, 2);
             } catch (err) {
                 resultEl.textContent = 'Error: ' + err.message;
+            }
+        }
+
+        async function tryBadgeApi() {
+            const model = document.getElementById('badge-model').value;
+            const format = document.getElementById('badge-format').value;
+            const params = new URLSearchParams({ model });
+            if (format) params.set('format', format);
+            const url = `https://getapipulse.com/api/badge?${params}`;
+            document.getElementById('badge-url').textContent = url;
+
+            const previewEl = document.getElementById('badge-preview');
+            const resultEl = document.getElementById('badge-result');
+
+            if (!format || format === '') {
+                // SVG preview
+                previewEl.innerHTML = '<img src="' + url + '" alt="Badge preview" style="margin:8px 0;">';
+                resultEl.style.display = 'none';
+            } else {
+                previewEl.innerHTML = '';
+                resultEl.style.display = 'block';
+                resultEl.textContent = 'Loading...';
+                try {
+                    const res = await fetch(url);
+                    if (format === 'md' || format === 'url') {
+                        const text = await res.text();
+                        resultEl.textContent = text;
+                    } else {
+                        const data = await res.json();
+                        resultEl.textContent = JSON.stringify(data, null, 2);
+                    }
+                } catch (err) {
+                    resultEl.textContent = 'Error: ' + err.message;
+                }
             }
         }
 
