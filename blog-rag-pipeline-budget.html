@@ -57,6 +57,38 @@
         ]
     }
     </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+                            {
+                        "@type": "Question",
+                        "name": "How much does a RAG pipeline cost?",
+                        "acceptedAnswer": {
+                                "@type": "Answer",
+                                "text": "A basic RAG pipeline costs $10-50/month. Mid-range costs $50-200/month. Production-scale costs $200-1000+/month depending on volume and model choice."
+                        }
+                },
+                {
+                        "@type": "Question",
+                        "name": "What is the cheapest RAG setup?",
+                        "acceptedAnswer": {
+                                "@type": "Answer",
+                                "text": "Use DeepSeek V4 Pro for generation, text-embedding-3-small for embeddings, and ChromaDB for vector storage. Total cost: under $10/month for moderate workloads."
+                        }
+                },
+                {
+                        "@type": "Question",
+                        "name": "How do I reduce RAG costs?",
+                        "acceptedAnswer": {
+                                "@type": "Answer",
+                                "text": "Use budget models for generation, implement caching for common queries, use smaller embedding dimensions, and optimize chunk sizes to reduce token usage."
+                        }
+                }
+        ]
+    }
+    </script>
     <style>
         .content { max-width: 800px; margin: 0 auto; padding: 120px 24px 80px; }
         h1 { font-size: 40px; font-weight: 800; margin-bottom: 12px; }

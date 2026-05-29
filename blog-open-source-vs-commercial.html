@@ -57,6 +57,38 @@
         ]
     }
     </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+                            {
+                        "@type": "Question",
+                        "name": "Are open-source LLMs cheaper than commercial APIs?",
+                        "acceptedAnswer": {
+                                "@type": "Answer",
+                                "text": "Open-source LLMs are free to use but require GPU hosting costs ($100-1000+/month). Commercial APIs charge per token but require no infrastructure. Break-even depends on volume."
+                        }
+                },
+                {
+                        "@type": "Question",
+                        "name": "When should I use open-source vs commercial LLMs?",
+                        "acceptedAnswer": {
+                                "@type": "Answer",
+                                "text": "Use commercial APIs for low-to-medium volume and when you want zero infrastructure. Use open-source for high volume (100K+ requests/day) where per-token costs exceed hosting costs."
+                        }
+                },
+                {
+                        "@type": "Question",
+                        "name": "What are the hidden costs of open-source LLMs?",
+                        "acceptedAnswer": {
+                                "@type": "Answer",
+                                "text": "Hidden costs include GPU hosting ($100-1000+/month), engineering time for deployment and maintenance, and opportunity cost of managing infrastructure instead of building product."
+                        }
+                }
+        ]
+    }
+    </script>
     <style>
         .content { max-width: 800px; margin: 0 auto; padding: 120px 24px 80px; }
         h1 { font-size: 40px; font-weight: 800; margin-bottom: 12px; }

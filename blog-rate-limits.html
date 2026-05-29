@@ -57,6 +57,38 @@
         ]
     }
     </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+                            {
+                        "@type": "Question",
+                        "name": "What are AI API rate limits?",
+                        "acceptedAnswer": {
+                                "@type": "Answer",
+                                "text": "Rate limits restrict requests per minute (RPM), tokens per minute (TPM), and requests per day (RPD). Limits vary by provider, model, and subscription tier."
+                        }
+                },
+                {
+                        "@type": "Question",
+                        "name": "How do I handle rate limits?",
+                        "acceptedAnswer": {
+                                "@type": "Answer",
+                                "text": "Implement exponential backoff, queue requests, use multiple API keys if allowed, and upgrade your tier if you consistently hit limits."
+                        }
+                },
+                {
+                        "@type": "Question",
+                        "name": "Which provider has the highest rate limits?",
+                        "acceptedAnswer": {
+                                "@type": "Answer",
+                                "text": "DeepSeek and Google Gemini generally offer the highest rate limits for budget models. Enterprise plans from OpenAI and Anthropic offer higher limits."
+                        }
+                }
+        ]
+    }
+    </script>
     <style>
         .content { max-width: 800px; margin: 0 auto; padding: 120px 24px 80px; }
         h1 { font-size: 40px; font-weight: 800; margin-bottom: 12px; }
