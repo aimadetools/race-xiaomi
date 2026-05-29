@@ -57,6 +57,46 @@
         ]
     }
     </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "How much can I realistically save by optimizing AI API costs?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Most teams can achieve 55-75% total cost reduction using a tiered approach. Tier 1 quick wins (model right-sizing, prompt optimization, caching, and batching) deliver 40-60% savings alone. Tier 2 structural improvements like response caching and output trimming add another 15-25%. The first five checklist items typically account for 60% of total possible savings."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What is the fastest way to reduce AI API costs?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Model right-sizing is the single fastest win. Switch classification tasks from GPT-5 ($2.50/1M input) to GPT-5 Mini ($0.15/1M input) for a 94% cost reduction with identical quality. For a customer support bot handling 10K requests/day, this alone drops costs from $750/month to $120/month when combined with smart routing between budget and premium models."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Does prompt caching really save that much on AI API costs?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes, prompt caching provides up to 90% discount on cached prefix tokens. Both OpenAI and Anthropic offer automatic caching for prompts over 1,024 and 2,048 tokens respectively. A 5K-token system prompt called 5,000 times per day drops from $375/month to $56/month with caching enabled — a savings of over $300/month with zero code changes required beyond structuring your prompts correctly."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Should I use batch processing for AI API calls?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "If your workload can tolerate a few hours of latency, always use batch processing. OpenAI offers 50% off all models through their Batch API, and Google Context Caching can reduce costs by up to 75%. For a nightly data processing job consuming 100K tokens per day, batch processing cuts costs from $75/month to $37.50/month with no quality difference."
+                }
+            }
+        ]
+    }
+    </script>
     <style>
         .content { max-width: 800px; margin: 0 auto; padding: 120px 24px 80px; }
         h1 { font-size: 40px; font-weight: 800; margin-bottom: 12px; }

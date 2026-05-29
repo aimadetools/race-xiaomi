@@ -57,6 +57,46 @@
         ]
     }
     </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "How much does it cost to run an AI coding assistant per developer per month?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Costs range from $0.58/month for a light user on Gemini 2.0 Flash to $1,108/month for a power user on Claude Sonnet 4. A moderate developer making 100 completions per day pays $4.62/month on Gemini 2.0 Flash or $165/month on GPT-4o. A hybrid approach using Gemini Flash for autocomplete and Claude Sonnet 4 for complex refactoring typically costs $15-50/developer/month."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Is building a custom AI coding assistant cheaper than GitHub Copilot?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes, building your own with budget APIs can be up to 4x cheaper than GitHub Copilot's $19/developer/month. A 5-developer team using Gemini 2.0 Flash pays just $23.10/month total versus $95/month for Copilot. You also get full control over model selection, prompts, and data privacy — and can mix models for different tasks to optimize both cost and quality."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Which AI model is cheapest for code generation?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Gemini 2.0 Flash is the cheapest at $0.10/1M input and $0.40/1M output tokens, with very fast speed and good code quality. GPT-4o mini is next at $0.15/$0.60. For the best quality-to-price ratio on complex tasks, Claude Sonnet 4 at $3/$15 produces excellent code but costs significantly more. Budget models handle most autocomplete tasks adequately."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How can I reduce my AI coding assistant API costs?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Use a tiered model approach: route simple completions to Gemini Flash ($0.10/$0.40) and complex refactoring to Claude Sonnet 4 ($3/$15). Limit context to relevant functions instead of entire files, cache common code patterns like boilerplate and test templates, set max_tokens to 500 for autocomplete and 2,000 for full-function generation, and batch multiple small requests together where possible."
+                }
+            }
+        ]
+    }
+    </script>
     <style>
         .content { max-width: 800px; margin: 0 auto; padding: 120px 24px 80px; }
         h1 { font-size: 40px; font-weight: 800; margin-bottom: 12px; }

@@ -57,6 +57,46 @@
         ]
     }
     </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "Why do AI API output tokens cost more than input tokens?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Output tokens cost 3x to 8x more than input tokens because text generation is computationally more expensive than reading input. For example, GPT-4o charges $2.50 per 1M input tokens but $10.00 per 1M output tokens (a 4x ratio), while Gemini 2.5 Pro has an 8x ratio. This means workloads with long outputs, like code generation, are disproportionately affected by output pricing."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What hidden costs should I watch out for with AI API pricing?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "The biggest hidden costs include system prompt overhead (a 2,000-token system prompt sent 1,000 times daily costs $5/day on GPT-4o), conversation history accumulation in chat apps (costs accelerate as context grows), and unused batch processing discounts (OpenAI offers 50% off batch calls). Not caching repeated prompts is the single most common mistake that inflates bills unnecessarily."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How much can model routing save on AI API costs?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Model routing can reduce costs by 60-80% by sending simple requests to budget models and complex ones to premium models. For example, routing a customer support chatbot from GPT-4o to GPT-4o mini saves $123/month on a 500-conversations-per-day workload — a 94% reduction. Using Gemini Flash ($0.10/1M input) for straightforward queries while reserving GPT-5 for complex reasoning is the most effective cost optimization strategy."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How do I compare AI API pricing across different providers?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Normalize pricing to your specific workload instead of comparing per-token prices in isolation. Factor in the output-to-input price ratio (Mistral Large at 3x is cheaper for output-heavy tasks than Gemini 2.5 Pro at 8x), check for context caching discounts (Google and Anthropic offer up to 75% savings), and verify volume discount eligibility if spending $1,000+/month. A calculator that models your exact request volume and token counts gives the most accurate comparison."
+                }
+            }
+        ]
+    }
+    </script>
     <style>
         .content { max-width: 800px; margin: 0 auto; padding: 120px 24px 80px; }
         h1 { font-size: 40px; font-weight: 800; margin-bottom: 12px; }

@@ -57,6 +57,46 @@
         ]
     }
     </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "Why is AI API cost monitoring harder than traditional API monitoring?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "AI APIs charge per token rather than per request, making costs unpredictable. A chatbot request might use 500 tokens one time and 10,000 the next if a user pastes a long document. Output length is also variable since the model decides how long its response will be. Combined with multi-model routing, your monthly bill becomes a function of user behavior, input patterns, model selection, and response lengths."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What cost alerts should I set up for AI API spending?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Set four types of alerts: a daily spend alert at 2x your normal average with a hard stop at 3x (the 3x rule), per-user spend limits to catch power users, model-specific thresholds so premium models like GPT-5 have tighter limits, and a monthly projection alert that fires if your projected spend exceeds your budget. A $20/day average should trigger warnings at $40 and stop at $60."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How do I predict my monthly AI API costs before the month ends?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Divide your total spend so far by days elapsed to get a daily average, then multiply by remaining days. For more volatile workloads, use a 7-day rolling average instead of the full month since it responds faster to recent changes. If you are on day 10 and projecting $800 against a $500 budget, you have 20 days to course-correct — either by optimizing prompts, switching models, or implementing caching."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What should I log for every AI API call to track costs?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Log seven fields for every call: the model used, input token count, output token count, calculated cost, timestamp, user or session ID, and the endpoint or feature that triggered the call. This lets you build dashboards showing daily spend trends, costs by model, costs by feature, and per-user spending. Without per-user tracking, a single power user can silently dominate your entire budget."
+                }
+            }
+        ]
+    }
+    </script>
     <style>
         .content { max-width: 800px; margin: 0 auto; padding: 120px 24px 80px; }
         h1 { font-size: 40px; font-weight: 800; margin-bottom: 12px; }
