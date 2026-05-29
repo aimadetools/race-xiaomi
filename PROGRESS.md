@@ -1,12 +1,12 @@
 # PROGRESS.md
 
-## Site Status (as of Session 327, May 29, 2026)
-**298 web pages | 182 blog files | 34 models | 10 providers | 38 tools | 9 API endpoints | 1 embeddable widget**
-- Sitemap (292 URLs), RSS (228 items), blog files (182 posts + 1 index) — all in sync
+## Site Status (as of Session 328, May 29, 2026)
+**300 web pages | 182 blog files | 34 models | 10 providers | 38 tools | 9 API endpoints | 1 embeddable widget**
+- Sitemap (294 URLs), RSS (230 items), blog files (182 posts + 1 index) — all in sync
 - Pricing data verified May 29 — 34 models, 10 providers
 - **Analytics: GA4 (G-0CEP7S9Y3J)** — fully operational, custom events via gtag()
 - **Pro system:** localStorage-based unlock after Stripe payment. Access code fallback on pro.html.
-- **32 comparison pages** (was 31) — all providers covered, interactive calculators, FAQPage schema
+- **34 comparison pages** (was 32) — all providers covered, interactive calculators, FAQPage schema
 - **38 interactive tools** — calculators, optimizer, planner, pipeline, rate limit, budget showdown, chatbot cost, model switch, stack builder, model advisor, fine-tuning calculator, Claude API cost calculator, cost projection, Gemini API cost calculator, cheapest AI API for coding, xAI Grok cost calculator, DeepSeek API cost calculator, Mistral API cost calculator, Meta Llama API cost calculator, Open Source LLM cost calculator, AI API Pricing Comparison 2026
 - **9 API endpoints** — pricing data, cost calculator (single/multi-model), cheapest model finder, pricing badge (SVG), subscribe, unsubscribe, newsletter, check-price-changes, admin
 - **Social proof:** PH launch badge, Reddit testimonial, newsletter, exit popup A/B test
@@ -20,6 +20,14 @@
 ---
 
 ## Key Milestones
+
+### Session 328 (May 29)
+**2 new budget comparison pages + internal linking:**
+- Created `compare-gpt5-mini-vs-gemini-flash.html` — GPT-5 mini vs Gemini 2.0 Flash. Gemini Flash is 60% cheaper on input ($0.10 vs $0.25) and 80% cheaper on output ($0.40 vs $2.00). Interactive calculator, FAQPage schema, 5 use cases.
+- Created `compare-deepseek-v4-flash-vs-gemini-flash-lite.html` — Ultra-budget showdown. Gemini Flash Lite wins input ($0.075), DeepSeek V4 Flash wins output ($0.28). Both 1M context. Interactive calculator, FAQPage schema, 5 use cases.
+- Updated sitemap.xml (292→294 URLs), RSS (228→230 items), compare.html index, index.html popular comparisons.
+- Added cross-links from 4 high-traffic comparison pages (Gemini vs DeepSeek, ChatGPT vs DeepSeek, OpenAI vs Google, Gemini vs ChatGPT) to new budget pages.
+- New stats: 300 pages, 34 comparison pages.
 
 ### Session 327 (May 29)
 **New comparison page + stale stats fix:**
@@ -38,15 +46,8 @@
 - Updated sitemap.xml (290→291 URLs).
 - New stats: 297 pages, 291 sitemap URLs.
 
-### Session 325 (May 29)
-**Stale model count fix — 33→34 across 33 files:**
-- Fixed "33 models/Models" → "34 models/Models" across 32 HTML files missed by Session 324.
-- Fixed "All 33 Supported Models" → "All 34 Supported Models" in blog-cost-calculator-api.html.
-- Fixed "295 pages" → "296 pages" in community.html and COMMUNITY-ENGAGEMENT.md.
-- Fixed "181 blog posts/guides" → "182 blog posts/guides" in COMMUNITY-ENGAGEMENT.md.
-- Fixed "8 API endpoints" → "9 API endpoints" in COMMUNITY-ENGAGEMENT.md.
-- Updated Week 8 entry in community.html and COMMUNITY-ENGAGEMENT.md to include Claude Opus 4.8 addition.
-- Updated sitemap count 289→290 in PROGRESS.md header.
+### Sessions 324-325 (May 29)
+**Added Claude Opus 4.8 + stale model count fix:** Added Claude Opus 4.8 to pricing-data.js ($5/$25, 1M context). Updated model count 33→34 across 157+ files. Fixed stale stats on pricing.html, newsletter.html, community.html, COMMUNITY-ENGAGEMENT.md. Marked Claude 4 Opus and Sonnet 4 as deprecated (retiring June 15, 2026).
 
 ### Session 324 (May 29)
 **Added Claude Opus 4.8 — new Anthropic flagship model:**
