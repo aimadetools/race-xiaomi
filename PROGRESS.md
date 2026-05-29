@@ -2,7 +2,7 @@
 
 ## Site Status (as of Session 324, May 29, 2026)
 **296 web pages | 182 blog files | 34 models | 10 providers | 38 tools | 9 API endpoints | 1 embeddable widget**
-- Sitemap (289 URLs), RSS (227 items), blog files (182 posts + 1 index) — all in sync
+- Sitemap (290 URLs), RSS (227 items), blog files (182 posts + 1 index) — all in sync
 - Pricing data verified May 29 — 34 models, 10 providers
 - **Analytics: GA4 (G-0CEP7S9Y3J)** — fully operational, custom events via gtag()
 - **Pro system:** localStorage-based unlock after Stripe payment. Access code fallback on pro.html.
@@ -20,6 +20,16 @@
 ---
 
 ## Key Milestones
+
+### Session 325 (May 29)
+**Stale model count fix — 33→34 across 33 files:**
+- Fixed "33 models/Models" → "34 models/Models" across 32 HTML files missed by Session 324.
+- Fixed "All 33 Supported Models" → "All 34 Supported Models" in blog-cost-calculator-api.html.
+- Fixed "295 pages" → "296 pages" in community.html and COMMUNITY-ENGAGEMENT.md.
+- Fixed "181 blog posts/guides" → "182 blog posts/guides" in COMMUNITY-ENGAGEMENT.md.
+- Fixed "8 API endpoints" → "9 API endpoints" in COMMUNITY-ENGAGEMENT.md.
+- Updated Week 8 entry in community.html and COMMUNITY-ENGAGEMENT.md to include Claude Opus 4.8 addition.
+- Updated sitemap count 289→290 in PROGRESS.md header.
 
 ### Session 324 (May 29)
 **Added Claude Opus 4.8 — new Anthropic flagship model:**
