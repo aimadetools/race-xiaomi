@@ -57,6 +57,38 @@
         ]
     }
     </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "How much does a RAG pipeline cost per month?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "RAG pipeline costs vary by volume and model choice. For 10K queries/month: using Gemini 2.0 Flash ($0.10/$0.40) costs about $2-5/month. Using GPT-5 mini ($0.25/$2) costs $10-25/month. Using GPT-5 ($1.25/$10) costs $50-125/month. For 100K queries/month, costs scale linearly. Embedding costs add $1-5/month for most workloads."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What is the cheapest way to build a RAG system?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "The cheapest RAG setup uses Gemini 2.0 Flash for generation ($0.10/$0.40) and Gemini Embedding for vectorization. Total cost for 10K queries/month: approximately $2-5. For even cheaper, use DeepSeek V4 Flash ($0.14/$0.28) or GPT-oss 120B ($0.15/$0.60). Self-hosted embedding models like all-MiniLM-L6-v2 eliminate embedding API costs entirely."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How do I optimize RAG pipeline costs?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Optimize RAG costs by: 1) Using smaller, cheaper models for simple queries and routing complex ones to premium models. 2) Implementing semantic caching to avoid re-processing identical queries. 3) Limiting retrieved context to the most relevant chunks (top 3-5 instead of top 20). 4) Using prompt compression to reduce token counts. 5) Batching embedding requests. These strategies typically reduce costs by 40-60%."
+                }
+            }
+        ]
+    }
+    </script>
     <style>
         .content { max-width: 800px; margin: 0 auto; padding: 120px 24px 80px; }
         h1 { font-size: 40px; font-weight: 800; margin-bottom: 12px; }

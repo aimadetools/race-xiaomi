@@ -57,6 +57,46 @@
         ]
     }
     </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "What is the cheapest LLM API in 2026?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "The cheapest LLM APIs in 2026: GPT-oss 20B at $0.08/$0.35, Gemini 2.0 Flash Lite at $0.075/$0.30, Gemini 2.0 Flash at $0.10/$0.40, Llama 3.1 8B at $0.10/$0.10, and DeepSeek V4 Flash at $0.14/$0.28. All support large context windows (128K-1M tokens). For the absolute cheapest, Gemini Flash Lite wins on input cost, while Llama 3.1 8B is cheapest for output."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Are cheap LLM APIs good enough for production?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes, for many use cases. Budget models like Gemini Flash, DeepSeek V4 Flash, and GPT-5 mini handle chat, summarization, code completion, data extraction, and classification well. They're used in production by companies handling millions of requests. The key is testing on your specific workload — quality varies by task. A multi-model routing strategy lets you use cheap models for simple tasks and premium models for complex ones."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How much can I save by switching to a budget LLM API?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Savings depend on your current model. Switching from GPT-5 ($1.25/$10) to Gemini Flash ($0.10/$0.40) saves 92-96%. Switching from Claude Sonnet 4 ($3/$15) to DeepSeek V4 Flash ($0.14/$0.28) saves 95%. Even switching from GPT-5 mini ($0.25/$2) to Gemini Flash saves 60-80%. For a team making 100K requests/month, this can mean hundreds of dollars in monthly savings."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Which budget LLM API has the largest context window?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Gemini 2.0 Flash and Flash Lite both support 1M token context windows — the largest available at budget prices ($0.10/$0.40 and $0.075/$0.30 respectively). DeepSeek V4 Flash and V4 Pro also support 1M context at $0.14/$0.28 and $0.44/$0.87. For even larger context, Llama 4 Scout supports 10M tokens at $0.11/$0.34 via dedicated inference on Together.ai."
+                }
+            }
+        ]
+    }
+    </script>
     <style>
         .content { max-width: 800px; margin: 0 auto; padding: 120px 24px 80px; }
         h1 { font-size: 40px; font-weight: 800; margin-bottom: 12px; }

@@ -57,6 +57,46 @@
         ]
     }
     </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "How can I reduce my AI API costs?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Top strategies to reduce AI API costs: 1) Use a multi-model routing approach — route simple tasks to budget models (Gemini Flash $0.10/$0.40) and complex tasks to premium models. 2) Set appropriate max_tokens limits. 3) Cache common prompts and responses. 4) Batch requests where possible. 5) Use prompt compression to reduce input tokens. 6) Monitor usage with tools like APIpulse to identify waste."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What is multi-model routing and how does it save money?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Multi-model routing means using different AI models for different tasks based on complexity. Simple tasks like classification and summarization go to cheap models ($0.10-0.50/1M tokens), while complex reasoning and code generation go to premium models ($3-30/1M tokens). This typically saves 50-80% compared to using a single premium model for everything. The key is building a routing layer that classifies task complexity."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How much can I save with AI API cost optimization?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Most teams save 40-70% with proper cost optimization. Switching from GPT-5 ($1.25/$10) to a multi-model approach using Gemini Flash for simple tasks saves 90%+ on those requests. Setting proper max_tokens limits typically saves 15-30%. Caching repeated prompts saves another 10-20%. For a team spending $500/month, optimization can reduce costs to $150-300/month."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What are the biggest AI API cost mistakes?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Common AI API cost mistakes: 1) Using one expensive model for everything. 2) Not setting max_tokens limits (wasting output tokens). 3) Sending entire documents when only a summary is needed. 4) Not caching repeated prompts. 5) Ignoring the cost difference between input and output tokens. 6) Not monitoring usage regularly. 7) Choosing models based on benchmarks rather than actual workload needs."
+                }
+            }
+        ]
+    }
+    </script>
     <style>
         .content { max-width: 800px; margin: 0 auto; padding: 120px 24px 80px; }
         h1 { font-size: 40px; font-weight: 800; margin-bottom: 12px; }
