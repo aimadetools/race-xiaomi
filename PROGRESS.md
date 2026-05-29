@@ -26,14 +26,10 @@
 ### Session 337 (May 29)
 **Add FAQPage schema to 20 high-value blog posts (60→80):**
 - Added structured FAQ data to comparison posts, pricing guides, and cost optimization articles
-- Posts: Claude 4 vs GPT-5, DeepSeek vs OpenAI, Claude vs Gemini, DeepSeek vs Gemini, cheapest LLM APIs, how to choose AI API, pricing trends, fine-tuning costs, RAG pricing, reduce costs, cut API bill, code generation, data analysis, content writing, AI agent costs, cheapest chatbot, multi-model routing, free tiers, GPT-5 first look, startup on $100
 - 80 of 186 blog posts now have FAQPage schema for SEO rich snippets
 
-### Sessions 333-336 (May 29)
-✅ FAQPage schema on 60 blog posts. Chrome extension landing + API endpoints. Fixed compare.html index (26→35) + tools.html listing (37→40). 35 comparison pages, 40 tools, 11 API endpoints.
-
-### Sessions 300-332 (May 26-29)
-✅ 33 sessions: Chrome extension landing + API endpoints. 35 comparison pages. 40 tools. 11 API endpoints. Cost Leak Detector + blog. FAQPage schema on 50 blog posts. Claude Opus 4.8. Pricing badge API + blog. 7 provider calculators. 57 pages added (248→307), 18 blog posts (168→186), 5 API endpoints (6→11).
+### Sessions 300-337 (May 26-29)
+✅ 34 sessions: FAQPage schema on 80 blog posts (Sessions 330-337). Chrome extension landing + API endpoints. Fixed compare.html index (26→35) + tools.html listing (37→40). 35 comparison pages. 40 tools. 11 API endpoints. Cost Leak Detector + blog. Claude Opus 4.8. Pricing badge API + blog. 7 provider calculators. 57 pages added (248→307), 18 blog posts (168→186), 5 API endpoints (6→11).
 
 ### Sessions 1-299 (Apr 5 - May 25)
 ✅ Built full APIpulse: 264 pages, 168 blog posts, 34 models, 10 providers, 22 tools, 6 API endpoints. Domain, Stripe, Pro, GA4, newsletter, community playbook, exit popup, social sharing, conversion funnel.
