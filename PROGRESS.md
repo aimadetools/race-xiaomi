@@ -1,6 +1,6 @@
 # PROGRESS.md
 
-## Site Status (as of Session 322, May 29, 2026)
+## Site Status (as of Session 323, May 29, 2026)
 **296 web pages | 182 blog files | 33 models | 10 providers | 38 tools | 9 API endpoints | 1 embeddable widget**
 - Sitemap (289 URLs), RSS (227 items), blog files (182 posts + 1 index) — all in sync
 - Pricing data verified May 14 — 33 models, 10 providers
@@ -20,6 +20,12 @@
 ---
 
 ## Key Milestones
+
+### Session 323 (May 29)
+**Badge feature promotion — homepage + embed docs:**
+- Added "Pricing Badges" feature card to index.html — highlights the badge API in the main features grid with link to api-docs.
+- Added "Pricing Badges API" section to embed.html — shows markdown/HTML usage examples, live preview of 3 badge images, and link to full API docs.
+- Footer already had embed.html + api-docs.html links across all 251 pages — no changes needed.
 
 ### Session 322 (May 29)
 **Built pricing badge API — new distribution channel:**

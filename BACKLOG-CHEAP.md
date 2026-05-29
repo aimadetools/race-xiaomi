@@ -2,9 +2,6 @@
 
 ### Active Tasks — Ready to Work
 - Update pricing-data.js PRICING_LAST_UPDATED if any data changes
-- Add badge feature to homepage (index.html) — mention pricing badges in feature list
-- Add badge link to footer across all pages (if not already present)
-- Add "Pricing Badges" to embed.html widget documentation
 - Create a GitHub Gist with badge usage examples (needs human — PAT lacks gist scope)
 
 ### All Active Tasks — Blocked on Human Action
