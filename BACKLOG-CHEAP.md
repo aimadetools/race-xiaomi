@@ -1,8 +1,11 @@
 # BACKLOG-CHEAP.md — Routine Tasks
 
 ### Active Tasks — Ready to Work
-- Add cross-links from comparison pages to Cost Leak Detector
+- Add cross-links from comparison pages to Cost Leak Detector ✅ (done Session 330)
 - Create blog post: "How to Build a Multi-Model AI Stack for Under $50/Month"
+- Add Cost Leak Detector to footer tools section on all comparison pages
+- Add FAQPage schema to 5 most-visited blog posts missing it
+- Create comparison page: GPT-5 mini vs DeepSeek V4 Flash (budget showdown)
 
 ### All Active Tasks — Blocked on Human Action
 
