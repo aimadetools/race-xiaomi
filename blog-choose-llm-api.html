@@ -57,6 +57,38 @@
         ]
     }
     </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+                            {
+                        "@type": "Question",
+                        "name": "How do I choose between OpenAI, Anthropic, and Google?",
+                        "acceptedAnswer": {
+                                "@type": "Answer",
+                                "text": "Consider 6 factors: cost, quality, context window, speed, ecosystem, and migration risk. OpenAI offers the broadest ecosystem, Anthropic excels at coding, and Google offers the largest context windows."
+                        }
+                },
+                {
+                        "@type": "Question",
+                        "name": "Which AI API is easiest to integrate?",
+                        "acceptedAnswer": {
+                                "@type": "Answer",
+                                "text": "All three major providers offer similar SDK quality. OpenAI has the most community resources and tutorials. Anthropic and Google have cleaner APIs with less legacy complexity."
+                        }
+                },
+                {
+                        "@type": "Question",
+                        "name": "Can I switch between AI API providers?",
+                        "acceptedAnswer": {
+                                "@type": "Answer",
+                                "text": "Yes, but it requires code changes. Use abstraction layers or tools like LiteLLM to make provider switching easier. Consider migration cost when choosing your primary provider."
+                        }
+                }
+        ]
+    }
+    </script>
     <style>
         .content { max-width: 800px; margin: 0 auto; padding: 120px 24px 80px; }
         h1 { font-size: 40px; font-weight: 800; margin-bottom: 12px; }

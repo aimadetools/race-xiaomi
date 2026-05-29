@@ -57,6 +57,38 @@
         ]
     }
     </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+                            {
+                        "@type": "Question",
+                        "name": "How do I authenticate with AI APIs?",
+                        "acceptedAnswer": {
+                                "@type": "Answer",
+                                "text": "Most AI APIs use API keys passed in the Authorization header. OpenAI uses Bearer tokens, Anthropic uses x-api-key headers, and Google uses OAuth2 or API keys."
+                        }
+                },
+                {
+                        "@type": "Question",
+                        "name": "How should I store API keys in production?",
+                        "acceptedAnswer": {
+                                "@type": "Answer",
+                                "text": "Never hardcode API keys. Use environment variables, server-side only, with a secrets manager for production. Rotate keys periodically and use separate keys for development and production."
+                        }
+                },
+                {
+                        "@type": "Question",
+                        "name": "Can I use AI APIs without exposing keys?",
+                        "acceptedAnswer": {
+                                "@type": "Answer",
+                                "text": "Yes, by routing all AI API calls through your backend server. The client communicates with your server, which holds the API key and forwards requests to the AI provider."
+                        }
+                }
+        ]
+    }
+    </script>
     <style>
         .content { max-width: 800px; margin: 0 auto; padding: 120px 24px 80px; }
         h1 { font-size: 40px; font-weight: 800; margin-bottom: 12px; }

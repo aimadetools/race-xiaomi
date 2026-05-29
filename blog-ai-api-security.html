@@ -57,6 +57,38 @@
         ]
     }
     </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+                            {
+                        "@type": "Question",
+                        "name": "How do I secure AI API keys?",
+                        "acceptedAnswer": {
+                                "@type": "Answer",
+                                "text": "Never expose API keys in client-side code. Use environment variables, server-side proxies, and key rotation. Store keys in a secrets manager like AWS Secrets Manager or HashiCorp Vault."
+                        }
+                },
+                {
+                        "@type": "Question",
+                        "name": "What are AI API security best practices?",
+                        "acceptedAnswer": {
+                                "@type": "Answer",
+                                "text": "Key practices include: server-side key storage, input validation, output filtering, rate limiting per user, logging all requests, and using provider-specific security features like OpenAI's organization controls."
+                        }
+                },
+                {
+                        "@type": "Question",
+                        "name": "Can AI APIs be used securely in production?",
+                        "acceptedAnswer": {
+                                "@type": "Answer",
+                                "text": "Yes, with proper safeguards: never expose keys client-side, validate inputs, filter outputs for sensitive data, implement rate limiting, and monitor for abuse. Most providers offer enterprise security features."
+                        }
+                }
+        ]
+    }
+    </script>
     <style>
         .content { max-width: 800px; margin: 0 auto; padding: 120px 24px 80px; }
         h1 { font-size: 40px; font-weight: 800; margin-bottom: 12px; }

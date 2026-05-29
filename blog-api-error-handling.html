@@ -57,6 +57,38 @@
         ]
     }
     </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+                            {
+                        "@type": "Question",
+                        "name": "How do I handle AI API errors?",
+                        "acceptedAnswer": {
+                                "@type": "Answer",
+                                "text": "Implement retry logic with exponential backoff, handle specific error codes (429 for rate limits, 500 for server errors), log failed requests, and have fallback models for critical paths."
+                        }
+                },
+                {
+                        "@type": "Question",
+                        "name": "What is exponential backoff?",
+                        "acceptedAnswer": {
+                                "@type": "Answer",
+                                "text": "Exponential backoff increases wait time between retries: 1s, 2s, 4s, 8s, etc. This prevents overwhelming the API during outages and reduces wasted spend on failed requests."
+                        }
+                },
+                {
+                        "@type": "Question",
+                        "name": "How do I reduce wasted spend on failed API requests?",
+                        "acceptedAnswer": {
+                                "@type": "Answer",
+                                "text": "Implement request timeouts, cache successful responses, use circuit breakers to stop retrying during outages, and monitor error rates to catch issues early."
+                        }
+                }
+        ]
+    }
+    </script>
     <style>
         .content { max-width: 800px; margin: 0 auto; padding: 120px 24px 80px; }
         h1 { font-size: 40px; font-weight: 800; margin-bottom: 12px; }

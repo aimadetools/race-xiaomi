@@ -57,6 +57,38 @@
         ]
     }
     </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+                            {
+                        "@type": "Question",
+                        "name": "How do I calculate AI API cost per request?",
+                        "acceptedAnswer": {
+                                "@type": "Answer",
+                                "text": "Multiply the token count by the per-token price. A typical request with 1K input tokens and 500 output tokens on GPT-5 costs approximately $0.00625."
+                        }
+                },
+                {
+                        "@type": "Question",
+                        "name": "What is the cheapest AI API per request?",
+                        "acceptedAnswer": {
+                                "@type": "Answer",
+                                "text": "DeepSeek V4 Flash costs approximately $0.00028 per typical request. Gemini 2.5 Flash costs approximately $0.000225. Both are excellent for high-volume, cost-sensitive workloads."
+                        }
+                },
+                {
+                        "@type": "Question",
+                        "name": "How much does a GPT-5 request cost?",
+                        "acceptedAnswer": {
+                                "@type": "Answer",
+                                "text": "A typical GPT-5 request (1K input tokens, 500 output tokens) costs approximately $0.00625. At 1K requests/day, monthly costs are approximately $187.50."
+                        }
+                }
+        ]
+    }
+    </script>
     <style>
         .content { max-width: 800px; margin: 0 auto; padding: 120px 24px 80px; }
         h1 { font-size: 40px; font-weight: 800; margin-bottom: 12px; }
