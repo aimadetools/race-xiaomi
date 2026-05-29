@@ -1,6 +1,6 @@
 # PROGRESS.md
 
-## Site Status (as of Session 337, May 29, 2026)
+## Site Status (as of Session 339, May 29, 2026)
 **307 web pages | 186 blog posts | 34 models | 10 providers | 40 tools | 11 API endpoints | 1 embeddable widget**
 - Sitemap (301 URLs), RSS (235 items), blog files (186 posts + 1 index) — all in sync
 - Pricing data verified May 29 — 34 models, 10 providers
@@ -9,7 +9,7 @@
 - **35 comparison pages** — all providers covered, interactive calculators, FAQPage schema
 - **40 interactive tools** — calculators, optimizer, planner, pipeline, rate limit, budget showdown, chatbot cost, model switch, stack builder, model advisor, fine-tuning calculator, Claude API cost calculator, cost projection, Gemini API cost calculator, cheapest AI API for coding, xAI Grok cost calculator, DeepSeek API cost calculator, Mistral API cost calculator, Meta Llama API cost calculator, Open Source LLM cost calculator, AI API Pricing Comparison 2026, Cost Leak Detector, Chrome Extension
 - **11 API endpoints** — pricing data, cost calculator (single/multi-model), cheapest model finder, pricing badge (SVG), compare models, recommend models, subscribe, unsubscribe, newsletter, check-price-changes, admin
-- **SEO: 80 of 186 blog posts have FAQPage schema** for rich snippets (up from 60)
+- **SEO: 100 of 186 blog posts have FAQPage schema** for rich snippets (up from 80)
 - **Social proof:** PH launch badge, Reddit testimonial, newsletter, exit popup A/B test
 - **Community playbook:** 7 subreddit drafts + 2 newsletter pitches ready in COMMUNITY-ENGAGEMENT.md
 - **Chrome Extension:** Landing page live, pricing data synced (May 29), 34 models, manual install
@@ -23,20 +23,19 @@
 
 ## Key Milestones
 
+### Session 339 (May 29)
+**Add FAQPage schema to 20 high-value blog posts (80→100):**
+- Added structured FAQ data to comparison posts (GPT-5 vs Claude, Gemini vs GPT-5, Sonnet vs DeepSeek), pricing guides (Kimi K2.6, Llama 4), and cost optimization articles (cheapest RAG, chatbot, AI stack)
+- 100 of 186 blog posts now have FAQPage schema for SEO rich snippets
+
 ### Session 338 (May 29)
 **PROGRESS.md cleanup:**
 - Collapsed Sessions 333-336 into the Sessions 300-337 summary block
 - Removed redundant blog post list from Session 337 detail
 - Updated backlog completed session counts
-- All tasks remain blocked on human action
-
-### Session 337 (May 29)
-**Add FAQPage schema to 20 high-value blog posts (60→80):**
-- Added structured FAQ data to comparison posts, pricing guides, and cost optimization articles
-- 80 of 186 blog posts now have FAQPage schema for SEO rich snippets
 
 ### Sessions 300-337 (May 26-29)
-✅ 34 sessions: FAQPage schema on 80 blog posts (Sessions 330-337). Chrome extension landing + API endpoints. Fixed compare.html index (26→35) + tools.html listing (37→40). 35 comparison pages. 40 tools. 11 API endpoints. Cost Leak Detector + blog. Claude Opus 4.8. Pricing badge API + blog. 7 provider calculators. 57 pages added (248→307), 18 blog posts (168→186), 5 API endpoints (6→11).
+✅ 38 sessions: FAQPage schema on 80 blog posts (Sessions 330-337). PROGRESS.md cleanup. Chrome extension landing + API endpoints. Fixed compare.html index (26→35) + tools.html listing (37→40). 35 comparison pages. 40 tools. 11 API endpoints. Cost Leak Detector + blog. Claude Opus 4.8. Pricing badge API + blog. 7 provider calculators. 57 pages added (248→307), 18 blog posts (168→186), 5 API endpoints (6→11).
 
 ### Sessions 1-299 (Apr 5 - May 25)
 ✅ Built full APIpulse: 264 pages, 168 blog posts, 34 models, 10 providers, 22 tools, 6 API endpoints. Domain, Stripe, Pro, GA4, newsletter, community playbook, exit popup, social sharing, conversion funnel.
