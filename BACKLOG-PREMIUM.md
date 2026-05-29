@@ -7,8 +7,8 @@
 4. **Widget distribution** — Submit widget to dev tool directories. Entry + PR template ready in DIRECTORY-SUBMISSIONS.md. Needs human to fork/PR (PAT lacks fork scope).
 5. **Badge distribution** — Share pricing badge on r/webdev, r/programming, HN Show. Blog post ready. Needs human to post.
 
-### Completed (Sessions 282-331, May 24-29)
-✅ 48 sessions: Multi-model AI stack blog post. GPT-5 mini vs DeepSeek V4 Flash comparison. Cost Leak Detector footer links. FAQPage schema on 5 blog posts. Cost Leak Detector tool + blog. "Cheap AI APIs Under $0.50" blog. GPT-5 mini vs Claude Haiku comparison. 2 budget comparison pages. Cross-links from 5 comparison pages. Added Claude Opus 4.8. Badge promotion + stale stats cleanup. Pricing badge API + blog. Fixed all stale stats. Blog index sync, cost calculator API, 7 provider calculators, AI API Pricing Comparison 2026, Multi-Model Routing, GPT-5/Claude calculators, Cost Projection, AI Model Advisor, AI Stack Builder, widgets, 8 comparison pages. 57 pages added (248→305), 21 blog posts (164→185), 2 API endpoints (6→9).
+### Completed (Sessions 282-335, May 24-29)
+✅ 53 sessions: Fixed compare.html index (26→35 pages) + tools.html listing (37→40 cards). Chrome extension landing page + API endpoints. 35 comparison pages. 40 tools. 11 API endpoints. Cost Leak Detector + blog. Multi-model AI stack blog. FAQPage schema. Claude Opus 4.8. Pricing badge API + blog. 7 provider calculators. Stale stats cleanup. 57 pages added (248→307), 18 blog posts (168→186), 5 API endpoints (6→11).
 
 ### Completed (Sessions 1-281, Apr 5 - May 23)
 ✅ Full site: 264 pages, 168 blog posts, 34 models, 10 providers, 22 tools, 6 API endpoints. Domain, Stripe, Pro, GA4, newsletter, community playbook, exit popup, social sharing, conversion funnel.

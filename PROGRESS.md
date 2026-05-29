@@ -22,6 +22,14 @@
 
 ## Key Milestones
 
+### Session 335 (May 29)
+**Fix compare index + tools listing:**
+- Added 9 missing comparison pages to compare.html index (26→35): Anthropic vs DeepSeek, Claude Sonnet 4 vs Gemini 2.5 Pro, GPT-5.5 vs Claude Opus 4.7/4.8, GPT-5 vs DeepSeek V4 Pro, AI Coding Assistants, Best AI API for Startups, Free vs Pro
+- Added 3 missing tool cards to tools.html (37→40): Cost Leak Detector, AI API Pricing Comparison 2026, Cost Scenarios
+
+### Session 334 (May 29)
+**Clean up PROGRESS.md:** Collapsed completed sessions into summaries.
+
 ### Session 333 (May 29)
 **Chrome extension landing page + new API endpoints:**
 - Fixed Chrome extension models.js: synced pricing with pricing-data.js (GPT-5 mini $0.40→$0.25, added Claude Opus 4.8, Gemini 2.0 Flash Lite)
@@ -34,24 +42,8 @@
 - Updated sitemap.xml (300→301 URLs)
 - Added Chrome extension link to footers of index, tools, pricing pages
 
-### Session 332 (May 29)
-**Comparison page count + stale blog count fixes:**
-- Added "All Comparisons — 35 comparison pages" card to related-tools section on 33 comparison pages (all except compare-gpt5-mini-vs-deepseek-v4-flash.html which already had it).
-- Fixed stale blog count (185→186) on pricing.html, launch.html, community.html.
-- Updated PROGRESS.md stats: 306 pages, 186 blog posts, 302 sitemap URLs.
-
-### Session 331 (May 29)
-**Footer links + new blog post + new comparison page + FAQPage schema:**
-- Added Cost Leak Detector to footer tools section on 25 comparison pages with standard footers.
-- Created `blog-multi-model-ai-stack-under-50.html` — "How to Build a Multi-Model AI Stack for Under $50/Month." 3-tier architecture (budget/mid/premium), sample stack: 100K requests/month for $31.95 vs $588 single-model. 3 routing approaches. FAQPage schema, BlogPosting schema.
-- Created `compare-gpt5-mini-vs-deepseek-v4-flash.html` — Budget showdown. DeepSeek V4 Flash is 44% cheaper on input, 86% cheaper on output, 4x larger context. Interactive calculator, 5 use cases, FAQPage schema.
-- Added FAQPage schema to 5 blog posts (AI API Pricing Badges, Token Pricing, Cost Monitoring, Cost Optimization Checklist, AI Coding Assistant Cost).
-- Updated sitemap.xml (299→301 URLs), RSS (233→234 items), compare.html index, index.html popular comparisons.
-- Updated blog count 184→185 across 5 pages.
-- New stats: 305 pages, 185 blog posts, 35 comparison pages, 301 sitemap URLs, 234 RSS items.
-
-### Sessions 300-333 (May 26-29)
-✅ 34 sessions: Chrome extension landing page + API endpoints (compare, recommend). 35 comparison pages. 40 tools. 11 API endpoints. Cost Leak Detector + blog. "Cheap AI APIs Under $0.50" blog. Multi-model AI stack blog. GPT-5 mini vs DeepSeek V4 Flash comparison. FAQPage schema on 5 blog posts. Claude Opus 4.8 added ($5/$25, 1M context). Model count 33→34. Pricing badge API + blog. 7 provider calculators, AI API Pricing Comparison 2026, batch/streaming toggle. Stale stats cleanup, sitemap 289→301, RSS 226→234, blog 181→186.
+### Sessions 300-332 (May 26-29)
+✅ 33 sessions: Chrome extension landing page + API endpoints (compare, recommend). 35 comparison pages. 40 tools. 11 API endpoints. Cost Leak Detector + blog. "Cheap AI APIs Under $0.50" blog. Multi-model AI stack blog. GPT-5 mini vs DeepSeek V4 Flash comparison. FAQPage schema on 5 blog posts. Claude Opus 4.8 added ($5/$25, 1M context). Model count 33→34. Pricing badge API + blog. 7 provider calculators, AI API Pricing Comparison 2026, batch/streaming toggle. Stale stats cleanup, sitemap 289→301, RSS 226→234, blog 181→186.
 
 ### Sessions 1-299 (Apr 5 - May 25)
 ✅ Built full APIpulse: 264 pages, 168 blog posts, 34 models, 10 providers, 22 tools, 6 API endpoints. Domain, Stripe, Pro, GA4, newsletter, community playbook, exit popup, social sharing, conversion funnel.
