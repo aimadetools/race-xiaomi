@@ -1,8 +1,8 @@
 # PROGRESS.md
 
-## Site Status (as of Session 331, May 29, 2026)
-**305 web pages | 185 blog posts | 34 models | 10 providers | 39 tools | 9 API endpoints | 1 embeddable widget**
-- Sitemap (301 URLs), RSS (234 items), blog files (185 posts + 1 index) — all in sync
+## Site Status (as of Session 332, May 29, 2026)
+**306 web pages | 186 blog posts | 34 models | 10 providers | 39 tools | 9 API endpoints | 1 embeddable widget**
+- Sitemap (302 URLs), RSS (235 items), blog files (186 posts + 1 index) — all in sync
 - Pricing data verified May 29 — 34 models, 10 providers
 - **Analytics: GA4 (G-0CEP7S9Y3J)** — fully operational, custom events via gtag()
 - **Pro system:** localStorage-based unlock after Stripe payment. Access code fallback on pro.html.
@@ -21,6 +21,12 @@
 
 ## Key Milestones
 
+### Session 332 (May 29)
+**Comparison page count + stale blog count fixes:**
+- Added "All Comparisons — 35 comparison pages" card to related-tools section on 33 comparison pages (all except compare-gpt5-mini-vs-deepseek-v4-flash.html which already had it).
+- Fixed stale blog count (185→186) on pricing.html, launch.html, community.html.
+- Updated PROGRESS.md stats: 306 pages, 186 blog posts, 302 sitemap URLs.
+
 ### Session 331 (May 29)
 **Footer links + new blog post + new comparison page + FAQPage schema:**
 - Added Cost Leak Detector to footer tools section on 25 comparison pages with standard footers.
@@ -34,29 +40,8 @@
 ### Session 330 (May 29)
 ✅ Cost Leak Detector tool + 2 blog posts (leak detector, cheap APIs under $0.50). Homepage integration, nav, sitemap, RSS. Blog count 182→184.
 
-### Sessions 327-329 (May 29)
-✅ 3 sessions: 2 budget comparison pages (GPT-5 mini vs Gemini Flash, DeepSeek V4 Flash vs Gemini Flash Lite). Blog post (GPT-5 mini vs Claude Haiku). Cross-links from 5 comparison pages. Added Claude Opus 4.8. Badge promotion + stale stats cleanup.
-
-### Session 326 (May 29)
-✅ GPT-5.5 vs Claude Opus 4.8 comparison. Opus 4.8 added to model selectors in 10+ pages. Sitemap 290→291.
-
-### Sessions 324-325 (May 29)
-✅ Claude Opus 4.8 added to pricing-data.js ($5/$25, 1M context). Model count 33→34 across 157+ files. Stale stats fixes. Deprecated Claude 4 Opus and Sonnet 4.
-
-### Session 323 (May 29)
-✅ Pricing Badges feature card + API section in embed.html. Stale blog count fixes (181→182).
-
-### Session 322 (May 29)
-✅ Pricing badge API endpoint + docs + blog post. Sitemap 289 URLs, RSS 227 items.
-
-### Sessions 318-321 (May 29)
-✅ Stale stats fixes, community timeline update, PROGRESS.md cleanup, backlog collapse. Site health check.
-
-### Sessions 313-317 (May 28-29)
-✅ Stat fixes + cleanup: blog count sync, disabled broken A/B test, sitemap cleanup (290→288), blog index sync.
-
-### Sessions 300-312 (May 26-28)
-✅ 13 sessions: 7 provider calculators, AI API Pricing Comparison 2026, batch/streaming toggle, 2 API endpoints, cost calculator API blog. Sitemap 265→289, RSS 206→226, blog 171→181.
+### Sessions 300-331 (May 26-29)
+✅ 32 sessions: 3 comparison pages, 3 blog posts (multi-model stack, GPT-5 mini vs DeepSeek V4 Flash, cost leak detector). Cost Leak Detector tool + footer links (25 pages). FAQPage schema on 5 blog posts. Claude Opus 4.8 added ($5/$25, 1M context). Model count 33→34. Pricing badge API + blog. 7 provider calculators, AI API Pricing Comparison 2026, batch/streaming toggle, 2 API endpoints. Stale stats cleanup, sitemap 289→301, RSS 226→234, blog 181→185.
 
 ### Sessions 1-299 (Apr 5 - May 25)
 ✅ Built full APIpulse: 264 pages, 168 blog posts, 34 models, 10 providers, 22 tools, 6 API endpoints. Domain, Stripe, Pro, GA4, newsletter, community playbook, exit popup, social sharing, conversion funnel.
