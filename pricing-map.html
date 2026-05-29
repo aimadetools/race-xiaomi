@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LLM Pricing Map 2026 — Interactive AI Model Cost Visualization | APIpulse</title>
+    <meta name="description" content="Interactive scatter plot comparing 34 LLM API models by cost, capability tier, and context window. Visualize pricing across OpenAI, Anthropic, Google, DeepSeek, Mistral, and more.">
+    <meta name="keywords" content="LLM pricing map, AI model comparison, API cost visualization, GPT vs Claude pricing, AI model scatter plot">
+    <meta property="og:title" content="LLM Pricing Map 2026 — Interactive AI Model Cost Visualization">
+    <meta property="og:description" content="See all 34 LLM models on one chart. Compare cost, capability, and context window across 10 providers.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://getapipulse.com/og-image.png">
+    <meta property="og:url" content="https://getapipulse.com/pricing-map.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="LLM Pricing Map 2026 — Interactive AI Model Cost Visualization">
+    <meta name="twitter:image" content="https://getapipulse.com/og-image.png">
+    <meta name="twitter:description" content="See all 34 LLM models on one chart. Compare cost, capability, and context window across 10 providers.">
+    <link rel="canonical" href="https://getapipulse.com/pricing-map.html">
+    <link rel="alternate" type="application/rss+xml" title="APIpulse Blog" href="https://getapipulse.com/rss.xml">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="styles.css">
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0CEP7S9Y3J"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-0CEP7S9Y3J');
+    </script>
+    <script src="analytics.js" defer></script>
+    <script src="dynamic-date.js" defer></script>
+    <script src="shared.js" defer></script>
+    <script src="pricing-data.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-annotation@3.1.0/dist/chartjs-plugin-annotation.min.js"></script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "LLM Pricing Map",
+        "url": "https://getapipulse.com/pricing-map.html",
+        "description": "Interactive scatter plot comparing 34 LLM API models by cost, capability tier, and context window.",
+        "applicationCategory": "DeveloperApplication",
+        "operatingSystem": "Web",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+    }
+    </script>
+    <style>
+        .map-hero {
+            padding: 120px 24px 40px; text-align: center; max-width: 800px; margin: 0 auto;
+        }
+        .map-hero h1 {
+            font-size: clamp(28px, 4vw, 42px); font-weight: 800; margin-bottom: 12px;
+            background: linear-gradient(135deg, var(--accent), #a78bfa, #ec4899);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .map-hero p { color: var(--text-secondary); font-size: 17px; line-height: 1.6; max-width: 600px; margin: 0 auto; }
+        .map-hero .stat-row {
+            display: flex; gap: 24px; justify-content: center; margin-top: 20px; flex-wrap: wrap;
+        }
+        .map-hero .stat-row .stat {
+            background: var(--bg-card); border: 1px solid var(--border); border-radius: 10px;
+            padding: 12px 20px; text-align: center;
+        }
+        .map-hero .stat-row .stat .num { font-size: 28px; font-weight: 800; color: var(--accent); }
+        .map-hero .stat-row .stat .label { font-size: 12px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px; }
+
+        .map-section { padding: 0 24px 40px; max-width: 1100px; margin: 0 auto; }
+
+        .chart-container {
+            background: var(--bg-card); border: 1px solid var(--border); border-radius: 16px;
+            padding: 24px; position: relative;
+        }
+        .chart-container canvas { width: 100% !important; }
+
+        .controls {
+            display: flex; gap: 12px; margin-bottom: 20px; flex-wrap: wrap; align-items: center;
+        }
+        .controls label { font-size: 13px; font-weight: 600; color: var(--text-secondary); }
+        .controls select, .controls input[type="checkbox"] + span {
+            padding: 8px 12px; border-radius: 8px; border: 1px solid var(--border);
+            background: var(--bg-secondary); color: var(--text-primary); font-size: 13px; cursor: pointer;
+        }
+        .controls select:focus { outline: none; border-color: var(--accent); }
+        .toggle-group { display: flex; align-items: center; gap: 6px; }
+        .toggle-group input[type="checkbox"] {
+            width: 16px; height: 16px; accent-color: var(--accent); cursor: pointer;
+        }
+
+        .legend-bar {
+            display: flex; gap: 16px; flex-wrap: wrap; justify-content: center;
+            margin-top: 16px; padding: 12px; background: var(--bg-secondary);
+            border-radius: 10px;
+        }
+        .legend-item {
+            display: flex; align-items: center; gap: 6px; font-size: 12px; color: var(--text-secondary);
+            cursor: pointer; transition: opacity 0.2s;
+        }
+        .legend-item:hover { opacity: 0.8; }
+        .legend-dot {
+            width: 12px; height: 12px; border-radius: 50%; display: inline-block;
+        }
+
+        .insights-grid {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 16px; margin-top: 32px;
+        }
+        .insight-card {
+            background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px;
+            padding: 20px;
+        }
+        .insight-card h3 { font-size: 15px; font-weight: 700; margin-bottom: 8px; color: var(--accent); }
+        .insight-card p { font-size: 14px; color: var(--text-secondary); line-height: 1.5; }
+        .insight-card .highlight { color: var(--green); font-weight: 700; }
+        .insight-card .warn { color: var(--orange); font-weight: 700; }
+
+        .cta-section {
+            text-align: center; padding: 40px 24px 60px; max-width: 600px; margin: 0 auto;
+        }
+        .cta-section h2 { font-size: 24px; font-weight: 700; margin-bottom: 12px; }
+        .cta-section p { color: var(--text-secondary); margin-bottom: 20px; }
+        .cta-btn {
+            display: inline-block; background: var(--accent); color: white; padding: 14px 32px;
+            border-radius: 10px; font-weight: 700; font-size: 16px; transition: all 0.2s;
+        }
+        .cta-btn:hover { background: var(--accent-hover); color: white; transform: translateY(-1px); }
+
+        .embed-section {
+            background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px;
+            padding: 20px; max-width: 700px; margin: 0 auto 40px;
+        }
+        .embed-section h3 { font-size: 15px; font-weight: 700; margin-bottom: 10px; }
+        .embed-section textarea {
+            width: 100%; background: var(--bg-secondary); border: 1px solid var(--border);
+            border-radius: 8px; padding: 12px; color: var(--text-primary); font-family: monospace;
+            font-size: 12px; resize: vertical; min-height: 60px;
+        }
+        .embed-section .copy-btn {
+            margin-top: 8px; background: var(--accent); color: white; border: none;
+            padding: 8px 16px; border-radius: 6px; cursor: pointer; font-size: 13px; font-weight: 600;
+        }
+        .embed-section .copy-btn:hover { background: var(--accent-hover); }
+
+        @media (max-width: 768px) {
+            .controls { flex-direction: column; align-items: flex-start; }
+            .map-hero .stat-row { gap: 12px; }
+            .map-hero .stat-row .stat { padding: 8px 14px; }
+            .map-hero .stat-row .stat .num { font-size: 22px; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-inner">
+            <a href="/" class="logo"><span class="logo-icon">⚡</span> APIpulse</a>
+            <div class="nav-links">
+                <a href="/calculator.html">Calculator</a>
+                <a href="/pricing-map.html" class="active">Pricing Map</a>
+                <a href="/compare.html">Compare</a>
+                <a href="/tools.html">Tools</a>
+                <a href="/blog.html">Blog</a>
+                <a href="/pricing.html" class="nav-cta">Get Pro</a>
+            </div>
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Menu">☰</button>
+        </div>
+    </nav>
+
+    <section class="map-hero">
+        <h1>LLM Pricing Map 2026</h1>
+        <p>See all models on one chart. Compare cost, capability tier, and context window across 10 providers.</p>
+        <div class="stat-row">
+            <div class="stat"><div class="num">34</div><div class="label">Models</div></div>
+            <div class="stat"><div class="num">10</div><div class="label">Providers</div></div>
+            <div class="stat"><div class="num">$0.075</div><div class="label">Cheapest Input</div></div>
+            <div class="stat"><div class="num">$30</div><div class="label">Most Expensive</div></div>
+        </div>
+    </section>
+
+    <section class="map-section">
+        <div class="chart-container">
+            <div class="controls">
+                <div class="toggle-group">
+                    <label>Y-Axis:</label>
+                    <select id="yAxisSelect">
+                        <option value="blended">Blended Cost (Input+Output avg)</option>
+                        <option value="output">Output Cost Only</option>
+                        <option value="tier">Capability Tier</option>
+                    </select>
+                </div>
+                <div class="toggle-group">
+                    <label>Scale:</label>
+                    <select id="scaleSelect">
+                        <option value="log">Logarithmic</option>
+                        <option value="linear">Linear</option>
+                    </select>
+                </div>
+                <div class="toggle-group">
+                    <input type="checkbox" id="showLabels" checked>
+                    <span>Show Labels</span>
+                </div>
+                <div class="toggle-group">
+                    <input type="checkbox" id="showBudget" checked>
+                    <span>Budget Zone</span>
+                </div>
+            </div>
+            <canvas id="pricingChart" height="500"></canvas>
+            <div class="legend-bar" id="legendBar"></div>
+        </div>
+
+        <div class="insights-grid">
+            <div class="insight-card">
+                <h3>Best Value: Budget Tier</h3>
+                <p>DeepSeek V4 Flash at <span class="highlight">$0.14/$0.28</span> per 1M tokens offers the lowest cost with 1M context. Gemini Flash Lite is even cheaper at $0.075/$0.30.</p>
+            </div>
+            <div class="insight-card">
+                <h3>Premium Sweet Spot</h3>
+                <p>Claude Opus 4.7/4.8 and GPT-5.5 both price at <span class="warn">$5 input</span>, but Claude offers 1M context vs GPT-5.5's 1M. Output pricing differs: $25 vs $30.</p>
+            </div>
+            <div class="insight-card">
+                <h3>The Outlier: Grok 3</h3>
+                <p>xAI's Grok 3 is the most expensive model at <span class="warn">$30/$150</span> per 1M tokens — 6x more than GPT-5.5 Pro on output. Premium positioning.</p>
+            </div>
+            <div class="insight-card">
+                <h3>Hidden Gems</h3>
+                <p>Mistral Large 3 at <span class="highlight">$0.50/$1.50</span> and Kimi K2.6 at $0.90/$3.75 offer strong capability at budget prices. Llama 4 Scout at $0.11/$0.34 with 10M context is unbeatable for long docs.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <h2>Calculate Your Exact Costs</h2>
+        <p>Use our free calculator to model your specific usage across all 34 models.</p>
+        <a href="/calculator.html" class="cta-btn">Open Cost Calculator</a>
+    </section>
+
+    <section class="embed-section">
+        <h3>Embed This Chart</h3>
+        <p style="font-size: 13px; color: var(--text-secondary); margin-bottom: 10px;">Add the LLM Pricing Map to your blog or docs.</p>
+        <textarea id="embedCode" readonly><iframe src="https://getapipulse.com/pricing-map.html" width="100%" height="700" style="border:1px solid #2a2a3e;border-radius:12px;" title="LLM Pricing Map 2026"></iframe></textarea>
+        <button class="copy-btn" onclick="copyEmbed()">Copy Embed Code</button>
+    </section>
+
+    <footer>
+        <div class="footer-inner">
+            <div class="footer-col">
+                <div class="footer-logo"><span class="logo-icon">⚡</span> APIpulse</div>
+                <p class="footer-desc">Know your AI API costs before you commit.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Tools</h4>
+                <a href="/calculator.html">Cost Calculator</a>
+                <a href="/pricing-map.html">Pricing Map</a>
+                <a href="/compare.html">Compare Models</a>
+                <a href="/cost-optimizer.html">Cost Optimizer</a>
+            </div>
+            <div class="footer-col">
+                <h4>Providers</h4>
+                <a href="/openai.html">OpenAI</a>
+                <a href="/anthropic.html">Anthropic</a>
+                <a href="/google.html">Google</a>
+                <a href="/deepseek.html">DeepSeek</a>
+            </div>
+            <div class="footer-col">
+                <h4>Resources</h4>
+                <a href="/blog.html">Blog</a>
+                <a href="/api-docs.html">API</a>
+                <a href="/pricing.html">Pro</a>
+                <a href="/about.html">About</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 APIpulse. Pricing data verified <span id="pricingDate">May 2026</span>.</p>
+        </div>
+    </footer>
+
+    <script>
+    // Wait for pricing-data.js to load
+    document.addEventListener('DOMContentLoaded', function() {
+        if (typeof API_MODELS === 'undefined') {
+            console.error('pricing-data.js not loaded');
+            return;
+        }
+
+        const PROVIDER_COLORS = {
+            'openai': '#10a37f',
+            'anthropic': '#d97706',
+            'google': '#4285f4',
+            'deepseek': '#7c3aed',
+            'mistral': '#f97316',
+            'cohere': '#06b6d4',
+            'together': '#ec4899',
+            'moonshot': '#8b5cf6',
+            'xai': '#ef4444',
+            'ai21': '#84cc16'
+        };
+
+        const TIER_SCORES = { 'Premium': 3, 'Mid': 2, 'Budget': 1 };
+
+        function parseContext(ctx) {
+            if (!ctx) return 128;
+            const str = ctx.toString().toUpperCase();
+            if (str.includes('M')) return parseFloat(str) * 1000;
+            if (str.includes('K')) return parseFloat(str);
+            return parseFloat(str) || 128;
+        }
+
+        function getBlended(model) {
+            return (model.input + model.output) / 2;
+        }
+
+        function buildDatasets(yAxis, showLabels) {
+            const providers = {};
+            API_MODELS.forEach(m => {
+                if (!providers[m.providerSlug]) providers[m.providerSlug] = [];
+                providers[m.providerSlug].push(m);
+            });
+
+            const datasets = [];
+            Object.entries(providers).forEach(([slug, models]) => {
+                const data = models.map(m => {
+                    let y;
+                    if (yAxis === 'blended') y = getBlended(m);
+                    else if (yAxis === 'output') y = m.output;
+                    else y = TIER_SCORES[m.tier] || 2;
+
+                    const ctx = parseContext(m.context);
+                    const radius = Math.max(6, Math.min(22, Math.sqrt(ctx / 100) * 3));
+
+                    return {
+                        x: m.input,
+                        y: y,
+                        r: radius,
+                        model: m,
+                        label: m.name
+                    };
+                });
+
+                datasets.push({
+                    label: m.provider || slug,
+                    data: data,
+                    backgroundColor: (PROVIDER_COLORS[slug] || '#888') + 'cc',
+                    borderColor: PROVIDER_COLORS[slug] || '#888',
+                    borderWidth: 2,
+                    hoverBorderWidth: 3,
+                    hoverBackgroundColor: (PROVIDER_COLORS[slug] || '#888') + 'ff',
+                    pointLabels: {
+                        display: showLabels,
+                        color: '#9494a8',
+                        font: { size: 10, weight: '500' },
+                        formatter: function(value) {
+                            return value.label;
+                        }
+                    }
+                });
+            });
+
+            return datasets;
+        }
+
+        function getYLabel(yAxis) {
+            if (yAxis === 'blended') return 'Blended Cost per 1M Tokens ($)';
+            if (yAxis === 'output') return 'Output Cost per 1M Tokens ($)';
+            return 'Capability Tier';
+        }
+
+        function getYTicks(yAxis) {
+            if (yAxis === 'tier') {
+                return {
+                    callback: function(v) {
+                        if (v === 1) return 'Budget';
+                        if (v === 2) return 'Mid';
+                        if (v === 3) return 'Premium';
+                        return '';
+                    },
+                    stepSize: 1,
+                    min: 0.5,
+                    max: 3.5
+                };
+            }
+            return {};
+        }
+
+        let chart;
+        const ctx = document.getElementById('pricingChart').getContext('2d');
+
+        function renderChart() {
+            const yAxis = document.getElementById('yAxisSelect').value;
+            const scale = document.getElementById('scaleSelect').value;
+            const showLabels = document.getElementById('showLabels').checked;
+            const showBudget = document.getElementById('showBudget').checked;
+
+            const datasets = buildDatasets(yAxis, showLabels);
+
+            const annotations = {};
+            if (showBudget && yAxis !== 'tier') {
+                annotations.budgetZone = {
+                    type: 'box',
+                    yMin: 0,
+                    yMax: yAxis === 'blended' ? 2 : 3,
+                    xMin: 0,
+                    xMax: 1,
+                    backgroundColor: 'rgba(34, 197, 94, 0.06)',
+                    borderColor: 'rgba(34, 197, 94, 0.2)',
+                    borderWidth: 1,
+                    borderDash: [6, 3],
+                    label: {
+                        display: true,
+                        content: 'Budget Zone',
+                        position: 'start',
+                        color: '#22c55e',
+                        font: { size: 11, weight: '600' }
+                    }
+                };
+            }
+
+            if (chart) chart.destroy();
+
+            chart = new Chart(ctx, {
+                type: 'bubble',
+                data: { datasets: datasets },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    layout: { padding: { top: 20, right: 20, bottom: 10, left: 10 } },
+                    scales: {
+                        x: {
+                            type: scale === 'log' ? 'logarithmic' : 'linear',
+                            title: {
+                                display: true,
+                                text: 'Input Cost per 1M Tokens ($)',
+                                color: '#9494a8',
+                                font: { size: 13, weight: '600' }
+                            },
+                            ticks: {
+                                color: '#6b6b80',
+                                callback: function(v) { return '$' + v; }
+                            },
+                            grid: { color: 'rgba(42, 42, 62, 0.5)' },
+                            min: scale === 'log' ? 0.05 : 0
+                        },
+                        y: {
+                            type: (scale === 'log' && yAxis !== 'tier') ? 'logarithmic' : 'linear',
+                            title: {
+                                display: true,
+                                text: getYLabel(yAxis),
+                                color: '#9494a8',
+                                font: { size: 13, weight: '600' }
+                            },
+                            ticks: {
+                                color: '#6b6b80',
+                                callback: function(v) {
+                                    if (yAxis === 'tier') {
+                                        if (v === 1) return 'Budget';
+                                        if (v === 2) return 'Mid';
+                                        if (v === 3) return 'Premium';
+                                        return '';
+                                    }
+                                    return '$' + v;
+                                }
+                            },
+                            grid: { color: 'rgba(42, 42, 62, 0.5)' },
+                            ...(yAxis === 'tier' ? { min: 0.5, max: 3.5 } : {})
+                        }
+                    },
+                    plugins: {
+                        legend: { display: false },
+                        tooltip: {
+                            backgroundColor: '#1a1a2e',
+                            borderColor: '#2a2a3e',
+                            borderWidth: 1,
+                            titleColor: '#e8e8ed',
+                            bodyColor: '#9494a8',
+                            padding: 12,
+                            cornerRadius: 8,
+                            callbacks: {
+                                title: function(items) {
+                                    if (!items.length) return '';
+                                    const m = items[0].raw.model;
+                                    return m.provider + ' ' + m.name;
+                                },
+                                label: function(item) {
+                                    const m = item.raw.model;
+                                    return [
+                                        'Input: $' + m.input.toFixed(2) + '/1M tokens',
+                                        'Output: $' + m.output.toFixed(2) + '/1M tokens',
+                                        'Blended: $' + getBlended(m).toFixed(2) + '/1M tokens',
+                                        'Context: ' + m.context,
+                                        'Tier: ' + m.tier
+                                    ];
+                                }
+                            }
+                        },
+                        annotation: { annotations: annotations }
+                    },
+                    onClick: function(e, elements) {
+                        if (elements.length > 0) {
+                            const el = elements[0];
+                            const m = chart.data.datasets[el.datasetIndex].data[el.index].model;
+                            window.location.href = '/' + m.providerSlug + '.html';
+                        }
+                    }
+                }
+            });
+        }
+
+        // Build legend
+        function buildLegend() {
+            const bar = document.getElementById('legendBar');
+            const seen = new Set();
+            API_MODELS.forEach(m => {
+                if (seen.has(m.providerSlug)) return;
+                seen.add(m.providerSlug);
+                const item = document.createElement('div');
+                item.className = 'legend-item';
+                item.innerHTML = '<span class="legend-dot" style="background:' + (PROVIDER_COLORS[m.providerSlug] || '#888') + '"></span>' + m.provider;
+                item.addEventListener('click', function() {
+                    window.location.href = '/' + m.providerSlug + '.html';
+                });
+                bar.appendChild(item);
+            });
+            // Size legend
+            const sizeItem = document.createElement('div');
+            sizeItem.className = 'legend-item';
+            sizeItem.innerHTML = '<span style="font-size:11px;color:#6b6b80;">Bubble size = context window</span>';
+            bar.appendChild(sizeItem);
+        }
+
+        // Event listeners
+        document.getElementById('yAxisSelect').addEventListener('change', renderChart);
+        document.getElementById('scaleSelect').addEventListener('change', renderChart);
+        document.getElementById('showLabels').addEventListener('change', renderChart);
+        document.getElementById('showBudget').addEventListener('change', renderChart);
+
+        // Copy embed
+        window.copyEmbed = function() {
+            const textarea = document.getElementById('embedCode');
+            textarea.select();
+            navigator.clipboard.writeText(textarea.value).then(function() {
+                const btn = document.querySelector('.copy-btn');
+                btn.textContent = 'Copied!';
+                setTimeout(function() { btn.textContent = 'Copy Embed Code'; }, 2000);
+            });
+        };
+
+        // Init
+        buildLegend();
+        renderChart();
+
+        // GA4 event
+        if (typeof gtag === 'function') {
+            gtag('event', 'pricing_map_view', { page_title: 'LLM Pricing Map' });
+        }
+    });
+    </script>
+</body>
+</html>
