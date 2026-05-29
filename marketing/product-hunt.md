@@ -1,7 +1,7 @@
 # Product Hunt Launch — APIpulse
 
 ## Tagline
-Compare AI API pricing across 33 models and 10 providers. Calculate costs instantly.
+Compare AI API pricing across 34 models and 10 providers. Calculate costs instantly.
 
 ## Description
 APIpulse helps developers make smart decisions about AI API costs.
@@ -9,14 +9,14 @@ APIpulse helps developers make smart decisions about AI API costs.
 **The problem:** Choosing between OpenAI, Anthropic, Google, Mistral, DeepSeek, Cohere, Together, xAI, Moonshot, and AI21 APIs means manually comparing pricing pages, calculating costs for your specific usage, and hoping you didn't miss a cheaper option.
 
 **The solution:** One tool that does it all:
-- Interactive cost calculator with 33 models across 10 providers
+- Interactive cost calculator with 34 models across 10 providers
 - Side-by-side comparison for any two models
 - Sortable pricing index with every model and price
 - 78 detailed blog posts with real cost breakdowns
 - Presets for startup, scale-up, and enterprise scenarios
 
 **Key features:**
-- 33 models: GPT-5, GPT-4o, Claude 4 Opus, Claude Sonnet 4, Gemini 2.5 Pro, Mistral, Llama, Cohere, AI21, and more
+- 34 models: GPT-5, GPT-4o, Claude 4 Opus, Claude Sonnet 4, Gemini 2.5 Pro, Mistral, Llama, Cohere, AI21, and more
 - Real-time cost calculations based on your token counts and request volume
 - Dark/light theme, fully responsive, accessible
 - No signup required — everything runs in the browser
@@ -61,7 +61,7 @@ Would love your feedback on what would make this more useful!
 2. Log in or create a Product Hunt account (use @getapipulse Twitter for auth)
 3. Fill in the submission:
    - **Name:** APIpulse
-   - **Tagline:** Compare AI API pricing across 33 models and 10 providers
+   - **Tagline:** Compare AI API pricing across 34 models and 10 providers
    - **URL:** https://getapipulse.com
    - **Topics:** Developer Tools, Artificial Intelligence, SaaS, Productivity
    - **Description:** (copy from above)
@@ -71,13 +71,13 @@ Would love your feedback on what would make this more useful!
 ### Gallery Screenshots Needed (take these first)
 1. **Calculator page** (dark theme) — shows the main calculator with results
 2. **Comparison tool** — side-by-side GPT-4o vs Claude Sonnet 4
-3. **Pricing Index** — the sortable table of all 33 models
+3. **Pricing Index** — the sortable table of all 34 models
 4. **Blog page** — shows the depth of content (81 posts)
 
 ### Launch Day (Tuesday-Thursday, 12:01 AM PST)
 1. Publish the draft at 12:01 AM PST (Tuesday, Wednesday, or Thursday)
 2. Immediately post the maker comment (see above)
-3. Share on Twitter/X: "We just launched on @ProductHunt! Compare AI API pricing across 33 models. https://getapipulse.com #ProductHunt"
+3. Share on Twitter/X: "We just launched on @ProductHunt! Compare AI API pricing across 34 models. https://getapipulse.com #ProductHunt"
 4. Reply to EVERY comment within 1 hour
 5. Share the PH link on r/SaaS (not r/webdev — they only allow Saturday posts)
 

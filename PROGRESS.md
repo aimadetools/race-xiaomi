@@ -1,9 +1,9 @@
 # PROGRESS.md
 
-## Site Status (as of Session 323, May 29, 2026)
-**296 web pages | 182 blog files | 33 models | 10 providers | 38 tools | 9 API endpoints | 1 embeddable widget**
+## Site Status (as of Session 324, May 29, 2026)
+**296 web pages | 182 blog files | 34 models | 10 providers | 38 tools | 9 API endpoints | 1 embeddable widget**
 - Sitemap (289 URLs), RSS (227 items), blog files (182 posts + 1 index) — all in sync
-- Pricing data verified May 14 — 33 models, 10 providers
+- Pricing data verified May 29 — 34 models, 10 providers
 - **Analytics: GA4 (G-0CEP7S9Y3J)** — fully operational, custom events via gtag()
 - **Pro system:** localStorage-based unlock after Stripe payment. Access code fallback on pro.html.
 - **14 comparison pages** (34 total) — all providers covered, interactive calculators, FAQPage schema
@@ -21,6 +21,15 @@
 
 ## Key Milestones
 
+### Session 324 (May 29)
+**Added Claude Opus 4.8 — new Anthropic flagship model:**
+- Added Claude Opus 4.8 to pricing-data.js — $5/$25 per 1M tokens, 1M context window. Verified from Anthropic's official pricing page.
+- Updated PRICING_LAST_UPDATED from May 14 to May 29, 2026.
+- Updated model count 33→34 across 157+ files (HTML, RSS, Markdown, JS).
+- Added Claude Opus 4.8 to claude-api-cost-calculator.html model selector, meta descriptions, and FAQPage schema.
+- Marked Claude 4 Opus and Claude Sonnet 4 as deprecated (retiring June 15, 2026) in pricing-data.js.
+- New stats: 296 pages, 182 blog posts, 34 models, 10 providers, 9 API endpoints.
+
 ### Session 323 (May 29)
 **Badge promotion + stale stats cleanup:**
 - Added "Pricing Badges" feature card to index.html — highlights the badge API in the main features grid.
@@ -31,7 +40,7 @@
 
 ### Session 322 (May 29)
 **Built pricing badge API — new distribution channel:**
-- Created `/api/badge.js` — SVG pricing badge endpoint. Returns shields.io-style badges for any of 33 models. Supports flat/flat-square styles, SVG/JSON/markdown/URL formats.
+- Created `/api/badge.js` — SVG pricing badge endpoint. Returns shields.io-style badges for any of 34 models. Supports flat/flat-square styles, SVG/JSON/markdown/URL formats.
 - Updated `api-docs.html` — added badge endpoint docs, query parameters table, Quick Start examples with live preview, and Try It Live interactive section.
 - Created `blog-ai-api-pricing-badges.html` — blog post announcing the badge feature. SEO-optimized for "AI API pricing badge" keywords.
 - Updated sitemap.xml (289 URLs), RSS (227 items), blog.html index.
@@ -65,4 +74,4 @@
 ✅ 13 sessions: 7 provider calculators, AI API Pricing Comparison 2026, batch/streaming toggle, 2 API endpoints, cost calculator API blog. Sitemap 265→289, RSS 206→226, blog 171→181.
 
 ### Sessions 1-299 (Apr 5 - May 25)
-✅ Built full APIpulse: 264 pages, 168 blog posts, 33 models, 10 providers, 22 tools, 6 API endpoints. Domain, Stripe, Pro, GA4, newsletter, community playbook, exit popup, social sharing, conversion funnel.
+✅ Built full APIpulse: 264 pages, 168 blog posts, 34 models, 10 providers, 22 tools, 6 API endpoints. Domain, Stripe, Pro, GA4, newsletter, community playbook, exit popup, social sharing, conversion funnel.

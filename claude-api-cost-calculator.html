@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Claude API Cost Calculator — Estimate Anthropic API Pricing | APIpulse</title>
-    <meta name="description" content="Free Claude API cost calculator. Estimate your Anthropic API spend across Claude Opus 4.7, Sonnet 4.6, Sonnet 4, and Haiku 4.5. See cost per request and monthly totals.">
+    <meta name="description" content="Free Claude API cost calculator. Estimate your Anthropic API spend across Claude Opus 4.8, Opus 4.7, Sonnet 4.6, Sonnet 4, and Haiku 4.5. See cost per request and monthly totals.">
     <meta name="keywords" content="Claude API cost, Anthropic API pricing, Claude cost calculator, Claude Opus cost, Claude Sonnet cost, Claude Haiku pricing">
     <meta property="og:title" content="Claude API Cost Calculator — Estimate Anthropic API Pricing | APIpulse">
-    <meta property="og:description" content="Free Claude API cost calculator. Estimate your Anthropic API spend across Claude Opus 4.7, Sonnet 4.6, Sonnet 4, and Haiku 4.5.">
+    <meta property="og:description" content="Free Claude API cost calculator. Estimate your Anthropic API spend across Claude Opus 4.8, Opus 4.7, Sonnet 4.6, Sonnet 4, and Haiku 4.5.">
     <meta property="og:type" content="website">
     <meta property="og:image" content="https://getapipulse.com/og-image.png">
     <meta property="og:url" content="https://getapipulse.com/claude-api-cost-calculator.html">
@@ -37,7 +37,7 @@
         "@type": "WebApplication",
         "name": "APIpulse Claude API Cost Calculator",
         "url": "https://getapipulse.com/claude-api-cost-calculator.html",
-        "description": "Free Claude API cost calculator. Estimate Anthropic API spend across Claude Opus 4.7, Sonnet 4.6, Sonnet 4, and Haiku 4.5.",
+        "description": "Free Claude API cost calculator. Estimate Anthropic API spend across Claude Opus 4.8, Opus 4.7, Sonnet 4.6, Sonnet 4, and Haiku 4.5.",
         "applicationCategory": "DeveloperApplication",
         "operatingSystem": "Web",
         "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
@@ -53,7 +53,7 @@
                 "name": "How much does the Claude API cost?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "Claude API pricing varies by model: Claude Opus 4.7 costs $5/$25 per 1M tokens (input/output), Claude Sonnet 4.6 costs $3/$15, Claude Sonnet 4 costs $3/$15, and Claude Haiku 4.5 costs $1/$5. The cheapest Claude model is Haiku 4.5 at $1 per 1M input tokens."
+                    "text": "Claude API pricing varies by model: Claude Opus 4.8 costs $5/$25 per 1M tokens (input/output), Claude Opus 4.7 costs $5/$25, Claude Sonnet 4.6 costs $3/$15, Claude Sonnet 4 costs $3/$15, and Claude Haiku 4.5 costs $1/$5. The cheapest Claude model is Haiku 4.5 at $1 per 1M input tokens."
                 }
             },
             {
@@ -69,7 +69,7 @@
                 "name": "How much does Claude API cost per request?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "A typical Claude API request (1,500 input tokens, 400 output tokens) costs: Opus 4.7 ~$0.0175, Sonnet 4.6 ~$0.0105, Haiku 4.5 ~$0.0035. Use the calculator above to estimate costs for your specific usage patterns."
+                    "text": "A typical Claude API request (1,500 input tokens, 400 output tokens) costs: Opus 4.8 ~$0.0175, Opus 4.7 ~$0.0175, Sonnet 4.6 ~$0.0105, Haiku 4.5 ~$0.0035. Use the calculator above to estimate costs for your specific usage patterns."
                 }
             },
             {
@@ -239,7 +239,7 @@
     <main id="main">
     <div class="calc-hero">
         <h1>Claude API Cost Calculator</h1>
-        <p>Estimate your Anthropic API spend across Claude Opus 4.7, Sonnet 4.6, Sonnet 4, and Haiku 4.5. See cost per request, cost per 1K requests, and monthly totals.</p>
+        <p>Estimate your Anthropic API spend across Claude Opus 4.8, Opus 4.7, Sonnet 4.6, Sonnet 4, and Haiku 4.5. See cost per request, cost per 1K requests, and monthly totals.</p>
     </div>
 
     <section class="calculator-section">
@@ -268,6 +268,7 @@
                     <div class="input-group">
                         <label for="model">Claude Model</label>
                         <select id="model" onchange="calculate()" aria-label="Select Claude model">
+                            <option value="anthropic-opus48">Claude Opus 4.8 — $5/$25 per 1M</option>
                             <option value="anthropic-opus47">Claude Opus 4.7 — $5/$25 per 1M</option>
                             <option value="anthropic-opus">Claude 4 Opus — $15/$75 per 1M</option>
                             <option value="anthropic-sonnet46" selected>Claude Sonnet 4.6 — $3/$15 per 1M</option>
@@ -410,7 +411,7 @@
 
         <h2>Related Tools</h2>
         <ul>
-            <li><a href="calculator.html">AI API Cost Calculator</a> — Compare all 33 models across 10 providers</li>
+            <li><a href="calculator.html">AI API Cost Calculator</a> — Compare all 34 models across 10 providers</li>
             <li><a href="compare-claude-vs-chatgpt.html">Claude vs ChatGPT</a> — Side-by-side cost and feature comparison</li>
             <li><a href="cost-explorer.html">Cost Explorer</a> — See all models ranked by cost for your usage</li>
             <li><a href="model-switch.html">Model Switch Calculator</a> — Calculate savings from switching models</li>

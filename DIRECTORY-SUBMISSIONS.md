@@ -27,7 +27,7 @@ Add APIpulse — Free AI API pricing data
 ```
 ## Adding APIpulse
 
-**APIpulse** provides free, no-auth REST API access to AI API pricing data for 33 models across 10 providers (OpenAI, Anthropic, Google, DeepSeek, Mistral, Cohere, Meta, Moonshot, xAI, AI21).
+**APIpulse** provides free, no-auth REST API access to AI API pricing data for 34 models across 10 providers (OpenAI, Anthropic, Google, DeepSeek, Mistral, Cohere, Meta, Moonshot, xAI, AI21).
 
 - **Endpoint:** https://getapipulse.com/api/pricing
 - **Docs:** https://getapipulse.com/api-docs.html

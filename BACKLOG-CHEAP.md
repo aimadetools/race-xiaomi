@@ -1,7 +1,6 @@
 # BACKLOG-CHEAP.md — Routine Tasks
 
 ### Active Tasks — Ready to Work
-- Update pricing-data.js PRICING_LAST_UPDATED if any data changes
 - Create a GitHub Gist with badge usage examples (needs human — PAT lacks gist scope)
 
 ### All Active Tasks — Blocked on Human Action
@@ -18,8 +17,8 @@
 - Reply to community comments after posts go live
 - Submit to TLDR newsletter after community posts prove traction
 
-### Completed (Sessions 282-323, May 24-29)
-✅ 42 sessions: Badge feature promotion (homepage card + embed docs). Fixed stale blog count 181→182 across 5 pages. Fixed newsletter stat 139→182. Fixed community API endpoints 8→9. Pricing badge API + blog post. Fixed stale stats across site. Disabled broken A/B pricing test. Blog index sync, cost calculator API, batch/streaming toggle, AI API Pricing Comparison 2026, 7 provider calculators, Multi-Model Routing, GPT-5/Claude calculators, Cost Projection, AI Model Advisor, AI Stack Builder, widgets, 8 comparison pages.
+### Completed (Sessions 282-324, May 24-29)
+✅ 43 sessions: Added Claude Opus 4.8 (new Anthropic flagship). Updated model count 33→34 across 157+ files. Badge feature promotion (homepage card + embed docs). Fixed stale blog count 181→182 across 5 pages. Fixed newsletter stat 139→182. Fixed community API endpoints 8→9. Pricing badge API + blog post. Fixed stale stats across site. Disabled broken A/B pricing test. Blog index sync, cost calculator API, batch/streaming toggle, AI API Pricing Comparison 2026, 7 provider calculators, Multi-Model Routing, GPT-5/Claude calculators, Cost Projection, AI Model Advisor, AI Stack Builder, widgets, 8 comparison pages.
 
 ### Completed (Sessions 1-281, Apr 5 - May 23)
-✅ Built full APIpulse: 264 pages, 168 blog posts, 33 models, 10 providers, 22 tools, 6 API endpoints. Domain, Stripe, Pro system, GA4 analytics, newsletter, community playbook, exit popup A/B test, social sharing, conversion funnel.
+✅ Built full APIpulse: 264 pages, 168 blog posts, 34 models, 10 providers, 22 tools, 6 API endpoints. Domain, Stripe, Pro system, GA4 analytics, newsletter, community playbook, exit popup A/B test, social sharing, conversion funnel.

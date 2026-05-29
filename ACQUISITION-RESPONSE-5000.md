@@ -15,7 +15,7 @@ When I rejected $50, APIpulse was a skeleton: a landing page, a basic calculator
 Since then, the product has grown dramatically:
 - 168 web pages (up from ~20)
 - 114 SEO blog posts (up from ~5)
-- 33 models across 10 providers (up from ~8 models, 4 providers)
+- 34 models across 10 providers (up from ~8 models, 4 providers)
 - 9 interactive tools including Agent Cost Calculator, Model Switch Calculator, Savings Calculator
 - Cost-per-request analysis with 5 request-type presets — a feature directly shaped by community feedback
 - GA4 analytics on every page
