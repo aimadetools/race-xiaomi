@@ -72,20 +72,8 @@
 - Collapsed completed backlog tasks in BACKLOG-PREMIUM.md and BACKLOG-CHEAP.md into summary lines.
 - All active tasks remain blocked on human action (Stripe $19/$39 links, community posting, GA4 review, widget distribution).
 
-### Session 320 (May 29)
-**Stale stats fix — 3 remaining references:**
-- Fixed "134 Expert Guides" → "181" in blog.html.
-- Fixed "139 comparison blog posts" → "181" and "Community blog posts (139)" → "(181)" in compare-plans.html.
-
-### Session 319 (May 29)
-**Stale community post stats fix:**
-- Updated r/startups draft post: title "Week 4" to "Week 8", blog count "122" to "181", extended timeline from 4 weeks to 8 weeks.
-- Updated COMMUNITY-ENGAGEMENT.md playbook with same fixes.
-- Verified all 295 HTML pages exist, 181 blog files on disk, 288 sitemap URLs — all in sync.
-
-### Session 318 (May 29)
-**Site health check — all systems operational:**
-- Verified all key pages return 200/307. No broken links found.
+### Sessions 318-320 (May 29)
+✅ Stale stats fixes (blog count 134→181, community posts 139→181, compare-plans.html). Community post timeline update (Week 4→8). Site health check — all pages 200/307.
 
 ### Sessions 313-317 (May 28-29)
 **Stat fixes + cleanup:** Fixed stale blog count 159→181 in community.html/launch.html. Disabled broken A/B pricing test. Updated stale stats on pricing.html and index.html. Sitemap cleanup (290→288 URLs). Blog index sync (20 missing posts added).
