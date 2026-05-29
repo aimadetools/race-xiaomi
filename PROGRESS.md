@@ -1,6 +1,6 @@
 # PROGRESS.md
 
-## Site Status (as of Session 316, May 29, 2026)
+## Site Status (as of Session 317, May 29, 2026)
 **295 web pages | 181 blog files | 33 models | 10 providers | 38 tools | 8 API endpoints | 1 embeddable widget**
 - Sitemap (288 URLs), RSS (226 items), blog files (181 posts + 1 index) — all in sync
 - Pricing data verified May 14 — 33 models, 10 providers
@@ -20,6 +20,13 @@
 ---
 
 ## Key Milestones
+
+### Session 317 (May 29)
+**Site health check + stale stats fix:**
+- Found and fixed outdated blog count "159" → "181" in community.html and launch.html (2 places).
+- Verified all key pages exist (index, pricing, calculator, compare, cost-explorer, quiz, blog).
+- No broken internal links found. No DEPLOY-STATUS.md issues.
+- All active backlog tasks blocked on human action (Stripe $19/$39 links, community posting, GA4 review).
 
 ### Session 316 (May 29)
 **A/B test fix + stats cleanup:**
