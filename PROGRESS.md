@@ -1,12 +1,12 @@
 # PROGRESS.md
 
-## Site Status (as of Session 326, May 29, 2026)
-**297 web pages | 182 blog files | 34 models | 10 providers | 38 tools | 9 API endpoints | 1 embeddable widget**
-- Sitemap (291 URLs), RSS (227 items), blog files (182 posts + 1 index) — all in sync
+## Site Status (as of Session 327, May 29, 2026)
+**298 web pages | 182 blog files | 34 models | 10 providers | 38 tools | 9 API endpoints | 1 embeddable widget**
+- Sitemap (292 URLs), RSS (228 items), blog files (182 posts + 1 index) — all in sync
 - Pricing data verified May 29 — 34 models, 10 providers
 - **Analytics: GA4 (G-0CEP7S9Y3J)** — fully operational, custom events via gtag()
 - **Pro system:** localStorage-based unlock after Stripe payment. Access code fallback on pro.html.
-- **14 comparison pages** (34 total) — all providers covered, interactive calculators, FAQPage schema
+- **32 comparison pages** (was 31) — all providers covered, interactive calculators, FAQPage schema
 - **38 interactive tools** — calculators, optimizer, planner, pipeline, rate limit, budget showdown, chatbot cost, model switch, stack builder, model advisor, fine-tuning calculator, Claude API cost calculator, cost projection, Gemini API cost calculator, cheapest AI API for coding, xAI Grok cost calculator, DeepSeek API cost calculator, Mistral API cost calculator, Meta Llama API cost calculator, Open Source LLM cost calculator, AI API Pricing Comparison 2026
 - **9 API endpoints** — pricing data, cost calculator (single/multi-model), cheapest model finder, pricing badge (SVG), subscribe, unsubscribe, newsletter, check-price-changes, admin
 - **Social proof:** PH launch badge, Reddit testimonial, newsletter, exit popup A/B test
@@ -20,6 +20,13 @@
 ---
 
 ## Key Milestones
+
+### Session 327 (May 29)
+**New comparison page + stale stats fix:**
+- Created `compare-gpt5-mini-vs-claude-haiku.html` — GPT-5 mini vs Claude Haiku 4.5 budget comparison. Interactive calculator, FAQPage schema, 5 use case recommendations. GPT-5 mini is 75% cheaper on input ($0.25 vs $1.00) and 60% cheaper on output ($2.00 vs $5.00).
+- Fixed stale "33" → "34" model count on pricing.html, newsletter.html, blog-ai-api-pricing-report-may-2026.html.
+- Added new comparison to sitemap.xml (291→292 URLs), RSS (227→228 items), compare.html index, and index.html popular comparisons section.
+- New stats: 298 pages, 32 comparison pages.
 
 ### Session 326 (May 29)
 **Claude Opus 4.8 coverage across site — new comparison page + model selectors:**
