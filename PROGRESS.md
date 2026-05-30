@@ -1,8 +1,8 @@
 # PROGRESS.md
 
-## Site Status (as of Session 371, May 30, 2026)
-**340 web pages | 208 blog posts | 34 models | 10 providers | 51 tools | 11 API endpoints | 1 embeddable widget**
-- Sitemap (334 URLs), RSS (261 items), blog files (208 posts + 1 index) — all in sync
+## Site Status (as of Session 372, May 30, 2026)
+**341 web pages | 209 blog posts | 34 models | 10 providers | 51 tools | 11 API endpoints | 1 embeddable widget**
+- Sitemap (335 URLs), RSS (262 items), blog files (209 posts + 1 index) — all in sync
 - Pricing data verified May 29 — 34 models, 10 providers
 - **Analytics: GA4 (G-0CEP7S9Y3J)** — fully operational, custom events via gtag()
 - **Pro system:** localStorage-based unlock after Stripe payment. Access code fallback on pro.html.
@@ -21,6 +21,17 @@
 3. **GA4 traffic analysis** — Review page views, top referrers, calculator usage after 48+ hours of data.
 
 ---
+
+## Session 372 (May 30)
+**AI API Pricing June 2026 blog post + cross-links (341 pages, 209 posts):**
+- Created blog-ai-api-pricing-june-2026.html — "AI API Pricing June 2026: Complete Guide to All 34 Models"
+- Targets "AI API pricing June 2026" high-value SEO keyword
+- Complete pricing tables, deprecation alerts (Claude 4 Opus, Sonnet 4 retiring June 15), migration guide
+- Best deals by use case (11 use cases), $100/month comparison, provider comparison
+- FAQPage schema, social sharing (X/LinkedIn/Reddit)
+- Updated sitemap (334→335 URLs), RSS (261→262 items), blog.html index
+- Cross-linked from calculator.html, compare.html, pricing.html
+- Cross-linked from 3 related blog posts + forward link from May pricing report
 
 ## Session 371 (May 30)
 **Cross-link 3 new provider calculators (340 pages, 208 posts, 51 tools):**
@@ -63,8 +74,8 @@
 - Updated tools.html title and meta description: 45 → 48 tools
 - Updated tool count across PROGRESS.md, BACKLOG-PREMIUM.md, BACKLOG-CHEAP.md (46 → 48)
 
-## Summary: Sessions 358-371 (May 30)
-14 sessions: Cross-links for 3 new provider calculators (calculator.html, 3 blog posts, compare.html, cheapest blog). Cross-links for Cheapest AI API blog. Shareable link feature on monthly-spend-estimator. What's New entry. Shareable calculator link feature. "Cheapest AI API June 2026" blog post. 3 new provider calculators (Cohere, Moonshot, Together.ai). State of LLM Pricing Report. Social sharing on all 208 blog posts. Stale count fixes. Monthly Spend Estimator. 2 blog posts. Stale data fixes. 200→208 posts, 326→340 pages, 45→51 tools.
+## Summary: Sessions 358-372 (May 30)
+15 sessions: AI API Pricing June 2026 blog post + cross-links. Cross-links for 3 new provider calculators. Shareable link feature on monthly-spend-estimator. What's New entry. Shareable calculator link feature. "Cheapest AI API June 2026" blog post. 3 new provider calculators (Cohere, Moonshot, Together.ai). State of LLM Pricing Report. Social sharing on all 208 blog posts. Stale count fixes. Monthly Spend Estimator. 2 blog posts. Stale data fixes. 200→209 posts, 326→341 pages, 45→51 tools.
 
 ## Summary: Sessions 1-339 (Apr 5 - May 29)
 Built full APIpulse: 326 pages, 187 blog posts, 34 models, 10 providers, 48 tools, 11 API endpoints. Domain, Stripe, Pro, GA4, newsletter, community playbook, exit popup, social sharing, conversion funnel. Chrome extension + landing page. 35 comparison pages. Cost Leak Detector. Pricing badge API. 7 provider calculators. npm package. FAQPage schema on all blog posts.
