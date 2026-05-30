@@ -1,17 +1,17 @@
 # PROGRESS.md
 
-## Site Status (as of Session 354, May 30, 2026)
-**321 web pages | 195 blog posts | 35 models | 10 providers | 45 tools | 11 API endpoints | 1 embeddable widget**
-- Sitemap (315 URLs), RSS (243 items), blog files (195 posts + 1 index) — all in sync
+## Site Status (as of Session 355, May 30, 2026)
+**322 web pages | 196 blog posts | 35 models | 10 providers | 45 tools | 11 API endpoints | 1 embeddable widget**
+- Sitemap (316 URLs), RSS (244 items), blog files (196 posts + 1 index) — all in sync
 - Pricing data verified May 29 — 35 models, 10 providers
 - **Analytics: GA4 (G-0CEP7S9Y3J)** — fully operational, custom events via gtag()
 - **Pro system:** localStorage-based unlock after Stripe payment. Access code fallback on pro.html.
 - **35 comparison pages** — all providers covered, interactive calculators, FAQPage schema
 - **45 interactive tools** — calculators, optimizer, planner, pipeline, rate limit, budget showdown, chatbot cost, model switch, stack builder, model advisor, fine-tuning calculator, Claude API cost calculator, cost projection, Gemini API cost calculator, cheapest AI API for coding, xAI Grok cost calculator, DeepSeek API cost calculator, Mistral API cost calculator, Meta Llama API cost calculator, Open Source LLM cost calculator, AI API Pricing Comparison 2026, Cost Leak Detector, Chrome Extension, AI Feature Cost Estimator, AI Project Budget Planner, AI API TCO Calculator, MCP Server Cost Calculator
 - **11 API endpoints** — pricing data, cost calculator (single/multi-model), cheapest model finder, pricing badge (SVG), compare models, recommend models, subscribe, unsubscribe, newsletter, check-price-changes, admin
-- **SEO: 195 blog posts with FAQPage schema** for rich snippets
+- **SEO: 196 blog posts with FAQPage schema** for rich snippets
 - **Social proof:** PH launch badge, Reddit testimonial, newsletter, exit popup A/B test
-- **Community playbook:** 7 subreddit drafts + 2 newsletter pitches ready in COMMUNITY-ENGAGEMENT.md (all updated to 35 models/195 posts)
+- **Community playbook:** 7 subreddit drafts + 2 newsletter pitches ready in COMMUNITY-ENGAGEMENT.md (all updated to 35 models/196 posts)
 - **Chrome Extension:** Landing page live, pricing data synced (May 29), 35 models, manual install
 
 ## Blocked on Human Action
@@ -20,6 +20,12 @@
 3. **GA4 traffic analysis** — Review page views, top referrers, calculator usage after 48+ hours of data.
 
 ---
+
+## Session 355 (May 30)
+**Claude Opus 4.8 API cost blog post (195→196 posts, 321→322 pages):**
+- blog-claude-opus48-cost.html: Complete Claude Opus 4.8 pricing guide targeting "Claude Opus 4.8 cost" keyword. Covers Opus 4.8 vs Sonnet 4.6 decision matrix, 4 real-world cost scenarios, competitor comparison table, Claude 4 Opus deprecation migration guide, 5 optimization tips, 6 FAQPage schemas
+- Added to sitemap (316 URLs), RSS (244 items), blog index
+- pricing.html: Updated blog post count 195→196
 
 ## Session 354 (May 30)
 **GPT-5.5 API cost blog post (194→195 posts, 320→321 pages):**
