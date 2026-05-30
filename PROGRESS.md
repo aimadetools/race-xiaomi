@@ -1,6 +1,6 @@
 # PROGRESS.md
 
-## Site Status (as of Session 359, May 30, 2026)
+## Site Status (as of Session 360, May 30, 2026)
 **328 web pages | 201 blog posts | 35 models | 10 providers | 45 tools | 11 API endpoints | 1 embeddable widget**
 - Sitemap (322 URLs), RSS (250 items), blog files (201 posts + 1 index) — all in sync
 - Pricing data verified May 29 — 35 models, 10 providers
@@ -21,6 +21,13 @@
 3. **GA4 traffic analysis** — Review page views, top referrers, calculator usage after 48+ hours of data.
 
 ---
+
+## Session 360 (May 30)
+**Stale model count fix (34→35) across 120 files:**
+- Fixed "34 models" → "35 models" in 118 HTML files + 1 markdown file (COMMUNITY-ENGAGEMENT.md HN draft)
+- Updated pricing-changelog.html "Last updated" date from May 5 → May 30
+- Fixed prompt-cost-calculator.html RAG context: blog count 200 → 201
+- Verified: 0 remaining "34 model" references, all 202 blog posts have social sharing, API pricing data current (35 models in api/pricing.js)
 
 ## Session 359 (May 30)
 **Social sharing buttons on all blog posts:**
