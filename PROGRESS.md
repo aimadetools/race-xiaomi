@@ -1,8 +1,8 @@
 # PROGRESS.md
 
 ## Site Status (as of Session 364, May 30, 2026)
-**332 web pages | 204 blog posts | 34 models | 10 providers | 45 tools | 11 API endpoints | 1 embeddable widget**
-- Sitemap (326 URLs), RSS (253 items), blog files (204 posts + 1 index) — all in sync
+**333 web pages | 205 blog posts | 34 models | 10 providers | 45 tools | 11 API endpoints | 1 embeddable widget**
+- Sitemap (327 URLs), RSS (254 items), blog files (205 posts + 1 index) — all in sync
 - Pricing data verified May 29 — 34 models, 10 providers
 - **Analytics: GA4 (G-0CEP7S9Y3J)** — fully operational, custom events via gtag()
 - **Pro system:** localStorage-based unlock after Stripe payment. Access code fallback on pro.html.
@@ -23,13 +23,14 @@
 ---
 
 ## Session 364 (May 30)
-**New blog posts: GPT-5.3 Codex + Gemini 2.5 Pro:**
+**New blog posts: GPT-5.3 Codex + Gemini 2.5 Pro + Claude Haiku 4.5:**
 - Created blog-gpt53-codex-cost.html — pricing guide for OpenAI's coding model ($1.75/$14.00 per 1M tokens, 400K context)
 - Created blog-gemini25-pro-cost.html — pricing guide for Google's 1M context model ($1.25/$10.00 per 1M tokens)
-- Both include 4 cost scenarios, competitor comparison tables, FAQPage schema, social sharing
-- Added both to sitemap (324→326 URLs), RSS (251→253 items), blog.html index
-- Updated blog post count 202→204 in pricing.html and prompt-cost-calculator.html (RAG context)
-- Total: 332 pages, 204 blog posts
+- Created blog-claude-haiku45-cost.html — pricing guide for Anthropic's budget model ($1.00/$5.00 per 1M tokens, 200K context)
+- All include 4 cost scenarios, competitor comparison tables, FAQPage schema, social sharing
+- Added all to sitemap (324→327 URLs), RSS (251→254 items), blog.html index
+- Updated blog post count 202→205 in pricing.html and prompt-cost-calculator.html (RAG context)
+- Total: 333 pages, 205 blog posts
 
 ## Session 363 (May 30)
 **Fix remaining '35 models' references + stale counts:**
