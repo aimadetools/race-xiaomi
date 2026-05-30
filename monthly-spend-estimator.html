@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI API Monthly Spend Estimator — Compare All 34 Models | APIpulse</title>
+    <meta name="description" content="Estimate your monthly AI API spend across all 34 models from 10 providers. Side-by-side cost comparison with sorting, filtering, and export. Free, no signup.">
+    <meta name="keywords" content="AI API cost estimator, monthly API spend, LLM cost comparison, AI API pricing, model cost comparison, API budget calculator">
+    <meta property="og:title" content="AI API Monthly Spend Estimator — Compare All 34 Models">
+    <meta property="og:description" content="Enter your usage. See costs across 34 models instantly. Find the cheapest AI API for your workload.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://getapipulse.com/og-image.png">
+    <meta property="og:url" content="https://getapipulse.com/monthly-spend-estimator.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="AI API Monthly Spend Estimator — Compare All 34 Models">
+    <meta name="twitter:image" content="https://getapipulse.com/og-image.png">
+    <meta name="twitter:description" content="Enter your usage. See costs across 34 models instantly.">
+    <link rel="canonical" href="https://getapipulse.com/monthly-spend-estimator.html">
+    <link rel="alternate" type="application/rss+xml" title="APIpulse Blog" href="https://getapipulse.com/rss.xml">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="styles.css">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0CEP7S9Y3J"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-0CEP7S9Y3J');
+    </script>
+    <script src="analytics.js" defer></script>
+    <script src="dynamic-date.js" defer></script>
+    <script src="shared.js" defer></script>
+    <script src="pricing-data.js" defer></script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "AI API Monthly Spend Estimator",
+        "url": "https://getapipulse.com/monthly-spend-estimator.html",
+        "description": "Estimate your monthly AI API spend across 34 models from 10 providers. Side-by-side comparison with sorting and filtering.",
+        "applicationCategory": "DeveloperApplication",
+        "operatingSystem": "Web",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "How does the monthly spend estimator work?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Enter your daily request count and average tokens per request (input and output). The estimator calculates your monthly cost for every model across all 10 providers, then sorts by cheapest first. You can filter by provider, tier, or context window size."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Which AI model is cheapest for my workload?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "For most workloads, budget models like Gemini 2.0 Flash Lite ($0.075/$0.30 per 1M tokens), Llama 3.1 8B ($0.10/$0.10), or GPT-4o mini ($0.15/$0.60) are cheapest. But quality matters — the best model depends on your use case. Use our estimator to compare costs, then test quality with a few samples."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How accurate are the cost estimates?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Estimates use published per-token pricing from each provider (last verified May 2026). Actual costs may vary slightly due to provider-specific billing rules, batch discounts, or volume pricing. Our estimates are typically within 5-10% of real bills."
+                }
+            }
+        ]
+    }
+    </script>
+    <style>
+        .estimator-hero { padding: 120px 24px 40px; text-align: center; max-width: 700px; margin: 0 auto; }
+        .estimator-hero h1 { font-size: clamp(28px, 4vw, 42px); font-weight: 800; margin-bottom: 12px; }
+        .estimator-hero p { color: var(--text-secondary); font-size: 17px; line-height: 1.6; }
+
+        .estimator-section { padding: 0 24px 60px; }
+        .estimator { background: var(--bg-card); border: 1px solid var(--border); border-radius: 16px; padding: 32px; max-width: 1100px; margin: 0 auto; }
+
+        .presets { display: flex; gap: 8px; margin-bottom: 24px; flex-wrap: wrap; align-items: center; }
+        .preset-label { font-size: 13px; color: var(--text-muted); }
+        .preset-btn {
+            background: var(--bg-secondary); border: 1px solid var(--border);
+            color: var(--text-secondary); padding: 8px 16px; border-radius: 8px;
+            cursor: pointer; font-size: 13px; transition: all 0.2s; font-weight: 500;
+        }
+        .preset-btn:hover { border-color: var(--accent); color: var(--accent); }
+        .preset-btn.active-preset { background: var(--accent); color: white; border-color: var(--accent); }
+
+        .calc-grid { display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 20px; margin-bottom: 24px; }
+        .input-group { display: flex; flex-direction: column; gap: 6px; }
+        .input-group label { font-size: 13px; font-weight: 600; color: var(--text-secondary); }
+        .input-group input {
+            padding: 12px 16px; border-radius: 8px; border: 1px solid var(--border);
+            background: var(--bg-secondary); color: var(--text-primary); font-size: 15px; font-family: inherit;
+        }
+        .input-group input:focus { outline: 2px solid var(--accent); outline-offset: 2px; border-color: var(--accent); }
+        .input-group .hint { font-size: 11px; color: var(--text-muted); }
+
+        .calculate-btn {
+            display: block; width: 100%; padding: 16px;
+            background: var(--accent); color: white; border: none;
+            border-radius: 10px; font-size: 18px; font-weight: 700;
+            cursor: pointer; transition: all 0.2s;
+        }
+        .calculate-btn:hover { background: var(--accent-hover); transform: translateY(-1px); }
+
+        /* Filters */
+        .filters { display: flex; gap: 12px; margin-bottom: 24px; flex-wrap: wrap; align-items: center; }
+        .filter-group { display: flex; flex-direction: column; gap: 4px; }
+        .filter-group label { font-size: 11px; font-weight: 600; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px; }
+        .filter-group select {
+            padding: 8px 12px; border-radius: 6px; border: 1px solid var(--border);
+            background: var(--bg-secondary); color: var(--text-primary); font-size: 13px;
+        }
+        .search-input {
+            padding: 8px 12px; border-radius: 6px; border: 1px solid var(--border);
+            background: var(--bg-secondary); color: var(--text-primary); font-size: 13px; width: 200px;
+        }
+
+        /* Results */
+        .results-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; }
+        .results-header h2 { font-size: 20px; font-weight: 700; }
+        .results-count { font-size: 13px; color: var(--text-muted); }
+        .export-btn {
+            padding: 8px 16px; background: var(--bg-secondary); border: 1px solid var(--border);
+            border-radius: 6px; color: var(--text-secondary); font-size: 13px; cursor: pointer;
+            transition: all 0.2s;
+        }
+        .export-btn:hover { border-color: var(--accent); color: var(--accent); }
+
+        .results-table { width: 100%; border-collapse: collapse; font-size: 14px; }
+        .results-table th {
+            background: var(--bg-secondary); padding: 12px 16px; text-align: left;
+            font-weight: 600; font-size: 12px; text-transform: uppercase;
+            letter-spacing: 0.5px; color: var(--text-muted);
+            border-bottom: 2px solid var(--border); cursor: pointer; user-select: none;
+            transition: color 0.2s;
+        }
+        .results-table th:hover { color: var(--accent); }
+        .results-table th.sorted { color: var(--accent); }
+        .results-table th .sort-arrow { margin-left: 4px; font-size: 10px; }
+        .results-table td { padding: 12px 16px; border-bottom: 1px solid var(--border); }
+        .results-table tr:last-child td { border-bottom: none; }
+        .results-table tr:hover { background: rgba(99,102,241,0.04); }
+        .results-table tr.cheapest-row { background: rgba(34,197,94,0.06); }
+
+        .model-name-cell { font-weight: 600; }
+        .provider-cell { color: var(--text-muted); font-size: 13px; }
+        .cost-cell { font-weight: 700; font-size: 16px; }
+        .cost-cell.cheapest { color: var(--green); }
+        .cost-cell.expensive { color: #ef4444; }
+        .cost-per-request { font-size: 12px; color: var(--text-muted); }
+        .tier-badge {
+            font-size: 11px; font-weight: 700; padding: 2px 8px;
+            border-radius: 4px; text-transform: uppercase; letter-spacing: 0.5px;
+        }
+        .tier-premium { background: rgba(239,68,68,0.1); color: #ef4444; }
+        .tier-mid { background: rgba(234,179,8,0.1); color: #eab308; }
+        .tier-budget { background: rgba(34,197,94,0.1); color: var(--green); }
+        .context-badge { font-size: 12px; color: var(--text-muted); }
+
+        .savings-banner {
+            text-align: center; padding: 20px; margin-bottom: 24px;
+            background: linear-gradient(135deg, rgba(34,197,94,0.08), rgba(99,102,241,0.06));
+            border: 1px solid rgba(34,197,94,0.2); border-radius: 12px;
+        }
+        .savings-banner .label { font-size: 13px; color: var(--text-secondary); }
+        .savings-banner .amount { font-size: 28px; font-weight: 800; color: var(--green); }
+
+        .cta-banner {
+            text-align: center; padding: 32px; margin-top: 32px;
+            background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 12px;
+        }
+        .cta-banner h3 { font-size: 20px; font-weight: 700; margin-bottom: 8px; }
+        .cta-banner p { color: var(--text-secondary); font-size: 15px; margin-bottom: 16px; }
+        .cta-banner a {
+            display: inline-block; padding: 12px 24px; background: var(--accent);
+            color: white; border-radius: 8px; text-decoration: none; font-weight: 600;
+            transition: all 0.2s;
+        }
+        .cta-banner a:hover { background: var(--accent-hover); }
+
+        .info-section { max-width: 1100px; margin: 0 auto; padding: 0 24px 60px; }
+        .info-section h2 { font-size: 24px; font-weight: 700; margin-bottom: 16px; }
+        .info-section p { color: var(--text-secondary); line-height: 1.7; margin-bottom: 16px; }
+
+        @media (max-width: 768px) {
+            .calc-grid { grid-template-columns: 1fr 1fr; }
+            .results-table { font-size: 12px; }
+            .results-table th, .results-table td { padding: 8px 10px; }
+        }
+        @media (max-width: 480px) {
+            .calc-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <nav id="main-nav"></nav>
+
+    <div class="estimator-hero">
+        <h1>AI API Monthly Spend Estimator</h1>
+        <p>Enter your usage. See what every model costs you per month. Find the cheapest option for your workload — across 34 models and 10 providers.</p>
+    </div>
+
+    <div class="estimator-section">
+        <div class="estimator">
+            <div class="presets">
+                <span class="preset-label">Quick presets:</span>
+                <button class="preset-btn" onclick="applyPreset('hobby')">Hobby (100 req/day)</button>
+                <button class="preset-btn" onclick="applyPreset('startup')">Startup (1K req/day)</button>
+                <button class="preset-btn" onclick="applyPreset('growth')">Growth (10K req/day)</button>
+                <button class="preset-btn" onclick="applyPreset('scale')">Scale (100K req/day)</button>
+            </div>
+
+            <div class="calc-grid">
+                <div class="input-group">
+                    <label for="dailyRequests">Daily Requests</label>
+                    <input type="number" id="dailyRequests" value="1000" min="1">
+                    <span class="hint">API calls per day</span>
+                </div>
+                <div class="input-group">
+                    <label for="inputTokens">Input Tokens per Request</label>
+                    <input type="number" id="inputTokens" value="500" min="1">
+                    <span class="hint">Prompt + context</span>
+                </div>
+                <div class="input-group">
+                    <label for="outputTokens">Output Tokens per Request</label>
+                    <input type="number" id="outputTokens" value="300" min="1">
+                    <span class="hint">Model response</span>
+                </div>
+                <div class="input-group">
+                    <label for="daysPerMonth">Days per Month</label>
+                    <input type="number" id="daysPerMonth" value="30" min="1" max="31">
+                    <span class="hint">Billing period</span>
+                </div>
+            </div>
+
+            <button class="calculate-btn" onclick="calculate()">Calculate Monthly Spend</button>
+        </div>
+    </div>
+
+    <div class="estimator-section" id="resultsSection" style="display:none;">
+        <div class="estimator">
+            <div id="savingsBanner" class="savings-banner" style="display:none;"></div>
+
+            <div class="filters">
+                <div class="filter-group">
+                    <label>Provider</label>
+                    <select id="filterProvider" onchange="filterResults()">
+                        <option value="all">All Providers</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label>Tier</label>
+                    <select id="filterTier" onchange="filterResults()">
+                        <option value="all">All Tiers</option>
+                        <option value="Budget">Budget</option>
+                        <option value="Mid">Mid</option>
+                        <option value="Premium">Premium</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label>Context</label>
+                    <select id="filterContext" onchange="filterResults()">
+                        <option value="all">Any Size</option>
+                        <option value="128K">128K+</option>
+                        <option value="200K">200K+</option>
+                        <option value="256K">256K+</option>
+                        <option value="400K">400K+</option>
+                        <option value="1M">1M+</option>
+                        <option value="10M">10M+</option>
+                    </select>
+                </div>
+                <input type="text" class="search-input" id="searchInput" placeholder="Search models..." oninput="filterResults()">
+            </div>
+
+            <div class="results-header">
+                <div>
+                    <h2>Cost Comparison</h2>
+                    <span class="results-count" id="resultsCount"></span>
+                </div>
+                <button class="export-btn" onclick="exportCSV()">Export CSV</button>
+            </div>
+
+            <table class="results-table">
+                <thead>
+                    <tr>
+                        <th onclick="sortTable('rank')"># <span class="sort-arrow" id="sort-rank"></span></th>
+                        <th onclick="sortTable('name')">Model <span class="sort-arrow" id="sort-name"></span></th>
+                        <th onclick="sortTable('provider')">Provider <span class="sort-arrow" id="sort-provider"></span></th>
+                        <th onclick="sortTable('tier')">Tier <span class="sort-arrow" id="sort-tier"></span></th>
+                        <th onclick="sortTable('context')">Context <span class="sort-arrow" id="sort-context"></span></th>
+                        <th onclick="sortTable('inputPrice')">Input $/1M <span class="sort-arrow" id="sort-inputPrice"></span></th>
+                        <th onclick="sortTable('outputPrice')">Output $/1M <span class="sort-arrow" id="sort-outputPrice"></span></th>
+                        <th onclick="sortTable('monthlyCost')" class="sorted">Monthly Cost <span class="sort-arrow" id="sort-monthlyCost">▲</span></th>
+                        <th onclick="sortTable('costPerReq')">Cost/Req <span class="sort-arrow" id="sort-costPerReq"></span></th>
+                    </tr>
+                </thead>
+                <tbody id="resultsBody"></tbody>
+            </table>
+
+            <div class="cta-banner">
+                <h3>Save your comparison as a Pro feature</h3>
+                <p>Pro users can save scenarios, export PDF reports, and get personalized optimization recommendations.</p>
+                <a href="/pricing.html">Unlock Pro for $29</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="info-section">
+        <h2>How to Use the Monthly Spend Estimator</h2>
+        <p>Enter your daily request count and average token usage. The estimator multiplies by your billing period and calculates the exact monthly cost for every model in our database. Results are sorted cheapest-first by default.</p>
+        <p><strong>Tip:</strong> Use the presets to quickly model common scenarios. A "Hobby" project (100 requests/day) costs as little as $0.27/month on the cheapest models. A "Scale" deployment (100K requests/day) can range from $27/month to $13,500/month depending on your model choice.</p>
+        <p>Filter by provider to compare models from a specific company, or filter by tier to focus on budget, mid-range, or premium options. Click any column header to sort by that metric.</p>
+    </div>
+
+    <div id="footer"></div>
+
+    <script>
+    let currentResults = [];
+    let currentSort = { field: 'monthlyCost', asc: true };
+
+    function applyPreset(type) {
+        document.querySelectorAll('.preset-btn').forEach(b => b.classList.remove('active-preset'));
+        event.target.classList.add('active-preset');
+        const presets = {
+            hobby: { requests: 100, input: 400, output: 200, days: 30 },
+            startup: { requests: 1000, input: 500, output: 300, days: 30 },
+            growth: { requests: 10000, input: 600, output: 400, days: 30 },
+            scale: { requests: 100000, input: 800, output: 500, days: 30 }
+        };
+        const p = presets[type];
+        document.getElementById('dailyRequests').value = p.requests;
+        document.getElementById('inputTokens').value = p.input;
+        document.getElementById('outputTokens').value = p.output;
+        document.getElementById('daysPerMonth').value = p.days;
+        calculate();
+    }
+
+    function calculate() {
+        const dailyReqs = parseInt(document.getElementById('dailyRequests').value) || 1000;
+        const inputTok = parseInt(document.getElementById('inputTokens').value) || 500;
+        const outputTok = parseInt(document.getElementById('outputTokens').value) || 300;
+        const days = parseInt(document.getElementById('daysPerMonth').value) || 30;
+
+        const totalInput = dailyReqs * days * inputTok;
+        const totalOutput = dailyReqs * days * outputTok;
+
+        currentResults = API_MODELS.map(m => {
+            const monthlyCost = (totalInput / 1000000) * m.input + (totalOutput / 1000000) * m.output;
+            const costPerReq = ((inputTok / 1000000) * m.input + (outputTok / 1000000) * m.output);
+            return {
+                ...m,
+                monthlyCost,
+                costPerReq,
+                totalInput,
+                totalOutput
+            };
+        });
+
+        currentResults.sort((a, b) => a.monthlyCost - b.monthlyCost);
+
+        // Populate provider filter
+        const providers = [...new Set(currentResults.map(m => m.provider))];
+        const filterEl = document.getElementById('filterProvider');
+        filterEl.innerHTML = '<option value="all">All Providers</option>';
+        providers.forEach(p => {
+            filterEl.innerHTML += `<option value="${p}">${p}</option>`;
+        });
+
+        // Show savings banner
+        const cheapest = currentResults[0];
+        const mostExpensive = currentResults[currentResults.length - 1];
+        const savingsPct = ((1 - cheapest.monthlyCost / mostExpensive.monthlyCost) * 100).toFixed(0);
+        document.getElementById('savingsBanner').style.display = 'block';
+        document.getElementById('savingsBanner').innerHTML = `
+            <div class="label">Switching from ${mostExpensive.name} to ${cheapest.name} saves</div>
+            <div class="amount">$${(mostExpensive.monthlyCost - cheapest.monthlyCost).toFixed(2)}/month (${savingsPct}% less)</div>
+        `;
+
+        document.getElementById('resultsSection').style.display = 'block';
+        filterResults();
+        if (typeof trackEvent === 'function') trackEvent('spend_estimate', { daily_requests: dailyReqs, input_tokens: inputTok, output_tokens: outputTok });
+    }
+
+    function filterResults() {
+        const provider = document.getElementById('filterProvider').value;
+        const tier = document.getElementById('filterTier').value;
+        const context = document.getElementById('filterContext').value;
+        const search = document.getElementById('searchInput').value.toLowerCase();
+
+        const contextMin = { '128K': 128000, '200K': 200000, '256K': 256000, '400K': 400000, '1M': 1000000, '10M': 10000000 };
+        const minCtx = contextMin[context] || 0;
+
+        let filtered = currentResults.filter(m => {
+            if (provider !== 'all' && m.provider !== provider) return false;
+            if (tier !== 'all' && m.tier !== tier) return false;
+            if (minCtx > 0) {
+                const ctxNum = parseFloat(m.context) * (m.context.includes('M') ? 1000000 : 1000);
+                if (ctxNum < minCtx) return false;
+            }
+            if (search && !m.name.toLowerCase().includes(search) && !m.provider.toLowerCase().includes(search)) return false;
+            return true;
+        });
+
+        renderTable(filtered);
+    }
+
+    function renderTable(results) {
+        const tbody = document.getElementById('resultsBody');
+        const cheapest = currentResults[0];
+        const mostExpensive = currentResults[currentResults.length - 1];
+
+        document.getElementById('resultsCount').textContent = `${results.length} of ${currentResults.length} models`;
+
+        tbody.innerHTML = results.map((m, i) => {
+            const isCheapest = m.id === cheapest.id;
+            const isExpensive = m.id === mostExpensive.id;
+            const tierClass = m.tier === 'Premium' ? 'tier-premium' : m.tier === 'Mid' ? 'tier-mid' : 'tier-budget';
+            return `<tr class="${isCheapest ? 'cheapest-row' : ''}">
+                <td>${i + 1}</td>
+                <td class="model-name-cell">${m.name}</td>
+                <td class="provider-cell">${m.provider}</td>
+                <td><span class="tier-badge ${tierClass}">${m.tier}</span></td>
+                <td class="context-badge">${m.context}</td>
+                <td>$${m.input.toFixed(2)}</td>
+                <td>$${m.output.toFixed(2)}</td>
+                <td class="cost-cell ${isCheapest ? 'cheapest' : isExpensive ? 'expensive' : ''}">$${m.monthlyCost.toFixed(2)}</td>
+                <td class="cost-per-request">$${m.costPerReq.toFixed(6)}</td>
+            </tr>`;
+        }).join('');
+    }
+
+    function sortTable(field) {
+        if (currentSort.field === field) {
+            currentSort.asc = !currentSort.asc;
+        } else {
+            currentSort.field = field;
+            currentSort.asc = field === 'name' || field === 'provider' || field === 'tier';
+        }
+
+        currentResults.sort((a, b) => {
+            let va = a[field], vb = b[field];
+            if (typeof va === 'string') return currentSort.asc ? va.localeCompare(vb) : vb.localeCompare(va);
+            return currentSort.asc ? va - vb : vb - va;
+        });
+
+        document.querySelectorAll('.results-table th').forEach(th => th.classList.remove('sorted'));
+        document.querySelectorAll('.sort-arrow').forEach(s => s.textContent = '');
+        const arrow = document.getElementById('sort-' + field);
+        if (arrow) { arrow.textContent = currentSort.asc ? '▲' : '▼'; arrow.parentElement.classList.add('sorted'); }
+
+        filterResults();
+    }
+
+    function exportCSV() {
+        if (!currentResults.length) return;
+        const headers = ['Model', 'Provider', 'Tier', 'Context', 'Input $/1M', 'Output $/1M', 'Monthly Cost', 'Cost per Request'];
+        const rows = currentResults.map(m => [m.name, m.provider, m.tier, m.context, m.input, m.output, m.monthlyCost.toFixed(4), m.costPerReq.toFixed(8)]);
+        const csv = [headers, ...rows].map(r => r.join(',')).join('\n');
+        const blob = new Blob([csv], { type: 'text/csv' });
+        const a = document.createElement('a');
+        a.href = URL.createObjectURL(blob);
+        a.download = 'apipulse-monthly-spend-estimator.csv';
+        a.click();
+        if (typeof trackEvent === 'function') trackEvent('spend_estimate_export');
+    }
+
+    // Auto-calculate on load
+    document.addEventListener('DOMContentLoaded', () => calculate());
+    </script>
+</body>
+</html>

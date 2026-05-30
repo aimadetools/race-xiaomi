@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI API Cost per Token Explained: The Complete Pricing Guide 2026 — APIpulse</title>
+    <meta name="description" content="Understand AI API pricing per token. We explain input vs output tokens, how to calculate costs, and compare pricing across 34 models from 10 providers.">
+    <meta name="keywords" content="AI API cost per token, LLM pricing per token, input output token cost, AI API pricing explained, token cost calculator, GPT pricing tokens">
+    <meta property="og:title" content="AI API Cost per Token Explained: The Complete Pricing Guide 2026">
+    <meta property="og:description" content="Understand how AI API pricing works. Compare 34 models, learn to calculate costs, and optimize your token spend.">
+    <meta property="og:type" content="article">
+    <meta property="article:published_time" content="2026-05-30">
+    <meta property="article:modified_time" content="2026-05-30">
+    <meta property="article:author" content="APIpulse">
+    <meta property="og:image" content="https://getapipulse.com/og-image.png">
+    <meta property="og:url" content="https://getapipulse.com/blog-ai-api-cost-per-token.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="AI API Cost per Token Explained: The Complete Pricing Guide 2026">
+    <meta name="twitter:image" content="https://getapipulse.com/og-image.png">
+    <meta name="twitter:description" content="Understand AI API pricing per token. Compare 34 models. Optimize your spend.">
+    <link rel="canonical" href="https://getapipulse.com/blog-ai-api-cost-per-token.html">
+    <link rel="alternate" type="application/rss+xml" title="APIpulse Blog" href="https://getapipulse.com/rss.xml">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="styles.css">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0CEP7S9Y3J"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-0CEP7S9Y3J');
+    </script>
+    <script src="analytics.js" defer></script>
+    <script src="dynamic-date.js" defer></script>
+    <script src="shared.js" defer></script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "AI API Cost per Token Explained: The Complete Pricing Guide 2026",
+        "description": "Understand AI API pricing per token. Compare 34 models, learn to calculate costs, and optimize your token spend.",
+        "datePublished": "2026-05-30",
+        "dateModified": "2026-05-30",
+        "author": { "@type": "Organization", "name": "APIpulse" },
+        "publisher": { "@type": "Organization", "name": "APIpulse", "url": "https://getapipulse.com" },
+        "url": "https://getapipulse.com/blog-ai-api-cost-per-token.html",
+        "image": "https://getapipulse.com/og-image.png"
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Blog", "item": "https://getapipulse.com/blog.html" },
+            { "@type": "ListItem", "position": 2, "name": "AI API Cost per Token", "item": "https://getapipulse.com/blog-ai-api-cost-per-token.html" }
+        ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "What is the cost per token for AI APIs?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "AI API pricing ranges from $0.075 to $30 per 1M input tokens, and $0.10 to $180 per 1M output tokens. Budget models like Gemini Flash Lite cost $0.075/$0.30 per 1M tokens, while premium models like GPT-5.5 Pro cost $30/$180 per 1M tokens. Output tokens are always more expensive than input tokens."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How do I calculate my AI API cost?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Formula: (input_tokens / 1,000,000 × input_price) + (output_tokens / 1,000,000 × output_price) = cost per request. Multiply by number of requests for total cost. For example, 1,000 input tokens and 500 output tokens on GPT-4o mini: (1000/1M × $0.15) + (500/1M × $0.60) = $0.00015 + $0.00030 = $0.00045 per request."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Why are output tokens more expensive than input tokens?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Output tokens cost 3-6x more because generating text requires more compute than processing it. The model must run inference for each output token sequentially, while input tokens can be processed in parallel. This is why keeping responses short and using max_tokens limits can significantly reduce costs."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How many tokens is a typical API request?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "A typical request includes: system prompt (100-500 tokens), conversation history (500-5000 tokens), user message (50-500 tokens), and model response (100-2000 tokens). Total: 750-8000 tokens per request. A simple chatbot uses ~1,000 tokens total; a RAG pipeline with context can use 5,000-10,000."
+                }
+            }
+        ]
+    }
+    </script>
+    <style>
+        .blog-content { max-width: 780px; margin: 0 auto; padding: 120px 24px 60px; }
+        .blog-content h1 { font-size: clamp(28px, 4vw, 40px); font-weight: 800; margin-bottom: 16px; line-height: 1.2; }
+        .blog-meta { color: var(--text-muted); font-size: 14px; margin-bottom: 32px; }
+        .blog-content h2 { font-size: 24px; font-weight: 700; margin: 40px 0 16px; }
+        .blog-content h3 { font-size: 20px; font-weight: 600; margin: 32px 0 12px; }
+        .blog-content p { color: var(--text-secondary); line-height: 1.8; margin-bottom: 16px; font-size: 16px; }
+        .blog-content ul, .blog-content ol { color: var(--text-secondary); margin: 0 0 16px 20px; line-height: 1.8; }
+        .blog-content li { margin-bottom: 8px; }
+        .blog-content strong { color: var(--text-primary); }
+        .blog-content a { color: var(--accent); text-decoration: none; }
+        .blog-content a:hover { text-decoration: underline; }
+        .blog-content code {
+            background: var(--bg-secondary); padding: 2px 6px; border-radius: 4px;
+            font-size: 14px; color: var(--accent);
+        }
+        .blog-content pre {
+            background: var(--bg-secondary); border: 1px solid var(--border);
+            border-radius: 8px; padding: 20px; overflow-x: auto; margin: 20px 0;
+        }
+        .blog-content pre code { background: none; padding: 0; font-size: 14px; color: var(--text-secondary); }
+
+        .formula-box {
+            background: var(--bg-secondary); border: 1px solid var(--border);
+            border-radius: 12px; padding: 24px; margin: 24px 0; text-align: center;
+        }
+        .formula-box .formula {
+            font-size: 20px; font-weight: 700; color: var(--accent);
+            font-family: 'Courier New', monospace; margin: 12px 0;
+        }
+        .formula-box .desc { color: var(--text-muted); font-size: 14px; }
+
+        .price-table { width: 100%; border-collapse: collapse; margin: 24px 0; font-size: 14px; }
+        .price-table th {
+            background: var(--bg-secondary); padding: 12px 16px; text-align: left;
+            font-weight: 600; font-size: 12px; text-transform: uppercase;
+            letter-spacing: 0.5px; color: var(--text-muted);
+            border-bottom: 2px solid var(--border);
+        }
+        .price-table td { padding: 12px 16px; border-bottom: 1px solid var(--border); }
+        .price-table tr:last-child td { border-bottom: none; }
+        .price-table .cheap { color: var(--green); font-weight: 700; }
+        .price-table .expensive { color: #ef4444; font-weight: 700; }
+
+        .tip-box {
+            background: linear-gradient(135deg, rgba(34,197,94,0.08), rgba(99,102,241,0.06));
+            border: 1px solid rgba(34,197,94,0.2); border-radius: 12px;
+            padding: 24px; margin: 24px 0;
+        }
+        .tip-box h4 { font-size: 16px; font-weight: 700; margin-bottom: 8px; color: var(--green); }
+        .tip-box p { margin-bottom: 0; }
+
+        .cta-box {
+            background: linear-gradient(135deg, rgba(99,102,241,0.1), rgba(168,85,247,0.08));
+            border: 1px solid rgba(99,102,241,0.2); border-radius: 12px;
+            padding: 32px; text-align: center; margin: 40px 0;
+        }
+        .cta-box h3 { font-size: 20px; font-weight: 700; margin-bottom: 8px; }
+        .cta-box p { color: var(--text-secondary); margin-bottom: 16px; }
+        .cta-box a {
+            display: inline-block; padding: 12px 24px; background: var(--accent);
+            color: white; border-radius: 8px; text-decoration: none; font-weight: 600;
+        }
+        .share-buttons { display: flex; gap: 12px; margin: 32px 0; justify-content: center; }
+        .share-btn {
+            padding: 10px 20px; border-radius: 8px; font-size: 13px; font-weight: 600;
+            text-decoration: none; transition: all 0.2s;
+        }
+        .share-x { background: #1a1a2e; color: white; }
+        .share-x:hover { background: #333; }
+        .share-linkedin { background: #0a66c2; color: white; }
+        .share-linkedin:hover { background: #084d94; }
+        .share-reddit { background: #ff4500; color: white; }
+        .share-reddit:hover { background: #cc3700; }
+    </style>
+</head>
+<body>
+    <nav id="main-nav"></nav>
+
+    <article class="blog-content">
+        <h1>AI API Cost per Token Explained: The Complete Pricing Guide 2026</h1>
+        <div class="blog-meta">Published May 30, 2026 · Updated May 30, 2026 · By APIpulse</div>
+
+        <p>Every AI API charges per token. But what <em>is</em> a token? How do you calculate costs? And why do output tokens cost 3-6x more than input tokens? This guide breaks it all down with real numbers from 34 models across 10 providers.</p>
+
+        <h2>What Is a Token?</h2>
+
+        <p>A token is a chunk of text that the AI model processes. Roughly:</p>
+        <ul>
+            <li><strong>1 token ≈ 4 characters</strong> in English</li>
+            <li><strong>1 token ≈ ¾ of a word</strong></li>
+            <li><strong>100 tokens ≈ 75 words</strong></li>
+            <li><strong>1,000 tokens ≈ 750 words</strong> (about 1.5 pages)</li>
+        </ul>
+
+        <p>When you send a request to an AI API, the model counts your input tokens (what you send) and generates output tokens (what it returns). You pay for both — but at different rates.</p>
+
+        <h2>Input vs Output Tokens: Why the Price Difference?</h2>
+
+        <p>Every AI API has two prices:</p>
+        <ul>
+            <li><strong>Input price:</strong> Cost per 1M tokens you send to the model (your prompt + context)</li>
+            <li><strong>Output price:</strong> Cost per 1M tokens the model generates (its response)</li>
+        </ul>
+
+        <p>Output tokens always cost more — typically <strong>3-6x the input price</strong>. Here's why:</p>
+
+        <ol>
+            <li><strong>Compute intensity:</strong> Generating each output token requires running the full model forward pass. Input tokens can be processed in parallel (batched), but output tokens must be generated one at a time.</li>
+            <li><strong>Memory requirements:</strong> The model must maintain attention over all previous tokens while generating each new one.</li>
+            <li><strong>Latency:</strong> Output generation is the bottleneck — users wait for it, so providers charge more.</li>
+        </ol>
+
+        <div class="tip-box">
+            <h4>Pro Tip: Control Output Length</h4>
+            <p>Since output tokens cost 3-6x more, setting a <code>max_tokens</code> limit is the single easiest way to reduce costs. Most responses don't need 4,096 tokens — set it to 500-1000 and save 50-75% on output costs.</p>
+        </div>
+
+        <h2>The Cost Formula</h2>
+
+        <div class="formula-box">
+            <div class="desc">Cost per request =</div>
+            <div class="formula">(input_tokens ÷ 1,000,000 × input_price) + (output_tokens ÷ 1,000,000 × output_price)</div>
+        </div>
+
+        <p><strong>Example:</strong> 1,000 input tokens + 500 output tokens on GPT-4o mini ($0.15/$0.60 per 1M):</p>
+
+        <pre><code>Input cost:  1,000 ÷ 1,000,000 × $0.15 = $0.00015
+Output cost:   500 ÷ 1,000,000 × $0.60 = $0.00030
+Total per request:                        $0.00045
+
+At 1,000 requests/day × 30 days = $13.50/month</code></pre>
+
+        <h2>Pricing Across 34 Models (Per 1M Tokens)</h2>
+
+        <table class="price-table">
+            <thead>
+                <tr>
+                    <th>Model</th>
+                    <th>Provider</th>
+                    <th>Input</th>
+                    <th>Output</th>
+                    <th>Output/Input Ratio</th>
+                    <th>Context</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Gemini 2.0 Flash Lite</strong></td>
+                    <td>Google</td>
+                    <td class="cheap">$0.075</td>
+                    <td class="cheap">$0.30</td>
+                    <td>4.0x</td>
+                    <td>1M</td>
+                </tr>
+                <tr>
+                    <td><strong>Llama 3.1 8B</strong></td>
+                    <td>Meta</td>
+                    <td class="cheap">$0.10</td>
+                    <td class="cheap">$0.10</td>
+                    <td>1.0x</td>
+                    <td>128K</td>
+                </tr>
+                <tr>
+                    <td><strong>Gemini 2.0 Flash</strong></td>
+                    <td>Google</td>
+                    <td class="cheap">$0.10</td>
+                    <td class="cheap">$0.40</td>
+                    <td>4.0x</td>
+                    <td>1M</td>
+                </tr>
+                <tr>
+                    <td><strong>Llama 4 Scout</strong></td>
+                    <td>Meta</td>
+                    <td class="cheap">$0.11</td>
+                    <td class="cheap">$0.34</td>
+                    <td>3.1x</td>
+                    <td>10M</td>
+                </tr>
+                <tr>
+                    <td><strong>DeepSeek V4 Flash</strong></td>
+                    <td>DeepSeek</td>
+                    <td class="cheap">$0.14</td>
+                    <td class="cheap">$0.28</td>
+                    <td>2.0x</td>
+                    <td>1M</td>
+                </tr>
+                <tr>
+                    <td><strong>GPT-4o mini</strong></td>
+                    <td>OpenAI</td>
+                    <td>$0.15</td>
+                    <td>$0.60</td>
+                    <td>4.0x</td>
+                    <td>128K</td>
+                </tr>
+                <tr>
+                    <td><strong>GPT-5 mini</strong></td>
+                    <td>OpenAI</td>
+                    <td>$0.25</td>
+                    <td>$2.00</td>
+                    <td>8.0x</td>
+                    <td>272K</td>
+                </tr>
+                <tr>
+                    <td><strong>Gemini 2.5 Pro</strong></td>
+                    <td>Google</td>
+                    <td>$1.25</td>
+                    <td>$10.00</td>
+                    <td>8.0x</td>
+                    <td>1M</td>
+                </tr>
+                <tr>
+                    <td><strong>GPT-5</strong></td>
+                    <td>OpenAI</td>
+                    <td>$1.25</td>
+                    <td>$10.00</td>
+                    <td>8.0x</td>
+                    <td>272K</td>
+                </tr>
+                <tr>
+                    <td><strong>Claude Haiku 4.5</strong></td>
+                    <td>Anthropic</td>
+                    <td>$1.00</td>
+                    <td>$5.00</td>
+                    <td>5.0x</td>
+                    <td>200K</td>
+                </tr>
+                <tr>
+                    <td><strong>Claude Sonnet 4.6</strong></td>
+                    <td>Anthropic</td>
+                    <td>$3.00</td>
+                    <td>$15.00</td>
+                    <td>5.0x</td>
+                    <td>1M</td>
+                </tr>
+                <tr>
+                    <td><strong>GPT-5.5</strong></td>
+                    <td>OpenAI</td>
+                    <td>$5.00</td>
+                    <td>$30.00</td>
+                    <td>6.0x</td>
+                    <td>1M</td>
+                </tr>
+                <tr>
+                    <td><strong>Claude Opus 4.8</strong></td>
+                    <td>Anthropic</td>
+                    <td>$5.00</td>
+                    <td>$25.00</td>
+                    <td>5.0x</td>
+                    <td>1M</td>
+                </tr>
+                <tr>
+                    <td><strong>Grok 3</strong></td>
+                    <td>xAI</td>
+                    <td class="expensive">$30.00</td>
+                    <td class="expensive">$150.00</td>
+                    <td>5.0x</td>
+                    <td>128K</td>
+                </tr>
+                <tr>
+                    <td><strong>GPT-5.5 Pro</strong></td>
+                    <td>OpenAI</td>
+                    <td class="expensive">$30.00</td>
+                    <td class="expensive">$180.00</td>
+                    <td>6.0x</td>
+                    <td>1M</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <p><strong>Key observation:</strong> The cheapest input tokens (Gemini Flash Lite at $0.075) are 400x cheaper than the most expensive (GPT-5.5 Pro at $30.00). The output spread is even wider at 600x. <strong>Model choice is the single biggest lever for controlling costs.</strong></p>
+
+        <h2>How Tokens Add Up in Real Applications</h2>
+
+        <h3>Chatbot (Simple Q&A)</h3>
+        <pre><code>System prompt:     200 tokens (fixed instructions)
+User message:      100 tokens (the question)
+Model response:    300 tokens (the answer)
+Total:             600 tokens per request
+
+Cost on GPT-4o mini: $0.00027/request
+Cost on GPT-5:       $0.00375/request (14x more)</code></pre>
+
+        <h3>RAG Pipeline (Search + Generate)</h3>
+        <pre><code>System prompt:      300 tokens
+Retrieved context: 2,000 tokens (5 documents)
+User question:      100 tokens
+Model response:     500 tokens
+Total:             2,900 tokens per request
+
+Cost on GPT-4o mini: $0.00174/request
+Cost on GPT-5:       $0.02415/request (14x more)</code></pre>
+
+        <h3>Coding Assistant</h3>
+        <pre><code>System prompt:      500 tokens (code instructions)
+Code context:      3,000 tokens (file contents)
+User instruction:   200 tokens
+Model response:   1,500 tokens (code generation)
+Total:            5,200 tokens per request
+
+Cost on Claude Sonnet 4.6: $0.039/request
+Cost on GPT-5.5:           $0.0725/request (1.9x more)</code></pre>
+
+        <h2>5 Ways to Reduce Your Token Costs</h2>
+
+        <ol>
+            <li><strong>Shorter prompts:</strong> Remove unnecessary instructions, use concise system prompts. Every token in your prompt costs money.</li>
+            <li><strong>Conversation pruning:</strong> Don't send 50 messages of history. Keep the last 5-10 and summarize the rest.</li>
+            <li><strong>Output limits:</strong> Set <code>max_tokens</code> to what you actually need. Most chat responses don't need 4,096 tokens.</li>
+            <li><strong>Model routing:</strong> Use cheap models for simple tasks, expensive ones for complex reasoning.</li>
+            <li><strong>Prompt caching:</strong> OpenAI and Anthropic offer prompt caching — identical prefixes cost 50-90% less.</li>
+        </ol>
+
+        <h2>Calculate Your Costs</h2>
+
+        <p>Don't guess — calculate. Enter your exact usage into our calculator to see what every model costs you per month.</p>
+
+        <div class="cta-box">
+            <h3>See your exact costs across all 34 models</h3>
+            <p>Enter your daily requests and token counts. Get instant cost comparisons sorted cheapest-first.</p>
+            <a href="/monthly-spend-estimator.html">Try the Monthly Spend Estimator</a>
+        </div>
+
+        <div class="share-buttons">
+            <a class="share-btn share-x" href="https://twitter.com/intent/tweet?text=AI+API+pricing+per+token+explained.+From+%240.075+to+%2430+per+1M+tokens+%E2%80%94+here%27s+what+you+need+to+know.&url=https%3A%2F%2Fgetapipulse.com%2Fblog-ai-api-cost-per-token.html" target="_blank" rel="noopener">Share on X</a>
+            <a class="share-btn share-linkedin" href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fgetapipulse.com%2Fblog-ai-api-cost-per-token.html" target="_blank" rel="noopener">Share on LinkedIn</a>
+            <a class="share-btn share-reddit" href="https://reddit.com/submit?url=https%3A%2F%2Fgetapipulse.com%2Fblog-ai-api-cost-per-token.html&title=AI+API+cost+per+token+explained+complete+pricing+guide+2026" target="_blank" rel="noopener">Share on Reddit</a>
+        </div>
+    </article>
+
+    <div id="footer"></div>
+</body>
+</html>
