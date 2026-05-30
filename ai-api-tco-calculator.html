@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI API Total Cost of Ownership Calculator — See the Real Cost | APIpulse</title>
+    <meta name="description" content="Calculate the true total cost of your AI API stack — API calls, retries, caching, infrastructure, and latency. 35 models, 10 providers, free tool.">
+    <meta name="keywords" content="AI API total cost, TCO calculator, LLM cost of ownership, AI infrastructure cost, API hidden costs, LLM cost analysis">
+    <meta property="og:title" content="AI API Total Cost of Ownership Calculator — See the Real Cost | APIpulse">
+    <meta property="og:description" content="Calculate the true total cost of your AI API stack — API calls, retries, caching, infrastructure.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://getapipulse.com/og-image.png">
+    <meta property="og:url" content="https://getapipulse.com/ai-api-tco-calculator.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="AI API Total Cost of Ownership Calculator | APIpulse">
+    <meta name="twitter:image" content="https://getapipulse.com/og-image.png">
+    <meta name="twitter:description" content="Calculate the true total cost of your AI API stack — API calls, retries, caching, infrastructure.">
+    <link rel="canonical" href="https://getapipulse.com/ai-api-tco-calculator.html">
+    <link rel="alternate" type="application/rss+xml" title="APIpulse Blog" href="https://getapipulse.com/rss.xml">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="styles.css">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0CEP7S9Y3J"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-0CEP7S9Y3J');
+    </script>
+    <script src="analytics.js" defer></script>
+    <script src="dynamic-date.js" defer></script>
+    <script src="shared.js" defer></script>
+    <script src="pricing-data.js" defer></script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "AI API Total Cost of Ownership Calculator",
+        "url": "https://getapipulse.com/ai-api-tco-calculator.html",
+        "description": "Calculate the true total cost of your AI API stack including retries, caching savings, and infrastructure.",
+        "applicationCategory": "DeveloperApplication",
+        "operatingSystem": "Web",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "What is the total cost of ownership for an AI API?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Total cost of ownership (TCO) includes API call costs, retry overhead (typically 3-8% extra calls), infrastructure (servers, vector databases, caching layers), and latency costs. Most teams undercount by 20-50% because they only track raw API token costs."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How much do hidden AI API costs add?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Hidden costs typically add 25-60% on top of raw API costs. Retries add 3-8%, caching infrastructure adds $20-200/month, rate limit wait time costs developer hours, and context window waste (sending too much context) can double your input costs."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How can I reduce my AI API total cost?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Key strategies: implement semantic caching (30-50% cost reduction), optimize prompt length (20-40% input savings), use model routing (route simple tasks to cheaper models), batch requests when possible, and monitor retry rates to fix failing requests."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Is this TCO calculator free?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes, the TCO calculator is completely free. It accounts for API costs, retry overhead, caching savings, and infrastructure estimates across all 35 models. No sign-up required."
+                }
+            }
+        ]
+    }
+    </script>
+    <style>
+        .tco-hero { padding: 120px 24px 40px; text-align: center; max-width: 700px; margin: 0 auto; }
+        .tco-hero h1 { font-size: clamp(28px, 4vw, 42px); font-weight: 800; margin-bottom: 12px; }
+        .tco-hero p { color: var(--text-secondary); font-size: 17px; line-height: 1.6; }
+
+        .tco-section { padding: 0 24px 60px; }
+        .tco-calc { background: var(--bg-card); border: 1px solid var(--border); border-radius: 16px; padding: 32px; max-width: 1000px; margin: 0 auto; }
+
+        .tco-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 32px; }
+        .tco-group { display: flex; flex-direction: column; gap: 6px; }
+        .tco-group label { font-size: 13px; font-weight: 600; color: var(--text-secondary); }
+        .tco-group input, .tco-group select {
+            padding: 12px 16px; border-radius: 8px; border: 1px solid var(--border);
+            background: var(--bg-secondary); color: var(--text-primary); font-size: 15px; font-family: inherit;
+        }
+        .tco-group input:focus, .tco-group select:focus { outline: 2px solid var(--accent); outline-offset: 2px; border-color: var(--accent); }
+        .tco-group .hint { font-size: 11px; color: var(--text-muted); }
+
+        .tco-divider { border: none; border-top: 1px solid var(--border); margin: 24px 0; }
+        .tco-section-title { font-size: 16px; font-weight: 700; margin-bottom: 16px; display: flex; align-items: center; gap: 8px; }
+        .tco-section-title .icon { font-size: 20px; }
+
+        .slider-row { display: flex; align-items: center; gap: 16px; margin-bottom: 12px; }
+        .slider-row input[type="range"] {
+            flex: 1; height: 6px; -webkit-appearance: none; appearance: none;
+            background: var(--border); border-radius: 3px; outline: none;
+        }
+        .slider-row input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none; width: 20px; height: 20px; border-radius: 50%;
+            background: var(--accent); cursor: pointer;
+        }
+        .slider-label { font-size: 13px; color: var(--text-secondary); min-width: 120px; }
+        .slider-value { font-size: 14px; font-weight: 600; color: var(--accent); min-width: 50px; text-align: right; }
+
+        /* Results */
+        .tco-results { display: none; }
+        .tco-results.visible { display: block; }
+        .results-header { margin-bottom: 20px; }
+        .results-header h2 { font-size: 22px; font-weight: 700; }
+
+        .tco-summary { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-bottom: 24px; }
+        .tco-card {
+            background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 12px; padding: 20px; text-align: center;
+        }
+        .tco-card .label { font-size: 11px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 4px; }
+        .tco-card .value { font-size: 22px; font-weight: 800; color: var(--accent); }
+        .tco-card .sub { font-size: 11px; color: var(--text-muted); margin-top: 4px; }
+        .tco-card.highlight { border-color: var(--accent); background: var(--accent-glow); }
+
+        .tco-breakdown {
+            display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 24px;
+        }
+        .breakdown-panel {
+            background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 12px; padding: 24px;
+        }
+        .breakdown-panel h3 { font-size: 16px; font-weight: 700; margin-bottom: 16px; }
+        .breakdown-row {
+            display: flex; justify-content: space-between; align-items: center; padding: 10px 0;
+            border-bottom: 1px solid var(--border); font-size: 14px;
+        }
+        .breakdown-row:last-child { border-bottom: none; }
+        .breakdown-row .bl { color: var(--text-secondary); }
+        .breakdown-row .br { font-weight: 600; }
+        .breakdown-row.total { font-weight: 700; font-size: 16px; border-top: 2px solid var(--accent); margin-top: 8px; padding-top: 12px; }
+        .breakdown-row.total .br { color: var(--accent); }
+
+        /* Model comparison table */
+        .tco-table-wrap { overflow-x: auto; border-radius: 12px; border: 1px solid var(--border); }
+        .tco-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+        .tco-table th {
+            background: var(--bg-secondary); padding: 12px 14px; text-align: left;
+            font-size: 11px; font-weight: 600; color: var(--text-muted); text-transform: uppercase;
+            letter-spacing: 0.5px; border-bottom: 1px solid var(--border);
+        }
+        .tco-table td { padding: 10px 14px; border-bottom: 1px solid var(--border); }
+        .tco-table tr:last-child td { border-bottom: none; }
+        .tco-table tr:hover { background: var(--bg-card-hover); }
+        .tco-table .best-row { background: rgba(34, 197, 94, 0.08); }
+        .tco-table .best-badge {
+            display: inline-block; background: var(--green); color: white;
+            padding: 2px 8px; border-radius: 6px; font-size: 10px; font-weight: 600;
+        }
+        .tier-badge { display: inline-block; padding: 2px 8px; border-radius: 6px; font-size: 11px; font-weight: 600; }
+        .tier-budget { background: rgba(34,197,94,0.15); color: #22c55e; }
+        .tier-mid { background: rgba(99,102,241,0.15); color: #6366f1; }
+        .tier-premium { background: rgba(239,68,68,0.15); color: #ef4444; }
+
+        .tco-insights {
+            background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 12px;
+            padding: 24px; margin-top: 24px;
+        }
+        .tco-insights h3 { font-size: 16px; font-weight: 700; margin-bottom: 12px; }
+        .insight-item { display: flex; gap: 12px; align-items: flex-start; margin-bottom: 12px; }
+        .insight-icon { font-size: 20px; flex-shrink: 0; }
+        .insight-text { font-size: 14px; color: var(--text-secondary); line-height: 1.5; }
+        .insight-text strong { color: var(--text-primary); }
+
+        .tco-cta {
+            text-align: center; padding: 40px 24px; max-width: 600px; margin: 0 auto;
+        }
+        .tco-cta h2 { font-size: 24px; margin-bottom: 12px; }
+        .tco-cta p { color: var(--text-secondary); margin-bottom: 20px; line-height: 1.6; }
+        .tco-cta a {
+            display: inline-block; background: var(--accent); color: white;
+            padding: 12px 32px; border-radius: 8px; font-weight: 600; text-decoration: none; transition: all 0.2s;
+        }
+        .tco-cta a:hover { background: var(--accent-hover); transform: translateY(-1px); }
+
+        @media (max-width: 768px) {
+            .tco-hero { padding: 100px 20px 30px; }
+            .tco-hero h1 { font-size: 28px; }
+            .tco-grid { grid-template-columns: 1fr; }
+            .tco-summary { grid-template-columns: 1fr 1fr; }
+            .tco-breakdown { grid-template-columns: 1fr; }
+        }
+    </style>
+    <meta name="theme-color" content="#6366f1">
+</head>
+<body>
+    <nav>
+        <div class="nav-inner">
+            <a href="index.html" class="logo">API<span>pulse</span></a>
+            <button class="hamburger" onclick="toggleMobileNav()" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+            <div class="nav-links">
+                <a href="calculator.html">Calculator</a>
+                <a href="compare.html">Compare</a>
+                <a href="cost-explorer.html">Explorer</a>
+                <a href="agent-cost-calculator.html">Agents</a>
+                <a href="cost-scenarios.html">Scenarios</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="use-cases.html">Use Cases</a>
+                <a href="about.html">About</a>
+                <a href="blog.html">Blog</a>
+                <a href="tools.html" class="active">Tools</a>
+                <a href="pricing-index.html">Pricing Index</a>
+                <a href="model-matrix.html">Model Matrix</a>
+                <a href="api-docs.html" style="color:var(--accent);">API</a>
+                <a href="pricing.html" class="nav-cta">Get Pro — $29</a>
+                <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <section class="tco-hero">
+            <h1>What does your AI API <em>really</em> cost?</h1>
+            <p>API tokens are just the start. Add retries, caching, infrastructure, and latency — see the true total cost of ownership across 35 models.</p>
+        </section>
+
+        <section class="tco-section">
+            <div class="tco-calc">
+                <div class="tco-section-title"><span class="icon">📊</span> API Usage</div>
+                <div class="tco-grid">
+                    <div class="tco-group">
+                        <label for="tcoModel">Select model</label>
+                        <select id="tcoModel" onchange="calculateTCO()"></select>
+                    </div>
+                    <div class="tco-group">
+                        <label for="tcoRequests">Requests / day</label>
+                        <input type="number" id="tcoRequests" value="1000" min="1" oninput="calculateTCO()">
+                        <span class="hint">Daily API calls</span>
+                    </div>
+                    <div class="tco-group">
+                        <label for="tcoInputTokens">Avg input tokens / request</label>
+                        <input type="number" id="tcoInputTokens" value="800" min="1" oninput="calculateTCO()">
+                        <span class="hint">System prompt + context + user message</span>
+                    </div>
+                    <div class="tco-group">
+                        <label for="tcoOutputTokens">Avg output tokens / request</label>
+                        <input type="number" id="tcoOutputTokens" value="400" min="1" oninput="calculateTCO()">
+                        <span class="hint">Model response length</span>
+                    </div>
+                </div>
+
+                <hr class="tco-divider">
+                <div class="tco-section-title"><span class="icon">🔧</span> Hidden Cost Factors</div>
+
+                <div class="slider-row">
+                    <span class="slider-label">Retry rate</span>
+                    <input type="range" id="retryRate" min="0" max="20" value="5" step="1" oninput="updateSlider(this); calculateTCO()">
+                    <span class="slider-value" id="retryRateVal">5%</span>
+                </div>
+                <div class="slider-row">
+                    <span class="slider-label">Cache hit rate</span>
+                    <input type="range" id="cacheRate" min="0" max="80" value="20" step="5" oninput="updateSlider(this); calculateTCO()">
+                    <span class="slider-value" id="cacheRateVal">20%</span>
+                </div>
+                <div class="slider-row">
+                    <span class="slider-label">Context waste</span>
+                    <input type="range" id="contextWaste" min="0" max="100" value="30" step="5" oninput="updateSlider(this); calculateTCO()">
+                    <span class="slider-value" id="contextWasteVal">30%</span>
+                </div>
+
+                <hr class="tco-divider">
+                <div class="tco-section-title"><span class="icon">🏗️</span> Infrastructure (monthly)</div>
+                <div class="tco-grid">
+                    <div class="tco-group">
+                        <label for="tcoServerCost">App server / hosting</label>
+                        <input type="number" id="tcoServerCost" value="20" min="0" step="5" oninput="calculateTCO()">
+                        <span class="hint">$ / month (Vercel, AWS, etc.)</span>
+                    </div>
+                    <div class="tco-group">
+                        <label for="tcoVectorDbCost">Vector database / caching</label>
+                        <input type="number" id="tcoVectorDbCost" value="0" min="0" step="5" oninput="calculateTCO()">
+                        <span class="hint">$ / month (Pinecone, Redis, etc.)</span>
+                    </div>
+                    <div class="tco-group">
+                        <label for="tcoMonitoringCost">Monitoring / logging</label>
+                        <input type="number" id="tcoMonitoringCost" value="0" min="0" step="5" oninput="calculateTCO()">
+                        <span class="hint">$ / month (Datadog, etc.)</span>
+                    </div>
+                    <div class="tco-group">
+                        <label for="tcoDevHours">Dev hours / month</label>
+                        <input type="number" id="tcoDevHours" value="2" min="0" step="0.5" oninput="calculateTCO()">
+                        <span class="hint">Hours maintaining AI stack</span>
+                    </div>
+                </div>
+
+                <div class="tco-results" id="tcoResults">
+                    <hr class="tco-divider">
+                    <div class="results-header">
+                        <h2>Total Cost of Ownership — <span id="modelName"></span></h2>
+                    </div>
+
+                    <div class="tco-summary" id="tcoSummary"></div>
+
+                    <div class="tco-breakdown">
+                        <div class="breakdown-panel">
+                            <h3>Monthly Cost Breakdown</h3>
+                            <div id="breakdownLeft"></div>
+                        </div>
+                        <div class="breakdown-panel">
+                            <h3>Annual Projection</h3>
+                            <div id="breakdownRight"></div>
+                        </div>
+                    </div>
+
+                    <h3 style="font-size:16px;font-weight:700;margin-bottom:16px;">TCO Across All 35 Models</h3>
+                    <div class="tco-table-wrap">
+                        <table class="tco-table" id="tcoTable">
+                            <thead>
+                                <tr>
+                                    <th>Model</th>
+                                    <th>Provider</th>
+                                    <th>Tier</th>
+                                    <th>API $/mo</th>
+                                    <th>Retry $/mo</th>
+                                    <th>Cache Savings</th>
+                                    <th>Net API $/mo</th>
+                                    <th>Infrastructure</th>
+                                    <th class="best-col">Total TCO $/mo</th>
+                                </tr>
+                            </thead>
+                            <tbody id="tcoBody"></tbody>
+                        </table>
+                    </div>
+
+                    <div class="tco-insights" id="tcoInsights"></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="tco-cta">
+            <h2>Ready to optimize your AI costs?</h2>
+            <p>See exactly where your money goes and find the cheapest model for your real workload — with retries, caching, and infrastructure factored in.</p>
+            <a href="cost-optimizer.html">Get a Free Cost Optimization Report</a>
+        </section>
+    </main>
+
+    <script>
+    const DEV_HOUR_RATE = 75; // $/hr for dev time
+
+    function updateSlider(el) {
+        const valEl = document.getElementById(el.id + 'Val');
+        if (valEl) valEl.textContent = el.value + '%';
+    }
+
+    function populateModels() {
+        const sel = document.getElementById('tcoModel');
+        sel.innerHTML = API_MODELS.map((m, i) =>
+            `<option value="${i}">${m.name} (${m.provider}) — $${m.input}/$${m.output} per 1M</option>`
+        ).join('');
+    }
+
+    function fmt(n) {
+        if (n >= 1000) return '$' + n.toLocaleString('en-US', { minimumFractionDigits: 0, maximumFractionDigits: 0 });
+        if (n >= 100) return '$' + n.toFixed(0);
+        if (n >= 1) return '$' + n.toFixed(2);
+        if (n >= 0.01) return '$' + n.toFixed(3);
+        return '$' + n.toFixed(4);
+    }
+
+    function calculateTCO() {
+        const modelIdx = parseInt(document.getElementById('tcoModel').value);
+        const model = API_MODELS[modelIdx];
+        const requestsPerDay = parseInt(document.getElementById('tcoRequests').value) || 1000;
+        const avgInput = parseInt(document.getElementById('tcoInputTokens').value) || 800;
+        const avgOutput = parseInt(document.getElementById('tcoOutputTokens').value) || 400;
+        const retryRate = parseInt(document.getElementById('retryRate').value) / 100;
+        const cacheRate = parseInt(document.getElementById('cacheRate').value) / 100;
+        const contextWaste = parseInt(document.getElementById('contextWaste').value) / 100;
+        const serverCost = parseFloat(document.getElementById('tcoServerCost').value) || 0;
+        const vectorDbCost = parseFloat(document.getElementById('tcoVectorDbCost').value) || 0;
+        const monitoringCost = parseFloat(document.getElementById('tcoMonitoringCost').value) || 0;
+        const devHours = parseFloat(document.getElementById('tcoDevHours').value) || 0;
+        const daysPerMonth = 30;
+
+        const effectiveInput = avgInput * (1 + contextWaste);
+        const baseInputCostPerReq = (effectiveInput / 1_000_000) * model.input;
+        const baseOutputCostPerReq = (avgOutput / 1_000_000) * model.output;
+        const baseCostPerReq = baseInputCostPerReq + baseOutputCostPerReq;
+
+        // Retry overhead
+        const totalRequests = requestsPerDay * (1 + retryRate);
+        const retryCostPerReq = baseCostPerReq * retryRate;
+
+        // Cache savings
+        const cachedRequests = totalRequests * cacheRate;
+        const cacheSavingsPerReq = baseCostPerReq * cacheRate;
+
+        // Net API cost
+        const netCostPerReq = baseCostPerReq * (1 + retryRate) * (1 - cacheRate);
+        const netMonthlyAPI = netCostPerReq * requestsPerDay * daysPerMonth;
+
+        // Infrastructure
+        const infraMonthly = serverCost + vectorDbCost + monitoringCost;
+        const devCostMonthly = devHours * DEV_HOUR_RATE;
+
+        // Total
+        const totalMonthly = netMonthlyAPI + infraMonthly + devCostMonthly;
+        const totalAnnual = totalMonthly * 12;
+
+        document.getElementById('modelName').textContent = model.name;
+
+        // Summary cards
+        const rawAPIMonthly = baseCostPerReq * requestsPerDay * daysPerMonth;
+        const retryMonthly = retryCostPerReq * requestsPerDay * daysPerMonth;
+        const cacheMonthlySaved = cacheSavingsPerReq * requestsPerDay * daysPerMonth;
+        const infraTotal = infraMonthly + devCostMonthly;
+        const hiddenCosts = retryMonthly + infraTotal;
+
+        document.getElementById('tcoSummary').innerHTML = `
+            <div class="tco-card">
+                <div class="label">Raw API Cost</div>
+                <div class="value">${fmt(rawAPIMonthly)}</div>
+                <div class="sub">Before hidden costs</div>
+            </div>
+            <div class="tco-card">
+                <div class="label">Hidden Costs</div>
+                <div class="value">${fmt(hiddenCosts)}</div>
+                <div class="sub">Retries + infra + dev</div>
+            </div>
+            <div class="tco-card">
+                <div class="label">Cache Savings</div>
+                <div class="value" style="color:var(--green)">${fmt(cacheMonthlySaved)}</div>
+                <div class="sub">${(cacheRate * 100).toFixed(0)}% hit rate</div>
+            </div>
+            <div class="tco-card highlight">
+                <div class="label">Total TCO / mo</div>
+                <div class="value">${fmt(totalMonthly)}</div>
+                <div class="sub">${fmt(totalAnnual)} / year</div>
+            </div>
+        `;
+
+        // Breakdown
+        document.getElementById('breakdownLeft').innerHTML = `
+            <div class="breakdown-row"><span class="bl">Base API cost</span><span class="br">${fmt(rawAPIMonthly)}</span></div>
+            <div class="breakdown-row"><span class="bl">+ Retry overhead (${(retryRate*100).toFixed(0)}%)</span><span class="br">${fmt(retryMonthly)}</span></div>
+            <div class="breakdown-row"><span class="bl">- Cache savings (${(cacheRate*100).toFixed(0)}%)</span><span class="br" style="color:var(--green)">-${fmt(cacheMonthlySaved)}</span></div>
+            <div class="breakdown-row"><span class="bl">= Net API cost</span><span class="br">${fmt(netMonthlyAPI)}</span></div>
+            <div class="breakdown-row"><span class="bl">App server</span><span class="br">${fmt(serverCost)}</span></div>
+            <div class="breakdown-row"><span class="bl">Vector DB / cache</span><span class="br">${fmt(vectorDbCost)}</span></div>
+            <div class="breakdown-row"><span class="bl">Monitoring</span><span class="br">${fmt(monitoringCost)}</span></div>
+            <div class="breakdown-row"><span class="bl">Dev time (${devHours}h × $${DEV_HOUR_RATE}/h)</span><span class="br">${fmt(devCostMonthly)}</span></div>
+            <div class="breakdown-row total"><span class="bl">Total TCO</span><span class="br">${fmt(totalMonthly)}</span></div>
+        `;
+
+        document.getElementById('breakdownRight').innerHTML = `
+            <div class="breakdown-row"><span class="bl">Monthly TCO</span><span class="br">${fmt(totalMonthly)}</span></div>
+            <div class="breakdown-row"><span class="bl">3-month projection</span><span class="br">${fmt(totalMonthly * 3)}</span></div>
+            <div class="breakdown-row"><span class="bl">6-month projection</span><span class="br">${fmt(totalMonthly * 6)}</span></div>
+            <div class="breakdown-row"><span class="bl">12-month projection</span><span class="br">${fmt(totalMonthly * 12)}</span></div>
+            <div class="breakdown-row"><span class="bl">Daily cost</span><span class="br">${fmt(totalMonthly / 30)}</span></div>
+            <div class="breakdown-row"><span class="bl">Cost per request (all-in)</span><span class="br">${fmt(netCostPerReq + (infraMonthly + devCostMonthly) / (requestsPerDay * daysPerMonth))}</span></div>
+            <div class="breakdown-row"><span class="bl">Hidden cost premium</span><span class="br">${rawAPIMonthly > 0 ? '+' + ((hiddenCosts / rawAPIMonthly) * 100).toFixed(0) + '%' : '0%'}</span></div>
+            <div class="breakdown-row total"><span class="bl">Annual TCO</span><span class="br">${fmt(totalAnnual)}</span></div>
+        `;
+
+        // All models comparison
+        const allResults = API_MODELS.map(m => {
+            const eIn = avgInput * (1 + contextWaste);
+            const bIn = (eIn / 1_000_000) * m.input;
+            const bOut = (avgOutput / 1_000_000) * m.output;
+            const bCost = bIn + bOut;
+            const retryM = bCost * retryRate * requestsPerDay * daysPerMonth;
+            const cacheM = bCost * cacheRate * requestsPerDay * daysPerMonth;
+            const netAPI = bCost * (1 + retryRate) * (1 - cacheRate) * requestsPerDay * daysPerMonth;
+            const total = netAPI + infraMonthly + devCostMonthly;
+            return { ...m, retryMonthly: retryM, cacheMonthlySaved: cacheM, netAPI, totalTCO: total };
+        }).sort((a, b) => a.totalTCO - b.totalTCO);
+
+        const cheapest = allResults[0];
+        document.getElementById('tcoBody').innerHTML = allResults.map((r, i) => {
+            const tierClass = r.tier === 'Budget' ? 'tier-budget' : r.tier === 'Mid' ? 'tier-mid' : 'tier-premium';
+            const isBest = i === 0;
+            return `<tr class="${isBest ? 'best-row' : ''}">
+                <td><strong>${r.name}</strong> ${isBest ? '<span class="best-badge">Best TCO</span>' : ''}</td>
+                <td>${r.provider}</td>
+                <td><span class="tier-badge ${tierClass}">${r.tier}</span></td>
+                <td>${fmt(r.netAPI + r.retryMonthly)}</td>
+                <td>${fmt(r.retryMonthly)}</td>
+                <td style="color:var(--green)">-${fmt(r.cacheMonthlySaved)}</td>
+                <td>${fmt(r.netAPI)}</td>
+                <td>${fmt(infraMonthly + devCostMonthly)}</td>
+                <td><strong>${fmt(r.totalTCO)}</strong></td>
+            </tr>`;
+        }).join('');
+
+        // Insights
+        const savingsVsExpensive = allResults[allResults.length - 1].totalTCO - cheapest.totalTCO;
+        const hiddenPct = rawAPIMonthly > 0 ? ((hiddenCosts / rawAPIMonthly) * 100).toFixed(0) : 0;
+        const contextSavings = rawAPIMonthly > 0 ? ((contextWaste / (1 + contextWaste)) * 100).toFixed(0) : 0;
+        document.getElementById('tcoInsights').innerHTML = `
+            <h3>Optimization Insights</h3>
+            <div class="insight-item">
+                <span class="insight-icon">💡</span>
+                <span class="insight-text"><strong>Hidden costs add ${hiddenPct}%</strong> to your raw API bill. Retries, infrastructure, and dev time are real expenses that most cost calculators ignore.</span>
+            </div>
+            <div class="insight-item">
+                <span class="insight-icon">📉</span>
+                <span class="insight-text"><strong>Switching to ${cheapest.name}</strong> could save you ${fmt(savingsVsExpensive)}/month vs the most expensive option — that's ${fmt(savingsVsExpensive * 12)}/year.</span>
+            </div>
+            ${contextWaste > 20 ? `<div class="insight-item">
+                <span class="insight-icon">🎯</span>
+                <span class="insight-text"><strong>${(contextWaste * 100).toFixed(0)}% context waste detected.</strong> Trimming unnecessary context could save ~${fmt(rawAPIMonthly * contextWaste / (1 + contextWaste))}/month on input tokens alone.</span>
+            </div>` : ''}
+            ${cacheRate < 30 ? `<div class="insight-item">
+                <span class="insight-icon">⚡</span>
+                <span class="insight-text"><strong>Increasing cache hit rate to 40%</strong> (from ${(cacheRate*100).toFixed(0)}%) could save ~${fmt(rawAPIMonthly * 0.2)}/month through semantic caching.</span>
+            </div>` : ''}
+            ${retryRate > 5 ? `<div class="insight-item">
+                <span class="insight-icon">🔧</span>
+                <span class="insight-text"><strong>${(retryRate*100).toFixed(0)}% retry rate is high.</strong> Fixing error-prone prompts or adding fallback models could save ${fmt(retryMonthly)}/month.</span>
+            </div>` : ''}
+        `;
+
+        document.getElementById('tcoResults').classList.add('visible');
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        populateModels();
+        calculateTCO();
+    });
+    </script>
+</body>
+</html>

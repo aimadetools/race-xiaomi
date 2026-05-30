@@ -1,8 +1,8 @@
 # PROGRESS.md
 
-## Site Status (as of Session 347, May 30, 2026)
-**312 web pages | 189 blog posts | 35 models | 10 providers | 43 tools | 11 API endpoints | 1 embeddable widget**
-- Sitemap (307 URLs), RSS (237 items), blog files (189 posts + 1 index) — all in sync
+## Site Status (as of Session 348, May 30, 2026)
+**314 web pages | 190 blog posts | 35 models | 10 providers | 44 tools | 11 API endpoints | 1 embeddable widget**
+- Sitemap (309 URLs), RSS (238 items), blog files (190 posts + 1 index) — all in sync
 - Pricing data verified May 29 — 35 models, 10 providers
 - **Analytics: GA4 (G-0CEP7S9Y3J)** — fully operational, custom events via gtag()
 - **Pro system:** localStorage-based unlock after Stripe payment. Access code fallback on pro.html.
@@ -29,6 +29,12 @@
 - ai-project-budget-planner.html: 4 project stage presets (MVP/Growth/Scale/Enterprise), API + infra + dev cost breakdown, budget vs premium comparison, top 5 model recommendations
 - blog-build-ai-feature-under-50.html: Practical guide with real cost breakdowns for 8 feature types, model routing strategy, token optimization tips, 3 FAQPage schemas
 - Updated tools.html (41→43 tools), blog index (new top entry), sitemap (307 URLs), RSS (237 items)
+
+### Session 348 (May 30)
+**New TCO Calculator tool + hidden costs blog post (43→44 tools, 189→190 posts, 312→314 pages):**
+- ai-api-tco-calculator.html: Total Cost of Ownership calculator with retry rate, cache hit rate, context waste sliders, infrastructure cost inputs, monthly/annual projections, all 35 models ranked by true TCO
+- blog-hidden-costs-ai-api.html: In-depth guide on hidden AI API costs (retries, context waste, infrastructure, dev time, latency) with real-world TCO breakdown table, 5 optimization strategies, 5 FAQPage schemas
+- Updated tools.html (43→44 tools), blog index (new top entry), sitemap (309 URLs), RSS (238 items)
 
 ### Session 346 (May 29)
 **New blog post: AI Model Deprecation Guide (187→188 posts):**
