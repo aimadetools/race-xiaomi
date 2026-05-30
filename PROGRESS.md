@@ -39,52 +39,8 @@
 - Added to sitemap (315 URLs), RSS (243 items), blog index
 - pricing.html: Updated blog post count 194→195
 
-## Session 353 (May 30)
-**2 SEO blog posts targeting high-volume keywords (192→194 posts, 318→320 pages):**
-- blog-chatgpt-api-cost.html: Comprehensive guide targeting "ChatGPT API cost" keyword. All 9 OpenAI models, 4 cost scenarios, output token multipliers, competitor comparisons, 6 FAQPage schemas
-- blog-gpt5-vs-gpt4o.html: Comparison targeting "GPT-5 vs GPT-4o" query. Key angle: GPT-5 is 50% cheaper on input with better performance. 4 cost scenarios, migration guide, 6 FAQPage schemas
-- Added both to sitemap (314 URLs), RSS (242 items), blog index
-- pricing.html: Updated blog post count 192→194
-
-## Session 352 (May 30)
-**Batch vs streaming toggle + quality fixes:**
-- cost-per-request.html: Added interactive batch vs real-time pricing toggle (community feedback from r/MachineLearning). Batch mode shows 50% discounted rates for OpenAI, Anthropic, Google batch APIs. Updated model count 34→35.
-- pricing.html: Fixed outdated stats (34→35 models, 182→192 blog posts)
-- COMMUNITY-ENGAGEMENT.md: Updated all draft posts with current stats (35 models, 192 posts)
-- sitemap.xml: Updated lastmod for cost-per-request.html
-
-## Session 351 (May 30)
-**Claude API Cost Calculator blog post (191→192 posts, 317→318 pages):**
-- blog-claude-api-cost-calculator.html: In-depth guide on Claude API costs with real pricing tables for all 5 models, 4 real-world cost scenarios (chatbot, code gen, RAG, summarization), competitor comparisons, 5 FAQPage schemas
-- Added to sitemap (312 URLs), RSS (240 items), blog index
-
-## Session 349 (May 30)
-**MCP Server Cost Calculator + blog post (44→45 tools, 190→191 posts, 309→311 pages):**
-- mcp-cost-calculator.html: MCP cost calculator with tool schema overhead analysis, multi-step chain modeling, 4 server presets, 3 chain depth presets, all 35 models ranked by MCP cost
-- blog-ai-api-cost-mcp-servers.html: In-depth guide on hidden MCP server costs with real cost tables, 5 optimization strategies, 5 FAQPage schemas
-
-## Session 348 (May 30)
-**TCO Calculator + hidden costs blog post (43→44 tools, 189→190 posts):**
-- ai-api-tco-calculator.html: Total Cost of Ownership calculator with retry rate, cache hit rate, context waste sliders, infrastructure cost inputs, monthly/annual projections
-- blog-hidden-costs-ai-api.html: In-depth guide on hidden AI API costs with real-world TCO breakdown table, 5 optimization strategies, 5 FAQPage schemas
-
-## Session 347 (May 30)
-**2 new tools + 1 blog post (41→43 tools, 188→189 posts):**
-- ai-feature-cost-estimator.html: 8 feature type presets, 35 models ranked by cost, cost per request breakdown
-- ai-project-budget-planner.html: 4 project stage presets, API + infra + dev cost breakdown, budget vs premium comparison
-- blog-build-ai-feature-under-50.html: Practical guide with real cost breakdowns for 8 feature types, 3 FAQPage schemas
-
-## Session 346 (May 29)
-**Blog post: AI Model Deprecation Guide (187→188 posts):** blog-model-deprecation-guide.html covering Claude 4 Opus, Sonnet 4, DeepSeek V3 retirement.
-
-## Session 345 (May 29)
-**Fixed model count drift — 34→35 models across entire site.** Updated all meta descriptions, comparison pages, RSS, API templates.
-
-## Session 344 (May 29)
-**Site health check — all clear.** Verified 301 internal links. All backlog tasks blocked on human action.
-
-## Session 340-343 (May 29)
-**Data hygiene + Pricing map discoverability + FAQPage schema.** Interactive LLM Pricing Map + blog + npm package. FAQPage schema on all 186 blog posts. Footer link on 309 pages. Synced price-snapshot.json.
+## Summary: Sessions 340-352 (May 29-30)
+13 sessions: 2 SEO blog posts (ChatGPT API cost, GPT-5 vs GPT-4o). Batch vs streaming toggle. Claude API Cost Calculator blog. MCP Server Cost Calculator + blog. TCO Calculator + hidden costs blog. AI Feature Cost Estimator + AI Project Budget Planner + blog. AI Model Deprecation Guide. Fixed model count drift (34→35). Pricing map discoverability. Interactive LLM Pricing Map + blog. npm package. FAQPage schema on 192 blog posts. 187→194 posts, 309→320 pages.
 
 ---
 
