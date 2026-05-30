@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Feature Cost Estimator — Calculate API Costs for Any AI Feature | APIpulse</title>
+    <meta name="description" content="Estimate the API cost of building any AI feature. Select your use case, enter usage, and see costs across 35 models from 10 providers. Free tool.">
+    <meta name="keywords" content="AI feature cost, AI API cost estimator, LLM feature pricing, AI development cost, chatbot cost, content generation cost, code completion cost">
+    <meta property="og:title" content="AI Feature Cost Estimator — Calculate API Costs for Any AI Feature | APIpulse">
+    <meta property="og:description" content="Estimate the API cost of any AI feature. Select your use case, enter usage, see costs across 35 models.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://getapipulse.com/og-image.png">
+    <meta property="og:url" content="https://getapipulse.com/ai-feature-cost-estimator.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="AI Feature Cost Estimator — Calculate API Costs for Any AI Feature | APIpulse">
+    <meta name="twitter:image" content="https://getapipulse.com/og-image.png">
+    <meta name="twitter:description" content="Estimate the API cost of any AI feature. Select your use case, enter usage, see costs across 35 models.">
+    <link rel="canonical" href="https://getapipulse.com/ai-feature-cost-estimator.html">
+    <link rel="alternate" type="application/rss+xml" title="APIpulse Blog" href="https://getapipulse.com/rss.xml">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="styles.css">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0CEP7S9Y3J"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-0CEP7S9Y3J');
+    </script>
+    <script src="analytics.js" defer></script>
+    <script src="dynamic-date.js" defer></script>
+    <script src="shared.js" defer></script>
+    <script src="pricing-data.js" defer></script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "APIpulse AI Feature Cost Estimator",
+        "url": "https://getapipulse.com/ai-feature-cost-estimator.html",
+        "description": "Estimate the API cost of building any AI feature across 35 models from 10 providers.",
+        "applicationCategory": "DeveloperApplication",
+        "operatingSystem": "Web",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "How much does it cost to add AI to my app?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "It depends on the feature and usage. A chatbot handling 1,000 messages/day costs $0.90-$45/month on budget models. Content generation at 100 articles/day costs $3-$150/month. Code completion for a team of 10 costs $5-$50/month. Use our estimator above for your exact numbers."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Which AI model is cheapest for my use case?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Budget models like Gemini 2.0 Flash Lite ($0.075/$0.30), DeepSeek V4 Flash ($0.14/$0.28), and GPT-4o mini ($0.15/$0.60) are cheapest for most features. Premium models like GPT-5.5 ($5/$30) and Claude Opus 4.8 ($5/$25) cost 20-100x more but offer better quality for complex reasoning tasks."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What is the ROI of adding AI features?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "AI features typically cost $5-$500/month in API fees but can save 10-100x that in developer time. A customer support chatbot replacing 1 human agent saves ~$4,000/month while costing $30-$150/month in API fees. The ROI is usually 10:1 to 50:1 for well-chosen use cases."
+                }
+            }
+        ]
+    }
+    </script>
+    <style>
+        .est-hero { padding: 120px 24px 40px; text-align: center; max-width: 700px; margin: 0 auto; }
+        .est-hero h1 { font-size: clamp(28px, 4vw, 42px); font-weight: 800; margin-bottom: 12px; }
+        .est-hero p { color: var(--text-secondary); font-size: 17px; line-height: 1.6; }
+
+        .est-section { padding: 0 24px 60px; }
+        .est-calculator { background: var(--bg-card); border: 1px solid var(--border); border-radius: 16px; padding: 32px; max-width: 900px; margin: 0 auto; }
+
+        /* Feature type grid */
+        .feature-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 12px; margin-bottom: 32px; }
+        .feature-btn {
+            background: var(--bg-secondary); border: 2px solid var(--border);
+            border-radius: 12px; padding: 20px 16px; cursor: pointer;
+            transition: all 0.2s; text-align: center;
+        }
+        .feature-btn:hover { border-color: var(--accent); background: var(--bg-card-hover); }
+        .feature-btn.selected { border-color: var(--accent); background: var(--accent-glow); }
+        .feature-btn .feat-icon { font-size: 28px; margin-bottom: 8px; display: block; }
+        .feature-btn .feat-name { font-size: 14px; font-weight: 600; color: var(--text-primary); }
+        .feature-btn .feat-desc { font-size: 11px; color: var(--text-muted); margin-top: 4px; }
+
+        /* Input fields */
+        .est-inputs { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px; margin-bottom: 32px; }
+        .est-input-group { display: flex; flex-direction: column; gap: 6px; }
+        .est-input-group label { font-size: 13px; font-weight: 600; color: var(--text-secondary); }
+        .est-input-group input {
+            padding: 12px 16px; border-radius: 8px; border: 1px solid var(--border);
+            background: var(--bg-secondary); color: var(--text-primary); font-size: 15px; font-family: inherit;
+        }
+        .est-input-group input:focus { outline: 2px solid var(--accent); outline-offset: 2px; border-color: var(--accent); }
+        .est-input-group .hint { font-size: 11px; color: var(--text-muted); }
+
+        /* Presets */
+        .preset-row { display: flex; gap: 8px; margin-bottom: 24px; flex-wrap: wrap; align-items: center; }
+        .preset-label { font-size: 13px; color: var(--text-muted); }
+        .preset-chip {
+            background: var(--bg-secondary); border: 1px solid var(--border);
+            color: var(--text-secondary); padding: 6px 14px; border-radius: 8px;
+            cursor: pointer; font-size: 12px; transition: all 0.2s; font-weight: 500;
+        }
+        .preset-chip:hover { border-color: var(--accent); color: var(--accent); }
+        .preset-chip.active-preset { background: var(--accent); color: white; border-color: var(--accent); }
+
+        /* Results */
+        .est-results { display: none; }
+        .est-results.visible { display: block; }
+        .results-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; flex-wrap: wrap; gap: 12px; }
+        .results-header h2 { font-size: 22px; font-weight: 700; }
+        .results-summary {
+            display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 24px;
+        }
+        .summary-card {
+            background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 12px; padding: 20px; text-align: center;
+        }
+        .summary-card .label { font-size: 12px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 4px; }
+        .summary-card .value { font-size: 24px; font-weight: 800; color: var(--accent); }
+        .summary-card .sub { font-size: 12px; color: var(--text-muted); margin-top: 4px; }
+
+        /* Table */
+        .est-table-wrap { overflow-x: auto; border-radius: 12px; border: 1px solid var(--border); }
+        .est-table { width: 100%; border-collapse: collapse; font-size: 14px; }
+        .est-table th {
+            background: var(--bg-secondary); padding: 14px 16px; text-align: left;
+            font-size: 12px; font-weight: 600; color: var(--text-muted); text-transform: uppercase;
+            letter-spacing: 0.5px; border-bottom: 1px solid var(--border); cursor: pointer;
+            user-select: none; white-space: nowrap;
+        }
+        .est-table th:hover { color: var(--accent); }
+        .est-table th .sort-arrow { margin-left: 4px; font-size: 10px; }
+        .est-table td { padding: 12px 16px; border-bottom: 1px solid var(--border); }
+        .est-table tr:last-child td { border-bottom: none; }
+        .est-table tr:hover { background: var(--bg-card-hover); }
+        .est-table .best-row { background: rgba(34, 197, 94, 0.08); }
+        .est-table .best-badge {
+            display: inline-block; background: var(--green); color: white;
+            padding: 2px 8px; border-radius: 6px; font-size: 11px; font-weight: 600;
+        }
+        .tier-badge {
+            display: inline-block; padding: 2px 8px; border-radius: 6px; font-size: 11px; font-weight: 600;
+        }
+        .tier-budget { background: rgba(34,197,94,0.15); color: #22c55e; }
+        .tier-mid { background: rgba(99,102,241,0.15); color: #6366f1; }
+        .tier-premium { background: rgba(239,68,68,0.15); color: #ef4444; }
+
+        /* CTA */
+        .est-cta {
+            text-align: center; padding: 40px 24px; max-width: 600px; margin: 0 auto;
+        }
+        .est-cta h2 { font-size: 24px; margin-bottom: 12px; }
+        .est-cta p { color: var(--text-secondary); margin-bottom: 20px; line-height: 1.6; }
+        .est-cta a {
+            display: inline-block; background: var(--accent); color: white;
+            padding: 12px 32px; border-radius: 8px; font-weight: 600; text-decoration: none; transition: all 0.2s;
+        }
+        .est-cta a:hover { background: var(--accent-hover); transform: translateY(-1px); }
+
+        @media (max-width: 768px) {
+            .est-hero { padding: 100px 20px 30px; }
+            .est-hero h1 { font-size: 28px; }
+            .est-inputs { grid-template-columns: 1fr; }
+            .results-summary { grid-template-columns: 1fr; }
+            .feature-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+    </style>
+    <meta name="theme-color" content="#6366f1">
+</head>
+<body>
+    <nav>
+        <div class="nav-inner">
+            <a href="index.html" class="logo">API<span>pulse</span></a>
+            <button class="hamburger" onclick="toggleMobileNav()" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+            <div class="nav-links">
+                <a href="calculator.html">Calculator</a>
+                <a href="compare.html">Compare</a>
+                <a href="cost-explorer.html">Explorer</a>
+                <a href="agent-cost-calculator.html">Agents</a>
+                <a href="cost-scenarios.html">Scenarios</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="use-cases.html">Use Cases</a>
+                <a href="about.html">About</a>
+                <a href="blog.html">Blog</a>
+                <a href="tools.html" class="active">Tools</a>
+                <a href="pricing-index.html">Pricing Index</a>
+                <a href="model-matrix.html">Model Matrix</a>
+                <a href="api-docs.html" style="color:var(--accent);">API</a>
+                <a href="pricing.html" class="nav-cta">Get Pro — $29</a>
+                <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <section class="est-hero">
+            <h1>How much does your AI feature actually cost?</h1>
+            <p>Pick your feature, enter your usage, and see exact monthly costs across 35 models. No sign-up required.</p>
+        </section>
+
+        <section class="est-section">
+            <div class="est-calculator">
+                <h3 style="margin-bottom:16px;font-size:16px;">1. What are you building?</h3>
+                <div class="feature-grid" id="featureGrid">
+                    <div class="feature-btn selected" data-feature="chatbot" onclick="selectFeature(this)">
+                        <span class="feat-icon">💬</span>
+                        <div class="feat-name">Chatbot</div>
+                        <div class="feat-desc">Customer support, sales, FAQ</div>
+                    </div>
+                    <div class="feature-btn" data-feature="content" onclick="selectFeature(this)">
+                        <span class="feat-icon">✍️</span>
+                        <div class="feat-name">Content Generation</div>
+                        <div class="feat-desc">Blog posts, marketing copy</div>
+                    </div>
+                    <div class="feature-btn" data-feature="code" onclick="selectFeature(this)">
+                        <span class="feat-icon">💻</span>
+                        <div class="feat-name">Code Completion</div>
+                        <div class="feat-desc">IDE assistant, code review</div>
+                    </div>
+                    <div class="feature-btn" data-feature="analysis" onclick="selectFeature(this)">
+                        <span class="feat-icon">📊</span>
+                        <div class="feat-name">Data Analysis</div>
+                        <div class="feat-desc">Summarize, extract, classify</div>
+                    </div>
+                    <div class="feature-btn" data-feature="translation" onclick="selectFeature(this)">
+                        <span class="feat-icon">🌐</span>
+                        <div class="feat-name">Translation</div>
+                        <div class="feat-desc">Multi-language support</div>
+                    </div>
+                    <div class="feature-btn" data-feature="rag" onclick="selectFeature(this)">
+                        <span class="feat-icon">🔍</span>
+                        <div class="feat-name">RAG / Search</div>
+                        <div class="feat-desc">Document Q&A, knowledge base</div>
+                    </div>
+                    <div class="feature-btn" data-feature="agent" onclick="selectFeature(this)">
+                        <span class="feat-icon">🤖</span>
+                        <div class="feat-name">AI Agent</div>
+                        <div class="feat-desc">Multi-step, tool-using agent</div>
+                    </div>
+                    <div class="feature-btn" data-feature="summarization" onclick="selectFeature(this)">
+                        <span class="feat-icon">📝</span>
+                        <div class="feat-name">Summarization</div>
+                        <div class="feat-desc">Condense articles, meetings</div>
+                    </div>
+                </div>
+
+                <h3 style="margin-bottom:16px;font-size:16px;">2. How many requests per day?</h3>
+                <div class="preset-row" id="volumePresets">
+                    <span class="preset-label">Quick presets:</span>
+                    <div class="preset-chip active-preset" data-requests="100" onclick="setVolume(this, 100)">100/day (MVP)</div>
+                    <div class="preset-chip" data-requests="1000" onclick="setVolume(this, 1000)">1K/day (Growth)</div>
+                    <div class="preset-chip" data-requests="10000" onclick="setVolume(this, 10000)">10K/day (Scale)</div>
+                    <div class="preset-chip" data-requests="100000" onclick="setVolume(this, 100000)">100K/day (Enterprise)</div>
+                </div>
+
+                <div class="est-inputs">
+                    <div class="est-input-group">
+                        <label for="requestsPerDay">Requests / day</label>
+                        <input type="number" id="requestsPerDay" value="100" min="1" oninput="calculate()">
+                        <span class="hint">How many API calls per day</span>
+                    </div>
+                    <div class="est-input-group">
+                        <label for="avgInputTokens">Avg input tokens</label>
+                        <input type="number" id="avgInputTokens" value="500" min="1" oninput="calculate()">
+                        <span class="hint">System prompt + user message</span>
+                    </div>
+                    <div class="est-input-group">
+                        <label for="avgOutputTokens">Avg output tokens</label>
+                        <input type="number" id="avgOutputTokens" value="300" min="1" oninput="calculate()">
+                        <span class="hint">Model response length</span>
+                    </div>
+                </div>
+
+                <div class="est-results" id="results">
+                    <div class="results-header">
+                        <h2>Cost estimates across 35 models</h2>
+                    </div>
+                    <div class="results-summary" id="summaryCards"></div>
+                    <div class="est-table-wrap">
+                        <table class="est-table" id="resultsTable">
+                            <thead>
+                                <tr>
+                                    <th onclick="sortTable(0)">Model <span class="sort-arrow">▼</span></th>
+                                    <th onclick="sortTable(1)">Provider <span class="sort-arrow">▼</span></th>
+                                    <th onclick="sortTable(2)">Tier <span class="sort-arrow">▼</span></th>
+                                    <th onclick="sortTable(3)">Input $/1M <span class="sort-arrow">▼</span></th>
+                                    <th onclick="sortTable(4)">Output $/1M <span class="sort-arrow">▼</span></th>
+                                    <th onclick="sortTable(5)" class="best-col">Monthly Cost <span class="sort-arrow">▼</span></th>
+                                    <th onclick="sortTable(6)">Per Request <span class="sort-arrow">▼</span></th>
+                                    <th>Notes</th>
+                                </tr>
+                            </thead>
+                            <tbody id="resultsBody"></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="est-cta">
+            <h2>Want to save up to 40% more?</h2>
+            <p>APIpulse Pro gives you personalized optimization recommendations, saved scenarios, and cost report export — all for a one-time $29.</p>
+            <a href="pricing.html">Get Pro — $29 lifetime</a>
+        </section>
+    </main>
+
+    <script>
+    // Feature-specific token defaults
+    const FEATURE_DEFAULTS = {
+        chatbot:        { input: 500,  output: 300,  desc: 'Customer support / sales chatbot' },
+        content:        { input: 200,  output: 1500, desc: 'Blog posts, marketing copy' },
+        code:           { input: 800,  output: 400,  desc: 'Code completion / review' },
+        analysis:       { input: 1200, output: 500,  desc: 'Data summarization & classification' },
+        translation:    { input: 400,  output: 400,  desc: 'Multi-language translation' },
+        rag:            { input: 2000, output: 600,  desc: 'Document Q&A with context' },
+        agent:          { input: 1500, output: 800,  desc: 'Multi-step AI agent' },
+        summarization:  { input: 3000, output: 400,  desc: 'Condense long documents' },
+    };
+
+    let selectedFeature = 'chatbot';
+    let currentSort = { col: 5, asc: true };
+
+    function selectFeature(el) {
+        document.querySelectorAll('.feature-btn').forEach(b => b.classList.remove('selected'));
+        el.classList.add('selected');
+        selectedFeature = el.dataset.feature;
+        const defaults = FEATURE_DEFAULTS[selectedFeature];
+        document.getElementById('avgInputTokens').value = defaults.input;
+        document.getElementById('avgOutputTokens').value = defaults.output;
+        calculate();
+    }
+
+    function setVolume(el, requests) {
+        document.querySelectorAll('.preset-chip').forEach(c => c.classList.remove('active-preset'));
+        el.classList.add('active-preset');
+        document.getElementById('requestsPerDay').value = requests;
+        calculate();
+    }
+
+    function calculate() {
+        const requestsPerDay = parseInt(document.getElementById('requestsPerDay').value) || 100;
+        const avgInput = parseInt(document.getElementById('avgInputTokens').value) || 500;
+        const avgOutput = parseInt(document.getElementById('avgOutputTokens').value) || 300;
+        const daysPerMonth = 30;
+
+        const results = API_MODELS.map(m => {
+            const inputCostPerRequest = (avgInput / 1_000_000) * m.input;
+            const outputCostPerRequest = (avgOutput / 1_000_000) * m.output;
+            const costPerRequest = inputCostPerRequest + outputCostPerRequest;
+            const monthlyCost = costPerRequest * requestsPerDay * daysPerMonth;
+            return {
+                ...m,
+                costPerRequest,
+                monthlyCost,
+                inputCostPerRequest,
+                outputCostPerRequest
+            };
+        }).sort((a, b) => a.monthlyCost - b.monthlyCost);
+
+        const cheapest = results[0];
+        const mid = results[Math.floor(results.length / 2)];
+        const mostExpensive = results[results.length - 1];
+
+        // Summary cards
+        document.getElementById('summaryCards').innerHTML = `
+            <div class="summary-card">
+                <div class="label">Cheapest option</div>
+                <div class="value">$${cheapest.monthlyCost < 1 ? cheapest.monthlyCost.toFixed(4) : cheapest.monthlyCost.toFixed(2)}</div>
+                <div class="sub">${cheapest.name} (${cheapest.provider})</div>
+            </div>
+            <div class="summary-card">
+                <div class="label">Median cost</div>
+                <div class="value">$${mid.monthlyCost.toFixed(2)}</div>
+                <div class="sub">${mid.name} (${mid.provider})</div>
+            </div>
+            <div class="summary-card">
+                <div class="label">Most expensive</div>
+                <div class="value">$${mostExpensive.monthlyCost.toFixed(0)}</div>
+                <div class="sub">${mostExpensive.name} (${mostExpensive.provider})</div>
+            </div>
+        `;
+
+        // Table
+        const tbody = document.getElementById('resultsBody');
+        tbody.innerHTML = results.map((r, i) => {
+            const tierClass = r.tier === 'Budget' ? 'tier-budget' : r.tier === 'Mid' ? 'tier-mid' : 'tier-premium';
+            const isBest = i === 0;
+            const note = r.context === '10M' ? '10M ctx (dedicated)' :
+                         r.context === '1M' ? '1M context' :
+                         r.context;
+            return `<tr class="${isBest ? 'best-row' : ''}">
+                <td><strong>${r.name}</strong> ${isBest ? '<span class="best-badge">Cheapest</span>' : ''}</td>
+                <td>${r.provider}</td>
+                <td><span class="tier-badge ${tierClass}">${r.tier}</span></td>
+                <td>$${r.input.toFixed(2)}</td>
+                <td>$${r.output.toFixed(2)}</td>
+                <td><strong>$${r.monthlyCost < 1 ? r.monthlyCost.toFixed(4) : r.monthlyCost.toFixed(2)}</strong></td>
+                <td>$${r.costPerRequest < 0.001 ? r.costPerRequest.toFixed(6) : r.costPerRequest.toFixed(4)}</td>
+                <td>${note}</td>
+            </tr>`;
+        }).join('');
+
+        document.getElementById('results').classList.add('visible');
+    }
+
+    function sortTable(colIdx) {
+        const table = document.getElementById('resultsTable');
+        const tbody = table.querySelector('tbody');
+        const rows = Array.from(tbody.querySelectorAll('tr'));
+
+        if (currentSort.col === colIdx) {
+            currentSort.asc = !currentSort.asc;
+        } else {
+            currentSort.col = colIdx;
+            currentSort.asc = true;
+        }
+
+        rows.sort((a, b) => {
+            let aVal = a.cells[colIdx].textContent.replace(/[^0-9.\-]/g, '');
+            let bVal = b.cells[colIdx].textContent.replace(/[^0-9.\-]/g, '');
+            if (colIdx === 0 || colIdx === 1 || colIdx === 2 || colIdx === 7) {
+                aVal = a.cells[colIdx].textContent.toLowerCase();
+                bVal = b.cells[colIdx].textContent.toLowerCase();
+                return currentSort.asc ? aVal.localeCompare(bVal) : bVal.localeCompare(aVal);
+            }
+            aVal = parseFloat(aVal) || 0;
+            bVal = parseFloat(bVal) || 0;
+            return currentSort.asc ? aVal - bVal : bVal - aVal;
+        });
+
+        rows.forEach(r => tbody.appendChild(r));
+
+        // Update sort arrows
+        table.querySelectorAll('th .sort-arrow').forEach((arrow, i) => {
+            arrow.textContent = i === colIdx ? (currentSort.asc ? '▲' : '▼') : '▼';
+        });
+    }
+
+    // Initial calculation
+    document.addEventListener('DOMContentLoaded', calculate);
+    </script>
+</body>
+</html>

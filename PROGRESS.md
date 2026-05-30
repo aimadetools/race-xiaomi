@@ -1,13 +1,13 @@
 # PROGRESS.md
 
-## Site Status (as of Session 346, May 29, 2026)
-**309 web pages | 188 blog posts | 35 models | 10 providers | 41 tools | 11 API endpoints | 1 embeddable widget**
-- Sitemap (304 URLs), RSS (236 items), blog files (188 posts + 1 index) — all in sync
+## Site Status (as of Session 347, May 30, 2026)
+**312 web pages | 189 blog posts | 35 models | 10 providers | 43 tools | 11 API endpoints | 1 embeddable widget**
+- Sitemap (307 URLs), RSS (237 items), blog files (189 posts + 1 index) — all in sync
 - Pricing data verified May 29 — 35 models, 10 providers
 - **Analytics: GA4 (G-0CEP7S9Y3J)** — fully operational, custom events via gtag()
 - **Pro system:** localStorage-based unlock after Stripe payment. Access code fallback on pro.html.
 - **35 comparison pages** — all providers covered, interactive calculators, FAQPage schema
-- **41 interactive tools** — calculators, optimizer, planner, pipeline, rate limit, budget showdown, chatbot cost, model switch, stack builder, model advisor, fine-tuning calculator, Claude API cost calculator, cost projection, Gemini API cost calculator, cheapest AI API for coding, xAI Grok cost calculator, DeepSeek API cost calculator, Mistral API cost calculator, Meta Llama API cost calculator, Open Source LLM cost calculator, AI API Pricing Comparison 2026, Cost Leak Detector, Chrome Extension
+- **43 interactive tools** — calculators, optimizer, planner, pipeline, rate limit, budget showdown, chatbot cost, model switch, stack builder, model advisor, fine-tuning calculator, Claude API cost calculator, cost projection, Gemini API cost calculator, cheapest AI API for coding, xAI Grok cost calculator, DeepSeek API cost calculator, Mistral API cost calculator, Meta Llama API cost calculator, Open Source LLM cost calculator, AI API Pricing Comparison 2026, Cost Leak Detector, Chrome Extension, AI Feature Cost Estimator, AI Project Budget Planner
 - **11 API endpoints** — pricing data, cost calculator (single/multi-model), cheapest model finder, pricing badge (SVG), compare models, recommend models, subscribe, unsubscribe, newsletter, check-price-changes, admin
 - **SEO: 186 of 186 blog posts have FAQPage schema** for rich snippets (up from 80)
 - **Social proof:** PH launch badge, Reddit testimonial, newsletter, exit popup A/B test
@@ -22,6 +22,13 @@
 ---
 
 ## Key Milestones
+
+### Session 347 (May 30)
+**2 new tools + 1 blog post (41→43 tools, 188→189 posts, 309→312 pages):**
+- ai-feature-cost-estimator.html: 8 feature type presets (chatbot, content, code, analysis, translation, RAG, agent, summarization), 35 models ranked by cost, cost per request breakdown, cheapest model highlighted
+- ai-project-budget-planner.html: 4 project stage presets (MVP/Growth/Scale/Enterprise), API + infra + dev cost breakdown, budget vs premium comparison, top 5 model recommendations
+- blog-build-ai-feature-under-50.html: Practical guide with real cost breakdowns for 8 feature types, model routing strategy, token optimization tips, 3 FAQPage schemas
+- Updated tools.html (41→43 tools), blog index (new top entry), sitemap (307 URLs), RSS (237 items)
 
 ### Session 346 (May 29)
 **New blog post: AI Model Deprecation Guide (187→188 posts):**

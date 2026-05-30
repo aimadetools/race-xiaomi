@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Project Budget Planner — Plan Your Total AI Spend | APIpulse</title>
+    <meta name="description" content="Plan your complete AI project budget. Estimate API costs, infrastructure, and development time. Get a detailed breakdown across 35 models from 10 providers.">
+    <meta name="keywords" content="AI project budget, AI API cost planning, LLM project budget, AI development cost, AI infrastructure cost, AI API monthly spend">
+    <meta property="og:title" content="AI Project Budget Planner — Plan Your Total AI Spend | APIpulse">
+    <meta property="og:description" content="Plan your complete AI project budget. API costs, infrastructure, and timeline — all in one tool.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://getapipulse.com/og-image.png">
+    <meta property="og:url" content="https://getapipulse.com/ai-project-budget-planner.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="AI Project Budget Planner — Plan Your Total AI Spend | APIpulse">
+    <meta name="twitter:image" content="https://getapipulse.com/og-image.png">
+    <meta name="twitter:description" content="Plan your complete AI project budget. API costs, infrastructure, and timeline — all in one tool.">
+    <link rel="canonical" href="https://getapipulse.com/ai-project-budget-planner.html">
+    <link rel="alternate" type="application/rss+xml" title="APIpulse Blog" href="https://getapipulse.com/rss.xml">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="styles.css">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0CEP7S9Y3J"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-0CEP7S9Y3J');
+    </script>
+    <script src="analytics.js" defer></script>
+    <script src="dynamic-date.js" defer></script>
+    <script src="shared.js" defer></script>
+    <script src="pricing-data.js" defer></script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "APIpulse AI Project Budget Planner",
+        "url": "https://getapipulse.com/ai-project-budget-planner.html",
+        "description": "Plan your complete AI project budget with API cost estimates across 35 models.",
+        "applicationCategory": "DeveloperApplication",
+        "operatingSystem": "Web",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "How much does it cost to build an AI feature?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "A basic AI feature (chatbot, summarizer) costs $10-$100/month in API fees on budget models. A production AI agent with RAG costs $50-$500/month. Premium models like GPT-5.5 or Claude Opus 4.8 can push costs to $500-$5,000/month for the same usage. Our planner above estimates your exact costs."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What is the cheapest way to add AI to my app?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Start with budget models: Gemini 2.0 Flash ($0.10/$0.40), DeepSeek V4 Flash ($0.14/$0.28), or GPT-4o mini ($0.15/$0.60). Use model routing to send simple tasks to cheap models and complex tasks to premium ones. Add caching for repeated queries. This can reduce costs by 50-80%."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How do I estimate AI API costs for my startup?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Estimate your daily requests, average input/output tokens per request, and multiply by 30 days. Then check pricing for your chosen model. A startup with 1,000 users making 5 requests/day with 500 input and 300 output tokens spends $9-$450/month depending on the model. Use our budget planner for detailed estimates."
+                }
+            }
+        ]
+    }
+    </script>
+    <style>
+        .bp-hero { padding: 120px 24px 40px; text-align: center; max-width: 700px; margin: 0 auto; }
+        .bp-hero h1 { font-size: clamp(28px, 4vw, 42px); font-weight: 800; margin-bottom: 12px; }
+        .bp-hero p { color: var(--text-secondary); font-size: 17px; line-height: 1.6; }
+
+        .bp-section { padding: 0 24px 60px; }
+        .bp-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 16px; padding: 32px; max-width: 900px; margin: 0 auto 24px; }
+        .bp-card h2 { font-size: 20px; font-weight: 700; margin-bottom: 20px; display: flex; align-items: center; gap: 10px; }
+        .bp-card h2 .step { background: var(--accent); color: white; width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 700; }
+
+        .bp-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+        .bp-field { display: flex; flex-direction: column; gap: 6px; }
+        .bp-field label { font-size: 13px; font-weight: 600; color: var(--text-secondary); }
+        .bp-field input, .bp-field select {
+            padding: 12px 16px; border-radius: 8px; border: 1px solid var(--border);
+            background: var(--bg-secondary); color: var(--text-primary); font-size: 15px; font-family: inherit;
+        }
+        .bp-field input:focus, .bp-field select:focus { outline: 2px solid var(--accent); outline-offset: 2px; border-color: var(--accent); }
+        .bp-field .hint { font-size: 11px; color: var(--text-muted); }
+
+        /* Presets */
+        .preset-row { display: flex; gap: 8px; margin-bottom: 20px; flex-wrap: wrap; }
+        .preset-chip {
+            background: var(--bg-secondary); border: 1px solid var(--border);
+            color: var(--text-secondary); padding: 6px 14px; border-radius: 8px;
+            cursor: pointer; font-size: 12px; transition: all 0.2s; font-weight: 500;
+        }
+        .preset-chip:hover { border-color: var(--accent); color: var(--accent); }
+        .preset-chip.active-preset { background: var(--accent); color: white; border-color: var(--accent); }
+
+        /* Budget breakdown */
+        .budget-breakdown { display: none; }
+        .budget-breakdown.visible { display: block; }
+        .breakdown-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-bottom: 24px; }
+        .breakdown-item {
+            background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 12px;
+            padding: 20px; text-align: center;
+        }
+        .breakdown-item .label { font-size: 12px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px; }
+        .breakdown-item .value { font-size: 28px; font-weight: 800; color: var(--accent); }
+        .breakdown-item .sub { font-size: 12px; color: var(--text-muted); margin-top: 4px; }
+        .breakdown-item.total { border-color: var(--accent); background: var(--accent-glow); }
+        .breakdown-item.total .value { color: var(--accent); }
+
+        /* Model comparison in results */
+        .model-comparison { margin-top: 24px; }
+        .model-comparison h3 { font-size: 16px; font-weight: 700; margin-bottom: 12px; }
+        .model-row {
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 12px 16px; border-radius: 8px; margin-bottom: 8px;
+            background: var(--bg-secondary); border: 1px solid var(--border);
+        }
+        .model-row .model-name { font-weight: 600; font-size: 14px; }
+        .model-row .model-provider { font-size: 12px; color: var(--text-muted); }
+        .model-row .model-cost { font-weight: 700; font-size: 16px; color: var(--accent); }
+        .model-row .model-cost .annual { font-size: 12px; color: var(--text-muted); font-weight: 400; }
+        .model-row.best { border-color: var(--green); background: rgba(34,197,94,0.08); }
+        .model-row.best .model-cost { color: var(--green); }
+
+        .bp-cta {
+            text-align: center; padding: 40px 24px; max-width: 600px; margin: 0 auto;
+        }
+        .bp-cta h2 { font-size: 24px; margin-bottom: 12px; }
+        .bp-cta p { color: var(--text-secondary); margin-bottom: 20px; line-height: 1.6; }
+        .bp-cta a {
+            display: inline-block; background: var(--accent); color: white;
+            padding: 12px 32px; border-radius: 8px; font-weight: 600; text-decoration: none; transition: all 0.2s;
+        }
+        .bp-cta a:hover { background: var(--accent-hover); transform: translateY(-1px); }
+
+        @media (max-width: 768px) {
+            .bp-hero { padding: 100px 20px 30px; }
+            .bp-hero h1 { font-size: 28px; }
+            .bp-grid { grid-template-columns: 1fr; }
+            .breakdown-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+    </style>
+    <meta name="theme-color" content="#6366f1">
+</head>
+<body>
+    <nav>
+        <div class="nav-inner">
+            <a href="index.html" class="logo">API<span>pulse</span></a>
+            <button class="hamburger" onclick="toggleMobileNav()" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+            <div class="nav-links">
+                <a href="calculator.html">Calculator</a>
+                <a href="compare.html">Compare</a>
+                <a href="cost-explorer.html">Explorer</a>
+                <a href="agent-cost-calculator.html">Agents</a>
+                <a href="cost-scenarios.html">Scenarios</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="use-cases.html">Use Cases</a>
+                <a href="about.html">About</a>
+                <a href="blog.html">Blog</a>
+                <a href="tools.html" class="active">Tools</a>
+                <a href="pricing-index.html">Pricing Index</a>
+                <a href="model-matrix.html">Model Matrix</a>
+                <a href="api-docs.html" style="color:var(--accent);">API</a>
+                <a href="pricing.html" class="nav-cta">Get Pro — $29</a>
+                <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <section class="bp-hero">
+            <h1>Plan your AI project budget in 60 seconds</h1>
+            <p>Enter your project details. Get a complete budget breakdown with API costs across 35 models — from cheapest to premium.</p>
+        </section>
+
+        <section class="bp-section">
+            <!-- Step 1: Project type -->
+            <div class="bp-card">
+                <h2><span class="step">1</span> What are you building?</h2>
+                <div class="preset-row">
+                    <div class="preset-chip active-preset" onclick="setProjectType(this, 'mvp')">MVP / Prototype</div>
+                    <div class="preset-chip" onclick="setProjectType(this, 'growth')">Growth Stage</div>
+                    <div class="preset-chip" onclick="setProjectType(this, 'scale')">Scale / Production</div>
+                    <div class="preset-chip" onclick="setProjectType(this, 'enterprise')">Enterprise</div>
+                </div>
+                <div class="bp-grid">
+                    <div class="bp-field">
+                        <label for="projectName">Project name (optional)</label>
+                        <input type="text" id="projectName" placeholder="e.g., Customer Support Bot">
+                    </div>
+                    <div class="bp-field">
+                        <label for="numUsers">Expected users</label>
+                        <input type="number" id="numUsers" value="100" min="1" oninput="calculateBudget()">
+                        <span class="hint">People who will use your AI feature</span>
+                    </div>
+                    <div class="bp-field">
+                        <label for="requestsPerUser">Requests per user / day</label>
+                        <input type="number" id="requestsPerUser" value="5" min="1" oninput="calculateBudget()">
+                    </div>
+                    <div class="bp-field">
+                        <label for="avgTokens">Avg tokens per request (in + out)</label>
+                        <input type="number" id="avgTokens" value="800" min="1" oninput="calculateBudget()">
+                        <span class="hint">Typical: chatbot 500-800, content 1500-2000, code 1000-1500</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 2: Model preference -->
+            <div class="bp-card">
+                <h2><span class="step">2</span> Model preference</h2>
+                <div class="bp-grid">
+                    <div class="bp-field">
+                        <label for="qualityLevel">Quality requirement</label>
+                        <select id="qualityLevel" onchange="calculateBudget()">
+                            <option value="budget">Budget — cheapest possible, good enough quality</option>
+                            <option value="balanced" selected>Balanced — good quality at reasonable cost</option>
+                            <option value="premium">Premium — best quality, cost is secondary</option>
+                        </select>
+                    </div>
+                    <div class="bp-field">
+                        <label for="providerPref">Provider preference</label>
+                        <select id="providerPref" onchange="calculateBudget()">
+                            <option value="any" selected>Any provider</option>
+                            <option value="openai">OpenAI only</option>
+                            <option value="anthropic">Anthropic only</option>
+                            <option value="google">Google only</option>
+                            <option value="deepseek">DeepSeek only</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 3: Additional costs -->
+            <div class="bp-card">
+                <h2><span class="step">3</span> Additional costs (optional)</h2>
+                <div class="bp-grid">
+                    <div class="bp-field">
+                        <label for="infraCost">Infrastructure ($/month)</label>
+                        <input type="number" id="infraCost" value="0" min="0" step="5" oninput="calculateBudget()">
+                        <span class="hint">Hosting, DB, vector store, etc.</span>
+                    </div>
+                    <div class="bp-field">
+                        <label for="devHours">Development hours</label>
+                        <input type="number" id="devHours" value="0" min="0" oninput="calculateBudget()">
+                        <span class="hint">Hours to build the AI feature</span>
+                    </div>
+                    <div class="bp-field">
+                        <label for="hourlyRate">Your hourly rate ($)</label>
+                        <input type="number" id="hourlyRate" value="50" min="0" step="5" oninput="calculateBudget()">
+                    </div>
+                    <div class="bp-field">
+                        <label for="budgetCap">Monthly budget cap ($)</label>
+                        <input type="number" id="budgetCap" value="500" min="0" step="10" oninput="calculateBudget()">
+                        <span class="hint">Max you're willing to spend/month on API</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Results -->
+            <div class="bp-card budget-breakdown" id="budgetResults">
+                <h2>💰 Your budget breakdown</h2>
+                <div class="breakdown-grid" id="breakdownGrid"></div>
+
+                <div class="model-comparison">
+                    <h3>Top 5 models for your project</h3>
+                    <div id="topModels"></div>
+                </div>
+
+                <div class="model-comparison" style="margin-top:24px;">
+                    <h3>Quick comparison: Budget vs Premium</h3>
+                    <div id="comparisonModels"></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="bp-cta">
+            <h2>Ready to optimize your AI spend?</h2>
+            <p>APIpulse Pro gives you personalized cost optimization, saved scenarios, and PDF budget reports — for a one-time $29.</p>
+            <a href="pricing.html">Get Pro — $29 lifetime</a>
+        </section>
+    </main>
+
+    <script>
+    const PROJECT_PRESETS = {
+        mvp:      { users: 100,   reqPerUser: 5,   tokens: 800,  infra: 0,   devHours: 20 },
+        growth:   { users: 1000,  reqPerUser: 5,   tokens: 800,  infra: 50,  devHours: 40 },
+        scale:    { users: 10000, reqPerUser: 10,  tokens: 1000, infra: 200, devHours: 80 },
+        enterprise: { users: 100000, reqPerUser: 20, tokens: 1200, infra: 1000, devHours: 200 },
+    };
+
+    function setProjectType(el, type) {
+        document.querySelectorAll('.preset-row .preset-chip').forEach(c => c.classList.remove('active-preset'));
+        el.classList.add('active-preset');
+        const p = PROJECT_PRESETS[type];
+        document.getElementById('numUsers').value = p.users;
+        document.getElementById('requestsPerUser').value = p.reqPerUser;
+        document.getElementById('avgTokens').value = p.tokens;
+        document.getElementById('infraCost').value = p.infra;
+        document.getElementById('devHours').value = p.devHours;
+        calculateBudget();
+    }
+
+    function calculateBudget() {
+        const users = parseInt(document.getElementById('numUsers').value) || 100;
+        const reqPerUser = parseInt(document.getElementById('requestsPerUser').value) || 5;
+        const avgTokens = parseInt(document.getElementById('avgTokens').value) || 800;
+        const infraCost = parseFloat(document.getElementById('infraCost').value) || 0;
+        const devHours = parseInt(document.getElementById('devHours').value) || 0;
+        const hourlyRate = parseFloat(document.getElementById('hourlyRate').value) || 50;
+        const budgetCap = parseFloat(document.getElementById('budgetCap').value) || 500;
+        const quality = document.getElementById('qualityLevel').value;
+        const providerPref = document.getElementById('providerPref').value;
+
+        const totalRequestsPerDay = users * reqPerUser;
+        const avgInput = Math.floor(avgTokens * 0.6);
+        const avgOutput = Math.floor(avgTokens * 0.4);
+        const daysPerMonth = 30;
+
+        // Calculate cost for each model
+        let models = API_MODELS.map(m => {
+            const inputCost = (avgInput / 1_000_000) * m.input;
+            const outputCost = (avgOutput / 1_000_000) * m.output;
+            const costPerRequest = inputCost + outputCost;
+            const monthlyApiCost = costPerRequest * totalRequestsPerDay * daysPerMonth;
+            const annualApiCost = monthlyApiCost * 12;
+            return { ...m, costPerRequest, monthlyApiCost, annualApiCost };
+        });
+
+        // Filter by provider if specified
+        if (providerPref !== 'any') {
+            models = models.filter(m => m.providerSlug === providerPref);
+        }
+
+        // Filter by quality tier
+        if (quality === 'budget') {
+            models = models.filter(m => m.tier === 'Budget');
+        } else if (quality === 'balanced') {
+            models = models.filter(m => m.tier === 'Budget' || m.tier === 'Mid');
+        }
+        // premium = all models
+
+        models.sort((a, b) => a.monthlyApiCost - b.monthlyApiCost);
+
+        if (models.length === 0) {
+            document.getElementById('budgetResults').classList.remove('visible');
+            return;
+        }
+
+        const best = models[0];
+        const devCost = devHours * hourlyRate;
+        const totalFirstMonth = best.monthlyApiCost + infraCost + devCost;
+        const totalOngoing = best.monthlyApiCost + infraCost;
+        const annualTotal = totalOngoing * 12;
+
+        const withinBudget = best.monthlyApiCost <= budgetCap;
+        const budgetStatus = withinBudget ? '✅ Within budget' : '⚠️ Over budget';
+        const budgetColor = withinBudget ? 'var(--green)' : '#ef4444';
+
+        // Breakdown grid
+        document.getElementById('breakdownGrid').innerHTML = `
+            <div class="breakdown-item">
+                <div class="label">API Cost / Month</div>
+                <div class="value">$${best.monthlyApiCost < 1 ? best.monthlyApiCost.toFixed(4) : best.monthlyApiCost.toFixed(2)}</div>
+                <div class="sub">${best.name} (${best.provider})</div>
+            </div>
+            <div class="breakdown-item">
+                <div class="label">Infrastructure / Month</div>
+                <div class="value">$${infraCost.toFixed(0)}</div>
+                <div class="sub">Hosting, DB, etc.</div>
+            </div>
+            <div class="breakdown-item">
+                <div class="label">Dev Cost (one-time)</div>
+                <div class="value">$${devCost.toFixed(0)}</div>
+                <div class="sub">${devHours}hrs × $${hourlyRate}/hr</div>
+            </div>
+            <div class="breakdown-item total">
+                <div class="label">Total First Month</div>
+                <div class="value">$${totalFirstMonth < 1 ? totalFirstMonth.toFixed(2) : totalFirstMonth.toFixed(0)}</div>
+                <div class="sub" style="color:${budgetColor}">${budgetStatus}</div>
+            </div>
+        `;
+
+        // Top 5 models
+        const top5 = models.slice(0, 5);
+        document.getElementById('topModels').innerHTML = top5.map((m, i) => `
+            <div class="model-row ${i === 0 ? 'best' : ''}">
+                <div>
+                    <div class="model-name">${i === 0 ? '🏆 ' : ''}${m.name}</div>
+                    <div class="model-provider">${m.provider} · ${m.tier} · ${m.context} context</div>
+                </div>
+                <div class="model-cost">
+                    $${m.monthlyApiCost < 1 ? m.monthlyApiCost.toFixed(4) : m.monthlyApiCost.toFixed(2)}/mo
+                    <div class="annual">$${m.annualApiCost.toFixed(0)}/yr</div>
+                </div>
+            </div>
+        `).join('');
+
+        // Budget vs Premium comparison
+        const budgetModels = API_MODELS.filter(m => m.tier === 'Budget').sort((a, b) => a.monthlyApiCost - b.monthlyApiCost);
+        const premiumModels = API_MODELS.filter(m => m.tier === 'Premium').sort((a, b) => a.monthlyApiCost - b.monthlyApiCost);
+        const cheapestBudget = budgetModels[0];
+        const cheapestPremium = premiumModels[0];
+
+        function calcCostForModel(m) {
+            const inputCost = (avgInput / 1_000_000) * m.input;
+            const outputCost = (avgOutput / 1_000_000) * m.output;
+            return (inputCost + outputCost) * totalRequestsPerDay * daysPerMonth;
+        }
+
+        const budgetCost = cheapestBudget ? calcCostForModel(cheapestBudget) : 0;
+        const premiumCost = cheapestPremium ? calcCostForModel(cheapestPremium) : 0;
+        const savings = premiumCost > 0 ? ((1 - budgetCost / premiumCost) * 100).toFixed(0) : 0;
+
+        document.getElementById('comparisonModels').innerHTML = `
+            <div class="model-row best">
+                <div>
+                    <div class="model-name">🏆 ${cheapestBudget ? cheapestBudget.name : 'N/A'}</div>
+                    <div class="model-provider">${cheapestBudget ? cheapestBudget.provider : ''} · Budget tier</div>
+                </div>
+                <div class="model-cost">
+                    $${budgetCost < 1 ? budgetCost.toFixed(4) : budgetCost.toFixed(2)}/mo
+                </div>
+            </div>
+            <div class="model-row">
+                <div>
+                    <div class="model-name">${cheapestPremium ? cheapestPremium.name : 'N/A'}</div>
+                    <div class="model-provider">${cheapestPremium ? cheapestPremium.provider : ''} · Premium tier</div>
+                </div>
+                <div class="model-cost">
+                    $${premiumCost.toFixed(2)}/mo
+                    <div class="annual">${savings > 0 ? savings + '% cheaper with budget' : ''}</div>
+                </div>
+            </div>
+        `;
+
+        document.getElementById('budgetResults').classList.add('visible');
+    }
+
+    document.addEventListener('DOMContentLoaded', calculateBudget);
+    </script>
+</body>
+</html>
