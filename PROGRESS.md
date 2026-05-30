@@ -1,8 +1,8 @@
 # PROGRESS.md
 
-## Site Status (as of Session 362, May 30, 2026)
+## Site Status (as of Session 363, May 30, 2026)
 **330 web pages | 202 blog posts | 34 models | 10 providers | 45 tools | 11 API endpoints | 1 embeddable widget**
-- Sitemap (322 URLs), RSS (250 items), blog files (202 posts + 1 index) — all in sync
+- Sitemap (324 URLs), RSS (251 items), blog files (202 posts + 1 index) — all in sync
 - Pricing data verified May 29 — 34 models, 10 providers
 - **Analytics: GA4 (G-0CEP7S9Y3J)** — fully operational, custom events via gtag()
 - **Pro system:** localStorage-based unlock after Stripe payment. Access code fallback on pro.html.
@@ -21,6 +21,12 @@
 3. **GA4 traffic analysis** — Review page views, top referrers, calculator usage after 48+ hours of data.
 
 ---
+
+## Session 363 (May 30)
+**Fix remaining '35 models' references + stale counts:**
+- Fixed "35 Models" → "34 Models" in 7 locations missed by Session 361: cost-per-request.html, mcp-cost-calculator.html, ai-api-tco-calculator.html, blog.html, blog-state-of-llm-pricing-june-2026.html (title, schema headline, H1)
+- Updated blog post count 201 → 202 in pricing.html and prompt-cost-calculator.html (RAG context)
+- Corrected sitemap count (322→324 URLs) and RSS count (250→251 items) in PROGRESS.md
 
 ## Session 362 (May 30)
 **Cleanup session — no autonomous tasks available:**
