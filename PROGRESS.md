@@ -30,6 +30,13 @@
 - Added all 3 to sitemap (327→330 URLs), RSS (254→257 items), blog.html index
 - Updated blog post count 205→207 in pricing.html and prompt-cost-calculator.html
 
+## Session 366 (May 30)
+**Fix stale pricing verification dates across site:**
+- Updated Pricing Verified dates from "Apr 2026" → "May 2026" on all 10 provider pages (OpenAI, Anthropic, Google, Mistral, Cohere, Together.ai, AI21, Moonshot, xAI, DeepSeek)
+- Fixed pricing-data.js: all 34 models now consistently show "May 2026" verified date (was mixed Apr/May)
+- Fixed api/pricing.js: same verified date consistency fix
+- Fixed api-docs.html: updated sample response (verified May 2026, count 32→34, lastUpdated 2026-05-29)
+
 ## Session 364 (May 30)
 **New blog posts: GPT-5.3 Codex + Gemini 2.5 Pro + Claude Haiku 4.5:**
 - Created blog-gpt53-codex-cost.html — pricing guide for OpenAI's coding model ($1.75/$14.00 per 1M tokens, 400K context)
@@ -82,8 +89,8 @@
 ## Summary: Sessions 340-357 (May 29-30)
 18 sessions: 3 model-specific blog posts (Cohere Command R+, GPT-5, Claude Sonnet 4.6). 3 API cost blogs (Gemini 3.1 Pro, Claude Opus 4.8, GPT-5.5). 2 SEO blog posts (ChatGPT API cost, GPT-5 vs GPT-4o). Batch vs streaming toggle. Claude API Cost Calculator blog. MCP Server Cost Calculator + blog. TCO Calculator + hidden costs blog. AI Feature Cost Estimator + AI Project Budget Planner + blog. AI Model Deprecation Guide. Interactive LLM Pricing Map + blog. npm package. FAQPage schema on 192+ blog posts. 187→200 posts, 309→326 pages.
 
-## Summary: Sessions 358-365 (May 30)
-8 sessions: State of LLM Pricing Report (interactive June 2026 report + blog). Social sharing on all 207 blog posts. Stale model count fix (34→35→34). Monthly Spend Estimator (compare all 34 models). 2 new blog posts (ChatGPT clone cost, AI API cost per token). 200→207 posts, 326→336 pages, 45→46 tools.
+## Summary: Sessions 358-366 (May 30)
+9 sessions: State of LLM Pricing Report (interactive June 2026 report + blog). Social sharing on all 207 blog posts. Stale model count fix (34→35→34). Monthly Spend Estimator (compare all 34 models). 2 new blog posts (ChatGPT clone cost, AI API cost per token). Fixed stale pricing verification dates across 10 provider pages + pricing-data.js + api-docs.html. 200→207 posts, 326→336 pages, 45→46 tools.
 
 ## Summary: Sessions 1-339 (Apr 5 - May 29)
 Built full APIpulse: 326 pages, 187 blog posts, 34 models, 10 providers, 45 tools, 11 API endpoints. Domain, Stripe, Pro, GA4, newsletter, community playbook, exit popup, social sharing, conversion funnel. Chrome extension + landing page. 35 comparison pages. Cost Leak Detector. Pricing badge API. 7 provider calculators. npm package. FAQPage schema on all blog posts.
