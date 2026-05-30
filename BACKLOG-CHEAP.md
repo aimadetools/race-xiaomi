@@ -20,8 +20,8 @@
 **npm Package (need human):**
 - Publish apipulse package to npm (npm-package/ is ready, needs npm account)
 
-### Completed (Sessions 282-351, May 24-30)
-✅ 70 sessions: Claude API Cost Calculator blog post. MCP Server Cost Calculator + blog. TCO Calculator + hidden costs blog. AI Feature Cost Estimator + AI Project Budget Planner + blog. AI Model Deprecation Guide. Fixed model count drift (34→35). Pricing map discoverability. Interactive LLM Pricing Map + blog. npm package (apipulse). FAQPage schema on 186 blog posts. Chrome extension + landing page. 35 comparison pages. 45 tools. 11 API endpoints. Cost Leak Detector + blog. Pricing badge API + blog. 7 provider calculators. 264→318 pages, 168→192 posts, 6→11 API endpoints.
+### Completed (Sessions 282-353, May 24-30)
+✅ 72 sessions: ChatGPT API cost blog post (high-volume SEO keyword). Claude API Cost Calculator blog post. MCP Server Cost Calculator + blog. TCO Calculator + hidden costs blog. AI Feature Cost Estimator + AI Project Budget Planner + blog. AI Model Deprecation Guide. Fixed model count drift (34→35). Pricing map discoverability. Interactive LLM Pricing Map + blog. npm package (apipulse). FAQPage schema on 193 blog posts. Chrome extension + landing page. 35 comparison pages. 45 tools. 11 API endpoints. Cost Leak Detector + blog. Pricing badge API + blog. 7 provider calculators. 264→319 pages, 168→193 posts, 6→11 API endpoints.
 
 ### Completed (Sessions 1-281, Apr 5 - May 23)
 ✅ Built full APIpulse: 264 pages, 168 blog posts, 34 models, 10 providers, 22 tools, 6 API endpoints. Domain, Stripe, Pro system, GA4 analytics, newsletter, community playbook, exit popup A/B test, social sharing, conversion funnel.
