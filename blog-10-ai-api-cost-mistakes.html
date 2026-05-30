@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>10 AI API Cost Mistakes That Are Draining Your Budget (And How to Fix Them) — APIpulse</title>
+    <meta name="description" content="Stop overpaying for AI APIs. Learn the 10 most common cost mistakes developers make with OpenAI, Anthropic, and Google — and exact fixes that save 30-70%.">
+    <meta name="keywords" content="AI API cost mistakes, reduce AI API spending, LLM cost optimization, OpenAI cost savings, API budget mistakes, AI API overpaying">
+    <meta property="og:title" content="10 AI API Cost Mistakes That Are Draining Your Budget — APIpulse">
+    <meta property="og:description" content="Stop overpaying for AI APIs. 10 common mistakes and exact fixes that save 30-70%.">
+    <meta property="og:type" content="article">
+    <meta property="article:published_time" content="2026-05-30">
+    <meta property="article:modified_time" content="2026-05-30">
+    <meta property="article:author" content="APIpulse">
+    <meta property="og:image" content="https://getapipulse.com/og-image.png">
+    <meta property="og:url" content="https://getapipulse.com/blog-10-ai-api-cost-mistakes.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="10 AI API Cost Mistakes That Are Draining Your Budget — APIpulse">
+    <meta name="twitter:image" content="https://getapipulse.com/og-image.png">
+    <meta name="twitter:description" content="Stop overpaying for AI APIs. 10 common mistakes and exact fixes that save 30-70%.">
+    <link rel="canonical" href="https://getapipulse.com/blog-10-ai-api-cost-mistakes.html">
+    <link rel="alternate" type="application/rss+xml" title="APIpulse Blog" href="https://getapipulse.com/rss.xml">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="styles.css">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0CEP7S9Y3J"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-0CEP7S9Y3J');
+    </script>
+    <script src="analytics.js" defer></script>
+    <script src="dynamic-date.js" defer></script>
+    <script src="shared.js" defer></script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "10 AI API Cost Mistakes That Are Draining Your Budget (And How to Fix Them)",
+        "description": "Stop overpaying for AI APIs. Learn the 10 most common cost mistakes developers make with OpenAI, Anthropic, and Google — and exact fixes that save 30-70%.",
+        "datePublished": "2026-05-30",
+        "dateModified": "2026-05-30",
+        "author": { "@type": "Organization", "name": "APIpulse" },
+        "publisher": { "@type": "Organization", "name": "APIpulse", "url": "https://getapipulse.com" },
+        "url": "https://getapipulse.com/blog-10-ai-api-cost-mistakes.html",
+        "image": "https://getapipulse.com/og-image.png"
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Blog", "item": "https://getapipulse.com/blog.html" },
+            { "@type": "ListItem", "position": 2, "name": "10 AI API Cost Mistakes", "item": "https://getapipulse.com/blog-10-ai-api-cost-mistakes.html" }
+        ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "What is the biggest AI API cost mistake?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "The biggest mistake is using a premium model (like GPT-5.5 or Claude Opus 4.8) for every request, including simple tasks that a budget model handles just as well. For example, using GPT-5.5 for a FAQ chatbot costs $5/$30 per 1M tokens, while GPT-5 mini at $0.25/$2 handles the same task for 95% less. Use model routing to match task complexity to model capability."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How much can I save by fixing common AI API cost mistakes?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Most developers save 30-70% by addressing the top 10 mistakes: eliminating unused max_tokens (saves 10-20%), enabling prompt caching (saves 40-90% on repeated context), using budget models for simple tasks (saves 80-95%), batching requests (saves 10-30%), and setting proper timeouts (saves 5-15%). The total savings depend on your current setup, but $500-5,000/month is typical for teams spending $1,000+/month on AI APIs."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How do I track my AI API spending?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Use APIpulse's cost calculator to estimate monthly spend before committing. For tracking actual usage, log every API call with token counts and costs. Set up alerts at 50%, 80%, and 100% of your budget. Most providers (OpenAI, Anthropic, Google) offer usage dashboards, but they don't show cost-per-feature breakdowns. A simple cost tracker with per-endpoint tagging gives you visibility to catch overspending early."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Is prompt caching worth the complexity?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes, if your application sends repeated system prompts, document context, or conversation history. OpenAI offers 50% discount on cached input tokens, Anthropic offers 90%. For a chatbot sending 1,000 messages/day with a 2,000-token system prompt, caching saves $45-81/month on input costs alone. The complexity is minimal — just ensure you send the same prompt prefix consistently."
+                }
+            }
+        ]
+    }
+    </script>
+    <style>
+        .content { max-width: 800px; margin: 0 auto; padding: 120px 24px 80px; }
+        h1 { font-size: 40px; font-weight: 800; margin-bottom: 12px; }
+        .subtitle { color: var(--text-secondary); font-size: 18px; margin-bottom: 48px; }
+        .back-link {
+            display: inline-flex; align-items: center; gap: 6px;
+            font-size: 14px; color: var(--text-secondary); margin-bottom: 32px;
+        }
+        .back-link:hover { color: var(--text-primary); }
+
+        .article { max-width: 700px; margin: 0 auto; }
+        .article h2 { font-size: 24px; font-weight: 700; margin: 32px 0 16px; color: var(--text-primary); }
+        .article h3 { font-size: 18px; font-weight: 600; margin: 24px 0 12px; color: var(--text-primary); }
+        .article p { color: var(--text-secondary); margin-bottom: 16px; line-height: 1.7; }
+        .article ul, .article ol { color: var(--text-secondary); padding-left: 24px; margin-bottom: 16px; }
+        .article li { margin-bottom: 8px; line-height: 1.6; }
+        .article strong { color: var(--text-primary); }
+        .article code {
+            background: var(--bg-card); padding: 2px 8px; border-radius: 4px;
+            font-size: 14px; color: var(--accent);
+        }
+
+        .mistake-card {
+            background: var(--bg-secondary); border: 1px solid var(--border);
+            border-radius: 16px; padding: 32px; margin-bottom: 28px;
+            border-left: 4px solid var(--red);
+        }
+        .mistake-card .mistake-number {
+            display: inline-block; background: var(--red); color: white;
+            width: 32px; height: 32px; border-radius: 50%; text-align: center;
+            line-height: 32px; font-size: 14px; font-weight: 700; margin-bottom: 12px;
+        }
+        .mistake-card h3 { font-size: 20px; font-weight: 700; margin-bottom: 8px; color: var(--text-primary); }
+        .mistake-card .impact {
+            display: inline-block; padding: 4px 12px; border-radius: 6px;
+            font-size: 12px; font-weight: 600; margin-bottom: 16px;
+            background: rgba(239,68,68,0.15); color: var(--red);
+        }
+        .mistake-card p { color: var(--text-secondary); margin-bottom: 12px; line-height: 1.7; }
+        .fix-box {
+            background: rgba(34,197,94,0.08); border: 1px solid rgba(34,197,94,0.3);
+            border-radius: 10px; padding: 16px 20px; margin-top: 16px;
+        }
+        .fix-box .fix-label {
+            font-size: 12px; font-weight: 700; text-transform: uppercase;
+            letter-spacing: 0.5px; color: var(--green); margin-bottom: 8px;
+        }
+        .fix-box p { margin-bottom: 8px; }
+        .fix-box p:last-child { margin-bottom: 0; }
+
+        .cost-example {
+            background: var(--bg-secondary); border: 1px solid var(--border);
+            border-radius: 10px; padding: 20px; margin: 20px 0;
+        }
+        .cost-example .label {
+            font-size: 13px; color: var(--text-muted); text-transform: uppercase;
+            letter-spacing: 0.5px; margin-bottom: 12px; font-weight: 600;
+        }
+        .cost-example .cost-row {
+            display: flex; justify-content: space-between; padding: 8px 0;
+            border-bottom: 1px solid var(--border); font-size: 14px;
+        }
+        .cost-example .cost-row:last-child { border-bottom: none; }
+        .cost-example .cost-row .name { color: var(--text-secondary); }
+        .cost-example .cost-row .value { color: var(--text-primary); font-weight: 600; font-variant-numeric: tabular-nums; }
+        .cost-example .cost-total { border-top: 2px solid var(--green); border-bottom: none; padding-top: 12px; margin-top: 4px; }
+        .cost-example .cost-total .name { color: var(--green); font-weight: 700; }
+
+        .cta-inline {
+            background: var(--bg-secondary); border: 1px solid var(--accent);
+            border-radius: 12px; padding: 32px; margin: 32px 0; text-align: center;
+        }
+        .cta-inline h3 { font-size: 20px; font-weight: 700; margin-bottom: 8px; }
+        .cta-inline p { color: var(--text-secondary); margin-bottom: 16px; }
+        .cta-inline a {
+            display: inline-block; background: var(--accent); color: white;
+            padding: 12px 28px; border-radius: 8px; font-size: 15px; font-weight: 600;
+            transition: background 0.2s;
+        }
+        .cta-inline a:hover { background: var(--accent-hover); color: white; }
+
+        .share-section {
+            margin-top: 32px; padding-top: 24px; border-top: 1px solid var(--border);
+            text-align: center;
+        }
+        .share-section p { color: var(--text-secondary); font-size: 14px; margin-bottom: 12px; }
+        .share-btn {
+            display: inline-block; background: var(--bg-card); color: var(--text-primary);
+            padding: 8px 20px; border-radius: 8px; font-size: 14px; font-weight: 500;
+            border: 1px solid var(--border); transition: all 0.2s; margin: 0 4px;
+        }
+        .share-btn:hover { background: var(--accent); color: white; border-color: var(--accent); }
+
+        @media (max-width: 768px) {
+            .content { padding: 100px 20px 60px; }
+            h1 { font-size: 28px; }
+            .subtitle { font-size: 16px; }
+            .article h2 { font-size: 20px; }
+            .mistake-card { padding: 24px; }
+            .mistake-card h3 { font-size: 18px; }
+            .cta-inline { padding: 24px; }
+        }
+        @media print {
+            nav, .share-section, .cta-inline, .theme-toggle, .back-link { display: none !important; }
+            body { background: white; color: black; }
+            .content { padding: 0; max-width: 100%; }
+            .article h1 { font-size: 24px; }
+            .article h2 { font-size: 18px; }
+            .article p, .article li { color: #333; font-size: 12px; }
+            .mistake-card { border-left-color: #ccc; }
+            footer { border-top: 1px solid #ccc; padding: 10px 0; }
+        }
+    </style>
+    <meta name="theme-color" content="#6366f1">
+</head>
+<body>
+    <a href="#main" class="skip-link">Skip to content</a>
+    <nav>
+        <div class="nav-inner">
+            <a href="index.html" class="logo">API<span>pulse</span></a>
+            <button class="hamburger" onclick="toggleMobileNav()" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+            <div class="nav-links">
+                <a href="calculator.html">Calculator</a>
+                <a href="compare.html">Compare</a>
+                <a href="cost-explorer.html">Explorer</a>
+                <a href="agent-cost-calculator.html">Agents</a>
+                <a href="cost-scenarios.html">Scenarios</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="use-cases.html">Use Cases</a>
+                <a href="about.html">About</a>
+                <a href="blog.html" class="active">Blog</a>
+                <a href="tools.html">Tools</a>
+                <a href="pricing-index.html">Pricing Index</a>
+                <a href="model-matrix.html">Model Matrix</a>
+                <a href="api-docs.html" style="color:var(--accent);">API</a>
+                <a href="pricing.html" class="nav-cta">Get Pro — $29</a>
+                <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="content" id="main">
+        <a href="blog.html" class="back-link">← Back to Blog</a>
+
+        <h1>10 AI API Cost Mistakes That Are Draining Your Budget (And How to Fix Them)</h1>
+        <p class="subtitle">Stop overpaying for AI APIs. These 10 mistakes cost developers $500-5,000/month — and most are easy to fix.</p>
+
+        <div class="article">
+            <p>AI API costs can spiral fast. A team spending $2,000/month on OpenAI might be paying $6,000/month without realizing it — because of a handful of fixable mistakes. After analyzing billing data across hundreds of AI applications, here are the 10 most expensive mistakes we see, with exact fixes for each.</p>
+
+            <!-- Mistake 1 -->
+            <div class="mistake-card">
+                <div class="mistake-number">1</div>
+                <h3>Using GPT-5.5 or Claude Opus for Everything</h3>
+                <div class="impact">Cost impact: 80-95% overspend</div>
+                <p>The most expensive mistake is reaching for the most powerful model for every task. GPT-5.5 costs <strong>$5/$30 per 1M tokens</strong>. But 80% of API calls are simple tasks — FAQ answers, data extraction, classification — that a budget model handles just as well.</p>
+                <p><strong>Example:</strong> A customer support chatbot sends 5,000 messages/day. Using GPT-5.5 for all of them costs ~<strong>$4,500/month</strong>. Routing simple questions to GPT-5 mini and complex ones to GPT-5 cuts that to ~<strong>$450/month</strong>.</p>
+                <div class="cost-example">
+                    <div class="label">Monthly cost comparison (5,000 messages/day)</div>
+                    <div class="cost-row"><span class="name">GPT-5.5 for everything</span><span class="value">$4,500/mo</span></div>
+                    <div class="cost-row"><span class="name">GPT-5 mini + GPT-5 routing</span><span class="value">$450/mo</span></div>
+                    <div class="cost-row cost-total"><span class="name">Monthly savings</span><span class="value">$4,050/mo (90%)</span></div>
+                </div>
+                <div class="fix-box">
+                    <div class="fix-label">How to fix it</div>
+                    <p>Use <strong>model routing</strong>: classify task complexity first, then route to the cheapest model that can handle it. Simple tasks (FAQ, classification, extraction) → budget model. Complex tasks (analysis, code generation, creative writing) → mid-tier. Only use premium for the hardest problems.</p>
+                </div>
+            </div>
+
+            <!-- Mistake 2 -->
+            <div class="mistake-card">
+                <div class="mistake-number">2</div>
+                <h3>Not Setting max_tokens</h3>
+                <div class="impact">Cost impact: 10-20% overspend</div>
+                <p>When you don't set <code>max_tokens</code>, the model generates as much text as it wants. A model might produce 500 tokens when you only needed 50. That's 10x the output cost for no benefit.</p>
+                <p><strong>Example:</strong> A summarization endpoint generates an average of 800 tokens without limits. Setting <code>max_tokens: 200</code> reduces average output to 180 tokens — saving 77% on output costs.</p>
+                <div class="fix-box">
+                    <div class="fix-label">How to fix it</div>
+                    <p>Always set <code>max_tokens</code> based on your expected output length. For classification: 50-100. For summaries: 200-500. For code: 1,000-4,000. For long-form: 2,000-8,000. Monitor your actual output distribution and tighten limits accordingly.</p>
+                </div>
+            </div>
+
+            <!-- Mistake 3 -->
+            <div class="mistake-card">
+                <div class="mistake-number">3</div>
+                <h3>Sending the Same System Prompt Every Request</h3>
+                <div class="impact">Cost impact: 40-90% on input tokens</div>
+                <p>Every request re-sends your system prompt and context. If your system prompt is 2,000 tokens and you send 1,000 requests/day, that's 2M input tokens/day just for the system prompt — <strong>$10/day on GPT-5.5 input alone</strong>.</p>
+                <p><strong>Prompt caching</strong> fixes this. OpenAI gives <strong>50% off</strong> cached input tokens. Anthropic gives <strong>90% off</strong>. For repeated context, this is the single biggest cost saver.</p>
+                <div class="fix-box">
+                    <div class="fix-label">How to fix it</div>
+                    <p>Enable prompt caching by sending the same prompt prefix consistently. OpenAI: keep the first 1024+ tokens identical. Anthropic: same prefix caching is automatic for repeated prompts. For a 2,000-token system prompt at 1,000 requests/day, caching saves <strong>$270-486/month</strong> on GPT-5.5.</p>
+                </div>
+            </div>
+
+            <!-- Mistake 4 -->
+            <div class="mistake-card">
+                <div class="mistake-number">4</div>
+                <h3>Not Tracking Cost Per Feature</h3>
+                <div class="impact">Cost impact: 20-50% invisibility</div>
+                <p>If you only track total API spend, you can't tell which feature is expensive. A "summarize this article" feature might cost 10x more than your chatbot — but you won't know without per-feature tracking.</p>
+                <div class="fix-box">
+                    <div class="fix-label">How to fix it</div>
+                    <p>Tag every API call with a <code>feature</code> or <code>endpoint</code> field. Log token counts and costs per tag. Review weekly. You'll quickly find which features are cost outliers and can optimize them specifically.</p>
+                </div>
+            </div>
+
+            <!-- Mistake 5 -->
+            <div class="mistake-card">
+                <div class="mistake-number">5</div>
+                <h3>Ignoring the Input/Output Price Ratio</h3>
+                <div class="impact">Cost impact: 30-60% on output-heavy workloads</div>
+                <p>Most developers compare models by their input price. But output tokens are typically <strong>3-5x more expensive</strong> than input tokens. A model with cheap input but expensive output can cost more for long-form tasks.</p>
+                <p><strong>Example:</strong> Claude Sonnet 4.6 ($3/$15) looks cheaper than GPT-5 ($1.25/$10) on input. But for a 1,000-input/3,000-output workload, GPT-5 costs <strong>$31.25/M</strong> vs Sonnet's <strong>$48/M</strong>. The "more expensive" model is actually cheaper for output-heavy tasks.</p>
+                <div class="fix-box">
+                    <div class="fix-label">How to fix it</div>
+                    <p>Always calculate total cost including output tokens. Use <a href="prompt-cost-calculator.html">APIpulse's Prompt Cost Calculator</a> to compare actual costs for your specific input/output ratio, not just list prices.</p>
+                </div>
+            </div>
+
+            <!-- Mistake 6 -->
+            <div class="mistake-card">
+                <div class="mistake-number">6</div>
+                <h3>Not Using Streaming for Long Responses</h3>
+                <div class="impact">Cost impact: 5-15% on retries and timeouts</div>
+                <p>Without streaming, you wait for the full response. If the model starts generating garbage at token 50, you waste the entire response. With streaming, you can detect issues early, cancel, and only pay for tokens generated.</p>
+                <p>Streaming also reduces timeout-related retries. A 30-second timeout on a non-streaming request might trigger a retry, doubling your cost. Streaming keeps the connection alive and avoids unnecessary retries.</p>
+                <div class="fix-box">
+                    <div class="fix-label">How to fix it</div>
+                    <p>Use streaming for all long-form generation (summaries, code, analysis). Set a token budget and stop streaming when reached. For chatbots, streaming improves perceived latency even if total cost is the same.</p>
+                </div>
+            </div>
+
+            <!-- Mistake 7 -->
+            <div class="mistake-card">
+                <div class="mistake-number">7</div>
+                <h3>Sending Full Conversation History</h3>
+                <div class="impact">Cost impact: 50-200% on input tokens</div>
+                <p>Chat applications often send the entire conversation history with every request. A 20-message conversation might be 8,000 tokens of history — sent with every new message. By message 20, you're paying for 160,000 cumulative input tokens.</p>
+                <div class="fix-box">
+                    <div class="fix-label">How to fix it</div>
+                    <p><strong>Summarize old messages.</strong> Keep the last 3-5 messages in full, summarize older messages into a compressed context. Or use a sliding window. A 20-message conversation summarized to the last 5 + a summary reduces input tokens by 60-80%.</p>
+                </div>
+            </div>
+
+            <!-- Mistake 8 -->
+            <div class="mistake-card">
+                <div class="mistake-number">8</div>
+                <h3>Not Comparing Providers</h3>
+                <div class="impact">Cost impact: 50-90% on same-quality tasks</div>
+                <p>DeepSeek V4 Flash costs <strong>$0.14/$0.28 per 1M tokens</strong>. GPT-5 mini costs <strong>$0.25/$2.00</strong>. For many tasks, DeepSeek delivers comparable quality at a fraction of the price. Mistral Small 4 at <strong>$0.15/$0.60</strong> is another budget option that punches above its weight.</p>
+                <div class="fix-box">
+                    <div class="fix-label">How to fix it</div>
+                    <p>Test your specific use case on 2-3 budget providers. Use <a href="compare.html">APIpulse's comparison tool</a> to find the cheapest option for your task. For classification, extraction, and simple Q&A, budget providers often match premium quality at 80-95% lower cost.</p>
+                </div>
+            </div>
+
+            <!-- Mistake 9 -->
+            <div class="mistake-card">
+                <div class="mistake-number">9</div>
+                <h3>Retrying Failed Requests Without Backoff</h3>
+                <div class="impact">Cost impact: 10-30% on error-related spend</div>
+                <p>When an API call fails (rate limit, timeout, server error), immediately retrying often triggers more failures — and more charges. Each retry costs money even if it fails. Aggressive retries during rate limiting can 3x your cost temporarily.</p>
+                <div class="fix-box">
+                    <div class="fix-label">How to fix it</div>
+                    <p>Implement <strong>exponential backoff</strong>: wait 1s, 2s, 4s, 8s between retries. Set a maximum of 3 retries. For rate limits, respect the <code>Retry-After</code> header. Use circuit breakers to stop retrying after 5 consecutive failures. This reduces retry-related costs by 60-80%.</p>
+                </div>
+            </div>
+
+            <!-- Mistake 10 -->
+            <div class="mistake-card">
+                <div class="mistake-number">10</div>
+                <h3>Not Setting a Budget Alert</h3>
+                <div class="impact">Cost impact: Unlimited potential overspend</div>
+                <p>Without budget alerts, a bug or traffic spike can run up a $5,000 bill overnight. We've seen developers return from vacation to find a misconfigured prompt generating 10,000 tokens per request instead of 100 — a 100x cost increase.</p>
+                <div class="fix-box">
+                    <div class="fix-label">How to fix it</div>
+                    <p>Set up <strong>three alerts</strong>: 50% of budget (warning), 80% (action required), 100% (hard stop). Most providers let you set spending limits. Also implement your own cost tracking with per-request logging so you can detect anomalies in real-time, not after the monthly bill arrives.</p>
+                </div>
+            </div>
+
+            <h2>The Complete Cost Optimization Stack</h2>
+            <p>Fix all 10 mistakes and you'll typically save <strong>50-70% on your AI API bill</strong>. Here's the priority order:</p>
+            <ol>
+                <li><strong>Model routing</strong> (biggest impact) — match task complexity to model capability</li>
+                <li><strong>Prompt caching</strong> — eliminate redundant input processing</li>
+                <li><strong>Max tokens</strong> — prevent runaway output costs</li>
+                <li><strong>Provider comparison</strong> — find cheaper alternatives for your use case</li>
+                <li><strong>Conversation compression</strong> — reduce cumulative input tokens</li>
+                <li><strong>Streaming</strong> — catch issues early, reduce retries</li>
+                <li><strong>Per-feature tracking</strong> — identify cost outliers</li>
+                <li><strong>Exponential backoff</strong> — reduce retry costs</li>
+                <li><strong>Budget alerts</strong> — prevent bill shock</li>
+                <li><strong>Output ratio awareness</strong> — optimize for your actual workload</li>
+            </ol>
+
+            <div class="cta-inline">
+                <h3>Calculate Your Potential Savings</h3>
+                <p>Enter your current API usage and see exactly how much you could save by fixing these mistakes.</p>
+                <a href="prompt-cost-calculator.html">Try the Prompt Cost Calculator →</a>
+            </div>
+
+            <h2>Real-World Example: $2,400 → $380/Month</h2>
+            <p>A SaaS startup was spending $2,400/month on AI APIs. Here's what they changed:</p>
+            <div class="cost-example">
+                <div class="label">Before optimization</div>
+                <div class="cost-row"><span class="name">Model: GPT-5.5 for all tasks</span><span class="value">$1,800/mo</span></div>
+                <div class="cost-row"><span class="name">No max_tokens set</span><span class="value">+$360/mo (20% waste)</span></div>
+                <div class="cost-row"><span class="name">Full history sent every request</span><span class="value">+$240/mo (13% waste)</span></div>
+                <div class="cost-row cost-total"><span class="name">Total before</span><span class="value">$2,400/mo</span></div>
+            </div>
+            <div class="cost-example">
+                <div class="label">After optimization</div>
+                <div class="cost-row"><span class="name">Model routing (GPT-5 mini + GPT-5)</span><span class="value">$280/mo</span></div>
+                <div class="cost-row"><span class="name">Prompt caching enabled</span><span class="value">-$60/mo savings</span></div>
+                <div class="cost-row"><span class="name">max_tokens + sliding window</span><span class="value">+$60/mo</span></div>
+                <div class="cost-row cost-total"><span class="name">Total after</span><span class="value">$380/mo (84% savings)</span></div>
+            </div>
+
+            <div class="cta-inline">
+                <h3>Ready to optimize your costs?</h3>
+                <p>Use our free tools to find the cheapest model for your workload and calculate your potential savings.</p>
+                <a href="tools.html">Explore All Free Tools →</a>
+            </div>
+
+            <div class="share-section">
+                <p>Found this useful? Share it with your team.</p>
+                <a href="https://twitter.com/intent/tweet?text=10%20AI%20API%20cost%20mistakes%20that%20are%20draining%20your%20budget%20%E2%80%94%20and%20how%20to%20fix%20them%20%F0%9F%92%A1&url=https://getapipulse.com/blog-10-ai-api-cost-mistakes.html" class="share-btn" target="_blank" rel="noopener">Share on X</a>
+                <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://getapipulse.com/blog-10-ai-api-cost-mistakes.html" class="share-btn" target="_blank" rel="noopener">Share on LinkedIn</a>
+                <a href="https://news.ycombinator.com/submitlink?u=https://getapipulse.com/blog-10-ai-api-cost-mistakes.html&t=10%20AI%20API%20Cost%20Mistakes" class="share-btn" target="_blank" rel="noopener">Share on HN</a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-inner">
+            <div class="footer-brand">
+                <a href="index.html" class="logo">API<span>pulse</span></a>
+                <p>Know your AI API costs before you commit.</p>
+            </div>
+            <div class="footer-links">
+                <div class="footer-col">
+                    <h4>Tools</h4>
+                    <a href="calculator.html">Cost Calculator</a>
+                    <a href="compare.html">Compare Models</a>
+                    <a href="cost-explorer.html">Cost Explorer</a>
+                    <a href="tools.html">All Tools</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Resources</h4>
+                    <a href="blog.html">Blog</a>
+                    <a href="api-docs.html">API</a>
+                    <a href="pricing-index.html">Pricing Index</a>
+                    <a href="about.html">About</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Legal</h4>
+                    <a href="privacy.html">Privacy</a>
+                    <a href="terms.html">Terms</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 APIpulse. Pricing data verified May 2026.</p>
+        </div>
+    </footer>
+</body>
+</html>

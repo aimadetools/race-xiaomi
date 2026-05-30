@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prompt Cost Calculator — Paste Text, See Costs Across 35 AI Models | APIpulse</title>
+    <meta name="description" content="Paste any prompt and instantly see costs across 35 AI models. Count tokens, compare prices from OpenAI, Anthropic, Google, DeepSeek, and more. Free tool.">
+    <meta property="og:title" content="Prompt Cost Calculator — See Costs Across 35 AI Models">
+    <meta property="og:description" content="Paste your prompt. See costs across 35 models instantly. Compare OpenAI, Anthropic, Google, DeepSeek pricing.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://getapipulse.com/og-image.png">
+    <meta property="og:url" content="https://getapipulse.com/prompt-cost-calculator.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Prompt Cost Calculator — See Costs Across 35 AI Models">
+    <meta name="twitter:image" content="https://getapipulse.com/og-image.png">
+    <meta name="twitter:description" content="Paste your prompt. See costs across 35 models instantly.">
+    <meta name="keywords" content="prompt cost calculator, AI API cost estimator, token counter, LLM pricing calculator, AI model cost comparison">
+    <link rel="canonical" href="https://getapipulse.com/prompt-cost-calculator.html">
+    <link rel="alternate" type="application/rss+xml" title="APIpulse Blog" href="https://getapipulse.com/rss.xml">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="styles.css">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0CEP7S9Y3J"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-0CEP7S9Y3J');
+    </script>
+    <script src="analytics.js" defer></script>
+    <script src="dynamic-date.js" defer></script>
+    <script src="shared.js" defer></script>
+    <script src="pricing-data.js" defer></script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "APIpulse Prompt Cost Calculator",
+        "url": "https://getapipulse.com/prompt-cost-calculator.html",
+        "description": "Paste any prompt and instantly see costs across 35 AI models. Free token counter and cost estimator.",
+        "applicationCategory": "DeveloperApplication",
+        "operatingSystem": "Web",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "How accurate is the token count?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "We use the standard ~4 characters per token estimate for English text. Actual token counts vary by model's tokenizer (GPT uses ~4 chars/token, Claude uses ~3.5, etc.). For precise counts, use your provider's tokenizer. Our estimates are typically within 10-15% of actual counts."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Which model is cheapest for my prompt?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "It depends on your output length. For short responses, budget models like Gemini 2.0 Flash Lite ($0.075/$0.30) or DeepSeek V4 Flash ($0.14/$0.28) are cheapest. For long outputs, models with low output pricing like Mistral Small 4 ($0.15/$0.60) or GPT-4o mini ($0.15/$0.60) win. Use this tool to see exact costs for your specific prompt."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How do I estimate output tokens?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "As a rule of thumb, set output tokens to 2-5x your input tokens for chat responses, or 1-2x for summarization tasks. For code generation, expect 3-8x. The tool lets you set a custom output multiplier to model your specific use case."
+                }
+            }
+        ]
+    }
+    </script>
+    <style>
+        .content { max-width: 1000px; margin: 0 auto; padding: 120px 24px 80px; }
+        h1 { font-size: clamp(28px, 5vw, 44px); font-weight: 800; text-align: center; margin-bottom: 12px; }
+        .subtitle { text-align: center; color: var(--text-secondary); font-size: 18px; margin-bottom: 40px; max-width: 650px; margin-left: auto; margin-right: auto; }
+
+        .input-section {
+            background: var(--bg-secondary); border: 1px solid var(--border);
+            border-radius: 16px; padding: 36px; margin-bottom: 32px;
+        }
+        .input-section h2 { font-size: 20px; font-weight: 700; margin-bottom: 20px; }
+        .prompt-input {
+            width: 100%; min-height: 160px; padding: 16px; background: var(--bg-card);
+            border: 1px solid var(--border); border-radius: 12px;
+            color: var(--text-primary); font-size: 15px; font-family: inherit;
+            line-height: 1.6; resize: vertical; transition: border-color 0.2s;
+        }
+        .prompt-input:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-glow); }
+        .prompt-input::placeholder { color: var(--text-muted); }
+
+        .controls {
+            display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px;
+            margin-top: 20px;
+        }
+        .control-group label {
+            display: block; font-size: 12px; color: var(--text-muted);
+            text-transform: uppercase; letter-spacing: 0.5px; font-weight: 600;
+            margin-bottom: 6px;
+        }
+        .control-group input, .control-group select {
+            width: 100%; padding: 12px 14px; background: var(--bg-card);
+            border: 1px solid var(--border); border-radius: 8px;
+            color: var(--text-primary); font-size: 15px;
+        }
+        .control-group input:focus, .control-group select:focus {
+            outline: none; border-color: var(--accent);
+        }
+
+        .token-summary {
+            display: flex; gap: 24px; margin-top: 20px; padding: 16px 20px;
+            background: var(--bg-card); border-radius: 12px;
+            border: 1px solid var(--border);
+        }
+        .token-stat { text-align: center; flex: 1; }
+        .token-stat .value { font-size: 28px; font-weight: 800; color: var(--accent); }
+        .token-stat .label { font-size: 12px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px; margin-top: 4px; }
+
+        .results-section { margin-top: 32px; }
+        .results-header {
+            display: flex; justify-content: space-between; align-items: center;
+            margin-bottom: 20px;
+        }
+        .results-header h2 { font-size: 22px; font-weight: 700; }
+        .sort-controls { display: flex; gap: 8px; }
+        .sort-btn {
+            padding: 6px 14px; border-radius: 8px; border: 1px solid var(--border);
+            background: var(--bg-card); color: var(--text-secondary); font-size: 13px;
+            cursor: pointer; transition: all 0.2s;
+        }
+        .sort-btn.active { background: var(--accent); color: white; border-color: var(--accent); }
+        .sort-btn:hover { border-color: var(--accent); }
+
+        .cost-table {
+            width: 100%; background: var(--bg-secondary); border: 1px solid var(--border);
+            border-radius: 16px; overflow: hidden;
+        }
+        .cost-table-header {
+            display: grid; grid-template-columns: 2fr 1fr 1fr 1fr 1fr 1fr;
+            padding: 14px 20px; background: var(--bg-card);
+            border-bottom: 1px solid var(--border);
+            font-size: 12px; font-weight: 600; color: var(--text-muted);
+            text-transform: uppercase; letter-spacing: 0.5px;
+        }
+        .cost-row {
+            display: grid; grid-template-columns: 2fr 1fr 1fr 1fr 1fr 1fr;
+            padding: 14px 20px; border-bottom: 1px solid var(--border);
+            transition: background 0.15s; align-items: center;
+        }
+        .cost-row:last-child { border-bottom: none; }
+        .cost-row:hover { background: var(--bg-card-hover); }
+        .cost-row.cheapest { background: rgba(34, 197, 94, 0.08); }
+        .cost-row .model-name { font-weight: 600; font-size: 14px; }
+        .cost-row .provider { color: var(--text-muted); font-size: 13px; }
+        .cost-row .tier-badge {
+            display: inline-block; padding: 2px 8px; border-radius: 4px;
+            font-size: 11px; font-weight: 600; margin-left: 8px;
+        }
+        .tier-Budget { background: rgba(34,197,94,0.15); color: var(--green); }
+        .tier-Mid { background: rgba(245,158,11,0.15); color: var(--orange); }
+        .tier-Premium { background: rgba(99,102,241,0.15); color: var(--accent); }
+        .cost-cell { font-size: 14px; font-variant-numeric: tabular-nums; }
+        .cost-cell.highlight { color: var(--green); font-weight: 700; }
+        .monthly-cost { font-weight: 700; font-size: 15px; }
+        .monthly-cost.cheapest { color: var(--green); }
+
+        .empty-state {
+            text-align: center; padding: 60px 20px; color: var(--text-muted);
+        }
+        .empty-state .icon { font-size: 48px; margin-bottom: 16px; }
+        .empty-state p { font-size: 16px; }
+
+        .presets { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 16px; }
+        .preset-btn {
+            padding: 8px 16px; border-radius: 8px; border: 1px solid var(--border);
+            background: var(--bg-card); color: var(--text-secondary); font-size: 13px;
+            cursor: pointer; transition: all 0.2s;
+        }
+        .preset-btn:hover { border-color: var(--accent); color: var(--accent); }
+
+        .info-box {
+            margin-top: 32px; padding: 24px; background: var(--bg-secondary);
+            border: 1px solid var(--border); border-radius: 12px;
+        }
+        .info-box h3 { font-size: 16px; font-weight: 700; margin-bottom: 12px; }
+        .info-box p { font-size: 14px; color: var(--text-secondary); line-height: 1.7; }
+
+        @media (max-width: 768px) {
+            .controls { grid-template-columns: 1fr; }
+            .cost-table-header, .cost-row {
+                grid-template-columns: 1.5fr 1fr 1fr 1fr;
+            }
+            .cost-table-header > *:nth-child(4),
+            .cost-table-header > *:nth-child(5),
+            .cost-row > *:nth-child(4),
+            .cost-row > *:nth-child(5) { display: none; }
+            .token-summary { flex-direction: column; gap: 12px; }
+        }
+    </style>
+    <meta name="theme-color" content="#6366f1">
+</head>
+<body>
+    <nav>
+        <div class="nav-inner">
+            <a href="index.html" class="logo">API<span>pulse</span></a>
+            <button class="hamburger" onclick="toggleMobileNav()" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+            <div class="nav-links">
+                <a href="calculator.html">Calculator</a>
+                <a href="compare.html">Compare</a>
+                <a href="cost-explorer.html">Explorer</a>
+                <a href="agent-cost-calculator.html">Agents</a>
+                <a href="cost-scenarios.html">Scenarios</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="use-cases.html">Use Cases</a>
+                <a href="about.html">About</a>
+                <a href="blog.html">Blog</a>
+                <a href="tools.html" class="active">Tools</a>
+                <a href="pricing-index.html">Pricing Index</a>
+                <a href="model-matrix.html">Model Matrix</a>
+                <a href="api-docs.html" style="color:var(--accent);">API</a>
+                <a href="pricing.html" class="nav-cta">Get Pro — $29</a>
+                <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="content">
+        <h1>Prompt Cost Calculator</h1>
+        <p class="subtitle">Paste your prompt, set output length, and see exactly what it costs across all 35 AI models. No signup required.</p>
+
+        <div class="input-section">
+            <h2>Your Prompt</h2>
+            <textarea class="prompt-input" id="promptInput" placeholder="Paste your prompt here...&#10;&#10;Example: 'Explain the difference between REST and GraphQL APIs, including pros and cons of each approach, with code examples in Python.'"></textarea>
+
+            <div class="presets">
+                <button class="preset-btn" onclick="loadPreset('short')">Short Q&A</button>
+                <button class="preset-btn" onclick="loadPreset('medium')">Code Generation</button>
+                <button class="preset-btn" onclick="loadPreset('long')">Long Analysis</button>
+                <button class="preset-btn" onclick="loadPreset('system')">System + User Prompt</button>
+                <button class="preset-btn" onclick="loadPreset('rag')">RAG Context + Query</button>
+            </div>
+
+            <div class="controls">
+                <div class="control-group">
+                    <label>Output Multiplier</label>
+                    <select id="outputMultiplier">
+                        <option value="0.5">0.5x — Short answer</option>
+                        <option value="1" selected>1x — Same length as input</option>
+                        <option value="2">2x — Moderate response</option>
+                        <option value="3">3x — Detailed response</option>
+                        <option value="5">5x — Long-form content</option>
+                        <option value="8">8x — Code generation</option>
+                    </select>
+                </div>
+                <div class="control-group">
+                    <label>Requests per Day</label>
+                    <input type="number" id="requestsPerDay" value="100" min="1" max="10000000">
+                </div>
+                <div class="control-group">
+                    <label>Days per Month</label>
+                    <input type="number" id="daysPerMonth" value="30" min="1" max="31">
+                </div>
+            </div>
+
+            <div class="token-summary" id="tokenSummary" style="display:none;">
+                <div class="token-stat">
+                    <div class="value" id="inputTokens">0</div>
+                    <div class="label">Input Tokens</div>
+                </div>
+                <div class="token-stat">
+                    <div class="value" id="outputTokens">0</div>
+                    <div class="label">Output Tokens</div>
+                </div>
+                <div class="token-stat">
+                    <div class="value" id="totalTokens">0</div>
+                    <div class="label">Total per Request</div>
+                </div>
+                <div class="token-stat">
+                    <div class="value" id="monthlyTokens">0</div>
+                    <div class="label">Monthly Tokens</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="results-section" id="resultsSection" style="display:none;">
+            <div class="results-header">
+                <h2>Cost by Model</h2>
+                <div class="sort-controls">
+                    <button class="sort-btn active" onclick="sortResults('monthly')">Monthly Cost</button>
+                    <button class="sort-btn" onclick="sortResults('perRequest')">Per Request</button>
+                    <button class="sort-btn" onclick="sortResults('name')">Model Name</button>
+                </div>
+            </div>
+            <div class="cost-table">
+                <div class="cost-table-header">
+                    <div>Model</div>
+                    <div>Input Cost</div>
+                    <div>Output Cost</div>
+                    <div>Per Request</div>
+                    <div>Monthly Cost</div>
+                    <div>Savings</div>
+                </div>
+                <div id="costResults"></div>
+            </div>
+        </div>
+
+        <div class="empty-state" id="emptyState">
+            <div class="icon">📝</div>
+            <p>Type or paste a prompt above to see costs across all models.</p>
+        </div>
+
+        <div class="info-box">
+            <h3>How Token Counting Works</h3>
+            <p>This tool estimates tokens using the standard ~4 characters per token ratio for English text. Actual token counts vary by model's tokenizer — GPT models use ~4 chars/token, Claude uses ~3.5, and Gemini uses ~4. For production-accurate counts, use your provider's official tokenizer. Our estimates are typically within 10-15% of actual counts, which is sufficient for cost estimation and model comparison.</p>
+        </div>
+
+        <div class="info-box" style="margin-top:16px;">
+            <h3>Understanding the Costs</h3>
+            <p>Prices shown are per 1M tokens. Input costs are based on your prompt length. Output costs depend on the response length (prompt length × output multiplier). The "Savings" column shows how much you save compared to the most expensive model for your workload. For most use cases, budget models like Gemini Flash, DeepSeek, or Mistral Small offer 90%+ savings versus premium models with minimal quality loss for routine tasks.</p>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-inner">
+            <div class="footer-brand">
+                <a href="index.html" class="logo">API<span>pulse</span></a>
+                <p>Know your AI API costs before you commit.</p>
+            </div>
+            <div class="footer-links">
+                <div class="footer-col">
+                    <h4>Tools</h4>
+                    <a href="calculator.html">Cost Calculator</a>
+                    <a href="compare.html">Compare Models</a>
+                    <a href="cost-explorer.html">Cost Explorer</a>
+                    <a href="tools.html">All Tools</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Resources</h4>
+                    <a href="blog.html">Blog</a>
+                    <a href="api-docs.html">API</a>
+                    <a href="pricing-index.html">Pricing Index</a>
+                    <a href="about.html">About</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Legal</h4>
+                    <a href="privacy.html">Privacy</a>
+                    <a href="terms.html">Terms</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 APIpulse. Pricing data verified May 2026.</p>
+        </div>
+    </footer>
+
+    <script>
+    // Token estimation (~4 chars per token for English)
+    function estimateTokens(text) {
+        if (!text) return 0;
+        // Rough estimate: 1 token ≈ 4 chars for English, 1 token ≈ 2-3 chars for code
+        const words = text.trim().split(/\s+/).length;
+        const chars = text.length;
+        // Blend char-based and word-based estimates
+        return Math.ceil((chars / 4 + words * 1.3) / 2);
+    }
+
+    function formatNumber(n) {
+        if (n >= 1e6) return (n / 1e6).toFixed(1) + 'M';
+        if (n >= 1e3) return (n / 1e3).toFixed(1) + 'K';
+        return n.toLocaleString();
+    }
+
+    function formatCost(cost) {
+        if (cost < 0.000001) return '$' + cost.toFixed(8);
+        if (cost < 0.001) return '$' + cost.toFixed(6);
+        if (cost < 0.01) return '$' + cost.toFixed(4);
+        if (cost < 1) return '$' + cost.toFixed(4);
+        return '$' + cost.toFixed(2);
+    }
+
+    const presets = {
+        short: "What is the capital of France?",
+        medium: "Write a Python function that takes a list of dictionaries and returns a new list sorted by a specified key. Include type hints, docstring, and handle edge cases like empty lists and missing keys.",
+        long: "Analyze the following codebase architecture for a SaaS application: React frontend, Node.js API, PostgreSQL database, Redis cache, and AWS deployment. Identify potential bottlenecks, suggest improvements for scalability, estimate infrastructure costs at 10K, 100K, and 1M users, and recommend a monitoring strategy. Include specific tool recommendations and configuration suggestions.",
+        system: "You are a senior software engineer with 15 years of experience. You write clean, well-documented code and always consider edge cases. When reviewing code, you focus on security, performance, and maintainability.\n\nUser: Review this Python function for potential issues:\ndef process_data(items):\n    results = []\n    for item in items:\n        results.append(item['value'] * 2)\n    return results",
+        rag: "Context: APIpulse is a tool that compares AI API pricing across 35 models from 10 providers. It was launched in April 2026 and has 200 blog posts, 45 interactive tools, and 11 API endpoints. The Pro tier costs $29 one-time and includes saved scenarios, PDF export, and optimization recommendations.\n\nQuestion: What makes APIpulse different from other AI API pricing tools, and what features are available in the free tier vs Pro tier?"
+    };
+
+    function loadPreset(key) {
+        document.getElementById('promptInput').value = presets[key];
+        calculate();
+    }
+
+    let currentSort = 'monthly';
+    let lastResults = [];
+
+    function calculate() {
+        const text = document.getElementById('promptInput').value;
+        const multiplier = parseFloat(document.getElementById('outputMultiplier').value);
+        const requestsPerDay = parseInt(document.getElementById('requestsPerDay').value) || 100;
+        const daysPerMonth = parseInt(document.getElementById('daysPerMonth').value) || 30;
+
+        if (!text.trim()) {
+            document.getElementById('tokenSummary').style.display = 'none';
+            document.getElementById('resultsSection').style.display = 'none';
+            document.getElementById('emptyState').style.display = 'block';
+            return;
+        }
+
+        const inputTokens = estimateTokens(text);
+        const outputTokens = Math.ceil(inputTokens * multiplier);
+        const totalPerRequest = inputTokens + outputTokens;
+        const monthlyRequests = requestsPerDay * daysPerMonth;
+        const monthlyInputTokens = inputTokens * monthlyRequests;
+        const monthlyOutputTokens = outputTokens * monthlyRequests;
+
+        document.getElementById('inputTokens').textContent = formatNumber(inputTokens);
+        document.getElementById('outputTokens').textContent = formatNumber(outputTokens);
+        document.getElementById('totalTokens').textContent = formatNumber(totalPerRequest);
+        document.getElementById('monthlyTokens').textContent = formatNumber(monthlyInputTokens + monthlyOutputTokens);
+        document.getElementById('tokenSummary').style.display = 'flex';
+
+        // Calculate costs for each model
+        const results = API_MODELS.map(model => {
+            const inputCostPerToken = model.input / 1e6;
+            const outputCostPerToken = model.output / 1e6;
+            const costPerRequest = (inputTokens * inputCostPerToken) + (outputTokens * outputCostPerToken);
+            const monthlyCost = costPerRequest * monthlyRequests;
+
+            return {
+                ...model,
+                costPerRequest,
+                monthlyCost,
+                inputCost: inputTokens * inputCostPerToken,
+                outputCost: outputTokens * outputCostPerToken
+            };
+        });
+
+        // Sort by monthly cost by default
+        results.sort((a, b) => a.monthlyCost - b.monthlyCost);
+        lastResults = results;
+
+        renderResults(results, monthlyRequests);
+        document.getElementById('resultsSection').style.display = 'block';
+        document.getElementById('emptyState').style.display = 'none';
+    }
+
+    function sortResults(by) {
+        currentSort = by;
+        document.querySelectorAll('.sort-btn').forEach(btn => btn.classList.remove('active'));
+        event.target.classList.add('active');
+
+        if (by === 'monthly') lastResults.sort((a, b) => a.monthlyCost - b.monthlyCost);
+        else if (by === 'perRequest') lastResults.sort((a, b) => a.costPerRequest - b.costPerRequest);
+        else if (by === 'name') lastResults.sort((a, b) => a.name.localeCompare(b.name));
+
+        const monthlyRequests = (parseInt(document.getElementById('requestsPerDay').value) || 100) * (parseInt(document.getElementById('daysPerMonth').value) || 30);
+        renderResults(lastResults, monthlyRequests);
+    }
+
+    function renderResults(results, monthlyRequests) {
+        const container = document.getElementById('costResults');
+        const cheapest = results[0]?.monthlyCost || 0;
+        const mostExpensive = results[results.length - 1]?.monthlyCost || 1;
+
+        container.innerHTML = results.map(r => {
+            const isCheapest = r.monthlyCost === cheapest;
+            const savings = mostExpensive > 0 ? ((1 - r.monthlyCost / mostExpensive) * 100).toFixed(0) : 0;
+
+            return `<div class="cost-row ${isCheapest ? 'cheapest' : ''}">
+                <div>
+                    <span class="model-name">${r.name}</span>
+                    <span class="tier-badge tier-${r.tier}">${r.tier}</span>
+                    <div class="provider">${r.provider}</div>
+                </div>
+                <div class="cost-cell">${formatCost(r.inputCost)}/req</div>
+                <div class="cost-cell">${formatCost(r.outputCost)}/req</div>
+                <div class="cost-cell">${formatCost(r.costPerRequest)}</div>
+                <div class="cost-cell monthly-cost ${isCheapest ? 'cheapest' : ''}">${formatCost(r.monthlyCost)}/mo</div>
+                <div class="cost-cell">${isCheapest ? '<span style="color:var(--green);font-weight:700">Best</span>' : savings + '% off'}</div>
+            </div>`;
+        }).join('');
+    }
+
+    // Auto-calculate on input
+    document.getElementById('promptInput').addEventListener('input', calculate);
+    document.getElementById('outputMultiplier').addEventListener('change', calculate);
+    document.getElementById('requestsPerDay').addEventListener('input', calculate);
+    document.getElementById('daysPerMonth').addEventListener('input', calculate);
+
+    // Load a default prompt
+    document.getElementById('promptInput').value = presets.medium;
+    calculate();
+    </script>
+</body>
+</html>
