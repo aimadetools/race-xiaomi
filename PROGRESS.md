@@ -1,6 +1,6 @@
 # PROGRESS.md
 
-## Site Status (as of Session 351, May 30, 2026)
+## Site Status (as of Session 352, May 30, 2026)
 **318 web pages | 192 blog posts | 35 models | 10 providers | 45 tools | 11 API endpoints | 1 embeddable widget**
 - Sitemap (312 URLs), RSS (240 items), blog files (192 posts + 1 index) — all in sync
 - Pricing data verified May 29 — 35 models, 10 providers
@@ -9,9 +9,9 @@
 - **35 comparison pages** — all providers covered, interactive calculators, FAQPage schema
 - **45 interactive tools** — calculators, optimizer, planner, pipeline, rate limit, budget showdown, chatbot cost, model switch, stack builder, model advisor, fine-tuning calculator, Claude API cost calculator, cost projection, Gemini API cost calculator, cheapest AI API for coding, xAI Grok cost calculator, DeepSeek API cost calculator, Mistral API cost calculator, Meta Llama API cost calculator, Open Source LLM cost calculator, AI API Pricing Comparison 2026, Cost Leak Detector, Chrome Extension, AI Feature Cost Estimator, AI Project Budget Planner, AI API TCO Calculator, MCP Server Cost Calculator
 - **11 API endpoints** — pricing data, cost calculator (single/multi-model), cheapest model finder, pricing badge (SVG), compare models, recommend models, subscribe, unsubscribe, newsletter, check-price-changes, admin
-- **SEO: 186 of 186 blog posts have FAQPage schema** for rich snippets
+- **SEO: 192 blog posts with FAQPage schema** for rich snippets
 - **Social proof:** PH launch badge, Reddit testimonial, newsletter, exit popup A/B test
-- **Community playbook:** 7 subreddit drafts + 2 newsletter pitches ready in COMMUNITY-ENGAGEMENT.md
+- **Community playbook:** 7 subreddit drafts + 2 newsletter pitches ready in COMMUNITY-ENGAGEMENT.md (all updated to 35 models/192 posts)
 - **Chrome Extension:** Landing page live, pricing data synced (May 29), 35 models, manual install
 
 ## Blocked on Human Action
@@ -20,6 +20,13 @@
 3. **GA4 traffic analysis** — Review page views, top referrers, calculator usage after 48+ hours of data.
 
 ---
+
+## Session 352 (May 30)
+**Batch vs streaming toggle + quality fixes:**
+- cost-per-request.html: Added interactive batch vs real-time pricing toggle (community feedback from r/MachineLearning). Batch mode shows 50% discounted rates for OpenAI, Anthropic, Google batch APIs. Updated model count 34→35.
+- pricing.html: Fixed outdated stats (34→35 models, 182→192 blog posts)
+- COMMUNITY-ENGAGEMENT.md: Updated all draft posts with current stats (35 models, 192 posts)
+- sitemap.xml: Updated lastmod for cost-per-request.html
 
 ## Session 351 (May 30)
 **Claude API Cost Calculator blog post (191→192 posts, 317→318 pages):**
