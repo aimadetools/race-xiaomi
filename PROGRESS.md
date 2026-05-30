@@ -1,6 +1,6 @@
 # PROGRESS.md
 
-## Site Status (as of Session 369, May 30, 2026)
+## Site Status (as of Session 370, May 30, 2026)
 **340 web pages | 208 blog posts | 34 models | 10 providers | 51 tools | 11 API endpoints | 1 embeddable widget**
 - Sitemap (334 URLs), RSS (261 items), blog files (208 posts + 1 index) — all in sync
 - Pricing data verified May 29 — 34 models, 10 providers
@@ -53,24 +53,8 @@
 - Updated tools.html title and meta description: 45 → 48 tools
 - Updated tool count across PROGRESS.md, BACKLOG-PREMIUM.md, BACKLOG-CHEAP.md (46 → 48)
 
-## Session 365 (May 30)
-**New tool + 2 blog posts (207 posts, 336 pages, 48 tools):**
-- Created monthly-spend-estimator.html — compare costs across ALL 34 models side-by-side. Presets (Hobby/Startup/Growth/Scale), filters (provider/tier/context), sortable table, CSV export, Pro CTA
-- Created blog-chatgpt-clone-cost.html — "How Much Does It Cost to Build a ChatGPT Clone?" targeting high-intent keyword. 3 real-world cost scenarios, model-by-model breakdown, optimization strategies
-- Created blog-ai-api-cost-per-token.html — "AI API Cost per Token Explained" foundational guide. Input vs output tokens, cost formula, pricing table for 34 models, real-world token usage examples
-- Added all 3 to sitemap (327→330 URLs), RSS (254→257 items), blog.html index
-- Updated blog post count 205→207 in pricing.html and prompt-cost-calculator.html
-
-## Session 366 (May 30)
-**Fix stale data + cross-linking across site:**
-- Updated Pricing Verified dates from "Apr 2026" → "May 2026" on all 10 provider pages
-- Fixed pricing-data.js and api/pricing.js: all 34 models now show "May 2026" (was mixed Apr/May)
-- Fixed api-docs.html and blog-llm-pricing-api.html: updated sample responses (count 32→34, lastUpdated 2026-05-29)
-- Added Monthly Spend Estimator to tools.html and index.html What's New (was missing from cross-links)
-- Fixed "35 AI models" → "34 AI models" in prompt-cost-calculator.html, mcp-cost-calculator.html, tools.html
-
-## Summary: Sessions 358-369 (May 30)
-12 sessions: Shareable calculator link feature (viral loop). "Cheapest AI API June 2026" blog post targeting highest buying-intent keyword. 3 new provider calculators (Cohere, Moonshot, Together.ai). State of LLM Pricing Report. Social sharing on all 208 blog posts. Stale count fixes. 200→208 posts, 326→340 pages, 45→51 tools.
+## Summary: Sessions 358-370 (May 30)
+13 sessions: Cross-links for Cheapest AI API blog (calculator, compare, 4 blog posts). Shareable link feature on monthly-spend-estimator. What's New entry. Shareable calculator link feature (viral loop). "Cheapest AI API June 2026" blog post. 3 new provider calculators (Cohere, Moonshot, Together.ai). State of LLM Pricing Report. Social sharing on all 208 blog posts. Stale count fixes. Monthly Spend Estimator. 2 blog posts (ChatGPT clone cost, AI API cost per token). Stale data fixes. 200→208 posts, 326→340 pages, 45→51 tools.
 
 ## Summary: Sessions 1-339 (Apr 5 - May 29)
 Built full APIpulse: 326 pages, 187 blog posts, 34 models, 10 providers, 48 tools, 11 API endpoints. Domain, Stripe, Pro, GA4, newsletter, community playbook, exit popup, social sharing, conversion funnel. Chrome extension + landing page. 35 comparison pages. Cost Leak Detector. Pricing badge API. 7 provider calculators. npm package. FAQPage schema on all blog posts.
