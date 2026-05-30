@@ -62,7 +62,7 @@
 ### Reddit r/SaaS — Build in Public
 **Title**: "I built a free AI API cost calculator in 2 weeks — lessons from launching on Product Hunt"
 
-I was tired of manually comparing Claude vs GPT pricing in spreadsheets. So I built APIpulse — a free tool that compares 35 AI models across 10 providers.
+I was tired of manually comparing Claude vs GPT pricing in spreadsheets. So I built APIpulse — a free tool that compares 34 AI models across 10 providers.
 
 What I learned:
 - SEO content before launch = organic traffic on day one
