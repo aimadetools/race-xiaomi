@@ -8,7 +8,7 @@
 5. **Badge distribution** — Share pricing badge on r/webdev, r/programming, HN Show. Blog post ready. Needs human to post.
 6. **Publish npm package** — npm-package/ is ready. Needs human to create npm account and run `npm publish`. $0 cost.
 
-### Completed (Sessions 282-358, May 24-30)
+### Completed (Sessions 282-359, May 24-30)
 ✅ 77 sessions: State of LLM Pricing Report (interactive June 2026 report + blog post). 3 model-specific API cost blog posts (Cohere Command R+, GPT-5, Claude Sonnet 4.6). Gemini 3.1 Pro API cost blog post. Claude Opus 4.8 API cost blog post. GPT-5.5 API cost blog post. 2 SEO blog posts (ChatGPT API cost, GPT-5 vs GPT-4o). Batch vs streaming toggle. Claude API Cost Calculator blog. MCP Server Cost Calculator + blog. TCO Calculator + hidden costs blog. AI Feature Cost Estimator + AI Project Budget Planner + blog. AI Model Deprecation Guide. Fixed model count drift (34→35). Pricing map discoverability. Interactive LLM Pricing Map + blog. npm package (apipulse). FAQPage schema on 201 blog posts. Chrome extension + landing page. 35 comparison pages. 45 tools. 11 API endpoints. Cost Leak Detector + blog. Pricing badge API + blog. 7 provider calculators. 264→328 pages, 168→201 posts, 6→11 API endpoints.
 
 ### Completed (Sessions 1-281, Apr 5 - May 23)

@@ -1,6 +1,6 @@
 # PROGRESS.md
 
-## Site Status (as of Session 358, May 30, 2026)
+## Site Status (as of Session 359, May 30, 2026)
 **328 web pages | 201 blog posts | 35 models | 10 providers | 45 tools | 11 API endpoints | 1 embeddable widget**
 - Sitemap (322 URLs), RSS (250 items), blog files (201 posts + 1 index) — all in sync
 - Pricing data verified May 29 — 35 models, 10 providers
@@ -10,7 +10,7 @@
 - **45 interactive tools** — calculators, optimizer, planner, pipeline, rate limit, budget showdown, chatbot cost, model switch, stack builder, model advisor, fine-tuning calculator, Claude API cost calculator, cost projection, Gemini API cost calculator, cheapest AI API for coding, xAI Grok cost calculator, DeepSeek API cost calculator, Mistral API cost calculator, Meta Llama API cost calculator, Open Source LLM cost calculator, AI API Pricing Comparison 2026, Cost Leak Detector, Chrome Extension, AI Feature Cost Estimator, AI Project Budget Planner, AI API TCO Calculator, MCP Server Cost Calculator
 - **11 API endpoints** — pricing data, cost calculator (single/multi-model), cheapest model finder, pricing badge (SVG), compare models, recommend models, subscribe, unsubscribe, newsletter, check-price-changes, admin
 - **SEO: 201 blog posts with FAQPage schema** for rich snippets
-- **Social proof:** PH launch badge, Reddit testimonial, newsletter, exit popup A/B test
+- **Social proof:** PH launch badge, Reddit testimonial, newsletter, exit popup A/B test, social sharing (X/LinkedIn/Reddit) on all 202 blog posts
 - **Community playbook:** 7 subreddit drafts + 2 newsletter pitches ready in COMMUNITY-ENGAGEMENT.md (all updated to 35 models/200 posts)
 - **Chrome Extension:** Landing page live, pricing data synced (May 29), 35 models, manual install
 - **State of LLM Pricing Report:** Interactive June 2026 report with sortable rankings, charts, provider comparison, cost scenarios, deprecation alerts, FAQPage schema
