@@ -1,13 +1,13 @@
 # PROGRESS.md
 
-## Site Status (as of Session 366, May 30, 2026)
-**336 web pages | 207 blog posts | 34 models | 10 providers | 46 tools | 11 API endpoints | 1 embeddable widget**
+## Site Status (as of Session 367, May 30, 2026)
+**336 web pages | 207 blog posts | 34 models | 10 providers | 48 tools | 11 API endpoints | 1 embeddable widget**
 - Sitemap (330 URLs), RSS (257 items), blog files (207 posts + 1 index) — all in sync
 - Pricing data verified May 29 — 34 models, 10 providers
 - **Analytics: GA4 (G-0CEP7S9Y3J)** — fully operational, custom events via gtag()
 - **Pro system:** localStorage-based unlock after Stripe payment. Access code fallback on pro.html.
 - **35 comparison pages** — all providers covered, interactive calculators, FAQPage schema
-- **46 interactive tools** — calculators, optimizer, planner, pipeline, rate limit, budget showdown, chatbot cost, model switch, stack builder, model advisor, fine-tuning calculator, Claude API cost calculator, cost projection, Gemini API cost calculator, cheapest AI API for coding, xAI Grok cost calculator, DeepSeek API cost calculator, Mistral API cost calculator, Meta Llama API cost calculator, Open Source LLM cost calculator, AI API Pricing Comparison 2026, Cost Leak Detector, Chrome Extension, AI Feature Cost Estimator, AI Project Budget Planner, AI API TCO Calculator, MCP Server Cost Calculator, Monthly Spend Estimator
+- **48 interactive tools** — calculators, optimizer, planner, pipeline, rate limit, budget showdown, chatbot cost, model switch, stack builder, AI Stack Builder, model advisor, fine-tuning calculator, Claude API cost calculator, cost projection, Gemini API cost calculator, cheapest AI API for coding, xAI Grok cost calculator, DeepSeek API cost calculator, Mistral API cost calculator, Meta Llama API cost calculator, Open Source LLM cost calculator, AI API Pricing Comparison 2026, Cost Leak Detector, Chrome Extension, AI Feature Cost Estimator, AI Project Budget Planner, AI API TCO Calculator, MCP Server Cost Calculator, Monthly Spend Estimator
 - **11 API endpoints** — pricing data, cost calculator (single/multi-model), cheapest model finder, pricing badge (SVG), compare models, recommend models, subscribe, unsubscribe, newsletter, check-price-changes, admin
 - **SEO: 207 blog posts with FAQPage schema** for rich snippets
 - **Social proof:** PH launch badge, Reddit testimonial, newsletter, exit popup A/B test, social sharing (X/LinkedIn/Reddit) on all 207 blog posts
@@ -22,8 +22,14 @@
 
 ---
 
+## Session 367 (May 30)
+**Fix: AI Stack Builder missing from tools grid (336 pages, 48 tools):**
+- Added ai-stack-builder.html card to tools.html grid (was a complete tool page + in sitemap, but missing from tools index)
+- Updated tools.html title and meta description: 45 → 48 tools
+- Updated tool count across PROGRESS.md, BACKLOG-PREMIUM.md, BACKLOG-CHEAP.md (46 → 48)
+
 ## Session 365 (May 30)
-**New tool + 2 blog posts (207 posts, 336 pages, 46 tools):**
+**New tool + 2 blog posts (207 posts, 336 pages, 48 tools):**
 - Created monthly-spend-estimator.html — compare costs across ALL 34 models side-by-side. Presets (Hobby/Startup/Growth/Scale), filters (provider/tier/context), sortable table, CSV export, Pro CTA
 - Created blog-chatgpt-clone-cost.html — "How Much Does It Cost to Build a ChatGPT Clone?" targeting high-intent keyword. 3 real-world cost scenarios, model-by-model breakdown, optimization strategies
 - Created blog-ai-api-cost-per-token.html — "AI API Cost per Token Explained" foundational guide. Input vs output tokens, cost formula, pricing table for 34 models, real-world token usage examples
@@ -91,7 +97,7 @@
 18 sessions: 3 model-specific blog posts (Cohere Command R+, GPT-5, Claude Sonnet 4.6). 3 API cost blogs (Gemini 3.1 Pro, Claude Opus 4.8, GPT-5.5). 2 SEO blog posts (ChatGPT API cost, GPT-5 vs GPT-4o). Batch vs streaming toggle. Claude API Cost Calculator blog. MCP Server Cost Calculator + blog. TCO Calculator + hidden costs blog. AI Feature Cost Estimator + AI Project Budget Planner + blog. AI Model Deprecation Guide. Interactive LLM Pricing Map + blog. npm package. FAQPage schema on 192+ blog posts. 187→200 posts, 309→326 pages.
 
 ## Summary: Sessions 358-366 (May 30)
-9 sessions: State of LLM Pricing Report (interactive June 2026 report + blog). Social sharing on all 207 blog posts. Stale model count fix (34→35→34). Monthly Spend Estimator (compare all 34 models). 2 new blog posts (ChatGPT clone cost, AI API cost per token). Fixed stale pricing verification dates across 10 provider pages + pricing-data.js + api-docs.html. 200→207 posts, 326→336 pages, 45→46 tools.
+9 sessions: State of LLM Pricing Report (interactive June 2026 report + blog). Social sharing on all 207 blog posts. Stale model count fix (34→35→34). Monthly Spend Estimator (compare all 34 models). 2 new blog posts (ChatGPT clone cost, AI API cost per token). Fixed stale pricing verification dates across 10 provider pages + pricing-data.js + api-docs.html. AI Stack Builder added to tools grid. 200→207 posts, 326→336 pages, 45→48 tools.
 
 ## Summary: Sessions 1-339 (Apr 5 - May 29)
 Built full APIpulse: 326 pages, 187 blog posts, 34 models, 10 providers, 45 tools, 11 API endpoints. Domain, Stripe, Pro, GA4, newsletter, community playbook, exit popup, social sharing, conversion funnel. Chrome extension + landing page. 35 comparison pages. Cost Leak Detector. Pricing badge API. 7 provider calculators. npm package. FAQPage schema on all blog posts.
