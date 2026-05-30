@@ -1,8 +1,8 @@
 # PROGRESS.md
 
 ## Site Status (as of Session 364, May 30, 2026)
-**331 web pages | 203 blog posts | 34 models | 10 providers | 45 tools | 11 API endpoints | 1 embeddable widget**
-- Sitemap (325 URLs), RSS (252 items), blog files (203 posts + 1 index) — all in sync
+**332 web pages | 204 blog posts | 34 models | 10 providers | 45 tools | 11 API endpoints | 1 embeddable widget**
+- Sitemap (326 URLs), RSS (253 items), blog files (204 posts + 1 index) — all in sync
 - Pricing data verified May 29 — 34 models, 10 providers
 - **Analytics: GA4 (G-0CEP7S9Y3J)** — fully operational, custom events via gtag()
 - **Pro system:** localStorage-based unlock after Stripe payment. Access code fallback on pro.html.
@@ -23,12 +23,13 @@
 ---
 
 ## Session 364 (May 30)
-**New blog post: GPT-5.3 Codex API Cost:**
-- Created blog-gpt53-codex-cost.html — comprehensive pricing guide for OpenAI's coding-specific model ($1.75/$14.00 per 1M tokens, 400K context)
-- Includes 4 cost scenarios (code completion, generation, review, debugging), competitor comparison table, FAQPage schema
-- Added to sitemap (324→325 URLs), RSS (251→252 items), blog.html index
-- Updated blog post count 202→203 in pricing.html and prompt-cost-calculator.html (RAG context)
-- Total: 331 pages, 203 blog posts
+**New blog posts: GPT-5.3 Codex + Gemini 2.5 Pro:**
+- Created blog-gpt53-codex-cost.html — pricing guide for OpenAI's coding model ($1.75/$14.00 per 1M tokens, 400K context)
+- Created blog-gemini25-pro-cost.html — pricing guide for Google's 1M context model ($1.25/$10.00 per 1M tokens)
+- Both include 4 cost scenarios, competitor comparison tables, FAQPage schema, social sharing
+- Added both to sitemap (324→326 URLs), RSS (251→253 items), blog.html index
+- Updated blog post count 202→204 in pricing.html and prompt-cost-calculator.html (RAG context)
+- Total: 332 pages, 204 blog posts
 
 ## Session 363 (May 30)
 **Fix remaining '35 models' references + stale counts:**
