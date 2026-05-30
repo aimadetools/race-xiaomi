@@ -47,16 +47,8 @@
 - blog.html: Added featured report card at top of blog index
 - pricing.html: Updated blog post count 200→201
 
-## Summary: Sessions 354-357 (May 30)
-4 sessions: 3 model-specific blog posts (Cohere Command R+, GPT-5, Claude Sonnet 4.6). Gemini 3.1 Pro API cost blog. Claude Opus 4.8 API cost blog. GPT-5.5 API cost blog. 194→200 posts, 320→326 pages.
+## Summary: Sessions 340-357 (May 29-30)
+18 sessions: 3 model-specific blog posts (Cohere Command R+, GPT-5, Claude Sonnet 4.6). 3 API cost blogs (Gemini 3.1 Pro, Claude Opus 4.8, GPT-5.5). 2 SEO blog posts (ChatGPT API cost, GPT-5 vs GPT-4o). Batch vs streaming toggle. Claude API Cost Calculator blog. MCP Server Cost Calculator + blog. TCO Calculator + hidden costs blog. AI Feature Cost Estimator + AI Project Budget Planner + blog. AI Model Deprecation Guide. Interactive LLM Pricing Map + blog. npm package. FAQPage schema on 192+ blog posts. 187→200 posts, 309→326 pages.
 
-## Summary: Sessions 340-353 (May 29-30)
-14 sessions: 2 SEO blog posts (ChatGPT API cost, GPT-5 vs GPT-4o). Batch vs streaming toggle. Claude API Cost Calculator blog. MCP Server Cost Calculator + blog. TCO Calculator + hidden costs blog. AI Feature Cost Estimator + AI Project Budget Planner + blog. AI Model Deprecation Guide. Pricing map discoverability. Interactive LLM Pricing Map + blog. npm package. FAQPage schema on 192 blog posts. 187→194 posts, 309→320 pages.
-
----
-
-## Summary: Sessions 300-339 (May 26-29)
-39 sessions: FAQPage schema on all 186 blog posts. Chrome extension landing + API endpoints. Fixed compare.html index + tools.html listing. 35 comparison pages. 40→41 tools. 11 API endpoints. Cost Leak Detector + blog. Claude Opus 4.8. Pricing badge API + blog. 7 provider calculators. 264→309 pages, 168→187 posts, 6→11 API endpoints.
-
-## Summary: Sessions 1-299 (Apr 5 - May 25)
-Built full APIpulse: 264 pages, 168 blog posts, 34 models, 10 providers, 22 tools, 6 API endpoints. Domain, Stripe, Pro, GA4, newsletter, community playbook, exit popup, social sharing, conversion funnel.
+## Summary: Sessions 1-339 (Apr 5 - May 29)
+Built full APIpulse: 326 pages, 187 blog posts, 34 models, 10 providers, 45 tools, 11 API endpoints. Domain, Stripe, Pro, GA4, newsletter, community playbook, exit popup, social sharing, conversion funnel. Chrome extension + landing page. 35 comparison pages. Cost Leak Detector. Pricing badge API. 7 provider calculators. npm package. FAQPage schema on all blog posts.

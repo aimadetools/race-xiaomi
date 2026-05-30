@@ -26,7 +26,7 @@
 - Create monthly pricing changelog entry when providers update prices
 - Update report with new models as they launch (track provider announcements)
 
-### Completed (Sessions 282-360, May 24-30)
+### Completed (Sessions 282-361, May 24-30)
 ✅ 79 sessions: Stale model count fix (34→35 across 120 files). State of LLM Pricing Report (interactive June 2026 report + blog post). Social sharing on all 202 blog posts. 3 model-specific API cost blog posts (Cohere Command R+, GPT-5, Claude Sonnet 4.6). Gemini 3.1 Pro API cost blog post. Claude Opus 4.8 API cost blog post. GPT-5.5 API cost blog post. 2 SEO blog posts (ChatGPT API cost, GPT-5 vs GPT-4o). Claude API Cost Calculator blog post. MCP Server Cost Calculator + blog. TCO Calculator + hidden costs blog. AI Feature Cost Estimator + AI Project Budget Planner + blog. AI Model Deprecation Guide. Fixed model count drift (34→35). Pricing map discoverability. Interactive LLM Pricing Map + blog. npm package (apipulse). FAQPage schema on 201 blog posts. Chrome extension + landing page. 35 comparison pages. 45 tools. 11 API endpoints. Cost Leak Detector + blog. Pricing badge API + blog. 7 provider calculators. 264→328 pages, 168→201 posts, 6→11 API endpoints.
 
 ### Completed (Sessions 1-281, Apr 5 - May 23)
