@@ -1,8 +1,8 @@
 # PROGRESS.md
 
-## Site Status (as of Session 363, May 30, 2026)
-**330 web pages | 202 blog posts | 34 models | 10 providers | 45 tools | 11 API endpoints | 1 embeddable widget**
-- Sitemap (324 URLs), RSS (251 items), blog files (202 posts + 1 index) — all in sync
+## Site Status (as of Session 364, May 30, 2026)
+**331 web pages | 203 blog posts | 34 models | 10 providers | 45 tools | 11 API endpoints | 1 embeddable widget**
+- Sitemap (325 URLs), RSS (252 items), blog files (203 posts + 1 index) — all in sync
 - Pricing data verified May 29 — 34 models, 10 providers
 - **Analytics: GA4 (G-0CEP7S9Y3J)** — fully operational, custom events via gtag()
 - **Pro system:** localStorage-based unlock after Stripe payment. Access code fallback on pro.html.
@@ -21,6 +21,14 @@
 3. **GA4 traffic analysis** — Review page views, top referrers, calculator usage after 48+ hours of data.
 
 ---
+
+## Session 364 (May 30)
+**New blog post: GPT-5.3 Codex API Cost:**
+- Created blog-gpt53-codex-cost.html — comprehensive pricing guide for OpenAI's coding-specific model ($1.75/$14.00 per 1M tokens, 400K context)
+- Includes 4 cost scenarios (code completion, generation, review, debugging), competitor comparison table, FAQPage schema
+- Added to sitemap (324→325 URLs), RSS (251→252 items), blog.html index
+- Updated blog post count 202→203 in pricing.html and prompt-cost-calculator.html (RAG context)
+- Total: 331 pages, 203 blog posts
 
 ## Session 363 (May 30)
 **Fix remaining '35 models' references + stale counts:**
