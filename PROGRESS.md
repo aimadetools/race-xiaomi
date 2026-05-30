@@ -31,11 +31,12 @@
 - Updated blog post count 205→207 in pricing.html and prompt-cost-calculator.html
 
 ## Session 366 (May 30)
-**Fix stale pricing verification dates across site:**
-- Updated Pricing Verified dates from "Apr 2026" → "May 2026" on all 10 provider pages (OpenAI, Anthropic, Google, Mistral, Cohere, Together.ai, AI21, Moonshot, xAI, DeepSeek)
-- Fixed pricing-data.js: all 34 models now consistently show "May 2026" verified date (was mixed Apr/May)
-- Fixed api/pricing.js: same verified date consistency fix
-- Fixed api-docs.html: updated sample response (verified May 2026, count 32→34, lastUpdated 2026-05-29)
+**Fix stale data + cross-linking across site:**
+- Updated Pricing Verified dates from "Apr 2026" → "May 2026" on all 10 provider pages
+- Fixed pricing-data.js and api/pricing.js: all 34 models now show "May 2026" (was mixed Apr/May)
+- Fixed api-docs.html and blog-llm-pricing-api.html: updated sample responses (count 32→34, lastUpdated 2026-05-29)
+- Added Monthly Spend Estimator to tools.html and index.html What's New (was missing from cross-links)
+- Fixed "35 AI models" → "34 AI models" in prompt-cost-calculator.html, mcp-cost-calculator.html, tools.html
 
 ## Session 364 (May 30)
 **New blog posts: GPT-5.3 Codex + Gemini 2.5 Pro + Claude Haiku 4.5:**
