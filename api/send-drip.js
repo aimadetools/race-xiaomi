@@ -149,7 +149,7 @@ const DRIP_TEMPLATES = {
     <h2 style="color:#818cf8;font-size:17px;margin-bottom:12px;">Recent updates</h2>
     <ul style="padding-left:20px;line-height:2;">
       <li>73 blog posts comparing specific model pairs (GPT-5 vs Claude 4, Gemini vs GPT-4o, etc.)</li>
-      <li>35 models across 10 providers — all pricing verified monthly</li>
+      <li>34 models across 10 providers — all pricing verified monthly</li>
       <li>New tools: cost scenarios, model matrix, price alerts</li>
       <li>Chrome extension for quick price checks (coming soon)</li>
     </ul>

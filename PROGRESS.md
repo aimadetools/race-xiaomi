@@ -1,9 +1,9 @@
 # PROGRESS.md
 
 ## Site Status (as of Session 360, May 30, 2026)
-**328 web pages | 201 blog posts | 35 models | 10 providers | 45 tools | 11 API endpoints | 1 embeddable widget**
+**330 web pages | 202 blog posts | 34 models | 10 providers | 45 tools | 11 API endpoints | 1 embeddable widget**
 - Sitemap (322 URLs), RSS (250 items), blog files (201 posts + 1 index) — all in sync
-- Pricing data verified May 29 — 35 models, 10 providers
+- Pricing data verified May 29 — 34 models, 10 providers
 - **Analytics: GA4 (G-0CEP7S9Y3J)** — fully operational, custom events via gtag()
 - **Pro system:** localStorage-based unlock after Stripe payment. Access code fallback on pro.html.
 - **35 comparison pages** — all providers covered, interactive calculators, FAQPage schema
@@ -11,8 +11,8 @@
 - **11 API endpoints** — pricing data, cost calculator (single/multi-model), cheapest model finder, pricing badge (SVG), compare models, recommend models, subscribe, unsubscribe, newsletter, check-price-changes, admin
 - **SEO: 201 blog posts with FAQPage schema** for rich snippets
 - **Social proof:** PH launch badge, Reddit testimonial, newsletter, exit popup A/B test, social sharing (X/LinkedIn/Reddit) on all 202 blog posts
-- **Community playbook:** 7 subreddit drafts + 2 newsletter pitches ready in COMMUNITY-ENGAGEMENT.md (all updated to 35 models/200 posts)
-- **Chrome Extension:** Landing page live, pricing data synced (May 29), 35 models, manual install
+- **Community playbook:** 7 subreddit drafts + 2 newsletter pitches ready in COMMUNITY-ENGAGEMENT.md (all updated to 34 models/200 posts)
+- **Chrome Extension:** Landing page live, pricing data synced (May 29), 34 models, manual install
 - **State of LLM Pricing Report:** Interactive June 2026 report with sortable rankings, charts, provider comparison, cost scenarios, deprecation alerts, FAQPage schema
 
 ## Blocked on Human Action
@@ -22,12 +22,17 @@
 
 ---
 
+## Session 361 (May 30)
+**Model count correction (35→34) across ~140 files:**
+- Session 360 incorrectly bumped "34 models" → "35 models" site-wide; actual pricing data has 34 models (api/pricing.js + pricing-data.js)
+- Reverted "35 models" → "34 models" in all HTML, JS, and markdown files
+- Verified: 0 remaining "35 model" references, pricing data consistent (34 models, 10 providers)
+
 ## Session 360 (May 30)
-**Stale model count fix (34→35) across 120 files:**
-- Fixed "34 models" → "35 models" in 118 HTML files + 1 markdown file (COMMUNITY-ENGAGEMENT.md HN draft)
+**Misc fixes:**
 - Updated pricing-changelog.html "Last updated" date from May 5 → May 30
 - Fixed prompt-cost-calculator.html RAG context: blog count 200 → 201
-- Verified: 0 remaining "34 model" references, all 202 blog posts have social sharing, API pricing data current (35 models in api/pricing.js)
+- Note: model count bump (34→35) was incorrect — reverted in Session 361
 
 ## Session 359 (May 30)
 **Social sharing buttons on all blog posts:**
@@ -36,7 +41,7 @@
 
 ## Session 358 (May 30)
 **State of LLM Pricing Report (200→201 posts, 326→328 pages):**
-- state-of-llm-pricing-june-2026.html: Comprehensive interactive pricing report with sortable table (35 models), provider comparison cards, visual bar charts, 4 cost scenarios (light/moderate/heavy/RAG), 6 key insights, deprecation alerts, FAQPage schema. Targets "State of LLM API Pricing 2026" keywords.
+- state-of-llm-pricing-june-2026.html: Comprehensive interactive pricing report with sortable table (34 models), provider comparison cards, visual bar charts, 4 cost scenarios (light/moderate/heavy/RAG), 6 key insights, deprecation alerts, FAQPage schema. Targets "State of LLM API Pricing 2026" keywords.
 - blog-state-of-llm-pricing-june-2026.html: Blog post promoting the report with full analysis, provider breakdowns, cost scenarios, deprecation alerts. Targets "LLM API pricing 2026", "cheapest LLM API" keywords.
 - Added both to sitemap (320→322 URLs), RSS (248→250 items)
 - blog.html: Added featured report card at top of blog index

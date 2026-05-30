@@ -21,7 +21,7 @@
 - Publish apipulse package to npm (npm-package/ is ready, needs npm account)
 
 ### New Routine Tasks (add to cheap sessions)
-- Update State of LLM Pricing Report monthly (verify all 35 model prices, update charts/scenarios)
+- Update State of LLM Pricing Report monthly (verify all 34 model prices, update charts/scenarios)
 - ~~Add "Share this report" social sharing buttons to state-of-llm-pricing-june-2026.html~~ ✅ Session 359
 - Create monthly pricing changelog entry when providers update prices
 - Update report with new models as they launch (track provider announcements)
