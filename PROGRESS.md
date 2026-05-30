@@ -25,8 +25,10 @@
 ## Session 363 (May 30)
 **Fix remaining '35 models' references + stale counts:**
 - Fixed "35 Models" → "34 Models" in 7 locations missed by Session 361: cost-per-request.html, mcp-cost-calculator.html, ai-api-tco-calculator.html, blog.html, blog-state-of-llm-pricing-june-2026.html (title, schema headline, H1)
+- Fixed "35 models" in encoded social share URLs on both report pages (Twitter, LinkedIn, Reddit)
 - Updated blog post count 201 → 202 in pricing.html and prompt-cost-calculator.html (RAG context)
 - Corrected sitemap count (322→324 URLs) and RSS count (250→251 items) in PROGRESS.md
+- Verified: 0 remaining "35 model" references across all HTML files
 
 ## Session 362 (May 30)
 **Cleanup session — no autonomous tasks available:**
