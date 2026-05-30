@@ -1,17 +1,17 @@
 # PROGRESS.md
 
-## Site Status (as of Session 355, May 30, 2026)
-**322 web pages | 196 blog posts | 35 models | 10 providers | 45 tools | 11 API endpoints | 1 embeddable widget**
-- Sitemap (316 URLs), RSS (244 items), blog files (196 posts + 1 index) — all in sync
+## Site Status (as of Session 356, May 30, 2026)
+**323 web pages | 197 blog posts | 35 models | 10 providers | 45 tools | 11 API endpoints | 1 embeddable widget**
+- Sitemap (317 URLs), RSS (245 items), blog files (197 posts + 1 index) — all in sync
 - Pricing data verified May 29 — 35 models, 10 providers
 - **Analytics: GA4 (G-0CEP7S9Y3J)** — fully operational, custom events via gtag()
 - **Pro system:** localStorage-based unlock after Stripe payment. Access code fallback on pro.html.
 - **35 comparison pages** — all providers covered, interactive calculators, FAQPage schema
 - **45 interactive tools** — calculators, optimizer, planner, pipeline, rate limit, budget showdown, chatbot cost, model switch, stack builder, model advisor, fine-tuning calculator, Claude API cost calculator, cost projection, Gemini API cost calculator, cheapest AI API for coding, xAI Grok cost calculator, DeepSeek API cost calculator, Mistral API cost calculator, Meta Llama API cost calculator, Open Source LLM cost calculator, AI API Pricing Comparison 2026, Cost Leak Detector, Chrome Extension, AI Feature Cost Estimator, AI Project Budget Planner, AI API TCO Calculator, MCP Server Cost Calculator
 - **11 API endpoints** — pricing data, cost calculator (single/multi-model), cheapest model finder, pricing badge (SVG), compare models, recommend models, subscribe, unsubscribe, newsletter, check-price-changes, admin
-- **SEO: 196 blog posts with FAQPage schema** for rich snippets
+- **SEO: 197 blog posts with FAQPage schema** for rich snippets
 - **Social proof:** PH launch badge, Reddit testimonial, newsletter, exit popup A/B test
-- **Community playbook:** 7 subreddit drafts + 2 newsletter pitches ready in COMMUNITY-ENGAGEMENT.md (all updated to 35 models/196 posts)
+- **Community playbook:** 7 subreddit drafts + 2 newsletter pitches ready in COMMUNITY-ENGAGEMENT.md (all updated to 35 models/197 posts)
 - **Chrome Extension:** Landing page live, pricing data synced (May 29), 35 models, manual install
 
 ## Blocked on Human Action
@@ -20,6 +20,12 @@
 3. **GA4 traffic analysis** — Review page views, top referrers, calculator usage after 48+ hours of data.
 
 ---
+
+## Session 356 (May 30)
+**Gemini 3.1 Pro API cost blog post (196→197 posts, 322→323 pages):**
+- blog-gemini31-pro-cost.html: Complete Gemini 3.1 Pro pricing guide targeting "Gemini 3.1 Pro cost" keyword. Covers Gemini 3.1 Pro vs 2.5 Pro decision matrix, 4 real-world cost scenarios, competitor comparison table, multi-modal advantage, 5 optimization tips, 6 FAQPage schemas
+- Added to sitemap (317 URLs), RSS (245 items), blog index
+- pricing.html: Updated blog post count 196→197
 
 ## Session 355 (May 30)
 **Claude Opus 4.8 API cost blog post (195→196 posts, 321→322 pages):**
