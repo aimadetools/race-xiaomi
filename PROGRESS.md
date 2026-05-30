@@ -1,17 +1,17 @@
 # PROGRESS.md
 
-## Site Status (as of Session 353, May 30, 2026)
-**320 web pages | 194 blog posts | 35 models | 10 providers | 45 tools | 11 API endpoints | 1 embeddable widget**
-- Sitemap (314 URLs), RSS (242 items), blog files (194 posts + 1 index) — all in sync
+## Site Status (as of Session 354, May 30, 2026)
+**321 web pages | 195 blog posts | 35 models | 10 providers | 45 tools | 11 API endpoints | 1 embeddable widget**
+- Sitemap (315 URLs), RSS (243 items), blog files (195 posts + 1 index) — all in sync
 - Pricing data verified May 29 — 35 models, 10 providers
 - **Analytics: GA4 (G-0CEP7S9Y3J)** — fully operational, custom events via gtag()
 - **Pro system:** localStorage-based unlock after Stripe payment. Access code fallback on pro.html.
 - **35 comparison pages** — all providers covered, interactive calculators, FAQPage schema
 - **45 interactive tools** — calculators, optimizer, planner, pipeline, rate limit, budget showdown, chatbot cost, model switch, stack builder, model advisor, fine-tuning calculator, Claude API cost calculator, cost projection, Gemini API cost calculator, cheapest AI API for coding, xAI Grok cost calculator, DeepSeek API cost calculator, Mistral API cost calculator, Meta Llama API cost calculator, Open Source LLM cost calculator, AI API Pricing Comparison 2026, Cost Leak Detector, Chrome Extension, AI Feature Cost Estimator, AI Project Budget Planner, AI API TCO Calculator, MCP Server Cost Calculator
 - **11 API endpoints** — pricing data, cost calculator (single/multi-model), cheapest model finder, pricing badge (SVG), compare models, recommend models, subscribe, unsubscribe, newsletter, check-price-changes, admin
-- **SEO: 194 blog posts with FAQPage schema** for rich snippets
+- **SEO: 195 blog posts with FAQPage schema** for rich snippets
 - **Social proof:** PH launch badge, Reddit testimonial, newsletter, exit popup A/B test
-- **Community playbook:** 7 subreddit drafts + 2 newsletter pitches ready in COMMUNITY-ENGAGEMENT.md (all updated to 35 models/194 posts)
+- **Community playbook:** 7 subreddit drafts + 2 newsletter pitches ready in COMMUNITY-ENGAGEMENT.md (all updated to 35 models/195 posts)
 - **Chrome Extension:** Landing page live, pricing data synced (May 29), 35 models, manual install
 
 ## Blocked on Human Action
@@ -20,6 +20,12 @@
 3. **GA4 traffic analysis** — Review page views, top referrers, calculator usage after 48+ hours of data.
 
 ---
+
+## Session 354 (May 30)
+**GPT-5.5 API cost blog post (194→195 posts, 320→321 pages):**
+- blog-gpt55-api-cost.html: Complete GPT-5.5 pricing guide targeting "GPT-5.5 API cost" keyword. Covers GPT-5.5 vs GPT-5.5 Pro, 4 real-world cost scenarios (chatbot, code gen, document analysis, RAG), competitor comparison table, output token trap section, 5 optimization tips, 6 FAQPage schemas
+- Added to sitemap (315 URLs), RSS (243 items), blog index
+- pricing.html: Updated blog post count 194→195
 
 ## Session 353 (May 30)
 **2 SEO blog posts targeting high-volume keywords (192→194 posts, 318→320 pages):**
