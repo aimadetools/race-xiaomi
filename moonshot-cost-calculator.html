@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moonshot API Cost Calculator — Kimi K2.6 Pricing | APIpulse</title>
+    <meta name="description" content="Free Moonshot API cost calculator. Estimate your spend on Kimi K2.6. See cost per request, per 1K requests, and monthly totals.">
+    <meta name="keywords" content="Moonshot API cost, Kimi K2.6 pricing, Moonshot API calculator 2026, Kimi API cost, Moonshot pricing guide">
+    <meta property="og:title" content="Moonshot API Cost Calculator — Kimi K2.6 Pricing | APIpulse">
+    <meta property="og:description" content="Free Moonshot API cost calculator. Estimate spend on Kimi K2.6 ($0.90/$3.75 per 1M tokens).">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://getapipulse.com/og-image.png">
+    <meta property="og:url" content="https://getapipulse.com/moonshot-cost-calculator.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Moonshot API Cost Calculator — Kimi K2.6 Pricing">
+    <meta name="twitter:image" content="https://getapipulse.com/og-image.png">
+    <meta name="twitter:description" content="Free Moonshot API cost calculator. Estimate spend on Kimi K2.6.">
+    <link rel="canonical" href="https://getapipulse.com/moonshot-cost-calculator.html">
+    <link rel="alternate" type="application/rss+xml" title="APIpulse Blog" href="https://getapipulse.com/rss.xml">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="styles.css">
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0CEP7S9Y3J"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-0CEP7S9Y3J');
+    </script>
+    <script src="analytics.js" defer></script>
+    <script src="dynamic-date.js" defer></script>
+    <script src="shared.js" defer></script>
+    <script src="pricing-data.js" defer></script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "APIpulse Moonshot API Cost Calculator",
+        "url": "https://getapipulse.com/moonshot-cost-calculator.html",
+        "description": "Free Moonshot API cost calculator. Estimate spend on Kimi K2.6.",
+        "applicationCategory": "DeveloperApplication",
+        "operatingSystem": "Web",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "How much does the Moonshot API cost?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Moonshot API pricing: Kimi K2.6 costs $0.90/$3.75 per 1M tokens (input/output). Kimi K2.6 offers a 256K context window and is optimized for long-context reasoning, document analysis, and multi-turn conversations."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Is Moonshot cheaper than GPT-5?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes, significantly. Kimi K2.6 ($0.90/$3.75 per 1M tokens) is 28% cheaper than GPT-5 ($1.25/$10.00) for input tokens and 63% cheaper for output tokens. It offers strong long-context performance at a competitive price point."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How much does Moonshot cost per month?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Monthly Moonshot costs depend on usage: 100 requests/day (~3K/mo) costs ~$15/month. 1,000 requests/day (~30K/mo) costs ~$150/month. At 10,000 requests/day, costs are ~$1,500/month. Kimi K2.6 is most cost-effective for long-context workloads."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What is Kimi K2.6 used for?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Kimi K2.6 ($0.90/$3.75 per 1M tokens) excels at long-context reasoning with a 256K context window. It's ideal for document analysis, book-length summarization, multi-turn conversations, and tasks requiring extensive context. Popular for research, legal, and enterprise use cases."
+                }
+            }
+        ]
+    }
+    </script>
+    <style>
+        .calc-hero {
+            padding: 120px 24px 40px; text-align: center; max-width: 700px; margin: 0 auto;
+        }
+        .calc-hero h1 { font-size: clamp(28px, 4vw, 42px); font-weight: 800; margin-bottom: 12px; }
+        .calc-hero p { color: var(--text-secondary); font-size: 17px; line-height: 1.6; }
+
+        .calculator-section { padding: 0 24px 60px; }
+        .section-header { text-align: center; margin-bottom: 32px; }
+        .section-header h2 { font-size: 24px; font-weight: 700; margin-bottom: 8px; }
+        .section-header p { color: var(--text-secondary); font-size: 15px; }
+
+        .calculator {
+            background: var(--bg-card); border: 1px solid var(--border);
+            border-radius: 16px; padding: 32px; max-width: 900px; margin: 0 auto;
+        }
+        .presets {
+            display: flex; gap: 8px; margin-bottom: 24px; flex-wrap: wrap; align-items: center;
+        }
+        .preset-btn {
+            background: var(--bg-secondary); border: 1px solid var(--border);
+            color: var(--text-secondary); padding: 8px 16px; border-radius: 8px;
+            cursor: pointer; font-size: 13px; transition: all 0.2s; font-weight: 500;
+        }
+        .preset-btn:hover { border-color: var(--accent); color: var(--accent); }
+        .preset-btn.active-preset { background: var(--accent); color: white; border-color: var(--accent); }
+        .calc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
+        .calc-inputs { display: flex; flex-direction: column; gap: 16px; }
+        .input-group { display: flex; flex-direction: column; gap: 6px; }
+        .input-group label { font-size: 13px; font-weight: 600; color: var(--text-secondary); }
+        .input-group select, .input-group input {
+            padding: 12px 16px; border-radius: 8px; border: 1px solid var(--border);
+            background: var(--bg-secondary); color: var(--text-primary); font-size: 15px;
+            font-family: inherit;
+        }
+        .input-group select:focus, .input-group input:focus {
+            outline: 2px solid var(--accent); outline-offset: 2px; border-color: var(--accent);
+        }
+        .hint { font-size: 12px; color: var(--text-muted); }
+        .calc-results {
+            background: var(--bg-secondary); border: 1px solid var(--border);
+            border-radius: 12px; padding: 24px;
+        }
+        .result-item {
+            display: flex; justify-content: space-between; padding: 10px 0;
+            border-bottom: 1px solid var(--border); font-size: 14px;
+        }
+        .result-item:last-child { border-bottom: none; }
+        .result-label { color: var(--text-secondary); }
+        .result-value { color: var(--text-primary); font-weight: 600; font-variant-numeric: tabular-nums; }
+        .result-total {
+            display: flex; justify-content: space-between; padding: 14px 0 10px;
+            border-top: 2px solid var(--accent); margin-top: 8px; font-size: 18px;
+        }
+        .result-total .result-label { color: var(--text-primary); font-weight: 700; }
+        .result-total .result-value { color: var(--accent); font-weight: 800; }
+
+        .alternatives-section {
+            max-width: 900px; margin: 0 auto; padding: 40px 24px 60px;
+        }
+        .alternatives-section h2 { font-size: 24px; font-weight: 700; margin-bottom: 16px; text-align: center; }
+        .alt-table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+        .alt-table th { text-align: left; padding: 12px 16px; font-size: 12px; font-weight: 700; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px; border-bottom: 2px solid var(--border); }
+        .alt-table td { padding: 12px 16px; border-bottom: 1px solid rgba(42,42,62,0.5); font-size: 14px; }
+        .alt-table tr:hover td { background: rgba(99,102,241,0.03); }
+        .alt-table .savings { color: var(--green); font-weight: 700; }
+
+        .info-section {
+            max-width: 700px; margin: 0 auto; padding: 0 24px 60px;
+        }
+        .info-section h2 { font-size: 22px; font-weight: 700; margin-bottom: 16px; }
+        .info-section p { color: var(--text-secondary); line-height: 1.7; margin-bottom: 16px; }
+        .info-section ul { color: var(--text-secondary); padding-left: 24px; margin-bottom: 16px; }
+        .info-section li { margin-bottom: 8px; line-height: 1.6; }
+        .info-section strong { color: var(--text-primary); }
+
+        .cta-inline {
+            background: var(--bg-secondary); border: 1px solid var(--accent);
+            border-radius: 12px; padding: 24px; margin: 32px 0; text-align: center;
+        }
+        .cta-inline p { margin-bottom: 12px; color: var(--text-secondary); }
+
+        .share-row { display: flex; gap: 8px; margin-top: 16px; }
+        .share-btn {
+            flex: 1; display: flex; align-items: center; justify-content: center; gap: 6px;
+            padding: 10px 12px; border-radius: 8px; border: 1px solid var(--border);
+            background: var(--bg-secondary); color: var(--text-primary);
+            font-size: 13px; font-weight: 600; text-decoration: none; transition: all 0.2s; cursor: pointer;
+        }
+        .share-btn:hover { border-color: var(--accent); }
+
+        @media (max-width: 768px) {
+            .calc-hero { padding: 100px 20px 30px; }
+            .calc-hero h1 { font-size: 26px; }
+            .calculator-section { padding: 0 20px 40px; }
+            .calculator { padding: 20px; }
+            .calc-grid { grid-template-columns: 1fr; gap: 24px; }
+            .presets { justify-content: center; }
+        }
+        @media print {
+            nav, .theme-toggle, .back-to-top, .presets { display: none !important; }
+            body { background: white; color: black; }
+            .calculator { border: 1px solid #ccc; }
+        }
+    </style>
+    <meta name="theme-color" content="#6366f1">
+    <link rel="preconnect" href="https://getapipulse.com">
+</head>
+<body>
+    <a href="#main" class="skip-link">Skip to content</a>
+    <nav>
+        <div class="nav-inner">
+            <a href="index.html" class="logo">API<span>pulse</span></a>
+            <button class="hamburger" onclick="toggleMobileNav()" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+            <div class="nav-links">
+                <a href="calculator.html">Calculator</a>
+                <a href="compare.html">Compare</a>
+                <a href="cost-explorer.html">Explorer</a>
+                <a href="agent-cost-calculator.html">Agents</a>
+                <a href="cost-scenarios.html">Scenarios</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="use-cases.html">Use Cases</a>
+                <a href="about.html">About</a>
+                <a href="blog.html">Blog</a>
+                <a href="tools.html">Tools</a>
+                <a href="pricing-index.html">Pricing Index</a>
+                <a href="model-matrix.html">Model Matrix</a>
+                <a href="api-docs.html" style="color:var(--accent);">API</a>
+                <a href="pricing.html" class="nav-cta" onclick="if(window.trackEvent)window.trackEvent('pro_button_clicked',{source:'nav'})">Get Pro — $29</a>
+                <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
+            </div>
+        </div>
+    </nav>
+
+    <main id="main">
+    <div class="calc-hero">
+        <h1>Moonshot API Cost Calculator</h1>
+        <p>Estimate your Moonshot spend on Kimi K2.6. See cost per request, per 1K requests, and monthly totals. Optimized for long-context reasoning with a 256K context window.</p>
+    </div>
+
+    <section class="calculator-section">
+        <div class="calculator" role="form" aria-label="Moonshot API Cost Calculator">
+            <div class="presets">
+                <span style="font-size:13px;color:var(--text-muted);align-self:center;">Typical request:</span>
+                <button class="preset-btn" onclick="applyPreset('long-context')">Long document</button>
+                <button class="preset-btn" onclick="applyPreset('chat')">Chat message</button>
+                <button class="preset-btn" onclick="applyPreset('analysis')">Data analysis</button>
+                <button class="preset-btn" onclick="applyPreset('summarization')">Summarization</button>
+            </div>
+            <div class="presets">
+                <span style="font-size:13px;color:var(--text-muted);align-self:center;">By volume:</span>
+                <button class="preset-btn" onclick="applyPreset('hobby')">Hobby (100/day)</button>
+                <button class="preset-btn" onclick="applyPreset('startup')">Startup (1K/day)</button>
+                <button class="preset-btn" onclick="applyPreset('scaleup')">Scale-up (10K/day)</button>
+            </div>
+            <div class="calc-grid">
+                <div class="calc-inputs">
+                    <div class="input-group">
+                        <label for="input-tokens">Input tokens per request</label>
+                        <input type="number" id="input-tokens" value="5000" min="0" step="100" onchange="calculate()" oninput="calculate()">
+                    </div>
+                    <div class="input-group">
+                        <label for="output-tokens">Output tokens per request</label>
+                        <input type="number" id="output-tokens" value="800" min="0" step="100" onchange="calculate()" oninput="calculate()">
+                    </div>
+                    <div class="input-group">
+                        <label for="requests-day">Requests per day</label>
+                        <input type="number" id="requests-day" value="1000" min="0" step="100" onchange="calculate()" oninput="calculate()">
+                    </div>
+                </div>
+                <div class="calc-results" role="region" aria-label="Cost results" aria-live="polite">
+                    <h3 style="margin-bottom: 16px; font-size: 16px;">Cost Estimate</h3>
+                    <div class="result-item">
+                        <span class="result-label">Input cost per request</span>
+                        <span class="result-value" id="input-cost-req">$0.0000</span>
+                    </div>
+                    <div class="result-item">
+                        <span class="result-label">Output cost per request</span>
+                        <span class="result-value" id="output-cost-req">$0.0000</span>
+                    </div>
+                    <div class="result-item" style="background:var(--accent-glow);margin:-4px -8px 8px;padding:10px 8px;border-radius:8px;border:1px solid rgba(99,102,241,0.2);">
+                        <span class="result-label" style="font-weight:600;color:var(--text-primary);">Total cost per request</span>
+                        <span class="result-value" id="total-cost-req" style="color:var(--accent);font-size:16px;">$0.0000</span>
+                    </div>
+                    <div class="result-item">
+                        <span class="result-label">Cost per 1,000 requests</span>
+                        <span class="result-value" id="cost-per-1k">$0.00</span>
+                    </div>
+                    <div class="result-item">
+                        <span class="result-label">Daily cost</span>
+                        <span class="result-value" id="daily-cost">$0.00</span>
+                    </div>
+                    <div class="result-total">
+                        <span class="result-label">Monthly cost</span>
+                        <span class="result-value" id="monthly-cost">$0.00</span>
+                    </div>
+                    <div class="result-item">
+                        <span class="result-label">Annual cost</span>
+                        <span class="result-value" id="annual-cost">$0.00</span>
+                    </div>
+                    <div class="share-row">
+                        <button class="share-btn" onclick="copyResults()"><span id="copy-btn-text">Copy Results</span></button>
+                        <a id="share-x" href="#" target="_blank" rel="noopener" class="share-btn">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                            X
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cheaper Alternatives -->
+    <section class="alternatives-section">
+        <h2>Cheaper Alternatives from Other Providers</h2>
+        <p>These models from other providers offer similar capabilities at lower prices:</p>
+        <div style="overflow-x:auto;">
+            <table class="alt-table">
+                <thead>
+                    <tr>
+                        <th>Model</th>
+                        <th>Provider</th>
+                        <th>Input/1M</th>
+                        <th>Output/1M</th>
+                        <th>Your Cost/Req</th>
+                        <th>Savings vs Selected</th>
+                    </tr>
+                </thead>
+                <tbody id="alternatives-tbody"></tbody>
+            </table>
+        </div>
+    </section>
+
+    <div class="info-section">
+        <h2>Moonshot API Pricing Explained</h2>
+        <p>Moonshot AI offers <strong>Kimi K2.6 ($0.90/$3.75 per 1M tokens)</strong>, a model optimized for long-context reasoning with a 256K context window. Kimi excels at document analysis, multi-turn conversations, and tasks requiring extensive context — making it ideal for research, legal, and enterprise applications.</p>
+
+        <h2>When to Use Kimi K2.6</h2>
+        <ul>
+            <li><strong>Document analysis:</strong> Process entire books, legal contracts, or research papers in a single request. The 256K context window handles documents that would require chunking with other models.</li>
+            <li><strong>Long-context reasoning:</strong> Tasks that require understanding relationships across distant parts of a document. Kimi's architecture is specifically optimized for this.</li>
+            <li><strong>Multi-turn conversations:</strong> Maintain extensive conversation history without losing context. Ideal for complex customer support and research assistants.</li>
+            <li><strong>Summarization:</strong> Condense long documents, reports, or transcripts into concise summaries with accurate coverage.</li>
+        </ul>
+
+        <h2>Moonshot vs Competitors</h2>
+        <p>Moonshot's biggest advantage is <strong>long-context performance at a competitive price</strong>. Kimi K2.6 ($0.90/$3.75) is 28% cheaper than GPT-5 for input tokens while offering a 256K context window. For long-document workloads, Kimi often delivers better cost-per-quality than models with smaller context windows that require chunking.</p>
+
+        <h2>How to Reduce Your Moonshot API Costs</h2>
+        <ul>
+            <li><strong>Leverage the 256K context window:</strong> Include all relevant context in a single request instead of making multiple smaller calls. This reduces per-request overhead.</li>
+            <li><strong>Batch documents:</strong> Process multiple documents in a single prompt to maximize the context window efficiency.</li>
+            <li><strong>Set token limits:</strong> Control output length with max_tokens to avoid surprise costs on verbose responses.</li>
+            <li><strong>Use for right workloads:</strong> Kimi is most cost-effective for long-context tasks. For short queries, consider cheaper alternatives like DeepSeek V4 Flash.</li>
+        </ul>
+
+        <h2>Moonshot Free Tier</h2>
+        <p>Moonshot offers <strong>free API credits for new accounts</strong>. This is enough for prototyping and evaluation. Production usage requires a paid plan with competitive per-token pricing.</p>
+
+        <h2>Related Tools</h2>
+        <ul>
+            <li><a href="gpt5-api-cost-calculator.html">GPT-5 API Cost Calculator</a> — Compare OpenAI pricing</li>
+            <li><a href="claude-api-cost-calculator.html">Claude API Cost Calculator</a> — Compare Anthropic pricing</li>
+            <li><a href="deepseek-api-cost-calculator.html">DeepSeek API Cost Calculator</a> — Compare DeepSeek pricing</li>
+            <li><a href="blog-kimi-k26-pricing.html">Kimi K2.6 Pricing Guide</a> — Full pricing breakdown</li>
+            <li><a href="compare.html">Compare All Models</a> — See all provider comparisons</li>
+        </ul>
+
+        <div class="cta-inline">
+            <p><strong>Want to compare Moonshot with other providers?</strong></p>
+            <a href="compare.html" class="btn-primary" style="display:inline-block;">Compare All Models →</a>
+        </div>
+    </div>
+
+    <button class="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">↑</button>
+
+    </main>
+
+    <footer>
+        <p>Pricing data last verified: <span class="verified-date"></span></p>
+        <p>&copy; 2026 APIpulse. <a href="index.html">Home</a> &middot; <a href="use-cases.html">Use Cases</a> &middot; <a href="about.html">About</a> &middot; <a href="blog.html">Blog</a>
+<a href="pricing-index.html">Pricing Index</a> &middot; <a href="model-matrix.html">Model Matrix</a> &middot; <a href="cost-scenarios.html">Scenarios</a> &middot; <a href="price-alerts.html">Price Alerts</a> &middot; <a href="pricing-changelog.html">Changelog</a> &middot; <a href="openai.html">OpenAI</a> &middot; <a href="anthropic.html">Anthropic</a> &middot; <a href="google.html">Google</a> &middot; <a href="mistral.html">Mistral</a> &middot; <a href="cohere.html">Cohere</a> &middot; <a href="deepseek.html">DeepSeek</a> &middot; <a href="xai.html">xAI</a> &middot; <a href="moonshot.html">Moonshot</a> &middot; <a href="together.html">Together.ai</a> &middot; <a href="ai21.html">AI21</a> &middot; <a href="pricing.html">Pricing</a> &middot; <a href="compare-plans.html">Free vs Pro</a> &middot; <a href="embed.html">Embed Widget</a> &middot; <a href="cheat-sheet.html">Cheat Sheet</a> &middot; <a href="model-switch.html">Model Switch</a> &middot; <a href="api-docs.html">API</a> &middot; <a href="https://x.com/getapipulse" target="_blank" rel="noopener">Twitter</a> &middot; <a href="unsubscribe.html">Unsubscribe</a></p>
+    </footer>
+
+    <script>
+        function calculate() {
+            var model = API_MODELS.find(function(m) { return m.id === 'kimi-k26'; });
+            if (!model) return;
+
+            var inputTokens = parseInt(document.getElementById('input-tokens').value) || 0;
+            var outputTokens = parseInt(document.getElementById('output-tokens').value) || 0;
+            var requestsDay = parseInt(document.getElementById('requests-day').value) || 0;
+
+            var inputCostReq = (inputTokens * model.input) / 1000000;
+            var outputCostReq = (outputTokens * model.output) / 1000000;
+            var totalCostReq = inputCostReq + outputCostReq;
+            var costPer1k = totalCostReq * 1000;
+            var dailyCost = totalCostReq * requestsDay;
+            var monthlyCost = dailyCost * 30;
+            var annualCost = dailyCost * 365;
+
+            document.getElementById('input-cost-req').textContent = '$' + inputCostReq.toFixed(6);
+            document.getElementById('output-cost-req').textContent = '$' + outputCostReq.toFixed(6);
+            document.getElementById('total-cost-req').textContent = '$' + totalCostReq.toFixed(6);
+            document.getElementById('cost-per-1k').textContent = '$' + costPer1k.toFixed(4);
+            document.getElementById('daily-cost').textContent = '$' + dailyCost.toFixed(2);
+            document.getElementById('monthly-cost').textContent = '$' + monthlyCost.toFixed(2);
+            document.getElementById('annual-cost').textContent = '$' + annualCost.toFixed(2);
+
+            // Cheaper alternatives
+            var currentCost = totalCostReq;
+            var alternatives = API_MODELS.filter(function(m) {
+                var cost = (inputTokens * m.input + outputTokens * m.output) / 1000000;
+                return cost < currentCost && m.providerSlug !== 'moonshot';
+            }).sort(function(a, b) {
+                var costA = (inputTokens * a.input + outputTokens * a.output) / 1000000;
+                var costB = (inputTokens * b.input + outputTokens * b.output) / 1000000;
+                return costA - costB;
+            }).slice(0, 8);
+
+            var tbody = document.getElementById('alternatives-tbody');
+            var altHtml = '';
+            alternatives.forEach(function(m) {
+                var cost = (inputTokens * m.input + outputTokens * m.output) / 1000000;
+                var savings = ((currentCost - cost) / currentCost * 100).toFixed(0);
+                altHtml += '<tr>' +
+                    '<td style="font-weight:600;">' + m.name + '</td>' +
+                    '<td>' + m.provider + '</td>' +
+                    '<td>$' + m.input.toFixed(2) + '</td>' +
+                    '<td>$' + m.output.toFixed(2) + '</td>' +
+                    '<td style="font-weight:600;">$' + cost.toFixed(6) + '</td>' +
+                    '<td class="savings">-' + savings + '%</td>' +
+                '</tr>';
+            });
+            tbody.innerHTML = altHtml || '<tr><td colspan="6" style="text-align:center;color:var(--text-muted);padding:20px;">No cheaper alternatives found for this model.</td></tr>';
+
+            // Share
+            var shareText = 'My Moonshot API cost estimate: $' + monthlyCost.toFixed(2) + '/mo for ' + requestsDay + ' requests/day. Calculated with @getapipulse';
+            document.getElementById('share-x').href = 'https://twitter.com/intent/tweet?text=' + encodeURIComponent(shareText) + '&url=' + encodeURIComponent('https://getapipulse.com/moonshot-cost-calculator.html');
+        }
+
+        function applyPreset(type) {
+            document.querySelectorAll('.preset-btn').forEach(function(b) { b.classList.remove('active-preset'); });
+            event.target.classList.add('active-preset');
+            var presets = {
+                'long-context': { input: 10000, output: 1500 },
+                chat:           { input: 800, output: 250 },
+                analysis:       { input: 5000, output: 800 },
+                summarization:  { input: 8000, output: 600 },
+                hobby:          { input: 3000, output: 500, requests: 100 },
+                startup:        { input: 5000, output: 800, requests: 1000 },
+                scaleup:        { input: 5000, output: 800, requests: 10000 }
+            };
+            var p = presets[type];
+            if (p.input) document.getElementById('input-tokens').value = p.input;
+            if (p.output) document.getElementById('output-tokens').value = p.output;
+            if (p.requests) document.getElementById('requests-day').value = p.requests;
+            calculate();
+            if (window.trackEvent) window.trackEvent('preset_applied', { preset: type, tool: 'moonshot_cost_calculator' });
+        }
+
+        function copyResults() {
+            var text = 'Moonshot API Cost Estimate — APIpulse\n' +
+                'Model: Kimi K2.6\n' +
+                'Cost per request: ' + document.getElementById('total-cost-req').textContent + '\n' +
+                'Monthly cost: ' + document.getElementById('monthly-cost').textContent + '\n' +
+                'Calculated at https://getapipulse.com/moonshot-cost-calculator.html';
+            navigator.clipboard.writeText(text).then(function() {
+                document.getElementById('copy-btn-text').textContent = 'Copied!';
+                setTimeout(function() { document.getElementById('copy-btn-text').textContent = 'Copy Results'; }, 2000);
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            calculate();
+        });
+    </script>
+</body>
+</html>
