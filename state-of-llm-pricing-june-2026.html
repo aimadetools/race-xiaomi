@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>State of LLM API Pricing — June 2026 | APIpulse</title>
+    <meta name="description" content="Comprehensive analysis of LLM API pricing across 10 providers and 35 models. Compare costs, find the cheapest models, and optimize your AI API spending.">
+    <meta property="og:title" content="State of LLM API Pricing — June 2026">
+    <meta property="og:description" content="35 models, 10 providers, one report. The definitive guide to LLM API costs in 2026.">
+    <meta property="og:type" content="article">
+    <meta property="og:image" content="https://getapipulse.com/og-image.png">
+    <meta property="og:url" content="https://getapipulse.com/state-of-llm-pricing-june-2026.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="State of LLM API Pricing — June 2026">
+    <meta name="twitter:description" content="35 models, 10 providers, one report. The definitive guide to LLM API costs in 2026.">
+    <meta name="twitter:image" content="https://getapipulse.com/og-image.png">
+    <meta name="keywords" content="LLM API pricing 2026, AI API costs, GPT-5 pricing, Claude pricing, Gemini pricing, cheapest LLM API, AI cost comparison">
+    <link rel="canonical" href="https://getapipulse.com/state-of-llm-pricing-june-2026.html">
+    <link rel="alternate" type="application/rss+xml" title="APIpulse Blog" href="https://getapipulse.com/rss.xml">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="styles.css">
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0CEP7S9Y3J"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-0CEP7S9Y3J');
+    </script>
+    <script src="analytics.js" defer></script>
+    <script src="pricing-data.js" defer></script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Report",
+        "name": "State of LLM API Pricing — June 2026",
+        "description": "Comprehensive analysis of LLM API pricing across 10 providers and 35 models.",
+        "datePublished": "2026-06-01",
+        "publisher": { "@type": "Organization", "name": "APIpulse" },
+        "url": "https://getapipulse.com/state-of-llm-pricing-june-2026.html"
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "What is the cheapest LLM API in June 2026?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Gemini 2.0 Flash Lite is the cheapest at $0.075/$0.30 per million input/output tokens. For open-source models, Llama 3.1 8B via Together.ai costs $0.10/$0.10 per million tokens."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How much does GPT-5 cost?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "GPT-5 costs $1.25 per million input tokens and $10.00 per million output tokens. GPT-5 mini is much cheaper at $0.25/$2.00 per million tokens."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How much does Claude cost?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Claude Sonnet 4.6 costs $3.00/$15.00 per million input/output tokens. Claude Haiku 4.5 costs $1.00/$5.00. Claude Opus 4.8 costs $5.00/$25.00."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Which LLM provider is cheapest overall?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "DeepSeek and Google offer the cheapest models. DeepSeek V4 Flash costs $0.14/$0.28, and Gemini 2.0 Flash costs $0.10/$0.40 per million tokens. For premium models, DeepSeek V4 Pro at $0.44/$0.87 is dramatically cheaper than GPT-5 or Claude."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How much does 1 million tokens cost?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "It ranges from $0.10 (Gemini Flash) to $180 (GPT-5.5 Pro output) per million tokens. Most mid-tier models cost $1-3 for input and $8-15 for output per million tokens."
+                }
+            }
+        ]
+    }
+    </script>
+    <style>
+        .report-header {
+            text-align: center; padding: 120px 24px 48px;
+            max-width: 900px; margin: 0 auto;
+        }
+        .report-header .label {
+            display: inline-block; background: var(--accent-glow); color: var(--accent);
+            padding: 6px 16px; border-radius: 100px; font-size: 13px; font-weight: 600;
+            text-transform: uppercase; letter-spacing: 1px; margin-bottom: 16px;
+            border: 1px solid rgba(99,102,241,0.3);
+        }
+        .report-header h1 {
+            font-size: 44px; font-weight: 800; line-height: 1.15; margin-bottom: 16px;
+            background: linear-gradient(135deg, var(--text-primary), var(--accent));
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .report-header .meta {
+            color: var(--text-muted); font-size: 15px; margin-bottom: 24px;
+        }
+        .report-header .summary {
+            font-size: 18px; color: var(--text-secondary); line-height: 1.7;
+            max-width: 700px; margin: 0 auto;
+        }
+
+        .report-container { max-width: 1100px; margin: 0 auto; padding: 0 24px 80px; }
+
+        /* Key Metrics Bar */
+        .metrics-bar {
+            display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px;
+            margin-bottom: 48px;
+        }
+        .metric-card {
+            background: var(--bg-secondary); border: 1px solid var(--border);
+            border-radius: 12px; padding: 24px; text-align: center;
+        }
+        .metric-card .number {
+            font-size: 32px; font-weight: 800; color: var(--accent);
+            line-height: 1;
+        }
+        .metric-card .label {
+            font-size: 13px; color: var(--text-muted); margin-top: 8px;
+            text-transform: uppercase; letter-spacing: 0.5px;
+        }
+
+        /* Section styling */
+        .report-section {
+            margin-bottom: 56px;
+        }
+        .report-section h2 {
+            font-size: 28px; font-weight: 700; margin-bottom: 8px;
+        }
+        .report-section .section-desc {
+            color: var(--text-secondary); font-size: 15px; margin-bottom: 24px;
+        }
+
+        /* Price ranking table */
+        .price-table {
+            width: 100%; border-collapse: collapse;
+            background: var(--bg-secondary); border-radius: 12px; overflow: hidden;
+            border: 1px solid var(--border);
+        }
+        .price-table th, .price-table td {
+            padding: 12px 16px; text-align: left; border-bottom: 1px solid var(--border);
+            font-size: 14px;
+        }
+        .price-table th {
+            background: var(--bg-card); font-weight: 700; font-size: 12px;
+            text-transform: uppercase; letter-spacing: 0.5px; color: var(--text-muted);
+            position: sticky; top: 64px; z-index: 10;
+        }
+        .price-table tr:last-child td { border-bottom: none; }
+        .price-table tr:hover { background: var(--bg-card-hover); }
+        .price-table .rank { color: var(--text-muted); font-weight: 600; width: 40px; text-align: center; }
+        .price-table .model-name { font-weight: 600; }
+        .price-table .provider-tag {
+            display: inline-block; padding: 2px 8px; border-radius: 6px;
+            font-size: 11px; font-weight: 600; background: var(--bg-card);
+            border: 1px solid var(--border);
+        }
+        .price-table .price { font-family: monospace; font-weight: 600; }
+        .price-table .cheapest { color: var(--green); }
+        .price-table .expensive { color: var(--red); }
+        .tier-badge {
+            display: inline-block; padding: 2px 8px; border-radius: 6px;
+            font-size: 11px; font-weight: 600;
+        }
+        .tier-premium { background: rgba(239,68,68,0.1); color: var(--red); border: 1px solid rgba(239,68,68,0.3); }
+        .tier-mid { background: rgba(245,158,11,0.1); color: var(--orange); border: 1px solid rgba(245,158,11,0.3); }
+        .tier-budget { background: rgba(34,197,94,0.1); color: var(--green); border: 1px solid rgba(34,197,94,0.3); }
+
+        /* Bar chart */
+        .bar-chart { margin-bottom: 24px; }
+        .bar-row {
+            display: flex; align-items: center; gap: 12px; margin-bottom: 8px;
+        }
+        .bar-label {
+            width: 160px; font-size: 13px; font-weight: 600; text-align: right;
+            white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+        }
+        .bar-track {
+            flex: 1; height: 28px; background: var(--bg-card); border-radius: 6px;
+            overflow: hidden; position: relative;
+        }
+        .bar-fill {
+            height: 100%; border-radius: 6px; transition: width 0.6s ease;
+            display: flex; align-items: center; padding-left: 8px;
+            font-size: 12px; font-weight: 600; color: white; min-width: fit-content;
+        }
+        .bar-value {
+            font-size: 12px; color: var(--text-muted); width: 80px; text-align: right;
+            font-family: monospace;
+        }
+
+        /* Provider comparison cards */
+        .provider-grid {
+            display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 16px;
+        }
+        .provider-card {
+            background: var(--bg-secondary); border: 1px solid var(--border);
+            border-radius: 12px; padding: 20px;
+        }
+        .provider-card h3 {
+            font-size: 16px; font-weight: 700; margin-bottom: 12px;
+            display: flex; align-items: center; gap: 8px;
+        }
+        .provider-card .model-count {
+            font-size: 11px; background: var(--bg-card); padding: 2px 8px;
+            border-radius: 6px; color: var(--text-muted); font-weight: 600;
+        }
+        .provider-card .price-range {
+            font-size: 13px; color: var(--text-secondary); margin-bottom: 8px;
+        }
+        .provider-card .cheapest-model {
+            font-size: 13px; color: var(--green); font-weight: 600;
+        }
+
+        /* Cost scenario cards */
+        .scenario-grid {
+            display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 16px;
+        }
+        .scenario-card {
+            background: var(--bg-secondary); border: 1px solid var(--border);
+            border-radius: 12px; padding: 24px;
+        }
+        .scenario-card h3 {
+            font-size: 16px; font-weight: 700; margin-bottom: 4px;
+        }
+        .scenario-card .desc {
+            font-size: 13px; color: var(--text-muted); margin-bottom: 16px;
+        }
+        .scenario-row {
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 8px 0; border-bottom: 1px solid var(--border);
+            font-size: 13px;
+        }
+        .scenario-row:last-child { border-bottom: none; }
+        .scenario-row .model { color: var(--text-secondary); }
+        .scenario-row .cost { font-family: monospace; font-weight: 600; }
+        .scenario-row .cost-low { color: var(--green); }
+        .scenario-row .cost-mid { color: var(--orange); }
+        .scenario-row .cost-high { color: var(--red); }
+
+        /* Insight cards */
+        .insights-grid {
+            display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 16px;
+        }
+        .insight-card {
+            background: var(--bg-secondary); border: 1px solid var(--border);
+            border-radius: 12px; padding: 24px;
+        }
+        .insight-card .icon { font-size: 24px; margin-bottom: 12px; }
+        .insight-card h3 { font-size: 16px; font-weight: 700; margin-bottom: 8px; }
+        .insight-card p { font-size: 14px; color: var(--text-secondary); line-height: 1.6; }
+
+        /* CTA */
+        .report-cta {
+            background: linear-gradient(135deg, rgba(99,102,241,0.15), rgba(99,102,241,0.05));
+            border: 1px solid rgba(99,102,241,0.3); border-radius: 16px;
+            padding: 40px; text-align: center; margin-top: 48px;
+        }
+        .report-cta h2 { font-size: 24px; margin-bottom: 12px; }
+        .report-cta p { color: var(--text-secondary); margin-bottom: 24px; max-width: 500px; margin-left: auto; margin-right: auto; }
+
+        /* Filter controls */
+        .filter-bar {
+            display: flex; gap: 12px; margin-bottom: 20px; flex-wrap: wrap;
+        }
+        .filter-btn {
+            background: var(--bg-card); color: var(--text-secondary); border: 1px solid var(--border);
+            padding: 6px 14px; border-radius: 8px; font-size: 13px; font-weight: 600;
+            cursor: pointer; transition: all 0.2s;
+        }
+        .filter-btn:hover { border-color: var(--accent); color: var(--text-primary); }
+        .filter-btn.active { background: var(--accent); color: white; border-color: var(--accent); }
+
+        /* Table of contents */
+        .toc {
+            background: var(--bg-secondary); border: 1px solid var(--border);
+            border-radius: 12px; padding: 24px; margin-bottom: 48px;
+        }
+        .toc h3 { font-size: 16px; font-weight: 700; margin-bottom: 16px; }
+        .toc-grid {
+            display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 8px;
+        }
+        .toc a {
+            font-size: 14px; color: var(--text-secondary); display: flex; align-items: center; gap: 8px;
+        }
+        .toc a:hover { color: var(--accent); }
+        .toc a::before { content: "→"; color: var(--accent); }
+
+        /* Deprecation notice */
+        .deprecation-notice {
+            background: rgba(239,68,68,0.08); border: 1px solid rgba(239,68,68,0.3);
+            border-radius: 8px; padding: 12px 16px; margin-bottom: 16px;
+            font-size: 13px; color: var(--red);
+        }
+
+        @media (max-width: 768px) {
+            .report-header h1 { font-size: 28px; }
+            .report-header { padding: 100px 20px 32px; }
+            .report-container { padding: 0 20px 60px; }
+            .metrics-bar { grid-template-columns: repeat(2, 1fr); }
+            .bar-label { width: 100px; font-size: 11px; }
+            .price-table { font-size: 12px; }
+            .price-table th, .price-table td { padding: 8px 10px; }
+            .provider-grid { grid-template-columns: 1fr; }
+            .scenario-grid { grid-template-columns: 1fr; }
+            .insights-grid { grid-template-columns: 1fr; }
+            .toc-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+    <meta name="theme-color" content="#6366f1">
+</head>
+<body>
+    <a href="#main" class="skip-link">Skip to content</a>
+    <nav>
+        <div class="nav-inner">
+            <a href="index.html" class="logo">API<span>pulse</span></a>
+            <button class="hamburger" onclick="toggleMobileNav()" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+            <div class="nav-links">
+                <a href="calculator.html">Calculator</a>
+                <a href="compare.html">Compare</a>
+                <a href="cost-optimizer.html">Optimizer</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="blog.html">Blog</a>
+                <a href="api-docs.html" style="color:var(--accent);">API</a>
+                <a href="pro.html" class="nav-cta">Pro — $29</a>
+                <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
+            </div>
+        </div>
+    </nav>
+
+    <main id="main">
+
+    <header class="report-header">
+        <div class="label">Pricing Report — June 2026</div>
+        <h1>State of LLM API Pricing</h1>
+        <p class="meta">35 models across 10 providers &middot; Last verified May 29, 2026</p>
+        <p class="summary">The definitive guide to LLM API costs. Compare every major model, find the cheapest option for your use case, and see where the market is heading.</p>
+    </header>
+
+    <div class="report-container">
+
+        <div class="metrics-bar" id="metrics-bar">
+            <div class="metric-card"><div class="number">35</div><div class="label">Models Tracked</div></div>
+            <div class="metric-card"><div class="number">10</div><div class="label">Providers</div></div>
+            <div class="metric-card"><div class="number" id="metric-cheapest">—</div><div class="label">Cheapest Input</div></div>
+            <div class="metric-card"><div class="number" id="metric-spreading">—</div><div class="label">Price Spread</div></div>
+        </div>
+
+        <div class="toc">
+            <h3>Table of Contents</h3>
+            <div class="toc-grid">
+                <a href="#ranking">Full Price Ranking</a>
+                <a href="#providers">Provider Comparison</a>
+                <a href="#charts">Visual Price Charts</a>
+                <a href="#scenarios">Cost Scenarios</a>
+                <a href="#insights">Key Insights</a>
+                <a href="#deprecation">Deprecation Alerts</a>
+                <a href="#faq">FAQ</a>
+            </div>
+        </div>
+
+        <!-- Full Price Ranking -->
+        <section class="report-section" id="ranking">
+            <h2>Full Price Ranking</h2>
+            <p class="section-desc">All 35 models ranked by input cost (per million tokens). Click column headers to sort.</p>
+            <div class="filter-bar">
+                <button class="filter-btn active" onclick="filterModels('all')">All Models</button>
+                <button class="filter-btn" onclick="filterModels('Premium')">Premium</button>
+                <button class="filter-btn" onclick="filterModels('Mid')">Mid-Tier</button>
+                <button class="filter-btn" onclick="filterModels('Budget')">Budget</button>
+            </div>
+            <div style="overflow-x:auto;">
+                <table class="price-table" id="price-table">
+                    <thead>
+                        <tr>
+                            <th class="rank">#</th>
+                            <th>Model</th>
+                            <th>Provider</th>
+                            <th>Tier</th>
+                            <th style="text-align:right;cursor:pointer;" onclick="sortTable('input')">Input $/M ↓</th>
+                            <th style="text-align:right;cursor:pointer;" onclick="sortTable('output')">Output $/M ↓</th>
+                            <th>Context</th>
+                        </tr>
+                    </thead>
+                    <tbody id="price-tbody"></tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Provider Comparison -->
+        <section class="report-section" id="providers">
+            <h2>Provider Comparison</h2>
+            <p class="section-desc">Each provider's model lineup, price range, and cheapest option.</p>
+            <div class="provider-grid" id="provider-grid"></div>
+        </section>
+
+        <!-- Visual Charts -->
+        <section class="report-section" id="charts">
+            <h2>Visual Price Charts</h2>
+            <p class="section-desc">Input and output costs per million tokens, sorted cheapest to most expensive.</p>
+            <h3 style="font-size:18px;margin-bottom:16px;">Input Cost ($/M tokens)</h3>
+            <div class="bar-chart" id="input-chart"></div>
+            <h3 style="font-size:18px;margin-bottom:16px;margin-top:32px;">Output Cost ($/M tokens)</h3>
+            <div class="bar-chart" id="output-chart"></div>
+        </section>
+
+        <!-- Cost Scenarios -->
+        <section class="report-section" id="scenarios">
+            <h2>Cost Scenarios</h2>
+            <p class="section-desc">What your monthly bill looks like at different usage levels.</p>
+            <div class="scenario-grid" id="scenario-grid"></div>
+        </section>
+
+        <!-- Key Insights -->
+        <section class="report-section" id="insights">
+            <h2>Key Insights</h2>
+            <p class="section-desc">What the data tells us about the LLM API market in June 2026.</p>
+            <div class="insights-grid" id="insights-grid"></div>
+        </section>
+
+        <!-- Deprecation Alerts -->
+        <section class="report-section" id="deprecation">
+            <h2>Deprecation Alerts</h2>
+            <p class="section-desc">Models scheduled for retirement. Plan your migration now.</p>
+            <div id="deprecation-list"></div>
+        </section>
+
+        <!-- FAQ -->
+        <section class="report-section" id="faq">
+            <h2>Frequently Asked Questions</h2>
+            <div style="margin-top:24px;">
+                <div class="faq-item">
+                    <h3>What is the cheapest LLM API in June 2026?</h3>
+                    <p>Gemini 2.0 Flash Lite is the cheapest at $0.075/$0.30 per million input/output tokens. For open-source models, Llama 3.1 8B via Together.ai costs $0.10/$0.10 per million tokens.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>How much does GPT-5 cost?</h3>
+                    <p>GPT-5 costs $1.25 per million input tokens and $10.00 per million output tokens. GPT-5 mini is much cheaper at $0.25/$2.00 per million tokens — 5x cheaper for input and 5x cheaper for output.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>How much does Claude cost?</h3>
+                    <p>Claude Sonnet 4.6 costs $3.00/$15.00 per million input/output tokens. Claude Haiku 4.5 costs $1.00/$5.00. Claude Opus 4.8 costs $5.00/$25.00. Haiku is the best value for most use cases.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Which LLM provider is cheapest overall?</h3>
+                    <p>DeepSeek and Google offer the cheapest models. DeepSeek V4 Flash costs $0.14/$0.28, and Gemini 2.0 Flash costs $0.10/$0.40 per million tokens. For premium models, DeepSeek V4 Pro at $0.44/$0.87 is dramatically cheaper than GPT-5 ($1.25/$10.00) or Claude Opus ($5.00/$25.00).</p>
+                </div>
+                <div class="faq-item">
+                    <h3>How much does 1 million tokens cost?</h3>
+                    <p>It ranges from $0.10 (Gemini Flash) to $180 (GPT-5.5 Pro output) per million tokens. Most mid-tier models cost $1-3 for input and $8-15 for output per million tokens. Use our calculator to estimate your specific usage.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>How often does pricing change?</h3>
+                    <p>Providers typically update pricing every 3-6 months. Major launches (like GPT-5 or Claude Opus 4.8) often trigger price drops across the industry. We verify and update pricing data at least monthly.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <div class="report-cta">
+            <h2>Calculate Your Exact Costs</h2>
+            <p>Use our free calculator to estimate your monthly spend across all 35 models, or upgrade to Pro to save scenarios and get optimization recommendations.</p>
+            <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;">
+                <a href="calculator.html" class="btn-primary">Free Calculator</a>
+                <a href="pricing.html" class="btn-secondary">See Pro Features</a>
+            </div>
+        </div>
+
+        <p style="text-align:center;color:var(--text-muted);font-size:13px;margin-top:32px;">
+            Data verified May 29, 2026. Prices in USD per million tokens. Source: APIpulse (<a href="https://getapipulse.com">getapipulse.com</a>)
+        </p>
+
+    </div>
+    </main>
+
+    <script>
+    // Wait for pricing-data.js to load
+    document.addEventListener('DOMContentLoaded', function() {
+        if (typeof API_MODELS === 'undefined') {
+            setTimeout(arguments.callee, 100);
+            return;
+        }
+        initReport();
+    });
+
+    let currentSort = { key: 'input', dir: 'asc' };
+    let currentFilter = 'all';
+
+    function initReport() {
+        renderMetrics();
+        renderTable();
+        renderProviders();
+        renderCharts();
+        renderScenarios();
+        renderInsights();
+        renderDeprecations();
+    }
+
+    function renderMetrics() {
+        const inputs = API_MODELS.map(m => m.input);
+        const cheapest = Math.min(...inputs);
+        const mostExpensive = Math.max(...API_MODELS.map(m => m.output));
+        document.getElementById('metric-cheapest').textContent = '$' + cheapest;
+        document.getElementById('metric-spreading').textContent = Math.round(mostExpensive / cheapest) + 'x';
+    }
+
+    function getFilteredModels() {
+        let models = [...API_MODELS];
+        if (currentFilter !== 'all') {
+            models = models.filter(m => m.tier === currentFilter);
+        }
+        return models;
+    }
+
+    function renderTable() {
+        const models = getFilteredModels();
+        models.sort((a, b) => {
+            const aVal = a[currentSort.key];
+            const bVal = b[currentSort.key];
+            return currentSort.dir === 'asc' ? aVal - bVal : bVal - aVal;
+        });
+
+        const minInput = Math.min(...models.map(m => m.input));
+        const maxInput = Math.max(...models.map(m => m.input));
+        const minOutput = Math.min(...models.map(m => m.output));
+        const maxOutput = Math.max(...models.map(m => m.output));
+
+        const tbody = document.getElementById('price-tbody');
+        tbody.innerHTML = models.map((m, i) => {
+            const inputClass = m.input === minInput ? 'cheapest' : (m.input >= 10 ? 'expensive' : '');
+            const outputClass = m.output === minOutput ? 'cheapest' : (m.output >= 50 ? 'expensive' : '');
+            const deprecationNote = m.id.includes('opus') && !m.id.includes('48') && !m.id.includes('47') ?
+                ' <span style="color:var(--red);font-size:11px;">⚠ Retiring Jun 15</span>' : '';
+            return `<tr data-tier="${m.tier}">
+                <td class="rank">${i + 1}</td>
+                <td class="model-name">${m.name}${deprecationNote}</td>
+                <td><span class="provider-tag">${m.provider}</span></td>
+                <td><span class="tier-badge tier-${m.tier.toLowerCase()}">${m.tier}</span></td>
+                <td class="price ${inputClass}" style="text-align:right;">$${m.input.toFixed(2)}</td>
+                <td class="price ${outputClass}" style="text-align:right;">$${m.output.toFixed(2)}</td>
+                <td>${m.context}</td>
+            </tr>`;
+        }).join('');
+    }
+
+    function filterModels(tier) {
+        currentFilter = tier;
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+            btn.classList.toggle('active', btn.textContent.includes(tier === 'all' ? 'All' : tier));
+        });
+        renderTable();
+    }
+
+    function sortTable(key) {
+        if (currentSort.key === key) {
+            currentSort.dir = currentSort.dir === 'asc' ? 'desc' : 'asc';
+        } else {
+            currentSort.key = key;
+            currentSort.dir = 'asc';
+        }
+        renderTable();
+    }
+
+    function renderProviders() {
+        const providers = getProviders();
+        const grid = document.getElementById('provider-grid');
+        grid.innerHTML = providers.map(p => {
+            const models = getModelsByProvider(p.slug);
+            const inputs = models.map(m => m.input);
+            const cheapest = models.reduce((a, b) => a.input < b.input ? a : b);
+            const mostExpensive = models.reduce((a, b) => a.input > b.input ? a : b);
+            return `<div class="provider-card">
+                <h3>${p.name} <span class="model-count">${models.length} model${models.length > 1 ? 's' : ''}</span></h3>
+                <div class="price-range">Input: $${Math.min(...inputs).toFixed(2)} — $${Math.max(...inputs).toFixed(2)}/M</div>
+                <div class="cheapest-model">Best value: ${cheapest.name} ($${cheapest.input.toFixed(2)}/$${cheapest.output.toFixed(2)})</div>
+            </div>`;
+        }).join('');
+    }
+
+    function renderCharts() {
+        const sorted = [...API_MODELS].sort((a, b) => a.input - b.input);
+        const maxInput = Math.max(...sorted.map(m => m.input));
+        const maxOutput = Math.max(...sorted.map(m => m.output));
+
+        document.getElementById('input-chart').innerHTML = sorted.map(m => {
+            const pct = Math.max(2, (m.input / maxInput) * 100);
+            const color = m.tier === 'Budget' ? 'var(--green)' : m.tier === 'Mid' ? 'var(--orange)' : 'var(--red)';
+            return `<div class="bar-row">
+                <div class="bar-label" title="${m.name}">${m.name}</div>
+                <div class="bar-track"><div class="bar-fill" style="width:${pct}%;background:${color};">$${m.input.toFixed(2)}</div></div>
+            </div>`;
+        }).join('');
+
+        const sortedOutput = [...API_MODELS].sort((a, b) => a.output - b.output);
+        document.getElementById('output-chart').innerHTML = sortedOutput.map(m => {
+            const pct = Math.max(2, (m.output / maxOutput) * 100);
+            const color = m.tier === 'Budget' ? 'var(--green)' : m.tier === 'Mid' ? 'var(--orange)' : 'var(--red)';
+            return `<div class="bar-row">
+                <div class="bar-label" title="${m.name}">${m.name}</div>
+                <div class="bar-track"><div class="bar-fill" style="width:${pct}%;background:${color};">$${m.output.toFixed(2)}</div></div>
+            </div>`;
+        }).join('');
+    }
+
+    function renderScenarios() {
+        const scenarios = [
+            { name: 'Light Usage', desc: '100K input + 50K output tokens/day (~4.5M/mo)', inputM: 3, outputM: 1.5 },
+            { name: 'Moderate Usage', desc: '1M input + 500K output tokens/day (~45M/mo)', inputM: 30, outputM: 15 },
+            { name: 'Heavy Usage', desc: '10M input + 5M output tokens/day (~450M/mo)', inputM: 300, outputM: 150 },
+            { name: 'RAG Pipeline', desc: '80% input-heavy, 5M input + 500K output/day', inputM: 120, outputM: 15 },
+        ];
+
+        const highlightModels = [
+            'google-flash-lite', 'deepseek-v4-flash', 'openai-gpt4o-mini',
+            'anthropic-haiku', 'openai-gpt5-mini', 'anthropic-sonnet46',
+            'openai-gpt5', 'anthropic-opus48'
+        ];
+
+        const grid = document.getElementById('scenario-grid');
+        grid.innerHTML = scenarios.map(s => {
+            const rows = highlightModels.map(id => {
+                const m = getModelById(id);
+                if (!m) return '';
+                const cost = (m.input * s.inputM) + (m.output * s.outputM);
+                const costClass = cost < 50 ? 'cost-low' : cost < 500 ? 'cost-mid' : 'cost-high';
+                return `<div class="scenario-row">
+                    <span class="model">${m.name}</span>
+                    <span class="cost ${costClass}">$${cost.toFixed(2)}/mo</span>
+                </div>`;
+            }).join('');
+            return `<div class="scenario-card">
+                <h3>${s.name}</h3>
+                <div class="desc">${s.desc}</div>
+                ${rows}
+            </div>`;
+        }).join('');
+    }
+
+    function renderInsights() {
+        const insights = [
+            {
+                icon: '📉',
+                title: 'Budget models are 50-100x cheaper than premium',
+                text: 'Gemini 2.0 Flash Lite ($0.075/M input) is 67x cheaper than GPT-5.5 Pro ($5/M input). The gap between budget and premium has widened significantly in 2026.'
+            },
+            {
+                icon: '🏆',
+                title: 'DeepSeek dominates value',
+                text: 'DeepSeek V4 Pro offers near-premium quality at $0.44/$0.87 per million tokens — 3-10x cheaper than comparable models from OpenAI and Anthropic.'
+            },
+            {
+                icon: '⚡',
+                title: 'Output tokens cost 3-6x more than input',
+                text: 'Across all providers, output tokens are consistently 3-6x more expensive than input. Optimize your prompts to minimize output length.'
+            },
+            {
+                icon: '🔄',
+                title: 'Deprecation wave coming June 15',
+                text: 'Claude 4 Opus, Claude Sonnet 4, and DeepSeek V3 are all retiring on June 15, 2026. Migrate to their successors now to avoid service disruption.'
+            },
+            {
+                icon: '📊',
+                title: 'Context windows are converging at 1M',
+                text: 'Most mid-tier and premium models now offer 1M+ token context windows. Google and Anthropic lead with 1M context on their latest models.'
+            },
+            {
+                icon: '💡',
+                title: 'Mini/Flash variants are the sweet spot',
+                text: 'GPT-5 mini, Gemini Flash, and Claude Haiku offer 80% of the capability at 20% of the price. For most production workloads, these are the optimal choice.'
+            }
+        ];
+
+        document.getElementById('insights-grid').innerHTML = insights.map(i =>
+            `<div class="insight-card">
+                <div class="icon">${i.icon}</div>
+                <h3>${i.title}</h3>
+                <p>${i.text}</p>
+            </div>`
+        ).join('');
+    }
+
+    function renderDeprecations() {
+        const deprecated = API_MODELS.filter(m =>
+            m.id === 'anthropic-opus' || m.id === 'anthropic-sonnet' || m.id === 'deepseek-v3'
+        );
+        const replacements = {
+            'anthropic-opus': 'Claude Opus 4.8 ($5.00/$25.00)',
+            'anthropic-sonnet': 'Claude Sonnet 4.6 ($3.00/$15.00)',
+            'deepseek-v3': 'DeepSeek V4 Flash ($0.14/$0.28)'
+        };
+        document.getElementById('deprecation-list').innerHTML = deprecated.map(m =>
+            `<div class="deprecation-notice">
+                <strong>${m.name}</strong> (${m.provider}) — retiring June 15, 2026. Migrate to <strong>${replacements[m.id]}</strong>.
+            </div>`
+        ).join('');
+    }
+    </script>
+    <script src="shared.js" defer></script>
+</body>
+</html>

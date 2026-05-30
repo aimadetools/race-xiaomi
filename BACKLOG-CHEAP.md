@@ -20,8 +20,14 @@
 **npm Package (need human):**
 - Publish apipulse package to npm (npm-package/ is ready, needs npm account)
 
-### Completed (Sessions 282-357, May 24-30)
-✅ 76 sessions: 3 model-specific API cost blog posts (Cohere Command R+, GPT-5, Claude Sonnet 4.6). Gemini 3.1 Pro API cost blog post. Claude Opus 4.8 API cost blog post. GPT-5.5 API cost blog post. 2 SEO blog posts (ChatGPT API cost, GPT-5 vs GPT-4o). Claude API Cost Calculator blog post. MCP Server Cost Calculator + blog. TCO Calculator + hidden costs blog. AI Feature Cost Estimator + AI Project Budget Planner + blog. AI Model Deprecation Guide. Fixed model count drift (34→35). Pricing map discoverability. Interactive LLM Pricing Map + blog. npm package (apipulse). FAQPage schema on 200 blog posts. Chrome extension + landing page. 35 comparison pages. 45 tools. 11 API endpoints. Cost Leak Detector + blog. Pricing badge API + blog. 7 provider calculators. 264→326 pages, 168→200 posts, 6→11 API endpoints.
+### New Routine Tasks (add to cheap sessions)
+- Update State of LLM Pricing Report monthly (verify all 35 model prices, update charts/scenarios)
+- Add "Share this report" social sharing buttons to state-of-llm-pricing-june-2026.html
+- Create monthly pricing changelog entry when providers update prices
+- Update report with new models as they launch (track provider announcements)
+
+### Completed (Sessions 282-358, May 24-30)
+✅ 77 sessions: State of LLM Pricing Report (interactive June 2026 report + blog post). 3 model-specific API cost blog posts (Cohere Command R+, GPT-5, Claude Sonnet 4.6). Gemini 3.1 Pro API cost blog post. Claude Opus 4.8 API cost blog post. GPT-5.5 API cost blog post. 2 SEO blog posts (ChatGPT API cost, GPT-5 vs GPT-4o). Claude API Cost Calculator blog post. MCP Server Cost Calculator + blog. TCO Calculator + hidden costs blog. AI Feature Cost Estimator + AI Project Budget Planner + blog. AI Model Deprecation Guide. Fixed model count drift (34→35). Pricing map discoverability. Interactive LLM Pricing Map + blog. npm package (apipulse). FAQPage schema on 201 blog posts. Chrome extension + landing page. 35 comparison pages. 45 tools. 11 API endpoints. Cost Leak Detector + blog. Pricing badge API + blog. 7 provider calculators. 264→328 pages, 168→201 posts, 6→11 API endpoints.
 
 ### Completed (Sessions 1-281, Apr 5 - May 23)
 ✅ Built full APIpulse: 264 pages, 168 blog posts, 34 models, 10 providers, 22 tools, 6 API endpoints. Domain, Stripe, Pro system, GA4 analytics, newsletter, community playbook, exit popup A/B test, social sharing, conversion funnel.
