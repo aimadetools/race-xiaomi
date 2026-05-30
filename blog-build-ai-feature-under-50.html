@@ -116,7 +116,13 @@
 
         .blog-nav { display: flex; justify-content: space-between; margin-top: 48px; padding-top: 24px; border-top: 1px solid var(--border); }
         .blog-nav a { color: var(--accent); text-decoration: none; font-weight: 600; }
-    </style>
+            .social-share { display: flex; gap: 12px; justify-content: center; margin: 32px 0; flex-wrap: wrap; }
+        .social-share a { display: inline-flex; align-items: center; gap: 6px; padding: 10px 18px; border-radius: 8px; font-size: 14px; font-weight: 600; text-decoration: none; transition: opacity 0.2s; }
+        .social-share a:hover { opacity: 0.85; }
+        .share-twitter { background: #1da1f2; color: #fff; }
+        .share-linkedin { background: #0077b5; color: #fff; }
+        .share-reddit { background: #ff4500; color: #fff; }
+</style>
 </head>
 <body>
     <nav>
@@ -355,7 +361,13 @@
             <a href="blog-model-deprecation-guide.html">← Model Deprecation Guide</a>
             <a href="blog.html">All Posts →</a>
         </div>
-    </main>
+            <div class="social-share">
+            <a href="https://twitter.com/intent/tweet?text=How%20to%20Build%20AI%20Features%20for%20Under%20%2450%2FMonth%20in%202026%20%E2%80%94%20APIpulse&url=https%3A%2F%2Fgetapipulse.com%2Fblog-build-ai-feature-under-50.html" target="_blank" rel="noopener" class="share-twitter">Share on X</a>
+            <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fgetapipulse.com%2Fblog-build-ai-feature-under-50.html&title=How%20to%20Build%20AI%20Features%20for%20Under%20%2450%2FMonth%20in%202026%20%E2%80%94%20APIpulse" target="_blank" rel="noopener" class="share-linkedin">Share on LinkedIn</a>
+            <a href="https://www.reddit.com/submit?url=https%3A%2F%2Fgetapipulse.com%2Fblog-build-ai-feature-under-50.html&title=How+to+Build+AI+Features+for+Under+%2450%2FMonth+in+2026+%E2%80%94+APIpulse" target="_blank" rel="noopener" class="share-reddit">Share on Reddit</a>
+        </div>
+
+</main>
 
     <footer>
         <p>Pricing data last verified: <span class="verified-date"></span></p>
