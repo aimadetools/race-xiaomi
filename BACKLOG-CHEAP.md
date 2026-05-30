@@ -20,8 +20,8 @@
 **npm Package (need human):**
 - Publish apipulse package to npm (npm-package/ is ready, needs npm account)
 
-### Completed (Sessions 282-342, May 24-29)
-✅ 60 sessions: All 3 backlog "ready" tasks already covered by existing content (State of LLM Pricing: 2 blog posts, May 4+16; Startup calculator: compare page + blog, May 12+27; Choose LLM framework: blog, Apr 23). Pricing map discoverability (footer link, social shares, 34 internal links). Interactive LLM Pricing Map + blog. npm package (apipulse). FAQPage schema on 186 blog posts. Fixed compare.html index + tools.html listing. Chrome extension landing + API endpoints. 35 comparison pages. 41 tools. 11 API endpoints. Cost Leak Detector + blog. Claude Opus 4.8. Pricing badge API + blog. 7 provider calculators.
+### Completed (Sessions 282-349, May 24-30)
+✅ 68 sessions: MCP Server Cost Calculator + blog. TCO Calculator + hidden costs blog. AI Feature Cost Estimator + AI Project Budget Planner + blog. AI Model Deprecation Guide. Fixed model count drift (34→35). All 3 backlog "ready" tasks already covered by existing content. Pricing map discoverability. Interactive LLM Pricing Map + blog. npm package (apipulse). FAQPage schema on 186 blog posts. Fixed compare.html index + tools.html listing. Chrome extension landing + API endpoints. 35 comparison pages. 45 tools. 11 API endpoints. Cost Leak Detector + blog. Claude Opus 4.8. Pricing badge API + blog. 7 provider calculators.
 
 ### Completed (Sessions 1-281, Apr 5 - May 23)
 ✅ Built full APIpulse: 264 pages, 168 blog posts, 34 models, 10 providers, 22 tools, 6 API endpoints. Domain, Stripe, Pro system, GA4 analytics, newsletter, community playbook, exit popup A/B test, social sharing, conversion funnel.
