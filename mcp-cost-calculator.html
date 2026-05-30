@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MCP Server Cost Calculator — Estimate Model Context Protocol API Costs | APIpulse</title>
+    <meta name="description" content="Calculate the true cost of running MCP (Model Context Protocol) servers. Factor in tool schema overhead, multi-step calls, and context bloat across 35 AI models. Free tool.">
+    <meta name="keywords" content="MCP cost calculator, Model Context Protocol cost, MCP server pricing, AI tool calling cost, MCP API cost, LLM tool use cost, MCP server budget">
+    <meta property="og:title" content="MCP Server Cost Calculator — Estimate Model Context Protocol API Costs | APIpulse">
+    <meta property="og:description" content="Calculate the true cost of running MCP servers. Factor in tool schema overhead, multi-step calls, and context bloat across 35 AI models.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://getapipulse.com/og-image.png">
+    <meta property="og:url" content="https://getapipulse.com/mcp-cost-calculator.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="MCP Server Cost Calculator | APIpulse">
+    <meta name="twitter:image" content="https://getapipulse.com/og-image.png">
+    <meta name="twitter:description" content="Calculate the true cost of running MCP servers. Factor in tool schema overhead, multi-step calls, and context bloat.">
+    <link rel="canonical" href="https://getapipulse.com/mcp-cost-calculator.html">
+    <link rel="alternate" type="application/rss+xml" title="APIpulse Blog" href="https://getapipulse.com/rss.xml">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="styles.css">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0CEP7S9Y3J"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-0CEP7S9Y3J');
+    </script>
+    <script src="analytics.js" defer></script>
+    <script src="dynamic-date.js" defer></script>
+    <script src="shared.js" defer></script>
+    <script src="pricing-data.js" defer></script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "MCP Server Cost Calculator",
+        "url": "https://getapipulse.com/mcp-cost-calculator.html",
+        "description": "Calculate the true cost of running MCP (Model Context Protocol) servers with tool schema overhead and multi-step calls.",
+        "applicationCategory": "DeveloperApplication",
+        "operatingSystem": "Web",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "How much does an MCP server cost per month?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "An MCP server handling 1,000 tool calls/day with 5 tools costs $3-$150/month depending on the model. Budget models like Gemini 2.0 Flash Lite cost ~$3/month, while GPT-5.5 costs ~$150/month. The main cost driver is tool schema tokens sent with every request — typically 500-2,000 tokens overhead per call."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What is the token overhead for MCP tool schemas?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Each MCP tool adds 100-500 tokens of schema overhead (name, description, parameters) that gets sent with every API call. A server with 10 tools adds ~1,500 input tokens per request. This overhead compounds with multi-step chains where the model calls 3-5 tools per user query."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How do I reduce MCP server costs?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Key strategies: (1) Minimize tool schemas — only expose tools relevant to the current conversation, (2) Use model routing — cheap models for simple tool calls, premium for complex reasoning, (3) Cache tool results for repeated queries, (4) Batch multiple tool calls in a single step, (5) Use smaller context windows when full history isn't needed."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Which model is cheapest for MCP tool calling?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "For MCP workloads, DeepSeek V4 Flash ($0.14/$0.28) and Gemini 2.0 Flash Lite ($0.075/$0.30) are the cheapest. They handle tool calling well at a fraction of GPT-5 ($1.25/$10.00) or Claude Sonnet 4.6 ($3.00/$15.00) costs. For complex multi-step chains, mid-tier models like GPT-5 mini ($0.25/$2.00) offer the best cost-to-quality ratio."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How many tokens does an MCP tool call use?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "A typical MCP tool call uses: tool schema (100-500 tokens depending on complexity), user query + system prompt (200-800 tokens), tool result data (500-3,000 tokens), and assistant response (100-500 tokens). Total per call: 900-4,800 input tokens and 100-500 output tokens. Multi-step chains multiply this by 2-5x."
+                }
+            }
+        ]
+    }
+    </script>
+    <style>
+        .calc-hero { padding: 120px 24px 40px; text-align: center; max-width: 700px; margin: 0 auto; }
+        .calc-hero h1 { font-size: clamp(28px, 4vw, 42px); font-weight: 800; margin-bottom: 12px; }
+        .calc-hero p { color: var(--text-secondary); font-size: 17px; line-height: 1.6; }
+
+        .calculator-section { padding: 0 24px 60px; }
+        .calculator { background: var(--bg-card); border: 1px solid var(--border); border-radius: 16px; padding: 32px; max-width: 900px; margin: 0 auto; }
+
+        .presets { display: flex; gap: 8px; margin-bottom: 24px; flex-wrap: wrap; align-items: center; }
+        .preset-label { font-size: 13px; color: var(--text-muted); }
+        .preset-btn {
+            background: var(--bg-secondary); border: 1px solid var(--border);
+            color: var(--text-secondary); padding: 8px 16px; border-radius: 8px;
+            cursor: pointer; font-size: 13px; transition: all 0.2s; font-weight: 500;
+        }
+        .preset-btn:hover { border-color: var(--accent); color: var(--accent); }
+        .preset-btn.active-preset { background: var(--accent); color: white; border-color: var(--accent); }
+
+        .calc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
+        .calc-inputs { display: flex; flex-direction: column; gap: 16px; }
+        .input-group { display: flex; flex-direction: column; gap: 6px; }
+        .input-group label { font-size: 13px; font-weight: 600; color: var(--text-secondary); }
+        .input-group input, .input-group select {
+            padding: 12px 16px; border-radius: 8px; border: 1px solid var(--border);
+            background: var(--bg-secondary); color: var(--text-primary); font-size: 15px; font-family: inherit;
+        }
+        .input-group input:focus, .input-group select:focus { outline: 2px solid var(--accent); outline-offset: 2px; border-color: var(--accent); }
+        .input-hint { font-size: 12px; color: var(--text-muted); margin-top: 2px; }
+
+        .calc-results { background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 12px; padding: 24px; }
+        .result-item { display: flex; justify-content: space-between; padding: 10px 0; border-bottom: 1px solid var(--border); font-size: 14px; }
+        .result-item:last-child { border-bottom: none; }
+        .result-label { color: var(--text-secondary); }
+        .result-value { color: var(--text-primary); font-weight: 600; font-variant-numeric: tabular-nums; }
+        .result-total { display: flex; justify-content: space-between; padding: 14px 0 10px; border-top: 2px solid var(--accent); margin-top: 8px; font-size: 18px; }
+        .result-total .result-label { color: var(--text-primary); font-weight: 700; }
+        .result-total .result-value { color: var(--accent); font-weight: 800; }
+
+        .cost-breakdown { margin-top: 16px; padding: 16px; background: var(--bg-card); border: 1px solid var(--border); border-radius: 8px; }
+        .cost-breakdown h4 { font-size: 13px; font-weight: 600; color: var(--text-muted); margin-bottom: 10px; text-transform: uppercase; letter-spacing: 0.5px; }
+        .cost-row { display: flex; justify-content: space-between; padding: 6px 0; font-size: 13px; }
+        .cost-row .label { color: var(--text-secondary); }
+        .cost-row .value { font-weight: 600; font-variant-numeric: tabular-nums; }
+
+        .ranking-section { max-width: 900px; margin: 0 auto; padding: 0 24px 60px; }
+        .ranking-section h2 { font-size: 24px; font-weight: 700; text-align: center; margin-bottom: 8px; }
+        .ranking-subtitle { text-align: center; color: var(--text-secondary); font-size: 15px; margin-bottom: 32px; }
+        .ranking-table { width: 100%; border-collapse: collapse; background: var(--bg-card); border-radius: 12px; overflow: hidden; border: 1px solid var(--border); }
+        .ranking-table th { background: var(--bg-secondary); padding: 14px 16px; text-align: left; font-size: 12px; font-weight: 600; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px; }
+        .ranking-table td { padding: 14px 16px; border-bottom: 1px solid var(--border); font-size: 14px; }
+        .ranking-table tr:last-child td { border-bottom: none; }
+        .ranking-table tr:hover { background: var(--accent-glow); }
+        .rank-num { font-weight: 700; color: var(--accent); width: 40px; }
+        .rank-badge { display: inline-block; padding: 2px 8px; border-radius: 4px; font-size: 11px; font-weight: 700; }
+        .rank-cheapest { background: rgba(34,197,94,0.15); color: var(--green); }
+        .rank-budget { background: rgba(59,130,246,0.15); color: #3b82f6; }
+        .rank-mid { background: rgba(168,85,247,0.15); color: #a855f7; }
+        .rank-premium { background: rgba(245,158,11,0.15); color: #f59e0b; }
+        .cost-monthly { font-weight: 700; font-variant-numeric: tabular-nums; }
+        .cost-message { color: var(--text-secondary); font-size: 13px; }
+        .savings-pct { color: var(--green); font-weight: 600; }
+
+        .insights { max-width: 700px; margin: 0 auto; padding: 0 24px 60px; }
+        .insight-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; padding: 24px; margin-bottom: 16px; }
+        .insight-card h3 { font-size: 16px; font-weight: 700; margin-bottom: 8px; }
+        .insight-card p { font-size: 14px; color: var(--text-secondary); line-height: 1.7; }
+
+        .pro-upsell { max-width: 700px; margin: 0 auto; padding: 0 24px 60px; }
+        .pro-card { background: linear-gradient(135deg, rgba(99,102,241,0.08), rgba(34,197,94,0.06)); border: 1px solid var(--accent); border-radius: 16px; padding: 32px; text-align: center; }
+
+        .cta-inline { background: var(--bg-secondary); border: 1px solid var(--accent); border-radius: 12px; padding: 24px; margin: 32px 0; text-align: center; }
+        .cta-inline p { margin-bottom: 12px; color: var(--text-secondary); }
+
+        .info-section { max-width: 700px; margin: 0 auto; padding: 0 24px 60px; }
+        .info-section h2 { font-size: 22px; font-weight: 700; margin-bottom: 16px; margin-top: 32px; }
+        .info-section p { color: var(--text-secondary); line-height: 1.7; margin-bottom: 16px; }
+        .info-section ul { color: var(--text-secondary); padding-left: 24px; margin-bottom: 16px; }
+        .info-section li { margin-bottom: 8px; line-height: 1.6; }
+        .info-section strong { color: var(--text-primary); }
+
+        @media (max-width: 768px) {
+            .calc-hero { padding: 100px 20px 30px; }
+            .calc-hero h1 { font-size: 26px; }
+            .calculator-section { padding: 0 20px 40px; }
+            .calculator { padding: 20px; }
+            .calc-grid { grid-template-columns: 1fr; gap: 24px; }
+            .presets { justify-content: center; }
+            .ranking-table { font-size: 12px; }
+            .ranking-table th, .ranking-table td { padding: 10px 8px; }
+        }
+    </style>
+    <meta name="theme-color" content="#6366f1">
+    <link rel="preconnect" href="https://getapipulse.com">
+</head>
+<body>
+    <a href="#main" class="skip-link">Skip to content</a>
+    <nav>
+        <div class="nav-inner">
+            <a href="index.html" class="logo">API<span>pulse</span></a>
+            <button class="hamburger" onclick="toggleMobileNav()" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+            <div class="nav-links">
+                <a href="calculator.html">Calculator</a>
+                <a href="compare.html">Compare</a>
+                <a href="cost-explorer.html">Explorer</a>
+                <a href="model-switch.html">Switch</a>
+                <a href="cost-scenarios.html">Scenarios</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="use-cases.html">Use Cases</a>
+                <a href="blog.html">Blog</a>
+                <a href="quiz.html">Quiz</a>
+                <a href="api-docs.html" style="color:var(--accent);">API</a>
+                <a href="pricing.html" class="nav-cta" onclick="if(window.trackEvent)window.trackEvent('pro_button_clicked',{source:'nav'})">Get Pro — $29</a>
+                <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
+            </div>
+        </div>
+    </nav>
+
+    <main id="main">
+    <div class="calc-hero">
+        <h1>MCP Server Cost Calculator</h1>
+        <p>Running an MCP (Model Context Protocol) server? Tool schemas, multi-step chains, and context bloat add hidden costs. Enter your setup below — get instant cost estimates across 35 AI models.</p>
+        <div id="pricing-freshness" style="margin-top:16px;"></div>
+    </div>
+
+    <section class="calculator-section">
+        <div class="calculator" role="form" aria-label="MCP Server Cost Calculator">
+            <div class="presets">
+                <span class="preset-label">Server type:</span>
+                <button class="preset-btn active-preset" onclick="applyMcppreset('simple')">Simple (3 tools)</button>
+                <button class="preset-btn" onclick="applyMcppreset('medium')">Medium (10 tools)</button>
+                <button class="preset-btn" onclick="applyMcppreset('complex')">Complex (25 tools)</button>
+                <button class="preset-btn" onclick="applyMcppreset('enterprise')">Enterprise (50+ tools)</button>
+            </div>
+            <div class="presets">
+                <span class="preset-label">Chain depth:</span>
+                <button class="preset-btn" onclick="applyChainPreset(1)">Single (1 step)</button>
+                <button class="preset-btn active-preset" onclick="applyChainPreset(2)">Chain (2-3 steps)</button>
+                <button class="preset-btn" onclick="applyChainPreset(4)">Deep (4-5 steps)</button>
+            </div>
+            <div class="calc-grid">
+                <div class="calc-inputs">
+                    <div class="input-group">
+                        <label for="num-tools">Number of tools exposed</label>
+                        <input type="number" id="num-tools" value="10" min="1" max="200" oninput="calculate()" aria-label="Number of MCP tools">
+                        <div class="input-hint">Each tool adds 100-500 tokens of schema overhead</div>
+                    </div>
+                    <div class="input-group">
+                        <label for="avg-schema-tokens">Avg. schema tokens per tool</label>
+                        <input type="number" id="avg-schema-tokens" value="200" min="50" max="1000" step="50" oninput="calculate()" aria-label="Average schema tokens per tool">
+                        <div class="input-hint">Name + description + parameters JSON</div>
+                    </div>
+                    <div class="input-group">
+                        <label for="system-prompt">System prompt (tokens)</label>
+                        <input type="number" id="system-prompt" value="500" min="0" step="50" oninput="calculate()" aria-label="System prompt token count">
+                    </div>
+                    <div class="input-group">
+                        <label for="avg-result-tokens">Avg. tool result tokens</label>
+                        <input type="number" id="avg-result-tokens" value="800" min="0" step="50" oninput="calculate()" aria-label="Average tool result tokens">
+                        <div class="input-hint">Data returned from each tool call</div>
+                    </div>
+                    <div class="input-group">
+                        <label for="tools-per-call">Avg. tools called per user query</label>
+                        <input type="number" id="tools-per-call" value="3" min="1" max="20" oninput="calculate()" aria-label="Tools called per query">
+                    </div>
+                    <div class="input-group">
+                        <label for="output-tokens">Avg. response tokens</label>
+                        <input type="number" id="output-tokens" value="400" min="0" step="50" oninput="calculate()" aria-label="Average response tokens">
+                    </div>
+                    <div class="input-group">
+                        <label for="calls-day">User queries per day</label>
+                        <input type="number" id="calls-day" value="1000" min="0" step="100" oninput="calculate()" aria-label="User queries per day">
+                    </div>
+                    <div class="input-group">
+                        <label for="days-month">Days per month</label>
+                        <input type="number" id="days-month" value="30" min="1" max="31" oninput="calculate()" aria-label="Days per month">
+                    </div>
+                </div>
+                <div class="calc-results" role="region" aria-label="Cost calculation results" aria-live="polite">
+                    <h3 style="margin-bottom: 16px; font-size: 16px;">Your MCP Server Cost</h3>
+                    <div class="result-item" style="background:var(--accent-glow);margin:-4px -8px 8px;padding:10px 8px;border-radius:8px;border:1px solid rgba(99,102,241,0.2);">
+                        <span class="result-label" style="font-weight:600;color:var(--text-primary);">Cost per query</span>
+                        <span class="result-value" id="cost-per-query" style="color:var(--accent);font-size:16px;">$0.0000</span>
+                    </div>
+                    <div class="result-item" style="background:rgba(34,197,94,0.05);margin:-4px -8px 8px;padding:10px 8px;border-radius:8px;border:1px solid rgba(34,197,94,0.15);">
+                        <span class="result-label" style="font-weight:600;color:var(--text-primary);">Cost per 1K queries</span>
+                        <span class="result-value" id="cost-per-1k" style="color:var(--green);font-size:16px;">$0.00</span>
+                    </div>
+                    <div class="result-item">
+                        <span class="result-label">Schema overhead (input)</span>
+                        <span class="result-value" id="schema-cost">$0.00</span>
+                    </div>
+                    <div class="result-item">
+                        <span class="result-label">Tool result tokens (input)</span>
+                        <span class="result-value" id="result-cost">$0.00</span>
+                    </div>
+                    <div class="result-item">
+                        <span class="result-label">System prompt + query (input)</span>
+                        <span class="result-value" id="prompt-cost">$0.00</span>
+                    </div>
+                    <div class="result-item">
+                        <span class="result-label">Output cost</span>
+                        <span class="result-value" id="output-cost-val">$0.00</span>
+                    </div>
+                    <div class="result-total">
+                        <span class="result-label">Monthly Total</span>
+                        <span class="result-value" id="monthly-total">$0.00</span>
+                    </div>
+                    <div id="annual-cost" style="text-align:center;font-size:13px;color:var(--text-muted);margin-top:8px;"></div>
+                    <div id="savings-container"></div>
+
+                    <div class="cost-breakdown">
+                        <h4>Token Breakdown Per Query</h4>
+                        <div class="cost-row"><span class="label">Schema tokens (all tools)</span><span class="value" id="schema-tokens">2,000</span></div>
+                        <div class="cost-row"><span class="label">System prompt</span><span class="value" id="prompt-tokens">500</span></div>
+                        <div class="cost-row"><span class="label">User query</span><span class="value" id="query-tokens">~200</span></div>
+                        <div class="cost-row"><span class="label">Tool results (3 calls)</span><span class="value" id="result-tokens">2,400</span></div>
+                        <div class="cost-row" style="border-top:1px solid var(--border);padding-top:8px;margin-top:4px;"><span class="label"><strong>Total input per query</strong></span><span class="value" id="total-input-tokens"><strong>5,100</strong></span></div>
+                        <div class="cost-row"><span class="label"><strong>Total output per query</strong></span><span class="value" id="total-output-tokens"><strong>400</strong></span></div>
+                    </div>
+
+                    <div style="display:flex;gap:8px;margin-top:16px;">
+                        <a id="share-x" href="#" target="_blank" rel="noopener" style="flex:1;display:flex;align-items:center;justify-content:center;gap:6px;padding:10px 12px;border-radius:8px;border:1px solid var(--border);background:var(--bg-card);color:var(--text-primary);font-size:13px;font-weight:600;text-decoration:none;transition:all 0.2s;" onmouseover="this.style.borderColor='var(--accent)'" onmouseout="this.style.borderColor='var(--border)'">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                            Share on X
+                        </a>
+                        <button onclick="copyResults()" style="flex:1;display:flex;align-items:center;justify-content:center;gap:6px;padding:10px 12px;border-radius:8px;border:1px solid var(--border);background:var(--bg-card);color:var(--text-primary);font-size:13px;font-weight:600;cursor:pointer;transition:all 0.2s;" onmouseover="this.style.borderColor='var(--accent)'" onmouseout="this.style.borderColor='var(--border)'">
+                            <span id="copy-btn-text">Copy Results</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ranked models table -->
+    <section class="ranking-section">
+        <h2>All 35 Models Ranked by MCP Server Cost</h2>
+        <p class="ranking-subtitle">Sorted from cheapest to most expensive for your current MCP setup. Schema overhead is the same for all models — the difference is per-token pricing.</p>
+        <div style="overflow-x:auto;">
+            <table class="ranking-table">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Model</th>
+                        <th>Provider</th>
+                        <th>Tier</th>
+                        <th>Cost/Query</th>
+                        <th>Monthly Cost</th>
+                        <th>Annual Cost</th>
+                        <th>Schema Overhead %</th>
+                    </tr>
+                </thead>
+                <tbody id="ranking-body"></tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- Insights -->
+    <section class="insights">
+        <div class="insight-card" id="insight-card">
+            <h3>MCP Cost Insight</h3>
+            <p id="insight-text"></p>
+        </div>
+        <div class="insight-card">
+            <h3>Why Tool Schema Overhead Matters</h3>
+            <p>Every MCP tool you expose adds tokens to every single API call. With 10 tools at 200 tokens each, that's 2,000 extra input tokens per query — before the model even sees the user's question. At 1,000 queries/day, that's 60M extra input tokens/month. On GPT-5.5 ($5/1M input), that's $300/month just for schema overhead. On Gemini 2.0 Flash Lite ($0.075/1M input), it's $4.50/month. <strong>Minimize your tool surface area</strong> or use cheaper models for tool-heavy workloads.</p>
+        </div>
+    </section>
+
+    <!-- Pro upsell -->
+    <section class="pro-upsell">
+        <div class="pro-card">
+            <h2 style="font-size:22px;font-weight:800;margin-bottom:8px;">Optimize your MCP server costs</h2>
+            <p style="color:var(--text-secondary);font-size:15px;margin-bottom:20px;line-height:1.6;">Pro gives you <strong>model routing for tool calls</strong> — use cheap models for simple lookups, premium models for complex reasoning chains. Cut your MCP API bill by up to 50%.</p>
+            <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin-bottom:20px;">
+                <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:10px;padding:14px 20px;min-width:140px;">
+                    <div style="font-size:22px;font-weight:800;color:var(--accent);">$29</div>
+                    <div style="font-size:12px;color:var(--text-muted);margin-top:2px;">one-time, lifetime</div>
+                </div>
+                <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:10px;padding:14px 20px;min-width:140px;">
+                    <div style="font-size:22px;font-weight:800;color:var(--green);">50%</div>
+                    <div style="font-size:12px;color:var(--text-muted);margin-top:2px;">avg. savings</div>
+                </div>
+            </div>
+            <a href="https://buy.stripe.com/fZu7sL3Gw3GS0RQeoDeEo0a" class="btn-primary" style="display:inline-block;font-size:16px;padding:14px 32px;" target="_blank" rel="noopener" onclick="if(window.trackEvent)window.trackEvent('pro_button_clicked',{source:'mcp_calculator_upsell'})">Unlock Pro Features — $29</a>
+            <p style="font-size:12px;color:var(--text-muted);margin-top:12px;">14-day money-back guarantee. Lifetime access.</p>
+        </div>
+    </section>
+
+    <!-- Content section -->
+    <div class="info-section">
+        <h2>How MCP Servers Add Hidden API Costs</h2>
+        <p>The Model Context Protocol (MCP) lets AI models call external tools and access data sources. But every tool you expose adds tokens to every API call — and most developers dramatically underestimate this overhead.</p>
+
+        <h2>The 3 Cost Drivers of MCP Servers</h2>
+        <ul>
+            <li><strong>Tool schema tokens (100-500 per tool):</strong> Every tool's name, description, and parameter schema is sent with every API call. A server with 10 tools adds 1,500-3,000 input tokens per request — even if the model only calls 1 tool.</li>
+            <li><strong>Tool result tokens (500-3,000 per call):</strong> Each tool returns data that gets injected into the context. Database queries, API responses, and file contents can easily balloon to thousands of tokens per call.</li>
+            <li><strong>Multi-step chain overhead:</strong> When a model calls Tool A, processes the result, then calls Tool B, each step includes the full schema + previous results. A 3-step chain can use 10,000-20,000 input tokens.</li>
+        </ul>
+
+        <h2>Cost Optimization Strategies</h2>
+        <ul>
+            <li><strong>Dynamic tool exposure:</strong> Only send schemas for tools relevant to the current conversation. Reduces schema tokens by 60-80%.</li>
+            <li><strong>Model routing for tool calls:</strong> Use cheap models (DeepSeek V4 Flash, Gemini Flash) for simple lookups, premium models for complex reasoning chains.</li>
+            <li><strong>Result compression:</strong> Summarize tool results before injecting into context. A 2,000-token database result might need only 200 tokens as a summary.</li>
+            <li><strong>Context window management:</strong> Trim conversation history before each tool call. Don't carry the full history through every step of a chain.</li>
+            <li><strong>Batch tool calls:</strong> When possible, design tools that return multiple pieces of data in one call instead of making several separate calls.</li>
+        </ul>
+
+        <div class="cta-inline">
+            <p><strong>Compare your MCP model options side by side?</strong></p>
+            <a href="compare.html" class="btn-primary" style="display:inline-block;">Use the Comparison Tool →</a>
+        </div>
+
+        <h2>Related Tools</h2>
+        <ul>
+            <li><a href="agent-cost-calculator.html">AI Agent Cost Calculator</a> — Estimate costs for agentic AI workflows</li>
+            <li><a href="calculator.html">AI API Cost Calculator</a> — General-purpose calculator with all 35 models</li>
+            <li><a href="ai-api-tco-calculator.html">TCO Calculator</a> — See the real total cost of your AI stack</li>
+            <li><a href="cost-explorer.html">Cost Explorer</a> — See all 35 models ranked by cost</li>
+            <li><a href="multi-model-routing.html">Multi-Model Routing Builder</a> — Design cost-optimal routing strategies</li>
+            <li><a href="pipeline.html">Pipeline Cost Calculator</a> — Build multi-step AI pipelines</li>
+            <li><a href="token-estimator.html">Token Estimator</a> — Count tokens in your text</li>
+        </ul>
+
+        <h2>Related Reading</h2>
+        <ul>
+            <li><a href="blog-building-ai-agent-cost.html">Cost of Building AI Agents</a> — Full breakdown of agent API costs</li>
+            <li><a href="blog-cost-optimization-guide.html">LLM Cost Optimization Guide</a> — Strategies to cut your API spend by 40%+</li>
+            <li><a href="blog-ai-api-cost-saas.html">AI API Cost for SaaS</a> — Budgeting AI features in SaaS products</li>
+            <li><a href="blog-cost-per-request.html">AI API Cost Per Request</a> — The metric developers actually need</li>
+            <li><a href="blog-hidden-costs-ai-api.html">Hidden Costs of AI APIs</b> — What most teams miss in their API budgets</li>
+        </ul>
+    </div>
+
+    <button class="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">↑</button>
+    </main>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        renderPricingFreshness('pricing-freshness');
+        calculate();
+        if (window.trackEvent) window.trackEvent('mcp_calculator_viewed');
+    });
+
+    // MCP server presets
+    var mcpPresets = {
+        simple:     { tools: 10,  schemaTokens: 200, systemPrompt: 500, resultTokens: 800,  toolsPerCall: 2,  outputTokens: 300, label: 'Simple (3 tools)' },
+        medium:     { tools: 10,  schemaTokens: 200, systemPrompt: 500, resultTokens: 800,  toolsPerCall: 3,  outputTokens: 400, label: 'Medium (10 tools)' },
+        complex:    { tools: 25,  schemaTokens: 300, systemPrompt: 600, resultTokens: 1000, toolsPerCall: 4,  outputTokens: 500, label: 'Complex (25 tools)' },
+        enterprise: { tools: 50,  schemaTokens: 350, systemPrompt: 800, resultTokens: 1200, toolsPerCall: 5,  outputTokens: 600, label: 'Enterprise (50+ tools)' }
+    };
+
+    var chainPresets = {
+        1: { toolsPerCall: 1, outputTokens: 300, label: 'Single (1 step)' },
+        2: { toolsPerCall: 3, outputTokens: 400, label: 'Chain (2-3 steps)' },
+        4: { toolsPerCall: 5, outputTokens: 600, label: 'Deep (4-5 steps)' }
+    };
+
+    function applyMcppreset(key) {
+        var p = mcpPresets[key];
+        if (!p) return;
+        document.getElementById('num-tools').value = p.tools;
+        document.getElementById('avg-schema-tokens').value = p.schemaTokens;
+        document.getElementById('system-prompt').value = p.systemPrompt;
+        document.getElementById('avg-result-tokens').value = p.resultTokens;
+        document.getElementById('tools-per-call').value = p.toolsPerCall;
+        document.getElementById('output-tokens').value = p.outputTokens;
+        document.querySelectorAll('.presets:first-of-type .preset-btn').forEach(function(btn) {
+            btn.classList.remove('active-preset');
+        });
+        event.target.classList.add('active-preset');
+        calculate();
+        if (window.trackEvent) window.trackEvent('mcp_preset_used', { type: key });
+    }
+
+    function applyChainPreset(steps) {
+        var p = chainPresets[steps];
+        if (!p) return;
+        document.getElementById('tools-per-call').value = p.toolsPerCall;
+        document.getElementById('output-tokens').value = p.outputTokens;
+        document.querySelectorAll('.presets:nth-of-type(2) .preset-btn').forEach(function(btn) {
+            btn.classList.remove('active-preset');
+        });
+        event.target.classList.add('active-preset');
+        calculate();
+    }
+
+    function calculate() {
+        var numTools = parseInt(document.getElementById('num-tools').value) || 1;
+        var schemaTokens = parseInt(document.getElementById('avg-schema-tokens').value) || 200;
+        var systemPrompt = parseInt(document.getElementById('system-prompt').value) || 0;
+        var resultTokens = parseInt(document.getElementById('avg-result-tokens').value) || 0;
+        var toolsPerCall = parseInt(document.getElementById('tools-per-call').value) || 1;
+        var outputTokens = parseInt(document.getElementById('output-tokens').value) || 0;
+        var callsPerDay = parseInt(document.getElementById('calls-day').value) || 0;
+        var daysPerMonth = parseInt(document.getElementById('days-month').value) || 30;
+
+        var totalSchemaTokens = numTools * schemaTokens;
+        var totalInputPerQuery = totalSchemaTokens + systemPrompt + 200 + (resultTokens * toolsPerCall); // 200 = avg user query
+        var totalCallsPerMonth = callsPerDay * daysPerMonth;
+        var totalInputTokens = totalInputPerQuery * totalCallsPerMonth;
+        var totalOutputTokens = outputTokens * totalCallsPerMonth;
+
+        // Calculate costs for all models
+        var results = API_MODELS.map(function(m) {
+            var schemaCost = (totalSchemaTokens * totalCallsPerMonth / 1000000) * m.input;
+            var resultCost = ((resultTokens * toolsPerCall * totalCallsPerMonth) / 1000000) * m.input;
+            var promptCost = (((systemPrompt + 200) * totalCallsPerMonth) / 1000000) * m.input;
+            var outCost = (totalOutputTokens / 1000000) * m.output;
+            var cost = schemaCost + resultCost + promptCost + outCost;
+            var costPerQuery = totalCallsPerMonth > 0 ? cost / totalCallsPerMonth : 0;
+            var schemaOverheadPct = cost > 0 ? (schemaCost / cost * 100) : 0;
+            return {
+                id: m.id, name: m.name, provider: m.provider, tier: m.tier,
+                input: m.input, output: m.output,
+                cost: cost, costPerQuery: costPerQuery,
+                annualCost: cost * 12,
+                schemaCost: schemaCost, resultCost: resultCost,
+                promptCost: promptCost, outCost: outCost,
+                schemaOverheadPct: schemaOverheadPct
+            };
+        });
+
+        results.sort(function(a, b) { return a.cost - b.cost; });
+
+        var cheapest = results[0];
+        var mostExpensive = results[results.length - 1];
+
+        // Update summary
+        document.getElementById('cost-per-query').textContent = '$' + cheapest.costPerQuery.toFixed(6);
+        document.getElementById('cost-per-1k').textContent = '$' + (cheapest.costPerQuery * 1000).toFixed(2);
+        document.getElementById('schema-cost').textContent = '$' + cheapest.schemaCost.toFixed(2);
+        document.getElementById('result-cost').textContent = '$' + cheapest.resultCost.toFixed(2);
+        document.getElementById('prompt-cost').textContent = '$' + cheapest.promptCost.toFixed(2);
+        document.getElementById('output-cost-val').textContent = '$' + cheapest.outCost.toFixed(2);
+        document.getElementById('monthly-total').textContent = '$' + cheapest.cost.toFixed(2);
+        document.getElementById('annual-cost').textContent = 'That\'s $' + cheapest.annualCost.toFixed(0) + '/year';
+
+        // Token breakdown
+        document.getElementById('schema-tokens').textContent = totalSchemaTokens.toLocaleString();
+        document.getElementById('prompt-tokens').textContent = systemPrompt.toLocaleString();
+        document.getElementById('query-tokens').textContent = '~200';
+        document.getElementById('result-tokens').textContent = (resultTokens * toolsPerCall).toLocaleString();
+        document.getElementById('total-input-tokens').innerHTML = '<strong>' + totalInputPerQuery.toLocaleString() + '</strong>';
+        document.getElementById('total-output-tokens').innerHTML = '<strong>' + outputTokens.toLocaleString() + '</strong>';
+
+        // Savings
+        var maxCost = mostExpensive.cost;
+        if (maxCost > cheapest.cost) {
+            var savings = maxCost - cheapest.cost;
+            var savingsPct = ((savings / maxCost) * 100).toFixed(0);
+            document.getElementById('savings-container').innerHTML =
+                '<div style="background:rgba(34,197,94,0.1);border:1px solid rgba(34,197,94,0.3);color:var(--green);padding:10px 16px;border-radius:8px;font-size:13px;font-weight:600;margin-top:12px;text-align:center;">' +
+                'Switching from ' + mostExpensive.name + ' to ' + cheapest.name + ' saves $' + savings.toFixed(2) + '/mo (' + savingsPct + '%)</div>';
+        } else {
+            document.getElementById('savings-container').innerHTML = '';
+        }
+
+        // Ranking table
+        var tbody = document.getElementById('ranking-body');
+        var html = '';
+        results.forEach(function(r, i) {
+            var tierClass = r.tier === 'Budget' ? 'rank-budget' : r.tier === 'Mid' ? 'rank-mid' : 'rank-premium';
+            html += '<tr' + (i === 0 ? ' style="background:rgba(34,197,94,0.05);"' : '') + '>' +
+                '<td class="rank-num">' + (i + 1) + '</td>' +
+                '<td><strong>' + r.name + '</strong></td>' +
+                '<td>' + r.provider + '</td>' +
+                '<td><span class="rank-badge ' + tierClass + '">' + r.tier + '</span></td>' +
+                '<td class="cost-message">$' + r.costPerQuery.toFixed(6) + '</td>' +
+                '<td class="cost-monthly">$' + r.cost.toFixed(2) + '</td>' +
+                '<td>$' + r.annualCost.toFixed(0) + '</td>' +
+                '<td>' + r.schemaOverheadPct.toFixed(0) + '%</td>' +
+                '</tr>';
+        });
+        tbody.innerHTML = html;
+
+        // Insight
+        var insightEl = document.getElementById('insight-text');
+        var schemaPct = cheapest.schemaOverheadPct;
+        insightEl.innerHTML = 'For your MCP setup (' + numTools + ' tools, ' + toolsPerCall + ' calls/query), ' +
+            '<strong>tool schema overhead accounts for ' + schemaPct.toFixed(0) + '%</strong> of your total API cost on ' + cheapest.name + '. ' +
+            'That\'s ' + totalSchemaTokens.toLocaleString() + ' tokens sent with every single request, just for tool definitions. ' +
+            (schemaPct > 30 ? 'Consider dynamically filtering tools to reduce this overhead — it could cut your bill significantly.' :
+            'Your schema overhead is well-optimized. Focus on reducing tool result token volume for further savings.');
+
+        // Share on X
+        var shareText = encodeURIComponent('Just calculated my MCP server API costs on @getapipulse: ' +
+            cheapest.name + ' at $' + cheapest.cost.toFixed(2) + '/month for ' +
+            callsPerDay.toLocaleString() + ' queries/day with ' + numTools + ' tools. ' +
+            'Schema overhead: ' + schemaPct.toFixed(0) + '% of total cost. #MCP #AIApi');
+        document.getElementById('share-x').href = 'https://twitter.com/intent/tweet?text=' + shareText;
+
+        // Track
+        if (window.trackEvent) window.trackEvent('mcp_calculated', {
+            num_tools: numTools, tools_per_call: toolsPerCall,
+            calls_day: callsPerDay, cheapest_model: cheapest.id,
+            monthly_cost: cheapest.cost, schema_overhead_pct: schemaPct
+        });
+    }
+
+    function copyResults() {
+        var numTools = parseInt(document.getElementById('num-tools').value) || 1;
+        var toolsPerCall = parseInt(document.getElementById('tools-per-call').value) || 1;
+        var callsPerDay = parseInt(document.getElementById('calls-day').value) || 0;
+        var daysPerMonth = parseInt(document.getElementById('days-month').value) || 30;
+        var totalCalls = callsPerDay * daysPerMonth;
+        var totalSchema = numTools * (parseInt(document.getElementById('avg-schema-tokens').value) || 200);
+
+        var results = API_MODELS.map(function(m) {
+            var inputPer = totalSchema + 700 + (parseInt(document.getElementById('avg-result-tokens').value) || 800) * toolsPerCall;
+            var cost = ((inputPer * totalCalls) / 1000000) * m.input + ((parseInt(document.getElementById('output-tokens').value) || 400) * totalCalls / 1000000) * m.output;
+            return { name: m.name, provider: m.provider, cost: cost };
+        }).sort(function(a, b) { return a.cost - b.cost; });
+
+        var text = 'MCP Server Cost Estimate (via APIpulse)\n';
+        text += 'Setup: ' + numTools + ' tools, ' + toolsPerCall + ' calls/query, ' + callsPerDay + ' queries/day\n';
+        text += 'Schema overhead: ' + totalSchema.toLocaleString() + ' tokens/call\n\n';
+        text += 'Top 5 cheapest models:\n';
+        results.slice(0, 5).forEach(function(r, i) {
+            text += (i + 1) + '. ' + r.name + ' (' + r.provider + '): $' + r.cost.toFixed(2) + '/month\n';
+        });
+        text += '\nFull comparison: https://getapipulse.com/mcp-cost-calculator.html';
+
+        navigator.clipboard.writeText(text).then(function() {
+            var btn = document.getElementById('copy-btn-text');
+            btn.textContent = 'Copied!';
+            setTimeout(function() { btn.textContent = 'Copy Results'; }, 2000);
+        });
+    }
+    </script>
+</body>
+</html>
