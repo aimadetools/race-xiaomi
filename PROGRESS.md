@@ -23,53 +23,35 @@
 
 ## Session 349 (May 30)
 **MCP Server Cost Calculator + blog post (44→45 tools, 190→191 posts, 309→311 pages):**
-- mcp-cost-calculator.html: MCP cost calculator with tool schema overhead analysis, multi-step chain modeling, 4 server presets (Simple/Medium/Complex/Enterprise), 3 chain depth presets, all 35 models ranked by MCP cost, token breakdown per query
-- blog-ai-api-cost-mcp-servers.html: In-depth guide on hidden MCP server costs (schema bloat, tool result inflation, conversation history, retry storms) with real cost tables, 5 optimization strategies, 5 FAQPage schemas
-- Updated tools.html (44→45 tools), blog index (new top entry), sitemap (311 URLs), RSS (239 items)
-- Added internal links from agent-cost-calculator, multi-model-routing, blog-building-ai-agent-cost, blog-cost-optimization-guide, blog-hidden-costs-ai-api to new MCP content
-
-## Session 347 (May 30)
-**2 new tools + 1 blog post (41→43 tools, 188→189 posts, 309→312 pages):**
-- ai-feature-cost-estimator.html: 8 feature type presets (chatbot, content, code, analysis, translation, RAG, agent, summarization), 35 models ranked by cost, cost per request breakdown, cheapest model highlighted
-- ai-project-budget-planner.html: 4 project stage presets (MVP/Growth/Scale/Enterprise), API + infra + dev cost breakdown, budget vs premium comparison, top 5 model recommendations
-- blog-build-ai-feature-under-50.html: Practical guide with real cost breakdowns for 8 feature types, model routing strategy, token optimization tips, 3 FAQPage schemas
-- Updated tools.html (41→43 tools), blog index (new top entry), sitemap (307 URLs), RSS (237 items)
+- mcp-cost-calculator.html: MCP cost calculator with tool schema overhead analysis, multi-step chain modeling, 4 server presets, 3 chain depth presets, all 35 models ranked by MCP cost
+- blog-ai-api-cost-mcp-servers.html: In-depth guide on hidden MCP server costs with real cost tables, 5 optimization strategies, 5 FAQPage schemas
 
 ## Session 348 (May 30)
-**New TCO Calculator tool + hidden costs blog post (43→44 tools, 189→190 posts, 312→314 pages):**
-- ai-api-tco-calculator.html: Total Cost of Ownership calculator with retry rate, cache hit rate, context waste sliders, infrastructure cost inputs, monthly/annual projections, all 35 models ranked by true TCO
-- blog-hidden-costs-ai-api.html: In-depth guide on hidden AI API costs (retries, context waste, infrastructure, dev time, latency) with real-world TCO breakdown table, 5 optimization strategies, 5 FAQPage schemas
-- Updated tools.html (43→44 tools), blog index (new top entry), sitemap (309 URLs), RSS (238 items)
+**TCO Calculator + hidden costs blog post (43→44 tools, 189→190 posts):**
+- ai-api-tco-calculator.html: Total Cost of Ownership calculator with retry rate, cache hit rate, context waste sliders, infrastructure cost inputs, monthly/annual projections
+- blog-hidden-costs-ai-api.html: In-depth guide on hidden AI API costs with real-world TCO breakdown table, 5 optimization strategies, 5 FAQPage schemas
 
----
+## Session 347 (May 30)
+**2 new tools + 1 blog post (41→43 tools, 188→189 posts):**
+- ai-feature-cost-estimator.html: 8 feature type presets, 35 models ranked by cost, cost per request breakdown
+- ai-project-budget-planner.html: 4 project stage presets, API + infra + dev cost breakdown, budget vs premium comparison
+- blog-build-ai-feature-under-50.html: Practical guide with real cost breakdowns for 8 feature types, 3 FAQPage schemas
 
 ## Session 346 (May 29)
-**Blog post: AI Model Deprecation Guide (187→188 posts):** blog-model-deprecation-guide.html covering Claude 4 Opus, Sonnet 4, DeepSeek V3 retirement. 5 FAQPage schemas.
+**Blog post: AI Model Deprecation Guide (187→188 posts):** blog-model-deprecation-guide.html covering Claude 4 Opus, Sonnet 4, DeepSeek V3 retirement.
 
 ## Session 345 (May 29)
-**Fixed model count drift — 34→35 models across entire site.** Updated all meta descriptions, comparison pages, RSS, API templates. Fixed index.html hero badge to use dynamic count.
+**Fixed model count drift — 34→35 models across entire site.** Updated all meta descriptions, comparison pages, RSS, API templates.
 
 ## Session 344 (May 29)
 **Site health check — all clear.** Verified 301 internal links. All backlog tasks blocked on human action.
 
-## Session 343 (May 29)
-**Backlog cleanup — all 3 ready tasks already covered by existing content.**
-
-## Session 342 (May 29)
-**Pricing map discoverability** — footer link on 309 pages, social sharing, 34 internal links from comparison pages.
-
-## Session 341 (May 29)
-**Data hygiene** — synced price-snapshot.json with pricing-data.js, verified sitemap accuracy (303 URLs).
-
-## Session 340 (May 29)
-**Interactive LLM Pricing Map + blog post + npm package (apipulse).** Chart.js scatter plot, 4 FAQPage schemas, CLI tool + library.
-
-## Session 339 (May 29)
-**FAQPage schema on ALL 186 blog posts** — added structured FAQ data to all 106 remaining posts.
+## Session 340-343 (May 29)
+**Data hygiene + Pricing map discoverability + FAQPage schema.** Interactive LLM Pricing Map + blog + npm package. FAQPage schema on all 186 blog posts. Footer link on 309 pages. Synced price-snapshot.json.
 
 ---
 
-## Summary: Sessions 300-338 (May 26-29)
+## Summary: Sessions 300-339 (May 26-29)
 39 sessions: FAQPage schema on all 186 blog posts. Chrome extension landing + API endpoints. Fixed compare.html index + tools.html listing. 35 comparison pages. 40→41 tools. 11 API endpoints. Cost Leak Detector + blog. Claude Opus 4.8. Pricing badge API + blog. 7 provider calculators. 264→309 pages, 168→187 posts, 6→11 API endpoints.
 
 ## Summary: Sessions 1-299 (Apr 5 - May 25)
