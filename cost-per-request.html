@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AI API Cost per Request: Quick Reference Table (2026) — APIpulse</title>
-    <meta name="description" content="See exactly how much each AI API request costs. Quick reference table for 34 models at 100, 500, 1K, and 5K token requests. Updated May 2026.">
+    <meta name="description" content="See exactly how much each AI API request costs. Quick reference table for 35 models at 100, 500, 1K, and 5K token requests. Toggle batch vs real-time pricing. Updated May 2026.">
     <meta name="keywords" content="AI API cost per request, LLM cost per request, API pricing table, GPT-4o cost per call, Claude cost per request, cheapest AI API per request, AI API pricing quick reference">
     <meta property="og:title" content="AI API Cost per Request: Quick Reference Table (2026) — APIpulse">
     <meta property="og:description" content="See exactly how much each AI API request costs across 34 models at common token counts.">
@@ -38,7 +38,7 @@
         "@context": "https://schema.org",
         "@type": "Article",
         "headline": "AI API Cost per Request: Quick Reference Table (2026)",
-        "description": "See exactly how much each AI API request costs across 34 models at common token counts.",
+        "description": "See exactly how much each AI API request costs across 35 models at common token counts.",
         "datePublished": "2026-04-29",
         "dateModified": "2026-04-29",
         "author": { "@type": "Organization", "name": "APIpulse" },
@@ -104,6 +104,10 @@
             .comparison-table { font-size: 12px; }
             .comparison-table th, .comparison-table td { padding: 8px 10px; }
         }
+        .mode-toggle { padding: 8px 16px; border-radius: 8px; border: 1px solid var(--border); background: var(--bg-secondary); color: var(--text-secondary); font-size: 13px; font-weight: 600; cursor: pointer; transition: all 0.2s; }
+        .mode-toggle.active { background: var(--accent); color: white; border-color: var(--accent); }
+        .mode-toggle:hover:not(.active) { border-color: var(--accent); color: var(--accent); }
+        .batch-discount { color: #22c55e; font-weight: 600; }
         @media print { nav, .cta-inline, .share-btn, .related-reading, .theme-toggle, .back-to-top, .social-share { display: none !important; } body { background: white; color: black; } .content { padding: 0; } }
     </style>
     <meta name="theme-color" content="#6366f1">
@@ -151,14 +155,21 @@
         </div>
 
         <h1>AI API Cost per Request: Quick Reference Table</h1>
-        <p class="subtitle">How much does a single API call actually cost? We calculated it for all 34 models across 10 providers at four common request sizes. Bookmark this page.</p>
+        <p class="subtitle">How much does a single API call actually cost? We calculated it for all 35 models across 10 providers at four common request sizes. Now with batch API pricing. Bookmark this page.</p>
 
         <div class="assumption-note">
-            <strong>Assumption:</strong> Each request sends 3x more input tokens than output tokens (typical for chat, RAG, and code assistant workloads). Costs are per single request. All prices verified May 2026.
+            <strong>Assumption:</strong> Each request sends 3x more input tokens than output tokens (typical for chat, RAG, and code assistant workloads). Costs are per single request. All prices verified May 2026. <strong>Batch mode</strong> shows 50% discounted rates for providers with batch APIs (OpenAI, Anthropic, Google) — batch jobs process within 24 hours.
         </div>
 
-        <h2>All 34 Models — Cost per Request</h2>
+        <h2>All 35 Models — Cost per Request</h2>
         <p>Sorted cheapest to most expensive. At 1K tokens, costs range from $0.000100 (Llama 3.1 8B) to $0.067500 (GPT-5.5 Pro) — a <strong>675x gap</strong>.</p>
+
+        <div style="display:flex;gap:12px;align-items:center;margin-bottom:24px;flex-wrap:wrap;">
+            <span style="font-weight:600;font-size:14px;color:var(--text-primary);">API Mode:</span>
+            <button id="mode-realtime" class="mode-toggle active" onclick="setMode('realtime')">Real-time (Standard)</button>
+            <button id="mode-batch" class="mode-toggle" onclick="setMode('batch')">Batch (50% off, 24hr)</button>
+            <span id="mode-note" style="font-size:12px;color:var(--text-muted);margin-left:8px;"></span>
+        </div>
 
         <table class="comparison-table">
             <thead>
@@ -266,5 +277,69 @@
     </footer>
 
     <button class="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">↑</button>
+    <script>
+    (function() {
+        // Providers that support batch API (50% discount)
+        var batchProviders = ['OpenAI', 'Anthropic', 'Google'];
+        var currentMode = 'realtime';
+        var originalCells = [];
+
+        // Store original values on load
+        document.addEventListener('DOMContentLoaded', function() {
+            var rows = document.querySelectorAll('.comparison-table tbody tr');
+            rows.forEach(function(row) {
+                var cells = row.querySelectorAll('td');
+                var vals = [];
+                for (var i = 2; i < cells.length; i++) {
+                    vals.push(cells[i].textContent);
+                }
+                originalCells.push(vals);
+            });
+        });
+
+        window.setMode = function(mode) {
+            currentMode = mode;
+            document.getElementById('mode-realtime').classList.toggle('active', mode === 'realtime');
+            document.getElementById('mode-batch').classList.toggle('active', mode === 'batch');
+            var note = document.getElementById('mode-note');
+            if (mode === 'batch') {
+                note.textContent = '50% off for OpenAI, Anthropic, Google batch APIs';
+            } else {
+                note.textContent = '';
+            }
+            updateTable();
+        };
+
+        function updateTable() {
+            var rows = document.querySelectorAll('.comparison-table tbody tr');
+            rows.forEach(function(row, idx) {
+                var cells = row.querySelectorAll('td');
+                if (cells.length < 4) return;
+                var provider = cells[2].textContent;
+                var supportsBatch = batchProviders.some(function(p) { return provider.indexOf(p) !== -1; });
+                for (var i = 2; i < cells.length; i++) {
+                    var origText = originalCells[idx] ? originalCells[idx][i - 2] : cells[i].textContent;
+                    if (currentMode === 'batch' && supportsBatch) {
+                        var val = parseFloat(origText.replace('$', ''));
+                        if (!isNaN(val)) {
+                            var batchVal = val * 0.5;
+                            cells[i].textContent = '$' + batchVal.toFixed(6);
+                            cells[i].classList.add('batch-discount');
+                        }
+                    } else {
+                        cells[i].textContent = origText;
+                        cells[i].classList.remove('batch-discount');
+                    }
+                }
+                // Mark rows that don't support batch
+                if (currentMode === 'batch' && !supportsBatch) {
+                    row.style.opacity = '0.5';
+                } else {
+                    row.style.opacity = '1';
+                }
+            });
+        }
+    })();
+    </script>
 </body>
 </html>
