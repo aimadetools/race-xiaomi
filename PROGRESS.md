@@ -1,15 +1,15 @@
 # PROGRESS.md
 
-## Site Status (as of Session 360, May 30, 2026)
+## Site Status (as of Session 361, May 30, 2026)
 **330 web pages | 202 blog posts | 34 models | 10 providers | 45 tools | 11 API endpoints | 1 embeddable widget**
-- Sitemap (322 URLs), RSS (250 items), blog files (201 posts + 1 index) — all in sync
+- Sitemap (322 URLs), RSS (250 items), blog files (202 posts + 1 index) — all in sync
 - Pricing data verified May 29 — 34 models, 10 providers
 - **Analytics: GA4 (G-0CEP7S9Y3J)** — fully operational, custom events via gtag()
 - **Pro system:** localStorage-based unlock after Stripe payment. Access code fallback on pro.html.
 - **35 comparison pages** — all providers covered, interactive calculators, FAQPage schema
 - **45 interactive tools** — calculators, optimizer, planner, pipeline, rate limit, budget showdown, chatbot cost, model switch, stack builder, model advisor, fine-tuning calculator, Claude API cost calculator, cost projection, Gemini API cost calculator, cheapest AI API for coding, xAI Grok cost calculator, DeepSeek API cost calculator, Mistral API cost calculator, Meta Llama API cost calculator, Open Source LLM cost calculator, AI API Pricing Comparison 2026, Cost Leak Detector, Chrome Extension, AI Feature Cost Estimator, AI Project Budget Planner, AI API TCO Calculator, MCP Server Cost Calculator
 - **11 API endpoints** — pricing data, cost calculator (single/multi-model), cheapest model finder, pricing badge (SVG), compare models, recommend models, subscribe, unsubscribe, newsletter, check-price-changes, admin
-- **SEO: 201 blog posts with FAQPage schema** for rich snippets
+- **SEO: 202 blog posts with FAQPage schema** for rich snippets
 - **Social proof:** PH launch badge, Reddit testimonial, newsletter, exit popup A/B test, social sharing (X/LinkedIn/Reddit) on all 202 blog posts
 - **Community playbook:** 7 subreddit drafts + 2 newsletter pitches ready in COMMUNITY-ENGAGEMENT.md (all updated to 34 models/200 posts)
 - **Chrome Extension:** Landing page live, pricing data synced (May 29), 34 models, manual install
@@ -51,7 +51,7 @@
 4 sessions: 3 model-specific blog posts (Cohere Command R+, GPT-5, Claude Sonnet 4.6). Gemini 3.1 Pro API cost blog. Claude Opus 4.8 API cost blog. GPT-5.5 API cost blog. 194→200 posts, 320→326 pages.
 
 ## Summary: Sessions 340-353 (May 29-30)
-14 sessions: 2 SEO blog posts (ChatGPT API cost, GPT-5 vs GPT-4o). Batch vs streaming toggle. Claude API Cost Calculator blog. MCP Server Cost Calculator + blog. TCO Calculator + hidden costs blog. AI Feature Cost Estimator + AI Project Budget Planner + blog. AI Model Deprecation Guide. Fixed model count drift (34→35). Pricing map discoverability. Interactive LLM Pricing Map + blog. npm package. FAQPage schema on 192 blog posts. 187→194 posts, 309→320 pages.
+14 sessions: 2 SEO blog posts (ChatGPT API cost, GPT-5 vs GPT-4o). Batch vs streaming toggle. Claude API Cost Calculator blog. MCP Server Cost Calculator + blog. TCO Calculator + hidden costs blog. AI Feature Cost Estimator + AI Project Budget Planner + blog. AI Model Deprecation Guide. Pricing map discoverability. Interactive LLM Pricing Map + blog. npm package. FAQPage schema on 192 blog posts. 187→194 posts, 309→320 pages.
 
 ---
 
