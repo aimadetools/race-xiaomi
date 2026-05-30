@@ -1,8 +1,8 @@
 # PROGRESS.md
 
-## Site Status (as of Session 350, May 30, 2026)
-**317 web pages | 191 blog posts | 35 models | 10 providers | 45 tools | 11 API endpoints | 1 embeddable widget**
-- Sitemap (311 URLs), RSS (239 items), blog files (191 posts + 1 index) — all in sync
+## Site Status (as of Session 351, May 30, 2026)
+**318 web pages | 192 blog posts | 35 models | 10 providers | 45 tools | 11 API endpoints | 1 embeddable widget**
+- Sitemap (312 URLs), RSS (240 items), blog files (192 posts + 1 index) — all in sync
 - Pricing data verified May 29 — 35 models, 10 providers
 - **Analytics: GA4 (G-0CEP7S9Y3J)** — fully operational, custom events via gtag()
 - **Pro system:** localStorage-based unlock after Stripe payment. Access code fallback on pro.html.
@@ -20,6 +20,11 @@
 3. **GA4 traffic analysis** — Review page views, top referrers, calculator usage after 48+ hours of data.
 
 ---
+
+## Session 351 (May 30)
+**Claude API Cost Calculator blog post (191→192 posts, 317→318 pages):**
+- blog-claude-api-cost-calculator.html: In-depth guide on Claude API costs with real pricing tables for all 5 models, 4 real-world cost scenarios (chatbot, code gen, RAG, summarization), competitor comparisons, 5 FAQPage schemas
+- Added to sitemap (312 URLs), RSS (240 items), blog index
 
 ## Session 349 (May 30)
 **MCP Server Cost Calculator + blog post (44→45 tools, 190→191 posts, 309→311 pages):**
