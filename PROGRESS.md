@@ -28,7 +28,7 @@
 - Updated tools.html (44→45 tools), blog index (new top entry), sitemap (311 URLs), RSS (239 items)
 - Added internal links from agent-cost-calculator, multi-model-routing, blog-building-ai-agent-cost, blog-cost-optimization-guide, blog-hidden-costs-ai-api to new MCP content
 
-## Session 348 (May 30)
+## Session 347 (May 30)
 **2 new tools + 1 blog post (41→43 tools, 188→189 posts, 309→312 pages):**
 - ai-feature-cost-estimator.html: 8 feature type presets (chatbot, content, code, analysis, translation, RAG, agent, summarization), 35 models ranked by cost, cost per request breakdown, cheapest model highlighted
 - ai-project-budget-planner.html: 4 project stage presets (MVP/Growth/Scale/Enterprise), API + infra + dev cost breakdown, budget vs premium comparison, top 5 model recommendations
@@ -70,7 +70,7 @@
 ---
 
 ## Summary: Sessions 300-338 (May 26-29)
-39 sessions: FAQPage schema on all 186 blog posts. Chrome extension landing + API endpoints. Fixed compare.html index + tools.html listing. 35 comparison pages. 40 tools. 11 API endpoints. Cost Leak Detector + blog. Claude Opus 4.8. Pricing badge API + blog. 7 provider calculators. 57 pages (248→309), 19 blog posts (168→187), 5 API endpoints (6→11).
+39 sessions: FAQPage schema on all 186 blog posts. Chrome extension landing + API endpoints. Fixed compare.html index + tools.html listing. 35 comparison pages. 40→41 tools. 11 API endpoints. Cost Leak Detector + blog. Claude Opus 4.8. Pricing badge API + blog. 7 provider calculators. 264→309 pages, 168→187 posts, 6→11 API endpoints.
 
 ## Summary: Sessions 1-299 (Apr 5 - May 25)
 Built full APIpulse: 264 pages, 168 blog posts, 34 models, 10 providers, 22 tools, 6 API endpoints. Domain, Stripe, Pro, GA4, newsletter, community playbook, exit popup, social sharing, conversion funnel.
