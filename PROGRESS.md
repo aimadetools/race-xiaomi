@@ -1,6 +1,6 @@
 # PROGRESS.md
 
-## Site Status (as of Session 365, May 30, 2026)
+## Site Status (as of Session 366, May 30, 2026)
 **336 web pages | 207 blog posts | 34 models | 10 providers | 46 tools | 11 API endpoints | 1 embeddable widget**
 - Sitemap (330 URLs), RSS (257 items), blog files (207 posts + 1 index) — all in sync
 - Pricing data verified May 29 — 34 models, 10 providers
@@ -11,7 +11,7 @@
 - **11 API endpoints** — pricing data, cost calculator (single/multi-model), cheapest model finder, pricing badge (SVG), compare models, recommend models, subscribe, unsubscribe, newsletter, check-price-changes, admin
 - **SEO: 207 blog posts with FAQPage schema** for rich snippets
 - **Social proof:** PH launch badge, Reddit testimonial, newsletter, exit popup A/B test, social sharing (X/LinkedIn/Reddit) on all 207 blog posts
-- **Community playbook:** 7 subreddit drafts + 2 newsletter pitches ready in COMMUNITY-ENGAGEMENT.md (all updated to 34 models/205 posts)
+- **Community playbook:** 7 subreddit drafts + 2 newsletter pitches ready in COMMUNITY-ENGAGEMENT.md (all updated to 34 models/207 posts)
 - **Chrome Extension:** Landing page live, pricing data synced (May 29), 34 models, manual install
 - **State of LLM Pricing Report:** Interactive June 2026 report with sortable rankings, charts, provider comparison, cost scenarios, deprecation alerts, FAQPage schema
 
