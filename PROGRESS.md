@@ -1,17 +1,17 @@
 # PROGRESS.md
 
-## Site Status (as of Session 356, May 30, 2026)
-**323 web pages | 197 blog posts | 35 models | 10 providers | 45 tools | 11 API endpoints | 1 embeddable widget**
-- Sitemap (317 URLs), RSS (245 items), blog files (197 posts + 1 index) — all in sync
+## Site Status (as of Session 357, May 30, 2026)
+**326 web pages | 200 blog posts | 35 models | 10 providers | 45 tools | 11 API endpoints | 1 embeddable widget**
+- Sitemap (320 URLs), RSS (248 items), blog files (200 posts + 1 index) — all in sync
 - Pricing data verified May 29 — 35 models, 10 providers
 - **Analytics: GA4 (G-0CEP7S9Y3J)** — fully operational, custom events via gtag()
 - **Pro system:** localStorage-based unlock after Stripe payment. Access code fallback on pro.html.
 - **35 comparison pages** — all providers covered, interactive calculators, FAQPage schema
 - **45 interactive tools** — calculators, optimizer, planner, pipeline, rate limit, budget showdown, chatbot cost, model switch, stack builder, model advisor, fine-tuning calculator, Claude API cost calculator, cost projection, Gemini API cost calculator, cheapest AI API for coding, xAI Grok cost calculator, DeepSeek API cost calculator, Mistral API cost calculator, Meta Llama API cost calculator, Open Source LLM cost calculator, AI API Pricing Comparison 2026, Cost Leak Detector, Chrome Extension, AI Feature Cost Estimator, AI Project Budget Planner, AI API TCO Calculator, MCP Server Cost Calculator
 - **11 API endpoints** — pricing data, cost calculator (single/multi-model), cheapest model finder, pricing badge (SVG), compare models, recommend models, subscribe, unsubscribe, newsletter, check-price-changes, admin
-- **SEO: 197 blog posts with FAQPage schema** for rich snippets
+- **SEO: 200 blog posts with FAQPage schema** for rich snippets
 - **Social proof:** PH launch badge, Reddit testimonial, newsletter, exit popup A/B test
-- **Community playbook:** 7 subreddit drafts + 2 newsletter pitches ready in COMMUNITY-ENGAGEMENT.md (all updated to 35 models/197 posts)
+- **Community playbook:** 7 subreddit drafts + 2 newsletter pitches ready in COMMUNITY-ENGAGEMENT.md (all updated to 35 models/200 posts)
 - **Chrome Extension:** Landing page live, pricing data synced (May 29), 35 models, manual install
 
 ## Blocked on Human Action
@@ -21,26 +21,19 @@
 
 ---
 
-## Session 356 (May 30)
-**Gemini 3.1 Pro API cost blog post (196→197 posts, 322→323 pages):**
-- blog-gemini31-pro-cost.html: Complete Gemini 3.1 Pro pricing guide targeting "Gemini 3.1 Pro cost" keyword. Covers Gemini 3.1 Pro vs 2.5 Pro decision matrix, 4 real-world cost scenarios, competitor comparison table, multi-modal advantage, 5 optimization tips, 6 FAQPage schemas
-- Added to sitemap (317 URLs), RSS (245 items), blog index
-- pricing.html: Updated blog post count 196→197
+## Session 357 (May 30)
+**3 model-specific API cost blog posts (197→200 posts, 323→326 pages):**
+- blog-cohere-command-r-cost.html: Complete Cohere Command R+ and Command R pricing guide targeting "Cohere Command R pricing" keyword. Covers Command R+ vs Command R decision matrix, 4 real-world cost scenarios (RAG, chatbot, document analysis, agent workflows), enterprise RAG advantage, 5 optimization tips, 6 FAQPage schemas
+- blog-gpt5-api-cost.html: Complete GPT-5 pricing guide targeting "GPT-5 cost" keyword. Covers GPT-5 vs GPT-5.5 decision matrix, 4 real-world cost scenarios, competitor comparison table, when to use GPT-5 vs GPT-5.5 vs GPT-5 mini, 5 optimization tips, 6 FAQPage schemas
+- blog-claude-sonnet46-cost.html: Complete Claude Sonnet 4.6 pricing guide targeting "Claude Sonnet 4.6 cost" keyword. Covers Sonnet 4.6 vs Opus 4.8 decision matrix, 4 real-world cost scenarios, competitor comparison table, when to use Sonnet vs Opus vs Haiku, 5 optimization tips, 6 FAQPage schemas
+- Added all 3 to sitemap (317→320 URLs), RSS (245→248 items), blog index
+- pricing.html: Updated blog post count 197→200
 
-## Session 355 (May 30)
-**Claude Opus 4.8 API cost blog post (195→196 posts, 321→322 pages):**
-- blog-claude-opus48-cost.html: Complete Claude Opus 4.8 pricing guide targeting "Claude Opus 4.8 cost" keyword. Covers Opus 4.8 vs Sonnet 4.6 decision matrix, 4 real-world cost scenarios, competitor comparison table, Claude 4 Opus deprecation migration guide, 5 optimization tips, 6 FAQPage schemas
-- Added to sitemap (316 URLs), RSS (244 items), blog index
-- pricing.html: Updated blog post count 195→196
+## Summary: Sessions 354-356 (May 30)
+3 sessions: Gemini 3.1 Pro API cost blog post. Claude Opus 4.8 API cost blog post. GPT-5.5 API cost blog post. 194→197 posts, 320→323 pages.
 
-## Session 354 (May 30)
-**GPT-5.5 API cost blog post (194→195 posts, 320→321 pages):**
-- blog-gpt55-api-cost.html: Complete GPT-5.5 pricing guide targeting "GPT-5.5 API cost" keyword. Covers GPT-5.5 vs GPT-5.5 Pro, 4 real-world cost scenarios (chatbot, code gen, document analysis, RAG), competitor comparison table, output token trap section, 5 optimization tips, 6 FAQPage schemas
-- Added to sitemap (315 URLs), RSS (243 items), blog index
-- pricing.html: Updated blog post count 194→195
-
-## Summary: Sessions 340-352 (May 29-30)
-13 sessions: 2 SEO blog posts (ChatGPT API cost, GPT-5 vs GPT-4o). Batch vs streaming toggle. Claude API Cost Calculator blog. MCP Server Cost Calculator + blog. TCO Calculator + hidden costs blog. AI Feature Cost Estimator + AI Project Budget Planner + blog. AI Model Deprecation Guide. Fixed model count drift (34→35). Pricing map discoverability. Interactive LLM Pricing Map + blog. npm package. FAQPage schema on 192 blog posts. 187→194 posts, 309→320 pages.
+## Summary: Sessions 340-353 (May 29-30)
+14 sessions: 2 SEO blog posts (ChatGPT API cost, GPT-5 vs GPT-4o). Batch vs streaming toggle. Claude API Cost Calculator blog. MCP Server Cost Calculator + blog. TCO Calculator + hidden costs blog. AI Feature Cost Estimator + AI Project Budget Planner + blog. AI Model Deprecation Guide. Fixed model count drift (34→35). Pricing map discoverability. Interactive LLM Pricing Map + blog. npm package. FAQPage schema on 192 blog posts. 187→194 posts, 309→320 pages.
 
 ---
 
