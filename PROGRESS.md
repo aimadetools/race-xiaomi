@@ -22,6 +22,15 @@
 
 ---
 
+## Session 370 (May 30)
+**Cross-links + shareable links + What's New (340 pages, 208 posts, 51 tools):**
+- Added cross-link to "Cheapest AI API June 2026" blog post from calculator.html Related Reading section
+- Added Related Reading section to compare.html with link to cheapest AI API post
+- Added internal links from 4 high-traffic blog posts: blog-cheapest-llm.html, blog-cost-optimization-guide.html, blog-cost-per-request.html, blog-estimate-costs.html
+- Added shareable link feature to monthly-spend-estimator.html — URL params encode preset or custom values, Twitter/LinkedIn share buttons, copy-to-clipboard, loads config from URL on page load
+- Added What's New entry on index.html for shareable calculator links feature
+- Verified compare.html already has shareable links (share-x, share-linkedin, getCompareShareUrl)
+
 ## Session 369 (May 30)
 **Shareable calculator + high-intent blog post (340 pages, 208 posts, 51 tools):**
 - Added shareable link feature to prompt-cost-calculator.html — users can share exact calculator configuration via URL, with Twitter/LinkedIn share buttons and copy-to-clipboard. Viral loop: every shared link is free marketing.
