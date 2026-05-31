@@ -1,6 +1,6 @@
 # PROGRESS.md
 
-## Site Status (as of Session 387, May 31, 2026)
+## Site Status (as of Session 388, May 31, 2026)
 **357 web pages | 223 blog posts | 34 models | 10 providers | 53 tools | 11 API endpoints | 1 embeddable widget**
 - Sitemap (351 URLs), RSS (277 items), blog files (223 posts + 1 index) — all in sync
 - Pricing data verified May 29 — 34 models, 10 providers
@@ -21,6 +21,14 @@
 3. **GA4 traffic analysis** — Review page views, top referrers, calculator usage after 48+ hours of data.
 
 ---
+
+## Session 388 (May 31)
+**Cross-link Report Card from 10 tools, fix stale stats, add blog Pro upsell (357 pages, 223 posts, 53 tools):**
+- Added API Cost Report Card cross-links from 10 popular tool pages: calculator, compare, cost-explorer, claude/gpt5/gemini calculators, chatbot-cost-calculator, cost-projection, budget-planner, multi-model-routing
+- Added Report Card tool card to tools.html grid
+- Fixed stale stats: 210→223 guides (pricing.html x2), 52→53 tools (tools.html, prompt-cost-calculator.html)
+- Added blog Pro upsell injection in shared.js — shows "Upgrade to Pro" CTA after calculator CTA on all blog post pages
+- Updated pricing page social proof to reflect current 223 blog posts
 
 ## Session 387 (May 31)
 **API Cost Report Card — shareable viral tool (357 pages, 223 posts, 53 tools):**
@@ -45,14 +53,11 @@
 - Added to blog.html index, sitemap (349 URLs), RSS (276 items)
 - Cross-linked from energy, automotive, manufacturing, logistics, and construction blog posts
 
-## Summary: Sessions 383-387 (May 31)
-5 sessions: API Cost Report Card (shareable viral tool). AI API Cost for Mining & Resources blog post. AI API Cost for Pharma & Biotech blog post. AI API Cost for Travel & Tourism blog post. AI API Cost for Fashion & Apparel blog post. (357 pages, 223 posts, 53 tools).
-
-## Summary: Sessions 380-382 (May 31)
-3 sessions: Best AI Embedding APIs blog post. Best AI Speech APIs blog post. AI API Cost for Food & Beverage blog post. (354 pages, 221 posts).
+## Summary: Sessions 383-388 (May 31)
+6 sessions: Cross-link Report Card from 10 tools, stale stats fixes, blog Pro upsell. API Cost Report Card (shareable viral tool). 5 industry blog posts (Mining, Pharma, Fashion, Travel, Food). (357 pages, 223 posts, 53 tools).
 
 ## Summary: Sessions 367-382 (May 30-31)
-16 sessions: AI API Cost for Vision, Structured Output, Food & Beverage blog posts. Streaming toggle. AI startup API budgets blog post. AI API Cost Health Check (52 tools). AI API Pricing June 2026. 3 new provider calculators (Cohere, Moonshot, Together.ai). State of LLM Pricing Report. Social sharing on all 219 blog posts. Monthly Spend Estimator. 200→218 posts, 326→351 pages, 45→52 tools.
+16 sessions: Best AI Embedding/Speech/Vision/Structured Output blog posts. Streaming toggle. AI startup API budgets. AI API Cost Health Check. AI API Pricing June 2026. 3 new provider calculators. State of LLM Pricing Report. Social sharing on all blog posts. Monthly Spend Estimator. 200→221 posts, 326→354 pages, 45→52 tools.
 
-## Summary: Sessions 1-339 (Apr 5 - May 29)
+## Summary: Sessions 1-366 (Apr 5 - May 29)
 Built full APIpulse: 326 pages, 187 blog posts, 34 models, 10 providers, 48 tools, 11 API endpoints. Domain, Stripe, Pro, GA4, newsletter, community playbook, exit popup, social sharing, conversion funnel. Chrome extension + landing page. 35 comparison pages. Cost Leak Detector. Pricing badge API. 7 provider calculators. npm package. FAQPage schema on all blog posts.
