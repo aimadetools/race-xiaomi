@@ -10,9 +10,9 @@
 - **57 interactive tools** — calculators, optimizer, planner, pipeline, rate limit, budget showdown, chatbot cost, model switch, AI Stack Builder, model advisor, fine-tuning calculator, Claude API cost calculator, cost projection, Gemini API cost calculator, cheapest AI API for coding, xAI Grok cost calculator, DeepSeek API cost calculator, Mistral API cost calculator, Meta Llama API cost calculator, Open Source LLM cost calculator, AI API Pricing Comparison 2026, Cost Leak Detector, Chrome Extension, AI Feature Cost Estimator, AI Project Budget Planner, AI API TCO Calculator, MCP Server Cost Calculator, Monthly Spend Estimator, Cohere API cost calculator, Moonshot API cost calculator, Together.ai API cost calculator, API Cost Report Card, SaaS AI Cost Calculator, AI ROI Calculator, Embedding API Cost Calculator, Cheapest Embedding API
 - **11 API endpoints** — pricing data, cost calculator (single/multi-model), cheapest model finder, pricing badge (SVG), compare models, recommend models, subscribe, unsubscribe, newsletter, check-price-changes, admin
 - **2 embeddable widgets** — pricing table/badge/compare (widget.js) + report card (embed-report.html)
-- **SEO: 226 blog posts with FAQPage schema** for rich snippets
-- **Social proof:** PH launch badge, Reddit testimonial, newsletter, exit popup A/B test, social sharing (X/LinkedIn/Reddit) on all 226 blog posts
-- **Community playbook:** 7 subreddit drafts + 2 newsletter pitches ready in COMMUNITY-ENGAGEMENT.md (all updated to 34 models/226 posts)
+- **SEO: 228 blog posts with FAQPage schema** for rich snippets
+- **Social proof:** PH launch badge, Reddit testimonial, newsletter, exit popup A/B test, social sharing (X/LinkedIn/Reddit) on all 228 blog posts
+- **Community playbook:** 7 subreddit drafts + 2 newsletter pitches ready in COMMUNITY-ENGAGEMENT.md (all updated to 34 models/228 posts)
 - **Chrome Extension:** Landing page live, pricing data synced (May 29), 34 models, manual install
 - **State of LLM Pricing Report:** Interactive June 2026 report with sortable rankings, charts, provider comparison, cost scenarios, deprecation alerts, FAQPage schema
 - **OG images:** Dedicated report card OG image (og-image-report.svg), main OG images updated to 34 models
@@ -61,18 +61,8 @@
 - FAQPage schema (5 questions), social sharing (X/LinkedIn), cross-linked from calculator, cost-optimizer, cost-projection, fine-tuning-calculator, api-cost-report
 - Added to tools.html grid (54→55 tools), sitemap (354→356 URLs), RSS (279→280 items), blog.html index, index.html What's New section
 
-## Session 392 (May 31)
-**SaaS AI Cost Calculator + blog post (360 pages, 224 posts, 54 tools, 354 sitemap URLs):**
-- Created ai-cost-saas.html — interactive calculator for SaaS founders to estimate AI cost per user, cost per interaction, and monthly spend at scale
-- Features: 4 AI feature presets, cost per user/interaction results, all 34 models ranked by SaaS cost, scaling scenarios (100-100K users), suggested pricing at 3-5x markup with margin calculation
-- Created blog-saas-ai-cost-per-user.html — "How to Price AI Features in Your SaaS: Cost Per User Breakdown" targeting "AI cost per user SaaS", "SaaS AI pricing", "how to price AI features" keywords
-- Blog covers: real cost breakdowns across 7 models, 3-5x pricing rule, 4 pricing models that work, cost optimization strategies, worked example with 5K users
-- FAQPage schema (5 questions), social sharing, cross-linked from chatbot-cost-calculator.html and blog-ai-startup-api-budget-2026.html
-- Added to tools.html grid (53→54 tools), sitemap (352→354 URLs), RSS (277→279 items), index.html What's New section
-
-## Session 391 (May 31)
-**Sitemap hygiene (358 pages, 223 posts, 53 tools, 356 sitemap URLs):**
-- Added embed-report.html to sitemap.xml (was missing). Fixed 300+ stale lastmod dates across sitemap.
+## Summary: Sessions 391-394 (May 31)
+4 sessions: SaaS AI Cost Calculator + blog post. Sitemap hygiene (fix 300+ stale dates). AI ROI Calculator + blog post. AI API Pricing July 2026 blog post. (363 pages, 226 posts, 55 tools, 358 sitemap URLs).
 
 ## Summary: Sessions 383-390 (May 31)
 8 sessions: API Cost Report Card (shareable viral tool with letter grades + shareable URLs). Embeddable Report Card widget + OG image. Cross-link Report Card from 10 tools, blog Pro upsell. 5 industry blog posts (Mining, Pharma, Fashion, Travel, Food). Sitemap hygiene (fix 300+ stale dates). What's New updates + backlog audit. (362 pages, 225 posts, 55 tools, 356 sitemap URLs).
