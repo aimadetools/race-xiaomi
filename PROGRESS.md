@@ -88,14 +88,11 @@
 - FAQPage schema (5 questions), social sharing (X/LinkedIn), cross-linked from calculator, cost-optimizer, cost-projection, fine-tuning-calculator, api-cost-report
 - Added to tools.html grid (54→55 tools), sitemap (354→356 URLs), RSS (279→280 items), blog.html index, index.html What's New section
 
-## Summary: Sessions 391-394 (May 31)
-4 sessions: SaaS AI Cost Calculator + blog post. Sitemap hygiene (fix 300+ stale dates). AI ROI Calculator + blog post. AI API Pricing July 2026 blog post. (363 pages, 226 posts, 55 tools, 358 sitemap URLs).
-
-## Summary: Sessions 383-390 (May 31)
-8 sessions: API Cost Report Card (shareable viral tool with letter grades + shareable URLs). Embeddable Report Card widget + OG image. Cross-link Report Card from 10 tools, blog Pro upsell. 5 industry blog posts (Mining, Pharma, Fashion, Travel, Food). Sitemap hygiene (fix 300+ stale dates). What's New updates + backlog audit. (362 pages, 225 posts, 55 tools, 356 sitemap URLs).
+## Summary: Sessions 383-392 (May 31)
+12 sessions: SaaS AI Cost Calculator. Sitemap hygiene. AI ROI Calculator + blog. July 2026 pricing post. API Cost Report Card + embeddable widget. 5 industry blog posts. (363 pages, 226 posts, 55 tools).
 
 ## Summary: Sessions 367-382 (May 30-31)
-16 sessions: Best AI Embedding/Speech/Vision/Structured Output blog posts. Streaming toggle. AI startup API budgets. AI API Cost Health Check. AI API Pricing June 2026. 3 new provider calculators. State of LLM Pricing Report. Social sharing on all blog posts. Monthly Spend Estimator. (354 pages, 221 posts, 52 tools, 2 widgets).
+16 sessions: Best AI Embedding/Speech/Vision/Structured Output blog posts. Streaming toggle. AI startup API budgets. AI API Cost Health Check. June 2026 pricing post. 3 provider calculators. State of LLM Pricing Report. Social sharing. Monthly Spend Estimator. (354 pages, 221 posts, 52 tools).
 
 ## Summary: Sessions 1-366 (Apr 5 - May 29)
-Built full APIpulse: 326 pages, 187 blog posts, 34 models, 10 providers, 48 tools, 11 API endpoints. Domain, Stripe, Pro, GA4, newsletter, community playbook, exit popup, social sharing, conversion funnel. Chrome extension + landing page. 35 comparison pages. Cost Leak Detector. Pricing badge API. 7 provider calculators. npm package. FAQPage schema on all blog posts.
+Built full APIpulse: 326 pages, 187 blog posts, 34 models, 10 providers, 48 tools, 11 API endpoints. Domain, Stripe, Pro, GA4, newsletter, community playbook, exit popup, social sharing, conversion funnel. Chrome extension. 35 comparison pages. 7 provider calculators. FAQPage schema on all blog posts.
