@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI API ROI Calculator — Calculate Your Return on AI Investment | APIpulse</title>
+    <meta name="description" content="Free AI ROI calculator. See if your AI API investment pays off. Calculate return on investment, payback period, and net savings across 34 models.">
+    <meta name="keywords" content="AI ROI calculator, AI API return on investment, AI cost benefit analysis, AI investment ROI, LLM ROI">
+    <meta property="og:title" content="AI API ROI Calculator — Calculate Your Return on AI Investment | APIpulse">
+    <meta property="og:description" content="Calculate ROI on your AI API investment. See payback period, net savings, and which model gives the best return. Free tool.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://getapipulse.com/og-image.png">
+    <meta property="og:url" content="https://getapipulse.com/ai-roi-calculator.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="AI API ROI Calculator">
+    <meta name="twitter:image" content="https://getapipulse.com/og-image.png">
+    <meta name="twitter:description" content="Calculate ROI on your AI API investment. See payback period, net savings, and which model gives the best return.">
+    <link rel="canonical" href="https://getapipulse.com/ai-roi-calculator.html">
+    <link rel="alternate" type="application/rss+xml" title="APIpulse Blog" href="https://getapipulse.com/rss.xml">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="styles.css">
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0CEP7S9Y3J"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-0CEP7S9Y3J');
+    </script>
+    <script src="analytics.js" defer></script>
+    <script src="dynamic-date.js" defer></script>
+    <script src="shared.js" defer></script>
+    <script src="pricing-data.js" defer></script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "APIpulse AI API ROI Calculator",
+        "url": "https://getapipulse.com/ai-roi-calculator.html",
+        "description": "Free AI ROI calculator. Calculate return on investment, payback period, and net savings for AI API adoption across 34 models.",
+        "applicationCategory": "DeveloperApplication",
+        "operatingSystem": "Web",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "How do I calculate ROI on AI API costs?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "AI ROI = (Value Created - AI Cost) / AI Cost x 100. Value created includes time savings (hours saved x hourly rate), error reduction, and throughput gains. Calculate monthly AI API cost using your token usage and model pricing, then compare against the value AI generates for your business."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What is a good ROI for AI API investment?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Most businesses see 200-500% ROI on AI API investments within 6 months. A 300% ROI means you get $3 back for every $1 spent. The key is choosing the right model — budget models like GPT-4o mini or Gemini Flash can deliver 5-10x higher ROI than premium models for tasks that don't need top-tier reasoning."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How long does it take to see ROI from AI APIs?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Most teams see positive ROI within 1-3 months. Simple automation tasks (classification, extraction) pay off in weeks. Complex use cases (code generation, content creation) typically break even in 1-2 months. The fastest ROI comes from replacing manual, repetitive tasks with cheap models like GPT-4o mini ($0.15/1M tokens)."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Which AI model gives the best ROI?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "For pure ROI, budget models win. GPT-4o mini, Gemini Flash, and DeepSeek V4 Flash cost 50-200x less than premium models while handling 80% of tasks well. Use premium models (GPT-5, Claude Opus) only for complex reasoning. A multi-model strategy — routing simple tasks to cheap models — typically delivers 3-5x better ROI than using a single premium model."
+                }
+            }
+        ]
+    }
+    </script>
+    <style>
+        .calc-hero {
+            padding: 120px 24px 40px; text-align: center; max-width: 700px; margin: 0 auto;
+        }
+        .calc-hero h1 { font-size: clamp(28px, 4vw, 42px); font-weight: 800; margin-bottom: 12px; }
+        .calc-hero p { color: var(--text-secondary); font-size: 17px; line-height: 1.6; }
+
+        .calculator-section { padding: 0 24px 60px; }
+        .section-header { text-align: center; margin-bottom: 32px; }
+        .section-header h2 { font-size: 24px; font-weight: 700; margin-bottom: 8px; }
+        .section-header p { color: var(--text-secondary); font-size: 15px; }
+
+        .calculator {
+            background: var(--bg-card); border: 1px solid var(--border);
+            border-radius: 16px; padding: 32px; max-width: 900px; margin: 0 auto;
+        }
+        .presets {
+            display: flex; gap: 8px; margin-bottom: 24px; flex-wrap: wrap; align-items: center;
+        }
+        .preset-btn {
+            background: var(--bg-secondary); border: 1px solid var(--border);
+            color: var(--text-secondary); padding: 8px 16px; border-radius: 8px;
+            cursor: pointer; font-size: 13px; transition: all 0.2s; font-weight: 500;
+        }
+        .preset-btn:hover { border-color: var(--accent); color: var(--accent); }
+        .preset-btn.active-preset { background: var(--accent); color: white; border-color: var(--accent); }
+        .calc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
+        .calc-inputs { display: flex; flex-direction: column; gap: 16px; }
+        .input-group { display: flex; flex-direction: column; gap: 6px; }
+        .input-group label { font-size: 13px; font-weight: 600; color: var(--text-secondary); }
+        .input-group select, .input-group input {
+            padding: 12px 16px; border-radius: 8px; border: 1px solid var(--border);
+            background: var(--bg-secondary); color: var(--text-primary); font-size: 15px;
+            font-family: inherit;
+        }
+        .input-group select:focus, .input-group input:focus {
+            outline: 2px solid var(--accent); outline-offset: 2px; border-color: var(--accent);
+        }
+        .input-group .hint { font-size: 11px; color: var(--text-muted); margin-top: -2px; }
+        .calc-results {
+            background: var(--bg-secondary); border: 1px solid var(--border);
+            border-radius: 12px; padding: 24px;
+        }
+        .result-item {
+            display: flex; justify-content: space-between; padding: 10px 0;
+            border-bottom: 1px solid var(--border); font-size: 14px;
+        }
+        .result-item:last-child { border-bottom: none; }
+        .result-label { color: var(--text-secondary); }
+        .result-value { color: var(--text-primary); font-weight: 600; font-variant-numeric: tabular-nums; }
+        .result-total {
+            display: flex; justify-content: space-between; padding: 14px 0 10px;
+            border-top: 2px solid var(--accent); margin-top: 8px; font-size: 18px;
+        }
+        .result-total .result-label { color: var(--text-primary); font-weight: 700; }
+        .result-total .result-value { color: var(--accent); font-weight: 800; }
+
+        .roi-badge {
+            display: inline-flex; align-items: center; gap: 8px;
+            padding: 12px 20px; border-radius: 12px; font-size: 16px; font-weight: 700;
+            margin-bottom: 16px;
+        }
+        .roi-badge.positive { background: rgba(34,197,94,0.1); border: 1px solid rgba(34,197,94,0.3); color: var(--green); }
+        .roi-badge.negative { background: rgba(239,68,68,0.1); border: 1px solid rgba(239,68,68,0.3); color: #ef4444; }
+        .roi-badge.neutral { background: rgba(245,158,11,0.1); border: 1px solid rgba(245,158,11,0.3); color: var(--orange); }
+
+        .comparison-table {
+            max-width: 900px; margin: 0 auto; overflow-x: auto;
+        }
+        .comparison-table table {
+            width: 100%; border-collapse: collapse; font-size: 14px;
+        }
+        .comparison-table th {
+            text-align: left; padding: 12px 16px; font-size: 12px; font-weight: 700;
+            color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px;
+            border-bottom: 2px solid var(--border);
+        }
+        .comparison-table td {
+            padding: 12px 16px; border-bottom: 1px solid rgba(42,42,62,0.5);
+            font-variant-numeric: tabular-nums;
+        }
+        .comparison-table tr:hover td { background: rgba(99,102,241,0.03); }
+        .comparison-table .best-row td { background: rgba(34,197,94,0.06); }
+        .comparison-table .model-name { font-weight: 600; color: var(--text-primary); }
+        .comparison-table .roi-value { font-weight: 700; }
+
+        .info-section {
+            max-width: 700px; margin: 0 auto; padding: 0 24px 60px;
+        }
+        .info-section h2 { font-size: 22px; font-weight: 700; margin-bottom: 16px; }
+        .info-section p { color: var(--text-secondary); line-height: 1.7; margin-bottom: 16px; }
+        .info-section ul { color: var(--text-secondary); padding-left: 24px; margin-bottom: 16px; }
+        .info-section li { margin-bottom: 8px; line-height: 1.6; }
+        .info-section strong { color: var(--text-primary); }
+
+        .cta-inline {
+            background: var(--bg-secondary); border: 1px solid var(--accent);
+            border-radius: 12px; padding: 24px; margin: 32px 0; text-align: center;
+        }
+        .cta-inline p { margin-bottom: 12px; color: var(--text-secondary); }
+
+        @media (max-width: 768px) {
+            .calc-hero { padding: 100px 20px 30px; }
+            .calc-hero h1 { font-size: 26px; }
+            .calculator-section { padding: 0 20px 40px; }
+            .calculator { padding: 20px; }
+            .calc-grid { grid-template-columns: 1fr; gap: 24px; }
+            .presets { justify-content: center; }
+        }
+        @media print {
+            nav, .theme-toggle, .back-to-top, .presets { display: none !important; }
+            body { background: white; color: black; }
+            .calculator { border: 1px solid #ccc; }
+        }
+    </style>
+    <meta name="theme-color" content="#6366f1">
+    <link rel="preconnect" href="https://getapipulse.com">
+</head>
+<body>
+    <a href="#main" class="skip-link">Skip to content</a>
+    <nav>
+        <div class="nav-inner">
+            <a href="index.html" class="logo">API<span>pulse</span></a>
+            <button class="hamburger" onclick="toggleMobileNav()" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+            <div class="nav-links">
+                <a href="calculator.html">Calculator</a>
+                <a href="compare.html">Compare</a>
+                <a href="cost-explorer.html">Explorer</a>
+                <a href="model-switch.html">Switch</a>
+                <a href="cost-scenarios.html">Scenarios</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="use-cases.html">Use Cases</a>
+                <a href="about.html">About</a>
+                <a href="blog.html">Blog</a>
+                <a href="tools.html">Tools</a>
+                <a href="pricing-index.html">Pricing Index</a>
+                <a href="model-matrix.html">Model Matrix</a>
+                <a href="api-docs.html" style="color:var(--accent);">API</a>
+                <a href="pricing.html" class="nav-cta" onclick="if(window.trackEvent)window.trackEvent('pro_button_clicked',{source:'nav'})">Get Pro — $29</a>
+                <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
+            </div>
+        </div>
+    </nav>
+
+    <main id="main">
+    <div class="calc-hero">
+        <h1>AI API ROI Calculator</h1>
+        <p>See if your AI investment pays off. Calculate return on investment, payback period, and net savings across 34 models — then find the model that delivers the best ROI for your use case.</p>
+    </div>
+
+    <section class="calculator-section">
+        <div class="calculator" role="form" aria-label="AI ROI Calculator">
+            <div class="presets">
+                <span style="font-size:13px;color:var(--text-muted);align-self:center;">Quick start:</span>
+                <button class="preset-btn" onclick="applyPreset('support')">Customer Support</button>
+                <button class="preset-btn" onclick="applyPreset('content')">Content Creation</button>
+                <button class="preset-btn" onclick="applyPreset('code')">Code Generation</button>
+                <button class="preset-btn" onclick="applyPreset('data')">Data Processing</button>
+            </div>
+            <div class="calc-grid">
+                <div class="calc-inputs">
+                    <div class="input-group">
+                        <label for="model">AI Model</label>
+                        <select id="model" onchange="calculate()" aria-label="Select AI model"></select>
+                    </div>
+                    <div class="input-group">
+                        <label for="input-tokens">Input tokens per request</label>
+                        <input type="number" id="input-tokens" value="1500" min="0" step="100" onchange="calculate()" oninput="calculate()">
+                    </div>
+                    <div class="input-group">
+                        <label for="output-tokens">Output tokens per request</label>
+                        <input type="number" id="output-tokens" value="400" min="0" step="100" onchange="calculate()" oninput="calculate()">
+                    </div>
+                    <div class="input-group">
+                        <label for="requests-month">Requests per month</label>
+                        <input type="number" id="requests-month" value="10000" min="0" step="100" onchange="calculate()" oninput="calculate()">
+                        <span class="hint">How many AI requests you'll make each month</span>
+                    </div>
+                    <div class="input-group">
+                        <label for="manual-cost">Current cost per task (human/manual)</label>
+                        <input type="number" id="manual-cost" value="0.50" min="0" step="0.01" onchange="calculate()" oninput="calculate()">
+                        <span class="hint">What you pay now to do this without AI (per task)</span>
+                    </div>
+                    <div class="input-group">
+                        <label for="time-saved">Time saved per task (minutes)</label>
+                        <input type="number" id="time-saved" value="5" min="0" step="0.5" onchange="calculate()" oninput="calculate()">
+                        <span class="hint">Minutes of human time saved per AI request</span>
+                    </div>
+                    <div class="input-group">
+                        <label for="hourly-rate">Hourly labor rate ($)</label>
+                        <input type="number" id="hourly-rate" value="50" min="0" step="5" onchange="calculate()" oninput="calculate()">
+                        <span class="hint">Your team's fully loaded hourly cost</span>
+                    </div>
+                    <div class="input-group">
+                        <label for="impl-cost">One-time implementation cost ($)</label>
+                        <input type="number" id="impl-cost" value="500" min="0" step="100" onchange="calculate()" oninput="calculate()">
+                        <span class="hint">Dev time, setup, integration costs</span>
+                    </div>
+                </div>
+                <div class="calc-results" role="region" aria-label="ROI results" aria-live="polite">
+                    <div id="roi-badge-container"></div>
+                    <div class="result-item" style="background:var(--accent-glow);margin:-4px -8px 8px;padding:10px 8px;border-radius:8px;border:1px solid rgba(99,102,241,0.2);">
+                        <span class="result-label" style="font-weight:600;color:var(--text-primary);">Monthly AI Cost</span>
+                        <span class="result-value" id="monthly-ai-cost" style="color:var(--accent);font-size:16px;">$0.00</span>
+                    </div>
+                    <div class="result-item">
+                        <span class="result-label">Monthly value saved</span>
+                        <span class="result-value" id="monthly-value">$0.00</span>
+                    </div>
+                    <div class="result-item">
+                        <span class="result-label">Monthly net benefit</span>
+                        <span class="result-value" id="monthly-net">$0.00</span>
+                    </div>
+                    <div class="result-item">
+                        <span class="result-label">Payback period</span>
+                        <span class="result-value" id="payback-period">—</span>
+                    </div>
+                    <div class="result-item">
+                        <span class="result-label">12-month net savings</span>
+                        <span class="result-value" id="annual-savings" style="color:var(--green);">$0.00</span>
+                    </div>
+                    <div class="result-total">
+                        <span class="result-label">ROI (12 months)</span>
+                        <span class="result-value" id="roi-total">0%</span>
+                    </div>
+                    <div style="margin-top:12px;padding:10px;background:var(--bg-card);border-radius:8px;border:1px solid var(--border);">
+                        <div style="font-size:12px;color:var(--text-muted);margin-bottom:4px;">Hours saved per month</div>
+                        <div style="font-size:16px;font-weight:700;color:var(--text-primary);" id="hours-saved">0 hrs</div>
+                    </div>
+                    <button onclick="copyResults()" style="margin-top:16px;width:100%;padding:10px 16px;border-radius:8px;border:1px solid var(--border);background:var(--bg-secondary);color:var(--text-primary);font-size:13px;font-weight:600;cursor:pointer;transition:all 0.2s;" onmouseover="this.style.borderColor='var(--accent)'" onmouseout="this.style.borderColor='var(--border)'">
+                        <span id="copy-btn-text">Copy Results to Clipboard</span>
+                    </button>
+                    <div style="display:flex;gap:8px;margin-top:10px;">
+                        <a id="share-x" href="#" target="_blank" rel="noopener" style="flex:1;display:flex;align-items:center;justify-content:center;gap:6px;padding:10px 12px;border-radius:8px;border:1px solid var(--border);background:var(--bg-secondary);color:var(--text-primary);font-size:13px;font-weight:600;text-decoration:none;transition:all 0.2s;" onmouseover="this.style.borderColor='var(--accent)'" onmouseout="this.style.borderColor='var(--border)'">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                            Share on X
+                        </a>
+                        <a id="share-linkedin" href="#" target="_blank" rel="noopener" style="flex:1;display:flex;align-items:center;justify-content:center;gap:6px;padding:10px 12px;border-radius:8px;border:1px solid var(--border);background:var(--bg-secondary);color:var(--text-primary);font-size:13px;font-weight:600;text-decoration:none;transition:all 0.2s;" onmouseover="this.style.borderColor='var(--accent)'" onmouseout="this.style.borderColor='var(--border)'">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                            LinkedIn
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Model Comparison -->
+    <section class="calculator-section">
+        <div class="section-header">
+            <h2>ROI by Model</h2>
+            <p>See which model delivers the best return on investment for your workload</p>
+        </div>
+        <div class="comparison-table">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Model</th>
+                        <th>Monthly AI Cost</th>
+                        <th>Monthly Savings</th>
+                        <th>Payback</th>
+                        <th>12-Month ROI</th>
+                    </tr>
+                </thead>
+                <tbody id="comparison-tbody"></tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- Pro Upsell -->
+    <section style="max-width:700px;margin:0 auto;padding:0 24px 40px;" id="pro-upsell-section">
+        <div style="background:linear-gradient(135deg, rgba(99,102,241,0.08), rgba(34,197,94,0.06));border:1px solid var(--accent);border-radius:16px;padding:32px;text-align:center;">
+            <h2 style="font-size:22px;font-weight:800;margin-bottom:8px;">Track ROI across projects and get optimization alerts</h2>
+            <p style="color:var(--text-secondary);font-size:15px;margin-bottom:20px;line-height:1.6;">APIpulse Pro saves your ROI calculations, tracks actual vs projected savings, and alerts you when a cheaper model could improve your return.</p>
+            <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin-bottom:20px;">
+                <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:10px;padding:14px 20px;min-width:160px;">
+                    <div style="font-size:22px;font-weight:800;color:var(--accent);">$29</div>
+                    <div style="font-size:12px;color:var(--text-muted);margin-top:2px;">one-time, lifetime</div>
+                </div>
+                <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:10px;padding:14px 20px;min-width:160px;">
+                    <div style="font-size:22px;font-weight:800;color:var(--green);">40%</div>
+                    <div style="font-size:12px;color:var(--text-muted);margin-top:2px;">avg. savings with tips</div>
+                </div>
+            </div>
+            <a href="https://buy.stripe.com/fZu7sL3Gw3GS0RQeoDeEo0a" class="btn-primary" style="display:inline-block;font-size:16px;padding:14px 32px;" target="_blank" rel="noopener" onclick="if(window.trackEvent)window.trackEvent('pro_button_clicked',{source:'ai_roi_upsell'})">Unlock Pro — $29</a>
+            <p style="font-size:12px;color:var(--text-muted);margin-top:12px;">14-day money-back guarantee. Lifetime access.</p>
+        </div>
+    </section>
+
+    <div class="info-section">
+        <h2>How to Calculate AI API ROI</h2>
+        <p>ROI measures the return on your AI investment. The formula is: <strong>ROI = (Value Created - AI Cost) / AI Cost x 100</strong>. Value comes from time savings, error reduction, and throughput gains.</p>
+
+        <h2>The ROI Formula</h2>
+        <p><strong>Monthly value saved</strong> = (requests/month x time saved per task in hours x hourly rate) + (requests/month x manual cost per task)</p>
+        <p><strong>Monthly AI cost</strong> = (requests/month x input tokens x input price + requests/month x output tokens x output price) / 1,000,000</p>
+        <p><strong>12-month ROI</strong> = ((monthly value saved - monthly AI cost) x 12 - implementation cost) / (monthly AI cost x 12 + implementation cost) x 100</p>
+
+        <h2>Typical ROI by Use Case</h2>
+        <ul>
+            <li><strong>Customer support chatbots:</strong> 300-800% ROI — replaces $15-50/hour support agents for routine queries</li>
+            <li><strong>Content generation:</strong> 200-500% ROI — saves 2-5 hours per article at $50/hour writer rates</li>
+            <li><strong>Code generation:</strong> 150-400% ROI — 30-60% faster development, fewer bugs</li>
+            <li><strong>Data extraction/processing:</strong> 400-1000% ROI — automates hours of manual data entry</li>
+            <li><strong>Translation/localization:</strong> 200-600% ROI — near-human quality at 1/10th the cost</li>
+        </ul>
+
+        <h2>Maximizing ROI</h2>
+        <ul>
+            <li><strong>Start with budget models:</strong> GPT-4o mini, Gemini Flash, and DeepSeek V4 Flash handle 80% of tasks at 50-200x lower cost than premium models</li>
+            <li><strong>Implement model routing:</strong> Use cheap models for simple tasks, premium for complex ones — 3-5x better ROI than single-model approach</li>
+            <li><strong>Cache common requests:</strong> Reduce costs 30-50% by caching repeated prompts and completions</li>
+            <li><strong>Optimize prompts:</strong> Shorter, more specific prompts cost less and often produce better results</li>
+            <li><strong>Track actual ROI:</strong> Measure time saved and quality improvements monthly — adjust model choice as your needs evolve</li>
+        </ul>
+
+        <h2>Related Tools</h2>
+        <ul>
+            <li><a href="calculator.html">AI API Cost Calculator</a> — Estimate your monthly API cost</li>
+            <li><a href="cost-optimizer.html">Cost Optimizer</a> — Find the cheapest model for your workload</li>
+            <li><a href="cost-projection.html">Cost Projection</a> — Forecast costs as usage grows</li>
+            <li><a href="fine-tuning-calculator.html">Fine-Tuning vs API</a> — Compare fine-tuning ROI vs API costs</li>
+            <li><a href="api-cost-report.html">API Cost Report Card</a> — Grade your spending efficiency</li>
+        </ul>
+
+        <div class="cta-inline">
+            <p><strong>Not sure which model to pick?</strong></p>
+            <a href="model-advisor.html" class="btn-primary" style="display:inline-block;">Get a Free Model Recommendation</a>
+        </div>
+    </div>
+
+    <button class="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">↑</button>
+
+    </main>
+
+    <footer>
+        <p>Pricing data last verified: <span class="verified-date"></span></p>
+        <p>&copy; 2026 APIpulse. <a href="index.html">Home</a> &middot; <a href="use-cases.html">Use Cases</a> &middot; <a href="about.html">About</a> &middot; <a href="blog.html">Blog</a>
+<a href="pricing-index.html">Pricing Index</a> &middot; <a href="model-matrix.html">Model Matrix</a> &middot; <a href="cost-scenarios.html">Scenarios</a> &middot; <a href="price-alerts.html">Price Alerts</a> &middot; <a href="pricing-changelog.html">Changelog</a> &middot; <a href="openai.html">OpenAI</a> &middot; <a href="anthropic.html">Anthropic</a> &middot; <a href="google.html">Google</a> &middot; <a href="mistral.html">Mistral</a> &middot; <a href="cohere.html">Cohere</a> &middot; <a href="deepseek.html">DeepSeek</a> &middot; <a href="xai.html">xAI</a> &middot; <a href="moonshot.html">Moonshot</a> &middot; <a href="together.html">Together.ai</a> &middot; <a href="ai21.html">AI21</a> &middot; <a href="pricing.html">Pricing</a> &middot; <a href="compare-plans.html">Free vs Pro</a> &middot; <a href="embed.html">Embed Widget</a> &middot; <a href="cheat-sheet.html">Cheat Sheet</a> &middot; <a href="model-switch.html">Model Switch</a> &middot; <a href="api-docs.html">API</a> &middot; <a href="https://x.com/getapipulse" target="_blank" rel="noopener">Twitter</a> &middot; <a href="unsubscribe.html">Unsubscribe</a></p>
+    </footer>
+
+    <script>
+        // Populate model dropdown from centralized data
+        function populateModels() {
+            var select = document.getElementById('model');
+            var providers = {};
+            API_MODELS.forEach(function(m) {
+                if (!providers[m.provider]) providers[m.provider] = [];
+                providers[m.provider].push(m);
+            });
+            var html = '';
+            Object.keys(providers).forEach(function(provider) {
+                html += '<optgroup label="' + provider + '">';
+                providers[provider].forEach(function(m) {
+                    html += '<option value="' + m.id + '">' + m.name + ' — $' + m.input.toFixed(2) + '/$' + m.output.toFixed(2) + ' per 1M</option>';
+                });
+                html += '</optgroup>';
+            });
+            select.innerHTML = html;
+            select.value = 'openai-gpt4o-mini';
+        }
+
+        function applyPreset(type) {
+            document.querySelectorAll('.preset-btn').forEach(function(b) { b.classList.remove('active-preset'); });
+            event.target.classList.add('active-preset');
+            var presets = {
+                support:  { model: 'openai-gpt4o-mini', input: 1200, output: 400, requests: 20000, manual: 0.75, time: 8, rate: 40, impl: 300 },
+                content:  { model: 'openai-gpt4o', input: 2000, output: 1500, requests: 5000, manual: 2.00, time: 30, rate: 60, impl: 500 },
+                code:     { model: 'anthropic-sonnet46', input: 3000, output: 1000, requests: 8000, manual: 1.50, time: 15, rate: 75, impl: 1000 },
+                data:     { model: 'google-flash', input: 1000, output: 300, requests: 50000, manual: 0.30, time: 3, rate: 45, impl: 200 }
+            };
+            var p = presets[type];
+            document.getElementById('model').value = p.model;
+            document.getElementById('input-tokens').value = p.input;
+            document.getElementById('output-tokens').value = p.output;
+            document.getElementById('requests-month').value = p.requests;
+            document.getElementById('manual-cost').value = p.manual;
+            document.getElementById('time-saved').value = p.time;
+            document.getElementById('hourly-rate').value = p.rate;
+            document.getElementById('impl-cost').value = p.impl;
+            calculate();
+            if (window.trackEvent) window.trackEvent('preset_applied', { preset: type, tool: 'ai_roi_calculator' });
+        }
+
+        function calculate() {
+            var modelId = document.getElementById('model').value;
+            var model = API_MODELS.find(function(m) { return m.id === modelId; });
+            if (!model) return;
+
+            var inputTokens = parseInt(document.getElementById('input-tokens').value) || 0;
+            var outputTokens = parseInt(document.getElementById('output-tokens').value) || 0;
+            var requestsMonth = parseInt(document.getElementById('requests-month').value) || 0;
+            var manualCost = parseFloat(document.getElementById('manual-cost').value) || 0;
+            var timeSaved = parseFloat(document.getElementById('time-saved').value) || 0;
+            var hourlyRate = parseFloat(document.getElementById('hourly-rate').value) || 0;
+            var implCost = parseFloat(document.getElementById('impl-cost').value) || 0;
+
+            // Monthly AI cost
+            var monthlyAiCost = (requestsMonth * inputTokens / 1e6) * model.input + (requestsMonth * outputTokens / 1e6) * model.output;
+
+            // Monthly value: time saved + manual cost replaced
+            var hoursSaved = requestsMonth * (timeSaved / 60);
+            var timeValue = hoursSaved * hourlyRate;
+            var manualValue = requestsMonth * manualCost;
+            var monthlyValue = timeValue + manualValue;
+
+            // Monthly net benefit
+            var monthlyNet = monthlyValue - monthlyAiCost;
+
+            // Payback period
+            var paybackMonths = 0;
+            if (monthlyNet > 0) {
+                if (implCost > 0) {
+                    paybackMonths = implCost / monthlyNet;
+                } else {
+                    paybackMonths = 0; // Immediate
+                }
+            } else {
+                paybackMonths = Infinity;
+            }
+
+            // 12-month ROI
+            var annualAiCost = monthlyAiCost * 12;
+            var annualValue = monthlyValue * 12;
+            var totalInvestment = annualAiCost + implCost;
+            var totalReturn = annualValue - implCost;
+            var roi12 = totalInvestment > 0 ? ((totalReturn - annualAiCost) / totalInvestment * 100) : 0;
+            // Simplified: ROI = (total value - total cost) / total cost
+            roi12 = totalInvestment > 0 ? ((annualValue - annualAiCost - implCost) / totalInvestment * 100) : 0;
+
+            var annualSavings = annualValue - annualAiCost - implCost;
+
+            // Update badge
+            var badgeContainer = document.getElementById('roi-badge-container');
+            var badgeClass = roi12 >= 100 ? 'positive' : roi12 >= 0 ? 'neutral' : 'negative';
+            var badgeText = roi12 >= 100 ? 'Excellent ROI' : roi12 >= 0 ? 'Positive ROI' : 'Negative ROI';
+            badgeContainer.innerHTML = '<div class="roi-badge ' + badgeClass + '">' + badgeText + ': ' + Math.round(roi12) + '%</div>';
+
+            // Update results
+            document.getElementById('monthly-ai-cost').textContent = '$' + monthlyAiCost.toFixed(2);
+            document.getElementById('monthly-value').textContent = '$' + monthlyValue.toFixed(2);
+            document.getElementById('monthly-net').textContent = '$' + monthlyNet.toFixed(2);
+            document.getElementById('monthly-net').style.color = monthlyNet >= 0 ? 'var(--green)' : '#ef4444';
+            document.getElementById('payback-period').textContent = paybackMonths === Infinity ? 'Never' : paybackMonths === 0 ? 'Immediate' : paybackMonths < 1 ? '< 1 month' : Math.round(paybackMonths) + ' months';
+            document.getElementById('annual-savings').textContent = '$' + annualSavings.toFixed(2);
+            document.getElementById('annual-savings').style.color = annualSavings >= 0 ? 'var(--green)' : '#ef4444';
+            document.getElementById('roi-total').textContent = Math.round(roi12) + '%';
+            document.getElementById('roi-total').style.color = roi12 >= 0 ? 'var(--green)' : '#ef4444';
+            document.getElementById('hours-saved').textContent = hoursSaved.toFixed(1) + ' hrs';
+
+            // Model comparison table
+            renderComparison(inputTokens, outputTokens, requestsMonth, manualCost, timeSaved, hourlyRate, implCost, modelId);
+
+            // Share URLs
+            updateShareUrls();
+
+            if (window.trackEvent && monthlyAiCost > 0) {
+                clearTimeout(window._roiTrackTimer);
+                window._roiTrackTimer = setTimeout(function() {
+                    window.trackEvent('calculator_used', {
+                        model: model.name,
+                        monthly_cost: monthlyAiCost.toFixed(2),
+                        roi: Math.round(roi12),
+                        tool: 'ai_roi_calculator'
+                    });
+                }, 1000);
+            }
+        }
+
+        function renderComparison(inputTokens, outputTokens, requestsMonth, manualCost, timeSaved, hourlyRate, implCost, currentModelId) {
+            var tbody = document.getElementById('comparison-tbody');
+            var results = [];
+
+            API_MODELS.forEach(function(m) {
+                var aiCost = (requestsMonth * inputTokens / 1e6) * m.input + (requestsMonth * outputTokens / 1e6) * m.output;
+                var value = requestsMonth * (timeSaved / 60) * hourlyRate + requestsMonth * manualCost;
+                var net = value - aiCost;
+                var totalCost = aiCost * 12 + implCost;
+                var roi = totalCost > 0 ? ((value * 12 - aiCost * 12 - implCost) / totalCost * 100) : 0;
+                var payback = net > 0 ? (implCost > 0 ? implCost / net : 0) : Infinity;
+                results.push({ model: m, aiCost: aiCost, net: net, roi: roi, payback: payback, isCurrent: m.id === currentModelId });
+            });
+
+            // Sort by ROI descending
+            results.sort(function(a, b) { return b.roi - a.roi; });
+
+            // Show top 10
+            var top10 = results.slice(0, 10);
+            var bestRoi = top10.length > 0 ? top10[0].roi : 0;
+
+            var html = '';
+            top10.forEach(function(r, i) {
+                var isBest = r.roi === bestRoi && r.roi > 0;
+                var rowClass = r.isCurrent ? ' style="background:var(--accent-glow);"' : (isBest ? ' class="best-row"' : '');
+                html += '<tr' + rowClass + '>';
+                html += '<td class="model-name">' + r.model.name + (r.isCurrent ? ' <span style="font-size:11px;color:var(--accent);font-weight:400;">(selected)</span>' : '') + '</td>';
+                html += '<td>$' + r.aiCost.toFixed(2) + '</td>';
+                html += '<td style="color:' + (r.net >= 0 ? 'var(--green)' : '#ef4444') + ';">$' + r.net.toFixed(2) + '</td>';
+                html += '<td>' + (r.payback === Infinity ? 'Never' : r.payback === 0 ? 'Immediate' : Math.round(r.payback) + ' mo') + '</td>';
+                html += '<td class="roi-value" style="color:' + (r.roi >= 0 ? 'var(--green)' : '#ef4444') + ';">' + Math.round(r.roi) + '%</td>';
+                html += '</tr>';
+            });
+            tbody.innerHTML = html;
+        }
+
+        function updateShareUrls() {
+            var params = new URLSearchParams();
+            params.set('m', document.getElementById('model').value);
+            params.set('i', document.getElementById('input-tokens').value);
+            params.set('o', document.getElementById('output-tokens').value);
+            params.set('r', document.getElementById('requests-month').value);
+            params.set('mc', document.getElementById('manual-cost').value);
+            params.set('ts', document.getElementById('time-saved').value);
+            params.set('hr', document.getElementById('hourly-rate').value);
+            params.set('ic', document.getElementById('impl-cost').value);
+            var url = 'https://getapipulse.com/ai-roi-calculator.html?' + params.toString();
+            document.getElementById('share-x').href = 'https://x.com/intent/tweet?text=' + encodeURIComponent('Calculating my AI API ROI with @APIpulse — here\'s the breakdown: ' + url);
+            document.getElementById('share-linkedin').href = 'https://www.linkedin.com/sharing/share-offsite/?url=' + encodeURIComponent(url);
+        }
+
+        function copyResults() {
+            var model = document.getElementById('model');
+            var selectedText = model.options[model.selectedIndex].text;
+            var text = [
+                'AI API ROI Analysis',
+                '===================',
+                'Model: ' + selectedText,
+                'Monthly AI Cost: ' + document.getElementById('monthly-ai-cost').textContent,
+                'Monthly Value Saved: ' + document.getElementById('monthly-value').textContent,
+                'Monthly Net Benefit: ' + document.getElementById('monthly-net').textContent,
+                'Payback Period: ' + document.getElementById('payback-period').textContent,
+                '12-Month Savings: ' + document.getElementById('annual-savings').textContent,
+                '12-Month ROI: ' + document.getElementById('roi-total').textContent,
+                '',
+                'Calculate yours: ' + window.location.href
+            ].join('\n');
+
+            navigator.clipboard.writeText(text).then(function() {
+                var btn = document.getElementById('copy-btn-text');
+                btn.textContent = 'Copied!';
+                setTimeout(function() { btn.textContent = 'Copy Results to Clipboard'; }, 2000);
+                if (window.trackEvent) window.trackEvent('copy_results', { tool: 'ai_roi_calculator' });
+            });
+        }
+
+        function loadFromUrl() {
+            var params = new URLSearchParams(window.location.search);
+            if (!params.has('m')) return;
+            var m = params.get('m');
+            var select = document.getElementById('model');
+            if (select.querySelector('option[value="' + m + '"]')) select.value = m;
+            if (params.has('i')) document.getElementById('input-tokens').value = params.get('i');
+            if (params.has('o')) document.getElementById('output-tokens').value = params.get('o');
+            if (params.has('r')) document.getElementById('requests-month').value = params.get('r');
+            if (params.has('mc')) document.getElementById('manual-cost').value = params.get('mc');
+            if (params.has('ts')) document.getElementById('time-saved').value = params.get('ts');
+            if (params.has('hr')) document.getElementById('hourly-rate').value = params.get('hr');
+            if (params.has('ic')) document.getElementById('impl-cost').value = params.get('ic');
+        }
+
+        // Init
+        document.addEventListener('DOMContentLoaded', function() {
+            populateModels();
+            loadFromUrl();
+            calculate();
+        });
+    </script>
+</body>
+</html>

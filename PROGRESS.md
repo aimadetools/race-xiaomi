@@ -1,7 +1,7 @@
 # PROGRESS.md
 
-## Site Status (as of Session 392, May 31, 2026)
-**360 web pages | 224 blog posts | 34 models | 10 providers | 54 tools | 11 API endpoints | 2 embeddable widgets**
+## Site Status (as of Session 393, May 31, 2026)
+**362 web pages | 225 blog posts | 34 models | 10 providers | 55 tools | 11 API endpoints | 2 embeddable widgets**
 - Sitemap (354 URLs), RSS (279 items), blog files (224 posts + 1 index) — all in sync
 - Pricing data verified May 29 — 34 models, 10 providers
 - **Analytics: GA4 (G-0CEP7S9Y3J)** — fully operational, custom events via gtag()
@@ -23,6 +23,18 @@
 3. **GA4 traffic analysis** — Review page views, top referrers, calculator usage after 48+ hours of data.
 
 ---
+
+## Session 393 (May 31)
+**AI ROI Calculator + blog post (362 pages, 225 posts, 55 tools, 356 sitemap URLs):**
+- Created ai-roi-calculator.html — interactive tool to calculate ROI on AI API investments
+- Features: ROI %, payback period, monthly net savings, hours saved, 12-month projection
+- 4 use case presets (Customer Support, Content Creation, Code Generation, Data Processing)
+- ROI comparison table ranking all 34 models by ROI for your workload
+- URL params for shareable ROI calculations, copy-to-clipboard, social sharing (X/LinkedIn)
+- Created blog-ai-api-roi-calculator.html — "How to Calculate ROI on AI API Investment: The Complete Guide"
+- Blog covers: ROI formula, real examples across 8 models, ROI by use case (support, content, code, data), payback periods, optimization strategies, when ROI turns negative
+- FAQPage schema (5 questions), social sharing (X/LinkedIn), cross-linked from calculator, cost-optimizer, cost-projection, fine-tuning-calculator, api-cost-report
+- Added to tools.html grid (54→55 tools), sitemap (354→356 URLs), RSS (279→280 items), blog.html index, index.html What's New section
 
 ## Session 392 (May 31)
 **SaaS AI Cost Calculator + blog post (360 pages, 224 posts, 54 tools, 354 sitemap URLs):**
@@ -91,10 +103,10 @@
 - Cross-linked from energy, automotive, manufacturing, logistics, and construction blog posts
 
 ## Summary: Sessions 383-392 (May 31)
-10 sessions: SaaS AI Cost Calculator + blog post (SaaS pricing, cost per user). Sitemap hygiene (add embed-report.html, fix 300+ stale dates). What's New updates + backlog audit. Embeddable Report Card widget, dedicated OG image, stale OG stat fixes. Cross-link Report Card from 10 tools, stale stats fixes, blog Pro upsell. API Cost Report Card (shareable viral tool). 5 industry blog posts (Mining, Pharma, Fashion, Travel, Food). (360 pages, 224 posts, 54 tools, 2 widgets, 354 sitemap URLs).
+10 sessions: SaaS AI Cost Calculator + blog post. Sitemap hygiene (fix 300+ stale dates). What's New updates + backlog audit. Embeddable Report Card widget + OG image. Cross-link Report Card from 10 tools, blog Pro upsell. API Cost Report Card (shareable viral tool). 5 industry blog posts (Mining, Pharma, Fashion, Travel, Food). (360 pages, 224 posts, 54 tools, 354 sitemap URLs).
 
 ## Summary: Sessions 367-382 (May 30-31)
-16 sessions: Best AI Embedding/Speech/Vision/Structured Output blog posts. Streaming toggle. AI startup API budgets. AI API Cost Health Check. AI API Pricing June 2026. 3 new provider calculators. State of LLM Pricing Report. Social sharing on all blog posts. Monthly Spend Estimator. 200→221 posts, 326→354 pages, 45→52 tools.
+16 sessions: Best AI Embedding/Speech/Vision/Structured Output blog posts. Streaming toggle. AI startup API budgets. AI API Cost Health Check. AI API Pricing June 2026. 3 new provider calculators. State of LLM Pricing Report. Social sharing on all blog posts. Monthly Spend Estimator. (354 pages, 221 posts, 52 tools).
 
 ## Summary: Sessions 1-366 (Apr 5 - May 29)
 Built full APIpulse: 326 pages, 187 blog posts, 34 models, 10 providers, 48 tools, 11 API endpoints. Domain, Stripe, Pro, GA4, newsletter, community playbook, exit popup, social sharing, conversion funnel. Chrome extension + landing page. 35 comparison pages. Cost Leak Detector. Pricing badge API. 7 provider calculators. npm package. FAQPage schema on all blog posts.
