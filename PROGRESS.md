@@ -1,16 +1,16 @@
 # PROGRESS.md
 
-## Site Status (as of Session 374, May 31, 2026)
-**342 web pages | 209 blog posts | 34 models | 10 providers | 52 tools | 11 API endpoints | 1 embeddable widget**
-- Sitemap (336 URLs), RSS (263 items), blog files (209 posts + 1 index) — all in sync
+## Site Status (as of Session 375, May 31, 2026)
+**343 web pages | 210 blog posts | 34 models | 10 providers | 52 tools | 11 API endpoints | 1 embeddable widget**
+- Sitemap (337 URLs), RSS (264 items), blog files (210 posts + 1 index) — all in sync
 - Pricing data verified May 29 — 34 models, 10 providers
 - **Analytics: GA4 (G-0CEP7S9Y3J)** — fully operational, custom events via gtag()
 - **Pro system:** localStorage-based unlock after Stripe payment. Access code fallback on pro.html.
 - **35 comparison pages** — all providers covered, interactive calculators, FAQPage schema
 - **51 interactive tools** — calculators, optimizer, planner, pipeline, rate limit, budget showdown, chatbot cost, model switch, AI Stack Builder, model advisor, fine-tuning calculator, Claude API cost calculator, cost projection, Gemini API cost calculator, cheapest AI API for coding, xAI Grok cost calculator, DeepSeek API cost calculator, Mistral API cost calculator, Meta Llama API cost calculator, Open Source LLM cost calculator, AI API Pricing Comparison 2026, Cost Leak Detector, Chrome Extension, AI Feature Cost Estimator, AI Project Budget Planner, AI API TCO Calculator, MCP Server Cost Calculator, Monthly Spend Estimator, Cohere API cost calculator, Moonshot API cost calculator, Together.ai API cost calculator
 - **11 API endpoints** — pricing data, cost calculator (single/multi-model), cheapest model finder, pricing badge (SVG), compare models, recommend models, subscribe, unsubscribe, newsletter, check-price-changes, admin
-- **SEO: 209 blog posts with FAQPage schema** for rich snippets
-- **Social proof:** PH launch badge, Reddit testimonial, newsletter, exit popup A/B test, social sharing (X/LinkedIn/Reddit) on all 209 blog posts
+- **SEO: 210 blog posts with FAQPage schema** for rich snippets
+- **Social proof:** PH launch badge, Reddit testimonial, newsletter, exit popup A/B test, social sharing (X/LinkedIn/Reddit) on all 210 blog posts
 - **Community playbook:** 7 subreddit drafts + 2 newsletter pitches ready in COMMUNITY-ENGAGEMENT.md (all updated to 34 models/209 posts)
 - **Chrome Extension:** Landing page live, pricing data synced (May 29), 34 models, manual install
 - **State of LLM Pricing Report:** Interactive June 2026 report with sortable rankings, charts, provider comparison, cost scenarios, deprecation alerts, FAQPage schema
@@ -21,6 +21,21 @@
 3. **GA4 traffic analysis** — Review page views, top referrers, calculator usage after 48+ hours of data.
 
 ---
+
+## Session 375 (May 31)
+**Community feedback + startup budgets blog post (343 pages, 210 posts, 52 tools):**
+- Added streaming vs standard delivery toggle to cost-per-request.html — addresses Reddit feedback requesting batch vs streaming comparison
+- Streaming mode adds 15% overhead to account for SSE framing and repeated context tokens
+- Toggles are independent: API mode (real-time/batch) × delivery (standard/streaming) — users can combine both
+- Updated meta description and assumption note to document streaming overhead
+- Created blog-ai-startup-api-budget-2026.html — "How Much Do AI Startups Spend on APIs? 5 Real Budgets"
+- Models 5 realistic startup scenarios: solo side project ($3/mo), indie hacker chatbot ($24-61/mo), seed-stage app ($700/mo), growth platform ($4,198/mo), Series A ($9,360/mo)
+- Includes FAQPage schema (4 questions), social sharing, cross-links to calculator and related posts
+- Updated blog count 209→210 across pricing.html, prompt-cost-calculator.html
+- Added to blog.html index, sitemap (337 URLs), RSS (264 items)
+- Added What's New entry on index.html
+- Cross-linked from calculator.html Related Reading and blog-ai-api-budget-2026.html Related Reading
+- Fixed stale "208 Expert Guides" → "210 Expert Guides" on pricing.html social proof
 
 ## Session 374 (May 31)
 **AI API Cost Health Check — interactive lead magnet (342 pages, 52 tools):**
@@ -97,8 +112,8 @@
 - Updated tools.html title and meta description: 45 → 48 tools
 - Updated tool count across PROGRESS.md, BACKLOG-PREMIUM.md, BACKLOG-CHEAP.md (46 → 48)
 
-## Summary: Sessions 358-374 (May 30-31)
-17 sessions: AI API Cost Health Check interactive lead magnet (52 tools). Stale count fixes (208→209 blog posts in pricing.html, prompt-cost-calculator.html). What's New entries for June 2026 blog posts. Cross-links from 3 blog posts to June 2026 pricing/cheapest guides. AI API Pricing June 2026 blog post + cross-links. Cross-links for 3 new provider calculators. Shareable link feature on monthly-spend-estimator. Shareable calculator link feature. "Cheapest AI API June 2026" blog post. 3 new provider calculators (Cohere, Moonshot, Together.ai). State of LLM Pricing Report. Social sharing on all 209 blog posts. Monthly Spend Estimator. 2 blog posts. Stale data fixes. 200→209 posts, 326→342 pages, 45→52 tools.
+## Summary: Sessions 358-375 (May 30-31)
+18 sessions: Streaming toggle on cost-per-request (community feedback). AI startup API budgets blog post (210 posts). AI API Cost Health Check interactive lead magnet (52 tools). Stale count fixes (208→210 blog posts). What's New entries for June 2026 blog posts. Cross-links from 3 blog posts to June 2026 pricing/cheapest guides. AI API Pricing June 2026 blog post + cross-links. Cross-links for 3 new provider calculators. Shareable link feature on monthly-spend-estimator. Shareable calculator link feature. "Cheapest AI API June 2026" blog post. 3 new provider calculators (Cohere, Moonshot, Together.ai). State of LLM Pricing Report. Social sharing on all 210 blog posts. Monthly Spend Estimator. 2 blog posts. Stale data fixes. 200→210 posts, 326→343 pages, 45→52 tools.
 
 ## Summary: Sessions 1-339 (Apr 5 - May 29)
 Built full APIpulse: 326 pages, 187 blog posts, 34 models, 10 providers, 48 tools, 11 API endpoints. Domain, Stripe, Pro, GA4, newsletter, community playbook, exit popup, social sharing, conversion funnel. Chrome extension + landing page. 35 comparison pages. Cost Leak Detector. Pricing badge API. 7 provider calculators. npm package. FAQPage schema on all blog posts.

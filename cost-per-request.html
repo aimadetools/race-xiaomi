@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AI API Cost per Request: Quick Reference Table (2026) — APIpulse</title>
-    <meta name="description" content="See exactly how much each AI API request costs. Quick reference table for 34 models at 100, 500, 1K, and 5K token requests. Toggle batch vs real-time pricing. Updated May 2026.">
+    <meta name="description" content="See exactly how much each AI API request costs. Quick reference table for 34 models at 100, 500, 1K, and 5K token requests. Toggle batch vs real-time and standard vs streaming pricing. Updated May 2026.">
     <meta name="keywords" content="AI API cost per request, LLM cost per request, API pricing table, GPT-4o cost per call, Claude cost per request, cheapest AI API per request, AI API pricing quick reference">
     <meta property="og:title" content="AI API Cost per Request: Quick Reference Table (2026) — APIpulse">
     <meta property="og:description" content="See exactly how much each AI API request costs across 34 models at common token counts.">
@@ -40,7 +40,7 @@
         "headline": "AI API Cost per Request: Quick Reference Table (2026)",
         "description": "See exactly how much each AI API request costs across 34 models at common token counts.",
         "datePublished": "2026-04-29",
-        "dateModified": "2026-04-29",
+        "dateModified": "2026-05-31",
         "author": { "@type": "Organization", "name": "APIpulse" },
         "publisher": { "@type": "Organization", "name": "APIpulse", "url": "https://getapipulse.com" },
         "url": "https://getapipulse.com/cost-per-request.html"
@@ -158,7 +158,7 @@
         <p class="subtitle">How much does a single API call actually cost? We calculated it for all 34 models across 10 providers at four common request sizes. Now with batch API pricing. Bookmark this page.</p>
 
         <div class="assumption-note">
-            <strong>Assumption:</strong> Each request sends 3x more input tokens than output tokens (typical for chat, RAG, and code assistant workloads). Costs are per single request. All prices verified May 2026. <strong>Batch mode</strong> shows 50% discounted rates for providers with batch APIs (OpenAI, Anthropic, Google) — batch jobs process within 24 hours.
+            <strong>Assumption:</strong> Each request sends 3x more input tokens than output tokens (typical for chat, RAG, and code assistant workloads). Costs are per single request. All prices verified May 2026. <strong>Batch mode</strong> shows 50% discounted rates for providers with batch APIs (OpenAI, Anthropic, Google) — batch jobs process within 24 hours. <strong>Streaming mode</strong> adds 15% overhead to account for SSE framing and repeated context tokens in streamed responses.
         </div>
 
         <h2>All 34 Models — Cost per Request</h2>
@@ -168,6 +168,9 @@
             <span style="font-weight:600;font-size:14px;color:var(--text-primary);">API Mode:</span>
             <button id="mode-realtime" class="mode-toggle active" onclick="setMode('realtime')">Real-time (Standard)</button>
             <button id="mode-batch" class="mode-toggle" onclick="setMode('batch')">Batch (50% off, 24hr)</button>
+            <span style="margin-left:16px;font-weight:600;font-size:14px;color:var(--text-primary);">Delivery:</span>
+            <button id="delivery-standard" class="mode-toggle active" onclick="setDelivery('standard')">Standard</button>
+            <button id="delivery-streaming" class="mode-toggle" onclick="setDelivery('streaming')">Streaming (+15%)</button>
             <span id="mode-note" style="font-size:12px;color:var(--text-muted);margin-left:8px;"></span>
         </div>
 
@@ -282,6 +285,7 @@
         // Providers that support batch API (50% discount)
         var batchProviders = ['OpenAI', 'Anthropic', 'Google'];
         var currentMode = 'realtime';
+        var currentDelivery = 'standard';
         var originalCells = [];
 
         // Store original values on load
@@ -301,14 +305,25 @@
             currentMode = mode;
             document.getElementById('mode-realtime').classList.toggle('active', mode === 'realtime');
             document.getElementById('mode-batch').classList.toggle('active', mode === 'batch');
-            var note = document.getElementById('mode-note');
-            if (mode === 'batch') {
-                note.textContent = '50% off for OpenAI, Anthropic, Google batch APIs';
-            } else {
-                note.textContent = '';
-            }
+            updateNote();
             updateTable();
         };
+
+        window.setDelivery = function(delivery) {
+            currentDelivery = delivery;
+            document.getElementById('delivery-standard').classList.toggle('active', delivery === 'standard');
+            document.getElementById('delivery-streaming').classList.toggle('active', delivery === 'streaming');
+            updateNote();
+            updateTable();
+        };
+
+        function updateNote() {
+            var note = document.getElementById('mode-note');
+            var parts = [];
+            if (currentMode === 'batch') parts.push('50% off for OpenAI, Anthropic, Google batch APIs');
+            if (currentDelivery === 'streaming') parts.push('+15% streaming overhead (SSE framing, repeated context)');
+            note.textContent = parts.join(' | ');
+        }
 
         function updateTable() {
             var rows = document.querySelectorAll('.comparison-table tbody tr');
@@ -319,19 +334,30 @@
                 var supportsBatch = batchProviders.some(function(p) { return provider.indexOf(p) !== -1; });
                 for (var i = 2; i < cells.length; i++) {
                     var origText = originalCells[idx] ? originalCells[idx][i - 2] : cells[i].textContent;
-                    if (currentMode === 'batch' && supportsBatch) {
-                        var val = parseFloat(origText.replace('$', ''));
-                        if (!isNaN(val)) {
-                            var batchVal = val * 0.5;
-                            cells[i].textContent = '$' + batchVal.toFixed(6);
+                    var val = parseFloat(origText.replace('$', ''));
+                    if (!isNaN(val)) {
+                        var finalVal = val;
+                        // Apply batch discount first
+                        if (currentMode === 'batch' && supportsBatch) {
+                            finalVal *= 0.5;
+                        }
+                        // Apply streaming overhead
+                        if (currentDelivery === 'streaming') {
+                            finalVal *= 1.15;
+                        }
+                        cells[i].textContent = '$' + finalVal.toFixed(6);
+                        // Highlight discounted/increased cells
+                        if (currentMode === 'batch' && supportsBatch) {
                             cells[i].classList.add('batch-discount');
+                        } else {
+                            cells[i].classList.remove('batch-discount');
                         }
                     } else {
                         cells[i].textContent = origText;
                         cells[i].classList.remove('batch-discount');
                     }
                 }
-                // Mark rows that don't support batch
+                // Mark rows that don't support batch when in batch mode
                 if (currentMode === 'batch' && !supportsBatch) {
                     row.style.opacity = '0.5';
                 } else {
