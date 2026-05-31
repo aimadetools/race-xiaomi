@@ -25,13 +25,14 @@
 ---
 
 ## Session 397 (May 31)
-**Strategic audit + 6-week battle plan (no new pages):**
+**Strategic audit + 6-week battle plan + massive internal linking push:**
 - Site audit: no broken links, sitemap correct (361 URLs), all pages accounted for
 - Reviewed entire conversion funnel: pricing page (excellent — urgency, ROI calculator, social proof), thank-you page (auto-unlocks Pro), exit popup (A/B tested)
 - Identified core bottleneck: DISTRIBUTION, not product. 367 pages built, $0 revenue.
 - Created 6-week battle plan in BACKLOG-PREMIUM.md (Weeks 7-12)
 - Updated BACKLOG-CHEAP.md with routine maintenance tasks
 - Attempted to build AI API Pricing Trends Dashboard — discovered duplicate (pricing-trends.html exists from Session 367). Cleaned up duplicate files.
+- **Added 238 internal links** from blog posts to key tools: calculator (34 posts), cost optimizer (138 posts), compare (34 posts), pricing (32 posts). Major SEO improvement.
 
 ## Session 396 (May 31)
 **Cheapest Embedding API tool + blog post (367 pages, 228 posts, 57 tools, 362 sitemap URLs):**
