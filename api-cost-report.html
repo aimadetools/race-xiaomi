@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI API Cost Report Card — Grade Your AI Spending | APIpulse</title>
+    <meta name="description" content="Get your AI API cost efficiency grade. See how your LLM spending compares to optimal. Shareable report card with savings analysis. Free tool.">
+    <meta property="og:title" content="My AI API Cost Report Card — Grade Your AI Spending">
+    <meta property="og:description" content="I just graded my AI API costs. Find out if you're overpaying for GPT, Claude, or Gemini. Free instant analysis.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://getapipulse.com/og-image.png">
+    <meta property="og:url" content="https://getapipulse.com/api-cost-report.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="My AI API Cost Report Card — Grade Your AI Spending">
+    <meta name="twitter:image" content="https://getapipulse.com/og-image.png">
+    <meta name="twitter:description" content="I just graded my AI API costs. Find out if you're overpaying. Free instant analysis.">
+    <meta name="keywords" content="AI API cost, API cost grade, LLM spending report, AI budget analysis, API cost efficiency, GPT cost calculator">
+    <link rel="canonical" href="https://getapipulse.com/api-cost-report.html">
+    <link rel="alternate" type="application/rss+xml" title="APIpulse Blog" href="https://getapipulse.com/rss.xml">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="styles.css">
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0CEP7S9Y3J"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-0CEP7S9Y3J');
+    </script>
+    <script src="analytics.js" defer></script>
+    <script src="dynamic-date.js" defer></script>
+    <script src="shared.js" defer></script>
+    <script src="pricing-data.js" defer></script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "AI API Cost Report Card",
+        "url": "https://getapipulse.com/api-cost-report.html",
+        "description": "Get your AI API cost efficiency grade. See how your LLM spending compares to optimal. Shareable report card with savings analysis.",
+        "applicationCategory": "DeveloperApplication",
+        "operatingSystem": "Web",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "How is my API cost grade calculated?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Your grade compares your current monthly AI API spend against the cheapest viable alternative for your usage pattern. An A+ means you're already using the most cost-effective option. Lower grades indicate larger potential savings by switching models or providers."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Can I share my report card?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes! After generating your report, you get a unique shareable URL. Share it on Twitter, LinkedIn, or with your team. The link shows your cost grade, savings potential, and includes your personalized analysis."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Is the API Cost Report Card free?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes, the basic report card is completely free. You get your grade, top savings opportunity, and shareable link. Pro users ($29 one-time) unlock detailed optimization strategies, all alternatives ranked, and PDF export."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How accurate are the cost estimates?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Costs are calculated using published API pricing from each provider, verified monthly. Estimates are typically within 5-10% of real-world results for consistent usage patterns."
+                }
+            }
+        ]
+    }
+    </script>
+    <style>
+        .content { max-width: 900px; margin: 0 auto; padding: 120px 24px 80px; }
+        h1 { font-size: 40px; font-weight: 800; text-align: center; margin-bottom: 12px; }
+        .subtitle { text-align: center; color: var(--text-secondary); font-size: 18px; margin-bottom: 12px; max-width: 600px; margin-left: auto; margin-right: auto; }
+        .tagline { text-align: center; color: var(--text-muted); font-size: 14px; margin-bottom: 40px; }
+
+        /* Input section */
+        .input-section {
+            background: var(--bg-secondary); border: 1px solid var(--border);
+            border-radius: 16px; padding: 32px; margin-bottom: 32px;
+        }
+        .input-section h2 { font-size: 20px; font-weight: 700; margin-bottom: 20px; }
+        .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+        .form-group { margin-bottom: 20px; }
+        .form-group label { display: block; font-size: 13px; font-weight: 600; color: var(--text-secondary); margin-bottom: 6px; text-transform: uppercase; letter-spacing: 0.5px; }
+        .form-group select, .form-group input {
+            width: 100%; padding: 12px 16px; background: var(--bg-card);
+            border: 1px solid var(--border); border-radius: 8px;
+            color: var(--text-primary); font-size: 15px; font-family: inherit;
+        }
+        .form-group select:focus, .form-group input:focus { outline: 2px solid var(--accent); outline-offset: 2px; border-color: var(--accent); }
+        .usage-presets { display: flex; gap: 8px; margin-top: 8px; flex-wrap: wrap; }
+        .preset-btn {
+            padding: 6px 14px; background: var(--bg-card); border: 1px solid var(--border);
+            border-radius: 6px; color: var(--text-secondary); font-size: 12px; cursor: pointer;
+            transition: all 0.15s;
+        }
+        .preset-btn:hover { border-color: var(--accent); color: var(--accent); }
+        .preset-btn.active { border-color: var(--accent); color: var(--accent); background: var(--accent-glow); }
+        .generate-btn {
+            width: 100%; padding: 16px; background: var(--accent); color: white;
+            border: none; border-radius: 10px; font-size: 16px; font-weight: 700;
+            cursor: pointer; transition: all 0.15s; margin-top: 8px;
+        }
+        .generate-btn:hover { opacity: 0.9; transform: translateY(-1px); }
+
+        /* Report card */
+        .report { display: none; }
+        .report.visible { display: block; }
+
+        .report-card {
+            background: var(--bg-secondary); border: 2px solid var(--border);
+            border-radius: 20px; padding: 40px; text-align: center;
+            margin-bottom: 24px; position: relative; overflow: hidden;
+        }
+        .report-card.grade-a { border-color: var(--green); }
+        .report-card.grade-b { border-color: #22d3ee; }
+        .report-card.grade-c { border-color: var(--orange); }
+        .report-card.grade-d { border-color: #f97316; }
+        .report-card.grade-f { border-color: var(--red); }
+
+        .report-card-header {
+            display: flex; align-items: center; justify-content: center; gap: 24px;
+            margin-bottom: 24px; flex-wrap: wrap;
+        }
+        .grade-circle {
+            width: 120px; height: 120px; border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 52px; font-weight: 900; color: white;
+            flex-shrink: 0;
+        }
+        .grade-circle.grade-a { background: linear-gradient(135deg, #16a34a, #22c55e); }
+        .grade-circle.grade-b { background: linear-gradient(135deg, #0891b2, #22d3ee); }
+        .grade-circle.grade-c { background: linear-gradient(135deg, #d97706, #f59e0b); }
+        .grade-circle.grade-d { background: linear-gradient(135deg, #ea580c, #f97316); }
+        .grade-circle.grade-f { background: linear-gradient(135deg, #dc2626, #ef4444); }
+
+        .grade-info { text-align: left; }
+        .grade-label { font-size: 14px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 4px; }
+        .grade-title { font-size: 24px; font-weight: 800; margin-bottom: 4px; }
+        .grade-subtitle { font-size: 14px; color: var(--text-secondary); }
+
+        .report-metrics {
+            display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px;
+            margin-bottom: 24px;
+        }
+        .metric-card {
+            background: var(--bg-card); border: 1px solid var(--border);
+            border-radius: 12px; padding: 16px;
+        }
+        .metric-label { font-size: 11px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 4px; }
+        .metric-value { font-size: 22px; font-weight: 800; color: var(--text-primary); }
+        .metric-value.savings { color: var(--green); }
+        .metric-value.cost { color: var(--text-primary); }
+
+        /* Savings highlight */
+        .savings-banner {
+            background: linear-gradient(135deg, rgba(34,197,94,0.08), rgba(34,197,94,0.02));
+            border: 1px solid rgba(34,197,94,0.3); border-radius: 12px;
+            padding: 20px; margin-bottom: 24px; text-align: center;
+        }
+        .savings-banner.no-savings {
+            background: linear-gradient(135deg, rgba(34,197,94,0.08), rgba(34,197,94,0.02));
+            border-color: rgba(34,197,94,0.3);
+        }
+        .savings-banner .amount { font-size: 36px; font-weight: 800; color: var(--green); }
+        .savings-banner .label { font-size: 14px; color: var(--text-secondary); margin-top: 4px; }
+
+        /* Best alternative */
+        .best-alt {
+            background: var(--bg-secondary); border: 1px solid var(--border);
+            border-radius: 12px; padding: 20px; margin-bottom: 24px;
+            display: grid; grid-template-columns: 1fr auto; gap: 16px; align-items: center;
+        }
+        .best-alt-name { font-size: 18px; font-weight: 700; }
+        .best-alt-provider { font-size: 13px; color: var(--text-muted); margin-top: 2px; }
+        .best-alt-tier { display: inline-block; padding: 2px 8px; border-radius: 4px; font-size: 11px; font-weight: 600; margin-top: 4px; }
+        .best-alt-tier.budget { background: rgba(34,197,94,0.15); color: var(--green); }
+        .best-alt-tier.mid { background: rgba(99,102,241,0.15); color: var(--accent); }
+        .best-alt-tier.premium { background: rgba(245,158,11,0.15); color: #d97706; }
+        .best-alt-cost { text-align: right; }
+        .best-alt-cost .monthly { font-size: 20px; font-weight: 800; }
+        .best-alt-cost .per-token { font-size: 12px; color: var(--text-muted); }
+
+        /* Share section */
+        .share-section {
+            background: var(--bg-secondary); border: 1px solid var(--border);
+            border-radius: 16px; padding: 32px; text-align: center; margin-bottom: 24px;
+        }
+        .share-section h2 { font-size: 22px; font-weight: 700; margin-bottom: 8px; }
+        .share-section p { color: var(--text-secondary); font-size: 14px; margin-bottom: 20px; }
+        .share-url-box {
+            display: flex; gap: 8px; margin-bottom: 16px;
+        }
+        .share-url-box input {
+            flex: 1; padding: 12px 16px; background: var(--bg-card);
+            border: 1px solid var(--border); border-radius: 8px;
+            color: var(--text-primary); font-size: 13px; font-family: monospace;
+        }
+        .copy-btn {
+            padding: 12px 20px; background: var(--accent); color: white;
+            border: none; border-radius: 8px; font-size: 13px; font-weight: 700;
+            cursor: pointer; white-space: nowrap; transition: all 0.15s;
+        }
+        .copy-btn:hover { opacity: 0.9; }
+        .copy-btn.copied { background: var(--green); }
+        .share-buttons { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
+        .share-btn {
+            display: inline-flex; align-items: center; gap: 6px;
+            padding: 10px 20px; border-radius: 8px; font-size: 13px; font-weight: 600;
+            text-decoration: none; transition: all 0.15s; border: 1px solid var(--border);
+            background: var(--bg-card); color: var(--text-primary);
+        }
+        .share-btn:hover { border-color: var(--accent); }
+        .share-btn svg { width: 16px; height: 16px; }
+
+        /* Pro upsell */
+        .pro-upsell {
+            background: linear-gradient(135deg, var(--accent-glow), rgba(99,102,241,0.02));
+            border: 1px solid var(--accent); border-radius: 16px;
+            padding: 32px; text-align: center; margin-top: 24px;
+        }
+        .pro-upsell h2 { font-size: 24px; font-weight: 700; margin-bottom: 8px; }
+        .pro-upsell p { color: var(--text-secondary); margin-bottom: 20px; font-size: 15px; }
+        .pro-upsell .btn-primary {
+            display: inline-block; padding: 14px 40px;
+            background: var(--accent); color: white; border-radius: 10px;
+            font-size: 16px; font-weight: 700; text-decoration: none;
+            transition: all 0.15s;
+        }
+        .pro-upsell .btn-primary:hover { opacity: 0.9; transform: translateY(-1px); }
+
+        /* Shared report view (when opened via share link) */
+        .shared-report-banner {
+            background: linear-gradient(135deg, var(--accent-glow), rgba(99,102,241,0.02));
+            border: 1px solid var(--accent); border-radius: 12px;
+            padding: 20px; text-align: center; margin-bottom: 24px;
+        }
+        .shared-report-banner p { color: var(--text-secondary); font-size: 14px; margin: 0; }
+        .shared-report-banner a { color: var(--accent); font-weight: 600; }
+
+        /* Score bar */
+        .score-bar-container { margin-bottom: 24px; }
+        .score-bar-label { display: flex; justify-content: space-between; font-size: 12px; color: var(--text-muted); margin-bottom: 6px; }
+        .score-bar {
+            height: 10px; background: var(--bg-card); border-radius: 5px; overflow: hidden;
+            border: 1px solid var(--border);
+        }
+        .score-bar-fill {
+            height: 100%; border-radius: 5px; transition: width 0.8s ease;
+        }
+        .score-bar-fill.grade-a { background: linear-gradient(90deg, #16a34a, #22c55e); }
+        .score-bar-fill.grade-b { background: linear-gradient(90deg, #0891b2, #22d3ee); }
+        .score-bar-fill.grade-c { background: linear-gradient(90deg, #d97706, #f59e0b); }
+        .score-bar-fill.grade-d { background: linear-gradient(90deg, #ea580c, #f97316); }
+        .score-bar-fill.grade-f { background: linear-gradient(90deg, #dc2626, #ef4444); }
+
+        @media (max-width: 768px) {
+            .content { padding: 100px 16px 60px; }
+            h1 { font-size: 28px; }
+            .subtitle { font-size: 16px; }
+            .report-metrics { grid-template-columns: 1fr 1fr; }
+            .form-row { grid-template-columns: 1fr; }
+            .report-card-header { flex-direction: column; text-align: center; }
+            .grade-info { text-align: center; }
+            .best-alt { grid-template-columns: 1fr; }
+            .best-alt-cost { text-align: left; }
+            .share-url-box { flex-direction: column; }
+            .grade-circle { width: 100px; height: 100px; font-size: 44px; }
+        }
+    </style>
+    <meta name="theme-color" content="#6366f1">
+</head>
+<body>
+    <a href="#main" class="skip-link">Skip to content</a>
+    <nav>
+        <div class="nav-inner">
+            <a href="index.html" class="logo">API<span>pulse</span></a>
+            <button class="hamburger" onclick="toggleMobileNav()" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+            <div class="nav-links">
+                <a href="calculator.html">Calculator</a>
+                <a href="compare.html">Compare</a>
+                <a href="cost-explorer.html">Explorer</a>
+                <a href="cost-optimizer.html">Optimizer</a>
+                <a href="cost-leak-detector.html">Leak Detector</a>
+                <a href="api-cost-report.html" style="color:var(--accent);">Report Card</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="blog.html">Blog</a>
+                <a href="pro.html" class="nav-cta" onclick="if(window.trackEvent)window.trackEvent('pro_button_clicked',{source:'nav'})">Pro — $29</a>
+                <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
+            </div>
+        </div>
+    </nav>
+
+    <main id="main">
+    <div class="content">
+        <h1>AI API Cost Report Card</h1>
+        <p class="subtitle">Grade your AI API spending efficiency</p>
+        <p class="tagline">See how your costs compare to optimal. Get a shareable report card in seconds.</p>
+
+        <!-- Shared report banner (shown when page is opened via share link) -->
+        <div class="shared-report-banner" id="shared-banner" style="display:none;">
+            <p>This report was generated by a fellow developer using <a href="https://getapipulse.com">APIpulse</a>. <a href="api-cost-report.html">Generate your own free report &rarr;</a></p>
+        </div>
+
+        <div class="input-section" id="input-section">
+            <h2>Enter your current AI API usage</h2>
+            <div class="form-group">
+                <label for="current-model">Your primary AI model</label>
+                <select id="current-model">
+                    <option value="">— Select a model —</option>
+                </select>
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="monthly-input">Monthly input tokens (millions)</label>
+                    <input type="number" id="monthly-input" value="10" min="0.1" max="10000" step="0.1">
+                </div>
+                <div class="form-group">
+                    <label for="monthly-output">Monthly output tokens (millions)</label>
+                    <input type="number" id="monthly-output" value="40" min="0.1" max="50000" step="0.1">
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Quick presets</label>
+                <div class="usage-presets">
+                    <button class="preset-btn" onclick="setPreset(0.5,2,'Hobby')">Hobby</button>
+                    <button class="preset-btn" onclick="setPreset(5,20,'Indie')">Indie Dev</button>
+                    <button class="preset-btn" onclick="setPreset(10,40,'Startup')">Startup</button>
+                    <button class="preset-btn" onclick="setPreset(50,200,'Growth')">Growth</button>
+                    <button class="preset-btn" onclick="setPreset(200,800,'Scale')">Scale</button>
+                    <button class="preset-btn" onclick="setPreset(500,2000,'Enterprise')">Enterprise</button>
+                </div>
+            </div>
+            <button class="generate-btn" onclick="generateReport()">Generate My Report Card</button>
+        </div>
+
+        <div class="report" id="report">
+            <div class="report-card" id="report-card">
+                <div class="report-card-header">
+                    <div class="grade-circle" id="grade-circle">A</div>
+                    <div class="grade-info">
+                        <div class="grade-label">Your API Cost Grade</div>
+                        <div class="grade-title" id="grade-title">Excellent</div>
+                        <div class="grade-subtitle" id="grade-subtitle">You're using a cost-efficient model</div>
+                    </div>
+                </div>
+
+                <div class="score-bar-container">
+                    <div class="score-bar-label">
+                        <span>Overpaying</span>
+                        <span>Optimal</span>
+                    </div>
+                    <div class="score-bar">
+                        <div class="score-bar-fill" id="score-bar-fill" style="width:0%"></div>
+                    </div>
+                </div>
+
+                <div class="report-metrics">
+                    <div class="metric-card">
+                        <div class="metric-label">Your Model</div>
+                        <div class="metric-value" id="rpt-model" style="font-size:16px;">—</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-label">Monthly Cost</div>
+                        <div class="metric-value cost" id="rpt-cost">$0</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-label">Cheapest Option</div>
+                        <div class="metric-value cost" id="rpt-cheapest">$0</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-label">Potential Savings</div>
+                        <div class="metric-value savings" id="rpt-savings">$0</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="savings-banner" id="savings-banner">
+                <div class="amount" id="savings-amount">$0/mo</div>
+                <div class="label" id="savings-label">potential monthly savings by switching</div>
+            </div>
+
+            <div class="best-alt" id="best-alt">
+                <div>
+                    <div class="best-alt-name" id="best-alt-name">—</div>
+                    <div class="best-alt-provider" id="best-alt-provider">—</div>
+                    <span class="best-alt-tier" id="best-alt-tier">Budget</span>
+                </div>
+                <div class="best-alt-cost">
+                    <div class="monthly" id="best-alt-cost">$0/mo</div>
+                    <div class="per-token" id="best-alt-pricing">$0/$0 per 1M</div>
+                </div>
+            </div>
+
+            <!-- Share section -->
+            <div class="share-section">
+                <h2>Share Your Report</h2>
+                <p>Show your team or community how your API costs stack up</p>
+                <div class="share-url-box">
+                    <input type="text" id="share-url" readonly>
+                    <button class="copy-btn" id="copy-btn" onclick="copyShareUrl()">Copy Link</button>
+                </div>
+                <div class="share-buttons">
+                    <a href="#" class="share-btn" id="share-x" target="_blank" rel="noopener">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                        Share on X
+                    </a>
+                    <a href="#" class="share-btn" id="share-linkedin" target="_blank" rel="noopener">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                        LinkedIn
+                    </a>
+                    <a href="#" class="share-btn" id="share-reddit" target="_blank" rel="noopener">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0zm5.01 4.744c.688 0 1.25.561 1.25 1.249a1.25 1.25 0 0 1-2.498.056l-2.597-.547-.8 3.747c1.824.07 3.48.632 4.674 1.488.308-.309.73-.491 1.207-.491.968 0 1.754.786 1.754 1.754 0 .716-.435 1.333-1.01 1.614a3.111 3.111 0 0 1 .042.52c0 2.694-3.13 4.87-7.004 4.87-3.874 0-7.004-2.176-7.004-4.87 0-.183.015-.366.043-.534A1.748 1.748 0 0 1 4.028 12c0-.968.786-1.754 1.754-1.754.463 0 .898.196 1.207.49 1.207-.883 2.878-1.43 4.744-1.487l.885-4.182a.342.342 0 0 1 .14-.197.35.35 0 0 1 .238-.042l2.906.617a1.214 1.214 0 0 1 1.108-.701zM9.25 12C8.561 12 8 12.562 8 13.25c0 .687.561 1.248 1.25 1.248.687 0 1.248-.561 1.248-1.249 0-.688-.561-1.249-1.249-1.249zm5.5 0c-.687 0-1.248.561-1.248 1.25 0 .687.561 1.248 1.249 1.248.688 0 1.249-.561 1.249-1.249 0-.687-.562-1.249-1.25-1.249zm-5.466 3.99a.327.327 0 0 0-.231.094.33.33 0 0 0 0 .463c.842.842 2.484.913 2.961.913.477 0 2.105-.056 2.961-.913a.361.361 0 0 0 .029-.463.33.33 0 0 0-.464 0c-.547.533-1.684.73-2.512.73-.828 0-1.979-.196-2.512-.73a.326.326 0 0 0-.232-.095z"/></svg>
+                        Reddit
+                    </a>
+                </div>
+            </div>
+
+            <!-- Pro upsell -->
+            <div class="pro-upsell">
+                <h2>Unlock Full Cost Optimization</h2>
+                <p>Pro users get all alternatives ranked, task-specific recommendations, batch vs streaming analysis, and PDF export.</p>
+                <a href="https://buy.stripe.com/fZu7sL3Gw3GS0RQeoDeEo0a" class="btn-primary" target="_blank" rel="noopener" onclick="if(window.trackEvent)window.trackEvent('pro_button_clicked',{source:'report_card'})">Get Pro — $29</a>
+                <p style="font-size:12px;color:var(--text-muted);margin-top:8px;">One-time payment. Lifetime access. 14-day money-back guarantee.</p>
+            </div>
+        </div>
+    </div>
+    </main>
+
+    <footer>
+        <div class="footer-inner">
+            <div class="footer-links">
+                <a href="calculator.html">Calculator</a>
+                <a href="compare.html">Compare</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="blog.html">Blog</a>
+                <a href="api-docs.html">API</a>
+                <a href="about.html">About</a>
+            </div>
+            <p>APIpulse — Know your AI API costs before you commit.</p>
+            <p>Pricing data last verified <span class="dynamic-date" data-date="2026-05-29">May 29, 2026</span>. Always check provider sites for the latest.</p>
+        </div>
+    </footer>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        if (typeof API_MODELS === 'undefined') return;
+
+        // Populate model dropdown
+        const sel = document.getElementById('current-model');
+        const providers = {};
+        API_MODELS.forEach(m => {
+            if (!providers[m.provider]) providers[m.provider] = [];
+            providers[m.provider].push(m);
+        });
+        Object.keys(providers).forEach(provider => {
+            const group = document.createElement('optgroup');
+            group.label = provider;
+            providers[provider].forEach(m => {
+                const opt = document.createElement('option');
+                opt.value = m.id;
+                opt.textContent = m.name + ' — $' + m.input.toFixed(2) + '/$' + m.output.toFixed(2) + ' per 1M';
+                group.appendChild(opt);
+            });
+            sel.appendChild(group);
+        });
+
+        // Check if this is a shared report link
+        checkSharedReport();
+    });
+
+    function setPreset(inputM, outputM, label) {
+        document.getElementById('monthly-input').value = inputM;
+        document.getElementById('monthly-output').value = outputM;
+        document.querySelectorAll('.preset-btn').forEach(b => b.classList.remove('active'));
+        event.target.classList.add('active');
+        if (window.trackEvent) window.trackEvent('report_preset_selected', { preset: label });
+    }
+
+    function calculateGrade(savingsPct) {
+        if (savingsPct <= 5) return { letter: 'A+', label: 'Excellent', subtitle: 'You\'re already using a highly cost-efficient model', cssClass: 'grade-a', score: 95 };
+        if (savingsPct <= 15) return { letter: 'A', label: 'Great', subtitle: 'Your costs are well-optimized with minor savings possible', cssClass: 'grade-a', score: 85 };
+        if (savingsPct <= 30) return { letter: 'B', label: 'Good', subtitle: 'There\'s room to save by switching to a cheaper model', cssClass: 'grade-b', score: 70 };
+        if (savingsPct <= 50) return { letter: 'C', label: 'Fair', subtitle: 'You could significantly reduce costs with a different model', cssClass: 'grade-c', score: 50 };
+        if (savingsPct <= 75) return { letter: 'D', label: 'Poor', subtitle: 'You\'re overpaying — major savings available', cssClass: 'grade-d', score: 30 };
+        return { letter: 'F', label: 'Critical', subtitle: 'You\'re massively overpaying for AI APIs', cssClass: 'grade-f', score: 10 };
+    }
+
+    function generateReport() {
+        const modelId = document.getElementById('current-model').value;
+        const inputM = parseFloat(document.getElementById('monthly-input').value) || 0;
+        const outputM = parseFloat(document.getElementById('monthly-output').value) || 0;
+
+        if (!modelId) {
+            alert('Please select a model.');
+            return;
+        }
+        if (inputM <= 0 && outputM <= 0) {
+            alert('Please enter your monthly token usage.');
+            return;
+        }
+
+        const current = getModelById(modelId);
+        if (!current) return;
+
+        const currentCost = (current.input * inputM) + (current.output * outputM);
+
+        // Find cheapest alternative
+        const alternatives = API_MODELS
+            .filter(m => m.id !== modelId)
+            .map(m => ({
+                ...m,
+                totalCost: (m.input * inputM) + (m.output * outputM),
+                savings: currentCost - ((m.input * inputM) + (m.output * outputM))
+            }))
+            .filter(m => m.totalCost >= 0)
+            .sort((a, b) => a.totalCost - b.totalCost);
+
+        const cheapest = alternatives[0];
+        const cheapestCost = cheapest ? cheapest.totalCost : currentCost;
+        const maxSavings = currentCost - cheapestCost;
+        const savingsPct = currentCost > 0 ? (maxSavings / currentCost * 100) : 0;
+
+        // Calculate grade
+        const grade = calculateGrade(savingsPct);
+
+        // Update report card
+        const gradeCircle = document.getElementById('grade-circle');
+        gradeCircle.textContent = grade.letter;
+        gradeCircle.className = 'grade-circle ' + grade.cssClass;
+
+        const reportCard = document.getElementById('report-card');
+        reportCard.className = 'report-card ' + grade.cssClass;
+
+        document.getElementById('grade-title').textContent = grade.label;
+        document.getElementById('grade-subtitle').textContent = grade.subtitle;
+
+        // Score bar
+        const scoreBar = document.getElementById('score-bar-fill');
+        scoreBar.className = 'score-bar-fill ' + grade.cssClass;
+        setTimeout(() => { scoreBar.style.width = grade.score + '%'; }, 100);
+
+        // Metrics
+        document.getElementById('rpt-model').textContent = current.name;
+        document.getElementById('rpt-cost').textContent = '$' + currentCost.toFixed(2);
+        document.getElementById('rpt-cheapest').textContent = cheapest ? ('$' + cheapestCost.toFixed(2)) : ('$' + currentCost.toFixed(2));
+        document.getElementById('rpt-savings').textContent = maxSavings > 0 ? ('-$' + maxSavings.toFixed(2)) : '$0';
+
+        // Savings banner
+        const savingsBanner = document.getElementById('savings-banner');
+        if (maxSavings > 0) {
+            savingsBanner.className = 'savings-banner';
+            document.getElementById('savings-amount').textContent = '-$' + maxSavings.toFixed(2) + '/mo';
+            document.getElementById('savings-label').textContent = 'potential monthly savings by switching to ' + (cheapest ? cheapest.name : 'a cheaper model');
+        } else {
+            savingsBanner.className = 'savings-banner no-savings';
+            document.getElementById('savings-amount').textContent = 'Already optimal!';
+            document.getElementById('savings-label').textContent = 'You\'re using the most cost-effective model for your usage';
+        }
+
+        // Best alternative
+        if (cheapest && maxSavings > 0) {
+            document.getElementById('best-alt-name').textContent = cheapest.name;
+            document.getElementById('best-alt-provider').textContent = cheapest.provider + ' · ' + cheapest.context + ' context';
+            const tierEl = document.getElementById('best-alt-tier');
+            tierEl.textContent = cheapest.tier;
+            tierEl.className = 'best-alt-tier ' + cheapest.tier.toLowerCase();
+            document.getElementById('best-alt-cost').textContent = '$' + cheapestCost.toFixed(2) + '/mo';
+            document.getElementById('best-alt-pricing').textContent = '$' + cheapest.input.toFixed(2) + '/$' + cheapest.output.toFixed(2) + ' per 1M';
+            document.getElementById('best-alt').style.display = 'grid';
+        } else {
+            document.getElementById('best-alt').style.display = 'none';
+        }
+
+        // Generate share URL
+        const shareParams = new URLSearchParams({
+            m: modelId,
+            i: inputM,
+            o: outputM,
+            g: grade.letter
+        });
+        const shareUrl = window.location.origin + '/api-cost-report.html?' + shareParams.toString();
+        document.getElementById('share-url').value = shareUrl;
+
+        // Update share buttons
+        const shareText = 'My AI API cost grade: ' + grade.letter + ' (' + grade.label + '). Monthly cost: $' + currentCost.toFixed(2) +
+            (maxSavings > 0 ? '. Could save $' + maxSavings.toFixed(2) + '/mo by switching.' : '. Already optimized!') +
+            ' Grade yours free:';
+
+        document.getElementById('share-x').href = 'https://twitter.com/intent/tweet?text=' + encodeURIComponent(shareText) + '&url=' + encodeURIComponent(shareUrl);
+        document.getElementById('share-linkedin').href = 'https://www.linkedin.com/sharing/share-offsite/?url=' + encodeURIComponent(shareUrl);
+        document.getElementById('share-reddit').href = 'https://reddit.com/submit?url=' + encodeURIComponent(shareUrl) + '&title=' + encodeURIComponent('My AI API Cost Grade: ' + grade.letter + ' — Check yours free');
+
+        // Show report
+        document.getElementById('report').classList.add('visible');
+
+        // Track event
+        if (window.trackEvent) {
+            window.trackEvent('report_generated', {
+                model: modelId,
+                monthly_cost: currentCost.toFixed(2),
+                grade: grade.letter,
+                savings_pct: savingsPct.toFixed(1),
+                savings_amount: maxSavings.toFixed(2)
+            });
+        }
+
+        // Scroll to report
+        document.getElementById('report').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
+    function checkSharedReport() {
+        const params = new URLSearchParams(window.location.search);
+        const modelId = params.get('m');
+        const inputM = parseFloat(params.get('i'));
+        const outputM = parseFloat(params.get('o'));
+        const grade = params.get('g');
+
+        if (!modelId || isNaN(inputM) || isNaN(outputM)) return;
+
+        // Show shared banner
+        document.getElementById('shared-banner').style.display = 'block';
+
+        // Pre-fill form
+        document.getElementById('current-model').value = modelId;
+        document.getElementById('monthly-input').value = inputM;
+        document.getElementById('monthly-output').value = outputM;
+
+        // Auto-generate report
+        setTimeout(() => {
+            generateReport();
+            // Update page title for shared view
+            document.title = 'AI API Cost Report Card — Grade ' + grade + ' | APIpulse';
+        }, 500);
+
+        // Track shared view
+        if (window.trackEvent) {
+            window.trackEvent('shared_report_viewed', { model: modelId, grade: grade });
+        }
+    }
+
+    function copyShareUrl() {
+        const urlInput = document.getElementById('share-url');
+        urlInput.select();
+        navigator.clipboard.writeText(urlInput.value).then(() => {
+            const btn = document.getElementById('copy-btn');
+            btn.textContent = 'Copied!';
+            btn.classList.add('copied');
+            setTimeout(() => {
+                btn.textContent = 'Copy Link';
+                btn.classList.remove('copied');
+            }, 2000);
+        });
+        if (window.trackEvent) window.trackEvent('report_link_copied');
+    }
+    </script>
+</body>
+</html>
