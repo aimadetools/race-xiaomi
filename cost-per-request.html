@@ -56,6 +56,38 @@
         ]
     }
     </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "How much does a single AI API request cost?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "A typical 1000-token request costs $0.0001 (Gemini Flash Lite) to $0.03 (Grok 3). Most mid-tier models cost $0.001-$0.01 per request. Output tokens cost 2-10x more than input tokens."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What is the cheapest cost per API request?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Gemini 2.0 Flash Lite at $0.075/$0.30 per million tokens is cheapest. A 1000-token request costs about $0.0003. Llama 3.1 8B ($0.10/$0.10) and GPT-oss 20B ($0.08/$0.35) are also extremely cheap."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How do I calculate cost per API request?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Multiply input tokens by the input price per token, add output tokens multiplied by the output price per token. Example: 500 input tokens at $1/M = $0.0005, plus 500 output tokens at $5/M = $0.0025, total = $0.003 per request."
+                }
+            }
+        ]
+    }
+    </script>
     <style>
         .content { max-width: 800px; margin: 0 auto; padding: 120px 24px 80px; }
         h1 { font-size: 40px; font-weight: 800; margin-bottom: 12px; }

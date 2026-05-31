@@ -42,6 +42,38 @@
         "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
     }
     </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "How do I estimate AI API costs for my project?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Define your features (chat, search, analysis, etc.), estimate daily request volume and token usage per request, then use the AI Stack Builder to model costs across different provider combinations. Most projects need 2-3 models for different tasks."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What is the cheapest way to build an AI-powered app?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Use tiered model routing: Gemini Flash for simple tasks ($0.10/$0.40), GPT-5 mini for complex reasoning ($0.25/$2), and premium models only for critical tasks. This approach typically costs 60-80% less than using a single premium model for everything."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How much does it cost to run an AI chatbot?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "A chatbot handling 1000 conversations/day with 500 tokens each costs $15-150/month depending on the model. Gemini Flash: ~$15/month. GPT-5 mini: ~$75/month. Claude Sonnet: ~$225/month. Use the Stack Builder to model your specific volume."
+                }
+            }
+        ]
+    }
+    </script>
     <style>
         .content { max-width: 800px; margin: 0 auto; padding: 120px 24px 80px; }
         h1 { font-size: 40px; font-weight: 800; text-align: center; margin-bottom: 12px; }
