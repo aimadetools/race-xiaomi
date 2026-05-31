@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI API Cost Report Card — Embeddable Widget | APIpulse</title>
+    <meta name="description" content="Free embeddable AI API cost report card. Grade your LLM spending and find savings.">
+    <meta name="keywords" content="AI API cost report, LLM spending analysis, API cost grade widget">
+    <meta property="og:title" content="AI API Cost Report Card — Embeddable Widget">
+    <meta property="og:description" content="Grade your AI API spending and find savings. Free embeddable widget.">
+    <meta property="og:image" content="og-image-report.svg">
+    <meta property="og:url" content="https://getapipulse.com/embed-report.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="AI API Cost Report Card — Embeddable Widget">
+    <meta name="twitter:description" content="Grade your AI API spending and find savings.">
+    <link rel="canonical" href="https://getapipulse.com/embed-report.html">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="styles.css">
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0CEP7S9Y3J"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-0CEP7S9Y3J');
+    </script>
+    <script src="analytics.js" defer></script>
+    <script src="dynamic-date.js" defer></script>
+    <script src="pricing-data.js" defer></script>
+    <script src="shared.js" defer></script>
+    <style>
+        body { background: var(--bg-primary); color: var(--text-primary); font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; margin: 0; padding: 16px; }
+        .embed-report { max-width: 480px; margin: 0 auto; }
+        .embed-report h2 { font-size: 20px; font-weight: 700; margin-bottom: 4px; text-align: center; }
+        .embed-report .sub { text-align: center; color: var(--text-secondary); font-size: 13px; margin-bottom: 20px; }
+
+        .form-group { margin-bottom: 14px; }
+        .form-group label { display: block; font-size: 12px; font-weight: 600; color: var(--text-secondary); margin-bottom: 4px; text-transform: uppercase; letter-spacing: 0.5px; }
+        .form-group select, .form-group input {
+            width: 100%; padding: 10px 12px; border-radius: 8px; border: 1px solid var(--border);
+            background: var(--bg-secondary); color: var(--text-primary); font-size: 14px;
+            font-family: inherit;
+        }
+        .form-group select:focus, .form-group input:focus { outline: 2px solid var(--accent); outline-offset: 2px; }
+        .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+        .presets { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 6px; }
+        .preset-btn {
+            padding: 5px 10px; background: var(--bg-secondary); border: 1px solid var(--border);
+            border-radius: 6px; color: var(--text-secondary); font-size: 11px; cursor: pointer;
+            transition: all 0.15s;
+        }
+        .preset-btn:hover { border-color: var(--accent); color: var(--accent); }
+        .preset-btn.active { border-color: var(--accent); color: var(--accent); background: var(--accent-glow); }
+        .generate-btn {
+            width: 100%; padding: 12px; border-radius: 8px; border: none;
+            background: var(--accent); color: white; font-size: 15px; font-weight: 600;
+            cursor: pointer; transition: opacity 0.2s; margin-top: 8px;
+        }
+        .generate-btn:hover { opacity: 0.9; }
+
+        /* Report card */
+        .report { display: none; margin-top: 16px; }
+        .report.visible { display: block; }
+
+        .grade-card {
+            background: var(--bg-secondary); border: 2px solid var(--border);
+            border-radius: 14px; padding: 24px; text-align: center; margin-bottom: 12px;
+        }
+        .grade-card.grade-a { border-color: var(--green); }
+        .grade-card.grade-b { border-color: #22d3ee; }
+        .grade-card.grade-c { border-color: var(--orange); }
+        .grade-card.grade-d { border-color: #f97316; }
+        .grade-card.grade-f { border-color: var(--red); }
+
+        .grade-header { display: flex; align-items: center; justify-content: center; gap: 16px; margin-bottom: 16px; }
+        .grade-circle {
+            width: 72px; height: 72px; border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 36px; font-weight: 900; color: white; flex-shrink: 0;
+        }
+        .grade-circle.grade-a { background: linear-gradient(135deg, #16a34a, #22c55e); }
+        .grade-circle.grade-b { background: linear-gradient(135deg, #0891b2, #22d3ee); }
+        .grade-circle.grade-c { background: linear-gradient(135deg, #d97706, #f59e0b); }
+        .grade-circle.grade-d { background: linear-gradient(135deg, #ea580c, #f97316); }
+        .grade-circle.grade-f { background: linear-gradient(135deg, #dc2626, #ef4444); }
+        .grade-text { text-align: left; }
+        .grade-label { font-size: 11px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px; }
+        .grade-title { font-size: 18px; font-weight: 700; }
+        .grade-subtitle { font-size: 12px; color: var(--text-secondary); }
+
+        .score-bar-wrap { margin-bottom: 16px; }
+        .score-bar-labels { display: flex; justify-content: space-between; font-size: 10px; color: var(--text-muted); margin-bottom: 4px; }
+        .score-bar { height: 8px; background: var(--bg-card); border-radius: 4px; overflow: hidden; border: 1px solid var(--border); }
+        .score-bar-fill { height: 100%; border-radius: 4px; transition: width 0.8s ease; }
+        .score-bar-fill.grade-a { background: linear-gradient(90deg, #16a34a, #22c55e); }
+        .score-bar-fill.grade-b { background: linear-gradient(90deg, #0891b2, #22d3ee); }
+        .score-bar-fill.grade-c { background: linear-gradient(90deg, #d97706, #f59e0b); }
+        .score-bar-fill.grade-d { background: linear-gradient(90deg, #ea580c, #f97316); }
+        .score-bar-fill.grade-f { background: linear-gradient(90deg, #dc2626, #ef4444); }
+
+        .metrics { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+        .metric { background: var(--bg-card); border: 1px solid var(--border); border-radius: 8px; padding: 10px; text-align: center; }
+        .metric-label { font-size: 10px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px; }
+        .metric-value { font-size: 18px; font-weight: 800; margin-top: 2px; }
+        .metric-value.savings { color: var(--green); }
+
+        .savings-banner {
+            background: linear-gradient(135deg, rgba(34,197,94,0.08), rgba(34,197,94,0.02));
+            border: 1px solid rgba(34,197,94,0.3); border-radius: 10px;
+            padding: 14px; text-align: center; margin-bottom: 12px;
+        }
+        .savings-banner .amount { font-size: 28px; font-weight: 800; color: var(--green); }
+        .savings-banner .label { font-size: 12px; color: var(--text-secondary); margin-top: 2px; }
+
+        .best-alt {
+            background: var(--bg-secondary); border: 1px solid var(--border);
+            border-radius: 10px; padding: 14px; margin-bottom: 12px;
+            display: grid; grid-template-columns: 1fr auto; gap: 12px; align-items: center;
+        }
+        .best-alt-name { font-size: 15px; font-weight: 700; }
+        .best-alt-provider { font-size: 11px; color: var(--text-muted); margin-top: 2px; }
+        .best-alt-tier { display: inline-block; padding: 2px 6px; border-radius: 4px; font-size: 10px; font-weight: 600; margin-top: 3px; }
+        .best-alt-tier.budget { background: rgba(34,197,94,0.15); color: var(--green); }
+        .best-alt-tier.mid { background: rgba(99,102,241,0.15); color: var(--accent); }
+        .best-alt-tier.premium { background: rgba(245,158,11,0.15); color: #d97706; }
+        .best-alt-cost { text-align: right; }
+        .best-alt-cost .monthly { font-size: 16px; font-weight: 800; }
+        .best-alt-cost .per-token { font-size: 10px; color: var(--text-muted); }
+
+        .powered-by { text-align: center; margin-top: 12px; font-size: 11px; color: var(--text-muted); }
+        .powered-by a { color: var(--accent); text-decoration: none; font-weight: 600; }
+        .powered-by a:hover { text-decoration: underline; }
+
+        .cta-link {
+            display: block; text-align: center; margin-top: 10px; padding: 10px;
+            background: var(--accent); color: white; border-radius: 8px;
+            font-size: 13px; font-weight: 600; text-decoration: none; transition: opacity 0.2s;
+        }
+        .cta-link:hover { opacity: 0.9; }
+
+        @media (max-width: 768px) {
+            .form-row { grid-template-columns: 1fr; }
+            .grade-header { flex-direction: column; text-align: center; }
+            .grade-text { text-align: center; }
+            .best-alt { grid-template-columns: 1fr; }
+            .best-alt-cost { text-align: left; }
+        }
+    </style>
+    <meta name="theme-color" content="#6366f1">
+</head>
+<body>
+    <div class="embed-report">
+        <h2>AI API Cost Report Card</h2>
+        <p class="sub">Grade your spending. Find savings.</p>
+
+        <div class="form-group">
+            <label for="emb-model">Your primary model</label>
+            <select id="emb-model">
+                <option value="">— Select a model —</option>
+            </select>
+        </div>
+        <div class="form-row">
+            <div class="form-group">
+                <label for="emb-input">Input tokens (M/mo)</label>
+                <input type="number" id="emb-input" value="10" min="0.1" max="10000" step="0.1">
+            </div>
+            <div class="form-group">
+                <label for="emb-output">Output tokens (M/mo)</label>
+                <input type="number" id="emb-output" value="40" min="0.1" max="50000" step="0.1">
+            </div>
+        </div>
+        <div class="form-group">
+            <label>Presets</label>
+            <div class="presets">
+                <button class="preset-btn" onclick="embPreset(0.5,2,this)">Hobby</button>
+                <button class="preset-btn" onclick="embPreset(5,20,this)">Indie</button>
+                <button class="preset-btn active" onclick="embPreset(10,40,this)">Startup</button>
+                <button class="preset-btn" onclick="embPreset(50,200,this)">Growth</button>
+                <button class="preset-btn" onclick="embPreset(200,800,this)">Scale</button>
+            </div>
+        </div>
+        <button class="generate-btn" onclick="embGenerate()">Generate Report Card</button>
+
+        <div class="report" id="emb-report">
+            <div class="grade-card" id="emb-grade-card">
+                <div class="grade-header">
+                    <div class="grade-circle" id="emb-grade-circle">A</div>
+                    <div class="grade-text">
+                        <div class="grade-label">Your API Cost Grade</div>
+                        <div class="grade-title" id="emb-grade-title">Excellent</div>
+                        <div class="grade-subtitle" id="emb-grade-subtitle">Cost-efficient model</div>
+                    </div>
+                </div>
+                <div class="score-bar-wrap">
+                    <div class="score-bar-labels"><span>Overpaying</span><span>Optimal</span></div>
+                    <div class="score-bar"><div class="score-bar-fill" id="emb-score-bar" style="width:0%"></div></div>
+                </div>
+                <div class="metrics">
+                    <div class="metric">
+                        <div class="metric-label">Your Cost</div>
+                        <div class="metric-value" id="emb-cost">$0</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">Cheapest</div>
+                        <div class="metric-value" id="emb-cheapest">$0</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">Savings</div>
+                        <div class="metric-value savings" id="emb-savings">$0</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-label">Your Model</div>
+                        <div class="metric-value" id="emb-model-name" style="font-size:12px;">—</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="savings-banner" id="emb-savings-banner">
+                <div class="amount" id="emb-savings-amount">$0/mo</div>
+                <div class="label" id="emb-savings-label">potential savings by switching</div>
+            </div>
+
+            <div class="best-alt" id="emb-best-alt">
+                <div>
+                    <div class="best-alt-name" id="emb-alt-name">—</div>
+                    <div class="best-alt-provider" id="emb-alt-provider">—</div>
+                    <span class="best-alt-tier" id="emb-alt-tier">Budget</span>
+                </div>
+                <div class="best-alt-cost">
+                    <div class="monthly" id="emb-alt-cost">$0/mo</div>
+                    <div class="per-token" id="emb-alt-pricing">$0/$0 per 1M</div>
+                </div>
+            </div>
+
+            <a href="api-cost-report.html" class="cta-link" target="_blank" rel="noopener">Get your full report with sharing &rarr;</a>
+        </div>
+
+        <p class="powered-by">Powered by <a href="https://getapipulse.com" target="_blank" rel="noopener">APIpulse</a> — Free AI API cost tools</p>
+    </div>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        if (typeof API_MODELS === 'undefined') return;
+        var sel = document.getElementById('emb-model');
+        var providers = {};
+        API_MODELS.forEach(function(m) {
+            if (!providers[m.provider]) providers[m.provider] = [];
+            providers[m.provider].push(m);
+        });
+        Object.keys(providers).forEach(function(provider) {
+            var group = document.createElement('optgroup');
+            group.label = provider;
+            providers[provider].forEach(function(m) {
+                var opt = document.createElement('option');
+                opt.value = m.id;
+                opt.textContent = m.name + ' — $' + m.input.toFixed(2) + '/$' + m.output.toFixed(2);
+                group.appendChild(opt);
+            });
+            sel.appendChild(group);
+        });
+
+        // Check for shared params
+        var params = new URLSearchParams(window.location.search);
+        if (params.get('m')) {
+            sel.value = params.get('m');
+            if (params.get('i')) document.getElementById('emb-input').value = params.get('i');
+            if (params.get('o')) document.getElementById('emb-output').value = params.get('o');
+            setTimeout(function() { embGenerate(); }, 300);
+        }
+    });
+
+    function embPreset(inputM, outputM, btn) {
+        document.getElementById('emb-input').value = inputM;
+        document.getElementById('emb-output').value = outputM;
+        document.querySelectorAll('.preset-btn').forEach(function(b) { b.classList.remove('active'); });
+        btn.classList.add('active');
+    }
+
+    function embGrade(savingsPct) {
+        if (savingsPct <= 5) return { letter: 'A+', label: 'Excellent', sub: 'Already using a cost-efficient model', cls: 'grade-a', score: 95 };
+        if (savingsPct <= 15) return { letter: 'A', label: 'Great', sub: 'Well-optimized with minor savings possible', cls: 'grade-a', score: 85 };
+        if (savingsPct <= 30) return { letter: 'B', label: 'Good', sub: 'Room to save by switching models', cls: 'grade-b', score: 70 };
+        if (savingsPct <= 50) return { letter: 'C', label: 'Fair', sub: 'Significant savings with a different model', cls: 'grade-c', score: 50 };
+        if (savingsPct <= 75) return { letter: 'D', label: 'Poor', sub: 'Overpaying — major savings available', cls: 'grade-d', score: 30 };
+        return { letter: 'F', label: 'Critical', sub: 'Massively overpaying for AI APIs', cls: 'grade-f', score: 10 };
+    }
+
+    function embGenerate() {
+        var modelId = document.getElementById('emb-model').value;
+        var inputM = parseFloat(document.getElementById('emb-input').value) || 0;
+        var outputM = parseFloat(document.getElementById('emb-output').value) || 0;
+
+        if (!modelId) { alert('Please select a model.'); return; }
+        if (inputM <= 0 && outputM <= 0) { alert('Enter your token usage.'); return; }
+
+        var current = API_MODELS.find(function(m) { return m.id === modelId; });
+        if (!current) return;
+
+        var currentCost = (current.input * inputM) + (current.output * outputM);
+
+        var alternatives = API_MODELS
+            .filter(function(m) { return m.id !== modelId; })
+            .map(function(m) {
+                return { model: m, totalCost: (m.input * inputM) + (m.output * outputM) };
+            })
+            .filter(function(a) { return a.totalCost >= 0; })
+            .sort(function(a, b) { return a.totalCost - b.totalCost; });
+
+        var cheapest = alternatives[0];
+        var cheapestCost = cheapest ? cheapest.totalCost : currentCost;
+        var maxSavings = currentCost - cheapestCost;
+        var savingsPct = currentCost > 0 ? (maxSavings / currentCost * 100) : 0;
+
+        var grade = embGrade(savingsPct);
+
+        // Grade circle
+        var circle = document.getElementById('emb-grade-circle');
+        circle.textContent = grade.letter;
+        circle.className = 'grade-circle ' + grade.cls;
+
+        var card = document.getElementById('emb-grade-card');
+        card.className = 'grade-card ' + grade.cls;
+
+        document.getElementById('emb-grade-title').textContent = grade.label;
+        document.getElementById('emb-grade-subtitle').textContent = grade.sub;
+
+        // Score bar
+        var bar = document.getElementById('emb-score-bar');
+        bar.className = 'score-bar-fill ' + grade.cls;
+        setTimeout(function() { bar.style.width = grade.score + '%'; }, 100);
+
+        // Metrics
+        document.getElementById('emb-cost').textContent = '$' + currentCost.toFixed(2);
+        document.getElementById('emb-cheapest').textContent = cheapest ? ('$' + cheapestCost.toFixed(2)) : ('$' + currentCost.toFixed(2));
+        document.getElementById('emb-savings').textContent = maxSavings > 0 ? ('-$' + maxSavings.toFixed(2)) : '$0';
+        document.getElementById('emb-model-name').textContent = current.name;
+
+        // Savings banner
+        var banner = document.getElementById('emb-savings-banner');
+        if (maxSavings > 0) {
+            banner.style.display = 'block';
+            document.getElementById('emb-savings-amount').textContent = '-$' + maxSavings.toFixed(2) + '/mo';
+            document.getElementById('emb-savings-label').textContent = 'by switching to ' + (cheapest ? cheapest.model.name : 'a cheaper model');
+        } else {
+            banner.style.display = 'block';
+            document.getElementById('emb-savings-amount').textContent = 'Already optimal!';
+            document.getElementById('emb-savings-label').textContent = 'You\'re using the most cost-effective model';
+        }
+
+        // Best alternative
+        var altBox = document.getElementById('emb-best-alt');
+        if (cheapest && maxSavings > 0) {
+            altBox.style.display = 'grid';
+            document.getElementById('emb-alt-name').textContent = cheapest.model.name;
+            document.getElementById('emb-alt-provider').textContent = cheapest.model.provider + ' · ' + cheapest.model.context + ' context';
+            var tierEl = document.getElementById('emb-alt-tier');
+            tierEl.textContent = cheapest.model.tier;
+            tierEl.className = 'best-alt-tier ' + cheapest.model.tier.toLowerCase();
+            document.getElementById('emb-alt-cost').textContent = '$' + cheapestCost.toFixed(2) + '/mo';
+            document.getElementById('emb-alt-pricing').textContent = '$' + cheapest.model.input.toFixed(2) + '/$' + cheapest.model.output.toFixed(2) + ' per 1M';
+        } else {
+            altBox.style.display = 'none';
+        }
+
+        document.getElementById('emb-report').classList.add('visible');
+
+        if (window.trackEvent) {
+            window.trackEvent('embed_report_generated', { model: modelId, grade: grade.letter });
+        }
+
+        document.getElementById('emb-report').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+    </script>
+</body>
+</html>

@@ -292,6 +292,40 @@ https://getapipulse.com/api/badge?model=deepseek-v4-pro&amp;format=json</code>
             </div>
         </div>
 
+        <!-- Report Card Embed -->
+        <div class="widget-section" id="report-widget">
+            <h2>Cost Report Card</h2>
+            <p class="desc">Embed the AI API cost report card. Users grade their spending, see savings potential, and get a shareable report. Great for blog posts and developer tools.</p>
+
+            <div class="code-block">
+                <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                <code><span class="code-tag">&lt;iframe</span>
+  <span class="code-attr">src</span>=<span class="code-val">"https://getapipulse.com/embed-report.html"</span>
+  <span class="code-attr">width</span>=<span class="code-val">"100%"</span>
+  <span class="code-attr">height</span>=<span class="code-val">"700"</span>
+  <span class="code-attr">frameborder</span>=<span class="code-val">"0"</span>
+  <span class="code-attr">style</span>=<span class="code-val">"border:1px solid var(--border);border-radius:12px;"</span>
+  <span class="code-attr">loading</span>=<span class="code-val">"lazy"</span>
+  <span class="code-attr">title</span>=<span class="code-val">"AI API Cost Report Card"</span>
+<span class="code-tag">&gt;&lt;/iframe&gt;</span></code>
+            </div>
+
+            <h3 style="font-size:16px;font-weight:700;margin:20px 0 12px;">Options</h3>
+            <table class="options-table">
+                <thead><tr><th>Parameter</th><th>Example</th><th>Description</th></tr></thead>
+                <tbody>
+                    <tr><td><code>?m=openai-gpt5</code></td><td><code>openai-gpt5</code></td><td>Pre-select a model</td></tr>
+                    <tr><td><code>?i=10</code></td><td><code>10</code></td><td>Pre-fill input tokens (millions/mo)</td></tr>
+                    <tr><td><code>?o=40</code></td><td><code>40</code></td><td>Pre-fill output tokens (millions/mo)</td></tr>
+                </tbody>
+            </table>
+
+            <div class="live-preview">
+                <h3>Live Preview</h3>
+                <iframe src="embed-report.html" width="100%" height="700" frameborder="0" style="border:1px solid var(--border);border-radius:12px;" loading="lazy" title="Report Card Preview"></iframe>
+            </div>
+        </div>
+
         <!-- Available Model IDs -->
         <div class="widget-section">
             <h2>Available Model IDs</h2>
