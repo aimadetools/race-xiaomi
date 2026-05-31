@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI API Cost Health Check — Free Savings Audit | APIpulse</title>
+    <meta name="description" content="Free 2-minute AI API cost health check. Answer 5 questions, get a personalized savings grade and actionable recommendations across 34 models from 10 providers.">
+    <meta name="keywords" content="AI API cost audit, LLM cost health check, API spending optimization, AI cost savings, API budget check">
+    <meta property="og:title" content="AI API Cost Health Check — Free Savings Audit | APIpulse">
+    <meta property="og:description" content="Free 2-minute cost health check. Get a personalized savings grade and actionable recommendations across 34 models.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://getapipulse.com/og-image.png">
+    <meta property="og:url" content="https://getapipulse.com/cost-health-check.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="AI API Cost Health Check — Free Savings Audit | APIpulse">
+    <meta name="twitter:image" content="https://getapipulse.com/og-image.png">
+    <meta name="twitter:description" content="Free 2-minute cost health check. Get a personalized savings grade and actionable recommendations.">
+    <link rel="canonical" href="https://getapipulse.com/cost-health-check.html">
+    <link rel="alternate" type="application/rss+xml" title="APIpulse Blog" href="https://getapipulse.com/rss.xml">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="styles.css">
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0CEP7S9Y3J"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-0CEP7S9Y3J');
+    </script>
+    <script src="analytics.js" defer></script>
+    <script src="dynamic-date.js" defer></script>
+    <script src="shared.js" defer></script>
+    <script src="pricing-data.js" defer></script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "APIpulse Cost Health Check",
+        "url": "https://getapipulse.com/cost-health-check.html",
+        "description": "Free 2-minute AI API cost health check. Get a personalized savings grade and actionable recommendations.",
+        "applicationCategory": "DeveloperApplication",
+        "operatingSystem": "Web",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "What is the AI API Cost Health Check?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "A free 2-minute assessment that analyzes your AI API spending habits and generates a personalized health grade (A-F) with actionable recommendations to reduce costs across 34 models from 10 providers."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How much can I save with the recommendations?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Users who implement our recommendations typically save 30-60% on their AI API costs. The exact savings depend on your current setup, but most developers are surprised by how much they can save by switching models or using multi-model routing."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Is the health check really free?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes. The health check is completely free with no signup required. All calculations run in your browser. Enter your email only if you want the full report sent to you."
+                }
+            }
+        ]
+    }
+    </script>
+    <style>
+        .hc-hero { padding: 120px 24px 40px; text-align: center; max-width: 700px; margin: 0 auto; }
+        .hc-hero h1 { font-size: clamp(28px, 4vw, 42px); font-weight: 800; margin-bottom: 12px; }
+        .hc-hero p { color: var(--text-secondary); font-size: 17px; line-height: 1.6; }
+        .hc-hero .badge { display: inline-block; background: rgba(34,197,94,0.1); color: var(--green); padding: 4px 14px; border-radius: 20px; font-size: 13px; font-weight: 700; margin-bottom: 16px; }
+
+        .hc-container { max-width: 700px; margin: 0 auto; padding: 0 24px 80px; }
+
+        /* Question cards */
+        .question-card {
+            background: var(--bg-card); border: 1px solid var(--border);
+            border-radius: 16px; padding: 32px; margin-bottom: 20px;
+            transition: all 0.3s;
+        }
+        .question-card.hidden { display: none; }
+        .question-card.active { border-color: var(--accent); }
+        .q-number { font-size: 12px; color: var(--accent); font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; }
+        .q-text { font-size: 20px; font-weight: 700; margin-bottom: 20px; }
+
+        .option-grid { display: grid; gap: 10px; }
+        .option-btn {
+            display: flex; align-items: center; gap: 12px;
+            padding: 14px 18px; border-radius: 10px; border: 1px solid var(--border);
+            background: var(--bg-secondary); cursor: pointer; transition: all 0.2s;
+            font-size: 15px; color: var(--text-primary); text-align: left;
+        }
+        .option-btn:hover { border-color: var(--accent); background: rgba(99,102,241,0.05); }
+        .option-btn.selected { border-color: var(--accent); background: rgba(99,102,241,0.1); }
+        .option-btn .radio {
+            width: 20px; height: 20px; border-radius: 50%; border: 2px solid var(--border);
+            display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+            transition: all 0.2s;
+        }
+        .option-btn.selected .radio { border-color: var(--accent); background: var(--accent); }
+        .option-btn.selected .radio::after { content: ''; width: 8px; height: 8px; border-radius: 50%; background: white; }
+        .option-label { font-weight: 500; }
+        .option-desc { font-size: 13px; color: var(--text-muted); margin-top: 2px; }
+
+        .q-nav { display: flex; gap: 12px; margin-top: 20px; }
+        .q-nav button {
+            padding: 12px 24px; border-radius: 8px; border: none; font-size: 14px;
+            font-weight: 600; cursor: pointer; transition: all 0.2s;
+        }
+        .q-back { background: var(--bg-secondary); color: var(--text-secondary); border: 1px solid var(--border) !important; }
+        .q-next { background: var(--accent); color: white; }
+        .q-next:disabled { opacity: 0.4; cursor: not-allowed; }
+
+        /* Progress bar */
+        .progress-bar { height: 4px; background: var(--bg-secondary); border-radius: 2px; margin-bottom: 32px; overflow: hidden; }
+        .progress-fill { height: 100%; background: var(--accent); border-radius: 2px; transition: width 0.3s; }
+
+        /* Results */
+        .results { display: none; }
+        .results.show { display: block; }
+
+        .grade-card {
+            background: var(--bg-card); border: 1px solid var(--border);
+            border-radius: 16px; padding: 40px; text-align: center; margin-bottom: 24px;
+        }
+        .grade-circle {
+            width: 120px; height: 120px; border-radius: 50%; display: flex;
+            align-items: center; justify-content: center; margin: 0 auto 20px;
+            font-size: 48px; font-weight: 900; border: 4px solid;
+        }
+        .grade-a { border-color: #22c55e; color: #22c55e; background: rgba(34,197,94,0.1); }
+        .grade-b { border-color: #84cc16; color: #84cc16; background: rgba(132,204,22,0.1); }
+        .grade-c { border-color: #eab308; color: #eab308; background: rgba(234,179,8,0.1); }
+        .grade-d { border-color: #f97316; color: #f97316; background: rgba(249,115,22,0.1); }
+        .grade-f { border-color: #ef4444; color: #ef4444; background: rgba(239,68,68,0.1); }
+
+        .grade-label { font-size: 20px; font-weight: 700; margin-bottom: 4px; }
+        .grade-sublabel { color: var(--text-secondary); font-size: 14px; }
+
+        .savings-banner {
+            background: linear-gradient(135deg, rgba(34,197,94,0.1), rgba(99,102,241,0.1));
+            border: 1px solid rgba(34,197,94,0.3); border-radius: 12px;
+            padding: 24px; text-align: center; margin-bottom: 24px;
+        }
+        .savings-amount { font-size: 36px; font-weight: 900; color: var(--green); }
+        .savings-label { font-size: 14px; color: var(--text-secondary); margin-top: 4px; }
+
+        .rec-card {
+            background: var(--bg-card); border: 1px solid var(--border);
+            border-radius: 12px; padding: 20px; margin-bottom: 12px;
+        }
+        .rec-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
+        .rec-title { font-size: 16px; font-weight: 700; }
+        .rec-impact { font-size: 12px; font-weight: 700; padding: 3px 10px; border-radius: 4px; }
+        .impact-high { background: rgba(34,197,94,0.15); color: var(--green); }
+        .impact-medium { background: rgba(234,179,8,0.15); color: #eab308; }
+        .rec-desc { font-size: 14px; color: var(--text-secondary); line-height: 1.6; }
+
+        .share-results { display: flex; gap: 10px; justify-content: center; margin-top: 24px; flex-wrap: wrap; }
+        .share-btn {
+            display: inline-flex; align-items: center; gap: 6px;
+            padding: 10px 18px; border-radius: 8px; border: 1px solid var(--border);
+            background: var(--bg-secondary); color: var(--text-primary);
+            text-decoration: none; font-size: 13px; font-weight: 600; transition: all 0.2s;
+        }
+        .share-btn:hover { border-color: var(--accent); color: var(--accent); }
+
+        .email-capture {
+            background: var(--bg-card); border: 1px solid var(--border);
+            border-radius: 12px; padding: 24px; margin-top: 24px; text-align: center;
+        }
+        .email-capture h3 { font-size: 18px; margin-bottom: 8px; }
+        .email-capture p { color: var(--text-secondary); font-size: 14px; margin-bottom: 16px; }
+        .email-form { display: flex; gap: 8px; max-width: 400px; margin: 0 auto; }
+        .email-form input {
+            flex: 1; padding: 12px 16px; border-radius: 8px; border: 1px solid var(--border);
+            background: var(--bg-secondary); color: var(--text-primary); font-size: 14px;
+        }
+        .email-form input:focus { outline: 2px solid var(--accent); outline-offset: 2px; border-color: var(--accent); }
+        .email-form button {
+            padding: 12px 20px; border-radius: 8px; border: none;
+            background: var(--accent); color: white; font-weight: 600; cursor: pointer;
+            font-size: 14px; white-space: nowrap;
+        }
+        .email-success { display: none; color: var(--green); font-size: 14px; margin-top: 12px; }
+
+        .retake-btn {
+            display: inline-block; margin-top: 20px; padding: 10px 20px;
+            border-radius: 8px; border: 1px solid var(--border); background: var(--bg-secondary);
+            color: var(--text-primary); text-decoration: none; font-size: 14px; font-weight: 600;
+            cursor: pointer; transition: all 0.2s;
+        }
+        .retake-btn:hover { border-color: var(--accent); color: var(--accent); }
+
+        @media (max-width: 768px) {
+            .hc-hero { padding: 100px 16px 32px; }
+            .hc-hero h1 { font-size: 28px; }
+            .hc-container { padding: 0 16px 60px; }
+            .question-card { padding: 24px; }
+            .grade-circle { width: 100px; height: 100px; font-size: 40px; }
+            .savings-amount { font-size: 28px; }
+            .email-form { flex-direction: column; }
+        }
+    </style>
+    <meta name="theme-color" content="#6366f1">
+    <link rel="preconnect" href="https://getapipulse.com">
+</head>
+<body>
+    <a href="#main" class="skip-link">Skip to content</a>
+    <nav>
+        <div class="nav-inner">
+            <a href="index.html" class="logo">API<span>pulse</span></a>
+            <button class="hamburger" onclick="toggleMobileNav()" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+            <div class="nav-links">
+                <a href="calculator.html">Calculator</a>
+                <a href="compare.html">Compare</a>
+                <a href="cost-explorer.html">Explorer</a>
+                <a href="cost-health-check.html" class="active">Health Check</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="about.html">About</a>
+                <a href="blog.html">Blog</a>
+                <a href="tools.html">Tools</a>
+                <a href="api-docs.html" style="color:var(--accent);">API</a>
+                <a href="pricing.html" class="nav-cta" onclick="if(window.trackEvent)window.trackEvent('pro_button_clicked',{source:'nav'})">Get Pro — $29</a>
+                <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
+            </div>
+        </div>
+    </nav>
+
+    <main id="main">
+        <div class="hc-hero">
+            <span class="badge">Free &bull; 2 minutes &bull; No signup</span>
+            <h1>AI API Cost Health Check</h1>
+            <p>Answer 5 quick questions about your AI API usage. Get a personalized savings grade and actionable recommendations to cut your costs.</p>
+        </div>
+
+        <div class="hc-container">
+            <!-- Progress -->
+            <div class="progress-bar"><div class="progress-fill" id="progress-fill" style="width:20%"></div></div>
+
+            <!-- Questions -->
+            <div id="questions">
+                <!-- Q1 -->
+                <div class="question-card active" data-step="1">
+                    <div class="q-number">Question 1 of 5</div>
+                    <div class="q-text">What's your current monthly AI API spend?</div>
+                    <div class="option-grid" data-q="spend">
+                        <button class="option-btn" data-value="0-50" onclick="selectOption(this)">
+                            <span class="radio"></span>
+                            <span><span class="option-label">Under $50/month</span><br><span class="option-desc">Just getting started or running a small side project</span></span>
+                        </button>
+                        <button class="option-btn" data-value="50-200" onclick="selectOption(this)">
+                            <span class="radio"></span>
+                            <span><span class="option-label">$50 – $200/month</span><br><span class="option-desc">Growing product with moderate API usage</span></span>
+                        </button>
+                        <button class="option-btn" data-value="200-500" onclick="selectOption(this)">
+                            <span class="radio"></span>
+                            <span><span class="option-label">$200 – $500/month</span><br><span class="option-desc">Serious usage, multiple features or users</span></span>
+                        </button>
+                        <button class="option-btn" data-value="500+" onclick="selectOption(this)">
+                            <span class="radio"></span>
+                            <span><span class="option-label">$500+/month</span><br><span class="option-desc">Production workload, high volume</span></span>
+                        </button>
+                    </div>
+                    <div class="q-nav">
+                        <button class="q-next" id="next-1" onclick="goToStep(2)" disabled>Next →</button>
+                    </div>
+                </div>
+
+                <!-- Q2 -->
+                <div class="question-card hidden" data-step="2">
+                    <div class="q-number">Question 2 of 5</div>
+                    <div class="q-text">Which model(s) are you primarily using?</div>
+                    <div class="option-grid" data-q="model">
+                        <button class="option-btn" data-value="gpt4o" onclick="selectOption(this)">
+                            <span class="radio"></span>
+                            <span><span class="option-label">GPT-4o or GPT-4o mini</span><br><span class="option-desc">OpenAI's popular mid-range models</span></span>
+                        </button>
+                        <button class="option-btn" data-value="gpt5" onclick="selectOption(this)">
+                            <span class="radio"></span>
+                            <span><span class="option-label">GPT-5 or GPT-5.5</span><br><span class="option-desc">OpenAI's latest flagship models</span></span>
+                        </button>
+                        <button class="option-btn" data-value="claude" onclick="selectOption(this)">
+                            <span class="radio"></span>
+                            <span><span class="option-label">Claude (Opus / Sonnet / Haiku)</span><br><span class="option-desc">Anthropic's model family</span></span>
+                        </button>
+                        <button class="option-btn" data-value="gemini" onclick="selectOption(this)">
+                            <span class="radio"></span>
+                            <span><span class="option-label">Gemini (Pro / Flash)</span><br><span class="option-desc">Google's model family</span></span>
+                        </button>
+                        <button class="option-btn" data-value="budget" onclick="selectOption(this)">
+                            <span class="radio"></span>
+                            <span><span class="option-label">Budget models (DeepSeek, Mistral, Llama)</span><br><span class="option-desc">Cost-optimized open-source or budget providers</span></span>
+                        </button>
+                        <button class="option-btn" data-value="unsure" onclick="selectOption(this)">
+                            <span class="radio"></span>
+                            <span><span class="option-label">Not sure / Multiple models</span><br><span class="option-desc">Using several models or haven't evaluated recently</span></span>
+                        </button>
+                    </div>
+                    <div class="q-nav">
+                        <button class="q-back" onclick="goToStep(1)">← Back</button>
+                        <button class="q-next" id="next-2" onclick="goToStep(3)" disabled>Next →</button>
+                    </div>
+                </div>
+
+                <!-- Q3 -->
+                <div class="question-card hidden" data-step="3">
+                    <div class="q-number">Question 3 of 5</div>
+                    <div class="q-text">Do you use different models for different tasks?</div>
+                    <div class="option-grid" data-q="routing">
+                        <button class="option-btn" data-value="yes" onclick="selectOption(this)">
+                            <span class="radio"></span>
+                            <span><span class="option-label">Yes — I route simple requests to cheap models</span><br><span class="option-desc">Multi-model strategy in place</span></span>
+                        </button>
+                        <button class="option-btn" data-value="partial" onclick="selectOption(this)">
+                            <span class="radio"></span>
+                            <span><span class="option-label">Sort of — I use 2 models but no routing</span><br><span class="option-desc">Have different models but use them manually</span></span>
+                        </button>
+                        <button class="option-btn" data-value="no" onclick="selectOption(this)">
+                            <span class="radio"></span>
+                            <span><span class="option-label">No — one model for everything</span><br><span class="option-desc">Single model handles all requests</span></span>
+                        </button>
+                    </div>
+                    <div class="q-nav">
+                        <button class="q-back" onclick="goToStep(2)">← Back</button>
+                        <button class="q-next" id="next-3" onclick="goToStep(4)" disabled>Next →</button>
+                    </div>
+                </div>
+
+                <!-- Q4 -->
+                <div class="question-card hidden" data-step="4">
+                    <div class="q-number">Question 4 of 5</div>
+                    <div class="q-text">What's your primary use case?</div>
+                    <div class="option-grid" data-q="usecase">
+                        <button class="option-btn" data-value="chatbot" onclick="selectOption(this)">
+                            <span class="radio"></span>
+                            <span><span class="option-label">Chatbot / Customer support</span></span>
+                        </button>
+                        <button class="option-btn" data-value="code" onclick="selectOption(this)">
+                            <span class="radio"></span>
+                            <span><span class="option-label">Code generation / Assistant</span></span>
+                        </button>
+                        <button class="option-btn" data-value="rag" onclick="selectOption(this)">
+                            <span class="radio"></span>
+                            <span><span class="option-label">RAG / Document Q&A</span></span>
+                        </button>
+                        <button class="option-btn" data-value="content" onclick="selectOption(this)">
+                            <span class="radio"></span>
+                            <span><span class="option-label">Content generation / Marketing</span></span>
+                        </button>
+                        <button class="option-btn" data-value="data" onclick="selectOption(this)">
+                            <span class="radio"></span>
+                            <span><span class="option-label">Data extraction / Analysis</span></span>
+                        </button>
+                        <button class="option-btn" data-value="agent" onclick="selectOption(this)">
+                            <span class="radio"></span>
+                            <span><span class="option-label">AI Agent / Tool calling</span></span>
+                        </button>
+                    </div>
+                    <div class="q-nav">
+                        <button class="q-back" onclick="goToStep(3)">← Back</button>
+                        <button class="q-next" id="next-4" onclick="goToStep(5)" disabled>Next →</button>
+                    </div>
+                </div>
+
+                <!-- Q5 -->
+                <div class="question-card hidden" data-step="5">
+                    <div class="q-number">Question 5 of 5</div>
+                    <div class="q-text">Do you track or monitor your API costs regularly?</div>
+                    <div class="option-grid" data-q="monitoring">
+                        <button class="option-btn" data-value="yes" onclick="selectOption(this)">
+                            <span class="radio"></span>
+                            <span><span class="option-label">Yes — I have dashboards and alerts</span><br><span class="option-desc">Proactive cost monitoring in place</span></span>
+                        </button>
+                        <button class="option-btn" data-value="sometimes" onclick="selectOption(this)">
+                            <span class="radio"></span>
+                            <span><span class="option-label">Sometimes — I check the billing page occasionally</span><br><span class="option-desc">Reactive monitoring, no automation</span></span>
+                        </button>
+                        <button class="option-btn" data-value="no" onclick="selectOption(this)">
+                            <span class="radio"></span>
+                            <span><span class="option-label">No — I don't really track it</span><br><span class="option-desc">Haven't looked at API costs in a while</span></span>
+                        </button>
+                    </div>
+                    <div class="q-nav">
+                        <button class="q-back" onclick="goToStep(4)">← Back</button>
+                        <button class="q-next" id="next-5" onclick="showResults()" disabled>Get My Grade →</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Results -->
+            <div class="results" id="results">
+                <div class="grade-card">
+                    <div class="grade-circle" id="grade-circle">B</div>
+                    <div class="grade-label" id="grade-label">Good — but room to improve</div>
+                    <div class="grade-sublabel" id="grade-sublabel">You're doing better than 60% of developers</div>
+                </div>
+
+                <div class="savings-banner">
+                    <div class="savings-amount" id="savings-amount">$180/mo</div>
+                    <div class="savings-label">Estimated potential monthly savings</div>
+                </div>
+
+                <h2 style="font-size:22px;font-weight:700;margin-bottom:16px;">Your Personalized Recommendations</h2>
+                <div id="recommendations"></div>
+
+                <div class="share-results">
+                    <span style="font-size:13px;color:var(--text-muted);font-weight:600;">Share your grade:</span>
+                    <a class="share-btn" id="share-twitter" href="#" target="_blank" rel="noopener">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                        Post on X
+                    </a>
+                    <a class="share-btn" id="share-linkedin" href="#" target="_blank" rel="noopener">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.064 2.064 0 110-4.128 2.064 2.064 0 010 4.128zm1.782 13.019H3.555V9h3.564v11.452z"/></svg>
+                        LinkedIn
+                    </a>
+                    <button class="share-btn" onclick="copyShareLink()">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
+                        Copy Link
+                    </button>
+                </div>
+
+                <div class="email-capture">
+                    <h3>Get Your Full Cost Optimization Report</h3>
+                    <p>We'll send you a detailed breakdown with specific model recommendations, migration steps, and a savings projection.</p>
+                    <div class="email-form">
+                        <input type="email" id="report-email" placeholder="you@company.com">
+                        <button onclick="sendReport()">Send Report</button>
+                    </div>
+                    <div class="email-success" id="email-success">Check your inbox for the full report!</div>
+                </div>
+
+                <div style="text-align:center;">
+                    <button class="retake-btn" onclick="retakeCheck()">Retake Health Check</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="pricing-freshness" style="margin-top:24px;text-align:center;"></div>
+        <script>document.addEventListener('DOMContentLoaded', function() { renderPricingFreshness('pricing-freshness'); });</script>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 APIpulse. Built with data, not hype. &middot; <a href="model-switch.html">Model Switch</a></p>
+    </footer>
+
+    <button class="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">&uarr;</button>
+
+    <script>
+    // State
+    var answers = {};
+    var currentStep = 1;
+
+    function selectOption(btn) {
+        var grid = btn.closest('.option-grid');
+        var q = grid.dataset.q;
+        grid.querySelectorAll('.option-btn').forEach(function(b) { b.classList.remove('selected'); });
+        btn.classList.add('selected');
+        answers[q] = btn.dataset.value;
+        var step = parseInt(btn.closest('.question-card').dataset.step);
+        document.getElementById('next-' + step).disabled = false;
+        if (window.trackEvent) window.trackEvent('health_check_answer', { question: q, answer: btn.dataset.value });
+    }
+
+    function goToStep(step) {
+        document.querySelectorAll('.question-card').forEach(function(c) { c.classList.add('hidden'); c.classList.remove('active'); });
+        var card = document.querySelector('[data-step="' + step + '"]');
+        card.classList.remove('hidden');
+        card.classList.add('active');
+        document.getElementById('progress-fill').style.width = (step * 20) + '%';
+        currentStep = step;
+    }
+
+    function calculateGrade() {
+        var score = 0;
+
+        // Q1: Spend level (higher spend = more savings potential = lower grade if not optimizing)
+        if (answers.spend === '0-50') score += 3;
+        else if (answers.spend === '50-200') score += 2;
+        else if (answers.spend === '200-500') score += 1;
+        else score += 0;
+
+        // Q2: Model choice (budget models score higher)
+        if (answers.model === 'budget') score += 4;
+        else if (answers.model === 'gemini') score += 3;
+        else if (answers.model === 'unsure') score += 2;
+        else if (answers.model === 'gpt4o') score += 1;
+        else if (answers.model === 'claude') score += 1;
+        else score += 0; // gpt5/gpt5.5 = expensive
+
+        // Q3: Multi-model routing
+        if (answers.routing === 'yes') score += 3;
+        else if (answers.routing === 'partial') score += 1;
+        else score += 0;
+
+        // Q4: Use case (some are more optimizable)
+        if (answers.usecase === 'chatbot' || answers.usecase === 'content') score += 2;
+        else if (answers.usecase === 'rag' || answers.usecase === 'data') score += 1;
+        else score += 1;
+
+        // Q5: Monitoring
+        if (answers.monitoring === 'yes') score += 3;
+        else if (answers.monitoring === 'sometimes') score += 1;
+        else score += 0;
+
+        // Grade
+        if (score >= 12) return { grade: 'A', label: 'Excellent — you\'re an optimizer', sublabel: 'You\'re in the top 15% of developers', color: 'a', pct: 85 };
+        if (score >= 9) return { grade: 'B', label: 'Good — but room to improve', sublabel: 'You\'re doing better than 60% of developers', color: 'b', pct: 60 };
+        if (score >= 6) return { grade: 'C', label: 'Average — potential savings ahead', sublabel: 'Most developers land here. Small changes = big savings.', color: 'c', pct: 40 };
+        if (score >= 3) return { grade: 'D', label: 'Below average — you\'re overpaying', sublabel: 'Significant optimization opportunities available', color: 'd', pct: 20 };
+        return { grade: 'F', label: 'Critical — major savings waiting', sublabel: 'You could cut costs by 50-80% with the right changes', color: 'f', pct: 5 };
+    }
+
+    function estimateSavings() {
+        var spendRanges = { '0-50': 30, '50-200': 125, '200-500': 350, '500+': 800 };
+        var spend = spendRanges[answers.spend] || 100;
+        var savingPct = 0;
+
+        // Model savings
+        if (answers.model === 'gpt5' || answers.model === 'gpt55') savingPct += 0.35;
+        else if (answers.model === 'gpt4o') savingPct += 0.25;
+        else if (answers.model === 'claude' && answers.routing !== 'yes') savingPct += 0.20;
+        else if (answers.model === 'unsure') savingPct += 0.15;
+
+        // Routing savings
+        if (answers.routing === 'no') savingPct += 0.25;
+        else if (answers.routing === 'partial') savingPct += 0.10;
+
+        // Monitoring savings
+        if (answers.monitoring === 'no') savingPct += 0.10;
+
+        savingPct = Math.min(savingPct, 0.70);
+        return Math.round(spend * savingPct);
+    }
+
+    function getRecommendations() {
+        var recs = [];
+        var savings = estimateSavings();
+
+        // Model recommendations
+        if (answers.model === 'gpt5' || answers.model === 'gpt55') {
+            recs.push({
+                title: 'Consider GPT-5 mini or Gemini Flash for simple tasks',
+                impact: 'high',
+                desc: 'GPT-5 costs $1.25/$10 per 1M tokens. For straightforward tasks like classification, extraction, or simple Q&A, GPT-5 mini ($0.25/$2) or Gemini 2.0 Flash ($0.10/$0.40) deliver 80-95% of the quality at 10-20% of the cost.'
+            });
+        }
+        if (answers.model === 'gpt4o') {
+            recs.push({
+                title: 'GPT-4o mini or DeepSeek V4 Flash for high-volume tasks',
+                impact: 'high',
+                desc: 'GPT-4o costs $2.50/$10 per 1M tokens. For high-volume, lower-complexity tasks, GPT-4o mini ($0.15/$0.60) or DeepSeek V4 Flash ($0.14/$0.28) offer dramatic savings with minimal quality loss.'
+            });
+        }
+        if (answers.model === 'claude' && answers.routing !== 'yes') {
+            recs.push({
+                title: 'Use Claude Haiku 4.5 for routine requests',
+                impact: 'medium',
+                desc: 'Claude Opus/Sonnet costs $3-15/$15-75 per 1M tokens. Route routine requests to Claude Haiku 4.5 ($1/$5) — it handles most tasks well at 70-80% lower cost.'
+            });
+        }
+
+        // Routing recommendations
+        if (answers.routing === 'no') {
+            recs.push({
+                title: 'Implement multi-model routing',
+                impact: 'high',
+                desc: 'Using a single model for all tasks is the #1 source of overspending. Route simple queries to budget models and complex reasoning to premium. This alone typically saves 40-60%.'
+            });
+        }
+
+        // Use case recommendations
+        if (answers.usecase === 'chatbot') {
+            recs.push({
+                title: 'Use tiered chatbot routing',
+                impact: 'medium',
+                desc: 'For chatbots, 60-70% of queries are simple (FAQ, status checks). Route these to Gemini Flash ($0.10/$0.40) or GPT-4o mini ($0.15/$0.60). Reserve premium models for complex conversations.'
+            });
+        }
+        if (answers.usecase === 'rag') {
+            recs.push({
+                title: 'Optimize RAG with embeddings + cheap generators',
+                impact: 'high',
+                desc: 'Use dedicated embedding models ($0.02-0.13/M tokens) instead of general-purpose models for retrieval. Generate answers with Gemini Flash or DeepSeek V4 Flash for 90% savings.'
+            });
+        }
+        if (answers.usecase === 'code') {
+            recs.push({
+                title: 'Consider DeepSeek V4 Pro for code tasks',
+                impact: 'medium',
+                desc: 'DeepSeek V4 Pro ($0.44/$0.87) performs comparably to GPT-5 for code generation at a fraction of the cost. Currently offering a limited-time discount through May 2026.'
+            });
+        }
+        if (answers.usecase === 'content') {
+            recs.push({
+                title: 'Use Gemini Flash for first drafts',
+                impact: 'medium',
+                desc: 'Content generation doesn\'t always need the most expensive model. Use Gemini 2.0 Flash ($0.10/$0.40) for first drafts, then refine with a premium model only when needed.'
+            });
+        }
+        if (answers.usecase === 'agent') {
+            recs.push({
+                title: 'Use cheaper models for tool execution',
+                impact: 'high',
+                desc: 'AI agents spend most tokens on tool calls and simple reasoning. Use GPT-5 mini or Gemini Flash for the execution loop, and reserve premium models only for the planning/reasoning step.'
+            });
+        }
+
+        // Monitoring recommendations
+        if (answers.monitoring === 'no') {
+            recs.push({
+                title: 'Set up cost monitoring and alerts',
+                impact: 'medium',
+                desc: 'Without monitoring, cost spikes go unnoticed. Set up billing alerts in your provider dashboard, and consider APIpulse price alerts to catch pricing changes across all 34 models.'
+            });
+        }
+        if (answers.monitoring === 'sometimes') {
+            recs.push({
+                title: 'Automate your cost monitoring',
+                impact: 'medium',
+                desc: 'Manual checks miss anomalies. Set up automated alerts for daily spend thresholds. Use APIpulse\'s price change alerts to track pricing updates across providers.'
+            });
+        }
+
+        // Always add this
+        recs.push({
+            title: 'Use APIpulse to track and optimize',
+            impact: 'medium',
+            desc: 'Bookmark APIpulse calculators to compare costs before switching models. Free tools for every provider — no signup needed.'
+        });
+
+        return recs;
+    }
+
+    function showResults() {
+        var result = calculateGrade();
+        var savings = estimateSavings();
+        var recs = getRecommendations();
+
+        // Grade
+        var circle = document.getElementById('grade-circle');
+        circle.textContent = result.grade;
+        circle.className = 'grade-circle grade-' + result.color;
+        document.getElementById('grade-label').textContent = result.label;
+        document.getElementById('grade-sublabel').textContent = result.sublabel;
+
+        // Savings
+        document.getElementById('savings-amount').textContent = '$' + savings + '/mo';
+
+        // Recommendations
+        var recsHtml = recs.map(function(r) {
+            var impactClass = r.impact === 'high' ? 'impact-high' : 'impact-medium';
+            var impactLabel = r.impact === 'high' ? 'High Impact' : 'Medium Impact';
+            return '<div class="rec-card"><div class="rec-header"><span class="rec-title">' + r.title + '</span><span class="rec-impact ' + impactClass + '">' + impactLabel + '</span></div><div class="rec-desc">' + r.desc + '</div></div>';
+        }).join('');
+        document.getElementById('recommendations').innerHTML = recsHtml;
+
+        // Share links
+        var shareText = 'I got a ' + result.grade + ' on my AI API Cost Health Check from @APIpulse! Potential savings: $' + savings + '/mo. Take the free check:';
+        document.getElementById('share-twitter').href = 'https://twitter.com/intent/tweet?text=' + encodeURIComponent(shareText) + '&url=' + encodeURIComponent('https://getapipulse.com/cost-health-check.html');
+        document.getElementById('share-linkedin').href = 'https://www.linkedin.com/sharing/share-offsite/?url=' + encodeURIComponent('https://getapipulse.com/cost-health-check.html');
+
+        // Show results
+        document.getElementById('questions').style.display = 'none';
+        document.querySelector('.progress-bar').style.display = 'none';
+        document.getElementById('results').classList.add('show');
+
+        if (window.trackEvent) window.trackEvent('health_check_complete', { grade: result.grade, savings: savings });
+    }
+
+    function copyShareLink() {
+        var url = 'https://getapipulse.com/cost-health-check.html';
+        if (navigator.clipboard) {
+            navigator.clipboard.writeText(url).then(function() {
+                var btn = event.target.closest('.share-btn');
+                var orig = btn.innerHTML;
+                btn.innerHTML = 'Copied!';
+                setTimeout(function() { btn.innerHTML = orig; }, 2000);
+            });
+        }
+    }
+
+    function sendReport() {
+        var email = document.getElementById('report-email').value;
+        if (!email) return;
+        var result = calculateGrade();
+        var savings = estimateSavings();
+
+        fetch('/api/subscribe', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ email: email, source: 'health-check', grade: result.grade, savings: savings })
+        }).catch(function() {
+            // Store locally as fallback
+            var subs = JSON.parse(localStorage.getItem('apipulse_health_subs') || '[]');
+            subs.push({ email: email, grade: result.grade, savings: savings, date: new Date().toISOString() });
+            localStorage.setItem('apipulse_health_subs', JSON.stringify(subs));
+        });
+
+        document.getElementById('email-success').style.display = 'block';
+        if (window.trackEvent) window.trackEvent('health_check_email_capture', { grade: result.grade });
+    }
+
+    function retakeCheck() {
+        answers = {};
+        currentStep = 1;
+        document.querySelectorAll('.option-btn').forEach(function(b) { b.classList.remove('selected'); });
+        document.querySelectorAll('.q-next').forEach(function(b) { b.disabled = true; });
+        document.getElementById('results').classList.remove('show');
+        document.getElementById('questions').style.display = 'block';
+        document.querySelector('.progress-bar').style.display = 'block';
+        goToStep(1);
+    }
+    </script>
+</body>
+</html>
