@@ -1,8 +1,8 @@
 # PROGRESS.md
 
-## Site Status (as of Session 384, May 31, 2026)
-**353 web pages | 220 blog posts | 34 models | 10 providers | 52 tools | 11 API endpoints | 1 embeddable widget**
-- Sitemap (347 URLs), RSS (274 items), blog files (220 posts + 1 index) — all in sync
+## Site Status (as of Session 385, May 31, 2026)
+**354 web pages | 221 blog posts | 34 models | 10 providers | 52 tools | 11 API endpoints | 1 embeddable widget**
+- Sitemap (348 URLs), RSS (275 items), blog files (221 posts + 1 index) — all in sync
 - Pricing data verified May 29 — 34 models, 10 providers
 - **Analytics: GA4 (G-0CEP7S9Y3J)** — fully operational, custom events via gtag()
 - **Pro system:** localStorage-based unlock after Stripe payment. Access code fallback on pro.html.
@@ -21,6 +21,17 @@
 3. **GA4 traffic analysis** — Review page views, top referrers, calculator usage after 48+ hours of data.
 
 ---
+
+## Session 385 (May 31)
+**AI API Cost for Pharmaceutical & Biotech blog post (354 pages, 221 posts, 52 tools):**
+- Created blog-ai-api-cost-pharma.html — "AI API Cost for Pharmaceutical & Biotech: Budgeting for Drug Discovery, Clinical Trials & Regulatory AI in 2026"
+- Covers 6 use cases: drug discovery & molecular design, clinical trial optimization, regulatory document generation, medical literature analysis, patient data analytics, manufacturing QA
+- Cost breakdowns across 5 model tiers for each use case, 3 budget templates (biotech startup, mid-size pharma, enterprise pharma)
+- ROI case study: mid-size biotech (Phase II), 766% ROI, $2.8M annual net savings
+- 5 cost optimization strategies (batch literature, tiered routing, cache compounds, embed+vector search, pre-filter by therapeutic area)
+- FAQPage schema (4 questions), social sharing (X/LinkedIn)
+- Added to blog.html index, sitemap (348 URLs), RSS (275 items)
+- Cross-linked from healthcare, cybersecurity, and finance blog posts
 
 ## Session 384 (May 31)
 **AI API Cost for Fashion & Apparel blog post (353 pages, 220 posts, 52 tools):**
@@ -55,8 +66,8 @@
 - Added to blog.html index, sitemap (345 URLs), RSS (272 items)
 - Cross-linked from calculator.html, blog-ai-api-cost-ecommerce.html, blog-ai-api-cost-retail.html, blog-ai-api-cost-logistics.html
 
-## Summary: Sessions 380-384 (May 31)
-5 sessions: AI API Cost for Fashion & Apparel blog post. Best AI Embedding APIs blog post. Best AI Speech APIs blog post. AI API Cost for Food & Beverage blog post. AI API Cost for Travel & Tourism blog post (353 pages, 220 posts).
+## Summary: Sessions 380-385 (May 31)
+6 sessions: AI API Cost for Pharma & Biotech blog post. AI API Cost for Fashion & Apparel blog post. Best AI Embedding APIs blog post. Best AI Speech APIs blog post. AI API Cost for Food & Beverage blog post. AI API Cost for Travel & Tourism blog post (354 pages, 221 posts).
 
 ## Summary: Sessions 367-379 (May 30-31)
 13 sessions: AI API Cost for Vision, Structured Output blog posts. Streaming toggle. AI startup API budgets blog post. AI API Cost Health Check (52 tools). AI API Pricing June 2026. 3 new provider calculators (Cohere, Moonshot, Together.ai). State of LLM Pricing Report. Social sharing on all 219 blog posts. Monthly Spend Estimator. 200→219 posts, 326→350 pages, 45→52 tools.
