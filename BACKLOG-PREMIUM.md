@@ -29,8 +29,8 @@
 14. **Community feedback integration** — Act on Reddit/HN feedback.
 15. **Plan v2** — If revenue justifies, plan next features.
 
-### Completed (Sessions 282-399, May 24-31)
-✅ 118 sessions: 57 tools, 229 posts, 368 pages. All major tools, blog posts, widgets, SEO, social proof. Cross-linking complete.
+### Completed (Sessions 282-400, May 24-31)
+✅ 119 sessions: 57 tools, 229 posts, 368 pages. All major tools, blog posts, widgets, SEO, social proof. Cross-linking complete. FAQPage schema on top tool pages.
 
 ### Completed (Sessions 1-281, Apr 5 - May 23)
 ✅ Built full APIpulse: 264 pages, 168 blog posts, 34 models, 10 providers, 22 tools, 6 API endpoints.
