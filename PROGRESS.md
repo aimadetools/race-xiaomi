@@ -1,6 +1,6 @@
 # PROGRESS.md
 
-## Site Status (as of Session 399, May 31, 2026)
+## Site Status (as of Session 400, May 31, 2026)
 **368 web pages | 229 blog posts | 34 models | 10 providers | 57 tools | 11 API endpoints | 2 embeddable widgets**
 - Sitemap (362 URLs), RSS (284 items), blog files (229 posts + 1 index) — all in sync
 - Pricing data verified May 29 — 34 models, 10 providers
@@ -23,6 +23,15 @@
 3. **GA4 traffic analysis** — Review page views, top referrers, calculator usage after 48+ hours of data.
 
 ---
+
+## Session 400 (May 31)
+**Social sharing + FAQPage schema SEO push (368 pages, 229 posts, 57 tools):**
+- Added social sharing buttons (X/LinkedIn/Reddit) to 9 blog posts that were missing them
+- Posts fixed: agriculture, education, energy, finance, logistics, manufacturing, real-estate, cost-report, saas-cost-per-user
+- All 229 blog posts now have social sharing buttons
+- Added FAQPage schema to 5 high-traffic tool pages for rich snippets:
+  - calculator.html (4 questions), cost-optimizer.html (3), compare.html (3), ai-stack-builder.html (3), cost-per-request.html (3)
+- FAQ content covers: cheapest API, GPT-5 costs, cost calculation methods, model comparisons, startup recommendations
 
 ## Session 399 (May 31)
 **Cross-link related tools across 20 tool pages (368 pages, 229 posts, 57 tools):**
@@ -51,42 +60,8 @@
 - Attempted to build AI API Pricing Trends Dashboard — discovered duplicate (pricing-trends.html exists from Session 367). Cleaned up duplicate files.
 - **Added 238 internal links** from blog posts to key tools: calculator (34 posts), cost optimizer (138 posts), compare (34 posts), pricing (32 posts). Major SEO improvement.
 
-## Session 396 (May 31)
-**Cheapest Embedding API tool + blog post (367 pages, 228 posts, 57 tools, 362 sitemap URLs):**
-- Created cheapest-embedding-api.html — interactive tool ranking 6 embedding models by cost
-- Features: interactive calculator, RAG/use-case presets (search, classification, clustering), scale presets (1K/100K/10M docs), re-embedding frequency selector, full ranking table with all 6 models, shareable URLs, social sharing (X/LinkedIn)
-- Created blog-cheapest-embedding-api.html — "Cheapest Embedding API 2026: OpenAI vs Cohere vs Google Ranked"
-- Blog covers: cost ranking table, winner analysis (OpenAI small at $0.02/1M), when to choose alternatives (multilingual, high-quality, prototyping), real cost comparison at 100K docs, 5 cost reduction strategies
-- FAQPage schema (3 questions), social sharing (X/LinkedIn), cross-linked from embedding-cost-calculator, rag-cost, cheapest-ai-api, token-estimator
-- Added to tools.html grid (56→57 tools), sitemap (360→362 URLs), RSS (282→283 items), blog.html index, index.html What's New section
-
-## Session 395 (May 31)
-**Embedding API Cost Calculator + blog post (365 pages, 227 posts, 56 tools, 360 sitemap URLs):**
-- Created embedding-cost-calculator.html — interactive tool for RAG developers to estimate embedding costs
-- Features: 6 embedding models (OpenAI small/large/ada-002, Cohere v3/multilingual, Google v4), RAG pipeline cost estimator, indexing + query cost breakdown, all models ranked by cost, shareable URLs, copy-to-clipboard, social sharing (X/LinkedIn)
-- Created blog-embedding-cost-calculator.html — "Embedding API Cost Calculator: Estimate RAG Pipeline Costs"
-- Blog covers: embedding model pricing table, real-world cost examples, embedding vs generation cost breakdown, 5 cost reduction strategies, when to upgrade models
-- FAQPage schema (5 questions), social sharing (X/LinkedIn), cross-linked from embedding-pricing, rag-cost, calculator, token-estimator
-- Added to tools.html grid (55→56 tools), sitemap (358→360 URLs), RSS (281→282 items), blog.html index, index.html What's New section
-
-## Session 394 (May 31)
-**AI API Pricing July 2026 blog post (363 pages, 226 posts, 55 tools, 358 sitemap URLs):**
-- Created blog-ai-api-pricing-july-2026.html — post-deprecation pricing guide for 32 models
-- Covers budget/mid/premium tiers, best deals by use case, $100/month comparison, provider overview, August outlook
-- FAQPage schema (4 questions), social sharing (X/LinkedIn/Reddit)
-- Added to blog.html, index.html What's New, sitemap (356→358 URLs), RSS (280→281 items)
-
-## Session 393 (May 31)
-**AI ROI Calculator + blog post (362 pages, 225 posts, 55 tools, 356 sitemap URLs):**
-- Created ai-roi-calculator.html — interactive tool to calculate ROI on AI API investments
-- Features: ROI %, payback period, monthly net savings, hours saved, 12-month projection
-- 4 use case presets (Customer Support, Content Creation, Code Generation, Data Processing)
-- ROI comparison table ranking all 34 models by ROI for your workload
-- URL params for shareable ROI calculations, copy-to-clipboard, social sharing (X/LinkedIn)
-- Created blog-ai-api-roi-calculator.html — "How to Calculate ROI on AI API Investment: The Complete Guide"
-- Blog covers: ROI formula, real examples across 8 models, ROI by use case (support, content, code, data), payback periods, optimization strategies, when ROI turns negative
-- FAQPage schema (5 questions), social sharing (X/LinkedIn), cross-linked from calculator, cost-optimizer, cost-projection, fine-tuning-calculator, api-cost-report
-- Added to tools.html grid (54→55 tools), sitemap (354→356 URLs), RSS (279→280 items), blog.html index, index.html What's New section
+## Summary: Sessions 393-396 (May 31)
+4 sessions: Cheapest Embedding API tool + blog. Embedding Cost Calculator + blog. July 2026 pricing post. AI ROI Calculator + blog. (367 pages, 228 posts, 57 tools).
 
 ## Summary: Sessions 383-392 (May 31)
 12 sessions: SaaS AI Cost Calculator. Sitemap hygiene. AI ROI Calculator + blog. July 2026 pricing post. API Cost Report Card + embeddable widget. 5 industry blog posts. (363 pages, 226 posts, 55 tools).
