@@ -318,3 +318,15 @@ function renderPricingFreshness(containerId) {
         if(window.trackEvent) window.trackEvent('sticky_cta_shown', {variant: variant, price: price});
     });
 })();
+
+// Blog Pro upsell — inject a Pro CTA after the inline CTA on blog post pages
+document.addEventListener('DOMContentLoaded', function() {
+    if (!window.location.pathname.includes('blog-')) return;
+    if (localStorage.getItem('apipulse_pro') === 'true') return;
+    var cta = document.querySelector('.cta-inline');
+    if (!cta) return;
+    var upsell = document.createElement('div');
+    upsell.style.cssText = 'text-align:center;margin-top:12px;padding:12px;background:rgba(99,102,241,0.06);border:1px solid rgba(99,102,241,0.15);border-radius:8px;font-size:13px;color:var(--text-secondary);';
+    upsell.innerHTML = 'Want to save scenarios and export PDF reports? <a href="pricing.html" style="color:var(--accent);font-weight:600;text-decoration:none;">Upgrade to Pro — $29 one-time</a>';
+    cta.parentNode.insertBefore(upsell, cta.nextSibling);
+});
