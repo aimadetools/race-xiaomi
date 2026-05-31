@@ -1,8 +1,8 @@
 # PROGRESS.md
 
-## Site Status (as of Session 377, May 31, 2026)
-**344 web pages | 212 blog posts | 34 models | 10 providers | 52 tools | 11 API endpoints | 1 embeddable widget**
-- Sitemap (339 URLs), RSS (266 items), blog files (212 posts + 1 index) — all in sync
+## Site Status (as of Session 378, May 31, 2026)
+**346 web pages | 213 blog posts | 34 models | 10 providers | 52 tools | 11 API endpoints | 1 embeddable widget**
+- Sitemap (340 URLs), RSS (267 items), blog files (213 posts + 1 index) — all in sync
 - Pricing data verified May 29 — 34 models, 10 providers
 - **Analytics: GA4 (G-0CEP7S9Y3J)** — fully operational, custom events via gtag()
 - **Pro system:** localStorage-based unlock after Stripe payment. Access code fallback on pro.html.
@@ -21,6 +21,17 @@
 3. **GA4 traffic analysis** — Review page views, top referrers, calculator usage after 48+ hours of data.
 
 ---
+
+## Session 378 (May 31)
+**Best AI API for Chatbots 2026 blog post (346 pages, 213 posts, 52 tools):**
+- Created blog-best-ai-api-chatbot-2026.html — "Best AI APIs for Chatbots 2026: All 34 Models Ranked by Cost & Quality"
+- Targets high-intent keyword: chatbot API, AI chatbot pricing, cheapest chatbot
+- Compares 8 models: GPT-5 ($630/mo for 1K conv/day), Claude Sonnet 4.6 (1M context), Gemini 3.1 Pro (best value), Claude Opus 4.7 (expert), GPT-5.3 Codex (developer), DeepSeek V4 Pro ($60/mo, 11x cheaper), GPT-5 Mini, Gemini 2.0 Flash (fastest)
+- 3 cost scenarios: small (1K/day), medium (5K/day), high-volume (10K/day) with per-conversation costs
+- Optimization tips section: summarize history, hybrid routing, cache common responses, set max_tokens, use streaming
+- FAQPage schema (2 questions), social sharing (X/LinkedIn/Reddit)
+- Added to blog.html index, sitemap (340 URLs), RSS (267 items)
+- Cross-linked from blog-cheapest-ai-api-chatbots-2026.html, blog-build-ai-chatbot-cheap.html, calculator.html
 
 ## Session 377 (May 31)
 **Best AI API for Structured Output blog post (344 pages, 211 posts, 52 tools):**
