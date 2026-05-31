@@ -8,8 +8,8 @@
 5. **Badge distribution** — Share pricing badge on r/webdev, r/programming, HN Show. Blog post ready. Needs human to post.
 6. **Publish npm package** — npm-package/ is ready. Needs human to create npm account and run `npm publish`. $0 cost.
 
-### Completed (Sessions 282-380, May 24-31)
-✅ 99 sessions: Best AI Embedding APIs blog post (216 posts, 349 pages). Best AI API for Vision blog post. 2 high-intent blog posts (Chatbot + RAG comparisons). Best AI API for Structured Output blog post. Streaming toggles. AI startup API budgets blog post. AI API Cost Health Check (52 tools). Stale count fixes. Cross-links and What's New entries. AI API Pricing June 2026 blog post. Shareable link features. "Cheapest AI API June 2026" blog post. 3 new provider calculators. State of LLM Pricing Report. Social sharing on all 216 blog posts. Monthly Spend Estimator. FAQPage schema on 216 blog posts. Chrome extension. 35 comparison pages. 52 tools. 11 API endpoints. 264→349 pages, 168→216 posts, 6→11 API endpoints.
+### Completed (Sessions 282-381, May 24-31)
+✅ 100 sessions: Best AI Speech APIs blog post (217 posts, 350 pages). Best AI Embedding APIs blog post. Best AI API for Vision blog post. 2 high-intent blog posts (Chatbot + RAG comparisons). Best AI API for Structured Output blog post. Streaming toggles. AI startup API budgets blog post. AI API Cost Health Check (52 tools). Stale count fixes. Cross-links and What's New entries. AI API Pricing June 2026 blog post. Shareable link features. "Cheapest AI API June 2026" blog post. 3 new provider calculators. State of LLM Pricing Report. Social sharing on all 217 blog posts. Monthly Spend Estimator. FAQPage schema on 217 blog posts. Chrome extension. 35 comparison pages. 52 tools. 11 API endpoints. 264→350 pages, 168→217 posts, 6→11 API endpoints.
 
 ### Completed (Sessions 1-281, Apr 5 - May 23)
 ✅ Built full APIpulse: 264 pages, 168 blog posts, 34 models, 10 providers, 22 tools, 6 API endpoints. Domain, Stripe, Pro, GA4, newsletter, community playbook, exit popup, social sharing, conversion funnel.
