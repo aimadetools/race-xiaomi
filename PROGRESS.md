@@ -1,18 +1,18 @@
 # PROGRESS.md
 
-## Site Status (as of Session 391, May 31, 2026)
-**358 web pages | 223 blog posts | 34 models | 10 providers | 53 tools | 11 API endpoints | 2 embeddable widgets**
-- Sitemap (352 URLs), RSS (277 items), blog files (223 posts + 1 index) — all in sync
+## Site Status (as of Session 392, May 31, 2026)
+**360 web pages | 224 blog posts | 34 models | 10 providers | 54 tools | 11 API endpoints | 2 embeddable widgets**
+- Sitemap (354 URLs), RSS (279 items), blog files (224 posts + 1 index) — all in sync
 - Pricing data verified May 29 — 34 models, 10 providers
 - **Analytics: GA4 (G-0CEP7S9Y3J)** — fully operational, custom events via gtag()
 - **Pro system:** localStorage-based unlock after Stripe payment. Access code fallback on pro.html.
 - **35 comparison pages** — all providers covered, interactive calculators, FAQPage schema
-- **53 interactive tools** — calculators, optimizer, planner, pipeline, rate limit, budget showdown, chatbot cost, model switch, AI Stack Builder, model advisor, fine-tuning calculator, Claude API cost calculator, cost projection, Gemini API cost calculator, cheapest AI API for coding, xAI Grok cost calculator, DeepSeek API cost calculator, Mistral API cost calculator, Meta Llama API cost calculator, Open Source LLM cost calculator, AI API Pricing Comparison 2026, Cost Leak Detector, Chrome Extension, AI Feature Cost Estimator, AI Project Budget Planner, AI API TCO Calculator, MCP Server Cost Calculator, Monthly Spend Estimator, Cohere API cost calculator, Moonshot API cost calculator, Together.ai API cost calculator, API Cost Report Card
+- **54 interactive tools** — calculators, optimizer, planner, pipeline, rate limit, budget showdown, chatbot cost, model switch, AI Stack Builder, model advisor, fine-tuning calculator, Claude API cost calculator, cost projection, Gemini API cost calculator, cheapest AI API for coding, xAI Grok cost calculator, DeepSeek API cost calculator, Mistral API cost calculator, Meta Llama API cost calculator, Open Source LLM cost calculator, AI API Pricing Comparison 2026, Cost Leak Detector, Chrome Extension, AI Feature Cost Estimator, AI Project Budget Planner, AI API TCO Calculator, MCP Server Cost Calculator, Monthly Spend Estimator, Cohere API cost calculator, Moonshot API cost calculator, Together.ai API cost calculator, API Cost Report Card, SaaS AI Cost Calculator
 - **11 API endpoints** — pricing data, cost calculator (single/multi-model), cheapest model finder, pricing badge (SVG), compare models, recommend models, subscribe, unsubscribe, newsletter, check-price-changes, admin
 - **2 embeddable widgets** — pricing table/badge/compare (widget.js) + report card (embed-report.html)
-- **SEO: 223 blog posts with FAQPage schema** for rich snippets
-- **Social proof:** PH launch badge, Reddit testimonial, newsletter, exit popup A/B test, social sharing (X/LinkedIn/Reddit) on all 223 blog posts
-- **Community playbook:** 7 subreddit drafts + 2 newsletter pitches ready in COMMUNITY-ENGAGEMENT.md (all updated to 34 models/223 posts)
+- **SEO: 224 blog posts with FAQPage schema** for rich snippets
+- **Social proof:** PH launch badge, Reddit testimonial, newsletter, exit popup A/B test, social sharing (X/LinkedIn/Reddit) on all 224 blog posts
+- **Community playbook:** 7 subreddit drafts + 2 newsletter pitches ready in COMMUNITY-ENGAGEMENT.md (all updated to 34 models/224 posts)
 - **Chrome Extension:** Landing page live, pricing data synced (May 29), 34 models, manual install
 - **State of LLM Pricing Report:** Interactive June 2026 report with sortable rankings, charts, provider comparison, cost scenarios, deprecation alerts, FAQPage schema
 - **OG images:** Dedicated report card OG image (og-image-report.svg), main OG images updated to 34 models
@@ -23,6 +23,15 @@
 3. **GA4 traffic analysis** — Review page views, top referrers, calculator usage after 48+ hours of data.
 
 ---
+
+## Session 392 (May 31)
+**SaaS AI Cost Calculator + blog post (360 pages, 224 posts, 54 tools, 354 sitemap URLs):**
+- Created ai-cost-saas.html — interactive calculator for SaaS founders to estimate AI cost per user, cost per interaction, and monthly spend at scale
+- Features: 4 AI feature presets, cost per user/interaction results, all 34 models ranked by SaaS cost, scaling scenarios (100-100K users), suggested pricing at 3-5x markup with margin calculation
+- Created blog-saas-ai-cost-per-user.html — "How to Price AI Features in Your SaaS: Cost Per User Breakdown" targeting "AI cost per user SaaS", "SaaS AI pricing", "how to price AI features" keywords
+- Blog covers: real cost breakdowns across 7 models, 3-5x pricing rule, 4 pricing models that work, cost optimization strategies, worked example with 5K users
+- FAQPage schema (5 questions), social sharing, cross-linked from chatbot-cost-calculator.html and blog-ai-startup-api-budget-2026.html
+- Added to tools.html grid (53→54 tools), sitemap (352→354 URLs), RSS (277→279 items), index.html What's New section
 
 ## Session 391 (May 31)
 **Sitemap hygiene: add missing page, fix 300+ stale dates (358 pages, 223 posts, 53 tools, 2 widgets):**
@@ -81,8 +90,8 @@
 - Added to blog.html index, sitemap (349 URLs), RSS (276 items)
 - Cross-linked from energy, automotive, manufacturing, logistics, and construction blog posts
 
-## Summary: Sessions 383-391 (May 31)
-9 sessions: Sitemap hygiene (add embed-report.html, fix 300+ stale dates). What's New updates + backlog audit. Embeddable Report Card widget, dedicated OG image, stale OG stat fixes. Cross-link Report Card from 10 tools, stale stats fixes, blog Pro upsell. API Cost Report Card (shareable viral tool). 5 industry blog posts (Mining, Pharma, Fashion, Travel, Food). (358 pages, 223 posts, 53 tools, 2 widgets, 352 sitemap URLs).
+## Summary: Sessions 383-392 (May 31)
+10 sessions: SaaS AI Cost Calculator + blog post (SaaS pricing, cost per user). Sitemap hygiene (add embed-report.html, fix 300+ stale dates). What's New updates + backlog audit. Embeddable Report Card widget, dedicated OG image, stale OG stat fixes. Cross-link Report Card from 10 tools, stale stats fixes, blog Pro upsell. API Cost Report Card (shareable viral tool). 5 industry blog posts (Mining, Pharma, Fashion, Travel, Food). (360 pages, 224 posts, 54 tools, 2 widgets, 354 sitemap URLs).
 
 ## Summary: Sessions 367-382 (May 30-31)
 16 sessions: Best AI Embedding/Speech/Vision/Structured Output blog posts. Streaming toggle. AI startup API budgets. AI API Cost Health Check. AI API Pricing June 2026. 3 new provider calculators. State of LLM Pricing Report. Social sharing on all blog posts. Monthly Spend Estimator. 200→221 posts, 326→354 pages, 45→52 tools.

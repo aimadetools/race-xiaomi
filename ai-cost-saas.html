@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI API Cost for SaaS — Estimate Per-User AI Costs | APIpulse</title>
+    <meta name="description" content="Calculate AI API costs per user for your SaaS product. Estimate cost per interaction, monthly spend at scale, and find the cheapest model for your AI features.">
+    <meta name="keywords" content="AI cost per user, SaaS AI pricing, AI API cost SaaS, how to price AI features, LLM cost per interaction, AI SaaS budget, AI API cost estimation">
+    <meta property="og:title" content="AI API Cost for SaaS — Estimate Per-User AI Costs | APIpulse">
+    <meta property="og:description" content="Calculate AI API costs per user for your SaaS. See cost per interaction, monthly spend at scale, and cheapest models.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://getapipulse.com/og-image.png">
+    <meta property="og:url" content="https://getapipulse.com/ai-cost-saas.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="AI API Cost for SaaS — Estimate Per-User AI Costs | APIpulse">
+    <meta name="twitter:image" content="https://getapipulse.com/og-image.png">
+    <meta name="twitter:description" content="Calculate AI API costs per user for your SaaS. See cost per interaction, monthly spend at scale.">
+    <link rel="canonical" href="https://getapipulse.com/ai-cost-saas.html">
+    <link rel="alternate" type="application/rss+xml" title="APIpulse Blog" href="https://getapipulse.com/rss.xml">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="styles.css">
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0CEP7S9Y3J"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-0CEP7S9Y3J');
+    </script>
+    <script src="analytics.js" defer></script>
+    <script src="dynamic-date.js" defer></script>
+    <script src="shared.js" defer></script>
+    <script src="pricing-data.js" defer></script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "APIpulse SaaS AI Cost Calculator",
+        "url": "https://getapipulse.com/ai-cost-saas.html",
+        "description": "Calculate AI API costs per user for your SaaS product. Estimate cost per interaction, monthly spend at scale, and find the cheapest model.",
+        "applicationCategory": "DeveloperApplication",
+        "operatingSystem": "Web",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "How much does AI cost per user in a SaaS product?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "It depends on usage patterns. A SaaS product with 10 AI interactions per user per day, using 500 input tokens and 200 output tokens per interaction, costs $0.03-$0.45 per user per month on budget models (GPT-4o mini, Gemini Flash) and $1.50-$15 per user per month on premium models (GPT-5, Claude Opus). Use our calculator above to model your exact usage."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How should I price AI features in my SaaS?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "A common approach is to price AI features at 3-5x your API cost to maintain healthy margins. For example, if AI costs you $2/user/month, charge $6-10/user/month for AI features. Many SaaS companies bundle AI into higher-tier plans or charge per-usage credits. Start with a free tier to drive adoption, then upsell premium AI features."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What is the cheapest AI model for SaaS?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Google Gemini 2.0 Flash Lite ($0.075/$0.30 per 1M tokens) and Llama 3.1 8B ($0.10/$0.10) are the cheapest. For better quality at low cost, GPT-4o mini ($0.15/$0.60), DeepSeek V4 Flash ($0.14/$0.28), and Gemini 2.0 Flash ($0.10/$0.40) offer excellent value. The right choice depends on your quality requirements and latency tolerance."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How can I reduce AI costs for my SaaS?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Key strategies: (1) Use tiered routing — cheap models for simple tasks, premium for complex ones, (2) Cache frequent queries to avoid duplicate API calls, (3) Use embeddings + vector search to reduce context window usage, (4) Set aggressive token limits on output, (5) Use batch processing for non-real-time tasks. These strategies can reduce costs by 40-70%."
+                }
+            }
+        ]
+    }
+    </script>
+    <style>
+        .calc-hero { padding: 120px 24px 40px; text-align: center; max-width: 700px; margin: 0 auto; }
+        .calc-hero h1 { font-size: clamp(28px, 4vw, 42px); font-weight: 800; margin-bottom: 12px; }
+        .calc-hero p { color: var(--text-secondary); font-size: 17px; line-height: 1.6; }
+
+        .calculator-section { padding: 0 24px 60px; }
+        .calculator { background: var(--bg-card); border: 1px solid var(--border); border-radius: 16px; padding: 32px; max-width: 900px; margin: 0 auto; }
+
+        .presets { display: flex; gap: 8px; margin-bottom: 24px; flex-wrap: wrap; align-items: center; }
+        .preset-label { font-size: 13px; color: var(--text-muted); }
+        .preset-btn {
+            background: var(--bg-secondary); border: 1px solid var(--border);
+            color: var(--text-secondary); padding: 8px 16px; border-radius: 8px;
+            cursor: pointer; font-size: 13px; transition: all 0.2s; font-weight: 500;
+        }
+        .preset-btn:hover { border-color: var(--accent); color: var(--accent); }
+        .preset-btn.active-preset { background: var(--accent); color: white; border-color: var(--accent); }
+
+        .calc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
+        .calc-inputs { display: flex; flex-direction: column; gap: 16px; }
+        .input-group { display: flex; flex-direction: column; gap: 6px; }
+        .input-group label { font-size: 13px; font-weight: 600; color: var(--text-secondary); }
+        .input-group input, .input-group select {
+            padding: 12px 16px; border-radius: 8px; border: 1px solid var(--border);
+            background: var(--bg-secondary); color: var(--text-primary); font-size: 15px; font-family: inherit;
+        }
+        .input-group input:focus, .input-group select:focus { outline: 2px solid var(--accent); outline-offset: 2px; border-color: var(--accent); }
+        .input-hint { font-size: 12px; color: var(--text-muted); margin-top: 2px; }
+
+        .calc-results { background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 12px; padding: 24px; }
+        .result-item { display: flex; justify-content: space-between; padding: 10px 0; border-bottom: 1px solid var(--border); font-size: 14px; }
+        .result-item:last-child { border-bottom: none; }
+        .result-label { color: var(--text-secondary); }
+        .result-value { color: var(--text-primary); font-weight: 600; font-variant-numeric: tabular-nums; }
+        .result-total { display: flex; justify-content: space-between; padding: 14px 0 10px; border-top: 2px solid var(--accent); margin-top: 8px; font-size: 18px; }
+        .result-total .result-label { color: var(--text-primary); font-weight: 700; }
+        .result-total .result-value { color: var(--accent); font-weight: 800; }
+
+        /* Pricing insight */
+        .pricing-insight { background: rgba(34,197,94,0.05); border: 1px solid rgba(34,197,94,0.2); border-radius: 12px; padding: 20px; margin-top: 16px; }
+        .pricing-insight h4 { font-size: 14px; font-weight: 700; color: var(--green); margin-bottom: 8px; }
+        .pricing-insight .suggested-price { font-size: 24px; font-weight: 800; color: var(--green); }
+        .pricing-insight .margin-note { font-size: 13px; color: var(--text-secondary); margin-top: 4px; }
+
+        /* Ranked models table */
+        .ranking-section { max-width: 900px; margin: 0 auto; padding: 0 24px 60px; }
+        .ranking-section h2 { font-size: 24px; font-weight: 700; text-align: center; margin-bottom: 8px; }
+        .ranking-subtitle { text-align: center; color: var(--text-secondary); font-size: 15px; margin-bottom: 32px; }
+        .ranking-table { width: 100%; border-collapse: collapse; background: var(--bg-card); border-radius: 12px; overflow: hidden; border: 1px solid var(--border); }
+        .ranking-table th { background: var(--bg-secondary); padding: 14px 16px; text-align: left; font-size: 12px; font-weight: 600; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px; }
+        .ranking-table td { padding: 14px 16px; border-bottom: 1px solid var(--border); font-size: 14px; }
+        .ranking-table tr:last-child td { border-bottom: none; }
+        .ranking-table tr:hover { background: var(--accent-glow); }
+        .rank-num { font-weight: 700; color: var(--accent); width: 40px; }
+        .rank-badge { display: inline-block; padding: 2px 8px; border-radius: 4px; font-size: 11px; font-weight: 700; }
+        .rank-cheapest { background: rgba(34,197,94,0.15); color: var(--green); }
+        .rank-budget { background: rgba(59,130,246,0.15); color: #3b82f6; }
+        .rank-mid { background: rgba(168,85,247,0.15); color: #a855f7; }
+        .rank-premium { background: rgba(245,158,11,0.15); color: #f59e0b; }
+        .cost-monthly { font-weight: 700; font-variant-numeric: tabular-nums; }
+        .cost-per-user { color: var(--text-secondary); font-size: 13px; }
+
+        /* Scaling scenarios */
+        .scaling-section { max-width: 900px; margin: 0 auto; padding: 0 24px 60px; }
+        .scaling-section h2 { font-size: 24px; font-weight: 700; text-align: center; margin-bottom: 8px; }
+        .scaling-subtitle { text-align: center; color: var(--text-secondary); font-size: 15px; margin-bottom: 32px; }
+        .scaling-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+        .scaling-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; padding: 20px; text-align: center; }
+        .scaling-card .users { font-size: 28px; font-weight: 800; color: var(--accent); }
+        .scaling-card .users-label { font-size: 12px; color: var(--text-muted); margin-bottom: 12px; }
+        .scaling-card .cost { font-size: 20px; font-weight: 700; }
+        .scaling-card .cost-label { font-size: 12px; color: var(--text-muted); margin-top: 4px; }
+        .scaling-card .per-user { font-size: 13px; color: var(--text-secondary); margin-top: 8px; }
+
+        /* Insights */
+        .insights { max-width: 700px; margin: 0 auto; padding: 0 24px 60px; }
+        .insight-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; padding: 24px; margin-bottom: 16px; }
+        .insight-card h3 { font-size: 16px; font-weight: 700; margin-bottom: 8px; }
+        .insight-card p { font-size: 14px; color: var(--text-secondary); line-height: 1.7; }
+        .insight-card a { color: var(--accent); font-weight: 600; }
+
+        /* Pro upsell */
+        .pro-upsell { max-width: 700px; margin: 0 auto; padding: 0 24px 60px; }
+        .pro-card { background: linear-gradient(135deg, rgba(99,102,241,0.08), rgba(34,197,94,0.06)); border: 1px solid var(--accent); border-radius: 16px; padding: 32px; text-align: center; }
+
+        /* CTA inline */
+        .cta-inline { background: var(--bg-secondary); border: 1px solid var(--accent); border-radius: 12px; padding: 24px; margin: 32px 0; text-align: center; }
+        .cta-inline p { margin-bottom: 12px; color: var(--text-secondary); }
+
+        /* Content section */
+        .info-section { max-width: 700px; margin: 0 auto; padding: 0 24px 60px; }
+        .info-section h2 { font-size: 22px; font-weight: 700; margin-bottom: 16px; margin-top: 32px; }
+        .info-section p { color: var(--text-secondary); line-height: 1.7; margin-bottom: 16px; }
+        .info-section ul { color: var(--text-secondary); padding-left: 24px; margin-bottom: 16px; }
+        .info-section li { margin-bottom: 8px; line-height: 1.6; }
+        .info-section strong { color: var(--text-primary); }
+
+        @media (max-width: 768px) {
+            .calc-hero { padding: 100px 20px 30px; }
+            .calc-hero h1 { font-size: 26px; }
+            .calculator-section { padding: 0 20px 40px; }
+            .calculator { padding: 20px; }
+            .calc-grid { grid-template-columns: 1fr; gap: 24px; }
+            .presets { justify-content: center; }
+            .ranking-table { font-size: 12px; }
+            .ranking-table th, .ranking-table td { padding: 10px 8px; }
+            .scaling-grid { grid-template-columns: 1fr 1fr; }
+        }
+    </style>
+    <meta name="theme-color" content="#6366f1">
+    <link rel="preconnect" href="https://getapipulse.com">
+</head>
+<body>
+    <a href="#main" class="skip-link">Skip to content</a>
+    <nav>
+        <div class="nav-inner">
+            <a href="index.html" class="logo">API<span>pulse</span></a>
+            <button class="hamburger" onclick="toggleMobileNav()" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+            <div class="nav-links">
+                <a href="calculator.html">Calculator</a>
+                <a href="compare.html">Compare</a>
+                <a href="cost-explorer.html">Explorer</a>
+                <a href="agent-cost-calculator.html">Agents</a>
+                <a href="cost-scenarios.html">Scenarios</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="use-cases.html">Use Cases</a>
+                <a href="blog.html">Blog</a>
+                <a href="tools.html">Tools</a>
+                <a href="api-docs.html" style="color:var(--accent);">API</a>
+                <a href="pricing.html" class="nav-cta" onclick="if(window.trackEvent)window.trackEvent('pro_button_clicked',{source:'nav'})">Get Pro — $29</a>
+                <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
+            </div>
+        </div>
+    </nav>
+
+    <main id="main">
+    <div class="calc-hero">
+        <h1>AI API Cost Calculator for SaaS</h1>
+        <p>Building AI-powered SaaS? Calculate cost per user, cost per interaction, and total monthly spend at scale. Find the cheapest model for your AI features and get pricing recommendations.</p>
+        <div id="pricing-freshness" style="margin-top:16px;"></div>
+    </div>
+
+    <section class="calculator-section">
+        <div class="calculator" role="form" aria-label="SaaS AI Cost Calculator">
+            <div class="presets">
+                <span class="preset-label">AI feature type:</span>
+                <button class="preset-btn active-preset" onclick="applyFeaturePreset('assistant')">AI Assistant</button>
+                <button class="preset-btn" onclick="applyFeaturePreset('search')">AI Search</button>
+                <button class="preset-btn" onclick="applyFeaturePreset('content')">Content Gen</button>
+                <button class="preset-btn" onclick="applyFeaturePreset('support')">Support Bot</button>
+            </div>
+            <div class="calc-grid">
+                <div class="calc-inputs">
+                    <div class="input-group">
+                        <label for="ai-interactions">AI interactions per user per day</label>
+                        <input type="number" id="ai-interactions" value="10" min="1" step="1" oninput="calculate()" aria-label="AI interactions per user per day">
+                        <div class="input-hint">How many times each user triggers AI per day</div>
+                    </div>
+                    <div class="input-group">
+                        <label for="input-tokens">Input tokens per interaction</label>
+                        <input type="number" id="input-tokens" value="500" min="0" step="50" oninput="calculate()" aria-label="Input tokens per interaction">
+                        <div class="input-hint">System prompt + context + user input</div>
+                    </div>
+                    <div class="input-group">
+                        <label for="output-tokens">Output tokens per interaction</label>
+                        <input type="number" id="output-tokens" value="200" min="0" step="50" oninput="calculate()" aria-label="Output tokens per interaction">
+                        <div class="input-hint">AI response tokens</div>
+                    </div>
+                    <div class="input-group">
+                        <label for="total-users">Total users</label>
+                        <input type="number" id="total-users" value="1000" min="1" step="100" oninput="calculate()" aria-label="Total users">
+                    </div>
+                    <div class="input-group">
+                        <label for="active-pct">Active user %</label>
+                        <input type="number" id="active-pct" value="60" min="1" max="100" step="5" oninput="calculate()" aria-label="Active user percentage">
+                        <div class="input-hint">% of users who use AI features daily</div>
+                    </div>
+                    <div class="input-group">
+                        <label for="days-month">Days per month</label>
+                        <input type="number" id="days-month" value="30" min="1" max="31" oninput="calculate()" aria-label="Days per month">
+                    </div>
+                </div>
+                <div class="calc-results" role="region" aria-label="Cost calculation results" aria-live="polite">
+                    <h3 style="margin-bottom: 16px; font-size: 16px;">Your SaaS AI Cost</h3>
+                    <div class="result-item" style="background:var(--accent-glow);margin:-4px -8px 8px;padding:10px 8px;border-radius:8px;border:1px solid rgba(99,102,241,0.2);">
+                        <span class="result-label" style="font-weight:600;color:var(--text-primary);">Cost per interaction</span>
+                        <span class="result-value" id="cost-per-interaction" style="color:var(--accent);font-size:16px;">$0.000000</span>
+                    </div>
+                    <div class="result-item" style="background:rgba(34,197,94,0.05);margin:-4px -8px 8px;padding:10px 8px;border-radius:8px;border:1px solid rgba(34,197,94,0.15);">
+                        <span class="result-label" style="font-weight:600;color:var(--text-primary);">Cost per user/month</span>
+                        <span class="result-value" id="cost-per-user" style="color:var(--green);font-size:16px;">$0.00</span>
+                    </div>
+                    <div class="result-item">
+                        <span class="result-label">Total daily interactions</span>
+                        <span class="result-value" id="daily-interactions">0</span>
+                    </div>
+                    <div class="result-item">
+                        <span class="result-label">Total monthly interactions</span>
+                        <span class="result-value" id="monthly-interactions">0</span>
+                    </div>
+                    <div class="result-item">
+                        <span class="result-label">Input cost (monthly)</span>
+                        <span class="result-value" id="input-cost">$0.00</span>
+                    </div>
+                    <div class="result-item">
+                        <span class="result-label">Output cost (monthly)</span>
+                        <span class="result-value" id="output-cost">$0.00</span>
+                    </div>
+                    <div class="result-total">
+                        <span class="result-label">Total Monthly Cost</span>
+                        <span class="result-value" id="monthly-total">$0.00</span>
+                    </div>
+                    <div id="annual-cost" style="text-align:center;font-size:13px;color:var(--text-muted);margin-top:8px;"></div>
+                    <div id="savings-container"></div>
+
+                    <div class="pricing-insight" id="pricing-insight">
+                        <h4>Suggested AI Feature Pricing</h4>
+                        <div class="suggested-price" id="suggested-price">$0.00/user/mo</div>
+                        <div class="margin-note" id="margin-note">At 4x markup (75% margin)</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="ranking-section">
+        <h2>All 34 Models Ranked by SaaS Cost</h2>
+        <p class="ranking-subtitle">Monthly cost for your exact usage — sorted cheapest first.</p>
+        <div style="overflow-x:auto;">
+        <table class="ranking-table">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Model</th>
+                    <th>Provider</th>
+                    <th>Monthly Cost</th>
+                    <th>Per User/mo</th>
+                    <th>Per Interaction</th>
+                </tr>
+            </thead>
+            <tbody id="ranking-body"></tbody>
+        </table>
+        </div>
+    </section>
+
+    <section class="scaling-section">
+        <h2>Cost at Scale</h2>
+        <p class="scaling-subtitle">See how your AI costs grow as you add users.</p>
+        <div class="scaling-grid" id="scaling-grid"></div>
+    </section>
+
+    <section class="insights">
+        <h2 style="font-size:24px;font-weight:700;text-align:center;margin-bottom:24px;">How to Price AI in Your SaaS</h2>
+        <div class="insight-card">
+            <h3>The 3-5x Rule</h3>
+            <p>Price your AI features at 3-5x your API cost per user to maintain healthy margins. If AI costs you $2/user/month, charge $6-10/user/month. This covers infrastructure, support, and profit. Most successful AI SaaS products use a 4x markup.</p>
+        </div>
+        <div class="insight-card">
+            <h3>Bundle vs. Usage-Based</h3>
+            <p><strong>Bundled:</strong> Include AI in a premium plan tier (e.g., "Pro plan includes AI assistant"). Simpler for users, predictable revenue. <strong>Usage-based:</strong> Charge per interaction or per token. More transparent, but harder to predict bills. Most SaaS companies start bundled and add usage tiers later.</p>
+        </div>
+        <div class="insight-card">
+            <h3>Free Tier Strategy</h3>
+            <p>Offer a limited free tier (e.g., 50 AI interactions/month) to drive adoption. Users who hit the limit are your best conversion candidates. Gate premium AI features (longer context, better models, priority) behind paid tiers.</p>
+        </div>
+        <div class="insight-card">
+            <h3>Cost Optimization Levers</h3>
+            <p>Biggest savings come from: <strong>(1)</strong> Tiered model routing — use cheap models (GPT-4o mini, Gemini Flash) for simple tasks and premium models only for complex ones. <strong>(2)</strong> Response caching — avoid duplicate API calls for repeated queries. <strong>(3)</strong> Prompt optimization — shorter system prompts = fewer input tokens. These strategies can cut costs 40-70%.</p>
+        </div>
+    </section>
+
+    <section class="pro-upsell">
+        <div class="pro-card">
+            <h2 style="font-size:22px;font-weight:700;margin-bottom:8px;">Want the full optimization report?</h2>
+            <p style="color:var(--text-secondary);margin-bottom:20px;">APIpulse Pro gives you personalized model recommendations, saved scenarios, and cost reports to cut your SaaS AI costs by up to 40%.</p>
+            <a href="pricing.html" class="btn-primary" style="display:inline-block;padding:12px 32px;" onclick="if(window.trackEvent)window.trackEvent('pro_button_clicked',{source:'saas_calculator'})">Get Pro — $29 one-time</a>
+        </div>
+    </section>
+
+    <section class="cta-inline">
+        <p><strong>Compare your SaaS AI costs across all 34 models</strong></p>
+        <a href="compare.html" style="color:var(--accent);font-weight:600;">Try Model Compare →</a>
+    </section>
+
+    </main>
+
+    <footer style="padding:40px 24px;text-align:center;border-top:1px solid var(--border);color:var(--text-muted);font-size:13px;">
+        <p>&copy; 2026 APIpulse. Pricing data verified May 2026.</p>
+        <p style="margin-top:8px;"><a href="about.html" style="color:var(--text-secondary);">About</a> &middot; <a href="blog.html" style="color:var(--text-secondary);">Blog</a> &middot; <a href="api-docs.html" style="color:var(--text-secondary);">API</a> &middot; <a href="privacy.html" style="color:var(--text-secondary);">Privacy</a></p>
+    </footer>
+
+    <script>
+    function calculate() {
+        const interactions = parseInt(document.getElementById('ai-interactions').value) || 0;
+        const inputTokens = parseInt(document.getElementById('input-tokens').value) || 0;
+        const outputTokens = parseInt(document.getElementById('output-tokens').value) || 0;
+        const totalUsers = parseInt(document.getElementById('total-users').value) || 0;
+        const activePct = parseInt(document.getElementById('active-pct').value) || 100;
+        const daysMonth = parseInt(document.getElementById('days-month').value) || 30;
+
+        const activeUsers = Math.round(totalUsers * activePct / 100);
+        const dailyInteractions = activeUsers * interactions;
+        const monthlyInteractions = dailyInteractions * daysMonth;
+
+        const totalInputTokens = monthlyInteractions * inputTokens;
+        const totalOutputTokens = monthlyInteractions * outputTokens;
+
+        // Get default model (GPT-4o mini as baseline)
+        const defaultModel = API_MODELS.find(m => m.id === 'openai-gpt4o-mini') || API_MODELS[0];
+        const inputCost = (totalInputTokens / 1000000) * defaultModel.input;
+        const outputCost = (totalOutputTokens / 1000000) * defaultModel.output;
+        const monthlyTotal = inputCost + outputCost;
+        const costPerInteraction = monthlyInteractions > 0 ? monthlyTotal / monthlyInteractions : 0;
+        const costPerUser = activeUsers > 0 ? monthlyTotal / activeUsers : 0;
+
+        document.getElementById('cost-per-interaction').textContent = '$' + costPerInteraction.toFixed(6);
+        document.getElementById('cost-per-user').textContent = '$' + costPerUser.toFixed(2);
+        document.getElementById('daily-interactions').textContent = dailyInteractions.toLocaleString();
+        document.getElementById('monthly-interactions').textContent = monthlyInteractions.toLocaleString();
+        document.getElementById('input-cost').textContent = '$' + inputCost.toFixed(2);
+        document.getElementById('output-cost').textContent = '$' + outputCost.toFixed(2);
+        document.getElementById('monthly-total').textContent = '$' + monthlyTotal.toFixed(2);
+        document.getElementById('annual-cost').textContent = 'Annual: $' + (monthlyTotal * 12).toFixed(2);
+
+        // Pricing insight (4x markup)
+        const suggestedPrice = costPerUser * 4;
+        document.getElementById('suggested-price').textContent = '$' + suggestedPrice.toFixed(2) + '/user/mo';
+        const margin = suggestedPrice > 0 ? ((suggestedPrice - costPerUser) / suggestedPrice * 100).toFixed(0) : 0;
+        document.getElementById('margin-note').textContent = 'At 4x markup (' + margin + '% margin)';
+
+        // Rank all models
+        const ranked = API_MODELS.map(m => {
+            const ic = (totalInputTokens / 1000000) * m.input;
+            const oc = (totalOutputTokens / 1000000) * m.output;
+            const total = ic + oc;
+            return { ...m, monthlyCost: total, perUser: activeUsers > 0 ? total / activeUsers : 0, perInteraction: monthlyInteractions > 0 ? total / monthlyInteractions : 0 };
+        }).sort((a, b) => a.monthlyCost - b.monthlyCost);
+
+        const cheapestCost = ranked[0].monthlyCost;
+        const tbody = document.getElementById('ranking-body');
+        tbody.innerHTML = ranked.map((m, i) => {
+            const badgeClass = i === 0 ? 'rank-cheapest' : m.tier === 'Budget' ? 'rank-budget' : m.tier === 'Mid' ? 'rank-mid' : 'rank-premium';
+            const badgeText = i === 0 ? 'CHEAPEST' : m.tier;
+            return '<tr' + (i === 0 ? ' style="background:rgba(34,197,94,0.05)"' : '') + '>' +
+                '<td class="rank-num">' + (i + 1) + '</td>' +
+                '<td><strong>' + m.name + '</strong></td>' +
+                '<td>' + m.provider + ' <span class="rank-badge ' + badgeClass + '">' + badgeText + '</span></td>' +
+                '<td class="cost-monthly">$' + m.monthlyCost.toFixed(2) + '</td>' +
+                '<td class="cost-per-user">$' + m.perUser.toFixed(2) + '</td>' +
+                '<td class="cost-per-user">$' + m.perInteraction.toFixed(6) + '</td>' +
+                '</tr>';
+        }).join('');
+
+        // Scaling scenarios
+        const scales = [100, 1000, 10000, 100000];
+        const grid = document.getElementById('scaling-grid');
+        grid.innerHTML = scales.map(targetUsers => {
+            const targetActive = Math.round(targetUsers * activePct / 100);
+            const targetMonthly = targetActive * interactions * daysMonth;
+            const targetInput = (targetMonthly * inputTokens / 1000000) * defaultModel.input;
+            const targetOutput = (targetMonthly * outputTokens / 1000000) * defaultModel.output;
+            const targetTotal = targetInput + targetOutput;
+            const targetPerUser = targetActive > 0 ? targetTotal / targetActive : 0;
+            return '<div class="scaling-card">' +
+                '<div class="users">' + (targetUsers >= 1000 ? (targetUsers / 1000) + 'K' : targetUsers) + '</div>' +
+                '<div class="users-label">total users</div>' +
+                '<div class="cost">$' + (targetTotal >= 1000 ? (targetTotal / 1000).toFixed(1) + 'K' : targetTotal.toFixed(2)) + '</div>' +
+                '<div class="cost-label">monthly cost</div>' +
+                '<div class="per-user">$' + targetPerUser.toFixed(2) + '/user/mo</div>' +
+                '</div>';
+        }).join('');
+    }
+
+    function applyFeaturePreset(type) {
+        const presets = {
+            assistant: { interactions: 10, input: 500, output: 200 },
+            search: { interactions: 15, input: 300, output: 150 },
+            content: { interactions: 5, input: 800, output: 1000 },
+            support: { interactions: 8, input: 400, output: 300 }
+        };
+        const p = presets[type];
+        document.getElementById('ai-interactions').value = p.interactions;
+        document.getElementById('input-tokens').value = p.input;
+        document.getElementById('output-tokens').value = p.output;
+        document.querySelectorAll('.presets:first-of-type .preset-btn').forEach(b => b.classList.remove('active-preset'));
+        event.target.classList.add('active-preset');
+        calculate();
+        if (window.trackEvent) window.trackEvent('saas_preset_used', { type: type });
+    }
+
+    // Initial calculation
+    document.addEventListener('DOMContentLoaded', calculate);
+    </script>
+</body>
+</html>
