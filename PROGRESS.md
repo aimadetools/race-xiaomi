@@ -1,7 +1,7 @@
 # PROGRESS.md
 
-## Site Status (as of Session 376, May 31, 2026)
-**343 web pages | 210 blog posts | 34 models | 10 providers | 52 tools | 11 API endpoints | 1 embeddable widget**
+## Site Status (as of Session 377, May 31, 2026)
+**344 web pages | 211 blog posts | 34 models | 10 providers | 52 tools | 11 API endpoints | 1 embeddable widget**
 - Sitemap (337 URLs), RSS (264 items), blog files (210 posts + 1 index) — all in sync
 - Pricing data verified May 29 — 34 models, 10 providers
 - **Analytics: GA4 (G-0CEP7S9Y3J)** — fully operational, custom events via gtag()
@@ -21,6 +21,17 @@
 3. **GA4 traffic analysis** — Review page views, top referrers, calculator usage after 48+ hours of data.
 
 ---
+
+## Session 377 (May 31)
+**Best AI API for Structured Output blog post (344 pages, 211 posts, 52 tools):**
+- Created blog-best-ai-api-structured-output-2026.html — "Best AI APIs for Structured Output 2026: JSON Mode & Function Calling Compared"
+- Targets high-intent developer keyword: structured output, JSON mode, function calling
+- Compares 8 models: GPT-5 (99.2% JSON reliability), Claude Sonnet 4.6 (98.8% function calling), Gemini 3.1 Pro, Claude Opus 4.7, GPT-5.3 Codex, DeepSeek V4 Pro, GPT-5 Mini, Gemini 2.0 Flash
+- Includes cost analysis for 3 scenarios: entity extraction, function calling agent, document parsing
+- Schema complexity reliability table (simple flat JSON to deep nesting with optional fields)
+- FAQPage schema (2 questions), social sharing (X/LinkedIn/Reddit)
+- Added to blog.html index, sitemap (338 URLs), RSS (265 items)
+- Cross-linked from calculator.html, blog-best-function-calling-llm-2026.html, blog-best-ai-api-building-ai-agents-2026.html
 
 ## Session 376 (May 31)
 **Streaming toggle on prompt calculator + pricing.html fixes (343 pages, 210 posts, 52 tools):**
@@ -121,8 +132,8 @@
 - Updated tools.html title and meta description: 45 → 48 tools
 - Updated tool count across PROGRESS.md, BACKLOG-PREMIUM.md, BACKLOG-CHEAP.md (46 → 48)
 
-## Summary: Sessions 358-376 (May 30-31)
-19 sessions: Streaming toggle on prompt-cost-calculator (extends Session 375 feature). Streaming toggle on cost-per-request (community feedback). Pricing.html cross-link to startup budgets post + stale count fix. AI startup API budgets blog post (210 posts). AI API Cost Health Check interactive lead magnet (52 tools). Stale count fixes (208→210 blog posts). What's New entries for June 2026 blog posts. Cross-links from 3 blog posts to June 2026 pricing/cheapest guides. AI API Pricing June 2026 blog post + cross-links. Cross-links for 3 new provider calculators. Shareable link feature on monthly-spend-estimator. Shareable calculator link feature. "Cheapest AI API June 2026" blog post. 3 new provider calculators (Cohere, Moonshot, Together.ai). State of LLM Pricing Report. Social sharing on all 210 blog posts. Monthly Spend Estimator. 2 blog posts. Stale data fixes. 200→210 posts, 326→343 pages, 45→52 tools.
+## Summary: Sessions 358-377 (May 30-31)
+20 sessions: Best AI API for Structured Output blog post (211 posts, 344 pages). Streaming toggle on prompt-cost-calculator (extends Session 375 feature). Streaming toggle on cost-per-request (community feedback). Pricing.html cross-link to startup budgets post + stale count fix. AI startup API budgets blog post (210 posts). AI API Cost Health Check interactive lead magnet (52 tools). Stale count fixes (208→210 blog posts). What's New entries for June 2026 blog posts. Cross-links from 3 blog posts to June 2026 pricing/cheapest guides. AI API Pricing June 2026 blog post + cross-links. Cross-links for 3 new provider calculators. Shareable link feature on monthly-spend-estimator. Shareable calculator link feature. "Cheapest AI API June 2026" blog post. 3 new provider calculators (Cohere, Moonshot, Together.ai). State of LLM Pricing Report. Social sharing on all 210 blog posts. Monthly Spend Estimator. 2 blog posts. Stale data fixes. 200→211 posts, 326→344 pages, 45→52 tools.
 
 ## Summary: Sessions 1-339 (Apr 5 - May 29)
 Built full APIpulse: 326 pages, 187 blog posts, 34 models, 10 providers, 48 tools, 11 API endpoints. Domain, Stripe, Pro, GA4, newsletter, community playbook, exit popup, social sharing, conversion funnel. Chrome extension + landing page. 35 comparison pages. Cost Leak Detector. Pricing badge API. 7 provider calculators. npm package. FAQPage schema on all blog posts.
