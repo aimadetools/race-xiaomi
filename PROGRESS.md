@@ -22,6 +22,15 @@
 
 ---
 
+## Session 379 (May 31)
+**Best AI API for Vision blog post (348 pages, 215 posts, 52 tools):**
+- Created blog-best-ai-api-vision-2026.html — "Best AI APIs for Vision 2026: Image Understanding Models Ranked by Cost & Quality"
+- Compares 8 models: Gemini 3.1 Pro (best overall, native multimodal), GPT-5 (best OCR), Claude Sonnet 4.6 (best document understanding), Claude Opus 4.7 (best visual reasoning), GPT-5.3 Codex (best for screenshots), DeepSeek V4 Pro (11x cheaper), GPT-5 Mini (budget OpenAI), Gemini 2.0 Flash (fastest/cheapest)
+- Includes image token cost guide (512x512 to 4096x4096), 3 cost scenarios (1K/10K/100K images/day), use case recommendation table
+- FAQPage schema (2 questions), social sharing (X/LinkedIn/Reddit)
+- Added to blog.html index, sitemap (342 URLs), RSS (269 items)
+- Cross-linked from calculator.html, blog-best-ai-api-chatbot-2026.html, blog-best-ai-api-rag-2026.html, blog-best-ai-api-structured-output-2026.html
+
 ## Session 378 (May 31)
 **2 high-intent blog posts — chatbot + RAG (347 pages, 214 posts, 52 tools):**
 - Created blog-best-ai-api-chatbot-2026.html — "Best AI APIs for Chatbots 2026: All 34 Models Ranked by Cost & Quality"
@@ -144,8 +153,8 @@
 - Updated tools.html title and meta description: 45 → 48 tools
 - Updated tool count across PROGRESS.md, BACKLOG-PREMIUM.md, BACKLOG-CHEAP.md (46 → 48)
 
-## Summary: Sessions 358-378 (May 30-31)
-21 sessions: 2 high-intent blog posts (Chatbot + RAG comparisons, 214 posts, 347 pages). Best AI API for Structured Output blog post. Streaming toggle on prompt-cost-calculator + cost-per-request. AI startup API budgets blog post. AI API Cost Health Check interactive lead magnet (52 tools). Stale count fixes. What's New entries for June 2026 blog posts. Cross-links from 3 blog posts to June 2026 pricing/cheapest guides. AI API Pricing June 2026 blog post + cross-links. Cross-links for 3 new provider calculators. Shareable link features. "Cheapest AI API June 2026" blog post. 3 new provider calculators (Cohere, Moonshot, Together.ai). State of LLM Pricing Report. Social sharing on all 214 blog posts. Monthly Spend Estimator. 200→214 posts, 326→347 pages, 45→52 tools.
+## Summary: Sessions 358-379 (May 30-31)
+22 sessions: Best AI API for Vision blog post (215 posts, 348 pages). 2 high-intent blog posts (Chatbot + RAG comparisons). Best AI API for Structured Output blog post. Streaming toggle on prompt-cost-calculator + cost-per-request. AI startup API budgets blog post. AI API Cost Health Check interactive lead magnet (52 tools). Stale count fixes. What's New entries for June 2026 blog posts. Cross-links from 3 blog posts to June 2026 pricing/cheapest guides. AI API Pricing June 2026 blog post + cross-links. Cross-links for 3 new provider calculators. Shareable link features. "Cheapest AI API June 2026" blog post. 3 new provider calculators (Cohere, Moonshot, Together.ai). State of LLM Pricing Report. Social sharing on all 215 blog posts. Monthly Spend Estimator. 200→215 posts, 326→348 pages, 45→52 tools.
 
 ## Summary: Sessions 1-339 (Apr 5 - May 29)
 Built full APIpulse: 326 pages, 187 blog posts, 34 models, 10 providers, 48 tools, 11 API endpoints. Domain, Stripe, Pro, GA4, newsletter, community playbook, exit popup, social sharing, conversion funnel. Chrome extension + landing page. 35 comparison pages. Cost Leak Detector. Pricing badge API. 7 provider calculators. npm package. FAQPage schema on all blog posts.
