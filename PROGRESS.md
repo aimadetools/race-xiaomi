@@ -1,8 +1,8 @@
 # PROGRESS.md
 
-## Site Status (as of Session 397, May 31, 2026)
-**367 web pages | 228 blog posts | 34 models | 10 providers | 57 tools | 11 API endpoints | 2 embeddable widgets**
-- Sitemap (361 URLs), RSS (283 items), blog files (228 posts + 1 index) — all in sync
+## Site Status (as of Session 398, May 31, 2026)
+**368 web pages | 229 blog posts | 34 models | 10 providers | 57 tools | 11 API endpoints | 2 embeddable widgets**
+- Sitemap (362 URLs), RSS (284 items), blog files (229 posts + 1 index) — all in sync
 - Pricing data verified May 29 — 34 models, 10 providers
 - **Analytics: GA4 (G-0CEP7S9Y3J)** — fully operational, custom events via gtag()
 - **Pro system:** localStorage-based unlock after Stripe payment. Access code fallback on pro.html.
@@ -23,6 +23,16 @@
 3. **GA4 traffic analysis** — Review page views, top referrers, calculator usage after 48+ hours of data.
 
 ---
+
+## Session 398 (May 31)
+**AI API Pricing August 2026 blog post (368 pages, 229 posts, 57 tools, 362 sitemap URLs):**
+- Created blog-ai-api-pricing-august-2026.html — forward-looking pricing guide for 32 models
+- Covers: stable post-deprecation market, Q3 pricing trends, budget tier compression, mid-tier sweet spot, open-source status, xAI outlier analysis
+- Best deals by use case (11 use cases), $100/month comparison, provider comparison table
+- What to watch in Q4 2026 (GPT-6, Gemini 3.0 Flash, DeepSeek V5, xAI cuts, Llama 5, Claude 5)
+- FAQPage schema (4 questions), social sharing (X/LinkedIn/Reddit)
+- Cross-linked from July pricing post (updated nav link), blog.html index, index.html What's New section
+- Added to sitemap (361→362 URLs), RSS (283→284 items), blog.html index
 
 ## Session 397 (May 31)
 **Strategic audit + 6-week battle plan + massive internal linking push:**
