@@ -1,6 +1,6 @@
 # PROGRESS.md
 
-## Site Status (as of Session 398, May 31, 2026)
+## Site Status (as of Session 399, May 31, 2026)
 **368 web pages | 229 blog posts | 34 models | 10 providers | 57 tools | 11 API endpoints | 2 embeddable widgets**
 - Sitemap (362 URLs), RSS (284 items), blog files (229 posts + 1 index) — all in sync
 - Pricing data verified May 29 — 34 models, 10 providers
@@ -23,6 +23,13 @@
 3. **GA4 traffic analysis** — Review page views, top referrers, calculator usage after 48+ hours of data.
 
 ---
+
+## Session 399 (May 31)
+**Cross-link related tools across 20 tool pages (368 pages, 229 posts, 57 tools):**
+- Added "Related Tools" sections to 20 tool pages that were missing cross-links
+- Pages updated: cost-health-check, quiz, token-estimator, pipeline, cost-migration, latency-comparison, rate-limit-calculator, model-advisor, ai-stack-builder, fine-tuning-calculator, cost-scenarios, pricing-map, ai-feature-cost-estimator, ai-project-budget-planner, ai-api-tco-calculator, prompt-cost-calculator, monthly-spend-estimator, model-switch, cost-leak-detector, api-cost-report
+- Each page now has 5 related tool links for better internal linking and SEO
+- All 57 tool pages now have cross-links to related tools
 
 ## Session 398 (May 31)
 **AI API Pricing August 2026 blog post (368 pages, 229 posts, 57 tools, 362 sitemap URLs):**
