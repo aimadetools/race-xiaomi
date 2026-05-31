@@ -25,13 +25,16 @@
 ---
 
 ## Session 400 (May 31)
-**Social sharing + FAQPage schema SEO push (368 pages, 229 posts, 57 tools):**
+**Social sharing + massive FAQPage schema SEO push (368 pages, 229 posts, 57 tools):**
 - Added social sharing buttons (X/LinkedIn/Reddit) to 9 blog posts that were missing them
 - Posts fixed: agriculture, education, energy, finance, logistics, manufacturing, real-estate, cost-report, saas-cost-per-user
 - All 229 blog posts now have social sharing buttons
-- Added FAQPage schema to 5 high-traffic tool pages for rich snippets:
-  - calculator.html (4 questions), cost-optimizer.html (3), compare.html (3), ai-stack-builder.html (3), cost-per-request.html (3)
-- FAQ content covers: cheapest API, GPT-5 costs, cost calculation methods, model comparisons, startup recommendations
+- Added FAQPage schema to 23 pages total for rich snippets:
+  - 5 tool pages: calculator (4Q), cost-optimizer (3Q), compare (3Q), ai-stack-builder (3Q), cost-per-request (3Q)
+  - 2 more tools: token-estimator (3Q), rate-limit-calculator (3Q)
+  - 2 more tools: pricing-map (2Q), cost-scenarios (2Q)
+  - 7 use-case pages: chatbot, code-generation, content-writing, customer-support, data-extraction, document-analysis, enterprise
+  - 9 provider pages: openai, anthropic, google, deepseek, mistral, cohere, xai, together, moonshot
 
 ## Session 399 (May 31)
 **Cross-link related tools across 20 tool pages (368 pages, 229 posts, 57 tools):**
