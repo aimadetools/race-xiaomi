@@ -1,8 +1,8 @@
 # PROGRESS.md
 
-## Site Status (as of Session 378, May 31, 2026)
-**347 web pages | 214 blog posts | 34 models | 10 providers | 52 tools | 11 API endpoints | 1 embeddable widget**
-- Sitemap (341 URLs), RSS (268 items), blog files (214 posts + 1 index) — all in sync
+## Site Status (as of Session 379, May 31, 2026)
+**348 web pages | 215 blog posts | 34 models | 10 providers | 52 tools | 11 API endpoints | 1 embeddable widget**
+- Sitemap (342 URLs), RSS (269 items), blog files (215 posts + 1 index) — all in sync
 - Pricing data verified May 29 — 34 models, 10 providers
 - **Analytics: GA4 (G-0CEP7S9Y3J)** — fully operational, custom events via gtag()
 - **Pro system:** localStorage-based unlock after Stripe payment. Access code fallback on pro.html.
