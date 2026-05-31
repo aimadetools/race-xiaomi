@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Prompt Cost Calculator — Paste Text, See Costs Across 34 AI Models | APIpulse</title>
-    <meta name="description" content="Paste any prompt and instantly see costs across 34 AI models. Count tokens, compare prices from OpenAI, Anthropic, Google, DeepSeek, and more. Free tool.">
+    <meta name="description" content="Paste any prompt and instantly see costs across 34 AI models. Count tokens, compare prices from OpenAI, Anthropic, Google, DeepSeek, and more. Toggle standard vs streaming pricing. Free tool.">
     <meta property="og:title" content="Prompt Cost Calculator — See Costs Across 34 AI Models">
     <meta property="og:description" content="Paste your prompt. See costs across 34 models instantly. Compare OpenAI, Anthropic, Google, DeepSeek pricing.">
     <meta property="og:type" content="website">
@@ -110,6 +110,17 @@
         .control-group input:focus, .control-group select:focus {
             outline: none; border-color: var(--accent);
         }
+        .delivery-toggle {
+            display: flex; gap: 12px; align-items: center; margin-top: 16px; flex-wrap: wrap;
+        }
+        .delivery-toggle span { font-weight: 600; font-size: 14px; color: var(--text-primary); }
+        .mode-toggle {
+            padding: 8px 16px; border-radius: 8px; border: 1px solid var(--border);
+            background: var(--bg-card); color: var(--text-secondary); font-size: 13px;
+            font-weight: 600; cursor: pointer; transition: all 0.2s;
+        }
+        .mode-toggle.active { border-color: var(--accent); color: var(--accent); background: var(--accent-glow); }
+        .mode-toggle:hover { border-color: var(--accent); }
 
         .token-summary {
             display: flex; gap: 24px; margin-top: 20px; padding: 16px 20px;
@@ -305,6 +316,13 @@
                 </div>
             </div>
 
+            <div class="delivery-toggle">
+                <span>Delivery:</span>
+                <button id="delivery-standard" class="mode-toggle active" onclick="setDelivery('standard')">Standard</button>
+                <button id="delivery-streaming" class="mode-toggle" onclick="setDelivery('streaming')">Streaming (+15%)</button>
+                <span id="delivery-note" style="font-size:12px;color:var(--text-muted);margin-left:8px;"></span>
+            </div>
+
             <div class="token-summary" id="tokenSummary" style="display:none;">
                 <div class="token-stat">
                     <div class="value" id="inputTokens">0</div>
@@ -382,7 +400,7 @@
 
         <div class="info-box" style="margin-top:16px;">
             <h3>Understanding the Costs</h3>
-            <p>Prices shown are per 1M tokens. Input costs are based on your prompt length. Output costs depend on the response length (prompt length × output multiplier). The "Savings" column shows how much you save compared to the most expensive model for your workload. For most use cases, budget models like Gemini Flash, DeepSeek, or Mistral Small offer 90%+ savings versus premium models with minimal quality loss for routine tasks.</p>
+            <p>Prices shown are per 1M tokens. Input costs are based on your prompt length. Output costs depend on the response length (prompt length × output multiplier). The "Savings" column shows how much you save compared to the most expensive model for your workload. <strong>Streaming mode</strong> adds 15% to output costs to account for SSE framing and repeated context tokens in streamed responses. For most use cases, budget models like Gemini Flash, DeepSeek, or Mistral Small offer 90%+ savings versus premium models with minimal quality loss for routine tasks.</p>
         </div>
     </main>
 
@@ -459,6 +477,15 @@
 
     let currentSort = 'monthly';
     let lastResults = [];
+    let currentDelivery = 'standard';
+
+    window.setDelivery = function(delivery) {
+        currentDelivery = delivery;
+        document.getElementById('delivery-standard').classList.toggle('active', delivery === 'standard');
+        document.getElementById('delivery-streaming').classList.toggle('active', delivery === 'streaming');
+        document.getElementById('delivery-note').textContent = delivery === 'streaming' ? '+15% streaming overhead (SSE framing, repeated context)' : '';
+        if (lastResults.length) calculate();
+    };
 
     function calculate() {
         const text = document.getElementById('promptInput').value;
@@ -487,18 +514,21 @@
         document.getElementById('tokenSummary').style.display = 'flex';
 
         // Calculate costs for each model
+        const streamingMultiplier = currentDelivery === 'streaming' ? 1.15 : 1;
         const results = API_MODELS.map(model => {
             const inputCostPerToken = model.input / 1e6;
             const outputCostPerToken = model.output / 1e6;
-            const costPerRequest = (inputTokens * inputCostPerToken) + (outputTokens * outputCostPerToken);
+            const inputCost = inputTokens * inputCostPerToken;
+            const outputCost = outputTokens * outputCostPerToken * streamingMultiplier;
+            const costPerRequest = inputCost + outputCost;
             const monthlyCost = costPerRequest * monthlyRequests;
 
             return {
                 ...model,
                 costPerRequest,
                 monthlyCost,
-                inputCost: inputTokens * inputCostPerToken,
-                outputCost: outputTokens * outputCostPerToken
+                inputCost,
+                outputCost
             };
         });
 
@@ -576,6 +606,7 @@
         if (multiplier !== '1') params.set('m', multiplier);
         if (rpd !== '100') params.set('rpd', rpd);
         if (dpm !== '30') params.set('dpm', dpm);
+        if (currentDelivery !== 'standard') params.set('del', currentDelivery);
 
         const base = window.location.origin + window.location.pathname;
         return base + '?' + params.toString();
@@ -617,6 +648,7 @@
         if (params.has('m')) document.getElementById('outputMultiplier').value = params.get('m');
         if (params.has('rpd')) document.getElementById('requestsPerDay').value = params.get('rpd');
         if (params.has('dpm')) document.getElementById('daysPerMonth').value = params.get('dpm');
+        if (params.has('del')) setDelivery(params.get('del'));
 
         if (params.toString()) calculate();
     }
