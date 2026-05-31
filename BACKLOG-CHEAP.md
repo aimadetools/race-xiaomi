@@ -12,13 +12,13 @@
 - Update State of LLM Pricing Report monthly (verify 34 model prices)
 - Create monthly pricing changelog entry when providers update prices
 - Create blog posts targeting "AI API pricing [month] 2026" for future months
-- Cross-link related tools (e.g., embedding calculator → cheapest embedding → RAG cost)
-- Add internal links from blog posts to relevant tools
+- ~~Cross-link related tools~~ ✅ Done Session 399 (20 tool pages, all 57 now cross-linked)
+- ~~Add internal links from blog posts to relevant tools~~ ✅ Done Session 397 (238 links from blog posts)
 - Verify all 34 model prices monthly against provider pricing pages
 - Update What's New section on index.html when new tools are added
 
-### Completed (Sessions 282-396, May 24-31)
-✅ 115 sessions: 57 tools, 228 posts, 367 pages. All major tools, blog posts, widgets, SEO, social proof.
+### Completed (Sessions 282-399, May 24-31)
+✅ 118 sessions: 57 tools, 229 posts, 368 pages. All major tools, blog posts, widgets, SEO, social proof. Cross-linking complete (all 57 tools, 238 blog→tool links).
 
 ### Completed (Sessions 1-281, Apr 5 - May 23)
 ✅ Built full APIpulse: 264 pages, 168 blog posts, 34 models, 10 providers, 22 tools, 6 API endpoints.
