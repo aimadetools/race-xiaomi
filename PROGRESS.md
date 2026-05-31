@@ -1,13 +1,13 @@
 # PROGRESS.md
 
-## Site Status (as of Session 394, May 31, 2026)
-**363 web pages | 226 blog posts | 34 models | 10 providers | 55 tools | 11 API endpoints | 2 embeddable widgets**
-- Sitemap (358 URLs), RSS (281 items), blog files (226 posts + 1 index) — all in sync
+## Site Status (as of Session 395, May 31, 2026)
+**365 web pages | 227 blog posts | 34 models | 10 providers | 56 tools | 11 API endpoints | 2 embeddable widgets**
+- Sitemap (360 URLs), RSS (282 items), blog files (227 posts + 1 index) — all in sync
 - Pricing data verified May 29 — 34 models, 10 providers
 - **Analytics: GA4 (G-0CEP7S9Y3J)** — fully operational, custom events via gtag()
 - **Pro system:** localStorage-based unlock after Stripe payment. Access code fallback on pro.html.
 - **35 comparison pages** — all providers covered, interactive calculators, FAQPage schema
-- **55 interactive tools** — calculators, optimizer, planner, pipeline, rate limit, budget showdown, chatbot cost, model switch, AI Stack Builder, model advisor, fine-tuning calculator, Claude API cost calculator, cost projection, Gemini API cost calculator, cheapest AI API for coding, xAI Grok cost calculator, DeepSeek API cost calculator, Mistral API cost calculator, Meta Llama API cost calculator, Open Source LLM cost calculator, AI API Pricing Comparison 2026, Cost Leak Detector, Chrome Extension, AI Feature Cost Estimator, AI Project Budget Planner, AI API TCO Calculator, MCP Server Cost Calculator, Monthly Spend Estimator, Cohere API cost calculator, Moonshot API cost calculator, Together.ai API cost calculator, API Cost Report Card, SaaS AI Cost Calculator, AI ROI Calculator
+- **56 interactive tools** — calculators, optimizer, planner, pipeline, rate limit, budget showdown, chatbot cost, model switch, AI Stack Builder, model advisor, fine-tuning calculator, Claude API cost calculator, cost projection, Gemini API cost calculator, cheapest AI API for coding, xAI Grok cost calculator, DeepSeek API cost calculator, Mistral API cost calculator, Meta Llama API cost calculator, Open Source LLM cost calculator, AI API Pricing Comparison 2026, Cost Leak Detector, Chrome Extension, AI Feature Cost Estimator, AI Project Budget Planner, AI API TCO Calculator, MCP Server Cost Calculator, Monthly Spend Estimator, Cohere API cost calculator, Moonshot API cost calculator, Together.ai API cost calculator, API Cost Report Card, SaaS AI Cost Calculator, AI ROI Calculator, Embedding API Cost Calculator
 - **11 API endpoints** — pricing data, cost calculator (single/multi-model), cheapest model finder, pricing badge (SVG), compare models, recommend models, subscribe, unsubscribe, newsletter, check-price-changes, admin
 - **2 embeddable widgets** — pricing table/badge/compare (widget.js) + report card (embed-report.html)
 - **SEO: 226 blog posts with FAQPage schema** for rich snippets
@@ -23,6 +23,15 @@
 3. **GA4 traffic analysis** — Review page views, top referrers, calculator usage after 48+ hours of data.
 
 ---
+
+## Session 395 (May 31)
+**Embedding API Cost Calculator + blog post (365 pages, 227 posts, 56 tools, 360 sitemap URLs):**
+- Created embedding-cost-calculator.html — interactive tool for RAG developers to estimate embedding costs
+- Features: 6 embedding models (OpenAI small/large/ada-002, Cohere v3/multilingual, Google v4), RAG pipeline cost estimator, indexing + query cost breakdown, all models ranked by cost, shareable URLs, copy-to-clipboard, social sharing (X/LinkedIn)
+- Created blog-embedding-cost-calculator.html — "Embedding API Cost Calculator: Estimate RAG Pipeline Costs"
+- Blog covers: embedding model pricing table, real-world cost examples, embedding vs generation cost breakdown, 5 cost reduction strategies, when to upgrade models
+- FAQPage schema (5 questions), social sharing (X/LinkedIn), cross-linked from embedding-pricing, rag-cost, calculator, token-estimator
+- Added to tools.html grid (55→56 tools), sitemap (358→360 URLs), RSS (281→282 items), blog.html index, index.html What's New section
 
 ## Session 394 (May 31)
 **AI API Pricing July 2026 blog post (363 pages, 226 posts, 55 tools, 358 sitemap URLs):**
