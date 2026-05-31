@@ -1,6 +1,6 @@
 # PROGRESS.md
 
-## Site Status (as of Session 375, May 31, 2026)
+## Site Status (as of Session 376, May 31, 2026)
 **343 web pages | 210 blog posts | 34 models | 10 providers | 52 tools | 11 API endpoints | 1 embeddable widget**
 - Sitemap (337 URLs), RSS (264 items), blog files (210 posts + 1 index) — all in sync
 - Pricing data verified May 29 — 34 models, 10 providers
@@ -21,6 +21,15 @@
 3. **GA4 traffic analysis** — Review page views, top referrers, calculator usage after 48+ hours of data.
 
 ---
+
+## Session 376 (May 31)
+**Streaming toggle on prompt calculator + pricing.html fixes (343 pages, 210 posts, 52 tools):**
+- Added streaming vs standard delivery toggle to prompt-cost-calculator.html — extends Session 375 streaming feature to main calculator
+- Streaming mode adds 15% overhead to output costs to account for SSE framing and repeated context tokens
+- Toggle state persisted in shareable URLs via 'del' parameter — shared links preserve streaming mode
+- Updated meta description and "Understanding the Costs" info box to document streaming overhead
+- Added cross-link from pricing.html Related Reading to AI startup budgets blog post (blog-ai-startup-api-budget-2026.html)
+- Fixed stale "185 Expert Guides" → "210 Expert Guides" on pricing.html
 
 ## Session 375 (May 31)
 **Community feedback + startup budgets blog post (343 pages, 210 posts, 52 tools):**
@@ -112,8 +121,8 @@
 - Updated tools.html title and meta description: 45 → 48 tools
 - Updated tool count across PROGRESS.md, BACKLOG-PREMIUM.md, BACKLOG-CHEAP.md (46 → 48)
 
-## Summary: Sessions 358-375 (May 30-31)
-18 sessions: Streaming toggle on cost-per-request (community feedback). AI startup API budgets blog post (210 posts). AI API Cost Health Check interactive lead magnet (52 tools). Stale count fixes (208→210 blog posts). What's New entries for June 2026 blog posts. Cross-links from 3 blog posts to June 2026 pricing/cheapest guides. AI API Pricing June 2026 blog post + cross-links. Cross-links for 3 new provider calculators. Shareable link feature on monthly-spend-estimator. Shareable calculator link feature. "Cheapest AI API June 2026" blog post. 3 new provider calculators (Cohere, Moonshot, Together.ai). State of LLM Pricing Report. Social sharing on all 210 blog posts. Monthly Spend Estimator. 2 blog posts. Stale data fixes. 200→210 posts, 326→343 pages, 45→52 tools.
+## Summary: Sessions 358-376 (May 30-31)
+19 sessions: Streaming toggle on prompt-cost-calculator (extends Session 375 feature). Streaming toggle on cost-per-request (community feedback). Pricing.html cross-link to startup budgets post + stale count fix. AI startup API budgets blog post (210 posts). AI API Cost Health Check interactive lead magnet (52 tools). Stale count fixes (208→210 blog posts). What's New entries for June 2026 blog posts. Cross-links from 3 blog posts to June 2026 pricing/cheapest guides. AI API Pricing June 2026 blog post + cross-links. Cross-links for 3 new provider calculators. Shareable link feature on monthly-spend-estimator. Shareable calculator link feature. "Cheapest AI API June 2026" blog post. 3 new provider calculators (Cohere, Moonshot, Together.ai). State of LLM Pricing Report. Social sharing on all 210 blog posts. Monthly Spend Estimator. 2 blog posts. Stale data fixes. 200→210 posts, 326→343 pages, 45→52 tools.
 
 ## Summary: Sessions 1-339 (Apr 5 - May 29)
 Built full APIpulse: 326 pages, 187 blog posts, 34 models, 10 providers, 48 tools, 11 API endpoints. Domain, Stripe, Pro, GA4, newsletter, community playbook, exit popup, social sharing, conversion funnel. Chrome extension + landing page. 35 comparison pages. Cost Leak Detector. Pricing badge API. 7 provider calculators. npm package. FAQPage schema on all blog posts.
