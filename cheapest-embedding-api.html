@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cheapest AI Embedding API — Find the Best Value Vector Embedding Model | APIpulse</title>
+    <meta name="description" content="Find the cheapest AI embedding API. Compare OpenAI, Cohere, and Google embedding models ranked by cost. Interactive calculator, RAG presets, and best-value recommendations.">
+    <meta name="keywords" content="cheapest embedding API, cheap vector embedding, embedding model cost, OpenAI embedding cheapest, embedding pricing comparison">
+    <meta property="og:title" content="Cheapest AI Embedding API — Find the Best Value Vector Embedding Model | APIpulse">
+    <meta property="og:description" content="Compare embedding APIs ranked by cost. Find the cheapest model for RAG, semantic search, and document indexing.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://getapipulse.com/og-image.png">
+    <meta property="og:url" content="https://getapipulse.com/cheapest-embedding-api.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Cheapest AI Embedding API — Find the Best Value Vector Embedding Model">
+    <meta name="twitter:image" content="https://getapipulse.com/og-image.png">
+    <meta name="twitter:description" content="Compare embedding APIs ranked by cost. Find the cheapest model for RAG, semantic search, and document indexing.">
+    <link rel="canonical" href="https://getapipulse.com/cheapest-embedding-api.html">
+    <link rel="alternate" type="application/rss+xml" title="APIpulse Blog" href="https://getapipulse.com/rss.xml">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="styles.css">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0CEP7S9Y3J"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-0CEP7S9Y3J');
+    </script>
+    <script src="analytics.js" defer></script>
+    <script src="dynamic-date.js" defer></script>
+    <script src="shared.js" defer></script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "APIpulse — Cheapest AI Embedding API Finder",
+        "url": "https://getapipulse.com/cheapest-embedding-api.html",
+        "description": "Find the cheapest AI embedding API. Compare OpenAI, Cohere, and Google embedding models ranked by cost.",
+        "applicationCategory": "DeveloperApplication",
+        "operatingSystem": "Web",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "What is the cheapest embedding API?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "OpenAI text-embedding-3-small is the cheapest embedding API at $0.02 per 1M tokens. For 1 million documents at 500 tokens each, it costs just $10 to index. Google text-embedding-004 offers a free tier for low-volume use."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How much does embedding cost per document?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "At 500 tokens per document: OpenAI small ($0.02/1M): $0.00001/doc, OpenAI large ($0.13/1M): $0.000065/doc, Cohere v3 ($0.10/1M): $0.00005/doc, Google v4: Free for low volume. That's $10, $65, $50, and ~$0.50 respectively for 1M documents."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Is OpenAI embedding cheaper than Cohere?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes, OpenAI text-embedding-3-small ($0.02/1M) is 80% cheaper than Cohere embed-v3 ($0.10/1M). However, Cohere supports 100+ languages natively, while OpenAI small is primarily English-optimized. For multilingual needs, Cohere may be better value despite higher per-token cost."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How do I reduce embedding costs?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "5 strategies: 1) Use text-embedding-3-small ($0.02/1M) — 85% cheaper than large. 2) Reduce dimensions to 1024d (67% storage savings). 3) Optimize chunk size to 256-512 tokens. 4) Batch API calls (2048 inputs per request). 5) Cache embeddings to avoid re-embedding."
+                }
+            }
+        ]
+    }
+    </script>
+    <style>
+        .hero { padding: 120px 24px 40px; text-align: center; max-width: 750px; margin: 0 auto; }
+        .hero h1 { font-size: clamp(28px, 4vw, 42px); font-weight: 800; margin-bottom: 12px; }
+        .hero p { color: var(--text-secondary); font-size: 17px; line-height: 1.6; }
+
+        .calc-section { padding: 0 24px 60px; }
+        .section-header { text-align: center; margin-bottom: 32px; }
+        .section-header h2 { font-size: 24px; font-weight: 700; margin-bottom: 8px; }
+        .section-header p { color: var(--text-secondary); font-size: 15px; }
+
+        .calculator {
+            background: var(--bg-card); border: 1px solid var(--border);
+            border-radius: 16px; padding: 32px; max-width: 900px; margin: 0 auto;
+        }
+        .presets {
+            display: flex; gap: 8px; margin-bottom: 24px; flex-wrap: wrap; align-items: center;
+        }
+        .preset-btn {
+            background: var(--bg-secondary); border: 1px solid var(--border);
+            color: var(--text-secondary); padding: 8px 16px; border-radius: 8px;
+            cursor: pointer; font-size: 13px; transition: all 0.2s; font-weight: 500;
+        }
+        .preset-btn:hover { border-color: var(--accent); color: var(--accent); }
+        .preset-btn.active-preset { background: var(--accent); color: white; border-color: var(--accent); }
+        .calc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
+        .calc-inputs { display: flex; flex-direction: column; gap: 16px; }
+        .input-group { display: flex; flex-direction: column; gap: 6px; }
+        .input-group label { font-size: 13px; font-weight: 600; color: var(--text-secondary); }
+        .input-group select, .input-group input {
+            padding: 12px 16px; border-radius: 8px; border: 1px solid var(--border);
+            background: var(--bg-secondary); color: var(--text-primary); font-size: 15px;
+            font-family: inherit;
+        }
+        .input-group select:focus, .input-group input:focus {
+            outline: 2px solid var(--accent); outline-offset: 2px; border-color: var(--accent);
+        }
+        .hint { font-size: 12px; color: var(--text-muted); margin-top: 2px; }
+        .calc-results {
+            background: var(--bg-secondary); border: 1px solid var(--border);
+            border-radius: 12px; padding: 24px;
+        }
+        .result-item {
+            display: flex; justify-content: space-between; padding: 10px 0;
+            border-bottom: 1px solid var(--border); font-size: 14px;
+        }
+        .result-item:last-child { border-bottom: none; }
+        .result-label { color: var(--text-secondary); }
+        .result-value { color: var(--text-primary); font-weight: 600; font-variant-numeric: tabular-nums; }
+        .result-total {
+            display: flex; justify-content: space-between; padding: 14px 0 10px;
+            border-top: 2px solid var(--accent); margin-top: 8px; font-size: 18px;
+        }
+        .result-total .result-label { color: var(--text-primary); font-weight: 700; }
+        .result-total .result-value { color: var(--accent); font-weight: 800; }
+        .share-row { display: flex; gap: 8px; margin-top: 16px; }
+        .share-btn {
+            flex: 1; display: flex; align-items: center; justify-content: center; gap: 6px;
+            padding: 10px 12px; border-radius: 8px; border: 1px solid var(--border);
+            background: var(--bg-secondary); color: var(--text-primary);
+            font-size: 13px; font-weight: 600; text-decoration: none; transition: all 0.2s; cursor: pointer;
+        }
+        .share-btn:hover { border-color: var(--accent); }
+
+        .ranking-section { max-width: 1100px; margin: 0 auto; padding: 0 24px 60px; }
+        .ranking-table-wrap { overflow-x: auto; }
+        .ranking-table { width: 100%; border-collapse: collapse; font-size: 14px; }
+        .ranking-table th {
+            text-align: left; padding: 12px 16px; font-size: 11px; font-weight: 700;
+            color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px;
+            border-bottom: 2px solid var(--border); white-space: nowrap; position: sticky; top: 64px;
+            background: var(--bg-primary); z-index: 2;
+        }
+        .ranking-table td {
+            padding: 12px 16px; border-bottom: 1px solid rgba(42,42,62,0.5);
+            font-variant-numeric: tabular-nums;
+        }
+        .ranking-table tr:hover td { background: rgba(99,102,241,0.03); }
+        .rank-cell { font-weight: 700; color: var(--text-muted); width: 50px; }
+        .model-name-cell { font-weight: 600; }
+        .cost-cell { font-weight: 600; }
+        .best-value {
+            display: inline-block; background: rgba(34,197,94,0.15); color: var(--green);
+            font-size: 10px; font-weight: 700; padding: 2px 8px; border-radius: 4px;
+            margin-left: 8px; text-transform: uppercase; letter-spacing: 0.5px;
+        }
+        .tier-badge {
+            display: inline-block; padding: 2px 8px; border-radius: 4px;
+            font-size: 11px; font-weight: 600;
+        }
+        .tier-free { background: rgba(34,197,94,0.15); color: var(--green); }
+        .tier-budget { background: rgba(245,158,11,0.15); color: var(--orange); }
+        .tier-mid { background: rgba(99,102,241,0.15); color: var(--accent); }
+
+        .info-section { max-width: 700px; margin: 0 auto; padding: 0 24px 60px; }
+        .info-section h2 { font-size: 22px; font-weight: 700; margin-bottom: 16px; }
+        .info-section p { color: var(--text-secondary); line-height: 1.7; margin-bottom: 16px; }
+        .info-section ul { color: var(--text-secondary); padding-left: 24px; margin-bottom: 16px; }
+        .info-section li { margin-bottom: 8px; line-height: 1.6; }
+        .info-section strong { color: var(--text-primary); }
+        .cta-inline {
+            background: var(--bg-secondary); border: 1px solid var(--accent);
+            border-radius: 12px; padding: 24px; margin: 32px 0; text-align: center;
+        }
+        .cta-inline p { margin-bottom: 12px; color: var(--text-secondary); }
+
+        @media (max-width: 768px) {
+            .hero { padding: 100px 20px 30px; }
+            .hero h1 { font-size: 26px; }
+            .calculator { padding: 20px; }
+            .calc-grid { grid-template-columns: 1fr; gap: 24px; }
+            .presets { justify-content: center; }
+        }
+    </style>
+    <meta name="theme-color" content="#6366f1">
+</head>
+<body>
+    <nav>
+        <div class="nav-inner">
+            <a href="index.html" class="logo">API<span>pulse</span></a>
+            <button class="hamburger" onclick="toggleMobileNav()" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+            <div class="nav-links">
+                <a href="calculator.html">Calculator</a>
+                <a href="compare.html">Compare</a>
+                <a href="cost-explorer.html">Explorer</a>
+                <a href="agent-cost-calculator.html">Agents</a>
+                <a href="cost-scenarios.html">Scenarios</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="use-cases.html">Use Cases</a>
+                <a href="about.html">About</a>
+                <a href="blog.html">Blog</a>
+                <a href="tools.html">Tools</a>
+                <a href="pricing-index.html">Pricing Index</a>
+                <a href="model-matrix.html">Model Matrix</a>
+                <a href="api-docs.html" style="color:var(--accent);">API</a>
+                <a href="pricing.html" class="nav-cta">Get Pro — $29</a>
+                <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+    <div class="hero">
+        <h1>Cheapest AI Embedding API</h1>
+        <p>Find the cheapest embedding model for your use case. 6 models ranked by cost with an interactive calculator. From $0.02/1M tokens — or free.</p>
+    </div>
+
+    <!-- Calculator -->
+    <section class="calc-section">
+        <div class="calculator" role="form" aria-label="Embedding cost calculator">
+            <div class="presets">
+                <span style="font-size:13px;color:var(--text-muted);align-self:center;">Use case:</span>
+                <button class="preset-btn" onclick="applyPreset('rag')">RAG search</button>
+                <button class="preset-btn" onclick="applyPreset('semantic')">Semantic search</button>
+                <button class="preset-btn" onclick="applyPreset('classification')">Classification</button>
+                <button class="preset-btn" onclick="applyPreset('clustering')">Clustering</button>
+            </div>
+            <div class="presets">
+                <span style="font-size:13px;color:var(--text-muted);align-self:center;">Scale:</span>
+                <button class="preset-btn" onclick="applyPreset('small')">Small (1K docs)</button>
+                <button class="preset-btn" onclick="applyPreset('medium')">Medium (100K docs)</button>
+                <button class="preset-btn" onclick="applyPreset('large')">Large (10M docs)</button>
+            </div>
+            <div class="calc-grid">
+                <div class="calc-inputs">
+                    <div class="input-group">
+                        <label for="tokens-per-doc">Tokens per document</label>
+                        <input type="number" id="tokens-per-doc" value="500" min="1" step="50" onchange="calculate()" oninput="calculate()">
+                        <span class="hint">~375 words per 500 tokens</span>
+                    </div>
+                    <div class="input-group">
+                        <label for="num-documents">Number of documents</label>
+                        <input type="number" id="num-documents" value="10000" min="1" step="1000" onchange="calculate()" oninput="calculate()">
+                    </div>
+                    <div class="input-group">
+                        <label for="queries-day">Queries per day</label>
+                        <input type="number" id="queries-day" value="500" min="0" step="100" onchange="calculate()" oninput="calculate()">
+                    </div>
+                    <div class="input-group">
+                        <label for="reembed-freq">Re-embedding frequency</label>
+                        <select id="reembed-freq" onchange="calculate()">
+                            <option value="0">Never (static docs)</option>
+                            <option value="1">Monthly</option>
+                            <option value="12" selected>Yearly</option>
+                            <option value="52">Weekly</option>
+                        </select>
+                        <span class="hint">How often documents change</span>
+                    </div>
+                </div>
+                <div class="calc-results" role="region" aria-label="Cost results" aria-live="polite">
+                    <h3 style="margin-bottom: 16px; font-size: 16px;">Cheapest Embedding Models</h3>
+                    <div id="ranking-results"></div>
+                    <div class="share-row">
+                        <button class="share-btn" onclick="copyResults()"><span id="copy-btn-text">Copy Results</span></button>
+                        <a id="share-x" href="#" target="_blank" rel="noopener" class="share-btn">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                            X
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Full Ranking Table -->
+    <section class="ranking-section">
+        <div class="section-header">
+            <h2>All Embedding Models Ranked by Cost</h2>
+            <p>Sorted cheapest first. Adjust inputs above to see your personalized ranking.</p>
+        </div>
+        <div class="ranking-table-wrap">
+            <table class="ranking-table">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Model</th>
+                        <th>Provider</th>
+                        <th>Price/1M</th>
+                        <th>Dimensions</th>
+                        <th>Languages</th>
+                        <th>Indexing Cost</th>
+                        <th>Monthly Query Cost</th>
+                        <th>Total Monthly</th>
+                    </tr>
+                </thead>
+                <tbody id="ranking-tbody"></tbody>
+            </table>
+        </div>
+    </section>
+
+    <div class="info-section">
+        <h2>How to Choose the Cheapest Embedding API</h2>
+        <p>The cheapest embedding API depends on your language requirements, quality needs, and scale. Here's the decision framework:</p>
+
+        <h3>For English-Only RAG</h3>
+        <p><strong>OpenAI text-embedding-3-small ($0.02/1M)</strong> is the clear winner. It's 85% cheaper than the large model with 90% of the quality. At 1,536 dimensions, it provides excellent retrieval accuracy for most English use cases. Start here and upgrade only if retrieval quality is insufficient.</p>
+
+        <h3>For Multilingual RAG</h3>
+        <p><strong>Cohere embed-v3 ($0.10/1M)</strong> supports 100+ languages natively with 1,024 dimensions. While 5x more expensive than OpenAI small, it's the only model that delivers consistent quality across languages. For global applications, the multilingual premium is worth it.</p>
+
+        <h3>For Prototyping</h3>
+        <p><strong>Google text-embedding-004 (Free tier)</strong> is unbeatable for prototyping and low-volume use. The free tier handles thousands of documents. Graduate to OpenAI small when you need production reliability.</p>
+
+        <h3>For High-Quality Search</h3>
+        <p><strong>OpenAI text-embedding-3-large ($0.13/1M)</strong> with 3,072 dimensions delivers the best retrieval quality. Worth the premium for legal, medical, or financial applications where accuracy matters more than cost.</p>
+
+        <h2>Embedding Cost Optimization Checklist</h2>
+        <ul>
+            <li><strong>Start with text-embedding-3-small</strong> — cheapest and good enough for 90% of use cases</li>
+            <li><strong>Reduce dimensions</strong> — use 1024d instead of 3072d for 67% storage savings</li>
+            <li><strong>Optimize chunk size</strong> — 256-512 tokens balances quality and cost</li>
+            <li><strong>Batch API calls</strong> — 2,048 inputs per request, 10-20x faster</li>
+            <li><strong>Cache embeddings</strong> — don't re-embed unchanged documents</li>
+            <li><strong>Monitor usage</strong> — embedding is 5-15% of RAG costs, but scales with document count</li>
+        </ul>
+
+        <div class="cta-inline">
+            <p><strong>Need to estimate your full RAG pipeline cost?</strong></p>
+            <a href="embedding-cost-calculator.html" class="btn-primary" style="display:inline-block;">Try Embedding Cost Calculator →</a>
+        </div>
+
+        <h2>Related Tools</h2>
+        <ul>
+            <li><a href="embedding-cost-calculator.html">Embedding API Cost Calculator</a> — Compare all embedding models with RAG pipeline costs</li>
+            <li><a href="rag-cost.html">RAG Cost Calculator</a> — Full RAG pipeline cost estimation (embedding + generation)</li>
+            <li><a href="cheapest-ai-api.html">Cheapest AI API Finder</a> — Find cheapest generation models</li>
+            <li><a href="cheapest-ai-api-for-coding.html">Cheapest AI API for Coding</a> — Cheapest code generation models</li>
+            <li><a href="token-estimator.html">Token Estimator</a> — Count tokens in your text</li>
+        </ul>
+    </div>
+
+    <button class="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">↑</button>
+    </main>
+
+    <footer>
+        <p>Pricing data last verified: <span class="verified-date"></span></p>
+        <p>&copy; 2026 APIpulse. <a href="index.html">Home</a> &middot; <a href="use-cases.html">Use Cases</a> &middot; <a href="about.html">About</a> &middot; <a href="blog.html">Blog</a>
+<a href="pricing-index.html">Pricing Index</a> &middot; <a href="model-matrix.html">Model Matrix</a> &middot; <a href="cost-scenarios.html">Scenarios</a> &middot; <a href="price-alerts.html">Price Alerts</a> &middot; <a href="pricing-changelog.html">Changelog</a> &middot; <a href="openai.html">OpenAI</a> &middot; <a href="anthropic.html">Anthropic</a> &middot; <a href="google.html">Google</a> &middot; <a href="mistral.html">Mistral</a> &middot; <a href="cohere.html">Cohere</a> &middot; <a href="deepseek.html">DeepSeek</a> &middot; <a href="xai.html">xAI</a> &middot; <a href="moonshot.html">Moonshot</a> &middot; <a href="together.html">Together.ai</a> &middot; <a href="ai21.html">AI21</a> &middot; <a href="pricing.html">Pricing</a> &middot; <a href="compare-plans.html">Free vs Pro</a> &middot; <a href="embed.html">Embed Widget</a> &middot; <a href="cheat-sheet.html">Cheat Sheet</a> &middot; <a href="model-switch.html">Model Switch</a> &middot; <a href="api-docs.html">API</a> &middot; <a href="https://x.com/getapipulse" target="_blank" rel="noopener">Twitter</a> &middot; <a href="unsubscribe.html">Unsubscribe</a></p>
+    </footer>
+
+    <script>
+        var EMBEDDING_MODELS = [
+            { id: 'openai-embed-3-small', name: 'text-embedding-3-small', provider: 'OpenAI', pricePer1M: 0.02, dimensions: 1536, maxTokens: 8191, languages: 'English+', tier: 'Budget', bestFor: 'English RAG' },
+            { id: 'openai-embed-3-large', name: 'text-embedding-3-large', provider: 'OpenAI', pricePer1M: 0.13, dimensions: 3072, maxTokens: 8191, languages: 'English+', tier: 'Mid', bestFor: 'High-quality search' },
+            { id: 'openai-embed-ada', name: 'text-embedding-ada-002', provider: 'OpenAI', pricePer1M: 0.10, dimensions: 1536, maxTokens: 8191, languages: 'English+', tier: 'Mid', bestFor: 'Legacy compatibility' },
+            { id: 'cohere-embed-v3', name: 'embed-v3', provider: 'Cohere', pricePer1M: 0.10, dimensions: 1024, maxTokens: 512, languages: '100+', tier: 'Mid', bestFor: 'Multilingual' },
+            { id: 'cohere-embed-multilingual', name: 'embed-multilingual-v3', provider: 'Cohere', pricePer1M: 0.10, dimensions: 1024, maxTokens: 512, languages: '100+', tier: 'Mid', bestFor: 'Multilingual' },
+            { id: 'google-embedding-004', name: 'text-embedding-004', provider: 'Google', pricePer1M: 0.00, dimensions: 768, maxTokens: 2048, languages: 'Multilingual', tier: 'Free', bestFor: 'Prototyping' }
+        ];
+
+        function applyPreset(type) {
+            document.querySelectorAll('.presets .preset-btn').forEach(function(b) { b.classList.remove('active-preset'); });
+            event.target.classList.add('active-preset');
+            var presets = {
+                rag:            { tokens: 500 },
+                semantic:       { tokens: 100 },
+                classification: { tokens: 50 },
+                clustering:     { tokens: 200 },
+                small:          { docs: 1000 },
+                medium:         { docs: 100000 },
+                large:          { docs: 10000000 }
+            };
+            var p = presets[type];
+            if (p.tokens) document.getElementById('tokens-per-doc').value = p.tokens;
+            if (p.docs) document.getElementById('num-documents').value = p.docs;
+            calculate();
+        }
+
+        function calculate() {
+            var tokensPerDoc = parseInt(document.getElementById('tokens-per-doc').value) || 0;
+            var numDocs = parseInt(document.getElementById('num-documents').value) || 0;
+            var queriesDay = parseInt(document.getElementById('queries-day').value) || 0;
+            var reembedFreq = parseInt(document.getElementById('reembed-freq').value) || 0;
+
+            var totalTokens = tokensPerDoc * numDocs;
+            var queryTokens = 100;
+
+            // Calculate costs for each model
+            var results = EMBEDDING_MODELS.map(function(m) {
+                var indexingCost = (totalTokens / 1000000) * m.pricePer1M;
+                var reembedCost = (indexingCost * reembedFreq) / 12;
+                var queryCostPerReq = (queryTokens / 1000000) * m.pricePer1M;
+                var monthlyQueryCost = queryCostPerReq * queriesDay * 30;
+                var totalMonthly = reembedCost + monthlyQueryCost;
+                return {
+                    model: m,
+                    indexingCost: indexingCost,
+                    reembedCost: reembedCost,
+                    monthlyQueryCost: monthlyQueryCost,
+                    totalMonthly: totalMonthly
+                };
+            }).sort(function(a, b) { return a.totalMonthly - b.totalMonthly; });
+
+            // Top 3 results in sidebar
+            var html = '';
+            results.slice(0, 3).forEach(function(r, i) {
+                var badge = i === 0 ? '<span class="best-value">Cheapest</span>' : '';
+                var tierClass = r.model.tier === 'Free' ? 'tier-free' : r.model.tier === 'Mid' ? 'tier-mid' : 'tier-budget';
+                var costStr = r.model.pricePer1M === 0 ? 'Free' : '$' + r.totalMonthly.toFixed(4);
+                html += '<div class="result-item">' +
+                    '<span class="result-label"><span class="tier-badge ' + tierClass + '">' + r.model.tier + '</span> ' + r.model.name + badge + '</span>' +
+                    '<span class="result-value">' + costStr + '/mo</span>' +
+                '</div>';
+            });
+            html += '<div class="result-item" style="border-top:2px solid var(--border);margin-top:8px;padding-top:12px;">' +
+                '<span class="result-label" style="color:var(--text-muted);font-size:12px;">' + numDocs.toLocaleString() + ' docs, ' + queriesDay + ' queries/day</span>' +
+                '<span class="result-value" style="font-size:12px;"></span></div>';
+            document.getElementById('ranking-results').innerHTML = html;
+
+            // Full ranking table
+            var tbody = document.getElementById('ranking-tbody');
+            var tableHtml = '';
+            results.forEach(function(r, i) {
+                var tierClass = r.model.tier === 'Free' ? 'tier-free' : r.model.tier === 'Mid' ? 'tier-mid' : 'tier-budget';
+                var bestBadge = i === 0 ? '<span class="best-value">Cheapest</span>' : '';
+                var indexStr = r.model.pricePer1M === 0 ? 'Free' : '$' + r.indexingCost.toFixed(2);
+                var queryStr = r.model.pricePer1M === 0 ? 'Free' : '$' + r.monthlyQueryCost.toFixed(4);
+                var totalStr = r.model.pricePer1M === 0 ? 'Free' : '$' + r.totalMonthly.toFixed(4);
+                tableHtml += '<tr>' +
+                    '<td class="rank-cell">' + (i + 1) + '</td>' +
+                    '<td class="model-name-cell">' + r.model.name + bestBadge + '</td>' +
+                    '<td>' + r.model.provider + '</td>' +
+                    '<td class="cost-cell">' + (r.model.pricePer1M === 0 ? 'Free' : '$' + r.model.pricePer1M.toFixed(2)) + '</td>' +
+                    '<td>' + r.model.dimensions + 'd</td>' +
+                    '<td>' + r.model.languages + '</td>' +
+                    '<td class="cost-cell">' + indexStr + '</td>' +
+                    '<td class="cost-cell">' + queryStr + '</td>' +
+                    '<td class="cost-cell" style="color:var(--accent);font-weight:700;">' + totalStr + '</td>' +
+                '</tr>';
+            });
+            tbody.innerHTML = tableHtml;
+
+            // Share
+            var cheapest = results[0];
+            var shareText = 'Cheapest embedding API: ' + cheapest.model.name + ' at $' + cheapest.model.pricePer1M.toFixed(2) + '/1M tokens. Total: $' + cheapest.totalMonthly.toFixed(2) + '/mo. via @getapipulse';
+            document.getElementById('share-x').href = 'https://twitter.com/intent/tweet?text=' + encodeURIComponent(shareText) + '&url=' + encodeURIComponent('https://getapipulse.com/cheapest-embedding-api.html');
+        }
+
+        function copyResults() {
+            var text = 'Cheapest Embedding API Ranking — APIpulse\n' +
+                document.getElementById('ranking-results').innerText + '\n' +
+                'Full ranking: https://getapipulse.com/cheapest-embedding-api.html';
+            navigator.clipboard.writeText(text).then(function() {
+                document.getElementById('copy-btn-text').textContent = 'Copied!';
+                setTimeout(function() { document.getElementById('copy-btn-text').textContent = 'Copy Results'; }, 2000);
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', function() { calculate(); });
+    </script>
+</body>
+</html>
