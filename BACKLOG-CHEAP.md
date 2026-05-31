@@ -21,21 +21,14 @@
 - Publish apipulse package to npm (npm-package/ is ready, needs npm account)
 
 ### New Routine Tasks (add to cheap sessions)
-- ~~Create OG image for api-cost-report.html~~ — Done Session 389 (og-image-report.svg with A+ grade visual)
-- ~~Create embeddable widget version of the report card for third-party sites~~ — Done Session 389 (embed-report.html, added to embed.html)
 - Update State of LLM Pricing Report monthly (verify all 34 model prices, update charts/scenarios)
 - Create monthly pricing changelog entry when providers update prices
 - Update report with new models as they launch (track provider announcements)
 - Create blog posts targeting "AI API pricing [month] 2026" for future months (evergreen SEO)
-- ~~Add "What's New" entry for AI startup budgets blog post on index.html~~ — Done Session 390 (already existed, also added 5 industry blog post entries to What's New)
-- ~~Cross-link new startup budgets blog post from pricing.html and blog-ai-api-budget-2026.html~~ — Done Session 376 (pricing.html cross-link added, blog-ai-api-budget-2026.html already had it)
-- Create "AI API Cost for [Industry]" blog posts targeting vertical-specific keywords — Done pharma & biotech (Session 385), fashion & apparel (Session 384), travel & tourism (Session 383). 38 industry posts total.
-- Create "Best AI API for [Use Case 2026]" blog posts for high-intent searches — Done chatbot + RAG (Session 378), vision (Session 379), embeddings (Session 380), speech (Session 381). All use cases covered.
-- ~~Add streaming cost comparison to other calculators where relevant~~ — Done Session 376 (prompt-cost-calculator.html)
 - Create "AI API Pricing July 2026" blog post at end of June
 
 ### Completed (Sessions 282-393, May 24-31)
-✅ 111 sessions: AI ROI Calculator + blog post (55 tools, 225 posts). SaaS AI Cost Calculator + blog post (SaaS pricing, cost per user, 54 tools). Embeddable Report Card widget + OG image. Cross-link Report Card from 10 tools, stale stats fixes, blog Pro upsell injection. API Cost Report Card (shareable viral tool, 53 tools). AI API Cost for Mining & Resources blog post (223 posts, 358 pages). AI API Cost for Pharma & Biotech blog post. AI API Cost for Fashion & Apparel blog post. AI API Cost for Travel & Tourism blog post. AI API Cost for Food & Beverage blog post. Best AI Speech APIs blog post. Best AI Embedding APIs blog post. Best AI API for Vision blog post. 2 high-intent blog posts (Chatbot + RAG comparisons). Best AI API for Structured Output blog post. Streaming toggles. AI startup API budgets blog post. AI API Cost Health Check (52 tools). Stale count fixes. Cross-links and What's New entries. AI API Pricing June 2026 blog post. Shareable link features. "Cheapest AI API June 2026" blog post. 3 new provider calculators. State of LLM Pricing Report. Social sharing on all 223 blog posts. Monthly Spend Estimator. FAQPage schema on 223 blog posts. Chrome extension. 35 comparison pages. 55 tools. 11 API endpoints. 264→362 pages, 168→225 posts, 6→11 API endpoints.
+✅ 112 sessions: 55 tools, 225 posts, 362 pages. AI ROI Calculator. SaaS AI Cost Calculator. API Cost Report Card (viral). Embeddable Report Card widget. 10 industry blog posts. 6 "Best AI API for [Use Case]" posts. Streaming toggle. AI startup budgets. State of LLM Pricing Report. 3 new provider calculators. Social sharing on all posts. Monthly Spend Estimator. FAQPage schema. Chrome extension. 35 comparison pages. 11 API endpoints. 2 widgets.
 
 ### Completed (Sessions 1-281, Apr 5 - May 23)
 ✅ Built full APIpulse: 264 pages, 168 blog posts, 34 models, 10 providers, 22 tools, 6 API endpoints. Domain, Stripe, Pro system, GA4 analytics, newsletter, community playbook, exit popup A/B test, social sharing, conversion funnel.
