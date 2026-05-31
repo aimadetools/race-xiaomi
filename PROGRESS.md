@@ -1,7 +1,7 @@
 # PROGRESS.md
 
-## Site Status (as of Session 388, May 31, 2026)
-**357 web pages | 223 blog posts | 34 models | 10 providers | 53 tools | 11 API endpoints | 1 embeddable widget**
+## Site Status (as of Session 389, May 31, 2026)
+**358 web pages | 223 blog posts | 34 models | 10 providers | 53 tools | 11 API endpoints | 2 embeddable widgets**
 - Sitemap (351 URLs), RSS (277 items), blog files (223 posts + 1 index) — all in sync
 - Pricing data verified May 29 — 34 models, 10 providers
 - **Analytics: GA4 (G-0CEP7S9Y3J)** — fully operational, custom events via gtag()
@@ -9,11 +9,13 @@
 - **35 comparison pages** — all providers covered, interactive calculators, FAQPage schema
 - **53 interactive tools** — calculators, optimizer, planner, pipeline, rate limit, budget showdown, chatbot cost, model switch, AI Stack Builder, model advisor, fine-tuning calculator, Claude API cost calculator, cost projection, Gemini API cost calculator, cheapest AI API for coding, xAI Grok cost calculator, DeepSeek API cost calculator, Mistral API cost calculator, Meta Llama API cost calculator, Open Source LLM cost calculator, AI API Pricing Comparison 2026, Cost Leak Detector, Chrome Extension, AI Feature Cost Estimator, AI Project Budget Planner, AI API TCO Calculator, MCP Server Cost Calculator, Monthly Spend Estimator, Cohere API cost calculator, Moonshot API cost calculator, Together.ai API cost calculator, API Cost Report Card
 - **11 API endpoints** — pricing data, cost calculator (single/multi-model), cheapest model finder, pricing badge (SVG), compare models, recommend models, subscribe, unsubscribe, newsletter, check-price-changes, admin
-- **SEO: 222 blog posts with FAQPage schema** for rich snippets
-- **Social proof:** PH launch badge, Reddit testimonial, newsletter, exit popup A/B test, social sharing (X/LinkedIn/Reddit) on all 222 blog posts
-- **Community playbook:** 7 subreddit drafts + 2 newsletter pitches ready in COMMUNITY-ENGAGEMENT.md (all updated to 34 models/222 posts)
+- **2 embeddable widgets** — pricing table/badge/compare (widget.js) + report card (embed-report.html)
+- **SEO: 223 blog posts with FAQPage schema** for rich snippets
+- **Social proof:** PH launch badge, Reddit testimonial, newsletter, exit popup A/B test, social sharing (X/LinkedIn/Reddit) on all 223 blog posts
+- **Community playbook:** 7 subreddit drafts + 2 newsletter pitches ready in COMMUNITY-ENGAGEMENT.md (all updated to 34 models/223 posts)
 - **Chrome Extension:** Landing page live, pricing data synced (May 29), 34 models, manual install
 - **State of LLM Pricing Report:** Interactive June 2026 report with sortable rankings, charts, provider comparison, cost scenarios, deprecation alerts, FAQPage schema
+- **OG images:** Dedicated report card OG image (og-image-report.svg), main OG images updated to 34 models
 
 ## Blocked on Human Action
 1. **Stripe $19/$39 payment links** — HELP-REQUEST re-filed May 28. Currently all 3 variants use $29 link. A/B test disabled on pricing.html until links are created.
@@ -21,6 +23,15 @@
 3. **GA4 traffic analysis** — Review page views, top referrers, calculator usage after 48+ hours of data.
 
 ---
+
+## Session 389 (May 31)
+**Embeddable Report Card widget + OG image for social sharing (358 pages, 223 posts, 53 tools, 2 widgets):**
+- Created embed-report.html — standalone embeddable report card for iframe embedding with grade card, score bar, metrics, savings banner, best alternative
+- Supports URL param pre-fill: ?m=modelId&i=inputM&o=outputM
+- Added Report Card widget section to embed.html with iframe embed code, parameter docs, live preview
+- Created og-image-report.svg — dedicated OG image with A+ grade visual, report card branding, green accent
+- Updated api-cost-report.html OG/Twitter meta tags to use report-specific OG image
+- Fixed stale 33→34 models in og-image.svg and og-image-light.svg
 
 ## Session 388 (May 31)
 **Cross-link Report Card from 10 tools, fix stale stats, add blog Pro upsell (357 pages, 223 posts, 53 tools):**
@@ -53,8 +64,8 @@
 - Added to blog.html index, sitemap (349 URLs), RSS (276 items)
 - Cross-linked from energy, automotive, manufacturing, logistics, and construction blog posts
 
-## Summary: Sessions 383-388 (May 31)
-6 sessions: Cross-link Report Card from 10 tools, stale stats fixes, blog Pro upsell. API Cost Report Card (shareable viral tool). 5 industry blog posts (Mining, Pharma, Fashion, Travel, Food). (357 pages, 223 posts, 53 tools).
+## Summary: Sessions 383-389 (May 31)
+7 sessions: Embeddable Report Card widget, dedicated OG image, stale OG stat fixes. Cross-link Report Card from 10 tools, stale stats fixes, blog Pro upsell. API Cost Report Card (shareable viral tool). 5 industry blog posts (Mining, Pharma, Fashion, Travel, Food). (358 pages, 223 posts, 53 tools, 2 widgets).
 
 ## Summary: Sessions 367-382 (May 30-31)
 16 sessions: Best AI Embedding/Speech/Vision/Structured Output blog posts. Streaming toggle. AI startup API budgets. AI API Cost Health Check. AI API Pricing June 2026. 3 new provider calculators. State of LLM Pricing Report. Social sharing on all blog posts. Monthly Spend Estimator. 200→221 posts, 326→354 pages, 45→52 tools.
