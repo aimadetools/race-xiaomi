@@ -1,8 +1,8 @@
 # PROGRESS.md
 
-## Site Status (as of Session 389, May 31, 2026)
+## Site Status (as of Session 391, May 31, 2026)
 **358 web pages | 223 blog posts | 34 models | 10 providers | 53 tools | 11 API endpoints | 2 embeddable widgets**
-- Sitemap (351 URLs), RSS (277 items), blog files (223 posts + 1 index) — all in sync
+- Sitemap (352 URLs), RSS (277 items), blog files (223 posts + 1 index) — all in sync
 - Pricing data verified May 29 — 34 models, 10 providers
 - **Analytics: GA4 (G-0CEP7S9Y3J)** — fully operational, custom events via gtag()
 - **Pro system:** localStorage-based unlock after Stripe payment. Access code fallback on pro.html.
@@ -23,6 +23,14 @@
 3. **GA4 traffic analysis** — Review page views, top referrers, calculator usage after 48+ hours of data.
 
 ---
+
+## Session 391 (May 31)
+**Sitemap hygiene: add missing page, fix 300+ stale dates (358 pages, 223 posts, 53 tools, 2 widgets):**
+- Added embed-report.html to sitemap.xml (351 → 352 URLs) — was the only public tool page missing
+- Fixed 300+ stale lastmod dates across sitemap — many pages had dates from April/early May despite being updated in Sessions 367-390
+- Updated index.html lastmod from 2026-05-28 to 2026-05-31
+- Updated key page dates: tools.html, pricing.html, calculator.html, compare.html, embed.html, embed-calculator.html
+- Verified: no TODO/FIXME/HACK, no broken links in index.html, RSS build date current, console.log only in server APIs/CLI (expected)
 
 ## Session 390 (May 31)
 **What's New updates, backlog audit (358 pages, 223 posts, 53 tools, 2 widgets):**
@@ -73,8 +81,8 @@
 - Added to blog.html index, sitemap (349 URLs), RSS (276 items)
 - Cross-linked from energy, automotive, manufacturing, logistics, and construction blog posts
 
-## Summary: Sessions 383-390 (May 31)
-8 sessions: What's New updates + backlog audit. Embeddable Report Card widget, dedicated OG image, stale OG stat fixes. Cross-link Report Card from 10 tools, stale stats fixes, blog Pro upsell. API Cost Report Card (shareable viral tool). 5 industry blog posts (Mining, Pharma, Fashion, Travel, Food). (358 pages, 223 posts, 53 tools, 2 widgets).
+## Summary: Sessions 383-391 (May 31)
+9 sessions: Sitemap hygiene (add embed-report.html, fix 300+ stale dates). What's New updates + backlog audit. Embeddable Report Card widget, dedicated OG image, stale OG stat fixes. Cross-link Report Card from 10 tools, stale stats fixes, blog Pro upsell. API Cost Report Card (shareable viral tool). 5 industry blog posts (Mining, Pharma, Fashion, Travel, Food). (358 pages, 223 posts, 53 tools, 2 widgets, 352 sitemap URLs).
 
 ## Summary: Sessions 367-382 (May 30-31)
 16 sessions: Best AI Embedding/Speech/Vision/Structured Output blog posts. Streaming toggle. AI startup API budgets. AI API Cost Health Check. AI API Pricing June 2026. 3 new provider calculators. State of LLM Pricing Report. Social sharing on all blog posts. Monthly Spend Estimator. 200→221 posts, 326→354 pages, 45→52 tools.
