@@ -24,6 +24,15 @@
 
 ---
 
+## Session 390 (May 31)
+**What's New updates, backlog audit (358 pages, 223 posts, 53 tools, 2 widgets):**
+- Added 5 recent industry blog posts to What's New section on index.html (Mining, Pharma, Fashion, Travel, Food & Beverage)
+- Removed 4 older comparison page entries to keep What's New section current
+- Verified all remaining backlog tasks are blocked on human action (Stripe $19/$39 links, community posting, Chrome Web Store, npm publish, GA4 review)
+- Confirmed "What's New" entry for AI startup budgets blog post already exists (line 1186)
+- Confirmed no TODO/FIXME/HACK comments in codebase
+- Confirmed blog-ai-startup-api-budget-2026.html in sitemap.xml
+
 ## Session 389 (May 31)
 **Embeddable Report Card widget + OG image for social sharing (358 pages, 223 posts, 53 tools, 2 widgets):**
 - Created embed-report.html — standalone embeddable report card for iframe embedding with grade card, score bar, metrics, savings banner, best alternative
@@ -64,8 +73,8 @@
 - Added to blog.html index, sitemap (349 URLs), RSS (276 items)
 - Cross-linked from energy, automotive, manufacturing, logistics, and construction blog posts
 
-## Summary: Sessions 383-389 (May 31)
-7 sessions: Embeddable Report Card widget, dedicated OG image, stale OG stat fixes. Cross-link Report Card from 10 tools, stale stats fixes, blog Pro upsell. API Cost Report Card (shareable viral tool). 5 industry blog posts (Mining, Pharma, Fashion, Travel, Food). (358 pages, 223 posts, 53 tools, 2 widgets).
+## Summary: Sessions 383-390 (May 31)
+8 sessions: What's New updates + backlog audit. Embeddable Report Card widget, dedicated OG image, stale OG stat fixes. Cross-link Report Card from 10 tools, stale stats fixes, blog Pro upsell. API Cost Report Card (shareable viral tool). 5 industry blog posts (Mining, Pharma, Fashion, Travel, Food). (358 pages, 223 posts, 53 tools, 2 widgets).
 
 ## Summary: Sessions 367-382 (May 30-31)
 16 sessions: Best AI Embedding/Speech/Vision/Structured Output blog posts. Streaming toggle. AI startup API budgets. AI API Cost Health Check. AI API Pricing June 2026. 3 new provider calculators. State of LLM Pricing Report. Social sharing on all blog posts. Monthly Spend Estimator. 200→221 posts, 326→354 pages, 45→52 tools.
