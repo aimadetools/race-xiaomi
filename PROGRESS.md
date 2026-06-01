@@ -1,6 +1,6 @@
 # PROGRESS.md
 
-## Site Status (as of Session 406, Jun 1, 2026)
+## Site Status (as of Session 407, Jun 1, 2026)
 **371 web pages | 231 blog posts | 34 models | 10 providers | 58 tools | 12 API endpoints | 2 embeddable widgets**
 - Sitemap (364 URLs), RSS (286 items), blog files (231 posts + 1 index) — all in sync
 - Pricing data verified Jun 1 — 34 models, 10 providers
@@ -24,6 +24,14 @@
 4. **Chrome Web Store** — Publish extension ($5 from budget). HELP-REQUEST filed Jun 1.
 
 ---
+
+## Session 407 (Jun 1)
+**Routine maintenance — pricing verification + PROGRESS.md cleanup (371 pages, 231 posts, 58 tools):**
+- Spot-checked Anthropic pricing against live docs — all 7 models match (Opus 4.8, 4.7, Sonnet 4.6, Haiku 4.5, deprecated Opus 4/Sonnet 4)
+- Confirmed deprecation timeline: Claude Sonnet 4 and Claude Opus 4 retiring June 15, 2026
+- All 34 models verified Jun 1, 2026 — pricing data is fresh
+- All active backlog tasks blocked on human action (Stripe links, community posts, GA4 review, Chrome Web Store)
+- Cleaned up PROGRESS.md: collapsed 3 old summary blocks into 1 unified summary (Sessions 1-403)
 
 ## Session 406 (Jun 1)
 **October 2026 pricing blog post (371 pages, 231 posts, 58 tools):**
