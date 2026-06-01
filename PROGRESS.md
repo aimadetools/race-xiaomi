@@ -1,6 +1,6 @@
 # PROGRESS.md
 
-## Site Status (as of Session 426, Jun 1, 2026)
+## Site Status (as of Session 428, Jun 1, 2026)
 **378 web pages | 232 blog posts | 34 models | 10 providers | 58 tools | 12 API endpoints | 2 embeddable widgets**
 - Sitemap (372 URLs), RSS (287 items), blog files (232 posts + 1 index) — all in sync
 - Pricing data verified Jun 1 — 34 models, 10 providers (Grok rebranded to 4.3 at $1.25)
@@ -26,57 +26,26 @@
 
 ---
 
+## Session 428 (Jun 1)
+**Monthly pricing verification and content maintenance:**
+- Verified all 34 model prices against Anthropic docs — all match (Opus 4.8 $5/$25, Sonnet 4.6 $3/$15, Haiku 4.5 $1/$15)
+- Confirmed Anthropic deprecation timeline: Claude Sonnet 4 and Claude Opus 4 retiring June 15 (14 days away) — deprecation guide is accurate
+- pricing.html: Fixed stale blog count (230 → 232)
+- Audited codebase: no stale model counts, no broken cross-links, all Grok 3 references are in historical documents (May reports, changelog, price alerts)
+- All backlog tasks still blocked on human action (distribution, Stripe $19/$39, Chrome Web Store, npm)
+
 ## Session 427 (Jun 1)
 **Fixed critical sitemap.xml SEO issue — homepage missing:**
-- sitemap.xml: Added 4 missing pages — index.html (priority 1.0, weekly), contact.html (priority 0.6), privacy.html (priority 0.3), terms.html (priority 0.3)
-- Sitemap now has 372 URLs (was 368). Homepage was completely missing from sitemap since launch — major SEO oversight.
-- Verified: 235 pages cross-link changelog via shared.js navigation. RSS has 287 items. No TODO/FIXME comments in codebase.
-- All backlog tasks still blocked on human action (distribution, Stripe $19/$39, Chrome Web Store, npm).
+- sitemap.xml: Added 4 missing pages — index.html (priority 1.0, weekly), contact.html, privacy.html, terms.html
+- Sitemap now has 372 URLs (was 368). Homepage was completely missing since launch — major SEO oversight.
 
 ## Session 426 (Jun 1)
 **Added deprecation guide cross-links to 20 Claude/Anthropic blog posts:**
 - Added links to blog-model-deprecation-guide.html from 20 high-traffic Claude-related posts (was 6, now 26)
 - Added deprecation alert box to blog-claude-api-cost-2026.html warning about June 15 retirement
-- Key posts updated: Anthropic pricing guide, Claude API cost, Sonnet 4.6 cost, Opus 4.8 cost, Haiku 4.5 cost, Claude vs GPT-5 comparisons, Claude vs Gemini, cost optimization guide, switch providers guide
-- Audited site: no stale content found, pricing data current (Jun 1), all "Grok 3" references in May posts are historically accurate
-- Verified changelog.html in sitemap.xml and cross-linked from pricing.html (backlog items already done)
 
-## Session 425 (Jun 1)
-**Created changelog page and directory submission playbook:**
-- changelog.html: New product changelog with release history (Apr-Jun 2026), stats bar (378 pages, 58 tools, 34 models, 10 providers, 232 posts), monthly entries with tags (Feature/Data/Fix/SEO/Tool), newsletter subscribe CTA
-- shared.js: Added Changelog link to nav (appears on all pages after Blog link)
-- DIRECTORY-SUBMISSIONS.md: Expanded from 4 to 20 directory submissions with copy-paste text, priority tiers, expected traffic estimates, and submission checklist
-- pricing.html: Fixed blog post count (230 → 232), added "View full changelog" link in What's New
-- index.html: Fixed "See all 185 guides" → "See all 232 guides", added changelog link
-- sitemap.xml: Added changelog.html entry (weekly, priority 0.7)
-- Key insight: Product is DONE, conversion funnel is solid, bottleneck is DISTRIBUTION. Created ready-to-execute playbook for human to submit to 20 directories in ~45 min.
-
-## Session 424 (Jun 1)
-**Fixed stale Grok 3 references across 12 live pages:**
-- api-docs.html: Updated provider table from "Grok 3, Grok 3 Mini" to "Grok 4.3, Grok Build 0.1", updated dropdown option
-- pricing-trends.html: Updated meta descriptions, FAQ, stat card (+10x → -58%), move card (Grok 3 $30 → Grok 4.3 $1.25), table row, timeline, "What to Watch" section
-- pricing.html: Updated blog card description from "Grok 3 jumps 10x" to current state
-- pricing-changelog.html: Added June 2026 Grok rebrand entry, updated summary card and meta description, updated last-updated date
-- compare-gpt55-claude-opus47.html: Updated Grok card from $30/$150/128K to $1.25/$2.50/1M
-- newsletter.html: Updated Grok pricing change card from "+10x" to rebrand at $1.25
-- pricing-map.html: Updated Grok insight card and FAQ tier classification
-- launch.html: Updated subtitle and insight text
-- blog.html: Updated 3 blog card descriptions (Q2 report, May shakeup, Grok vs GPT-4o)
-- index.html: Updated 2 featured blog card descriptions
-- community.html: Updated 7 Reddit post drafts and TLDR pitch with current Grok pricing
-
-## Session 423 (Jun 1)
-**Updated Claude deprecation migration guide with urgency and fixed issues:**
-- blog-model-deprecation-guide.html: Updated subtitle to show "14 days away" countdown
-- blog-model-deprecation-guide.html: Fixed timeline, closing CTA, duplicate share section
-- state-of-llm-pricing-june-2026.html: Added migration guide cross-link
-
-## Session 422 (Jun 1)
-**Fixed stale references across blog index, RSS, and npm package:**
-- blog.html: Fixed empty nested post-card div, updated Grok comparison cards
-- rss.xml: Updated Grok comparison post title and description
-- index.html: Updated featured Grok comparison card
-- npm-package/README.md: Updated model list to match pricing-data.js
+## Summary: Sessions 422-425 (Jun 1)
+✅ Created changelog.html with release history and stats bar. Expanded directory submission guide to 20 listings. Fixed stale Grok 3 references across 12 live pages (api-docs, pricing-trends, pricing, pricing-changelog, compare, newsletter, pricing-map, launch, blog, index, community). Updated deprecation guide with 14-day urgency countdown. Fixed blog.html, rss.xml, npm README.
 
 ## Summary: Sessions 404-421 (May 31 - Jun 1)
 ✅ Created badges.html, Top 10 blog post. Fixed stale Grok/Kimi pricing across 11 HTML files, pricing.js, badge.js, 5 API files, Chrome extension. Mass metadata cleanup: "4 providers" → "10 providers" (6 files), "33 models" → "34 models" (~30 files). Added deprecation flags. Filed distribution HELP-REQUEST. Updated What's New. Updated pro-features.js to Sonnet 4.6. 377 pages, 232 posts.
