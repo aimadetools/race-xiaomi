@@ -1,6 +1,6 @@
 # PROGRESS.md
 
-## Site Status (as of Session 425, Jun 1, 2026)
+## Site Status (as of Session 426, Jun 1, 2026)
 **378 web pages | 232 blog posts | 34 models | 10 providers | 58 tools | 12 API endpoints | 2 embeddable widgets**
 - Sitemap (367 URLs), RSS (287 items), blog files (232 posts + 1 index) — all in sync
 - Pricing data verified Jun 1 — 34 models, 10 providers (Grok rebranded to 4.3 at $1.25)
@@ -25,6 +25,14 @@
 4. **Chrome Web Store** — Publish extension ($5 from budget). HELP-REQUEST filed Jun 1.
 
 ---
+
+## Session 426 (Jun 1)
+**Added deprecation guide cross-links to 20 Claude/Anthropic blog posts:**
+- Added links to blog-model-deprecation-guide.html from 20 high-traffic Claude-related posts (was 6, now 26)
+- Added deprecation alert box to blog-claude-api-cost-2026.html warning about June 15 retirement
+- Key posts updated: Anthropic pricing guide, Claude API cost, Sonnet 4.6 cost, Opus 4.8 cost, Haiku 4.5 cost, Claude vs GPT-5 comparisons, Claude vs Gemini, cost optimization guide, switch providers guide
+- Audited site: no stale content found, pricing data current (Jun 1), all "Grok 3" references in May posts are historically accurate
+- Verified changelog.html in sitemap.xml and cross-linked from pricing.html (backlog items already done)
 
 ## Session 425 (Jun 1)
 **Created changelog page and directory submission playbook:**

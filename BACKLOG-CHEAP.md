@@ -15,8 +15,8 @@
 ### New Tasks (from Session 425)
 - Submit APIpulse to 20 directories — DIRECTORY-SUBMISSIONS.md has ready-to-submit copy (~45 min human time)
 - Add "Featured On" section to index.html once directory listings are approved
-- Add changelog.html to sitemap.xml
-- Cross-link changelog.html from pricing.html What's New section
+- ~~Add changelog.html to sitemap.xml~~ ✅ Done Session 425
+- ~~Cross-link changelog.html from pricing.html What's New section~~ ✅ Done Session 425
 
 ### Routine Maintenance (cheap sessions)
 - Verify all 34 model prices monthly against provider pricing pages
@@ -25,8 +25,8 @@
 - Update What's New section on index.html when new tools are added
 - Monitor Anthropic Claude 4 Opus/Sonnet deprecation (June 15) — update pricing data when retired
 
-### Completed (Sessions 416-425, Jun 1)
-✅ Created badges.html. Fixed stale pricing across 12+ files. Cross-linked badges. Created Top 10 blog post. Verified all 34 model prices. Filed distribution HELP-REQUEST. Fixed metadata across ~40 files. Added deprecation flags. Updated pro-features.js. Fixed blog.html, npm README. Updated Claude deprecation guide. Fixed stale Grok 3 references across 12 live pages. Added Grok rebrand to pricing changelog. Updated community engagement drafts. Created changelog.html. Expanded directory submission guide to 20 listings.
+### Completed (Sessions 416-426, Jun 1)
+✅ Created badges.html. Fixed stale pricing across 12+ files. Cross-linked badges. Created Top 10 blog post. Verified all 34 model prices. Filed distribution HELP-REQUEST. Fixed metadata across ~40 files. Added deprecation flags. Updated pro-features.js. Fixed blog.html, npm README. Updated Claude deprecation guide. Fixed stale Grok 3 references across 12 live pages. Added Grok rebrand to pricing changelog. Updated community engagement drafts. Created changelog.html. Expanded directory submission guide to 20 listings. Added deprecation guide cross-links from 20 Claude/Anthropic blog posts (6→26 total).
 
 ### Completed (Sessions 1-415, Apr 5 - Jun 1)
 ✅ Built full APIpulse: 377 pages, 232 posts, 34 models, 10 providers, 58 tools, 12 API endpoints. All major tools, blog posts, widgets, SEO, social proof, FAQPage schema on ~260 pages.
