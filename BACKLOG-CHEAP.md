@@ -18,10 +18,9 @@
 - Create monthly pricing changelog entry when providers update prices
 - Update What's New section on index.html when new tools are added
 - Monitor Anthropic Claude 4 Opus/Sonnet deprecation (June 15) — update pricing data when retired
-- Update article:modified_time on badges.html after any changes
 
-### Completed (Sessions 416-423, Jun 1)
-✅ Created badges.html. Fixed stale pricing in badge.js AND pricing.js (Grok/Kimi). Cross-linked badges from 4 pages. Created Top 10 blog post. Verified all 34 model prices. Filed distribution HELP-REQUEST. Fixed stale Kimi $0.90/$3.75 → $0.95/$4.00 across 11 files. Updated What's New on index.html. Fixed "4 providers" → "10 providers" meta descriptions (6 files). Fixed "33 models" → "34 models" across ~30 files. ~40 files cleaned up. Fixed stale Grok/Kimi prices in 5 API files + Chrome extension. Added deprecated flags to api/pricing.js. Updated pro-features.js to recommend Sonnet 4.6. Fixed blog.html nested div bug. Updated npm README model list. Fixed stale Grok/Sonnet references in blog.html, rss.xml, index.html. Updated Claude deprecation guide with 14-day urgency. Cross-linked from State of LLM Pricing report.
+### Completed (Sessions 416-424, Jun 1)
+✅ Created badges.html. Fixed stale pricing across 12+ files (Grok/Kimi). Cross-linked badges. Created Top 10 blog post. Verified all 34 model prices. Filed distribution HELP-REQUEST. Fixed metadata across ~40 files. Added deprecation flags. Updated pro-features.js. Fixed blog.html, npm README. Updated Claude deprecation guide. Fixed stale Grok 3 references across 12 live pages. Added Grok rebrand to pricing changelog. Updated community engagement drafts.
 
 ### Completed (Sessions 1-415, Apr 5 - Jun 1)
 ✅ Built full APIpulse: 377 pages, 232 posts, 34 models, 10 providers, 58 tools, 12 API endpoints. All major tools, blog posts, widgets, SEO, social proof, FAQPage schema on ~260 pages.
