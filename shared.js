@@ -66,6 +66,18 @@ document.addEventListener('DOMContentLoaded', () => {
             badgesLinkEl.parentNode.insertBefore(widgetLink, badgesLinkEl.nextSibling);
         }
     }
+
+    // Add Changelog link after Blog link
+    var hasChangelog = navLinks.querySelector('a[href="changelog.html"]');
+    if (!hasChangelog) {
+        var blogLink = navLinks.querySelector('a[href="blog.html"]');
+        if (blogLink) {
+            var changelogLink = document.createElement('a');
+            changelogLink.href = 'changelog.html';
+            changelogLink.textContent = 'Changelog';
+            blogLink.parentNode.insertBefore(changelogLink, blogLink.nextSibling);
+        }
+    }
 });
 
 // Close mobile nav when clicking a link

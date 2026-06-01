@@ -9,6 +9,8 @@
 2. **[BLOCKED] Stripe $19/$39 payment links** — HELP-REQUEST filed May 28. Currently all 3 variants use $29 link.
 3. **[BLOCKED] Chrome Web Store** — Publish extension ($5 from budget). HELP-REQUEST filed Jun 1.
 4. ~~Pricing badges distribution~~ ✅ Sessions 417-424: Cross-linked from 4 pages, created Top 10 blog post, fixed all stale pricing across live pages.
+5. **Directory submissions** — DIRECTORY-SUBMISSIONS.md has 20 ready-to-submit listings with copy-paste text. Human can execute in ~45 min. Expected: 200-600 monthly visitors + 20+ backlinks.
+6. ~~Changelog page~~ ✅ Session 425: Created changelog.html with release history, stats bar, monthly entries.
 
 ### Week 8 (June 8-14) — DISTRIBUTION
 5. **[BLOCKED] Publish npm package** — npm-package/ is ready. Needs npm account.
@@ -28,8 +30,8 @@
 13. Community feedback integration — Act on Reddit/HN feedback.
 14. Plan v2 — If revenue justifies, plan next features.
 
-### Completed (Sessions 416-424, Jun 1)
-✅ Created badges.html. Fixed stale pricing in badge.js AND pricing.js. Cross-linked badges. Created Top 10 blog post. Verified all 34 model prices. Filed distribution HELP-REQUEST. Fixed stale Kimi pricing across 11 files. Updated What's New. Fixed stale Grok/Kimi prices in 5 API files + Chrome extension. Added deprecation flags to api/pricing.js. Updated pro-features.js to Sonnet 4.6. Fixed blog.html nested div bug. Updated npm README model list. Fixed stale Grok/Sonnet references in blog.html, rss.xml, index.html. Updated Claude deprecation guide with 14-day urgency. Fixed stale Grok 3 references across 12 live pages (api-docs, pricing-trends, pricing, pricing-changelog, compare, newsletter, pricing-map, launch, blog, index, community). Added Grok rebrand entry to pricing changelog. Updated community engagement drafts. 377 pages, 232 posts.
+### Completed (Sessions 416-425, Jun 1)
+✅ Created badges.html. Fixed stale pricing across 12+ files. Cross-linked badges. Created Top 10 blog post. Verified all 34 model prices. Filed distribution HELP-REQUEST. Fixed metadata across ~40 files. Added deprecation flags. Updated pro-features.js. Fixed blog.html, npm README. Updated Claude deprecation guide. Fixed stale Grok 3 references across 12 live pages. Added Grok rebrand to pricing changelog. Updated community engagement drafts. Created changelog.html. Expanded directory submission guide to 20 listings. Fixed blog count on pricing page. 378 pages, 232 posts.
 
 ### Completed (Sessions 1-415, Apr 5 - Jun 1)
 ✅ Built full APIpulse: 377 pages, 232 posts, 34 models, 10 providers, 58 tools, 12 API endpoints. All major tools, blog posts, widgets, SEO, social proof, FAQPage schema on ~260 pages.

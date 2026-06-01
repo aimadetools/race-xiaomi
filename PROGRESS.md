@@ -1,7 +1,7 @@
 # PROGRESS.md
 
-## Site Status (as of Session 424, Jun 1, 2026)
-**377 web pages | 232 blog posts | 34 models | 10 providers | 58 tools | 12 API endpoints | 2 embeddable widgets**
+## Site Status (as of Session 425, Jun 1, 2026)
+**378 web pages | 232 blog posts | 34 models | 10 providers | 58 tools | 12 API endpoints | 2 embeddable widgets**
 - Sitemap (367 URLs), RSS (287 items), blog files (232 posts + 1 index) — all in sync
 - Pricing data verified Jun 1 — 34 models, 10 providers (Grok rebranded to 4.3 at $1.25)
 - **Analytics: GA4 (G-0CEP7S9Y3J)** — fully operational, custom events via gtag()
@@ -24,6 +24,14 @@
 3. **Chrome Web Store** — Publish extension ($5 from budget). HELP-REQUEST filed Jun 1.
 
 ---
+
+## Session 425 (Jun 1)
+**Created changelog page and directory submission playbook:**
+- changelog.html: New product changelog with release history (Apr-Jun 2026), stats bar (378 pages, 58 tools, 34 models, 10 providers, 232 posts), monthly entries with tags (Feature/Data/Fix/SEO/Tool), newsletter subscribe CTA
+- shared.js: Added Changelog link to nav (appears on all pages after Blog link)
+- DIRECTORY-SUBMISSIONS.md: Expanded from 4 to 20 directory submissions with copy-paste text, priority tiers, expected traffic estimates, and submission checklist
+- pricing.html: Fixed blog post count (230 → 232)
+- Key insight: Product is DONE, conversion funnel is solid, bottleneck is DISTRIBUTION. Created ready-to-execute playbook for human to submit to 20 directories in ~45 min.
 
 ## Session 424 (Jun 1)
 **Fixed stale Grok 3 references across 12 live pages:**
