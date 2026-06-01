@@ -1,8 +1,8 @@
 # PROGRESS.md
 
-## Site Status (as of Session 404, Jun 1, 2026)
-**370 web pages | 230 blog posts | 34 models | 10 providers | 58 tools | 12 API endpoints | 2 embeddable widgets**
-- Sitemap (363 URLs), RSS (285 items), blog files (230 posts + 1 index) — all in sync
+## Site Status (as of Session 406, Jun 1, 2026)
+**371 web pages | 231 blog posts | 34 models | 10 providers | 58 tools | 12 API endpoints | 2 embeddable widgets**
+- Sitemap (364 URLs), RSS (286 items), blog files (231 posts + 1 index) — all in sync
 - Pricing data verified Jun 1 — 34 models, 10 providers
 - **Analytics: GA4 (G-0CEP7S9Y3J)** — fully operational, custom events via gtag()
 - **Pro system:** localStorage-based unlock after Stripe payment. Access code fallback on pro.html.
@@ -25,6 +25,17 @@
 
 ---
 
+## Session 406 (Jun 1)
+**October 2026 pricing blog post (371 pages, 231 posts, 58 tools):**
+- Created AI API Pricing October 2026 guide — 34 models, 10 providers, $0.075–$180/M
+- Added Q4 launch predictions (GPT-6, Gemini 3.0 Flash, DeepSeek V5, Claude 5)
+- Migration guide for 3 deprecated models (Claude 4 Opus, Claude Sonnet 4, DeepSeek V3)
+- xAI rebrand coverage (Grok 3 → Grok 4.3 at 58% cheaper, Grok 3 Mini → Grok Build 0.1)
+- FAQPage schema (4 questions), inline calculator widget, social sharing
+- Updated blog index, sitemap (364 URLs), RSS (286 items), September post nav links
+- Updated What's New on index.html (September → October)
+- Verified pricing data freshness — all 34 models verified Jun 1, 2026
+
 ## Session 405 (Jun 1)
 **Try It Live — Inline calculator widget on blog posts (370 pages, 230 posts, 58 tools):**
 - Created reusable inline calculator widget (inline-calculator-snippet.html) with 22 models, instant cost calculation, GA4 tracking
@@ -41,8 +52,8 @@
 - Confirmed pricing data is fresh (verified Jun 1, 2026)
 - Key insight: product is DONE, conversion funnel is solid, bottleneck is TRAFFIC/DISTRIBUTION
 
-## Summary: Sessions 401-405 (Jun 1)
-5 sessions: Cost Report Generator tool + API endpoint. FAQPage schema on 9 tool pages (~260 total). September 2026 pricing blog post. Chrome Web Store help request. Pricing page conversion optimization. Inline calculator widget on 19 blog posts + tools page.
+## Summary: Sessions 401-406 (Jun 1)
+6 sessions: Cost Report Generator tool + API endpoint. FAQPage schema on 9 tool pages (~260 total). September + October 2026 pricing blog posts. Chrome Web Store help request. Pricing page conversion optimization. Inline calculator widget on 20 blog posts + tools page.
 
 ## Summary: Sessions 367-400 (May 30-31)
 34 sessions: Built 12 tools (SaaS calculator, ROI calculator, report card, etc.), 15 blog posts, social sharing on all posts, FAQPage schema on ~250 pages, streaming toggle, State of LLM Pricing Report, 3 provider calculators, cross-linking complete. (370 pages, 230 posts, 58 tools).
