@@ -15,10 +15,10 @@
 - Update What's New section on index.html when new tools are added
 - Create October 2026 pricing blog post (next month's guide)
 - Monitor Anthropic Claude 4 Opus/Sonnet deprecation (June 15) — update pricing data when retired
-- Add "Try It Live" section to more tool pages (interactive demos increase engagement)
+- ~~Add "Try It Live" section to more tool pages~~ ✅ Session 405: Inline calculator widget on 19 blog posts + tools page
 
-### Completed (Sessions 401-404, Jun 1)
-✅ Cost Report Generator. FAQPage schema on 9 tools. September 2026 pricing post. Pricing page conversion optimization.
+### Completed (Sessions 401-405, Jun 1)
+✅ Cost Report Generator. FAQPage schema on 9 tools. September 2026 pricing post. Pricing page conversion optimization. Inline calculator widget on 19 blog posts.
 
 ### Completed (Sessions 282-400, May 24 - Jun 1)
 ✅ 119 sessions: 58 tools, 230 posts, 370 pages. All major tools, blog posts, widgets, SEO, social proof. Cross-linking complete. FAQPage schema on ~260 pages.

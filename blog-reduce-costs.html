@@ -239,6 +239,80 @@
         <p>AI API costs can add up fast. Here are proven strategies to cut your spending without sacrificing output quality.</p>
 
         <h2>1. Choose the Right Model</h2>
+<div id="try-it-live" style="margin:32px 0;padding:28px;background:var(--bg-secondary,#1a1a2e);border:2px solid var(--accent,#646cff);border-radius:12px;">
+    <h3 style="margin:0 0 4px;font-size:18px;color:var(--text-primary,#fff);">Try It Live — Instant Cost Calculator</h3>
+    <p style="margin:0 0 16px;font-size:13px;color:var(--text-secondary,#aaa);">See exactly what this model costs for your workload. No signup needed.</p>
+    <div style="display:flex;flex-wrap:wrap;gap:12px;align-items:end;">
+        <div style="flex:1;min-width:180px;">
+            <label style="display:block;font-size:12px;color:var(--text-secondary,#aaa);margin-bottom:4px;">Model</label>
+            <select id="ilc-model" style="width:100%;padding:10px;border-radius:8px;border:1px solid var(--border,#333);background:var(--bg-primary,#0d0d1a);color:var(--text-primary,#fff);font-size:14px;">
+                <option value="0">GPT-5.5 — $5.00/$30.00</option>
+                <option value="1">GPT-5.5 Pro — $30.00/$180.00</option>
+                <option value="2">GPT-5.3 Codex — $1.75/$14.00</option>
+                <option value="3">GPT-5 — $1.25/$10.00</option>
+                <option value="4" selected>GPT-5 mini — $0.25/$2.00</option>
+                <option value="5">GPT-4o — $2.50/$10.00</option>
+                <option value="6">GPT-4o mini — $0.15/$0.60</option>
+                <option value="7">Claude Opus 4.8 — $5.00/$25.00</option>
+                <option value="8">Claude Opus 4.7 — $5.00/$25.00</option>
+                <option value="9">Claude Sonnet 4.6 — $3.00/$15.00</option>
+                <option value="10">Claude Haiku 4.5 — $1.00/$5.00</option>
+                <option value="11">Gemini 3.1 Pro — $2.00/$12.00</option>
+                <option value="12">Gemini 2.5 Pro — $1.25/$10.00</option>
+                <option value="13">Gemini 2.0 Flash — $0.10/$0.40</option>
+                <option value="14">Gemini 2.0 Flash Lite — $0.075/$0.30</option>
+                <option value="15">DeepSeek V4 Pro — $0.435/$0.87</option>
+                <option value="16">DeepSeek V4 Flash — $0.14/$0.28</option>
+                <option value="17">Mistral Large 3 — $0.50/$1.50</option>
+                <option value="18">Mistral Small 4 — $0.15/$0.60</option>
+                <option value="19">Command R+ — $2.50/$10.00</option>
+                <option value="20">Llama 4 Scout — $0.11/$0.34</option>
+                <option value="21">Llama 4 Maverick — $0.20/$0.60</option>
+                <option value="22">Grok 4.3 — $12.50/$25.00</option>
+            </select>
+        </div>
+        <div style="flex:0 0 120px;">
+            <label style="display:block;font-size:12px;color:var(--text-secondary,#aaa);margin-bottom:4px;">Tokens/req</label>
+            <input type="number" id="ilc-tokens" value="2000" min="1" style="width:100%;padding:10px;border-radius:8px;border:1px solid var(--border,#333);background:var(--bg-primary,#0d0d1a);color:var(--text-primary,#fff);font-size:14px;">
+        </div>
+        <div style="flex:0 0 120px;">
+            <label style="display:block;font-size:12px;color:var(--text-secondary,#aaa);margin-bottom:4px;">Requests/day</label>
+            <input type="number" id="ilc-reqs" value="1000" min="1" style="width:100%;padding:10px;border-radius:8px;border:1px solid var(--border,#333);background:var(--bg-primary,#0d0d1a);color:var(--text-primary,#fff);font-size:14px;">
+        </div>
+        <div style="flex:0 0 100px;">
+            <button onclick="ilcCalc()" style="width:100%;padding:10px;border-radius:8px;border:none;background:var(--accent,#646cff);color:#fff;font-size:14px;font-weight:600;cursor:pointer;">Calculate</button>
+        </div>
+    </div>
+    <div id="ilc-result" style="margin-top:16px;padding:16px;background:var(--bg-primary,#0d0d1a);border-radius:8px;display:none;">
+        <div style="display:flex;flex-wrap:wrap;gap:24px;">
+            <div><span style="font-size:12px;color:var(--text-secondary,#aaa);display:block;">Daily cost</span><span id="ilc-daily" style="font-size:22px;font-weight:700;color:var(--green,#4ade80);">$0.00</span></div>
+            <div><span style="font-size:12px;color:var(--text-secondary,#aaa);display:block;">Monthly cost</span><span id="ilc-monthly" style="font-size:22px;font-weight:700;color:var(--accent,#646cff);">$0.00</span></div>
+            <div><span style="font-size:12px;color:var(--text-secondary,#aaa);display:block;">Yearly cost</span><span id="ilc-yearly" style="font-size:22px;font-weight:700;color:var(--text-primary,#fff);">$0.00</span></div>
+        </div>
+        <p style="margin:12px 0 0;font-size:12px;color:var(--text-secondary,#aaa);">Assumes 50/50 input/output split. <a href="calculator.html" style="color:var(--accent,#646cff);">Open full calculator →</a></p>
+    </div>
+</div>
+<script>
+(function(){
+    var M=[[5,30],[30,180],[1.75,14],[1.25,10],[0.25,2],[2.5,10],[0.15,0.6],[5,25],[5,25],[3,15],[1,5],[2,12],[1.25,10],[0.1,0.4],[0.075,0.3],[0.435,0.87],[0.14,0.28],[0.5,1.5],[0.15,0.6],[2.5,10],[0.11,0.34],[0.2,0.6],[12.5,25]];
+    window.ilcCalc=function(){
+        var i=document.getElementById('ilc-model').value|0;
+        var t=document.getElementById('ilc-tokens').value|0||2000;
+        var r=document.getElementById('ilc-reqs').value||1000;
+        var p=M[i]||M[4];
+        var daily=(t*r/1e6)*p[0]+(t*r/1e6)*p[1];
+        var monthly=daily*30;
+        var yearly=daily*365;
+        document.getElementById('ilc-daily').textContent='$'+daily.toFixed(2);
+        document.getElementById('ilc-monthly').textContent='$'+monthly.toFixed(2);
+        document.getElementById('ilc-yearly').textContent='$'+yearly.toFixed(2);
+        document.getElementById('ilc-result').style.display='block';
+        if(window.trackEvent)trackEvent('inline_calculator_used',{model:i,tokens:t,requests:r});
+    };
+})();
+</script>
+
+
         <p>Not every task needs GPT-4o or Claude Sonnet. For simple classification, formatting, or extraction tasks, <strong>smaller models like GPT-4o mini or Claude Haiku</strong> can be 10-20x cheaper with comparable quality.</p>
         <p>Rule of thumb: Start with the cheapest model. Only upgrade when quality issues appear.</p>
 

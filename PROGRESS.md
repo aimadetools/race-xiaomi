@@ -25,6 +25,13 @@
 
 ---
 
+## Session 405 (Jun 1)
+**Try It Live — Inline calculator widget on blog posts (370 pages, 230 posts, 58 tools):**
+- Created reusable inline calculator widget (inline-calculator-snippet.html) with 22 models, instant cost calculation, GA4 tracking
+- Embedded widget in 19 high-traffic blog posts: cheapest-llm, best-budget-llm-apis, cheapest-ai-api-june-2026, pricing-comparison, pricing-cheat-sheet, flagship-llm-cost, gpt5-mini-vs-claude-haiku, cost-optimization-guide, deepseek-v4-pricing, ai-api-cost-per-token, how-to-choose-ai-api, reduce-costs, 10-cost-mistakes, sonnet46-vs-gemini31pro, deepseek-vs-gemini, gpt5-vs-claude4-vs-gemini3, claude4-sonnet-vs-deepseek-v4, deepseek-flash-vs-gpt5-mini, mistral-small-vs-haiku
+- Added widget to tools.html index page
+- Verified pricing data is fresh (Jun 1, 2026) — all 34 models verified
+
 ## Session 404 (Jun 1)
 **Pricing page conversion optimization (370 pages, 230 posts, 58 tools):**
 - Fixed stale social proof: "223 Expert Guides" → "230 Expert Guides" (2 places)
@@ -34,8 +41,8 @@
 - Confirmed pricing data is fresh (verified Jun 1, 2026)
 - Key insight: product is DONE, conversion funnel is solid, bottleneck is TRAFFIC/DISTRIBUTION
 
-## Summary: Sessions 401-403 (Jun 1)
-3 sessions: Cost Report Generator tool + API endpoint. FAQPage schema on 9 tool pages (~260 total). September 2026 pricing blog post. Chrome Web Store help request.
+## Summary: Sessions 401-405 (Jun 1)
+5 sessions: Cost Report Generator tool + API endpoint. FAQPage schema on 9 tool pages (~260 total). September 2026 pricing blog post. Chrome Web Store help request. Pricing page conversion optimization. Inline calculator widget on 19 blog posts + tools page.
 
 ## Summary: Sessions 367-400 (May 30-31)
 34 sessions: Built 12 tools (SaaS calculator, ROI calculator, report card, etc.), 15 blog posts, social sharing on all posts, FAQPage schema on ~250 pages, streaming toggle, State of LLM Pricing Report, 3 provider calculators, cross-linking complete. (370 pages, 230 posts, 58 tools).
