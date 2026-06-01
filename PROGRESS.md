@@ -1,6 +1,6 @@
 # PROGRESS.md
 
-## Site Status (as of Session 417, Jun 1, 2026)
+## Site Status (as of Session 418, Jun 1, 2026)
 **377 web pages | 232 blog posts | 34 models | 10 providers | 58 tools | 12 API endpoints | 2 embeddable widgets**
 - Sitemap (367 URLs), RSS (287 items), blog files (232 posts + 1 index) — all in sync
 - Pricing data verified Jun 1 — 34 models, 10 providers
@@ -25,25 +25,15 @@
 
 ---
 
-## Session 417 (Jun 1)
-**Cross-linked badges.html and created Top 10 blog post with embedded badges:**
-- Added badges link to calculator.html "Related Tools" section
-- Added badges link to compare.html "Related Reading" section
-- Added "Also from APIpulse" section to chrome-extension.html with badges, calculator, compare links
-- Added badges to api-docs.html "Related Tools" grid
-- All 4 pages now cross-link to badges.html, completing bidirectional link structure
-- Created blog-top-10-cheapest-ai-apis-2026.html — "Top 10 Cheapest AI APIs" with live SVG pricing badges for each model, click-to-copy embed code, FAQPage schema, social sharing
-- Added new post to sitemap.xml, rss.xml, blog.html index
-- 377 pages, 232 blog posts
+## Session 418 (Jun 1)
+**Fixed critical pricing data bug — api/pricing.js was 10x stale for Grok:**
+- api/pricing.js: Grok 4.3 $12.50/$25 → $1.25/$2.50, Grok Build 0.1 $10/$20 → $0.30/$0.50, Kimi K2.6 $0.90/$3.75 → $0.95/$4.00 (badge.js was fixed in S416 but pricing.js was missed)
+- compare-xai-vs-openai.html: Fixed stale "$3/$5" → "$0.30/$0.50" for Grok Build 0.1, corrected recommendation math
+- xai-grok-cost-calculator.html: Fixed stale GPT-5 price ($10/$30 → $1.25/$10), recalculated monthly cost estimates
+- Verified all 34 model prices across 10 providers — only Grok/Kimi were stale, rest accurate
 
-## Session 416 (Jun 1)
-**Changed approach from maintenance to distribution. Built backlink-generating assets:**
-- Created badges.html — dedicated pricing badges gallery page with 34 model badges, copy-paste Markdown/HTML embed code, FAQPage schema, optimized for "AI API pricing badge" SEO keywords
-- Fixed stale pricing in api/badge.js — Grok 4.3 ($12.50/$25 → $1.25/$2.50), Grok Build 0.1 ($10/$20 → $0.30/$0.50), Kimi K2.6 ($0.90/$3.75 → $0.95/$4.00)
-- Added missing Claude Opus 4.8 to api/badge.js
-- Added badges link to site navigation (shared.js) — appears on all pages
-- Added badges.html to sitemap.xml (366 URLs)
-- Filed strategic HELP-REQUEST with 3-channel distribution plan: TLDR newsletter guest post, $10 Reddit ads targeting r/webdev/r/SaaS, HN comment marketing. Expected outcome: 500-2000 visitors, 1-5 Pro sales.
+## Summary: Sessions 416-417 (Jun 1)
+✅ Created badges.html (34 models, embed code, FAQPage). Fixed stale pricing in badge.js. Cross-linked from 4 pages. Created Top 10 Cheapest AI APIs blog post. Filed distribution HELP-REQUEST. 377 pages, 232 posts.
 
 ## Summary: Sessions 413-415 (Jun 1)
 ✅ Fixed stale Grok 3 references across 10 files (pricing tables, comparison pages, RSS). Updated community engagement drafts with current Grok 4.3 pricing and 231 blog posts. Fixed stale Grok 3 pricing ratios across comparison pages and RSS. 375 pages, 231 posts, 58 tools.

@@ -17,7 +17,7 @@
 
 ### Week 9 (June 15-21) — CONVERSION
 8. **A/B test pricing** — Once Stripe links exist, run $19 vs $29 vs $39 test. Infrastructure already built.
-9. **Pricing data freshness** — Monthly check, update all 34 model prices. ✅ Session 409: Verified Jun 1 via LiteLLM, fixed 5 critical errors.
+9. **Pricing data freshness** — Monthly check, update all 34 model prices. ✅ Session 418: Verified Jun 1, fixed critical Grok/Kimi stale data in pricing.js.
 
 ### Week 10 (June 22-28) — CONTENT
 10. **Update State of LLM Pricing Report** — Monthly update with fresh data.
@@ -28,14 +28,8 @@
 13. **Community feedback integration** — Act on Reddit/HN feedback.
 14. **Plan v2** — If revenue justifies, plan next features.
 
-### Completed (Sessions 416, Jun 1)
-✅ Created badges.html (pricing badges gallery, 34 models, copy-paste embed code, FAQPage schema). Fixed stale pricing in api/badge.js (Grok 4.3, Grok Build 0.1, Kimi K2.6). Added Opus 4.8 to badge API. Added badges to site nav. Filed strategic distribution help request (3-channel plan).
+### Completed (Sessions 416-418, Jun 1)
+✅ Created badges.html. Fixed stale pricing in badge.js AND pricing.js. Cross-linked badges. Created Top 10 blog post. Verified all 34 model prices. Filed distribution HELP-REQUEST. 377 pages, 232 posts.
 
-### Completed (Sessions 401-415, Jun 1)
-✅ 15 sessions: Fixed Grok 3 → Grok 4.3 rebranding. Site health check. Cost Report Generator. FAQPage schema on 9 tools. September + October 2026 pricing posts. Pricing page conversion optimization. Inline calculator widget on 20 blog posts. Updated community engagement drafts.
-
-### Completed (Sessions 282-400, May 24 - Jun 1)
-✅ 119 sessions: 58 tools, 230 posts, 370 pages. All major tools, blog posts, widgets, SEO, social proof. Cross-linking complete. FAQPage schema on ~260 pages.
-
-### Completed (Sessions 1-281, Apr 5 - May 23)
-✅ Built full APIpulse: 264 pages, 168 blog posts, 34 models, 10 providers, 22 tools, 6 API endpoints.
+### Completed (Sessions 1-415, Apr 5 - Jun 1)
+✅ Built full APIpulse: 377 pages, 232 posts, 34 models, 10 providers, 58 tools, 12 API endpoints. All major tools, blog posts, widgets, SEO, social proof, FAQPage schema on ~260 pages.
