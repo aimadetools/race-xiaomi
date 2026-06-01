@@ -1,6 +1,6 @@
 # PROGRESS.md
 
-## Site Status (as of Session 401, Jun 1, 2026)
+## Site Status (as of Session 402, Jun 1, 2026)
 **369 web pages | 229 blog posts | 34 models | 10 providers | 58 tools | 12 API endpoints | 2 embeddable widgets**
 - Sitemap (362 URLs), RSS (284 items), blog files (229 posts + 1 index) — all in sync
 - Pricing data verified May 29 — 34 models, 10 providers
@@ -10,7 +10,7 @@
 - **57 interactive tools** — calculators, optimizer, planner, pipeline, rate limit, budget showdown, chatbot cost, model switch, AI Stack Builder, model advisor, fine-tuning calculator, Claude API cost calculator, cost projection, Gemini API cost calculator, cheapest AI API for coding, xAI Grok cost calculator, DeepSeek API cost calculator, Mistral API cost calculator, Meta Llama API cost calculator, Open Source LLM cost calculator, AI API Pricing Comparison 2026, Cost Leak Detector, Chrome Extension, AI Feature Cost Estimator, AI Project Budget Planner, AI API TCO Calculator, MCP Server Cost Calculator, Monthly Spend Estimator, Cohere API cost calculator, Moonshot API cost calculator, Together.ai API cost calculator, API Cost Report Card, SaaS AI Cost Calculator, AI ROI Calculator, Embedding API Cost Calculator, Cheapest Embedding API
 - **11 API endpoints** — pricing data, cost calculator (single/multi-model), cheapest model finder, pricing badge (SVG), compare models, recommend models, subscribe, unsubscribe, newsletter, check-price-changes, admin
 - **2 embeddable widgets** — pricing table/badge/compare (widget.js) + report card (embed-report.html)
-- **SEO: 228 blog posts with FAQPage schema** for rich snippets
+- **SEO: ~250 pages with FAQPage schema** for rich snippets (228 blog posts + 23 tool/provider/use-case pages)
 - **Social proof:** PH launch badge, Reddit testimonial, newsletter, exit popup A/B test, social sharing (X/LinkedIn/Reddit) on all 228 blog posts
 - **Community playbook:** 7 subreddit drafts + 2 newsletter pitches ready in COMMUNITY-ENGAGEMENT.md (all updated to 34 models/228 posts)
 - **Chrome Extension:** Landing page live, pricing data synced (May 29), 34 models, manual install
@@ -24,6 +24,14 @@
 4. **Chrome Web Store** — Publish extension ($5 from budget). HELP-REQUEST filed Jun 1.
 
 ---
+
+## Session 402 (Jun 1)
+**FAQPage schema on 9 tool pages (369 pages, 229 posts, 58 tools, ~250 FAQPage-enabled pages):**
+- Added FAQPage structured data (3 questions each) to 9 tool pages missing it:
+  - cost-explorer, agent-cost-calculator, cost-migration, budget-llm-showdown
+  - model-switch, pipeline, model-matrix, pricing-chart, pricing-trends
+- Skipped cost.html (redirect only) and embed-calculator.html (widget only)
+- Total FAQPage-enabled pages: ~250 (up from ~241)
 
 ## Session 401 (Jun 1)
 **Cost Report Generator tool + Chrome Web Store help request (369 pages, 229 posts, 58 tools, 363 sitemap URLs):**
@@ -41,23 +49,12 @@
 ## Session 400 (May 31)
 **Social sharing + massive FAQPage schema SEO push (368 pages, 229 posts, 57 tools):**
 - Added social sharing buttons (X/LinkedIn/Reddit) to 9 blog posts that were missing them
-- Posts fixed: agriculture, education, energy, finance, logistics, manufacturing, real-estate, cost-report, saas-cost-per-user
 - All 229 blog posts now have social sharing buttons
 - Added FAQPage schema to 23 pages total for rich snippets:
-  - 5 tool pages: calculator (4Q), cost-optimizer (3Q), compare (3Q), ai-stack-builder (3Q), cost-per-request (3Q)
-  - 2 more tools: token-estimator (3Q), rate-limit-calculator (3Q)
-  - 2 more tools: pricing-map (2Q), cost-scenarios (2Q)
-  - 7 use-case pages: chatbot, code-generation, content-writing, customer-support, data-extraction, document-analysis, enterprise
-  - 9 provider pages: openai, anthropic, google, deepseek, mistral, cohere, xai, together, moonshot
+  - 9 tool pages, 7 use-case pages, 9 provider pages
 
-## Session 399 (May 31)
-Cross-linked related tools across 20 tool pages. All 57 tools now have cross-links.
-
-## Session 398 (May 31)
-AI API Pricing August 2026 blog post. FAQPage schema, social sharing, sitemap updated.
-
-## Session 397 (May 31)
-Strategic audit + 6-week battle plan. Identified bottleneck: DISTRIBUTION, not product. Added 238 internal links from blog posts.
+## Summary: Sessions 397-399 (May 31)
+Strategic audit + battle plan. 238 internal links from blog posts. AI API Pricing August 2026 blog post. Cross-linked all 57 tools.
 
 ## Summary: Sessions 393-396 (May 31)
 4 sessions: Cheapest Embedding API tool + blog. Embedding Cost Calculator + blog. July 2026 pricing post. AI ROI Calculator + blog. (367 pages, 228 posts, 57 tools).
