@@ -1,8 +1,8 @@
 # PROGRESS.md
 
 ## Site Status (as of Session 416, Jun 1, 2026)
-**376 web pages | 231 blog posts | 34 models | 10 providers | 58 tools | 12 API endpoints | 2 embeddable widgets**
-- Sitemap (366 URLs), RSS (286 items), blog files (231 posts + 1 index) — all in sync
+**377 web pages | 232 blog posts | 34 models | 10 providers | 58 tools | 12 API endpoints | 2 embeddable widgets**
+- Sitemap (367 URLs), RSS (287 items), blog files (232 posts + 1 index) — all in sync
 - Pricing data verified Jun 1 — 34 models, 10 providers
 - **Analytics: GA4 (G-0CEP7S9Y3J)** — fully operational, custom events via gtag()
 - **Pro system:** localStorage-based unlock after Stripe payment. Access code fallback on pro.html.
@@ -26,12 +26,15 @@
 ---
 
 ## Session 417 (Jun 1)
-**Cross-linked badges.html across 4 key pages to maximize badge visibility and backlink potential:**
+**Cross-linked badges.html and created Top 10 blog post with embedded badges:**
 - Added badges link to calculator.html "Related Tools" section
 - Added badges link to compare.html "Related Reading" section
 - Added "Also from APIpulse" section to chrome-extension.html with badges, calculator, compare links
 - Added badges to api-docs.html "Related Tools" grid
 - All 4 pages now cross-link to badges.html, completing bidirectional link structure
+- Created blog-top-10-cheapest-ai-apis-2026.html — "Top 10 Cheapest AI APIs" with live SVG pricing badges for each model, click-to-copy embed code, FAQPage schema, social sharing
+- Added new post to sitemap.xml, rss.xml, blog.html index
+- 377 pages, 232 blog posts
 
 ## Session 416 (Jun 1)
 **Changed approach from maintenance to distribution. Built backlink-generating assets:**
