@@ -8,7 +8,7 @@ LLM API pricing data from [APIpulse](https://getapipulse.com). Compare costs acr
 npx apipulse
 ```
 
-Shows all 34 LLM models sorted by cost, right in your terminal.
+Shows all 34 LLM models sorted by cost, right in your terminal. (Excludes deprecated models.)
 
 ## CLI Usage
 
@@ -61,15 +61,15 @@ const comparison = await compare({
 
 | Provider | Models |
 |----------|--------|
-| OpenAI | GPT-5.5, GPT-5, GPT-5 mini, GPT-4o, GPT-4o mini, GPT-oss |
-| Anthropic | Claude Opus 4.8, Sonnet 4.6, Haiku 4.5 |
-| Google | Gemini 3.1 Pro, 2.5 Pro, 2.0 Flash, Flash Lite |
-| DeepSeek | V4 Pro, V4 Flash, V3 |
+| OpenAI | GPT-5.5, GPT-5.5 Pro, GPT-5.3 Codex, GPT-5, GPT-5 mini, GPT-oss 120B, GPT-oss 20B, GPT-4o, GPT-4o mini |
+| Anthropic | Claude Opus 4.8, Claude Opus 4.7, Claude Sonnet 4.6, Claude Haiku 4.5 |
+| Google | Gemini 3.1 Pro, Gemini 2.5 Pro, Gemini 2.0 Flash, Gemini 2.0 Flash Lite |
+| DeepSeek | V4 Pro, V4 Flash |
 | Mistral | Large 3, Small 4 |
 | Cohere | Command R+, Command R |
-| Meta | Llama 4 Scout, Maverick, 3.1 70B, 3.1 8B |
+| Meta | Llama 4 Scout, Llama 4 Maverick, Llama 3.1 70B, Llama 3.1 8B |
 | Moonshot | Kimi K2.6 |
-| xAI | Grok 3, Grok 3 Mini |
+| xAI | Grok 4.3, Grok Build 0.1 |
 | AI21 | Jamba 1.5 Large |
 
 ## API
