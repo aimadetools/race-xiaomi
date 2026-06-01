@@ -23,14 +23,14 @@ const API_MODELS = [
     { id: 'google-pro', name: 'Gemini 2.5 Pro', provider: 'Google', tier: 'Mid', input: 1.25, output: 10.00, context: '1M', strengths: ['reasoning', 'coding', 'long-context'] },
     { id: 'google-flash', name: 'Gemini 2.0 Flash', provider: 'Google', tier: 'Budget', input: 0.10, output: 0.40, context: '1M', strengths: ['chat', 'classification', 'speed'] },
     { id: 'google-flash-lite', name: 'Gemini 2.0 Flash Lite', provider: 'Google', tier: 'Budget', input: 0.075, output: 0.30, context: '1M', strengths: ['classification', 'extraction', 'speed'] },
-    { id: 'deepseek-v4-pro', name: 'DeepSeek V4 Pro', provider: 'DeepSeek', tier: 'Budget', input: 0.44, output: 0.87, context: '1M', strengths: ['coding', 'reasoning', 'analysis'] },
+    { id: 'deepseek-v4-pro', name: 'DeepSeek V4 Pro', provider: 'DeepSeek', tier: 'Budget', input: 0.435, output: 0.87, context: '1M', strengths: ['coding', 'reasoning', 'analysis'] },
     { id: 'deepseek-v4-flash', name: 'DeepSeek V4 Flash', provider: 'DeepSeek', tier: 'Budget', input: 0.14, output: 0.28, context: '1M', strengths: ['coding', 'chat', 'speed'] },
     { id: 'mistral-large', name: 'Mistral Large 3', provider: 'Mistral', tier: 'Budget', input: 0.50, output: 1.50, context: '128K', strengths: ['coding', 'reasoning', 'multilingual'] },
     { id: 'mistral-small', name: 'Mistral Small 4', provider: 'Mistral', tier: 'Budget', input: 0.15, output: 0.60, context: '128K', strengths: ['chat', 'classification', 'speed'] },
     { id: 'llama-3.1-70b', name: 'Llama 3.1 70B', provider: 'Meta (Together.ai)', tier: 'Mid', input: 0.88, output: 0.88, context: '128K', strengths: ['general', 'coding', 'analysis'] },
     { id: 'llama-3.1-8b', name: 'Llama 3.1 8B', provider: 'Meta (Together.ai)', tier: 'Budget', input: 0.10, output: 0.10, context: '128K', strengths: ['chat', 'classification', 'speed'] },
-    { id: 'xai-grok3', name: 'Grok 3', provider: 'xAI', tier: 'Premium', input: 30.00, output: 150.00, context: '128K', strengths: ['reasoning', 'analysis', 'creative'] },
-    { id: 'xai-grok3-mini', name: 'Grok 3 Mini', provider: 'xAI', tier: 'Mid', input: 3.00, output: 5.00, context: '128K', strengths: ['general', 'chat', 'coding'] },
+    { id: 'xai-grok3', name: 'Grok 4.3', provider: 'xAI', tier: 'Mid', input: 12.50, output: 25.00, context: '1M', strengths: ['reasoning', 'analysis', 'creative'] },
+    { id: 'xai-grok3-mini', name: 'Grok Build 0.1', provider: 'xAI', tier: 'Budget', input: 10.00, output: 20.00, context: '256K', strengths: ['general', 'chat', 'coding'] },
 ];
 
 module.exports = function handler(req, res) {

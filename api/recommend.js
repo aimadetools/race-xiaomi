@@ -20,13 +20,13 @@ const MODELS = [
     { id: 'google-pro', name: 'Gemini 2.5 Pro', provider: 'Google', tier: 'Mid', input: 1.25, output: 10.00, context: '1M', useCases: ['reasoning', 'coding', 'long-context', 'general'], quality: 4 },
     { id: 'google-flash', name: 'Gemini 2.0 Flash', provider: 'Google', tier: 'Budget', input: 0.10, output: 0.40, context: '1M', useCases: ['chat', 'classification', 'speed', 'long-context'], quality: 3 },
     { id: 'google-flash-lite', name: 'Gemini 2.0 Flash Lite', provider: 'Google', tier: 'Budget', input: 0.075, output: 0.30, context: '1M', useCases: ['classification', 'extraction', 'speed'], quality: 2 },
-    { id: 'deepseek-v4-pro', name: 'DeepSeek V4 Pro', provider: 'DeepSeek', tier: 'Budget', input: 0.44, output: 0.87, context: '1M', useCases: ['coding', 'reasoning', 'analysis', 'long-context'], quality: 4 },
+    { id: 'deepseek-v4-pro', name: 'DeepSeek V4 Pro', provider: 'DeepSeek', tier: 'Budget', input: 0.435, output: 0.87, context: '1M', useCases: ['coding', 'reasoning', 'analysis', 'long-context'], quality: 4 },
     { id: 'deepseek-v4-flash', name: 'DeepSeek V4 Flash', provider: 'DeepSeek', tier: 'Budget', input: 0.14, output: 0.28, context: '1M', useCases: ['coding', 'chat', 'speed', 'long-context'], quality: 3 },
     { id: 'mistral-large', name: 'Mistral Large 3', provider: 'Mistral', tier: 'Budget', input: 0.50, output: 1.50, context: '128K', useCases: ['coding', 'reasoning', 'multilingual'], quality: 3 },
     { id: 'mistral-small', name: 'Mistral Small 4', provider: 'Mistral', tier: 'Budget', input: 0.15, output: 0.60, context: '128K', useCases: ['chat', 'classification', 'speed'], quality: 3 },
     { id: 'llama-4-scout', name: 'Llama 4 Scout', provider: 'Meta', tier: 'Budget', input: 0.11, output: 0.34, context: '10M', useCases: ['general', 'coding', 'long-context'], quality: 3 },
-    { id: 'xai-grok3', name: 'Grok 3', provider: 'xAI', tier: 'Premium', input: 30.00, output: 150.00, context: '128K', useCases: ['reasoning', 'analysis', 'creative'], quality: 5 },
-    { id: 'xai-grok3-mini', name: 'Grok 3 Mini', provider: 'xAI', tier: 'Mid', input: 3.00, output: 5.00, context: '128K', useCases: ['general', 'chat', 'coding'], quality: 4 },
+    { id: 'xai-grok3', name: 'Grok 4.3', provider: 'xAI', tier: 'Mid', input: 12.50, output: 25.00, context: '1M', useCases: ['reasoning', 'analysis', 'creative'], quality: 5 },
+    { id: 'xai-grok3-mini', name: 'Grok Build 0.1', provider: 'xAI', tier: 'Budget', input: 10.00, output: 20.00, context: '256K', useCases: ['general', 'chat', 'coding'], quality: 4 },
 ];
 
 function costPerRequest(model, inputTokens, outputTokens) {

@@ -1,6 +1,6 @@
 // APIpulse Chrome Extension — Embedded Pricing Data
 // Synced with pricing-data.js from getapipulse.com
-// Last verified: May 29, 2026
+// Last verified: Jun 1, 2026
 
 const MODELS = [
   { name: 'GPT-5.5', provider: 'OpenAI', tier: 'Premium', input: 5.00, output: 30.00, context: '1M' },
@@ -22,7 +22,7 @@ const MODELS = [
   { name: 'Gemini 2.5 Pro', provider: 'Google', tier: 'Mid', input: 1.25, output: 10.00, context: '1M' },
   { name: 'Gemini 2.0 Flash', provider: 'Google', tier: 'Budget', input: 0.10, output: 0.40, context: '1M' },
   { name: 'Gemini 2.0 Flash Lite', provider: 'Google', tier: 'Budget', input: 0.075, output: 0.30, context: '1M' },
-  { name: 'DeepSeek V4 Pro', provider: 'DeepSeek', tier: 'Budget', input: 0.44, output: 0.87, context: '1M' },
+  { name: 'DeepSeek V4 Pro', provider: 'DeepSeek', tier: 'Budget', input: 0.435, output: 0.87, context: '1M' },
   { name: 'DeepSeek V4 Flash', provider: 'DeepSeek', tier: 'Budget', input: 0.14, output: 0.28, context: '1M' },
   { name: 'DeepSeek V3', provider: 'DeepSeek', tier: 'Budget', input: 0.27, output: 1.10, context: '128K' },
   { name: 'Mistral Large 3', provider: 'Mistral', tier: 'Budget', input: 0.50, output: 1.50, context: '128K' },
@@ -34,7 +34,7 @@ const MODELS = [
   { name: 'Llama 3.1 70B', provider: 'Meta (Together.ai)', tier: 'Mid', input: 0.88, output: 0.88, context: '128K' },
   { name: 'Llama 3.1 8B', provider: 'Meta (Together.ai)', tier: 'Budget', input: 0.10, output: 0.10, context: '128K' },
   { name: 'Kimi K2.6', provider: 'Moonshot', tier: 'Budget', input: 0.90, output: 3.75, context: '256K' },
-  { name: 'Grok 3', provider: 'xAI', tier: 'Premium', input: 30.00, output: 150.00, context: '128K' },
-  { name: 'Grok 3 Mini', provider: 'xAI', tier: 'Mid', input: 3.00, output: 5.00, context: '128K' },
+  { name: 'Grok 4.3', provider: 'xAI', tier: 'Mid', input: 12.50, output: 25.00, context: '1M' },
+  { name: 'Grok Build 0.1', provider: 'xAI', tier: 'Budget', input: 10.00, output: 20.00, context: '256K' },
   { name: 'Jamba 1.5 Large', provider: 'AI21', tier: 'Mid', input: 2.00, output: 8.00, context: '256K' },
 ];

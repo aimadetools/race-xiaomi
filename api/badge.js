@@ -32,7 +32,7 @@ const API_MODELS = {
     'google-pro': { name: 'Gemini 2.5 Pro', provider: 'Google', input: 1.25, output: 10.00 },
     'google-flash': { name: 'Gemini 2.0 Flash', provider: 'Google', input: 0.10, output: 0.40 },
     'google-flash-lite': { name: 'Gemini 2.0 Flash Lite', provider: 'Google', input: 0.075, output: 0.30 },
-    'deepseek-v4-pro': { name: 'DeepSeek V4 Pro', provider: 'DeepSeek', input: 0.44, output: 0.87 },
+    'deepseek-v4-pro': { name: 'DeepSeek V4 Pro', provider: 'DeepSeek', input: 0.435, output: 0.87 },
     'deepseek-v4-flash': { name: 'DeepSeek V4 Flash', provider: 'DeepSeek', input: 0.14, output: 0.28 },
     'deepseek-v3': { name: 'DeepSeek V3', provider: 'DeepSeek', input: 0.27, output: 1.10 },
     'mistral-large': { name: 'Mistral Large 3', provider: 'Mistral', input: 0.50, output: 1.50 },
@@ -44,8 +44,8 @@ const API_MODELS = {
     'llama-3.1-70b': { name: 'Llama 3.1 70B', provider: 'Meta', input: 0.88, output: 0.88 },
     'llama-3.1-8b': { name: 'Llama 3.1 8B', provider: 'Meta', input: 0.10, output: 0.10 },
     'kimi-k26': { name: 'Kimi K2.6', provider: 'Moonshot', input: 0.90, output: 3.75 },
-    'xai-grok3': { name: 'Grok 3', provider: 'xAI', input: 30.00, output: 150.00 },
-    'xai-grok3-mini': { name: 'Grok 3 Mini', provider: 'xAI', input: 3.00, output: 5.00 },
+    'xai-grok3': { name: 'Grok 4.3', provider: 'xAI', input: 12.50, output: 25.00 },
+    'xai-grok3-mini': { name: 'Grok Build 0.1', provider: 'xAI', input: 10.00, output: 20.00 },
     'ai21-jamba': { name: 'Jamba 1.5 Large', provider: 'AI21', input: 2.00, output: 8.00 },
 };
 

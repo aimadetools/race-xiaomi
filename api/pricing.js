@@ -27,7 +27,7 @@ const API_MODELS = [
     { id: 'google-flash', name: 'Gemini 2.0 Flash', provider: 'Google', providerSlug: 'google', tier: 'Budget', input: 0.10, output: 0.40, context: '1M', verified: 'May 2026' },
     { id: 'google-flash-lite', name: 'Gemini 2.0 Flash Lite', provider: 'Google', providerSlug: 'google', tier: 'Budget', input: 0.075, output: 0.30, context: '1M', verified: 'May 2026' },
     // DeepSeek
-    { id: 'deepseek-v4-pro', name: 'DeepSeek V4 Pro', provider: 'DeepSeek', providerSlug: 'deepseek', tier: 'Budget', input: 0.44, output: 0.87, context: '1M', verified: 'May 2026' },
+    { id: 'deepseek-v4-pro', name: 'DeepSeek V4 Pro', provider: 'DeepSeek', providerSlug: 'deepseek', tier: 'Budget', input: 0.435, output: 0.87, context: '1M', verified: 'Jun 2026' },
     { id: 'deepseek-v4-flash', name: 'DeepSeek V4 Flash', provider: 'DeepSeek', providerSlug: 'deepseek', tier: 'Budget', input: 0.14, output: 0.28, context: '1M', verified: 'May 2026' },
     { id: 'deepseek-v3', name: 'DeepSeek V3', provider: 'DeepSeek', providerSlug: 'deepseek', tier: 'Budget', input: 0.27, output: 1.10, context: '128K', verified: 'May 2026' },  // Deprecated — superseded by V4 Flash
     // Mistral
@@ -44,8 +44,8 @@ const API_MODELS = [
     // Moonshot (Kimi)
     { id: 'kimi-k26', name: 'Kimi K2.6', provider: 'Moonshot', providerSlug: 'moonshot', tier: 'Budget', input: 0.90, output: 3.75, context: '256K', verified: 'May 2026' },
     // xAI
-    { id: 'xai-grok3', name: 'Grok 3', provider: 'xAI', providerSlug: 'xai', tier: 'Premium', input: 30.00, output: 150.00, context: '128K', verified: 'May 2026' },
-    { id: 'xai-grok3-mini', name: 'Grok 3 Mini', provider: 'xAI', providerSlug: 'xai', tier: 'Mid', input: 3.00, output: 5.00, context: '128K', verified: 'May 2026' },
+    { id: 'xai-grok3', name: 'Grok 4.3', provider: 'xAI', providerSlug: 'xai', tier: 'Mid', input: 12.50, output: 25.00, context: '1M', verified: 'Jun 2026' },  // Was Grok 3 at $30/$150 — rebranded & repriced Jun 2026
+    { id: 'xai-grok3-mini', name: 'Grok Build 0.1', provider: 'xAI', providerSlug: 'xai', tier: 'Budget', input: 10.00, output: 20.00, context: '256K', verified: 'Jun 2026' },  // Replaced Grok 3 Mini
     // AI21
     { id: 'ai21-jamba', name: 'Jamba 1.5 Large', provider: 'AI21', providerSlug: 'ai21', tier: 'Mid', input: 2.00, output: 8.00, context: '256K', verified: 'May 2026' },
 ];
@@ -103,7 +103,7 @@ module.exports = function handler(req, res) {
             count: data.length,
             providers: providers,
             tiers: tiers,
-            lastUpdated: '2026-05-14',
+            lastUpdated: '2026-06-01',
             source: 'https://getapipulse.com',
             docs: 'https://getapipulse.com/pricing-index.html'
         }
