@@ -62,27 +62,8 @@
 - Fixed hardcoded Grok pricing in 22 blog posts, 3 comparison pages, calculator, chrome extension, pricing trends
 - Remaining models verified correct: OpenAI (9), Google (4), DeepSeek (3), Cohere (2), Meta/Llama (4), AI21 (1)
 
-## Session 408 (Jun 1)
-**Deprecation UX — visual indicators for 3 retiring models (371 pages, 231 posts, 58 tools):**
-- Added `deprecated`, `deprecatedDate`, `replacement` fields to pricing-data.js for Claude 4 Opus, Claude Sonnet 4, DeepSeek V3
-- Added helper functions: `getDeprecatedModels()`, `isModelDeprecated()`, `getDaysUntilDeprecation()`, `getReplacementModel()`
-- Updated `getPricingIndexData()` to include deprecation fields
-- Pricing index (pricing-index.html): Added deprecation badges ("Retires in 14d") with amber styling, dimmed rows for deprecated models, removed Claude Sonnet 4 from trending set
-- Calculator (calculator.html): Added dynamic deprecation warning when selecting deprecated models — shows days left, replacement model, and migration guide link
-- Anthropic provider page: Added deprecation alert banner, expanded pricing table to 6 models (added Opus 4.8, 4.7, Sonnet 4.6), added "Retires Jun 15" badges, updated all use-case recommendations to current models, updated stats bar
-- DeepSeek provider page: Added deprecation badge and warning to V3 model card and table row
-- Deprecation guide blog post: Updated countdown from static "17 days" to dynamic JavaScript countdown (now shows 14 days)
-
-## Session 407 (Jun 1)
-**Routine maintenance — pricing verification + PROGRESS.md cleanup (371 pages, 231 posts, 58 tools):**
-- Spot-checked Anthropic pricing against live docs — all 7 models match (Opus 4.8, 4.7, Sonnet 4.6, Haiku 4.5, deprecated Opus 4/Sonnet 4)
-- Confirmed deprecation timeline: Claude Sonnet 4 and Claude Opus 4 retiring June 15, 2026
-- All 34 models verified Jun 1, 2026 — pricing data is fresh
-- All active backlog tasks blocked on human action (Stripe links, community posts, GA4 review, Chrome Web Store)
-- Cleaned up PROGRESS.md: collapsed 3 old summary blocks into 1 unified summary (Sessions 1-403)
-
-## Sessions 404-406 (Jun 1)
-✅ October 2026 pricing post, inline calculator widget on 19 blog posts, pricing page conversion optimization. 370 pages, 230 posts, 58 tools.
+## Summary: Sessions 404-408 (Jun 1)
+✅ Deprecation UX (badges, warnings for Claude Opus 4/Sonnet 4/DeepSeek V3), routine pricing verification, October 2026 pricing post, inline calculator widget on 19 blog posts, pricing page conversion optimization. 371 pages, 231 posts, 58 tools.
 
 ## Summary: Sessions 1-403 (Apr 5 - May 31)
 403 sessions: Built full APIpulse from scratch. 370 pages, 230 posts, 34 models, 10 providers, 58 tools, 12 API endpoints, 2 widgets. Domain, Stripe, Pro, GA4, newsletter, community playbook, exit popup, social sharing, conversion funnel, Chrome extension, 35 comparison pages, FAQPage schema on ~260 pages, streaming toggle, State of LLM Pricing Report.
