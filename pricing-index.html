@@ -105,6 +105,16 @@
             background: rgba(239,68,68,0.15); color: #ef4444; margin-left: 6px;
             vertical-align: middle;
         }
+        .deprecated-badge {
+            display: inline-block; padding: 1px 6px; border-radius: 4px;
+            font-size: 10px; font-weight: 700; text-transform: uppercase;
+            background: rgba(245,158,11,0.15); color: #f59e0b; margin-left: 6px;
+            vertical-align: middle;
+        }
+        .deprecated-badge.expired {
+            background: rgba(239,68,68,0.15); color: #ef4444;
+        }
+        .deprecated-row { opacity: 0.65; }
 
         .cta-inline {
             background: var(--bg-secondary); border: 1px solid var(--accent);
@@ -255,15 +265,24 @@
             'xAI': 'provider-xai', 'AI21': 'provider-ai21'
         };
         const tierClass = { 'Budget': 'tier-budget', 'Mid': 'tier-mid', 'Premium': 'tier-premium' };
-        const trending = new Set(['GPT-4o', 'GPT-4o mini', 'Claude Sonnet 4', 'Gemini 2.5 Pro', 'Gemini 2.0 Flash', 'DeepSeek V4 Pro', 'Llama 4 Scout']);
+        const trending = new Set(['GPT-4o', 'GPT-4o mini', 'Gemini 2.5 Pro', 'Gemini 2.0 Flash', 'DeepSeek V4 Pro', 'Llama 4 Scout']);
 
         function renderTable(data) {
             const tbody = document.getElementById('pricing-body');
             const minInput = Math.min(...data.map(m => m.input));
             const minOutput = Math.min(...data.map(m => m.output));
-            tbody.innerHTML = data.map(m => `
-                <tr>
-                    <td><strong>${m.name}</strong>${trending.has(m.name) ? '<span class="trending-badge">Trending</span>' : ''}</td>
+            tbody.innerHTML = data.map(m => {
+                const depDays = m.deprecatedDate ? Math.ceil((new Date(m.deprecatedDate + 'T00:00:00') - new Date()) / 86400000) : null;
+                const depBadge = m.deprecated && depDays !== null && depDays > 0
+                    ? `<span class="deprecated-badge">Retires in ${depDays}d</span>`
+                    : m.deprecated && depDays !== null && depDays <= 0
+                    ? `<span class="deprecated-badge expired">Retired</span>`
+                    : m.deprecated
+                    ? `<span class="deprecated-badge">Deprecated</span>`
+                    : '';
+                return `
+                <tr${m.deprecated ? ' class="deprecated-row"' : ''}>
+                    <td><strong>${m.name}</strong>${trending.has(m.name) ? '<span class="trending-badge">Trending</span>' : ''}${depBadge}</td>
                     <td><span class="provider-badge ${providerClass[m.provider] || ''}">${m.provider}</span></td>
                     <td><span class="tier-badge ${tierClass[m.tier] || ''}">${m.tier}</span></td>
                     <td class="cost-cell ${m.input === minInput ? 'cheapest' : ''}">$${m.input.toFixed(2)}</td>
@@ -271,7 +290,7 @@
                     <td>${m.context}</td>
                     <td style="color:var(--text-muted);font-size:12px;">${m.verified}</td>
                 </tr>
-            `).join('');
+            `}).join('');
         }
 
         function filterTable() {

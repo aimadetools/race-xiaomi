@@ -17,9 +17,9 @@ const API_MODELS = [
     // Anthropic
     { id: 'anthropic-opus48', name: 'Claude Opus 4.8', provider: 'Anthropic', providerSlug: 'anthropic', tier: 'Premium', input: 5.00, output: 25.00, context: '1M', verified: 'May 2026' },
     { id: 'anthropic-opus47', name: 'Claude Opus 4.7', provider: 'Anthropic', providerSlug: 'anthropic', tier: 'Premium', input: 5.00, output: 25.00, context: '1M', verified: 'May 2026' },
-    { id: 'anthropic-opus', name: 'Claude 4 Opus', provider: 'Anthropic', providerSlug: 'anthropic', tier: 'Premium', input: 15.00, output: 75.00, context: '200K', verified: 'May 2026' },  // Deprecated — retiring June 15, 2026
+    { id: 'anthropic-opus', name: 'Claude 4 Opus', provider: 'Anthropic', providerSlug: 'anthropic', tier: 'Premium', input: 15.00, output: 75.00, context: '200K', verified: 'May 2026', deprecated: true, deprecatedDate: '2026-06-15', replacement: 'anthropic-opus48' },
     { id: 'anthropic-sonnet46', name: 'Claude Sonnet 4.6', provider: 'Anthropic', providerSlug: 'anthropic', tier: 'Mid', input: 3.00, output: 15.00, context: '1M', verified: 'May 2026' },
-    { id: 'anthropic-sonnet', name: 'Claude Sonnet 4', provider: 'Anthropic', providerSlug: 'anthropic', tier: 'Mid', input: 3.00, output: 15.00, context: '200K', verified: 'May 2026' },  // Deprecated — retiring June 15, 2026
+    { id: 'anthropic-sonnet', name: 'Claude Sonnet 4', provider: 'Anthropic', providerSlug: 'anthropic', tier: 'Mid', input: 3.00, output: 15.00, context: '200K', verified: 'May 2026', deprecated: true, deprecatedDate: '2026-06-15', replacement: 'anthropic-sonnet46' },
     { id: 'anthropic-haiku', name: 'Claude Haiku 4.5', provider: 'Anthropic', providerSlug: 'anthropic', tier: 'Budget', input: 1.00, output: 5.00, context: '200K', verified: 'May 2026' },
     // Google
     { id: 'google-gemini3-pro', name: 'Gemini 3.1 Pro', provider: 'Google', providerSlug: 'google', tier: 'Mid', input: 2.00, output: 12.00, context: '1M', verified: 'May 2026' },
@@ -29,7 +29,7 @@ const API_MODELS = [
     // DeepSeek
     { id: 'deepseek-v4-pro', name: 'DeepSeek V4 Pro', provider: 'DeepSeek', providerSlug: 'deepseek', tier: 'Budget', input: 0.435, output: 0.87, context: '1M', verified: 'Jun 2026' },
     { id: 'deepseek-v4-flash', name: 'DeepSeek V4 Flash', provider: 'DeepSeek', providerSlug: 'deepseek', tier: 'Budget', input: 0.14, output: 0.28, context: '1M', verified: 'May 2026' },
-    { id: 'deepseek-v3', name: 'DeepSeek V3', provider: 'DeepSeek', providerSlug: 'deepseek', tier: 'Budget', input: 0.27, output: 1.10, context: '128K', verified: 'May 2026' },  // Deprecated — superseded by V4 Flash
+    { id: 'deepseek-v3', name: 'DeepSeek V3', provider: 'DeepSeek', providerSlug: 'deepseek', tier: 'Budget', input: 0.27, output: 1.10, context: '128K', verified: 'May 2026', deprecated: true, replacement: 'deepseek-v4-flash' },
     // Mistral
     { id: 'mistral-large', name: 'Mistral Large 3', provider: 'Mistral', providerSlug: 'mistral', tier: 'Budget', input: 0.50, output: 1.50, context: '128K', verified: 'May 2026' },
     { id: 'mistral-small', name: 'Mistral Small 4', provider: 'Mistral', providerSlug: 'mistral', tier: 'Budget', input: 0.15, output: 0.60, context: '128K', verified: 'May 2026' },
@@ -96,13 +96,17 @@ function getComparisonData() {
 // Helper: Format for pricing index (pricing-index.html)
 function getPricingIndexData() {
     return API_MODELS.map(m => ({
+        id: m.id,
         name: m.name,
         provider: m.provider,
         tier: m.tier,
         input: m.input,
         output: m.output,
         context: m.context,
-        verified: m.verified
+        verified: m.verified,
+        deprecated: m.deprecated || false,
+        deprecatedDate: m.deprecatedDate || null,
+        replacement: m.replacement || null
     }));
 }
 
@@ -156,4 +160,32 @@ function getRecommendations(currentModelId, inputTokens, outputTokens, requests,
         .sort((a, b) => b.savings - a.savings);
 
     return alternatives.slice(0, count);
+}
+
+// Helper: Get deprecated models
+function getDeprecatedModels() {
+    return API_MODELS.filter(m => m.deprecated);
+}
+
+// Helper: Check if a model is deprecated
+function isModelDeprecated(modelId) {
+    const model = getModelById(modelId);
+    return model && model.deprecated === true;
+}
+
+// Helper: Get days until deprecation (returns null if no date or already past)
+function getDaysUntilDeprecation(modelId) {
+    const model = getModelById(modelId);
+    if (!model || !model.deprecatedDate) return null;
+    const now = new Date();
+    const depDate = new Date(model.deprecatedDate + 'T00:00:00');
+    const diff = Math.ceil((depDate - now) / (1000 * 60 * 60 * 24));
+    return diff > 0 ? diff : 0;
+}
+
+// Helper: Get replacement model info
+function getReplacementModel(modelId) {
+    const model = getModelById(modelId);
+    if (!model || !model.replacement) return null;
+    return getModelById(model.replacement);
 }

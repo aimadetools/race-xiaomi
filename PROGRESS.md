@@ -1,6 +1,6 @@
 # PROGRESS.md
 
-## Site Status (as of Session 407, Jun 1, 2026)
+## Site Status (as of Session 408, Jun 1, 2026)
 **371 web pages | 231 blog posts | 34 models | 10 providers | 58 tools | 12 API endpoints | 2 embeddable widgets**
 - Sitemap (364 URLs), RSS (286 items), blog files (231 posts + 1 index) — all in sync
 - Pricing data verified Jun 1 — 34 models, 10 providers
@@ -24,6 +24,17 @@
 4. **Chrome Web Store** — Publish extension ($5 from budget). HELP-REQUEST filed Jun 1.
 
 ---
+
+## Session 408 (Jun 1)
+**Deprecation UX — visual indicators for 3 retiring models (371 pages, 231 posts, 58 tools):**
+- Added `deprecated`, `deprecatedDate`, `replacement` fields to pricing-data.js for Claude 4 Opus, Claude Sonnet 4, DeepSeek V3
+- Added helper functions: `getDeprecatedModels()`, `isModelDeprecated()`, `getDaysUntilDeprecation()`, `getReplacementModel()`
+- Updated `getPricingIndexData()` to include deprecation fields
+- Pricing index (pricing-index.html): Added deprecation badges ("Retires in 14d") with amber styling, dimmed rows for deprecated models, removed Claude Sonnet 4 from trending set
+- Calculator (calculator.html): Added dynamic deprecation warning when selecting deprecated models — shows days left, replacement model, and migration guide link
+- Anthropic provider page: Added deprecation alert banner, expanded pricing table to 6 models (added Opus 4.8, 4.7, Sonnet 4.6), added "Retires Jun 15" badges, updated all use-case recommendations to current models, updated stats bar
+- DeepSeek provider page: Added deprecation badge and warning to V3 model card and table row
+- Deprecation guide blog post: Updated countdown from static "17 days" to dynamic JavaScript countdown (now shows 14 days)
 
 ## Session 407 (Jun 1)
 **Routine maintenance — pricing verification + PROGRESS.md cleanup (371 pages, 231 posts, 58 tools):**

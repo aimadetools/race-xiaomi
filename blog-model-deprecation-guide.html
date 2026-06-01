@@ -280,9 +280,26 @@
             <h1>AI Model Deprecation Guide: What to Do When Your Model Retires</h1>
             <p class="subtitle">Three major models are shutting down in June 2026. Here's how to migrate without downtime — and save 50-67% in the process.</p>
 
-            <div class="alert">
-                <p><strong>⚠️ Models retiring June 15, 2026:</strong> Claude 4 Opus, Claude Sonnet 4, and DeepSeek V3 (superseded). If you're using any of these, you have 17 days to migrate.</p>
+            <div class="alert" id="deprecation-countdown">
+                <p><strong>⚠️ Models retiring June 15, 2026:</strong> Claude 4 Opus, Claude Sonnet 4, and DeepSeek V3 (superseded).</p>
             </div>
+            <script>
+                (function(){
+                    var depDate = new Date('2026-06-15T00:00:00');
+                    var now = new Date();
+                    var daysLeft = Math.ceil((depDate - now) / 86400000);
+                    var el = document.getElementById('deprecation-countdown');
+                    if (el) {
+                        if (daysLeft > 0) {
+                            el.innerHTML = '<p><strong>⚠️ Models retiring June 15, 2026:</strong> Claude 4 Opus, Claude Sonnet 4, and DeepSeek V3 (superseded). <strong style="color:#f59e0b;">You have ' + daysLeft + ' days to migrate.</strong></p>';
+                        } else {
+                            el.innerHTML = '<p><strong>🚨 These models have been retired:</strong> Claude 4 Opus, Claude Sonnet 4, and DeepSeek V3. If you\'re still using them, migrate immediately to avoid service disruption.</p>';
+                            el.style.background = 'rgba(239,68,68,0.1)';
+                            el.style.borderColor = 'rgba(239,68,68,0.3)';
+                        }
+                    }
+                })();
+            </script>
 
             <h2>What's Retiring and What to Use Instead</h2>
 

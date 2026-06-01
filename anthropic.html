@@ -271,22 +271,27 @@
         <h1>Anthropic API Pricing</h1>
         <p class="subtitle">Complete pricing breakdown for every Claude model — Claude 4 Opus, Sonnet 4, and Haiku 4.5</p>
 
+        <div style="background:rgba(245,158,11,0.1);border:1px solid rgba(245,158,11,0.3);border-radius:12px;padding:16px 20px;margin-bottom:32px;text-align:center;">
+            <div style="font-weight:700;color:#f59e0b;font-size:15px;margin-bottom:4px;">⚠️ Deprecation Alert: Claude 4 Opus &amp; Sonnet 4 retire June 15, 2026</div>
+            <div style="color:var(--text-secondary);font-size:13px;">Migrate to Opus 4.8 ($5/$25) or Sonnet 4.6 ($3/$15) — both offer 1M context at lower cost. <a href="blog-model-deprecation-guide.html" style="color:#f59e0b;font-weight:600;">Read migration guide →</a></div>
+        </div>
+
         <!-- 2. Quick stats bar -->
         <div class="stats-bar">
             <div class="stat">
-                <div class="stat-value">3</div>
+                <div class="stat-value">6</div>
                 <div class="stat-label">Models</div>
             </div>
             <div class="stat">
-                <div class="stat-value">$0.80–$75</div>
+                <div class="stat-value">$1–$75</div>
                 <div class="stat-label">Per 1M tokens</div>
             </div>
             <div class="stat">
-                <div class="stat-value">200K</div>
-                <div class="stat-label">Context window</div>
+                <div class="stat-value">1M</div>
+                <div class="stat-label">Max context</div>
             </div>
             <div class="stat-card">
-                <div class="stat-number">May 2026</div>
+                <div class="stat-number">Jun 2026</div>
                 <div class="stat-label">Pricing Verified</div>
             </div>
         </div>
@@ -308,14 +313,35 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td><strong>Claude 4 Opus</strong></td>
+                        <td><strong>Claude Opus 4.8</strong></td>
+                        <td class="cost-cell">$5.00</td>
+                        <td class="cost-cell">$25.00</td>
+                        <td>1M</td>
+                        <td><span class="tier-badge tier-premium">Premium</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Claude Opus 4.7</strong></td>
+                        <td class="cost-cell">$5.00</td>
+                        <td class="cost-cell">$25.00</td>
+                        <td>1M</td>
+                        <td><span class="tier-badge tier-premium">Premium</span></td>
+                    </tr>
+                    <tr style="opacity:0.65;">
+                        <td><strong>Claude 4 Opus</strong> <span style="display:inline-block;padding:1px 6px;border-radius:4px;font-size:10px;font-weight:700;text-transform:uppercase;background:rgba(245,158,11,0.15);color:#f59e0b;vertical-align:middle;">Retires Jun 15</span></td>
                         <td class="cost-cell">$15.00</td>
                         <td class="cost-cell">$75.00</td>
                         <td>200K</td>
                         <td><span class="tier-badge tier-premium">Premium</span></td>
                     </tr>
                     <tr>
-                        <td><strong>Claude Sonnet 4</strong></td>
+                        <td><strong>Claude Sonnet 4.6</strong></td>
+                        <td class="cost-cell">$3.00</td>
+                        <td class="cost-cell">$15.00</td>
+                        <td>1M</td>
+                        <td><span class="tier-badge tier-mid">Mid</span></td>
+                    </tr>
+                    <tr style="opacity:0.65;">
+                        <td><strong>Claude Sonnet 4</strong> <span style="display:inline-block;padding:1px 6px;border-radius:4px;font-size:10px;font-weight:700;text-transform:uppercase;background:rgba(245,158,11,0.15);color:#f59e0b;vertical-align:middle;">Retires Jun 15</span></td>
                         <td class="cost-cell">$3.00</td>
                         <td class="cost-cell">$15.00</td>
                         <td>200K</td>
@@ -340,12 +366,12 @@
             <div class="use-case-card">
                 <h3>Complex Reasoning &amp; Analysis</h3>
                 <p>Multi-step reasoning, research synthesis, legal analysis, and tasks requiring the highest accuracy. Best-in-class performance on graduate-level benchmarks.</p>
-                <div class="model-rec">Recommended: Claude 4 Opus</div>
+                <div class="model-rec">Recommended: Claude Opus 4.8</div>
             </div>
             <div class="use-case-card">
                 <h3>Code Generation &amp; Agentic Tasks</h3>
                 <p>Writing, debugging, and reviewing code. Building multi-step workflows and tool-use agents. Strong balance of capability and speed.</p>
-                <div class="model-rec">Recommended: Claude Sonnet 4</div>
+                <div class="model-rec">Recommended: Claude Sonnet 4.6</div>
             </div>
             <div class="use-case-card">
                 <h3>High-Volume Chat &amp; Classification</h3>
@@ -354,13 +380,13 @@
             </div>
             <div class="use-case-card">
                 <h3>Content Generation at Scale</h3>
-                <p>Summarization, translation, and content creation where throughput matters. 200K context handles large documents with ease.</p>
-                <div class="model-rec">Recommended: Claude Sonnet 4 or Haiku 4.5</div>
+                <p>Summarization, translation, and content creation where throughput matters. 1M context handles large documents with ease.</p>
+                <div class="model-rec">Recommended: Claude Sonnet 4.6 or Haiku 4.5</div>
             </div>
             <div class="use-case-card">
                 <h3>Enterprise Document Processing</h3>
-                <p>Analyzing lengthy contracts, research papers, or codebases. The 200K context window processes entire documents in a single call.</p>
-                <div class="model-rec">Recommended: Claude Sonnet 4</div>
+                <p>Analyzing lengthy contracts, research papers, or codebases. The 1M context window processes entire documents in a single call.</p>
+                <div class="model-rec">Recommended: Claude Sonnet 4.6</div>
             </div>
             <div class="use-case-card">
                 <h3>Startup MVPs &amp; Prototyping</h3>
@@ -380,8 +406,11 @@
                         <div class="input-group">
                             <label for="anth-model">Model</label>
                             <select id="anth-model" onchange="anthCalculate()" aria-label="Select Anthropic model">
-                                <option value="anthropic-opus">Claude 4 Opus — $15.00/$75.00</option>
-                                <option value="anthropic-sonnet" selected>Claude Sonnet 4 — $3.00/$15.00</option>
+                                <option value="anthropic-opus48">Claude Opus 4.8 — $5.00/$25.00</option>
+                                <option value="anthropic-opus47">Claude Opus 4.7 — $5.00/$25.00</option>
+                                <option value="anthropic-opus" style="color:#f59e0b;">Claude 4 Opus — $15.00/$75.00 (⚠️ Retires Jun 15)</option>
+                                <option value="anthropic-sonnet46" selected>Claude Sonnet 4.6 — $3.00/$15.00</option>
+                                <option value="anthropic-sonnet" style="color:#f59e0b;">Claude Sonnet 4 — $3.00/$15.00 (⚠️ Retires Jun 15)</option>
                                 <option value="anthropic-haiku">Claude Haiku 4.5 — $1.00/$5.00</option>
                             </select>
                         </div>
