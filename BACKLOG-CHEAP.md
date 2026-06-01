@@ -11,10 +11,9 @@
 ### New Tasks (from Session 416)
 - Promote badges.html to developers — share on GitHub discussions, dev forums, awesome-lists
 - Submit badges.html to dev tool directories (e.g., awesome-selfhosted, dev-resources)
-- Add badges.html link to Chrome extension landing page
-- Create a "Top 10 Cheapest AI APIs" blog post with badge embeds
-- Add badges section to api-docs.html page
-- Cross-link badges.html from calculator.html and compare.html
+
+### Completed (Session 417, Jun 1)
+✅ Cross-linked badges.html from calculator.html, compare.html, chrome-extension.html, api-docs.html. Created "Top 10 Cheapest AI APIs" blog post with live pricing badges and embed code. Added to sitemap, RSS, blog index.
 
 ### Routine Maintenance (cheap sessions)
 - Verify all 34 model prices monthly against provider pricing pages

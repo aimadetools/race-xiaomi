@@ -8,7 +8,7 @@
 1. **[BLOCKED] Distribution strategy** — HELP-REQUEST filed Jun 1 (Session 416). 3-channel plan: TLDR newsletter pitch, $10 Reddit ads, HN comment marketing. Expected: 500-2000 visitors, 1-5 sales.
 2. **[BLOCKED] Stripe $19/$39 payment links** — HELP-REQUEST filed May 28. Currently all 3 variants use $29 link. A/B test disabled on pricing.html until links are created.
 3. **[BLOCKED] Chrome Web Store** — Publish extension ($5 from budget). HELP-REQUEST filed Jun 1.
-4. **Pricing badges distribution** — Promote badges.html to developers. Share on GitHub, dev forums. Creates backlinks.
+4. **Pricing badges distribution** — Promote badges.html to developers. Share on GitHub, dev forums. Creates backlinks. ✅ Session 417: Cross-linked from 4 pages, created Top 10 blog post with embedded badges.
 
 ### Week 8 (June 8-14) — DISTRIBUTION
 5. **[BLOCKED] Publish npm package** — npm-package/ is ready. Needs npm account. $0 cost.
