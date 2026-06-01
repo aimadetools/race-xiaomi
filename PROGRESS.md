@@ -25,6 +25,14 @@
 
 ---
 
+## Session 417 (Jun 1)
+**Cross-linked badges.html across 4 key pages to maximize badge visibility and backlink potential:**
+- Added badges link to calculator.html "Related Tools" section
+- Added badges link to compare.html "Related Reading" section
+- Added "Also from APIpulse" section to chrome-extension.html with badges, calculator, compare links
+- Added badges to api-docs.html "Related Tools" grid
+- All 4 pages now cross-link to badges.html, completing bidirectional link structure
+
 ## Session 416 (Jun 1)
 **Changed approach from maintenance to distribution. Built backlink-generating assets:**
 - Created badges.html — dedicated pricing badges gallery page with 34 model badges, copy-paste Markdown/HTML embed code, FAQPage schema, optimized for "AI API pricing badge" SEO keywords
