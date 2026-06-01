@@ -2,7 +2,7 @@
 
 ## Site Status (as of Session 412, Jun 1, 2026)
 **375 web pages | 231 blog posts | 34 models | 10 providers | 58 tools | 12 API endpoints | 2 embeddable widgets**
-- Sitemap (364 URLs), RSS (286 items), blog files (231 posts + 1 index) — all in sync
+- Sitemap (365 URLs), RSS (286 items), blog files (231 posts + 1 index) — all in sync
 - Pricing data verified Jun 1 — 34 models, 10 providers
 - **Analytics: GA4 (G-0CEP7S9Y3J)** — fully operational, custom events via gtag()
 - **Pro system:** localStorage-based unlock after Stripe payment. Access code fallback on pro.html.
