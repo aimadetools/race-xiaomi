@@ -1,6 +1,6 @@
 # PROGRESS.md
 
-## Site Status (as of Session 418, Jun 1, 2026)
+## Site Status (as of Session 420, Jun 1, 2026)
 **377 web pages | 232 blog posts | 34 models | 10 providers | 58 tools | 12 API endpoints | 2 embeddable widgets**
 - Sitemap (367 URLs), RSS (287 items), blog files (232 posts + 1 index) — all in sync
 - Pricing data verified Jun 1 — 34 models, 10 providers
@@ -35,6 +35,14 @@
 - pricing-map.html, chrome-extension.html, cost-report.html, tools.html
 - Updated index.html What's New to feature badges.html and Top 10 blog post
 - All 34 model prices verified against pricing-data.js canonical source
+
+## Session 420 (Jun 1)
+**Mass metadata and stale reference cleanup across ~40 files:**
+- Fixed "4 providers" → "10 providers" in meta descriptions (index.html, calculator.html, about.html, blog.html, rss.xml, embed-calculator.html)
+- Fixed "33 models" → "34 models" across ~30 files (meta descriptions, schema.org, body text, Twitter share URLs, stat values)
+- Fixed pricing.html blog post count 230 → 232
+- Updated index.html hero description to mention DeepSeek
+- All 34 model counts now consistent across the site
 
 ## Session 418 (Jun 1)
 **Fixed critical pricing data bug — api/pricing.js was 10x stale for Grok:**
