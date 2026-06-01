@@ -314,9 +314,9 @@ function getRecommendations() {
     }
     if (provider.includes('opus')) {
         recs.push({
-            title: 'Consider Claude Sonnet 4 for most workloads',
+            title: 'Consider Claude Sonnet 4.6 for most workloads',
             impact: 'Save ~80% on input costs',
-            detail: 'Claude Sonnet 4 costs $3.00/M input vs $15.00/M for Opus. Sonnet handles most tasks with comparable quality.'
+            detail: 'Claude Sonnet 4.6 costs $3.00/M input vs $15.00/M for Opus. Sonnet handles most tasks with comparable quality and supports 1M context.'
         });
     }
     if (provider.includes('sonnet') && !provider.includes('haiku')) {

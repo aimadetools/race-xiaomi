@@ -33,8 +33,8 @@ const MODELS = [
   { name: 'Llama 4 Maverick', provider: 'Meta (Together.ai)', tier: 'Budget', input: 0.20, output: 0.60, context: '10M' },
   { name: 'Llama 3.1 70B', provider: 'Meta (Together.ai)', tier: 'Mid', input: 0.88, output: 0.88, context: '128K' },
   { name: 'Llama 3.1 8B', provider: 'Meta (Together.ai)', tier: 'Budget', input: 0.10, output: 0.10, context: '128K' },
-  { name: 'Kimi K2.6', provider: 'Moonshot', tier: 'Budget', input: 0.90, output: 3.75, context: '256K' },
-  { name: 'Grok 4.3', provider: 'xAI', tier: 'Mid', input: 12.50, output: 25.00, context: '1M' },
-  { name: 'Grok Build 0.1', provider: 'xAI', tier: 'Budget', input: 10.00, output: 20.00, context: '256K' },
+  { name: 'Kimi K2.6', provider: 'Moonshot', tier: 'Budget', input: 0.95, output: 4.00, context: '256K' },
+  { name: 'Grok 4.3', provider: 'xAI', tier: 'Mid', input: 1.25, output: 2.50, context: '1M' },
+  { name: 'Grok Build 0.1', provider: 'xAI', tier: 'Budget', input: 0.30, output: 0.50, context: '256K' },
   { name: 'Jamba 1.5 Large', provider: 'AI21', tier: 'Mid', input: 2.00, output: 8.00, context: '256K' },
 ];

@@ -25,8 +25,8 @@ const MODELS = [
     { id: 'mistral-large', name: 'Mistral Large 3', provider: 'Mistral', tier: 'Budget', input: 0.50, output: 1.50, context: '128K', useCases: ['coding', 'reasoning', 'multilingual'], quality: 3 },
     { id: 'mistral-small', name: 'Mistral Small 4', provider: 'Mistral', tier: 'Budget', input: 0.15, output: 0.60, context: '128K', useCases: ['chat', 'classification', 'speed'], quality: 3 },
     { id: 'llama-4-scout', name: 'Llama 4 Scout', provider: 'Meta', tier: 'Budget', input: 0.11, output: 0.34, context: '10M', useCases: ['general', 'coding', 'long-context'], quality: 3 },
-    { id: 'xai-grok3', name: 'Grok 4.3', provider: 'xAI', tier: 'Mid', input: 12.50, output: 25.00, context: '1M', useCases: ['reasoning', 'analysis', 'creative'], quality: 5 },
-    { id: 'xai-grok3-mini', name: 'Grok Build 0.1', provider: 'xAI', tier: 'Budget', input: 10.00, output: 20.00, context: '256K', useCases: ['general', 'chat', 'coding'], quality: 4 },
+    { id: 'xai-grok3', name: 'Grok 4.3', provider: 'xAI', tier: 'Mid', input: 1.25, output: 2.50, context: '1M', useCases: ['reasoning', 'analysis', 'creative'], quality: 5 },
+    { id: 'xai-grok3-mini', name: 'Grok Build 0.1', provider: 'xAI', tier: 'Budget', input: 0.30, output: 0.50, context: '256K', useCases: ['general', 'chat', 'coding'], quality: 4 },
 ];
 
 function costPerRequest(model, inputTokens, outputTokens) {

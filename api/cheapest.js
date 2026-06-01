@@ -29,8 +29,8 @@ const API_MODELS = [
     { id: 'mistral-small', name: 'Mistral Small 4', provider: 'Mistral', tier: 'Budget', input: 0.15, output: 0.60, context: '128K', strengths: ['chat', 'classification', 'speed'] },
     { id: 'llama-3.1-70b', name: 'Llama 3.1 70B', provider: 'Meta (Together.ai)', tier: 'Mid', input: 0.88, output: 0.88, context: '128K', strengths: ['general', 'coding', 'analysis'] },
     { id: 'llama-3.1-8b', name: 'Llama 3.1 8B', provider: 'Meta (Together.ai)', tier: 'Budget', input: 0.10, output: 0.10, context: '128K', strengths: ['chat', 'classification', 'speed'] },
-    { id: 'xai-grok3', name: 'Grok 4.3', provider: 'xAI', tier: 'Mid', input: 12.50, output: 25.00, context: '1M', strengths: ['reasoning', 'analysis', 'creative'] },
-    { id: 'xai-grok3-mini', name: 'Grok Build 0.1', provider: 'xAI', tier: 'Budget', input: 10.00, output: 20.00, context: '256K', strengths: ['general', 'chat', 'coding'] },
+    { id: 'xai-grok3', name: 'Grok 4.3', provider: 'xAI', tier: 'Mid', input: 1.25, output: 2.50, context: '1M', strengths: ['reasoning', 'analysis', 'creative'] },
+    { id: 'xai-grok3-mini', name: 'Grok Build 0.1', provider: 'xAI', tier: 'Budget', input: 0.30, output: 0.50, context: '256K', strengths: ['general', 'chat', 'coding'] },
 ];
 
 module.exports = function handler(req, res) {

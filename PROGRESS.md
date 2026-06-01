@@ -36,6 +36,14 @@
 - Updated index.html What's New to feature badges.html and Top 10 blog post
 - All 34 model prices verified against pricing-data.js canonical source
 
+## Session 421 (Jun 1)
+**Fixed stale Grok/Kimi prices across 5 API files + Chrome extension, added deprecation flags:**
+- api/pricing.js: Added `deprecated: true`, `deprecatedDate: '2026-06-15'`, `replacement` to Claude 4 Opus, Claude Sonnet 4, and DeepSeek V3 (was missing — pricing-data.js had them)
+- api/compare.js, api/cheapest.js, api/calculate.js, api/cost-report.js, api/recommend.js: Fixed stale Grok 4.3 ($12.50/$25 → $1.25/$2.50), Grok Build 0.1 ($10/$20 → $0.30/$0.50), Kimi K2.6 ($0.90/$3.75 → $0.95/$4.00) — Session 418 missed these 5 files
+- chrome-extension/models.js: Fixed same stale Grok/Kimi prices
+- pro-features.js: Updated recommendation from "Claude Sonnet 4" → "Claude Sonnet 4.6" (Sonnet 4 retires Jun 15)
+- blog-model-deprecation-guide.html: Updated article:modified_time to Jun 1
+
 ## Session 420 (Jun 1)
 **Mass metadata and stale reference cleanup across ~40 files:**
 - Fixed "4 providers" → "10 providers" in meta descriptions (index.html, calculator.html, about.html, blog.html, rss.xml, embed-calculator.html)

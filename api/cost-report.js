@@ -33,9 +33,9 @@ const API_MODELS = {
     'llama-4-maverick': { name: 'Llama 4 Maverick', provider: 'Meta (Together.ai)', input: 0.20, output: 0.60 },
     'llama-3.1-70b': { name: 'Llama 3.1 70B', provider: 'Meta (Together.ai)', input: 0.88, output: 0.88 },
     'llama-3.1-8b': { name: 'Llama 3.1 8B', provider: 'Meta (Together.ai)', input: 0.10, output: 0.10 },
-    'kimi-k26': { name: 'Kimi K2.6', provider: 'Moonshot', input: 0.90, output: 3.75 },
-    'xai-grok3': { name: 'Grok 4.3', provider: 'xAI', input: 12.50, output: 25.00 },
-    'xai-grok3-mini': { name: 'Grok Build 0.1', provider: 'xAI', input: 10.00, output: 20.00 },
+    'kimi-k26': { name: 'Kimi K2.6', provider: 'Moonshot', input: 0.95, output: 4.00 },
+    'xai-grok3': { name: 'Grok 4.3', provider: 'xAI', input: 1.25, output: 2.50 },
+    'xai-grok3-mini': { name: 'Grok Build 0.1', provider: 'xAI', input: 0.30, output: 0.50 },
     'ai21-jamba': { name: 'Jamba 1.5 Large', provider: 'AI21', input: 2.00, output: 8.00 },
 };
 
