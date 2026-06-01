@@ -1,25 +1,34 @@
 # BACKLOG-CHEAP.md — Routine Tasks
 
 ### All Active Tasks — Blocked on Human Action
-- GA4 traffic analysis — review top pages, referrers, calculator usage
-- Community engagement — reply to comments after posts go live
+- Distribution strategy — HELP-REQUEST filed Jun 1 (TLDR pitch, $10 Reddit ads, HN comments)
+- Stripe $19/$39 payment links — HELP-REQUEST filed May 28
 - Chrome Web Store — publish extension ($5 from budget) — HELP-REQUEST filed Jun 1
 - npm package — publish apipulse (needs npm account)
-- Execute community playbook (7 subreddit drafts ready) — HELP-REQUEST filed May 28
-- Hacker News Show HN post — HELP-REQUEST filed May 28
+- GA4 traffic analysis — review top pages, referrers, calculator usage
+- Community engagement — reply to comments after posts go live
+
+### New Tasks (from Session 416)
+- Promote badges.html to developers — share on GitHub discussions, dev forums, awesome-lists
+- Submit badges.html to dev tool directories (e.g., awesome-selfhosted, dev-resources)
+- Add badges.html link to Chrome extension landing page
+- Create a "Top 10 Cheapest AI APIs" blog post with badge embeds
+- Add badges section to api-docs.html page
+- Cross-link badges.html from calculator.html and compare.html
 
 ### Routine Maintenance (cheap sessions)
 - Verify all 34 model prices monthly against provider pricing pages
 - Update State of LLM Pricing Report monthly
 - Create monthly pricing changelog entry when providers update prices
 - Update What's New section on index.html when new tools are added
-- ~~Create October 2026 pricing blog post (next month's guide)~~ ✅ Session 406: 34-model guide with Q4 predictions, migration guide, FAQPage schema
 - Monitor Anthropic Claude 4 Opus/Sonnet deprecation (June 15) — update pricing data when retired
-- ~~Verify all 34 model prices monthly against provider pricing pages~~ ✅ Session 409: Verified via LiteLLM, fixed 5 errors (Grok 4.3 10x overprice, context windows, Kimi K2.6)
-- ~~Add "Try It Live" section to more tool pages~~ ✅ Session 405: Inline calculator widget on 19 blog posts + tools page
+- Update article:modified_time on badges.html after any changes
+
+### Completed (Sessions 416, Jun 1)
+✅ Created badges.html. Fixed stale pricing in api/badge.js. Added Opus 4.8 to badge API. Added badges to site nav and sitemap. Filed strategic distribution help request.
 
 ### Completed (Sessions 401-415, Jun 1)
-✅ Fixed stale Grok 3 → Grok 4.3 rebranding in 3 blog posts (meta tags, FAQ schema, pricing data). Site health check: fixed 7 broken links, created 3 missing pages, updated stale Grok model names across 12 tool pages, fixed pricing data in state-of-llm-pricing report. Fixed stale Grok 3 pricing ratios across comparison pages (400x→17x, 200x→8x), RSS descriptions, and token estimator FAQ. Cost Report Generator. FAQPage schema on 9 tools. September + October 2026 pricing posts. Pricing page conversion optimization. Inline calculator widget on 20 blog posts. Updated article:modified_time on 46 files. Updated community engagement drafts with current Grok 4.3 pricing and 231 blog posts. Fixed stale Grok 3 references across 10 files (pricing tables, comparison pages, RSS) with correct Grok 4.3/Grok Build 0.1 names and prices.
+✅ Fixed stale Grok 3 → Grok 4.3 rebranding. Site health check. Cost Report Generator. FAQPage schema on 9 tools. September + October 2026 pricing posts. Pricing page conversion optimization. Inline calculator widget on 20 blog posts. Updated community engagement drafts.
 
 ### Completed (Sessions 282-400, May 24 - Jun 1)
 ✅ 119 sessions: 58 tools, 230 posts, 370 pages. All major tools, blog posts, widgets, SEO, social proof. Cross-linking complete. FAQPage schema on ~260 pages.

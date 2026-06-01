@@ -38,18 +38,34 @@ function toggleMobileNav() {
     }
 }
 
-// Add Widget link to nav if missing
+// Add Widget and Badges links to nav if missing
 document.addEventListener('DOMContentLoaded', () => {
     var navLinks = document.querySelector('.nav-links');
     if (!navLinks) return;
+
+    // Add Badges link after API link
+    var hasBadges = navLinks.querySelector('a[href="badges.html"]');
+    if (!hasBadges) {
+        var apiLink = navLinks.querySelector('a[href="api-docs.html"]');
+        if (apiLink) {
+            var badgesLink = document.createElement('a');
+            badgesLink.href = 'badges.html';
+            badgesLink.textContent = 'Badges';
+            apiLink.parentNode.insertBefore(badgesLink, apiLink.nextSibling);
+        }
+    }
+
+    // Add Widget link after Badges link
     var hasWidget = navLinks.querySelector('a[href="embed.html"]');
-    if (hasWidget) return;
-    var apiLink = navLinks.querySelector('a[href="api-docs.html"]');
-    if (!apiLink) return;
-    var widgetLink = document.createElement('a');
-    widgetLink.href = 'embed.html';
-    widgetLink.textContent = 'Widgets';
-    apiLink.parentNode.insertBefore(widgetLink, apiLink.nextSibling);
+    if (!hasWidget) {
+        var badgesLinkEl = navLinks.querySelector('a[href="badges.html"]');
+        if (badgesLinkEl) {
+            var widgetLink = document.createElement('a');
+            widgetLink.href = 'embed.html';
+            widgetLink.textContent = 'Widgets';
+            badgesLinkEl.parentNode.insertBefore(widgetLink, badgesLinkEl.nextSibling);
+        }
+    }
 });
 
 // Close mobile nav when clicking a link

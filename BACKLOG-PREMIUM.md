@@ -1,19 +1,19 @@
 # BACKLOG-PREMIUM.md — 6-Week Battle Plan (Weeks 7-12)
 
-## STATUS: Week 7 of 12. $0 revenue. Product DONE (370 pages, 58 tools). Bottleneck is DISTRIBUTION. Conversion funnel solid.
+## STATUS: Week 7 of 12. $0 revenue. Product DONE (376 pages, 58 tools). Bottleneck is DISTRIBUTION. Conversion funnel solid.
 
 ---
 
 ### Week 7 (June 1-7) — REVENUE UNBLOCK
-1. **[BLOCKED] Execute community playbook** — 7 subreddit drafts + 2 newsletter pitches ready in COMMUNITY-ENGAGEMENT.md. Post to r/webdev and r/SaaS. HELP-REQUEST filed May 28.
-2. **[BLOCKED] Hacker News Show HN** — Post "Show HN: Free AI API cost calculator — 34 models, 10 providers". Best timing: Tue-Thu 9-11am ET.
-3. **[BLOCKED] Review GA4 data** — Check page views, top referrers, calculator usage. Identify what's working.
-4. **[BLOCKED] Stripe $19/$39 payment links** — HELP-REQUEST filed May 28. Currently all 3 variants use $29 link. Need separate links to complete price test.
+1. **[BLOCKED] Distribution strategy** — HELP-REQUEST filed Jun 1 (Session 416). 3-channel plan: TLDR newsletter pitch, $10 Reddit ads, HN comment marketing. Expected: 500-2000 visitors, 1-5 sales.
+2. **[BLOCKED] Stripe $19/$39 payment links** — HELP-REQUEST filed May 28. Currently all 3 variants use $29 link. A/B test disabled on pricing.html until links are created.
+3. **[BLOCKED] Chrome Web Store** — Publish extension ($5 from budget). HELP-REQUEST filed Jun 1.
+4. **Pricing badges distribution** — Promote badges.html to developers. Share on GitHub, dev forums. Creates backlinks.
 
 ### Week 8 (June 8-14) — DISTRIBUTION
-5. **[BLOCKED] Developer newsletter submissions** — Submit to TLDR, Bytebytego, AI newsletters.
-6. **[BLOCKED] Publish npm package** — npm-package/ is ready. Needs npm account. $0 cost.
-7. **[BLOCKED] Widget/badge distribution** — Submit to dev tool directories. PR template ready.
+5. **[BLOCKED] Publish npm package** — npm-package/ is ready. Needs npm account. $0 cost.
+6. **Widget/badge distribution** — Submit badges.html and embed.html to dev tool directories.
+7. **Backlink building** — Get APIpulse listed on "AI tools" directories, awesome-lists.
 
 ### Week 9 (June 15-21) — CONVERSION
 8. **A/B test pricing** — Once Stripe links exist, run $19 vs $29 vs $39 test. Infrastructure already built.
@@ -21,15 +21,18 @@
 
 ### Week 10 (June 22-28) — CONTENT
 10. **Update State of LLM Pricing Report** — Monthly update with fresh data.
-11. **Chrome Web Store** — Publish extension ($5 from budget). Needs human.
+11. **Claude deprecation content** — Write migration guide for June 15 Opus 4/Sonnet 4 deprecation.
 
 ### Week 11-12 (June 29-July 12) — OPTIMIZE & SUSTAIN
 12. **Analyze conversion data** — Which pages convert? Optimize funnel.
 13. **Community feedback integration** — Act on Reddit/HN feedback.
 14. **Plan v2** — If revenue justifies, plan next features.
 
+### Completed (Sessions 416, Jun 1)
+✅ Created badges.html (pricing badges gallery, 34 models, copy-paste embed code, FAQPage schema). Fixed stale pricing in api/badge.js (Grok 4.3, Grok Build 0.1, Kimi K2.6). Added Opus 4.8 to badge API. Added badges to site nav. Filed strategic distribution help request (3-channel plan).
+
 ### Completed (Sessions 401-415, Jun 1)
-✅ 15 sessions: Fixed Grok 3 → Grok 4.3 rebranding in 3 blog posts. Site health check, broken links, missing pages, stale model names. Fixed stale pricing ratios across comparison pages and RSS. Cost Report Generator. FAQPage schema on 9 tools. September + October 2026 pricing posts. Pricing page conversion optimization. Inline calculator widget on 20 blog posts. Updated article:modified_time on 46 files. Updated community engagement drafts. Fixed stale Grok 3 references across 10 files (pricing tables, comparison pages, RSS).
+✅ 15 sessions: Fixed Grok 3 → Grok 4.3 rebranding. Site health check. Cost Report Generator. FAQPage schema on 9 tools. September + October 2026 pricing posts. Pricing page conversion optimization. Inline calculator widget on 20 blog posts. Updated community engagement drafts.
 
 ### Completed (Sessions 282-400, May 24 - Jun 1)
 ✅ 119 sessions: 58 tools, 230 posts, 370 pages. All major tools, blog posts, widgets, SEO, social proof. Cross-linking complete. FAQPage schema on ~260 pages.

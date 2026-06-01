@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI API Pricing Badges for GitHub READMEs — Free Embeddable Badges | APIpulse</title>
+    <meta name="description" content="Free embeddable pricing badges for 34 AI models. Add live GPT-5, Claude, Gemini pricing to your GitHub README, docs, or blog. Auto-updating SVG badges.">
+    <meta name="keywords" content="AI API pricing badge, GitHub README badge, GPT-5 pricing badge, Claude pricing badge, LLM cost badge, shields.io AI pricing, embeddable AI pricing">
+    <meta property="og:title" content="AI API Pricing Badges for GitHub READMEs — APIpulse">
+    <meta property="og:description" content="Free embeddable pricing badges for 34 AI models. Add live pricing to your GitHub README.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://getapipulse.com/og-image.png">
+    <meta property="og:url" content="https://getapipulse.com/badges.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="AI API Pricing Badges for GitHub READMEs">
+    <meta name="twitter:image" content="https://getapipulse.com/og-image.png">
+    <meta name="twitter:description" content="Free embeddable pricing badges for 34 AI models. Add live pricing to your GitHub README.">
+    <link rel="canonical" href="https://getapipulse.com/badges.html">
+    <link rel="alternate" type="application/rss+xml" title="APIpulse Blog" href="https://getapipulse.com/rss.xml">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="styles.css">
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0CEP7S9Y3J"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-0CEP7S9Y3J');
+    </script>
+    <script src="analytics.js" defer></script>
+    <script src="dynamic-date.js" defer></script>
+    <script src="shared.js" defer></script>
+    <script src="pricing-data.js" defer></script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "APIpulse Pricing Badges",
+        "url": "https://getapipulse.com/badges.html",
+        "description": "Free embeddable pricing badges for 34 AI models across 10 providers. Add live pricing to your GitHub README.",
+        "applicationCategory": "DeveloperApplication",
+        "operatingSystem": "Web",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "How do I add an AI pricing badge to my GitHub README?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Copy the markdown snippet from the badges page and paste it into your README.md file. The badge will automatically display the current pricing for that model. Example: [![GPT-5](https://getapipulse.com/api/badge?model=openai-gpt5)](https://getapipulse.com)"
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Are the pricing badges free to use?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes, all pricing badges are completely free. No API key required. Just copy the embed code and paste it anywhere — GitHub READMEs, documentation, blogs, or websites."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How often are the badge prices updated?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Badge pricing data is updated at least monthly, and more frequently when providers announce price changes. The badges use server-side caching for fast delivery."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Which AI models have pricing badges?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "APIpulse offers pricing badges for 34 models across 10 providers: OpenAI (GPT-5.5, GPT-5, GPT-4o), Anthropic (Claude Opus 4.8, Sonnet 4.6, Haiku 4.5), Google (Gemini 3.1 Pro, 2.5 Pro, Flash), DeepSeek (V4 Pro, V4 Flash), Mistral, Cohere, Meta Llama, Moonshot (Kimi K2.6), xAI (Grok 4.3), and AI21 (Jamba)."
+                }
+            }
+        ]
+    }
+    </script>
+    <style>
+        .page-header { max-width: var(--max-width); margin: 0 auto; padding: 120px 24px 40px; text-align: center; }
+        .page-header h1 { font-size: clamp(28px, 4vw, 42px); font-weight: 800; margin-bottom: 12px; }
+        .page-header p { color: var(--text-secondary); font-size: 18px; max-width: 650px; margin: 0 auto 16px; line-height: 1.6; }
+        .badge-count { display: inline-block; background: var(--accent-glow); border: 1px solid rgba(99,102,241,0.3); padding: 4px 14px; border-radius: 100px; font-size: 13px; color: var(--accent); font-weight: 600; margin-bottom: 24px; }
+
+        .how-it-works { max-width: 800px; margin: 0 auto; padding: 0 24px 48px; }
+        .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+        .step { text-align: center; padding: 24px; background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 12px; }
+        .step-num { width: 36px; height: 36px; background: var(--accent); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 16px; margin: 0 auto 12px; }
+        .step h3 { font-size: 15px; font-weight: 700; margin-bottom: 6px; }
+        .step p { font-size: 13px; color: var(--text-secondary); margin: 0; }
+
+        .provider-section { max-width: var(--max-width); margin: 0 auto; padding: 0 24px 48px; }
+        .provider-section h2 { font-size: 24px; font-weight: 700; margin-bottom: 24px; display: flex; align-items: center; gap: 12px; }
+        .provider-tag { font-size: 12px; font-weight: 600; padding: 3px 10px; border-radius: 100px; color: white; }
+
+        .badge-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(400px, 1fr)); gap: 16px; margin-bottom: 48px; }
+        .badge-card { background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 12px; padding: 20px; }
+        .badge-preview { background: var(--bg-card); border-radius: 8px; padding: 16px; text-align: center; margin-bottom: 16px; min-height: 52px; display: flex; align-items: center; justify-content: center; }
+        .badge-preview img { max-width: 100%; height: auto; }
+        .badge-info { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; }
+        .badge-model { font-weight: 700; font-size: 15px; }
+        .badge-price { font-size: 13px; color: var(--text-secondary); }
+        .badge-tabs { display: flex; gap: 4px; margin-bottom: 8px; }
+        .badge-tab { background: none; border: 1px solid var(--border); border-radius: 6px; padding: 4px 10px; font-size: 11px; color: var(--text-secondary); cursor: pointer; font-family: monospace; transition: all 0.2s; }
+        .badge-tab.active { background: var(--accent); border-color: var(--accent); color: white; }
+        .badge-code { background: var(--bg-card); border: 1px solid var(--border); border-radius: 8px; padding: 12px; font-family: monospace; font-size: 12px; color: var(--text-secondary); word-break: break-all; position: relative; line-height: 1.5; max-height: 80px; overflow-y: auto; }
+        .copy-btn { position: absolute; top: 8px; right: 8px; background: var(--accent); color: white; border: none; border-radius: 6px; padding: 4px 10px; font-size: 11px; font-weight: 600; cursor: pointer; transition: all 0.2s; }
+        .copy-btn:hover { opacity: 0.9; }
+        .copy-btn.copied { background: var(--green); }
+
+        .cta-section { max-width: 600px; margin: 0 auto; padding: 48px 24px 80px; text-align: center; }
+        .cta-section h2 { font-size: 24px; font-weight: 700; margin-bottom: 12px; }
+        .cta-section p { color: var(--text-secondary); margin-bottom: 24px; }
+        .cta-links { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+        .cta-links a { display: inline-block; padding: 12px 24px; border-radius: 10px; font-size: 14px; font-weight: 600; text-decoration: none; transition: all 0.2s; }
+
+        @media (max-width: 768px) {
+            .steps { grid-template-columns: 1fr; }
+            .badge-grid { grid-template-columns: 1fr; }
+            .page-header { padding: 100px 20px 32px; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-inner">
+            <a href="index.html" class="logo">API<span>pulse</span></a>
+            <div class="nav-links">
+                <a href="calculator.html">Calculator</a>
+                <a href="compare.html">Compare</a>
+                <a href="badges.html" class="active">Badges</a>
+                <a href="api-docs.html">API</a>
+                <a href="pricing.html">Pricing</a>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <div class="page-header">
+            <div class="badge-count">34 models across 10 providers</div>
+            <h1>AI API Pricing Badges</h1>
+            <p>Add live AI model pricing to your GitHub README, docs, or blog. Free, auto-updating SVG badges — like shields.io for AI costs.</p>
+        </div>
+
+        <div class="how-it-works">
+            <div class="steps">
+                <div class="step">
+                    <div class="step-num">1</div>
+                    <h3>Pick a Model</h3>
+                    <p>Choose from 34 models across OpenAI, Anthropic, Google, and 7 more providers.</p>
+                </div>
+                <div class="step">
+                    <div class="step-num">2</div>
+                    <h3>Copy the Code</h3>
+                    <p>One-click copy for Markdown, HTML, or RST format.</p>
+                </div>
+                <div class="step">
+                    <div class="step-num">3</div>
+                    <h3>Paste Anywhere</h3>
+                    <p>Works in GitHub READMEs, documentation, blogs, and websites.</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="badge-container"></div>
+
+        <div class="cta-section">
+            <h2>Need more than badges?</h2>
+            <p>APIpulse offers a full cost calculator, model comparison tool, and pricing API — all free.</p>
+            <div class="cta-links">
+                <a href="calculator.html" class="btn-primary">Try the Calculator</a>
+                <a href="api-docs.html" class="btn-secondary">View API Docs</a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-inner">
+            <div class="footer-brand">
+                <a href="index.html" class="logo">API<span>pulse</span></a>
+                <p>Know your AI API costs before you commit.</p>
+            </div>
+            <div class="footer-links">
+                <a href="calculator.html">Calculator</a>
+                <a href="compare.html">Compare</a>
+                <a href="pricing-index.html">Pricing</a>
+                <a href="blog.html">Blog</a>
+                <a href="api-docs.html">API</a>
+                <a href="badges.html">Badges</a>
+            </div>
+            <div class="footer-links">
+                <a href="about.html">About</a>
+                <a href="pricing.html">Pro</a>
+                <a href="https://github.com" target="_blank">GitHub</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        if (typeof API_MODELS === 'undefined') return;
+
+        const container = document.getElementById('badge-container');
+        const providers = {};
+
+        // Group models by provider
+        API_MODELS.forEach(function(m) {
+            if (!providers[m.provider]) providers[m.provider] = [];
+            providers[m.provider].push(m);
+        });
+
+        const providerColors = {
+            'OpenAI': '#10a37f', 'Anthropic': '#d97706', 'Google': '#4285f4',
+            'DeepSeek': '#6366f1', 'Mistral': '#f97316', 'Cohere': '#39d353',
+            'Meta (Together.ai)': '#0668e1', 'Moonshot': '#8b5cf6', 'xAI': '#ef4444', 'AI21': '#06b6d4'
+        };
+
+        Object.keys(providers).forEach(function(provider) {
+            var section = document.createElement('div');
+            section.className = 'provider-section';
+
+            var color = providerColors[provider] || '#6366f1';
+            var h2 = document.createElement('h2');
+            h2.innerHTML = '<span class="provider-tag" style="background:' + color + '">' + provider + '</span> ' + provider;
+            section.appendChild(h2);
+
+            var grid = document.createElement('div');
+            grid.className = 'badge-grid';
+
+            providers[provider].forEach(function(model) {
+                var card = document.createElement('div');
+                card.className = 'badge-card';
+
+                var badgeUrl = 'https://getapipulse.com/api/badge?model=' + model.id;
+                var mdCode = '[![' + model.name + ' Pricing](' + badgeUrl + ')](https://getapipulse.com)';
+                var htmlCode = '<a href="https://getapipulse.com"><img src="' + badgeUrl + '" alt="' + model.name + ' Pricing"></a>';
+
+                var inputStr = model.input >= 1 ? '$' + model.input.toFixed(2) : '$' + model.input.toFixed(3);
+                var outputStr = model.output >= 1 ? '$' + model.output.toFixed(2) : '$' + model.output.toFixed(3);
+
+                card.innerHTML =
+                    '<div class="badge-preview"><img src="' + badgeUrl + '" alt="' + model.name + ' Pricing Badge"></div>' +
+                    '<div class="badge-info">' +
+                        '<span class="badge-model">' + model.name + '</span>' +
+                        '<span class="badge-price">' + inputStr + ' in / ' + outputStr + ' out per 1M tokens</span>' +
+                    '</div>' +
+                    '<div class="badge-tabs">' +
+                        '<button class="badge-tab active" data-format="md">Markdown</button>' +
+                        '<button class="badge-tab" data-format="html">HTML</button>' +
+                    '</div>' +
+                    '<div class="badge-code">' +
+                        '<code class="code-content">' + escapeHtml(mdCode) + '</code>' +
+                        '<button class="copy-btn">Copy</button>' +
+                    '</div>';
+
+                // Tab switching
+                var tabs = card.querySelectorAll('.badge-tab');
+                var codeContent = card.querySelector('.code-content');
+                var copyBtn = card.querySelector('.copy-btn');
+
+                tabs.forEach(function(tab) {
+                    tab.addEventListener('click', function() {
+                        tabs.forEach(function(t) { t.classList.remove('active'); });
+                        tab.classList.add('active');
+                        var format = tab.getAttribute('data-format');
+                        codeContent.textContent = format === 'html' ? htmlCode : mdCode;
+                        copyBtn.textContent = 'Copy';
+                        copyBtn.classList.remove('copied');
+                    });
+                });
+
+                // Copy button
+                copyBtn.addEventListener('click', function() {
+                    var text = codeContent.textContent;
+                    navigator.clipboard.writeText(text).then(function() {
+                        copyBtn.textContent = 'Copied!';
+                        copyBtn.classList.add('copied');
+                        setTimeout(function() {
+                            copyBtn.textContent = 'Copy';
+                            copyBtn.classList.remove('copied');
+                        }, 2000);
+                    });
+                });
+
+                grid.appendChild(card);
+            });
+
+            section.appendChild(grid);
+            container.appendChild(section);
+        });
+
+        function escapeHtml(str) {
+            return str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+        }
+
+        // Track badge page views
+        if (window.trackEvent) window.trackEvent('badges_page_view');
+    });
+    </script>
+</body>
+</html>
