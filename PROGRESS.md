@@ -1,6 +1,6 @@
 # PROGRESS.md
 
-## Site Status (as of Session 429, Jun 1, 2026)
+## Site Status (as of Session 430, Jun 1, 2026)
 **378 web pages | 232 blog posts | 34 models | 10 providers | 58 tools | 12 API endpoints | 2 embeddable widgets**
 - Sitemap (372 URLs), RSS (287 items), blog files (232 posts + 1 index) — all in sync
 - Pricing data verified Jun 1 — 34 models, 10 providers (Grok rebranded to 4.3 at $1.25)
@@ -12,7 +12,7 @@
 - **2 embeddable widgets** — pricing table/badge/compare (widget.js) + report card (embed-report.html)
 - **Pricing badges page** — badges.html with 34 model badges, copy-paste embed code (Markdown/HTML), FAQPage schema
 - **SEO: ~262 pages with FAQPage schema** for rich snippets (231 blog posts + 19 tools + 7 use-cases + 9 providers)
-- **Deprecation alerts:** 119 blog posts link to deprecation guide (Claude Sonnet 4/Opus 4 retire June 15)
+- **Deprecation alerts:** 119 blog posts link to deprecation guide (Claude Sonnet 4/Opus 4 retire June 15 — 14 days away)
 - **Social proof:** PH launch badge, Reddit testimonial, newsletter, exit popup A/B test, social sharing (X/LinkedIn/Reddit) on all 232 blog posts
 - **Community playbook:** 7 subreddit drafts + 2 newsletter pitches ready (all updated to Grok 4.3 pricing)
 - **Chrome Extension:** Landing page live, pricing data synced (May 29), 34 models, manual install
@@ -27,26 +27,16 @@
 
 ---
 
-## Session 429 (Jun 1)
-**Mass deprecation alert deployment for Claude Sonnet 4/Opus 4 retirement:**
-- Added deprecation alert boxes to 93 blog posts that reference Claude Sonnet 4 without warnings (was 26, now 119 total with deprecation-guide links)
-- Prioritized 9 high-traffic posts with manual edits: Anthropic pricing guide (24 mentions), GPT-4o vs Claude (18), Best LLM Startups (12), AI Coding Assistant Cost (11), Claude vs Gemini (10), Best Code Generation API (10), Cost Per Request, RAG Pipeline Budget, Token Pricing
-- Batch-updated 32 industry-specific posts (blog-ai-api-cost-*.html) and 52 additional comparison/guide posts
-- Verified sitemap completeness: 372 URLs correct, 6 excluded files are all intentionally omitted (404, funnel/noindex, snippet, success/thank-you/unsubscribe)
-- All 111 posts referencing Claude Sonnet 4 now link to deprecation guide — site is ready for June 15 retirement
+## Session 430 (Jun 1)
+**Routine maintenance audit — deprecation readiness and content freshness:**
+- Verified deprecation alert coverage: all 119 blog posts referencing Claude Sonnet 4/Opus 4 have deprecation-guide links (0 gaps)
+- Confirmed deprecation countdown accurate: 14 days until June 15 retirement
+- Verified pricing data freshness: 34 models, 10 providers, last updated Jun 1
+- Fixed stale page count in changelog.html stats bar (377 → 378)
+- All backlog tasks remain blocked on human action (distribution, Stripe $19/$39, Chrome Web Store, npm)
 
-## Session 428 (Jun 1)
-**Monthly pricing verification and content maintenance:**
-- Verified all 34 model prices against Anthropic docs — all match (Opus 4.8 $5/$25, Sonnet 4.6 $3/$15, Haiku 4.5 $1/$15)
-- Confirmed Anthropic deprecation timeline: Claude Sonnet 4 and Claude Opus 4 retiring June 15 (14 days away) — deprecation guide is accurate
-- pricing.html: Fixed stale blog count (230 → 232)
-- Audited codebase: no stale model counts, no broken cross-links, all Grok 3 references are in historical documents (May reports, changelog, price alerts)
-- All backlog tasks still blocked on human action (distribution, Stripe $19/$39, Chrome Web Store, npm)
-
-## Session 427 (Jun 1)
-**Fixed critical sitemap.xml SEO issue — homepage missing:**
-- sitemap.xml: Added 4 missing pages — index.html (priority 1.0, weekly), contact.html, privacy.html, terms.html
-- Sitemap now has 372 URLs (was 368). Homepage was completely missing since launch — major SEO oversight.
+## Summary: Sessions 427-429 (Jun 1)
+✅ Fixed critical sitemap.xml SEO issue (added 4 missing pages including homepage). Verified all 34 model prices. Mass deprecation alert deployment: added warnings to 93 blog posts (26→119 total). Fixed stale blog count on pricing page. All 111 posts referencing deprecated Claude models now link to deprecation guide.
 
 ## Summary: Sessions 422-426 (Jun 1)
 ✅ Created changelog.html with release history and stats bar. Expanded directory submission guide to 20 listings. Fixed stale Grok 3 references across 12 live pages. Updated deprecation guide with 14-day urgency countdown. Fixed blog.html, rss.xml, npm README. Added deprecation guide cross-links from 20 Claude/Anthropic blog posts (6→26). Added deprecation alert to blog-claude-api-cost-2026.html.
