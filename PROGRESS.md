@@ -1,6 +1,6 @@
 # PROGRESS.md
 
-## Site Status (as of Session 430, Jun 1, 2026)
+## Site Status (as of Session 431, Jun 1, 2026)
 **378 web pages | 232 blog posts | 34 models | 10 providers | 58 tools | 12 API endpoints | 2 embeddable widgets**
 - Sitemap (372 URLs), RSS (287 items), blog files (232 posts + 1 index) — all in sync
 - Pricing data verified Jun 1 — 34 models, 10 providers (Grok rebranded to 4.3 at $1.25)
@@ -27,15 +27,16 @@
 
 ---
 
-## Session 430 (Jun 1)
-**Routine maintenance audit — deprecation readiness and content freshness:**
-- Verified deprecation alert coverage: all 119 blog posts referencing Claude Sonnet 4/Opus 4 have deprecation-guide links (0 gaps)
-- Confirmed deprecation countdown accurate: 14 days until June 15 retirement
-- Verified pricing data freshness: 34 models, 10 providers, last updated Jun 1
-- Fixed stale page count in changelog.html stats bar (377 → 378)
-- All backlog tasks remain blocked on human action (distribution, Stripe $19/$39, Chrome Web Store, npm)
+## Session 431 (Jun 1)
+**Content freshness sweep — fix stale model names across blog posts:**
+- Fixed stale Grok 3 pricing references in 4 blog files: blog-llm-pricing-map-2026.html (rewrote Grok section as mid-tier competitor), blog-ai-api-cost-per-token.html (pricing table), blog-ai-api-rate-limits.html (rate limit tables), blog-best-budget-llm-apis-2026.html (ranking tables with tier reclassification)
+- Added update notices to blog-state-of-llm-pricing-q2-2026.html and blog-ai-api-pricing-report-may-2026.html noting Grok 3→4.3 rebrand
+- Updated blog-cost-leak-detector.html model tiers: Grok 4.3 moved to mid-tier, Grok Build 0.1 added to budget tier
+- Fixed stale Claude 3.5 Haiku → Claude Haiku 4.5 in blog-ai-api-cost-ecommerce.html and blog-ai-api-cost-healthcare.html
+- All remaining Grok 3 references are in proper historical context (May 2026 reports, pricing changelog, comparison posts with update notices)
 
-## Summary: Sessions 427-429 (Jun 1)
+## Summary: Sessions 427-430 (Jun 1)
+✅ Fixed critical sitemap.xml SEO issue (added 4 missing pages including homepage). Verified all 34 model prices. Mass deprecation alert deployment: added warnings to 93 blog posts (26→119 total). Fixed stale blog count on pricing page. All 111 posts referencing deprecated Claude models now link to deprecation guide. Routine maintenance audit verified deprecation readiness and content freshness.
 ✅ Fixed critical sitemap.xml SEO issue (added 4 missing pages including homepage). Verified all 34 model prices. Mass deprecation alert deployment: added warnings to 93 blog posts (26→119 total). Fixed stale blog count on pricing page. All 111 posts referencing deprecated Claude models now link to deprecation guide.
 
 ## Summary: Sessions 422-426 (Jun 1)
