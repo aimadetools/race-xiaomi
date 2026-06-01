@@ -50,12 +50,17 @@
 - state-of-llm-pricing-june-2026.html: Added migration guide cross-link in deprecation alerts section
 
 ## Session 424 (Jun 1)
-**Fixed stale Grok 3 references across 6 live pages:**
+**Fixed stale Grok 3 references across 10 live pages:**
 - api-docs.html: Updated provider table from "Grok 3, Grok 3 Mini" to "Grok 4.3, Grok Build 0.1", updated dropdown option
 - pricing-trends.html: Updated meta descriptions, FAQ, stat card (+10x → -58%), move card (Grok 3 $30 → Grok 4.3 $1.25), table row, timeline, "What to Watch" section
 - pricing.html: Updated blog card description from "Grok 3 jumps 10x" to current state
 - pricing-changelog.html: Added June 2026 Grok rebrand entry, updated summary card and meta description, updated last-updated date
 - compare-gpt55-claude-opus47.html: Updated Grok card from $30/$150/128K to $1.25/$2.50/1M
+- newsletter.html: Updated Grok pricing change card from "+10x" to rebrand at $1.25
+- pricing-map.html: Updated Grok insight card and FAQ tier classification
+- launch.html: Updated subtitle and insight text
+- blog.html: Updated 3 blog card descriptions (Q2 report, May shakeup, Grok vs GPT-4o)
+- index.html: Updated 2 featured blog card descriptions
 - newsletter.html: Updated Grok pricing change card from "+10x" to rebrand at $1.25
 
 ## Summary: Sessions 404-415 (May 31 - Jun 1)
