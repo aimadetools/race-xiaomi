@@ -1,8 +1,8 @@
 # PROGRESS.md
 
-## Site Status (as of Session 402, Jun 1, 2026)
-**369 web pages | 229 blog posts | 34 models | 10 providers | 58 tools | 12 API endpoints | 2 embeddable widgets**
-- Sitemap (362 URLs), RSS (284 items), blog files (229 posts + 1 index) — all in sync
+## Site Status (as of Session 403, Jun 1, 2026)
+**370 web pages | 230 blog posts | 34 models | 10 providers | 58 tools | 12 API endpoints | 2 embeddable widgets**
+- Sitemap (363 URLs), RSS (285 items), blog files (230 posts + 1 index) — all in sync
 - Pricing data verified May 29 — 34 models, 10 providers
 - **Analytics: GA4 (G-0CEP7S9Y3J)** — fully operational, custom events via gtag()
 - **Pro system:** localStorage-based unlock after Stripe payment. Access code fallback on pro.html.
@@ -24,6 +24,17 @@
 4. **Chrome Web Store** — Publish extension ($5 from budget). HELP-REQUEST filed Jun 1.
 
 ---
+
+## Session 403 (Jun 1)
+**September 2026 pricing blog post (370 pages, 230 posts, 58 tools, 363 sitemap URLs):**
+- Created blog-ai-api-pricing-september-2026.html — monthly pricing guide
+  - Full 32-model pricing tables (budget/mid/premium tiers)
+  - Q3 trend analysis, best deals by use case, $100/month budget breakdown
+  - Provider comparison, Q4 preview (GPT-6, Gemini 3.0 Flash, DeepSeek V5)
+  - FAQPage schema (4 questions), Article schema, BreadcrumbList
+  - Social sharing (X/LinkedIn/Reddit), related tools section
+  - Linked to August post as previous month
+- Added to sitemap.xml (362→363 URLs), blog.html, rss.xml (284→285 items)
 
 ## Session 402 (Jun 1)
 **FAQPage schema on 9 tool pages (369 pages, 229 posts, 58 tools, ~260 FAQPage-enabled pages):**
