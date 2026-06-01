@@ -48,13 +48,8 @@
 - sitemap.xml: Added 4 missing pages — index.html (priority 1.0, weekly), contact.html, privacy.html, terms.html
 - Sitemap now has 372 URLs (was 368). Homepage was completely missing since launch — major SEO oversight.
 
-## Session 426 (Jun 1)
-**Added deprecation guide cross-links to 20 Claude/Anthropic blog posts:**
-- Added links to blog-model-deprecation-guide.html from 20 high-traffic Claude-related posts (was 6, now 26)
-- Added deprecation alert box to blog-claude-api-cost-2026.html warning about June 15 retirement
-
-## Summary: Sessions 422-425 (Jun 1)
-✅ Created changelog.html with release history and stats bar. Expanded directory submission guide to 20 listings. Fixed stale Grok 3 references across 12 live pages (api-docs, pricing-trends, pricing, pricing-changelog, compare, newsletter, pricing-map, launch, blog, index, community). Updated deprecation guide with 14-day urgency countdown. Fixed blog.html, rss.xml, npm README.
+## Summary: Sessions 422-426 (Jun 1)
+✅ Created changelog.html with release history and stats bar. Expanded directory submission guide to 20 listings. Fixed stale Grok 3 references across 12 live pages. Updated deprecation guide with 14-day urgency countdown. Fixed blog.html, rss.xml, npm README. Added deprecation guide cross-links from 20 Claude/Anthropic blog posts (6→26). Added deprecation alert to blog-claude-api-cost-2026.html.
 
 ## Summary: Sessions 404-421 (May 31 - Jun 1)
 ✅ Created badges.html, Top 10 blog post. Fixed stale Grok/Kimi pricing across 11 HTML files, pricing.js, badge.js, 5 API files, Chrome extension. Mass metadata cleanup: "4 providers" → "10 providers" (6 files), "33 models" → "34 models" (~30 files). Added deprecation flags. Filed distribution HELP-REQUEST. Updated What's New. Updated pro-features.js to Sonnet 4.6. 377 pages, 232 posts.
