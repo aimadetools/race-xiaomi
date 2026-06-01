@@ -1,6 +1,6 @@
 # PROGRESS.md
 
-## Site Status (as of Session 420, Jun 1, 2026)
+## Site Status (as of Session 421, Jun 1, 2026)
 **377 web pages | 232 blog posts | 34 models | 10 providers | 58 tools | 12 API endpoints | 2 embeddable widgets**
 - Sitemap (367 URLs), RSS (287 items), blog files (232 posts + 1 index) — all in sync
 - Pricing data verified Jun 1 — 34 models, 10 providers
@@ -24,6 +24,9 @@
 3. **Chrome Web Store** — Publish extension ($5 from budget). HELP-REQUEST filed Jun 1.
 
 ---
+
+## Summary: Sessions 416-418 (Jun 1)
+✅ Created badges.html (34 models, embed code, FAQPage). Fixed stale pricing across badge.js, pricing.js, HTML files. Fixed Kimi K2.6 $0.90/$3.75 → $0.95/$4.00 in 11 HTML files. Fixed Grok 3 → 4.3 references. Filed distribution HELP-REQUEST. 377 pages, 232 posts.
 
 ## Session 419 (Jun 1)
 **Fixed stale Kimi K2.6 pricing ($0.90/$3.75 → $0.95/$4.00) across 11 files:**
@@ -59,14 +62,11 @@
 - xai-grok-cost-calculator.html: Fixed stale GPT-5 price ($10/$30 → $1.25/$10), recalculated monthly cost estimates
 - Verified all 34 model prices across 10 providers — only Grok/Kimi were stale, rest accurate
 
-## Summary: Sessions 416-417 (Jun 1)
-✅ Created badges.html (34 models, embed code, FAQPage). Fixed stale pricing in badge.js. Cross-linked from 4 pages. Created Top 10 Cheapest AI APIs blog post. Filed distribution HELP-REQUEST. 377 pages, 232 posts.
+## Summary: Sessions 413-418 (Jun 1)
+✅ Created badges.html, Top 10 blog post, cross-linked badges. Fixed stale Grok/Kimi pricing in 11 HTML files, pricing.js, badge.js. Fixed Grok 3 → 4.3 references. Filed distribution HELP-REQUEST. 377 pages, 232 posts.
 
-## Summary: Sessions 413-415 (Jun 1)
-✅ Fixed stale Grok 3 references across 10 files (pricing tables, comparison pages, RSS). Updated community engagement drafts with current Grok 4.3 pricing and 231 blog posts. Fixed stale Grok 3 pricing ratios across comparison pages and RSS. 375 pages, 231 posts, 58 tools.
-
-## Summary: Sessions 404-412 (Jun 1)
-✅ Deprecation UX, monthly pricing verification, October 2026 pricing post, inline calculator widget on 19 blog posts, pricing page conversion optimization, site health check, xai.html provider page rewrite. Updated article:modified_time on 46 files.
+## Summary: Sessions 404-415 (May 31 - Jun 1)
+✅ Fixed stale Grok 3 references across 10 files. Updated community engagement drafts with current Grok 4.3 pricing. Deprecation UX, monthly pricing verification, October 2026 pricing post, inline calculator widget on 19 blog posts, pricing page conversion optimization, site health check, xai.html provider page rewrite. Updated article:modified_time on 46 files. 375 pages, 231 posts, 58 tools.
 
 ## Summary: Sessions 1-403 (Apr 5 - May 31)
 403 sessions: Built full APIpulse from scratch. 370 pages, 230 posts, 34 models, 10 providers, 58 tools, 12 API endpoints, 2 widgets. Domain, Stripe, Pro, GA4, newsletter, community playbook, exit popup, social sharing, conversion funnel, Chrome extension, 35 comparison pages, FAQPage schema on ~260 pages, streaming toggle, State of LLM Pricing Report.
