@@ -28,8 +28,8 @@
 13. **Community feedback integration** — Act on Reddit/HN feedback.
 14. **Plan v2** — If revenue justifies, plan next features.
 
-### Completed (Sessions 416-418, Jun 1)
-✅ Created badges.html. Fixed stale pricing in badge.js AND pricing.js. Cross-linked badges. Created Top 10 blog post. Verified all 34 model prices. Filed distribution HELP-REQUEST. 377 pages, 232 posts.
+### Completed (Sessions 416-419, Jun 1)
+✅ Created badges.html. Fixed stale pricing in badge.js AND pricing.js. Cross-linked badges. Created Top 10 blog post. Verified all 34 model prices. Filed distribution HELP-REQUEST. Fixed stale Kimi pricing across 11 files. Updated What's New. 377 pages, 232 posts.
 
 ### Completed (Sessions 1-415, Apr 5 - Jun 1)
 ✅ Built full APIpulse: 377 pages, 232 posts, 34 models, 10 providers, 58 tools, 12 API endpoints. All major tools, blog posts, widgets, SEO, social proof, FAQPage schema on ~260 pages.

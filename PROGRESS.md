@@ -25,6 +25,17 @@
 
 ---
 
+## Session 419 (Jun 1)
+**Fixed stale Kimi K2.6 pricing ($0.90/$3.75 → $0.95/$4.00) across 11 files:**
+- moonshot-cost-calculator.html: 5 references (meta desc, FAQ schema, body text)
+- moonshot.html: 2 FAQ schema references
+- blog-ai-api-pricing-june-2026.html: pricing table + provider summary
+- blog-state-of-llm-pricing-june-2026.html: provider comparison paragraph (also fixed Grok 3 → Grok 4.3)
+- blog-context-windows-2026.html, blog-llm-pricing-map-2026.html, blog-best-budget-llm-apis-2026.html
+- pricing-map.html, chrome-extension.html, cost-report.html, tools.html
+- Updated index.html What's New to feature badges.html and Top 10 blog post
+- All 34 model prices verified against pricing-data.js canonical source
+
 ## Session 418 (Jun 1)
 **Fixed critical pricing data bug — api/pricing.js was 10x stale for Grok:**
 - api/pricing.js: Grok 4.3 $12.50/$25 → $1.25/$2.50, Grok Build 0.1 $10/$20 → $0.30/$0.50, Kimi K2.6 $0.90/$3.75 → $0.95/$4.00 (badge.js was fixed in S416 but pricing.js was missed)
