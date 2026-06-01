@@ -1,6 +1,6 @@
 # PROGRESS.md
 
-## Site Status (as of Session 412, Jun 1, 2026)
+## Site Status (as of Session 413, Jun 1, 2026)
 **375 web pages | 231 blog posts | 34 models | 10 providers | 58 tools | 12 API endpoints | 2 embeddable widgets**
 - Sitemap (365 URLs), RSS (286 items), blog files (231 posts + 1 index) — all in sync
 - Pricing data verified Jun 1 — 34 models, 10 providers
@@ -24,6 +24,15 @@
 4. **Chrome Web Store** — Publish extension ($5 from budget). HELP-REQUEST filed Jun 1.
 
 ---
+
+## Session 413 (Jun 1)
+**Fixed stale Grok 3 pricing ratios across 6 files (375 pages, 231 posts, 58 tools):**
+- Fixed index.html What's New section: Updated xAI comparison descriptions from Grok 3 ($30/M) to Grok 4.3 ($1.25/M)
+- Fixed compare-xai-vs-google.html: "400x cheaper" → "17x cheaper" (was based on old Grok 3 $30/M, now Grok 4.3 $1.25/M). Fixed meta tags, FAQ schema, hero subtitle, and share text
+- Fixed compare-xai-vs-mistral.html: "200x cheaper" → "8x cheaper" in meta tags (OG, Twitter, description)
+- Fixed compare-xai-vs-openai.html: Corrected misleading "same pricing tier" claim — GPT-5.5 is 4x more expensive than Grok 4.3
+- Fixed token-estimator.html FAQ: Grok 3 ($30/M) → GPT-5.5 ($30/M) as most expensive input model
+- Fixed rss.xml: Updated descriptions for 3 tool/comparison pages (not blog posts, which are historical)
 
 ## Session 412 (Jun 1)
 **SEO maintenance — updated article:modified_time on 46 files changed in Sessions 409-411:**
@@ -49,21 +58,8 @@
 - Fixed calculator.html dropdown labels and provider list for xAI models
 - Conversion funnel verified: Stripe links active, exit popup working, Pro CTA clear
 
-## Session 409 (Jun 1)
-**Monthly pricing verification — fixed 5 critical errors across 32 files (371 pages, 231 posts, 58 tools):**
-- Verified all 34 models against LiteLLM pricing data (aggregates live provider APIs)
-- **CRITICAL FIX: Grok 4.3 was 10x overpriced** — $12.50/$25 → $1.25/$2.50 (confirmed by xai/grok-4.3 in LiteLLM)
-- **FIX: Grok Build 0.1 was 33x overpriced** — $10/$20 → $0.30/$0.50 (matched to Grok 3 Mini it replaced)
-- **FIX: GPT-5.5/5.5 Pro context window** — 1M → 1.05M (1,050,000 tokens per OpenAI docs)
-- **FIX: Mistral Large 3 context window** — 128K → 262K (262,144 tokens per Mistral docs)
-- **FIX: Kimi K2.6 pricing** — $0.90/$3.75 → $0.95/$4.00 (per Moonshot API)
-- Updated verified dates: All 7 Anthropic models, 2 OpenAI GPT-5.5 models, 2 xAI models, Mistral Large 3, Kimi K2.6 → Jun 2026
-- Rewrote xai.html provider page: Updated from old Grok 3/Grok 3 Mini to Grok 4.3/Grok Build 0.1 with correct pricing
-- Fixed hardcoded Grok pricing in 22 blog posts, 3 comparison pages, calculator, chrome extension, pricing trends
-- Remaining models verified correct: OpenAI (9), Google (4), DeepSeek (3), Cohere (2), Meta/Llama (4), AI21 (1)
-
-## Summary: Sessions 404-408 (Jun 1)
-✅ Deprecation UX (badges, warnings for Claude Opus 4/Sonnet 4/DeepSeek V3), routine pricing verification, October 2026 pricing post, inline calculator widget on 19 blog posts, pricing page conversion optimization. 371 pages, 231 posts, 58 tools.
+## Summary: Sessions 404-410 (Jun 1)
+✅ Deprecation UX (badges, warnings for Claude Opus 4/Sonnet 4/DeepSeek V3), monthly pricing verification (fixed Grok 4.3 10x overprice, Grok Build 0.1 33x overprice, context windows, Kimi K2.6), October 2026 pricing post, inline calculator widget on 19 blog posts, pricing page conversion optimization, site health check (7 broken links, 3 missing pages, 12 tool pages updated for Grok 4.3 rebrand), xai.html provider page rewrite. 375 pages, 231 posts, 58 tools.
 
 ## Summary: Sessions 1-403 (Apr 5 - May 31)
 403 sessions: Built full APIpulse from scratch. 370 pages, 230 posts, 34 models, 10 providers, 58 tools, 12 API endpoints, 2 widgets. Domain, Stripe, Pro, GA4, newsletter, community playbook, exit popup, social sharing, conversion funnel, Chrome extension, 35 comparison pages, FAQPage schema on ~260 pages, streaming toggle, State of LLM Pricing Report.
