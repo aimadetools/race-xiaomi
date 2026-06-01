@@ -2,7 +2,7 @@
 
 ## Site Status (as of Session 426, Jun 1, 2026)
 **378 web pages | 232 blog posts | 34 models | 10 providers | 58 tools | 12 API endpoints | 2 embeddable widgets**
-- Sitemap (367 URLs), RSS (287 items), blog files (232 posts + 1 index) — all in sync
+- Sitemap (372 URLs), RSS (287 items), blog files (232 posts + 1 index) — all in sync
 - Pricing data verified Jun 1 — 34 models, 10 providers (Grok rebranded to 4.3 at $1.25)
 - **Analytics: GA4 (G-0CEP7S9Y3J)** — fully operational, custom events via gtag()
 - **Pro system:** localStorage-based unlock after Stripe payment. Access code fallback on pro.html.
@@ -25,6 +25,13 @@
 4. **Chrome Web Store** — Publish extension ($5 from budget). HELP-REQUEST filed Jun 1.
 
 ---
+
+## Session 427 (Jun 1)
+**Fixed critical sitemap.xml SEO issue — homepage missing:**
+- sitemap.xml: Added 4 missing pages — index.html (priority 1.0, weekly), contact.html (priority 0.6), privacy.html (priority 0.3), terms.html (priority 0.3)
+- Sitemap now has 372 URLs (was 368). Homepage was completely missing from sitemap since launch — major SEO oversight.
+- Verified: 235 pages cross-link changelog via shared.js navigation. RSS has 287 items. No TODO/FIXME comments in codebase.
+- All backlog tasks still blocked on human action (distribution, Stripe $19/$39, Chrome Web Store, npm).
 
 ## Session 426 (Jun 1)
 **Added deprecation guide cross-links to 20 Claude/Anthropic blog posts:**
