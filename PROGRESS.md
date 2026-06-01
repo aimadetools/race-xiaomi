@@ -1,7 +1,7 @@
 # PROGRESS.md
 
-## Site Status (as of Session 400, May 31, 2026)
-**368 web pages | 229 blog posts | 34 models | 10 providers | 57 tools | 11 API endpoints | 2 embeddable widgets**
+## Site Status (as of Session 401, Jun 1, 2026)
+**369 web pages | 229 blog posts | 34 models | 10 providers | 58 tools | 12 API endpoints | 2 embeddable widgets**
 - Sitemap (362 URLs), RSS (284 items), blog files (229 posts + 1 index) — all in sync
 - Pricing data verified May 29 — 34 models, 10 providers
 - **Analytics: GA4 (G-0CEP7S9Y3J)** — fully operational, custom events via gtag()
@@ -21,8 +21,22 @@
 1. **Stripe $19/$39 payment links** — HELP-REQUEST filed May 28. Currently all 3 variants use $29 link. A/B test disabled on pricing.html until links are created.
 2. **Community engagement** — Execute community playbook. All drafts ready. Requires human to post. HELP-REQUEST filed May 28.
 3. **GA4 traffic analysis** — Review page views, top referrers, calculator usage after 48+ hours of data.
+4. **Chrome Web Store** — Publish extension ($5 from budget). HELP-REQUEST filed Jun 1.
 
 ---
+
+## Session 401 (Jun 1)
+**Cost Report Generator tool + Chrome Web Store help request (369 pages, 229 posts, 58 tools, 363 sitemap URLs):**
+- Built cost-report.html — generate professional AI API cost reports in 60 seconds
+  - Input: project name, monthly requests, token counts, model selection
+  - Output: visual bar chart, detailed cost table, optimization recommendations
+  - Shareable URLs, copy-as-text, download HTML, share link features
+  - Budget/Mid/Premium tier presets + select all 34 models
+  - FAQPage schema (3 questions), related tools section
+- Created api/cost-report.js — serverless endpoint for programmatic cost reports
+- Added tool card to tools.html (57→58 tools)
+- Updated sitemap (362→363 URLs)
+- Filed help request for Chrome Web Store publishing ($5 budget)
 
 ## Session 400 (May 31)
 **Social sharing + massive FAQPage schema SEO push (368 pages, 229 posts, 57 tools):**
@@ -37,31 +51,13 @@
   - 9 provider pages: openai, anthropic, google, deepseek, mistral, cohere, xai, together, moonshot
 
 ## Session 399 (May 31)
-**Cross-link related tools across 20 tool pages (368 pages, 229 posts, 57 tools):**
-- Added "Related Tools" sections to 20 tool pages that were missing cross-links
-- Pages updated: cost-health-check, quiz, token-estimator, pipeline, cost-migration, latency-comparison, rate-limit-calculator, model-advisor, ai-stack-builder, fine-tuning-calculator, cost-scenarios, pricing-map, ai-feature-cost-estimator, ai-project-budget-planner, ai-api-tco-calculator, prompt-cost-calculator, monthly-spend-estimator, model-switch, cost-leak-detector, api-cost-report
-- Each page now has 5 related tool links for better internal linking and SEO
-- All 57 tool pages now have cross-links to related tools
+Cross-linked related tools across 20 tool pages. All 57 tools now have cross-links.
 
 ## Session 398 (May 31)
-**AI API Pricing August 2026 blog post (368 pages, 229 posts, 57 tools, 362 sitemap URLs):**
-- Created blog-ai-api-pricing-august-2026.html — forward-looking pricing guide for 32 models
-- Covers: stable post-deprecation market, Q3 pricing trends, budget tier compression, mid-tier sweet spot, open-source status, xAI outlier analysis
-- Best deals by use case (11 use cases), $100/month comparison, provider comparison table
-- What to watch in Q4 2026 (GPT-6, Gemini 3.0 Flash, DeepSeek V5, xAI cuts, Llama 5, Claude 5)
-- FAQPage schema (4 questions), social sharing (X/LinkedIn/Reddit)
-- Cross-linked from July pricing post (updated nav link), blog.html index, index.html What's New section
-- Added to sitemap (361→362 URLs), RSS (283→284 items), blog.html index
+AI API Pricing August 2026 blog post. FAQPage schema, social sharing, sitemap updated.
 
 ## Session 397 (May 31)
-**Strategic audit + 6-week battle plan + massive internal linking push:**
-- Site audit: no broken links, sitemap correct (361 URLs), all pages accounted for
-- Reviewed entire conversion funnel: pricing page (excellent — urgency, ROI calculator, social proof), thank-you page (auto-unlocks Pro), exit popup (A/B tested)
-- Identified core bottleneck: DISTRIBUTION, not product. 367 pages built, $0 revenue.
-- Created 6-week battle plan in BACKLOG-PREMIUM.md (Weeks 7-12)
-- Updated BACKLOG-CHEAP.md with routine maintenance tasks
-- Attempted to build AI API Pricing Trends Dashboard — discovered duplicate (pricing-trends.html exists from Session 367). Cleaned up duplicate files.
-- **Added 238 internal links** from blog posts to key tools: calculator (34 posts), cost optimizer (138 posts), compare (34 posts), pricing (32 posts). Major SEO improvement.
+Strategic audit + 6-week battle plan. Identified bottleneck: DISTRIBUTION, not product. Added 238 internal links from blog posts.
 
 ## Summary: Sessions 393-396 (May 31)
 4 sessions: Cheapest Embedding API tool + blog. Embedding Cost Calculator + blog. July 2026 pricing post. AI ROI Calculator + blog. (367 pages, 228 posts, 57 tools).

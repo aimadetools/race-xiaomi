@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI API Cost Report Generator — Free Budget Report | APIpulse</title>
+    <meta name="description" content="Generate a professional AI API cost report in 60 seconds. Compare models, see monthly projections, and share budget breakdowns with your team. 34 models, 10 providers.">
+    <meta name="keywords" content="AI API cost report, LLM budget report, API cost breakdown, AI project budget, API spending report">
+    <meta property="og:title" content="AI API Cost Report Generator — Free Budget Report | APIpulse">
+    <meta property="og:description" content="Generate a professional AI API cost report in 60 seconds. Compare 34 models across 10 providers.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://getapipulse.com/og-image.png">
+    <meta property="og:url" content="https://getapipulse.com/cost-report.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="AI API Cost Report Generator — Free Budget Report | APIpulse">
+    <meta name="twitter:image" content="https://getapipulse.com/og-image.png">
+    <meta name="twitter:description" content="Generate a professional AI API cost report in 60 seconds. Compare 34 models across 10 providers.">
+    <link rel="canonical" href="https://getapipulse.com/cost-report.html">
+    <link rel="alternate" type="application/rss+xml" title="APIpulse Blog" href="https://getapipulse.com/rss.xml">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="styles.css">
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0CEP7S9Y3J"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-0CEP7S9Y3J');
+    </script>
+    <script src="analytics.js" defer></script>
+    <script src="dynamic-date.js" defer></script>
+    <script src="shared.js" defer></script>
+    <script src="pricing-data.js" defer></script>
+    <script type="application/ld+json">
+    {
+        "@context": "schema.org",
+        "@type": "WebApplication",
+        "name": "APIpulse Cost Report Generator",
+        "url": "https://getapipulse.com/cost-report.html",
+        "description": "Generate a professional AI API cost report in 60 seconds. Compare 34 models across 10 providers.",
+        "applicationCategory": "DeveloperApplication",
+        "operatingSystem": "Web",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "What is the AI API Cost Report Generator?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "A free tool that generates a professional AI API cost report in 60 seconds. Input your project details and usage patterns, compare models across 34 options from 10 providers, and get a shareable budget breakdown for your team."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Can I share the cost report with my team?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes. The report generates a unique URL you can share with anyone. You can also copy the report as text or download it as HTML. No account required."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Which models are included in the report?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "All 34 models from 10 providers: OpenAI (GPT-5.5, GPT-5, GPT-4o, and more), Anthropic (Claude Opus 4.8, Claude Sonnet 4, Claude Haiku 4.5), Google (Gemini 3.1 Pro, Gemini 2.5 Pro, Gemini 2.0 Flash), DeepSeek, Mistral, Cohere, Meta Llama, Moonshot, xAI, and AI21."
+                }
+            }
+        ]
+    }
+    </script>
+    <style>
+        .cr-hero { padding: 120px 24px 40px; text-align: center; max-width: 700px; margin: 0 auto; }
+        .cr-hero h1 { font-size: clamp(28px, 4vw, 42px); font-weight: 800; margin-bottom: 12px; }
+        .cr-hero p { color: var(--text-secondary); font-size: 17px; line-height: 1.6; }
+        .cr-hero .badge { display: inline-block; background: rgba(34,197,94,0.1); color: var(--green); padding: 4px 14px; border-radius: 20px; font-size: 13px; font-weight: 700; margin-bottom: 16px; }
+
+        .cr-container { max-width: 800px; margin: 0 auto; padding: 0 24px 80px; }
+
+        /* Form */
+        .cr-form {
+            background: var(--bg-card); border: 1px solid var(--border);
+            border-radius: 16px; padding: 32px; margin-bottom: 32px;
+        }
+        .cr-form h2 { font-size: 20px; font-weight: 700; margin-bottom: 24px; }
+        .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px; }
+        .form-group { margin-bottom: 16px; }
+        .form-group label {
+            display: block; font-size: 13px; font-weight: 600;
+            color: var(--text-secondary); margin-bottom: 6px;
+            text-transform: uppercase; letter-spacing: 0.5px;
+        }
+        .form-group input, .form-group select, .form-group textarea {
+            width: 100%; padding: 12px 16px; background: var(--bg-secondary);
+            border: 1px solid var(--border); border-radius: 8px;
+            color: var(--text-primary); font-size: 15px;
+            transition: border-color 0.2s; box-sizing: border-box;
+        }
+        .form-group textarea { resize: vertical; min-height: 80px; }
+        .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+            outline: 2px solid var(--accent); outline-offset: 2px; border-color: var(--accent);
+        }
+        .form-group .hint { font-size: 12px; color: var(--text-muted); margin-top: 4px; }
+
+        /* Model selector */
+        .model-selector { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 16px; }
+        .model-chip {
+            display: inline-flex; align-items: center; gap: 6px;
+            padding: 6px 12px; border-radius: 20px; border: 1px solid var(--border);
+            background: var(--bg-secondary); cursor: pointer; font-size: 13px;
+            transition: all 0.2s; user-select: none;
+        }
+        .model-chip:hover { border-color: var(--accent); }
+        .model-chip.selected { border-color: var(--accent); background: rgba(99,102,241,0.1); color: var(--accent); }
+        .model-chip .provider-dot {
+            width: 8px; height: 8px; border-radius: 50%;
+        }
+        .provider-openai { background: #10a37f; }
+        .provider-anthropic { background: #d4a574; }
+        .provider-google { background: #4285f4; }
+        .provider-deepseek { background: #0066ff; }
+        .provider-mistral { background: #ff7000; }
+        .provider-cohere { background: #39d98a; }
+        .provider-together { background: #8b5cf6; }
+        .provider-moonshot { background: #ff6b6b; }
+        .provider-xai { background: #1da1f2; }
+        .provider-ai21 { background: #6366f1; }
+
+        .select-actions { display: flex; gap: 8px; margin-bottom: 16px; }
+        .select-actions button {
+            padding: 6px 14px; border-radius: 6px; border: 1px solid var(--border);
+            background: var(--bg-secondary); color: var(--text-secondary);
+            font-size: 12px; cursor: pointer; transition: all 0.2s;
+        }
+        .select-actions button:hover { border-color: var(--accent); color: var(--accent); }
+
+        /* Generate button */
+        .cr-generate {
+            width: 100%; padding: 16px; border-radius: 10px; border: none;
+            background: var(--accent); color: white; font-size: 16px; font-weight: 700;
+            cursor: pointer; transition: all 0.2s; margin-top: 8px;
+        }
+        .cr-generate:hover { background: var(--accent-hover); transform: translateY(-1px); }
+
+        /* Report output */
+        .cr-report { display: none; }
+        .cr-report.visible { display: block; }
+        .cr-report-header {
+            background: var(--bg-card); border: 1px solid var(--border);
+            border-radius: 16px; padding: 32px; margin-bottom: 24px;
+        }
+        .cr-report-header h2 { font-size: 24px; font-weight: 800; margin-bottom: 4px; }
+        .cr-report-header .subtitle { color: var(--text-secondary); font-size: 14px; margin-bottom: 16px; }
+        .cr-report-meta { display: flex; gap: 24px; flex-wrap: wrap; }
+        .cr-report-meta .meta-item { font-size: 13px; color: var(--text-muted); }
+        .cr-report-meta .meta-item strong { color: var(--text-primary); }
+
+        /* Summary cards */
+        .summary-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 24px; }
+        .summary-card {
+            background: var(--bg-card); border: 1px solid var(--border);
+            border-radius: 12px; padding: 20px; text-align: center;
+        }
+        .summary-card .label { font-size: 12px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px; }
+        .summary-card .value { font-size: 28px; font-weight: 800; color: var(--accent); }
+        .summary-card .sub { font-size: 12px; color: var(--text-muted); margin-top: 4px; }
+
+        /* Cost table */
+        .cr-table-wrap {
+            background: var(--bg-card); border: 1px solid var(--border);
+            border-radius: 16px; overflow: hidden; margin-bottom: 24px;
+        }
+        .cr-table-wrap h3 { padding: 20px 24px 0; font-size: 18px; font-weight: 700; }
+        .cr-table {
+            width: 100%; border-collapse: collapse; margin-top: 16px;
+        }
+        .cr-table th, .cr-table td {
+            padding: 12px 24px; text-align: left; border-bottom: 1px solid var(--border);
+            font-size: 14px;
+        }
+        .cr-table th {
+            background: var(--bg-secondary); font-weight: 700; font-size: 12px;
+            text-transform: uppercase; letter-spacing: 0.5px; color: var(--text-muted);
+        }
+        .cr-table tr:last-child td { border-bottom: none; }
+        .cr-table .cheapest { background: rgba(34,197,94,0.05); }
+        .cr-table .cheapest td:first-child::after {
+            content: ' BEST VALUE'; font-size: 10px; font-weight: 700;
+            color: var(--green); margin-left: 8px;
+        }
+        .cr-table .model-name { font-weight: 600; }
+        .cr-table .provider-name { font-size: 12px; color: var(--text-muted); }
+
+        /* Bar chart */
+        .cr-chart {
+            background: var(--bg-card); border: 1px solid var(--border);
+            border-radius: 16px; padding: 24px; margin-bottom: 24px;
+        }
+        .cr-chart h3 { font-size: 18px; font-weight: 700; margin-bottom: 20px; }
+        .bar-row { display: flex; align-items: center; gap: 12px; margin-bottom: 10px; }
+        .bar-label { width: 160px; font-size: 13px; font-weight: 500; text-align: right; flex-shrink: 0; }
+        .bar-track { flex: 1; height: 28px; background: var(--bg-secondary); border-radius: 6px; overflow: hidden; position: relative; }
+        .bar-fill { height: 100%; border-radius: 6px; transition: width 0.5s ease; display: flex; align-items: center; padding-left: 10px; font-size: 12px; font-weight: 600; color: white; min-width: fit-content; }
+        .bar-value { font-size: 13px; font-weight: 600; width: 80px; text-align: right; flex-shrink: 0; }
+
+        /* Recommendations */
+        .cr-recommendations {
+            background: var(--bg-card); border: 1px solid var(--border);
+            border-radius: 16px; padding: 24px; margin-bottom: 24px;
+        }
+        .cr-recommendations h3 { font-size: 18px; font-weight: 700; margin-bottom: 16px; }
+        .rec-item {
+            display: flex; gap: 12px; padding: 16px; background: var(--bg-secondary);
+            border-radius: 10px; margin-bottom: 12px;
+        }
+        .rec-icon { font-size: 20px; flex-shrink: 0; }
+        .rec-text { font-size: 14px; line-height: 1.6; }
+        .rec-text strong { color: var(--accent); }
+
+        /* Export */
+        .cr-export { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 32px; }
+        .cr-export button {
+            padding: 12px 24px; border-radius: 8px; border: 1px solid var(--border);
+            background: var(--bg-card); color: var(--text-primary); font-size: 14px;
+            font-weight: 600; cursor: pointer; transition: all 0.2s;
+        }
+        .cr-export button:hover { border-color: var(--accent); color: var(--accent); }
+        .cr-export button.primary { background: var(--accent); color: white; border-color: var(--accent); }
+        .cr-export button.primary:hover { background: var(--accent-hover); }
+
+        /* Related tools */
+        .related-tools {
+            background: var(--bg-card); border: 1px solid var(--border);
+            border-radius: 16px; padding: 32px; margin-top: 48px;
+        }
+        .related-tools h3 { font-size: 18px; font-weight: 700; margin-bottom: 20px; }
+        .related-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; }
+        .related-link {
+            display: flex; align-items: center; gap: 10px; padding: 12px 16px;
+            background: var(--bg-secondary); border-radius: 10px;
+            text-decoration: none; color: var(--text-primary); font-size: 14px;
+            font-weight: 500; transition: all 0.2s;
+        }
+        .related-link:hover { border-color: var(--accent); transform: translateY(-2px); }
+        .related-link .r-icon { font-size: 18px; }
+
+        @media (max-width: 768px) {
+            .cr-hero { padding: 100px 20px 30px; }
+            .cr-hero h1 { font-size: 26px; }
+            .form-row { grid-template-columns: 1fr; }
+            .summary-grid { grid-template-columns: 1fr; }
+            .bar-label { width: 100px; font-size: 11px; }
+            .cr-table th, .cr-table td { padding: 10px 14px; font-size: 12px; }
+        }
+    </style>
+    <meta name="theme-color" content="#6366f1">
+</head>
+<body>
+    <a href="#main" class="skip-link">Skip to content</a>
+    <nav>
+        <div class="nav-inner">
+            <a href="index.html" class="logo">API<span>pulse</span></a>
+            <button class="hamburger" onclick="toggleMobileNav()" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+            <div class="nav-links">
+                <a href="calculator.html">Calculator</a>
+                <a href="compare.html">Compare</a>
+                <a href="cost-explorer.html">Explorer</a>
+                <a href="cost-optimizer.html">Optimizer</a>
+                <a href="model-switch.html">Switch</a>
+                <a href="cost-scenarios.html">Scenarios</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="use-cases.html">Use Cases</a>
+                <a href="about.html">About</a>
+                <a href="blog.html">Blog</a>
+                <a href="tools.html">Tools</a>
+                <a href="pricing-index.html">Pricing Index</a>
+                <a href="api-docs.html" style="color:var(--accent);">API</a>
+                <a href="pricing.html" class="nav-cta">Get Pro — $29</a>
+                <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
+            </div>
+        </div>
+    </nav>
+
+    <main id="main">
+        <div class="cr-hero">
+            <span class="badge">Free Tool</span>
+            <h1>AI API Cost Report Generator</h1>
+            <p>Generate a professional cost report in 60 seconds. Compare models, see monthly projections, and share budget breakdowns with your team.</p>
+        </div>
+
+        <div class="cr-container">
+            <!-- Input Form -->
+            <div class="cr-form" id="cr-form">
+                <h2>Project Details</h2>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Project Name</label>
+                        <input type="text" id="projectName" placeholder="e.g., AI Chatbot MVP" value="My AI Project">
+                    </div>
+                    <div class="form-group">
+                        <label>Monthly Requests</label>
+                        <input type="number" id="monthlyRequests" placeholder="e.g., 100000" value="100000">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Avg Input Tokens per Request</label>
+                        <input type="number" id="avgInput" placeholder="e.g., 500" value="500">
+                    </div>
+                    <div class="form-group">
+                        <label>Avg Output Tokens per Request</label>
+                        <input type="number" id="avgOutput" placeholder="e.g., 200" value="200">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Select Models to Compare</label>
+                    <div class="select-actions">
+                        <button onclick="selectPreset('budget')">Budget Tier</button>
+                        <button onclick="selectPreset('mid')">Mid Tier</button>
+                        <button onclick="selectPreset('premium')">Premium Tier</button>
+                        <button onclick="selectPreset('all')">All 34</button>
+                    </div>
+                    <div class="model-selector" id="modelSelector"></div>
+                </div>
+
+                <div class="form-group">
+                    <label>Use Case (optional)</label>
+                    <select id="useCase">
+                        <option value="">Select use case...</option>
+                        <option value="chatbot">Customer Support Chatbot</option>
+                        <option value="coding">Code Generation</option>
+                        <option value="content">Content Writing</option>
+                        <option value="data">Data Extraction</option>
+                        <option value="analysis">Document Analysis</option>
+                        <option value="agent">AI Agent</option>
+                        <option value="saas">SaaS Feature</option>
+                    </select>
+                </div>
+
+                <button class="cr-generate" onclick="generateReport()">Generate Cost Report</button>
+            </div>
+
+            <!-- Report Output -->
+            <div class="cr-report" id="cr-report">
+                <div class="cr-report-header">
+                    <h2 id="reportTitle">AI API Cost Report</h2>
+                    <div class="subtitle" id="reportSubtitle">Generated by APIpulse</div>
+                    <div class="cr-report-meta">
+                        <div class="meta-item"><strong id="reportDate"></strong></div>
+                        <div class="meta-item">Models compared: <strong id="reportModelCount"></strong></div>
+                        <div class="meta-item">Monthly requests: <strong id="reportRequests"></strong></div>
+                    </div>
+                </div>
+
+                <div class="summary-grid" id="summaryGrid"></div>
+
+                <div class="cr-chart" id="costChart">
+                    <h3>Monthly Cost Comparison</h3>
+                    <div id="chartBars"></div>
+                </div>
+
+                <div class="cr-table-wrap">
+                    <h3>Detailed Breakdown</h3>
+                    <table class="cr-table">
+                        <thead>
+                            <tr>
+                                <th>Model</th>
+                                <th>Provider</th>
+                                <th>Input Cost</th>
+                                <th>Output Cost</th>
+                                <th>Monthly Total</th>
+                                <th>Annual Total</th>
+                            </tr>
+                        </thead>
+                        <tbody id="reportTableBody"></tbody>
+                    </table>
+                </div>
+
+                <div class="cr-recommendations" id="recommendations">
+                    <h3>Optimization Recommendations</h3>
+                    <div id="recList"></div>
+                </div>
+
+                <div class="cr-export">
+                    <button class="primary" onclick="copyReport()">Copy as Text</button>
+                    <button onclick="downloadHTML()">Download HTML</button>
+                    <button onclick="shareReport()">Share Report</button>
+                    <button onclick="resetForm()">New Report</button>
+                </div>
+
+                <div class="related-tools">
+                    <h3>Related Tools</h3>
+                    <div class="related-grid">
+                        <a href="calculator.html" class="related-link"><span class="r-icon">🧮</span> Cost Calculator</a>
+                        <a href="cost-optimizer.html" class="related-link"><span class="r-icon">⚡</span> Cost Optimizer</a>
+                        <a href="cost-explorer.html" class="related-link"><span class="r-icon">📊</span> Cost Explorer</a>
+                        <a href="compare.html" class="related-link"><span class="r-icon">⚖️</span> Model Compare</a>
+                        <a href="cost-health-check.html" class="related-link"><span class="r-icon">🩺</span> Health Check</a>
+                        <a href="model-switch.html" class="related-link"><span class="r-icon">🔄</span> Model Switch</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-inner">
+            <div class="footer-brand">
+                <a href="index.html" class="logo">API<span>pulse</span></a>
+                <p>Know your AI API costs before you commit.</p>
+            </div>
+            <div class="footer-links">
+                <div>
+                    <h4>Tools</h4>
+                    <a href="calculator.html">Cost Calculator</a>
+                    <a href="compare.html">Model Compare</a>
+                    <a href="cost-explorer.html">Cost Explorer</a>
+                    <a href="cost-optimizer.html">Cost Optimizer</a>
+                    <a href="quiz.html">Model Quiz</a>
+                    <a href="tools.html">All 57 Tools</a>
+                </div>
+                <div>
+                    <h4>Content</h4>
+                    <a href="blog.html">Blog</a>
+                    <a href="pricing-index.html">Pricing Index</a>
+                    <a href="state-of-llm-pricing-june-2026.html">State of LLM Pricing</a>
+                    <a href="use-cases.html">Use Cases</a>
+                    <a href="glossary.html">Glossary</a>
+                </div>
+                <div>
+                    <h4>Company</h4>
+                    <a href="about.html">About</a>
+                    <a href="pricing.html">Pricing</a>
+                    <a href="api-docs.html">API Docs</a>
+                    <a href="community.html">Community</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 APIpulse. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+    // Model data
+    const MODELS = [
+        { id: 'openai-gpt55', name: 'GPT-5.5', provider: 'OpenAI', slug: 'openai', tier: 'Premium', input: 5.00, output: 30.00, ctx: '1M' },
+        { id: 'openai-gpt5', name: 'GPT-5', provider: 'OpenAI', slug: 'openai', tier: 'Premium', input: 1.25, output: 10.00, ctx: '272K' },
+        { id: 'openai-gpt5-mini', name: 'GPT-5 mini', provider: 'OpenAI', slug: 'openai', tier: 'Budget', input: 0.25, output: 2.00, ctx: '272K' },
+        { id: 'openai-gpt-oss-120b', name: 'GPT-oss 120B', provider: 'OpenAI', slug: 'openai', tier: 'Budget', input: 0.15, output: 0.60, ctx: '128K' },
+        { id: 'openai-gpt-oss-20b', name: 'GPT-oss 20B', provider: 'OpenAI', slug: 'openai', tier: 'Budget', input: 0.08, output: 0.35, ctx: '128K' },
+        { id: 'openai-gpt4o', name: 'GPT-4o', provider: 'OpenAI', slug: 'openai', tier: 'Mid', input: 2.50, output: 10.00, ctx: '128K' },
+        { id: 'openai-gpt4o-mini', name: 'GPT-4o mini', provider: 'OpenAI', slug: 'openai', tier: 'Budget', input: 0.15, output: 0.60, ctx: '128K' },
+        { id: 'anthropic-opus48', name: 'Claude Opus 4.8', provider: 'Anthropic', slug: 'anthropic', tier: 'Premium', input: 5.00, output: 25.00, ctx: '1M' },
+        { id: 'anthropic-sonnet46', name: 'Claude Sonnet 4.6', provider: 'Anthropic', slug: 'anthropic', tier: 'Mid', input: 3.00, output: 15.00, ctx: '1M' },
+        { id: 'anthropic-sonnet', name: 'Claude Sonnet 4', provider: 'Anthropic', slug: 'anthropic', tier: 'Mid', input: 3.00, output: 15.00, ctx: '200K' },
+        { id: 'anthropic-haiku', name: 'Claude Haiku 4.5', provider: 'Anthropic', slug: 'anthropic', tier: 'Budget', input: 1.00, output: 5.00, ctx: '200K' },
+        { id: 'google-gemini3-pro', name: 'Gemini 3.1 Pro', provider: 'Google', slug: 'google', tier: 'Mid', input: 2.00, output: 12.00, ctx: '1M' },
+        { id: 'google-pro', name: 'Gemini 2.5 Pro', provider: 'Google', slug: 'google', tier: 'Mid', input: 1.25, output: 10.00, ctx: '1M' },
+        { id: 'google-flash', name: 'Gemini 2.0 Flash', provider: 'Google', slug: 'google', tier: 'Budget', input: 0.10, output: 0.40, ctx: '1M' },
+        { id: 'google-flash-lite', name: 'Gemini 2.0 Flash Lite', provider: 'Google', slug: 'google', tier: 'Budget', input: 0.075, output: 0.30, ctx: '1M' },
+        { id: 'deepseek-v4-pro', name: 'DeepSeek V4 Pro', provider: 'DeepSeek', slug: 'deepseek', tier: 'Budget', input: 0.44, output: 0.87, ctx: '1M' },
+        { id: 'deepseek-v4-flash', name: 'DeepSeek V4 Flash', provider: 'DeepSeek', slug: 'deepseek', tier: 'Budget', input: 0.14, output: 0.28, ctx: '1M' },
+        { id: 'mistral-large', name: 'Mistral Large 3', provider: 'Mistral', slug: 'mistral', tier: 'Budget', input: 0.50, output: 1.50, ctx: '128K' },
+        { id: 'mistral-small', name: 'Mistral Small 4', provider: 'Mistral', slug: 'mistral', tier: 'Budget', input: 0.15, output: 0.60, ctx: '128K' },
+        { id: 'cohere-command-r-plus', name: 'Command R+', provider: 'Cohere', slug: 'cohere', tier: 'Mid', input: 2.50, output: 10.00, ctx: '128K' },
+        { id: 'cohere-command-r', name: 'Command R', provider: 'Cohere', slug: 'cohere', tier: 'Budget', input: 0.50, output: 1.50, ctx: '128K' },
+        { id: 'llama-4-scout', name: 'Llama 4 Scout', provider: 'Meta (Together.ai)', slug: 'together', tier: 'Budget', input: 0.11, output: 0.34, ctx: '10M' },
+        { id: 'llama-4-maverick', name: 'Llama 4 Maverick', provider: 'Meta (Together.ai)', slug: 'together', tier: 'Budget', input: 0.20, output: 0.60, ctx: '10M' },
+        { id: 'kimi-k26', name: 'Kimi K2.6', provider: 'Moonshot', slug: 'moonshot', tier: 'Budget', input: 0.90, output: 3.75, ctx: '256K' },
+        { id: 'xai-grok3', name: 'Grok 3', provider: 'xAI', slug: 'xai', tier: 'Premium', input: 30.00, output: 150.00, ctx: '128K' },
+        { id: 'xai-grok3-mini', name: 'Grok 3 Mini', provider: 'xAI', slug: 'xai', tier: 'Mid', input: 3.00, output: 5.00, ctx: '128K' },
+        { id: 'ai21-jamba', name: 'Jamba 1.5 Large', provider: 'AI21', slug: 'ai21', tier: 'Mid', input: 2.00, output: 8.00, ctx: '256K' },
+    ];
+
+    const PROVIDER_COLORS = {
+        openai: '#10a37f', anthropic: '#d4a574', google: '#4285f4',
+        deepseek: '#0066ff', mistral: '#ff7000', cohere: '#39d98a',
+        together: '#8b5cf6', moonshot: '#ff6b6b', xai: '#1da1f2', ai21: '#6366f1'
+    };
+
+    let selectedModels = new Set(['openai-gpt5-mini', 'anthropic-haiku', 'google-flash', 'deepseek-v4-flash', 'mistral-small']);
+    let reportData = null;
+
+    function init() {
+        renderModelSelector();
+    }
+
+    function renderModelSelector() {
+        const el = document.getElementById('modelSelector');
+        el.innerHTML = MODELS.map(m => `
+            <div class="model-chip ${selectedModels.has(m.id) ? 'selected' : ''}" onclick="toggleModel('${m.id}')">
+                <span class="provider-dot provider-${m.slug}"></span>
+                ${m.name}
+            </div>
+        `).join('');
+    }
+
+    function toggleModel(id) {
+        if (selectedModels.has(id)) selectedModels.delete(id);
+        else selectedModels.add(id);
+        renderModelSelector();
+    }
+
+    function selectPreset(tier) {
+        selectedModels.clear();
+        MODELS.forEach(m => {
+            if (tier === 'all') selectedModels.add(m.id);
+            else if (m.tier.toLowerCase() === tier) selectedModels.add(m.id);
+        });
+        renderModelSelector();
+    }
+
+    function fmt(n) {
+        if (n >= 1000) return '$' + n.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+        if (n >= 1) return '$' + n.toFixed(2);
+        if (n >= 0.01) return '$' + n.toFixed(3);
+        return '$' + n.toFixed(4);
+    }
+
+    function generateReport() {
+        const requests = parseInt(document.getElementById('monthlyRequests').value) || 100000;
+        const inputTokens = parseInt(document.getElementById('avgInput').value) || 500;
+        const outputTokens = parseInt(document.getElementById('avgOutput').value) || 200;
+        const projectName = document.getElementById('projectName').value || 'My AI Project';
+        const useCase = document.getElementById('useCase').value;
+
+        const models = MODELS.filter(m => selectedModels.has(m.id));
+        if (models.length === 0) { alert('Please select at least one model.'); return; }
+
+        // Calculate costs
+        const results = models.map(m => {
+            const inputCost = (requests * inputTokens / 1000000) * m.input;
+            const outputCost = (requests * outputTokens / 1000000) * m.output;
+            const monthly = inputCost + outputCost;
+            return { ...m, inputCost, outputCost, monthly, annual: monthly * 12 };
+        }).sort((a, b) => a.monthly - b.monthly);
+
+        const cheapest = results[0];
+        const mostExpensive = results[results.length - 1];
+        const avgCost = results.reduce((s, r) => s + r.monthly, 0) / results.length;
+        const savings = mostExpensive.monthly - cheapest.monthly;
+
+        reportData = { projectName, requests, inputTokens, outputTokens, useCase, results, cheapest, mostExpensive, avgCost, savings };
+
+        // Render report
+        document.getElementById('reportTitle').textContent = `${projectName} — AI API Cost Report`;
+        document.getElementById('reportSubtitle').textContent = `${inputTokens.toLocaleString()} input / ${outputTokens.toLocaleString()} output tokens per request`;
+        document.getElementById('reportDate').textContent = new Date().toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
+        document.getElementById('reportModelCount').textContent = results.length;
+        document.getElementById('reportRequests').textContent = requests.toLocaleString();
+
+        // Summary cards
+        document.getElementById('summaryGrid').innerHTML = `
+            <div class="summary-card">
+                <div class="label">Cheapest Option</div>
+                <div class="value">${fmt(cheapest.monthly)}</div>
+                <div class="sub">${cheapest.name}/mo</div>
+            </div>
+            <div class="summary-card">
+                <div class="label">Most Expensive</div>
+                <div class="value">${fmt(mostExpensive.monthly)}</div>
+                <div class="sub">${mostExpensive.name}/mo</div>
+            </div>
+            <div class="summary-card">
+                <div class="label">Max Savings</div>
+                <div class="value" style="color:var(--green)">${fmt(savings)}</div>
+                <div class="sub">${((savings / mostExpensive.monthly) * 100).toFixed(0)}% cheaper</div>
+            </div>
+        `;
+
+        // Bar chart
+        const maxCost = mostExpensive.monthly;
+        document.getElementById('chartBars').innerHTML = results.map(r => {
+            const pct = maxCost > 0 ? (r.monthly / maxCost) * 100 : 0;
+            const color = PROVIDER_COLORS[r.slug] || '#6366f1';
+            return `
+                <div class="bar-row">
+                    <div class="bar-label">${r.name}</div>
+                    <div class="bar-track">
+                        <div class="bar-fill" style="width:${pct}%;background:${color}">${pct > 15 ? fmt(r.monthly) : ''}</div>
+                    </div>
+                    <div class="bar-value">${fmt(r.monthly)}</div>
+                </div>
+            `;
+        }).join('');
+
+        // Table
+        document.getElementById('reportTableBody').innerHTML = results.map((r, i) => `
+            <tr class="${i === 0 ? 'cheapest' : ''}">
+                <td class="model-name">${r.name}</td>
+                <td class="provider-name">${r.provider}</td>
+                <td>${fmt(r.inputCost)}</td>
+                <td>${fmt(r.outputCost)}</td>
+                <td><strong>${fmt(r.monthly)}</strong></td>
+                <td>${fmt(r.annual)}</td>
+            </tr>
+        `).join('');
+
+        // Recommendations
+        const recs = [];
+        if (cheapest.tier === 'Budget') {
+            recs.push({ icon: '💰', text: `<strong>Best value: ${cheapest.name}</strong> at ${fmt(cheapest.monthly)}/mo. Budget models handle most tasks well — reserve premium models for complex reasoning.` });
+        }
+        if (results.length > 2) {
+            const mid = results[Math.floor(results.length / 2)];
+            recs.push({ icon: '⚖️', text: `<strong>Mid-tier sweet spot: ${mid.name}</strong> at ${fmt(mid.monthly)}/mo. Good balance of quality and cost for production workloads.` });
+        }
+        recs.push({ icon: '📊', text: `<strong>Multi-model routing</strong> could save ${fmt(savings * 0.4)}/mo. Use budget models for simple requests and premium for complex ones.` });
+        if (inputTokens > 1000) {
+            recs.push({ icon: '✂️', text: `<strong>Reduce input tokens</strong> — at ${inputTokens.toLocaleString()} tokens/request, prompt optimization could cut costs by 20-30%.` });
+        }
+        recs.push({ icon: '🔄', text: `<strong>Try Model Switch</strong> — see exactly how much you'd save by switching from your current model to ${cheapest.name}.` });
+
+        document.getElementById('recList').innerHTML = recs.map(r => `
+            <div class="rec-item">
+                <div class="rec-icon">${r.icon}</div>
+                <div class="rec-text">${r.text}</div>
+            </div>
+        `).join('');
+
+        // Show report
+        document.getElementById('cr-form').style.display = 'none';
+        document.getElementById('cr-report').classList.add('visible');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+
+        // GA4 event
+        if (window.gtag) gtag('event', 'cost_report_generated', { models: results.length, cheapest_model: cheapest.name });
+    }
+
+    function resetForm() {
+        document.getElementById('cr-form').style.display = 'block';
+        document.getElementById('cr-report').classList.remove('visible');
+        reportData = null;
+    }
+
+    function copyReport() {
+        if (!reportData) return;
+        const { projectName, requests, inputTokens, outputTokens, results, cheapest, savings } = reportData;
+        let text = `${projectName} — AI API Cost Report\n`;
+        text += `Generated by APIpulse (getapipulse.com)\n`;
+        text += `${new Date().toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}\n\n`;
+        text += `Configuration: ${requests.toLocaleString()} requests/mo, ${inputTokens} input / ${outputTokens} output tokens\n\n`;
+        text += `Model                Provider        Monthly     Annual\n`;
+        text += `${'─'.repeat(60)}\n`;
+        results.forEach(r => {
+            text += `${r.name.padEnd(20)} ${r.provider.padEnd(15)} ${fmt(r.monthly).padStart(10)} ${fmt(r.annual).padStart(12)}\n`;
+        });
+        text += `\nCheapest: ${cheapest.name} — ${fmt(cheapest.monthly)}/mo\n`;
+        text += `Max savings vs most expensive: ${fmt(savings)}/mo\n`;
+
+        navigator.clipboard.writeText(text).then(() => {
+            const btn = event.target;
+            btn.textContent = 'Copied!';
+            setTimeout(() => btn.textContent = 'Copy as Text', 2000);
+        });
+    }
+
+    function downloadHTML() {
+        if (!reportData) return;
+        const html = document.getElementById('cr-report').outerHTML;
+        const blob = new Blob([`<!DOCTYPE html><html><head><meta charset="UTF-8"><title>${reportData.projectName} Cost Report</title><style>body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;max-width:800px;margin:0 auto;padding:24px;background:#0f172a;color:#e2e8f0;}table{width:100%;border-collapse:collapse;}th,td{padding:10px 16px;border-bottom:1px solid #1e293b;text-align:left;font-size:14px;}th{background:#1e293b;font-weight:700;font-size:12px;text-transform:uppercase;}h2{margin-top:32px;}</style></head><body>${html}</body></html>`], { type: 'text/html' });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url; a.download = `${reportData.projectName.replace(/\s+/g, '-').toLowerCase()}-cost-report.html`;
+        a.click(); URL.revokeObjectURL(url);
+    }
+
+    function shareReport() {
+        if (!reportData) return;
+        const params = new URLSearchParams({
+            r: reportData.requests, i: reportData.inputTokens, o: reportData.outputTokens,
+            m: Array.from(selectedModels).join(','),
+            p: reportData.projectName
+        });
+        const url = `${window.location.origin}/cost-report.html?${params.toString()}`;
+        navigator.clipboard.writeText(url).then(() => {
+            const btn = event.target;
+            btn.textContent = 'Link Copied!';
+            setTimeout(() => btn.textContent = 'Share Report', 2000);
+        });
+    }
+
+    // Load from URL params
+    function loadFromURL() {
+        const params = new URLSearchParams(window.location.search);
+        if (params.has('r')) {
+            document.getElementById('monthlyRequests').value = params.get('r');
+            document.getElementById('avgInput').value = params.get('i') || 500;
+            document.getElementById('avgOutput').value = params.get('o') || 200;
+            if (params.get('p')) document.getElementById('projectName').value = params.get('p');
+            if (params.get('m')) {
+                selectedModels = new Set(params.get('m').split(','));
+                renderModelSelector();
+            }
+            generateReport();
+        }
+    }
+
+    init();
+    loadFromURL();
+    </script>
+</body>
+</html>
