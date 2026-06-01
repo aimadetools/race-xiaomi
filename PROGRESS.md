@@ -10,7 +10,7 @@
 - **57 interactive tools** — calculators, optimizer, planner, pipeline, rate limit, budget showdown, chatbot cost, model switch, AI Stack Builder, model advisor, fine-tuning calculator, Claude API cost calculator, cost projection, Gemini API cost calculator, cheapest AI API for coding, xAI Grok cost calculator, DeepSeek API cost calculator, Mistral API cost calculator, Meta Llama API cost calculator, Open Source LLM cost calculator, AI API Pricing Comparison 2026, Cost Leak Detector, Chrome Extension, AI Feature Cost Estimator, AI Project Budget Planner, AI API TCO Calculator, MCP Server Cost Calculator, Monthly Spend Estimator, Cohere API cost calculator, Moonshot API cost calculator, Together.ai API cost calculator, API Cost Report Card, SaaS AI Cost Calculator, AI ROI Calculator, Embedding API Cost Calculator, Cheapest Embedding API
 - **11 API endpoints** — pricing data, cost calculator (single/multi-model), cheapest model finder, pricing badge (SVG), compare models, recommend models, subscribe, unsubscribe, newsletter, check-price-changes, admin
 - **2 embeddable widgets** — pricing table/badge/compare (widget.js) + report card (embed-report.html)
-- **SEO: ~250 pages with FAQPage schema** for rich snippets (228 blog posts + 23 tool/provider/use-case pages)
+- **SEO: ~260 pages with FAQPage schema** for rich snippets (228 blog posts + 18 tools + 7 use-cases + 9 providers)
 - **Social proof:** PH launch badge, Reddit testimonial, newsletter, exit popup A/B test, social sharing (X/LinkedIn/Reddit) on all 228 blog posts
 - **Community playbook:** 7 subreddit drafts + 2 newsletter pitches ready in COMMUNITY-ENGAGEMENT.md (all updated to 34 models/228 posts)
 - **Chrome Extension:** Landing page live, pricing data synced (May 29), 34 models, manual install
@@ -26,12 +26,12 @@
 ---
 
 ## Session 402 (Jun 1)
-**FAQPage schema on 9 tool pages (369 pages, 229 posts, 58 tools, ~250 FAQPage-enabled pages):**
+**FAQPage schema on 9 tool pages (369 pages, 229 posts, 58 tools, ~260 FAQPage-enabled pages):**
 - Added FAQPage structured data (3 questions each) to 9 tool pages missing it:
   - cost-explorer, agent-cost-calculator, cost-migration, budget-llm-showdown
   - model-switch, pipeline, model-matrix, pricing-chart, pricing-trends
 - Skipped cost.html (redirect only) and embed-calculator.html (widget only)
-- Total FAQPage-enabled pages: ~250 (up from ~241)
+- Total FAQPage-enabled pages: ~260 (up from ~250)
 
 ## Session 401 (Jun 1)
 **Cost Report Generator tool + Chrome Web Store help request (369 pages, 229 posts, 58 tools, 363 sitemap URLs):**
