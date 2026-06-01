@@ -15,6 +15,7 @@
 - Update What's New section on index.html when new tools are added
 - ~~Create October 2026 pricing blog post (next month's guide)~~ ✅ Session 406: 34-model guide with Q4 predictions, migration guide, FAQPage schema
 - Monitor Anthropic Claude 4 Opus/Sonnet deprecation (June 15) — update pricing data when retired
+- ~~Verify all 34 model prices monthly against provider pricing pages~~ ✅ Session 409: Verified via LiteLLM, fixed 5 errors (Grok 4.3 10x overprice, context windows, Kimi K2.6)
 - ~~Add "Try It Live" section to more tool pages~~ ✅ Session 405: Inline calculator widget on 19 blog posts + tools page
 
 ### Completed (Sessions 401-406, Jun 1)
