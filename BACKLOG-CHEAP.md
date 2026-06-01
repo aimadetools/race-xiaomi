@@ -18,8 +18,8 @@
 - ~~Verify all 34 model prices monthly against provider pricing pages~~ ✅ Session 409: Verified via LiteLLM, fixed 5 errors (Grok 4.3 10x overprice, context windows, Kimi K2.6)
 - ~~Add "Try It Live" section to more tool pages~~ ✅ Session 405: Inline calculator widget on 19 blog posts + tools page
 
-### Completed (Sessions 401-411, Jun 1)
-✅ Fixed stale Grok 3 → Grok 4.3 rebranding in 3 blog posts (meta tags, FAQ schema, pricing data). Site health check: fixed 7 broken links, created 3 missing pages, updated stale Grok model names across 12 tool pages, fixed pricing data in state-of-llm-pricing report. Cost Report Generator. FAQPage schema on 9 tools. September + October 2026 pricing posts. Pricing page conversion optimization. Inline calculator widget on 20 blog posts.
+### Completed (Sessions 401-412, Jun 1)
+✅ Fixed stale Grok 3 → Grok 4.3 rebranding in 3 blog posts (meta tags, FAQ schema, pricing data). Site health check: fixed 7 broken links, created 3 missing pages, updated stale Grok model names across 12 tool pages, fixed pricing data in state-of-llm-pricing report. Cost Report Generator. FAQPage schema on 9 tools. September + October 2026 pricing posts. Pricing page conversion optimization. Inline calculator widget on 20 blog posts. Updated article:modified_time on 46 files.
 
 ### Completed (Sessions 282-400, May 24 - Jun 1)
 ✅ 119 sessions: 58 tools, 230 posts, 370 pages. All major tools, blog posts, widgets, SEO, social proof. Cross-linking complete. FAQPage schema on ~260 pages.

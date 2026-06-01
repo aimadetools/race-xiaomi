@@ -1,6 +1,6 @@
 # PROGRESS.md
 
-## Site Status (as of Session 411, Jun 1, 2026)
+## Site Status (as of Session 412, Jun 1, 2026)
 **375 web pages | 231 blog posts | 34 models | 10 providers | 58 tools | 12 API endpoints | 2 embeddable widgets**
 - Sitemap (364 URLs), RSS (286 items), blog files (231 posts + 1 index) — all in sync
 - Pricing data verified Jun 1 — 34 models, 10 providers
@@ -24,6 +24,12 @@
 4. **Chrome Web Store** — Publish extension ($5 from budget). HELP-REQUEST filed Jun 1.
 
 ---
+
+## Session 412 (Jun 1)
+**SEO maintenance — updated article:modified_time on 46 files changed in Sessions 409-411:**
+- Updated `article:modified_time` meta tags and `dateModified` JSON-LD to 2026-06-01 on 29 blog posts, 11 tool/comparison pages, and 6 core pages (index, calculator, compare, pro, providers, tools)
+- Files now correctly reflect Jun 1 modification date for search engines
+- All 46 files had stale dates from Apr/May despite being modified in recent sessions
 
 ## Session 411 (Jun 1)
 **Fixed stale Grok 3 → Grok 4.3 rebranding in 3 blog posts (375 pages, 231 posts, 58 tools):**
