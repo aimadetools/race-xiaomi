@@ -42,10 +42,10 @@ const API_MODELS = [
     { id: 'llama-3.1-70b', name: 'Llama 3.1 70B', provider: 'Meta (Together.ai)', providerSlug: 'together', tier: 'Mid', input: 0.88, output: 0.88, context: '128K', verified: 'May 2026' },
     { id: 'llama-3.1-8b', name: 'Llama 3.1 8B', provider: 'Meta (Together.ai)', providerSlug: 'together', tier: 'Budget', input: 0.10, output: 0.10, context: '128K', verified: 'May 2026' },
     // Moonshot (Kimi)
-    { id: 'kimi-k26', name: 'Kimi K2.6', provider: 'Moonshot', providerSlug: 'moonshot', tier: 'Budget', input: 0.90, output: 3.75, context: '256K', verified: 'May 2026' },
+    { id: 'kimi-k26', name: 'Kimi K2.6', provider: 'Moonshot', providerSlug: 'moonshot', tier: 'Budget', input: 0.95, output: 4.00, context: '256K', verified: 'Jun 2026' },
     // xAI
-    { id: 'xai-grok3', name: 'Grok 4.3', provider: 'xAI', providerSlug: 'xai', tier: 'Mid', input: 12.50, output: 25.00, context: '1M', verified: 'Jun 2026' },  // Was Grok 3 at $30/$150 — rebranded & repriced Jun 2026
-    { id: 'xai-grok3-mini', name: 'Grok Build 0.1', provider: 'xAI', providerSlug: 'xai', tier: 'Budget', input: 10.00, output: 20.00, context: '256K', verified: 'Jun 2026' },  // Replaced Grok 3 Mini
+    { id: 'xai-grok3', name: 'Grok 4.3', provider: 'xAI', providerSlug: 'xai', tier: 'Mid', input: 1.25, output: 2.50, context: '1M', verified: 'Jun 2026' },  // Was Grok 3 at $30/$150 — rebranded & repriced Jun 2026
+    { id: 'xai-grok3-mini', name: 'Grok Build 0.1', provider: 'xAI', providerSlug: 'xai', tier: 'Budget', input: 0.30, output: 0.50, context: '256K', verified: 'Jun 2026' },  // Replaced Grok 3 Mini
     // AI21
     { id: 'ai21-jamba', name: 'Jamba 1.5 Large', provider: 'AI21', providerSlug: 'ai21', tier: 'Mid', input: 2.00, output: 8.00, context: '256K', verified: 'May 2026' },
 ];
