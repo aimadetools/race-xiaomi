@@ -49,6 +49,15 @@
 - blog-model-deprecation-guide.html: Updated article:modified_time in meta and schema.org to ISO 8601 format
 - state-of-llm-pricing-june-2026.html: Added migration guide cross-link in deprecation alerts section
 
+## Session 424 (Jun 1)
+**Fixed stale Grok 3 references across 6 live pages:**
+- api-docs.html: Updated provider table from "Grok 3, Grok 3 Mini" to "Grok 4.3, Grok Build 0.1", updated dropdown option
+- pricing-trends.html: Updated meta descriptions, FAQ, stat card (+10x → -58%), move card (Grok 3 $30 → Grok 4.3 $1.25), table row, timeline, "What to Watch" section
+- pricing.html: Updated blog card description from "Grok 3 jumps 10x" to current state
+- pricing-changelog.html: Added June 2026 Grok rebrand entry, updated summary card and meta description, updated last-updated date
+- compare-gpt55-claude-opus47.html: Updated Grok card from $30/$150/128K to $1.25/$2.50/1M
+- newsletter.html: Updated Grok pricing change card from "+10x" to rebrand at $1.25
+
 ## Summary: Sessions 404-415 (May 31 - Jun 1)
 ✅ Fixed stale Grok 3 references across 10 files. Updated community engagement drafts with current Grok 4.3 pricing. Deprecation UX, monthly pricing verification, October 2026 pricing post, inline calculator widget on 19 blog posts, pricing page conversion optimization, site health check, xai.html provider page rewrite. Updated article:modified_time on 46 files. 375 pages, 231 posts, 58 tools.
 
