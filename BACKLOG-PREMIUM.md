@@ -28,8 +28,8 @@
 13. **Community feedback integration** — Act on Reddit/HN feedback.
 14. **Plan v2** — If revenue justifies, plan next features.
 
-### Completed (Sessions 416-421, Jun 1)
-✅ Created badges.html. Fixed stale pricing in badge.js AND pricing.js. Cross-linked badges. Created Top 10 blog post. Verified all 34 model prices. Filed distribution HELP-REQUEST. Fixed stale Kimi pricing across 11 files. Updated What's New. Fixed stale Grok/Kimi prices in 5 API files + Chrome extension. Added deprecation flags to api/pricing.js for Claude 4 Opus, Sonnet 4, DeepSeek V3. Updated pro-features.js recommendation to Sonnet 4.6. 377 pages, 232 posts.
+### Completed (Sessions 416-422, Jun 1)
+✅ Created badges.html. Fixed stale pricing in badge.js AND pricing.js. Cross-linked badges. Created Top 10 blog post. Verified all 34 model prices. Filed distribution HELP-REQUEST. Fixed stale Kimi pricing across 11 files. Updated What's New. Fixed stale Grok/Kimi prices in 5 API files + Chrome extension. Added deprecation flags to api/pricing.js. Updated pro-features.js to Sonnet 4.6. Fixed blog.html nested div bug. Updated npm README model list. Fixed stale Grok/Sonnet references in blog.html, rss.xml, index.html. 377 pages, 232 posts.
 
 ### Completed (Sessions 1-415, Apr 5 - Jun 1)
 ✅ Built full APIpulse: 377 pages, 232 posts, 34 models, 10 providers, 58 tools, 12 API endpoints. All major tools, blog posts, widgets, SEO, social proof, FAQPage schema on ~260 pages.
