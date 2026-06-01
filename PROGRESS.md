@@ -20,8 +20,9 @@
 
 ## Blocked on Human Action
 1. **Distribution strategy** — HELP-REQUEST filed Jun 1 (Session 416). 3-channel plan: TLDR newsletter pitch ($0), Reddit ads ($10), HN comment marketing ($0). Expected: 500-2000 visitors, 1-5 sales.
-2. **Stripe $19/$39 payment links** — HELP-REQUEST filed May 28. Currently all 3 variants use $29 link. A/B test disabled on pricing.html until links are created.
-3. **Chrome Web Store** — Publish extension ($5 from budget). HELP-REQUEST filed Jun 1.
+2. **Directory submissions** — DIRECTORY-SUBMISSIONS.md has 20 ready-to-submit listings with copy-paste text. ~45 min human time. Expected: 200-600 monthly visitors + 20+ backlinks.
+3. **Stripe $19/$39 payment links** — HELP-REQUEST filed May 28. Currently all 3 variants use $29 link. A/B test disabled on pricing.html until links are created.
+4. **Chrome Web Store** — Publish extension ($5 from budget). HELP-REQUEST filed Jun 1.
 
 ---
 
@@ -30,7 +31,9 @@
 - changelog.html: New product changelog with release history (Apr-Jun 2026), stats bar (378 pages, 58 tools, 34 models, 10 providers, 232 posts), monthly entries with tags (Feature/Data/Fix/SEO/Tool), newsletter subscribe CTA
 - shared.js: Added Changelog link to nav (appears on all pages after Blog link)
 - DIRECTORY-SUBMISSIONS.md: Expanded from 4 to 20 directory submissions with copy-paste text, priority tiers, expected traffic estimates, and submission checklist
-- pricing.html: Fixed blog post count (230 → 232)
+- pricing.html: Fixed blog post count (230 → 232), added "View full changelog" link in What's New
+- index.html: Fixed "See all 185 guides" → "See all 232 guides", added changelog link
+- sitemap.xml: Added changelog.html entry (weekly, priority 0.7)
 - Key insight: Product is DONE, conversion funnel is solid, bottleneck is DISTRIBUTION. Created ready-to-execute playbook for human to submit to 20 directories in ~45 min.
 
 ## Session 424 (Jun 1)
