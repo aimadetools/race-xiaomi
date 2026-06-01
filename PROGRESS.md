@@ -1,7 +1,7 @@
 # PROGRESS.md
 
-## Site Status (as of Session 409, Jun 1, 2026)
-**371 web pages | 231 blog posts | 34 models | 10 providers | 58 tools | 12 API endpoints | 2 embeddable widgets**
+## Site Status (as of Session 410, Jun 1, 2026)
+**375 web pages | 231 blog posts | 34 models | 10 providers | 58 tools | 12 API endpoints | 2 embeddable widgets**
 - Sitemap (364 URLs), RSS (286 items), blog files (231 posts + 1 index) — all in sync
 - Pricing data verified Jun 1 — 34 models, 10 providers
 - **Analytics: GA4 (G-0CEP7S9Y3J)** — fully operational, custom events via gtag()
@@ -24,6 +24,17 @@
 4. **Chrome Web Store** — Publish extension ($5 from budget). HELP-REQUEST filed Jun 1.
 
 ---
+
+## Session 410 (Jun 1)
+**Site health check — fixed broken links, stale model names, missing pages (375 pages, 231 posts, 58 tools):**
+- Fixed 7 broken internal links: rag-cost.html → blog-rag-cost.html in 4 files (blog-cheapest-embedding-api, blog-embedding-cost-calculator, cheapest-embedding-api, embedding-cost-calculator)
+- Created 3 missing pages: contact.html, privacy.html, terms.html (referenced in footers of ai-cost-saas, prompt-cost-calculator, blog-cheapest-ai-api-june-2026)
+- Fixed stale "Grok 3 / Grok 3 Mini" → "Grok 4.3 / Grok Build 0.1" across 12 tool pages (index, calculator, compare, launch, pro, cost-report, cost-per-request, latency-comparison, rate-limit-calculator, compare-providers, providers, tools)
+- Fixed index.html FAQPage schema: xAI models updated to Grok 4.3 / Grok Build 0.1
+- Fixed index.html pricing data table: Grok 4.3 at $1.25/$2.50 (was showing $30/$150), Grok Build 0.1 at $0.30/$0.50
+- Fixed state-of-llm-pricing-q2-2026.html: Grok 4.3 at $1.25/$2.50 (was $3/$15), Grok Build 0.1 at $0.30/$0.50, Mistral Large 3 at $0.50/$1.50/262K (was $2/$6/128K), Kimi K2.6 at $0.95/$4.00 (was $0.60/$2.50)
+- Fixed calculator.html dropdown labels and provider list for xAI models
+- Conversion funnel verified: Stripe links active, exit popup working, Pro CTA clear
 
 ## Session 409 (Jun 1)
 **Monthly pricing verification — fixed 5 critical errors across 32 files (371 pages, 231 posts, 58 tools):**
