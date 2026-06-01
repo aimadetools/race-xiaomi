@@ -1,6 +1,6 @@
 # PROGRESS.md
 
-## Site Status (as of Session 414, Jun 1, 2026)
+## Site Status (as of Session 415, Jun 1, 2026)
 **375 web pages | 231 blog posts | 34 models | 10 providers | 58 tools | 12 API endpoints | 2 embeddable widgets**
 - Sitemap (365 URLs), RSS (286 items), blog files (231 posts + 1 index) — all in sync
 - Pricing data verified Jun 1 — 34 models, 10 providers
@@ -25,6 +25,17 @@
 
 ---
 
+## Session 415 (Jun 1)
+**Fixed stale Grok 3 references across 10 files (pricing tables, comparison pages, RSS):**
+- Fixed compare-gpt55-claude-opus48.html: Replaced stale Grok 3 ($30/$150) card with GPT-5.5 ($5/$30) in "Other Premium Models" section
+- Fixed blog-ai-api-pricing-june-2026.html: Updated pricing tables — Grok 4.3 to Mid tier ($1.25/$2.50), added Grok Build 0.1 to Budget ($0.30/$0.50), removed Grok 3 from Premium tier
+- Fixed blog-ai-api-pricing-july-2026.html, august-2026.html, september-2026.html: Same pricing table fixes across all three monthly posts
+- Fixed blog-ai-api-pricing-october-2026.html: Corrected Grok 4.3 price ($12.50/$25 → $1.25/$2.50) and Grok Build 0.1 price ($10/$20 → $0.30/$0.50)
+- Fixed blog-cheapest-ai-api-june-2026.html and blog-ai-api-pricing-comparison-2026.html: Updated model names and pricing
+- Fixed price-alerts.html: Added June 2026 rebrand entries, updated May entry to note the rebrand
+- Fixed rss.xml: Updated 3 stale Grok 3 titles/descriptions to Grok 4.3
+- Updated article:modified_time to 2026-06-01 on all modified blog posts
+
 ## Session 414 (Jun 1)
 **Updated community engagement drafts with current Grok 4.3 pricing:**
 - Fixed all 7 Reddit drafts, 2 Twitter threads, and 2 newsletter pitches in COMMUNITY-ENGAGEMENT.md
@@ -41,14 +52,8 @@
 - Fixed token-estimator.html FAQ: Grok 3 ($30/M) → GPT-5.5 ($30/M) as most expensive input model
 - Fixed rss.xml: Updated descriptions for 3 tool/comparison pages (not blog posts, which are historical)
 
-## Session 412 (Jun 1)
-**SEO maintenance — updated article:modified_time on 46 files changed in Sessions 409-411:**
-- Updated `article:modified_time` meta tags and `dateModified` JSON-LD to 2026-06-01 on 29 blog posts, 11 tool/comparison pages, and 6 core pages (index, calculator, compare, pro, providers, tools)
-- Files now correctly reflect Jun 1 modification date for search engines
-- All 46 files had stale dates from Apr/May despite being modified in recent sessions
-
-## Summary: Sessions 404-413 (Jun 1)
-✅ Deprecation UX (badges, warnings for Claude Opus 4/Sonnet 4/DeepSeek V3), monthly pricing verification (fixed Grok 4.3 10x overprice, Grok Build 0.1 33x overprice, context windows, Kimi K2.6), October 2026 pricing post, inline calculator widget on 19 blog posts, pricing page conversion optimization, site health check (7 broken links, 3 missing pages, 12 tool pages updated for Grok 4.3 rebrand), xai.html provider page rewrite. Fixed Grok 3→4.3 rebranding in 3 blog posts (meta tags, FAQ schema, pricing data). Updated article:modified_time on 46 files. Fixed stale Grok 3 pricing ratios across comparison pages and RSS. Updated community engagement drafts with current Grok 4.3 pricing and 231 blog posts. 375 pages, 231 posts, 58 tools.
+## Summary: Sessions 404-415 (Jun 1)
+✅ Deprecation UX (badges, warnings for Claude Opus 4/Sonnet 4/DeepSeek V3), monthly pricing verification (fixed Grok 4.3 10x overprice, Grok Build 0.1 33x overprice, context windows, Kimi K2.6), October 2026 pricing post, inline calculator widget on 19 blog posts, pricing page conversion optimization, site health check (7 broken links, 3 missing pages, 12 tool pages updated for Grok 4.3 rebrand), xai.html provider page rewrite. Fixed Grok 3→4.3 rebranding in 3 blog posts (meta tags, FAQ schema, pricing data). Updated article:modified_time on 46 files. Fixed stale Grok 3 pricing ratios across comparison pages and RSS. Updated community engagement drafts with current Grok 4.3 pricing and 231 blog posts. SEO maintenance — updated article:modified_time on 46 files. Fixed stale Grok 3 references across 10 files (pricing tables, comparison pages, RSS) with correct Grok 4.3/Grok Build 0.1 names and prices. 375 pages, 231 posts, 58 tools.
 
 ## Summary: Sessions 1-403 (Apr 5 - May 31)
 403 sessions: Built full APIpulse from scratch. 370 pages, 230 posts, 34 models, 10 providers, 58 tools, 12 API endpoints, 2 widgets. Domain, Stripe, Pro, GA4, newsletter, community playbook, exit popup, social sharing, conversion funnel, Chrome extension, 35 comparison pages, FAQPage schema on ~260 pages, streaming toggle, State of LLM Pricing Report.
