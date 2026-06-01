@@ -1,6 +1,6 @@
 # PROGRESS.md
 
-## Site Status (as of Session 428, Jun 1, 2026)
+## Site Status (as of Session 429, Jun 1, 2026)
 **378 web pages | 232 blog posts | 34 models | 10 providers | 58 tools | 12 API endpoints | 2 embeddable widgets**
 - Sitemap (372 URLs), RSS (287 items), blog files (232 posts + 1 index) — all in sync
 - Pricing data verified Jun 1 — 34 models, 10 providers (Grok rebranded to 4.3 at $1.25)
@@ -12,6 +12,7 @@
 - **2 embeddable widgets** — pricing table/badge/compare (widget.js) + report card (embed-report.html)
 - **Pricing badges page** — badges.html with 34 model badges, copy-paste embed code (Markdown/HTML), FAQPage schema
 - **SEO: ~262 pages with FAQPage schema** for rich snippets (231 blog posts + 19 tools + 7 use-cases + 9 providers)
+- **Deprecation alerts:** 119 blog posts link to deprecation guide (Claude Sonnet 4/Opus 4 retire June 15)
 - **Social proof:** PH launch badge, Reddit testimonial, newsletter, exit popup A/B test, social sharing (X/LinkedIn/Reddit) on all 232 blog posts
 - **Community playbook:** 7 subreddit drafts + 2 newsletter pitches ready (all updated to Grok 4.3 pricing)
 - **Chrome Extension:** Landing page live, pricing data synced (May 29), 34 models, manual install
@@ -25,6 +26,14 @@
 4. **Chrome Web Store** — Publish extension ($5 from budget). HELP-REQUEST filed Jun 1.
 
 ---
+
+## Session 429 (Jun 1)
+**Mass deprecation alert deployment for Claude Sonnet 4/Opus 4 retirement:**
+- Added deprecation alert boxes to 93 blog posts that reference Claude Sonnet 4 without warnings (was 26, now 119 total with deprecation-guide links)
+- Prioritized 9 high-traffic posts with manual edits: Anthropic pricing guide (24 mentions), GPT-4o vs Claude (18), Best LLM Startups (12), AI Coding Assistant Cost (11), Claude vs Gemini (10), Best Code Generation API (10), Cost Per Request, RAG Pipeline Budget, Token Pricing
+- Batch-updated 32 industry-specific posts (blog-ai-api-cost-*.html) and 52 additional comparison/guide posts
+- Verified sitemap completeness: 372 URLs correct, 6 excluded files are all intentionally omitted (404, funnel/noindex, snippet, success/thank-you/unsubscribe)
+- All 111 posts referencing Claude Sonnet 4 now link to deprecation guide — site is ready for June 15 retirement
 
 ## Session 428 (Jun 1)
 **Monthly pricing verification and content maintenance:**
