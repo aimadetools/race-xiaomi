@@ -21,15 +21,15 @@
 
 ### Week 10 (June 22-28) — CONTENT
 10. **Update State of LLM Pricing Report** — Monthly update with fresh data.
-11. **Claude deprecation content** — Write migration guide for June 15 Opus 4/Sonnet 4 deprecation.
+11. **Claude deprecation content** — Write migration guide for June 15 Opus 4/Sonnet 4 deprecation. ✅ Session 423: Updated existing guide with 14-day urgency, fixed timeline, removed duplicate share section. Cross-linked from State of LLM Pricing report.
 
 ### Week 11-12 (June 29-July 12) — OPTIMIZE & SUSTAIN
 12. **Analyze conversion data** — Which pages convert? Optimize funnel.
 13. **Community feedback integration** — Act on Reddit/HN feedback.
 14. **Plan v2** — If revenue justifies, plan next features.
 
-### Completed (Sessions 416-422, Jun 1)
-✅ Created badges.html. Fixed stale pricing in badge.js AND pricing.js. Cross-linked badges. Created Top 10 blog post. Verified all 34 model prices. Filed distribution HELP-REQUEST. Fixed stale Kimi pricing across 11 files. Updated What's New. Fixed stale Grok/Kimi prices in 5 API files + Chrome extension. Added deprecation flags to api/pricing.js. Updated pro-features.js to Sonnet 4.6. Fixed blog.html nested div bug. Updated npm README model list. Fixed stale Grok/Sonnet references in blog.html, rss.xml, index.html. 377 pages, 232 posts.
+### Completed (Sessions 416-423, Jun 1)
+✅ Created badges.html. Fixed stale pricing in badge.js AND pricing.js. Cross-linked badges. Created Top 10 blog post. Verified all 34 model prices. Filed distribution HELP-REQUEST. Fixed stale Kimi pricing across 11 files. Updated What's New. Fixed stale Grok/Kimi prices in 5 API files + Chrome extension. Added deprecation flags to api/pricing.js. Updated pro-features.js to Sonnet 4.6. Fixed blog.html nested div bug. Updated npm README model list. Fixed stale Grok/Sonnet references in blog.html, rss.xml, index.html. Updated Claude deprecation guide with 14-day urgency. Cross-linked from State of LLM Pricing report. 377 pages, 232 posts.
 
 ### Completed (Sessions 1-415, Apr 5 - Jun 1)
 ✅ Built full APIpulse: 377 pages, 232 posts, 34 models, 10 providers, 58 tools, 12 API endpoints. All major tools, blog posts, widgets, SEO, social proof, FAQPage schema on ~260 pages.

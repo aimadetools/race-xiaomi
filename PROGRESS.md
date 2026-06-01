@@ -1,6 +1,6 @@
 # PROGRESS.md
 
-## Site Status (as of Session 422, Jun 1, 2026)
+## Site Status (as of Session 423, Jun 1, 2026)
 **377 web pages | 232 blog posts | 34 models | 10 providers | 58 tools | 12 API endpoints | 2 embeddable widgets**
 - Sitemap (367 URLs), RSS (287 items), blog files (232 posts + 1 index) — all in sync
 - Pricing data verified Jun 1 — 34 models, 10 providers
@@ -28,21 +28,8 @@
 ## Summary: Sessions 416-419 (Jun 1)
 ✅ Created badges.html, Top 10 blog post, cross-linked badges. Fixed stale Grok/Kimi pricing across 11 HTML files, pricing.js, badge.js, 5 API files, Chrome extension. Added deprecation flags. Fixed Grok 3 → 4.3 references. Filed distribution HELP-REQUEST. Updated What's New. 377 pages, 232 posts.
 
-## Session 420 (Jun 1)
-**Mass metadata and stale reference cleanup across ~40 files:**
-- Fixed "4 providers" → "10 providers" in meta descriptions (index.html, calculator.html, about.html, blog.html, rss.xml, embed-calculator.html)
-- Fixed "33 models" → "34 models" across ~30 files (meta descriptions, schema.org, body text, Twitter share URLs, stat values)
-- Fixed pricing.html blog post count 230 → 232
-- Updated index.html hero description to mention DeepSeek
-- All 34 model counts now consistent across the site
-
-## Session 421 (Jun 1)
-**Fixed stale Grok/Kimi prices across 5 API files + Chrome extension, added deprecation flags:**
-- api/pricing.js: Added `deprecated: true`, `deprecatedDate: '2026-06-15'`, `replacement` to Claude 4 Opus, Claude Sonnet 4, and DeepSeek V3 (was missing — pricing-data.js had them)
-- api/compare.js, api/cheapest.js, api/calculate.js, api/cost-report.js, api/recommend.js: Fixed stale Grok 4.3 ($12.50/$25 → $1.25/$2.50), Grok Build 0.1 ($10/$20 → $0.30/$0.50), Kimi K2.6 ($0.90/$3.75 → $0.95/$4.00) — Session 418 missed these 5 files
-- chrome-extension/models.js: Fixed same stale Grok/Kimi prices
-- pro-features.js: Updated recommendation from "Claude Sonnet 4" → "Claude Sonnet 4.6" (Sonnet 4 retires Jun 15)
-- blog-model-deprecation-guide.html: Updated article:modified_time to Jun 1
+## Sessions 420-421 (Jun 1)
+✅ Mass metadata cleanup: fixed "4 providers" → "10 providers" (6 files), "33 models" → "34 models" (~30 files). Fixed stale Grok/Kimi prices in 5 API files + Chrome extension. Added deprecation flags to api/pricing.js. Updated pro-features.js to Sonnet 4.6.
 
 ## Session 422 (Jun 1)
 **Fixed stale references across blog index, RSS, and npm package:**
@@ -52,6 +39,15 @@
 - rss.xml: Updated Grok comparison post title and description to current models/pricing
 - index.html: Updated featured Grok comparison card title and description
 - npm-package/README.md: Updated model list to match pricing-data.js (added GPT-5.5 Pro, GPT-5.3 Codex, GPT-oss variants, Claude Opus 4.7; renamed Grok 3 → 4.3, Grok 3 Mini → Build 0.1; removed deprecated DeepSeek V3)
+
+## Session 423 (Jun 1)
+**Updated Claude deprecation migration guide with urgency and fixed issues:**
+- blog-model-deprecation-guide.html: Updated subtitle to show "14 days away" countdown
+- blog-model-deprecation-guide.html: Fixed timeline — "Now (May 29)" → "Now (June 1) — 14 days left" with countdown labels
+- blog-model-deprecation-guide.html: Updated closing CTA to emphasize "14 days" deadline
+- blog-model-deprecation-guide.html: Fixed duplicate share section (removed redundant second set of share buttons)
+- blog-model-deprecation-guide.html: Updated article:modified_time in meta and schema.org to ISO 8601 format
+- state-of-llm-pricing-june-2026.html: Added migration guide cross-link in deprecation alerts section
 
 ## Summary: Sessions 404-415 (May 31 - Jun 1)
 ✅ Fixed stale Grok 3 references across 10 files. Updated community engagement drafts with current Grok 4.3 pricing. Deprecation UX, monthly pricing verification, October 2026 pricing post, inline calculator widget on 19 blog posts, pricing page conversion optimization, site health check, xai.html provider page rewrite. Updated article:modified_time on 46 files. 375 pages, 231 posts, 58 tools.
