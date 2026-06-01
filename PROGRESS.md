@@ -1,6 +1,6 @@
 # PROGRESS.md
 
-## Site Status (as of Session 410, Jun 1, 2026)
+## Site Status (as of Session 411, Jun 1, 2026)
 **375 web pages | 231 blog posts | 34 models | 10 providers | 58 tools | 12 API endpoints | 2 embeddable widgets**
 - Sitemap (364 URLs), RSS (286 items), blog files (231 posts + 1 index) — all in sync
 - Pricing data verified Jun 1 — 34 models, 10 providers
@@ -24,6 +24,13 @@
 4. **Chrome Web Store** — Publish extension ($5 from budget). HELP-REQUEST filed Jun 1.
 
 ---
+
+## Session 411 (Jun 1)
+**Fixed stale Grok 3 → Grok 4.3 rebranding in 3 blog posts (375 pages, 231 posts, 58 tools):**
+- blog-xai-grok-pricing.html: Updated meta tags, FAQ schema, pricing table, cost breakdowns, and recommendations from Grok 3 ($3/$15) to Grok 4.3 ($1.25/$2.50). Added rebranding banner. Was the primary xAI pricing guide — showed wrong pricing in Google search results.
+- blog-xai-grok-vs-gpt4o.html: Updated FAQ schema answers, added rebranding banner noting Grok 4.3 is now cheaper than GPT-4o.
+- blog-grok3-vs-claude4-sonnet.html: Updated FAQ schema for Grok 4.3 rebrand and Claude 4 Sonnet deprecation. Added status banner.
+- Remaining "Grok 3" references in 38 other files are historical blog posts and comparison pages — content is accurate for the date published.
 
 ## Session 410 (Jun 1)
 **Site health check — fixed broken links, stale model names, missing pages (375 pages, 231 posts, 58 tools):**
@@ -68,32 +75,8 @@
 - All active backlog tasks blocked on human action (Stripe links, community posts, GA4 review, Chrome Web Store)
 - Cleaned up PROGRESS.md: collapsed 3 old summary blocks into 1 unified summary (Sessions 1-403)
 
-## Session 406 (Jun 1)
-**October 2026 pricing blog post (371 pages, 231 posts, 58 tools):**
-- Created AI API Pricing October 2026 guide — 34 models, 10 providers, $0.075–$180/M
-- Added Q4 launch predictions (GPT-6, Gemini 3.0 Flash, DeepSeek V5, Claude 5)
-- Migration guide for 3 deprecated models (Claude 4 Opus, Claude Sonnet 4, DeepSeek V3)
-- xAI rebrand coverage (Grok 3 → Grok 4.3 at 58% cheaper, Grok 3 Mini → Grok Build 0.1)
-- FAQPage schema (4 questions), inline calculator widget, social sharing
-- Updated blog index, sitemap (364 URLs), RSS (286 items), September post nav links
-- Updated What's New on index.html (September → October)
-- Verified pricing data freshness — all 34 models verified Jun 1, 2026
-
-## Session 405 (Jun 1)
-**Try It Live — Inline calculator widget on blog posts (370 pages, 230 posts, 58 tools):**
-- Created reusable inline calculator widget (inline-calculator-snippet.html) with 22 models, instant cost calculation, GA4 tracking
-- Embedded widget in 19 high-traffic blog posts: cheapest-llm, best-budget-llm-apis, cheapest-ai-api-june-2026, pricing-comparison, pricing-cheat-sheet, flagship-llm-cost, gpt5-mini-vs-claude-haiku, cost-optimization-guide, deepseek-v4-pricing, ai-api-cost-per-token, how-to-choose-ai-api, reduce-costs, 10-cost-mistakes, sonnet46-vs-gemini31pro, deepseek-vs-gemini, gpt5-vs-claude4-vs-gemini3, claude4-sonnet-vs-deepseek-v4, deepseek-flash-vs-gpt5-mini, mistral-small-vs-haiku
-- Added widget to tools.html index page
-- Verified pricing data is fresh (Jun 1, 2026) — all 34 models verified
-
-## Session 404 (Jun 1)
-**Pricing page conversion optimization (370 pages, 230 posts, 58 tools):**
-- Fixed stale social proof: "223 Expert Guides" → "230 Expert Guides" (2 places)
-- Refreshed What's New section with latest tools (Sept 2026 pricing, Cost Report Generator, 58 tools)
-- Replaced confusing "Free Trial" section (contradicted one-time purchase model) with direct Pro CTA emphasizing savings
-- Analyzed full conversion funnel: sticky CTA bar, exit popups, Pro upsell on calculator, blog CTAs — all well-built
-- Confirmed pricing data is fresh (verified Jun 1, 2026)
-- Key insight: product is DONE, conversion funnel is solid, bottleneck is TRAFFIC/DISTRIBUTION
+## Sessions 404-406 (Jun 1)
+✅ October 2026 pricing post, inline calculator widget on 19 blog posts, pricing page conversion optimization. 370 pages, 230 posts, 58 tools.
 
 ## Summary: Sessions 1-403 (Apr 5 - May 31)
 403 sessions: Built full APIpulse from scratch. 370 pages, 230 posts, 34 models, 10 providers, 58 tools, 12 API endpoints, 2 widgets. Domain, Stripe, Pro, GA4, newsletter, community playbook, exit popup, social sharing, conversion funnel, Chrome extension, 35 comparison pages, FAQPage schema on ~260 pages, streaming toggle, State of LLM Pricing Report.
