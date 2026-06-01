@@ -16,11 +16,12 @@
 - ~~Add internal links from blog posts to relevant tools~~ ✅ Done Session 397 (238 links from blog posts)
 - ~~Add social sharing to all blog posts~~ ✅ Done Session 400 (9 posts fixed, all 229 now have sharing)
 - ~~Add FAQPage schema to high-traffic tool pages~~ ✅ Done Sessions 400-402 (32 pages: 18 tools, 7 use-cases, 9 providers — all major tool pages now have FAQPage schema)
+- ~~Create blog posts targeting "AI API pricing [month] 2026" for future months~~ ✅ Done (Sept 2026 post created Session 403; Aug, Jul, Jun, May all exist)
 - Verify all 34 model prices monthly against provider pricing pages
 - Update What's New section on index.html when new tools are added
 
-### Completed (Sessions 282-402, May 24 - Jun 1)
-✅ 121 sessions: 58 tools, 229 posts, 369 pages. All major tools, blog posts, widgets, SEO, social proof. Cross-linking complete. FAQPage schema on ~260 pages (all blog posts + 18 tools + 7 use-cases + 9 providers). Cost Report Generator built. Chrome Web Store help request filed.
+### Completed (Sessions 282-403, May 24 - Jun 1)
+✅ 122 sessions: 58 tools, 230 posts, 370 pages. All major tools, blog posts, widgets, SEO, social proof. Cross-linking complete. FAQPage schema on ~260 pages (all blog posts + 18 tools + 7 use-cases + 9 providers). Cost Report Generator built. September 2026 pricing post. Chrome Web Store help request filed.
 
 ### Completed (Sessions 1-281, Apr 5 - May 23)
 ✅ Built full APIpulse: 264 pages, 168 blog posts, 34 models, 10 providers, 22 tools, 6 API endpoints.
