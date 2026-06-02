@@ -17,6 +17,9 @@
 - Monitor email signups from checklist page via GA4 — track conversion rate
 - A/B test checklist page headline vs. cheat sheet page for conversion
 
+### Completed (Session 454, Jun 2)
+✅ Cross-linked lead magnets (cheapest, gpt5-vs-claude, cheatsheet) from 8 deprecation ecosystem pages
+
 ### Completed (Session 453, Jun 2)
 ✅ Built gpt5-vs-claude-pricing-2026.html lead magnet page (393 pages, 386 sitemap URLs)
 ✅ Cross-linked from pricing.html, cheapest-llm-api-2026.html, compare-gpt5-vs-claude-vs-gemini.html
