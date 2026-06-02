@@ -12,11 +12,12 @@
 
 ### Follow-up Tasks (from Session 451)
 - Promote Claude 4 migration cheat sheet on Reddit (r/webdev, r/ChatGPTDev, r/MachineLearning) — share as a helpful resource, not a sales pitch
-- Add cheat sheet link to Chrome extension landing page
-- Add cheat sheet to RSS feed as a new entry
-- Create "Claude 4 Migration Checklist" lead magnet page — collect emails via existing subscribe system, deliver checklist via email
+- Add cheat sheet + checklist links to Chrome extension landing page
 - Submit badges.html to developer tool directories (separate from main site submissions)
 - Add cheat sheet to api-docs.html as a quick reference
+- Create similar lead magnet pages for other high-intent topics (e.g., "GPT-5 vs Claude pricing", "cheapest LLM API 2026")
+- Monitor email signups from checklist page via GA4 — track conversion rate
+- A/B test checklist page headline vs. cheat sheet page for conversion
 
 ### Routine Maintenance (cheap sessions)
 - Update State of LLM Pricing Report monthly
