@@ -1,7 +1,7 @@
 // APIpulse — Centralized Pricing Data (Single Source of Truth)
 // Update this file when provider pricing changes. All pages import from here.
-// Last verified: Jun 1, 2026
-const PRICING_LAST_UPDATED = 'Jun 1, 2026';
+// Last verified: Jun 2, 2026
+const PRICING_LAST_UPDATED = 'Jun 2, 2026';
 
 const API_MODELS = [
     // OpenAI
@@ -37,8 +37,8 @@ const API_MODELS = [
     { id: 'cohere-command-r-plus', name: 'Command R+', provider: 'Cohere', providerSlug: 'cohere', tier: 'Mid', input: 2.50, output: 10.00, context: '128K', verified: 'May 2026' },
     { id: 'cohere-command-r', name: 'Command R', provider: 'Cohere', providerSlug: 'cohere', tier: 'Budget', input: 0.50, output: 1.50, context: '128K', verified: 'May 2026' },
     // Meta (Together.ai)
-    { id: 'llama-4-scout', name: 'Llama 4 Scout', provider: 'Meta (Together.ai)', providerSlug: 'together', tier: 'Budget', input: 0.11, output: 0.34, context: '10M', verified: 'May 2026' },  // Dedicated inference only — not on serverless
-    { id: 'llama-4-maverick', name: 'Llama 4 Maverick', provider: 'Meta (Together.ai)', providerSlug: 'together', tier: 'Budget', input: 0.20, output: 0.60, context: '10M', verified: 'May 2026' },  // Dedicated inference only — not on serverless
+    { id: 'llama-4-scout', name: 'Llama 4 Scout', provider: 'Meta (Together.ai)', providerSlug: 'together', tier: 'Budget', input: 0.18, output: 0.59, context: '1M', verified: 'Jun 2026' },
+    { id: 'llama-4-maverick', name: 'Llama 4 Maverick', provider: 'Meta (Together.ai)', providerSlug: 'together', tier: 'Budget', input: 0.27, output: 0.85, context: '1M', verified: 'Jun 2026' },
     { id: 'llama-3.1-70b', name: 'Llama 3.1 70B', provider: 'Meta (Together.ai)', providerSlug: 'together', tier: 'Mid', input: 0.88, output: 0.88, context: '128K', verified: 'May 2026' },
     { id: 'llama-3.1-8b', name: 'Llama 3.1 8B', provider: 'Meta (Together.ai)', providerSlug: 'together', tier: 'Budget', input: 0.10, output: 0.10, context: '128K', verified: 'May 2026' },
     // Moonshot (Kimi)

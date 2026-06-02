@@ -1,6 +1,6 @@
 // APIpulse Chrome Extension — Embedded Pricing Data
 // Synced with pricing-data.js from getapipulse.com
-// Last verified: Jun 1, 2026
+// Last verified: Jun 2, 2026
 
 const MODELS = [
   { name: 'GPT-5.5', provider: 'OpenAI', tier: 'Premium', input: 5.00, output: 30.00, context: '1M' },
@@ -29,8 +29,8 @@ const MODELS = [
   { name: 'Mistral Small 4', provider: 'Mistral', tier: 'Budget', input: 0.15, output: 0.60, context: '128K' },
   { name: 'Command R+', provider: 'Cohere', tier: 'Mid', input: 2.50, output: 10.00, context: '128K' },
   { name: 'Command R', provider: 'Cohere', tier: 'Budget', input: 0.50, output: 1.50, context: '128K' },
-  { name: 'Llama 4 Scout', provider: 'Meta (Together.ai)', tier: 'Budget', input: 0.11, output: 0.34, context: '10M' },
-  { name: 'Llama 4 Maverick', provider: 'Meta (Together.ai)', tier: 'Budget', input: 0.20, output: 0.60, context: '10M' },
+  { name: 'Llama 4 Scout', provider: 'Meta (Together.ai)', tier: 'Budget', input: 0.18, output: 0.59, context: '1M' },
+  { name: 'Llama 4 Maverick', provider: 'Meta (Together.ai)', tier: 'Budget', input: 0.27, output: 0.85, context: '1M' },
   { name: 'Llama 3.1 70B', provider: 'Meta (Together.ai)', tier: 'Mid', input: 0.88, output: 0.88, context: '128K' },
   { name: 'Llama 3.1 8B', provider: 'Meta (Together.ai)', tier: 'Budget', input: 0.10, output: 0.10, context: '128K' },
   { name: 'Kimi K2.6', provider: 'Moonshot', tier: 'Budget', input: 0.95, output: 4.00, context: '256K' },
