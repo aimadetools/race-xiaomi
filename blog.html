@@ -129,7 +129,16 @@
                 <span>June 2, 2026</span>
             </div>
             <h2><a href="blog-claude-4-deprecated-countdown.html">Claude 4 Deprecated: 13-Day Countdown — What You Need to Know</a></h2>
-            <p>Claude 4 Opus and Sonnet 4 retire June 15. 13 days left. Calculate your migration cost, compare alternatives, and switch before the deadline.</p>
+            <p>Claude 4 Opus and Sonnet 4 retire June 15. <span id="blogDaysLeft">13 days</span> left. Calculate your migration cost, compare alternatives, and switch before the deadline.</p>
+            <script>
+                (function(){
+                    var dep = new Date('2026-06-15T00:00:00');
+                    var diff = dep - new Date();
+                    var days = diff > 0 ? Math.ceil(diff / 86400000) : 0;
+                    var el = document.getElementById('blogDaysLeft');
+                    if (el) el.textContent = days + ' days';
+                })();
+            </script>
             <a href="blog-claude-4-deprecated-countdown.html" class="read-more">See the countdown →</a>
         </div>
 

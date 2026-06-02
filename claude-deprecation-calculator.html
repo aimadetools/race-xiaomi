@@ -417,7 +417,7 @@
         </div>
 
         <div class="cta-box" style="background:linear-gradient(135deg,rgba(239,68,68,0.12),rgba(239,68,68,0.04));border-color:rgba(239,68,68,0.2);">
-            <h3 style="color:var(--red);">Deadline: June 15 — 13 days left</h3>
+            <h3 style="color:var(--red);" id="ctaDeadline">Deadline: June 15 — 13 days left</h3>
             <p>Compare all 34 alternatives to Claude 4 and find the cheapest replacement for your workload.</p>
             <a href="claude-4-migration-tool.html" class="cta-btn" style="background:var(--red);margin-right:8px;" onclick="if(window.trackEvent)window.trackEvent('cta_clicked',{source:'deprecation-calc',target:'migration-tool'})">Open Migration Tool →</a>
             <a href="calculator.html" class="cta-btn" onclick="if(window.trackEvent)window.trackEvent('cta_clicked',{source:'deprecation-calc',target:'calculator'})">Full Calculator</a>
@@ -488,6 +488,15 @@
         }
         updateCountdown();
         setInterval(updateCountdown, 60000);
+
+        // Update CTA deadline text
+        (function(){
+            var dep = new Date('2026-06-15T00:00:00');
+            var diff = dep - new Date();
+            var days = diff > 0 ? Math.ceil(diff / 86400000) : 0;
+            var el = document.getElementById('ctaDeadline');
+            if (el) el.textContent = 'Deadline: June 15 — ' + days + ' days left';
+        })();
 
         window.selectModel = function(model) {
             selectedModel = model;

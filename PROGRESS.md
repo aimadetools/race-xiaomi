@@ -28,12 +28,15 @@
 ---
 
 ## Session 439 (Jun 2)
-**Dynamic deprecation countdowns — replace hardcoded day counts with live JS:**
-- blog-claude-4-deprecated-countdown.html: Made countdown bar dynamic (id="cd-days" with JS), subtitle ("X days to migrate"), CTA deadline, and FAQ answer all update live
-- blog-model-deprecation-guide.html: Made subtitle ("X days away"), bottom line ("X days"), and CTA deadline ("X days left") all dynamic via JS
-- claude-4-migration-tool.html: Verified sticky banner already has dynamic JS countdown (lines 757-768) — no changes needed
-- claude-deprecation-calculator.html: Verified main countdown already dynamic — no changes needed
-- All countdown pages now auto-update as June 15 approaches (no more manual "13→12→11" edits needed)
+**Dynamic deprecation countdowns — replace all hardcoded day counts with live JS:**
+- blog-claude-4-deprecated-countdown.html: Countdown bar, subtitle, CTA deadline, FAQ answer — all dynamic
+- blog-model-deprecation-guide.html: Subtitle, bottom line, CTA deadline — all dynamic
+- claude-deprecation-calculator.html: CTA deadline — dynamic (main countdown + sticky banner already were)
+- blog-best-claude-4-alternatives.html: Alert "X days" + CTA deadline — both dynamic
+- blog.html: Countdown post card "X days left" — dynamic
+- index.html: What's New deprecation calculator "in X days" — dynamic
+- claude-4-migration-tool.html: Verified sticky banner already dynamic — no changes needed
+- 8 pages total now auto-update as June 15 approaches (no more manual daily edits needed)
 
 ## Session 438 (Jun 2)
 **Migration tool cross-linking — expand from 3 to 15 blog posts:**
