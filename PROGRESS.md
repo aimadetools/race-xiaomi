@@ -1,8 +1,8 @@
 # PROGRESS.md
 
 ## Site Status (as of Session 452, Jun 2, 2026)
-**391 web pages | 241 blog posts | 34 models | 10 providers | 60 tools | 12 API endpoints | 2 embeddable widgets**
-- Sitemap (384 URLs), RSS (298 items), blog files (241 posts + 1 index) — all in sync
+**392 web pages | 241 blog posts | 34 models | 10 providers | 60 tools | 12 API endpoints | 2 embeddable widgets**
+- Sitemap (385 URLs), RSS (298 items), blog files (241 posts + 1 index) — all in sync
 - Pricing data verified Jun 2 — 34 models, 10 providers (Grok rebranded to 4.3 at $1.25)
 - **Analytics: GA4 (G-0CEP7S9Y3J)** — fully operational, custom events via gtag()
 - **Pro system:** localStorage-based unlock after Stripe payment. Access code fallback on pro.html.
@@ -25,10 +25,20 @@
 ---
 
 ## Session 452 (Jun 2)
-**Cross-link cheat sheet + checklist from extension and API pages:**
-- Added Claude 4 migration cheat sheet + checklist links to chrome-extension.html "Also from APIpulse" section
-- Added cheat sheet link to api-docs.html "Related Tools" section with description
-- Both pages are high-traffic entry points that now surface deprecation migration resources
+**Cheapest LLM API 2026 lead magnet + cross-links:**
+- Built cheapest-llm-api-2026.html — full ranking of all 34 models by price
+  - Complete price ranking table (cheapest-first, all active models)
+  - Cheapest picks by 7 use cases (chat, coding, classification, summarization, batch, reasoning, long-context)
+  - Real-world cost scenarios at 3 usage levels (100/1K/10K req/day)
+  - Batch mode (50% off) and streaming (+15%) savings section
+  - FAQPage schema with 6 questions for rich snippets
+  - Email capture using existing subscribe.js + Resend infrastructure
+  - GA4 tracking for page views, CTAs, and signups
+  - Related links to calculator, compare, migration cheat sheet, pricing index, API docs
+- Added to sitemap.xml (385 URLs) and index.html What's New section
+- Cross-linked from pricing.html footer
+- Also: Added cheat sheet + checklist links to chrome-extension.html and api-docs.html
+- Stats: 391→392 pages, sitemap 384→385 URLs
 
 ## Session 451 (Jun 2)
 **Claude 4 Migration Cheat Sheet + Lead Magnet + stale stat fixes:**
@@ -53,27 +63,9 @@
 - Updated page count: 389→391 pages
 
 ## Session 450 (Jun 2)
-**Changelog + What's New maintenance:**
-- Fixed stale stats in changelog.html: pages 383→389, blog posts 235→241
-- Added 5 missing changelog entries for Sessions 447-449 (troubleshooting post, stale count fix, alternatives post, landing page, Opus 4.8 vs GPT-5.5 post)
-- Added Opus 4.8 vs GPT-5.5 blog post to What's New section on index.html
+**Changelog + What's New maintenance:** Fixed stale stats in changelog.html, added 5 missing changelog entries, added Opus 4.8 vs GPT-5.5 to What's New.
 
-## Session 449 (Jun 2)
-**New blog post — "Claude Opus 4.8 vs GPT-5.5: The Premium Showdown":**
-- Created blog-opus48-vs-gpt55.html — comparison of Opus 4.8 ($5/$25) vs GPT-5.5 ($5/$30)
-- Covers pricing, 5 use-case cost comparisons, feature matrix, migration guidance, optimization tips
-- FAQPage schema for rich snippets, social sharing (X/LinkedIn)
-- Cross-linked from 5 pages: deprecation hub, migration guide, alternatives post, Opus 4.8 cost, GPT-5.5 vs Opus 4.7
-- Added to blog index, sitemap (384 URLs), RSS (298 items)
-- Stats: 388→389 pages, 240→241 blog posts
-
-## Session 448 (Jun 2)
-**Stale blog count cleanup across 8 HTML files:**
-- Fixed stale "239" blog post count → 240 on: prompt-cost-calculator.html, community.html (2x), index.html, pricing.html (2x), launch.html, blog.html
-- Verified RSS feed count (297 items) and sitemap (383 URLs) — both in sync
-- Final sweep: no remaining stale blog counts in any HTML file
-
-## Summary: Sessions 435-450 (Jun 1-2)
+## Summary: Sessions 435-449 (Jun 1-2)
 ✅ Built Claude 4 deprecation landing page + calculator + migration tool. Created 6 blog posts (alternatives, countdown, troubleshooting, migration guide, cost optimization checklist, Opus 4.8 vs GPT-5.5). Dynamic countdowns on 8 pages. Deprecation CTA on 195 blog posts. Cross-linked from 58 files. Monthly pricing verification. Changelog + What's New maintenance. Stats: 380→389 pages, 233→241 blog posts, 59→60 tools.
 
 ## Summary: Sessions 1-421 (Apr 5 - Jun 1)
