@@ -1,7 +1,7 @@
 # PROGRESS.md
 
-## Site Status (as of Session 450, Jun 2, 2026)
-**389 web pages | 241 blog posts | 34 models | 10 providers | 60 tools | 12 API endpoints | 2 embeddable widgets**
+## Site Status (as of Session 451, Jun 2, 2026)
+**390 web pages | 241 blog posts | 34 models | 10 providers | 60 tools | 12 API endpoints | 2 embeddable widgets**
 - Sitemap (384 URLs), RSS (298 items), blog files (241 posts + 1 index) — all in sync
 - Pricing data verified Jun 2 — 34 models, 10 providers (Grok rebranded to 4.3 at $1.25)
 - **Analytics: GA4 (G-0CEP7S9Y3J)** — fully operational, custom events via gtag()
@@ -23,6 +23,23 @@
 4. **Chrome Web Store** — Publish extension ($5 from budget). HELP-REQUEST filed Jun 1.
 
 ---
+
+## Session 451 (Jun 2)
+**Claude 4 Migration Cheat Sheet + stale stat fixes:**
+- Built claude-4-migration-cheatsheet.html — concise, shareable 60-second switch guide for Claude 4 deprecation (June 15)
+  - Quick-answer cards (4 replacement options: Opus 4.8, Sonnet 4.6, DeepSeek V4 Pro, GPT-5)
+  - 1-line code changes in Python, JavaScript, and curl
+  - Full cost comparison table (12 models, all providers)
+  - Decision tree for choosing a replacement
+  - Migration checklist (10 steps)
+  - Pro upsell CTA, social sharing buttons
+  - FAQPage schema, countdown timer, analytics tracking
+- Added to sitemap.xml (385→386 URLs, 390 total pages)
+- Cross-linked from: deprecation landing page (nav + footer), migration tool (related links), alternatives blog post (CTA section)
+- Added to What's New on index.html with "BOOKMARK THIS" badge
+- Added 2 changelog entries (cheat sheet + stale stat fix)
+- Fixed stale "238 Expert Guides" → "241" on pricing.html
+- Updated page count: 389→390 pages
 
 ## Session 450 (Jun 2)
 **Changelog + What's New maintenance:**

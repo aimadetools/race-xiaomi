@@ -26,8 +26,8 @@
 11. Community feedback integration — Act on Reddit/HN feedback.
 12. Plan v2 — If revenue justifies, plan next features.
 
-### Completed (Sessions 416-450, Jun 1-2)
-✅ Built deprecation ecosystem: landing page + calculator + migration tool + 6 blog posts. Dynamic countdowns on 8 pages. Cross-linked from 58 files, CTA on 195 posts. Changelog + What's New maintenance. Stats: 389 pages, 241 blog posts.
+### Completed (Sessions 416-451, Jun 1-2)
+✅ Built deprecation ecosystem: landing page + calculator + migration tool + migration cheat sheet + 6 blog posts. Dynamic countdowns on 8 pages. Cross-linked from 58+ files, CTA on 195 posts. Changelog + What's New maintenance. Stats: 390 pages, 241 blog posts.
 
 ### Completed (Sessions 1-415, Apr 5 - Jun 1)
 ✅ Built full APIpulse: 377 pages, 232 posts, 34 models, 10 providers, 58 tools, 12 API endpoints. All major tools, blog posts, widgets, SEO, social proof, FAQPage schema on ~260 pages.

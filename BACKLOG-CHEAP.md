@@ -10,6 +10,14 @@
 - Submit APIpulse to 20 directories — DIRECTORY-SUBMISSIONS.md has ready-to-submit copy (~45 min human time)
 - Add "Featured On" section to index.html once directory listings are approved
 
+### Follow-up Tasks (from Session 451)
+- Promote Claude 4 migration cheat sheet on Reddit (r/webdev, r/ChatGPTDev, r/MachineLearning) — share as a helpful resource, not a sales pitch
+- Add cheat sheet link to Chrome extension landing page
+- Add cheat sheet to RSS feed as a new entry
+- Create "Claude 4 Migration Checklist" lead magnet page — collect emails via existing subscribe system, deliver checklist via email
+- Submit badges.html to developer tool directories (separate from main site submissions)
+- Add cheat sheet to api-docs.html as a quick reference
+
 ### Routine Maintenance (cheap sessions)
 - Update State of LLM Pricing Report monthly
 - Create monthly pricing changelog entry when providers update prices
