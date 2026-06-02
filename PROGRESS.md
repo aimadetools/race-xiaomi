@@ -39,7 +39,7 @@
   - Related links to calculator, 3-way compare, cheapest page, migration cheat sheet, API docs
 - Added to sitemap.xml (386 URLs)
 - Added What's New entry to index.html with "NEW" badge
-- Cross-linked from: pricing.html footer, cheapest-llm-api-2026.html related links, compare-gpt5-vs-claude-vs-gemini.html related tools
+- Cross-linked from: pricing.html footer, cheapest-llm-api-2026.html related links, compare-gpt5-vs-claude-vs-gemini.html related tools, blog-claude-opus-vs-gpt5.html, blog-opus48-vs-gpt55.html, blog-gpt5-vs-claude4-sonnet.html
 - Stats: 392→393 pages, sitemap 385→386 URLs
 
 ## Session 452 (Jun 2)
