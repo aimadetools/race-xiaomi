@@ -1,8 +1,8 @@
 # PROGRESS.md
 
 ## Site Status (as of Session 443, Jun 2, 2026)
-**385 web pages | 237 blog posts | 34 models | 10 providers | 60 tools | 12 API endpoints | 2 embeddable widgets**
-- Sitemap (379 URLs), RSS (293 items), blog files (237 posts + 1 index) — all in sync
+**386 web pages | 238 blog posts | 34 models | 10 providers | 60 tools | 12 API endpoints | 2 embeddable widgets**
+- Sitemap (380 URLs), RSS (294 items), blog files (238 posts + 1 index) — all in sync
 - Pricing data verified Jun 2 — 34 models, 10 providers (Grok rebranded to 4.3 at $1.25)
 - **Analytics: GA4 (G-0CEP7S9Y3J)** — fully operational, custom events via gtag()
 - **Pro system:** localStorage-based unlock after Stripe payment. Access code fallback on pro.html.
@@ -25,12 +25,11 @@
 ---
 
 ## Session 443 (Jun 2)
-**Claude 4 deprecation checklist blog post — actionable migration content:**
-- Created blog-claude-4-deprecation-checklist.html — interactive 8-step checklist targeting "Claude 4 deprecation checklist" searches
-- Features: interactive progress tracker (click-to-check steps), countdown bar, code migration examples (Python/Node.js/REST), cost comparison table, common issues section, FAQPage schema (4 questions), social sharing
-- Cross-linked from: deprecation calculator (new "Migration Checklist" CTA), migration tool (new related link), countdown post (Related Resources)
-- Added to blog.html (new card with "Checklist" tag, between FAQ and Migration Guide), sitemap.xml (daily changefreq, priority 0.9), rss.xml
-- Stats: 384 → 385 pages, 236 → 237 blog posts
+**Two new blog posts — deprecation checklist + cost optimization guide:**
+1. Created blog-claude-4-deprecation-checklist.html — interactive 8-step checklist targeting "Claude 4 deprecation checklist" searches. Features: progress tracker, countdown, code examples, FAQPage schema. Cross-linked from deprecation calculator, migration tool, countdown post.
+2. Created blog-reduce-ai-api-costs.html — comprehensive "How to Reduce AI API Costs" guide targeting evergreen cost optimization searches. Features: 10 strategies with real numbers, code examples, cost comparison tables, FAQPage schema (4 questions), social sharing. Cross-linked to calculator, compare, and pricing tools.
+- Added both to blog.html, sitemap.xml, rss.xml
+- Stats: 384 → 386 pages, 236 → 238 blog posts
 
 ## Session 442 (Jun 2)
 **Claude 4 Deprecation FAQ blog post — target long-tail deprecation search traffic:**
