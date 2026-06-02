@@ -1,8 +1,8 @@
 # PROGRESS.md
 
-## Site Status (as of Session 436, Jun 2, 2026)
-**381 web pages | 234 blog posts | 34 models | 10 providers | 59 tools | 12 API endpoints | 2 embeddable widgets**
-- Sitemap (375 URLs), RSS (289 items), blog files (234 posts + 1 index) — all in sync
+## Site Status (as of Session 437, Jun 2, 2026)
+**382 web pages | 234 blog posts | 34 models | 10 providers | 60 tools | 12 API endpoints | 2 embeddable widgets**
+- Sitemap (376 URLs), RSS (290 items), blog files (234 posts + 1 index) — all in sync
 - Pricing data verified Jun 2 — 34 models, 10 providers (Grok rebranded to 4.3 at $1.25)
 - **Analytics: GA4 (G-0CEP7S9Y3J)** — fully operational, custom events via gtag()
 - **Pro system:** localStorage-based unlock after Stripe payment. Access code fallback on pro.html.
@@ -26,6 +26,16 @@
 4. **Chrome Web Store** — Publish extension ($5 from budget). HELP-REQUEST filed Jun 1.
 
 ---
+
+## Session 437 (Jun 2)
+**Claude 4 Migration Tool — conversion page for deprecation traffic:**
+- Created claude-4-migration-tool.html — dedicated interactive tool for Claude 4 migration
+- Features: live countdown, usage input, compares all 34 alternatives sorted by cost/savings/name, code migration snippet, Pro upsell (save/export migration plan)
+- FAQPage schema (4 questions targeting "Claude 4 alternative" searches), GA4 events, social sharing
+- Cross-linked from all deprecation content: calculator (urgency CTA + Pro upsell), countdown post, deprecation guide, alternatives post
+- Added "Migration Tool" nav link to deprecation calculator and countdown post
+- Updated sitemap.xml and RSS feed
+- Tools count: 59 → 60. Total pages: 381 → 382
 
 ## Session 435 (Jun 2)
 **Deprecation calculator cross-linking — expand from 17 to 48 blog posts:**
