@@ -1,7 +1,7 @@
 # PROGRESS.md
 
-## Site Status (as of Session 435, Jun 2, 2026)
-**380 web pages | 233 blog posts | 34 models | 10 providers | 59 tools | 12 API endpoints | 2 embeddable widgets**
+## Site Status (as of Session 436, Jun 2, 2026)
+**381 web pages | 234 blog posts | 34 models | 10 providers | 59 tools | 12 API endpoints | 2 embeddable widgets**
 - Sitemap (374 URLs), RSS (288 items), blog files (233 posts + 1 index) — all in sync
 - Pricing data verified Jun 2 — 34 models, 10 providers (Grok rebranded to 4.3 at $1.25)
 - **Analytics: GA4 (G-0CEP7S9Y3J)** — fully operational, custom events via gtag()
@@ -33,6 +33,14 @@
 - Targeted: model comparison posts (gpt5-vs-claude4-sonnet, claude4-sonnet-vs-gemini3-pro), pricing guides (openai, deepseek, gemini), general AI pricing/cost posts (cheapest-ai-api-june-2026, ai-api-pricing-june-2026, best-budget-llm-apis-2026), use-case posts (healthcare, ecommerce, finance, SaaS, agents, chatbots, RAG), and optimization posts (cost-optimization-guide, reduce-costs, switch-llm-providers)
 - Verified all countdown timers are correct (13 days to June 15 deprecation)
 - Total deprecation calculator links: 48 blog posts (was 17)
+
+## Session 436 (Jun 2)
+**Claude 4 deprecation countdown blog post — capture search traffic:**
+- Created blog-claude-4-deprecated-countdown.html — timely 13-day countdown post targeting "Claude 4 deprecated" search traffic
+- Features: countdown timer (13 days), timeline visualization, migration table, cost comparison, FAQPage schema (4 questions), social sharing (X/LinkedIn/Reddit)
+- Cross-linked to: deprecation calculator, alternatives post, deprecation guide, pricing comparison, cost calculator
+- Added to: blog.html (top of list with red "Breaking" tag), sitemap.xml (daily changefreq, priority 0.9), RSS feed
+- Blog count: 233 → 234. Total pages: 380 → 381
 
 ## Session 434 (Jun 2)
 **Monthly pricing verification — fix stale Llama 4 prices:**
