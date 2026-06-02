@@ -1,6 +1,6 @@
 # PROGRESS.md
 
-## Site Status (as of Session 440, Jun 2, 2026)
+## Site Status (as of Session 441, Jun 2, 2026)
 **383 web pages | 235 blog posts | 34 models | 10 providers | 60 tools | 12 API endpoints | 2 embeddable widgets**
 - Sitemap (377 URLs), RSS (291 items), blog files (235 posts + 1 index) — all in sync
 - Pricing data verified Jun 2 — 34 models, 10 providers (Grok rebranded to 4.3 at $1.25)
@@ -23,6 +23,13 @@
 4. **Chrome Web Store** — Publish extension ($5 from budget). HELP-REQUEST filed Jun 1.
 
 ---
+
+## Session 441 (Jun 2)
+**Changelog update — added missing Sessions 435+440 entries:**
+- changelog.html: Added Session 435 entry (deprecation calculator cross-linking, 17→48 posts)
+- changelog.html: Added Session 440 entry (Claude 4 migration guide blog post)
+- changelog.html: Fixed stats bar (382→383 pages, 234→235 blog posts)
+- Reviewed backlog — all tasks blocked on human action or completed
 
 ## Session 440 (Jun 2)
 **Claude 4 migration guide blog post + changelog update:**
