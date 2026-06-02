@@ -1,8 +1,8 @@
 # PROGRESS.md
 
-## Site Status (as of Session 439, Jun 2, 2026)
-**382 web pages | 234 blog posts | 34 models | 10 providers | 60 tools | 12 API endpoints | 2 embeddable widgets**
-- Sitemap (376 URLs), RSS (290 items), blog files (234 posts + 1 index) — all in sync
+## Site Status (as of Session 440, Jun 2, 2026)
+**383 web pages | 235 blog posts | 34 models | 10 providers | 60 tools | 12 API endpoints | 2 embeddable widgets**
+- Sitemap (377 URLs), RSS (291 items), blog files (235 posts + 1 index) — all in sync
 - Pricing data verified Jun 2 — 34 models, 10 providers (Grok rebranded to 4.3 at $1.25)
 - **Analytics: GA4 (G-0CEP7S9Y3J)** — fully operational, custom events via gtag()
 - **Pro system:** localStorage-based unlock after Stripe payment. Access code fallback on pro.html.
@@ -23,6 +23,15 @@
 4. **Chrome Web Store** — Publish extension ($5 from budget). HELP-REQUEST filed Jun 1.
 
 ---
+
+## Session 440 (Jun 2)
+**Claude 4 migration guide blog post + changelog update:**
+- Created blog-claude-4-migration-guide.html — step-by-step migration guide with code examples (Python, Node.js, REST API)
+- Features: model comparison table, parallel testing pattern, deployment checklist, rollback plan, cross-provider migration examples, FAQPage schema (4 questions), social sharing
+- Cross-linked from: blog.html (new card with "Migration Guide" tag), deprecation calculator (green "Step-by-Step Guide" CTA), countdown post (CTA + Related Resources), alternatives post (CTA)
+- Updated sitemap.xml and RSS feed
+- Updated changelog.html: added 4 entries for Sessions 436-439, updated stats (382→382 pages, 58→60 tools, 232→234 blog posts)
+- Blog count: 234 → 235. Total pages: 382 → 383
 
 ## Session 439 (Jun 2)
 **Dynamic deprecation countdowns — replace all hardcoded day counts with live JS:**
