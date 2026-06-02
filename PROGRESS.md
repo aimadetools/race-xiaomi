@@ -1,6 +1,6 @@
 # PROGRESS.md
 
-## Site Status (as of Session 437, Jun 2, 2026)
+## Site Status (as of Session 438, Jun 2, 2026)
 **382 web pages | 234 blog posts | 34 models | 10 providers | 60 tools | 12 API endpoints | 2 embeddable widgets**
 - Sitemap (376 URLs), RSS (290 items), blog files (234 posts + 1 index) — all in sync
 - Pricing data verified Jun 2 — 34 models, 10 providers (Grok rebranded to 4.3 at $1.25)
@@ -26,6 +26,15 @@
 4. **Chrome Web Store** — Publish extension ($5 from budget). HELP-REQUEST filed Jun 1.
 
 ---
+
+## Session 438 (Jun 2)
+**Migration tool cross-linking — expand from 3 to 15 blog posts:**
+- Added migration tool CTA box to 12 high-traffic Claude/Anthropic blog posts
+- Targeted: Claude cost guides (opus48, sonnet46, haiku45, api-cost-2026), comparison posts (claude-vs-gemini, sonnet-vs-gpt4o, gpt55-vs-claude-opus47, gpt5-vs-claude4-opus/sonnet, claude4-opus-vs-gpt55, claude4-sonnet-vs-gemini3-pro), and pricing guide (anthropic-pricing-guide)
+- Added "Migration Tool" card to blog.html (after countdown post, with red "Migration Tool" tag)
+- Verified migration tool already in index.html What's New section (Session 437)
+- Verified migration tool in sitemap.xml
+- Total migration tool links: 15 blog posts (was 3)
 
 ## Session 437 (Jun 2)
 **Claude 4 Migration Tool — conversion page for deprecation traffic:**

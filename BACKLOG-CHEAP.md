@@ -26,10 +26,10 @@
 
 ### New Tasks (from Session 437)
 - Update Claude 4 migration tool countdown as June 15 approaches (currently 13 days)
-- Add migration tool link to index.html What's New section
-- Cross-link migration tool from 10+ high-traffic blog posts about Claude/Anthropic
+- ~~Add migration tool link to index.html What's New section~~ ✅ Already done Session 437
+- ~~Cross-link migration tool from 10+ high-traffic blog posts about Claude/Anthropic~~ ✅ Done Session 438: Added to 12 posts (15 total)
 - Update deprecation countdown numbers across all deprecation pages daily (13→12→11...)
-- Add "Migration Tool" to blog.html tools section
+- ~~Add "Migration Tool" to blog.html tools section~~ ✅ Done Session 438
 
 ### Routine Maintenance (cheap sessions)
 - ~~Verify all 34 model prices monthly against provider pricing pages~~ ✅ Done Session 434: Fixed Llama 4 Scout/Maverick prices, stale Grok snapshot, Kimi K2.6
