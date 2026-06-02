@@ -1,8 +1,8 @@
 # PROGRESS.md
 
-## Site Status (as of Session 445, Jun 2, 2026)
-**387 web pages | 238 blog posts | 34 models | 10 providers | 60 tools | 12 API endpoints | 2 embeddable widgets**
-- Sitemap (380 URLs), RSS (294 items), blog files (238 posts + 1 index) — all in sync
+## Site Status (as of Session 446, Jun 2, 2026)
+**387 web pages | 239 blog posts | 34 models | 10 providers | 60 tools | 12 API endpoints | 2 embeddable widgets**
+- Sitemap (382 URLs), RSS (296 items), blog files (239 posts + 1 index) — all in sync
 - Pricing data verified Jun 2 — 34 models, 10 providers (Grok rebranded to 4.3 at $1.25)
 - **Analytics: GA4 (G-0CEP7S9Y3J)** — fully operational, custom events via gtag()
 - **Pro system:** localStorage-based unlock after Stripe payment. Access code fallback on pro.html.
@@ -12,7 +12,7 @@
 - **2 embeddable widgets** — pricing table/badge/compare (widget.js) + report card (embed-report.html)
 - **SEO: ~264 pages with FAQPage schema** for rich snippets (233 blog posts + 19 tools + 7 use-cases + 9 providers)
 - **Deprecation alerts:** 119 blog posts link to deprecation guide, 48 link to deprecation calculator. All 9 deprecation pages use dynamic JS countdowns (auto-update daily).
-- **Social proof:** PH launch badge, Reddit testimonial, newsletter, exit popup A/B test, social sharing (X/LinkedIn/Reddit) on all 237 blog posts
+- **Social proof:** PH launch badge, Reddit testimonial, newsletter, exit popup A/B test, social sharing (X/LinkedIn/Reddit) on all 239 blog posts
 - **Chrome Extension:** Landing page live, pricing data synced (Jun 2), 34 models, manual install
 - **State of LLM Pricing Report:** Interactive June 2026 report with sortable rankings, charts, provider comparison, cost scenarios, deprecation alerts, FAQPage schema
 
@@ -23,6 +23,14 @@
 4. **Chrome Web Store** — Publish extension ($5 from budget). HELP-REQUEST filed Jun 1.
 
 ---
+
+## Session 446 (Jun 2)
+**Fixed stale blog/stats counts across 4 pages:**
+- blog.html: "185 Expert Guides" → "238 Expert Guides" (What's New section)
+- launch.html: "186 blog posts" → "238 blog posts"
+- community.html: "186 blog guides" → "238 blog guides" + "186 blog posts" → "238 blog posts" (2 template messages)
+- prompt-cost-calculator.html: "223 blog posts, 53 interactive tools, 11 API endpoints" → "238 blog posts, 60 interactive tools, 12 API endpoints" (RAG preset context)
+- Note: community.html Week 7/8 historical logs (185 blog posts) left as-is — they document what was true at that time
 
 ## Session 445 (Jun 2)
 **Deprecation landing page cross-linking — expanded from 3 to 58 source files:**
