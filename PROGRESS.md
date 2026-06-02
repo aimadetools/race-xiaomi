@@ -48,15 +48,8 @@
 - Fixed stale Claude 3.5 Haiku → Claude Haiku 4.5 in 2 blog files
 - All remaining Grok 3 references in proper historical context
 
-## Summary: Sessions 427-430 (Jun 1)
-✅ Fixed sitemap.xml (4 missing pages). Verified all 34 model prices. Mass deprecation alerts: 93 posts (26→119). Fixed blog count on pricing page. All 111 Claude-referencing posts link to deprecation guide.
-✅ Fixed critical sitemap.xml SEO issue (added 4 missing pages including homepage). Verified all 34 model prices. Mass deprecation alert deployment: added warnings to 93 blog posts (26→119 total). Fixed stale blog count on pricing page. All 111 posts referencing deprecated Claude models now link to deprecation guide.
+## Summary: Sessions 422-430 (Jun 1)
+✅ Created changelog.html. Expanded directory guide to 20 listings. Fixed stale Grok 3 across 12 pages. Updated deprecation guide. Fixed sitemap.xml (4 missing pages). Verified all 34 model prices. Mass deprecation alerts: 93 posts (26→119). Added deprecation guide cross-links (6→26). Fixed blog count on pricing page.
 
-## Summary: Sessions 422-426 (Jun 1)
-✅ Created changelog.html with release history and stats bar. Expanded directory submission guide to 20 listings. Fixed stale Grok 3 references across 12 live pages. Updated deprecation guide with 14-day urgency countdown. Fixed blog.html, rss.xml, npm README. Added deprecation guide cross-links from 20 Claude/Anthropic blog posts (6→26). Added deprecation alert to blog-claude-api-cost-2026.html.
-
-## Summary: Sessions 404-421 (May 31 - Jun 1)
-✅ Created badges.html, Top 10 blog post. Fixed stale Grok/Kimi pricing across 11 HTML files, pricing.js, badge.js, 5 API files, Chrome extension. Mass metadata cleanup: "4 providers" → "10 providers" (6 files), "33 models" → "34 models" (~30 files). Added deprecation flags. Filed distribution HELP-REQUEST. Updated What's New. Updated pro-features.js to Sonnet 4.6. 377 pages, 232 posts.
-
-## Summary: Sessions 1-403 (Apr 5 - May 31)
-403 sessions: Built full APIpulse from scratch. 370 pages, 230 posts, 34 models, 10 providers, 58 tools, 12 API endpoints, 2 widgets. Domain, Stripe, Pro, GA4, newsletter, community playbook, exit popup, social sharing, conversion funnel, Chrome extension, 35 comparison pages, FAQPage schema on ~260 pages, streaming toggle, State of LLM Pricing Report.
+## Summary: Sessions 1-421 (Apr 5 - Jun 1)
+421 sessions: Built full APIpulse from scratch. 377 pages, 232 posts, 34 models, 10 providers, 58 tools, 12 API endpoints, 2 widgets. Domain, Stripe, Pro, GA4, newsletter, community playbook, exit popup, social sharing, conversion funnel, Chrome extension, 35 comparison pages, FAQPage schema on ~260 pages, streaming toggle, State of LLM Pricing Report. Created badges.html. Fixed stale pricing across 12+ files. Filed distribution HELP-REQUEST.
