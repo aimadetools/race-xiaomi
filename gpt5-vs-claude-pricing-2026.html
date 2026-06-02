@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GPT-5 vs Claude Pricing 2026 — Complete API Cost Comparison | APIpulse</title>
+    <meta name="description" content="GPT-5 vs Claude: every model compared by price in June 2026. See which is cheaper for your use case — coding, chat, reasoning, and high-volume. Updated monthly.">
+    <meta name="keywords" content="GPT-5 vs Claude pricing, GPT-5 vs Claude cost, OpenAI vs Anthropic API pricing, GPT-5 API cost, Claude API cost, GPT-5 vs Claude 2026, cheapest GPT-5 alternative, cheapest Claude alternative">
+    <meta property="og:title" content="GPT-5 vs Claude Pricing 2026 — Complete API Cost Comparison">
+    <meta property="og:description" content="Every GPT-5 and Claude model compared by price. See which is cheaper for coding, chat, reasoning, and high-volume workloads.">
+    <meta property="og:type" type="website">
+    <meta property="og:image" content="https://getapipulse.com/og-image.png">
+    <meta property="og:url" content="https://getapipulse.com/gpt5-vs-claude-pricing-2026.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="GPT-5 vs Claude Pricing 2026 — Complete API Cost Comparison">
+    <meta name="twitter:image" content="https://getapipulse.com/og-image.png">
+    <meta name="twitter:description" content="Every GPT-5 and Claude model compared by price. Which is cheaper for your use case?">
+    <link rel="canonical" href="https://getapipulse.com/gpt5-vs-claude-pricing-2026.html">
+    <link rel="alternate" type="application/rss+xml" title="APIpulse Blog" href="https://getapipulse.com/rss.xml">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="styles.css">
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0CEP7S9Y3J"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-0CEP7S9Y3J');
+    </script>
+    <script src="analytics.js" defer></script>
+    <script src="dynamic-date.js" defer></script>
+    <script src="shared.js" defer></script>
+    <script src="pricing-data.js" defer></script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "Is GPT-5 or Claude cheaper?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "At the budget tier, GPT-5 mini ($0.25/$2.00 per 1M tokens) is cheaper than Claude Haiku 4.5 ($1.00/$5.00). At the mid tier, GPT-5 ($1.25/$10.00) is cheaper than Claude Sonnet 4.6 ($3.00/$15.00). At the premium tier, Claude Opus 4.8 ($5.00/$25.00) is cheaper than GPT-5.5 ($5.00/$30.00) on output tokens. Overall, OpenAI is 40-60% cheaper at budget and mid tiers."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How much does GPT-5 cost vs Claude Sonnet?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "GPT-5 costs $1.25/1M input and $10.00/1M output tokens. Claude Sonnet 4.6 costs $3.00/1M input and $15.00/1M output tokens. GPT-5 is 58% cheaper on input and 33% cheaper on output. For a typical workload of 1000 requests/day (2000 input + 500 output tokens), GPT-5 costs $188/month vs Claude Sonnet's $473/month."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Which is better for coding: GPT-5 or Claude?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Both are strong for coding. GPT-5 ($1.25/$10) offers good code quality at lower cost. Claude Sonnet 4.6 ($3/$15) is often preferred for complex refactoring and following nuanced instructions. For budget coding, GPT-5 mini ($0.25/$2) is 6x cheaper than Claude Haiku 4.5 ($1/$5) with comparable quality."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Can I save money switching from Claude to GPT-5?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes. Switching from Claude Sonnet 4.6 to GPT-5 saves 58% on input and 33% on output tokens. From Claude Opus 4.8 to GPT-5.5, output tokens are 17% cheaper ($30 vs $25). The biggest savings come from using GPT-5 mini ($0.25/$2) instead of Claude Haiku 4.5 ($1/$5) — a 75% input and 60% output savings."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What is the cheapest OpenAI model vs the cheapest Claude model?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "The cheapest OpenAI model is GPT-oss 20B at $0.08/$0.35 per 1M tokens. The cheapest Claude model is Haiku 4.5 at $1.00/$5.00 per 1M tokens. OpenAI's budget option is 12x cheaper on input and 14x cheaper on output. However, GPT-oss 20B is an open-weight model with more limited capabilities than Haiku."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Does Claude offer batch pricing like GPT-5?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes. Both OpenAI and Anthropic offer batch APIs at 50% off standard pricing. This means GPT-5 batch costs $0.625/$5.00 per 1M tokens, and Claude Sonnet 4.6 batch costs $1.50/$7.50. Batch mode is ideal for non-real-time workloads like data processing, content generation, and analysis."
+                }
+            }
+        ]
+    }
+    </script>
+    <style>
+        .content { max-width: 900px; margin: 0 auto; padding: 120px 24px 80px; }
+        h1 { font-size: clamp(28px, 4vw, 42px); font-weight: 800; text-align: center; margin-bottom: 12px; }
+        .subtitle { text-align: center; color: var(--text-secondary); font-size: 18px; margin-bottom: 16px; line-height: 1.6; }
+        .badge { display: inline-block; background: var(--accent); color: white; padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 16px; }
+        .updated-tag { text-align: center; color: var(--text-muted); font-size: 13px; margin-bottom: 40px; }
+
+        .verdict-box { background: var(--bg-secondary); border: 2px solid var(--green); border-radius: 16px; padding: 28px; margin: 32px 0; text-align: center; }
+        .verdict-box h2 { font-size: 22px; font-weight: 800; margin-bottom: 8px; }
+        .verdict-box p { color: var(--text-secondary); font-size: 15px; line-height: 1.6; margin: 0; }
+        .verdict-box .winner { color: var(--green); font-weight: 700; }
+
+        .comparison-table { width: 100%; border-collapse: collapse; margin: 24px 0 48px; background: var(--bg-secondary); border-radius: 12px; overflow: hidden; border: 1px solid var(--border); }
+        .comparison-table th { background: var(--bg-card); padding: 12px 16px; text-align: left; font-size: 12px; font-weight: 600; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px; }
+        .comparison-table td { padding: 10px 16px; border-bottom: 1px solid var(--border); font-size: 14px; }
+        .comparison-table tr:last-child td { border-bottom: none; }
+        .comparison-table .model-name { font-weight: 600; }
+        .comparison-table .price { color: var(--green); font-weight: 700; font-family: monospace; }
+        .comparison-table .price-high { color: #f472b6; font-weight: 700; font-family: monospace; }
+        .comparison-table .winner-cell { background: rgba(34,197,94,0.08); }
+        .comparison-table .provider-openai { border-left: 3px solid #10a37f; }
+        .comparison-table .provider-anthropic { border-left: 3px solid #d97706; }
+        .section { margin-bottom: 48px; }
+        .section h2 { font-size: 24px; font-weight: 700; margin-bottom: 16px; }
+        .section h3 { font-size: 18px; font-weight: 700; margin: 24px 0 12px; color: var(--accent); }
+        .section p { color: var(--text-secondary); font-size: 15px; line-height: 1.7; margin-bottom: 12px; }
+
+        .tier-card { background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 12px; padding: 24px; margin-bottom: 16px; }
+        .tier-card h3 { font-size: 17px; font-weight: 700; margin: 0 0 8px; color: var(--text-primary); }
+        .tier-card .winner-label { color: var(--green); font-weight: 700; font-size: 15px; margin-bottom: 4px; }
+        .tier-card p { font-size: 14px; color: var(--text-secondary); line-height: 1.6; margin: 0; }
+        .tier-card .savings { display: inline-block; background: rgba(34,197,94,0.15); color: var(--green); padding: 2px 8px; border-radius: 4px; font-size: 12px; font-weight: 700; margin-top: 8px; }
+
+        .cost-scenario { background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 12px; padding: 24px; margin-bottom: 16px; }
+        .cost-scenario h3 { font-size: 16px; font-weight: 700; margin: 0 0 12px; }
+        .cost-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; }
+        .cost-item { background: var(--bg-card); border-radius: 8px; padding: 12px; text-align: center; }
+        .cost-item .model { font-size: 13px; font-weight: 600; margin-bottom: 4px; }
+        .cost-item .amount { font-size: 22px; font-weight: 800; }
+        .cost-item .amount.cheaper { color: var(--green); }
+        .cost-item .amount.pricier { color: #f472b6; }
+        .cost-item .period { font-size: 12px; color: var(--text-muted); }
+
+        .calculator-cta { text-align: center; padding: 48px 24px; background: var(--bg-secondary); border-radius: 16px; border: 1px solid var(--border); margin: 48px 0; }
+        .calculator-cta h2 { font-size: 24px; font-weight: 700; margin-bottom: 12px; }
+        .calculator-cta p { color: var(--text-secondary); margin-bottom: 24px; }
+        .btn-primary { display: inline-block; background: var(--accent); color: white; padding: 14px 32px; border-radius: 10px; font-size: 16px; font-weight: 700; transition: all 0.2s; border: none; cursor: pointer; text-decoration: none; }
+        .btn-primary:hover { background: var(--accent-hover); transform: translateY(-2px); color: white; }
+        .btn-secondary { display: inline-block; background: transparent; color: var(--accent); padding: 14px 32px; border-radius: 10px; font-size: 16px; font-weight: 700; border: 2px solid var(--accent); transition: all 0.2s; cursor: pointer; text-decoration: none; }
+        .btn-secondary:hover { background: var(--accent-glow); transform: translateY(-2px); }
+
+        .faq-section { margin: 48px 0; }
+        .faq-item { background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 12px; padding: 20px 24px; margin-bottom: 12px; }
+        .faq-item h3 { font-size: 16px; font-weight: 700; margin: 0 0 8px; color: var(--text-primary); }
+        .faq-item p { font-size: 14px; color: var(--text-secondary); line-height: 1.6; margin: 0; }
+
+        .email-capture { background: var(--bg-secondary); border: 1px solid var(--accent); border-radius: 16px; padding: 32px; text-align: center; margin: 48px 0; }
+        .email-capture h2 { font-size: 22px; font-weight: 700; margin-bottom: 8px; }
+        .email-capture p { color: var(--text-secondary); margin-bottom: 20px; }
+        .email-form { display: flex; gap: 10px; max-width: 420px; margin: 0 auto; flex-wrap: wrap; justify-content: center; }
+        .email-form input { flex: 1; min-width: 200px; padding: 12px 16px; border-radius: 8px; border: 1px solid var(--border); background: var(--bg-card); color: var(--text-primary); font-size: 14px; }
+        .email-form input:focus { outline: 2px solid var(--accent); border-color: var(--accent); }
+        .email-form button { padding: 12px 24px; border-radius: 8px; background: var(--accent); color: white; border: none; font-weight: 700; font-size: 14px; cursor: pointer; }
+        .email-form button:hover { background: var(--accent-hover); }
+        .email-note { font-size: 12px; color: var(--text-muted); margin-top: 8px; }
+
+        @media (max-width: 768px) {
+            .content { padding: 100px 20px 60px; }
+            .comparison-table { font-size: 13px; }
+            .comparison-table th, .comparison-table td { padding: 8px 10px; }
+            .cost-grid { grid-template-columns: 1fr 1fr; }
+        }
+    </style>
+    <meta name="theme-color" content="#6366f1">
+</head>
+<body>
+    <a href="#main" class="skip-link">Skip to content</a>
+    <nav>
+        <div class="nav-inner">
+            <a href="index.html" class="logo">API<span>pulse</span></a>
+            <button class="hamburger" onclick="toggleMobileNav()" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+            <div class="nav-links">
+                <a href="calculator.html">Calculator</a>
+                <a href="compare.html">Compare</a>
+                <a href="cost-explorer.html">Explorer</a>
+                <a href="cost-scenarios.html">Scenarios</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="use-cases.html">Use Cases</a>
+                <a href="about.html">About</a>
+                <a href="blog.html">Blog</a>
+                <a href="tools.html">Tools</a>
+                <a href="pricing-index.html">Pricing Index</a>
+                <a href="api-docs.html" style="color:var(--accent);">API</a>
+                <a href="pricing.html" class="nav-cta" onclick="if(window.trackEvent)window.trackEvent('pro_button_clicked',{source:'nav'})">Get Pro — $29</a>
+                <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
+            </div>
+        </div>
+    </nav>
+
+    <main id="main">
+    <div class="content">
+        <div style="text-align:center;">
+            <span class="badge">June 2026 Comparison</span>
+        </div>
+        <h1>GPT-5 vs Claude Pricing 2026</h1>
+        <p class="subtitle">Every GPT-5 and Claude model compared by price. Find out which is cheaper for coding, chat, reasoning, and high-volume workloads.</p>
+        <p class="updated-tag">Pricing verified <span class="verified-date"></span> &middot; Updated monthly &middot; 14 models across 2 providers</p>
+
+        <!-- Quick Verdict -->
+        <div class="verdict-box">
+            <h2>The Quick Verdict</h2>
+            <p><span class="winner">OpenAI is 40-60% cheaper</span> at budget and mid tiers. GPT-5 mini ($0.25/$2.00) beats Claude Haiku 4.5 ($1.00/$5.00). GPT-5 ($1.25/$10.00) beats Claude Sonnet 4.6 ($3.00/$15.00). At the premium tier, <span class="winner">Claude Opus 4.8 ($5/$25) edges out GPT-5.5 ($5/$30)</span> on output cost.</p>
+        </div>
+
+        <!-- Full Side-by-Side Table -->
+        <section class="section">
+            <h2>Full Model Comparison: GPT-5 vs Claude</h2>
+            <p>All active models from both providers, sorted by tier. Green cells = cheaper option in each tier.</p>
+            <div style="overflow-x:auto;">
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Tier</th>
+                        <th>Model</th>
+                        <th>Input/1M</th>
+                        <th>Output/1M</th>
+                        <th>Context</th>
+                        <th>Monthly (1K req/day)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Budget Tier -->
+                    <tr class="provider-openai">
+                        <td><span class="tier-badge tier-Budget">Budget</span></td>
+                        <td class="model-name">GPT-oss 20B</td>
+                        <td class="price winner-cell">$0.08</td>
+                        <td class="price winner-cell">$0.35</td>
+                        <td>128K</td>
+                        <td class="price winner-cell">$1.85</td>
+                    </tr>
+                    <tr class="provider-openai">
+                        <td><span class="tier-badge tier-Budget">Budget</span></td>
+                        <td class="model-name">GPT-oss 120B</td>
+                        <td class="price">$0.15</td>
+                        <td class="price">$0.60</td>
+                        <td>128K</td>
+                        <td class="price">$3.60</td>
+                    </tr>
+                    <tr class="provider-openai">
+                        <td><span class="tier-badge tier-Budget">Budget</span></td>
+                        <td class="model-name">GPT-4o mini</td>
+                        <td class="price">$0.15</td>
+                        <td class="price">$0.60</td>
+                        <td>128K</td>
+                        <td class="price">$3.60</td>
+                    </tr>
+                    <tr class="provider-openai">
+                        <td><span class="tier-badge tier-Budget">Budget</span></td>
+                        <td class="model-name">GPT-5 mini</td>
+                        <td class="price">$0.25</td>
+                        <td class="price">$2.00</td>
+                        <td>272K</td>
+                        <td class="price">$37.50</td>
+                    </tr>
+                    <tr class="provider-anthropic">
+                        <td><span class="tier-badge tier-Budget">Budget</span></td>
+                        <td class="model-name">Claude Haiku 4.5</td>
+                        <td class="price-high">$1.00</td>
+                        <td class="price-high">$5.00</td>
+                        <td>200K</td>
+                        <td class="price-high">$105.00</td>
+                    </tr>
+                    <!-- Mid Tier -->
+                    <tr class="provider-openai">
+                        <td><span class="tier-badge tier-Mid">Mid</span></td>
+                        <td class="model-name">GPT-5</td>
+                        <td class="price winner-cell">$1.25</td>
+                        <td class="price winner-cell">$10.00</td>
+                        <td>272K</td>
+                        <td class="price winner-cell">$187.50</td>
+                    </tr>
+                    <tr class="provider-openai">
+                        <td><span class="tier-badge tier-Mid">Mid</span></td>
+                        <td class="model-name">GPT-5.3 Codex</td>
+                        <td class="price">$1.75</td>
+                        <td class="price">$14.00</td>
+                        <td>400K</td>
+                        <td class="price">$315.00</td>
+                    </tr>
+                    <tr class="provider-openai">
+                        <td><span class="tier-badge tier-Mid">Mid</span></td>
+                        <td class="model-name">GPT-4o</td>
+                        <td class="price">$2.50</td>
+                        <td class="price">$10.00</td>
+                        <td>128K</td>
+                        <td class="price">$300.00</td>
+                    </tr>
+                    <tr class="provider-anthropic">
+                        <td><span class="tier-badge tier-Mid">Mid</span></td>
+                        <td class="model-name">Claude Sonnet 4.6</td>
+                        <td class="price-high">$3.00</td>
+                        <td class="price-high">$15.00</td>
+                        <td>1M</td>
+                        <td class="price-high">$472.50</td>
+                    </tr>
+                    <!-- Premium Tier -->
+                    <tr class="provider-anthropic">
+                        <td><span class="tier-badge tier-Premium">Premium</span></td>
+                        <td class="model-name">Claude Opus 4.8</td>
+                        <td class="price winner-cell">$5.00</td>
+                        <td class="price winner-cell">$25.00</td>
+                        <td>1M</td>
+                        <td class="price winner-cell">$825.00</td>
+                    </tr>
+                    <tr class="provider-anthropic">
+                        <td><span class="tier-badge tier-Premium">Premium</span></td>
+                        <td class="model-name">Claude Opus 4.7</td>
+                        <td class="price">$5.00</td>
+                        <td class="price">$25.00</td>
+                        <td>1M</td>
+                        <td class="price">$825.00</td>
+                    </tr>
+                    <tr class="provider-openai">
+                        <td><span class="tier-badge tier-Premium">Premium</span></td>
+                        <td class="model-name">GPT-5.5</td>
+                        <td class="price">$5.00</td>
+                        <td class="price-high">$30.00</td>
+                        <td>1.05M</td>
+                        <td class="price-high">$975.00</td>
+                    </tr>
+                    <tr class="provider-openai">
+                        <td><span class="tier-badge tier-Premium">Premium</span></td>
+                        <td class="model-name">GPT-5.5 Pro</td>
+                        <td class="price-high">$30.00</td>
+                        <td class="price-high">$180.00</td>
+                        <td>1.05M</td>
+                        <td class="price-high">$5,850</td>
+                    </tr>
+                </tbody>
+            </table>
+            </div>
+            <p style="font-size:13px;color:var(--text-muted);">* Monthly cost assumes 1,000 requests/day with 2,000 input + 500 output tokens per request.</p>
+        </section>
+
+        <!-- Tier-by-Tier Winners -->
+        <section class="section">
+            <h2>Winner by Tier</h2>
+            <p>Which provider is cheaper at each quality tier?</p>
+
+            <div class="tier-card">
+                <h3>Budget Tier: GPT-5 mini vs Claude Haiku 4.5</h3>
+                <div class="winner-label">Winner: GPT-5 mini — 75% cheaper input, 60% cheaper output</div>
+                <p>GPT-5 mini at $0.25/$2.00 per 1M tokens is dramatically cheaper than Claude Haiku 4.5 at $1.00/$5.00. Both handle everyday tasks well. GPT-5 mini's 272K context is larger than Haiku's 200K. For simple classification or extraction, GPT-oss 20B ($0.08/$0.35) is even cheaper.</p>
+                <span class="savings">Save $67.50/month at 1K req/day</span>
+            </div>
+
+            <div class="tier-card">
+                <h3>Mid Tier: GPT-5 vs Claude Sonnet 4.6</h3>
+                <div class="winner-label">Winner: GPT-5 — 58% cheaper input, 33% cheaper output</div>
+                <p>GPT-5 at $1.25/$10.00 undercuts Claude Sonnet 4.6 at $3.00/$15.00 significantly. Both are excellent for coding, reasoning, and complex tasks. Claude Sonnet 4.6 has a larger context window (1M vs 272K), which matters for long-document work. For most use cases, GPT-5 delivers similar quality at much lower cost.</p>
+                <span class="savings">Save $285/month at 1K req/day</span>
+            </div>
+
+            <div class="tier-card">
+                <h3>Premium Tier: Claude Opus 4.8 vs GPT-5.5</h3>
+                <div class="winner-label">Winner: Claude Opus 4.8 — same input, 17% cheaper output</div>
+                <p>At the premium tier, both charge $5.00/1M input tokens. But Claude Opus 4.8 is $25/1M output vs GPT-5.5's $30/1M output — a 17% savings. Claude also offers a larger context window (1M vs 1.05M, roughly tied). For the most demanding tasks, Claude Opus 4.8 is the better value.</p>
+                <span class="savings">Save $150/month at 1K req/day</span>
+            </div>
+        </section>
+
+        <!-- Cost Scenarios -->
+        <section class="section">
+            <h2>Real-World Cost Comparison</h2>
+            <p>Monthly costs for common usage levels. Assumes 2,000 input + 500 output tokens per request.</p>
+
+            <div class="cost-scenario">
+                <h3>Hobby: 100 requests/day</h3>
+                <div class="cost-grid">
+                    <div class="cost-item">
+                        <div class="model">GPT-5 mini</div>
+                        <div class="amount cheaper">$3.75</div>
+                        <div class="period">/month</div>
+                    </div>
+                    <div class="cost-item">
+                        <div class="model">Claude Haiku 4.5</div>
+                        <div class="amount pricier">$10.50</div>
+                        <div class="period">/month</div>
+                    </div>
+                    <div class="cost-item">
+                        <div class="model">GPT-5</div>
+                        <div class="amount cheaper">$18.75</div>
+                        <div class="period">/month</div>
+                    </div>
+                    <div class="cost-item">
+                        <div class="model">Claude Sonnet 4.6</div>
+                        <div class="amount pricier">$47.25</div>
+                        <div class="period">/month</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cost-scenario">
+                <h3>Startup: 1,000 requests/day</h3>
+                <div class="cost-grid">
+                    <div class="cost-item">
+                        <div class="model">GPT-5 mini</div>
+                        <div class="amount cheaper">$37.50</div>
+                        <div class="period">/month</div>
+                    </div>
+                    <div class="cost-item">
+                        <div class="model">Claude Haiku 4.5</div>
+                        <div class="amount pricier">$105.00</div>
+                        <div class="period">/month</div>
+                    </div>
+                    <div class="cost-item">
+                        <div class="model">GPT-5</div>
+                        <div class="amount cheaper">$187.50</div>
+                        <div class="period">/month</div>
+                    </div>
+                    <div class="cost-item">
+                        <div class="model">Claude Sonnet 4.6</div>
+                        <div class="amount pricier">$472.50</div>
+                        <div class="period">/month</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cost-scenario">
+                <h3>Scale: 10,000 requests/day</h3>
+                <div class="cost-grid">
+                    <div class="cost-item">
+                        <div class="model">GPT-5 mini</div>
+                        <div class="amount cheaper">$375</div>
+                        <div class="period">/month</div>
+                    </div>
+                    <div class="cost-item">
+                        <div class="model">Claude Haiku 4.5</div>
+                        <div class="amount pricier">$1,050</div>
+                        <div class="period">/month</div>
+                    </div>
+                    <div class="cost-item">
+                        <div class="model">GPT-5</div>
+                        <div class="amount cheaper">$1,875</div>
+                        <div class="period">/month</div>
+                    </div>
+                    <div class="cost-item">
+                        <div class="model">Claude Sonnet 4.6</div>
+                        <div class="amount pricier">$4,725</div>
+                        <div class="period">/month</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Use Case Recommendations -->
+        <section class="section">
+            <h2>Best Choice by Use Case</h2>
+            <p>Different tasks have different needs. Here's which provider wins for each scenario.</p>
+
+            <div class="tier-card">
+                <h3>Code Generation &amp; Debugging</h3>
+                <div class="winner-label">Pick: GPT-5 ($1.25/$10) — 58% cheaper than Claude Sonnet</div>
+                <p>GPT-5 delivers strong code quality at a fraction of Claude's cost. For budget coding, GPT-5 mini ($0.25/$2) is excellent. Claude Sonnet 4.6 is better for complex refactoring and nuanced instructions, but costs 2.4x more.</p>
+            </div>
+
+            <div class="tier-card">
+                <h3>Chat &amp; Conversational AI</h3>
+                <div class="winner-label">Pick: GPT-5 mini ($0.25/$2) — best quality-to-cost ratio</div>
+                <p>For chat applications, GPT-5 mini offers natural conversation at 1/3 the cost of Claude Haiku. Both handle multi-turn conversations well. If you need the absolute cheapest, GPT-4o mini ($0.15/$0.60) works for simpler chats.</p>
+            </div>
+
+            <div class="tier-card">
+                <h3>Complex Reasoning &amp; Analysis</h3>
+                <div class="winner-label">Pick: Claude Opus 4.8 ($5/$25) — best reasoning quality</div>
+                <p>For the most demanding reasoning tasks, Claude Opus 4.8 leads in quality and is 17% cheaper than GPT-5.5 on output. If budget matters, GPT-5 ($1.25/$10) handles most reasoning tasks well at 1/5 the cost.</p>
+            </div>
+
+            <div class="tier-card">
+                <h3>Long-Context Processing (100K+ tokens)</h3>
+                <div class="winner-label">Pick: Claude Sonnet 4.6 ($3/$15) — 1M context window</div>
+                <p>Claude's 1M token context window crushes GPT-5's 272K. If you're processing long documents, codebases, or conversation histories, Claude is the clear winner despite higher per-token cost. GPT-5.5 has 1.05M context but costs $5/$30.</p>
+            </div>
+
+            <div class="tier-card">
+                <h3>High-Volume Batch Processing</h3>
+                <div class="winner-label">Pick: GPT-5 mini batch ($0.125/$1.00) — 50% off with batch API</div>
+                <p>Both providers offer 50% off batch pricing. GPT-5 mini batch at $0.125/$1.00 is the cheapest quality option. For even lower cost, GPT-oss 20B ($0.08/$0.35) handles simple batch tasks. Claude batch pricing is still 2-4x more expensive than OpenAI equivalents.</p>
+            </div>
+
+            <div class="tier-card">
+                <h3>Classification &amp; Extraction</h3>
+                <div class="winner-label">Pick: GPT-4o mini ($0.15/$0.60) — cheapest reliable option</div>
+                <p>Simple classification and entity extraction don't need premium models. GPT-4o mini at $0.15/$0.60 is 6x cheaper than Claude Haiku and handles these tasks reliably. For even cheaper, GPT-oss 20B ($0.08/$0.35) works for basic classification.</p>
+            </div>
+        </section>
+
+        <!-- Batch Pricing -->
+        <section class="section">
+            <h2>Batch Mode: Save 50% on Both Providers</h2>
+            <p>Both OpenAI and Anthropic offer batch APIs at half price. Here's how the savings stack up.</p>
+            <div style="overflow-x:auto;">
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Model</th>
+                        <th>Standard Input</th>
+                        <th>Batch Input</th>
+                        <th>Standard Output</th>
+                        <th>Batch Output</th>
+                        <th>Monthly Savings (1K/day)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="provider-openai">
+                        <td class="model-name">GPT-5 mini</td>
+                        <td>$0.25</td>
+                        <td class="price">$0.125</td>
+                        <td>$2.00</td>
+                        <td class="price">$1.00</td>
+                        <td class="price">$18.75</td>
+                    </tr>
+                    <tr class="provider-openai">
+                        <td class="model-name">GPT-5</td>
+                        <td>$1.25</td>
+                        <td class="price">$0.625</td>
+                        <td>$10.00</td>
+                        <td class="price">$5.00</td>
+                        <td class="price">$93.75</td>
+                    </tr>
+                    <tr class="provider-anthropic">
+                        <td class="model-name">Claude Haiku 4.5</td>
+                        <td>$1.00</td>
+                        <td class="price">$0.50</td>
+                        <td>$5.00</td>
+                        <td class="price">$2.50</td>
+                        <td class="price">$52.50</td>
+                    </tr>
+                    <tr class="provider-anthropic">
+                        <td class="model-name">Claude Sonnet 4.6</td>
+                        <td>$3.00</td>
+                        <td class="price">$1.50</td>
+                        <td>$15.00</td>
+                        <td class="price">$7.50</td>
+                        <td class="price">$236.25</td>
+                    </tr>
+                </tbody>
+            </table>
+            </div>
+        </section>
+
+        <!-- Calculator CTA -->
+        <div class="calculator-cta">
+            <h2>Calculate Your Exact Cost</h2>
+            <p>Enter your token counts and request volume to compare GPT-5 vs Claude costs for your specific workload.</p>
+            <a href="calculator.html" class="btn-primary" onclick="if(window.trackEvent)window.trackEvent('cta_clicked',{source:'gpt5-vs-claude-page',target:'calculator'})">Open Cost Calculator</a>
+            <a href="compare-gpt5-vs-claude-vs-gemini.html" class="btn-secondary" style="margin-left:12px;" onclick="if(window.trackEvent)window.trackEvent('cta_clicked',{source:'gpt5-vs-claude-page',target:'compare'})">3-Way Comparison</a>
+        </div>
+
+        <!-- Email Capture -->
+        <div class="email-capture">
+            <h2>Get Price Change Alerts</h2>
+            <p>OpenAI and Anthropic change pricing every few months. Get notified when GPT-5 or Claude prices drop (or rise).</p>
+            <form class="email-form" onsubmit="subscribeEmail(event)">
+                <input type="email" id="email-input" placeholder="you@company.com" required>
+                <button type="submit">Subscribe</button>
+            </form>
+            <p class="email-note">No spam. Unsubscribe anytime. We only email when prices change.</p>
+            <p id="subscribe-status" style="margin-top:8px;font-size:14px;display:none;"></p>
+        </div>
+
+        <!-- FAQ -->
+        <section class="faq-section">
+            <h2 style="font-size:24px;font-weight:700;margin-bottom:24px;">Frequently Asked Questions</h2>
+
+            <div class="faq-item">
+                <h3>Is GPT-5 or Claude cheaper?</h3>
+                <p>At the budget tier, GPT-5 mini ($0.25/$2.00 per 1M tokens) is cheaper than Claude Haiku 4.5 ($1.00/$5.00). At the mid tier, GPT-5 ($1.25/$10.00) is cheaper than Claude Sonnet 4.6 ($3.00/$15.00). At the premium tier, Claude Opus 4.8 ($5.00/$25.00) is cheaper than GPT-5.5 ($5.00/$30.00) on output tokens. Overall, OpenAI is 40-60% cheaper at budget and mid tiers.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>How much does GPT-5 cost vs Claude Sonnet?</h3>
+                <p>GPT-5 costs $1.25/1M input and $10.00/1M output tokens. Claude Sonnet 4.6 costs $3.00/1M input and $15.00/1M output tokens. GPT-5 is 58% cheaper on input and 33% cheaper on output. For a typical workload of 1000 requests/day (2000 input + 500 output tokens), GPT-5 costs $188/month vs Claude Sonnet's $473/month.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>Which is better for coding: GPT-5 or Claude?</h3>
+                <p>Both are strong for coding. GPT-5 ($1.25/$10) offers good code quality at lower cost. Claude Sonnet 4.6 ($3/$15) is often preferred for complex refactoring and following nuanced instructions. For budget coding, GPT-5 mini ($0.25/$2) is 6x cheaper than Claude Haiku 4.5 ($1/$5) with comparable quality.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>Can I save money switching from Claude to GPT-5?</h3>
+                <p>Yes. Switching from Claude Sonnet 4.6 to GPT-5 saves 58% on input and 33% on output tokens. From Claude Opus 4.8 to GPT-5.5, output tokens are 17% cheaper ($30 vs $25). The biggest savings come from using GPT-5 mini ($0.25/$2) instead of Claude Haiku 4.5 ($1/$5) — a 75% input and 60% output savings.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>What is the cheapest OpenAI model vs the cheapest Claude model?</h3>
+                <p>The cheapest OpenAI model is GPT-oss 20B at $0.08/$0.35 per 1M tokens. The cheapest Claude model is Haiku 4.5 at $1.00/$5.00 per 1M tokens. OpenAI's budget option is 12x cheaper on input and 14x cheaper on output. However, GPT-oss 20B is an open-weight model with more limited capabilities than Haiku.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>Does Claude offer batch pricing like GPT-5?</h3>
+                <p>Yes. Both OpenAI and Anthropic offer batch APIs at 50% off standard pricing. This means GPT-5 batch costs $0.625/$5.00 per 1M tokens, and Claude Sonnet 4.6 batch costs $1.50/$7.50. Batch mode is ideal for non-real-time workloads like data processing, content generation, and analysis.</p>
+            </div>
+        </section>
+
+        <!-- Related -->
+        <div style="margin:48px 0;">
+            <h2 style="font-size:20px;font-weight:700;margin-bottom:16px;">Related from APIpulse</h2>
+            <div style="display:flex;gap:12px;flex-wrap:wrap;">
+                <a href="calculator.html" style="display:inline-block;padding:12px 20px;background:var(--bg-card);border:1px solid var(--border);border-radius:8px;text-decoration:none;color:var(--text-primary);font-weight:500;">Cost Calculator</a>
+                <a href="compare-gpt5-vs-claude-vs-gemini.html" style="display:inline-block;padding:12px 20px;background:var(--bg-card);border:1px solid var(--border);border-radius:8px;text-decoration:none;color:var(--text-primary);font-weight:500;">GPT-5 vs Claude vs Gemini</a>
+                <a href="cheapest-llm-api-2026.html" style="display:inline-block;padding:12px 20px;background:var(--bg-card);border:1px solid var(--border);border-radius:8px;text-decoration:none;color:var(--text-primary);font-weight:500;">Cheapest LLM API 2026</a>
+                <a href="claude-4-migration-cheatsheet.html" style="display:inline-block;padding:12px 20px;background:var(--bg-card);border:1px solid var(--border);border-radius:8px;text-decoration:none;color:var(--text-primary);font-weight:500;">Claude 4 Migration</a>
+                <a href="api-docs.html" style="display:inline-block;padding:12px 20px;background:var(--bg-card);border:1px solid var(--border);border-radius:8px;text-decoration:none;color:var(--text-primary);font-weight:500;">Free Pricing API</a>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>Pricing data last verified: <span class="verified-date"></span></p>
+        <p>&copy; 2026 APIpulse. <a href="index.html">Home</a> &middot; <a href="use-cases.html">Use Cases</a> &middot; <a href="about.html">About</a> &middot; <a href="blog.html">Blog</a>
+<a href="pricing-index.html">Pricing Index</a> &middot; <a href="model-matrix.html">Model Matrix</a> &middot; <a href="cost-scenarios.html">Scenarios</a> &middot; <a href="price-alerts.html">Price Alerts</a> &middot; <a href="pricing-changelog.html">Changelog</a> &middot; <a href="chrome-extension.html">Chrome Extension</a> &middot; <a href="api-docs.html">API</a> &middot; <a href="https://x.com/getapipulse" target="_blank" rel="noopener">Twitter</a> &middot; <a href="unsubscribe.html">Unsubscribe</a></p>
+    </footer>
+    </main>
+
+    <script>
+        // GA4 tracking
+        document.addEventListener('DOMContentLoaded', function() {
+            if (window.trackEvent) {
+                window.trackEvent('page_view', { page_title: 'GPT-5 vs Claude Pricing 2026' });
+            }
+        });
+
+        // Email subscription
+        async function subscribeEmail(e) {
+            e.preventDefault();
+            const email = document.getElementById('email-input').value;
+            const status = document.getElementById('subscribe-status');
+            try {
+                const res = await fetch('/api/subscribe', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ email, source: 'gpt5-vs-claude-pricing-2026' })
+                });
+                const data = await res.json();
+                status.style.display = 'block';
+                if (res.ok) {
+                    status.style.color = 'var(--green)';
+                    status.textContent = 'Subscribed! Check your inbox for confirmation.';
+                    if (window.trackEvent) window.trackEvent('subscribe', { source: 'gpt5-vs-claude-pricing-2026' });
+                } else {
+                    status.style.color = '#f472b6';
+                    status.textContent = data.error || 'Something went wrong. Try again.';
+                }
+            } catch (err) {
+                status.style.display = 'block';
+                status.style.color = '#f472b6';
+                status.textContent = 'Network error. Try again.';
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,8 +1,8 @@
 # PROGRESS.md
 
 ## Site Status (as of Session 452, Jun 2, 2026)
-**392 web pages | 241 blog posts | 34 models | 10 providers | 60 tools | 12 API endpoints | 2 embeddable widgets**
-- Sitemap (385 URLs), RSS (298 items), blog files (241 posts + 1 index) — all in sync
+**393 web pages | 241 blog posts | 34 models | 10 providers | 60 tools | 12 API endpoints | 2 embeddable widgets**
+- Sitemap (386 URLs), RSS (298 items), blog files (241 posts + 1 index) — all in sync
 - Pricing data verified Jun 2 — 34 models, 10 providers (Grok rebranded to 4.3 at $1.25)
 - **Analytics: GA4 (G-0CEP7S9Y3J)** — fully operational, custom events via gtag()
 - **Pro system:** localStorage-based unlock after Stripe payment. Access code fallback on pro.html.
@@ -23,6 +23,24 @@
 4. **Chrome Web Store** — Publish extension ($5 from budget). HELP-REQUEST filed Jun 1.
 
 ---
+
+## Session 453 (Jun 2)
+**GPT-5 vs Claude Pricing 2026 lead magnet + cross-links:**
+- Built gpt5-vs-claude-pricing-2026.html — head-to-head pricing comparison of all 14 GPT-5 and Claude models
+  - Quick verdict box: OpenAI 40-60% cheaper at budget/mid tiers, Claude Opus 4.8 edges out GPT-5.5 at premium
+  - Full side-by-side table: all 14 models sorted by tier with color-coded winner cells
+  - Tier-by-tier winners: Budget (GPT-5 mini 75% cheaper), Mid (GPT-5 58% cheaper), Premium (Claude Opus 4.8 17% cheaper output)
+  - Real-world cost scenarios at 3 usage levels (100/1K/10K req/day)
+  - Best choice by use case: coding, chat, reasoning, long-context, batch, classification
+  - Batch mode savings table: 50% off on both providers
+  - FAQPage schema with 6 questions for rich snippets
+  - Email capture using existing subscribe.js + Resend infrastructure
+  - GA4 tracking for page views, CTAs, and signups
+  - Related links to calculator, 3-way compare, cheapest page, migration cheat sheet, API docs
+- Added to sitemap.xml (386 URLs)
+- Added What's New entry to index.html with "NEW" badge
+- Cross-linked from: pricing.html footer, cheapest-llm-api-2026.html related links, compare-gpt5-vs-claude-vs-gemini.html related tools
+- Stats: 392→393 pages, sitemap 385→386 URLs
 
 ## Session 452 (Jun 2)
 **Cheapest LLM API 2026 lead magnet + cross-links:**
