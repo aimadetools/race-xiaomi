@@ -346,6 +346,11 @@
         </div>
     </nav>
 
+    <div id="stickyBanner" style="position:fixed;top:0;left:0;right:0;z-index:1000;background:linear-gradient(90deg,#ef4444,#dc2626);color:white;padding:10px 20px;text-align:center;font-size:14px;font-weight:600;display:none;">
+        <span id="stickyText">Claude 4 retires in 13 days — migrate before June 15</span>
+        <a href="https://buy.stripe.com/fZu7sL3Gw3GS0RQeoDeEo0a" target="_blank" rel="noopener" style="color:white;background:rgba(255,255,255,0.2);padding:6px 16px;border-radius:6px;margin-left:16px;text-decoration:none;font-weight:700;" onclick="if(window.trackEvent)window.trackEvent('pro_button_clicked',{source:'sticky-banner'})">Get Pro — $29</a>
+    </div>
+
     <section class="hero">
         <h1>Claude 4 Migration Tool</h1>
         <p>Claude 4 Opus and Sonnet 4 <span class="urgency">retire June 15</span>. Compare all 34 alternatives, calculate your exact savings, and get the one-line code change you need.</p>
@@ -735,6 +740,32 @@
         window.toggleFaq = function(el) {
             el.parentElement.classList.toggle('open');
         };
+
+        // Sticky banner — show when hero scrolls out of view
+        var hero = document.querySelector('.hero');
+        var banner = document.getElementById('stickyBanner');
+        if (hero && banner) {
+            var observer = new IntersectionObserver(function(entries) {
+                banner.style.display = entries[0].isIntersecting ? 'none' : 'flex';
+                banner.style.alignItems = 'center';
+                banner.style.justifyContent = 'center';
+            }, { threshold: 0 });
+            observer.observe(hero);
+        }
+
+        // Update sticky banner countdown
+        function updateStickyCountdown() {
+            var dep = new Date('2026-06-15T00:00:00');
+            var now = new Date();
+            var diff = dep - now;
+            if (diff <= 0) {
+                document.getElementById('stickyText').textContent = 'Claude 4 is NOW RETIRED — migrate immediately';
+                return;
+            }
+            var days = Math.floor(diff / 86400000);
+            document.getElementById('stickyText').textContent = 'Claude 4 retires in ' + days + ' day' + (days !== 1 ? 's' : '') + ' — migrate before June 15';
+        }
+        updateStickyCountdown();
     })();
     </script>
 </body>
