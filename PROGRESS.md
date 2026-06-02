@@ -1,18 +1,18 @@
 # PROGRESS.md
 
-## Site Status (as of Session 431, Jun 1, 2026)
-**378 web pages | 232 blog posts | 34 models | 10 providers | 58 tools | 12 API endpoints | 2 embeddable widgets**
-- Sitemap (372 URLs), RSS (287 items), blog files (232 posts + 1 index) — all in sync
+## Site Status (as of Session 432, Jun 2, 2026)
+**379 web pages | 232 blog posts | 34 models | 10 providers | 59 tools | 12 API endpoints | 2 embeddable widgets**
+- Sitemap (373 URLs), RSS (287 items), blog files (232 posts + 1 index) — all in sync
 - Pricing data verified Jun 1 — 34 models, 10 providers (Grok rebranded to 4.3 at $1.25)
 - **Analytics: GA4 (G-0CEP7S9Y3J)** — fully operational, custom events via gtag()
 - **Pro system:** localStorage-based unlock after Stripe payment. Access code fallback on pro.html.
 - **35 comparison pages** — all providers covered, interactive calculators, FAQPage schema
-- **58 interactive tools** — calculators, optimizer, planner, pipeline, rate limit, budget showdown, chatbot cost, model switch, AI Stack Builder, model advisor, fine-tuning calculator, Claude API cost calculator, cost projection, Gemini API cost calculator, cheapest AI API for coding, xAI Grok cost calculator, DeepSeek API cost calculator, Mistral API cost calculator, Meta Llama API cost calculator, Open Source LLM cost calculator, AI API Pricing Comparison 2026, Cost Leak Detector, Chrome Extension, AI Feature Cost Estimator, AI Project Budget Planner, AI API TCO Calculator, MCP Server Cost Calculator, Monthly Spend Estimator, Cohere API cost calculator, Moonshot API cost calculator, Together.ai API cost calculator, API Cost Report Card, SaaS AI Cost Calculator, AI ROI Calculator, Embedding API Cost Calculator, Cheapest Embedding API, Cost Report Generator
+- **59 interactive tools** — calculators, optimizer, planner, pipeline, rate limit, budget showdown, chatbot cost, model switch, AI Stack Builder, model advisor, fine-tuning calculator, Claude API cost calculator, cost projection, Gemini API cost calculator, cheapest AI API for coding, xAI Grok cost calculator, DeepSeek API cost calculator, Mistral API cost calculator, Meta Llama API cost calculator, Open Source LLM cost calculator, AI API Pricing Comparison 2026, Cost Leak Detector, Chrome Extension, AI Feature Cost Estimator, AI Project Budget Planner, AI API TCO Calculator, MCP Server Cost Calculator, Monthly Spend Estimator, Cohere API cost calculator, Moonshot API cost calculator, Together.ai API cost calculator, API Cost Report Card, SaaS AI Cost Calculator, AI ROI Calculator, Embedding API Cost Calculator, Cheapest Embedding API, Cost Report Generator, Claude Deprecation Calculator
 - **12 API endpoints** — pricing data, cost calculator (single/multi-model), cheapest model finder, pricing badge (SVG), compare models, recommend models, subscribe, unsubscribe, newsletter, check-price-changes, admin, cost-report
 - **2 embeddable widgets** — pricing table/badge/compare (widget.js) + report card (embed-report.html)
 - **Pricing badges page** — badges.html with 34 model badges, copy-paste embed code (Markdown/HTML), FAQPage schema
 - **SEO: ~262 pages with FAQPage schema** for rich snippets (231 blog posts + 19 tools + 7 use-cases + 9 providers)
-- **Deprecation alerts:** 119 blog posts link to deprecation guide (Claude Sonnet 4/Opus 4 retire June 15 — 14 days away)
+- **Deprecation alerts:** 119 blog posts link to deprecation guide (Claude Sonnet 4/Opus 4 retire June 15 — 13 days away)
 - **Social proof:** PH launch badge, Reddit testimonial, newsletter, exit popup A/B test, social sharing (X/LinkedIn/Reddit) on all 232 blog posts
 - **Community playbook:** 7 subreddit drafts + 2 newsletter pitches ready (all updated to Grok 4.3 pricing)
 - **Chrome Extension:** Landing page live, pricing data synced (May 29), 34 models, manual install
@@ -26,6 +26,13 @@
 4. **Chrome Web Store** — Publish extension ($5 from budget). HELP-REQUEST filed Jun 1.
 
 ---
+
+## Session 432 (Jun 2)
+**Claude 4 Deprecation Calculator — new interactive tool:**
+- Created claude-deprecation-calculator.html — interactive tool where users input current Claude usage and see exact migration costs, monthly/annual savings, and code migration snippets
+- Features: live countdown timer (13 days to June 15), model selector (Opus vs Sonnet), cost comparison table, side-by-side code diff, FAQPage schema
+- Added to sitemap.xml (373 URLs), cross-linked from blog-model-deprecation-guide.html (CTA button + inline link)
+- Targets high-intent "Claude 4 deprecated" search traffic, converts to full calculator
 
 ## Session 431 (Jun 1)
 **Content freshness sweep — fix stale model names across blog posts:**

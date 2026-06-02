@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Claude 4 Deprecation Calculator — Estimate Your Migration Cost | APIpulse</title>
+    <meta name="description" content="Claude 4 Opus and Sonnet 4 retire June 15, 2026. Calculate your current costs, see what you'll pay after migration, and find out how much you'll save switching to Claude Opus 4.8 or Sonnet 4.6.">
+    <meta name="keywords" content>Claude 4 deprecation calculator, Claude Opus migration, Claude Sonnet 4 replacement, LLM migration cost, Claude 4 retiring June 2026">
+    <meta property="og:title" content="Claude 4 Deprecation Calculator — Estimate Your Migration Cost | APIpulse">
+    <meta property="og:description" content="Claude 4 Opus and Sonnet 4 retire June 15. Calculate your migration costs and savings instantly.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://getapipulse.com/og-image.png">
+    <meta property="og:url" content="https://getapipulse.com/claude-deprecation-calculator.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Claude 4 Deprecation Calculator — Migration Cost Estimate">
+    <meta name="twitter:image" content="https://getapipulse.com/og-image.png">
+    <meta name="twitter:description" content="Claude 4 Opus and Sonnet 4 retire June 15. Calculate your migration costs and savings instantly.">
+    <link rel="canonical" href="https://getapipulse.com/claude-deprecation-calculator.html">
+    <link rel="alternate" type="application/rss+xml" title="APIpulse Blog" href="https://getapipulse.com/rss.xml">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="styles.css">
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0CEP7S9Y3J"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-0CEP7S9Y3J');
+    </script>
+    <script src="analytics.js" defer></script>
+    <script src="dynamic-date.js" defer></script>
+    <script src="shared.js" defer></script>
+    <script src="pricing-data.js" defer></script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "APIpulse Claude 4 Deprecation Calculator",
+        "url": "https://getapipulse.com/claude-deprecation-calculator.html",
+        "description": "Calculate migration costs when Claude 4 Opus and Sonnet 4 retire on June 15, 2026. Compare current vs replacement model pricing.",
+        "applicationCategory": "DeveloperApplication",
+        "operatingSystem": "Web",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "How much cheaper is Claude Opus 4.8 vs Claude 4 Opus?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Claude Opus 4.8 costs $5/$25 per million tokens (input/output) compared to Claude 4 Opus at $15/$75. That's a 67% reduction on input costs and a 67% reduction on output costs. For a typical workload of 10M input and 2M output tokens per month, you'd save about $200/month."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Do I need to change my API key when Claude 4 is deprecated?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "No. Your Anthropic API key continues to work. Only the model name string in your code changes. The API endpoint and authentication remain identical. Most teams complete the migration in under an hour."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "When is Claude 4 Opus being retired?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Claude 4 Opus and Claude Sonnet 4 are both retiring on June 15, 2026. After this date, API calls to these model IDs will return errors. The recommended replacements are Claude Opus 4.8 and Claude Sonnet 4.6 respectively."
+                }
+            }
+        ]
+    }
+    </script>
+    <style>
+        .hero { padding: 120px 24px 40px; text-align: center; max-width: 700px; margin: 0 auto; }
+        .hero h1 { font-size: clamp(28px, 4vw, 42px); font-weight: 800; margin-bottom: 12px; }
+        .hero p { color: var(--text-secondary); font-size: 17px; line-height: 1.6; }
+        .countdown-bar {
+            display: flex; justify-content: center; gap: 24px; margin: 32px 0;
+            flex-wrap: wrap;
+        }
+        .countdown-item {
+            background: var(--bg-secondary); border: 1px solid var(--border);
+            border-radius: 12px; padding: 16px 24px; text-align: center; min-width: 100px;
+        }
+        .countdown-item .num { font-size: 32px; font-weight: 800; color: var(--accent); }
+        .countdown-item .label { font-size: 12px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px; }
+
+        .calc-container { max-width: 800px; margin: 0 auto; padding: 0 24px 80px; }
+        .calc-card {
+            background: var(--bg-secondary); border: 1px solid var(--border);
+            border-radius: 16px; padding: 32px; margin-bottom: 24px;
+        }
+        .calc-card h2 { font-size: 22px; font-weight: 700; margin-bottom: 20px; }
+
+        .model-selector { display: flex; gap: 12px; margin-bottom: 24px; flex-wrap: wrap; }
+        .model-option {
+            flex: 1; min-width: 200px;
+            background: var(--bg-primary); border: 2px solid var(--border);
+            border-radius: 12px; padding: 20px; cursor: pointer;
+            transition: border-color 0.2s, transform 0.2s; text-align: center;
+        }
+        .model-option:hover { border-color: var(--accent); transform: translateY(-2px); }
+        .model-option.selected { border-color: var(--accent); background: rgba(99,102,241,0.08); }
+        .model-option .model-name { font-size: 18px; font-weight: 700; margin-bottom: 4px; }
+        .model-option .model-price { color: var(--accent); font-size: 14px; margin-bottom: 8px; }
+        .model-option .model-status {
+            font-size: 11px; font-weight: 700; padding: 3px 10px;
+            border-radius: 20px; text-transform: uppercase; letter-spacing: 0.5px;
+        }
+        .status-retiring { background: rgba(239,68,68,0.15); color: var(--red); }
+        .status-replacement { background: rgba(34,197,94,0.15); color: var(--green); }
+
+        .input-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px; }
+        .input-group { display: flex; flex-direction: column; gap: 6px; }
+        .input-group label { font-size: 13px; font-weight: 600; color: var(--text-secondary); }
+        .input-group input, .input-group select {
+            background: var(--bg-primary); border: 1px solid var(--border);
+            border-radius: 8px; padding: 12px 16px; color: var(--text-primary);
+            font-size: 16px; font-family: inherit; outline: none; transition: border-color 0.2s;
+        }
+        .input-group input:focus, .input-group select:focus { border-color: var(--accent); }
+        .input-group .hint { font-size: 12px; color: var(--text-muted); }
+
+        .calculate-btn {
+            display: block; width: 100%; background: var(--accent); color: white;
+            border: none; border-radius: 10px; padding: 14px 24px;
+            font-size: 16px; font-weight: 700; cursor: pointer; transition: background 0.2s;
+            margin-top: 8px;
+        }
+        .calculate-btn:hover { background: var(--accent-hover); }
+
+        .results { display: none; margin-top: 24px; }
+        .results.visible { display: block; }
+        .result-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 20px; }
+        .result-card {
+            background: var(--bg-primary); border: 1px solid var(--border);
+            border-radius: 12px; padding: 20px; text-align: center;
+        }
+        .result-card .label { font-size: 12px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px; }
+        .result-card .value { font-size: 28px; font-weight: 800; }
+        .result-card .value.current { color: var(--red); }
+        .result-card .value.migration { color: var(--green); }
+        .result-card .value.savings { color: var(--accent); }
+        .result-card .value.pct { color: var(--green); }
+        .result-card .sub { font-size: 13px; color: var(--text-secondary); margin-top: 4px; }
+
+        .savings-banner {
+            background: linear-gradient(135deg, rgba(34,197,94,0.12), rgba(34,197,94,0.04));
+            border: 1px solid rgba(34,197,94,0.2); border-radius: 12px;
+            padding: 24px; text-align: center; margin-bottom: 20px;
+        }
+        .savings-banner h3 { margin: 0 0 4px; font-size: 18px; color: var(--text-primary); }
+        .savings-banner .big-number { font-size: 36px; font-weight: 800; color: var(--green); }
+
+        .code-compare {
+            display: grid; grid-template-columns: 1fr 1fr; gap: 16px;
+        }
+        .code-block {
+            background: var(--bg-primary); border: 1px solid var(--border);
+            border-radius: 10px; overflow: hidden;
+        }
+        .code-block .code-header {
+            padding: 10px 16px; font-size: 12px; font-weight: 700;
+            text-transform: uppercase; letter-spacing: 0.5px;
+            border-bottom: 1px solid var(--border);
+        }
+        .code-block.before .code-header { color: var(--red); background: rgba(239,68,68,0.05); }
+        .code-block.after .code-header { color: var(--green); background: rgba(34,197,94,0.05); }
+        .code-block pre {
+            margin: 0; padding: 16px; font-size: 13px; line-height: 1.6;
+            overflow-x: auto;
+        }
+        .code-block code { font-family: 'SF Mono', Monaco, 'Cascadia Code', monospace; color: var(--text-secondary); }
+        .kw { color: #c678dd; }
+        .str { color: #98c379; }
+        .cm { color: #5c6370; font-style: italic; }
+        .fn { color: #61afef; }
+
+        .cta-box {
+            background: linear-gradient(135deg, rgba(99,102,241,0.12), rgba(99,102,241,0.04));
+            border: 1px solid rgba(99,102,241,0.2); border-radius: 12px;
+            padding: 32px; text-align: center; margin: 40px 0;
+        }
+        .cta-box h3 { margin: 0 0 8px; }
+        .cta-box p { margin: 0 0 20px; color: var(--text-secondary); }
+        .cta-btn {
+            display: inline-block; background: var(--accent); color: white;
+            padding: 12px 28px; border-radius: 8px; font-weight: 700;
+            text-decoration: none; transition: opacity 0.2s;
+        }
+        .cta-btn:hover { opacity: 0.9; text-decoration: none; }
+
+        .migration-table {
+            width: 100%; border-collapse: collapse; margin: 24px 0;
+        }
+        .migration-table th {
+            background: var(--bg-tertiary, rgba(99,102,241,0.1));
+            padding: 12px 16px; text-align: left; font-size: 13px;
+            font-weight: 600; color: var(--text-primary); text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .migration-table td {
+            padding: 12px 16px; border-top: 1px solid var(--border);
+            font-size: 14px; color: var(--text-secondary);
+        }
+        .migration-table .deprecated { color: var(--red); font-weight: 600; }
+        .migration-table .replacement { color: var(--green); font-weight: 600; }
+        .migration-table .savings { color: var(--accent); font-weight: 700; }
+
+        .alert {
+            background: rgba(239, 68, 68, 0.08); border-left: 3px solid var(--red);
+            padding: 20px 24px; border-radius: 0 8px 8px 0; margin: 24px 0;
+        }
+        .alert p { margin: 0; color: var(--text-primary); }
+        .alert strong { color: var(--red); }
+
+        .faq-section { margin-top: 48px; }
+        .faq-item {
+            background: var(--bg-secondary); border: 1px solid var(--border);
+            border-radius: 12px; margin-bottom: 12px; overflow: hidden;
+        }
+        .faq-q {
+            padding: 18px 24px; font-weight: 600; cursor: pointer;
+            display: flex; justify-content: space-between; align-items: center;
+        }
+        .faq-q::after { content: '+'; font-size: 20px; color: var(--text-muted); }
+        .faq-item.open .faq-q::after { content: '−'; }
+        .faq-a {
+            display: none; padding: 0 24px 18px; color: var(--text-secondary);
+            line-height: 1.7;
+        }
+        .faq-item.open .faq-a { display: block; }
+
+        @media (max-width: 768px) {
+            .hero { padding: 100px 16px 24px; }
+            .hero h1 { font-size: 28px; }
+            .input-row { grid-template-columns: 1fr; }
+            .result-grid { grid-template-columns: 1fr; }
+            .code-compare { grid-template-columns: 1fr; }
+            .model-selector { flex-direction: column; }
+            .countdown-bar { gap: 12px; }
+            .countdown-item { min-width: 80px; padding: 12px 16px; }
+            .countdown-item .num { font-size: 24px; }
+        }
+    </style>
+    <meta name="theme-color" content="#6366f1">
+</head>
+<body>
+    <nav>
+        <div class="nav-inner">
+            <a href="index.html" class="logo">API<span>pulse</span></a>
+            <button class="hamburger" onclick="toggleMobileNav()" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+            <div class="nav-links">
+                <a href="calculator.html">Calculator</a>
+                <a href="compare.html">Compare</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="blog.html">Blog</a>
+                <a href="blog-model-deprecation-guide.html" style="color:var(--red);">Deprecation Guide</a>
+                <a href="pricing.html" class="nav-cta" onclick="if(window.trackEvent)window.trackEvent('pro_button_clicked',{source:'nav'})">Get Pro — $29</a>
+                <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <h1>Claude 4 Deprecation Calculator</h1>
+        <p>Claude 4 Opus and Sonnet 4 retire <strong>June 15, 2026</strong>. Enter your current usage to see exactly what you'll pay after migration — and how much you'll save.</p>
+        <div class="countdown-bar" id="countdown">
+            <div class="countdown-item"><div class="num" id="cd-days">--</div><div class="label">Days</div></div>
+            <div class="countdown-item"><div class="num" id="cd-hours">--</div><div class="label">Hours</div></div>
+            <div class="countdown-item"><div class="num" id="cd-mins">--</div><div class="label">Minutes</div></div>
+        </div>
+    </section>
+
+    <div class="calc-container">
+        <div class="alert">
+            <p><strong>June 15 deadline approaching:</strong> After this date, API calls to <code>claude-4-opus</code> and <code>claude-sonnet-4</code> will fail. The good news: replacements are cheaper and better.</p>
+        </div>
+
+        <div class="calc-card">
+            <h2>1. Which model are you using?</h2>
+            <div class="model-selector" id="modelSelector">
+                <div class="model-option selected" data-model="opus" onclick="selectModel('opus')">
+                    <div class="model-name">Claude 4 Opus</div>
+                    <div class="model-price">$15.00 / $75.00 per 1M tokens</div>
+                    <div class="model-status status-retiring">Retiring June 15</div>
+                </div>
+                <div class="model-option" data-model="sonnet" onclick="selectModel('sonnet')">
+                    <div class="model-name">Claude Sonnet 4</div>
+                    <div class="model-price">$3.00 / $15.00 per 1M tokens</div>
+                    <div class="model-status status-retiring">Retiring June 15</div>
+                </div>
+            </div>
+
+            <div id="replacementInfo" style="margin-bottom: 20px;">
+                <table class="migration-table">
+                    <thead>
+                        <tr><th>Current</th><th>Replacement</th><th>Price Change</th><th>Context</th></tr>
+                    </thead>
+                    <tbody id="replacementBody">
+                        <tr>
+                            <td><span class="deprecated">Claude 4 Opus</span></td>
+                            <td><span class="replacement">Claude Opus 4.8</span></td>
+                            <td class="savings">$15→$5 in, $75→$25 out (67% cheaper)</td>
+                            <td>200K → 1M</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="calc-card">
+            <h2>2. Enter your monthly usage</h2>
+            <div class="input-row">
+                <div class="input-group">
+                    <label for="inputTokens">Input tokens (millions)</label>
+                    <input type="number" id="inputTokens" placeholder="e.g. 10" min="0" step="0.1" value="10">
+                    <span class="hint">Total input tokens per month in millions</span>
+                </div>
+                <div class="input-group">
+                    <label for="outputTokens">Output tokens (millions)</label>
+                    <input type="number" id="outputTokens" placeholder="e.g. 2" min="0" step="0.1" value="2">
+                    <span class="hint">Total output tokens per month in millions</span>
+                </div>
+            </div>
+            <div class="input-row">
+                <div class="input-group">
+                    <label for="requestsPerDay">Requests per day (optional)</label>
+                    <input type="number" id="requestsPerDay" placeholder="e.g. 1000" min="0" step="1">
+                    <span class="hint">Used for daily cost breakdown</span>
+                </div>
+                <div class="input-group">
+                    <label for="avgInputPerReq">Avg input tokens per request (optional)</label>
+                    <input type="number" id="avgInputPerReq" placeholder="e.g. 2000" min="0" step="100">
+                    <span class="hint">Defaults to calculated if requests provided</span>
+                </div>
+            </div>
+            <button class="calculate-btn" onclick="calculate()">Calculate Migration Cost</button>
+        </div>
+
+        <div class="results" id="results">
+            <div class="savings-banner">
+                <h3>You'll save</h3>
+                <div class="big-number" id="totalSavings">$0</div>
+                <p style="color:var(--text-secondary);margin:8px 0 0;">per month by migrating</p>
+            </div>
+
+            <div class="result-grid">
+                <div class="result-card">
+                    <div class="label">Current Monthly Cost</div>
+                    <div class="value current" id="currentCost">$0</div>
+                    <div class="sub" id="currentModel">Claude 4 Opus</div>
+                </div>
+                <div class="result-card">
+                    <div class="label">After Migration</div>
+                    <div class="value migration" id="migrationCost">$0</div>
+                    <div class="sub" id="replacementModel">Claude Opus 4.8</div>
+                </div>
+                <div class="result-card">
+                    <div class="label">Monthly Savings</div>
+                    <div class="value savings" id="monthlySavings">$0</div>
+                    <div class="sub">per month</div>
+                </div>
+                <div class="result-card">
+                    <div class="label">Annual Savings</div>
+                    <div class="value pct" id="annualSavings">$0</div>
+                    <div class="sub">per year</div>
+                </div>
+            </div>
+
+            <div id="dailyBreakdown" style="display:none;">
+                <div class="result-grid">
+                    <div class="result-card">
+                        <div class="label">Current Daily Cost</div>
+                        <div class="value current" id="currentDaily">$0</div>
+                    </div>
+                    <div class="result-card">
+                        <div class="label">After Migration Daily</div>
+                        <div class="value migration" id="migrationDaily">$0</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="calc-card" style="margin-top:24px;">
+                <h2>3. Code migration — it's just one line</h2>
+                <p style="color:var(--text-secondary);margin-bottom:16px;">Change the model name string. Your API key, endpoint, and SDK stay the same.</p>
+                <div class="code-compare">
+                    <div class="code-block before">
+                        <div class="code-header">Before (deprecated)</div>
+                        <pre><code><span class="kw">const</span> response = <span class="kw">await</span> anthropic.messages.create({
+  model: <span class="str" id="oldModelStr">"claude-4-opus"</span>,
+  max_tokens: <span class="fn">1024</span>,
+  messages: [{ role: <span class="str">"user"</span>, content: <span class="str">"..."</span> }]
+});</code></pre>
+                    </div>
+                    <div class="code-block after">
+                        <div class="code-header">After (replacement)</div>
+                        <pre><code><span class="kw">const</span> response = <span class="kw">await</span> anthropic.messages.create({
+  model: <span class="str" id="newModelStr">"claude-opus-4-8"</span>,
+  max_tokens: <span class="fn">1024</span>,
+  messages: [{ role: <span class="str">"user"</span>, content: <span class="str">"..."</span> }]
+});</code></pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="cta-box">
+            <h3>Compare all 34 models side by side</h3>
+            <p>See how Claude Opus 4.8 stacks up against GPT-5, Gemini 3.1 Pro, DeepSeek V4 Pro, and more.</p>
+            <a href="calculator.html" class="cta-btn" onclick="if(window.trackEvent)window.trackEvent('cta_clicked',{source:'deprecation-calc',target:'calculator'})">Open Full Calculator →</a>
+        </div>
+
+        <div class="faq-section">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-item open">
+                <div class="faq-q" onclick="toggleFaq(this)">How much cheaper is Claude Opus 4.8 vs Claude 4 Opus?</div>
+                <div class="faq-a">Claude Opus 4.8 costs $5/$25 per million tokens vs Claude 4 Opus at $15/$75. That's 67% cheaper on both input and output. For a workload of 10M input + 2M output tokens/month, you'd save ~$200/month.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-q" onclick="toggleFaq(this)">Do I need a new API key?</div>
+                <div class="faq-a">No. Your Anthropic API key continues to work. The only change is the model name string in your code. The API endpoint, authentication, and SDK all stay the same.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-q" onclick="toggleFaq(this)">What if I miss the June 15 deadline?</div>
+                <div class="faq-a">API calls to the deprecated model IDs will return errors. Your app will break until you update the model name. Migrate before June 15 to avoid downtime.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-q" onclick="toggleFaq(this)">Is the replacement model worse?</div>
+                <div class="faq-a">No — it's strictly better. Claude Opus 4.8 has 5x the context window (1M vs 200K), improved reasoning, and costs 67% less. The same is true for Sonnet 4.6.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-q" onclick="toggleFaq(this)">Can I test the replacement before switching?</div>
+                <div class="faq-a">Yes. Run both models in parallel on the same prompts for 1-2 weeks. Compare output quality, latency, and cost. Only cut over once you're confident the quality meets your needs.</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+    (function(){
+        var selectedModel = 'opus';
+        var models = {
+            opus: {
+                current: { name: 'Claude 4 Opus', input: 15.00, output: 75.00, context: '200K', modelId: 'claude-4-opus' },
+                replacement: { name: 'Claude Opus 4.8', input: 5.00, output: 25.00, context: '1M', modelId: 'claude-opus-4-8' }
+            },
+            sonnet: {
+                current: { name: 'Claude Sonnet 4', input: 3.00, output: 15.00, context: '200K', modelId: 'claude-sonnet-4' },
+                replacement: { name: 'Claude Sonnet 4.6', input: 3.00, output: 15.00, context: '1M', modelId: 'claude-sonnet-4-6' }
+            }
+        };
+
+        // Countdown
+        function updateCountdown() {
+            var dep = new Date('2026-06-15T00:00:00');
+            var now = new Date();
+            var diff = dep - now;
+            if (diff <= 0) {
+                document.getElementById('cd-days').textContent = '0';
+                document.getElementById('cd-hours').textContent = '0';
+                document.getElementById('cd-mins').textContent = '0';
+                return;
+            }
+            var days = Math.floor(diff / 86400000);
+            var hours = Math.floor((diff % 86400000) / 3600000);
+            var mins = Math.floor((diff % 3600000) / 60000);
+            document.getElementById('cd-days').textContent = days;
+            document.getElementById('cd-hours').textContent = hours;
+            document.getElementById('cd-mins').textContent = mins;
+        }
+        updateCountdown();
+        setInterval(updateCountdown, 60000);
+
+        window.selectModel = function(model) {
+            selectedModel = model;
+            document.querySelectorAll('.model-option').forEach(function(el) {
+                el.classList.toggle('selected', el.dataset.model === model);
+            });
+            var m = models[model];
+            var tbody = document.getElementById('replacementBody');
+            var pctDrop = m.current.input !== m.replacement.input
+                ? Math.round((1 - m.replacement.input / m.current.input) * 100) + '% cheaper'
+                : 'Same price';
+            tbody.innerHTML = '<tr>' +
+                '<td><span class="deprecated">' + m.current.name + '</span></td>' +
+                '<td><span class="replacement">' + m.replacement.name + '</span></td>' +
+                '<td class="savings">$' + m.current.input + '→$' + m.replacement.input + ' in, $' + m.current.output + '→$' + m.replacement.output + ' out (' + pctDrop + ')</td>' +
+                '<td>' + m.current.context + ' → ' + m.replacement.context + '</td></tr>';
+            document.getElementById('oldModelStr').textContent = '"' + m.current.modelId + '"';
+            document.getElementById('newModelStr').textContent = '"' + m.replacement.modelId + '"';
+            document.getElementById('currentModel').textContent = m.current.name;
+            document.getElementById('replacementModel').textContent = m.replacement.name;
+            document.getElementById('results').classList.remove('visible');
+        };
+
+        window.calculate = function() {
+            var m = models[selectedModel];
+            var inputM = parseFloat(document.getElementById('inputTokens').value) || 0;
+            var outputM = parseFloat(document.getElementById('outputTokens').value) || 0;
+            var reqPerDay = parseInt(document.getElementById('requestsPerDay').value) || 0;
+
+            var currentCost = (inputM * m.current.input) + (outputM * m.current.output);
+            var migrationCost = (inputM * m.replacement.input) + (outputM * m.replacement.output);
+            var savings = currentCost - migrationCost;
+
+            document.getElementById('currentCost').textContent = '$' + currentCost.toFixed(2);
+            document.getElementById('migrationCost').textContent = '$' + migrationCost.toFixed(2);
+            document.getElementById('monthlySavings').textContent = '$' + savings.toFixed(2);
+            document.getElementById('annualSavings').textContent = '$' + (savings * 12).toFixed(2);
+
+            var pct = currentCost > 0 ? Math.round((savings / currentCost) * 100) : 0;
+            document.getElementById('totalSavings').textContent = '$' + savings.toFixed(2) + ' (' + pct + '%)';
+
+            if (reqPerDay > 0) {
+                document.getElementById('dailyBreakdown').style.display = 'block';
+                var daysInMonth = 30;
+                document.getElementById('currentDaily').textContent = '$' + (currentCost / daysInMonth).toFixed(2);
+                document.getElementById('migrationDaily').textContent = '$' + (migrationCost / daysInMonth).toFixed(2);
+            } else {
+                document.getElementById('dailyBreakdown').style.display = 'none';
+            }
+
+            document.getElementById('results').classList.add('visible');
+            document.getElementById('results').scrollIntoView({ behavior: 'smooth', block: 'start' });
+            if (window.trackEvent) {
+                window.trackEvent('deprecation_calc_used', {
+                    model: selectedModel,
+                    input_millions: inputM,
+                    output_millions: outputM,
+                    savings: savings.toFixed(2)
+                });
+            }
+        };
+
+        window.toggleFaq = function(el) {
+            el.parentElement.classList.toggle('open');
+        };
+    })();
+    </script>
+</body>
+</html>
