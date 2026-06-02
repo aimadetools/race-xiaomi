@@ -278,7 +278,7 @@
             </div>
 
             <h1>AI Model Deprecation Guide: What to Do When Your Model Retires</h1>
-            <p class="subtitle">Three major models are shutting down June 15, 2026 — <strong>14 days away</strong>. Here's how to migrate without downtime and save 50-67% in the process.</p>
+            <p class="subtitle">Three major models are shutting down June 15, 2026 — <strong id="subtitleDaysAway">14 days away</strong>. Here's how to migrate without downtime and save 50-67% in the process.</p>
 
             <div class="alert" id="deprecation-countdown">
                 <p><strong>⚠️ Models retiring June 15, 2026:</strong> Claude 4 Opus, Claude Sonnet 4, and DeepSeek V3 (superseded).</p>
@@ -298,6 +298,12 @@
                             el.style.borderColor = 'rgba(239,68,68,0.3)';
                         }
                     }
+                    var sub = document.getElementById('subtitleDaysAway');
+                    if (sub) sub.textContent = daysLeft > 0 ? daysLeft + ' days away' : 'retired';
+                    var bl = document.getElementById('bottomLineDays');
+                    if (bl) bl.textContent = daysLeft > 0 ? daysLeft + ' days' : 'no time left';
+                    var cta = document.getElementById('ctaDeadline');
+                    if (cta) cta.textContent = 'Deadline: June 15 — ' + (daysLeft > 0 ? daysLeft : 0) + ' days left';
                 })();
             </script>
 
@@ -508,10 +514,10 @@
 
             <p>Model deprecation isn't a crisis — it's an opportunity. Every retirement in June 2026 gives you a cheaper, more capable replacement. The migration is a one-line code change in most cases.</p>
 
-            <p>You have <strong>14 days</strong>. Start your parallel testing today, and you'll have a smooth, zero-downtime migration with lower bills on the other side.</p>
+            <p>You have <strong id="bottomLineDays">14 days</strong>. Start your parallel testing today, and you'll have a smooth, zero-downtime migration with lower bills on the other side.</p>
 
             <div class="cta-box" style="background:linear-gradient(135deg,rgba(239,68,68,0.12),rgba(239,68,68,0.04));border-color:rgba(239,68,68,0.2);">
-                <h3 style="color:var(--red);">Deadline: June 15 — 13 days left</h3>
+                <h3 style="color:var(--red);" id="ctaDeadline">Deadline: June 15 — 13 days left</h3>
                 <p>Compare all 34 alternatives to Claude 4. See exact costs, get migration code, and find the cheapest replacement.</p>
                 <a href="claude-4-migration-tool.html" class="cta-btn" style="background:var(--red);">Open Migration Tool →</a>
             </div>

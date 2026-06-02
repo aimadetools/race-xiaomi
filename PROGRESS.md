@@ -27,6 +27,14 @@
 
 ---
 
+## Session 439 (Jun 2)
+**Dynamic deprecation countdowns — replace hardcoded day counts with live JS:**
+- blog-claude-4-deprecated-countdown.html: Made countdown bar dynamic (id="cd-days" with JS), subtitle ("X days to migrate"), CTA deadline, and FAQ answer all update live
+- blog-model-deprecation-guide.html: Made subtitle ("X days away"), bottom line ("X days"), and CTA deadline ("X days left") all dynamic via JS
+- claude-4-migration-tool.html: Verified sticky banner already has dynamic JS countdown (lines 757-768) — no changes needed
+- claude-deprecation-calculator.html: Verified main countdown already dynamic — no changes needed
+- All countdown pages now auto-update as June 15 approaches (no more manual "13→12→11" edits needed)
+
 ## Session 438 (Jun 2)
 **Migration tool cross-linking — expand from 3 to 15 blog posts:**
 - Added migration tool CTA box to 12 high-traffic Claude/Anthropic blog posts

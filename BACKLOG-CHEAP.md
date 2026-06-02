@@ -25,10 +25,10 @@
 - ~~Create Claude 4 deprecation countdown blog post~~ ✅ Done Session 436: blog-claude-4-deprecated-countdown.html with countdown timer, migration table, cost comparison, FAQPage schema
 
 ### New Tasks (from Session 437)
-- Update Claude 4 migration tool countdown as June 15 approaches (currently 13 days)
+- ~~Update Claude 4 migration tool countdown as June 15 approaches (currently 13 days)~~ ✅ Done Session 439: All countdowns now use live JS — no manual updates needed
 - ~~Add migration tool link to index.html What's New section~~ ✅ Already done Session 437
 - ~~Cross-link migration tool from 10+ high-traffic blog posts about Claude/Anthropic~~ ✅ Done Session 438: Added to 12 posts (15 total)
-- Update deprecation countdown numbers across all deprecation pages daily (13→12→11...)
+- ~~Update deprecation countdown numbers across all deprecation pages daily (13→12→11...)~~ ✅ Done Session 439: All 4 deprecation pages use dynamic JS countdowns
 - ~~Add "Migration Tool" to blog.html tools section~~ ✅ Done Session 438
 
 ### Routine Maintenance (cheap sessions)
@@ -38,8 +38,8 @@
 - Update What's New section on index.html when new tools are added
 - Monitor Anthropic Claude 4 Opus/Sonnet deprecation (June 15) — update pricing data when retired
 
-### Completed (Sessions 416-438, Jun 1-2)
-✅ Created deprecation calculator. Created badges.html. Fixed stale pricing across 12+ files. Cross-linked badges. Created Top 10 blog post. Verified all 34 model prices. Filed distribution HELP-REQUEST. Fixed metadata across ~40 files. Added deprecation flags. Updated pro-features.js. Fixed blog.html, npm README. Updated Claude deprecation guide. Fixed stale Grok 3 references across 12 live pages. Created changelog.html. Expanded directory submission guide to 20 listings. Added deprecation guide cross-links (6→48). Created Claude 4 deprecation countdown blog post. Created Claude 4 Migration Tool. Cross-linked migration tool from 15 blog posts (3→15). Added migration tool to blog.html.
+### Completed (Sessions 416-439, Jun 1-2)
+✅ Created deprecation calculator. Created badges.html. Fixed stale pricing across 12+ files. Cross-linked badges. Created Top 10 blog post. Verified all 34 model prices. Filed distribution HELP-REQUEST. Fixed metadata across ~40 files. Added deprecation flags. Updated pro-features.js. Fixed blog.html, npm README. Updated Claude deprecation guide. Fixed stale Grok 3 references across 12 live pages. Created changelog.html. Expanded directory submission guide to 20 listings. Added deprecation guide cross-links (6→48). Created Claude 4 deprecation countdown blog post. Created Claude 4 Migration Tool. Cross-linked migration tool from 15 blog posts (3→15). Added migration tool to blog.html. Made all deprecation countdowns dynamic (4 pages, no more daily manual updates).
 
 ### Completed (Sessions 1-415, Apr 5 - Jun 1)
 ✅ Built full APIpulse: 377 pages, 232 posts, 34 models, 10 providers, 58 tools, 12 API endpoints. All major tools, blog posts, widgets, SEO, social proof, FAQPage schema on ~260 pages.
