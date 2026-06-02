@@ -11,7 +11,7 @@
 - **12 API endpoints** — pricing data, cost calculator (single/multi-model), cheapest model finder, pricing badge (SVG), compare models, recommend models, subscribe, unsubscribe, newsletter, check-price-changes, admin, cost-report
 - **2 embeddable widgets** — pricing table/badge/compare (widget.js) + report card (embed-report.html)
 - **SEO: ~264 pages with FAQPage schema** for rich snippets (233 blog posts + 19 tools + 7 use-cases + 9 providers)
-- **Deprecation alerts:** 119 blog posts link to deprecation guide, 48 link to deprecation calculator. All 9 deprecation pages use dynamic JS countdowns (auto-update daily).
+- **Deprecation alerts:** 195 blog posts link to deprecation landing page, 48 link to deprecation calculator. All 9 deprecation pages use dynamic JS countdowns (auto-update daily).
 - **Social proof:** PH launch badge, Reddit testimonial, newsletter, exit popup A/B test, social sharing (X/LinkedIn/Reddit) on all 239 blog posts
 - **Chrome Extension:** Landing page live, pricing data synced (Jun 2), 34 models, manual install
 - **State of LLM Pricing Report:** Interactive June 2026 report with sortable rankings, charts, provider comparison, cost scenarios, deprecation alerts, FAQPage schema
@@ -25,12 +25,13 @@
 ---
 
 ## Session 446 (Jun 2)
-**Fixed stale blog/stats counts across 4 pages:**
-- blog.html: "185 Expert Guides" → "238 Expert Guides" (What's New section)
-- launch.html: "186 blog posts" → "238 blog posts"
-- community.html: "186 blog guides" → "238 blog guides" + "186 blog posts" → "238 blog posts" (2 template messages)
-- prompt-cost-calculator.html: "223 blog posts, 53 interactive tools, 11 API endpoints" → "238 blog posts, 60 interactive tools, 12 API endpoints" (RAG preset context)
-- Note: community.html Week 7/8 historical logs (185 blog posts) left as-is — they document what was true at that time
+**Stale stats cleanup + massive deprecation CTA expansion:**
+- Fixed stale blog/stats counts across 4 pages: blog.html (185→238), launch.html (186→238), community.html (2 template messages), prompt-cost-calculator.html (223→238 posts, 53→60 tools, 11→12 endpoints)
+- Added deprecation landing page CTA to blog.html and pricing.html What's New sections (red border, JUNE 15 DEADLINE badge)
+- Expanded deprecation CTA from 54 to 195 blog posts (+141 posts) — covers all comparison, cost guide, industry, and "best of" posts
+- Deprecation page now promoted from: index.html + blog.html + pricing.html What's New + 195 blog post CTA boxes + deprecation calculator + migration tool = 200+ internal links
+- Updated PROGRESS.md: 239 blog posts, 382 sitemap URLs, 296 RSS items
+- Note: community.html Week 7/8 historical logs left as-is (document what was true at that time)
 
 ## Session 445 (Jun 2)
 **Deprecation landing page cross-linking — expanded from 3 to 58 source files:**
