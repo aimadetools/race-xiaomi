@@ -1,6 +1,6 @@
 # PROGRESS.md
 
-## Site Status (as of Session 447, Jun 2, 2026)
+## Site Status (as of Session 448, Jun 2, 2026)
 **388 web pages | 240 blog posts | 34 models | 10 providers | 60 tools | 12 API endpoints | 2 embeddable widgets**
 - Sitemap (383 URLs), RSS (297 items), blog files (240 posts + 1 index) — all in sync
 - Pricing data verified Jun 2 — 34 models, 10 providers (Grok rebranded to 4.3 at $1.25)
@@ -12,7 +12,7 @@
 - **2 embeddable widgets** — pricing table/badge/compare (widget.js) + report card (embed-report.html)
 - **SEO: ~264 pages with FAQPage schema** for rich snippets (233 blog posts + 19 tools + 7 use-cases + 9 providers)
 - **Deprecation alerts:** 195 blog posts link to deprecation landing page, 48 link to deprecation calculator. All 9 deprecation pages use dynamic JS countdowns (auto-update daily).
-- **Social proof:** PH launch badge, Reddit testimonial, newsletter, exit popup A/B test, social sharing (X/LinkedIn/Reddit) on all 239 blog posts
+- **Social proof:** PH launch badge, Reddit testimonial, newsletter, exit popup A/B test, social sharing (X/LinkedIn/Reddit) on all 240 blog posts
 - **Chrome Extension:** Landing page live, pricing data synced (Jun 2), 34 models, manual install
 - **State of LLM Pricing Report:** Interactive June 2026 report with sortable rankings, charts, provider comparison, cost scenarios, deprecation alerts, FAQPage schema
 
@@ -24,56 +24,20 @@
 
 ---
 
+## Session 448 (Jun 2)
+**Stale blog count cleanup across 8 HTML files:**
+- Fixed stale "239" blog post count → 240 on: prompt-cost-calculator.html, community.html (2x), index.html, pricing.html (2x), launch.html, blog.html
+- Verified RSS feed count (297 items) and sitemap (383 URLs) — both in sync
+- Final sweep: no remaining stale blog counts in any HTML file
+
 ## Session 447 (Jun 2)
 **New blog post — "Claude 4 Stopped Working? Here's Exactly What to Do":**
-- Created blog-claude-4-stopped-working.html — practical troubleshooting guide targeting "claude 4 stopped working" / "claude 4 api broken" searches
-- Features: error identification (3 error types with JSON examples), quick fix table, code examples (Python/Node.js/cURL), cost savings comparison, 5-step fix checklist, FAQPage schema (6 questions), social sharing
-- Cross-linked from: deprecation page footer + related card, api-errors post, deprecation-checklist post, deprecation-faq post
-- Added to: blog.html (with CTA card), sitemap.xml (priority 0.9), rss.xml
-- Updated stale blog counts on 7 pages (238→239): index.html, blog.html, pricing.html (2x), launch.html, community.html (2x), prompt-cost-calculator.html
-- Stats: 387→388 pages, 239→240 blog posts, 382→383 sitemap URLs, 296→297 RSS items
+- Created blog-claude-4-stopped-working.html — troubleshooting guide for Claude 4 API errors
+- Cross-linked from deprecation page, api-errors post, deprecation-checklist, deprecation-faq
+- Stats: 387→388 pages, 239→240 blog posts
 
-## Session 446 (Jun 2)
-**Stale stats cleanup + massive deprecation CTA expansion:**
-- Fixed stale blog/stats counts across 4 pages: blog.html (185→238), launch.html (186→238), community.html (2 template messages), prompt-cost-calculator.html (223→238 posts, 53→60 tools, 11→12 endpoints)
-- Added deprecation landing page CTA to blog.html and pricing.html What's New sections (red border, JUNE 15 DEADLINE badge)
-- Expanded deprecation CTA from 54 to 195 blog posts (+141 posts) — covers all comparison, cost guide, industry, and "best of" posts
-- Deprecation page now promoted from: index.html + blog.html + pricing.html What's New + 195 blog post CTA boxes + deprecation calculator + migration tool = 200+ internal links
-- Updated PROGRESS.md: 239 blog posts, 382 sitemap URLs, 296 RSS items
-- Note: community.html Week 7/8 historical logs left as-is (document what was true at that time)
-
-## Session 445 (Jun 2)
-**Deprecation landing page cross-linking — expanded from 3 to 58 source files:**
-- Added amber "June 15 deadline" CTA box linking to claude-4-deprecation.html on 54 blog posts
-- First batch (14): Claude model cost guides, comparison posts, pricing guide, deprecation guide, cost optimization post
-- Second batch (40): all deprecation-specific pages, Claude comparison posts, provider pricing guides (OpenAI, Gemini, DeepSeek), use-case cost guides (healthcare, ecommerce, finance, SaaS, RAG, agents, chatbots), budget/production guides
-- Fixed stale blog count on index.html (236 → 238)
-- Landing page now linked from: 54 blog posts + deprecation calculator + migration tool + index.html + sitemap + RSS = 58 total files (was 3)
-
-## Session 444 (Jun 2)
-**Claude 4 deprecation landing page — focused conversion page for June 15 deadline:**
-- Created claude-4-deprecation.html — single high-converting page combining countdown, calculator, alternatives, code examples, and Pro upsell
-- Features: live countdown to June 15, interactive cost calculator (input/output tokens), 34-alternative comparison table with sortable columns, migration code in Python/Node.js/cURL, Pro upsell with urgency, FAQPage schema (5 questions), GA4 events
-- Cross-linked from: deprecation calculator (nav "June 15 Deadline" link + CTA box), migration tool (Related section, first item)
-- Added to: index.html What's New (top item with red border), sitemap.xml (daily changefreq, priority 0.9), RSS feed (first item)
-- Fixed stale stats on pricing.html: "232 Expert Guides" → 238, "58 Interactive Tools" → 60, comparison table "232 blog guides" → 238
-- Stats: 386 → 387 pages
-
-## Session 443 (Jun 2)
-**Two new blog posts — deprecation checklist + cost optimization guide:**
-1. Created blog-claude-4-deprecation-checklist.html — interactive 8-step checklist targeting "Claude 4 deprecation checklist" searches. Features: progress tracker, countdown, code examples, FAQPage schema. Cross-linked from deprecation calculator, migration tool, countdown post.
-2. Created blog-reduce-ai-api-costs.html — comprehensive "How to Reduce AI API Costs" guide targeting evergreen cost optimization searches. Features: 10 strategies with real numbers, code examples, cost comparison tables, FAQPage schema (4 questions), social sharing. Cross-linked to calculator, compare, and pricing tools.
-- Added both to blog.html, sitemap.xml, rss.xml
-- Stats: 384 → 386 pages, 236 → 238 blog posts
-
-## Session 442 (Jun 2)
-**Claude 4 Deprecation FAQ blog post — target long-tail deprecation search traffic:**
-- Created blog-claude-4-deprecation-faq.html — comprehensive FAQ targeting "Claude 4 API shutdown", "end of life", "deprecation questions" searches
-- Features: 8 FAQPage schema questions, countdown bar, cost comparison tables (Claude 4 vs all alternatives), code migration examples (Python/Node.js/REST), interactive FAQ accordion, social sharing
-- Cross-linked from: countdown post (Related Resources), deprecation calculator (CTA box), alternatives post (CTA box), migration tool (Related Tools)
-- Added to blog.html, sitemap.xml (daily changefreq, priority 0.9), rss.xml
-- Fixed stale blog count on index.html (232 → 236)
-- Stats: 383 → 384 pages, 235 → 236 blog posts
+## Summary: Sessions 442-446 (Jun 2)
+✅ Created deprecation FAQ blog post (Session 442). Created deprecation checklist + cost optimization guide blog posts (Session 443). Created Claude 4 deprecation landing page with countdown + calculator + alternatives + code examples (Session 444). Cross-linked deprecation landing page from 54→58 source files (Session 445). Expanded deprecation CTA from 54 to 195 blog posts, fixed stale stats across 4 pages (Session 446). Stats: 383→388 pages, 236→240 blog posts.
 
 ## Summary: Sessions 435-441 (Jun 2)
 ✅ Deprecation calculator cross-linked to 48 blog posts (Session 435). Created deprecation countdown blog post (Session 436). Created Claude 4 Migration Tool + cross-linked from 15 posts (Session 437). Migration tool CTA added to 12 more posts (Session 438). Made all deprecation countdowns dynamic on 8 pages (Session 439). Created migration guide blog post with code examples (Session 440). Updated changelog with all sessions (Session 441). Stats: 380→383 pages, 233→235 blog posts, 59→60 tools.
