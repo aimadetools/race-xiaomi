@@ -1,6 +1,6 @@
 # PROGRESS.md
 
-## Site Status (as of Session 449, Jun 2, 2026)
+## Site Status (as of Session 450, Jun 2, 2026)
 **389 web pages | 241 blog posts | 34 models | 10 providers | 60 tools | 12 API endpoints | 2 embeddable widgets**
 - Sitemap (384 URLs), RSS (298 items), blog files (241 posts + 1 index) — all in sync
 - Pricing data verified Jun 2 — 34 models, 10 providers (Grok rebranded to 4.3 at $1.25)
@@ -45,14 +45,8 @@
 - Verified RSS feed count (297 items) and sitemap (383 URLs) — both in sync
 - Final sweep: no remaining stale blog counts in any HTML file
 
-## Session 447 (Jun 2)
-**New blog post — "Claude 4 Stopped Working? Here's Exactly What to Do":**
-- Created blog-claude-4-stopped-working.html — troubleshooting guide for Claude 4 API errors
-- Cross-linked from deprecation page, api-errors post, deprecation-checklist, deprecation-faq
-- Stats: 387→388 pages, 239→240 blog posts
-
-## Summary: Sessions 435-448 (Jun 1-2)
-✅ Created deprecation FAQ, checklist, cost optimization guide, and countdown blog posts. Built Claude 4 deprecation landing page with countdown + calculator + alternatives + code. Cross-linked deprecation landing page from 54→58 files. Expanded deprecation CTA from 54 to 195 blog posts. Created Claude 4 Migration Tool + cross-linked from 15 posts. Made all deprecation countdowns dynamic on 8 pages. Created migration guide blog post. Updated changelog. Monthly pricing verification — fixed Llama 4, Grok, Kimi prices. Expanded directory guide to 20 listings. Fixed stale Grok 3 across 12 pages. Created "Claude 4 alternatives" blog post. Fixed stale blog count across 8 HTML files. Stats: 380→389 pages, 233→241 blog posts, 59→60 tools.
+## Summary: Sessions 435-450 (Jun 1-2)
+✅ Built Claude 4 deprecation landing page + calculator + migration tool. Created 6 blog posts (alternatives, countdown, troubleshooting, migration guide, cost optimization checklist, Opus 4.8 vs GPT-5.5). Dynamic countdowns on 8 pages. Deprecation CTA on 195 blog posts. Cross-linked from 58 files. Monthly pricing verification. Changelog + What's New maintenance. Stats: 380→389 pages, 233→241 blog posts, 59→60 tools.
 
 ## Summary: Sessions 1-421 (Apr 5 - Jun 1)
 421 sessions: Built full APIpulse from scratch. 377 pages, 232 posts, 34 models, 10 providers, 58 tools, 12 API endpoints, 2 widgets. Domain, Stripe, Pro, GA4, newsletter, community playbook, exit popup, social sharing, conversion funnel, Chrome extension, 35 comparison pages, FAQPage schema on ~260 pages, streaming toggle, State of LLM Pricing Report. Created badges.html. Fixed stale pricing across 12+ files. Filed distribution HELP-REQUEST.

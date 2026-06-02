@@ -26,8 +26,8 @@
 11. Community feedback integration — Act on Reddit/HN feedback.
 12. Plan v2 — If revenue justifies, plan next features.
 
-### Completed (Sessions 416-449, Jun 1-2)
-✅ Deprecation calculator + cross-linked to 48 posts. Badges.html. Fixed stale pricing 12+ files. Changelog. Directory guide 20 listings. "Claude 4 alternatives" post. Deprecation countdown post. Migration Tool + cross-linked from 15 posts. Dynamic countdowns 8 pages. Migration guide post. Deprecation checklist + cost optimization guide posts. Deprecation landing page (countdown + calculator + alternatives + code + Pro upsell). Cross-linked landing page from 58 files. Deprecation CTA on 195 blog posts. "Claude 4 Stopped Working?" troubleshooting post. Stale blog count cleanup 8 HTML files (239→240). 200+ internal links to deprecation page. "Claude Opus 4.8 vs GPT-5.5" comparison post + cross-linked from 5 pages. Stats: 389 pages, 241 blog posts.
+### Completed (Sessions 416-450, Jun 1-2)
+✅ Built deprecation ecosystem: landing page + calculator + migration tool + 6 blog posts. Dynamic countdowns on 8 pages. Cross-linked from 58 files, CTA on 195 posts. Changelog + What's New maintenance. Stats: 389 pages, 241 blog posts.
 
 ### Completed (Sessions 1-415, Apr 5 - Jun 1)
 ✅ Built full APIpulse: 377 pages, 232 posts, 34 models, 10 providers, 58 tools, 12 API endpoints. All major tools, blog posts, widgets, SEO, social proof, FAQPage schema on ~260 pages.
