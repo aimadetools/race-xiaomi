@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Claude 4 Is Retiring June 15 — Find Your Cheaper Replacement | APIpulse</title>
+    <meta name="description" content="Claude 4 Opus and Sonnet 4 retire June 15, 2026. Compare 34 alternatives, calculate your savings, and migrate in under an hour. Save 67-97% on API costs.">
+    <meta name="keywords" content="Claude 4 deprecation, Claude 4 retiring, Claude 4 alternative, Claude Opus replacement, Claude Sonnet replacement, Claude 4 migration, cheapest Claude alternative, Claude 4 API shutdown">
+    <meta property="og:title" content="Claude 4 Is Retiring June 15 — Find Your Cheaper Replacement">
+    <meta property="og:description" content="34 alternatives compared. Save 67-97% on API costs. Migrate in under an hour.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://getapipulse.com/og-image.png">
+    <meta property="og:url" content="https://getapipulse.com/claude-4-deprecation.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Claude 4 Is Retiring June 15 — Find Your Cheaper Replacement">
+    <meta name="twitter:image" content="https://getapipulse.com/og-image.png">
+    <meta name="twitter:description" content="34 alternatives compared. Save 67-97% on API costs.">
+    <link rel="canonical" href="https://getapipulse.com/claude-4-deprecation.html">
+    <link rel="alternate" type="application/rss+xml" title="APIpulse Blog" href="https://getapipulse.com/rss.xml">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="styles.css">
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0CEP7S9Y3J"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-0CEP7S9Y3J');
+    </script>
+    <script src="analytics.js" defer></script>
+    <script src="dynamic-date.js" defer></script>
+    <script src="shared.js" defer></script>
+    <script src="pricing-data.js" defer></script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "APIpulse Claude 4 Deprecation Guide",
+        "url": "https://getapipulse.com/claude-4-deprecation.html",
+        "description": "Compare 34 Claude 4 alternatives, calculate migration costs, and find the cheapest replacement before the June 15, 2026 deprecation deadline.",
+        "applicationCategory": "DeveloperApplication",
+        "operatingSystem": "Web",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "When is Claude 4 being deprecated?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Claude 4 Opus and Claude Sonnet 4 are both being retired on June 15, 2026. After this date, API calls to these model IDs will return errors. You must migrate to a replacement model before then."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What is the cheapest alternative to Claude 4 Opus?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "DeepSeek V4 Flash is the cheapest at $0.14/$0.28 per million tokens — 99% cheaper than Claude 4 Opus ($15/$75). For a similar quality level, DeepSeek V4 Pro at $0.435/$0.87 is 97% cheaper. The direct Anthropic replacement, Claude Opus 4.8, is 67% cheaper at $5/$25."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Do I need a new API key to migrate from Claude 4?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "No. If you're staying with Anthropic, your existing API key works with Claude Opus 4.8 and Sonnet 4.6. Only the model name string in your code changes. If switching providers, you'll need a new API key from the new provider."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How much can I save by switching from Claude 4?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Savings range from 67% (Claude Opus 4.8) to 99% (DeepSeek V4 Flash). For a typical workload of 10M input + 2M output tokens/month, Claude 4 Opus costs $300/month. The same workload on Claude Opus 4.8 costs $100/month, and on DeepSeek V4 Pro it costs just $6.09/month."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Is Claude Sonnet 4.6 a direct replacement for Claude Sonnet 4?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes. Claude Sonnet 4.6 is the same price ($3/$15 per million tokens) but has 5x the context window (1M vs 200K tokens) and improved reasoning. It's a strict upgrade with no cost increase."
+                }
+            }
+        ]
+    }
+    </script>
+    <style>
+        .hero { padding: 100px 24px 40px; text-align: center; max-width: 800px; margin: 0 auto; }
+        .hero h1 { font-size: clamp(28px, 4vw, 44px); font-weight: 800; margin-bottom: 16px; line-height: 1.2; }
+        .hero h1 .highlight { color: var(--red); }
+        .hero .subtitle { font-size: 18px; color: var(--text-secondary); margin-bottom: 24px; max-width: 600px; margin-left: auto; margin-right: auto; line-height: 1.6; }
+
+        /* Countdown */
+        .countdown-bar {
+            background: linear-gradient(135deg, rgba(239,68,68,0.12), rgba(245,158,11,0.12));
+            border: 1px solid rgba(239,68,68,0.3); border-radius: 12px;
+            padding: 20px; margin-bottom: 32px; display: flex;
+            align-items: center; justify-content: center; gap: 24px; flex-wrap: wrap;
+        }
+        .countdown-unit { text-align: center; }
+        .countdown-number { font-size: 36px; font-weight: 800; color: var(--red); }
+        .countdown-label { font-size: 12px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; }
+        .countdown-sep { font-size: 28px; color: var(--text-muted); font-weight: 300; }
+
+        /* Key facts */
+        .facts-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; margin-bottom: 40px; }
+        .fact-card {
+            background: var(--bg-secondary); border: 1px solid var(--border);
+            border-radius: 12px; padding: 20px; text-align: center;
+        }
+        .fact-number { font-size: 28px; font-weight: 800; color: var(--accent); }
+        .fact-label { font-size: 13px; color: var(--text-muted); margin-top: 4px; }
+
+        /* Calculator */
+        .calc-section { background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 16px; padding: 32px; margin-bottom: 40px; }
+        .calc-section h2 { font-size: 24px; font-weight: 700; text-align: center; margin-bottom: 8px; }
+        .calc-section .subtitle { text-align: center; color: var(--text-secondary); font-size: 15px; margin-bottom: 24px; }
+        .calc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+        .calc-input label { display: block; font-size: 13px; font-weight: 600; color: var(--text-secondary); margin-bottom: 6px; text-transform: uppercase; letter-spacing: 0.5px; }
+        .calc-input input { width: 100%; padding: 12px 16px; background: var(--bg-card); border: 1px solid var(--border); border-radius: 8px; color: var(--text-primary); font-size: 16px; font-weight: 600; }
+        .calc-input input:focus { outline: 2px solid var(--accent); outline-offset: 2px; border-color: var(--accent); }
+        .calc-presets { display: flex; gap: 6px; margin-top: 8px; }
+        .calc-presets button { flex: 1; padding: 6px; background: var(--bg-card); border: 1px solid var(--border); border-radius: 6px; color: var(--text-secondary); font-size: 12px; cursor:pointer; }
+        .calc-presets button:hover { border-color: var(--accent); color: var(--accent); }
+        .calc-results { background: var(--bg-card); border-radius: 12px; padding: 20px; }
+        .result-row { display: flex; justify-content: space-between; align-items: center; padding: 10px 0; border-bottom: 1px solid var(--border); }
+        .result-row:last-child { border-bottom: none; }
+        .result-label { font-size: 14px; color: var(--text-secondary); }
+        .result-value { font-size: 16px; font-weight: 700; }
+        .result-value.savings { color: var(--green); }
+        .result-value.cost { color: var(--text-primary); }
+        .result-value.old { color: var(--red); text-decoration: line-through; }
+
+        /* Alternatives table */
+        .alternatives-section { margin-bottom: 40px; }
+        .alternatives-section h2 { font-size: 24px; font-weight: 700; text-align: center; margin-bottom: 8px; }
+        .alternatives-section .subtitle { text-align: center; color: var(--text-secondary); font-size: 15px; margin-bottom: 24px; }
+        .alt-table { width: 100%; border-collapse: collapse; background: var(--bg-secondary); border-radius: 12px; overflow: hidden; border: 1px solid var(--border); }
+        .alt-table th, .alt-table td { padding: 12px 16px; text-align: left; border-bottom: 1px solid var(--border); font-size: 14px; }
+        .alt-table th { background: var(--bg-card); font-weight: 700; font-size: 12px; text-transform: uppercase; letter-spacing: 0.5px; color: var(--text-secondary); }
+        .alt-table tr:last-child td { border-bottom: none; }
+        .alt-table .savings-cell { color: var(--green); font-weight: 700; }
+        .alt-table .deprecated-row { background: rgba(239,68,68,0.06); }
+        .alt-table .recommended { background: rgba(34,197,94,0.06); }
+        .sort-btn { background: none; border: none; color: var(--text-secondary); cursor: pointer; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; }
+        .sort-btn:hover { color: var(--accent); }
+        .sort-btn.active { color: var(--accent); }
+
+        /* Code examples */
+        .code-section { background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 16px; padding: 32px; margin-bottom: 40px; }
+        .code-section h2 { font-size: 24px; font-weight: 700; text-align: center; margin-bottom: 8px; }
+        .code-section .subtitle { text-align: center; color: var(--text-secondary); font-size: 15px; margin-bottom: 24px; }
+        .code-tabs { display: flex; gap: 8px; margin-bottom: 16px; justify-content: center; }
+        .code-tab { padding: 8px 20px; background: var(--bg-card); border: 1px solid var(--border); border-radius: 8px; color: var(--text-secondary); font-size: 13px; font-weight: 600; cursor: pointer; }
+        .code-tab.active { background: var(--accent); color: white; border-color: var(--accent); }
+        .code-block { background: var(--bg-card); border: 1px solid var(--border); border-radius: 8px; padding: 20px; font-family: 'SF Mono', 'Fira Code', monospace; font-size: 13px; line-height: 1.7; overflow-x: auto; color: var(--text-secondary); }
+        .code-block .comment { color: var(--text-muted); }
+        .code-block .keyword { color: var(--accent); }
+        .code-block .string { color: var(--green); }
+        .code-block .old { color: var(--red); text-decoration: line-through; }
+        .code-block .new { color: var(--green); font-weight: 600; }
+
+        /* Pro upsell */
+        .pro-upsell {
+            background: linear-gradient(135deg, rgba(99,102,241,0.1), rgba(139,92,246,0.1));
+            border: 1px solid rgba(99,102,241,0.3); border-radius: 16px;
+            padding: 40px; text-align: center; margin-bottom: 40px;
+        }
+        .pro-upsell h2 { font-size: 24px; font-weight: 800; margin-bottom: 12px; }
+        .pro-upsell .subtitle { color: var(--text-secondary); font-size: 15px; margin-bottom: 24px; max-width: 500px; margin-left: auto; margin-right: auto; }
+        .pro-benefits { list-style: none; text-align: left; max-width: 400px; margin: 0 auto 24px; }
+        .pro-benefits li { padding: 8px 0; font-size: 14px; color: var(--text-secondary); display: flex; align-items: center; gap: 10px; }
+        .pro-benefits li::before { content: "✓"; color: var(--green); font-weight: 700; }
+
+        /* FAQ */
+        .faq-section { margin-bottom: 40px; }
+        .faq-section h2 { font-size: 24px; font-weight: 700; text-align: center; margin-bottom: 24px; }
+        .faq-item { background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 12px; padding: 20px; margin-bottom: 12px; cursor: pointer; }
+        .faq-item h3 { font-size: 15px; font-weight: 700; margin-bottom: 0; display: flex; justify-content: space-between; align-items: center; }
+        .faq-item h3::after { content: "+"; font-size: 18px; color: var(--text-muted); transition: transform 0.2s; }
+        .faq-item.open h3::after { content: "−"; }
+        .faq-item p { font-size: 14px; color: var(--text-secondary); margin-top: 12px; line-height: 1.7; display: none; }
+        .faq-item.open p { display: block; }
+
+        /* Related tools */
+        .related-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 16px; margin-bottom: 40px; }
+        .related-card { background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 12px; padding: 20px; text-align: center; }
+        .related-card h3 { font-size: 16px; margin-bottom: 8px; }
+        .related-card p { font-size: 13px; color: var(--text-secondary); margin-bottom: 12px; }
+
+        @media (max-width: 768px) {
+            .hero { padding: 80px 16px 24px; }
+            .countdown-bar { gap: 12px; padding: 16px; }
+            .countdown-number { font-size: 28px; }
+            .calc-grid { grid-template-columns: 1fr; }
+            .code-tabs { flex-wrap: wrap; }
+            .alt-table { font-size: 12px; }
+            .alt-table th, .alt-table td { padding: 8px 10px; }
+        }
+    </style>
+    <meta name="theme-color" content="#6366f1">
+</head>
+<body>
+    <a href="#main" class="skip-link">Skip to content</a>
+    <nav>
+        <div class="nav-inner">
+            <a href="index.html" class="logo">API<span>pulse</span></a>
+            <button class="hamburger" onclick="toggleMobileNav()" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+            <div class="nav-links">
+                <a href="calculator.html">Calculator</a>
+                <a href="compare.html">Compare</a>
+                <a href="claude-4-migration-tool.html">Migration Tool</a>
+                <a href="blog.html">Blog</a>
+                <a href="pro.html" class="nav-cta" onclick="if(window.trackEvent)window.trackEvent('pro_button_clicked',{source:'nav'})">Pro — $29</a>
+                <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
+            </div>
+        </div>
+    </nav>
+
+    <main id="main">
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="countdown-bar">
+            <div class="countdown-unit">
+                <div class="countdown-number" id="cd-days">--</div>
+                <div class="countdown-label">Days</div>
+            </div>
+            <div class="countdown-sep">:</div>
+            <div class="countdown-unit">
+                <div class="countdown-number" id="cd-hours">--</div>
+                <div class="countdown-label">Hours</div>
+            </div>
+            <div class="countdown-sep">:</div>
+            <div class="countdown-unit">
+                <div class="countdown-number" id="cd-mins">--</div>
+                <div class="countdown-label">Minutes</div>
+            </div>
+            <div class="countdown-sep">:</div>
+            <div class="countdown-unit">
+                <div class="countdown-number" id="cd-secs">--</div>
+                <div class="countdown-label">Seconds</div>
+            </div>
+        </div>
+        <h1>Claude 4 Is <span class="highlight">Retiring June 15</span></h1>
+        <p class="subtitle">Claude 4 Opus and Sonnet 4 will stop working. Here are 34 alternatives — with exact cost comparisons so you can pick the cheapest replacement.</p>
+    </section>
+
+    <!-- KEY FACTS -->
+    <section style="max-width:800px;margin:0 auto 40px;padding:0 24px;">
+        <div class="facts-grid">
+            <div class="fact-card">
+                <div class="fact-number">34</div>
+                <div class="fact-label">Alternatives Compared</div>
+            </div>
+            <div class="fact-card">
+                <div class="fact-number" style="color:var(--green);">97%</div>
+                <div class="fact-label">Max Savings vs Claude 4</div>
+            </div>
+            <div class="fact-card">
+                <div class="fact-number">10</div>
+                <div class="fact-label">API Providers</div>
+            </div>
+            <div class="fact-card">
+                <div class="fact-number" style="color:var(--orange);">&lt; 1hr</div>
+                <div class="fact-label">Migration Time</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WHAT'S HAPPENING -->
+    <section style="max-width:800px;margin:0 auto 40px;padding:0 24px;">
+        <div style="background:var(--bg-secondary);border:1px solid var(--border);border-radius:16px;padding:32px;">
+            <h2 style="font-size:22px;font-weight:700;margin-bottom:16px;">What's Being Retired</h2>
+            <div style="display:grid;gap:12px;">
+                <div style="display:flex;justify-content:space-between;align-items:center;padding:16px;background:var(--bg-card);border:1px solid rgba(239,68,68,0.2);border-radius:10px;">
+                    <div>
+                        <div style="font-weight:700;font-size:15px;">Claude 4 Opus</div>
+                        <div style="font-size:13px;color:var(--text-muted);">$15 / $75 per 1M tokens &middot; 200K context</div>
+                    </div>
+                    <div style="text-align:right;">
+                        <div style="font-size:12px;color:var(--red);font-weight:600;">RETIRES JUNE 15</div>
+                        <div style="font-size:12px;color:var(--text-muted);">→ Claude Opus 4.8 ($5/$25)</div>
+                    </div>
+                </div>
+                <div style="display:flex;justify-content:space-between;align-items:center;padding:16px;background:var(--bg-card);border:1px solid rgba(239,68,68,0.2);border-radius:10px;">
+                    <div>
+                        <div style="font-weight:700;font-size:15px;">Claude Sonnet 4</div>
+                        <div style="font-size:13px;color:var(--text-muted);">$3 / $15 per 1M tokens &middot; 200K context</div>
+                    </div>
+                    <div style="text-align:right;">
+                        <div style="font-size:12px;color:var(--red);font-weight:600;">RETIRES JUNE 15</div>
+                        <div style="font-size:12px;color:var(--text-muted);">→ Claude Sonnet 4.6 ($3/$15)</div>
+                    </div>
+                </div>
+            </div>
+            <p style="font-size:13px;color:var(--text-muted);margin-top:16px;text-align:center;">After June 15, API calls to these models will return errors. Your API key still works — only the model name changes.</p>
+        </div>
+    </section>
+
+    <!-- COST CALCULATOR -->
+    <section class="calc-section" style="max-width:800px;margin:0 auto 40px;">
+        <h2>How Much Will You Save?</h2>
+        <p class="subtitle">Enter your monthly usage to see exact savings across all alternatives.</p>
+        <div class="calc-grid">
+            <div class="calc-input">
+                <label>Input Tokens / Month (millions)</label>
+                <input type="number" id="calc-input" value="10" min="0.1" max="1000" step="0.1">
+                <div class="calc-presets">
+                    <button onclick="setCalcInput(1)">1M</button>
+                    <button onclick="setCalcInput(5)">5M</button>
+                    <button onclick="setCalcInput(10)">10M</button>
+                    <button onclick="setCalcInput(50)">50M</button>
+                </div>
+            </div>
+            <div class="calc-input">
+                <label>Output Tokens / Month (millions)</label>
+                <input type="number" id="calc-output" value="2" min="0.1" max="500" step="0.1">
+                <div class="calc-presets">
+                    <button onclick="setCalcOutput(0.5)">0.5M</button>
+                    <button onclick="setCalcOutput(1)">1M</button>
+                    <button onclick="setCalcOutput(2)">2M</button>
+                    <button onclick="setCalcOutput(10)">10M</button>
+                </div>
+            </div>
+        </div>
+        <div class="calc-results" style="margin-top:24px;">
+            <div class="result-row">
+                <span class="result-label">Claude 4 Opus (current)</span>
+                <span class="result-value old" id="result-old">$300/mo</span>
+            </div>
+            <div class="result-row">
+                <span class="result-label">Claude Opus 4.8 (Anthropic replacement)</span>
+                <span class="result-value cost" id="result-opus48">$100/mo</span>
+            </div>
+            <div class="result-row">
+                <span class="result-label">Claude Sonnet 4.6 (if using Sonnet 4)</span>
+                <span class="result-value cost" id="result-sonnet46">$60/mo</span>
+            </div>
+            <div class="result-row" style="background:rgba(34,197,94,0.06);margin:8px -20px;padding:12px 20px;border-radius:8px;">
+                <span class="result-label"><strong>Best deal: DeepSeek V4 Pro</strong></span>
+                <span class="result-value savings" id="result-deepseek">$6.09/mo</span>
+            </div>
+            <div class="result-row" style="background:rgba(34,197,94,0.06);margin:0 -20px;padding:12px 20px;border-radius:8px;">
+                <span class="result-label"><strong>You save (vs Claude 4 Opus)</strong></span>
+                <span class="result-value savings" id="result-savings" style="font-size:20px;">$293.91/mo</span>
+            </div>
+        </div>
+        <p style="text-align:center;margin-top:16px;">
+            <a href="claude-deprecation-calculator.html" style="font-size:13px;color:var(--accent);">Open full deprecation calculator →</a>
+        </p>
+    </section>
+
+    <!-- TOP ALTERNATIVES -->
+    <section class="alternatives-section" style="max-width:900px;margin:0 auto;padding:0 24px;">
+        <h2>Top Alternatives — Sorted by Cost</h2>
+        <p class="subtitle">Click column headers to sort. All prices per 1M tokens.</p>
+        <div style="overflow-x:auto;">
+            <table class="alt-table" id="alt-table">
+                <thead>
+                    <tr>
+                        <th><button class="sort-btn active" data-sort="name" onclick="sortTable('name')">Model</button></th>
+                        <th><button class="sort-btn" data-sort="provider" onclick="sortTable('provider')">Provider</button></th>
+                        <th><button class="sort-btn" data-sort="input" onclick="sortTable('input')">Input $</button></th>
+                        <th><button class="sort-btn" data-sort="output" onclick="sortTable('output')">Output $</button></th>
+                        <th><button class="sort-btn" data-sort="savings" onclick="sortTable('savings')">Savings</button></th>
+                        <th>Context</th>
+                    </tr>
+                </thead>
+                <tbody id="alt-tbody"></tbody>
+            </table>
+        </div>
+        <p style="text-align:center;margin-top:16px;">
+            <a href="claude-4-migration-tool.html" style="font-size:13px;color:var(--accent);">Open full migration tool with code snippets →</a>
+        </p>
+    </section>
+
+    <!-- CODE EXAMPLES -->
+    <section class="code-section" style="max-width:800px;margin:40px auto;">
+        <h2>Migrate in 30 Seconds</h2>
+        <p class="subtitle">One line change. Your API key, SDK, and endpoint stay the same.</p>
+        <div class="code-tabs">
+            <button class="code-tab active" onclick="showCode('python')">Python</button>
+            <button class="code-tab" onclick="showCode('node')">Node.js</button>
+            <button class="code-tab" onclick="showCode('curl')">cURL</button>
+        </div>
+        <div class="code-block" id="code-python">
+<span class="keyword">import</span> anthropic
+
+client = anthropic.Anthropic()
+
+<span class="comment"># Before (retires June 15):</span>
+response = client.messages.create(
+    model=<span class="old">"claude-4-opus"</span>,
+    max_tokens=1024,
+    messages=[{"role": "user", "content": "Hello"}]
+)
+
+<span class="comment"># After (save 67%):</span>
+response = client.messages.create(
+    model=<span class="new">"claude-opus-4-8"</span>,
+    max_tokens=1024,
+    messages=[{"role": "user", "content": "Hello"}]
+)
+        </div>
+        <div class="code-block" id="code-node" style="display:none;">
+<span class="keyword">import</span> Anthropic <span class="keyword">from</span> <span class="string">'@anthropic-ai/sdk'</span>;
+
+<span class="keyword">const</span> client = <span class="keyword">new</span> Anthropic();
+
+<span class="comment">// Before (retires June 15):</span>
+<span class="keyword">const</span> response = <span class="keyword">await</span> client.messages.create({
+  model: <span class="old">'claude-4-opus'</span>,
+  max_tokens: 1024,
+  messages: [{ role: <span class="string">'user'</span>, content: <span class="string">'Hello'</span> }]
+});
+
+<span class="comment">// After (save 67%):</span>
+<span class="keyword">const</span> response = <span class="keyword">await</span> client.messages.create({
+  model: <span class="new">'claude-opus-4-8'</span>,
+  max_tokens: 1024,
+  messages: [{ role: <span class="string">'user'</span>, content: <span class="string">'Hello'</span> }]
+});
+        </div>
+        <div class="code-block" id="code-curl" style="display:none;">
+<span class="comment"># Before (retires June 15):</span>
+curl https://api.anthropic.com/v1/messages \
+  -H <span class="string">"x-api-key: $ANTHROPIC_API_KEY"</span> \
+  -H <span class="string">"content-type: application/json"</span> \
+  -d <span class="string">'{"model": <span class="old">"claude-4-opus"</span>, "max_tokens": 1024, ...}'</span>
+
+<span class="comment"># After (save 67%):</span>
+curl https://api.anthropic.com/v1/messages \
+  -H <span class="string">"x-api-key: $ANTHROPIC_API_KEY"</span> \
+  -H <span class="string">"content-type: application/json"</span> \
+  -d <span class="string">'{"model": <span class="new">"claude-opus-4-8"</span>, "max_tokens": 1024, ...}'</span>
+        </div>
+    </section>
+
+    <!-- PRO UPSELL -->
+    <section class="pro-upsell" style="max-width:700px;margin:0 auto 40px;padding:0 24px;">
+        <div style="background:linear-gradient(135deg, rgba(99,102,241,0.1), rgba(139,92,246,0.1));border:1px solid rgba(99,102,241,0.3);border-radius:16px;padding:40px;text-align:center;">
+            <h2>Save Even More with APIpulse Pro</h2>
+            <p class="subtitle">Pro users get personalized optimization recommendations that cut costs by 30-40% beyond model switching.</p>
+            <ul class="pro-benefits">
+                <li>Save & compare up to 10 migration scenarios</li>
+                <li>Export migration cost reports for your team</li>
+                <li>Get personalized optimization recommendations</li>
+                <li>Priority email support during migration</li>
+                <li>Early access to new pricing data</li>
+            </ul>
+            <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:10px;padding:20px;margin-bottom:20px;">
+                <div style="font-size:36px;font-weight:800;color:var(--accent);">$29</div>
+                <div style="font-size:13px;color:var(--text-muted);text-decoration:line-through;">$49 after founding period</div>
+                <div style="font-size:13px;color:var(--text-muted);">One-time payment, lifetime access</div>
+            </div>
+            <div style="background:rgba(245,158,11,0.08);border:1px solid rgba(245,158,11,0.3);border-radius:8px;padding:10px 14px;margin-bottom:20px;font-size:13px;color:#d97706;display:inline-block;">
+                Founding member pricing — lock in $29 before it goes to $49
+            </div>
+            <br>
+            <a href="https://buy.stripe.com/fZu7sL3Gw3GS0RQeoDeEo0a" class="btn-primary" style="display:inline-block;padding:16px 40px;font-size:16px;text-align:center;" target="_blank" rel="noopener" onclick="if(window.trackEvent)window.trackEvent('pro_button_clicked',{source:'deprecation_landing'})">Lock in $29 — Founding Member</a>
+            <p style="font-size:12px;color:var(--text-muted);margin-top:12px;">14-day money-back guarantee. No questions asked.</p>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq-section" style="max-width:700px;margin:0 auto;padding:0 24px;">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-item" onclick="this.classList.toggle('open')">
+            <h3>When is Claude 4 being deprecated?</h3>
+            <p>Claude 4 Opus and Claude Sonnet 4 are both being retired on June 15, 2026. After this date, API calls to these model IDs will return errors. You must migrate to a replacement model before then.</p>
+        </div>
+        <div class="faq-item" onclick="this.classList.toggle('open')">
+            <h3>What is the cheapest alternative to Claude 4 Opus?</h3>
+            <p>DeepSeek V4 Flash is the cheapest at $0.14/$0.28 per million tokens — 99% cheaper than Claude 4 Opus ($15/$75). For a similar quality level, DeepSeek V4 Pro at $0.435/$0.87 is 97% cheaper. The direct Anthropic replacement, Claude Opus 4.8, is 67% cheaper at $5/$25.</p>
+        </div>
+        <div class="faq-item" onclick="this.classList.toggle('open')">
+            <h3>Do I need a new API key to migrate from Claude 4?</h3>
+            <p>No. If you're staying with Anthropic, your existing API key works with Claude Opus 4.8 and Sonnet 4.6. Only the model name string in your code changes. If switching providers, you'll need a new API key from the new provider.</p>
+        </div>
+        <div class="faq-item" onclick="this.classList.toggle('open')">
+            <h3>How much can I save by switching from Claude 4?</h3>
+            <p>Savings range from 67% (Claude Opus 4.8) to 99% (DeepSeek V4 Flash). For a typical workload of 10M input + 2M output tokens/month, Claude 4 Opus costs $300/month. The same workload on Claude Opus 4.8 costs $100/month, and on DeepSeek V4 Pro it costs just $6.09/month.</p>
+        </div>
+        <div class="faq-item" onclick="this.classList.toggle('open')">
+            <h3>Is Claude Sonnet 4.6 a direct replacement for Claude Sonnet 4?</h3>
+            <p>Yes. Claude Sonnet 4.6 is the same price ($3/$15 per million tokens) but has 5x the context window (1M vs 200K tokens) and improved reasoning. It's a strict upgrade with no cost increase.</p>
+        </div>
+        <div class="faq-item" onclick="this.classList.toggle('open')">
+            <h3>Will my existing code break on June 15?</h3>
+            <p>Yes — any API calls using "claude-4-opus" or "claude-sonnet-4" as the model name will return errors after June 15. You need to update the model string in your code before the deadline. The rest of your integration (API key, SDK, endpoint) stays the same.</p>
+        </div>
+    </section>
+
+    <!-- RELATED TOOLS -->
+    <section style="max-width:800px;margin:0 auto 40px;padding:0 24px;">
+        <h2 style="font-size:22px;font-weight:700;text-align:center;margin-bottom:20px;">Related Tools</h2>
+        <div class="related-grid">
+            <div class="related-card">
+                <h3>Deprecation Calculator</h3>
+                <p>Calculate exact migration costs for your specific usage pattern.</p>
+                <a href="claude-deprecation-calculator.html" class="btn-secondary" style="display:inline-block;padding:10px 20px;font-size:13px;">Open Calculator →</a>
+            </div>
+            <div class="related-card">
+                <h3>Migration Tool</h3>
+                <p>Compare all 34 alternatives side-by-side with code snippets.</p>
+                <a href="claude-4-migration-tool.html" class="btn-secondary" style="display:inline-block;padding:10px 20px;font-size:13px;">Open Tool →</a>
+            </div>
+            <div class="related-card">
+                <h3>Cost Calculator</h3>
+                <p>Calculate monthly API costs for any model and usage pattern.</p>
+                <a href="calculator.html" class="btn-secondary" style="display:inline-block;padding:10px 20px;font-size:13px;">Open Calculator →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- BOTTOM CTA -->
+    <section style="max-width:600px;margin:0 auto 60px;padding:0 24px;text-align:center;">
+        <div style="background:var(--bg-secondary);border:1px solid var(--border);border-radius:16px;padding:32px;">
+            <p style="font-size:16px;font-weight:600;margin-bottom:8px;">Don't wait until your code breaks.</p>
+            <p style="font-size:14px;color:var(--text-secondary);margin-bottom:20px;">Migrate now while you have time to test. Most teams complete the switch in under an hour.</p>
+            <a href="claude-4-migration-tool.html" class="btn-primary" style="display:inline-block;padding:14px 32px;text-align:center;">Start Your Migration →</a>
+        </div>
+    </section>
+
+    </main>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Countdown
+        function updateCountdown() {
+            var deadline = new Date('2026-06-15T00:00:00-07:00').getTime();
+            var now = new Date().getTime();
+            var diff = deadline - now;
+            if (diff <= 0) {
+                document.getElementById('cd-days').textContent = '0';
+                document.getElementById('cd-hours').textContent = '0';
+                document.getElementById('cd-mins').textContent = '0';
+                document.getElementById('cd-secs').textContent = '0';
+                return;
+            }
+            var d = Math.floor(diff / (1000*60*60*24));
+            var h = Math.floor((diff % (1000*60*60*24)) / (1000*60*60));
+            var m = Math.floor((diff % (1000*60*60)) / (1000*60));
+            var s = Math.floor((diff % (1000*60)) / 1000);
+            document.getElementById('cd-days').textContent = d;
+            document.getElementById('cd-hours').textContent = h.toString().padStart(2,'0');
+            document.getElementById('cd-mins').textContent = m.toString().padStart(2,'0');
+            document.getElementById('cd-secs').textContent = s.toString().padStart(2,'0');
+        }
+        updateCountdown();
+        setInterval(updateCountdown, 1000);
+
+        // Calculator
+        updateCalc();
+        document.getElementById('calc-input').addEventListener('input', updateCalc);
+        document.getElementById('calc-output').addEventListener('input', updateCalc);
+
+        // Alternatives table
+        buildAltTable();
+
+        // Track page view
+        if (window.trackEvent) window.trackEvent('deprecation_landing_viewed', { page: 'claude-4-deprecation' });
+    });
+
+    function setCalcInput(v) { document.getElementById('calc-input').value = v; updateCalc(); }
+    function setCalcOutput(v) { document.getElementById('calc-output').value = v; updateCalc(); }
+
+    function updateCalc() {
+        var inputM = parseFloat(document.getElementById('calc-input').value) || 0;
+        var outputM = parseFloat(document.getElementById('calc-output').value) || 0;
+
+        // Claude 4 Opus: $15/$75
+        var oldCost = inputM * 15 + outputM * 75;
+        // Claude Opus 4.8: $5/$25
+        var opus48Cost = inputM * 5 + outputM * 25;
+        // Claude Sonnet 4.6: $3/$15
+        var sonnet46Cost = inputM * 3 + outputM * 15;
+        // DeepSeek V4 Pro: $0.435/$0.87
+        var deepseekCost = inputM * 0.435 + outputM * 0.87;
+
+        document.getElementById('result-old').textContent = '$' + oldCost.toFixed(2) + '/mo';
+        document.getElementById('result-opus48').textContent = '$' + opus48Cost.toFixed(2) + '/mo';
+        document.getElementById('result-sonnet46').textContent = '$' + sonnet46Cost.toFixed(2) + '/mo';
+        document.getElementById('result-deepseek').textContent = '$' + deepseekCost.toFixed(2) + '/mo';
+        document.getElementById('result-savings').textContent = '$' + (oldCost - deepseekCost).toFixed(2) + '/mo';
+
+        if (window.trackEvent) window.trackEvent('deprecation_calculator_used', { input_m: inputM, output_m: outputM });
+    }
+
+    // Alternatives table
+    var altData = [];
+    var currentSort = 'savings';
+    var sortAsc = true;
+
+    function buildAltTable() {
+        if (typeof API_MODELS === 'undefined') return;
+        var claude4Input = 15, claude4Output = 75;
+        altData = API_MODELS.filter(function(m) { return !m.deprecated; }).map(function(m) {
+            var savings = ((claude4Input - m.input) / claude4Input * 100 + (claude4Output - m.output) / claude4Output * 100) / 2;
+            return { name: m.name, provider: m.provider, input: m.input, output: m.output, context: m.context, savings: savings, tier: m.tier };
+        });
+        sortTable('savings');
+    }
+
+    function sortTable(col) {
+        if (currentSort === col) { sortAsc = !sortAsc; } else { currentSort = col; sortAsc = col === 'name' || col === 'provider'; }
+        document.querySelectorAll('.sort-btn').forEach(function(b) { b.classList.remove('active'); });
+        document.querySelector('[data-sort="'+col+'"]').classList.add('active');
+
+        altData.sort(function(a, b) {
+            var va = a[col], vb = b[col];
+            if (typeof va === 'string') { return sortAsc ? va.localeCompare(vb) : vb.localeCompare(va); }
+            return sortAsc ? va - vb : vb - va;
+        });
+        renderAltTable();
+    }
+
+    function renderAltTable() {
+        var tbody = document.getElementById('alt-tbody');
+        var html = '';
+        // Deprecated models first
+        var deprecated = API_MODELS.filter(function(m) { return m.deprecated; });
+        deprecated.forEach(function(m) {
+            html += '<tr class="deprecated-row"><td><strong>'+m.name+'</strong> <span style="color:var(--red);font-size:11px;">RETIRED</span></td><td>'+m.provider+'</td><td>$'+m.input.toFixed(2)+'</td><td>$'+m.output.toFixed(2)+'</td><td class="savings-cell">—</td><td>'+m.context+'</td></tr>';
+        });
+        altData.forEach(function(m) {
+            var rowClass = m.name === 'Claude Opus 4.8' || m.name === 'Claude Sonnet 4.6' ? ' class="recommended"' : '';
+            var savingsColor = m.savings > 80 ? 'var(--green)' : m.savings > 50 ? 'var(--accent)' : 'var(--orange)';
+            html += '<tr'+rowClass+'><td><strong>'+m.name+'</strong>'+(m.tier==='Premium'?' <span style="color:var(--orange);font-size:11px;">PREMIUM</span>':'')+'</td><td>'+m.provider+'</td><td>$'+m.input.toFixed(2)+'</td><td>$'+m.output.toFixed(2)+'</td><td style="color:'+savingsColor+';font-weight:700;">'+m.savings.toFixed(0)+'%</td><td>'+m.context+'</td></tr>';
+        });
+        tbody.innerHTML = html;
+    }
+
+    // Code tabs
+    function showCode(lang) {
+        ['python','node','curl'].forEach(function(l) {
+            document.getElementById('code-'+l).style.display = l === lang ? 'block' : 'none';
+        });
+        document.querySelectorAll('.code-tab').forEach(function(t) {
+            t.classList.toggle('active', t.textContent.toLowerCase().includes(lang === 'node' ? 'node' : lang));
+        });
+    }
+    </script>
+
+    <footer>
+        <p>Pricing data last verified: <span class="verified-date"></span></p>
+        <p>&copy; 2026 APIpulse. <a href="index.html">Home</a> &middot; <a href="calculator.html">Calculator</a> &middot; <a href="compare.html">Compare</a> &middot; <a href="blog.html">Blog</a> &middot; <a href="pricing.html">Pricing</a> &middot; <a href="claude-deprecation-calculator.html">Deprecation Calculator</a> &middot; <a href="claude-4-migration-tool.html">Migration Tool</a></p>
+    </footer>
+
+</body>
+</html>
