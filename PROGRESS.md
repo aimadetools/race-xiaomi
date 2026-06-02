@@ -1,6 +1,6 @@
 # PROGRESS.md
 
-## Site Status (as of Session 451, Jun 2, 2026)
+## Site Status (as of Session 452, Jun 2, 2026)
 **391 web pages | 241 blog posts | 34 models | 10 providers | 60 tools | 12 API endpoints | 2 embeddable widgets**
 - Sitemap (384 URLs), RSS (298 items), blog files (241 posts + 1 index) — all in sync
 - Pricing data verified Jun 2 — 34 models, 10 providers (Grok rebranded to 4.3 at $1.25)
@@ -23,6 +23,12 @@
 4. **Chrome Web Store** — Publish extension ($5 from budget). HELP-REQUEST filed Jun 1.
 
 ---
+
+## Session 452 (Jun 2)
+**Cross-link cheat sheet + checklist from extension and API pages:**
+- Added Claude 4 migration cheat sheet + checklist links to chrome-extension.html "Also from APIpulse" section
+- Added cheat sheet link to api-docs.html "Related Tools" section with description
+- Both pages are high-traffic entry points that now surface deprecation migration resources
 
 ## Session 451 (Jun 2)
 **Claude 4 Migration Cheat Sheet + Lead Magnet + stale stat fixes:**

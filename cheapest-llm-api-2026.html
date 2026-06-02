@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cheapest LLM API 2026 — Every Model Ranked by Price | APIpulse</title>
+    <meta name="description" content="Every LLM API ranked by price in June 2026. Find the cheapest model for coding, chat, classification, and high-volume workloads. Updated monthly.">
+    <meta name="keywords" content="cheapest LLM API, cheapest AI API, cheapest GPT API, cheapest Claude API, cheap AI models, low cost LLM, budget AI API, cheapest language model API 2026, AI API pricing comparison">
+    <meta property="og:title" content="Cheapest LLM API 2026 — Every Model Ranked by Price">
+    <meta property="og:description" content="Every LLM API ranked by price. Find the cheapest model for your use case — coding, chat, classification, or high-volume.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://getapipulse.com/og-image.png">
+    <meta property="og:url" content="https://getapipulse.com/cheapest-llm-api-2026.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Cheapest LLM API 2026 — Every Model Ranked by Price">
+    <meta name="twitter:image" content="https://getapipulse.com/og-image.png">
+    <meta name="twitter:description" content="Every LLM API ranked by price. Cheapest models for every use case.">
+    <link rel="canonical" href="https://getapipulse.com/cheapest-llm-api-2026.html">
+    <link rel="alternate" type="application/rss+xml" title="APIpulse Blog" href="https://getapipulse.com/rss.xml">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="styles.css">
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0CEP7S9Y3J"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-0CEP7S9Y3J');
+    </script>
+    <script src="analytics.js" defer></script>
+    <script src="dynamic-date.js" defer></script>
+    <script src="shared.js" defer></script>
+    <script src="pricing-data.js" defer></script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "What is the cheapest LLM API in 2026?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Gemini 2.0 Flash Lite is the cheapest LLM API at $0.075/1M input tokens and $0.30/1M output tokens, with a 1M token context window. For open-source models, Llama 3.1 8B via Together.ai costs $0.10/$0.10 per 1M tokens."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What is the cheapest LLM API for coding?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "For coding, DeepSeek V4 Flash at $0.14/$0.28 per 1M tokens offers the best balance of price and code quality. GPT-5 mini at $0.25/$2.00 is a strong alternative with better instruction following. Both support 1M+ context windows."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How much cheaper are budget LLM APIs vs premium?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Budget models (Gemini Flash, DeepSeek V4 Flash, Llama 4 Scout) cost 10-50x less than premium models (GPT-5.5, Claude Opus 4.8). A typical workload of 1000 requests/day with 2000 input + 500 output tokens costs $3-10/month on budget models vs $150-750/month on premium."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Are cheap LLM APIs good enough for production?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "For many production workloads — classification, extraction, summarization, simple chat — budget models like Gemini Flash and DeepSeek V4 perform excellently. For complex reasoning, coding, or nuanced writing, mid-tier models (Claude Sonnet 4.6, GPT-5) offer better quality at moderate cost."
+                }
+            }
+        ]
+    }
+    </script>
+    <style>
+        .content { max-width: 900px; margin: 0 auto; padding: 120px 24px 80px; }
+        h1 { font-size: clamp(28px, 4vw, 42px); font-weight: 800; text-align: center; margin-bottom: 12px; }
+        .subtitle { text-align: center; color: var(--text-secondary); font-size: 18px; margin-bottom: 16px; line-height: 1.6; }
+        .badge { display: inline-block; background: var(--accent); color: white; padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 16px; }
+        .updated-tag { text-align: center; color: var(--text-muted); font-size: 13px; margin-bottom: 40px; }
+
+        .ranking-table { width: 100%; border-collapse: collapse; margin: 24px 0 48px; background: var(--bg-secondary); border-radius: 12px; overflow: hidden; border: 1px solid var(--border); }
+        .ranking-table th { background: var(--bg-card); padding: 12px 16px; text-align: left; font-size: 12px; font-weight: 600; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px; }
+        .ranking-table td { padding: 10px 16px; border-bottom: 1px solid var(--border); font-size: 14px; }
+        .ranking-table tr:last-child td { border-bottom: none; }
+        .ranking-table .rank { font-weight: 800; color: var(--accent); font-size: 16px; width: 40px; }
+        .ranking-table .price { color: var(--green); font-weight: 700; font-family: monospace; }
+        .ranking-table .model-name { font-weight: 600; }
+        .ranking-table .provider { color: var(--text-muted); font-size: 13px; }
+        .tier-badge { display: inline-block; padding: 1px 6px; border-radius: 4px; font-size: 10px; font-weight: 600; margin-left: 6px; }
+        .tier-Budget { background: rgba(34,197,94,0.15); color: var(--green); }
+        .tier-Mid { background: var(--accent-glow); color: var(--accent); }
+        .tier-Premium { background: rgba(244,114,182,0.15); color: #f472b6; }
+        .highlight-row { background: rgba(34,197,94,0.05); }
+
+        .section { margin-bottom: 48px; }
+        .section h2 { font-size: 24px; font-weight: 700; margin-bottom: 16px; }
+        .section h3 { font-size: 18px; font-weight: 700; margin: 24px 0 12px; color: var(--accent); }
+        .section p { color: var(--text-secondary); font-size: 15px; line-height: 1.7; margin-bottom: 12px; }
+
+        .use-case-card { background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 12px; padding: 24px; margin-bottom: 16px; }
+        .use-case-card h3 { font-size: 17px; font-weight: 700; margin: 0 0 8px; color: var(--text-primary); }
+        .use-case-card .pick { color: var(--accent); font-weight: 700; font-size: 15px; margin-bottom: 4px; }
+        .use-case-card p { font-size: 14px; color: var(--text-secondary); line-height: 1.6; margin: 0; }
+
+        .cost-scenario { background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 12px; padding: 24px; margin-bottom: 16px; }
+        .cost-scenario h3 { font-size: 16px; font-weight: 700; margin: 0 0 12px; }
+        .cost-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; }
+        .cost-item { background: var(--bg-card); border-radius: 8px; padding: 12px; text-align: center; }
+        .cost-item .model { font-size: 13px; font-weight: 600; margin-bottom: 4px; }
+        .cost-item .amount { font-size: 22px; font-weight: 800; color: var(--green); }
+        .cost-item .period { font-size: 12px; color: var(--text-muted); }
+
+        .calculator-cta { text-align: center; padding: 48px 24px; background: var(--bg-secondary); border-radius: 16px; border: 1px solid var(--border); margin: 48px 0; }
+        .calculator-cta h2 { font-size: 24px; font-weight: 700; margin-bottom: 12px; }
+        .calculator-cta p { color: var(--text-secondary); margin-bottom: 24px; }
+        .btn-primary { display: inline-block; background: var(--accent); color: white; padding: 14px 32px; border-radius: 10px; font-size: 16px; font-weight: 700; transition: all 0.2s; border: none; cursor: pointer; text-decoration: none; }
+        .btn-primary:hover { background: var(--accent-hover); transform: translateY(-2px); color: white; }
+        .btn-secondary { display: inline-block; background: transparent; color: var(--accent); padding: 14px 32px; border-radius: 10px; font-size: 16px; font-weight: 700; border: 2px solid var(--accent); transition: all 0.2s; cursor: pointer; text-decoration: none; }
+        .btn-secondary:hover { background: var(--accent-glow); transform: translateY(-2px); }
+
+        .faq-section { margin: 48px 0; }
+        .faq-item { background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 12px; padding: 20px 24px; margin-bottom: 12px; }
+        .faq-item h3 { font-size: 16px; font-weight: 700; margin: 0 0 8px; color: var(--text-primary); }
+        .faq-item p { font-size: 14px; color: var(--text-secondary); line-height: 1.6; margin: 0; }
+
+        .email-capture { background: var(--bg-secondary); border: 1px solid var(--accent); border-radius: 16px; padding: 32px; text-align: center; margin: 48px 0; }
+        .email-capture h2 { font-size: 22px; font-weight: 700; margin-bottom: 8px; }
+        .email-capture p { color: var(--text-secondary); margin-bottom: 20px; }
+        .email-form { display: flex; gap: 10px; max-width: 420px; margin: 0 auto; flex-wrap: wrap; justify-content: center; }
+        .email-form input { flex: 1; min-width: 200px; padding: 12px 16px; border-radius: 8px; border: 1px solid var(--border); background: var(--bg-card); color: var(--text-primary); font-size: 14px; }
+        .email-form input:focus { outline: 2px solid var(--accent); border-color: var(--accent); }
+        .email-form button { padding: 12px 24px; border-radius: 8px; background: var(--accent); color: white; border: none; font-weight: 700; font-size: 14px; cursor: pointer; }
+        .email-form button:hover { background: var(--accent-hover); }
+        .email-note { font-size: 12px; color: var(--text-muted); margin-top: 8px; }
+
+        @media (max-width: 768px) {
+            .content { padding: 100px 20px 60px; }
+            .ranking-table { font-size: 13px; }
+            .ranking-table th, .ranking-table td { padding: 8px 10px; }
+            .cost-grid { grid-template-columns: 1fr 1fr; }
+        }
+    </style>
+    <meta name="theme-color" content="#6366f1">
+</head>
+<body>
+    <a href="#main" class="skip-link">Skip to content</a>
+    <nav>
+        <div class="nav-inner">
+            <a href="index.html" class="logo">API<span>pulse</span></a>
+            <button class="hamburger" onclick="toggleMobileNav()" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+            <div class="nav-links">
+                <a href="calculator.html">Calculator</a>
+                <a href="compare.html">Compare</a>
+                <a href="cost-explorer.html">Explorer</a>
+                <a href="cost-scenarios.html">Scenarios</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="use-cases.html">Use Cases</a>
+                <a href="about.html">About</a>
+                <a href="blog.html">Blog</a>
+                <a href="tools.html">Tools</a>
+                <a href="pricing-index.html">Pricing Index</a>
+                <a href="api-docs.html" style="color:var(--accent);">API</a>
+                <a href="pricing.html" class="nav-cta" onclick="if(window.trackEvent)window.trackEvent('pro_button_clicked',{source:'nav'})">Get Pro — $29</a>
+                <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
+            </div>
+        </div>
+    </nav>
+
+    <main id="main">
+    <div class="content">
+        <div style="text-align:center;">
+            <span class="badge">June 2026 Rankings</span>
+        </div>
+        <h1>Cheapest LLM API 2026</h1>
+        <p class="subtitle">Every LLM API ranked by price. Find the cheapest model for coding, chat, classification, and high-volume workloads.</p>
+        <p class="updated-tag">Pricing verified <span class="verified-date"></span> &middot; Updated monthly &middot; 34 models from 10 providers</p>
+
+        <!-- Full Ranking Table -->
+        <section class="section">
+            <h2>Full Price Ranking: All 34 Models</h2>
+            <p>Sorted by combined input + output cost per 1M tokens. Cheapest first.</p>
+            <div style="overflow-x:auto;">
+            <table class="ranking-table" id="ranking-table">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Model</th>
+                        <th>Provider</th>
+                        <th>Tier</th>
+                        <th>Input/1M</th>
+                        <th>Output/1M</th>
+                        <th>Combined</th>
+                        <th>Context</th>
+                    </tr>
+                </thead>
+                <tbody id="ranking-body">
+                    <!-- Populated by JS -->
+                </tbody>
+            </table>
+            </div>
+        </section>
+
+        <!-- Cheapest by Use Case -->
+        <section class="section">
+            <h2>Cheapest Model by Use Case</h2>
+            <p>Different workloads have different needs. Here's the cheapest model that's actually good for each task.</p>
+
+            <div class="use-case-card">
+                <h3>Chat &amp; Conversational AI</h3>
+                <div class="pick">Pick: DeepSeek V4 Flash — $0.14/$0.28 per 1M tokens</div>
+                <p>Natural conversation quality at 1/100th the cost of GPT-5.5. 1M context window handles long conversations. Available via DeepSeek API or Together.ai.</p>
+            </div>
+
+            <div class="use-case-card">
+                <h3>Code Generation &amp; Debugging</h3>
+                <div class="pick">Pick: DeepSeek V4 Flash — $0.14/$0.28 per 1M tokens</div>
+                <p>Strong coding performance at budget prices. For higher quality code, step up to DeepSeek V4 Pro ($0.44/$0.87) or GPT-5 mini ($0.25/$2.00).</p>
+            </div>
+
+            <div class="use-case-card">
+                <h3>Classification &amp; Extraction</h3>
+                <div class="pick">Pick: Gemini 2.0 Flash Lite — $0.075/$0.30 per 1M tokens</div>
+                <p>The absolute cheapest option. Perfect for simple classification, entity extraction, and structured data tasks where quality requirements are moderate.</p>
+            </div>
+
+            <div class="use-case-card">
+                <h3>Summarization</h3>
+                <div class="pick">Pick: Gemini 2.0 Flash — $0.10/$0.40 per 1M tokens</div>
+                <p>Excellent summarization quality with 1M context window. Handles long documents, articles, and transcripts at rock-bottom prices.</p>
+            </div>
+
+            <div class="use-case-card">
+                <h3>High-Volume Batch Processing</h3>
+                <div class="pick">Pick: Llama 3.1 8B (Together.ai) — $0.10/$0.10 per 1M tokens</div>
+                <p>Symmetrical pricing means you pay the same for input and output. Ideal for batch jobs where you process large amounts of text. Open-source model, no vendor lock-in.</p>
+            </div>
+
+            <div class="use-case-card">
+                <h3>Reasoning &amp; Analysis</h3>
+                <div class="pick">Pick: GPT-5 mini — $0.25/$2.00 per 1M tokens</div>
+                <p>Budget model with surprisingly strong reasoning. For critical analysis, step up to Claude Sonnet 4.6 ($3/$15) or GPT-5 ($1.25/$10).</p>
+            </div>
+
+            <div class="use-case-card">
+                <h3>Long-Context (100K+ tokens)</h3>
+                <div class="pick">Pick: Gemini 2.0 Flash Lite — $0.075/$0.30 per 1M tokens</div>
+                <p>Cheapest model with a 1M context window. Perfect for processing long documents, codebases, or conversation histories without chunking.</p>
+            </div>
+        </section>
+
+        <!-- Cost Scenarios -->
+        <section class="section">
+            <h2>What Will It Actually Cost?</h2>
+            <p>Real-world monthly costs at different usage levels. All assume 2,000 input + 500 output tokens per request.</p>
+
+            <div class="cost-scenario">
+                <h3>Hobby: 100 requests/day</h3>
+                <div class="cost-grid">
+                    <div class="cost-item">
+                        <div class="model">Gemini Flash Lite</div>
+                        <div class="amount">$0.59</div>
+                        <div class="period">/month</div>
+                    </div>
+                    <div class="cost-item">
+                        <div class="model">DeepSeek V4 Flash</div>
+                        <div class="amount">$1.09</div>
+                        <div class="period">/month</div>
+                    </div>
+                    <div class="cost-item">
+                        <div class="model">GPT-4o mini</div>
+                        <div class="amount">$1.80</div>
+                        <div class="period">/month</div>
+                    </div>
+                    <div class="cost-item">
+                        <div class="model">Claude Sonnet 4.6</div>
+                        <div class="amount">$47.25</div>
+                        <div class="period">/month</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cost-scenario">
+                <h3>Startup: 1,000 requests/day</h3>
+                <div class="cost-grid">
+                    <div class="cost-item">
+                        <div class="model">Gemini Flash Lite</div>
+                        <div class="amount">$5.85</div>
+                        <div class="period">/month</div>
+                    </div>
+                    <div class="cost-item">
+                        <div class="model">DeepSeek V4 Flash</div>
+                        <div class="amount">$10.92</div>
+                        <div class="period">/month</div>
+                    </div>
+                    <div class="cost-item">
+                        <div class="model">GPT-5 mini</div>
+                        <div class="amount">$37.50</div>
+                        <div class="period">/month</div>
+                    </div>
+                    <div class="cost-item">
+                        <div class="model">Claude Sonnet 4.6</div>
+                        <div class="amount">$472.50</div>
+                        <div class="period">/month</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cost-scenario">
+                <h3>Scale: 10,000 requests/day</h3>
+                <div class="cost-grid">
+                    <div class="cost-item">
+                        <div class="model">Gemini Flash Lite</div>
+                        <div class="amount">$58.50</div>
+                        <div class="period">/month</div>
+                    </div>
+                    <div class="cost-item">
+                        <div class="model">DeepSeek V4 Flash</div>
+                        <div class="amount">$109.20</div>
+                        <div class="period">/month</div>
+                    </div>
+                    <div class="cost-item">
+                        <div class="model">GPT-5 mini</div>
+                        <div class="amount">$375.00</div>
+                        <div class="period">/month</div>
+                    </div>
+                    <div class="cost-item">
+                        <div class="model">Claude Sonnet 4.6</div>
+                        <div class="amount">$4,725</div>
+                        <div class="period">/month</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Batch & Streaming Savings -->
+        <section class="section">
+            <h2>Save Even More: Batch &amp; Streaming Modes</h2>
+            <p>Many providers offer discounts for batch processing or charge differently for streaming.</p>
+            <div class="use-case-card">
+                <h3>Batch Mode (50% off)</h3>
+                <p>OpenAI and Anthropic offer batch APIs at 50% off standard pricing. If your workload doesn't need real-time responses, batch mode cuts costs in half. Use our <a href="calculator.html" style="color:var(--accent);">calculator</a> to compare standard vs batch pricing.</p>
+            </div>
+            <div class="use-case-card">
+                <h3>Streaming (+15% output)</h3>
+                <p>Streaming responses cost ~15% more on output tokens due to overhead. If you don't need streaming, disable it to save. Our <a href="calculator.html" style="color:var(--accent);">calculator</a> shows both modes.</p>
+            </div>
+        </section>
+
+        <!-- Calculator CTA -->
+        <div class="calculator-cta">
+            <h2>Calculate Your Exact Cost</h2>
+            <p>Enter your token counts and request volume to see costs across all 34 models instantly.</p>
+            <a href="calculator.html" class="btn-primary" onclick="if(window.trackEvent)window.trackEvent('cta_clicked',{source:'cheapest-page',target:'calculator'})">Open Cost Calculator</a>
+            <a href="compare.html" class="btn-secondary" style="margin-left:12px;" onclick="if(window.trackEvent)window.trackEvent('cta_clicked',{source:'cheapest-page',target:'compare'})">Compare Models</a>
+        </div>
+
+        <!-- Email Capture -->
+        <div class="email-capture">
+            <h2>Get Monthly Price Updates</h2>
+            <p>Join 500+ developers tracking LLM pricing changes. One email per month when prices change.</p>
+            <form class="email-form" onsubmit="subscribeEmail(event)">
+                <input type="email" id="email-input" placeholder="you@company.com" required>
+                <button type="submit">Subscribe</button>
+            </form>
+            <p class="email-note">No spam. Unsubscribe anytime. We only email when prices change.</p>
+            <p id="subscribe-status" style="margin-top:8px;font-size:14px;display:none;"></p>
+        </div>
+
+        <!-- FAQ -->
+        <section class="faq-section">
+            <h2 style="font-size:24px;font-weight:700;margin-bottom:24px;">Frequently Asked Questions</h2>
+
+            <div class="faq-item">
+                <h3>What is the cheapest LLM API in 2026?</h3>
+                <p>Gemini 2.0 Flash Lite is the cheapest LLM API at $0.075/1M input tokens and $0.30/1M output tokens, with a 1M token context window. For open-source models, Llama 3.1 8B via Together.ai costs $0.10/$0.10 per 1M tokens.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>What is the cheapest LLM API for coding?</h3>
+                <p>DeepSeek V4 Flash at $0.14/$0.28 per 1M tokens offers the best balance of price and code quality. GPT-5 mini at $0.25/$2.00 is a strong alternative with better instruction following. Both support 1M+ context windows.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>How much cheaper are budget LLM APIs vs premium?</h3>
+                <p>Budget models (Gemini Flash, DeepSeek V4 Flash, Llama 4 Scout) cost 10-50x less than premium models (GPT-5.5, Claude Opus 4.8). A typical workload of 1000 requests/day with 2000 input + 500 output tokens costs $3-10/month on budget models vs $150-750/month on premium.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>Are cheap LLM APIs good enough for production?</h3>
+                <p>For many production workloads — classification, extraction, summarization, simple chat — budget models like Gemini Flash and DeepSeek V4 perform excellently. For complex reasoning, coding, or nuanced writing, mid-tier models (Claude Sonnet 4.6, GPT-5) offer better quality at moderate cost.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>Which provider has the cheapest LLM APIs overall?</h3>
+                <p>Google (Gemini Flash Lite at $0.075/$0.30) and DeepSeek (V4 Flash at $0.14/$0.28) are the cheapest providers. Meta's Llama models via Together.ai are also extremely competitive at $0.10/$0.10 for Llama 3.1 8B.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>Can I use batch mode to save even more?</h3>
+                <p>Yes. OpenAI and Anthropic offer batch APIs at 50% off standard pricing. If your workload doesn't need real-time responses, batch mode can cut your costs in half. Use our <a href="calculator.html" style="color:var(--accent);">calculator</a> to compare.</p>
+            </div>
+        </section>
+
+        <!-- Related -->
+        <div style="margin:48px 0;">
+            <h2 style="font-size:20px;font-weight:700;margin-bottom:16px;">Related from APIpulse</h2>
+            <div style="display:flex;gap:12px;flex-wrap:wrap;">
+                <a href="calculator.html" style="display:inline-block;padding:12px 20px;background:var(--bg-card);border:1px solid var(--border);border-radius:8px;text-decoration:none;color:var(--text-primary);font-weight:500;">Cost Calculator</a>
+                <a href="compare.html" style="display:inline-block;padding:12px 20px;background:var(--bg-card);border:1px solid var(--border);border-radius:8px;text-decoration:none;color:var(--text-primary);font-weight:500;">Compare Models</a>
+                <a href="claude-4-migration-cheatsheet.html" style="display:inline-block;padding:12px 20px;background:var(--bg-card);border:1px solid var(--border);border-radius:8px;text-decoration:none;color:var(--text-primary);font-weight:500;">Claude 4 Migration</a>
+                <a href="pricing-index.html" style="display:inline-block;padding:12px 20px;background:var(--bg-card);border:1px solid var(--border);border-radius:8px;text-decoration:none;color:var(--text-primary);font-weight:500;">Full Pricing Index</a>
+                <a href="api-docs.html" style="display:inline-block;padding:12px 20px;background:var(--bg-card);border:1px solid var(--border);border-radius:8px;text-decoration:none;color:var(--text-primary);font-weight:500;">Free Pricing API</a>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>Pricing data last verified: <span class="verified-date"></span></p>
+        <p>&copy; 2026 APIpulse. <a href="index.html">Home</a> &middot; <a href="use-cases.html">Use Cases</a> &middot; <a href="about.html">About</a> &middot; <a href="blog.html">Blog</a>
+<a href="pricing-index.html">Pricing Index</a> &middot; <a href="model-matrix.html">Model Matrix</a> &middot; <a href="cost-scenarios.html">Scenarios</a> &middot; <a href="price-alerts.html">Price Alerts</a> &middot; <a href="pricing-changelog.html">Changelog</a> &middot; <a href="chrome-extension.html">Chrome Extension</a> &middot; <a href="api-docs.html">API</a> &middot; <a href="https://x.com/getapipulse" target="_blank" rel="noopener">Twitter</a> &middot; <a href="unsubscribe.html">Unsubscribe</a></p>
+    </footer>
+    </main>
+
+    <script>
+        // Populate ranking table
+        document.addEventListener('DOMContentLoaded', function() {
+            if (typeof API_MODELS === 'undefined') return;
+
+            // Sort by combined input+output (excluding deprecated)
+            const active = API_MODELS.filter(m => !m.deprecated);
+            const sorted = [...active].sort((a, b) => (a.input + a.output) - (b.input + b.output));
+
+            const tbody = document.getElementById('ranking-body');
+            sorted.forEach((m, i) => {
+                const combined = m.input + m.output;
+                const tr = document.createElement('tr');
+                if (i < 5) tr.className = 'highlight-row';
+                tr.innerHTML = `
+                    <td class="rank">${i + 1}</td>
+                    <td class="model-name">${m.name}</td>
+                    <td class="provider">${m.provider}</td>
+                    <td><span class="tier-badge tier-${m.tier}">${m.tier}</span></td>
+                    <td class="price">$${m.input.toFixed(3)}</td>
+                    <td class="price">$${m.output.toFixed(2)}</td>
+                    <td class="price">$${combined.toFixed(3)}</td>
+                    <td>${m.context}</td>
+                `;
+                tbody.appendChild(tr);
+            });
+
+            // GA4 tracking
+            if (window.trackEvent) {
+                window.trackEvent('page_view', { page_title: 'Cheapest LLM API 2026' });
+            }
+        });
+
+        // Email subscription
+        async function subscribeEmail(e) {
+            e.preventDefault();
+            const email = document.getElementById('email-input').value;
+            const status = document.getElementById('subscribe-status');
+            try {
+                const res = await fetch('/api/subscribe', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ email, source: 'cheapest-llm-api-2026' })
+                });
+                const data = await res.json();
+                status.style.display = 'block';
+                if (res.ok) {
+                    status.style.color = 'var(--green)';
+                    status.textContent = 'Subscribed! Check your inbox for confirmation.';
+                    if (window.trackEvent) window.trackEvent('subscribe', { source: 'cheapest-llm-api-2026' });
+                } else {
+                    status.style.color = '#f472b6';
+                    status.textContent = data.error || 'Something went wrong. Try again.';
+                }
+            } catch (err) {
+                status.style.display = 'block';
+                status.style.color = '#f472b6';
+                status.textContent = 'Network error. Try again.';
+            }
+        }
+    </script>
+</body>
+</html>
