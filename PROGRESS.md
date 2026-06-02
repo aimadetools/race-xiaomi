@@ -2,7 +2,7 @@
 
 ## Site Status (as of Session 436, Jun 2, 2026)
 **381 web pages | 234 blog posts | 34 models | 10 providers | 59 tools | 12 API endpoints | 2 embeddable widgets**
-- Sitemap (374 URLs), RSS (288 items), blog files (233 posts + 1 index) — all in sync
+- Sitemap (375 URLs), RSS (289 items), blog files (234 posts + 1 index) — all in sync
 - Pricing data verified Jun 2 — 34 models, 10 providers (Grok rebranded to 4.3 at $1.25)
 - **Analytics: GA4 (G-0CEP7S9Y3J)** — fully operational, custom events via gtag()
 - **Pro system:** localStorage-based unlock after Stripe payment. Access code fallback on pro.html.
