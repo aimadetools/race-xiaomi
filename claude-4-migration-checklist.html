@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free Claude 4 Migration Checklist — Don't Break Your App on June 15 | APIpulse</title>
+    <meta name="description" content="Get the free Claude 4 Migration Checklist. Step-by-step guide to migrate from Claude 4 Opus and Sonnet 4 before June 15, 2026. Exact code changes, cost savings, and deadline tracker.">
+    <meta name="keywords" content="Claude 4 migration checklist, Claude 4 deprecated, Claude 4 migration guide, Claude 4 replacement, migrate from Claude 4, Claude 4 API shutdown checklist">
+    <meta property="og:title" content="Free Claude 4 Migration Checklist — Don't Break Your App on June 15">
+    <meta property="og:description" content="Step-by-step checklist to migrate from Claude 4 before the deadline. Get it free.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://getapipulse.com/og-image.png">
+    <meta property="og:url" content="https://getapipulse.com/claude-4-migration-checklist.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Free Claude 4 Migration Checklist">
+    <meta name="twitter:image" content="https://getapipulse.com/og-image.png">
+    <meta name="twitter:description" content="Step-by-step checklist to migrate from Claude 4 before June 15.">
+    <link rel="canonical" href="https://getapipulse.com/claude-4-migration-checklist.html">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="styles.css">
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0CEP7S9Y3J"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-0CEP7S9Y3J');
+    </script>
+    <script src="analytics.js" defer></script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "Claude 4 Migration Checklist",
+        "description": "Free step-by-step checklist for migrating from Claude 4 Opus and Sonnet 4 before the June 15, 2026 deprecation deadline.",
+        "url": "https://getapipulse.com/claude-4-migration-checklist.html",
+        "about": {
+            "@type": "SoftwareApplication",
+            "name": "Claude 4 API"
+        }
+    }
+    </script>
+    <style>
+        .lp-content { max-width: 720px; margin: 0 auto; padding: 120px 24px 80px; }
+        .lp-urgency {
+            background: linear-gradient(135deg, #dc2626, #b91c1c);
+            color: white; padding: 12px 24px; border-radius: 8px;
+            text-align: center; margin-bottom: 32px; font-size: 14px; font-weight: 600;
+        }
+        h1 { font-size: 38px; font-weight: 800; text-align: center; margin-bottom: 12px; line-height: 1.2; }
+        .lp-subtitle { text-align: center; color: var(--text-secondary); font-size: 17px; margin-bottom: 40px; line-height: 1.6; }
+
+        /* Preview */
+        .preview-section {
+            background: var(--bg-secondary); border: 1px solid var(--border);
+            border-radius: 16px; padding: 28px; margin-bottom: 32px;
+        }
+        .preview-section h2 { font-size: 20px; font-weight: 700; margin-bottom: 16px; }
+        .preview-list { list-style: none; padding: 0; }
+        .preview-list li {
+            padding: 10px 0; border-bottom: 1px solid var(--border);
+            display: flex; align-items: flex-start; gap: 12px; font-size: 15px;
+        }
+        .preview-list li:last-child { border-bottom: none; }
+        .preview-list li::before { content: "✓"; color: var(--green); font-weight: 700; flex-shrink: 0; }
+        .preview-list .section-header {
+            font-weight: 700; color: var(--accent); font-size: 13px;
+            text-transform: uppercase; letter-spacing: 0.5px; padding-top: 16px;
+        }
+        .preview-list .section-header::before { content: ""; }
+
+        /* Capture form */
+        .capture-section {
+            background: linear-gradient(135deg, rgba(99,102,241,0.1), rgba(139,92,246,0.1));
+            border: 2px solid var(--accent); border-radius: 16px;
+            padding: 32px; margin-bottom: 32px; text-align: center;
+        }
+        .capture-section h2 { font-size: 24px; font-weight: 800; margin-bottom: 8px; }
+        .capture-section p { color: var(--text-secondary); font-size: 15px; margin-bottom: 20px; }
+        .capture-form { display: flex; gap: 12px; max-width: 480px; margin: 0 auto; }
+        .capture-form input {
+            flex: 1; padding: 14px 18px; border-radius: 10px;
+            border: 1px solid var(--border); background: var(--bg-secondary);
+            color: var(--text-primary); font-size: 15px;
+        }
+        .capture-form input:focus { outline: none; border-color: var(--accent); }
+        .capture-form button {
+            padding: 14px 28px; background: var(--accent); color: white;
+            border: none; border-radius: 10px; font-size: 15px; font-weight: 700;
+            cursor: pointer; white-space: nowrap;
+        }
+        .capture-form button:hover { opacity: 0.9; }
+        .capture-form button:disabled { opacity: 0.5; cursor: not-allowed; }
+        .capture-msg { margin-top: 12px; font-size: 14px; display: none; }
+        .capture-msg.success { color: var(--green); display: block; }
+        .capture-msg.error { color: var(--red); display: block; }
+        .capture-note { font-size: 12px; color: var(--text-muted); margin-top: 12px; }
+
+        /* Social proof */
+        .social-proof {
+            background: var(--bg-secondary); border: 1px solid var(--border);
+            border-radius: 12px; padding: 24px; margin-bottom: 32px; text-align: center;
+        }
+        .social-proof p { font-size: 14px; color: var(--text-secondary); font-style: italic; }
+        .social-proof .author { font-size: 13px; color: var(--text-muted); margin-top: 8px; font-style: normal; }
+
+        /* Stats */
+        .stats-bar {
+            display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;
+            margin-bottom: 32px;
+        }
+        .stat-card {
+            background: var(--bg-secondary); border: 1px solid var(--border);
+            border-radius: 12px; padding: 20px; text-align: center;
+        }
+        .stat-card .num { font-size: 28px; font-weight: 800; color: var(--accent); }
+        .stat-card .label { font-size: 13px; color: var(--text-muted); margin-top: 4px; }
+
+        /* Alternatives preview */
+        .alternatives-section {
+            background: var(--bg-secondary); border: 1px solid var(--border);
+            border-radius: 16px; padding: 28px; margin-bottom: 32px;
+        }
+        .alternatives-section h2 { font-size: 20px; font-weight: 700; margin-bottom: 16px; }
+        .alt-table { width: 100%; border-collapse: collapse; font-size: 14px; }
+        .alt-table th { text-align: left; padding: 10px 12px; border-bottom: 2px solid var(--border); font-size: 12px; text-transform: uppercase; letter-spacing: 0.5px; color: var(--text-muted); }
+        .alt-table td { padding: 10px 12px; border-bottom: 1px solid var(--border); }
+        .alt-table .savings { color: var(--green); font-weight: 700; }
+
+        /* Bottom CTA */
+        .bottom-cta {
+            background: var(--bg-secondary); border: 1px solid var(--border);
+            border-radius: 16px; padding: 32px; text-align: center; margin-bottom: 32px;
+        }
+        .bottom-cta h2 { font-size: 22px; font-weight: 800; margin-bottom: 8px; }
+        .bottom-cta p { color: var(--text-secondary); font-size: 15px; margin-bottom: 20px; }
+
+        @media (max-width: 768px) {
+            .lp-content { padding: 100px 16px 60px; }
+            h1 { font-size: 28px; }
+            .lp-subtitle { font-size: 15px; }
+            .capture-form { flex-direction: column; }
+            .stats-bar { grid-template-columns: 1fr; }
+            .alt-table { font-size: 12px; }
+            .alt-table th, .alt-table td { padding: 8px; }
+        }
+    </style>
+    <meta name="theme-color" content="#dc2626">
+</head>
+<body>
+    <a href="#main" class="skip-link">Skip to content</a>
+    <nav>
+        <div class="nav-inner">
+            <a href="index.html" class="logo">API<span>pulse</span></a>
+            <button class="hamburger" onclick="toggleMobileNav()" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+            <div class="nav-links">
+                <a href="calculator.html">Calculator</a>
+                <a href="compare.html">Compare</a>
+                <a href="claude-4-deprecation.html" style="color:var(--red);">Claude 4 Deprecation</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="pro.html" class="nav-cta" onclick="if(window.trackEvent)window.trackEvent('pro_button_clicked',{source:'nav'})">Pro — $29</a>
+                <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
+            </div>
+        </div>
+    </nav>
+
+    <main id="main">
+    <div class="lp-content">
+
+        <div class="lp-urgency" id="urgency-banner">
+            Claude 4 Opus & Sonnet 4 retire June 15, 2026 — <span id="days-left">--</span> days left
+        </div>
+
+        <h1>Don't let Claude 4 break your app</h1>
+        <p class="lp-subtitle">Get the free migration checklist with exact code changes, cost comparisons, and a step-by-step plan to switch before June 15.</p>
+
+        <!-- CAPTURE FORM -->
+        <div class="capture-section" id="capture-top">
+            <h2>Get the Free Checklist</h2>
+            <p>Enter your email and we'll send you the complete migration checklist — including the exact code changes for Python, JavaScript, and curl.</p>
+            <form class="capture-form" onsubmit="submitEmail(event, 'top')">
+                <input type="email" id="email-top" placeholder="you@company.com" required aria-label="Email address">
+                <button type="submit" id="btn-top">Send Me the Checklist</button>
+            </form>
+            <div class="capture-msg" id="msg-top"></div>
+            <p class="capture-note">No spam. Unsubscribe anytime. We only email you about AI API pricing updates.</p>
+        </div>
+
+        <!-- PREVIEW -->
+        <div class="preview-section">
+            <h2>What's in the checklist:</h2>
+            <ul class="preview-list">
+                <li class="section-header">Before You Start</li>
+                <li>Identify all Claude 4 references in your codebase (grep commands included)</li>
+                <li>Choose your replacement model (decision guide for every use case)</li>
+                <li>Estimate your cost savings with each alternative</li>
+                <li class="section-header">The Migration</li>
+                <li>Exact code changes for Python (Anthropic SDK)</li>
+                <li>Exact code changes for JavaScript/Node.js</li>
+                <li>Exact code changes for curl/REST API</li>
+                <li>How to switch providers (if going to DeepSeek, OpenAI, or Google)</li>
+                <li class="section-header">After Migration</li>
+                <li>Testing checklist to verify your migration works</li>
+                <li>Cost monitoring setup to track actual vs. expected savings</li>
+                <li>Rollback plan if something goes wrong</li>
+            </ul>
+        </div>
+
+        <!-- STATS -->
+        <div class="stats-bar">
+            <div class="stat-card">
+                <div class="num">34</div>
+                <div class="label">Replacement Models Compared</div>
+            </div>
+            <div class="stat-card">
+                <div class="num" style="color:var(--green);">97%</div>
+                <div class="label">Max Cost Savings</div>
+            </div>
+            <div class="stat-card">
+                <div class="num">1</div>
+                <div class="label">Line of Code to Change</div>
+            </div>
+        </div>
+
+        <!-- ALTERNATIVES PREVIEW -->
+        <div class="alternatives-section">
+            <h2>Quick comparison (per 1M tokens):</h2>
+            <table class="alt-table">
+                <thead>
+                    <tr>
+                        <th>Model</th>
+                        <th>Input</th>
+                        <th>Output</th>
+                        <th>Savings</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr style="color:var(--red);">
+                        <td><strong>Claude 4 Opus (retiring)</strong></td>
+                        <td>$15.00</td>
+                        <td>$75.00</td>
+                        <td>—</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Claude Opus 4.8</strong></td>
+                        <td>$5.00</td>
+                        <td>$25.00</td>
+                        <td class="savings">-67%</td>
+                    </tr>
+                    <tr>
+                        <td><strong>GPT-5</strong></td>
+                        <td>$1.25</td>
+                        <td>$10.00</td>
+                        <td class="savings">-87%</td>
+                    </tr>
+                    <tr>
+                        <td><strong>DeepSeek V4 Pro</strong></td>
+                        <td>$0.435</td>
+                        <td>$0.87</td>
+                        <td class="savings">-97%</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p style="text-align:center;margin-top:16px;font-size:14px;"><a href="claude-4-migration-cheatsheet.html" style="color:var(--accent);font-weight:600;">See full comparison table with all 34 alternatives →</a></p>
+        </div>
+
+        <!-- SOCIAL PROOF -->
+        <div class="social-proof">
+            <p>"The model switch calculator answers that question directly. I switch between 3 providers depending on the task."</p>
+            <div class="author">— Hacker News user</div>
+        </div>
+
+        <!-- BOTTOM CTA -->
+        <div class="bottom-cta" id="capture-bottom">
+            <h2>Get the checklist before June 15</h2>
+            <p>It takes 2 minutes to read and could save you hours of debugging when Claude 4 stops working.</p>
+            <form class="capture-form" onsubmit="submitEmail(event, 'bottom')" style="max-width:480px;margin:0 auto;">
+                <input type="email" id="email-bottom" placeholder="you@company.com" required aria-label="Email address">
+                <button type="submit" id="btn-bottom">Send Me the Checklist</button>
+            </form>
+            <div class="capture-msg" id="msg-bottom"></div>
+        </div>
+
+        <!-- RELATED -->
+        <div style="text-align:center;padding:24px;background:var(--bg-secondary);border-radius:12px;border:1px solid var(--border);">
+            <p style="font-size:14px;color:var(--text-secondary);margin-bottom:12px;">More Claude 4 migration resources:</p>
+            <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:12px;">
+                <a href="claude-4-migration-cheatsheet.html" style="color:var(--green);font-weight:600;font-size:14px;">Migration Cheat Sheet</a>
+                <span style="color:var(--text-muted);">·</span>
+                <a href="claude-4-deprecation.html" style="color:var(--accent);font-weight:600;font-size:14px;">Full Deprecation Guide</a>
+                <span style="color:var(--text-muted);">·</span>
+                <a href="claude-4-migration-tool.html" style="color:var(--accent);font-weight:600;font-size:14px;">Migration Calculator</a>
+                <span style="color:var(--text-muted);">·</span>
+                <a href="calculator.html" style="color:var(--accent);font-weight:600;font-size:14px;">Cost Calculator</a>
+            </div>
+        </div>
+
+    </div>
+
+    <button class="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">↑</button>
+    </main>
+
+    <script>
+        // Countdown
+        (function() {
+            var deadline = new Date('2026-06-15T00:00:00Z');
+            var now = new Date();
+            var diff = deadline - now;
+            var days = diff > 0 ? Math.ceil(diff / 86400000) : 0;
+            var el = document.getElementById('days-left');
+            if (el) el.textContent = days;
+            if (days <= 7) {
+                var banner = document.getElementById('urgency-banner');
+                if (banner) banner.style.background = 'linear-gradient(135deg, #991b1b, #7f1d1d)';
+            }
+        })();
+
+        // Email submission
+        function submitEmail(e, position) {
+            e.preventDefault();
+            var emailInput = document.getElementById('email-' + position);
+            var btn = document.getElementById('btn-' + position);
+            var msg = document.getElementById('msg-' + position);
+            var email = emailInput.value.trim();
+
+            if (!email) return;
+
+            btn.disabled = true;
+            btn.textContent = 'Sending...';
+            msg.className = 'capture-msg';
+            msg.textContent = '';
+
+            fetch('/api/subscribe', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ email: email })
+            })
+            .then(function(r) { return r.json(); })
+            .then(function(data) {
+                if (data.message && data.message.includes('uccess')) {
+                    msg.className = 'capture-msg success';
+                    msg.textContent = 'Check your inbox! The migration checklist is on its way.';
+                    emailInput.value = '';
+                    btn.textContent = 'Sent!';
+                    if (window.trackEvent) window.trackEvent('checklist_signup', {
+                        position: position,
+                        email_domain: email.split('@')[1]
+                    });
+                } else if (data.alreadySubscribed) {
+                    msg.className = 'capture-msg success';
+                    msg.textContent = "You're already subscribed! Check your inbox for the checklist.";
+                    btn.textContent = 'Already subscribed';
+                } else {
+                    msg.className = 'capture-msg error';
+                    msg.textContent = 'Something went wrong. Please try again.';
+                    btn.disabled = false;
+                    btn.textContent = 'Send Me the Checklist';
+                }
+            })
+            .catch(function() {
+                msg.className = 'capture-msg error';
+                msg.textContent = 'Network error. Please try again.';
+                btn.disabled = false;
+                btn.textContent = 'Send Me the Checklist';
+            });
+        }
+
+        // Track page view
+        if (window.trackEvent) window.trackEvent('checklist_page_viewed', {
+            referrer: document.referrer || 'direct'
+        });
+    </script>
+
+    <footer>
+        <p>&copy; 2026 APIpulse. <a href="index.html">Home</a> &middot; <a href="claude-4-deprecation.html">Claude 4 Deprecation</a> &middot; <a href="calculator.html">Calculator</a> &middot; <a href="pricing.html">Pricing</a> &middot; <a href="blog.html">Blog</a></p>
+    </footer>
+</body>
+</html>
