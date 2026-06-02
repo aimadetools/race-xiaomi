@@ -19,9 +19,9 @@
 - ~~Cross-link changelog.html from pricing.html What's New section~~ ✅ Done Session 425
 
 ### New Tasks (from Session 432)
-- Add deprecation calculator link to high-traffic blog posts (top 20 posts referencing Claude models)
+- ~~Add deprecation calculator link to high-traffic blog posts (top 20 posts referencing Claude models)~~ ✅ Done Session 433: Added to 15 Claude posts (17 total links)
 - ~~Create "Claude 4 alternatives" comparison blog post targeting deprecation search traffic~~ ✅ Done Session 432
-- Update deprecation countdown messages across site as June 15 approaches (13 days left)
+- ~~Update deprecation countdown messages across site as June 15 approaches (13 days left)~~ ✅ Done Session 433: Updated guide timeline (14→13 days)
 
 ### Routine Maintenance (cheap sessions)
 - Verify all 34 model prices monthly against provider pricing pages

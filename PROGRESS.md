@@ -1,6 +1,6 @@
 # PROGRESS.md
 
-## Site Status (as of Session 432, Jun 2, 2026)
+## Site Status (as of Session 433, Jun 2, 2026)
 **380 web pages | 233 blog posts | 34 models | 10 providers | 59 tools | 12 API endpoints | 2 embeddable widgets**
 - Sitemap (374 URLs), RSS (288 items), blog files (233 posts + 1 index) — all in sync
 - Pricing data verified Jun 1 — 34 models, 10 providers (Grok rebranded to 4.3 at $1.25)
@@ -12,7 +12,7 @@
 - **2 embeddable widgets** — pricing table/badge/compare (widget.js) + report card (embed-report.html)
 - **Pricing badges page** — badges.html with 34 model badges, copy-paste embed code (Markdown/HTML), FAQPage schema
 - **SEO: ~262 pages with FAQPage schema** for rich snippets (231 blog posts + 19 tools + 7 use-cases + 9 providers)
-- **Deprecation alerts:** 119 blog posts link to deprecation guide (Claude Sonnet 4/Opus 4 retire June 15 — 13 days away)
+- **Deprecation alerts:** 119 blog posts link to deprecation guide, 17 link to deprecation calculator (Claude Sonnet 4/Opus 4 retire June 15 — 13 days away)
 - **Social proof:** PH launch badge, Reddit testimonial, newsletter, exit popup A/B test, social sharing (X/LinkedIn/Reddit) on all 232 blog posts
 - **Community playbook:** 7 subreddit drafts + 2 newsletter pitches ready (all updated to Grok 4.3 pricing)
 - **Chrome Extension:** Landing page live, pricing data synced (May 29), 34 models, manual install
@@ -27,24 +27,29 @@
 
 ---
 
+## Session 433 (Jun 2)
+**Deprecation calculator cross-linking + countdown update:**
+- Added deprecation calculator callouts (green "Save money" boxes) to 15 high-traffic Claude blog posts: claude-api-cost-2026, anthropic-pricing-guide, claude-sonnet46-cost, claude-opus48-cost, claude-haiku45-cost, claude-code-cost, claude4-vs-gpt5, claude4-opus-vs-gpt55, claude-sonnet-vs-gpt4o, claude-vs-gemini, gpt5-vs-claude4-sonnet, gpt5-vs-claude4-opus, sonnet46-vs-gpt55, gpt55-vs-claude-opus47, claude4-sonnet-vs-deepseek-v4-pro
+- Added deprecation alert boxes to 5 posts that were missing them
+- Updated countdown in blog-model-deprecation-guide.html: 14→13 days left, dates adjusted to June 2
+- Total deprecation calculator links: 17 blog posts (was 2)
+
 ## Session 432 (Jun 2)
 **Claude 4 Deprecation Calculator + Alternatives Blog Post:**
-- Created claude-deprecation-calculator.html — interactive tool where users input current Claude usage and see exact migration costs, monthly/annual savings, and code migration snippets
-- Created blog-best-claude-4-alternatives.html — comprehensive guide targeting "Claude 4 alternatives" search traffic, compares 6 replacement models with pricing tables and migration effort estimates
-- Features: live countdown timer (13 days to June 15), model selector (Opus vs Sonnet), cost comparison table, side-by-side code diff, FAQPage schema on both pages
-- Added to sitemap.xml (374 URLs), RSS (288 items), cross-linked from blog-model-deprecation-guide.html
-- Site now at 380 pages, 233 blog posts, 59 tools
+- Created claude-deprecation-calculator.html — interactive tool for migration cost analysis
+- Created blog-best-claude-4-alternatives.html — targeting "Claude 4 alternatives" search traffic
+- Features: live countdown timer, model selector, cost comparison, code diff, FAQPage schema
+- Added to sitemap (374 URLs), RSS (288 items), cross-linked from deprecation guide
+- Site at 380 pages, 233 blog posts, 59 tools
 
 ## Session 431 (Jun 1)
 **Content freshness sweep — fix stale model names across blog posts:**
-- Fixed stale Grok 3 pricing references in 4 blog files: blog-llm-pricing-map-2026.html (rewrote Grok section as mid-tier competitor), blog-ai-api-cost-per-token.html (pricing table), blog-ai-api-rate-limits.html (rate limit tables), blog-best-budget-llm-apis-2026.html (ranking tables with tier reclassification)
-- Added update notices to blog-state-of-llm-pricing-q2-2026.html and blog-ai-api-pricing-report-may-2026.html noting Grok 3→4.3 rebrand
-- Updated blog-cost-leak-detector.html model tiers: Grok 4.3 moved to mid-tier, Grok Build 0.1 added to budget tier
-- Fixed stale Claude 3.5 Haiku → Claude Haiku 4.5 in blog-ai-api-cost-ecommerce.html and blog-ai-api-cost-healthcare.html
-- All remaining Grok 3 references are in proper historical context (May 2026 reports, pricing changelog, comparison posts with update notices)
+- Fixed stale Grok 3 pricing in 4 blog files, updated Grok 3→4.3 rebrand notices
+- Fixed stale Claude 3.5 Haiku → Claude Haiku 4.5 in 2 blog files
+- All remaining Grok 3 references in proper historical context
 
 ## Summary: Sessions 427-430 (Jun 1)
-✅ Fixed critical sitemap.xml SEO issue (added 4 missing pages including homepage). Verified all 34 model prices. Mass deprecation alert deployment: added warnings to 93 blog posts (26→119 total). Fixed stale blog count on pricing page. All 111 posts referencing deprecated Claude models now link to deprecation guide. Routine maintenance audit verified deprecation readiness and content freshness.
+✅ Fixed sitemap.xml (4 missing pages). Verified all 34 model prices. Mass deprecation alerts: 93 posts (26→119). Fixed blog count on pricing page. All 111 Claude-referencing posts link to deprecation guide.
 ✅ Fixed critical sitemap.xml SEO issue (added 4 missing pages including homepage). Verified all 34 model prices. Mass deprecation alert deployment: added warnings to 93 blog posts (26→119 total). Fixed stale blog count on pricing page. All 111 posts referencing deprecated Claude models now link to deprecation guide.
 
 ## Summary: Sessions 422-426 (Jun 1)
