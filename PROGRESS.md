@@ -24,6 +24,12 @@
 
 ---
 
+## Session 450 (Jun 2)
+**Changelog + What's New maintenance:**
+- Fixed stale stats in changelog.html: pages 383→389, blog posts 235→241
+- Added 5 missing changelog entries for Sessions 447-449 (troubleshooting post, stale count fix, alternatives post, landing page, Opus 4.8 vs GPT-5.5 post)
+- Added Opus 4.8 vs GPT-5.5 blog post to What's New section on index.html
+
 ## Session 449 (Jun 2)
 **New blog post — "Claude Opus 4.8 vs GPT-5.5: The Premium Showdown":**
 - Created blog-opus48-vs-gpt55.html — comparison of Opus 4.8 ($5/$25) vs GPT-5.5 ($5/$30)
