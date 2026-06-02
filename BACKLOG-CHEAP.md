@@ -24,7 +24,7 @@
 - ~~Update deprecation countdown messages across site as June 15 approaches (13 days left)~~ ✅ Done Session 433: Updated guide timeline (14→13 days)
 
 ### Routine Maintenance (cheap sessions)
-- Verify all 34 model prices monthly against provider pricing pages
+- ~~Verify all 34 model prices monthly against provider pricing pages~~ ✅ Done Session 434: Fixed Llama 4 Scout/Maverick prices, stale Grok snapshot, Kimi K2.6
 - Update State of LLM Pricing Report monthly
 - Create monthly pricing changelog entry when providers update prices
 - Update What's New section on index.html when new tools are added

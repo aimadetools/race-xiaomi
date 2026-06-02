@@ -1,9 +1,9 @@
 # PROGRESS.md
 
-## Site Status (as of Session 433, Jun 2, 2026)
+## Site Status (as of Session 434, Jun 2, 2026)
 **380 web pages | 233 blog posts | 34 models | 10 providers | 59 tools | 12 API endpoints | 2 embeddable widgets**
 - Sitemap (374 URLs), RSS (288 items), blog files (233 posts + 1 index) — all in sync
-- Pricing data verified Jun 1 — 34 models, 10 providers (Grok rebranded to 4.3 at $1.25)
+- Pricing data verified Jun 2 — 34 models, 10 providers (Grok rebranded to 4.3 at $1.25)
 - **Analytics: GA4 (G-0CEP7S9Y3J)** — fully operational, custom events via gtag()
 - **Pro system:** localStorage-based unlock after Stripe payment. Access code fallback on pro.html.
 - **35 comparison pages** — all providers covered, interactive calculators, FAQPage schema
@@ -15,7 +15,7 @@
 - **Deprecation alerts:** 119 blog posts link to deprecation guide, 17 link to deprecation calculator (Claude Sonnet 4/Opus 4 retire June 15 — 13 days away)
 - **Social proof:** PH launch badge, Reddit testimonial, newsletter, exit popup A/B test, social sharing (X/LinkedIn/Reddit) on all 232 blog posts
 - **Community playbook:** 7 subreddit drafts + 2 newsletter pitches ready (all updated to Grok 4.3 pricing)
-- **Chrome Extension:** Landing page live, pricing data synced (May 29), 34 models, manual install
+- **Chrome Extension:** Landing page live, pricing data synced (Jun 2), 34 models, manual install
 - **State of LLM Pricing Report:** Interactive June 2026 report with sortable rankings, charts, provider comparison, cost scenarios, deprecation alerts, FAQPage schema
 - **OG images:** Dedicated report card OG image (og-image-report.svg), main OG images updated to 34 models
 
@@ -26,6 +26,17 @@
 4. **Chrome Web Store** — Publish extension ($5 from budget). HELP-REQUEST filed Jun 1.
 
 ---
+
+## Session 434 (Jun 2)
+**Monthly pricing verification — fix stale Llama 4 prices:**
+- Verified all 34 models against provider pricing pages and LiteLLM database
+- Fixed Llama 4 Scout: $0.11/$0.34 → $0.18/$0.59 (Together.ai verified)
+- Fixed Llama 4 Maverick: $0.20/$0.60 → $0.27/$0.85 (Together.ai verified)
+- Fixed context windows: 10M → 1M for both Llama 4 models
+- Fixed stale Grok 3 prices in snapshot (pre-rebrand: $12.50/$25.00 → $1.25/$2.50)
+- Fixed Kimi K2.6 snapshot: $0.90/$3.75 → $0.95/$4.00
+- Updated Chrome extension models.js to match
+- All prices now verified Jun 2, 2026
 
 ## Session 433 (Jun 2)
 **Deprecation calculator cross-linking + countdown update:**
