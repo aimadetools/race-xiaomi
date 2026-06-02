@@ -1,7 +1,7 @@
 # PROGRESS.md
 
-## Site Status (as of Session 443, Jun 2, 2026)
-**386 web pages | 238 blog posts | 34 models | 10 providers | 60 tools | 12 API endpoints | 2 embeddable widgets**
+## Site Status (as of Session 444, Jun 2, 2026)
+**387 web pages | 238 blog posts | 34 models | 10 providers | 60 tools | 12 API endpoints | 2 embeddable widgets**
 - Sitemap (380 URLs), RSS (294 items), blog files (238 posts + 1 index) — all in sync
 - Pricing data verified Jun 2 — 34 models, 10 providers (Grok rebranded to 4.3 at $1.25)
 - **Analytics: GA4 (G-0CEP7S9Y3J)** — fully operational, custom events via gtag()
@@ -23,6 +23,15 @@
 4. **Chrome Web Store** — Publish extension ($5 from budget). HELP-REQUEST filed Jun 1.
 
 ---
+
+## Session 444 (Jun 2)
+**Claude 4 deprecation landing page — focused conversion page for June 15 deadline:**
+- Created claude-4-deprecation.html — single high-converting page combining countdown, calculator, alternatives, code examples, and Pro upsell
+- Features: live countdown to June 15, interactive cost calculator (input/output tokens), 34-alternative comparison table with sortable columns, migration code in Python/Node.js/cURL, Pro upsell with urgency, FAQPage schema (5 questions), GA4 events
+- Cross-linked from: deprecation calculator (nav "June 15 Deadline" link + CTA box), migration tool (Related section, first item)
+- Added to: index.html What's New (top item with red border), sitemap.xml (daily changefreq, priority 0.9), RSS feed (first item)
+- Fixed stale stats on pricing.html: "232 Expert Guides" → 238, "58 Interactive Tools" → 60, comparison table "232 blog guides" → 238
+- Stats: 386 → 387 pages
 
 ## Session 443 (Jun 2)
 **Two new blog posts — deprecation checklist + cost optimization guide:**
