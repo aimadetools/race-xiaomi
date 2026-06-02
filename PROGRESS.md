@@ -1,8 +1,8 @@
 # PROGRESS.md
 
 ## Site Status (as of Session 432, Jun 2, 2026)
-**379 web pages | 232 blog posts | 34 models | 10 providers | 59 tools | 12 API endpoints | 2 embeddable widgets**
-- Sitemap (373 URLs), RSS (287 items), blog files (232 posts + 1 index) — all in sync
+**380 web pages | 233 blog posts | 34 models | 10 providers | 59 tools | 12 API endpoints | 2 embeddable widgets**
+- Sitemap (374 URLs), RSS (288 items), blog files (233 posts + 1 index) — all in sync
 - Pricing data verified Jun 1 — 34 models, 10 providers (Grok rebranded to 4.3 at $1.25)
 - **Analytics: GA4 (G-0CEP7S9Y3J)** — fully operational, custom events via gtag()
 - **Pro system:** localStorage-based unlock after Stripe payment. Access code fallback on pro.html.
@@ -28,11 +28,12 @@
 ---
 
 ## Session 432 (Jun 2)
-**Claude 4 Deprecation Calculator — new interactive tool:**
+**Claude 4 Deprecation Calculator + Alternatives Blog Post:**
 - Created claude-deprecation-calculator.html — interactive tool where users input current Claude usage and see exact migration costs, monthly/annual savings, and code migration snippets
-- Features: live countdown timer (13 days to June 15), model selector (Opus vs Sonnet), cost comparison table, side-by-side code diff, FAQPage schema
-- Added to sitemap.xml (373 URLs), cross-linked from blog-model-deprecation-guide.html (CTA button + inline link)
-- Targets high-intent "Claude 4 deprecated" search traffic, converts to full calculator
+- Created blog-best-claude-4-alternatives.html — comprehensive guide targeting "Claude 4 alternatives" search traffic, compares 6 replacement models with pricing tables and migration effort estimates
+- Features: live countdown timer (13 days to June 15), model selector (Opus vs Sonnet), cost comparison table, side-by-side code diff, FAQPage schema on both pages
+- Added to sitemap.xml (374 URLs), RSS (288 items), cross-linked from blog-model-deprecation-guide.html
+- Site now at 380 pages, 233 blog posts, 59 tools
 
 ## Session 431 (Jun 1)
 **Content freshness sweep — fix stale model names across blog posts:**
