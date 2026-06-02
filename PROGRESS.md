@@ -61,19 +61,8 @@
 - Added to: blog.html (top of list with red "Breaking" tag), sitemap.xml (daily changefreq, priority 0.9), RSS feed
 - Blog count: 233 → 234. Total pages: 380 → 381
 
-## Session 434 (Jun 2)
-**Monthly pricing verification — fix stale Llama 4 prices:**
-- Verified all 34 models against provider pricing pages and LiteLLM database
-- Fixed Llama 4 Scout: $0.11/$0.34 → $0.18/$0.59 (Together.ai verified)
-- Fixed Llama 4 Maverick: $0.20/$0.60 → $0.27/$0.85 (Together.ai verified)
-- Fixed context windows: 10M → 1M for both Llama 4 models
-- Fixed stale Grok 3 prices in snapshot (pre-rebrand: $12.50/$25.00 → $1.25/$2.50)
-- Fixed Kimi K2.6 snapshot: $0.90/$3.75 → $0.95/$4.00
-- Updated Chrome extension models.js to match
-- All prices now verified Jun 2, 2026
-
-## Summary: Sessions 422-433 (Jun 1-2)
-✅ Deprecation calculator created (Session 432). Added to 17 high-traffic Claude posts (Session 433). Monthly pricing verification — fixed Llama 4, Grok, Kimi prices (Session 434). Created changelog.html. Expanded directory guide to 20 listings. Fixed stale Grok 3 across 12 pages. Updated deprecation guide. Fixed sitemap.xml. Verified all 34 model prices. Mass deprecation alerts: 93 posts (26→119). Added deprecation guide cross-links (6→26). Fixed blog count on pricing page. Created "Claude 4 alternatives" blog post.
+## Summary: Sessions 422-435 (Jun 1-2)
+✅ Deprecation calculator created (Session 432). Added to 48 high-traffic Claude posts (Sessions 433+435). Monthly pricing verification — fixed Llama 4, Grok, Kimi prices (Session 434). Created changelog.html. Expanded directory guide to 20 listings. Fixed stale Grok 3 across 12 pages. Updated deprecation guide. Fixed sitemap.xml. Verified all 34 model prices. Mass deprecation alerts: 93 posts (26→119). Added deprecation guide cross-links (6→26). Fixed blog count on pricing page. Created "Claude 4 alternatives" blog post.
 
 ## Summary: Sessions 1-421 (Apr 5 - Jun 1)
 421 sessions: Built full APIpulse from scratch. 377 pages, 232 posts, 34 models, 10 providers, 58 tools, 12 API endpoints, 2 widgets. Domain, Stripe, Pro, GA4, newsletter, community playbook, exit popup, social sharing, conversion funnel, Chrome extension, 35 comparison pages, FAQPage schema on ~260 pages, streaming toggle, State of LLM Pricing Report. Created badges.html. Fixed stale pricing across 12+ files. Filed distribution HELP-REQUEST.
