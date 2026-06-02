@@ -1,8 +1,8 @@
 # PROGRESS.md
 
-## Site Status (as of Session 446, Jun 2, 2026)
-**387 web pages | 239 blog posts | 34 models | 10 providers | 60 tools | 12 API endpoints | 2 embeddable widgets**
-- Sitemap (382 URLs), RSS (296 items), blog files (239 posts + 1 index) — all in sync
+## Site Status (as of Session 447, Jun 2, 2026)
+**388 web pages | 240 blog posts | 34 models | 10 providers | 60 tools | 12 API endpoints | 2 embeddable widgets**
+- Sitemap (383 URLs), RSS (297 items), blog files (240 posts + 1 index) — all in sync
 - Pricing data verified Jun 2 — 34 models, 10 providers (Grok rebranded to 4.3 at $1.25)
 - **Analytics: GA4 (G-0CEP7S9Y3J)** — fully operational, custom events via gtag()
 - **Pro system:** localStorage-based unlock after Stripe payment. Access code fallback on pro.html.
@@ -23,6 +23,15 @@
 4. **Chrome Web Store** — Publish extension ($5 from budget). HELP-REQUEST filed Jun 1.
 
 ---
+
+## Session 447 (Jun 2)
+**New blog post — "Claude 4 Stopped Working? Here's Exactly What to Do":**
+- Created blog-claude-4-stopped-working.html — practical troubleshooting guide targeting "claude 4 stopped working" / "claude 4 api broken" searches
+- Features: error identification (3 error types with JSON examples), quick fix table, code examples (Python/Node.js/cURL), cost savings comparison, 5-step fix checklist, FAQPage schema (6 questions), social sharing
+- Cross-linked from: deprecation page footer + related card, api-errors post, deprecation-checklist post, deprecation-faq post
+- Added to: blog.html (with CTA card), sitemap.xml (priority 0.9), rss.xml
+- Updated stale blog counts on 7 pages (238→239): index.html, blog.html, pricing.html (2x), launch.html, community.html (2x), prompt-cost-calculator.html
+- Stats: 387→388 pages, 239→240 blog posts, 382→383 sitemap URLs, 296→297 RSS items
 
 ## Session 446 (Jun 2)
 **Stale stats cleanup + massive deprecation CTA expansion:**
