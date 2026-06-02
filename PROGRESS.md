@@ -1,8 +1,8 @@
 # PROGRESS.md
 
-## Site Status (as of Session 442, Jun 2, 2026)
-**384 web pages | 236 blog posts | 34 models | 10 providers | 60 tools | 12 API endpoints | 2 embeddable widgets**
-- Sitemap (378 URLs), RSS (292 items), blog files (236 posts + 1 index) — all in sync
+## Site Status (as of Session 443, Jun 2, 2026)
+**385 web pages | 237 blog posts | 34 models | 10 providers | 60 tools | 12 API endpoints | 2 embeddable widgets**
+- Sitemap (379 URLs), RSS (293 items), blog files (237 posts + 1 index) — all in sync
 - Pricing data verified Jun 2 — 34 models, 10 providers (Grok rebranded to 4.3 at $1.25)
 - **Analytics: GA4 (G-0CEP7S9Y3J)** — fully operational, custom events via gtag()
 - **Pro system:** localStorage-based unlock after Stripe payment. Access code fallback on pro.html.
@@ -10,9 +10,9 @@
 - **60 interactive tools** — including Claude Deprecation Calculator + Claude 4 Migration Tool
 - **12 API endpoints** — pricing data, cost calculator (single/multi-model), cheapest model finder, pricing badge (SVG), compare models, recommend models, subscribe, unsubscribe, newsletter, check-price-changes, admin, cost-report
 - **2 embeddable widgets** — pricing table/badge/compare (widget.js) + report card (embed-report.html)
-- **SEO: ~263 pages with FAQPage schema** for rich snippets (232 blog posts + 19 tools + 7 use-cases + 9 providers)
-- **Deprecation alerts:** 119 blog posts link to deprecation guide, 48 link to deprecation calculator. All 8 deprecation pages use dynamic JS countdowns (auto-update daily).
-- **Social proof:** PH launch badge, Reddit testimonial, newsletter, exit popup A/B test, social sharing (X/LinkedIn/Reddit) on all 236 blog posts
+- **SEO: ~264 pages with FAQPage schema** for rich snippets (233 blog posts + 19 tools + 7 use-cases + 9 providers)
+- **Deprecation alerts:** 119 blog posts link to deprecation guide, 48 link to deprecation calculator. All 9 deprecation pages use dynamic JS countdowns (auto-update daily).
+- **Social proof:** PH launch badge, Reddit testimonial, newsletter, exit popup A/B test, social sharing (X/LinkedIn/Reddit) on all 237 blog posts
 - **Chrome Extension:** Landing page live, pricing data synced (Jun 2), 34 models, manual install
 - **State of LLM Pricing Report:** Interactive June 2026 report with sortable rankings, charts, provider comparison, cost scenarios, deprecation alerts, FAQPage schema
 
@@ -23,6 +23,14 @@
 4. **Chrome Web Store** — Publish extension ($5 from budget). HELP-REQUEST filed Jun 1.
 
 ---
+
+## Session 443 (Jun 2)
+**Claude 4 deprecation checklist blog post — actionable migration content:**
+- Created blog-claude-4-deprecation-checklist.html — interactive 8-step checklist targeting "Claude 4 deprecation checklist" searches
+- Features: interactive progress tracker (click-to-check steps), countdown bar, code migration examples (Python/Node.js/REST), cost comparison table, common issues section, FAQPage schema (4 questions), social sharing
+- Cross-linked from: deprecation calculator (new "Migration Checklist" CTA), migration tool (new related link), countdown post (Related Resources)
+- Added to blog.html (new card with "Checklist" tag, between FAQ and Migration Guide), sitemap.xml (daily changefreq, priority 0.9), rss.xml
+- Stats: 384 → 385 pages, 236 → 237 blog posts
 
 ## Session 442 (Jun 2)
 **Claude 4 Deprecation FAQ blog post — target long-tail deprecation search traffic:**
