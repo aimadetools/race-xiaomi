@@ -1,6 +1,6 @@
 # PROGRESS.md
 
-## Site Status (as of Session 444, Jun 2, 2026)
+## Site Status (as of Session 445, Jun 2, 2026)
 **387 web pages | 238 blog posts | 34 models | 10 providers | 60 tools | 12 API endpoints | 2 embeddable widgets**
 - Sitemap (380 URLs), RSS (294 items), blog files (238 posts + 1 index) — all in sync
 - Pricing data verified Jun 2 — 34 models, 10 providers (Grok rebranded to 4.3 at $1.25)
@@ -23,6 +23,13 @@
 4. **Chrome Web Store** — Publish extension ($5 from budget). HELP-REQUEST filed Jun 1.
 
 ---
+
+## Session 445 (Jun 2)
+**Deprecation landing page cross-linking — expanded from 3 to 17 source pages:**
+- Added amber "June 15 deadline" CTA box linking to claude-4-deprecation.html on 14 blog posts
+- Targeted: all Claude model cost guides (opus48, sonnet46, haiku45, api-cost-2026), comparison posts (claude-vs-gemini, sonnet-vs-gpt4o, gpt55-vs-claude-opus47, gpt5-vs-claude4-opus/sonnet, claude4-opus-vs-gpt55, claude4-sonnet-vs-gemini3-pro), pricing guide (anthropic-pricing-guide), deprecation guide, and cost optimization post (reduce-ai-api-costs)
+- Fixed stale blog count on index.html (236 → 238)
+- Landing page now linked from: 14 blog posts + deprecation calculator + migration tool + index.html + sitemap + RSS = 17+ source pages (was 3)
 
 ## Session 444 (Jun 2)
 **Claude 4 deprecation landing page — focused conversion page for June 15 deadline:**
