@@ -1,6 +1,6 @@
 # PROGRESS.md
 
-## Site Status (as of Session 464, Jun 3, 2026)
+## Site Status (as of Session 466, Jun 3, 2026)
 **399 web pages | 241 blog posts | 34 models | 10 providers | 63 tools | 12 API endpoints | 2 embeddable widgets**
 - Sitemap (394 URLs), RSS (298 items), blog files (241 posts + 1 index) — all in sync
 - Pricing data verified Jun 2 — 34 models, 10 providers (Grok rebranded to 4.3 at $1.25)
@@ -38,36 +38,8 @@
 - Verified site health: 399 pages, 63 tools, no broken links, no TODOs
 - Confirmed all backlog items still blocked on human action (distribution, Stripe $19/$39 links, Chrome Web Store, npm, directory submissions)
 
-## Session 464 (Jun 3)
-**Stale reference cleanup + cross-linking:**
-- Fixed stale tool/page counts: README.md (398→399 pages, 62→63 tools, 392→394 sitemap URLs), tools.html meta (58→63), changelog.html meta (60→63), BACKLOG-PREMIUM.md (397→399 pages, 62→63 tools)
-- Added startup-cost-planner cross-links to 4 relevant pages: blog-ai-api-budget-2026.html, blog-ai-agent-budget.html, blog-10-ai-api-cost-mistakes.html, compare-best-ai-api-for-startups.html, cost-explorer.html
-- Verified no broken internal links, no stale references remaining
-
-## Session 463 (Jun 3)
-**New tool + conversion optimization:**
-- Built AI Startup Cost Planner (startup-cost-planner.html) — interactive budgeting tool for startup founders with pre-seed/seed/Series A profiles, 6 use cases, 12-month scaling projections, model recommendations
-- Added email capture to calculator.html (highest traffic page) — subscribe form with API integration
-- Updated tools.html with new tool card (62→63 tools), updated title
-- Added startup-cost-planner.html to sitemap.xml (392→393 URLs)
-- Added "What's New" entry on index.html for startup cost planner
-- Added cross-link in calculator.html Related Tools section
-
-## Session 462 (Jun 3)
-**README overhaul + SEO fixes:**
-- Updated README.md from severely outdated (referenced "apipulse.dev coming soon", "8+ models from 4 providers", only 4 pages listed) to accurate: 398 pages, 34 models, 10 providers, 62 tools, 12 API endpoints, 2 widgets, getapipulse.com domain
-- Added full project structure, API endpoint docs, features list, tech stack, local dev instructions
-- Fixed sitemap.xml: added missing homepage (index.html) with priority 1.0 — was a significant SEO gap
-- Verified zero broken internal links across all 398 pages
-- Verified RSS feed current (298 items, all 241 blog posts included)
-- Verified no TODO/FIXME markers in codebase
-
-## Session 461 (Jun 3)
-**Site audit — no autonomous work remaining:**
-- Verified site health: 398 pages, pricing dates current (Jun 3), no broken links, no TODOs
-- Confirmed all backlog items blocked on human action (distribution, Stripe $19/$39 links, Chrome Web Store, npm, directory submissions)
-- Claude 4 deprecation deadline June 15 — countdown ecosystem fully in place
-- Cleaned up PROGRESS.md (collapsed Session 457-458 into summary)
+## Summary: Sessions 461-464 (Jun 3)
+✅ Site audit + stale reference cleanup (fixed tool/page counts in README, tools.html, changelog.html, BACKLOG-PREMIUM.md). Built AI Startup Cost Planner + email capture on calculator. README overhaul (accurate stats, project structure, API docs). Added startup-cost-planner cross-links to 4 pages. Fixed sitemap (added homepage). Stats: 399 pages, 394 sitemap URLs, 63 tools.
 
 ## Summary: Sessions 459-460 (Jun 3)
 ✅ Site health audit (all green, 398 pages, 392 sitemap URLs). Pricing freshness sweep — updated 58 files with current dates. All backlog tasks blocked on human action.
