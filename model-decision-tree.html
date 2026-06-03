@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Model Decision Tree — Find the Best LLM for Your Use Case | APIpulse</title>
+    <meta name="description" content="Answer 4 quick questions and find the perfect AI model for your project. Compare GPT-5, Claude, Gemini, DeepSeek, and 30+ models by use case, budget, and requirements.">
+    <meta name="keywords" content="which AI model to use, best LLM for coding, cheapest AI API, GPT vs Claude vs Gemini, AI model selector, LLM decision tree">
+    <meta property="og:title" content="AI Model Decision Tree — Find the Best LLM for Your Use Case">
+    <meta property="og:description" content="Answer 4 quick questions. Get a personalized AI model recommendation with cost estimates.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://getapipulse.com/og-image.png">
+    <meta property="og:url" content="https://getapipulse.com/model-decision-tree.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="AI Model Decision Tree — Find the Best LLM">
+    <meta name="twitter:image" content="https://getapipulse.com/og-image.png">
+    <meta name="twitter:description" content="Answer 4 quick questions. Get a personalized AI model recommendation.">
+    <link rel="canonical" href="https://getapipulse.com/model-decision-tree.html">
+    <link rel="alternate" type="application/rss+xml" title="APIpulse Blog" href="https://getapipulse.com/rss.xml">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="styles.css">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0CEP7S9Y3J"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-0CEP7S9Y3J');
+    </script>
+    <script src="analytics.js" defer></script>
+    <script src="dynamic-date.js" defer></script>
+    <script src="shared.js" defer></script>
+    <script src="pricing-data.js" defer></script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "AI Model Decision Tree",
+        "url": "https://getapipulse.com/model-decision-tree.html",
+        "description": "Answer 4 quick questions and find the perfect AI model for your project.",
+        "applicationCategory": "DeveloperApplication",
+        "operatingSystem": "Web",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "How do I choose the right AI model?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Consider your use case (chat, code, analysis), budget, quality requirements, and latency needs. The Decision Tree above matches you to the best model based on these factors."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What is the cheapest AI model for chatbots?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Gemini 2.0 Flash ($0.10/$0.40 per 1M tokens) and DeepSeek V4 Flash ($0.14/$0.28) are the cheapest for chat. For better quality at a low price, GPT-5 mini ($0.25/$2.00) and Mistral Small ($0.15/$0.60) are excellent choices."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Which AI model is best for code generation?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "GPT-5.3 Codex ($1.75/$14.00) is purpose-built for code. Claude Sonnet 4.6 ($3/$15) and DeepSeek V4 Pro ($0.44/$0.87) are also excellent for coding at different price points."
+                }
+            }
+        ]
+    }
+    </script>
+    <style>
+        .page-content { max-width: 800px; margin: 0 auto; padding: 120px 24px 80px; }
+        h1 { font-size: clamp(28px, 4vw, 40px); font-weight: 800; text-align: center; margin-bottom: 12px; }
+        .subtitle { text-align: center; color: var(--text-secondary); font-size: 18px; margin-bottom: 48px; line-height: 1.6; }
+
+        /* Progress */
+        .progress-bar { display: flex; gap: 6px; margin-bottom: 40px; }
+        .progress-segment { flex: 1; height: 4px; border-radius: 2px; background: var(--border); transition: background 0.3s; }
+        .progress-segment.active { background: var(--accent); }
+        .progress-segment.done { background: var(--green); }
+
+        /* Question card */
+        .question-card {
+            background: var(--bg-secondary); border: 1px solid var(--border);
+            border-radius: 16px; padding: 40px; margin-bottom: 32px;
+            animation: fadeIn 0.3s ease;
+        }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+        .question-num { font-size: 13px; font-weight: 700; color: var(--accent); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; }
+        .question-text { font-size: 22px; font-weight: 700; margin-bottom: 24px; line-height: 1.4; }
+
+        .option-grid { display: grid; gap: 12px; }
+        .option-btn {
+            display: flex; align-items: center; gap: 16px;
+            padding: 16px 20px; background: var(--bg-card); border: 1px solid var(--border);
+            border-radius: 12px; cursor: pointer; transition: all 0.2s; text-align: left;
+            color: var(--text-primary); font-size: 15px;
+        }
+        .option-btn:hover { border-color: var(--accent); background: rgba(99,102,241,0.05); }
+        .option-btn.selected { border-color: var(--accent); background: rgba(99,102,241,0.1); }
+        .option-icon { font-size: 24px; flex-shrink: 0; width: 40px; text-align: center; }
+        .option-content { flex: 1; }
+        .option-title { font-weight: 600; margin-bottom: 2px; }
+        .option-desc { font-size: 13px; color: var(--text-muted); }
+
+        /* Results */
+        .results { display: none; animation: fadeIn 0.4s ease; }
+        .results.visible { display: block; }
+
+        .result-hero {
+            text-align: center; padding: 40px; margin-bottom: 32px;
+            background: linear-gradient(135deg, rgba(34,197,94,0.08), rgba(99,102,241,0.06));
+            border: 1px solid rgba(34,197,94,0.2); border-radius: 16px;
+        }
+        .result-hero .label { font-size: 14px; color: var(--text-secondary); margin-bottom: 8px; }
+        .result-hero .model-name { font-size: 32px; font-weight: 800; color: var(--accent); margin-bottom: 4px; }
+        .result-hero .provider { font-size: 16px; color: var(--text-secondary); margin-bottom: 16px; }
+        .result-hero .price-tag {
+            display: inline-block; padding: 8px 20px; background: var(--bg-card);
+            border: 1px solid var(--border); border-radius: 8px; font-size: 18px; font-weight: 700;
+        }
+
+        .result-card {
+            background: var(--bg-secondary); border: 1px solid var(--border);
+            border-radius: 12px; padding: 24px; margin-bottom: 16px;
+        }
+        .result-card h3 { font-size: 18px; font-weight: 700; margin-bottom: 12px; }
+        .result-card p { color: var(--text-secondary); font-size: 14px; line-height: 1.6; }
+
+        .alt-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 16px; }
+        .alt-card {
+            background: var(--bg-card); border: 1px solid var(--border);
+            border-radius: 10px; padding: 16px;
+        }
+        .alt-card .alt-name { font-weight: 700; font-size: 14px; margin-bottom: 4px; }
+        .alt-card .alt-price { font-size: 13px; color: var(--text-secondary); }
+        .alt-card .alt-reason { font-size: 12px; color: var(--text-muted); margin-top: 6px; }
+
+        .cost-estimate {
+            background: var(--bg-card); border: 1px solid var(--border);
+            border-radius: 12px; padding: 20px; margin-bottom: 16px;
+        }
+        .cost-row { display: flex; justify-content: space-between; padding: 8px 0; font-size: 14px; }
+        .cost-row:not(:last-child) { border-bottom: 1px solid var(--border); }
+        .cost-label { color: var(--text-secondary); }
+        .cost-value { font-weight: 700; }
+
+        .restart-btn {
+            display: block; width: 100%; padding: 14px; background: var(--bg-card);
+            border: 1px solid var(--border); border-radius: 10px; color: var(--text-primary);
+            font-size: 15px; font-weight: 600; cursor: pointer; transition: all 0.2s;
+            margin-top: 24px;
+        }
+        .restart-btn:hover { border-color: var(--accent); color: var(--accent); }
+
+        @media (max-width: 768px) {
+            .page-content { padding: 100px 20px 60px; }
+            h1 { font-size: 28px; }
+            .subtitle { font-size: 16px; }
+            .question-card { padding: 24px; }
+            .question-text { font-size: 18px; }
+            .alt-grid { grid-template-columns: 1fr; }
+            .result-hero .model-name { font-size: 24px; }
+        }
+    </style>
+    <meta name="theme-color" content="#6366f1">
+</head>
+<body>
+    <a href="#main" class="skip-link">Skip to content</a>
+    <nav>
+        <div class="nav-inner">
+            <a href="index.html" class="logo">API<span>pulse</span></a>
+            <button class="hamburger" onclick="toggleMobileNav()" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+            <div class="nav-links">
+                <a href="calculator.html">Calculator</a>
+                <a href="compare.html">Compare</a>
+                <a href="cost-optimizer.html">Optimizer</a>
+                <a href="model-switch.html">Switch</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="blog.html">Blog</a>
+                <a href="pricing.html" class="nav-cta" onclick="if(window.trackEvent)window.trackEvent('pro_button_clicked',{source:'nav'})">Get Pro — $29</a>
+                <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
+            </div>
+        </div>
+    </nav>
+
+    <main id="main" class="page-content">
+        <h1>Which AI Model Should You Use?</h1>
+        <p class="subtitle">Answer 4 quick questions. Get a personalized recommendation with cost estimates.</p>
+
+        <div class="progress-bar">
+            <div class="progress-segment active" id="prog-1"></div>
+            <div class="progress-segment" id="prog-2"></div>
+            <div class="progress-segment" id="prog-3"></div>
+            <div class="progress-segment" id="prog-4"></div>
+        </div>
+
+        <!-- QUESTION 1: Use Case -->
+        <div class="question-card" id="q1">
+            <div class="question-num">Question 1 of 4</div>
+            <div class="question-text">What's your primary use case?</div>
+            <div class="option-grid">
+                <button class="option-btn" onclick="answer(1,'chat')">
+                    <div class="option-icon">💬</div>
+                    <div class="option-content">
+                        <div class="option-title">Chatbot / Conversational AI</div>
+                        <div class="option-desc">Customer support, virtual assistants, Q&A</div>
+                    </div>
+                </button>
+                <button class="option-btn" onclick="answer(1,'code')">
+                    <div class="option-icon">💻</div>
+                    <div class="option-content">
+                        <div class="option-title">Code Generation</div>
+                        <div class="option-desc">Code completion, review, refactoring, debugging</div>
+                    </div>
+                </button>
+                <button class="option-btn" onclick="answer(1,'content')">
+                    <div class="option-icon">✍️</div>
+                    <div class="option-content">
+                        <div class="option-title">Content Writing</div>
+                        <div class="option-desc">Blog posts, marketing copy, documentation</div>
+                    </div>
+                </button>
+                <button class="option-btn" onclick="answer(1,'analysis')">
+                    <div class="option-icon">📊</div>
+                    <div class="option-content">
+                        <div class="option-title">Data Analysis / RAG</div>
+                        <div class="option-desc">Document analysis, summarization, extraction</div>
+                    </div>
+                </button>
+                <button class="option-btn" onclick="answer(1,'classification')">
+                    <div class="option-icon">🏷️</div>
+                    <div class="option-content">
+                        <div class="option-title">Classification / Extraction</div>
+                        <div class="option-desc">Sentiment analysis, entity extraction, routing</div>
+                    </div>
+                </button>
+            </div>
+        </div>
+
+        <!-- QUESTION 2: Budget -->
+        <div class="question-card" id="q2" style="display:none;">
+            <div class="question-num">Question 2 of 4</div>
+            <div class="question-text">What's your monthly API budget?</div>
+            <div class="option-grid">
+                <button class="option-btn" onclick="answer(2,'tight')">
+                    <div class="option-icon">💰</div>
+                    <div class="option-content">
+                        <div class="option-title">Under $50/month</div>
+                        <div class="option-desc">Bootstrapping, side project, MVP</div>
+                    </div>
+                </button>
+                <button class="option-btn" onclick="answer(2,'moderate')">
+                    <div class="option-icon">💵</div>
+                    <div class="option-content">
+                        <div class="option-title">$50 – $200/month</div>
+                        <div class="option-desc">Growing product, moderate traffic</div>
+                    </div>
+                </button>
+                <button class="option-btn" onclick="answer(2,'comfortable')">
+                    <div class="option-icon">💳</div>
+                    <div class="option-content">
+                        <div class="option-title">$200 – $500/month</div>
+                        <div class="option-desc">Established product, steady usage</div>
+                    </div>
+                </button>
+                <button class="option-btn" onclick="answer(2,'unlimited')">
+                    <div class="option-icon">🏦</div>
+                    <div class="option-content">
+                        <div class="option-title">$500+/month</div>
+                        <div class="option-desc">Scale-up, enterprise, high volume</div>
+                    </div>
+                </button>
+            </div>
+        </div>
+
+        <!-- QUESTION 3: Priority -->
+        <div class="question-card" id="q3" style="display:none;">
+            <div class="question-num">Question 3 of 4</div>
+            <div class="question-text">What matters most to you?</div>
+            <div class="option-grid">
+                <button class="option-btn" onclick="answer(3,'quality')">
+                    <div class="option-icon">⭐</div>
+                    <div class="option-content">
+                        <div class="option-title">Output Quality</div>
+                        <div class="option-desc">Best possible results, no matter the cost</div>
+                    </div>
+                </button>
+                <button class="option-btn" onclick="answer(3,'cost')">
+                    <div class="option-icon">💸</div>
+                    <div class="option-content">
+                        <div class="option-title">Lowest Cost</div>
+                        <div class="option-desc">Minimize spend, good enough is fine</div>
+                    </div>
+                </button>
+                <button class="option-btn" onclick="answer(3,'speed')">
+                    <div class="option-icon">⚡</div>
+                    <div class="option-content">
+                        <div class="option-title">Speed / Latency</div>
+                        <div class="option-desc">Fast responses, real-time interactions</div>
+                    </div>
+                </button>
+                <button class="option-btn" onclick="answer(3,'context')">
+                    <div class="option-icon">📚</div>
+                    <div class="option-content">
+                        <div class="option-title">Long Context</div>
+                        <div class="option-desc">Process large documents, long conversations</div>
+                    </div>
+                </button>
+            </div>
+        </div>
+
+        <!-- QUESTION 4: Volume -->
+        <div class="question-card" id="q4" style="display:none;">
+            <div class="question-num">Question 4 of 4</div>
+            <div class="question-text">How many requests per day do you expect?</div>
+            <div class="option-grid">
+                <button class="option-btn" onclick="answer(4,'low')">
+                    <div class="option-icon">🌱</div>
+                    <div class="option-content">
+                        <div class="option-title">Under 100/day</div>
+                        <div class="option-desc">Prototype, internal tool, low traffic</div>
+                    </div>
+                </button>
+                <button class="option-btn" onclick="answer(4,'medium')">
+                    <div class="option-icon">📈</div>
+                    <div class="option-content">
+                        <div class="option-title">100 – 1,000/day</div>
+                        <div class="option-desc">Moderate usage, growing product</div>
+                    </div>
+                </button>
+                <button class="option-btn" onclick="answer(4,'high')">
+                    <div class="option-icon">🚀</div>
+                    <div class="option-content">
+                        <div class="option-title">1,000 – 10,000/day</div>
+                        <div class="option-desc">Production app, real users</div>
+                    </div>
+                </button>
+                <button class="option-btn" onclick="answer(4,'massive')">
+                    <div class="option-icon">🏢</div>
+                    <div class="option-content">
+                        <div class="option-title">10,000+/day</div>
+                        <div class="option-desc">High-scale, batch processing, enterprise</div>
+                    </div>
+                </button>
+            </div>
+        </div>
+
+        <!-- RESULTS -->
+        <div class="results" id="results">
+            <div class="result-hero">
+                <div class="label">Your Recommended Model</div>
+                <div class="model-name" id="rec-model">—</div>
+                <div class="provider" id="rec-provider">—</div>
+                <div class="price-tag" id="rec-price">—</div>
+            </div>
+
+            <div class="result-card">
+                <h3>Why This Model?</h3>
+                <p id="rec-reason">—</p>
+            </div>
+
+            <div class="result-card">
+                <h3>Estimated Monthly Cost</h3>
+                <div class="cost-estimate" id="cost-estimate"></div>
+            </div>
+
+            <div class="result-card">
+                <h3>Also Consider</h3>
+                <div class="alt-grid" id="alt-grid"></div>
+            </div>
+
+            <div class="result-card">
+                <h3>Next Steps</h3>
+                <p>Use the <a href="calculator.html" style="color:var(--accent);">Cost Calculator</a> to fine-tune your estimate, or try the <a href="cost-optimizer.html" style="color:var(--accent);">Cost Optimizer</a> to find savings on your current setup.</p>
+            </div>
+
+            <button class="restart-btn" onclick="restart()">Start Over</button>
+        </div>
+
+        <!-- EMAIL CAPTURE -->
+        <div style="margin-top:40px;background:var(--bg-secondary);border:1px solid var(--border);border-radius:16px;padding:32px;text-align:center;">
+            <h2 style="font-size:20px;font-weight:700;margin-bottom:8px;">Get the AI Model Selection Cheat Sheet</h2>
+            <p style="font-size:14px;color:var(--text-secondary);margin-bottom:20px;">Quick-reference guide with pricing, benchmarks, and best-use cases for all 34 models. Free, no spam.</p>
+            <form onsubmit="saveEmail(event)" style="display:flex;gap:8px;max-width:400px;margin:0 auto;">
+                <input type="email" id="email-input" placeholder="you@company.com" required aria-label="Email address"
+                    style="flex:1;padding:12px 16px;background:var(--bg-card);border:1px solid var(--border);
+                    border-radius:8px;color:var(--text-primary);font-size:14px;">
+                <button type="submit" class="btn-primary" style="padding:12px 24px;white-space:nowrap;">Get Cheat Sheet</button>
+            </form>
+            <p id="email-msg" style="font-size:13px;color:var(--green);margin-top:12px;display:none;"></p>
+        </div>
+    </main>
+
+    <button class="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">↑</button>
+
+    <script>
+    (function() {
+        var answers = {};
+        var models = {};
+
+        function init() {
+            if (typeof API_MODELS === 'undefined') { setTimeout(init, 100); return; }
+            API_MODELS.forEach(function(m) { models[m.id] = m; });
+        }
+
+        window.answer = function(q, val) {
+            answers[q] = val;
+
+            // Mark selected
+            var card = document.getElementById('q' + q);
+            card.querySelectorAll('.option-btn').forEach(function(btn) { btn.classList.remove('selected'); });
+            event.currentTarget.classList.add('selected');
+
+            // Update progress
+            document.getElementById('prog-' + q).classList.remove('active');
+            document.getElementById('prog-' + q).classList.add('done');
+
+            // Show next question or results
+            setTimeout(function() {
+                card.style.display = 'none';
+                if (q < 4) {
+                    document.getElementById('q' + (q + 1)).style.display = 'block';
+                    document.getElementById('prog-' + (q + 1)).classList.add('active');
+                    document.getElementById('q' + (q + 1)).scrollIntoView({ behavior: 'smooth', block: 'start' });
+                } else {
+                    showResults();
+                }
+            }, 200);
+
+            if (window.trackEvent) window.trackEvent('decision_tree_answer', { question: q, answer: val });
+        };
+
+        function showResults() {
+            var rec = getRecommendation();
+            document.getElementById('rec-model').textContent = rec.model.name;
+            document.getElementById('rec-provider').textContent = rec.model.provider;
+            document.getElementById('rec-price').textContent = '$' + rec.model.input + ' input / $' + rec.model.output + ' output per 1M tokens';
+            document.getElementById('rec-reason').textContent = rec.reason;
+
+            // Cost estimate (assume 2K input, 500 output per request)
+            var inputTokens = 2000;
+            var outputTokens = 500;
+            var requestsPerDay = { low: 50, medium: 500, high: 5000, massive: 50000 }[answers[4] || 'medium'];
+            var days = 30;
+            var monthlyInput = (inputTokens * requestsPerDay * days / 1000000) * rec.model.input;
+            var monthlyOutput = (outputTokens * requestsPerDay * days / 1000000) * rec.model.output;
+            var monthlyTotal = monthlyInput + monthlyOutput;
+
+            document.getElementById('cost-estimate').innerHTML =
+                '<div class="cost-row"><span class="cost-label">Input tokens/request</span><span class="cost-value">2,000</span></div>' +
+                '<div class="cost-row"><span class="cost-label">Output tokens/request</span><span class="cost-value">500</span></div>' +
+                '<div class="cost-row"><span class="cost-label">Requests/day</span><span class="cost-value">' + requestsPerDay.toLocaleString() + '</span></div>' +
+                '<div class="cost-row"><span class="cost-label">Monthly input cost</span><span class="cost-value">$' + monthlyInput.toFixed(2) + '</span></div>' +
+                '<div class="cost-row"><span class="cost-label">Monthly output cost</span><span class="cost-value">$' + monthlyOutput.toFixed(2) + '</span></div>' +
+                '<div class="cost-row" style="font-weight:700;"><span class="cost-label">Estimated monthly total</span><span class="cost-value" style="color:var(--accent);">$' + monthlyTotal.toFixed(2) + '</span></div>';
+
+            // Alternatives
+            var alts = rec.alternatives || [];
+            var altHtml = '';
+            alts.forEach(function(a) {
+                altHtml += '<div class="alt-card">' +
+                    '<div class="alt-name">' + a.name + '</div>' +
+                    '<div class="alt-price">$' + a.input + ' / $' + a.output + ' per 1M</div>' +
+                    '<div class="alt-reason">' + a.reason + '</div>' +
+                    '</div>';
+            });
+            document.getElementById('alt-grid').innerHTML = altHtml;
+
+            document.getElementById('results').classList.add('visible');
+            document.getElementById('results').scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+            if (window.trackEvent) window.trackEvent('decision_tree_result', {
+                model: rec.model.name,
+                use_case: answers[1],
+                budget: answers[2],
+                priority: answers[3],
+                volume: answers[4]
+            });
+        }
+
+        function getRecommendation() {
+            var useCase = answers[1] || 'chat';
+            var budget = answers[2] || 'moderate';
+            var priority = answers[3] || 'quality';
+            var volume = answers[4] || 'medium';
+
+            // Decision matrix
+            var recs = {
+                'chat-tight': { id: 'google-flash', reason: 'Gemini Flash is the cheapest chat model at $0.10/$0.40 per 1M tokens — perfect for budget-conscious chatbots.', alternatives: [
+                    { id: 'deepseek-v4-flash', reason: 'Even cheaper output tokens' },
+                    { id: 'mistral-small', reason: 'Good quality at low cost' }
+                ]},
+                'chat-moderate': { id: 'openai-gpt5-mini', reason: 'GPT-5 mini offers excellent chat quality at $0.25/$2.00 — the sweet spot for most chatbot deployments.', alternatives: [
+                    { id: 'anthropic-haiku', reason: 'Better at nuanced conversations' },
+                    { id: 'google-flash', reason: 'Cheapest option if quality is sufficient' }
+                ]},
+                'chat-comfortable': { id: 'anthropic-sonnet46', reason: 'Claude Sonnet 4.6 excels at natural conversation with 1M context window — ideal for production chatbots.', alternatives: [
+                    { id: 'openai-gpt5', reason: 'Strong alternative with broader ecosystem' },
+                    { id: 'google-gemini3-pro', reason: 'Great balance of quality and cost' }
+                ]},
+                'chat-unlimited': { id: 'anthropic-opus48', reason: 'Claude Opus 4.8 delivers the best conversational quality with 1M context — worth it for premium experiences.', alternatives: [
+                    { id: 'openai-gpt55', reason: 'OpenAI flagship, strong at complex dialogue' },
+                    { id: 'anthropic-sonnet46', reason: '80% cheaper if Opus quality isn\'t needed' }
+                ]},
+
+                'code-tight': { id: 'deepseek-v4-pro', reason: 'DeepSeek V4 Pro at $0.44/$0.87 is the cheapest model with strong coding ability — 91% cheaper than GPT-5.', alternatives: [
+                    { id: 'openai-gpt-oss-120b', reason: 'Open source, self-hostable' },
+                    { id: 'mistral-small', reason: 'Good general coding at low cost' }
+                ]},
+                'code-moderate': { id: 'openai-gpt53-codex', reason: 'GPT-5.3 Codex is purpose-built for code generation at $1.75/$14.00 — optimized for the coding workflow.', alternatives: [
+                    { id: 'deepseek-v4-pro', reason: 'Much cheaper, nearly as good' },
+                    { id: 'anthropic-sonnet46', reason: 'Excellent at code review and refactoring' }
+                ]},
+                'code-comfortable': { id: 'anthropic-sonnet46', reason: 'Claude Sonnet 4.6 is exceptional at code — strong at debugging, refactoring, and complex logic with 1M context.', alternatives: [
+                    { id: 'openai-gpt5', reason: 'Great for code completion and generation' },
+                    { id: 'openai-gpt53-codex', reason: 'Purpose-built for code tasks' }
+                ]},
+                'code-unlimited': { id: 'openai-gpt55', reason: 'GPT-5.5 at $5/$30 is the most capable model for complex code architecture, large refactors, and system design.', alternatives: [
+                    { id: 'anthropic-opus48', reason: 'Best at understanding complex codebases' },
+                    { id: 'openai-gpt55-pro', reason: 'Ultimate capability for $30/$180' }
+                ]},
+
+                'content-tight': { id: 'google-flash', reason: 'Gemini Flash handles content generation well at $0.10/$0.40 — great for high-volume content production.', alternatives: [
+                    { id: 'mistral-small', reason: 'Good writing quality at low cost' },
+                    { id: 'openai-gpt-oss-120b', reason: 'Open source option for self-hosting' }
+                ]},
+                'content-moderate': { id: 'openai-gpt5-mini', reason: 'GPT-5 mini produces high-quality content at $0.25/$2.00 — excellent for blog posts and marketing copy.', alternatives: [
+                    { id: 'anthropic-haiku', reason: 'More natural writing style' },
+                    { id: 'google-pro', reason: 'Strong at structured content' }
+                ]},
+                'content-comfortable': { id: 'anthropic-sonnet46', reason: 'Claude Sonnet 4.6 writes the most natural, engaging content with excellent tone control.', alternatives: [
+                    { id: 'openai-gpt5', reason: 'Great for technical content' },
+                    { id: 'google-gemini3-pro', reason: 'Strong at long-form content' }
+                ]},
+                'content-unlimited': { id: 'anthropic-opus48', reason: 'Claude Opus 4.8 produces the highest quality prose — ideal for brand content, thought leadership, and editorial.', alternatives: [
+                    { id: 'openai-gpt55', reason: 'Excellent for data-driven content' },
+                    { id: 'anthropic-sonnet46', reason: '90% as good at 60% less cost' }
+                ]},
+
+                'analysis-tight': { id: 'deepseek-v4-pro', reason: 'DeepSeek V4 Pro at $0.44/$0.87 handles document analysis well with 1M context — unbeatable value.', alternatives: [
+                    { id: 'google-flash', reason: 'Fast analysis at lowest cost' },
+                    { id: 'mistral-large', reason: 'Good structured output' }
+                ]},
+                'analysis-moderate': { id: 'google-gemini3-pro', reason: 'Gemini 3.1 Pro has 1M context and strong analytical ability at $2/$12 — great for RAG pipelines.', alternatives: [
+                    { id: 'anthropic-sonnet46', reason: 'Better at nuanced analysis' },
+                    { id: 'openai-gpt5', reason: 'Strong reasoning capabilities' }
+                ]},
+                'analysis-comfortable': { id: 'anthropic-sonnet46', reason: 'Claude Sonnet 4.6 excels at complex document analysis, summarization, and extraction with 1M context.', alternatives: [
+                    { id: 'openai-gpt5', reason: 'Strong at structured data extraction' },
+                    { id: 'google-gemini3-pro', reason: 'Cheaper with same context window' }
+                ]},
+                'analysis-unlimited': { id: 'anthropic-opus48', reason: 'Claude Opus 4.8 provides the deepest analytical insight with 1M context — ideal for complex research and enterprise analysis.', alternatives: [
+                    { id: 'openai-gpt55', reason: 'Best at multi-step reasoning' },
+                    { id: 'anthropic-sonnet46', reason: 'Great quality at lower cost' }
+                ]},
+
+                'classification-tight': { id: 'google-flash-lite', reason: 'Gemini Flash Lite at $0.075/$0.30 is the cheapest model — perfect for simple classification tasks.', alternatives: [
+                    { id: 'openai-gpt-oss-20b', reason: 'Smallest open source model' },
+                    { id: 'mistral-small', reason: 'Better quality at still-low cost' }
+                ]},
+                'classification-moderate': { id: 'mistral-small', reason: 'Mistral Small at $0.15/$0.60 handles classification well — fast, cheap, and accurate.', alternatives: [
+                    { id: 'openai-gpt4o-mini', reason: 'Widely used for classification' },
+                    { id: 'google-flash', reason: 'Fast and cheap for simple tasks' }
+                ]},
+                'classification-comfortable': { id: 'openai-gpt4o-mini', reason: 'GPT-4o mini is the industry standard for classification — reliable, fast, and well-tested.', alternatives: [
+                    { id: 'anthropic-haiku', reason: 'Better at nuanced classification' },
+                    { id: 'mistral-small', reason: 'Cheaper alternative' }
+                ]},
+                'classification-unlimited': { id: 'openai-gpt5', reason: 'GPT-5 provides the most accurate classification for complex, multi-label tasks.', alternatives: [
+                    { id: 'anthropic-sonnet46', reason: 'Excellent at understanding context' },
+                    { id: 'openai-gpt4o', reason: 'Proven reliability for production' }
+                ]}
+            };
+
+            var key = useCase + '-' + budget;
+            var rec = recs[key];
+
+            // Fallback to moderate if exact match not found
+            if (!rec) rec = recs[useCase + '-moderate'] || recs['chat-moderate'];
+
+            // Override for quality priority
+            if (priority === 'quality' && budget !== 'tight') {
+                var qualMap = {
+                    'chat': { moderate: 'anthropic-sonnet46', comfortable: 'anthropic-opus48', unlimited: 'anthropic-opus48' },
+                    'code': { moderate: 'anthropic-sonnet46', comfortable: 'openai-gpt5', unlimited: 'openai-gpt55' },
+                    'content': { moderate: 'anthropic-sonnet46', comfortable: 'anthropic-opus48', unlimited: 'anthropic-opus48' },
+                    'analysis': { moderate: 'anthropic-sonnet46', comfortable: 'anthropic-opus48', unlimited: 'anthropic-opus48' },
+                    'classification': { moderate: 'openai-gpt5', comfortable: 'openai-gpt5', unlimited: 'openai-gpt5' }
+                };
+                if (qualMap[useCase] && qualMap[useCase][budget]) {
+                    rec = { id: qualMap[useCase][budget], reason: 'Prioritizing quality, this model delivers the best results for your use case.', alternatives: rec.alternatives };
+                }
+            }
+
+            // Override for cost priority
+            if (priority === 'cost') {
+                var costMap = {
+                    'chat': 'google-flash',
+                    'code': 'deepseek-v4-pro',
+                    'content': 'google-flash',
+                    'analysis': 'deepseek-v4-pro',
+                    'classification': 'google-flash-lite'
+                };
+                rec = { id: costMap[useCase] || 'google-flash', reason: 'Optimized for lowest cost. This model delivers the best price-to-performance ratio.', alternatives: rec.alternatives };
+            }
+
+            // Override for speed priority
+            if (priority === 'speed') {
+                var speedMap = {
+                    'chat': 'google-flash',
+                    'code': 'deepseek-v4-flash',
+                    'content': 'google-flash',
+                    'analysis': 'google-flash',
+                    'classification': 'google-flash-lite'
+                };
+                rec = { id: speedMap[useCase] || 'google-flash', reason: 'Optimized for speed. This model has the lowest latency for real-time applications.', alternatives: rec.alternatives };
+            }
+
+            // Override for context priority
+            if (priority === 'context') {
+                var ctxMap = {
+                    'chat': 'anthropic-sonnet46',
+                    'code': 'anthropic-sonnet46',
+                    'content': 'anthropic-sonnet46',
+                    'analysis': 'anthropic-sonnet46',
+                    'classification': 'anthropic-sonnet46'
+                };
+                rec = { id: ctxMap[useCase] || 'anthropic-sonnet46', reason: 'Best for long context. 1M token window handles large documents and long conversations.', alternatives: rec.alternatives };
+            }
+
+            // Build result
+            var model = models[rec.id];
+            var alts = (rec.alternatives || []).map(function(a) {
+                var m = models[a.id];
+                return { name: m.name, input: m.input, output: m.output, reason: a.reason };
+            });
+
+            return { model: model, reason: rec.reason, alternatives: alts };
+        }
+
+        window.restart = function() {
+            answers = {};
+            document.querySelectorAll('.question-card').forEach(function(c, i) {
+                c.style.display = i === 0 ? 'block' : 'none';
+                c.querySelectorAll('.option-btn').forEach(function(b) { b.classList.remove('selected'); });
+            });
+            document.getElementById('results').classList.remove('visible');
+            document.querySelectorAll('.progress-segment').forEach(function(s, i) {
+                s.classList.remove('done', 'active');
+                if (i === 0) s.classList.add('active');
+            });
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        };
+
+        document.addEventListener('DOMContentLoaded', init);
+    })();
+    </script>
+</body>
+</html>
