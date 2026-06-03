@@ -33,7 +33,11 @@
 ✅ A/B test on decision tree headline — 50/50 split between "Which AI Model Should You Use?" vs "Find the Cheapest AI Model for Your Use Case". GA4 tracking for assignments, completions, and email signups.
 
 ### Completed (Session 457, Jun 3)
-✅ Built ai-stack-cost-optimizer.html — multi-feature model routing tool. Add features, get cheapest model per feature, see total cost + savings vs GPT-5. 5 presets, FAQPage schema, email capture. Cross-linked from calculator + index What's New. Stats: 396 pages, 62 tools, sitemap 390 URLs.
+✅ Built ai-stack-cost-optimizer.html — multi-feature model routing tool with 5 presets, FAQPage schema, email capture
+✅ Built llm-pricing-trends-2026.html — visual timeline of 2026 pricing changes, bar charts, price comparison table, Article + FAQPage schema
+✅ Updated pricing-changelog.html — added Claude 4 deprecation alert (June 15)
+✅ Added optimizer to pricing.html free features, cross-linked from calculator + index + changelog
+✅ Stats: 397 pages, 62 tools, sitemap 391 URLs
 
 ### Completed (Sessions 451-454, Jun 2)
 ✅ Built cheapest-llm-api-2026.html + gpt5-vs-claude-pricing-2026.html lead magnets
