@@ -1,8 +1,8 @@
 # PROGRESS.md
 
-## Site Status (as of Session 457, Jun 3, 2026)
+## Site Status (as of Session 458, Jun 3, 2026)
 **397 web pages | 241 blog posts | 34 models | 10 providers | 62 tools | 12 API endpoints | 2 embeddable widgets**
-- Sitemap (391 URLs), RSS (298 items), blog files (241 posts + 1 index) — all in sync
+- Sitemap (390 URLs), RSS (298 items), blog files (241 posts + 1 index) — all in sync
 - Pricing data verified Jun 2 — 34 models, 10 providers (Grok rebranded to 4.3 at $1.25)
 - **Analytics: GA4 (G-0CEP7S9Y3J)** — fully operational, custom events via gtag()
 - **Pro system:** localStorage-based unlock after Stripe payment. Access code fallback on pro.html.
@@ -24,6 +24,15 @@
 4. **Chrome Web Store** — Publish extension ($5 from budget). HELP-REQUEST filed Jun 1.
 
 ---
+
+## Session 458 (Jun 3)
+**Site health audit — all systems green:**
+- Full audit: no broken internal links, sitemap complete (390 URLs), pricing data current
+- Claude 4 Opus/Sonnet deprecation confirmed for June 15 (12 days away) — pricing data already marks them deprecated
+- All 397 pages functional, no stale content, no missing JS references
+- cost.html is a redirect (noindex) — correctly excluded from sitemap
+- Pro plan $29 pricing consistent across site (Stripe link active)
+- Conclusion: site is production-ready, all bottlenecks are distribution (blocked on human)
 
 ## Session 457 (Jun 3)
 **AI Stack Cost Optimizer + LLM Pricing Trends page:**
@@ -71,54 +80,14 @@
 - Stats: 394→395 pages, sitemap 388→389 URLs
 
 ## Session 454 (Jun 2)
-**Deprecation ecosystem cross-links to lead magnets:**
-- Added links to cheapest-llm-api-2026.html and gpt5-vs-claude-pricing-2026.html from claude-4-migration-cheatsheet.html related section
-- Added 3 lead magnet cards (cheapest, gpt5-vs-claude, cheatsheet) to claude-4-deprecation.html related tools grid
-- Added 2 lead magnet links (cheapest, gpt5-vs-claude) to claude-4-migration-tool.html related section
-- Added 3 lead magnet links (cheatsheet, cheapest, gpt5-vs-claude) to claude-deprecation-calculator.html CTA box
-- Added 3 lead magnet links to blog-best-claude-4-alternatives.html related reading
-- Added 3 lead magnet links to blog-claude-4-migration-guide.html related reading
-- Added 2 lead magnet links to blog-claude-4-deprecated-countdown.html CTA box
-- Added 2 lead magnet links to blog-claude-4-stopped-working.html CTA box
-- Added cheapest link to blog-claude-4-deprecation-checklist.html and blog-claude-4-deprecation-faq.html CTA boxes
-- Total: 8 deprecation ecosystem pages now cross-link to lead magnets (was 0)
-- Page count: 393→394 (inline-calculator-snippet.html counted), sitemap: 386→388 URLs
+**Deprecation ecosystem cross-links + lead magnets:**
+- Built cheapest-llm-api-2026.html (34-model price ranking, 7 use-case picks, FAQPage schema, email capture)
+- Built gpt5-vs-claude-pricing-2026.html (14-model head-to-head, tier winners, cost scenarios, FAQPage schema)
+- Cross-linked lead magnets from 8 deprecation ecosystem pages
+- Added 20+ cross-links across comparison pages, blog posts, chrome-extension, api-docs
+- Stats: 394 pages, 388 sitemap URLs
 
-## Session 453 (Jun 2)
-**GPT-5 vs Claude Pricing 2026 lead magnet + cross-links:**
-- Built gpt5-vs-claude-pricing-2026.html — head-to-head pricing comparison of all 14 GPT-5 and Claude models
-  - Quick verdict box: OpenAI 40-60% cheaper at budget/mid tiers, Claude Opus 4.8 edges out GPT-5.5 at premium
-  - Full side-by-side table: all 14 models sorted by tier with color-coded winner cells
-  - Tier-by-tier winners: Budget (GPT-5 mini 75% cheaper), Mid (GPT-5 58% cheaper), Premium (Claude Opus 4.8 17% cheaper output)
-  - Real-world cost scenarios at 3 usage levels (100/1K/10K req/day)
-  - Best choice by use case: coding, chat, reasoning, long-context, batch, classification
-  - Batch mode savings table: 50% off on both providers
-  - FAQPage schema with 6 questions for rich snippets
-  - Email capture using existing subscribe.js + Resend infrastructure
-  - GA4 tracking for page views, CTAs, and signups
-  - Related links to calculator, 3-way compare, cheapest page, migration cheat sheet, API docs
-- Added to sitemap.xml (386 URLs)
-- Added What's New entry to index.html with "NEW" badge
-- Cross-linked from: pricing.html footer, cheapest-llm-api-2026.html related links, compare-gpt5-vs-claude-vs-gemini.html related tools, blog-claude-opus-vs-gpt5.html, blog-opus48-vs-gpt55.html, blog-gpt5-vs-claude4-sonnet.html
-- Stats: 392→393 pages, sitemap 385→386 URLs
-
-## Session 452 (Jun 2)
-**Cheapest LLM API 2026 lead magnet + cross-links:**
-- Built cheapest-llm-api-2026.html — full ranking of all 34 models by price
-  - Complete price ranking table (cheapest-first, all active models)
-  - Cheapest picks by 7 use cases (chat, coding, classification, summarization, batch, reasoning, long-context)
-  - Real-world cost scenarios at 3 usage levels (100/1K/10K req/day)
-  - Batch mode (50% off) and streaming (+15%) savings section
-  - FAQPage schema with 6 questions for rich snippets
-  - Email capture using existing subscribe.js + Resend infrastructure
-  - GA4 tracking for page views, CTAs, and signups
-  - Related links to calculator, compare, migration cheat sheet, pricing index, API docs
-- Added to sitemap.xml (385 URLs) and index.html What's New section
-- Cross-linked from pricing.html footer
-- Also: Added cheat sheet + checklist links to chrome-extension.html and api-docs.html
-- Stats: 391→392 pages, sitemap 384→385 URLs
-
-## Summary: Sessions 435-451 (Jun 1-2)
+## Summary: Sessions 435-450 (Jun 1)
 ✅ Built Claude 4 deprecation landing page + calculator + migration tool + migration cheat sheet + email lead magnet. Created 6 blog posts. Dynamic countdowns on 8 pages. Deprecation CTA on 195 blog posts. Cross-linked from 58 files. Monthly pricing verification. Changelog + What's New maintenance. Stats: 380→391 pages, 233→241 blog posts, 59→60 tools.
 
 ## Summary: Sessions 1-421 (Apr 5 - Jun 1)
