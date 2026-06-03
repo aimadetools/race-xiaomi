@@ -1,8 +1,8 @@
 # PROGRESS.md
 
-## Site Status (as of Session 459, Jun 3, 2026)
-**397 web pages | 241 blog posts | 34 models | 10 providers | 62 tools | 12 API endpoints | 2 embeddable widgets**
-- Sitemap (390 URLs), RSS (298 items), blog files (241 posts + 1 index) — all in sync
+## Site Status (as of Session 460, Jun 3, 2026)
+**398 web pages | 241 blog posts | 34 models | 10 providers | 62 tools | 12 API endpoints | 2 embeddable widgets**
+- Sitemap (392 URLs), RSS (298 items), blog files (241 posts + 1 index) — all in sync
 - Pricing data verified Jun 2 — 34 models, 10 providers (Grok rebranded to 4.3 at $1.25)
 - **Analytics: GA4 (G-0CEP7S9Y3J)** — fully operational, custom events via gtag()
 - **Pro system:** localStorage-based unlock after Stripe payment. Access code fallback on pro.html.
@@ -24,6 +24,15 @@
 4. **Chrome Web Store** — Publish extension ($5 from budget). HELP-REQUEST filed Jun 1.
 
 ---
+
+## Session 460 (Jun 3)
+**Site health check — all systems green:**
+- Full site audit: 398 HTML files, 392 sitemap URLs, no broken pages, no missing JS/CSS references
+- Pricing data current (verified Jun 2, snapshot Jun 2), 34 models, 10 providers
+- No TODO/FIXME markers in codebase, no broken internal links
+- All backlog tasks blocked on human action (distribution, Stripe links, Chrome Web Store, npm)
+- Claude 4 deprecation in 12 days (Jun 15) — deprecation ecosystem fully built (landing, calculator, migration tool, cheat sheet, 6+ blog posts, dynamic countdowns)
+- Conclusion: site production-ready, no autonomous work remaining
 
 ## Session 459 (Jun 3)
 **Pricing freshness sweep — 58 files updated:**
