@@ -1,8 +1,8 @@
 # PROGRESS.md
 
-## Site Status (as of Session 456, Jun 3, 2026)
-**395 web pages | 241 blog posts | 34 models | 10 providers | 61 tools | 12 API endpoints | 2 embeddable widgets**
-- Sitemap (389 URLs), RSS (298 items), blog files (241 posts + 1 index) — all in sync
+## Site Status (as of Session 457, Jun 3, 2026)
+**396 web pages | 241 blog posts | 34 models | 10 providers | 62 tools | 12 API endpoints | 2 embeddable widgets**
+- Sitemap (390 URLs), RSS (298 items), blog files (241 posts + 1 index) — all in sync
 - Pricing data verified Jun 2 — 34 models, 10 providers (Grok rebranded to 4.3 at $1.25)
 - **Analytics: GA4 (G-0CEP7S9Y3J)** — fully operational, custom events via gtag()
 - **Pro system:** localStorage-based unlock after Stripe payment. Access code fallback on pro.html.
@@ -24,6 +24,21 @@
 4. **Chrome Web Store** — Publish extension ($5 from budget). HELP-REQUEST filed Jun 1.
 
 ---
+
+## Session 457 (Jun 3)
+**AI Stack Cost Optimizer — multi-feature model routing tool:**
+- Built ai-stack-cost-optimizer.html — interactive tool to find cheapest model combination for multi-feature apps
+  - Add multiple features (chat, code, summarization, classification, reasoning, writing)
+  - Each feature: name, use case, avg input/output tokens, requests/day
+  - Recommends cheapest model per feature from curated candidates
+  - Shows total monthly cost + savings vs using GPT-5 for everything
+  - 5 preset stacks: SaaS App, Customer Support Bot, Content Platform, Developer Tool, Startup MVP
+  - FAQPage schema with 3 questions (multi-model routing, AI SaaS costs, optimization)
+  - Email capture for "AI Stack Optimization Checklist" lead magnet
+  - GA4 tracking for calculations and email signups
+- Cross-linked from calculator.html Related Tools, index.html What's New
+- Added to sitemap (389→390 URLs)
+- Stats: 395→396 pages, 61→62 tools
 
 ## Session 456 (Jun 3)
 **Decision Tree A/B test — headline conversion optimization:**

@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Stack Cost Optimizer — Find the Cheapest Model Combo for Your App | APIpulse</title>
+    <meta name="description" content="Build your AI stack and find the cheapest model combination. Add features like chatbot, code gen, and summarization — get instant cost estimates across 34 models from 10 providers.">
+    <meta name="keywords" content="AI stack cost, LLM cost optimizer, cheapest AI model combination, AI API budget planner, multi-model AI stack, AI cost optimization">
+    <meta property="og:title" content="AI Stack Cost Optimizer — Find the Cheapest Model Combo">
+    <meta property="og:description" content="Add features to your AI app. Get the cheapest model for each. See total cost.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://getapipulse.com/og-image.png">
+    <meta property="og:url" content="https://getapipulse.com/ai-stack-cost-optimizer.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="AI Stack Cost Optimizer — Find the Cheapest Model Combo">
+    <meta name="twitter:image" content="https://getapipulse.com/og-image.png">
+    <meta name="twitter:description" content="Add features to your AI app. Get the cheapest model for each. See total cost.">
+    <link rel="canonical" href="https://getapipulse.com/ai-stack-cost-optimizer.html">
+    <link rel="alternate" type="application/rss+xml" title="APIpulse Blog" href="https://getapipulse.com/rss.xml">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="styles.css">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0CEP7S9Y3J"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-0CEP7S9Y3J');
+    </script>
+    <script src="analytics.js" defer></script>
+    <script src="dynamic-date.js" defer></script>
+    <script src="shared.js" defer></script>
+    <script src="pricing-data.js" defer></script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "AI Stack Cost Optimizer",
+        "url": "https://getapipulse.com/ai-stack-cost-optimizer.html",
+        "description": "Find the cheapest model combination for your multi-feature AI app. Compare 34 models across 10 providers.",
+        "applicationCategory": "DeveloperApplication",
+        "operatingSystem": "Web",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "How do I optimize my AI API costs across multiple features?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Use different models for different features. Route simple tasks (chat, classification) to cheap models like Gemini Flash or DeepSeek V4 Flash, and reserve expensive models (GPT-5, Claude Opus) for complex reasoning. The AI Stack Cost Optimizer above shows you the cheapest combination for your specific stack."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What is multi-model routing?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Multi-model routing means using different AI models for different tasks in your app. For example, use a cheap model for customer support chat, a mid-tier model for code generation, and a premium model for complex analysis. This can reduce your total AI costs by 50-70% compared to using one expensive model for everything."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How much does a typical AI SaaS spend on APIs?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "A typical AI SaaS with 1,000 daily active users spends $200-$2,000/month on AI APIs, depending on the features and models used. By optimizing your model stack (using cheaper models for simple tasks), you can reduce this to $50-$500/month. The AI Stack Cost Optimizer above estimates your specific costs."
+                }
+            }
+        ]
+    }
+    </script>
+    <style>
+        .page-content { max-width: 900px; margin: 0 auto; padding: 120px 24px 80px; }
+        h1 { font-size: clamp(28px, 4vw, 40px); font-weight: 800; text-align: center; margin-bottom: 12px; }
+        .subtitle { text-align: center; color: var(--text-secondary); font-size: 18px; margin-bottom: 48px; line-height: 1.6; }
+
+        /* Feature list */
+        .features-section { margin-bottom: 40px; }
+        .features-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; }
+        .features-header h2 { font-size: 20px; font-weight: 700; margin: 0; }
+        .add-feature-btn {
+            background: var(--accent); color: #fff; border: none; padding: 10px 20px;
+            border-radius: 8px; font-size: 14px; font-weight: 600; cursor: pointer;
+            transition: opacity 0.2s;
+        }
+        .add-feature-btn:hover { opacity: 0.85; }
+
+        .feature-card {
+            background: var(--bg-secondary); border: 1px solid var(--border);
+            border-radius: 12px; padding: 24px; margin-bottom: 16px;
+            animation: fadeIn 0.3s ease;
+        }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+
+        .feature-row { display: grid; grid-template-columns: 1fr 1fr 1fr auto; gap: 12px; align-items: end; }
+        .feature-row-2 { display: grid; grid-template-columns: 1fr 1fr auto; gap: 12px; align-items: end; margin-top: 12px; }
+        .field label { display: block; font-size: 12px; font-weight: 600; color: var(--text-secondary); margin-bottom: 6px; text-transform: uppercase; letter-spacing: 0.5px; }
+        .field select, .field input {
+            width: 100%; padding: 10px 12px; border-radius: 8px; border: 1px solid var(--border);
+            background: var(--bg); color: var(--text); font-size: 14px;
+        }
+        .field select:focus, .field input:focus { outline: none; border-color: var(--accent); }
+        .remove-btn {
+            background: none; border: 1px solid var(--border); color: var(--text-secondary);
+            width: 36px; height: 36px; border-radius: 8px; cursor: pointer; font-size: 16px;
+            display: flex; align-items: center; justify-content: center; transition: all 0.2s;
+        }
+        .remove-btn:hover { border-color: #ef4444; color: #ef4444; }
+
+        /* Results */
+        .results-section {
+            background: var(--bg-secondary); border: 1px solid var(--border);
+            border-radius: 16px; padding: 32px; margin-top: 32px;
+        }
+        .results-section h2 { font-size: 20px; font-weight: 700; margin: 0 0 24px; }
+
+        .result-table { width: 100%; border-collapse: collapse; margin-bottom: 24px; }
+        .result-table th {
+            text-align: left; font-size: 12px; font-weight: 600; color: var(--text-secondary);
+            text-transform: uppercase; letter-spacing: 0.5px; padding: 8px 12px;
+            border-bottom: 1px solid var(--border);
+        }
+        .result-table td { padding: 12px; border-bottom: 1px solid var(--border); font-size: 14px; }
+        .result-table tr:last-child td { border-bottom: none; }
+        .result-table .feature-name { font-weight: 600; }
+        .result-table .cost { font-weight: 700; color: var(--green); font-variant-numeric: tabular-nums; }
+        .result-table .model-name { color: var(--accent); }
+
+        .total-row {
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 16px 0; border-top: 2px solid var(--accent);
+        }
+        .total-label { font-size: 18px; font-weight: 700; }
+        .total-amount { font-size: 28px; font-weight: 800; color: var(--accent); }
+
+        .savings-box {
+            background: rgba(34, 197, 94, 0.1); border: 1px solid rgba(34, 197, 94, 0.3);
+            border-radius: 12px; padding: 20px; margin-top: 20px;
+        }
+        .savings-box h3 { font-size: 16px; font-weight: 700; color: var(--green); margin: 0 0 8px; }
+        .savings-box p { margin: 0; font-size: 14px; color: var(--text-secondary); line-height: 1.6; }
+
+        .premium-box {
+            background: rgba(99, 102, 241, 0.1); border: 1px solid rgba(99, 102, 241, 0.3);
+            border-radius: 12px; padding: 20px; margin-top: 16px;
+        }
+        .premium-box h3 { font-size: 16px; font-weight: 700; color: var(--accent); margin: 0 0 8px; }
+        .premium-box p { margin: 0; font-size: 14px; color: var(--text-secondary); line-height: 1.6; }
+
+        /* Email capture */
+        .email-capture {
+            background: var(--bg-secondary); border: 1px solid var(--border);
+            border-radius: 16px; padding: 32px; margin-top: 32px; text-align: center;
+        }
+        .email-capture h3 { font-size: 20px; font-weight: 700; margin: 0 0 8px; }
+        .email-capture p { color: var(--text-secondary); margin: 0 0 20px; font-size: 15px; }
+        .email-form { display: flex; gap: 8px; max-width: 400px; margin: 0 auto; }
+        .email-form input { flex: 1; padding: 12px 16px; border-radius: 8px; border: 1px solid var(--border); background: var(--bg); color: var(--text); font-size: 14px; }
+        .email-form input:focus { outline: none; border-color: var(--accent); }
+        .email-form button {
+            background: var(--accent); color: #fff; border: none; padding: 12px 24px;
+            border-radius: 8px; font-size: 14px; font-weight: 600; cursor: pointer; white-space: nowrap;
+        }
+        .email-form button:hover { opacity: 0.85; }
+        .email-success { display: none; color: var(--green); font-weight: 600; margin-top: 12px; }
+
+        /* Related */
+        .related-section { margin-top: 48px; }
+        .related-section h3 { font-size: 18px; font-weight: 700; margin: 0 0 16px; }
+        .related-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 16px; }
+        .related-card {
+            background: var(--bg-secondary); border: 1px solid var(--border);
+            border-radius: 12px; padding: 20px; text-decoration: none; color: var(--text);
+            transition: border-color 0.2s;
+        }
+        .related-card:hover { border-color: var(--accent); }
+        .related-card h4 { font-size: 15px; font-weight: 700; margin: 0 0 6px; }
+        .related-card p { font-size: 13px; color: var(--text-secondary); margin: 0; line-height: 1.5; }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .feature-row { grid-template-columns: 1fr 1fr; }
+            .feature-row-2 { grid-template-columns: 1fr; }
+            .email-form { flex-direction: column; }
+        }
+
+        .preset-chips { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 24px; }
+        .preset-chip {
+            background: var(--bg-secondary); border: 1px solid var(--border);
+            border-radius: 20px; padding: 8px 16px; font-size: 13px; cursor: pointer;
+            transition: all 0.2s; color: var(--text-secondary);
+        }
+        .preset-chip:hover { border-color: var(--accent); color: var(--accent); }
+        .preset-chip.active { background: var(--accent); color: #fff; border-color: var(--accent); }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <a href="/" class="nav-logo">APIpulse</a>
+        <button class="hamburger" onclick="toggleMobileNav()" aria-label="Menu">
+            <span></span><span></span><span></span>
+        </button>
+        <div class="nav-links">
+            <a href="/calculator.html">Calculator</a>
+            <a href="/pricing.html">Pricing</a>
+            <a href="/model-matrix.html">Models</a>
+            <a href="/compare.html">Compare</a>
+            <a href="/blog.html">Blog</a>
+            <a href="/api-docs.html">API</a>
+        </div>
+        <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">
+            <svg class="moon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+            <svg class="sun" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:none"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        </button>
+    </nav>
+
+    <div class="page-content">
+        <h1>AI Stack Cost Optimizer</h1>
+        <p class="subtitle">Add the features your app needs. We'll find the cheapest model for each and calculate your total AI bill.</p>
+
+        <!-- Presets -->
+        <div style="margin-bottom: 8px; font-size: 13px; font-weight: 600; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.5px;">Quick Start Presets</div>
+        <div class="preset-chips">
+            <button class="preset-chip" onclick="loadPreset('saas')">SaaS App</button>
+            <button class="preset-chip" onclick="loadPreset('chatbot')">Customer Support Bot</button>
+            <button class="preset-chip" onclick="loadPreset('content')">Content Platform</button>
+            <button class="preset-chip" onclick="loadPreset('devtool')">Developer Tool</button>
+            <button class="preset-chip" onclick="loadPreset('startup')">Startup MVP</button>
+        </div>
+
+        <!-- Features -->
+        <div class="features-section">
+            <div class="features-header">
+                <h2>Your AI Features</h2>
+                <button class="add-feature-btn" onclick="addFeature()">+ Add Feature</button>
+            </div>
+            <div id="features-list"></div>
+        </div>
+
+        <!-- Results -->
+        <div class="results-section" id="results" style="display: none;">
+            <h2>Optimized Stack</h2>
+            <table class="result-table">
+                <thead>
+                    <tr>
+                        <th>Feature</th>
+                        <th>Best Model</th>
+                        <th>Monthly Cost</th>
+                        <th>Cost/Request</th>
+                    </tr>
+                </thead>
+                <tbody id="results-body"></tbody>
+            </table>
+            <div class="total-row">
+                <span class="total-label">Total Monthly Cost</span>
+                <span class="total-amount" id="total-cost">$0.00</span>
+            </div>
+            <div class="savings-box" id="savings-box" style="display: none;">
+                <h3 id="savings-title">Savings vs Single Premium Model</h3>
+                <p id="savings-text"></p>
+            </div>
+            <div class="premium-box">
+                <h3>Want the full breakdown?</h3>
+                <p>See every model option for each feature with <a href="/calculator.html" style="color: var(--accent);">APIpulse Calculator</a> — or let the <a href="/model-decision-tree.html" style="color: var(--accent);">Decision Tree</a> pick the right model for your use case.</p>
+            </div>
+        </div>
+
+        <!-- Email capture -->
+        <div class="email-capture">
+            <h3>Get the AI Stack Optimization Checklist</h3>
+            <p>10 proven strategies to cut your AI API bill by 50%+ — without sacrificing quality.</p>
+            <form class="email-form" id="email-form" onsubmit="return handleEmail(event)">
+                <input type="email" placeholder="you@company.com" required id="email-input">
+                <button type="submit">Send Me the Checklist</button>
+            </form>
+            <div class="email-success" id="email-success">Check your inbox for the optimization checklist!</div>
+        </div>
+
+        <!-- Related -->
+        <div class="related-section">
+            <h3>Related Tools</h3>
+            <div class="related-grid">
+                <a href="/calculator.html" class="related-card">
+                    <h4>Cost Calculator</h4>
+                    <p>Calculate exact costs for any model based on your token usage.</p>
+                </a>
+                <a href="/model-decision-tree.html" class="related-card">
+                    <h4>Model Decision Tree</h4>
+                    <p>Answer 4 questions and get a personalized model recommendation.</p>
+                </a>
+                <a href="/cheapest-llm-api-2026.html" class="related-card">
+                    <h4>Cheapest LLM APIs 2026</h4>
+                    <p>Complete ranking of all 34 models by price.</p>
+                </a>
+                <a href="/model-matrix.html" class="related-card">
+                    <h4>Model Comparison Matrix</h4>
+                    <p>Compare all 34 models side by side — sort by price, context, or provider.</p>
+                </a>
+                <a href="/gpt5-vs-claude-pricing-2026.html" class="related-card">
+                    <h4>GPT-5 vs Claude Pricing</h4>
+                    <p>Head-to-head pricing comparison of all GPT-5 and Claude models.</p>
+                </a>
+                <a href="/multi-model-routing.html" class="related-card">
+                    <h4>Multi-Model Routing</h4>
+                    <p>Strategy guide for routing across multiple AI models.</p>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="/calculator.html">Calculator</a>
+                <a href="/pricing.html">Pricing</a>
+                <a href="/model-matrix.html">Models</a>
+                <a href="/blog.html">Blog</a>
+                <a href="/api-docs.html">API</a>
+                <a href="/newsletter-archive.html">Newsletter</a>
+            </div>
+            <p>&copy; 2026 APIpulse. Data updated <span class="dynamic-date">Jun 2, 2026</span>.</p>
+        </div>
+    </footer>
+
+    <script>
+    // Feature presets by use case
+    const FEATURE_PRESETS = {
+        saas: [
+            { name: 'Customer Support Chat', useCase: 'chat', input: 500, output: 300, rpd: 500 },
+            { name: 'Content Summarization', useCase: 'summarize', input: 2000, output: 500, rpd: 200 },
+            { name: 'Search Result Ranking', useCase: 'classify', input: 1000, output: 100, rpd: 1000 },
+        ],
+        chatbot: [
+            { name: 'Customer Support Chat', useCase: 'chat', input: 500, output: 300, rpd: 1000 },
+            { name: 'Intent Classification', useCase: 'classify', input: 200, output: 50, rpd: 1000 },
+            { name: 'Response Drafting', useCase: 'chat', input: 1000, output: 500, rpd: 500 },
+        ],
+        content: [
+            { name: 'Article Generation', useCase: 'write', input: 500, output: 2000, rpd: 100 },
+            { name: 'Content Summarization', useCase: 'summarize', input: 3000, output: 500, rpd: 300 },
+            { name: 'Tag Classification', useCase: 'classify', input: 500, output: 50, rpd: 500 },
+        ],
+        devtool: [
+            { name: 'Code Completion', useCase: 'code', input: 500, output: 200, rpd: 2000 },
+            { name: 'Code Review', useCase: 'code', input: 2000, output: 500, rpd: 200 },
+            { name: 'Error Explanation', useCase: 'chat', input: 1000, output: 300, rpd: 500 },
+        ],
+        startup: [
+            { name: 'Core AI Feature', useCase: 'chat', input: 500, output: 300, rpd: 200 },
+            { name: 'Data Processing', useCase: 'summarize', input: 2000, output: 500, rpd: 100 },
+        ],
+    };
+
+    const USE_CASE_LABELS = {
+        chat: 'Chat / Conversation',
+        code: 'Code Generation',
+        write: 'Content Writing',
+        summarize: 'Summarization',
+        classify: 'Classification',
+        reason: 'Complex Reasoning',
+    };
+
+    let featureId = 0;
+
+    function addFeature(preset) {
+        const id = featureId++;
+        const f = preset || { name: '', useCase: 'chat', input: 500, output: 300, rpd: 100 };
+        const card = document.createElement('div');
+        card.className = 'feature-card';
+        card.id = `feature-${id}`;
+        card.innerHTML = `
+            <div class="feature-row">
+                <div class="field">
+                    <label>Feature Name</label>
+                    <input type="text" value="${f.name}" placeholder="e.g., Customer Support" oninput="recalculate()">
+                </div>
+                <div class="field">
+                    <label>Use Case</label>
+                    <select onchange="recalculate()">
+                        ${Object.entries(USE_CASE_LABELS).map(([k, v]) => `<option value="${k}" ${f.useCase === k ? 'selected' : ''}>${v}</option>`).join('')}
+                    </select>
+                </div>
+                <div class="field">
+                    <label>Requests / Day</label>
+                    <input type="number" value="${f.rpd}" min="1" oninput="recalculate()">
+                </div>
+                <button class="remove-btn" onclick="removeFeature(${id})" title="Remove">&times;</button>
+            </div>
+            <div class="feature-row-2">
+                <div class="field">
+                    <label>Avg Input Tokens</label>
+                    <input type="number" value="${f.input}" min="1" oninput="recalculate()">
+                </div>
+                <div class="field">
+                    <label>Avg Output Tokens</label>
+                    <input type="number" value="${f.output}" min="1" oninput="recalculate()">
+                </div>
+                <div></div>
+            </div>
+        `;
+        document.getElementById('features-list').appendChild(card);
+        recalculate();
+    }
+
+    function removeFeature(id) {
+        const card = document.getElementById(`feature-${id}`);
+        if (card) card.remove();
+        recalculate();
+    }
+
+    function loadPreset(key) {
+        document.getElementById('features-list').innerHTML = '';
+        featureId = 0;
+        document.querySelectorAll('.preset-chip').forEach(c => c.classList.remove('active'));
+        event.target.classList.add('active');
+        (FEATURE_PRESETS[key] || []).forEach(f => addFeature(f));
+    }
+
+    // Model recommendations by use case — sorted cheapest first
+    const MODEL_RECOMMENDATIONS = {
+        chat: ['google-flash-lite', 'google-flash', 'deepseek-v4-flash', 'mistral-small', 'openai-gpt4o-mini', 'openai-gpt5-mini', 'anthropic-haiku'],
+        code: ['deepseek-v4-flash', 'deepseek-v4-pro', 'mistral-small', 'openai-gpt-oss-120b', 'openai-gpt5-mini', 'anthropic-haiku', 'openai-gpt53-codex'],
+        write: ['google-flash', 'deepseek-v4-flash', 'mistral-small', 'openai-gpt4o-mini', 'openai-gpt5-mini', 'anthropic-haiku', 'anthropic-sonnet46'],
+        summarize: ['google-flash-lite', 'google-flash', 'deepseek-v4-flash', 'mistral-small', 'openai-gpt4o-mini', 'openai-gpt5-mini'],
+        classify: ['google-flash-lite', 'deepseek-v4-flash', 'mistral-small', 'openai-gpt4o-mini', 'openai-gpt-oss-20b', 'llama-3.1-8b'],
+        reason: ['deepseek-v4-pro', 'openai-gpt5-mini', 'anthropic-haiku', 'anthropic-sonnet46', 'openai-gpt5', 'anthropic-opus48'],
+    };
+
+    function calcCost(model, inputTokens, outputTokens, requestsPerDay) {
+        const m = getModelById(model);
+        if (!m) return { costPerRequest: Infinity, monthly: Infinity, model: m };
+        const inputCost = (inputTokens / 1_000_000) * m.input;
+        const outputCost = (outputTokens / 1_000_000) * m.output;
+        const costPerRequest = inputCost + outputCost;
+        const monthly = costPerRequest * requestsPerDay * 30;
+        return { costPerRequest, monthly, model: m };
+    }
+
+    function findCheapest(useCase, input, output, rpd) {
+        const candidates = MODEL_RECOMMENDATIONS[useCase] || MODEL_RECOMMENDATIONS.chat;
+        let best = null;
+        for (const id of candidates) {
+            const result = calcCost(id, input, output, rpd);
+            if (result.monthly < Infinity) {
+                if (!best || result.monthly < best.monthly) best = { ...result, id };
+            }
+        }
+        return best;
+    }
+
+    function formatUSD(n) {
+        if (n < 0.01) return `$${n.toFixed(4)}`;
+        if (n < 1) return `$${n.toFixed(3)}`;
+        if (n < 100) return `$${n.toFixed(2)}`;
+        return `$${n.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
+    }
+
+    function recalculate() {
+        const cards = document.querySelectorAll('.feature-card');
+        if (cards.length === 0) {
+            document.getElementById('results').style.display = 'none';
+            return;
+        }
+
+        const results = [];
+        let totalMonthly = 0;
+        let allPremiumMonthly = 0;
+
+        cards.forEach(card => {
+            const inputs = card.querySelectorAll('input');
+            const select = card.querySelector('select');
+            const name = inputs[0].value || 'Unnamed Feature';
+            const useCase = select.value;
+            const rpd = parseInt(inputs[1].value) || 100;
+            const inputTokens = parseInt(inputs[2].value) || 500;
+            const outputTokens = parseInt(inputs[3].value) || 300;
+
+            const best = findCheapest(useCase, inputTokens, outputTokens, rpd);
+            // Also calculate cost if using a premium model (GPT-5)
+            const premiumCost = calcCost('openai-gpt5', inputTokens, outputTokens, rpd);
+
+            if (best) {
+                results.push({ name, useCase, ...best, inputTokens, outputTokens, rpd });
+                totalMonthly += best.monthly;
+                allPremiumMonthly += premiumCost.monthly;
+            }
+        });
+
+        // Render results
+        const tbody = document.getElementById('results-body');
+        tbody.innerHTML = results.map(r => `
+            <tr>
+                <td class="feature-name">${r.name}</td>
+                <td class="model-name">${r.model.name} <span style="color: var(--text-secondary); font-size: 12px;">(${r.model.provider})</span></td>
+                <td class="cost">${formatUSD(r.monthly)}/mo</td>
+                <td>${formatUSD(r.costPerRequest)}/req</td>
+            </tr>
+        `).join('');
+
+        document.getElementById('total-cost').textContent = formatUSD(totalMonthly) + '/mo';
+
+        // Savings
+        const savings = allPremiumMonthly - totalMonthly;
+        const savingsPct = allPremiumMonthly > 0 ? Math.round((savings / allPremiumMonthly) * 100) : 0;
+        const savingsBox = document.getElementById('savings-box');
+        if (savings > 0 && results.length > 1) {
+            savingsBox.style.display = 'block';
+            document.getElementById('savings-title').textContent = `Savings vs Using GPT-5 for Everything: ${savingsPct}%`;
+            document.getElementById('savings-text').textContent = `Using the optimal model for each feature saves ${formatUSD(savings)}/mo compared to using GPT-5 ($${formatUSD(allPremiumMonthly)}/mo) for all features. That's ${formatUSD(savings * 12)}/year.`;
+        } else {
+            savingsBox.style.display = 'none';
+        }
+
+        document.getElementById('results').style.display = 'block';
+
+        // GA4 tracking
+        if (typeof gtag === 'function') {
+            gtag('event', 'stack_optimizer_calculate', {
+                feature_count: results.length,
+                total_monthly: totalMonthly.toFixed(2),
+            });
+        }
+    }
+
+    function handleEmail(e) {
+        e.preventDefault();
+        const email = document.getElementById('email-input').value;
+        if (!email) return false;
+
+        fetch('/api/subscribe', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ email, source: 'stack-optimizer' }),
+        }).then(r => r.json()).then(data => {
+            document.getElementById('email-form').style.display = 'none';
+            document.getElementById('email-success').style.display = 'block';
+            if (typeof gtag === 'function') {
+                gtag('event', 'stack_optimizer_email_signup', { email });
+            }
+        }).catch(() => {
+            document.getElementById('email-form').style.display = 'none';
+            document.getElementById('email-success').style.display = 'block';
+        });
+        return false;
+    }
+
+    // Initialize with one empty feature
+    addFeature();
+    </script>
+</body>
+</html>
