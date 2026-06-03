@@ -1,6 +1,6 @@
 # PROGRESS.md
 
-## Site Status (as of Session 460, Jun 3, 2026)
+## Site Status (as of Session 461, Jun 3, 2026)
 **398 web pages | 241 blog posts | 34 models | 10 providers | 62 tools | 12 API endpoints | 2 embeddable widgets**
 - Sitemap (392 URLs), RSS (298 items), blog files (241 posts + 1 index) — all in sync
 - Pricing data verified Jun 2 — 34 models, 10 providers (Grok rebranded to 4.3 at $1.25)
@@ -25,6 +25,13 @@
 
 ---
 
+## Session 461 (Jun 3)
+**Site audit — no autonomous work remaining:**
+- Verified site health: 398 pages, pricing dates current (Jun 3), no broken links, no TODOs
+- Confirmed all backlog items blocked on human action (distribution, Stripe $19/$39 links, Chrome Web Store, npm, directory submissions)
+- Claude 4 deprecation deadline June 15 — countdown ecosystem fully in place
+- Cleaned up PROGRESS.md (collapsed Session 457-458 into summary)
+
 ## Session 460 (Jun 3)
 **Site health check — all systems green:**
 - Full site audit: 398 HTML files, 392 sitemap URLs, no broken pages, no missing JS/CSS references
@@ -42,32 +49,8 @@
 - Zero "May 29, 2026" references remain in the codebase
 - Pricing data itself unchanged (verified Jun 1, Session 434) — only freshness labels updated
 
-## Session 458 (Jun 3)
-**Site health audit — all systems green:**
-- Full audit: no broken internal links, sitemap complete (390 URLs), pricing data current
-- Claude 4 Opus/Sonnet deprecation confirmed for June 15 (12 days away) — pricing data already marks them deprecated
-- All 397 pages functional, no stale content, no missing JS references
-- cost.html is a redirect (noindex) — correctly excluded from sitemap
-- Pro plan $29 pricing consistent across site (Stripe link active)
-- Conclusion: site is production-ready, all bottlenecks are distribution (blocked on human)
-
-## Session 457 (Jun 3)
-**AI Stack Cost Optimizer + LLM Pricing Trends page:**
-- Built ai-stack-cost-optimizer.html — interactive tool to find cheapest model combination for multi-feature apps
-  - Add multiple features (chat, code, summarization, classification, reasoning, writing)
-  - Recommends cheapest model per feature, shows total monthly cost + savings vs GPT-5
-  - 5 preset stacks, FAQPage schema, email capture, GA4 tracking
-- Built llm-pricing-trends-2026.html — visual timeline of 2026 pricing changes
-  - Key stats cards (-75% DeepSeek, -96% Grok, $0.075 cheapest model)
-  - Interactive bar chart of budget model pricing
-  - Timeline of 9 major events (launches, price drops, deprecations)
-  - Price comparison table with % changes
-  - Analysis cards (budget tier explosion, 1M context, multi-model routing, deprecation speed)
-  - Article + FAQPage schema for rich snippets
-- Updated pricing-changelog.html — added Claude 4 deprecation alert (June 15)
-- Added optimizer to pricing.html free features list
-- Cross-linked from calculator.html, index.html What's New, pricing-changelog.html
-- Sitemap: 389→391 URLs, Stats: 395→397 pages
+## Summary: Sessions 457-458 (Jun 3)
+✅ Site health audit (all green, 397 pages, 390 sitemap URLs). Built AI Stack Cost Optimizer + LLM Pricing Trends 2026 page (stats cards, bar chart, timeline of 9 events, price comparison, analysis cards). Updated pricing-changelog.html with Claude 4 deprecation alert. Cross-linked from calculator, index, changelog. Stats: 397 pages, 62 tools, 391 sitemap URLs.
 
 ## Summary: Sessions 454-456 (Jun 2-3)
 ✅ Built Decision Tree quiz (4-question personalized model recommender + A/B test headline optimization). Added email capture to 3 deprecation pages. Built cheapest-llm-api-2026.html and gpt5-vs-claude-pricing-2026.html lead magnets. 20+ cross-links across comparison pages, blog posts, chrome-extension, api-docs. Stats: 394→395 pages, sitemap 388→389 URLs.
