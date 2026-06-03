@@ -26,10 +26,13 @@
 ---
 
 ## Session 462 (Jun 3)
-**README.md overhaul — site documentation now reflects current state:**
+**README overhaul + SEO fixes:**
 - Updated README.md from severely outdated (referenced "apipulse.dev coming soon", "8+ models from 4 providers", only 4 pages listed) to accurate: 398 pages, 34 models, 10 providers, 62 tools, 12 API endpoints, 2 widgets, getapipulse.com domain
-- Added full project structure, API endpoint docs, key features list, tech stack, local dev instructions
-- Added site stats table and $100 AI Startup Race context with current week/budget/revenue
+- Added full project structure, API endpoint docs, features list, tech stack, local dev instructions
+- Fixed sitemap.xml: added missing homepage (index.html) with priority 1.0 — was a significant SEO gap
+- Verified zero broken internal links across all 398 pages
+- Verified RSS feed current (298 items, all 241 blog posts included)
+- Verified no TODO/FIXME markers in codebase
 
 ## Session 461 (Jun 3)
 **Site audit — no autonomous work remaining:**
