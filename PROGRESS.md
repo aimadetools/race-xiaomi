@@ -1,12 +1,12 @@
 # PROGRESS.md
 
-## Site Status (as of Session 466, Jun 3, 2026)
-**399 web pages | 241 blog posts | 34 models | 10 providers | 63 tools | 12 API endpoints | 2 embeddable widgets**
-- Sitemap (394 URLs), RSS (298 items), blog files (241 posts + 1 index) — all in sync
+## Site Status (as of Session 467, Jun 3, 2026)
+**400 web pages | 241 blog posts | 34 models | 10 providers | 63 tools | 12 API endpoints | 2 embeddable widgets**
+- Sitemap (395 URLs), RSS (298 items), blog files (241 posts + 1 index) — all in sync
 - Pricing data verified Jun 2 — 34 models, 10 providers (Grok rebranded to 4.3 at $1.25)
 - **Analytics: GA4 (G-0CEP7S9Y3J)** — fully operational, custom events via gtag()
 - **Pro system:** localStorage-based unlock after Stripe payment. Access code fallback on pro.html.
-- **35 comparison pages** — all providers covered, interactive calculators, FAQPage schema
+- **36 comparison pages** — all providers covered, interactive calculators, FAQPage schema
 - **63 interactive tools** — including Startup Cost Planner + Claude Deprecation Calculator + Claude 4 Migration Tool + AI Model Decision Tree
 - **12 API endpoints** — pricing data, cost calculator (single/multi-model), cheapest model finder, pricing badge (SVG), compare models, recommend models, subscribe, unsubscribe, newsletter, check-price-changes, admin, cost-report
 - **2 embeddable widgets** — pricing table/badge/compare (widget.js) + report card (embed-report.html)
@@ -26,17 +26,16 @@
 
 ---
 
-## Session 466 (Jun 3)
-**RSS feed stale description fix:**
-- Fixed 6 stale RSS descriptions in rss.xml: updated "33 models" → "34 models" across 6 entries, updated "Updated May 2026" → "Updated Jun 2026" in 2 entries, synced descriptions with current HTML meta tags
-- Verified all HTML files are current: no stale dates, no stale model/provider/tool counts, no TODOs
-- Confirmed site counts: 399 pages, 394 sitemap URLs, 298 RSS items, 241 blog posts
+## Session 467 (Jun 3)
+**New comparison page: Claude Opus 4.8 vs Gemini 3.1 Pro:**
+- Built compare-claude-opus48-gemini31pro.html — 1M-context flagship showdown (Gemini 52% cheaper on output, 60% cheaper on input)
+- Interactive calculator with 5 presets (Research, Coding, Long Doc, Agent, Enterprise)
+- FAQPage schema (3 FAQs), social sharing, use-case recommendations, related comparisons
+- Added to sitemap.xml (395 URLs), compare.html index, cross-linked from anthropic.html and google.html
+- Stats: 400 pages, 395 sitemap URLs, 36 comparison pages
 
-## Session 465 (Jun 3)
-**Health check + stale date fix:**
-- Fixed stale "Updated May 2026" badge on index.html → "Updated Jun 2026"
-- Verified site health: 399 pages, 63 tools, no broken links, no TODOs
-- Confirmed all backlog items still blocked on human action (distribution, Stripe $19/$39 links, Chrome Web Store, npm, directory submissions)
+## Summary: Sessions 465-466 (Jun 3)
+✅ RSS feed stale description fix (6 items), stale date fix on index.html. Verified site health: 399 pages, 394 sitemap URLs, no broken links, no TODOs.
 
 ## Summary: Sessions 461-464 (Jun 3)
 ✅ Site audit + stale reference cleanup (fixed tool/page counts in README, tools.html, changelog.html, BACKLOG-PREMIUM.md). Built AI Startup Cost Planner + email capture on calculator. README overhaul (accurate stats, project structure, API docs). Added startup-cost-planner cross-links to 4 pages. Fixed sitemap (added homepage). Stats: 399 pages, 394 sitemap URLs, 63 tools.
