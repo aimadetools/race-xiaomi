@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Startup Cost Planner — Budget Your AI API Spend | APIpulse</title>
+    <meta name="description" content="Plan your startup's AI API budget. Choose models, project costs as you scale, and find the cheapest stack for your stage. Free calculator for startup founders.">
+    <meta name="keywords" content="startup AI API cost, AI budget planner, LLM cost for startup, AI API pricing startup, cheap AI API for startup">
+    <meta property="og:title" content="AI Startup Cost Planner — Budget Your AI API Spend">
+    <meta property="og:description" content="Plan your startup's AI API budget. Choose models, project costs as you scale, and find the cheapest stack.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://getapipulse.com/og-image.png">
+    <meta property="og:url" content="https://getapipulse.com/startup-cost-planner.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="AI Startup Cost Planner — Budget Your AI API Spend">
+    <meta name="twitter:image" content="https://getapipulse.com/og-image.png">
+    <meta name="twitter:description" content="Plan your startup's AI API budget. Choose models, project costs as you scale.">
+    <link rel="canonical" href="https://getapipulse.com/startup-cost-planner.html">
+    <link rel="alternate" type="application/rss+xml" title="APIpulse Blog" href="https://getapipulse.com/rss.xml">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="styles.css">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0CEP7S9Y3J"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-0CEP7S9Y3J');
+    </script>
+    <script src="analytics.js" defer></script>
+    <script src="dynamic-date.js" defer></script>
+    <script src="shared.js" defer></script>
+    <script src="pricing-data.js" defer></script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "APIpulse Startup Cost Planner",
+        "url": "https://getapipulse.com/startup-cost-planner.html",
+        "description": "Plan your startup's AI API budget. Choose models, project costs as you scale, and find the cheapest stack for your stage.",
+        "applicationCategory": "DeveloperApplication",
+        "operatingSystem": "Web",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "How much should a startup spend on AI APIs?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Most pre-seed startups spend $50-$200/month on AI APIs during development. Seed-stage companies typically spend $200-$1,000/month. The key is starting with budget models (GPT-4o mini, Gemini Flash, DeepSeek) and upgrading as revenue justifies it."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What is the cheapest AI API for a startup?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Gemini 2.0 Flash Lite ($0.075/$0.30 per 1M tokens) and Llama 3.1 8B ($0.10/$0.10) are the cheapest. For better quality at low cost, DeepSeek V4 Flash ($0.14/$0.28) and GPT-4o mini ($0.15/$0.60) offer excellent value."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How do I estimate AI API costs for my startup?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Estimate your monthly tokens: (average prompt length × requests/day × 30) for input tokens, and (average completion length × requests/day × 30) for output tokens. Multiply by the model's per-token price. Our Startup Cost Planner does this automatically with scaling projections."
+                }
+            }
+        ]
+    }
+    </script>
+    <style>
+        .content { max-width: 1000px; margin: 0 auto; padding: 120px 24px 80px; }
+        h1 { font-size: clamp(28px, 4vw, 42px); font-weight: 800; text-align: center; margin-bottom: 12px; }
+        .subtitle { text-align: center; color: var(--text-secondary); font-size: 17px; margin-bottom: 48px; max-width: 600px; margin-left: auto; margin-right: auto; }
+
+        .planner-grid {
+            display: grid; grid-template-columns: 1fr 1fr; gap: 32px;
+            margin-bottom: 40px;
+        }
+        .input-panel, .result-panel {
+            background: var(--bg-secondary); border: 1px solid var(--border);
+            border-radius: 16px; padding: 32px;
+        }
+        .panel-title {
+            font-size: 18px; font-weight: 700; margin-bottom: 24px;
+            display: flex; align-items: center; gap: 10px;
+        }
+        .panel-title .icon {
+            width: 36px; height: 36px; border-radius: 10px;
+            background: var(--accent-glow); display: flex; align-items: center;
+            justify-content: center; font-size: 18px;
+        }
+
+        .field { margin-bottom: 20px; }
+        .field label {
+            display: block; font-size: 13px; font-weight: 600;
+            color: var(--text-secondary); margin-bottom: 6px;
+            text-transform: uppercase; letter-spacing: 0.5px;
+        }
+        .field select, .field input {
+            width: 100%; padding: 10px 14px; background: var(--bg-card);
+            border: 1px solid var(--border); border-radius: 8px;
+            color: var(--text-primary); font-size: 14px;
+            font-family: inherit;
+        }
+        .field select:focus, .field input:focus {
+            outline: 2px solid var(--accent); outline-offset: 2px; border-color: var(--accent);
+        }
+        .field .hint {
+            font-size: 12px; color: var(--text-muted); margin-top: 4px;
+        }
+
+        .budget-slider {
+            width: 100%; margin: 8px 0;
+            -webkit-appearance: none; appearance: none;
+            height: 6px; border-radius: 3px;
+            background: var(--border); outline: none;
+        }
+        .budget-slider::-webkit-slider-thumb {
+            -webkit-appearance: none; appearance: none;
+            width: 20px; height: 20px; border-radius: 50%;
+            background: var(--accent); cursor: pointer;
+        }
+        .budget-display {
+            text-align: center; font-size: 28px; font-weight: 800;
+            color: var(--accent); margin: 8px 0;
+        }
+
+        .stage-cards {
+            display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px;
+            margin-bottom: 4px;
+        }
+        .stage-card {
+            padding: 12px 8px; background: var(--bg-card); border: 2px solid var(--border);
+            border-radius: 10px; text-align: center; cursor: pointer;
+            transition: all 0.2s; font-size: 13px;
+        }
+        .stage-card:hover { border-color: var(--accent); }
+        .stage-card.active {
+            border-color: var(--accent); background: var(--accent-glow);
+        }
+        .stage-card .stage-name { font-weight: 700; font-size: 14px; margin-bottom: 2px; }
+        .stage-card .stage-desc { color: var(--text-muted); font-size: 11px; }
+
+        /* Results */
+        .cost-card {
+            background: var(--bg-card); border: 1px solid var(--border);
+            border-radius: 12px; padding: 20px; margin-bottom: 16px;
+        }
+        .cost-header {
+            display: flex; justify-content: space-between; align-items: center;
+            margin-bottom: 12px;
+        }
+        .cost-header h3 { font-size: 15px; font-weight: 700; }
+        .cost-badge {
+            padding: 3px 10px; border-radius: 6px; font-size: 11px; font-weight: 600;
+        }
+        .badge-budget { background: rgba(34,197,94,0.15); color: var(--green); }
+        .badge-mid { background: rgba(245,158,11,0.15); color: var(--orange); }
+        .badge-premium { background: rgba(239,68,68,0.15); color: var(--red); }
+
+        .cost-breakdown { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+        .cost-item { text-align: center; }
+        .cost-item .label { font-size: 11px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px; }
+        .cost-item .value { font-size: 20px; font-weight: 700; margin-top: 4px; }
+        .cost-item .value.green { color: var(--green); }
+        .cost-item .value.orange { color: var(--orange); }
+
+        .scaling-section { margin-top: 24px; }
+        .scaling-section h3 { font-size: 16px; font-weight: 700; margin-bottom: 16px; }
+
+        .scaling-table {
+            width: 100%; border-collapse: collapse; font-size: 13px;
+        }
+        .scaling-table th {
+            text-align: left; padding: 10px 12px; font-weight: 600;
+            color: var(--text-muted); font-size: 11px;
+            text-transform: uppercase; letter-spacing: 0.5px;
+            border-bottom: 1px solid var(--border);
+        }
+        .scaling-table td {
+            padding: 10px 12px; border-bottom: 1px solid var(--border);
+        }
+        .scaling-table tr:last-child td { border-bottom: none; }
+        .scaling-table .highlight { color: var(--accent); font-weight: 700; }
+
+        .recommendation-box {
+            background: linear-gradient(135deg, rgba(99,102,241,0.1), rgba(139,92,246,0.1));
+            border: 1px solid var(--accent); border-radius: 12px;
+            padding: 24px; margin-top: 24px;
+        }
+        .recommendation-box h3 {
+            font-size: 16px; font-weight: 700; margin-bottom: 8px;
+            display: flex; align-items: center; gap: 8px;
+        }
+        .recommendation-box p { color: var(--text-secondary); font-size: 14px; line-height: 1.6; }
+        .recommendation-box .model-rec {
+            display: inline-block; background: var(--accent-glow);
+            padding: 2px 8px; border-radius: 4px; font-weight: 600;
+            color: var(--accent); margin: 2px;
+        }
+
+        .savings-callout {
+            background: rgba(34,197,94,0.1); border: 1px solid rgba(34,197,94,0.3);
+            border-radius: 12px; padding: 20px; margin-top: 16px; text-align: center;
+        }
+        .savings-callout .amount {
+            font-size: 32px; font-weight: 800; color: var(--green);
+        }
+        .savings-callout .label { font-size: 13px; color: var(--text-secondary); margin-top: 4px; }
+
+        .cta-section {
+            text-align: center; padding: 48px 24px;
+            background: var(--bg-secondary); border-radius: 16px;
+            border: 1px solid var(--border); margin-top: 32px;
+        }
+        .cta-section h2 { font-size: 24px; font-weight: 800; margin-bottom: 12px; }
+        .cta-section p { color: var(--text-secondary); margin-bottom: 24px; max-width: 500px; margin-left: auto; margin-right: auto; }
+        .cta-btn {
+            display: inline-block; background: var(--accent); color: white;
+            padding: 14px 32px; border-radius: 10px; font-size: 16px;
+            font-weight: 700; transition: all 0.2s;
+        }
+        .cta-btn:hover { background: var(--accent-hover); transform: translateY(-2px); color: white; }
+
+        .email-capture {
+            display: flex; gap: 8px; max-width: 440px; margin: 24px auto 0;
+        }
+        .email-capture input {
+            flex: 1; padding: 12px 16px; background: var(--bg-card);
+            border: 1px solid var(--border); border-radius: 8px;
+            color: var(--text-primary); font-size: 14px;
+        }
+        .email-capture input:focus { outline: 2px solid var(--accent); outline-offset: 2px; }
+        .email-capture button {
+            padding: 12px 20px; background: var(--green); color: white;
+            border: none; border-radius: 8px; font-weight: 700;
+            font-size: 14px; cursor: pointer; white-space: nowrap;
+        }
+
+        .disclaimer {
+            text-align: center; font-size: 12px; color: var(--text-muted);
+            margin-top: 32px; padding: 0 24px;
+        }
+
+        @media (max-width: 768px) {
+            .content { padding: 80px 16px 40px; }
+            .planner-grid { grid-template-columns: 1fr; }
+            .stage-cards { grid-template-columns: 1fr; }
+            .cost-breakdown { grid-template-columns: 1fr; }
+            .email-capture { flex-direction: column; }
+        }
+    </style>
+    <meta name="theme-color" content="#6366f1">
+</head>
+<body>
+    <a href="#main" class="skip-link">Skip to content</a>
+    <nav>
+        <div class="nav-inner">
+            <a href="index.html" class="logo">API<span>pulse</span></a>
+            <button class="hamburger" onclick="toggleMobileNav()" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+            <div class="nav-links">
+                <a href="calculator.html">Calculator</a>
+                <a href="compare.html">Compare</a>
+                <a href="tools.html">Tools</a>
+                <a href="blog.html">Blog</a>
+                <a href="pricing.html" class="nav-cta" onclick="if(window.trackEvent)window.trackEvent('pro_button_clicked',{source:'nav'})">Get Pro — $29</a>
+                <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
+            </div>
+        </div>
+    </nav>
+
+    <main id="main" class="content">
+        <h1>AI Startup Cost Planner</h1>
+        <p class="subtitle">Budget your AI API spend from pre-seed to Series A. See exactly what you'll pay at each stage — and how to cut costs by 60%+.</p>
+
+        <div class="planner-grid">
+            <!-- Input Panel -->
+            <div class="input-panel">
+                <div class="panel-title">
+                    <span class="icon">📋</span> Your Startup Profile
+                </div>
+
+                <div class="field">
+                    <label>Startup Stage</label>
+                    <div class="stage-cards">
+                        <div class="stage-card active" onclick="setStage('pre-seed')" id="stage-pre-seed">
+                            <div class="stage-name">Pre-Seed</div>
+                            <div class="stage-desc">Building MVP</div>
+                        </div>
+                        <div class="stage-card" onclick="setStage('seed')" id="stage-seed">
+                            <div class="stage-name">Seed</div>
+                            <div class="stage-desc">Early users</div>
+                        </div>
+                        <div class="stage-card" onclick="setStage('series-a')" id="stage-series-a">
+                            <div class="stage-name">Series A</div>
+                            <div class="stage-desc">Scaling up</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="field">
+                    <label>What are you building?</label>
+                    <select id="use-case" onchange="recalculate()">
+                        <option value="chatbot">AI Chatbot / Customer Support</option>
+                        <option value="code">Code Assistant / Developer Tool</option>
+                        <option value="content">Content Generation / Marketing</option>
+                        <option value="data">Data Analysis / Extraction</option>
+                        <option value="search">AI-Powered Search / RAG</option>
+                        <option value="multi">Multi-Feature AI App</option>
+                    </select>
+                </div>
+
+                <div class="field">
+                    <label>Monthly Budget</label>
+                    <div class="budget-display" id="budget-display">$200</div>
+                    <input type="range" class="budget-slider" id="budget-slider"
+                        min="50" max="5000" value="200" step="50"
+                        oninput="updateBudget(this.value)">
+                    <div style="display:flex;justify-content:space-between;font-size:11px;color:var(--text-muted);">
+                        <span>$50</span><span>$5,000</span>
+                    </div>
+                </div>
+
+                <div class="field">
+                    <label>Avg. Input Tokens per Request</label>
+                    <input type="number" id="input-tokens" value="1500" min="100" max="100000" step="100" onchange="recalculate()" oninput="recalculate()">
+                    <div class="hint">Typical: chatbot 1000-2000, code 2000-5000, content 500-1500</div>
+                </div>
+
+                <div class="field">
+                    <label>Avg. Output Tokens per Request</label>
+                    <input type="number" id="output-tokens" value="500" min="50" max="50000" step="50" onchange="recalculate()" oninput="recalculate()">
+                    <div class="hint">Typical: chatbot 300-800, code 500-2000, content 800-2000</div>
+                </div>
+
+                <div class="field">
+                    <label>Expected Monthly Growth</label>
+                    <select id="growth-rate" onchange="recalculate()">
+                        <option value="0">Flat (no growth)</option>
+                        <option value="10">10% per month</option>
+                        <option value="20" selected>20% per month</option>
+                        <option value="30">30% per month</option>
+                        <option value="50">50% per month (viral)</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Results Panel -->
+            <div class="result-panel">
+                <div class="panel-title">
+                    <span class="icon">📊</span> Your Cost Breakdown
+                </div>
+
+                <div id="results-container">
+                    <!-- Populated by JS -->
+                </div>
+
+                <div class="scaling-section" id="scaling-section">
+                    <h3>12-Month Projection</h3>
+                    <table class="scaling-table" id="scaling-table">
+                        <thead>
+                            <tr><th>Month</th><th>Requests</th><th>Cost</th><th>Cumulative</th></tr>
+                        </thead>
+                        <tbody id="scaling-body"></tbody>
+                    </table>
+                </div>
+
+                <div class="recommendation-box" id="recommendation">
+                    <!-- Populated by JS -->
+                </div>
+            </div>
+        </div>
+
+        <div class="cta-section">
+            <h2>Save Your Plan & Get Optimization Tips</h2>
+            <p>Pro users save scenarios, export PDF reports for investors, and get personalized recommendations to cut costs by up to 40%.</p>
+            <a href="pricing.html" class="cta-btn" onclick="if(window.trackEvent)window.trackEvent('pro_button_clicked',{source:'startup_planner'})">Get Pro — $29 one-time</a>
+            <div class="email-capture">
+                <input type="email" id="planner-email" placeholder="Get free AI cost tips weekly">
+                <button onclick="captureEmail()">Subscribe</button>
+            </div>
+        </div>
+
+        <p class="disclaimer">Prices based on published API pricing as of Jun 2, 2026. Actual costs may vary. <a href="pricing.html">View all pricing data</a>.</p>
+    </main>
+
+    <script>
+    let currentStage = 'pre-seed';
+
+    const stageProfiles = {
+        'pre-seed': { requestsPerDay: 100, label: 'Pre-Seed (MVP)', typicalBudget: '$50-200/mo' },
+        'seed': { requestsPerDay: 1000, label: 'Seed (Early Users)', typicalBudget: '$200-1,000/mo' },
+        'series-a': { requestsPerDay: 10000, label: 'Series A (Scaling)', typicalBudget: '$1,000-5,000/mo' }
+    };
+
+    const useCaseProfiles = {
+        'chatbot': { inputMult: 1.0, outputMult: 1.0, label: 'AI Chatbot' },
+        'code': { inputMult: 1.5, outputMult: 2.0, label: 'Code Assistant' },
+        'content': { inputMult: 0.8, outputMult: 2.5, label: 'Content Generation' },
+        'data': { inputMult: 2.0, outputMult: 0.5, label: 'Data Analysis' },
+        'search': { inputMult: 1.5, outputMult: 0.3, label: 'AI Search / RAG' },
+        'multi': { inputMult: 1.2, outputMult: 1.2, label: 'Multi-Feature App' }
+    };
+
+    function setStage(stage) {
+        currentStage = stage;
+        document.querySelectorAll('.stage-card').forEach(c => c.classList.remove('active'));
+        document.getElementById('stage-' + stage).classList.add('active');
+        recalculate();
+    }
+
+    function updateBudget(val) {
+        document.getElementById('budget-display').textContent = '$' + parseInt(val).toLocaleString();
+        recalculate();
+    }
+
+    function recalculate() {
+        const budget = parseInt(document.getElementById('budget-slider').value);
+        const useCase = document.getElementById('use-case').value;
+        const inputTokens = parseInt(document.getElementById('input-tokens').value) || 1500;
+        const outputTokens = parseInt(document.getElementById('output-tokens').value) || 500;
+        const growthRate = parseInt(document.getElementById('growth-rate').value) / 100;
+
+        const profile = stageProfiles[currentStage];
+        const useCaseProfile = useCaseProfiles[useCase];
+
+        const baseRequestsPerDay = profile.requestsPerDay;
+        const adjInput = Math.round(inputTokens * useCaseProfile.inputMult);
+        const adjOutput = Math.round(outputTokens * useCaseProfile.outputMult);
+
+        // Calculate costs for each model
+        const results = API_MODELS.filter(m => !m.deprecated).map(m => {
+            const inputCost = (adjInput * baseRequestsPerDay * 30 / 1000000) * m.input;
+            const outputCost = (adjOutput * baseRequestsPerDay * 30 / 1000000) * m.output;
+            const monthlyCost = inputCost + outputCost;
+            return { ...m, monthlyCost, inputCost, outputCost };
+        }).sort((a, b) => a.monthlyCost - b.monthlyCost);
+
+        // Find models within budget
+        const withinBudget = results.filter(r => r.monthlyCost <= budget);
+        const cheapest = results[0];
+        const bestValue = results.find(r => r.tier === 'Mid') || results[Math.floor(results.length / 2)];
+        const premium = results.filter(r => r.tier === 'Premium')[0] || results[results.length - 1];
+
+        // Render results
+        const container = document.getElementById('results-container');
+        container.innerHTML = '';
+
+        // Budget fit summary
+        const budgetFit = withinBudget.length;
+        const savingsVsPremium = premium ? ((1 - cheapest.monthlyCost / premium.monthlyCost) * 100).toFixed(0) : 0;
+
+        // Top 3 recommendations
+        const topPicks = [
+            withinBudget[0] || cheapest,  // Cheapest
+            withinBudget.find(m => m.tier === 'Mid') || bestValue,  // Best value
+            premium  // Premium
+        ].filter(Boolean).slice(0, 3);
+
+        topPicks.forEach((m, i) => {
+            const tierClass = m.tier === 'Budget' ? 'badge-budget' : m.tier === 'Mid' ? 'badge-mid' : 'badge-premium';
+            const label = i === 0 ? 'Cheapest' : i === 1 ? 'Best Value' : 'Premium';
+            const div = document.createElement('div');
+            div.className = 'cost-card';
+            div.innerHTML = `
+                <div class="cost-header">
+                    <h3>${m.name}</h3>
+                    <span class="cost-badge ${tierClass}">${label}</span>
+                </div>
+                <div style="font-size:12px;color:var(--text-muted);margin-bottom:12px;">${m.provider} · $${m.input}/$${m.output} per 1M tokens</div>
+                <div class="cost-breakdown">
+                    <div class="cost-item">
+                        <div class="label">Monthly Cost</div>
+                        <div class="value ${m.monthlyCost <= budget ? 'green' : 'orange'}">$${m.monthlyCost < 1 ? m.monthlyCost.toFixed(4) : m.monthlyCost < 10 ? m.monthlyCost.toFixed(2) : m.monthlyCost.toFixed(0)}</div>
+                    </div>
+                    <div class="cost-item">
+                        <div class="label">Per Request</div>
+                        <div class="value">$${(m.monthlyCost / (baseRequestsPerDay * 30)).toFixed(6)}</div>
+                    </div>
+                </div>
+            `;
+            container.appendChild(div);
+        });
+
+        // Savings callout
+        if (premium && cheapest.monthlyCost < premium.monthlyCost) {
+            const savingsDiv = document.createElement('div');
+            savingsDiv.className = 'savings-callout';
+            const annualSavings = (premium.monthlyCost - cheapest.monthlyCost) * 12;
+            savingsDiv.innerHTML = `
+                <div class="amount">${savingsVsPremium}% cheaper</div>
+                <div class="label">Switch from ${premium.name} to ${cheapest.name} — save ~$${annualSavings < 1000 ? annualSavings.toFixed(0) : (annualSavings/1000).toFixed(1) + 'k'}/year</div>
+            `;
+            container.appendChild(savingsDiv);
+        }
+
+        // Scaling projection
+        const scalingBody = document.getElementById('scaling-body');
+        scalingBody.innerHTML = '';
+        let cumulative = 0;
+        for (let month = 1; month <= 12; month++) {
+            const multiplier = Math.pow(1 + growthRate, month - 1);
+            const requests = Math.round(baseRequestsPerDay * multiplier);
+            const monthCost = cheapest.monthlyCost * multiplier;
+            cumulative += monthCost;
+            const isOverBudget = monthCost > budget;
+            scalingBody.innerHTML += `
+                <tr>
+                    <td>${month <= 3 ? 'Month ' + month : month === 6 ? 'Month 6' : month === 12 ? 'Month 12' : ''}</td>
+                    <td>${month <= 3 || month === 6 || month === 12 ? requests.toLocaleString() + '/day' : '···'}</td>
+                    <td${isOverBudget ? ' style="color:var(--red)"' : ''}>${month <= 3 || month === 6 || month === 12 ? '$' + (monthCost < 1000 ? monthCost.toFixed(0) : (monthCost/1000).toFixed(1) + 'k') : '···'}</td>
+                    <td>${month <= 3 || month === 6 || month === 12 ? '$' + (cumulative < 1000 ? cumulative.toFixed(0) : (cumulative/1000).toFixed(1) + 'k') : '···'}</td>
+                </tr>
+            `;
+        }
+
+        // Recommendation
+        const rec = document.getElementById('recommendation');
+        const recModels = withinBudget.slice(0, 3).map(m => `<span class="model-rec">${m.name}</span>`).join('');
+        rec.innerHTML = `
+            <h3>💡 Recommendation for ${profile.label}</h3>
+            <p>For a ${useCaseProfile.label.toLowerCase()} at the ${profile.label.toLowerCase()} stage with ${baseRequestsPerDay.toLocaleString()} requests/day:</p>
+            <p style="margin-top:8px;">${budgetFit > 0 ? `Models within your $${budget.toLocaleString()}/mo budget: ${recModels || '<span class="model-rec">' + cheapest.name + '</span>'}` : `Consider increasing your budget — only ${cheapest.name} at $${cheapest.monthlyCost.toFixed(0)}/mo fits under $${budget.toLocaleString()}.`}</p>
+            <p style="margin-top:8px;font-size:13px;color:var(--text-muted);">Tip: Start with budget models during MVP, upgrade to mid-tier as you validate product-market fit.</p>
+        `;
+    }
+
+    function captureEmail() {
+        const email = document.getElementById('planner-email').value;
+        if (!email || !email.includes('@')) return;
+        fetch('/api/subscribe', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ email, source: 'startup-planner' })
+        }).then(() => {
+            document.getElementById('planner-email').value = '';
+            document.getElementById('planner-email').placeholder = 'Subscribed! Check your inbox.';
+            if (window.trackEvent) window.trackEvent('email_subscribe', { source: 'startup-planner' });
+        }).catch(() => {
+            document.getElementById('planner-email').placeholder = 'Thanks! You\'re subscribed.';
+        });
+    }
+
+    // Initialize
+    document.addEventListener('DOMContentLoaded', recalculate);
+    </script>
+</body>
+</html>

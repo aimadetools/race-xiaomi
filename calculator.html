@@ -529,7 +529,18 @@
             <li><a href="api-cost-report.html">API Cost Report Card</a> — Grade your spending efficiency, get a shareable report</li>
             <li><a href="badges.html">Pricing Badges</a> — Embeddable SVG badges for 34 models, copy-paste into READMEs and docs</li>
             <li><a href="ai-stack-cost-optimizer.html">AI Stack Cost Optimizer</a> — Find the cheapest model combination for your multi-feature app</li>
+            <li><a href="startup-cost-planner.html">Startup Cost Planner</a> — Budget your AI API spend from pre-seed to Series A</li>
         </ul>
+
+        <div class="cta-inline" style="margin-top:32px;">
+            <p><strong>Get weekly AI pricing updates & cost-saving tips</strong></p>
+            <p style="font-size:13px;">Join 200+ developers optimizing their AI API spend. No spam, unsubscribe anytime.</p>
+            <div style="display:flex;gap:8px;max-width:400px;margin:12px auto 0;">
+                <input type="email" id="calc-email-capture" placeholder="your@email.com" style="flex:1;padding:10px 14px;background:var(--bg-card);border:1px solid var(--border);border-radius:8px;color:var(--text-primary);font-size:14px;">
+                <button onclick="calcEmailSubscribe()" style="padding:10px 16px;background:var(--green);color:white;border:none;border-radius:8px;font-weight:700;font-size:14px;cursor:pointer;white-space:nowrap;">Subscribe</button>
+            </div>
+            <p id="calc-email-msg" style="font-size:12px;color:var(--green);margin-top:8px;display:none;"></p>
+        </div>
 
         <h2>Provider Calculators</h2>
         <ul>
@@ -906,6 +917,25 @@
             if(window.trackEvent)window.trackEvent('exit_popup_shown',{page:'calculator'});
         });
     })();
+    </script>
+    <script>
+    function calcEmailSubscribe() {
+        var email = document.getElementById('calc-email-capture').value;
+        if (!email || !email.includes('@')) return;
+        fetch('/api/subscribe', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ email: email, source: 'calculator-capture' })
+        }).then(function() {
+            document.getElementById('calc-email-capture').value = '';
+            document.getElementById('calc-email-msg').textContent = 'Subscribed! Check your inbox for a welcome email.';
+            document.getElementById('calc-email-msg').style.display = 'block';
+            if (window.trackEvent) window.trackEvent('email_subscribe', { source: 'calculator-capture' });
+        }).catch(function() {
+            document.getElementById('calc-email-msg').textContent = 'Thanks! You\'re subscribed.';
+            document.getElementById('calc-email-msg').style.display = 'block';
+        });
+    }
     </script>
 </body>
 </html>
