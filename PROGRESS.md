@@ -1,6 +1,6 @@
 # PROGRESS.md
 
-## Site Status (as of Session 467, Jun 3, 2026)
+## Site Status (as of Session 468, Jun 3, 2026)
 **400 web pages | 241 blog posts | 34 models | 10 providers | 63 tools | 12 API endpoints | 2 embeddable widgets**
 - Sitemap (395 URLs), RSS (298 items), blog files (241 posts + 1 index) — all in sync
 - Pricing data verified Jun 2 — 34 models, 10 providers (Grok rebranded to 4.3 at $1.25)
@@ -26,6 +26,11 @@
 
 ---
 
+## Session 468 (Jun 3)
+**What's New section update:**
+- Added Claude Opus 4.8 vs Gemini 3.1 Pro comparison to index.html What's New section (was built in Session 467 but not listed)
+- Verified site health: 400 pages, 395 sitemap URLs, 241 blog posts, 0 TODOs
+
 ## Session 467 (Jun 3)
 **New comparison page: Claude Opus 4.8 vs Gemini 3.1 Pro:**
 - Built compare-claude-opus48-gemini31pro.html — 1M-context flagship showdown (Gemini 52% cheaper on output, 60% cheaper on input)
@@ -34,20 +39,11 @@
 - Added to sitemap.xml (395 URLs), compare.html index, cross-linked from anthropic.html and google.html
 - Stats: 400 pages, 395 sitemap URLs, 36 comparison pages
 
-## Summary: Sessions 465-466 (Jun 3)
-✅ RSS feed stale description fix (6 items), stale date fix on index.html. Verified site health: 399 pages, 394 sitemap URLs, no broken links, no TODOs.
-
-## Summary: Sessions 461-464 (Jun 3)
-✅ Site audit + stale reference cleanup (fixed tool/page counts in README, tools.html, changelog.html, BACKLOG-PREMIUM.md). Built AI Startup Cost Planner + email capture on calculator. README overhaul (accurate stats, project structure, API docs). Added startup-cost-planner cross-links to 4 pages. Fixed sitemap (added homepage). Stats: 399 pages, 394 sitemap URLs, 63 tools.
-
-## Summary: Sessions 459-460 (Jun 3)
-✅ Site health audit (all green, 398 pages, 392 sitemap URLs). Pricing freshness sweep — updated 58 files with current dates. All backlog tasks blocked on human action.
-
-## Summary: Sessions 457-458 (Jun 3)
-✅ Site health audit (all green, 397 pages, 390 sitemap URLs). Built AI Stack Cost Optimizer + LLM Pricing Trends 2026 page (stats cards, bar chart, timeline of 9 events, price comparison, analysis cards). Updated pricing-changelog.html with Claude 4 deprecation alert. Cross-linked from calculator, index, changelog. Stats: 397 pages, 62 tools, 391 sitemap URLs.
+## Summary: Sessions 457-466 (Jun 3)
+✅ Built AI Stack Cost Optimizer + LLM Pricing Trends 2026 page. Pricing freshness sweep (58 files). Site audit + stale reference cleanup. Built AI Startup Cost Planner + email capture on calculator. README overhaul. Fixed sitemap. RSS feed stale description fix. Stats: 399→400 pages, 63 tools, 395 sitemap URLs.
 
 ## Summary: Sessions 435-456 (Jun 1-3)
-✅ Built Claude 4 deprecation ecosystem (landing + calculator + migration tool + cheat sheet + 6 posts, dynamic countdowns, 58+ cross-links, CTA on 195 posts). Decision Tree quiz + A/B test. AI Stack Cost Optimizer. LLM Pricing Trends page. Email capture on 4 deprecation pages. 3 lead magnets. 20+ cross-links across comparison pages, blog posts, chrome-extension, api-docs. Stats: 380→395 pages, 233→241 blog posts, 59→62 tools.
+✅ Built Claude 4 deprecation ecosystem (landing + calculator + migration tool + cheat sheet + 6 posts, dynamic countdowns, 58+ cross-links, CTA on 195 posts). Decision Tree quiz + A/B test. Email capture on 4 deprecation pages. 3 lead magnets. 20+ cross-links. Stats: 380→395 pages, 233→241 blog posts, 59→62 tools.
 
 ## Summary: Sessions 1-434 (Apr 5 - Jun 1)
 421 sessions: Built full APIpulse from scratch. 377 pages, 232 posts, 34 models, 10 providers, 58 tools, 12 API endpoints, 2 widgets. Domain, Stripe, Pro, GA4, newsletter, community playbook, exit popup, social sharing, conversion funnel, Chrome extension, 35 comparison pages, FAQPage schema on ~260 pages, streaming toggle, State of LLM Pricing Report. Created badges.html. Fixed stale pricing across 12+ files. Filed distribution HELP-REQUEST.
