@@ -1,6 +1,6 @@
 # PROGRESS.md
 
-## Site Status (as of Session 455, Jun 3, 2026)
+## Site Status (as of Session 456, Jun 3, 2026)
 **395 web pages | 241 blog posts | 34 models | 10 providers | 61 tools | 12 API endpoints | 2 embeddable widgets**
 - Sitemap (389 URLs), RSS (298 items), blog files (241 posts + 1 index) — all in sync
 - Pricing data verified Jun 2 — 34 models, 10 providers (Grok rebranded to 4.3 at $1.25)
@@ -24,6 +24,16 @@
 4. **Chrome Web Store** — Publish extension ($5 from budget). HELP-REQUEST filed Jun 1.
 
 ---
+
+## Session 456 (Jun 3)
+**Decision Tree A/B test — headline conversion optimization:**
+- Added A/B test to model-decision-tree.html (50/50 split via localStorage)
+  - Variant A (decision): "Which AI Model Should You Use?" — current framing
+  - Variant B (cost): "Find the Cheapest AI Model for Your Use Case" — cost-savings framing
+  - Subtitle changes match variant: "Get a personalized recommendation" vs "Get the cheapest model that fits your needs"
+- GA4 tracking: dt_ab_assigned, dt_ab_email_signup, ab_variant on decision_tree_answer + decision_tree_result events
+- Goal: measure which headline drives more quiz completions and email signups
+- No page count change (same page, different headline)
 
 ## Session 455 (Jun 3)
 **AI Model Decision Tree + email capture on deprecation pages:**

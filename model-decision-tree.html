@@ -191,8 +191,8 @@
     </nav>
 
     <main id="main" class="page-content">
-        <h1>Which AI Model Should You Use?</h1>
-        <p class="subtitle">Answer 4 quick questions. Get a personalized recommendation with cost estimates.</p>
+        <h1 id="dt-headline">Which AI Model Should You Use?</h1>
+        <p class="subtitle" id="dt-subtitle">Answer 4 quick questions. Get a personalized recommendation with cost estimates.</p>
 
         <div class="progress-bar">
             <div class="progress-segment active" id="prog-1"></div>
@@ -388,7 +388,7 @@
         <div style="margin-top:40px;background:var(--bg-secondary);border:1px solid var(--border);border-radius:16px;padding:32px;text-align:center;">
             <h2 style="font-size:20px;font-weight:700;margin-bottom:8px;">Get the AI Model Selection Cheat Sheet</h2>
             <p style="font-size:14px;color:var(--text-secondary);margin-bottom:20px;">Quick-reference guide with pricing, benchmarks, and best-use cases for all 34 models. Free, no spam.</p>
-            <form onsubmit="saveEmail(event)" style="display:flex;gap:8px;max-width:400px;margin:0 auto;">
+            <form id="dt-email-form" onsubmit="saveEmail(event)" style="display:flex;gap:8px;max-width:400px;margin:0 auto;">
                 <input type="email" id="email-input" placeholder="you@company.com" required aria-label="Email address"
                     style="flex:1;padding:12px 16px;background:var(--bg-card);border:1px solid var(--border);
                     border-radius:8px;color:var(--text-primary);font-size:14px;">
@@ -434,7 +434,7 @@
                 }
             }, 200);
 
-            if (window.trackEvent) window.trackEvent('decision_tree_answer', { question: q, answer: val });
+            if (window.trackEvent) window.trackEvent('decision_tree_answer', { question: q, answer: val, ab_variant: window.DT_AB_VARIANT || 'unknown' });
         };
 
         function showResults() {
@@ -481,7 +481,8 @@
                 use_case: answers[1],
                 budget: answers[2],
                 priority: answers[3],
-                volume: answers[4]
+                volume: answers[4],
+                ab_variant: window.DT_AB_VARIANT || 'unknown'
             });
         }
 
@@ -660,6 +661,52 @@
         };
 
         document.addEventListener('DOMContentLoaded', init);
+    })();
+
+    // A/B Test: Decision Tree Headline
+    // Variant A: "Which AI Model Should You Use?" (decision framing)
+    // Variant B: "Find the Cheapest AI Model for Your Use Case" (cost framing)
+    (function() {
+        var KEY = 'dt_ab_variant';
+        var variant = localStorage.getItem(KEY);
+        if (!variant) {
+            variant = Math.random() < 0.5 ? 'decision' : 'cost';
+            localStorage.setItem(KEY, variant);
+        }
+
+        var headlines = {
+            decision: 'Which AI Model Should You Use?',
+            cost: 'Find the Cheapest AI Model for Your Use Case'
+        };
+        var subtitles = {
+            decision: 'Answer 4 quick questions. Get a personalized recommendation with cost estimates.',
+            cost: 'Answer 4 quick questions. Get the cheapest model that fits your needs.'
+        };
+
+        var h1 = document.getElementById('dt-headline');
+        var sub = document.getElementById('dt-subtitle');
+        if (h1) h1.textContent = headlines[variant];
+        if (sub) sub.textContent = subtitles[variant];
+
+        // Track variant assignment
+        if (typeof gtag === 'function') {
+            gtag('event', 'dt_ab_assigned', { variant: variant });
+        }
+
+        // Expose for debugging
+        window.DT_AB_VARIANT = variant;
+
+        // Track email signups with variant
+        var emailForm = document.getElementById('dt-email-form');
+        if (emailForm) {
+            emailForm.addEventListener('submit', function() {
+                setTimeout(function() {
+                    if (typeof gtag === 'function') {
+                        gtag('event', 'dt_ab_email_signup', { variant: variant });
+                    }
+                }, 500);
+            });
+        }
     })();
     </script>
 </body>

@@ -15,7 +15,7 @@
 - Promote Claude 4 migration cheat sheet on Reddit (r/webdev, r/ChatGPTDev, r/MachineLearning)
 - Monitor email signups from deprecation pages (4 pages now have capture)
 - Submit badges.html to developer tool directories (separate from main site submissions)
-- A/B test decision tree headline vs. cost optimizer for conversion
+- ~~A/B test decision tree headline vs. cost optimizer for conversion~~ → DONE (Session 456)
 
 ### Routine Maintenance (cheap sessions)
 - Update State of LLM Pricing Report monthly
@@ -28,6 +28,9 @@
 ✅ Built model-decision-tree.html — interactive quiz (4 questions → model recommendation with cost estimates, 34 models, FAQPage schema, email capture)
 ✅ Added email capture to 3 deprecation pages (claude-4-deprecation.html, calculator, migration tool)
 ✅ Added to sitemap (389 URLs), What's New, cross-linked from calculator nav
+
+### Completed (Session 456, Jun 3)
+✅ A/B test on decision tree headline — 50/50 split between "Which AI Model Should You Use?" vs "Find the Cheapest AI Model for Your Use Case". GA4 tracking for assignments, completions, and email signups.
 
 ### Completed (Sessions 451-454, Jun 2)
 ✅ Built cheapest-llm-api-2026.html + gpt5-vs-claude-pricing-2026.html lead magnets
