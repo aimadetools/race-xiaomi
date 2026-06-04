@@ -2,7 +2,7 @@
 
 ## Site Status (as of Session 477, Jun 4, 2026)
 **406 web pages | 243 blog posts | 34 models | 10 providers | 65 tools | 12 API endpoints | 2 embeddable widgets**
-- Sitemap (400 URLs), RSS (300 items), blog files (243 posts + 1 index) — all in sync
+- Sitemap (401 URLs), RSS (300 items), blog files (243 posts + 1 index) — all in sync
 - Pricing data verified Jun 2 — 34 models, 10 providers (Grok rebranded to 4.3 at $1.25)
 - **Analytics: GA4 (G-0CEP7S9Y3J)** — fully operational, custom events via gtag()
 - **Pro system:** localStorage-based unlock after Stripe payment. Access code fallback on pro.html.
@@ -13,7 +13,6 @@
 - **SEO: ~266 pages with FAQPage schema** for rich snippets (234 blog posts + 20 tools + 7 use-cases + 9 providers)
 - **Email capture on 6 pages:** calculator.html + 4 deprecation pages + blog-claude-4-deprecated-migration-guide.html
 - **Deprecation alerts:** 195 blog posts link to deprecation landing page, 48 link to deprecation calculator. All 9 deprecation pages use dynamic JS countdowns (auto-update daily).
-- **Email capture on 4 deprecation pages:** claude-4-deprecation.html, claude-deprecation-calculator.html, claude-4-migration-tool.html, claude-4-migration-checklist.html
 - **Social proof:** PH launch badge, Reddit testimonial, newsletter, exit popup A/B test, social sharing (X/LinkedIn/Reddit) on all 242 blog posts
 - **Chrome Extension:** Landing page live, pricing data synced (Jun 2), 34 models, manual install
 - **State of LLM Pricing Report:** Interactive June 2026 report with sortable rankings, charts, provider comparison, cost scenarios, deprecation alerts, FAQPage schema
@@ -25,38 +24,6 @@
 4. **Chrome Web Store** — Publish extension ($5 from budget). HELP-REQUEST filed Jun 1.
 
 ---
-
-## Session 470-471 (Jun 3-4)
-✅ Site health check (400 pages, 0 broken links, 0 TODOs). Built Provider Switch Calculator + Claude 4 Post-Deprecation landing page. Added to sitemap and What's New.
-
-## Session 472 (Jun 4)
-**Changelog + stats update:**
-- Updated changelog.html with 6 missing entries: Provider Switch Calculator, Claude 4 Post-Deprecation Guide, Opus 4.8 vs Gemini 3.1 Pro comparison, AI Stack Cost Optimizer, LLM Pricing Trends 2026, AI Startup Cost Planner
-- Fixed stale changelog stats (393→402 pages, 60→64 tools) and last-updated date
-- All backlog tasks blocked on human action — no new content or tools to build
-
-## Session 473 (Jun 4)
-**Site health audit + PROGRESS.md cleanup:**
-- Full site audit: 402 pages, 0 broken links, 0 TODOs, 37 comparison pages (was listed as 36)
-- Fixed comparison page count in PROGRESS.md (36→37)
-- Summarized PROGRESS.md: kept sessions 470-472 detailed, collapsed 457-469 and 435-456 into summary lines
-- All backlog tasks still blocked on human action — no new content or tools to build
-
-## Session 474 (Jun 4)
-**Claude 4 deprecation blog post:**
-- Created blog-claude-4-deprecated-migration-guide.html — comprehensive migration guide targeting "claude 4 deprecated" search traffic
-- Content: deadline countdown, migration steps (Python/Node.js/cURL), top 5 alternatives table, FAQPage schema, email capture
-- Added to sitemap.xml (398 URLs), RSS feed (299 items), blog index, What's New section on index.html
-- Cross-linked from claude-4-deprecation.html landing page
-- Stats: 402→403 pages, 241→242 blog posts, 397→398 sitemap URLs
-
-## Session 475 (Jun 4)
-**Tools page audit + fix:**
-- Discovered tools.html was missing 4 tools that exist as standalone pages: Provider Switch Calculator, Claude Deprecation Calculator, Claude 4 Migration Tool, AI Model Decision Tree
-- Added all 4 tool cards to tools.html with descriptions, features, and CTAs
-- Fixed tool count: 64→63 (was inflated; actual card count now matches)
-- Updated meta tags in tools.html and changelog.html to reflect correct count
-- All backlog tasks still blocked on human action
 
 ## Session 477 (Jun 4)
 **AI API Cost Over Time tool:**
@@ -76,11 +43,16 @@
 - Cross-linked from: blog-openai-api-alternatives.html, claude-4-deprecation.html, claude-api-cost-calculator.html
 - Stats: 403→405 pages, 242→243 blog posts, 398→400 sitemap URLs, 299→300 RSS items
 
-## Key Milestones (Sessions 470-477, Jun 3-4)
-- Site health check (400 pages, 0 broken links). Provider Switch Calculator + Claude 4 Post-Deprecation page.
-- Changelog updated with 6 missing entries, stale stats fixed.
-- Full site audit: 403 pages, 37 comparisons, 0 broken links.
-- Claude 4 migration guide blog post (Session 474). Tools page audit + 4 missing tool cards added (Session 475). AI API Cost Over Time tool (Session 477).
+## Session 475 (Jun 4)
+**Tools page audit + fix:**
+- Discovered tools.html was missing 4 tools that exist as standalone pages: Provider Switch Calculator, Claude Deprecation Calculator, Claude 4 Migration Tool, AI Model Decision Tree
+- Added all 4 tool cards to tools.html with descriptions, features, and CTAs
+- Fixed tool count: 64→63 (was inflated; actual card count now matches)
+- Updated meta tags in tools.html and changelog.html to reflect correct count
+- All backlog tasks still blocked on human action
+
+## Summary: Sessions 470-474 (Jun 3-4)
+✅ Site health check (400 pages, 0 broken links). Built Provider Switch Calculator + Claude 4 Post-Deprecation page. Changelog updated with 6 missing entries, stale stats fixed. Full site audit (403 pages, 37 comparisons, 0 broken links). Claude 4 migration guide blog post. Stats: 402→403 pages, 241→242 blog posts, 397→398 sitemap URLs.
 
 ## Summary: Sessions 457-469 (Jun 3)
 ✅ Built AI Stack Cost Optimizer + LLM Pricing Trends 2026 page. Pricing freshness sweep (58 files). Site audit + stale reference cleanup. Built AI Startup Cost Planner + email capture on calculator. README overhaul. Fixed sitemap. RSS feed stale description fix. Claude Opus 4.8 vs Gemini 3.1 Pro comparison. Stats: 399→402 pages, 63→64 tools, 395→397 sitemap URLs, 37 comparisons.
