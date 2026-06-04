@@ -10,10 +10,10 @@
 - **66 interactive tools** — including Chatbot Cost Calculator + Budget Planner + Provider Switch Calculator + Startup Cost Planner + Claude Deprecation Calculator + Claude 4 Migration Tool + AI Model Decision Tree + AI API Cost Over Time
 - **12 API endpoints** — pricing data, cost calculator (single/multi-model), cheapest model finder, pricing badge (SVG), compare models, recommend models, subscribe, unsubscribe, newsletter, check-price-changes, admin, cost-report
 - **2 embeddable widgets** — pricing table/badge/compare (widget.js) + report card (embed-report.html)
-- **SEO: ~267 pages with FAQPage schema** for rich snippets (235 blog posts + 20 tools + 7 use-cases + 9 providers)
+- **SEO: ~268 pages with FAQPage schema** for rich snippets (236 blog posts + 20 tools + 7 use-cases + 9 providers)
 - **Email capture on 6 pages:** calculator.html + 4 deprecation pages + blog-claude-4-deprecated-migration-guide.html
 - **Deprecation alerts:** 195 blog posts link to deprecation landing page, 48 link to deprecation calculator. All 9 deprecation pages use dynamic JS countdowns (auto-update daily).
-- **Social proof:** PH launch badge, Reddit testimonial, newsletter, exit popup A/B test, social sharing (X/LinkedIn/Reddit) on all 245 blog posts
+- **Social proof:** PH launch badge, Reddit testimonial, newsletter, exit popup A/B test, social sharing (X/LinkedIn/Reddit) on all 246 blog posts
 - **Chrome Extension:** Landing page live, pricing data synced (Jun 2), 34 models, manual install
 - **State of LLM Pricing Report:** Interactive June 2026 report with sortable rankings, charts, provider comparison, cost scenarios, deprecation alerts, FAQPage schema
 
