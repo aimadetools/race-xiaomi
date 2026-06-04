@@ -1,6 +1,6 @@
 # PROGRESS.md
 
-## Site Status (as of Session 483, Jun 4, 2026)
+## Site Status (as of Session 484, Jun 4, 2026)
 **412 web pages | 247 blog posts | 34 models | 10 providers | 66 tools | 12 API endpoints | 2 embeddable widgets**
 - Sitemap (407 URLs), RSS (304 items), blog files (247 posts + 1 index) — all in sync
 - Pricing data verified Jun 2 — 34 models, 10 providers (Grok rebranded to 4.3 at $1.25)
@@ -36,31 +36,8 @@
 - No broken links, no stale counts, no TODOs in codebase
 - All Week 7 backlog tasks blocked on human action (distribution, Stripe links, Chrome Web Store, directory submissions)
 
-## Session 483 (Jun 4)
-**AI API Fallback Strategies blog post + pricing data sync:**
-- Created blog-ai-api-fallback-strategies.html — "AI API Fallback Strategies: Build Resilient AI Apps in 2026" targeting high-intent engineering keyword. 4 strategies (simple fallback, cost-aware chain, health-check routing, circuit breaker), Python + JavaScript code examples, recommended fallback chains by use case (5 tables), production checklist, monitoring metrics, cost examples. FAQPage schema (5 questions), social sharing
-- Synced Llama 4 pricing across 6 API files (Scout: $0.11→$0.18 input, $0.34→$0.59 output; Maverick: $0.20→$0.27 input, $0.60→$0.85 output) to match pricing-data.js (verified Jun 2026)
-- Added missing anthropic-opus48 to api/calculate.js
-- Fixed stale data in api-docs.html (lastUpdated 2026-05-29→2026-06-02, provider counts OpenAI 9→10, Anthropic 5→6, model count 32→34)
-- Updated api/pricing.js lastUpdated to 2026-06-04
-- Updated sitemap.xml (406→407 URLs), RSS (303→304 items), blog.html (246→247 posts), index.html What's New + guide count, changelog.html (1 new entry + stats 411→412 pages, 246→247 posts), pricing.html counts
-- Stats: 411→412 pages, 246→247 blog posts, 406→407 sitemap URLs, 303→304 RSS items
-
-## Session 482 (Jun 4)
-**Conversion optimization — pricing page improvements:**
-- Added "See What Pro Unlocks" section to pricing.html — interactive previews of Saved Scenarios, Cost Report Export, and Optimization Tips (3 feature cards with mockup data)
-- Fixed stale counts across site: 241→246 guides (pricing.html, index.html, blog.html), 60→66 tools (pricing.html), 33→34 models in share CTA (shared.js)
-- Updated changelog.html stats bar (410→411 pages, 245→246 posts) + new entry
-- Added What's New entry on pricing.html for Pro Feature Preview
-- Approach change: stopped creating blog posts/tools (same work last 3 sessions), focused on CONVERSION OPTIMIZATION instead
-
-## Session 481 (Jun 4)
-**AI Agent build guide blog post:**
-- Created blog-how-to-build-ai-agent-cheap-2026.html — "How to Build an AI Agent Cheap in 2026" targeting high-intent keyword. 3 agent types cost breakdowns (simple/multi-step/coding), Python code example with tool-calling agent, 6 optimization tips, model comparison table (8 models), FAQPage schema (5 questions), share buttons
-- Updated sitemap.xml (405→406 URLs), RSS (302→303 items), blog.html (245→246 posts), index.html What's New (1 new entry), changelog.html (1 new entry + stats 410→411 pages, 245→246 posts)
-- Stats: 410→411 pages, 245→246 blog posts, 405→406 sitemap URLs, 302→303 RSS items
-
-## Summary: Sessions 477-480 (Jun 4)
+## Summary: Sessions 477-483 (Jun 4)
+✅ AI API Fallback Strategies blog post. Synced Llama 4 pricing across 6 API files. Fixed stale api-docs data. Pricing page Pro Feature Preview. AI Agent build guide blog post. AI Chatbot Cost Calculator + Customer Support blog post. AI API Cost Over Time tool. Claude API Alternatives blog post + calculator. AI API Budget Planner tool. "How to Build an AI Chatbot Cheap" blog post. Tools page audit. Provider Switch Calculator. Claude 4 Post-Deprecation + migration guide. Site audit: fixed orphaned blog post, stale meta counts, missing changelog entries. Stats: 402→412 pages, 241→247 blog posts, 397→407 sitemap URLs, 66 tools.
 ✅ Built AI Chatbot Cost Calculator + Customer Support blog post. AI API Cost Over Time tool. Claude API Alternatives blog post + calculator. AI API Budget Planner tool. "How to Build an AI Chatbot Cheap" blog post. Tools page audit. Provider Switch Calculator. Claude 4 Post-Deprecation + migration guide. Site audit: fixed orphaned blog post, stale meta counts, missing changelog entries. Stats: 402→410 pages, 241→245 blog posts, 397→405 sitemap URLs, 66 tools.
 
 ## Summary: Sessions 457-469 (Jun 3)
