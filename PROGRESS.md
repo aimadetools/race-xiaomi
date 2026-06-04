@@ -1,13 +1,13 @@
 # PROGRESS.md
 
-## Site Status (as of Session 474, Jun 4, 2026)
-**403 web pages | 242 blog posts | 34 models | 10 providers | 64 tools | 12 API endpoints | 2 embeddable widgets**
+## Site Status (as of Session 475, Jun 4, 2026)
+**403 web pages | 242 blog posts | 34 models | 10 providers | 63 tools | 12 API endpoints | 2 embeddable widgets**
 - Sitemap (398 URLs), RSS (299 items), blog files (242 posts + 1 index) — all in sync
 - Pricing data verified Jun 2 — 34 models, 10 providers (Grok rebranded to 4.3 at $1.25)
 - **Analytics: GA4 (G-0CEP7S9Y3J)** — fully operational, custom events via gtag()
 - **Pro system:** localStorage-based unlock after Stripe payment. Access code fallback on pro.html.
 - **37 comparison pages** — all providers covered, interactive calculators, FAQPage schema
-- **64 interactive tools** — including Provider Switch Calculator + Startup Cost Planner + Claude Deprecation Calculator + Claude 4 Migration Tool + AI Model Decision Tree
+- **63 interactive tools** — including Provider Switch Calculator + Startup Cost Planner + Claude Deprecation Calculator + Claude 4 Migration Tool + AI Model Decision Tree
 - **12 API endpoints** — pricing data, cost calculator (single/multi-model), cheapest model finder, pricing badge (SVG), compare models, recommend models, subscribe, unsubscribe, newsletter, check-price-changes, admin, cost-report
 - **2 embeddable widgets** — pricing table/badge/compare (widget.js) + report card (embed-report.html)
 - **SEO: ~266 pages with FAQPage schema** for rich snippets (234 blog posts + 20 tools + 7 use-cases + 9 providers)
@@ -49,6 +49,14 @@
 - Added to sitemap.xml (398 URLs), RSS feed (299 items), blog index, What's New section on index.html
 - Cross-linked from claude-4-deprecation.html landing page
 - Stats: 402→403 pages, 241→242 blog posts, 397→398 sitemap URLs
+
+## Session 475 (Jun 4)
+**Tools page audit + fix:**
+- Discovered tools.html was missing 4 tools that exist as standalone pages: Provider Switch Calculator, Claude Deprecation Calculator, Claude 4 Migration Tool, AI Model Decision Tree
+- Added all 4 tool cards to tools.html with descriptions, features, and CTAs
+- Fixed tool count: 64→63 (was inflated; actual card count now matches)
+- Updated meta tags in tools.html and changelog.html to reflect correct count
+- All backlog tasks still blocked on human action
 
 ## Summary: Sessions 457-469 (Jun 3)
 ✅ Built AI Stack Cost Optimizer + LLM Pricing Trends 2026 page. Pricing freshness sweep (58 files). Site audit + stale reference cleanup. Built AI Startup Cost Planner + email capture on calculator. README overhaul. Fixed sitemap. RSS feed stale description fix. Claude Opus 4.8 vs Gemini 3.1 Pro comparison. Stats: 399→402 pages, 63→64 tools, 395→397 sitemap URLs, 37 comparisons.
