@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI API Cost Over Time — Historical Pricing Trends & Charts | APIpulse</title>
+    <meta name="description" content="Track AI API pricing trends over time. See how OpenAI, Anthropic, Google, and DeepSeek costs have changed — with interactive charts and savings insights.">
+    <meta name="keywords" content="AI API pricing trends, LLM cost history, OpenAI price changes, Anthropic pricing history, AI API cost over time, LLM pricing chart">
+    <meta property="og:title" content="AI API Cost Over Time — Historical Pricing Trends & Charts | APIpulse">
+    <meta property="og:description" content="Track AI API pricing trends over time. See how costs have changed across OpenAI, Anthropic, Google, and DeepSeek.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://getapipulse.com/og-image.png">
+    <meta property="og:url" content="https://getapipulse.com/ai-api-cost-over-time.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="AI API Cost Over Time — Historical Pricing Trends">
+    <meta name="twitter:image" content="https://getapipulse.com/og-image.png">
+    <meta name="twitter:description" content="Track AI API pricing trends over time. See how costs have changed across providers.">
+    <link rel="canonical" href="https://getapipulse.com/ai-api-cost-over-time.html">
+    <link rel="alternate" type="application/rss+xml" title="APIpulse Blog" href="https://getapipulse.com/rss.xml">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="styles.css">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0CEP7S9Y3J"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-0CEP7S9Y3J');
+    </script>
+    <script src="analytics.js" defer></script>
+    <script src="dynamic-date.js" defer></script>
+    <script src="shared.js" defer></script>
+    <script src="pricing-data.js" defer></script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "AI API Cost Over Time",
+        "url": "https://getapipulse.com/ai-api-cost-over-time.html",
+        "description": "Track AI API pricing trends over time. See how OpenAI, Anthropic, Google, and DeepSeek costs have changed with interactive charts.",
+        "applicationCategory": "DeveloperApplication",
+        "operatingSystem": "Web",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "How much have AI API prices dropped in 2026?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "AI API prices have dropped 40-90% since early 2025. GPT-4o went from $5/$15 to $2.50/$10 (50% drop). Claude Sonnet 4 launched at $3/$15. Gemini Flash dropped to $0.10/$0.40. Budget models like DeepSeek V4 Flash now cost 97% less than premium models from 12 months ago."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Which AI provider has dropped prices the most?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Google and DeepSeek have dropped prices the most. Google Gemini Flash went from $0.25/$0.75 to $0.10/$0.40 (47-60% drop). DeepSeek V4 Flash at $0.14/$0.28 is the cheapest high-quality option. OpenAI has been more stable, with GPT-5 mini at $0.25/$2.00 offering budget-tier pricing."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Will AI API prices continue to drop?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes. Historical trends show 30-50% annual price declines. Competition from DeepSeek, Google, and open-source models keeps pressure on pricing. Budget models are approaching near-zero marginal cost. Expect continued drops through 2026, especially for mid-tier models."
+                }
+            }
+        ]
+    }
+    </script>
+    <style>
+        .content { max-width: 960px; margin: 0 auto; padding: 120px 24px 80px; }
+        h1 { font-size: 40px; font-weight: 800; text-align: center; margin-bottom: 12px; }
+        .subtitle { text-align: center; color: var(--text-secondary); font-size: 18px; margin-bottom: 40px; max-width: 650px; margin-left: auto; margin-right: auto; }
+
+        .chart-controls { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; margin-bottom: 32px; }
+        .chart-btn {
+            background: var(--bg-card); border: 1px solid var(--border); border-radius: 8px;
+            padding: 8px 16px; font-size: 13px; font-weight: 600; color: var(--text-secondary);
+            cursor: pointer; transition: all 0.2s;
+        }
+        .chart-btn:hover { border-color: var(--accent); color: var(--accent); }
+        .chart-btn.active { background: var(--accent); color: white; border-color: var(--accent); }
+
+        .chart-container {
+            background: var(--bg-secondary); border: 1px solid var(--border);
+            border-radius: 16px; padding: 32px; margin-bottom: 32px;
+            position: relative;
+        }
+        .chart-container canvas { width: 100% !important; height: 400px !important; }
+
+        .timeline-card {
+            background: var(--bg-secondary); border: 1px solid var(--border);
+            border-radius: 12px; padding: 24px; margin-bottom: 16px;
+            display: grid; grid-template-columns: 120px 1fr auto; gap: 16px; align-items: start;
+        }
+        .timeline-date { font-weight: 700; color: var(--accent); font-size: 14px; }
+        .timeline-content h3 { font-size: 16px; font-weight: 600; margin-bottom: 4px; }
+        .timeline-content p { font-size: 14px; color: var(--text-secondary); margin: 0; line-height: 1.5; }
+        .timeline-change {
+            font-size: 13px; font-weight: 700; padding: 4px 10px; border-radius: 6px; white-space: nowrap;
+        }
+        .change-drop { background: rgba(34,197,94,0.15); color: #22c55e; }
+        .change-rise { background: rgba(239,68,68,0.15); color: #ef4444; }
+
+        .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; margin-bottom: 32px; }
+        .stat-card {
+            background: var(--bg-secondary); border: 1px solid var(--border);
+            border-radius: 12px; padding: 20px; text-align: center;
+        }
+        .stat-card .stat-value { font-size: 28px; font-weight: 800; color: var(--green); }
+        .stat-card .stat-label { font-size: 13px; color: var(--text-secondary); margin-top: 4px; }
+
+        .insight-box {
+            background: var(--accent-glow); border: 1px solid var(--accent);
+            border-radius: 12px; padding: 24px; margin: 32px 0;
+        }
+        .insight-box h3 { margin-top: 0; color: var(--accent); }
+
+        .cta-inline {
+            background: var(--bg-secondary); border: 1px solid var(--accent);
+            border-radius: 12px; padding: 24px; margin: 32px 0; text-align: center;
+        }
+        .cta-inline p { margin-bottom: 12px; }
+        .btn-primary { display: inline-block; }
+
+        .related {
+            background: var(--bg-secondary); border: 1px solid var(--border);
+            border-radius: 12px; padding: 24px; margin-top: 40px;
+        }
+        .related h3 { margin-top: 0; font-size: 18px; }
+        .related a { display: block; padding: 8px 0; color: var(--accent); font-size: 14px; }
+
+        .share-section { margin-top: 32px; padding-top: 24px; border-top: 1px solid var(--border); text-align: center; }
+        .share-section p { color: var(--text-secondary); font-size: 14px; margin-bottom: 12px; }
+        .share-btn {
+            display: inline-block; background: var(--bg-card); color: var(--text-primary);
+            padding: 8px 20px; border-radius: 8px; font-size: 14px; font-weight: 500;
+            border: 1px solid var(--border); transition: all 0.2s; text-decoration: none;
+        }
+        .share-btn:hover { background: var(--accent); color: white; border-color: var(--accent); }
+
+        @media (max-width: 768px) {
+            .content { padding: 100px 20px 60px; }
+            h1 { font-size: 28px; }
+            .timeline-card { grid-template-columns: 1fr; }
+            .stats-grid { grid-template-columns: 1fr 1fr; }
+            .chart-container canvas { height: 280px !important; }
+        }
+    </style>
+    <meta name="theme-color" content="#6366f1">
+</head>
+<body>
+    <a href="#main" class="skip-link">Skip to content</a>
+    <nav>
+        <div class="nav-inner">
+            <a href="index.html" class="logo">API<span>pulse</span></a>
+            <button class="hamburger" onclick="toggleMobileNav()" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+            <div class="nav-links">
+                <a href="calculator.html">Calculator</a>
+                <a href="compare.html">Compare</a>
+                <a href="cost-explorer.html">Explorer</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="blog.html">Blog</a>
+                <a href="pricing-index.html">Pricing Index</a>
+                <a href="pricing-trends.html">Trends</a>
+                <a href="pricing-changelog.html">Changelog</a>
+                <a href="api-docs.html" style="color:var(--accent);">API</a>
+                <a href="pricing.html" class="nav-cta" onclick="if(window.trackEvent)window.trackEvent('pro_button_clicked',{source:'nav'})">Get Pro — $29</a>
+                <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
+            </div>
+        </div>
+    </nav>
+
+    <main id="main">
+
+    <div class="content">
+        <h1>AI API Cost Over Time</h1>
+        <p class="subtitle">Track how AI API prices have changed. Interactive charts showing historical pricing trends for OpenAI, Anthropic, Google, DeepSeek, and more.</p>
+
+        <!-- Stats -->
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-value">-62%</div>
+                <div class="stat-label">Avg price drop (2025-2026)</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value">97%</div>
+                <div class="stat-label">Cheapest vs premium gap</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value">34</div>
+                <div class="stat-label">Models tracked</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value">10</div>
+                <div class="stat-label">Providers monitored</div>
+            </div>
+        </div>
+
+        <!-- Chart Controls -->
+        <div class="chart-controls">
+            <button class="chart-btn active" onclick="setChartView('input')">Input Cost ($/1M tokens)</button>
+            <button class="chart-btn" onclick="setChartView('output')">Output Cost ($/1M tokens)</button>
+            <button class="chart-btn" onclick="setChartView('monthly')">Monthly Cost (10K req/day)</button>
+        </div>
+
+        <!-- Chart -->
+        <div class="chart-container">
+            <canvas id="costChart"></canvas>
+        </div>
+
+        <!-- Provider filter -->
+        <div class="chart-controls" style="margin-bottom:40px;">
+            <button class="chart-btn active" data-provider="all" onclick="filterProvider('all',this)">All Providers</button>
+            <button class="chart-btn" data-provider="openai" onclick="filterProvider('openai',this)">OpenAI</button>
+            <button class="chart-btn" data-provider="anthropic" onclick="filterProvider('anthropic',this)">Anthropic</button>
+            <button class="chart-btn" data-provider="google" onclick="filterProvider('google',this)">Google</button>
+            <button class="chart-btn" data-provider="deepseek" onclick="filterProvider('deepseek',this)">DeepSeek</button>
+            <button class="chart-btn" data-provider="mistral" onclick="filterProvider('mistral',this)">Mistral</button>
+        </div>
+
+        <!-- Key Pricing Events Timeline -->
+        <h2>Key Pricing Events</h2>
+        <p style="color:var(--text-secondary);margin-bottom:24px;">Major price changes and model launches that reshaped the AI API market.</p>
+
+        <div class="timeline-card">
+            <div class="timeline-date">Jun 2026</div>
+            <div class="timeline-content">
+                <h3>DeepSeek V4 Pro launches at $0.44/$0.87</h3>
+                <p>Near-Claude quality at 43% lower cost. Disrupts the mid-tier market and puts pressure on OpenAI and Anthropic pricing.</p>
+            </div>
+            <span class="timeline-change change-drop">-43% vs Claude</span>
+        </div>
+
+        <div class="timeline-card">
+            <div class="timeline-date">Jun 2026</div>
+            <div class="timeline-content">
+                <h3>Claude 4 Opus/Sonnet retiring June 15</h3>
+                <p>Anthropic deprecating Claude 4 Opus ($15/$75) and Sonnet 4 ($3/$15). Users migrating to Opus 4.8 ($5/$25) and Sonnet 4.6 ($3/$15).</p>
+            </div>
+            <span class="timeline-change change-drop">-67% via Opus 4.8</span>
+        </div>
+
+        <div class="timeline-card">
+            <div class="timeline-date">May 2026</div>
+            <div class="timeline-content">
+                <h3>GPT-5 mini drops to $0.25/$2.00</h3>
+                <p>OpenAI's budget flagship undercuts Claude Haiku 4.5 by 75%. Best price-performance for general tasks.</p>
+            </div>
+            <span class="timeline-change change-drop">-75% vs Haiku</span>
+        </div>
+
+        <div class="timeline-card">
+            <div class="timeline-date">May 2026</div>
+            <div class="timeline-content">
+                <h3>xAI rebrands Grok 3 to Grok 4.3 at $1.25/$2.50</h3>
+                <p>Major price cut from Grok 3's $3/$15. Now competitive with Gemini 2.5 Pro and GPT-5.</p>
+            </div>
+            <span class="timeline-change change-drop">-58% price cut</span>
+        </div>
+
+        <div class="timeline-card">
+            <div class="timeline-date">Apr 2026</div>
+            <div class="timeline-content">
+                <h3>Google Gemini 2.0 Flash at $0.10/$0.40</h3>
+                <p>Google's budget model becomes cheapest high-quality option. 93% cheaper than Claude Sonnet 4 with comparable output quality.</p>
+            </div>
+            <span class="timeline-change change-drop">-93% vs Claude</span>
+        </div>
+
+        <div class="timeline-card">
+            <div class="timeline-date">Mar 2026</div>
+            <div class="timeline-content">
+                <h3>DeepSeek V4 Flash at $0.14/$0.28</h3>
+                <p>Fastest and cheapest model with strong code performance. 1M context window. Becomes the default for high-volume production APIs.</p>
+            </div>
+            <span class="timeline-change change-drop">-91% vs Claude</span>
+        </div>
+
+        <div class="timeline-card">
+            <div class="timeline-date">Feb 2026</div>
+            <div class="timeline-content">
+                <h3>GPT-5 launches at $1.25/$10.00</h3>
+                <p>OpenAI's flagship drops 50% from GPT-4o's input price. Strong reasoning, 272K context. Sets new baseline for premium tier.</p>
+            </div>
+            <span class="timeline-change change-drop">-50% input vs GPT-4o</span>
+        </div>
+
+        <div class="timeline-card">
+            <div class="timeline-date">Jan 2026</div>
+            <div class="timeline-content">
+                <h3>Claude Opus 4.8 at $5/$25</h3>
+                <p>Anthropic's premium model drops 67% from Claude 4 Opus ($15/$75). Same quality, dramatically lower price.</p>
+            </div>
+            <span class="timeline-change change-drop">-67% vs Opus 4</span>
+        </div>
+
+        <div class="timeline-card">
+            <div class="timeline-date">Nov 2025</div>
+            <div class="timeline-content">
+                <h3>Claude Sonnet 4 launches at $3/$15</h3>
+                <p>Anthropic's mid-tier model. Strong coding and reasoning. Becomes the benchmark for quality-per-dollar.</p>
+            </div>
+            <span class="timeline-change" style="background:rgba(99,102,241,0.15);color:#6366f1;">NEW MODEL</span>
+        </div>
+
+        <div class="timeline-card">
+            <div class="timeline-date">Sep 2025</div>
+            <div class="timeline-content">
+                <h3>GPT-4o drops to $2.50/$10.00</h3>
+                <p>OpenAI cuts GPT-4o pricing by 50% as competition intensifies. Input drops from $5 to $2.50.</p>
+            </div>
+            <span class="timeline-change change-drop">-50% input</span>
+        </div>
+
+        <div class="timeline-card">
+            <div class="timeline-date">Jun 2025</div>
+            <div class="timeline-content">
+                <h3>Gemini 1.5 Pro at $1.25/$5.00</h3>
+                <p>Google's mid-tier model with 2M context. Competitive with GPT-4o at lower cost. Triggers industry-wide price competition.</p>
+            </div>
+            <span class="timeline-change" style="background:rgba(99,102,241,0.15);color:#6366f1;">NEW MODEL</span>
+        </div>
+
+        <!-- Insight -->
+        <div class="insight-box">
+            <h3>The Pricing Trend Is Clear</h3>
+            <p><strong>AI API costs drop ~50% every 6 months.</strong> Budget models from Google and DeepSeek now cost less than premium models did 12 months ago. The "budget" tier of 2026 would have been "premium" in 2024.</p>
+            <p style="margin-bottom:0;"><strong>What this means for you:</strong> If you're still on the same model you started with, you're likely overpaying by 40-80%. Use the <a href="cost-optimizer.html">Cost Optimizer</a> to find your savings.</p>
+        </div>
+
+        <!-- CTA -->
+        <div class="cta-inline">
+            <p><strong>See how much you could save.</strong> Enter your current API setup and get a personalized cost optimization report.</p>
+            <a href="cost-optimizer.html" class="btn-primary">Get Your Free Cost Report</a>
+            <span style="margin: 0 12px; color: var(--text-muted);">or</span>
+            <a href="calculator.html" class="btn-primary" style="background:var(--bg-card);color:var(--text-primary);border:1px solid var(--border);">Cost Calculator</a>
+        </div>
+
+        <!-- Related -->
+        <div class="related">
+            <h3>Related Tools & Guides</h3>
+            <a href="pricing-trends.html">LLM Pricing Trends 2026 — Full Analysis</a>
+            <a href="cost-optimizer.html">AI API Cost Optimizer — Personalized Savings Report</a>
+            <a href="calculator.html">AI API Cost Calculator — Estimate Monthly Spend</a>
+            <a href="pricing-changelog.html">Pricing Changelog — Every Price Change Tracked</a>
+            <a href="cost-explorer.html">Cost Explorer — Compare All Models</a>
+            <a href="cheat-sheet.html">LLM Pricing Cheat Sheet — Quick Reference</a>
+            <a href="blog-reduce-ai-api-costs.html">How to Reduce Your AI API Costs by 40%</a>
+            <a href="blog-cost-optimization-guide.html">AI API Cost Optimization Guide</a>
+        </div>
+
+        <div class="share-section">
+            <p>Found this useful? Share it:</p>
+            <a href="https://twitter.com/intent/tweet?text=AI+API+costs+have+dropped+62%25+in+12+months.+Track+the+trends+with+this+free+tool.&url=https%3A%2F%2Fgetapipulse.com%2Fai-api-cost-over-time.html" target="_blank" rel="noopener" class="share-btn">Share on X</a>
+            <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fgetapipulse.com%2Fai-api-cost-over-time.html" target="_blank" rel="noopener" class="share-btn">Share on LinkedIn</a>
+        </div>
+    </div>
+
+    <div style="background:linear-gradient(135deg,rgba(99,102,241,0.08),rgba(34,197,94,0.08));border:1px solid var(--accent);border-radius:12px;padding:24px;margin:32px 0;text-align:center;">
+        <p style="font-size:16px;font-weight:700;margin-bottom:8px;color:var(--text-primary);">Want to optimize your AI API costs?</p>
+        <p style="font-size:14px;color:var(--text-secondary);margin-bottom:16px;line-height:1.6;">APIpulse Pro ($29 one-time) includes saved scenarios, cost report exports, and personalized recommendations that can save you up to 40%.</p>
+        <a href="pro.html" style="display:inline-block;background:var(--accent);color:white;padding:12px 28px;border-radius:8px;font-size:14px;font-weight:700;text-decoration:none;transition:all 0.2s;" onclick="if(window.trackEvent)window.trackEvent('pro_button_clicked',{source:'cost_over_time'})">Get Pro — $29</a>
+    </div>
+    <button class="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">↑</button>
+
+    <div style="max-width:720px;margin:24px auto 0;padding:0 24px;"><p style="padding:16px;background:var(--bg-secondary);border:1px solid var(--border);border-radius:8px;font-size:14px;color:var(--text-secondary);text-align:center;"><strong>Save money:</strong> <a href="cost-optimizer.html" style="color:var(--accent);">APIpulse Cost Optimizer</a> — find out how much you could save by switching models. Free tool.</p></div>
+</main>
+
+    <footer>
+        <p>Pricing data last verified: <span class="verified-date"></span></p>
+        <p>&copy; 2026 APIpulse. <a href="index.html">Home</a> &middot; <a href="use-cases.html">Use Cases</a> &middot; <a href="about.html">About</a> &middot; <a href="blog.html">Blog</a>
+<a href="pricing-index.html">Pricing Index</a> &middot; <a href="model-matrix.html">Model Matrix</a> &middot; <a href="cost-scenarios.html">Scenarios</a> &middot; <a href="price-alerts.html">Price Alerts</a> &middot; <a href="pricing-changelog.html">Changelog</a> &middot; <a href="openai.html">OpenAI</a> &middot; <a href="anthropic.html">Anthropic</a> &middot; <a href="google.html">Google</a> &middot; <a href="mistral.html">Mistral</a> &middot; <a href="cohere.html">Cohere</a> &middot; <a href="deepseek.html">DeepSeek</a> &middot; <a href="xai.html">xAI</a> &middot; <a href="moonshot.html">Moonshot</a> &middot; <a href="together.html">Together.ai</a> &middot; <a href="ai21.html">AI21</a> &middot; <a href="pricing.html">Pricing</a> &middot; <a href="embed.html">Embed Widget</a> &middot; <a href="cheat-sheet.html">Cheat Sheet</a> &middot; <a href="model-switch.html">Model Switch</a> &middot; <a href="api-docs.html">API</a> &middot; <a href="https://x.com/getapipulse" target="_blank" rel="noopener">Twitter</a> &middot; <a href="unsubscribe.html">Unsubscribe</a></p>
+    </footer>
+
+    <script>
+    (function(){
+        // Historical pricing data — input costs ($/1M tokens)
+        var models = [
+            {
+                id: 'gpt55', name: 'GPT-5.5', provider: 'OpenAI', color: '#10a37f',
+                input: [5.00], output: [30.00], dates: ['Jun 2026']
+            },
+            {
+                id: 'gpt5', name: 'GPT-5', provider: 'OpenAI', color: '#10a37f',
+                input: [1.25], output: [10.00], dates: ['Feb 2026']
+            },
+            {
+                id: 'gpt5mini', name: 'GPT-5 mini', provider: 'OpenAI', color: '#34d399',
+                input: [0.25], output: [2.00], dates: ['May 2026']
+            },
+            {
+                id: 'gpt4o', name: 'GPT-4o', provider: 'OpenAI', color: '#10a37f',
+                input: [5.00, 2.50], output: [15.00, 10.00], dates: ['Mar 2025', 'Sep 2025']
+            },
+            {
+                id: 'gpt4omini', name: 'GPT-4o mini', provider: 'OpenAI', color: '#34d399',
+                input: [0.15], output: [0.60], dates: ['Jul 2024']
+            },
+            {
+                id: 'opus48', name: 'Claude Opus 4.8', provider: 'Anthropic', color: '#d97706',
+                input: [5.00], output: [25.00], dates: ['Jan 2026']
+            },
+            {
+                id: 'opus4', name: 'Claude 4 Opus', provider: 'Anthropic', color: '#f59e0b',
+                input: [15.00], output: [75.00], dates: ['Mar 2025']
+            },
+            {
+                id: 'sonnet46', name: 'Claude Sonnet 4.6', provider: 'Anthropic', color: '#d97706',
+                input: [3.00], output: [15.00], dates: ['Apr 2026']
+            },
+            {
+                id: 'sonnet4', name: 'Claude Sonnet 4', provider: 'Anthropic', color: '#f59e0b',
+                input: [3.00], output: [15.00], dates: ['Nov 2025']
+            },
+            {
+                id: 'haiku45', name: 'Claude Haiku 4.5', provider: 'Anthropic', color: '#fbbf24',
+                input: [1.00], output: [5.00], dates: ['Dec 2025']
+            },
+            {
+                id: 'gemini31pro', name: 'Gemini 3.1 Pro', provider: 'Google', color: '#4285f4',
+                input: [2.00], output: [12.00], dates: ['May 2026']
+            },
+            {
+                id: 'gemini25pro', name: 'Gemini 2.5 Pro', provider: 'Google', color: '#4285f4',
+                input: [1.25, 2.50], output: [10.00, 10.00], dates: ['Mar 2026', 'Jan 2026']
+            },
+            {
+                id: 'gemini20flash', name: 'Gemini 2.0 Flash', provider: 'Google', color: '#34d399',
+                input: [0.10, 0.25], output: [0.40, 0.75], dates: ['Apr 2026', 'Jun 2025']
+            },
+            {
+                id: 'flashlite', name: 'Gemini Flash Lite', provider: 'Google', color: '#34d399',
+                input: [0.075], output: [0.30], dates: ['May 2026']
+            },
+            {
+                id: 'dsv4pro', name: 'DeepSeek V4 Pro', provider: 'DeepSeek', color: '#6366f1',
+                input: [0.44], output: [0.87], dates: ['Jun 2026']
+            },
+            {
+                id: 'dsv4flash', name: 'DeepSeek V4 Flash', provider: 'DeepSeek', color: '#6366f1',
+                input: [0.14], output: [0.28], dates: ['Mar 2026']
+            },
+            {
+                id: 'dsv3', name: 'DeepSeek V3', provider: 'DeepSeek', color: '#818cf8',
+                input: [0.27], output: [1.10], dates: ['Dec 2024']
+            },
+            {
+                id: 'mistrallarge', name: 'Mistral Large 3', provider: 'Mistral', color: '#f97316',
+                input: [0.50], output: [1.50], dates: ['Jun 2026']
+            },
+            {
+                id: 'grok43', name: 'Grok 4.3', provider: 'xAI', color: '#ef4444',
+                input: [1.25, 3.00], output: [2.50, 15.00], dates: ['May 2026', 'Mar 2025']
+            }
+        ];
+
+        var chartView = 'input';
+        var activeProvider = 'all';
+        var canvas = document.getElementById('costChart');
+        var ctx = canvas.getContext('2d');
+
+        function getColor() {
+            return getComputedStyle(document.documentElement).getPropertyValue('--text-primary').trim() || '#e2e8f0';
+        }
+        function getGridColor() {
+            return getComputedStyle(document.documentElement).getPropertyValue('--border').trim() || '#1e293b';
+        }
+
+        function drawChart() {
+            var dpr = window.devicePixelRatio || 1;
+            var rect = canvas.parentElement.getBoundingClientRect();
+            canvas.width = rect.width * dpr;
+            canvas.height = 400 * dpr;
+            canvas.style.width = rect.width + 'px';
+            canvas.style.height = '400px';
+            ctx.scale(dpr, dpr);
+
+            var w = rect.width;
+            var h = 400;
+            var pad = { top: 40, right: 20, bottom: 60, left: 70 };
+
+            ctx.clearRect(0, 0, w, h);
+
+            // Timeline: Mar 2025 to Jun 2026 (15 months)
+            var timeLabels = [];
+            var months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+            for (var y = 2025; y <= 2026; y++) {
+                var endMonth = (y === 2026) ? 6 : 12;
+                var startMonth = (y === 2025) ? 3 : 1;
+                for (var m = startMonth; m <= endMonth; m++) {
+                    timeLabels.push(months[m-1] + ' ' + y);
+                }
+            }
+
+            var timeToX = function(i) {
+                return pad.left + (i / (timeLabels.length - 1)) * (w - pad.left - pad.right);
+            };
+
+            // Filter models
+            var filtered = models.filter(function(m) {
+                return activeProvider === 'all' || m.provider.toLowerCase() === activeProvider;
+            });
+
+            // Get max value
+            var maxVal = 0;
+            filtered.forEach(function(m) {
+                var vals = (chartView === 'output') ? m.output : (chartView === 'monthly') ? m.input.map(function(v,i){ return (v*2000+m.output[i]*500)*30/1e6; }) : m.input;
+                vals.forEach(function(v) { if (v > maxVal) maxVal = v; });
+            });
+            maxVal = Math.ceil(maxVal * 1.15) || 10;
+
+            // Y axis
+            var ySteps = 5;
+            ctx.font = '12px -apple-system, BlinkMacSystemFont, sans-serif';
+            ctx.fillStyle = getColor();
+            ctx.textAlign = 'right';
+            for (var i = 0; i <= ySteps; i++) {
+                var val = (maxVal / ySteps) * i;
+                var y = h - pad.bottom - (i / ySteps) * (h - pad.top - pad.bottom);
+                var label = chartView === 'monthly' ? '$' + val.toFixed(0) : '$' + val.toFixed(2);
+                ctx.fillText(label, pad.left - 10, y + 4);
+                ctx.strokeStyle = getGridColor();
+                ctx.lineWidth = 0.5;
+                ctx.beginPath();
+                ctx.moveTo(pad.left, y);
+                ctx.lineTo(w - pad.right, y);
+                ctx.stroke();
+            }
+
+            // X axis labels
+            ctx.textAlign = 'center';
+            var step = Math.max(1, Math.floor(timeLabels.length / 8));
+            for (var i = 0; i < timeLabels.length; i += step) {
+                var x = timeToX(i);
+                ctx.fillText(timeLabels[i], x, h - pad.bottom + 20);
+            }
+
+            // Y axis title
+            ctx.save();
+            ctx.translate(15, h / 2);
+            ctx.rotate(-Math.PI / 2);
+            ctx.textAlign = 'center';
+            var yTitle = chartView === 'monthly' ? 'Monthly Cost ($)' : 'Cost per 1M Tokens ($)';
+            ctx.fillText(yTitle, 0, 0);
+            ctx.restore();
+
+            // Draw lines
+            filtered.forEach(function(m) {
+                ctx.strokeStyle = m.color;
+                ctx.lineWidth = 2.5;
+                ctx.beginPath();
+                var started = false;
+                m.dates.forEach(function(d, idx) {
+                    var monthIdx = timeLabels.indexOf(d);
+                    if (monthIdx === -1) return;
+                    var val = (chartView === 'output') ? m.output[idx] :
+                              (chartView === 'monthly') ? (m.input[idx]*2000 + m.output[idx]*500) * 30 / 1e6 :
+                              m.input[idx];
+                    var x = timeToX(monthIdx);
+                    var y = h - pad.bottom - (val / maxVal) * (h - pad.top - pad.bottom);
+                    if (!started) { ctx.moveTo(x, y); started = true; }
+                    else { ctx.lineTo(x, y); }
+                });
+                ctx.stroke();
+
+                // Draw dots
+                m.dates.forEach(function(d, idx) {
+                    var monthIdx = timeLabels.indexOf(d);
+                    if (monthIdx === -1) return;
+                    var val = (chartView === 'output') ? m.output[idx] :
+                              (chartView === 'monthly') ? (m.input[idx]*2000 + m.output[idx]*500) * 30 / 1e6 :
+                              m.input[idx];
+                    var x = timeToX(monthIdx);
+                    var y = h - pad.bottom - (val / maxVal) * (h - pad.top - pad.bottom);
+                    ctx.fillStyle = m.color;
+                    ctx.beginPath();
+                    ctx.arc(x, y, 4, 0, Math.PI * 2);
+                    ctx.fill();
+                });
+
+                // Label at last point
+                var lastIdx = m.dates.length - 1;
+                var lastMonthIdx = timeLabels.indexOf(m.dates[lastIdx]);
+                if (lastMonthIdx !== -1) {
+                    var lastVal = (chartView === 'output') ? m.output[lastIdx] :
+                                  (chartView === 'monthly') ? (m.input[lastIdx]*2000 + m.output[lastIdx]*500) * 30 / 1e6 :
+                                  m.input[lastIdx];
+                    var lx = timeToX(lastMonthIdx);
+                    var ly = h - pad.bottom - (lastVal / maxVal) * (h - pad.top - pad.bottom);
+                    ctx.fillStyle = m.color;
+                    ctx.font = 'bold 11px -apple-system, BlinkMacSystemFont, sans-serif';
+                    ctx.textAlign = 'left';
+                    ctx.fillText(m.name, lx + 8, ly + 4);
+                }
+            });
+
+            // Title
+            ctx.font = 'bold 14px -apple-system, BlinkMacSystemFont, sans-serif';
+            ctx.fillStyle = getColor();
+            ctx.textAlign = 'left';
+            var titleText = chartView === 'monthly' ? 'Estimated Monthly Cost (10K req/day, 2K input, 500 output)' :
+                           chartView === 'output' ? 'Output Token Cost ($/1M tokens)' :
+                           'Input Token Cost ($/1M tokens)';
+            ctx.fillText(titleText, pad.left, 20);
+        }
+
+        window.setChartView = function(view) {
+            chartView = view;
+            document.querySelectorAll('.chart-controls:first-of-type .chart-btn').forEach(function(b) {
+                b.classList.remove('active');
+            });
+            event.target.classList.add('active');
+            drawChart();
+            if(window.trackEvent) window.trackEvent('cost_chart_view', {view: view});
+        };
+
+        window.filterProvider = function(provider, btn) {
+            activeProvider = provider;
+            document.querySelectorAll('[data-provider]').forEach(function(b) {
+                b.classList.remove('active');
+            });
+            btn.classList.add('active');
+            drawChart();
+            if(window.trackEvent) window.trackEvent('cost_chart_filter', {provider: provider});
+        };
+
+        // Initial draw
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', drawChart);
+        } else {
+            drawChart();
+        }
+
+        // Redraw on resize
+        var resizeTimer;
+        window.addEventListener('resize', function() {
+            clearTimeout(resizeTimer);
+            resizeTimer = setTimeout(drawChart, 150);
+        });
+
+        // Redraw on theme change
+        var observer = new MutationObserver(function() { setTimeout(drawChart, 50); });
+        observer.observe(document.documentElement, { attributes: true, attributeFilter: ['class'] });
+    })();
+    </script>
+</body>
+</html>

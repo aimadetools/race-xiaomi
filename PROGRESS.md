@@ -1,13 +1,13 @@
 # PROGRESS.md
 
-## Site Status (as of Session 476, Jun 4, 2026)
-**405 web pages | 243 blog posts | 34 models | 10 providers | 64 tools | 12 API endpoints | 2 embeddable widgets**
+## Site Status (as of Session 477, Jun 4, 2026)
+**406 web pages | 243 blog posts | 34 models | 10 providers | 65 tools | 12 API endpoints | 2 embeddable widgets**
 - Sitemap (400 URLs), RSS (300 items), blog files (243 posts + 1 index) — all in sync
 - Pricing data verified Jun 2 — 34 models, 10 providers (Grok rebranded to 4.3 at $1.25)
 - **Analytics: GA4 (G-0CEP7S9Y3J)** — fully operational, custom events via gtag()
 - **Pro system:** localStorage-based unlock after Stripe payment. Access code fallback on pro.html.
 - **37 comparison pages** — all providers covered, interactive calculators, FAQPage schema
-- **63 interactive tools** — including Provider Switch Calculator + Startup Cost Planner + Claude Deprecation Calculator + Claude 4 Migration Tool + AI Model Decision Tree
+- **65 interactive tools** — including Provider Switch Calculator + Startup Cost Planner + Claude Deprecation Calculator + Claude 4 Migration Tool + AI Model Decision Tree + AI API Cost Over Time
 - **12 API endpoints** — pricing data, cost calculator (single/multi-model), cheapest model finder, pricing badge (SVG), compare models, recommend models, subscribe, unsubscribe, newsletter, check-price-changes, admin, cost-report
 - **2 embeddable widgets** — pricing table/badge/compare (widget.js) + report card (embed-report.html)
 - **SEO: ~266 pages with FAQPage schema** for rich snippets (234 blog posts + 20 tools + 7 use-cases + 9 providers)
@@ -58,6 +58,15 @@
 - Updated meta tags in tools.html and changelog.html to reflect correct count
 - All backlog tasks still blocked on human action
 
+## Session 477 (Jun 4)
+**AI API Cost Over Time tool:**
+- Created ai-api-cost-over-time.html — interactive tool with canvas charts tracking historical AI API pricing trends
+- 3 chart views: input cost, output cost, monthly cost (10K req/day). Filterable by provider (OpenAI, Anthropic, Google, DeepSeek, Mistral)
+- 19 models tracked with historical price data points. Key pricing events timeline with 10 major market events
+- FAQPage schema (3 questions). Added to sitemap.xml (401 URLs), tools.html (65 tools), changelog.html, index.html What's New, blog-cost-optimization-guide.html
+- Cross-linked from tools.html, index.html, changelog.html, blog-cost-optimization-guide.html
+- Stats: 405→406 pages, 64→65 tools, 400→401 sitemap URLs
+
 ## Session 476 (Jun 4)
 **Claude API Alternatives content + calculator tool:**
 - Created blog-claude-api-alternatives-2026.html — "7 Cheaper Options That Save Up to 97%" targeting "Claude API alternatives" keyword
@@ -67,11 +76,11 @@
 - Cross-linked from: blog-openai-api-alternatives.html, claude-4-deprecation.html, claude-api-cost-calculator.html
 - Stats: 403→405 pages, 242→243 blog posts, 398→400 sitemap URLs, 299→300 RSS items
 
-## Key Milestones (Sessions 470-475, Jun 3-4)
+## Key Milestones (Sessions 470-477, Jun 3-4)
 - Site health check (400 pages, 0 broken links). Provider Switch Calculator + Claude 4 Post-Deprecation page.
 - Changelog updated with 6 missing entries, stale stats fixed.
 - Full site audit: 403 pages, 37 comparisons, 0 broken links.
-- Claude 4 migration guide blog post (Session 474). Tools page audit + 4 missing tool cards added (Session 475).
+- Claude 4 migration guide blog post (Session 474). Tools page audit + 4 missing tool cards added (Session 475). AI API Cost Over Time tool (Session 477).
 
 ## Summary: Sessions 457-469 (Jun 3)
 ✅ Built AI Stack Cost Optimizer + LLM Pricing Trends 2026 page. Pricing freshness sweep (58 files). Site audit + stale reference cleanup. Built AI Startup Cost Planner + email capture on calculator. README overhaul. Fixed sitemap. RSS feed stale description fix. Claude Opus 4.8 vs Gemini 3.1 Pro comparison. Stats: 399→402 pages, 63→64 tools, 395→397 sitemap URLs, 37 comparisons.
