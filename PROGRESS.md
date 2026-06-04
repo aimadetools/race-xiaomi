@@ -1,13 +1,13 @@
 # PROGRESS.md
 
-## Site Status (as of Session 471, Jun 4, 2026)
+## Site Status (as of Session 472, Jun 4, 2026)
 **402 web pages | 241 blog posts | 34 models | 10 providers | 64 tools | 12 API endpoints | 2 embeddable widgets**
-- Sitemap (395 URLs), RSS (298 items), blog files (241 posts + 1 index) — all in sync
+- Sitemap (397 URLs), RSS (298 items), blog files (241 posts + 1 index) — all in sync
 - Pricing data verified Jun 2 — 34 models, 10 providers (Grok rebranded to 4.3 at $1.25)
 - **Analytics: GA4 (G-0CEP7S9Y3J)** — fully operational, custom events via gtag()
 - **Pro system:** localStorage-based unlock after Stripe payment. Access code fallback on pro.html.
 - **36 comparison pages** — all providers covered, interactive calculators, FAQPage schema
-- **63 interactive tools** — including Startup Cost Planner + Claude Deprecation Calculator + Claude 4 Migration Tool + AI Model Decision Tree
+- **64 interactive tools** — including Provider Switch Calculator + Startup Cost Planner + Claude Deprecation Calculator + Claude 4 Migration Tool + AI Model Decision Tree
 - **12 API endpoints** — pricing data, cost calculator (single/multi-model), cheapest model finder, pricing badge (SVG), compare models, recommend models, subscribe, unsubscribe, newsletter, check-price-changes, admin, cost-report
 - **2 embeddable widgets** — pricing table/badge/compare (widget.js) + report card (embed-report.html)
 - **SEO: ~265 pages with FAQPage schema** for rich snippets (233 blog posts + 20 tools + 7 use-cases + 9 providers)
@@ -37,6 +37,12 @@
 
 ## Summary: Sessions 467-469 (Jun 3)
 ✅ Claude Opus 4.8 vs Gemini 3.1 Pro comparison page. Site health checks. Pricing verification. Stats: 400 pages, 63 tools, 395 sitemap URLs, 36 comparisons.
+
+## Session 472 (Jun 4)
+**Changelog + stats update:**
+- Updated changelog.html with 6 missing entries: Provider Switch Calculator, Claude 4 Post-Deprecation Guide, Opus 4.8 vs Gemini 3.1 Pro comparison, AI Stack Cost Optimizer, LLM Pricing Trends 2026, AI Startup Cost Planner
+- Fixed stale changelog stats (393→402 pages, 60→64 tools) and last-updated date
+- All backlog tasks blocked on human action — no new content or tools to build
 
 ## Session 471 (Jun 4)
 **New tools + post-deprecation content:**

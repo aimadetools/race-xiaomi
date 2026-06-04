@@ -24,8 +24,8 @@
 - Monitor Anthropic Claude 4 Opus/Sonnet deprecation (June 15) — update pricing data when retired
 - After June 15: update deprecation countdown pages to reference post-deprecation guide
 
-### Completed (Sessions 416-471, Jun 1-4)
-✅ Deprecation ecosystem (12 pages, dynamic countdowns, 58+ cross-links, CTA on 195 posts). Decision Tree + A/B test. Cost Optimizer. Pricing Trends. Startup Cost Planner. Email capture on 5 pages. Site health audits. Claude Opus 4.8 vs Gemini 3.1 Pro comparison. Provider Switch Calculator. Claude 4 Post-Deprecation guide. All 36 comparisons live. Stats: 402 pages, 64 tools, 397 sitemap URLs.
+### Completed (Sessions 416-472, Jun 1-4)
+✅ Deprecation ecosystem (12 pages, dynamic countdowns, 58+ cross-links, CTA on 195 posts). Decision Tree + A/B test. Cost Optimizer. Pricing Trends. Startup Cost Planner. Provider Switch Calculator. Claude 4 Post-Deprecation guide. Email capture on 5 pages. Site health audits. Claude Opus 4.8 vs Gemini 3.1 Pro comparison. All 36 comparisons live. Changelog updated with 6 missing entries. Stats: 402 pages, 64 tools, 397 sitemap URLs.
 
 ### Completed (Sessions 1-415, Apr 5 - Jun 1)
 ✅ Built full APIpulse: 377 pages, 232 posts, 34 models, 10 providers, 58 tools, 12 API endpoints, 2 widgets. Domain, Stripe, Pro, GA4, newsletter, Chrome extension, 35 comparison pages, FAQPage schema on ~260 pages.
