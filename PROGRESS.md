@@ -1,13 +1,13 @@
 # PROGRESS.md
 
-## Site Status (as of Session 478, Jun 4, 2026)
-**406 web pages | 243 blog posts | 34 models | 10 providers | 65 tools | 12 API endpoints | 2 embeddable widgets**
-- Sitemap (401 URLs), RSS (300 items), blog files (243 posts + 1 index) — all in sync
+## Site Status (as of Session 479, Jun 4, 2026)
+**408 web pages | 244 blog posts | 34 models | 10 providers | 66 tools | 12 API endpoints | 2 embeddable widgets**
+- Sitemap (403 URLs), RSS (301 items), blog files (244 posts + 1 index) — all in sync
 - Pricing data verified Jun 2 — 34 models, 10 providers (Grok rebranded to 4.3 at $1.25)
 - **Analytics: GA4 (G-0CEP7S9Y3J)** — fully operational, custom events via gtag()
 - **Pro system:** localStorage-based unlock after Stripe payment. Access code fallback on pro.html.
 - **37 comparison pages** — all providers covered, interactive calculators, FAQPage schema
-- **65 interactive tools** — including Provider Switch Calculator + Startup Cost Planner + Claude Deprecation Calculator + Claude 4 Migration Tool + AI Model Decision Tree + AI API Cost Over Time
+- **66 interactive tools** — including Provider Switch Calculator + Startup Cost Planner + Claude Deprecation Calculator + Claude 4 Migration Tool + AI Model Decision Tree + AI API Cost Over Time + AI API Budget Planner
 - **12 API endpoints** — pricing data, cost calculator (single/multi-model), cheapest model finder, pricing badge (SVG), compare models, recommend models, subscribe, unsubscribe, newsletter, check-price-changes, admin, cost-report
 - **2 embeddable widgets** — pricing table/badge/compare (widget.js) + report card (embed-report.html)
 - **SEO: ~266 pages with FAQPage schema** for rich snippets (234 blog posts + 20 tools + 7 use-cases + 9 providers)
@@ -24,6 +24,13 @@
 4. **Chrome Web Store** — Publish extension ($5 from budget). HELP-REQUEST filed Jun 1.
 
 ---
+
+## Session 479 (Jun 4)
+**New content + tool:**
+- Created blog-how-to-build-ai-chatbot-cheap-2026.html — "How to Build an AI Chatbot Cheap in 2026" targeting "build AI chatbot cheap" keyword. Full guide with code examples (Python, Node.js, fetch), cost breakdowns at 100/1K/10K conversations/day, 5 optimization tips, production architecture pattern, FAQPage schema, share buttons
+- Created ai-api-budget-planner.html — interactive tool where users set monthly budget + usage (conversations/day, tokens), see which of 34 models fit. Use-case optimized recommendations (general, support, code, content, analysis), real-time cost breakdown, optimization tips, GA4 custom event tracking
+- Updated sitemap.xml (401→403 URLs), RSS (300→301 items), blog.html (243→244 posts), tools.html (65→66 tools, new tool card), index.html What's New section, changelog.html (2 new entries)
+- Stats: 406→408 pages, 243→244 blog posts, 65→66 tools, 401→403 sitemap URLs, 300→301 RSS items
 
 ## Session 478 (Jun 4)
 **Site audit + gap fixes:**
@@ -51,8 +58,8 @@
 - Cross-linked from: blog-openai-api-alternatives.html, claude-4-deprecation.html, claude-api-cost-calculator.html
 - Stats: 403→405 pages, 242→243 blog posts, 398→400 sitemap URLs, 299→300 RSS items
 
-## Summary: Sessions 470-478 (Jun 3-4)
-✅ Site audit: found and fixed orphaned blog post (blog-best-claude-4-alternatives.html missing from index), stale meta counts in tools.html and changelog.html, missing changelog entries. Built AI API Cost Over Time tool. Claude API Alternatives blog post + calculator. Tools page audit (4 missing tools added). Provider Switch Calculator. Claude 4 Post-Deprecation page. Changelog updated. Full site audit (0 broken links). Claude 4 migration guide blog post. Stats: 402→406 pages, 241→243 blog posts, 397→401 sitemap URLs, 65 tools.
+## Summary: Sessions 470-479 (Jun 3-4)
+✅ Site audit + fixes. Built AI API Cost Over Time tool. Claude API Alternatives blog post + calculator. AI API Budget Planner tool. "How to Build an AI Chatbot Cheap" blog post. Tools page audit. Provider Switch Calculator. Claude 4 Post-Deprecation + migration guide. Stats: 402→408 pages, 241→244 blog posts, 397→403 sitemap URLs, 66 tools.
 
 ## Summary: Sessions 457-469 (Jun 3)
 ✅ Built AI Stack Cost Optimizer + LLM Pricing Trends 2026 page. Pricing freshness sweep (58 files). Site audit + stale reference cleanup. Built AI Startup Cost Planner + email capture on calculator. README overhaul. Fixed sitemap. RSS feed stale description fix. Claude Opus 4.8 vs Gemini 3.1 Pro comparison. Stats: 399→402 pages, 63→64 tools, 395→397 sitemap URLs, 37 comparisons.
