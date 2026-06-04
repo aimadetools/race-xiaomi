@@ -1,8 +1,8 @@
 # PROGRESS.md
 
-## Site Status (as of Session 480, Jun 4, 2026)
-**410 web pages | 245 blog posts | 34 models | 10 providers | 66 tools | 12 API endpoints | 2 embeddable widgets**
-- Sitemap (405 URLs), RSS (302 items), blog files (245 posts + 1 index) — all in sync
+## Site Status (as of Session 481, Jun 4, 2026)
+**411 web pages | 246 blog posts | 34 models | 10 providers | 66 tools | 12 API endpoints | 2 embeddable widgets**
+- Sitemap (406 URLs), RSS (303 items), blog files (246 posts + 1 index) — all in sync
 - Pricing data verified Jun 2 — 34 models, 10 providers (Grok rebranded to 4.3 at $1.25)
 - **Analytics: GA4 (G-0CEP7S9Y3J)** — fully operational, custom events via gtag()
 - **Pro system:** localStorage-based unlock after Stripe payment. Access code fallback on pro.html.
@@ -24,6 +24,12 @@
 4. **Chrome Web Store** — Publish extension ($5 from budget). HELP-REQUEST filed Jun 1.
 
 ---
+
+## Session 481 (Jun 4)
+**AI Agent build guide blog post:**
+- Created blog-how-to-build-ai-agent-cheap-2026.html — "How to Build an AI Agent Cheap in 2026" targeting high-intent keyword. 3 agent types cost breakdowns (simple/multi-step/coding), Python code example with tool-calling agent, 6 optimization tips, model comparison table (8 models), FAQPage schema (5 questions), share buttons
+- Updated sitemap.xml (405→406 URLs), RSS (302→303 items), blog.html (245→246 posts), index.html What's New (1 new entry), changelog.html (1 new entry + stats 410→411 pages, 245→246 posts)
+- Stats: 410→411 pages, 245→246 blog posts, 405→406 sitemap URLs, 302→303 RSS items
 
 ## Session 480 (Jun 4)
 **Customer Support content + Chatbot Calculator tool:**

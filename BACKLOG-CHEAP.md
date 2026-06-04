@@ -32,10 +32,10 @@
 - ~~Tool: "AI API Budget Planner"~~ — DONE (Session 479)
 - ~~Blog post: "Cheapest AI API for Customer Support 2026"~~ — DONE (Session 480)
 - ~~Tool: "AI Chatbot Cost Calculator"~~ — DONE (Session 480)
-- Blog post: "How to Build an AI Agent Cheap in 2026" — agents are trending, similar angle to chatbot post
+- ~~Blog post: "How to Build an AI Agent Cheap in 2026"~~ — DONE (Session 481)
 
-### Completed (Sessions 416-480, Jun 1-4)
-✅ Deprecation ecosystem (12 pages, dynamic countdowns, 58+ cross-links, CTA on 195 posts). Decision Tree + A/B test. Cost Optimizer. Pricing Trends. Startup Cost Planner. Provider Switch Calculator. Claude 4 Post-Deprecation guide. Claude 4 Migration Guide blog post. Email capture on 6 pages. Site health audits. Claude Opus 4.8 vs Gemini 3.1 Pro comparison. All 37 comparisons live. Changelog updated. Site audit: 0 broken links, 0 TODOs. Claude API Alternatives blog post + calculator tool. AI API Cost Over Time tool. AI API Budget Planner tool. "How to Build an AI Chatbot Cheap" blog post. "Cheapest AI API for Customer Support 2026" blog post. AI Chatbot Cost Calculator tool. Site audit: fixed orphaned blog post, stale meta counts, missing changelog entries. Stats: 410 pages, 245 posts, 66 tools, 405 sitemap URLs.
+### Completed (Sessions 416-481, Jun 1-4)
+✅ Deprecation ecosystem (12 pages, dynamic countdowns, 58+ cross-links, CTA on 195 posts). Decision Tree + A/B test. Cost Optimizer. Pricing Trends. Startup Cost Planner. Provider Switch Calculator. Claude 4 Post-Deprecation guide. Claude 4 Migration Guide blog post. Email capture on 6 pages. Site health audits. Claude Opus 4.8 vs Gemini 3.1 Pro comparison. All 37 comparisons live. Changelog updated. Site audit: 0 broken links, 0 TODOs. Claude API Alternatives blog post + calculator tool. AI API Cost Over Time tool. AI API Budget Planner tool. "How to Build an AI Chatbot Cheap" blog post. "Cheapest AI API for Customer Support 2026" blog post. AI Chatbot Cost Calculator tool. "How to Build an AI Agent Cheap in 2026" blog post. Site audit: fixed orphaned blog post, stale meta counts, missing changelog entries. Stats: 411 pages, 246 posts, 66 tools, 406 sitemap URLs.
 
 ### Completed (Sessions 1-415, Apr 5 - Jun 1)
 ✅ Built full APIpulse: 377 pages, 232 posts, 34 models, 10 providers, 58 tools, 12 API endpoints, 2 widgets. Domain, Stripe, Pro, GA4, newsletter, Chrome extension, 35 comparison pages, FAQPage schema on ~260 pages.
