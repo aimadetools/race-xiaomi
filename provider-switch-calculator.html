@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Provider Switch Calculator — Compare AI API Costs Before You Switch | APIpulse</title>
+    <meta name="description" content="Thinking about switching AI providers? Enter your current setup and see exactly what you'd pay at every other provider. Compare 34 models across 10 providers instantly.">
+    <meta name="keywords" content="switch AI provider, compare AI API costs, OpenAI vs Anthropic vs Google pricing, cheapest AI API, LLM provider comparison, AI API cost calculator">
+    <meta property="og:title" content="Provider Switch Calculator — Compare AI API Costs">
+    <meta property="og:description" content="Enter your current setup. See what you'd pay at every other provider. 34 models compared.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://getapipulse.com/og-image.png">
+    <meta property="og:url" content="https://getapipulse.com/provider-switch-calculator.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Provider Switch Calculator — Compare AI API Costs">
+    <meta name="twitter:image" content="https://getapipulse.com/og-image.png">
+    <meta name="twitter:description" content="Enter your current setup. See what you'd pay at every other provider.">
+    <link rel="canonical" href="https://getapipulse.com/provider-switch-calculator.html">
+    <link rel="alternate" type="application/rss+xml" title="APIpulse Blog" href="https://getapipulse.com/rss.xml">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="styles.css">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0CEP7S9Y3J"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-0CEP7S9Y3J');
+    </script>
+    <script src="analytics.js" defer></script>
+    <script src="dynamic-date.js" defer></script>
+    <script src="shared.js" defer></script>
+    <script src="pricing-data.js" defer></script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "APIpulse Provider Switch Calculator",
+        "url": "https://getapipulse.com/provider-switch-calculator.html",
+        "description": "Compare AI API costs before switching providers. Enter your current setup and see what you'd pay at every other provider.",
+        "applicationCategory": "DeveloperApplication",
+        "operatingSystem": "Web",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "How much can I save by switching AI providers?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Most developers save 40-80% by switching from premium to budget models. For example, switching from GPT-5 ($1.25/$10) to DeepSeek V4 Pro ($0.44/$0.87) saves about 88%. Use the calculator above to see your exact savings based on your usage."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What is the cheapest AI API provider in 2026?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "DeepSeek V4 Flash ($0.14/$0.28) and Gemini 2.0 Flash ($0.10/$0.40) are the cheapest options. For similar quality to premium models, Claude Sonnet 4.6 ($3/$15) and Gemini 3.1 Pro ($2/$12) offer the best value."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Is it hard to switch between AI API providers?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Most providers use similar API structures. Switching from OpenAI to Anthropic or Google typically requires changing the base URL, API key, and model name in your code. Many developers use abstraction layers like LiteLLM to make switching trivial."
+                }
+            }
+        ]
+    }
+    </script>
+    <style>
+        .content { max-width: 960px; margin: 0 auto; padding: 120px 24px 80px; }
+        h1 { font-size: 40px; font-weight: 800; text-align: center; margin-bottom: 12px; }
+        .subtitle { text-align: center; color: var(--text-secondary); font-size: 18px; margin-bottom: 40px; max-width: 650px; margin-left: auto; margin-right: auto; }
+
+        /* Calculator card */
+        .calc-card {
+            background: var(--bg-secondary); border: 1px solid var(--border);
+            border-radius: 16px; padding: 40px; margin-bottom: 32px;
+        }
+        .calc-card h2 { font-size: 24px; font-weight: 700; margin-bottom: 8px; }
+        .calc-card .card-desc { color: var(--text-secondary); font-size: 15px; margin-bottom: 28px; }
+
+        .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 24px; }
+        .form-group label {
+            display: block; font-size: 13px; font-weight: 600;
+            color: var(--text-secondary); margin-bottom: 8px;
+            text-transform: uppercase; letter-spacing: 0.5px;
+        }
+        .form-group select, .form-group input {
+            width: 100%; padding: 14px 16px; background: var(--bg-card);
+            border: 1px solid var(--border); border-radius: 10px;
+            color: var(--text-primary); font-size: 16px;
+            transition: border-color 0.2s;
+        }
+        .form-group select:focus, .form-group input:focus {
+            outline: none; border-color: var(--accent);
+            box-shadow: 0 0 0 3px var(--accent-glow);
+        }
+        .preset-btns { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 8px; }
+        .preset-btn {
+            padding: 6px 14px; background: var(--bg-card); border: 1px solid var(--border);
+            border-radius: 6px; color: var(--text-secondary); font-size: 12px;
+            cursor: pointer; transition: all 0.2s;
+        }
+        .preset-btn:hover { border-color: var(--accent); color: var(--accent); }
+
+        .compare-btn {
+            display: block; width: 100%; padding: 16px;
+            background: var(--accent); color: white; border: none;
+            border-radius: 10px; font-size: 18px; font-weight: 700;
+            cursor: pointer; transition: all 0.2s;
+        }
+        .compare-btn:hover { background: var(--accent-hover); transform: translateY(-1px); }
+        .compare-btn:disabled { opacity: 0.5; cursor: not-allowed; transform: none; }
+
+        /* Results */
+        .results { display: none; }
+        .results.active { display: block; }
+
+        /* Savings hero */
+        .savings-hero {
+            text-align: center; padding: 40px; margin-bottom: 32px;
+            background: linear-gradient(135deg, rgba(34,197,94,0.08), rgba(99,102,241,0.06));
+            border: 1px solid rgba(34,197,94,0.2); border-radius: 16px;
+        }
+        .savings-hero .label { font-size: 14px; color: var(--text-secondary); margin-bottom: 8px; }
+        .savings-hero .amount { font-size: 64px; font-weight: 800; color: var(--green); line-height: 1; }
+        .savings-hero .annual { font-size: 18px; color: var(--text-secondary); margin-top: 8px; }
+        .savings-hero .pct { font-size: 20px; font-weight: 700; color: var(--green); margin-top: 4px; }
+        .savings-hero.no-savings { background: linear-gradient(135deg, rgba(99,102,241,0.08), rgba(99,102,241,0.04)); border-color: rgba(99,102,241,0.2); }
+        .savings-hero.no-savings .amount { color: var(--accent); }
+
+        /* Comparison row */
+        .comparison-row {
+            display: grid; grid-template-columns: 1fr auto 1fr; gap: 24px;
+            align-items: center; margin-bottom: 32px;
+        }
+        .model-card {
+            background: var(--bg-secondary); border: 1px solid var(--border);
+            border-radius: 12px; padding: 24px; text-align: center;
+        }
+        .model-card.current { border-color: rgba(239,68,68,0.3); }
+        .model-card.best { border-color: rgba(34,197,94,0.3); box-shadow: 0 0 20px rgba(34,197,94,0.1); }
+        .model-card .model-name { font-size: 20px; font-weight: 700; margin-bottom: 4px; }
+        .model-card .model-provider { font-size: 13px; color: var(--text-muted); margin-bottom: 12px; }
+        .model-card .model-price { font-size: 28px; font-weight: 800; }
+        .model-card .model-price small { font-size: 14px; font-weight: 400; color: var(--text-muted); }
+        .model-card .model-label {
+            display: inline-block; padding: 4px 12px; border-radius: 6px;
+            font-size: 11px; font-weight: 700; text-transform: uppercase; margin-top: 12px;
+        }
+        .model-card.current .model-label { background: rgba(239,68,68,0.1); color: #ef4444; }
+        .model-card.best .model-label { background: rgba(34,197,94,0.1); color: var(--green); }
+        .arrow-icon { font-size: 32px; color: var(--text-muted); }
+
+        /* All providers table */
+        .all-providers { margin-bottom: 32px; }
+        .all-providers h3 { font-size: 20px; font-weight: 700; margin-bottom: 16px; }
+        .prov-table { width: 100%; border-collapse: collapse; font-size: 14px; }
+        .prov-table th {
+            background: var(--bg-secondary); padding: 12px 16px; text-align: left;
+            font-weight: 600; font-size: 12px; text-transform: uppercase;
+            letter-spacing: 0.5px; color: var(--text-muted);
+            border-bottom: 2px solid var(--border);
+        }
+        .prov-table td { padding: 12px 16px; border-bottom: 1px solid var(--border); }
+        .prov-table tr:last-child td { border-bottom: none; }
+        .prov-table .current-row { background: rgba(239,68,68,0.04); }
+        .prov-table .best-row { background: rgba(34,197,94,0.06); }
+        .prov-table .save-cell { color: var(--green); font-weight: 700; }
+        .prov-table .loss-cell { color: #ef4444; font-weight: 700; }
+        .tier-badge {
+            font-size: 11px; font-weight: 700; padding: 2px 8px;
+            border-radius: 4px; text-transform: uppercase; letter-spacing: 0.5px;
+        }
+        .tier-premium { background: rgba(239,68,68,0.1); color: #ef4444; }
+        .tier-mid { background: rgba(234,179,8,0.1); color: #eab308; }
+        .tier-budget { background: rgba(34,197,94,0.1); color: var(--green); }
+
+        /* Tips */
+        .tips-section { margin-bottom: 32px; }
+        .tips-section h3 { font-size: 20px; font-weight: 700; margin-bottom: 16px; }
+        .tip-card {
+            background: var(--bg-secondary); border: 1px solid var(--border);
+            border-radius: 12px; padding: 20px; margin-bottom: 12px;
+            display: flex; gap: 16px; align-items: flex-start;
+        }
+        .tip-icon {
+            width: 40px; height: 40px; flex-shrink: 0;
+            background: var(--accent-glow); border-radius: 10px;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 18px;
+        }
+        .tip-title { font-weight: 700; margin-bottom: 4px; }
+        .tip-desc { font-size: 14px; color: var(--text-secondary); line-height: 1.5; }
+        .tip-savings { font-size: 13px; color: var(--green); font-weight: 600; margin-top: 4px; }
+
+        /* CTA */
+        .cta-inline {
+            background: linear-gradient(135deg, rgba(99,102,241,0.08), rgba(34,197,94,0.06));
+            border: 2px solid var(--accent); border-radius: 16px;
+            padding: 40px; text-align: center; margin-bottom: 32px;
+        }
+        .cta-inline h3 { font-size: 24px; font-weight: 700; margin-bottom: 8px; }
+        .cta-inline p { color: var(--text-secondary); margin-bottom: 24px; max-width: 500px; margin-left: auto; margin-right: auto; }
+
+        /* Footer content */
+        .footer-content { margin-top: 60px; padding-top: 40px; border-top: 1px solid var(--border); }
+        .footer-content h2 { font-size: 24px; font-weight: 700; margin-bottom: 16px; }
+        .footer-content p { color: var(--text-secondary); font-size: 15px; line-height: 1.8; margin-bottom: 16px; max-width: 700px; }
+
+        @media (max-width: 768px) {
+            .content { padding: 100px 20px 60px; }
+            h1 { font-size: 28px; }
+            .subtitle { font-size: 16px; }
+            .form-grid { grid-template-columns: 1fr; }
+            .comparison-row { grid-template-columns: 1fr; }
+            .arrow-icon { transform: rotate(90deg); justify-self: center; }
+            .savings-hero .amount { font-size: 48px; }
+            .prov-table { font-size: 12px; }
+            .prov-table th, .prov-table td { padding: 8px 10px; }
+        }
+        @media print {
+            nav, .cta-inline, .theme-toggle, .back-to-top { display: none !important; }
+            body { background: white; color: black; }
+            .content { padding: 0; max-width: 100%; }
+        }
+    </style>
+    <meta name="theme-color" content="#6366f1">
+</head>
+<body>
+    <a href="#main" class="skip-link">Skip to content</a>
+    <nav>
+        <div class="nav-inner">
+            <a href="index.html" class="logo">API<span>pulse</span></a>
+            <button class="hamburger" onclick="toggleMobileNav()" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+            <div class="nav-links">
+                <a href="calculator.html">Calculator</a>
+                <a href="compare.html">Compare</a>
+                <a href="cost-optimizer.html">Optimizer</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="blog.html">Blog</a>
+                <a href="industry-guides.html">Industry</a>
+                <a href="pricing.html" class="nav-cta" onclick="if(window.trackEvent)window.trackEvent('pro_button_clicked',{source:'nav'})">Get Pro — $29</a>
+                <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
+            </div>
+        </div>
+    </nav>
+
+    <main id="main">
+    <div class="content">
+        <h1>Provider Switch Calculator</h1>
+        <p class="subtitle">Thinking about switching AI providers? Enter your current setup and see exactly what you'd pay at every other provider — with savings highlighted.</p>
+
+        <div class="calc-card">
+            <h2>Your Current Setup</h2>
+            <p class="card-desc">Tell us what you're using now. We'll show you what every other option costs.</p>
+
+            <div class="form-grid">
+                <div class="form-group">
+                    <label for="currentProvider">Current Provider</label>
+                    <select id="currentProvider" onchange="updateModels()">
+                        <option value="">Select provider...</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="currentModel">Current Model</label>
+                    <select id="currentModel">
+                        <option value="">Select model...</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="inputTokens">Monthly Input Tokens (millions)</label>
+                    <input type="number" id="inputTokens" placeholder="e.g. 10" min="0" step="0.1">
+                    <div class="preset-btns">
+                        <button class="preset-btn" onclick="setTokens(1)">1M</button>
+                        <button class="preset-btn" onclick="setTokens(10)">10M</button>
+                        <button class="preset-btn" onclick="setTokens(50)">50M</button>
+                        <button class="preset-btn" onclick="setTokens(100)">100M</button>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="outputTokens">Monthly Output Tokens (millions)</label>
+                    <input type="number" id="outputTokens" placeholder="e.g. 5" min="0" step="0.1">
+                    <div class="preset-btns">
+                        <button class="preset-btn" onclick="setOutputTokens(0.5)">0.5M</button>
+                        <button class="preset-btn" onclick="setOutputTokens(5)">5M</button>
+                        <button class="preset-btn" onclick="setOutputTokens(25)">25M</button>
+                        <button class="preset-btn" onclick="setOutputTokens(50)">50M</button>
+                    </div>
+                </div>
+            </div>
+
+            <button class="compare-btn" id="compareBtn" onclick="runComparison()" disabled>Compare All Providers</button>
+        </div>
+
+        <div class="results" id="results">
+            <div class="savings-hero" id="savingsHero">
+                <div class="label">Monthly savings with best alternative</div>
+                <div class="amount" id="savingsAmount">$0</div>
+                <div class="annual" id="savingsAnnual">$0/year</div>
+                <div class="pct" id="savingsPct">0% savings</div>
+            </div>
+
+            <div class="comparison-row" id="comparisonRow">
+                <div class="model-card current" id="currentCard">
+                    <div class="model-name" id="currentName">—</div>
+                    <div class="model-provider" id="currentProviderName">—</div>
+                    <div class="model-price" id="currentCost">$0<small>/mo</small></div>
+                    <div class="model-label">Current</div>
+                </div>
+                <div class="arrow-icon">→</div>
+                <div class="model-card best" id="bestCard">
+                    <div class="model-name" id="bestName">—</div>
+                    <div class="model-provider" id="bestProviderName">—</div>
+                    <div class="model-price" id="bestCost">$0<small>/mo</small></div>
+                    <div class="model-label">Best Alternative</div>
+                </div>
+            </div>
+
+            <div class="all-providers">
+                <h3>All Providers Ranked by Cost</h3>
+                <div style="overflow-x:auto;">
+                <table class="prov-table" id="provTable">
+                    <thead>
+                        <tr>
+                            <th>Model</th>
+                            <th>Provider</th>
+                            <th>Tier</th>
+                            <th>Input $/1M</th>
+                            <th>Output $/1M</th>
+                            <th>Monthly Cost</th>
+                            <th>vs Current</th>
+                        </tr>
+                    </thead>
+                    <tbody id="provTableBody"></tbody>
+                </table>
+                </div>
+            </div>
+
+            <div class="tips-section" id="tipsSection">
+                <h3>Optimization Tips</h3>
+                <div id="tipsContainer"></div>
+            </div>
+
+            <div class="cta-inline">
+                <h3>Want to track your costs over time?</h3>
+                <p>APIpulse Pro ($29 one-time) gives you saved scenarios, cost alerts when providers change prices, and PDF export of your reports.</p>
+                <a href="pricing.html" class="btn-primary" onclick="if(window.trackEvent)window.trackEvent('pro_button_clicked',{source:'provider-switch'})">Get Pro — $29</a>
+            </div>
+        </div>
+
+        <div class="footer-content">
+            <h2>How to Switch AI Providers</h2>
+            <p>Switching between AI API providers is usually straightforward. Most providers offer compatible API formats. Here's what typically changes:</p>
+            <p><strong>1. API Key:</strong> Get a new API key from your target provider. Most providers offer free tiers for testing.</p>
+            <p><strong>2. Base URL:</strong> Update the API endpoint in your code. OpenAI uses <code>api.openai.com</code>, Anthropic uses <code>api.anthropic.com</code>, Google uses <code>generativelanguage.googleapis.com</code>.</p>
+            <p><strong>3. Model Name:</strong> Change the model parameter to your target model (e.g., <code>gpt-5</code> → <code>claude-sonnet-4-6</code>).</p>
+            <p><strong>4. Response Format:</strong> Most providers return similar JSON structures, but you may need to adjust parsing for response tokens, usage metrics, or streaming format.</p>
+            <p><strong>Pro tip:</strong> Use an abstraction layer like <a href="https://github.com/BerriAI/litellm" target="_blank" rel="noopener">LiteLLM</a> or <a href="https://github.com/portkey-ai/gateway" target="_blank" rel="noopener">Portkey</a> to make provider switching a config change instead of a code rewrite.</p>
+
+            <h2 style="margin-top:40px;">When Should You Switch Providers?</h2>
+            <p>Consider switching when: your costs grow beyond your budget, your current provider raises prices, a new model offers better quality at a lower cost, or you need features your current provider doesn't support (like longer context windows or faster inference).</p>
+            <p>The best time to evaluate alternatives is before you're locked in. Run this calculator periodically — provider pricing changes frequently, and new models launch every few months.</p>
+        </div>
+    </div>
+    </main>
+
+    <footer>
+        <p>APIpulse — Know your AI API costs before you commit. <a href="about.html">About</a> · <a href="blog.html">Blog</a> · <a href="api-docs.html">API</a> · <a href="pricing.html">Pro</a></p>
+    </footer>
+
+    <button class="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">↑</button>
+
+    <script>
+    // Populate provider dropdown
+    function updateProviders() {
+        const providers = getProviders();
+        const sel = document.getElementById('currentProvider');
+        providers.forEach(p => {
+            const opt = document.createElement('option');
+            opt.value = p.slug;
+            opt.textContent = p.name;
+            sel.appendChild(opt);
+        });
+    }
+
+    function updateModels() {
+        const slug = document.getElementById('currentProvider').value;
+        const modelSel = document.getElementById('currentModel');
+        modelSel.innerHTML = '<option value="">Select model...</option>';
+        if (!slug) { checkBtn(); return; }
+        const models = getModelsByProvider(slug);
+        models.forEach(m => {
+            const opt = document.createElement('option');
+            opt.value = m.id;
+            opt.textContent = m.name + (m.deprecated ? ' (deprecated)' : '') + ' — $' + m.input.toFixed(2) + '/$' + m.output.toFixed(2);
+            modelSel.appendChild(opt);
+        });
+        checkBtn();
+    }
+
+    function checkBtn() {
+        const btn = document.getElementById('compareBtn');
+        const hasModel = document.getElementById('currentModel').value;
+        const hasInput = parseFloat(document.getElementById('inputTokens').value) > 0;
+        const hasOutput = parseFloat(document.getElementById('outputTokens').value) > 0;
+        btn.disabled = !(hasModel && (hasInput || hasOutput));
+    }
+
+    document.getElementById('inputTokens').addEventListener('input', checkBtn);
+    document.getElementById('outputTokens').addEventListener('input', checkBtn);
+    document.getElementById('currentModel').addEventListener('change', checkBtn);
+
+    function setTokens(v) { document.getElementById('inputTokens').value = v; checkBtn(); }
+    function setOutputTokens(v) { document.getElementById('outputTokens').value = v; checkBtn(); }
+
+    function runComparison() {
+        const currentId = document.getElementById('currentModel').value;
+        const inputM = parseFloat(document.getElementById('inputTokens').value) || 0;
+        const outputM = parseFloat(document.getElementById('outputTokens').value) || 0;
+        if (!currentId) return;
+
+        const current = getModelById(currentId);
+        if (!current) return;
+
+        const currentCost = (current.input * inputM) + (current.output * outputM);
+
+        // Calculate cost for all models
+        const results = API_MODELS.filter(m => !m.deprecated || m.id === currentId).map(m => {
+            const cost = (m.input * inputM) + (m.output * outputM);
+            const diff = currentCost - cost;
+            const pct = currentCost > 0 ? ((diff / currentCost) * 100) : 0;
+            return { ...m, cost, diff, pct };
+        }).sort((a, b) => a.cost - b.cost);
+
+        // Find best alternative (not current)
+        const best = results.find(m => m.id !== currentId) || results[0];
+        const savings = currentCost - best.cost;
+        const savingsPct = currentCost > 0 ? ((savings / currentCost) * 100) : 0;
+
+        // Update savings hero
+        const hero = document.getElementById('savingsHero');
+        document.getElementById('savingsAmount').textContent = '$' + Math.abs(savings).toFixed(2);
+        document.getElementById('savingsAnnual').textContent = '$' + (Math.abs(savings) * 12).toFixed(0) + '/year';
+        document.getElementById('savingsPct').textContent = savings >= 0 ? savingsPct.toFixed(0) + '% savings' : Math.abs(savingsPct).toFixed(0) + '% more expensive';
+
+        if (savings <= 0) {
+            hero.className = 'savings-hero no-savings';
+            document.getElementById('savingsAmount').textContent = 'You\'re already optimized!';
+            document.getElementById('savingsPct').textContent = 'Current model is among the cheapest';
+        } else {
+            hero.className = 'savings-hero';
+        }
+
+        // Update comparison cards
+        document.getElementById('currentName').textContent = current.name;
+        document.getElementById('currentProviderName').textContent = current.provider;
+        document.getElementById('currentCost').innerHTML = '$' + currentCost.toFixed(2) + '<small>/mo</small>';
+
+        document.getElementById('bestName').textContent = best.name;
+        document.getElementById('bestProviderName').textContent = best.provider;
+        document.getElementById('bestCost').innerHTML = '$' + best.cost.toFixed(2) + '<small>/mo</small>';
+
+        // Build table
+        const tbody = document.getElementById('provTableBody');
+        tbody.innerHTML = '';
+        results.forEach(r => {
+            const isCurrent = r.id === currentId;
+            const isBest = r.id === best.id && !isCurrent;
+            const rowClass = isCurrent ? 'current-row' : (isBest ? 'best-row' : '');
+            const tierClass = r.tier === 'Premium' ? 'tier-premium' : (r.tier === 'Mid' ? 'tier-mid' : 'tier-budget');
+
+            let diffText = '';
+            let diffClass = '';
+            if (isCurrent) {
+                diffText = 'Current';
+                diffClass = '';
+            } else if (r.diff > 0.01) {
+                diffText = '-$' + r.diff.toFixed(2) + ' (' + r.pct.toFixed(0) + '%)';
+                diffClass = 'save-cell';
+            } else if (r.diff < -0.01) {
+                diffText = '+$' + Math.abs(r.diff).toFixed(2) + ' (' + Math.abs(r.pct).toFixed(0) + '%)';
+                diffClass = 'loss-cell';
+            } else {
+                diffText = 'Same cost';
+                diffClass = '';
+            }
+
+            tbody.innerHTML += `<tr class="${rowClass}">
+                <td><strong>${r.name}</strong></td>
+                <td>${r.provider}</td>
+                <td><span class="tier-badge ${tierClass}">${r.tier}</span></td>
+                <td>$${r.input.toFixed(2)}</td>
+                <td>$${r.output.toFixed(2)}</td>
+                <td><strong>$${r.cost.toFixed(2)}</strong></td>
+                <td class="${diffClass}">${diffText}</td>
+            </tr>`;
+        });
+
+        // Generate tips
+        const tipsContainer = document.getElementById('tipsContainer');
+        tipsContainer.innerHTML = '';
+        const tips = [];
+
+        if (current.tier === 'Premium') {
+            const midSavings = results.filter(m => m.tier === 'Mid' && m.id !== currentId);
+            if (midSavings.length > 0) {
+                const cheapest = midSavings[0];
+                tips.push({
+                    icon: '💡',
+                    title: 'Try a mid-tier model',
+                    desc: `${cheapest.name} (${cheapest.provider}) costs $${cheapest.cost.toFixed(2)}/mo vs your current $${currentCost.toFixed(2)}/mo. Most use cases don't need premium models.`,
+                    savings: '$' + (currentCost - cheapest.cost).toFixed(2) + '/mo savings'
+                });
+            }
+        }
+
+        if (current.tier === 'Premium' || current.tier === 'Mid') {
+            const budgetSavings = results.filter(m => m.tier === 'Budget' && m.id !== currentId);
+            if (budgetSavings.length > 0) {
+                const cheapest = budgetSavings[0];
+                tips.push({
+                    icon: '💰',
+                    title: 'Use budget models for simple tasks',
+                    desc: `Route simple requests (classification, summarization, chat) to ${cheapest.name} at $${cheapest.input.toFixed(2)}/$${cheapest.output.toFixed(2)} per 1M tokens. Keep your current model for complex reasoning.`,
+                    savings: 'Save 60-90% on simple requests'
+                });
+            }
+        }
+
+        // Check for context window advantage
+        const currentModel = getModelById(currentId);
+        const biggerContext = results.filter(m => m.id !== currentId && parseInt(m.context.replace(/[^0-9]/g, '')) > parseInt(currentModel.context.replace(/[^0-9]/g, '')));
+        if (biggerContext.length > 0) {
+            const best = biggerContext[0];
+            tips.push({
+                icon: '📐',
+                title: 'Need more context?',
+                desc: `${best.name} has ${best.context} context window vs ${currentModel.context} for your current model. Same or lower cost with more room for large documents.`,
+                savings: ''
+            });
+        }
+
+        // Caching tip
+        tips.push({
+            icon: '⚡',
+            title: 'Enable prompt caching',
+            desc: 'Both OpenAI and Anthropic offer prompt caching for repeated prefixes. This can reduce input costs by 50-90% for conversational or repetitive workloads.',
+            savings: 'Save 50-90% on cached input tokens'
+        });
+
+        tips.forEach(t => {
+            tipsContainer.innerHTML += `<div class="tip-card">
+                <div class="tip-icon">${t.icon}</div>
+                <div>
+                    <div class="tip-title">${t.title}</div>
+                    <div class="tip-desc">${t.desc}</div>
+                    ${t.savings ? '<div class="tip-savings">' + t.savings + '</div>' : ''}
+                </div>
+            </div>`;
+        });
+
+        // Show results
+        document.getElementById('results').classList.add('active');
+        document.getElementById('results').scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+        // Track event
+        if (window.trackEvent) {
+            window.trackEvent('provider_switch_calculated', {
+                current_model: current.name,
+                best_alternative: best.name,
+                savings_pct: savingsPct.toFixed(0)
+            });
+        }
+    }
+
+    // Init
+    document.addEventListener('DOMContentLoaded', function() {
+        updateProviders();
+
+        // Back to top button
+        window.addEventListener('scroll', function() {
+            var btn = document.querySelector('.back-to-top');
+            if (btn) btn.classList.toggle('visible', window.scrollY > 400);
+        });
+    });
+    </script>
+</body>
+</html>

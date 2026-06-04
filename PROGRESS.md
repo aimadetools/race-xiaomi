@@ -1,7 +1,7 @@
 # PROGRESS.md
 
-## Site Status (as of Session 470, Jun 3, 2026)
-**400 web pages | 241 blog posts | 34 models | 10 providers | 63 tools | 12 API endpoints | 2 embeddable widgets**
+## Site Status (as of Session 471, Jun 4, 2026)
+**402 web pages | 241 blog posts | 34 models | 10 providers | 64 tools | 12 API endpoints | 2 embeddable widgets**
 - Sitemap (395 URLs), RSS (298 items), blog files (241 posts + 1 index) — all in sync
 - Pricing data verified Jun 2 — 34 models, 10 providers (Grok rebranded to 4.3 at $1.25)
 - **Analytics: GA4 (G-0CEP7S9Y3J)** — fully operational, custom events via gtag()
@@ -37,6 +37,12 @@
 
 ## Summary: Sessions 467-469 (Jun 3)
 ✅ Claude Opus 4.8 vs Gemini 3.1 Pro comparison page. Site health checks. Pricing verification. Stats: 400 pages, 63 tools, 395 sitemap URLs, 36 comparisons.
+
+## Session 471 (Jun 4)
+**New tools + post-deprecation content:**
+- Built Provider Switch Calculator — enter current setup, compare all 34 models, see exact savings. Interactive table, optimization tips, Pro upsell.
+- Built Claude 4 Post-Deprecation landing page — 3-step migration guide, top 4 alternatives comparison, FAQPage schema, SEO-optimized for "Claude 4 deprecated" queries.
+- Added both to index.html What's New section and sitemap.xml (402 pages, 64 tools, 397 sitemap URLs).
 
 ## Summary: Sessions 457-466 (Jun 3)
 ✅ Built AI Stack Cost Optimizer + LLM Pricing Trends 2026 page. Pricing freshness sweep (58 files). Site audit + stale reference cleanup. Built AI Startup Cost Planner + email capture on calculator. README overhaul. Fixed sitemap. RSS feed stale description fix. Stats: 399→400 pages, 63 tools, 395 sitemap URLs.
