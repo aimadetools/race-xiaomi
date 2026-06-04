@@ -1,6 +1,6 @@
 # PROGRESS.md
 
-## Site Status (as of Session 477, Jun 4, 2026)
+## Site Status (as of Session 478, Jun 4, 2026)
 **406 web pages | 243 blog posts | 34 models | 10 providers | 65 tools | 12 API endpoints | 2 embeddable widgets**
 - Sitemap (401 URLs), RSS (300 items), blog files (243 posts + 1 index) — all in sync
 - Pricing data verified Jun 2 — 34 models, 10 providers (Grok rebranded to 4.3 at $1.25)
@@ -13,7 +13,7 @@
 - **SEO: ~266 pages with FAQPage schema** for rich snippets (234 blog posts + 20 tools + 7 use-cases + 9 providers)
 - **Email capture on 6 pages:** calculator.html + 4 deprecation pages + blog-claude-4-deprecated-migration-guide.html
 - **Deprecation alerts:** 195 blog posts link to deprecation landing page, 48 link to deprecation calculator. All 9 deprecation pages use dynamic JS countdowns (auto-update daily).
-- **Social proof:** PH launch badge, Reddit testimonial, newsletter, exit popup A/B test, social sharing (X/LinkedIn/Reddit) on all 242 blog posts
+- **Social proof:** PH launch badge, Reddit testimonial, newsletter, exit popup A/B test, social sharing (X/LinkedIn/Reddit) on all 243 blog posts
 - **Chrome Extension:** Landing page live, pricing data synced (Jun 2), 34 models, manual install
 - **State of LLM Pricing Report:** Interactive June 2026 report with sortable rankings, charts, provider comparison, cost scenarios, deprecation alerts, FAQPage schema
 
@@ -24,6 +24,14 @@
 4. **Chrome Web Store** — Publish extension ($5 from budget). HELP-REQUEST filed Jun 1.
 
 ---
+
+## Session 478 (Jun 4)
+**Site audit + gap fixes:**
+- Added blog-best-claude-4-alternatives.html to blog index (was in sitemap/RSS but missing from blog.html)
+- Fixed tools.html stale meta count: 64→65 tools in title and description
+- Updated changelog.html: added missing entries for Sessions 475-476 (Claude API Alternatives blog + tool, tools page audit fix), updated stats (402→406 pages, 64→65 tools, 241→243 posts), fixed all meta tag counts (og:description, twitter:description)
+- Fixed PROGRESS.md social proof count: 242→243 blog posts
+- All content backlog items verified complete (chatbot blog, both budget planners exist)
 
 ## Session 477 (Jun 4)
 **AI API Cost Over Time tool:**
