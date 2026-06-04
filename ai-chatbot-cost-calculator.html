@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Chatbot Cost Calculator — Find the Cheapest Model for Your Bot | APIpulse</title>
+    <meta name="description" content="Calculate exactly what your AI chatbot will cost. Enter conversation volume and tokens, see costs for all 34 models. Compare to human agents and SaaS tools.">
+    <meta name="keywords" content="AI chatbot cost calculator, chatbot API cost, LLM chatbot pricing, cheapest chatbot model, AI support bot cost">
+    <meta property="og:title" content="AI Chatbot Cost Calculator — Find the Cheapest Model | APIpulse">
+    <meta property="og:description" content="Calculate your AI chatbot costs across all 34 models. Compare to human agents. Free tool.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://getapipulse.com/og-image.png">
+    <meta property="og:url" content="https://getapipulse.com/ai-chatbot-cost-calculator.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="AI Chatbot Cost Calculator">
+    <meta name="twitter:image" content="https://getapipulse.com/og-image.png">
+    <meta name="twitter:description" content="Calculate your AI chatbot costs across all 34 models.">
+    <link rel="canonical" href="https://getapipulse.com/ai-chatbot-cost-calculator.html">
+    <link rel="alternate" type="application/rss+xml" title="APIpulse Blog" href="https://getapipulse.com/rss.xml">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="styles.css">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0CEP7S9Y3J"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-0CEP7S9Y3J');
+    </script>
+    <script src="analytics.js" defer></script>
+    <script src="dynamic-date.js" defer></script>
+    <script src="shared.js" defer></script>
+    <script src="pricing-data.js" defer></script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "AI Chatbot Cost Calculator",
+        "url": "https://getapipulse.com/ai-chatbot-cost-calculator.html",
+        "description": "Calculate exactly what your AI chatbot will cost across all 34 models.",
+        "applicationCategory": "DeveloperApplication",
+        "operatingSystem": "Web",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "How much does an AI chatbot cost per month?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "For 100 conversations/day: $1-18/month on budget models. For 1,000 conversations/day: $12-180/month. For 10,000 conversations/day: $126-1,800/month. The cheapest option is DeepSeek V4 Flash at $1.26/month for 100 conversations/day."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What is the cheapest AI model for a chatbot?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "DeepSeek V4 Flash at $0.14/$0.28 per million tokens is the cheapest quality chatbot model. At 100 conversations/day with 1K input + 500 output tokens, it costs about $1.26/month. Gemini 2.0 Flash ($0.10/$0.40) is the second cheapest at $1.50/month."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Is an AI chatbot cheaper than a human support agent?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes, dramatically. A human support agent costs $3,000-5,000/month. An AI chatbot handling the same volume costs $1-15/month on budget models — that's 99.5-99.97% cheaper. Even premium AI models like Claude Haiku at $18/month are 99.4% cheaper than a human."
+                }
+            }
+        ]
+    }
+    </script>
+    <style>
+        .content { max-width: 960px; margin: 0 auto; padding: 120px 24px 80px; }
+        h1 { font-size: clamp(28px, 4vw, 40px); font-weight: 800; text-align: center; margin-bottom: 12px; }
+        .subtitle { text-align: center; color: var(--text-secondary); font-size: 18px; margin-bottom: 48px; max-width: 650px; margin-left: auto; margin-right: auto; }
+
+        .calc-grid {
+            display: grid; grid-template-columns: 340px 1fr; gap: 32px; margin-bottom: 40px;
+        }
+        @media (max-width: 768px) {
+            .calc-grid { grid-template-columns: 1fr; }
+        }
+
+        .input-panel {
+            background: var(--bg-secondary); border: 1px solid var(--border);
+            border-radius: 16px; padding: 28px; position: sticky; top: 100px; align-self: start;
+        }
+        .input-panel h2 { font-size: 18px; font-weight: 700; margin-bottom: 20px; }
+        .form-group { margin-bottom: 20px; }
+        .form-group label { display: block; font-size: 13px; font-weight: 600; color: var(--text-secondary); margin-bottom: 6px; }
+        .form-group input, .form-group select {
+            width: 100%; padding: 10px 14px; border-radius: 8px; border: 1px solid var(--border);
+            background: var(--bg-card); color: var(--text-primary); font-size: 15px; font-weight: 600;
+            outline: none; transition: border-color 0.2s;
+        }
+        .form-group input:focus, .form-group select:focus { border-color: var(--accent); }
+        .form-group .hint { font-size: 12px; color: var(--text-muted); margin-top: 4px; }
+
+        .cost-hero {
+            background: var(--accent-glow); border: 1px solid var(--accent);
+            border-radius: 12px; padding: 24px; text-align: center; margin-top: 16px;
+        }
+        .cost-hero-label { font-size: 13px; color: var(--text-secondary); margin-bottom: 4px; }
+        .cost-hero-amount { font-size: 36px; font-weight: 800; color: var(--accent); }
+        .cost-hero-sub { font-size: 13px; color: var(--text-muted); margin-top: 4px; }
+
+        .vs-human {
+            background: var(--bg-secondary); border: 1px solid var(--border);
+            border-radius: 12px; padding: 20px; margin-top: 16px;
+        }
+        .vs-human h3 { font-size: 14px; font-weight: 700; margin-bottom: 12px; }
+        .vs-row { display: flex; justify-content: space-between; padding: 6px 0; font-size: 13px; border-bottom: 1px solid var(--border); }
+        .vs-row:last-child { border-bottom: none; }
+        .vs-row .label { color: var(--text-secondary); }
+        .vs-row .value { font-weight: 600; }
+        .vs-row .value.green { color: var(--green); }
+        .vs-row .value.red { color: #ef4444; }
+
+        .results-panel { min-width: 0; }
+
+        .results-header {
+            display: flex; justify-content: space-between; align-items: center;
+            margin-bottom: 20px; flex-wrap: wrap; gap: 12px;
+        }
+        .results-header h2 { font-size: 20px; font-weight: 700; margin: 0; }
+        .results-sort { display: flex; gap: 8px; }
+        .sort-btn {
+            background: var(--bg-secondary); border: 1px solid var(--border);
+            border-radius: 8px; padding: 6px 14px; font-size: 12px; font-weight: 600;
+            color: var(--text-secondary); cursor: pointer; transition: all 0.2s;
+        }
+        .sort-btn.active { background: var(--accent); color: white; border-color: var(--accent); }
+        .sort-btn:hover { border-color: var(--accent); }
+
+        .model-results { display: flex; flex-direction: column; gap: 10px; }
+        .model-card {
+            background: var(--bg-secondary); border: 1px solid var(--border);
+            border-radius: 12px; padding: 16px 20px; display: grid;
+            grid-template-columns: 1fr auto; gap: 16px; align-items: center;
+            transition: border-color 0.2s;
+        }
+        .model-card:hover { border-color: var(--accent); }
+        .model-card.top-pick { border-color: var(--green); background: rgba(34,197,94,0.04); }
+        .model-name { font-weight: 700; font-size: 15px; margin-bottom: 2px; }
+        .model-provider { font-size: 12px; color: var(--text-muted); margin-bottom: 6px; }
+        .model-price { font-size: 12px; color: var(--text-secondary); }
+        .model-cost { text-align: right; }
+        .model-cost .cost-amount { font-size: 22px; font-weight: 800; }
+        .model-cost .cost-label { font-size: 11px; color: var(--text-secondary); }
+        .cost-amount.green { color: var(--green); }
+        .cost-amount.yellow { color: #f59e0b; }
+        .cost-amount.red { color: #ef4444; }
+        .model-tag {
+            display: inline-block; font-size: 10px; font-weight: 600; padding: 2px 7px;
+            border-radius: 4px; margin-left: 6px;
+        }
+        .tag-cheapest { background: rgba(34,197,94,0.15); color: var(--green); }
+        .tag-best { background: rgba(99,102,241,0.15); color: var(--accent); }
+
+        .tip-box {
+            background: rgba(34,197,94,0.08); border: 1px solid rgba(34,197,94,0.3);
+            border-radius: 12px; padding: 20px; margin: 24px 0;
+        }
+        .tip-box h3 { margin-top: 0; color: var(--green); font-size: 16px; }
+        .tip-box p { margin-bottom: 0; font-size: 14px; }
+
+        .cta-inline {
+            background: var(--bg-secondary); border: 1px solid var(--accent);
+            border-radius: 12px; padding: 24px; margin: 32px 0; text-align: center;
+        }
+        .cta-inline p { margin-bottom: 12px; }
+        .btn-primary { display: inline-block; }
+
+        .related {
+            background: var(--bg-secondary); border: 1px solid var(--border);
+            border-radius: 12px; padding: 24px; margin-top: 40px;
+        }
+        .related h3 { margin-top: 0; font-size: 18px; }
+        .related a { display: block; padding: 8px 0; color: var(--accent); font-size: 14px; }
+
+        .share-section { margin-top: 32px; padding-top: 24px; border-top: 1px solid var(--border); text-align: center; }
+        .share-section p { color: var(--text-secondary); font-size: 14px; margin-bottom: 12px; }
+        .share-btn { display: inline-block; background: var(--bg-card); color: var(--text-primary); padding: 8px 20px; border-radius: 8px; font-size: 14px; font-weight: 500; border: 1px solid var(--border); transition: all 0.2s; text-decoration: none; }
+        .share-btn:hover { background: var(--accent); color: white; border-color: var(--accent); }
+    </style>
+    <meta name="theme-color" content="#6366f1">
+    <link rel="preconnect" href="https://getapipulse.com">
+</head>
+<body>
+    <a href="#main" class="skip-link">Skip to content</a>
+    <nav>
+        <div class="nav-inner">
+            <a href="index.html" class="logo">API<span>pulse</span></a>
+            <button class="hamburger" onclick="toggleMobileNav()" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+            <div class="nav-links">
+                <a href="calculator.html">Calculator</a>
+                <a href="compare.html">Compare</a>
+                <a href="cost-explorer.html">Explorer</a>
+                <a href="cost-scenarios.html">Scenarios</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="use-cases.html">Use Cases</a>
+                <a href="about.html">About</a>
+                <a href="blog.html">Blog</a>
+                <a href="pricing-index.html">Pricing Index</a>
+                <a href="model-matrix.html">Model Matrix</a>
+                <a href="pricing-trends.html">Trends</a>
+                <a href="pricing-changelog.html">Changelog</a>
+                <a href="price-alerts.html">Price Alerts</a>
+                <a href="cheat-sheet.html">Cheat Sheet</a> &middot; <a href="model-switch.html">Model Switch</a>
+                <a href="api-docs.html" style="color:var(--accent);">API</a>
+                <a href="pricing.html" class="nav-cta" onclick="if(window.trackEvent)window.trackEvent('pro_button_clicked',{source:'nav'})">Get Pro — $29</a>
+                <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
+            </div>
+        </div>
+    </nav>
+
+    <main id="main">
+    <div class="content">
+        <h1>AI Chatbot Cost Calculator</h1>
+        <p class="subtitle">Enter your conversation volume and tokens — see exactly what your AI chatbot will cost across all 34 models, compared to human agents and SaaS tools.</p>
+
+        <div class="calc-grid">
+            <div class="input-panel">
+                <h2>Your Chatbot Usage</h2>
+                <div class="form-group">
+                    <label for="conversations">Conversations per Day</label>
+                    <input type="number" id="conversations" value="100" min="1" step="10" placeholder="e.g. 100">
+                    <div class="hint">Average chat sessions per day</div>
+                </div>
+                <div class="form-group">
+                    <label for="inputTokens">Input Tokens per Conversation</label>
+                    <input type="number" id="inputTokens" value="1000" min="100" step="100" placeholder="e.g. 1000">
+                    <div class="hint">System prompt + user message + history</div>
+                </div>
+                <div class="form-group">
+                    <label for="outputTokens">Output Tokens per Conversation</label>
+                    <input type="number" id="outputTokens" value="500" min="50" step="50" placeholder="e.g. 500">
+                    <div class="hint">Average bot response length</div>
+                </div>
+                <div class="form-group">
+                    <label for="useCase">Chatbot Type</label>
+                    <select id="useCase">
+                        <option value="support" selected>Customer Support</option>
+                        <option value="general">General Chat</option>
+                        <option value="faq">FAQ / Knowledge Base</option>
+                        <option value="sales">Sales / Lead Gen</option>
+                        <option value="code">Code Assistant</option>
+                    </select>
+                </div>
+
+                <div class="cost-hero">
+                    <div class="cost-hero-label">Cheapest Option</div>
+                    <div class="cost-hero-amount" id="cheapestCost">$1.26</div>
+                    <div class="cost-hero-sub" id="cheapestModel">DeepSeek V4 Flash</div>
+                </div>
+
+                <div class="vs-human">
+                    <h3>vs. Alternatives</h3>
+                    <div class="vs-row"><span class="label">AI Bot (cheapest)</span><span class="value green" id="vsAi">$1.26/mo</span></div>
+                    <div class="vs-row"><span class="label">Human Agent (part-time)</span><span class="value red">$1,500/mo</span></div>
+                    <div class="vs-row"><span class="label">Human Agent (full-time)</span><span class="value red">$3,500/mo</span></div>
+                    <div class="vs-row"><span class="label">SaaS Chatbot Tool</span><span class="value red">$50-500/mo</span></div>
+                </div>
+            </div>
+
+            <div class="results-panel">
+                <div class="results-header">
+                    <h2>All Models Ranked by Cost</h2>
+                    <div class="results-sort">
+                        <button class="sort-btn active" data-sort="cost" onclick="sortResults('cost',this)">Cheapest First</button>
+                        <button class="sort-btn" data-sort="quality" onclick="sortResults('quality',this)">Best Quality</button>
+                    </div>
+                </div>
+
+                <div class="model-results" id="modelResults"></div>
+
+                <div class="tip-box">
+                    <h3>Optimization Tip</h3>
+                    <p id="tipText">Adjust your usage to see cost optimization recommendations.</p>
+                </div>
+
+                <div class="cta-inline">
+                    <p><strong>Want a deeper cost analysis?</strong></p>
+                    <a href="calculator.html" class="btn-primary" style="padding:12px 32px;">Full Cost Calculator →</a>
+                </div>
+
+                <div class="related">
+                    <h3>Related Tools & Reading</h3>
+                    <a href="blog-cheapest-ai-api-customer-support-2026.html">Cheapest AI API for Customer Support 2026 →</a>
+                    <a href="blog-how-to-build-ai-chatbot-cheap-2026.html">How to Build an AI Chatbot Cheap in 2026 →</a>
+                    <a href="ai-api-budget-planner.html">AI API Budget Planner — Set Your Budget →</a>
+                    <a href="claude-alternatives-calculator.html">Claude Alternatives Calculator — See Your Savings →</a>
+                    <a href="cost-explorer.html">Cost Explorer — Compare All 34 Models →</a>
+                </div>
+
+                <div class="share-section">
+                    <p>Find this useful? Share it with your team.</p>
+                    <a class="share-btn" href="https://twitter.com/intent/tweet?text=AI%20Chatbot%20Cost%20Calculator%20%E2%80%94%20find%20the%20cheapest%20model%20for%20your%20bot&url=https://getapipulse.com/ai-chatbot-cost-calculator.html" target="_blank" rel="noopener">Share on X</a>
+                    <a class="share-btn" href="https://www.linkedin.com/sharing/share-offsite/?url=https://getapipulse.com/ai-chatbot-cost-calculator.html" target="_blank" rel="noopener">Share on LinkedIn</a>
+                    <a class="share-btn" href="https://reddit.com/submit?url=https://getapipulse.com/ai-chatbot-cost-calculator.html&title=AI%20Chatbot%20Cost%20Calculator" target="_blank" rel="noopener">Share on Reddit</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    </main>
+
+    <footer>
+        <p>Pricing data last verified: <span class="verified-date"></span></p>
+        <p>&copy; 2026 APIpulse. <a href="index.html">Home</a> &middot; <a href="use-cases.html">Use Cases</a> &middot; <a href="about.html">About</a> &middot; <a href="blog.html">Blog</a>
+<a href="pricing-index.html">Pricing Index</a> &middot; <a href="model-matrix.html">Model Matrix</a> &middot; <a href="cost-scenarios.html">Scenarios</a> &middot; <a href="price-alerts.html">Price Alerts</a> &middot; <a href="pricing-changelog.html">Changelog</a> &middot; <a href="openai.html">OpenAI</a> &middot; <a href="anthropic.html">Anthropic</a> &middot; <a href="google.html">Google</a> &middot; <a href="mistral.html">Mistral</a> &middot; <a href="cohere.html">Cohere</a> &middot; <a href="deepseek.html">DeepSeek</a> &middot; <a href="xai.html">xAI</a> &middot; <a href="moonshot.html">Moonshot</a> &middot; <a href="together.html">Together.ai</a> &middot; <a href="ai21.html">AI21</a> &middot; <a href="pricing.html">Pricing</a> &middot; <a href="embed.html">Embed Widget</a> &middot; <a href="cheat-sheet.html">Cheat Sheet</a> &middot; <a href="model-switch.html">Model Switch</a> &middot; <a href="api-docs.html">API</a> &middot; <a href="https://x.com/getapipulse" target="_blank" rel="noopener">Twitter</a> &middot; <a href="unsubscribe.html">Unsubscribe</a></p>
+    </footer>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const convInput = document.getElementById('conversations');
+        const inputTokensInput = document.getElementById('inputTokens');
+        const outputTokensInput = document.getElementById('outputTokens');
+        const useCaseSelect = document.getElementById('useCase');
+        const cheapestCostEl = document.getElementById('cheapestCost');
+        const cheapestModelEl = document.getElementById('cheapestModel');
+        const vsAiEl = document.getElementById('vsAi');
+        const modelResults = document.getElementById('modelResults');
+        const tipText = document.getElementById('tipText');
+
+        // Use case model priorities (order matters — first is best for that use case)
+        const useCaseModels = {
+            support: ['deepseek-v4-flash', 'google-flash', 'mistral-small', 'openai-gpt4o-mini', 'deepseek-v4-pro', 'openai-gpt5-mini', 'anthropic-haiku', 'llama-4-scout', 'anthropic-sonnet46', 'openai-gpt5'],
+            general: ['google-flash', 'deepseek-v4-flash', 'openai-gpt4o-mini', 'mistral-small', 'openai-gpt5-mini', 'deepseek-v4-pro', 'anthropic-haiku', 'llama-4-scout', 'anthropic-sonnet46', 'openai-gpt5'],
+            faq: ['google-flash', 'deepseek-v4-flash', 'mistral-small', 'openai-gpt4o-mini', 'llama-3.1-8b', 'openai-gpt5-mini', 'anthropic-haiku'],
+            sales: ['anthropic-haiku', 'deepseek-v4-pro', 'openai-gpt5-mini', 'deepseek-v4-flash', 'google-flash', 'anthropic-sonnet46'],
+            code: ['deepseek-v4-pro', 'deepseek-v4-flash', 'google-flash', 'openai-gpt4o-mini', 'anthropic-haiku', 'llama-3.1-70b', 'anthropic-sonnet46']
+        };
+
+        // Quality ranking (1 = best)
+        const qualityRank = {
+            'anthropic-opus48': 1, 'anthropic-opus47': 2, 'anthropic-sonnet46': 3, 'openai-gpt5': 4,
+            'openai-gpt55': 5, 'anthropic-haiku': 6, 'openai-gpt5-mini': 7, 'deepseek-v4-pro': 8,
+            'google-pro': 9, 'mistral-large': 10, 'google-flash': 11, 'deepseek-v4-flash': 12,
+            'openai-gpt4o-mini': 13, 'mistral-small': 14, 'llama-4-maverick': 15, 'llama-4-scout': 16
+        };
+
+        let currentSort = 'cost';
+
+        function calculate() {
+            const convPerDay = parseInt(convInput.value) || 100;
+            const inputTokens = parseInt(inputTokensInput.value) || 1000;
+            const outputTokens = parseInt(outputTokensInput.value) || 500;
+            const useCase = useCaseSelect.value;
+            const daysInMonth = 30;
+
+            const totalInput = convPerDay * daysInMonth * inputTokens;
+            const totalOutput = convPerDay * daysInMonth * outputTokens;
+            const totalInputM = totalInput / 1000000;
+            const totalOutputM = totalOutput / 1000000;
+
+            const orderedIds = useCaseModels[useCase] || useCaseModels.general;
+            const allModels = orderedIds.map(id => API_MODELS.find(m => m.id === id)).filter(Boolean);
+
+            // Also include any models not in the priority list
+            const knownIds = new Set(orderedIds);
+            const extraModels = API_MODELS.filter(m => !knownIds.has(m.id) && !m.deprecated);
+            const models = [...allModels, ...extraModels];
+
+            const results = models.map(model => {
+                const cost = (totalInputM * model.input) + (totalOutputM * model.output);
+                const quality = qualityRank[model.id] || 20;
+                return { model, cost, quality };
+            });
+
+            // Sort
+            if (currentSort === 'cost') {
+                results.sort((a, b) => a.cost - b.cost);
+            } else {
+                results.sort((a, b) => a.quality - b.quality);
+            }
+
+            const cheapest = results[0];
+            cheapestCostEl.textContent = '$' + cheapest.cost.toFixed(2);
+            cheapestModelEl.textContent = cheapest.model.name;
+            vsAiEl.textContent = '$' + cheapest.cost.toFixed(2) + '/mo';
+
+            modelResults.innerHTML = results.map((r, i) => {
+                let colorClass = 'green';
+                if (r.cost > 50) colorClass = 'red';
+                else if (r.cost > 15) colorClass = 'yellow';
+
+                let tags = '';
+                if (i === 0) tags += '<span class="model-tag tag-cheapest">Cheapest</span>';
+                if (r.model.id === orderedIds[0]) tags += '<span class="model-tag tag-best">Best Pick</span>';
+
+                return `
+                    <div class="model-card ${i === 0 ? 'top-pick' : ''}">
+                        <div>
+                            <div class="model-name">${r.model.name}${tags}</div>
+                            <div class="model-provider">${r.model.provider} &middot; ${r.model.context} context</div>
+                            <div class="model-price">$${r.model.input.toFixed(2)} / $${r.model.output.toFixed(2)} per 1M tokens</div>
+                        </div>
+                        <div class="model-cost">
+                            <div class="cost-amount ${colorClass}">$${r.cost.toFixed(2)}</div>
+                            <div class="cost-label">/month</div>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+
+            // Tips
+            const convPerMonth = convPerDay * 30;
+            const totalCost = cheapest.cost;
+            const humanCost = 3500;
+            const savings = humanCost - totalCost;
+            if (totalCost < 5) {
+                tipText.innerHTML = `Your chatbot costs <strong>$${totalCost.toFixed(2)}/month</strong> — that's <strong>${((savings/humanCost)*100).toFixed(1)}% cheaper</strong> than a human agent ($3,500/mo). At ${convPerDay} conversations/day, consider adding response caching to cut costs another 20-30%.`;
+            } else if (totalCost < 50) {
+                tipText.innerHTML = `At <strong>$${totalCost.toFixed(2)}/month</strong>, your chatbot is still 99%+ cheaper than a human agent. With ${convPerMonth.toLocaleString()} conversations/month, a tiered routing strategy (cheap model for FAQs, premium for complex issues) can save 40-60%.`;
+            } else {
+                tipText.innerHTML = `At ${convPerDay.toLocaleString()} conversations/day, your costs scale with volume. Consider: <strong>caching</strong> common responses, <strong>shorter prompts</strong>, or <strong>tiered routing</strong> to keep costs manageable. The cheapest option (${cheapest.model.name}) saves $${(results[results.length-1].cost - totalCost).toFixed(2)}/month vs the most expensive.`;
+            }
+
+            if (window.trackEvent) {
+                window.trackEvent('chatbot_calculator_used', {
+                    conversations: convPerDay, inputTokens, outputTokens, useCase,
+                    cheapestModel: cheapest.model.name, cheapestCost: totalCost.toFixed(2)
+                });
+            }
+        }
+
+        window.sortResults = function(sort, btn) {
+            currentSort = sort;
+            document.querySelectorAll('.sort-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            calculate();
+        };
+
+        [convInput, inputTokensInput, outputTokensInput, useCaseSelect].forEach(el => {
+            el.addEventListener('input', calculate);
+            el.addEventListener('change', calculate);
+        });
+
+        calculate();
+    });
+    </script>
+
+</body>
+</html>

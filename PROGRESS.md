@@ -1,19 +1,19 @@
 # PROGRESS.md
 
-## Site Status (as of Session 479, Jun 4, 2026)
-**408 web pages | 244 blog posts | 34 models | 10 providers | 66 tools | 12 API endpoints | 2 embeddable widgets**
-- Sitemap (403 URLs), RSS (301 items), blog files (244 posts + 1 index) — all in sync
+## Site Status (as of Session 480, Jun 4, 2026)
+**410 web pages | 245 blog posts | 34 models | 10 providers | 67 tools | 12 API endpoints | 2 embeddable widgets**
+- Sitemap (405 URLs), RSS (302 items), blog files (245 posts + 1 index) — all in sync
 - Pricing data verified Jun 2 — 34 models, 10 providers (Grok rebranded to 4.3 at $1.25)
 - **Analytics: GA4 (G-0CEP7S9Y3J)** — fully operational, custom events via gtag()
 - **Pro system:** localStorage-based unlock after Stripe payment. Access code fallback on pro.html.
 - **37 comparison pages** — all providers covered, interactive calculators, FAQPage schema
-- **66 interactive tools** — including Provider Switch Calculator + Startup Cost Planner + Claude Deprecation Calculator + Claude 4 Migration Tool + AI Model Decision Tree + AI API Cost Over Time + AI API Budget Planner
+- **67 interactive tools** — including Chatbot Cost Calculator + Budget Planner + Provider Switch Calculator + Startup Cost Planner + Claude Deprecation Calculator + Claude 4 Migration Tool + AI Model Decision Tree + AI API Cost Over Time
 - **12 API endpoints** — pricing data, cost calculator (single/multi-model), cheapest model finder, pricing badge (SVG), compare models, recommend models, subscribe, unsubscribe, newsletter, check-price-changes, admin, cost-report
 - **2 embeddable widgets** — pricing table/badge/compare (widget.js) + report card (embed-report.html)
-- **SEO: ~266 pages with FAQPage schema** for rich snippets (234 blog posts + 20 tools + 7 use-cases + 9 providers)
+- **SEO: ~267 pages with FAQPage schema** for rich snippets (235 blog posts + 21 tools + 7 use-cases + 9 providers)
 - **Email capture on 6 pages:** calculator.html + 4 deprecation pages + blog-claude-4-deprecated-migration-guide.html
 - **Deprecation alerts:** 195 blog posts link to deprecation landing page, 48 link to deprecation calculator. All 9 deprecation pages use dynamic JS countdowns (auto-update daily).
-- **Social proof:** PH launch badge, Reddit testimonial, newsletter, exit popup A/B test, social sharing (X/LinkedIn/Reddit) on all 243 blog posts
+- **Social proof:** PH launch badge, Reddit testimonial, newsletter, exit popup A/B test, social sharing (X/LinkedIn/Reddit) on all 245 blog posts
 - **Chrome Extension:** Landing page live, pricing data synced (Jun 2), 34 models, manual install
 - **State of LLM Pricing Report:** Interactive June 2026 report with sortable rankings, charts, provider comparison, cost scenarios, deprecation alerts, FAQPage schema
 
@@ -25,41 +25,15 @@
 
 ---
 
-## Session 479 (Jun 4)
-**New content + tool:**
-- Created blog-how-to-build-ai-chatbot-cheap-2026.html — "How to Build an AI Chatbot Cheap in 2026" targeting "build AI chatbot cheap" keyword. Full guide with code examples (Python, Node.js, fetch), cost breakdowns at 100/1K/10K conversations/day, 5 optimization tips, production architecture pattern, FAQPage schema, share buttons
-- Created ai-api-budget-planner.html — interactive tool where users set monthly budget + usage (conversations/day, tokens), see which of 34 models fit. Use-case optimized recommendations (general, support, code, content, analysis), real-time cost breakdown, optimization tips, GA4 custom event tracking
-- Updated sitemap.xml (401→403 URLs), RSS (300→301 items), blog.html (243→244 posts), tools.html (65→66 tools, new tool card), index.html What's New section, changelog.html (2 new entries)
-- Stats: 406→408 pages, 243→244 blog posts, 65→66 tools, 401→403 sitemap URLs, 300→301 RSS items
+## Session 480 (Jun 4)
+**Customer Support content + Chatbot Calculator tool:**
+- Created blog-cheapest-ai-api-customer-support-2026.html — "Cheapest AI API for Customer Support 2026" targeting high-intent keyword. 9 models compared with cost breakdowns at 100/1K/10K conversations/day, AI vs human agent cost analysis, Python code example with tiered routing, 5 optimization tips, FAQPage schema (5 questions), share buttons
+- Created ai-chatbot-cost-calculator.html — interactive tool: enter conversation volume + tokens, see costs for all 34 models. Chatbot type presets (support, FAQ, sales, code), sort by cost or quality, human agent vs SaaS comparison sidebar, GA4 event tracking
+- Updated sitemap.xml (403→405 URLs), RSS (301→302 items), blog.html (244→245 posts), tools.html (66→67 tools, new tool card + title/meta update), index.html What's New (2 new entries), changelog.html (2 new entries + stats 406→410 pages, 65→67 tools, 243→245 posts)
+- Stats: 408→410 pages, 244→245 blog posts, 66→67 tools, 403→405 sitemap URLs, 301→302 RSS items
 
-## Session 478 (Jun 4)
-**Site audit + gap fixes:**
-- Added blog-best-claude-4-alternatives.html to blog index (was in sitemap/RSS but missing from blog.html)
-- Fixed tools.html stale meta count: 64→65 tools in title and description
-- Updated changelog.html: added missing entries for Sessions 475-476 (Claude API Alternatives blog + tool, tools page audit fix), updated stats (402→406 pages, 64→65 tools, 241→243 posts), fixed all meta tag counts (og:description, twitter:description)
-- Fixed PROGRESS.md social proof count: 242→243 blog posts
-- All content backlog items verified complete (chatbot blog, both budget planners exist)
-
-## Session 477 (Jun 4)
-**AI API Cost Over Time tool:**
-- Created ai-api-cost-over-time.html — interactive tool with canvas charts tracking historical AI API pricing trends
-- 3 chart views: input cost, output cost, monthly cost (10K req/day). Filterable by provider (OpenAI, Anthropic, Google, DeepSeek, Mistral)
-- 19 models tracked with historical price data points. Key pricing events timeline with 10 major market events
-- FAQPage schema (3 questions). Added to sitemap.xml (401 URLs), tools.html (65 tools), changelog.html, index.html What's New, blog-cost-optimization-guide.html
-- Cross-linked from tools.html, index.html, changelog.html, blog-cost-optimization-guide.html
-- Stats: 405→406 pages, 64→65 tools, 400→401 sitemap URLs
-
-## Session 476 (Jun 4)
-**Claude API Alternatives content + calculator tool:**
-- Created blog-claude-api-alternatives-2026.html — "7 Cheaper Options That Save Up to 97%" targeting "Claude API alternatives" keyword
-- Content: ranked comparison table, detailed model breakdowns, monthly cost comparison (10K req/day), quality vs cost analysis, migration guide, FAQPage schema, share buttons
-- Created claude-alternatives-calculator.html — interactive tool where users select Claude model + usage, see savings vs 7 alternatives with ranked table, savings hero, optimization tips, email capture
-- Added to sitemap.xml (400 URLs), RSS feed (300 items), blog index (243 posts), What's New on index.html
-- Cross-linked from: blog-openai-api-alternatives.html, claude-4-deprecation.html, claude-api-cost-calculator.html
-- Stats: 403→405 pages, 242→243 blog posts, 398→400 sitemap URLs, 299→300 RSS items
-
-## Summary: Sessions 470-479 (Jun 3-4)
-✅ Site audit + fixes. Built AI API Cost Over Time tool. Claude API Alternatives blog post + calculator. AI API Budget Planner tool. "How to Build an AI Chatbot Cheap" blog post. Tools page audit. Provider Switch Calculator. Claude 4 Post-Deprecation + migration guide. Stats: 402→408 pages, 241→244 blog posts, 397→403 sitemap URLs, 66 tools.
+## Summary: Sessions 477-479 (Jun 4)
+✅ Built AI API Cost Over Time tool. Claude API Alternatives blog post + calculator. AI API Budget Planner tool. "How to Build an AI Chatbot Cheap" blog post. Tools page audit. Provider Switch Calculator. Claude 4 Post-Deprecation + migration guide. Site audit: fixed orphaned blog post, stale meta counts, missing changelog entries. Stats: 402→408 pages, 241→244 blog posts, 397→403 sitemap URLs, 66 tools.
 
 ## Summary: Sessions 457-469 (Jun 3)
 ✅ Built AI Stack Cost Optimizer + LLM Pricing Trends 2026 page. Pricing freshness sweep (58 files). Site audit + stale reference cleanup. Built AI Startup Cost Planner + email capture on calculator. README overhaul. Fixed sitemap. RSS feed stale description fix. Claude Opus 4.8 vs Gemini 3.1 Pro comparison. Stats: 399→402 pages, 63→64 tools, 395→397 sitemap URLs, 37 comparisons.
