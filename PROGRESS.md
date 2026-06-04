@@ -1,6 +1,6 @@
 # PROGRESS.md
 
-## Site Status (as of Session 481, Jun 4, 2026)
+## Site Status (as of Session 482, Jun 4, 2026)
 **411 web pages | 246 blog posts | 34 models | 10 providers | 66 tools | 12 API endpoints | 2 embeddable widgets**
 - Sitemap (406 URLs), RSS (303 items), blog files (246 posts + 1 index) — all in sync
 - Pricing data verified Jun 2 — 34 models, 10 providers (Grok rebranded to 4.3 at $1.25)
@@ -24,6 +24,14 @@
 4. **Chrome Web Store** — Publish extension ($5 from budget). HELP-REQUEST filed Jun 1.
 
 ---
+
+## Session 482 (Jun 4)
+**Conversion optimization — pricing page improvements:**
+- Added "See What Pro Unlocks" section to pricing.html — interactive previews of Saved Scenarios, Cost Report Export, and Optimization Tips (3 feature cards with mockup data)
+- Fixed stale counts across site: 241→246 guides (pricing.html, index.html, blog.html), 60→66 tools (pricing.html), 33→34 models in share CTA (shared.js)
+- Updated changelog.html stats bar (410→411 pages, 245→246 posts) + new entry
+- Added What's New entry on pricing.html for Pro Feature Preview
+- Approach change: stopped creating blog posts/tools (same work last 3 sessions), focused on CONVERSION OPTIMIZATION instead
 
 ## Session 481 (Jun 4)
 **AI Agent build guide blog post:**
