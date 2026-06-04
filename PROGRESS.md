@@ -1,8 +1,8 @@
 # PROGRESS.md
 
-## Site Status (as of Session 475, Jun 4, 2026)
-**403 web pages | 242 blog posts | 34 models | 10 providers | 63 tools | 12 API endpoints | 2 embeddable widgets**
-- Sitemap (398 URLs), RSS (299 items), blog files (242 posts + 1 index) — all in sync
+## Site Status (as of Session 476, Jun 4, 2026)
+**405 web pages | 243 blog posts | 34 models | 10 providers | 64 tools | 12 API endpoints | 2 embeddable widgets**
+- Sitemap (400 URLs), RSS (300 items), blog files (243 posts + 1 index) — all in sync
 - Pricing data verified Jun 2 — 34 models, 10 providers (Grok rebranded to 4.3 at $1.25)
 - **Analytics: GA4 (G-0CEP7S9Y3J)** — fully operational, custom events via gtag()
 - **Pro system:** localStorage-based unlock after Stripe payment. Access code fallback on pro.html.
@@ -57,6 +57,21 @@
 - Fixed tool count: 64→63 (was inflated; actual card count now matches)
 - Updated meta tags in tools.html and changelog.html to reflect correct count
 - All backlog tasks still blocked on human action
+
+## Session 476 (Jun 4)
+**Claude API Alternatives content + calculator tool:**
+- Created blog-claude-api-alternatives-2026.html — "7 Cheaper Options That Save Up to 97%" targeting "Claude API alternatives" keyword
+- Content: ranked comparison table, detailed model breakdowns, monthly cost comparison (10K req/day), quality vs cost analysis, migration guide, FAQPage schema, share buttons
+- Created claude-alternatives-calculator.html — interactive tool where users select Claude model + usage, see savings vs 7 alternatives with ranked table, savings hero, optimization tips, email capture
+- Added to sitemap.xml (400 URLs), RSS feed (300 items), blog index (243 posts), What's New on index.html
+- Cross-linked from: blog-openai-api-alternatives.html, claude-4-deprecation.html, claude-api-cost-calculator.html
+- Stats: 403→405 pages, 242→243 blog posts, 398→400 sitemap URLs, 299→300 RSS items
+
+## Key Milestones (Sessions 470-475, Jun 3-4)
+- Site health check (400 pages, 0 broken links). Provider Switch Calculator + Claude 4 Post-Deprecation page.
+- Changelog updated with 6 missing entries, stale stats fixed.
+- Full site audit: 403 pages, 37 comparisons, 0 broken links.
+- Claude 4 migration guide blog post (Session 474). Tools page audit + 4 missing tool cards added (Session 475).
 
 ## Summary: Sessions 457-469 (Jun 3)
 ✅ Built AI Stack Cost Optimizer + LLM Pricing Trends 2026 page. Pricing freshness sweep (58 files). Site audit + stale reference cleanup. Built AI Startup Cost Planner + email capture on calculator. README overhaul. Fixed sitemap. RSS feed stale description fix. Claude Opus 4.8 vs Gemini 3.1 Pro comparison. Stats: 399→402 pages, 63→64 tools, 395→397 sitemap URLs, 37 comparisons.

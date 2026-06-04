@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Claude API Alternatives Calculator — How Much Can You Save? | APIpulse</title>
+    <meta name="description" content="Calculate exactly how much you'd save by switching from Claude to cheaper alternatives. Compare DeepSeek, Gemini, GPT-5 mini, Mistral against Claude Sonnet and Opus. Free calculator.">
+    <meta name="keywords" content="Claude API cost calculator, Claude alternatives calculator, cheaper than Claude, switch from Claude, Claude vs DeepSeek, Claude vs Gemini">
+    <meta property="og:title" content="Claude API Alternatives Calculator — Save Up to 97%">
+    <meta property="og:description" content="Enter your Claude usage. See what you'd pay at every other provider. 7 alternatives compared.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://getapipulse.com/og-image.png">
+    <meta property="og:url" content="https://getapipulse.com/claude-alternatives-calculator.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Claude API Alternatives Calculator — Save Up to 97%">
+    <meta name="twitter:image" content="https://getapipulse.com/og-image.png">
+    <meta name="twitter:description" content="Enter your Claude usage. See what you'd pay at every other provider.">
+    <link rel="canonical" href="https://getapipulse.com/claude-alternatives-calculator.html">
+    <link rel="alternate" type="application/rss+xml" title="APIpulse Blog" href="https://getapipulse.com/rss.xml">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="styles.css">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0CEP7S9Y3J"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-0CEP7S9Y3J');
+    </script>
+    <script src="analytics.js" defer></script>
+    <script src="dynamic-date.js" defer></script>
+    <script src="shared.js" defer></script>
+    <script src="pricing-data.js" defer></script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "APIpulse Claude Alternatives Calculator",
+        "url": "https://getapipulse.com/claude-alternatives-calculator.html",
+        "description": "Calculate savings by switching from Claude API to cheaper alternatives. Compare 7 models across 6 providers.",
+        "applicationCategory": "DeveloperApplication",
+        "operatingSystem": "Web",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "How much can I save by switching from Claude to another provider?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Most developers save 40-93% by switching from Claude Sonnet 4 to budget alternatives. For example, switching to Gemini 2.0 Flash saves 93%, DeepSeek V4 Flash saves 91%, and GPT-5 mini saves 73%. Use the calculator above to see your exact savings based on your usage."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What is the best alternative to Claude API in 2026?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "The best Claude alternative depends on your needs. For cheapest cost: Gemini 2.0 Flash ($0.10/$0.40). For best code performance: DeepSeek V4 Flash ($0.14/$0.28). For easiest migration: Claude Haiku 4.5 ($1/$5) stays in the Anthropic ecosystem. For near-Claude quality at lower cost: DeepSeek V4 Pro ($0.44/$0.87)."
+                }
+            }
+        ]
+    }
+    </script>
+    <style>
+        .content { max-width: 960px; margin: 0 auto; padding: 120px 24px 80px; }
+        h1 { font-size: 40px; font-weight: 800; text-align: center; margin-bottom: 12px; }
+        .subtitle { text-align: center; color: var(--text-secondary); font-size: 18px; margin-bottom: 40px; max-width: 650px; margin-left: auto; margin-right: auto; }
+
+        .calc-card {
+            background: var(--bg-secondary); border: 1px solid var(--border);
+            border-radius: 16px; padding: 40px; margin-bottom: 32px;
+        }
+        .calc-card h2 { font-size: 24px; font-weight: 700; margin-bottom: 8px; }
+        .calc-card .card-desc { color: var(--text-secondary); font-size: 15px; margin-bottom: 28px; }
+
+        .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 24px; }
+        .form-group label {
+            display: block; font-size: 13px; font-weight: 600;
+            color: var(--text-secondary); margin-bottom: 8px;
+            text-transform: uppercase; letter-spacing: 0.5px;
+        }
+        .form-group select, .form-group input {
+            width: 100%; padding: 14px 16px; background: var(--bg-card);
+            border: 1px solid var(--border); border-radius: 10px;
+            color: var(--text-primary); font-size: 16px;
+            transition: border-color 0.2s;
+        }
+        .form-group select:focus, .form-group input:focus {
+            outline: none; border-color: var(--accent);
+            box-shadow: 0 0 0 3px var(--accent-glow);
+        }
+        .preset-btns { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 8px; }
+        .preset-btn {
+            padding: 6px 14px; background: var(--bg-card); border: 1px solid var(--border);
+            border-radius: 6px; color: var(--text-secondary); font-size: 12px;
+            cursor: pointer; transition: all 0.2s;
+        }
+        .preset-btn:hover { border-color: var(--accent); color: var(--accent); }
+
+        .compare-btn {
+            display: block; width: 100%; padding: 16px;
+            background: var(--accent); color: white; border: none;
+            border-radius: 10px; font-size: 18px; font-weight: 700;
+            cursor: pointer; transition: all 0.2s;
+        }
+        .compare-btn:hover { background: var(--accent-hover); transform: translateY(-1px); }
+        .compare-btn:disabled { opacity: 0.5; cursor: not-allowed; transform: none; }
+
+        .results { display: none; }
+        .results.active { display: block; }
+
+        .savings-hero {
+            text-align: center; padding: 40px; margin-bottom: 32px;
+            background: linear-gradient(135deg, rgba(34,197,94,0.08), rgba(99,102,241,0.06));
+            border: 1px solid rgba(34,197,94,0.2); border-radius: 16px;
+        }
+        .savings-hero .label { font-size: 14px; color: var(--text-secondary); margin-bottom: 8px; }
+        .savings-hero .amount { font-size: 64px; font-weight: 800; color: var(--green); line-height: 1; }
+        .savings-hero .annual { font-size: 18px; color: var(--text-secondary); margin-top: 8px; }
+        .savings-hero .pct { font-size: 20px; font-weight: 700; color: var(--green); margin-top: 4px; }
+        .savings-hero.no-savings { background: linear-gradient(135deg, rgba(99,102,241,0.08), rgba(99,102,241,0.04)); border-color: rgba(99,102,241,0.2); }
+        .savings-hero.no-savings .amount { color: var(--accent); }
+
+        .comparison-row {
+            display: grid; grid-template-columns: 1fr auto 1fr; gap: 24px;
+            align-items: center; margin-bottom: 32px;
+        }
+        .model-card {
+            background: var(--bg-secondary); border: 1px solid var(--border);
+            border-radius: 12px; padding: 24px; text-align: center;
+        }
+        .model-card.current { border-color: rgba(239,68,68,0.3); }
+        .model-card.best { border-color: rgba(34,197,94,0.3); box-shadow: 0 0 20px rgba(34,197,94,0.1); }
+        .model-card .model-name { font-size: 20px; font-weight: 700; margin-bottom: 4px; }
+        .model-card .model-provider { font-size: 13px; color: var(--text-muted); margin-bottom: 12px; }
+        .model-card .model-price { font-size: 28px; font-weight: 800; }
+        .model-card .model-price small { font-size: 14px; font-weight: 400; color: var(--text-muted); }
+        .model-card .model-label {
+            display: inline-block; padding: 4px 12px; border-radius: 6px;
+            font-size: 11px; font-weight: 700; text-transform: uppercase; margin-top: 12px;
+        }
+        .model-card.current .model-label { background: rgba(239,68,68,0.1); color: #ef4444; }
+        .model-card.best .model-label { background: rgba(34,197,94,0.1); color: var(--green); }
+        .arrow-icon { font-size: 32px; color: var(--text-muted); }
+
+        .all-providers { margin-bottom: 32px; }
+        .all-providers h3 { font-size: 20px; font-weight: 700; margin-bottom: 16px; }
+        .prov-table { width: 100%; border-collapse: collapse; font-size: 14px; }
+        .prov-table th {
+            background: var(--bg-secondary); padding: 12px 16px; text-align: left;
+            font-weight: 600; font-size: 12px; text-transform: uppercase;
+            letter-spacing: 0.5px; color: var(--text-muted);
+            border-bottom: 2px solid var(--border);
+        }
+        .prov-table td { padding: 12px 16px; border-bottom: 1px solid var(--border); }
+        .prov-table tr:last-child td { border-bottom: none; }
+        .prov-table .current-row { background: rgba(239,68,68,0.04); }
+        .prov-table .best-row { background: rgba(34,197,94,0.06); }
+        .prov-table .save-cell { color: var(--green); font-weight: 700; }
+        .prov-table .loss-cell { color: #ef4444; font-weight: 700; }
+        .tier-badge {
+            font-size: 11px; font-weight: 700; padding: 2px 8px;
+            border-radius: 4px; text-transform: uppercase; letter-spacing: 0.5px;
+        }
+        .tier-premium { background: rgba(239,68,68,0.1); color: #ef4444; }
+        .tier-mid { background: rgba(234,179,8,0.1); color: #eab308; }
+        .tier-budget { background: rgba(34,197,94,0.1); color: var(--green); }
+
+        .email-capture {
+            background: var(--bg-secondary); border: 1px solid var(--accent);
+            border-radius: 16px; padding: 32px; margin-bottom: 32px; text-align: center;
+        }
+        .email-capture h3 { font-size: 20px; font-weight: 700; margin-bottom: 8px; }
+        .email-capture p { color: var(--text-secondary); font-size: 14px; margin-bottom: 16px; }
+        .email-form { display: flex; gap: 12px; max-width: 450px; margin: 0 auto; }
+        .email-form input {
+            flex: 1; padding: 12px 16px; background: var(--bg-card);
+            border: 1px solid var(--border); border-radius: 8px;
+            color: var(--text-primary); font-size: 14px;
+        }
+        .email-form input:focus { outline: none; border-color: var(--accent); }
+        .email-form button {
+            padding: 12px 24px; background: var(--accent); color: white;
+            border: none; border-radius: 8px; font-size: 14px; font-weight: 700;
+            cursor: pointer; white-space: nowrap;
+        }
+        .email-form button:hover { background: var(--accent-hover); }
+
+        .tips-section { margin-bottom: 32px; }
+        .tips-section h3 { font-size: 20px; font-weight: 700; margin-bottom: 16px; }
+        .tip-card {
+            background: var(--bg-secondary); border: 1px solid var(--border);
+            border-radius: 12px; padding: 20px; margin-bottom: 12px;
+            display: flex; gap: 16px; align-items: flex-start;
+        }
+        .tip-icon {
+            width: 40px; height: 40px; flex-shrink: 0;
+            background: var(--accent-glow); border-radius: 10px;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 18px;
+        }
+        .tip-title { font-weight: 700; margin-bottom: 4px; }
+        .tip-desc { font-size: 14px; color: var(--text-secondary); line-height: 1.5; }
+        .tip-savings { font-size: 13px; color: var(--green); font-weight: 600; margin-top: 4px; }
+
+        .cta-inline {
+            background: linear-gradient(135deg, rgba(99,102,241,0.08), rgba(34,197,94,0.06));
+            border: 2px solid var(--accent); border-radius: 16px;
+            padding: 40px; text-align: center; margin-bottom: 32px;
+        }
+        .cta-inline h3 { font-size: 24px; font-weight: 700; margin-bottom: 8px; }
+        .cta-inline p { color: var(--text-secondary); margin-bottom: 24px; max-width: 500px; margin-left: auto; margin-right: auto; }
+
+        .footer-content { margin-top: 60px; padding-top: 40px; border-top: 1px solid var(--border); }
+        .footer-content h2 { font-size: 24px; font-weight: 700; margin-bottom: 16px; }
+        .footer-content p { color: var(--text-secondary); font-size: 15px; line-height: 1.8; margin-bottom: 16px; max-width: 700px; }
+
+        @media (max-width: 768px) {
+            .content { padding: 100px 20px 60px; }
+            h1 { font-size: 28px; }
+            .subtitle { font-size: 16px; }
+            .form-grid { grid-template-columns: 1fr; }
+            .comparison-row { grid-template-columns: 1fr; }
+            .arrow-icon { transform: rotate(90deg); justify-self: center; }
+            .savings-hero .amount { font-size: 48px; }
+            .prov-table { font-size: 12px; }
+            .prov-table th, .prov-table td { padding: 8px 10px; }
+            .email-form { flex-direction: column; }
+        }
+        @media print {
+            nav, .cta-inline, .email-capture, .theme-toggle, .back-to-top { display: none !important; }
+            body { background: white; color: black; }
+            .content { padding: 0; max-width: 100%; }
+        }
+    </style>
+    <meta name="theme-color" content="#6366f1">
+</head>
+<body>
+    <a href="#main" class="skip-link">Skip to content</a>
+    <nav>
+        <div class="nav-inner">
+            <a href="index.html" class="logo">API<span>pulse</span></a>
+            <button class="hamburger" onclick="toggleMobileNav()" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+            <div class="nav-links">
+                <a href="calculator.html">Calculator</a>
+                <a href="compare.html">Compare</a>
+                <a href="cost-optimizer.html">Optimizer</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="blog.html">Blog</a>
+                <a href="industry-guides.html">Industry</a>
+                <a href="pricing.html" class="nav-cta" onclick="if(window.trackEvent)window.trackEvent('pro_button_clicked',{source:'nav'})">Get Pro — $29</a>
+                <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
+            </div>
+        </div>
+    </nav>
+
+    <main id="main">
+    <div class="content">
+        <h1>Claude API Alternatives Calculator</h1>
+        <p class="subtitle">Enter your Claude usage below. See exactly what you'd pay at every other provider — with savings highlighted.</p>
+
+        <div class="calc-card">
+            <h2>Your Current Claude Usage</h2>
+            <p class="card-desc">Select your Claude model and monthly token usage. We'll show you every cheaper alternative.</p>
+
+            <div class="form-grid">
+                <div class="form-group">
+                    <label for="claudeModel">Current Claude Model</label>
+                    <select id="claudeModel">
+                        <option value="">Select model...</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="requestsPerDay">Requests per Day</label>
+                    <input type="number" id="requestsPerDay" placeholder="e.g. 10000" min="0" step="100">
+                    <div class="preset-btns">
+                        <button class="preset-btn" onclick="setRequests(1000)">1K</button>
+                        <button class="preset-btn" onclick="setRequests(10000)">10K</button>
+                        <button class="preset-btn" onclick="setRequests(50000)">50K</button>
+                        <button class="preset-btn" onclick="setRequests(100000)">100K</button>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="avgInputTokens">Avg Input Tokens per Request</label>
+                    <input type="number" id="avgInputTokens" placeholder="e.g. 500" min="0" step="50">
+                    <div class="preset-btns">
+                        <button class="preset-btn" onclick="setInputTokens(100)">100</button>
+                        <button class="preset-btn" onclick="setInputTokens(500)">500</button>
+                        <button class="preset-btn" onclick="setInputTokens(2000)">2K</button>
+                        <button class="preset-btn" onclick="setInputTokens(4000)">4K</button>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="avgOutputTokens">Avg Output Tokens per Request</label>
+                    <input type="number" id="avgOutputTokens" placeholder="e.g. 200" min="0" step="50">
+                    <div class="preset-btns">
+                        <button class="preset-btn" onclick="setOutputTokens(100)">100</button>
+                        <button class="preset-btn" onclick="setOutputTokens(200)">200</button>
+                        <button class="preset-btn" onclick="setOutputTokens(500)">500</button>
+                        <button class="preset-btn" onclick="setOutputTokens(1000)">1K</button>
+                    </div>
+                </div>
+            </div>
+
+            <button class="compare-btn" id="compareBtn" onclick="runComparison()" disabled>Calculate My Savings</button>
+        </div>
+
+        <div class="results" id="results">
+            <div class="savings-hero" id="savingsHero">
+                <div class="label">Monthly savings with best alternative</div>
+                <div class="amount" id="savingsAmount">$0</div>
+                <div class="annual" id="savingsAnnual">$0/year</div>
+                <div class="pct" id="savingsPct">0% savings</div>
+            </div>
+
+            <div class="comparison-row" id="comparisonRow">
+                <div class="model-card current" id="currentCard">
+                    <div class="model-name" id="currentName">—</div>
+                    <div class="model-provider" id="currentProviderName">—</div>
+                    <div class="model-price" id="currentCost">$0<small>/mo</small></div>
+                    <div class="model-label">Current (Claude)</div>
+                </div>
+                <div class="arrow-icon">→</div>
+                <div class="model-card best" id="bestCard">
+                    <div class="model-name" id="bestName">—</div>
+                    <div class="model-provider" id="bestProviderName">—</div>
+                    <div class="model-price" id="bestCost">$0<small>/mo</small></div>
+                    <div class="model-label">Best Alternative</div>
+                </div>
+            </div>
+
+            <div class="all-providers">
+                <h3>All Alternatives Ranked by Cost</h3>
+                <div style="overflow-x:auto;">
+                <table class="prov-table" id="provTable">
+                    <thead>
+                        <tr>
+                            <th>Model</th>
+                            <th>Provider</th>
+                            <th>Tier</th>
+                            <th>Input $/1M</th>
+                            <th>Output $/1M</th>
+                            <th>Monthly Cost</th>
+                            <th>vs Claude</th>
+                        </tr>
+                    </thead>
+                    <tbody id="provTableBody"></tbody>
+                </table>
+                </div>
+            </div>
+
+            <div class="email-capture" id="emailCapture">
+                <h3>Get Your Personalized Migration Plan</h3>
+                <p>Enter your email and we'll send a detailed comparison report with code snippets for switching from Claude to your best alternative.</p>
+                <form class="email-form" onsubmit="captureEmail(event)">
+                    <input type="email" id="emailInput" placeholder="your@email.com" required>
+                    <button type="submit">Send Report</button>
+                </form>
+                <p id="emailSuccess" style="display:none;color:var(--green);font-weight:600;margin-top:12px;">Check your email!</p>
+            </div>
+
+            <div class="tips-section" id="tipsSection">
+                <h3>Optimization Tips</h3>
+                <div id="tipsContainer"></div>
+            </div>
+
+            <div class="cta-inline">
+                <h3>Want to track your costs over time?</h3>
+                <p>APIpulse Pro ($29 one-time) gives you saved scenarios, cost alerts when providers change prices, and PDF export of your reports.</p>
+                <a href="pricing.html" class="btn-primary" onclick="if(window.trackEvent)window.trackEvent('pro_button_clicked',{source:'claude-alternatives'})">Get Pro — $29</a>
+            </div>
+        </div>
+
+        <div class="footer-content">
+            <h2>How to Switch from Claude to Another Provider</h2>
+            <p>Switching from Claude is usually straightforward. Most providers offer compatible API formats. Here's what typically changes:</p>
+            <p><strong>1. API Key:</strong> Get a new API key from your target provider. Most providers offer free tiers for testing.</p>
+            <p><strong>2. Base URL:</strong> Update the API endpoint in your code. Anthropic uses <code>api.anthropic.com</code>, OpenAI uses <code>api.openai.com</code>, Google uses <code>generativelanguage.googleapis.com</code>.</p>
+            <p><strong>3. Model Name:</strong> Change the model parameter to your target model (e.g., <code>claude-sonnet-4</code> → <code>gpt-5-mini</code> or <code>deepseek-v4-flash</code>).</p>
+            <p><strong>4. Response Format:</strong> Most providers return similar JSON structures, but you may need to adjust parsing for response tokens, usage metrics, or streaming format.</p>
+            <p><strong>Pro tip:</strong> Use an abstraction layer like <a href="https://github.com/BerriAI/litellm" target="_blank" rel="noopener">LiteLLM</a> or <a href="https://github.com/portkey-ai/gateway" target="_blank" rel="noopener">Portkey</a> to make provider switching a config change instead of a code rewrite.</p>
+
+            <h2 style="margin-top:40px;">When Should You Switch from Claude?</h2>
+            <p>Consider switching when: your costs grow beyond your budget, Anthropic raises prices, a new model offers better quality at a lower cost, or you need features Claude doesn't support (like longer context windows or faster inference).</p>
+            <p>The best time to evaluate alternatives is before you're locked in. Run this calculator periodically — provider pricing changes frequently, and new models launch every few months.</p>
+
+            <h2 style="margin-top:40px;">Staying in the Anthropic Ecosystem</h2>
+            <p>If you want to stay with Anthropic but reduce costs, consider <strong>Claude Haiku 4.5</strong> ($1/$5). It's 33% cheaper than Sonnet 4 with surprisingly good quality for chatbots, code completion, and summarization. Many teams use a hybrid approach: Sonnet for complex tasks, Haiku for simple ones.</p>
+        </div>
+    </div>
+    </main>
+
+    <footer>
+        <p>APIpulse — Know your AI API costs before you commit. <a href="about.html">About</a> · <a href="blog.html">Blog</a> · <a href="api-docs.html">API</a> · <a href="pricing.html">Pro</a></p>
+    </footer>
+
+    <button class="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">↑</button>
+
+    <script>
+    // Claude models only
+    const CLAUDE_MODELS = [
+        { id: 'anthropic-opus48', name: 'Claude Opus 4.8', tier: 'Premium', input: 5.00, output: 25.00 },
+        { id: 'anthropic-opus47', name: 'Claude Opus 4.7', tier: 'Premium', input: 5.00, output: 25.00 },
+        { id: 'anthropic-sonnet46', name: 'Claude Sonnet 4.6', tier: 'Mid', input: 3.00, output: 15.00 },
+        { id: 'anthropic-sonnet', name: 'Claude Sonnet 4', tier: 'Mid', input: 3.00, output: 15.00, deprecated: true },
+        { id: 'anthropic-haiku', name: 'Claude Haiku 4.5', tier: 'Budget', input: 1.00, output: 5.00 },
+    ];
+
+    // Alternative models (non-Claude)
+    const ALTERNATIVE_MODELS = [
+        { id: 'google-flash-lite', name: 'Gemini 2.0 Flash Lite', provider: 'Google', tier: 'Budget', input: 0.075, output: 0.30 },
+        { id: 'google-flash', name: 'Gemini 2.0 Flash', provider: 'Google', tier: 'Budget', input: 0.10, output: 0.40 },
+        { id: 'deepseek-v4-flash', name: 'DeepSeek V4 Flash', provider: 'DeepSeek', tier: 'Budget', input: 0.14, output: 0.28 },
+        { id: 'openai-gpt5-mini', name: 'GPT-5 mini', provider: 'OpenAI', tier: 'Budget', input: 0.25, output: 2.00 },
+        { id: 'deepseek-v4-pro', name: 'DeepSeek V4 Pro', provider: 'DeepSeek', tier: 'Budget', input: 0.435, output: 0.87 },
+        { id: 'mistral-large', name: 'Mistral Large 3', provider: 'Mistral', tier: 'Budget', input: 0.50, output: 1.50 },
+        { id: 'anthropic-haiku-alt', name: 'Claude Haiku 4.5', provider: 'Anthropic', tier: 'Budget', input: 1.00, output: 5.00 },
+    ];
+
+    // Populate Claude model dropdown
+    function initModels() {
+        const sel = document.getElementById('claudeModel');
+        CLAUDE_MODELS.forEach(m => {
+            const opt = document.createElement('option');
+            opt.value = m.id;
+            opt.textContent = m.name + (m.deprecated ? ' (deprecated)' : '') + ' — $' + m.input.toFixed(2) + '/$' + m.output.toFixed(2);
+            sel.appendChild(opt);
+        });
+    }
+
+    function checkBtn() {
+        const btn = document.getElementById('compareBtn');
+        const hasModel = document.getElementById('claudeModel').value;
+        const hasRequests = parseFloat(document.getElementById('requestsPerDay').value) > 0;
+        const hasInput = parseFloat(document.getElementById('avgInputTokens').value) > 0;
+        const hasOutput = parseFloat(document.getElementById('avgOutputTokens').value) > 0;
+        btn.disabled = !(hasModel && hasRequests && (hasInput || hasOutput));
+    }
+
+    document.getElementById('claudeModel').addEventListener('change', checkBtn);
+    document.getElementById('requestsPerDay').addEventListener('input', checkBtn);
+    document.getElementById('avgInputTokens').addEventListener('input', checkBtn);
+    document.getElementById('avgOutputTokens').addEventListener('input', checkBtn);
+
+    function setRequests(v) { document.getElementById('requestsPerDay').value = v; checkBtn(); }
+    function setInputTokens(v) { document.getElementById('avgInputTokens').value = v; checkBtn(); }
+    function setOutputTokens(v) { document.getElementById('avgOutputTokens').value = v; checkBtn(); }
+
+    function runComparison() {
+        const claudeId = document.getElementById('claudeModel').value;
+        const requestsPerDay = parseFloat(document.getElementById('requestsPerDay').value) || 0;
+        const avgInput = parseFloat(document.getElementById('avgInputTokens').value) || 0;
+        const avgOutput = parseFloat(document.getElementById('avgOutputTokens').value) || 0;
+
+        const claude = CLAUDE_MODELS.find(m => m.id === claudeId);
+        if (!claude) return;
+
+        // Calculate monthly tokens (30 days)
+        const monthlyInputM = (requestsPerDay * 30 * avgInput) / 1000000;
+        const monthlyOutputM = (requestsPerDay * 30 * avgOutput) / 1000000;
+        const claudeCost = (claude.input * monthlyInputM) + (claude.output * monthlyOutputM);
+
+        // Calculate cost for all alternatives
+        const results = ALTERNATIVE_MODELS.map(m => {
+            const cost = (m.input * monthlyInputM) + (m.output * monthlyOutputM);
+            const diff = claudeCost - cost;
+            const pct = claudeCost > 0 ? ((diff / claudeCost) * 100) : 0;
+            return { ...m, cost, diff, pct };
+        }).sort((a, b) => a.cost - b.cost);
+
+        // Find best alternative
+        const best = results[0];
+        const savings = claudeCost - best.cost;
+        const savingsPct = claudeCost > 0 ? ((savings / claudeCost) * 100) : 0;
+
+        // Update savings hero
+        const hero = document.getElementById('savingsHero');
+        document.getElementById('savingsAmount').textContent = '$' + Math.abs(savings).toFixed(2);
+        document.getElementById('savingsAnnual').textContent = '$' + (Math.abs(savings) * 12).toFixed(0) + '/year';
+        document.getElementById('savingsPct').textContent = savings >= 0 ? savingsPct.toFixed(0) + '% savings' : Math.abs(savingsPct).toFixed(0) + '% more expensive';
+
+        if (savings <= 0) {
+            hero.className = 'savings-hero no-savings';
+            document.getElementById('savingsAmount').textContent = 'You\'re already optimized!';
+            document.getElementById('savingsPct').textContent = 'Claude Haiku is already among the cheapest';
+        } else {
+            hero.className = 'savings-hero';
+        }
+
+        // Update comparison cards
+        document.getElementById('currentName').textContent = claude.name;
+        document.getElementById('currentProviderName').textContent = 'Anthropic';
+        document.getElementById('currentCost').innerHTML = '$' + claudeCost.toFixed(2) + '<small>/mo</small>';
+
+        document.getElementById('bestName').textContent = best.name;
+        document.getElementById('bestProviderName').textContent = best.provider;
+        document.getElementById('bestCost').innerHTML = '$' + best.cost.toFixed(2) + '<small>/mo</small>';
+
+        // Build table
+        const tbody = document.getElementById('provTableBody');
+        tbody.innerHTML = '';
+
+        // Add Claude row first
+        const claudeTierClass = claude.tier === 'Premium' ? 'tier-premium' : (claude.tier === 'Mid' ? 'tier-mid' : 'tier-budget');
+        tbody.innerHTML += `<tr class="current-row">
+            <td><strong>${claude.name}</strong></td>
+            <td>Anthropic</td>
+            <td><span class="tier-badge ${claudeTierClass}">${claude.tier}</span></td>
+            <td>$${claude.input.toFixed(2)}</td>
+            <td>$${claude.output.toFixed(2)}</td>
+            <td><strong>$${claudeCost.toFixed(2)}</strong></td>
+            <td>Current</td>
+        </tr>`;
+
+        // Add alternatives
+        results.forEach(r => {
+            const isBest = r.id === best.id;
+            const rowClass = isBest ? 'best-row' : '';
+            const tierClass = r.tier === 'Premium' ? 'tier-premium' : (r.tier === 'Mid' ? 'tier-mid' : 'tier-budget');
+
+            let diffText = '';
+            let diffClass = '';
+            if (r.diff > 0.01) {
+                diffText = '-$' + r.diff.toFixed(2) + ' (' + r.pct.toFixed(0) + '%)';
+                diffClass = 'save-cell';
+            } else if (r.diff < -0.01) {
+                diffText = '+$' + Math.abs(r.diff).toFixed(2) + ' (' + Math.abs(r.pct).toFixed(0) + '%)';
+                diffClass = 'loss-cell';
+            } else {
+                diffText = 'Same cost';
+                diffClass = '';
+            }
+
+            tbody.innerHTML += `<tr class="${rowClass}">
+                <td><strong>${r.name}</strong></td>
+                <td>${r.provider}</td>
+                <td><span class="tier-badge ${tierClass}">${r.tier}</span></td>
+                <td>$${r.input.toFixed(3)}</td>
+                <td>$${r.output.toFixed(2)}</td>
+                <td>$${r.cost.toFixed(2)}</td>
+                <td class="${diffClass}">${diffText}</td>
+            </tr>`;
+        });
+
+        // Generate tips
+        const tipsContainer = document.getElementById('tipsContainer');
+        tipsContainer.innerHTML = '';
+
+        if (claude.tier === 'Premium') {
+            tipsContainer.innerHTML += `<div class="tip-card">
+                <div class="tip-icon">💡</div>
+                <div>
+                    <div class="tip-title">Consider Claude Haiku 4.5 for simple tasks</div>
+                    <div class="tip-desc">Stay in the Anthropic ecosystem at 33% lower cost. Haiku handles chatbots, code completion, and summarization well.</div>
+                    <div class="tip-savings">Save ~$${(claudeCost * 0.33).toFixed(0)}/mo on non-critical requests</div>
+                </div>
+            </div>`;
+        }
+
+        if (monthlyInputM > 10 || monthlyOutputM > 5) {
+            tipsContainer.innerHTML += `<div class="tip-card">
+                <div class="tip-icon">🔀</div>
+                <div>
+                    <div class="tip-title">Use multi-model routing</div>
+                    <div class="tip-desc">Route 80% of simple requests to ${best.name} and keep Claude for complex reasoning. Most teams see no quality drop.</div>
+                    <div class="tip-savings">Save ~$${(savings * 0.8).toFixed(0)}/mo with hybrid routing</div>
+                </div>
+            </div>`;
+        }
+
+        tipsContainer.innerHTML += `<div class="tip-card">
+            <div class="tip-icon">📊</div>
+            <div>
+                <div class="tip-title">Optimize your prompts</div>
+                <div class="tip-desc">Shorter prompts = fewer input tokens = lower costs. Use system prompts efficiently and avoid repeating context.</div>
+                <div class="tip-savings">Typical savings: 15-30% on input tokens</div>
+            </div>
+        </div>`;
+
+        // Track GA4 event
+        if (window.gtag) {
+            gtag('event', 'claude_alternatives_calculated', {
+                claude_model: claude.name,
+                best_alternative: best.name,
+                monthly_savings: savings.toFixed(2),
+                claude_monthly_cost: claudeCost.toFixed(2)
+            });
+        }
+
+        // Show results
+        document.getElementById('results').classList.add('active');
+        document.getElementById('results').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
+    function captureEmail(e) {
+        e.preventDefault();
+        const email = document.getElementById('emailInput').value;
+        if (!email) return;
+
+        // Store in localStorage
+        const signups = JSON.parse(localStorage.getItem('apipulse_email_signups') || '[]');
+        signups.push({ email, source: 'claude-alternatives-calculator', date: new Date().toISOString() });
+        localStorage.setItem('apipulse_email_signups', JSON.stringify(signups));
+
+        // Track GA4
+        if (window.gtag) {
+            gtag('event', 'email_signup', { source: 'claude-alternatives-calculator' });
+        }
+
+        document.getElementById('emailCapture').innerHTML = '<p style="color:var(--green);font-weight:600;font-size:18px;">Thanks! Check your email for the migration report.</p>';
+    }
+
+    // Init
+    initModels();
+    </script>
+</body>
+</html>
