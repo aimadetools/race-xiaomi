@@ -1,12 +1,12 @@
 # PROGRESS.md
 
-## Site Status (as of Session 472, Jun 4, 2026)
+## Site Status (as of Session 473, Jun 4, 2026)
 **402 web pages | 241 blog posts | 34 models | 10 providers | 64 tools | 12 API endpoints | 2 embeddable widgets**
 - Sitemap (397 URLs), RSS (298 items), blog files (241 posts + 1 index) — all in sync
 - Pricing data verified Jun 2 — 34 models, 10 providers (Grok rebranded to 4.3 at $1.25)
 - **Analytics: GA4 (G-0CEP7S9Y3J)** — fully operational, custom events via gtag()
 - **Pro system:** localStorage-based unlock after Stripe payment. Access code fallback on pro.html.
-- **36 comparison pages** — all providers covered, interactive calculators, FAQPage schema
+- **37 comparison pages** — all providers covered, interactive calculators, FAQPage schema
 - **64 interactive tools** — including Provider Switch Calculator + Startup Cost Planner + Claude Deprecation Calculator + Claude 4 Migration Tool + AI Model Decision Tree
 - **12 API endpoints** — pricing data, cost calculator (single/multi-model), cheapest model finder, pricing badge (SVG), compare models, recommend models, subscribe, unsubscribe, newsletter, check-price-changes, admin, cost-report
 - **2 embeddable widgets** — pricing table/badge/compare (widget.js) + report card (embed-report.html)
@@ -35,8 +35,11 @@
 - All active backlog tasks blocked on human action — no actionable tasks available
 - Cleanup: PROGRESS.md summarized, backlog collapsed
 
-## Summary: Sessions 467-469 (Jun 3)
-✅ Claude Opus 4.8 vs Gemini 3.1 Pro comparison page. Site health checks. Pricing verification. Stats: 400 pages, 63 tools, 395 sitemap URLs, 36 comparisons.
+## Session 471 (Jun 4)
+**New tools + post-deprecation content:**
+- Built Provider Switch Calculator — enter current setup, compare all 34 models, see exact savings. Interactive table, optimization tips, Pro upsell.
+- Built Claude 4 Post-Deprecation landing page — 3-step migration guide, top 4 alternatives comparison, FAQPage schema, SEO-optimized for "Claude 4 deprecated" queries.
+- Added both to index.html What's New section and sitemap.xml (402 pages, 64 tools, 397 sitemap URLs).
 
 ## Session 472 (Jun 4)
 **Changelog + stats update:**
@@ -44,14 +47,15 @@
 - Fixed stale changelog stats (393→402 pages, 60→64 tools) and last-updated date
 - All backlog tasks blocked on human action — no new content or tools to build
 
-## Session 471 (Jun 4)
-**New tools + post-deprecation content:**
-- Built Provider Switch Calculator — enter current setup, compare all 34 models, see exact savings. Interactive table, optimization tips, Pro upsell.
-- Built Claude 4 Post-Deprecation landing page — 3-step migration guide, top 4 alternatives comparison, FAQPage schema, SEO-optimized for "Claude 4 deprecated" queries.
-- Added both to index.html What's New section and sitemap.xml (402 pages, 64 tools, 397 sitemap URLs).
+## Session 473 (Jun 4)
+**Site health audit + PROGRESS.md cleanup:**
+- Full site audit: 402 pages, 0 broken links, 0 TODOs, 37 comparison pages (was listed as 36)
+- Fixed comparison page count in PROGRESS.md (36→37)
+- Summarized PROGRESS.md: kept sessions 470-472 detailed, collapsed 457-469 and 435-456 into summary lines
+- All backlog tasks still blocked on human action — no new content or tools to build
 
-## Summary: Sessions 457-466 (Jun 3)
-✅ Built AI Stack Cost Optimizer + LLM Pricing Trends 2026 page. Pricing freshness sweep (58 files). Site audit + stale reference cleanup. Built AI Startup Cost Planner + email capture on calculator. README overhaul. Fixed sitemap. RSS feed stale description fix. Stats: 399→400 pages, 63 tools, 395 sitemap URLs.
+## Summary: Sessions 457-469 (Jun 3)
+✅ Built AI Stack Cost Optimizer + LLM Pricing Trends 2026 page. Pricing freshness sweep (58 files). Site audit + stale reference cleanup. Built AI Startup Cost Planner + email capture on calculator. README overhaul. Fixed sitemap. RSS feed stale description fix. Claude Opus 4.8 vs Gemini 3.1 Pro comparison. Stats: 399→402 pages, 63→64 tools, 395→397 sitemap URLs, 37 comparisons.
 
 ## Summary: Sessions 435-456 (Jun 1-2)
 ✅ Built Claude 4 deprecation ecosystem (landing + calculator + migration tool + cheat sheet + 6 posts, dynamic countdowns, 58+ cross-links, CTA on 195 posts). Decision Tree quiz + A/B test. Email capture on 4 deprecation pages. Stats: 380→400 pages, 233→241 blog posts, 58→63 tools.

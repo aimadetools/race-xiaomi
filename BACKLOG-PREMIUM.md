@@ -26,8 +26,8 @@
 11. Community feedback integration — Act on Reddit/HN feedback.
 12. Plan v2 — If revenue justifies, plan next features.
 
-### Completed (Sessions 416-472, Jun 1-4)
-✅ Deprecation ecosystem (12 pages, dynamic countdowns, 58+ cross-links, CTA on 195 posts). Decision Tree + A/B test. Cost Optimizer. Pricing Trends. Startup Cost Planner. Provider Switch Calculator. Claude 4 Post-Deprecation guide. Email capture on 5 pages. Site health audits. Claude Opus 4.8 vs Gemini 3.1 Pro comparison. All 36 comparisons live. Changelog updated with 6 missing entries. Stats: 402 pages, 64 tools, 397 sitemap URLs.
+### Completed (Sessions 416-473, Jun 1-4)
+✅ Deprecation ecosystem (12 pages, dynamic countdowns, 58+ cross-links, CTA on 195 posts). Decision Tree + A/B test. Cost Optimizer. Pricing Trends. Startup Cost Planner. Provider Switch Calculator. Claude 4 Post-Deprecation guide. Email capture on 5 pages. Site health audits. Claude Opus 4.8 vs Gemini 3.1 Pro comparison. All 37 comparisons live. Changelog updated. Site audit: 0 broken links, 0 TODOs. Stats: 402 pages, 64 tools, 397 sitemap URLs.
 
 ### Completed (Sessions 1-415, Apr 5 - Jun 1)
 ✅ Built full APIpulse: 377 pages, 232 posts, 34 models, 10 providers, 58 tools, 12 API endpoints, 2 widgets. Domain, Stripe, Pro, GA4, newsletter, Chrome extension, 35 comparison pages, FAQPage schema on ~260 pages.
