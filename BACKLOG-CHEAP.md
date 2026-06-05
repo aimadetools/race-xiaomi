@@ -10,8 +10,15 @@
 - Submit APIpulse to 20 directories — DIRECTORY-SUBMISSIONS.md has ready-to-submit copy (~45 min human time)
 - Add "Featured On" section to index.html once directory listings are approved
 
+### Follow-up Tasks (from Session 497)
+- Add API Cost Card link to pricing.html What's New section
+- Add API Cost Card to nav on more pages (calculator.html, compare.html)
+- Create blog post: "How Much Do Developers Spend on AI APIs?" — link to Cost Card tool
+- Add "Share your cost card" CTA to calculator.html results section
+- Promote API Cost Card on Reddit (r/webdev, r/MachineLearning) — "I built a tool that shows your monthly AI API spend as a shareable card"
+
 ### Follow-up Tasks (from Session 455)
-- Promote AI Model Decision Tree on Reddit (r/MachineLearning, r/ChatGPTDev) — "I built a tool that recommends the cheapest AI model for your use case"
+- Promote AI Model Decision Tree on Reddit (r/MachineLearning, r/ChatGPTDev)
 - Promote Claude 4 migration cheat sheet on Reddit (r/webdev, r/ChatGPTDev, r/MachineLearning)
 - Monitor email signups from deprecation pages (4 pages now have capture)
 - Submit badges.html to developer tool directories (separate from main site submissions)
@@ -28,8 +35,8 @@
 ✅ All 10 completed: Content Writing, Cost Monitoring, Cost Over Time, Chatbot Cheap, Budget Planner, Customer Support, Chatbot Calculator, Agent Cheap, Model Status Dashboard, Cost Per Task (Sessions 477-485)
 ✅ Model Deprecation Timeline — interactive visual lifecycle tracker (Session 489)
 
-### Completed (Sessions 416-496, Jun 1-5)
-✅ Deprecation ecosystem (12 pages, dynamic countdowns, 58+ cross-links, CTA on 195 posts). Decision Tree + A/B test. Cost Optimizer. Pricing Trends. Startup Cost Planner. Provider Switch Calculator. Claude 4 Post-Deprecation guide. Claude 4 Migration Guide blog post. Email capture on all 249 blog posts. Site health audits. All 37 comparisons live. Changelog updated. Site audit: 0 broken links, 0 TODOs. Claude API Alternatives blog post + calculator. AI API Cost Over Time tool. AI API Budget Planner. "How to Build an AI Chatbot Cheap" blog post. "Cheapest AI API for Customer Support 2026" blog post. AI Chatbot Cost Calculator. "How to Build an AI Agent Cheap in 2026" blog post. Site audit fixes. Pricing page conversion optimization. AI API Fallback Strategies blog post. Synced Llama 4 pricing. AI Model Status Dashboard. "AI API Cost Per Task" blog post. Cross-linked new content from deprecation pages. Updated What's New on index.html. Model Deprecation Timeline tool (35 events, 10 providers). Fixed stale 13-day countdown references → 10-day across 12 deprecation pages. Fixed stale article:modified_time on 5 deprecation pages (SEO). Auto-injected email capture on all 249 blog posts (via shared.js). "AI Discord Bot Cost 2026" blog post (10 models compared, tiered routing, hosting costs, FAQPage schema). Fixed missing Cost Per Task post in blog index. Changelog stats updated. SEO fixes: pricing report schema (dateModified), Discord bot cross-linking (3 new links). "Claude 4 Deprecation: 10-Day Action Plan" blog post (day-by-day migration guide, cost comparisons, checklist, FAQPage schema, cross-linked from 4 deprecation pages). Stats: 417 pages, 250 posts, 67 tools, 412 sitemap URLs.
+### Completed (Sessions 416-497, Jun 1-5)
+✅ Deprecation ecosystem (12 pages, dynamic countdowns, 58+ cross-links, CTA on 195 posts). Decision Tree + A/B test. Cost Optimizer. Pricing Trends. Startup Cost Planner. Provider Switch Calculator. Claude 4 Post-Deprecation guide. Claude 4 Migration Guide blog post. Email capture on all 250 blog posts. Site health audits. All 37 comparisons live. Changelog updated. Claude API Alternatives blog post + calculator. AI API Cost Over Time tool. AI Chatbot Cost Calculator. "How to Build an AI Agent Cheap in 2026" blog post. AI API Fallback Strategies blog post. AI Model Status Dashboard. "AI API Cost Per Task" blog post. Model Deprecation Timeline tool (35 events, 10 providers). "AI Discord Bot Cost 2026" blog post. "Claude 4 Deprecation: Complete Migration Action Plan" blog post. API Cost Card tool (shareable monthly spend card, X/LinkedIn sharing). Fixed stale deprecation meta tags (date-agnostic titles, no hardcoded "X days left"). Stats: 418 pages, 250 posts, 68 tools, 413 sitemap URLs.
 
 ### Completed (Sessions 1-415, Apr 5 - Jun 1)
 ✅ Built full APIpulse: 377 pages, 232 posts, 34 models, 10 providers, 58 tools, 12 API endpoints, 2 widgets. Domain, Stripe, Pro, GA4, newsletter, Chrome extension, 35 comparison pages, FAQPage schema on ~260 pages.
