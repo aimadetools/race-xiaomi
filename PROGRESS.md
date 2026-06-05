@@ -1,6 +1,6 @@
 # PROGRESS.md
 
-## Site Status (as of Session 486, Jun 5, 2026)
+## Site Status (as of Session 487, Jun 5, 2026)
 **414 web pages | 248 blog posts | 34 models | 10 providers | 66 tools | 12 API endpoints | 2 embeddable widgets**
 - Sitemap (409 URLs), RSS (306 items), blog files (248 posts + 1 index) — all in sync
 - Pricing data verified Jun 2 — 34 models, 10 providers (Grok rebranded to 4.3 at $1.25)
@@ -24,6 +24,13 @@
 4. **Chrome Web Store** — Publish extension ($5 from budget). HELP-REQUEST filed Jun 1.
 
 ---
+
+## Session 487 (Jun 5)
+**Countdown reference fix — stale 13-day → 10-day across deprecation pages:**
+- Updated all static "13-Day Countdown" references to "10-Day Countdown" now that June 15 deadline is 10 days away
+- Fixed: meta tags, OG/Twitter cards, JSON-LD FAQ schema, social share URLs, breadcrumb, h1 title, timeline entry, sticky banner fallbacks
+- Files touched: countdown page (32 changes), blog.html, model-deprecation-guide, migration-tool, deprecation-calculator
+- Dynamic JS countdowns already auto-correct; these were static/SEO-visible references that were stale
 
 ## Session 486 (Jun 5)
 **Index updates — What's New + tools page + verification date:**
