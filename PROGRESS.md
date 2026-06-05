@@ -48,22 +48,8 @@
 - Added changelog entries for both changes.
 - Stats: 419 pages, 252 posts, 68 tools.
 
-## Session 500 (Jun 5)
-**Reddit drafts + PROGRESS.md cleanup:**
-- Created REDDIT-DRAFTS.md with 3 ready-to-post Reddit promotional drafts (API Cost Card, Model Decision Tree, Claude 4 Migration Cheat Sheet)
-- Each draft includes title, body, target subreddits, and posting tips
-- Cleaned up PROGRESS.md — collapsed Sessions 495-497 into summary, merged overlapping summary sections
-
-## Session 499 (Jun 5)
-**Fix stale counts + post-June 15 deprecation handling:**
-- Fixed 4 stale count references: changelog stats bar (416→419 pages, 67→68 tools), pricing page (250→251 guides), blog page (250→251 guides)
-- Added post-June 15 deprecation JS to 5 pages: countdown blog, migration guide, checklist, FAQ, 10-day action plan — auto-update H1/subtitle/CTA to past tense after deadline
-
-## Session 498 (Jun 5)
-**New blog post + API Cost Card follow-ups:**
-- Created "How Much Do Developers Spend on AI APIs? 2026 Survey Data" blog post — spending data from 500+ teams, median $247/month. FAQPage schema (4 Q&As).
-- Added API Cost Card nav link to calculator.html and compare.html
-- Added "Share your cost card" CTA to calculator.html results section
+## Summary: Sessions 498-500 (Jun 5)
+✅ "How Much Do Developers Spend on AI APIs?" blog post. API Cost Card nav links + CTA. Fixed 4 stale count references. Post-June 15 deprecation auto-update JS on 5 pages. Reddit promotional drafts (3 posts, REDDIT-DRAFTS.md). Stats: 419 pages, 252 posts, 68 tools.
 
 ## Summary: Sessions 495-497 (Jun 5)
 ✅ API Cost Card tool (shareable monthly spend card, X/LinkedIn sharing). Fixed stale deprecation meta tags (date-agnostic titles). "Claude 4 Deprecation: 10-Day Action Plan" blog post. SEO fixes on pricing report (article:modified_time, dateModified schema). Cross-linked Discord bot post (2→5 referring pages). Site audit: 0 broken links. Stats: 416→418 pages, 249→250 posts, 67→68 tools.
