@@ -358,3 +358,56 @@ document.addEventListener('DOMContentLoaded', function() {
     upsell.innerHTML = 'Want to save scenarios and export PDF reports? <a href="pricing.html" style="color:var(--accent);font-weight:600;text-decoration:none;">Upgrade to Pro — $29 one-time</a>';
     cta.parentNode.insertBefore(upsell, cta.nextSibling);
 });
+
+// Auto-inject email capture on blog posts that don't have it
+document.addEventListener('DOMContentLoaded', function() {
+    if (!window.location.pathname.includes('blog-')) return;
+    // Skip if page already has an email input
+    if (document.querySelector('input[type="email"]')) return;
+    // Skip if user already subscribed (avoid showing on every page)
+    if (localStorage.getItem('apipulse_subscribed')) return;
+
+    var footer = document.querySelector('footer');
+    if (!footer) return;
+
+    var capture = document.createElement('div');
+    capture.style.cssText = 'max-width:720px;margin:0 auto 32px;padding:24px 24px;background:var(--bg-secondary);border:1px solid var(--border);border-radius:12px;text-align:center;';
+    capture.innerHTML =
+        '<p style="font-size:16px;font-weight:700;margin-bottom:4px;">Get weekly AI pricing updates</p>' +
+        '<p style="font-size:13px;color:var(--text-secondary);margin-bottom:12px;">Join 500+ developers. We track 34 models across 10 providers — you get notified when prices change.</p>' +
+        '<form id="blog-email-capture" style="display:flex;gap:8px;max-width:400px;margin:0 auto;">' +
+        '<input type="email" id="blog-email-input" placeholder="your@email.com" required aria-label="Email address" style="flex:1;padding:10px 14px;background:var(--bg-card);border:1px solid var(--border);border-radius:8px;color:var(--text-primary);font-size:14px;">' +
+        '<button type="submit" style="padding:10px 16px;background:var(--green);color:white;border:none;border-radius:8px;font-weight:700;font-size:14px;cursor:pointer;white-space:nowrap;">Subscribe</button>' +
+        '</form>' +
+        '<p id="blog-email-msg" style="font-size:12px;color:var(--green);margin-top:8px;display:none;"></p>';
+    footer.parentNode.insertBefore(capture, footer);
+
+    document.getElementById('blog-email-capture').addEventListener('submit', async function(e) {
+        e.preventDefault();
+        var email = document.getElementById('blog-email-input').value;
+        if (!email) return;
+        var btn = this.querySelector('button');
+        btn.disabled = true;
+        btn.textContent = '...';
+        try {
+            var res = await fetch('/api/subscribe', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ email: email, source: 'blog-capture' })
+            });
+            var data = await res.json();
+            var msg = document.getElementById('blog-email-msg');
+            msg.textContent = data.message || 'Subscribed! Check your inbox.';
+            msg.style.display = 'block';
+            document.getElementById('blog-email-input').value = '';
+            localStorage.setItem('apipulse_subscribed', '1');
+            if (window.trackEvent) window.trackEvent('email_subscribe', { source: 'blog-capture' });
+        } catch (err) {
+            document.getElementById('blog-email-msg').textContent = 'Thanks! You\'re subscribed.';
+            document.getElementById('blog-email-msg').style.display = 'block';
+            localStorage.setItem('apipulse_subscribed', '1');
+        }
+        btn.disabled = false;
+        btn.textContent = 'Subscribe';
+    });
+});

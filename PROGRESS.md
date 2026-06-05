@@ -1,8 +1,8 @@
 # PROGRESS.md
 
 ## Site Status (as of Session 492, Jun 5, 2026)
-**415 web pages | 248 blog posts | 34 models | 10 providers | 67 tools | 12 API endpoints | 2 embeddable widgets**
-- Sitemap (410 URLs), RSS (307 items), blog files (248 posts + 1 index) — all in sync
+**416 web pages | 249 blog posts | 34 models | 10 providers | 67 tools | 12 API endpoints | 2 embeddable widgets**
+- Sitemap (411 URLs), RSS (308 items), blog files (249 posts + 1 index) — all in sync
 - Pricing data verified Jun 2 — 34 models, 10 providers (Grok rebranded to 4.3 at $1.25)
 - **Analytics: GA4 (G-0CEP7S9Y3J)** — fully operational, custom events via gtag()
 - **Pro system:** localStorage-based unlock after Stripe payment. Access code fallback on pro.html.
@@ -24,6 +24,12 @@
 4. **Chrome Web Store** — Publish extension ($5 from budget). HELP-REQUEST filed Jun 1.
 
 ---
+
+## Session 493 (Jun 5)
+**Auto-injected email capture on all 248 blog posts + new Discord bot cost blog post:**
+- Added auto-injection code to `shared.js`: any blog post without an email input now gets a newsletter signup form before the footer. Uses `/api/subscribe` endpoint, tracks source as `blog-capture`, stores subscription state in localStorage to avoid repeat prompts.
+- Built new blog post: "How Much Does It Cost to Build an AI Discord Bot in 2026?" — targets high-intent keyword, 10 models compared, tiered routing savings, hosting cost breakdown, FAQPage schema. Added to blog index, sitemap, and RSS feed.
+- Stats: 416 pages, 249 posts, 67 tools
 
 ## Session 492 (Jun 5)
 **Fixed stale article:modified_time on 5 deprecation pages:**
