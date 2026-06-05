@@ -25,6 +25,12 @@
 
 ---
 
+## Session 491 (Jun 5)
+**Cross-linked Model Deprecation Timeline to 7 deprecation pages:**
+- Added timeline link to Related Resources sections on: countdown page, FAQ, checklist, API errors, migration guide, model deprecation guide, and main deprecation landing page (Related Tools)
+- Previously only linked from: tools.html, index.html, model-status.html, claude-4-post-deprecation.html
+- All deprecation ecosystem pages now cross-link to the timeline tool
+
 ## Session 490 (Jun 5)
 **Changelog update — stats bar, Jun 5 entries, meta fixes:**
 - Updated changelog stats bar: 412→415 pages, 66→67 tools, 247→248 blog posts
