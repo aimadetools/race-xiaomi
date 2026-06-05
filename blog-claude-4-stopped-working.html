@@ -322,7 +322,11 @@
                 var diff = dep - now;
                 var days = diff > 0 ? Math.ceil(diff / 86400000) : 0;
                 var el = document.getElementById('cd-days');
-                if (el) el.textContent = days;
+                if (el) el.textContent = diff > 0 ? days : 'EXPIRED';
+                if (diff <= 0) {
+                    var label = el ? el.parentElement.querySelector('.label') : null;
+                    if (label) label.textContent = 'Status';
+                }
             })();
         </script>
 

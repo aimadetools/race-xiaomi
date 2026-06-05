@@ -273,7 +273,7 @@
                 var diff = dep - now;
                 var days = diff > 0 ? Math.ceil(diff / 86400000) : 0;
                 var el = document.getElementById('cd-days');
-                if (el) el.textContent = days;
+                if (el) el.textContent = diff > 0 ? days : 'EXPIRED';
                 if (diff <= 0) {
                     var h1 = document.querySelector('h1');
                     if (h1) h1.innerHTML = 'Claude 4 Has Been Deprecated — <span style="color:var(--accent)">What You Need to Know</span>';

@@ -233,7 +233,7 @@
                 var diff = dep - new Date();
                 var days = diff > 0 ? Math.ceil(diff / 86400000) : 0;
                 var el = document.getElementById('daysLeft');
-                if (el) el.textContent = days > 0 ? days + ' days' : 'today';
+                if (el) el.textContent = diff > 0 ? days + ' days' : 'deprecated';
             })();
         </script>
 
@@ -406,7 +406,7 @@ NEW_MODEL = <span class="str">"claude-opus-4-8"</span>
                 var diff = dep - new Date();
                 var days = diff > 0 ? Math.ceil(diff / 86400000) : 0;
                 var el = document.getElementById('rollbackDays');
-                if (el) el.textContent = days > 0 ? days + ' days' : 'today';
+                if (el) el.textContent = diff > 0 ? days + ' days' : 'the deadline has passed';
             })();
         </script>
 
@@ -542,7 +542,7 @@ response = client.chat.completions.create(
                     var diff = dep - new Date();
                     var days = diff > 0 ? Math.ceil(diff / 86400000) : 0;
                     var el = document.getElementById('ctaDeadline');
-                    if (el) el.textContent = 'Deadline: June 15 — ' + days + ' days left';
+                    if (el) el.textContent = diff > 0 ? 'Deadline: June 15 — ' + days + ' days left' : 'Claude 4 was deprecated on June 15 — migrate now';
                 })();
             </script>
             <p>Compare all 34 alternatives with your exact usage. See costs, get code, and calculate savings.</p>

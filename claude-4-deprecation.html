@@ -601,10 +601,10 @@ curl https://api.anthropic.com/v1/messages \
             var now = new Date().getTime();
             var diff = deadline - now;
             if (diff <= 0) {
-                document.getElementById('cd-days').textContent = '0';
-                document.getElementById('cd-hours').textContent = '0';
-                document.getElementById('cd-mins').textContent = '0';
-                document.getElementById('cd-secs').textContent = '0';
+                document.getElementById('cd-days').textContent = 'EXPIRED';
+                document.getElementById('cd-hours').textContent = '—';
+                document.getElementById('cd-mins').textContent = '—';
+                document.getElementById('cd-secs').textContent = '—';
                 // Update page text for post-deadline
                 var h1 = document.querySelector('h1');
                 if (h1 && h1.textContent.includes('Retiring')) {

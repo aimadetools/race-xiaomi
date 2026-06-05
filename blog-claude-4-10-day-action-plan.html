@@ -501,7 +501,7 @@
         const diff = deprecationDate - now;
         const days = Math.max(0, Math.ceil(diff / (1000 * 60 * 60 * 24)));
         const el = document.getElementById('days-left');
-        if (el) el.textContent = days;
+        if (el) el.textContent = diff > 0 ? days : 'EXPIRED';
         if (diff <= 0) {
             var label = document.querySelector('.countdown-banner .label');
             if (label) label.textContent = 'Claude 4 Opus & Sonnet 4 have been deprecated';
