@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Claude 4 Deprecation: 5 Things to Do This Weekend (Before June 15) | APIpulse</title>
+    <meta name="description" content="Claude 4 retires June 15. Spend 2 hours this weekend migrating — it's a one-line code change per model, and you'll save 67% on API costs. Here are 5 things to do.">
+    <meta name="keywords" content="Claude 4 deprecation weekend, Claude 4 migration quick fix, Claude 4 June 15 deadline, migrate Claude 4 this weekend, Claude 4 retirement action items">
+    <meta property="og:title" content="Claude 4 Deprecation: 5 Things to Do This Weekend (Before June 15)">
+    <meta property="og:description" content="Claude 4 retires June 15. Spend 2 hours this weekend migrating — one-line code change, 67% savings. Here's exactly what to do.">
+    <meta property="og:type" content="article">
+    <meta property="article:published_time" content="2026-06-05">
+    <meta property="article:modified_time" content="2026-06-05">
+    <meta property="article:author" content="APIpulse">
+    <meta property="og:image" content="https://getapipulse.com/og-image.png">
+    <meta property="og:url" content="https://getapipulse.com/blog-claude-4-weekend-migration.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Claude 4 Deprecation: 5 Things to Do This Weekend">
+    <meta name="twitter:image" content="https://getapipulse.com/og-image.png">
+    <meta name="twitter:description" content="Claude 4 retires June 15. Spend 2 hours this weekend — one-line code change, 67% savings.">
+    <link rel="canonical" href="https://getapipulse.com/blog-claude-4-weekend-migration.html">
+    <link rel="alternate" type="application/rss+xml" title="APIpulse Blog" href="https://getapipulse.com/rss.xml">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="styles.css">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0CEP7S9Y3J"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-0CEP7S9Y3J');
+    </script>
+    <script src="analytics.js" defer></script>
+    <script src="dynamic-date.js" defer></script>
+    <script src="shared.js" defer></script>
+    <script src="pricing-data.js" defer></script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "Claude 4 Deprecation: 5 Things to Do This Weekend (Before June 15)",
+        "description": "Claude 4 retires June 15. Spend 2 hours this weekend migrating — it's a one-line code change per model, and you'll save 67% on API costs.",
+        "datePublished": "2026-06-05",
+        "dateModified": "2026-06-05",
+        "author": { "@type": "Organization", "name": "APIpulse" },
+        "publisher": { "@type": "Organization", "name": "APIpulse", "url": "https://getapipulse.com" },
+        "url": "https://getapipulse.com/blog-claude-4-weekend-migration.html",
+        "image": "https://getapipulse.com/og-image.png"
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Blog", "item": "https://getapipulse.com/blog.html" },
+            { "@type": "ListItem", "position": 2, "name": "Claude 4 Weekend Migration", "item": "https://getapipulse.com/blog-claude-4-weekend-migration.html" }
+        ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "How long does it take to migrate from Claude 4?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "For most projects, migration takes 15-30 minutes. It's a one-line code change per model reference — replace 'claude-4-opus' with 'claude-opus-4-8' and 'claude-sonnet-4' with 'claude-sonnet-4-6'. The rest of your integration (API key, SDK, endpoint) stays the same."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What happens if I don't migrate before June 15?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "After June 15, 2026, API calls to 'claude-4-opus' and 'claude-sonnet-4' will return errors (HTTP 404 or 400). Your app will break if it depends on these models. Your API key still works — you just need to update the model name string."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Can I migrate from Claude 4 in a single weekend?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes. The core migration is a one-line change per model reference. Most developers can complete the entire process — audit, update, test, deploy — in 2 hours or less. If you have a large codebase with many model references, use grep to find them all at once."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Is Claude Opus 4.8 a good replacement for Claude 4 Opus?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes. Claude Opus 4.8 is the direct replacement — same quality, 1M context window (vs 200K), and 67% cheaper ($5/$25 per M tokens vs $15/$75). It's a strict upgrade in every dimension."
+                }
+            }
+        ]
+    }
+    </script>
+    <style>
+        .content { max-width: 760px; margin: 0 auto; padding: 120px 24px 80px; }
+        .breadcrumb { font-size: 13px; color: var(--text-muted); margin-bottom: 24px; }
+        .breadcrumb a { color: var(--accent); text-decoration: none; }
+        .breadcrumb a:hover { text-decoration: underline; }
+        .breadcrumb .separator { margin: 0 8px; }
+        .back-link { font-size: 13px; color: var(--accent); text-decoration: none; display: inline-block; margin-bottom: 16px; }
+        .back-link:hover { text-decoration: underline; }
+        .post-meta { display: flex; gap: 12px; align-items: center; margin-bottom: 24px; font-size: 13px; color: var(--text-muted); }
+        .post-tag { background: rgba(239,68,68,0.15); color: #ef4444; padding: 2px 10px; border-radius: 4px; font-size: 11px; font-weight: 600; text-transform: uppercase; }
+        h1 { font-size: clamp(28px, 4vw, 38px); font-weight: 800; line-height: 1.15; margin-bottom: 16px; }
+        .subtitle { font-size: 17px; color: var(--text-secondary); line-height: 1.6; margin-bottom: 32px; }
+        h2 { font-size: 24px; font-weight: 700; margin: 40px 0 16px; }
+        h3 { font-size: 18px; font-weight: 600; margin: 24px 0 12px; }
+        p { font-size: 16px; line-height: 1.75; color: var(--text-secondary); margin-bottom: 16px; }
+        a { color: var(--accent); text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        ul, ol { font-size: 16px; line-height: 1.75; color: var(--text-secondary); margin-bottom: 16px; padding-left: 24px; }
+        li { margin-bottom: 8px; }
+        code { background: var(--bg-secondary); padding: 2px 6px; border-radius: 4px; font-size: 14px; font-family: 'SF Mono', 'Fira Code', monospace; }
+        pre { background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 8px; padding: 20px; overflow-x: auto; margin-bottom: 24px; }
+        pre code { background: none; padding: 0; }
+
+        .alert {
+            background: rgba(239,68,68,0.08); border-left: 3px solid #ef4444;
+            padding: 20px 24px; border-radius: 0 8px 8px 0; margin: 24px 0;
+        }
+        .alert p { margin: 0; color: var(--text-primary); }
+        .alert strong { color: #ef4444; }
+
+        .callout {
+            background: rgba(99,102,241,0.08); border-left: 3px solid var(--accent);
+            padding: 20px 24px; border-radius: 0 8px 8px 0; margin: 24px 0;
+        }
+        .callout p { margin: 0; color: var(--text-primary); }
+        .callout strong { color: var(--accent); }
+
+        .callout-green {
+            background: rgba(34,197,94,0.08); border-left: 3px solid #22c55e;
+            padding: 20px 24px; border-radius: 0 8px 8px 0; margin: 24px 0;
+        }
+        .callout-green p { margin: 0; color: var(--text-primary); }
+        .callout-green strong { color: #22c55e; }
+
+        .countdown-bar {
+            display: flex; justify-content: center; gap: 24px; margin: 32px 0;
+            flex-wrap: wrap;
+        }
+        .countdown-item {
+            background: var(--bg-secondary); border: 1px solid var(--border);
+            border-radius: 12px; padding: 16px 24px; text-align: center; min-width: 100px;
+        }
+        .countdown-item .num { font-size: 32px; font-weight: 800; color: #ef4444; }
+        .countdown-item .label { font-size: 12px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px; }
+
+        .step {
+            background: var(--bg-card); border: 1px solid var(--border);
+            border-radius: 12px; padding: 24px; margin: 24px 0;
+        }
+        .step-header { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; }
+        .step-num {
+            background: var(--accent); color: white; width: 32px; height: 32px;
+            border-radius: 50%; display: flex; align-items: center; justify-content: center;
+            font-weight: 700; font-size: 16px; flex-shrink: 0;
+        }
+        .step-title { font-size: 18px; font-weight: 700; color: var(--text-primary); }
+        .step-time { font-size: 12px; color: var(--text-muted); margin-left: auto; }
+        .step p { margin-bottom: 12px; }
+        .step p:last-child { margin-bottom: 0; }
+
+        table { width: 100%; border-collapse: collapse; margin: 24px 0; font-size: 14px; }
+        th { background: var(--bg-secondary); padding: 12px 16px; text-align: left; font-weight: 600; border-bottom: 2px solid var(--border); }
+        td { padding: 12px 16px; border-bottom: 1px solid var(--border); }
+        tr:hover td { background: rgba(99,102,241,0.03); }
+        .deprecated { color: #ef4444; font-weight: 600; }
+        .replacement { color: #22c55e; font-weight: 600; }
+
+        .cta-box {
+            background: linear-gradient(135deg, rgba(99,102,241,0.12), rgba(99,102,241,0.04));
+            border: 1px solid rgba(99,102,241,0.2); border-radius: 12px;
+            padding: 32px; text-align: center; margin: 40px 0;
+        }
+        .cta-box h3 { margin: 0 0 8px; }
+        .cta-box p { margin: 0 0 20px; }
+        .cta-btn {
+            display: inline-block; background: var(--accent); color: white;
+            padding: 12px 28px; border-radius: 8px; font-weight: 700;
+            text-decoration: none; transition: opacity 0.2s; margin: 6px;
+        }
+        .cta-btn:hover { opacity: 0.9; text-decoration: none; }
+        .cta-btn.red { background: #ef4444; }
+
+        .related-box { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; margin: 24px 0; }
+        .related-item { background: var(--bg-card); border: 1px solid var(--border); border-radius: 8px; padding: 16px; text-decoration: none; transition: border-color 0.2s; }
+        .related-item:hover { border-color: var(--accent); }
+        .related-item .label { font-size: 11px; text-transform: uppercase; letter-spacing: 1px; color: var(--text-muted); margin-bottom: 6px; }
+        .related-item .title { font-size: 14px; font-weight: 600; color: var(--text-primary); }
+
+        @media (max-width: 768px) {
+            .content { padding: 100px 16px 60px; }
+            h1 { font-size: 26px; }
+            h2 { font-size: 20px; }
+            .step { padding: 16px; }
+            .countdown-bar { gap: 12px; }
+            .countdown-item { padding: 12px 16px; min-width: 80px; }
+            .countdown-item .num { font-size: 24px; }
+        }
+    </style>
+    <meta name="theme-color" content="#6366f1">
+</head>
+<body>
+    <nav>
+        <div class="nav-inner">
+            <a href="index.html" class="logo">API<span>pulse</span></a>
+            <button class="hamburger" onclick="toggleMobileNav()" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+            <div class="nav-links">
+                <a href="calculator.html">Calculator</a>
+                <a href="compare.html">Compare</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="blog.html" class="active">Blog</a>
+                <a href="blog-model-deprecation-guide.html" style="color:var(--red);">Deprecation Guide</a>
+                <a href="claude-4-migration-tool.html">Migration Tool</a>
+                <a href="pricing.html" class="nav-cta" onclick="if(window.trackEvent)window.trackEvent('pro_button_clicked',{source:'nav'})">Get Pro — $29</a>
+                <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
+            </div>
+        </div>
+    </nav>
+
+    <main id="main">
+    <div class="content article">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+            <a href="blog.html">Blog</a>
+            <span class="separator">›</span>
+            <span class="current">Claude 4 Weekend Migration</span>
+        </nav>
+        <a href="blog.html" class="back-link">← Back to blog</a>
+        <div class="post-meta">
+            <span class="post-tag">Urgent</span>
+            <span>June 5, 2026</span>
+            <span>·</span>
+            <span>5 min read</span>
+        </div>
+        <h1>Claude 4 Deprecation: 5 Things to Do This Weekend</h1>
+        <p class="subtitle">Claude 4 Opus and Claude Sonnet 4 retire on <strong>June 15, 2026</strong> — that's <span id="daysLeftText">10 days</span> away. If you haven't started migrating yet, this weekend is your window. The good news: it takes about 2 hours total, and you'll save 67% on API costs.</p>
+        <script>
+            (function(){
+                var dep = new Date('2026-06-15T00:00:00');
+                var now = new Date();
+                var diff = dep - now;
+                var days = diff > 0 ? Math.ceil(diff / 86400000) : 0;
+                var el = document.getElementById('daysLeftText');
+                if (diff <= 0) {
+                    if (el) el.textContent = 'Claude 4 was deprecated on June 15, 2026.';
+                    var h1 = document.querySelector('h1');
+                    if (h1) h1.innerHTML = 'Claude 4 Has Been Deprecated — <span style="color:var(--accent)">What to Do Now</span>';
+                    var subtitle = document.querySelector('.subtitle');
+                    if (subtitle) subtitle.innerHTML = 'Claude 4 Opus and Claude Sonnet 4 were <strong>retired on June 15, 2026</strong>. API calls to these model IDs now return errors. Here\'s how to fix your code and save 67% on API costs.';
+                } else {
+                    if (el) el.textContent = days + ' days';
+                }
+            })();
+        </script>
+
+        <div class="countdown-bar">
+            <div class="countdown-item">
+                <div class="num" id="cd-days">--</div>
+                <div class="label">Days Left</div>
+            </div>
+            <div class="countdown-item">
+                <div class="num">June 15</div>
+                <div class="label">Deadline</div>
+            </div>
+            <div class="countdown-item">
+                <div class="num">~2hr</div>
+                <div class="label">Total Time</div>
+            </div>
+            <div class="countdown-item">
+                <div class="num">67%</div>
+                <div class="label">Cost Savings</div>
+            </div>
+        </div>
+        <script>
+            (function(){
+                var dep = new Date('2026-06-15T00:00:00');
+                var now = new Date();
+                var diff = dep - now;
+                var days = diff > 0 ? Math.ceil(diff / 86400000) : 0;
+                var el = document.getElementById('cd-days');
+                if (el) el.textContent = diff > 0 ? days : 'EXPIRED';
+                if (diff <= 0) {
+                    var label = el ? el.parentElement.querySelector('.label') : null;
+                    if (label) label.textContent = 'Status';
+                }
+            })();
+        </script>
+
+        <div class="alert">
+            <p><strong>The bottom line:</strong> This is a model name change, not a platform migration. Your API key, SDK, and endpoint stay the same. You're just updating a string in your code.</p>
+        </div>
+
+        <h2>Why This Weekend Matters</h2>
+        <p>After June 15, every API call to <code>claude-4-opus</code> and <code>claude-sonnet-4</code> will return errors. If your app uses these models, it will break. But the fix is trivial — and the replacement models are actually better:</p>
+        <ul>
+            <li><strong>Claude Opus 4.8</strong> replaces Claude 4 Opus — 67% cheaper, 5x context window</li>
+            <li><strong>Claude Sonnet 4.6</strong> replaces Claude Sonnet 4 — same price, 5x context window</li>
+        </ul>
+        <p>You're not downgrading. You're upgrading — and saving money doing it.</p>
+
+        <h2>The 5 Things to Do This Weekend</h2>
+
+        <div class="step">
+            <div class="step-header">
+                <div class="step-num">1</div>
+                <div class="step-title">Find Every Claude 4 Reference in Your Code</div>
+                <div class="step-time">~10 min</div>
+            </div>
+            <p>Search your entire codebase for these model IDs:</p>
+<pre><code># Search for Claude 4 model references
+grep -r "claude-4-opus" . --include="*.py" --include="*.js" --include="*.ts" --include="*.json"
+grep -r "claude-sonnet-4" . --include="*.py" --include="*.js" --include="*.ts" --include="*.json"</code></pre>
+            <p>Check everywhere: source code, config files, environment variables, documentation, tests, and CI/CD pipelines. Don't forget <code>.env</code> files and deployment configs.</p>
+            <div class="callout">
+                <p><strong>Pro tip:</strong> Also search for <code>claude-4</code> as a substring — it catches any other Claude 4 variants you might have missed.</p>
+            </div>
+        </div>
+
+        <div class="step">
+            <div class="step-header">
+                <div class="step-num">2</div>
+                <div class="step-title">Update the Model Name Strings</div>
+                <div class="step-time">~5 min</div>
+            </div>
+            <p>Replace each model reference. This is a find-and-replace operation:</p>
+            <table>
+                <thead>
+                    <tr><th>Old Model ID</th><th>New Model ID</th><th>Price Change</th></tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code class="deprecated">claude-4-opus</code></td>
+                        <td><code class="replacement">claude-opus-4-8</code></td>
+                        <td>$15/$75 → $5/$25 (save 67%)</td>
+                    </tr>
+                    <tr>
+                        <td><code class="deprecated">claude-sonnet-4</code></td>
+                        <td><code class="replacement">claude-sonnet-4-6</code></td>
+                        <td>$3/$15 → $3/$15 (same price, 5x context)</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p><strong>That's it.</strong> No new SDK. No new API key. No new endpoint. Just a string change.</p>
+        </div>
+
+        <div class="step">
+            <div class="step-header">
+                <div class="step-num">3</div>
+                <div class="step-title">Test Your Integration</div>
+                <div class="step-time">~30 min</div>
+            </div>
+            <p>Run your test suite with the new model names. Focus on:</p>
+            <ul>
+                <li>API calls succeed (no 404 or 400 errors)</li>
+                <li>Response format is compatible (it should be — same Anthropic API)</li>
+                <li>Token limits work correctly (new models have larger context windows)</li>
+                <li>Streaming responses work if you use streaming</li>
+            </ul>
+            <div class="callout-green">
+                <p><strong>Good news:</strong> Claude Opus 4.8 and Claude Sonnet 4.6 use the same API format as Claude 4. If your code worked before, it will work now — just with a different model name.</p>
+            </div>
+        </div>
+
+        <div class="step">
+            <div class="step-header">
+                <div class="step-num">4</div>
+                <div class="step-title">Calculate Your New Costs</div>
+                <div class="step-time">~10 min</div>
+            </div>
+            <p>Use the APIpulse calculator to see exactly how much you'll save with the new models:</p>
+            <ul>
+                <li><a href="calculator.html">Cost Calculator</a> — input your token usage, see monthly costs</li>
+                <li><a href="claude-deprecation-calculator.html">Deprecation Calculator</a> — compare old vs new costs</li>
+                <li><a href="provider-switch-calculator.html">Provider Switch Calculator</a> — see savings from switching providers</li>
+            </ul>
+            <p>For most users, the savings are significant:</p>
+            <table>
+                <thead>
+                    <tr><th>Monthly Usage</th><th>Claude 4 Opus Cost</th><th>Claude Opus 4.8 Cost</th><th>Savings</th></tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1M input + 500K output tokens</td>
+                        <td>$52.50</td>
+                        <td>$17.50</td>
+                        <td><strong>$35.00/mo (67%)</strong></td>
+                    </tr>
+                    <tr>
+                        <td>10M input + 5M output tokens</td>
+                        <td>$525.00</td>
+                        <td>$175.00</td>
+                        <td><strong>$350.00/mo (67%)</strong></td>
+                    </tr>
+                    <tr>
+                        <td>100M input + 50M output tokens</td>
+                        <td>$5,250.00</td>
+                        <td>$1,750.00</td>
+                        <td><strong>$3,500.00/mo (67%)</strong></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="step">
+            <div class="step-header">
+                <div class="step-num">5</div>
+                <div class="step-title">Deploy and Monitor</div>
+                <div class="step-time">~30 min</div>
+            </div>
+            <p>Push your changes to production. Then monitor for 24 hours:</p>
+            <ul>
+                <li>Check error rates — should be zero new errors</li>
+                <li>Check response times — should be similar or better</li>
+                <li>Check your API dashboard — confirm the new model names appear</li>
+                <li>Check costs — confirm the lower pricing kicks in</li>
+            </ul>
+            <div class="alert">
+                <p><strong>Rollback plan:</strong> If something goes wrong, you can switch back instantly — just change the model name back. But do this before June 15, because after that the old model IDs stop working entirely.</p>
+            </div>
+        </div>
+
+        <h2>What If You Want to Switch Providers Entirely?</h2>
+        <p>The steps above keep you on Anthropic. But if you want to explore cheaper alternatives, here are the best options:</p>
+        <table>
+            <thead>
+                <tr><th>Alternative</th><th>Price (In/Out per M)</th><th>Savings vs Claude 4 Opus</th><th>Best For</th></tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><span class="replacement">DeepSeek V4 Pro</span></td>
+                    <td>$0.435 / $0.87</td>
+                    <td>97% cheaper</td>
+                    <td>Cost-sensitive, code, analysis</td>
+                </tr>
+                <tr>
+                    <td><span class="replacement">Gemini 2.5 Pro</span></td>
+                    <td>$1.25 / $10.00</td>
+                    <td>92% cheaper</td>
+                    <td>Long context, multimodal</td>
+                </tr>
+                <tr>
+                    <td><span class="replacement">GPT-5</span></td>
+                    <td>$1.25 / $10.00</td>
+                    <td>87% cheaper</td>
+                    <td>General purpose, function calling</td>
+                </tr>
+                <tr>
+                    <td><span class="replacement">Claude Opus 4.8</span></td>
+                    <td>$5.00 / $25.00</td>
+                    <td>67% cheaper</td>
+                    <td>Drop-in replacement, best quality</td>
+                </tr>
+            </tbody>
+        </table>
+        <p>Use the <a href="claude-4-migration-tool.html">Migration Tool</a> to compare all 34 alternatives side by side with your exact usage.</p>
+
+        <h2>Quick FAQ</h2>
+        <h3>Will my API key stop working?</h3>
+        <p>No. Your Anthropic API key works with all Anthropic models, including the new ones. You don't need a new key.</p>
+
+        <h3>Do I need to update my SDK?</h3>
+        <p>No. The Anthropic SDK works with all Claude models. Just change the model name string.</p>
+
+        <h3>What if I'm using a third-party proxy (OpenRouter, LiteLLM, etc.)?</h3>
+        <p>Check your proxy's documentation — they may handle the model mapping automatically. If not, update the model name in your proxy config.</p>
+
+        <h3>Can I keep using Claude 4 after June 15?</h3>
+        <p>No. The model IDs will be retired and return errors. There's no extended support or grace period.</p>
+
+        <h3>What about Claude 4 Opus on claude.ai (the web interface)?</h3>
+        <p>This deprecation only affects the API. The claude.ai web interface manages its own model availability separately.</p>
+
+        <div class="cta-box">
+            <h3>Ready to migrate?</h3>
+            <p>Calculate your exact savings and get the code changes you need.</p>
+            <a href="claude-deprecation-calculator.html" class="cta-btn red">Deprecation Calculator →</a>
+            <a href="claude-4-migration-tool.html" class="cta-btn">Migration Tool →</a>
+        </div>
+
+        <h2>Related Resources</h2>
+        <div class="related-box">
+            <a href="blog-claude-4-deprecated-countdown.html" class="related-item">
+                <div class="label">Countdown</div>
+                <div class="title">Live Deprecation Countdown</div>
+            </a>
+            <a href="blog-claude-4-deprecation-checklist.html" class="related-item">
+                <div class="label">Checklist</div>
+                <div class="title">Step-by-Step Migration Checklist</div>
+            </a>
+            <a href="blog-claude-4-deprecated-migration-guide.html" class="related-item">
+                <div class="label">Guide</div>
+                <div class="title">Complete Migration Guide</div>
+            </a>
+            <a href="blog-best-claude-4-alternatives.html" class="related-item">
+                <div class="label">Alternatives</div>
+                <div class="title">Best Claude 4 Alternatives</div>
+            </a>
+        </div>
+    </div>
+    </main>
+
+    <footer>
+        <div class="footer-inner">
+            <div class="footer-brand">
+                <a href="index.html" class="logo">API<span>pulse</span></a>
+                <p>Know your AI API costs before you commit.</p>
+            </div>
+            <div class="footer-links">
+                <a href="calculator.html">Calculator</a>
+                <a href="compare.html">Compare</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="blog.html">Blog</a>
+                <a href="api-docs.html">API</a>
+                <a href="privacy.html">Privacy</a>
+                <a href="terms.html">Terms</a>
+            </div>
+            <p class="footer-copy">&copy; 2026 APIpulse. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

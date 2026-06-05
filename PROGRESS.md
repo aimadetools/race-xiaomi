@@ -1,8 +1,8 @@
 # PROGRESS.md
 
-## Site Status (as of Session 500, Jun 5, 2026)
-**419 web pages | 251 blog posts | 34 models | 10 providers | 68 tools | 12 API endpoints | 2 embeddable widgets**
-- Sitemap (414 URLs), RSS (310 items), blog files (251 posts + 1 index) — all in sync
+## Site Status (as of Session 501, Jun 5, 2026)
+**419 web pages | 252 blog posts | 34 models | 10 providers | 68 tools | 12 API endpoints | 2 embeddable widgets**
+- Sitemap (415 URLs), RSS (311 items), blog files (252 posts + 1 index) — all in sync
 - Pricing data verified Jun 2 — 34 models, 10 providers (Grok rebranded to 4.3 at $1.25)
 - **Analytics: GA4 (G-0CEP7S9Y3J)** — fully operational, custom events via gtag()
 - **Pro system:** localStorage-based unlock after Stripe payment. Access code fallback on pro.html.
@@ -25,6 +25,14 @@
 5. **Reddit promotions** — REDDIT-DRAFTS.md has 3 ready-to-post drafts (API Cost Card, Decision Tree, Claude 4 Migration). Space 2-3 days apart.
 
 ---
+
+## Session 501 (Jun 5)
+**Deprecation countdown fixes + new blog post:**
+- Fixed countdown display on 10 deprecation pages — after June 15, countdowns now show "EXPIRED" instead of "0". Updated H1/subtitle to past tense on api-errors page.
+- Created "Claude 4 Deprecation: 5 Things to Do This Weekend" blog post — actionable weekend migration guide with step-by-step instructions, code samples, cost comparison table, FAQPage schema (4 Q&As).
+- Added to blog index, sitemap (415 URLs), RSS (311 items). Updated blog post count (251→252) on index, pricing, changelog.
+- Added changelog entries for both changes.
+- Stats: 419 pages, 252 posts, 68 tools.
 
 ## Session 500 (Jun 5)
 **Reddit drafts + PROGRESS.md cleanup:**
