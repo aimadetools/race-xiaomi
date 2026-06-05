@@ -25,6 +25,11 @@
 
 ---
 
+## Session 494 (Jun 5)
+**Fixed missing blog post in blog index:**
+- Added "AI API Cost Per Task: What 10 Common Tasks Actually Cost in 2026" to blog.html — was in sitemap, RSS, and index.html but missing from blog index page
+- Stats: 416 pages, 249 posts, 67 tools
+
 ## Session 493 (Jun 5)
 **Auto-injected email capture on all 248 blog posts + new Discord bot cost blog post:**
 - Added auto-injection code to `shared.js`: any blog post without an email input now gets a newsletter signup form before the footer. Uses `/api/subscribe` endpoint, tracks source as `blog-capture`, stores subscription state in localStorage to avoid repeat prompts.
