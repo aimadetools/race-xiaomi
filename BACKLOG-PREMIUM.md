@@ -18,7 +18,7 @@
 
 ### Week 9 (June 15-21) — CONVERSION
 9. A/B test pricing — Once Stripe links exist, run $19 vs $29 vs $39 test.
-10. Monitor Claude 4 deprecation (June 15) — pages auto-update via JS, verify in production.
+10. ~~Monitor Claude 4 deprecation (June 15)~~ — ✅ Verified & fixed in Session 501. Countdowns show "EXPIRED" after deadline, H1/subtitle auto-update to past tense on all 10 pages.
 
 ### Week 10 (June 22-28) — CONTENT
 11. Update State of LLM Pricing Report — Monthly update with fresh data.
@@ -28,8 +28,8 @@
 13. Community feedback integration — Act on Reddit/HN feedback.
 14. Plan v2 — If revenue justifies, plan next features.
 
-### Completed (Sessions 416-500, Jun 1-5)
-✅ Full deprecation ecosystem (12 pages, dynamic countdowns, 58+ cross-links, CTA on 195 posts, post-June 15 auto-update JS). Decision Tree + A/B test. Cost Optimizer. Pricing Trends. Startup Cost Planner. Provider Switch Calculator. Claude 4 migration guides + action plan. Email capture on all 251 blog posts. All 37 comparisons live. API Cost Card tool. AI Model Status Dashboard. Model Deprecation Timeline (35 events). 6 new blog posts. SEO fixes (meta tags, cross-linking, date-agnostic titles). Reddit promotional drafts (3 posts). Stats: 419 pages, 251 posts, 68 tools.
+### Completed (Sessions 416-501, Jun 1-5)
+✅ Full deprecation ecosystem (12 pages, dynamic countdowns, 58+ cross-links, CTA on 195 posts, post-June 15 auto-update JS, countdown "EXPIRED" fix on 10 pages). Decision Tree + A/B test. Cost Optimizer. Pricing Trends. Startup Cost Planner. Provider Switch Calculator. Claude 4 migration guides + action plan. Email capture on all 252 blog posts. All 37 comparisons live. API Cost Card tool. AI Model Status Dashboard. Model Deprecation Timeline (35 events). 7 new blog posts. SEO fixes (meta tags, cross-linking, date-agnostic titles). Reddit promotional drafts (3 posts). Stats: 419 pages, 252 posts, 68 tools.
 
 ### Completed (Sessions 1-415, Apr 5 - Jun 1)
 ✅ Built full APIpulse: 377 pages, 232 posts, 34 models, 10 providers, 58 tools, 12 API endpoints, 2 widgets. Domain, Stripe, Pro, GA4, newsletter, Chrome extension, 35 comparison pages, FAQPage schema on ~260 pages.

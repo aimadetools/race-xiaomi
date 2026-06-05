@@ -11,9 +11,9 @@
 - **12 API endpoints** — pricing data, cost calculator (single/multi-model), cheapest model finder, pricing badge (SVG), compare models, recommend models, subscribe, unsubscribe, newsletter, check-price-changes, admin, cost-report
 - **2 embeddable widgets** — pricing table/badge/compare (widget.js) + report card (embed-report.html)
 - **SEO: ~270 pages with FAQPage schema** for rich snippets (239 blog posts + 21 tools + 7 use-cases + 9 providers)
-- **Email capture on all 251 blog posts** (auto-injected via shared.js) + calculator.html + 4 deprecation pages
+- **Email capture on all 252 blog posts** (auto-injected via shared.js) + calculator.html + 4 deprecation pages
 - **Deprecation alerts:** 195 blog posts link to deprecation landing page, 48 link to deprecation calculator. All 9 deprecation pages use dynamic JS countdowns (auto-update daily). Meta tags date-agnostic.
-- **Social proof:** PH launch badge, Reddit testimonial, newsletter, exit popup A/B test, social sharing (X/LinkedIn/Reddit) on all 251 blog posts
+- **Social proof:** PH launch badge, Reddit testimonial, newsletter, exit popup A/B test, social sharing (X/LinkedIn/Reddit) on all 252 blog posts
 - **Chrome Extension:** Landing page live, pricing data synced (Jun 2), 34 models, manual install
 - **State of LLM Pricing Report:** Interactive June 2026 report with sortable rankings, charts, provider comparison, cost scenarios, deprecation alerts, FAQPage schema
 
