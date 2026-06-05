@@ -1,6 +1,6 @@
 # PROGRESS.md
 
-## Site Status (as of Session 485, Jun 5, 2026)
+## Site Status (as of Session 486, Jun 5, 2026)
 **414 web pages | 248 blog posts | 34 models | 10 providers | 66 tools | 12 API endpoints | 2 embeddable widgets**
 - Sitemap (409 URLs), RSS (306 items), blog files (248 posts + 1 index) — all in sync
 - Pricing data verified Jun 2 — 34 models, 10 providers (Grok rebranded to 4.3 at $1.25)
@@ -25,13 +25,12 @@
 
 ---
 
-## Session 485 (Jun 5)
-**New content — Model Status Dashboard + Cost Per Task blog post:**
-- Built AI Model Status Dashboard (model-status.html) — interactive table tracking all 34 models across 10 providers with status badges (active/deprecated/new), pricing, context windows, and migration paths. Includes FAQPage schema, summary cards, provider/status/search filters, and deprecation countdown alert.
-- Built "AI API Cost Per Task: What 10 Common Tasks Actually Cost in 2026" blog post — real-world cost breakdowns for 10 common tasks (summarization, code gen, chatbots, data extraction, email, classification, translation, RAG, image description, agents). Cross-provider comparison tables, monthly cost estimates, FAQPage schema.
-- Cross-linked new content from claude-4-post-deprecation.html and blog-best-claude-4-alternatives.html related reading sections.
-- Updated sitemap (407→409 URLs), RSS feed (304→306 items), blog count (247→248).
-- Stats: 412→414 pages, 247→248 blog posts, 407→409 sitemap URLs, 304→306 RSS items.
+## Session 486 (Jun 5)
+**Index updates — What's New + tools page + verification date:**
+- Updated What's New section on index.html — added Model Status Dashboard and Cost Per Task blog post at top of list (2 new cards)
+- Added Model Status Dashboard to tools.html as a new tool card
+- Updated dynamic-date.js verification date from Jun 3 → Jun 5, 2026
+- Session 485 content: AI Model Status Dashboard + Cost Per Task blog post + cross-links + sitemap/RSS sync. Stats: 412→414 pages, 247→248 posts, 407→409 sitemap URLs, 304→306 RSS items.
 
 ## Session 484 (Jun 4)
 **Site health audit — all systems nominal:**
@@ -46,7 +45,6 @@
 
 ## Summary: Sessions 477-483 (Jun 4)
 ✅ AI API Fallback Strategies blog post. Synced Llama 4 pricing across 6 API files. Fixed stale api-docs data. Pricing page Pro Feature Preview. AI Agent build guide blog post. AI Chatbot Cost Calculator + Customer Support blog post. AI API Cost Over Time tool. Claude API Alternatives blog post + calculator. AI API Budget Planner tool. "How to Build an AI Chatbot Cheap" blog post. Tools page audit. Provider Switch Calculator. Claude 4 Post-Deprecation + migration guide. Site audit: fixed orphaned blog post, stale meta counts, missing changelog entries. Stats: 402→412 pages, 241→247 blog posts, 397→407 sitemap URLs, 66 tools.
-✅ Built AI Chatbot Cost Calculator + Customer Support blog post. AI API Cost Over Time tool. Claude API Alternatives blog post + calculator. AI API Budget Planner tool. "How to Build an AI Chatbot Cheap" blog post. Tools page audit. Provider Switch Calculator. Claude 4 Post-Deprecation + migration guide. Site audit: fixed orphaned blog post, stale meta counts, missing changelog entries. Stats: 402→410 pages, 241→245 blog posts, 397→405 sitemap URLs, 66 tools.
 
 ## Summary: Sessions 457-469 (Jun 3)
 ✅ Built AI Stack Cost Optimizer + LLM Pricing Trends 2026 page. Pricing freshness sweep (58 files). Site audit + stale reference cleanup. Built AI Startup Cost Planner + email capture on calculator. README overhaul. Fixed sitemap. RSS feed stale description fix. Claude Opus 4.8 vs Gemini 3.1 Pro comparison. Stats: 399→402 pages, 63→64 tools, 395→397 sitemap URLs, 37 comparisons.
