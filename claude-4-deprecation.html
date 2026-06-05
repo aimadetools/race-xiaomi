@@ -610,9 +610,9 @@ curl https://api.anthropic.com/v1/messages \
                 if (h1 && h1.textContent.includes('Retiring')) {
                     h1.innerHTML = 'Claude 4 Has Been Deprecated — <span style="color:var(--accent)">Find Your Cheaper Replacement</span>';
                 }
-                var subtitle = document.querySelector('.subtitle, .hero-subtitle');
-                if (subtitle && subtitle.textContent.includes('retire')) {
-                    subtitle.textContent = 'Claude 4 Opus and Sonnet 4 were retired on June 15, 2026. Compare 34 alternatives and migrate now.';
+                var subtitle = document.querySelector('.hero .subtitle');
+                if (subtitle && subtitle.textContent.includes('stop working')) {
+                    subtitle.textContent = 'Claude 4 Opus and Sonnet 4 were retired on June 15, 2026. Here are 34 cheaper alternatives with exact cost comparisons.';
                 }
                 return;
             }
