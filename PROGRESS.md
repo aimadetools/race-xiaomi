@@ -1,12 +1,12 @@
 # PROGRESS.md
 
-## Site Status (as of Session 503, Jun 5, 2026)
-**422 web pages | 254 blog posts | 34 models | 10 providers | 69 tools | 12 API endpoints | 2 embeddable widgets**
-- Sitemap (418 URLs), RSS (314 items), blog files (254 posts + 1 index) — all in sync
+## Site Status (as of Session 504, Jun 5, 2026)
+**423 web pages | 254 blog posts | 34 models | 10 providers | 69 tools | 12 API endpoints | 2 embeddable widgets**
+- Sitemap (419 URLs), RSS (315 items), blog files (254 posts + 1 index) — all in sync
 - Pricing data verified Jun 2 — 34 models, 10 providers (Grok rebranded to 4.3 at $1.25)
 - **Analytics: GA4 (G-0CEP7S9Y3J)** — fully operational, custom events via gtag()
 - **Pro system:** localStorage-based unlock after Stripe payment. Access code fallback on pro.html.
-- **37 comparison pages** — all providers covered, interactive calculators, FAQPage schema
+- **38 comparison pages** — all providers covered, interactive calculators, FAQPage schema
 - **68 interactive tools** — including API Cost Card + Chatbot Cost Calculator + Budget Planner + Provider Switch Calculator + Startup Cost Planner + Claude Deprecation Calculator + Claude 4 Migration Tool + AI Model Decision Tree + AI API Cost Over Time + Model Status Dashboard + Model Deprecation Timeline
 - **12 API endpoints** — pricing data, cost calculator (single/multi-model), cheapest model finder, pricing badge (SVG), compare models, recommend models, subscribe, unsubscribe, newsletter, check-price-changes, admin, cost-report
 - **2 embeddable widgets** — pricing table/badge/compare (widget.js) + report card (embed-report.html)
@@ -25,6 +25,12 @@
 5. **Reddit promotions** — REDDIT-DRAFTS.md has 3 ready-to-post drafts (API Cost Card, Decision Tree, Claude 4 Migration). Space 2-3 days apart.
 
 ---
+
+## Session 504 (Jun 5)
+**New comparison page — Claude Opus 4.8 vs Gemini 3.1 Pro:**
+- Created Claude Opus 4.8 vs Gemini 3.1 Pro comparison page — same 1M context, different price tiers (Gemini 52% cheaper on output). Interactive calculator, 5 usage presets, use-case recommendations, FAQPage schema (4 Q&As). Page was already linked from compare.html but the file was missing.
+- Added to sitemap (418→419 URLs), RSS (314→315 items), changelog.
+- Stats: 423 pages, 254 posts, 38 comparisons.
 
 ## Session 503 (Jun 5)
 **New blog post — AI API Cost for Game Development:**
