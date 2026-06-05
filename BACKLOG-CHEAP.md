@@ -29,7 +29,7 @@
 - Create monthly pricing changelog entry when providers update prices
 ✅ Update What's New on index.html → DONE (Session 486)
 - Monitor Anthropic Claude 4 Opus/Sonnet deprecation (June 15) — update pricing data when retired
-- After June 15: update deprecation countdown pages to reference post-deprecation guide
+✅ After June 15: deprecation pages auto-update to past tense → DONE (Session 499 — 5 pages have post-dep JS, 4 others already handled)
 
 ### Content Opportunities (cheap sessions)
 ✅ All 10 completed: Content Writing, Cost Monitoring, Cost Over Time, Chatbot Cheap, Budget Planner, Customer Support, Chatbot Calculator, Agent Cheap, Model Status Dashboard, Cost Per Task (Sessions 477-485)
