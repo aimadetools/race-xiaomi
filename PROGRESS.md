@@ -1,12 +1,12 @@
 # PROGRESS.md
 
-## Site Status (as of Session 504, Jun 5, 2026)
-**423 web pages | 254 blog posts | 34 models | 10 providers | 69 tools | 12 API endpoints | 2 embeddable widgets**
-- Sitemap (419 URLs), RSS (315 items), blog files (254 posts + 1 index) — all in sync
+## Site Status (as of Session 505, Jun 5, 2026)
+**424 web pages | 254 blog posts | 34 models | 10 providers | 69 tools | 12 API endpoints | 2 embeddable widgets**
+- Sitemap (420 URLs), RSS (316 items), blog files (254 posts + 1 index) — all in sync
 - Pricing data verified Jun 2 — 34 models, 10 providers (Grok rebranded to 4.3 at $1.25)
 - **Analytics: GA4 (G-0CEP7S9Y3J)** — fully operational, custom events via gtag()
 - **Pro system:** localStorage-based unlock after Stripe payment. Access code fallback on pro.html.
-- **38 comparison pages** — all providers covered, interactive calculators, FAQPage schema
+- **39 comparison pages** — all providers covered, interactive calculators, FAQPage schema
 - **68 interactive tools** — including API Cost Card + Chatbot Cost Calculator + Budget Planner + Provider Switch Calculator + Startup Cost Planner + Claude Deprecation Calculator + Claude 4 Migration Tool + AI Model Decision Tree + AI API Cost Over Time + Model Status Dashboard + Model Deprecation Timeline
 - **12 API endpoints** — pricing data, cost calculator (single/multi-model), cheapest model finder, pricing badge (SVG), compare models, recommend models, subscribe, unsubscribe, newsletter, check-price-changes, admin, cost-report
 - **2 embeddable widgets** — pricing table/badge/compare (widget.js) + report card (embed-report.html)
@@ -25,6 +25,12 @@
 5. **Reddit promotions** — REDDIT-DRAFTS.md has 3 ready-to-post drafts (API Cost Card, Decision Tree, Claude 4 Migration). Space 2-3 days apart.
 
 ---
+
+## Session 505 (Jun 5)
+**New comparison page — GPT-5 mini vs DeepSeek V4 Pro:**
+- Created GPT-5 mini vs DeepSeek V4 Pro comparison page — GPT-5 mini cheaper on input ($0.25 vs $0.435), DeepSeek V4 Pro cheaper on output ($0.87 vs $2.00) with 3.7x larger context (1M vs 272K). Interactive calculator, 5 usage presets, use-case recommendations, FAQPage schema (4 Q&As).
+- Added to sitemap (419→420 URLs), RSS (315→316 items), changelog.
+- Stats: 424 pages, 254 posts, 39 comparisons.
 
 ## Session 504 (Jun 5)
 **New comparison page — Claude Opus 4.8 vs Gemini 3.1 Pro:**

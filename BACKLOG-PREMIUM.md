@@ -28,8 +28,8 @@
 13. Community feedback integration — Act on Reddit/HN feedback.
 14. Plan v2 — If revenue justifies, plan next features.
 
-### Completed (Sessions 416-504, Jun 1-5)
-✅ Full deprecation ecosystem (12 pages, dynamic countdowns, 58+ cross-links, CTA on 195 posts, post-June 15 auto-update JS, countdown "EXPIRED" fix on 10 pages). Decision Tree + A/B test. Cost Optimizer. Pricing Trends. Startup Cost Planner. Provider Switch Calculator. Claude 4 migration guides + action plan. Email capture on all 254 blog posts. All 38 comparisons live. API Cost Card tool. AI Model Status Dashboard. Model Deprecation Timeline (35 events). 8 new blog posts. SEO fixes (meta tags, cross-linking, date-agnostic titles). Reddit promotional drafts (3 posts). AI Model Value Score tool. AI API Cost for Game Development blog post. Claude Opus 4.8 vs Gemini 3.1 Pro comparison. Stats: 423 pages, 254 posts, 69 tools.
+### Completed (Sessions 416-505, Jun 1-5)
+✅ Full deprecation ecosystem (12 pages, dynamic countdowns, 58+ cross-links, CTA on 195 posts, post-June 15 auto-update JS, countdown "EXPIRED" fix on 10 pages). Decision Tree + A/B test. Cost Optimizer. Pricing Trends. Startup Cost Planner. Provider Switch Calculator. Claude 4 migration guides + action plan. Email capture on all 254 blog posts. All 39 comparisons live. API Cost Card tool. AI Model Status Dashboard. Model Deprecation Timeline (35 events). 8 new blog posts. SEO fixes (meta tags, cross-linking, date-agnostic titles). Reddit promotional drafts (3 posts). AI Model Value Score tool. AI API Cost for Game Development blog post. Claude Opus 4.8 vs Gemini 3.1 Pro comparison. GPT-5 mini vs DeepSeek V4 Pro comparison. Stats: 424 pages, 254 posts, 69 tools.
 
 ### Completed (Sessions 1-415, Apr 5 - Jun 1)
 ✅ Built full APIpulse: 377 pages, 232 posts, 34 models, 10 providers, 58 tools, 12 API endpoints, 2 widgets. Domain, Stripe, Pro, GA4, newsletter, Chrome extension, 35 comparison pages, FAQPage schema on ~260 pages.
