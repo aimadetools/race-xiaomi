@@ -3,16 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Claude 4 Is Retiring June 15 — Find Your Cheaper Replacement | APIpulse</title>
+    <title>Claude 4 Deprecation Guide — 34 Cheaper Alternatives Compared | APIpulse</title>
     <meta name="description" content="Claude 4 Opus and Sonnet 4 retire June 15, 2026. Compare 34 alternatives, calculate your savings, and migrate in under an hour. Save 67-97% on API costs.">
     <meta name="keywords" content="Claude 4 deprecation, Claude 4 retiring, Claude 4 alternative, Claude Opus replacement, Claude Sonnet replacement, Claude 4 migration, cheapest Claude alternative, Claude 4 API shutdown">
-    <meta property="og:title" content="Claude 4 Is Retiring June 15 — Find Your Cheaper Replacement">
+    <meta property="og:title" content="Claude 4 Deprecation Guide — 34 Cheaper Alternatives Compared">
     <meta property="og:description" content="34 alternatives compared. Save 67-97% on API costs. Migrate in under an hour.">
     <meta property="og:type" content="website">
     <meta property="og:image" content="https://getapipulse.com/og-image.png">
     <meta property="og:url" content="https://getapipulse.com/claude-4-deprecation.html">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Claude 4 Is Retiring June 15 — Find Your Cheaper Replacement">
+    <meta name="twitter:title" content="Claude 4 Deprecation Guide — 34 Cheaper Alternatives Compared">
     <meta name="twitter:image" content="https://getapipulse.com/og-image.png">
     <meta name="twitter:description" content="34 alternatives compared. Save 67-97% on API costs.">
     <link rel="canonical" href="https://getapipulse.com/claude-4-deprecation.html">
@@ -605,6 +605,15 @@ curl https://api.anthropic.com/v1/messages \
                 document.getElementById('cd-hours').textContent = '0';
                 document.getElementById('cd-mins').textContent = '0';
                 document.getElementById('cd-secs').textContent = '0';
+                // Update page text for post-deadline
+                var h1 = document.querySelector('h1');
+                if (h1 && h1.textContent.includes('Retiring')) {
+                    h1.innerHTML = 'Claude 4 Has Been Deprecated — <span style="color:var(--accent)">Find Your Cheaper Replacement</span>';
+                }
+                var subtitle = document.querySelector('.subtitle, .hero-subtitle');
+                if (subtitle && subtitle.textContent.includes('retire')) {
+                    subtitle.textContent = 'Claude 4 Opus and Sonnet 4 were retired on June 15, 2026. Compare 34 alternatives and migrate now.';
+                }
                 return;
             }
             var d = Math.floor(diff / (1000*60*60*24));

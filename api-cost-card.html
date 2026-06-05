@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI API Cost Card — See & Share Your Monthly AI Spend | APIpulse</title>
+    <meta name="description" content="Generate your personal AI API cost card. See exactly how much you spend on GPT-5, Claude, Gemini, and more. Share your card on X, LinkedIn, or embed it in your README.">
+    <meta name="keywords" content="AI API cost card, monthly AI spend, GPT-5 cost, Claude cost, AI budget card, share API costs, AI spending visualization">
+    <meta property="og:title" content="AI API Cost Card — See & Share Your Monthly AI Spend">
+    <meta property="og:description" content="Generate your personal AI API cost card. Share your monthly spend on X, LinkedIn, or embed in your README.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://getapipulse.com/og-image.png">
+    <meta property="og:url" content="https://getapipulse.com/api-cost-card.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="AI API Cost Card — See & Share Your Monthly AI Spend">
+    <meta name="twitter:image" content="https://getapipulse.com/og-image.png">
+    <meta name="twitter:description" content="Generate your personal AI API cost card. Share your monthly spend.">
+    <link rel="canonical" href="https://getapipulse.com/api-cost-card.html">
+    <link rel="alternate" type="application/rss+xml" title="APIpulse Blog" href="https://getapipulse.com/rss.xml">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="styles.css">
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0CEP7S9Y3J"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-0CEP7S9Y3J');
+    </script>
+    <script src="analytics.js" defer></script>
+    <script src="dynamic-date.js" defer></script>
+    <script src="shared.js" defer></script>
+    <script src="pricing-data.js" defer></script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "AI API Cost Card Generator",
+        "url": "https://getapipulse.com/api-cost-card.html",
+        "description": "Generate a shareable card showing your monthly AI API costs. Compare pricing across 34 models from 10 providers.",
+        "applicationCategory": "DeveloperApplication",
+        "operatingSystem": "Web",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "What is an AI API Cost Card?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "An AI API Cost Card is a visual summary of your monthly AI API spending. It shows which models you use, how much you spend per month, and how your costs compare to alternatives. You can share it on social media or embed it in your README."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How do I share my AI API cost card?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "After generating your card, click 'Share on X' or 'Share on LinkedIn' to post it directly. You can also copy the card as an image and paste it anywhere. Each card includes a link back to APIpulse so others can create their own."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Is the AI API Cost Card free?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes, completely free. No account required. Enter your usage, generate your card, and share it. The tool uses real-time pricing data from 34 models across 10 providers."
+                }
+            }
+        ]
+    }
+    </script>
+    <style>
+        .content { max-width: 900px; margin: 0 auto; padding: 120px 24px 80px; }
+        h1 { font-size: 36px; font-weight: 800; text-align: center; margin-bottom: 12px; }
+        .subtitle { text-align: center; color: var(--text-secondary); font-size: 17px; margin-bottom: 40px; line-height: 1.6; }
+
+        /* Builder form */
+        .builder {
+            background: var(--bg-secondary); border: 1px solid var(--border);
+            border-radius: 16px; padding: 32px; margin-bottom: 32px;
+        }
+        .builder h2 { font-size: 20px; font-weight: 700; margin-bottom: 20px; }
+        .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px; }
+        .form-group { display: flex; flex-direction: column; gap: 6px; }
+        .form-group label { font-size: 13px; font-weight: 600; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.5px; }
+        .form-group select, .form-group input {
+            padding: 12px 16px; background: var(--bg-card); border: 1px solid var(--border);
+            border-radius: 8px; color: var(--text-primary); font-size: 14px;
+        }
+        .form-group select:focus, .form-group input:focus { outline: 2px solid var(--accent); border-color: var(--accent); }
+        .usage-presets { display: flex; gap: 8px; margin-top: 4px; flex-wrap: wrap; }
+        .usage-presets button {
+            padding: 6px 14px; background: var(--bg-card); border: 1px solid var(--border);
+            border-radius: 6px; color: var(--text-secondary); font-size: 12px; cursor: pointer;
+            transition: all 0.15s;
+        }
+        .usage-presets button:hover, .usage-presets button.active { border-color: var(--accent); color: var(--accent); background: var(--accent-glow); }
+
+        /* Model selector */
+        .model-chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px; }
+        .model-chip {
+            padding: 8px 14px; background: var(--bg-card); border: 1px solid var(--border);
+            border-radius: 8px; font-size: 13px; cursor: pointer; transition: all 0.15s;
+            display: flex; align-items: center; gap: 6px;
+        }
+        .model-chip:hover { border-color: var(--accent); }
+        .model-chip.selected { border-color: var(--accent); background: var(--accent-glow); color: var(--accent); font-weight: 600; }
+        .model-chip .provider-tag { font-size: 10px; color: var(--text-muted); background: var(--bg-secondary); padding: 2px 6px; border-radius: 4px; }
+        .model-chip.selected .provider-tag { background: rgba(99,102,241,0.15); color: var(--accent); }
+
+        /* Generated card */
+        .card-preview { margin-bottom: 32px; }
+        .cost-card {
+            background: linear-gradient(135deg, #0f0f23 0%, #1a1a3e 50%, #0f0f23 100%);
+            border: 1px solid rgba(99,102,241,0.3); border-radius: 20px;
+            padding: 40px; position: relative; overflow: hidden;
+            max-width: 480px; margin: 0 auto;
+        }
+        .cost-card::before {
+            content: ''; position: absolute; top: -50%; right: -50%;
+            width: 200%; height: 200%;
+            background: radial-gradient(circle at 30% 30%, rgba(99,102,241,0.08) 0%, transparent 50%);
+        }
+        .card-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 28px; position: relative; }
+        .card-brand { font-size: 14px; font-weight: 700; color: rgba(255,255,255,0.6); letter-spacing: 2px; text-transform: uppercase; }
+        .card-date { font-size: 12px; color: rgba(255,255,255,0.4); }
+        .card-total-label { font-size: 13px; color: rgba(255,255,255,0.5); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 4px; }
+        .card-total { font-size: 52px; font-weight: 800; color: #fff; line-height: 1; margin-bottom: 4px; position: relative; }
+        .card-total .card-cents { font-size: 24px; vertical-align: super; }
+        .card-period { font-size: 14px; color: rgba(255,255,255,0.4); margin-bottom: 32px; }
+        .card-models { display: flex; flex-direction: column; gap: 12px; margin-bottom: 28px; position: relative; }
+        .card-model-row { display: flex; justify-content: space-between; align-items: center; }
+        .card-model-name { font-size: 14px; color: rgba(255,255,255,0.8); font-weight: 500; }
+        .card-model-provider { font-size: 11px; color: rgba(255,255,255,0.35); margin-left: 8px; }
+        .card-model-cost { font-size: 14px; color: #fff; font-weight: 700; font-variant-numeric: tabular-nums; }
+        .card-bar { height: 4px; background: rgba(255,255,255,0.06); border-radius: 2px; margin-top: 4px; overflow: hidden; }
+        .card-bar-fill { height: 100%; border-radius: 2px; transition: width 0.6s ease; }
+        .card-savings { display: flex; justify-content: space-between; align-items: center; padding: 16px; background: rgba(34,197,94,0.08); border: 1px solid rgba(34,197,94,0.2); border-radius: 12px; margin-bottom: 24px; position: relative; }
+        .card-savings-label { font-size: 13px; color: rgba(255,255,255,0.6); }
+        .card-savings-value { font-size: 20px; font-weight: 800; color: #22c55e; }
+        .card-footer { display: flex; justify-content: space-between; align-items: center; position: relative; }
+        .card-footer-brand { font-size: 13px; color: rgba(255,255,255,0.3); }
+        .card-footer-brand span { color: var(--accent); font-weight: 700; }
+        .card-footer-url { font-size: 12px; color: rgba(255,255,255,0.25); }
+
+        /* Share buttons */
+        .share-section { text-align: center; margin-bottom: 40px; }
+        .share-section h2 { font-size: 22px; font-weight: 700; margin-bottom: 8px; }
+        .share-section p { color: var(--text-secondary); font-size: 15px; margin-bottom: 24px; }
+        .share-buttons { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+        .share-btn {
+            display: inline-flex; align-items: center; gap: 8px;
+            padding: 12px 24px; border-radius: 10px; font-size: 14px; font-weight: 600;
+            cursor: pointer; border: 1px solid var(--border); background: var(--bg-card);
+            color: var(--text-primary); transition: all 0.15s; text-decoration: none;
+        }
+        .share-btn:hover { border-color: var(--accent); transform: translateY(-1px); }
+        .share-btn.x { background: #000; color: #fff; border-color: #333; }
+        .share-btn.x:hover { border-color: #555; }
+        .share-btn.linkedin { background: #0077b5; color: #fff; border-color: #0077b5; }
+        .share-btn.linkedin:hover { background: #006097; }
+        .share-btn.copy { background: var(--accent); color: #fff; border-color: var(--accent); }
+        .share-btn.copy:hover { opacity: 0.9; }
+
+        /* Stats bar */
+        .stats-bar {
+            display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;
+            margin-bottom: 40px;
+        }
+        .stat-card {
+            background: var(--bg-secondary); border: 1px solid var(--border);
+            border-radius: 12px; padding: 20px; text-align: center;
+        }
+        .stat-card .stat-value { font-size: 28px; font-weight: 800; color: var(--accent); }
+        .stat-card .stat-label { font-size: 12px; color: var(--text-muted); margin-top: 4px; }
+
+        /* CTA */
+        .cta-section {
+            text-align: center; padding: 40px;
+            background: linear-gradient(135deg, rgba(99,102,241,0.08), rgba(139,92,247,0.08));
+            border-radius: 16px; border: 1px solid rgba(99,102,241,0.2);
+        }
+        .cta-section h2 { font-size: 24px; font-weight: 700; margin-bottom: 8px; }
+        .cta-section p { color: var(--text-secondary); font-size: 15px; margin-bottom: 20px; }
+
+        @media (max-width: 768px) {
+            .content { padding: 100px 16px 60px; }
+            h1 { font-size: 26px; }
+            .form-row { grid-template-columns: 1fr; }
+            .cost-card { padding: 28px; }
+            .card-total { font-size: 40px; }
+            .stats-bar { grid-template-columns: 1fr; }
+            .share-buttons { flex-direction: column; align-items: center; }
+        }
+    </style>
+    <meta name="theme-color" content="#6366f1">
+</head>
+<body>
+    <a href="#main" class="skip-link">Skip to content</a>
+    <nav>
+        <div class="nav-inner">
+            <a href="index.html" class="logo">API<span>pulse</span></a>
+            <button class="hamburger" onclick="toggleMobileNav()" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+            <div class="nav-links">
+                <a href="calculator.html">Calculator</a>
+                <a href="compare.html">Compare</a>
+                <a href="cost-explorer.html">Explorer</a>
+                <a href="cost-optimizer.html">Optimizer</a>
+                <a href="model-switch.html">Switch</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="use-cases.html">Use Cases</a>
+                <a href="blog.html">Blog</a>
+                <a href="api-cost-card.html" style="color:var(--accent);">Cost Card</a>
+                <a href="api-docs.html" style="color:var(--accent);">API</a>
+                <a href="pro.html" class="nav-cta" onclick="if(window.trackEvent)window.trackEvent('pro_button_clicked',{source:'nav'})">Founding Member — $29</a>
+                <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
+            </div>
+        </div>
+    </nav>
+
+    <main id="main">
+    <div class="content">
+        <h1>Your AI API Cost Card</h1>
+        <p class="subtitle">See exactly how much you spend on AI APIs each month.<br>Share your card on X or LinkedIn — compare costs with other developers.</p>
+
+        <!-- Builder -->
+        <div class="builder">
+            <h2>Build Your Card</h2>
+            <div class="form-row">
+                <div class="form-group">
+                    <label>Primary Model</label>
+                    <select id="model-select">
+                        <option value="">Select a model...</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Monthly Requests</label>
+                    <input type="number" id="requests" value="50000" min="100" step="1000">
+                    <div class="usage-presets">
+                        <button onclick="setRequests(10000)" data-val="10000">10K</button>
+                        <button onclick="setRequests(50000)" data-val="50000" class="active">50K</button>
+                        <button onclick="setRequests(100000)" data-val="100000">100K</button>
+                        <button onclick="setRequests(500000)" data-val="500000">500K</button>
+                        <button onclick="setRequests(1000000)" data-val="1000000">1M</button>
+                    </div>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label>Avg Input Tokens / Request</label>
+                    <input type="number" id="input-tokens" value="800" min="10" step="50">
+                </div>
+                <div class="form-group">
+                    <label>Avg Output Tokens / Request</label>
+                    <input type="number" id="output-tokens" value="400" min="10" step="50">
+                </div>
+            </div>
+            <div class="form-group" style="margin-top:8px;">
+                <label>Add Models to Compare (optional)</label>
+                <div class="model-chips" id="compare-chips"></div>
+            </div>
+        </div>
+
+        <!-- Generated Card -->
+        <div class="card-preview" id="card-preview" style="display:none;">
+            <div class="cost-card" id="cost-card">
+                <div class="card-header">
+                    <div>
+                        <div class="card-brand">APIpulse</div>
+                        <div class="card-date" id="card-date"></div>
+                    </div>
+                    <div style="text-align:right;">
+                        <div class="card-total-label">Monthly Spend</div>
+                        <div class="card-total" id="card-total">$0</div>
+                        <div class="card-period">per month</div>
+                    </div>
+                </div>
+                <div class="card-models" id="card-models"></div>
+                <div class="card-savings" id="card-savings" style="display:none;">
+                    <div class="card-savings-label">Potential savings with cheapest alternative</div>
+                    <div class="card-savings-value" id="card-savings-value">$0/mo</div>
+                </div>
+                <div class="card-footer">
+                    <div class="card-footer-brand"><span>APIpulse</span> — getapipulse.com</div>
+                    <div class="card-footer-url">34 models · 10 providers</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Stats -->
+        <div class="stats-bar">
+            <div class="stat-card">
+                <div class="stat-value" id="stat-total">$0</div>
+                <div class="stat-label">Your Monthly Spend</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value" id="stat-cheapest">$0</div>
+                <div class="stat-label">Cheapest Alternative</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value" id="stat-savings">$0</div>
+                <div class="stat-label">Potential Savings</div>
+            </div>
+        </div>
+
+        <!-- Share -->
+        <div class="share-section" id="share-section" style="display:none;">
+            <h2>Share Your Cost Card</h2>
+            <p>Show other developers how much you spend on AI APIs. Compare costs, find savings.</p>
+            <div class="share-buttons">
+                <button class="share-btn x" onclick="shareOnX()">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                    Share on X
+                </button>
+                <button class="share-btn linkedin" onclick="shareOnLinkedIn()">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                    Share on LinkedIn
+                </button>
+                <button class="share-btn copy" onclick="copyCard()">
+                    📋 Copy Card as Text
+                </button>
+            </div>
+        </div>
+
+        <!-- CTA -->
+        <div class="cta-section">
+            <h2>Want to optimize your AI API costs?</h2>
+            <p>APIpulse Pro gives you saved scenarios, cost reports, and personalized optimization tips. Save up to 40% on your monthly spend.</p>
+            <a href="pricing.html" class="btn-primary" style="display:inline-block;padding:14px 32px;">See Pro Features — $29</a>
+        </div>
+
+        <!-- Email capture -->
+        <div style="max-width:600px;margin:40px auto 0;padding:32px;text-align:center;background:var(--bg-card);border-radius:12px;border:1px solid var(--border);">
+            <h3 style="font-size:18px;margin-bottom:8px;">Get notified when API prices change</h3>
+            <p style="font-size:14px;color:var(--text-secondary);margin-bottom:16px;">No spam. Only pricing updates and new features.</p>
+            <form onsubmit="saveEmail(event)" style="display:flex;gap:8px;max-width:400px;margin:0 auto;">
+                <input type="email" id="email-input" placeholder="you@company.com" required aria-label="Email address"
+                    style="flex:1;padding:12px 16px;border-radius:8px;border:1px solid var(--border);background:var(--bg-secondary);color:var(--text-primary);font-size:14px;">
+                <button type="submit" class="btn-primary" style="padding:12px 24px;white-space:nowrap;">Subscribe</button>
+            </form>
+            <p id="email-msg" style="font-size:13px;color:var(--green);margin-top:12px;display:none;"></p>
+        </div>
+    </div>
+
+    <button class="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">↑</button>
+    </main>
+
+    <footer>
+        <p>Pricing data last verified: <span class="verified-date"></span></p>
+        <p>&copy; 2026 APIpulse. <a href="index.html">Home</a> &middot; <a href="calculator.html">Calculator</a> &middot; <a href="compare.html">Compare</a> &middot; <a href="pricing.html">Pricing</a> &middot; <a href="blog.html">Blog</a> &middot; <a href="api-cost-card.html">Cost Card</a></p>
+    </footer>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        if (typeof API_MODELS === 'undefined') return;
+        initCard();
+    });
+
+    var selectedModels = [];
+    var primaryModel = null;
+
+    function initCard() {
+        var select = document.getElementById('model-select');
+        var nonDeprecated = API_MODELS.filter(function(m) { return !m.deprecated; });
+        var providers = {};
+        nonDeprecated.forEach(function(m) {
+            if (!providers[m.provider]) providers[m.provider] = [];
+            providers[m.provider].push(m);
+        });
+        Object.keys(providers).sort().forEach(function(p) {
+            var optgroup = document.createElement('optgroup');
+            optgroup.label = p;
+            providers[p].sort(function(a,b) { return a.input - b.input; }).forEach(function(m) {
+                var opt = document.createElement('option');
+                opt.value = m.id;
+                opt.textContent = m.name + ' — $' + m.input + '/$' + m.output + ' per 1M tokens';
+                optgroup.appendChild(opt);
+            });
+            select.appendChild(optgroup);
+        });
+        select.value = 'openai-gpt5-mini';
+        primaryModel = getModelById('openai-gpt5-mini');
+
+        // Build compare chips
+        var chips = document.getElementById('compare-chips');
+        var popular = ['openai-gpt5', 'anthropic-sonnet46', 'anthropic-haiku', 'google-gemini3-pro', 'google-flash', 'deepseek-v4-pro', 'mistral-large', 'xai-grok3'];
+        popular.forEach(function(id) {
+            var m = getModelById(id);
+            if (!m) return;
+            var chip = document.createElement('div');
+            chip.className = 'model-chip';
+            chip.dataset.id = id;
+            chip.innerHTML = m.name + '<span class="provider-tag">' + m.provider + '</span>';
+            chip.addEventListener('click', function() { toggleCompare(id, chip); });
+            chips.appendChild(chip);
+        });
+
+        // Event listeners
+        select.addEventListener('change', function() {
+            primaryModel = getModelById(this.value);
+            updateCard();
+        });
+        ['requests', 'input-tokens', 'output-tokens'].forEach(function(id) {
+            document.getElementById(id).addEventListener('input', updateCard);
+        });
+
+        updateCard();
+    }
+
+    function setRequests(val) {
+        document.getElementById('requests').value = val;
+        document.querySelectorAll('.usage-presets button').forEach(function(b) {
+            b.classList.toggle('active', parseInt(b.dataset.val) === val);
+        });
+        updateCard();
+    }
+
+    function toggleCompare(id, chip) {
+        var idx = selectedModels.indexOf(id);
+        if (idx >= 0) {
+            selectedModels.splice(idx, 1);
+            chip.classList.remove('selected');
+        } else {
+            selectedModels.push(id);
+            chip.classList.add('selected');
+        }
+        updateCard();
+    }
+
+    function calcCost(model, requests, inputTokens, outputTokens) {
+        var inputCost = (requests * inputTokens / 1000000) * model.input;
+        var outputCost = (requests * outputTokens / 1000000) * model.output;
+        return inputCost + outputCost;
+    }
+
+    function updateCard() {
+        if (!primaryModel) return;
+        var requests = parseInt(document.getElementById('requests').value) || 50000;
+        var inputTokens = parseInt(document.getElementById('input-tokens').value) || 800;
+        var outputTokens = parseInt(document.getElementById('output-tokens').value) || 400;
+
+        var primaryCost = calcCost(primaryModel, requests, inputTokens, outputTokens);
+        var allModels = [primaryModel].concat(selectedModels.map(getModelById).filter(Boolean));
+        var costs = allModels.map(function(m) { return { model: m, cost: calcCost(m, requests, inputTokens, outputTokens) }; });
+        costs.sort(function(a,b) { return b.cost - a.cost; });
+        var maxCost = costs[0].cost || 1;
+        var cheapest = costs[costs.length - 1];
+
+        // Update card
+        document.getElementById('card-preview').style.display = 'block';
+        document.getElementById('share-section').style.display = 'block';
+        document.getElementById('card-date').textContent = new Date().toLocaleDateString('en-US', { month: 'long', year: 'numeric' });
+
+        var totalParts = primaryCost.toFixed(2).split('.');
+        document.getElementById('card-total').innerHTML = '$' + totalParts[0] + '<span class="card-cents">.' + totalParts[1] + '</span>';
+
+        // Models list
+        var modelsHtml = '';
+        var colors = ['#6366f1', '#8b5cf6', '#22c55e', '#f59e0b', '#ef4444'];
+        costs.forEach(function(c, i) {
+            var pct = (c.cost / maxCost * 100);
+            var color = colors[i % colors.length];
+            var isPrimary = c.model.id === primaryModel.id;
+            modelsHtml += '<div class="card-model-row">' +
+                '<div><span class="card-model-name">' + (isPrimary ? '● ' : '') + c.model.name + '</span><span class="card-model-provider">' + c.model.provider + '</span></div>' +
+                '<div class="card-model-cost">$' + c.cost.toFixed(2) + '/mo</div></div>' +
+                '<div class="card-bar"><div class="card-bar-fill" style="width:' + pct + '%;background:' + color + ';"></div></div>';
+        });
+        document.getElementById('card-models').innerHTML = modelsHtml;
+
+        // Savings
+        if (costs.length > 1 && cheapest.model.id !== primaryModel.id) {
+            var savings = primaryCost - cheapest.cost;
+            document.getElementById('card-savings').style.display = 'flex';
+            document.getElementById('card-savings-value').textContent = '$' + savings.toFixed(2) + '/mo';
+        } else {
+            document.getElementById('card-savings').style.display = 'none';
+        }
+
+        // Stats
+        document.getElementById('stat-total').textContent = '$' + primaryCost.toFixed(2);
+        document.getElementById('stat-cheapest').textContent = '$' + cheapest.cost.toFixed(2);
+        document.getElementById('stat-savings').textContent = '$' + (primaryCost - cheapest.cost).toFixed(2);
+
+        // Track
+        if (window.trackEvent) window.trackEvent('cost_card_generated', {
+            primary_model: primaryModel.id,
+            monthly_cost: Math.round(primaryCost),
+            models_compared: costs.length
+        });
+    }
+
+    function getShareText() {
+        var requests = parseInt(document.getElementById('requests').value) || 50000;
+        var primaryCost = calcCost(primaryModel, requests,
+            parseInt(document.getElementById('input-tokens').value) || 800,
+            parseInt(document.getElementById('output-tokens').value) || 400);
+        return 'My AI API cost card: $' + primaryCost.toFixed(2) + '/mo on ' + primaryModel.name +
+            ' (' + (requests/1000).toFixed(0) + 'K requests/mo).\n\n' +
+            'Generate yours at getapipulse.com/api-cost-card.html\n\n#AI #LLM #APICosts #DevTools';
+    }
+
+    function shareOnX() {
+        var text = encodeURIComponent(getShareText());
+        window.open('https://twitter.com/intent/tweet?text=' + text, '_blank');
+        if (window.trackEvent) window.trackEvent('cost_card_shared', { platform: 'x' });
+    }
+
+    function shareOnLinkedIn() {
+        var text = encodeURIComponent(getShareText());
+        window.open('https://www.linkedin.com/sharing/share-offsite/?url=' + encodeURIComponent('https://getapipulse.com/api-cost-card.html') + '&summary=' + text, '_blank');
+        if (window.trackEvent) window.trackEvent('cost_card_shared', { platform: 'linkedin' });
+    }
+
+    function copyCard() {
+        var text = getShareText();
+        navigator.clipboard.writeText(text).then(function() {
+            var btn = document.querySelector('.share-btn.copy');
+            btn.textContent = '✓ Copied!';
+            setTimeout(function() { btn.textContent = '📋 Copy Card as Text'; }, 2000);
+        });
+        if (window.trackEvent) window.trackEvent('cost_card_shared', { platform: 'copy' });
+    }
+    </script>
+</body>
+</html>
