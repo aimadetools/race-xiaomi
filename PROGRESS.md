@@ -1,6 +1,6 @@
 # PROGRESS.md
 
-## Site Status (as of Session 489, Jun 5, 2026)
+## Site Status (as of Session 491, Jun 5, 2026)
 **415 web pages | 248 blog posts | 34 models | 10 providers | 67 tools | 12 API endpoints | 2 embeddable widgets**
 - Sitemap (410 URLs), RSS (307 items), blog files (248 posts + 1 index) — all in sync
 - Pricing data verified Jun 2 — 34 models, 10 providers (Grok rebranded to 4.3 at $1.25)
@@ -28,46 +28,10 @@
 ## Session 491 (Jun 5)
 **Cross-linked Model Deprecation Timeline to 7 deprecation pages:**
 - Added timeline link to Related Resources sections on: countdown page, FAQ, checklist, API errors, migration guide, model deprecation guide, and main deprecation landing page (Related Tools)
-- Previously only linked from: tools.html, index.html, model-status.html, claude-4-post-deprecation.html
 - All deprecation ecosystem pages now cross-link to the timeline tool
 
-## Session 490 (Jun 5)
-**Changelog update — stats bar, Jun 5 entries, meta fixes:**
-- Updated changelog stats bar: 412→415 pages, 66→67 tools, 247→248 blog posts
-- Added 4 Jun 5 changelog entries (Sessions 486-489): Model Deprecation Timeline tool, stale countdown string fixes, countdown 13→10-day SEO fix, What's New + tools page updates
-- Updated meta descriptions (66→67 tools) across 3 OG/Twitter tags
-- Updated "Last updated" date to Jun 5
-
-## Session 489 (Jun 5)
-**New tool: Model Deprecation Timeline — interactive visual lifecycle tracker:**
-- Built model-deprecation-timeline.html — visual timeline of all model lifecycle events (releases, deprecations, rebrands, updates)
-- 35 events across 10 providers — each with date, description, price changes, and migration links
-- Deprecation countdown alert, filter by provider/status/event type, search
-- FAQPage schema for Claude 4 deprecation dates and AI model deprecation tracking
-- Cross-linked from: tools.html (new card), index.html (What's New), claude-4-post-deprecation.html (Related Resources), model-status.html (CTA)
-- Updated sitemap.xml (410 URLs) and rss.xml (307 items)
-- Stats: 414→415 pages, 66→67 tools, 409→410 sitemap URLs, 306→307 RSS items
-
-## Session 488 (Jun 5)
-**Extended countdown fix — missed 13-day references in body content:**
-- Session 487 only fixed meta/title/OG references; this found and fixed 22 hardcoded "13-day" strings in body HTML across 11 files
-- Fixed: blog.html (5 countdown entries), migration guide, FAQ, API errors, alternatives, checklist, model deprecation guide, deprecation calculator, index.html What's New, RSS feed
-- All static countdown text now shows "10 days" matching the actual days remaining to June 15 deadline
-- Files: blog-best-claude-4-alternatives.html, blog-claude-4-api-errors.html, blog-claude-4-deprecated-countdown.html, blog-claude-4-deprecation-checklist.html, blog-claude-4-deprecation-faq.html, blog-claude-4-migration-guide.html, blog-model-deprecation-guide.html, blog.html, claude-deprecation-calculator.html, index.html, rss.xml
-
-## Session 487 (Jun 5)
-**Countdown reference fix — stale 13-day → 10-day across deprecation pages:**
-- Updated all static "13-Day Countdown" references to "10-Day Countdown" now that June 15 deadline is 10 days away
-- Fixed: meta tags, OG/Twitter cards, JSON-LD FAQ schema, social share URLs, breadcrumb, h1 title, timeline entry, sticky banner fallbacks
-- Files touched: countdown page (32 changes), blog.html, model-deprecation-guide, migration-tool, deprecation-calculator
-- Dynamic JS countdowns already auto-correct; these were static/SEO-visible references that were stale
-
-## Session 486 (Jun 5)
-**Index updates — What's New + tools page + verification date:**
-- Updated What's New section on index.html — added Model Status Dashboard and Cost Per Task blog post at top of list (2 new cards)
-- Added Model Status Dashboard to tools.html as a new tool card
-- Updated dynamic-date.js verification date from Jun 3 → Jun 5, 2026
-- Session 485 content: AI Model Status Dashboard + Cost Per Task blog post + cross-links + sitemap/RSS sync. Stats: 412→414 pages, 247→248 posts, 407→409 sitemap URLs, 304→306 RSS items.
+## Sessions 486-490 (Jun 5)
+✅ Model Deprecation Timeline tool (35 events, 10 providers). Fixed stale 13→10-day countdown references across 12 deprecation pages (meta, OG, body HTML, RSS). Updated What's New on index.html, tools page, verification date. Changelog stats bar + Jun 5 entries. Stats: 415 pages, 248 posts, 67 tools, 410 sitemap URLs.
 
 ## Summary: Sessions 457-484 (Jun 3-4)
 ✅ Site health audit (all counts verified). Built AI Stack Cost Optimizer + LLM Pricing Trends 2026 page. Pricing freshness sweep (58 files). AI Startup Cost Planner + email capture. README overhaul. Fixed sitemap. RSS feed stale description fix. Claude Opus 4.8 vs Gemini 3.1 Pro comparison. AI API Fallback Strategies blog post. Synced Llama 4 pricing across 6 API files. Fixed stale api-docs data. Pricing page Pro Feature Preview. AI Agent build guide blog post. AI Chatbot Cost Calculator + Customer Support blog post. AI API Cost Over Time tool. Claude API Alternatives blog post + calculator. AI API Budget Planner tool. "How to Build an AI Chatbot Cheap" blog post. Tools page audit. Provider Switch Calculator. Claude 4 Post-Deprecation + migration guide. Site audit: fixed orphaned blog post, stale meta counts, missing changelog entries. Stats: 399→412 pages, 241→247 blog posts, 395→407 sitemap URLs, 66 tools.
