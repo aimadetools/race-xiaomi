@@ -274,10 +274,25 @@
                 var days = diff > 0 ? Math.ceil(diff / 86400000) : 0;
                 var el = document.getElementById('cd-days');
                 if (el) el.textContent = days;
-                var cta = document.getElementById('ctaDeadline');
-                if (cta) cta.textContent = 'Deadline: June 15 — ' + days + ' days left';
-                var faq = document.getElementById('faqDaysText');
-                if (faq) faq.textContent = 'Claude 4 Opus and Claude Sonnet 4 will stop working on June 15, 2026. You have ' + days + ' days to complete your migration.';
+                if (diff <= 0) {
+                    var h1 = document.querySelector('h1');
+                    if (h1) h1.innerHTML = 'Claude 4 Has Been Deprecated — <span style="color:var(--accent)">What You Need to Know</span>';
+                    var subtitle = document.querySelector('.subtitle');
+                    if (subtitle) subtitle.innerHTML = 'Claude 4 Opus and Claude Sonnet 4 were <strong>retired on June 15, 2026</strong>. API calls to these model IDs now return errors. Here\'s how to migrate.';
+                    var cta = document.getElementById('ctaDeadline');
+                    if (cta) cta.textContent = 'Claude 4 was deprecated on June 15 — migrate now';
+                    var faq = document.getElementById('faqDaysText');
+                    if (faq) faq.textContent = 'Claude 4 Opus and Claude Sonnet 4 were retired on June 15, 2026. API calls to these model IDs now return errors. Migrate to Claude Opus 4.8 or Claude Sonnet 4.6.';
+                    var alert = document.querySelector('.alert p');
+                    if (alert) alert.innerHTML = '<strong>Claude 4 is now deprecated:</strong> API calls to <code>claude-4-opus</code> and <code>claude-sonnet-4</code> now return errors. Your API key still works — update the model name string.';
+                    var label = document.querySelector('.countdown-item .label');
+                    if (label && label.textContent === 'Days Left') label.textContent = 'Status';
+                } else {
+                    var cta = document.getElementById('ctaDeadline');
+                    if (cta) cta.textContent = 'Deadline: June 15 — ' + days + ' days left';
+                    var faq = document.getElementById('faqDaysText');
+                    if (faq) faq.textContent = 'Claude 4 Opus and Claude Sonnet 4 will stop working on June 15, 2026. You have ' + days + ' days to complete your migration.';
+                }
             })();
         </script>
 

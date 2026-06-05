@@ -502,6 +502,16 @@
         const days = Math.max(0, Math.ceil(diff / (1000 * 60 * 60 * 24)));
         const el = document.getElementById('days-left');
         if (el) el.textContent = days;
+        if (diff <= 0) {
+            var label = document.querySelector('.countdown-banner .label');
+            if (label) label.textContent = 'Claude 4 Opus & Sonnet 4 have been deprecated';
+            var h1 = document.querySelector('h1');
+            if (h1) h1.innerHTML = 'Claude 4 Has Been Deprecated — <span style="color:var(--accent)">Migration Action Plan</span>';
+            var subtitle = document.querySelector('.subtitle');
+            if (subtitle) subtitle.innerHTML = 'Claude 4 Opus and Sonnet 4 were <strong>retired on June 15, 2026</strong>. API calls to these models now return errors. Here\'s exactly what to do to migrate — and save 67-99%.';
+            var alert = document.querySelector('.alert');
+            if (alert) alert.innerHTML = '<strong>Claude 4 is now deprecated.</strong> <code>claude-4-opus</code> and <code>claude-sonnet-4</code> return errors. Migrate now using the steps below.';
+        }
     })();
     </script>
 </body>

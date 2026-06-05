@@ -280,7 +280,15 @@
                 var diff = dep - now;
                 var days = diff > 0 ? Math.ceil(diff / 86400000) : 0;
                 var el = document.getElementById('daysLeftText');
-                if (el) el.textContent = 'You have ' + days + ' days';
+                if (diff <= 0) {
+                    if (el) el.textContent = 'Claude 4 was deprecated on June 15, 2026.';
+                    var h1 = document.querySelector('h1');
+                    if (h1) h1.innerHTML = 'Claude 4 Has Been Deprecated — <span style="color:var(--accent)">Migration Checklist</span>';
+                    var subtitle = document.querySelector('.subtitle');
+                    if (subtitle) subtitle.innerHTML = 'Claude 4 Opus and Claude Sonnet 4 were <strong>retired on June 15, 2026</strong>. API calls to these model IDs now return errors. This checklist walks you through every step to migrate — it\'s not too late.';
+                } else {
+                    if (el) el.textContent = 'You have ' + days + ' days';
+                }
             })();
         </script>
 

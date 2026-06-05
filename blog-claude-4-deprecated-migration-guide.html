@@ -162,11 +162,27 @@
 
         <h1>Claude 4 Deprecated: Complete Migration Guide for Developers</h1>
 
-        <div class="callout callout-red">
-            <strong>Deadline: June 15, 2026.</strong> Claude 4 Opus and Claude Sonnet 4 are being retired. API calls using these model IDs will return errors after this date. You have 11 days to migrate.
+        <div class="callout callout-red" id="deprecationCallout">
+            <strong>Deadline: June 15, 2026.</strong> Claude 4 Opus and Claude Sonnet 4 are being retired. API calls using these model IDs will return errors after this date. <span id="daysLeftText">You have 11 days to migrate</span>.
         </div>
+        <script>
+            (function(){
+                var dep = new Date('2026-06-15T00:00:00');
+                var now = new Date();
+                var diff = dep - now;
+                var days = diff > 0 ? Math.ceil(diff / 86400000) : 0;
+                var el = document.getElementById('daysLeftText');
+                if (diff <= 0) {
+                    if (el) el.textContent = 'Claude 4 was deprecated on June 15, 2026. API calls now return errors.';
+                    var callout = document.getElementById('deprecationCallout');
+                    if (callout) { callout.querySelector('strong').textContent = 'Claude 4 is now deprecated.'; }
+                } else {
+                    if (el) el.textContent = 'You have ' + days + ' days to migrate';
+                }
+            })();
+        </script>
 
-        <p>Anthropic is retiring <strong>Claude 4 Opus</strong> and <strong>Claude Sonnet 4</strong> on June 15, 2026. If your code uses <code>claude-4-opus</code> or <code>claude-sonnet-4</code> as the model name, it will break after the deadline.</p>
+        <p>Anthropic retired <strong>Claude 4 Opus</strong> and <strong>Claude Sonnet 4</strong> on June 15, 2026. If your code uses <code>claude-4-opus</code> or <code>claude-sonnet-4</code> as the model name, it will break.</p>
 
         <p>The good news: migration is a one-line change per model reference, and the direct replacements are <strong>67% cheaper</strong>. This guide covers exactly what changed, how to migrate, and which alternative models save you the most money.</p>
 

@@ -1,6 +1,6 @@
 # PROGRESS.md
 
-## Site Status (as of Session 498, Jun 5, 2026)
+## Site Status (as of Session 499, Jun 5, 2026)
 **419 web pages | 251 blog posts | 34 models | 10 providers | 68 tools | 12 API endpoints | 2 embeddable widgets**
 - Sitemap (414 URLs), RSS (310 items), blog files (251 posts + 1 index) — all in sync
 - Pricing data verified Jun 2 — 34 models, 10 providers (Grok rebranded to 4.3 at $1.25)
@@ -24,6 +24,14 @@
 4. **Chrome Web Store** — Publish extension ($5 from budget). HELP-REQUEST filed Jun 1.
 
 ---
+
+## Session 499 (Jun 5)
+**Fix remaining stale page/tool counts:**
+- Changelog stats bar: 416→419 pages, 67→68 tools
+- Changelog meta/OG/Twitter descriptions: 67→68 tools
+- Pricing page: 250→251 guides (comparison table)
+- Blog page: 250→251 guides (Pro upsell section)
+- Session 497 fixed most stale counts; these 4 references were missed
 
 ## Session 498 (Jun 5)
 **New blog post + API Cost Card follow-ups:**
@@ -59,8 +67,8 @@
 - Site audit: 0 broken links, 0 orphaned pages (all intentional: 404, thank-you, redirect, snippet, noindex funnel)
 - Stats: 416 pages, 249 posts, 67 tools
 
-## Summary: Sessions 486-498 (Jun 5)
-✅ AI Model Status Dashboard. Model Deprecation Timeline (35 events, 10 providers). Fixed stale 13→10-day countdown across 12 deprecation pages + meta/OG tags. Cross-linked timeline to 7 deprecation pages. Fixed stale article:modified_time on 5 pages. Auto-injected email capture on all 250 blog posts. New "AI Discord Bot Cost 2026" blog post. Fixed missing Cost Per Task post in blog index. Changelog stats updated. API Cost Card tool + deprecation meta tag fixes. "Claude 4 10-Day Action Plan" blog post. "How Much Do Developers Spend on AI APIs?" blog post + Cost Card nav links + calculator CTA. Stats: 415→419 pages, 248→251 posts, 67→68 tools.
+## Summary: Sessions 486-499 (Jun 5)
+✅ AI Model Status Dashboard. Model Deprecation Timeline (35 events, 10 providers). Fixed stale 13→10-day countdown across 12 deprecation pages + meta/OG tags. Cross-linked timeline to 7 deprecation pages. Fixed stale article:modified_time on 5 pages. Auto-injected email capture on all 251 blog posts. New "AI Discord Bot Cost 2026" blog post. Fixed missing Cost Per Task post in blog index. Changelog stats updated. API Cost Card tool + deprecation meta tag fixes. "Claude 4 10-Day Action Plan" blog post. "How Much Do Developers Spend on AI APIs?" blog post + Cost Card nav links + calculator CTA. Fixed stale page/tool counts (changelog, pricing, blog). Stats: 419 pages, 251 posts, 68 tools.
 
 ## Summary: Sessions 435-496 (Jun 1-5)
 ✅ Claude 4 deprecation ecosystem (12 pages, dynamic countdowns, 58+ cross-links, CTA on 195 posts). Decision Tree + A/B test. Cost Optimizer. Pricing Trends. Startup Cost Planner. Provider Switch Calculator. Claude 4 Post-Deprecation + migration guide. Email capture on all 249 blog posts. Site health audits. All 37 comparisons live. AI Model Status Dashboard. Model Deprecation Timeline (35 events). SEO fixes (countdown refs, meta dates, pricing report schema, cross-linking). "Claude 4 10-Day Action Plan" blog post (day-by-day guide, cost comparisons, cross-linked from 4 pages). Stats: 380→417 pages, 233→250 posts, 58→67 tools.
