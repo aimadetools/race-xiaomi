@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Model Value Score — Best Quality-per-Dollar Ranking | APIpulse</title>
+    <meta name="description" content="Rank all 34 AI models by value score — quality benchmarks divided by cost. Find the best bang-for-buck LLM API for your use case. Interactive scatter plot.">
+    <meta name="keywords" content="AI model value score, best value LLM, cheapest AI API quality, AI cost per quality, GPT-5 value, Claude value, Gemini value, LLM benchmark cost">
+    <meta property="og:title" content="AI Model Value Score — Best Quality-per-Dollar Ranking">
+    <meta property="og:description" content="Rank all 34 AI models by value score — quality benchmarks divided by cost. Find the best bang-for-buck LLM.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://getapipulse.com/og-image.png">
+    <meta property="og:url" content="https://getapipulse.com/model-value-score.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="AI Model Value Score — Best Quality-per-Dollar">
+    <meta name="twitter:image" content="https://getapipulse.com/og-image.png">
+    <meta name="twitter:description" content="Rank all 34 AI models by value score. Find the best bang-for-buck LLM.">
+    <link rel="canonical" href="https://getapipulse.com/model-value-score.html">
+    <link rel="alternate" type="application/rss+xml" title="APIpulse Blog" href="https://getapipulse.com/rss.xml">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="styles.css">
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0CEP7S9Y3J"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-0CEP7S9Y3J');
+    </script>
+    <script src="analytics.js" defer></script>
+    <script src="dynamic-date.js" defer></script>
+    <script src="shared.js" defer></script>
+    <script src="pricing-data.js" defer></script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "AI Model Value Score",
+        "url": "https://getapipulse.com/model-value-score.html",
+        "description": "Rank all 34 AI models by value score — quality benchmarks divided by cost. Find the best bang-for-buck LLM API.",
+        "applicationCategory": "DeveloperApplication",
+        "operatingSystem": "Web",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "What is an AI Model Value Score?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "A Value Score combines a model's estimated quality (based on MMLU, HumanEval, and other benchmarks) with its API cost. The formula is: Value Score = Quality Score / Average Cost per 1M tokens. Higher scores mean better quality per dollar spent."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Which AI model has the best value score?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Budget models like DeepSeek V4 Flash, Gemini 2.0 Flash Lite, and GPT-oss 20B consistently rank highest on value score because they offer surprisingly capable performance at extremely low prices. For premium use cases, GPT-5 and Gemini 2.5 Pro offer the best quality-per-dollar."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How is the quality score calculated?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Quality scores are estimated from published benchmarks including MMLU (general knowledge), HumanEval (coding), MATH (reasoning), and instruction-following evaluations. Scores range from 50 (basic) to 100 (frontier). These are estimates — actual performance varies by task."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Should I always pick the highest value score model?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Not necessarily. Value score measures efficiency, not absolute capability. For complex reasoning, code generation, or tasks requiring large context windows, a premium model with a lower value score may be worth the extra cost. Use value score to find the cheapest model that meets your quality threshold."
+                }
+            }
+        ]
+    }
+    </script>
+    <style>
+        .content { max-width: 1100px; margin: 0 auto; padding: 120px 24px 80px; }
+        h1 { font-size: clamp(28px, 4vw, 42px); font-weight: 800; text-align: center; margin-bottom: 12px; }
+        .subtitle { text-align: center; color: var(--text-secondary); font-size: 17px; margin-bottom: 48px; max-width: 700px; margin-left: auto; margin-right: auto; }
+
+        /* Filters */
+        .filters { display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; margin-bottom: 32px; }
+        .filter-group { display: flex; align-items: center; gap: 8px; }
+        .filter-group label { font-size: 13px; color: var(--text-secondary); font-weight: 600; }
+        .filter-group select, .filter-group input {
+            background: var(--bg-card); border: 1px solid var(--border); color: var(--text-primary);
+            padding: 8px 12px; border-radius: 8px; font-size: 14px;
+        }
+        .filter-group select:focus, .filter-group input:focus { outline: none; border-color: var(--accent); }
+
+        /* Chart container */
+        .chart-container {
+            background: var(--bg-card); border: 1px solid var(--border); border-radius: 16px;
+            padding: 32px; margin-bottom: 40px; position: relative; overflow: hidden;
+        }
+        .chart-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px; }
+        .chart-header h2 { font-size: 20px; font-weight: 700; }
+        .chart-legend { display: flex; gap: 16px; flex-wrap: wrap; }
+        .legend-item { display: flex; align-items: center; gap: 6px; font-size: 12px; color: var(--text-secondary); }
+        .legend-dot { width: 10px; height: 10px; border-radius: 50%; }
+
+        canvas { width: 100% !important; height: 400px !important; }
+
+        /* Ranking table */
+        .ranking-table {
+            width: 100%; border-collapse: collapse; background: var(--bg-card);
+            border: 1px solid var(--border); border-radius: 16px; overflow: hidden;
+        }
+        .ranking-table th {
+            text-align: left; padding: 14px 16px; font-size: 12px; font-weight: 700;
+            color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px;
+            border-bottom: 1px solid var(--border); cursor: pointer; user-select: none;
+            background: var(--bg-secondary);
+        }
+        .ranking-table th:hover { color: var(--accent); }
+        .ranking-table th.sorted { color: var(--accent); }
+        .ranking-table td { padding: 14px 16px; border-bottom: 1px solid var(--border); font-size: 14px; }
+        .ranking-table tr:last-child td { border-bottom: none; }
+        .ranking-table tr:hover { background: var(--bg-card-hover); }
+
+        .rank-badge {
+            display: inline-flex; align-items: center; justify-content: center;
+            width: 28px; height: 28px; border-radius: 8px; font-weight: 800; font-size: 13px;
+        }
+        .rank-1 { background: linear-gradient(135deg, #fbbf24, #f59e0b); color: #000; }
+        .rank-2 { background: linear-gradient(135deg, #94a3b8, #64748b); color: #000; }
+        .rank-3 { background: linear-gradient(135deg, #d97706, #b45309); color: #fff; }
+        .rank-other { background: var(--bg-secondary); color: var(--text-muted); }
+
+        .model-name { font-weight: 600; }
+        .provider-tag {
+            display: inline-block; padding: 2px 8px; border-radius: 6px;
+            font-size: 11px; font-weight: 600; margin-left: 8px;
+        }
+        .tier-badge {
+            display: inline-block; padding: 2px 8px; border-radius: 6px;
+            font-size: 11px; font-weight: 600;
+        }
+        .tier-premium { background: rgba(239, 68, 68, 0.15); color: #ef4444; }
+        .tier-mid { background: rgba(245, 158, 11, 0.15); color: #f59e0b; }
+        .tier-budget { background: rgba(34, 197, 94, 0.15); color: #22c55e; }
+
+        .value-bar {
+            height: 8px; border-radius: 4px; background: var(--bg-secondary);
+            overflow: hidden; min-width: 80px;
+        }
+        .value-bar-fill { height: 100%; border-radius: 4px; transition: width 0.5s ease; }
+
+        .cost-cell { font-variant-numeric: tabular-nums; }
+
+        /* Info box */
+        .info-box {
+            background: var(--bg-card); border: 1px solid var(--border); border-radius: 16px;
+            padding: 24px; margin-top: 40px;
+        }
+        .info-box h3 { font-size: 18px; font-weight: 700; margin-bottom: 12px; }
+        .info-box p { color: var(--text-secondary); font-size: 14px; line-height: 1.7; margin-bottom: 12px; }
+        .info-box ul { color: var(--text-secondary); font-size: 14px; line-height: 1.7; padding-left: 20px; }
+        .info-box li { margin-bottom: 6px; }
+
+        .top-picks { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin: 32px 0; }
+        .pick-card {
+            background: var(--bg-card); border: 1px solid var(--border); border-radius: 14px;
+            padding: 24px; text-align: center;
+        }
+        .pick-card h3 { font-size: 16px; font-weight: 700; margin-bottom: 4px; }
+        .pick-card .pick-label { font-size: 12px; color: var(--text-muted); margin-bottom: 12px; }
+        .pick-card .pick-model { font-size: 22px; font-weight: 800; color: var(--accent); margin-bottom: 4px; }
+        .pick-card .pick-provider { font-size: 13px; color: var(--text-secondary); margin-bottom: 8px; }
+        .pick-card .pick-score { font-size: 14px; color: var(--green); font-weight: 600; }
+        .pick-card .pick-cost { font-size: 13px; color: var(--text-muted); margin-top: 4px; }
+
+        @media (max-width: 768px) {
+            .ranking-table { font-size: 13px; }
+            .ranking-table th, .ranking-table td { padding: 10px 8px; }
+            .provider-tag { display: none; }
+        }
+    </style>
+</head>
+<body>
+    <nav id="nav"></nav>
+
+    <div class="content">
+        <h1>AI Model Value Score</h1>
+        <p class="subtitle">Rank all 34 LLMs by quality-per-dollar. Find the cheapest model that meets your quality bar — or the most capable model within your budget.</p>
+
+        <div class="filters">
+            <div class="filter-group">
+                <label>Provider:</label>
+                <select id="providerFilter">
+                    <option value="all">All Providers</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <label>Tier:</label>
+                <select id="tierFilter">
+                    <option value="all">All Tiers</option>
+                    <option value="Premium">Premium</option>
+                    <option value="Mid">Mid</option>
+                    <option value="Budget">Budget</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <label>Max Cost ($/1M avg):</label>
+                <input type="number" id="maxCost" placeholder="e.g. 5.00" step="0.5" min="0" style="width: 120px;">
+            </div>
+        </div>
+
+        <!-- Top Picks -->
+        <div class="top-picks" id="topPicks"></div>
+
+        <!-- Scatter Plot -->
+        <div class="chart-container">
+            <div class="chart-header">
+                <h2>Quality vs Cost — Scatter Plot</h2>
+                <div class="chart-legend">
+                    <div class="legend-item"><div class="legend-dot" style="background:#ef4444"></div>Premium</div>
+                    <div class="legend-item"><div class="legend-dot" style="background:#f59e0b"></div>Mid</div>
+                    <div class="legend-item"><div class="legend-dot" style="background:#22c55e"></div>Budget</div>
+                </div>
+            </div>
+            <canvas id="scatterChart"></canvas>
+        </div>
+
+        <!-- Ranking Table -->
+        <div style="overflow-x:auto;">
+            <table class="ranking-table" id="rankingTable">
+                <thead>
+                    <tr>
+                        <th data-sort="rank" class="sorted">#</th>
+                        <th data-sort="name">Model</th>
+                        <th data-sort="tier">Tier</th>
+                        <th data-sort="quality">Quality</th>
+                        <th data-sort="inputCost">Input $/1M</th>
+                        <th data-sort="outputCost">Output $/1M</th>
+                        <th data-sort="avgCost">Avg Cost</th>
+                        <th data-sort="value">Value Score</th>
+                    </tr>
+                </thead>
+                <tbody id="tableBody"></tbody>
+            </table>
+        </div>
+
+        <!-- Info -->
+        <div class="info-box">
+            <h3>How Value Score Works</h3>
+            <p>Value Score = Quality Score / Average Cost per 1M tokens. Higher is better — you get more capability per dollar.</p>
+            <ul>
+                <li><strong>Quality Score</strong> (50-100): Estimated from MMLU, HumanEval, MATH, and instruction-following benchmarks. Frontier models score 90+, mid-tier 80-90, budget 65-85.</li>
+                <li><strong>Average Cost</strong>: Mean of input and output pricing per 1M tokens. A model with $1.00 input / $5.00 output has avg cost $3.00.</li>
+                <li><strong>Value Score</strong>: Quality / Avg Cost. A model scoring 90 quality at $3.00 avg cost = 30.0 value score. A model scoring 75 at $0.50 avg cost = 150.0 value score.</li>
+            </ul>
+            <p style="margin-top:16px"><strong>Tip:</strong> For production workloads, set a quality threshold first (e.g. 85+), then sort by value score within that threshold to find the cheapest model that meets your bar.</p>
+        </div>
+    </div>
+
+    <footer id="footer"></footer>
+
+    <script>
+    // Quality scores — estimated from public benchmarks (MMLU, HumanEval, MATH, Arena Elo)
+    const QUALITY_SCORES = {
+        'openai-gpt55': 97,
+        'openai-gpt55-pro': 99,
+        'openai-gpt53-codex': 91,
+        'openai-gpt5': 93,
+        'openai-gpt5-mini': 82,
+        'openai-gpt-oss-120b': 78,
+        'openai-gpt-oss-20b': 65,
+        'openai-gpt4o': 88,
+        'openai-gpt4o-mini': 76,
+        'anthropic-opus48': 96,
+        'anthropic-opus47': 95,
+        'anthropic-opus': 94,
+        'anthropic-sonnet46': 90,
+        'anthropic-sonnet': 89,
+        'anthropic-haiku': 80,
+        'google-gemini3-pro': 92,
+        'google-pro': 88,
+        'google-flash': 78,
+        'google-flash-lite': 70,
+        'deepseek-v4-pro': 85,
+        'deepseek-v4-flash': 77,
+        'deepseek-v3': 74,
+        'mistral-large': 82,
+        'mistral-small': 75,
+        'cohere-command-r-plus': 81,
+        'cohere-command-r': 72,
+        'llama-4-scout': 80,
+        'llama-4-maverick': 82,
+        'llama-3.1-70b': 76,
+        'llama-3.1-8b': 62,
+        'kimi-k26': 79,
+        'xai-grok3': 84,
+        'xai-grok3-mini': 73,
+        'ai21-jamba': 77,
+    };
+
+    // Provider colors
+    const PROVIDER_COLORS = {
+        'OpenAI': '#10a37f',
+        'Anthropic': '#d97706',
+        'Google': '#4285f4',
+        'DeepSeek': '#6366f1',
+        'Mistral': '#f43f5e',
+        'Cohere': '#39d353',
+        'Meta (Together.ai)': '#1877f2',
+        'Moonshot': '#8b5cf6',
+        'xAI': '#94a3b8',
+        'AI21': '#06b6d4',
+    };
+
+    // Tier colors for scatter
+    const TIER_COLORS = { Premium: '#ef4444', Mid: '#f59e0b', Budget: '#22c55e' };
+
+    let allModels = [];
+    let sortKey = 'value';
+    let sortDir = -1; // descending
+
+    function init() {
+        // Enrich models with quality + value score
+        allModels = API_MODELS.filter(m => !m.deprecated).map(m => {
+            const quality = QUALITY_SCORES[m.id] || 70;
+            const avgCost = (m.input + m.output) / 2;
+            const value = avgCost > 0 ? quality / avgCost : 0;
+            return { ...m, quality, avgCost, value };
+        });
+
+        // Populate provider filter
+        const providers = [...new Set(allModels.map(m => m.provider))].sort();
+        const sel = document.getElementById('providerFilter');
+        providers.forEach(p => {
+            const opt = document.createElement('option');
+            opt.value = p; opt.textContent = p;
+            sel.appendChild(opt);
+        });
+
+        // Event listeners
+        sel.addEventListener('change', render);
+        document.getElementById('tierFilter').addEventListener('change', render);
+        document.getElementById('maxCost').addEventListener('input', render);
+
+        // Sort headers
+        document.querySelectorAll('.ranking-table th').forEach(th => {
+            th.addEventListener('click', () => {
+                const key = th.dataset.sort;
+                if (sortKey === key) sortDir *= -1;
+                else { sortKey = key; sortDir = key === 'name' ? 1 : -1; }
+                document.querySelectorAll('.ranking-table th').forEach(t => t.classList.remove('sorted'));
+                th.classList.add('sorted');
+                render();
+            });
+        });
+
+        render();
+    }
+
+    function getFiltered() {
+        let models = [...allModels];
+        const provider = document.getElementById('providerFilter').value;
+        const tier = document.getElementById('tierFilter').value;
+        const maxCost = parseFloat(document.getElementById('maxCost').value);
+        if (provider !== 'all') models = models.filter(m => m.provider === provider);
+        if (tier !== 'all') models = models.filter(m => m.tier === tier);
+        if (!isNaN(maxCost) && maxCost > 0) models = models.filter(m => m.avgCost <= maxCost);
+        return models;
+    }
+
+    function sortModels(models) {
+        return models.sort((a, b) => {
+            let va = a[sortKey], vb = b[sortKey];
+            if (typeof va === 'string') return sortDir * va.localeCompare(vb);
+            return sortDir * (va - vb);
+        });
+    }
+
+    function render() {
+        const models = sortModels(getFiltered());
+        renderTopPicks(models);
+        renderTable(models);
+        renderChart(models);
+    }
+
+    function renderTopPicks(models) {
+        if (models.length === 0) { document.getElementById('topPicks').innerHTML = ''; return; }
+        const sorted = [...models].sort((a, b) => b.value - a.value);
+        const best = sorted[0];
+        const bestPremium = [...models].filter(m => m.tier === 'Premium').sort((a, b) => b.value - a.value)[0];
+        const cheapest = [...models].sort((a, b) => a.avgCost - b.avgCost)[0];
+        const mostCapable = [...models].sort((a, b) => b.quality - a.quality)[0];
+
+        const picks = [
+            { label: 'Best Overall Value', model: best, color: '#22c55e' },
+            { label: 'Best Premium Value', model: bestPremium, color: '#f59e0b' },
+            { label: 'Cheapest Model', model: cheapest, color: '#6366f1' },
+            { label: 'Most Capable', model: mostCapable, color: '#ef4444' },
+        ].filter(p => p.model);
+
+        document.getElementById('topPicks').innerHTML = picks.map(p => `
+            <div class="pick-card">
+                <div class="pick-label">${p.label}</div>
+                <div class="pick-model">${p.model.name}</div>
+                <div class="pick-provider">${p.model.provider}</div>
+                <div class="pick-score" style="color:${p.color}">Value: ${p.model.value.toFixed(1)}</div>
+                <div class="pick-cost">$${p.model.input.toFixed(2)} in / $${p.model.output.toFixed(2)} out per 1M tokens</div>
+            </div>
+        `).join('');
+    }
+
+    function renderTable(models) {
+        const maxVal = Math.max(...models.map(m => m.value), 1);
+        document.getElementById('tableBody').innerHTML = models.map((m, i) => {
+            const rank = i + 1;
+            const rankClass = rank <= 3 ? `rank-${rank}` : 'rank-other';
+            const barWidth = (m.value / maxVal * 100).toFixed(1);
+            const barColor = m.value > 50 ? '#22c55e' : m.value > 20 ? '#f59e0b' : '#ef4444';
+            return `<tr>
+                <td><span class="rank-badge ${rankClass}">${rank}</span></td>
+                <td><span class="model-name">${m.name}</span><span class="provider-tag" style="background:${PROVIDER_COLORS[m.provider] || '#666'}22;color:${PROVIDER_COLORS[m.provider] || '#999'}">${m.provider}</span></td>
+                <td><span class="tier-badge tier-${m.tier.toLowerCase()}">${m.tier}</span></td>
+                <td>${m.quality}</td>
+                <td class="cost-cell">$${m.input.toFixed(2)}</td>
+                <td class="cost-cell">$${m.output.toFixed(2)}</td>
+                <td class="cost-cell">$${m.avgCost.toFixed(2)}</td>
+                <td>
+                    <div style="display:flex;align-items:center;gap:8px">
+                        <span style="font-weight:700;min-width:40px">${m.value.toFixed(1)}</span>
+                        <div class="value-bar"><div class="value-bar-fill" style="width:${barWidth}%;background:${barColor}"></div></div>
+                    </div>
+                </td>
+            </tr>`;
+        }).join('');
+    }
+
+    function renderChart(models) {
+        const canvas = document.getElementById('scatterChart');
+        const ctx = canvas.getContext('2d');
+        const dpr = window.devicePixelRatio || 1;
+        const rect = canvas.parentElement.getBoundingClientRect();
+        const w = rect.width - 64;
+        const h = 400;
+        canvas.width = w * dpr;
+        canvas.height = h * dpr;
+        canvas.style.width = w + 'px';
+        canvas.style.height = h + 'px';
+        ctx.scale(dpr, dpr);
+
+        ctx.clearRect(0, 0, w, h);
+
+        if (models.length === 0) {
+            ctx.fillStyle = '#6b6b80';
+            ctx.font = '14px -apple-system, sans-serif';
+            ctx.textAlign = 'center';
+            ctx.fillText('No models match the current filters', w / 2, h / 2);
+            return;
+        }
+
+        const maxCost = Math.max(...models.map(m => m.avgCost)) * 1.1;
+        const minQuality = Math.min(...models.map(m => m.quality)) - 5;
+        const maxQuality = Math.max(...models.map(m => m.quality)) + 5;
+        const pad = { top: 20, right: 20, bottom: 40, left: 50 };
+        const plotW = w - pad.left - pad.right;
+        const plotH = h - pad.top - pad.bottom;
+
+        // Grid
+        ctx.strokeStyle = '#2a2a3e';
+        ctx.lineWidth = 0.5;
+        for (let i = 0; i <= 5; i++) {
+            const y = pad.top + (plotH / 5) * i;
+            ctx.beginPath(); ctx.moveTo(pad.left, y); ctx.lineTo(w - pad.right, y); ctx.stroke();
+            const x = pad.left + (plotW / 5) * i;
+            ctx.beginPath(); ctx.moveTo(x, pad.top); ctx.lineTo(x, h - pad.bottom); ctx.stroke();
+        }
+
+        // Axes labels
+        ctx.fillStyle = '#6b6b80';
+        ctx.font = '11px -apple-system, sans-serif';
+        ctx.textAlign = 'center';
+        for (let i = 0; i <= 5; i++) {
+            const cost = (maxCost / 5 * i).toFixed(1);
+            ctx.fillText('$' + cost, pad.left + (plotW / 5) * i, h - pad.bottom + 20);
+        }
+        ctx.textAlign = 'right';
+        for (let i = 0; i <= 5; i++) {
+            const q = Math.round(minQuality + (maxQuality - minQuality) / 5 * i);
+            ctx.fillText(q, pad.left - 8, pad.top + plotH - (plotH / 5) * i + 4);
+        }
+
+        // Axis titles
+        ctx.fillStyle = '#9494a8';
+        ctx.font = '12px -apple-system, sans-serif';
+        ctx.textAlign = 'center';
+        ctx.fillText('Average Cost per 1M Tokens ($)', w / 2, h - 2);
+        ctx.save();
+        ctx.translate(12, h / 2);
+        ctx.rotate(-Math.PI / 2);
+        ctx.fillText('Quality Score', 0, 0);
+        ctx.restore();
+
+        // Value isolines (faint)
+        ctx.strokeStyle = '#2a2a3e44';
+        ctx.lineWidth = 1;
+        ctx.setLineDash([4, 4]);
+        [10, 20, 50, 100].forEach(v => {
+            ctx.beginPath();
+            for (let c = 0.5; c <= maxCost; c += 0.5) {
+                const q = v * c;
+                if (q < minQuality || q > maxQuality) continue;
+                const x = pad.left + (c / maxCost) * plotW;
+                const y = pad.top + plotH - ((q - minQuality) / (maxQuality - minQuality)) * plotH;
+                if (c === 0.5) ctx.moveTo(x, y); else ctx.lineTo(x, y);
+            }
+            ctx.stroke();
+        });
+        ctx.setLineDash([]);
+
+        // Points
+        models.forEach(m => {
+            const x = pad.left + (m.avgCost / maxCost) * plotW;
+            const y = pad.top + plotH - ((m.quality - minQuality) / (maxQuality - minQuality)) * plotH;
+            const color = TIER_COLORS[m.tier] || '#666';
+
+            // Glow
+            ctx.beginPath();
+            ctx.arc(x, y, 12, 0, Math.PI * 2);
+            ctx.fillStyle = color + '22';
+            ctx.fill();
+
+            // Point
+            ctx.beginPath();
+            ctx.arc(x, y, 5, 0, Math.PI * 2);
+            ctx.fillStyle = color;
+            ctx.fill();
+            ctx.strokeStyle = '#0a0a0f';
+            ctx.lineWidth = 1.5;
+            ctx.stroke();
+
+            // Label
+            ctx.fillStyle = '#e8e8ed';
+            ctx.font = '10px -apple-system, sans-serif';
+            ctx.textAlign = 'left';
+            ctx.fillText(m.name, x + 8, y + 3);
+        });
+    }
+
+    // Init
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', () => { init(); });
+    } else {
+        init();
+    }
+    </script>
+</body>
+</html>

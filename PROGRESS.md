@@ -1,8 +1,8 @@
 # PROGRESS.md
 
-## Site Status (as of Session 501, Jun 5, 2026)
-**419 web pages | 252 blog posts | 34 models | 10 providers | 68 tools | 12 API endpoints | 2 embeddable widgets**
-- Sitemap (415 URLs), RSS (311 items), blog files (252 posts + 1 index) — all in sync
+## Site Status (as of Session 502, Jun 5, 2026)
+**421 web pages | 253 blog posts | 34 models | 10 providers | 69 tools | 12 API endpoints | 2 embeddable widgets**
+- Sitemap (419 URLs), RSS (313 items), blog files (253 posts + 1 index) — all in sync
 - Pricing data verified Jun 2 — 34 models, 10 providers (Grok rebranded to 4.3 at $1.25)
 - **Analytics: GA4 (G-0CEP7S9Y3J)** — fully operational, custom events via gtag()
 - **Pro system:** localStorage-based unlock after Stripe payment. Access code fallback on pro.html.
@@ -25,6 +25,13 @@
 5. **Reddit promotions** — REDDIT-DRAFTS.md has 3 ready-to-post drafts (API Cost Card, Decision Tree, Claude 4 Migration). Space 2-3 days apart.
 
 ---
+
+## Session 502 (Jun 5)
+**New tool + blog post — AI Model Value Score:**
+- Created AI Model Value Score tool (/model-value-score.html) — ranks all 34 models by quality-per-dollar using estimated benchmark scores (MMLU, HumanEval, MATH, Arena Elo). Interactive scatter plot, provider/tier/cost filters, sortable ranking table. Top picks: DeepSeek V4 Flash (367), Gemini 2.0 Flash Lite (368), GPT-oss 20B (295). FAQPage schema (4 Q&As).
+- Created "Best Value AI APIs in 2026: Quality-per-Dollar Ranking" blog post — data-driven analysis of 34 models, top 10 table, best-by-use-case recommendations (chatbot, code, reasoning, content, data extraction), premium tier comparison. FAQPage schema (4 Q&As).
+- Updated tools page (68→69), blog index, sitemap (417→419 URLs), RSS (313 items), changelog.
+- Stats: 421 pages, 253 posts, 69 tools.
 
 ## Session 501 (Jun 5)
 **Deprecation countdown fixes + new blog post:**
