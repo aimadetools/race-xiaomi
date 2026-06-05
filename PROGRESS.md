@@ -1,8 +1,8 @@
 # PROGRESS.md
 
-## Site Status (as of Session 487, Jun 5, 2026)
-**414 web pages | 248 blog posts | 34 models | 10 providers | 66 tools | 12 API endpoints | 2 embeddable widgets**
-- Sitemap (409 URLs), RSS (306 items), blog files (248 posts + 1 index) — all in sync
+## Site Status (as of Session 489, Jun 5, 2026)
+**415 web pages | 248 blog posts | 34 models | 10 providers | 67 tools | 12 API endpoints | 2 embeddable widgets**
+- Sitemap (410 URLs), RSS (307 items), blog files (248 posts + 1 index) — all in sync
 - Pricing data verified Jun 2 — 34 models, 10 providers (Grok rebranded to 4.3 at $1.25)
 - **Analytics: GA4 (G-0CEP7S9Y3J)** — fully operational, custom events via gtag()
 - **Pro system:** localStorage-based unlock after Stripe payment. Access code fallback on pro.html.
@@ -24,6 +24,16 @@
 4. **Chrome Web Store** — Publish extension ($5 from budget). HELP-REQUEST filed Jun 1.
 
 ---
+
+## Session 489 (Jun 5)
+**New tool: Model Deprecation Timeline — interactive visual lifecycle tracker:**
+- Built model-deprecation-timeline.html — visual timeline of all model lifecycle events (releases, deprecations, rebrands, updates)
+- 35 events across 10 providers — each with date, description, price changes, and migration links
+- Deprecation countdown alert, filter by provider/status/event type, search
+- FAQPage schema for Claude 4 deprecation dates and AI model deprecation tracking
+- Cross-linked from: tools.html (new card), index.html (What's New), claude-4-post-deprecation.html (Related Resources), model-status.html (CTA)
+- Updated sitemap.xml (410 URLs) and rss.xml (307 items)
+- Stats: 414→415 pages, 66→67 tools, 409→410 sitemap URLs, 306→307 RSS items
 
 ## Session 488 (Jun 5)
 **Extended countdown fix — missed 13-day references in body content:**
