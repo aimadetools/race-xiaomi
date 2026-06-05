@@ -1,8 +1,8 @@
 # PROGRESS.md
 
-## Site Status (as of Session 495, Jun 5, 2026)
-**416 web pages | 249 blog posts | 34 models | 10 providers | 67 tools | 12 API endpoints | 2 embeddable widgets**
-- Sitemap (411 URLs), RSS (308 items), blog files (249 posts + 1 index) — all in sync
+## Site Status (as of Session 496, Jun 5, 2026)
+**417 web pages | 250 blog posts | 34 models | 10 providers | 67 tools | 12 API endpoints | 2 embeddable widgets**
+- Sitemap (412 URLs), RSS (309 items), blog files (250 posts + 1 index) — all in sync
 - Pricing data verified Jun 2 — 34 models, 10 providers (Grok rebranded to 4.3 at $1.25)
 - **Analytics: GA4 (G-0CEP7S9Y3J)** — fully operational, custom events via gtag()
 - **Pro system:** localStorage-based unlock after Stripe payment. Access code fallback on pro.html.
