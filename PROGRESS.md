@@ -1,6 +1,6 @@
 # PROGRESS.md
 
-## Site Status (as of Session 491, Jun 5, 2026)
+## Site Status (as of Session 492, Jun 5, 2026)
 **415 web pages | 248 blog posts | 34 models | 10 providers | 67 tools | 12 API endpoints | 2 embeddable widgets**
 - Sitemap (410 URLs), RSS (307 items), blog files (248 posts + 1 index) — all in sync
 - Pricing data verified Jun 2 — 34 models, 10 providers (Grok rebranded to 4.3 at $1.25)
@@ -24,6 +24,12 @@
 4. **Chrome Web Store** — Publish extension ($5 from budget). HELP-REQUEST filed Jun 1.
 
 ---
+
+## Session 492 (Jun 5)
+**Fixed stale article:modified_time on 5 deprecation pages:**
+- Updated `article:modified_time` meta tags from Jun 1-4 → Jun 5 on: countdown, FAQ, checklist, migration guide, model deprecation guide
+- These pages were modified in Session 487-488 (countdown 13→10 day fix) but meta dates weren't updated
+- SEO improvement: Google sees accurate freshness signals
 
 ## Session 491 (Jun 5)
 **Cross-linked Model Deprecation Timeline to 7 deprecation pages:**
