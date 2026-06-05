@@ -1,8 +1,8 @@
 # PROGRESS.md
 
-## Site Status (as of Session 502, Jun 5, 2026)
-**421 web pages | 253 blog posts | 34 models | 10 providers | 69 tools | 12 API endpoints | 2 embeddable widgets**
-- Sitemap (419 URLs), RSS (313 items), blog files (253 posts + 1 index) — all in sync
+## Site Status (as of Session 503, Jun 5, 2026)
+**422 web pages | 254 blog posts | 34 models | 10 providers | 69 tools | 12 API endpoints | 2 embeddable widgets**
+- Sitemap (418 URLs), RSS (314 items), blog files (254 posts + 1 index) — all in sync
 - Pricing data verified Jun 2 — 34 models, 10 providers (Grok rebranded to 4.3 at $1.25)
 - **Analytics: GA4 (G-0CEP7S9Y3J)** — fully operational, custom events via gtag()
 - **Pro system:** localStorage-based unlock after Stripe payment. Access code fallback on pro.html.
@@ -11,9 +11,9 @@
 - **12 API endpoints** — pricing data, cost calculator (single/multi-model), cheapest model finder, pricing badge (SVG), compare models, recommend models, subscribe, unsubscribe, newsletter, check-price-changes, admin, cost-report
 - **2 embeddable widgets** — pricing table/badge/compare (widget.js) + report card (embed-report.html)
 - **SEO: ~270 pages with FAQPage schema** for rich snippets (239 blog posts + 21 tools + 7 use-cases + 9 providers)
-- **Email capture on all 252 blog posts** (auto-injected via shared.js) + calculator.html + 4 deprecation pages
+- **Email capture on all 254 blog posts** (auto-injected via shared.js) + calculator.html + 4 deprecation pages
 - **Deprecation alerts:** 195 blog posts link to deprecation landing page, 48 link to deprecation calculator. All 9 deprecation pages use dynamic JS countdowns (auto-update daily). Meta tags date-agnostic.
-- **Social proof:** PH launch badge, Reddit testimonial, newsletter, exit popup A/B test, social sharing (X/LinkedIn/Reddit) on all 252 blog posts
+- **Social proof:** PH launch badge, Reddit testimonial, newsletter, exit popup A/B test, social sharing (X/LinkedIn/Reddit) on all 254 blog posts
 - **Chrome Extension:** Landing page live, pricing data synced (Jun 2), 34 models, manual install
 - **State of LLM Pricing Report:** Interactive June 2026 report with sortable rankings, charts, provider comparison, cost scenarios, deprecation alerts, FAQPage schema
 
@@ -25,6 +25,13 @@
 5. **Reddit promotions** — REDDIT-DRAFTS.md has 3 ready-to-post drafts (API Cost Card, Decision Tree, Claude 4 Migration). Space 2-3 days apart.
 
 ---
+
+## Session 503 (Jun 5)
+**New blog post — AI API Cost for Game Development:**
+- Created "AI API Cost for Game Development: NPC Dialogue, QA & Analytics Budgets" blog post — NPC dialogue, procedural content, QA automation, player support, and analytics costs across 34 models. Budget templates for indie solo dev ($1/mo), small studio ($30/mo), and mid-size studio ($124/mo). FAQPage schema (4 Q&As).
+- Added to blog index, sitemap (418 URLs), RSS (314 items), industry-guides page (30→31 sectors), changelog.
+- Updated stale counts: index (252→254 guides, 30→31 industry guides), pricing (252→254 guides), changelog stats bar (419→422 pages, 252→254 posts).
+- Stats: 422 pages, 254 posts, 69 tools.
 
 ## Session 502 (Jun 5)
 **New tool + blog post — AI Model Value Score:**
