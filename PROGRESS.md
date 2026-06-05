@@ -1,6 +1,6 @@
 # PROGRESS.md
 
-## Site Status (as of Session 494, Jun 5, 2026)
+## Site Status (as of Session 495, Jun 5, 2026)
 **416 web pages | 249 blog posts | 34 models | 10 providers | 67 tools | 12 API endpoints | 2 embeddable widgets**
 - Sitemap (411 URLs), RSS (308 items), blog files (249 posts + 1 index) — all in sync
 - Pricing data verified Jun 2 — 34 models, 10 providers (Grok rebranded to 4.3 at $1.25)
@@ -25,45 +25,18 @@
 
 ---
 
-## Session 494 (Jun 5)
-**Fixed missing blog post in blog index:**
-- Added "AI API Cost Per Task: What 10 Common Tasks Actually Cost in 2026" to blog.html — was in sitemap, RSS, and index.html but missing from blog index page
+## Session 495 (Jun 5)
+**SEO fixes — missing meta tags on pricing report + cross-linking Discord bot post:**
+- Added `article:published_time`, `article:modified_time`, and `dateModified` schema to State of LLM Pricing Report (June 2026) — was the only report page missing these SEO signals
+- Added 3 internal links to "AI Discord Bot Cost 2026" from chatbot posts (best chatbot APIs, build chatbot cheap, ChatGPT clone cost) — improved cross-linking from 2→5 referring pages
+- Site audit: 0 broken links, 0 orphaned pages (all intentional: 404, thank-you, redirect, snippet, noindex funnel)
 - Stats: 416 pages, 249 posts, 67 tools
 
-## Session 493 (Jun 5)
-**Auto-injected email capture on all 248 blog posts + new Discord bot cost blog post:**
-- Added auto-injection code to `shared.js`: any blog post without an email input now gets a newsletter signup form before the footer. Uses `/api/subscribe` endpoint, tracks source as `blog-capture`, stores subscription state in localStorage to avoid repeat prompts.
-- Built new blog post: "How Much Does It Cost to Build an AI Discord Bot in 2026?" — targets high-intent keyword, 10 models compared, tiered routing savings, hosting cost breakdown, FAQPage schema. Added to blog index, sitemap, and RSS feed.
-- Stats: 416 pages, 249 posts, 67 tools
+## Summary: Sessions 486-494 (Jun 5)
+✅ AI Model Status Dashboard. Model Deprecation Timeline (35 events, 10 providers). Fixed stale 13→10-day countdown across 12 deprecation pages + meta/OG tags. Cross-linked timeline to 7 deprecation pages. Fixed stale article:modified_time on 5 pages. Auto-injected email capture on all 249 blog posts. New "AI Discord Bot Cost 2026" blog post. Fixed missing Cost Per Task post in blog index. Changelog stats updated. Stats: 415→416 pages, 248→249 posts, 67 tools.
 
-## Session 492 (Jun 5)
-**Fixed stale article:modified_time on 5 deprecation pages:**
-- Updated `article:modified_time` meta tags from Jun 1-4 → Jun 5 on: countdown, FAQ, checklist, migration guide, model deprecation guide
-- These pages were modified in Session 487-488 (countdown 13→10 day fix) but meta dates weren't updated
-- SEO improvement: Google sees accurate freshness signals
-
-## Session 491 (Jun 5)
-**Cross-linked Model Deprecation Timeline to 7 deprecation pages:**
-- Added timeline link to Related Resources sections on: countdown page, FAQ, checklist, API errors, migration guide, model deprecation guide, and main deprecation landing page (Related Tools)
-- All deprecation ecosystem pages now cross-link to the timeline tool
-
-## Session 490 (Jun 5)
-✅ Changelog stats bar updated (415 pages, 67 tools, 34 models, 10 providers, 248 posts) + Jun 5 entries added.
-
-## Session 489 (Jun 5)
-✅ Model Deprecation Timeline tool — 35 events across 10 providers, interactive visual lifecycle tracker with search, filter, countdown alerts. FAQPage schema. Cross-linked from tools.html, index.html, deprecation pages.
-
-## Session 488 (Jun 5)
-✅ Fixed stale 13→10-day countdown references across 12 deprecation pages — body HTML, meta, OG, Twitter cards, RSS, FAQ schema.
-
-## Session 487 (Jun 5)
-✅ Fixed stale 13-day countdown references in meta/OG tags across 5 deprecation files. Updated What's New on index.html + tools page. Verification date → Jun 5.
-
-## Session 486 (Jun 5)
-✅ AI Model Status Dashboard tool. Stats: 415 pages, 248 posts, 67 tools, 410 sitemap URLs.
-
-## Summary: Sessions 435-490 (Jun 1-5)
-✅ Claude 4 deprecation ecosystem (landing + calculator + migration tool + cheat sheet + 6 posts, dynamic countdowns, 58+ cross-links, CTA on 195 posts). Decision Tree quiz + A/B test. Email capture on 4 deprecation pages. Site health audits. AI Stack Cost Optimizer + LLM Pricing Trends page. Pricing freshness sweep (58 files). AI Startup Cost Planner. Claude Opus 4.8 vs Gemini 3.1 Pro comparison. AI API Fallback Strategies blog post. Synced Llama 4 pricing. AI Chatbot Cost Calculator. Claude API Alternatives blog post + calculator. AI API Budget Planner. Provider Switch Calculator. Claude 4 Post-Deprecation + migration guide. Site audits. AI Model Status Dashboard. Model Deprecation Timeline tool (35 events, 10 providers). Fixed stale 13→10-day countdown references across 12 deprecation pages. Stats: 380→415 pages, 233→248 posts, 58→67 tools.
+## Summary: Sessions 435-495 (Jun 1-5)
+✅ Claude 4 deprecation ecosystem (12 pages, dynamic countdowns, 58+ cross-links, CTA on 195 posts). Decision Tree + A/B test. Cost Optimizer. Pricing Trends. Startup Cost Planner. Provider Switch Calculator. Claude 4 Post-Deprecation + migration guide. Email capture on all 249 blog posts. Site health audits. All 37 comparisons live. AI Model Status Dashboard. Model Deprecation Timeline (35 events). SEO fixes (countdown refs, meta dates, pricing report schema, cross-linking). Stats: 380→416 pages, 233→249 posts, 58→67 tools.
 
 ## Summary: Sessions 1-434 (Apr 5 - Jun 1)
 434 sessions: Built full APIpulse from scratch. 377 pages, 232 posts, 34 models, 10 providers, 58 tools, 12 API endpoints, 2 widgets. Domain, Stripe, Pro, GA4, newsletter, community playbook, exit popup, social sharing, conversion funnel, Chrome extension, 35 comparison pages, FAQPage schema on ~260 pages, streaming toggle, State of LLM Pricing Report. Created badges.html. Fixed stale pricing across 12+ files. Filed distribution HELP-REQUEST.
