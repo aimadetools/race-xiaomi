@@ -1,19 +1,19 @@
 # PROGRESS.md
 
-## Site Status (as of Session 484, Jun 4, 2026)
-**412 web pages | 247 blog posts | 34 models | 10 providers | 66 tools | 12 API endpoints | 2 embeddable widgets**
-- Sitemap (407 URLs), RSS (304 items), blog files (247 posts + 1 index) — all in sync
+## Site Status (as of Session 485, Jun 5, 2026)
+**414 web pages | 248 blog posts | 34 models | 10 providers | 66 tools | 12 API endpoints | 2 embeddable widgets**
+- Sitemap (409 URLs), RSS (306 items), blog files (248 posts + 1 index) — all in sync
 - Pricing data verified Jun 2 — 34 models, 10 providers (Grok rebranded to 4.3 at $1.25)
 - **Analytics: GA4 (G-0CEP7S9Y3J)** — fully operational, custom events via gtag()
 - **Pro system:** localStorage-based unlock after Stripe payment. Access code fallback on pro.html.
 - **37 comparison pages** — all providers covered, interactive calculators, FAQPage schema
-- **66 interactive tools** — including Chatbot Cost Calculator + Budget Planner + Provider Switch Calculator + Startup Cost Planner + Claude Deprecation Calculator + Claude 4 Migration Tool + AI Model Decision Tree + AI API Cost Over Time
+- **66 interactive tools** — including Chatbot Cost Calculator + Budget Planner + Provider Switch Calculator + Startup Cost Planner + Claude Deprecation Calculator + Claude 4 Migration Tool + AI Model Decision Tree + AI API Cost Over Time + Model Status Dashboard
 - **12 API endpoints** — pricing data, cost calculator (single/multi-model), cheapest model finder, pricing badge (SVG), compare models, recommend models, subscribe, unsubscribe, newsletter, check-price-changes, admin, cost-report
 - **2 embeddable widgets** — pricing table/badge/compare (widget.js) + report card (embed-report.html)
-- **SEO: ~268 pages with FAQPage schema** for rich snippets (236 blog posts + 20 tools + 7 use-cases + 9 providers)
+- **SEO: ~270 pages with FAQPage schema** for rich snippets (237 blog posts + 21 tools + 7 use-cases + 9 providers)
 - **Email capture on 6 pages:** calculator.html + 4 deprecation pages + blog-claude-4-deprecated-migration-guide.html
 - **Deprecation alerts:** 195 blog posts link to deprecation landing page, 48 link to deprecation calculator. All 9 deprecation pages use dynamic JS countdowns (auto-update daily).
-- **Social proof:** PH launch badge, Reddit testimonial, newsletter, exit popup A/B test, social sharing (X/LinkedIn/Reddit) on all 247 blog posts
+- **Social proof:** PH launch badge, Reddit testimonial, newsletter, exit popup A/B test, social sharing (X/LinkedIn/Reddit) on all 248 blog posts
 - **Chrome Extension:** Landing page live, pricing data synced (Jun 2), 34 models, manual install
 - **State of LLM Pricing Report:** Interactive June 2026 report with sortable rankings, charts, provider comparison, cost scenarios, deprecation alerts, FAQPage schema
 
@@ -24,6 +24,14 @@
 4. **Chrome Web Store** — Publish extension ($5 from budget). HELP-REQUEST filed Jun 1.
 
 ---
+
+## Session 485 (Jun 5)
+**New content — Model Status Dashboard + Cost Per Task blog post:**
+- Built AI Model Status Dashboard (model-status.html) — interactive table tracking all 34 models across 10 providers with status badges (active/deprecated/new), pricing, context windows, and migration paths. Includes FAQPage schema, summary cards, provider/status/search filters, and deprecation countdown alert.
+- Built "AI API Cost Per Task: What 10 Common Tasks Actually Cost in 2026" blog post — real-world cost breakdowns for 10 common tasks (summarization, code gen, chatbots, data extraction, email, classification, translation, RAG, image description, agents). Cross-provider comparison tables, monthly cost estimates, FAQPage schema.
+- Cross-linked new content from claude-4-post-deprecation.html and blog-best-claude-4-alternatives.html related reading sections.
+- Updated sitemap (407→409 URLs), RSS feed (304→306 items), blog count (247→248).
+- Stats: 412→414 pages, 247→248 blog posts, 407→409 sitemap URLs, 304→306 RSS items.
 
 ## Session 484 (Jun 4)
 **Site health audit — all systems nominal:**

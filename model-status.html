@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Model Status Dashboard — All 34 Models: Active, Deprecated & New (June 2026) | APIpulse</title>
+    <meta name="description" content="Track every LLM API model's status across 10 providers. See which models are deprecated, which are new, and what to migrate to. Updated June 2026.">
+    <meta name="keywords" content>AI model status, LLM deprecation tracker, Claude 4 deprecated, model status dashboard, API model lifecycle, LLM pricing tracker 2026">
+    <meta property="og:title" content="AI Model Status Dashboard — All 34 Models Tracked">
+    <meta property="og:description" content="Live status of every LLM API model across 10 providers. Deprecated, active, and new — with migration paths.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://getapipulse.com/og-image.png">
+    <meta property="og:url" content="https://getapipulse.com/model-status.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="AI Model Status Dashboard — 34 Models Tracked">
+    <meta name="twitter:image" content="https://getapipulse.com/og-image.png">
+    <meta name="twitter:description" content="Live status of every LLM API model. Deprecated, active, new — with migration paths.">
+    <link rel="canonical" href="https://getapipulse.com/model-status.html">
+    <link rel="alternate" type="application/rss+xml" title="APIpulse Blog" href="https://getapipulse.com/rss.xml">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="styles.css">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0CEP7S9Y3J"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-0CEP7S9Y3J');
+    </script>
+    <script src="analytics.js" defer></script>
+    <script src="dynamic-date.js" defer></script>
+    <script src="shared.js" defer></script>
+    <script src="pricing-data.js"></script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "headline": "AI Model Status Dashboard — All 34 Models: Active, Deprecated & New",
+        "description": "Track every LLM API model's status across 10 providers. See which models are deprecated, which are new, and what to migrate to.",
+        "datePublished": "2026-06-05",
+        "dateModified": "2026-06-05",
+        "author": { "@type": "Organization", "name": "APIpulse" },
+        "publisher": { "@type": "Organization", "name": "APIpulse", "url": "https://getapipulse.com" }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "Is Claude 4 Opus still available?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "No. Claude 4 Opus was deprecated on June 15, 2026. Use Claude Opus 4.8 ($5/$25) as a drop-in replacement — same API, 67% cheaper."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Which AI models are deprecated in 2026?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "As of June 2026, deprecated models include: Claude 4 Opus, Claude Sonnet 4, DeepSeek V3, Grok 3, and Grok 3 Mini. Each has a recommended replacement — see the full status dashboard."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What is the cheapest AI API model in 2026?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Gemini 2.0 Flash Lite at $0.075/$0.30 per million tokens is the cheapest active model. For better quality, DeepSeek V4 Flash ($0.14/$0.28) offers the best value."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How many AI API providers are tracked?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "APIpulse tracks 10 providers: OpenAI, Anthropic, Google, DeepSeek, Mistral, Cohere, Meta (Together.ai), Moonshot, xAI, and AI21 — with 34 models total."
+                }
+            }
+        ]
+    }
+    </script>
+    <style>
+        .content { max-width: 1100px; margin: 0 auto; padding: 120px 24px 80px; }
+        h1 { font-size: clamp(28px, 4vw, 40px); font-weight: 800; margin-bottom: 12px; }
+        .subtitle { color: var(--text-secondary); font-size: 17px; margin-bottom: 32px; line-height: 1.6; max-width: 700px; }
+
+        /* Summary cards */
+        .summary-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-bottom: 32px; }
+        .summary-card {
+            background: var(--bg-secondary); border: 1px solid var(--border);
+            border-radius: 12px; padding: 20px; text-align: center;
+        }
+        .summary-card .num { font-size: 32px; font-weight: 800; }
+        .summary-card .label { font-size: 13px; color: var(--text-muted); margin-top: 4px; }
+        .num.active { color: var(--green); }
+        .num.deprecated { color: var(--red); }
+        .num.new { color: var(--accent); }
+        .num.providers { color: var(--orange); }
+
+        /* Filters */
+        .filters { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 24px; align-items: center; }
+        .filter-group { display: flex; gap: 6px; }
+        .filter-btn {
+            background: var(--bg-secondary); border: 1px solid var(--border);
+            border-radius: 8px; padding: 8px 16px; font-size: 13px;
+            color: var(--text-secondary); cursor: pointer; transition: all 0.2s;
+        }
+        .filter-btn:hover { border-color: var(--accent); color: var(--text-primary); }
+        .filter-btn.active { background: var(--accent); color: white; border-color: var(--accent); }
+        .search-input {
+            background: var(--bg-secondary); border: 1px solid var(--border);
+            border-radius: 8px; padding: 8px 16px; font-size: 13px;
+            color: var(--text-primary); outline: none; flex: 1; min-width: 200px;
+        }
+        .search-input:focus { border-color: var(--accent); }
+
+        /* Table */
+        .table-wrapper { overflow-x: auto; border-radius: 12px; border: 1px solid var(--border); margin-bottom: 40px; }
+        table { width: 100%; border-collapse: collapse; font-size: 14px; }
+        th {
+            background: var(--bg-tertiary, rgba(99,102,241,0.1));
+            padding: 14px 16px; text-align: left; font-size: 12px;
+            font-weight: 600; color: var(--text-primary); text-transform: uppercase;
+            letter-spacing: 0.5px; position: sticky; top: 0; cursor: pointer;
+            user-select: none; white-space: nowrap;
+        }
+        th:hover { color: var(--accent); }
+        th .sort-arrow { margin-left: 4px; opacity: 0.4; }
+        th.sorted .sort-arrow { opacity: 1; color: var(--accent); }
+        td { padding: 12px 16px; border-top: 1px solid var(--border); color: var(--text-secondary); }
+        tr:hover td { background: rgba(99,102,241,0.03); }
+        tr.deprecated-row td { opacity: 0.7; }
+        tr.deprecated-row:hover td { opacity: 1; }
+
+        .status-badge {
+            display: inline-block; padding: 3px 10px; border-radius: 4px;
+            font-size: 11px; font-weight: 700; text-transform: uppercase;
+        }
+        .status-active { background: rgba(34,197,94,0.12); color: var(--green); }
+        .status-deprecated { background: rgba(239,68,68,0.12); color: var(--red); }
+        .status-new { background: rgba(99,102,241,0.12); color: var(--accent); }
+        .status-replacement { background: rgba(234,179,8,0.12); color: #eab308; }
+
+        .provider-badge {
+            display: inline-block; padding: 2px 8px; border-radius: 4px;
+            font-size: 11px; font-weight: 600;
+            background: rgba(99,102,241,0.08); color: var(--accent);
+        }
+        .tier-badge { font-size: 11px; font-weight: 600; }
+        .tier-premium { color: #eab308; }
+        .tier-mid { color: var(--accent); }
+        .tier-budget { color: var(--green); }
+
+        .price-cell { font-family: 'SF Mono', monospace; font-size: 13px; }
+        .deprecated-price { text-decoration: line-through; color: var(--text-muted); }
+        .replacement-link { color: var(--green); font-weight: 600; font-size: 12px; }
+        .migration-effort { font-size: 12px; color: var(--text-muted); }
+
+        /* Deprecation alert */
+        .dep-alert {
+            background: linear-gradient(135deg, rgba(239,68,68,0.1), rgba(239,68,68,0.05));
+            border: 1px solid rgba(239,68,68,0.3); border-radius: 12px;
+            padding: 20px 24px; margin-bottom: 32px;
+            display: flex; align-items: center; gap: 16px;
+        }
+        .dep-alert .icon { font-size: 28px; flex-shrink: 0; }
+        .dep-alert .text { font-size: 15px; line-height: 1.5; }
+        .dep-alert .text strong { color: var(--red); }
+
+        /* CTA */
+        .cta-box {
+            background: linear-gradient(135deg, rgba(99,102,241,0.12), rgba(99,102,241,0.04));
+            border: 1px solid rgba(99,102,241,0.2); border-radius: 12px;
+            padding: 32px; text-align: center; margin: 40px 0;
+        }
+        .cta-box h3 { margin: 0 0 8px; }
+        .cta-box p { margin: 0 0 20px; color: var(--text-secondary); }
+        .cta-btn {
+            display: inline-block; background: var(--accent); color: white;
+            padding: 12px 28px; border-radius: 8px; font-weight: 700;
+            text-decoration: none; transition: opacity 0.2s; margin: 6px;
+        }
+        .cta-btn:hover { opacity: 0.9; text-decoration: none; }
+        .cta-btn.green { background: #22c55e; }
+
+        .share-section {
+            margin-top: 32px; padding-top: 24px; border-top: 1px solid var(--border);
+            text-align: center;
+        }
+        .share-section p { color: var(--text-secondary); font-size: 14px; margin-bottom: 12px; }
+        .share-btn {
+            display: inline-flex; align-items: center; gap: 8px;
+            background: rgba(99, 102, 241, 0.1); color: var(--accent);
+            padding: 10px 20px; border-radius: 8px; font-size: 14px;
+            text-decoration: none; transition: background 0.2s; margin-top: 8px;
+        }
+        .share-btn:hover { background: rgba(99, 102, 241, 0.2); text-decoration: none; }
+
+        @media (max-width: 768px) {
+            .content { padding: 100px 16px 60px; }
+            .summary-row { grid-template-columns: repeat(2, 1fr); }
+            h1 { font-size: 28px; }
+            th, td { padding: 10px 12px; font-size: 12px; }
+            .filters { flex-direction: column; }
+        }
+    </style>
+    <meta name="theme-color" content="#6366f1">
+</head>
+<body>
+    <nav>
+        <div class="nav-inner">
+            <a href="index.html" class="logo">API<span>pulse</span></a>
+            <button class="hamburger" onclick="toggleMobileNav()" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+            <div class="nav-links">
+                <a href="calculator.html">Calculator</a>
+                <a href="compare.html">Compare</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="blog.html">Blog</a>
+                <a href="model-status.html" class="active">Model Status</a>
+                <a href="blog-model-deprecation-guide.html" style="color:var(--red);">Deprecation Guide</a>
+                <a href="pricing.html" class="nav-cta" onclick="if(window.trackEvent)window.trackEvent('pro_button_clicked',{source:'nav'})">Get Pro — $29</a>
+                <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
+            </div>
+        </div>
+    </nav>
+
+    <main id="main">
+    <div class="content">
+        <h1>AI Model Status Dashboard</h1>
+        <p class="subtitle">Track every LLM API model across 10 providers. See which are active, deprecated, or new — with pricing, context windows, and migration paths.</p>
+
+        <div class="dep-alert" id="depAlert">
+            <span class="icon">⚠️</span>
+            <div class="text">
+                <strong>Claude 4 Opus & Sonnet 4 deprecated June 15, 2026.</strong>
+                <span id="depCountdown"></span> —
+                <a href="claude-4-post-deprecation.html" style="color:var(--red);font-weight:600;">See migration guide →</a>
+            </div>
+        </div>
+        <script>
+            (function(){
+                var dep = new Date('2026-06-15T00:00:00');
+                var diff = dep - new Date();
+                var days = diff > 0 ? Math.ceil(diff / 86400000) : 0;
+                var el = document.getElementById('depCountdown');
+                var alert = document.getElementById('depAlert');
+                if (days > 0) {
+                    el.textContent = days + ' days until deadline';
+                } else {
+                    alert.style.display = 'none';
+                }
+            })();
+        </script>
+
+        <!-- Summary -->
+        <div class="summary-row" id="summaryRow">
+            <div class="summary-card"><div class="num active" id="activeCount">0</div><div class="label">Active Models</div></div>
+            <div class="summary-card"><div class="num deprecated" id="deprecatedCount">0</div><div class="label">Deprecated</div></div>
+            <div class="summary-card"><div class="num new" id="newCount">0</div><div class="label">New This Month</div></div>
+            <div class="summary-card"><div class="num providers" id="providerCount">0</div><div class="label">Providers</div></div>
+        </div>
+
+        <!-- Filters -->
+        <div class="filters">
+            <input type="text" class="search-input" id="searchInput" placeholder="Search models...">
+            <div class="filter-group">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="active">Active</button>
+                <button class="filter-btn" data-filter="deprecated">Deprecated</button>
+                <button class="filter-btn" data-filter="new">New</button>
+            </div>
+            <div class="filter-group" id="providerFilters"></div>
+        </div>
+
+        <!-- Table -->
+        <div class="table-wrapper">
+            <table id="modelTable">
+                <thead>
+                    <tr>
+                        <th data-sort="name">Model <span class="sort-arrow">↕</span></th>
+                        <th data-sort="provider">Provider <span class="sort-arrow">↕</span></th>
+                        <th data-sort="tier">Tier <span class="sort-arrow">↕</span></th>
+                        <th data-sort="status">Status <span class="sort-arrow">↕</span></th>
+                        <th data-sort="input">Input $/1M <span class="sort-arrow">↕</span></th>
+                        <th data-sort="output">Output $/1M <span class="sort-arrow">↕</span></th>
+                        <th data-sort="context">Context <span class="sort-arrow">↕</span></th>
+                        <th>Replacement</th>
+                        <th>Effort</th>
+                    </tr>
+                </thead>
+                <tbody id="modelTableBody"></tbody>
+            </table>
+        </div>
+
+        <!-- CTA -->
+        <div class="cta-box">
+            <h3>Find the Cheapest Model for Your Use Case</h3>
+            <p>Compare all 34 models with your exact token usage. See costs ranked cheapest-first.</p>
+            <a href="calculator.html" class="cta-btn">Open Cost Calculator →</a>
+            <a href="claude-4-migration-tool.html" class="cta-btn green">Claude 4 Migration Tool</a>
+            <a href="cheapest-llm-api-2026.html" class="cta-btn">Cheapest Models Ranked →</a>
+        </div>
+
+        <div class="share-section">
+            <p>Found this useful? Share it:</p>
+            <a href="https://twitter.com/intent/tweet?text=AI%20Model%20Status%20Dashboard%20%E2%80%94%20All%2034%20Models%20Tracked%20%7C%20APIpulse&url=https%3A//getapipulse.com/model-status.html" target="_blank" rel="noopener" class="share-btn">Share on X</a>
+            <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A//getapipulse.com/model-status.html" target="_blank" rel="noopener" class="share-btn">Share on LinkedIn</a>
+            <a href="https://reddit.com/submit?url=https%3A//getapipulse.com/model-status.html&title=AI%20Model%20Status%20Dashboard%20%E2%80%94%20All%2034%20Models%20Tracked" target="_blank" rel="noopener" class="share-btn">Share on Reddit</a>
+        </div>
+    </div>
+    </main>
+
+    <script>
+    (function(){
+        // Build model list with status info
+        var models = API_MODELS.map(function(m) {
+            var status = 'active';
+            if (m.deprecated) status = 'deprecated';
+            else if (m.verified && m.verified.indexOf('Jun') !== -1 && !m.deprecated) status = 'new';
+            return {
+                name: m.name,
+                provider: m.provider,
+                providerSlug: m.providerSlug,
+                tier: m.tier,
+                status: status,
+                input: m.input,
+                output: m.output,
+                context: m.context,
+                replacement: m.replacement ? (getModelById(m.replacement) || {}).name : null,
+                effort: m.deprecated ? 'Change model name' : '—'
+            };
+        });
+
+        // Summary counts
+        var active = models.filter(function(m){ return m.status === 'active'; }).length;
+        var deprecated = models.filter(function(m){ return m.status === 'deprecated'; }).length;
+        var newModels = models.filter(function(m){ return m.status === 'new'; }).length;
+        var providers = new Set(models.map(function(m){ return m.providerSlug; })).size;
+        document.getElementById('activeCount').textContent = active;
+        document.getElementById('deprecatedCount').textContent = deprecated;
+        document.getElementById('newCount').textContent = newModels;
+        document.getElementById('providerCount').textContent = providers;
+
+        // Provider filter buttons
+        var providerSet = [];
+        var seen = {};
+        models.forEach(function(m) {
+            if (!seen[m.providerSlug]) { seen[m.providerSlug] = true; providerSet.push(m.provider); }
+        });
+        var pfContainer = document.getElementById('providerFilters');
+        providerSet.forEach(function(p) {
+            var btn = document.createElement('button');
+            btn.className = 'filter-btn';
+            btn.dataset.filter = p;
+            btn.textContent = p;
+            pfContainer.appendChild(btn);
+        });
+
+        // Render table
+        var currentSort = { col: 'status', asc: true };
+        var activeFilter = 'all';
+        var providerFilter = null;
+        var searchTerm = '';
+
+        function renderTable() {
+            var filtered = models.filter(function(m) {
+                if (activeFilter === 'deprecated' && m.status !== 'deprecated') return false;
+                if (activeFilter === 'active' && m.status !== 'active') return false;
+                if (activeFilter === 'new' && m.status !== 'new') return false;
+                if (providerFilter && m.provider !== providerFilter) return false;
+                if (searchTerm) {
+                    var s = searchTerm.toLowerCase();
+                    if (m.name.toLowerCase().indexOf(s) === -1 && m.provider.toLowerCase().indexOf(s) === -1) return false;
+                }
+                return true;
+            });
+
+            // Sort
+            filtered.sort(function(a, b) {
+                var va = a[currentSort.col], vb = b[currentSort.col];
+                if (typeof va === 'number') return currentSort.asc ? va - vb : vb - va;
+                va = String(va); vb = String(vb);
+                return currentSort.asc ? va.localeCompare(vb) : vb.localeCompare(va);
+            });
+
+            var tbody = document.getElementById('modelTableBody');
+            tbody.innerHTML = '';
+            filtered.forEach(function(m) {
+                var tr = document.createElement('tr');
+                if (m.status === 'deprecated') tr.className = 'deprecated-row';
+
+                var statusClass = m.status === 'deprecated' ? 'status-deprecated' : m.status === 'new' ? 'status-new' : 'status-active';
+                var tierClass = m.tier === 'Premium' ? 'tier-premium' : m.tier === 'Budget' ? 'tier-budget' : 'tier-mid';
+                var inputPrice = m.status === 'deprecated' ? '<span class="deprecated-price">$' + m.input.toFixed(2) + '</span>' : '$' + m.input.toFixed(2);
+                var outputPrice = m.status === 'deprecated' ? '<span class="deprecated-price">$' + m.output.toFixed(2) + '</span>' : '$' + m.output.toFixed(2);
+                var replacementCell = m.replacement ? '<a href="#" class="replacement-link">' + m.replacement + '</a>' : '—';
+
+                tr.innerHTML =
+                    '<td><strong>' + m.name + '</strong></td>' +
+                    '<td><span class="provider-badge">' + m.provider + '</span></td>' +
+                    '<td><span class="tier-badge ' + tierClass + '">' + m.tier + '</span></td>' +
+                    '<td><span class="status-badge ' + statusClass + '">' + m.status + '</span></td>' +
+                    '<td class="price-cell">' + inputPrice + '</td>' +
+                    '<td class="price-cell">' + outputPrice + '</td>' +
+                    '<td>' + m.context + '</td>' +
+                    '<td>' + replacementCell + '</td>' +
+                    '<td><span class="migration-effort">' + m.effort + '</span></td>';
+                tbody.appendChild(tr);
+            });
+        }
+
+        // Sort by clicking headers
+        document.querySelectorAll('th[data-sort]').forEach(function(th) {
+            th.addEventListener('click', function() {
+                var col = th.dataset.sort;
+                if (currentSort.col === col) currentSort.asc = !currentSort.asc;
+                else { currentSort.col = col; currentSort.asc = true; }
+                document.querySelectorAll('th').forEach(function(t){ t.classList.remove('sorted'); });
+                th.classList.add('sorted');
+                renderTable();
+            });
+        });
+
+        // Filter buttons
+        document.querySelectorAll('.filter-btn[data-filter]').forEach(function(btn) {
+            btn.addEventListener('click', function() {
+                document.querySelectorAll('.filter-btn[data-filter]').forEach(function(b){ b.classList.remove('active'); });
+                btn.classList.add('active');
+                activeFilter = btn.dataset.filter;
+                providerFilter = null;
+                document.querySelectorAll('.filter-btn:not([data-filter])').forEach(function(b){ b.classList.remove('active'); });
+                renderTable();
+            });
+        });
+
+        // Provider filter
+        pfContainer.addEventListener('click', function(e) {
+            if (e.target.classList.contains('filter-btn')) {
+                document.querySelectorAll('.filter-btn[data-filter]').forEach(function(b){ b.classList.remove('active'); });
+                document.querySelectorAll('.filter-btn:not([data-filter])').forEach(function(b){ b.classList.remove('active'); });
+                e.target.classList.add('active');
+                activeFilter = 'all';
+                providerFilter = e.target.dataset.filter;
+                renderTable();
+            }
+        });
+
+        // Search
+        document.getElementById('searchInput').addEventListener('input', function(e) {
+            searchTerm = e.target.value;
+            renderTable();
+        });
+
+        renderTable();
+    })();
+    </script>
+</body>
+</html>
