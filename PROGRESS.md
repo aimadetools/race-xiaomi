@@ -7,10 +7,10 @@
 - **Analytics: GA4 (G-0CEP7S9Y3J)** — fully operational, custom events via gtag()
 - **Pro system:** localStorage-based unlock after Stripe payment. Access code fallback on pro.html.
 - **37 comparison pages** — all providers covered, interactive calculators, FAQPage schema
-- **66 interactive tools** — including Chatbot Cost Calculator + Budget Planner + Provider Switch Calculator + Startup Cost Planner + Claude Deprecation Calculator + Claude 4 Migration Tool + AI Model Decision Tree + AI API Cost Over Time + Model Status Dashboard
+- **67 interactive tools** — including Chatbot Cost Calculator + Budget Planner + Provider Switch Calculator + Startup Cost Planner + Claude Deprecation Calculator + Claude 4 Migration Tool + AI Model Decision Tree + AI API Cost Over Time + Model Status Dashboard + Model Deprecation Timeline
 - **12 API endpoints** — pricing data, cost calculator (single/multi-model), cheapest model finder, pricing badge (SVG), compare models, recommend models, subscribe, unsubscribe, newsletter, check-price-changes, admin, cost-report
 - **2 embeddable widgets** — pricing table/badge/compare (widget.js) + report card (embed-report.html)
-- **SEO: ~270 pages with FAQPage schema** for rich snippets (237 blog posts + 21 tools + 7 use-cases + 9 providers)
+- **SEO: ~270 pages with FAQPage schema** for rich snippets (238 blog posts + 21 tools + 7 use-cases + 9 providers)
 - **Email capture on 6 pages:** calculator.html + 4 deprecation pages + blog-claude-4-deprecated-migration-guide.html
 - **Deprecation alerts:** 195 blog posts link to deprecation landing page, 48 link to deprecation calculator. All 9 deprecation pages use dynamic JS countdowns (auto-update daily).
 - **Social proof:** PH launch badge, Reddit testimonial, newsletter, exit popup A/B test, social sharing (X/LinkedIn/Reddit) on all 248 blog posts
@@ -24,6 +24,13 @@
 4. **Chrome Web Store** — Publish extension ($5 from budget). HELP-REQUEST filed Jun 1.
 
 ---
+
+## Session 490 (Jun 5)
+**Changelog update — stats bar, Jun 5 entries, meta fixes:**
+- Updated changelog stats bar: 412→415 pages, 66→67 tools, 247→248 blog posts
+- Added 4 Jun 5 changelog entries (Sessions 486-489): Model Deprecation Timeline tool, stale countdown string fixes, countdown 13→10-day SEO fix, What's New + tools page updates
+- Updated meta descriptions (66→67 tools) across 3 OG/Twitter tags
+- Updated "Last updated" date to Jun 5
 
 ## Session 489 (Jun 5)
 **New tool: Model Deprecation Timeline — interactive visual lifecycle tracker:**
