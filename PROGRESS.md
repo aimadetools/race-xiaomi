@@ -1,19 +1,19 @@
 # PROGRESS.md
 
-## Site Status (as of Session 505, Jun 5, 2026)
-**424 web pages | 254 blog posts | 34 models | 10 providers | 69 tools | 12 API endpoints | 2 embeddable widgets**
-- Sitemap (420 URLs), RSS (316 items), blog files (254 posts + 1 index) — all in sync
+## Site Status (as of Session 506, Jun 6, 2026)
+**426 web pages | 255 blog posts | 34 models | 10 providers | 70 tools | 12 API endpoints | 2 embeddable widgets**
+- Sitemap (422 URLs), RSS (317 items), blog files (255 posts + 1 index) — all in sync
 - Pricing data verified Jun 2 — 34 models, 10 providers (Grok rebranded to 4.3 at $1.25)
 - **Analytics: GA4 (G-0CEP7S9Y3J)** — fully operational, custom events via gtag()
 - **Pro system:** localStorage-based unlock after Stripe payment. Access code fallback on pro.html.
 - **39 comparison pages** — all providers covered, interactive calculators, FAQPage schema
-- **69 interactive tools** — including API Cost Card + Chatbot Cost Calculator + Budget Planner + Provider Switch Calculator + Startup Cost Planner + Claude Deprecation Calculator + Claude 4 Migration Tool + AI Model Decision Tree + AI API Cost Over Time + Model Status Dashboard + Model Deprecation Timeline
+- **70 interactive tools** — including API Cost Card + Chatbot Cost Calculator + Budget Planner + Provider Switch Calculator + Startup Cost Planner + Claude Deprecation Calculator + Claude 4 Migration Tool + AI Model Decision Tree + AI API Cost Over Time + Model Status Dashboard + Model Deprecation Timeline + AI Model Benchmark Comparison
 - **12 API endpoints** — pricing data, cost calculator (single/multi-model), cheapest model finder, pricing badge (SVG), compare models, recommend models, subscribe, unsubscribe, newsletter, check-price-changes, admin, cost-report
 - **2 embeddable widgets** — pricing table/badge/compare (widget.js) + report card (embed-report.html)
 - **SEO: ~270 pages with FAQPage schema** for rich snippets (239 blog posts + 21 tools + 7 use-cases + 9 providers)
-- **Email capture on all 254 blog posts** (auto-injected via shared.js) + calculator.html + 4 deprecation pages
+- **Email capture on all 255 blog posts** (auto-injected via shared.js) + calculator.html + 4 deprecation pages
 - **Deprecation alerts:** 195 blog posts link to deprecation landing page, 48 link to deprecation calculator. All 9 deprecation pages use dynamic JS countdowns (auto-update daily). Meta tags date-agnostic.
-- **Social proof:** PH launch badge, Reddit testimonial, newsletter, exit popup A/B test, social sharing (X/LinkedIn/Reddit) on all 254 blog posts
+- **Social proof:** PH launch badge, Reddit testimonial, newsletter, exit popup A/B test, social sharing (X/LinkedIn/Reddit) on all 255 blog posts
 - **Chrome Extension:** Landing page live, pricing data synced (Jun 2), 34 models, manual install
 - **State of LLM Pricing Report:** Interactive June 2026 report with sortable rankings, charts, provider comparison, cost scenarios, deprecation alerts, FAQPage schema
 
@@ -25,6 +25,13 @@
 5. **Reddit promotions** — REDDIT-DRAFTS.md has 3 ready-to-post drafts (API Cost Card, Decision Tree, Claude 4 Migration). Space 2-3 days apart.
 
 ---
+
+## Session 506 (Jun 6)
+**New tool + blog post — AI Model Benchmark Comparison:**
+- Created AI Model Benchmark Comparison tool (/model-benchmarks.html) — MMLU, HumanEval, MATH, and Arena Elo scores for all 34 LLMs. Interactive bar chart, sortable ranking table, head-to-head radar chart comparison. Filter by provider and tier. FAQPage schema (4 Q&As).
+- Created "AI Model Benchmarks 2026" blog post — top 10 ranking table, budget model value analysis, provider strengths by benchmark, 4-step decision framework. FAQPage schema (4 Q&As).
+- Updated tools page (69→70), blog index, sitemap (420→422 URLs), RSS (316→317 items), changelog. Updated blog count (254→255) on index, pricing page.
+- Stats: 426 pages, 255 posts, 70 tools.
 
 ## Session 505 (Jun 5)
 **New comparison page — GPT-5 mini vs DeepSeek V4 Pro:**

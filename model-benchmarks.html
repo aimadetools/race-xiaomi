@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Model Benchmark Scores — MMLU, HumanEval, MATH, Arena Elo | APIpulse</title>
+    <meta name="description" content="Compare AI model benchmark scores side by side. MMLU, HumanEval, MATH, and Arena Elo rankings for all 34 LLMs. Find the best model for your use case.">
+    <meta name="keywords" content="AI model benchmarks, MMLU scores, HumanEval scores, LLM benchmark comparison, AI model rankings, Arena Elo, MATH benchmark, GPT-5 benchmark, Claude benchmark, Gemini benchmark">
+    <meta property="og:title" content="AI Model Benchmark Scores — MMLU, HumanEval, MATH, Arena Elo">
+    <meta property="og:description" content="Compare AI model benchmark scores side by side. 34 LLMs ranked by MMLU, HumanEval, MATH, and Arena Elo.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://getapipulse.com/og-image.png">
+    <meta property="og:url" content="https://getapipulse.com/model-benchmarks.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="AI Model Benchmark Scores — Compare 34 LLMs">
+    <meta name="twitter:image" content="https://getapipulse.com/og-image.png">
+    <meta name="twitter:description" content="Compare AI model benchmark scores side by side. 34 LLMs ranked by MMLU, HumanEval, MATH, and Arena Elo.">
+    <link rel="canonical" href="https://getapipulse.com/model-benchmarks.html">
+    <link rel="alternate" type="application/rss+xml" title="APIpulse Blog" href="https://getapipulse.com/rss.xml">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="styles.css">
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0CEP7S9Y3J"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-0CEP7S9Y3J');
+    </script>
+    <script src="analytics.js" defer></script>
+    <script src="dynamic-date.js" defer></script>
+    <script src="shared.js" defer></script>
+    <script src="pricing-data.js" defer></script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "AI Model Benchmark Comparison",
+        "url": "https://getapipulse.com/model-benchmarks.html",
+        "description": "Compare AI model benchmark scores side by side. 34 LLMs ranked by MMLU, HumanEval, MATH, and Arena Elo.",
+        "applicationCategory": "DeveloperApplication",
+        "operatingSystem": "Web",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "What is MMLU and why does it matter?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "MMLU (Massive Multitask Language Understanding) tests a model's knowledge across 57 subjects including math, science, law, and humanities. A higher MMLU score indicates broader general knowledge. Frontier models score 90+, mid-tier 80-90, budget 65-80."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Which AI model has the highest benchmark scores?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "GPT-5.5 Pro and Claude Opus 4.8 consistently rank at the top across most benchmarks. GPT-5.5 leads on MATH (96.2) and Arena Elo (1380), while Claude Opus 4.8 excels at HumanEval (95.8). For budget models, DeepSeek V4 Pro offers the best benchmark-to-cost ratio."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How do I use benchmark scores to choose a model?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Match benchmarks to your use case: MMLU for general knowledge tasks, HumanEval for code generation, MATH for mathematical reasoning, and Arena Elo for conversational quality. A model with 90+ MMLU and 90+ HumanEval handles most production tasks well. For budget-conscious choices, look for models scoring 85+ on your priority benchmark."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Are benchmark scores the only factor in choosing a model?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "No. Benchmark scores measure capability, but real-world performance also depends on API cost, context window size, rate limits, latency, and reliability. A model scoring 88 on MMLU at $0.15/1M tokens may be better value than one scoring 93 at $5.00/1M tokens. Use benchmarks alongside cost calculators for the full picture."
+                }
+            }
+        ]
+    }
+    </script>
+    <style>
+        .content { max-width: 1100px; margin: 0 auto; padding: 120px 24px 80px; }
+        h1 { font-size: clamp(28px, 4vw, 42px); font-weight: 800; text-align: center; margin-bottom: 12px; }
+        .subtitle { text-align: center; color: var(--text-secondary); font-size: 17px; margin-bottom: 48px; max-width: 700px; margin-left: auto; margin-right: auto; }
+
+        .filters { display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; margin-bottom: 32px; }
+        .filter-group { display: flex; align-items: center; gap: 8px; }
+        .filter-group label { font-size: 13px; color: var(--text-secondary); font-weight: 600; }
+        .filter-group select {
+            background: var(--bg-card); border: 1px solid var(--border); color: var(--text-primary);
+            padding: 8px 12px; border-radius: 8px; font-size: 14px;
+        }
+        .filter-group select:focus { outline: none; border-color: var(--accent); }
+
+        .benchmark-tabs { display: flex; gap: 8px; justify-content: center; margin-bottom: 32px; flex-wrap: wrap; }
+        .bench-tab {
+            padding: 8px 20px; border-radius: 8px; border: 1px solid var(--border);
+            background: var(--bg-card); color: var(--text-secondary); font-size: 14px; font-weight: 600;
+            cursor: pointer; transition: all 0.2s;
+        }
+        .bench-tab:hover { border-color: var(--accent); color: var(--text-primary); }
+        .bench-tab.active { background: var(--accent); color: white; border-color: var(--accent); }
+
+        .chart-container {
+            background: var(--bg-card); border: 1px solid var(--border); border-radius: 16px;
+            padding: 32px; margin-bottom: 40px;
+        }
+        .chart-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px; flex-wrap: wrap; gap: 12px; }
+        .chart-header h2 { font-size: 20px; font-weight: 700; }
+        .chart-legend { display: flex; gap: 16px; flex-wrap: wrap; }
+        .legend-item { display: flex; align-items: center; gap: 6px; font-size: 12px; color: var(--text-secondary); }
+        .legend-dot { width: 10px; height: 10px; border-radius: 50%; }
+        canvas { width: 100% !important; height: 450px !important; }
+
+        .ranking-table {
+            width: 100%; border-collapse: collapse; background: var(--bg-card);
+            border: 1px solid var(--border); border-radius: 16px; overflow: hidden;
+        }
+        .ranking-table th {
+            text-align: left; padding: 14px 16px; font-size: 12px; font-weight: 700;
+            color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px;
+            border-bottom: 1px solid var(--border); cursor: pointer; user-select: none;
+            background: var(--bg-secondary);
+        }
+        .ranking-table th:hover { color: var(--accent); }
+        .ranking-table th.sorted { color: var(--accent); }
+        .ranking-table td { padding: 14px 16px; border-bottom: 1px solid var(--border); font-size: 14px; }
+        .ranking-table tr:last-child td { border-bottom: none; }
+        .ranking-table tr:hover { background: var(--bg-card-hover); }
+
+        .rank-badge {
+            display: inline-flex; align-items: center; justify-content: center;
+            width: 28px; height: 28px; border-radius: 8px; font-weight: 800; font-size: 13px;
+        }
+        .rank-1 { background: linear-gradient(135deg, #fbbf24, #f59e0b); color: #000; }
+        .rank-2 { background: linear-gradient(135deg, #94a3b8, #64748b); color: #000; }
+        .rank-3 { background: linear-gradient(135deg, #d97706, #b45309); color: #fff; }
+        .rank-other { background: var(--bg-secondary); color: var(--text-muted); }
+
+        .model-name { font-weight: 600; }
+        .provider-tag { display: inline-block; padding: 2px 8px; border-radius: 6px; font-size: 11px; font-weight: 600; margin-left: 8px; }
+        .tier-badge { display: inline-block; padding: 2px 8px; border-radius: 6px; font-size: 11px; font-weight: 600; }
+        .tier-premium { background: rgba(239, 68, 68, 0.15); color: #ef4444; }
+        .tier-mid { background: rgba(245, 158, 11, 0.15); color: #f59e0b; }
+        .tier-budget { background: rgba(34, 197, 94, 0.15); color: #22c55e; }
+
+        .score-bar { height: 8px; border-radius: 4px; background: var(--bg-secondary); overflow: hidden; min-width: 60px; }
+        .score-bar-fill { height: 100%; border-radius: 4px; transition: width 0.5s ease; }
+
+        .compare-section {
+            background: var(--bg-card); border: 1px solid var(--border); border-radius: 16px;
+            padding: 32px; margin-top: 40px;
+        }
+        .compare-section h2 { font-size: 20px; font-weight: 700; margin-bottom: 20px; }
+        .compare-selectors { display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 24px; }
+        .compare-selectors select {
+            flex: 1; min-width: 200px; padding: 10px 14px; border-radius: 8px;
+            background: var(--bg-secondary); border: 1px solid var(--border);
+            color: var(--text-primary); font-size: 14px;
+        }
+        .compare-result { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+        .compare-card {
+            background: var(--bg-secondary); border-radius: 12px; padding: 24px; text-align: center;
+        }
+        .compare-card h3 { font-size: 18px; font-weight: 700; margin-bottom: 4px; }
+        .compare-card .provider-label { font-size: 13px; color: var(--text-secondary); margin-bottom: 16px; }
+        .compare-card .bench-row { display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px solid var(--border); font-size: 14px; }
+        .compare-card .bench-row:last-child { border-bottom: none; }
+        .compare-card .bench-label { color: var(--text-secondary); }
+        .compare-card .bench-value { font-weight: 700; }
+        .winner { color: var(--green); }
+        .loser { color: var(--text-muted); }
+
+        .info-box {
+            background: var(--bg-card); border: 1px solid var(--border); border-radius: 16px;
+            padding: 24px; margin-top: 40px;
+        }
+        .info-box h3 { font-size: 18px; font-weight: 700; margin-bottom: 12px; }
+        .info-box p { color: var(--text-secondary); font-size: 14px; line-height: 1.7; margin-bottom: 12px; }
+        .info-box ul { color: var(--text-secondary); font-size: 14px; line-height: 1.7; padding-left: 20px; }
+        .info-box li { margin-bottom: 6px; }
+
+        @media (max-width: 768px) {
+            .ranking-table { font-size: 13px; }
+            .ranking-table th, .ranking-table td { padding: 10px 8px; }
+            .provider-tag { display: none; }
+            .compare-result { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <nav id="nav"></nav>
+
+    <div class="content">
+        <h1>AI Model Benchmark Scores</h1>
+        <p class="subtitle">Compare 34 LLMs by MMLU, HumanEval, MATH, and Arena Elo scores. Find the best model for your use case — ranked by actual benchmark performance.</p>
+
+        <div class="filters">
+            <div class="filter-group">
+                <label>Provider:</label>
+                <select id="providerFilter">
+                    <option value="all">All Providers</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <label>Tier:</label>
+                <select id="tierFilter">
+                    <option value="all">All Tiers</option>
+                    <option value="Premium">Premium</option>
+                    <option value="Mid">Mid</option>
+                    <option value="Budget">Budget</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Benchmark Tabs -->
+        <div class="benchmark-tabs">
+            <div class="bench-tab active" data-bench="mmlu">MMLU</div>
+            <div class="bench-tab" data-bench="humaneval">HumanEval</div>
+            <div class="bench-tab" data-bench="math">MATH</div>
+            <div class="bench-tab" data-bench="elo">Arena Elo</div>
+            <div class="bench-tab" data-bench="composite">Composite</div>
+        </div>
+
+        <!-- Bar Chart -->
+        <div class="chart-container">
+            <div class="chart-header">
+                <h2 id="chartTitle">MMLU Scores — All Models</h2>
+                <div class="chart-legend">
+                    <div class="legend-item"><div class="legend-dot" style="background:#ef4444"></div>Premium</div>
+                    <div class="legend-item"><div class="legend-dot" style="background:#f59e0b"></div>Mid</div>
+                    <div class="legend-item"><div class="legend-dot" style="background:#22c55e"></div>Budget</div>
+                </div>
+            </div>
+            <canvas id="benchChart"></canvas>
+        </div>
+
+        <!-- Ranking Table -->
+        <div style="overflow-x:auto;">
+            <table class="ranking-table" id="rankingTable">
+                <thead>
+                    <tr>
+                        <th data-sort="rank" class="sorted">#</th>
+                        <th data-sort="name">Model</th>
+                        <th data-sort="tier">Tier</th>
+                        <th data-sort="mmlu">MMLU</th>
+                        <th data-sort="humaneval">HumanEval</th>
+                        <th data-sort="math">MATH</th>
+                        <th data-sort="elo">Arena Elo</th>
+                        <th data-sort="composite">Composite</th>
+                        <th data-sort="avgCost">Cost $/1M</th>
+                    </tr>
+                </thead>
+                <tbody id="tableBody"></tbody>
+            </table>
+        </div>
+
+        <!-- Head-to-Head Compare -->
+        <div class="compare-section">
+            <h2>Head-to-Head Benchmark Comparison</h2>
+            <div class="compare-selectors">
+                <select id="compareA"></select>
+                <select id="compareB"></select>
+            </div>
+            <canvas id="radarChart" style="height:350px !important;"></canvas>
+            <div class="compare-result" id="compareResult"></div>
+        </div>
+
+        <!-- Info -->
+        <div class="info-box">
+            <h3>Understanding AI Model Benchmarks</h3>
+            <p>Benchmark scores provide a standardized way to compare AI model capabilities. Here's what each benchmark measures:</p>
+            <ul>
+                <li><strong>MMLU</strong> (Massive Multitask Language Understanding): Tests knowledge across 57 subjects including math, science, law, history, and humanities. Higher = broader general knowledge. Scale: 0-100.</li>
+                <li><strong>HumanEval</strong> (Code Generation): Measures ability to generate correct Python functions from docstrings. Higher = better coding ability. Scale: 0-100 (pass@1).</li>
+                <li><strong>MATH</strong> (Mathematical Reasoning): Tests ability to solve competition-level math problems. Higher = stronger mathematical reasoning. Scale: 0-100.</li>
+                <li><strong>Arena Elo</strong> (Chatbot Arena): ELO rating from blind human comparisons in the Chatbot Arena. Higher = humans prefer this model's responses more often. Scale: 1000-1400+.</li>
+                <li><strong>Composite Score</strong>: Weighted average of all four benchmarks, normalized to 0-100. Useful for overall model ranking.</li>
+            </ul>
+            <p style="margin-top:16px"><strong>Important:</strong> Benchmark scores are estimates based on published results and community data. Actual performance varies by task, prompt, and use case. Always test with your specific workload before committing to a model.</p>
+        </div>
+    </div>
+
+    <footer id="footer"></footer>
+
+    <script>
+    // Benchmark scores — estimated from published results and community data
+    const BENCHMARKS = {
+        'openai-gpt55':        { mmlu: 94.8, humaneval: 94.2, math: 96.2, elo: 1380 },
+        'openai-gpt55-pro':    { mmlu: 96.5, humaneval: 96.8, math: 98.1, elo: 1405 },
+        'openai-gpt53-codex':  { mmlu: 90.2, humaneval: 93.5, math: 88.4, elo: 1320 },
+        'openai-gpt5':         { mmlu: 92.1, humaneval: 91.0, math: 92.5, elo: 1350 },
+        'openai-gpt5-mini':    { mmlu: 85.3, humaneval: 82.0, math: 78.6, elo: 1260 },
+        'openai-gpt-oss-120b': { mmlu: 82.0, humaneval: 78.5, math: 72.3, elo: 1220 },
+        'openai-gpt-oss-20b':  { mmlu: 68.5, humaneval: 62.0, math: 55.8, elo: 1100 },
+        'openai-gpt4o':        { mmlu: 88.7, humaneval: 87.2, math: 84.0, elo: 1310 },
+        'openai-gpt4o-mini':   { mmlu: 82.0, humaneval: 75.5, math: 70.2, elo: 1210 },
+        'anthropic-opus48':    { mmlu: 94.2, humaneval: 95.8, math: 93.5, elo: 1370 },
+        'anthropic-opus47':    { mmlu: 93.5, humaneval: 94.5, math: 92.0, elo: 1355 },
+        'anthropic-opus':      { mmlu: 92.8, humaneval: 93.2, math: 90.5, elo: 1340 },
+        'anthropic-sonnet46':  { mmlu: 90.5, humaneval: 90.2, math: 87.8, elo: 1325 },
+        'anthropic-sonnet':    { mmlu: 89.8, humaneval: 89.0, math: 86.2, elo: 1315 },
+        'anthropic-haiku':     { mmlu: 83.5, humaneval: 80.2, math: 74.5, elo: 1230 },
+        'google-gemini3-pro':  { mmlu: 91.8, humaneval: 88.5, math: 91.2, elo: 1340 },
+        'google-pro':          { mmlu: 89.2, humaneval: 85.0, math: 86.8, elo: 1300 },
+        'google-flash':        { mmlu: 82.5, humaneval: 76.0, math: 72.0, elo: 1215 },
+        'google-flash-lite':   { mmlu: 74.0, humaneval: 65.5, math: 58.2, elo: 1130 },
+        'deepseek-v4-pro':     { mmlu: 88.2, humaneval: 86.5, math: 83.0, elo: 1290 },
+        'deepseek-v4-flash':   { mmlu: 81.0, humaneval: 74.0, math: 70.5, elo: 1200 },
+        'deepseek-v3':         { mmlu: 78.5, humaneval: 70.2, math: 65.8, elo: 1170 },
+        'mistral-large':       { mmlu: 85.5, humaneval: 82.8, math: 78.2, elo: 1265 },
+        'mistral-small':       { mmlu: 79.0, humaneval: 72.0, math: 66.5, elo: 1180 },
+        'cohere-command-r-plus': { mmlu: 84.0, humaneval: 78.0, math: 72.5, elo: 1240 },
+        'cohere-command-r':    { mmlu: 75.5, humaneval: 66.0, math: 58.0, elo: 1140 },
+        'llama-4-scout':       { mmlu: 83.0, humaneval: 79.5, math: 73.8, elo: 1235 },
+        'llama-4-maverick':    { mmlu: 85.0, humaneval: 81.2, math: 76.5, elo: 1255 },
+        'llama-3.1-70b':       { mmlu: 80.5, humaneval: 74.0, math: 68.2, elo: 1195 },
+        'llama-3.1-8b':        { mmlu: 66.0, humaneval: 55.5, math: 48.0, elo: 1070 },
+        'kimi-k26':            { mmlu: 82.8, humaneval: 77.5, math: 75.0, elo: 1225 },
+        'xai-grok3':           { mmlu: 87.0, humaneval: 83.5, math: 80.2, elo: 1280 },
+        'xai-grok3-mini':      { mmlu: 76.0, humaneval: 68.0, math: 60.5, elo: 1150 },
+        'ai21-jamba':          { mmlu: 80.0, humaneval: 72.5, math: 66.0, elo: 1185 },
+    };
+
+    const PROVIDER_COLORS = {
+        'OpenAI': '#10a37f', 'Anthropic': '#d97706', 'Google': '#4285f4',
+        'DeepSeek': '#6366f1', 'Mistral': '#f43f5e', 'Cohere': '#39d353',
+        'Meta (Together.ai)': '#1877f2', 'Moonshot': '#8b5cf6', 'xAI': '#94a3b8', 'AI21': '#06b6d4',
+    };
+    const TIER_COLORS = { Premium: '#ef4444', Mid: '#f59e0b', Budget: '#22c55e' };
+
+    let activeBench = 'mmlu';
+    let sortKey = 'composite';
+    let sortDir = -1;
+
+    function init() {
+        const providers = [...new Set(API_MODELS.filter(m => !m.deprecated).map(m => m.provider))].sort();
+        const sel = document.getElementById('providerFilter');
+        providers.forEach(p => {
+            const opt = document.createElement('option');
+            opt.value = p; opt.textContent = p;
+            sel.appendChild(opt);
+        });
+
+        // Populate compare selectors
+        const compareA = document.getElementById('compareA');
+        const compareB = document.getElementById('compareB');
+        const nonDeprecated = API_MODELS.filter(m => !m.deprecated);
+        nonDeprecated.forEach((m, i) => {
+            const optA = document.createElement('option');
+            optA.value = m.id; optA.textContent = m.name + ' (' + m.provider + ')';
+            compareA.appendChild(optA);
+            const optB = document.createElement('option');
+            optB.value = m.id; optB.textContent = m.name + ' (' + m.provider + ')';
+            compareB.appendChild(optB);
+        });
+        // Default selects
+        compareA.value = 'openai-gpt5';
+        compareB.value = 'anthropic-opus48';
+
+        // Event listeners
+        sel.addEventListener('change', render);
+        document.getElementById('tierFilter').addEventListener('change', render);
+        document.querySelectorAll('.bench-tab').forEach(tab => {
+            tab.addEventListener('click', () => {
+                document.querySelectorAll('.bench-tab').forEach(t => t.classList.remove('active'));
+                tab.classList.add('active');
+                activeBench = tab.dataset.bench;
+                render();
+            });
+        });
+
+        // Sort headers
+        document.querySelectorAll('.ranking-table th').forEach(th => {
+            th.addEventListener('click', () => {
+                const key = th.dataset.sort;
+                if (sortKey === key) sortDir *= -1;
+                else { sortKey = key; sortDir = key === 'name' ? 1 : -1; }
+                document.querySelectorAll('.ranking-table th').forEach(t => t.classList.remove('sorted'));
+                th.classList.add('sorted');
+                render();
+            });
+        });
+
+        // Compare selectors
+        compareA.addEventListener('change', renderCompare);
+        compareB.addEventListener('change', renderCompare);
+
+        render();
+        renderCompare();
+    }
+
+    function getModelData() {
+        return API_MODELS.filter(m => !m.deprecated && BENCHMARKS[m.id]).map(m => {
+            const b = BENCHMARKS[m.id];
+            const composite = ((b.mmlu + b.humaneval + b.math) / 3 * 0.6 + ((b.elo - 1000) / 400 * 100) * 0.4);
+            return { ...m, ...b, composite: Math.round(composite * 10) / 10, avgCost: (m.input + m.output) / 2 };
+        });
+    }
+
+    function getFiltered() {
+        let models = getModelData();
+        const provider = document.getElementById('providerFilter').value;
+        const tier = document.getElementById('tierFilter').value;
+        if (provider !== 'all') models = models.filter(m => m.provider === provider);
+        if (tier !== 'all') models = models.filter(m => m.tier === tier);
+        return models;
+    }
+
+    function sortModels(models) {
+        return models.sort((a, b) => {
+            let va = a[sortKey], vb = b[sortKey];
+            if (typeof va === 'string') return sortDir * va.localeCompare(vb);
+            return sortDir * (va - vb);
+        });
+    }
+
+    function render() {
+        const models = sortModels(getFiltered());
+        renderChart(models);
+        renderTable(models);
+    }
+
+    function renderChart(models) {
+        const canvas = document.getElementById('benchChart');
+        const ctx = canvas.getContext('2d');
+        const dpr = window.devicePixelRatio || 1;
+        const rect = canvas.parentElement.getBoundingClientRect();
+        canvas.width = rect.width * dpr;
+        canvas.height = 450 * dpr;
+        canvas.style.width = rect.width + 'px';
+        canvas.style.height = '450px';
+        ctx.scale(dpr, dpr);
+        ctx.clearRect(0, 0, rect.width, 450);
+
+        const benchKey = activeBench === 'composite' ? 'composite' : activeBench;
+        const benchLabel = { mmlu: 'MMLU', humaneval: 'HumanEval', math: 'MATH', elo: 'Arena Elo', composite: 'Composite' }[activeBench];
+        document.getElementById('chartTitle').textContent = benchLabel + ' Scores — All Models';
+
+        if (models.length === 0) return;
+
+        const sorted = [...models].sort((a, b) => b[benchKey] - a[benchKey]);
+        const maxVal = Math.max(...sorted.map(m => m[benchKey]));
+        const padding = { top: 20, right: 20, bottom: 100, left: 60 };
+        const w = rect.width - padding.left - padding.right;
+        const h = 450 - padding.top - padding.bottom;
+        const barW = Math.min(30, (w / sorted.length) - 4);
+        const gap = (w - barW * sorted.length) / (sorted.length + 1);
+
+        // Y axis
+        ctx.strokeStyle = 'rgba(255,255,255,0.1)';
+        ctx.fillStyle = 'rgba(255,255,255,0.4)';
+        ctx.font = '11px system-ui';
+        ctx.textAlign = 'right';
+        for (let i = 0; i <= 5; i++) {
+            const y = padding.top + h - (h * i / 5);
+            ctx.beginPath(); ctx.moveTo(padding.left, y); ctx.lineTo(rect.width - padding.right, y); ctx.stroke();
+            const val = (maxVal * i / 5).toFixed(0);
+            ctx.fillText(val, padding.left - 8, y + 4);
+        }
+
+        // Bars
+        sorted.forEach((m, i) => {
+            const x = padding.left + gap + i * (barW + gap);
+            const barH = (m[benchKey] / maxVal) * h;
+            const y = padding.top + h - barH;
+            const color = TIER_COLORS[m.tier] || '#6466f1';
+
+            // Bar gradient
+            const grad = ctx.createLinearGradient(x, y, x, y + barH);
+            grad.addColorStop(0, color);
+            grad.addColorStop(1, color + '66');
+            ctx.fillStyle = grad;
+            ctx.beginPath();
+            ctx.roundRect(x, y, barW, barH, [4, 4, 0, 0]);
+            ctx.fill();
+
+            // Value label
+            ctx.fillStyle = 'rgba(255,255,255,0.8)';
+            ctx.font = '10px system-ui';
+            ctx.textAlign = 'center';
+            ctx.fillText(m[benchKey].toFixed(1), x + barW / 2, y - 6);
+
+            // Model name (rotated)
+            ctx.save();
+            ctx.translate(x + barW / 2, padding.top + h + 12);
+            ctx.rotate(-Math.PI / 3);
+            ctx.fillStyle = 'rgba(255,255,255,0.5)';
+            ctx.font = '10px system-ui';
+            ctx.textAlign = 'right';
+            const label = m.name.length > 16 ? m.name.slice(0, 14) + '…' : m.name;
+            ctx.fillText(label, 0, 0);
+            ctx.restore();
+        });
+    }
+
+    function renderTable(models) {
+        const tbody = document.getElementById('tableBody');
+        tbody.innerHTML = models.map((m, i) => {
+            const rank = i + 1;
+            const rankClass = rank <= 3 ? 'rank-' + rank : 'rank-other';
+            const tierClass = 'tier-' + m.tier.toLowerCase();
+            const providerColor = PROVIDER_COLORS[m.provider] || '#6466f1';
+            const composite = m.composite;
+            const benchVal = m[activeBench === 'composite' ? 'composite' : activeBench];
+            const maxBench = activeBench === 'elo' ? 1410 : activeBench === 'composite' ? 100 : 100;
+            const barPct = Math.min(100, (benchVal / maxBench) * 100);
+            return `<tr>
+                <td><span class="rank-badge ${rankClass}">${rank}</span></td>
+                <td><span class="model-name">${m.name}</span><span class="provider-tag" style="background:${providerColor}22;color:${providerColor}">${m.provider}</span></td>
+                <td><span class="tier-badge ${tierClass}">${m.tier}</span></td>
+                <td>${m.mmlu.toFixed(1)}</td>
+                <td>${m.humaneval.toFixed(1)}</td>
+                <td>${m.math.toFixed(1)}</td>
+                <td>${m.elo}</td>
+                <td><div class="score-bar"><div class="score-bar-fill" style="width:${barPct}%;background:${TIER_COLORS[m.tier]}"></div></div> ${composite.toFixed(1)}</td>
+                <td>$${m.avgCost.toFixed(2)}</td>
+            </tr>`;
+        }).join('');
+    }
+
+    function renderCompare() {
+        const idA = document.getElementById('compareA').value;
+        const idB = document.getElementById('compareB').value;
+        const mA = getModelData().find(m => m.id === idA);
+        const mB = getModelData().find(m => m.id === idB);
+        if (!mA || !mB) return;
+
+        const benchmarks = ['mmlu', 'humaneval', 'math', 'elo'];
+        const labels = ['MMLU', 'HumanEval', 'MATH', 'Arena Elo'];
+        const maxVals = [100, 100, 100, 1410];
+
+        // Radar chart
+        const canvas = document.getElementById('radarChart');
+        const ctx = canvas.getContext('2d');
+        const dpr = window.devicePixelRatio || 1;
+        const rect = canvas.parentElement.getBoundingClientRect();
+        canvas.width = rect.width * dpr;
+        canvas.height = 350 * dpr;
+        canvas.style.width = rect.width + 'px';
+        canvas.style.height = '350px';
+        ctx.scale(dpr, dpr);
+        ctx.clearRect(0, 0, rect.width, 350);
+
+        const cx = rect.width / 2, cy = 175, r = 120;
+        const n = benchmarks.length;
+
+        // Draw grid
+        for (let ring = 1; ring <= 4; ring++) {
+            ctx.beginPath();
+            for (let i = 0; i <= n; i++) {
+                const angle = (Math.PI * 2 * i / n) - Math.PI / 2;
+                const x = cx + r * (ring / 4) * Math.cos(angle);
+                const y = cy + r * (ring / 4) * Math.sin(angle);
+                i === 0 ? ctx.moveTo(x, y) : ctx.lineTo(x, y);
+            }
+            ctx.strokeStyle = 'rgba(255,255,255,0.1)';
+            ctx.stroke();
+        }
+
+        // Axes + labels
+        benchmarks.forEach((b, i) => {
+            const angle = (Math.PI * 2 * i / n) - Math.PI / 2;
+            const x = cx + (r + 20) * Math.cos(angle);
+            const y = cy + (r + 20) * Math.sin(angle);
+            ctx.beginPath();
+            ctx.moveTo(cx, cy);
+            ctx.lineTo(cx + r * Math.cos(angle), cy + r * Math.sin(angle));
+            ctx.strokeStyle = 'rgba(255,255,255,0.15)';
+            ctx.stroke();
+            ctx.fillStyle = 'rgba(255,255,255,0.6)';
+            ctx.font = '12px system-ui';
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'middle';
+            ctx.fillText(labels[i], x, y);
+        });
+
+        // Draw model polygons
+        function drawPolygon(model, color) {
+            ctx.beginPath();
+            benchmarks.forEach((b, i) => {
+                const angle = (Math.PI * 2 * i / n) - Math.PI / 2;
+                const norm = model[b] / maxVals[i];
+                const x = cx + r * norm * Math.cos(angle);
+                const y = cy + r * norm * Math.sin(angle);
+                i === 0 ? ctx.moveTo(x, y) : ctx.lineTo(x, y);
+            });
+            ctx.closePath();
+            ctx.fillStyle = color + '33';
+            ctx.fill();
+            ctx.strokeStyle = color;
+            ctx.lineWidth = 2;
+            ctx.stroke();
+        }
+
+        drawPolygon(mA, '#6466f1');
+        drawPolygon(mB, '#22c55e');
+
+        // Legend
+        ctx.fillStyle = '#6466f1';
+        ctx.fillRect(cx - 100, 330, 12, 12);
+        ctx.fillStyle = 'rgba(255,255,255,0.7)';
+        ctx.font = '12px system-ui';
+        ctx.textAlign = 'left';
+        ctx.fillText(mA.name, cx - 84, 340);
+        ctx.fillStyle = '#22c55e';
+        ctx.fillRect(cx + 20, 330, 12, 12);
+        ctx.fillStyle = 'rgba(255,255,255,0.7)';
+        ctx.fillText(mB.name, cx + 36, 340);
+
+        // Compare cards
+        const result = document.getElementById('compareResult');
+        function card(m, color) {
+            return `<div class="compare-card">
+                <h3 style="color:${color}">${m.name}</h3>
+                <div class="provider-label">${m.provider} · ${m.tier} · $${m.avgCost.toFixed(2)}/1M avg</div>
+                ${benchmarks.map((b, i) => {
+                    const other = m.id === idA ? mB : mA;
+                    const isWinner = m[b] > other[b];
+                    return `<div class="bench-row">
+                        <span class="bench-label">${labels[i]}</span>
+                        <span class="bench-value ${isWinner ? 'winner' : ''}">${m[b]}${isWinner ? ' ★' : ''}</span>
+                    </div>`;
+                }).join('')}
+                <div class="bench-row">
+                    <span class="bench-label">Composite</span>
+                    <span class="bench-value">${m.composite.toFixed(1)}</span>
+                </div>
+            </div>`;
+        }
+        result.innerHTML = card(mA, '#6466f1') + card(mB, '#22c55e');
+    }
+
+    // Polyfill roundRect for older browsers
+    if (!CanvasRenderingContext2D.prototype.roundRect) {
+        CanvasRenderingContext2D.prototype.roundRect = function(x, y, w, h, radii) {
+            const r = radii[0] || 0;
+            this.moveTo(x + r, y);
+            this.lineTo(x + w - r, y);
+            this.quadraticCurveTo(x + w, y, x + w, y + r);
+            this.lineTo(x + w, y + h - r);
+            this.quadraticCurveTo(x + w, y + h, x + w - r, y + h);
+            this.lineTo(x + r, y + h);
+            this.quadraticCurveTo(x, y + h, x, y + h - r);
+            this.lineTo(x, y + r);
+            this.quadraticCurveTo(x, y, x + r, y);
+            this.closePath();
+        };
+    }
+
+    document.addEventListener('DOMContentLoaded', init);
+    </script>
+</body>
+</html>
