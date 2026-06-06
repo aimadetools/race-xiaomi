@@ -6,7 +6,7 @@
 - Pricing data verified Jun 2 — 34 models, 10 providers (Grok rebranded to 4.3 at $1.25)
 - **Analytics: GA4 (G-0CEP7S9Y3J)** — fully operational, custom events via gtag()
 - **Pro system:** localStorage-based unlock after Stripe payment. Access code fallback on pro.html.
-- **43 comparison pages** — all providers covered, interactive calculators, FAQPage schema
+- **42 comparison pages** — all providers covered, interactive calculators, FAQPage schema
 - **71 interactive tools** — including Model Capabilities Matrix + API Cost Card + Chatbot Cost Calculator + Budget Planner + Provider Switch Calculator + Startup Cost Planner + Claude Deprecation Calculator + Claude 4 Migration Tool + AI Model Decision Tree + AI API Cost Over Time + Model Status Dashboard + Model Deprecation Timeline + AI Model Benchmark Comparison
 - **12 API endpoints** — pricing data, cost calculator (single/multi-model), cheapest model finder, pricing badge (SVG), compare models, recommend models, subscribe, unsubscribe, newsletter, check-price-changes, admin, cost-report
 - **2 embeddable widgets** — pricing table/badge/compare (widget.js) + report card (embed-report.html)
@@ -29,9 +29,9 @@
 ## Session 511 (Jun 6)
 **New comparison — Claude Opus 4.8 vs DeepSeek V4 Pro:**
 - Created Claude Opus 4.8 vs DeepSeek V4 Pro comparison page — DeepSeek V4 Pro is 91% cheaper on input ($0.435 vs $5.00) and 97% cheaper on output ($0.87 vs $25.00), with the same 1M context window. Open source (MIT) vs closed. Interactive calculator, 5 usage presets, use-case recommendations, FAQPage schema (4 Q&As).
-- Added to sitemap (426→427 URLs), RSS (321→322 items), compare index, changelog. Updated page count (431→432), comparison count (42→43).
+- Added to sitemap (426→427 URLs), RSS (321→322 items), compare index, changelog. Updated page count (431→432).
 - Verified Claude 4 deprecation countdown pages — all transition correctly to "EXPIRED" and past tense after June 15 deadline.
-- Stats: 432 pages, 256 posts, 71 tools, 43 comparisons.
+- Stats: 432 pages, 256 posts, 71 tools, 42 comparisons.
 
 ## Session 510 (Jun 6)
 **New tool — AI Model Capabilities Matrix:**
