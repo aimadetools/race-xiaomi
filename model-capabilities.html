@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Model Capabilities Matrix — Feature Comparison (2026) | APIpulse</title>
+    <meta name="description" content="Compare all 34 AI models by capabilities: function calling, vision, streaming, JSON mode, embeddings, fine-tuning, and more. Interactive filterable matrix.">
+    <meta name="keywords" content="AI model capabilities, LLM feature comparison, GPT-5 features, Claude features, Gemini features, function calling AI, vision AI model, AI model matrix, LLM capabilities 2026">
+    <meta property="og:title" content="AI Model Capabilities Matrix — Feature Comparison (2026) | APIpulse">
+    <meta property="og:description" content="Compare all 34 AI models by capabilities: function calling, vision, streaming, JSON mode, and more.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://getapipulse.com/og-image.png">
+    <meta property="og:url" content="https://getapipulse.com/model-capabilities.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="AI Model Capabilities Matrix — Feature Comparison">
+    <meta name="twitter:image" content="https://getapipulse.com/og-image.png">
+    <meta name="twitter:description" content="Compare all 34 AI models by capabilities. Interactive filterable matrix.">
+    <link rel="canonical" href="https://getapipulse.com/model-capabilities.html">
+    <link rel="alternate" type="application/rss+xml" title="APIpulse Blog" href="https://getapipulse.com/rss.xml">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="styles.css">
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0CEP7S9Y3J"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-0CEP7S9Y3J');
+    </script>
+    <script src="analytics.js" defer></script>
+    <script src="dynamic-date.js" defer></script>
+    <script src="shared.js" defer></script>
+    <script src="pricing-data.js" defer></script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "AI Model Capabilities Matrix",
+        "url": "https://getapipulse.com/model-capabilities.html",
+        "description": "Compare all 34 AI models by capabilities: function calling, vision, streaming, JSON mode, and more.",
+        "applicationCategory": "DeveloperApplication",
+        "operatingSystem": "Web",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "Which AI models support function calling?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "All major AI models support function calling (tool use) as of June 2026, including GPT-5, Claude Opus/Sonnet/Haiku, Gemini Pro/Flash, DeepSeek V4, Mistral, Llama 4, Grok, and Cohere Command R. Budget models like GPT-oss 20B and Gemini Flash Lite have more limited function calling support."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Which AI models support vision and image input?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Most flagship models support vision: GPT-5, GPT-4o, Claude Opus/Sonnet, Gemini Pro/Flash, DeepSeek V4, Mistral Large, Grok, and Llama 4 Maverick. Budget models like GPT-4o mini, Gemini Flash Lite, and some smaller open-source models have limited or no vision support."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What is JSON mode and which models support it?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "JSON mode ensures the model outputs valid JSON. GPT-5 and GPT-4o have native JSON mode. Claude models can output JSON via structured output or system prompts. Gemini supports JSON mode natively. Most modern LLMs can reliably produce JSON when instructed, but native support varies."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Which AI models have the largest context windows?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "As of June 2026, Gemini 2.0 Flash and Flash Lite lead with 1M token context windows. DeepSeek V4 models offer 1M context. GPT-5.5 has 1.05M context. Llama 4 Scout and Maverick offer 1M context via Together.ai. Claude Opus 4.8 and Sonnet 4.6 offer 1M context."
+                }
+            }
+        ]
+    }
+    </script>
+    <style>
+        .content { max-width: 1200px; margin: 0 auto; padding: 120px 24px 80px; }
+        h1 { font-size: clamp(28px, 4vw, 42px); font-weight: 800; text-align: center; margin-bottom: 12px; }
+        .subtitle { text-align: center; color: var(--text-secondary); font-size: 17px; margin-bottom: 48px; max-width: 700px; margin-left: auto; margin-right: auto; }
+        .filters { display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; margin-bottom: 32px; }
+        .filter-group { display: flex; align-items: center; gap: 8px; }
+        .filter-group label { font-size: 13px; color: var(--text-secondary); font-weight: 600; }
+        .filter-group select {
+            background: var(--bg-card); border: 1px solid var(--border); color: var(--text-primary);
+            padding: 8px 12px; border-radius: 8px; font-size: 14px;
+        }
+        .filter-group select:focus { outline: none; border-color: var(--accent); }
+        .search-box {
+            background: var(--bg-card); border: 1px solid var(--border); color: var(--text-primary);
+            padding: 8px 14px; border-radius: 8px; font-size: 14px; width: 220px;
+        }
+        .search-box:focus { outline: none; border-color: var(--accent); }
+        .matrix-wrap { overflow-x: auto; margin-bottom: 48px; border-radius: 12px; border: 1px solid var(--border); }
+        .matrix-table { width: 100%; border-collapse: collapse; font-size: 14px; }
+        .matrix-table th {
+            background: var(--bg-secondary); color: var(--text-secondary); font-weight: 600;
+            padding: 12px 10px; text-align: left; position: sticky; top: 0; z-index: 2;
+            border-bottom: 2px solid var(--border); white-space: nowrap; cursor: pointer;
+            user-select: none;
+        }
+        .matrix-table th:hover { color: var(--accent); }
+        .matrix-table th.sorted-asc::after { content: ' ↑'; color: var(--accent); }
+        .matrix-table th.sorted-desc::after { content: ' ↓'; color: var(--accent); }
+        .matrix-table td {
+            padding: 10px; border-bottom: 1px solid var(--border); vertical-align: middle;
+        }
+        .matrix-table tr:hover { background: var(--bg-secondary); }
+        .matrix-table .model-name { font-weight: 600; white-space: nowrap; }
+        .matrix-table .provider-badge {
+            display: inline-block; padding: 2px 8px; border-radius: 4px;
+            font-size: 11px; font-weight: 600; white-space: nowrap;
+        }
+        .tier-badge {
+            display: inline-block; padding: 2px 8px; border-radius: 4px;
+            font-size: 11px; font-weight: 600;
+        }
+        .tier-premium { background: rgba(99,102,241,0.15); color: #818cf8; }
+        .tier-mid { background: rgba(234,179,8,0.15); color: #facc15; }
+        .tier-budget { background: rgba(34,197,94,0.15); color: #4ade80; }
+        .cap-yes { color: #4ade80; font-weight: 700; text-align: center; }
+        .cap-no { color: #6b7280; text-align: center; }
+        .cap-limited { color: #facc15; font-weight: 600; text-align: center; }
+        .cap-partial { color: #fb923c; font-weight: 600; text-align: center; }
+        .context-val { white-space: nowrap; font-weight: 600; }
+        .legend { display: flex; gap: 24px; flex-wrap: wrap; justify-content: center; margin-bottom: 32px; font-size: 13px; }
+        .legend-item { display: flex; align-items: center; gap: 6px; }
+        .legend-dot { width: 10px; height: 10px; border-radius: 50%; }
+        .summary-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; margin-bottom: 48px; }
+        .summary-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; padding: 20px; text-align: center; }
+        .summary-card .num { font-size: 28px; font-weight: 800; color: var(--accent); }
+        .summary-card .label { font-size: 13px; color: var(--text-secondary); margin-top: 4px; }
+        .faq { max-width: 800px; margin: 0 auto; }
+        .faq h2 { font-size: 24px; margin-bottom: 24px; text-align: center; }
+        .faq-item { background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; padding: 24px; margin-bottom: 16px; }
+        .faq-item h3 { font-size: 16px; margin-bottom: 8px; }
+        .faq-item p { font-size: 14px; color: var(--text-secondary); line-height: 1.7; }
+        .email-capture { text-align: center; padding: 48px 24px; max-width: 600px; margin: 0 auto; }
+        .email-capture h2 { font-size: 24px; margin-bottom: 8px; }
+        .email-capture p { color: var(--text-secondary); margin-bottom: 16px; }
+        .email-capture input[type="email"] {
+            padding: 12px 16px; border-radius: 8px; border: 1px solid var(--border);
+            background: var(--bg-card); color: var(--text-primary); font-size: 14px; width: 260px;
+        }
+        .email-capture button {
+            padding: 12px 24px; border-radius: 8px; border: none; background: var(--accent);
+            color: white; font-size: 14px; font-weight: 600; cursor: pointer; margin-left: 8px;
+        }
+        @media (max-width: 768px) {
+            .content { padding: 100px 16px 60px; }
+            .filters { flex-direction: column; align-items: stretch; }
+            .search-box { width: 100%; }
+            .summary-cards { grid-template-columns: 1fr 1fr; }
+        }
+    </style>
+    <meta name="theme-color" content="#6366f1">
+</head>
+<body>
+    <nav>
+        <div class="nav-inner">
+            <a href="index.html" class="logo">API<span>pulse</span></a>
+            <button class="hamburger" onclick="toggleMobileNav()" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+            <div class="nav-links">
+                <a href="calculator.html">Calculator</a>
+                <a href="compare.html">Compare</a>
+                <a href="cost-explorer.html">Explorer</a>
+                <a href="agent-cost-calculator.html">Agents</a>
+                <a href="cost-scenarios.html">Scenarios</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="use-cases.html">Use Cases</a>
+                <a href="about.html">About</a>
+                <a href="blog.html">Blog</a>
+                <a href="tools.html" class="active">Tools</a>
+                <a href="pricing-index.html">Pricing Index</a>
+                <a href="model-matrix.html">Model Matrix</a>
+                <a href="api-docs.html" style="color:var(--accent);">API</a>
+                <a href="pricing.html" class="nav-cta">Get Pro — $29</a>
+                <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="content">
+        <h1>AI Model Capabilities Matrix</h1>
+        <p class="subtitle">Compare all 34 AI models by features, not just price. See which models support function calling, vision, streaming, embeddings, fine-tuning, and more.</p>
+
+        <div class="summary-cards" id="summary-cards"></div>
+
+        <div class="filters">
+            <input type="text" class="search-box" id="search" placeholder="Search models...">
+            <div class="filter-group">
+                <label>Provider:</label>
+                <select id="filter-provider"><option value="all">All Providers</option></select>
+            </div>
+            <div class="filter-group">
+                <label>Tier:</label>
+                <select id="filter-tier">
+                    <option value="all">All Tiers</option>
+                    <option value="Premium">Premium</option>
+                    <option value="Mid">Mid</option>
+                    <option value="Budget">Budget</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <label>Capability:</label>
+                <select id="filter-cap">
+                    <option value="all">All</option>
+                    <option value="vision">Vision</option>
+                    <option value="functionCalling">Function Calling</option>
+                    <option value="streaming">Streaming</option>
+                    <option value="jsonMode">JSON Mode</option>
+                    <option value="embeddings">Embeddings</option>
+                    <option value="fineTuning">Fine-Tuning</option>
+                    <option value="batchAPI">Batch API</option>
+                    <option value="systemPrompts">System Prompts</option>
+                    <option value="multilingual">Multilingual</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="legend">
+            <div class="legend-item"><div class="legend-dot" style="background:#4ade80;"></div> Supported</div>
+            <div class="legend-item"><div class="legend-dot" style="background:#facc15;"></div> Limited</div>
+            <div class="legend-item"><div class="legend-dot" style="background:#fb923c;"></div> Partial</div>
+            <div class="legend-item"><div class="legend-dot" style="background:#6b7280;"></div> Not Supported</div>
+        </div>
+
+        <div class="matrix-wrap">
+            <table class="matrix-table" id="matrix-table">
+                <thead><tr id="matrix-header"></tr></thead>
+                <tbody id="matrix-body"></tbody>
+            </table>
+        </div>
+
+        <section class="faq">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-item">
+                <h3>Which AI models support function calling?</h3>
+                <p>All major AI models support function calling (tool use) as of June 2026, including GPT-5, Claude Opus/Sonnet/Haiku, Gemini Pro/Flash, DeepSeek V4, Mistral, Llama 4, Grok, and Cohere Command R. Budget models like GPT-oss 20B and Gemini Flash Lite have more limited function calling support.</p>
+            </div>
+            <div class="faq-item">
+                <h3>Which AI models support vision and image input?</h3>
+                <p>Most flagship models support vision: GPT-5, GPT-4o, Claude Opus/Sonnet, Gemini Pro/Flash, DeepSeek V4, Mistral Large, Grok, and Llama 4 Maverick. Budget models like GPT-4o mini, Gemini Flash Lite, and some smaller open-source models have limited or no vision support.</p>
+            </div>
+            <div class="faq-item">
+                <h3>What is JSON mode and which models support it?</h3>
+                <p>JSON mode ensures the model outputs valid JSON. GPT-5 and GPT-4o have native JSON mode. Claude models can output JSON via structured output or system prompts. Gemini supports JSON mode natively. Most modern LLMs can reliably produce JSON when instructed, but native support varies.</p>
+            </div>
+            <div class="faq-item">
+                <h3>Which AI models have the largest context windows?</h3>
+                <p>As of June 2026, Gemini 2.0 Flash and Flash Lite lead with 1M token context windows. DeepSeek V4 models offer 1M context. GPT-5.5 has 1.05M context. Llama 4 Scout and Maverick offer 1M context via Together.ai. Claude Opus 4.8 and Sonnet 4.6 offer 1M context.</p>
+            </div>
+        </section>
+
+        <section class="email-capture">
+            <h2>Stay updated on AI model changes</h2>
+            <p>Get notified when new models launch or pricing changes.</p>
+            <form onsubmit="return handleSubscribe(event)">
+                <input type="email" id="sub-email" placeholder="you@company.com" required>
+                <button type="submit">Subscribe</button>
+            </form>
+            <p id="sub-msg" style="margin-top:8px;font-size:13px;display:none;"></p>
+        </section>
+    </main>
+
+    <script>
+    // Capability data for all 34 models
+    const CAPABILITIES = [
+        // OpenAI
+        { id: 'openai-gpt55', vision: 'yes', functionCalling: 'yes', streaming: 'yes', jsonMode: 'yes', embeddings: 'no', fineTuning: 'yes', batchAPI: 'yes', systemPrompts: 'yes', multimodal: 'yes', multilingual: 'yes', reasoning: 'yes', codeExecution: 'yes', webSearch: 'yes', imageGen: 'yes' },
+        { id: 'openai-gpt55-pro', vision: 'yes', functionCalling: 'yes', streaming: 'yes', jsonMode: 'yes', embeddings: 'no', fineTuning: 'yes', batchAPI: 'yes', systemPrompts: 'yes', multimodal: 'yes', multilingual: 'yes', reasoning: 'yes', codeExecution: 'yes', webSearch: 'yes', imageGen: 'yes' },
+        { id: 'openai-gpt53-codex', vision: 'yes', functionCalling: 'yes', streaming: 'yes', jsonMode: 'yes', embeddings: 'no', fineTuning: 'no', batchAPI: 'yes', systemPrompts: 'yes', multimodal: 'yes', multilingual: 'yes', reasoning: 'yes', codeExecution: 'yes', webSearch: 'no', imageGen: 'no' },
+        { id: 'openai-gpt5', vision: 'yes', functionCalling: 'yes', streaming: 'yes', jsonMode: 'yes', embeddings: 'no', fineTuning: 'yes', batchAPI: 'yes', systemPrompts: 'yes', multimodal: 'yes', multilingual: 'yes', reasoning: 'yes', codeExecution: 'yes', webSearch: 'yes', imageGen: 'no' },
+        { id: 'openai-gpt5-mini', vision: 'yes', functionCalling: 'yes', streaming: 'yes', jsonMode: 'yes', embeddings: 'no', fineTuning: 'yes', batchAPI: 'yes', systemPrompts: 'yes', multimodal: 'yes', multilingual: 'yes', reasoning: 'limited', codeExecution: 'limited', webSearch: 'no', imageGen: 'no' },
+        { id: 'openai-gpt-oss-120b', vision: 'no', functionCalling: 'limited', streaming: 'yes', jsonMode: 'limited', embeddings: 'no', fineTuning: 'no', batchAPI: 'no', systemPrompts: 'yes', multimodal: 'no', multilingual: 'yes', reasoning: 'limited', codeExecution: 'no', webSearch: 'no', imageGen: 'no' },
+        { id: 'openai-gpt-oss-20b', vision: 'no', functionCalling: 'limited', streaming: 'yes', jsonMode: 'limited', embeddings: 'no', fineTuning: 'no', batchAPI: 'no', systemPrompts: 'yes', multimodal: 'no', multilingual: 'limited', reasoning: 'no', codeExecution: 'no', webSearch: 'no', imageGen: 'no' },
+        { id: 'openai-gpt4o', vision: 'yes', functionCalling: 'yes', streaming: 'yes', jsonMode: 'yes', embeddings: 'no', fineTuning: 'yes', batchAPI: 'yes', systemPrompts: 'yes', multimodal: 'yes', multilingual: 'yes', reasoning: 'limited', codeExecution: 'yes', webSearch: 'yes', imageGen: 'no' },
+        { id: 'openai-gpt4o-mini', vision: 'limited', functionCalling: 'yes', streaming: 'yes', jsonMode: 'yes', embeddings: 'no', fineTuning: 'yes', batchAPI: 'yes', systemPrompts: 'yes', multimodal: 'limited', multilingual: 'yes', reasoning: 'no', codeExecution: 'no', webSearch: 'no', imageGen: 'no' },
+        // Anthropic
+        { id: 'anthropic-opus48', vision: 'yes', functionCalling: 'yes', streaming: 'yes', jsonMode: 'yes', embeddings: 'no', fineTuning: 'no', batchAPI: 'yes', systemPrompts: 'yes', multimodal: 'yes', multilingual: 'yes', reasoning: 'yes', codeExecution: 'yes', webSearch: 'yes', imageGen: 'no' },
+        { id: 'anthropic-opus47', vision: 'yes', functionCalling: 'yes', streaming: 'yes', jsonMode: 'yes', embeddings: 'no', fineTuning: 'no', batchAPI: 'yes', systemPrompts: 'yes', multimodal: 'yes', multilingual: 'yes', reasoning: 'yes', codeExecution: 'yes', webSearch: 'yes', imageGen: 'no' },
+        { id: 'anthropic-opus', vision: 'yes', functionCalling: 'yes', streaming: 'yes', jsonMode: 'yes', embeddings: 'no', fineTuning: 'no', batchAPI: 'yes', systemPrompts: 'yes', multimodal: 'yes', multilingual: 'yes', reasoning: 'yes', codeExecution: 'no', webSearch: 'no', imageGen: 'no' },
+        { id: 'anthropic-sonnet46', vision: 'yes', functionCalling: 'yes', streaming: 'yes', jsonMode: 'yes', embeddings: 'no', fineTuning: 'no', batchAPI: 'yes', systemPrompts: 'yes', multimodal: 'yes', multilingual: 'yes', reasoning: 'yes', codeExecution: 'yes', webSearch: 'yes', imageGen: 'no' },
+        { id: 'anthropic-sonnet', vision: 'yes', functionCalling: 'yes', streaming: 'yes', jsonMode: 'yes', embeddings: 'no', fineTuning: 'no', batchAPI: 'yes', systemPrompts: 'yes', multimodal: 'yes', multilingual: 'yes', reasoning: 'yes', codeExecution: 'no', webSearch: 'no', imageGen: 'no' },
+        { id: 'anthropic-haiku', vision: 'yes', functionCalling: 'yes', streaming: 'yes', jsonMode: 'yes', embeddings: 'no', fineTuning: 'no', batchAPI: 'yes', systemPrompts: 'yes', multimodal: 'yes', multilingual: 'yes', reasoning: 'limited', codeExecution: 'no', webSearch: 'no', imageGen: 'no' },
+        // Google
+        { id: 'google-gemini3-pro', vision: 'yes', functionCalling: 'yes', streaming: 'yes', jsonMode: 'yes', embeddings: 'yes', fineTuning: 'yes', batchAPI: 'yes', systemPrompts: 'yes', multimodal: 'yes', multilingual: 'yes', reasoning: 'yes', codeExecution: 'yes', webSearch: 'yes', imageGen: 'yes' },
+        { id: 'google-pro', vision: 'yes', functionCalling: 'yes', streaming: 'yes', jsonMode: 'yes', embeddings: 'yes', fineTuning: 'yes', batchAPI: 'yes', systemPrompts: 'yes', multimodal: 'yes', multilingual: 'yes', reasoning: 'yes', codeExecution: 'yes', webSearch: 'yes', imageGen: 'yes' },
+        { id: 'google-flash', vision: 'yes', functionCalling: 'yes', streaming: 'yes', jsonMode: 'yes', embeddings: 'yes', fineTuning: 'yes', batchAPI: 'yes', systemPrompts: 'yes', multimodal: 'yes', multilingual: 'yes', reasoning: 'limited', codeExecution: 'yes', webSearch: 'yes', imageGen: 'yes' },
+        { id: 'google-flash-lite', vision: 'limited', functionCalling: 'limited', streaming: 'yes', jsonMode: 'yes', embeddings: 'yes', fineTuning: 'limited', batchAPI: 'no', systemPrompts: 'yes', multimodal: 'limited', multilingual: 'yes', reasoning: 'no', codeExecution: 'no', webSearch: 'no', imageGen: 'no' },
+        // DeepSeek
+        { id: 'deepseek-v4-pro', vision: 'yes', functionCalling: 'yes', streaming: 'yes', jsonMode: 'yes', embeddings: 'no', fineTuning: 'yes', batchAPI: 'no', systemPrompts: 'yes', multimodal: 'yes', multilingual: 'yes', reasoning: 'yes', codeExecution: 'no', webSearch: 'no', imageGen: 'no' },
+        { id: 'deepseek-v4-flash', vision: 'yes', functionCalling: 'yes', streaming: 'yes', jsonMode: 'yes', embeddings: 'no', fineTuning: 'yes', batchAPI: 'no', systemPrompts: 'yes', multimodal: 'yes', multilingual: 'yes', reasoning: 'limited', codeExecution: 'no', webSearch: 'no', imageGen: 'no' },
+        { id: 'deepseek-v3', vision: 'no', functionCalling: 'yes', streaming: 'yes', jsonMode: 'yes', embeddings: 'no', fineTuning: 'yes', batchAPI: 'no', systemPrompts: 'yes', multimodal: 'no', multilingual: 'yes', reasoning: 'limited', codeExecution: 'no', webSearch: 'no', imageGen: 'no' },
+        // Mistral
+        { id: 'mistral-large', vision: 'yes', functionCalling: 'yes', streaming: 'yes', jsonMode: 'yes', embeddings: 'no', fineTuning: 'yes', batchAPI: 'no', systemPrompts: 'yes', multimodal: 'yes', multilingual: 'yes', reasoning: 'yes', codeExecution: 'no', webSearch: 'no', imageGen: 'no' },
+        { id: 'mistral-small', vision: 'yes', functionCalling: 'yes', streaming: 'yes', jsonMode: 'yes', embeddings: 'no', fineTuning: 'yes', batchAPI: 'no', systemPrompts: 'yes', multimodal: 'yes', multilingual: 'yes', reasoning: 'limited', codeExecution: 'no', webSearch: 'no', imageGen: 'no' },
+        // Cohere
+        { id: 'cohere-command-r-plus', vision: 'no', functionCalling: 'yes', streaming: 'yes', jsonMode: 'limited', embeddings: 'yes', fineTuning: 'yes', batchAPI: 'no', systemPrompts: 'yes', multimodal: 'no', multilingual: 'yes', reasoning: 'limited', codeExecution: 'no', webSearch: 'yes', imageGen: 'no' },
+        { id: 'cohere-command-r', vision: 'no', functionCalling: 'yes', streaming: 'yes', jsonMode: 'limited', embeddings: 'yes', fineTuning: 'yes', batchAPI: 'no', systemPrompts: 'yes', multimodal: 'no', multilingual: 'yes', reasoning: 'no', codeExecution: 'no', webSearch: 'yes', imageGen: 'no' },
+        // Meta (Together.ai)
+        { id: 'llama-4-scout', vision: 'yes', functionCalling: 'yes', streaming: 'yes', jsonMode: 'limited', embeddings: 'no', fineTuning: 'yes', batchAPI: 'no', systemPrompts: 'yes', multimodal: 'yes', multilingual: 'yes', reasoning: 'limited', codeExecution: 'no', webSearch: 'no', imageGen: 'no' },
+        { id: 'llama-4-maverick', vision: 'yes', functionCalling: 'yes', streaming: 'yes', jsonMode: 'limited', embeddings: 'no', fineTuning: 'yes', batchAPI: 'no', systemPrompts: 'yes', multimodal: 'yes', multilingual: 'yes', reasoning: 'yes', codeExecution: 'no', webSearch: 'no', imageGen: 'no' },
+        { id: 'llama-3.1-70b', vision: 'no', functionCalling: 'yes', streaming: 'yes', jsonMode: 'limited', embeddings: 'no', fineTuning: 'yes', batchAPI: 'no', systemPrompts: 'yes', multimodal: 'no', multilingual: 'yes', reasoning: 'limited', codeExecution: 'no', webSearch: 'no', imageGen: 'no' },
+        { id: 'llama-3.1-8b', vision: 'no', functionCalling: 'limited', streaming: 'yes', jsonMode: 'limited', embeddings: 'no', fineTuning: 'yes', batchAPI: 'no', systemPrompts: 'yes', multimodal: 'no', multilingual: 'limited', reasoning: 'no', codeExecution: 'no', webSearch: 'no', imageGen: 'no' },
+        // Moonshot
+        { id: 'kimi-k26', vision: 'yes', functionCalling: 'yes', streaming: 'yes', jsonMode: 'yes', embeddings: 'no', fineTuning: 'no', batchAPI: 'no', systemPrompts: 'yes', multimodal: 'yes', multilingual: 'yes', reasoning: 'yes', codeExecution: 'no', webSearch: 'yes', imageGen: 'no' },
+        // xAI
+        { id: 'xai-grok3', vision: 'yes', functionCalling: 'yes', streaming: 'yes', jsonMode: 'yes', embeddings: 'no', fineTuning: 'no', batchAPI: 'no', systemPrompts: 'yes', multimodal: 'yes', multilingual: 'yes', reasoning: 'yes', codeExecution: 'yes', webSearch: 'yes', imageGen: 'no' },
+        { id: 'xai-grok3-mini', vision: 'no', functionCalling: 'limited', streaming: 'yes', jsonMode: 'limited', embeddings: 'no', fineTuning: 'no', batchAPI: 'no', systemPrompts: 'yes', multimodal: 'no', multilingual: 'yes', reasoning: 'limited', codeExecution: 'no', webSearch: 'yes', imageGen: 'no' },
+        // AI21
+        { id: 'ai21-jamba', vision: 'no', functionCalling: 'yes', streaming: 'yes', jsonMode: 'limited', embeddings: 'no', fineTuning: 'yes', batchAPI: 'no', systemPrompts: 'yes', multimodal: 'no', multilingual: 'yes', reasoning: 'limited', codeExecution: 'no', webSearch: 'no', imageGen: 'no' },
+    ];
+
+    const CAP_LABELS = {
+        vision: 'Vision', functionCalling: 'Functions', streaming: 'Streaming',
+        jsonMode: 'JSON', embeddings: 'Embeddings', fineTuning: 'Fine-Tune',
+        batchAPI: 'Batch', systemPrompts: 'System', multimodal: 'Multimodal',
+        multilingual: 'Multi-lang', reasoning: 'Reasoning', codeExecution: 'Code Exec',
+        webSearch: 'Web Search', imageGen: 'Image Gen'
+    };
+
+    const CAP_KEYS = Object.keys(CAP_LABELS);
+    const TABLE_CAPS = ['vision','functionCalling','streaming','jsonMode','embeddings','fineTuning','batchAPI','systemPrompts','multimodal','multilingual','reasoning','codeExecution','webSearch','imageGen'];
+
+    const PROVIDER_COLORS = {
+        'OpenAI': 'background:rgba(16,163,127,0.15);color:#10a37f;',
+        'Anthropic': 'background:rgba(204,119,34,0.15);color:#cc7722;',
+        'Google': 'background:rgba(66,133,244,0.15);color:#4285f4;',
+        'DeepSeek': 'background:rgba(99,102,241,0.15);color:#818cf8;',
+        'Mistral': 'background:rgba(255,119,0,0.15);color:#ff7700;',
+        'Cohere': 'background:rgba(44,132,101,0.15);color:#2c8465;',
+        'Meta (Together.ai)': 'background:rgba(0,122,255,0.15);color:#007aff;',
+        'Moonshot': 'background:rgba(168,85,247,0.15);color:#a855f7;',
+        'xAI': 'background:rgba(255,255,255,0.15);color:#e0e0e0;',
+        'AI21': 'background:rgba(0,180,216,0.15);color:#00b4d8;'
+    };
+
+    const TIER_CLASSES = { Premium: 'tier-premium', Mid: 'tier-mid', Budget: 'tier-budget' };
+
+    function capIcon(val) {
+        if (val === 'yes') return '<span class="cap-yes">&#10003;</span>';
+        if (val === 'limited') return '<span class="cap-limited">~</span>';
+        if (val === 'partial') return '<span class="cap-partial">&#9711;</span>';
+        return '<span class="cap-no">&mdash;</span>';
+    }
+
+    function buildMatrix() {
+        const header = document.getElementById('matrix-header');
+        const body = document.getElementById('matrix-body');
+        const search = document.getElementById('search');
+        const filterProvider = document.getElementById('filter-provider');
+        const filterTier = document.getElementById('filter-tier');
+        const filterCap = document.getElementById('filter-cap');
+
+        // Populate provider filter
+        const providers = [...new Set(API_MODELS.map(m => m.provider))];
+        providers.forEach(p => {
+            const opt = document.createElement('option');
+            opt.value = p; opt.textContent = p;
+            filterProvider.appendChild(opt);
+        });
+
+        // Build header
+        header.innerHTML = '<th>Model</th><th>Provider</th><th>Tier</th><th>Price (I/O)</th><th>Context</th>' +
+            TABLE_CAPS.map(c => `<th data-cap="${c}">${CAP_LABELS[c]}</th>`).join('');
+
+        // Make headers sortable
+        header.querySelectorAll('th').forEach((th, i) => {
+            th.addEventListener('click', () => sortTable(i));
+        });
+
+        function render() {
+            const q = search.value.toLowerCase();
+            const prov = filterProvider.value;
+            const tier = filterTier.value;
+            const cap = filterCap.value;
+
+            let models = API_MODELS.filter(m => {
+                if (m.deprecated) return false;
+                if (q && !m.name.toLowerCase().includes(q) && !m.provider.toLowerCase().includes(q)) return false;
+                if (prov !== 'all' && m.provider !== prov) return false;
+                if (tier !== 'all' && m.tier !== tier) return false;
+                if (cap !== 'all') {
+                    const capData = CAPABILITIES.find(c => c.id === m.id);
+                    if (!capData || (capData[cap] !== 'yes' && capData[cap] !== 'limited')) return false;
+                }
+                return true;
+            });
+
+            body.innerHTML = models.map(m => {
+                const cap = CAPABILITIES.find(c => c.id === m.id) || {};
+                const pColor = PROVIDER_COLORS[m.provider] || '';
+                const tClass = TIER_CLASSES[m.tier] || '';
+                const caps = TABLE_CAPS.map(c => `<td>${capIcon(cap[c] || 'no')}</td>`).join('');
+                return `<tr>
+                    <td class="model-name">${m.name}</td>
+                    <td><span class="provider-badge" style="${pColor}">${m.provider}</span></td>
+                    <td><span class="tier-badge ${tClass}">${m.tier}</span></td>
+                    <td>$${m.input.toFixed(2)}/$${m.output.toFixed(2)}</td>
+                    <td class="context-val">${m.context}</td>
+                    ${caps}
+                </tr>`;
+            }).join('');
+
+            // Update summary
+            const summaryDiv = document.getElementById('summary-cards');
+            const totalModels = models.length;
+            const visionCount = models.filter(m => { const c = CAPABILITIES.find(x=>x.id===m.id); return c && (c.vision==='yes'||c.vision==='limited'); }).length;
+            const funcCount = models.filter(m => { const c = CAPABILITIES.find(x=>x.id===m.id); return c && (c.functionCalling==='yes'||c.functionCalling==='limited'); }).length;
+            const embedCount = models.filter(m => { const c = CAPABILITIES.find(x=>x.id===m.id); return c && c.embeddings==='yes'; }).length;
+            const batchCount = models.filter(m => { const c = CAPABILITIES.find(x=>x.id===m.id); return c && c.batchAPI==='yes'; }).length;
+            summaryDiv.innerHTML = `
+                <div class="summary-card"><div class="num">${totalModels}</div><div class="label">Models Shown</div></div>
+                <div class="summary-card"><div class="num">${visionCount}</div><div class="label">Support Vision</div></div>
+                <div class="summary-card"><div class="num">${funcCount}</div><div class="label">Function Calling</div></div>
+                <div class="summary-card"><div class="num">${embedCount}</div><div class="label">Built-in Embeddings</div></div>
+                <div class="summary-card"><div class="num">${batchCount}</div><div class="label">Batch API</div></div>
+            `;
+        }
+
+        let sortCol = -1, sortAsc = true;
+        function sortTable(col) {
+            if (sortCol === col) sortAsc = !sortAsc;
+            else { sortCol = col; sortAsc = true; }
+            header.querySelectorAll('th').forEach((th,i) => {
+                th.classList.remove('sorted-asc','sorted-desc');
+                if (i === col) th.classList.add(sortAsc ? 'sorted-asc' : 'sorted-desc');
+            });
+            const rows = [...body.querySelectorAll('tr')];
+            rows.sort((a,b) => {
+                const aText = a.children[col]?.textContent.trim() || '';
+                const bText = b.children[col]?.textContent.trim() || '';
+                const aNum = parseFloat(aText.replace(/[$,]/g,''));
+                const bNum = parseFloat(bText.replace(/[$,]/g,''));
+                if (!isNaN(aNum) && !isNaN(bNum)) return sortAsc ? aNum - bNum : bNum - aNum;
+                return sortAsc ? aText.localeCompare(bText) : bText.localeCompare(aText);
+            });
+            rows.forEach(r => body.appendChild(r));
+        }
+
+        search.addEventListener('input', render);
+        filterProvider.addEventListener('change', render);
+        filterTier.addEventListener('change', render);
+        filterCap.addEventListener('change', render);
+        render();
+    }
+
+    // Email subscribe
+    function handleSubscribe(e) {
+        e.preventDefault();
+        var email = document.getElementById('sub-email').value;
+        var msg = document.getElementById('sub-msg');
+        fetch('/api/subscribe', {
+            method: 'POST', headers: {'Content-Type':'application/json'},
+            body: JSON.stringify({email: email, source: 'model-capabilities'})
+        }).then(function(r){ return r.json(); }).then(function(d){
+            msg.style.display = 'block';
+            msg.style.color = d.ok ? '#4ade80' : '#f87171';
+            msg.textContent = d.ok ? 'Subscribed! Check your inbox.' : (d.error || 'Already subscribed');
+            if(window.trackEvent) trackEvent('subscribe', {source:'model-capabilities'});
+        }).catch(function(){
+            msg.style.display = 'block'; msg.style.color = '#f87171';
+            msg.textContent = 'Network error. Try again.';
+        });
+        return false;
+    }
+
+    document.addEventListener('DOMContentLoaded', buildMatrix);
+    </script>
+</body>
+</html>
