@@ -1,12 +1,12 @@
 # PROGRESS.md
 
-## Site Status (as of Session 511, Jun 6, 2026)
-**432 web pages | 256 blog posts | 34 models | 10 providers | 71 tools | 12 API endpoints | 2 embeddable widgets**
-- Sitemap (427 URLs), RSS (322 items), blog files (256 posts + 1 index) — all in sync
+## Site Status (as of Session 512, Jun 6, 2026)
+**433 web pages | 256 blog posts | 34 models | 10 providers | 71 tools | 12 API endpoints | 2 embeddable widgets**
+- Sitemap (429 URLs), RSS (323 items), blog files (256 posts + 1 index) — all in sync
 - Pricing data verified Jun 2 — 34 models, 10 providers (Grok rebranded to 4.3 at $1.25)
 - **Analytics: GA4 (G-0CEP7S9Y3J)** — fully operational, custom events via gtag()
 - **Pro system:** localStorage-based unlock after Stripe payment. Access code fallback on pro.html.
-- **42 comparison pages** — all providers covered, interactive calculators, FAQPage schema
+- **43 comparison pages** — all providers covered, interactive calculators, FAQPage schema
 - **71 interactive tools** — including Model Capabilities Matrix + API Cost Card + Chatbot Cost Calculator + Budget Planner + Provider Switch Calculator + Startup Cost Planner + Claude Deprecation Calculator + Claude 4 Migration Tool + AI Model Decision Tree + AI API Cost Over Time + Model Status Dashboard + Model Deprecation Timeline + AI Model Benchmark Comparison
 - **12 API endpoints** — pricing data, cost calculator (single/multi-model), cheapest model finder, pricing badge (SVG), compare models, recommend models, subscribe, unsubscribe, newsletter, check-price-changes, admin, cost-report
 - **2 embeddable widgets** — pricing table/badge/compare (widget.js) + report card (embed-report.html)
@@ -25,6 +25,12 @@
 5. **Reddit promotions** — REDDIT-DRAFTS.md has 3 ready-to-post drafts (API Cost Card, Decision Tree, Claude 4 Migration). Space 2-3 days apart.
 
 ---
+
+## Session 512 (Jun 6)
+**New comparison — GPT-5 vs Gemini 2.5 Pro:**
+- Created GPT-5 vs Gemini 2.5 Pro comparison page — both cost exactly the same ($1.25 input, $10.00 output) but Gemini 2.5 Pro has 3.7x larger context (1M vs 272K tokens). Unique angle: when pricing is identical, context window becomes the tiebreaker. Interactive calculator, 5 usage presets, use-case recommendations (long-doc processing, OpenAI ecosystem, code review, multi-turn conversations), FAQPage schema (4 Q&As).
+- Added to sitemap (427→429 URLs), RSS (322→323 items), compare index, changelog. Updated page count (432→433), comparison count (42→43).
+- Stats: 433 pages, 256 posts, 71 tools, 43 comparisons.
 
 ## Session 511 (Jun 6)
 **New comparison — Claude Opus 4.8 vs DeepSeek V4 Pro:**
