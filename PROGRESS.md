@@ -45,39 +45,8 @@
 - Updated tools page (69→70), blog index, sitemap (420→422 URLs), RSS (316→317 items), changelog. Updated blog count (254→255) on index, pricing page.
 - Stats: 426 pages, 255 posts, 70 tools.
 
-## Session 505 (Jun 5)
-**New comparison page — GPT-5 mini vs DeepSeek V4 Pro:**
-- Created GPT-5 mini vs DeepSeek V4 Pro comparison page — GPT-5 mini cheaper on input ($0.25 vs $0.435), DeepSeek V4 Pro cheaper on output ($0.87 vs $2.00) with 3.7x larger context (1M vs 272K). Interactive calculator, 5 usage presets, use-case recommendations, FAQPage schema (4 Q&As).
-- Added to sitemap (419→420 URLs), RSS (315→316 items), changelog.
-- Stats: 424 pages, 254 posts, 39 comparisons.
-
-## Session 504 (Jun 5)
-**New comparison page — Claude Opus 4.8 vs Gemini 3.1 Pro:**
-- Created Claude Opus 4.8 vs Gemini 3.1 Pro comparison page — same 1M context, different price tiers (Gemini 52% cheaper on output). Interactive calculator, 5 usage presets, use-case recommendations, FAQPage schema (4 Q&As). Page was already linked from compare.html but the file was missing.
-- Added to sitemap (418→419 URLs), RSS (314→315 items), changelog.
-- Stats: 423 pages, 254 posts, 38 comparisons.
-
-## Session 503 (Jun 5)
-**New blog post — AI API Cost for Game Development:**
-- Created "AI API Cost for Game Development: NPC Dialogue, QA & Analytics Budgets" blog post — NPC dialogue, procedural content, QA automation, player support, and analytics costs across 34 models. Budget templates for indie solo dev ($1/mo), small studio ($30/mo), and mid-size studio ($124/mo). FAQPage schema (4 Q&As).
-- Added to blog index, sitemap (418 URLs), RSS (314 items), industry-guides page (30→31 sectors), changelog.
-- Updated stale counts: index (252→254 guides, 30→31 industry guides), pricing (252→254 guides), changelog stats bar (419→422 pages, 252→254 posts).
-- Stats: 422 pages, 254 posts, 69 tools.
-
-## Session 502 (Jun 5)
-**New tool + blog post — AI Model Value Score:**
-- Created AI Model Value Score tool (/model-value-score.html) — ranks all 34 models by quality-per-dollar using estimated benchmark scores (MMLU, HumanEval, MATH, Arena Elo). Interactive scatter plot, provider/tier/cost filters, sortable ranking table. Top picks: DeepSeek V4 Flash (367), Gemini 2.0 Flash Lite (368), GPT-oss 20B (295). FAQPage schema (4 Q&As).
-- Created "Best Value AI APIs in 2026: Quality-per-Dollar Ranking" blog post — data-driven analysis of 34 models, top 10 table, best-by-use-case recommendations (chatbot, code, reasoning, content, data extraction), premium tier comparison. FAQPage schema (4 Q&As).
-- Updated tools page (68→69), blog index, sitemap (417→419 URLs), RSS (313 items), changelog.
-- Stats: 421 pages, 253 posts, 69 tools.
-
-## Session 501 (Jun 5)
-**Deprecation countdown fixes + new blog post:**
-- Fixed countdown display on 10 deprecation pages — after June 15, countdowns now show "EXPIRED" instead of "0". Updated H1/subtitle to past tense on api-errors page.
-- Created "Claude 4 Deprecation: 5 Things to Do This Weekend" blog post — actionable weekend migration guide with step-by-step instructions, code samples, cost comparison table, FAQPage schema (4 Q&As).
-- Added to blog index, sitemap (415 URLs), RSS (311 items). Updated blog post count (251→252) on index, pricing, changelog.
-- Added changelog entries for both changes.
-- Stats: 419 pages, 252 posts, 68 tools.
+## Summary: Sessions 501-505 (Jun 5)
+✅ GPT-5 mini vs DeepSeek V4 Pro comparison. Claude Opus 4.8 vs Gemini 3.1 Pro comparison. AI API Cost for Game Development blog post. AI Model Value Score tool + blog post. Deprecation countdown fixes (10 pages show "EXPIRED"). "Claude 4 Deprecation: 5 Things to Do This Weekend" blog post. Reddit promotional drafts. Stats: 419→424 pages, 252→254 posts, 68→69 tools, 38→39 comparisons.
 
 ## Summary: Sessions 498-500 (Jun 5)
 ✅ "How Much Do Developers Spend on AI APIs?" blog post. API Cost Card nav links + CTA. Fixed 4 stale count references. Post-June 15 deprecation auto-update JS on 5 pages. Reddit promotional drafts (3 posts, REDDIT-DRAFTS.md). Stats: 419 pages, 252 posts, 68 tools.
