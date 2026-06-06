@@ -1,12 +1,12 @@
 # PROGRESS.md
 
-## Site Status (as of Session 508, Jun 6, 2026)
-**428 web pages | 255 blog posts | 34 models | 10 providers | 70 tools | 12 API endpoints | 2 embeddable widgets**
-- Sitemap (423 URLs), RSS (318 items), blog files (255 posts + 1 index) — all in sync
+## Site Status (as of Session 509, Jun 6, 2026)
+**429 web pages | 255 blog posts | 34 models | 10 providers | 70 tools | 12 API endpoints | 2 embeddable widgets**
+- Sitemap (424 URLs), RSS (319 items), blog files (255 posts + 1 index) — all in sync
 - Pricing data verified Jun 2 — 34 models, 10 providers (Grok rebranded to 4.3 at $1.25)
 - **Analytics: GA4 (G-0CEP7S9Y3J)** — fully operational, custom events via gtag()
 - **Pro system:** localStorage-based unlock after Stripe payment. Access code fallback on pro.html.
-- **41 comparison pages** — all providers covered, interactive calculators, FAQPage schema
+- **42 comparison pages** — all providers covered, interactive calculators, FAQPage schema
 - **70 interactive tools** — including API Cost Card + Chatbot Cost Calculator + Budget Planner + Provider Switch Calculator + Startup Cost Planner + Claude Deprecation Calculator + Claude 4 Migration Tool + AI Model Decision Tree + AI API Cost Over Time + Model Status Dashboard + Model Deprecation Timeline + AI Model Benchmark Comparison
 - **12 API endpoints** — pricing data, cost calculator (single/multi-model), cheapest model finder, pricing badge (SVG), compare models, recommend models, subscribe, unsubscribe, newsletter, check-price-changes, admin, cost-report
 - **2 embeddable widgets** — pricing table/badge/compare (widget.js) + report card (embed-report.html)
@@ -25,6 +25,12 @@
 5. **Reddit promotions** — REDDIT-DRAFTS.md has 3 ready-to-post drafts (API Cost Card, Decision Tree, Claude 4 Migration). Space 2-3 days apart.
 
 ---
+
+## Session 509 (Jun 6)
+**New comparison page — GPT-5.5 vs DeepSeek V4 Pro:**
+- Created GPT-5.5 vs DeepSeek V4 Pro comparison page — DeepSeek V4 Pro is 96% cheaper overall ($0.87 vs $20/mo at 1M input + 500K output), 91% cheaper on input ($0.435 vs $5.00), 97% cheaper on output ($0.87 vs $30). Both have ~1M context (1.05M vs 1M). Open source (MIT) vs closed. Interactive calculator, 5 usage presets, use-case recommendations, FAQPage schema (4 Q&As).
+- Added to sitemap (423→424 URLs), RSS (318→319 items), compare index, changelog. Updated page count (428→429).
+- Stats: 429 pages, 255 posts, 42 comparisons.
 
 ## Session 508 (Jun 6)
 **New comparison page — GPT-5 vs Claude Opus 4.8:**
