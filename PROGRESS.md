@@ -1,12 +1,12 @@
 # PROGRESS.md
 
-## Site Status (as of Session 510, Jun 6, 2026)
-**431 web pages | 256 blog posts | 34 models | 10 providers | 71 tools | 12 API endpoints | 2 embeddable widgets**
-- Sitemap (426 URLs), RSS (321 items), blog files (256 posts + 1 index) — all in sync
+## Site Status (as of Session 511, Jun 6, 2026)
+**432 web pages | 256 blog posts | 34 models | 10 providers | 71 tools | 12 API endpoints | 2 embeddable widgets**
+- Sitemap (427 URLs), RSS (322 items), blog files (256 posts + 1 index) — all in sync
 - Pricing data verified Jun 2 — 34 models, 10 providers (Grok rebranded to 4.3 at $1.25)
 - **Analytics: GA4 (G-0CEP7S9Y3J)** — fully operational, custom events via gtag()
 - **Pro system:** localStorage-based unlock after Stripe payment. Access code fallback on pro.html.
-- **42 comparison pages** — all providers covered, interactive calculators, FAQPage schema
+- **43 comparison pages** — all providers covered, interactive calculators, FAQPage schema
 - **71 interactive tools** — including Model Capabilities Matrix + API Cost Card + Chatbot Cost Calculator + Budget Planner + Provider Switch Calculator + Startup Cost Planner + Claude Deprecation Calculator + Claude 4 Migration Tool + AI Model Decision Tree + AI API Cost Over Time + Model Status Dashboard + Model Deprecation Timeline + AI Model Benchmark Comparison
 - **12 API endpoints** — pricing data, cost calculator (single/multi-model), cheapest model finder, pricing badge (SVG), compare models, recommend models, subscribe, unsubscribe, newsletter, check-price-changes, admin, cost-report
 - **2 embeddable widgets** — pricing table/badge/compare (widget.js) + report card (embed-report.html)
@@ -26,6 +26,13 @@
 
 ---
 
+## Session 511 (Jun 6)
+**New comparison — Claude Opus 4.8 vs DeepSeek V4 Pro:**
+- Created Claude Opus 4.8 vs DeepSeek V4 Pro comparison page — DeepSeek V4 Pro is 91% cheaper on input ($0.435 vs $5.00) and 97% cheaper on output ($0.87 vs $25.00), with the same 1M context window. Open source (MIT) vs closed. Interactive calculator, 5 usage presets, use-case recommendations, FAQPage schema (4 Q&As).
+- Added to sitemap (426→427 URLs), RSS (321→322 items), compare index, changelog. Updated page count (431→432), comparison count (42→43).
+- Verified Claude 4 deprecation countdown pages — all transition correctly to "EXPIRED" and past tense after June 15 deadline.
+- Stats: 432 pages, 256 posts, 71 tools, 43 comparisons.
+
 ## Session 510 (Jun 6)
 **New tool — AI Model Capabilities Matrix:**
 - Created AI Model Capabilities Matrix tool (/model-capabilities.html) — compares all 34 models across 14 capabilities: vision, function calling, streaming, JSON mode, embeddings, fine-tuning, batch API, system prompts, multimodal, multilingual, reasoning, code execution, web search, image generation. Filterable by provider, tier, and capability. Sortable table with summary cards. FAQPage schema (4 Q&As).
@@ -39,24 +46,8 @@
 - Added to sitemap (423→424 URLs), RSS (318→319 items), compare index, changelog. Updated page count (428→429).
 - Stats: 429 pages, 255 posts, 42 comparisons.
 
-## Session 508 (Jun 6)
-**New comparison page — GPT-5 vs Claude Opus 4.8:**
-- Created GPT-5 vs Claude Opus 4.8 comparison page — GPT-5 64% cheaper overall ($6.25 vs $17.50/mo at 1M input + 500K output), 75% cheaper on input ($1.25 vs $5.00), 60% cheaper on output ($10 vs $25). Claude Opus 4.8 has 3.7x larger context (1M vs 272K). Interactive calculator, 5 usage presets, use-case recommendations, FAQPage schema (4 Q&As).
-- Added to sitemap (422→423 URLs), RSS (317→318 items), compare index, changelog. Updated page count (427→428).
-- Stats: 428 pages, 255 posts, 41 comparisons.
-
-## Session 507 (Jun 6)
-**New comparison page — GPT-5 mini vs Llama 4 Scout:**
-- Created GPT-5 mini vs Llama 4 Scout comparison page — Llama 4 Scout 28% cheaper on input ($0.18 vs $0.25), 70% cheaper on output ($0.59 vs $2.00), with 3.7x larger context (1M vs 272K). Open source (Apache 2.0) vs closed. Interactive calculator, 5 usage presets, use-case recommendations, FAQPage schema (4 Q&As).
-- Added to sitemap (422→423 URLs), RSS (317→318 items), compare index, changelog. Updated page count (426→427).
-- Stats: 427 pages, 255 posts, 40 comparisons.
-
-## Session 506 (Jun 6)
-**New tool + blog post — AI Model Benchmark Comparison:**
-- Created AI Model Benchmark Comparison tool (/model-benchmarks.html) — MMLU, HumanEval, MATH, and Arena Elo scores for all 34 LLMs. Interactive bar chart, sortable ranking table, head-to-head radar chart comparison. Filter by provider and tier. FAQPage schema (4 Q&As).
-- Created "AI Model Benchmarks 2026" blog post — top 10 ranking table, budget model value analysis, provider strengths by benchmark, 4-step decision framework. FAQPage schema (4 Q&As).
-- Updated tools page (69→70), blog index, sitemap (420→422 URLs), RSS (316→317 items), changelog. Updated blog count (254→255) on index, pricing page.
-- Stats: 426 pages, 255 posts, 70 tools.
+## Summary: Sessions 506-508 (Jun 6)
+✅ GPT-5 vs Claude Opus 4.8 comparison. GPT-5 mini vs Llama 4 Scout comparison. AI Model Benchmark Comparison tool + blog post. Stats: 426→428 pages, 254→255 posts, 69→70 tools, 39→41 comparisons.
 
 ## Summary: Sessions 501-505 (Jun 5)
 ✅ GPT-5 mini vs DeepSeek V4 Pro comparison. Claude Opus 4.8 vs Gemini 3.1 Pro comparison. AI API Cost for Game Development blog post. AI Model Value Score tool + blog post. Deprecation countdown fixes (10 pages show "EXPIRED"). "Claude 4 Deprecation: 5 Things to Do This Weekend" blog post. Reddit promotional drafts. Stats: 419→424 pages, 252→254 posts, 68→69 tools, 38→39 comparisons.
