@@ -1,12 +1,12 @@
 # PROGRESS.md
 
-## Site Status (as of Session 513, Jun 6, 2026)
-**434 web pages | 256 blog posts | 34 models | 10 providers | 71 tools | 12 API endpoints | 2 embeddable widgets**
-- Sitemap (430 URLs), RSS (324 items), blog files (256 posts + 1 index) — all in sync
+## Site Status (as of Session 514, Jun 7, 2026)
+**435 web pages | 256 blog posts | 34 models | 10 providers | 71 tools | 12 API endpoints | 2 embeddable widgets**
+- Sitemap (431 URLs), RSS (325 items), blog files (256 posts + 1 index) — all in sync
 - Pricing data verified Jun 2 — 34 models, 10 providers (Grok rebranded to 4.3 at $1.25)
 - **Analytics: GA4 (G-0CEP7S9Y3J)** — fully operational, custom events via gtag()
 - **Pro system:** localStorage-based unlock after Stripe payment. Access code fallback on pro.html.
-- **44 comparison pages** — all providers covered, interactive calculators, FAQPage schema
+- **45 comparison pages** — all providers covered, interactive calculators, FAQPage schema
 - **71 interactive tools** — including Model Capabilities Matrix + API Cost Card + Chatbot Cost Calculator + Budget Planner + Provider Switch Calculator + Startup Cost Planner + Claude Deprecation Calculator + Claude 4 Migration Tool + AI Model Decision Tree + AI API Cost Over Time + Model Status Dashboard + Model Deprecation Timeline + AI Model Benchmark Comparison
 - **12 API endpoints** — pricing data, cost calculator (single/multi-model), cheapest model finder, pricing badge (SVG), compare models, recommend models, subscribe, unsubscribe, newsletter, check-price-changes, admin, cost-report
 - **2 embeddable widgets** — pricing table/badge/compare (widget.js) + report card (embed-report.html)
@@ -25,6 +25,12 @@
 5. **Reddit promotions** — REDDIT-DRAFTS.md has 3 ready-to-post drafts (API Cost Card, Decision Tree, Claude 4 Migration). Space 2-3 days apart.
 
 ---
+
+## Session 514 (Jun 7)
+**New comparison — Claude Sonnet 4.6 vs GPT-5 mini:**
+- Created Claude Sonnet 4.6 vs GPT-5 mini comparison page — GPT-5 mini is 92% cheaper on input ($0.25 vs $3.00) and 87% cheaper on output ($2.00 vs $15.00), but Sonnet has 3.7x larger context (1M vs 272K). Budget vs mid-tier showdown. Interactive calculator, 5 usage presets, 4 use-case recommendations (high-volume chatbots, complex code analysis, content generation at scale, startup MVP), FAQPage schema (4 Q&As).
+- Added to sitemap (430→431 URLs), RSS (324→325 items), compare index. Updated page count (434→435), comparison count (44→45).
+- Stats: 435 pages, 256 posts, 71 tools, 45 comparisons.
 
 ## Session 513 (Jun 6)
 **New comparison — DeepSeek V4 Pro vs Gemini 2.5 Pro:**
