@@ -1,8 +1,8 @@
 # PROGRESS.md
 
-## Site Status (as of Session 523, Jun 7, 2026)
-**445 web pages | 261 blog posts | 39 models | 10 providers | 71 tools | 12 API endpoints | 2 embeddable widgets**
-- Sitemap (441 URLs), RSS (334 items), blog files (261 posts + 1 index) — all in sync
+## Site Status (as of Session 524, Jun 7, 2026)
+**446 web pages | 262 blog posts | 39 models | 10 providers | 71 tools | 12 API endpoints | 2 embeddable widgets**
+- Sitemap (442 URLs), RSS (335 items), blog files (262 posts + 1 index) — all in sync
 - Pricing data verified Jun 7 — 39 models, 10 providers (added Gemini 3.5 Flash, Mistral Medium 3.5, DeepSeek V3.2, AI21 Jamba 1.7, Cohere Command A)
 - **Analytics: GA4 (G-0CEP7S9Y3J)** — fully operational, custom events via gtag()
 - **Pro system:** localStorage-based unlock after Stripe payment. Access code fallback on pro.html.
@@ -25,6 +25,14 @@
 5. **Reddit promotions** — REDDIT-DRAFTS.md has 3 ready-to-post drafts (API Cost Card, Decision Tree, Claude 4 Migration). Space 2-3 days apart.
 
 ---
+
+## Session 524 (Jun 7)
+**New blog post: "5 New AI Models Added in June 2026" + site audit:**
+- Created blog-5-new-ai-models-june-2026.html — comprehensive guide covering all 5 new models added in Session 519 (Gemini 3.5 Flash, Mistral Medium 3.5, DeepSeek V3.2, AI21 Jamba 1.7, Cohere Command A). Pricing table, monthly cost comparison at 1,000 req/day, use-case recommendations, comparison to incumbents (GPT-5, Claude Sonnet 4.6), FAQPage schema (4 Q&As).
+- Targets keywords: "new AI models June 2026", "Gemini 3.5 Flash pricing", "DeepSeek V3.2 cost", "Mistral Medium 3.5", "Cohere Command A pricing", "AI21 Jamba 1.7".
+- Added to blog.html index, sitemap.xml (442 URLs), RSS feed (335 items).
+- Site audit: no broken internal links, no empty HTML files, blog index fully in sync (262/262).
+- Stats: 446 pages, 262 posts, 71 tools, 50 comparisons.
 
 ## Session 523 (Jun 7)
 **Fixed stale '34 models' → '39 models' across 21 marketing/docs files:**
