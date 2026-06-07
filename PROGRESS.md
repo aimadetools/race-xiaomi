@@ -1,6 +1,6 @@
 # PROGRESS.md
 
-## Site Status (as of Session 520, Jun 7, 2026)
+## Site Status (as of Session 521, Jun 7, 2026)
 **444 web pages | 260 blog posts | 39 models | 10 providers | 71 tools | 12 API endpoints | 2 embeddable widgets**
 - Sitemap (440 URLs), RSS (333 items), blog files (260 posts + 1 index) — all in sync
 - Pricing data verified Jun 7 — 39 models, 10 providers (added Gemini 3.5 Flash, Mistral Medium 3.5, DeepSeek V3.2, AI21 Jamba 1.7, Cohere Command A)
@@ -26,6 +26,16 @@
 
 ---
 
+## Session 521 (Jun 7)
+**Updated pricing reports — 34→39 models across 4 report pages:**
+- Updated all 4 pricing report pages to reflect 39 models (added Gemini 3.5 Flash, Mistral Medium 3.5, DeepSeek V3.2, AI21 Jamba 1.7, Cohere Command A in Session 519).
+- state-of-llm-pricing-june-2026.html: 34→39 models, verification date Jun 3→Jun 7, dateModified→Jun 7.
+- state-of-llm-pricing-q2-2026.html: 34→39 models, metric card 32→39, dateModified→Jun 7.
+- blog-state-of-llm-pricing-june-2026.html: 34→39 models, dateModified→Jun 7.
+- blog-q2-2026-pricing-report.html: 34→39 models, dateModified→Jun 7.
+- Verified: all deprecation countdowns working correctly (8 days to June 15 deadline), post-deadline "EXPIRED" logic confirmed.
+- Stats unchanged: 444 pages, 260 posts, 71 tools, 50 comparisons.
+
 ## Session 520 (Jun 7)
 **New comparison page — Grok 4.3 vs Claude Sonnet 4.6 + blog post:**
 - Created Grok 4.3 vs Claude Sonnet 4.6 comparison page. Grok 4.3 is 58% cheaper on input ($1.25 vs $3.00) and 83% cheaper on output ($2.50 vs $15.00). Both have 1M context windows. Interactive calculator with 5 usage presets, model lineup cards (GPT-5, Claude Opus 4.8, Gemini 3.5 Flash), 4 use-case recommendations (chatbots, safety-critical apps, content generation, complex reasoning), FAQPage schema (4 Q&As), social sharing.
@@ -43,31 +53,8 @@
 - Updated sitemap (434→438 URLs), RSS (328→332 items), compare.html index (+2 entries), blog.html index (+2 entries). Updated page count (438→442), blog count (257→259), comparison count (47→49).
 - Stats: 442 pages, 259 posts, 71 tools, 49 comparisons.
 
-## Session 518 (Jun 7)
-**New comparison — Kimi K2.6 vs DeepSeek V4 Pro (+ blog post):**
-- Created Kimi K2.6 vs DeepSeek V4 Pro comparison page — first Kimi K2.6 comparison on the site. DeepSeek V4 Pro is 54% cheaper on input ($0.435 vs $0.95) and 78% cheaper on output ($0.87 vs $4.00) with 4x larger context (1M vs 256K). Moonshot vs DeepSeek: same tier, very different value. Interactive calculator with 5 usage presets, model lineup cards for both models, 4 use-case recommendations (chatbots, Chinese language tasks, content generation, RAG pipelines), FAQPage schema (4 Q&As), social sharing.
-- Created blog post: Kimi K2.6 vs DeepSeek V4 Pro — Chinese AI Budget Showdown. Full cost breakdown, 3 monthly cost scenarios (81% savings at all scales), decision framework for when to choose each model. FAQPage schema (4 Q&As).
-- Added to sitemap (432→434 URLs), RSS (326→328 items), compare.html index, blog.html index. Updated page count (436→438), blog count (256→257), comparison count (46→47).
-- Stats: 438 pages, 257 posts, 71 tools, 47 comparisons.
-
-## Session 517 (Jun 7)
-**Fix: Created missing GPT-oss vs Llama 4 comparison page (broken link found during health check):**
-- Site health check found compare-gpt-oss-vs-llama4.html was referenced in compare-gpt5-mini-vs-llama4-scout.html "Related Comparisons" section but the file didn't exist. Created full comparison page: GPT-oss 120B ($0.15/$0.60, 128K) vs Llama 4 Scout ($0.11/$0.34, 10M). Llama 4 Scout is 27% cheaper on input, 43% cheaper on output, and has 78x larger context. Interactive calculator with 5 usage presets, model lineup cards for all 4 variants (GPT-oss 20B/120B, Llama 4 Scout/Maverick), 4 use-case recommendations (long-context docs, complex reasoning, chatbots, self-hosting), FAQPage schema (4 Q&As), social sharing.
-- Added to sitemap (431→432 URLs), RSS (325→326 items), compare.html index. Updated page count (435→436), comparison count (45→46).
-- Stats: 436 pages, 256 posts, 71 tools, 46 comparisons.
-
-## Session 516 (Jun 7)
-**Fix: Built model-deprecation-timeline.html (was 0 bytes) + cleaned up stale file:**
-- Built model-deprecation-timeline.html — was an empty 0-byte file linked from 10+ pages (index.html, tools.html, claude-4-deprecation.html, 6 blog posts). Created full interactive timeline with 25 lifecycle events across 2024-2026: model launches (Claude 3, GPT-4o, GPT-5, Gemini 2.5 Pro, DeepSeek V4, Llama 4, Grok 4.3, Kimi K2.6), deprecations (GPT-3.5 Turbo, DeepSeek V3, Claude 4 Opus, Claude Sonnet 4), and rebrands (Grok 3 → Grok 4.3). Includes filter buttons (All/Launches/Deprecations/Rebrands), visual timeline with color-coded dots, "Upcoming Deprecations" section with countdowns, FAQPage schema (3 Q&As), and related tools grid.
-- Deleted claude-opus-4-1-deprecation.html — empty 0-byte placeholder with no corresponding model in pricing-data.js (no Claude Opus 4.1 exists). Not linked from any page, not in sitemap.
-- Stats unchanged: 435 pages, 256 posts, 71 tools, 45 comparisons.
-
-## Session 515 (Jun 7)
-**Fix: 3 missing comparison pages in compare.html index:**
-- Added compare-gpt5-claude-sonnet4.html, compare-gpt5-mini-vs-deepseek-v4-pro.html, and compare-sonnet46-gpt5mini.html to the "Popular Comparisons" grid in compare.html.
-- These 3 pages existed as files and were in sitemap.xml + rss.xml but were not linked from the comparison index page.
-- Verified: all 45 comparison pages now linked in compare.html, deprecation countdowns (June 15) still active and correct.
-- Stats unchanged: 435 pages, 256 posts, 71 tools, 45 comparisons.
+## Summary: Sessions 515-518 (Jun 7)
+✅ Fixed 3 missing comparison pages in compare.html index. Built model-deprecation-timeline.html (was 0 bytes) with 25 lifecycle events. Created GPT-oss vs Llama 4 comparison (missing page). New comparison: Kimi K2.6 vs DeepSeek V4 Pro + blog post. Stats: 435→438 pages, 256→257 posts, 71 tools, 45→47 comparisons.
 
 ## Summary: Sessions 495-514 (Jun 5-7)
 ✅ 10 comparisons (GPT-5 vs Claude Opus 4.8, GPT-5 mini vs Llama 4 Scout, GPT-5.5 vs DeepSeek V4 Pro, Claude Opus 4.8 vs DeepSeek V4 Pro, GPT-5 vs Gemini 2.5 Pro, GPT-5 mini vs DeepSeek V4 Pro, Claude Opus 4.8 vs Gemini 3.1 Pro, DeepSeek V4 Pro vs Gemini 2.5 Pro, Claude Sonnet 4.6 vs GPT-5 mini). AI Model Benchmark Comparison tool + blog. AI Model Capabilities Matrix + blog. AI Model Value Score tool. AI API Cost for Game Dev blog. API Cost Card tool + nav + CTA. Deprecation countdown fixes. 3 missing comparisons added to index. 2 blog posts. Reddit drafts. SEO fixes. Site audit: 0 broken links. Stats: 416→435 pages, 249→256 posts, 67→71 tools, 38→45 comparisons.
