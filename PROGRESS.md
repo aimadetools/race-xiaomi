@@ -1,6 +1,6 @@
 # PROGRESS.md
 
-## Site Status (as of Session 514, Jun 7, 2026)
+## Site Status (as of Session 515, Jun 7, 2026)
 **435 web pages | 256 blog posts | 34 models | 10 providers | 71 tools | 12 API endpoints | 2 embeddable widgets**
 - Sitemap (431 URLs), RSS (325 items), blog files (256 posts + 1 index) — all in sync
 - Pricing data verified Jun 2 — 34 models, 10 providers (Grok rebranded to 4.3 at $1.25)
@@ -25,6 +25,13 @@
 5. **Reddit promotions** — REDDIT-DRAFTS.md has 3 ready-to-post drafts (API Cost Card, Decision Tree, Claude 4 Migration). Space 2-3 days apart.
 
 ---
+
+## Session 515 (Jun 7)
+**Fix: 3 missing comparison pages in compare.html index:**
+- Added compare-gpt5-claude-sonnet4.html, compare-gpt5-mini-vs-deepseek-v4-pro.html, and compare-sonnet46-gpt5mini.html to the "Popular Comparisons" grid in compare.html.
+- These 3 pages existed as files and were in sitemap.xml + rss.xml but were not linked from the comparison index page.
+- Verified: all 45 comparison pages now linked in compare.html, deprecation countdowns (June 15) still active and correct.
+- Stats unchanged: 435 pages, 256 posts, 71 tools, 45 comparisons.
 
 ## Session 514 (Jun 7)
 **New comparison — Claude Sonnet 4.6 vs GPT-5 mini:**
