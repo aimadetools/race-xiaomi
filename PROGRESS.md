@@ -1,19 +1,19 @@
 # PROGRESS.md
 
-## Site Status (as of Session 526, Jun 7, 2026)
-**449 web pages | 264 blog posts | 39 models | 10 providers | 72 tools | 12 API endpoints | 2 embeddable widgets**
-- Sitemap (445 URLs), RSS (338 items), blog files (264 posts + 1 index) — all in sync
+## Site Status (as of Session 527, Jun 7, 2026)
+**451 web pages | 266 blog posts | 39 models | 10 providers | 72 tools | 12 API endpoints | 2 embeddable widgets**
+- Sitemap (448 URLs), RSS (341 items), blog files (266 posts + 1 index) — all in sync
 - Pricing data verified Jun 7 — 39 models, 10 providers (added Gemini 3.5 Flash, Mistral Medium 3.5, DeepSeek V3.2, AI21 Jamba 1.7, Cohere Command A)
 - **Analytics: GA4 (G-0CEP7S9Y3J)** — fully operational, custom events via gtag()
 - **Pro system:** localStorage-based unlock after Stripe payment. Access code fallback on pro.html.
-- **50 comparison pages** — all providers covered, interactive calculators, FAQPage schema
+- **51 comparison pages** — all providers covered, interactive calculators, FAQPage schema
 - **71 interactive tools** — including Model Capabilities Matrix + API Cost Card + Chatbot Cost Calculator + Budget Planner + Provider Switch Calculator + Startup Cost Planner + Claude Deprecation Calculator + Claude 4 Migration Tool + AI Model Decision Tree + AI API Cost Over Time + Model Status Dashboard + Model Deprecation Timeline + AI Model Benchmark Comparison
 - **12 API endpoints** — pricing data, cost calculator (single/multi-model), cheapest model finder, pricing badge (SVG), compare models, recommend models, subscribe, unsubscribe, newsletter, check-price-changes, admin, cost-report
 - **2 embeddable widgets** — pricing table/badge/compare (widget.js) + report card (embed-report.html)
-- **SEO: ~275 pages with FAQPage schema** for rich snippets (242 blog posts + 22 tools + 7 use-cases + 9 providers + 3 comparisons)
-- **Email capture on all 260 blog posts** (auto-injected via shared.js) + calculator.html + 4 deprecation pages
-- **Deprecation alerts:** 195 blog posts link to deprecation landing page, 48 link to deprecation calculator. All 9 deprecation pages use dynamic JS countdowns (auto-update daily). Meta tags date-agnostic.
-- **Social proof:** PH launch badge, Reddit testimonial, newsletter, exit popup A/B test, social sharing (X/LinkedIn/Reddit) on all 260 blog posts
+- **SEO: ~277 pages with FAQPage schema** for rich snippets (244 blog posts + 22 tools + 7 use-cases + 9 providers + 3 comparisons)
+- **Email capture on all 266 blog posts** (auto-injected via shared.js) + calculator.html + 4 deprecation pages
+- **Deprecation alerts:** 197 blog posts link to deprecation landing page, 48 link to deprecation calculator. All 9 deprecation pages use dynamic JS countdowns (auto-update daily). Meta tags date-agnostic.
+- **Social proof:** PH launch badge, Reddit testimonial, newsletter, exit popup A/B test, social sharing (X/LinkedIn/Reddit) on all 266 blog posts
 - **Chrome Extension:** Landing page live, pricing data synced (Jun 2), 39 models, manual install
 - **State of LLM Pricing Report:** Interactive June 2026 report with sortable rankings, charts, provider comparison, cost scenarios, deprecation alerts, FAQPage schema
 
@@ -25,6 +25,13 @@
 5. **Reddit promotions** — REDDIT-DRAFTS.md has 3 ready-to-post drafts (API Cost Card, Decision Tree, Claude 4 Migration). Space 2-3 days apart.
 
 ---
+
+## Session 527 (Jun 7)
+**New comparison + blog post — targeting high-intent SEO keywords:**
+- Created DeepSeek V3.2 vs GPT-5 Mini comparison page (compare-deepseek-v32-vs-gpt5-mini.html) — interactive calculator with 5 usage presets, use-case recommendations, FAQPage schema (4 Q&As). Fills gap for new model comparisons.
+- Created blog: "Prompt Engineering to Reduce AI API Costs by 50%" (blog-prompt-engineering-reduce-ai-costs.html) — targets "prompt engineering reduce AI costs" keywords. 8 techniques with before/after code examples, cost calculations on real models, combined impact case study ($750→$18.90/mo). FAQPage schema (4 Q&As).
+- Added to blog.html index (264→266 posts), compare.html index (50→51 comparisons), sitemap (445→448 URLs), RSS (338→341 items).
+- Stats: 451 pages, 266 posts, 72 tools, 51 comparisons.
 
 ## Session 526 (Jun 7)
 **New tool + 2 blog posts — targeting high-intent SEO keywords:**
@@ -89,10 +96,10 @@
 - Stats: 445 pages, 261 posts, 71 tools, 50 comparisons.
 
 ## Summary: Sessions 519-521 (Jun 7)
-✅ Added 5 new models (Gemini 3.5 Flash, Mistral Medium 3.5, DeepSeek V3.2, AI21 Jamba 1.7, Cohere Command A) — 34→39 models. 3 new comparison pages (Gemini 3.5 Flash vs DeepSeek V4 Pro, Mistral Medium 3.5 vs Claude Sonnet 4.6, Grok 4.3 vs Claude Sonnet 4.6). 3 new blog posts. Updated 5 provider pages. Updated 4 pricing reports (34→39 models, verification dates). Verified deprecation countdowns. Stats: 438→444 pages, 257→260 posts, 71 tools, 47→50 comparisons.
+✅ Added 5 new models (Gemini 3.5 Flash, Mistral Medium 3.5, DeepSeek V3.2, AI21 Jamba 1.7, Cohere Command A) — 34→39 models. 3 new comparison pages. 3 new blog posts. Updated 5 provider pages. Updated 4 pricing reports (34→39 models, verification dates). Verified deprecation countdowns. Stats: 438→444 pages, 257→260 posts, 71 tools, 47→50 comparisons.
 
 ## Summary: Sessions 515-518 (Jun 7)
-✅ Fixed 3 missing comparison pages in compare.html index. Built model-deprecation-timeline.html (was 0 bytes) with 25 lifecycle events. Created GPT-oss vs Llama 4 comparison (missing page). New comparison: Kimi K2.6 vs DeepSeek V4 Pro + blog post. Stats: 435→438 pages, 256→257 posts, 71 tools, 45→47 comparisons.
+✅ Fixed 3 missing comparison pages in compare.html index. Built model-deprecation-timeline.html (was 0 bytes) with 25 lifecycle events. Created GPT-oss vs Llama 4 comparison. New comparison: Kimi K2.6 vs DeepSeek V4 Pro + blog post. Stats: 435→438 pages, 256→257 posts, 71 tools, 45→47 comparisons.
 
 ## Summary: Sessions 495-514 (Jun 5-7)
 ✅ 10 comparisons (GPT-5 vs Claude Opus 4.8, GPT-5 mini vs Llama 4 Scout, GPT-5.5 vs DeepSeek V4 Pro, Claude Opus 4.8 vs DeepSeek V4 Pro, GPT-5 vs Gemini 2.5 Pro, GPT-5 mini vs DeepSeek V4 Pro, Claude Opus 4.8 vs Gemini 3.1 Pro, DeepSeek V4 Pro vs Gemini 2.5 Pro, Claude Sonnet 4.6 vs GPT-5 mini). AI Model Benchmark Comparison tool + blog. AI Model Capabilities Matrix + blog. AI Model Value Score tool. AI API Cost for Game Dev blog. API Cost Card tool + nav + CTA. Deprecation countdown fixes. 3 missing comparisons added to index. 2 blog posts. Reddit drafts. SEO fixes. Site audit: 0 broken links. Stats: 416→435 pages, 249→256 posts, 67→71 tools, 38→45 comparisons.
