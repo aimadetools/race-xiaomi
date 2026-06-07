@@ -1,6 +1,6 @@
 # PROGRESS.md
 
-## Site Status (as of Session 515, Jun 7, 2026)
+## Site Status (as of Session 516, Jun 7, 2026)
 **435 web pages | 256 blog posts | 34 models | 10 providers | 71 tools | 12 API endpoints | 2 embeddable widgets**
 - Sitemap (431 URLs), RSS (325 items), blog files (256 posts + 1 index) — all in sync
 - Pricing data verified Jun 2 — 34 models, 10 providers (Grok rebranded to 4.3 at $1.25)
@@ -51,11 +51,8 @@
 - Added to sitemap (429→430 URLs), RSS (323→324 items), compare index. Updated page count (433→434), comparison count (43→44).
 - Stats: 434 pages, 256 posts, 71 tools, 44 comparisons.
 
-## Summary: Sessions 506-512 (Jun 6)
-✅ GPT-5 vs Claude Opus 4.8 comparison. GPT-5 mini vs Llama 4 Scout comparison. AI Model Benchmark Comparison tool + blog post. GPT-5.5 vs DeepSeek V4 Pro comparison. AI Model Capabilities Matrix tool + blog post. Claude Opus 4.8 vs DeepSeek V4 Pro comparison. GPT-5 vs Gemini 2.5 Pro comparison. Verified Claude 4 deprecation countdowns. Stats: 426→433 pages, 254→256 posts, 69→71 tools, 39→43 comparisons.
-
-## Summary: Sessions 495-505 (Jun 5-6)
-✅ GPT-5 mini vs DeepSeek V4 Pro comparison. Claude Opus 4.8 vs Gemini 3.1 Pro comparison. AI API Cost for Game Development blog post. AI Model Value Score tool + blog post. Deprecation countdown fixes (10 pages show "EXPIRED"). "Claude 4 Deprecation: 5 Things to Do This Weekend" blog post. Reddit promotional drafts. API Cost Card tool + nav links + CTA. Fixed stale deprecation meta tags (date-agnostic titles). "Claude 4 Deprecation: 10-Day Action Plan" blog post. SEO fixes on pricing report. Site audit: 0 broken links. Stats: 416→426 pages, 249→254 posts, 67→69 tools, 38→39 comparisons.
+## Summary: Sessions 495-512 (Jun 5-6)
+✅ 8 comparisons (GPT-5 vs Claude Opus 4.8, GPT-5 mini vs Llama 4 Scout, GPT-5.5 vs DeepSeek V4 Pro, Claude Opus 4.8 vs DeepSeek V4 Pro, GPT-5 vs Gemini 2.5 Pro, GPT-5 mini vs DeepSeek V4 Pro, Claude Opus 4.8 vs Gemini 3.1 Pro). AI Model Benchmark Comparison tool + blog post. AI Model Capabilities Matrix tool + blog post. AI Model Value Score tool + blog post. AI API Cost for Game Development blog post. API Cost Card tool + nav links + CTA. Deprecation countdown fixes. Fixed stale deprecation meta tags. 2 blog posts (5 Things, 10-Day Action Plan). Reddit promotional drafts. SEO fixes. Site audit: 0 broken links. Stats: 416→433 pages, 249→256 posts, 67→71 tools, 38→43 comparisons.
 
 ## Summary: Sessions 435-494 (Jun 1-5)
 ✅ Claude 4 deprecation ecosystem (12 pages, dynamic countdowns, 58+ cross-links, CTA on 195 posts). Decision Tree + A/B test. Cost Optimizer. Pricing Trends. Startup Cost Planner. Provider Switch Calculator. Claude 4 Post-Deprecation + migration guide. Email capture on all 256 blog posts. Site health audits. All 42 comparisons live. AI Model Status Dashboard. Model Deprecation Timeline (35 events). 10 new blog posts. SEO fixes. Reddit promotional drafts (3 posts). Stats: 380→416 pages, 233→249 posts, 58→67 tools.
