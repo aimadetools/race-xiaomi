@@ -58,32 +58,8 @@
 - Created api-submission.json — structured data file for API directory submissions.
 - Stats: 445 pages, 261 posts, 71 tools, 50 comparisons.
 
-## Session 521 (Jun 7)
-**Updated pricing reports — 34→39 models across 4 report pages:**
-- Updated all 4 pricing report pages to reflect 39 models (added Gemini 3.5 Flash, Mistral Medium 3.5, DeepSeek V3.2, AI21 Jamba 1.7, Cohere Command A in Session 519).
-- state-of-llm-pricing-june-2026.html: 34→39 models, verification date Jun 3→Jun 7, dateModified→Jun 7.
-- state-of-llm-pricing-q2-2026.html: 34→39 models, metric card 32→39, dateModified→Jun 7.
-- blog-state-of-llm-pricing-june-2026.html: 34→39 models, dateModified→Jun 7.
-- blog-q2-2026-pricing-report.html: 34→39 models, dateModified→Jun 7.
-- Verified: all deprecation countdowns working correctly (8 days to June 15 deadline), post-deadline "EXPIRED" logic confirmed.
-- Stats unchanged: 444 pages, 260 posts, 71 tools, 50 comparisons.
-
-## Session 520 (Jun 7)
-**New comparison page — Grok 4.3 vs Claude Sonnet 4.6 + blog post:**
-- Created Grok 4.3 vs Claude Sonnet 4.6 comparison page. Grok 4.3 is 58% cheaper on input ($1.25 vs $3.00) and 83% cheaper on output ($2.50 vs $15.00). Both have 1M context windows. Interactive calculator with 5 usage presets, model lineup cards (GPT-5, Claude Opus 4.8, Gemini 3.5 Flash), 4 use-case recommendations (chatbots, safety-critical apps, content generation, complex reasoning), FAQPage schema (4 Q&As), social sharing.
-- Created blog post: "Grok 4.3 vs Claude Sonnet 4.6: xAI's Budget King Meets Anthropic's Flagship." Full cost breakdown with monthly comparison at 1,000 req/day ($60.75 vs $270.00 — 77% savings). FAQPage schema (3 Q&As).
-- Added to sitemap (438→440 URLs), RSS (332→333 items), compare.html index, blog.html index. Updated page count (442→444), blog count (259→260), comparison count (49→50).
-- Stats: 444 pages, 260 posts, 71 tools, 50 comparisons.
-
-## Session 519 (Jun 7)
-**Added 5 new models + 2 comparison pages + 2 blog posts:**
-- Added 5 new models to pricing-data.js: Gemini 3.5 Flash ($1.50/$9.00, 1M), Mistral Medium 3.5 ($1.50/$7.50, 128K), DeepSeek V3.2 ($0.23/$0.34, 128K), AI21 Jamba 1.7 Large ($2.00/$8.00, 256K), Cohere Command A ($2.50/$10.00, 128K). Updated PRICING_LAST_UPDATED to Jun 7. Total models: 34→39.
-- Updated 5 provider pages (google.html, mistral.html, deepseek.html, ai21.html, cohere.html) with new model entries in pricing tables.
-- Created Gemini 3.5 Flash vs DeepSeek V4 Pro comparison: DeepSeek is 71% cheaper on input ($0.435 vs $1.50) and 90% cheaper on output ($0.87 vs $9.00). Both have 1M context. Interactive calculator with 5 presets, model lineup cards, 4 use-case recommendations, FAQPage schema (4 Q&As), social sharing.
-- Created Mistral Medium 3.5 vs Claude Sonnet 4.6 comparison: Mistral is exactly 50% cheaper on both input ($1.50 vs $3.00) and output ($7.50 vs $15.00). European data sovereignty vs US. Interactive calculator with 5 presets, model lineup cards, 4 use-case recommendations, FAQPage schema (4 Q&As), social sharing.
-- Created 2 blog posts: "Gemini 3.5 Flash vs DeepSeek V4 Pro: Google's Latest Meets Budget Champion" and "Mistral Medium 3.5 vs Claude Sonnet 4.6: Europe's Mid-Tier Bid". Full cost breakdowns, decision frameworks, FAQPage schema.
-- Updated sitemap (434→438 URLs), RSS (328→332 items), compare.html index (+2 entries), blog.html index (+2 entries). Updated page count (438→442), blog count (257→259), comparison count (47→49).
-- Stats: 442 pages, 259 posts, 71 tools, 49 comparisons.
+## Summary: Sessions 519-521 (Jun 7)
+✅ Added 5 new models (Gemini 3.5 Flash, Mistral Medium 3.5, DeepSeek V3.2, AI21 Jamba 1.7, Cohere Command A) — 34→39 models. 3 new comparison pages (Gemini 3.5 Flash vs DeepSeek V4 Pro, Mistral Medium 3.5 vs Claude Sonnet 4.6, Grok 4.3 vs Claude Sonnet 4.6). 3 new blog posts. Updated 5 provider pages. Updated 4 pricing reports (34→39 models, verification dates). Verified deprecation countdowns. Stats: 438→444 pages, 257→260 posts, 71 tools, 47→50 comparisons.
 
 ## Summary: Sessions 515-518 (Jun 7)
 ✅ Fixed 3 missing comparison pages in compare.html index. Built model-deprecation-timeline.html (was 0 bytes) with 25 lifecycle events. Created GPT-oss vs Llama 4 comparison (missing page). New comparison: Kimi K2.6 vs DeepSeek V4 Pro + blog post. Stats: 435→438 pages, 256→257 posts, 71 tools, 45→47 comparisons.
