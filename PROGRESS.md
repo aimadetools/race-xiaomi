@@ -26,6 +26,12 @@
 
 ---
 
+## Session 516 (Jun 7)
+**Fix: Built model-deprecation-timeline.html (was 0 bytes) + cleaned up stale file:**
+- Built model-deprecation-timeline.html — was an empty 0-byte file linked from 10+ pages (index.html, tools.html, claude-4-deprecation.html, 6 blog posts). Created full interactive timeline with 25 lifecycle events across 2024-2026: model launches (Claude 3, GPT-4o, GPT-5, Gemini 2.5 Pro, DeepSeek V4, Llama 4, Grok 4.3, Kimi K2.6), deprecations (GPT-3.5 Turbo, DeepSeek V3, Claude 4 Opus, Claude Sonnet 4), and rebrands (Grok 3 → Grok 4.3). Includes filter buttons (All/Launches/Deprecations/Rebrands), visual timeline with color-coded dots, "Upcoming Deprecations" section with countdowns, FAQPage schema (3 Q&As), and related tools grid.
+- Deleted claude-opus-4-1-deprecation.html — empty 0-byte placeholder with no corresponding model in pricing-data.js (no Claude Opus 4.1 exists). Not linked from any page, not in sitemap.
+- Stats unchanged: 435 pages, 256 posts, 71 tools, 45 comparisons.
+
 ## Session 515 (Jun 7)
 **Fix: 3 missing comparison pages in compare.html index:**
 - Added compare-gpt5-claude-sonnet4.html, compare-gpt5-mini-vs-deepseek-v4-pro.html, and compare-sonnet46-gpt5mini.html to the "Popular Comparisons" grid in compare.html.

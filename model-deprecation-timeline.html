@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Model Deprecation Timeline — Every LLM Lifecycle Event Tracked | APIpulse</title>
+    <meta name="description" content="Visual timeline of every AI model deprecation, launch, and rebrand. Track Claude, GPT, Gemini, DeepSeek lifecycle events. Never get caught by a surprise deprecation again.">
+    <meta name="keywords" content="AI model deprecation timeline, LLM lifecycle tracker, Claude 4 deprecation, GPT model timeline, AI model releases 2026, model deprecation dates">
+    <meta property="og:title" content="AI Model Deprecation Timeline — Every LLM Lifecycle Event">
+    <meta property="og:description" content="Visual timeline of every AI model deprecation, launch, and rebrand across OpenAI, Anthropic, Google, and more.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://getapipulse.com/og-image.png">
+    <meta property="og:url" content="https://getapipulse.com/model-deprecation-timeline.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="AI Model Deprecation Timeline">
+    <meta name="twitter:image" content="https://getapipulse.com/og-image.png">
+    <meta name="twitter:description" content="Visual timeline of every AI model lifecycle event — launches, deprecations, rebrands.">
+    <link rel="canonical" href="https://getapipulse.com/model-deprecation-timeline.html">
+    <link rel="alternate" type="application/rss+xml" title="APIpulse Blog" href="https://getapipulse.com/rss.xml">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="styles.css">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0CEP7S9Y3J"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-0CEP7S9Y3J');
+    </script>
+    <script src="analytics.js" defer></script>
+    <script src="dynamic-date.js" defer></script>
+    <script src="shared.js" defer></script>
+    <script src="pricing-data.js" defer></script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "headline": "AI Model Deprecation Timeline — Every LLM Lifecycle Event Tracked",
+        "description": "Visual timeline of every AI model deprecation, launch, and rebrand across OpenAI, Anthropic, Google, DeepSeek, and more.",
+        "datePublished": "2026-06-05",
+        "dateModified": "2026-06-07",
+        "author": { "@type": "Organization", "name": "APIpulse" },
+        "publisher": { "@type": "Organization", "name": "APIpulse", "url": "https://getapipulse.com" }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "When are Claude 4 models being deprecated?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Claude 4 Opus and Claude Sonnet 4 were both deprecated on June 15, 2026. Claude Opus 4.8 and Claude Sonnet 4.6 are the direct replacements."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What is the latest AI model deprecation in 2026?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "As of June 2026, the most recent deprecations are Claude 4 Opus and Claude Sonnet 4 (June 15, 2026), replaced by Claude Opus 4.8 and Claude Sonnet 4.6 respectively."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How do I track AI model deprecations?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Use this timeline to track all model lifecycle events. APIpulse monitors 34 models across 10 providers and updates this timeline when new deprecations are announced."
+                }
+            }
+        ]
+    }
+    </script>
+    <style>
+        .hero { padding: 100px 24px 40px; text-align: center; max-width: 800px; margin: 0 auto; }
+        .hero h1 { font-size: clamp(28px, 4vw, 44px); font-weight: 800; margin-bottom: 16px; line-height: 1.2; }
+        .hero h1 .highlight { color: var(--red); }
+        .hero .subtitle { font-size: 18px; color: var(--text-secondary); margin-bottom: 24px; max-width: 600px; margin-left: auto; margin-right: auto; line-height: 1.6; }
+
+        .stats-bar {
+            display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;
+            margin-bottom: 40px; padding: 0 24px;
+        }
+        .stat-pill {
+            background: var(--bg-secondary); border: 1px solid var(--border);
+            border-radius: 20px; padding: 8px 16px; font-size: 13px;
+            display: flex; align-items: center; gap: 6px;
+        }
+        .stat-pill .num { font-weight: 700; color: var(--accent); }
+
+        .filter-bar {
+            max-width: 900px; margin: 0 auto 32px; padding: 0 24px;
+            display: flex; gap: 8px; flex-wrap: wrap; justify-content: center;
+        }
+        .filter-btn {
+            padding: 8px 16px; border-radius: 8px; border: 1px solid var(--border);
+            background: var(--bg-card); color: var(--text-secondary); font-size: 13px;
+            font-weight: 600; cursor: pointer; transition: all 0.2s;
+        }
+        .filter-btn:hover, .filter-btn.active {
+            border-color: var(--accent); color: var(--accent); background: var(--accent-glow);
+        }
+
+        .timeline-container {
+            max-width: 900px; margin: 0 auto; padding: 0 24px 60px;
+            position: relative;
+        }
+        .timeline-line {
+            position: absolute; left: 50%; top: 0; bottom: 0; width: 3px;
+            background: var(--border); transform: translateX(-50%);
+        }
+        .timeline-event {
+            position: relative; margin-bottom: 40px;
+            display: flex; align-items: flex-start;
+        }
+        .timeline-event:nth-child(odd) { flex-direction: row; }
+        .timeline-event:nth-child(even) { flex-direction: row-reverse; }
+
+        .timeline-dot {
+            position: absolute; left: 50%; transform: translateX(-50%);
+            width: 16px; height: 16px; border-radius: 50%;
+            border: 3px solid var(--bg-primary); z-index: 2;
+        }
+        .timeline-dot.launch { background: var(--green); }
+        .timeline-dot.deprecated { background: var(--red); }
+        .timeline-dot.rebrand { background: var(--orange); }
+        .timeline-dot.update { background: var(--accent); }
+
+        .timeline-content {
+            width: calc(50% - 30px); padding: 20px;
+            background: var(--bg-secondary); border: 1px solid var(--border);
+            border-radius: 12px; transition: all 0.2s;
+        }
+        .timeline-content:hover { border-color: var(--accent); transform: translateY(-2px); }
+        .timeline-event:nth-child(odd) .timeline-content { margin-right: auto; }
+        .timeline-event:nth-child(even) .timeline-content { margin-left: auto; }
+
+        .timeline-date {
+            font-size: 12px; color: var(--text-muted); text-transform: uppercase;
+            letter-spacing: 0.5px; margin-bottom: 6px; font-weight: 600;
+        }
+        .timeline-title { font-size: 16px; font-weight: 700; margin-bottom: 6px; }
+        .timeline-desc { font-size: 13px; color: var(--text-secondary); line-height: 1.6; }
+        .timeline-tag {
+            display: inline-block; padding: 2px 8px; border-radius: 4px;
+            font-size: 11px; font-weight: 700; text-transform: uppercase;
+            letter-spacing: 0.5px; margin-top: 8px;
+        }
+        .tag-launch { background: rgba(34,197,94,0.15); color: var(--green); }
+        .tag-deprecated { background: rgba(239,68,68,0.15); color: var(--red); }
+        .tag-rebrand { background: rgba(245,158,11,0.15); color: var(--orange); }
+        .tag-update { background: rgba(99,102,241,0.15); color: var(--accent); }
+
+        .upcoming-section {
+            max-width: 900px; margin: 0 auto 48px; padding: 0 24px;
+        }
+        .upcoming-section h2 { font-size: 24px; font-weight: 800; text-align: center; margin-bottom: 24px; }
+        .upcoming-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; }
+        .upcoming-card {
+            background: var(--bg-secondary); border: 1px solid var(--border);
+            border-radius: 12px; padding: 20px; border-left: 4px solid var(--red);
+        }
+        .upcoming-card .date { font-size: 12px; color: var(--red); font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 6px; }
+        .upcoming-card .model { font-size: 16px; font-weight: 700; margin-bottom: 4px; }
+        .upcoming-card .replacement { font-size: 13px; color: var(--text-secondary); }
+        .upcoming-card .countdown { font-size: 20px; font-weight: 800; color: var(--red); margin-top: 8px; }
+
+        .related-grid {
+            max-width: 900px; margin: 0 auto 48px; padding: 0 24px;
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 16px;
+        }
+        .related-card {
+            background: var(--bg-secondary); border: 1px solid var(--border);
+            border-radius: 12px; padding: 20px; text-align: center;
+        }
+        .related-card h3 { font-size: 16px; margin-bottom: 8px; }
+        .related-card p { font-size: 13px; color: var(--text-secondary); margin-bottom: 12px; }
+
+        @media (max-width: 768px) {
+            .hero { padding: 80px 16px 24px; }
+            .timeline-line { left: 20px; }
+            .timeline-event, .timeline-event:nth-child(even) { flex-direction: row; }
+            .timeline-dot { left: 20px; }
+            .timeline-content, .timeline-event:nth-child(even) .timeline-content {
+                width: calc(100% - 50px); margin-left: 50px !important; margin-right: 0 !important;
+            }
+        }
+    </style>
+    <meta name="theme-color" content="#6366f1">
+</head>
+<body>
+    <a href="#main" class="skip-link">Skip to content</a>
+    <nav>
+        <div class="nav-inner">
+            <a href="index.html" class="logo">API<span>pulse</span></a>
+            <button class="hamburger" onclick="toggleMobileNav()" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+            <div class="nav-links">
+                <a href="calculator.html">Calculator</a>
+                <a href="compare.html">Compare</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="model-status.html">Status</a>
+                <a href="blog.html">Blog</a>
+                <a href="pricing.html" class="nav-cta" onclick="if(window.trackEvent)window.trackEvent('pro_button_clicked',{source:'nav'})">Get Pro — $29</a>
+                <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
+            </div>
+        </div>
+    </nav>
+
+    <main id="main">
+
+    <section class="hero">
+        <h1>AI Model <span class="highlight">Deprecation Timeline</span></h1>
+        <p class="subtitle">Every launch, deprecation, and rebrand across 34 models and 10 providers. Never get caught by a surprise shutdown again.</p>
+    </section>
+
+    <div class="stats-bar">
+        <div class="stat-pill"><span class="num">34</span> Models Tracked</div>
+        <div class="stat-pill"><span class="num">10</span> Providers</div>
+        <div class="stat-pill"><span class="num" style="color:var(--red);">3</span> Deprecated</div>
+        <div class="stat-pill"><span class="num" style="color:var(--green);">31</span> Active</div>
+    </div>
+
+    <div class="filter-bar">
+        <button class="filter-btn active" onclick="filterTimeline('all')">All Events</button>
+        <button class="filter-btn" onclick="filterTimeline('launch')">Launches</button>
+        <button class="filter-btn" onclick="filterTimeline('deprecated')">Deprecations</button>
+        <button class="filter-btn" onclick="filterTimeline('rebrand')">Rebrands</button>
+        <button class="filter-btn" onclick="filterTimeline('update')">Updates</button>
+    </div>
+
+    <div class="timeline-container">
+        <div class="timeline-line"></div>
+        <div id="timeline-events"></div>
+    </div>
+
+    <section class="upcoming-section">
+        <h2>Upcoming Deprecations</h2>
+        <div class="upcoming-grid" id="upcoming-grid"></div>
+    </section>
+
+    <section class="related-grid">
+        <div class="related-card">
+            <h3>Model Status Dashboard</h3>
+            <p>Live status of every model — active, deprecated, or new.</p>
+            <a href="model-status.html" class="btn-secondary" style="display:inline-block;padding:10px 20px;font-size:13px;">View Dashboard →</a>
+        </div>
+        <div class="related-card">
+            <h3>Claude 4 Deprecation Guide</h3>
+            <p>34 alternatives compared. Save 67-97% on API costs.</p>
+            <a href="claude-4-deprecation.html" class="btn-secondary" style="display:inline-block;padding:10px 20px;font-size:13px;">View Guide →</a>
+        </div>
+        <div class="related-card">
+            <h3>Deprecation Calculator</h3>
+            <p>Calculate exact migration costs for your usage pattern.</p>
+            <a href="claude-deprecation-calculator.html" class="btn-secondary" style="display:inline-block;padding:10px 20px;font-size:13px;">Open Calculator →</a>
+        </div>
+        <div class="related-card">
+            <h3>Model Deprecation Guide</h3>
+            <p>How to handle model deprecations in production.</p>
+            <a href="blog-model-deprecation-guide.html" class="btn-secondary" style="display:inline-block;padding:10px 20px;font-size:13px;">Read Guide →</a>
+        </div>
+    </section>
+
+    </main>
+
+    <footer>
+        <p>Pricing data last verified: <span class="verified-date"></span></p>
+        <p>&copy; 2026 APIpulse. <a href="index.html">Home</a> &middot; <a href="compare.html">Compare</a> &middot; <a href="calculator.html">Calculator</a> &middot; <a href="blog.html">Blog</a> &middot; <a href="pricing.html">Pricing</a> &middot; <a href="model-status.html">Status</a></p>
+    </footer>
+
+    <script>
+    // Timeline events data
+    var EVENTS = [
+        // 2024
+        { date: '2024-03', type: 'launch', provider: 'Anthropic', title: 'Claude 3 Family Launch', desc: 'Claude 3 Opus, Sonnet, and Haiku released. First models to rival GPT-4.', model: 'Claude 3 Opus' },
+        { date: '2024-05', type: 'launch', provider: 'OpenAI', title: 'GPT-4o Launch', desc: 'Omni model with vision, audio, and text. 50% cheaper than GPT-4 Turbo.', model: 'GPT-4o' },
+        { date: '2024-07', type: 'launch', provider: 'Meta', title: 'Llama 3.1 Launch', desc: 'Open source 8B, 70B, and 405B models. 128K context window.', model: 'Llama 3.1' },
+        { date: '2024-09', type: 'launch', provider: 'OpenAI', title: 'o1 Preview Launch', desc: 'Reasoning model with chain-of-thought. First of the o-series.', model: 'o1' },
+        { date: '2024-11', type: 'launch', provider: 'Google', title: 'Gemini 2.0 Flash', desc: 'Fast and cheap multimodal model. $0.10/$0.40 per 1M tokens.', model: 'Gemini 2.0 Flash' },
+
+        // 2025
+        { date: '2025-01', type: 'launch', provider: 'DeepSeek', title: 'DeepSeek V3 Launch', desc: 'Open source powerhouse. $0.27/$1.10 per 1M tokens, 128K context.', model: 'DeepSeek V3' },
+        { date: '2025-02', type: 'launch', provider: 'Anthropic', title: 'Claude 3.5 Sonnet Update', desc: 'Improved coding and reasoning. Popular for development workflows.', model: 'Claude 3.5 Sonnet' },
+        { date: '2025-03', type: 'launch', provider: 'Mistral', title: 'Mistral Large 2', desc: 'European AI leader releases flagship model. 128K context.', model: 'Mistral Large 2' },
+        { date: '2025-05', type: 'launch', provider: 'Google', title: 'Gemini 2.5 Pro', desc: '1M context window. $1.25/$10.00 per 1M tokens.', model: 'Gemini 2.5 Pro' },
+        { date: '2025-06', type: 'launch', provider: 'OpenAI', title: 'GPT-4o mini Launch', desc: 'Budget model at $0.15/$0.60. Replaced GPT-3.5 Turbo.', model: 'GPT-4o mini' },
+        { date: '2025-08', type: 'deprecated', provider: 'OpenAI', title: 'GPT-3.5 Turbo Deprecated', desc: 'Legacy model retired. Migrate to GPT-4o mini for similar cost.', model: 'GPT-3.5 Turbo' },
+        { date: '2025-09', type: 'launch', provider: 'Anthropic', title: 'Claude 4 Opus & Sonnet', desc: 'Next-gen models. 200K context. $15/$75 (Opus), $3/$15 (Sonnet).', model: 'Claude 4 Opus' },
+        { date: '2025-10', type: 'launch', provider: 'OpenAI', title: 'GPT-5 Launch', desc: 'Flagship model. 272K context. $1.25/$10.00 per 1M tokens.', model: 'GPT-5' },
+        { date: '2025-11', type: 'launch', provider: 'Google', title: 'Gemini 3.0 Pro', desc: '1M context. $2.00/$12.00 per 1M tokens.', model: 'Gemini 3.0 Pro' },
+
+        // 2026
+        { date: '2026-01', type: 'launch', provider: 'OpenAI', title: 'GPT-5 mini Launch', desc: 'Budget flagship. 272K context. $0.25/$2.00 per 1M tokens.', model: 'GPT-5 mini' },
+        { date: '2026-01', type: 'launch', provider: 'DeepSeek', title: 'DeepSeek V4 Pro & Flash', desc: 'V4 generation. 1M context. $0.435/$0.87 (Pro), $0.14/$0.28 (Flash).', model: 'DeepSeek V4 Pro' },
+        { date: '2026-02', type: 'launch', provider: 'Anthropic', title: 'Claude Opus 4.7 & 4.8', desc: 'Next-gen premium. 1M context. $5/$25 per 1M tokens.', model: 'Claude Opus 4.8' },
+        { date: '2026-02', type: 'launch', provider: 'Anthropic', title: 'Claude Sonnet 4.6', desc: '5x context of Sonnet 4 (1M vs 200K). Same price: $3/$15.', model: 'Claude Sonnet 4.6' },
+        { date: '2026-03', type: 'launch', provider: 'OpenAI', title: 'GPT-5.5 Launch', desc: 'Premium tier. 1.05M context. $5/$30 per 1M tokens.', model: 'GPT-5.5' },
+        { date: '2026-03', type: 'launch', provider: 'Meta', title: 'Llama 4 Scout & Maverick', desc: 'Open source 1M context models. $0.18/$0.59 (Scout), $0.27/$0.85 (Maverick).', model: 'Llama 4 Scout' },
+        { date: '2026-04', type: 'launch', provider: 'xAI', title: 'Grok 4.3 Launch', desc: 'Rebranded from Grok 3. 1M context. $1.25/$2.50 per 1M tokens.', model: 'Grok 4.3' },
+        { date: '2026-04', type: 'launch', provider: 'Moonshot', title: 'Kimi K2.6 Launch', desc: '256K context. $0.95/$4.00 per 1M tokens.', model: 'Kimi K2.6' },
+        { date: '2026-05', type: 'deprecated', provider: 'DeepSeek', title: 'DeepSeek V3 Deprecated', desc: 'Replaced by DeepSeek V4 Flash. Same price tier, 8x more context.', model: 'DeepSeek V3' },
+        { date: '2026-05', type: 'rebrand', provider: 'xAI', title: 'Grok 3 Rebranded to Grok 4.3', desc: 'Price dropped from $3/$15 to $1.25/$2.50. Context expanded to 1M.', model: 'Grok 4.3' },
+        { date: '2026-06-15', type: 'deprecated', provider: 'Anthropic', title: 'Claude 4 Opus Deprecated', desc: 'Retired. Migrate to Claude Opus 4.8 ($5/$25) — 67% cheaper with 5x context.', model: 'Claude 4 Opus' },
+        { date: '2026-06-15', type: 'deprecated', provider: 'Anthropic', title: 'Claude Sonnet 4 Deprecated', desc: 'Retired. Migrate to Claude Sonnet 4.6 ($3/$15) — same price, 5x context.', model: 'Claude Sonnet 4' },
+    ];
+
+    function renderTimeline(filter) {
+        var container = document.getElementById('timeline-events');
+        var filtered = filter === 'all' ? EVENTS : EVENTS.filter(function(e) { return e.type === filter; });
+        var html = '';
+        filtered.forEach(function(ev) {
+            var tagClass = 'tag-' + ev.type;
+            var tagLabel = ev.type === 'deprecated' ? 'Deprecated' : ev.type === 'launch' ? 'Launched' : ev.type === 'rebrand' ? 'Rebrand' : 'Update';
+            var dateStr = ev.date.length <= 7 ? ev.date + '-01' : ev.date;
+            var dateObj = new Date(dateStr);
+            var displayDate = dateObj.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: ev.date.length > 7 ? 'numeric' : undefined });
+
+            html += '<div class="timeline-event" data-type="' + ev.type + '">';
+            html += '<div class="timeline-dot ' + ev.type + '"></div>';
+            html += '<div class="timeline-content">';
+            html += '<div class="timeline-date">' + displayDate + ' &middot; ' + ev.provider + '</div>';
+            html += '<div class="timeline-title">' + ev.title + '</div>';
+            html += '<div class="timeline-desc">' + ev.desc + '</div>';
+            html += '<span class="timeline-tag ' + tagClass + '">' + tagLabel + '</span>';
+            html += '</div></div>';
+        });
+        container.innerHTML = html;
+    }
+
+    function filterTimeline(type) {
+        document.querySelectorAll('.filter-btn').forEach(function(b) { b.classList.remove('active'); });
+        event.target.classList.add('active');
+        renderTimeline(type);
+    }
+
+    // Upcoming deprecations
+    function renderUpcoming() {
+        var grid = document.getElementById('upcoming-grid');
+        var now = new Date();
+        var upcoming = EVENTS.filter(function(e) {
+            if (e.type !== 'deprecated') return false;
+            var d = new Date(e.date.length <= 7 ? e.date + '-01' : e.date);
+            return d > now;
+        });
+        if (upcoming.length === 0) {
+            grid.innerHTML = '<div style="grid-column:1/-1;text-align:center;padding:32px;background:var(--bg-secondary);border:1px solid var(--border);border-radius:12px;"><p style="font-size:16px;font-weight:600;margin-bottom:8px;">No upcoming deprecations scheduled</p><p style="font-size:14px;color:var(--text-secondary);">All currently tracked models are active. We\'ll update this timeline when new deprecations are announced.</p></div>';
+            return;
+        }
+        var html = '';
+        upcoming.forEach(function(ev) {
+            var depDate = new Date(ev.date.length <= 7 ? ev.date + '-01' : ev.date);
+            var diff = Math.ceil((depDate - now) / (1000 * 60 * 60 * 24));
+            var displayDate = depDate.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+            html += '<div class="upcoming-card">';
+            html += '<div class="date">' + displayDate + '</div>';
+            html += '<div class="model">' + ev.model + '</div>';
+            html += '<div class="replacement">' + ev.desc + '</div>';
+            html += '<div class="countdown">' + diff + ' days remaining</div>';
+            html += '</div>';
+        });
+        grid.innerHTML = html;
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+        renderTimeline('all');
+        renderUpcoming();
+        if (window.trackEvent) window.trackEvent('timeline_viewed', { page: 'model-deprecation-timeline' });
+    });
+    </script>
+</body>
+</html>
