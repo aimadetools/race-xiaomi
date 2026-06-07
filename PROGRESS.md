@@ -1,6 +1,6 @@
 # PROGRESS.md
 
-## Site Status (as of Session 524, Jun 7, 2026)
+## Site Status (as of Session 525, Jun 7, 2026)
 **446 web pages | 262 blog posts | 39 models | 10 providers | 71 tools | 12 API endpoints | 2 embeddable widgets**
 - Sitemap (442 URLs), RSS (335 items), blog files (262 posts + 1 index) — all in sync
 - Pricing data verified Jun 7 — 39 models, 10 providers (added Gemini 3.5 Flash, Mistral Medium 3.5, DeepSeek V3.2, AI21 Jamba 1.7, Cohere Command A)
@@ -25,6 +25,27 @@
 5. **Reddit promotions** — REDDIT-DRAFTS.md has 3 ready-to-post drafts (API Cost Card, Decision Tree, Claude 4 Migration). Space 2-3 days apart.
 
 ---
+
+## Session 525 (Jun 7)
+**Added 5 new models to all 15 tool pages with model selectors/data:**
+- Fixed stale model gap: Sessions 519-521 added 5 models to pricing-data.js but many tool pages still had only the old 34 models in dropdowns, tables, benchmark data, and documentation.
+- Updated index.html: FAQ schema (all 39 models listed), calculator dropdown (34→39 options), pricing table (added 5 new rows).
+- Updated calculator.html: dropdown (34→39 options).
+- Updated cost-report.html: inline MODELS array (34→39 entries).
+- Updated model-advisor.html: 8 benchmark categories (chat, code, content, analysis, rag, agent, creative, translation) — added scores for all 5 new models.
+- Updated model-benchmarks.html: MMLU/HumanEval/Math/ELO data for 5 new models.
+- Updated model-capabilities.html: capability flags (vision, function calling, etc.) for 5 new models.
+- Updated model-value-score.html: value scores for 5 new models.
+- Updated latency-comparison.html: TTFT/TPS latency data for 5 new models.
+- Updated rate-limit-calculator.html: RPM/TPM rate limits for 5 new models.
+- Updated pro.html: dropdown (34→39 options).
+- Updated compare.html: both Model A/B selectors (34→39 options each).
+- Updated launch.html: dropdown (34→39 options).
+- Updated ai21.html: provider calculator dropdown (added Jamba 1.7).
+- Updated embed.html: model ID documentation table.
+- Updated blog-embed-pricing-widget.html: model ID reference table.
+- Total: 15 HTML files updated. All 39 models now consistently available across all interactive tools.
+- Stats: 446 pages, 262 posts, 71 tools, 50 comparisons (unchanged — no new pages, just data completeness fix).
 
 ## Session 524 (Jun 7)
 **New blog post: "5 New AI Models Added in June 2026" + site audit:**
