@@ -1,8 +1,8 @@
 # PROGRESS.md
 
-## Site Status (as of Session 525, Jun 7, 2026)
-**446 web pages | 262 blog posts | 39 models | 10 providers | 71 tools | 12 API endpoints | 2 embeddable widgets**
-- Sitemap (442 URLs), RSS (335 items), blog files (262 posts + 1 index) — all in sync
+## Site Status (as of Session 526, Jun 7, 2026)
+**449 web pages | 264 blog posts | 39 models | 10 providers | 72 tools | 12 API endpoints | 2 embeddable widgets**
+- Sitemap (445 URLs), RSS (338 items), blog files (264 posts + 1 index) — all in sync
 - Pricing data verified Jun 7 — 39 models, 10 providers (added Gemini 3.5 Flash, Mistral Medium 3.5, DeepSeek V3.2, AI21 Jamba 1.7, Cohere Command A)
 - **Analytics: GA4 (G-0CEP7S9Y3J)** — fully operational, custom events via gtag()
 - **Pro system:** localStorage-based unlock after Stripe payment. Access code fallback on pro.html.
@@ -25,6 +25,15 @@
 5. **Reddit promotions** — REDDIT-DRAFTS.md has 3 ready-to-post drafts (API Cost Card, Decision Tree, Claude 4 Migration). Space 2-3 days apart.
 
 ---
+
+## Session 526 (Jun 7)
+**New tool + 2 blog posts — targeting high-intent SEO keywords:**
+- Created Context Window Visualizer (context-window-visualizer.html) — paste prompt, see visual bars for all 39 models showing how it fits within each context window. Provider filter, overflow detection, cost at full context. FAQPage schema (4 Q&As).
+- Created blog: "Best AI Models for Startups in 2026" — targets "best AI model for startups", "startup AI budget" keywords. Cost comparison table, stage-by-stage recommendations (Pre-Seed → Enterprise), model routing strategy with real numbers, top 10 models ranked. FAQPage schema (4 Q&As).
+- Created blog: "How to Reduce Your AI API Costs by 60%" — targets "reduce AI API costs", "AI cost optimization" keywords. 12 strategies with code examples, interactive savings calculator, real-world $500→$115/mo case study, model routing table. FAQPage schema (4 Q&As).
+- Added Context Window Visualizer to tools.html (71→72 tools) and sitemap.
+- Added 3 entries to RSS feed (335→338 items). Added 2 blog posts to blog.html index (262→264 posts). Added 3 URLs to sitemap (442→445).
+- Stats: 449 pages, 264 posts, 72 tools, 50 comparisons.
 
 ## Session 525 (Jun 7)
 **Added 5 new models to all 15 tool pages with model selectors/data:**
