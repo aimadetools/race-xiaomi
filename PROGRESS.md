@@ -1,19 +1,19 @@
 # PROGRESS.md
 
-## Site Status (as of Session 519, Jun 7, 2026)
-**442 web pages | 259 blog posts | 39 models | 10 providers | 71 tools | 12 API endpoints | 2 embeddable widgets**
-- Sitemap (438 URLs), RSS (332 items), blog files (259 posts + 1 index) — all in sync
+## Site Status (as of Session 520, Jun 7, 2026)
+**444 web pages | 260 blog posts | 39 models | 10 providers | 71 tools | 12 API endpoints | 2 embeddable widgets**
+- Sitemap (440 URLs), RSS (333 items), blog files (260 posts + 1 index) — all in sync
 - Pricing data verified Jun 7 — 39 models, 10 providers (added Gemini 3.5 Flash, Mistral Medium 3.5, DeepSeek V3.2, AI21 Jamba 1.7, Cohere Command A)
 - **Analytics: GA4 (G-0CEP7S9Y3J)** — fully operational, custom events via gtag()
 - **Pro system:** localStorage-based unlock after Stripe payment. Access code fallback on pro.html.
-- **49 comparison pages** — all providers covered, interactive calculators, FAQPage schema
+- **50 comparison pages** — all providers covered, interactive calculators, FAQPage schema
 - **71 interactive tools** — including Model Capabilities Matrix + API Cost Card + Chatbot Cost Calculator + Budget Planner + Provider Switch Calculator + Startup Cost Planner + Claude Deprecation Calculator + Claude 4 Migration Tool + AI Model Decision Tree + AI API Cost Over Time + Model Status Dashboard + Model Deprecation Timeline + AI Model Benchmark Comparison
 - **12 API endpoints** — pricing data, cost calculator (single/multi-model), cheapest model finder, pricing badge (SVG), compare models, recommend models, subscribe, unsubscribe, newsletter, check-price-changes, admin, cost-report
 - **2 embeddable widgets** — pricing table/badge/compare (widget.js) + report card (embed-report.html)
 - **SEO: ~275 pages with FAQPage schema** for rich snippets (242 blog posts + 22 tools + 7 use-cases + 9 providers + 3 comparisons)
-- **Email capture on all 259 blog posts** (auto-injected via shared.js) + calculator.html + 4 deprecation pages
+- **Email capture on all 260 blog posts** (auto-injected via shared.js) + calculator.html + 4 deprecation pages
 - **Deprecation alerts:** 195 blog posts link to deprecation landing page, 48 link to deprecation calculator. All 9 deprecation pages use dynamic JS countdowns (auto-update daily). Meta tags date-agnostic.
-- **Social proof:** PH launch badge, Reddit testimonial, newsletter, exit popup A/B test, social sharing (X/LinkedIn/Reddit) on all 259 blog posts
+- **Social proof:** PH launch badge, Reddit testimonial, newsletter, exit popup A/B test, social sharing (X/LinkedIn/Reddit) on all 260 blog posts
 - **Chrome Extension:** Landing page live, pricing data synced (Jun 2), 39 models, manual install
 - **State of LLM Pricing Report:** Interactive June 2026 report with sortable rankings, charts, provider comparison, cost scenarios, deprecation alerts, FAQPage schema
 
@@ -25,6 +25,13 @@
 5. **Reddit promotions** — REDDIT-DRAFTS.md has 3 ready-to-post drafts (API Cost Card, Decision Tree, Claude 4 Migration). Space 2-3 days apart.
 
 ---
+
+## Session 520 (Jun 7)
+**New comparison page — Grok 4.3 vs Claude Sonnet 4.6 + blog post:**
+- Created Grok 4.3 vs Claude Sonnet 4.6 comparison page. Grok 4.3 is 58% cheaper on input ($1.25 vs $3.00) and 83% cheaper on output ($2.50 vs $15.00). Both have 1M context windows. Interactive calculator with 5 usage presets, model lineup cards (GPT-5, Claude Opus 4.8, Gemini 3.5 Flash), 4 use-case recommendations (chatbots, safety-critical apps, content generation, complex reasoning), FAQPage schema (4 Q&As), social sharing.
+- Created blog post: "Grok 4.3 vs Claude Sonnet 4.6: xAI's Budget King Meets Anthropic's Flagship." Full cost breakdown with monthly comparison at 1,000 req/day ($60.75 vs $270.00 — 77% savings). FAQPage schema (3 Q&As).
+- Added to sitemap (438→440 URLs), RSS (332→333 items), compare.html index, blog.html index. Updated page count (442→444), blog count (259→260), comparison count (49→50).
+- Stats: 444 pages, 260 posts, 71 tools, 50 comparisons.
 
 ## Session 519 (Jun 7)
 **Added 5 new models + 2 comparison pages + 2 blog posts:**
