@@ -1,0 +1,54 @@
+{
+  "name": "APIpulse LLM Pricing API",
+  "description": "Free JSON API for real-time LLM API pricing data. Compare costs across 39 models from 10 providers (OpenAI, Anthropic, Google, DeepSeek, Mistral, Cohere, Meta, Moonshot, xAI, AI21). No API key required. CORS enabled.",
+  "url": "https://getapipulse.com/api/pricing",
+  "docs": "https://getapipulse.com/api-docs.html",
+  "category": "Data",
+  "subcategory": "Artificial Intelligence",
+  "auth": "none",
+  "https": true,
+  "cors": true,
+  "endpoints": [
+    {
+      "method": "GET",
+      "path": "/api/pricing",
+      "description": "Get all model pricing data. Supports ?provider=openai, ?tier=budget, ?model=openai-gpt5 filters.",
+      "example": "https://getapipulse.com/api/pricing?provider=openai"
+    },
+    {
+      "method": "GET",
+      "path": "/api/calculate",
+      "description": "Calculate monthly cost for a model. Params: model, input_tokens, output_tokens, requests.",
+      "example": "https://getapipulse.com/api/calculate?model=openai-gpt4o-mini&input_tokens=1000&output_tokens=500&requests=1000"
+    },
+    {
+      "method": "GET",
+      "path": "/api/cheapest",
+      "description": "Find cheapest model for a workload. Params: input_tokens, output_tokens, requests.",
+      "example": "https://getapipulse.com/api/cheapest?input_tokens=1000&output_tokens=500&requests=1000"
+    },
+    {
+      "method": "GET",
+      "path": "/api/compare",
+      "description": "Compare multiple models. Params: models (comma-separated), input_tokens, output_tokens, requests.",
+      "example": "https://getapipulse.com/api/compare?models=openai-gpt5,anthropic-sonnet46"
+    },
+    {
+      "method": "GET",
+      "path": "/api/badge",
+      "description": "Get SVG pricing badge for a model. Param: model.",
+      "example": "https://getapipulse.com/api/badge?model=openai-gpt5"
+    },
+    {
+      "method": "GET",
+      "path": "/api/recommend",
+      "description": "Get model recommendations. Params: use_case, budget.",
+      "example": "https://getapipulse.com/api/recommend?use_case=chatbot&budget=50"
+    }
+  ],
+  "models_count": 39,
+  "providers_count": 10,
+  "last_updated": "2026-06-07",
+  "contact": "hello@getapipulse.com",
+  "website": "https://getapipulse.com"
+}

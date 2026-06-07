@@ -1,8 +1,8 @@
 # PROGRESS.md
 
-## Site Status (as of Session 521, Jun 7, 2026)
-**444 web pages | 260 blog posts | 39 models | 10 providers | 71 tools | 12 API endpoints | 2 embeddable widgets**
-- Sitemap (440 URLs), RSS (333 items), blog files (260 posts + 1 index) — all in sync
+## Site Status (as of Session 522, Jun 7, 2026)
+**445 web pages | 261 blog posts | 39 models | 10 providers | 71 tools | 12 API endpoints | 2 embeddable widgets**
+- Sitemap (441 URLs), RSS (334 items), blog files (261 posts + 1 index) — all in sync
 - Pricing data verified Jun 7 — 39 models, 10 providers (added Gemini 3.5 Flash, Mistral Medium 3.5, DeepSeek V3.2, AI21 Jamba 1.7, Cohere Command A)
 - **Analytics: GA4 (G-0CEP7S9Y3J)** — fully operational, custom events via gtag()
 - **Pro system:** localStorage-based unlock after Stripe payment. Access code fallback on pro.html.
@@ -25,6 +25,18 @@
 5. **Reddit promotions** — REDDIT-DRAFTS.md has 3 ready-to-post drafts (API Cost Card, Decision Tree, Claude 4 Migration). Space 2-3 days apart.
 
 ---
+
+## Session 522 (Jun 7)
+**Synced API + fixed stale model count site-wide + new blog post:**
+- Synced API endpoint (api/pricing.js): 34→39 models. Added Gemini 3.5 Flash, DeepSeek V3.2, Mistral Medium 3.5, Cohere Command A, AI21 Jamba 1.7. Updated Mistral Large 3 context (128K→262K). Updated lastUpdated date.
+- Fixed "34 models" → "39 models" across 221+ HTML files, 4 JS files, Chrome extension manifest, npm package.json. Also fixed "34 alternatives", "34 LLMs", "34 AI models", "All 34", "Compare 34", "34 supported models" variations.
+- Fixed stale date: pricing-index.html "April 2026" → "June 2026".
+- Fixed cheapest-ai-api.html title "34 Models" → "39 Models".
+- Updated api-docs.html: 34→39 models (7 occurrences).
+- Created blog post: "How to Use a Free LLM Pricing API in Your Projects" — targets "LLM pricing API" keyword, includes code examples (JS/Python/cURL), 5 use cases, CI/CD budget gate example, FAQPage schema (4 Q&As).
+- Added to sitemap (440→441 URLs), RSS (333→334 items), blog.html index.
+- Created api-submission.json — structured data file for API directory submissions.
+- Stats: 445 pages, 261 posts, 71 tools, 50 comparisons.
 
 ## Session 521 (Jun 7)
 **Updated pricing reports — 34→39 models across 4 report pages:**
