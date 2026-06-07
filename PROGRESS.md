@@ -11,9 +11,9 @@
 - **12 API endpoints** — pricing data, cost calculator (single/multi-model), cheapest model finder, pricing badge (SVG), compare models, recommend models, subscribe, unsubscribe, newsletter, check-price-changes, admin, cost-report
 - **2 embeddable widgets** — pricing table/badge/compare (widget.js) + report card (embed-report.html)
 - **SEO: ~271 pages with FAQPage schema** for rich snippets (240 blog posts + 22 tools + 7 use-cases + 9 providers + 1 comparison)
-- **Email capture on all 256 blog posts** (auto-injected via shared.js) + calculator.html + 4 deprecation pages
+- **Email capture on all 257 blog posts** (auto-injected via shared.js) + calculator.html + 4 deprecation pages
 - **Deprecation alerts:** 195 blog posts link to deprecation landing page, 48 link to deprecation calculator. All 9 deprecation pages use dynamic JS countdowns (auto-update daily). Meta tags date-agnostic.
-- **Social proof:** PH launch badge, Reddit testimonial, newsletter, exit popup A/B test, social sharing (X/LinkedIn/Reddit) on all 256 blog posts
+- **Social proof:** PH launch badge, Reddit testimonial, newsletter, exit popup A/B test, social sharing (X/LinkedIn/Reddit) on all 257 blog posts
 - **Chrome Extension:** Landing page live, pricing data synced (Jun 2), 34 models, manual install
 - **State of LLM Pricing Report:** Interactive June 2026 report with sortable rankings, charts, provider comparison, cost scenarios, deprecation alerts, FAQPage schema
 
@@ -52,20 +52,8 @@
 - Verified: all 45 comparison pages now linked in compare.html, deprecation countdowns (June 15) still active and correct.
 - Stats unchanged: 435 pages, 256 posts, 71 tools, 45 comparisons.
 
-## Session 514 (Jun 7)
-**New comparison — Claude Sonnet 4.6 vs GPT-5 mini:**
-- Created Claude Sonnet 4.6 vs GPT-5 mini comparison page — GPT-5 mini is 92% cheaper on input ($0.25 vs $3.00) and 87% cheaper on output ($2.00 vs $15.00), but Sonnet has 3.7x larger context (1M vs 272K). Budget vs mid-tier showdown. Interactive calculator, 5 usage presets, 4 use-case recommendations (high-volume chatbots, complex code analysis, content generation at scale, startup MVP), FAQPage schema (4 Q&As).
-- Added to sitemap (430→431 URLs), RSS (324→325 items), compare index. Updated page count (434→435), comparison count (44→45).
-- Stats: 435 pages, 256 posts, 71 tools, 45 comparisons.
-
-## Session 513 (Jun 6)
-**New comparison — DeepSeek V4 Pro vs Gemini 2.5 Pro:**
-- Created DeepSeek V4 Pro vs Gemini 2.5 Pro comparison page — same 1M context window, but DeepSeek is 65% cheaper on input ($0.435 vs $1.25) and 91% cheaper on output ($0.87 vs $10.00). Open source MIT license vs Google proprietary. Unique angle: when context windows are identical, cost becomes the deciding factor. Interactive calculator, 5 usage presets, 4 use-case recommendations (budget-conscious long-context, Google ecosystem, self-hosting, production reliability), FAQPage schema (4 Q&As).
-- Added to sitemap (429→430 URLs), RSS (323→324 items), compare index. Updated page count (433→434), comparison count (43→44).
-- Stats: 434 pages, 256 posts, 71 tools, 44 comparisons.
-
-## Summary: Sessions 495-512 (Jun 5-6)
-✅ 8 comparisons (GPT-5 vs Claude Opus 4.8, GPT-5 mini vs Llama 4 Scout, GPT-5.5 vs DeepSeek V4 Pro, Claude Opus 4.8 vs DeepSeek V4 Pro, GPT-5 vs Gemini 2.5 Pro, GPT-5 mini vs DeepSeek V4 Pro, Claude Opus 4.8 vs Gemini 3.1 Pro). AI Model Benchmark Comparison tool + blog. AI Model Capabilities Matrix + blog. AI Model Value Score tool. AI API Cost for Game Dev blog. API Cost Card tool + nav + CTA. Deprecation countdown fixes. 2 blog posts. Reddit drafts. SEO fixes. Site audit: 0 broken links. Stats: 416→433 pages, 249→256 posts, 67→71 tools, 38→43 comparisons.
+## Summary: Sessions 495-514 (Jun 5-7)
+✅ 10 comparisons (GPT-5 vs Claude Opus 4.8, GPT-5 mini vs Llama 4 Scout, GPT-5.5 vs DeepSeek V4 Pro, Claude Opus 4.8 vs DeepSeek V4 Pro, GPT-5 vs Gemini 2.5 Pro, GPT-5 mini vs DeepSeek V4 Pro, Claude Opus 4.8 vs Gemini 3.1 Pro, DeepSeek V4 Pro vs Gemini 2.5 Pro, Claude Sonnet 4.6 vs GPT-5 mini). AI Model Benchmark Comparison tool + blog. AI Model Capabilities Matrix + blog. AI Model Value Score tool. AI API Cost for Game Dev blog. API Cost Card tool + nav + CTA. Deprecation countdown fixes. 3 missing comparisons added to index. 2 blog posts. Reddit drafts. SEO fixes. Site audit: 0 broken links. Stats: 416→435 pages, 249→256 posts, 67→71 tools, 38→45 comparisons.
 
 ## Summary: Sessions 435-494 (Jun 1-5)
 ✅ Claude 4 deprecation ecosystem (12 pages, 58+ cross-links, CTA on 195 posts). Decision Tree + A/B test. Cost Optimizer. Pricing Trends. Startup Cost Planner. Provider Switch Calculator. Migration guide. Email capture on 256 posts. AI Model Status Dashboard. Model Deprecation Timeline. 10 blog posts. Reddit drafts. Stats: 380→416 pages, 233→249 posts, 58→67 tools.
