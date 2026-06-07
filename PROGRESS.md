@@ -1,9 +1,9 @@
 # PROGRESS.md
 
-## Site Status (as of Session 518, Jun 7, 2026)
-**438 web pages | 257 blog posts | 34 models | 10 providers | 71 tools | 12 API endpoints | 2 embeddable widgets**
-- Sitemap (434 URLs), RSS (328 items), blog files (257 posts + 1 index) — all in sync
-- Pricing data verified Jun 2 — 34 models, 10 providers (Grok rebranded to 4.3 at $1.25)
+## Site Status (as of Session 519, Jun 7, 2026)
+**442 web pages | 259 blog posts | 39 models | 10 providers | 71 tools | 12 API endpoints | 2 embeddable widgets**
+- Sitemap (438 URLs), RSS (332 items), blog files (259 posts + 1 index) — all in sync
+- Pricing data verified Jun 7 — 39 models, 10 providers (added Gemini 3.5 Flash, Mistral Medium 3.5, DeepSeek V3.2, AI21 Jamba 1.7, Cohere Command A)
 - **Analytics: GA4 (G-0CEP7S9Y3J)** — fully operational, custom events via gtag()
 - **Pro system:** localStorage-based unlock after Stripe payment. Access code fallback on pro.html.
 - **47 comparison pages** — all providers covered, interactive calculators, FAQPage schema
@@ -25,6 +25,16 @@
 5. **Reddit promotions** — REDDIT-DRAFTS.md has 3 ready-to-post drafts (API Cost Card, Decision Tree, Claude 4 Migration). Space 2-3 days apart.
 
 ---
+
+## Session 519 (Jun 7)
+**Added 5 new models + 2 comparison pages + 2 blog posts:**
+- Added 5 new models to pricing-data.js: Gemini 3.5 Flash ($1.50/$9.00, 1M), Mistral Medium 3.5 ($1.50/$7.50, 128K), DeepSeek V3.2 ($0.23/$0.34, 128K), AI21 Jamba 1.7 Large ($2.00/$8.00, 256K), Cohere Command A ($2.50/$10.00, 128K). Updated PRICING_LAST_UPDATED to Jun 7. Total models: 34→39.
+- Updated 5 provider pages (google.html, mistral.html, deepseek.html, ai21.html, cohere.html) with new model entries in pricing tables.
+- Created Gemini 3.5 Flash vs DeepSeek V4 Pro comparison: DeepSeek is 71% cheaper on input ($0.435 vs $1.50) and 90% cheaper on output ($0.87 vs $9.00). Both have 1M context. Interactive calculator with 5 presets, model lineup cards, 4 use-case recommendations, FAQPage schema (4 Q&As), social sharing.
+- Created Mistral Medium 3.5 vs Claude Sonnet 4.6 comparison: Mistral is exactly 50% cheaper on both input ($1.50 vs $3.00) and output ($7.50 vs $15.00). European data sovereignty vs US. Interactive calculator with 5 presets, model lineup cards, 4 use-case recommendations, FAQPage schema (4 Q&As), social sharing.
+- Created 2 blog posts: "Gemini 3.5 Flash vs DeepSeek V4 Pro: Google's Latest Meets Budget Champion" and "Mistral Medium 3.5 vs Claude Sonnet 4.6: Europe's Mid-Tier Bid". Full cost breakdowns, decision frameworks, FAQPage schema.
+- Updated sitemap (434→438 URLs), RSS (328→332 items), compare.html index (+2 entries), blog.html index (+2 entries). Updated page count (438→442), blog count (257→259), comparison count (47→49).
+- Stats: 442 pages, 259 posts, 71 tools, 49 comparisons.
 
 ## Session 518 (Jun 7)
 **New comparison — Kimi K2.6 vs DeepSeek V4 Pro (+ blog post):**

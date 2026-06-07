@@ -1,7 +1,7 @@
 // APIpulse — Centralized Pricing Data (Single Source of Truth)
 // Update this file when provider pricing changes. All pages import from here.
-// Last verified: Jun 2, 2026
-const PRICING_LAST_UPDATED = 'Jun 2, 2026';
+// Last verified: Jun 7, 2026
+const PRICING_LAST_UPDATED = 'Jun 7, 2026';
 
 const API_MODELS = [
     // OpenAI
@@ -22,6 +22,7 @@ const API_MODELS = [
     { id: 'anthropic-sonnet', name: 'Claude Sonnet 4', provider: 'Anthropic', providerSlug: 'anthropic', tier: 'Mid', input: 3.00, output: 15.00, context: '200K', verified: 'Jun 2026', deprecated: true, deprecatedDate: '2026-06-15', replacement: 'anthropic-sonnet46' },
     { id: 'anthropic-haiku', name: 'Claude Haiku 4.5', provider: 'Anthropic', providerSlug: 'anthropic', tier: 'Budget', input: 1.00, output: 5.00, context: '200K', verified: 'Jun 2026' },
     // Google
+    { id: 'google-gemini35-flash', name: 'Gemini 3.5 Flash', provider: 'Google', providerSlug: 'google', tier: 'Mid', input: 1.50, output: 9.00, context: '1M', verified: 'Jun 2026' },
     { id: 'google-gemini3-pro', name: 'Gemini 3.1 Pro', provider: 'Google', providerSlug: 'google', tier: 'Mid', input: 2.00, output: 12.00, context: '1M', verified: 'May 2026' },
     { id: 'google-pro', name: 'Gemini 2.5 Pro', provider: 'Google', providerSlug: 'google', tier: 'Mid', input: 1.25, output: 10.00, context: '1M', verified: 'May 2026' },
     { id: 'google-flash', name: 'Gemini 2.0 Flash', provider: 'Google', providerSlug: 'google', tier: 'Budget', input: 0.10, output: 0.40, context: '1M', verified: 'May 2026' },
@@ -29,11 +30,14 @@ const API_MODELS = [
     // DeepSeek
     { id: 'deepseek-v4-pro', name: 'DeepSeek V4 Pro', provider: 'DeepSeek', providerSlug: 'deepseek', tier: 'Budget', input: 0.435, output: 0.87, context: '1M', verified: 'Jun 2026' },
     { id: 'deepseek-v4-flash', name: 'DeepSeek V4 Flash', provider: 'DeepSeek', providerSlug: 'deepseek', tier: 'Budget', input: 0.14, output: 0.28, context: '1M', verified: 'May 2026' },
+    { id: 'deepseek-v32', name: 'DeepSeek V3.2', provider: 'DeepSeek', providerSlug: 'deepseek', tier: 'Budget', input: 0.23, output: 0.34, context: '128K', verified: 'Jun 2026' },
     { id: 'deepseek-v3', name: 'DeepSeek V3', provider: 'DeepSeek', providerSlug: 'deepseek', tier: 'Budget', input: 0.27, output: 1.10, context: '128K', verified: 'May 2026', deprecated: true, replacement: 'deepseek-v4-flash' },
     // Mistral
     { id: 'mistral-large', name: 'Mistral Large 3', provider: 'Mistral', providerSlug: 'mistral', tier: 'Budget', input: 0.50, output: 1.50, context: '262K', verified: 'Jun 2026' },
+    { id: 'mistral-medium', name: 'Mistral Medium 3.5', provider: 'Mistral', providerSlug: 'mistral', tier: 'Mid', input: 1.50, output: 7.50, context: '128K', verified: 'Jun 2026' },
     { id: 'mistral-small', name: 'Mistral Small 4', provider: 'Mistral', providerSlug: 'mistral', tier: 'Budget', input: 0.15, output: 0.60, context: '128K', verified: 'May 2026' },
     // Cohere
+    { id: 'cohere-command-a', name: 'Command A', provider: 'Cohere', providerSlug: 'cohere', tier: 'Mid', input: 2.50, output: 10.00, context: '128K', verified: 'Jun 2026' },
     { id: 'cohere-command-r-plus', name: 'Command R+', provider: 'Cohere', providerSlug: 'cohere', tier: 'Mid', input: 2.50, output: 10.00, context: '128K', verified: 'May 2026' },
     { id: 'cohere-command-r', name: 'Command R', provider: 'Cohere', providerSlug: 'cohere', tier: 'Budget', input: 0.50, output: 1.50, context: '128K', verified: 'May 2026' },
     // Meta (Together.ai)
@@ -47,6 +51,7 @@ const API_MODELS = [
     { id: 'xai-grok3', name: 'Grok 4.3', provider: 'xAI', providerSlug: 'xai', tier: 'Mid', input: 1.25, output: 2.50, context: '1M', verified: 'Jun 2026' },  // Was Grok 3 at $3/$15 — rebranded & repriced Jun 2026
     { id: 'xai-grok3-mini', name: 'Grok Build 0.1', provider: 'xAI', providerSlug: 'xai', tier: 'Budget', input: 0.30, output: 0.50, context: '256K', verified: 'Jun 2026' },  // Replaced Grok 3 Mini ($0.30/$0.50)
     // AI21
+    { id: 'ai21-jamba17', name: 'Jamba 1.7 Large', provider: 'AI21', providerSlug: 'ai21', tier: 'Mid', input: 2.00, output: 8.00, context: '256K', verified: 'Jun 2026' },
     { id: 'ai21-jamba', name: 'Jamba 1.5 Large', provider: 'AI21', providerSlug: 'ai21', tier: 'Mid', input: 2.00, output: 8.00, context: '256K', verified: 'May 2026' },
 ];
 
