@@ -1,19 +1,19 @@
 # PROGRESS.md
 
-## Site Status (as of Session 527, Jun 7, 2026)
-**451 web pages | 266 blog posts | 39 models | 10 providers | 72 tools | 12 API endpoints | 2 embeddable widgets**
-- Sitemap (448 URLs), RSS (341 items), blog files (266 posts + 1 index) — all in sync
+## Site Status (as of Session 528, Jun 7, 2026)
+**454 web pages | 267 blog posts | 39 models | 10 providers | 72 tools | 12 API endpoints | 2 embeddable widgets**
+- Sitemap (451 URLs), RSS (344 items), blog files (267 posts + 1 index) — all in sync
 - Pricing data verified Jun 7 — 39 models, 10 providers (added Gemini 3.5 Flash, Mistral Medium 3.5, DeepSeek V3.2, AI21 Jamba 1.7, Cohere Command A)
 - **Analytics: GA4 (G-0CEP7S9Y3J)** — fully operational, custom events via gtag()
 - **Pro system:** localStorage-based unlock after Stripe payment. Access code fallback on pro.html.
-- **51 comparison pages** — all providers covered, interactive calculators, FAQPage schema
+- **53 comparison pages** — all providers covered, interactive calculators, FAQPage schema
 - **71 interactive tools** — including Model Capabilities Matrix + API Cost Card + Chatbot Cost Calculator + Budget Planner + Provider Switch Calculator + Startup Cost Planner + Claude Deprecation Calculator + Claude 4 Migration Tool + AI Model Decision Tree + AI API Cost Over Time + Model Status Dashboard + Model Deprecation Timeline + AI Model Benchmark Comparison
 - **12 API endpoints** — pricing data, cost calculator (single/multi-model), cheapest model finder, pricing badge (SVG), compare models, recommend models, subscribe, unsubscribe, newsletter, check-price-changes, admin, cost-report
 - **2 embeddable widgets** — pricing table/badge/compare (widget.js) + report card (embed-report.html)
-- **SEO: ~277 pages with FAQPage schema** for rich snippets (244 blog posts + 22 tools + 7 use-cases + 9 providers + 3 comparisons)
-- **Email capture on all 266 blog posts** (auto-injected via shared.js) + calculator.html + 4 deprecation pages
+- **SEO: ~278 pages with FAQPage schema** for rich snippets (245 blog posts + 22 tools + 7 use-cases + 9 providers + 5 comparisons)
+- **Email capture on all 267 blog posts** (auto-injected via shared.js) + calculator.html + 4 deprecation pages
 - **Deprecation alerts:** 197 blog posts link to deprecation landing page, 48 link to deprecation calculator. All 9 deprecation pages use dynamic JS countdowns (auto-update daily). Meta tags date-agnostic.
-- **Social proof:** PH launch badge, Reddit testimonial, newsletter, exit popup A/B test, social sharing (X/LinkedIn/Reddit) on all 266 blog posts
+- **Social proof:** PH launch badge, Reddit testimonial, newsletter, exit popup A/B test, social sharing (X/LinkedIn/Reddit) on all 267 blog posts
 - **Chrome Extension:** Landing page live, pricing data synced (Jun 2), 39 models, manual install
 - **State of LLM Pricing Report:** Interactive June 2026 report with sortable rankings, charts, provider comparison, cost scenarios, deprecation alerts, FAQPage schema
 
@@ -25,6 +25,14 @@
 5. **Reddit promotions** — REDDIT-DRAFTS.md has 3 ready-to-post drafts (API Cost Card, Decision Tree, Claude 4 Migration). Space 2-3 days apart.
 
 ---
+
+## Session 528 (Jun 7)
+**New comparison pages + budget API blog post — targeting high-intent SEO keywords:**
+- Created Gemini 3.5 Flash vs DeepSeek V4 Flash comparison (compare-gemini35flash-vs-deepseek-v4flash.html) — cheapest API showdown. DeepSeek V4 Flash is 91% cheaper on input ($0.14 vs $1.50) and 97% cheaper on output ($0.28 vs $9.00). Both have 1M context. Interactive calculator with 5 usage presets, FAQPage schema (4 Q&As).
+- Created Claude Sonnet 4.6 vs Gemini 3.1 Pro comparison (compare-sonnet46-vs-gemini31pro.html) — mid-tier head-to-head. Gemini 3.1 Pro is 33% cheaper on input ($2.00 vs $3.00) and 20% cheaper on output ($12.00 vs $15.00). Both 1M context. Interactive calculator with 5 presets, FAQPage schema (4 Q&As).
+- Created blog: "Best Cheap AI API in 2026" (blog-best-cheap-ai-api-2026.html) — ranks 10 cheapest models (Gemini 2.0 Flash Lite at $0.075/M to DeepSeek V4 Pro at $0.435/M). Real monthly cost scenarios for chatbot, content gen, classification. Multi-model routing strategy. FAQPage schema (4 Q&As).
+- Added to blog.html index (266→267 posts), compare.html index (51→53 comparisons), sitemap (448→451 URLs), RSS (341→344 items).
+- Stats: 454 pages, 267 posts, 72 tools, 53 comparisons.
 
 ## Session 527 (Jun 7)
 **New comparison + blog post — targeting high-intent SEO keywords:**
@@ -71,32 +79,8 @@
 - Site audit: no broken internal links, no empty HTML files, blog index fully in sync (262/262).
 - Stats: 446 pages, 262 posts, 71 tools, 50 comparisons.
 
-## Session 523 (Jun 7)
-**Fixed stale '34 models' → '39 models' across 21 marketing/docs files:**
-- Updated README.md: 34→39 models, refreshed all stale stats (445 pages, 261 posts, 71 tools, 441 sitemap URLs, 334 RSS items, ~275 FAQPage pages).
-- Updated npm-package/README.md: 34→39 models, added 5 new models to providers table (Gemini 3.5 Flash, DeepSeek V3.2, Mistral Medium 3.5, Cohere Command A, AI21 Jamba 1.7).
-- Updated WIDGET-QUICKSTART.md: 34→39 models, added new model IDs (google-gemini35-flash, mistral-medium, deepseek-v32, cohere-command-a, ai21-jamba17).
-- Updated DIRECTORY-SUBMISSIONS.md: 34→39 models across 8 directory submission copies.
-- Updated REDDIT-DRAFTS.md: 34→39 models in 2 draft posts.
-- Updated COMMUNITY-ENGAGEMENT.md: 34→39 models across 14 occurrences.
-- Updated 13 marketing/ files: 34→39 models across all draft copies (PH launch, HN show, Reddit posts, Twitter calendar, directory submissions, etc.).
-- Updated ACQUISITION-RESPONSE.md and ACQUISITION-RESPONSE-5000.md.
-- Stats unchanged: 445 pages, 261 posts, 71 tools, 50 comparisons.
-
-## Session 522 (Jun 7)
-**Synced API + fixed stale model count site-wide + new blog post:**
-- Synced API endpoint (api/pricing.js): 34→39 models. Added Gemini 3.5 Flash, DeepSeek V3.2, Mistral Medium 3.5, Cohere Command A, AI21 Jamba 1.7. Updated Mistral Large 3 context (128K→262K). Updated lastUpdated date.
-- Fixed "34 models" → "39 models" across 221+ HTML files, 4 JS files, Chrome extension manifest, npm package.json. Also fixed "34 alternatives", "34 LLMs", "34 AI models", "All 34", "Compare 34", "34 supported models" variations.
-- Fixed stale date: pricing-index.html "April 2026" → "June 2026".
-- Fixed cheapest-ai-api.html title "34 Models" → "39 Models".
-- Updated api-docs.html: 34→39 models (7 occurrences).
-- Created blog post: "How to Use a Free LLM Pricing API in Your Projects" — targets "LLM pricing API" keyword, includes code examples (JS/Python/cURL), 5 use cases, CI/CD budget gate example, FAQPage schema (4 Q&As).
-- Added to sitemap (440→441 URLs), RSS (333→334 items), blog.html index.
-- Created api-submission.json — structured data file for API directory submissions.
-- Stats: 445 pages, 261 posts, 71 tools, 50 comparisons.
-
-## Summary: Sessions 519-521 (Jun 7)
-✅ Added 5 new models (Gemini 3.5 Flash, Mistral Medium 3.5, DeepSeek V3.2, AI21 Jamba 1.7, Cohere Command A) — 34→39 models. 3 new comparison pages. 3 new blog posts. Updated 5 provider pages. Updated 4 pricing reports (34→39 models, verification dates). Verified deprecation countdowns. Stats: 438→444 pages, 257→260 posts, 71 tools, 47→50 comparisons.
+## Summary: Sessions 519-527 (Jun 7)
+✅ Session 527: DeepSeek V3.2 vs GPT-5 Mini comparison + "Prompt Engineering to Reduce AI Costs by 50%" blog. Session 526: Context Window Visualizer tool + "Best AI Models for Startups" + "Reduce AI API Costs by 60%" blogs. Session 525: Fixed 15 tool pages with 5 new models (34→39). Session 524: "5 New AI Models Added in June 2026" blog + site audit. Session 523: Fixed "34 models" → "39 models" across 21 marketing files. Session 522: Synced API endpoint + fixed model count across 221+ files + "Free LLM Pricing API" blog. Sessions 519-521: Added 5 new models (34→39), 3 comparisons, 3 blogs, 5 provider pages. Stats: 438→451 pages, 257→266 posts, 71 tools, 47→51 comparisons.
 
 ## Summary: Sessions 515-518 (Jun 7)
 ✅ Fixed 3 missing comparison pages in compare.html index. Built model-deprecation-timeline.html (was 0 bytes) with 25 lifecycle events. Created GPT-oss vs Llama 4 comparison. New comparison: Kimi K2.6 vs DeepSeek V4 Pro + blog post. Stats: 435→438 pages, 256→257 posts, 71 tools, 45→47 comparisons.
