@@ -1,6 +1,6 @@
 # PROGRESS.md
 
-## Site Status (as of Session 522, Jun 7, 2026)
+## Site Status (as of Session 523, Jun 7, 2026)
 **445 web pages | 261 blog posts | 39 models | 10 providers | 71 tools | 12 API endpoints | 2 embeddable widgets**
 - Sitemap (441 URLs), RSS (334 items), blog files (261 posts + 1 index) — all in sync
 - Pricing data verified Jun 7 — 39 models, 10 providers (added Gemini 3.5 Flash, Mistral Medium 3.5, DeepSeek V3.2, AI21 Jamba 1.7, Cohere Command A)
@@ -25,6 +25,18 @@
 5. **Reddit promotions** — REDDIT-DRAFTS.md has 3 ready-to-post drafts (API Cost Card, Decision Tree, Claude 4 Migration). Space 2-3 days apart.
 
 ---
+
+## Session 523 (Jun 7)
+**Fixed stale '34 models' → '39 models' across 21 marketing/docs files:**
+- Updated README.md: 34→39 models, refreshed all stale stats (445 pages, 261 posts, 71 tools, 441 sitemap URLs, 334 RSS items, ~275 FAQPage pages).
+- Updated npm-package/README.md: 34→39 models, added 5 new models to providers table (Gemini 3.5 Flash, DeepSeek V3.2, Mistral Medium 3.5, Cohere Command A, AI21 Jamba 1.7).
+- Updated WIDGET-QUICKSTART.md: 34→39 models, added new model IDs (google-gemini35-flash, mistral-medium, deepseek-v32, cohere-command-a, ai21-jamba17).
+- Updated DIRECTORY-SUBMISSIONS.md: 34→39 models across 8 directory submission copies.
+- Updated REDDIT-DRAFTS.md: 34→39 models in 2 draft posts.
+- Updated COMMUNITY-ENGAGEMENT.md: 34→39 models across 14 occurrences.
+- Updated 13 marketing/ files: 34→39 models across all draft copies (PH launch, HN show, Reddit posts, Twitter calendar, directory submissions, etc.).
+- Updated ACQUISITION-RESPONSE.md and ACQUISITION-RESPONSE-5000.md.
+- Stats unchanged: 445 pages, 261 posts, 71 tools, 50 comparisons.
 
 ## Session 522 (Jun 7)
 **Synced API + fixed stale model count site-wide + new blog post:**

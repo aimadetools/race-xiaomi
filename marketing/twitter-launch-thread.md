@@ -42,7 +42,7 @@ Unless you're doing document analysis, a 32K-128K window is plenty.
 ## Tweet 6 (The Tool)
 I built APIpulse to make these comparisons instant.
 
-• 34 models, 10 providers
+• 39 models, 10 providers
 • Interactive cost calculator
 • Side-by-side comparison tool
 • 81 blog posts with real cost breakdowns

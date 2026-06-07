@@ -2,7 +2,7 @@
 
 > Know your AI API costs before you commit.
 
-Compare LLM API pricing across 34 models from 10 providers. Calculate monthly spend, find the cheapest model, and optimize costs by up to 40%.
+Compare LLM API pricing across 39 models from 10 providers. Calculate monthly spend, find the cheapest model, and optimize costs by up to 40%.
 
 ## Live Site
 
@@ -12,7 +12,7 @@ Compare LLM API pricing across 34 models from 10 providers. Calculate monthly sp
 
 APIpulse helps developers make smart decisions about AI API costs:
 
-- **Compare pricing** across 34 models from OpenAI, Anthropic, Google, DeepSeek, Mistral, Meta, xAI, Cohere, Moonshot, and AI21
+- **Compare pricing** across 39 models from OpenAI, Anthropic, Google, DeepSeek, Mistral, Meta, xAI, Cohere, Moonshot, and AI21
 - **Calculate costs** based on your specific usage patterns (input/output tokens, requests/day)
 - **Find savings** by identifying the cheapest provider for your workload
 - **Track deprecations** — Claude 4 retiring June 15, 2026 with interactive migration tools
@@ -21,15 +21,15 @@ APIpulse helps developers make smart decisions about AI API costs:
 
 | Metric | Count |
 |--------|-------|
-| HTML pages | 399 |
-| Blog posts | 241 |
-| AI models tracked | 34 |
+| HTML pages | 445 |
+| Blog posts | 261 |
+| AI models tracked | 39 |
 | API providers | 10 |
-| Interactive tools | 63 |
+| Interactive tools | 71 |
 | API endpoints | 12 |
 | Embeddable widgets | 2 |
-| Sitemap URLs | 394 |
-| FAQPage schema pages | ~264 |
+| Sitemap URLs | 441 |
+| FAQPage schema pages | ~275 |
 
 ## Key Features
 
@@ -39,12 +39,12 @@ APIpulse helps developers make smart decisions about AI API costs:
 - **AI Model Decision Tree** — 4-question quiz for personalized model recommendations
 - **AI Stack Cost Optimizer** — build your AI stack, get cheapest model per feature
 - **LLM Pricing Trends 2026** — historical price drops, new models, deprecations
-- **Claude 4 Deprecation Guide** — 34 alternatives, migration code, savings calculator
+- **Claude 4 Deprecation Guide** — 39 alternatives, migration code, savings calculator
 - **Cheapest LLM API Finder** — find the lowest-cost model for any use case
-- **API Pricing Index** — sortable table of all 34 models with live pricing data
+- **API Pricing Index** — sortable table of all 39 models with live pricing data
 
 ### API Endpoints (no auth required)
-- `GET /api/pricing` — full pricing data for 34 models
+- `GET /api/pricing` — full pricing data for 39 models
 - `GET /api/calculate` — single-model cost estimation
 - `GET /api/calculate-multi` — multi-model cost comparison
 - `GET /api/cheapest` — find cheapest model for a workload
@@ -77,7 +77,7 @@ APIpulse helps developers make smart decisions about AI API costs:
 ├── index.html              # Landing page with cost calculator
 ├── calculator.html         # Standalone cost calculator
 ├── compare.html            # Model comparison tool
-├── pricing-index.html      # All 34 models in sortable table
+├── pricing-index.html      # All 39 models in sortable table
 ├── pricing.html            # Free vs Pro pricing
 ├── pro.html                # Pro access gate
 ├── model-decision-tree.html # Interactive quiz
@@ -94,8 +94,8 @@ APIpulse helps developers make smart decisions about AI API costs:
 ├── openai.html             # Provider pages (×10)
 ├── anthropic.html
 ├── google.html
-├── ... (398 total pages)
-├── blog-*.html             # 241 SEO-optimized blog posts
+├── ... (444 total pages)
+├── blog-*.html             # 261 SEO-optimized blog posts
 ├── api/                    # 12 Vercel serverless functions
 │   ├── pricing.js
 │   ├── calculate.js
@@ -103,12 +103,12 @@ APIpulse helps developers make smart decisions about AI API costs:
 │   ├── cheapest.js
 │   ├── recommend.js
 │   └── ...
-├── pricing-data.js         # Centralized pricing data (34 models)
+├── pricing-data.js         # Centralized pricing data (39 models)
 ├── shared.js               # Shared JS (nav, theme, analytics)
 ├── styles.css              # Global stylesheet
 ├── widget.js               # Embeddable pricing widget
-├── sitemap.xml             # 392 URLs
-├── rss.xml                 # 298 items
+├── sitemap.xml             # 441 URLs
+├── rss.xml                 # 334 items
 └── robots.txt
 ```
 
@@ -119,7 +119,7 @@ This project is built by an AI agent (Xiaomi MiMo V2.5 Pro) competing in The $10
 - **Budget:** $100 total ($10 domain, $90 remaining)
 - **Week:** 7 of 12
 - **Revenue:** $0 (blocked on distribution)
-- **Strategy:** SEO content (241 blog posts) + tools (62) + API (12 endpoints) + widgets
+- **Strategy:** SEO content (261 blog posts) + tools (71) + API (12 endpoints) + widgets
 
 ## Running Locally
 

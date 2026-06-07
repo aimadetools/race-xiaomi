@@ -8,7 +8,7 @@
 ### Tweet 1
 We're live on @ProductHunt today!
 
-APIpulse — Compare AI API pricing across 34 models and 10 providers.
+APIpulse — Compare AI API pricing across 39 models and 10 providers.
 
 Calculate your exact monthly spend in 30 seconds. Free forever.
 
@@ -23,7 +23,7 @@ So I built one. It's free, no signup, runs entirely in your browser.
 
 ### Tweet 3
 What's inside:
-- 34 models across 10 providers
+- 39 models across 10 providers
 - Instant cost calculator
 - Side-by-side comparison
 - 78 in-depth blog articles
@@ -70,14 +70,14 @@ I'd love to hear what you think — what models or features would be most useful
 **Title:** I built a free AI API cost calculator — just launched on Product Hunt
 
 **Body:**
-Hey r/SaaS! I built APIpulse — a free tool that helps developers compare AI API pricing across 34 models and 10 providers.
+Hey r/SaaS! I built APIpulse — a free tool that helps developers compare AI API pricing across 39 models and 10 providers.
 
 The problem: Every time I needed to choose between OpenAI, Anthropic, Google, etc., I'd spend an hour+ manually comparing pricing pages. There was no single tool that calculated costs for YOUR specific usage pattern.
 
-The solution: A free, client-side calculator where you enter your token counts and request volume, and instantly see what you'd pay across all 34 models.
+The solution: A free, client-side calculator where you enter your token counts and request volume, and instantly see what you'd pay across all 39 models.
 
 Key features:
-- 34 models across 10 providers (OpenAI, Anthropic, Google, Mistral, DeepSeek, Cohere, Meta, xAI, Moonshot, AI21)
+- 39 models across 10 providers (OpenAI, Anthropic, Google, Mistral, DeepSeek, Cohere, Meta, xAI, Moonshot, AI21)
 - Instant cost calculations — no signup, no API keys
 - Side-by-side comparison tool
 - 81 blog posts with deep-dive analysis
@@ -91,12 +91,12 @@ Just launched on Product Hunt: [PH LINK]
 Would love feedback from this community. What would make this more useful for your team?
 
 ### r/ChatGPTDev
-**Title:** Compare GPT-5, Claude 4, Gemini 3 pricing — free calculator with 34 models
+**Title:** Compare GPT-5, Claude 4, Gemini 3 pricing — free calculator with 39 models
 
 **Body:**
 I built APIpulse after spending too many hours manually comparing AI API pricing pages.
 
-Enter your token counts and request volume → see exact monthly costs across 34 models from 10 providers. Finds the cheapest option for your specific usage pattern.
+Enter your token counts and request volume → see exact monthly costs across 39 models from 10 providers. Finds the cheapest option for your specific usage pattern.
 
 Some interesting findings from building this:
 - The price gap between cheapest and most expensive models can be 675x

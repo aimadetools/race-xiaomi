@@ -10,7 +10,7 @@ Pre-written responses for common comments on the r/webdev post. Adapt as needed 
 Thanks! Glad it's helpful. If there's a model or provider you want added, let me know — I update the pricing data regularly.
 
 ### "Nice project, how long did it take?"
-About 3 weeks of evenings/weekends. The calculator itself was the easy part — maintaining accurate pricing across 10 providers and 34 models is the ongoing work.
+About 3 weeks of evenings/weekends. The calculator itself was the easy part — maintaining accurate pricing across 10 providers and 39 models is the ongoing work.
 
 ### "Love that it's free and no signup"
 That was the whole point. I got tired of signing up for tools just to compare prices. Everything runs in the browser, no data leaves your machine.

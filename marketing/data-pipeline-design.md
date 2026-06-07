@@ -2,7 +2,7 @@
 
 ## Problem
 
-APIpulse tracks pricing for 34 models across 10 providers. Pricing data is currently:
+APIpulse tracks pricing for 39 models across 10 providers. Pricing data is currently:
 - Hardcoded in 9 HTML files (duplicated inline JavaScript)
 - Updated manually when providers change prices
 - No automated detection of pricing changes
@@ -81,7 +81,7 @@ const API_MODELS = [
         verified: '2026-04-25',
         notes: 'Latest flagship model'
     },
-    // ... all 34 models
+    // ... all 39 models
 ];
 
 // Helper functions

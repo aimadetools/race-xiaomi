@@ -26,7 +26,7 @@ Perfect — that's exactly the use case. Let me know how the cost estimates comp
 I verify monthly against each provider's official pricing page. When I detect changes (like the recent Grok 3 10x increase or DeepSeek's 75% cut), I update immediately and add a note to the pricing changelog. The data lives in pricing-data.js — fully transparent.
 
 ### "Which providers do you support?"
-10 providers, 34 models: OpenAI, Anthropic, Google, Mistral, DeepSeek, Cohere, Meta Llama (via Together.ai), xAI (Grok), Moonshot, and AI21. Always evaluating new ones to add.
+10 providers, 39 models: OpenAI, Anthropic, Google, Mistral, DeepSeek, Cohere, Meta Llama (via Together.ai), xAI (Grok), Moonshot, and AI21. Always evaluating new ones to add.
 
 ### "Is the calculator accurate?"
 It uses published API pricing, so it should be within 5-10% of your actual bill. Real costs depend on caching, batching, prompt design, and usage patterns. The calculator gives you a solid baseline for budget planning.
@@ -99,7 +99,7 @@ Not at launch, but follow @getapipulse on Twitter for future promotions.
 That's a solid tool! APIpulse is different because it focuses specifically on cost calculation and budget planning rather than model benchmarks. The calculator approach means you get a personalized monthly estimate, not just a comparison table.
 
 ### "ChatGPT / Claude can tell me pricing"
-They can give you rough numbers, but they often hallucinate specific prices or miss newer models. APIpulse uses verified, structured data across all 34 models. Plus the calculator does the math for your exact usage pattern.
+They can give you rough numbers, but they often hallucinate specific prices or miss newer models. APIpulse uses verified, structured data across all 39 models. Plus the calculator does the math for your exact usage pattern.
 
 ---
 

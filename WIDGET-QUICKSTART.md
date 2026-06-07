@@ -64,6 +64,7 @@ Compact badge showing a single model's input/output price.
 | Model | ID |
 |---|---|
 | Gemini 3.1 Pro | `google-gemini3-pro` |
+| Gemini 3.5 Flash | `google-gemini35-flash` |
 | Gemini 2.5 Pro | `google-pro` |
 | Gemini 2.0 Flash | `google-flash` |
 
@@ -72,15 +73,17 @@ Compact badge showing a single model's input/output price.
 |---|---|
 | DeepSeek V4 Pro | `deepseek-v4-pro` |
 | DeepSeek V4 Flash | `deepseek-v4-flash` |
-| DeepSeek V3 | `deepseek-v3` |
+| DeepSeek V3.2 | `deepseek-v32` |
 
 **Others**
 | Model | ID |
 |---|---|
 | Mistral Large 3 | `mistral-large` |
-| Grok 3 | `xai-grok3` |
+| Mistral Medium 3.5 | `mistral-medium` |
+| Grok 4.3 | `xai-grok3` |
 | Llama 4 Maverick | `llama-4-maverick` |
-| Command R+ | `cohere-command-r-plus` |
+| Cohere Command A | `cohere-command-a` |
+| AI21 Jamba 1.7 Large | `ai21-jamba17` |
 
 ## 3. Comparison Chart
 
@@ -128,7 +131,7 @@ Show only budget-friendly models:
 - **1-hour cache** — Uses localStorage to minimize requests
 - **Responsive** — Works on any screen size
 - **No API key needed** — Free for everyone
-- **34 models** across 10 providers
+- **39 models** across 10 providers
 
 ## Links
 

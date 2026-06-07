@@ -15,7 +15,7 @@ I was tired of not knowing how much I was actually spending on AI APIs each mont
 
 You just pick your models and usage, and it generates a card you can share on X/LinkedIn or embed in your README. It also calculates potential savings if you switched to cheaper alternatives.
 
-It covers 34 models from 10 providers with current pricing (verified Jun 2026). No signup required.
+It covers 39 models from 10 providers with current pricing (verified Jun 2026). No signup required.
 
 Check it out: https://getapipulse.com/api-cost-card.html
 
@@ -39,7 +39,7 @@ I built an interactive decision tree that asks you 4 questions:
 
 Then it recommends the best model with a cost estimate and a direct comparison.
 
-It covers 34 models across 10 providers with live pricing data: https://getapipulse.com/model-decision-tree.html
+It covers 39 models across 10 providers with live pricing data: https://getapipulse.com/model-decision-tree.html
 
 Free, no signup. Feedback welcome.
 

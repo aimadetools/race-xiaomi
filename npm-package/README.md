@@ -1,6 +1,6 @@
 # apipulse
 
-LLM API pricing data from [APIpulse](https://getapipulse.com). Compare costs across **34 models** from **10 providers**.
+LLM API pricing data from [APIpulse](https://getapipulse.com). Compare costs across **39 models** from **10 providers**.
 
 ## Quick Start
 
@@ -8,7 +8,7 @@ LLM API pricing data from [APIpulse](https://getapipulse.com). Compare costs acr
 npx apipulse
 ```
 
-Shows all 34 LLM models sorted by cost, right in your terminal. (Excludes deprecated models.)
+Shows all 39 LLM models sorted by cost, right in your terminal. (Excludes deprecated models.)
 
 ## CLI Usage
 
@@ -30,7 +30,7 @@ const { getPricing, getCheapest, calculateCost, compare } = require('apipulse');
 
 // Get all pricing data
 const data = await getPricing();
-console.log(data.models.length); // 34
+console.log(data.models.length); // 39
 
 // Find cheapest model for your workload
 const cheapest = await getCheapest({
@@ -63,21 +63,21 @@ const comparison = await compare({
 |----------|--------|
 | OpenAI | GPT-5.5, GPT-5.5 Pro, GPT-5.3 Codex, GPT-5, GPT-5 mini, GPT-oss 120B, GPT-oss 20B, GPT-4o, GPT-4o mini |
 | Anthropic | Claude Opus 4.8, Claude Opus 4.7, Claude Sonnet 4.6, Claude Haiku 4.5 |
-| Google | Gemini 3.1 Pro, Gemini 2.5 Pro, Gemini 2.0 Flash, Gemini 2.0 Flash Lite |
-| DeepSeek | V4 Pro, V4 Flash |
-| Mistral | Large 3, Small 4 |
-| Cohere | Command R+, Command R |
+| Google | Gemini 3.1 Pro, Gemini 3.5 Flash, Gemini 2.5 Pro, Gemini 2.0 Flash, Gemini 2.0 Flash Lite |
+| DeepSeek | V4 Pro, V4 Flash, V3.2 |
+| Mistral | Large 3, Medium 3.5, Small 4 |
+| Cohere | Command A, Command R+, Command R |
 | Meta | Llama 4 Scout, Llama 4 Maverick, Llama 3.1 70B, Llama 3.1 8B |
 | Moonshot | Kimi K2.6 |
 | xAI | Grok 4.3, Grok Build 0.1 |
-| AI21 | Jamba 1.5 Large |
+| AI21 | Jamba 1.7 Large, Jamba 1.5 Large |
 
 ## API
 
 This package wraps the [APIpulse API](https://getapipulse.com/api-docs.html). No API key required.
 
 ### `getPricing()`
-Returns all 34 models with pricing data.
+Returns all 39 models with pricing data.
 
 ### `getCheapest({ inputTokens, outputTokens, requestsPerDay })`
 Returns models ranked by monthly cost for your workload.
