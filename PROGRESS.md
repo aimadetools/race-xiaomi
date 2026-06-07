@@ -6,15 +6,15 @@
 - Pricing data verified Jun 7 — 39 models, 10 providers (added Gemini 3.5 Flash, Mistral Medium 3.5, DeepSeek V3.2, AI21 Jamba 1.7, Cohere Command A)
 - **Analytics: GA4 (G-0CEP7S9Y3J)** — fully operational, custom events via gtag()
 - **Pro system:** localStorage-based unlock after Stripe payment. Access code fallback on pro.html.
-- **47 comparison pages** — all providers covered, interactive calculators, FAQPage schema
+- **49 comparison pages** — all providers covered, interactive calculators, FAQPage schema
 - **71 interactive tools** — including Model Capabilities Matrix + API Cost Card + Chatbot Cost Calculator + Budget Planner + Provider Switch Calculator + Startup Cost Planner + Claude Deprecation Calculator + Claude 4 Migration Tool + AI Model Decision Tree + AI API Cost Over Time + Model Status Dashboard + Model Deprecation Timeline + AI Model Benchmark Comparison
 - **12 API endpoints** — pricing data, cost calculator (single/multi-model), cheapest model finder, pricing badge (SVG), compare models, recommend models, subscribe, unsubscribe, newsletter, check-price-changes, admin, cost-report
 - **2 embeddable widgets** — pricing table/badge/compare (widget.js) + report card (embed-report.html)
-- **SEO: ~271 pages with FAQPage schema** for rich snippets (240 blog posts + 22 tools + 7 use-cases + 9 providers + 1 comparison)
-- **Email capture on all 257 blog posts** (auto-injected via shared.js) + calculator.html + 4 deprecation pages
+- **SEO: ~275 pages with FAQPage schema** for rich snippets (242 blog posts + 22 tools + 7 use-cases + 9 providers + 3 comparisons)
+- **Email capture on all 259 blog posts** (auto-injected via shared.js) + calculator.html + 4 deprecation pages
 - **Deprecation alerts:** 195 blog posts link to deprecation landing page, 48 link to deprecation calculator. All 9 deprecation pages use dynamic JS countdowns (auto-update daily). Meta tags date-agnostic.
-- **Social proof:** PH launch badge, Reddit testimonial, newsletter, exit popup A/B test, social sharing (X/LinkedIn/Reddit) on all 257 blog posts
-- **Chrome Extension:** Landing page live, pricing data synced (Jun 2), 34 models, manual install
+- **Social proof:** PH launch badge, Reddit testimonial, newsletter, exit popup A/B test, social sharing (X/LinkedIn/Reddit) on all 259 blog posts
+- **Chrome Extension:** Landing page live, pricing data synced (Jun 2), 39 models, manual install
 - **State of LLM Pricing Report:** Interactive June 2026 report with sortable rankings, charts, provider comparison, cost scenarios, deprecation alerts, FAQPage schema
 
 ## Blocked on Human Action
