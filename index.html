@@ -75,7 +75,7 @@
                 "name": "Which AI API providers does APIpulse support?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "APIpulse supports 39 models across 10 providers: OpenAI (GPT-5.5, GPT-5, GPT-4o, and more), Anthropic (Claude Opus 4.8, Claude Opus 4.7, Claude 4 Opus, Claude Sonnet 4, Claude Haiku 4.5), Google (Gemini 3.1 Pro, Gemini 2.5 Pro, Gemini 2.0 Flash, Gemini 2.0 Flash Lite), DeepSeek (V4 Pro, V4 Flash, V3), Mistral (Large, Small), Cohere (Command R+, Command R), Meta Llama (4 Scout, 4 Maverick, 3.1 70B, 3.1 8B), Moonshot (Kimi K2.6), xAI (Grok 4.3, Grok Build 0.1), and AI21 (Jamba 1.5 Large)."
+                    "text": "APIpulse supports 39 models across 10 providers: OpenAI (GPT-5.5, GPT-5, GPT-4o, and more), Anthropic (Claude Opus 4.8, Claude Opus 4.7, Claude 4 Opus, Claude Sonnet 4, Claude Haiku 4.5), Google (Gemini 3.1 Pro, Gemini 3.5 Flash, Gemini 2.5 Pro, Gemini 2.0 Flash, Gemini 2.0 Flash Lite), DeepSeek (V4 Pro, V4 Flash, V3.2, V3), Mistral (Large, Medium 3.5, Small), Cohere (Command R+, Command R, Command A), Meta Llama (4 Scout, 4 Maverick, 3.1 70B, 3.1 8B), Moonshot (Kimi K2.6), xAI (Grok 4.3, Grok Build 0.1), and AI21 (Jamba 1.7 Large, Jamba 1.5 Large)."
                 }
             },
             {
@@ -521,13 +521,17 @@
                             <option value="google-pro">Google — Gemini 2.5 Pro</option>
                             <option value="google-flash">Google — Gemini 2.0 Flash</option>
                             <option value="google-flash-lite">Google — Gemini 2.0 Flash Lite</option>
+                            <option value="google-gemini35-flash">Google — Gemini 3.5 Flash</option>
                             <option value="deepseek-v4-pro">DeepSeek — V4 Pro</option>
                             <option value="deepseek-v4-flash">DeepSeek — V4 Flash</option>
                             <option value="deepseek-v3">DeepSeek — V3</option>
+                            <option value="deepseek-v32">DeepSeek — V3.2</option>
                             <option value="mistral-large">Mistral — Large</option>
                             <option value="mistral-small">Mistral — Small</option>
+                            <option value="mistral-medium">Mistral — Medium 3.5</option>
                             <option value="cohere-command-r-plus">Cohere — Command R+</option>
                             <option value="cohere-command-r">Cohere — Command R</option>
+                            <option value="cohere-command-a">Cohere — Command A</option>
                             <option value="llama-4-scout">Meta — Llama 4 Scout</option>
                             <option value="llama-4-maverick">Meta — Llama 4 Maverick</option>
                             <option value="llama-3.1-70b">Meta — Llama 3.1 70B</option>
@@ -536,6 +540,7 @@
                             <option value="xai-grok3">xAI — Grok 4.3</option>
                             <option value="xai-grok3-mini">xAI — Grok Build 0.1</option>
                             <option value="ai21-jamba">AI21 — Jamba 1.5 Large</option>
+                            <option value="ai21-jamba17">AI21 — Jamba 1.7 Large</option>
                         </select>
                     </div>
                     <div class="input-group">
@@ -710,6 +715,13 @@
                     <td>1M</td>
                 </tr>
                 <tr>
+                    <td class="provider-name">Google</td>
+                    <td>Gemini 3.5 Flash</td>
+                    <td class="price">$1.50</td>
+                    <td class="price">$9.00</td>
+                    <td>1M</td>
+                </tr>
+                <tr>
                     <td class="provider-name">Mistral</td>
                     <td>Large 3</td>
                     <td class="price">$0.50</td>
@@ -724,6 +736,13 @@
                     <td>128K</td>
                 </tr>
                 <tr>
+                    <td class="provider-name">Mistral</td>
+                    <td>Medium 3.5</td>
+                    <td class="price">$1.50</td>
+                    <td class="price">$7.50</td>
+                    <td>128K</td>
+                </tr>
+                <tr>
                     <td class="provider-name">Cohere</td>
                     <td>Command R+</td>
                     <td class="price">$2.50</td>
@@ -735,6 +754,13 @@
                     <td>Command R</td>
                     <td class="price">$0.50</td>
                     <td class="price">$1.50</td>
+                    <td>128K</td>
+                </tr>
+                <tr>
+                    <td class="provider-name">Cohere</td>
+                    <td>Command A</td>
+                    <td class="price">$2.50</td>
+                    <td class="price">$10.00</td>
                     <td>128K</td>
                 </tr>
                 <tr>
@@ -759,6 +785,13 @@
                     <td>256K</td>
                 </tr>
                 <tr>
+                    <td class="provider-name">AI21</td>
+                    <td>Jamba 1.7 Large</td>
+                    <td class="price">$2.00</td>
+                    <td class="price">$8.00</td>
+                    <td>256K</td>
+                </tr>
+                <tr>
                     <td class="provider-name">DeepSeek</td>
                     <td>V4 Pro</td>
                     <td class="price">$0.44</td>
@@ -771,6 +804,13 @@
                     <td class="price">$0.14</td>
                     <td class="price">$0.28</td>
                     <td>1M</td>
+                </tr>
+                <tr>
+                    <td class="provider-name">DeepSeek</td>
+                    <td>V3.2</td>
+                    <td class="price">$0.23</td>
+                    <td class="price">$0.34</td>
+                    <td>128K</td>
                 </tr>
                 <tr>
                     <td class="provider-name">xAI</td>
