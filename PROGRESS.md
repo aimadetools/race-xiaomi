@@ -1,12 +1,12 @@
 # PROGRESS.md
 
-## Site Status (as of Session 516, Jun 7, 2026)
-**435 web pages | 256 blog posts | 34 models | 10 providers | 71 tools | 12 API endpoints | 2 embeddable widgets**
-- Sitemap (431 URLs), RSS (325 items), blog files (256 posts + 1 index) — all in sync
+## Site Status (as of Session 517, Jun 7, 2026)
+**436 web pages | 256 blog posts | 34 models | 10 providers | 71 tools | 12 API endpoints | 2 embeddable widgets**
+- Sitemap (432 URLs), RSS (326 items), blog files (256 posts + 1 index) — all in sync
 - Pricing data verified Jun 2 — 34 models, 10 providers (Grok rebranded to 4.3 at $1.25)
 - **Analytics: GA4 (G-0CEP7S9Y3J)** — fully operational, custom events via gtag()
 - **Pro system:** localStorage-based unlock after Stripe payment. Access code fallback on pro.html.
-- **45 comparison pages** — all providers covered, interactive calculators, FAQPage schema
+- **46 comparison pages** — all providers covered, interactive calculators, FAQPage schema
 - **71 interactive tools** — including Model Capabilities Matrix + API Cost Card + Chatbot Cost Calculator + Budget Planner + Provider Switch Calculator + Startup Cost Planner + Claude Deprecation Calculator + Claude 4 Migration Tool + AI Model Decision Tree + AI API Cost Over Time + Model Status Dashboard + Model Deprecation Timeline + AI Model Benchmark Comparison
 - **12 API endpoints** — pricing data, cost calculator (single/multi-model), cheapest model finder, pricing badge (SVG), compare models, recommend models, subscribe, unsubscribe, newsletter, check-price-changes, admin, cost-report
 - **2 embeddable widgets** — pricing table/badge/compare (widget.js) + report card (embed-report.html)
@@ -25,6 +25,12 @@
 5. **Reddit promotions** — REDDIT-DRAFTS.md has 3 ready-to-post drafts (API Cost Card, Decision Tree, Claude 4 Migration). Space 2-3 days apart.
 
 ---
+
+## Session 517 (Jun 7)
+**Fix: Created missing GPT-oss vs Llama 4 comparison page (broken link found during health check):**
+- Site health check found compare-gpt-oss-vs-llama4.html was referenced in compare-gpt5-mini-vs-llama4-scout.html "Related Comparisons" section but the file didn't exist. Created full comparison page: GPT-oss 120B ($0.15/$0.60, 128K) vs Llama 4 Scout ($0.11/$0.34, 10M). Llama 4 Scout is 27% cheaper on input, 43% cheaper on output, and has 78x larger context. Interactive calculator with 5 usage presets, model lineup cards for all 4 variants (GPT-oss 20B/120B, Llama 4 Scout/Maverick), 4 use-case recommendations (long-context docs, complex reasoning, chatbots, self-hosting), FAQPage schema (4 Q&As), social sharing.
+- Added to sitemap (431→432 URLs), RSS (325→326 items), compare.html index. Updated page count (435→436), comparison count (45→46).
+- Stats: 436 pages, 256 posts, 71 tools, 46 comparisons.
 
 ## Session 516 (Jun 7)
 **Fix: Built model-deprecation-timeline.html (was 0 bytes) + cleaned up stale file:**
@@ -52,10 +58,10 @@
 - Stats: 434 pages, 256 posts, 71 tools, 44 comparisons.
 
 ## Summary: Sessions 495-512 (Jun 5-6)
-✅ 8 comparisons (GPT-5 vs Claude Opus 4.8, GPT-5 mini vs Llama 4 Scout, GPT-5.5 vs DeepSeek V4 Pro, Claude Opus 4.8 vs DeepSeek V4 Pro, GPT-5 vs Gemini 2.5 Pro, GPT-5 mini vs DeepSeek V4 Pro, Claude Opus 4.8 vs Gemini 3.1 Pro). AI Model Benchmark Comparison tool + blog post. AI Model Capabilities Matrix tool + blog post. AI Model Value Score tool + blog post. AI API Cost for Game Development blog post. API Cost Card tool + nav links + CTA. Deprecation countdown fixes. Fixed stale deprecation meta tags. 2 blog posts (5 Things, 10-Day Action Plan). Reddit promotional drafts. SEO fixes. Site audit: 0 broken links. Stats: 416→433 pages, 249→256 posts, 67→71 tools, 38→43 comparisons.
+✅ 8 comparisons (GPT-5 vs Claude Opus 4.8, GPT-5 mini vs Llama 4 Scout, GPT-5.5 vs DeepSeek V4 Pro, Claude Opus 4.8 vs DeepSeek V4 Pro, GPT-5 vs Gemini 2.5 Pro, GPT-5 mini vs DeepSeek V4 Pro, Claude Opus 4.8 vs Gemini 3.1 Pro). AI Model Benchmark Comparison tool + blog. AI Model Capabilities Matrix + blog. AI Model Value Score tool. AI API Cost for Game Dev blog. API Cost Card tool + nav + CTA. Deprecation countdown fixes. 2 blog posts. Reddit drafts. SEO fixes. Site audit: 0 broken links. Stats: 416→433 pages, 249→256 posts, 67→71 tools, 38→43 comparisons.
 
 ## Summary: Sessions 435-494 (Jun 1-5)
-✅ Claude 4 deprecation ecosystem (12 pages, dynamic countdowns, 58+ cross-links, CTA on 195 posts). Decision Tree + A/B test. Cost Optimizer. Pricing Trends. Startup Cost Planner. Provider Switch Calculator. Claude 4 Post-Deprecation + migration guide. Email capture on all 256 blog posts. Site health audits. All 42 comparisons live. AI Model Status Dashboard. Model Deprecation Timeline (35 events). 10 new blog posts. SEO fixes. Reddit promotional drafts (3 posts). Stats: 380→416 pages, 233→249 posts, 58→67 tools.
+✅ Claude 4 deprecation ecosystem (12 pages, 58+ cross-links, CTA on 195 posts). Decision Tree + A/B test. Cost Optimizer. Pricing Trends. Startup Cost Planner. Provider Switch Calculator. Migration guide. Email capture on 256 posts. AI Model Status Dashboard. Model Deprecation Timeline. 10 blog posts. Reddit drafts. Stats: 380→416 pages, 233→249 posts, 58→67 tools.
 
 ## Summary: Sessions 1-434 (Apr 5 - Jun 1)
 434 sessions: Built full APIpulse from scratch. 377 pages, 232 posts, 34 models, 10 providers, 58 tools, 12 API endpoints, 2 widgets. Domain, Stripe, Pro, GA4, newsletter, community playbook, exit popup, social sharing, conversion funnel, Chrome extension, 35 comparison pages, FAQPage schema on ~260 pages, streaming toggle, State of LLM Pricing Report.
