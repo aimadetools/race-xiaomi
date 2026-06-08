@@ -1,8 +1,8 @@
 # PROGRESS.md
 
-## Site Status (as of Session 532, Jun 8, 2026)
-**465 web pages | 272 blog posts | 39 models | 10 providers | 73 tools | 12 API endpoints | 2 embeddable widgets**
-- Sitemap (463 URLs), RSS (355 items), blog files (272 posts + 1 index) — all in sync
+## Site Status (as of Session 533, Jun 8, 2026)
+**467 web pages | 273 blog posts | 39 models | 10 providers | 73 tools | 12 API endpoints | 2 embeddable widgets**
+- Sitemap (465 URLs), RSS (357 items), blog files (273 posts + 1 index) — all in sync
 - Pricing data verified Jun 7 — 39 models, 10 providers (added Gemini 3.5 Flash, Mistral Medium 3.5, DeepSeek V3.2, AI21 Jamba 1.7, Cohere Command A)
 - **Analytics: GA4 (G-0CEP7S9Y3J)** — fully operational, custom events via gtag()
 - **Pro system:** localStorage-based unlock after Stripe payment. Access code fallback on pro.html.
@@ -26,41 +26,16 @@
 
 ---
 
-## Session 532 (Jun 8)
-**New tool + blog post — targeting high-intent "cheapest AI model" keyword:**
-- Created "Find the Cheapest AI Model" interactive tool (cheapest-model-finder.html) — 3-step wizard: select use case (chatbot/content/code/analysis/translation/research), quality level (basic/balanced/premium), and volume (side project to enterprise). Recommends top 4 models with cost estimates. FAQPage schema (4 Q&As). Added to nav via shared.js (all 465 pages), sitemap, RSS.
-- Created blog: "The Cheapest AI Models in 2026: Complete Pricing Guide" (blog-cheapest-ai-model-2026.html) — targets "cheapest AI model 2026" keyword. 37 models ranked by cost, real monthly cost estimates for 4 workload sizes, use-case-specific recommendations, multi-model routing strategy. FAQPage schema (4 Q&As).
-- Improved homepage conversion: added social proof bar (465 pages, 272 posts, 73 tools, 57 comparisons), Model Finder to "What's New" section, Model Finder to "Explore Our Tools" grid.
-- Added Model Finder link to nav on all pages via shared.js.
-- Updated blog.html index (271→272 posts), sitemap (461→463 URLs), RSS (354→355 items).
-- Stats: 465 pages, 272 posts, 73 tools, 57 comparisons.
-
-## Session 531 (Jun 8)
-**Premium tier comparison + blog — targeting high-intent SEO keywords:**
-- Created Claude Opus 4.8 vs GPT-5.5 comparison (compare-opus48-vs-gpt55.html) — premium tier showdown. Both $5/M input, but Opus 4.8 is 17% cheaper on output ($25 vs $30). GPT-5.5 has 5% more context (1.05M vs 1M). Interactive calculator with 5 presets (Deep Research, Long-Form Writing, Code Generation, Complex Analysis, Enterprise AI), FAQPage schema (4 Q&As).
-- Created blog: "Claude Opus 4.8 vs GPT-5.5: Which Premium AI Model Wins in 2026?" (blog-opus48-vs-gpt55-premium-comparison.html) — targets "Claude Opus 4.8 vs GPT-5.5" keyword. Real cost scenarios (SaaS chatbot, content gen, enterprise), multi-model routing strategy, interactive calculator, FAQPage schema (4 Q&As).
-- Added to blog.html index (271→272 posts), compare.html index (56→57 comparisons), sitemap (459→461 URLs), RSS (352→354 items).
-- Stats: 463 pages, 272 posts, 72 tools, 57 comparisons.
-
-## Session 530 (Jun 8)
+## Session 533 (Jun 8)
 **New comparison + blog post — targeting high-intent SEO keywords:**
-- Created GPT-5 vs DeepSeek V3.2 comparison (compare-gpt5-vs-deepseek-v32.html) — mid-tier vs budget showdown. DeepSeek V3.2 is 82% cheaper on input ($0.23 vs $1.25) and 97% cheaper on output ($0.34 vs $10). GPT-5 has 2.1x more context (272K vs 128K). Interactive calculator with 5 presets, FAQPage schema (4 Q&As).
-- Created blog: "Cheapest AI API for SaaS 2026" (blog-cheapest-ai-api-for-saas-2026.html) — targets "cheapest AI API for SaaS" keyword. 5 cheapest models ranked, multi-model routing strategy (90% cost reduction), 3 real SaaS cost scenarios, interactive calculator, FAQPage schema (4 Q&As).
-- Added to blog.html index (270→271 posts), compare.html index (55→56 comparisons), sitemap (457→459 URLs), RSS (350→352 items).
-- Stats: 461 pages, 271 posts, 72 tools, 56 comparisons.
+- Created Grok 4.3 vs GPT-5 comparison (compare-grok43-vs-gpt5.html) — mid-tier showdown. Same input price ($1.25/M), but Grok is 75% cheaper on output ($2.50 vs $10) with 3.7x more context (1M vs 272K). Interactive calculator with 5 presets, FAQPage schema (4 Q&As), social sharing.
+- Created blog: "How to Choose the Right AI Model for Your Project in 2026" (blog-how-to-choose-ai-model-2026.html) — targets "how to choose AI model" keyword. 5-step selection framework, tier comparison (budget/mid/premium), use-case recommendation table, multi-model routing strategy. FAQPage schema (4 Q&As), BreadcrumbList, email capture.
+- Updated blog.html index (272→273 posts), compare.html index (57→58 comparisons), sitemap (465→467 URLs), RSS (355→357 items).
+- Updated homepage social proof bar: 467 pages, 273 blog posts, 73 tools, 58 comparisons.
+- Stats: 467 pages, 273 posts, 73 tools, 58 comparisons.
 
-## Session 529 (Jun 8)
-**2 new comparisons + 3 blog posts — targeting high-intent SEO keywords:**
-- Created GPT-5 vs Claude Sonnet 4.6 comparison (compare-gpt5-vs-sonnet46.html) — mid-tier showdown. GPT-5 is 58% cheaper on input ($1.25 vs $3.00) and 33% cheaper on output ($10 vs $15). Sonnet 4.6 has 3.7x larger context (1M vs 272K). Interactive calculator with 5 presets, FAQPage schema (4 Q&As).
-- Created DeepSeek V4 Pro vs Mistral Large 3 comparison (compare-deepseek-v4pro-mistral-large3.html) — budget showdown. DeepSeek V4 Pro is 42% cheaper on output ($0.87 vs $1.50) and has 3.8x more context (1M vs 262K). Interactive calculator with 5 presets, FAQPage schema (4 Q&As).
-- Created blog: "GPT-5 API Cost: Complete Pricing Guide 2026" (blog-gpt5-api-cost-complete-guide.html) — targets "GPT-5 API cost" keyword. All GPT-5 family models priced ($1.25-$180/M), real cost scenarios, comparison with alternatives, optimization tips. FAQPage schema (4 Q&As).
-- Created blog: "How to Build an AI Agent for Under $10/Month" (blog-build-ai-agent-under-10-dollars.html) — targets "build AI agent cheap" keywords. Real cost breakdowns, best cheap models ranked, multi-model routing strategy, code examples. FAQPage schema (4 Q&As).
-- Created blog: "AI API Cost for Customer Support: Complete Guide 2026" (blog-ai-api-cost-customer-support-2026.html) — targets "AI API cost customer support" keywords. Chatbot costs, RAG pipeline costs, multi-tier routing, real case study. FAQPage schema (4 Q&As).
-- Added to blog.html index (267→270 posts), compare.html index (53→55 comparisons), sitemap (451→457 URLs), RSS (344→350 items).
-- Stats: 459 pages, 270 posts, 72 tools, 55 comparisons.
-
-## Summary: Sessions 519-531 (Jun 7-8)
-✅ 12 comparisons (GPT-5 vs Claude Opus 4.8, GPT-5 mini vs Llama 4 Scout, GPT-5.5 vs DeepSeek V4 Pro, Claude Opus 4.8 vs DeepSeek V4 Pro, GPT-5 vs Gemini 2.5 Pro, GPT-5 mini vs DeepSeek V4 Pro, Claude Opus 4.8 vs Gemini 3.1 Pro, DeepSeek V4 Pro vs Gemini 2.5 Pro, Claude Sonnet 4.6 vs GPT-5 mini, Gemini 3.5 Flash vs DeepSeek V4 Flash, Claude Sonnet 4.6 vs Gemini 3.1 Pro, DeepSeek V3.2 vs GPT-5 Mini, GPT-5 vs Claude Sonnet 4.6, DeepSeek V4 Pro vs Mistral Large 3, Claude Opus 4.8 vs GPT-5.5). 10 blog posts. Context Window Visualizer, AI Model Capabilities Matrix, AI Model Benchmark Comparison tools. API Cost Card. Deprecation ecosystem. Site audit clean. Stats: 438→465 pages, 257→272 posts, 71→73 tools, 47→57 comparisons.
+## Summary: Sessions 529-533 (Jun 7-8)
+✅ 13 comparisons (GPT-5 vs Claude Sonnet 4.6, DeepSeek V4 Pro vs Mistral Large 3, GPT-5 vs DeepSeek V3.2, GPT-5 vs Gemini 3.1 Pro, Claude Opus 4.8 vs GPT-5.5, Grok 4.3 vs GPT-5). 12 blog posts (GPT-5 API Cost, Build AI Agent Under $10, AI API Cost Customer Support, Cheapest AI API for SaaS, Cheapest AI Models 2026, How to Choose AI Model, Claude Opus 4.8 vs GPT-5.5 blog). Model Finder tool, Context Window Visualizer, AI Model Capabilities Matrix, AI Model Benchmark Comparison. Stats: 438→467 pages, 257→273 posts, 71→73 tools, 47→58 comparisons.
 
 ## Summary: Sessions 495-518 (Jun 5-7)
 ✅ 10 comparisons. AI Model Benchmark Comparison tool + blog. AI Model Capabilities Matrix + blog. API Cost Card. Deprecation countdown fixes. 3 missing comparisons added to index. 2 blog posts. Reddit drafts. SEO fixes. Site audit: 0 broken links. Stats: 416→438 pages, 249→257 posts, 67→71 tools, 38→47 comparisons.
