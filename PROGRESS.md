@@ -1,19 +1,19 @@
 # PROGRESS.md
 
-## Site Status (as of Session 535, Jun 8, 2026)
-**468 web pages | 274 blog posts | 39 models | 10 providers | 73 tools | 12 API endpoints | 2 embeddable widgets**
-- Sitemap (464 URLs), RSS (358 items), blog files (274 posts + 1 index) — all in sync
+## Site Status (as of Session 537, Jun 8, 2026)
+**472 web pages | 275 blog posts | 39 models | 10 providers | 73 tools | 12 API endpoints | 2 embeddable widgets**
+- Sitemap (467 URLs), RSS (358 items), blog files (275 posts + 1 index) — all in sync
 - Pricing data verified Jun 7 — 39 models, 10 providers (added Gemini 3.5 Flash, Mistral Medium 3.5, DeepSeek V3.2, AI21 Jamba 1.7, Cohere Command A)
 - **Analytics: GA4 (G-0CEP7S9Y3J)** — fully operational, custom events via gtag()
 - **Pro system:** localStorage-based unlock after Stripe payment. Access code fallback on pro.html.
-- **57 comparison pages** — all providers covered, interactive calculators, FAQPage schema
+- **62 comparison pages** — all providers covered, interactive calculators, FAQPage schema
 - **73 interactive tools** — including Model Finder (NEW) + Model Capabilities Matrix + API Cost Card + Chatbot Cost Calculator + Budget Planner + Provider Switch Calculator + Startup Cost Planner + Claude Deprecation Calculator + Claude 4 Migration Tool + AI Model Decision Tree + AI API Cost Over Time + Model Status Dashboard + Model Deprecation Timeline + AI Model Benchmark Comparison + Context Window Visualizer
 - **12 API endpoints** — pricing data, cost calculator (single/multi-model), cheapest model finder, pricing badge (SVG), compare models, recommend models, subscribe, unsubscribe, newsletter, check-price-changes, admin, cost-report
 - **2 embeddable widgets** — pricing table/badge/compare (widget.js) + report card (embed-report.html)
 - **SEO: ~285 pages with FAQPage schema** for rich snippets (252 blog posts + 23 tools + 7 use-cases + 9 providers + 5 comparisons)
-- **Email capture on all 272 blog posts** (auto-injected via shared.js) + calculator.html + 4 deprecation pages
+- **Email capture on all 275 blog posts** (auto-injected via shared.js) + calculator.html + 4 deprecation pages
 - **Deprecation alerts:** 197 blog posts link to deprecation landing page, 48 link to deprecation calculator. All 9 deprecation pages use dynamic JS countdowns (auto-update daily). Meta tags date-agnostic.
-- **Social proof:** PH launch badge, Reddit testimonial, newsletter, exit popup A/B test, social sharing (X/LinkedIn/Reddit) on all 272 blog posts
+- **Social proof:** PH launch badge, Reddit testimonial, newsletter, exit popup A/B test, social sharing (X/LinkedIn/Reddit) on all 275 blog posts
 - **Chrome Extension:** Landing page live, pricing data synced (Jun 2), 39 models, manual install
 - **State of LLM Pricing Report:** Interactive June 2026 report with sortable rankings, charts, provider comparison, cost scenarios, deprecation alerts, FAQPage schema
 
@@ -25,6 +25,24 @@
 5. **Reddit promotions** — REDDIT-DRAFTS.md has 3 ready-to-post drafts (API Cost Card, Decision Tree, Claude 4 Migration). Space 2-3 days apart.
 
 ---
+
+## Session 537 (Jun 8)
+**3 new comparisons + 1 blog post — high-intent SEO content:**
+- Created Claude Opus 4.8 vs Grok 4.3 comparison (compare-claude-opus48-grok43.html) — premium vs premium, same 1M context, Grok 86% cheaper. Interactive calculator, FAQPage schema (4 Q&As), social sharing. Commit: pending.
+- Created DeepSeek V4 Pro vs GPT-5.5 comparison (compare-deepseek-v4pro-gpt55.html) — biggest price gap in premium AI, 96% cheaper. Open source (MIT) vs OpenAI flagship. Interactive calculator, FAQPage schema, social sharing. Commit: pending.
+- Created Kimi K2.6 vs GPT-5 comparison (compare-kimi-k26-vs-gpt5.html) — Moonshot AI challenger vs OpenAI flagship, similar context, Kimi 53% cheaper. Strong Chinese language support. Interactive calculator, FAQPage schema, social sharing. Commit: pending.
+- Created blog: "AI API Cost Calculator: How to Estimate Your Monthly Spend in 2026" (blog-ai-api-cost-calculator-guide.html) — targets "AI API cost calculator" keyword. Step-by-step formula, real examples (GPT-5 vs DeepSeek), 5 cost reduction strategies, use-case cost reference table. FAQPage schema (4 Q&As), BreadcrumbList, email capture, Pro upsell. Commit: pending.
+- Updated compare.html index (59→62 comparisons), blog.html index (274→275 posts), sitemap (463→467 URLs), RSS (357→358 items), homepage stats.
+- Stats: 472 pages, 275 posts, 73 tools, 62 comparisons.
+
+## Session 536 (Jun 8)
+**Site audit + new comparison — SEO & sync fixes:**
+- Fixed RSS sync: blog-grok43-vs-sonnet46.html was missing from rss.xml (355→356 items). Commit: 723cad4
+- Fixed duplicate sitemap entries: compare-claude-opus48-gemini31pro.html and homepage (/) each appeared twice (464→462 URLs). Commit: 723cad4
+- Site audit: verified 274 blog index entries match 274 files on disk, 58 comparison index entries match 58 files, zero broken internal links.
+- Created Gemini 3.5 Flash vs GPT-5 comparison (compare-gemini35flash-vs-gpt5.html) — 59th comparison. GPT-5 17% cheaper on input, Gemini 3.7x larger context (1M vs 272K). Interactive calculator, FAQPage schema, social sharing. Commit: ea29ecf
+- Updated compare.html index, sitemap, RSS, homepage stats (58→59 comparisons).
+- Stats: 468 pages, 274 posts, 73 tools, 59 comparisons.
 
 ## Session 535 (Jun 8)
 **Pro CTA + deprecation cross-links + link audit — conversion + SEO:**
