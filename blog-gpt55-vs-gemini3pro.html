@@ -192,9 +192,22 @@
 
         <h1>GPT-5.5 vs Gemini 3.1 Pro: The 2026 Flagship Battle</h1>
         <p class="subtitle">OpenAI's GPT-5.5 and Google's Gemini 3.1 Pro are the two most capable models available today. But with a 2.5x price gap, which one actually gives you more for your money?</p>
-            <div style="max-width:720px;margin:0 auto 24px;padding:16px;background:#fff3cd;border:1px solid #ffc107;border-radius:8px;font-size:14px;color:#856404;">
-                <strong>&#9888;&#65039; Claude 4 Deprecation Alert:</strong> Claude 4 models retire on <strong>June 15, 2026</strong> (7 days). If you use Claude 4, see our <a href="blog-claude-4-last-chance-migration.html" style="color:#856404;font-weight:700;">last-chance migration guide</a> or use the <a href="claude-deprecation-calculator.html" style="color:#856404;font-weight:700;">deprecation calculator</a>.
+            <div id="deprecation-alert" style="max-width:720px;margin:0 auto 24px;padding:16px;background:#fff3cd;border:1px solid #ffc107;border-radius:8px;font-size:14px;color:#856404;">
+                <strong>&#9888;&#65039; Claude 4 Deprecation Alert:</strong> Claude 4 models retire on <strong>June 15, 2026</strong> (<span id="deprecation-days"></span>). If you use Claude 4, see our <a href="blog-claude-4-last-chance-migration.html" style="color:#856404;font-weight:700;">last-chance migration guide</a> or use the <a href="claude-deprecation-calculator.html" style="color:#856404;font-weight:700;">deprecation calculator</a>.
             </div>
+            <script>
+            (function(){
+                var deadline=new Date('2026-06-15T00:00:00Z');
+                var now=new Date();
+                var diff=Math.ceil((deadline-now)/(1000*60*60*24));
+                var el=document.getElementById('deprecation-days');
+                if(el){
+                    if(diff>0) el.textContent=diff+' day'+(diff!==1?'s':'')+' left';
+                    else if(diff===0) el.textContent='TODAY';
+                    else{el.textContent='EXPIRED';document.getElementById('deprecation-alert').style.background='#f8d7da';document.getElementById('deprecation-alert').style.borderColor='#f5c6cb';document.getElementById('deprecation-alert').style.color='#721c24';}
+                }
+            })();
+            </script>
 
 
         <h2>The Pricing Breakdown</h2>

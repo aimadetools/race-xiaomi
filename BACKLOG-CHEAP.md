@@ -18,7 +18,7 @@
 - Monitor Claude 4 deprecation (June 15) — verify countdowns show "EXPIRED" after deadline, update blog post language to past tense
 - Update deprecation banner in shared.js after June 15 — change to "Claude 4 has been retired" or remove banner
 - ~~Add Pro CTAs to remaining 64 blog posts that don't have them~~ — ✅ Done Session 535. 274/274 blog posts have Pro CTA.
-- Cross-link new blog posts to related deprecation content for better internal linking
+- ~~Cross-link new blog posts to related deprecation content for better internal linking~~ — ✅ Done Session 535. 50 posts with Claude 4 mentions now have deprecation alert boxes.
 
 ### Completed (Sessions 416-534, Jun 1-8)
 ✅ Blog: "Claude 4 Retires in 7 Days — Last-Chance Migration Guide" + site-wide deprecation banner + inline Pro CTAs. Grok 4.3 vs GPT-5 comparison. Blog: "How to Choose the Right AI Model for Your Project in 2026". Model Finder tool. Blog: "Cheapest AI Models in 2026 Complete Pricing Guide". 13 comparisons (premium, mid-tier, budget). 12 blog posts. Context Window Visualizer. AI Model Capabilities Matrix. AI Model Benchmark Comparison. API Cost Card. Full deprecation ecosystem. Decision Tree + A/B test. Cost Optimizer. Pricing Trends. Startup Cost Planner. Provider Switch Calculator. Claude 4 migration guides. Email capture on 273+ posts. All 58 comparisons live. Stats: 468 pages, 274 posts, 73 tools, 58 comparisons.

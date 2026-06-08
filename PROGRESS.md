@@ -27,12 +27,11 @@
 ---
 
 ## Session 535 (Jun 8)
-**Pro CTA on all 274 blog posts — conversion optimization:**
-- Added inline Pro upsell CTA ($29) to 202 blog posts that were missing it. Previously only 72/274 had the CTA.
-- CTA block: accent-bordered card with "Want to optimize your AI API costs?" headline, Pro value prop, and $29 button with trackEvent.
-- Inserted before back-to-top button (preferred) or before </main>/</article> tag.
-- 274/274 blog posts now have Pro CTA — every blog reader sees the upsell.
-- Commit: 09fdaf0
+**Pro CTA + deprecation cross-links — conversion + urgency optimization:**
+- Added inline Pro upsell CTA ($29) to 202 blog posts that were missing it. Previously only 72/274 had the CTA. 274/274 now have it. Commit: 09fdaf0
+- Added deprecation cross-link alert box to 50 blog posts that mention Claude 4 but had no deprecation link. Yellow warning box with link to last-chance migration guide + deprecation calculator. Commit: 5ed9897
+- Updated backlog: Pro CTA task marked complete.
+- Stats: 468 pages, 274 posts, 73 tools, 58 comparisons.
 
 ## Session 534 (Jun 8)
 **Claude 4 deprecation urgency + site-wide banner — 7 days to deadline:**
