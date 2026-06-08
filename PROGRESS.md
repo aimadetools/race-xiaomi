@@ -1,6 +1,6 @@
 # PROGRESS.md
 
-## Site Status (as of Session 534, Jun 8, 2026)
+## Site Status (as of Session 535, Jun 8, 2026)
 **468 web pages | 274 blog posts | 39 models | 10 providers | 73 tools | 12 API endpoints | 2 embeddable widgets**
 - Sitemap (464 URLs), RSS (358 items), blog files (274 posts + 1 index) — all in sync
 - Pricing data verified Jun 7 — 39 models, 10 providers (added Gemini 3.5 Flash, Mistral Medium 3.5, DeepSeek V3.2, AI21 Jamba 1.7, Cohere Command A)
@@ -25,6 +25,14 @@
 5. **Reddit promotions** — REDDIT-DRAFTS.md has 3 ready-to-post drafts (API Cost Card, Decision Tree, Claude 4 Migration). Space 2-3 days apart.
 
 ---
+
+## Session 535 (Jun 8)
+**Pro CTA on all 274 blog posts — conversion optimization:**
+- Added inline Pro upsell CTA ($29) to 202 blog posts that were missing it. Previously only 72/274 had the CTA.
+- CTA block: accent-bordered card with "Want to optimize your AI API costs?" headline, Pro value prop, and $29 button with trackEvent.
+- Inserted before back-to-top button (preferred) or before </main>/</article> tag.
+- 274/274 blog posts now have Pro CTA — every blog reader sees the upsell.
+- Commit: 09fdaf0
 
 ## Session 534 (Jun 8)
 **Claude 4 deprecation urgency + site-wide banner — 7 days to deadline:**
