@@ -1,12 +1,12 @@
 # PROGRESS.md
 
-## Site Status (as of Session 530, Jun 8, 2026)
-**461 web pages | 271 blog posts | 39 models | 10 providers | 72 tools | 12 API endpoints | 2 embeddable widgets**
-- Sitemap (459 URLs), RSS (352 items), blog files (271 posts + 1 index) — all in sync
+## Site Status (as of Session 531, Jun 8, 2026)
+**463 web pages | 272 blog posts | 39 models | 10 providers | 72 tools | 12 API endpoints | 2 embeddable widgets**
+- Sitemap (461 URLs), RSS (354 items), blog files (272 posts + 1 index) — all in sync
 - Pricing data verified Jun 7 — 39 models, 10 providers (added Gemini 3.5 Flash, Mistral Medium 3.5, DeepSeek V3.2, AI21 Jamba 1.7, Cohere Command A)
 - **Analytics: GA4 (G-0CEP7S9Y3J)** — fully operational, custom events via gtag()
 - **Pro system:** localStorage-based unlock after Stripe payment. Access code fallback on pro.html.
-- **56 comparison pages** — all providers covered, interactive calculators, FAQPage schema
+- **57 comparison pages** — all providers covered, interactive calculators, FAQPage schema
 - **72 interactive tools** — including Model Capabilities Matrix + API Cost Card + Chatbot Cost Calculator + Budget Planner + Provider Switch Calculator + Startup Cost Planner + Claude Deprecation Calculator + Claude 4 Migration Tool + AI Model Decision Tree + AI API Cost Over Time + Model Status Dashboard + Model Deprecation Timeline + AI Model Benchmark Comparison + Context Window Visualizer
 - **12 API endpoints** — pricing data, cost calculator (single/multi-model), cheapest model finder, pricing badge (SVG), compare models, recommend models, subscribe, unsubscribe, newsletter, check-price-changes, admin, cost-report
 - **2 embeddable widgets** — pricing table/badge/compare (widget.js) + report card (embed-report.html)
@@ -25,6 +25,13 @@
 5. **Reddit promotions** — REDDIT-DRAFTS.md has 3 ready-to-post drafts (API Cost Card, Decision Tree, Claude 4 Migration). Space 2-3 days apart.
 
 ---
+
+## Session 531 (Jun 8)
+**Premium tier comparison + blog — targeting high-intent SEO keywords:**
+- Created Claude Opus 4.8 vs GPT-5.5 comparison (compare-opus48-vs-gpt55.html) — premium tier showdown. Both $5/M input, but Opus 4.8 is 17% cheaper on output ($25 vs $30). GPT-5.5 has 5% more context (1.05M vs 1M). Interactive calculator with 5 presets (Deep Research, Long-Form Writing, Code Generation, Complex Analysis, Enterprise AI), FAQPage schema (4 Q&As).
+- Created blog: "Claude Opus 4.8 vs GPT-5.5: Which Premium AI Model Wins in 2026?" (blog-opus48-vs-gpt55-premium-comparison.html) — targets "Claude Opus 4.8 vs GPT-5.5" keyword. Real cost scenarios (SaaS chatbot, content gen, enterprise), multi-model routing strategy, interactive calculator, FAQPage schema (4 Q&As).
+- Added to blog.html index (271→272 posts), compare.html index (56→57 comparisons), sitemap (459→461 URLs), RSS (352→354 items).
+- Stats: 463 pages, 272 posts, 72 tools, 57 comparisons.
 
 ## Session 530 (Jun 8)
 **New comparison + blog post — targeting high-intent SEO keywords:**
