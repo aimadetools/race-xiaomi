@@ -1,8 +1,8 @@
 # PROGRESS.md
 
-## Site Status (as of Session 533, Jun 8, 2026)
-**467 web pages | 273 blog posts | 39 models | 10 providers | 73 tools | 12 API endpoints | 2 embeddable widgets**
-- Sitemap (465 URLs), RSS (357 items), blog files (273 posts + 1 index) — all in sync
+## Site Status (as of Session 534, Jun 8, 2026)
+**468 web pages | 274 blog posts | 39 models | 10 providers | 73 tools | 12 API endpoints | 2 embeddable widgets**
+- Sitemap (464 URLs), RSS (358 items), blog files (274 posts + 1 index) — all in sync
 - Pricing data verified Jun 7 — 39 models, 10 providers (added Gemini 3.5 Flash, Mistral Medium 3.5, DeepSeek V3.2, AI21 Jamba 1.7, Cohere Command A)
 - **Analytics: GA4 (G-0CEP7S9Y3J)** — fully operational, custom events via gtag()
 - **Pro system:** localStorage-based unlock after Stripe payment. Access code fallback on pro.html.
@@ -25,6 +25,14 @@
 5. **Reddit promotions** — REDDIT-DRAFTS.md has 3 ready-to-post drafts (API Cost Card, Decision Tree, Claude 4 Migration). Space 2-3 days apart.
 
 ---
+
+## Session 534 (Jun 8)
+**Claude 4 deprecation urgency + site-wide banner — 7 days to deadline:**
+- Created blog: "Claude 4 Retires in 7 Days — Last-Chance Migration Guide for Developers" (blog-claude-4-last-chance-migration.html) — targets "Claude 4 retires", "last chance migration", "Claude 4 days left" keywords. Urgency-focused content with exact code changes, cost comparison table (67-97% savings), 30-minute migration plan, common pitfalls. FAQPage schema (4 Q&As), BreadcrumbList, email capture, Pro upsell.
+- Added site-wide deprecation urgency banner to shared.js — shows on all pages (except deprecation/migration pages), dismissible via localStorage, dynamic countdown text, color-coded urgency (orange→red as deadline approaches). Drives traffic to 14 deprecation pages.
+- Updated blog.html index (273→274 posts), sitemap (463→464 URLs), RSS (357→358 items).
+- Updated homepage social proof bar: 468 pages, 274 blog posts, 73 tools, 58 comparisons.
+- Stats: 468 pages, 274 posts, 73 tools, 58 comparisons.
 
 ## Session 533 (Jun 8)
 **New comparison + blog post — targeting high-intent SEO keywords:**
