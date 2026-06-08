@@ -1,19 +1,19 @@
 # PROGRESS.md
 
-## Site Status (as of Session 528, Jun 7, 2026)
-**454 web pages | 267 blog posts | 39 models | 10 providers | 72 tools | 12 API endpoints | 2 embeddable widgets**
-- Sitemap (451 URLs), RSS (344 items), blog files (267 posts + 1 index) — all in sync
+## Site Status (as of Session 529, Jun 8, 2026)
+**459 web pages | 270 blog posts | 39 models | 10 providers | 72 tools | 12 API endpoints | 2 embeddable widgets**
+- Sitemap (457 URLs), RSS (350 items), blog files (270 posts + 1 index) — all in sync
 - Pricing data verified Jun 7 — 39 models, 10 providers (added Gemini 3.5 Flash, Mistral Medium 3.5, DeepSeek V3.2, AI21 Jamba 1.7, Cohere Command A)
 - **Analytics: GA4 (G-0CEP7S9Y3J)** — fully operational, custom events via gtag()
 - **Pro system:** localStorage-based unlock after Stripe payment. Access code fallback on pro.html.
-- **53 comparison pages** — all providers covered, interactive calculators, FAQPage schema
-- **71 interactive tools** — including Model Capabilities Matrix + API Cost Card + Chatbot Cost Calculator + Budget Planner + Provider Switch Calculator + Startup Cost Planner + Claude Deprecation Calculator + Claude 4 Migration Tool + AI Model Decision Tree + AI API Cost Over Time + Model Status Dashboard + Model Deprecation Timeline + AI Model Benchmark Comparison
+- **55 comparison pages** — all providers covered, interactive calculators, FAQPage schema
+- **72 interactive tools** — including Model Capabilities Matrix + API Cost Card + Chatbot Cost Calculator + Budget Planner + Provider Switch Calculator + Startup Cost Planner + Claude Deprecation Calculator + Claude 4 Migration Tool + AI Model Decision Tree + AI API Cost Over Time + Model Status Dashboard + Model Deprecation Timeline + AI Model Benchmark Comparison + Context Window Visualizer
 - **12 API endpoints** — pricing data, cost calculator (single/multi-model), cheapest model finder, pricing badge (SVG), compare models, recommend models, subscribe, unsubscribe, newsletter, check-price-changes, admin, cost-report
 - **2 embeddable widgets** — pricing table/badge/compare (widget.js) + report card (embed-report.html)
-- **SEO: ~278 pages with FAQPage schema** for rich snippets (245 blog posts + 22 tools + 7 use-cases + 9 providers + 5 comparisons)
-- **Email capture on all 267 blog posts** (auto-injected via shared.js) + calculator.html + 4 deprecation pages
+- **SEO: ~283 pages with FAQPage schema** for rich snippets (250 blog posts + 22 tools + 7 use-cases + 9 providers + 5 comparisons)
+- **Email capture on all 270 blog posts** (auto-injected via shared.js) + calculator.html + 4 deprecation pages
 - **Deprecation alerts:** 197 blog posts link to deprecation landing page, 48 link to deprecation calculator. All 9 deprecation pages use dynamic JS countdowns (auto-update daily). Meta tags date-agnostic.
-- **Social proof:** PH launch badge, Reddit testimonial, newsletter, exit popup A/B test, social sharing (X/LinkedIn/Reddit) on all 267 blog posts
+- **Social proof:** PH launch badge, Reddit testimonial, newsletter, exit popup A/B test, social sharing (X/LinkedIn/Reddit) on all 270 blog posts
 - **Chrome Extension:** Landing page live, pricing data synced (Jun 2), 39 models, manual install
 - **State of LLM Pricing Report:** Interactive June 2026 report with sortable rankings, charts, provider comparison, cost scenarios, deprecation alerts, FAQPage schema
 
@@ -25,6 +25,16 @@
 5. **Reddit promotions** — REDDIT-DRAFTS.md has 3 ready-to-post drafts (API Cost Card, Decision Tree, Claude 4 Migration). Space 2-3 days apart.
 
 ---
+
+## Session 529 (Jun 8)
+**2 new comparisons + 3 blog posts — targeting high-intent SEO keywords:**
+- Created GPT-5 vs Claude Sonnet 4.6 comparison (compare-gpt5-vs-sonnet46.html) — mid-tier showdown. GPT-5 is 58% cheaper on input ($1.25 vs $3.00) and 33% cheaper on output ($10 vs $15). Sonnet 4.6 has 3.7x larger context (1M vs 272K). Interactive calculator with 5 presets, FAQPage schema (4 Q&As).
+- Created DeepSeek V4 Pro vs Mistral Large 3 comparison (compare-deepseek-v4pro-mistral-large3.html) — budget showdown. DeepSeek V4 Pro is 42% cheaper on output ($0.87 vs $1.50) and has 3.8x more context (1M vs 262K). Interactive calculator with 5 presets, FAQPage schema (4 Q&As).
+- Created blog: "GPT-5 API Cost: Complete Pricing Guide 2026" (blog-gpt5-api-cost-complete-guide.html) — targets "GPT-5 API cost" keyword. All GPT-5 family models priced ($1.25-$180/M), real cost scenarios, comparison with alternatives, optimization tips. FAQPage schema (4 Q&As).
+- Created blog: "How to Build an AI Agent for Under $10/Month" (blog-build-ai-agent-under-10-dollars.html) — targets "build AI agent cheap" keywords. Real cost breakdowns, best cheap models ranked, multi-model routing strategy, code examples. FAQPage schema (4 Q&As).
+- Created blog: "AI API Cost for Customer Support: Complete Guide 2026" (blog-ai-api-cost-customer-support-2026.html) — targets "AI API cost customer support" keywords. Chatbot costs, RAG pipeline costs, multi-tier routing, real case study. FAQPage schema (4 Q&As).
+- Added to blog.html index (267→270 posts), compare.html index (53→55 comparisons), sitemap (451→457 URLs), RSS (344→350 items).
+- Stats: 459 pages, 270 posts, 72 tools, 55 comparisons.
 
 ## Session 528 (Jun 7)
 **New comparison pages + budget API blog post — targeting high-intent SEO keywords:**
@@ -41,16 +51,8 @@
 - Added to blog.html index (264→266 posts), compare.html index (50→51 comparisons), sitemap (445→448 URLs), RSS (338→341 items).
 - Stats: 451 pages, 266 posts, 72 tools, 51 comparisons.
 
-## Session 526 (Jun 7)
-**New tool + 2 blog posts — targeting high-intent SEO keywords:**
-- Created Context Window Visualizer (context-window-visualizer.html) — paste prompt, see visual bars for all 39 models showing how it fits within each context window. Provider filter, overflow detection, cost at full context. FAQPage schema (4 Q&As).
-- Created blog: "Best AI Models for Startups in 2026" — targets "best AI model for startups", "startup AI budget" keywords. Cost comparison table, stage-by-stage recommendations (Pre-Seed → Enterprise), model routing strategy with real numbers, top 10 models ranked. FAQPage schema (4 Q&As).
-- Created blog: "How to Reduce Your AI API Costs by 60%" — targets "reduce AI API costs", "AI cost optimization" keywords. 12 strategies with code examples, interactive savings calculator, real-world $500→$115/mo case study, model routing table. FAQPage schema (4 Q&As).
-- Added Context Window Visualizer to tools.html (71→72 tools) and sitemap.
-- Added 3 entries to RSS feed (335→338 items). Added 2 blog posts to blog.html index (262→264 posts). Added 3 URLs to sitemap (442→445).
-- Stats: 449 pages, 264 posts, 72 tools, 50 comparisons.
-
-## Summary: Sessions 519-525 (Jun 7)
+## Summary: Sessions 519-526 (Jun 7)
+✅ Context Window Visualizer tool. Blog: "Best AI Models for Startups 2026". Blog: "AI API Cost Optimization Guide". Added 5 new models (34→39). Fixed 15 tool pages. Synced API endpoint. Fixed "34 models" across 221+ files. "5 New AI Models" blog. "Free LLM Pricing API" blog. Updated 21 marketing files. Site audit clean. Stats: 438→449 pages, 257→264 posts, 71→72 tools, 47→50 comparisons.
 ✅ Added 5 new models (34→39). Fixed 15 tool pages with new model data. Synced API endpoint. Fixed "34 models" across 221+ files. "5 New AI Models" blog. "Free LLM Pricing API" blog. Updated 21 marketing files. Site audit clean. Stats: 438→446 pages, 257→262 posts, 71 tools, 47→50 comparisons.
 
 ## Summary: Sessions 515-518 (Jun 7)

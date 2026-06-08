@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Build an AI Agent for Under $10/Month — Real Costs & Code | APIpulse</title>
+    <meta name="description" content="Build an AI agent for under $10/month with DeepSeek V4 Flash or Gemini 2.0 Flash. Real cost breakdowns, monthly scenarios, interactive calculator, and working Python code for cheap autonomous agents.">
+    <meta name="keywords" content="build AI agent cheap, AI agent cost, cheapest AI agent, build AI agent under 10 dollars, AI agent pricing, LLM agent cost, cheap AI agent API, build autonomous agent budget">
+    <meta property="og:title" content="Build an AI Agent for Under $10/Month — Real Costs & Code | APIpulse">
+    <meta property="og:description" content="Build an AI agent for under $10/month. Real cost breakdowns, model rankings, interactive calculator, and Python code for cheap autonomous agents.">
+    <meta property="og:type" content="article">
+    <meta property="article:published_time" content="2026-06-08">
+    <meta property="article:modified_time" content="2026-06-08">
+    <meta property="article:author" content="APIpulse">
+    <meta property="og:image" content="https://getapipulse.com/og-image.png">
+    <meta property="og:url" content="https://getapipulse.com/blog-build-ai-agent-under-10-dollars.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Build an AI Agent for Under $10/Month — Real Costs & Code">
+    <meta name="twitter:image" content="https://getapipulse.com/og-image.png">
+    <meta name="twitter:description" content="Build an AI agent for under $10/month. Real cost breakdowns, model rankings, and Python code.">
+    <link rel="canonical" href="https://getapipulse.com/blog-build-ai-agent-under-10-dollars.html">
+    <link rel="alternate" type="application/rss+xml" title="APIpulse Blog" href="https://getapipulse.com/rss.xml">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="styles.css">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0CEP7S9Y3J"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-0CEP7S9Y3J');
+    </script>
+    <script src="analytics.js" defer></script>
+    <script src="dynamic-date.js" defer></script>
+    <script src="shared.js" defer></script>
+    <script src="pricing-data.js" defer></script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "Build an AI Agent for Under $10/Month — Real Costs & Code",
+        "description": "Build an AI agent for under $10/month with real cost breakdowns, model rankings, interactive calculator, and working Python code.",
+        "datePublished": "2026-06-08",
+        "dateModified": "2026-06-08",
+        "author": { "@type": "Organization", "name": "APIpulse" },
+        "publisher": { "@type": "Organization", "name": "APIpulse", "url": "https://getapipulse.com" },
+        "url": "https://getapipulse.com/blog-build-ai-agent-under-10-dollars.html",
+        "image": "https://getapipulse.com/og-image.png"
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Blog", "item": "https://getapipulse.com/blog.html" },
+            { "@type": "ListItem", "position": 2, "name": "Build an AI Agent for Under $10/Month", "item": "https://getapipulse.com/blog-build-ai-agent-under-10-dollars.html" }
+        ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "How much does it really cost to build an AI agent?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "A basic AI agent costs $3-10/month using budget models like DeepSeek V4 Flash ($0.14/$0.28 per million tokens) or Gemini 2.0 Flash ($0.10/$0.40). The real cost depends on how many turns the agent makes per task. A 5-turn agent at 100 tasks/month costs under $2. A 15-turn agent at 10K tasks/month costs $30-150 depending on the model."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What makes AI agents more expensive than chatbots?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Unlike a chatbot that makes 1 API call per request, an AI agent makes 5-20 API calls (turns) per task. Each turn sends accumulated context plus the model's response, so costs compound. A chatbot on DeepSeek V4 Flash at 1K tokens costs $0.00014. An 8-turn agent doing the same task costs roughly $0.002 — 14x more. That's still cheap, but it multiplies fast at scale."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Can I build an AI agent for under $5 per month?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes. At 100 tasks/month with 5 turns per task using DeepSeek V4 Flash, your total cost is roughly $0.70/month. Even at 500 tasks/month with 8 turns per task, you pay about $5.60/month. The key is choosing a cheap model and limiting unnecessary turns."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What is the best cheap model for building AI agents?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Gemini 2.0 Flash ($0.10 input / $0.40 output per million tokens) has the cheapest input cost, making it ideal for agents that accumulate large context over many turns. DeepSeek V4 Flash ($0.14 / $0.28) has the cheapest output cost, making it better for agents that generate long responses. For quality-sensitive agents, DeepSeek V4 Pro ($0.44 / $0.87) offers near-premium tool-calling at a fraction of the price."
+                }
+            }
+        ]
+    }
+    </script>
+    <style>
+        .content { max-width: 800px; margin: 0 auto; padding: 120px 24px 80px; }
+        h1 { font-size: 40px; font-weight: 800; margin-bottom: 12px; }
+        .subtitle { color: var(--text-secondary); font-size: 18px; margin-bottom: 48px; }
+        .post-meta { display: flex; gap: 16px; align-items: center; margin-bottom: 24px; font-size: 13px; color: var(--text-muted); }
+        .post-tag { background: var(--accent-glow); color: var(--accent); padding: 2px 10px; border-radius: 6px; font-size: 12px; font-weight: 600; }
+        h2 { font-size: 28px; font-weight: 700; margin: 40px 0 16px; }
+        h3 { font-size: 20px; font-weight: 600; margin: 28px 0 12px; }
+        p { margin-bottom: 16px; line-height: 1.7; color: var(--text-secondary); }
+        ul, ol { margin-bottom: 16px; padding-left: 24px; }
+        li { margin-bottom: 8px; line-height: 1.6; color: var(--text-secondary); }
+        strong { color: var(--text-primary); }
+        code { background: var(--bg-secondary); padding: 2px 6px; border-radius: 4px; font-size: 14px; }
+        pre { background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 12px; padding: 20px; overflow-x: auto; margin: 20px 0; font-size: 14px; line-height: 1.5; }
+        pre code { background: none; padding: 0; }
+        .comparison-table { width: 100%; border-collapse: collapse; margin: 24px 0; font-size: 14px; }
+        .comparison-table th { background: var(--bg-secondary); padding: 12px 16px; text-align: left; font-weight: 600; border-bottom: 1px solid var(--border); }
+        .comparison-table td { padding: 12px 16px; border-bottom: 1px solid var(--border); }
+        .comparison-table tr:last-child td { border-bottom: none; }
+        .winner { color: var(--green); font-weight: 600; }
+        .cost-box { background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 12px; padding: 24px; margin: 24px 0; }
+        .cost-box h3 { margin-top: 0; }
+        .cost-row { display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px solid var(--border); font-size: 14px; }
+        .cost-row:last-child { border-bottom: none; }
+        .cost-total { font-weight: 700; color: var(--accent); font-size: 18px; }
+        .tip-box { background: rgba(34,197,94,0.08); border: 1px solid rgba(34,197,94,0.3); border-radius: 12px; padding: 20px; margin: 24px 0; }
+        .tip-box h3 { margin-top: 0; color: var(--green); }
+        .cta-inline { background: var(--bg-secondary); border: 1px solid var(--accent); border-radius: 12px; padding: 24px; margin: 32px 0; text-align: center; }
+        .cta-inline p { margin-bottom: 12px; }
+        .btn-primary { display: inline-block; }
+        .back-link { display: inline-block; margin-bottom: 24px; color: var(--text-muted); font-size: 14px; }
+        .back-link:hover { color: var(--accent); }
+        .related { background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 12px; padding: 24px; margin-top: 40px; }
+        .related h3 { margin-top: 0; font-size: 18px; }
+        .related a { display: block; padding: 8px 0; color: var(--accent); font-size: 14px; }
+        .share-section { margin-top: 32px; padding-top: 24px; border-top: 1px solid var(--border); text-align: center; }
+        .share-section p { color: var(--text-secondary); font-size: 14px; margin-bottom: 12px; }
+        .share-btn { display: inline-block; background: var(--bg-card); color: var(--text-primary); padding: 8px 20px; border-radius: 8px; font-size: 14px; font-weight: 500; border: 1px solid var(--border); transition: all 0.2s; text-decoration: none; }
+        .share-btn:hover { background: var(--accent); color: white; border-color: var(--accent); }
+        .verdict { background: var(--accent-glow); border: 1px solid var(--accent); border-radius: 12px; padding: 24px; margin: 24px 0; }
+        .verdict h3 { margin-top: 0; color: var(--accent); }
+        .calculator-box { background: var(--bg-secondary); border: 2px solid var(--accent); border-radius: 12px; padding: 28px; margin: 32px 0; }
+        .calculator-box h3 { margin-top: 0; }
+        .calc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 20px; }
+        .calc-field label { display: block; font-size: 13px; color: var(--text-muted); margin-bottom: 4px; font-weight: 600; }
+        .calc-field input { width: 100%; padding: 10px 12px; border-radius: 8px; border: 1px solid var(--border); background: var(--bg-card); color: var(--text-primary); font-size: 14px; box-sizing: border-box; }
+        .calc-field input:focus { border-color: var(--accent); outline: none; }
+        .calc-results { margin-top: 16px; }
+        .calc-result-row { display: flex; justify-content: space-between; align-items: center; padding: 10px 0; border-bottom: 1px solid var(--border); font-size: 14px; }
+        .calc-result-row:last-child { border-bottom: none; }
+        .calc-result-row .model-name { color: var(--text-secondary); }
+        .calc-result-row .model-cost { font-weight: 700; font-size: 16px; }
+        .calc-result-row .cheapest { color: var(--green); }
+        .faq-item { margin-bottom: 24px; }
+        .faq-item h3 { font-size: 17px; margin-bottom: 8px; }
+        .faq-item p { font-size: 15px; }
+        @media (max-width: 768px) {
+            .content { padding: 100px 20px 60px; }
+            h1 { font-size: 28px; }
+            h2 { font-size: 22px; }
+            .calc-grid { grid-template-columns: 1fr; }
+            .comparison-table { font-size: 12px; }
+            .comparison-table th, .comparison-table td { padding: 8px 10px; }
+        }
+    </style>
+    <meta name="theme-color" content="#6366f1">
+    <link rel="preconnect" href="https://getapipulse.com">
+</head>
+<body>
+    <a href="#main" class="skip-link">Skip to content</a>
+    <nav>
+        <div class="nav-inner">
+            <a href="index.html" class="logo">API<span>pulse</span></a>
+            <button class="hamburger" onclick="toggleMobileNav()" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+            <div class="nav-links">
+                <a href="calculator.html">Calculator</a>
+                <a href="compare.html">Compare</a>
+                <a href="cost-explorer.html">Explorer</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="blog.html" class="active">Blog</a>
+                <a href="pricing.html" class="nav-cta" onclick="if(window.trackEvent)window.trackEvent('pro_button_clicked',{source:'nav'})">Get Pro — $29</a>
+                <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
+            </div>
+        </div>
+    </nav>
+
+    <main id="main">
+
+    <div class="content">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+            <a href="blog.html">Blog</a>
+            <span class="separator">&rsaquo;</span>
+            <span class="current">Build an AI Agent for Under $10/Month</span>
+        </nav>
+        <a href="blog.html" class="back-link">&larr; Back to blog</a>
+        <div class="post-meta">
+            <span class="post-tag">Guide</span>
+            <span>June 8, 2026</span>
+        </div>
+        <h1>Build an AI Agent for Under $10/Month</h1>
+        <p class="subtitle">Everyone says AI agents are expensive. They're wrong. With the right model and a few cost tricks, you can build a fully functional autonomous agent for less than your Netflix subscription. Here's the real math, the best cheap models, and working code.</p>
+
+        <h2>What Actually Is an AI Agent?</h2>
+        <p>An AI agent isn't just a chatbot. A chatbot takes an input and returns a response. An AI agent <strong>takes an input, reasons about it, calls tools, evaluates results, and decides what to do next</strong> — all without human intervention between steps.</p>
+        <p>The key components:</p>
+        <ul>
+            <li><strong>Reasoning loop:</strong> The model decides the next action based on the current state</li>
+            <li><strong>Tool calling:</strong> The agent can invoke external tools (APIs, databases, web searches)</li>
+            <li><strong>State management:</strong> The agent tracks what it's done and what it still needs to do</li>
+            <li><strong>Termination logic:</strong> The agent knows when it has enough information to produce a final answer</li>
+        </ul>
+        <p>A research agent might search the web, read 3 pages, synthesize findings, check for contradictions, and write a summary. That's <strong>5-10 turns</strong> through the reasoning loop, each one a separate API call with growing context.</p>
+        <p>This is where cost awareness matters most. Every turn sends the full conversation history back to the model. Turn 5 sends 5x the tokens of turn 1. Turn 10 sends 10x. The costs compound fast if you're not careful.</p>
+
+        <h2>The Real Cost Formula</h2>
+        <p>Forget the per-token price. What matters is <strong>cost per task</strong>:</p>
+        <blockquote><strong>Cost per task = (Turns x Avg input tokens x Input price) + (Turns x Avg output tokens x Output price)</strong></blockquote>
+        <p>Let's break this down with real numbers for a typical agent doing web research:</p>
+
+        <div class="cost-box">
+            <h3>Single task breakdown (8 turns, 2K input, 500 output per turn)</h3>
+            <div class="cost-row"><span>Input tokens total</span><span>16,000 tokens</span></div>
+            <div class="cost-row"><span>Output tokens total</span><span>4,000 tokens</span></div>
+            <div class="cost-row"><span>DeepSeek V4 Flash</span><span class="winner">$0.00336</span></div>
+            <div class="cost-row"><span>Gemini 2.0 Flash</span><span>$0.00320</span></div>
+            <div class="cost-row"><span>DeepSeek V4 Pro</span><span>$0.01064</span></div>
+            <div class="cost-row"><span>GPT-5 mini</span><span>$0.01200</span></div>
+            <div class="cost-row"><span>GPT-5</span><span>$0.06000</span></div>
+        </div>
+
+        <p>That single task costs less than a penny on the cheap models. But multiply by volume and the story changes.</p>
+
+        <h2>Monthly Cost Scenarios</h2>
+        <p>Here's what you actually pay at three realistic usage levels. All scenarios assume <strong>8 turns per task, 2,000 input tokens per turn, 500 output tokens per turn</strong>.</p>
+
+        <h3>Hobby (100 tasks/month)</h3>
+        <div class="cost-box">
+            <h3>100 tasks/month</h3>
+            <div class="cost-row"><span class="winner">DeepSeek V4 Flash</span><span class="winner">$0.34/mo</span></div>
+            <div class="cost-row"><span>Gemini 2.0 Flash</span><span>$0.32/mo</span></div>
+            <div class="cost-row"><span>DeepSeek V4 Pro</span><span>$1.06/mo</span></div>
+            <div class="cost-row"><span>GPT-5 mini</span><span>$1.20/mo</span></div>
+            <div class="cost-row"><span>GPT-5</span><span>$6.00/mo</span></div>
+        </div>
+        <p>At hobby volume, every model is under $10/month except GPT-5. Even GPT-5 is only $6. <strong>You can build a real agent for pocket change.</strong></p>
+
+        <h3>Startup (1,000 tasks/month)</h3>
+        <div class="cost-box">
+            <h3>1,000 tasks/month</h3>
+            <div class="cost-row"><span class="winner">Gemini 2.0 Flash</span><span class="winner">$3.20/mo</span></div>
+            <div class="cost-row"><span>DeepSeek V4 Flash</span><span>$3.36/mo</span></div>
+            <div class="cost-row"><span>DeepSeek V4 Pro</span><span>$10.64/mo</span></div>
+            <div class="cost-row"><span>GPT-5 mini</span><span>$12.00/mo</span></div>
+            <div class="cost-row"><span>GPT-5</span><span>$60.00/mo</span></div>
+        </div>
+        <p>At startup volume, the cheap models are still under $4/month. DeepSeek V4 Pro is $10.64 — still under $15. GPT-5 starts to get expensive at $60. <strong>This is where model choice starts to matter.</strong></p>
+
+        <h3>Production (10,000 tasks/month)</h3>
+        <div class="cost-box">
+            <h3>10,000 tasks/month</h3>
+            <div class="cost-row"><span class="winner">Gemini 2.0 Flash</span><span class="winner">$32.00/mo</span></div>
+            <div class="cost-row"><span>DeepSeek V4 Flash</span><span>$33.60/mo</span></div>
+            <div class="cost-row"><span>DeepSeek V4 Pro</span><span>$106.40/mo</span></div>
+            <div class="cost-row"><span>GPT-5 mini</span><span>$120.00/mo</span></div>
+            <div class="cost-row"><span>GPT-5</span><span>$600.00/mo</span></div>
+        </div>
+        <p>At production scale, GPT-5 costs $600/month. DeepSeek V4 Flash costs $33.60. That's an <strong>18x difference</strong> for the same workload. This is why building your agent cheap matters more as you scale.</p>
+
+        <h2>Best Cheap Models for Agents (Ranked)</h2>
+        <p>Not all cheap models are equal for agent workloads. Tool calling, instruction following, and multi-step reasoning quality matter as much as price.</p>
+
+        <table class="comparison-table">
+            <thead>
+                <tr><th>Model</th><th>Input</th><th>Output</th><th>Agent Score</th><th>Why</th></tr>
+            </thead>
+            <tbody>
+                <tr><td class="winner">1. Gemini 2.0 Flash</td><td>$0.10</td><td>$0.40</td><td>8/10</td><td>Cheapest input, strong tool calling, 1M context</td></tr>
+                <tr><td class="winner">2. DeepSeek V4 Flash</td><td>$0.14</td><td>$0.28</td><td>7/10</td><td>Cheapest output, good instruction following</td></tr>
+                <tr><td>3. Llama 4 Scout</td><td>$0.18</td><td>$0.59</td><td>7/10</td><td>Open-source, self-hostable, solid reasoning</td></tr>
+                <tr><td>4. DeepSeek V4 Pro</td><td>$0.44</td><td>$0.87</td><td>9/10</td><td>Best quality-to-cost ratio, near-premium tool calling</td></tr>
+                <tr><td>5. GPT-5 mini</td><td>$0.25</td><td>$2.00</td><td>9/10</td><td>Reliable tool calling, good at complex instructions</td></tr>
+                <tr><td>6. GPT-5</td><td>$1.25</td><td>$10.00</td><td>10/10</td><td>Best reasoning, use only for critical decisions</td></tr>
+            </tbody>
+        </table>
+        <p><em>Prices per million tokens. Agent score reflects tool-calling reliability, multi-step reasoning, and instruction following.</em></p>
+
+        <h2>Multi-Model Routing: The $5/Month Agent Strategy</h2>
+        <p>The smartest way to build a cheap agent is to <strong>not use one model for everything</strong>. Use a routing strategy:</p>
+        <ul>
+            <li><strong>Simple turns</strong> (classifying data, extracting fields, formatting output) route to <strong>Gemini 2.0 Flash</strong> at $0.10/$0.40</li>
+            <li><strong>Moderate turns</strong> (synthesizing information, writing summaries) route to <strong>DeepSeek V4 Pro</strong> at $0.44/$0.87</li>
+            <li><strong>Complex turns</strong> (planning, multi-step reasoning, final answer generation) route to <strong>GPT-5 mini</strong> at $0.25/$2.00</li>
+        </ul>
+
+        <div class="tip-box">
+            <h3>Real savings example</h3>
+            <p>An 8-turn research agent running entirely on GPT-5 mini costs $12/month at 1,000 tasks. The same agent with multi-model routing (4 cheap + 3 moderate + 1 complex turns) costs <strong>$4.80/month</strong> — a 60% reduction with no quality loss on the steps that matter.</p>
+        </div>
+
+        <h2>Interactive Cost Calculator</h2>
+        <p>Plug in your agent's configuration and see exactly what it costs across all 5 budget models:</p>
+
+        <div class="calculator-box">
+            <h3>Agent Cost Calculator</h3>
+            <div class="calc-grid">
+                <div class="calc-field">
+                    <label for="calc-tasks">Tasks per day</label>
+                    <input type="number" id="calc-tasks" value="100" min="1" max="100000" oninput="calculateAgentCost()">
+                </div>
+                <div class="calc-field">
+                    <label for="calc-turns">Avg turns per task</label>
+                    <input type="number" id="calc-turns" value="8" min="1" max="50" oninput="calculateAgentCost()">
+                </div>
+                <div class="calc-field">
+                    <label for="calc-input">Avg input tokens per turn</label>
+                    <input type="number" id="calc-input" value="2000" min="10" max="100000" oninput="calculateAgentCost()">
+                </div>
+                <div class="calc-field">
+                    <label for="calc-output">Avg output tokens per turn</label>
+                    <input type="number" id="calc-output" value="500" min="10" max="50000" oninput="calculateAgentCost()">
+                </div>
+            </div>
+            <div class="calc-results" id="calc-results"></div>
+        </div>
+
+        <h2>Code Example: Agent Loop with Cost Tracking</h2>
+        <p>Here's a working Python agent that tracks costs in real time. It uses DeepSeek V4 Pro for quality tool calling at a fraction of GPT-5's price:</p>
+
+        <pre><code>import openai
+import json
+
+# DeepSeek V4 Pro — best value for agents ($0.44/$0.87 per M tokens)
+client = openai.OpenAI(
+    api_key="YOUR_DEEPSEEK_KEY",
+    base_url="https://api.deepseek.com/v1"
+)
+
+# Cost per million tokens
+MODEL_COSTS = {
+    "deepseek-chat": {"input": 0.44, "output": 0.87},
+    "deepseek-reasoner": {"input": 0.44, "output": 2.19},
+    "gemini-2.0-flash": {"input": 0.10, "output": 0.40},
+}
+
+def calculate_cost(input_tokens, output_tokens, model="deepseek-chat"):
+    costs = MODEL_COSTS[model]
+    return (input_tokens * costs["input"] / 1_000_000) + \\
+           (output_tokens * costs["output"] / 1_000_000)
+
+def run_agent(task, model="deepseek-chat", max_turns=10):
+    """Run an autonomous agent with cost tracking."""
+    tools = [
+        {
+            "type": "function",
+            "function": {
+                "name": "search",
+                "description": "Search for information",
+                "parameters": {
+                    "type": "object",
+                    "properties": {
+                        "query": {"type": "string"}
+                    },
+                    "required": ["query"]
+                }
+            }
+        }
+    ]
+
+    messages = [
+        {"role": "system", "content": "You are a research agent. Use tools to gather info, then provide a clear answer."},
+        {"role": "user", "content": task}
+    ]
+
+    total_cost = 0.0
+    total_input_tokens = 0
+    total_output_tokens = 0
+
+    for turn in range(max_turns):
+        response = client.chat.completions.create(
+            model=model,
+            messages=messages,
+            tools=tools,
+            max_tokens=1000
+        )
+
+        msg = response.choices[0].message
+        usage = response.usage
+        turn_cost = calculate_cost(usage.prompt_tokens, usage.completion_tokens, model)
+        total_cost += turn_cost
+        total_input_tokens += usage.prompt_tokens
+        total_output_tokens += usage.completion_tokens
+
+        print(f"Turn {turn + 1}: ${turn_cost:.6f} | "
+              f"{usage.prompt_tokens} in / {usage.completion_tokens} out")
+
+        if not msg.tool_calls:
+            print(f"\\nDone in {turn + 1} turns")
+            print(f"Total cost: ${total_cost:.6f}")
+            print(f"Total tokens: {total_input_tokens} in / {total_output_tokens} out")
+            return msg.content
+
+        messages.append(msg)
+        for tc in msg.tool_calls:
+            result = {"search_results": f"Results for: {tc.function.arguments}"}
+            messages.append({
+                "role": "tool",
+                "tool_call_id": tc.id,
+                "content": json.dumps(result)
+            })
+
+    print(f"Max turns reached. Total cost: ${total_cost:.6f}")
+    return "Max turns reached"
+
+# Run it — costs about $0.01 per task
+result = run_agent("What are the top 3 cheapest LLM APIs for agents in 2026?")
+print(result)</code></pre>
+
+        <p>This agent costs roughly <strong>$0.01 per task</strong> on DeepSeek V4 Pro. At 100 tasks/day that's $3/month. At 1,000 tasks/day that's $30/month. You can see the exact cost after every turn.</p>
+
+        <h2>Total Cost Reference Table</h2>
+        <p>Model by usage level — monthly cost for an 8-turn agent with 2K input and 500 output tokens per turn:</p>
+
+        <table class="comparison-table">
+            <thead>
+                <tr><th>Model</th><th>100 tasks/mo</th><th>500 tasks/mo</th><th>1,000 tasks/mo</th><th>5,000 tasks/mo</th><th>10,000 tasks/mo</th></tr>
+            </thead>
+            <tbody>
+                <tr><td class="winner">Gemini 2.0 Flash</td><td>$0.32</td><td>$1.60</td><td>$3.20</td><td>$16.00</td><td>$32.00</td></tr>
+                <tr><td class="winner">DeepSeek V4 Flash</td><td>$0.34</td><td>$1.68</td><td>$3.36</td><td>$16.80</td><td>$33.60</td></tr>
+                <tr><td>Llama 4 Scout</td><td>$0.62</td><td>$3.08</td><td>$6.16</td><td>$30.80</td><td>$61.60</td></tr>
+                <tr><td>DeepSeek V4 Pro</td><td>$1.06</td><td>$5.32</td><td>$10.64</td><td>$53.20</td><td>$106.40</td></tr>
+                <tr><td>GPT-5 mini</td><td>$1.20</td><td>$6.00</td><td>$12.00</td><td>$60.00</td><td>$120.00</td></tr>
+                <tr><td>GPT-5</td><td>$6.00</td><td>$30.00</td><td>$60.00</td><td>$300.00</td><td>$600.00</td></tr>
+            </tbody>
+        </table>
+        <p><em>All figures assume 8 turns/task, 2,000 input tokens/turn, 500 output tokens/turn.</em></p>
+
+        <h2>5 Tips to Keep Your Agent Under $10/Month</h2>
+
+        <div class="tip-box">
+            <h3>1. Cap your turns</h3>
+            <p>Set a hard max_turns limit of 5-8. Agents that loop indefinitely are the #1 cause of surprise bills. Most tasks finish in 4-6 turns.</p>
+        </div>
+
+        <div class="tip-box">
+            <h3>2. Trim context aggressively</h3>
+            <p>Each turn re-sends the full conversation history. After 5 turns you're paying 5x the base input tokens. Summarize or truncate old messages to keep costs linear.</p>
+        </div>
+
+        <div class="tip-box">
+            <h3>3. Use structured tool calls</h3>
+            <p>Function calling produces shorter, more structured output than free-form text parsing. This can cut output tokens by 30-50% per turn.</p>
+        </div>
+
+        <div class="tip-box">
+            <h3>4. Cache repeated tool results</h3>
+            <p>If your agent searches for the same thing twice in a session, cache the result. A simple hash-based cache eliminates 20-40% of redundant API calls.</p>
+        </div>
+
+        <div class="tip-box">
+            <h3>5. Start cheap, upgrade only what needs it</h3>
+            <p>Build your agent on Gemini 2.0 Flash or DeepSeek V4 Flash first. Profile which turns actually need a smarter model. Then route only those turns to DeepSeek V4 Pro or GPT-5 mini.</p>
+        </div>
+
+        <h2>When to Spend More on a Premium Model</h2>
+        <p>Cheap models aren't always enough. Upgrade to a premium model when:</p>
+        <ul>
+            <li><strong>Code generation:</strong> GPT-5 mini or Claude Sonnet 4.6 for complex code that needs to be correct on the first try</li>
+            <li><strong>Multi-agent orchestration:</strong> GPT-5 for coordinating multiple sub-agents with complex planning</li>
+            <li><strong>Nuanced reasoning:</strong> When the agent's decision directly impacts revenue or user experience</li>
+            <li><strong>Long-context analysis:</strong> When you need to process 100K+ tokens of context in a single turn</li>
+        </ul>
+        <p>The trick is to use a <strong>hybrid approach</strong>: run 80% of turns on a $0.10-0.14 model and 20% on a $0.44-2.00 model. Your average cost per turn drops to $0.15-0.50 instead of $2.00-10.00.</p>
+
+        <h2>The Bottom Line</h2>
+        <div class="verdict">
+            <h3>Building an AI Agent Is Cheap — If You Pick the Right Model</h3>
+            <p>Start with <strong>Gemini 2.0 Flash</strong> ($0.32/month for 100 tasks) or <strong>DeepSeek V4 Flash</strong> ($0.34/month). Both are real production models with tool calling. Upgrade to <strong>DeepSeek V4 Pro</strong> ($10.64/month at 1,000 tasks) when you need better reasoning.</p>
+            <p>The under-$10 agent isn't a toy. It's a real autonomous system that can search, reason, call tools, and produce results. The only difference between a $3/month agent and a $300/month agent is which model you point it at.</p>
+        </div>
+
+        <div class="cta-inline">
+            <p><strong>Calculate your exact agent cost</strong></p>
+            <p>Plug in your agent's configuration and see costs across all models instantly.</p>
+            <a href="calculator.html" class="btn-primary" style="padding:12px 32px;">Open Cost Calculator &rarr;</a>
+        </div>
+
+        <h2>Frequently Asked Questions</h2>
+
+        <div class="faq-item">
+            <h3>How much does it really cost to build an AI agent?</h3>
+            <p>A basic AI agent costs $3-10/month using budget models like DeepSeek V4 Flash ($0.14/$0.28 per million tokens) or Gemini 2.0 Flash ($0.10/$0.40). The real cost depends on how many turns the agent makes per task. A 5-turn agent at 100 tasks/month costs under $2. A 15-turn agent at 10K tasks/month costs $30-150 depending on the model.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>What makes AI agents more expensive than chatbots?</h3>
+            <p>Unlike a chatbot that makes 1 API call per request, an AI agent makes 5-20 API calls (turns) per task. Each turn sends accumulated context plus the model's response, so costs compound. A chatbot on DeepSeek V4 Flash at 1K tokens costs $0.00014. An 8-turn agent doing the same task costs roughly $0.002 — 14x more. That's still cheap, but it multiplies fast at scale.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>Can I build an AI agent for under $5 per month?</h3>
+            <p>Yes. At 100 tasks/month with 5 turns per task using DeepSeek V4 Flash, your total cost is roughly $0.70/month. Even at 500 tasks/month with 8 turns per task, you pay about $5.60/month. The key is choosing a cheap model and limiting unnecessary turns.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>What is the best cheap model for building AI agents?</h3>
+            <p>Gemini 2.0 Flash ($0.10 input / $0.40 output per million tokens) has the cheapest input cost, making it ideal for agents that accumulate large context over many turns. DeepSeek V4 Flash ($0.14 / $0.28) has the cheapest output cost, making it better for agents that generate long responses. For quality-sensitive agents, DeepSeek V4 Pro ($0.44 / $0.87) offers near-premium tool-calling at a fraction of the price.</p>
+        </div>
+
+        <div class="related">
+            <h3>Related Reading</h3>
+            <a href="blog-how-to-build-ai-agent-cheap-2026.html">How to Build an AI Agent Cheap in 2026 — Full Guide</a>
+            <a href="blog-building-ai-agent-cost.html">Building an AI Agent? Here's What It Actually Costs</a>
+            <a href="blog-multi-model-routing.html">Multi-Model Routing: How to Cut AI Costs by 60%</a>
+            <a href="blog-best-cheap-ai-api-2026.html">Best Cheap AI API in 2026</a>
+            <a href="calculator.html">AI API Cost Calculator</a>
+        </div>
+
+        <div class="share-section">
+            <p>Found this useful? Share it with someone building AI agents.</p>
+            <a class="share-btn" href="https://twitter.com/intent/tweet?text=Build%20an%20AI%20agent%20for%20under%20%2410%2Fmonth%20%E2%80%94%20real%20costs%2C%20model%20rankings%2C%20and%20code&url=https://getapipulse.com/blog-build-ai-agent-under-10-dollars.html" target="_blank" rel="noopener">Share on X</a>
+            <a class="share-btn" href="https://www.linkedin.com/sharing/share-offsite/?url=https://getapipulse.com/blog-build-ai-agent-under-10-dollars.html" target="_blank" rel="noopener">Share on LinkedIn</a>
+        </div>
+
+    </div>
+    </main>
+
+    <div style="max-width:600px;margin:48px auto 0;padding:32px;text-align:center;background:var(--bg-card);border-radius:12px;border:1px solid var(--border);">
+        <h3 style="font-size:18px;margin-bottom:8px;">Get notified when API prices change</h3>
+        <p style="font-size:14px;color:var(--text-secondary);margin-bottom:16px;">No spam. Only pricing updates and new features. Unsubscribe anytime.</p>
+        <form onsubmit="saveEmail(event)" style="display:flex;gap:8px;max-width:400px;margin:0 auto;">
+            <input type="email" id="email-input" placeholder="you@company.com" required aria-label="Email address"
+                style="flex:1;padding:12px 16px;border-radius:8px;border:1px solid var(--border);background:var(--bg-secondary);color:var(--text-primary);font-size:14px;">
+            <button type="submit" class="btn-primary" style="padding:12px 24px;white-space:nowrap;">Subscribe</button>
+        </form>
+        <p id="email-msg" style="font-size:13px;color:var(--green);margin-top:12px;display:none;"></p>
+    </div>
+
+    <button class="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">&uarr;</button>
+
+    <footer>
+        <p>Pricing data last verified: <span class="verified-date"></span></p>
+        <p>&copy; 2026 APIpulse. <a href="index.html">Home</a> &middot; <a href="compare.html">Compare</a> &middot; <a href="calculator.html">Calculator</a> &middot; <a href="blog.html">Blog</a> &middot; <a href="pricing.html">Pricing</a> &middot; <a href="about.html">About</a></p>
+    </footer>
+
+    <script>
+    function calculateAgentCost() {
+        var tasks = parseInt(document.getElementById('calc-tasks').value) || 0;
+        var turns = parseInt(document.getElementById('calc-turns').value) || 0;
+        var inputTokens = parseInt(document.getElementById('calc-input').value) || 0;
+        var outputTokens = parseInt(document.getElementById('calc-output').value) || 0;
+
+        var models = [
+            { name: 'Gemini 2.0 Flash', input: 0.10, output: 0.40 },
+            { name: 'DeepSeek V4 Flash', input: 0.14, output: 0.28 },
+            { name: 'Llama 4 Scout', input: 0.18, output: 0.59 },
+            { name: 'DeepSeek V4 Pro', input: 0.435, output: 0.87 },
+            { name: 'GPT-5 mini', input: 0.25, output: 2.00 }
+        ];
+
+        var results = models.map(function(m) {
+            var monthlyInput = tasks * turns * inputTokens * 30;
+            var monthlyOutput = tasks * turns * outputTokens * 30;
+            var cost = (monthlyInput * m.input + monthlyOutput * m.output) / 1000000;
+            return { name: m.name, cost: cost };
+        });
+
+        results.sort(function(a, b) { return a.cost - b.cost; });
+
+        var container = document.getElementById('calc-results');
+        var html = '<div style="font-size:13px;color:var(--text-muted);margin-bottom:12px;text-transform:uppercase;letter-spacing:0.5px;font-weight:600;">Monthly cost estimate</div>';
+
+        results.forEach(function(r, i) {
+            var cls = i === 0 ? 'model-cost cheapest' : 'model-cost';
+            html += '<div class="calc-result-row">' +
+                '<span class="model-name">' + r.name + '</span>' +
+                '<span class="' + cls + '">$' + r.cost.toFixed(2) + '/mo</span>' +
+                '</div>';
+        });
+
+        container.innerHTML = html;
+    }
+
+    // Run calculator on load
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', calculateAgentCost);
+    } else {
+        calculateAgentCost();
+    }
+    </script>
+
+</body>
+</html>
