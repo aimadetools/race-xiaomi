@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find the Cheapest AI Model for Your Use Case — APIpulse</title>
+    <meta name="description" content="Find the cheapest AI API model for your specific use case. Compare 39 models across 10 providers and get instant cost estimates for chatbots, content generation, coding, and more.">
+    <meta name="keywords" content="cheapest AI model, cheapest LLM API, cheapest AI API, best value AI model, affordable AI API, cheapest GPT model, cheapest Claude model, cheapest Gemini model">
+    <meta property="og:title" content="Find the Cheapest AI Model — APIpulse">
+    <meta property="og:description" content="Answer 3 questions and find the cheapest AI model for your use case. 39 models, 10 providers, instant cost estimates.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://getapipulse.com/og-image.png">
+    <meta property="og:url" content="https://getapipulse.com/cheapest-model-finder.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Find the Cheapest AI Model — APIpulse">
+    <meta name="twitter:image" content="https://getapipulse.com/og-image.png">
+    <link rel="canonical" href="https://getapipulse.com/cheapest-model-finder.html">
+    <link rel="alternate" type="application/rss+xml" title="APIpulse Blog" href="https://getapipulse.com/rss.xml">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="styles.css">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0CEP7S9Y3J"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-0CEP7S9Y3J');
+    </script>
+    <script src="analytics.js" defer></script>
+    <script src="dynamic-date.js" defer></script>
+    <script src="shared.js" defer></script>
+    <script src="pricing-data.js" defer></script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "APIpulse — Find the Cheapest AI Model",
+        "url": "https://getapipulse.com/cheapest-model-finder.html",
+        "description": "Find the cheapest AI API model for your specific use case. Compare 39 models across 10 providers.",
+        "applicationCategory": "DeveloperApplication",
+        "operatingSystem": "Web",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "What is the cheapest AI API model in 2026?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "The cheapest AI API model is Gemini 2.0 Flash Lite at $0.075/$0.30 per 1M tokens (input/output). For general tasks, DeepSeek V4 Flash ($0.14/$0.28) offers the best value with 1M context. For code-specific tasks, Llama 3.1 8B at $0.10/$0.10 is the cheapest option."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Which AI model gives the best value for chatbots?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "For customer support chatbots, DeepSeek V4 Flash ($0.14/$0.28 per 1M tokens) is the cheapest capable option. For higher quality, Gemini 2.0 Flash ($0.10/$0.40) balances cost and quality well. For premium chatbots, GPT-5 mini ($0.25/$2.00) or Claude Haiku 4.5 ($1.00/$5.00) offer strong quality at reasonable prices."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How much does it cost to run an AI chatbot per month?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "For a chatbot handling 1,000 requests/day with 2K input and 500 output tokens each: Gemini 2.0 Flash Lite costs ~$0.79/month, DeepSeek V4 Flash costs ~$2.19/month, and GPT-4o mini costs ~$3.75/month. Enterprise scale (100K requests/day) ranges from $79 to $375/month depending on model choice."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Are cheaper AI models as good as expensive ones?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "It depends on the task. For simple classification, summarization, and Q&A, budget models like DeepSeek V4 Flash and Gemini 2.0 Flash perform comparably to premium models at 90%+ lower cost. For complex reasoning, multi-step coding, and nuanced analysis, premium models like GPT-5 and Claude Opus 4.8 still outperform. The key is matching model capability to task complexity."
+                }
+            }
+        ]
+    }
+    </script>
+    <style>
+        .finder-page { padding: 100px 24px 60px; max-width: 900px; margin: 0 auto; }
+        .finder-header { text-align: center; margin-bottom: 48px; }
+        .finder-header h1 { font-size: clamp(28px, 4vw, 42px); font-weight: 800; margin-bottom: 12px; line-height: 1.2; }
+        .finder-header p { font-size: 16px; color: var(--text-secondary); max-width: 560px; margin: 0 auto; }
+
+        /* Steps */
+        .finder-steps { display: flex; gap: 12px; justify-content: center; margin-bottom: 40px; }
+        .step-dot {
+            width: 36px; height: 36px; border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 14px; font-weight: 700; border: 2px solid var(--border);
+            color: var(--text-muted); transition: all 0.3s;
+        }
+        .step-dot.active { border-color: var(--accent); color: var(--accent); background: var(--accent-glow); }
+        .step-dot.done { border-color: var(--green); color: var(--green); background: rgba(34,197,94,0.1); }
+
+        /* Question card */
+        .question-card {
+            background: var(--bg-secondary); border: 1px solid var(--border);
+            border-radius: 16px; padding: 32px; margin-bottom: 24px;
+        }
+        .question-card h2 { font-size: 20px; font-weight: 700; margin-bottom: 8px; }
+        .question-card .q-desc { font-size: 14px; color: var(--text-secondary); margin-bottom: 24px; }
+
+        .option-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 12px; }
+        .option-btn {
+            background: var(--bg-card); border: 2px solid var(--border); border-radius: 12px;
+            padding: 16px; cursor: pointer; text-align: left; transition: all 0.2s;
+            font-family: inherit;
+        }
+        .option-btn:hover { border-color: var(--accent); transform: translateY(-1px); }
+        .option-btn.selected { border-color: var(--accent); background: var(--accent-glow); }
+        .option-btn .opt-icon { font-size: 24px; margin-bottom: 8px; }
+        .option-btn .opt-title { font-size: 14px; font-weight: 700; color: var(--text-primary); margin-bottom: 4px; }
+        .option-btn .opt-desc { font-size: 12px; color: var(--text-secondary); line-height: 1.4; }
+
+        /* Results */
+        .results-container { display: none; }
+        .results-header { text-align: center; margin-bottom: 32px; }
+        .results-header h2 { font-size: 24px; font-weight: 700; margin-bottom: 8px; }
+        .results-header p { font-size: 14px; color: var(--text-secondary); }
+
+        .result-card {
+            background: var(--bg-secondary); border: 1px solid var(--border);
+            border-radius: 12px; padding: 20px; margin-bottom: 12px;
+            display: flex; align-items: center; gap: 20px; transition: border-color 0.2s;
+        }
+        .result-card:hover { border-color: var(--accent); }
+        .result-card.best { border-color: var(--green); background: rgba(34,197,94,0.03); }
+        .result-rank {
+            width: 32px; height: 32px; border-radius: 50%; display: flex;
+            align-items: center; justify-content: center; font-size: 14px;
+            font-weight: 700; flex-shrink: 0;
+            background: var(--bg-card); color: var(--text-muted); border: 1px solid var(--border);
+        }
+        .result-card.best .result-rank { background: var(--green); color: white; border-color: var(--green); }
+        .result-info { flex: 1; }
+        .result-name { font-size: 16px; font-weight: 700; color: var(--text-primary); }
+        .result-provider { font-size: 13px; color: var(--text-secondary); margin-top: 2px; }
+        .result-prices { display: flex; gap: 16px; flex-shrink: 0; }
+        .result-price { text-align: right; }
+        .result-price .label { font-size: 11px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px; }
+        .result-price .value { font-size: 16px; font-weight: 700; color: var(--accent); }
+        .result-badge {
+            display: inline-block; padding: 3px 10px; border-radius: 6px;
+            font-size: 11px; font-weight: 700; text-transform: uppercase;
+            margin-left: 8px;
+        }
+        .badge-cheapest { background: rgba(34,197,94,0.15); color: var(--green); }
+        .badge-best-value { background: rgba(99,102,241,0.15); color: var(--accent); }
+        .badge-premium { background: rgba(245,158,11,0.15); color: var(--orange); }
+
+        /* Monthly cost estimate */
+        .cost-estimate {
+            background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px;
+            padding: 20px; margin-top: 32px; text-align: center;
+        }
+        .cost-estimate h3 { font-size: 16px; font-weight: 700; margin-bottom: 16px; }
+        .cost-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+        .cost-item { text-align: center; }
+        .cost-item .tier { font-size: 12px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 4px; }
+        .cost-item .amount { font-size: 22px; font-weight: 800; color: var(--accent); }
+        .cost-item .per { font-size: 12px; color: var(--text-secondary); }
+
+        .cta-row { display: flex; gap: 12px; justify-content: center; margin-top: 24px; flex-wrap: wrap; }
+
+        .restart-btn {
+            background: var(--bg-card); border: 1px solid var(--border); border-radius: 8px;
+            padding: 10px 20px; color: var(--text-secondary); font-size: 14px; font-weight: 600;
+            cursor: pointer; transition: all 0.2s; font-family: inherit;
+        }
+        .restart-btn:hover { border-color: var(--accent); color: var(--accent); }
+
+        /* Context note */
+        .context-note {
+            background: rgba(99,102,241,0.06); border: 1px solid rgba(99,102,241,0.15);
+            border-radius: 8px; padding: 16px; margin-top: 32px; font-size: 13px;
+            color: var(--text-secondary); line-height: 1.6;
+        }
+        .context-note strong { color: var(--text-primary); }
+
+        /* FAQ */
+        .faq-section { padding: 60px 24px; max-width: 700px; margin: 40px auto 0; }
+        .faq-section h2 { font-size: 24px; font-weight: 700; text-align: center; margin-bottom: 32px; }
+        .faq-item { border-bottom: 1px solid var(--border); padding: 20px 0; }
+        .faq-question {
+            display: flex; justify-content: space-between; align-items: center;
+            cursor: pointer; font-size: 16px; font-weight: 600; color: var(--text-primary);
+            background: none; border: none; width: 100%; text-align: left; padding: 0;
+            font-family: inherit;
+        }
+        .faq-question:hover { color: var(--accent); }
+        .faq-icon { font-size: 20px; transition: transform 0.2s; flex-shrink: 0; margin-left: 12px; color: var(--text-muted); }
+        .faq-item.open .faq-icon { transform: rotate(45deg); }
+        .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; color: var(--text-secondary); font-size: 15px; line-height: 1.7; }
+        .faq-item.open .faq-answer { max-height: 300px; }
+        .faq-answer p { margin-top: 12px; }
+
+        @media (max-width: 768px) {
+            .finder-page { padding: 80px 16px 40px; }
+            .option-grid { grid-template-columns: 1fr 1fr; }
+            .result-card { flex-direction: column; align-items: flex-start; gap: 12px; }
+            .result-prices { width: 100%; justify-content: space-between; }
+            .cost-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-inner">
+            <a href="index.html" class="logo">API<span>pulse</span></a>
+            <button class="hamburger" onclick="toggleMobileNav()" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+            <div class="nav-links">
+                <a href="calculator.html">Calculator</a>
+                <a href="compare.html">Compare</a>
+                <a href="blog.html">Blog</a>
+                <a href="pricing.html" class="nav-cta">Get Pro — $29</a>
+                <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="finder-page">
+        <div class="finder-header">
+            <div style="margin-bottom:12px;"><span style="display:inline-flex;align-items:center;gap:6px;background:rgba(34,197,94,0.08);border:1px solid rgba(34,197,94,0.25);padding:5px 14px;border-radius:100px;font-size:12px;font-weight:600;color:var(--green);">39 models · 10 providers · Updated Jun 2026</span></div>
+            <h1>Find the Cheapest AI Model for Your Use Case</h1>
+            <p>Answer 3 quick questions and we'll recommend the cheapest model that fits your needs — with instant cost estimates.</p>
+        </div>
+
+        <div class="finder-steps">
+            <div class="step-dot active" id="step1">1</div>
+            <div class="step-dot" id="step2">2</div>
+            <div class="step-dot" id="step3">3</div>
+        </div>
+
+        <!-- Step 1: Use Case -->
+        <div class="question-card" id="q1">
+            <h2>What will you use the AI for?</h2>
+            <p class="q-desc">Different models excel at different tasks. Pick your primary use case.</p>
+            <div class="option-grid">
+                <button class="option-btn" onclick="selectUseCase('chatbot')">
+                    <div class="opt-icon">💬</div>
+                    <div class="opt-title">Customer Support Chatbot</div>
+                    <div class="opt-desc">Answer questions, handle tickets, FAQs</div>
+                </button>
+                <button class="option-btn" onclick="selectUseCase('content')">
+                    <div class="opt-icon">✍️</div>
+                    <div class="opt-title">Content Generation</div>
+                    <div class="opt-desc">Blog posts, marketing copy, emails</div>
+                </button>
+                <button class="option-btn" onclick="selectUseCase('coding')">
+                    <div class="opt-icon">💻</div>
+                    <div class="opt-title">Code Generation</div>
+                    <div class="opt-desc">Write code, review PRs, debug</div>
+                </button>
+                <button class="option-btn" onclick="selectUseCase('analysis')">
+                    <div class="opt-icon">📊</div>
+                    <div class="opt-title">Data Analysis</div>
+                    <div class="opt-desc">Summarize docs, extract insights, classify</div>
+                </button>
+                <button class="option-btn" onclick="selectUseCase('translation')">
+                    <div class="opt-icon">🌐</div>
+                    <div class="opt-title">Translation</div>
+                    <div class="opt-desc">Translate text across languages</div>
+                </button>
+                <button class="option-btn" onclick="selectUseCase('research')">
+                    <div class="opt-icon">🔬</div>
+                    <div class="opt-title">Research & Reasoning</div>
+                    <div class="opt-desc">Complex analysis, multi-step problems</div>
+                </button>
+            </div>
+        </div>
+
+        <!-- Step 2: Quality -->
+        <div class="question-card" id="q2" style="display:none;">
+            <h2>What quality level do you need?</h2>
+            <p class="q-desc">Higher quality costs more. Be honest — most tasks don't need the best model.</p>
+            <div class="option-grid">
+                <button class="option-btn" onclick="selectQuality('basic')">
+                    <div class="opt-icon">⚡</div>
+                    <div class="opt-title">Good Enough</div>
+                    <div class="opt-desc">Fast, cheap, handles 80% of tasks well</div>
+                </button>
+                <button class="option-btn" onclick="selectQuality('balanced')">
+                    <div class="opt-icon">⚖️</div>
+                    <div class="opt-title">Balanced</div>
+                    <div class="opt-desc">Best mix of quality and cost</div>
+                </button>
+                <button class="option-btn" onclick="selectQuality('premium')">
+                    <div class="opt-icon">🏆</div>
+                    <div class="opt-title">Best Quality</div>
+                    <div class="opt-desc">Top-tier reasoning, no compromises</div>
+                </button>
+            </div>
+        </div>
+
+        <!-- Step 3: Volume -->
+        <div class="question-card" id="q3" style="display:none;">
+            <h2>How many requests per day?</h2>
+            <p class="q-desc">Volume affects which pricing tier makes sense.</p>
+            <div class="option-grid">
+                <button class="option-btn" onclick="selectVolume('hobby')">
+                    <div class="opt-icon">🧪</div>
+                    <div class="opt-title">Side Project</div>
+                    <div class="opt-desc">~100 requests/day</div>
+                </button>
+                <button class="option-btn" onclick="selectVolume('startup')">
+                    <div class="opt-icon">🚀</div>
+                    <div class="opt-title">Growing App</div>
+                    <div class="opt-desc">~1,000 requests/day</div>
+                </button>
+                <button class="option-btn" onclick="selectVolume('scaleup')">
+                    <div class="opt-icon">📈</div>
+                    <div class="opt-title">Scale-up</div>
+                    <div class="opt-desc">~10,000 requests/day</div>
+                </button>
+                <button class="option-btn" onclick="selectVolume('enterprise')">
+                    <div class="opt-icon">🏢</div>
+                    <div class="opt-title">Enterprise</div>
+                    <div class="opt-desc">100,000+ requests/day</div>
+                </button>
+            </div>
+        </div>
+
+        <!-- Results -->
+        <div class="results-container" id="results">
+            <div class="results-header">
+                <h2>Recommended Models for You</h2>
+                <p id="results-subtitle">Based on your use case, quality needs, and volume</p>
+            </div>
+            <div id="results-list"></div>
+
+            <div class="cost-estimate" id="cost-estimate">
+                <h3>Monthly Cost Estimate <span style="font-weight:400;font-size:13px;color:var(--text-muted);">(2K input / 500 output tokens per request)</span></h3>
+                <div class="cost-grid" id="cost-grid"></div>
+            </div>
+
+            <div class="cta-row">
+                <button class="restart-btn" onclick="restart()">← Start Over</button>
+                <a href="calculator.html" class="btn-primary" style="padding:10px 24px;font-size:14px;">Full Calculator →</a>
+                <a href="compare.html" class="btn-secondary" style="padding:10px 24px;font-size:14px;">Compare Models →</a>
+            </div>
+        </div>
+
+        <div class="context-note">
+            <strong>How we calculate:</strong> Cost estimates use published API pricing per 1M tokens. Actual costs depend on your specific token usage, which varies by prompt complexity and response length. Our estimates assume 2,000 input tokens and 500 output tokens per request — a typical chatbot interaction. <a href="calculator.html">Use our full calculator</a> for precise estimates.
+        </div>
+    </main>
+
+    <section class="faq-section">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-item">
+            <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                What is the cheapest AI API model in 2026?
+                <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer"><p>The cheapest AI API model is Gemini 2.0 Flash Lite at $0.075/$0.30 per 1M tokens (input/output). For general tasks, DeepSeek V4 Flash ($0.14/$0.28) offers the best value with 1M context. For code-specific tasks, Llama 3.1 8B at $0.10/$0.10 is the cheapest option.</p></div>
+        </div>
+        <div class="faq-item">
+            <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                Which AI model gives the best value for chatbots?
+                <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer"><p>For customer support chatbots, DeepSeek V4 Flash ($0.14/$0.28 per 1M tokens) is the cheapest capable option. For higher quality, Gemini 2.0 Flash ($0.10/$0.40) balances cost and quality well. For premium chatbots, GPT-5 mini ($0.25/$2.00) or Claude Haiku 4.5 ($1.00/$5.00) offer strong quality at reasonable prices.</p></div>
+        </div>
+        <div class="faq-item">
+            <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                How much does it cost to run an AI chatbot per month?
+                <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer"><p>For a chatbot handling 1,000 requests/day with 2K input and 500 output tokens each: Gemini 2.0 Flash Lite costs ~$0.79/month, DeepSeek V4 Flash costs ~$2.19/month, and GPT-4o mini costs ~$3.75/month. Enterprise scale (100K requests/day) ranges from $79 to $375/month depending on model choice.</p></div>
+        </div>
+        <div class="faq-item">
+            <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">
+                Are cheaper AI models as good as expensive ones?
+                <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer"><p>It depends on the task. For simple classification, summarization, and Q&A, budget models like DeepSeek V4 Flash and Gemini 2.0 Flash perform comparably to premium models at 90%+ lower cost. For complex reasoning, multi-step coding, and nuanced analysis, premium models like GPT-5 and Claude Opus 4.8 still outperform. The key is matching model capability to task complexity.</p></div>
+        </div>
+    </section>
+
+    <footer style="text-align:center;padding:40px 24px;border-top:1px solid var(--border);margin-top:40px;">
+        <p style="font-size:13px;color:var(--text-muted);">&copy; 2026 APIpulse. Pricing data updated Jun 7, 2026.</p>
+    </footer>
+
+    <script>
+    // Model recommendations by use case + quality
+    const RECOMMENDATIONS = {
+        chatbot: {
+            basic: ['google-flash-lite', 'deepseek-v4-flash', 'llama-3.1-8b'],
+            balanced: ['deepseek-v4-flash', 'google-flash', 'deepseek-v32', 'openai-gpt4o-mini'],
+            premium: ['openai-gpt5-mini', 'anthropic-haiku', 'openai-gpt4o', 'deepseek-v4-pro']
+        },
+        content: {
+            basic: ['deepseek-v32', 'mistral-small', 'google-flash', 'llama-3.1-70b'],
+            balanced: ['deepseek-v4-pro', 'google-pro', 'openai-gpt5-mini', 'mistral-large'],
+            premium: ['openai-gpt5', 'anthropic-sonnet46', 'google-gemini3-pro', 'anthropic-opus48']
+        },
+        coding: {
+            basic: ['llama-3.1-8b', 'google-flash-lite', 'deepseek-v4-flash', 'mistral-small'],
+            balanced: ['deepseek-v4-pro', 'openai-gpt5-mini', 'mistral-large', 'deepseek-v32'],
+            premium: ['openai-gpt5', 'openai-gpt53-codex', 'anthropic-sonnet46', 'anthropic-opus48']
+        },
+        analysis: {
+            basic: ['deepseek-v32', 'mistral-small', 'google-flash', 'deepseek-v4-flash'],
+            balanced: ['deepseek-v4-pro', 'openai-gpt5-mini', 'mistral-large', 'google-pro'],
+            premium: ['openai-gpt5', 'anthropic-sonnet46', 'anthropic-opus48', 'google-gemini3-pro']
+        },
+        translation: {
+            basic: ['google-flash-lite', 'deepseek-v4-flash', 'mistral-small', 'llama-3.1-8b'],
+            balanced: ['google-flash', 'deepseek-v32', 'mistral-large', 'openai-gpt4o-mini'],
+            premium: ['openai-gpt5', 'anthropic-sonnet46', 'google-pro', 'mistral-medium']
+        },
+        research: {
+            basic: ['deepseek-v32', 'mistral-large', 'google-pro', 'deepseek-v4-pro'],
+            balanced: ['openai-gpt5', 'anthropic-sonnet46', 'google-gemini3-pro', 'deepseek-v4-pro'],
+            premium: ['anthropic-opus48', 'openai-gpt55', 'openai-gpt5', 'anthropic-opus47']
+        }
+    };
+
+    const VOLUME_MULTIPLIERS = { hobby: 100, startup: 1000, scaleup: 10000, enterprise: 100000 };
+    const VOLUME_LABELS = { hobby: 'Side Project (100/day)', startup: 'Growing App (1K/day)', scaleup: 'Scale-up (10K/day)', enterprise: 'Enterprise (100K/day)' };
+    const USE_CASE_LABELS = { chatbot: 'Customer Support Chatbot', content: 'Content Generation', coding: 'Code Generation', analysis: 'Data Analysis', translation: 'Translation', research: 'Research & Reasoning' };
+    const QUALITY_LABELS = { basic: 'Good Enough', balanced: 'Balanced', premium: 'Best Quality' };
+
+    let selections = { useCase: null, quality: null, volume: null };
+
+    function selectUseCase(uc) {
+        selections.useCase = uc;
+        document.querySelectorAll('#q1 .option-btn').forEach(b => b.classList.remove('selected'));
+        event.currentTarget.classList.add('selected');
+        document.getElementById('step1').classList.remove('active');
+        document.getElementById('step1').classList.add('done');
+        setTimeout(() => {
+            document.getElementById('q1').style.display = 'none';
+            document.getElementById('q2').style.display = 'block';
+            document.getElementById('step2').classList.add('active');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }, 200);
+    }
+
+    function selectQuality(q) {
+        selections.quality = q;
+        document.querySelectorAll('#q2 .option-btn').forEach(b => b.classList.remove('selected'));
+        event.currentTarget.classList.add('selected');
+        document.getElementById('step2').classList.remove('active');
+        document.getElementById('step2').classList.add('done');
+        setTimeout(() => {
+            document.getElementById('q2').style.display = 'none';
+            document.getElementById('q3').style.display = 'block';
+            document.getElementById('step3').classList.add('active');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }, 200);
+    }
+
+    function selectVolume(v) {
+        selections.volume = v;
+        document.querySelectorAll('#q3 .option-btn').forEach(b => b.classList.remove('selected'));
+        event.currentTarget.classList.add('selected');
+        document.getElementById('step3').classList.remove('active');
+        document.getElementById('step3').classList.add('done');
+        setTimeout(() => {
+            document.getElementById('q3').style.display = 'none';
+            showResults();
+        }, 200);
+    }
+
+    function showResults() {
+        var modelIds = RECOMMENDATIONS[selections.useCase][selections.quality];
+        var requestsPerDay = VOLUME_MULTIPLIERS[selections.volume];
+        var inputTokens = 2000;
+        var outputTokens = 500;
+
+        document.getElementById('results-subtitle').textContent =
+            USE_CASE_LABELS[selections.useCase] + ' · ' +
+            QUALITY_LABELS[selections.quality] + ' · ' +
+            VOLUME_LABELS[selections.volume];
+
+        var listHtml = '';
+        var costHtml = '';
+        var costs = [];
+
+        modelIds.forEach(function(id, i) {
+            var m = getModelById(id);
+            if (!m) return;
+            var monthlyInput = (m.input / 1000000) * inputTokens * requestsPerDay * 30;
+            var monthlyOutput = (m.output / 1000000) * outputTokens * requestsPerDay * 30;
+            var total = monthlyInput + monthlyOutput;
+            costs.push({ model: m, total: total, input: monthlyInput, output: monthlyOutput });
+
+            var badges = '';
+            if (i === 0) badges = '<span class="result-badge badge-cheapest">Cheapest</span>';
+            else if (i === 1) badges = '<span class="result-badge badge-best-value">Best Value</span>';
+
+            var contextStr = m.context;
+            listHtml += '<div class="result-card' + (i === 0 ? ' best' : '') + '">' +
+                '<div class="result-rank">' + (i + 1) + '</div>' +
+                '<div class="result-info">' +
+                    '<div class="result-name">' + m.name + badges + '</div>' +
+                    '<div class="result-provider">' + m.provider + ' · ' + contextStr + ' context</div>' +
+                '</div>' +
+                '<div class="result-prices">' +
+                    '<div class="result-price"><div class="label">Input</div><div class="value">$' + m.input.toFixed(2) + '</div></div>' +
+                    '<div class="result-price"><div class="label">Output</div><div class="value">$' + m.output.toFixed(2) + '</div></div>' +
+                '</div>' +
+            '</div>';
+        });
+
+        // Cost estimate for top 3
+        var costTiers = ['cheapest', 'mid', 'premium'];
+        costs.slice(0, 3).forEach(function(c, i) {
+            costHtml += '<div class="cost-item">' +
+                '<div class="tier">' + costTiers[i] + '</div>' +
+                '<div class="amount">$' + (c.total < 1 ? c.total.toFixed(2) : Math.round(c.total).toLocaleString()) + '</div>' +
+                '<div class="per">/month · ' + c.model.name + '</div>' +
+            '</div>';
+        });
+
+        document.getElementById('results-list').innerHTML = listHtml;
+        document.getElementById('cost-grid').innerHTML = costHtml;
+        document.getElementById('results').style.display = 'block';
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+
+        if (window.trackEvent) window.trackEvent('model_finder_complete', {
+            useCase: selections.useCase,
+            quality: selections.quality,
+            volume: selections.volume
+        });
+    }
+
+    function restart() {
+        selections = { useCase: null, quality: null, volume: null };
+        document.getElementById('q1').style.display = 'block';
+        document.getElementById('q2').style.display = 'none';
+        document.getElementById('q3').style.display = 'none';
+        document.getElementById('results').style.display = 'none';
+        document.querySelectorAll('.option-btn').forEach(b => b.classList.remove('selected'));
+        document.querySelectorAll('.step-dot').forEach(d => { d.classList.remove('active', 'done'); });
+        document.getElementById('step1').classList.add('active');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+    </script>
+</body>
+</html>

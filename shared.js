@@ -43,6 +43,18 @@ document.addEventListener('DOMContentLoaded', () => {
     var navLinks = document.querySelector('.nav-links');
     if (!navLinks) return;
 
+    // Add "Model Finder" link after Calculator link
+    var hasFinder = navLinks.querySelector('a[href="cheapest-model-finder.html"]');
+    if (!hasFinder) {
+        var calcLink = navLinks.querySelector('a[href="calculator.html"]');
+        if (calcLink) {
+            var finderLink = document.createElement('a');
+            finderLink.href = 'cheapest-model-finder.html';
+            finderLink.textContent = 'Model Finder';
+            calcLink.parentNode.insertBefore(finderLink, calcLink.nextSibling);
+        }
+    }
+
     // Add Badges link after API link
     var hasBadges = navLinks.querySelector('a[href="badges.html"]');
     if (!hasBadges) {
