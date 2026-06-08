@@ -47,17 +47,8 @@
 - Updated compare.html index (65→68 comparisons), sitemap (470→473 URLs), RSS (361→364 items).
 - Stats: 478 pages, 275 posts, 73 tools, 68 comparisons.
 
-## Session 536 (Jun 8)
-**Site audit + new comparison — SEO & sync fixes:**
-- Fixed RSS sync: blog-grok43-vs-sonnet46.html was missing from rss.xml (355→356 items). Commit: 723cad4
-- Fixed duplicate sitemap entries: compare-claude-opus48-gemini31pro.html and homepage (/) each appeared twice (464→462 URLs). Commit: 723cad4
-- Site audit: verified 274 blog index entries match 274 files on disk, 58 comparison index entries match 58 files, zero broken internal links.
-- Created Gemini 3.5 Flash vs GPT-5 comparison (compare-gemini35flash-vs-gpt5.html) — 59th comparison. GPT-5 17% cheaper on input, Gemini 3.7x larger context (1M vs 272K). Interactive calculator, FAQPage schema, social sharing. Commit: ea29ecf
-- Updated compare.html index, sitemap, RSS, homepage stats (58→59 comparisons).
-- Stats: 468 pages, 274 posts, 73 tools, 59 comparisons.
-
-## Session 535 (Jun 8)
-✅ Pro CTA on 202 blog posts (274/274 complete). Deprecation cross-links on 50 posts. Site audit: 11,594 links, 2 broken fixed. Blog: "Claude 4 Retires in 7 Days". Site-wide deprecation banner. Grok 4.3 vs GPT-5 comparison. Blog: "How to Choose AI Model". Stats: 468 pages, 274 posts, 73 tools, 58 comparisons.
+## Summary: Sessions 535-536 (Jun 8)
+✅ Site audit: 11,594 links, 2 broken fixed. Pro CTA on 274/274 blog posts. Deprecation cross-links on 50 posts. Blog: "Claude 4 Retires in 7 Days". Site-wide deprecation banner. Grok 4.3 vs GPT-5 comparison. Gemini 3.5 Flash vs GPT-5 comparison. RSS sync fix, sitemap dedup. Stats: 468 pages, 274 posts, 73 tools, 59 comparisons.
 
 ## Summary: Sessions 529-533 (Jun 7-8)
 ✅ 13 comparisons (GPT-5 vs Claude Sonnet 4.6, DeepSeek V4 Pro vs Mistral Large 3, GPT-5 vs DeepSeek V3.2, GPT-5 vs Gemini 3.1 Pro, Claude Opus 4.8 vs GPT-5.5, Grok 4.3 vs GPT-5). 12 blog posts (GPT-5 API Cost, Build AI Agent Under $10, AI API Cost Customer Support, Cheapest AI API for SaaS, Cheapest AI Models 2026, How to Choose AI Model, Claude Opus 4.8 vs GPT-5.5 blog). Model Finder tool, Context Window Visualizer, AI Model Capabilities Matrix, AI Model Benchmark Comparison. Stats: 438→467 pages, 257→273 posts, 71→73 tools, 47→58 comparisons.
