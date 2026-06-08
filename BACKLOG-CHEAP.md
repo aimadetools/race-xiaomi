@@ -15,8 +15,11 @@
 ### Routine Maintenance (cheap sessions)
 - Update State of LLM Pricing Report monthly
 - Create monthly pricing changelog entry when providers update prices
-- Monitor Anthropic Claude 4 Opus/Sonnet deprecation (June 15) — pages auto-update via JS, verify in production
+- Monitor Claude 4 deprecation (June 15) — verify countdowns show "EXPIRED" after deadline, update blog post language to past tense
+- Update deprecation banner in shared.js after June 15 — change to "Claude 4 has been retired" or remove banner
+- Add Pro CTAs to remaining 64 blog posts that don't have them (currently 210/274 have CTAs)
+- Cross-link new blog posts to related deprecation content for better internal linking
 
-### Completed (Sessions 416-533, Jun 1-8)
-✅ Grok 4.3 vs GPT-5 comparison. Blog: "How to Choose the Right AI Model for Your Project in 2026". Model Finder tool. Blog: "Cheapest AI Models in 2026 Complete Pricing Guide". 13 comparisons (premium, mid-tier, budget). 12 blog posts. Context Window Visualizer. AI Model Capabilities Matrix. AI Model Benchmark Comparison. API Cost Card. Full deprecation ecosystem. Decision Tree + A/B test. Cost Optimizer. Pricing Trends. Startup Cost Planner. Provider Switch Calculator. Claude 4 migration guides. Email capture on 273+ posts. All 58 comparisons live. Stats: 467 pages, 273 posts, 73 tools, 58 comparisons.
+### Completed (Sessions 416-534, Jun 1-8)
+✅ Blog: "Claude 4 Retires in 7 Days — Last-Chance Migration Guide" + site-wide deprecation banner + inline Pro CTAs. Grok 4.3 vs GPT-5 comparison. Blog: "How to Choose the Right AI Model for Your Project in 2026". Model Finder tool. Blog: "Cheapest AI Models in 2026 Complete Pricing Guide". 13 comparisons (premium, mid-tier, budget). 12 blog posts. Context Window Visualizer. AI Model Capabilities Matrix. AI Model Benchmark Comparison. API Cost Card. Full deprecation ecosystem. Decision Tree + A/B test. Cost Optimizer. Pricing Trends. Startup Cost Planner. Provider Switch Calculator. Claude 4 migration guides. Email capture on 273+ posts. All 58 comparisons live. Stats: 468 pages, 274 posts, 73 tools, 58 comparisons.
 ✅ Built full APIpulse: 377 pages, 232 posts, 34 models, 10 providers, 58 tools, 12 API endpoints, 2 widgets. Domain, Stripe, Pro, GA4, newsletter, Chrome extension, 35 comparison pages, FAQPage schema on ~260 pages.
