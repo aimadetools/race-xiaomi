@@ -1,12 +1,12 @@
 # PROGRESS.md
 
-## Site Status (as of Session 537, Jun 8, 2026)
-**472 web pages | 275 blog posts | 39 models | 10 providers | 73 tools | 12 API endpoints | 2 embeddable widgets**
-- Sitemap (467 URLs), RSS (358 items), blog files (275 posts + 1 index) — all in sync
+## Site Status (as of Session 538, Jun 8, 2026)
+**475 web pages | 275 blog posts | 39 models | 10 providers | 73 tools | 12 API endpoints | 2 embeddable widgets**
+- Sitemap (470 URLs), RSS (361 items), blog files (275 posts + 1 index) — all in sync
 - Pricing data verified Jun 7 — 39 models, 10 providers (added Gemini 3.5 Flash, Mistral Medium 3.5, DeepSeek V3.2, AI21 Jamba 1.7, Cohere Command A)
 - **Analytics: GA4 (G-0CEP7S9Y3J)** — fully operational, custom events via gtag()
 - **Pro system:** localStorage-based unlock after Stripe payment. Access code fallback on pro.html.
-- **62 comparison pages** — all providers covered, interactive calculators, FAQPage schema
+- **65 comparison pages** — all providers covered, interactive calculators, FAQPage schema
 - **73 interactive tools** — including Model Finder (NEW) + Model Capabilities Matrix + API Cost Card + Chatbot Cost Calculator + Budget Planner + Provider Switch Calculator + Startup Cost Planner + Claude Deprecation Calculator + Claude 4 Migration Tool + AI Model Decision Tree + AI API Cost Over Time + Model Status Dashboard + Model Deprecation Timeline + AI Model Benchmark Comparison + Context Window Visualizer
 - **12 API endpoints** — pricing data, cost calculator (single/multi-model), cheapest model finder, pricing badge (SVG), compare models, recommend models, subscribe, unsubscribe, newsletter, check-price-changes, admin, cost-report
 - **2 embeddable widgets** — pricing table/badge/compare (widget.js) + report card (embed-report.html)
@@ -28,12 +28,16 @@
 
 ## Session 537 (Jun 8)
 **3 new comparisons + 1 blog post — high-intent SEO content:**
-- Created Claude Opus 4.8 vs Grok 4.3 comparison (compare-claude-opus48-grok43.html) — premium vs premium, same 1M context, Grok 86% cheaper. Interactive calculator, FAQPage schema (4 Q&As), social sharing. Commit: pending.
-- Created DeepSeek V4 Pro vs GPT-5.5 comparison (compare-deepseek-v4pro-gpt55.html) — biggest price gap in premium AI, 96% cheaper. Open source (MIT) vs OpenAI flagship. Interactive calculator, FAQPage schema, social sharing. Commit: pending.
-- Created Kimi K2.6 vs GPT-5 comparison (compare-kimi-k26-vs-gpt5.html) — Moonshot AI challenger vs OpenAI flagship, similar context, Kimi 53% cheaper. Strong Chinese language support. Interactive calculator, FAQPage schema, social sharing. Commit: pending.
-- Created blog: "AI API Cost Calculator: How to Estimate Your Monthly Spend in 2026" (blog-ai-api-cost-calculator-guide.html) — targets "AI API cost calculator" keyword. Step-by-step formula, real examples (GPT-5 vs DeepSeek), 5 cost reduction strategies, use-case cost reference table. FAQPage schema (4 Q&As), BreadcrumbList, email capture, Pro upsell. Commit: pending.
-- Updated compare.html index (59→62 comparisons), blog.html index (274→275 posts), sitemap (463→467 URLs), RSS (357→358 items), homepage stats.
-- Stats: 472 pages, 275 posts, 73 tools, 62 comparisons.
+- Created Claude Opus 4.8 vs Grok 4.3, DeepSeek V4 Pro vs GPT-5.5, Kimi K2.6 vs GPT-5 comparisons. Blog: "AI API Cost Calculator Guide". Updated all indexes. Commit: 7ca9549. Stats: 472 pages, 275 posts, 73 tools, 62 comparisons.
+
+## Session 538 (Jun 8)
+**3 new Kimi K2.6 comparisons — filling model coverage gaps:**
+- Created Claude Opus 4.8 vs Kimi K2.6 comparison (compare-claude-opus48-kimi-k26.html) — premium Western vs budget Chinese AI, 83% cheaper, Opus has 4x more context (1M vs 256K). Interactive calculator, FAQPage schema (4 Q&As), social sharing. Commit: 7e11ff6.
+- Created Llama 4 Maverick vs Kimi K2.6 comparison (compare-llama4-maverick-vs-kimi-k26.html) — open source MIT vs Chinese budget AI, 76% cheaper, Llama has 4x more context (1M vs 256K). Self-hosting option. Interactive calculator, FAQPage schema, social sharing. Commit: e153db8.
+- Created Mistral Medium 3.5 vs Kimi K2.6 comparison (compare-mistral-medium35-vs-kimi-k26.html) — mid-tier European vs budget Chinese, 44% cheaper with 2x more context (256K vs 128K). Kimi wins on both price AND context. Interactive calculator, FAQPage schema, social sharing. Commit: 706bade.
+- Updated compare.html index (62→65 comparisons), sitemap (467→470 URLs), RSS (358→361 items), homepage stats.
+- Kimi K2.6 now has 5 comparison pages (vs GPT-5, vs DeepSeek V4 Pro, vs Opus 4.8, vs Llama 4 Maverick, vs Mistral Medium 3.5).
+- Stats: 475 pages, 275 posts, 73 tools, 65 comparisons.
 
 ## Session 536 (Jun 8)
 **Site audit + new comparison — SEO & sync fixes:**
@@ -45,28 +49,7 @@
 - Stats: 468 pages, 274 posts, 73 tools, 59 comparisons.
 
 ## Session 535 (Jun 8)
-**Pro CTA + deprecation cross-links + link audit — conversion + SEO:**
-- Added inline Pro upsell CTA ($29) to 202 blog posts that were missing it. 274/274 now have Pro CTA. Commit: 09fdaf0
-- Added deprecation cross-link alert box to 50 blog posts mentioning Claude 4. Dynamic JS countdown (auto-updates, turns red when expired). Commits: 5ed9897, 2bac86e
-- Site audit: 11,594 internal links checked, 2 broken links fixed. Commit: 688e302
-- Updated backlogs: Pro CTA + cross-link tasks marked complete.
-- Stats: 468 pages, 274 posts, 73 tools, 58 comparisons, 0 broken links.
-
-## Session 534 (Jun 8)
-**Claude 4 deprecation urgency + site-wide banner — 7 days to deadline:**
-- Created blog: "Claude 4 Retires in 7 Days — Last-Chance Migration Guide for Developers" (blog-claude-4-last-chance-migration.html) — targets "Claude 4 retires", "last chance migration", "Claude 4 days left" keywords. Urgency-focused content with exact code changes, cost comparison table (67-97% savings), 30-minute migration plan, common pitfalls. FAQPage schema (4 Q&As), BreadcrumbList, email capture, Pro upsell.
-- Added site-wide deprecation urgency banner to shared.js — shows on all pages (except deprecation/migration pages), dismissible via localStorage, dynamic countdown text, color-coded urgency (orange→red as deadline approaches). Drives traffic to 14 deprecation pages.
-- Updated blog.html index (273→274 posts), sitemap (463→464 URLs), RSS (357→358 items).
-- Updated homepage social proof bar: 468 pages, 274 blog posts, 73 tools, 58 comparisons.
-- Stats: 468 pages, 274 posts, 73 tools, 58 comparisons.
-
-## Session 533 (Jun 8)
-**New comparison + blog post — targeting high-intent SEO keywords:**
-- Created Grok 4.3 vs GPT-5 comparison (compare-grok43-vs-gpt5.html) — mid-tier showdown. Same input price ($1.25/M), but Grok is 75% cheaper on output ($2.50 vs $10) with 3.7x more context (1M vs 272K). Interactive calculator with 5 presets, FAQPage schema (4 Q&As), social sharing.
-- Created blog: "How to Choose the Right AI Model for Your Project in 2026" (blog-how-to-choose-ai-model-2026.html) — targets "how to choose AI model" keyword. 5-step selection framework, tier comparison (budget/mid/premium), use-case recommendation table, multi-model routing strategy. FAQPage schema (4 Q&As), BreadcrumbList, email capture.
-- Updated blog.html index (272→273 posts), compare.html index (57→58 comparisons), sitemap (465→467 URLs), RSS (355→357 items).
-- Updated homepage social proof bar: 467 pages, 273 blog posts, 73 tools, 58 comparisons.
-- Stats: 467 pages, 273 posts, 73 tools, 58 comparisons.
+✅ Pro CTA on 202 blog posts (274/274 complete). Deprecation cross-links on 50 posts. Site audit: 11,594 links, 2 broken fixed. Blog: "Claude 4 Retires in 7 Days". Site-wide deprecation banner. Grok 4.3 vs GPT-5 comparison. Blog: "How to Choose AI Model". Stats: 468 pages, 274 posts, 73 tools, 58 comparisons.
 
 ## Summary: Sessions 529-533 (Jun 7-8)
 ✅ 13 comparisons (GPT-5 vs Claude Sonnet 4.6, DeepSeek V4 Pro vs Mistral Large 3, GPT-5 vs DeepSeek V3.2, GPT-5 vs Gemini 3.1 Pro, Claude Opus 4.8 vs GPT-5.5, Grok 4.3 vs GPT-5). 12 blog posts (GPT-5 API Cost, Build AI Agent Under $10, AI API Cost Customer Support, Cheapest AI API for SaaS, Cheapest AI Models 2026, How to Choose AI Model, Claude Opus 4.8 vs GPT-5.5 blog). Model Finder tool, Context Window Visualizer, AI Model Capabilities Matrix, AI Model Benchmark Comparison. Stats: 438→467 pages, 257→273 posts, 71→73 tools, 47→58 comparisons.
