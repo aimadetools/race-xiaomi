@@ -64,7 +64,7 @@
                 "name": "What is the difference between OpenAI and Anthropic pricing?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "OpenAI's flagship GPT-5 costs $1.25/$10 per 1M tokens, while Anthropic's Claude Sonnet 4 costs $3/$15 per 1M tokens. OpenAI is cheaper on both input (58% less) and output (33% less) tokens. However, Anthropic's Claude models offer strong performance in coding and instruction-following tasks. OpenAI has more models across budget/mid/premium tiers (9 models vs 5), giving more flexibility for cost optimization."
+                    "text": "OpenAI's flagship GPT-5 costs $1.25/$10 per 1M tokens, while Anthropic's Claude Sonnet 4.6 costs $3/$15 per 1M tokens. OpenAI is cheaper on both input (58% less) and output (33% less) tokens. However, Anthropic's Claude models offer strong performance in coding and instruction-following tasks. OpenAI has more models across budget/mid/premium tiers (9 models vs 5), giving more flexibility for cost optimization."
                 }
             },
             {
@@ -88,7 +88,7 @@
                 "name": "Which AI provider is best for coding?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "For coding tasks, the best value depends on your budget. Anthropic's Claude Sonnet 4 ($3/$15) is widely regarded as excellent for code generation and instruction following. OpenAI's GPT-5 ($1.25/$10) offers strong coding performance at a lower price. For budget-conscious teams, DeepSeek V4 Pro ($0.44/$0.87) provides surprisingly capable coding at 80% less cost. Consider a hybrid approach: use budget models for autocomplete and premium models for complex refactoring."
+                    "text": "For coding tasks, the best value depends on your budget. Anthropic's Claude Sonnet 4.6 ($3/$15) is widely regarded as excellent for code generation and instruction following. OpenAI's GPT-5 ($1.25/$10) offers strong coding performance at a lower price. For budget-conscious teams, DeepSeek V4 Pro ($0.44/$0.87) provides surprisingly capable coding at 80% less cost. Consider a hybrid approach: use budget models for autocomplete and premium models for complex refactoring."
                 }
             }
         ]
@@ -449,7 +449,7 @@
                 <h3>Code Generation</h3>
                 <p>Complex reasoning, large context for understanding codebases. Quality matters most.</p>
                 <div class="recommendation">
-                    <span style="color:var(--accent)">Best Quality:</span> Claude Sonnet 4 ($3/$15) or GPT-5 ($1.25/$10)
+                    <span style="color:var(--accent)">Best Quality:</span> Claude Sonnet 4.6 ($3/$15) or GPT-5 ($1.25/$10)
                 </div>
             </div>
             <div class="use-case-card">
@@ -500,7 +500,7 @@
         </div>
         <div class="faq-item">
             <h3>What is the difference between OpenAI and Anthropic pricing?</h3>
-            <p>OpenAI's flagship GPT-5 costs $1.25/$10 per 1M tokens, while Anthropic's Claude Sonnet 4 costs $3/$15 per 1M tokens. OpenAI is cheaper on both input (58% less) and output (33% less) tokens. However, Anthropic's Claude models offer strong performance in coding and instruction-following tasks. OpenAI has more models across budget/mid/premium tiers (9 models vs 5), giving more flexibility for cost optimization.</p>
+            <p>OpenAI's flagship GPT-5 costs $1.25/$10 per 1M tokens, while Anthropic's Claude Sonnet 4.6 costs $3/$15 per 1M tokens. OpenAI is cheaper on both input (58% less) and output (33% less) tokens. However, Anthropic's Claude models offer strong performance in coding and instruction-following tasks. OpenAI has more models across budget/mid/premium tiers (9 models vs 5), giving more flexibility for cost optimization.</p>
         </div>
         <div class="faq-item">
             <h3>Which AI provider has the largest context window?</h3>
@@ -512,7 +512,7 @@
         </div>
         <div class="faq-item">
             <h3>Which AI provider is best for coding?</h3>
-            <p>For coding tasks, the best value depends on your budget. Anthropic's Claude Sonnet 4 ($3/$15) is widely regarded as excellent for code generation and instruction following. OpenAI's GPT-5 ($1.25/$10) offers strong coding performance at a lower price. For budget-conscious teams, DeepSeek V4 Pro ($0.44/$0.87) provides surprisingly capable coding at 80% less cost. Consider a hybrid approach: use budget models for autocomplete and premium models for complex refactoring.</p>
+            <p>For coding tasks, the best value depends on your budget. Anthropic's Claude Sonnet 4.6 ($3/$15) is widely regarded as excellent for code generation and instruction following. OpenAI's GPT-5 ($1.25/$10) offers strong coding performance at a lower price. For budget-conscious teams, DeepSeek V4 Pro ($0.44/$0.87) provides surprisingly capable coding at 80% less cost. Consider a hybrid approach: use budget models for autocomplete and premium models for complex refactoring.</p>
         </div>
     </div>
 
@@ -563,7 +563,7 @@
     // Provider data
     const PROVIDER_INFO = {
         openai: { name: 'OpenAI', models: 'GPT-5.5, GPT-5, GPT-5 mini, GPT-oss, GPT-4o, GPT-4o mini', features: ['Function calling', 'Vision', 'Fine-tuning', 'Batch API', 'Assistants API'], strengths: 'Largest model selection, strongest ecosystem' },
-        anthropic: { name: 'Anthropic', models: 'Claude Opus 4.7, Claude Sonnet 4.6, Claude Haiku 4.5 (Claude 4 Opus Claude 4 Opus, Claude Sonnet 4.6, Claude Sonnet 4, Sonnet 4 retired Jun 15), Claude Haiku 4.5', features: ['Tool use', 'Vision', '200K context', 'Artifacts', 'Projects'], strengths: 'Best instruction following, coding excellence' },
+        anthropic: { name: 'Anthropic', models: 'Claude Opus 4.8, Claude Opus 4.7, Claude Sonnet 4.6.6, Claude Haiku 4.5', features: ['Tool use', 'Vision', '1M context', 'Artifacts', 'Projects'], strengths: 'Best instruction following, coding excellence' },
         google: { name: 'Google', models: 'Gemini 3.1 Pro, Gemini 2.5 Pro, Gemini 2.0 Flash, Gemini 2.0 Flash Lite', features: ['1M context', 'Vision', 'Code execution', 'Grounding', 'Multimodal'], strengths: 'Largest context window, fastest models' },
         deepseek: { name: 'DeepSeek', models: 'DeepSeek V4 Pro, DeepSeek V4 Flash, DeepSeek V3', features: ['1M context', 'Code generation', 'Reasoning', 'Open weights'], strengths: 'Cheapest API, open source models' },
         mistral: { name: 'Mistral', models: 'Mistral Large 3, Mistral Small 4', features: ['Function calling', 'Vision', '128K context', 'EU data sovereignty'], strengths: 'European provider, competitive pricing' },
