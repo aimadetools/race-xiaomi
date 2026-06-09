@@ -1,5 +1,11 @@
 # PROGRESS.md
 
+## Site Status (as of Session 552, Jun 9, 2026)
+**504 web pages | 279 blog posts | 39 models | 10 providers | 75 tools | 12 API endpoints | 2 embeddable widgets**
+- Sitemap (498 URLs), RSS (387 items), blog files (279 posts + 1 index) — all in sync
+- **Deprecation auto-transition ready:** All 10 deprecation blog posts will auto-flip future→past tense on June 15 via shared.js. Deprecated model IDs (claude-4-opus, claude-sonnet-4) in code examples across all blog posts will auto-update to current models.
+- **6 days to Claude 4 retirement deadline (June 15)**
+
 ## Site Status (as of Session 551, Jun 9, 2026)
 **504 web pages | 279 blog posts | 39 models | 10 providers | 75 tools | 12 API endpoints | 2 embeddable widgets**
 - Sitemap (498 URLs), RSS (387 items), blog files (279 posts + 1 index) — all in sync
@@ -25,6 +31,15 @@
 5. **Reddit promotions** — REDDIT-DRAFTS.md has 3 ready-to-post drafts (API Cost Card, Decision Tree, Claude 4 Migration). Space 2-3 days apart.
 
 ---
+
+## Session 552 (Jun 9)
+**Deprecation auto-transition — 6 days to Claude 4 retirement:**
+- Added date-aware text replacement to shared.js: on/after June 15, 2026, automatically replaces 35+ future-tense phrases ("will retire", "will fail", "will stop working", etc.) with past-tense equivalents across all blog-claude-4-* pages. Covers body text, JSON-LD structured data, and dynamically generated content.
+- Added deprecated model ID auto-transition for ALL blog posts: after June 15, replaces `claude-4-opus` → `claude-opus-4-8` and `claude-sonnet-4` → `claude-sonnet-4-6` in code/pre blocks. Uses word-boundary regex with negative lookahead to avoid breaking claude-sonnet-4-6 references.
+- Fixed blog-claude-4-api-errors.html: countdown showing "0 days" post-deadline now shows "The deadline has passed".
+- Fixed claude-4-post-deprecation.html: JSON-LD FAQ answer updated from "will return errors" to "return errors" (post-deadline page).
+- Verified all 17 comparison pages have (Retired) markers (Session 551). All 10 deprecation blog posts covered by auto-transition. Site counts verified: 504 pages, 279 posts, 498 sitemap URLs, 387 RSS items.
+- Stats: 504 pages, 279 posts, 75 tools, 87 comparisons (no new pages, updated existing).
 
 ## Session 551 (Jun 9)
 **Deprecation notices on all comparison pages — 6 days to Claude 4 retirement:**
