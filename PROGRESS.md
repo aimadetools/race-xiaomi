@@ -33,12 +33,13 @@
 ---
 
 ## Session 552 (Jun 9)
-**Deprecation auto-transition — 6 days to Claude 4 retirement:**
-- Added date-aware text replacement to shared.js: on/after June 15, 2026, automatically replaces 35+ future-tense phrases ("will retire", "will fail", "will stop working", etc.) with past-tense equivalents across all blog-claude-4-* pages. Covers body text, JSON-LD structured data, and dynamically generated content.
+**Deprecation auto-transition + model name cleanup — 6 days to Claude 4 retirement:**
+- Added date-aware text replacement to shared.js: on/after June 15, 2026, automatically replaces 35+ future-tense phrases ("will retire", "will fail", "will stop working", etc.) with past-tense equivalents across all blog-claude-4-* AND compare-* pages. Covers body text, JSON-LD structured data, and dynamically generated content. 16 comparison pages + 10 blog posts covered.
 - Added deprecated model ID auto-transition for ALL blog posts: after June 15, replaces `claude-4-opus` → `claude-opus-4-8` and `claude-sonnet-4` → `claude-sonnet-4-6` in code/pre blocks. Uses word-boundary regex with negative lookahead to avoid breaking claude-sonnet-4-6 references.
 - Fixed blog-claude-4-api-errors.html: countdown showing "0 days" post-deadline now shows "The deadline has passed".
-- Fixed claude-4-post-deprecation.html: JSON-LD FAQ answer updated from "will return errors" to "return errors" (post-deadline page).
-- Verified all 17 comparison pages have (Retired) markers (Session 551). All 10 deprecation blog posts covered by auto-transition. Site counts verified: 504 pages, 279 posts, 498 sitemap URLs, 387 RSS items.
+- Fixed claude-4-post-deprecation.html: JSON-LD FAQ answer updated to past tense.
+- Updated compare-ai-coding-assistants.html: replaced all "Claude Sonnet 4" → "Claude Sonnet 4.6" (11 occurrences in JSON-LD, table, body text).
+- Updated compare-providers.html: cleaned up garbled Anthropic model list, now shows "Claude Opus 4.8, Claude Opus 4.7, Claude Sonnet 4.6, Claude Haiku 4.5" with 1M context. Updated body text references.
 - Stats: 504 pages, 279 posts, 75 tools, 87 comparisons (no new pages, updated existing).
 
 ## Session 551 (Jun 9)

@@ -15,9 +15,9 @@
 ### Routine Maintenance (cheap sessions)
 - Update State of LLM Pricing Report monthly
 - Create monthly pricing changelog entry when providers update prices
-- Monitor Claude 4 deprecation (June 15) — verify countdowns show "EXPIRED" after deadline, update blog post language to past tense
-- Update deprecation banner in shared.js after June 15 — change to "Claude 4 has been retired" or remove banner
-- Update all deprecation blog posts to past tense after June 15 (blog-claude-4-*.html) — change "will retire" to "have retired", "will fail" to "have failed"
+- Monitor Claude 4 deprecation (June 15) — verify countdowns show "EXPIRED" after deadline ✅ Auto-transition prepared in Session 552
+- Update deprecation banner in shared.js after June 15 — change to "Claude 4 has been retired" or remove banner ✅ Already handled (shows for 90 days post-deadline)
+- ~~Update all deprecation blog posts to past tense after June 15 (blog-claude-4-*.html)~~ — ✅ Done Session 552. Auto-transition via shared.js: 35+ phrases flip on June 15. Also covers 16 comparison pages.
 - ~~Create post-deprecation blog post: "Claude 4 Has Been Retired — Here's What to Do Now" (capture post-deadline search traffic)~~ — ✅ Done Session 550. Pre-staged for June 15.
 - ~~Update all comparison pages that reference Claude 4 to show it as deprecated/retired~~ — ✅ Done Session 551. 17 pages updated with (Retired) markers, deprecation banners added to 15 pages.
 - ~~Add Pro CTAs to remaining 64 blog posts that don't have them~~ — ✅ Done Session 535. 274/274 blog posts have Pro CTA.
