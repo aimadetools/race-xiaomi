@@ -1,16 +1,16 @@
 # PROGRESS.md
 
 ## Site Status (as of Session 547, Jun 9, 2026)
-**499 web pages | 278 blog posts | 39 models | 10 providers | 74 tools | 12 API endpoints | 2 embeddable widgets**
-- Sitemap (494 URLs), RSS (384 items), blog files (278 posts + 1 index) — all in sync
+**500 web pages | 278 blog posts | 39 models | 10 providers | 74 tools | 12 API endpoints | 2 embeddable widgets**
+- Sitemap (495 URLs), RSS (384 items), blog files (278 posts + 1 index) — all in sync
 - Pricing data verified Jun 7 — 39 models, 10 providers (added Gemini 3.5 Flash, Mistral Medium 3.5, DeepSeek V3.2, AI21 Jamba 1.7, Cohere Command A)
 - **Analytics: GA4 (G-0CEP7S9Y3J)** — fully operational, custom events via gtag()
 - **Pro system:** localStorage-based unlock after Stripe payment. Access code fallback on pro.html.
-- **85 comparison pages** — all providers covered, interactive calculators, FAQPage schema
+- **86 comparison pages** — all providers covered, interactive calculators, FAQPage schema
 - **74 interactive tools** — including Model Finder + Model Capabilities Matrix + API Cost Card + Chatbot Cost Calculator + Budget Planner + Provider Switch Calculator + Startup Cost Planner + Claude Deprecation Calculator + Claude 4 Migration Tool + AI Model Decision Tree + AI API Cost Over Time + Model Status Dashboard + Model Deprecation Timeline + AI Model Benchmark Comparison + Context Window Visualizer + LLM Pricing Glossary
 - **12 API endpoints** — pricing data, cost calculator (single/multi-model), cheapest model finder, pricing badge (SVG), compare models, recommend models, subscribe, unsubscribe, newsletter, check-price-changes, admin, cost-report
 - **2 embeddable widgets** — pricing table/badge/compare (widget.js) + report card (embed-report.html)
-- **SEO: 463 pages with FAQPage schema** for rich snippets (278 blog posts + 100 tools + 85 comparisons)
+- **SEO: 464 pages with FAQPage schema** for rich snippets (278 blog posts + 100 tools + 86 comparisons)
 - **Email capture on all 278 blog posts** (auto-injected via shared.js) + calculator.html + 4 deprecation pages
 - **Deprecation alerts:** 197 blog posts link to deprecation landing page, 48 link to deprecation calculator. All 9 deprecation pages use dynamic JS countdowns (auto-update daily). Meta tags date-agnostic.
 - **Social proof:** PH launch badge, Reddit testimonial, newsletter, exit popup A/B test, social sharing (X/LinkedIn/Reddit) on all 278 blog posts
@@ -27,12 +27,13 @@
 ---
 
 ## Session 547 (Jun 9)
-**1 new comparison page + 1 new tool + post-deprecation banner prep:**
+**2 new comparison pages + 1 new tool + post-deprecation banner prep:**
 - Created Claude Opus 4.8 vs DeepSeek V4 Flash (compare-opus48-vs-deepseek-v4flash.html) — DeepSeek 97% cheaper input ($0.14 vs $5), 99% cheaper output ($0.28 vs $25), 5x more context (1M vs 200K). Interactive calculator (5 presets), FAQPage schema (4 Q&As), social sharing (X/LinkedIn), related comparisons. Premium vs ultra-budget story.
+- Created Claude Opus 4.8 vs Claude Sonnet 4.6 (compare-opus48-vs-sonnet46.html) — Same provider, Sonnet 40% cheaper ($3/$15 vs $5/$25), same 1M context. Interactive calculator (5 presets), FAQPage schema (4 Q&As), social sharing (X/LinkedIn). Helps users decide which Anthropic tier fits their budget.
 - Created LLM Pricing Glossary (llm-pricing-glossary.html) — 12 key pricing terms defined with real-world examples (tokens, input/output, context window, TPS, RPM, rate limits, TPM, max output, pricing tiers, cost per request, batch API). Auto-populated pricing table from pricing-data.js. FAQPage schema (4 Q&As). Targets long-tail SEO: "what are API tokens", "LLM pricing explained", "input vs output tokens".
 - Updated shared.js: Post-deprecation banner now shows "Claude 4 has been retired" for 90 days after June 15 (instead of hiding). Uses separate localStorage key for dismiss.
-- Updated all indexes: compare.html (84→85), tools.html (73→74 tools), sitemap (492→494), RSS (383→384), homepage (499 pages, 85 comparisons, 74 tools).
-- Stats: 499 pages, 278 posts, 74 tools, 85 comparisons.
+- Updated all indexes: compare.html (84→86), tools.html (73→74 tools), sitemap (492→495), RSS (383→384), homepage (500 pages, 86 comparisons, 74 tools).
+- Stats: 500 pages, 278 posts, 74 tools, 86 comparisons.
 
 ## Session 546 (Jun 9)
 **1 new comparison page — Claude 4 Sonnet vs Llama 4 Maverick (biggest cost savings story):**
