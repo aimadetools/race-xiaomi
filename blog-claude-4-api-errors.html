@@ -575,7 +575,7 @@ grep -r "claude-sonnet-4" . --include="*.js" --include="*.py" --include="*.ts" \
                 var diff = dep - now;
                 var days = diff > 0 ? Math.ceil(diff / 86400000) : 0;
                 var el = document.getElementById('preventDaysLeft');
-                if (el) el.textContent = days + ' days';
+                if (el) el.textContent = diff > 0 ? days + ' days' : 'The deadline has passed';
             })();
         </script>
 

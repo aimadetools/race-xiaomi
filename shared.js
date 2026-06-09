@@ -145,6 +145,80 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
+// Claude 4 Deprecation Blog Text Auto-Transition (flips future→past tense on June 15)
+document.addEventListener('DOMContentLoaded', () => {
+    var path = window.location.pathname;
+    if (!path.includes('blog-claude-4-')) return;
+    var deadline = new Date('2026-06-15T00:00:00Z');
+    if (new Date() < deadline) return;
+    var replacements = [
+        ['will be retired on June 15, 2026', 'were retired on June 15, 2026'],
+        ['will be retired', 'have been retired'],
+        ['will stop working on June 15, 2026', 'stopped working on June 15, 2026'],
+        ['will stop working', 'have stopped working'],
+        ['will stop accepting API calls on June 15, 2026', 'stopped accepting API calls on June 15, 2026'],
+        ['will stop accepting API calls', 'have stopped accepting API calls'],
+        ['will fail after June 15, 2026', 'are failing — June 15, 2026 has passed'],
+        ['will fail', 'now fail'],
+        ['will return HTTP 410 Gone errors', 'now return HTTP 410 Gone errors'],
+        ['will return errors', 'now return errors'],
+        ['will break immediately', 'have broken — the deadline passed'],
+        ['will break on June 15', 'broke on June 15'],
+        ['will break June 15', 'broke on June 15'],
+        ['will break', 'have broken'],
+        ['will start returning', 'are now returning'],
+        ['is retiring on June 15', 'retired on June 15'],
+        ['are retiring on June 15', 'retired on June 15'],
+        ['are being retired', 'were retired'],
+        ['retire June 15', 'retired June 15'],
+        ['retire on June 15', 'retired on June 15'],
+        ['retire on', 'retired on'],
+        ['must migrate before June 15', 'should have migrated before June 15'],
+        ['must migrate', 'should have migrated'],
+        ['You have 10 days', 'The deadline has passed'],
+        ['You have 9 days', 'The deadline has passed'],
+        ['You have 8 days', 'The deadline has passed'],
+        ['You have 7 days', 'The deadline has passed'],
+        ['You have 6 days', 'The deadline has passed'],
+        ['You have 5 days', 'The deadline has passed'],
+        ['You have 4 days', 'The deadline has passed'],
+        ['You have 3 days', 'The deadline has passed'],
+        ['You have 2 days', 'The deadline has passed'],
+        ['You have 1 day', 'The deadline has passed'],
+        ['you have days', 'The deadline has passed'],
+        ['6 days to Claude 4 retirement', 'Claude 4 has been retired since June 15'],
+        ['6 days to deprecation', 'Claude 4 was deprecated on June 15'],
+    ];
+    // Update text nodes in body (skip script/style tags)
+    var walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, {
+        acceptNode: function(n) {
+            return n.parentNode.tagName === 'SCRIPT' || n.parentNode.tagName === 'STYLE'
+                ? NodeFilter.FILTER_REJECT : NodeFilter.FILTER_ACCEPT;
+        }
+    });
+    var nodes = [];
+    while (walker.nextNode()) nodes.push(walker.currentNode);
+    nodes.forEach(function(node) {
+        var text = node.nodeValue;
+        var changed = false;
+        replacements.forEach(function(r) {
+            if (text.indexOf(r[0]) !== -1) { text = text.split(r[0]).join(r[1]); changed = true; }
+        });
+        if (changed) node.nodeValue = text;
+    });
+    // Update JSON-LD FAQ structured data
+    document.querySelectorAll('script[type="application/ld+json"]').forEach(function(s) {
+        try {
+            var text = s.textContent;
+            var changed = false;
+            replacements.forEach(function(r) {
+                if (text.indexOf(r[0]) !== -1) { text = text.split(r[0]).join(r[1]); changed = true; }
+            });
+            if (changed) s.textContent = text;
+        } catch(e) {}
+    });
+});
+
 // Back to top button
 window.addEventListener('scroll', () => {
     const btn = document.querySelector('.back-to-top');
