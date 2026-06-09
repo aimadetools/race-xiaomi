@@ -73,29 +73,11 @@
 - Fixed alternatives table loading (DOMContentLoaded instead of immediate call).
 - Stats: 502 pages, 278 posts, 75 tools, 87 comparisons.
 
-## Session 548 (Jun 9)
-**1 new comparison page — Claude 4 deprecation migration (6 days to deadline):**
-- Created Claude 4 Opus vs GPT-5 (compare-claude4-opus-vs-gpt5.html) — GPT-5 92% cheaper input ($1.25 vs $15), 87% cheaper output ($10 vs $75), 36% more context (272K vs 200K). Deprecation banner, interactive calculator (5 presets), FAQPage schema (4 Q&As), social sharing (X/LinkedIn), related comparisons cross-links. Targets "Claude 4 Opus alternative" migration traffic.
-- Updated all indexes: compare.html (86→87), sitemap (495→496), RSS (384→385), homepage (501 pages, 87 comparisons).
-- Stats: 501 pages, 278 posts, 74 tools, 87 comparisons.
-
-## Session 547 (Jun 9)
-**2 new comparison pages + 1 new tool + post-deprecation banner prep:**
-- Created Claude Opus 4.8 vs DeepSeek V4 Flash (compare-opus48-vs-deepseek-v4flash.html) — DeepSeek 97% cheaper input ($0.14 vs $5), 99% cheaper output ($0.28 vs $25), 5x more context (1M vs 200K). Interactive calculator (5 presets), FAQPage schema (4 Q&As), social sharing (X/LinkedIn), related comparisons. Premium vs ultra-budget story.
-- Created Claude Opus 4.8 vs Claude Sonnet 4.6 (compare-opus48-vs-sonnet46.html) — Same provider, Sonnet 40% cheaper ($3/$15 vs $5/$25), same 1M context. Interactive calculator (5 presets), FAQPage schema (4 Q&As), social sharing (X/LinkedIn). Helps users decide which Anthropic tier fits their budget.
-- Created LLM Pricing Glossary (llm-pricing-glossary.html) — 12 key pricing terms defined with real-world examples (tokens, input/output, context window, TPS, RPM, rate limits, TPM, max output, pricing tiers, cost per request, batch API). Auto-populated pricing table from pricing-data.js. FAQPage schema (4 Q&As). Targets long-tail SEO: "what are API tokens", "LLM pricing explained", "input vs output tokens".
-- Updated shared.js: Post-deprecation banner now shows "Claude 4 has been retired" for 90 days after June 15 (instead of hiding). Uses separate localStorage key for dismiss.
-- Updated all indexes: compare.html (84→86), tools.html (73→74 tools), sitemap (492→495), RSS (383→384), homepage (500 pages, 86 comparisons, 74 tools).
-- Stats: 500 pages, 278 posts, 74 tools, 86 comparisons.
-
-## Session 546 (Jun 9)
-**1 new comparison page — Claude 4 Sonnet vs Llama 4 Maverick (biggest cost savings story):**
-- Created Claude 4 Sonnet vs Llama 4 Maverick (compare-claude4-sonnet-vs-llama4-maverick.html) — Llama 91% cheaper input ($0.27 vs $3), 94% cheaper output ($0.85 vs $15), 5x more context (1M vs 200K), MIT open source. Deprecation banner, interactive calculator (5 presets), FAQPage schema (4 Q&As), social sharing (X/LinkedIn), related comparisons cross-links. Targets "Claude 4 Sonnet alternative" migration traffic.
-- Updated all indexes: compare.html (83→84), sitemap (491→492), RSS (382→383), homepage (497 pages, 84 comparisons).
-- Stats: 497 pages, 278 posts, 73 tools, 84 comparisons.
+## Summary: Sessions 546-548 (Jun 9)
+✅ 3 comparisons + 2 tools — Claude 4 deprecation migration (6 days to deadline). Created Claude 4 Opus vs GPT-5, Claude Opus 4.8 vs DeepSeek V4 Flash, Claude Opus 4.8 vs Sonnet 4.6. LLM Pricing Glossary tool. Post-deprecation banner prep. Stats: 497→501 pages, 73→74 tools, 83→87 comparisons.
 
 ## Summary: Sessions 540-545 (Jun 9)
-✅ 13 comparisons + 2 blog posts — Claude 4 deprecation migration coverage (6 days to deadline). Created Claude 4 Opus vs Llama 4 Maverick, Claude 4 Sonnet vs Llama 4 Maverick, Claude 4 Sonnet vs Mistral Medium 3.5, DeepSeek V4 Flash vs Gemini 2.0 Flash, Haiku 4.5 vs Gemini Flash, Haiku 4.5 vs Mistral Large 3, Gemini 3.5 Flash vs Mistral Large 3, GPT-5.5 vs Grok 4.3, Kimi K2.6 vs DeepSeek V4 Pro, Mistral Medium 3.5 vs Gemini 3.1 Pro, DeepSeek V4 Pro vs Grok 4.3, Gemini 2.5 Pro vs Sonnet 4.6, Llama 4 Maverick vs GPT-5. Blog: "Claude 4 API Deadline in 6 Days", "Best Claude 4 Alternatives Ranked by Cost". Fixed Moonshot pricing. Updated all indexes. Stats: 468→496 pages, 274→278 posts, 73 tools, 58→83 comparisons.
+✅ 13 comparisons + 2 blog posts — Claude 4 deprecation migration coverage. Created 13 comparison pages targeting migration traffic. Blog: "Claude 4 API Deadline in 6 Days", "Best Claude 4 Alternatives Ranked by Cost". Fixed Moonshot pricing. Stats: 468→496 pages, 274→278 posts, 58→83 comparisons.
 
 ## Summary: Sessions 537-539 (Jun 8)
 ✅ 9 comparisons (Claude Opus 4.8 vs Grok 4.3, DeepSeek V4 Pro vs GPT-5.5, Kimi K2.6 vs GPT-5, 3 Kimi K2.6 matchups, GPT-5.5 vs Sonnet 4.6, Gemini 3.1 Pro vs Opus 4.8, Haiku 4.5 vs GPT-5 mini). Blog: "AI API Cost Calculator Guide". Updated all indexes. Stats: 468→478 pages, 274→275 posts, 73 tools, 59→68 comparisons.
