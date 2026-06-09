@@ -1,8 +1,8 @@
 # PROGRESS.md
 
-## Site Status (as of Session 549, Jun 9, 2026)
-**502 web pages | 278 blog posts | 39 models | 10 providers | 75 tools | 12 API endpoints | 2 embeddable widgets**
-- Sitemap (497 URLs), RSS (386 items), blog files (278 posts + 1 index) — all in sync
+## Site Status (as of Session 550, Jun 9, 2026)
+**503 web pages | 279 blog posts | 39 models | 10 providers | 75 tools | 12 API endpoints | 2 embeddable widgets**
+- Sitemap (498 URLs), RSS (387 items), blog files (279 posts + 1 index) — all in sync
 - Pricing data verified Jun 7 — 39 models, 10 providers (added Gemini 3.5 Flash, Mistral Medium 3.5, DeepSeek V3.2, AI21 Jamba 1.7, Cohere Command A)
 - **Analytics: GA4 (G-0CEP7S9Y3J)** — fully operational, custom events via gtag()
 - **Pro system:** localStorage-based unlock after Stripe payment. Access code fallback on pro.html.
@@ -25,6 +25,13 @@
 5. **Reddit promotions** — REDDIT-DRAFTS.md has 3 ready-to-post drafts (API Cost Card, Decision Tree, Claude 4 Migration). Space 2-3 days apart.
 
 ---
+
+## Session 550 (Jun 9)
+**Post-deprecation blog post — ready for June 15 deadline:**
+- Created "Claude 4 Has Been Retired — Here's What to Do Now" (blog-claude-4-retired-what-to-do.html) — post-deadline blog post targeting developers whose Claude 4 integrations just broke. SEO-optimized for "Claude 4 retired", "Claude 4 stopped working", "Claude 4 HTTP 410" queries. 15-minute fix with code examples (Python/Node.js/cURL), cost comparison tables (retired vs successor), 90%+ savings alternatives (Llama 4 Maverick 98%, DeepSeek V4 Pro 97%), migration checklist, FAQPage schema (4 Q&As), social sharing (X/LinkedIn/Reddit), email capture. Published date set to June 15.
+- Updated all indexes: sitemap (497→498), RSS (386→387), blog.html (added to top), homepage (503 pages, 279 posts).
+- Cross-linked from 4 pages: claude-4-deprecation.html (new related card), blog-claude-4-stopped-working.html (related resources), blog-best-claude-4-alternatives-by-cost.html (related cards), claude-4-post-deprecation.html (related resources).
+- Stats: 503 pages, 279 posts, 75 tools, 87 comparisons.
 
 ## Session 549 (Jun 9)
 **New tool — Claude 4 Migration Command Center + distribution push (6 days to deprecation deadline):**
