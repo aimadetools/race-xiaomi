@@ -62,6 +62,8 @@ The new models have 1M context windows vs 200K, and the pricing is much better â
 
 Cheat sheet: https://getapipulse.com/claude-4-migration-cheatsheet.html
 
+I also built a Migration Command Center with a live countdown, interactive savings calculator, and copy-paste code changes: https://getapipulse.com/claude-4-migration-command-center.html
+
 There's also a full migration action plan with a day-by-day guide if you need more detail: https://getapipulse.com/blog-claude-4-deprecation-action-plan.html
 
 ---
