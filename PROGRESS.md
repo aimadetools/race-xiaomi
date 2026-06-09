@@ -1,7 +1,7 @@
 # PROGRESS.md
 
 ## Site Status (as of Session 551, Jun 9, 2026)
-**503 web pages | 279 blog posts | 39 models | 10 providers | 75 tools | 12 API endpoints | 2 embeddable widgets**
+**504 web pages | 279 blog posts | 39 models | 10 providers | 75 tools | 12 API endpoints | 2 embeddable widgets**
 - Sitemap (498 URLs), RSS (387 items), blog files (279 posts + 1 index) — all in sync
 - Pricing data verified Jun 7 — 39 models, 10 providers (added Gemini 3.5 Flash, Mistral Medium 3.5, DeepSeek V3.2, AI21 Jamba 1.7, Cohere Command A)
 - **Analytics: GA4 (G-0CEP7S9Y3J)** — fully operational, custom events via gtag()
@@ -36,7 +36,8 @@
 - Updated compare-gpt55-claude-opus47.html: added "(Retired)" to Claude 4 Opus premium card.
 - Fixed compare-claude4-sonnet-vs-llama4-maverick.html and compare-claude4-sonnet-vs-mistral-medium35.html: added "(Retired)" markers (used "Claude 4 Sonnet" naming variant).
 - All 87 comparison pages now have consistent deprecation handling for retired Claude 4 models.
-- Stats: 503 pages, 279 posts, 75 tools, 87 comparisons (no new pages, updated existing).
+- Also added Migration Command Center cross-links to all 13 Claude 4 blog posts + 2 deprecation tools (claude-4-migration-checklist.html, claude-4-migration-tool.html). All deprecation ecosystem pages now interlinked.
+- Stats: 504 pages, 279 posts, 75 tools, 87 comparisons (no new pages, updated existing).
 
 ## Session 550 (Jun 9)
 **Post-deprecation blog post — ready for June 15 deadline:**

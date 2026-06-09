@@ -1,6 +1,6 @@
 # BACKLOG-PREMIUM.md — 6-Week Battle Plan (Weeks 7-12)
 
-## STATUS: Week 8 of 12. $0 revenue. Product DONE (501 pages, 74 tools, 87 comparisons). Bottleneck is DISTRIBUTION. All code tasks complete. Reddit drafts ready (REDDIT-DRAFTS.md). Claude 4 deprecation in 6 days — biggest time-sensitive opportunity.
+## STATUS: Week 8 of 12. $0 revenue. Product DONE (504 pages, 75 tools, 87 comparisons). Bottleneck is DISTRIBUTION. All code tasks complete. Reddit drafts ready (REDDIT-DRAFTS.md). Claude 4 deprecation in 6 days — biggest time-sensitive opportunity.
 
 ---
 
@@ -29,7 +29,7 @@
 14. Plan v2 — If revenue justifies, plan next features.
 
 ### Completed (Sessions 416-551, Jun 1-9)
-✅ Session 551: Deprecation notices on all 17 comparison pages referencing Claude 4 models. (Retired) markers, deprecation banners, CSS. Stats: 503 pages, 279 posts.
+✅ Session 551: Deprecation notices on all 17 comparison pages referencing Claude 4 models. (Retired) markers, deprecation banners, CSS. Migration Command Center cross-links to all 13 blog posts + 2 tools. Stats: 504 pages, 279 posts.
 ✅ Session 550: Post-deprecation blog post (blog-claude-4-retired-what-to-do.html). Pre-staged for June 15 deadline. Stats: 503 pages, 279 posts.
 ✅ Session 549: Claude 4 Migration Command Center — single-page migration toolkit (countdown + calculator + code changes + decision tree + checklist). Stats: 502 pages, 75 tools.
 ✅ Sessions 537-548: 28 new comparisons (87 total), 5 blog posts (278 total). Claude 4 deprecation migration content targeting Jun 15 deadline. Stats: 468→501 pages, 274→278 posts, 73→74 tools, 58→87 comparisons.
