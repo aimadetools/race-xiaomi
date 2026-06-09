@@ -219,6 +219,24 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
+// Update deprecated Claude 4 model IDs in code examples across ALL blog posts (after June 15)
+document.addEventListener('DOMContentLoaded', () => {
+    var path = window.location.pathname;
+    if (!path.includes('blog-')) return;
+    if (path.includes('blog-claude-4-')) return; // already handled above
+    var deadline = new Date('2026-06-15T00:00:00Z');
+    if (new Date() < deadline) return;
+    // Replace deprecated model IDs in code blocks and inline code
+    // Use word-boundary-aware replacements to avoid breaking claude-sonnet-4-6
+    document.querySelectorAll('code, pre').forEach(function(el) {
+        var text = el.textContent;
+        var replaced = text
+            .replace(/\bclaude-4-opus\b/g, 'claude-opus-4-8')
+            .replace(/\bclaude-sonnet-4\b(?!-)/g, 'claude-sonnet-4-6');
+        if (replaced !== text) el.textContent = replaced;
+    });
+});
+
 // Back to top button
 window.addEventListener('scroll', () => {
     const btn = document.querySelector('.back-to-top');
