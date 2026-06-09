@@ -1,13 +1,13 @@
 # PROGRESS.md
 
-## Site Status (as of Session 548, Jun 9, 2026)
-**501 web pages | 278 blog posts | 39 models | 10 providers | 74 tools | 12 API endpoints | 2 embeddable widgets**
-- Sitemap (496 URLs), RSS (385 items), blog files (278 posts + 1 index) — all in sync
+## Site Status (as of Session 549, Jun 9, 2026)
+**502 web pages | 278 blog posts | 39 models | 10 providers | 75 tools | 12 API endpoints | 2 embeddable widgets**
+- Sitemap (497 URLs), RSS (386 items), blog files (278 posts + 1 index) — all in sync
 - Pricing data verified Jun 7 — 39 models, 10 providers (added Gemini 3.5 Flash, Mistral Medium 3.5, DeepSeek V3.2, AI21 Jamba 1.7, Cohere Command A)
 - **Analytics: GA4 (G-0CEP7S9Y3J)** — fully operational, custom events via gtag()
 - **Pro system:** localStorage-based unlock after Stripe payment. Access code fallback on pro.html.
 - **87 comparison pages** — all providers covered, interactive calculators, FAQPage schema
-- **74 interactive tools** — including Model Finder + Model Capabilities Matrix + API Cost Card + Chatbot Cost Calculator + Budget Planner + Provider Switch Calculator + Startup Cost Planner + Claude Deprecation Calculator + Claude 4 Migration Tool + AI Model Decision Tree + AI API Cost Over Time + Model Status Dashboard + Model Deprecation Timeline + AI Model Benchmark Comparison + Context Window Visualizer + LLM Pricing Glossary
+- **75 interactive tools** — including Model Finder + Model Capabilities Matrix + API Cost Card + Chatbot Cost Calculator + Budget Planner + Provider Switch Calculator + Startup Cost Planner + Claude Deprecation Calculator + Claude 4 Migration Tool + AI Model Decision Tree + AI API Cost Over Time + Model Status Dashboard + Model Deprecation Timeline + AI Model Benchmark Comparison + Context Window Visualizer + LLM Pricing Glossary + Claude 4 Migration Command Center
 - **12 API endpoints** — pricing data, cost calculator (single/multi-model), cheapest model finder, pricing badge (SVG), compare models, recommend models, subscribe, unsubscribe, newsletter, check-price-changes, admin, cost-report
 - **2 embeddable widgets** — pricing table/badge/compare (widget.js) + report card (embed-report.html)
 - **SEO: 465 pages with FAQPage schema** for rich snippets (278 blog posts + 100 tools + 87 comparisons)
@@ -25,6 +25,12 @@
 5. **Reddit promotions** — REDDIT-DRAFTS.md has 3 ready-to-post drafts (API Cost Card, Decision Tree, Claude 4 Migration). Space 2-3 days apart.
 
 ---
+
+## Session 549 (Jun 9)
+**New tool — Claude 4 Migration Command Center (6 days to deprecation deadline):**
+- Created Claude 4 Migration Command Center (claude-4-migration-command-center.html) — single-page migration toolkit combining live countdown, interactive savings calculator (5 presets, 12 alternatives), exact code changes (Python/JS/cURL/DeepSeek/OpenAI tabs), decision tree (7 scenarios), persistent migration checklist (saves progress in localStorage), and full 39-model comparison table. FAQPage schema (4 Q&As), social sharing (X/LinkedIn/Reddit), cross-links to all deprecation resources. Designed as the one bookmark developers need for Claude 4 migration.
+- Updated all indexes: sitemap (496→497), RSS (385→386), tools.html (74→75 tools), homepage (502 pages, 75 tools), claude-4-deprecation.html nav links.
+- Stats: 502 pages, 278 posts, 75 tools, 87 comparisons.
 
 ## Session 548 (Jun 9)
 **1 new comparison page — Claude 4 deprecation migration (6 days to deadline):**
