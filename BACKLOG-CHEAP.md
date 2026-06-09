@@ -17,6 +17,9 @@
 - Create monthly pricing changelog entry when providers update prices
 - Monitor Claude 4 deprecation (June 15) — verify countdowns show "EXPIRED" after deadline, update blog post language to past tense
 - Update deprecation banner in shared.js after June 15 — change to "Claude 4 has been retired" or remove banner
+- Update all deprecation blog posts to past tense after June 15 (blog-claude-4-*.html) — change "will retire" to "have retired", "will fail" to "have failed"
+- Create post-deprecation blog post: "Claude 4 Has Been Retired — Here's What to Do Now" (capture post-deadline search traffic)
+- Update all comparison pages that reference Claude 4 to show it as deprecated/retired
 - ~~Add Pro CTAs to remaining 64 blog posts that don't have them~~ — ✅ Done Session 535. 274/274 blog posts have Pro CTA.
 - ~~Cross-link new blog posts to related deprecation content for better internal linking~~ — ✅ Done Session 535. 50 posts with Claude 4 mentions now have deprecation alert boxes.
 
