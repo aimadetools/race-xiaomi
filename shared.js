@@ -148,7 +148,7 @@ document.addEventListener('DOMContentLoaded', () => {
 // Claude 4 Deprecation Blog Text Auto-Transition (flips future→past tense on June 15)
 document.addEventListener('DOMContentLoaded', () => {
     var path = window.location.pathname;
-    if (!path.includes('blog-claude-4-')) return;
+    if (!path.includes('blog-claude-4-') && !path.includes('compare-')) return;
     var deadline = new Date('2026-06-15T00:00:00Z');
     if (new Date() < deadline) return;
     var replacements = [
