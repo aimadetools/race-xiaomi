@@ -1,8 +1,8 @@
 # PROGRESS.md
 
 ## Site Status (as of Session 553, Jun 9, 2026)
-**506 web pages | 280 blog posts | 39 models | 10 providers | 75 tools | 12 API endpoints | 2 embeddable widgets**
-- Sitemap (500 URLs), RSS (389 items), blog files (280 posts + 1 index) — all in sync
+**508 web pages | 281 blog posts | 39 models | 10 providers | 75 tools | 12 API endpoints | 2 embeddable widgets**
+- Sitemap (502 URLs), RSS (390 items), blog files (281 posts + 1 index) — all in sync
 - **Deprecation auto-transition ready:** All 10 deprecation blog posts will auto-flip future→past tense on June 15 via shared.js. Deprecated model IDs (claude-4-opus, claude-sonnet-4) in code examples across all blog posts will auto-update to current models.
 - **6 days to Claude 4 retirement deadline (June 15)**
 
@@ -33,11 +33,12 @@
 ---
 
 ## Session 553 (Jun 9)
-**New comparison + blog post — DeepSeek V4 Pro vs Claude Opus 4.8:**
-- Created DeepSeek V4 Pro vs Claude Opus 4.8 comparison page (898 lines): interactive calculator, FAQPage schema (5 Q&As), 6 use case cards, share buttons. DeepSeek V4 Pro $0.435/$0.87 vs Claude Opus 4.8 $5/$25 — 91% cheaper on input, 97% cheaper on output.
-- Created blog post targeting "DeepSeek V4 Pro vs Claude Opus" search queries. Article + FAQPage schema, email capture, Pro CTA, social sharing, cost calculator CTA.
-- Updated compare.html, blog.html, sitemap (498→500), RSS (387→389), homepage (279→280 posts, 87→88 comparisons).
-- Stats: 506 pages, 280 posts, 75 tools, 88 comparisons.
+**2 new comparisons + 2 blog posts — DeepSeek V4 Pro vs premium models:**
+- Created DeepSeek V4 Pro vs Claude Opus 4.8 comparison page (898 lines): interactive calculator, FAQPage schema (5 Q&As), 6 use case cards. DeepSeek V4 Pro $0.435/$0.87 vs Claude Opus 4.8 $5/$25 — 91% cheaper on input, 97% cheaper on output.
+- Created DeepSeek V4 Pro vs GPT-5 comparison page (898 lines): interactive calculator, FAQPage schema (5 Q&As), 6 use case cards. DeepSeek V4 Pro $0.435/$0.87 vs GPT-5 $1.25/$10 — 65% cheaper on input, 91% cheaper on output, 3.7x more context.
+- Created 2 blog posts targeting "DeepSeek V4 Pro vs Claude Opus" and "DeepSeek V4 Pro vs GPT-5" search queries. Article + FAQPage schema, email capture, Pro CTA, social sharing.
+- Updated compare.html, blog.html, sitemap (498→502), RSS (387→390), homepage (279→281 posts, 87→89 comparisons).
+- Stats: 508 pages, 281 posts, 75 tools, 89 comparisons.
 
 ## Session 552 (Jun 9)
 **Deprecation auto-transition + model name cleanup — 6 days to Claude 4 retirement:**
