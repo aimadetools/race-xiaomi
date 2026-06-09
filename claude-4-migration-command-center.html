@@ -845,6 +845,20 @@ response = client.chat.completions.create(
             days_remaining: Math.max(0, Math.floor((deadline - new Date()) / (1000 * 60 * 60 * 24)))
         });
     }
+
+    // Sticky bottom CTA (appears after scrolling 500px)
+    (function() {
+        var sticky = document.createElement('div');
+        sticky.id = 'sticky-cta';
+        sticky.style.cssText = 'position:fixed;bottom:0;left:0;right:0;background:linear-gradient(135deg,#1e1b4b,#312e81);padding:12px 20px;display:none;align-items:center;justify-content:center;gap:16px;z-index:9999;border-top:2px solid var(--accent);';
+        sticky.innerHTML = '<span style="color:white;font-size:14px;font-weight:600;">🎯 Claude 4 retires June 15 — get optimization recommendations with Pro</span>' +
+            '<a href="https://buy.stripe.com/fZu7sL3Gw3GS0RQeoDeEo0a" target="_blank" rel="noopener" style="background:var(--accent);color:white;padding:10px 24px;border-radius:8px;text-decoration:none;font-weight:700;font-size:14px;white-space:nowrap;" onclick="if(window.trackEvent)window.trackEvent(\'pro_button_clicked\',{source:\'sticky-banner\'})">Get Pro — $29</a>' +
+            '<button onclick="document.getElementById(\'sticky-cta\').style.display=\'none\'" style="background:none;border:none;color:white;cursor:pointer;font-size:18px;padding:0 4px;opacity:0.7;" aria-label="Dismiss">✕</button>';
+        document.body.appendChild(sticky);
+        window.addEventListener('scroll', function() {
+            sticky.style.display = window.scrollY > 500 ? 'flex' : 'none';
+        });
+    })();
     </script>
 </body>
 </html>
