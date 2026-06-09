@@ -20,6 +20,6 @@
 - ~~Add Pro CTAs to remaining 64 blog posts that don't have them~~ — ✅ Done Session 535. 274/274 blog posts have Pro CTA.
 - ~~Cross-link new blog posts to related deprecation content for better internal linking~~ — ✅ Done Session 535. 50 posts with Claude 4 mentions now have deprecation alert boxes.
 
-### Completed (Sessions 416-546, Jun 1-9)
-✅ Sessions 537-546: 25 new comparisons (84 total), 5 blog posts (278 total), Moonshot pricing fix. Claude 4 deprecation migration content: 6 comparison pages + 3 blog posts targeting Jun 15 deadline. Stats: 468→497 pages, 274→278 posts, 73 tools, 58→84 comparisons.
+### Completed (Sessions 416-547, Jun 1-9)
+✅ Sessions 537-547: 26 new comparisons (85 total), 5 blog posts (278 total), LLM Pricing Glossary tool, Moonshot pricing fix, post-deprecation banner. Claude 4 deprecation migration content: 6 comparison pages + 3 blog posts targeting Jun 15 deadline. Stats: 468→499 pages, 274→278 posts, 73→74 tools, 58→85 comparisons.
 ✅ Sessions 416-536: Full APIpulse built from scratch. 377→468 pages, 232→274 posts, 34→39 models, 58→73 tools, 12 API endpoints, 2 widgets. Domain, Stripe, Pro, GA4, newsletter, Chrome extension, 35 comparison pages, FAQPage schema on ~260 pages, full deprecation ecosystem.

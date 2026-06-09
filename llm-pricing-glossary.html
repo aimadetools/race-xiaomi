@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LLM API Pricing Glossary — Every Term Explained | APIpulse</title>
+    <meta name="description" content="Complete glossary of LLM API pricing terms: tokens, input vs output pricing, context windows, TPS, RPM limits, rate limits, and cost optimization. Understand what you're paying for.">
+    <meta name="keywords" content="LLM pricing glossary, API tokens explained, input vs output tokens, context window meaning, TPS meaning, API rate limits explained, LLM cost terms, AI API pricing guide">
+    <meta property="og:title" content="LLM API Pricing Glossary — Every Term Explained">
+    <meta property="og:description" content="Complete glossary of LLM API pricing terms. Understand tokens, context windows, rate limits, and cost optimization.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://getapipulse.com/og-image.png">
+    <meta property="og:url" content="https://getapipulse.com/llm-pricing-glossary.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="LLM API Pricing Glossary — Every Term Explained">
+    <meta name="twitter:image" content="https://getapipulse.com/og-image.png">
+    <meta name="twitter:description" content="Complete glossary of LLM API pricing terms. Understand what you're paying for.">
+    <link rel="canonical" href="https://getapipulse.com/llm-pricing-glossary.html">
+    <link rel="alternate" type="application/rss+xml" title="APIpulse Blog" href="https://getapipulse.com/rss.xml">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="styles.css">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0CEP7S9Y3J"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-0CEP7S9Y3J');
+    </script>
+    <script src="analytics.js" defer></script>
+    <script src="dynamic-date.js" defer></script>
+    <script src="shared.js" defer></script>
+    <script src="pricing-data.js" defer></script>
+    <script type="application/ld+json">
+    {
+        "@context": "schema.org",
+        "@type": "Article",
+        "headline": "LLM API Pricing Glossary — Every Term Explained",
+        "description": "Complete glossary of LLM API pricing terms: tokens, input vs output pricing, context windows, TPS, RPM limits, and cost optimization.",
+        "url": "https://getapipulse.com/llm-pricing-glossary.html",
+        "publisher": { "@type": "Organization", "name": "APIpulse", "url": "https://getapipulse.com" },
+        "datePublished": "2026-06-09",
+        "dateModified": "2026-06-09"
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "What is a token in LLM API pricing?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "A token is a piece of a word that an AI model processes. Roughly, 1 token ≈ 0.75 words in English, or about 4 characters. For example, 'hello world' is 2 tokens. API providers charge per 1 million tokens — both for input (text you send) and output (text the model generates). Understanding tokens is essential for estimating your API costs."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What is the difference between input and output token pricing?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Input tokens are the text you send to the model (your prompt). Output tokens are the text the model generates (its response). Most providers charge more for output tokens — typically 3-10x more than input. For example, GPT-5 costs $1.25/M input but $10/M output. This is because generating output requires more computational resources than processing input."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What is a context window?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "A context window is the maximum number of tokens a model can process in a single API call — including both your input and the model's output. For example, a 200K context window means you can send up to ~150K tokens of input and receive up to ~50K tokens of output (depending on the model's output limit). Larger context windows allow you to process longer documents, larger codebases, and more extensive conversation histories."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What does 'per 1M tokens' mean in LLM pricing?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "LLM API pricing is typically quoted as cost per 1 million tokens. For example, '$3/M input' means $3 for every 1 million input tokens processed. To calculate your cost: (tokens used ÷ 1,000,000) × price per 1M. If you use 500K input tokens at $3/M, your cost is (500,000 ÷ 1,000,000) × $3 = $1.50."
+                }
+            }
+        ]
+    }
+    </script>
+    <style>
+        .glossary-hero{max-width:800px;margin:0 auto;padding:120px 24px 40px;text-align:center}
+        .glossary-hero h1{font-size:clamp(28px,4.5vw,44px);font-weight:800;margin-bottom:16px;line-height:1.2}
+        .glossary-hero .subtitle{font-size:18px;color:var(--text-secondary);max-width:600px;margin:0 auto 24px;line-height:1.6}
+        .glossary-hero .last-updated{font-size:13px;color:var(--text-muted)}
+        .glossary-nav{max-width:800px;margin:0 auto 48px;padding:0 24px}
+        .glossary-nav h2{font-size:18px;font-weight:700;margin-bottom:16px}
+        .glossary-nav ul{list-style:none;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:8px}
+        .glossary-nav a{display:block;padding:10px 16px;border-radius:8px;border:1px solid var(--border);background:var(--bg-card);color:var(--text-secondary);font-size:14px;font-weight:500;text-decoration:none;transition:all 0.2s}
+        .glossary-nav a:hover{border-color:var(--accent);color:var(--accent);background:var(--accent-glow)}
+        .term-section{max-width:800px;margin:0 auto 48px;padding:0 24px}
+        .term-card{background:var(--bg-secondary);border:1px solid var(--border);border-radius:16px;padding:32px;margin-bottom:24px}
+        .term-card h2{font-size:22px;font-weight:800;margin-bottom:8px;color:var(--accent)}
+        .term-card .definition{font-size:16px;color:var(--text-secondary);line-height:1.7;margin-bottom:16px}
+        .term-card .example{background:var(--bg-card);border:1px solid var(--border);border-radius:10px;padding:16px;font-size:14px;line-height:1.6}
+        .term-card .example strong{color:var(--text-primary)}
+        .term-card .see-also{margin-top:12px;font-size:13px;color:var(--text-muted)}
+        .term-card .see-also a{color:var(--accent);text-decoration:none}
+        .term-card .see-also a:hover{text-decoration:underline}
+        .pricing-table-section{max-width:800px;margin:0 auto 48px;padding:0 24px}
+        .pricing-table-section h2{font-size:24px;font-weight:800;margin-bottom:8px;text-align:center}
+        .pricing-table-section .subtitle{text-align:center;color:var(--text-secondary);margin-bottom:24px}
+        .pricing-table{width:100%;border-collapse:collapse;background:var(--bg-secondary);border-radius:12px;overflow:hidden;border:1px solid var(--border)}
+        .pricing-table th{padding:14px 16px;text-align:left;font-size:12px;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.5px;background:var(--bg-card);border-bottom:1px solid var(--border)}
+        .pricing-table td{padding:12px 16px;border-bottom:1px solid var(--border);font-size:14px}
+        .pricing-table tr:last-child td{border-bottom:none}
+        .pricing-table .model{font-weight:700}
+        .pricing-table .input{color:var(--accent)}
+        .pricing-table .output{color:var(--orange)}
+        .cta-section{max-width:700px;margin:0 auto 48px;padding:32px;background:var(--bg-card);border:1px solid var(--accent);border-radius:16px;text-align:center}
+        .cta-section h2{font-size:24px;margin-bottom:8px}
+        .cta-section p{color:var(--text-secondary);margin-bottom:20px}
+        @media(max-width:768px){.glossary-hero{padding:100px 20px 30px}.glossary-nav ul{grid-template-columns:1fr}.term-card{padding:24px}}
+    </style>
+    <meta name="theme-color" content="#6366f1">
+</head>
+<body>
+    <a href="#main" class="skip-link">Skip to content</a>
+    <nav>
+        <div class="nav-inner">
+            <a href="index.html" class="logo">API<span>pulse</span></a>
+            <button class="hamburger" onclick="toggleMobileNav()" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+            <div class="nav-links">
+                <a href="calculator.html">Calculator</a>
+                <a href="compare.html">Compare</a>
+                <a href="cost-explorer.html">Explorer</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="blog.html">Blog</a>
+                <a href="pricing.html" class="nav-cta" onclick="if(window.trackEvent)window.trackEvent('pro_button_clicked',{source:'nav'})">Get Pro — $29</a>
+                <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
+            </div>
+        </div>
+    </nav>
+
+    <main id="main">
+    <div class="glossary-hero">
+        <h1>LLM API Pricing Glossary</h1>
+        <p class="subtitle">Every term you need to understand LLM API pricing — from tokens to context windows to rate limits. Know what you're paying for.</p>
+        <p class="last-updated">Last updated: Jun 9, 2026</p>
+    </div>
+
+    <div class="glossary-nav">
+        <h2>Quick Navigation</h2>
+        <ul>
+            <li><a href="#tokens">Tokens</a></li>
+            <li><a href="#input-output">Input vs Output Pricing</a></li>
+            <li><a href="#per-1m">Per 1M Tokens</a></li>
+            <li><a href="#context-window">Context Window</a></li>
+            <li><a href="#tps">TPS (Tokens per Second)</a></li>
+            <li><a href="#rpm">RPM (Requests per Minute)</a></li>
+            <li><a href="#rate-limits">Rate Limits</a></li>
+            <li><a href="#tpm">TPM (Tokens per Minute)</a></li>
+            <li><a href="#max-tokens">Max Output Tokens</a></li>
+            <li><a href="#pricing-tiers">Pricing Tiers</a></li>
+            <li><a href="#cost-per-request">Cost per Request</a></li>
+            <li><a href="#batch-api">Batch API</a></li>
+        </ul>
+    </div>
+
+    <div class="term-section">
+        <div class="term-card" id="tokens">
+            <h2>Token</h2>
+            <p class="definition">A token is the fundamental unit of text that an AI model processes. It's a piece of a word — roughly 1 token ≈ 0.75 words in English, or about 4 characters. Common words like "the" and "and" are 1 token. Longer or uncommon words may be split into 2-3 tokens.</p>
+            <div class="example">
+                <strong>Example:</strong> "Hello, world!" = 4 tokens. "The quick brown fox jumps over the lazy dog" = 9 tokens. A 500-page book ≈ 250,000 tokens. A typical email ≈ 300-500 tokens. A code file ≈ 5,000-20,000 tokens.
+            </div>
+            <p class="see-also">See also: <a href="#per-1m">Per 1M Tokens</a>, <a href="#input-output">Input vs Output Pricing</a></p>
+        </div>
+
+        <div class="term-card" id="input-output">
+            <h2>Input vs Output Pricing</h2>
+            <p class="definition">LLM APIs charge separately for input tokens (text you send) and output tokens (text the model generates). Output tokens almost always cost more — typically 3-10x more than input — because generating text requires more computation than processing it.</p>
+            <div class="example">
+                <strong>Example:</strong> GPT-5 costs $1.25/M input but $10/M output (8x more). Claude Opus 4.8 costs $5/M input but $25/M output (5x more). DeepSeek V4 Flash costs $0.14/M input but $0.28/M output (2x more). The ratio varies by provider.
+            </div>
+            <p class="see-also">See also: <a href="#tokens">Tokens</a>, <a href="#cost-per-request">Cost per Request</a></p>
+        </div>
+
+        <div class="term-card" id="per-1m">
+            <h2>Per 1M Tokens (per Million Tokens)</h2>
+            <p class="definition">The standard pricing unit for LLM APIs. Prices are quoted as cost per 1 million tokens. To calculate your cost: (tokens used ÷ 1,000,000) × price per 1M. This makes it easy to compare models — just look at the price per 1M tokens.</p>
+            <div class="example">
+                <strong>Example:</strong> If a model costs $3/M input and you use 500K input tokens, your cost is (500,000 ÷ 1,000,000) × $3 = $1.50. If you use 2M input tokens at $3/M, your cost is $6.00.
+            </div>
+            <p class="see-also">See also: <a href="#tokens">Tokens</a>, <a href="#cost-per-request">Cost per Request</a></p>
+        </div>
+
+        <div class="term-card" id="context-window">
+            <h2>Context Window</h2>
+            <p class="definition">The maximum number of tokens a model can process in a single API call — including both your input (prompt) and the model's output (response). A 200K context window means you can send up to ~200K tokens total. Larger context windows let you process longer documents, bigger codebases, and more conversation history without splitting content.</p>
+            <div class="example">
+                <strong>Example:</strong> Claude Opus 4.8 has a 200K context window (~150K words). DeepSeek V4 Flash has a 1M context window (~750K words). A 1M context can hold an entire novel, a large codebase, or hours of conversation history in a single API call.
+            </div>
+            <p class="see-also">See also: <a href="#max-tokens">Max Output Tokens</a>, <a href="#tokens">Tokens</a></p>
+        </div>
+
+        <div class="term-card" id="tps">
+            <h2>TPS (Tokens per Second)</h2>
+            <p class="definition">The speed at which a model generates output tokens. Higher TPS means faster responses. TPS is affected by the model's size, the provider's infrastructure, and the current load. Some providers offer "turbo" or "fast" modes that increase TPS at a higher price.</p>
+            <div class="example">
+                <strong>Example:</strong> A model generating 100 TPS will produce a 500-token response in about 5 seconds. A model at 50 TPS takes about 10 seconds for the same response. Speed matters for real-time applications like chatbots and code assistants.
+            </div>
+            <p class="see-also">See also: <a href="#rpm">RPM</a>, <a href="#rate-limits">Rate Limits</a></p>
+        </div>
+
+        <div class="term-card" id="rpm">
+            <h2>RPM (Requests per Minute)</h2>
+            <p class="definition">The maximum number of API calls you can make per minute. This is a rate limit imposed by the provider to prevent abuse and ensure fair usage. If you exceed RPM, you'll get a 429 (Too Many Requests) error. Higher-tier accounts or paid plans typically have higher RPM limits.</p>
+            <div class="example">
+                <strong>Example:</strong> If your RPM limit is 500, you can make up to 500 API calls per minute. For a chatbot handling 100 users with 1 request each per minute, you'd need RPM ≥ 100. For batch processing, you might need RPM ≥ 1000.
+            </div>
+            <p class="see-also">See also: <a href="#tpm">TPM</a>, <a href="#rate-limits">Rate Limits</a></p>
+        </div>
+
+        <div class="term-card" id="rate-limits">
+            <h2>Rate Limits</h2>
+            <p class="definition">Restrictions imposed by API providers on how many requests or tokens you can use within a given time period. Rate limits protect the provider's infrastructure and ensure fair usage across all customers. Common rate limit types include RPM (requests per minute), TPM (tokens per minute), and concurrent requests.</p>
+            <div class="example">
+                <strong>Example:</strong> OpenAI's GPT-5 has rate limits of 10,000 RPM and 2M TPM for Tier 5 accounts. Anthropic's Claude has limits based on your spending tier. If you hit a rate limit, you'll receive a 429 error and should implement exponential backoff in your code.
+            </div>
+            <p class="see-also">See also: <a href="#rpm">RPM</a>, <a href="#tpm">TPM</a></p>
+        </div>
+
+        <div class="term-card" id="tpm">
+            <h2>TPM (Tokens per Minute)</h2>
+            <p class="definition">The maximum number of tokens you can process per minute across all your API calls. This includes both input and output tokens. TPM is often the more relevant limit for high-throughput applications because it accounts for the actual computational load.</p>
+            <div class="example">
+                <strong>Example:</strong> If your TPM limit is 2,000,000, you can process up to 2M tokens per minute. If each request uses 1,000 tokens, you can make 2,000 requests per minute. If each request uses 10,000 tokens, you can make 200 requests per minute.
+            </div>
+            <p class="see-also">See also: <a href="#rpm">RPM</a>, <a href="#rate-limits">Rate Limits</a></p>
+        </div>
+
+        <div class="term-card" id="max-tokens">
+            <h2>Max Output Tokens</h2>
+            <p class="definition">The maximum number of tokens a model can generate in a single response. This is separate from the context window — it's the output portion. If your max output is 8,192 tokens, the model can generate up to ~6,000 words in one response. Longer responses require multiple API calls or streaming.</p>
+            <div class="example">
+                <strong>Example:</strong> GPT-5 has max output of 16,384 tokens (~12,000 words). Claude Opus 4.8 has max output of 32,768 tokens (~24,000 words). For a 500-word response, you need max output ≥ ~670 tokens.
+            </div>
+            <p class="see-also">See also: <a href="#context-window">Context Window</a>, <a href="#max-tokens">Max Output Tokens</a></p>
+        </div>
+
+        <div class="term-card" id="pricing-tiers">
+            <h2>Pricing Tiers</h2>
+            <p class="definition">Most providers offer different pricing tiers based on your usage volume or account type. Higher tiers typically offer lower per-token prices, higher rate limits, and access to premium features. Some providers also have free tiers with limited usage for testing and development.</p>
+            <div class="example">
+                <strong>Example:</strong> OpenAI has Free, Tier 1-5 tiers with increasing rate limits and decreasing prices. Anthropic has Usage Tiers 1-4 based on cumulative spending. Google Cloud has on-demand, committed use, and provisioned pricing tiers.
+            </div>
+            <p class="see-also">See also: <a href="#rate-limits">Rate Limits</a>, <a href="#batch-api">Batch API</a></p>
+        </div>
+
+        <div class="term-card" id="cost-per-request">
+            <h2>Cost per Request</h2>
+            <p class="definition">The total cost of a single API call, calculated as: (input tokens × input price) + (output tokens × output price). This is the most practical metric for estimating your monthly costs — multiply cost per request by your expected number of requests.</p>
+            <div class="example">
+                <strong>Example:</strong> A request with 1,000 input tokens and 500 output tokens on GPT-5 ($1.25/M input, $10/M output) costs: (1,000 × $1.25/1M) + (500 × $10/1M) = $0.00125 + $0.005 = $0.00625 per request. At 10,000 requests/day, that's $62.50/day or $1,875/month.
+            </div>
+            <p class="see-also">See also: <a href="#per-1m">Per 1M Tokens</a>, <a href="#input-output">Input vs Output Pricing</a></p>
+        </div>
+
+        <div class="term-card" id="batch-api">
+            <h2>Batch API</h2>
+            <p class="definition">A discounted API tier for processing large volumes of requests asynchronously. Batch APIs typically offer 50% lower prices but process requests in the background (within hours, not seconds). Ideal for non-time-sensitive workloads like data processing, content generation, and analytics.</p>
+            <div class="example">
+                <strong>Example:</strong> OpenAI's Batch API processes requests within 24 hours at 50% off standard pricing. If you need to process 10M tokens of content generation overnight, the Batch API saves 50% compared to real-time API calls. Not suitable for chatbots or real-time applications.
+            </div>
+            <p class="see-also">See also: <a href="#pricing-tiers">Pricing Tiers</a>, <a href="#rate-limits">Rate Limits</a></p>
+        </div>
+    </div>
+
+    <div class="pricing-table-section">
+        <h2>Current Pricing at a Glance</h2>
+        <p class="subtitle">Compare input and output pricing across popular models (per 1M tokens)</p>
+        <table class="pricing-table" id="pricing-table">
+            <thead><tr><th>Model</th><th>Provider</th><th class="input">Input</th><th class="output">Output</th><th>Context</th></tr></thead>
+            <tbody id="pricing-tbody"></tbody>
+        </table>
+    </div>
+
+    <div class="cta-section">
+        <h2>Calculate Your Exact Costs</h2>
+        <p>Use our free calculator to estimate your monthly API spend across all 39 models from 10 providers.</p>
+        <a href="calculator.html" class="btn-primary" onclick="if(window.trackEvent)window.trackEvent('cta_clicked',{source:'glossary_page'})">Open Cost Calculator →</a>
+    </div>
+
+    <button class="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">↑</button>
+    </main>
+
+    <footer>
+        <p>Pricing data last verified: <span class="verified-date"></span></p>
+        <p>&copy; 2026 APIpulse. <a href="index.html">Home</a> &middot; <a href="compare.html">Compare</a> &middot; <a href="calculator.html">Calculator</a> &middot; <a href="blog.html">Blog</a> &middot; <a href="pricing.html">Pricing</a> &middot; <a href="about.html">About</a></p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Populate pricing table from pricing-data.js
+            if (typeof API_MODELS !== 'undefined') {
+                var tbody = document.getElementById('pricing-tbody');
+                // Show a curated selection of popular models
+                var popular = ['openai-gpt55', 'openai-gpt5', 'openai-gpt5-mini', 'anthropic-opus48', 'anthropic-sonnet46', 'anthropic-haiku', 'google-gemini35-flash', 'google-flash', 'deepseek-v4-pro', 'deepseek-v4-flash', 'mistral-large', 'llama-4-maverick', 'llama-4-scout', 'xai-grok3'];
+                popular.forEach(id => {
+                    var m = API_MODELS.find(x => x.id === id);
+                    if (!m) return;
+                    var tr = document.createElement('tr');
+                    tr.innerHTML = '<td class="model">' + m.name + '</td><td>' + m.provider + '</td><td class="input">$' + m.input.toFixed(2) + '</td><td class="output">$' + m.output.toFixed(2) + '</td><td>' + m.context + '</td>';
+                    tbody.appendChild(tr);
+                });
+            }
+        });
+    </script>
+</body>
+</html>
