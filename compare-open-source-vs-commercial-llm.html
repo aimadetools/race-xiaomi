@@ -259,6 +259,8 @@
             .results-grid { grid-template-columns: 1fr; }
             .related-tools { grid-template-columns: 1fr; }
         }
+            .deprecation-banner{max-width:900px;margin:0 auto 32px;padding:16px 24px;background:rgba(239,68,68,0.1);border:1px solid rgba(239,68,68,0.3);border-radius:var(--radius);text-align:center}
+        .deprecation-banner strong{color:#ef4444}
     </style>
     <meta name="theme-color" content="#6366f1">
 </head>
@@ -287,6 +289,10 @@
         <h1>Open Source vs Commercial LLM <span class="vs">Cost</span> Comparison</h1>
         <p class="subtitle">Self-hosted Llama 4, Mistral, DeepSeek vs OpenAI, Anthropic, Google APIs — GPU costs, break-even analysis, and which saves you more at every scale.</p>
         <p class="last-updated">Pricing data verified: May 2026</p>
+    </div>
+
+    <div class="deprecation-banner">
+        <strong>⚠️ Note:</strong> Claude 4 Opus and Claude Sonnet 4 are being retired on June 15, 2026. Prices shown for reference only — <a href="claude-4-deprecation.html" style="color:#ef4444;font-weight:600;">see migration alternatives →</a>
     </div>
 
     <!-- Quick Comparison Table -->
@@ -336,7 +342,7 @@
                     <td>N/A — cheapest at low volume</td>
                 </tr>
                 <tr>
-                    <td class="model-name">Claude Sonnet 4</td>
+                    <td class="model-name">Claude Sonnet 4 <span style="color:#ef4444;font-size:12px;font-weight:600;">(Retired)</span></td>
                     <td class="pricier">Commercial</td>
                     <td>$3/$15</td>
                     <td>N/A</td>
@@ -394,7 +400,7 @@
                     <select id="api-model" onchange="calculate()">
                         <option value="gpt4o-mini">GPT-4o-mini ($0.15/$0.60)</option>
                         <option value="gpt4o">GPT-4o ($2.50/$10)</option>
-                        <option value="claude-sonnet4">Claude Sonnet 4 ($3/$15)</option>
+                        <option value="claude-sonnet4">Claude Sonnet 4 (Retired — $3/$15)</option>
                         <option value="deepseek-api">DeepSeek V4 API ($0.44/$0.87)</option>
                         <option value="gemini-pro">Gemini 2.5 Pro ($1.25/$10)</option>
                     </select>

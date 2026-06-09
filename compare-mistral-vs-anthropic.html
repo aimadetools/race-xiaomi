@@ -316,6 +316,8 @@
             font-size: 14px; font-weight: 600; text-decoration: none; transition: all 0.2s;
         }
         .share-btn:hover { border-color: var(--accent); transform: translateY(-1px); }
+            .deprecation-banner{max-width:900px;margin:0 auto 32px;padding:16px 24px;background:rgba(239,68,68,0.1);border:1px solid rgba(239,68,68,0.3);border-radius:var(--radius);text-align:center}
+        .deprecation-banner strong{color:#ef4444}
     </style>
     <meta name="theme-color" content="#6366f1">
 </head>
@@ -344,6 +346,10 @@
         <h1>Mistral <span class="vs">vs</span> Anthropic Claude — AI API Pricing</h1>
         <p class="subtitle">Compare all Mistral and Anthropic Claude models side by side. Mistral offers 7-10x cheaper pricing with EU data sovereignty. Anthropic leads on reasoning quality.</p>
         <p class="last-updated">Pricing data verified: Jun 3, 2026</p>
+    </div>
+
+    <div class="deprecation-banner">
+        <strong>⚠️ Note:</strong> Claude 4 Opus and Claude Sonnet 4 are being retired on June 15, 2026. Prices shown for reference only — <a href="claude-4-deprecation.html" style="color:#ef4444;font-weight:600;">see migration alternatives →</a>
     </div>
 
     <!-- Summary Cards -->
@@ -406,7 +412,7 @@
                     <td>200K</td>
                 </tr>
                 <tr>
-                    <td class="model-name">Claude Sonnet 4</td>
+                    <td class="model-name">Claude Sonnet 4 <span style="color:#ef4444;font-size:12px;font-weight:600;">(Retired)</span></td>
                     <td><span class="provider-badge badge-anthropic">Anthropic</span></td>
                     <td><span class="tier-badge tier-mid">Mid</span></td>
                     <td class="pricier">$3.00</td>
@@ -430,7 +436,7 @@
                     <td>1M</td>
                 </tr>
                 <tr>
-                    <td class="model-name">Claude 4 Opus</td>
+                    <td class="model-name">Claude 4 Opus <span style="color:#ef4444;font-size:12px;font-weight:600;">(Retired)</span></td>
                     <td><span class="provider-badge badge-anthropic">Anthropic</span></td>
                     <td><span class="tier-badge tier-premium">Premium</span></td>
                     <td class="pricier">$15.00</td>
@@ -467,10 +473,10 @@
                 <label>Anthropic Model</label>
                 <select id="anthropicModel">
                     <option value="haiku" selected>Claude Haiku 4.5 ($1.00/$5.00)</option>
-                    <option value="sonnet">Claude Sonnet 4 ($3.00/$15.00)</option>
+                    <option value="sonnet">Claude Sonnet 4 (Retired — $3.00/$15.00)</option>
                     <option value="sonnet46">Claude Sonnet 4.6 ($3.00/$15.00)</option>
                     <option value="opus47">Claude Opus 4.7 ($5.00/$25.00)</option>
-                    <option value="opus">Claude 4 Opus ($15.00/$75.00)</option>
+                    <option value="opus">Claude 4 Opus (Retired — $15.00/$75.00)</option>
                 </select>
             </div>
         </div>
@@ -613,7 +619,7 @@
         </div>
         <div class="faq-item">
             <h3>Mistral Large 3 vs Claude Sonnet 4: which is better?</h3>
-            <p>Claude Sonnet 4 ($3.00/$15.00) offers significantly better reasoning and code generation than Mistral Large 3 ($0.50/$1.50), but costs 6x more. Sonnet 4 also has 200K context vs Mistral's 128K. Choose Mistral Large 3 for budget-conscious workloads. Choose Sonnet 4 when accuracy and reasoning quality are critical.</p>
+            <p>Claude Sonnet 4 (Retired — $3.00/$15.00) offers significantly better reasoning and code generation than Mistral Large 3 ($0.50/$1.50), but costs 6x more. Sonnet 4 also has 200K context vs Mistral's 128K. Choose Mistral Large 3 for budget-conscious workloads. Choose Sonnet 4 when accuracy and reasoning quality are critical.</p>
         </div>
     </div>
 

@@ -314,6 +314,8 @@
             font-size: 14px; font-weight: 600; text-decoration: none; transition: all 0.2s;
         }
         .share-btn:hover { border-color: var(--accent); transform: translateY(-1px); }
+            .deprecation-banner{max-width:900px;margin:0 auto 32px;padding:16px 24px;background:rgba(239,68,68,0.1);border:1px solid rgba(239,68,68,0.3);border-radius:var(--radius);text-align:center}
+        .deprecation-banner strong{color:#ef4444}
     </style>
     <meta name="theme-color" content="#6366f1">
 </head>
@@ -342,6 +344,10 @@
         <h1>Anthropic <span class="vs">vs</span> DeepSeek — Premium vs Budget AI API</h1>
         <p class="subtitle">DeepSeek is 7-11x cheaper than Anthropic across all tiers. Compare every Claude and DeepSeek model with our interactive calculator.</p>
         <p class="last-updated">Pricing data verified: Jun 3, 2026</p>
+    </div>
+
+    <div class="deprecation-banner">
+        <strong>⚠️ Note:</strong> Claude 4 Opus and Claude Sonnet 4 are being retired on June 15, 2026. Prices shown for reference only — <a href="claude-4-deprecation.html" style="color:#ef4444;font-weight:600;">see migration alternatives →</a>
     </div>
 
     <!-- Summary Cards -->
@@ -404,7 +410,7 @@
                     <td>200K</td>
                 </tr>
                 <tr>
-                    <td class="model-name">Claude Sonnet 4</td>
+                    <td class="model-name">Claude Sonnet 4 <span style="color:#ef4444;font-size:12px;font-weight:600;">(Retired)</span></td>
                     <td><span class="provider-badge badge-anthropic">Anthropic</span></td>
                     <td><span class="tier-badge tier-mid">Mid</span></td>
                     <td>$3.00</td>
@@ -428,7 +434,7 @@
                     <td>1M</td>
                 </tr>
                 <tr>
-                    <td class="model-name">Claude 4 Opus</td>
+                    <td class="model-name">Claude 4 Opus <span style="color:#ef4444;font-size:12px;font-weight:600;">(Retired)</span></td>
                     <td><span class="provider-badge badge-anthropic">Anthropic</span></td>
                     <td><span class="tier-badge tier-premium">Premium</span></td>
                     <td>$15.00</td>
@@ -457,10 +463,10 @@
                 <label>Anthropic Model</label>
                 <select id="anthropicModel">
                     <option value="claude-haiku" selected>Claude Haiku 4.5 ($1/$5)</option>
-                    <option value="claude-sonnet">Claude Sonnet 4 ($3/$15)</option>
+                    <option value="claude-sonnet">Claude Sonnet 4 (Retired — $3/$15)</option>
                     <option value="claude-sonnet46">Claude Sonnet 4.6 ($3/$15)</option>
                     <option value="claude-opus47">Claude Opus 4.7 ($5/$25)</option>
-                    <option value="claude-opus">Claude 4 Opus ($15/$75)</option>
+                    <option value="claude-opus">Claude 4 Opus (Retired — $15/$75)</option>
                 </select>
             </div>
             <div class="vs-divider">vs</div>

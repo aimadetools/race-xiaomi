@@ -320,6 +320,8 @@
             .provider-selector { flex-direction: column; }
             .vs-badge { width: 40px; height: 40px; font-size: 16px; }
         }
+            .deprecation-banner{max-width:900px;margin:0 auto 32px;padding:16px 24px;background:rgba(239,68,68,0.1);border:1px solid rgba(239,68,68,0.3);border-radius:var(--radius);text-align:center}
+        .deprecation-banner strong{color:#ef4444}
     </style>
     <meta name="theme-color" content="#6366f1">
 </head>
@@ -561,7 +563,7 @@
     // Provider data
     const PROVIDER_INFO = {
         openai: { name: 'OpenAI', models: 'GPT-5.5, GPT-5, GPT-5 mini, GPT-oss, GPT-4o, GPT-4o mini', features: ['Function calling', 'Vision', 'Fine-tuning', 'Batch API', 'Assistants API'], strengths: 'Largest model selection, strongest ecosystem' },
-        anthropic: { name: 'Anthropic', models: 'Claude Opus 4.7, Claude 4 Opus, Claude Sonnet 4.6, Claude Sonnet 4, Claude Haiku 4.5', features: ['Tool use', 'Vision', '200K context', 'Artifacts', 'Projects'], strengths: 'Best instruction following, coding excellence' },
+        anthropic: { name: 'Anthropic', models: 'Claude Opus 4.7, Claude Sonnet 4.6, Claude Haiku 4.5 (Claude 4 Opus Claude 4 Opus, Claude Sonnet 4.6, Claude Sonnet 4, Sonnet 4 retired Jun 15), Claude Haiku 4.5', features: ['Tool use', 'Vision', '200K context', 'Artifacts', 'Projects'], strengths: 'Best instruction following, coding excellence' },
         google: { name: 'Google', models: 'Gemini 3.1 Pro, Gemini 2.5 Pro, Gemini 2.0 Flash, Gemini 2.0 Flash Lite', features: ['1M context', 'Vision', 'Code execution', 'Grounding', 'Multimodal'], strengths: 'Largest context window, fastest models' },
         deepseek: { name: 'DeepSeek', models: 'DeepSeek V4 Pro, DeepSeek V4 Flash, DeepSeek V3', features: ['1M context', 'Code generation', 'Reasoning', 'Open weights'], strengths: 'Cheapest API, open source models' },
         mistral: { name: 'Mistral', models: 'Mistral Large 3, Mistral Small 4', features: ['Function calling', 'Vision', '128K context', 'EU data sovereignty'], strengths: 'European provider, competitive pricing' },

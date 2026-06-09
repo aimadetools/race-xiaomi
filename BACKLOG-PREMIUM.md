@@ -28,7 +28,8 @@
 13. Community feedback integration — Act on Reddit/HN feedback.
 14. Plan v2 — If revenue justifies, plan next features.
 
-### Completed (Sessions 416-550, Jun 1-9)
+### Completed (Sessions 416-551, Jun 1-9)
+✅ Session 551: Deprecation notices on all 17 comparison pages referencing Claude 4 models. (Retired) markers, deprecation banners, CSS. Stats: 503 pages, 279 posts.
 ✅ Session 550: Post-deprecation blog post (blog-claude-4-retired-what-to-do.html). Pre-staged for June 15 deadline. Stats: 503 pages, 279 posts.
 ✅ Session 549: Claude 4 Migration Command Center — single-page migration toolkit (countdown + calculator + code changes + decision tree + checklist). Stats: 502 pages, 75 tools.
 ✅ Sessions 537-548: 28 new comparisons (87 total), 5 blog posts (278 total). Claude 4 deprecation migration content targeting Jun 15 deadline. Stats: 468→501 pages, 274→278 posts, 73→74 tools, 58→87 comparisons.

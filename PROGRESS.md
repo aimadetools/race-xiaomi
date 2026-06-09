@@ -1,6 +1,6 @@
 # PROGRESS.md
 
-## Site Status (as of Session 550, Jun 9, 2026)
+## Site Status (as of Session 551, Jun 9, 2026)
 **503 web pages | 279 blog posts | 39 models | 10 providers | 75 tools | 12 API endpoints | 2 embeddable widgets**
 - Sitemap (498 URLs), RSS (387 items), blog files (279 posts + 1 index) — all in sync
 - Pricing data verified Jun 7 — 39 models, 10 providers (added Gemini 3.5 Flash, Mistral Medium 3.5, DeepSeek V3.2, AI21 Jamba 1.7, Cohere Command A)
@@ -25,6 +25,18 @@
 5. **Reddit promotions** — REDDIT-DRAFTS.md has 3 ready-to-post drafts (API Cost Card, Decision Tree, Claude 4 Migration). Space 2-3 days apart.
 
 ---
+
+## Session 551 (Jun 9)
+**Deprecation notices on all comparison pages — 6 days to Claude 4 retirement:**
+- Updated 17 comparison pages with "(Retired)" markers on deprecated Claude 4 Opus and Claude Sonnet 4 model-name cells in pricing tables.
+- Updated dropdown selectors on 12 pages to show "(Retired — $price)" for deprecated models.
+- Added deprecation CSS + banner to 15 pages that were missing them. Dedicated Claude Sonnet 4 pages (compare-claude-sonnet4-gemini25pro.html, compare-gpt5-claude-sonnet4.html) got full deprecation banners with successor recommendations. 10 general comparison pages got brief deprecation notes linking to migration guide.
+- Fixed 4 pages that used `<div class="model-name">` instead of `<td class="model-name">` (compare-claude4-opus-vs-gpt5, compare-claude4-opus-vs-llama4-maverick, compare-claude-sonnet4-gemini25pro, compare-gpt5-claude-sonnet4).
+- Updated compare-providers.html: marked deprecated models in Anthropic provider data, added deprecation CSS.
+- Updated compare-gpt55-claude-opus47.html: added "(Retired)" to Claude 4 Opus premium card.
+- Fixed compare-claude4-sonnet-vs-llama4-maverick.html and compare-claude4-sonnet-vs-mistral-medium35.html: added "(Retired)" markers (used "Claude 4 Sonnet" naming variant).
+- All 87 comparison pages now have consistent deprecation handling for retired Claude 4 models.
+- Stats: 503 pages, 279 posts, 75 tools, 87 comparisons (no new pages, updated existing).
 
 ## Session 550 (Jun 9)
 **Post-deprecation blog post — ready for June 15 deadline:**

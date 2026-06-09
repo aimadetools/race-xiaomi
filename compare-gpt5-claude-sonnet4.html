@@ -236,6 +236,8 @@
             .quick-table { font-size: 13px; }
             .quick-table td, .quick-table th { padding: 10px 12px; }
         }
+            .deprecation-banner{max-width:900px;margin:0 auto 32px;padding:16px 24px;background:rgba(239,68,68,0.1);border:1px solid rgba(239,68,68,0.3);border-radius:var(--radius);text-align:center}
+        .deprecation-banner strong{color:#ef4444}
     </style>
     <meta name="theme-color" content="#6366f1">
 </head>
@@ -263,6 +265,10 @@
         <h1>GPT-5 <span class="vs">vs</span> Claude Sonnet 4</h1>
         <p class="subtitle">Side-by-side pricing comparison with interactive cost calculator. Find out which model is cheaper for your exact usage pattern.</p>
         <p class="last-updated">Pricing data verified: Jun 3, 2026</p>
+    </div>
+
+    <div class="deprecation-banner">
+        <strong>⚠️ Claude Sonnet 4 is being retired on June 15, 2026.</strong> API calls will fail after this date. Consider GPT-5 (58% cheaper) or Claude Sonnet 4.6 (same price, 5x more context, direct successor).
     </div>
 
     <!-- Quick Comparison Table -->
@@ -362,7 +368,7 @@
             </div>
             <div class="result-card" id="card-claude">
                 <div class="provider">Anthropic</div>
-                <div class="model-name">Claude Sonnet 4</div>
+                <div class="model-name">Claude Sonnet 4 <span style="color:#ef4444;font-size:12px;font-weight:600;">(Retired)</span></div>
                 <div id="winner-badge-claude" class="winner-badge" style="display:none;">Cheaper Choice</div>
                 <div class="price-big" id="total-claude">$0.00</div>
                 <div class="price-label">per month</div>
