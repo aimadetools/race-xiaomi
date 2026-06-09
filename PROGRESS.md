@@ -1,16 +1,16 @@
 # PROGRESS.md
 
-## Site Status (as of Session 545, Jun 9, 2026)
-**496 web pages | 278 blog posts | 39 models | 10 providers | 73 tools | 12 API endpoints | 2 embeddable widgets**
-- Sitemap (491 URLs), RSS (382 items), blog files (278 posts + 1 index) — all in sync
+## Site Status (as of Session 546, Jun 9, 2026)
+**497 web pages | 278 blog posts | 39 models | 10 providers | 73 tools | 12 API endpoints | 2 embeddable widgets**
+- Sitemap (492 URLs), RSS (383 items), blog files (278 posts + 1 index) — all in sync
 - Pricing data verified Jun 7 — 39 models, 10 providers (added Gemini 3.5 Flash, Mistral Medium 3.5, DeepSeek V3.2, AI21 Jamba 1.7, Cohere Command A)
 - **Analytics: GA4 (G-0CEP7S9Y3J)** — fully operational, custom events via gtag()
 - **Pro system:** localStorage-based unlock after Stripe payment. Access code fallback on pro.html.
-- **83 comparison pages** — all providers covered, interactive calculators, FAQPage schema
+- **84 comparison pages** — all providers covered, interactive calculators, FAQPage schema
 - **73 interactive tools** — including Model Finder + Model Capabilities Matrix + API Cost Card + Chatbot Cost Calculator + Budget Planner + Provider Switch Calculator + Startup Cost Planner + Claude Deprecation Calculator + Claude 4 Migration Tool + AI Model Decision Tree + AI API Cost Over Time + Model Status Dashboard + Model Deprecation Timeline + AI Model Benchmark Comparison + Context Window Visualizer
 - **12 API endpoints** — pricing data, cost calculator (single/multi-model), cheapest model finder, pricing badge (SVG), compare models, recommend models, subscribe, unsubscribe, newsletter, check-price-changes, admin, cost-report
 - **2 embeddable widgets** — pricing table/badge/compare (widget.js) + report card (embed-report.html)
-- **SEO: 461 pages with FAQPage schema** for rich snippets (278 blog posts + 100 tools + 83 comparisons)
+- **SEO: 462 pages with FAQPage schema** for rich snippets (278 blog posts + 100 tools + 84 comparisons)
 - **Email capture on all 278 blog posts** (auto-injected via shared.js) + calculator.html + 4 deprecation pages
 - **Deprecation alerts:** 197 blog posts link to deprecation landing page, 48 link to deprecation calculator. All 9 deprecation pages use dynamic JS countdowns (auto-update daily). Meta tags date-agnostic.
 - **Social proof:** PH launch badge, Reddit testimonial, newsletter, exit popup A/B test, social sharing (X/LinkedIn/Reddit) on all 278 blog posts
@@ -25,6 +25,12 @@
 5. **Reddit promotions** — REDDIT-DRAFTS.md has 3 ready-to-post drafts (API Cost Card, Decision Tree, Claude 4 Migration). Space 2-3 days apart.
 
 ---
+
+## Session 546 (Jun 9)
+**1 new comparison page — Claude 4 Sonnet vs Llama 4 Maverick (biggest cost savings story):**
+- Created Claude 4 Sonnet vs Llama 4 Maverick (compare-claude4-sonnet-vs-llama4-maverick.html) — Llama 91% cheaper input ($0.27 vs $3), 94% cheaper output ($0.85 vs $15), 5x more context (1M vs 200K), MIT open source. Deprecation banner, interactive calculator (5 presets), FAQPage schema (4 Q&As), social sharing (X/LinkedIn), related comparisons cross-links. Targets "Claude 4 Sonnet alternative" migration traffic.
+- Updated all indexes: compare.html (83→84), sitemap (491→492), RSS (382→383), homepage (497 pages, 84 comparisons).
+- Stats: 497 pages, 278 posts, 73 tools, 84 comparisons.
 
 ## Session 543 (Jun 9)
 **1 new comparison page — budget model showdown for Claude 4 migrants:**
@@ -82,7 +88,7 @@
 ✅ Site audit: 11,594 links, 2 broken fixed. Pro CTA on 274/274 blog posts. Deprecation cross-links on 50 posts. Blog: "Claude 4 Retires in 7 Days". Site-wide deprecation banner. Grok 4.3 vs GPT-5 comparison. Gemini 3.5 Flash vs GPT-5 comparison. RSS sync fix, sitemap dedup. Stats: 468 pages, 274 posts, 73 tools, 59 comparisons.
 
 ## Summary: Sessions 495-534 (Jun 5-8)
-✅ 23 comparisons, 14 blog posts, Model Finder, Context Window Visualizer, AI Model Capabilities Matrix, AI Model Benchmark Comparison, API Cost Card, full deprecation ecosystem, Decision Tree, Cost Optimizer, Pricing Trends, Startup Cost Planner, Provider Switch Calculator, email capture on 273+ posts. Stats: 416→467 pages, 249→273 posts, 67→73 tools, 38→58 comparisons.
+✅ 23 comparisons, 14 blog posts, Model Finder, Context Window Visualizer, Capabilities Matrix, Benchmark Comparison, API Cost Card, full deprecation ecosystem, Decision Tree, Cost Optimizer, Pricing Trends, Startup Cost Planner, Provider Switch Calculator, email capture on 273+ posts. 416→467 pages, 249→273 posts, 67→73 tools, 38→58 comparisons.
 
 ## Summary: Sessions 1-494 (Apr 5 - Jun 5)
 494 sessions: Built full APIpulse from scratch. 416 pages, 249 posts, 39 models, 10 providers, 67 tools, 12 API endpoints, 2 widgets. Domain, Stripe, Pro, GA4, newsletter, Chrome extension, 38 comparison pages, FAQPage schema on ~260 pages, streaming toggle, State of LLM Pricing Report, Claude 4 deprecation ecosystem.
