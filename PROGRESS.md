@@ -1,17 +1,17 @@
 # PROGRESS.md
 
-## Site Status (as of Session 544, Jun 9, 2026)
-**493 web pages | 277 blog posts | 39 models | 10 providers | 73 tools | 12 API endpoints | 2 embeddable widgets**
-- Sitemap (488 URLs), RSS (379 items), blog files (277 posts + 1 index) — all in sync
+## Site Status (as of Session 545, Jun 9, 2026)
+**496 web pages | 278 blog posts | 39 models | 10 providers | 73 tools | 12 API endpoints | 2 embeddable widgets**
+- Sitemap (491 URLs), RSS (382 items), blog files (278 posts + 1 index) — all in sync
 - Pricing data verified Jun 7 — 39 models, 10 providers (added Gemini 3.5 Flash, Mistral Medium 3.5, DeepSeek V3.2, AI21 Jamba 1.7, Cohere Command A)
 - **Analytics: GA4 (G-0CEP7S9Y3J)** — fully operational, custom events via gtag()
 - **Pro system:** localStorage-based unlock after Stripe payment. Access code fallback on pro.html.
-- **81 comparison pages** — all providers covered, interactive calculators, FAQPage schema
+- **83 comparison pages** — all providers covered, interactive calculators, FAQPage schema
 - **73 interactive tools** — including Model Finder + Model Capabilities Matrix + API Cost Card + Chatbot Cost Calculator + Budget Planner + Provider Switch Calculator + Startup Cost Planner + Claude Deprecation Calculator + Claude 4 Migration Tool + AI Model Decision Tree + AI API Cost Over Time + Model Status Dashboard + Model Deprecation Timeline + AI Model Benchmark Comparison + Context Window Visualizer
 - **12 API endpoints** — pricing data, cost calculator (single/multi-model), cheapest model finder, pricing badge (SVG), compare models, recommend models, subscribe, unsubscribe, newsletter, check-price-changes, admin, cost-report
 - **2 embeddable widgets** — pricing table/badge/compare (widget.js) + report card (embed-report.html)
-- **SEO: 458 pages with FAQPage schema** for rich snippets (277 blog posts + 100 tools + 81 comparisons)
-- **Email capture on all 277 blog posts** (auto-injected via shared.js) + calculator.html + 4 deprecation pages
+- **SEO: 461 pages with FAQPage schema** for rich snippets (278 blog posts + 100 tools + 83 comparisons)
+- **Email capture on all 278 blog posts** (auto-injected via shared.js) + calculator.html + 4 deprecation pages
 - **Deprecation alerts:** 197 blog posts link to deprecation landing page, 48 link to deprecation calculator. All 9 deprecation pages use dynamic JS countdowns (auto-update daily). Meta tags date-agnostic.
 - **Social proof:** PH launch badge, Reddit testimonial, newsletter, exit popup A/B test, social sharing (X/LinkedIn/Reddit) on all 277 blog posts
 - **Chrome Extension:** Landing page live, pricing data synced (Jun 2), 39 models, manual install
@@ -31,6 +31,14 @@
 - Created DeepSeek V4 Flash vs Gemini 2.0 Flash (compare-deepseek-v4flash-vs-gemini-flash.html) — Gemini 29% cheaper input ($0.10 vs $0.14), DeepSeek 30% cheaper output ($0.28 vs $0.40), both 1M context. Targets Claude 4 migration traffic with "best cheap alternatives" angle. Interactive calculator, FAQPage schema (5 Q&As), social sharing (X/LinkedIn/Reddit), use case recommendations.
 - Updated all indexes: compare.html (77→78), sitemap (483→484), RSS (374→375), homepage (489 pages, 78 comparisons).
 - Commit: ac59ff2. Stats: 489 pages, 276 posts, 73 tools, 78 comparisons.
+
+## Session 545 (Jun 9)
+**2 new comparison pages + 1 blog post — Claude 4 deprecation migration traffic (6 days to deadline):**
+- Created Claude 4 Opus vs Llama 4 Maverick (compare-claude4-opus-vs-llama4-maverick.html) — Llama 98% cheaper ($0.27/$0.85 vs $15/$75), 5x more context (1M vs 200K), MIT open source. Deprecation banner, interactive calculator, FAQPage schema (4 Q&As), social sharing. Targets "Claude 4 Opus alternative" migration traffic.
+- Created Claude 4 Sonnet vs Mistral Medium 3.5 (compare-claude4-sonnet-vs-mistral-medium35.html) — Mistral 50% cheaper ($1.50/$7.50 vs $3/$15), EU data sovereignty (GDPR). Deprecation banner, interactive calculator, FAQPage schema (4 Q&As), social sharing. Targets "Claude 4 Sonnet alternative" migration traffic.
+- Created blog "Claude 4 API Deadline in 6 Days — Last Weekend Migration Plan" (blog-claude-4-deadline-6-days.html) — Actionable 30-minute migration guide with code examples (Python/Node.js/curl), step-by-step instructions, cost comparison, migration checklist. FAQPage schema (4 Q&As), email capture, social sharing.
+- Updated all indexes: compare.html (81→83), blog.html (277→278), sitemap (488→491), RSS (379→382), homepage (496 pages, 83 comparisons, 278 posts).
+- Stats: 496 pages, 278 posts, 73 tools, 83 comparisons.
 
 ## Session 544 (Jun 9)
 **3 new comparison pages + 1 blog post — Claude 4 migration coverage + timely content:**
