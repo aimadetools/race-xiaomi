@@ -1,12 +1,12 @@
 # PROGRESS.md
 
-## Site Status (as of Session 542, Jun 9, 2026)
-**488 web pages | 276 blog posts | 39 models | 10 providers | 74 tools | 12 API endpoints | 2 embeddable widgets**
-- Sitemap (483 URLs), RSS (374 items), blog files (276 posts + 1 index) — all in sync
+## Site Status (as of Session 543, Jun 9, 2026)
+**489 web pages | 276 blog posts | 39 models | 10 providers | 73 tools | 12 API endpoints | 2 embeddable widgets**
+- Sitemap (484 URLs), RSS (375 items), blog files (276 posts + 1 index) — all in sync
 - Pricing data verified Jun 7 — 39 models, 10 providers (added Gemini 3.5 Flash, Mistral Medium 3.5, DeepSeek V3.2, AI21 Jamba 1.7, Cohere Command A)
 - **Analytics: GA4 (G-0CEP7S9Y3J)** — fully operational, custom events via gtag()
 - **Pro system:** localStorage-based unlock after Stripe payment. Access code fallback on pro.html.
-- **77 comparison pages** — all providers covered, interactive calculators, FAQPage schema
+- **78 comparison pages** — all providers covered, interactive calculators, FAQPage schema
 - **73 interactive tools** — including Model Finder + Model Capabilities Matrix + API Cost Card + Chatbot Cost Calculator + Budget Planner + Provider Switch Calculator + Startup Cost Planner + Claude Deprecation Calculator + Claude 4 Migration Tool + AI Model Decision Tree + AI API Cost Over Time + Model Status Dashboard + Model Deprecation Timeline + AI Model Benchmark Comparison + Context Window Visualizer
 - **12 API endpoints** — pricing data, cost calculator (single/multi-model), cheapest model finder, pricing badge (SVG), compare models, recommend models, subscribe, unsubscribe, newsletter, check-price-changes, admin, cost-report
 - **2 embeddable widgets** — pricing table/badge/compare (widget.js) + report card (embed-report.html)
@@ -25,6 +25,12 @@
 5. **Reddit promotions** — REDDIT-DRAFTS.md has 3 ready-to-post drafts (API Cost Card, Decision Tree, Claude 4 Migration). Space 2-3 days apart.
 
 ---
+
+## Session 543 (Jun 9)
+**1 new comparison page — budget model showdown for Claude 4 migrants:**
+- Created DeepSeek V4 Flash vs Gemini 2.0 Flash (compare-deepseek-v4flash-vs-gemini-flash.html) — Gemini 29% cheaper input ($0.10 vs $0.14), DeepSeek 30% cheaper output ($0.28 vs $0.40), both 1M context. Targets Claude 4 migration traffic with "best cheap alternatives" angle. Interactive calculator, FAQPage schema (5 Q&As), social sharing (X/LinkedIn/Reddit), use case recommendations.
+- Updated all indexes: compare.html (77→78), sitemap (483→484), RSS (374→375), homepage (489 pages, 78 comparisons).
+- Commit: ac59ff2. Stats: 489 pages, 276 posts, 73 tools, 78 comparisons.
 
 ## Session 542 (Jun 9)
 **3 new comparison pages — filling coverage gaps across premium/budget/mid-tier:**
