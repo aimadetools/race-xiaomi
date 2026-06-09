@@ -798,7 +798,7 @@ response = client.chat.completions.create(
     // === ALTERNATIVES TABLE ===
     function buildAltTable() {
         if (typeof API_MODELS === 'undefined') {
-            setTimeout(buildAltTable, 100);
+            setTimeout(buildAltTable, 500);
             return;
         }
         var claude4Input = 15, claude4Output = 75;
@@ -822,7 +822,7 @@ response = client.chat.completions.create(
         });
         tbody.innerHTML = rows;
     }
-    buildAltTable();
+    document.addEventListener('DOMContentLoaded', buildAltTable);
 
     // === CHECKLIST PERSISTENCE ===
     document.querySelectorAll('#migration-checklist input[type="checkbox"]').forEach(function(cb) {
