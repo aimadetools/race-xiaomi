@@ -20,7 +20,7 @@
 - Update State of LLM Pricing Report monthly
 - Create monthly pricing changelog entry when providers update prices
 
-### Completed (Sessions 416-573, Jun 1-10)
-✅ Sessions 569-573: Claude 4 deprecation ecosystem (10 pages), A/B pricing test, Pro CTAs on all pages, exit popups, urgency banners, pricing bug fix, countdown timers on all deprecation pages, model-switch CTA fix. 581 pages, 575 in sitemap.
+### Completed (Sessions 416-574, Jun 1-10)
+✅ Sessions 569-574: Claude 4 deprecation ecosystem (10 pages), A/B pricing test, Pro CTAs on all pages, exit popups, urgency banners, pricing bug fix, countdown timers, model-switch CTA fix, API endpoint recovery (5 endpoints fixed). 581 pages, 575 in sitemap.
 ✅ Sessions 561-568: 36 comparison pages, Cost Per Task Calculator, A/B test setup. Stats: 502→581 pages, 89→147 comparisons, 75→76 tools.
 ✅ Sessions 416-560: Full APIpulse built from scratch. 377→502 pages, 232→291 posts, 39 models, 10 providers, 75 tools.
