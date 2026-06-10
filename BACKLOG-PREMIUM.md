@@ -1,6 +1,6 @@
 # BACKLOG-PREMIUM.md — 6-Week Battle Plan (Weeks 7-12)
 
-## STATUS: Week 8 of 12. $0 revenue. Product DONE (529 pages, 75 tools, 106 comparisons). Bottleneck is DISTRIBUTION. All code tasks complete. Reddit drafts ready (REDDIT-DRAFTS.md). Claude 4 deprecation in 5 days — biggest time-sensitive opportunity.
+## STATUS: Week 8 of 12. $0 revenue. Product DONE (531 pages, 75 tools, 108 comparisons). Bottleneck is DISTRIBUTION. All code tasks complete. Reddit drafts ready (REDDIT-DRAFTS.md). Claude 4 deprecation in 5 days — biggest time-sensitive opportunity.
 
 ---
 
@@ -28,9 +28,9 @@
 13. Community feedback integration — Act on Reddit/HN feedback.
 14. Plan v2 — If revenue justifies, plan next features.
 
-### Completed (Sessions 416-557, Jun 1-10)
-✅ Sessions 554-557: 17 comparisons + 9 blog posts. Budget model coverage, Claude 4 deprecation FAQ, premium vs budget matchups, models under $1/M guide. Stats: 508→529 pages, 281→290 posts, 89→106 comparisons.
-✅ Sessions 416-553: Full APIpulse built from scratch. 377→508 pages, 232→281 posts, 34→39 models, 58→75 tools, 12 API endpoints, 2 widgets. Domain, Stripe, Pro, GA4, newsletter, Chrome extension, 89 comparison pages, FAQPage schema, full deprecation ecosystem, all tools built.
+### Completed (Sessions 416-558, Jun 1-10)
+✅ Sessions 554-558: 19 comparisons + 9 blog posts. Budget model coverage, Claude 4 deprecation FAQ, premium vs budget matchups, coding comparisons. Stats: 502→531 pages, 281→290 posts, 89→108 comparisons.
+✅ Sessions 416-553: Full APIpulse built from scratch. 377→502 pages, 232→281 posts, 34→39 models, 58→75 tools, 12 API endpoints, 2 widgets. Domain, Stripe, Pro, GA4, newsletter, Chrome extension, 89 comparison pages, FAQPage schema, full deprecation ecosystem, all tools built.
 
 ### Completed (Sessions 1-415, Apr 5 - Jun 1)
 ✅ Built full APIpulse: 377 pages, 232 posts, 34 models, 10 providers, 58 tools, 12 API endpoints, 2 widgets. Domain, Stripe, Pro, GA4, newsletter, Chrome extension, 35 comparison pages, FAQPage schema on ~260 pages.
