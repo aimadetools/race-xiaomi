@@ -1,10 +1,21 @@
 # PROGRESS.md
 
-## Site Status (as of Session 570, Jun 10, 2026)
-**572 web pages | 291 blog posts | 39 models | 10 providers | 76 tools | 12 API endpoints | 2 embeddable widgets**
-- Sitemap (572 URLs), RSS (454 items), blog files (291 posts + 1 index) — all in sync
+## Site Status (as of Session 571, Jun 10, 2026)
+**581 web pages | 291 blog posts | 39 models | 10 providers | 76 tools | 12 API endpoints | 2 embeddable widgets**
+- Sitemap (577 URLs), RSS (457 items), blog files (291 posts + 1 index) — all in sync
 - **A/B pricing test LIVE:** $19 vs $29 vs $39 — all Stripe CTAs site-wide auto-update via shared.js
 - **5 days to Claude 4 retirement deadline (June 15)**
+
+## Session 571 (Jun 10)
+**Claude 4 deprecation conversion pages + Pro CTA coverage improvements:**
+- Created claude-4-status.html — real-time Claude 4 API status page with live countdown, auto-updates to "Retired" on June 15. Captures "claude 4 status", "claude 4 down", "claude 4 api status" search traffic.
+- Created claude-4-error.html — emergency error landing page with Python/Node/cURL code fixes, replacement options, cost comparison table. Captures "claude 4 error 410", "claude api not working", "claude model not found" searches.
+- Created claude-4-alternatives-by-use-case.html — use-case matching guide (coding, chatbots, RAG, content, translation, data analysis) with pricing tables and migration tips. Captures "best claude 4 replacement for X" long-tail searches.
+- Added Pro CTAs to 5 high-traffic pages missing them: model-switch.html, cost-scenarios.html, about.html, use-cases.html, context-window-visualizer.html
+- Cross-linked new pages from claude-4-deprecation.html, claude-4-last-chance.html, claude-4-migration-command-center.html
+- Updated sitemap.xml (577 URLs) and rss.xml (457 items) with all new pages
+- Launched background agents to audit broken links and JS errors across the site
+- 3 commits: status page, error page, use-case page
 
 ## Session 570 (Jun 10)
 **Critical conversion bug fix — pricing page exit popup + deprecation urgency banner were broken:**

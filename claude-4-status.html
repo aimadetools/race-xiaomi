@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Claude 4 API Status — Is Claude 4 Down? Real-Time Status | APIpulse</title>
+    <meta name="description" content="Check if Claude 4 Opus and Sonnet 4 APIs are still working. Real-time status, error codes, and migration guide. Claude 4 retires June 15, 2026.">
+    <meta name="keywords" content="claude 4 down, claude api not working, claude 4 error, claude 4 status, claude 4 api down, claude opus not working, claude sonnet down, claude 410 gone, claude api retired">
+    <meta property="og:title" content="Claude 4 API Status — Is Claude 4 Down?">
+    <meta property="og:description" content="Real-time Claude 4 API status. Check if Claude 4 Opus and Sonnet are working, see error codes, and find migration alternatives.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://getapipulse.com/og-image.png">
+    <meta property="og:url" content="https://getapipulse.com/claude-4-status.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Claude 4 API Status — Is Claude 4 Down?">
+    <meta name="twitter:image" content="https://getapipulse.com/og-image.png">
+    <meta name="twitter:description" content="Real-time Claude 4 API status and migration guide.">
+    <link rel="canonical" href="https://getapipulse.com/claude-4-status.html">
+    <link rel="alternate" type="application/rss+xml" title="APIpulse Blog" href="https://getapipulse.com/rss.xml">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="styles.css">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0CEP7S9Y3J"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-0CEP7S9Y3J');
+    </script>
+    <script src="analytics.js" defer></script>
+    <script src="dynamic-date.js" defer></script>
+    <script src="shared.js" defer></script>
+    <script src="pricing-data.js" defer></script>
+    <script type="application/ld+json">
+    {
+        "@context": "schema.org",
+        "@type": "WebApplication",
+        "name": "APIpulse Claude 4 Status",
+        "url": "https://getapipulse.com/claude-4-status.html",
+        "description": "Real-time Claude 4 API status checker with migration guide and alternatives.",
+        "applicationCategory": "DeveloperApplication",
+        "operatingSystem": "Web"
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "Is Claude 4 API still working?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Claude 4 Opus and Sonnet 4 were retired by Anthropic on June 15, 2026. API calls to these models now return HTTP 410 Gone errors. You must migrate to Claude Opus 4.8 or Claude Sonnet 4.6."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Why is Claude 4 returning 410 errors?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Claude 4 Opus and Sonnet 4 were deprecated on June 15, 2026. Anthropic returns HTTP 410 Gone to indicate these model versions are permanently retired. Migrate to Claude Opus 4.8 ($5/$25) or Claude Sonnet 4.6 ($3/$15) — same API format, just change the model name."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What replaced Claude 4?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Claude Opus 4.8 ($5/$25 per 1M tokens) replaced Claude 4 Opus — 67% cheaper with 5x the context window. Claude Sonnet 4.6 ($3/$15) replaced Claude Sonnet 4. Cross-provider alternatives include GPT-5 ($1.25/$10), Gemini 3.1 Pro ($2/$12), and DeepSeek V4 Pro ($0.435/$0.87)."
+                }
+            }
+        ]
+    }
+    </script>
+    <style>
+        .status-page { max-width: 800px; margin: 0 auto; padding: 120px 24px 80px; }
+        h1 { font-size: 36px; font-weight: 800; text-align: center; margin-bottom: 8px; }
+        .subtitle { text-align: center; color: var(--text-secondary); font-size: 16px; margin-bottom: 40px; }
+
+        /* Status card */
+        .status-card {
+            background: var(--bg-secondary); border: 2px solid var(--border);
+            border-radius: 16px; padding: 40px; text-align: center; margin-bottom: 32px;
+            position: relative; overflow: hidden;
+        }
+        .status-card.deprecated { border-color: #dc2626; }
+        .status-card.active { border-color: #16a34a; }
+        .status-indicator {
+            width: 80px; height: 80px; border-radius: 50%; margin: 0 auto 20px;
+            display: flex; align-items: center; justify-content: center; font-size: 36px;
+        }
+        .status-indicator.deprecated {
+            background: rgba(220, 38, 38, 0.15); border: 3px solid #dc2626;
+            animation: pulse-red 2s ease-in-out infinite;
+        }
+        .status-indicator.active {
+            background: rgba(22, 163, 74, 0.15); border: 3px solid #16a34a;
+            animation: pulse-green 2s ease-in-out infinite;
+        }
+        @keyframes pulse-red {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(220, 38, 38, 0.3); }
+            50% { box-shadow: 0 0 0 12px rgba(220, 38, 38, 0); }
+        }
+        @keyframes pulse-green {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(22, 163, 74, 0.3); }
+            50% { box-shadow: 0 0 0 12px rgba(22, 163, 74, 0); }
+        }
+        .status-text { font-size: 24px; font-weight: 800; margin-bottom: 8px; }
+        .status-detail { color: var(--text-secondary); font-size: 15px; line-height: 1.6; max-width: 500px; margin: 0 auto; }
+        .status-badge {
+            display: inline-block; padding: 4px 12px; border-radius: 100px;
+            font-size: 12px; font-weight: 700; text-transform: uppercase; margin-bottom: 16px;
+        }
+        .status-badge.deprecated { background: rgba(220,38,38,0.15); color: #dc2626; }
+        .status-badge.active { background: rgba(22,163,74,0.15); color: #16a34a; }
+
+        /* Countdown */
+        .countdown-card {
+            background: linear-gradient(135deg, rgba(220,38,38,0.08), rgba(245,158,11,0.08));
+            border: 1px solid rgba(220,38,38,0.2); border-radius: 12px;
+            padding: 24px; text-align: center; margin-bottom: 32px;
+        }
+        .countdown-card h2 { font-size: 18px; margin-bottom: 12px; }
+        .countdown-timer { display: flex; justify-content: center; gap: 16px; margin-bottom: 12px; }
+        .countdown-unit { text-align: center; }
+        .countdown-number { font-size: 36px; font-weight: 800; color: var(--red); display: block; }
+        .countdown-label { font-size: 11px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; }
+
+        /* Error codes */
+        .error-section { margin-bottom: 32px; }
+        .error-section h2 { font-size: 22px; font-weight: 700; margin-bottom: 16px; }
+        .error-card {
+            background: var(--bg-secondary); border: 1px solid var(--border);
+            border-radius: 12px; padding: 20px; margin-bottom: 12px;
+        }
+        .error-code {
+            font-family: monospace; font-size: 14px; background: var(--bg-card);
+            border: 1px solid var(--border); border-radius: 6px; padding: 12px 16px;
+            margin: 12px 0; color: var(--red); overflow-x: auto;
+        }
+        .error-card h3 { font-size: 16px; font-weight: 700; margin-bottom: 4px; }
+        .error-card p { font-size: 14px; color: var(--text-secondary); margin: 0; }
+
+        /* Alternatives */
+        .alternatives { margin-bottom: 32px; }
+        .alternatives h2 { font-size: 22px; font-weight: 700; margin-bottom: 16px; text-align: center; }
+        .alt-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+        .alt-card {
+            background: var(--bg-secondary); border: 1px solid var(--border);
+            border-radius: 12px; padding: 20px; transition: all 0.2s;
+        }
+        .alt-card:hover { border-color: var(--accent); transform: translateY(-2px); }
+        .alt-card.recommended { border-color: var(--green); box-shadow: 0 0 20px rgba(34,197,94,0.1); }
+        .alt-card h3 { font-size: 16px; font-weight: 700; margin-bottom: 4px; }
+        .alt-card .provider { font-size: 12px; color: var(--text-muted); margin-bottom: 8px; }
+        .alt-card .price { font-size: 20px; font-weight: 800; color: var(--accent); margin-bottom: 4px; }
+        .alt-card .savings { font-size: 12px; color: var(--green); font-weight: 600; }
+        .alt-card .context { font-size: 12px; color: var(--text-muted); margin-top: 8px; }
+        .alt-card .badge {
+            display: inline-block; padding: 2px 8px; border-radius: 4px;
+            font-size: 10px; font-weight: 700; text-transform: uppercase; margin-bottom: 8px;
+        }
+        .alt-card .badge-drop { background: rgba(34,197,94,0.15); color: var(--green); }
+        .alt-card .badge-cheapest { background: rgba(245,158,11,0.15); color: #d97706; }
+
+        /* Migration steps */
+        .migration { margin-bottom: 32px; }
+        .migration h2 { font-size: 22px; font-weight: 700; margin-bottom: 16px; text-align: center; }
+        .step {
+            background: var(--bg-secondary); border: 1px solid var(--border);
+            border-radius: 12px; padding: 20px; margin-bottom: 12px;
+            display: flex; gap: 16px; align-items: flex-start;
+        }
+        .step-num {
+            width: 36px; height: 36px; border-radius: 50%; background: var(--accent);
+            color: white; display: flex; align-items: center; justify-content: center;
+            font-size: 14px; font-weight: 700; flex-shrink: 0;
+        }
+        .step-content h3 { font-size: 15px; font-weight: 700; margin-bottom: 4px; }
+        .step-content p { font-size: 14px; color: var(--text-secondary); margin: 0; line-height: 1.5; }
+        .code-snippet {
+            font-family: monospace; font-size: 13px; background: var(--bg-card);
+            border: 1px solid var(--border); border-radius: 6px; padding: 12px 16px;
+            margin-top: 8px; color: var(--green); overflow-x: auto;
+        }
+        .code-old { color: var(--red); text-decoration: line-through; }
+        .code-new { color: var(--green); font-weight: 700; }
+
+        /* CTA */
+        .cta-section {
+            background: linear-gradient(135deg, rgba(99,102,241,0.1), rgba(139,92,246,0.1));
+            border: 1px solid var(--accent); border-radius: 16px;
+            padding: 32px; text-align: center; margin-bottom: 32px;
+        }
+        .cta-section h2 { font-size: 22px; font-weight: 700; margin-bottom: 8px; }
+        .cta-section p { color: var(--text-secondary); font-size: 15px; margin-bottom: 20px; max-width: 500px; margin-left: auto; margin-right: auto; }
+
+        /* Related links */
+        .related { margin-bottom: 32px; }
+        .related h2 { font-size: 18px; font-weight: 700; margin-bottom: 12px; }
+        .related-links { display: flex; flex-wrap: wrap; gap: 8px; }
+        .related-links a {
+            background: var(--bg-secondary); border: 1px solid var(--border);
+            border-radius: 8px; padding: 8px 16px; font-size: 13px;
+            color: var(--text-secondary); text-decoration: none; transition: all 0.2s;
+        }
+        .related-links a:hover { border-color: var(--accent); color: var(--accent); }
+
+        @media (max-width: 768px) {
+            .status-page { padding: 100px 16px 60px; }
+            h1 { font-size: 28px; }
+            .status-card { padding: 24px; }
+            .alt-grid { grid-template-columns: 1fr; }
+            .countdown-number { font-size: 28px; }
+        }
+    </style>
+    <meta name="theme-color" content="#6366f1">
+</head>
+<body>
+    <a href="#main" class="skip-link">Skip to content</a>
+    <nav>
+        <div class="nav-inner">
+            <a href="index.html" class="logo">API<span>pulse</span></a>
+            <button class="hamburger" onclick="toggleMobileNav()" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+            <div class="nav-links">
+                <a href="calculator.html">Calculator</a>
+                <a href="compare.html">Compare</a>
+                <a href="cost-explorer.html">Explorer</a>
+                <a href="cost-optimizer.html">Optimizer</a>
+                <a href="claude-4-migration-tool.html">Migration</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="about.html">About</a>
+                <a href="blog.html">Blog</a>
+                <a href="api-docs.html" style="color:var(--accent);">API</a>
+                <a href="pricing.html" class="nav-cta" onclick="if(window.trackEvent)window.trackEvent('pro_button_clicked',{source:'nav'})">Get Pro — $29</a>
+                <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
+            </div>
+        </div>
+    </nav>
+
+    <main id="main">
+        <div class="status-page">
+            <h1>Claude 4 API Status</h1>
+            <p class="subtitle">Real-time status for Claude 4 Opus and Claude Sonnet 4</p>
+
+            <!-- Dynamic status card -->
+            <div id="status-card" class="status-card">
+                <div id="status-indicator" class="status-indicator"></div>
+                <div id="status-badge" class="status-badge"></div>
+                <div id="status-text" class="status-text"></div>
+                <div id="status-detail" class="status-detail"></div>
+            </div>
+
+            <!-- Countdown (shown before deprecation) -->
+            <div id="countdown-section" class="countdown-card" style="display:none;">
+                <h2>⏰ Claude 4 Retirement Countdown</h2>
+                <div class="countdown-timer">
+                    <div class="countdown-unit">
+                        <span id="cd-days" class="countdown-number">--</span>
+                        <span class="countdown-label">Days</span>
+                    </div>
+                    <div class="countdown-unit">
+                        <span id="cd-hours" class="countdown-number">--</span>
+                        <span class="countdown-label">Hours</span>
+                    </div>
+                    <div class="countdown-unit">
+                        <span id="cd-mins" class="countdown-number">--</span>
+                        <span class="countdown-label">Minutes</span>
+                    </div>
+                    <div class="countdown-unit">
+                        <span id="cd-secs" class="countdown-number">--</span>
+                        <span class="countdown-label">Seconds</span>
+                    </div>
+                </div>
+                <p style="font-size:14px;color:var(--text-secondary);">Claude 4 Opus and Sonnet 4 will stop accepting API calls on June 15, 2026.</p>
+            </div>
+
+            <!-- Error codes (shown after deprecation) -->
+            <div id="error-section" class="error-section" style="display:none;">
+                <h2>🔴 Common Error Codes</h2>
+                <div class="error-card">
+                    <h3>HTTP 410 Gone</h3>
+                    <p>The model has been permanently retired. This is expected — Claude 4 Opus and Sonnet 4 are no longer available.</p>
+                    <div class="error-code">"error": { "type": "invalid_model_error", "message": "claude-4-opus has been deprecated" }</div>
+                </div>
+                <div class="error-card">
+                    <h3>Model Not Found</h3>
+                    <p>If you're using the model name <code>claude-4-opus</code> or <code>claude-sonnet-4</code>, these no longer exist.</p>
+                    <div class="error-code">"error": { "type": "invalid_model_error", "message": "model not found: claude-4-opus" }</div>
+                </div>
+                <div class="error-card">
+                    <h3>Authentication Error (same key, different model)</h3>
+                    <p>Your API key still works — you just need to update the model name. No new API key needed.</p>
+                </div>
+            </div>
+
+            <!-- Migration steps -->
+            <div class="migration">
+                <h2>🔧 How to Fix — 3 Steps</h2>
+                <div class="step">
+                    <div class="step-num">1</div>
+                    <div class="step-content">
+                        <h3>Change the model name</h3>
+                        <p>Update your model parameter. No other code changes needed.</p>
+                        <div class="code-snippet">
+                            <span class="code-old">model: "claude-4-opus"</span> → <span class="code-new">model: "claude-opus-4-8"</span><br>
+                            <span class="code-old">model: "claude-sonnet-4"</span> → <span class="code-new">model: "claude-sonnet-4-6"</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-num">2</div>
+                    <div class="step-content">
+                        <h3>Keep your API key</h3>
+                        <p>Your existing Anthropic API key works with the new models. No changes needed to authentication.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-num">3</div>
+                    <div class="step-content">
+                        <h3>Test and deploy</h3>
+                        <p>Run a quick test call, verify the response, and deploy. The new models have identical API formats.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Alternatives -->
+            <div class="alternatives">
+                <h2>💡 Cheaper Alternatives</h2>
+                <div class="alt-grid">
+                    <div class="alt-card recommended">
+                        <div class="badge badge-drop">Direct Drop-In</div>
+                        <h3>Claude Opus 4.8</h3>
+                        <div class="provider">Anthropic</div>
+                        <div class="price">$5 / $25</div>
+                        <div class="savings">67% cheaper than Claude 4 Opus</div>
+                        <div class="context">1M context window</div>
+                    </div>
+                    <div class="alt-card recommended">
+                        <div class="badge badge-drop">Direct Drop-In</div>
+                        <h3>Claude Sonnet 4.6</h3>
+                        <div class="provider">Anthropic</div>
+                        <div class="price">$3 / $15</div>
+                        <div class="savings">Same price, 5x context (1M)</div>
+                        <div class="context">1M context window</div>
+                    </div>
+                    <div class="alt-card">
+                        <div class="badge badge-cheapest">Budget Pick</div>
+                        <h3>DeepSeek V4 Pro</h3>
+                        <div class="provider">DeepSeek</div>
+                        <div class="price">$0.435 / $0.87</div>
+                        <div class="savings">97% cheaper than Claude 4 Opus</div>
+                        <div class="context">1M context window</div>
+                    </div>
+                    <div class="alt-card">
+                        <h3>GPT-5</h3>
+                        <div class="provider">OpenAI</div>
+                        <div class="price">$1.25 / $10</div>
+                        <div class="savings">92% cheaper than Claude 4 Opus</div>
+                        <div class="context">272K context window</div>
+                    </div>
+                    <div class="alt-card">
+                        <h3>Gemini 3.1 Pro</h3>
+                        <div class="provider">Google</div>
+                        <div class="price">$2 / $12</div>
+                        <div class="savings">87% cheaper than Claude 4 Opus</div>
+                        <div class="context">1M context window</div>
+                    </div>
+                    <div class="alt-card">
+                        <h3>Gemini 2.0 Flash</h3>
+                        <div class="provider">Google</div>
+                        <div class="price">$0.10 / $0.40</div>
+                        <div class="savings">99% cheaper than Claude 4 Opus</div>
+                        <div class="context">1M context window</div>
+                    </div>
+                </div>
+                <p style="text-align:center;margin-top:16px;"><a href="claude-4-migration-tool.html" style="color:var(--accent);font-weight:600;">See all 39 alternatives with full pricing →</a></p>
+            </div>
+
+            <!-- CTA -->
+            <div class="cta-section">
+                <h2>Calculate Your Migration Savings</h2>
+                <p>Enter your Claude 4 usage and see exactly how much you'll save with each alternative. Pro users get personalized optimization recommendations.</p>
+                <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
+                    <a href="claude-deprecation-calculator.html" class="btn-primary" style="padding:14px 32px;">Free Calculator</a>
+                    <a href="pricing.html" class="btn-primary" style="padding:14px 32px;background:linear-gradient(135deg,var(--accent),#8b5cf6);">Get Pro — $29</a>
+                </div>
+            </div>
+
+            <!-- Related -->
+            <div class="related">
+                <h2>Related Resources</h2>
+                <div class="related-links">
+                    <a href="claude-4-deprecation.html">Claude 4 Deprecation Guide</a>
+                    <a href="claude-4-migration-tool.html">Migration Tool</a>
+                    <a href="claude-4-migration-checklist.html">Migration Checklist</a>
+                    <a href="claude-deprecation-calculator.html">Cost Calculator</a>
+                    <a href="claude-4-last-chance.html">Last Chance Guide</a>
+                    <a href="blog-best-claude-4-alternatives.html">Best Alternatives</a>
+                    <a href="compare-claude4-opus-vs-gpt5.html">Claude 4 vs GPT-5</a>
+                    <a href="compare-claude4-opus-vs-deepseek-v4pro.html">Claude 4 vs DeepSeek</a>
+                    <a href="claude-4-migration-command-center.html">Migration Command Center</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+    (function() {
+        var deprecationDate = new Date('2026-06-15T00:00:00Z');
+        var now = new Date();
+        var isDeprecated = now >= deprecationDate;
+        var daysLeft = Math.ceil((deprecationDate - now) / (1000 * 60 * 60 * 24));
+
+        var card = document.getElementById('status-card');
+        var indicator = document.getElementById('status-indicator');
+        var badge = document.getElementById('status-badge');
+        var text = document.getElementById('status-text');
+        var detail = document.getElementById('status-detail');
+        var countdownSection = document.getElementById('countdown-section');
+        var errorSection = document.getElementById('error-section');
+
+        if (isDeprecated) {
+            // DEPRECATED STATE
+            card.className = 'status-card deprecated';
+            indicator.className = 'status-indicator deprecated';
+            indicator.textContent = '✕';
+            badge.className = 'status-badge deprecated';
+            badge.textContent = 'Retired';
+            text.textContent = 'Claude 4 API is no longer available';
+            text.style.color = '#dc2626';
+            detail.textContent = 'Claude 4 Opus and Sonnet 4 were retired on June 15, 2026. API calls now return HTTP 410 Gone errors. Migrate to Claude Opus 4.8 or explore alternatives below.';
+            errorSection.style.display = 'block';
+            countdownSection.style.display = 'none';
+
+            if (typeof gtag === 'function') {
+                gtag('event', 'claude4_status_checked', { status: 'deprecated' });
+            }
+        } else {
+            // ACTIVE STATE
+            card.className = 'status-card active';
+            indicator.className = 'status-indicator active';
+            indicator.textContent = '✓';
+            badge.className = 'status-badge active';
+            badge.textContent = 'Active';
+            text.textContent = 'Claude 4 API is currently working';
+            text.style.color = '#16a34a';
+            detail.textContent = 'Claude 4 Opus and Sonnet 4 are still accepting API calls. Retirement deadline: June 15, 2026. Start migrating now to avoid downtime.';
+            countdownSection.style.display = 'block';
+            errorSection.style.display = 'none';
+
+            if (typeof gtag === 'function') {
+                gtag('event', 'claude4_status_checked', { status: 'active', days_left: daysLeft });
+            }
+
+            // Live countdown
+            function updateCountdown() {
+                var now = new Date();
+                var diff = deprecationDate - now;
+                if (diff <= 0) {
+                    location.reload();
+                    return;
+                }
+                var d = Math.floor(diff / (1000 * 60 * 60 * 24));
+                var h = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                var m = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+                var s = Math.floor((diff % (1000 * 60)) / 1000);
+                document.getElementById('cd-days').textContent = d;
+                document.getElementById('cd-hours').textContent = h;
+                document.getElementById('cd-mins').textContent = m;
+                document.getElementById('cd-secs').textContent = s;
+            }
+            updateCountdown();
+            setInterval(updateCountdown, 1000);
+        }
+    })();
+    </script>
+
+    <!-- Footer -->
+    <footer style="border-top:1px solid var(--border);padding:32px 24px;text-align:center;color:var(--text-muted);font-size:13px;">
+        <p>APIpulse — Know your AI API costs before you commit</p>
+        <p style="margin-top:8px;">
+            <a href="index.html" style="color:var(--accent);text-decoration:none;">Home</a> ·
+            <a href="calculator.html" style="color:var(--accent);text-decoration:none;">Calculator</a> ·
+            <a href="compare.html" style="color:var(--accent);text-decoration:none;">Compare</a> ·
+            <a href="blog.html" style="color:var(--accent);text-decoration:none;">Blog</a> ·
+            <a href="about.html" style="color:var(--accent);text-decoration:none;">About</a>
+        </p>
+    </footer>
+</body>
+</html>

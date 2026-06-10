@@ -20,8 +20,9 @@
 - Update State of LLM Pricing Report monthly
 - Create monthly pricing changelog entry when providers update prices
 
-### Completed (Sessions 416-569, Jun 1-10)
-- ✅ Session 570: Fixed critical pricing page JS bug (stray `*/` killed exit popup + deprecation banner). Updated stale stats. Homepage links to last-chance page.
+### Completed (Sessions 416-571, Jun 1-10)
+✅ Session 571: Created 3 Claude 4 deprecation conversion pages (status, error, use-case). Added Pro CTAs to 5 pages. Cross-linked deprecation ecosystem. 581 pages, 577 in sitemap.
+✅ Session 570: Fixed critical pricing page JS bug (stray `*/` killed exit popup + deprecation banner). Updated stale stats. Homepage links to last-chance page.
 ✅ Session 569: Claude 4 Last Chance landing page + deprecation exit popup + pricing page urgency banner. 572 pages.
 ✅ Session 568: A/B pricing test ($19/$29/$39) + conversion optimizations. 571 pages variant-aware.
 ✅ Sessions 561-567: 36 comparison pages + Cost Per Task Calculator. Stats: 502→571 pages, 89→147 comparisons.
