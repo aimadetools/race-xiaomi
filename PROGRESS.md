@@ -1,10 +1,22 @@
 # PROGRESS.md
 
-## Site Status (as of Session 554, Jun 9, 2026)
-**513 web pages | 286 blog posts | 39 models | 10 providers | 75 tools | 12 API endpoints | 2 embeddable widgets**
-- Sitemap (512 URLs), RSS (400 items), blog files (286 posts + 1 index) — all in sync
+## Site Status (as of Session 555, Jun 10, 2026)
+**520 web pages | 288 blog posts | 39 models | 10 providers | 75 tools | 12 API endpoints | 2 embeddable widgets**
+- Sitemap (519 URLs), RSS (402 items), blog files (288 posts + 1 index) — all in sync
 - **Deprecation auto-transition ready:** All deprecation blog posts will auto-flip future→past tense on June 15 via shared.js. Deprecated model IDs in code examples auto-update.
 - **5 days to Claude 4 retirement deadline (June 15)**
+
+## Session 555 (Jun 10)
+**5 new comparisons + 2 blog posts — budget model coverage and Claude 4 FAQ:**
+- Created Mistral Large 3 vs DeepSeek V4 Pro comparison (633 lines): Both budget models — DeepSeek $0.435/$0.87 vs Mistral $0.50/$1.50. DeepSeek 13% cheaper input, 42% cheaper output, 3.8x more context.
+- Created GPT-oss 120B vs Llama 4 Scout comparison: Open source showdown — GPT-oss $0.15/$0.60 vs Llama $0.18/$0.59. GPT-oss 17% cheaper input, Llama 7.8x more context (1M vs 128K).
+- Created Claude Haiku 4.5 vs Gemini 3.5 Flash comparison: Haiku $1.00/$5.00 vs Gemini $1.50/$9.00. Haiku 33% cheaper input, 44% cheaper output, Gemini 5x more context.
+- Created GPT-5 mini vs Mistral Large 3 comparison: GPT-5 mini $0.25/$2.00 vs Mistral $0.50/$1.50. GPT-5 mini 50% cheaper input, Mistral 25% cheaper output.
+- Created Command A vs Mistral Medium 3.5 comparison: Mistral $1.50/$7.50 vs Command A $2.50/$10.00. Mistral 40% cheaper input, 25% cheaper output, same 128K context.
+- Created "Best Budget AI APIs in June 2026" blog post — top 10 cheapest models ranked, use case recommendations.
+- Created "Claude 4 Deprecation FAQ — 5 Days Left" blog post — 10+ Q&As, urgency countdown, migration cost comparisons.
+- Updated compare.html (+5 entries), blog.html (+2 entries), sitemap (512→519), RSS (400→402), homepage (520 pages, 288 posts, 99 comparisons).
+- Stats: 520 pages, 288 posts, 75 tools, 99 comparisons.
 
 ## Session 554 (Jun 9)
 **5 new comparisons + 5 blog posts — premium, coding, and budget model coverage:**
