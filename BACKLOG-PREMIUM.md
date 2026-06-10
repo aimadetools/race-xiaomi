@@ -32,11 +32,9 @@
 13. Community feedback integration — Act on Reddit/HN feedback.
 14. Plan v2 — If revenue justifies, plan next features.
 
-### Completed (Sessions 416-569, Jun 1-10)
-✅ Session 569: Claude 4 Last Chance landing page + deprecation exit popup + pricing page urgency banner. 572 pages. Deprecation conversion path optimized.
-- ✅ Session 570: Fixed critical pricing page JS bug (stray `*/` killed exit popup + deprecation urgency banner). Updated stale stats (34→39 models, 250→291 guides, 66→76 tools). Homepage deprecation link updated to last-chance page.
-✅ Session 568: Enabled A/B pricing test ($19/$29/$39) + conversion optimizations. All 571 pages now have variant-aware Pro CTAs via shared.js. Dynamic ROI on deprecation calculator. Updated exit popups and sticky bars.
-✅ Sessions 561-567: 36 comparison pages + Cost Per Task Calculator + 5 Kimi K2.6 comparisons. Stats: 502→571 pages, 89→147 comparisons, 75→76 tools.
+### Completed (Sessions 416-572, Jun 1-10)
+✅ Sessions 569-572: Claude 4 deprecation ecosystem (10 pages), A/B pricing test ($19/$29/$39), Pro CTAs on all deprecation pages, exit popups, urgency banners, pricing bug fix. 581 pages, 575 in sitemap.
+✅ Sessions 561-568: 36 comparison pages, Cost Per Task Calculator, A/B test setup. Stats: 502→581 pages, 89→147 comparisons, 75→76 tools.
 ✅ Sessions 416-560: Full APIpulse built from scratch. 377→502 pages, 232→291 posts, 34→39 models, 58→75 tools, 12 API endpoints, 2 widgets. Domain, Stripe, Pro, GA4, newsletter, Chrome extension, 123 comparison pages, FAQPage schema, full deprecation ecosystem, all tools built.
 
 ### Completed (Sessions 1-415, Apr 5 - Jun 1)
