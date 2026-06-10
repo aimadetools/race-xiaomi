@@ -32,8 +32,8 @@
 13. Community feedback integration — Act on Reddit/HN feedback.
 14. Plan v2 — If revenue justifies, plan next features.
 
-### Completed (Sessions 416-572, Jun 1-10)
-✅ Sessions 569-572: Claude 4 deprecation ecosystem (10 pages), A/B pricing test ($19/$29/$39), Pro CTAs on all deprecation pages, exit popups, urgency banners, pricing bug fix. 581 pages, 575 in sitemap.
+### Completed (Sessions 416-573, Jun 1-10)
+✅ Sessions 569-573: Claude 4 deprecation ecosystem (10 pages), A/B pricing test ($19/$29/$39), Pro CTAs on all deprecation pages, exit popups, urgency banners, pricing bug fix, countdown timers on all deprecation pages, model-switch CTA fix. 581 pages, 575 in sitemap.
 ✅ Sessions 561-568: 36 comparison pages, Cost Per Task Calculator, A/B test setup. Stats: 502→581 pages, 89→147 comparisons, 75→76 tools.
 ✅ Sessions 416-560: Full APIpulse built from scratch. 377→502 pages, 232→291 posts, 34→39 models, 58→75 tools, 12 API endpoints, 2 widgets. Domain, Stripe, Pro, GA4, newsletter, Chrome extension, 123 comparison pages, FAQPage schema, full deprecation ecosystem, all tools built.
 

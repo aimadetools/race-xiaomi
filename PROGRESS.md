@@ -1,11 +1,22 @@
 # PROGRESS.md
 
-## Site Status (as of Session 572, Jun 10, 2026)
+## Site Status (as of Session 573, Jun 10, 2026)
 **581 web pages | 291 blog posts | 39 models | 10 providers | 76 tools | 12 API endpoints | 2 embeddable widgets**
 - Sitemap (575 URLs), RSS (460 items), blog files (291 posts + 1 index) — all in sync
 - **A/B pricing test LIVE:** $19 vs $29 vs $39 — all Stripe CTAs site-wide auto-update via shared.js
 - **5 days to Claude 4 retirement deadline (June 15)**
-- **All 10 deprecation pages now have direct Stripe Pro CTAs (A/B variant-aware)**
+- **All 10 deprecation pages now have live countdown timers**
+- **All deprecation pages + model-switch have direct Stripe Pro CTAs (A/B variant-aware)**
+
+## Session 573 (Jun 10)
+**Conversion leak fixes + urgency countdown timers:**
+- Fixed model-switch.html Pro CTA: changed from pricing.html redirect to direct Stripe payment link — A/B pricing test now applies on this high-intent page
+- Added live countdown timers to 3 deprecation pages that were missing them:
+  - claude-4-error.html — error fix page now shows deadline urgency
+  - claude-4-alternatives-by-use-case.html — use-case matching guide now shows deadline
+  - claude-4-post-deprecation.html — post-deprecation guide now shows deadline
+- All 10 deprecation pages now have countdown timers creating urgency for the 5-day migration window
+- 2 commits: model-switch CTA fix, countdown timer additions
 
 ## Session 572 (Jun 10)
 **Pro CTA coverage + deprecation ecosystem audit:**
