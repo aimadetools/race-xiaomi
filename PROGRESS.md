@@ -1,10 +1,16 @@
 # PROGRESS.md
 
-## Site Status (as of Session 564, Jun 10, 2026)
-**556 web pages | 291 blog posts | 39 models | 10 providers | 75 tools | 12 API endpoints | 2 embeddable widgets**
-- Sitemap (555 URLs), RSS (438 items), blog files (291 posts + 1 index) — all in sync
+## Site Status (as of Session 565, Jun 10, 2026)
+**566 web pages | 291 blog posts | 39 models | 10 providers | 76 tools | 12 API endpoints | 2 embeddable widgets**
+- Sitemap (566 URLs), RSS (443 items), blog files (291 posts + 1 index) — all in sync
 - **Deprecation auto-transition ready:** All deprecation blog posts will auto-flip future→past tense on June 15 via shared.js. Deprecated model IDs in code examples auto-update.
 - **5 days to Claude 4 retirement deadline (June 15)**
+
+## Session 565 (Jun 10)
+**9 comparison pages + 1 new tool — coverage expansion + Cost Per Task Calculator:**
+- GPT-5 vs Grok 4.3, GPT-5 vs Llama 4 Scout, Sonnet 4.6 vs Llama 4 Scout, GPT-5.5 vs Llama 4 Scout, DeepSeek V4 Pro vs Grok 4.3, Opus 4.8 vs Gemini 3.5 Flash, GPT-4o vs Mistral Medium 3.5, GPT-5 vs Mistral Large 3, GPT-5.5 vs Grok 4.3.
+- Cost Per Task Calculator: 8 pre-defined tasks (summarize, code, translate, chatbot, content, email, analysis, RAG) with custom token input.
+- Updated compare.html (+9), index.html (556→566 pages, 132→141 comparisons, 75→76 tools), sitemap (555→566), RSS (438→443).
 
 ## Session 564 (Jun 10)
 **9 new comparison pages — filling premium/mid/budget coverage gaps:**
