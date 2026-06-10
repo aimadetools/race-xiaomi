@@ -4,6 +4,7 @@
 //
 // Usage:
 //   GET /api/calculate?model=openai-gpt5&input_tokens=2000&output_tokens=500&requests=1000&days=30
+//   Updated: Jun 10, 2026
 //   GET /api/calculate?model=anthropic-sonnet&requests=5000
 //   GET /api/calculate?models=openai-gpt5,anthropic-sonnet,google-pro&requests=10000
 //
