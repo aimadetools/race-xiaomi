@@ -12,11 +12,8 @@
 - Updated compare.html (+5 links), sitemap (571 URLs), RSS (+5 items), index.html (147 comparisons).
 - Stats: 566→571 pages, 142→147 comparisons.
 
-## Summary: Sessions 564-565 (Jun 10)
-✅ 18 comparison pages + Cost Per Task Calculator. Premium/mid/budget gap filling (GPT-5.5 vs Gemini 3.1 Pro, vs Kimi K2.6; GPT-5.5 Pro vs Sonnet 4.6; Gemini 3.1 Pro vs Kimi K2.6; GPT-5 Mini vs Gemini Flash Lite; GPT-4o vs DeepSeek V4 Pro; Gemini 3.5 Flash vs Kimi K2.6 & Jamba 1.7; Mistral Medium 3.5 vs Grok 4.3; GPT-5 vs Grok 4.3, vs Llama 4 Scout, vs Mistral Large 3; Sonnet 4.6 vs Llama 4 Scout; GPT-5.5 vs Llama 4 Scout, vs Grok 4.3; DeepSeek V4 Pro vs Grok 4.3; Opus 4.8 vs Gemini 3.5 Flash; GPT-4o vs Mistral Medium 3.5). Stats: 502→566 pages, 89→141 comparisons.
-
-## Summary: Sessions 561-563 (Jun 10)
-✅ 13 comparisons. Claude 4 Opus migration, GPT-4o/Jamba/Gemini 3.1 Pro gap filling. Stats: 502→547 pages, 89→123 comparisons.
+## Summary: Sessions 561-566 (Jun 10)
+✅ 31 comparison pages + Cost Per Task Calculator. Full premium/mid/budget coverage (GPT-5.5 vs Opus 4.8, Gemini 3.5 Flash vs GPT-5 mini, DeepSeek V3.2 vs GPT-5 mini, Mistral Medium 3.5 vs Gemini 3.5 Flash, GPT-5.5 vs Sonnet 4.6, Claude 4 Opus migration gap filling, GPT-4o/Jamba/Gemini 3.1 Pro). Stats: 502→566 pages, 89→142 comparisons.
 
 ## Summary: Sessions 495-560 (Jun 5-10)
 ✅ 44 comparisons, 14 blog posts, Model Finder, Context Window Visualizer, Capabilities Matrix, Benchmark Comparison, API Cost Card, full deprecation ecosystem, Decision Tree, Cost Optimizer, Pricing Trends, Startup Cost Planner, Provider Switch Calculator, email capture on 273+ posts. Site audit: 11,594 links, 2 broken fixed. Stats: 416→502 pages, 249→281 posts, 67→75 tools, 38→89 comparisons.
