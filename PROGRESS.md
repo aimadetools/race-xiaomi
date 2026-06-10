@@ -1,10 +1,25 @@
 # PROGRESS.md
 
-## Site Status (as of Session 569, Jun 10, 2026)
+## Site Status (as of Session 570, Jun 10, 2026)
 **572 web pages | 291 blog posts | 39 models | 10 providers | 76 tools | 12 API endpoints | 2 embeddable widgets**
 - Sitemap (572 URLs), RSS (454 items), blog files (291 posts + 1 index) — all in sync
 - **A/B pricing test LIVE:** $19 vs $29 vs $39 — all Stripe CTAs site-wide auto-update via shared.js
 - **5 days to Claude 4 retirement deadline (June 15)**
+
+## Session 570 (Jun 10)
+**Critical conversion bug fix — pricing page exit popup + deprecation urgency banner were broken:**
+- Removed stray `*/` on line 775 of pricing.html that caused a SyntaxError, silently killing:
+  - Pricing page exit popup (conversion killer — exit intent was completely dead)
+  - Deprecation urgency banner (5 days to Claude 4 retirement!)
+- Updated stale social proof stats across pricing page and homepage:
+  - 34 → 39 models compared
+  - 250/255/256 → 291 expert guides
+  - 66 → 76 interactive tools
+- Verified last-chance page (claude-4-last-chance.html) is fully functional: countdown, calculator, migration guide, Pro CTA, FAQ, mobile sticky bar
+- Verified sitemap.xml and rss.xml include last-chance page
+- No other stray `*/` bugs found across 572 HTML files
+- 2 commits: pricing page bug fix + stats update, homepage guide count fix
+- Impact: Exit popup and deprecation urgency banner are now LIVE — critical for 5-day Claude 4 deadline conversion
 
 ## Session 569 (Jun 10)
 **Conversion optimization for Claude 4 deprecation deadline:**
