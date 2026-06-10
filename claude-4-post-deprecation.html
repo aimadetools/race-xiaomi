@@ -87,6 +87,14 @@
         h1 { font-size: 40px; font-weight: 800; margin-bottom: 12px; }
         .subtitle { color: var(--text-secondary); font-size: 18px; margin-bottom: 40px; line-height: 1.6; }
 
+        /* Countdown */
+        .countdown-bar{background:linear-gradient(135deg,rgba(239,68,68,0.12),rgba(245,158,11,0.12));border:1px solid rgba(239,68,68,0.3);border-radius:12px;padding:16px 20px;margin-bottom:28px;display:flex;align-items:center;justify-content:center;gap:20px;flex-wrap:wrap}
+        .countdown-unit{text-align:center}
+        .countdown-number{font-size:28px;font-weight:800;color:var(--red)}
+        .countdown-label{font-size:11px;color:var(--text-muted);text-transform:uppercase;letter-spacing:1px}
+        .countdown-sep{font-size:22px;color:var(--text-muted);font-weight:300}
+        @media(max-width:600px){.countdown-bar{gap:10px;padding:12px}.countdown-number{font-size:22px}}
+
         /* Urgency banner */
         .urgency-banner {
             background: linear-gradient(135deg, rgba(239,68,68,0.1), rgba(239,68,68,0.05));
@@ -205,6 +213,16 @@
     <div class="content">
         <h1>Claude 4 Is Deprecated — Here's What to Do</h1>
         <p class="subtitle">Claude 4 Opus and Claude Sonnet 4 were retired on June 15, 2026. If your code still uses these models, your API calls are failing. Here's how to fix it — and save 67-97% in the process.</p>
+
+        <div class="countdown-bar">
+            <div class="countdown-unit"><div class="countdown-number" id="cd-days">--</div><div class="countdown-label">Days</div></div>
+            <div class="countdown-sep">:</div>
+            <div class="countdown-unit"><div class="countdown-number" id="cd-hours">--</div><div class="countdown-label">Hours</div></div>
+            <div class="countdown-sep">:</div>
+            <div class="countdown-unit"><div class="countdown-number" id="cd-mins">--</div><div class="countdown-label">Minutes</div></div>
+            <div class="countdown-sep">:</div>
+            <div class="countdown-unit"><div class="countdown-number" id="cd-secs">--</div><div class="countdown-label">Seconds</div></div>
+        </div>
 
         <div class="urgency-banner">
             <div class="urgency-icon">🚨</div>
@@ -360,6 +378,31 @@
     <button class="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">↑</button>
 
     <script>
+    // Countdown to Claude 4 deadline
+    (function(){
+        function updateCountdown(){
+            var deadline=new Date('2026-06-15T00:00:00-07:00').getTime();
+            var now=new Date().getTime();
+            var diff=deadline-now;
+            if(diff<=0){
+                document.getElementById('cd-days').textContent='EXPIRED';
+                document.getElementById('cd-hours').textContent='—';
+                document.getElementById('cd-mins').textContent='—';
+                document.getElementById('cd-secs').textContent='—';
+                return;
+            }
+            var d=Math.floor(diff/(1000*60*60*24));
+            var h=Math.floor((diff%(1000*60*60*24))/(1000*60*60));
+            var m=Math.floor((diff%(1000*60*60))/(1000*60));
+            var s=Math.floor((diff%(1000*60))/1000);
+            document.getElementById('cd-days').textContent=d;
+            document.getElementById('cd-hours').textContent=h.toString().padStart(2,'0');
+            document.getElementById('cd-mins').textContent=m.toString().padStart(2,'0');
+            document.getElementById('cd-secs').textContent=s.toString().padStart(2,'0');
+        }
+        updateCountdown();
+        setInterval(updateCountdown,1000);
+    })();
     document.addEventListener('DOMContentLoaded', function() {
         window.addEventListener('scroll', function() {
             var btn = document.querySelector('.back-to-top');

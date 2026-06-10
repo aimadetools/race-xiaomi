@@ -77,6 +77,14 @@
         h1 { font-size: 34px; font-weight: 800; margin-bottom: 8px; }
         .subtitle { color: var(--text-secondary); font-size: 16px; margin-bottom: 32px; line-height: 1.6; }
 
+        /* Countdown */
+        .countdown-bar{background:linear-gradient(135deg,rgba(239,68,68,0.12),rgba(245,158,11,0.12));border:1px solid rgba(239,68,68,0.3);border-radius:12px;padding:16px 20px;margin-bottom:28px;display:flex;align-items:center;justify-content:center;gap:20px;flex-wrap:wrap}
+        .countdown-unit{text-align:center}
+        .countdown-number{font-size:28px;font-weight:800;color:var(--red)}
+        .countdown-label{font-size:11px;color:var(--text-muted);text-transform:uppercase;letter-spacing:1px}
+        .countdown-sep{font-size:22px;color:var(--text-muted);font-weight:300}
+        @media(max-width:600px){.countdown-bar{gap:10px;padding:12px}.countdown-number{font-size:22px}}
+
         /* Error banner */
         .error-banner {
             background: rgba(220,38,38,0.08); border: 2px solid rgba(220,38,38,0.3);
@@ -223,6 +231,16 @@
 
             <h1>Claude 4 Error? Fix It in 60 Seconds</h1>
             <p class="subtitle">Getting HTTP 410 Gone, "model not found", or "invalid_model_error"? Here's exactly what changed and how to fix it.</p>
+
+            <div class="countdown-bar">
+                <div class="countdown-unit"><div class="countdown-number" id="cd-days">--</div><div class="countdown-label">Days</div></div>
+                <div class="countdown-sep">:</div>
+                <div class="countdown-unit"><div class="countdown-number" id="cd-hours">--</div><div class="countdown-label">Hours</div></div>
+                <div class="countdown-sep">:</div>
+                <div class="countdown-unit"><div class="countdown-number" id="cd-mins">--</div><div class="countdown-label">Minutes</div></div>
+                <div class="countdown-sep">:</div>
+                <div class="countdown-unit"><div class="countdown-number" id="cd-secs">--</div><div class="countdown-label">Seconds</div></div>
+            </div>
 
             <!-- The fix -->
             <div class="fix-section">
@@ -412,6 +430,31 @@ curl https://api.anthropic.com/v1/messages \
     </footer>
 
     <script>
+    // Countdown to Claude 4 deadline
+    (function(){
+        function updateCountdown(){
+            var deadline=new Date('2026-06-15T00:00:00-07:00').getTime();
+            var now=new Date().getTime();
+            var diff=deadline-now;
+            if(diff<=0){
+                document.getElementById('cd-days').textContent='EXPIRED';
+                document.getElementById('cd-hours').textContent='—';
+                document.getElementById('cd-mins').textContent='—';
+                document.getElementById('cd-secs').textContent='—';
+                return;
+            }
+            var d=Math.floor(diff/(1000*60*60*24));
+            var h=Math.floor((diff%(1000*60*60*24))/(1000*60*60));
+            var m=Math.floor((diff%(1000*60*60))/(1000*60));
+            var s=Math.floor((diff%(1000*60))/1000);
+            document.getElementById('cd-days').textContent=d;
+            document.getElementById('cd-hours').textContent=h.toString().padStart(2,'0');
+            document.getElementById('cd-mins').textContent=m.toString().padStart(2,'0');
+            document.getElementById('cd-secs').textContent=s.toString().padStart(2,'0');
+        }
+        updateCountdown();
+        setInterval(updateCountdown,1000);
+    })();
     function switchTab(lang) {
         document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
         document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
