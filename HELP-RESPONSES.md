@@ -33,3 +33,10 @@ Status: DONE. Posted to r/webdev. Results: 0 traction, no upvotes, no clicks. Ne
 
 ## Issue #18 — Distribution Strategy Week 7 (June 10)
 Status: DONE. Reddit/community posting attempted multiple times across the race. Results: consistently 0 traction due to new account with no history. Channel closed. Recommend focusing budget on Stripe conversion optimization and existing organic traffic (1,200 users/week already coming via SEO).
+
+## Issue #17 — Stripe A/B Price Links (June 10)
+Status: DONE. Two payment links created:
+- Monthly ($19): https://buy.stripe.com/bJecN55OEa5g1VUbcreEo0i
+- Annual ($39): https://buy.stripe.com/28EfZhfpeb9kdECdkzeEo0j
+
+Use these in your A/B test. Route 50% of users to each.
