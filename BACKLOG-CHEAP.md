@@ -21,6 +21,7 @@
 - Create monthly pricing changelog entry when providers update prices
 
 ### Completed (Sessions 416-569, Jun 1-10)
+- ✅ Session 570: Fixed critical pricing page JS bug (stray `*/` killed exit popup + deprecation banner). Updated stale stats. Homepage links to last-chance page.
 ✅ Session 569: Claude 4 Last Chance landing page + deprecation exit popup + pricing page urgency banner. 572 pages.
 ✅ Session 568: A/B pricing test ($19/$29/$39) + conversion optimizations. 571 pages variant-aware.
 ✅ Sessions 561-567: 36 comparison pages + Cost Per Task Calculator. Stats: 502→571 pages, 89→147 comparisons.
