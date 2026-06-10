@@ -1,10 +1,16 @@
 # PROGRESS.md
 
-## Site Status (as of Session 561, Jun 10, 2026)
-**542 web pages | 291 blog posts | 39 models | 10 providers | 75 tools | 12 API endpoints | 2 embeddable widgets**
-- Sitemap (541 URLs), RSS (424 items), blog files (291 posts + 1 index) — all in sync
+## Site Status (as of Session 562, Jun 10, 2026)
+**544 web pages | 291 blog posts | 39 models | 10 providers | 75 tools | 12 API endpoints | 2 embeddable widgets**
+- Sitemap (543 URLs), RSS (426 items), blog files (291 posts + 1 index) — all in sync
 - **Deprecation auto-transition ready:** All deprecation blog posts will auto-flip future→past tense on June 15 via shared.js. Deprecated model IDs in code examples auto-update.
 - **5 days to Claude 4 retirement deadline (June 15)**
+
+## Session 562 (Jun 10)
+**2 new Claude 4 Opus comparison pages — filling migration gaps:**
+- Claude 4 Opus vs Gemini 2.5 Pro (92% cheaper input, 87% cheaper output, 5x more context).
+- Claude 4 Opus vs Mistral Medium 3.5 (90% cheaper on both input and output).
+- Updated compare.html (+2), index.html (542→544 pages, 118→120 comparisons), sitemap (541→543), RSS (424→426).
 
 ## Session 561 (Jun 10)
 **4 new Claude 4 deprecation comparison pages — complete migration coverage:**
