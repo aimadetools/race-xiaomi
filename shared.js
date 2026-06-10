@@ -348,9 +348,10 @@ async function saveEmail(e) {
     var daysLeft = Math.ceil((new Date('2026-06-15T00:00:00Z') - new Date()) / 86400000);
 
     if (isDeprecationPage && daysLeft > 0 && daysLeft <= 14) {
+        if (localStorage.getItem('apipulse_deprecation_popup_dismissed')) return;
         var depPopupShown = false;
         function showDeprecationPopup() {
-            if (depPopupShown || localStorage.getItem('apipulse_popup_dismissed')) return;
+            if (depPopupShown || localStorage.getItem('apipulse_deprecation_popup_dismissed')) return;
             depPopupShown = true;
             if (window.trackEvent) window.trackEvent('deprecation_popup_shown', { days_left: daysLeft });
 
@@ -377,13 +378,13 @@ async function saveEmail(e) {
             document.getElementById('exit-popup-close').addEventListener('click', function() {
                 if (window.trackEvent) window.trackEvent('deprecation_popup_dismissed', { days_left: daysLeft });
                 overlay.remove();
-                localStorage.setItem('apipulse_popup_dismissed', '1');
+                localStorage.setItem('apipulse_deprecation_popup_dismissed', '1');
             });
             overlay.addEventListener('click', function(e) {
                 if (e.target === overlay) {
                     if (window.trackEvent) window.trackEvent('deprecation_popup_dismissed', { days_left: daysLeft });
                     overlay.remove();
-                    localStorage.setItem('apipulse_popup_dismissed', '1');
+                    localStorage.setItem('apipulse_deprecation_popup_dismissed', '1');
                 }
             });
             document.getElementById('deprecation-popup-cta').addEventListener('click', function() {
