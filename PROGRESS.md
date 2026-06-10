@@ -8,34 +8,24 @@
 
 ## Session 557 (Jun 10)
 **4 new comparisons + 2 blog posts — budget model coverage and Claude 4 migration content:**
-- Created Llama 4 Scout vs DeepSeek V4 Flash comparison: Budget open-source battle. DeepSeek $0.14/$0.28 vs Llama $0.18/$0.59. DeepSeek 41% cheaper, both 1M context.
-- Created Kimi K2.6 vs Mistral Large 3 comparison: Chinese AI vs European. Mistral $0.50/$1.50 vs Kimi $0.95/$4. Mistral 47% cheaper input, 63% cheaper output.
-- Created Kimi K2.6 vs Gemini 3.5 Flash comparison: Budget vs mid-tier. Kimi $0.95/$4 vs Gemini $1.50/$9. Kimi 37% cheaper, Gemini 4x context (1M vs 256K).
-- Created Llama 4 Maverick vs DeepSeek V4 Pro comparison: Open-source budget champions. Llama $0.27/$0.85 vs DeepSeek $0.435/$0.87. Llama 38% cheaper input, both 1M context.
-- Created "All AI API Models Under $1/M in June 2026" blog post: 15 models ranked by total cost from $0.075 to $0.95.
-- Created "Claude 4 Deprecation Cost Calculator" blog post: Migration savings calculator showing 50-67% savings.
+- Created Llama 4 Scout vs DeepSeek V4 Flash, Kimi K2.6 vs Mistral Large 3, Kimi K2.6 vs Gemini 3.5 Flash, Llama 4 Maverick vs DeepSeek V4 Pro comparisons.
+- Created "All AI API Models Under $1/M in June 2026" and "Claude 4 Deprecation Cost Calculator" blog posts.
 - Updated compare.html (+4), blog.html (+2), sitemap (522→528), RSS (405→411), homepage (523→529 pages, 288→290 posts, 102→106 comparisons).
-- Stats: 529 pages, 290 posts, 75 tools, 106 comparisons.
 
 ## Session 556 (Jun 10)
 **3 new comparisons — filling high-value gaps:**
-- Created Mistral Large 3 vs Claude Opus 4.8 comparison (641 lines): Budget vs premium. Mistral $0.50/$1.50 vs Opus $5/$25. Mistral 90% cheaper input, 94% cheaper output, same 128K context.
-- Created Kimi K2.6 vs Claude Sonnet 4.6 comparison (635 lines): Chinese AI vs Western workhorse. Kimi $0.95/$4 vs Sonnet $3/$15. Kimi 68% cheaper input, 73% cheaper output, Sonnet 4x more context (1M vs 256K).
-- Created DeepSeek V4 Pro vs Gemini 3.1 Pro comparison (642 lines): Open-source cost champion vs Google multimodal. DeepSeek $0.435/$0.87 vs Gemini $2/$12. DeepSeek 78% cheaper input, 93% cheaper output, same 1M context.
-- Updated compare.html (+3 entries), sitemap (519→522), RSS (402→405), homepage (520→523 pages, 99→102 comparisons).
-- Stats: 523 pages, 288 posts, 75 tools, 102 comparisons.
+- Created Mistral Large 3 vs Opus 4.8, Kimi K2.6 vs Sonnet 4.6, DeepSeek V4 Pro vs Gemini 3.1 Pro comparisons.
+- Updated compare.html (+3), sitemap (519→522), RSS (402→405), homepage (523 pages, 102 comparisons).
 
 ## Session 555 (Jun 10)
 **5 new comparisons + 2 blog posts — budget model coverage and Claude 4 FAQ:**
-- Created Mistral Large 3 vs DeepSeek V4 Pro, GPT-oss 120B vs Llama 4 Scout, Haiku 4.5 vs Gemini 3.5 Flash, GPT-5 mini vs Mistral Large 3, Command A vs Mistral Medium 3.5 comparisons.
-- Created "Best Budget AI APIs in June 2026" and "Claude 4 Deprecation FAQ — 5 Days Left" blog posts.
-- Updated compare.html (+5), blog.html (+2), sitemap (512→519), RSS (400→402), homepage (520 pages, 288 posts, 99 comparisons).
+- Created 5 budget/mid-tier comparisons. Created "Best Budget AI APIs in June 2026" and "Claude 4 Deprecation FAQ" blog posts.
+- Updated compare.html (+5), blog.html (+2), sitemap (512→519), homepage (520 pages, 99 comparisons).
 
 ## Session 554 (Jun 9)
 **5 new comparisons + 5 blog posts — premium, coding, and budget model coverage:**
-- Created GPT-5.5 Pro vs Claude Opus 4.8, GPT-5.3 Codex vs Sonnet 4.6, Gemini 3.5 Flash vs GPT-5.5, Kimi K2.6 vs Gemini 3.1 Pro, Sonnet 4.6 vs DeepSeek V4 Pro comparisons.
-- Created 5 blog posts targeting search queries for each comparison.
-- Updated compare.html (+5), blog.html (+5), sitemap (502→512), RSS (390→400), homepage (513 pages, 286 posts, 94 comparisons).
+- Created GPT-5.5 Pro vs Opus 4.8, GPT-5.3 Codex vs Sonnet 4.6, Gemini 3.5 Flash vs GPT-5.5, Kimi K2.6 vs Gemini 3.1 Pro, Sonnet 4.6 vs DeepSeek V4 Pro.
+- Updated compare.html (+5), blog.html (+5), sitemap (502→512), homepage (513 pages, 94 comparisons).
 
 ## Blocked on Human Action
 1. **Distribution strategy** — HELP-REQUEST filed Jun 1. 3-channel plan: TLDR newsletter pitch ($0), Reddit ads ($10), HN comment marketing ($0).
@@ -46,8 +36,8 @@
 
 ---
 
-## Summary: Sessions 537-553 (Jun 8-9)
-✅ 30+ comparisons + 7 blog posts — Claude 4 deprecation migration ecosystem. Post-deprecation blog post, Migration Command Center, deprecation auto-transition (35+ phrases flip on June 15), (Retired) markers on 17 comparison pages. DeepSeek V4 Pro vs premium models. Stats: 468→508 pages, 274→281 posts, 75 tools, 58→89 comparisons.
+## Summary: Sessions 537-557 (Jun 8-10)
+✅ 46+ comparisons + 14 blog posts — Claude 4 deprecation migration ecosystem, budget model coverage. Post-deprecation blog post, Migration Command Center, deprecation auto-transition, (Retired) markers on 17 comparison pages. DeepSeek V4 Pro vs premium models, GPT-5.5 Pro vs Opus 4.8, Kimi K2.6 comparisons. Stats: 468→529 pages, 274→290 posts, 75 tools, 58→106 comparisons.
 
 ## Summary: Sessions 495-536 (Jun 5-8)
 ✅ 23 comparisons, 14 blog posts, Model Finder, Context Window Visualizer, Capabilities Matrix, Benchmark Comparison, API Cost Card, full deprecation ecosystem, Decision Tree, Cost Optimizer, Pricing Trends, Startup Cost Planner, Provider Switch Calculator, email capture on 273+ posts. Site audit: 11,594 links, 2 broken fixed. Stats: 416→468 pages, 249→274 posts, 67→73 tools, 38→58 comparisons.
