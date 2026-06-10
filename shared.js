@@ -153,11 +153,13 @@ document.addEventListener('DOMContentLoaded', () => {
         if (localStorage.getItem('apipulse_deprecation_banner_dismissed')) return;
         var urgencyText = daysLeft <= 1 ? 'FINAL DAY' : daysLeft + ' days left';
         var urgencyColor = daysLeft <= 3 ? '#dc2626' : daysLeft <= 7 ? '#ea580c' : '#d97706';
+        var bannerLink = daysLeft <= 5 ? 'claude-4-last-chance.html' : 'claude-4-deprecation.html';
+        var bannerLinkText = daysLeft <= 5 ? 'Act now — see what to do →' : 'See migration guide →';
         var banner = document.createElement('div');
         banner.id = 'deprecation-urgency-banner';
         banner.style.cssText = 'background:' + urgencyColor + ';color:white;padding:10px 16px;text-align:center;font-size:13px;font-weight:600;position:relative;z-index:9999;display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap;';
         banner.innerHTML = '<span>⚠️ Claude 4 Opus & Sonnet retire June 15 — <strong>' + urgencyText + '</strong></span>' +
-            '<a href="claude-4-deprecation.html" style="color:white;text-decoration:underline;font-weight:700;">See migration guide →</a>' +
+            '<a href="' + bannerLink + '" style="color:white;text-decoration:underline;font-weight:700;">' + bannerLinkText + '</a>' +
             '<button onclick="document.getElementById(\'deprecation-urgency-banner\').remove();localStorage.setItem(\'apipulse_deprecation_banner_dismissed\',\'1\');" style="background:none;border:none;color:white;cursor:pointer;font-size:16px;padding:0 4px;opacity:0.8;position:absolute;right:12px;" aria-label="Dismiss">✕</button>';
         document.body.insertBefore(banner, document.body.firstChild);
         var nav = document.querySelector('nav');
