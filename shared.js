@@ -28,6 +28,40 @@ const savedTheme = localStorage.getItem('theme') || 'dark';
 document.documentElement.setAttribute('data-theme', savedTheme);
 updateThemeIcon();
 
+// A/B Pricing Test — $19 vs $29 vs $39 (runs on every page)
+(function(){
+    var VARIANTS = {A:{price:19,label:'Budget',futurePrice:39},B:{price:29,label:'Control',futurePrice:49},C:{price:39,label:'Premium',futurePrice:59}};
+    var STRIPE_LINKS = {
+        A:'https://buy.stripe.com/bJecN55OEa5g1VUbcreEo0i',
+        B:'https://buy.stripe.com/fZu7sL3Gw3GS0RQeoDeEo0a',
+        C:'https://buy.stripe.com/28EfZhfpeb9kdECdkzeEo0j'
+    };
+    var KEY = 'ab_pricing_variant';
+    var variant = localStorage.getItem(KEY);
+    if (!variant || !VARIANTS[variant]) {
+        var r = Math.random();
+        variant = r < 0.334 ? 'A' : r < 0.667 ? 'B' : 'C';
+        localStorage.setItem(KEY, variant);
+    }
+    var v = VARIANTS[variant];
+    window._abVariant = variant;
+    window._abPrice = v.price;
+    window._abStripeLink = STRIPE_LINKS[variant];
+
+    // Update all Stripe CTAs on this page to use variant link
+    document.addEventListener('DOMContentLoaded', function() {
+        document.querySelectorAll('a[href*="buy.stripe.com"]').forEach(function(a) {
+            a.href = window._abStripeLink;
+            // Update button text if it contains a price
+            if (a.textContent.includes('$29')) {
+                a.textContent = a.textContent.replace('$29', '$' + v.price);
+            }
+        });
+        // Track variant assignment
+        if (window.trackEvent) window.trackEvent('ab_pricing_variant_assigned', {variant: variant, price: v.price});
+    });
+})();
+
 // Mobile nav toggle
 function toggleMobileNav() {
     const navLinks = document.querySelector('.nav-links');
@@ -472,6 +506,7 @@ function renderPricingFreshness(containerId) {
     var price = window._abPrice || 29;
     var futurePrice = Math.round(price * 1.7);
     var variant = window._abVariant || 'B';
+    var stripeLink = window._abStripeLink || 'https://buy.stripe.com/fZu7sL3Gw3GS0RQeoDeEo0a';
 
     var shown = false;
     window.addEventListener('scroll', function() {
@@ -484,7 +519,7 @@ function renderPricingFreshness(containerId) {
         bar.id = 'sticky-pro-cta';
         bar.style.cssText = 'position:fixed;bottom:0;left:0;right:0;z-index:9999;background:linear-gradient(135deg,#4f46e5,#6366f1);padding:12px 20px;display:flex;align-items:center;justify-content:center;gap:16px;box-shadow:0 -4px 20px rgba(0,0,0,0.3);transform:translateY(100%);transition:transform 0.3s ease;';
         bar.innerHTML = '<span style="color:white;font-size:14px;font-weight:600;">Founding Member: Pro for $' + price + ' <span style="opacity:0.7;font-weight:400;font-size:12px;">(goes to $' + futurePrice + ' soon)</span></span>' +
-            '<a href="https://buy.stripe.com/fZu7sL3Gw3GS0RQeoDeEo0a" target="_blank" rel="noopener" style="background:white;color:#4f46e5;padding:8px 20px;border-radius:8px;font-size:13px;font-weight:700;text-decoration:none;white-space:nowrap;" onclick="if(window.trackEvent)window.trackEvent(\'pro_button_clicked\',{source:\'sticky_bar\',variant:\'' + variant + '\',price:' + price + '})">Lock in $' + price + '</a>' +
+            '<a href="' + stripeLink + '" target="_blank" rel="noopener" style="background:white;color:#4f46e5;padding:8px 20px;border-radius:8px;font-size:13px;font-weight:700;text-decoration:none;white-space:nowrap;" onclick="if(window.trackEvent)window.trackEvent(\'pro_button_clicked\',{source:\'sticky_bar\',variant:\'' + variant + '\',price:' + price + '})">Lock in $' + price + '</a>' +
             '<button onclick="document.getElementById(\'sticky-pro-cta\').remove();localStorage.setItem(\'apipulse_pro_cta_dismissed\',\'1\');" style="background:none;border:none;color:rgba(255,255,255,0.7);font-size:18px;cursor:pointer;padding:0 4px;" aria-label="Dismiss">&times;</button>';
         document.body.appendChild(bar);
         requestAnimationFrame(function() { bar.style.transform = 'translateY(0)'; });
@@ -499,8 +534,9 @@ document.addEventListener('DOMContentLoaded', function() {
     var cta = document.querySelector('.cta-inline');
     if (!cta) return;
     var upsell = document.createElement('div');
+    var price = window._abPrice || 29;
     upsell.style.cssText = 'text-align:center;margin-top:12px;padding:12px;background:rgba(99,102,241,0.06);border:1px solid rgba(99,102,241,0.15);border-radius:8px;font-size:13px;color:var(--text-secondary);';
-    upsell.innerHTML = 'Want to save scenarios and export PDF reports? <a href="pricing.html" style="color:var(--accent);font-weight:600;text-decoration:none;">Upgrade to Pro — $29 one-time</a>';
+    upsell.innerHTML = 'Want to save scenarios and export PDF reports? <a href="pricing.html" style="color:var(--accent);font-weight:600;text-decoration:none;">Upgrade to Pro — $' + price + ' one-time</a>';
     cta.parentNode.insertBefore(upsell, cta.nextSibling);
 });
 
