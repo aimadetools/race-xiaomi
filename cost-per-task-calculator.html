@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Cost Per Task Calculator — Real Prices for Real Tasks | APIpulse</title>
+    <meta name="description" content="Calculate the real cost of common AI tasks across 39 models. See exactly how much it costs to summarize a document, generate code, translate text, and more.">
+    <meta name="keywords" content="AI cost per task, LLM cost calculator, AI API cost, cost to summarize document, cost to generate code, AI task pricing">
+    <meta property="og:title" content="AI Cost Per Task Calculator — Real Prices for Real Tasks">
+    <meta property="og:description" content="See exactly how much common AI tasks cost across 39 models. Free calculator.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://getapipulse.com/og-image.png">
+    <meta property="og:url" content="https://getapipulse.com/cost-per-task-calculator.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="canonical" href="https://getapipulse.com/cost-per-task-calculator.html">
+    <link rel="alternate" type="application/rss+xml" title="APIpulse Blog" href="https://getapipulse.com/rss.xml">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="styles.css">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0CEP7S9Y3J"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-0CEP7S9Y3J');
+    </script>
+    <script src="analytics.js" defer></script>
+    <script src="dynamic-date.js" defer></script>
+    <script src="shared.js" defer></script>
+    <script src="pricing-data.js" defer></script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "AI Cost Per Task Calculator",
+        "url": "https://getapipulse.com/cost-per-task-calculator.html",
+        "description": "Calculate real costs for common AI tasks across 39 models from 10 providers.",
+        "applicationCategory": "DeveloperApplication",
+        "operatingSystem": "Web"
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "How much does it cost to summarize a document with AI?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "It depends on the model and document length. For a 5-page document (~2,500 tokens input, ~500 tokens output): GPT-5 costs $0.008, Claude Sonnet 4.6 costs $0.015, Gemini 3.5 Flash costs $0.008, DeepSeek V4 Pro costs $0.002, and Llama 4 Scout costs $0.001. Budget models like Llama 4 Scout are 90%+ cheaper than premium models for this task."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How much does it cost to generate code with AI?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "For generating a 200-line code snippet (~3,000 tokens input, ~1,500 tokens output): GPT-5 costs $0.019, Claude Sonnet 4.6 costs $0.032, Gemini 3.5 Flash costs $0.019, DeepSeek V4 Pro costs $0.002, and Llama 4 Scout costs $0.001. For high-volume code generation, budget models save 85-95%."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What's the cheapest AI model for chatbots?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "For a typical chatbot exchange (~800 tokens input, ~400 tokens output): Llama 4 Scout costs $0.0004 per exchange, DeepSeek V4 Flash costs $0.0002, and Gemini 2.0 Flash Lite costs $0.0002. At 1,000 exchanges/day, Llama 4 Scout costs ~$12/month while GPT-5 costs ~$135/month."
+                }
+            }
+        ]
+    }
+    </script>
+    <style>
+        .page-header { max-width: var(--max-width); margin: 0 auto; padding: 120px 24px 40px; text-align: center; }
+        .page-header h1 { font-size: clamp(28px, 4.5vw, 44px); font-weight: 800; margin-bottom: 16px; }
+        .page-header p { font-size: 18px; color: var(--text-secondary); max-width: 700px; margin: 0 auto; }
+        .task-selector { max-width: 900px; margin: 0 auto 40px; padding: 0 24px; }
+        .task-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 12px; margin-bottom: 24px; }
+        .task-card { background: var(--bg-secondary); border: 2px solid var(--border); border-radius: var(--radius); padding: 20px; cursor: pointer; transition: all 0.2s; text-align: center; }
+        .task-card:hover { border-color: var(--accent); transform: translateY(-2px); }
+        .task-card.active { border-color: var(--accent); background: var(--accent-glow); }
+        .task-card .icon { font-size: 28px; margin-bottom: 8px; }
+        .task-card .name { font-size: 15px; font-weight: 700; margin-bottom: 4px; }
+        .task-card .desc { font-size: 12px; color: var(--text-muted); }
+        .custom-task { max-width: 900px; margin: 0 auto 48px; padding: 0 24px; }
+        .custom-task h3 { font-size: 16px; font-weight: 700; margin-bottom: 12px; }
+        .custom-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; }
+        .input-group { margin-bottom: 12px; }
+        .input-group label { display: block; font-size: 12px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 4px; font-weight: 600; }
+        .input-group input, .input-group select { width: 100%; padding: 10px 12px; border-radius: 8px; border: 1px solid var(--border); background: var(--bg-card); color: var(--text-primary); font-size: 14px; }
+        .input-group input:focus, .input-group select:focus { outline: 2px solid var(--accent); outline-offset: 2px; }
+        .results-section { max-width: 1100px; margin: 0 auto 48px; padding: 0 24px; }
+        .results-section h2 { font-size: 24px; font-weight: 800; margin-bottom: 8px; text-align: center; }
+        .results-section .section-sub { color: var(--text-secondary); text-align: center; margin-bottom: 24px; }
+        .tier-tabs { display: flex; gap: 8px; justify-content: center; margin-bottom: 24px; flex-wrap: wrap; }
+        .tier-tab { padding: 8px 16px; border-radius: 8px; border: 1px solid var(--border); background: var(--bg-card); color: var(--text-secondary); font-size: 13px; font-weight: 600; cursor: pointer; transition: all 0.2s; }
+        .tier-tab:hover, .tier-tab.active { border-color: var(--accent); color: var(--accent); background: var(--accent-glow); }
+        .results-table { width: 100%; border-collapse: collapse; background: var(--bg-secondary); border-radius: var(--radius); overflow: hidden; border: 1px solid var(--border); }
+        .results-table th { padding: 14px 16px; text-align: left; font-size: 12px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px; background: var(--bg-card); border-bottom: 1px solid var(--border); position: sticky; top: 0; }
+        .results-table td { padding: 12px 16px; border-bottom: 1px solid var(--border); font-size: 14px; }
+        .results-table tr:last-child td { border-bottom: none; }
+        .results-table tr:hover { background: rgba(99,102,241,0.05); }
+        .results-table .model-name { font-weight: 700; }
+        .results-table .provider { color: var(--text-muted); font-size: 12px; }
+        .results-table .cost { font-weight: 700; font-variant-numeric: tabular-nums; }
+        .results-table .cheapest { color: var(--green); }
+        .results-table .expensive { color: var(--orange); }
+        .results-table .tier-badge { display: inline-block; padding: 2px 8px; border-radius: 4px; font-size: 11px; font-weight: 600; }
+        .tier-premium { background: rgba(239,68,68,0.15); color: #ef4444; }
+        .tier-mid { background: rgba(245,158,11,0.15); color: #f59e0b; }
+        .tier-budget { background: rgba(34,197,94,0.15); color: #22c55e; }
+        .savings-callout { max-width: 700px; margin: 0 auto 48px; padding: 32px; background: linear-gradient(135deg, rgba(34,197,94,0.1), rgba(99,102,241,0.1)); border: 1px solid var(--green); border-radius: var(--radius); text-align: center; }
+        .savings-callout .big-number { font-size: 48px; font-weight: 800; color: var(--green); }
+        .savings-callout .label { font-size: 16px; color: var(--text-secondary); margin-top: 8px; }
+        .savings-callout .detail { font-size: 14px; color: var(--text-muted); margin-top: 12px; }
+        .faq-section { max-width: 800px; margin: 0 auto 48px; padding: 0 24px; }
+        .faq-section h2 { font-size: 24px; font-weight: 800; margin-bottom: 24px; text-align: center; }
+        .faq-item { margin-bottom: 20px; }
+        .faq-item h3 { font-size: 16px; font-weight: 700; margin-bottom: 8px; cursor: pointer; }
+        .faq-item p { font-size: 14px; color: var(--text-secondary); line-height: 1.7; }
+        @media (max-width: 768px) {
+            .custom-grid { grid-template-columns: 1fr; }
+            .task-grid { grid-template-columns: 1fr 1fr; }
+            .results-table { font-size: 13px; }
+            .results-table td, .results-table th { padding: 8px 10px; }
+        }
+    </style>
+    <meta name="theme-color" content="#6366f1">
+</head>
+<body>
+    <a href="#main" class="skip-link">Skip to content</a>
+    <nav>
+        <div class="nav-inner">
+            <a href="index.html" class="logo">API<span>pulse</span></a>
+            <button class="hamburger" onclick="toggleMobileNav()" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+            <div class="nav-links">
+                <a href="calculator.html">Calculator</a>
+                <a href="compare.html">Compare</a>
+                <a href="cost-explorer.html">Explorer</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="blog.html">Blog</a>
+                <a href="pricing.html" class="nav-cta" onclick="if(window.trackEvent)window.trackEvent('pro_button_clicked',{source:'nav'})">Get Pro — $29</a>
+                <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
+            </div>
+        </div>
+    </nav>
+
+    <main id="main">
+
+    <div class="page-header">
+        <h1>AI Cost Per Task Calculator</h1>
+        <p>See exactly how much common AI tasks cost across 39 models. Pick a task or enter your own token counts.</p>
+    </div>
+
+    <div class="task-selector">
+        <div class="task-grid" id="task-grid">
+            <div class="task-card active" onclick="selectTask('summarize')" data-task="summarize">
+                <div class="icon">📄</div>
+                <div class="name">Summarize Document</div>
+                <div class="desc">5-page doc → concise summary</div>
+            </div>
+            <div class="task-card" onclick="selectTask('code')" data-task="code">
+                <div class="icon">💻</div>
+                <div class="name">Generate Code</div>
+                <div class="desc">Describe feature → 200-line snippet</div>
+            </div>
+            <div class="task-card" onclick="selectTask('translate')" data-task="translate">
+                <div class="icon">🌍</div>
+                <div class="name">Translate Text</div>
+                <div class="desc">1,000 words → another language</div>
+            </div>
+            <div class="task-card" onclick="selectTask('chatbot')" data-task="chatbot">
+                <div class="icon">💬</div>
+                <div class="name">Chatbot Exchange</div>
+                <div class="desc">User question → helpful response</div>
+            </div>
+            <div class="task-card" onclick="selectTask('content')" data-task="content">
+                <div class="icon">✍️</div>
+                <div class="name">Write Blog Post</div>
+                <div class="desc">1,500-word SEO article</div>
+            </div>
+            <div class="task-card" onclick="selectTask('email')" data-task="email">
+                <div class="icon">📧</div>
+                <div class="name">Draft Email</div>
+                <div class="desc">Brief → professional email</div>
+            </div>
+            <div class="task-card" onclick="selectTask('analysis')" data-task="analysis">
+                <div class="icon">📊</div>
+                <div class="name">Data Analysis</div>
+                <div class="desc">CSV data → insights report</div>
+            </div>
+            <div class="task-card" onclick="selectTask('rag')" data-task="rag">
+                <div class="icon">🔍</div>
+                <div class="name">RAG Query</div>
+                <div class="desc">Question + context → answer</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="custom-task">
+        <h3>Or enter custom token counts:</h3>
+        <div class="custom-grid">
+            <div class="input-group">
+                <label for="custom-input">Input Tokens</label>
+                <input type="number" id="custom-input" value="2500" min="1" oninput="calculateTask()">
+            </div>
+            <div class="input-group">
+                <label for="custom-output">Output Tokens</label>
+                <input type="number" id="custom-output" value="500" min="1" oninput="calculateTask()">
+            </div>
+            <div class="input-group">
+                <label for="custom-quantity">Quantity (per month)</label>
+                <input type="number" id="custom-quantity" value="1000" min="1" oninput="calculateTask()">
+            </div>
+        </div>
+    </div>
+
+    <div class="results-section">
+        <h2>Cost Breakdown by Model</h2>
+        <p class="section-sub" id="task-description">Summarizing a 5-page document: ~2,500 input tokens, ~500 output tokens × 1,000/month</p>
+        <div class="tier-tabs">
+            <button class="tier-tab active" onclick="filterTier('all')">All Models</button>
+            <button class="tier-tab" onclick="filterTier('Premium')">Premium</button>
+            <button class="tier-tab" onclick="filterTier('Mid')">Mid-Tier</button>
+            <button class="tier-tab" onclick="filterTier('Budget')">Budget</button>
+        </div>
+        <div style="overflow-x:auto;">
+            <table class="results-table" id="results-table">
+                <thead>
+                    <tr>
+                        <th>Model</th>
+                        <th>Provider</th>
+                        <th>Tier</th>
+                        <th>Input Cost</th>
+                        <th>Output Cost</th>
+                        <th>Cost/Task</th>
+                        <th>Monthly Cost</th>
+                    </tr>
+                </thead>
+                <tbody id="results-body"></tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="savings-callout" id="savings-callout">
+        <div class="big-number" id="savings-pct">95%</div>
+        <div class="label">potential savings with budget models</div>
+        <div class="detail" id="savings-detail">Switch from GPT-5.5 to Llama 4 Scout for this task</div>
+    </div>
+
+    <div class="faq-section">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-item">
+            <h3>How much does it cost to summarize a document with AI?</h3>
+            <p>It depends on the model and document length. For a 5-page document (~2,500 tokens input, ~500 tokens output): GPT-5 costs $0.008, Claude Sonnet 4.6 costs $0.015, Gemini 3.5 Flash costs $0.008, DeepSeek V4 Pro costs $0.002, and Llama 4 Scout costs $0.001. Budget models like Llama 4 Scout are 90%+ cheaper than premium models for this task.</p>
+        </div>
+        <div class="faq-item">
+            <h3>How much does it cost to generate code with AI?</h3>
+            <p>For generating a 200-line code snippet (~3,000 tokens input, ~1,500 tokens output): GPT-5 costs $0.019, Claude Sonnet 4.6 costs $0.032, Gemini 3.5 Flash costs $0.019, DeepSeek V4 Pro costs $0.002, and Llama 4 Scout costs $0.001. For high-volume code generation, budget models save 85-95%.</p>
+        </div>
+        <div class="faq-item">
+            <h3>What's the cheapest AI model for chatbots?</h3>
+            <p>For a typical chatbot exchange (~800 tokens input, ~400 tokens output): Llama 4 Scout costs $0.0004 per exchange, DeepSeek V4 Flash costs $0.0002, and Gemini 2.0 Flash Lite costs $0.0002. At 1,000 exchanges/day, Llama 4 Scout costs ~$12/month while GPT-5 costs ~$135/month.</p>
+        </div>
+        <div class="faq-item">
+            <h3>How do I use this calculator?</h3>
+            <p>Select a pre-defined task above or enter your own token counts. The calculator shows the cost for every model across all 10 providers. Filter by tier (Premium, Mid, Budget) to find models in your price range. All prices are per 1M tokens and sourced from our centralized pricing database.</p>
+        </div>
+    </div>
+
+    <button class="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">↑</button>
+
+    </main>
+
+    <footer>
+        <p>Pricing data last verified: <span class="verified-date"></span></p>
+        <p>&copy; 2026 APIpulse. <a href="index.html">Home</a> &middot; <a href="compare.html">Compare</a> &middot; <a href="calculator.html">Calculator</a> &middot; <a href="blog.html">Blog</a> &middot; <a href="pricing.html">Pricing</a> &middot; <a href="about.html">About</a></p>
+    </footer>
+
+    <script>
+        const TASKS = {
+            summarize: { input: 2500, output: 500, qty: 1000, label: 'Summarizing a 5-page document', desc: '~2,500 input tokens, ~500 output tokens × 1,000/month' },
+            code: { input: 3000, output: 1500, qty: 500, label: 'Generating code snippets', desc: '~3,000 input tokens, ~1,500 output tokens × 500/month' },
+            translate: { input: 1500, output: 1500, qty: 2000, label: 'Translating text', desc: '~1,500 input tokens, ~1,500 output tokens × 2,000/month' },
+            chatbot: { input: 800, output: 400, qty: 30000, label: 'Chatbot exchanges', desc: '~800 input tokens, ~400 output tokens × 30,000/month (1,000/day)' },
+            content: { input: 1000, output: 2000, qty: 100, label: 'Writing blog posts', desc: '~1,000 input tokens, ~2,000 output tokens × 100/month' },
+            email: { input: 500, output: 300, qty: 5000, label: 'Drafting emails', desc: '~500 input tokens, ~300 output tokens × 5,000/month' },
+            analysis: { input: 5000, output: 1000, qty: 200, label: 'Data analysis tasks', desc: '~5,000 input tokens, ~1,000 output tokens × 200/month' },
+            rag: { input: 3000, output: 500, qty: 5000, label: 'RAG queries', desc: '~3,000 input tokens, ~500 output tokens × 5,000/month' }
+        };
+
+        let currentTask = 'summarize';
+        let currentTier = 'all';
+
+        function selectTask(key) {
+            currentTask = key;
+            const t = TASKS[key];
+            document.getElementById('custom-input').value = t.input;
+            document.getElementById('custom-output').value = t.output;
+            document.getElementById('custom-quantity').value = t.qty;
+            document.querySelectorAll('.task-card').forEach(c => c.classList.remove('active'));
+            document.querySelector(`[data-task="${key}"]`).classList.add('active');
+            document.getElementById('task-description').textContent = t.desc;
+            calculateTask();
+        }
+
+        function filterTier(tier) {
+            currentTier = tier;
+            document.querySelectorAll('.tier-tab').forEach(t => t.classList.remove('active'));
+            event.target.classList.add('active');
+            calculateTask();
+        }
+
+        function calculateTask() {
+            const inputTokens = parseInt(document.getElementById('custom-input').value) || 0;
+            const outputTokens = parseInt(document.getElementById('custom-output').value) || 0;
+            const qty = parseInt(document.getElementById('custom-quantity').value) || 0;
+
+            let models = API_MODELS.filter(m => !m.deprecated);
+            if (currentTier !== 'all') {
+                models = models.filter(m => m.tier === currentTier);
+            }
+
+            const results = models.map(m => {
+                const inputCost = (inputTokens / 1e6) * m.input;
+                const outputCost = (outputTokens / 1e6) * m.output;
+                const perTask = inputCost + outputCost;
+                const monthly = perTask * qty;
+                return { ...m, inputCost, outputCost, perTask, monthly };
+            }).sort((a, b) => a.monthly - b.monthly);
+
+            const tbody = document.getElementById('results-body');
+            tbody.innerHTML = results.map((r, i) => {
+                const tierClass = r.tier === 'Premium' ? 'tier-premium' : r.tier === 'Mid' ? 'tier-mid' : 'tier-budget';
+                const costClass = i === 0 ? 'cheapest' : i === results.length - 1 ? 'expensive' : '';
+                return `<tr>
+                    <td><span class="model-name">${r.name}</span></td>
+                    <td><span class="provider">${r.provider}</span></td>
+                    <td><span class="tier-badge ${tierClass}">${r.tier}</span></td>
+                    <td class="cost">$${r.inputCost.toFixed(6)}</td>
+                    <td class="cost">$${r.outputCost.toFixed(6)}</td>
+                    <td class="cost ${costClass}">$${r.perTask.toFixed(6)}</td>
+                    <td class="cost ${costClass}">$${r.monthly.toFixed(2)}</td>
+                </tr>`;
+            }).join('');
+
+            // Update savings callout
+            if (results.length >= 2) {
+                const cheapest = results[0];
+                const mostExpensive = results[results.length - 1];
+                const savings = ((1 - cheapest.monthly / mostExpensive.monthly) * 100).toFixed(0);
+                document.getElementById('savings-pct').textContent = savings + '%';
+                document.getElementById('savings-detail').textContent = `Switch from ${mostExpensive.name} ($${mostExpensive.monthly.toFixed(2)}/mo) to ${cheapest.name} ($${cheapest.monthly.toFixed(2)}/mo) for this task`;
+                document.getElementById('savings-callout').style.display = 'block';
+            }
+
+            if (window.trackEvent) {
+                window.trackEvent('cost_per_task_calculated', {
+                    task: currentTask,
+                    input_tokens: inputTokens,
+                    output_tokens: outputTokens,
+                    quantity: qty,
+                    cheapest_model: results[0]?.name,
+                    cheapest_cost: results[0]?.monthly?.toFixed(2)
+                });
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            selectTask('summarize');
+        });
+    </script>
+</body>
+</html>
