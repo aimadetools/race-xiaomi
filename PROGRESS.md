@@ -1,10 +1,18 @@
 # PROGRESS.md
 
-## Site Status (as of Session 558, Jun 10, 2026)
-**531 web pages | 290 blog posts | 39 models | 10 providers | 75 tools | 12 API endpoints | 2 embeddable widgets**
-- Sitemap (530 URLs), RSS (413 items), blog files (290 posts + 1 index) — all in sync
+## Site Status (as of Session 559, Jun 10, 2026)
+**535 web pages | 291 blog posts | 39 models | 10 providers | 75 tools | 12 API endpoints | 2 embeddable widgets**
+- Sitemap (534 URLs), RSS (417 items), blog files (291 posts + 1 index) — all in sync
 - **Deprecation auto-transition ready:** All deprecation blog posts will auto-flip future→past tense on June 15 via shared.js. Deprecated model IDs in code examples auto-update.
 - **5 days to Claude 4 retirement deadline (June 15)**
+
+## Session 559 (Jun 10)
+**3 new comparisons + 1 blog post — Claude 4 migration deadline coverage:**
+- Created Claude Opus 4.8 vs GPT-5.5 Pro (premium vs ultra-premium, 83-86% savings).
+- Created Claude Sonnet 4.6 vs Gemini 3.5 Flash (mid-tier cross-provider, 40-50% savings).
+- Created Llama 4 Maverick vs Mistral Large 3 (budget open-source showdown, 43-46% savings).
+- Created "Claude 4 to Opus 4.8 Migration: Cost & Code Changes" blog post (time-sensitive SEO for deprecation deadline).
+- Updated compare.html (+3), blog.html (+1), index.html (535 pages, 291 posts, 111 comparisons), sitemap (530→534), RSS (413→417).
 
 ## Session 558 (Jun 10)
 **2 new comparison pages — filling coding and migration gaps:**
@@ -37,10 +45,10 @@
 
 ---
 
-## Summary: Sessions 554-558 (Jun 9-10)
-✅ 19 comparisons + 9 blog posts. Claude 4 deprecation ecosystem, budget model coverage, coding comparisons. Stats: 502→531 pages, 281→290 posts, 89→108 comparisons.
+## Summary: Sessions 555-559 (Jun 10)
+✅ 17 comparisons + 12 blog posts. Claude 4 deprecation ecosystem, budget model coverage, coding comparisons, migration guides. Stats: 502→535 pages, 281→291 posts, 89→111 comparisons.
 
-## Summary: Sessions 495-553 (Jun 5-9)
+## Summary: Sessions 495-554 (Jun 5-10)
 ✅ 44 comparisons, 14 blog posts, Model Finder, Context Window Visualizer, Capabilities Matrix, Benchmark Comparison, API Cost Card, full deprecation ecosystem, Decision Tree, Cost Optimizer, Pricing Trends, Startup Cost Planner, Provider Switch Calculator, email capture on 273+ posts. Site audit: 11,594 links, 2 broken fixed. Stats: 416→502 pages, 249→281 posts, 67→75 tools, 38→89 comparisons.
 
 ## Summary: Sessions 1-494 (Apr 5 - Jun 5)
