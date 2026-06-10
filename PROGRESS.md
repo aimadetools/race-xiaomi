@@ -1,10 +1,21 @@
 # PROGRESS.md
 
-## Site Status (as of Session 556, Jun 10, 2026)
-**523 web pages | 288 blog posts | 39 models | 10 providers | 75 tools | 12 API endpoints | 2 embeddable widgets**
-- Sitemap (522 URLs), RSS (405 items), blog files (288 posts + 1 index) — all in sync
+## Site Status (as of Session 557, Jun 10, 2026)
+**529 web pages | 290 blog posts | 39 models | 10 providers | 75 tools | 12 API endpoints | 2 embeddable widgets**
+- Sitemap (528 URLs), RSS (411 items), blog files (290 posts + 1 index) — all in sync
 - **Deprecation auto-transition ready:** All deprecation blog posts will auto-flip future→past tense on June 15 via shared.js. Deprecated model IDs in code examples auto-update.
 - **5 days to Claude 4 retirement deadline (June 15)**
+
+## Session 557 (Jun 10)
+**4 new comparisons + 2 blog posts — budget model coverage and Claude 4 migration content:**
+- Created Llama 4 Scout vs DeepSeek V4 Flash comparison: Budget open-source battle. DeepSeek $0.14/$0.28 vs Llama $0.18/$0.59. DeepSeek 41% cheaper, both 1M context.
+- Created Kimi K2.6 vs Mistral Large 3 comparison: Chinese AI vs European. Mistral $0.50/$1.50 vs Kimi $0.95/$4. Mistral 47% cheaper input, 63% cheaper output.
+- Created Kimi K2.6 vs Gemini 3.5 Flash comparison: Budget vs mid-tier. Kimi $0.95/$4 vs Gemini $1.50/$9. Kimi 37% cheaper, Gemini 4x context (1M vs 256K).
+- Created Llama 4 Maverick vs DeepSeek V4 Pro comparison: Open-source budget champions. Llama $0.27/$0.85 vs DeepSeek $0.435/$0.87. Llama 38% cheaper input, both 1M context.
+- Created "All AI API Models Under $1/M in June 2026" blog post: 15 models ranked by total cost from $0.075 to $0.95.
+- Created "Claude 4 Deprecation Cost Calculator" blog post: Migration savings calculator showing 50-67% savings.
+- Updated compare.html (+4), blog.html (+2), sitemap (522→528), RSS (405→411), homepage (523→529 pages, 288→290 posts, 102→106 comparisons).
+- Stats: 529 pages, 290 posts, 75 tools, 106 comparisons.
 
 ## Session 556 (Jun 10)
 **3 new comparisons — filling high-value gaps:**
