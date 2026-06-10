@@ -116,6 +116,29 @@
   Includes embeddable widgets for pricing tables, model badges, and comparison charts.
   ```
 
+### 14b. awesome-chatgpt (127K stars)
+- **Repo:** https://github.com/awesome-chatgpt/awesome-chatgpt
+- **Stars:** 127K+ (highest reach)
+- **Action:** Fork, add to "Tools" section, submit PR
+- **Entry:** `- [APIpulse](https://getapipulse.com) - Compare LLM API pricing across 39 models from 10 providers. Free cost calculator, budget planner, and embeddable widgets.`
+- **PR Title:** Add APIpulse — LLM pricing comparison and cost calculator
+- **PR Description:**
+  ```
+  Adding **APIpulse** — a free AI API pricing comparison tool.
+
+  - Compare pricing across 39 models from 10 providers
+  - Interactive cost calculator and budget planner
+  - Free REST API with no auth required
+  - Embeddable widgets for docs and READMEs
+  - Currently tracking Claude 4 deprecation with migration guides
+  ```
+
+### 14c. Hannibal046/Awesome-LLM
+- **Repo:** https://github.com/Hannibal046/Awesome-LLM
+- **Stars:** Popular LLM resource list
+- **Action:** Fork, add to "Tools" section, submit PR
+- **Entry:** `- [APIpulse](https://getapipulse.com) — Free LLM API pricing comparison across 39 models and 10 providers. Cost calculator, budget planner, embeddable widgets.`
+
 ### 14. awesome-ai-tools
 - **URL:** https://github.com/mahseema/awesome-ai-tools
 - **Action:** Fork, add to "Developer Tools" section, submit PR
@@ -194,6 +217,8 @@
 | 18 | indiehackers.com | [ ] | | |
 | 19 | HN Show | [ ] | | |
 | 20 | RapidAPI Hub | [ ] | | |
+| 21 | awesome-chatgpt (PR) | [ ] | | 127K stars — highest reach |
+| 22 | Awesome-LLM (PR) | [ ] | | Popular LLM resource list |
 
 ---
 
@@ -203,9 +228,9 @@
 |------|------------|----------------------|-----------|
 | Priority 1 | 7 AI directories | 100-300 | High DA backlinks |
 | Priority 2 | 5 dev directories | 50-150 | Medium DA backlinks |
-| Priority 3 | 3 awesome lists | 20-50 | GitHub backlinks |
+| Priority 3 | 5 awesome lists | 50-200 | GitHub backlinks (127K+ star repos) |
 | Priority 4 | 5 product dirs | 30-100 | Mixed backlinks |
-| **Total** | **20 listings** | **200-600** | **20+ backlinks** |
+| **Total** | **22 listings** | **230-750** | **22+ backlinks** |
 
 ---
 
