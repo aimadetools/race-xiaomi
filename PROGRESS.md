@@ -18,6 +18,15 @@
 - All 10 deprecation pages now have countdown timers creating urgency for the 5-day migration window
 - 2 commits: model-switch CTA fix, countdown timer additions
 
+## Session 574 (Jun 10)
+**API endpoint recovery — 5 broken endpoints fixed:**
+- Fixed FUNCTION_INVOCATION_FAILED on /api/pricing, /api/calculate, /api/cheapest, /api/badge, /api/cost-report
+- Root cause: Vercel serverless functions failing with verbose code (large model arrays with full property names, named function exports, extra headers)
+- Fix: Compressed model data to short property names (i/o/n/p/t instead of input/output/name/provider/tier), arrow function exports, removed X-Powered-By header, minimal handler code
+- All 5 endpoints now returning 200 OK with correct data
+- Added Node.js engine constraint to package.json (>= 18.0.0)
+- 4 commits: redeploy trigger, package.json fix, radical simplification, remaining endpoints
+
 ## Session 572 (Jun 10)
 **Pro CTA coverage + deprecation ecosystem audit:**
 - Added direct Stripe Pro CTAs to 5 deprecation pages that were missing them:
