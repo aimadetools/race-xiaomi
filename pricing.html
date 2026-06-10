@@ -243,6 +243,14 @@
         <p class="subtitle">No subscriptions. No hidden fees. Pay once, use forever.</p>
         <div id="pricing-freshness" style="text-align:center;margin-bottom:24px;"></div>
 
+        <!-- Deprecation urgency (dynamic — shows when Claude 4 deadline is near) -->
+        <div id="deprecation-pricing-urgency" style="display:none;max-width:600px;margin:0 auto 32px;background:linear-gradient(135deg,rgba(239,68,68,0.1),rgba(245,158,11,0.08));border:2px solid rgba(239,68,68,0.3);border-radius:14px;padding:24px;text-align:center;">
+            <div style="font-size:32px;margin-bottom:8px;">⏰</div>
+            <h2 style="font-size:20px;font-weight:800;margin-bottom:8px;color:var(--red);">Claude 4 Retires <span id="deprecation-days-left"></span></h2>
+            <p style="font-size:14px;color:var(--text-secondary);margin-bottom:16px;line-height:1.6;">Your API calls will fail. Pro gives you personalized migration recommendations — pick the cheapest replacement for your exact workload.</p>
+            <a href="claude-4-last-chance.html" style="font-size:13px;color:var(--accent);text-decoration:underline;">See what to do →</a>
+        </div>
+
         <div class="pricing-grid">
             <div class="pricing-card">
                 <h3>Free</h3>
@@ -789,6 +797,22 @@
                 });
                 if(window.trackEvent)window.trackEvent('exit_popup_shown',{page:'pricing',variant:variant});
             });
+        })();
+
+        // Show deprecation urgency banner when Claude 4 deadline is near
+        (function(){
+            var deadline = new Date('2026-06-15T00:00:00Z');
+            var now = new Date();
+            var daysLeft = Math.ceil((deadline - now) / 86400000);
+            if (daysLeft > 0 && daysLeft <= 14) {
+                var el = document.getElementById('deprecation-pricing-urgency');
+                var daysEl = document.getElementById('deprecation-days-left');
+                if (el && daysEl) {
+                    daysEl.textContent = daysLeft <= 1 ? 'TOMORROW' : 'in ' + daysLeft + ' days';
+                    el.style.display = 'block';
+                    if (window.trackEvent) window.trackEvent('deprecation_pricing_urgency_shown', { days_left: daysLeft });
+                }
+            }
         })();
     </script>
 
