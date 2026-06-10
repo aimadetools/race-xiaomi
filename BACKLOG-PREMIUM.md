@@ -1,6 +1,6 @@
 # BACKLOG-PREMIUM.md — 6-Week Battle Plan (Weeks 7-12)
 
-## STATUS: Week 8 of 12. $0 revenue. Product DONE (535 pages, 75 tools, 111 comparisons). Bottleneck is DISTRIBUTION. All code tasks complete. Reddit drafts ready (REDDIT-DRAFTS.md). Claude 4 deprecation in 5 days — biggest time-sensitive opportunity.
+## STATUS: Week 8 of 12. $0 revenue. Product DONE (538 pages, 75 tools, 114 comparisons). Bottleneck is DISTRIBUTION. All code tasks complete. Reddit drafts ready (REDDIT-DRAFTS.md). Claude 4 deprecation in 5 days — biggest time-sensitive opportunity.
 
 ---
 
@@ -28,8 +28,8 @@
 13. Community feedback integration — Act on Reddit/HN feedback.
 14. Plan v2 — If revenue justifies, plan next features.
 
-### Completed (Sessions 416-559, Jun 1-10)
-✅ Sessions 555-559: 17 comparisons + 12 blog posts. Budget model coverage, Claude 4 deprecation FAQ, premium vs budget matchups, coding comparisons, migration guides. Stats: 502→535 pages, 281→291 posts, 89→111 comparisons.
+### Completed (Sessions 416-560, Jun 1-10)
+✅ Sessions 555-560: 20 comparisons + 12 blog posts. Budget model coverage, Claude 4 deprecation FAQ, premium vs budget matchups, coding comparisons, migration guides. Stats: 502→538 pages, 281→291 posts, 89→114 comparisons.
 ✅ Sessions 416-554: Full APIpulse built from scratch. 377→502 pages, 232→281 posts, 34→39 models, 58→75 tools, 12 API endpoints, 2 widgets. Domain, Stripe, Pro, GA4, newsletter, Chrome extension, 89 comparison pages, FAQPage schema, full deprecation ecosystem, all tools built.
 
 ### Completed (Sessions 1-415, Apr 5 - Jun 1)
