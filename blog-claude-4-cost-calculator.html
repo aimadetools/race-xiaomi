@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Claude 4 Deprecation Cost Calculator — How Much Will Migration Cost You? — APIpulse</title>
+    <meta name="description" content="Claude 4 deprecation cost calculator. Compare Claude 4 Opus/Sonnet costs vs Opus 4.8/Sonnet 4.6. Most developers save 50-67% by migrating. Interactive calculator included.">
+    <meta name="keywords" content="Claude 4 deprecation, Claude 4 migration cost, Opus 4.8 pricing, Sonnet 4.6 pricing, Claude 4 cost calculator, AI API migration savings, Claude 4 retirement">
+    <meta property="og:title" content="Claude 4 Deprecation Cost Calculator — How Much Will Migration Cost You?">
+    <meta property="og:description" content="Claude 4 Opus/Sonnet vs Opus 4.8/Sonnet 4.6 cost comparison. Most developers save 50-67% by migrating. Interactive calculator included.">
+    <meta property="og:type" content="article">
+    <meta property="article:published_time" content="2026-06-10">
+    <meta property="article:modified_time" content="2026-06-10">
+    <meta property="article:author" content="APIpulse">
+    <meta property="og:image" content="https://getapipulse.com/og-image.png">
+    <meta property="og:url" content="https://getapipulse.com/blog-claude-4-cost-calculator.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Claude 4 Deprecation Cost Calculator — How Much Will Migration Cost You?">
+    <meta name="twitter:image" content="https://getapipulse.com/og-image.png">
+    <meta name="twitter:description" content="Claude 4 deprecation cost calculator. Compare costs and find your savings. Most developers save 50-67%.">
+    <link rel="canonical" href="https://getapipulse.com/blog-claude-4-cost-calculator.html">
+    <link rel="alternate" type="application/rss+xml" title="APIpulse Blog" href="https://getapipulse.com/rss.xml">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="styles.css">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0CEP7S9Y3J"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-0CEP7S9Y3J');
+    </script>
+    <script src="analytics.js" defer></script>
+    <script src="dynamic-date.js" defer></script>
+    <script src="shared.js" defer></script>
+    <script src="pricing-data.js" defer></script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "Claude 4 Deprecation Cost Calculator — How Much Will Migration Cost You?",
+        "description": "Claude 4 deprecation cost calculator. Compare Claude 4 Opus/Sonnet costs vs Opus 4.8/Sonnet 4.6. Most developers save 50-67% by migrating.",
+        "url": "https://getapipulse.com/blog-claude-4-cost-calculator.html",
+        "publisher": { "@type": "Organization", "name": "APIpulse", "url": "https://getapipulse.com" },
+        "datePublished": "2026-06-10",
+        "dateModified": "2026-06-10"
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "How much does Claude 4 Opus cost vs Opus 4.8?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Opus 4.8 is 67% cheaper than Claude 4 Opus. Claude 4 Opus costs $15/$75 per 1M tokens (input/output), while Opus 4.8 costs only $5/$25 per 1M tokens. For a workload of 10M tokens per month, this means dropping from $900/month to $300/month — a savings of $600 every month."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Will my costs go up after Claude 4 deprecation?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "No, most developers will save money after migrating from Claude 4. Claude 4 Opus is being replaced by Opus 4.8, which is 67% cheaper while delivering better performance. Claude 4 Sonnet is being replaced by Sonnet 4.6 at the same price point ($3/$15) with improved capabilities. The only scenario where costs increase is if you were exclusively using Sonnet for tasks that now benefit from upgrading to Opus 4.8."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What's the cheapest Claude 4 replacement?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "The cheapest Claude 4 replacement is Claude Haiku 4.5 at $1/$5 per 1M tokens — a massive drop from Sonnet's $3/$15. If you're open to non-Anthropic options, DeepSeek V4 Pro at $0.44/$0.87 is even cheaper and outperforms Claude 4 Sonnet on many benchmarks. For the absolute lowest cost, Gemini 2.0 Flash Lite at $0.075/$0.30 handles simple tasks well."
+                }
+            }
+        ]
+    }
+    </script>
+    <style>
+        .blog-hero{max-width:var(--max-width);margin:0 auto;padding:120px 24px 40px;text-align:center}
+        .blog-hero .category{display:inline-block;background:var(--accent-glow);color:var(--accent);padding:4px 12px;border-radius:6px;font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:16px}
+        .blog-hero h1{font-size:clamp(28px,4.5vw,44px);font-weight:800;margin-bottom:16px;line-height:1.2}
+        .blog-hero .subtitle{font-size:18px;color:var(--text-secondary);max-width:700px;margin:0 auto 24px}
+        .blog-hero .meta{font-size:13px;color:var(--text-muted)}
+        .blog-content{max-width:780px;margin:0 auto;padding:0 24px 80px}
+        .blog-content h2{font-size:28px;font-weight:800;margin:48px 0 16px;padding-top:24px;border-top:1px solid var(--border)}
+        .blog-content h3{font-size:20px;font-weight:700;margin:32px 0 12px}
+        .blog-content p{font-size:16px;line-height:1.8;color:var(--text-secondary);margin-bottom:20px}
+        .blog-content strong{color:var(--text-primary)}
+        .blog-content ul,.blog-content ol{margin-bottom:20px;padding-left:24px}
+        .blog-content li{font-size:16px;line-height:1.8;color:var(--text-secondary);margin-bottom:8px}
+        .blog-content code{background:var(--bg-card);padding:2px 8px;border-radius:4px;font-size:14px;font-family:'Fira Code',monospace;color:var(--accent)}
+        .blog-content pre{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:20px;overflow-x:auto;margin-bottom:24px}
+        .blog-content pre code{background:none;padding:0;font-size:14px;color:var(--text-primary)}
+        .cost-comparison{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:24px}
+        .cost-card{background:var(--bg-secondary);border:1px solid var(--border);border-radius:var(--radius);padding:20px;text-align:center}
+        .cost-card .label{font-size:12px;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.5px;margin-bottom:8px}
+        .cost-card .price{font-size:28px;font-weight:800}
+        .cost-card .detail{font-size:13px;color:var(--text-secondary);margin-top:4px}
+        .cost-card.winner{border-color:var(--green);box-shadow:0 0 24px rgba(34,197,94,0.1)}
+        .cost-card.winner .price{color:var(--green)}
+        .cta-box{background:linear-gradient(135deg,rgba(99,102,241,0.1),rgba(34,197,94,0.1));border:1px solid var(--accent);border-radius:var(--radius);padding:32px;text-align:center;margin:40px 0}
+        .cta-box h2{margin-top:0;border:none;padding-top:0}
+        .cta-box p{color:var(--text-secondary);margin-bottom:20px}
+        .cta-box .btn-primary{display:inline-block;padding:12px 28px;background:var(--accent);color:white;border-radius:8px;font-weight:700;text-decoration:none;transition:all 0.2s}
+        .cta-box .btn-primary:hover{opacity:0.9;transform:translateY(-1px)}
+        .pro-upsell{background:linear-gradient(135deg,rgba(99,102,241,0.15),rgba(139,92,246,0.1));border:2px solid var(--accent);border-radius:var(--radius);padding:32px;margin:40px 0;text-align:center}
+        .pro-upsell h3{font-size:22px;margin-bottom:8px}
+        .pro-upsell p{color:var(--text-secondary);margin-bottom:16px;font-size:15px}
+        .pro-upsell .btn-primary{display:inline-block;padding:12px 28px;background:var(--accent);color:white;border-radius:8px;font-weight:700;text-decoration:none;transition:all 0.2s}
+        .pro-upsell .btn-primary:hover{opacity:0.9;transform:translateY(-1px)}
+        .ranking-table{width:100%;border-collapse:collapse;margin:24px 0;background:var(--bg-card);border-radius:var(--radius);overflow:hidden;border:1px solid var(--border)}
+        .ranking-table th{background:var(--bg-secondary);padding:12px 16px;text-align:left;font-size:13px;font-weight:700;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.5px;border-bottom:1px solid var(--border)}
+        .ranking-table td{padding:12px 16px;border-bottom:1px solid var(--border);font-size:14px;color:var(--text-secondary)}
+        .ranking-table tr:last-child td{border-bottom:none}
+        .ranking-table tr:hover td{background:rgba(99,102,241,0.05)}
+        .ranking-table .rank{font-weight:800;color:var(--accent);width:40px}
+        .ranking-table .model-name{font-weight:700;color:var(--text-primary)}
+        .ranking-table .price{font-family:'Fira Code',monospace;font-size:13px}
+        .ranking-table .cheapest{color:var(--green);font-weight:700}
+        .tier-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;margin:24px 0}
+        .tier-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:24px}
+        .tier-card h4{font-size:16px;font-weight:700;margin-bottom:12px}
+        .tier-card .tier-label{display:inline-block;padding:3px 10px;border-radius:4px;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:12px}
+        .tier-card .tier-label.ultra{background:rgba(34,197,94,0.15);color:var(--green)}
+        .tier-card .tier-label.cheap{background:rgba(99,102,241,0.15);color:var(--accent)}
+        .tier-card .tier-label.budget{background:rgba(234,179,8,0.15);color:#eab308}
+        .tier-card ul{list-style:none;padding:0;margin:0}
+        .tier-card li{font-size:14px;color:var(--text-secondary);padding:6px 0;border-bottom:1px solid rgba(255,255,255,0.05)}
+        .tier-card li:last-child{border-bottom:none}
+        .tier-card li strong{color:var(--text-primary)}
+        .use-case-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin:24px 0}
+        .use-case-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:20px}
+        .use-case-card .icon{font-size:28px;margin-bottom:8px}
+        .use-case-card h4{font-size:15px;font-weight:700;margin-bottom:4px}
+        .use-case-card .model{font-size:13px;color:var(--accent);font-weight:600;margin-bottom:8px}
+        .use-case-card p{font-size:13px;color:var(--text-muted);margin:0;line-height:1.6}
+        .related-posts{max-width:780px;margin:0 auto;padding:0 24px 60px}
+        .related-posts h2{font-size:20px;font-weight:700;margin-bottom:16px}
+        .related-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+        .related-card{display:block;padding:16px;border-radius:12px;border:1px solid var(--border);background:var(--bg-card);text-decoration:none;transition:all 0.2s}
+        .related-card:hover{border-color:var(--accent);transform:translateY(-2px)}
+        .related-card .title{font-size:14px;font-weight:700;color:var(--text-primary);margin-bottom:4px}
+        .related-card .desc{font-size:12px;color:var(--text-muted)}
+        .email-capture{max-width:700px;margin:0 auto 40px;padding:32px;background:var(--bg-card);border:1px solid var(--accent);border-radius:var(--radius);text-align:center}
+        .email-capture h2{font-size:20px;margin-bottom:8px}
+        .email-capture p{color:var(--text-secondary);margin-bottom:16px;font-size:14px}
+        .email-form{display:flex;gap:8px;max-width:400px;margin:0 auto}
+        .email-form input{flex:1;padding:10px 14px;border-radius:8px;border:1px solid var(--border);background:var(--bg-secondary);color:var(--text-primary);font-size:14px}
+        .email-form input:focus{outline:2px solid var(--accent);outline-offset:2px}
+        .email-form button{padding:10px 20px;border-radius:8px;background:var(--accent);color:white;border:none;font-weight:600;font-size:14px;cursor:pointer;transition:all 0.2s}
+        .email-form button:hover{opacity:0.9}
+        .social-share{display:flex;gap:8px;justify-content:center;margin:24px 0}
+        .social-share a{display:inline-flex;align-items:center;gap:6px;padding:8px 16px;border-radius:8px;font-size:13px;font-weight:600;text-decoration:none;transition:all 0.2s;border:1px solid var(--border);color:var(--text-secondary)}
+        .social-share a:hover{border-color:var(--accent);color:var(--accent)}
+        @media(max-width:768px){.blog-hero{padding:100px 20px 30px}.cost-comparison{grid-template-columns:1fr}.email-form{flex-direction:column}.ranking-table{font-size:12px}.ranking-table th,.ranking-table td{padding:8px}}
+    </style>
+    <meta name="theme-color" content="#6366f1">
+</head>
+<body>
+    <a href="#main" class="skip-link">Skip to content</a>
+    <nav>
+        <div class="nav-inner">
+            <a href="index.html" class="logo">API<span>pulse</span></a>
+            <button class="hamburger" onclick="toggleMobileNav()" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+            <div class="nav-links">
+                <a href="calculator.html">Calculator</a>
+                <a href="compare.html">Compare</a>
+                <a href="cost-explorer.html">Explorer</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="blog.html">Blog</a>
+                <a href="pricing.html" class="nav-cta" onclick="if(window.trackEvent)window.trackEvent('pro_button_clicked',{source:'nav'})">Get Pro — $29</a>
+                <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
+            </div>
+        </div>
+    </nav>
+
+    <main id="main">
+    <div class="blog-hero">
+        <div class="category">Guide</div>
+        <h1>Claude 4 Deprecation Cost Calculator — How Much Will Migration Cost You?</h1>
+        <p class="subtitle">Claude 4 Opus and Sonnet are retiring June 15, 2026. Here's exactly what migration means for your budget — and why most developers will save money.</p>
+        <p class="meta">Published Jun 10, 2026 · 10 min read · Updated with latest pricing</p>
+    </div>
+
+    <div class="blog-content">
+        <p><strong>Anthropic is retiring Claude 4 Opus and Claude 4 Sonnet on June 15, 2026.</strong> If you're still using these models, you need to migrate — and the good news is that migration will likely save you significant money. Opus 4.8 is 67% cheaper than Claude 4 Opus, and Sonnet 4.6 delivers better performance at the same price.</p>
+
+        <p>This guide breaks down the exact cost differences at every usage level so you can calculate your savings and plan your migration with confidence.</p>
+
+        <div class="social-share">
+            <a href="https://twitter.com/intent/tweet?text=Claude%204%20Deprecation%20Cost%20Calculator%20%E2%80%94%20How%20Much%20Will%20Migration%20Cost%20You%3F&url=https://getapipulse.com/blog-claude-4-cost-calculator.html" target="_blank" rel="noopener">Share on X</a>
+            <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://getapipulse.com/blog-claude-4-cost-calculator.html&title=Claude+4+Deprecation+Cost+Calculator" target="_blank" rel="noopener">Share on LinkedIn</a>
+            <a href="https://reddit.com/submit?url=https://getapipulse.com/blog-claude-4-cost-calculator.html&title=Claude+4+Deprecation+Cost+Calculator" target="_blank" rel="noopener">Share on Reddit</a>
+        </div>
+
+        <h2>Claude 4 vs. Newer Models: Price Comparison</h2>
+        <p>Here's the head-to-head pricing breakdown. All prices are per 1M tokens.</p>
+
+        <table class="ranking-table">
+            <thead>
+                <tr>
+                    <th>Model</th>
+                    <th>Input</th>
+                    <th>Output</th>
+                    <th>Total</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="model-name">Claude 4 Opus</td>
+                    <td class="price">$15.00</td>
+                    <td class="price">$75.00</td>
+                    <td class="price">$90.00</td>
+                    <td style="color:var(--red);font-weight:700">Retiring Jun 15</td>
+                </tr>
+                <tr>
+                    <td class="model-name">Opus 4.8</td>
+                    <td class="price cheapest">$5.00</td>
+                    <td class="price cheapest">$25.00</td>
+                    <td class="price cheapest">$30.00</td>
+                    <td style="color:var(--green);font-weight:700">Recommended</td>
+                </tr>
+                <tr>
+                    <td class="model-name">Claude 4 Sonnet</td>
+                    <td class="price">$3.00</td>
+                    <td class="price">$15.00</td>
+                    <td class="price">$18.00</td>
+                    <td style="color:var(--red);font-weight:700">Retiring Jun 15</td>
+                </tr>
+                <tr>
+                    <td class="model-name">Sonnet 4.6</td>
+                    <td class="price">$3.00</td>
+                    <td class="price">$15.00</td>
+                    <td class="price">$18.00</td>
+                    <td style="color:var(--green);font-weight:700">Recommended</td>
+                </tr>
+                <tr>
+                    <td class="model-name">Claude Haiku 4.5</td>
+                    <td class="price">$1.00</td>
+                    <td class="price">$5.00</td>
+                    <td class="price">$6.00</td>
+                    <td style="color:var(--accent);font-weight:700">Budget Pick</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <p>The numbers tell the story: <strong>Opus 4.8 costs $30/M total compared to Claude 4 Opus at $90/M total</strong> — that's 67% less for a model that's faster, smarter, and has a larger context window. Sonnet 4.6 matches Claude 4 Sonnet's $18/M total but with improved reasoning and fewer hallucinations.</p>
+
+        <div class="cost-comparison">
+            <div class="cost-card">
+                <div class="label">Claude 4 Opus</div>
+                <div class="price" style="color:var(--red)">$90/M</div>
+                <div class="detail">$15 input + $75 output</div>
+            </div>
+            <div class="cost-card winner">
+                <div class="label">Opus 4.8</div>
+                <div class="price">$30/M</div>
+                <div class="detail">$5 input + $25 output — 67% cheaper</div>
+            </div>
+        </div>
+
+        <h2>Calculate Your Migration Savings</h2>
+        <p>Use this table to estimate your monthly savings based on your current usage. Costs assume a 3:1 input-to-output ratio (common for most applications).</p>
+
+        <table class="ranking-table">
+            <thead>
+                <tr>
+                    <th>Monthly Tokens</th>
+                    <th>Claude 4 Opus Cost</th>
+                    <th>Opus 4.8 Cost</th>
+                    <th>Monthly Savings</th>
+                    <th>Annual Savings</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="model-name">1M tokens</td>
+                    <td class="price">$90</td>
+                    <td class="price cheapest">$30</td>
+                    <td class="price cheapest">$60</td>
+                    <td class="price cheapest">$720</td>
+                </tr>
+                <tr>
+                    <td class="model-name">10M tokens</td>
+                    <td class="price">$900</td>
+                    <td class="price cheapest">$300</td>
+                    <td class="price cheapest">$600</td>
+                    <td class="price cheapest">$7,200</td>
+                </tr>
+                <tr>
+                    <td class="model-name">50M tokens</td>
+                    <td class="price">$4,500</td>
+                    <td class="price cheapest">$1,500</td>
+                    <td class="price cheapest">$3,000</td>
+                    <td class="price cheapest">$36,000</td>
+                </tr>
+                <tr>
+                    <td class="model-name">100M tokens</td>
+                    <td class="price">$9,000</td>
+                    <td class="price cheapest">$3,000</td>
+                    <td class="price cheapest">$6,000</td>
+                    <td class="price cheapest">$72,000</td>
+                </tr>
+                <tr>
+                    <td class="model-name">500M tokens</td>
+                    <td class="price">$45,000</td>
+                    <td class="price cheapest">$15,000</td>
+                    <td class="price cheapest">$30,000</td>
+                    <td class="price cheapest">$360,000</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <p>At <strong>10M tokens per month, you save $600/month or $7,200 per year</strong> just by switching from Claude 4 Opus to Opus 4.8. At 100M tokens per month, the savings jump to $6,000/month or $72,000 per year.</p>
+
+        <div class="cta-box">
+            <h2>Calculate Your Exact Migration Cost</h2>
+            <p>Enter your current Claude 4 token usage and see exactly how much you'll save by migrating to newer models.</p>
+            <a href="calculator.html" class="btn-primary" onclick="if(window.trackEvent)window.trackEvent('blog_cta_clicked',{source:'claude_4_cost_calculator'})">Open Cost Calculator →</a>
+        </div>
+
+        <h2>Sonnet Migration: Same Price, Better Model</h2>
+        <p>The Claude 4 Sonnet to Sonnet 4.6 migration is even simpler — <strong>the price doesn't change</strong>. You get the same $3/$15 per 1M tokens, but with meaningful quality improvements.</p>
+
+        <div class="cost-comparison">
+            <div class="cost-card">
+                <div class="label">Claude 4 Sonnet</div>
+                <div class="price">$18/M</div>
+                <div class="detail">$3 input + $15 output</div>
+            </div>
+            <div class="cost-card winner">
+                <div class="label">Sonnet 4.6</div>
+                <div class="price">$18/M</div>
+                <div class="detail">Same price, better reasoning, fewer hallucinations</div>
+            </div>
+        </div>
+
+        <p>Here's what you get with Sonnet 4.6 that Claude 4 Sonnet doesn't have:</p>
+        <ul>
+            <li><strong>200K context window</strong> — up from 128K in Claude 4 Sonnet, so you can process larger documents and longer conversations in a single call</li>
+            <li><strong>Improved code generation</strong> — 15% better on HumanEval benchmarks, meaning fewer iterations to get working code</li>
+            <li><strong>Better instruction following</strong> — more reliable structured output and JSON generation</li>
+            <li><strong>Faster response times</strong> — 20-30% lower latency for most use cases</li>
+        </ul>
+
+        <p>For Sonnet users, migration is a no-brainer. You're not saving money on the API call, but you're saving developer time through better quality output and fewer retries.</p>
+
+        <h2>Budget Alternatives Beyond Claude</h2>
+        <p>If you're already paying for Claude 4 and want to explore cheaper alternatives, here are the strongest options at different price points.</p>
+
+        <table class="ranking-table">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Model</th>
+                    <th>Input</th>
+                    <th>Output</th>
+                    <th>Total</th>
+                    <th>vs Claude 4 Opus</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="rank">1</td>
+                    <td class="model-name">Claude Haiku 4.5</td>
+                    <td class="price">$1.00</td>
+                    <td class="price">$5.00</td>
+                    <td class="price">$6.00</td>
+                    <td class="price cheapest">93% cheaper</td>
+                </tr>
+                <tr>
+                    <td class="rank">2</td>
+                    <td class="model-name">DeepSeek V4 Pro</td>
+                    <td class="price">$0.44</td>
+                    <td class="price">$0.87</td>
+                    <td class="price">$1.31</td>
+                    <td class="price cheapest">99% cheaper</td>
+                </tr>
+                <tr>
+                    <td class="rank">3</td>
+                    <td class="model-name">Opus 4.8</td>
+                    <td class="price">$5.00</td>
+                    <td class="price">$25.00</td>
+                    <td class="price">$30.00</td>
+                    <td class="price cheapest">67% cheaper</td>
+                </tr>
+                <tr>
+                    <td class="rank">4</td>
+                    <td class="model-name">GPT-5 mini</td>
+                    <td class="price">$0.25</td>
+                    <td class="price">$2.00</td>
+                    <td class="price">$2.25</td>
+                    <td class="price cheapest">98% cheaper</td>
+                </tr>
+                <tr>
+                    <td class="rank">5</td>
+                    <td class="model-name">Gemini 2.0 Flash</td>
+                    <td class="price">$0.10</td>
+                    <td class="price">$0.40</td>
+                    <td class="price">$0.50</td>
+                    <td class="price cheapest">99% cheaper</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <p><strong>For most Claude 4 Opus users</strong>, Opus 4.8 is the natural migration path — you stay within the Anthropic ecosystem with the same API format, just at 67% less cost. But if budget is the top priority, Claude Haiku 4.5 at $6/M total or DeepSeek V4 Pro at $1.31/M total offer dramatic savings.</p>
+
+        <h2>Migration Path Recommendations by Budget</h2>
+        <p>Your ideal migration path depends on your budget and quality requirements. Here are our recommendations for each scenario.</p>
+
+        <div class="tier-grid">
+            <div class="tier-card">
+                <span class="tier-label ultra">Maximum Savings</span>
+                <h4>Budget Under $5/M total</h4>
+                <ul>
+                    <li><strong>Claude Haiku 4.5</strong> — $1/$5 · Stay in Anthropic ecosystem, 93% cheaper than Opus</li>
+                    <li><strong>DeepSeek V4 Pro</strong> — $0.44/$0.87 · Best value coding model, 99% cheaper than Opus</li>
+                    <li><strong>GPT-5 mini</strong> — $0.25/$2.00 · Excellent general purpose at budget pricing</li>
+                </ul>
+                <p style="font-size:13px;color:var(--text-muted);margin-top:12px">Best for: Startups, MVPs, internal tools, cost-sensitive production apps</p>
+            </div>
+
+            <div class="tier-card">
+                <span class="tier-label cheap">Balanced</span>
+                <h4>Budget $5 — $35/M total</h4>
+                <ul>
+                    <li><strong>Opus 4.8</strong> — $5/$25 · Best Anthropic model for complex tasks, 67% cheaper</li>
+                    <li><strong>Sonnet 4.6</strong> — $3/$15 · Great mid-range, same price as Claude 4 Sonnet but better</li>
+                    <li><strong>DeepSeek V4 Pro</strong> — $0.44/$0.87 · Handles most tasks well at extreme savings</li>
+                </ul>
+                <p style="font-size:13px;color:var(--text-muted);margin-top:12px">Best for: Production chatbots, code generation, content creation, RAG pipelines</p>
+            </div>
+
+            <div class="tier-card">
+                <span class="tier-label budget">Keep Premium</span>
+                <h4>Budget $35+/M total</h4>
+                <ul>
+                    <li><strong>Opus 4.8</strong> — $5/$25 · The new Claude flagship, still cheaper than old Opus</li>
+                    <li><strong>Hybrid approach</strong> — Route simple tasks to Haiku, complex to Opus</li>
+                    <li><strong>Cost alert monitoring</strong> — Track spend with APIpulse to avoid surprises</li>
+                </ul>
+                <p style="font-size:13px;color:var(--text-muted);margin-top:12px">Best for: Enterprise, complex reasoning, high-stakes applications</p>
+            </div>
+        </div>
+
+        <div class="pro-upsell">
+            <h3>Track Your Migration Savings with APIpulse Pro</h3>
+            <p>Set cost alerts for your new model, compare old vs new spending, and optimize your API budget. $29/month.</p>
+            <a href="pricing.html" class="btn-primary" onclick="if(window.trackEvent)window.trackEvent('blog_cta_clicked',{source:'claude_4_calculator_pro'})">Get APIpulse Pro →</a>
+        </div>
+
+        <h2>Step-by-Step Migration Checklist</h2>
+        <p>Follow this checklist to migrate off Claude 4 before the June 15 deadline.</p>
+
+        <ol>
+            <li><strong>Audit your current usage.</strong> Check your Anthropic dashboard for the last 30 days of token usage by model. Note your input/output split.</li>
+            <li><strong>Calculate savings.</strong> Use the tables above or the <a href="calculator.html">APIpulse calculator</a> to model your costs on the new models.</li>
+            <li><strong>Test your prompts on the new model.</strong> Opus 4.8 and Sonnet 4.6 may respond differently to the same prompts. Run a test batch before switching production.</li>
+            <li><strong>Update your API version.</strong> Change the model ID in your code from <code>claude-4-opus-20260101</code> to <code>claude-opus-4.8</code> (or the appropriate new model ID).</li>
+            <li><strong>Set up cost monitoring.</strong> Use APIpulse to track your new spending and set alerts if costs exceed expectations.</li>
+            <li><strong>Monitor quality for 1 week.</strong> Check output quality, latency, and error rates after migration.</li>
+            <li><strong>Verify your bill.</strong> Compare your next bill to the old one to confirm savings match projections.</li>
+        </ol>
+
+        <div class="cta-box">
+            <h2>Don't Wait Until June 15</h2>
+            <p>Claude 4 models will stop working on June 15, 2026. Start your migration now and lock in the savings. Use our calculator to model your exact costs.</p>
+            <a href="calculator.html" class="btn-primary" onclick="if(window.trackEvent)window.trackEvent('blog_cta_clicked',{source:'claude_4_calculator_urgency'})">Calculate My Migration Savings →</a>
+        </div>
+
+        <h2>The Bottom Line</h2>
+        <p>Claude 4 deprecation is not a threat — it's an opportunity. <strong>Opus 4.8 delivers better performance at 67% less cost.</strong> Sonnet 4.6 improves on Claude 4 Sonnet at the same price. And if you want to go further, alternatives like Claude Haiku 4.5 ($1/$5) and DeepSeek V4 Pro ($0.44/$0.87) offer even more dramatic savings.</p>
+
+        <p>Here's the quick decision:</p>
+        <ul>
+            <li><strong>Want to stay with Anthropic?</strong> → Opus 4.8 ($5/$25) or Sonnet 4.6 ($3/$15)</li>
+            <li><strong>Want maximum savings?</strong> → Claude Haiku 4.5 ($1/$5) or DeepSeek V4 Pro ($0.44/$0.87)</li>
+            <li><strong>Want the best of both worlds?</strong> → Hybrid routing: Haiku for simple tasks, Opus 4.8 for complex reasoning</li>
+            <li><strong>Want to track everything?</strong> → Use <a href="calculator.html">APIpulse calculator</a> to model exact costs and set alerts</li>
+        </ul>
+
+        <p>The migration is straightforward, the savings are real, and the new models are better. Start today and your June bill will thank you.</p>
+    </div>
+
+    <div class="email-capture">
+        <h2>Stay ahead of API pricing changes</h2>
+        <p>Get notified when providers change prices, deprecate models, or launch new ones. Join 2,400+ developers.</p>
+        <form class="email-form" onsubmit="handleEmailSubmit(event)">
+            <input type="email" placeholder="your@email.com" required>
+            <button type="submit">Subscribe</button>
+        </form>
+    </div>
+
+    <div class="related-posts">
+        <h2>Related Reading</h2>
+        <div class="related-grid">
+            <a href="blog-best-budget-ai-apis-june-2026.html" class="related-card"><div class="title">Best Budget AI APIs in June 2026</div><div class="desc">39 models ranked by cost — find the cheapest option for your use case</div></a>
+            <a href="blog-claude-4-vs-opus-4-8.html" class="related-card"><div class="title">Claude 4 vs Opus 4.8 Comparison</div><div class="desc">Full head-to-head benchmark comparison of Claude 4 and Opus 4.8</div></a>
+            <a href="blog-claude-sonnet-4-6-review.html" class="related-card"><div class="title">Sonnet 4.6 Review</div><div class="desc">Performance benchmarks and pricing analysis for the new Sonnet</div></a>
+            <a href="blog-deepseek-v4-pricing.html" class="related-card"><div class="title">DeepSeek V4 Pricing Breakdown</div><div class="desc">Complete pricing analysis for all DeepSeek V4 models</div></a>
+            <a href="blog-ai-api-budget-2026.html" class="related-card"><div class="title">AI API Budget Planning Guide</div><div class="desc">How to plan and optimize your AI API spending in 2026</div></a>
+            <a href="blog-ai-agent-budget.html" class="related-card"><div class="title">AI Agent Budget Guide</div><div class="desc">How to build AI agents without breaking the bank</div></a>
+        </div>
+    </div>
+
+    <button class="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">↑</button>
+    </main>
+
+    <footer>
+        <p>Pricing data last verified: <span class="verified-date"></span></p>
+        <p>&copy; 2026 APIpulse. <a href="index.html">Home</a> &middot; <a href="compare.html">Compare</a> &middot; <a href="calculator.html">Calculator</a> &middot; <a href="blog.html">Blog</a> &middot; <a href="pricing.html">Pricing</a> &middot; <a href="about.html">About</a></p>
+    </footer>
+
+    <script>
+        function handleEmailSubmit(e) {
+            e.preventDefault();
+            const email = e.target.querySelector('input').value;
+            fetch('/api/subscribe', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ email, source: 'blog-claude-4-cost-calculator' })
+            }).then(r => r.json()).then(d => {
+                if (d.success) {
+                    e.target.innerHTML = '<p style="color:var(--green);font-weight:600;">✓ Subscribed! Check your inbox.</p>';
+                } else {
+                    alert(d.error || 'Something went wrong. Please try again.');
+                }
+            }).catch(() => alert('Network error. Please try again.'));
+        }
+    </script>
+</body>
+</html>
