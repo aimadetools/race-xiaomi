@@ -343,6 +343,59 @@ async function saveEmail(e) {
     if (window.location.pathname.includes('unsubscribe') || window.location.pathname.includes('ph.html')) return;
     if (localStorage.getItem('apipulse_popup_dismissed')) return;
 
+    // Deprecation-specific exit popup (shows on deprecation/migration pages)
+    var isDeprecationPage = window.location.pathname.includes('deprecation') || window.location.pathname.includes('migration') || window.location.pathname.includes('last-chance');
+    var daysLeft = Math.ceil((new Date('2026-06-15T00:00:00Z') - new Date()) / 86400000);
+
+    if (isDeprecationPage && daysLeft > 0 && daysLeft <= 14) {
+        var depPopupShown = false;
+        function showDeprecationPopup() {
+            if (depPopupShown || localStorage.getItem('apipulse_popup_dismissed')) return;
+            depPopupShown = true;
+            if (window.trackEvent) window.trackEvent('deprecation_popup_shown', { days_left: daysLeft });
+
+            var price = window._abPrice || 29;
+            var stripeLink = window._abStripeLink || 'https://buy.stripe.com/fZu7sL3Gw3GS0RQeoDeEo0a';
+
+            var overlay = document.createElement('div');
+            overlay.id = 'exit-popup-overlay';
+            overlay.style.cssText = 'position:fixed;inset:0;background:rgba(0,0,0,0.7);z-index:9999;display:flex;align-items:center;justify-content:center;padding:20px;animation:fadeIn 0.3s ease;';
+            var popup = document.createElement('div');
+            popup.style.cssText = 'background:var(--bg-card);border:1px solid var(--red);border-radius:16px;padding:40px;max-width:440px;width:100%;position:relative;box-shadow:0 24px 64px rgba(0,0,0,0.5);';
+            popup.innerHTML = '<button id="exit-popup-close" style="position:absolute;top:12px;right:12px;background:none;border:none;color:var(--text-muted);font-size:20px;cursor:pointer;padding:4px 8px;border-radius:6px;" onmouseover="this.style.color=\'var(--text-primary)\'" onmouseout="this.style.color=\'var(--text-muted)\'">&times;</button>' +
+                '<div style="text-align:center;">' +
+                '<div style="font-size:40px;margin-bottom:16px;">⏰</div>' +
+                '<h3 style="font-size:22px;font-weight:700;margin-bottom:8px;color:var(--red);">' + daysLeft + ' Days Until Claude 4 Dies</h3>' +
+                '<p style="font-size:14px;color:var(--text-secondary);margin-bottom:20px;line-height:1.6;">Your API calls to Claude 4 Opus and Sonnet 4 will fail on June 15. Pro gives you personalized migration recommendations, saved scenarios, and cost reports — so you pick the right replacement.</p>' +
+                '<div style="background:rgba(34,197,94,0.08);border:1px solid rgba(34,197,94,0.25);border-radius:8px;padding:12px;margin-bottom:20px;font-size:14px;color:var(--green);font-weight:600;">Pro pays for itself in your first month of savings</div>' +
+                '<a href="' + stripeLink + '" target="_blank" rel="noopener" id="deprecation-popup-cta" style="display:inline-block;background:var(--accent);color:white;padding:14px 32px;border-radius:10px;font-size:16px;font-weight:700;text-decoration:none;transition:all 0.2s;box-shadow:0 4px 20px rgba(99,102,241,0.3);" onmouseover="this.style.transform=\'translateY(-2px)\'" onmouseout="this.style.transform=\'none\'">Get Pro — $' + price + ' lifetime</a>' +
+                '<p style="font-size:12px;color:var(--text-muted);margin-top:12px;">14-day money-back guarantee</p>' +
+                '</div>';
+            overlay.appendChild(popup);
+            document.body.appendChild(overlay);
+
+            document.getElementById('exit-popup-close').addEventListener('click', function() {
+                if (window.trackEvent) window.trackEvent('deprecation_popup_dismissed', { days_left: daysLeft });
+                overlay.remove();
+                localStorage.setItem('apipulse_popup_dismissed', '1');
+            });
+            overlay.addEventListener('click', function(e) {
+                if (e.target === overlay) {
+                    if (window.trackEvent) window.trackEvent('deprecation_popup_dismissed', { days_left: daysLeft });
+                    overlay.remove();
+                    localStorage.setItem('apipulse_popup_dismissed', '1');
+                }
+            });
+            document.getElementById('deprecation-popup-cta').addEventListener('click', function() {
+                if (window.trackEvent) window.trackEvent('deprecation_popup_cta_clicked', { days_left: daysLeft, price: price });
+            });
+        }
+
+        document.addEventListener('mouseout', function(e) { if (e.clientY <= 0 && !depPopupShown) showDeprecationPopup(); });
+        setTimeout(function() { if (!depPopupShown && 'ontouchstart' in window) showDeprecationPopup(); }, 30000);
+        return; // Skip the generic email popup on deprecation pages
+    }
+
     // A/B test variants
     var popupVariants = {
         A: { emoji: '🚀', headline: 'Get 40% off AI API costs', subtext: 'Join 500+ developers who use our free pricing data to optimize their AI spending. Get notified when prices change.', cta: 'Get Updates' },
