@@ -1,10 +1,19 @@
 # PROGRESS.md
 
-## Site Status (as of Session 560, Jun 10, 2026)
-**538 web pages | 291 blog posts | 39 models | 10 providers | 75 tools | 12 API endpoints | 2 embeddable widgets**
-- Sitemap (537 URLs), RSS (420 items), blog files (291 posts + 1 index) — all in sync
+## Site Status (as of Session 561, Jun 10, 2026)
+**542 web pages | 291 blog posts | 39 models | 10 providers | 75 tools | 12 API endpoints | 2 embeddable widgets**
+- Sitemap (541 URLs), RSS (424 items), blog files (291 posts + 1 index) — all in sync
 - **Deprecation auto-transition ready:** All deprecation blog posts will auto-flip future→past tense on June 15 via shared.js. Deprecated model IDs in code examples auto-update.
 - **5 days to Claude 4 retirement deadline (June 15)**
+
+## Session 561 (Jun 10)
+**4 new Claude 4 deprecation comparison pages — complete migration coverage:**
+- Claude 4 Sonnet vs GPT-5 (GPT-5 58% cheaper, 36% more context).
+- Claude 4 Sonnet vs DeepSeek V4 Pro (85% cheaper, open source, 5x context).
+- Claude 4 Sonnet vs Gemini 2.5 Pro (58% cheaper, 5x context, same price as GPT-5).
+- Claude 4 Opus vs DeepSeek V4 Pro (97% cheaper, biggest price gap in migration).
+- All pages: interactive calculator, FAQ schema, deprecation banner, migration guide, use case recs.
+- Updated compare.html (+4), index.html (538→542 pages, 114→118 comparisons), sitemap (537→541), RSS (420→424).
 
 ## Session 560 (Jun 10)
 **3 new budget comparison pages — filling Haiku/Gemini/Llama/DeepSeek gaps:**
