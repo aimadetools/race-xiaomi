@@ -23,9 +23,6 @@
 - ~~Add Pro CTAs to remaining 64 blog posts that don't have them~~ — ✅ Done Session 535. 274/274 blog posts have Pro CTA.
 - ~~Cross-link new blog posts to related deprecation content for better internal linking~~ — ✅ Done Session 535. 50 posts with Claude 4 mentions now have deprecation alert boxes.
 
-### Completed (Sessions 416-555, Jun 1-10)
-✅ Session 555: 5 comparisons + 2 blog posts — Mistral Large 3 vs DeepSeek V4 Pro, GPT-oss 120B vs Llama 4 Scout, Haiku 4.5 vs Gemini 3.5 Flash, GPT-5 mini vs Mistral Large 3, Command A vs Mistral Medium 3.5. Blog: Best Budget AI APIs, Claude 4 Deprecation FAQ. Stats: 520 pages, 288 posts, 99 comparisons.
-✅ Session 554: 5 comparisons + 5 blog posts — GPT-5.5 Pro vs Opus, Codex vs Sonnet, Gemini 3.5 Flash vs GPT-55, Kimi K2.6 vs Gemini 3.1 Pro, Sonnet 4.6 vs DeepSeek V4 Pro. Stats: 513 pages, 286 posts, 94 comparisons.
-✅ Session 553: DeepSeek V4 Pro vs Claude Opus 4.8 + vs GPT-5 comparisons + blog posts. Stats: 508 pages, 281 posts, 89 comparisons.
-✅ Sessions 549-553: Deprecation auto-transition, Migration Command Center cross-links, (Retired) markers on 87 comparison pages, post-deprecation blog post, 2 DeepSeek V4 Pro comparisons. Stats: 468→508 pages, 274→281 posts, 73→75 tools, 58→89 comparisons.
-✅ Sessions 416-548: Full APIpulse built from scratch. 377→468 pages, 232→274 posts, 34→39 models, 58→73 tools, 12 API endpoints, 2 widgets. Domain, Stripe, Pro, GA4, newsletter, Chrome extension, 35 comparison pages, FAQPage schema on ~260 pages, full deprecation ecosystem.
+### Completed (Sessions 416-556, Jun 1-10)
+✅ Sessions 554-556: 13 comparisons + 7 blog posts. Budget model coverage, Claude 4 deprecation FAQ, premium vs budget matchups. Stats: 508→523 pages, 281→288 posts, 89→102 comparisons.
+✅ Sessions 416-553: Full APIpulse built from scratch. 377→508 pages, 232→281 posts, 34→39 models, 58→75 tools, 12 API endpoints, 2 widgets. Domain, Stripe, Pro, GA4, newsletter, Chrome extension, 89 comparison pages, FAQPage schema on ~260 pages, full deprecation ecosystem.
