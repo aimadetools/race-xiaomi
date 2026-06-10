@@ -1,92 +1,61 @@
-// Vercel Serverless Function: API Pricing Data
-// Returns all model pricing data as JSON
-// Developers can use this to programmatically access APIpulse pricing data
-
-const API_MODELS = [
-    { id: 'openai-gpt55', name: 'GPT-5.5', provider: 'OpenAI', providerSlug: 'openai', tier: 'Premium', input: 5.00, output: 30.00, context: '1M', verified: 'May 2026' },
-    { id: 'openai-gpt55-pro', name: 'GPT-5.5 Pro', provider: 'OpenAI', providerSlug: 'openai', tier: 'Premium', input: 30.00, output: 180.00, context: '1M', verified: 'May 2026' },
-    { id: 'openai-gpt53-codex', name: 'GPT-5.3 Codex', provider: 'OpenAI', providerSlug: 'openai', tier: 'Mid', input: 1.75, output: 14.00, context: '400K', verified: 'May 2026' },
-    { id: 'openai-gpt5', name: 'GPT-5', provider: 'OpenAI', providerSlug: 'openai', tier: 'Premium', input: 1.25, output: 10.00, context: '272K', verified: 'May 2026' },
-    { id: 'openai-gpt5-mini', name: 'GPT-5 mini', provider: 'OpenAI', providerSlug: 'openai', tier: 'Budget', input: 0.25, output: 2.00, context: '272K', verified: 'May 2026' },
-    { id: 'openai-gpt-oss-120b', name: 'GPT-oss 120B', provider: 'OpenAI', providerSlug: 'openai', tier: 'Budget', input: 0.15, output: 0.60, context: '128K', verified: 'May 2026' },
-    { id: 'openai-gpt-oss-20b', name: 'GPT-oss 20B', provider: 'OpenAI', providerSlug: 'openai', tier: 'Budget', input: 0.08, output: 0.35, context: '128K', verified: 'May 2026' },
-    { id: 'openai-gpt4o', name: 'GPT-4o', provider: 'OpenAI', providerSlug: 'openai', tier: 'Mid', input: 2.50, output: 10.00, context: '128K', verified: 'May 2026' },
-    { id: 'openai-gpt4o-mini', name: 'GPT-4o mini', provider: 'OpenAI', providerSlug: 'openai', tier: 'Budget', input: 0.15, output: 0.60, context: '128K', verified: 'May 2026' },
-    { id: 'anthropic-opus48', name: 'Claude Opus 4.8', provider: 'Anthropic', providerSlug: 'anthropic', tier: 'Premium', input: 5.00, output: 25.00, context: '1M', verified: 'May 2026' },
-    { id: 'anthropic-opus47', name: 'Claude Opus 4.7', provider: 'Anthropic', providerSlug: 'anthropic', tier: 'Premium', input: 5.00, output: 25.00, context: '1M', verified: 'May 2026' },
-    { id: 'anthropic-opus', name: 'Claude 4 Opus', provider: 'Anthropic', providerSlug: 'anthropic', tier: 'Premium', input: 15.00, output: 75.00, context: '200K', verified: 'Jun 2026', deprecated: true, deprecatedDate: '2026-06-15', replacement: 'anthropic-opus48' },
-    { id: 'anthropic-sonnet46', name: 'Claude Sonnet 4.6', provider: 'Anthropic', providerSlug: 'anthropic', tier: 'Mid', input: 3.00, output: 15.00, context: '1M', verified: 'May 2026' },
-    { id: 'anthropic-sonnet', name: 'Claude Sonnet 4', provider: 'Anthropic', providerSlug: 'anthropic', tier: 'Mid', input: 3.00, output: 15.00, context: '200K', verified: 'Jun 2026', deprecated: true, deprecatedDate: '2026-06-15', replacement: 'anthropic-sonnet46' },
-    { id: 'anthropic-haiku', name: 'Claude Haiku 4.5', provider: 'Anthropic', providerSlug: 'anthropic', tier: 'Budget', input: 1.00, output: 5.00, context: '200K', verified: 'May 2026' },
-    { id: 'google-gemini3-pro', name: 'Gemini 3.1 Pro', provider: 'Google', providerSlug: 'google', tier: 'Mid', input: 2.00, output: 12.00, context: '1M', verified: 'May 2026' },
-    { id: 'google-pro', name: 'Gemini 2.5 Pro', provider: 'Google', providerSlug: 'google', tier: 'Mid', input: 1.25, output: 10.00, context: '1M', verified: 'May 2026' },
-    { id: 'google-flash', name: 'Gemini 2.0 Flash', provider: 'Google', providerSlug: 'google', tier: 'Budget', input: 0.10, output: 0.40, context: '1M', verified: 'May 2026' },
-    { id: 'google-flash-lite', name: 'Gemini 2.0 Flash Lite', provider: 'Google', providerSlug: 'google', tier: 'Budget', input: 0.075, output: 0.30, context: '1M', verified: 'May 2026' },
-    { id: 'google-gemini35-flash', name: 'Gemini 3.5 Flash', provider: 'Google', providerSlug: 'google', tier: 'Mid', input: 1.50, output: 9.00, context: '1M', verified: 'Jun 2026' },
-    { id: 'deepseek-v4-pro', name: 'DeepSeek V4 Pro', provider: 'DeepSeek', providerSlug: 'deepseek', tier: 'Budget', input: 0.435, output: 0.87, context: '1M', verified: 'Jun 2026' },
-    { id: 'deepseek-v4-flash', name: 'DeepSeek V4 Flash', provider: 'DeepSeek', providerSlug: 'deepseek', tier: 'Budget', input: 0.14, output: 0.28, context: '1M', verified: 'May 2026' },
-    { id: 'deepseek-v32', name: 'DeepSeek V3.2', provider: 'DeepSeek', providerSlug: 'deepseek', tier: 'Budget', input: 0.23, output: 0.34, context: '128K', verified: 'Jun 2026' },
-    { id: 'deepseek-v3', name: 'DeepSeek V3', provider: 'DeepSeek', providerSlug: 'deepseek', tier: 'Budget', input: 0.27, output: 1.10, context: '128K', verified: 'May 2026', deprecated: true, replacement: 'deepseek-v4-flash' },
-    { id: 'mistral-large', name: 'Mistral Large 3', provider: 'Mistral', providerSlug: 'mistral', tier: 'Budget', input: 0.50, output: 1.50, context: '262K', verified: 'Jun 2026' },
-    { id: 'mistral-medium', name: 'Mistral Medium 3.5', provider: 'Mistral', providerSlug: 'mistral', tier: 'Mid', input: 1.50, output: 7.50, context: '128K', verified: 'Jun 2026' },
-    { id: 'mistral-small', name: 'Mistral Small 4', provider: 'Mistral', providerSlug: 'mistral', tier: 'Budget', input: 0.15, output: 0.60, context: '128K', verified: 'May 2026' },
-    { id: 'cohere-command-a', name: 'Command A', provider: 'Cohere', providerSlug: 'cohere', tier: 'Mid', input: 2.50, output: 10.00, context: '128K', verified: 'Jun 2026' },
-    { id: 'cohere-command-r-plus', name: 'Command R+', provider: 'Cohere', providerSlug: 'cohere', tier: 'Mid', input: 2.50, output: 10.00, context: '128K', verified: 'May 2026' },
-    { id: 'cohere-command-r', name: 'Command R', provider: 'Cohere', providerSlug: 'cohere', tier: 'Budget', input: 0.50, output: 1.50, context: '128K', verified: 'May 2026' },
-    { id: 'llama-4-scout', name: 'Llama 4 Scout', provider: 'Meta (Together.ai)', providerSlug: 'together', tier: 'Budget', input: 0.18, output: 0.59, context: '1M', verified: 'Jun 2026' },
-    { id: 'llama-4-maverick', name: 'Llama 4 Maverick', provider: 'Meta (Together.ai)', providerSlug: 'together', tier: 'Budget', input: 0.27, output: 0.85, context: '1M', verified: 'Jun 2026' },
-    { id: 'llama-3.1-70b', name: 'Llama 3.1 70B', provider: 'Meta (Together.ai)', providerSlug: 'together', tier: 'Mid', input: 0.88, output: 0.88, context: '128K', verified: 'May 2026' },
-    { id: 'llama-3.1-8b', name: 'Llama 3.1 8B', provider: 'Meta (Together.ai)', providerSlug: 'together', tier: 'Budget', input: 0.10, output: 0.10, context: '128K', verified: 'May 2026' },
-    { id: 'kimi-k26', name: 'Kimi K2.6', provider: 'Moonshot', providerSlug: 'moonshot', tier: 'Budget', input: 0.95, output: 4.00, context: '256K', verified: 'Jun 2026' },
-    { id: 'xai-grok3', name: 'Grok 4.3', provider: 'xAI', providerSlug: 'xai', tier: 'Mid', input: 1.25, output: 2.50, context: '1M', verified: 'Jun 2026' },
-    { id: 'xai-grok3-mini', name: 'Grok Build 0.1', provider: 'xAI', providerSlug: 'xai', tier: 'Budget', input: 0.30, output: 0.50, context: '256K', verified: 'Jun 2026' },
-    { id: 'ai21-jamba', name: 'Jamba 1.5 Large', provider: 'AI21', providerSlug: 'ai21', tier: 'Mid', input: 2.00, output: 8.00, context: '256K', verified: 'May 2026' },
-    { id: 'ai21-jamba17', name: 'Jamba 1.7 Large', provider: 'AI21', providerSlug: 'ai21', tier: 'Mid', input: 2.00, output: 8.00, context: '256K', verified: 'Jun 2026' }
-];
-
+// API Pricing Data — returns all model pricing as JSON
 module.exports = (req, res) => {
     res.setHeader('Access-Control-Allow-Origin', '*');
-    res.setHeader('Access-Control-Allow-Methods', 'GET, OPTIONS');
-    res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
     res.setHeader('Cache-Control', 's-maxage=3600, stale-while-revalidate=86400');
-
-    if (req.method === 'OPTIONS') {
-        return res.status(200).end();
+    if (req.method === 'OPTIONS') return res.status(200).end();
+    if (req.method !== 'GET') return res.status(405).json({ error: 'Use GET' });
+    const q = req.query || {};
+    const models = [
+        { id: 'openai-gpt55', n: 'GPT-5.5', p: 'OpenAI', ps: 'openai', t: 'Premium', i: 5, o: 30, c: '1M' },
+        { id: 'openai-gpt55-pro', n: 'GPT-5.5 Pro', p: 'OpenAI', ps: 'openai', t: 'Premium', i: 30, o: 180, c: '1M' },
+        { id: 'openai-gpt53-codex', n: 'GPT-5.3 Codex', p: 'OpenAI', ps: 'openai', t: 'Mid', i: 1.75, o: 14, c: '400K' },
+        { id: 'openai-gpt5', n: 'GPT-5', p: 'OpenAI', ps: 'openai', t: 'Premium', i: 1.25, o: 10, c: '272K' },
+        { id: 'openai-gpt5-mini', n: 'GPT-5 mini', p: 'OpenAI', ps: 'openai', t: 'Budget', i: 0.25, o: 2, c: '272K' },
+        { id: 'openai-gpt-oss-120b', n: 'GPT-oss 120B', p: 'OpenAI', ps: 'openai', t: 'Budget', i: 0.15, o: 0.6, c: '128K' },
+        { id: 'openai-gpt-oss-20b', n: 'GPT-oss 20B', p: 'OpenAI', ps: 'openai', t: 'Budget', i: 0.08, o: 0.35, c: '128K' },
+        { id: 'openai-gpt4o', n: 'GPT-4o', p: 'OpenAI', ps: 'openai', t: 'Mid', i: 2.5, o: 10, c: '128K' },
+        { id: 'openai-gpt4o-mini', n: 'GPT-4o mini', p: 'OpenAI', ps: 'openai', t: 'Budget', i: 0.15, o: 0.6, c: '128K' },
+        { id: 'anthropic-opus48', n: 'Claude Opus 4.8', p: 'Anthropic', ps: 'anthropic', t: 'Premium', i: 5, o: 25, c: '1M' },
+        { id: 'anthropic-opus47', n: 'Claude Opus 4.7', p: 'Anthropic', ps: 'anthropic', t: 'Premium', i: 5, o: 25, c: '1M' },
+        { id: 'anthropic-opus', n: 'Claude 4 Opus', p: 'Anthropic', ps: 'anthropic', t: 'Premium', i: 15, o: 75, c: '200K', dep: true },
+        { id: 'anthropic-sonnet46', n: 'Claude Sonnet 4.6', p: 'Anthropic', ps: 'anthropic', t: 'Mid', i: 3, o: 15, c: '1M' },
+        { id: 'anthropic-sonnet', n: 'Claude Sonnet 4', p: 'Anthropic', ps: 'anthropic', t: 'Mid', i: 3, o: 15, c: '200K', dep: true },
+        { id: 'anthropic-haiku', n: 'Claude Haiku 4.5', p: 'Anthropic', ps: 'anthropic', t: 'Budget', i: 1, o: 5, c: '200K' },
+        { id: 'google-gemini3-pro', n: 'Gemini 3.1 Pro', p: 'Google', ps: 'google', t: 'Mid', i: 2, o: 12, c: '1M' },
+        { id: 'google-pro', n: 'Gemini 2.5 Pro', p: 'Google', ps: 'google', t: 'Mid', i: 1.25, o: 10, c: '1M' },
+        { id: 'google-flash', n: 'Gemini 2.0 Flash', p: 'Google', ps: 'google', t: 'Budget', i: 0.1, o: 0.4, c: '1M' },
+        { id: 'google-flash-lite', n: 'Gemini 2.0 Flash Lite', p: 'Google', ps: 'google', t: 'Budget', i: 0.075, o: 0.3, c: '1M' },
+        { id: 'google-gemini35-flash', n: 'Gemini 3.5 Flash', p: 'Google', ps: 'google', t: 'Mid', i: 1.5, o: 9, c: '1M' },
+        { id: 'deepseek-v4-pro', n: 'DeepSeek V4 Pro', p: 'DeepSeek', ps: 'deepseek', t: 'Budget', i: 0.435, o: 0.87, c: '1M' },
+        { id: 'deepseek-v4-flash', n: 'DeepSeek V4 Flash', p: 'DeepSeek', ps: 'deepseek', t: 'Budget', i: 0.14, o: 0.28, c: '1M' },
+        { id: 'deepseek-v32', n: 'DeepSeek V3.2', p: 'DeepSeek', ps: 'deepseek', t: 'Budget', i: 0.23, o: 0.34, c: '128K' },
+        { id: 'deepseek-v3', n: 'DeepSeek V3', p: 'DeepSeek', ps: 'deepseek', t: 'Budget', i: 0.27, o: 1.1, c: '128K', dep: true },
+        { id: 'mistral-large', n: 'Mistral Large 3', p: 'Mistral', ps: 'mistral', t: 'Budget', i: 0.5, o: 1.5, c: '262K' },
+        { id: 'mistral-medium', n: 'Mistral Medium 3.5', p: 'Mistral', ps: 'mistral', t: 'Mid', i: 1.5, o: 7.5, c: '128K' },
+        { id: 'mistral-small', n: 'Mistral Small 4', p: 'Mistral', ps: 'mistral', t: 'Budget', i: 0.15, o: 0.6, c: '128K' },
+        { id: 'cohere-command-a', n: 'Command A', p: 'Cohere', ps: 'cohere', t: 'Mid', i: 2.5, o: 10, c: '128K' },
+        { id: 'cohere-command-r-plus', n: 'Command R+', p: 'Cohere', ps: 'cohere', t: 'Mid', i: 2.5, o: 10, c: '128K' },
+        { id: 'cohere-command-r', n: 'Command R', p: 'Cohere', ps: 'cohere', t: 'Budget', i: 0.5, o: 1.5, c: '128K' },
+        { id: 'llama-4-scout', n: 'Llama 4 Scout', p: 'Meta', ps: 'together', t: 'Budget', i: 0.18, o: 0.59, c: '1M' },
+        { id: 'llama-4-maverick', n: 'Llama 4 Maverick', p: 'Meta', ps: 'together', t: 'Budget', i: 0.27, o: 0.85, c: '1M' },
+        { id: 'llama-3.1-70b', n: 'Llama 3.1 70B', p: 'Meta', ps: 'together', t: 'Mid', i: 0.88, o: 0.88, c: '128K' },
+        { id: 'llama-3.1-8b', n: 'Llama 3.1 8B', p: 'Meta', ps: 'together', t: 'Budget', i: 0.1, o: 0.1, c: '128K' },
+        { id: 'kimi-k26', n: 'Kimi K2.6', p: 'Moonshot', ps: 'moonshot', t: 'Budget', i: 0.95, o: 4, c: '256K' },
+        { id: 'xai-grok3', n: 'Grok 4.3', p: 'xAI', ps: 'xai', t: 'Mid', i: 1.25, o: 2.5, c: '1M' },
+        { id: 'xai-grok3-mini', n: 'Grok Build 0.1', p: 'xAI', ps: 'xai', t: 'Budget', i: 0.3, o: 0.5, c: '256K' },
+        { id: 'ai21-jamba', n: 'Jamba 1.5 Large', p: 'AI21', ps: 'ai21', t: 'Mid', i: 2, o: 8, c: '256K' },
+        { id: 'ai21-jamba17', n: 'Jamba 1.7 Large', p: 'AI21', ps: 'ai21', t: 'Mid', i: 2, o: 8, c: '256K' }
+    ];
+    let d = models;
+    if (q.provider) d = d.filter(m => m.ps === q.provider.toLowerCase());
+    if (q.tier) d = d.filter(m => m.t === q.tier.toLowerCase());
+    if (q.model) {
+        const f = d.find(m => m.id === q.model);
+        if (!f) return res.status(404).json({ error: 'Not found', models: models.map(m => m.id) });
+        return res.status(200).json({ model: f, source: 'https://getapipulse.com' });
     }
-
-    if (req.method !== 'GET') {
-        return res.status(405).json({ error: 'Method not allowed. Use GET.' });
-    }
-
-    const { provider, tier, model } = req.query;
-    let data = API_MODELS;
-
-    if (provider) {
-        data = data.filter(m => m.providerSlug === provider.toLowerCase());
-    }
-    if (tier) {
-        data = data.filter(m => m.tier.toLowerCase() === tier.toLowerCase());
-    }
-    if (model) {
-        const found = data.find(m => m.id === model);
-        if (!found) {
-            return res.status(404).json({ error: 'Model not found', available: API_MODELS.map(m => m.id) });
-        }
-        return res.status(200).json({ model: found, source: 'https://getapipulse.com' });
-    }
-
-    const providers = [...new Set(data.map(m => m.provider))];
-    const tiers = [...new Set(data.map(m => m.tier))];
-
     return res.status(200).json({
-        models: data,
-        meta: {
-            count: data.length,
-            providers: providers,
-            tiers: tiers,
-            lastUpdated: '2026-06-10',
-            source: 'https://getapipulse.com',
-            docs: 'https://getapipulse.com/api-docs.html'
-        }
+        models: d,
+        meta: { count: d.length, lastUpdated: '2026-06-10', source: 'https://getapipulse.com' }
     });
 };

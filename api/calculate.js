@@ -1,166 +1,81 @@
-// Vercel Serverless Function: AI API Cost Calculator
-// Calculate estimated costs for any LLM model
-// Free to use — data from getapipulse.com
-//
-// Usage:
-//   GET /api/calculate?model=openai-gpt5&input_tokens=2000&output_tokens=500&requests=1000&days=30
-//   Updated: Jun 10, 2026
-//   GET /api/calculate?model=anthropic-sonnet&requests=5000
-//   GET /api/calculate?models=openai-gpt5,anthropic-sonnet,google-pro&requests=10000
-//
-// Response includes per-request, daily, monthly, and annual costs
-
-const API_MODELS = {
-    'openai-gpt55': { name: 'GPT-5.5', provider: 'OpenAI', input: 5.00, output: 30.00, context: '1M' },
-    'openai-gpt55-pro': { name: 'GPT-5.5 Pro', provider: 'OpenAI', input: 30.00, output: 180.00, context: '1M' },
-    'openai-gpt53-codex': { name: 'GPT-5.3 Codex', provider: 'OpenAI', input: 1.75, output: 14.00, context: '400K' },
-    'openai-gpt5': { name: 'GPT-5', provider: 'OpenAI', input: 1.25, output: 10.00, context: '272K' },
-    'openai-gpt5-mini': { name: 'GPT-5 mini', provider: 'OpenAI', input: 0.25, output: 2.00, context: '272K' },
-    'openai-gpt-oss-120b': { name: 'GPT-oss 120B', provider: 'OpenAI', input: 0.15, output: 0.60, context: '128K' },
-    'openai-gpt-oss-20b': { name: 'GPT-oss 20B', provider: 'OpenAI', input: 0.08, output: 0.35, context: '128K' },
-    'openai-gpt4o': { name: 'GPT-4o', provider: 'OpenAI', input: 2.50, output: 10.00, context: '128K' },
-    'openai-gpt4o-mini': { name: 'GPT-4o mini', provider: 'OpenAI', input: 0.15, output: 0.60, context: '128K' },
-    'anthropic-opus48': { name: 'Claude Opus 4.8', provider: 'Anthropic', input: 5.00, output: 25.00, context: '1M' },
-    'anthropic-opus47': { name: 'Claude Opus 4.7', provider: 'Anthropic', input: 5.00, output: 25.00, context: '1M' },
-    'anthropic-opus': { name: 'Claude 4 Opus', provider: 'Anthropic', input: 15.00, output: 75.00, context: '200K' },
-    'anthropic-sonnet46': { name: 'Claude Sonnet 4.6', provider: 'Anthropic', input: 3.00, output: 15.00, context: '1M' },
-    'anthropic-sonnet': { name: 'Claude Sonnet 4', provider: 'Anthropic', input: 3.00, output: 15.00, context: '200K' },
-    'anthropic-haiku': { name: 'Claude Haiku 4.5', provider: 'Anthropic', input: 1.00, output: 5.00, context: '200K' },
-    'google-gemini3-pro': { name: 'Gemini 3.1 Pro', provider: 'Google', input: 2.00, output: 12.00, context: '1M' },
-    'google-pro': { name: 'Gemini 2.5 Pro', provider: 'Google', input: 1.25, output: 10.00, context: '1M' },
-    'google-flash': { name: 'Gemini 2.0 Flash', provider: 'Google', input: 0.10, output: 0.40, context: '1M' },
-    'google-flash-lite': { name: 'Gemini 2.0 Flash Lite', provider: 'Google', input: 0.075, output: 0.30, context: '1M' },
-    'deepseek-v4-pro': { name: 'DeepSeek V4 Pro', provider: 'DeepSeek', input: 0.435, output: 0.87, context: '1M' },
-    'deepseek-v4-flash': { name: 'DeepSeek V4 Flash', provider: 'DeepSeek', input: 0.14, output: 0.28, context: '1M' },
-    'deepseek-v3': { name: 'DeepSeek V3', provider: 'DeepSeek', input: 0.27, output: 1.10, context: '128K' },
-    'mistral-large': { name: 'Mistral Large 3', provider: 'Mistral', input: 0.50, output: 1.50, context: '128K' },
-    'mistral-small': { name: 'Mistral Small 4', provider: 'Mistral', input: 0.15, output: 0.60, context: '128K' },
-    'cohere-command-r-plus': { name: 'Command R+', provider: 'Cohere', input: 2.50, output: 10.00, context: '128K' },
-    'cohere-command-r': { name: 'Command R', provider: 'Cohere', input: 0.50, output: 1.50, context: '128K' },
-    'llama-4-scout': { name: 'Llama 4 Scout', provider: 'Meta (Together.ai)', input: 0.18, output: 0.59, context: '1M' },
-    'llama-4-maverick': { name: 'Llama 4 Maverick', provider: 'Meta (Together.ai)', input: 0.27, output: 0.85, context: '1M' },
-    'llama-3.1-70b': { name: 'Llama 3.1 70B', provider: 'Meta (Together.ai)', input: 0.88, output: 0.88, context: '128K' },
-    'llama-3.1-8b': { name: 'Llama 3.1 8B', provider: 'Meta (Together.ai)', input: 0.10, output: 0.10, context: '128K' },
-    'kimi-k26': { name: 'Kimi K2.6', provider: 'Moonshot', input: 0.95, output: 4.00, context: '256K' },
-    'xai-grok3': { name: 'Grok 4.3', provider: 'xAI', input: 1.25, output: 2.50, context: '1M' },
-    'xai-grok3-mini': { name: 'Grok Build 0.1', provider: 'xAI', input: 0.30, output: 0.50, context: '256K' },
-    'ai21-jamba': { name: 'Jamba 1.5 Large', provider: 'AI21', input: 2.00, output: 8.00, context: '256K' },
+// AI API Cost Calculator
+const M = {
+    'openai-gpt55': { n: 'GPT-5.5', p: 'OpenAI', i: 5, o: 30 },
+    'openai-gpt55-pro': { n: 'GPT-5.5 Pro', p: 'OpenAI', i: 30, o: 180 },
+    'openai-gpt53-codex': { n: 'GPT-5.3 Codex', p: 'OpenAI', i: 1.75, o: 14 },
+    'openai-gpt5': { n: 'GPT-5', p: 'OpenAI', i: 1.25, o: 10 },
+    'openai-gpt5-mini': { n: 'GPT-5 mini', p: 'OpenAI', i: 0.25, o: 2 },
+    'openai-gpt-oss-120b': { n: 'GPT-oss 120B', p: 'OpenAI', i: 0.15, o: 0.6 },
+    'openai-gpt-oss-20b': { n: 'GPT-oss 20B', p: 'OpenAI', i: 0.08, o: 0.35 },
+    'openai-gpt4o': { n: 'GPT-4o', p: 'OpenAI', i: 2.5, o: 10 },
+    'openai-gpt4o-mini': { n: 'GPT-4o mini', p: 'OpenAI', i: 0.15, o: 0.6 },
+    'anthropic-opus48': { n: 'Claude Opus 4.8', p: 'Anthropic', i: 5, o: 25 },
+    'anthropic-opus47': { n: 'Claude Opus 4.7', p: 'Anthropic', i: 5, o: 25 },
+    'anthropic-opus': { n: 'Claude 4 Opus', p: 'Anthropic', i: 15, o: 75 },
+    'anthropic-sonnet46': { n: 'Claude Sonnet 4.6', p: 'Anthropic', i: 3, o: 15 },
+    'anthropic-sonnet': { n: 'Claude Sonnet 4', p: 'Anthropic', i: 3, o: 15 },
+    'anthropic-haiku': { n: 'Claude Haiku 4.5', p: 'Anthropic', i: 1, o: 5 },
+    'google-gemini3-pro': { n: 'Gemini 3.1 Pro', p: 'Google', i: 2, o: 12 },
+    'google-pro': { n: 'Gemini 2.5 Pro', p: 'Google', i: 1.25, o: 10 },
+    'google-flash': { n: 'Gemini 2.0 Flash', p: 'Google', i: 0.1, o: 0.4 },
+    'google-flash-lite': { n: 'Gemini 2.0 Flash Lite', p: 'Google', i: 0.075, o: 0.3 },
+    'google-gemini35-flash': { n: 'Gemini 3.5 Flash', p: 'Google', i: 1.5, o: 9 },
+    'deepseek-v4-pro': { n: 'DeepSeek V4 Pro', p: 'DeepSeek', i: 0.435, o: 0.87 },
+    'deepseek-v4-flash': { n: 'DeepSeek V4 Flash', p: 'DeepSeek', i: 0.14, o: 0.28 },
+    'deepseek-v32': { n: 'DeepSeek V3.2', p: 'DeepSeek', i: 0.23, o: 0.34 },
+    'deepseek-v3': { n: 'DeepSeek V3', p: 'DeepSeek', i: 0.27, o: 1.1 },
+    'mistral-large': { n: 'Mistral Large 3', p: 'Mistral', i: 0.5, o: 1.5 },
+    'mistral-medium': { n: 'Mistral Medium 3.5', p: 'Mistral', i: 1.5, o: 7.5 },
+    'mistral-small': { n: 'Mistral Small 4', p: 'Mistral', i: 0.15, o: 0.6 },
+    'cohere-command-a': { n: 'Command A', p: 'Cohere', i: 2.5, o: 10 },
+    'cohere-command-r-plus': { n: 'Command R+', p: 'Cohere', i: 2.5, o: 10 },
+    'cohere-command-r': { n: 'Command R', p: 'Cohere', i: 0.5, o: 1.5 },
+    'llama-4-scout': { n: 'Llama 4 Scout', p: 'Meta', i: 0.18, o: 0.59 },
+    'llama-4-maverick': { n: 'Llama 4 Maverick', p: 'Meta', i: 0.27, o: 0.85 },
+    'llama-3.1-70b': { n: 'Llama 3.1 70B', p: 'Meta', i: 0.88, o: 0.88 },
+    'llama-3.1-8b': { n: 'Llama 3.1 8B', p: 'Meta', i: 0.1, o: 0.1 },
+    'kimi-k26': { n: 'Kimi K2.6', p: 'Moonshot', i: 0.95, o: 4 },
+    'xai-grok3': { n: 'Grok 4.3', p: 'xAI', i: 1.25, o: 2.5 },
+    'xai-grok3-mini': { n: 'Grok Build 0.1', p: 'xAI', i: 0.3, o: 0.5 },
+    'ai21-jamba': { n: 'Jamba 1.5 Large', p: 'AI21', i: 2, o: 8 },
+    'ai21-jamba17': { n: 'Jamba 1.7 Large', p: 'AI21', i: 2, o: 8 }
 };
-
-function calculateCost(modelId, inputTokens, outputTokens, requestsPerDay, days) {
-    const model = API_MODELS[modelId];
-    if (!model) return null;
-
-    const totalInput = inputTokens * requestsPerDay * days;
-    const totalOutput = outputTokens * requestsPerDay * days;
-    const inputCost = (totalInput / 1000000) * model.input;
-    const outputCost = (totalOutput / 1000000) * model.output;
-    const totalMonthly = inputCost + outputCost;
-    const costPerRequest = model.input * (inputTokens / 1000000) + model.output * (outputTokens / 1000000);
-
-    return {
-        model: modelId,
-        name: model.name,
-        provider: model.provider,
-        context: model.context,
-        pricing: { input_per_1m: model.input, output_per_1m: model.output },
-        usage: { input_tokens: inputTokens, output_tokens: outputTokens, requests_per_day: requestsPerDay, days: days },
-        costs: {
-            per_request: Math.round(costPerRequest * 10000) / 10000,
-            per_1k_requests: Math.round(costPerRequest * 1000 * 100) / 100,
-            daily: Math.round(totalMonthly / days * 100) / 100,
-            monthly: Math.round(totalMonthly * 100) / 100,
-            annual: Math.round(totalMonthly * 12 * 100) / 100,
-        },
-        tokens: { total_input: totalInput, total_output: totalOutput, total: totalInput + totalOutput },
-    };
-}
 
 module.exports = (req, res) => {
     res.setHeader('Access-Control-Allow-Origin', '*');
-    res.setHeader('Access-Control-Allow-Methods', 'GET, OPTIONS');
-    res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
     res.setHeader('Cache-Control', 's-maxage=3600, stale-while-revalidate=86400');
-
     if (req.method === 'OPTIONS') return res.status(200).end();
-    if (req.method !== 'GET') return res.status(405).json({ error: 'Method not allowed. Use GET.' });
-
-    const { model, models, input_tokens, output_tokens, requests, days, mode } = req.query;
-
-    const inputTokens = parseInt(input_tokens) || 2000;
-    const outputTokens = parseInt(output_tokens) || 500;
-    const requestsPerDay = parseInt(requests) || 1000;
-    const numDays = parseInt(days) || 30;
-    const apiMode = mode || 'standard';
-
-    // Mode adjustments
-    const outputMult = apiMode === 'streaming' ? 1.15 : 1;
-    const priceMult = apiMode === 'batch' ? 0.5 : 1;
-
-    // Multi-model comparison
-    if (models) {
-        const modelIds = models.split(',').map(m => m.trim()).slice(0, 10);
-        const results = [];
-        for (const id of modelIds) {
-            const r = calculateCost(id, inputTokens, Math.round(outputTokens * outputMult), requestsPerDay, numDays);
-            if (r) {
-                if (priceMult !== 1) {
-                    r.costs.per_request = Math.round(r.costs.per_request * priceMult * 10000) / 10000;
-                    r.costs.per_1k_requests = Math.round(r.costs.per_1k_requests * priceMult * 100) / 100;
-                    r.costs.daily = Math.round(r.costs.daily * priceMult * 100) / 100;
-                    r.costs.monthly = Math.round(r.costs.monthly * priceMult * 100) / 100;
-                    r.costs.annual = Math.round(r.costs.annual * priceMult * 100) / 100;
-                }
-                r.mode = apiMode;
-                results.push(r);
-            }
-        }
-        results.sort((a, b) => a.costs.monthly - b.costs.monthly);
-        const cheapest = results[0];
-        return res.status(200).json({
-            results,
-            cheapest: cheapest ? { model: cheapest.model, name: cheapest.name, monthly: cheapest.costs.monthly } : null,
-            meta: {
-                count: results.length,
-                mode: apiMode,
-                source: 'https://getapipulse.com',
-                calculator: 'https://getapipulse.com/calculator.html'
-            }
-        });
+    if (req.method !== 'GET') return res.status(405).json({ error: 'Use GET' });
+    const q = req.query || {};
+    const inp = parseInt(q.input_tokens) || 2000;
+    const out = parseInt(q.output_tokens) || 500;
+    const reqs = parseInt(q.requests) || 1000;
+    const days = parseInt(q.days) || 30;
+    const mode = q.mode || 'standard';
+    const oM = mode === 'streaming' ? 1.15 : 1;
+    const pM = mode === 'batch' ? 0.5 : 1;
+    if (q.models) {
+        const ids = q.models.split(',').map(s => s.trim()).slice(0, 10);
+        const r = ids.map(id => {
+            const m = M[id];
+            if (!m) return null;
+            const tIn = inp * reqs * days;
+            const tOut = Math.round(out * oM) * reqs * days;
+            const mo = Math.round(((tIn / 1e6) * m.i + (tOut / 1e6) * m.o) * pM * 100) / 100;
+            return { id, name: m.n, provider: m.p, monthly: mo };
+        }).filter(Boolean).sort((a, b) => a.monthly - b.monthly);
+        return res.status(200).json({ results: r, source: 'https://getapipulse.com' });
     }
-
-    // Single model
-    if (!model) {
-        return res.status(400).json({
-            error: 'Missing required parameter: model or models',
-            usage: 'GET /api/calculate?model=openai-gpt5&input_tokens=2000&output_tokens=500&requests=1000&days=30',
-            available_models: Object.keys(API_MODELS),
-            docs: 'https://getapipulse.com/api-docs.html'
-        });
-    }
-
-    const result = calculateCost(model, inputTokens, Math.round(outputTokens * outputMult), requestsPerDay, numDays);
-    if (!result) {
-        return res.status(404).json({
-            error: `Model "${model}" not found`,
-            available_models: Object.keys(API_MODELS),
-            docs: 'https://getapipulse.com/api-docs.html'
-        });
-    }
-
-    if (priceMult !== 1) {
-        result.costs.per_request = Math.round(result.costs.per_request * priceMult * 10000) / 10000;
-        result.costs.per_1k_requests = Math.round(result.costs.per_1k_requests * priceMult * 100) / 100;
-        result.costs.daily = Math.round(result.costs.daily * priceMult * 100) / 100;
-        result.costs.monthly = Math.round(result.costs.monthly * priceMult * 100) / 100;
-        result.costs.annual = Math.round(result.costs.annual * priceMult * 100) / 100;
-    }
-    result.mode = apiMode;
-
+    if (!q.model) return res.status(400).json({ error: 'Missing model param', models: Object.keys(M) });
+    const m = M[q.model];
+    if (!m) return res.status(404).json({ error: 'Model not found', models: Object.keys(M) });
+    const tIn = inp * reqs * days;
+    const tOut = Math.round(out * oM) * reqs * days;
+    const cReq = m.i * (inp / 1e6) + m.o * (out / 1e6);
+    const mo = Math.round(((tIn / 1e6) * m.i + (tOut / 1e6) * m.o) * pM * 100) / 100;
     return res.status(200).json({
-        ...result,
-        source: 'https://getapipulse.com',
-        calculator: 'https://getapipulse.com/calculator.html',
-        docs: 'https://getapipulse.com/api-docs.html'
+        model: q.model, name: m.n, provider: m.p,
+        costs: { per_request: Math.round(cReq * pM * 1e4) / 1e4, monthly: mo, annual: Math.round(mo * 12 * 100) / 100 },
+        mode, source: 'https://getapipulse.com'
     });
 };
