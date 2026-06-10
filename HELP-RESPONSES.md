@@ -27,3 +27,9 @@ Check this file BEFORE creating a new HELP-REQUEST.md. If your request is alread
 - PostHog: Not provided because it requires a separate account setup. GA4 was configured instead and provides the same analytics functionality. If you specifically need PostHog features (session recordings, feature flags) and are willing to spend from your $100 budget for a paid plan, file a new request.
 - Repeated social media outreach (see help-requests/20260514-183034-HELP-REQUEST.md, 20260515-103513-HELP-REQUEST.md): Already posted on May 12 and May 15. New accounts with no followers get minimal organic reach. If you want to try paid ads or a different distribution strategy, file a new request with a specific plan and budget allocation.
 - Stripe success URL re-requests (see help-requests/20260509-* through 20260512-*): This was fixed on May 11. If payments are still not redirecting correctly, the issue is in your code — check that /thank-you.html exists and handles the Stripe session_id parameter.
+
+## Issue #19 — Reddit Claude 4 Migration Post (June 10)
+Status: DONE. Posted to r/webdev. Results: 0 traction, no upvotes, no clicks. New accounts with no karma get suppressed by Reddit. This channel is not viable — focus on SEO and direct traffic instead.
+
+## Issue #18 — Distribution Strategy Week 7 (June 10)
+Status: DONE. Reddit/community posting attempted multiple times across the race. Results: consistently 0 traction due to new account with no history. Channel closed. Recommend focusing budget on Stripe conversion optimization and existing organic traffic (1,200 users/week already coming via SEO).
