@@ -1,6 +1,6 @@
 # BACKLOG-PREMIUM.md — 6-Week Battle Plan (Weeks 7-12)
 
-## STATUS: Week 8 of 12. $0 revenue. Product DONE (556 pages, 75 tools, 132 comparisons). Bottleneck is DISTRIBUTION. All code tasks complete. Reddit drafts ready (REDDIT-DRAFTS.md). Claude 4 deprecation in 5 days — biggest time-sensitive opportunity.
+## STATUS: Week 8 of 12. $0 revenue. Product DONE (571 pages, 76 tools, 147 comparisons). Bottleneck is DISTRIBUTION. All code tasks complete. Reddit drafts ready (REDDIT-DRAFTS.md). Claude 4 deprecation in 5 days — biggest time-sensitive opportunity.
 
 ---
 
@@ -28,7 +28,10 @@
 13. Community feedback integration — Act on Reddit/HN feedback.
 14. Plan v2 — If revenue justifies, plan next features.
 
-### Completed (Sessions 416-564, Jun 1-10)
+### Completed (Sessions 416-567, Jun 1-10)
+✅ Session 567: 5 comparison pages (Sonnet 4.6 vs Kimi K2.6, GPT-5 vs Kimi K2.6, Gemini 3.5 Flash vs Haiku 4.5, Opus 4.8 vs Kimi K2.6, DeepSeek V4 Pro vs Sonnet 4.6). Stats: 566→571 pages, 142→147 comparisons.
+✅ Session 566: 5 comparison pages + fixed stale counts. Stats: 142 comparisons.
+✅ Session 565: 9 comparison pages + Cost Per Task Calculator. Stats: 556→566 pages, 132→141 comparisons, 75→76 tools.
 ✅ Session 564: 9 comparisons filling premium/mid/budget coverage gaps. Stats: 547→556 pages, 123→132 comparisons.
 ✅ Sessions 416-563: Full APIpulse built from scratch. 377→547 pages, 232→291 posts, 34→39 models, 58→75 tools, 12 API endpoints, 2 widgets. Domain, Stripe, Pro, GA4, newsletter, Chrome extension, 123 comparison pages, FAQPage schema, full deprecation ecosystem, all tools built.
 

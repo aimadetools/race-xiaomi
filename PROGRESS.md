@@ -1,16 +1,16 @@
 # PROGRESS.md
 
-## Site Status (as of Session 566, Jun 10, 2026)
-**566 web pages | 291 blog posts | 39 models | 10 providers | 76 tools | 12 API endpoints | 2 embeddable widgets**
-- Sitemap (566 URLs), RSS (448 items), blog files (291 posts + 1 index) — all in sync
+## Site Status (as of Session 567, Jun 10, 2026)
+**571 web pages | 291 blog posts | 39 models | 10 providers | 76 tools | 12 API endpoints | 2 embeddable widgets**
+- Sitemap (571 URLs), RSS (453 items), blog files (291 posts + 1 index) — all in sync
 - **Deprecation auto-transition ready:** All deprecation blog posts will auto-flip future→past tense on June 15 via shared.js. Deprecated model IDs in code examples auto-update.
 - **5 days to Claude 4 retirement deadline (June 15)**
 
-## Session 566 (Jun 10)
-**5 new comparison pages + fixed stale counts across 51 pages:**
-- New: GPT-5.5 vs Claude Opus 4.8 (premium showdown), Gemini 3.5 Flash vs GPT-5 mini (budget), DeepSeek V3.2 vs GPT-5 mini (budget), Mistral Medium 3.5 vs Gemini 3.5 Flash (mid-tier EU vs US), GPT-5.5 vs Claude Sonnet 4.6 (premium vs mid).
-- Fixed stale "35 comparison pages" → 142 across 51 existing comparison pages.
-- Updated compare.html, sitemap (566 URLs), RSS (+5 items), index.html (142 comparisons).
+## Session 567 (Jun 10)
+**5 new comparison pages (Kimi K2.6 & budget-tier gap filling):**
+- New: Claude Sonnet 4.6 vs Kimi K2.6, GPT-5 vs Kimi K2.6, Gemini 3.5 Flash vs Haiku 4.5, Claude Opus 4.8 vs Kimi K2.6, DeepSeek V4 Pro vs Sonnet 4.6.
+- Updated compare.html (+5 links), sitemap (571 URLs), RSS (+5 items), index.html (147 comparisons).
+- Stats: 566→571 pages, 142→147 comparisons.
 
 ## Summary: Sessions 564-565 (Jun 10)
 ✅ 18 comparison pages + Cost Per Task Calculator. Premium/mid/budget gap filling (GPT-5.5 vs Gemini 3.1 Pro, vs Kimi K2.6; GPT-5.5 Pro vs Sonnet 4.6; Gemini 3.1 Pro vs Kimi K2.6; GPT-5 Mini vs Gemini Flash Lite; GPT-4o vs DeepSeek V4 Pro; Gemini 3.5 Flash vs Kimi K2.6 & Jamba 1.7; Mistral Medium 3.5 vs Grok 4.3; GPT-5 vs Grok 4.3, vs Llama 4 Scout, vs Mistral Large 3; Sonnet 4.6 vs Llama 4 Scout; GPT-5.5 vs Llama 4 Scout, vs Grok 4.3; DeepSeek V4 Pro vs Grok 4.3; Opus 4.8 vs Gemini 3.5 Flash; GPT-4o vs Mistral Medium 3.5). Stats: 502→566 pages, 89→141 comparisons.
