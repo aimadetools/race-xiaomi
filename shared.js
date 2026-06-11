@@ -675,13 +675,32 @@ function renderPricingFreshness(containerId) {
         bar.id = 'sticky-pro-cta';
         bar.style.cssText = 'position:fixed;bottom:0;left:0;right:0;z-index:9999;background:linear-gradient(135deg,#4f46e5,#6366f1);padding:12px 20px;display:flex;align-items:center;justify-content:center;gap:16px;box-shadow:0 -4px 20px rgba(0,0,0,0.3);transform:translateY(100%);transition:transform 0.3s ease;';
         var isDepPage = path.includes('deprecation') || path.includes('migration') || path.includes('last-chance') || path.includes('shutdown') || path.includes('claude-4');
-        var barMsg = isDepPage ? 'Migrating off Claude 4? Pro shows the cheapest path' : 'Founding Member: Pro for $' + price + ' <span style="opacity:0.7;font-weight:400;font-size:12px;">(goes to $' + futurePrice + ' soon)</span>';
+        var isCalcPage = path.includes('calculator');
+        var isComparePage = path.includes('compare');
+        var isCostPage = path.includes('cost-') || path.includes('optimizer') || path.includes('explorer') || path.includes('finder');
+        var barMsg, ctaContext;
+        if (isDepPage) {
+            barMsg = 'Migrating off Claude 4? Pro shows the cheapest path';
+            ctaContext = 'sticky_bar_deprecation';
+        } else if (isCalcPage) {
+            barMsg = 'Done calculating? Pro shows how to cut those costs by 40%';
+            ctaContext = 'sticky_bar_calculator';
+        } else if (isComparePage) {
+            barMsg = 'Comparing models? Pro picks the cheapest for your exact workload';
+            ctaContext = 'sticky_bar_compare';
+        } else if (isCostPage) {
+            barMsg = 'Stop guessing — Pro gives data-driven cost optimization';
+            ctaContext = 'sticky_bar_cost_tools';
+        } else {
+            barMsg = 'Founding Member: Pro for $' + price + ' <span style="opacity:0.7;font-weight:400;font-size:12px;">(goes to $' + futurePrice + ' soon)</span>';
+            ctaContext = 'sticky_bar_default';
+        }
         bar.innerHTML = '<span style="color:white;font-size:14px;font-weight:600;">' + barMsg + '</span>' +
-            '<a href="' + stripeLink + '" target="_blank" rel="noopener" style="background:white;color:#4f46e5;padding:8px 20px;border-radius:8px;font-size:13px;font-weight:700;text-decoration:none;white-space:nowrap;" onclick="if(window.trackEvent)window.trackEvent(\'pro_button_clicked\',{source:\'sticky_bar\',variant:\'' + variant + '\',price:' + price + '})">Get Pro — $' + price + '</a>' +
+            '<a href="' + stripeLink + '" target="_blank" rel="noopener" style="background:white;color:#4f46e5;padding:8px 20px;border-radius:8px;font-size:13px;font-weight:700;text-decoration:none;white-space:nowrap;" onclick="if(window.trackEvent)window.trackEvent(\'pro_button_clicked\',{source:\'' + ctaContext + '\',variant:\'' + variant + '\',price:' + price + '})">Get Pro — $' + price + '</a>' +
             '<button onclick="document.getElementById(\'sticky-pro-cta\').remove();localStorage.setItem(\'apipulse_pro_cta_dismissed\',\'1\');" style="background:none;border:none;color:rgba(255,255,255,0.7);font-size:18px;cursor:pointer;padding:0 4px;" aria-label="Dismiss">&times;</button>';
         document.body.appendChild(bar);
         requestAnimationFrame(function() { bar.style.transform = 'translateY(0)'; });
-        if(window.trackEvent) window.trackEvent('sticky_cta_shown', {variant: variant, price: price});
+        if(window.trackEvent) window.trackEvent('sticky_cta_shown', {variant: variant, price: price, context: ctaContext});
     });
 })();
 
