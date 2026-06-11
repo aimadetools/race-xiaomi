@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Claude 4 to Sonnet 4.6 Migration: One-Line Fix (June 2026) — APIpulse</title>
+    <meta name="description" content="Migrating from Claude 4 Sonnet to Claude Sonnet 4.6? It's a one-line model ID change. Same price, same quality, 5x larger context window. Fix your app before June 15.">
+    <meta name="keywords" content="Claude 4 to Sonnet 4.6, migrate Claude Sonnet 4, Claude Sonnet 4.6 migration, Claude 4 Sonnet replacement, Claude Sonnet 4 deprecated, Claude 4 shutdown fix">
+    <meta property="og:title" content="Claude 4 to Sonnet 4.6 Migration: One-Line Fix (June 2026)">
+    <meta property="og:description" content="Claude 4 Sonnet to Sonnet 4.6 is a one-line change. Same price, 5x context. Fix before June 15.">
+    <meta property="og:type" content="article">
+    <meta property="article:published_time" content="2026-06-12">
+    <meta property="article:modified_time" content="2026-06-12">
+    <meta property="article:author" content="APIpulse">
+    <meta property="og:image" content="https://getapipulse.com/og-image.png">
+    <meta property="og:url" content="https://getapipulse.com/blog-claude-4-to-sonnet46-migration.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Claude 4 to Sonnet 4.6 Migration: One-Line Fix">
+    <meta name="twitter:image" content="https://getapipulse.com/og-image.png">
+    <meta name="twitter:description" content="Claude 4 Sonnet to Sonnet 4.6: one-line change, same price, 5x context.">
+    <link rel="canonical" href="https://getapipulse.com/blog-claude-4-to-sonnet46-migration.html">
+    <link rel="alternate" type="application/rss+xml" title="APIpulse Blog" href="https://getapipulse.com/rss.xml">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="styles.css">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0CEP7S9Y3J"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-0CEP7S9Y3J');
+    </script>
+    <script src="analytics.js" defer></script>
+    <script src="dynamic-date.js" defer></script>
+    <script src="shared.js" defer></script>
+    <script src="pricing-data.js" defer></script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "Claude 4 to Sonnet 4.6 Migration: One-Line Fix (June 2026)",
+        "description": "Migrating from Claude 4 Sonnet to Claude Sonnet 4.6? One-line model ID change, same price, 5x larger context window.",
+        "url": "https://getapipulse.com/blog-claude-4-to-sonnet46-migration.html",
+        "publisher": { "@type": "Organization", "name": "APIpulse", "url": "https://getapipulse.com" },
+        "datePublished": "2026-06-12",
+        "dateModified": "2026-06-12"
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "How do I migrate from Claude 4 Sonnet to Sonnet 4.6?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Change the model ID from claude-sonnet-4-20250514 to claude-sonnet-4-6-20260101. That's the only code change needed. The API, parameters, and response format are identical."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Does Sonnet 4.6 cost the same as Claude 4 Sonnet?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes. Both cost $3.00/$15.00 per 1M tokens (input/output). Sonnet 4.6 also has a 5x larger context window (1M vs 200K tokens) at no extra cost."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What happens if I don't migrate by June 15?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "All API calls using Claude 4 Sonnet model IDs will return HTTP 404 errors immediately. There is no grace period. Your application will break."
+                }
+            }
+        ]
+    }
+    </script>
+    <style>
+        .blog-hero{max-width:var(--max-width);margin:0 auto;padding:120px 24px 40px}
+        .blog-hero .breadcrumb{font-size:13px;color:var(--text-muted);margin-bottom:16px}
+        .blog-hero .breadcrumb a{color:var(--accent);text-decoration:none}
+        .blog-hero h1{font-size:clamp(28px,4.5vw,40px);font-weight:800;margin-bottom:16px;line-height:1.2}
+        .blog-hero .meta{font-size:14px;color:var(--text-muted);margin-bottom:8px}
+        .blog-hero .deprecation-alert{background:linear-gradient(135deg,rgba(239,68,68,0.1),rgba(245,158,11,0.1));border:1px solid rgba(239,68,68,0.3);border-radius:var(--radius);padding:16px 20px;margin-bottom:24px;font-size:14px;color:var(--text-secondary)}
+        .blog-hero .deprecation-alert strong{color:#ef4444}
+        .blog-content{max-width:760px;margin:0 auto;padding:0 24px 48px}
+        .blog-content h2{font-size:24px;font-weight:800;margin:40px 0 16px;padding-top:20px;border-top:1px solid var(--border)}
+        .blog-content h3{font-size:18px;font-weight:700;margin:28px 0 12px}
+        .blog-content p{font-size:16px;line-height:1.8;color:var(--text-secondary);margin-bottom:16px}
+        .blog-content ul,.blog-content ol{margin:16px 0;padding-left:24px;color:var(--text-secondary);line-height:1.8}
+        .blog-content li{margin-bottom:8px;font-size:15px}
+        .blog-content code{background:var(--bg-card);padding:2px 6px;border-radius:4px;font-size:14px;font-family:'SF Mono',Monaco,monospace;border:1px solid var(--border)}
+        .blog-content pre{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:20px;overflow-x:auto;margin:16px 0;font-size:14px;line-height:1.6}
+        .blog-content pre code{background:none;border:none;padding:0}
+        .cost-comparison{width:100%;border-collapse:collapse;margin:20px 0;background:var(--bg-secondary);border-radius:var(--radius);overflow:hidden;border:1px solid var(--border)}
+        .cost-comparison th{padding:14px 16px;text-align:left;font-size:13px;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.5px;background:var(--bg-card);border-bottom:1px solid var(--border)}
+        .cost-comparison td{padding:12px 16px;border-bottom:1px solid var(--border);font-size:14px}
+        .cost-comparison tr:last-child td{border-bottom:none}
+        .cost-comparison .savings{color:var(--green);font-weight:700}
+        .cost-comparison .old{color:var(--orange);text-decoration:line-through}
+        .migration-steps{counter-reset:step}
+        .migration-steps li{list-style:none;counter-increment:step;position:relative;padding-left:40px;margin-bottom:20px}
+        .migration-steps li::before{content:counter(step);position:absolute;left:0;top:0;width:28px;height:28px;background:var(--accent);color:white;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700}
+        .cta-box{background:linear-gradient(135deg,rgba(99,102,241,0.1),rgba(139,92,246,0.1));border:1px solid var(--accent);border-radius:var(--radius);padding:24px;margin:32px 0;text-align:center}
+        .cta-box h3{margin-top:0;font-size:18px}
+        .cta-box p{font-size:14px;color:var(--text-secondary);margin-bottom:16px}
+        .cta-box a{display:inline-block;padding:10px 24px;background:var(--accent);color:white;border-radius:8px;text-decoration:none;font-weight:600;font-size:14px;transition:all 0.2s}
+        .cta-box a:hover{opacity:0.9;transform:translateY(-1px)}
+        .related-posts{max-width:760px;margin:0 auto 48px;padding:0 24px}
+        .related-posts h2{font-size:20px;font-weight:700;margin-bottom:16px}
+        .related-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px}
+        .related-card{display:block;padding:16px;border-radius:12px;border:1px solid var(--border);background:var(--bg-card);text-decoration:none;transition:all 0.2s}
+        .related-card:hover{border-color:var(--accent);transform:translateY(-2px)}
+        .related-card .title{font-size:14px;font-weight:700;color:var(--text-primary);margin-bottom:4px}
+        .related-card .desc{font-size:12px;color:var(--text-muted)}
+        @media(max-width:768px){.blog-hero{padding:100px 20px 30px}.cost-comparison{font-size:13px}.cost-comparison td,.cost-comparison th{padding:8px 10px}}
+    </style>
+    <meta name="theme-color" content="#6366f1">
+</head>
+<body>
+    <a href="#main" class="skip-link">Skip to content</a>
+    <nav>
+        <div class="nav-inner">
+            <a href="index.html" class="logo">API<span>pulse</span></a>
+            <button class="hamburger" onclick="toggleMobileNav()" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+            <div class="nav-links">
+                <a href="calculator.html">Calculator</a>
+                <a href="compare.html">Compare</a>
+                <a href="cost-explorer.html">Explorer</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="blog.html">Blog</a>
+                <a href="pricing.html" class="nav-cta" onclick="if(window.trackEvent)window.trackEvent('pro_button_clicked',{source:'nav'})">Get Pro — $29</a>
+                <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
+            </div>
+        </div>
+    </nav>
+    <main id="main">
+    <div class="blog-hero">
+        <div class="breadcrumb"><a href="blog.html">Blog</a> &rsaquo; Claude 4 to Sonnet 4.6 Migration</div>
+        <div class="deprecation-alert"><strong>⏰ 3 DAYS LEFT:</strong> Claude 4 Opus and Claude 4 Sonnet shut down on <strong>June 15, 2026</strong>. After this date, all API calls will return HTTP 404 errors. Migrate now to avoid downtime.</div>
+        <h1>Claude 4 to Sonnet 4.6: One-Line Migration Guide</h1>
+        <p class="meta">Published Jun 12, 2026 &middot; 6 min read &middot; By APIpulse</p>
+    </div>
+    <div class="blog-content">
+        <p>Claude 4 Sonnet is shutting down June 15. If you're using it, you need to migrate — and the fix is a single line of code. Claude Sonnet 4.6 is Anthropic's direct replacement: <strong>same price</strong>, <strong>same quality</strong>, and a <strong>5x larger context window</strong>.</p>
+
+        <p>This guide shows you exactly what to change, what it costs, and how to test before the deadline.</p>
+
+        <h2>The Code Change: One Line</h2>
+
+        <p>Here's the complete diff — change the model ID and nothing else:</p>
+
+        <pre><code>// Before (Claude 4 Sonnet — will break June 15)
+const response = await anthropic.messages.create({
+  model: "claude-sonnet-4-20250514",  // &larr; CHANGE THIS
+  max_tokens: 4096,
+  messages: [{ role: "user", content: "Hello" }]
+});
+
+// After (Claude Sonnet 4.6 — works immediately)
+const response = await anthropic.messages.create({
+  model: "claude-sonnet-4-6-20260101",  // &larr; NEW MODEL ID
+  max_tokens: 4096,
+  messages: [{ role: "user", content: "Hello" }]
+});</code></pre>
+
+        <p>That's it. The API endpoint, request parameters, response format, streaming behavior, and tool use are all identical. No other code changes needed.</p>
+
+        <h2>The Cost: Same Price, Better Value</h2>
+
+        <p>Claude Sonnet 4.6 costs exactly the same as Claude 4 Sonnet. But you get more for your money:</p>
+
+        <table class="cost-comparison">
+            <thead>
+                <tr><th>Model</th><th>Input (per 1M tokens)</th><th>Output (per 1M tokens)</th><th>Context Window</th></tr>
+            </thead>
+            <tbody>
+                <tr><td><strong>Claude 4 Sonnet</strong> (deprecated)</td><td class="old">$3.00</td><td class="old">$15.00</td><td>200K</td></tr>
+                <tr><td><strong>Claude Sonnet 4.6</strong> (replacement)</td><td class="savings">$3.00</td><td class="savings">$15.00</td><td class="savings">1M</td></tr>
+            </tbody>
+        </table>
+
+        <p>You pay the same price but get <strong>5x the context window</strong> (1M vs 200K tokens). That means you can process longer documents, bigger codebases, and more complex conversations without hitting limits.</p>
+
+        <h2>Model ID Reference</h2>
+
+        <table class="cost-comparison">
+            <thead>
+                <tr><th>Deprecated Model</th><th>Replacement</th><th>New Model ID</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Claude 4 Sonnet</td><td>Claude Sonnet 4.6</td><td><code>claude-sonnet-4-6-20260101</code></td></tr>
+                <tr><td>Claude 4 Opus</td><td>Claude Opus 4.8</td><td><code>claude-opus-4-8-20260101</code></td></tr>
+            </tbody>
+        </table>
+
+        <h2>Step-by-Step Migration</h2>
+
+        <ol class="migration-steps">
+            <li><strong>Search your codebase</strong> for <code>claude-sonnet-4-20250514</code> or any reference to Claude 4 Sonnet model IDs. Use <code>grep -r "claude-sonnet-4" .</code> to find all occurrences.</li>
+            <li><strong>Update the model ID</strong> to <code>claude-sonnet-4-6-20260101</code> in each file.</li>
+            <li><strong>Run your test suite</strong> to verify everything works. The response format is identical, but test edge cases like long context, streaming, and tool use.</li>
+            <li><strong>Deploy to production</strong> before June 15. After that date, the old model ID returns HTTP 404 immediately.</li>
+        </ol>
+
+        <div class="cta-box">
+            <h3>Calculate Your Migration Savings</h3>
+            <p>Even though the price is the same, the 5x context window means fewer split requests and lower total costs. See your exact savings.</p>
+            <a href="claude-4-migration-calculator.html">Try the Migration Calculator &rarr;</a>
+        </div>
+
+        <h2>Why Sonnet 4.6 Is an Upgrade</h2>
+
+        <ul>
+            <li><strong>5x larger context:</strong> 1M tokens vs 200K. Process entire codebases, long documents, or extended conversations without chunking.</li>
+            <li><strong>Same price:</strong> $3/$15 per 1M tokens — identical to Claude 4 Sonnet.</li>
+            <li><strong>Same quality:</strong> Matches Claude 4 Sonnet on all benchmarks, with improvements in instruction-following and code generation.</li>
+            <li><strong>Identical API:</strong> Drop-in replacement. Change the model ID and everything else stays the same.</li>
+        </ul>
+
+        <h2>Beyond Sonnet 4.6: Cheaper Alternatives</h2>
+
+        <p>If you want to cut costs further, consider these alternatives to Claude Sonnet 4.6:</p>
+
+        <table class="cost-comparison">
+            <thead>
+                <tr><th>Model</th><th>Input/Output</th><th>Savings vs Sonnet</th><th>Best For</th></tr>
+            </thead>
+            <tbody>
+                <tr><td><strong>GPT-5</strong> (OpenAI)</td><td>$1.25/$10</td><td class="savings">58% cheaper input</td><td>General purpose, strong coding</td></tr>
+                <tr><td><strong>Gemini 2.0 Flash</strong> (Google)</td><td>$0.10/$0.40</td><td class="savings">97% cheaper</td><td>Budget workloads, high volume</td></tr>
+                <tr><td><strong>DeepSeek V4 Pro</strong></td><td>$0.435/$0.87</td><td class="savings">85% cheaper</td><td>Budget premium quality</td></tr>
+                <tr><td><strong>Llama 4 Maverick</strong></td><td>$0.27/$0.85</td><td class="savings">91% cheaper</td><td>Cheapest 1M context</td></tr>
+                <tr><td><strong>GPT-5 mini</strong> (OpenAI)</td><td>$0.25/$2</td><td class="savings">92% cheaper</td><td>High-volume, cost-sensitive</td></tr>
+            </tbody>
+        </table>
+
+        <h2>Frequently Asked Questions</h2>
+
+        <h3>What happens if I don't migrate by June 15?</h3>
+        <p>All API calls using Claude 4 Sonnet model IDs will return HTTP 404 errors immediately. There is no grace period, no partial shutdown, and no extensions. Your application will break.</p>
+
+        <h3>Does Sonnet 4.6 produce the same outputs as Claude 4 Sonnet?</h3>
+        <p>For most use cases, yes. Claude Sonnet 4.6 matches or exceeds Claude 4 Sonnet on all benchmarks. You may see slightly different outputs due to model improvements, but quality will be equal or better.</p>
+
+        <h3>Can I use Sonnet 4.6 as a drop-in replacement?</h3>
+        <p>Yes. Change the model ID and everything else stays the same. The API, parameters, response format, streaming, and tool use are all identical.</p>
+
+        <h3>What about Claude 4 Opus users?</h3>
+        <p>Claude 4 Opus is also deprecated on June 15. Its replacement is Claude Opus 4.8 ($5/$25 per 1M tokens, 1M context). See our <a href="blog-claude-4-to-opus48-migration-cost.html">Opus 4.8 migration guide</a>.</p>
+
+        <h3>Is there a migration cost?</h3>
+        <p>No. Changing the model ID is free. In fact, you get more value — Claude Sonnet 4.6 has a 5x larger context window at the same price.</p>
+
+        <h3>Will my existing API key work?</h3>
+        <p>Yes. If you have an Anthropic API key, it works with Claude Sonnet 4.6. No new API key or account needed.</p>
+
+        <div class="cta-box">
+            <h3>Need Help Migrating?</h3>
+            <p>Use the Claude 4 Migration Hub for step-by-step guides, cost calculators, and comparison tools for every alternative.</p>
+            <a href="claude-4-migration-hub.html">Visit the Migration Hub &rarr;</a>
+        </div>
+    </div>
+    <div class="related-posts">
+        <h2>Related Guides</h2>
+        <div class="related-grid">
+            <a href="blog-claude-4-to-opus48-migration-cost.html" class="related-card">
+                <div class="title">Claude 4 to Opus 4.8 Migration</div>
+                <div class="desc">67% cheaper, 5x context — the Opus upgrade path</div>
+            </a>
+            <a href="claude-4-migration-calculator.html" class="related-card">
+                <div class="title">Migration Cost Calculator</div>
+                <div class="desc">Calculate exact savings for your workload</div>
+            </a>
+            <a href="compare-claude4-sonnet-vs-sonnet46.html" class="related-card">
+                <div class="title">Sonnet 4 vs Sonnet 4.6</div>
+                <div class="desc">Full head-to-head comparison</div>
+            </a>
+            <a href="claude-4-migration-hub.html" class="related-card">
+                <div class="title">Migration Hub</div>
+                <div class="desc">All tools, guides, and alternatives in one place</div>
+            </a>
+        </div>
+    </div>
+    </main>
+    <footer>
+        <div class="footer-inner">
+            <div class="footer-brand">
+                <a href="index.html" class="logo">API<span>pulse</span></a>
+                <p>AI API cost intelligence for developers.</p>
+            </div>
+            <div class="footer-links">
+                <div class="footer-col">
+                    <h4>Tools</h4>
+                    <a href="calculator.html">Cost Calculator</a>
+                    <a href="compare.html">Model Compare</a>
+                    <a href="cost-explorer.html">Cost Explorer</a>
+                    <a href="pricing.html">Pricing</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Resources</h4>
+                    <a href="blog.html">Blog</a>
+                    <a href="api-docs.html">API Docs</a>
+                    <a href="about.html">About</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 APIpulse. Built for developers who care about costs.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
