@@ -903,9 +903,18 @@
             </div>`;
         }
 
-        // Pro gate
+        // Pro gate — personalized with A/B variant price
+        var proPrice = window._abPrice || 29;
+        var proPayback = totalSavings > 0 ? Math.ceil(proPrice / totalSavings) : 0;
+        var paybackText = '';
+        if (totalSavings > 0) {
+            if (proPayback <= 1) paybackText = '<div style="color:#34d399;font-weight:600;margin-bottom:0.5rem;">⚡ Pro pays for itself in under 1 day</div>';
+            else if (proPayback <= 30) paybackText = '<div style="color:#34d399;font-weight:600;margin-bottom:0.5rem;">⚡ Pro pays for itself in ' + proPayback + ' day' + (proPayback > 1 ? 's' : '') + '</div>';
+            else paybackText = '<div style="color:#94a3b8;font-size:0.85rem;margin-bottom:0.5rem;">Pro pays for itself in ' + Math.ceil(proPayback / 30) + ' month' + (Math.ceil(proPayback / 30) > 1 ? 's' : '') + '</div>';
+        }
         html += `<div class="pro-gate">
             <h3>Unlock Full Optimization Report</h3>
+            ${paybackText}
             <p>See batch processing savings, caching opportunities, model routing strategies, and a downloadable PDF report.</p>
             <ul class="pro-features-list">
                 <li>Batch processing recommendations (save 20-50%)</li>
@@ -916,7 +925,7 @@
                 <li>Saved scenarios — compare unlimited configurations</li>
             </ul>
             <div style="margin-bottom:0.5rem;">
-                <span style="font-size:1.5rem;font-weight:700;color:#a78bfa;">$29</span>
+                <span style="font-size:1.5rem;font-weight:700;color:#a78bfa;">$${proPrice}</span>
                 <span style="color:#94a3b8;font-size:0.9rem;"> one-time · lifetime access</span>
             </div>
             <a href="pricing.html" class="btn btn-pro" id="pro-cta-audit" onclick="trackProClick('cost_audit')">Get Pro — Start Saving →</a>

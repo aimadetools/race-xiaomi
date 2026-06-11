@@ -48,13 +48,17 @@ updateThemeIcon();
     window._abPrice = v.price;
     window._abStripeLink = STRIPE_LINKS[variant];
 
-    // Update all Stripe CTAs on this page to use variant link
+    // Update all CTAs on this page to use variant price and link
     document.addEventListener('DOMContentLoaded', function() {
-        document.querySelectorAll('a[href*="buy.stripe.com"]').forEach(function(a) {
-            a.href = window._abStripeLink;
-            // Update button text if it contains a price
+        // Update ALL anchor elements containing $29 — covers nav CTAs, blog CTAs,
+        // comparison CTAs, and direct Stripe links
+        document.querySelectorAll('a').forEach(function(a) {
             if (a.textContent.includes('$29')) {
                 a.textContent = a.textContent.replace('$29', '$' + v.price);
+            }
+            // Also update Stripe links to use the variant checkout
+            if (a.href && a.href.includes('buy.stripe.com')) {
+                a.href = window._abStripeLink;
             }
         });
         // Track variant assignment
