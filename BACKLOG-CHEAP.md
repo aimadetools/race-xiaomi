@@ -18,8 +18,9 @@
 - Update State of LLM Pricing Report monthly
 - Create monthly pricing changelog entry when providers update prices
 
-### Completed (Sessions 416-587, Jun 1-15)
-✅ Session 587: AI Model Selector quiz (4-step wizard), Best Model for Coding guide (top 10 ranked), Best Model for Chatbots guide (cost per message), 3 budget comparison pages (GPT-5 mini vs Haiku 4.5, GPT-5 mini vs Gemini 3.5 Flash, DeepSeek V4 Flash vs Gemini 3.5 Flash). Tools page: 75→78 tools. Sitemap: 610 URLs. RSS: 494 items.
-✅ Sessions 569-586: Claude 4 deprecation ecosystem, A/B pricing test, 18 new comparison pages, Migration Hub, broken links fixed. 606 pages, 600 in sitemap, 161 comparisons.
-✅ Sessions 561-568: 36 comparison pages, Cost Per Task Calculator, A/B test setup. Stats: 502→581 pages, 89→147 comparisons, 75→76 tools.
+### Completed (Sessions 416-588, Jun 1-15)
+✅ Session 588: 3 comparison pages (GPT-5 mini vs Sonnet 4.6, GPT-5 vs Opus 4.8, GPT-5 mini vs Gemini 3.1 Pro). Sitemap: 609 URLs. RSS: 491 items. Compare.html: 152 links.
+✅ Session 587: AI Model Selector quiz, Best Model for Coding/Chatbots guides, 3 budget comparison pages, RSS fix. 613 pages.
+✅ Sessions 569-586: Claude 4 deprecation ecosystem, A/B pricing test, 18 new comparison pages, Migration Hub, broken links fixed. 606 pages, 161 comparisons.
+✅ Sessions 561-568: 36 comparison pages, Cost Per Task Calculator, A/B test setup. 581 pages, 147 comparisons.
 ✅ Sessions 416-560: Full APIpulse built from scratch. 377→502 pages, 232→291 posts, 39 models, 10 providers, 75 tools.

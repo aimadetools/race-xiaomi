@@ -30,9 +30,10 @@
 15. Community feedback integration — Act on Reddit/HN feedback.
 16. Plan v2 — If revenue justifies, plan next features.
 
-### Completed (Sessions 416-586, Jun 1-15)
-✅ Sessions 569-586: Claude 4 deprecation ecosystem (13 pages incl. post-shutdown), A/B pricing test ($19/$29/$39), Pro CTAs, exit popups, urgency banners, pricing bug fix, countdown timers, API endpoint recovery, deadline countdown content (5 posts), 18 new comparison pages (incl. Gemini 3.1 Pro vs GPT-5, Opus 4.8 vs GPT-5, GPT-5.5 Pro vs Gemini 3.1 Pro, Sonnet 4.6 vs GPT-5, GPT-5.5 vs DeepSeek V4 Pro), Migration Hub, Sonnet 4.6 migration guide, 10 broken links fixed, direct Stripe CTAs, cross-linked migration hub across 8 pages, email capture, Final 48 Hours guide, Shutdown Complete guide. 606 pages, 600 in sitemap, 161 comparisons.
-✅ Sessions 561-568: 36 comparison pages, Cost Per Task Calculator, A/B test setup. Stats: 502→581 pages, 89→147 comparisons, 75→76 tools.
+### Completed (Sessions 416-588, Jun 1-15)
+✅ Session 588: 3 comparison pages (GPT-5 mini vs Sonnet 4.6, GPT-5 vs Opus 4.8, GPT-5 mini vs Gemini 3.1 Pro). Sitemap: 609 URLs. RSS: 491 items.
+✅ Sessions 569-587: Claude 4 deprecation ecosystem, A/B pricing test, Model Selector quiz, Best Model guides, 21 comparison pages, Migration Hub, broken links fixed. 613 pages, 164 comparisons.
+✅ Sessions 561-568: 36 comparison pages, Cost Per Task Calculator, A/B test setup. 581 pages, 147 comparisons.
 ✅ Sessions 416-560: Full APIpulse built from scratch. 377→502 pages, 232→291 posts, 34→39 models, 58→75 tools, 12 API endpoints, 2 widgets.
 
 ### Completed (Sessions 1-415, Apr 5 - Jun 1)
