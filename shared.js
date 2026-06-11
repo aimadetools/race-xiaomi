@@ -407,6 +407,79 @@ async function saveEmail(e) {
         return; // Skip the generic email popup on deprecation pages
     }
 
+    // Skip calculator page — it has its own exit popup
+    if (window.location.pathname.includes('calculator')) return;
+
+    // High-intent pages: show Pro CTA instead of email capture
+    var isHighIntent = window.location.pathname.includes('compare') || window.location.pathname.includes('cost-') || window.location.pathname.includes('model-') || window.location.pathname.includes('cheapest') || window.location.pathname.includes('pricing') || window.location.pathname.includes('switch') || window.location.pathname.includes('optimizer') || window.location.pathname.includes('explorer') || window.location.pathname.includes('finder');
+
+    if (isHighIntent) {
+        var proPopupShown = false;
+        function showProExitPopup() {
+            if (proPopupShown || localStorage.getItem('apipulse_popup_dismissed')) return;
+            proPopupShown = true;
+
+            var price = window._abPrice || 29;
+            var futurePrice = Math.round(price * 1.7);
+            var stripeLink = window._abStripeLink || 'https://buy.stripe.com/fZu7sL3Gw3GS0RQeoDeEo0a';
+            var variant = window._abVariant || 'B';
+
+            if (window.trackEvent) window.trackEvent('pro_exit_popup_shown', { variant: variant, price: price, page: location.pathname });
+
+            var overlay = document.createElement('div');
+            overlay.id = 'exit-popup-overlay';
+            overlay.style.cssText = 'position:fixed;inset:0;background:rgba(0,0,0,0.7);z-index:9999;display:flex;align-items:center;justify-content:center;padding:20px;animation:fadeIn 0.3s ease;';
+
+            var popup = document.createElement('div');
+            popup.style.cssText = 'background:var(--bg-card);border:1px solid var(--accent);border-radius:16px;padding:40px;max-width:440px;width:100%;position:relative;box-shadow:0 24px 64px rgba(0,0,0,0.5);';
+
+            popup.innerHTML = '<button id="exit-popup-close" style="position:absolute;top:12px;right:12px;background:none;border:none;color:var(--text-muted);font-size:20px;cursor:pointer;padding:4px 8px;border-radius:6px;" onmouseover="this.style.color=\'var(--text-primary)\'" onmouseout="this.style.color=\'var(--text-muted)\'">&times;</button>' +
+                '<div style="text-align:center;">' +
+                '<div style="font-size:40px;margin-bottom:16px;">🚀</div>' +
+                '<h3 style="font-size:22px;font-weight:700;margin-bottom:8px;">Stop overpaying for AI APIs</h3>' +
+                '<p style="font-size:14px;color:var(--text-secondary);margin-bottom:20px;line-height:1.6;">Pro gives you personalized optimization recommendations, saved scenarios, and cost reports — so you always pick the cheapest model for each task.</p>' +
+                '<div style="display:flex;gap:12px;justify-content:center;margin-bottom:20px;">' +
+                '<div style="background:var(--bg-secondary);border:1px solid var(--border);border-radius:8px;padding:10px 16px;text-align:center;">' +
+                '<div style="font-size:20px;font-weight:800;color:var(--accent);">$' + price + '</div>' +
+                '<div style="font-size:11px;color:var(--text-muted);">one-time</div></div>' +
+                '<div style="background:var(--bg-secondary);border:1px solid var(--border);border-radius:8px;padding:10px 16px;text-align:center;">' +
+                '<div style="font-size:20px;font-weight:800;color:var(--green);">40%</div>' +
+                '<div style="font-size:11px;color:var(--text-muted);">avg. savings</div></div></div>' +
+                '<a href="' + stripeLink + '" target="_blank" rel="noopener" id="pro-exit-cta" style="display:inline-block;background:var(--accent);color:white;padding:14px 32px;border-radius:10px;font-size:16px;font-weight:700;text-decoration:none;transition:all 0.2s;box-shadow:0 4px 20px rgba(99,102,241,0.3);" onmouseover="this.style.transform=\'translateY(-2px)\'" onmouseout="this.style.transform=\'none\'">Get Pro — $' + price + ' lifetime</a>' +
+                '<p style="font-size:12px;color:var(--text-muted);margin-top:12px;">14-day money-back guarantee · <a href="#" id="pro-exit-dismiss" style="color:var(--text-muted);">No thanks</a></p>' +
+                '</div>';
+
+            overlay.appendChild(popup);
+            document.body.appendChild(overlay);
+
+            document.getElementById('exit-popup-close').addEventListener('click', function() {
+                if (window.trackEvent) window.trackEvent('pro_exit_popup_dismissed', { variant: variant });
+                overlay.remove();
+                localStorage.setItem('apipulse_popup_dismissed', '1');
+            });
+            document.getElementById('pro-exit-dismiss').addEventListener('click', function(e) {
+                e.preventDefault();
+                if (window.trackEvent) window.trackEvent('pro_exit_popup_dismissed', { variant: variant });
+                overlay.remove();
+                localStorage.setItem('apipulse_popup_dismissed', '1');
+            });
+            overlay.addEventListener('click', function(e) {
+                if (e.target === overlay) {
+                    if (window.trackEvent) window.trackEvent('pro_exit_popup_dismissed', { variant: variant });
+                    overlay.remove();
+                    localStorage.setItem('apipulse_popup_dismissed', '1');
+                }
+            });
+            document.getElementById('pro-exit-cta').addEventListener('click', function() {
+                if (window.trackEvent) window.trackEvent('pro_button_clicked', { source: 'exit_popup', variant: variant, price: price });
+            });
+        }
+
+        document.addEventListener('mouseout', function(e) { if (e.clientY <= 0 && !proPopupShown) showProExitPopup(); });
+        setTimeout(function() { if (!proPopupShown && 'ontouchstart' in window) showProExitPopup(); }, 30000);
+        return; // Skip the generic email popup on high-intent pages
+    }
+
     // A/B test variants
     var popupVariants = {
         A: { emoji: '🚀', headline: 'Get 40% off AI API costs', subtext: 'Join 500+ developers who use our free pricing data to optimize their AI spending. Get notified when prices change.', cta: 'Get Updates' },

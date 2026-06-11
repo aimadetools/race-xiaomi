@@ -382,18 +382,22 @@
         </div>
     </section>
 
-    <!-- Pro Upsell Section -->
+    <!-- Pro Upsell Section — personalized after calculation -->
     <section style="max-width:900px;margin:0 auto 40px;padding:0 24px;display:none;" id="pro-upsell">
-        <div style="background:var(--bg-secondary);border:1px solid var(--border);border-radius:16px;padding:32px;display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:center;">
+        <div style="background:linear-gradient(135deg, rgba(99,102,241,0.08), rgba(34,197,94,0.06));border:1px solid var(--accent);border-radius:16px;padding:32px;display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:center;">
             <div>
-                <h2 style="font-size:22px;font-weight:700;margin-bottom:12px;">Want to save more?</h2>
-                <p style="color:var(--text-secondary);font-size:15px;line-height:1.6;margin-bottom:20px;">Pro gives you optimization recommendations that can cut your API costs by <strong style="color:var(--green);">up to 40%</strong>.</p>
-                <ul style="list-style:none;padding:0;margin-bottom:20px;">
-                    <li style="padding:6px 0;font-size:14px;color:var(--text-secondary);display:flex;align-items:center;gap:10px;"><span style="color:var(--green);font-weight:700;">✓</span> Save & compare up to 10 scenarios</li>
-                    <li style="padding:6px 0;font-size:14px;color:var(--text-secondary);display:flex;align-items:center;gap:10px;"><span style="color:var(--green);font-weight:700;">✓</span> Export professional cost reports</li>
-                    <li style="padding:6px 0;font-size:14px;color:var(--text-secondary);display:flex;align-items:center;gap:10px;"><span style="color:var(--green);font-weight:700;">✓</span> Personalized optimization tips</li>
-                </ul>
-                <a href="https://buy.stripe.com/fZu7sL3Gw3GS0RQeoDeEo0a" target="_blank" rel="noopener" class="btn-primary" style="display:inline-block;text-align:center;padding:12px 28px;" onclick="if(window.trackEvent)window.trackEvent('pro_button_clicked',{source:'calculator_upsell'})">Get Pro — $29 one-time</a>
+                <h2 style="font-size:22px;font-weight:800;margin-bottom:8px;">Your costs could be <span style="color:var(--green);" id="upsell-savings-inline">$0/mo</span> lower</h2>
+                <p style="color:var(--text-secondary);font-size:15px;line-height:1.6;margin-bottom:20px;">Pro gives you a <strong>personalized optimization report</strong> showing exactly which models to use for each task, batch processing strategies, and prompt optimization tips.</p>
+                <div style="background:rgba(34,197,94,0.06);border:1px solid rgba(34,197,94,0.2);border-radius:10px;padding:14px 16px;margin-bottom:20px;">
+                    <div style="font-size:13px;font-weight:700;color:var(--green);margin-bottom:8px;">What Pro users get:</div>
+                    <ul style="list-style:none;padding:0;margin:0;">
+                        <li style="padding:4px 0;font-size:14px;color:var(--text-secondary);display:flex;align-items:center;gap:8px;"><span style="color:var(--green);">✓</span> Model routing guide — use cheap models for 80% of tasks</li>
+                        <li style="padding:4px 0;font-size:14px;color:var(--text-secondary);display:flex;align-items:center;gap:8px;"><span style="color:var(--green);">✓</span> Save & compare up to 10 cost scenarios</li>
+                        <li style="padding:4px 0;font-size:14px;color:var(--text-secondary);display:flex;align-items:center;gap:8px;"><span style="color:var(--green);">✓</span> Export cost reports for your team</li>
+                    </ul>
+                </div>
+                <a href="https://buy.stripe.com/fZu7sL3Gw3GS0RQeoDeEo0a" target="_blank" rel="noopener" class="btn-primary" style="display:inline-block;text-align:center;padding:14px 32px;font-size:16px;" id="upsell-cta-btn" onclick="if(window.trackEvent)window.trackEvent('pro_button_clicked',{source:'calculator_upsell'})">Unlock Pro — $29</a>
+                <p style="font-size:12px;color:var(--text-muted);margin-top:8px;">14-day money-back guarantee · Lifetime access</p>
             </div>
             <div style="text-align:center;">
                 <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:12px;padding:24px;">
@@ -403,6 +407,14 @@
                         <div style="font-size:13px;color:var(--text-secondary);">Potential savings with Pro</div>
                         <div id="upsell-savings" style="font-size:28px;font-weight:800;color:var(--green);margin-top:4px;">$0/mo</div>
                     </div>
+                    <div style="margin-top:16px;padding-top:16px;border-top:1px solid var(--border);">
+                        <div style="font-size:13px;color:var(--text-secondary);margin-bottom:8px;">Pay for itself in</div>
+                        <div id="upsell-payback" style="font-size:18px;font-weight:700;color:var(--accent);">—</div>
+                    </div>
+                </div>
+                <div style="background:rgba(245,158,11,0.08);border:1px solid rgba(245,158,11,0.3);border-radius:8px;padding:10px 14px;margin-top:16px;font-size:13px;color:#d97706;display:inline-flex;align-items:center;gap:8px;">
+                    <span style="font-size:16px;">🔥</span>
+                    <span><strong class="founding-spots">73</strong>/100 founding spots claimed</span>
                 </div>
             </div>
         </div>
@@ -461,30 +473,6 @@
             </div>
         </div>
     </div>
-
-    <!-- Pro Upsell — shown after calculator interaction -->
-    <section id="pro-upsell" style="max-width:700px;margin:0 auto;padding:0 24px 40px;display:none;">
-        <div style="background:linear-gradient(135deg, rgba(99,102,241,0.08), rgba(34,197,94,0.06));border:1px solid var(--accent);border-radius:16px;padding:32px;text-align:center;">
-            <h2 style="font-size:22px;font-weight:800;margin-bottom:8px;">Save more with APIpulse Pro</h2>
-            <p style="color:var(--text-secondary);font-size:15px;margin-bottom:20px;line-height:1.6;">You just found a cheaper model — now imagine having <strong>10 saved scenarios</strong>, <strong>PDF cost reports</strong> for your team, and <strong>personalized optimization tips</strong> that could cut your bill by up to 40%.</p>
-            <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin-bottom:20px;">
-                <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:10px;padding:14px 20px;min-width:160px;">
-                    <div style="font-size:22px;font-weight:800;color:var(--accent);">$29</div>
-                    <div style="font-size:12px;color:var(--text-muted);margin-top:2px;">one-time, lifetime</div>
-                </div>
-                <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:10px;padding:14px 20px;min-width:160px;">
-                    <div style="font-size:22px;font-weight:800;color:var(--green);">40%</div>
-                    <div style="font-size:12px;color:var(--text-muted);margin-top:2px;">avg. savings with tips</div>
-                </div>
-            </div>
-            <div style="background:rgba(245,158,11,0.08);border:1px solid rgba(245,158,11,0.3);border-radius:8px;padding:10px 14px;margin-bottom:16px;font-size:13px;color:#d97706;display:inline-flex;align-items:center;gap:8px;">
-                <span style="font-size:16px;">🔥</span>
-                <span><strong class="founding-spots">73</strong> of 100 founding spots claimed — price goes to $49 soon</span>
-            </div>
-            <a href="https://buy.stripe.com/fZu7sL3Gw3GS0RQeoDeEo0a" class="btn-primary" style="display:inline-block;font-size:16px;padding:14px 32px;" target="_blank" rel="noopener" onclick="if(window.trackEvent)window.trackEvent('pro_button_clicked',{source:'calculator_upsell'})">Unlock Pro Features — $29</a>
-            <p style="font-size:12px;color:var(--text-muted);margin-top:12px;">14-day money-back guarantee. Lifetime access.</p>
-        </div>
-    </section>
 
     <div class="info-section">
         <h2>How This Calculator Works</h2>
@@ -708,8 +696,22 @@
                     upsell.style.display = 'block';
                     var spendEl = document.getElementById('upsell-spend');
                     var savingsEl = document.getElementById('upsell-savings');
+                    var savingsInline = document.getElementById('upsell-savings-inline');
+                    var paybackEl = document.getElementById('upsell-payback');
+                    var ctaBtn = document.getElementById('upsell-cta-btn');
+                    var price = window._abPrice || 29;
+                    var savings = totalCost * 0.30;
                     if (spendEl) spendEl.textContent = '$' + totalCost.toFixed(2);
-                    if (savingsEl) savingsEl.textContent = '$' + (totalCost * 0.30).toFixed(2) + '/mo';
+                    if (savingsEl) savingsEl.textContent = '$' + savings.toFixed(2) + '/mo';
+                    if (savingsInline) savingsInline.textContent = '$' + savings.toFixed(2) + '/mo';
+                    if (paybackEl) {
+                        var months = savings > 0 ? Math.ceil(price / savings) : 0;
+                        paybackEl.textContent = months <= 1 ? 'Less than 1 month' : months + ' months';
+                    }
+                    if (ctaBtn) {
+                        ctaBtn.textContent = 'Unlock Pro — $' + price;
+                        ctaBtn.href = window._abStripeLink || 'https://buy.stripe.com/fZu7sL3Gw3GS0RQeoDeEo0a';
+                    }
                 }
             }
 
@@ -897,7 +899,7 @@
         if(window.trackEvent)window.trackEvent('founding_member_seen',{spots_claimed:claimed});
     })();
 
-    // Exit popup for calculator
+    // Exit popup for calculator — shows personalized savings
     (function(){
         var shown=false;
         var price=window._abPrice||29;
@@ -909,15 +911,19 @@
             if(!upsell||upsell.style.display==='none')return;
             shown=true;
             var spendEl=document.getElementById('upsell-spend');
+            var savingsEl=document.getElementById('upsell-savings');
             var spendText=spendEl?spendEl.textContent:'$0';
+            var savingsText=savingsEl?savingsEl.textContent:'$0/mo';
             var overlay=document.createElement('div');
             overlay.id='calc-exit-popup';
             overlay.style.cssText='position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.7);z-index:10000;display:flex;align-items:center;justify-content:center;';
             overlay.innerHTML='<div style="background:var(--bg-secondary);border:1px solid var(--border);border-radius:16px;padding:40px;max-width:480px;text-align:center;margin:20px;">' +
-                '<h3 style="font-size:22px;margin-bottom:8px;">Your API costs: '+spendText+'/month</h3>' +
-                '<p style="color:var(--text-secondary);margin-bottom:16px;">Pro users save up to <strong style="color:var(--green);">40%</strong> with personalized optimization tips and model routing strategies.</p>' +
-                '<a href="'+stripeLink+'" id="calc-exit-cta" class="btn-primary" style="display:inline-block;padding:14px 32px;" target="_blank" rel="noopener">Get Pro — $'+price+'</a>' +
-                '<p style="font-size:12px;color:var(--text-muted);margin-top:12px;">14-day money-back guarantee. <a href="#" onclick="document.getElementById(\'calc-exit-popup\').remove();return false;" style="color:var(--text-muted);">No thanks</a></p>' +
+                '<div style="font-size:40px;margin-bottom:12px;">💡</div>' +
+                '<h3 style="font-size:22px;margin-bottom:8px;">You\'re spending '+spendText+'/month</h3>' +
+                '<p style="color:var(--text-secondary);margin-bottom:16px;">Pro users with similar usage save <strong style="color:var(--green);">'+savingsText+'</strong> with personalized model routing and optimization tips.</p>' +
+                '<div style="background:rgba(34,197,94,0.08);border:1px solid rgba(34,197,94,0.2);border-radius:8px;padding:12px;margin-bottom:20px;font-size:14px;color:var(--green);font-weight:600;">Pro pays for itself in your first month</div>' +
+                '<a href="'+stripeLink+'" id="calc-exit-cta" class="btn-primary" style="display:inline-block;padding:14px 32px;font-size:16px;" target="_blank" rel="noopener">Unlock Pro — $'+price+'</a>' +
+                '<p style="font-size:12px;color:var(--text-muted);margin-top:12px;">14-day money-back guarantee · <a href="#" onclick="document.getElementById(\'calc-exit-popup\').remove();return false;" style="color:var(--text-muted);">No thanks</a></p>' +
                 '</div>';
             overlay.addEventListener('click',function(ev){
                 if(ev.target===overlay)overlay.remove();
