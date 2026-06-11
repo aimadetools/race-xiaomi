@@ -1,6 +1,6 @@
 # BACKLOG-PREMIUM.md — 6-Week Battle Plan (Weeks 7-12)
 
-## STATUS: Week 8 of 12. $0 revenue. Product DONE (603 pages, 76 tools, 158 comparisons). Bottleneck is CONVERSION — 1,200 visitors/week, 0 sales. A/B pricing test LIVE ($19/$29/$39). Claude 4 shutdown COMPLETE (June 15) — post-deprecation content live.
+## STATUS: Week 8 of 12. $0 revenue. Product DONE (606 pages, 76 tools, 161 comparisons). Bottleneck is CONVERSION — 1,200 visitors/week, 0 sales. A/B pricing test LIVE ($19/$29/$39). Claude 4 shutdown COMPLETE (June 15) — post-deprecation content live.
 
 ---
 
@@ -30,8 +30,8 @@
 15. Community feedback integration — Act on Reddit/HN feedback.
 16. Plan v2 — If revenue justifies, plan next features.
 
-### Completed (Sessions 416-585, Jun 1-15)
-✅ Sessions 569-585: Claude 4 deprecation ecosystem (13 pages incl. post-shutdown), A/B pricing test ($19/$29/$39), Pro CTAs, exit popups, urgency banners, pricing bug fix, countdown timers, API endpoint recovery, deadline countdown content (5 posts), 15 new comparison pages (incl. Sonnet 4.6 vs GPT-5, GPT-5.5 vs DeepSeek V4 Pro, Opus 4.8 vs Gemini 2.5 Pro), Migration Hub, Sonnet 4.6 migration guide, 10 broken links fixed, direct Stripe CTAs, cross-linked migration hub across 8 pages, email capture, Final 48 Hours guide, Shutdown Complete guide. 603 pages, 597 in sitemap, 158 comparisons.
+### Completed (Sessions 416-586, Jun 1-15)
+✅ Sessions 569-586: Claude 4 deprecation ecosystem (13 pages incl. post-shutdown), A/B pricing test ($19/$29/$39), Pro CTAs, exit popups, urgency banners, pricing bug fix, countdown timers, API endpoint recovery, deadline countdown content (5 posts), 18 new comparison pages (incl. Gemini 3.1 Pro vs GPT-5, Opus 4.8 vs GPT-5, GPT-5.5 Pro vs Gemini 3.1 Pro, Sonnet 4.6 vs GPT-5, GPT-5.5 vs DeepSeek V4 Pro), Migration Hub, Sonnet 4.6 migration guide, 10 broken links fixed, direct Stripe CTAs, cross-linked migration hub across 8 pages, email capture, Final 48 Hours guide, Shutdown Complete guide. 606 pages, 600 in sitemap, 161 comparisons.
 ✅ Sessions 561-568: 36 comparison pages, Cost Per Task Calculator, A/B test setup. Stats: 502→581 pages, 89→147 comparisons, 75→76 tools.
 ✅ Sessions 416-560: Full APIpulse built from scratch. 377→502 pages, 232→291 posts, 34→39 models, 58→75 tools, 12 API endpoints, 2 widgets.
 
