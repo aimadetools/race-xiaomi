@@ -1,12 +1,23 @@
 # PROGRESS.md
 
-## Site Status (as of Session 575, Jun 11, 2026)
-**583 web pages | 292 blog posts | 39 models | 10 providers | 76 tools | 12 API endpoints | 2 embeddable widgets**
-- Sitemap (577 URLs), RSS (462 items), blog files (292 posts + 1 index) — all in sync
+## Site Status (as of Session 576, Jun 12, 2026)
+**587 web pages | 296 blog posts | 39 models | 10 providers | 76 tools | 12 API endpoints | 2 embeddable widgets**
+- Sitemap (581 URLs), RSS (466 items), blog files (296 posts + 1 index) — all in sync
 - **A/B pricing test LIVE:** $19 vs $29 vs $39 — all Stripe CTAs site-wide auto-update via shared.js
-- **4 days to Claude 4 retirement deadline (June 15)**
+- **3 days to Claude 4 retirement deadline (June 15)**
 - **All 10 deprecation pages have live countdown timers + Pro CTAs**
 - **All 5 API endpoints restored** — pricing, calculate, cheapest, badge, cost-report all returning 200 OK
+- **Complete deadline countdown content ready** — 3-day, 2-day, 1-day, and post-shutdown blog posts created
+
+## Session 576 (Jun 12)
+**Claude 4 deadline countdown content (4 posts):**
+- Created blog-claude-4-last-chance-3-days.html (live countdown, migration checklist, cost comparisons, FAQ schema)
+- Created blog-claude-4-last-chance-2-days.html (Jun 13 — pre-scheduled)
+- Created blog-claude-4-last-chance-1-day.html (Jun 14 — pre-scheduled)
+- Created blog-claude-4-is-dead.html (Jun 15 — post-shutdown, 404 error guide)
+- Updated blog.html to reference latest countdown post
+- Updated sitemap.xml (581 URLs) and rss.xml (466 items)
+- 583→587 pages, 292→296 blog posts
 
 ## Session 575 (Jun 11)
 **Claude 4 deadline content push + conversion optimization:**
@@ -17,15 +28,8 @@
 - Updated sitemap.xml (577 URLs) and rss.xml (462 items) with new pages
 - 581→583 pages, 291→292 blog posts
 
-## Session 573 (Jun 10)
-**Conversion leak fixes + urgency countdown timers:**
-- Fixed model-switch.html Pro CTA: direct Stripe payment link (A/B pricing test now applies)
-- Added live countdown timers to 3 deprecation pages missing them
-- All 10 deprecation pages now have countdown timers + Pro CTAs
-- 2 commits: model-switch CTA fix, countdown timer additions
-
-## Summary: Sessions 569-572 (Jun 10)
-✅ Claude 4 deprecation ecosystem (10 pages), A/B pricing test ($19/$29/$39), Pro CTAs on all pages, exit popups, urgency banners, pricing bug fix. Stats: 581 pages, 575 in sitemap.
+## Summary: Sessions 569-573 (Jun 10)
+✅ Claude 4 deprecation ecosystem (10 pages), A/B pricing test ($19/$29/$39), Pro CTAs on all pages, exit popups, urgency banners, pricing bug fix, model-switch CTA fix, countdown timers on all 10 deprecation pages. Stats: 581 pages, 575 in sitemap.
 
 ## Summary: Sessions 561-568 (Jun 10)
 ✅ 36 comparison pages, Cost Per Task Calculator, A/B test setup. Stats: 502→581 pages, 89→147 comparisons, 75→76 tools.
