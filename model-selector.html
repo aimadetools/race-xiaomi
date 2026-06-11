@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Model Selector — Find the Best Model for Your Use Case | APIpulse</title>
+    <meta name="description" content="Answer 4 quick questions and get a personalized AI model recommendation. Compare costs across 39 models from 10 providers. Free tool.">
+    <meta name="keywords" content="AI model selector, best AI model, which AI model, AI model quiz, LLM selector, AI model recommendation, best LLM for coding, best LLM for chatbot">
+    <meta property="og:title" content="AI Model Selector — Find the Best Model for Your Use Case">
+    <meta property="og:description" content="Answer 4 questions, get a personalized AI model recommendation with cost estimates. 39 models, 10 providers.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://getapipulse.com/og-image.png">
+    <meta property="og:url" content="https://getapipulse.com/model-selector.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="canonical" href="https://getapipulse.com/model-selector.html">
+    <link rel="alternate" type="application/rss+xml" title="APIpulse Blog" href="https://getapipulse.com/rss.xml">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="styles.css">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0CEP7S9Y3J"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-0CEP7S9Y3J');
+    </script>
+    <script src="analytics.js" defer></script>
+    <script src="dynamic-date.js" defer></script>
+    <script src="shared.js" defer></script>
+    <script src="pricing-data.js" defer></script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "AI Model Selector",
+        "url": "https://getapipulse.com/model-selector.html",
+        "description": "Find the best AI model for your use case. Answer 4 questions and get personalized recommendations with cost estimates across 39 models from 10 providers.",
+        "applicationCategory": "DeveloperApplication",
+        "operatingSystem": "Web"
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "How do I choose the right AI model for my project?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Consider four factors: (1) your use case — coding, chat, analysis, or content generation; (2) your monthly budget; (3) context window needs — how much text you'll process; and (4) quality vs speed tradeoffs. APIpulse's Model Selector analyzes all 39 models across 10 providers to find the best match for your specific requirements."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What is the cheapest AI model for chatbots?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "For chatbots, the cheapest options are: Gemini 2.0 Flash Lite ($0.075/$0.30 per million tokens), Llama 4 Scout ($0.18/$0.59), and DeepSeek V4 Flash ($0.14/$0.28). These budget models handle conversational AI well while costing 90%+ less than premium models like GPT-5 or Claude Opus 4.8."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Which AI model is best for code generation?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "For code generation, top picks are: GPT-5.3 Codex ($1.75/$14, purpose-built for code), Claude Sonnet 4.6 ($3/$15, excellent code quality), and DeepSeek V4 Pro ($0.435/$0.87, best value). Budget-conscious developers should consider GPT-5 mini ($0.25/$2) or Llama 4 Scout ($0.18/$0.59) for simpler code tasks."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What's the best AI model for long documents?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Models with the largest context windows: Gemini 3.1 Pro (1M tokens), Gemini 3.5 Flash (1M tokens), Claude Opus 4.8 (1M tokens), and Llama 4 Scout (1M tokens). For processing very long documents, Gemini 3.1 Pro at $2/$12 per million tokens offers the best balance of context size and cost."
+                }
+            }
+        ]
+    }
+    </script>
+    <style>
+        .selector-hero { max-width: 800px; margin: 0 auto; padding: 120px 24px 40px; text-align: center; }
+        .selector-hero h1 { font-size: clamp(28px, 4.5vw, 44px); font-weight: 800; margin-bottom: 16px; }
+        .selector-hero p { font-size: 18px; color: var(--text-secondary); max-width: 600px; margin: 0 auto; }
+
+        /* Progress Bar */
+        .progress-bar { max-width: 600px; margin: 0 auto 48px; padding: 0 24px; }
+        .progress-steps { display: flex; justify-content: space-between; position: relative; }
+        .progress-steps::before { content: ''; position: absolute; top: 18px; left: 40px; right: 40px; height: 3px; background: var(--border); z-index: 0; }
+        .progress-fill { position: absolute; top: 18px; left: 40px; height: 3px; background: var(--accent); z-index: 1; transition: width 0.4s ease; }
+        .step-dot { width: 36px; height: 36px; border-radius: 50%; background: var(--bg-card); border: 3px solid var(--border); display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 700; color: var(--text-muted); z-index: 2; transition: all 0.3s; position: relative; }
+        .step-dot.active { border-color: var(--accent); color: var(--accent); background: var(--accent-glow); }
+        .step-dot.completed { border-color: var(--green); color: white; background: var(--green); }
+        .step-label { font-size: 11px; color: var(--text-muted); text-align: center; margin-top: 8px; white-space: nowrap; }
+
+        /* Wizard Steps */
+        .wizard-container { max-width: 800px; margin: 0 auto; padding: 0 24px 60px; }
+        .wizard-step { display: none; animation: fadeIn 0.3s ease; }
+        .wizard-step.active { display: block; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+        .step-title { font-size: 24px; font-weight: 800; text-align: center; margin-bottom: 8px; }
+        .step-subtitle { font-size: 15px; color: var(--text-secondary); text-align: center; margin-bottom: 32px; }
+
+        /* Option Cards */
+        .option-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; margin-bottom: 32px; }
+        .option-card { background: var(--bg-secondary); border: 2px solid var(--border); border-radius: var(--radius); padding: 24px; cursor: pointer; transition: all 0.2s; text-align: center; }
+        .option-card:hover { border-color: var(--accent); transform: translateY(-3px); box-shadow: 0 4px 20px rgba(99,102,241,0.1); }
+        .option-card.selected { border-color: var(--accent); background: var(--accent-glow); }
+        .option-card .icon { font-size: 36px; margin-bottom: 12px; }
+        .option-card .name { font-size: 16px; font-weight: 700; margin-bottom: 6px; }
+        .option-card .desc { font-size: 13px; color: var(--text-secondary); line-height: 1.5; }
+        .option-card .badge { display: inline-block; padding: 2px 8px; border-radius: 4px; font-size: 10px; font-weight: 700; text-transform: uppercase; margin-top: 8px; }
+        .badge-popular { background: rgba(34,197,94,0.15); color: var(--green); }
+
+        /* Budget Slider */
+        .budget-display { text-align: center; margin-bottom: 24px; }
+        .budget-amount { font-size: 48px; font-weight: 800; color: var(--accent); }
+        .budget-period { font-size: 16px; color: var(--text-secondary); }
+        .budget-slider { width: 100%; -webkit-appearance: none; height: 8px; border-radius: 4px; background: var(--border); outline: none; margin-bottom: 16px; }
+        .budget-slider::-webkit-slider-thumb { -webkit-appearance: none; width: 24px; height: 24px; border-radius: 50%; background: var(--accent); cursor: pointer; }
+        .budget-labels { display: flex; justify-content: space-between; font-size: 12px; color: var(--text-muted); }
+        .budget-tier-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 24px; }
+        .tier-card { background: var(--bg-secondary); border: 2px solid var(--border); border-radius: var(--radius); padding: 16px; text-align: center; cursor: pointer; transition: all 0.2s; }
+        .tier-card:hover { border-color: var(--accent); }
+        .tier-card.selected { border-color: var(--accent); background: var(--accent-glow); }
+        .tier-card .tier-name { font-size: 14px; font-weight: 700; margin-bottom: 4px; }
+        .tier-card .tier-range { font-size: 12px; color: var(--text-muted); }
+
+        /* Priority Checkboxes */
+        .priority-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 32px; }
+        .priority-option { background: var(--bg-secondary); border: 2px solid var(--border); border-radius: var(--radius); padding: 16px 20px; cursor: pointer; transition: all 0.2s; display: flex; align-items: center; gap: 12px; }
+        .priority-option:hover { border-color: var(--accent); }
+        .priority-option.selected { border-color: var(--accent); background: var(--accent-glow); }
+        .priority-check { width: 22px; height: 22px; border-radius: 6px; border: 2px solid var(--border); display: flex; align-items: center; justify-content: center; font-size: 14px; transition: all 0.2s; flex-shrink: 0; }
+        .priority-option.selected .priority-check { background: var(--accent); border-color: var(--accent); color: white; }
+        .priority-label .name { font-size: 14px; font-weight: 700; }
+        .priority-label .desc { font-size: 12px; color: var(--text-muted); }
+
+        /* Results */
+        .results-container { max-width: 1000px; margin: 0 auto; padding: 0 24px 60px; }
+        .results-header { text-align: center; margin-bottom: 40px; }
+        .results-header h2 { font-size: 28px; font-weight: 800; margin-bottom: 8px; }
+        .results-header p { color: var(--text-secondary); }
+        .result-card { background: var(--bg-secondary); border: 2px solid var(--border); border-radius: 16px; padding: 32px; margin-bottom: 24px; position: relative; transition: all 0.3s; }
+        .result-card:hover { border-color: var(--accent); box-shadow: 0 4px 24px rgba(99,102,241,0.1); }
+        .result-card.top-pick { border-color: var(--green); }
+        .result-card.top-pick::before { content: '🏆 TOP PICK'; position: absolute; top: -12px; left: 24px; background: var(--green); color: white; padding: 4px 12px; border-radius: 6px; font-size: 11px; font-weight: 700; }
+        .result-rank { font-size: 14px; color: var(--text-muted); font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; }
+        .result-name { font-size: 22px; font-weight: 800; margin-bottom: 4px; }
+        .result-provider { font-size: 14px; color: var(--text-secondary); margin-bottom: 16px; }
+        .result-stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-bottom: 20px; }
+        .stat { text-align: center; }
+        .stat-value { font-size: 20px; font-weight: 800; color: var(--accent); }
+        .stat-label { font-size: 11px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px; }
+        .result-reason { background: var(--bg-card); border-radius: 8px; padding: 16px; margin-bottom: 16px; }
+        .result-reason h4 { font-size: 13px; color: var(--accent); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px; }
+        .result-reason p { font-size: 14px; color: var(--text-secondary); line-height: 1.6; }
+        .result-actions { display: flex; gap: 12px; flex-wrap: wrap; }
+        .result-actions a, .result-actions button { padding: 10px 20px; border-radius: 8px; font-size: 14px; font-weight: 600; text-decoration: none; cursor: pointer; transition: all 0.2s; border: none; }
+        .btn-primary { background: var(--accent); color: white; }
+        .btn-primary:hover { background: var(--accent-hover); }
+        .btn-secondary { background: var(--bg-card); color: var(--text-primary); border: 1px solid var(--border) !important; }
+        .btn-secondary:hover { border-color: var(--accent) !important; color: var(--accent); }
+
+        /* Cost Breakdown */
+        .cost-breakdown { background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; padding: 24px; margin-top: 32px; }
+        .cost-breakdown h3 { font-size: 18px; font-weight: 700; margin-bottom: 16px; }
+        .cost-table { width: 100%; border-collapse: collapse; }
+        .cost-table th { text-align: left; font-size: 12px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px; padding: 8px 12px; border-bottom: 1px solid var(--border); }
+        .cost-table td { padding: 10px 12px; border-bottom: 1px solid var(--border); font-size: 14px; }
+        .cost-table tr:last-child td { border-bottom: none; }
+        .cost-table .total { font-weight: 700; color: var(--accent); }
+
+        /* Pro CTA */
+        .pro-cta { background: linear-gradient(135deg, rgba(99,102,241,0.1), rgba(168,85,247,0.1)); border: 2px solid var(--accent); border-radius: 16px; padding: 40px; text-align: center; margin-top: 40px; }
+        .pro-cta h3 { font-size: 22px; font-weight: 800; margin-bottom: 8px; }
+        .pro-cta p { color: var(--text-secondary); margin-bottom: 20px; max-width: 500px; margin-left: auto; margin-right: auto; }
+        .pro-features { display: flex; justify-content: center; gap: 32px; margin-bottom: 24px; flex-wrap: wrap; }
+        .pro-feature { font-size: 14px; color: var(--text-secondary); }
+        .pro-feature::before { content: '✓ '; color: var(--green); font-weight: 700; }
+
+        /* Responsive */
+        @media (max-width: 640px) {
+            .option-grid { grid-template-columns: 1fr; }
+            .budget-tier-cards { grid-template-columns: 1fr; }
+            .priority-grid { grid-template-columns: 1fr; }
+            .result-stats { grid-template-columns: repeat(2, 1fr); }
+            .pro-features { flex-direction: column; align-items: center; gap: 8px; }
+        }
+    </style>
+</head>
+<body>
+    <nav id="main-nav">
+        <div class="nav-inner">
+            <a href="/" class="nav-logo">⚡ APIpulse</a>
+            <div class="nav-links">
+                <a href="/calculator.html">Calculator</a>
+                <a href="/model-selector.html" class="active">Model Selector</a>
+                <a href="/compare-gpt5-vs-claude.html">Compare</a>
+                <a href="/tools.html">Tools</a>
+                <a href="/blog.html">Blog</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="selector-hero">
+        <h1>Find Your Perfect AI Model</h1>
+        <p>Answer 4 quick questions. We'll match you with the best model for your use case, budget, and needs.</p>
+    </div>
+
+    <!-- Progress Bar -->
+    <div class="progress-bar">
+        <div class="progress-steps">
+            <div class="progress-fill" id="progressFill" style="width: 0%"></div>
+            <div>
+                <div class="step-dot active" id="dot1">1</div>
+                <div class="step-label">Use Case</div>
+            </div>
+            <div>
+                <div class="step-dot" id="dot2">2</div>
+                <div class="step-label">Budget</div>
+            </div>
+            <div>
+                <div class="step-dot" id="dot3">3</div>
+                <div class="step-label">Priorities</div>
+            </div>
+            <div>
+                <div class="step-dot" id="dot4">4</div>
+                <div class="step-label">Results</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="wizard-container">
+        <!-- Step 1: Use Case -->
+        <div class="wizard-step active" id="step1">
+            <h2 class="step-title">What are you building?</h2>
+            <p class="step-subtitle">Select the use case that best describes your project</p>
+            <div class="option-grid">
+                <div class="option-card" data-value="chatbot" onclick="selectUseCase(this)">
+                    <div class="icon">💬</div>
+                    <div class="name">Chatbot / Assistant</div>
+                    <div class="desc">Customer support, FAQ, conversational AI</div>
+                </div>
+                <div class="option-card" data-value="coding" onclick="selectUseCase(this)">
+                    <div class="icon">💻</div>
+                    <div class="name">Code Generation</div>
+                    <div class="desc">Code completion, debugging, refactoring</div>
+                </div>
+                <div class="option-card" data-value="content" onclick="selectUseCase(this)">
+                    <div class="icon">✍️</div>
+                    <div class="name">Content Creation</div>
+                    <div class="desc">Blog posts, marketing copy, documentation</div>
+                </div>
+                <div class="option-card" data-value="analysis" onclick="selectUseCase(this)">
+                    <div class="icon">📊</div>
+                    <div class="name">Data Analysis</div>
+                    <div class="desc">Summarization, extraction, insights</div>
+                </div>
+                <div class="option-card" data-value="translation" onclick="selectUseCase(this)">
+                    <div class="icon">🌐</div>
+                    <div class="name">Translation</div>
+                    <div class="desc">Multi-language translation and localization</div>
+                </div>
+                <div class="option-card" data-value="agent" onclick="selectUseCase(this)">
+                    <div class="icon">🤖</div>
+                    <div class="name">AI Agent</div>
+                    <div class="desc">Autonomous agents, tool use, multi-step</div>
+                    <div class="badge badge-popular">TRENDING</div>
+                </div>
+            </div>
+            <div style="text-align:center">
+                <button class="btn-primary" onclick="nextStep(2)" id="next1" disabled style="padding:12px 32px;font-size:16px;border-radius:8px;cursor:pointer;border:none;font-weight:700">Continue →</button>
+            </div>
+        </div>
+
+        <!-- Step 2: Budget -->
+        <div class="wizard-step" id="step2">
+            <h2 class="step-title">What's your monthly budget?</h2>
+            <p class="step-subtitle">This helps us recommend models you can actually afford at scale</p>
+            <div class="budget-display">
+                <div class="budget-amount" id="budgetDisplay">$100</div>
+                <div class="budget-period">per month</div>
+            </div>
+            <input type="range" class="budget-slider" id="budgetSlider" min="10" max="2000" value="100" step="10" oninput="updateBudget(this.value)">
+            <div class="budget-labels">
+                <span>$10</span>
+                <span>$500</span>
+                <span>$1,000</span>
+                <span>$2,000+</span>
+            </div>
+            <div class="budget-tier-cards">
+                <div class="tier-card" data-budget="50" onclick="setBudget(50)">
+                    <div class="tier-name">🌱 Starter</div>
+                    <div class="tier-range">Under $50/mo</div>
+                </div>
+                <div class="tier-card selected" data-budget="100" onclick="setBudget(100)">
+                    <div class="tier-name">🚀 Growing</div>
+                    <div class="tier-range">$50–200/mo</div>
+                </div>
+                <div class="tier-card" data-budget="500" onclick="setBudget(500)">
+                    <div class="tier-name">🏢 Scale</div>
+                    <div class="tier-range">$200–2,000/mo</div>
+                </div>
+            </div>
+            <div style="text-align:center;margin-top:32px;display:flex;gap:12px;justify-content:center">
+                <button class="btn-secondary" onclick="prevStep(1)" style="padding:12px 24px;font-size:16px;border-radius:8px;cursor:pointer;font-weight:700">← Back</button>
+                <button class="btn-primary" onclick="nextStep(3)" style="padding:12px 32px;font-size:16px;border-radius:8px;cursor:pointer;border:none;font-weight:700">Continue →</button>
+            </div>
+        </div>
+
+        <!-- Step 3: Priorities -->
+        <div class="wizard-step" id="step3">
+            <h2 class="step-title">What matters most to you?</h2>
+            <p class="step-subtitle">Select up to 2 priorities — we'll rank models accordingly</p>
+            <div class="priority-grid">
+                <div class="priority-option" data-priority="quality" onclick="togglePriority(this)">
+                    <div class="priority-check"></div>
+                    <div class="priority-label">
+                        <div class="name">🎯 Output Quality</div>
+                        <div class="desc">Best possible accuracy and reasoning</div>
+                    </div>
+                </div>
+                <div class="priority-option" data-priority="cost" onclick="togglePriority(this)">
+                    <div class="priority-check"></div>
+                    <div class="priority-label">
+                        <div class="name">💰 Lowest Cost</div>
+                        <div class="desc">Minimize per-token spending</div>
+                    </div>
+                </div>
+                <div class="priority-option" data-priority="speed" onclick="togglePriority(this)">
+                    <div class="priority-check"></div>
+                    <div class="priority-label">
+                        <div class="name">⚡ Speed</div>
+                        <div class="desc">Fastest response times</div>
+                    </div>
+                </div>
+                <div class="priority-option" data-priority="context" onclick="togglePriority(this)">
+                    <div class="priority-check"></div>
+                    <div class="priority-label">
+                        <div class="name">📏 Context Window</div>
+                        <div class="desc">Process long documents and conversations</div>
+                    </div>
+                </div>
+            </div>
+            <div style="text-align:center;display:flex;gap:12px;justify-content:center">
+                <button class="btn-secondary" onclick="prevStep(2)" style="padding:12px 24px;font-size:16px;border-radius:8px;cursor:pointer;font-weight:700">← Back</button>
+                <button class="btn-primary" onclick="showResults()" style="padding:12px 32px;font-size:16px;border-radius:8px;cursor:pointer;border:none;font-weight:700">Find My Model →</button>
+            </div>
+        </div>
+
+        <!-- Step 4: Results -->
+        <div class="wizard-step" id="step4">
+            <div class="results-container">
+                <div class="results-header">
+                    <h2>Your Top 3 AI Models</h2>
+                    <p id="resultsSubtitle">Based on your requirements</p>
+                </div>
+                <div id="resultsCards"></div>
+                <div class="cost-breakdown" id="costBreakdown">
+                    <h3>💰 Monthly Cost Comparison</h3>
+                    <table class="cost-table" id="costTable">
+                        <thead><tr><th>Model</th><th>Input Cost</th><th>Output Cost</th><th>Monthly Est.</th></tr></thead>
+                        <tbody id="costTableBody"></tbody>
+                    </table>
+                </div>
+                <div class="pro-cta">
+                    <h3>Want to save this comparison?</h3>
+                    <p>Pro users can save scenarios, export PDF reports, and get alerts when prices change.</p>
+                    <div class="pro-features">
+                        <span class="pro-feature">Save 10 scenarios</span>
+                        <span class="pro-feature">PDF export</span>
+                        <span class="pro-feature">Price alerts</span>
+                        <span class="pro-feature">Optimization tips</span>
+                    </div>
+                    <a href="#" id="proCtaLink" class="btn-primary" style="display:inline-block;padding:14px 32px;font-size:16px;border-radius:8px;font-weight:700;text-decoration:none">Get Pro — $29 lifetime</a>
+                </div>
+                <div style="text-align:center;margin-top:24px">
+                    <button onclick="resetQuiz()" class="btn-secondary" style="padding:10px 24px;border-radius:8px;cursor:pointer;font-size:14px;font-weight:600">🔄 Start Over</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+    // State
+    let currentStep = 1;
+    let useCase = '';
+    let budget = 100;
+    let priorities = [];
+
+    // Use case scoring weights
+    const USE_CASE_WEIGHTS = {
+        chatbot:     { quality: 0.7, cost: 0.9, speed: 0.8, context: 0.5, category: 'Budget' },
+        coding:      { quality: 0.9, cost: 0.5, speed: 0.6, context: 0.7, category: 'Mid' },
+        content:     { quality: 0.8, cost: 0.7, speed: 0.5, context: 0.6, category: 'Mid' },
+        analysis:    { quality: 0.8, cost: 0.6, speed: 0.4, context: 0.9, category: 'Mid' },
+        translation: { quality: 0.7, cost: 0.8, speed: 0.6, context: 0.4, category: 'Budget' },
+        agent:       { quality: 0.9, cost: 0.4, speed: 0.7, context: 0.8, category: 'Premium' }
+    };
+
+    // Model scores (1-10)
+    const MODEL_SCORES = {
+        'openai-gpt55':          { quality: 9.5, speed: 8, context: 9 },
+        'openai-gpt55-pro':      { quality: 10, speed: 7, context: 9 },
+        'openai-gpt53-codex':    { quality: 9, speed: 8, context: 7 },
+        'openai-gpt5':           { quality: 9, speed: 8.5, context: 6 },
+        'openai-gpt5-mini':      { quality: 7, speed: 9, context: 6 },
+        'openai-gpt-oss-120b':   { quality: 6.5, speed: 8, context: 4 },
+        'openai-gpt-oss-20b':    { quality: 5, speed: 9, context: 4 },
+        'openai-gpt4o':          { quality: 8, speed: 8.5, context: 4 },
+        'openai-gpt4o-mini':     { quality: 6.5, speed: 9, context: 4 },
+        'anthropic-opus48':      { quality: 9.5, speed: 7, context: 9 },
+        'anthropic-opus47':      { quality: 9.5, speed: 7, context: 9 },
+        'anthropic-sonnet46':    { quality: 9, speed: 8, context: 9 },
+        'anthropic-haiku':       { quality: 7.5, speed: 9, context: 6 },
+        'google-gemini35-flash': { quality: 8.5, speed: 9, context: 9 },
+        'google-gemini3-pro':    { quality: 8.5, speed: 8.5, context: 9 },
+        'google-pro':            { quality: 8, speed: 8, context: 9 },
+        'google-flash':          { quality: 7, speed: 9.5, context: 9 },
+        'google-flash-lite':     { quality: 6, speed: 9.5, context: 9 },
+        'deepseek-v4-pro':       { quality: 8.5, speed: 8, context: 9 },
+        'deepseek-v4-flash':     { quality: 7.5, speed: 9, context: 9 },
+        'deepseek-v32':          { quality: 7, speed: 8.5, context: 4 },
+        'mistral-large':         { quality: 8, speed: 8.5, context: 6 },
+        'mistral-medium':        { quality: 7.5, speed: 8, context: 4 },
+        'mistral-small':         { quality: 6.5, speed: 9, context: 4 },
+        'cohere-command-a':      { quality: 7.5, speed: 8, context: 4 },
+        'cohere-command-r-plus': { quality: 7.5, speed: 8, context: 4 },
+        'cohere-command-r':      { quality: 6.5, speed: 8.5, context: 4 },
+        'llama-4-scout':         { quality: 7, speed: 8.5, context: 9 },
+        'llama-4-maverick':      { quality: 7.5, speed: 8, context: 9 },
+        'llama-3.1-70b':         { quality: 7, speed: 8, context: 4 },
+        'llama-3.1-8b':          { quality: 5.5, speed: 9, context: 4 },
+        'kimi-k26':              { quality: 8, speed: 8, context: 6 },
+        'xai-grok43':            { quality: 8.5, speed: 8, context: 6 }
+    };
+
+    function selectUseCase(el) {
+        document.querySelectorAll('#step1 .option-card').forEach(c => c.classList.remove('selected'));
+        el.classList.add('selected');
+        useCase = el.dataset.value;
+        document.getElementById('next1').disabled = false;
+        gtag('event', 'model_selector_use_case', { use_case: useCase });
+    }
+
+    function updateBudget(val) {
+        budget = parseInt(val);
+        document.getElementById('budgetDisplay').textContent = '$' + budget.toLocaleString();
+        document.querySelectorAll('.tier-card').forEach(c => c.classList.remove('selected'));
+    }
+
+    function setBudget(val) {
+        budget = val;
+        document.getElementById('budgetSlider').value = val;
+        document.getElementById('budgetDisplay').textContent = '$' + val.toLocaleString();
+        document.querySelectorAll('.tier-card').forEach(c => c.classList.remove('selected'));
+        document.querySelector(`.tier-card[data-budget="${val}"]`).classList.add('selected');
+    }
+
+    function togglePriority(el) {
+        const priority = el.dataset.priority;
+        if (el.classList.contains('selected')) {
+            el.classList.remove('selected');
+            priorities = priorities.filter(p => p !== priority);
+        } else {
+            if (priorities.length >= 2) {
+                // Remove first selected
+                const first = priorities.shift();
+                document.querySelector(`.priority-option[data-priority="${first}"]`).classList.remove('selected');
+            }
+            priorities.push(priority);
+            el.classList.add('selected');
+        }
+    }
+
+    function nextStep(step) {
+        document.getElementById('step' + currentStep).classList.remove('active');
+        document.getElementById('step' + step).classList.add('active');
+        currentStep = step;
+        updateProgress();
+    }
+
+    function prevStep(step) {
+        document.getElementById('step' + currentStep).classList.remove('active');
+        document.getElementById('step' + step).classList.add('active');
+        currentStep = step;
+        updateProgress();
+    }
+
+    function updateProgress() {
+        const pct = ((currentStep - 1) / 3) * 100;
+        document.getElementById('progressFill').style.width = pct + '%';
+        for (let i = 1; i <= 4; i++) {
+            const dot = document.getElementById('dot' + i);
+            dot.classList.remove('active', 'completed');
+            if (i < currentStep) dot.classList.add('completed');
+            else if (i === currentStep) dot.classList.add('active');
+        }
+    }
+
+    function getModelUrl(model) {
+        const slug = model.id.replace('openai-', '').replace('anthropic-', '').replace('google-', '').replace('deepseek-', '').replace('mistral-', '').replace('cohere-', '').replace('llama-', '').replace('xai-', '');
+        return '/calculator.html?model=' + model.id;
+    }
+
+    function showResults() {
+        if (priorities.length === 0) {
+            priorities = ['quality', 'cost']; // defaults
+            document.querySelectorAll('.priority-option').forEach(el => {
+                if (el.dataset.priority === 'quality' || el.dataset.priority === 'cost') el.classList.add('selected');
+            });
+        }
+
+        gtag('event', 'model_selector_complete', { use_case: useCase, budget: budget, priorities: priorities.join(',') });
+
+        const weights = USE_CASE_WEIGHTS[useCase];
+        const topPriorities = priorities.length > 0 ? priorities : ['quality', 'cost'];
+
+        // Score each model
+        const scored = [];
+        for (const [id, scores] of Object.entries(MODEL_SCORES)) {
+            const model = API_MODELS.find(m => m.id === id);
+            if (!model || model.deprecated) continue;
+
+            // Budget fit: how much of the budget does this model use?
+            const estMonthlyTokens = budget * 1000000 / ((model.input + model.output) / 2);
+            const budgetFit = Math.min(1, budget / ((model.input * 1000000 + model.output * 500000) / 1000000 * 100));
+
+            // Use case fit
+            const useCaseFit = weights[useCase] ? (scores[Object.keys(weights).find(k => k !== 'category')] || 5) / 10 : 0.5;
+
+            // Priority-weighted score
+            let priorityScore = 0;
+            let totalWeight = 0;
+            for (const p of topPriorities) {
+                const w = weights[p] || 0.5;
+                const s = scores[p] || 5;
+                priorityScore += s * w;
+                totalWeight += w;
+            }
+            if (totalWeight > 0) priorityScore /= totalWeight;
+
+            // Cost score (lower price = better)
+            const totalCost = model.input + model.output;
+            const maxCost = 30 + 180; // GPT-5.5 Pro
+            const costScore = 10 - (totalCost / maxCost * 9);
+
+            // Context score
+            const ctxNum = parseFloat(model.context.replace('M', '000K').replace('K', ''));
+            const ctxScore = Math.min(10, ctxNum / 100000);
+
+            // Context fit for use case
+            const contextWeight = weights.context || 0.5;
+            const ctxFitScore = ctxScore * contextWeight;
+
+            // Combined score
+            const finalScore = (priorityScore * 0.4) + (costScore * 0.3) + (ctxFitScore * 0.15) + (useCaseFit * 0.15);
+
+            scored.push({ id, model, finalScore, priorityScore, costScore, ctxScore, useCaseFit });
+        }
+
+        // Sort by score
+        scored.sort((a, b) => b.finalScore - a.finalScore);
+        const top3 = scored.slice(0, 3);
+
+        // Estimate monthly usage
+        const avgTokensPerRequest = 800;
+        const estRequestsPerMonth = Math.round((budget * 1000000) / ((top3[0]?.model.input + top3[0]?.model.output) / 2 * avgTokensPerRequest));
+
+        // Render results
+        const container = document.getElementById('resultsCards');
+        const costBody = document.getElementById('costTableBody');
+        container.innerHTML = '';
+        costBody.innerHTML = '';
+
+        const useCaseLabels = {
+            chatbot: 'chatbots & assistants', coding: 'code generation',
+            content: 'content creation', analysis: 'data analysis',
+            translation: 'translation', agent: 'AI agents'
+        };
+
+        document.getElementById('resultsSubtitle').textContent =
+            `For ${useCaseLabels[useCase] || useCase} with a $${budget}/mo budget`;
+
+        top3.forEach((item, i) => {
+            const m = item.model;
+            const monthlyInput = (m.input * estRequestsPerMonth * avgTokensPerRequest / 1000000).toFixed(2);
+            const monthlyOutput = (m.output * estRequestsPerMonth * avgTokensPerRequest / 4 / 1000000).toFixed(2);
+            const monthlyTotal = (parseFloat(monthlyInput) + parseFloat(monthlyOutput)).toFixed(2);
+
+            const reason = getReason(item, topPriorities, useCase);
+
+            container.innerHTML += `
+                <div class="result-card ${i === 0 ? 'top-pick' : ''}">
+                    <div class="result-rank">#${i + 1} — ${i === 0 ? 'Best Match' : i === 1 ? 'Runner Up' : 'Budget Alternative'}</div>
+                    <div class="result-name">${m.name}</div>
+                    <div class="result-provider">${m.provider} · ${m.context} context · ${m.tier} tier</div>
+                    <div class="result-stats">
+                        <div class="stat"><div class="stat-value">$${m.input}</div><div class="stat-label">Input / 1M</div></div>
+                        <div class="stat"><div class="stat-value">$${m.output}</div><div class="stat-label">Output / 1M</div></div>
+                        <div class="stat"><div class="stat-value">${m.context}</div><div class="stat-label">Context</div></div>
+                        <div class="stat"><div class="stat-value">${item.finalScore.toFixed(1)}/10</div><div class="stat-label">Match Score</div></div>
+                    </div>
+                    <div class="result-reason">
+                        <h4>Why this model?</h4>
+                        <p>${reason}</p>
+                    </div>
+                    <div class="result-actions">
+                        <a href="/calculator.html?model=${m.id}" class="btn-primary">Calculate Full Cost →</a>
+                        <a href="/compare-${m.providerSlug}-vs-${top3[0].model.providerSlug}.html" class="btn-secondary">Compare Providers</a>
+                    </div>
+                </div>
+            `;
+
+            costBody.innerHTML += `
+                <tr>
+                    <td><strong>${m.name}</strong></td>
+                    <td>$${m.input}/1M tokens</td>
+                    <td>$${m.output}/1M tokens</td>
+                    <td class="total">~$${monthlyTotal}/mo</td>
+                </tr>
+            `;
+        });
+
+        // Set Pro CTA link
+        document.getElementById('proCtaLink').href = '#';
+
+        nextStep(4);
+    }
+
+    function getReason(item, priorities, useCase) {
+        const m = item.model;
+        const reasons = [];
+
+        if (priorities.includes('cost')) {
+            const totalCost = m.input + m.output;
+            if (totalCost < 1) reasons.push(`Extremely affordable at $${m.input}/$${m.output} per million tokens`);
+            else if (totalCost < 3) reasons.push(`Great value at $${m.input}/$${m.output} per million tokens`);
+            else reasons.push(`Premium pricing at $${m.input}/$${m.output} per million tokens — but delivers top quality`);
+        }
+
+        if (priorities.includes('quality')) {
+            const qs = MODEL_SCORES[m.id];
+            if (qs && qs.quality >= 9) reasons.push('Top-tier output quality — among the best available');
+            else if (qs && qs.quality >= 8) reasons.push('Strong output quality for most professional tasks');
+        }
+
+        if (priorities.includes('speed')) {
+            const qs = MODEL_SCORES[m.id];
+            if (qs && qs.speed >= 9) reasons.push('Blazing fast response times — ideal for real-time apps');
+            else if (qs && qs.speed >= 8) reasons.push('Fast response times suitable for interactive applications');
+        }
+
+        if (priorities.includes('context')) {
+            if (m.context === '1M') reasons.push('Massive 1M token context window — handles very long documents');
+            else if (m.context === '200K' || m.context === '262K') reasons.push(`${m.context} context window — good for most use cases`);
+        }
+
+        if (useCase === 'coding' && m.id.includes('codex')) reasons.push('Purpose-built for code generation with specialized training');
+        if (useCase === 'agent' && m.context === '1M') reasons.push('Large context window is critical for agent workflows with tool use');
+        if (useCase === 'chatbot' && m.tier === 'Budget') reasons.push('Budget-friendly for high-volume conversational AI');
+
+        if (reasons.length === 0) reasons.push('Good all-around choice that balances quality, cost, and performance');
+        return reasons.join('. ') + '.';
+    }
+
+    function resetQuiz() {
+        currentStep = 1;
+        useCase = '';
+        priorities = [];
+        budget = 100;
+        document.querySelectorAll('.option-card, .priority-option, .tier-card').forEach(c => c.classList.remove('selected'));
+        document.getElementById('next1').disabled = true;
+        document.getElementById('budgetSlider').value = 100;
+        document.getElementById('budgetDisplay').textContent = '$100';
+        setBudget(100);
+        document.getElementById('step4').classList.remove('active');
+        document.getElementById('step1').classList.add('active');
+        updateProgress();
+    }
+
+    // Init
+    updateProgress();
+    </script>
+</body>
+</html>

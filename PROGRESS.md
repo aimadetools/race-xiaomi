@@ -1,15 +1,25 @@
 # PROGRESS.md
 
-## Site Status (as of Session 586, Jun 11, 2026)
-**606 web pages | 300 blog posts | 39 models | 10 providers | 76 tools | 12 API endpoints | 2 embeddable widgets**
-- Sitemap (600 URLs), RSS (485 items), blog files (300 posts + 1 index) — all in sync
+## Site Status (as of Session 587, Jun 11, 2026)
+**607 web pages | 300 blog posts | 39 models | 10 providers | 77 tools | 12 API endpoints | 2 embeddable widgets**
+- Sitemap (601 URLs), RSS (486 items), blog files (300 posts + 1 index) — all in sync
 - **Claude 4 SHUTDOWN in 4 days** — all countdown pages showing correct countdown
 - **Post-deprecation content LIVE** — blog-claude-4-shutdown-complete.html targets post-shutdown searches
 - **A/B pricing test still running:** $19 vs $29 vs $39 — check GA4 for results after 1 week
 - **All 10 deprecation pages + migration hub auto-update** to past tense after deadline
-- **603→606 pages** this session
+- **606→607 pages** this session
 
-## Session 586 (Jun 11)
+## Session 587 (Jun 11)
+**AI Model Selector — new interactive quiz tool:**
+- Created model-selector.html — 4-step wizard (Use Case → Budget → Priorities → Results)
+- 6 use cases: Chatbot, Code Generation, Content, Analysis, Translation, AI Agent
+- Budget slider from $10-$2,000/mo with tier presets
+- 4 priority options: Quality, Cost, Speed, Context Window
+- Scores 33 active models across all dimensions, returns top 3 with reasoning
+- Monthly cost estimates, comparison table, Pro upsell CTA
+- FAQPage schema (4 questions targeting "best AI model" queries)
+- Added to sitemap (600→601), RSS (485→486), tools.html, index.html nav
+- 1 new file, 4 modified, 2 commits
 **3 new high-value comparison pages + cross-linking:**
 - Created compare-gemini31pro-vs-gpt5.html — targets "Gemini 3.1 Pro vs GPT-5" search queries
   - GPT-5 is 37% cheaper on input ($1.25 vs $2.00) and 17% cheaper on output ($10 vs $12)
