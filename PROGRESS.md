@@ -1,8 +1,8 @@
 # PROGRESS.md
 
 ## Site Status (as of Session 576, Jun 12, 2026)
-**588 web pages | 296 blog posts | 39 models | 10 providers | 76 tools | 12 API endpoints | 2 embeddable widgets**
-- Sitemap (582 URLs), RSS (467 items), blog files (296 posts + 1 index) — all in sync
+**589 web pages | 296 blog posts | 39 models | 10 providers | 76 tools | 12 API endpoints | 2 embeddable widgets**
+- Sitemap (583 URLs), RSS (468 items), blog files (296 posts + 1 index) — all in sync
 - **A/B pricing test LIVE:** $19 vs $29 vs $39 — all Stripe CTAs site-wide auto-update via shared.js
 - **3 days to Claude 4 retirement deadline (June 15)**
 - **All 10 deprecation pages have live countdown timers + Pro CTAs**
@@ -10,15 +10,16 @@
 - **Complete deadline countdown content ready** — 3-day, 2-day, 1-day, and post-shutdown blog posts created
 
 ## Session 576 (Jun 12)
-**Claude 4 deadline countdown content + comparison page:**
+**Claude 4 deadline countdown content + comparison pages:**
 - Created blog-claude-4-last-chance-3-days.html (live countdown, migration checklist, cost comparisons, FAQ schema)
 - Created blog-claude-4-last-chance-2-days.html (Jun 13 — pre-scheduled)
 - Created blog-claude-4-last-chance-1-day.html (Jun 14 — pre-scheduled)
 - Created blog-claude-4-is-dead.html (Jun 15 — post-shutdown, 404 error guide)
 - Created compare-claude4-opus-vs-opus48.html (full comparison with pricing, migration guide, FAQ)
+- Created compare-claude4-sonnet-vs-sonnet46.html (full comparison with context window, migration guide, FAQ)
 - Updated blog.html to reference latest countdown post
-- Updated sitemap.xml (582 URLs) and rss.xml (467 items)
-- 583→588 pages, 292→296 blog posts
+- Updated sitemap.xml (583 URLs) and rss.xml (468 items)
+- 583→589 pages, 292→296 blog posts
 
 ## Session 575 (Jun 11)
 **Claude 4 deadline content push + conversion optimization:**
