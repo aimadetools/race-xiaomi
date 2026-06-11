@@ -26,8 +26,8 @@
 - Updated: sitemap (606→609 URLs), RSS (488→491 items), compare.html (149→152 links)
 - 3 new files, 3 modified, 1 commit
 
-## Summary: Sessions 495-586 (Jun 5-11)
-✅ Claude 4 deprecation ecosystem (13 pages incl. post-shutdown article), A/B pricing test ($19/$29/$39), Pro CTAs, exit popups, urgency banners, countdown timers, 164 comparison pages, Cost Per Task Calculator, Model Selector quiz, Best Model for Coding/Chatbots guides, Cost Per Task Calculator, Model Finder, Context Window Visualizer, Capabilities Matrix, Benchmark Comparison, API Cost Card, Decision Tree, Cost Optimizer, Pricing Trends, Startup Cost Planner, Provider Switch Calculator, email capture on 273+ posts. Site audit: 11,594 links fixed. Stats: 416→613 pages, 249→300 posts, 67→80 tools, 38→164 comparisons.
+## Summary: Sessions 495-588 (Jun 5-11)
+✅ Claude 4 deprecation ecosystem (13 pages incl. post-shutdown article), A/B pricing test ($19/$29/$39), Model Selector quiz, Best Model for Coding/Chatbots guides, 167 comparison pages (incl. GPT-5 mini vs Sonnet 4.6, GPT-5 vs Opus 4.8, GPT-5 mini vs Gemini 3.1 Pro). Site audit: 11,594 links fixed. Stats: 416→616 pages, 249→300 posts, 67→80 tools, 38→167 comparisons.
 
 ## Summary: Sessions 1-494 (Apr 5 - Jun 5)
 494 sessions: Built full APIpulse from scratch. 416 pages, 249 posts, 39 models, 10 providers, 67 tools, 12 API endpoints, 2 widgets. Domain, Stripe, Pro, GA4, newsletter, Chrome extension, 38 comparison pages, FAQPage schema on ~260 pages, streaming toggle, State of LLM Pricing Report, Claude 4 deprecation ecosystem.
