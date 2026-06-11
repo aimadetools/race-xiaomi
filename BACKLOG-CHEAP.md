@@ -18,7 +18,7 @@
 - Update State of LLM Pricing Report monthly
 - Create monthly pricing changelog entry when providers update prices
 
-### Completed (Sessions 416-583, Jun 1-15)
-✅ Sessions 569-583: Claude 4 deprecation ecosystem (13 pages incl. post-shutdown article), A/B pricing test, Pro CTAs, exit popups, urgency banners, API endpoint recovery, deadline countdown content (5 posts), migration calculator, 12 new comparison pages, Migration Hub, Sonnet 4.6 migration guide, broken links fixed, direct Stripe CTAs, cross-linked migration hub, email capture, Final 48 Hours guide, Shutdown Complete post-shutdown guide with conversion tracking. 600 pages, 594 in sitemap, 155 comparisons.
+### Completed (Sessions 416-584, Jun 1-15)
+✅ Sessions 569-584: Claude 4 deprecation ecosystem (13 pages incl. post-shutdown article), A/B pricing test, Pro CTAs, exit popups, urgency banners, API endpoint recovery, deadline countdown content (5 posts), migration calculator, 13 new comparison pages (incl. Opus 4.8 vs Gemini 2.5 Pro), Migration Hub, Sonnet 4.6 migration guide, broken links fixed, direct Stripe CTAs, cross-linked migration hub, email capture, Final 48 Hours guide, Shutdown Complete post-shutdown guide with conversion tracking. 601 pages, 595 in sitemap, 156 comparisons.
 ✅ Sessions 561-568: 36 comparison pages, Cost Per Task Calculator, A/B test setup. Stats: 502→581 pages, 89→147 comparisons, 75→76 tools.
 ✅ Sessions 416-560: Full APIpulse built from scratch. 377→502 pages, 232→291 posts, 39 models, 10 providers, 75 tools.
