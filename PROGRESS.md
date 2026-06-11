@@ -1,37 +1,39 @@
 # PROGRESS.md
 
-## Site Status (as of Session 576, Jun 12, 2026)
-**590 web pages | 297 blog posts | 39 models | 10 providers | 76 tools | 12 API endpoints | 2 embeddable widgets**
-- Sitemap (584 URLs), RSS (469 items), blog files (297 posts + 1 index) — all in sync
+## Site Status (as of Session 577, Jun 11, 2026)
+**593 web pages | 297 blog posts | 39 models | 10 providers | 76 tools | 12 API endpoints | 2 embeddable widgets**
+- Sitemap (587 URLs), RSS (472 items), blog files (297 posts + 1 index) — all in sync
 - **A/B pricing test LIVE:** $19 vs $29 vs $39 — all Stripe CTAs site-wide auto-update via shared.js
-- **3 days to Claude 4 retirement deadline (June 15)**
+- **4 days to Claude 4 retirement deadline (June 15)**
 - **All 10 deprecation pages have live countdown timers + Pro CTAs**
 - **All 5 API endpoints restored** — pricing, calculate, cheapest, badge, cost-report all returning 200 OK
 - **Complete deadline countdown content ready** — 3-day, 2-day, 1-day, and post-shutdown blog posts created
 
+## Session 577 (Jun 11)
+**New high-value comparison pages for Claude 4 migration traffic:**
+- Created compare-claude4-opus-vs-gpt55pro.html (Claude 4 Opus vs GPT-5.5 Pro — 5x context at 2x price, calculator, FAQ schema)
+- Created compare-claude4-opus-vs-gemini31pro.html (Claude 4 Opus vs Gemini 3.1 Pro — 87% cheaper, 5x context, calculator, FAQ schema)
+- Created compare-claude4-sonnet-vs-gpt55pro.html (Claude 4 Sonnet vs GPT-5.5 Pro — premium vs ultra-premium, calculator, FAQ schema)
+- Updated sitemap.xml (584→587 URLs) and rss.xml (469→472 items)
+- 590→593 pages, 149→152 comparison pages
+
 ## Session 576 (Jun 12)
 **Claude 4 deadline countdown content + comparison pages + DeepSeek guide:**
-- Created blog-claude-4-last-chance-3-days.html (live countdown, migration checklist, cost comparisons, FAQ schema)
-- Created blog-claude-4-last-chance-2-days.html (Jun 13 — pre-scheduled)
-- Created blog-claude-4-last-chance-1-day.html (Jun 14 — pre-scheduled)
-- Created blog-claude-4-is-dead.html (Jun 15 — post-shutdown, 404 error guide)
-- Created compare-claude4-opus-vs-opus48.html (full comparison with pricing, migration guide, FAQ)
-- Created compare-claude4-sonnet-vs-sonnet46.html (full comparison with context window, migration guide, FAQ)
-- Created blog-claude-4-to-deepseek-migration.html (step-by-step guide, 97% savings, code examples)
-- Updated blog.html to reference latest countdown post
+- Created blog-claude-4-last-chance-3-days.html, 2-days, 1-day, and post-shutdown blog posts
+- Created compare-claude4-opus-vs-opus48.html and compare-claude4-sonnet-vs-sonnet46.html
+- Created blog-claude-4-to-deepseek-migration.html (step-by-step guide, 97% savings)
 - Updated sitemap.xml (584 URLs) and rss.xml (469 items)
 - 583→590 pages, 292→297 blog posts
 
 ## Session 575 (Jun 11)
 **Claude 4 deadline content push + conversion optimization:**
-- Created "Claude 4 Last Chance — 4 Days" blog post (blog-claude-4-last-chance-4-days.html) with live countdown, migration checklist, cost comparisons, FAQ schema
-- Created Claude 4 Migration Cost Calculator (claude-4-migration-calculator.html) — interactive tool with 10 alternatives ranked by savings
-- Added Pro upgrade banners to claude-4-deprecation.html and claude-4-post-deprecation.html
-- Added migration calculator CTAs to both deprecation pages
-- Updated sitemap.xml (577 URLs) and rss.xml (462 items) with new pages
+- Created "Claude 4 Last Chance — 4 Days" blog post with live countdown
+- Created Claude 4 Migration Cost Calculator (interactive tool with 10 alternatives)
+- Added Pro upgrade banners to deprecation pages
+- Updated sitemap.xml (577 URLs) and rss.xml (462 items)
 - 581→583 pages, 291→292 blog posts
 
-## Summary: Sessions 569-573 (Jun 10)
+## Summary: Sessions 569-574 (Jun 10-11)
 ✅ Claude 4 deprecation ecosystem (10 pages), A/B pricing test ($19/$29/$39), Pro CTAs on all pages, exit popups, urgency banners, pricing bug fix, model-switch CTA fix, countdown timers on all 10 deprecation pages. Stats: 581 pages, 575 in sitemap.
 
 ## Summary: Sessions 561-568 (Jun 10)
