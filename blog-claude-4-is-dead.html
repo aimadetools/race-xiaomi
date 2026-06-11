@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Claude 4 Is Dead — What to Do Now (June 15, 2026) | APIpulse</title>
+    <meta name="description" content="Claude 4 Opus and Sonnet 4 are officially dead. API calls return 404. Here's how to fix your app in 30 minutes — and save 67-97% with a cheaper alternative.">
+    <meta name="keywords" content="Claude 4 dead, Claude 4 shutdown, Claude 4 not working, Claude 4 404, Claude 4 alternative, Claude 4 migration, what happened to Claude 4">
+    <meta property="og:title" content="Claude 4 Is Dead — What to Do Now">
+    <meta property="og:description" content="Claude 4 is officially dead. API calls return 404. Fix your app in 30 minutes — save 67-97%.">
+    <meta property="og:type" content="article">
+    <meta property="article:published_time" content="2026-06-15">
+    <meta property="article:modified_time" content="2026-06-15">
+    <meta property="article:author" content="APIpulse">
+    <meta property="og:image" content="https://getapipulse.com/og-image.png">
+    <meta property="og:url" content="https://getapipulse.com/blog-claude-4-is-dead.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Claude 4 Is Dead — What to Do Now">
+    <meta name="twitter:image" content="https://getapipulse.com/og-image.png">
+    <meta name="twitter:description" content="Claude 4 is officially dead. Fix your app in 30 minutes — save 67-97%.">
+    <link rel="canonical" href="https://getapipulse.com/blog-claude-4-is-dead.html">
+    <link rel="alternate" type="application/rss+xml" title="APIpulse Blog" href="https://getapipulse.com/rss.xml">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="styles.css">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0CEP7S9Y3J"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-0CEP7S9Y3J');
+    </script>
+    <script src="analytics.js" defer></script>
+    <script src="dynamic-date.js" defer></script>
+    <script src="shared.js" defer></script>
+    <script src="pricing-data.js" defer></script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "Claude 4 Is Dead — What to Do Now (June 15, 2026)",
+        "description": "Claude 4 Opus and Sonnet 4 are officially dead. API calls return 404. Here's how to fix your app in 30 minutes.",
+        "url": "https://getapipulse.com/blog-claude-4-is-dead.html",
+        "publisher": { "@type": "Organization", "name": "APIpulse", "url": "https://getapipulse.com" },
+        "datePublished": "2026-06-15",
+        "dateModified": "2026-06-15"
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "Is Claude 4 really dead?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes. As of June 15, 2026, all API calls to claude-4-opus and claude-4-sonnet return 404 errors. Anthropic has shut down the models permanently with no grace period."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What replaces Claude 4?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Claude Opus 4.8 ($5/$25) is the official successor — 67% cheaper with the same API format. For maximum savings, DeepSeek V4 Pro ($0.44/$0.87) is 97% cheaper."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How do I fix my app after Claude 4 shutdown?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Replace claude-4-opus with claude-opus-4-8 (or claude-4-sonnet with claude-sonnet-4-6) in your code. No other changes needed — same API, same SDK, same parameters. Takes 15-30 minutes."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Why is my Claude 4 API returning 404?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Claude 4 Opus and Sonnet 4 were retired on June 15, 2026. All API calls to these model IDs now return HTTP 404 Not Found. Update your model ID to claude-opus-4-8 or claude-sonnet-4-6."
+                }
+            }
+        ]
+    }
+    </script>
+    <style>
+        .blog-hero{max-width:var(--max-width);margin:0 auto;padding:120px 24px 40px;text-align:center}
+        .blog-hero .category{display:inline-block;background:rgba(239,68,68,0.15);color:#ef4444;padding:4px 12px;border-radius:6px;font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:16px}
+        .blog-hero h1{font-size:clamp(28px,4.5vw,44px);font-weight:800;margin-bottom:16px;line-height:1.2}
+        .blog-hero .subtitle{font-size:18px;color:var(--text-secondary);max-width:700px;margin:0 auto 24px}
+        .blog-hero .meta{font-size:13px;color:var(--text-muted)}
+        .urgency-banner{max-width:800px;margin:0 auto 40px;padding:24px;background:rgba(239,68,68,0.1);border:2px solid rgba(239,68,68,0.4);border-radius:var(--radius);text-align:center}
+        .urgency-banner .status{font-size:36px;font-weight:800;color:#ef4444;margin-bottom:8px}
+        .urgency-banner .message{font-size:16px;color:var(--text-secondary)}
+        .blog-content{max-width:780px;margin:0 auto;padding:0 24px 80px}
+        .blog-content h2{font-size:28px;font-weight:800;margin:48px 0 16px;padding-top:24px;border-top:1px solid var(--border)}
+        .blog-content h3{font-size:20px;font-weight:700;margin:32px 0 12px}
+        .blog-content p{font-size:16px;line-height:1.8;color:var(--text-secondary);margin-bottom:20px}
+        .blog-content strong{color:var(--text-primary)}
+        .blog-content ul,.blog-content ol{margin-bottom:20px;padding-left:24px}
+        .blog-content li{font-size:16px;line-height:1.8;color:var(--text-secondary);margin-bottom:8px}
+        .blog-content code{background:var(--bg-card);padding:2px 8px;border-radius:4px;font-size:14px;font-family:'Fira Code',monospace;color:var(--accent)}
+        .blog-content pre{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:20px;overflow-x:auto;margin-bottom:24px}
+        .blog-content pre code{background:none;padding:0;font-size:14px;color:var(--text-primary)}
+        .migration-step{background:var(--bg-secondary);border:1px solid var(--border);border-radius:var(--radius);padding:24px;margin-bottom:24px}
+        .migration-step .step-number{display:inline-block;background:var(--accent);color:white;width:32px;height:32px;border-radius:50%;text-align:center;line-height:32px;font-weight:700;font-size:14px;margin-bottom:12px}
+        .migration-step h3{margin-top:0}
+        .cost-comparison{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:24px}
+        .cost-card{background:var(--bg-secondary);border:1px solid var(--border);border-radius:var(--radius);padding:20px;text-align:center}
+        .cost-card .label{font-size:12px;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.5px;margin-bottom:8px}
+        .cost-card .price{font-size:28px;font-weight:800}
+        .cost-card .detail{font-size:13px;color:var(--text-secondary);margin-top:4px}
+        .cost-card.winner{border-color:var(--green);box-shadow:0 0 24px rgba(34,197,94,0.1)}
+        .cost-card.winner .price{color:var(--green)}
+        .cost-card.dead{border-color:#ef4444;background:rgba(239,68,68,0.05)}
+        .cost-card.dead .price{color:#ef4444}
+        .cta-box{background:linear-gradient(135deg,rgba(99,102,241,0.1),rgba(34,197,94,0.1));border:1px solid var(--accent);border-radius:var(--radius);padding:32px;text-align:center;margin:40px 0}
+        .cta-box h2{margin-top:0;border:none;padding-top:0}
+        .cta-box p{color:var(--text-secondary);margin-bottom:20px}
+        .cta-box .btn-primary{display:inline-block;padding:12px 28px;background:var(--accent);color:white;border-radius:8px;font-weight:700;text-decoration:none;transition:all 0.2s}
+        .cta-box .btn-primary:hover{opacity:0.9;transform:translateY(-1px)}
+        .related-posts{max-width:780px;margin:0 auto;padding:0 24px 60px}
+        .related-posts h2{font-size:20px;font-weight:700;margin-bottom:16px}
+        .related-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+        .related-card{display:block;padding:16px;border-radius:12px;border:1px solid var(--border);background:var(--bg-card);text-decoration:none;transition:all 0.2s}
+        .related-card:hover{border-color:var(--accent);transform:translateY(-2px)}
+        .related-card .title{font-size:14px;font-weight:700;color:var(--text-primary);margin-bottom:4px}
+        .related-card .desc{font-size:12px;color:var(--text-muted)}
+        .email-capture{max-width:700px;margin:0 auto 40px;padding:32px;background:var(--bg-card);border:1px solid var(--accent);border-radius:var(--radius);text-align:center}
+        .email-capture h2{font-size:20px;margin-bottom:8px}
+        .email-capture p{color:var(--text-secondary);margin-bottom:16px;font-size:14px}
+        .email-form{display:flex;gap:8px;max-width:400px;margin:0 auto}
+        .email-form input{flex:1;padding:10px 14px;border-radius:8px;border:1px solid var(--border);background:var(--bg-secondary);color:var(--text-primary);font-size:14px}
+        .email-form input:focus{outline:2px solid var(--accent);outline-offset:2px}
+        .email-form button{padding:10px 20px;border-radius:8px;background:var(--accent);color:white;border:none;font-weight:600;font-size:14px;cursor:pointer;transition:all 0.2s}
+        .email-form button:hover{opacity:0.9}
+        .pro-upsell{max-width:780px;margin:0 auto 40px;padding:24px 32px;background:linear-gradient(135deg,rgba(99,102,241,0.08),rgba(34,197,94,0.08));border:1px solid var(--accent);border-radius:var(--radius);display:flex;align-items:center;gap:20px}
+        .pro-upsell .pro-badge{background:var(--accent);color:white;padding:6px 14px;border-radius:20px;font-size:12px;font-weight:700;white-space:nowrap;text-transform:uppercase;letter-spacing:0.5px}
+        .pro-upsell .pro-text{flex:1}
+        .pro-upsell .pro-text h3{font-size:16px;font-weight:700;margin:0 0 4px}
+        .pro-upsell .pro-text p{font-size:14px;color:var(--text-secondary);margin:0}
+        .pro-upsell a{color:var(--accent);font-weight:600;text-decoration:none;font-size:14px;white-space:nowrap}
+        .pro-upsell a:hover{text-decoration:underline}
+        .checklist{list-style:none;padding:0;margin-bottom:24px}
+        .checklist li{padding:12px 16px;border:1px solid var(--border);border-radius:8px;margin-bottom:8px;font-size:15px;color:var(--text-secondary);display:flex;align-items:center;gap:12px}
+        .checklist li .check{color:var(--green);font-size:18px;flex-shrink:0}
+        .error-card{background:rgba(239,68,68,0.08);border:2px solid rgba(239,68,68,0.3);border-radius:var(--radius);padding:24px;margin-bottom:24px}
+        .error-card .error-code{font-size:48px;font-weight:800;color:#ef4444;font-family:'Fira Code',monospace}
+        .error-card .label{font-size:14px;color:var(--text-muted);margin-top:4px}
+        .faq-item{background:var(--bg-secondary);border:1px solid var(--border);border-radius:var(--radius);padding:24px;margin-bottom:16px}
+        .faq-item h3{font-size:18px;font-weight:700;margin:0 0 12px;color:var(--text-primary)}
+        .faq-item p{font-size:15px;line-height:1.7;color:var(--text-secondary);margin:0}
+        @media(max-width:768px){.blog-hero{padding:100px 20px 30px}.cost-comparison{grid-template-columns:1fr}.email-form{flex-direction:column}.pro-upsell{flex-direction:column;text-align:center}}
+    </style>
+    <meta name="theme-color" content="#6366f1">
+</head>
+<body>
+    <a href="#main" class="skip-link">Skip to content</a>
+    <nav>
+        <div class="nav-inner">
+            <a href="index.html" class="logo">API<span>pulse</span></a>
+            <button class="hamburger" onclick="toggleMobileNav()" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+            <div class="nav-links">
+                <a href="calculator.html">Calculator</a>
+                <a href="compare.html">Compare</a>
+                <a href="cost-explorer.html">Explorer</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="blog.html">Blog</a>
+                <a href="pricing.html" class="nav-cta" onclick="if(window.trackEvent)window.trackEvent('pro_button_clicked',{source:'nav'})">Get Pro — $29</a>
+                <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
+            </div>
+        </div>
+    </nav>
+
+    <main id="main">
+    <div class="blog-hero">
+        <div class="category">🚨 Claude 4 Shutdown — June 15, 2026</div>
+        <h1>Claude 4 Is <span style="color:#ef4444">Dead</span> — What to Do Now</h1>
+        <p class="subtitle">Claude 4 Opus and Sonnet 4 shut down today. Your API calls are returning 404. Here's how to fix your app in 30 minutes — and save 67-97%.</p>
+        <p class="meta">Published Jun 15, 2026 · 8 min read</p>
+    </div>
+
+    <div class="urgency-banner">
+        <div class="status">⛔ SHUTDOWN COMPLETE</div>
+        <div class="message">Claude 4 Opus and Claude 4 Sonnet API calls <strong>are now failing with 404 errors</strong>. There is no way to restore access.</div>
+    </div>
+
+    <div class="blog-content">
+        <p><strong>It happened.</strong> As of June 15, 2026, Claude 4 Opus and Claude 4 Sonnet are permanently shut down. If your app is still calling these models, you're getting 404 errors right now. This guide walks you through the fix — it takes 30 minutes or less.</p>
+
+        <div class="error-card">
+            <div class="error-code">404</div>
+            <div class="label">Not Found — claude-4-opus is no longer available</div>
+        </div>
+
+        <h2>The 30-Minute Fix</h2>
+        <p>You don't need to rewrite your app. You just need to change one thing: the model ID.</p>
+
+        <ul class="checklist">
+            <li><span class="check">☐</span> <strong>Step 1:</strong> Search your codebase for <code>claude-4-opus</code> and <code>claude-4-sonnet</code></li>
+            <li><span class="check">☐</span> <strong>Step 2:</strong> Replace with <code>claude-opus-4-8</code> or <code>claude-sonnet-4-6</code></li>
+            <li><span class="check">☐</span> <strong>Step 3:</strong> Test with 5-10 API calls</li>
+            <li><span class="check">☐</span> <strong>Step 4:</strong> Deploy</li>
+            <li><span class="check">☐</span> <strong>Step 5:</strong> Calculate your new costs with <a href="calculator.html">APIpulse</a></li>
+        </ul>
+
+        <div class="migration-step">
+            <div class="step-number">1</div>
+            <h3>Find Every Claude 4 Reference</h3>
+            <p>Run this in your project root:</p>
+            <pre><code>grep -r "claude-4-opus\|claude-4-sonnet" --include="*.js" --include="*.ts" --include="*.py" --include="*.json" .</code></pre>
+            <p>This finds every file that references the dead model IDs. Don't forget config files, environment variables, and documentation.</p>
+        </div>
+
+        <div class="migration-step">
+            <div class="step-number">2</div>
+            <h3>Update Model IDs</h3>
+            <p>The API format is identical — you only change the model name:</p>
+            <pre><code>// Before (dead — returning 404)
+model: "claude-4-opus"
+
+// After (official successor)
+model: "claude-opus-4-8"</code></pre>
+            <p>No other code changes needed. Same API, same SDK, same parameters.</p>
+        </div>
+
+        <div class="migration-step">
+            <div class="step-number">3</div>
+            <h3>Test and Deploy</h3>
+            <p>Make a few test calls to verify the new model works with your prompts. Then deploy. That's it — your app is back online.</p>
+        </div>
+
+        <h2>Claude 4 Is Dead — Cost Comparison</h2>
+        <p>Here's what you were paying vs what you'll pay now (per 1M tokens):</p>
+
+        <div class="cost-comparison">
+            <div class="cost-card dead">
+                <div class="label">Claude 4 Opus (DEAD)</div>
+                <div class="price">$15 / $75</div>
+                <div class="detail">Input / Output — 404 ERROR</div>
+            </div>
+            <div class="cost-card winner">
+                <div class="label">Claude Opus 4.8 (successor)</div>
+                <div class="price">$5 / $25</div>
+                <div class="detail">67% cheaper · Same API format</div>
+            </div>
+        </div>
+
+        <div class="cost-comparison">
+            <div class="cost-card dead">
+                <div class="label">Claude 4 Sonnet (DEAD)</div>
+                <div class="price">$3 / $15</div>
+                <div class="detail">Input / Output — 404 ERROR</div>
+            </div>
+            <div class="cost-card winner">
+                <div class="label">Claude Sonnet 4.6 (successor)</div>
+                <div class="price">$3 / $15</div>
+                <div class="detail">Same price · 5x context window</div>
+            </div>
+        </div>
+
+        <h3>Budget Alternatives (save even more)</h3>
+        <div class="cost-comparison">
+            <div class="cost-card winner">
+                <div class="label">DeepSeek V4 Pro</div>
+                <div class="price">$0.44 / $0.87</div>
+                <div class="detail">97% cheaper than Claude 4 Opus</div>
+            </div>
+            <div class="cost-card winner">
+                <div class="label">Llama 4 Maverick</div>
+                <div class="price">$0.27 / $0.85</div>
+                <div class="detail">98% cheaper · Open source</div>
+            </div>
+        </div>
+
+        <div class="pro-upsell">
+            <div class="pro-badge">⚡ Pro</div>
+            <div class="pro-text">
+                <h3>Calculate Your Exact Savings</h3>
+                <p>Enter your monthly token usage and see exactly how much you'll save by migrating off Claude 4.</p>
+            </div>
+            <a href="claude-4-migration-calculator.html">Try Calculator →</a>
+        </div>
+
+        <h2>Common Error Messages (and What They Mean)</h2>
+
+        <div class="migration-step">
+            <h3>HTTP 404 — Not Found</h3>
+            <p>The model ID <code>claude-4-opus</code> or <code>claude-4-sonnet</code> no longer exists. Replace with <code>claude-opus-4-8</code> or <code>claude-sonnet-4-6</code>.</p>
+        </div>
+
+        <div class="migration-step">
+            <h3>"model not found" Error</h3>
+            <p>Same root cause — the model has been removed from Anthropic's API. Update your model ID string.</p>
+        </div>
+
+        <div class="migration-step">
+            <h3>OpenRouter / Bedrock Errors</h3>
+            <p>If you access Claude 4 through a third party, check their dashboard. Most providers have already removed Claude 4 from their available models list.</p>
+        </div>
+
+        <h2>LangChain and LlamaIndex Users</h2>
+        <p>Update your model string in the chat instantiation:</p>
+        <pre><code># LangChain
+chat = ChatAnthropic(model="claude-opus-4-8")  # was "claude-4-opus"
+
+# LlamaIndex
+llm = Anthropic(model="claude-opus-4-8")  # was "claude-4-opus"</code></pre>
+        <p>Both libraries use the same underlying SDK — only the model ID changes.</p>
+
+        <h2>Why Claude Opus 4.8?</h2>
+        <p>Claude Opus 4.8 is the official successor to Claude 4 Opus. It offers:</p>
+        <ul>
+            <li><strong>67% lower cost</strong> — $5/$25 vs $15/$75 per 1M tokens</li>
+            <li><strong>Same API format</strong> — zero code changes beyond the model ID</li>
+            <li><strong>Better performance</strong> — improved reasoning, longer context</li>
+            <li><strong>No deprecation risk</strong> — this is the current flagship model</li>
+        </ul>
+
+        <div class="cta-box">
+            <h2>Fix Your App Now</h2>
+            <p>Use the <a href="calculator.html">APIpulse cost calculator</a> to see exactly how much you'll save, then update your model ID. It takes 30 minutes — your app will be back online and cheaper.</p>
+            <a href="calculator.html" class="btn-primary">Calculate Your Savings →</a>
+        </div>
+
+        <h2>Frequently Asked Questions</h2>
+
+        <div class="faq-item">
+            <h3>Can I still use Claude 4 somehow?</h3>
+            <p><strong>No.</strong> All API endpoints for Claude 4 Opus and Claude 4 Sonnet return 404. There is no degraded mode, no grace period, no workaround. The models are permanently retired.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>Will my prompts work the same on Claude Opus 4.8?</h3>
+            <p><strong>Yes.</strong> Claude Opus 4.8 uses the same API format and responds to the same prompts. You may see slightly different outputs (it's a newer model), but your existing prompts will work without modification.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>What if I have fine-tuned Claude 4 models?</h3>
+            <p>Fine-tuned models are also dead. You'll need to re-fine-tune on Claude Opus 4.8 or Claude Sonnet 4.6. Contact Anthropic support for guidance on transferring fine-tuned weights.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>Is it worth switching to a cheaper provider like DeepSeek?</h3>
+            <p>It depends on your quality requirements. DeepSeek V4 Pro is 97% cheaper and handles most tasks well, but Claude Opus 4.8 may be better for complex reasoning. Use the <a href="compare.html">APIpulse comparison tool</a> to test both against your use case.</p>
+        </div>
+
+        <div class="email-capture">
+            <h2>Get Deprecation Alerts</h2>
+            <p>Be notified before any model is deprecated or pricing changes. One email per month, no spam.</p>
+            <form class="email-form" action="/api/subscribe" method="POST">
+                <input type="email" name="email" placeholder="your@email.com" required>
+                <button type="submit">Subscribe</button>
+            </form>
+        </div>
+
+        <div class="pro-upsell">
+            <div class="pro-badge">Pro</div>
+            <div class="pro-text">
+                <h3>Never Get Caught by a Deprecation Again</h3>
+                <p>APIpulse Pro monitors 39 models across 10 providers and alerts you 30 days before any deprecation.</p>
+            </div>
+            <a href="pricing.html">Get Pro — $29 →</a>
+        </div>
+
+        <h2>Related Reading</h2>
+    </div>
+
+    <div class="related-posts">
+        <div class="related-grid">
+            <a href="claude-4-deprecation.html" class="related-card">
+                <div class="title">Claude 4 Deprecation Guide</div>
+                <div class="desc">39 alternatives compared with full cost breakdown</div>
+            </a>
+            <a href="blog-claude-4-last-chance-3-days.html" class="related-card">
+                <div class="title">Last Chance — 3 Days</div>
+                <div class="desc">The migration guide you should have read earlier</div>
+            </a>
+            <a href="claude-4-alternatives-by-use-case.html" class="related-card">
+                <div class="title">Alternatives by Use Case</div>
+                <div class="desc">Find the best replacement for your specific needs</div>
+            </a>
+            <a href="claude-4-migration-calculator.html" class="related-card">
+                <div class="title">Migration Cost Calculator</div>
+                <div class="desc">Interactive tool — input usage, see savings</div>
+            </a>
+            <a href="blog-best-claude-4-alternatives.html" class="related-card">
+                <div class="title">Best Claude 4 Alternatives</div>
+                <div class="desc">Top 10 replacements ranked by quality and cost</div>
+            </a>
+            <a href="claude-4-post-deprecation.html" class="related-card">
+                <div class="title">Post-Deprecation Guide</div>
+                <div class="desc">What to do after Claude 4 is gone</div>
+            </a>
+        </div>
+    </div>
+
+    </main>
+
+    <footer>
+        <div class="footer-inner">
+            <div class="footer-brand">
+                <a href="index.html" class="logo">API<span>pulse</span></a>
+                <p>Know your AI API costs before you commit.</p>
+            </div>
+            <div class="footer-links">
+                <div class="footer-col">
+                    <h4>Tools</h4>
+                    <a href="calculator.html">Cost Calculator</a>
+                    <a href="compare.html">Model Comparison</a>
+                    <a href="cost-explorer.html">Cost Explorer</a>
+                    <a href="pricing.html">Pricing</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Resources</h4>
+                    <a href="blog.html">Blog</a>
+                    <a href="about.html">About</a>
+                    <a href="api-docs.html">API Docs</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 APIpulse. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
