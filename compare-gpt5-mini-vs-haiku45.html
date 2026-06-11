@@ -1,0 +1,794 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GPT-5 mini vs Claude Haiku 4.5 — Budget AI Model Comparison 2026 | APIpulse</title>
+    <meta name="description" content="GPT-5 mini vs Claude Haiku 4.5 comparison. GPT-5 mini is 75% cheaper on input ($0.25 vs $1.00) and 60% cheaper on output ($2.00 vs $5.00). Interactive calculator included.">
+    <meta name="keywords" content="GPT-5 mini vs Claude Haiku 4.5, budget AI comparison, cheapest AI API, Haiku 4.5 pricing, GPT-5 mini pricing, AI API cost comparison 2026, budget AI model">
+    <meta property="og:title" content="GPT-5 mini vs Claude Haiku 4.5 — Budget AI Model Comparison 2026">
+    <meta property="og:description" content="GPT-5 mini crushes Haiku 4.5 on price: 75% cheaper input, 60% cheaper output, 36% more context. Compare the budget AI models.">
+    <meta property="og:type" content="article">
+    <meta property="og:image" content="https://getapipulse.com/og-image.png">
+    <meta property="og:url" content="https://getapipulse.com/compare-gpt5-mini-vs-haiku45.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="GPT-5 mini vs Claude Haiku 4.5 — Budget AI Model Comparison 2026">
+    <meta name="twitter:image" content="https://getapipulse.com/og-image.png">
+    <meta name="twitter:description" content="GPT-5 mini is 75% cheaper on input and 60% cheaper on output vs Haiku 4.5. Compare budget AI models.">
+    <link rel="canonical" href="https://getapipulse.com/compare-gpt5-mini-vs-haiku45.html">
+    <link rel="alternate" type="application/rss+xml" title="APIpulse Blog" href="https://getapipulse.com/rss.xml">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="styles.css">
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0CEP7S9Y3J"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-0CEP7S9Y3J');
+    </script>
+    <script src="analytics.js" defer></script>
+    <script src="dynamic-date.js" defer></script>
+    <script src="shared.js" defer></script>
+    <script src="pricing-data.js" defer></script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "GPT-5 mini vs Claude Haiku 4.5 — Budget AI Model Comparison 2026",
+        "description": "Compare GPT-5 mini and Claude Haiku 4.5 API pricing. GPT-5 mini is 75% cheaper on input and 60% cheaper on output. Interactive calculator shows exact costs.",
+        "url": "https://getapipulse.com/compare-gpt5-mini-vs-haiku45.html",
+        "publisher": {
+            "@type": "Organization",
+            "name": "APIpulse",
+            "url": "https://getapipulse.com"
+        },
+        "datePublished": "2026-06-11",
+        "dateModified": "2026-06-11"
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "Is GPT-5 mini cheaper than Claude Haiku 4.5?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes, GPT-5 mini is significantly cheaper than Claude Haiku 4.5. GPT-5 mini costs $0.25/$2.00 per 1M tokens while Haiku 4.5 costs $1.00/$5.00. That's 75% cheaper on input and 60% cheaper on output. For output-heavy workloads like chat, GPT-5 mini can be 2.5x cheaper overall."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Which has a larger context window: GPT-5 mini or Haiku 4.5?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "GPT-5 mini has a 272K token context window, 36% larger than Claude Haiku 4.5's 200K context window. This makes GPT-5 mini slightly better for long document processing and RAG pipelines that need more context, while still being significantly cheaper."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "When should I choose Claude Haiku 4.5 over GPT-5 mini?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Choose Claude Haiku 4.5 when you prioritize reasoning quality over cost, need Anthropic's constitutional AI safety features, or require US/EU data residency through Anthropic's infrastructure. Haiku 4.5 may produce more nuanced, careful responses on complex tasks despite the higher price."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How much can I save switching from Haiku 4.5 to GPT-5 mini?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Savings depend on your usage pattern. For input-heavy workloads (e.g., document processing), you save 75%. For output-heavy workloads (e.g., chatbots), you save 60% on output tokens. At 10M tokens/month (50% input, 50% output), Haiku 4.5 costs $300 while GPT-5 mini costs $112.50 — saving $187.50/month (63%)."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Is GPT-5 mini good enough for production use compared to Haiku 4.5?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Both models are production-ready for budget-tier workloads. GPT-5 mini offers better value with lower costs and larger context. However, Haiku 4.5 may excel on reasoning-heavy tasks, safety-sensitive applications, or when you need Anthropic's specific compliance certifications. Test both on your specific workload before deciding."
+                }
+            }
+        ]
+    }
+    </script>
+    <style>
+        .compare-hero {
+            max-width: var(--max-width); margin: 0 auto; padding: 120px 24px 40px;
+            text-align: center;
+        }
+        .compare-hero h1 { font-size: clamp(28px, 4.5vw, 44px); font-weight: 800; margin-bottom: 16px; line-height: 1.2; }
+        .compare-hero h1 .vs { color: var(--accent); }
+        .compare-hero .subtitle { font-size: 18px; color: var(--text-secondary); max-width: 700px; margin: 0 auto 24px; }
+        .compare-hero .last-updated { font-size: 13px; color: var(--text-muted); }
+
+        /* Summary Cards */
+        .summary-cards {
+            max-width: 900px; margin: 0 auto 48px; padding: 0 24px;
+            display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px;
+        }
+        .summary-card {
+            background: var(--bg-secondary); border: 1px solid var(--border);
+            border-radius: var(--radius); padding: 24px; text-align: center;
+        }
+        .summary-card .label { font-size: 12px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px; }
+        .summary-card .value { font-size: 28px; font-weight: 800; }
+        .summary-card .detail { font-size: 13px; color: var(--text-secondary); margin-top: 4px; }
+        .summary-card .winner { color: var(--green); }
+
+        /* Quick Comparison Table */
+        .quick-comparison {
+            max-width: 1000px; margin: 0 auto 48px; padding: 0 24px;
+        }
+        .quick-comparison h2 { font-size: 28px; font-weight: 800; margin-bottom: 8px; text-align: center; }
+        .quick-comparison .section-sub { color: var(--text-secondary); text-align: center; margin-bottom: 24px; }
+        .quick-table {
+            width: 100%; border-collapse: collapse;
+            background: var(--bg-secondary); border-radius: var(--radius); overflow: hidden;
+            border: 1px solid var(--border);
+        }
+        .quick-table th {
+            padding: 16px 20px; text-align: left; font-size: 13px;
+            color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px;
+            background: var(--bg-card); border-bottom: 1px solid var(--border);
+        }
+        .quick-table td {
+            padding: 14px 20px; border-bottom: 1px solid var(--border); font-size: 14px;
+        }
+        .quick-table tr:last-child td { border-bottom: none; }
+        .quick-table .model-name { font-weight: 700; }
+        .quick-table .provider-badge {
+            display: inline-block; padding: 2px 8px; border-radius: 4px;
+            font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;
+        }
+        .quick-table .badge-openai { background: rgba(16,163,127,0.15); color: #10a37f; }
+        .quick-table .badge-anthropic { background: rgba(204,120,50,0.15); color: #cc7832; }
+        .quick-table .cheaper { color: var(--green); font-weight: 700; }
+        .quick-table .tier-badge {
+            display: inline-block; padding: 2px 8px; border-radius: 4px;
+            font-size: 11px; font-weight: 600;
+        }
+        .tier-budget { background: rgba(34,197,94,0.15); color: var(--green); }
+
+        /* Calculator */
+        .calculator-section {
+            max-width: 900px; margin: 0 auto 48px; padding: 0 24px;
+        }
+        .calculator-section h2 { font-size: 28px; font-weight: 800; margin-bottom: 8px; text-align: center; }
+        .calculator-section .section-sub { color: var(--text-secondary); text-align: center; margin-bottom: 32px; }
+
+        .usage-presets {
+            display: flex; gap: 8px; flex-wrap: wrap; justify-content: center; margin-bottom: 24px;
+        }
+        .preset-btn {
+            padding: 8px 16px; border-radius: 8px; border: 1px solid var(--border);
+            background: var(--bg-card); color: var(--text-secondary); font-size: 13px;
+            font-weight: 600; cursor: pointer; transition: all 0.2s;
+        }
+        .preset-btn:hover, .preset-btn.active {
+            border-color: var(--accent); color: var(--accent); background: var(--accent-glow);
+        }
+
+        .model-select-row {
+            display: grid; grid-template-columns: 1fr auto 1fr; gap: 16px; align-items: end;
+            margin-bottom: 24px;
+        }
+        .model-select-row .vs-divider {
+            font-size: 20px; font-weight: 800; color: var(--accent); align-self: center; padding-bottom: 8px;
+        }
+        .select-group { margin-bottom: 0; }
+        .select-group label {
+            display: block; font-size: 12px; color: var(--text-muted);
+            text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 6px; font-weight: 600;
+        }
+        .select-group select {
+            width: 100%; padding: 12px 14px; border-radius: 8px;
+            border: 1px solid var(--border); background: var(--bg-card);
+            color: var(--text-primary); font-size: 14px; cursor: pointer;
+        }
+        .select-group select:focus { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+        .calc-grid {
+            display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 32px;
+        }
+        .input-group { margin-bottom: 16px; }
+        .input-group label {
+            display: block; font-size: 12px; color: var(--text-muted);
+            text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 6px; font-weight: 600;
+        }
+        .input-group input {
+            width: 100%; padding: 12px 14px; border-radius: 8px;
+            border: 1px solid var(--border); background: var(--bg-card);
+            color: var(--text-primary); font-size: 15px;
+        }
+        .input-group input:focus { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+        .results-grid {
+            display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 32px;
+        }
+        .result-card {
+            background: var(--bg-secondary); border: 1px solid var(--border);
+            border-radius: var(--radius); padding: 28px; text-align: center;
+        }
+        .result-card.winner { border-color: var(--green); box-shadow: 0 0 24px rgba(34,197,94,0.1); }
+        .result-card .provider { font-size: 12px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 4px; }
+        .result-card .model-name { font-size: 20px; font-weight: 800; margin-bottom: 16px; }
+        .result-card .price-big { font-size: 36px; font-weight: 800; margin-bottom: 4px; }
+        .result-card .price-label { font-size: 13px; color: var(--text-muted); margin-bottom: 20px; }
+        .result-card .breakdown { text-align: left; }
+        .result-card .breakdown-row {
+            display: flex; justify-content: space-between; padding: 8px 0;
+            border-bottom: 1px solid var(--border); font-size: 14px;
+        }
+        .result-card .breakdown-row:last-child { border-bottom: none; }
+        .result-card .breakdown-row .label { color: var(--text-secondary); }
+        .result-card .breakdown-row .val { font-weight: 600; }
+        .winner-badge {
+            display: inline-block; background: rgba(34,197,94,0.15); color: var(--green);
+            padding: 4px 12px; border-radius: 6px; font-size: 12px; font-weight: 700;
+            margin-bottom: 12px; text-transform: uppercase; letter-spacing: 0.5px;
+        }
+
+        .savings-banner {
+            text-align: center; padding: 24px;
+            background: linear-gradient(135deg, rgba(34,197,94,0.1), rgba(99,102,241,0.1));
+            border: 1px solid var(--green); border-radius: var(--radius);
+            margin-bottom: 48px;
+        }
+        .savings-banner .amount { font-size: 32px; font-weight: 800; color: var(--green); }
+        .savings-banner .detail { color: var(--text-secondary); margin-top: 8px; }
+
+        /* Use Cases */
+        .use-cases {
+            max-width: 900px; margin: 0 auto 48px; padding: 0 24px;
+        }
+        .use-cases h2 { font-size: 24px; font-weight: 800; margin-bottom: 24px; text-align: center; }
+        .use-case-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+        .use-case-card {
+            background: var(--bg-secondary); border: 1px solid var(--border);
+            border-radius: var(--radius); padding: 24px;
+        }
+        .use-case-card h3 { font-size: 16px; font-weight: 700; margin-bottom: 8px; }
+        .use-case-card p { font-size: 14px; color: var(--text-secondary); line-height: 1.6; }
+        .use-case-card .recommendation {
+            margin-top: 12px; padding-top: 12px; border-top: 1px solid var(--border);
+            font-size: 13px; font-weight: 600;
+        }
+        .use-case-card .recommendation .pick-haiku { color: var(--accent); }
+        .use-case-card .recommendation .pick-gpt { color: var(--green); }
+
+        /* Verdict */
+        .verdict-section {
+            max-width: 900px; margin: 0 auto 48px; padding: 0 24px;
+        }
+        .verdict-section h2 { font-size: 24px; font-weight: 800; margin-bottom: 24px; text-align: center; }
+        .verdict-box {
+            background: var(--bg-secondary); border: 1px solid var(--border);
+            border-radius: var(--radius); padding: 32px;
+        }
+        .verdict-box h3 { font-size: 20px; font-weight: 800; margin-bottom: 12px; }
+        .verdict-box p { font-size: 15px; color: var(--text-secondary); line-height: 1.7; margin-bottom: 16px; }
+        .verdict-box .verdict-highlight {
+            background: rgba(34,197,94,0.1); border-left: 4px solid var(--green);
+            padding: 16px 20px; border-radius: 0 8px 8px 0; font-size: 15px;
+            font-weight: 600; color: var(--green);
+        }
+
+        /* FAQ */
+        .faq-section {
+            max-width: 800px; margin: 0 auto 48px; padding: 0 24px;
+        }
+        .faq-section h2 { font-size: 24px; font-weight: 800; margin-bottom: 24px; text-align: center; }
+        .faq-item { margin-bottom: 20px; }
+        .faq-item h3 { font-size: 16px; font-weight: 700; margin-bottom: 8px; cursor: pointer; }
+        .faq-item p { font-size: 14px; color: var(--text-secondary); line-height: 1.7; }
+
+        /* Related Tools */
+        .related-tools {
+            max-width: 900px; margin: 0 auto 48px; padding: 0 24px;
+            display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px;
+        }
+        .related-card {
+            background: var(--bg-secondary); border: 1px solid var(--border);
+            border-radius: var(--radius); padding: 20px; text-align: center;
+            transition: all 0.2s;
+        }
+        .related-card:hover { border-color: var(--accent); transform: translateY(-2px); }
+        .related-card h3 { font-size: 15px; font-weight: 700; margin-bottom: 6px; }
+        .related-card p { font-size: 13px; color: var(--text-muted); }
+        .related-card a { text-decoration: none; color: inherit; }
+
+        @media (max-width: 768px) {
+            .compare-hero { padding: 100px 20px 30px; }
+            .calc-grid, .results-grid, .use-case-grid { grid-template-columns: 1fr; }
+            .summary-cards { grid-template-columns: 1fr; }
+            .model-select-row { grid-template-columns: 1fr; }
+            .model-select-row .vs-divider { text-align: center; padding: 0; }
+            .related-tools { grid-template-columns: 1fr; }
+            .quick-table { font-size: 13px; }
+            .quick-table td, .quick-table th { padding: 10px 12px; }
+        }
+        .share-section {
+            max-width: 700px; margin: 0 auto 48px; padding: 0 24px;
+            text-align: center;
+        }
+        .share-section h2 { font-size: 20px; font-weight: 700; margin-bottom: 16px; }
+        .share-buttons { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+        .share-btn {
+            display: inline-flex; align-items: center; gap: 6px;
+            padding: 10px 20px; border-radius: 8px; border: 1px solid var(--border);
+            background: var(--bg-card); color: var(--text-primary);
+            font-size: 14px; font-weight: 600; text-decoration: none; transition: all 0.2s;
+        }
+        .share-btn:hover { border-color: var(--accent); transform: translateY(-1px); }
+    </style>
+    <meta name="theme-color" content="#6366f1">
+</head>
+<body>
+    <a href="#main" class="skip-link">Skip to content</a>
+    <nav>
+        <div class="nav-inner">
+            <a href="index.html" class="logo">API<span>pulse</span></a>
+            <button class="hamburger" onclick="toggleMobileNav()" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+            <div class="nav-links">
+                <a href="calculator.html">Calculator</a>
+                <a href="compare.html">Compare</a>
+                <a href="cost-explorer.html">Explorer</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="blog.html">Blog</a>
+                <a href="pricing.html" class="nav-cta" onclick="if(window.trackEvent)window.trackEvent('pro_button_clicked',{source:'nav'})">Get Pro — $29</a>
+                <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
+            </div>
+        </div>
+    </nav>
+
+    <main id="main">
+
+    <!-- Hero -->
+    <div class="compare-hero">
+        <h1>GPT-5 mini <span class="vs">vs</span> Claude Haiku 4.5 — Budget AI Showdown</h1>
+        <p class="subtitle">GPT-5 mini is 75% cheaper on input and 60% cheaper on output than Claude Haiku 4.5, with a 36% larger context window. The ultimate budget AI comparison.</p>
+        <p class="last-updated">Pricing data verified: Jun 11, 2026</p>
+    </div>
+
+    <!-- Summary Cards -->
+    <div class="summary-cards">
+        <div class="summary-card">
+            <div class="label">Cheapest Input</div>
+            <div class="value winner">GPT-5 mini</div>
+            <div class="detail">$0.25 vs $1.00 per 1M tokens</div>
+        </div>
+        <div class="summary-card">
+            <div class="label">Cheapest Output</div>
+            <div class="value winner">GPT-5 mini</div>
+            <div class="detail">$2.00 vs $5.00 per 1M tokens</div>
+        </div>
+        <div class="summary-card">
+            <div class="label">Best Context</div>
+            <div class="value winner">GPT-5 mini</div>
+            <div class="detail">272K vs 200K tokens</div>
+        </div>
+    </div>
+
+    <!-- Quick Comparison Table -->
+    <div class="quick-comparison">
+        <h2>Head-to-Head Comparison</h2>
+        <p class="section-sub">Two budget-tier models from different ecosystems.</p>
+        <table class="quick-table">
+            <thead>
+                <tr>
+                    <th>Feature</th>
+                    <th>GPT-5 mini</th>
+                    <th>Claude Haiku 4.5</th>
+                    <th>Winner</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Provider</td>
+                    <td><span class="provider-badge badge-openai">OpenAI</span></td>
+                    <td><span class="provider-badge badge-anthropic">Anthropic</span></td>
+                    <td>—</td>
+                </tr>
+                <tr>
+                    <td>Tier</td>
+                    <td><span class="tier-badge tier-budget">Budget</span></td>
+                    <td><span class="tier-badge tier-budget">Budget</span></td>
+                    <td>—</td>
+                </tr>
+                <tr>
+                    <td>Input Price (per 1M)</td>
+                    <td class="cheaper">$0.25</td>
+                    <td>$1.00</td>
+                    <td class="cheaper">GPT-5 mini</td>
+                </tr>
+                <tr>
+                    <td>Output Price (per 1M)</td>
+                    <td class="cheaper">$2.00</td>
+                    <td>$5.00</td>
+                    <td class="cheaper">GPT-5 mini</td>
+                </tr>
+                <tr>
+                    <td>Context Window</td>
+                    <td class="cheaper">272K</td>
+                    <td>200K</td>
+                    <td class="cheaper">GPT-5 mini</td>
+                </tr>
+                <tr>
+                    <td>Function Calling</td>
+                    <td class="cheaper">Yes</td>
+                    <td>Yes</td>
+                    <td>Tie</td>
+                </tr>
+                <tr>
+                    <td>Data Residency</td>
+                    <td>US/EU</td>
+                    <td>US/EU</td>
+                    <td>Tie</td>
+                </tr>
+                <tr>
+                    <td>Ecosystem</td>
+                    <td class="cheaper">OpenAI SDK, extensive</td>
+                    <td>Anthropic SDK</td>
+                    <td>Tie</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Interactive Calculator -->
+    <div class="calculator-section">
+        <h2>Calculate Your Exact Costs</h2>
+        <p class="section-sub">Enter your usage to see exactly how much you'd save with GPT-5 mini.</p>
+
+        <div class="usage-presets">
+            <button class="preset-btn" onclick="applyPreset('chatbot')">Chatbot</button>
+            <button class="preset-btn" onclick="applyPreset('coding')">Code Assistant</button>
+            <button class="preset-btn" onclick="applyPreset('rag')">RAG Pipeline</button>
+            <button class="preset-btn" onclick="applyPreset('content')">Content Gen</button>
+            <button class="preset-btn" onclick="applyPreset('heavy')">Heavy Usage</button>
+        </div>
+
+        <div class="model-select-row">
+            <div class="select-group">
+                <label>OpenAI Model</label>
+                <select id="openaiModel">
+                    <option value="openai-gpt-oss-20b">GPT-oss 20B ($0.08/$0.35)</option>
+                    <option value="openai-gpt-oss-120b">GPT-oss 120B ($0.15/$0.60)</option>
+                    <option value="openai-gpt4o-mini">GPT-4o mini ($0.15/$0.60)</option>
+                    <option value="openai-gpt5-mini" selected>GPT-5 mini ($0.25/$2.00)</option>
+                </select>
+            </div>
+            <div class="vs-divider">vs</div>
+            <div class="select-group">
+                <label>Anthropic Model</label>
+                <select id="deepseekModel">
+                    <option value="anthropic-haiku-45" selected>Claude Haiku 4.5 ($1.00/$5.00)</option>
+                    <option value="anthropic-sonnet-46">Claude Sonnet 4.6 ($3.00/$15.00)</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="calc-grid">
+            <div class="input-group">
+                <label>Input Tokens per Request</label>
+                <input type="number" id="inputTokens" value="2000" min="100" step="100">
+            </div>
+            <div class="input-group">
+                <label>Output Tokens per Request</label>
+                <input type="number" id="outputTokens" value="500" min="50" step="50">
+            </div>
+            <div class="input-group">
+                <label>Requests per Day</label>
+                <input type="number" id="requestsPerDay" value="1000" min="1" step="100">
+            </div>
+            <div class="input-group">
+                <label>Days per Month</label>
+                <input type="number" id="daysPerMonth" value="30" min="1" max="31">
+            </div>
+        </div>
+
+        <div class="results-grid">
+            <div class="result-card" id="openaiResult">
+                <div class="provider">OpenAI</div>
+                <div class="model-name" id="openaiModelName">GPT-5 mini</div>
+                <div class="price-big" id="openaiPrice">$0.00</div>
+                <div class="price-label">per month</div>
+                <div class="breakdown">
+                    <div class="breakdown-row">
+                        <span class="label">Input cost</span>
+                        <span class="val" id="openaiInputCost">$0.00</span>
+                    </div>
+                    <div class="breakdown-row">
+                        <span class="label">Output cost</span>
+                        <span class="val" id="openaiOutputCost">$0.00</span>
+                    </div>
+                    <div class="breakdown-row">
+                        <span class="label">Cost per request</span>
+                        <span class="val" id="openaiPerReq">$0.00</span>
+                    </div>
+                </div>
+            </div>
+            <div class="result-card" id="deepseekResult">
+                <div class="winner-badge">Best Value</div>
+                <div class="provider">Anthropic</div>
+                <div class="model-name" id="deepseekModelName">Claude Haiku 4.5</div>
+                <div class="price-big" id="deepseekPrice">$0.00</div>
+                <div class="price-label">per month</div>
+                <div class="breakdown">
+                    <div class="breakdown-row">
+                        <span class="label">Input cost</span>
+                        <span class="val" id="deepseekInputCost">$0.00</span>
+                    </div>
+                    <div class="breakdown-row">
+                        <span class="label">Output cost</span>
+                        <span class="val" id="deepseekOutputCost">$0.00</span>
+                    </div>
+                    <div class="breakdown-row">
+                        <span class="label">Cost per request</span>
+                        <span class="val" id="deepseekPerReq">$0.00</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="savings-banner">
+            <div class="amount" id="savingsAmount">$0.00</div>
+            <div class="detail" id="savingsDetail">monthly savings with GPT-5 mini</div>
+        </div>
+    </div>
+
+    <!-- Use Cases -->
+    <div class="use-cases">
+        <h2>Which Should You Choose?</h2>
+        <div class="use-case-grid">
+            <div class="use-case-card">
+                <h3>Chatbots & Customer Support</h3>
+                <p>High-volume, short conversations where output tokens dominate. GPT-5 mini's 60% cheaper output pricing makes it the clear winner for chat-heavy workloads.</p>
+                <div class="recommendation"><span class="pick-gpt">Pick: GPT-5 mini</span></div>
+            </div>
+            <div class="use-case-card">
+                <h3>Long Document Processing</h3>
+                <p>Analyzing contracts, research papers, or codebases. GPT-5 mini's 272K context window handles larger documents at a fraction of the cost.</p>
+                <div class="recommendation"><span class="pick-gpt">Pick: GPT-5 mini</span></div>
+            </div>
+            <div class="use-case-card">
+                <h3>Reasoning-Heavy Tasks</h3>
+                <p>Complex analysis, multi-step reasoning, or tasks requiring nuanced judgment. Haiku 4.5's reasoning quality may justify the premium on these workloads.</p>
+                <div class="recommendation"><span class="pick-haiku">Pick: Claude Haiku 4.5</span></div>
+            </div>
+            <div class="use-case-card">
+                <h3>Safety-Sensitive Applications</h3>
+                <p>Content moderation, sensitive user interactions, or regulated industries requiring Anthropic's constitutional AI safety features.</p>
+                <div class="recommendation"><span class="pick-haiku">Pick: Claude Haiku 4.5</span></div>
+            </div>
+            <div class="use-case-card">
+                <h3>RAG Pipelines</h3>
+                <p>Retrieval-augmented generation needs large context for retrieved chunks. GPT-5 mini's 272K context at $0.25/$2.00 offers more context per dollar.</p>
+                <div class="recommendation"><span class="pick-gpt">Pick: GPT-5 mini</span></div>
+            </div>
+            <div class="use-case-card">
+                <h3>Code Generation</h3>
+                <p>Both models handle code well. GPT-5 mini is cheaper, but Haiku 4.5 may produce more careful code on complex tasks. Test both on your specific workload.</p>
+                <div class="recommendation"><span class="pick-gpt">Pick: GPT-5 mini (test first)</span></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Verdict -->
+    <div class="verdict-section">
+        <h2>Verdict</h2>
+        <div class="verdict-box">
+            <h3>GPT-5 mini wins on value; Haiku 4.5 wins on quality</h3>
+            <p>For most budget-conscious teams, GPT-5 mini is the clear winner. It's 75% cheaper on input, 60% cheaper on output, and has a 36% larger context window. At typical usage levels, you'll save over $180/month compared to Haiku 4.5.</p>
+            <p>Claude Haiku 4.5 is worth the premium if you need Anthropic's constitutional AI safety features, better reasoning quality on complex tasks, or specific compliance certifications. For non-sensitive, cost-optimized workloads, GPT-5 mini is the better choice.</p>
+            <div class="verdict-highlight">Best for most teams: GPT-5 mini — 75% cheaper input, 60% cheaper output, 272K context</div>
+        </div>
+    </div>
+
+    <!-- FAQ -->
+    <div class="faq-section">
+        <h2>Frequently Asked Questions</h2>
+
+        <div class="faq-item">
+            <h3>Is GPT-5 mini cheaper than Claude Haiku 4.5?</h3>
+            <p>Yes, significantly. GPT-5 mini costs $0.25/$2.00 per 1M tokens while Haiku 4.5 costs $1.00/$5.00. That's 75% cheaper on input and 60% cheaper on output. For output-heavy workloads like chat, GPT-5 mini can be 2.5x cheaper overall.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>Which has a larger context window?</h3>
+            <p>GPT-5 mini has a 272K token context window, 36% larger than Claude Haiku 4.5's 200K context window. This makes GPT-5 mini slightly better for long document processing and RAG pipelines that need more context, while still being significantly cheaper.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>When should I choose Claude Haiku 4.5 over GPT-5 mini?</h3>
+            <p>Choose Claude Haiku 4.5 when you prioritize reasoning quality over cost, need Anthropic's constitutional AI safety features, or require specific compliance certifications. Haiku 4.5 may produce more nuanced, careful responses on complex tasks despite the higher price.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>How much can I save switching from Haiku 4.5 to GPT-5 mini?</h3>
+            <p>At 10M tokens/month (50% input, 50% output), Haiku 4.5 costs $300 while GPT-5 mini costs $112.50 — saving $187.50/month (63%). For output-heavy chat workloads, savings can reach 60%.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>Is GPT-5 mini good enough for production use?</h3>
+            <p>Yes, GPT-5 mini is production-ready for budget-tier workloads. It offers better value with lower costs and larger context. However, Haiku 4.5 may excel on reasoning-heavy tasks, safety-sensitive applications, or when you need Anthropic's specific compliance certifications. Test both on your specific workload before deciding.</p>
+        </div>
+    </div>
+
+    <!-- Related Tools -->
+    <div class="related-tools">
+        <div class="related-card">
+            <a href="calculator.html">
+                <h3>Cost Calculator</h3>
+                <p>Compare all models</p>
+            </a>
+        </div>
+        <div class="related-card">
+            <a href="model-selector.html">
+                <h3>Model Selector</h3>
+                <p>Find the best model for you</p>
+            </a>
+        </div>
+        <div class="related-card">
+            <a href="compare-gpt5-mini-vs-deepseek-v4-flash.html">
+                <h3>GPT-5 mini vs DeepSeek V4 Flash</h3>
+                <p>Ultra-budget showdown</p>
+            </a>
+        </div>
+        <div class="related-card">
+            <a href="compare-haiku45-vs-deepseek-v4flash.html">
+                <h3>Haiku 4.5 vs DeepSeek V4 Flash</h3>
+                <p>Budget vs ultra-budget</p>
+            </a>
+        </div>
+    </div>
+
+    <!-- Share -->
+    <div class="share-section">
+        <h2>Share This Comparison</h2>
+        <div class="share-buttons">
+            <a href="#" class="share-btn" id="share-x" target="_blank" rel="noopener">Share on X</a>
+            <a href="#" class="share-btn" id="share-linkedin" target="_blank" rel="noopener">Share on LinkedIn</a>
+            <a href="#" class="share-btn" id="share-copy" onclick="navigator.clipboard.writeText(window.location.href);this.textContent='Copied!';return false;">Copy Link</a>
+        </div>
+    </div>
+
+    </main>
+
+    <footer>
+        <div class="footer-inner">
+            <div class="footer-col">
+                <div class="footer-logo">API<span>pulse</span></div>
+                <p>Know your AI API costs before you commit.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Tools</h4>
+                <a href="calculator.html">Cost Calculator</a>
+                <a href="compare.html">Model Comparison</a>
+                <a href="cost-optimizer.html">Cost Optimizer</a>
+                <a href="cost-leak-detector.html">Cost Leak Detector</a>
+                <a href="tools.html">All Tools</a>
+            </div>
+            <div class="footer-col">
+                <h4>Compare</h4>
+                <a href="compare-claude-vs-chatgpt.html">Claude vs ChatGPT</a>
+                <a href="compare-claude-vs-deepseek.html">Claude vs DeepSeek</a>
+                <a href="compare-providers.html">Provider Comparison</a>
+                <a href="compare.html">All Comparisons</a>
+            </div>
+            <div class="footer-col">
+                <h4>Resources</h4>
+                <a href="blog.html">Blog</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="pricing-trends.html">Pricing Trends</a>
+                <a href="newsletter.html">Newsletter</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 APIpulse. Built with static HTML. No tracking beyond analytics.</p>
+        </div>
+    </footer>
+
+    <script>
+    // Model data
+    const MODELS = {
+        'openai-gpt-oss-20b': { name: 'GPT-oss 20B', provider: 'OpenAI', input: 0.08, output: 0.35 },
+        'openai-gpt-oss-120b': { name: 'GPT-oss 120B', provider: 'OpenAI', input: 0.15, output: 0.60 },
+        'openai-gpt4o-mini': { name: 'GPT-4o mini', provider: 'OpenAI', input: 0.15, output: 0.60 },
+        'openai-gpt5-mini': { name: 'GPT-5 mini', provider: 'OpenAI', input: 0.25, output: 2.00 },
+        'anthropic-haiku-45': { name: 'Claude Haiku 4.5', provider: 'Anthropic', input: 1.00, output: 5.00 },
+        'anthropic-sonnet-46': { name: 'Claude Sonnet 4.6', provider: 'Anthropic', input: 3.00, output: 15.00 }
+    };
+
+    const PRESETS = {
+        chatbot: { input: 1000, output: 300, rpd: 2000 },
+        coding: { input: 3000, output: 1000, rpd: 500 },
+        rag: { input: 5000, output: 800, rpd: 300 },
+        content: { input: 500, output: 2000, rpd: 100 },
+        heavy: { input: 4000, output: 1500, rpd: 5000 }
+    };
+
+    function fmt(n) { return '$' + n.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ','); }
+
+    function applyPreset(key) {
+        const p = PRESETS[key];
+        document.getElementById('inputTokens').value = p.input;
+        document.getElementById('outputTokens').value = p.output;
+        document.getElementById('requestsPerDay').value = p.rpd;
+        document.querySelectorAll('.preset-btn').forEach(b => b.classList.remove('active'));
+        event.target.classList.add('active');
+        calculate();
+    }
+
+    function calculate() {
+        const openaiId = document.getElementById('openaiModel').value;
+        const deepseekId = document.getElementById('deepseekModel').value;
+        const inputTokens = parseInt(document.getElementById('inputTokens').value) || 2000;
+        const outputTokens = parseInt(document.getElementById('outputTokens').value) || 500;
+        const rpd = parseInt(document.getElementById('requestsPerDay').value) || 1000;
+        const days = parseInt(document.getElementById('daysPerMonth').value) || 30;
+
+        const openai = MODELS[openaiId];
+        const deepseek = MODELS[deepseekId];
+        const totalRequests = rpd * days;
+
+        const openaiInput = (inputTokens * totalRequests / 1_000_000) * openai.input;
+        const openaiOutput = (outputTokens * totalRequests / 1_000_000) * openai.output;
+        const openaiTotal = openaiInput + openaiOutput;
+
+        const dsInput = (inputTokens * totalRequests / 1_000_000) * deepseek.input;
+        const dsOutput = (outputTokens * totalRequests / 1_000_000) * deepseek.output;
+        const dsTotal = dsInput + dsOutput;
+
+        document.getElementById('openaiModelName').textContent = openai.name;
+        document.getElementById('openaiPrice').textContent = fmt(openaiTotal);
+        document.getElementById('openaiInputCost').textContent = fmt(openaiInput);
+        document.getElementById('openaiOutputCost').textContent = fmt(openaiOutput);
+        document.getElementById('openaiPerReq').textContent = '$' + (openaiTotal / totalRequests).toFixed(6);
+
+        document.getElementById('deepseekModelName').textContent = deepseek.name;
+        document.getElementById('deepseekPrice').textContent = fmt(dsTotal);
+        document.getElementById('deepseekInputCost').textContent = fmt(dsInput);
+        document.getElementById('deepseekOutputCost').textContent = fmt(dsOutput);
+        document.getElementById('deepseekPerReq').textContent = '$' + (dsTotal / totalRequests).toFixed(6);
+
+        // Winner logic
+        const openaiCard = document.getElementById('openaiResult');
+        const dsCard = document.getElementById('deepseekResult');
+        openaiCard.classList.remove('winner');
+        dsCard.classList.remove('winner');
+
+        if (dsTotal < openaiTotal) {
+            dsCard.classList.add('winner');
+            const savings = openaiTotal - dsTotal;
+            const pct = ((savings / openaiTotal) * 100).toFixed(0);
+            document.getElementById('savingsAmount').textContent = fmt(savings);
+            document.getElementById('savingsDetail').textContent = `monthly savings with ${deepseek.name} (${pct}% less than ${openai.name})`;
+        } else {
+            openaiCard.classList.add('winner');
+            const savings = dsTotal - openaiTotal;
+            const pct = ((savings / dsTotal) * 100).toFixed(0);
+            document.getElementById('savingsAmount').textContent = fmt(savings);
+            document.getElementById('savingsDetail').textContent = `monthly savings with ${openai.name} (${pct}% less than ${deepseek.name})`;
+        }
+
+        // Share
+        const text = `${openai.name} vs ${deepseek.name}: ${fmt(openaiTotal)}/mo vs ${fmt(dsTotal)}/mo`;
+        const url = window.location.href;
+        document.getElementById('share-x').href = `https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(url)}`;
+        document.getElementById('share-linkedin').href = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(url)}`;
+    }
+
+    // Event listeners
+    ['openaiModel', 'deepseekModel', 'inputTokens', 'outputTokens', 'requestsPerDay', 'daysPerMonth'].forEach(id => {
+        document.getElementById(id).addEventListener('input', calculate);
+    });
+
+    calculate();
+    </script>
+</body>
+</html>
