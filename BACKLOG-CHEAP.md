@@ -25,10 +25,6 @@
 - Update State of LLM Pricing Report monthly
 - Create monthly pricing changelog entry when providers update prices
 
-### Completed (Sessions 416-594, Jun 1-12)
-✅ Session 594: AI Cost Audit tool — 3-step interactive savings calculator with Pro upsell gate. Cross-linked from 6 pages, nav bar, FAQPage schema. 8 files, 1 commit.
-✅ Session 593: Post-shutdown blog post "Claude 4 Is Gone — Now What?" 7 files, 1 commit.
-✅ Session 592: Exit popup timing A/B test, personalized sticky CTA bar. 3 files, 2 commits.
-✅ Session 591: Conversion coverage blitz — Pro upsells on all 167 comparison pages, all 301 blog posts, Pro tip teasers in calculator. 22 files, 3 commits.
-✅ Session 590: Fixed duplicate Pro upsell bug, personalized exit popups, Pro CTA on high-intent pages. 5 files, 4 commits.
+### Completed (Sessions 416-595, Jun 1-12)
+✅ Sessions 590-595: A/B pricing fix (all $29 CTAs updated), cost-audit tool, post-shutdown blog, exit popup timing A/B test, conversion coverage blitz (167 comparisons + 301 blog posts), duplicate Pro upsell fix. 40 files, 11 commits.
 ✅ Sessions 416-589: Full APIpulse built from scratch. 617 pages, 301 posts, 80 tools, 167 comparisons.

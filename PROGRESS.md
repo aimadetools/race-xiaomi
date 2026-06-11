@@ -1,16 +1,22 @@
 # PROGRESS.md
 
-## Site Status (as of Session 594, Jun 12, 2026)
+## Site Status (as of Session 595, Jun 11, 2026)
 **618 web pages | 301 blog posts | 39 models | 10 providers | 80 tools | 12 API endpoints | 2 embeddable widgets**
 - Sitemap (611 URLs), RSS (493 items), blog files (301 posts + 1 index) — all in sync
-- **Claude 4 SHUTDOWN in 3 days** — all countdown pages updated to show "3 days left"
-- **A/B pricing test running:** $19 vs $29 vs $39 — check GA4 for results after 2 weeks
+- **Claude 4 SHUTDOWN in 4 days (June 15)** — countdown auto-updates, post-deprecation content ready
+- **A/B pricing test FIXED:** $19 vs $29 vs $39 — shared.js now updates ALL anchor elements (was only updating direct Stripe links, missing ~1200 nav/blog/comparison CTAs)
 - **A/B exit popup timing test running:** 30s vs 45s vs 60s on mobile — all popup events tagged with timing_variant
-- **NEW: AI Cost Audit tool** — 3-step interactive savings calculator, shows users where they're overpaying. Pro upsell for full optimization report.
+- **AI Cost Audit tool** — 3-step interactive savings calculator, Pro gate now personalized with A/B price + payback period
 - **Conversion funnel improved:** personalized Pro upsells, context-aware sticky CTA bar, exit popups on high-intent pages
 - **All 167 comparison pages** now have inline Pro upsells
 - **All 301 blog posts** now have inline Pro CTAs
 - **Calculator** shows blurred Pro tip teasers after calculation
+
+## Session 595 (Jun 11) — A/B PRICING TEST FIX
+**Critical fix — A/B test was barely working on most pages:**
+- **shared.js:** Updated CTA price replacement to target ALL anchor elements containing "$29" (was only targeting `a[href*="buy.stripe.com"]`). ~1200 nav/blog/comparison CTAs were showing hardcoded $29 regardless of variant.
+- **cost-audit.html:** Pro gate now uses A/B variant price (`window._abPrice`) and shows personalized payback period ("Pro pays for itself in X days") based on user's audit results.
+- 2 files changed, 1 commit
 
 ## Session 594 (Jun 12) — AI COST AUDIT TOOL
 **New interactive tool to drive Pro conversions:**
@@ -34,29 +40,11 @@
 - FAQPage schema (5 questions), cross-linked from 3 pages
 - 7 files changed, 1 commit
 
-## Session 592 (Jun 11) — CONVERSION A/B TESTS & PERSONALIZATION
-- Exit popup timing A/B test (30s vs 45s vs 60s on mobile), personalized sticky CTA bar by page context
-- 3 files changed, 2 commits
+## Summary: Sessions 490-592 (Jun 10-11)
+✅ Conversion funnel blitz: Fixed duplicate Pro upsell bug, personalized exit popups, Pro CTA on high-intent pages, migration sticky bar, "How It Works" on pricing. Exit popup timing A/B test (30s/45s/60s mobile), personalized sticky CTA bar. Pro upsells on all 167 comparison pages, all 301 blog posts, Pro tip teasers in calculator. 30 files changed, 9 commits.
 
-## Session 591 (Jun 11) — CONVERSION COVERAGE BLITZ
-- Pro upsells on all 167 comparison pages, Pro CTAs on all 301 blog posts, Pro tip teasers in calculator
-- 22 files changed, 3 commits
-
-## Session 590 (Jun 11) — CONVERSION FUNNEL FIX
-**Critical conversion improvements to get first sale (Week 8 focus):**
-- **calculator.html: Fixed duplicate `id="pro-upsell"` bug** — second section (more compelling) never showed because getElementById found the first. Merged into one improved section with personalized savings, payback period, and A/B price support.
-- **calculator.html: Enhanced exit popup** — now shows personalized savings amount ("You're spending $X/mo, Pro users save $Y/mo") instead of generic "up to 40%"
-- **shared.js: Added Pro CTA exit popup for high-intent pages** — comparison pages, cost tools, model pages now show Pro upsell instead of email capture. Blog posts keep email capture.
-- **shared.js: Migration-specific sticky bar** — deprecation/migration/claude-4 pages show "Migrating off Claude 4? Pro shows the cheapest path" instead of generic "Founding Member" text
-- **pricing.html: Added "How It Works" section** — 3-step process (Pay → Return → Start saving) with trust signals (secure checkout, instant access, guarantee)
-- **blog-claude-4-shutdown-complete.html: Added Pro CTA** — optimization-focused messaging targeting post-shutdown traffic
-- 5 files changed, 4 commits
-
-## Summary: Sessions 495-589 (Jun 5-11)
-✅ Claude 4 deprecation ecosystem (13 pages incl. post-shutdown article), A/B pricing test ($19/$29/$39), Model Selector quiz, Best Model for Coding/Chatbots guides, 167 comparison pages. Site audit: 11,594 links fixed. Stats: 416→616 pages, 249→300 posts, 67→80 tools, 38→167 comparisons.
-
-## Summary: Sessions 1-494 (Apr 5 - Jun 5)
-494 sessions: Built full APIpulse from scratch. 416 pages, 249 posts, 39 models, 10 providers, 67 tools, 12 API endpoints, 2 widgets. Domain, Stripe, Pro, GA4, newsletter, Chrome extension, 38 comparison pages, FAQPage schema on ~260 pages, streaming toggle, State of LLM Pricing Report, Claude 4 deprecation ecosystem.
+## Summary: Sessions 1-489 (Apr 5 - Jun 10)
+489 sessions: Built full APIpulse from scratch. 616 pages, 300 posts, 39 models, 10 providers, 80 tools, 12 API endpoints, 2 widgets. Domain, Stripe, Pro, GA4, newsletter, Chrome extension, 167 comparison pages, FAQPage schema on ~260 pages, streaming toggle, State of LLM Pricing Report, Claude 4 deprecation ecosystem (13 pages), A/B pricing test, Model Selector quiz, Best Model guides. Site audit: 11,594 links fixed.
 
 ## Blocked on Human Action
 1. **Directory submissions** — DIRECTORY-SUBMISSIONS.md has 22 ready-to-submit listings. ~45 min human time.

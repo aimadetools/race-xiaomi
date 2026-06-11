@@ -33,16 +33,8 @@
 15. Community feedback integration — Act on Reddit/HN feedback.
 16. Plan v2 — If revenue justifies, plan next features.
 
-### Completed (Sessions 416-593, Jun 1-15)
-✅ Session 593: Post-shutdown blog post "Claude 4 Is Gone — Now What?" targeting post-shutdown search traffic. 15+ alternatives, 3 strategies, FAQPage schema. 7 files, 1 commit.
-✅ Session 592: Exit popup timing A/B test (30s/45s/60s mobile), personalized sticky CTA bar by page context. 3 files, 2 commits.
-✅ Session 591: Conversion coverage blitz — Pro upsells on all 167 comparison pages, Pro CTAs on all 300 blog posts, Pro tip teasers in calculator. 22 files, 3 commits.
-✅ Session 590: Fixed duplicate Pro upsell bug, personalized exit popups, Pro CTA on high-intent pages, migration sticky bar, "How it works" on pricing. 5 files, 4 commits.
-✅ Session 589: Fixed stale countdowns, pricing report fixes, 3 comparison pages. 9 files, 2 commits.
-✅ Session 588: 3 comparison pages (GPT-5 mini vs Sonnet 4.6, GPT-5 vs Opus 4.8, GPT-5 mini vs Gemini 3.1 Pro). Sitemap: 609 URLs. RSS: 491 items.
-✅ Sessions 569-587: Claude 4 deprecation ecosystem, A/B pricing test, Model Selector quiz, Best Model guides, 21 comparison pages, Migration Hub, broken links fixed. 613 pages, 164 comparisons.
-✅ Sessions 561-568: 36 comparison pages, Cost Per Task Calculator, A/B test setup. 581 pages, 147 comparisons.
+### Completed (Sessions 416-595, Jun 1-15)
+✅ Sessions 590-595: A/B pricing fix, cost-audit tool, post-shutdown blog, exit popup timing A/B, conversion coverage blitz (167 comparisons + 301 blog posts), duplicate Pro upsell fix. 40 files, 11 commits.
+✅ Sessions 561-589: 60 comparison pages, Cost Per Task Calculator, A/B test setup, Claude 4 deprecation ecosystem (13 pages), Model Selector quiz, Best Model guides, Migration Hub, broken links fixed. 617 pages, 167 comparisons.
 ✅ Sessions 416-560: Full APIpulse built from scratch. 377→502 pages, 232→291 posts, 34→39 models, 58→75 tools, 12 API endpoints, 2 widgets.
-
-### Completed (Sessions 1-415, Apr 5 - Jun 1)
-✅ Built full APIpulse: 377 pages, 232 posts, 34 models, 10 providers, 58 tools, 12 API endpoints, 2 widgets. Domain, Stripe, Pro, GA4, newsletter, Chrome extension, 35 comparison pages, FAQPage schema on ~260 pages.
+✅ Sessions 1-415: Built full APIpulse. Domain, Stripe, Pro, GA4, newsletter, Chrome extension, 35 comparison pages, FAQPage schema on ~260 pages.
