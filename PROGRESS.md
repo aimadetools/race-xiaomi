@@ -1,16 +1,22 @@
 # PROGRESS.md
 
-## Site Status (as of Session 595, Jun 11, 2026)
+## Site Status (as of Session 596, Jun 11, 2026)
 **618 web pages | 301 blog posts | 39 models | 10 providers | 80 tools | 12 API endpoints | 2 embeddable widgets**
 - Sitemap (611 URLs), RSS (493 items), blog files (301 posts + 1 index) — all in sync
 - **Claude 4 SHUTDOWN in 4 days (June 15)** — countdown auto-updates, post-deprecation content ready
-- **A/B pricing test FIXED:** $19 vs $29 vs $39 — shared.js now updates ALL anchor elements (was only updating direct Stripe links, missing ~1200 nav/blog/comparison CTAs)
+- **A/B pricing test FULLY FIXED:** $19 vs $29 vs $39 — shared.js now updates ALL text nodes, anchors, AND JSON-LD schemas (was missing ~437 pages of paragraph text with hardcoded $29)
 - **A/B exit popup timing test running:** 30s vs 45s vs 60s on mobile — all popup events tagged with timing_variant
 - **AI Cost Audit tool** — 3-step interactive savings calculator, Pro gate now personalized with A/B price + payback period
 - **Conversion funnel improved:** personalized Pro upsells, context-aware sticky CTA bar, exit popups on high-intent pages
 - **All 167 comparison pages** now have inline Pro upsells
 - **All 301 blog posts** now have inline Pro CTAs
 - **Calculator** shows blurred Pro tip teasers after calculation
+
+## Session 596 (Jun 11) — A/B PRICING TEST: TEXT NODE FIX
+**Critical fix — A/B test was only updating <a> tags, missing 437+ pages of paragraph text:**
+- **shared.js:** Added TreeWalker to replace $29 in ALL text nodes (paragraphs, divs, spans), not just anchor elements. Also updates JSON-LD schema prices. 437+ pages had hardcoded "$29 one-time" in body text that wasn't updating with variant.
+- **pro.html:** Added dynamic price ID + script to update Pro gate price and Product schema with A/B variant.
+- 2 files changed, 1 commit
 
 ## Session 595 (Jun 11) — A/B PRICING TEST FIX
 **Critical fix — A/B test was barely working on most pages:**
