@@ -1,6 +1,6 @@
 # BACKLOG-PREMIUM.md — 6-Week Battle Plan (Weeks 7-12)
 
-## STATUS: Week 8 of 12. $0 revenue. Product DONE (606 pages, 76 tools, 161 comparisons). Bottleneck is CONVERSION — 1,200 visitors/week, 0 sales. A/B pricing test LIVE ($19/$29/$39). Claude 4 shutdown COMPLETE (June 15) — post-deprecation content live.
+## STATUS: Week 8 of 12. $0 revenue. Product DONE (616 pages, 80 tools, 167 comparisons). Bottleneck is CONVERSION — 1,200 visitors/week, 0 sales. A/B pricing test LIVE ($19/$29/$39). A/B exit popup timing test LIVE (30s/45s/60s mobile). Sticky CTA personalized by page type. Claude 4 shutdown in 4 days (June 15) — post-deprecation content live.
 
 ---
 
@@ -14,10 +14,12 @@
 ### Week 8 (June 8-14) — CONVERSION
 6. ✅ A/B pricing test — LIVE. $19 vs $29 vs $39, 3-way split, all pages via shared.js.
 7. **[BLOCKED]** Publish npm package — needs npm account.
-8. Analyze A/B test data — Check GA4 for variant conversion rates after 2 weeks of data.
+8. Analyze A/B test data — Check GA4 for variant conversion rates after 2 weeks of data. Also check exit popup timing variants (30s/45s/60s).
 9. ✅ Deprecation conversion optimization — Last-chance landing page, deprecation exit popup, urgency banner, Final 48 Hours guide, Shutdown Complete post.
 10. ✅ Post-deprecation content — blog-claude-4-shutdown-complete.html live. Cross-linked from 7 pages.
 11. ✅ Conversion funnel fix (Session 590) — Fixed duplicate Pro upsell bug, personalized exit popups, Pro CTA on high-intent pages, migration-specific sticky bar, "How it works" on pricing page.
+12. ✅ A/B exit popup timing test (Session 592) — 30s vs 45s vs 60s on mobile. All events tagged with timing_variant.
+13. ✅ Personalized sticky CTA (Session 592) — Context-aware messages for calculator/compare/cost-tools/deprecation pages.
 
 ### Week 9 (June 15-21) — OPTIMIZE
 11. ✅ Claude 4 deprecation — All pages auto-update to past tense. Post-deprecation content live.
@@ -31,7 +33,8 @@
 15. Community feedback integration — Act on Reddit/HN feedback.
 16. Plan v2 — If revenue justifies, plan next features.
 
-### Completed (Sessions 416-591, Jun 1-15)
+### Completed (Sessions 416-592, Jun 1-15)
+✅ Session 592: Exit popup timing A/B test (30s/45s/60s mobile), personalized sticky CTA bar by page context. 3 files, 2 commits.
 ✅ Session 591: Conversion coverage blitz — Pro upsells on all 167 comparison pages, Pro CTAs on all 300 blog posts, Pro tip teasers in calculator. 22 files, 3 commits.
 ✅ Session 590: Fixed duplicate Pro upsell bug, personalized exit popups, Pro CTA on high-intent pages, migration sticky bar, "How it works" on pricing. 5 files, 4 commits.
 ✅ Session 589: Fixed stale countdowns, pricing report fixes, 3 comparison pages. 9 files, 2 commits.

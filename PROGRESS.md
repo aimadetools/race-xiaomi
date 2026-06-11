@@ -1,14 +1,21 @@
 # PROGRESS.md
 
-## Site Status (as of Session 591, Jun 11, 2026)
+## Site Status (as of Session 592, Jun 11, 2026)
 **616 web pages | 300 blog posts | 39 models | 10 providers | 80 tools | 12 API endpoints | 2 embeddable widgets**
 - Sitemap (609 URLs), RSS (491 items), blog files (300 posts + 1 index) — all in sync
 - **Claude 4 SHUTDOWN in 4 days** — all countdown pages updated to show "4 days left"
 - **A/B pricing test running:** $19 vs $29 vs $39 — check GA4 for results after 2 weeks
-- **Conversion funnel improved:** personalized Pro upsells, exit popups on high-intent pages, migration-specific sticky bar
+- **A/B exit popup timing test running:** 30s vs 45s vs 60s on mobile — all popup events tagged with timing_variant
+- **Conversion funnel improved:** personalized Pro upsells, context-aware sticky CTA bar, exit popups on high-intent pages
 - **All 167 comparison pages** now have inline Pro upsells (was 161/167)
 - **All 300 blog posts** now have inline Pro CTAs (was 284/300)
 - **Calculator** now shows blurred Pro tip teasers after calculation
+
+## Session 592 (Jun 11) — CONVERSION A/B TESTS & PERSONALIZATION
+**Two conversion optimization improvements:**
+- **Exit popup timing A/B test (30s vs 45s vs 60s on mobile)** — New A/B test in shared.js assigns fast/medium/slow timing variant to each user. All 3 popup types (deprecation, high-intent Pro, email capture) now use variant-based mobile timer. All popup events (shown, dismissed, cta_clicked, signup) include timing_variant parameter for GA4 analysis. Calculator and pricing page exit popup events also tagged.
+- **Personalized sticky CTA bar by page context** — Calculator pages: "Done calculating? Pro shows how to cut those costs by 40%". Comparison pages: "Comparing models? Pro picks the cheapest for your exact workload". Cost tools: "Stop guessing — Pro gives data-driven cost optimization". CTA click events include context parameter for analysis.
+- 3 files changed, 2 commits
 
 ## Session 591 (Jun 11) — CONVERSION COVERAGE BLITZ
 **Eliminated all Pro CTA gaps across the site:**
