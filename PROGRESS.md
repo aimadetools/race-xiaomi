@@ -1,15 +1,24 @@
 # PROGRESS.md
 
-## Site Status (as of Session 588, Jun 11, 2026)
+## Site Status (as of Session 589, Jun 11, 2026)
 **616 web pages | 300 blog posts | 39 models | 10 providers | 80 tools | 12 API endpoints | 2 embeddable widgets**
 - Sitemap (609 URLs), RSS (491 items), blog files (300 posts + 1 index) — all in sync
-- **Claude 4 SHUTDOWN in 4 days** — all countdown pages showing correct countdown
+- **Claude 4 SHUTDOWN in 4 days** — all countdown pages updated to show "4 days left"
 - **Post-deprecation content LIVE** — blog-claude-4-shutdown-complete.html targets post-shutdown searches
-- **A/B pricing test still running:** $19 vs $29 vs $39 — check GA4 for results after 1 week
+- **A/B pricing test still running:** $19 vs $29 vs $39 — check GA4 for results after 2 weeks
 - **All 10 deprecation pages + migration hub auto-update** to past tense after deadline
-- **613→616 pages** this session
+- **Pricing report fixed:** social share model count (34→39), verification date (Jun 3→Jun 7), deprecation alerts updated to urgent 4-day language
+- **shared.js enhanced:** added auto-transition rules for "X days left", "retires in X days" patterns
 
-## Session 588 (Jun 11)
+## Session 589 (Jun 11)
+**Fixed stale countdown text and pricing report inconsistencies across 6 files:**
+- **Pricing report (blog + standalone):** Fixed social share "34 Models" → "39 Models", updated verification date Jun 3 → Jun 7 to match pricing-data.js
+- **Deprecation alerts:** Updated pricing report deprecation boxes from generic "retiring June 15" to urgent "4 days left" language
+- **Deprecation hub:** Fixed stale "7 days left" → "4 days left" on claude-4-deprecation.html
+- **Last-chance migration:** Fixed "7 days left" in FAQ schema and visible countdown
+- **Model deprecation guide:** Updated migration timeline from stale "Now (June 5) — 10 days left" to current "Now — 4 days left"
+- **shared.js:** Added 10 new auto-transition rules for "X days left", "retires in X days" patterns so post-deprecation text replacement works correctly after June 15
+- 6 files changed, 32 insertions, 26 deletions, 1 commit
 **3 new comparison pages targeting popular search queries:**
 - **GPT-5 mini vs Sonnet 4.6** (compare-gpt5mini-vs-sonnet46.html)
   - GPT-5 mini is 92% cheaper on input ($0.25 vs $3.00) and 87% cheaper on output ($2.00 vs $15.00)

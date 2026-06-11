@@ -18,7 +18,8 @@
 - Update State of LLM Pricing Report monthly
 - Create monthly pricing changelog entry when providers update prices
 
-### Completed (Sessions 416-588, Jun 1-15)
+### Completed (Sessions 416-589, Jun 1-15)
+✅ Session 589: Fixed stale countdowns (4 days left) across 6 deprecation pages, pricing report model count fix (34→39), shared.js auto-transition rules. 6 files, 1 commit.
 ✅ Session 588: 3 comparison pages (GPT-5 mini vs Sonnet 4.6, GPT-5 vs Opus 4.8, GPT-5 mini vs Gemini 3.1 Pro). Sitemap: 609 URLs. RSS: 491 items. Compare.html: 152 links.
 ✅ Session 587: AI Model Selector quiz, Best Model for Coding/Chatbots guides, 3 budget comparison pages, RSS fix. 613 pages.
 ✅ Sessions 569-586: Claude 4 deprecation ecosystem, A/B pricing test, 18 new comparison pages, Migration Hub, broken links fixed. 606 pages, 161 comparisons.
