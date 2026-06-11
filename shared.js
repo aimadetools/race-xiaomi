@@ -62,6 +62,23 @@ updateThemeIcon();
     });
 })();
 
+// A/B Test: Exit popup mobile timing — 30s vs 45s vs 60s (runs on every page)
+(function(){
+    var KEY = 'ab_popup_timing';
+    var VARIANTS = {fast: 30000, medium: 45000, slow: 60000};
+    var variant = localStorage.getItem(KEY);
+    if (!variant || !VARIANTS[variant]) {
+        var r = Math.random();
+        variant = r < 0.334 ? 'fast' : r < 0.667 ? 'medium' : 'slow';
+        localStorage.setItem(KEY, variant);
+    }
+    window._abPopupTiming = VARIANTS[variant];
+    window._abPopupTimingVariant = variant;
+    document.addEventListener('DOMContentLoaded', function() {
+        if (window.trackEvent) window.trackEvent('ab_popup_timing_assigned', {variant: variant, ms: VARIANTS[variant]});
+    });
+})();
+
 // Mobile nav toggle
 function toggleMobileNav() {
     const navLinks = document.querySelector('.nav-links');
@@ -363,7 +380,7 @@ async function saveEmail(e) {
         function showDeprecationPopup() {
             if (depPopupShown || localStorage.getItem('apipulse_deprecation_popup_dismissed')) return;
             depPopupShown = true;
-            if (window.trackEvent) window.trackEvent('deprecation_popup_shown', { days_left: daysLeft });
+            if (window.trackEvent) window.trackEvent('deprecation_popup_shown', { days_left: daysLeft, timing_variant: window._abPopupTimingVariant });
 
             var price = window._abPrice || 29;
             var stripeLink = window._abStripeLink || 'https://buy.stripe.com/fZu7sL3Gw3GS0RQeoDeEo0a';
@@ -386,24 +403,24 @@ async function saveEmail(e) {
             document.body.appendChild(overlay);
 
             document.getElementById('exit-popup-close').addEventListener('click', function() {
-                if (window.trackEvent) window.trackEvent('deprecation_popup_dismissed', { days_left: daysLeft });
+                if (window.trackEvent) window.trackEvent('deprecation_popup_dismissed', { days_left: daysLeft, timing_variant: window._abPopupTimingVariant });
                 overlay.remove();
                 localStorage.setItem('apipulse_deprecation_popup_dismissed', '1');
             });
             overlay.addEventListener('click', function(e) {
                 if (e.target === overlay) {
-                    if (window.trackEvent) window.trackEvent('deprecation_popup_dismissed', { days_left: daysLeft });
+                    if (window.trackEvent) window.trackEvent('deprecation_popup_dismissed', { days_left: daysLeft, timing_variant: window._abPopupTimingVariant });
                     overlay.remove();
                     localStorage.setItem('apipulse_deprecation_popup_dismissed', '1');
                 }
             });
             document.getElementById('deprecation-popup-cta').addEventListener('click', function() {
-                if (window.trackEvent) window.trackEvent('deprecation_popup_cta_clicked', { days_left: daysLeft, price: price });
+                if (window.trackEvent) window.trackEvent('deprecation_popup_cta_clicked', { days_left: daysLeft, price: price, timing_variant: window._abPopupTimingVariant });
             });
         }
 
         document.addEventListener('mouseout', function(e) { if (e.clientY <= 0 && !depPopupShown) showDeprecationPopup(); });
-        setTimeout(function() { if (!depPopupShown && 'ontouchstart' in window) showDeprecationPopup(); }, 30000);
+        setTimeout(function() { if (!depPopupShown && 'ontouchstart' in window) showDeprecationPopup(); }, window._abPopupTiming || 45000);
         return; // Skip the generic email popup on deprecation pages
     }
 
@@ -424,7 +441,7 @@ async function saveEmail(e) {
             var stripeLink = window._abStripeLink || 'https://buy.stripe.com/fZu7sL3Gw3GS0RQeoDeEo0a';
             var variant = window._abVariant || 'B';
 
-            if (window.trackEvent) window.trackEvent('pro_exit_popup_shown', { variant: variant, price: price, page: location.pathname });
+            if (window.trackEvent) window.trackEvent('pro_exit_popup_shown', { variant: variant, price: price, page: location.pathname, timing_variant: window._abPopupTimingVariant });
 
             var overlay = document.createElement('div');
             overlay.id = 'exit-popup-overlay';
@@ -453,30 +470,30 @@ async function saveEmail(e) {
             document.body.appendChild(overlay);
 
             document.getElementById('exit-popup-close').addEventListener('click', function() {
-                if (window.trackEvent) window.trackEvent('pro_exit_popup_dismissed', { variant: variant });
+                if (window.trackEvent) window.trackEvent('pro_exit_popup_dismissed', { variant: variant, timing_variant: window._abPopupTimingVariant });
                 overlay.remove();
                 localStorage.setItem('apipulse_popup_dismissed', '1');
             });
             document.getElementById('pro-exit-dismiss').addEventListener('click', function(e) {
                 e.preventDefault();
-                if (window.trackEvent) window.trackEvent('pro_exit_popup_dismissed', { variant: variant });
+                if (window.trackEvent) window.trackEvent('pro_exit_popup_dismissed', { variant: variant, timing_variant: window._abPopupTimingVariant });
                 overlay.remove();
                 localStorage.setItem('apipulse_popup_dismissed', '1');
             });
             overlay.addEventListener('click', function(e) {
                 if (e.target === overlay) {
-                    if (window.trackEvent) window.trackEvent('pro_exit_popup_dismissed', { variant: variant });
+                    if (window.trackEvent) window.trackEvent('pro_exit_popup_dismissed', { variant: variant, timing_variant: window._abPopupTimingVariant });
                     overlay.remove();
                     localStorage.setItem('apipulse_popup_dismissed', '1');
                 }
             });
             document.getElementById('pro-exit-cta').addEventListener('click', function() {
-                if (window.trackEvent) window.trackEvent('pro_button_clicked', { source: 'exit_popup', variant: variant, price: price });
+                if (window.trackEvent) window.trackEvent('pro_button_clicked', { source: 'exit_popup', variant: variant, price: price, timing_variant: window._abPopupTimingVariant });
             });
         }
 
         document.addEventListener('mouseout', function(e) { if (e.clientY <= 0 && !proPopupShown) showProExitPopup(); });
-        setTimeout(function() { if (!proPopupShown && 'ontouchstart' in window) showProExitPopup(); }, 30000);
+        setTimeout(function() { if (!proPopupShown && 'ontouchstart' in window) showProExitPopup(); }, window._abPopupTiming || 45000);
         return; // Skip the generic email popup on high-intent pages
     }
 
@@ -501,7 +518,7 @@ async function saveEmail(e) {
         popupShown = true;
 
         // Track which variant was shown
-        if (window.trackEvent) window.trackEvent('exit_popup_variant_shown', { variant: variant });
+        if (window.trackEvent) window.trackEvent('exit_popup_variant_shown', { variant: variant, timing_variant: window._abPopupTimingVariant });
 
         const overlay = document.createElement('div');
         overlay.id = 'exit-popup-overlay';
@@ -530,14 +547,14 @@ async function saveEmail(e) {
         document.body.appendChild(overlay);
 
         document.getElementById('exit-popup-close').addEventListener('click', function() {
-            if (window.trackEvent) window.trackEvent('exit_popup_dismissed', { variant: variant });
+            if (window.trackEvent) window.trackEvent('exit_popup_dismissed', { variant: variant, timing_variant: window._abPopupTimingVariant });
             overlay.remove();
             localStorage.setItem('apipulse_popup_dismissed', '1');
         });
 
         overlay.addEventListener('click', function(e) {
             if (e.target === overlay) {
-                if (window.trackEvent) window.trackEvent('exit_popup_dismissed', { variant: variant });
+                if (window.trackEvent) window.trackEvent('exit_popup_dismissed', { variant: variant, timing_variant: window._abPopupTimingVariant });
                 overlay.remove();
                 localStorage.setItem('apipulse_popup_dismissed', '1');
             }
@@ -561,7 +578,7 @@ async function saveEmail(e) {
                 msgEl.style.color = 'var(--green)';
                 msgEl.style.display = 'block';
                 emailInput.value = '';
-                if (window.trackEvent) window.trackEvent('exit_popup_signup', { variant: variant });
+                if (window.trackEvent) window.trackEvent('exit_popup_signup', { variant: variant, timing_variant: window._abPopupTimingVariant });
                 setTimeout(function() { overlay.remove(); localStorage.setItem('apipulse_popup_dismissed', '1'); }, 2000);
             } catch (err) {
                 const emails = JSON.parse(localStorage.getItem('apipulse_emails') || '[]');
@@ -573,7 +590,7 @@ async function saveEmail(e) {
                 msgEl.style.color = 'var(--green)';
                 msgEl.style.display = 'block';
                 emailInput.value = '';
-                if (window.trackEvent) window.trackEvent('exit_popup_signup', { variant: variant });
+                if (window.trackEvent) window.trackEvent('exit_popup_signup', { variant: variant, timing_variant: window._abPopupTimingVariant });
                 setTimeout(function() { overlay.remove(); localStorage.setItem('apipulse_popup_dismissed', '1'); }, 2000);
             } finally {
                 btn.disabled = false;
@@ -586,10 +603,10 @@ async function saveEmail(e) {
         if (e.clientY <= 0 && !popupShown) showExitPopup();
     });
 
-    // Also show after 45 seconds on mobile (no mouseout on mobile)
+    // Also show on mobile (no mouseout) — timing A/B tested (30s vs 45s vs 60s)
     setTimeout(function() {
         if (!popupShown && 'ontouchstart' in window) showExitPopup();
-    }, 45000);
+    }, window._abPopupTiming || 45000);
 })();
 
 // Pro badge in nav — show "Pro ✓" indicator for returning Pro users

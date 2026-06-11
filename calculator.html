@@ -995,9 +995,9 @@
             });
             document.body.appendChild(overlay);
             document.getElementById('calc-exit-cta').addEventListener('click',function(){
-                if(window.trackEvent)window.trackEvent('pro_button_clicked',{source:'exit_popup_calculator',variant:window._abVariant,price:price});
+                if(window.trackEvent)window.trackEvent('pro_button_clicked',{source:'exit_popup_calculator',variant:window._abVariant,price:price,timing_variant:window._abPopupTimingVariant});
             });
-            if(window.trackEvent)window.trackEvent('exit_popup_shown',{page:'calculator',variant:window._abVariant});
+            if(window.trackEvent)window.trackEvent('exit_popup_shown',{page:'calculator',variant:window._abVariant,timing_variant:window._abPopupTimingVariant});
         });
     })();
     </script>

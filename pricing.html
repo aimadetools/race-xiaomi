@@ -820,9 +820,9 @@
                 overlay.appendChild(popup);
                 document.body.appendChild(overlay);
                 document.getElementById('exit-popup-cta').addEventListener('click',function(){
-                    if(window.trackEvent)window.trackEvent('pro_button_clicked',{source:'exit_popup_pricing',variant:variant,price:price});
+                    if(window.trackEvent)window.trackEvent('pro_button_clicked',{source:'exit_popup_pricing',variant:variant,price:price,timing_variant:window._abPopupTimingVariant});
                 });
-                if(window.trackEvent)window.trackEvent('exit_popup_shown',{page:'pricing',variant:variant});
+                if(window.trackEvent)window.trackEvent('exit_popup_shown',{page:'pricing',variant:variant,timing_variant:window._abPopupTimingVariant});
             });
         })();
 
