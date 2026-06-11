@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Claude 4 Migration Hub — All Alternatives, Tools & Guides | APIpulse</title>
+    <meta name="description" content="Your complete Claude 4 migration command center. 18 head-to-head comparisons, 39 alternatives, migration calculators, code snippets, and step-by-step guides. Save 67-97% before June 15.">
+    <meta name="keywords" content="Claude 4 migration, Claude 4 alternative, Claude Opus replacement, Claude Sonnet replacement, Claude 4 API shutdown, cheapest Claude alternative, Claude 4 deprecated, migrate from Claude 4">
+    <meta property="og:title" content="Claude 4 Migration Hub — All Alternatives, Tools & Guides">
+    <meta property="og:description" content="18 comparisons, 39 alternatives, calculators, code snippets. Save 67-97% before June 15.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://getapipulse.com/og-image.png">
+    <meta property="og:url" content="https://getapipulse.com/claude-4-migration-hub.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Claude 4 Migration Hub — All Alternatives, Tools & Guides">
+    <meta name="twitter:description" content="18 comparisons, 39 alternatives, calculators, code snippets. Save 67-97% before June 15.">
+    <meta name="twitter:image" content="https://getapipulse.com/og-image.png">
+    <link rel="canonical" href="https://getapipulse.com/claude-4-migration-hub.html">
+    <link rel="alternate" type="application/rss+xml" title="APIpulse Blog" href="https://getapipulse.com/rss.xml">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="styles.css">
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0CEP7S9Y3J"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-0CEP7S9Y3J');
+    </script>
+    <script src="analytics.js" defer></script>
+    <script src="dynamic-date.js" defer></script>
+    <script src="shared.js" defer></script>
+    <script src="pricing-data.js" defer></script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "APIpulse — Claude 4 Migration Hub",
+        "url": "https://getapipulse.com/claude-4-migration-hub.html",
+        "description": "Complete Claude 4 migration command center: 18 comparisons, 39 alternatives, calculators, code snippets, and guides.",
+        "applicationCategory": "DeveloperApplication",
+        "operatingSystem": "Web",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "When is Claude 4 being deprecated?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Claude 4 Opus and Claude Sonnet 4 are both being retired on June 15, 2026. After this date, API calls to these model IDs will return errors. You must migrate to a replacement model before then."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What is the cheapest alternative to Claude 4 Opus?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "DeepSeek V4 Flash is the cheapest at $0.14/$0.28 per million tokens — 99% cheaper than Claude 4 Opus ($15/$75). For similar quality, DeepSeek V4 Pro at $0.435/$0.87 is 97% cheaper. The direct Anthropic replacement, Claude Opus 4.8, is 67% cheaper at $5/$25."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Do I need a new API key to migrate from Claude 4?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "No. If staying with Anthropic, your existing API key works with Claude Opus 4.8 and Sonnet 4.6. Only the model name string in your code changes. If switching providers, you'll need a new API key from the new provider."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How much can I save by switching from Claude 4?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Savings range from 67% (Claude Opus 4.8) to 99% (DeepSeek V4 Flash). For a typical workload of 10M input + 2M output tokens/month, Claude 4 Opus costs $300/month. The same workload on Claude Opus 4.8 costs $100/month, and on DeepSeek V4 Pro it costs just $6.09/month."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How do I migrate from Claude 4 to another model?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Change one line of code: replace the model name string (e.g., 'claude-4-opus' → 'claude-opus-4-8'). Your API key, SDK, and endpoint stay the same. The entire migration takes under 5 minutes for most codebases."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What happens if I don't migrate before June 15?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "All API calls to claude-4-opus and claude-sonnet-4 model IDs will return HTTP 410 Gone errors. Your application will stop working until you update the model name. There is no grace period."
+                }
+            }
+        ]
+    }
+    </script>
+    <style>
+        .hero { padding: 100px 24px 40px; text-align: center; max-width: 800px; margin: 0 auto; }
+        .hero h1 { font-size: clamp(28px, 4vw, 44px); font-weight: 800; margin-bottom: 16px; line-height: 1.2; }
+        .hero h1 .highlight { color: var(--red); }
+        .hero .subtitle { font-size: 18px; color: var(--text-secondary); margin-bottom: 24px; max-width: 600px; margin-left: auto; margin-right: auto; line-height: 1.6; }
+
+        /* Countdown */
+        .countdown-bar {
+            background: linear-gradient(135deg, rgba(239,68,68,0.12), rgba(245,158,11,0.12));
+            border: 1px solid rgba(239,68,68,0.3); border-radius: 12px;
+            padding: 20px; margin-bottom: 32px; display: flex;
+            align-items: center; justify-content: center; gap: 24px; flex-wrap: wrap;
+        }
+        .countdown-unit { text-align: center; }
+        .countdown-number { font-size: 36px; font-weight: 800; color: var(--red); }
+        .countdown-label { font-size: 12px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; }
+        .countdown-sep { font-size: 28px; color: var(--text-muted); font-weight: 300; }
+
+        /* Stats row */
+        .stats-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-bottom: 40px; }
+        .stat-card {
+            background: var(--bg-secondary); border: 1px solid var(--border);
+            border-radius: 12px; padding: 20px; text-align: center;
+        }
+        .stat-number { font-size: 28px; font-weight: 800; color: var(--accent); }
+        .stat-label { font-size: 12px; color: var(--text-muted); margin-top: 4px; }
+
+        /* Section headers */
+        .section-header { text-align: center; margin-bottom: 24px; }
+        .section-header h2 { font-size: 24px; font-weight: 700; margin-bottom: 8px; }
+        .section-header p { font-size: 15px; color: var(--text-secondary); }
+
+        /* Quick picks */
+        .quick-picks { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; margin-bottom: 48px; }
+        .pick-card {
+            background: var(--bg-secondary); border: 1px solid var(--border);
+            border-radius: 12px; padding: 24px; position: relative; transition: border-color 0.2s;
+        }
+        .pick-card:hover { border-color: var(--accent); }
+        .pick-card .pick-badge {
+            position: absolute; top: -10px; right: 16px;
+            padding: 4px 12px; border-radius: 100px; font-size: 11px; font-weight: 700;
+            text-transform: uppercase; letter-spacing: 0.5px;
+        }
+        .pick-card h3 { font-size: 18px; font-weight: 700; margin-bottom: 4px; }
+        .pick-card .pick-price { font-size: 14px; color: var(--text-secondary); margin-bottom: 8px; }
+        .pick-card .pick-savings { font-size: 22px; font-weight: 800; color: var(--green); margin-bottom: 8px; }
+        .pick-card .pick-desc { font-size: 13px; color: var(--text-secondary); margin-bottom: 16px; line-height: 1.6; }
+        .pick-card .pick-use { font-size: 12px; color: var(--text-muted); margin-bottom: 12px; }
+        .pick-card a { font-size: 13px; font-weight: 600; }
+
+        /* Comparison grid */
+        .compare-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 16px; margin-bottom: 48px; }
+        .compare-card {
+            background: var(--bg-secondary); border: 1px solid var(--border);
+            border-radius: 12px; padding: 20px; display: flex; flex-direction: column;
+        }
+        .compare-card h3 { font-size: 15px; font-weight: 700; margin-bottom: 6px; }
+        .compare-card p { font-size: 13px; color: var(--text-secondary); margin-bottom: 12px; flex: 1; }
+        .compare-card .compare-meta { font-size: 12px; color: var(--text-muted); margin-bottom: 12px; }
+        .compare-card a { font-size: 13px; font-weight: 600; }
+
+        /* Tools grid */
+        .tools-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; margin-bottom: 48px; }
+        .tool-card {
+            background: var(--bg-secondary); border: 1px solid var(--border);
+            border-radius: 12px; padding: 20px; text-align: center;
+        }
+        .tool-card .tool-icon { font-size: 32px; margin-bottom: 12px; }
+        .tool-card h3 { font-size: 16px; font-weight: 700; margin-bottom: 6px; }
+        .tool-card p { font-size: 13px; color: var(--text-secondary); margin-bottom: 12px; }
+        .tool-card a { font-size: 13px; font-weight: 600; }
+
+        /* Guide cards */
+        .guide-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; margin-bottom: 48px; }
+        .guide-card {
+            background: var(--bg-secondary); border: 1px solid var(--border);
+            border-radius: 12px; padding: 20px;
+        }
+        .guide-card .guide-tag {
+            display: inline-block; padding: 3px 10px; border-radius: 100px;
+            font-size: 11px; font-weight: 700; text-transform: uppercase;
+            letter-spacing: 0.5px; margin-bottom: 10px;
+        }
+        .guide-card h3 { font-size: 16px; font-weight: 700; margin-bottom: 6px; }
+        .guide-card p { font-size: 13px; color: var(--text-secondary); margin-bottom: 12px; }
+        .guide-card a { font-size: 13px; font-weight: 600; }
+
+        /* Pro upsell */
+        .pro-upsell {
+            background: linear-gradient(135deg, rgba(99,102,241,0.1), rgba(139,92,246,0.1));
+            border: 1px solid rgba(99,102,241,0.3); border-radius: 16px;
+            padding: 40px; text-align: center; margin-bottom: 48px;
+        }
+        .pro-upsell h2 { font-size: 24px; font-weight: 800; margin-bottom: 12px; }
+        .pro-benefits { list-style: none; text-align: left; max-width: 400px; margin: 0 auto 24px; }
+        .pro-benefits li { padding: 8px 0; font-size: 14px; color: var(--text-secondary); display: flex; align-items: center; gap: 10px; }
+        .pro-benefits li::before { content: "✓"; color: var(--green); font-weight: 700; }
+
+        /* FAQ */
+        .faq-section { margin-bottom: 48px; }
+        .faq-section h2 { font-size: 24px; font-weight: 700; text-align: center; margin-bottom: 24px; }
+        .faq-item { background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 12px; padding: 20px; margin-bottom: 12px; cursor: pointer; }
+        .faq-item h3 { font-size: 15px; font-weight: 700; margin-bottom: 0; display: flex; justify-content: space-between; align-items: center; }
+        .faq-item h3::after { content: "+"; font-size: 18px; color: var(--text-muted); transition: transform 0.2s; }
+        .faq-item.open h3::after { content: "−"; }
+        .faq-item p { font-size: 14px; color: var(--text-secondary); margin-top: 12px; line-height: 1.7; display: none; }
+        .faq-item.open p { display: block; }
+
+        /* Email capture */
+        .email-capture {
+            background: var(--bg-secondary); border: 1px solid var(--border);
+            border-radius: 16px; padding: 32px; text-align: center; margin-bottom: 48px;
+        }
+
+        @media (max-width: 768px) {
+            .hero { padding: 80px 16px 24px; }
+            .countdown-bar { gap: 12px; padding: 16px; }
+            .countdown-number { font-size: 28px; }
+            .stats-row { grid-template-columns: repeat(2, 1fr); }
+            .compare-grid { grid-template-columns: 1fr; }
+            .quick-picks { grid-template-columns: 1fr; }
+        }
+    </style>
+    <meta name="theme-color" content="#6366f1">
+    <link rel="preconnect" href="https://getapipulse.com">
+</head>
+<body>
+    <a href="#main" class="skip-link">Skip to content</a>
+    <nav>
+        <div class="nav-inner">
+            <a href="index.html" class="logo">API<span>pulse</span></a>
+            <button class="hamburger" onclick="toggleMobileNav()" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+            <div class="nav-links">
+                <a href="calculator.html">Calculator</a>
+                <a href="compare.html">Compare</a>
+                <a href="claude-4-migration-tool.html">Migration Tool</a>
+                <a href="claude-4-migration-command-center.html" style="color:var(--amber);">Command Center</a>
+                <a href="claude-4-migration-cheatsheet.html" style="color:var(--green);">Cheat Sheet</a>
+                <a href="blog.html">Blog</a>
+                <a href="pro.html" class="nav-cta" onclick="if(window.trackEvent)window.trackEvent('pro_button_clicked',{source:'nav'})">Pro — $29</a>
+                <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
+            </div>
+        </div>
+    </nav>
+
+    <main id="main">
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="countdown-bar">
+            <div class="countdown-unit">
+                <div class="countdown-number" id="cd-days">--</div>
+                <div class="countdown-label">Days</div>
+            </div>
+            <div class="countdown-sep">:</div>
+            <div class="countdown-unit">
+                <div class="countdown-number" id="cd-hours">--</div>
+                <div class="countdown-label">Hours</div>
+            </div>
+            <div class="countdown-sep">:</div>
+            <div class="countdown-unit">
+                <div class="countdown-number" id="cd-mins">--</div>
+                <div class="countdown-label">Minutes</div>
+            </div>
+            <div class="countdown-sep">:</div>
+            <div class="countdown-unit">
+                <div class="countdown-number" id="cd-secs">--</div>
+                <div class="countdown-label">Seconds</div>
+            </div>
+        </div>
+        <h1>Claude 4 Migration <span class="highlight">Hub</span></h1>
+        <p class="subtitle">Everything you need to migrate before June 15: 18 head-to-head comparisons, 39 alternatives, calculators, code snippets, and step-by-step guides.</p>
+    </section>
+
+    <!-- STATS -->
+    <section style="max-width:800px;margin:0 auto 40px;padding:0 24px;">
+        <div class="stats-row">
+            <div class="stat-card">
+                <div class="stat-number">39</div>
+                <div class="stat-label">Alternatives</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number" style="color:var(--green);">97%</div>
+                <div class="stat-label">Max Savings</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">18</div>
+                <div class="stat-label">Comparisons</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number" style="color:var(--orange);">&lt;5min</div>
+                <div class="stat-label">Migration Time</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- QUICK PICKS — Top 3 replacements -->
+    <section style="max-width:900px;margin:0 auto;padding:0 24px;">
+        <div class="section-header">
+            <h2>⚡ Quick Picks — Top Replacements</h2>
+            <p>Don't have time to compare all 39? Start here.</p>
+        </div>
+        <div class="quick-picks">
+            <div class="pick-card" style="border-color:rgba(34,197,94,0.4);">
+                <div class="pick-badge" style="background:rgba(34,197,94,0.15);color:var(--green);">Best Value</div>
+                <h3>Claude Opus 4.8</h3>
+                <div class="pick-price">$5 / $25 per 1M tokens</div>
+                <div class="pick-savings">Save 67%</div>
+                <div class="pick-desc">Direct Anthropic replacement. Same API key, same SDK, one line change. Strict upgrade over Claude 4 Opus.</div>
+                <div class="pick-use">Best for: Existing Anthropic users who want minimal code changes</div>
+                <a href="compare-claude4-opus-vs-opus48.html" style="color:var(--green);">See comparison →</a>
+            </div>
+            <div class="pick-card" style="border-color:rgba(99,102,241,0.4);">
+                <div class="pick-badge" style="background:rgba(99,102,241,0.15);color:var(--accent);">Cheapest Quality</div>
+                <h3>DeepSeek V4 Pro</h3>
+                <div class="pick-price">$0.435 / $0.87 per 1M tokens</div>
+                <div class="pick-savings">Save 97%</div>
+                <div class="pick-desc">Near-Claude quality at a fraction of the cost. Best balance of quality and price for most workloads.</div>
+                <div class="pick-use">Best for: Teams optimizing for cost without sacrificing much quality</div>
+                <a href="compare-claude4-opus-vs-deepseek-v4pro.html" style="color:var(--accent);">See comparison →</a>
+            </div>
+            <div class="pick-card" style="border-color:rgba(245,158,11,0.4);">
+                <div class="pick-badge" style="background:rgba(245,158,11,0.15);color:#d97706;">Budget King</div>
+                <h3>DeepSeek V4 Flash</h3>
+                <div class="pick-price">$0.14 / $0.28 per 1M tokens</div>
+                <div class="pick-savings">Save 99%</div>
+                <div class="pick-desc">Cheapest option available. Great for high-volume, cost-sensitive workloads where quality isn't critical.</div>
+                <div class="pick-use">Best for: Bulk processing, prototyping, cost-sensitive production</div>
+                <a href="cheapest-llm-api-2026.html" style="color:#d97706;">See all cheapest options →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 18 HEAD-TO-HEAD COMPARISONS -->
+    <section style="max-width:900px;margin:0 auto;padding:0 24px;">
+        <div class="section-header">
+            <h2>📊 All 18 Head-to-Head Comparisons</h2>
+            <p>Claude 4 Opus vs every major competitor. Claude 4 Sonnet vs every major competitor.</p>
+        </div>
+
+        <h3 style="font-size:16px;font-weight:700;margin-bottom:12px;color:var(--red);">Claude 4 Opus Comparisons</h3>
+        <div class="compare-grid">
+            <div class="compare-card">
+                <h3>Opus vs Opus 4.8</h3>
+                <div class="compare-meta">Direct Anthropic upgrade · 67% cheaper</div>
+                <p>The path of least resistance. Same provider, same API key, one-line model name change.</p>
+                <a href="compare-claude4-opus-vs-opus48.html" style="color:var(--accent);">Compare →</a>
+            </div>
+            <div class="compare-card">
+                <h3>Opus vs Sonnet 4.6</h3>
+                <div class="compare-meta">Anthropic downgrade · 80% cheaper</div>
+                <p>Drop from Opus to Sonnet tier. Same provider, bigger savings, slightly lower quality.</p>
+                <a href="compare-claude4-opus-vs-sonnet46.html" style="color:var(--accent);">Compare →</a>
+            </div>
+            <div class="compare-card">
+                <h3>Opus vs GPT-5.5 Pro</h3>
+                <div class="compare-meta">OpenAI flagship · 33% cheaper</div>
+                <p>OpenAI's best model vs Claude's best. Compare quality, speed, and pricing.</p>
+                <a href="compare-claude4-opus-vs-gpt55pro.html" style="color:var(--accent);">Compare →</a>
+            </div>
+            <div class="compare-card">
+                <h3>Opus vs GPT-5</h3>
+                <div class="compare-meta">OpenAI standard · 60% cheaper</div>
+                <p>OpenAI's standard tier. Good balance of quality and cost.</p>
+                <a href="compare-claude4-opus-vs-gpt5.html" style="color:var(--accent);">Compare →</a>
+            </div>
+            <div class="compare-card">
+                <h3>Opus vs Gemini 3.1 Pro</h3>
+                <div class="compare-meta">Google flagship · 40% cheaper</div>
+                <p>Google's latest with 1M context window. Strong coding and reasoning.</p>
+                <a href="compare-claude4-opus-vs-gemini31pro.html" style="color:var(--accent);">Compare →</a>
+            </div>
+            <div class="compare-card">
+                <h3>Opus vs Gemini 2.5 Pro</h3>
+                <div class="compare-meta">Google previous gen · 50% cheaper</div>
+                <p>Proven Google model with strong multimodal capabilities.</p>
+                <a href="compare-claude4-opus-vs-gemini25pro.html" style="color:var(--accent);">Compare →</a>
+            </div>
+            <div class="compare-card">
+                <h3>Opus vs DeepSeek V4 Pro</h3>
+                <div class="compare-meta">Budget quality king · 97% cheaper</div>
+                <p>Near-Claude quality at a fraction of the cost. The value champion.</p>
+                <a href="compare-claude4-opus-vs-deepseek-v4pro.html" style="color:var(--accent);">Compare →</a>
+            </div>
+            <div class="compare-card">
+                <h3>Opus vs Llama 4 Maverick</h3>
+                <div class="compare-meta">Meta open-source · 93% cheaper</div>
+                <p>Self-hostable open-source alternative. Full control, no vendor lock-in.</p>
+                <a href="compare-claude4-opus-vs-llama4-maverick.html" style="color:var(--accent);">Compare →</a>
+            </div>
+            <div class="compare-card">
+                <h3>Opus vs Mistral Medium 3.5</h3>
+                <div class="compare-meta">EU-based · 80% cheaper</div>
+                <p>European AI lab with strong coding models. GDPR-friendly option.</p>
+                <a href="compare-claude4-opus-vs-mistral-medium35.html" style="color:var(--accent);">Compare →</a>
+            </div>
+        </div>
+
+        <h3 style="font-size:16px;font-weight:700;margin-bottom:12px;color:var(--accent);">Claude 4 Sonnet Comparisons</h3>
+        <div class="compare-grid">
+            <div class="compare-card">
+                <h3>Sonnet vs Sonnet 4.6</h3>
+                <div class="compare-meta">Direct Anthropic upgrade · Same price</div>
+                <p>Same price, 5x context (1M vs 200K). Strict upgrade with zero cost increase.</p>
+                <a href="compare-claude4-sonnet-vs-sonnet46.html" style="color:var(--accent);">Compare →</a>
+            </div>
+            <div class="compare-card">
+                <h3>Sonnet vs Opus 4.8</h3>
+                <div class="compare-meta">Anthropic upgrade · 67% more expensive</div>
+                <p>Worth the premium if you need maximum quality. The premium Anthropic option.</p>
+                <a href="compare-claude4-sonnet-vs-opus48.html" style="color:var(--accent);">Compare →</a>
+            </div>
+            <div class="compare-card">
+                <h3>Sonnet vs GPT-5.5 Pro</h3>
+                <div class="compare-meta">OpenAI flagship · 33% cheaper</div>
+                <p>OpenAI's best vs Claude's mid-tier. Quality may actually be higher.</p>
+                <a href="compare-claude4-sonnet-vs-gpt55pro.html" style="color:var(--accent);">Compare →</a>
+            </div>
+            <div class="compare-card">
+                <h3>Sonnet vs GPT-5</h3>
+                <div class="compare-meta">OpenAI standard · Same price range</div>
+                <p>Direct competitors in the mid-tier. Compare for your specific use case.</p>
+                <a href="compare-claude4-sonnet-vs-gpt5.html" style="color:var(--accent);">Compare →</a>
+            </div>
+            <div class="compare-card">
+                <h3>Sonnet vs Gemini 3.1 Pro</h3>
+                <div class="compare-meta">Google flagship · 40% cheaper</div>
+                <p>Google's latest with massive context. Strong alternative for coding tasks.</p>
+                <a href="compare-claude4-sonnet-vs-gemini31pro.html" style="color:var(--accent);">Compare →</a>
+            </div>
+            <div class="compare-card">
+                <h3>Sonnet vs Gemini 2.5 Pro</h3>
+                <div class="compare-meta">Google previous gen · 50% cheaper</div>
+                <p>Proven Google model. Good for multimodal and long-context work.</p>
+                <a href="compare-claude4-sonnet-vs-gemini25pro.html" style="color:var(--accent);">Compare →</a>
+            </div>
+            <div class="compare-card">
+                <h3>Sonnet vs DeepSeek V4 Pro</h3>
+                <div class="compare-meta">Budget champion · 97% cheaper</div>
+                <p>The biggest savings jump. Claude Sonnet quality at DeepSeek prices.</p>
+                <a href="compare-claude4-sonnet-vs-deepseek-v4pro.html" style="color:var(--accent);">Compare →</a>
+            </div>
+            <div class="compare-card">
+                <h3>Sonnet vs Llama 4 Maverick</h3>
+                <div class="compare-meta">Meta open-source · 93% cheaper</div>
+                <p>Self-hosted alternative. Full control, no API dependency.</p>
+                <a href="compare-claude4-sonnet-vs-llama4-maverick.html" style="color:var(--accent);">Compare →</a>
+            </div>
+            <div class="compare-card">
+                <h3>Sonnet vs Mistral Medium 3.5</h3>
+                <div class="compare-meta">EU-based · 80% cheaper</div>
+                <p>European alternative with strong coding performance.</p>
+                <a href="compare-claude4-sonnet-vs-mistral-medium35.html" style="color:var(--accent);">Compare →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- MIGRATION TOOLS -->
+    <section style="max-width:900px;margin:0 auto;padding:0 24px;">
+        <div class="section-header">
+            <h2>🛠️ Migration Tools</h2>
+            <p>Calculate, compare, and migrate with our interactive tools.</p>
+        </div>
+        <div class="tools-grid">
+            <div class="tool-card">
+                <div class="tool-icon">🧮</div>
+                <h3>Deprecation Calculator</h3>
+                <p>Enter your Claude 4 usage, see exact costs on every alternative.</p>
+                <a href="claude-deprecation-calculator.html" style="color:var(--accent);">Open Calculator →</a>
+            </div>
+            <div class="tool-card">
+                <div class="tool-icon">🔄</div>
+                <h3>Migration Tool</h3>
+                <p>All 39 alternatives with code snippets and one-click copy.</p>
+                <a href="claude-4-migration-tool.html" style="color:var(--accent);">Open Tool →</a>
+            </div>
+            <div class="tool-card">
+                <div class="tool-icon">📋</div>
+                <h3>Migration Cheat Sheet</h3>
+                <p>60-second switch guide. Quick picks, code changes, cost table.</p>
+                <a href="claude-4-migration-cheatsheet.html" style="color:var(--green);">View Cheat Sheet →</a>
+            </div>
+            <div class="tool-card">
+                <div class="tool-icon">📊</div>
+                <h3>Migration Command Center</h3>
+                <p>Full dashboard with timelines, checklists, and progress tracking.</p>
+                <a href="claude-4-migration-command-center.html" style="color:#d97706;">Open Dashboard →</a>
+            </div>
+            <div class="tool-card">
+                <div class="tool-icon">💰</div>
+                <h3>Migration Cost Calculator</h3>
+                <p>Compare monthly costs across all providers with your exact usage.</p>
+                <a href="claude-4-migration-calculator.html" style="color:var(--accent);">Calculate Costs →</a>
+            </div>
+            <div class="tool-card">
+                <div class="tool-icon">🎯</div>
+                <h3>By Use Case</h3>
+                <p>Best replacement for coding, chatbots, RAG, content, translation.</p>
+                <a href="claude-4-alternatives-by-use-case.html" style="color:#d97706;">See by Use Case →</a>
+            </div>
+            <div class="tool-card">
+                <div class="tool-icon">⚡</div>
+                <h3>Claude Alternatives Calculator</h3>
+                <p>7 alternatives compared with savings up to 93%.</p>
+                <a href="claude-alternatives-calculator.html" style="color:var(--accent);">Calculate Savings →</a>
+            </div>
+            <div class="tool-card">
+                <div class="tool-icon">🔍</div>
+                <h3>Model Finder</h3>
+                <p>Find the cheapest model for your specific workload.</p>
+                <a href="cheapest-model-finder.html" style="color:var(--accent);">Find Model →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- GUIDES & BLOG POSTS -->
+    <section style="max-width:900px;margin:0 auto;padding:0 24px;">
+        <div class="section-header">
+            <h2>📚 Guides & Articles</h2>
+            <p>Step-by-step guides, checklists, and deep dives.</p>
+        </div>
+        <div class="guide-grid">
+            <div class="guide-card" style="border-color:rgba(239,68,68,0.3);">
+                <div class="guide-tag" style="background:rgba(239,68,68,0.12);color:var(--red);">URGENT</div>
+                <h3>Last-Chance Migration Guide</h3>
+                <p>Days left. Exact code changes, cost savings (67-97%), and a 30-minute migration plan.</p>
+                <a href="blog-claude-4-last-chance-migration.html" style="color:var(--red);">Read Guide →</a>
+            </div>
+            <div class="guide-card">
+                <div class="guide-tag" style="background:rgba(99,102,241,0.12);color:var(--accent);">COMPLETE</div>
+                <h3>Full Migration Guide</h3>
+                <p>Step-by-step guide with code samples, cost comparisons, and 39 alternatives.</p>
+                <a href="blog-claude-4-deprecated-migration-guide.html" style="color:var(--accent);">Read Guide →</a>
+            </div>
+            <div class="guide-card">
+                <div class="guide-tag" style="background:rgba(34,197,94,0.12);color:var(--green);">CHECKLIST</div>
+                <h3>Migration Checklist</h3>
+                <p>Day-by-day plan with code changes, cost comparisons, and a printable checklist.</p>
+                <a href="claude-4-migration-checklist.html" style="color:var(--green);">Get Checklist →</a>
+            </div>
+            <div class="guide-card" style="border-color:rgba(239,68,68,0.3);">
+                <div class="guide-tag" style="background:rgba(239,68,68,0.12);color:var(--red);">TROUBLESHOOT</div>
+                <h3>Claude 4 Error Fix</h3>
+                <p>Getting 410 errors? Model not found? Fix it in 60 seconds.</p>
+                <a href="claude-4-error.html" style="color:var(--red);">Fix Errors →</a>
+            </div>
+            <div class="guide-card">
+                <div class="guide-tag" style="background:rgba(245,158,11,0.12);color:#d97706;">STATUS</div>
+                <h3>API Status Monitor</h3>
+                <p>Real-time Claude 4 API status — check if it's still working.</p>
+                <a href="claude-4-status.html" style="color:#d97706;">Check Status →</a>
+            </div>
+            <div class="guide-card">
+                <div class="guide-tag" style="background:rgba(99,102,241,0.12);color:var(--accent);">DATA</div>
+                <h3>Deprecation Timeline</h3>
+                <p>Visual timeline of every AI model lifecycle event.</p>
+                <a href="model-deprecation-timeline.html" style="color:var(--accent);">View Timeline →</a>
+            </div>
+            <div class="guide-card">
+                <div class="guide-tag" style="background:rgba(34,197,94,0.12);color:var(--green);">PRICING</div>
+                <h3>Cheapest LLM APIs 2026</h3>
+                <p>All 39 models ranked by price. Find the cheapest for your use case.</p>
+                <a href="cheapest-llm-api-2026.html" style="color:var(--green);">See Rankings →</a>
+            </div>
+            <div class="guide-card">
+                <div class="guide-tag" style="background:rgba(99,102,241,0.12);color:var(--accent);">ANALYSIS</div>
+                <h3>GPT-5 vs Claude Pricing</h3>
+                <p>Head-to-head pricing of all 14 GPT-5 and Claude models.</p>
+                <a href="gpt5-vs-claude-pricing-2026.html" style="color:var(--accent);">Compare Pricing →</a>
+            </div>
+            <div class="guide-card">
+                <div class="guide-tag" style="background:rgba(245,158,11,0.12);color:#d97706;">DEEP DIVE</div>
+                <h3>Opus 4.8 vs GPT-5.5</h3>
+                <p>The premium model showdown — flagship vs flagship.</p>
+                <a href="blog-opus48-vs-gpt55.html" style="color:#d97706;">Read Comparison →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRO UPSELL -->
+    <section style="max-width:700px;margin:0 auto;padding:0 24px;">
+        <div class="pro-upsell">
+            <h2>Save Even More with APIpulse Pro</h2>
+            <p style="font-size:15px;color:var(--text-secondary);margin-bottom:24px;max-width:500px;margin-left:auto;margin-right:auto;">Pro users get personalized optimization recommendations that cut costs by 30-40% beyond model switching.</p>
+            <ul class="pro-benefits">
+                <li>Save & compare up to 10 migration scenarios</li>
+                <li>Export migration cost reports for your team</li>
+                <li>Get personalized optimization recommendations</li>
+                <li>Priority email support during migration</li>
+                <li>Early access to new pricing data</li>
+            </ul>
+            <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:10px;padding:20px;margin-bottom:20px;">
+                <div style="font-size:36px;font-weight:800;color:var(--accent);">$29</div>
+                <div style="font-size:13px;color:var(--text-muted);text-decoration:line-through;">$49 after founding period</div>
+                <div style="font-size:13px;color:var(--text-muted);">One-time payment, lifetime access</div>
+            </div>
+            <div style="background:rgba(245,158,11,0.08);border:1px solid rgba(245,158,11,0.3);border-radius:8px;padding:10px 14px;margin-bottom:20px;font-size:13px;color:#d97706;display:inline-block;">
+                🔥 Founding member pricing — lock in $29 before it goes to $49
+            </div>
+            <br>
+            <a href="pricing.html" class="btn-primary" style="display:inline-block;padding:16px 40px;font-size:16px;text-align:center;" onclick="if(window.trackEvent)window.trackEvent('pro_button_clicked',{source:'migration_hub'})">Lock in $29 — Founding Member</a>
+            <p style="font-size:12px;color:var(--text-muted);margin-top:12px;">14-day money-back guarantee. No questions asked.</p>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq-section" style="max-width:700px;margin:0 auto;padding:0 24px;">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-item" onclick="this.classList.toggle('open')">
+            <h3>When is Claude 4 being deprecated?</h3>
+            <p>Claude 4 Opus and Claude Sonnet 4 are both being retired on June 15, 2026. After this date, API calls to these model IDs will return errors. You must migrate to a replacement model before then.</p>
+        </div>
+        <div class="faq-item" onclick="this.classList.toggle('open')">
+            <h3>What is the cheapest alternative to Claude 4 Opus?</h3>
+            <p>DeepSeek V4 Flash is the cheapest at $0.14/$0.28 per million tokens — 99% cheaper than Claude 4 Opus ($15/$75). For similar quality, DeepSeek V4 Pro at $0.435/$0.87 is 97% cheaper. The direct Anthropic replacement, Claude Opus 4.8, is 67% cheaper at $5/$25.</p>
+        </div>
+        <div class="faq-item" onclick="this.classList.toggle('open')">
+            <h3>Do I need a new API key to migrate from Claude 4?</h3>
+            <p>No. If staying with Anthropic, your existing API key works with Claude Opus 4.8 and Sonnet 4.6. Only the model name string in your code changes. If switching providers, you'll need a new API key from the new provider.</p>
+        </div>
+        <div class="faq-item" onclick="this.classList.toggle('open')">
+            <h3>How do I migrate from Claude 4 to another model?</h3>
+            <p>Change one line of code: replace the model name string (e.g., 'claude-4-opus' → 'claude-opus-4-8'). Your API key, SDK, and endpoint stay the same. The entire migration takes under 5 minutes for most codebases.</p>
+        </div>
+        <div class="faq-item" onclick="this.classList.toggle('open')">
+            <h3>What happens if I don't migrate before June 15?</h3>
+            <p>All API calls to claude-4-opus and claude-sonnet-4 model IDs will return HTTP 410 Gone errors. Your application will stop working until you update the model name. There is no grace period.</p>
+        </div>
+        <div class="faq-item" onclick="this.classList.toggle('open')">
+            <h3>How much can I save by switching from Claude 4?</h3>
+            <p>Savings range from 67% (Claude Opus 4.8) to 99% (DeepSeek V4 Flash). For a typical workload of 10M input + 2M output tokens/month, Claude 4 Opus costs $300/month. The same workload on Claude Opus 4.8 costs $100/month, and on DeepSeek V4 Pro it costs just $6.09/month.</p>
+        </div>
+    </section>
+
+    <!-- EMAIL CAPTURE -->
+    <section style="max-width:600px;margin:0 auto 48px;padding:0 24px;">
+        <div class="email-capture">
+            <h2 style="font-size:20px;font-weight:700;margin-bottom:8px;">Get the Claude 4 Migration Checklist</h2>
+            <p style="font-size:14px;color:var(--text-secondary);margin-bottom:20px;">Step-by-step guide with code samples, cost comparisons, and a deadline tracker. Free, no spam.</p>
+            <form onsubmit="saveEmail(event)" style="display:flex;gap:8px;max-width:400px;margin:0 auto;">
+                <input type="email" id="email-input" placeholder="you@company.com" required aria-label="Email address"
+                    style="flex:1;padding:12px 16px;background:var(--bg-card);border:1px solid var(--border);
+                    border-radius:8px;color:var(--text-primary);font-size:14px;">
+                <button type="submit" class="btn-primary" style="padding:12px 24px;white-space:nowrap;">Get Checklist</button>
+            </form>
+            <p id="email-msg" style="font-size:13px;color:var(--green);margin-top:12px;display:none;"></p>
+        </div>
+    </section>
+
+    <!-- BOTTOM CTA -->
+    <section style="max-width:600px;margin:0 auto 60px;padding:0 24px;text-align:center;">
+        <div style="background:var(--bg-secondary);border:1px solid var(--border);border-radius:16px;padding:32px;">
+            <p style="font-size:16px;font-weight:600;margin-bottom:8px;">Don't wait until your code breaks.</p>
+            <p style="font-size:14px;color:var(--text-secondary);margin-bottom:20px;">Migrate now while you have time to test. Most teams complete the switch in under an hour.</p>
+            <a href="claude-4-migration-tool.html" class="btn-primary" style="display:inline-block;padding:14px 32px;text-align:center;">Start Your Migration →</a>
+        </div>
+    </section>
+
+    </main>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Countdown
+        function updateCountdown() {
+            var deadline = new Date('2026-06-15T00:00:00-07:00').getTime();
+            var now = new Date().getTime();
+            var diff = deadline - now;
+            if (diff <= 0) {
+                document.getElementById('cd-days').textContent = 'EXPIRED';
+                document.getElementById('cd-hours').textContent = '—';
+                document.getElementById('cd-mins').textContent = '—';
+                document.getElementById('cd-secs').textContent = '—';
+                var h1 = document.querySelector('h1');
+                if (h1 && h1.textContent.includes('Hub')) {
+                    h1.innerHTML = 'Claude 4 Has Been Deprecated — <span style="color:var(--accent)">Find Your Replacement</span>';
+                }
+                var subtitle = document.querySelector('.hero .subtitle');
+                if (subtitle) {
+                    subtitle.textContent = 'Claude 4 Opus and Sonnet 4 were retired on June 15, 2026. Browse 39 alternatives with exact cost comparisons.';
+                }
+                return;
+            }
+            var d = Math.floor(diff / (1000*60*60*24));
+            var h = Math.floor((diff % (1000*60*60*24)) / (1000*60*60));
+            var m = Math.floor((diff % (1000*60*60)) / (1000*60));
+            var s = Math.floor((diff % (1000*60)) / 1000);
+            document.getElementById('cd-days').textContent = d;
+            document.getElementById('cd-hours').textContent = h.toString().padStart(2,'0');
+            document.getElementById('cd-mins').textContent = m.toString().padStart(2,'0');
+            document.getElementById('cd-secs').textContent = s.toString().padStart(2,'0');
+        }
+        updateCountdown();
+        setInterval(updateCountdown, 1000);
+
+        // Track page view
+        if (window.trackEvent) window.trackEvent('migration_hub_viewed', { page: 'claude-4-migration-hub' });
+    });
+    </script>
+
+    <footer>
+        <p>Pricing data last verified: <span class="verified-date"></span></p>
+        <p>&copy; 2026 APIpulse. <a href="index.html">Home</a> &middot; <a href="calculator.html">Calculator</a> &middot; <a href="compare.html">Compare</a> &middot; <a href="blog.html">Blog</a> &middot; <a href="pricing.html">Pricing</a> &middot; <a href="claude-4-migration-hub.html" style="color:var(--red);font-weight:700;">Migration Hub</a> &middot; <a href="claude-4-migration-tool.html">Migration Tool</a> &middot; <a href="claude-4-migration-cheatsheet.html" style="color:var(--green);">Cheat Sheet</a></p>
+    </footer>
+
+</body>
+</html>
