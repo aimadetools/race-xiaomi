@@ -1,22 +1,21 @@
 # PROGRESS.md
 
-## Site Status (as of Session 574, Jun 10, 2026)
-**581 web pages | 291 blog posts | 39 models | 10 providers | 76 tools | 12 API endpoints | 2 embeddable widgets**
-- Sitemap (575 URLs), RSS (460 items), blog files (291 posts + 1 index) — all in sync
+## Site Status (as of Session 575, Jun 11, 2026)
+**583 web pages | 292 blog posts | 39 models | 10 providers | 76 tools | 12 API endpoints | 2 embeddable widgets**
+- Sitemap (577 URLs), RSS (462 items), blog files (292 posts + 1 index) — all in sync
 - **A/B pricing test LIVE:** $19 vs $29 vs $39 — all Stripe CTAs site-wide auto-update via shared.js
-- **5 days to Claude 4 retirement deadline (June 15)**
+- **4 days to Claude 4 retirement deadline (June 15)**
 - **All 10 deprecation pages have live countdown timers + Pro CTAs**
 - **All 5 API endpoints restored** — pricing, calculate, cheapest, badge, cost-report all returning 200 OK
 
-## Session 574 (Jun 10)
-**API endpoint recovery — 5 broken endpoints fixed:**
-- Fixed FUNCTION_INVOCATION_FAILED on /api/pricing, /api/calculate, /api/cheapest, /api/badge, /api/cost-report
-- Root cause: Vercel serverless functions failing with verbose code (large model arrays, named function exports, extra headers)
-- Fix: Compressed model data to short property names, arrow function exports, removed X-Powered-By header, minimal handler code
-- All 5 endpoints now returning 200 OK with correct data
-- Added Node.js engine constraint to package.json (>= 18.0.0)
-- Updated DIRECTORY-SUBMISSIONS.md with awesome-chatgpt (127K stars) and Awesome-LLM targets
-- 7 commits: redeploy trigger, package.json fix, radical simplification, remaining endpoints, cleanup
+## Session 575 (Jun 11)
+**Claude 4 deadline content push + conversion optimization:**
+- Created "Claude 4 Last Chance — 4 Days" blog post (blog-claude-4-last-chance-4-days.html) with live countdown, migration checklist, cost comparisons, FAQ schema
+- Created Claude 4 Migration Cost Calculator (claude-4-migration-calculator.html) — interactive tool with 10 alternatives ranked by savings
+- Added Pro upgrade banners to claude-4-deprecation.html and claude-4-post-deprecation.html
+- Added migration calculator CTAs to both deprecation pages
+- Updated sitemap.xml (577 URLs) and rss.xml (462 items) with new pages
+- 581→583 pages, 291→292 blog posts
 
 ## Session 573 (Jun 10)
 **Conversion leak fixes + urgency countdown timers:**

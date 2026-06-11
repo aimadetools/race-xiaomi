@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Claude 4 Migration Cost Calculator — Save 67-97% | APIpulse</title>
+    <meta name="description" content="Calculate exact savings from migrating off Claude 4. Input your usage, see cost comparison across 10 alternatives. Most devs save $500+/mo.">
+    <meta name="keywords" content="Claude 4 migration calculator, Claude 4 cost savings, migrate from Claude 4, Claude 4 alternative cost, Claude 4 replacement calculator">
+    <meta property="og:title" content="Claude 4 Migration Cost Calculator — Save 67-97%">
+    <meta property="og:description" content="Input your Claude 4 usage, see exact savings across 10 alternatives. Free tool.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://getapipulse.com/og-image.png">
+    <meta property="og:url" content="https://getapipulse.com/claude-4-migration-calculator.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Claude 4 Migration Cost Calculator">
+    <meta name="twitter:image" content="https://getapipulse.com/og-image.png">
+    <meta name="twitter:description" content="Calculate exact savings from migrating off Claude 4. Most devs save 67-97%.">
+    <link rel="canonical" href="https://getapipulse.com/claude-4-migration-calculator.html">
+    <link rel="alternate" type="application/rss+xml" title="APIpulse Blog" href="https://getapipulse.com/rss.xml">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="styles.css">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0CEP7S9Y3J"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-0CEP7S9Y3J');
+    </script>
+    <script src="analytics.js" defer></script>
+    <script src="dynamic-date.js" defer></script>
+    <script src="shared.js" defer></script>
+    <script src="pricing-data.js" defer></script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "APIpulse Claude 4 Migration Calculator",
+        "url": "https://getapipulse.com/claude-4-migration-calculator.html",
+        "description": "Calculate exact savings from migrating off Claude 4. Input your usage, see cost comparison across 10 alternatives.",
+        "applicationCategory": "DeveloperApplication",
+        "operatingSystem": "Web",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+    }
+    </script>
+    <style>
+        .calc-hero{padding:120px 24px 40px;text-align:center;max-width:700px;margin:0 auto}
+        .calc-hero h1{font-size:clamp(28px,4vw,42px);font-weight:800;margin-bottom:12px}
+        .calc-hero p{color:var(--text-secondary);font-size:17px;line-height:1.6}
+        .urgency-bar{max-width:800px;margin:0 auto 32px;padding:16px 24px;background:rgba(239,68,68,0.1);border:1px solid rgba(239,68,68,0.3);border-radius:var(--radius);text-align:center;font-size:15px;color:var(--text-secondary)}
+        .urgency-bar strong{color:#ef4444}
+        .calculator-section{padding:0 24px 60px}
+        .calculator{background:var(--bg-card);border:1px solid var(--border);border-radius:16px;padding:32px;max-width:900px;margin:0 auto}
+        .calc-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px}
+        .calc-inputs{display:flex;flex-direction:column;gap:16px}
+        .input-group{display:flex;flex-direction:column;gap:6px}
+        .input-group label{font-size:13px;font-weight:600;color:var(--text-secondary)}
+        .input-group select,.input-group input{padding:12px 16px;border-radius:8px;border:1px solid var(--border);background:var(--bg-secondary);color:var(--text-primary);font-size:15px;font-family:inherit}
+        .input-group select:focus,.input-group input:focus{outline:2px solid var(--accent);outline-offset:2px;border-color:var(--accent)}
+        .presets{display:flex;gap:8px;margin-bottom:24px;flex-wrap:wrap;align-items:center}
+        .preset-btn{background:var(--bg-secondary);border:1px solid var(--border);color:var(--text-secondary);padding:8px 16px;border-radius:8px;cursor:pointer;font-size:13px;transition:all 0.2s;font-weight:500}
+        .preset-btn:hover{border-color:var(--accent);color:var(--accent)}
+        .preset-btn.active-preset{background:var(--accent);color:white;border-color:var(--accent)}
+        .current-model{background:rgba(239,68,68,0.08);border:1px solid rgba(239,68,68,0.3);border-radius:12px;padding:20px;margin-bottom:24px}
+        .current-model .label{font-size:12px;color:#ef4444;text-transform:uppercase;letter-spacing:0.5px;font-weight:600;margin-bottom:8px}
+        .current-model .model-name{font-size:20px;font-weight:700;color:var(--text-primary)}
+        .current-model .model-price{font-size:14px;color:var(--text-secondary);margin-top:4px}
+        .current-model .model-status{display:inline-block;margin-top:8px;padding:4px 10px;background:rgba(239,68,68,0.15);color:#ef4444;border-radius:6px;font-size:12px;font-weight:600}
+        .calc-results{background:var(--bg-secondary);border:1px solid var(--border);border-radius:12px;padding:24px}
+        .result-item{display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid var(--border);font-size:14px}
+        .result-item:last-child{border-bottom:none}
+        .result-label{color:var(--text-secondary)}
+        .result-value{color:var(--text-primary);font-weight:600;font-variant-numeric:tabular-nums}
+        .result-total{display:flex;justify-content:space-between;padding:14px 0 10px;border-top:2px solid var(--accent);margin-top:8px;font-size:18px}
+        .result-total .result-label{color:var(--text-primary);font-weight:700}
+        .result-total .result-value{color:#ef4444;font-weight:800}
+        .savings-badge{background:rgba(34,197,94,0.1);border:1px solid rgba(34,197,94,0.3);color:var(--green);padding:16px;border-radius:10px;font-weight:700;text-align:center;margin-top:16px}
+        .savings-badge .amount{font-size:28px;font-weight:800}
+        .savings-badge .pct{font-size:16px;margin-top:4px}
+        .alternatives-section{max-width:900px;margin:0 auto;padding:0 24px 60px}
+        .alternatives-section h2{font-size:24px;font-weight:800;margin-bottom:8px;text-align:center}
+        .alternatives-section .subtitle{color:var(--text-secondary);text-align:center;margin-bottom:32px}
+        .alt-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px}
+        .alt-card{background:var(--bg-card);border:1px solid var(--border);border-radius:12px;padding:20px;transition:all 0.2s}
+        .alt-card:hover{border-color:var(--accent);transform:translateY(-2px)}
+        .alt-card .provider{font-size:11px;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.5px;margin-bottom:4px}
+        .alt-card .model{font-size:16px;font-weight:700;color:var(--text-primary);margin-bottom:8px}
+        .alt-card .pricing{font-size:14px;color:var(--text-secondary);margin-bottom:12px}
+        .alt-card .savings{background:rgba(34,197,94,0.1);color:var(--green);padding:4px 10px;border-radius:6px;font-size:13px;font-weight:700;display:inline-block}
+        .alt-card .tier{font-size:12px;color:var(--text-muted);margin-top:8px}
+        .alt-card .calc-link{display:block;margin-top:12px;font-size:13px;color:var(--accent);text-decoration:none;font-weight:600}
+        .alt-card .calc-link:hover{text-decoration:underline}
+        .cta-box{background:linear-gradient(135deg,rgba(99,102,241,0.1),rgba(34,197,94,0.1));border:1px solid var(--accent);border-radius:var(--radius);padding:32px;text-align:center;margin:40px auto;max-width:700px}
+        .cta-box h2{margin-top:0;border:none;padding-top:0;font-size:22px}
+        .cta-box p{color:var(--text-secondary);margin-bottom:20px}
+        .cta-box .btn-primary{display:inline-block;padding:12px 28px;background:var(--accent);color:white;border-radius:8px;font-weight:700;text-decoration:none;transition:all 0.2s}
+        .cta-box .btn-primary:hover{opacity:0.9;transform:translateY(-1px)}
+        .pro-upsell{max-width:700px;margin:0 auto 40px;padding:24px 32px;background:linear-gradient(135deg,rgba(99,102,241,0.08),rgba(34,197,94,0.08));border:1px solid var(--accent);border-radius:var(--radius);display:flex;align-items:center;gap:20px}
+        .pro-upsell .pro-badge{background:var(--accent);color:white;padding:6px 14px;border-radius:20px;font-size:12px;font-weight:700;white-space:nowrap;text-transform:uppercase;letter-spacing:0.5px}
+        .pro-upsell .pro-text{flex:1}
+        .pro-upsell .pro-text h3{font-size:16px;font-weight:700;margin:0 0 4px}
+        .pro-upsell .pro-text p{font-size:14px;color:var(--text-secondary);margin:0}
+        .pro-upsell a{color:var(--accent);font-weight:600;text-decoration:none;font-size:14px;white-space:nowrap}
+        .pro-upsell a:hover{text-decoration:underline}
+        .info-section{max-width:700px;margin:0 auto;padding:0 24px 60px}
+        .info-section h2{font-size:22px;font-weight:700;margin-bottom:16px}
+        .info-section p{color:var(--text-secondary);line-height:1.7;margin-bottom:16px}
+        .info-section strong{color:var(--text-primary)}
+        .faq-item{background:var(--bg-secondary);border:1px solid var(--border);border-radius:var(--radius);padding:24px;margin-bottom:16px}
+        .faq-item h3{font-size:18px;font-weight:700;margin:0 0 12px;color:var(--text-primary)}
+        .faq-item p{font-size:15px;line-height:1.7;color:var(--text-secondary);margin:0}
+        @media(max-width:768px){.calc-hero{padding:100px 20px 30px}.calculator{padding:20px}.calc-grid{grid-template-columns:1fr}.alt-grid{grid-template-columns:1fr}.pro-upsell{flex-direction:column;text-align:center}}
+    </style>
+    <meta name="theme-color" content="#6366f1">
+</head>
+<body>
+    <a href="#main" class="skip-link">Skip to content</a>
+    <nav>
+        <div class="nav-inner">
+            <a href="index.html" class="logo">API<span>pulse</span></a>
+            <button class="hamburger" onclick="toggleMobileNav()" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+            <div class="nav-links">
+                <a href="calculator.html">Calculator</a>
+                <a href="compare.html">Compare</a>
+                <a href="cost-explorer.html">Explorer</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="blog.html">Blog</a>
+                <a href="pricing.html" class="nav-cta" onclick="if(window.trackEvent)window.trackEvent('pro_button_clicked',{source:'nav'})">Get Pro — $29</a>
+                <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
+            </div>
+        </div>
+    </nav>
+
+    <main id="main">
+    <div class="calc-hero">
+        <h1>Claude 4 Migration Calculator</h1>
+        <p>Enter your current Claude 4 usage below. See exactly how much you'll save by migrating to a replacement model — before the June 15 shutdown.</p>
+    </div>
+
+    <div class="urgency-bar">
+        ⏰ <strong>Claude 4 shuts down in 4 days</strong> (June 15, 2026). Calculate your savings and migrate today.
+    </div>
+
+    <section class="calculator-section">
+        <div class="calculator" role="form" aria-label="Claude 4 Migration Calculator">
+            <div class="presets">
+                <span style="font-size:13px;color:var(--text-muted);align-self:center;">Typical usage:</span>
+                <button class="preset-btn" onclick="applyMigrationPreset('small')">Small app (100 req/day)</button>
+                <button class="preset-btn active-preset" onclick="applyMigrationPreset('medium')">Medium app (1K req/day)</button>
+                <button class="preset-btn" onclick="applyMigrationPreset('large')">Large app (10K req/day)</button>
+                <button class="preset-btn" onclick="applyMigrationPreset('enterprise')">Enterprise (100K req/day)</button>
+            </div>
+
+            <div class="current-model">
+                <div class="label">Currently using</div>
+                <div class="model-name">Claude 4 Opus</div>
+                <div class="model-price">$15.00 / $75.00 per 1M tokens (input/output)</div>
+                <div class="model-status">⚠️ RETIRING JUNE 15, 2026</div>
+            </div>
+
+            <div class="calc-grid">
+                <div class="calc-inputs">
+                    <div class="input-group">
+                        <label for="input-tokens">Input tokens per request</label>
+                        <input type="number" id="input-tokens" value="1500" min="0" step="100" oninput="calculateMigration()">
+                    </div>
+                    <div class="input-group">
+                        <label for="output-tokens">Output tokens per request</label>
+                        <input type="number" id="output-tokens" value="500" min="0" step="100" oninput="calculateMigration()">
+                    </div>
+                    <div class="input-group">
+                        <label for="requests">Requests per day</label>
+                        <input type="number" id="requests" value="1000" min="0" step="100" oninput="calculateMigration()">
+                    </div>
+                    <div class="input-group">
+                        <label for="days">Days per month</label>
+                        <input type="number" id="days" value="30" min="1" max="31" oninput="calculateMigration()">
+                    </div>
+                </div>
+                <div class="calc-results" role="region" aria-label="Migration cost results" aria-live="polite">
+                    <h3 style="margin-bottom:16px;font-size:16px;">Your Claude 4 Costs</h3>
+                    <div class="result-item">
+                        <span class="result-label">Cost per request</span>
+                        <span class="result-value" id="cost-per-request">$0.0000</span>
+                    </div>
+                    <div class="result-item">
+                        <span class="result-label">Input cost (monthly)</span>
+                        <span class="result-value" id="input-cost">$0.00</span>
+                    </div>
+                    <div class="result-item">
+                        <span class="result-label">Output cost (monthly)</span>
+                        <span class="result-value" id="output-cost">$0.00</span>
+                    </div>
+                    <div class="result-total">
+                        <span class="result-label">Monthly Total (Claude 4)</span>
+                        <span class="result-value" id="monthly-total">$0.00</span>
+                    </div>
+                    <div id="savings-container"></div>
+                    <div id="best-alt-container"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="alternatives-section">
+        <h2>Top Migration Targets</h2>
+        <p class="subtitle">Ranked by cost savings vs Claude 4 Opus ($15/$75 per 1M tokens)</p>
+        <div class="alt-grid" id="alt-grid"></div>
+    </section>
+
+    <div class="pro-upsell">
+        <div class="pro-badge">⚡ Pro</div>
+        <div class="pro-text">
+            <h3>Track Deprecations Automatically</h3>
+            <p>APIpulse Pro monitors all 39 models and alerts you before any price change or deprecation.</p>
+        </div>
+        <a href="pricing.html">Get Pro — $29 →</a>
+    </div>
+
+    <div class="cta-box">
+        <h2>Ready to Migrate?</h2>
+        <p>Just change <code>claude-4-opus</code> to <code>claude-opus-4-8</code> in your API calls. Same format, 67% cheaper. Takes 30 minutes.</p>
+        <a href="claude-4-deprecation.html" class="btn-primary">Read Full Migration Guide →</a>
+    </div>
+
+    <div class="info-section">
+        <h2>How Migration Works</h2>
+        <p><strong>It's just a model ID change.</strong> The Anthropic API format is identical between Claude 4 and Claude Opus 4.8. You only need to update the model name in your code:</p>
+        <p><code>model: "claude-4-opus"</code> → <code>model: "claude-opus-4-8"</code></p>
+        <p>No SDK changes. No API format changes. No prompt rewrites. Most developers complete the full migration — including testing — in under 30 minutes.</p>
+
+        <h2>Why These Alternatives?</h2>
+        <p>We ranked every Claude 4 replacement by three factors: <strong>cost savings</strong>, <strong>quality match</strong>, and <strong>ease of migration</strong>. Claude Opus 4.8 is the easiest migration (same API). DeepSeek V4 Pro and Llama 4 Maverick offer the biggest savings. Gemini models offer the best balance of cost and quality for many use cases.</p>
+
+        <h2>Frequently Asked Questions</h2>
+
+        <div class="faq-item">
+            <h3>Will my prompts work the same on the replacement model?</h3>
+            <p><strong>Yes.</strong> Claude Opus 4.8 uses the same API format and responds to the same prompts. For other providers (DeepSeek, Google, etc.), you may need minor prompt adjustments, but the core logic stays the same.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>What if I need Claude-quality output specifically?</h3>
+            <p>Stick with Claude Opus 4.8 ($5/$25) — it's the official successor with the same quality tier, just 67% cheaper. If you can accept slightly different output characteristics, DeepSeek V4 Pro ($0.44/$0.87) handles most tasks at 97% less cost.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>Can I test before committing?</h3>
+            <p>Absolutely. All these providers offer free tier or pay-as-you-go access. Run a small batch of requests on the new model, compare output quality, then switch. No long-term commitments.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>What about third-party providers (OpenRouter, Bedrock)?</h3>
+            <p>If you access Claude 4 via OpenRouter or Bedrock, update your model ID in that provider's configuration. Most third-party providers already support Claude Opus 4.8 and the budget alternatives listed above.</p>
+        </div>
+    </div>
+
+    </main>
+
+    <footer>
+        <div class="footer-inner">
+            <div class="footer-brand">
+                <a href="index.html" class="logo">API<span>pulse</span></a>
+                <p>Know your AI API costs before you commit.</p>
+            </div>
+            <div class="footer-links">
+                <div class="footer-col">
+                    <h4>Tools</h4>
+                    <a href="calculator.html">Cost Calculator</a>
+                    <a href="compare.html">Model Comparison</a>
+                    <a href="cost-explorer.html">Cost Explorer</a>
+                    <a href="pricing.html">Pricing</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Resources</h4>
+                    <a href="blog.html">Blog</a>
+                    <a href="about.html">About</a>
+                    <a href="api-docs.html">API Docs</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 APIpulse. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+    // Claude 4 pricing (deprecated)
+    var CLAUDE4 = { input: 15, output: 75, name: 'Claude 4 Opus' };
+
+    // Alternatives ranked by savings
+    var ALTERNATIVES = [
+        { id: 'llama-4-maverick', provider: 'Meta (Together.ai)', name: 'Llama 4 Maverick', input: 0.27, output: 0.85, tier: 'Budget', context: '1M', quality: 'Good for most tasks' },
+        { id: 'deepseek-v4-pro', provider: 'DeepSeek', name: 'V4 Pro', input: 0.435, output: 0.87, tier: 'Budget', context: '128K', quality: 'Near Claude quality' },
+        { id: 'deepseek-v4-flash', provider: 'DeepSeek', name: 'V4 Flash', input: 0.14, output: 0.28, tier: 'Budget', context: '128K', quality: 'Fast, cost-effective' },
+        { id: 'google-flash', provider: 'Google', name: 'Gemini 2.0 Flash', input: 0.10, output: 0.40, tier: 'Budget', context: '1M', quality: 'Multimodal, fast' },
+        { id: 'google-pro', provider: 'Google', name: 'Gemini 2.5 Pro', input: 1.25, output: 10.00, tier: 'Mid-tier', context: '1M', quality: 'Strong reasoning' },
+        { id: 'openai-gpt5-mini', provider: 'OpenAI', name: 'GPT-5 mini', input: 0.25, output: 2.00, tier: 'Budget', context: '128K', quality: 'Good general purpose' },
+        { id: 'anthropic-opus48', provider: 'Anthropic', name: 'Claude Opus 4.8', input: 5.00, output: 25.00, tier: 'Premium', context: '200K', quality: 'Same quality tier' },
+        { id: 'anthropic-sonnet46', provider: 'Anthropic', name: 'Claude Sonnet 4.6', input: 3.00, output: 15.00, tier: 'Mid-tier', context: '200K', quality: 'Fast, capable' },
+        { id: 'mistral-large', provider: 'Mistral', name: 'Large', input: 2.00, output: 6.00, tier: 'Mid-tier', context: '128K', quality: 'Strong multilingual' },
+        { id: 'openai-gpt5', provider: 'OpenAI', name: 'GPT-5', input: 1.25, output: 10.00, tier: 'Mid-tier', context: '128K', quality: 'Flagship' }
+    ];
+
+    function calculateMigration() {
+        var inputTokens = parseInt(document.getElementById('input-tokens').value) || 0;
+        var outputTokens = parseInt(document.getElementById('output-tokens').value) || 0;
+        var requests = parseInt(document.getElementById('requests').value) || 0;
+        var days = parseInt(document.getElementById('days').value) || 30;
+
+        // Current Claude 4 costs
+        var totalInput = inputTokens * requests * days;
+        var totalOutput = outputTokens * requests * days;
+        var inputCost = (totalInput / 1000000) * CLAUDE4.input;
+        var outputCost = (totalOutput / 1000000) * CLAUDE4.output;
+        var totalCost = inputCost + outputCost;
+        var costPerReq = (CLAUDE4.input * (inputTokens / 1000000)) + (CLAUDE4.output * (outputTokens / 1000000));
+
+        document.getElementById('cost-per-request').textContent = '$' + costPerReq.toFixed(4);
+        document.getElementById('input-cost').textContent = '$' + inputCost.toFixed(2);
+        document.getElementById('output-cost').textContent = '$' + outputCost.toFixed(2);
+        document.getElementById('monthly-total').textContent = '$' + totalCost.toFixed(2);
+
+        // Calculate best alternative
+        var bestAlt = null;
+        var bestSavings = 0;
+        ALTERNATIVES.forEach(function(alt) {
+            var altCost = ((totalInput / 1000000) * alt.input) + ((totalOutput / 1000000) * alt.output);
+            var savings = totalCost - altCost;
+            if (savings > bestSavings) {
+                bestSavings = savings;
+                bestAlt = alt;
+            }
+        });
+
+        // Show savings badge
+        var savingsContainer = document.getElementById('savings-container');
+        if (bestAlt && bestSavings > 0) {
+            var pct = Math.round((bestSavings / totalCost) * 100);
+            savingsContainer.innerHTML = '<div class="savings-badge"><div class="amount">Save $' + bestSavings.toFixed(2) + '/mo</div><div class="pct">Switch to ' + bestAlt.name + ' — ' + pct + '% cheaper</div></div>';
+        } else {
+            savingsContainer.innerHTML = '';
+        }
+
+        // Show best alt details
+        var bestContainer = document.getElementById('best-alt-container');
+        if (bestAlt) {
+            var altCost = ((totalInput / 1000000) * bestAlt.input) + ((totalOutput / 1000000) * bestAlt.output);
+            bestContainer.innerHTML = '<div style="margin-top:16px;padding:16px;background:rgba(34,197,94,0.05);border:1px solid rgba(34,197,94,0.2);border-radius:10px;"><div style="font-size:13px;color:var(--text-muted);margin-bottom:4px;">Best alternative: ' + bestAlt.provider + '</div><div style="font-size:16px;font-weight:700;color:var(--text-primary);">' + bestAlt.name + ' — $' + bestAlt.input + '/$' + bestAlt.output + ' per 1M</div><div style="font-size:14px;color:var(--green);font-weight:600;margin-top:4px;">$' + altCost.toFixed(2) + '/mo (save $' + bestSavings.toFixed(2) + ')</div><a href="compare.html" style="display:inline-block;margin-top:8px;font-size:13px;color:var(--accent);text-decoration:none;font-weight:600;">Compare all models →</a></div>';
+        } else {
+            bestContainer.innerHTML = '';
+        }
+
+        // Update alternative cards
+        var altGrid = document.getElementById('alt-grid');
+        var html = '';
+        ALTERNATIVES.forEach(function(alt) {
+            var altCost = ((totalInput / 1000000) * alt.input) + ((totalOutput / 1000000) * alt.output);
+            var savings = totalCost - altCost;
+            var pct = totalCost > 0 ? Math.round((savings / totalCost) * 100) : 0;
+            html += '<div class="alt-card">';
+            html += '<div class="provider">' + alt.provider + '</div>';
+            html += '<div class="model">' + alt.name + '</div>';
+            html += '<div class="pricing">$' + alt.input + ' / $' + alt.output + ' per 1M tokens · ' + alt.context + ' context</div>';
+            if (savings > 0) {
+                html += '<div class="savings">Save $' + savings.toFixed(2) + '/mo (' + pct + '%)</div>';
+            } else {
+                html += '<div class="savings" style="background:rgba(245,158,11,0.1);color:#f59e0b;">More expensive</div>';
+            }
+            html += '<div class="tier">' + alt.tier + ' · ' + alt.quality + '</div>';
+            html += '<div class="monthly-cost" style="font-size:13px;color:var(--text-muted);margin-top:8px;">Monthly cost: $' + altCost.toFixed(2) + '</div>';
+            html += '</div>';
+        });
+        altGrid.innerHTML = html;
+    }
+
+    function applyMigrationPreset(type) {
+        document.querySelectorAll('.preset-btn').forEach(function(b) { b.classList.remove('active-preset'); });
+        event.target.classList.add('active-preset');
+        var presets = {
+            small: { input: 1000, output: 400, requests: 100 },
+            medium: { input: 1500, output: 500, requests: 1000 },
+            large: { input: 2000, output: 800, requests: 10000 },
+            enterprise: { input: 3000, output: 1000, requests: 100000 }
+        };
+        var p = presets[type];
+        document.getElementById('input-tokens').value = p.input;
+        document.getElementById('output-tokens').value = p.output;
+        document.getElementById('requests').value = p.requests;
+        calculateMigration();
+        if (window.trackEvent) window.trackEvent('migration_preset_used', { type: type });
+    }
+
+    // Initial calculation
+    calculateMigration();
+    </script>
+</body>
+</html>

@@ -769,6 +769,27 @@ curl https://api.anthropic.com/v1/messages \
     }
     </script>
 
+    <!-- Pro Upsell Banner -->
+    <section style="max-width:800px;margin:0 auto 40px;padding:0 24px;">
+        <div style="background:linear-gradient(135deg,rgba(99,102,241,0.08),rgba(34,197,94,0.08));border:1px solid var(--accent);border-radius:16px;padding:32px;display:flex;align-items:center;gap:24px;">
+            <div style="background:var(--accent);color:white;padding:8px 16px;border-radius:20px;font-size:12px;font-weight:700;white-space:nowrap;text-transform:uppercase;letter-spacing:0.5px;">⚡ Pro</div>
+            <div style="flex:1;">
+                <h3 style="font-size:18px;font-weight:700;margin:0 0 6px;">Never Miss a Deprecation Again</h3>
+                <p style="font-size:14px;color:var(--text-secondary);margin:0;">APIpulse Pro monitors all 39 models across 10 providers and alerts you before any price change or deprecation — so you're never caught off guard.</p>
+            </div>
+            <a href="pricing.html" style="color:var(--accent);font-weight:600;text-decoration:none;font-size:14px;white-space:nowrap;" onclick="if(window.trackEvent)window.trackEvent('pro_button_clicked',{source:'deprecation_page'})">Get Pro — $29 →</a>
+        </div>
+    </section>
+
+    <!-- Migration Calculator CTA -->
+    <section style="max-width:800px;margin:0 auto 40px;padding:0 24px;">
+        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:16px;padding:24px;text-align:center;">
+            <h3 style="font-size:18px;font-weight:700;margin:0 0 8px;">Calculate Your Exact Migration Savings</h3>
+            <p style="font-size:14px;color:var(--text-secondary);margin:0 0 16px;">Enter your Claude 4 usage and see how much you'll save with each alternative.</p>
+            <a href="claude-4-migration-calculator.html" style="display:inline-block;padding:10px 24px;background:var(--accent);color:white;border-radius:8px;font-weight:700;text-decoration:none;transition:all 0.2s;" onclick="if(window.trackEvent)window.trackEvent('migration_calc_clicked',{source:'deprecation_page'})">Try Migration Calculator →</a>
+        </div>
+    </section>
+
     <footer>
         <p>Pricing data last verified: <span class="verified-date"></span></p>
         <p>&copy; 2026 APIpulse. <a href="index.html">Home</a> &middot; <a href="calculator.html">Calculator</a> &middot; <a href="compare.html">Compare</a> &middot; <a href="blog.html">Blog</a> &middot; <a href="pricing.html">Pricing</a> &middot; <a href="claude-deprecation-calculator.html">Deprecation Calculator</a> &middot; <a href="claude-4-migration-tool.html">Migration Tool</a> &middot; <a href="claude-4-migration-cheatsheet.html" style="color:var(--green);">Migration Cheat Sheet</a> &middot; <a href="claude-4-last-chance.html" style="color:var(--red);font-weight:700;">⚠️ Last Chance — 5 Days Left</a> &middot; <a href="blog-claude-4-stopped-working.html" style="color:var(--red);">Claude 4 Stopped Working?</a></p>
