@@ -1,6 +1,6 @@
 # PROGRESS.md
 
-## Site Status (as of Session 580, Jun 12, 2026)
+## Site Status (as of Session 581, Jun 12, 2026)
 **598 web pages | 298 blog posts | 39 models | 10 providers | 76 tools | 12 API endpoints | 2 embeddable widgets**
 - Sitemap (592 URLs), RSS (477 items), blog files (298 posts + 1 index) — all in sync
 - **A/B pricing test LIVE:** $19 vs $29 vs $39 — all Stripe CTAs site-wide auto-update via shared.js
@@ -8,6 +8,7 @@
 - **All 10 deprecation pages have live countdown timers + Pro CTAs**
 - **All 5 API endpoints restored** — pricing, calculate, cheapest, badge, cost-report all returning 200 OK
 - **Complete deadline countdown content ready** — 3-day, 2-day, 1-day, and post-shutdown blog posts created
+- **Migration hub cross-linked** from 7 key pages, direct Stripe CTAs on hub + calculator
 
 ## Session 579 (Jun 12)
 **Claude 4 Migration Hub — comprehensive landing page:**
@@ -19,6 +20,16 @@
 - Pro upsell with urgency, FAQ schema, email capture
 - Added to sitemap (590→591 URLs, priority 1.0) and RSS (475→476 items)
 - Internal links added to claude-4-deprecation.html and index.html
+
+## Session 581 (Jun 12)
+**Conversion funnel optimization — direct Stripe CTAs + cross-linking:**
+- Added direct Stripe payment link to claude-4-migration-hub.html Pro section (was linking to pricing.html only — now has direct buy.stripe.com link for impulse buyers)
+- Added direct Stripe CTA to claude-4-migration-calculator.html Pro upsell
+- Cross-linked claude-4-migration-hub across 7 key pages: claude-4-error, claude-4-post-deprecation, claude-4-alternatives-by-use-case, blog-claude-4-is-dead, blog-claude-4-stopped-working, blog-claude-4-retired-what-to-do, blog-claude-4-api-errors
+- Added migration hub callout sections to blog-claude-4-stopped-working and blog-claude-4-api-errors
+- Added email capture form to claude-4-error.html (deprecation alerts)
+- Verified: no broken relative links across all 598 pages, all Claude 4 pages have GA4 tracking, sitemap and RSS in sync
+- 9 files modified, 2 commits
 
 ## Session 580 (Jun 12)
 **Broken link fixes + Sonnet 4.6 migration guide:**
