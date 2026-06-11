@@ -31,7 +31,7 @@
     <script src="dynamic-date.js" defer></script>
     <script src="shared.js" defer></script>
     <script src="pricing-data.js" defer></script>
-    <script type="application/ld+json">
+    <script type="application/ld+json" id="pro-schema">
     {
         "@context": "https://schema.org",
         "@type": "Product",
@@ -212,7 +212,7 @@
                     <span style="font-size:24px;">⚡</span>
                     <div style="text-align:left;">
                         <div style="font-size:14px;font-weight:700;">One-time payment. Lifetime access.</div>
-                        <div style="font-size:12px;color:var(--text-muted);">$29 — no subscription, no recurring fees</div>
+                        <div style="font-size:12px;color:var(--text-muted);"><span id="pro-price-text">$29</span> — no subscription, no recurring fees</div>
                     </div>
                 </div>
 
@@ -414,6 +414,23 @@
                 if (window.trackEvent) window.trackEvent('pro_unlocked_without_code');
             }
         }
+    </script>
+    <script>
+    // Update Pro page prices to match A/B variant
+    document.addEventListener('DOMContentLoaded', function() {
+        var price = window._abPrice || 29;
+        var priceText = document.getElementById('pro-price-text');
+        if (priceText) priceText.textContent = '$' + price;
+        // Update Product schema
+        var schema = document.getElementById('pro-schema');
+        if (schema) {
+            try {
+                var data = JSON.parse(schema.textContent);
+                data.offers.price = price + '.00';
+                schema.textContent = JSON.stringify(data, null, 4);
+            } catch(e) {}
+        }
+    });
     </script>
 </body>
 </html>

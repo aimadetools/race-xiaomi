@@ -61,6 +61,30 @@ updateThemeIcon();
                 a.href = window._abStripeLink;
             }
         });
+        // Update ALL text nodes containing $29 (paragraphs, spans, etc.)
+        var walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, {
+            acceptNode: function(n) {
+                return n.parentNode.tagName === 'SCRIPT' || n.parentNode.tagName === 'STYLE'
+                    ? NodeFilter.FILTER_REJECT : NodeFilter.FILTER_ACCEPT;
+            }
+        });
+        var nodes = [];
+        while (walker.nextNode()) nodes.push(walker.currentNode);
+        nodes.forEach(function(node) {
+            if (node.nodeValue.indexOf('$29') !== -1) {
+                node.nodeValue = node.nodeValue.split('$29').join('$' + v.price);
+            }
+        });
+        // Update JSON-LD schema prices
+        document.querySelectorAll('script[type="application/ld+json"]').forEach(function(s) {
+            try {
+                var text = s.textContent;
+                if (text.indexOf('"29') !== -1) {
+                    s.textContent = text.split('"price":"29').join('"price":"' + v.price);
+                    s.textContent = s.textContent.split('"price": "29').join('"price": "' + v.price);
+                }
+            } catch(e) {}
+        });
         // Track variant assignment
         if (window.trackEvent) window.trackEvent('ab_pricing_variant_assigned', {variant: variant, price: v.price});
     });
