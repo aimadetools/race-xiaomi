@@ -453,6 +453,33 @@ llm = Anthropic(model="claude-opus-4-8")  # was "claude-4-opus"</code></pre>
         update();
         setInterval(update, 60000);
     })();
+
+    // Conversion tracking
+    document.addEventListener('DOMContentLoaded', function() {
+        if (window.trackEvent) window.trackEvent('final_48_hours_page_viewed');
+
+        // Track CTA clicks
+        document.querySelectorAll('a[href*="calculator"], a[href*="migration-hub"], a[href*="claude-4-migration-calculator"]').forEach(function(a) {
+            a.addEventListener('click', function() {
+                if (window.trackEvent) window.trackEvent('final_48hours_cta_clicked', {target: this.href});
+            });
+        });
+
+        // Track Pro button clicks
+        document.querySelectorAll('a[href*="pricing"], a[href*="pro.html"]').forEach(function(a) {
+            a.addEventListener('click', function() {
+                if (window.trackEvent) window.trackEvent('pro_button_clicked', {source: 'final_48hours_page'});
+            });
+        });
+
+        // Track email form
+        var emailForm = document.querySelector('.email-form');
+        if (emailForm) {
+            emailForm.addEventListener('submit', function() {
+                if (window.trackEvent) window.trackEvent('email_subscribe', {source: 'final_48hours_page'});
+            });
+        }
+    });
     </script>
 </body>
 </html>
