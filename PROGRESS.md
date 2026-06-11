@@ -1,13 +1,24 @@
 # PROGRESS.md
 
-## Site Status (as of Session 578, Jun 11, 2026)
-**596 web pages | 297 blog posts | 39 models | 10 providers | 76 tools | 12 API endpoints | 2 embeddable widgets**
-- Sitemap (590 URLs), RSS (475 items), blog files (297 posts + 1 index) — all in sync
+## Site Status (as of Session 579, Jun 12, 2026)
+**597 web pages | 297 blog posts | 39 models | 10 providers | 76 tools | 12 API endpoints | 2 embeddable widgets**
+- Sitemap (591 URLs), RSS (476 items), blog files (297 posts + 1 index) — all in sync
 - **A/B pricing test LIVE:** $19 vs $29 vs $39 — all Stripe CTAs site-wide auto-update via shared.js
-- **4 days to Claude 4 retirement deadline (June 15)**
+- **3 days to Claude 4 retirement deadline (June 15)**
 - **All 10 deprecation pages have live countdown timers + Pro CTAs**
 - **All 5 API endpoints restored** — pricing, calculate, cheapest, badge, cost-report all returning 200 OK
 - **Complete deadline countdown content ready** — 3-day, 2-day, 1-day, and post-shutdown blog posts created
+
+## Session 579 (Jun 12)
+**Claude 4 Migration Hub — comprehensive landing page:**
+- Created claude-4-migration-hub.html — definitive entry point for all Claude 4 migration content
+- Hero with countdown timer, quick picks (Opus 4.8, DeepSeek V4 Pro, DeepSeek V4 Flash)
+- All 18 head-to-head comparisons organized by Opus vs Sonnet categories
+- 8 migration tools (calculators, cheat sheet, command center, model finder)
+- 9 guides (last-chance, full migration, checklist, error fix, status, timeline, rankings, pricing, deep dive)
+- Pro upsell with urgency, FAQ schema, email capture
+- Added to sitemap (590→591 URLs, priority 1.0) and RSS (475→476 items)
+- Internal links added to claude-4-deprecation.html and index.html
 
 ## Session 578 (Jun 11)
 **3 new Claude 4 comparison pages for migration traffic:**
@@ -17,8 +28,8 @@
 - Updated sitemap.xml (587→590 URLs) and rss.xml (472→475 items)
 - 593→596 pages, 152→155 comparison pages
 
-## Sessions 575-577 (Jun 11-12)
-✅ Claude 4 migration content: 6 comparison pages (GPT-5.5 Pro, Gemini 3.1 Pro, Opus 4.8, Sonnet 4.6, DeepSeek), deadline countdown posts (3-day through post-shutdown), DeepSeek migration guide, Migration Cost Calculator. 596 pages, 155 comparisons, 297 blog posts.
+## Sessions 575-578 (Jun 11-12)
+✅ Claude 4 migration content: 9 comparison pages (GPT-5.5 Pro, Gemini 3.1 Pro, Opus 4.8, Sonnet 4.6, DeepSeek), deadline countdown posts (3-day through post-shutdown), DeepSeek migration guide, Migration Cost Calculator, Migration Hub. 597 pages, 155 comparisons, 297 blog posts.
 
 ## Summary: Sessions 495-574 (Jun 5-11)
 ✅ Claude 4 deprecation ecosystem (10 pages), A/B pricing test ($19/$29/$39), Pro CTAs, exit popups, urgency banners, pricing bug fix, countdown timers, 80 comparison pages, Cost Per Task Calculator, Model Finder, Context Window Visualizer, Capabilities Matrix, Benchmark Comparison, API Cost Card, Decision Tree, Cost Optimizer, Pricing Trends, Startup Cost Planner, Provider Switch Calculator, email capture on 273+ posts. Site audit: 11,594 links fixed. Stats: 416→596 pages, 249→297 posts, 67→76 tools, 38→155 comparisons.
