@@ -106,6 +106,18 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+    // Add "Cost Audit" link after Model Finder link
+    var hasAudit = navLinks.querySelector('a[href="cost-audit.html"]');
+    if (!hasAudit) {
+        var finderLinkEl = navLinks.querySelector('a[href="cheapest-model-finder.html"]');
+        if (finderLinkEl) {
+            var auditLink = document.createElement('a');
+            auditLink.href = 'cost-audit.html';
+            auditLink.textContent = 'Cost Audit';
+            finderLinkEl.parentNode.insertBefore(auditLink, finderLinkEl.nextSibling);
+        }
+    }
+
     // Add Badges link after API link
     var hasBadges = navLinks.querySelector('a[href="badges.html"]');
     if (!hasBadges) {

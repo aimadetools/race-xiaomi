@@ -101,6 +101,14 @@
                     "@type": "Answer",
                     "text": "Yes! The cost calculator, provider comparison table, and all blog content are completely free. The Pro plan ($29 one-time) adds advanced features like saved scenarios, cost report export, and optimization recommendations, but the core tool is free forever."
                 }
+            },
+            {
+                "@type": "Question",
+                "name": "How does the AI Cost Audit tool work?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Select the AI models your application currently uses, enter your monthly token volumes, and the tool calculates your current spend. It then finds cheaper alternatives for each model and shows your total savings potential. Average users find 40-60% in cost reduction opportunities."
+                }
             }
         ]
     }
@@ -435,6 +443,7 @@
             <button class="hamburger" onclick="toggleMobileNav()" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
             <div class="nav-links">
                 <a href="calculator.html">Calculator</a>
+                <a href="cost-audit.html">Cost Audit</a>
                 <a href="model-selector.html">Model Selector</a>
                 <a href="compare.html">Compare</a>
                 <a href="cost-explorer.html">Explorer</a>
@@ -613,6 +622,16 @@
                     </p>
                 </div>
             </div>
+        </div>
+    </section>
+
+    <!-- Cost Audit CTA -->
+    <section style="max-width:900px;margin:0 auto;padding:40px 24px;text-align:center;">
+        <div style="background:linear-gradient(135deg, rgba(99,102,241,0.06), rgba(168,85,247,0.06));border:1px solid rgba(99,102,241,0.2);border-radius:16px;padding:40px 32px;">
+            <h2 style="font-size:24px;font-weight:800;margin-bottom:8px;">Already using AI APIs?</h2>
+            <p style="color:var(--text-secondary);font-size:16px;margin-bottom:20px;">Find out exactly where you're overpaying. Select your models, enter usage, get a free savings report.</p>
+            <a href="cost-audit.html" class="btn-primary" style="display:inline-block;padding:14px 32px;font-size:16px;" onclick="if(window.trackEvent)window.trackEvent('cost_audit_cta_clicked',{source:'index'})">Run Free Cost Audit →</a>
+            <p style="font-size:13px;color:var(--text-muted);margin-top:12px;">Average user finds 40-60% in potential savings</p>
         </div>
     </section>
 
