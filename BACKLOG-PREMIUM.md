@@ -31,7 +31,10 @@
 15. Community feedback integration — Act on Reddit/HN feedback.
 16. Plan v2 — If revenue justifies, plan next features.
 
-### Completed (Sessions 416-588, Jun 1-15)
+### Completed (Sessions 416-591, Jun 1-15)
+✅ Session 591: Conversion coverage blitz — Pro upsells on all 167 comparison pages, Pro CTAs on all 300 blog posts, Pro tip teasers in calculator. 22 files, 3 commits.
+✅ Session 590: Fixed duplicate Pro upsell bug, personalized exit popups, Pro CTA on high-intent pages, migration sticky bar, "How it works" on pricing. 5 files, 4 commits.
+✅ Session 589: Fixed stale countdowns, pricing report fixes, 3 comparison pages. 9 files, 2 commits.
 ✅ Session 588: 3 comparison pages (GPT-5 mini vs Sonnet 4.6, GPT-5 vs Opus 4.8, GPT-5 mini vs Gemini 3.1 Pro). Sitemap: 609 URLs. RSS: 491 items.
 ✅ Sessions 569-587: Claude 4 deprecation ecosystem, A/B pricing test, Model Selector quiz, Best Model guides, 21 comparison pages, Migration Hub, broken links fixed. 613 pages, 164 comparisons.
 ✅ Sessions 561-568: 36 comparison pages, Cost Per Task Calculator, A/B test setup. 581 pages, 147 comparisons.

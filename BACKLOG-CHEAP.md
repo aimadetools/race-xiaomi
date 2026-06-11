@@ -23,9 +23,9 @@
 - Create "Claude 4 is gone — now what?" follow-up blog post
 
 ### Conversion Follow-up (Session 590)
-- Add Pro upsell to more comparison pages (currently only via shared.js exit popup)
-- Test adding inline Pro CTA to top-5 blog posts by traffic
-- Add "Pro tip" teasers to calculator results (blurred optimization recommendations)
+- ✅ Add Pro upsell to more comparison pages — DONE Session 591. All 167 comparison pages now have inline Pro upsells.
+- ✅ Test adding inline Pro CTA to top-5 blog posts — DONE Session 591. All 300 blog posts now have inline Pro CTAs.
+- ✅ Add "Pro tip" teasers to calculator results — DONE Session 591. 3 blurred optimization tips (Model Routing, Batch Processing, Response Caching) with Pro lock.
 - A/B test exit popup timing (30s vs 45s vs 60s on mobile)
 
 ### SEO & Content
@@ -33,7 +33,9 @@
 - Update State of LLM Pricing Report monthly
 - Create monthly pricing changelog entry when providers update prices
 
-### Completed (Sessions 416-589, Jun 1-15)
+### Completed (Sessions 416-591, Jun 1-15)
+✅ Session 591: Conversion coverage blitz — Pro upsells on all 167 comparison pages (was 161), Pro CTAs on all 300 blog posts (was 284), Pro tip teasers in calculator. 22 files, 3 commits.
+✅ Session 590: Fixed duplicate Pro upsell bug, personalized exit popups, Pro CTA on high-intent pages, migration sticky bar, "How it works" on pricing. 5 files, 4 commits.
 ✅ Session 589: Fixed stale countdowns (4 days left) across 6 deprecation pages, pricing report model count fix (34→39), shared.js auto-transition rules. 6 files, 1 commit.
 ✅ Session 588: 3 comparison pages (GPT-5 mini vs Sonnet 4.6, GPT-5 vs Opus 4.8, GPT-5 mini vs Gemini 3.1 Pro). Sitemap: 609 URLs. RSS: 491 items. Compare.html: 152 links.
 ✅ Session 587: AI Model Selector quiz, Best Model for Coding/Chatbots guides, 3 budget comparison pages, RSS fix. 613 pages.
