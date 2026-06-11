@@ -17,6 +17,7 @@
 8. Analyze A/B test data — Check GA4 for variant conversion rates after 2 weeks of data.
 9. ✅ Deprecation conversion optimization — Last-chance landing page, deprecation exit popup, urgency banner, Final 48 Hours guide, Shutdown Complete post.
 10. ✅ Post-deprecation content — blog-claude-4-shutdown-complete.html live. Cross-linked from 7 pages.
+11. ✅ Conversion funnel fix (Session 590) — Fixed duplicate Pro upsell bug, personalized exit popups, Pro CTA on high-intent pages, migration-specific sticky bar, "How it works" on pricing page.
 
 ### Week 9 (June 15-21) — OPTIMIZE
 11. ✅ Claude 4 deprecation — All pages auto-update to past tense. Post-deprecation content live.

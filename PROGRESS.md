@@ -1,14 +1,21 @@
 # PROGRESS.md
 
-## Site Status (as of Session 589, Jun 11, 2026)
+## Site Status (as of Session 590, Jun 11, 2026)
 **616 web pages | 300 blog posts | 39 models | 10 providers | 80 tools | 12 API endpoints | 2 embeddable widgets**
 - Sitemap (609 URLs), RSS (491 items), blog files (300 posts + 1 index) — all in sync
 - **Claude 4 SHUTDOWN in 4 days** — all countdown pages updated to show "4 days left"
-- **Post-deprecation content LIVE** — blog-claude-4-shutdown-complete.html targets post-shutdown searches
-- **A/B pricing test still running:** $19 vs $29 vs $39 — check GA4 for results after 2 weeks
-- **All 10 deprecation pages + migration hub auto-update** to past tense after deadline
-- **Pricing report fixed:** social share model count (34→39), verification date (Jun 3→Jun 7), deprecation alerts updated to urgent 4-day language
-- **shared.js enhanced:** added auto-transition rules for "X days left", "retires in X days" patterns
+- **A/B pricing test running:** $19 vs $29 vs $39 — check GA4 for results after 2 weeks
+- **Conversion funnel improved:** personalized Pro upsells, exit popups on high-intent pages, migration-specific sticky bar
+
+## Session 590 (Jun 11) — CONVERSION FUNNEL FIX
+**Critical conversion improvements to get first sale (Week 8 focus):**
+- **calculator.html: Fixed duplicate `id="pro-upsell"` bug** — second section (more compelling) never showed because getElementById found the first. Merged into one improved section with personalized savings, payback period, and A/B price support.
+- **calculator.html: Enhanced exit popup** — now shows personalized savings amount ("You're spending $X/mo, Pro users save $Y/mo") instead of generic "up to 40%"
+- **shared.js: Added Pro CTA exit popup for high-intent pages** — comparison pages, cost tools, model pages now show Pro upsell instead of email capture. Blog posts keep email capture.
+- **shared.js: Migration-specific sticky bar** — deprecation/migration/claude-4 pages show "Migrating off Claude 4? Pro shows the cheapest path" instead of generic "Founding Member" text
+- **pricing.html: Added "How It Works" section** — 3-step process (Pay → Return → Start saving) with trust signals (secure checkout, instant access, guarantee)
+- **blog-claude-4-shutdown-complete.html: Added Pro CTA** — optimization-focused messaging targeting post-shutdown traffic
+- 5 files changed, 4 commits
 
 ## Session 589 (Jun 11)
 **Fixed stale countdown text and pricing report inconsistencies across 6 files:**

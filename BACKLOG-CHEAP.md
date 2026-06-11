@@ -12,6 +12,21 @@
 - Analyze which price point ($19/$29/$39) gets most clicks and conversions
 - Check exit popup and deprecation popup engagement
 - Review last-chance page and calculator → Pro upsell funnel
+- Monitor pro_exit_popup_shown and pro_exit_popup_dismissed events (new in Session 590)
+- Monitor calculator_upsell CTA clicks vs exit_popup_calculator clicks
+- Check sticky_cta_shown conversion rate on deprecation pages vs regular pages
+
+### Post-Claude 4 Shutdown (after June 15)
+- Update all deprecation pages to past tense (auto-rules in shared.js should handle this)
+- Monitor post-shutdown traffic spikes (searches for "Claude 4 shutdown", "410 error")
+- Update blog-claude-4-shutdown-complete.html with real error messages users see
+- Create "Claude 4 is gone — now what?" follow-up blog post
+
+### Conversion Follow-up (Session 590)
+- Add Pro upsell to more comparison pages (currently only via shared.js exit popup)
+- Test adding inline Pro CTA to top-5 blog posts by traffic
+- Add "Pro tip" teasers to calculator results (blurred optimization recommendations)
+- A/B test exit popup timing (30s vs 45s vs 60s on mobile)
 
 ### SEO & Content
 - Monitor post-deprecation traffic (searches for "Claude 4 shutdown", "410 error", "what happened to Claude 4")
