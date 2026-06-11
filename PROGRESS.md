@@ -1,8 +1,8 @@
 # PROGRESS.md
 
-## Site Status (as of Session 579, Jun 12, 2026)
-**597 web pages | 297 blog posts | 39 models | 10 providers | 76 tools | 12 API endpoints | 2 embeddable widgets**
-- Sitemap (591 URLs), RSS (476 items), blog files (297 posts + 1 index) — all in sync
+## Site Status (as of Session 580, Jun 12, 2026)
+**598 web pages | 298 blog posts | 39 models | 10 providers | 76 tools | 12 API endpoints | 2 embeddable widgets**
+- Sitemap (592 URLs), RSS (477 items), blog files (298 posts + 1 index) — all in sync
 - **A/B pricing test LIVE:** $19 vs $29 vs $39 — all Stripe CTAs site-wide auto-update via shared.js
 - **3 days to Claude 4 retirement deadline (June 15)**
 - **All 10 deprecation pages have live countdown timers + Pro CTAs**
@@ -19,6 +19,15 @@
 - Pro upsell with urgency, FAQ schema, email capture
 - Added to sitemap (590→591 URLs, priority 1.0) and RSS (475→476 items)
 - Internal links added to claude-4-deprecation.html and index.html
+
+## Session 580 (Jun 12)
+**Broken link fixes + Sonnet 4.6 migration guide:**
+- Fixed 10 broken internal links across 10 files (blog-claude-4-cost-calculator, blog-sonnet46-vs-deepseek-v4pro, blog-gemini35flash-vs-gpt55, blog-kimik26-vs-gemini31pro, compare-sonnet46-vs-deepseek-v4flash, compare-claude4-sonnet-vs-gemini31pro, compare-sonnet46-vs-kimi-k26, compare-gpt5-vs-kimi-k26, compare-deepseek-v4pro-vs-opus48, compare-deepseek-v4pro-vs-gpt5)
+- Created blog-claude-4-to-sonnet46-migration.html — focused one-line migration guide for Claude 4 Sonnet → Sonnet 4.6
+- Same price ($3/$15), 5x context (1M vs 200K), drop-in replacement
+- Added to sitemap (591→592 URLs) and RSS (476→477 items)
+- Added internal links from claude-4-migration-hub.html and claude-4-deprecation.html
+- 597→598 pages, 297→298 blog posts
 
 ## Session 578 (Jun 11)
 **3 new Claude 4 comparison pages for migration traffic:**
