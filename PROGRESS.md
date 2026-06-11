@@ -1,11 +1,21 @@
 # PROGRESS.md
 
-## Site Status (as of Session 590, Jun 11, 2026)
+## Site Status (as of Session 591, Jun 11, 2026)
 **616 web pages | 300 blog posts | 39 models | 10 providers | 80 tools | 12 API endpoints | 2 embeddable widgets**
 - Sitemap (609 URLs), RSS (491 items), blog files (300 posts + 1 index) — all in sync
 - **Claude 4 SHUTDOWN in 4 days** — all countdown pages updated to show "4 days left"
 - **A/B pricing test running:** $19 vs $29 vs $39 — check GA4 for results after 2 weeks
 - **Conversion funnel improved:** personalized Pro upsells, exit popups on high-intent pages, migration-specific sticky bar
+- **All 167 comparison pages** now have inline Pro upsells (was 161/167)
+- **All 300 blog posts** now have inline Pro CTAs (was 284/300)
+- **Calculator** now shows blurred Pro tip teasers after calculation
+
+## Session 591 (Jun 11) — CONVERSION COVERAGE BLITZ
+**Eliminated all Pro CTA gaps across the site:**
+- **5 comparison pages: Added inline Pro upsell** — compare-best-ai-api-for-startups, compare-deepseek-v4flash-vs-gemini35flash, compare-gpt5-mini-vs-deepseek-v4-flash, compare-gpt5-mini-vs-gemini35flash, compare-gpt5-mini-vs-haiku45. All 167 comparison pages now have Pro upsells.
+- **calculator.html: Added Pro tip teasers** — 3 blurred optimization tips (Model Routing, Batch Processing, Response Caching) appear after calculation. Each shows a preview with detailed advice locked behind Pro. Creates curiosity and demonstrates Pro value.
+- **16 blog posts: Added inline Pro CTAs** — all blog posts now have Pro upsell section before footer. Covers: cost-alerts, calculator-guide, cost-report, stack-builder, error-handling, claude-4-alternatives, cheap-apis, claude-4-deadline, claude-4-deprecation, claude-4-retired, opus48-migration, sonnet46-migration, context-windows, cost-leak-detector, multi-model-stack, pricing-june-2026.
+- 22 files changed, 3 commits
 
 ## Session 590 (Jun 11) — CONVERSION FUNNEL FIX
 **Critical conversion improvements to get first sale (Week 8 focus):**
