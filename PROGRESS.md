@@ -1,38 +1,45 @@
 # PROGRESS.md
 
-## Site Status (as of Session 593, Jun 11, 2026)
-**617 web pages | 301 blog posts | 39 models | 10 providers | 80 tools | 12 API endpoints | 2 embeddable widgets**
-- Sitemap (610 URLs), RSS (492 items), blog files (301 posts + 1 index) — all in sync
-- **Claude 4 SHUTDOWN in 4 days** — all countdown pages updated to show "4 days left"
+## Site Status (as of Session 594, Jun 12, 2026)
+**618 web pages | 301 blog posts | 39 models | 10 providers | 80 tools | 12 API endpoints | 2 embeddable widgets**
+- Sitemap (611 URLs), RSS (493 items), blog files (301 posts + 1 index) — all in sync
+- **Claude 4 SHUTDOWN in 3 days** — all countdown pages updated to show "3 days left"
 - **A/B pricing test running:** $19 vs $29 vs $39 — check GA4 for results after 2 weeks
 - **A/B exit popup timing test running:** 30s vs 45s vs 60s on mobile — all popup events tagged with timing_variant
+- **NEW: AI Cost Audit tool** — 3-step interactive savings calculator, shows users where they're overpaying. Pro upsell for full optimization report.
 - **Conversion funnel improved:** personalized Pro upsells, context-aware sticky CTA bar, exit popups on high-intent pages
-- **All 167 comparison pages** now have inline Pro upsells (was 161/167)
-- **All 301 blog posts** now have inline Pro CTAs (was 284/300)
-- **Calculator** now shows blurred Pro tip teasers after calculation
+- **All 167 comparison pages** now have inline Pro upsells
+- **All 301 blog posts** now have inline Pro CTAs
+- **Calculator** shows blurred Pro tip teasers after calculation
+
+## Session 594 (Jun 12) — AI COST AUDIT TOOL
+**New interactive tool to drive Pro conversions:**
+- **cost-audit.html:** 3-step tool — select models → enter usage → get audit results
+- Step 1: Checkbox grid grouped by provider, 39 models with prices
+- Step 2: Token input fields with quick presets (1M/10M/100M), per-model remove
+- Step 3: Results page with current spend, optimized spend, savings breakdown
+  - Bar chart showing cost breakdown by model
+  - Cheaper alternatives ranked by savings (with context window compatibility check)
+  - Annual savings projection
+  - Blurred Pro optimization report gate (batch processing, caching, model routing, PDF export)
+- Cross-linked: calculator.html, pricing.html, index.html (CTA section), blog.html (featured tool), nav bar
+- Added FAQPage entry about cost audit to index.html
+- Updated sitemap (611 URLs), RSS (493 items)
+- 8 files changed, 1 commit
 
 ## Session 593 (Jun 11) — POST-SHUTDOWN BLOG POST
 **Created "Claude 4 Is Gone — Now What?" blog post for post-shutdown search traffic:**
-- **blog-claude-4-is-gone-now-what.html:** Strategic guide (not emergency) targeting "Claude 4 gone now what", "Claude 4 alternatives 2026", "cheapest Claude 4 replacement" queries
-- 15+ alternatives ranked by cost in comparison table (DeepSeek V4 Flash 99% cheaper → Claude Opus 4.8 67% cheaper)
-- 3 migration strategies: Go DeepSeek (97-99% savings), Stay Anthropic (50-67%), Mix & Match (model routing)
-- 5 cost optimization tips beyond switching models (batching, caching, trimming, structured outputs, max_tokens)
-- FAQPage schema (5 questions), code examples for each strategy, Pro upsells, email capture
-- Cross-linked from blog-claude-4-shutdown-complete.html (related posts), claude-4-migration-hub.html (POST-SHUTDOWN card), claude-4-post-deprecation.html (related resources)
-- Updated: blog.html (301 entries), rss.xml (492 items), sitemap.xml (610 URLs)
+- **blog-claude-4-is-gone-now-what.html:** Strategic guide targeting shutdown-related search queries
+- 15+ alternatives ranked by cost, 3 migration strategies, 5 optimization tips
+- FAQPage schema (5 questions), cross-linked from 3 pages
 - 7 files changed, 1 commit
 
 ## Session 592 (Jun 11) — CONVERSION A/B TESTS & PERSONALIZATION
-**Two conversion optimization improvements:**
-- **Exit popup timing A/B test (30s vs 45s vs 60s on mobile)** — New A/B test in shared.js assigns fast/medium/slow timing variant to each user. All 3 popup types (deprecation, high-intent Pro, email capture) now use variant-based mobile timer. All popup events (shown, dismissed, cta_clicked, signup) include timing_variant parameter for GA4 analysis. Calculator and pricing page exit popup events also tagged.
-- **Personalized sticky CTA bar by page context** — Calculator pages: "Done calculating? Pro shows how to cut those costs by 40%". Comparison pages: "Comparing models? Pro picks the cheapest for your exact workload". Cost tools: "Stop guessing — Pro gives data-driven cost optimization". CTA click events include context parameter for analysis.
+- Exit popup timing A/B test (30s vs 45s vs 60s on mobile), personalized sticky CTA bar by page context
 - 3 files changed, 2 commits
 
 ## Session 591 (Jun 11) — CONVERSION COVERAGE BLITZ
-**Eliminated all Pro CTA gaps across the site:**
-- **5 comparison pages: Added inline Pro upsell** — compare-best-ai-api-for-startups, compare-deepseek-v4flash-vs-gemini35flash, compare-gpt5-mini-vs-deepseek-v4-flash, compare-gpt5-mini-vs-gemini35flash, compare-gpt5-mini-vs-haiku45. All 167 comparison pages now have Pro upsells.
-- **calculator.html: Added Pro tip teasers** — 3 blurred optimization tips (Model Routing, Batch Processing, Response Caching) appear after calculation. Each shows a preview with detailed advice locked behind Pro. Creates curiosity and demonstrates Pro value.
-- **16 blog posts: Added inline Pro CTAs** — all blog posts now have Pro upsell section before footer. Covers: cost-alerts, calculator-guide, cost-report, stack-builder, error-handling, claude-4-alternatives, cheap-apis, claude-4-deadline, claude-4-deprecation, claude-4-retired, opus48-migration, sonnet46-migration, context-windows, cost-leak-detector, multi-model-stack, pricing-june-2026.
+- Pro upsells on all 167 comparison pages, Pro CTAs on all 301 blog posts, Pro tip teasers in calculator
 - 22 files changed, 3 commits
 
 ## Session 590 (Jun 11) — CONVERSION FUNNEL FIX
@@ -46,7 +53,7 @@
 - 5 files changed, 4 commits
 
 ## Summary: Sessions 495-589 (Jun 5-11)
-✅ Claude 4 deprecation ecosystem (13 pages incl. post-shutdown article), A/B pricing test ($19/$29/$39), Model Selector quiz, Best Model for Coding/Chatbots guides, 167 comparison pages (incl. GPT-5 mini vs Sonnet 4.6, GPT-5 vs Opus 4.8, GPT-5 mini vs Gemini 3.1 Pro). Site audit: 11,594 links fixed. Stats: 416→616 pages, 249→300 posts, 67→80 tools, 38→167 comparisons.
+✅ Claude 4 deprecation ecosystem (13 pages incl. post-shutdown article), A/B pricing test ($19/$29/$39), Model Selector quiz, Best Model for Coding/Chatbots guides, 167 comparison pages. Site audit: 11,594 links fixed. Stats: 416→616 pages, 249→300 posts, 67→80 tools, 38→167 comparisons.
 
 ## Summary: Sessions 1-494 (Apr 5 - Jun 5)
 494 sessions: Built full APIpulse from scratch. 416 pages, 249 posts, 39 models, 10 providers, 67 tools, 12 API endpoints, 2 widgets. Domain, Stripe, Pro, GA4, newsletter, Chrome extension, 38 comparison pages, FAQPage schema on ~260 pages, streaming toggle, State of LLM Pricing Report, Claude 4 deprecation ecosystem.
