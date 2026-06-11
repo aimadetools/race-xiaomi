@@ -167,6 +167,43 @@
         }
         .rec-compare:hover { text-decoration: underline; }
 
+        /* Pro Tip Teasers */
+        .pro-tips { margin-top: 20px; display: none; }
+        .pro-tips h3 { font-size: 15px; font-weight: 700; margin-bottom: 12px; color: var(--text-primary); }
+        .pro-tip-card {
+            background: var(--bg-card); border: 1px solid var(--border);
+            border-radius: 10px; padding: 14px 16px; margin-bottom: 10px;
+            position: relative; overflow: hidden;
+        }
+        .pro-tip-card .tip-title {
+            font-size: 14px; font-weight: 700; color: var(--text-primary);
+            margin-bottom: 4px; display: flex; align-items: center; gap: 8px;
+        }
+        .pro-tip-card .tip-title .tip-icon { font-size: 16px; }
+        .pro-tip-card .tip-preview {
+            font-size: 13px; color: var(--text-secondary); line-height: 1.5;
+        }
+        .pro-tip-card .tip-blur {
+            filter: blur(4px); user-select: none; pointer-events: none;
+            transition: filter 0.3s;
+        }
+        .pro-tip-card .tip-lock {
+            position: absolute; bottom: 0; left: 0; right: 0;
+            background: linear-gradient(transparent, var(--bg-primary) 70%);
+            padding: 20px 16px 14px; text-align: center;
+        }
+        .pro-tip-card .tip-lock a {
+            font-size: 12px; font-weight: 700; color: var(--accent);
+            text-decoration: none; display: inline-flex; align-items: center; gap: 4px;
+        }
+        .pro-tip-card .tip-lock a:hover { text-decoration: underline; }
+        .pro-tips-cta {
+            text-align: center; margin-top: 16px;
+            font-size: 13px; color: var(--text-secondary);
+        }
+        .pro-tips-cta a { color: var(--accent); font-weight: 700; text-decoration: none; }
+        .pro-tips-cta a:hover { text-decoration: underline; }
+
         .info-section {
             max-width: 700px; margin: 0 auto; padding: 40px 24px 60px;
         }
@@ -353,6 +390,28 @@
                     </div>
                     <div id="deprecation-warning" style="display:none;margin-top:12px;"></div>
                     <div id="savings-container"></div>
+                    <div class="pro-tips" id="pro-tips">
+                        <h3>💡 Optimization Tips</h3>
+                        <div class="pro-tip-card">
+                            <div class="tip-title"><span class="tip-icon">🔄</span> Model Routing</div>
+                            <div class="tip-preview">Use cheaper models for 80% of tasks, premium only for complex reasoning…</div>
+                            <div class="tip-blur" style="font-size:13px;color:var(--text-secondary);line-height:1.5;margin-top:4px;">Route simple queries to GPT-5 mini ($0.25/$2.00) and reserve Opus 4.8 ($5/$25) for complex tasks. Most teams save 60-70% with this strategy. Pro includes a personalized routing guide for your workload.</div>
+                            <div class="tip-lock"><a href="pricing.html" onclick="if(window.trackEvent)window.trackEvent('pro_button_clicked',{source:'calculator_tip_routing'})">Unlock with Pro →</a></div>
+                        </div>
+                        <div class="pro-tip-card">
+                            <div class="tip-title"><span class="tip-icon">📦</span> Batch Processing</div>
+                            <div class="tip-preview">Combine multiple API calls into batch requests to reduce overhead…</div>
+                            <div class="tip-blur" style="font-size:13px;color:var(--text-secondary);line-height:1.5;margin-top:4px;">Batch API calls reduce per-request overhead by 30-50%. Group similar tasks, use async processing, and implement request queuing. Pro shows exact batch sizes for your usage pattern.</div>
+                            <div class="tip-lock"><a href="pricing.html" onclick="if(window.trackEvent)window.trackEvent('pro_button_clicked',{source:'calculator_tip_batch'})">Unlock with Pro →</a></div>
+                        </div>
+                        <div class="pro-tip-card">
+                            <div class="tip-title"><span class="tip-icon">💾</span> Response Caching</div>
+                            <div class="tip-preview">Cache common API responses to avoid redundant calls…</div>
+                            <div class="tip-blur" style="font-size:13px;color:var(--text-secondary);line-height:1.5;margin-top:4px;">Implement semantic caching for repeated queries. Even 20% cache hit rate cuts costs significantly. Use embeddings-based similarity matching for fuzzy cache hits. Pro includes a caching implementation guide.</div>
+                            <div class="tip-lock"><a href="pricing.html" onclick="if(window.trackEvent)window.trackEvent('pro_button_clicked',{source:'calculator_tip_cache'})">Unlock with Pro →</a></div>
+                        </div>
+                        <p class="pro-tips-cta">These are just 3 of 12 optimization strategies. <a href="pricing.html" onclick="if(window.trackEvent)window.trackEvent('pro_button_clicked',{source:'calculator_tips_cta'})">Get Pro for the full guide →</a></p>
+                    </div>
                     <button onclick="copyResults()" style="margin-top:16px;width:100%;padding:10px 16px;border-radius:8px;border:1px solid var(--border);background:var(--bg-secondary);color:var(--text-primary);font-size:13px;font-weight:600;cursor:pointer;transition:all 0.2s;" onmouseover="this.style.borderColor='var(--accent)'" onmouseout="this.style.borderColor='var(--border)'">
                         <span id="copy-btn-text">Copy Results to Clipboard</span>
                     </button>
@@ -688,6 +747,12 @@
             }
 
             setTimeout(() => results.classList.remove('calculating'), 300);
+
+            // Show Pro tip teasers after first meaningful calculation
+            if (totalCost > 0) {
+                const proTips = document.getElementById('pro-tips');
+                if (proTips) proTips.style.display = 'block';
+            }
 
             // Show Pro upsell after first meaningful calculation
             if (totalCost > 0) {
