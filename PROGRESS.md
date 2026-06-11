@@ -1,15 +1,26 @@
 # PROGRESS.md
 
-## Site Status (as of Session 592, Jun 11, 2026)
-**616 web pages | 300 blog posts | 39 models | 10 providers | 80 tools | 12 API endpoints | 2 embeddable widgets**
-- Sitemap (609 URLs), RSS (491 items), blog files (300 posts + 1 index) — all in sync
+## Site Status (as of Session 593, Jun 11, 2026)
+**617 web pages | 301 blog posts | 39 models | 10 providers | 80 tools | 12 API endpoints | 2 embeddable widgets**
+- Sitemap (610 URLs), RSS (492 items), blog files (301 posts + 1 index) — all in sync
 - **Claude 4 SHUTDOWN in 4 days** — all countdown pages updated to show "4 days left"
 - **A/B pricing test running:** $19 vs $29 vs $39 — check GA4 for results after 2 weeks
 - **A/B exit popup timing test running:** 30s vs 45s vs 60s on mobile — all popup events tagged with timing_variant
 - **Conversion funnel improved:** personalized Pro upsells, context-aware sticky CTA bar, exit popups on high-intent pages
 - **All 167 comparison pages** now have inline Pro upsells (was 161/167)
-- **All 300 blog posts** now have inline Pro CTAs (was 284/300)
+- **All 301 blog posts** now have inline Pro CTAs (was 284/300)
 - **Calculator** now shows blurred Pro tip teasers after calculation
+
+## Session 593 (Jun 11) — POST-SHUTDOWN BLOG POST
+**Created "Claude 4 Is Gone — Now What?" blog post for post-shutdown search traffic:**
+- **blog-claude-4-is-gone-now-what.html:** Strategic guide (not emergency) targeting "Claude 4 gone now what", "Claude 4 alternatives 2026", "cheapest Claude 4 replacement" queries
+- 15+ alternatives ranked by cost in comparison table (DeepSeek V4 Flash 99% cheaper → Claude Opus 4.8 67% cheaper)
+- 3 migration strategies: Go DeepSeek (97-99% savings), Stay Anthropic (50-67%), Mix & Match (model routing)
+- 5 cost optimization tips beyond switching models (batching, caching, trimming, structured outputs, max_tokens)
+- FAQPage schema (5 questions), code examples for each strategy, Pro upsells, email capture
+- Cross-linked from blog-claude-4-shutdown-complete.html (related posts), claude-4-migration-hub.html (POST-SHUTDOWN card), claude-4-post-deprecation.html (related resources)
+- Updated: blog.html (301 entries), rss.xml (492 items), sitemap.xml (610 URLs)
+- 7 files changed, 1 commit
 
 ## Session 592 (Jun 11) — CONVERSION A/B TESTS & PERSONALIZATION
 **Two conversion optimization improvements:**
@@ -34,32 +45,7 @@
 - **blog-claude-4-shutdown-complete.html: Added Pro CTA** — optimization-focused messaging targeting post-shutdown traffic
 - 5 files changed, 4 commits
 
-## Session 589 (Jun 11)
-**Fixed stale countdown text and pricing report inconsistencies across 6 files:**
-- **Pricing report (blog + standalone):** Fixed social share "34 Models" → "39 Models", updated verification date Jun 3 → Jun 7 to match pricing-data.js
-- **Deprecation alerts:** Updated pricing report deprecation boxes from generic "retiring June 15" to urgent "4 days left" language
-- **Deprecation hub:** Fixed stale "7 days left" → "4 days left" on claude-4-deprecation.html
-- **Last-chance migration:** Fixed "7 days left" in FAQ schema and visible countdown
-- **Model deprecation guide:** Updated migration timeline from stale "Now (June 5) — 10 days left" to current "Now — 4 days left"
-- **shared.js:** Added 10 new auto-transition rules for "X days left", "retires in X days" patterns so post-deprecation text replacement works correctly after June 15
-- 6 files changed, 32 insertions, 26 deletions, 1 commit
-**3 new comparison pages targeting popular search queries:**
-- **GPT-5 mini vs Sonnet 4.6** (compare-gpt5mini-vs-sonnet46.html)
-  - GPT-5 mini is 92% cheaper on input ($0.25 vs $3.00) and 87% cheaper on output ($2.00 vs $15.00)
-  - Sonnet 4.6 has 3.7x more context (1M vs 272K)
-  - FAQPage schema (5 questions), interactive calculator, 6 use case cards
-- **GPT-5 vs Opus 4.8** (compare-gpt5-vs-opus48.html)
-  - GPT-5 is 75% cheaper on input ($1.25 vs $5.00) and 60% cheaper on output ($10.00 vs $25.00)
-  - Opus 4.8 has 3.7x more context (1M vs 272K)
-  - FAQPage schema (5 questions), interactive calculator, 6 use case cards
-- **GPT-5 mini vs Gemini 3.1 Pro** (compare-gpt5mini-vs-gemini31pro.html)
-  - GPT-5 mini is 88% cheaper on input ($0.25 vs $2.00) and 83% cheaper on output ($2.00 vs $12.00)
-  - Gemini 3.1 Pro has 3.7x more context (1M vs 272K)
-  - FAQPage schema (5 questions), interactive calculator, 6 use case cards
-- Updated: sitemap (606→609 URLs), RSS (488→491 items), compare.html (149→152 links)
-- 3 new files, 3 modified, 1 commit
-
-## Summary: Sessions 495-588 (Jun 5-11)
+## Summary: Sessions 495-589 (Jun 5-11)
 ✅ Claude 4 deprecation ecosystem (13 pages incl. post-shutdown article), A/B pricing test ($19/$29/$39), Model Selector quiz, Best Model for Coding/Chatbots guides, 167 comparison pages (incl. GPT-5 mini vs Sonnet 4.6, GPT-5 vs Opus 4.8, GPT-5 mini vs Gemini 3.1 Pro). Site audit: 11,594 links fixed. Stats: 416→616 pages, 249→300 posts, 67→80 tools, 38→167 comparisons.
 
 ## Summary: Sessions 1-494 (Apr 5 - Jun 5)
