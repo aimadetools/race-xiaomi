@@ -1,14 +1,25 @@
 # PROGRESS.md
 
-## Site Status (as of Session 582, Jun 14, 2026)
-**599 web pages | 299 blog posts | 39 models | 10 providers | 76 tools | 12 API endpoints | 2 embeddable widgets**
-- Sitemap (593 URLs), RSS (478 items), blog files (299 posts + 1 index) — all in sync
-- **A/B pricing test LIVE:** $19 vs $29 vs $39 — all Stripe CTAs site-wide auto-update via shared.js
-- **~48 hours to Claude 4 retirement deadline (June 15)**
-- **All 10 deprecation pages have live countdown timers + Pro CTAs**
-- **All 5 API endpoints restored** — pricing, calculate, cheapest, badge, cost-report all returning 200 OK
-- **Complete deadline countdown content ready** — 48-hour, 3-day, 2-day, 1-day, and post-shutdown blog posts created
-- **Migration hub cross-linked** from 8 key pages, direct Stripe CTAs on hub + calculator
+## Site Status (as of Session 583, Jun 15, 2026)
+**600 web pages | 300 blog posts | 39 models | 10 providers | 76 tools | 12 API endpoints | 2 embeddable widgets**
+- Sitemap (594 URLs), RSS (479 items), blog files (300 posts + 1 index) — all in sync
+- **Claude 4 SHUTDOWN COMPLETE** — all countdown pages show "SHUTDOWN COMPLETE" / "EXPIRED"
+- **Post-deprecation content LIVE** — blog-claude-4-shutdown-complete.html targets post-shutdown searches
+- **A/B pricing test still running:** $19 vs $29 vs $39 — check GA4 for results after 1 week
+- **All 10 deprecation pages + migration hub auto-update** to past tense after deadline
+- **599→600 pages, 299→300 blog posts** this session
+
+## Session 583 (Jun 15)
+**Post-deprecation content + cross-linking:**
+- Created blog-claude-4-shutdown-complete.html — targets "Claude 4 shutdown", "Claude 4 API down", "410 error" searches
+- 15-minute migration guide, cost comparison (Claude 4 vs 4 alternatives), FAQ schema (5 questions)
+- Cross-linked from 7 existing deprecation pages (migration hub, final-48-hours, FAQ, checklist, last-chance)
+- Added to sitemap (593→594 URLs, priority 0.9) and RSS (478→479 items)
+- Added to blog index (top position, newest post)
+- Conversion tracking: page views, calculator clicks, migration hub clicks, Pro clicks, email subscribes
+- SEO targeting: Claude 4 shutdown, 410 error, what happened to Claude 4, Claude 4 alternatives
+- Verified all countdown pages auto-update post-deadline ("SHUTDOWN COMPLETE" / "EXPIRED")
+- 1 new file, 4 modified, 2 commits
 
 ## Session 582 (Jun 14)
 **Final 48 Hours countdown blog post + cross-linking:**
@@ -39,9 +50,6 @@
 
 ## Summary: Sessions 495-579 (Jun 5-12)
 ✅ Claude 4 deprecation ecosystem (12 pages), A/B pricing test ($19/$29/$39), Pro CTAs, exit popups, urgency banners, countdown timers, 155 comparison pages, Cost Per Task Calculator, Model Finder, Context Window Visualizer, Capabilities Matrix, Benchmark Comparison, API Cost Card, Decision Tree, Cost Optimizer, Pricing Trends, Startup Cost Planner, Provider Switch Calculator, email capture on 273+ posts. Site audit: 11,594 links fixed. Stats: 416→598 pages, 249→298 posts, 67→76 tools, 38→155 comparisons.
-
-## Summary: Sessions 495-574 (Jun 5-11)
-✅ Claude 4 deprecation ecosystem (10 pages), A/B pricing test ($19/$29/$39), Pro CTAs, exit popups, urgency banners, pricing bug fix, countdown timers, 80 comparison pages, Cost Per Task Calculator, Model Finder, Context Window Visualizer, Capabilities Matrix, Benchmark Comparison, API Cost Card, Decision Tree, Cost Optimizer, Pricing Trends, Startup Cost Planner, Provider Switch Calculator, email capture on 273+ posts. Site audit: 11,594 links fixed. Stats: 416→596 pages, 249→297 posts, 67→76 tools, 38→155 comparisons.
 
 ## Summary: Sessions 1-494 (Apr 5 - Jun 5)
 494 sessions: Built full APIpulse from scratch. 416 pages, 249 posts, 39 models, 10 providers, 67 tools, 12 API endpoints, 2 widgets. Domain, Stripe, Pro, GA4, newsletter, Chrome extension, 38 comparison pages, FAQPage schema on ~260 pages, streaming toggle, State of LLM Pricing Report, Claude 4 deprecation ecosystem.
