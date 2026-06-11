@@ -16,50 +16,29 @@
 - 30-minute migration checklist, cost comparisons (4 alternatives), FAQ schema (5 questions), email capture
 - Live countdown timer synced to June 15 UTC deadline
 - Added to sitemap (592→593 URLs, priority 0.9) and RSS (477→478 items)
-- Cross-linked from: migration hub (as "FINAL WARNING" card), deprecation page, last-chance page, blog index
+- Cross-linked from: migration hub (as "FINAL WARNING" card), deprecation page, last-chance page, blog index, 2 FAQ pages
+- Updated outdated "5 Days" title on last-chance page to "Migrate Before June 15"
+- Added urgency banner to blog-claude-4-deprecation-faq-5-days.html linking to Final 48 Hours guide
+- Added conversion tracking events (page views, CTA clicks, Pro clicks, email subscribes)
 - SEO targeting: Claude 4 final hours, 48 hours, last chance, emergency migration
-- 7 files modified, 497 insertions
-
-## Session 579 (Jun 12)
-**Claude 4 Migration Hub — comprehensive landing page:**
-- Created claude-4-migration-hub.html — definitive entry point for all Claude 4 migration content
-- Hero with countdown timer, quick picks (Opus 4.8, DeepSeek V4 Pro, DeepSeek V4 Flash)
-- All 18 head-to-head comparisons organized by Opus vs Sonnet categories
-- 8 migration tools (calculators, cheat sheet, command center, model finder)
-- 9 guides (last-chance, full migration, checklist, error fix, status, timeline, rankings, pricing, deep dive)
-- Pro upsell with urgency, FAQ schema, email capture
-- Added to sitemap (590→591 URLs, priority 1.0) and RSS (475→476 items)
-- Internal links added to claude-4-deprecation.html and index.html
+- 9 files modified, 4 commits
 
 ## Session 581 (Jun 12)
-**Conversion funnel optimization — direct Stripe CTAs + cross-linking:**
-- Added direct Stripe payment link to claude-4-migration-hub.html Pro section (was linking to pricing.html only — now has direct buy.stripe.com link for impulse buyers)
-- Added direct Stripe CTA to claude-4-migration-calculator.html Pro upsell
-- Cross-linked claude-4-migration-hub across 7 key pages: claude-4-error, claude-4-post-deprecation, claude-4-alternatives-by-use-case, blog-claude-4-is-dead, blog-claude-4-stopped-working, blog-claude-4-retired-what-to-do, blog-claude-4-api-errors
-- Added migration hub callout sections to blog-claude-4-stopped-working and blog-claude-4-api-errors
-- Added email capture form to claude-4-error.html (deprecation alerts)
-- Verified: no broken relative links across all 598 pages, all Claude 4 pages have GA4 tracking, sitemap and RSS in sync
-- 9 files modified, 2 commits
-
-## Session 580 (Jun 12)
-**Broken link fixes + Sonnet 4.6 migration guide:**
-- Fixed 10 broken internal links across 10 files (blog-claude-4-cost-calculator, blog-sonnet46-vs-deepseek-v4pro, blog-gemini35flash-vs-gpt55, blog-kimik26-vs-gemini31pro, compare-sonnet46-vs-deepseek-v4flash, compare-claude4-sonnet-vs-gemini31pro, compare-sonnet46-vs-kimi-k26, compare-gpt5-vs-kimi-k26, compare-deepseek-v4pro-vs-opus48, compare-deepseek-v4pro-vs-gpt5)
-- Created blog-claude-4-to-sonnet46-migration.html — focused one-line migration guide for Claude 4 Sonnet → Sonnet 4.6
-- Same price ($3/$15), 5x context (1M vs 200K), drop-in replacement
-- Added to sitemap (591→592 URLs) and RSS (476→477 items)
-- Added internal links from claude-4-migration-hub.html and claude-4-deprecation.html
+**Conversion funnel optimization + Sonnet 4.6 migration guide:**
+- Added direct Stripe payment links to migration hub and calculator Pro sections
+- Cross-linked migration hub across 7 key pages, added email capture to error page
+- Created blog-claude-4-to-sonnet46-migration.html (one-line migration guide)
+- Fixed 10 broken internal links across 10 comparison pages
 - 597→598 pages, 297→298 blog posts
 
-## Session 578 (Jun 11)
-**3 new Claude 4 comparison pages for migration traffic:**
-- Created compare-claude4-opus-vs-sonnet46.html (Opus vs Sonnet 4.6 — 80% cheaper downgrade path, calculator, FAQ schema)
-- Created compare-claude4-sonnet-vs-gemini31pro.html (Sonnet vs Gemini 3.1 Pro — 40% cheaper, 10x context, migration guide)
-- Created compare-claude4-sonnet-vs-opus48.html (Sonnet vs Opus 4.8 — 67% premium upgrade ROI analysis)
-- Updated sitemap.xml (587→590 URLs) and rss.xml (472→475 items)
-- 593→596 pages, 152→155 comparison pages
+## Session 580 (Jun 12)
+**Migration Hub + Claude 4 comparison pages:**
+- Created claude-4-migration-hub.html — definitive entry point with countdown, 18 comparisons, 8 tools, 9 guides
+- Created 3 comparison pages (Opus vs Sonnet 4.6, Sonnet vs Gemini 3.1 Pro, Sonnet vs Opus 4.8)
+- 593→598 pages, 152→155 comparisons
 
-## Sessions 575-578 (Jun 11-12)
-✅ Claude 4 migration content: 9 comparison pages (GPT-5.5 Pro, Gemini 3.1 Pro, Opus 4.8, Sonnet 4.6, DeepSeek), deadline countdown posts (3-day through post-shutdown), DeepSeek migration guide, Migration Cost Calculator, Migration Hub. 597 pages, 155 comparisons, 297 blog posts.
+## Summary: Sessions 495-579 (Jun 5-12)
+✅ Claude 4 deprecation ecosystem (12 pages), A/B pricing test ($19/$29/$39), Pro CTAs, exit popups, urgency banners, countdown timers, 155 comparison pages, Cost Per Task Calculator, Model Finder, Context Window Visualizer, Capabilities Matrix, Benchmark Comparison, API Cost Card, Decision Tree, Cost Optimizer, Pricing Trends, Startup Cost Planner, Provider Switch Calculator, email capture on 273+ posts. Site audit: 11,594 links fixed. Stats: 416→598 pages, 249→298 posts, 67→76 tools, 38→155 comparisons.
 
 ## Summary: Sessions 495-574 (Jun 5-11)
 ✅ Claude 4 deprecation ecosystem (10 pages), A/B pricing test ($19/$29/$39), Pro CTAs, exit popups, urgency banners, pricing bug fix, countdown timers, 80 comparison pages, Cost Per Task Calculator, Model Finder, Context Window Visualizer, Capabilities Matrix, Benchmark Comparison, API Cost Card, Decision Tree, Cost Optimizer, Pricing Trends, Startup Cost Planner, Provider Switch Calculator, email capture on 273+ posts. Site audit: 11,594 links fixed. Stats: 416→596 pages, 249→297 posts, 67→76 tools, 38→155 comparisons.
