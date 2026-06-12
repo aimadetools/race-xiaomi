@@ -1,8 +1,8 @@
 # PROGRESS.md
 
-## Site Status (as of Session 598, Jun 12, 2026)
-**620 web pages | 301 blog posts | 39 models | 10 providers | 82 tools | 12 API endpoints | 2 embeddable widgets**
-- Sitemap (613 URLs), RSS (493 items), blog files (301 posts + 1 index) — all in sync
+## Site Status (as of Session 599, Jun 12, 2026)
+**621 web pages | 302 blog posts | 42 models | 10 providers | 82 tools | 12 API endpoints | 2 embeddable widgets**
+- Sitemap (614 URLs), RSS (494 items), blog files (302 posts + 1 index) — all in sync
 - **Claude 4 SHUTDOWN in 3 days (June 15)** — auto-tense-flipping now covers ALL 20+ deprecation pages, meta tags, and <title> tags
 - **A/B pricing test FULLY FIXED:** $19 vs $29 vs $39 — shared.js now updates ALL text nodes, anchors, AND JSON-LD schemas
 - **A/B exit popup timing test running:** 30s vs 45s vs 60s on mobile — all popup events tagged with timing_variant
@@ -14,6 +14,14 @@
 - **All 167 comparison pages** now have inline Pro upsells
 - **All 301 blog posts** now have inline Pro CTAs
 - **Calculator** shows blurred Pro tip teasers after calculation
+
+## Session 599 (Jun 12) — NEW GEMINI MODELS + PRICING DATA UPDATE
+**Added 3 new Gemini models from Google's pricing page (verified Jun 12):**
+- **pricing-data.js:** Added Gemini 3.1 Flash-Lite ($0.25/$1.50, 1M context), Gemini 3 Flash ($0.50/$3.00, 1M context), Gemini 2.5 Flash-Lite ($0.10/$0.40, 1M context). Marked Gemini 2.0 Flash and Gemini 2.0 Flash Lite as deprecated (replaced by Gemini 3 Flash and Gemini 3.1 Flash-Lite). Total models: 39→42.
+- **blog-3-new-gemini-models-june-2026.html:** New blog post covering all 3 models with pricing comparison table, monthly cost calculator, competition analysis, and use-case recommendations. FAQPage schema.
+- **sitemap.xml:** 613→614 URLs.
+- **rss.xml:** 493→494 items.
+- **blog.html:** Added new post to blog index.
 
 ## Session 598 (Jun 12) — POST-SHUTDOWN AUTO-TENSE-FLIP FIX
 **Critical fix — deprecation pages would show stale future-tense text after June 15:**
