@@ -1,6 +1,6 @@
 # PROGRESS.md
 
-## Site Status (as of Session 602, Jun 12, 2026)
+## Site Status (as of Session 604, Jun 12, 2026)
 **621 web pages | 302 blog posts | 42 models | 10 providers | 82 tools | 12 API endpoints | 2 embeddable widgets**
 - Sitemap (614 URLs), RSS (494 items), blog files (302 posts + 1 index) — all in sync
 - **Claude 4 SHUTDOWN in 3 days (June 15)** — auto-tense-flipping covers ALL 20+ deprecation pages, meta tags, and <title> tags
@@ -33,6 +33,18 @@
 - Verified index page stats (621 pages, 302 posts, 42 models, 82 tools, 167 comparisons) all correct
 - Verified deprecation banner shows "3 days left" countdown correctly
 - No broken internal links found on key pages
+
+## Session 604 (Jun 12) — STALE DATA AUDIT + SEO FRESHNESS
+- Fixed stale "39" model count references across 29 HTML files (39→42 in titles, meta tags, JSON-LD, visible content)
+- Fixed tools.html: tool count 78→82 in title, meta description, og:description, and h1
+- Fixed changelog.html: tool count 71→82
+- Fixed pricing page: social proof stats (39→42 models, 301→302 guides)
+- Fixed claude-4-deprecation.html: title and meta tags (39→42 alternatives)
+- Fixed claude-4-migration-tool.html: meta description and JSON-LD (39→42 alternatives)
+- Fixed claude-4-migration-hub.html, claude-4-migration-command-center.html, state-of-llm-pricing-q2-2026.html
+- Fixed blog-ai-api-pricing-june-2026.html: FAQ schema model count
+- Fixed DIRECTORY-SUBMISSIONS.md: model count 39→42
+- Total: 29 files fixed, 3 commits
 
 ## Session 601 (Jun 12) — CONVERSION: TRIAL BUTTONS + PRICING PAGE IMPROVEMENTS
 - Added "Try Free for 24h" trial buttons to 6 high-traffic pages: calculator, cost-optimizer, savings-calculator, cost-audit, claude-4-migration-calculator, pricing
