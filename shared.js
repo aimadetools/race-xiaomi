@@ -107,6 +107,22 @@ updateThemeIcon();
     });
 })();
 
+// A/B Test: Gated recommendations — show 1 free alternative vs 0 free (calculator only)
+(function(){
+    var KEY = 'ab_gated_recs';
+    var VARIANTS = {show_1: 1, show_0: 0};
+    var variant = localStorage.getItem(KEY);
+    if (!variant || !VARIANTS[variant]) {
+        variant = Math.random() < 0.5 ? 'show_1' : 'show_0';
+        localStorage.setItem(KEY, variant);
+    }
+    window._abGatedRecs = VARIANTS[variant];
+    window._abGatedRecsVariant = variant;
+    document.addEventListener('DOMContentLoaded', function() {
+        if (window.trackEvent) window.trackEvent('ab_gated_recs_assigned', {variant: variant, free_count: VARIANTS[variant]});
+    });
+})();
+
 // Mobile nav toggle
 function toggleMobileNav() {
     const navLinks = document.querySelector('.nav-links');

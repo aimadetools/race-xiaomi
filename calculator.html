@@ -854,13 +854,14 @@
                 efficiencyContainer.style.display = 'none';
             }
 
-            // Recommended alternatives — gate behind Pro
+            // Recommended alternatives — gate behind Pro (A/B: show 1 free vs 0 free)
             const savingsContainer = document.getElementById('savings-container');
             const allRecs = typeof getRecommendations === 'function' ? getRecommendations(provider, inputTokens, outputTokens, requests, days, 5) : [];
             const isPro = typeof isProUser === 'function' ? isProUser() : false;
+            const freeCount = typeof window._abGatedRecs !== 'undefined' ? window._abGatedRecs : 1;
 
             if (allRecs.length > 0) {
-                const visibleRecs = isPro ? allRecs : allRecs.slice(0, 1);
+                const visibleRecs = isPro ? allRecs : allRecs.slice(0, freeCount);
                 const hiddenCount = allRecs.length - visibleRecs.length;
 
                 let html = '<div class="recommendations"><h3>Recommended For You</h3>';
@@ -869,8 +870,12 @@
                 });
 
                 if (hiddenCount > 0 && !isPro) {
-                    html += '<div class="pro-gated-rec" onclick="window.location.href=\'pricing.html\'">';
-                    html += '<div class="gated-count">🔒 ' + hiddenCount + ' more savings opportunities</div>';
+                    html += '<div class="pro-gated-rec" onclick="if(window.trackEvent)window.trackEvent(\'pro_gated_rec_click\',{variant:window._abGatedRecsVariant||\'show_1\',hidden_count:' + hiddenCount + '});window.location.href=\'pricing.html\'">';
+                    if (visibleRecs.length > 0) {
+                        html += '<div class="gated-count">🔒 ' + hiddenCount + ' more savings opportunities</div>';
+                    } else {
+                        html += '<div class="gated-count">🔒 ' + hiddenCount + ' cheaper alternatives available</div>';
+                    }
                     html += '<div class="gated-text">Pro users see all alternatives ranked by savings + personalized optimization plan</div>';
                     html += '</div>';
                 }
