@@ -216,6 +216,26 @@
         <div class="post-card">
             <div class="post-meta">
                 <span class="post-tag">Claude 4 Migration</span>
+                <span>June 13, 2026</span>
+            </div>
+            <h2><a href="blog-claude-4-last-chance-2-days.html">Claude 4 Last Chance — 2 Days Until API Shutdown</a></h2>
+            <p>Claude 4 shuts down in 2 days. Last chance to migrate — compare 42 alternatives, calculate your savings, and switch before June 15. Most devs save 67-97%.</p>
+            <a href="blog-claude-4-last-chance-2-days.html" class="read-more">Migrate now →</a>
+        </div>
+
+        <div class="post-card">
+            <div class="post-meta">
+                <span class="post-tag">Claude 4 Migration</span>
+                <span>June 14, 2026</span>
+            </div>
+            <h2><a href="blog-claude-4-last-chance-1-day.html">Claude 4 Last Chance — 1 Day Until API Shutdown</a></h2>
+            <p>Claude 4 shuts down tomorrow. Final chance to migrate — 30-minute checklist, cost comparisons across 42 alternatives, and savings calculator. Don't get caught.</p>
+            <a href="blog-claude-4-last-chance-1-day.html" class="read-more">Migrate now →</a>
+        </div>
+
+        <div class="post-card">
+            <div class="post-meta">
+                <span class="post-tag">Claude 4 Migration</span>
                 <span>June 10, 2026</span>
             </div>
             <h2><a href="blog-claude-4-deprecation-faq-5-days.html">Claude 4 Deprecation FAQ — 5 Days Until Shutdown (June 2026)</a></h2>
@@ -3324,6 +3344,32 @@
     <button class="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">↑</button>
 
     </main>
+
+    <script>
+    // Hide future-dated blog posts — countdown posts auto-appear on their date
+    (function(){
+        var today = new Date();
+        today.setHours(0,0,0,0);
+        document.querySelectorAll('.post-card').forEach(function(card){
+            var meta = card.querySelector('.post-meta');
+            if (!meta) return;
+            var spans = meta.querySelectorAll('span');
+            // Date is typically the second span (after the tag)
+            for (var i = 0; i < spans.length; i++) {
+                var text = spans[i].textContent.trim();
+                var match = text.match(/^(January|February|March|April|May|June|July|August|September|October|November|December)\s+(\d{1,2}),\s+(\d{4})$/);
+                if (match) {
+                    var postDate = new Date(match[1] + ' ' + match[2] + ', ' + match[3]);
+                    postDate.setHours(0,0,0,0);
+                    if (postDate > today) {
+                        card.style.display = 'none';
+                    }
+                    break;
+                }
+            }
+        });
+    })();
+    </script>
 
     <footer>
         <p>Pricing data last verified: <span class="verified-date"></span></p>
