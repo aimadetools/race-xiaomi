@@ -56,7 +56,7 @@
                 "name": "Is GPT-oss or Llama 4 cheaper?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "It depends on the model size. GPT-oss 20B is the cheapest option at $0.08/M input and $0.35/M output. Llama 4 Scout costs $0.11/M input and $0.34/M output. At the 120B/Scout tier, GPT-oss 120B ($0.15/$0.60) is 25% cheaper on input than Llama 4 Maverick ($0.20/$0.60) with identical output pricing."
+                    "text": "It depends on the model size. GPT-oss 20B is the cheapest option at $0.08/M input and $0.35/M output. Llama 4 Scout costs $0.18/M input and $0.34/M output. At the 120B/Scout tier, GPT-oss 120B ($0.15/$0.60) is 25% cheaper on input than Llama 4 Maverick ($0.20/$0.60) with identical output pricing."
                 }
             },
             {
@@ -194,7 +194,7 @@
         <div class="lineup-grid">
             <div class="lineup-card"><div class="model">GPT-oss 20B</div><div class="detail">OpenAI &middot; 128K context &middot; Smallest & cheapest</div><div class="price">$0.08 / $0.35 per 1M</div></div>
             <div class="lineup-card"><div class="model">GPT-oss 120B</div><div class="detail">OpenAI &middot; 128K context &middot; Best quality</div><div class="price">$0.15 / $0.60 per 1M</div></div>
-            <div class="lineup-card"><div class="model">Llama 4 Scout</div><div class="detail">Meta (Together.ai) &middot; 10M context &middot; Long-context king</div><div class="price">$0.11 / $0.34 per 1M</div></div>
+            <div class="lineup-card"><div class="model">Llama 4 Scout (1M context) &middot; Long-context king</div><div class="price">$0.18 / $0.34 per 1M</div></div>
             <div class="lineup-card"><div class="model">Llama 4 Maverick</div><div class="detail">Meta (Together.ai) &middot; 1M context &middot; Balanced quality</div><div class="price">$0.20 / $0.60 per 1M</div></div>
         </div>
     </div>
@@ -202,7 +202,7 @@
         <table class="quick-table">
             <thead><tr><th>Specification</th><th>GPT-oss 120B (OpenAI)</th><th>Llama 4 Scout (Meta)</th></tr></thead>
             <tbody>
-                <tr><td>Input Price (per 1M tokens)</td><td class="pricier">$0.15</td><td class="cheaper">$0.11</td></tr>
+                <tr><td>Input Price (per 1M tokens)</td><td class="pricier">$0.15</td><td class="cheaper">$0.18</td></tr>
                 <tr><td>Output Price (per 1M tokens)</td><td>$0.60</td><td class="cheaper">$0.34</td></tr>
                 <tr><td>Context Window</td><td>128K tokens</td><td class="cheaper">10M tokens</td></tr>
                 <tr><td>Tier</td><td>Budget</td><td>Budget</td></tr>
@@ -261,7 +261,7 @@
     <div class="use-cases">
         <h2>Which Model for Which Use Case?</h2>
         <div class="use-case-grid">
-            <div class="use-case-card"><h3>Long-Context Document Analysis</h3><p>Llama 4 Scout's 10M context window lets you process entire codebases, legal documents, or multi-hour transcripts in a single pass — no chunking required.</p><div class="recommendation"><span class="pick-llama">Better value: Llama 4 Scout</span></div></div>
+            <div class="use-case-card"><h3>Long-Context Document Analysis</h3><p>Llama 4 Scout (1M context) window lets you process entire codebases, legal documents, or multi-hour transcripts in a single pass — no chunking required.</p><div class="recommendation"><span class="pick-llama">Better value: Llama 4 Scout</span></div></div>
             <div class="use-case-card"><h3>Complex Reasoning & Code</h3><p>GPT-oss 120B's training on OpenAI methodology gives it an edge on multi-step reasoning, code generation, and instruction following.</p><div class="recommendation"><span class="pick-gpt">Better value: GPT-oss 120B</span></div></div>
             <div class="use-case-card"><h3>High-Volume Chatbots</h3><p>Both are affordable, but Llama 4 Scout is 43% cheaper on output ($0.34 vs $0.60) — making it the better choice for conversational workloads at scale.</p><div class="recommendation"><span class="pick-llama">Better value: Llama 4 Scout</span></div></div>
             <div class="use-case-card"><h3>Self-Hosting at Scale</h3><p>GPT-oss 20B runs on a single GPU, while Llama 4 Scout needs an H100. For budget self-hosting with moderate quality, GPT-oss 20B wins.</p><div class="recommendation"><span class="pick-gpt">Better value: GPT-oss 20B</span></div></div>
@@ -280,7 +280,7 @@
     </div>
     <div class="faq-section">
         <h2>Frequently Asked Questions</h2>
-        <div class="faq-item"><h3>Is GPT-oss or Llama 4 cheaper?</h3><p>It depends on the model size. GPT-oss 20B is the cheapest at $0.08/M input and $0.35/M output. Llama 4 Scout costs $0.11/M input and $0.34/M output. At the 120B tier, GPT-oss 120B is 25% cheaper on input ($0.15 vs $0.20) with identical output pricing to Llama 4 Maverick.</p></div>
+        <div class="faq-item"><h3>Is GPT-oss or Llama 4 cheaper?</h3><p>It depends on the model size. GPT-oss 20B is the cheapest at $0.08/M input and $0.35/M output. Llama 4 Scout costs $0.18/M input and $0.34/M output. At the 120B tier, GPT-oss 120B is 25% cheaper on input ($0.15 vs $0.20) with identical output pricing to Llama 4 Maverick.</p></div>
         <div class="faq-item"><h3>What is the context window difference?</h3><p>GPT-oss models have 128K token context windows. Llama 4 Scout has 10M tokens — 78x larger. Llama 4 Maverick has 1M tokens (8x larger). Llama 4's context advantage is massive for document-heavy workloads.</p></div>
         <div class="faq-item"><h3>Can I self-host both?</h3><p>Yes, both are open-source. GPT-oss 20B needs ~1x A100 80GB; 120B needs ~4x A100s. Llama 4 Scout needs ~1x H100 80GB; Maverick needs 2-4x H100s. Self-hosting eliminates per-token costs but requires GPU infrastructure.</p></div>
         <div class="faq-item"><h3>Which has better quality?</h3><p>GPT-oss 120B generally outperforms Llama 4 Scout on reasoning, code generation, and instruction following. Llama 4 Scout excels at long-context tasks thanks to its 10M window. Maverick is competitive with GPT-oss 120B on most benchmarks.</p></div>
