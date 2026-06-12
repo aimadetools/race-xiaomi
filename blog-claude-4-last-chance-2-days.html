@@ -33,6 +33,7 @@
     <script src="dynamic-date.js" defer></script>
     <script src="shared.js" defer></script>
     <script src="pricing-data.js" defer></script>
+    <script src="pro-features.js" defer></script>
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -360,7 +361,10 @@ llm = Anthropic(model="claude-opus-4-8")  # was "claude-4-opus"</code></pre>
                 <h3>Track All Model Deprecations Automatically</h3>
                 <p>APIpulse Pro monitors 42 models across 10 providers and alerts you before any price change or deprecation.</p>
             </div>
-            <a href="pricing.html">Get Pro — $29 →</a>
+            <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap;">
+                <a href="pricing.html">Get Pro — $29 →</a>
+                <button onclick="startTrial();if(window.trackEvent)window.trackEvent('trial_started',{source:'last-chance-2days'});" style="padding:8px 16px;font-size:13px;font-weight:600;border:2px solid var(--accent);background:transparent;color:var(--accent);border-radius:8px;cursor:pointer;transition:all 0.2s;white-space:nowrap;" onmouseover="this.style.background='rgba(99,102,241,0.1)'" onmouseout="this.style.background='transparent'">Try Free 24h</button>
+            </div>
         </div>
 
         <h2>Related Reading</h2>
