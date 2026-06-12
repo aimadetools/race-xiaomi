@@ -91,6 +91,14 @@
                     "@type": "Answer",
                     "text": "5 proven strategies: 1) Use multi-model routing (budget models for simple tasks, premium for complex). 2) Implement prompt caching to reduce input tokens. 3) Set max_tokens limits to control output costs. 4) Use batch processing for non-time-sensitive tasks. 5) Monitor usage with APIpulse's cost calculator to catch overspending early. These strategies combined can reduce costs by 40-70%."
                 }
+            },
+            {
+                "@type": "Question",
+                "name": "What is a Cost Efficiency Score?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "APIpulse's Cost Efficiency Score is an A-F grade that shows how cost-efficient your current AI API setup is. It compares your current model cost to the cheapest available alternative for the same workload. An A grade (90%+ efficiency) means you're already using a cost-effective model. An F grade (<30% efficiency) means you could save 70%+ by switching. The calculator shows your score instantly with a visual progress bar and specific savings recommendations."
+                }
             }
         ]
     }
@@ -154,7 +162,7 @@
 
             <div class="cta-inline">
                 <p><strong>Try our free AI API Cost Calculator</strong></p>
-                <p>Get instant cost estimates for 42 models across 10 providers. No signup required.</p>
+                <p>Get instant cost estimates for 42 models across 10 providers. See your <strong>Cost Efficiency Score</strong> (A-F grade) and discover how much you could save. No signup required.</p>
                 <a href="calculator.html" class="btn-primary" onclick="if(window.trackEvent)window.trackEvent('cta_clicked',{source:'blog_cost_calculator_guide'})">Open Calculator →</a>
             </div>
 
@@ -248,12 +256,12 @@
                 <li><strong>Prompt caching:</strong> Many providers offer cache discounts for repeated prompts. Send the same system prompt once, cache it, and only pay for new content.</li>
                 <li><strong>Output length limits:</strong> Set <code>max_tokens</code> to prevent runaway output costs. Most responses don't need 4,096 tokens — 512 is often enough.</li>
                 <li><strong>Batch processing:</strong> Non-time-sensitive tasks can use batch APIs at 50% discount from OpenAI and similar providers.</li>
-                <li><strong>Monitor and alert:</strong> Track your daily spend. Set alerts at 50% and 80% of your budget to catch overspending early.</li>
+                <li><strong>Monitor and alert:</strong> Track your daily spend. Set alerts at 50% and 80% of your budget to catch overspending early. Use APIpulse's <strong>Cost Efficiency Score</strong> to see at a glance how cost-efficient your setup is (A = great, F = overpaying).</li>
             </ol>
 
             <div class="cta-inline">
                 <p><strong>Ready to optimize your costs?</strong></p>
-                <p>Our free calculator models all 42 AI models with your exact usage pattern. Find the cheapest option for your workload in seconds.</p>
+                <p>Our free calculator models all 42 AI models with your exact usage pattern. Get your <strong>Cost Efficiency Score</strong> and find the cheapest option for your workload in seconds.</p>
                 <a href="calculator.html" class="btn-primary" onclick="if(window.trackEvent)window.trackEvent('cta_clicked',{source:'blog_cost_calculator_guide_bottom'})">Calculate Your Costs →</a>
             </div>
 
@@ -289,7 +297,7 @@
     <!-- Pro Upsell -->
     <div style="max-width:700px;margin:0 auto 48px;padding:32px;background:var(--bg-card);border:1px solid var(--accent);border-radius:12px;text-align:center;">
         <h2 style="font-size:24px;margin-bottom:8px;">Need deeper cost analysis?</h2>
-        <p style="color:var(--text-secondary);margin-bottom:20px;">APIpulse Pro lets you compare all 42 models, save scenarios, and export PDF reports.</p>
+        <p style="color:var(--text-secondary);margin-bottom:20px;">APIpulse Pro shows all alternatives ranked by savings, your Cost Efficiency Score with detailed breakdown, and lets you export PDF reports.</p>
         <a href="pricing.html" class="btn-primary" onclick="if(window.trackEvent)window.trackEvent('pro_button_clicked',{source:'blog_cost_calculator_guide'})">Get Pro — $29 one-time</a>
     </div>
 
