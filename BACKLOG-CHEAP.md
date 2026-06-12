@@ -19,11 +19,13 @@
 - Monitor pro_gated_rec clicks — are users clicking the "X more savings opportunities" teaser?
 
 ### Post-Calculator Upgrade (Session 605 follow-ups)
-- ✅ Add Cost Efficiency Score to cost-optimizer.html and savings-calculator.html for consistency — DONE Session 606
-- ✅ Add "Efficiency Score" section to pro.html — DONE Session 606 (added to Pro benefits list)
-- ✅ Update blog posts that reference the calculator to mention the efficiency score — DONE Session 607 (5 high-traffic posts updated)
-- ✅ Add efficiency score to calculator's share text — DONE Session 606 (copy + X/LinkedIn shares)
-- ✅ A/B test the gated recommendations — DONE Session 608 (show_1 vs show_0, 50/50 split, tracks pro_gated_rec_click)
+- ✅ Add Cost Efficiency Score to cost-optimizer.html and savings-calculator.html — DONE Session 606
+- ✅ Add "Efficiency Score" section to pro.html — DONE Session 606
+- ✅ Update blog posts with efficiency score mentions — DONE Session 607 (5 posts)
+- ✅ Add efficiency score to calculator share text — DONE Session 606
+- ✅ A/B test gated recommendations — DONE Session 608
+- ✅ Add trial buttons to deprecation ecosystem pages — DONE Session 610 (8 pages)
+- ✅ Add Pro upsell to survival kit page — DONE Session 610
 - Test calculator on mobile — verify efficiency score and gated recommendations display correctly
 
 ### Post-Claude 4 Shutdown (after June 15)
@@ -38,8 +40,9 @@
 - ✅ Update State of LLM Pricing Report monthly — DONE Session 602 (model count 39→42, FAQ, meta, dateModified)
 - Create monthly pricing changelog entry when providers update prices
 
-### Completed (Sessions 416-609, Jun 1-12)
-✅ Session 609: Added dynamic user counter to hero (social proof). NEW Claude 4 Survival Kit landing page (quick fix + 5 cheapest alternatives). Linked from migration hub and index. Updated sitemap. 4 commits.
+### Completed (Sessions 416-610, Jun 1-12)
+✅ Session 610: Added Pro upsell to survival kit page (dynamic pricing, trial button, cost comparison). Added trial buttons to 8 deprecation/migration pages. Fixed meta tense on survival kit. 3 commits.
+✅ Session 609: Added dynamic user counter to hero (social proof). NEW Claude 4 Survival Kit landing page. Linked from migration hub and index. Updated sitemap. 4 commits.
 ✅ Session 608: A/B test for gated recommendations (show_1 vs show_0). Fixed stale model count in context-window-visualizer. Fixed stale May→June 2026 dates in 5 blog posts. Unified founding member counter across 9 pages (deterministic formula). 4 commits.
 ✅ Session 607: Cost Efficiency Score mentions added to 5 high-traffic blog posts (calculator guide, mistakes, comparison tool, budget, health check). FAQ schema updated. 1 commit.
 ✅ Session 606: Cost Efficiency Score added to cost-optimizer.html and savings-calculator.html. Efficiency grade added to calculator share text (copy + X/LinkedIn). Pro benefits list updated. 2 commits.
