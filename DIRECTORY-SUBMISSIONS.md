@@ -16,7 +16,7 @@
   - **Name:** APIpulse
   - **URL:** https://getapipulse.com
   - **Tagline:** Know your AI API costs before you commit
-  - **Description:** Free AI API cost calculator and budget planner. Compare pricing across 39 models from 10 providers (OpenAI, Anthropic, Google, DeepSeek, Mistral, Meta, xAI, Cohere, Moonshot, AI21). Calculate monthly spend, find the cheapest model for your use case, and optimize costs by up to 40%.
+  - **Description:** Free AI API cost calculator and budget planner. Compare pricing across 42 models from 10 providers (OpenAI, Anthropic, Google, DeepSeek, Mistral, Meta, xAI, Cohere, Moonshot, AI21). Calculate monthly spend, find the cheapest model for your use case, and optimize costs by up to 40%.
   - **Category:** Developer Tools
   - **Pricing:** Free / $29 one-time Pro
 
@@ -30,7 +30,7 @@
 - **Copy:**
   - **Name:** APIpulse
   - **URL:** https://getapipulse.com
-  - **Description:** Compare LLM API pricing across 39 models and 10 providers. Interactive cost calculator, budget planner, and optimization recommendations. Free to use.
+  - **Description:** Compare LLM API pricing across 42 models and 10 providers. Interactive cost calculator, budget planner, and optimization recommendations. Free to use.
   - **Category:** Developer Tools / AI
 
 ### 4. TopAI.tools
@@ -78,7 +78,7 @@
 - **Copy:**
   - **Name:** APIpulse
   - **URL:** https://getapipulse.com
-  - **Tagline:** AI API cost calculator — 39 models, 10 providers
+  - **Tagline:** AI API cost calculator — 42 models, 10 providers
   - **Description:** Compare LLM API pricing, calculate monthly spend, and find the cheapest model for your use case. Free tools for developers building with AI APIs.
 
 ### 11. StackShare
@@ -98,14 +98,14 @@
 - **Section:** Machine Learning
 - **Entry (add to table after "Groq"):**
   ```
-  | [APIpulse](https://getapipulse.com/api/pricing) | Free AI API pricing data for 39 models across 10 providers with embeddable widgets | No | Yes | Yes |
+  | [APIpulse](https://getapipulse.com/api/pricing) | Free AI API pricing data for 42 models across 10 providers with embeddable widgets | No | Yes | Yes |
   ```
 - **PR Title:** Add APIpulse — Free AI API pricing data
 - **PR Description:**
   ```
   ## Adding APIpulse
 
-  **APIpulse** provides free, no-auth REST API access to AI API pricing data for 39 models across 10 providers (OpenAI, Anthropic, Google, DeepSeek, Mistral, Cohere, Meta, Moonshot, xAI, AI21).
+  **APIpulse** provides free, no-auth REST API access to AI API pricing data for 42 models across 10 providers (OpenAI, Anthropic, Google, DeepSeek, Mistral, Cohere, Meta, Moonshot, xAI, AI21).
 
   - **Endpoint:** https://getapipulse.com/api/pricing
   - **Docs:** https://getapipulse.com/api-docs.html
@@ -120,13 +120,13 @@
 - **Repo:** https://github.com/awesome-chatgpt/awesome-chatgpt
 - **Stars:** 127K+ (highest reach)
 - **Action:** Fork, add to "Tools" section, submit PR
-- **Entry:** `- [APIpulse](https://getapipulse.com) - Compare LLM API pricing across 39 models from 10 providers. Free cost calculator, budget planner, and embeddable widgets.`
+- **Entry:** `- [APIpulse](https://getapipulse.com) - Compare LLM API pricing across 42 models from 10 providers. Free cost calculator, budget planner, and embeddable widgets.`
 - **PR Title:** Add APIpulse — LLM pricing comparison and cost calculator
 - **PR Description:**
   ```
   Adding **APIpulse** — a free AI API pricing comparison tool.
 
-  - Compare pricing across 39 models from 10 providers
+  - Compare pricing across 42 models from 10 providers
   - Interactive cost calculator and budget planner
   - Free REST API with no auth required
   - Embeddable widgets for docs and READMEs
@@ -137,12 +137,12 @@
 - **Repo:** https://github.com/Hannibal046/Awesome-LLM
 - **Stars:** Popular LLM resource list
 - **Action:** Fork, add to "Tools" section, submit PR
-- **Entry:** `- [APIpulse](https://getapipulse.com) — Free LLM API pricing comparison across 39 models and 10 providers. Cost calculator, budget planner, embeddable widgets.`
+- **Entry:** `- [APIpulse](https://getapipulse.com) — Free LLM API pricing comparison across 42 models and 10 providers. Cost calculator, budget planner, embeddable widgets.`
 
 ### 14. awesome-ai-tools
 - **URL:** https://github.com/mahseema/awesome-ai-tools
 - **Action:** Fork, add to "Developer Tools" section, submit PR
-- **Entry:** `- [APIpulse](https://getapipulse.com) — Compare LLM API pricing across 39 models and 10 providers. Free cost calculator and budget planner.`
+- **Entry:** `- [APIpulse](https://getapipulse.com) — Compare LLM API pricing across 42 models and 10 providers. Free cost calculator and budget planner.`
 
 ### 15. awesome-developer-tools
 - **URL:** https://github.com/agamm/awesome-developer-tools
@@ -170,9 +170,9 @@
 
 ### 19. Hacker News (Show HN)
 - **URL:** https://news.ycombinator.com/submit
-- **Title:** Show HN: APIpulse – Free AI API cost calculator (39 models, 10 providers)
+- **Title:** Show HN: APIpulse – Free AI API cost calculator (42 models, 10 providers)
 - **URL:** https://getapipulse.com
-- **Comment:** I built APIpulse to help developers compare LLM API pricing across providers. It has 39 models from 10 providers, interactive cost calculators, and budget planning tools. Free to use, Pro is $29 one-time. Happy to answer questions about the pricing data.
+- **Comment:** I built APIpulse to help developers compare LLM API pricing across providers. It has 42 models from 10 providers, interactive cost calculators, and budget planning tools. Free to use, Pro is $29 one-time. Happy to answer questions about the pricing data.
 
 ### 20. RapidAPI Hub
 - **URL:** https://rapidapi.com/hub
