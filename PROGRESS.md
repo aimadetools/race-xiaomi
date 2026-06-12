@@ -23,6 +23,17 @@
 - Added real API error response examples to Claude 4 shutdown blog post (Python, Node.js, curl)
 - Note: Some blog posts still reference Gemini 2.0 Flash Lite as cheapest in varied phrasings — left as-is to avoid breaking structured content
 
+## Session 603 (Jun 12) — CROSS-LINKS + STALE DATA CLEANUP
+- Cross-linked "Shutdown Complete" blog post from 8 key deprecation pages (was 0 inbound links)
+- Updated pricing verification date: Jun 5 → Jun 12 in dynamic-date.js
+- Fixed stale "39 models" → "42 models" across all HTML files (blog index, pricing report, tool pages)
+- Fixed stale "39 alternatives" → "42 alternatives" across 300+ blog posts
+- Fixed stale comparison counts: 142/164 → 167 across 58 comparison pages
+- Fixed shutdown complete blog comparison count: 155 → 167
+- Verified index page stats (621 pages, 302 posts, 42 models, 82 tools, 167 comparisons) all correct
+- Verified deprecation banner shows "3 days left" countdown correctly
+- No broken internal links found on key pages
+
 ## Session 601 (Jun 12) — CONVERSION: TRIAL BUTTONS + PRICING PAGE IMPROVEMENTS
 - Added "Try Free for 24h" trial buttons to 6 high-traffic pages: calculator, cost-optimizer, savings-calculator, cost-audit, claude-4-migration-calculator, pricing
 - Added pro-features.js script tag to all 6 pages
@@ -39,8 +50,8 @@
 ## Session 599 (Jun 12) — 3 NEW GEMINI MODELS
 - Added Gemini 3.1 Flash-Lite, Gemini 3 Flash, Gemini 2.5 Flash-Lite to pricing-data.js. Marked Gemini 2.0 models deprecated. 42 models total. New blog post. Sitemap/RSS updated.
 
-## Summary: Sessions 490-598 (Jun 10-12)
-✅ Conversion blitz: Why Pro page, savings calculator, pricing page upgrade, index hero fix, cost-audit tool, A/B pricing fix (TreeWalker + JSON-LD), exit popup timing A/B (30s/45s/60s), personalized sticky CTA, Pro upsells on 167 comparisons + 301 blog posts. Post-shutdown blog, deprecation ecosystem (20+ pages). Auto-tense-flip for ALL deprecation/migration pages. 50+ files changed, 15 commits.
+## Summary: Sessions 490-603 (Jun 10-12)
+✅ Conversion blitz: Why Pro page, savings calculator, pricing page upgrade, index hero fix, cost-audit tool, A/B pricing fix (TreeWalker + JSON-LD), exit popup timing A/B (30s/45s/60s), personalized sticky CTA, Pro upsells on 167 comparisons + 301 blog posts. Post-shutdown blog, deprecation ecosystem (20+ pages). Auto-tense-flip for ALL deprecation/migration pages. 50+ files changed, 15 commits. Session 603: Cross-linked shutdown complete blog, fixed stale model/comparison counts across 400+ files.
 
 ## Summary: Sessions 1-489 (Apr 5 - Jun 10)
 489 sessions: Built full APIpulse from scratch. 616 pages, 300 posts, 39 models, 10 providers, 80 tools, 12 API endpoints, 2 widgets. Domain, Stripe, Pro, GA4, newsletter, Chrome extension, 167 comparison pages, FAQPage schema on ~260 pages, streaming toggle, State of LLM Pricing Report, Claude 4 deprecation ecosystem (13 pages), A/B pricing test, Model Selector quiz, Best Model guides. Site audit: 11,594 links fixed.

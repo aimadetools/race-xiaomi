@@ -33,12 +33,8 @@
 15. Community feedback integration — Act on Reddit/HN feedback.
 16. Plan v2 — If revenue justifies, plan next features.
 
-### Completed (Sessions 416-602, Jun 1-15)
-✅ Session 602: Updated model count 39→42 across 391 HTML files. Fixed pricing report (meta, FAQ, dateModified). Fixed pricing page model count. Updated cheapest model references. 391 files, 1 commit.
-✅ Session 600: Monthly pricing verification — fixed Mistral Small 4 (0.15→0.10), marked Jamba 1.5 deprecated, re-verified 8 models. Updated 66 files. 1 commit.
-✅ Session 599: Added 3 new Gemini models to pricing-data.js (3.1 Flash-Lite, 3 Flash, 2.5 Flash-Lite). Marked Gemini 2.0 models deprecated. Created blog post. Updated sitemap/RSS/blog index. 42 models total. 4 files, 1 commit.
-✅ Session 598: Auto-tense-flipping fix — extended to ALL deprecation/migration pages, meta descriptions, <title> tags. 1 file, 2 commits.
-✅ Sessions 590-597: A/B pricing fix, cost-audit tool, post-shutdown blog, exit popup timing A/B, conversion coverage blitz (167 comparisons + 301 blog posts), duplicate Pro upsell fix, Why Pro page, savings calculator, pricing page upgrade. 50 files, 13 commits.
-✅ Sessions 561-589: 60 comparison pages, Cost Per Task Calculator, A/B test setup, Claude 4 deprecation ecosystem (13 pages), Model Selector quiz, Best Model guides, Migration Hub, broken links fixed. 617 pages, 167 comparisons.
-✅ Sessions 416-560: Full APIpulse built from scratch. 377→502 pages, 232→291 posts, 34→39 models, 58→75 tools, 12 API endpoints, 2 widgets.
+### Completed (Sessions 416-603, Jun 1-15)
+✅ Session 603: Cross-linked shutdown complete blog from 8 deprecation pages. Fixed stale 39→42 model counts and 142/164→167 comparison counts across 400+ files. 5 commits.
+✅ Sessions 490-602: Model count 39→42, 3 new Gemini models, pricing verification, auto-tense-flip, trial buttons, A/B pricing/exit popup tests, conversion blitz. 50+ files, 15 commits.
+✅ Sessions 416-589: Full APIpulse built from scratch. 617 pages, 301 posts, 80 tools, 167 comparisons.
 ✅ Sessions 1-415: Built full APIpulse. Domain, Stripe, Pro, GA4, newsletter, Chrome extension, 35 comparison pages, FAQPage schema on ~260 pages.
