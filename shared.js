@@ -238,10 +238,14 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-// Claude 4 Deprecation Blog Text Auto-Transition (flips future→past tense on June 15)
+// Claude 4 Deprecation Text Auto-Transition (flips future→past tense on June 15)
+// Covers blog posts, comparison pages, AND dedicated deprecation/migration pages
 document.addEventListener('DOMContentLoaded', () => {
     var path = window.location.pathname;
-    if (!path.includes('blog-claude-4-') && !path.includes('compare-')) return;
+    // Match: blog-claude-4-*, compare-*, claude-4-*, *migration*, cost-migration
+    var isDepPage = path.includes('blog-claude-4-') || path.includes('compare-') ||
+        path.includes('claude-4-') || path.includes('migration') || path.includes('cost-migration');
+    if (!isDepPage) return;
     var deadline = new Date('2026-06-15T00:00:00Z');
     if (new Date() < deadline) return;
     var replacements = [
@@ -266,8 +270,16 @@ document.addEventListener('DOMContentLoaded', () => {
         ['retire June 15', 'retired June 15'],
         ['retire on June 15', 'retired on June 15'],
         ['retire on', 'retired on'],
+        ['Retiring June 15', 'Retired June 15'],
         ['must migrate before June 15', 'should have migrated before June 15'],
         ['must migrate', 'should have migrated'],
+        ['Bookmark before June 15', 'The deadline has passed — bookmark for reference'],
+        ['Save 67-97% before June 15', 'Save 67-97% — Claude 4 has been retired'],
+        ['Get the checklist before June 15', 'Get the checklist — the deadline has passed'],
+        ['Migrate Before June 15', 'Migrated — June 15 has passed'],
+        ['migrate before June 15', 'migrated — June 15 has passed'],
+        ['before June 15', '— the June 15 deadline has passed'],
+        ['before the June 15', '— the June 15 deadline has passed'],
         ['You have 10 days', 'The deadline has passed'],
         ['You have 9 days', 'The deadline has passed'],
         ['You have 8 days', 'The deadline has passed'],
@@ -285,12 +297,26 @@ document.addEventListener('DOMContentLoaded', () => {
         ['1 day left', 'deadline has passed'],
         ['4 days until deadline', 'deadline has passed'],
         ['4 days until Claude 4', 'Claude 4 has been retired since June 15'],
+        ['3 days until Claude 4', 'Claude 4 has been retired since June 15'],
+        ['2 days until Claude 4', 'Claude 4 has been retired since June 15'],
+        ['1 day until Claude 4', 'Claude 4 has been retired since June 15'],
         ['retires in 4 days', 'was retired on June 15'],
         ['retires in 3 days', 'was retired on June 15'],
         ['retires in 2 days', 'was retired on June 15'],
         ['retires in 1 day', 'was retired on June 15'],
+        ['retires in 10 days', 'was retired on June 15'],
+        ['retires in 9 days', 'was retired on June 15'],
+        ['retires in 8 days', 'was retired on June 15'],
+        ['retires in 7 days', 'was retired on June 15'],
+        ['retires in 6 days', 'was retired on June 15'],
+        ['retires in 5 days', 'was retired on June 15'],
         ['6 days to Claude 4 retirement', 'Claude 4 has been retired since June 15'],
         ['6 days to deprecation', 'Claude 4 was deprecated on June 15'],
+        ['Claude 4 retires June 15', 'Claude 4 was retired on June 15'],
+        ['Claude 4 Retirement Countdown', 'Claude 4 Was Retired on June 15'],
+        ['Retirement in', 'Retirement occurred on June 15 —'],
+        ['After June 15,', 'Since June 15,'],
+        ['After this date,', 'Since June 15,'],
     ];
     // Update text nodes in body (skip script/style tags)
     var walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, {
@@ -320,6 +346,22 @@ document.addEventListener('DOMContentLoaded', () => {
             if (changed) s.textContent = text;
         } catch(e) {}
     });
+    // Update <title> tag for SEO — flip "Retiring" → "Retired", "Last Chance" → etc.
+    var titleReplacements = [
+        ['Retiring June 15', 'Retired June 15'],
+        ['Last Chance — Migrate Before June 15', 'Retired — Migrate Now'],
+        ['Migrate Before June 15 Shutdown', 'Migration Guide — Claude 4 Retired'],
+        ['— 39 Cheaper Alternatives Compared', '— 39 Alternatives (Retired)'],
+        ['Claude 4 Deprecation Guide', 'Claude 4 Retirement Guide'],
+        ['Claude 4 Is Retiring June 15', 'Claude 4 Was Retired June 15'],
+        ['Retirement Countdown', 'Retirement Complete'],
+    ];
+    var title = document.title;
+    var titleChanged = false;
+    titleReplacements.forEach(function(r) {
+        if (title.indexOf(r[0]) !== -1) { title = title.split(r[0]).join(r[1]); titleChanged = true; }
+    });
+    if (titleChanged) document.title = title;
 });
 
 // Update deprecated Claude 4 model IDs in code examples across ALL blog posts (after June 15)
