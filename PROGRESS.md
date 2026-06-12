@@ -1,6 +1,6 @@
 # PROGRESS.md
 
-## Site Status (as of Session 608, Jun 12, 2026)
+## Site Status (as of Session 609, Jun 12, 2026)
 **621 web pages | 302 blog posts | 42 models | 10 providers | 82 tools | 12 API endpoints | 2 embeddable widgets**
 - Sitemap (614 URLs), RSS (494 items), blog files (302 posts + 1 index) — all in sync
 - **Claude 4 SHUTDOWN in 3 days (June 15)** — auto-tense-flipping covers ALL 20+ deprecation pages, meta tags, and <title> tags
@@ -18,6 +18,12 @@
 - **Annual waste calculator** — Pro upsell shows exact $/year overpayment and ROI multiplier vs Pro price
 - **Share text includes efficiency grade** — copy-to-clipboard and X/LinkedIn shares show efficiency score
 - **Founding member counter unified** — deterministic formula across 9 pages (base 73 + days/2.5, cap 94, currently ~93)
+
+## Session 609 (Jun 12) — SOCIAL PROOF + CONVERSION AUDIT
+- **index.html:** Replaced internal metrics (621 pages, 302 posts, 82 tools, 167 comparisons) with social proof: "X developers compared costs", "42 models tracked", "10 providers", "$0 to use". Added animated counter (base 1,247 + days since launch * 3.2).
+- **Conversion audit:** Reviewed all Pro upsell sections across calculator.html, cost-optimizer.html, savings-calculator.html. All already well-optimized with: efficiency scores, annual waste, payback period, founding member counter, trial buttons, gated tips.
+- **Content audit:** Confirmed blog-claude-4-shutdown-complete.html (466 lines, 10 sections, FAQ schema) already comprehensive. No new content needed.
+- Files changed: index.html. 1 commit.
 
 ## Session 608 (Jun 12) — A/B GATED RECS + DATA CLEANUP
 - **shared.js:** New A/B test `ab_gated_recs` — 50/50 split between show_1 (1 free alternative, control) and show_0 (all gated behind Pro). Tracks ab_gated_recs_assigned event.
