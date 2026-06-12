@@ -74,14 +74,28 @@ function startTrial() {
     localStorage.setItem('apipulse_pro_trial', 'true');
     localStorage.setItem('apipulse_pro_trial_expiry', expiry.toISOString());
     localStorage.setItem('apipulse_pro_date', new Date().toISOString());
-    unlockProFeatures();
+    try { unlockProFeatures(); } catch(e) {}
     if (typeof calculate === 'function') calculate();
     if (window.trackEvent) window.trackEvent('pro_trial_started');
+    // Show trial activated message
+    showTrialMessage();
+}
+
+function showTrialMessage() {
+    if (document.getElementById('trial-activated-msg')) return;
+    var msg = document.createElement('div');
+    msg.id = 'trial-activated-msg';
+    msg.style.cssText = 'position:fixed;top:80px;left:50%;transform:translateX(-50%);background:linear-gradient(135deg,#22c55e,#16a34a);color:white;padding:16px 28px;border-radius:12px;font-size:15px;font-weight:700;z-index:10000;box-shadow:0 8px 30px rgba(34,197,94,0.4);animation:fadeIn 0.3s ease;max-width:90vw;text-align:center;';
+    msg.innerHTML = '✅ Free trial activated! Pro features unlocked for 24 hours. <a href="pricing.html" style="color:white;text-decoration:underline;">Get lifetime access →</a>';
+    document.body.appendChild(msg);
+    setTimeout(function() { msg.style.opacity = '0'; msg.style.transition = 'opacity 0.5s'; setTimeout(function() { msg.remove(); }, 500); }, 5000);
 }
 
 function unlockProFeatures() {
-    document.getElementById('pro-gate').style.display = 'none';
-    document.getElementById('pro-content').style.display = 'block';
+    var gate = document.getElementById('pro-gate');
+    var content = document.getElementById('pro-content');
+    if (gate) gate.style.display = 'none';
+    if (content) content.style.display = 'block';
 }
 
 function lockProFeatures() {

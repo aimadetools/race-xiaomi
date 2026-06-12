@@ -31,6 +31,7 @@
     <script src="dynamic-date.js" defer></script>
     <script src="shared.js" defer></script>
     <script src="pricing-data.js" defer></script>
+    <script src="pro-features.js" defer></script>
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -499,7 +500,8 @@
                 '<span class="feature">Caching strategies</span>' +
                 '<span class="feature">PDF export</span>' +
                 '</div>' +
-                '<a href="pricing.html" class="btn-primary">Get Pro — $29 lifetime</a>' +
+                '<a href="pricing.html" class="btn-primary">Get Pro — $29 lifetime</a> ' +
+                '<button onclick="startTrial()" style="display:inline-block;padding:12px 20px;font-size:13px;font-weight:600;border:2px solid var(--accent);background:transparent;color:var(--accent);border-radius:10px;cursor:pointer;margin-top:8px;">Try Free for 24h →</button>' +
                 '<p style="font-size:12px;color:var(--text-muted);margin-top:12px;">Pays for itself in ' + (monthlySavings > 0 ? Math.ceil(29 / monthlySavings) : '—') + ' month' + (monthlySavings > 29 ? '' : 's') + '</p>' +
                 '</div>';
         }

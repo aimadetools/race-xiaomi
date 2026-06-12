@@ -1,16 +1,24 @@
 # PROGRESS.md
 
-## Site Status (as of Session 600, Jun 12, 2026)
+## Site Status (as of Session 601, Jun 12, 2026)
 **621 web pages | 302 blog posts | 42 models | 10 providers | 82 tools | 12 API endpoints | 2 embeddable widgets**
 - Sitemap (614 URLs), RSS (494 items), blog files (302 posts + 1 index) — all in sync
 - **Claude 4 SHUTDOWN in 3 days (June 15)** — auto-tense-flipping covers ALL 20+ deprecation pages, meta tags, and <title> tags
 - **A/B pricing test FULLY FIXED:** $19 vs $29 vs $39 — shared.js updates ALL text nodes, anchors, AND JSON-LD schemas
 - **A/B exit popup timing test running:** 30s vs 45s vs 60s on mobile — all events tagged with timing_variant
 - **Pricing data verified Jun 12:** Mistral Small 4 corrected ($0.15→$0.10), Jamba 1.5 deprecated, 8 models re-verified
-- **Why Pro page** — Dedicated conversion page with ROI calculator, Free vs Pro comparison, 4 use case cards
-- **Savings Calculator** — 2-step interactive tool, select model → enter usage → see savings + alternatives
 - **Conversion funnel:** personalized Pro upsells, context-aware sticky CTA bar, exit popups on high-intent pages
 - **All 167 comparison pages + 302 blog posts** have inline Pro CTAs
+- **NEW: Trial buttons** added to calculator, cost-optimizer, savings-calculator, cost-audit, migration-calculator, pricing pages — "Try Free for 24h" prominently displayed alongside Pro CTAs
+- **pro-features.js upgraded:** startTrial() now works on all pages (graceful fallback if no Pro gate), shows animated success toast
+
+## Session 601 (Jun 12) — CONVERSION: TRIAL BUTTONS + PRICING PAGE IMPROVEMENTS
+- Added "Try Free for 24h" trial buttons to 6 high-traffic pages: calculator, cost-optimizer, savings-calculator, cost-audit, claude-4-migration-calculator, pricing
+- Added pro-features.js script tag to all 6 pages
+- Upgraded startTrial() in pro-features.js: graceful fallback when pro-gate/pro-content elements missing, animated trial activation toast
+- Added fadeIn animation to styles.css
+- Pricing page: trial button added below Pro CTA with "No Card Needed" messaging
+- Calculator: trial button added in upsell section alongside existing Pro CTA
 
 ## Session 600 (Jun 12) — PRICING VERIFICATION + MISTRAL SMALL 4 FIX
 - **pricing-data.js:** Mistral Small 4 corrected $0.15/$0.60 → $0.10/$0.30. Jamba 1.5 deprecated. 8 models re-verified.

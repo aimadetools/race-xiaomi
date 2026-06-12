@@ -31,6 +31,7 @@
     <script src="dynamic-date.js" defer></script>
     <script src="shared.js" defer></script>
     <script src="pricing-data.js" defer></script>
+    <script src="pro-features.js" defer></script>
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -449,7 +450,10 @@
                     <span style="font-size:16px;">🔥</span>
                     <span><strong class="founding-spots">73</strong> of 100 founding member spots claimed — price goes up to $49 when they're gone</span>
                 </div>
-                <a href="https://buy.stripe.com/fZu7sL3Gw3GS0RQeoDeEo0a" class="btn-primary" style="display:inline-block;padding:14px 40px;" target="_blank" rel="noopener" onclick="if(window.trackEvent)window.trackEvent('pro_button_clicked',{source:'cost_optimizer'})">Get Pro — $29 One-Time</a>
+                <div style="display:flex;gap:10px;flex-wrap:wrap;justify-content:center;align-items:center;">
+                    <a href="https://buy.stripe.com/fZu7sL3Gw3GS0RQeoDeEo0a" class="btn-primary" style="display:inline-block;padding:14px 40px;" target="_blank" rel="noopener" onclick="if(window.trackEvent)window.trackEvent('pro_button_clicked',{source:'cost_optimizer'})">Get Pro — $29 One-Time</a>
+                    <button onclick="startTrial();if(window.trackEvent)window.trackEvent('trial_started',{source:'cost_optimizer'});" style="display:inline-block;padding:14px 24px;font-size:14px;font-weight:600;border:2px solid var(--accent);background:transparent;color:var(--accent);border-radius:10px;cursor:pointer;transition:all 0.2s;" onmouseover="this.style.background='rgba(99,102,241,0.1)'" onmouseout="this.style.background='transparent'">Try Free for 24h →</button>
+                </div>
                 <p style="font-size:13px;color:var(--text-muted);margin-top:12px;">14-day money-back guarantee. Lifetime access.</p>
             </div>
 
