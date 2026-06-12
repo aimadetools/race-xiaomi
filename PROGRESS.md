@@ -1,6 +1,6 @@
 # PROGRESS.md
 
-## Site Status (as of Session 605, Jun 12, 2026)
+## Site Status (as of Session 606, Jun 12, 2026)
 **621 web pages | 302 blog posts | 42 models | 10 providers | 82 tools | 12 API endpoints | 2 embeddable widgets**
 - Sitemap (614 URLs), RSS (494 items), blog files (302 posts + 1 index) — all in sync
 - **Claude 4 SHUTDOWN in 3 days (June 15)** — auto-tense-flipping covers ALL 20+ deprecation pages, meta tags, and <title> tags
@@ -11,9 +11,10 @@
 - **All 167 comparison pages + 302 blog posts** have inline Pro CTAs
 - **Trial buttons** added to calculator, cost-optimizer, savings-calculator, cost-audit, migration-calculator, pricing pages — "Try Free for 24h" prominently displayed alongside Pro CTAs
 - **pro-features.js upgraded:** startTrial() now works on all pages (graceful fallback if no Pro gate), shows animated success toast
-- **NEW: Cost Efficiency Score** — visual A-F grade in calculator showing how optimized the user's model choice is. Free shows grade + top 1 alternative; Pro shows ALL alternatives ranked.
-- **NEW: Gated recommendations** — calculator shows 1 cheaper alternative free, rest gated behind Pro with "X more savings opportunities" teaser
-- **NEW: Annual waste calculator** — Pro upsell shows exact $/year overpayment and ROI multiplier vs Pro price
+- **Cost Efficiency Score on ALL 3 tools** — visual A-F grade in calculator, cost-optimizer, and savings-calculator. Free shows grade + top 1 alternative; Pro shows ALL alternatives ranked.
+- **Gated recommendations** — calculator shows 1 cheaper alternative free, rest gated behind Pro with "X more savings opportunities" teaser
+- **Annual waste calculator** — Pro upsell shows exact $/year overpayment and ROI multiplier vs Pro price
+- **Share text includes efficiency grade** — copy-to-clipboard and X/LinkedIn shares show efficiency score
 
 ## Session 602 (Jun 12) — MODEL COUNT UPDATE + PRICING DATA FRESHNESS
 - Updated all "39 models" references to "42 models" across 391 HTML files
@@ -36,6 +37,13 @@
 - Verified index page stats (621 pages, 302 posts, 42 models, 82 tools, 167 comparisons) all correct
 - Verified deprecation banner shows "3 days left" countdown correctly
 - No broken internal links found on key pages
+
+## Session 606 (Jun 12) — COST EFFICIENCY SCORE: CONSISTENCY + SHARE TEXT
+- **cost-optimizer.html:** Added Cost Efficiency Score (A-F grade) to results. Computes grade from cheapest alternative vs current spend. Tracks efficiency_score_shown events.
+- **savings-calculator.html:** Added Cost Efficiency Score to results. Computes grade from cheapest alternative vs current cost. Tracks efficiency_score_shown events.
+- **calculator.html:** copyResults() now includes efficiency grade in clipboard text. X/LinkedIn share links include efficiency grade.
+- **pro.html:** Added "Cost Efficiency Score — see all alternatives ranked" to Pro benefits list.
+- Files changed: cost-optimizer.html, savings-calculator.html, calculator.html, pro.html. 2 commits.
 
 ## Session 605 (Jun 12) — CONVERSION: COST EFFICIENCY SCORE + PRO GATING
 - **Cost Efficiency Score:** Added visual A-F grade to calculator results. Computes efficiency = cheapest_cost / current_cost * 100. Shows letter grade (A=90%+, B=70-89%, C=50-69%, D=30-49%, F=<30%), colored progress bar, and descriptive message.

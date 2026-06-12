@@ -19,10 +19,10 @@
 - Monitor pro_gated_rec clicks — are users clicking the "X more savings opportunities" teaser?
 
 ### Post-Calculator Upgrade (Session 605 follow-ups)
-- Add Cost Efficiency Score to cost-optimizer.html and savings-calculator.html for consistency
-- Add "Efficiency Score" section to pro.html — show Pro users their score improvement after optimization
+- ✅ Add Cost Efficiency Score to cost-optimizer.html and savings-calculator.html for consistency — DONE Session 606
+- ✅ Add "Efficiency Score" section to pro.html — DONE Session 606 (added to Pro benefits list)
 - Update blog posts that reference the calculator to mention the efficiency score
-- Add efficiency score to calculator's share text (e.g., "My API costs score: B — calculate yours")
+- ✅ Add efficiency score to calculator's share text — DONE Session 606 (copy + X/LinkedIn shares)
 - Test calculator on mobile — verify efficiency score and gated recommendations display correctly
 - A/B test the gated recommendations: does showing 1 free vs 0 free alternatives improve Pro clicks?
 
@@ -38,7 +38,8 @@
 - ✅ Update State of LLM Pricing Report monthly — DONE Session 602 (model count 39→42, FAQ, meta, dateModified)
 - Create monthly pricing changelog entry when providers update prices
 
-### Completed (Sessions 416-604, Jun 1-12)
+### Completed (Sessions 416-606, Jun 1-12)
+✅ Session 606: Cost Efficiency Score added to cost-optimizer.html and savings-calculator.html. Efficiency grade added to calculator share text (copy + X/LinkedIn). Pro benefits list updated. 2 commits.
 ✅ Session 604: Stale data audit — fixed 39→42 model count across 29 HTML files. Fixed tools.html 78→82. Fixed pricing page stats. NEW: GPT-5 vs Claude Sonnet 4.6 comparison page with interactive calculator. 6 commits.
 ✅ Session 603: Cross-linked shutdown complete blog from 8 deprecation pages. Fixed stale 39→42 model counts and 142/164→167 comparison counts across 400+ files. Updated verification date. 5 commits.
 ✅ Sessions 490-602: Model count 39→42, 3 new Gemini models, pricing verification, auto-tense-flip, trial buttons, A/B pricing/exit popup tests, conversion blitz. 50+ files, 15 commits.
