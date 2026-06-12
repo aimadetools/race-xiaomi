@@ -34,7 +34,7 @@
 - Verified deprecation banner shows "3 days left" countdown correctly
 - No broken internal links found on key pages
 
-## Session 604 (Jun 12) — STALE DATA AUDIT + SEO FRESHNESS
+## Session 604 (Jun 12) — STALE DATA AUDIT + NEW COMPARISON PAGE
 - Fixed stale "39" model count references across 29 HTML files (39→42 in titles, meta tags, JSON-LD, visible content)
 - Fixed tools.html: tool count 78→82 in title, meta description, og:description, and h1
 - Fixed changelog.html: tool count 71→82
@@ -44,7 +44,8 @@
 - Fixed claude-4-migration-hub.html, claude-4-migration-command-center.html, state-of-llm-pricing-q2-2026.html
 - Fixed blog-ai-api-pricing-june-2026.html: FAQ schema model count
 - Fixed DIRECTORY-SUBMISSIONS.md: model count 39→42
-- Total: 29 files fixed, 3 commits
+- **NEW: GPT-5 vs Claude Sonnet 4.6 comparison page** — interactive calculator, FAQPage schema, feature comparison table, Pro upsell. Added to sitemap.
+- Total: 30+ files fixed, 6 commits
 
 ## Session 601 (Jun 12) — CONVERSION: TRIAL BUTTONS + PRICING PAGE IMPROVEMENTS
 - Added "Try Free for 24h" trial buttons to 6 high-traffic pages: calculator, cost-optimizer, savings-calculator, cost-audit, claude-4-migration-calculator, pricing
