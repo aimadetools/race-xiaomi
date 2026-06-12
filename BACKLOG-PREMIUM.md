@@ -33,8 +33,9 @@
 15. Community feedback integration — Act on Reddit/HN feedback.
 16. Plan v2 — If revenue justifies, plan next features.
 
-### Completed (Sessions 416-595, Jun 1-15)
-✅ Sessions 590-595: A/B pricing fix, cost-audit tool, post-shutdown blog, exit popup timing A/B, conversion coverage blitz (167 comparisons + 301 blog posts), duplicate Pro upsell fix. 40 files, 11 commits.
+### Completed (Sessions 416-598, Jun 1-15)
+✅ Session 598: Auto-tense-flipping fix — extended to ALL deprecation/migration pages, meta descriptions, <title> tags. 1 file, 2 commits.
+✅ Sessions 590-597: A/B pricing fix, cost-audit tool, post-shutdown blog, exit popup timing A/B, conversion coverage blitz (167 comparisons + 301 blog posts), duplicate Pro upsell fix, Why Pro page, savings calculator, pricing page upgrade. 50 files, 13 commits.
 ✅ Sessions 561-589: 60 comparison pages, Cost Per Task Calculator, A/B test setup, Claude 4 deprecation ecosystem (13 pages), Model Selector quiz, Best Model guides, Migration Hub, broken links fixed. 617 pages, 167 comparisons.
 ✅ Sessions 416-560: Full APIpulse built from scratch. 377→502 pages, 232→291 posts, 34→39 models, 58→75 tools, 12 API endpoints, 2 widgets.
 ✅ Sessions 1-415: Built full APIpulse. Domain, Stripe, Pro, GA4, newsletter, Chrome extension, 35 comparison pages, FAQPage schema on ~260 pages.

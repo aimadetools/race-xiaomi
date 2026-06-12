@@ -1,9 +1,9 @@
 # PROGRESS.md
 
-## Site Status (as of Session 597, Jun 12, 2026)
+## Site Status (as of Session 598, Jun 12, 2026)
 **620 web pages | 301 blog posts | 39 models | 10 providers | 82 tools | 12 API endpoints | 2 embeddable widgets**
 - Sitemap (613 URLs), RSS (493 items), blog files (301 posts + 1 index) — all in sync
-- **Claude 4 SHUTDOWN in 3 days (June 15)** — countdown auto-updates, post-deprecation content ready
+- **Claude 4 SHUTDOWN in 3 days (June 15)** — auto-tense-flipping now covers ALL 20+ deprecation pages, meta tags, and <title> tags
 - **A/B pricing test FULLY FIXED:** $19 vs $29 vs $39 — shared.js now updates ALL text nodes, anchors, AND JSON-LD schemas
 - **A/B exit popup timing test running:** 30s vs 45s vs 60s on mobile — all popup events tagged with timing_variant
 - **New: Why Pro page** — Dedicated conversion page with ROI calculator, Free vs Pro comparison, 4 use case cards, direct Stripe CTA
@@ -14,6 +14,13 @@
 - **All 167 comparison pages** now have inline Pro upsells
 - **All 301 blog posts** now have inline Pro CTAs
 - **Calculator** shows blurred Pro tip teasers after calculation
+
+## Session 598 (Jun 12) — POST-SHUTDOWN AUTO-TENSE-FLIP FIX
+**Critical fix — deprecation pages would show stale future-tense text after June 15:**
+- **shared.js:** Extended auto-replacement from only `blog-claude-4-*` and `compare-*` to ALL `claude-4-*`, `*migration*`, and `cost-migration` pages. Added 15+ new replacement patterns for text found on deprecation pages (e.g. 'Retiring June 15', 'before June 15', 'Bookmark before June 15', countdown patterns 1-10 days, 'Claude 4 retires June 15', 'After June 15,'). Reordered patterns so specific matches come before broad ones.
+- **shared.js:** Added `<title>` tag auto-updating for SEO (e.g. 'Retiring June 15' → 'Retired June 15').
+- **shared.js:** Added meta description auto-updating (og:description, twitter:description) — TreeWalker only covers document.body, so meta tags in `<head>` were missed.
+- Covers 20+ deprecation/migration pages that were previously excluded from auto-tense-flipping.
 
 ## Session 597 (Jun 12) — CONVERSION OPTIMIZATION BLITZ
 **New pages + pricing page upgrade + cross-links (10 files, 4 commits):**
