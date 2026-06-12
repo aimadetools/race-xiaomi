@@ -483,7 +483,7 @@ async function saveEmail(e) {
     if (localStorage.getItem('apipulse_popup_dismissed')) return;
 
     // Deprecation-specific exit popup (shows on deprecation/migration pages)
-    var isDeprecationPage = window.location.pathname.includes('deprecation') || window.location.pathname.includes('migration') || window.location.pathname.includes('last-chance');
+    var isDeprecationPage = window.location.pathname.includes('deprecation') || window.location.pathname.includes('migration') || window.location.pathname.includes('last-chance') || window.location.pathname.includes('survival');
     var daysLeft = Math.ceil((new Date('2026-06-15T00:00:00Z') - new Date()) / 86400000);
 
     if (isDeprecationPage && daysLeft > 0 && daysLeft <= 14) {
@@ -786,7 +786,7 @@ function renderPricingFreshness(containerId) {
         var bar = document.createElement('div');
         bar.id = 'sticky-pro-cta';
         bar.style.cssText = 'position:fixed;bottom:0;left:0;right:0;z-index:9999;background:linear-gradient(135deg,#4f46e5,#6366f1);padding:12px 20px;display:flex;align-items:center;justify-content:center;gap:16px;box-shadow:0 -4px 20px rgba(0,0,0,0.3);transform:translateY(100%);transition:transform 0.3s ease;';
-        var isDepPage = path.includes('deprecation') || path.includes('migration') || path.includes('last-chance') || path.includes('shutdown') || path.includes('claude-4');
+        var isDepPage = path.includes('deprecation') || path.includes('migration') || path.includes('last-chance') || path.includes('shutdown') || path.includes('claude-4') || path.includes('survival');
         var isCalcPage = path.includes('calculator');
         var isComparePage = path.includes('compare');
         var isCostPage = path.includes('cost-') || path.includes('optimizer') || path.includes('explorer') || path.includes('finder');
