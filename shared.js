@@ -362,6 +362,20 @@ document.addEventListener('DOMContentLoaded', () => {
         if (title.indexOf(r[0]) !== -1) { title = title.split(r[0]).join(r[1]); titleChanged = true; }
     });
     if (titleChanged) document.title = title;
+    // Update meta descriptions for SEO (attributes can't be reached by TreeWalker)
+    document.querySelectorAll('meta[name="description"], meta[property="og:description"], meta[name="twitter:description"]').forEach(function(m) {
+        var content = m.getAttribute('content');
+        if (!content) return;
+        var changed = false;
+        replacements.forEach(function(r) {
+            if (content.indexOf(r[0]) !== -1) { content = content.split(r[0]).join(r[1]); changed = true; }
+        });
+        // Also apply title-specific meta fixes
+        titleReplacements.forEach(function(r) {
+            if (content.indexOf(r[0]) !== -1) { content = content.split(r[0]).join(r[1]); changed = true; }
+        });
+        if (changed) m.setAttribute('content', content);
+    });
 });
 
 // Update deprecated Claude 4 model IDs in code examples across ALL blog posts (after June 15)
