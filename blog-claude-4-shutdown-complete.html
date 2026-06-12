@@ -226,6 +226,38 @@
             <li>Your AI features suddenly stop working for all users</li>
         </ul>
 
+        <h3>What the error looks like</h3>
+        <p>If you're using the Anthropic SDK, here's the exact error you'll see:</p>
+        <pre><code>// Python (anthropic SDK)
+import anthropic
+client = anthropic.Anthropic()
+response = client.messages.create(
+    model="claude-4-opus",  # ← This is the problem
+    max_tokens=1024,
+    messages=[{"role": "user", "content": "Hello"}]
+)
+# Raises: anthropic.NotFoundError: Error code: 410 -
+# {'type': 'error', 'error': {'type': 'not_found_error',
+# 'message': 'claude-4-opus has been retired. Please upgrade to
+# claude-opus-4-8. See https://docs.anthropic.com/docs/deprecations'}}
+
+// Node.js (@anthropic-ai/sdk)
+const response = await client.messages.create({
+    model: "claude-4-sonnet",  // ← Deprecated
+    max_tokens: 1024,
+    messages: [{ role: "user", content: "Hello" }]
+});
+// Error: 410 model_not_found
+// "claude-4-sonnet is no longer available. Use claude-sonnet-4-6."
+
+// curl
+curl https://api.anthropic.com/v1/messages \
+  -H "x-api-key: $ANTHROPIC_API_KEY" \
+  -d '{"model":"claude-4-opus","max_tokens":1024,"messages":[{"role":"user","content":"Hello"}]}'
+# HTTP/1.1 410 Gone
+# {"type":"error","error":{"type":"not_found_error","message":"claude-4-opus has been retired"}}</code></pre>
+        <p>The key detail: <strong>HTTP 410 Gone</strong> (not 404, not 500). The "Gone" status code specifically means the resource was permanently removed and will never return. This is different from a temporary outage.</p>
+
         <h2>The 15-Minute Fix</h2>
         <p>Migrating from Claude 4 is the simplest model migration you'll ever do. The API format, SDK, authentication, and parameters are identical. You change one string:</p>
 
