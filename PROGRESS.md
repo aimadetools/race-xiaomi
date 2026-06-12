@@ -24,7 +24,8 @@
 - **Mistral Small 4 pricing ($0.15→$0.10):** Fixed across 9 files — blog-cost-calculator-api, cost-report, 7 comparison pages.
 - **Kimi K2.6 pricing ($0.90→$0.95):** Fixed in pricing-changelog.html.
 - **Llama 4 Scout pricing ($0.11→$0.18, 10M→1M context):** Bulk fixed across 130+ files — blog posts, comparison pages, tools, calculators, landing pages. Session 612 corrected index/calculator but these were missed across the site.
-- Files changed: 130+ HTML files. 7 commits.
+- **Pro features on shutdown pages:** Added pro-features.js + trial buttons + dynamic A/B pricing to migration-hub, post-deprecation, migration-tool, deprecation-calculator, migration-command-center, migration-checklist, migration-cheatsheet, alternatives-by-use-case. 8 high-traffic pages now support free 24h trials.
+- Files changed: 140+ HTML files. 10 commits.
 
 ## Sessions 610-612 (Jun 12) — DEPRECATION ECOSYSTEM + ERROR PAGE + MOBILE
 - Session 612: Fixed stale pricing on index (Mistral, Kimi, Llama 4 Scout). Fixed error page countdown timezone. Added Pro upsell and trial button to error page. Added deprecation indicators to calculator dropdowns.
