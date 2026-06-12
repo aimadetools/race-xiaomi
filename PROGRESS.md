@@ -1,6 +1,6 @@
 # PROGRESS.md
 
-## Site Status (as of Session 606, Jun 12, 2026)
+## Site Status (as of Session 607, Jun 12, 2026)
 **621 web pages | 302 blog posts | 42 models | 10 providers | 82 tools | 12 API endpoints | 2 embeddable widgets**
 - Sitemap (614 URLs), RSS (494 items), blog files (302 posts + 1 index) — all in sync
 - **Claude 4 SHUTDOWN in 3 days (June 15)** — auto-tense-flipping covers ALL 20+ deprecation pages, meta tags, and <title> tags
@@ -12,6 +12,7 @@
 - **Trial buttons** added to calculator, cost-optimizer, savings-calculator, cost-audit, migration-calculator, pricing pages — "Try Free for 24h" prominently displayed alongside Pro CTAs
 - **pro-features.js upgraded:** startTrial() now works on all pages (graceful fallback if no Pro gate), shows animated success toast
 - **Cost Efficiency Score on ALL 3 tools** — visual A-F grade in calculator, cost-optimizer, and savings-calculator. Free shows grade + top 1 alternative; Pro shows ALL alternatives ranked.
+- **Cost Efficiency Score in blog posts** — 5 high-traffic posts updated with efficiency score mentions (calculator guide, mistakes, comparison tool, budget, health check)
 - **Gated recommendations** — calculator shows 1 cheaper alternative free, rest gated behind Pro with "X more savings opportunities" teaser
 - **Annual waste calculator** — Pro upsell shows exact $/year overpayment and ROI multiplier vs Pro price
 - **Share text includes efficiency grade** — copy-to-clipboard and X/LinkedIn shares show efficiency score
@@ -37,6 +38,14 @@
 - Verified index page stats (621 pages, 302 posts, 42 models, 82 tools, 167 comparisons) all correct
 - Verified deprecation banner shows "3 days left" countdown correctly
 - No broken internal links found on key pages
+
+## Session 607 (Jun 12) — COST EFFICIENCY SCORE: BLOG POST UPDATES
+- **blog-ai-api-cost-calculator-guide.html:** Added FAQ about Cost Efficiency Score, updated both CTAs to mention efficiency grade, added efficiency score to '5 Ways to Reduce' monitoring tip, updated Pro upsell to mention all alternatives ranked.
+- **blog-10-ai-api-cost-mistakes.html:** Updated 'Not Comparing Providers' fix-box to reference efficiency score as a quick way to spot overpaying.
+- **blog-ai-api-cost-comparison-tool.html:** Added Cost Efficiency Score as #2 tool feature (now 4 ways, not 3), updated verdict and CTA, fixed May→June 2026 date.
+- **blog-ai-api-budget-2026.html:** Updated calculator CTA to mention efficiency score.
+- **blog-ai-api-cost-health-check.html:** Updated 'Start Saving' section to mention efficiency score.
+- Files changed: 5 blog posts. 1 commit.
 
 ## Session 606 (Jun 12) — COST EFFICIENCY SCORE: CONSISTENCY + SHARE TEXT
 - **cost-optimizer.html:** Added Cost Efficiency Score (A-F grade) to results. Computes grade from cheapest alternative vs current spend. Tracks efficiency_score_shown events.

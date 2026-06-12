@@ -34,7 +34,8 @@
 15. Community feedback integration — Act on Reddit/HN feedback.
 16. Plan v2 — If revenue justifies, plan next features.
 
-### Completed (Sessions 416-606, Jun 1-15)
+### Completed (Sessions 416-607, Jun 1-15)
+✅ Session 607: Cost Efficiency Score mentions added to 5 high-traffic blog posts. FAQ schema for efficiency score in calculator guide. 1 commit.
 ✅ Session 606: Cost Efficiency Score added to cost-optimizer and savings-calculator for consistency. Efficiency grade in calculator share text. Pro benefits list updated. 2 commits.
 ✅ Session 605: Cost Efficiency Score (A-F grade) in calculator. Gated recommendations (1 free, rest Pro). Annual waste calculator. Upgraded exit popup. Pricing page updated with new Pro features. 2 commits.
 ✅ Session 604: Stale data audit — fixed 39→42 model count across 29 HTML files. Fixed tools.html 78→82. Fixed pricing page stats. NEW: GPT-5 vs Claude Sonnet 4.6 comparison page with interactive calculator. 6 commits.
