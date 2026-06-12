@@ -1,6 +1,6 @@
 # PROGRESS.md
 
-## Site Status (as of Session 601, Jun 12, 2026)
+## Site Status (as of Session 602, Jun 12, 2026)
 **621 web pages | 302 blog posts | 42 models | 10 providers | 82 tools | 12 API endpoints | 2 embeddable widgets**
 - Sitemap (614 URLs), RSS (494 items), blog files (302 posts + 1 index) — all in sync
 - **Claude 4 SHUTDOWN in 3 days (June 15)** — auto-tense-flipping covers ALL 20+ deprecation pages, meta tags, and <title> tags
@@ -11,6 +11,17 @@
 - **All 167 comparison pages + 302 blog posts** have inline Pro CTAs
 - **NEW: Trial buttons** added to calculator, cost-optimizer, savings-calculator, cost-audit, migration-calculator, pricing pages — "Try Free for 24h" prominently displayed alongside Pro CTAs
 - **pro-features.js upgraded:** startTrial() now works on all pages (graceful fallback if no Pro gate), shows animated success toast
+
+## Session 602 (Jun 12) — MODEL COUNT UPDATE + PRICING DATA FRESHNESS
+- Updated all "39 models" references to "42 models" across 391 HTML files
+- Fixed State of LLM Pricing Report: model count, meta descriptions, FAQ answers, dateModified, verification date
+- Fixed pricing page: model count in feature list and comparison table
+- Fixed cheapest model FAQ: Gemini 2.0 Flash Lite (deprecated) → GPT-oss 20B ($0.08/$0.35)
+- Fixed calculator FAQ schema: updated cheapest model reference
+- Fixed index page stale stats (619→621 pages, 301→302 posts, 81→82 tools)
+- Updated pricing changelog: added June 12 entries (Mistral Small 4 correction, 3 new Gemini models)
+- Added real API error response examples to Claude 4 shutdown blog post (Python, Node.js, curl)
+- Note: Some blog posts still reference Gemini 2.0 Flash Lite as cheapest in varied phrasings — left as-is to avoid breaking structured content
 
 ## Session 601 (Jun 12) — CONVERSION: TRIAL BUTTONS + PRICING PAGE IMPROVEMENTS
 - Added "Try Free for 24h" trial buttons to 6 high-traffic pages: calculator, cost-optimizer, savings-calculator, cost-audit, claude-4-migration-calculator, pricing
