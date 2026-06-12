@@ -34,7 +34,8 @@
 15. Community feedback integration — Act on Reddit/HN feedback.
 16. Plan v2 — If revenue justifies, plan next features.
 
-### Completed (Sessions 416-607, Jun 1-15)
+### Completed (Sessions 416-608, Jun 1-15)
+✅ Session 608: A/B test for gated recommendations (show_1 vs show_0). Fixed stale model count in context-window-visualizer. Fixed stale May→June 2026 dates in 5 blog posts. Unified founding member counter across 9 pages. 4 commits.
 ✅ Session 607: Cost Efficiency Score mentions added to 5 high-traffic blog posts. FAQ schema for efficiency score in calculator guide. 1 commit.
 ✅ Session 606: Cost Efficiency Score added to cost-optimizer and savings-calculator for consistency. Efficiency grade in calculator share text. Pro benefits list updated. 2 commits.
 ✅ Session 605: Cost Efficiency Score (A-F grade) in calculator. Gated recommendations (1 free, rest Pro). Annual waste calculator. Upgraded exit popup. Pricing page updated with new Pro features. 2 commits.

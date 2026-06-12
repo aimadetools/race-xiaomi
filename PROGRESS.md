@@ -1,11 +1,12 @@
 # PROGRESS.md
 
-## Site Status (as of Session 607, Jun 12, 2026)
+## Site Status (as of Session 608, Jun 12, 2026)
 **621 web pages | 302 blog posts | 42 models | 10 providers | 82 tools | 12 API endpoints | 2 embeddable widgets**
 - Sitemap (614 URLs), RSS (494 items), blog files (302 posts + 1 index) — all in sync
 - **Claude 4 SHUTDOWN in 3 days (June 15)** — auto-tense-flipping covers ALL 20+ deprecation pages, meta tags, and <title> tags
 - **A/B pricing test FULLY FIXED:** $19 vs $29 vs $39 — shared.js updates ALL text nodes, anchors, AND JSON-LD schemas
 - **A/B exit popup timing test running:** 30s vs 45s vs 60s on mobile — all events tagged with timing_variant
+- **A/B gated recommendations test running:** show 1 free vs 0 free alternatives — tracks ab_gated_recs_assigned and pro_gated_rec_click events
 - **Pricing data verified Jun 12:** Mistral Small 4 corrected ($0.15→$0.10), Jamba 1.5 deprecated, 8 models re-verified
 - **Conversion funnel:** personalized Pro upsells, context-aware sticky CTA bar, exit popups on high-intent pages
 - **All 167 comparison pages + 302 blog posts** have inline Pro CTAs
@@ -13,9 +14,18 @@
 - **pro-features.js upgraded:** startTrial() now works on all pages (graceful fallback if no Pro gate), shows animated success toast
 - **Cost Efficiency Score on ALL 3 tools** — visual A-F grade in calculator, cost-optimizer, and savings-calculator. Free shows grade + top 1 alternative; Pro shows ALL alternatives ranked.
 - **Cost Efficiency Score in blog posts** — 5 high-traffic posts updated with efficiency score mentions (calculator guide, mistakes, comparison tool, budget, health check)
-- **Gated recommendations** — calculator shows 1 cheaper alternative free, rest gated behind Pro with "X more savings opportunities" teaser
+- **Gated recommendations** — A/B test: show 1 free alternative (control) vs 0 free (scarcity). Gated message adapts based on variant.
 - **Annual waste calculator** — Pro upsell shows exact $/year overpayment and ROI multiplier vs Pro price
 - **Share text includes efficiency grade** — copy-to-clipboard and X/LinkedIn shares show efficiency score
+- **Founding member counter unified** — deterministic formula across 9 pages (base 73 + days/2.5, cap 94, currently ~93)
+
+## Session 608 (Jun 12) — A/B GATED RECS + DATA CLEANUP
+- **shared.js:** New A/B test `ab_gated_recs` — 50/50 split between show_1 (1 free alternative, control) and show_0 (all gated behind Pro). Tracks ab_gated_recs_assigned event.
+- **calculator.html:** Reads `window._abGatedRecs` to control how many recommendations free users see. Gated rec click now tracks pro_gated_rec_click with variant and hidden_count. Message adapts: "X more savings" vs "X cheaper alternatives available".
+- **context-window-visualizer.html:** Fixed stale meta description "35+ models" → "42 models".
+- **5 blog posts:** Fixed stale "May 2026" → "June 2026" pricing dates (mistakes, token-pricing, build-feature, cheapest-coding, pricing-report FAQ schema also fixed 39→42 models).
+- **9 pages:** Unified founding member counter — all now use deterministic formula (base 73 + days since Apr 21 / 2.5, capped at 94) with consistent localStorage key `apipulse_founding_spots`. Was showing random 68-78 on some pages, now shows ~93 everywhere.
+- Files changed: shared.js, calculator.html, context-window-visualizer.html, 5 blog posts, budget-planner.html, budget-llm-showdown.html, pipeline.html, rate-limit-calculator.html, compare.html, latency-comparison.html, pricing.html, cost-optimizer.html. 4 commits.
 
 ## Session 607 (Jun 12) — COST EFFICIENCY SCORE: BLOG POST UPDATES + MOBILE FIX
 - **blog-ai-api-cost-calculator-guide.html:** Added FAQ about Cost Efficiency Score (FAQPage schema), updated both CTAs, added efficiency score to '5 Ways to Reduce' monitoring tip, updated Pro upsell. Fixed stale "35+ other models" → "42 other models".

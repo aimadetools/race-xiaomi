@@ -23,8 +23,8 @@
 - ✅ Add "Efficiency Score" section to pro.html — DONE Session 606 (added to Pro benefits list)
 - ✅ Update blog posts that reference the calculator to mention the efficiency score — DONE Session 607 (5 high-traffic posts updated)
 - ✅ Add efficiency score to calculator's share text — DONE Session 606 (copy + X/LinkedIn shares)
+- ✅ A/B test the gated recommendations — DONE Session 608 (show_1 vs show_0, 50/50 split, tracks pro_gated_rec_click)
 - Test calculator on mobile — verify efficiency score and gated recommendations display correctly
-- A/B test the gated recommendations: does showing 1 free vs 0 free alternatives improve Pro clicks?
 
 ### Post-Claude 4 Shutdown (after June 15)
 - Monitor post-shutdown traffic spikes (searches for "Claude 4 shutdown", "410 error")
@@ -38,7 +38,8 @@
 - ✅ Update State of LLM Pricing Report monthly — DONE Session 602 (model count 39→42, FAQ, meta, dateModified)
 - Create monthly pricing changelog entry when providers update prices
 
-### Completed (Sessions 416-607, Jun 1-12)
+### Completed (Sessions 416-608, Jun 1-12)
+✅ Session 608: A/B test for gated recommendations (show_1 vs show_0). Fixed stale model count in context-window-visualizer. Fixed stale May→June 2026 dates in 5 blog posts. Unified founding member counter across 9 pages (deterministic formula). 4 commits.
 ✅ Session 607: Cost Efficiency Score mentions added to 5 high-traffic blog posts (calculator guide, mistakes, comparison tool, budget, health check). FAQ schema updated. 1 commit.
 ✅ Session 606: Cost Efficiency Score added to cost-optimizer.html and savings-calculator.html. Efficiency grade added to calculator share text (copy + X/LinkedIn). Pro benefits list updated. 2 commits.
 ✅ Session 604: Stale data audit — fixed 39→42 model count across 29 HTML files. Fixed tools.html 78→82. Fixed pricing page stats. NEW: GPT-5 vs Claude Sonnet 4.6 comparison page with interactive calculator. 6 commits.
