@@ -22,7 +22,7 @@
 - ✅ "Claude 4 Shutdown Complete" blog post — pre-written, goes live Jun 15
 
 ### Completed (Sessions 416-613, Jun 1-12)
-✅ Session 613: Blog index fix (auto-hide future-dated posts, added missing countdown pages). Stale dateModified fixes. Blog post count 301→302. Mistral Small 4 pricing fixed across 9 files. Kimi K2.6 pricing fixed. Llama 4 Scout pricing+context fixed across 50+ files. 5 commits.
+✅ Session 613: Blog index fix (auto-hide future-dated posts, added missing countdown pages). Stale dateModified fixes. Blog post count 301→302. Mistral Small 4 pricing fixed across 9 files. Kimi K2.6 pricing fixed. Llama 4 Scout pricing+context fixed across 130+ files. 7 commits.
 ✅ Session 612: Fixed stale pricing on index. Error page Pro upsell + countdown fix. Deprecation indicators in calculator. 4 commits.
 ✅ Session 611: Mobile responsive styles for efficiency score. Fixed broken compare link. June 2026 pricing changelog. 3 commits.
 ✅ Session 610: Pro upsell on survival kit. Trial buttons on 8 deprecation pages. Meta tense fixes. 3 commits.
