@@ -168,6 +168,54 @@
         }
         .rec-compare:hover { text-decoration: underline; }
 
+        /* Cost Efficiency Score */
+        .efficiency-score {
+            margin-top: 16px; padding: 16px; border-radius: 12px;
+            background: var(--bg-secondary); border: 1px solid var(--border);
+        }
+        .efficiency-header {
+            display: flex; align-items: center; justify-content: space-between;
+            margin-bottom: 10px;
+        }
+        .efficiency-label { font-size: 13px; font-weight: 600; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.5px; }
+        .efficiency-grade {
+            width: 42px; height: 42px; border-radius: 10px; display: flex;
+            align-items: center; justify-content: center; font-size: 20px; font-weight: 800;
+            color: white;
+        }
+        .grade-a { background: linear-gradient(135deg, #22c55e, #16a34a); }
+        .grade-b { background: linear-gradient(135deg, #84cc16, #65a30d); }
+        .grade-c { background: linear-gradient(135deg, #f59e0b, #d97706); }
+        .grade-d { background: linear-gradient(135deg, #f97316, #ea580c); }
+        .grade-f { background: linear-gradient(135deg, #ef4444, #dc2626); }
+        .efficiency-bar-track {
+            height: 8px; background: var(--border); border-radius: 4px; overflow: hidden; margin-bottom: 8px;
+        }
+        .efficiency-bar-fill {
+            height: 100%; border-radius: 4px; transition: width 0.5s ease;
+        }
+        .efficiency-message { font-size: 13px; color: var(--text-secondary); line-height: 1.5; }
+        .efficiency-waste {
+            display: inline-flex; align-items: center; gap: 6px;
+            background: rgba(239,68,68,0.08); border: 1px solid rgba(239,68,68,0.2);
+            border-radius: 6px; padding: 4px 10px; font-size: 12px; font-weight: 600; color: var(--red);
+            margin-top: 8px;
+        }
+
+        /* Gated Pro Recommendations */
+        .pro-gated-rec {
+            background: var(--bg-card); border: 1px dashed var(--accent);
+            border-radius: 8px; padding: 14px; margin-top: 10px; text-align: center;
+            cursor: pointer; transition: all 0.2s;
+        }
+        .pro-gated-rec:hover { border-style: solid; background: rgba(99,102,241,0.05); }
+        .pro-gated-rec .gated-count {
+            font-size: 15px; font-weight: 700; color: var(--accent); margin-bottom: 4px;
+        }
+        .pro-gated-rec .gated-text {
+            font-size: 12px; color: var(--text-muted);
+        }
+
         /* Pro Tip Teasers */
         .pro-tips { margin-top: 20px; display: none; }
         .pro-tips h3 { font-size: 15px; font-weight: 700; margin-bottom: 12px; color: var(--text-primary); }
@@ -389,6 +437,17 @@
                         <span class="result-label">Monthly Total</span>
                         <span class="result-value" id="monthly-total">$0.00</span>
                     </div>
+                    <div class="efficiency-score" id="efficiency-score" style="display:none;">
+                        <div class="efficiency-header">
+                            <span class="efficiency-label">Cost Efficiency Score</span>
+                            <div class="efficiency-grade" id="efficiency-grade">A</div>
+                        </div>
+                        <div class="efficiency-bar-track">
+                            <div class="efficiency-bar-fill" id="efficiency-bar" style="width:100%;background:var(--green);"></div>
+                        </div>
+                        <div class="efficiency-message" id="efficiency-message"></div>
+                        <div id="efficiency-waste-container"></div>
+                    </div>
                     <div id="deprecation-warning" style="display:none;margin-top:12px;"></div>
                     <div id="savings-container"></div>
                     <div class="pro-tips" id="pro-tips">
@@ -452,11 +511,17 @@
     <section style="max-width:900px;margin:0 auto 40px;padding:0 24px;display:none;" id="pro-upsell">
         <div style="background:linear-gradient(135deg, rgba(99,102,241,0.08), rgba(34,197,94,0.06));border:1px solid var(--accent);border-radius:16px;padding:32px;display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:center;">
             <div>
-                <h2 style="font-size:22px;font-weight:800;margin-bottom:8px;">Your costs could be <span style="color:var(--green);" id="upsell-savings-inline">$0/mo</span> lower</h2>
-                <p style="color:var(--text-secondary);font-size:15px;line-height:1.6;margin-bottom:20px;">Pro gives you a <strong>personalized optimization report</strong> showing exactly which models to use for each task, batch processing strategies, and prompt optimization tips.</p>
+                <h2 style="font-size:22px;font-weight:800;margin-bottom:8px;">Stop overpaying — save <span style="color:var(--green);" id="upsell-savings-inline">$0/mo</span></h2>
+                <p style="color:var(--text-secondary);font-size:15px;line-height:1.6;margin-bottom:16px;">Your Cost Efficiency Score is <strong id="upsell-grade-text">C</strong>. Pro users with similar usage save <strong style="color:var(--green);" id="upsell-annual-savings">$0/year</strong> with personalized optimization.</p>
+                <div style="background:rgba(239,68,68,0.06);border:1px solid rgba(239,68,68,0.2);border-radius:10px;padding:14px 16px;margin-bottom:16px;">
+                    <div style="font-size:13px;font-weight:700;color:var(--red);margin-bottom:8px;">⚠️ At current rates, you're wasting:</div>
+                    <div style="font-size:28px;font-weight:800;color:var(--red);" id="upsell-annual-waste">$0/year</div>
+                    <div style="font-size:12px;color:var(--text-muted);margin-top:4px;">That's <span id="upsell-pro-multiplier">0x</span> the cost of Pro — every single year</div>
+                </div>
                 <div style="background:rgba(34,197,94,0.06);border:1px solid rgba(34,197,94,0.2);border-radius:10px;padding:14px 16px;margin-bottom:20px;">
-                    <div style="font-size:13px;font-weight:700;color:var(--green);margin-bottom:8px;">What Pro users get:</div>
+                    <div style="font-size:13px;font-weight:700;color:var(--green);margin-bottom:8px;">What Pro optimization includes:</div>
                     <ul style="list-style:none;padding:0;margin:0;">
+                        <li style="padding:4px 0;font-size:14px;color:var(--text-secondary);display:flex;align-items:center;gap:8px;"><span style="color:var(--green);">✓</span> All cheaper alternatives ranked by savings</li>
                         <li style="padding:4px 0;font-size:14px;color:var(--text-secondary);display:flex;align-items:center;gap:8px;"><span style="color:var(--green);">✓</span> Model routing guide — use cheap models for 80% of tasks</li>
                         <li style="padding:4px 0;font-size:14px;color:var(--text-secondary);display:flex;align-items:center;gap:8px;"><span style="color:var(--green);">✓</span> Save & compare up to 10 cost scenarios</li>
                         <li style="padding:4px 0;font-size:14px;color:var(--text-secondary);display:flex;align-items:center;gap:8px;"><span style="color:var(--green);">✓</span> Export cost reports for your team</li>
@@ -474,11 +539,11 @@
                     <div style="font-size:13px;color:var(--text-secondary);margin-bottom:8px;">Your estimated monthly spend</div>
                     <div id="upsell-spend" style="font-size:32px;font-weight:800;color:var(--accent);">$0</div>
                     <div style="margin-top:16px;padding-top:16px;border-top:1px solid var(--border);">
-                        <div style="font-size:13px;color:var(--text-secondary);">Potential savings with Pro</div>
+                        <div style="font-size:13px;color:var(--text-secondary);">Monthly savings with Pro</div>
                         <div id="upsell-savings" style="font-size:28px;font-weight:800;color:var(--green);margin-top:4px;">$0/mo</div>
                     </div>
                     <div style="margin-top:16px;padding-top:16px;border-top:1px solid var(--border);">
-                        <div style="font-size:13px;color:var(--text-secondary);margin-bottom:8px;">Pay for itself in</div>
+                        <div style="font-size:13px;color:var(--text-secondary);margin-bottom:8px;">Pro pays for itself in</div>
                         <div id="upsell-payback" style="font-size:18px;font-weight:700;color:var(--accent);">—</div>
                     </div>
                 </div>
@@ -743,14 +808,72 @@
                 depWarning.style.display = 'none';
             }
 
-            // Recommended alternatives
+            // Cost Efficiency Score
+            const efficiencyContainer = document.getElementById('efficiency-score');
+            const efficiencyGrade = document.getElementById('efficiency-grade');
+            const efficiencyBar = document.getElementById('efficiency-bar');
+            const efficiencyMessage = document.getElementById('efficiency-message');
+            const efficiencyWasteContainer = document.getElementById('efficiency-waste-container');
+
+            // Find cheapest model for this usage
+            let cheapestCost = Infinity;
+            let cheapestModel = null;
+            for (const [k, v] of Object.entries(providers)) {
+                const c = (totalInputTokens / 1000000) * v.input + (totalOutputTokens / 1000000) * v.output;
+                if (c < cheapestCost) { cheapestCost = c; cheapestModel = { key: k, name: v.name }; }
+            }
+
+            if (totalCost > 0 && cheapestCost < Infinity) {
+                const efficiency = (cheapestCost / totalCost * 100);
+                const overpayPct = ((totalCost - cheapestCost) / totalCost * 100);
+                const annualWaste = (totalCost - cheapestCost) * 12;
+
+                let grade, gradeClass, barColor, message;
+                if (efficiency >= 90) { grade = 'A'; gradeClass = 'grade-a'; barColor = '#22c55e'; message = 'Excellent — you\'re using one of the most cost-effective models for this workload.'; }
+                else if (efficiency >= 70) { grade = 'B'; gradeClass = 'grade-b'; barColor = '#84cc16'; message = 'Good choice. A few cheaper alternatives exist for this workload.'; }
+                else if (efficiency >= 50) { grade = 'C'; gradeClass = 'grade-c'; barColor = '#f59e0b'; message = 'Moderate savings available. Switching models could cut your costs significantly.'; }
+                else if (efficiency >= 30) { grade = 'D'; gradeClass = 'grade-d'; barColor = '#f97316'; message = 'You\'re overpaying. Cheaper models handle this workload at a fraction of the cost.'; }
+                else { grade = 'F'; gradeClass = 'grade-f'; barColor = '#ef4444'; message = 'Significant overpayment. You could save most of this budget with a better model choice.'; }
+
+                efficiencyGrade.textContent = grade;
+                efficiencyGrade.className = 'efficiency-grade ' + gradeClass;
+                efficiencyBar.style.width = Math.round(efficiency) + '%';
+                efficiencyBar.style.background = barColor;
+                efficiencyMessage.textContent = message;
+
+                if (annualWaste > 2) {
+                    efficiencyWasteContainer.innerHTML = '<div class="efficiency-waste">⚠️ $' + annualWaste.toFixed(0) + '/year overpayment at current rates</div>';
+                } else {
+                    efficiencyWasteContainer.innerHTML = '';
+                }
+
+                efficiencyContainer.style.display = 'block';
+                if (window.trackEvent) window.trackEvent('efficiency_score_shown', { grade: grade, efficiency: Math.round(efficiency), overpay_pct: Math.round(overpayPct), current_model: provider });
+            } else {
+                efficiencyContainer.style.display = 'none';
+            }
+
+            // Recommended alternatives — gate behind Pro
             const savingsContainer = document.getElementById('savings-container');
-            const recs = typeof getRecommendations === 'function' ? getRecommendations(provider, inputTokens, outputTokens, requests, days, 3) : [];
-            if (recs.length > 0) {
+            const allRecs = typeof getRecommendations === 'function' ? getRecommendations(provider, inputTokens, outputTokens, requests, days, 5) : [];
+            const isPro = typeof isProUser === 'function' ? isProUser() : false;
+
+            if (allRecs.length > 0) {
+                const visibleRecs = isPro ? allRecs : allRecs.slice(0, 1);
+                const hiddenCount = allRecs.length - visibleRecs.length;
+
                 let html = '<div class="recommendations"><h3>Recommended For You</h3>';
-                recs.forEach(r => {
+                visibleRecs.forEach(r => {
                     html += '<div class="rec-card"><div class="rec-info"><div class="rec-name">' + r.provider + ' ' + r.name + '</div><div class="rec-meta">' + r.tier + ' · $' + r.input + '/$' + r.output + ' per 1M · ' + r.context + ' context</div></div><div class="rec-savings">Save $' + r.savings.toFixed(2) + '/mo (' + Math.round(r.savingsPct) + '%)</div></div>';
                 });
+
+                if (hiddenCount > 0 && !isPro) {
+                    html += '<div class="pro-gated-rec" onclick="window.location.href=\'pricing.html\'">';
+                    html += '<div class="gated-count">🔒 ' + hiddenCount + ' more savings opportunities</div>';
+                    html += '<div class="gated-text">Pro users see all alternatives ranked by savings + personalized optimization plan</div>';
+                    html += '</div>';
+                }
+
                 html += '<a href="compare.html" class="rec-compare">Compare these models →</a></div>';
                 savingsContainer.innerHTML = html;
             } else {
@@ -766,7 +889,7 @@
             }
 
             // Show Pro upsell after first meaningful calculation
-            if (totalCost > 0) {
+            if (totalCost > 0 && cheapestCost < Infinity) {
                 const upsell = document.getElementById('pro-upsell');
                 if (upsell) {
                     upsell.style.display = 'block';
@@ -775,11 +898,24 @@
                     var savingsInline = document.getElementById('upsell-savings-inline');
                     var paybackEl = document.getElementById('upsell-payback');
                     var ctaBtn = document.getElementById('upsell-cta-btn');
+                    var gradeTextEl = document.getElementById('upsell-grade-text');
+                    var annualSavingsEl = document.getElementById('upsell-annual-savings');
+                    var annualWasteEl = document.getElementById('upsell-annual-waste');
+                    var proMultiplierEl = document.getElementById('upsell-pro-multiplier');
                     var price = window._abPrice || 29;
-                    var savings = totalCost * 0.30;
+                    var savings = totalCost - cheapestCost;
+                    var annualSavings = savings * 12;
+                    var efficiency = (cheapestCost / totalCost * 100);
+
+                    var gradeLetter = efficiency >= 90 ? 'A' : efficiency >= 70 ? 'B' : efficiency >= 50 ? 'C' : efficiency >= 30 ? 'D' : 'F';
+
                     if (spendEl) spendEl.textContent = '$' + totalCost.toFixed(2);
                     if (savingsEl) savingsEl.textContent = '$' + savings.toFixed(2) + '/mo';
                     if (savingsInline) savingsInline.textContent = '$' + savings.toFixed(2) + '/mo';
+                    if (gradeTextEl) gradeTextEl.textContent = gradeLetter;
+                    if (annualSavingsEl) annualSavingsEl.textContent = '$' + annualSavings.toFixed(0) + '/year';
+                    if (annualWasteEl) annualWasteEl.textContent = '$' + annualSavings.toFixed(0) + '/year';
+                    if (proMultiplierEl) proMultiplierEl.textContent = (annualSavings / price).toFixed(0) + 'x';
                     if (paybackEl) {
                         var months = savings > 0 ? Math.ceil(price / savings) : 0;
                         paybackEl.textContent = months <= 1 ? 'Less than 1 month' : months + ' months';
@@ -975,7 +1111,7 @@
         if(window.trackEvent)window.trackEvent('founding_member_seen',{spots_claimed:claimed});
     })();
 
-    // Exit popup for calculator — shows personalized savings
+    // Exit popup for calculator — shows personalized savings with efficiency score
     (function(){
         var shown=false;
         var price=window._abPrice||29;
@@ -987,19 +1123,22 @@
             if(!upsell||upsell.style.display==='none')return;
             shown=true;
             var spendEl=document.getElementById('upsell-spend');
-            var savingsEl=document.getElementById('upsell-savings');
+            var wasteEl=document.getElementById('upsell-annual-waste');
+            var gradeEl=document.getElementById('upsell-grade-text');
             var spendText=spendEl?spendEl.textContent:'$0';
-            var savingsText=savingsEl?savingsEl.textContent:'$0/mo';
+            var wasteText=wasteEl?wasteEl.textContent:'$0/year';
+            var gradeText=gradeEl?gradeEl.textContent:'C';
             var overlay=document.createElement('div');
             overlay.id='calc-exit-popup';
             overlay.style.cssText='position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.7);z-index:10000;display:flex;align-items:center;justify-content:center;';
             overlay.innerHTML='<div style="background:var(--bg-secondary);border:1px solid var(--border);border-radius:16px;padding:40px;max-width:480px;text-align:center;margin:20px;">' +
-                '<div style="font-size:40px;margin-bottom:12px;">💡</div>' +
-                '<h3 style="font-size:22px;margin-bottom:8px;">You\'re spending '+spendText+'/month</h3>' +
-                '<p style="color:var(--text-secondary);margin-bottom:16px;">Pro users with similar usage save <strong style="color:var(--green);">'+savingsText+'</strong> with personalized model routing and optimization tips.</p>' +
-                '<div style="background:rgba(34,197,94,0.08);border:1px solid rgba(34,197,94,0.2);border-radius:8px;padding:12px;margin-bottom:20px;font-size:14px;color:var(--green);font-weight:600;">Pro pays for itself in your first month</div>' +
-                '<a href="'+stripeLink+'" id="calc-exit-cta" class="btn-primary" style="display:inline-block;padding:14px 32px;font-size:16px;" target="_blank" rel="noopener">Unlock Pro — $'+price+'</a>' +
-                '<p style="font-size:12px;color:var(--text-muted);margin-top:12px;">14-day money-back guarantee · <a href="#" onclick="document.getElementById(\'calc-exit-popup\').remove();return false;" style="color:var(--text-muted);">No thanks</a></p>' +
+                '<div style="font-size:40px;margin-bottom:12px;">⚠️</div>' +
+                '<h3 style="font-size:22px;margin-bottom:8px;">Your Cost Efficiency: <span style="color:var(--accent);">'+gradeText+'</span></h3>' +
+                '<p style="color:var(--text-secondary);margin-bottom:12px;">You\'re spending <strong>'+spendText+'/month</strong> on AI APIs.</p>' +
+                '<div style="background:rgba(239,68,68,0.08);border:1px solid rgba(239,68,68,0.2);border-radius:8px;padding:12px;margin-bottom:16px;font-size:16px;font-weight:700;color:var(--red);">Wasting '+wasteText+'</div>' +
+                '<p style="color:var(--text-secondary);margin-bottom:20px;font-size:14px;">Pro shows you exactly which models to use and how to optimize your stack. One-time $'+price+' — pays for itself in weeks.</p>' +
+                '<a href="'+stripeLink+'" id="calc-exit-cta" class="btn-primary" style="display:inline-block;padding:14px 32px;font-size:16px;" target="_blank" rel="noopener">Stop Overpaying — Get Pro $'+price+'</a>' +
+                '<p style="font-size:12px;color:var(--text-muted);margin-top:12px;">14-day money-back guarantee · <a href="#" onclick="document.getElementById(\'calc-exit-popup\').remove();return false;" style="color:var(--text-muted);">No thanks, I\'ll keep overpaying</a></p>' +
                 '</div>';
             overlay.addEventListener('click',function(ev){
                 if(ev.target===overlay)overlay.remove();
