@@ -13,6 +13,7 @@
 - Check exit popup and deprecation popup engagement
 - Review last-chance page and calculator → Pro upsell funnel
 - Monitor cost-audit tool engagement (cost_audit_model_toggled, cost_audit_step, cost_audit_completed, pro_cta_clicked events)
+- Monitor savings-calculator tool engagement (savings_model_selected, savings_calculated events)
 
 ### Post-Claude 4 Shutdown (after June 15)
 - Update all deprecation pages to past tense (auto-rules in shared.js should handle this)
@@ -25,6 +26,7 @@
 - Update State of LLM Pricing Report monthly
 - Create monthly pricing changelog entry when providers update prices
 
-### Completed (Sessions 416-595, Jun 1-12)
+### Completed (Sessions 416-597, Jun 1-12)
+✅ Sessions 596-597: Savings calculator tool, pricing page upgrade (dynamic founding member counter, real savings section, 3rd testimonial, 40% avg savings stat). 6 files, 1 commit.
 ✅ Sessions 590-595: A/B pricing fix (all $29 CTAs updated), cost-audit tool, post-shutdown blog, exit popup timing A/B test, conversion coverage blitz (167 comparisons + 301 blog posts), duplicate Pro upsell fix. 40 files, 11 commits.
 ✅ Sessions 416-589: Full APIpulse built from scratch. 617 pages, 301 posts, 80 tools, 167 comparisons.

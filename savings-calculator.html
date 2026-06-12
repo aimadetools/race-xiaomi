@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI API Savings Calculator — See How Much You're Overpaying | APIpulse</title>
+    <meta name="description" content="Free tool that shows exactly how much you could save on AI API costs. Compare 39 models, find cheaper alternatives, and calculate your annual savings potential.">
+    <meta name="keywords" content>AI API savings calculator, reduce AI API costs, cheapest LLM model, AI cost optimization, save on OpenAI costs">
+    <meta property="og:title" content="AI API Savings Calculator — Find Hidden Savings | APIpulse">
+    <meta property="og:description" content="Enter your current AI API usage and see exactly how much you could save by switching models. Most users find 40-60% savings.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://getapipulse.com/og-image.png">
+    <meta property="og:url" content="https://getapipulse.com/savings-calculator.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="AI API Savings Calculator — Find Hidden Savings | APIpulse">
+    <meta name="twitter:description" content="Enter your current AI API usage and see exactly how much you could save. Most users find 40-60% savings.">
+    <meta name="twitter:image" content="https://getapipulse.com/og-image.png">
+    <link rel="canonical" href="https://getapipulse.com/savings-calculator.html">
+    <link rel="alternate" type="application/rss+xml" title="APIpulse Blog" href="https://getapipulse.com/rss.xml">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="styles.css">
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0CEP7S9Y3J"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-0CEP7S9Y3J');
+    </script>
+    <script src="analytics.js" defer></script>
+    <script src="dynamic-date.js" defer></script>
+    <script src="shared.js" defer></script>
+    <script src="pricing-data.js" defer></script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "APIpulse AI API Savings Calculator",
+        "url": "https://getapipulse.com/savings-calculator.html",
+        "description": "Free tool that shows exactly how much you could save on AI API costs. Compare 39 models and find cheaper alternatives.",
+        "applicationCategory": "DeveloperApplication",
+        "operatingSystem": "Web",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "How much can I save on AI API costs?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Most developers save 40-60% by switching to the right model for each task. For example, routing simple requests to budget models like Gemini Flash ($0.10/$0.40 per 1M tokens) instead of GPT-5 ($1.25/$10.00) saves 90% on those requests."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Is the savings calculator free?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes. The basic savings calculator is completely free. It shows your current spend and top 3 cheaper alternatives. Pro users get the full optimization report with 10+ alternatives, batch processing tips, and caching recommendations."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What's the cheapest AI API in 2026?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Gemini 2.0 Flash Lite is the cheapest at $0.075/$0.30 per million input/output tokens. For high-quality budget options, DeepSeek V4 Flash ($0.14/$0.28) and Llama 4 Scout ($0.18/$0.59) offer excellent value."
+                }
+            }
+        ]
+    }
+    </script>
+    <style>
+        .container { max-width: 900px; margin: 0 auto; padding: 120px 24px 80px; }
+        .header { text-align: center; margin-bottom: 40px; }
+        .header h1 {
+            font-size: clamp(28px, 4vw, 40px); font-weight: 800; margin-bottom: 12px;
+            background: linear-gradient(135deg, #60a5fa, #a78bfa);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+        }
+        .header p { font-size: 16px; color: var(--text-secondary); max-width: 600px; margin: 0 auto; }
+
+        .step-card {
+            background: var(--bg-secondary); border: 1px solid var(--border);
+            border-radius: 16px; padding: 32px; margin-bottom: 24px;
+        }
+        .step-header {
+            display: flex; align-items: center; gap: 12px; margin-bottom: 24px;
+        }
+        .step-num {
+            width: 32px; height: 32px; background: var(--accent); color: white;
+            border-radius: 50%; display: flex; align-items: center; justify-content: center;
+            font-size: 14px; font-weight: 700; flex-shrink: 0;
+        }
+        .step-num.done { background: var(--green); }
+        .step-title { font-size: 18px; font-weight: 700; }
+
+        .model-grid {
+            display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 12px; margin-bottom: 24px;
+        }
+        .model-btn {
+            background: var(--bg-card); border: 2px solid var(--border); border-radius: 10px;
+            padding: 12px 14px; cursor: pointer; text-align: left; transition: all 0.2s;
+        }
+        .model-btn:hover { border-color: var(--accent); background: var(--accent-glow); }
+        .model-btn.selected { border-color: var(--accent); background: var(--accent-glow); }
+        .model-btn .model-name { font-size: 14px; font-weight: 700; margin-bottom: 2px; }
+        .model-btn .model-provider { font-size: 12px; color: var(--text-muted); }
+        .model-btn .model-price { font-size: 12px; color: var(--accent); margin-top: 4px; }
+
+        .input-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+        .input-group label {
+            display: block; font-size: 13px; font-weight: 600; color: var(--text-secondary);
+            margin-bottom: 6px; text-transform: uppercase; letter-spacing: 0.5px;
+        }
+        .input-group input, .input-group select {
+            width: 100%; padding: 12px 16px; background: var(--bg-card);
+            border: 1px solid var(--border); border-radius: 8px;
+            color: var(--text-primary); font-size: 16px;
+        }
+        .input-group input:focus, .input-group select:focus {
+            outline: 2px solid var(--accent); outline-offset: 2px; border-color: var(--accent);
+        }
+        .quick-presets { display: flex; gap: 8px; margin-top: 8px; }
+        .preset-btn {
+            flex: 1; padding: 6px; background: var(--bg-card); border: 1px solid var(--border);
+            border-radius: 6px; color: var(--text-secondary); font-size: 12px;
+            cursor: pointer; text-align: center; transition: all 0.2s;
+        }
+        .preset-btn:hover { border-color: var(--accent); color: var(--accent); }
+
+        .results-card {
+            background: var(--bg-secondary); border: 2px solid var(--green);
+            border-radius: 16px; padding: 32px; margin-bottom: 24px;
+            animation: fadeIn 0.3s ease;
+        }
+        .results-header {
+            text-align: center; margin-bottom: 24px;
+        }
+        .results-header h2 {
+            font-size: 28px; font-weight: 800; color: var(--green); margin-bottom: 4px;
+        }
+        .results-header p { color: var(--text-secondary); font-size: 15px; }
+
+        .spend-display {
+            display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; margin-bottom: 24px;
+        }
+        .spend-box {
+            background: var(--bg-card); border-radius: 12px; padding: 20px; text-align: center;
+            border: 1px solid var(--border);
+        }
+        .spend-box.savings { border-color: var(--green); background: rgba(34,197,94,0.05); }
+        .spend-label { font-size: 12px; color: var(--text-muted); margin-bottom: 4px; text-transform: uppercase; letter-spacing: 0.5px; }
+        .spend-amount { font-size: 28px; font-weight: 800; }
+        .spend-amount.current { color: var(--text-primary); }
+        .spend-amount.optimized { color: var(--green); }
+        .spend-amount.savings-amt { color: var(--green); }
+        .spend-sub { font-size: 12px; color: var(--text-muted); margin-top: 4px; }
+
+        .alternatives { margin-bottom: 24px; }
+        .alternatives h3 { font-size: 16px; font-weight: 700; margin-bottom: 12px; }
+        .alt-row {
+            display: grid; grid-template-columns: 1fr auto auto; gap: 16px;
+            align-items: center; padding: 14px 16px; background: var(--bg-card);
+            border: 1px solid var(--border); border-radius: 10px; margin-bottom: 8px;
+            transition: all 0.2s;
+        }
+        .alt-row:hover { border-color: var(--accent); }
+        .alt-row.best { border-color: var(--green); background: rgba(34,197,94,0.04); }
+        .alt-model { font-size: 14px; font-weight: 700; }
+        .alt-provider { font-size: 12px; color: var(--text-muted); }
+        .alt-cost { font-size: 14px; font-weight: 600; text-align: right; }
+        .alt-savings { font-size: 13px; color: var(--green); font-weight: 600; text-align: right; }
+        .best-badge {
+            display: inline-block; background: var(--green); color: white;
+            font-size: 10px; font-weight: 700; padding: 2px 8px; border-radius: 4px;
+            text-transform: uppercase; margin-left: 8px;
+        }
+
+        .pro-gate {
+            background: linear-gradient(135deg, rgba(99,102,241,0.08), rgba(139,92,247,0.08));
+            border: 2px solid var(--accent); border-radius: 16px; padding: 32px;
+            text-align: center;
+        }
+        .pro-gate h3 { font-size: 20px; font-weight: 700; margin-bottom: 8px; }
+        .pro-gate p { color: var(--text-secondary); font-size: 14px; margin-bottom: 16px; max-width: 500px; margin-left: auto; margin-right: auto; }
+        .pro-gate .features {
+            display: flex; gap: 24px; justify-content: center; margin-bottom: 20px; flex-wrap: wrap;
+        }
+        .pro-gate .feature {
+            display: flex; align-items: center; gap: 6px; font-size: 13px; color: var(--text-secondary);
+        }
+        .pro-gate .feature::before { content: "✓"; color: var(--green); font-weight: 700; }
+
+        .btn-primary {
+            display: inline-block; background: var(--accent); color: white;
+            padding: 14px 32px; border-radius: 10px; font-size: 16px;
+            font-weight: 700; text-decoration: none; transition: all 0.2s;
+            box-shadow: 0 4px 20px rgba(99,102,241,0.3); border: none; cursor: pointer;
+        }
+        .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 6px 24px rgba(99,102,241,0.4); }
+        .btn-secondary {
+            display: inline-block; background: var(--bg-card); color: var(--text-primary);
+            padding: 14px 32px; border-radius: 10px; font-size: 16px;
+            font-weight: 600; text-decoration: none; border: 1px solid var(--border);
+            transition: all 0.2s; cursor: pointer;
+        }
+        .btn-secondary:hover { border-color: var(--accent); }
+
+        .annual-bar {
+            background: var(--bg-card); border-radius: 12px; padding: 20px; margin-bottom: 24px;
+            border: 1px solid var(--border);
+        }
+        .annual-bar h3 { font-size: 16px; font-weight: 700; margin-bottom: 12px; }
+        .bar-track { height: 12px; background: var(--border); border-radius: 6px; overflow: hidden; position: relative; }
+        .bar-before { height: 100%; background: var(--text-muted); border-radius: 6px; position: absolute; top: 0; left: 0; }
+        .bar-after { height: 100%; background: var(--green); border-radius: 6px; position: absolute; top: 0; left: 0; }
+        .bar-labels { display: flex; justify-content: space-between; margin-top: 8px; font-size: 12px; color: var(--text-muted); }
+
+        @media (max-width: 768px) {
+            .container { padding: 100px 16px 60px; }
+            .spend-display { grid-template-columns: 1fr; }
+            .input-grid { grid-template-columns: 1fr; }
+            .model-grid { grid-template-columns: 1fr 1fr; }
+            .alt-row { grid-template-columns: 1fr; gap: 8px; }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+    <meta name="theme-color" content="#6366f1">
+</head>
+<body>
+    <a href="#main" class="skip-link">Skip to content</a>
+    <nav>
+        <div class="nav-inner">
+            <a href="index.html" class="logo">API<span>pulse</span></a>
+            <button class="hamburger" onclick="toggleMobileNav()" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+            <div class="nav-links">
+                <a href="calculator.html">Calculator</a>
+                <a href="compare.html">Compare</a>
+                <a href="savings-calculator.html" style="color:var(--accent);font-weight:600;">Savings</a>
+                <a href="cost-audit.html">Cost Audit</a>
+                <a href="model-switch.html">Model Switch</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="blog.html">Blog</a>
+                <a href="api-docs.html" style="color:var(--accent);">API</a>
+                <a href="pro.html" class="nav-cta" onclick="if(window.trackEvent)window.trackEvent('pro_button_clicked',{source:'nav'})">Founding Member — $29</a>
+                <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
+            </div>
+        </div>
+    </nav>
+
+    <main id="main">
+    <div class="container">
+        <div class="header">
+            <h1>How much are you overpaying?</h1>
+            <p>Select your current model, enter your usage, and see exactly how much you could save by switching. Most developers find 40-60% savings.</p>
+        </div>
+
+        <!-- Step 1: Select Model -->
+        <div class="step-card" id="step1">
+            <div class="step-header">
+                <div class="step-num" id="step1-num">1</div>
+                <div class="step-title">What model are you currently using?</div>
+            </div>
+            <div class="model-grid" id="model-grid"></div>
+            <div style="text-align:center;margin-top:8px;">
+                <button class="btn-primary" id="step1-next" disabled onclick="goStep2()">Continue →</button>
+            </div>
+        </div>
+
+        <!-- Step 2: Enter Usage -->
+        <div class="step-card" id="step2" style="display:none;">
+            <div class="step-header">
+                <div class="step-num" id="step2-num">2</div>
+                <div class="step-title">How much do you use it?</div>
+            </div>
+            <div class="input-grid">
+                <div class="input-group">
+                    <label>Monthly Input Tokens</label>
+                    <input type="number" id="input-tokens" value="1000000" min="1000" step="1000">
+                    <div class="quick-presets">
+                        <button class="preset-btn" onclick="setTokens('input-tokens',100000)">100K</button>
+                        <button class="preset-btn" onclick="setTokens('input-tokens',1000000)">1M</button>
+                        <button class="preset-btn" onclick="setTokens('input-tokens',10000000)">10M</button>
+                        <button class="preset-btn" onclick="setTokens('input-tokens',100000000)">100M</button>
+                    </div>
+                </div>
+                <div class="input-group">
+                    <label>Monthly Output Tokens</label>
+                    <input type="number" id="output-tokens" value="500000" min="1000" step="1000">
+                    <div class="quick-presets">
+                        <button class="preset-btn" onclick="setTokens('output-tokens',50000)">50K</button>
+                        <button class="preset-btn" onclick="setTokens('output-tokens',500000)">500K</button>
+                        <button class="preset-btn" onclick="setTokens('output-tokens',5000000)">5M</button>
+                        <button class="preset-btn" onclick="setTokens('output-tokens',50000000)">50M</button>
+                    </div>
+                </div>
+            </div>
+            <div style="text-align:center;margin-top:24px;">
+                <button class="btn-secondary" onclick="goStep1()" style="margin-right:12px;">← Back</button>
+                <button class="btn-primary" onclick="calculateSavings()">Calculate My Savings →</button>
+            </div>
+        </div>
+
+        <!-- Step 3: Results -->
+        <div id="results" style="display:none;"></div>
+    </div>
+    </main>
+
+    <footer>
+        <div class="footer-inner">
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="calculator.html">Calculator</a>
+                <a href="compare.html">Compare</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="blog.html">Blog</a>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
+                <a href="privacy.html">Privacy</a>
+                <a href="terms.html">Terms</a>
+            </div>
+            <p class="footer-copy">&copy; <span class="dynamic-year"></span> APIpulse. Know your AI API costs before you commit.</p>
+        </div>
+    </footer>
+
+    <script>
+    var selectedModel = null;
+
+    // Render model grid
+    function renderModels() {
+        var grid = document.getElementById('model-grid');
+        // Filter out deprecated models
+        var active = API_MODELS.filter(function(m) { return !m.deprecated; });
+        // Sort by provider then name
+        active.sort(function(a, b) {
+            if (a.provider !== b.provider) return a.provider.localeCompare(b.provider);
+            return a.name.localeCompare(b.name);
+        });
+        grid.innerHTML = active.map(function(m) {
+            var costPer1M = ((m.input + m.output) / 2).toFixed(2);
+            return '<button class="model-btn" data-id="' + m.id + '" onclick="selectModel(\'' + m.id + '\')">' +
+                '<div class="model-name">' + m.name + '</div>' +
+                '<div class="model-provider">' + m.provider + ' · ' + m.tier + '</div>' +
+                '<div class="model-price">$' + m.input.toFixed(3) + ' / $' + m.output.toFixed(3) + ' per 1M</div>' +
+                '</button>';
+        }).join('');
+    }
+
+    function selectModel(id) {
+        selectedModel = API_MODELS.find(function(m) { return m.id === id; });
+        document.querySelectorAll('.model-btn').forEach(function(b) { b.classList.remove('selected'); });
+        document.querySelector('.model-btn[data-id="' + id + '"]').classList.add('selected');
+        document.getElementById('step1-next').disabled = false;
+        if (window.trackEvent) window.trackEvent('savings_model_selected', { model: id });
+    }
+
+    function setTokens(id, val) {
+        document.getElementById(id).value = val;
+    }
+
+    function goStep2() {
+        if (!selectedModel) return;
+        document.getElementById('step1').style.display = 'none';
+        document.getElementById('step2').style.display = 'block';
+        document.getElementById('step1-num').classList.add('done');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function goStep1() {
+        document.getElementById('step2').style.display = 'none';
+        document.getElementById('step1').style.display = 'block';
+        document.getElementById('step1-num').classList.remove('done');
+    }
+
+    function calculateSavings() {
+        if (!selectedModel) return;
+        var inputTokens = parseInt(document.getElementById('input-tokens').value) || 1000000;
+        var outputTokens = parseInt(document.getElementById('output-tokens').value) || 500000;
+
+        // Current cost (per 1M tokens)
+        var currentCost = (inputTokens / 1000000) * selectedModel.input + (outputTokens / 1000000) * selectedModel.output;
+
+        // Find cheaper alternatives (same tier or lower, not deprecated)
+        var alternatives = API_MODELS.filter(function(m) {
+            if (m.deprecated) return false;
+            if (m.id === selectedModel.id) return false;
+            var cost = (inputTokens / 1000000) * m.input + (outputTokens / 1000000) * m.output;
+            return cost < currentCost;
+        }).map(function(m) {
+            var cost = (inputTokens / 1000000) * m.input + (outputTokens / 1000000) * m.output;
+            var savings = currentCost - cost;
+            var pct = ((savings / currentCost) * 100).toFixed(0);
+            return { model: m, cost: cost, savings: savings, pct: pct };
+        }).sort(function(a, b) { return a.cost - b.cost; });
+
+        // Show top 5 alternatives
+        var topAlts = alternatives.slice(0, 5);
+        var bestSaving = topAlts.length > 0 ? topAlts[0].savings : 0;
+        var bestPct = topAlts.length > 0 ? topAlts[0].pct : 0;
+        var optimizedCost = topAlts.length > 0 ? topAlts[0].cost : currentCost;
+
+        var monthlySavings = bestSaving;
+        var annualSavings = monthlySavings * 12;
+
+        if (window.trackEvent) window.trackEvent('savings_calculated', {
+            model: selectedModel.id,
+            current_cost: Math.round(currentCost * 100) / 100,
+            savings: Math.round(monthlySavings * 100) / 100,
+            alternatives_count: alternatives.length
+        });
+
+        var html = '<div class="results-card">' +
+            '<div class="results-header">' +
+            '<h2>You could save $' + monthlySavings.toFixed(2) + '/month</h2>' +
+            '<p>Switching from <strong>' + selectedModel.name + '</strong> to a cheaper alternative</p>' +
+            '</div>' +
+            '<div class="spend-display">' +
+            '<div class="spend-box">' +
+            '<div class="spend-label">Current Spend</div>' +
+            '<div class="spend-amount current">$' + currentCost.toFixed(2) + '</div>' +
+            '<div class="spend-sub">per month</div>' +
+            '</div>' +
+            '<div class="spend-box savings">' +
+            '<div class="spend-label">Optimized Spend</div>' +
+            '<div class="spend-amount optimized">$' + optimizedCost.toFixed(2) + '</div>' +
+            '<div class="spend-sub">per month</div>' +
+            '</div>' +
+            '<div class="spend-box savings">' +
+            '<div class="spend-label">You Save</div>' +
+            '<div class="spend-amount savings-amt">$' + monthlySavings.toFixed(2) + '</div>' +
+            '<div class="spend-sub">' + bestPct + '% reduction</div>' +
+            '</div>' +
+            '</div>';
+
+        // Annual savings bar
+        if (annualSavings > 0) {
+            var maxAnnual = currentCost * 12;
+            var beforePct = 100;
+            var afterPct = maxAnnual > 0 ? (optimizedCost * 12 / maxAnnual * 100) : 100;
+            html += '<div class="annual-bar">' +
+                '<h3>Annual Impact</h3>' +
+                '<div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:8px;">' +
+                '<span style="font-size:14px;color:var(--text-secondary);">You save <strong style="color:var(--green);">$' + annualSavings.toFixed(0) + '/year</strong></span>' +
+                '<span style="font-size:12px;color:var(--text-muted);">That\'s ' + Math.ceil(annualSavings / 29) + 'x the cost of Pro</span>' +
+                '</div>' +
+                '<div class="bar-track">' +
+                '<div class="bar-before" style="width:100%;"></div>' +
+                '<div class="bar-after" style="width:' + afterPct + '%;"></div>' +
+                '</div>' +
+                '<div class="bar-labels">' +
+                '<span>$' + (currentCost * 12).toFixed(0) + '/yr (now)</span>' +
+                '<span>$' + (optimizedCost * 12).toFixed(0) + '/yr (optimized)</span>' +
+                '</div>' +
+                '</div>';
+        }
+
+        // Top alternatives
+        if (topAlts.length > 0) {
+            html += '<div class="alternatives">' +
+                '<h3>Cheaper alternatives for your workload</h3>';
+            topAlts.forEach(function(alt, i) {
+                var isBest = i === 0;
+                html += '<div class="alt-row' + (isBest ? ' best' : '') + '">' +
+                    '<div>' +
+                    '<div class="alt-model">' + alt.model.name + (isBest ? '<span class="best-badge">Best Value</span>' : '') + '</div>' +
+                    '<div class="alt-provider">' + alt.model.provider + ' · ' + alt.model.tier + '</div>' +
+                    '</div>' +
+                    '<div class="alt-cost">$' + alt.cost.toFixed(2) + '/mo</div>' +
+                    '<div class="alt-savings">-$' + alt.savings.toFixed(2) + ' (' + alt.pct + '%)</div>' +
+                    '</div>';
+            });
+            html += '</div>';
+        } else {
+            html += '<div style="text-align:center;padding:24px;background:var(--bg-card);border-radius:12px;border:1px solid var(--border);">' +
+                '<p style="font-size:16px;font-weight:600;margin-bottom:8px;">🎉 You\'re already using one of the cheapest options!</p>' +
+                '<p style="font-size:14px;color:var(--text-secondary);">Your current model is highly cost-effective for this workload.</p>' +
+                '</div>';
+        }
+
+        // Pro gate
+        if (alternatives.length > 3) {
+            html += '<div class="pro-gate" style="margin-top:24px;">' +
+                '<h3>🚀 Get the full optimization report</h3>' +
+                '<p>Pro gives you 10+ alternatives ranked by cost, batch processing tips, caching strategies, and a PDF report you can share with your team.</p>' +
+                '<div class="features">' +
+                '<span class="feature">10+ model alternatives</span>' +
+                '<span class="feature">Batch processing tips</span>' +
+                '<span class="feature">Caching strategies</span>' +
+                '<span class="feature">PDF export</span>' +
+                '</div>' +
+                '<a href="pricing.html" class="btn-primary">Get Pro — $29 lifetime</a>' +
+                '<p style="font-size:12px;color:var(--text-muted);margin-top:12px;">Pays for itself in ' + (monthlySavings > 0 ? Math.ceil(29 / monthlySavings) : '—') + ' month' + (monthlySavings > 29 ? '' : 's') + '</p>' +
+                '</div>';
+        }
+
+        html += '</div>'; // close results-card
+
+        // CTA
+        html += '<div style="text-align:center;margin-top:24px;">' +
+            '<button class="btn-secondary" onclick="resetCalc()" style="margin-right:12px;">← Calculate again</button>' +
+            '<a href="calculator.html" class="btn-secondary">Full Calculator →</a>' +
+            '</div>';
+
+        document.getElementById('results').innerHTML = html;
+        document.getElementById('step2').style.display = 'none';
+        document.getElementById('results').style.display = 'block';
+        document.getElementById('step2-num').classList.add('done');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function resetCalc() {
+        selectedModel = null;
+        document.getElementById('results').style.display = 'none';
+        document.getElementById('results').innerHTML = '';
+        document.getElementById('step2').style.display = 'none';
+        document.getElementById('step1').style.display = 'block';
+        document.getElementById('step1-num').classList.remove('done');
+        document.getElementById('step2-num').classList.remove('done');
+        document.getElementById('step1-next').disabled = true;
+        document.querySelectorAll('.model-btn').forEach(function(b) { b.classList.remove('selected'); });
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    // Init
+    renderModels();
+    if (window.trackEvent) window.trackEvent('savings_page_view');
+    </script>
+</body>
+</html>

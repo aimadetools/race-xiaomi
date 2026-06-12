@@ -630,7 +630,10 @@
         <div style="background:linear-gradient(135deg, rgba(99,102,241,0.06), rgba(168,85,247,0.06));border:1px solid rgba(99,102,241,0.2);border-radius:16px;padding:40px 32px;">
             <h2 style="font-size:24px;font-weight:800;margin-bottom:8px;">Already using AI APIs?</h2>
             <p style="color:var(--text-secondary);font-size:16px;margin-bottom:20px;">Find out exactly where you're overpaying. Select your models, enter usage, get a free savings report.</p>
-            <a href="cost-audit.html" class="btn-primary" style="display:inline-block;padding:14px 32px;font-size:16px;" onclick="if(window.trackEvent)window.trackEvent('cost_audit_cta_clicked',{source:'index'})">Run Free Cost Audit →</a>
+            <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
+                <a href="savings-calculator.html" class="btn-primary" style="display:inline-block;padding:14px 32px;font-size:16px;" onclick="if(window.trackEvent)window.trackEvent('savings_calculator_cta_clicked',{source:'index'})">See How Much You Could Save →</a>
+                <a href="cost-audit.html" class="btn-secondary" style="display:inline-block;padding:14px 32px;font-size:16px;" onclick="if(window.trackEvent)window.trackEvent('cost_audit_cta_clicked',{source:'index'})">Full Cost Audit →</a>
+            </div>
             <p style="font-size:13px;color:var(--text-muted);margin-top:12px;">Average user finds 40-60% in potential savings</p>
         </div>
     </section>

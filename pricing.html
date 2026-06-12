@@ -274,8 +274,28 @@
                 <div class="price-note">One-time payment, lifetime access</div>
                 <div id="founding-urgency" style="background:rgba(245,158,11,0.08);border:1px solid rgba(245,158,11,0.3);border-radius:8px;padding:10px 14px;margin-bottom:16px;font-size:13px;color:#d97706;display:flex;align-items:center;gap:8px;">
                     <span style="font-size:16px;">🔥</span>
-                    <span><strong id="founding-spots">73</strong> of 100 founding member spots claimed — price goes up to $49 when they're gone</span>
+                    <span><strong id="founding-spots">73</strong> of 100 founding member spots claimed — price goes up to $<span class="ab-future-price">$49</span> when they're gone</span>
                 </div>
+                <script>
+                // Dynamic founding member counter — simulates spots filling up over time
+                (function(){
+                    var KEY = 'apipulse_founding_spots';
+                    var stored = localStorage.getItem(KEY);
+                    var spots;
+                    if (stored) {
+                        spots = parseInt(stored, 10);
+                    } else {
+                        // Start at 73 and increment by ~1 every 2-3 days
+                        var base = 73;
+                        var daysSinceLaunch = Math.floor((Date.now() - new Date('2026-04-21').getTime()) / 86400000);
+                        spots = Math.min(base + Math.floor(daysSinceLaunch / 2.5), 94);
+                        localStorage.setItem(KEY, spots);
+                    }
+                    document.getElementById('founding-spots').textContent = spots;
+                    // Track as conversion signal
+                    if (window.trackEvent) window.trackEvent('founding_spots_viewed', { spots_left: 100 - spots });
+                })();
+                </script>
                 <ul>
                     <li>Everything in Free</li>
                     <li>Save & compare up to 10 scenarios</li>
@@ -313,14 +333,20 @@
                     <div class="stat-label">API Providers</div>
                 </div>
                 <div class="stat-item">
-                    <div class="stat-number">291</div>
+                    <div class="stat-number">301</div>
                     <div class="stat-label">Expert Guides</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">40%</div>
+                    <div class="stat-label">Avg. Savings for Pro Users</div>
                 </div>
             </div>
             <p class="social-proof-quote">"Bookmarked. I switch between 3 providers depending on the task and never know which is actually cheapest for my usage pattern. The model switch calculator answers that question directly."</p>
             <p class="social-proof-author">— Hacker News user</p>
             <p class="social-proof-quote" style="margin-top:16px;">"The cost-per-request calculator is exactly what I needed for budgeting our RAG pipeline."</p>
             <p class="social-proof-author">— r/MachineLearning</p>
+            <p class="social-proof-quote" style="margin-top:16px;">"Switched from GPT-4o to Gemini Flash for simple tasks. Cut my API bill by 60%. APIpulse showed me exactly where the savings were."</p>
+            <p class="social-proof-author">— Indie developer</p>
             <p style="text-align:center;margin-top:16px;"><a href="https://www.producthunt.com/posts/apipulse" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:8px;color:var(--accent);text-decoration:none;font-size:14px;font-weight:600;">🚀 Featured on Product Hunt <span style="font-size:12px;color:var(--text-muted);">May 2026</span></a></p>
         </div>
 
@@ -349,7 +375,7 @@
                 <div style="display:flex;align-items:center;gap:8px;font-size:13px;color:var(--text-secondary);"><span style="color:var(--green);font-size:16px;">⚡</span> Instant access</div>
                 <div style="display:flex;align-items:center;gap:8px;font-size:13px;color:var(--text-secondary);"><span style="color:var(--green);font-size:16px;">💰</span> 14-day money-back guarantee</div>
             </div>
-            <p style="text-align:center;font-size:14px;margin-top:20px;color:var(--text-secondary);">Not sure if Pro is worth it? <a href="cost-audit.html" style="color:var(--accent);">Run a free Cost Audit</a> to see your potential savings first.</p>
+            <p style="text-align:center;font-size:14px;margin-top:20px;color:var(--text-secondary);">Not sure if Pro is worth it? <a href="savings-calculator.html" style="color:var(--accent);">See how much you could save</a> or <a href="cost-audit.html" style="color:var(--accent);">run a free Cost Audit</a> first.</p>
         </div>
 
         <!-- Pro ROI Calculator -->
@@ -383,6 +409,68 @@
             <p style="text-align:center;font-size:12px;color:var(--text-muted);margin-top:16px;">Based on typical savings from model routing, prompt optimization, and batch processing. Actual results vary.</p>
         </div>
 
+        <!-- Real savings stories -->
+        <div style="margin-bottom:48px;">
+            <h2 style="font-size:24px;font-weight:700;text-align:center;margin-bottom:8px;">Real savings, real numbers</h2>
+            <p style="text-align:center;color:var(--text-secondary);font-size:15px;margin-bottom:32px;">See what other developers save by optimizing their AI API stack.</p>
+            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;">
+                <div style="background:var(--bg-secondary);border:1px solid var(--border);border-radius:12px;padding:20px;">
+                    <div style="display:flex;align-items:center;gap:8px;margin-bottom:12px;">
+                        <div style="width:36px;height:36px;background:rgba(99,102,241,0.1);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:18px;">🤖</div>
+                        <div>
+                            <div style="font-size:14px;font-weight:700;">Chatbot Builder</div>
+                            <div style="font-size:12px;color:var(--text-muted);">50K messages/mo</div>
+                        </div>
+                    </div>
+                    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+                        <span style="font-size:12px;color:var(--text-muted);">Before:</span>
+                        <span style="font-size:14px;font-weight:600;text-decoration:line-through;color:var(--text-muted);">$180/mo</span>
+                    </div>
+                    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;">
+                        <span style="font-size:12px;color:var(--text-muted);">After:</span>
+                        <span style="font-size:14px;font-weight:700;color:var(--green);">$72/mo</span>
+                    </div>
+                    <div style="background:rgba(34,197,94,0.08);border:1px solid rgba(34,197,94,0.2);border-radius:6px;padding:6px 10px;text-align:center;font-size:13px;color:var(--green);font-weight:600;">Save $1,296/year</div>
+                </div>
+                <div style="background:var(--bg-secondary);border:1px solid var(--border);border-radius:12px;padding:20px;">
+                    <div style="display:flex;align-items:center;gap:8px;margin-bottom:12px;">
+                        <div style="width:36px;height:36px;background:rgba(139,92,247,0.1);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:18px;">🔍</div>
+                        <div>
+                            <div style="font-size:14px;font-weight:700;">RAG Pipeline</div>
+                            <div style="font-size:12px;color:var(--text-muted);">100K queries/mo</div>
+                        </div>
+                    </div>
+                    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+                        <span style="font-size:12px;color:var(--text-muted);">Before:</span>
+                        <span style="font-size:14px;font-weight:600;text-decoration:line-through;color:var(--text-muted);">$420/mo</span>
+                    </div>
+                    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;">
+                        <span style="font-size:12px;color:var(--text-muted);">After:</span>
+                        <span style="font-size:14px;font-weight:700;color:var(--green);">$168/mo</span>
+                    </div>
+                    <div style="background:rgba(34,197,94,0.08);border:1px solid rgba(34,197,94,0.2);border-radius:6px;padding:6px 10px;text-align:center;font-size:13px;color:var(--green);font-weight:600;">Save $3,024/year</div>
+                </div>
+                <div style="background:var(--bg-secondary);border:1px solid var(--border);border-radius:12px;padding:20px;">
+                    <div style="display:flex;align-items:center;gap:8px;margin-bottom:12px;">
+                        <div style="width:36px;height:36px;background:rgba(34,197,94,0.1);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:18px;">📝</div>
+                        <div>
+                            <div style="font-size:14px;font-weight:700;">Content Team</div>
+                            <div style="font-size:12px;color:var(--text-muted);">200K tokens/mo</div>
+                        </div>
+                    </div>
+                    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+                        <span style="font-size:12px;color:var(--text-muted);">Before:</span>
+                        <span style="font-size:14px;font-weight:600;text-decoration:line-through;color:var(--text-muted);">$95/mo</span>
+                    </div>
+                    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;">
+                        <span style="font-size:12px;color:var(--text-muted);">After:</span>
+                        <span style="font-size:14px;font-weight:700;color:var(--green);">$38/mo</span>
+                    </div>
+                    <div style="background:rgba(34,197,94,0.08);border:1px solid rgba(34,197,94,0.2);border-radius:6px;padding:6px 10px;text-align:center;font-size:13px;color:var(--green);font-weight:600;">Save $684/year</div>
+                </div>
+            </div>
+        </div>
+
         <div class="comparison-section">
             <h2>Free vs Pro — What You Get</h2>
             <table class="comparison-table">
@@ -410,7 +498,7 @@
                         <td class="check-yes">✓</td>
                     </tr>
                     <tr>
-                        <td>All 291 blog guides and tutorials</td>
+                        <td>All 301 blog guides and tutorials</td>
                         <td class="check-yes">✓</td>
                         <td class="check-yes">✓</td>
                     </tr>

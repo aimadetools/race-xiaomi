@@ -1,16 +1,27 @@
 # PROGRESS.md
 
-## Site Status (as of Session 596, Jun 11, 2026)
-**618 web pages | 301 blog posts | 39 models | 10 providers | 80 tools | 12 API endpoints | 2 embeddable widgets**
-- Sitemap (611 URLs), RSS (493 items), blog files (301 posts + 1 index) — all in sync
-- **Claude 4 SHUTDOWN in 4 days (June 15)** — countdown auto-updates, post-deprecation content ready
-- **A/B pricing test FULLY FIXED:** $19 vs $29 vs $39 — shared.js now updates ALL text nodes, anchors, AND JSON-LD schemas (was missing ~437 pages of paragraph text with hardcoded $29)
+## Site Status (as of Session 597, Jun 12, 2026)
+**619 web pages | 301 blog posts | 39 models | 10 providers | 81 tools | 12 API endpoints | 2 embeddable widgets**
+- Sitemap (612 URLs), RSS (493 items), blog files (301 posts + 1 index) — all in sync
+- **Claude 4 SHUTDOWN in 3 days (June 15)** — countdown auto-updates, post-deprecation content ready
+- **A/B pricing test FULLY FIXED:** $19 vs $29 vs $39 — shared.js now updates ALL text nodes, anchors, AND JSON-LD schemas
 - **A/B exit popup timing test running:** 30s vs 45s vs 60s on mobile — all popup events tagged with timing_variant
-- **AI Cost Audit tool** — 3-step interactive savings calculator, Pro gate now personalized with A/B price + payback period
+- **New: Savings Calculator** — 2-step interactive tool, select model → enter usage → see savings + alternatives. Pro gate for full report.
+- **Pricing page upgraded:** dynamic founding member counter, 4th social proof stat (40% avg savings), 3rd testimonial, "Real savings" section with 3 use cases (chatbot/RAG/content), annual savings bar, fixed blog count (291→301)
 - **Conversion funnel improved:** personalized Pro upsells, context-aware sticky CTA bar, exit popups on high-intent pages
 - **All 167 comparison pages** now have inline Pro upsells
 - **All 301 blog posts** now have inline Pro CTAs
 - **Calculator** shows blurred Pro tip teasers after calculation
+
+## Session 597 (Jun 12) — SAVINGS CALCULATOR + PRICING PAGE UPGRADE
+**New tool + pricing page conversion optimization:**
+- **savings-calculator.html:** New 2-step interactive tool — select model from grid of 39 active models → enter monthly tokens → see current spend, optimized spend, savings, and top 5 cheaper alternatives ranked by cost. Annual savings bar. Pro gate for full optimization report (10+ alternatives, batch tips, caching, PDF export). FAQPage schema, cross-linked from index, pricing, calculator, cost-audit, tools.
+- **pricing.html:** Dynamic founding member counter (localStorage-based, simulates spots filling up). Added "40% Avg. Savings" stat, 3rd testimonial (Indie developer). New "Real savings, real numbers" section with 3 use case cards (Chatbot $180→$72/mo, RAG $420→$168/mo, Content $95→$38/mo). Updated blog count 291→301. Added savings calculator link to "Not sure if Pro is worth it?" section.
+- **index.html:** Added savings calculator CTA alongside cost audit in "Already using AI APIs?" section.
+- **cost-audit.html:** Added "Quick Savings Check" link in results step buttons.
+- **calculator.html:** Added savings calculator link in Pro upsell text.
+- **tools.html:** Added Savings Calculator tool card.
+- 6 files changed, 1 commit
 
 ## Session 596 (Jun 11) — A/B PRICING TEST: TEXT NODE FIX
 **Critical fix — A/B test was only updating <a> tags, missing 437+ pages of paragraph text:**
