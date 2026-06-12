@@ -28,6 +28,7 @@
     <script src="dynamic-date.js" defer></script>
     <script src="shared.js" defer></script>
     <script src="pricing-data.js" defer></script>
+    <script src="pro-features.js" defer></script>
     <script type="application/ld+json">
     {
         "@context": "schema.org",
@@ -400,13 +401,46 @@ curl https://api.anthropic.com/v1/messages \
                 <p style="text-align:center;"><a href="claude-deprecation-calculator.html" style="color:var(--accent);font-weight:600;">Calculate your exact savings →</a></p>
             </div>
 
+            <!-- Pro Upsell — Migration-Targeted -->
+            <div style="background:linear-gradient(135deg,rgba(99,102,241,0.08),rgba(34,197,94,0.08));border:1px solid var(--accent);border-radius:16px;padding:32px;margin-bottom:32px;">
+                <div style="display:flex;align-items:center;gap:12px;margin-bottom:20px;">
+                    <span style="font-size:28px;">⚡</span>
+                    <div>
+                        <h2 style="font-size:22px;font-weight:800;margin:0;">Stop Overpaying for AI APIs</h2>
+                        <p style="font-size:14px;color:var(--text-secondary);margin:4px 0 0;">Most developers save $2,400+/year by switching models. Pro shows you exactly how.</p>
+                    </div>
+                </div>
+                <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:16px;margin-bottom:24px;">
+                    <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:12px;padding:16px;text-align:center;">
+                        <div style="font-size:11px;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.5px;margin-bottom:6px;">Annual Waste (est.)</div>
+                        <div style="font-size:28px;font-weight:800;color:#ef4444;" id="annual-waste-est">$2,400/yr</div>
+                        <div style="font-size:12px;color:var(--text-secondary);margin-top:4px;">overpaying vs optimal</div>
+                    </div>
+                    <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:12px;padding:16px;text-align:center;">
+                        <div style="font-size:11px;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.5px;margin-bottom:6px;">Pro ROI</div>
+                        <div style="font-size:28px;font-weight:800;color:var(--green);">82x</div>
+                        <div style="font-size:12px;color:var(--text-secondary);margin-top:4px;">return on $29 investment</div>
+                    </div>
+                    <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:12px;padding:16px;text-align:center;">
+                        <div style="font-size:11px;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.5px;margin-bottom:6px;">Setup Time</div>
+                        <div style="font-size:28px;font-weight:800;color:var(--accent);">5 min</div>
+                        <div style="font-size:12px;color:var(--text-secondary);margin-top:4px;">one-time, lifetime access</div>
+                    </div>
+                </div>
+                <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
+                    <a href="https://buy.stripe.com/fZu7sL3Gw3GS0RQeoDeEo0a" class="btn-primary" style="padding:14px 32px;background:linear-gradient(135deg,var(--accent),#8b5cf6);font-size:16px;" target="_blank" rel="noopener" onclick="if(window.trackEvent)window.trackEvent('pro_button_clicked',{source:'error_page_pro_upsell'})">Get Pro — <span class="ab-price">$29</span> lifetime</a>
+                    <button onclick="startTrial('error_page_pro_upsell')" style="padding:14px 32px;background:transparent;border:2px solid var(--accent);color:var(--accent);border-radius:8px;font-weight:700;cursor:pointer;font-size:16px;">Try Free 24h</button>
+                </div>
+                <p style="font-size:11px;color:var(--text-muted);text-align:center;margin-top:10px;">Saved scenarios • Cost report export • Optimization recommendations • 14-day money-back guarantee</p>
+            </div>
+
             <!-- CTA -->
             <div class="cta-box">
                 <h2>Need Help Choosing?</h2>
                 <p>Our free calculator compares all 42 alternatives for your specific usage. Pro users get personalized optimization tips to save up to 40% more.</p>
                 <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
                     <a href="claude-deprecation-calculator.html" class="btn-primary" style="padding:14px 32px;">Free Calculator</a>
-                    <a href="https://buy.stripe.com/fZu7sL3Gw3GS0RQeoDeEo0a" class="btn-primary" style="padding:14px 32px;background:linear-gradient(135deg,var(--accent),#8b5cf6);" target="_blank" rel="noopener" onclick="if(window.trackEvent)window.trackEvent('pro_button_clicked',{source:'error_page_cta'})">Get Pro — $29 lifetime</a>
+                    <a href="https://buy.stripe.com/fZu7sL3Gw3GS0RQeoDeEo0a" class="btn-primary" style="padding:14px 32px;background:linear-gradient(135deg,var(--accent),#8b5cf6);" target="_blank" rel="noopener" onclick="if(window.trackEvent)window.trackEvent('pro_button_clicked',{source:'error_page_cta'})">Get Pro — <span class="ab-price">$29</span> lifetime</a>
                 </div>
                 <p style="font-size:11px;color:var(--text-muted);margin-top:8px;">14-day money-back guarantee. Lock in founding member pricing.</p>
             </div>
@@ -442,17 +476,20 @@ curl https://api.anthropic.com/v1/messages \
     </footer>
 
     <script>
-    // Countdown to Claude 4 deadline
+    // Countdown to Claude 4 deadline (UTC midnight — matches shared.js banner)
     (function(){
+        var deadline=new Date('2026-06-15T00:00:00Z').getTime();
         function updateCountdown(){
-            var deadline=new Date('2026-06-15T00:00:00-07:00').getTime();
             var now=new Date().getTime();
             var diff=deadline-now;
+            var cdBar=document.querySelector('.countdown-bar');
             if(diff<=0){
-                document.getElementById('cd-days').textContent='EXPIRED';
-                document.getElementById('cd-hours').textContent='—';
-                document.getElementById('cd-mins').textContent='—';
-                document.getElementById('cd-secs').textContent='—';
+                // Post-shutdown: replace countdown with retirement notice
+                if(cdBar){
+                    cdBar.style.background='linear-gradient(135deg,rgba(220,38,38,0.12),rgba(220,38,38,0.08))';
+                    cdBar.style.borderColor='rgba(220,38,38,0.5)';
+                    cdBar.innerHTML='<div style="text-align:center;width:100%;"><div style="font-size:clamp(18px,3vw,24px);font-weight:800;color:#dc2626;margin-bottom:4px;">🔴 Claude 4 Has Been Retired</div><div style="font-size:14px;color:var(--text-secondary);">API calls to Claude 4 Opus and Sonnet 4 now return 410 errors. Fix below.</div></div>';
+                }
                 return;
             }
             var d=Math.floor(diff/(1000*60*60*24));
