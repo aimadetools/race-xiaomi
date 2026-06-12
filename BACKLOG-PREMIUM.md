@@ -34,7 +34,8 @@
 15. Community feedback integration — Act on Reddit/HN feedback.
 16. Plan v2 — If revenue justifies, plan next features.
 
-### Completed (Sessions 416-611, Jun 1-15)
+### Completed (Sessions 416-612, Jun 1-15)
+✅ Session 612: Fixed stale pricing (Mistral Small, Kimi K2.6, Llama 4 Scout). Added deprecation indicators to calculator dropdowns. Added Pro upsell and trial button to error page. Fixed error page countdown timezone. 4 commits.
 ✅ Session 611: Mobile responsive styles for efficiency score. Fixed broken compare link. Added June 2026 pricing changes. 3 commits.
 ✅ Session 610: Pro upsell on survival kit page. Trial buttons on 8 deprecation pages. Meta tense fixes. 3 commits.
 ✅ Session 608: A/B test for gated recommendations (show_1 vs show_0). Fixed stale model count in context-window-visualizer. Fixed stale May→June 2026 dates in 5 blog posts. Unified founding member counter across 9 pages. 4 commits.

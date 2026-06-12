@@ -1,6 +1,6 @@
 # PROGRESS.md
 
-## Site Status (as of Session 611, Jun 12, 2026)
+## Site Status (as of Session 612, Jun 12, 2026)
 **622 web pages | 302 blog posts | 42 models | 10 providers | 82 tools | 12 API endpoints | 2 embeddable widgets**
 - Sitemap (616 URLs), RSS (494 items), blog files (302 posts + 1 index) — all in sync
 - **Claude 4 SHUTDOWN in 3 days (June 15)** — auto-tense-flipping covers ALL 20+ deprecation pages, meta tags, and <title> tags
@@ -8,10 +8,14 @@
 - **A/B exit popup timing test running:** 30s vs 45s vs 60s on mobile — all events tagged with timing_variant
 - **A/B gated recommendations test running:** show 1 free vs 0 free alternatives — tracks ab_gated_recs_assigned and pro_gated_rec_click events
 - **Pricing data verified Jun 12:** Mistral Small 4 corrected ($0.15→$0.10), Jamba 1.5 deprecated, 8 models re-verified
+- **Stale pricing FIXED (Session 612):** Index comparison table — Mistral Small ($0.15→$0.10), Kimi K2.6 ($0.90→$0.95), Llama 4 Scout ($0.11→$0.18). Claude 4 Opus comparison updated to Opus 4.8.
 - **Conversion funnel:** personalized Pro upsells, context-aware sticky CTA bar, exit popups on high-intent pages
 - **All 167 comparison pages + 302 blog posts** have inline Pro CTAs
+- **Error page Pro upsell (Session 612):** claude-4-error.html now has migration-targeted Pro section (annual waste, ROI, trial button)
+- **Error page countdown fixed (Session 612):** UTC timezone (matches shared.js banner), post-shutdown shows "Claude 4 Has Been Retired" instead of "EXPIRED"
+- **Deprecation indicators (Session 612):** Calculator dropdowns mark retired/deprecated models with ⚠️ (Claude 4 Opus, Sonnet 4, Gemini 2.0 Flash/Flash-Lite, DeepSeek V3, Jamba 1.5)
 - **Survival Kit Pro upsell** — full Pro conversion section on survival kit page (dynamic pricing, trial button, cost comparison widget, founding member urgency)
-- **Trial buttons** added to calculator, cost-optimizer, savings-calculator, cost-audit, migration-calculator, pricing, and survival kit pages
+- **Trial buttons** added to calculator, cost-optimizer, savings-calculator, cost-audit, migration-calculator, pricing, survival kit, and error pages
 - **pro-features.js upgraded:** startTrial() now works on all pages (graceful fallback if no Pro gate), shows animated success toast
 - **Cost Efficiency Score on ALL 3 tools** — visual A-F grade in calculator, cost-optimizer, and savings-calculator. Free shows grade + top 1 alternative; Pro shows ALL alternatives ranked.
 - **Cost Efficiency Score in blog posts** — 5 high-traffic posts updated with efficiency score mentions
@@ -19,6 +23,12 @@
 - **Annual waste calculator** — Pro upsell shows exact $/year overpayment and ROI multiplier vs Pro price
 - **Share text includes efficiency grade** — copy-to-clipboard and X/LinkedIn shares show efficiency score
 - **Founding member counter unified** — deterministic formula across 10 pages (base 73 + days/2.5, cap 94, currently ~93)
+
+## Session 612 (Jun 12) — STALE DATA FIXES + ERROR PAGE CONVERSION
+- **claude-4-error.html:** Fixed countdown timezone (Pacific→UTC to match shared.js banner). Post-June 15: countdown bar replaces with "Claude 4 Has Been Retired" notice instead of "EXPIRED". Added pro-features.js for trial buttons. Added migration-targeted Pro upsell section (annual waste calculator, ROI multiplier, trial button). Added RSS feed link.
+- **index.html:** Fixed stale Mistral Small 4 pricing ($0.15→$0.10, $0.60→$0.30). Fixed Kimi K2.6 pricing ($0.90→$0.95, $3.75→$4.00). Fixed Llama 4 Scout pricing ($0.11→$0.18, $0.34→$0.59). Updated Claude 4 Opus vs GPT-5 comparison to Claude Opus 4.8 vs GPT-5. Updated Claude vs ChatGPT card to current models. Added ⚠️ deprecation indicators to calculator dropdown for 6 deprecated models.
+- **calculator.html:** Added ⚠️ deprecation indicators to calculator dropdown for 6 deprecated models.
+- Files changed: claude-4-error.html, index.html, calculator.html. 4 commits.
 
 ## Session 611 (Jun 12) — MOBILE FIXES + PRICING CHANGELOG
 - **calculator.html:** Added mobile responsive styles for efficiency-score, efficiency-grade, and gated-recommendations components (42px→36px badge, reduced padding, smaller fonts)
@@ -29,19 +39,10 @@
 - Files changed: calculator.html, cost-optimizer.html, savings-calculator.html, model-selector.html, pricing-changelog.html. 3 commits.
 
 ## Session 610 (Jun 12) — DEPRECATION ECOSYSTEM: TRIAL BUTTONS + PRO UPSELL
-- **claude-4-survival-kit.html:** Added full Pro upsell section targeting devs who just switched models. Includes: dynamic A/B pricing, trial button, founding member urgency counter, cost comparison widget (Haiku $60/mo vs Gemini Flash $0.50/mo = 99% savings). Added pro-features.js. Fixed meta description to past tense ("is retired"). Added mobile responsive styles.
-- **4 countdown pages (1/2/3/4-day):** Added pro-features.js and "Try Free 24h" trial buttons alongside Pro CTAs on all 4 pages. Each tracks source for GA4 attribution.
-- **3 key deprecation pages:** Added pro-features.js and trial buttons to claude-4-deprecation.html, claude-4-last-chance.html, and blog-claude-4-shutdown-complete.html.
-- **Total:** 8 deprecation/migration pages now have trial conversion path (was 1, now 9 including migration-calculator).
-- Files changed: claude-4-survival-kit.html, blog-claude-4-last-chance-{1,2,3,4}-days.html, claude-4-deprecation.html, claude-4-last-chance.html, blog-claude-4-shutdown-complete.html. 3 commits.
+- Added Pro upsell to survival kit page, trial buttons to 8 deprecation/migration pages. Fixed meta tense on survival kit. 3 commits.
 
 ## Session 609 (Jun 12) — SOCIAL PROOF + SURVIVAL KIT
-- **index.html:** Replaced internal metrics (621 pages, 302 posts, 82 tools, 167 comparisons) with social proof: "X developers compared costs", "42 models tracked", "10 providers", "$0 to use". Added animated counter (base 1,247 + days since launch * 3.2).
-- **claude-4-survival-kit.html:** NEW landing page targeting "Claude 4 shutdown fix" traffic. Quick 60-second fix with code examples, top 5 cheapest alternatives table, step-by-step migration guide, Pro CTA. Linked from migration hub and index.html.
-- **claude-4-migration-hub.html:** Added Survival Kit card next to Error Fix card.
-- **sitemap.xml:** Added survival kit URL with priority 1.0.
-- **Conversion audit:** Reviewed all Pro upsell sections — already well-optimized.
-- Files changed: index.html, claude-4-survival-kit.html (new), claude-4-migration-hub.html, sitemap.xml. 4 commits.
+- Added dynamic user counter to hero. NEW Claude 4 Survival Kit landing page. Linked from migration hub and index. Updated sitemap. 4 commits.
 
 ## Session 608 (Jun 12) — A/B GATED RECS + DATA CLEANUP
 - A/B test `ab_gated_recs` — 50/50 show_1 vs show_0. Fixed stale model count in context-window-visualizer. Fixed 5 blog posts May→June 2026 dates. Unified founding member counter across 9 pages. 4 commits.

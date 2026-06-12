@@ -19,14 +19,7 @@
 - Monitor pro_gated_rec clicks — are users clicking the "X more savings opportunities" teaser?
 
 ### Post-Calculator Upgrade (Session 605 follow-ups)
-- ✅ Add Cost Efficiency Score to cost-optimizer.html and savings-calculator.html — DONE Session 606
-- ✅ Add "Efficiency Score" section to pro.html — DONE Session 606
-- ✅ Update blog posts with efficiency score mentions — DONE Session 607 (5 posts)
-- ✅ Add efficiency score to calculator share text — DONE Session 606
-- ✅ A/B test gated recommendations — DONE Session 608
-- ✅ Add trial buttons to deprecation ecosystem pages — DONE Session 610 (8 pages)
-- ✅ Add Pro upsell to survival kit page — DONE Session 610
-- ✅ Test calculator on mobile — verify efficiency score and gated recommendations display correctly — DONE Session 611 (added mobile styles)
+- ✅ All tasks completed (Sessions 606-612)
 
 ### Post-Claude 4 Shutdown (after June 15)
 - Monitor post-shutdown traffic spikes (searches for "Claude 4 shutdown", "410 error")
@@ -40,7 +33,7 @@
 - ✅ Update State of LLM Pricing Report monthly — DONE Session 602 (model count 39→42, FAQ, meta, dateModified)
 - ✅ Create monthly pricing changelog entry when providers update prices — DONE Session 611 (June 2026 section added)
 
-### Completed (Sessions 416-611, Jun 1-12)
+### Completed (Sessions 416-612, Jun 1-12)
 ✅ Session 611: Mobile responsive styles for efficiency score on calculator, cost-optimizer, savings-calculator. Fixed broken compare link in model-selector nav. Added June 2026 pricing changes to changelog. 3 commits.
 ✅ Session 610: Added Pro upsell to survival kit page (dynamic pricing, trial button, cost comparison). Added trial buttons to 8 deprecation/migration pages. Fixed meta tense on survival kit. 3 commits.
 ✅ Session 609: Added dynamic user counter to hero (social proof). NEW Claude 4 Survival Kit landing page. Linked from migration hub and index. Updated sitemap. 4 commits.
