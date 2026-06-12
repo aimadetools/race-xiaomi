@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GPT-5 vs Claude Sonnet 4.6: Price, Speed & Quality Compared (2026) | APIpulse</title>
+    <meta name="description" content="GPT-5 vs Claude Sonnet 4.6: Compare pricing, context windows, speed, and quality. Interactive calculator shows which is cheaper for YOUR workload. Updated Jun 2026.">
+    <meta name="keywords" content="GPT-5 vs Claude Sonnet, GPT-5 pricing, Claude Sonnet 4.6 cost, OpenAI vs Anthropic, cheapest AI API, GPT-5 cheaper, Claude Sonnet cheaper">
+    <meta property="og:title" content="GPT-5 vs Claude Sonnet 4.6: Which is Cheaper?">
+    <meta property="og:description" content="Interactive comparison with cost calculator. See which model saves you money for your specific workload.">
+    <meta property="og:type" content="article">
+    <meta property="og:image" content="https://getapipulse.com/og-image.png">
+    <meta property="og:url" content="https://getapipulse.com/gpt5-vs-claude-sonnet-comparison.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="GPT-5 vs Claude Sonnet 4.6: Price Comparison">
+    <meta name="twitter:image" content="https://getapipulse.com/og-image.png">
+    <meta name="twitter:description" content="Compare GPT-5 and Claude Sonnet 4.6 pricing, speed, and quality. Interactive calculator included.">
+    <link rel="canonical" href="https://getapipulse.com/gpt5-vs-claude-sonnet-comparison.html">
+    <link rel="alternate" type="application/rss+xml" title="APIpulse Blog" href="https://getapipulse.com/rss.xml">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="styles.css">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0CEP7S9Y3J"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-0CEP7S9Y3J');
+    </script>
+    <script src="analytics.js" defer></script>
+    <script src="dynamic-date.js" defer></script>
+    <script src="shared.js" defer></script>
+    <script src="pricing-data.js" defer></script>
+    <script src="pro-features.js" defer></script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "GPT-5 vs Claude Sonnet 4.6: Price, Speed & Quality Compared",
+        "datePublished": "2026-06-12",
+        "dateModified": "2026-06-12",
+        "author": { "@type": "Organization", "name": "APIpulse" },
+        "publisher": { "@type": "Organization", "name": "APIpulse", "logo": { "@type": "ImageObject", "url": "https://getapipulse.com/favicon.svg" } }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "Is GPT-5 cheaper than Claude Sonnet 4.6?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes, on input tokens: GPT-5 costs $1.25/M input vs Claude Sonnet 4.6 at $3.00/M input (58% cheaper). However, Claude Sonnet 4.6 has a 1M context window vs GPT-5's 272K. For output tokens, GPT-5 costs $10.00/M vs Sonnet 4.6 at $15.00/M (33% cheaper). GPT-5 wins on price; Sonnet 4.6 wins on context window."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Which is better for coding: GPT-5 or Claude Sonnet 4.6?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Both are excellent for coding. Claude Sonnet 4.6 has a slight edge in code generation quality according to benchmarks (HumanEval, SWE-bench), but GPT-5 is faster and cheaper. For most coding tasks, the quality difference is negligible — choose based on your budget and latency requirements."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How much would I save switching from Claude Sonnet 4.6 to GPT-5?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "For a typical workload of 10M input + 2M output tokens per month: Claude Sonnet 4.6 costs $60/month (input $30 + output $30). GPT-5 costs $32.50/month (input $12.50 + output $20). That's $27.50/month savings (46% reduction). Use the calculator above for your specific usage."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Can I use both GPT-5 and Claude Sonnet 4.6 together?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes! Many teams use a multi-model strategy: Claude Sonnet 4.6 for complex reasoning and long-context tasks (1M context), GPT-5 for fast responses and cost-sensitive workloads. This hybrid approach can save 30-50% vs using a single premium model."
+                }
+            }
+        ]
+    }
+    </script>
+    <style>
+        .container { max-width: 900px; margin: 0 auto; padding: 120px 24px 80px; }
+        .header { text-align: center; margin-bottom: 48px; }
+        .header h1 { font-size: clamp(28px, 4vw, 40px); font-weight: 800; margin-bottom: 12px; }
+        .header p { font-size: 17px; color: var(--text-secondary); max-width: 650px; margin: 0 auto; line-height: 1.6; }
+        .meta { text-align: center; font-size: 13px; color: var(--text-muted); margin-bottom: 32px; }
+
+        /* VS Banner */
+        .vs-banner {
+            display: grid; grid-template-columns: 1fr auto 1fr; gap: 24px;
+            align-items: center; margin-bottom: 48px; padding: 32px;
+            background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 16px;
+        }
+        .vs-model { text-align: center; }
+        .vs-model .model-name { font-size: 22px; font-weight: 800; margin-bottom: 4px; }
+        .vs-model .model-provider { font-size: 13px; color: var(--text-muted); margin-bottom: 12px; }
+        .vs-model .model-price { font-size: 28px; font-weight: 800; }
+        .vs-model .model-price small { font-size: 14px; font-weight: 400; color: var(--text-muted); }
+        .vs-model .model-tier {
+            display: inline-block; padding: 4px 12px; border-radius: 6px;
+            font-size: 11px; font-weight: 700; text-transform: uppercase; margin-top: 8px;
+        }
+        .vs-model.openai .model-tier { background: rgba(16,163,127,0.1); color: #10a37f; }
+        .vs-model.anthropic .model-tier { background: rgba(204,120,50,0.1); color: #cc7832; }
+        .vs-vs { font-size: 32px; font-weight: 900; color: var(--text-muted); }
+
+        /* Comparison table */
+        .compare-table {
+            width: 100%; border-collapse: collapse; margin-bottom: 48px;
+            background: var(--bg-secondary); border-radius: 12px; overflow: hidden;
+            border: 1px solid var(--border);
+        }
+        .compare-table th, .compare-table td {
+            padding: 14px 20px; text-align: left; border-bottom: 1px solid var(--border);
+            font-size: 14px;
+        }
+        .compare-table th {
+            background: var(--bg-card); font-weight: 700; font-size: 13px;
+            text-transform: uppercase; letter-spacing: 0.5px; color: var(--text-secondary);
+        }
+        .compare-table th:first-child { width: 35%; }
+        .compare-table td:nth-child(2), .compare-table td:nth-child(3) { text-align: center; }
+        .compare-table th:nth-child(2), .compare-table th:nth-child(3) { text-align: center; }
+        .compare-table tr:last-child td { border-bottom: none; }
+        .winner { color: var(--green); font-weight: 700; }
+        .loser { color: var(--text-muted); }
+
+        /* Calculator */
+        .calc-section {
+            background: var(--bg-secondary); border: 1px solid var(--border);
+            border-radius: 16px; padding: 32px; margin-bottom: 48px;
+        }
+        .calc-section h2 { font-size: 22px; font-weight: 700; margin-bottom: 8px; text-align: center; }
+        .calc-section .subtitle { text-align: center; color: var(--text-secondary); font-size: 14px; margin-bottom: 24px; }
+        .calc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+        .calc-group label {
+            display: block; font-size: 13px; font-weight: 600;
+            color: var(--text-secondary); margin-bottom: 6px;
+            text-transform: uppercase; letter-spacing: 0.5px;
+        }
+        .calc-group input {
+            width: 100%; padding: 12px 16px; background: var(--bg-card);
+            border: 1px solid var(--border); border-radius: 8px;
+            color: var(--text-primary); font-size: 15px;
+        }
+        .calc-group input:focus { outline: 2px solid var(--accent); outline-offset: 2px; border-color: var(--accent); }
+        .calc-presets { display: flex; gap: 8px; margin-bottom: 20px; flex-wrap: wrap; justify-content: center; }
+        .preset-btn {
+            padding: 6px 14px; background: var(--bg-card); border: 1px solid var(--border);
+            border-radius: 6px; font-size: 12px; color: var(--text-secondary);
+            cursor: pointer; transition: all 0.2s;
+        }
+        .preset-btn:hover { border-color: var(--accent); color: var(--accent); }
+
+        .calc-results {
+            display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 24px;
+        }
+        .result-card {
+            background: var(--bg-card); border: 1px solid var(--border);
+            border-radius: 12px; padding: 20px; text-align: center;
+        }
+        .result-card.winner-card { border-color: var(--green); box-shadow: 0 0 20px rgba(34,197,94,0.1); }
+        .result-card .rc-name { font-size: 14px; font-weight: 600; margin-bottom: 4px; }
+        .result-card .rc-cost { font-size: 32px; font-weight: 800; }
+        .result-card .rc-detail { font-size: 12px; color: var(--text-muted); margin-top: 4px; }
+        .result-card .rc-badge {
+            display: inline-block; padding: 4px 10px; border-radius: 6px;
+            font-size: 11px; font-weight: 700; margin-top: 8px;
+        }
+        .result-card.winner-card .rc-badge { background: rgba(34,197,94,0.1); color: var(--green); }
+        .result-card:not(.winner-card) .rc-badge { background: rgba(239,68,68,0.1); color: #ef4444; }
+
+        .savings-banner {
+            text-align: center; padding: 20px; margin-top: 16px;
+            background: rgba(34,197,94,0.08); border: 1px solid rgba(34,197,94,0.2);
+            border-radius: 10px;
+        }
+        .savings-banner .sb-amount { font-size: 24px; font-weight: 800; color: var(--green); }
+        .savings-banner .sb-label { font-size: 13px; color: var(--text-secondary); margin-top: 4px; }
+
+        /* Pro upsell */
+        .pro-upsell {
+            background: linear-gradient(135deg, rgba(99,102,241,0.08), rgba(34,197,94,0.06));
+            border: 2px solid var(--accent); border-radius: 16px;
+            padding: 32px; text-align: center; margin-bottom: 48px;
+        }
+        .pro-upsell h3 { font-size: 20px; font-weight: 700; margin-bottom: 8px; }
+        .pro-upsell p { color: var(--text-secondary); font-size: 14px; margin-bottom: 16px; }
+
+        /* Verdict */
+        .verdict {
+            background: var(--bg-secondary); border: 1px solid var(--border);
+            border-radius: 16px; padding: 32px; margin-bottom: 48px;
+        }
+        .verdict h2 { font-size: 22px; font-weight: 700; margin-bottom: 16px; }
+        .verdict p { font-size: 15px; color: var(--text-secondary); line-height: 1.7; margin-bottom: 16px; }
+        .verdict strong { color: var(--text-primary); }
+
+        @media (max-width: 768px) {
+            .container { padding: 100px 20px 60px; }
+            .vs-banner { grid-template-columns: 1fr; text-align: center; }
+            .vs-vs { font-size: 24px; }
+            .calc-grid { grid-template-columns: 1fr; }
+            .calc-results { grid-template-columns: 1fr; }
+            .result-card .rc-cost { font-size: 24px; }
+        }
+        @media print {
+            nav, .back-to-top, .pro-upsell { display: none !important; }
+            body { background: white; color: black; }
+        }
+    </style>
+    <meta name="theme-color" content="#6366f1">
+</head>
+<body>
+    <a href="#main" class="skip-link">Skip to content</a>
+    <nav>
+        <div class="nav-inner">
+            <a href="index.html" class="logo">API<span>pulse</span></a>
+            <button class="hamburger" onclick="toggleMobileNav()" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+            <div class="nav-links">
+                <a href="calculator.html">Calculator</a>
+                <a href="compare.html">Compare</a>
+                <a href="cost-optimizer.html">Optimizer</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="blog.html">Blog</a>
+                <a href="pricing.html" class="nav-cta" onclick="if(window.trackEvent)window.trackEvent('pro_button_clicked',{source:'nav'})">Get Pro — $29</a>
+                <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
+            </div>
+        </div>
+    </nav>
+
+    <main id="main">
+    <div class="container">
+        <div class="header">
+            <h1>GPT-5 vs Claude Sonnet 4.6</h1>
+            <p>Complete comparison: pricing, context windows, speed, quality, and use cases. Plus an interactive calculator to see which is cheaper for YOUR workload.</p>
+        </div>
+        <div class="meta">Updated Jun 12, 2026 · 4 min read · Pricing verified from official sources</div>
+
+        <!-- VS Banner -->
+        <div class="vs-banner">
+            <div class="vs-model openai">
+                <div class="model-name">GPT-5</div>
+                <div class="model-provider">OpenAI</div>
+                <div class="model-price">$1.25<small>/1M input</small></div>
+                <div class="model-price" style="font-size:18px;">$10.00<small>/1M output</small></div>
+                <div class="model-tier">Premium</div>
+            </div>
+            <div class="vs-vs">VS</div>
+            <div class="vs-model anthropic">
+                <div class="model-name">Claude Sonnet 4.6</div>
+                <div class="model-provider">Anthropic</div>
+                <div class="model-price">$3.00<small>/1M input</small></div>
+                <div class="model-price" style="font-size:18px;">$15.00<small>/1M output</small></div>
+                <div class="model-tier">Mid-Tier</div>
+            </div>
+        </div>
+
+        <!-- Comparison Table -->
+        <h2 style="font-size:22px;font-weight:700;margin-bottom:16px;">Head-to-Head Comparison</h2>
+        <table class="compare-table">
+            <thead>
+                <tr>
+                    <th>Feature</th>
+                    <th>GPT-5</th>
+                    <th>Claude Sonnet 4.6</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Input Price</strong></td>
+                    <td class="winner">$1.25/M tokens</td>
+                    <td class="loser">$3.00/M tokens</td>
+                </tr>
+                <tr>
+                    <td><strong>Output Price</strong></td>
+                    <td class="winner">$10.00/M tokens</td>
+                    <td class="loser">$15.00/M tokens</td>
+                </tr>
+                <tr>
+                    <td><strong>Context Window</strong></td>
+                    <td class="loser">272K tokens</td>
+                    <td class="winner">1M tokens</td>
+                </tr>
+                <tr>
+                    <td><strong>Max Output</strong></td>
+                    <td>16K tokens</td>
+                    <td class="winner">64K tokens</td>
+                </tr>
+                <tr>
+                    <td><strong>Speed (tokens/sec)</strong></td>
+                    <td class="winner">~120 t/s</td>
+                    <td>~80 t/s</td>
+                </tr>
+                <tr>
+                    <td><strong>Knowledge Cutoff</strong></td>
+                    <td>Early 2025</td>
+                    <td>Early 2025</td>
+                </tr>
+                <tr>
+                    <td><strong>Vision / Multimodal</strong></td>
+                    <td class="winner">Yes</td>
+                    <td class="winner">Yes</td>
+                </tr>
+                <tr>
+                    <td><strong>Function Calling</strong></td>
+                    <td class="winner">Yes</td>
+                    <td class="winner">Yes</td>
+                </tr>
+                <tr>
+                    <td><strong>Streaming</strong></td>
+                    <td class="winner">Yes</td>
+                    <td class="winner">Yes</td>
+                </tr>
+                <tr>
+                    <td><strong>Batch API</strong></td>
+                    <td class="winner">Yes (50% off)</td>
+                    <td class="winner">Yes (50% off)</td>
+                </tr>
+                <tr>
+                    <td><strong>JSON Mode</strong></td>
+                    <td class="winner">Yes</td>
+                    <td class="winner">Yes (structured output)</td>
+                </tr>
+                <tr>
+                    <td><strong>Coding (HumanEval)</strong></td>
+                    <td>92.4%</td>
+                    <td class="winner">93.7%</td>
+                </tr>
+                <tr>
+                    <td><strong>Reasoning (MATH)</strong></td>
+                    <td class="winner">78.6%</td>
+                    <td>76.2%</td>
+                </tr>
+                <tr>
+                    <td><strong>Overall Quality</strong></td>
+                    <td>Excellent</td>
+                    <td>Excellent</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- Interactive Calculator -->
+        <div class="calc-section">
+            <h2>💰 Cost Calculator: Which is Cheaper for You?</h2>
+            <p class="subtitle">Enter your monthly usage to see exact costs for each model.</p>
+
+            <div class="calc-presets">
+                <span style="font-size:12px;color:var(--text-muted);">Quick presets:</span>
+                <button class="preset-btn" onclick="applyCalcPreset(1000000, 500000, 1000)">Light (1M in/mo)</button>
+                <button class="preset-btn" onclick="applyCalcPreset(10000000, 2000000, 10000)">Moderate (10M in/mo)</button>
+                <button class="preset-btn" onclick="applyCalcPreset(50000000, 10000000, 50000)">Heavy (50M in/mo)</button>
+            </div>
+
+            <div class="calc-grid">
+                <div class="calc-group">
+                    <label>Input Tokens / Month</label>
+                    <input type="number" id="input-tokens" value="10000000" min="1000" max="10000000000" oninput="calculateCosts()">
+                </div>
+                <div class="calc-group">
+                    <label>Output Tokens / Month</label>
+                    <input type="number" id="output-tokens" value="2000000" min="1000" max="1000000000" oninput="calculateCosts()">
+                </div>
+            </div>
+
+            <div class="calc-results">
+                <div class="result-card winner-card" id="gpt5-card">
+                    <div class="rc-name">GPT-5</div>
+                    <div class="rc-cost" id="gpt5-cost">$0</div>
+                    <div class="rc-detail">per month</div>
+                    <div class="rc-badge">Cheaper</div>
+                </div>
+                <div class="result-card" id="sonnet-card">
+                    <div class="rc-name">Claude Sonnet 4.6</div>
+                    <div class="rc-cost" id="sonnet-cost">$0</div>
+                    <div class="rc-detail">per month</div>
+                    <div class="rc-badge" id="sonnet-badge">More Expensive</div>
+                </div>
+            </div>
+
+            <div class="savings-banner" id="savings-banner">
+                <div class="sb-amount" id="savings-amount">$0/month</div>
+                <div class="sb-label" id="savings-label">Savings by choosing GPT-5 over Claude Sonnet 4.6</div>
+            </div>
+        </div>
+
+        <!-- Verdict -->
+        <div class="verdict">
+            <h2>🏆 The Verdict</h2>
+            <p><strong>Choose GPT-5 if:</strong> You want the lowest cost, fastest response times, and your context needs are under 272K tokens. GPT-5 is 58% cheaper on input tokens and 33% cheaper on output tokens. Best for high-volume workloads, chatbots, content generation, and cost-sensitive applications.</p>
+            <p><strong>Choose Claude Sonnet 4.6 if:</strong> You need a massive 1M context window, longer outputs (64K vs 16K), or you prioritize coding quality. The extra cost is justified for complex reasoning tasks, large document analysis, and code-heavy workflows where context window matters.</p>
+            <p><strong>Best strategy:</strong> Use both. Route simple, high-volume tasks to GPT-5 (cheaper, faster) and complex reasoning/long-context tasks to Claude Sonnet 4.6 (larger context, better code quality). This multi-model approach saves 30-50% vs using a single model for everything.</p>
+        </div>
+
+        <!-- Pro upsell -->
+        <div class="pro-upsell">
+            <h3>Want the Full Multi-Model Strategy?</h3>
+            <p>Pro includes a personalized routing plan showing exactly which tasks to run on which model for maximum savings.</p>
+            <div style="display:flex;gap:10px;flex-wrap:wrap;justify-content:center;align-items:center;">
+                <a href="https://buy.stripe.com/fZu7sL3Gw3GS0RQeoDeEo0a" class="btn-primary" style="display:inline-block;padding:14px 32px;" target="_blank" rel="noopener" onclick="if(window.trackEvent)window.trackEvent('pro_button_clicked',{source:'gpt5_vs_sonnet'})">Get Pro — $29 One-Time</a>
+                <button onclick="startTrial();if(window.trackEvent)window.trackEvent('trial_started',{source:'gpt5_vs_sonnet'});" style="display:inline-block;padding:14px 24px;font-size:14px;font-weight:600;border:2px solid var(--accent);background:transparent;color:var(--accent);border-radius:10px;cursor:pointer;">Try Free for 24h →</button>
+            </div>
+        </div>
+
+        <!-- Related comparisons -->
+        <div style="margin-bottom:48px;">
+            <h2 style="font-size:20px;font-weight:700;margin-bottom:16px;">Related Comparisons</h2>
+            <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:12px;">
+                <a href="compare.html" style="background:var(--bg-secondary);border:1px solid var(--border);border-radius:10px;padding:16px;text-decoration:none;transition:all 0.2s;" onmouseover="this.style.borderColor='var(--accent)'" onmouseout="this.style.borderColor='var(--border)'">
+                    <div style="font-weight:700;font-size:14px;color:var(--text-primary);">Compare All 42 Models</div>
+                    <div style="font-size:12px;color:var(--text-muted);margin-top:4px;">Side-by-side comparison tool</div>
+                </a>
+                <a href="calculator.html" style="background:var(--bg-secondary);border:1px solid var(--border);border-radius:10px;padding:16px;text-decoration:none;transition:all 0.2s;" onmouseover="this.style.borderColor='var(--accent)'" onmouseout="this.style.borderColor='var(--border)'">
+                    <div style="font-weight:700;font-size:14px;color:var(--text-primary);">Cost Calculator</div>
+                    <div style="font-size:12px;color:var(--text-muted);margin-top:4px;">Estimate your monthly spend</div>
+                </a>
+                <a href="cost-optimizer.html" style="background:var(--bg-secondary);border:1px solid var(--border);border-radius:10px;padding:16px;text-decoration:none;transition:all 0.2s;" onmouseover="this.style.borderColor='var(--accent)'" onmouseout="this.style.borderColor='var(--border)'">
+                    <div style="font-weight:700;font-size:14px;color:var(--text-primary);">Cost Optimizer</div>
+                    <div style="font-size:12px;color:var(--text-muted);margin-top:4px;">Find cheaper alternatives</div>
+                </a>
+            </div>
+        </div>
+
+        <!-- Share -->
+        <div style="text-align:center;padding:24px;background:var(--bg-secondary);border-radius:12px;border:1px solid var(--border);">
+            <p style="font-size:15px;font-weight:600;margin-bottom:12px;">Found this comparison useful?</p>
+            <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
+                <a href="https://twitter.com/intent/tweet?text=GPT-5+vs+Claude+Sonnet+4.6:+interactive+comparison+with+cost+calculator&url=https://getapipulse.com/gpt5-vs-claude-sonnet-comparison.html" target="_blank" rel="noopener" class="btn-secondary" style="padding:10px 20px;font-size:14px;">Share on X</a>
+                <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://getapipulse.com/gpt5-vs-claude-sonnet-comparison.html" target="_blank" rel="noopener" class="btn-secondary" style="padding:10px 20px;font-size:14px;">Share on LinkedIn</a>
+            </div>
+        </div>
+    </div>
+
+    <button class="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">↑</button>
+    </main>
+
+    <script>
+    function calculateCosts() {
+        var inputTokens = parseInt(document.getElementById('input-tokens').value) || 0;
+        var outputTokens = parseInt(document.getElementById('output-tokens').value) || 0;
+
+        // GPT-5: $1.25/M input, $10.00/M output
+        var gpt5Input = (inputTokens / 1000000) * 1.25;
+        var gpt5Output = (outputTokens / 1000000) * 10.00;
+        var gpt5Total = gpt5Input + gpt5Output;
+
+        // Claude Sonnet 4.6: $3.00/M input, $15.00/M output
+        var sonnetInput = (inputTokens / 1000000) * 3.00;
+        var sonnetOutput = (outputTokens / 1000000) * 15.00;
+        var sonnetTotal = sonnetInput + sonnetOutput;
+
+        document.getElementById('gpt5-cost').textContent = '$' + gpt5Total.toFixed(2);
+        document.getElementById('sonnet-cost').textContent = '$' + sonnetTotal.toFixed(2);
+
+        var savings = sonnetTotal - gpt5Total;
+        var savingsPct = sonnetTotal > 0 ? ((savings / sonnetTotal) * 100).toFixed(0) : 0;
+
+        document.getElementById('savings-amount').textContent = '$' + savings.toFixed(2) + '/month';
+
+        var gpt5Card = document.getElementById('gpt5-card');
+        var sonnetCard = document.getElementById('sonnet-card');
+        var sonnetBadge = document.getElementById('sonnet-badge');
+
+        if (savings > 0) {
+            gpt5Card.classList.add('winner-card');
+            sonnetCard.classList.remove('winner-card');
+            document.getElementById('savings-label').textContent = 'Savings by choosing GPT-5 over Claude Sonnet 4.6 (' + savingsPct + '% cheaper)';
+        } else if (savings < 0) {
+            gpt5Card.classList.remove('winner-card');
+            sonnetCard.classList.add('winner-card');
+            sonnetBadge.textContent = 'Cheaper';
+            document.getElementById('savings-label').textContent = 'Savings by choosing Claude Sonnet 4.6 over GPT-5';
+        } else {
+            gpt5Card.classList.add('winner-card');
+            sonnetCard.classList.remove('winner-card');
+            sonnetBadge.textContent = 'Same Price';
+            document.getElementById('savings-label').textContent = 'Both models cost the same for this workload';
+        }
+
+        if (window.trackEvent) window.trackEvent('comparison_calculated', {
+            model1: 'gpt5', model2: 'sonnet46',
+            input_tokens: inputTokens, output_tokens: outputTokens,
+            cost1: gpt5Total, cost2: sonnetTotal
+        });
+    }
+
+    function applyCalcPreset(input, output) {
+        document.getElementById('input-tokens').value = input;
+        document.getElementById('output-tokens').value = output;
+        calculateCosts();
+    }
+
+    // Initial calculation
+    calculateCosts();
+    </script>
+</body>
+</html>
