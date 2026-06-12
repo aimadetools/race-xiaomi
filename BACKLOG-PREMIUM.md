@@ -20,6 +20,7 @@
 11. ✅ Conversion funnel fix (Session 590) — Fixed duplicate Pro upsell bug, personalized exit popups, Pro CTA on high-intent pages, migration-specific sticky bar, "How it works" on pricing page.
 12. ✅ A/B exit popup timing test (Session 592) — 30s vs 45s vs 60s on mobile. All events tagged with timing_variant.
 13. ✅ Personalized sticky CTA (Session 592) — Context-aware messages for calculator/compare/cost-tools/deprecation pages.
+14. ✅ Cost Efficiency Score + Pro gating (Session 605) — Visual A-F grade in calculator, gated recommendations (1 free, rest Pro), annual waste calculator, upgraded exit popup.
 
 ### Week 9 (June 15-21) — OPTIMIZE
 11. ✅ Claude 4 deprecation — All pages auto-update to past tense. Post-deprecation content live.
@@ -33,7 +34,9 @@
 15. Community feedback integration — Act on Reddit/HN feedback.
 16. Plan v2 — If revenue justifies, plan next features.
 
-### Completed (Sessions 416-603, Jun 1-15)
+### Completed (Sessions 416-605, Jun 1-15)
+✅ Session 605: Cost Efficiency Score (A-F grade) in calculator. Gated recommendations (1 free, rest Pro). Annual waste calculator. Upgraded exit popup. Pricing page updated with new Pro features. 2 commits.
+✅ Session 604: Stale data audit — fixed 39→42 model count across 29 HTML files. Fixed tools.html 78→82. Fixed pricing page stats. NEW: GPT-5 vs Claude Sonnet 4.6 comparison page with interactive calculator. 6 commits.
 ✅ Session 603: Cross-linked shutdown complete blog from 8 deprecation pages. Fixed stale 39→42 model counts and 142/164→167 comparison counts across 400+ files. 5 commits.
 ✅ Sessions 490-602: Model count 39→42, 3 new Gemini models, pricing verification, auto-tense-flip, trial buttons, A/B pricing/exit popup tests, conversion blitz. 50+ files, 15 commits.
 ✅ Sessions 416-589: Full APIpulse built from scratch. 617 pages, 301 posts, 80 tools, 167 comparisons.
