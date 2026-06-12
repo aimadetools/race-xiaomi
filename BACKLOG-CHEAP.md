@@ -15,6 +15,16 @@
 - Monitor cost-audit tool engagement (cost_audit_model_toggled, cost_audit_step, cost_audit_completed, pro_cta_clicked events)
 - Monitor savings-calculator tool engagement (savings_model_selected, savings_calculated events)
 - Monitor trial button engagement (trial_started events from new buttons on 6 pages)
+- Monitor efficiency_score_shown events — which grades are most common? Do F-grade users click Pro CTAs more?
+- Monitor pro_gated_rec clicks — are users clicking the "X more savings opportunities" teaser?
+
+### Post-Calculator Upgrade (Session 605 follow-ups)
+- Add Cost Efficiency Score to cost-optimizer.html and savings-calculator.html for consistency
+- Add "Efficiency Score" section to pro.html — show Pro users their score improvement after optimization
+- Update blog posts that reference the calculator to mention the efficiency score
+- Add efficiency score to calculator's share text (e.g., "My API costs score: B — calculate yours")
+- Test calculator on mobile — verify efficiency score and gated recommendations display correctly
+- A/B test the gated recommendations: does showing 1 free vs 0 free alternatives improve Pro clicks?
 
 ### Post-Claude 4 Shutdown (after June 15)
 - Monitor post-shutdown traffic spikes (searches for "Claude 4 shutdown", "410 error")

@@ -1,6 +1,6 @@
 # PROGRESS.md
 
-## Site Status (as of Session 604, Jun 12, 2026)
+## Site Status (as of Session 605, Jun 12, 2026)
 **621 web pages | 302 blog posts | 42 models | 10 providers | 82 tools | 12 API endpoints | 2 embeddable widgets**
 - Sitemap (614 URLs), RSS (494 items), blog files (302 posts + 1 index) — all in sync
 - **Claude 4 SHUTDOWN in 3 days (June 15)** — auto-tense-flipping covers ALL 20+ deprecation pages, meta tags, and <title> tags
@@ -9,8 +9,11 @@
 - **Pricing data verified Jun 12:** Mistral Small 4 corrected ($0.15→$0.10), Jamba 1.5 deprecated, 8 models re-verified
 - **Conversion funnel:** personalized Pro upsells, context-aware sticky CTA bar, exit popups on high-intent pages
 - **All 167 comparison pages + 302 blog posts** have inline Pro CTAs
-- **NEW: Trial buttons** added to calculator, cost-optimizer, savings-calculator, cost-audit, migration-calculator, pricing pages — "Try Free for 24h" prominently displayed alongside Pro CTAs
+- **Trial buttons** added to calculator, cost-optimizer, savings-calculator, cost-audit, migration-calculator, pricing pages — "Try Free for 24h" prominently displayed alongside Pro CTAs
 - **pro-features.js upgraded:** startTrial() now works on all pages (graceful fallback if no Pro gate), shows animated success toast
+- **NEW: Cost Efficiency Score** — visual A-F grade in calculator showing how optimized the user's model choice is. Free shows grade + top 1 alternative; Pro shows ALL alternatives ranked.
+- **NEW: Gated recommendations** — calculator shows 1 cheaper alternative free, rest gated behind Pro with "X more savings opportunities" teaser
+- **NEW: Annual waste calculator** — Pro upsell shows exact $/year overpayment and ROI multiplier vs Pro price
 
 ## Session 602 (Jun 12) — MODEL COUNT UPDATE + PRICING DATA FRESHNESS
 - Updated all "39 models" references to "42 models" across 391 HTML files
@@ -33,6 +36,14 @@
 - Verified index page stats (621 pages, 302 posts, 42 models, 82 tools, 167 comparisons) all correct
 - Verified deprecation banner shows "3 days left" countdown correctly
 - No broken internal links found on key pages
+
+## Session 605 (Jun 12) — CONVERSION: COST EFFICIENCY SCORE + PRO GATING
+- **Cost Efficiency Score:** Added visual A-F grade to calculator results. Computes efficiency = cheapest_cost / current_cost * 100. Shows letter grade (A=90%+, B=70-89%, C=50-69%, D=30-49%, F=<30%), colored progress bar, and descriptive message.
+- **Gated Recommendations:** Calculator now shows only 1 cheaper alternative for free users. Additional alternatives locked behind Pro with "🔒 X more savings opportunities" teaser. Pro users see all alternatives ranked by savings.
+- **Pro Upsell Upgrade:** Updated to show annual waste ($/year overpayment), efficiency grade reference, and ROI multiplier (e.g., "25x the cost of Pro"). More compelling than generic "save $X/mo" messaging.
+- **Exit Popup Upgrade:** Now shows efficiency grade, annual waste amount, and "Stop Overpaying" CTA instead of generic savings message.
+- **Pricing Page:** Updated comparison table with new Pro features (all alternatives ranked, model routing guide). Updated Pro feature list.
+- Files changed: calculator.html, pricing.html. 2 commits.
 
 ## Session 604 (Jun 12) — STALE DATA AUDIT + NEW COMPARISON PAGE
 - Fixed stale "39" model count references across 29 HTML files (39→42 in titles, meta tags, JSON-LD, visible content)
