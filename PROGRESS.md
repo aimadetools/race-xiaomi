@@ -15,6 +15,13 @@
 - **All 302 blog posts** now have inline Pro CTAs
 - **Calculator** shows blurred Pro tip teasers after calculation
 
+## Session 600 (Jun 12) — PRICING DATA VERIFICATION + MISTRAL SMALL 4 PRICE FIX
+**Monthly pricing verification across all providers (verified Jun 12):**
+- **pricing-data.js:** Mistral Small 4 price corrected from $0.15/$0.60 to $0.10/$0.30 (per Mistral's current pricing page). Jamba 1.5 Large marked deprecated (replaced by Jamba 1.7). Updated verification dates for DeepSeek V4 Flash, Gemini 2.5 Pro, Command R+, Command R, Mistral Medium 3.5, Mistral Large 3. Total: 1 price correction, 1 model deprecated, 8 models re-verified.
+- **mistral.html:** Fixed all Mistral pricing references — meta description, FAQ schema, feature card, model cards (Large 3 was $2.00/$6.00, corrected to $0.50/$1.50), pricing table (Small 4), stats bar (context window and verification date).
+- **65 HTML files updated:** Corrected Mistral Small 4 pricing from $0.15/$0.60 to $0.10/$0.30 across all blog posts, comparison pages, calculators, and tool pages.
+- **Verification summary:** 18 May-verified models checked against live provider pages. All confirmed correct except Mistral Small 4 (price drop) and Jamba 1.5 (deprecated).
+
 ## Session 599 (Jun 12) — NEW GEMINI MODELS + PRICING DATA UPDATE
 **Added 3 new Gemini models from Google's pricing page (verified Jun 12):**
 - **pricing-data.js:** Added Gemini 3.1 Flash-Lite ($0.25/$1.50, 1M context), Gemini 3 Flash ($0.50/$3.00, 1M context), Gemini 2.5 Flash-Lite ($0.10/$0.40, 1M context). Marked Gemini 2.0 Flash and Gemini 2.0 Flash Lite as deprecated (replaced by Gemini 3 Flash and Gemini 3.1 Flash-Lite). Total models: 39→42.
