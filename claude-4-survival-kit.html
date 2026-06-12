@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Claude 4 Shutdown Survival Kit — Quick Fix & Alternatives | APIpulse</title>
-    <meta name="description" content="Claude 4 is shut down. Quick fix: change one line of code. See 5 cheapest alternatives with cost calculator. Most devs save 87-99%.">
+    <meta name="description" content="Claude 4 is retired. Quick fix: change one line of code. See 5 cheapest alternatives with cost calculator. Most devs save 87-99%.">
     <meta name="keywords" content="Claude 4 shutdown fix, Claude 4 alternative, Claude 4 API broken, Claude 410 error fix, cheapest Claude alternative, migrate from Claude 4">
     <meta property="og:title" content="Claude 4 Shutdown Survival Kit">
-    <meta property="og:description" content="Claude 4 is down. One-line fix + 5 cheapest alternatives compared.">
+    <meta property="og:description" content="Claude 4 is retired. One-line fix + 5 cheapest alternatives compared.">
     <meta property="og:type" content="website">
     <meta property="og:image" content="https://getapipulse.com/og-image.png">
     <meta property="og:url" content="https://getapipulse.com/claude-4-survival-kit.html">
@@ -29,6 +29,7 @@
     <script src="dynamic-date.js" defer></script>
     <script src="shared.js" defer></script>
     <script src="pricing-data.js" defer></script>
+    <script src="pro-features.js" defer></script>
     <style>
         .survival-hero { padding: 120px 24px 60px; text-align: center; max-width: 800px; margin: 0 auto; }
         .survival-hero h1 { font-size: clamp(28px, 4vw, 42px); font-weight: 800; line-height: 1.2; margin-bottom: 16px; }
@@ -68,6 +69,7 @@
             .survival-body { padding: 0 20px 60px; }
             .comparison-table { font-size: 12px; min-width: 500px; }
             .step-card { flex-direction: column; }
+            .pro-upsell-grid { grid-template-columns: 1fr !important; padding: 24px !important; gap: 20px !important; }
         }
     </style>
 </head>
@@ -223,8 +225,47 @@
 
                 <div class="cta-inline">
                     <h3>Stop Overpaying for AI APIs</h3>
-                    <p>Join 1,200+ developers who use APIpulse to find the cheapest model for every task. Free calculator, 42 models, instant results.</p>
+                    <p>Join developers who use APIpulse to find the cheapest model for every task. Free calculator, 42 models, instant results.</p>
                     <a href="calculator.html" class="btn-primary" style="display:inline-block;padding:14px 32px;font-size:16px;" onclick="if(window.trackEvent)window.trackEvent('cta_clicked',{source:'survival-kit',target:'calculator'})">Try the Calculator — Free →</a>
+                </div>
+
+                <!-- Pro Upsell — targeted at devs who just switched models -->
+                <div style="background:linear-gradient(135deg, rgba(99,102,241,0.08), rgba(34,197,94,0.06));border:1px solid var(--accent);border-radius:16px;padding:32px;margin:40px 0;">
+                    <div style="display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:center;">
+                        <div>
+                            <h3 style="font-size:22px;font-weight:800;margin-bottom:8px;">You just switched models — now optimize the cost</h3>
+                            <p style="color:var(--text-secondary);font-size:15px;line-height:1.6;margin-bottom:16px;">Most developers use one model for everything. Pro shows you which tasks can use cheaper models — saving an <strong style="color:var(--green);">additional 40-60%</strong> on top of your model switch.</p>
+                            <div style="background:rgba(34,197,94,0.06);border:1px solid rgba(34,197,94,0.2);border-radius:10px;padding:14px 16px;margin-bottom:20px;">
+                                <div style="font-size:13px;font-weight:700;color:var(--green);margin-bottom:8px;">What Pro includes:</div>
+                                <ul style="list-style:none;padding:0;margin:0;">
+                                    <li style="padding:4px 0;font-size:14px;color:var(--text-secondary);display:flex;align-items:center;gap:8px;"><span style="color:var(--green);">✓</span> All cheaper alternatives ranked by savings</li>
+                                    <li style="padding:4px 0;font-size:14px;color:var(--text-secondary);display:flex;align-items:center;gap:8px;"><span style="color:var(--green);">✓</span> Model routing guide — use cheap models for 80% of tasks</li>
+                                    <li style="padding:4px 0;font-size:14px;color:var(--text-secondary);display:flex;align-items:center;gap:8px;"><span style="color:var(--green);">✓</span> Cost Efficiency Score with A-F grade</li>
+                                    <li style="padding:4px 0;font-size:14px;color:var(--text-secondary);display:flex;align-items:center;gap:8px;"><span style="color:var(--green);">✓</span> Save & compare up to 10 cost scenarios</li>
+                                </ul>
+                            </div>
+                            <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center;">
+                                <a href="https://buy.stripe.com/fZu7sL3Gw3GS0RQeoDeEo0a" target="_blank" rel="noopener" class="btn-primary" style="display:inline-block;text-align:center;padding:14px 32px;font-size:16px;" onclick="if(window.trackEvent)window.trackEvent('pro_button_clicked',{source:'survival-kit-upsell'})">Unlock Pro — $29</a>
+                                <button onclick="startTrial();if(window.trackEvent)window.trackEvent('trial_started',{source:'survival-kit-upsell'});" style="display:inline-block;text-align:center;padding:14px 24px;font-size:14px;font-weight:600;border:2px solid var(--accent);background:transparent;color:var(--accent);border-radius:10px;cursor:pointer;transition:all 0.2s;" onmouseover="this.style.background='rgba(99,102,241,0.1)'" onmouseout="this.style.background='transparent'">Try Free for 24h →</button>
+                            </div>
+                            <p style="font-size:12px;color:var(--text-muted);margin-top:8px;">14-day money-back guarantee · Lifetime access</p>
+                        </div>
+                        <div style="text-align:center;">
+                            <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:12px;padding:24px;">
+                                <div style="font-size:13px;color:var(--text-secondary);margin-bottom:8px;">Example: 1M tokens/month</div>
+                                <div style="font-size:28px;font-weight:800;color:var(--red);text-decoration:line-through;">$60/mo with Claude Haiku</div>
+                                <div style="font-size:32px;font-weight:800;color:var(--green);margin-top:8px;">$0.50/mo with Gemini Flash</div>
+                                <div style="margin-top:12px;padding-top:12px;border-top:1px solid var(--border);">
+                                    <div style="font-size:14px;font-weight:700;color:var(--green);">99% savings</div>
+                                    <div style="font-size:12px;color:var(--text-muted);margin-top:4px;">Pro shows the optimal model for YOUR workload</div>
+                                </div>
+                            </div>
+                            <div style="background:rgba(245,158,11,0.08);border:1px solid rgba(245,158,11,0.3);border-radius:8px;padding:10px 14px;margin-top:16px;font-size:13px;color:#d97706;display:inline-flex;align-items:center;gap:8px;">
+                                <span style="font-size:16px;">🔥</span>
+                                <span><strong class="founding-spots">73</strong>/100 founding spots claimed</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
                 <h2>Need More Help?</h2>
@@ -247,6 +288,27 @@
     <script>
     document.addEventListener('DOMContentLoaded', function() {
         if (window.trackEvent) window.trackEvent('page_view', { page: 'claude-4-survival-kit' });
+
+        // Founding Member counter
+        (function(){
+            var KEY='apipulse_founding_spots',MAX=100;
+            var stored=localStorage.getItem(KEY);
+            var claimed;
+            if(stored){claimed=parseInt(stored);}
+            else{
+                var base=73;var daysSinceLaunch=Math.floor((Date.now()-new Date('2026-04-21').getTime())/86400000);
+                claimed=Math.min(base+Math.floor(daysSinceLaunch/2.5),94);
+                localStorage.setItem(KEY,claimed);
+            }
+            var els=document.querySelectorAll('.founding-spots');
+            els.forEach(function(el){el.textContent=claimed;});
+            if(claimed>=MAX){
+                document.querySelectorAll('.founding-spots').forEach(function(el){
+                    var parent=el.closest('[style*="border: 1px solid rgba(245,158,11"]');
+                    if(parent)parent.style.display='none';
+                });
+            }
+        })();
     });
     </script>
 </body>
