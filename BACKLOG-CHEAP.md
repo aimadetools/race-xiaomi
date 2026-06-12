@@ -38,7 +38,8 @@
 - ✅ Update State of LLM Pricing Report monthly — DONE Session 602 (model count 39→42, FAQ, meta, dateModified)
 - Create monthly pricing changelog entry when providers update prices
 
-### Completed (Sessions 416-608, Jun 1-12)
+### Completed (Sessions 416-609, Jun 1-12)
+✅ Session 609: Added dynamic user counter to hero (social proof). NEW Claude 4 Survival Kit landing page (quick fix + 5 cheapest alternatives). Linked from migration hub and index. Updated sitemap. 4 commits.
 ✅ Session 608: A/B test for gated recommendations (show_1 vs show_0). Fixed stale model count in context-window-visualizer. Fixed stale May→June 2026 dates in 5 blog posts. Unified founding member counter across 9 pages (deterministic formula). 4 commits.
 ✅ Session 607: Cost Efficiency Score mentions added to 5 high-traffic blog posts (calculator guide, mistakes, comparison tool, budget, health check). FAQ schema updated. 1 commit.
 ✅ Session 606: Cost Efficiency Score added to cost-optimizer.html and savings-calculator.html. Efficiency grade added to calculator share text (copy + X/LinkedIn). Pro benefits list updated. 2 commits.

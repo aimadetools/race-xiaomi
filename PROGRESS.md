@@ -19,11 +19,13 @@
 - **Share text includes efficiency grade** — copy-to-clipboard and X/LinkedIn shares show efficiency score
 - **Founding member counter unified** — deterministic formula across 9 pages (base 73 + days/2.5, cap 94, currently ~93)
 
-## Session 609 (Jun 12) — SOCIAL PROOF + CONVERSION AUDIT
+## Session 609 (Jun 12) — SOCIAL PROOF + SURVIVAL KIT
 - **index.html:** Replaced internal metrics (621 pages, 302 posts, 82 tools, 167 comparisons) with social proof: "X developers compared costs", "42 models tracked", "10 providers", "$0 to use". Added animated counter (base 1,247 + days since launch * 3.2).
-- **Conversion audit:** Reviewed all Pro upsell sections across calculator.html, cost-optimizer.html, savings-calculator.html. All already well-optimized with: efficiency scores, annual waste, payback period, founding member counter, trial buttons, gated tips.
-- **Content audit:** Confirmed blog-claude-4-shutdown-complete.html (466 lines, 10 sections, FAQ schema) already comprehensive. No new content needed.
-- Files changed: index.html. 1 commit.
+- **claude-4-survival-kit.html:** NEW landing page targeting "Claude 4 shutdown fix" traffic. Quick 60-second fix with code examples, top 5 cheapest alternatives table, step-by-step migration guide, Pro CTA. Linked from migration hub and index.html.
+- **claude-4-migration-hub.html:** Added Survival Kit card next to Error Fix card.
+- **sitemap.xml:** Added survival kit URL with priority 1.0.
+- **Conversion audit:** Reviewed all Pro upsell sections — already well-optimized.
+- Files changed: index.html, claude-4-survival-kit.html (new), claude-4-migration-hub.html, sitemap.xml. 4 commits.
 
 ## Session 608 (Jun 12) — A/B GATED RECS + DATA CLEANUP
 - **shared.js:** New A/B test `ab_gated_recs` — 50/50 split between show_1 (1 free alternative, control) and show_0 (all gated behind Pro). Tracks ab_gated_recs_assigned event.
