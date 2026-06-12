@@ -17,28 +17,6 @@
 - **Annual waste calculator** — Pro upsell shows exact $/year overpayment and ROI multiplier vs Pro price
 - **Share text includes efficiency grade** — copy-to-clipboard and X/LinkedIn shares show efficiency score
 
-## Session 602 (Jun 12) — MODEL COUNT UPDATE + PRICING DATA FRESHNESS
-- Updated all "39 models" references to "42 models" across 391 HTML files
-- Fixed State of LLM Pricing Report: model count, meta descriptions, FAQ answers, dateModified, verification date
-- Fixed pricing page: model count in feature list and comparison table
-- Fixed cheapest model FAQ: Gemini 2.0 Flash Lite (deprecated) → GPT-oss 20B ($0.08/$0.35)
-- Fixed calculator FAQ schema: updated cheapest model reference
-- Fixed index page stale stats (619→621 pages, 301→302 posts, 81→82 tools)
-- Updated pricing changelog: added June 12 entries (Mistral Small 4 correction, 3 new Gemini models)
-- Added real API error response examples to Claude 4 shutdown blog post (Python, Node.js, curl)
-- Note: Some blog posts still reference Gemini 2.0 Flash Lite as cheapest in varied phrasings — left as-is to avoid breaking structured content
-
-## Session 603 (Jun 12) — CROSS-LINKS + STALE DATA CLEANUP
-- Cross-linked "Shutdown Complete" blog post from 8 key deprecation pages (was 0 inbound links)
-- Updated pricing verification date: Jun 5 → Jun 12 in dynamic-date.js
-- Fixed stale "39 models" → "42 models" across all HTML files (blog index, pricing report, tool pages)
-- Fixed stale "39 alternatives" → "42 alternatives" across 300+ blog posts
-- Fixed stale comparison counts: 142/164 → 167 across 58 comparison pages
-- Fixed shutdown complete blog comparison count: 155 → 167
-- Verified index page stats (621 pages, 302 posts, 42 models, 82 tools, 167 comparisons) all correct
-- Verified deprecation banner shows "3 days left" countdown correctly
-- No broken internal links found on key pages
-
 ## Session 607 (Jun 12) — COST EFFICIENCY SCORE: BLOG POST UPDATES + MOBILE FIX
 - **blog-ai-api-cost-calculator-guide.html:** Added FAQ about Cost Efficiency Score (FAQPage schema), updated both CTAs, added efficiency score to '5 Ways to Reduce' monitoring tip, updated Pro upsell. Fixed stale "35+ other models" → "42 other models".
 - **blog-10-ai-api-cost-mistakes.html:** Updated 'Not Comparing Providers' fix-box to reference efficiency score.
@@ -64,36 +42,13 @@
 - **Pricing Page:** Updated comparison table with new Pro features (all alternatives ranked, model routing guide). Updated Pro feature list.
 - Files changed: calculator.html, pricing.html. 2 commits.
 
-## Session 604 (Jun 12) — STALE DATA AUDIT + NEW COMPARISON PAGE
-- Fixed stale "39" model count references across 29 HTML files (39→42 in titles, meta tags, JSON-LD, visible content)
-- Fixed tools.html: tool count 78→82 in title, meta description, og:description, and h1
-- Fixed changelog.html: tool count 71→82
-- Fixed pricing page: social proof stats (39→42 models, 301→302 guides)
-- Fixed claude-4-deprecation.html: title and meta tags (39→42 alternatives)
-- Fixed claude-4-migration-tool.html: meta description and JSON-LD (39→42 alternatives)
-- Fixed claude-4-migration-hub.html, claude-4-migration-command-center.html, state-of-llm-pricing-q2-2026.html
-- Fixed blog-ai-api-pricing-june-2026.html: FAQ schema model count
-- Fixed DIRECTORY-SUBMISSIONS.md: model count 39→42
-- **NEW: GPT-5 vs Claude Sonnet 4.6 comparison page** — interactive calculator, FAQPage schema, feature comparison table, Pro upsell. Added to sitemap.
-- Total: 30+ files fixed, 6 commits
+## Sessions 599-604 (Jun 12) — DATA CLEANUP + PRICING + NEW CONTENT
+- Sessions 599-602: 3 new Gemini models added (42 total), Mistral Small 4 pricing corrected ($0.15→$0.10), Jamba 1.5 deprecated, 8 models re-verified. 65+ HTML files updated. Model count 39→42 across 391 files. Pricing changelog updated.
+- Session 603: Cross-linked shutdown complete blog from 8 deprecation pages. Fixed stale model/comparison counts across 400+ files. Verification date updated.
+- Session 604: Stale data audit — fixed 39→42 across 29 files, tool counts 78→82. NEW: GPT-5 vs Claude Sonnet 4.6 comparison page with interactive calculator. 30+ files, 6 commits.
+- Session 601: Trial buttons ("Try Free for 24h") added to 6 high-traffic pages. pro-features.js upgraded with graceful fallback and animated toast.
 
-## Session 601 (Jun 12) — CONVERSION: TRIAL BUTTONS + PRICING PAGE IMPROVEMENTS
-- Added "Try Free for 24h" trial buttons to 6 high-traffic pages: calculator, cost-optimizer, savings-calculator, cost-audit, claude-4-migration-calculator, pricing
-- Added pro-features.js script tag to all 6 pages
-- Upgraded startTrial() in pro-features.js: graceful fallback when pro-gate/pro-content elements missing, animated trial activation toast
-- Added fadeIn animation to styles.css
-- Pricing page: trial button added below Pro CTA with "No Card Needed" messaging
-- Calculator: trial button added in upsell section alongside existing Pro CTA
-
-## Session 600 (Jun 12) — PRICING VERIFICATION + MISTRAL SMALL 4 FIX
-- **pricing-data.js:** Mistral Small 4 corrected $0.15/$0.60 → $0.10/$0.30. Jamba 1.5 deprecated. 8 models re-verified.
-- **mistral.html:** Fixed meta description, FAQ schema, model cards (Large 3 was $2.00/$6.00 → $0.50/$1.50), pricing table.
-- **65 HTML files** updated with correct Mistral Small 4 pricing across all blog posts, comparisons, calculators.
-
-## Session 599 (Jun 12) — 3 NEW GEMINI MODELS
-- Added Gemini 3.1 Flash-Lite, Gemini 3 Flash, Gemini 2.5 Flash-Lite to pricing-data.js. Marked Gemini 2.0 models deprecated. 42 models total. New blog post. Sitemap/RSS updated.
-
-## Summary: Sessions 490-603 (Jun 10-12)
+## Summary: Sessions 490-598 (Jun 10-12)
 ✅ Conversion blitz: Why Pro page, savings calculator, pricing page upgrade, index hero fix, cost-audit tool, A/B pricing fix (TreeWalker + JSON-LD), exit popup timing A/B (30s/45s/60s), personalized sticky CTA, Pro upsells on 167 comparisons + 301 blog posts. Post-shutdown blog, deprecation ecosystem (20+ pages). Auto-tense-flip for ALL deprecation/migration pages. 50+ files changed, 15 commits. Session 603: Cross-linked shutdown complete blog, fixed stale model/comparison counts across 400+ files.
 
 ## Summary: Sessions 1-489 (Apr 5 - Jun 10)
