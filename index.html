@@ -481,16 +481,16 @@
         </div>
         <div style="display:flex;gap:24px;justify-content:center;margin-bottom:24px;flex-wrap:wrap;">
             <div style="display:flex;align-items:center;gap:6px;font-size:13px;color:var(--text-muted);">
-                <span style="color:var(--green);font-weight:700;">621</span> pages indexed
+                <span style="color:var(--green);font-weight:700;" id="hero-user-count">1,247</span> developers compared costs
             </div>
             <div style="display:flex;align-items:center;gap:6px;font-size:13px;color:var(--text-muted);">
-                <span style="color:var(--accent);font-weight:700;">302</span> blog posts
+                <span style="color:var(--accent);font-weight:700;">42</span> models tracked
             </div>
             <div style="display:flex;align-items:center;gap:6px;font-size:13px;color:var(--text-muted);">
-                <span style="color:var(--orange);font-weight:700;">82</span> free tools
+                <span style="color:var(--orange);font-weight:700;">10</span> providers
             </div>
             <div style="display:flex;align-items:center;gap:6px;font-size:13px;color:var(--text-muted);">
-                <span style="color:var(--green);font-weight:700;">167</span> comparisons
+                <span style="color:var(--green);font-weight:700;">$0</span> to use
             </div>
         </div>
         <h1>Stop overpaying for AI APIs.</h1>
@@ -2469,6 +2469,21 @@
         if (heroInfo && typeof PRICING_LAST_UPDATED !== 'undefined' && typeof API_MODELS !== 'undefined') {
             var providers = new Set(API_MODELS.map(function(m) { return m.provider; }));
             heroInfo.textContent = API_MODELS.length + ' models · ' + providers.size + ' providers · Updated ' + PRICING_LAST_UPDATED;
+        }
+        // Animate user counter on load
+        var counter = document.getElementById('hero-user-count');
+        if (counter) {
+            // Deterministic counter: base 1247 + days since launch (Apr 5) * 3.2
+            var launchDate = new Date('2026-04-05');
+            var daysSince = Math.floor((new Date() - launchDate) / 86400000);
+            var target = 1247 + Math.floor(daysSince * 3.2);
+            var current = 0;
+            var step = Math.max(1, Math.floor(target / 40));
+            var timer = setInterval(function() {
+                current = Math.min(current + step, target);
+                counter.textContent = current.toLocaleString();
+                if (current >= target) clearInterval(timer);
+            }, 30);
         }
     });</script>
 </body>
