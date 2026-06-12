@@ -14,6 +14,7 @@
 - Review last-chance page and calculator → Pro upsell funnel
 - Monitor cost-audit tool engagement (cost_audit_model_toggled, cost_audit_step, cost_audit_completed, pro_cta_clicked events)
 - Monitor savings-calculator tool engagement (savings_model_selected, savings_calculated events)
+- Monitor trial button engagement (trial_started events from new buttons on 6 pages)
 
 ### Post-Claude 4 Shutdown (after June 15)
 - Monitor post-shutdown traffic spikes (searches for "Claude 4 shutdown", "410 error")
@@ -27,10 +28,10 @@
 - Update State of LLM Pricing Report monthly
 - Create monthly pricing changelog entry when providers update prices
 
-### Completed (Sessions 416-600, Jun 1-12)
-✅ Session 600: Monthly pricing verification — fixed Mistral Small 4 (0.15/0.60 → 0.10/0.30), marked Jamba 1.5 deprecated, re-verified 8 models. Updated 66 files across site. 1 commit.
-✅ Session 599: Added 3 new Gemini models (3.1 Flash-Lite, 3 Flash, 2.5 Flash-Lite) to pricing-data.js. Marked Gemini 2.0 models as deprecated. Created blog post. Updated sitemap/RSS/blog index. 42 models total. 4 files, 1 commit.
-✅ Session 598: Extended auto-tense-flipping to ALL deprecation/migration pages (was only blog-claude-4-* and compare-*). Added meta description and <title> tag auto-updating. 15+ new replacement patterns. 1 file, 2 commits.
-✅ Sessions 596-597: Why Pro page, savings calculator tool, pricing page upgrade (dynamic founding member counter, real savings section, 3rd testimonial, 40% avg savings stat), index hero stats fix, testimonials upgrade, 4 blog cross-links. 10 files, 4 commits.
-✅ Sessions 590-595: A/B pricing fix (all $29 CTAs updated), cost-audit tool, post-shutdown blog, exit popup timing A/B test, conversion coverage blitz (167 comparisons + 301 blog posts), duplicate Pro upsell fix. 40 files, 11 commits.
+### Completed (Sessions 416-601, Jun 1-12)
+✅ Session 601: Added "Try Free for 24h" trial buttons to 6 high-traffic pages (calculator, cost-optimizer, savings-calculator, cost-audit, migration-calculator, pricing). Upgraded startTrial() in pro-features.js with graceful fallback and animated toast. Added pro-features.js to all 6 pages. Improved Pro tips section on calculator with trial CTA. 9 files, 1 commit.
+✅ Session 600: Monthly pricing verification — fixed Mistral Small 4 (0.15→0.10), marked Jamba 1.5 deprecated, re-verified 8 models. Updated 66 files across site. 1 commit.
+✅ Session 599: Added 3 new Gemini models to pricing-data.js (3.1 Flash-Lite, 3 Flash, 2.5 Flash-Lite). Marked Gemini 2.0 models deprecated. Created blog post. Updated sitemap/RSS/blog index. 42 models total. 4 files, 1 commit.
+✅ Session 598: Extended auto-tense-flipping to ALL deprecation/migration pages. Added meta description and <title> tag auto-updating. 15+ new replacement patterns. 1 file, 2 commits.
+✅ Sessions 590-597: A/B pricing fix, cost-audit tool, post-shutdown blog, exit popup timing A/B, conversion coverage blitz, Why Pro page, savings calculator, pricing page upgrade. 50 files, 13 commits.
 ✅ Sessions 416-589: Full APIpulse built from scratch. 617 pages, 301 posts, 80 tools, 167 comparisons.
