@@ -867,7 +867,8 @@
             var claimed;
             if(stored){claimed=parseInt(stored);}
             else{
-                claimed=Math.floor(Math.random()*11)+68;
+                var base=73;var daysSinceLaunch=Math.floor((Date.now()-new Date('2026-04-21').getTime())/86400000);
+                claimed=Math.min(base+Math.floor(daysSinceLaunch/2.5),94);
                 localStorage.setItem(KEY,claimed);
             }
             var els=document.querySelectorAll('.founding-spots');

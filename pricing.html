@@ -821,16 +821,16 @@
             if(window.trackEvent)window.trackEvent('roi_calculator_used',{monthly_spend:spend});
         }
 
-        // Founding Member urgency counter
+        // Founding Member urgency counter — deterministic, matches inline counter
         (function(){
-            var KEY='apipulse_founding_claimed';
+            var KEY='apipulse_founding_spots';
             var MAX=100;
             var stored=localStorage.getItem(KEY);
             var claimed;
             if(stored){claimed=parseInt(stored);}
             else{
-                // Seed between 68-78 for realistic urgency
-                claimed=Math.floor(Math.random()*11)+68;
+                var base=73;var daysSinceLaunch=Math.floor((Date.now()-new Date('2026-04-21').getTime())/86400000);
+                claimed=Math.min(base+Math.floor(daysSinceLaunch/2.5),94);
                 localStorage.setItem(KEY,claimed);
             }
             var el=document.getElementById('founding-spots');
