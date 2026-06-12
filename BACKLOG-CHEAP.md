@@ -16,10 +16,11 @@
 - Monitor savings-calculator tool engagement (savings_model_selected, savings_calculated events)
 
 ### Post-Claude 4 Shutdown (after June 15)
-- Update all deprecation pages to past tense (auto-rules in shared.js should handle this)
 - Monitor post-shutdown traffic spikes (searches for "Claude 4 shutdown", "410 error")
 - Update blog-claude-4-shutdown-complete.html with real error messages users see
-- ✅ Create "Claude 4 is gone — now what?" follow-up blog post — DONE Session 593
+- ✅ Auto-tense-flip handles all deprecation pages — DONE Session 598
+- ✅ "Claude 4 is gone — now what?" blog post — DONE Session 593
+- ✅ "Claude 4 Shutdown Complete" blog post — pre-written, goes live Jun 15
 
 ### SEO & Content
 - Monitor post-deprecation traffic (searches for "Claude 4 shutdown", "410 error", "what happened to Claude 4")
