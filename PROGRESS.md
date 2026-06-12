@@ -39,13 +39,15 @@
 - Verified deprecation banner shows "3 days left" countdown correctly
 - No broken internal links found on key pages
 
-## Session 607 (Jun 12) — COST EFFICIENCY SCORE: BLOG POST UPDATES
-- **blog-ai-api-cost-calculator-guide.html:** Added FAQ about Cost Efficiency Score, updated both CTAs to mention efficiency grade, added efficiency score to '5 Ways to Reduce' monitoring tip, updated Pro upsell to mention all alternatives ranked.
-- **blog-10-ai-api-cost-mistakes.html:** Updated 'Not Comparing Providers' fix-box to reference efficiency score as a quick way to spot overpaying.
+## Session 607 (Jun 12) — COST EFFICIENCY SCORE: BLOG POST UPDATES + MOBILE FIX
+- **blog-ai-api-cost-calculator-guide.html:** Added FAQ about Cost Efficiency Score (FAQPage schema), updated both CTAs, added efficiency score to '5 Ways to Reduce' monitoring tip, updated Pro upsell. Fixed stale "35+ other models" → "42 other models".
+- **blog-10-ai-api-cost-mistakes.html:** Updated 'Not Comparing Providers' fix-box to reference efficiency score.
 - **blog-ai-api-cost-comparison-tool.html:** Added Cost Efficiency Score as #2 tool feature (now 4 ways, not 3), updated verdict and CTA, fixed May→June 2026 date.
 - **blog-ai-api-budget-2026.html:** Updated calculator CTA to mention efficiency score.
 - **blog-ai-api-cost-health-check.html:** Updated 'Start Saving' section to mention efficiency score.
-- Files changed: 5 blog posts. 1 commit.
+- **blog-cost-calculator-budget-planning.html:** Updated calculator CTA to mention efficiency score.
+- **calculator.html:** Fixed Pro upsell grid for mobile (was 2-col, now single-col on ≤768px). Added .pro-upsell-grid class with media query override.
+- Files changed: 6 blog posts + calculator.html. 3 commits.
 
 ## Session 606 (Jun 12) — COST EFFICIENCY SCORE: CONSISTENCY + SHARE TEXT
 - **cost-optimizer.html:** Added Cost Efficiency Score (A-F grade) to results. Computes grade from cheapest alternative vs current spend. Tracks efficiency_score_shown events.
