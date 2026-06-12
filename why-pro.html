@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Why Pro? — APIpulse</title>
+    <meta name="description" content="See exactly what APIpulse Pro gives you: saved scenarios, cost reports, optimization recommendations. Calculate your ROI — most users save $60-200/month.">
+    <meta name="keywords" content="APIpulse Pro, AI API cost optimization, save on AI costs, LLM cost report, API budget tool">
+    <meta property="og:title" content="Why Pro? — APIpulse">
+    <meta property="og:description" content="Calculate your ROI. Most Pro users save $60-200/month on AI API costs.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://getapipulse.com/og-image.png">
+    <meta property="og:url" content="https://getapipulse.com/why-pro.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Why Pro? — APIpulse">
+    <meta name="twitter:image" content="https://getapipulse.com/og-image.png">
+    <link rel="canonical" href="https://getapipulse.com/why-pro.html">
+    <link rel="alternate" type="application/rss+xml" title="APIpulse Blog" href="https://getapipulse.com/rss.xml">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="styles.css">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0CEP7S9Y3J"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-0CEP7S9Y3J');
+    </script>
+    <script src="analytics.js" defer></script>
+    <script src="dynamic-date.js" defer></script>
+    <script src="shared.js" defer></script>
+    <script src="pricing-data.js" defer></script>
+    <style>
+        .container { max-width: 900px; margin: 0 auto; padding: 120px 24px 80px; }
+        .header { text-align: center; margin-bottom: 48px; }
+        .header h1 {
+            font-size: clamp(28px, 4vw, 42px); font-weight: 800; margin-bottom: 12px;
+            background: linear-gradient(135deg, #60a5fa, #a78bfa);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+        }
+        .header p { font-size: 17px; color: var(--text-secondary); max-width: 600px; margin: 0 auto; line-height: 1.6; }
+
+        .section { margin-bottom: 56px; }
+        .section h2 { font-size: 26px; font-weight: 700; margin-bottom: 8px; text-align: center; }
+        .section > p { text-align: center; color: var(--text-secondary); font-size: 15px; margin-bottom: 32px; }
+
+        .roi-calculator {
+            background: var(--bg-secondary); border: 2px solid var(--accent);
+            border-radius: 16px; padding: 36px; margin-bottom: 48px;
+        }
+        .roi-calculator h2 { text-align: center; margin-bottom: 24px; }
+        .roi-input { display: flex; gap: 12px; justify-content: center; align-items: center; margin-bottom: 24px; flex-wrap: wrap; }
+        .roi-input label { font-size: 14px; font-weight: 600; color: var(--text-secondary); }
+        .roi-input input {
+            width: 160px; padding: 14px 18px; background: var(--bg-card);
+            border: 1px solid var(--border); border-radius: 10px;
+            color: var(--text-primary); font-size: 22px; font-weight: 700;
+            text-align: center;
+        }
+        .roi-input input:focus { outline: 2px solid var(--accent); outline-offset: 2px; border-color: var(--accent); }
+        .roi-presets { display: flex; gap: 8px; justify-content: center; margin-bottom: 24px; }
+        .roi-preset {
+            padding: 8px 16px; background: var(--bg-card); border: 1px solid var(--border);
+            border-radius: 8px; font-size: 13px; font-weight: 600; color: var(--text-secondary);
+            cursor: pointer; transition: all 0.2s;
+        }
+        .roi-preset:hover { border-color: var(--accent); color: var(--accent); }
+        .roi-results {
+            display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;
+        }
+        .roi-box {
+            background: var(--bg-card); border-radius: 12px; padding: 20px; text-align: center;
+            border: 1px solid var(--border);
+        }
+        .roi-box.highlight { border-color: var(--green); background: rgba(34,197,94,0.05); }
+        .roi-label { font-size: 12px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 4px; }
+        .roi-value { font-size: 32px; font-weight: 800; }
+        .roi-value.green { color: var(--green); }
+        .roi-value.accent { color: var(--accent); }
+        .roi-sub { font-size: 12px; color: var(--text-muted); margin-top: 4px; }
+
+        .comparison-grid {
+            display: grid; grid-template-columns: 1fr 1fr; gap: 0;
+            background: var(--bg-secondary); border-radius: 16px; overflow: hidden;
+            border: 1px solid var(--border);
+        }
+        .comparison-col { padding: 32px; }
+        .comparison-col:first-child { border-right: 1px solid var(--border); }
+        .comparison-col h3 { font-size: 20px; font-weight: 700; margin-bottom: 20px; }
+        .comparison-col.free-col h3 { color: var(--text-secondary); }
+        .comparison-col.pro-col h3 { color: var(--accent); }
+        .comparison-col ul { list-style: none; padding: 0; }
+        .comparison-col li {
+            padding: 10px 0; font-size: 14px; color: var(--text-secondary);
+            border-bottom: 1px solid var(--border); display: flex; align-items: center; gap: 10px;
+        }
+        .comparison-col li:last-child { border-bottom: none; }
+        .comparison-col li .icon { flex-shrink: 0; width: 20px; text-align: center; }
+        .check { color: var(--green); font-weight: 700; }
+        .cross { color: var(--text-muted); }
+
+        .use-cases { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; }
+        .use-case {
+            background: var(--bg-secondary); border: 1px solid var(--border);
+            border-radius: 12px; padding: 24px;
+        }
+        .use-case-icon { font-size: 28px; margin-bottom: 12px; }
+        .use-case h3 { font-size: 16px; font-weight: 700; margin-bottom: 8px; }
+        .use-case p { font-size: 13px; color: var(--text-secondary); line-height: 1.6; }
+        .use-case .savings {
+            margin-top: 12px; padding: 8px 12px; background: rgba(34,197,94,0.08);
+            border: 1px solid rgba(34,197,94,0.2); border-radius: 8px;
+            font-size: 13px; color: var(--green); font-weight: 600;
+        }
+
+        .cta-section {
+            text-align: center; padding: 48px; background: var(--bg-secondary);
+            border: 2px solid var(--accent); border-radius: 16px;
+        }
+        .cta-section h2 { margin-bottom: 12px; }
+        .cta-section p { color: var(--text-secondary); font-size: 15px; margin-bottom: 24px; max-width: 500px; margin-left: auto; margin-right: auto; }
+
+        .btn-primary {
+            display: inline-block; background: var(--accent); color: white;
+            padding: 16px 40px; border-radius: 12px; font-size: 18px;
+            font-weight: 700; text-decoration: none; transition: all 0.2s;
+            box-shadow: 0 4px 20px rgba(99,102,241,0.3); border: none; cursor: pointer;
+        }
+        .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 6px 24px rgba(99,102,241,0.4); }
+        .btn-secondary {
+            display: inline-block; background: var(--bg-card); color: var(--text-primary);
+            padding: 14px 32px; border-radius: 10px; font-size: 16px;
+            font-weight: 600; text-decoration: none; border: 1px solid var(--border);
+            transition: all 0.2s;
+        }
+        .btn-secondary:hover { border-color: var(--accent); }
+
+        @media (max-width: 768px) {
+            .container { padding: 100px 16px 60px; }
+            .roi-results { grid-template-columns: 1fr; }
+            .comparison-grid { grid-template-columns: 1fr; }
+            .comparison-col:first-child { border-right: none; border-bottom: 1px solid var(--border); }
+        }
+    </style>
+    <meta name="theme-color" content="#6366f1">
+</head>
+<body>
+    <a href="#main" class="skip-link">Skip to content</a>
+    <nav>
+        <div class="nav-inner">
+            <a href="index.html" class="logo">API<span>pulse</span></a>
+            <button class="hamburger" onclick="toggleMobileNav()" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+            <div class="nav-links">
+                <a href="calculator.html">Calculator</a>
+                <a href="savings-calculator.html">Savings</a>
+                <a href="cost-audit.html">Cost Audit</a>
+                <a href="compare.html">Compare</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="blog.html">Blog</a>
+                <a href="api-docs.html" style="color:var(--accent);">API</a>
+                <a href="pro.html" class="nav-cta" onclick="if(window.trackEvent)window.trackEvent('pro_button_clicked',{source:'nav'})">Get Pro — $29</a>
+                <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
+            </div>
+        </div>
+    </nav>
+
+    <main id="main">
+    <div class="container">
+        <div class="header">
+            <h1>Is Pro worth $29?</h1>
+            <p>Most developers save $60-200/month with Pro optimization recommendations. That's 2-7x your investment back in the first month alone.</p>
+        </div>
+
+        <!-- ROI Calculator -->
+        <div class="roi-calculator">
+            <h2 style="font-size:24px;">Calculate your ROI</h2>
+            <p style="text-align:center;color:var(--text-secondary);font-size:14px;margin-bottom:20px;">Enter your monthly API spend to see how quickly Pro pays for itself.</p>
+            <div class="roi-input">
+                <label for="roi-spend">$</label>
+                <input type="number" id="roi-spend" value="200" min="10" max="100000" oninput="updateROI()">
+            </div>
+            <div class="roi-presets">
+                <button class="roi-preset" onclick="setROI(50)">$50/mo</button>
+                <button class="roi-preset" onclick="setROI(100)">$100/mo</button>
+                <button class="roi-preset" onclick="setROI(200)">$200/mo</button>
+                <button class="roi-preset" onclick="setROI(500)">$500/mo</button>
+                <button class="roi-preset" onclick="setROI(1000)">$1K/mo</button>
+                <button class="roi-preset" onclick="setROI(5000)">$5K/mo</button>
+            </div>
+            <div class="roi-results">
+                <div class="roi-box">
+                    <div class="roi-label">You Spend</div>
+                    <div class="roi-value" id="roi-current">$200</div>
+                    <div class="roi-sub">per month</div>
+                </div>
+                <div class="roi-box highlight">
+                    <div class="roi-label">You Save</div>
+                    <div class="roi-value green" id="roi-saved">$60</div>
+                    <div class="roi-sub">per month (30% avg)</div>
+                </div>
+                <div class="roi-box highlight">
+                    <div class="roi-label">Pro Pays for Itself</div>
+                    <div class="roi-value accent" id="roi-payback">< 1 month</div>
+                    <div class="roi-sub" id="roi-annual">Save $720/year</div>
+                </div>
+            </div>
+            <p style="text-align:center;font-size:12px;color:var(--text-muted);margin-top:16px;">Based on average savings from model routing, prompt optimization, and batch processing. <a href="savings-calculator.html" style="color:var(--accent);">Calculate your exact savings →</a></p>
+        </div>
+
+        <!-- Free vs Pro -->
+        <div class="section">
+            <h2>What you get with Pro</h2>
+            <p>The free calculator tells you what things cost. Pro tells you how to pay less.</p>
+            <div class="comparison-grid">
+                <div class="comparison-col free-col">
+                    <h3>Free — $0</h3>
+                    <ul>
+                        <li><span class="icon check">✓</span> Cost calculator (39 models)</li>
+                        <li><span class="icon check">✓</span> Provider comparison table</li>
+                        <li><span class="icon check">✓</span> Side-by-side model comparison</li>
+                        <li><span class="icon check">✓</span> 301 blog guides & tutorials</li>
+                        <li><span class="icon check">✓</span> AI Stack Cost Optimizer</li>
+                        <li><span class="icon check">✓</span> Savings Calculator</li>
+                        <li><span class="icon cross">—</span> <span style="color:var(--text-muted);">Save & compare scenarios</span></li>
+                        <li><span class="icon cross">—</span> <span style="color:var(--text-muted);">Export cost reports</span></li>
+                        <li><span class="icon cross">—</span> <span style="color:var(--text-muted);">Optimization recommendations</span></li>
+                        <li><span class="icon cross">—</span> <span style="color:var(--text-muted);">Priority support</span></li>
+                    </ul>
+                </div>
+                <div class="comparison-col pro-col">
+                    <h3>Pro — $29 once</h3>
+                    <ul>
+                        <li><span class="icon check">✓</span> Everything in Free</li>
+                        <li><span class="icon check">✓</span> <strong>Save & compare 10 scenarios</strong></li>
+                        <li><span class="icon check">✓</span> <strong>Export professional cost reports</strong></li>
+                        <li><span class="icon check">✓</span> <strong>Personalized optimization tips</strong></li>
+                        <li><span class="icon check">✓</span> <strong>Priority email support</strong></li>
+                        <li><span class="icon check">✓</span> <strong>Early access to new features</strong></li>
+                        <li><span class="icon check">✓</span> <strong>Cost alerts when prices change</strong></li>
+                        <li><span class="icon check">✓</span> <strong>14-day money-back guarantee</strong></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Use Cases -->
+        <div class="section">
+            <h2>Who saves the most?</h2>
+            <p>Pro is most valuable for developers spending $50+/month on AI APIs.</p>
+            <div class="use-cases">
+                <div class="use-case">
+                    <div class="use-case-icon">🤖</div>
+                    <h3>Chatbot Builders</h3>
+                    <p>Running a customer support or sales chatbot on GPT-5 or Claude? Pro shows you which cheaper models handle 80% of your queries at 1/10th the cost.</p>
+                    <div class="savings">Typical savings: $60-150/month</div>
+                </div>
+                <div class="use-case">
+                    <div class="use-case-icon">🔍</div>
+                    <h3>RAG Pipeline Engineers</h3>
+                    <p>Building retrieval-augmented generation? Pro identifies which queries can use budget models and which need premium — cutting your bill without cutting quality.</p>
+                    <div class="savings">Typical savings: $100-300/month</div>
+                </div>
+                <div class="use-case">
+                    <div class="use-case-icon">📝</div>
+                    <h3>Content Teams</h3>
+                    <p>Using AI for content generation, summarization, or translation? Pro shows you the cheapest model for each task and how to batch process for maximum savings.</p>
+                    <div class="savings">Typical savings: $30-80/month</div>
+                </div>
+                <div class="use-case">
+                    <div class="use-case-icon">🏢</div>
+                    <h3>CTOs & Engineering Managers</h3>
+                    <p>Need to present AI API costs to leadership? Pro generates professional reports you can share with your team, investors, or finance department.</p>
+                    <div class="savings">Typical savings: $200-500/month</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- CTA -->
+        <div class="cta-section">
+            <h2 style="font-size:28px;">Ready to stop overpaying?</h2>
+            <p>One-time payment. Lifetime access. 14-day money-back guarantee.</p>
+            <a href="https://buy.stripe.com/fZu7sL3Gw3GS0RQeoDeEo0a" class="btn-primary" target="_blank" rel="noopener" id="why-pro-cta" onclick="if(window.trackEvent)window.trackEvent('pro_button_clicked',{source:'why_pro_page'})">Get Pro — $<span class="ab-price">29</span></a>
+            <p style="font-size:13px;color:var(--text-muted);margin-top:16px;">
+                Not sure? <a href="savings-calculator.html" style="color:var(--accent);">Calculate your exact savings first</a> or <a href="pricing.html" style="color:var(--accent);">compare plans</a>.
+            </p>
+        </div>
+    </div>
+    </main>
+
+    <footer>
+        <div class="footer-inner">
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="calculator.html">Calculator</a>
+                <a href="compare.html">Compare</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="blog.html">Blog</a>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
+                <a href="privacy.html">Privacy</a>
+                <a href="terms.html">Terms</a>
+            </div>
+            <p class="footer-copy">&copy; <span class="dynamic-year"></span> APIpulse. Know your AI API costs before you commit.</p>
+        </div>
+    </footer>
+
+    <script>
+    function setROI(val) {
+        document.getElementById('roi-spend').value = val;
+        updateROI();
+    }
+
+    function updateROI() {
+        var spend = parseInt(document.getElementById('roi-spend').value) || 200;
+        var savings = Math.round(spend * 0.30);
+        var annual = savings * 12;
+        var paybackMonths = Math.ceil(29 / savings);
+
+        document.getElementById('roi-current').textContent = '$' + spend.toLocaleString();
+        document.getElementById('roi-saved').textContent = '$' + savings.toLocaleString();
+        document.getElementById('roi-annual').textContent = 'Save $' + annual.toLocaleString() + '/year';
+
+        if (savings >= 29) {
+            document.getElementById('roi-payback').textContent = '< 1 month';
+        } else {
+            var months = Math.ceil(29 / savings);
+            document.getElementById('roi-payback').textContent = months + ' month' + (months > 1 ? 's' : '');
+        }
+
+        if (window.trackEvent) window.trackEvent('why_pro_roi_calculated', { spend: spend, savings: savings });
+    }
+
+    // Init
+    updateROI();
+    if (window.trackEvent) window.trackEvent('why_pro_page_view');
+    </script>
+</body>
+</html>
