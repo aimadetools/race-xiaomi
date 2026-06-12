@@ -83,7 +83,7 @@
                         "name": "Which should I choose, Scout or Maverick?",
                         "acceptedAnswer": {
                                 "@type": "Answer",
-                                "text": "Choose Scout for ultra-long context (10M tokens) and lowest cost. Choose Maverick for better quality on complex tasks at a moderate price increase."
+                                "text": "Choose Scout for ultra-long context (1M tokens) and lowest cost. Choose Maverick for better quality on complex tasks at a moderate price increase."
                         }
                 }
         ]
@@ -182,7 +182,7 @@
         </div>
 
         <h1>Llama 4 Scout vs Maverick: Which Open-Source Model Should You Use?</h1>
-        <p class="subtitle">Meta released two Llama 4 models: Scout ($0.18/$0.59, 10M context) and Maverick ($0.20/$0.60, 1M context). Both are open weights, both run on Together.ai — but they serve very different use cases. Here's how to pick the right one.</p>
+        <p class="subtitle">Meta released two Llama 4 models: Scout ($0.18/$0.59, 1M context) and Maverick ($0.20/$0.60, 1M context). Both are open weights, both run on Together.ai — but they serve very different use cases. Here's how to pick the right one.</p>
             <div style="padding:16px 20px;background:rgba(245,158,11,0.08);border:1px solid rgba(245,158,11,0.2);border-radius:8px;margin:0 0 24px;">
                 <p style="margin:0;font-size:14px;"><strong>🚨 June 15 deadline:</strong> See all 42 alternatives, calculate your savings, and get migration code on our <a href="claude-4-deprecation.html" style="color:#d97706;font-weight:600;">Claude 4 Deprecation Hub</a>.</p>
             </div>
@@ -193,7 +193,7 @@
                 <div class="model-name">Llama 4 Scout</div>
                 <div class="price">$0.18 / $0.34</div>
                 <div class="price-label">Input / Output per 1M tokens</div>
-                <p style="font-size:14px;margin-top:12px;margin-bottom:0;">10M context window &middot; 109B params (MoE)</p>
+                <p style="font-size:14px;margin-top:12px;margin-bottom:0;">1M context window &middot; 109B params (MoE)</p>
             </div>
             <div class="cost-card">
                 <div class="model-name">Llama 4 Maverick</div>
@@ -216,7 +216,7 @@
             <tbody>
                 <tr><td>Total parameters</td><td>109B</td><td class="winner">400B</td></tr>
                 <tr><td>Active parameters</td><td>~17B</td><td>~17B</td></tr>
-                <tr><td>Context window</td><td class="winner">10M tokens</td><td>1M tokens</td></tr>
+                <tr><td>Context window</td><td class="winner">1M tokens</td><td>1M tokens</td></tr>
                 <tr><td>Input price / 1M</td><td class="cheapest">$0.18</td><td>$0.20</td></tr>
                 <tr><td>Output price / 1M</td><td class="cheapest">$0.34</td><td>$0.60</td></tr>
                 <tr><td>Blended cost*</td><td class="cheapest">$0.18</td><td>$0.30</td></tr>
@@ -230,7 +230,7 @@
 
         <div class="highlight-box">
             <h3>Same active parameters, very different total capacity</h3>
-            <p>Despite both models activating ~17B parameters per request (meaning similar per-request latency), Maverick's 400B total gives it access to <strong>3.7x more knowledge</strong>. Think of it like a library: Scout has a smaller catalog but a massive reading room (10M context). Maverick has a much larger catalog but a standard reading room (1M context).</p>
+            <p>Despite both models activating ~17B parameters per request (meaning similar per-request latency), Maverick's 400B total gives it access to <strong>3.7x more knowledge</strong>. Think of it like a library: Scout has a smaller catalog but a massive reading room (1M context). Maverick has a much larger catalog but a standard reading room (1M context).</p>
         </div>
 
         <h2>Cost Comparison: Head to Head</h2>
@@ -256,7 +256,7 @@
                 <tr><td>Llama 4 Maverick</td><td>$150.00</td><td>$18.00</td><td><strong>$168.00</strong></td><td>—</td></tr>
             </tbody>
         </table>
-        <p><strong>Scout saves $75.30/month</strong> at this scale. And Scout's 10M context means you can process massive documents in a single call — Maverick's 1M limit requires chunking at ~750K words.</p>
+        <p><strong>Scout saves $75.30/month</strong> at this scale. And Scout's 1M context means you can process massive documents in a single call — Maverick's 1M limit requires chunking at ~750K words.</p>
 
         <h3>Cost Scenario 3: High-Volume Classification (50K requests/day, 200 input + 50 output)</h3>
         <p>Sentiment analysis, content moderation, intent classification — 300M input + 75M output per month:</p>
@@ -273,7 +273,7 @@
 
         <div class="highlight-box">
             <h3>Llama 4 Scout: The efficient generalist</h3>
-            <p>With 109B total parameters and 10M context, Scout is optimized for <strong>throughput and efficiency</strong>. It handles general-purpose tasks, multilingual content, and long-context workloads exceptionally well. The 10M context window is its killer feature — no other model at this price point comes close.</p>
+            <p>With 109B total parameters and 1M context, Scout is optimized for <strong>throughput and efficiency</strong>. It handles general-purpose tasks, multilingual content, and long-context workloads exceptionally well. The 1M context window is its killer feature — no other model at this price point comes close.</p>
         </div>
 
         <div class="highlight-box">
@@ -326,7 +326,7 @@
             <li><strong>General-purpose chat:</strong> Excellent conversational quality at the lowest price point</li>
             <li><strong>Multilingual applications:</strong> Broader language support at lower cost</li>
             <li><strong>Self-hosting on a budget:</strong> Runs on 2x H100 vs Maverick's 8x requirement</li>
-            <li><strong>RAG pipelines:</strong> 10M context fits massive retrieval sets, improving answer quality</li>
+            <li><strong>RAG pipelines:</strong> 1M context fits massive retrieval sets, improving answer quality</li>
         </ul>
 
         <h2>When to Choose Llama 4 Maverick</h2>

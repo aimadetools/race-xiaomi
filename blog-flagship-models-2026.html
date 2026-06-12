@@ -241,12 +241,12 @@
         <div class="highlight-box">
             <h3>How much can each model see?</h3>
             <ul>
-                <li><strong>Gemini 3.1 Pro: 10M tokens</strong> — Process entire codebases, 1,000+ page documents, or weeks of conversation history in a single request. This is an order of magnitude larger than any competitor.</li>
+                <li><strong>Gemini 3.1 Pro: 1M tokens</strong> — Process entire codebases, 1,000+ page documents, or weeks of conversation history in a single request. This is an order of magnitude larger than any competitor.</li>
                 <li><strong>GPT-5.5: 1M tokens</strong> — Handle large applications, extensive multi-document analysis, and complex RAG pipelines with room to spare.</li>
                 <li><strong>Claude Opus 4.7: 200K tokens</strong> — Sufficient for most projects, long documents, and multi-turn conversations. Enough for the vast majority of production workloads.</li>
                 <li><strong>DeepSeek V4 Pro: 128K tokens</strong> — Covers standard workloads comfortably. Falls short for massive document ingestion but handles typical code generation and chatbot tasks without issue.</li>
             </ul>
-            <p>Gemini 3.1 Pro's 10M context window is a genuine differentiator. No other model comes close. If your workload involves analyzing massive codebases, legal document collections, or extensive research corpora, Gemini 3.1 Pro is the only model that can handle it in a single pass without chunking or RAG workarounds.</p>
+            <p>Gemini 3.1 Pro's 1M context window is a genuine differentiator. No other model comes close. If your workload involves analyzing massive codebases, legal document collections, or extensive research corpora, Gemini 3.1 Pro is the only model that can handle it in a single pass without chunking or RAG workarounds.</p>
         </div>
 
         <h2>Use Case Cost Breakdowns</h2>
@@ -330,7 +330,7 @@
                 </tr>
             </tbody>
         </table>
-        <p><strong>Winner: DeepSeek V4 Pro</strong> — saves $241.50/month (70%) compared to GPT-5.5. However, if your documents exceed 128K tokens and you cannot chunk them, Gemini 3.1 Pro's 10M context window becomes the only viable option at $120/month.</p>
+        <p><strong>Winner: DeepSeek V4 Pro</strong> — saves $241.50/month (70%) compared to GPT-5.5. However, if your documents exceed 128K tokens and you cannot chunk them, Gemini 3.1 Pro's 1M context window becomes the only viable option at $120/month.</p>
 
         <h3>Scenario C: Chatbot</h3>
         <p><em>1,500 input tokens, 500 output tokens, 1,000 requests per day</em></p>
@@ -393,7 +393,7 @@
         <h3>Gemini 3.1 Pro</h3>
         <div class="highlight-box">
             <ul>
-                <li><strong>Strengths:</strong> Largest context window by far (10M tokens), best for massive documents and codebases, deep Google Cloud and Workspace integration, competitive pricing at $2/12</li>
+                <li><strong>Strengths:</strong> Largest context window by far (1M tokens), best for massive documents and codebases, deep Google Cloud and Workspace integration, competitive pricing at $2/12</li>
                 <li><strong>Weaknesses:</strong> Google ecosystem dependency, less flexibility outside GCP, output quality may trail Claude Opus on complex reasoning tasks</li>
             </ul>
         </div>
@@ -423,9 +423,9 @@
                     <td>Highest quality output, best ecosystem and tooling support</td>
                 </tr>
                 <tr>
-                    <td>Need 10M context window</td>
+                    <td>Need 1M context window</td>
                     <td><strong>Gemini 3.1 Pro</strong></td>
-                    <td>Only option at 10M tokens. No competitor comes close.</td>
+                    <td>Only option at 1M tokens. No competitor comes close.</td>
                 </tr>
                 <tr>
                     <td>Best value per quality</td>
@@ -463,7 +463,7 @@
         <h2>The Hybrid Strategy</h2>
         <p>For maximum cost efficiency, consider routing different workloads to different models:</p>
         <ul>
-            <li><strong>Gemini 3.1 Pro</strong> for massive document analysis and long-context tasks (only model that can handle 10M tokens)</li>
+            <li><strong>Gemini 3.1 Pro</strong> for massive document analysis and long-context tasks (only model that can handle 1M tokens)</li>
             <li><strong>Claude Opus 4.7</strong> for complex reasoning, coding assistance, and detailed analysis where quality matters most</li>
             <li><strong>DeepSeek V4 Pro</strong> for high-volume chatbots, code generation at scale, and any workload where cost is the primary driver</li>
             <li><strong>GPT-5.5</strong> for creative tasks, OpenAI ecosystem integrations, and workloads requiring real-time data access</li>

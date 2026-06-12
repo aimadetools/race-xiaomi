@@ -207,7 +207,7 @@
                 <div class="model-name">Llama 4 Scout</div>
                 <div class="price">$0.18 / $0.34</div>
                 <div class="price-label">Input / Output per 1M tokens</div>
-                <p style="font-size:14px;margin-top:12px;margin-bottom:0;">10M context window</p>
+                <p style="font-size:14px;margin-top:12px;margin-bottom:0;">1M context window</p>
             </div>
             <div class="cost-card">
                 <div class="model-name">DeepSeek V4 Flash</div>
@@ -290,15 +290,15 @@
         <h2>Context Window: 10M vs 1M</h2>
         <p>Llama 4 Scout's <strong>10M token context window</strong> is the largest available via API — 10x DeepSeek V4 Flash's 1M. This is a game-changer for specific workloads:</p>
         <ul>
-            <li><strong>Full codebase analysis:</strong> Scout can ingest an entire large repository (10M tokens ~ 7.5M words) in a single call. DeepSeek requires chunking at ~750K words.</li>
+            <li><strong>Full codebase analysis:</strong> Scout can ingest an entire large repository (1M tokens ~ 7.5M words) in a single call. DeepSeek requires chunking at ~750K words.</li>
             <li><strong>Multi-document processing:</strong> Analyze dozens of contracts, research papers, or reports simultaneously without splitting.</li>
             <li><strong>Long conversation memory:</strong> Scout retains massive conversation history, reducing the need for context management in long-running agents.</li>
             <li><strong>RAG with large retrieval sets:</strong> Fit more retrieved chunks in context, improving answer quality for complex queries.</li>
         </ul>
 
-        <p>However, 10M context comes with trade-offs:</p>
+        <p>However, 1M context comes with trade-offs:</p>
         <ul>
-            <li><strong>Latency:</strong> Processing 10M tokens takes significantly longer than 1M. For short requests, this doesn't matter.</li>
+            <li><strong>Latency:</strong> Processing 1M tokens takes significantly longer than 1M. For short requests, this doesn't matter.</li>
             <li><strong>Cost at scale:</strong> If you're sending 50K input tokens per request, the per-token cost difference adds up fast — DeepSeek's lower output price may offset Scout's input advantage.</li>
             <li><strong>Quality degradation:</strong> Some models show reduced accuracy at very long contexts ("lost in the middle" effect). Both Scout and Flash handle long context well, but quality can vary.</li>
         </ul>
@@ -375,7 +375,7 @@
         <div class="highlight-box">
             <h3>Two ultra-budget champions, different strengths</h3>
             <p>At under $0.20 blended cost per million tokens, both Llama 4 Scout and DeepSeek V4 Flash are <strong>95%+ cheaper</strong> than premium models like Claude Haiku ($1.90 blended). The choice comes down to your workload:</p>
-            <p><strong>Choose Llama 4 Scout</strong> if you need massive context (10M tokens), want to self-host, care about data privacy, or need multilingual support. At $0.18 input, it's the cheapest way to process enormous amounts of text.</p>
+            <p><strong>Choose Llama 4 Scout</strong> if you need massive context (1M tokens), want to self-host, care about data privacy, or need multilingual support. At $0.18 input, it's the cheapest way to process enormous amounts of text.</p>
             <p><strong>Choose DeepSeek V4 Flash</strong> if you need best-in-class code generation, output-heavy workloads, or serverless simplicity. At $0.28 output, it's the cheapest way to generate high-quality code and structured content.</p>
             <p><strong>The smart move?</strong> Use both. Route coding tasks to DeepSeek, long-context analysis to Llama 4 Scout, and keep general chat on either. At these prices, a multi-model pipeline costs under $10/month for most workloads.</p>
         </div>
