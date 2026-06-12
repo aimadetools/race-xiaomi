@@ -275,6 +275,7 @@
             .calculator { padding: 20px; }
             .calc-grid { grid-template-columns: 1fr; gap: 24px; }
             .presets { justify-content: center; }
+            .pro-upsell-grid { grid-template-columns: 1fr !important; padding: 24px !important; gap: 20px !important; }
         }
         @media print {
             nav, .theme-toggle, .back-to-top, .presets { display: none !important; }
@@ -509,7 +510,7 @@
 
     <!-- Pro Upsell Section — personalized after calculation -->
     <section style="max-width:900px;margin:0 auto 40px;padding:0 24px;display:none;" id="pro-upsell">
-        <div style="background:linear-gradient(135deg, rgba(99,102,241,0.08), rgba(34,197,94,0.06));border:1px solid var(--accent);border-radius:16px;padding:32px;display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:center;">
+        <div class="pro-upsell-grid" style="background:linear-gradient(135deg, rgba(99,102,241,0.08), rgba(34,197,94,0.06));border:1px solid var(--accent);border-radius:16px;padding:32px;display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:center;">
             <div>
                 <h2 style="font-size:22px;font-weight:800;margin-bottom:8px;">Stop overpaying — save <span style="color:var(--green);" id="upsell-savings-inline">$0/mo</span></h2>
                 <p style="color:var(--text-secondary);font-size:15px;line-height:1.6;margin-bottom:16px;">Your Cost Efficiency Score is <strong id="upsell-grade-text">C</strong>. Pro users with similar usage save <strong style="color:var(--green);" id="upsell-annual-savings">$0/year</strong> with personalized optimization.</p>
