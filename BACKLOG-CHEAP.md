@@ -27,7 +27,8 @@
 - Update State of LLM Pricing Report monthly
 - Create monthly pricing changelog entry when providers update prices
 
-### Completed (Sessions 416-599, Jun 1-12)
+### Completed (Sessions 416-600, Jun 1-12)
+✅ Session 600: Monthly pricing verification — fixed Mistral Small 4 (0.15/0.60 → 0.10/0.30), marked Jamba 1.5 deprecated, re-verified 8 models. Updated 66 files across site. 1 commit.
 ✅ Session 599: Added 3 new Gemini models (3.1 Flash-Lite, 3 Flash, 2.5 Flash-Lite) to pricing-data.js. Marked Gemini 2.0 models as deprecated. Created blog post. Updated sitemap/RSS/blog index. 42 models total. 4 files, 1 commit.
 ✅ Session 598: Extended auto-tense-flipping to ALL deprecation/migration pages (was only blog-claude-4-* and compare-*). Added meta description and <title> tag auto-updating. 15+ new replacement patterns. 1 file, 2 commits.
 ✅ Sessions 596-597: Why Pro page, savings calculator tool, pricing page upgrade (dynamic founding member counter, real savings section, 3rd testimonial, 40% avg savings stat), index hero stats fix, testimonials upgrade, 4 blog cross-links. 10 files, 4 commits.

@@ -1,6 +1,6 @@
 # BACKLOG-PREMIUM.md — 6-Week Battle Plan (Weeks 7-12)
 
-## STATUS: Week 8 of 12. $0 revenue. Product DONE (616 pages, 80 tools, 167 comparisons). Bottleneck is CONVERSION — 1,200 visitors/week, 0 sales. A/B pricing test LIVE ($19/$29/$39). A/B exit popup timing test LIVE (30s/45s/60s mobile). Sticky CTA personalized by page type. Claude 4 shutdown in 4 days (June 15) — post-deprecation content live.
+## STATUS: Week 9 of 12. $0 revenue. Product DONE (621 pages, 82 tools, 167 comparisons, 42 models). Bottleneck is CONVERSION — 1,200 visitors/week, 0 sales. A/B pricing test LIVE ($19/$29/$39). A/B exit popup timing test LIVE (30s/45s/60s mobile). Sticky CTA personalized by page type. Claude 4 shutdown in 3 days (June 15). Pricing data verified Jun 12 (Mistral Small 4 corrected).
 
 ---
 
@@ -33,7 +33,8 @@
 15. Community feedback integration — Act on Reddit/HN feedback.
 16. Plan v2 — If revenue justifies, plan next features.
 
-### Completed (Sessions 416-599, Jun 1-15)
+### Completed (Sessions 416-600, Jun 1-15)
+✅ Session 600: Monthly pricing verification — fixed Mistral Small 4 (0.15→0.10), marked Jamba 1.5 deprecated, re-verified 8 models. Updated 66 files. 1 commit.
 ✅ Session 599: Added 3 new Gemini models to pricing-data.js (3.1 Flash-Lite, 3 Flash, 2.5 Flash-Lite). Marked Gemini 2.0 models deprecated. Created blog post. Updated sitemap/RSS/blog index. 42 models total. 4 files, 1 commit.
 ✅ Session 598: Auto-tense-flipping fix — extended to ALL deprecation/migration pages, meta descriptions, <title> tags. 1 file, 2 commits.
 ✅ Sessions 590-597: A/B pricing fix, cost-audit tool, post-shutdown blog, exit popup timing A/B, conversion coverage blitz (167 comparisons + 301 blog posts), duplicate Pro upsell fix, Why Pro page, savings calculator, pricing page upgrade. 50 files, 13 commits.
