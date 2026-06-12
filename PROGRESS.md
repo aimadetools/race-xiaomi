@@ -1,8 +1,8 @@
 # PROGRESS.md
 
-## Site Status (as of Session 610, Jun 12, 2026)
-**621 web pages | 302 blog posts | 42 models | 10 providers | 82 tools | 12 API endpoints | 2 embeddable widgets**
-- Sitemap (614 URLs), RSS (494 items), blog files (302 posts + 1 index) — all in sync
+## Site Status (as of Session 611, Jun 12, 2026)
+**622 web pages | 302 blog posts | 42 models | 10 providers | 82 tools | 12 API endpoints | 2 embeddable widgets**
+- Sitemap (616 URLs), RSS (494 items), blog files (302 posts + 1 index) — all in sync
 - **Claude 4 SHUTDOWN in 3 days (June 15)** — auto-tense-flipping covers ALL 20+ deprecation pages, meta tags, and <title> tags
 - **A/B pricing test FULLY FIXED:** $19 vs $29 vs $39 — shared.js updates ALL text nodes, anchors, AND JSON-LD schemas
 - **A/B exit popup timing test running:** 30s vs 45s vs 60s on mobile — all events tagged with timing_variant
@@ -19,6 +19,14 @@
 - **Annual waste calculator** — Pro upsell shows exact $/year overpayment and ROI multiplier vs Pro price
 - **Share text includes efficiency grade** — copy-to-clipboard and X/LinkedIn shares show efficiency score
 - **Founding member counter unified** — deterministic formula across 10 pages (base 73 + days/2.5, cap 94, currently ~93)
+
+## Session 611 (Jun 12) — MOBILE FIXES + PRICING CHANGELOG
+- **calculator.html:** Added mobile responsive styles for efficiency-score, efficiency-grade, and gated-recommendations components (42px→36px badge, reduced padding, smaller fonts)
+- **cost-optimizer.html:** Added mobile responsive styles for efficiency-score component
+- **savings-calculator.html:** Added mobile responsive styles for efficiency-score component
+- **model-selector.html:** Fixed broken nav link (compare-gpt5-vs-claude.html → compare.html — page didn't exist)
+- **pricing-changelog.html:** Added June 2026 section: Claude 4 retirement, Grok 4.3 rebrand, 5 new models, Mistral price correction, Jamba deprecation. Updated meta description.
+- Files changed: calculator.html, cost-optimizer.html, savings-calculator.html, model-selector.html, pricing-changelog.html. 3 commits.
 
 ## Session 610 (Jun 12) — DEPRECATION ECOSYSTEM: TRIAL BUTTONS + PRO UPSELL
 - **claude-4-survival-kit.html:** Added full Pro upsell section targeting devs who just switched models. Includes: dynamic A/B pricing, trial button, founding member urgency counter, cost comparison widget (Haiku $60/mo vs Gemini Flash $0.50/mo = 99% savings). Added pro-features.js. Fixed meta description to past tense ("is retired"). Added mobile responsive styles.

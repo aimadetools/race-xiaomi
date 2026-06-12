@@ -26,7 +26,7 @@
 - ✅ A/B test gated recommendations — DONE Session 608
 - ✅ Add trial buttons to deprecation ecosystem pages — DONE Session 610 (8 pages)
 - ✅ Add Pro upsell to survival kit page — DONE Session 610
-- Test calculator on mobile — verify efficiency score and gated recommendations display correctly
+- ✅ Test calculator on mobile — verify efficiency score and gated recommendations display correctly — DONE Session 611 (added mobile styles)
 
 ### Post-Claude 4 Shutdown (after June 15)
 - Monitor post-shutdown traffic spikes (searches for "Claude 4 shutdown", "410 error")
@@ -38,9 +38,10 @@
 ### SEO & Content
 - Monitor post-deprecation traffic (searches for "Claude 4 shutdown", "410 error", "what happened to Claude 4")
 - ✅ Update State of LLM Pricing Report monthly — DONE Session 602 (model count 39→42, FAQ, meta, dateModified)
-- Create monthly pricing changelog entry when providers update prices
+- ✅ Create monthly pricing changelog entry when providers update prices — DONE Session 611 (June 2026 section added)
 
-### Completed (Sessions 416-610, Jun 1-12)
+### Completed (Sessions 416-611, Jun 1-12)
+✅ Session 611: Mobile responsive styles for efficiency score on calculator, cost-optimizer, savings-calculator. Fixed broken compare link in model-selector nav. Added June 2026 pricing changes to changelog. 3 commits.
 ✅ Session 610: Added Pro upsell to survival kit page (dynamic pricing, trial button, cost comparison). Added trial buttons to 8 deprecation/migration pages. Fixed meta tense on survival kit. 3 commits.
 ✅ Session 609: Added dynamic user counter to hero (social proof). NEW Claude 4 Survival Kit landing page. Linked from migration hub and index. Updated sitemap. 4 commits.
 ✅ Session 608: A/B test for gated recommendations (show_1 vs show_0). Fixed stale model count in context-window-visualizer. Fixed stale May→June 2026 dates in 5 blog posts. Unified founding member counter across 9 pages (deterministic formula). 4 commits.
