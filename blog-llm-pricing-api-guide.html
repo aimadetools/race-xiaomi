@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>How to Use a Free LLM Pricing API in Your Projects — APIpulse</title>
-    <meta name="description" content="Step-by-step guide to using the free APIpulse LLM Pricing API. Fetch real-time pricing for GPT-5, Claude, Gemini, and 39 models. Build cost dashboards, CI checks, and budget tools. No API key needed.">
+    <meta name="description" content="Step-by-step guide to using the free APIpulse LLM Pricing API. Fetch real-time pricing for GPT-5, Claude, Gemini, and 42 models. Build cost dashboards, CI checks, and budget tools. No API key needed.">
     <meta name="keywords" content="LLM pricing API, AI API pricing JSON, GPT pricing API, Claude cost API, free AI pricing data, LLM cost calculator API, AI model pricing endpoint">
     <meta property="og:title" content="How to Use a Free LLM Pricing API in Your Projects — APIpulse">
     <meta property="og:description" content="Fetch real-time pricing for 39 AI models. Build cost dashboards, CI checks, and budget tools. Free, no API key.">
@@ -63,7 +63,7 @@
                 "name": "How many AI models does the pricing API cover?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "39 models across 10 providers: OpenAI (GPT-5, GPT-5 mini, GPT-5.5, etc.), Anthropic (Claude Opus 4.8, Sonnet 4.6, Haiku 4.5), Google (Gemini 3.5 Flash, Gemini 2.5 Pro), DeepSeek (V4 Pro, V3.2), Mistral, Cohere, Meta Llama, Moonshot Kimi, xAI Grok, and AI21 Jamba."
+                    "text": "42 models across 10 providers: OpenAI (GPT-5, GPT-5 mini, GPT-5.5, etc.), Anthropic (Claude Opus 4.8, Sonnet 4.6, Haiku 4.5), Google (Gemini 3.5 Flash, Gemini 2.5 Pro), DeepSeek (V4 Pro, V3.2), Mistral, Cohere, Meta Llama, Moonshot Kimi, xAI Grok, and AI21 Jamba."
                 }
             },
             {
@@ -194,12 +194,12 @@
         <p>Instead of manually checking 10 provider pricing pages, you can pull structured data from a single API endpoint. Here's how.</p>
 
         <h2>The API: 6 Endpoints, Zero Auth</h2>
-        <p>The APIpulse LLM Pricing API is free, CORS-enabled, and requires no API key. It covers 39 models across 10 providers with verified pricing data updated regularly.</p>
+        <p>The APIpulse LLM Pricing API is free, CORS-enabled, and requires no API key. It covers 42 models across 10 providers with verified pricing data updated regularly.</p>
 
         <div class="endpoint-card">
             <span class="endpoint-method">GET</span>
             <span class="endpoint-path">/api/pricing</span>
-            <p class="endpoint-desc">Returns all 39 models with pricing, context windows, tier, and provider info. Supports filtering by provider, tier, or individual model.</p>
+            <p class="endpoint-desc">Returns all 42 models with pricing, context windows, tier, and provider info. Supports filtering by provider, tier, or individual model.</p>
             <a href="https://getapipulse.com/api/pricing" target="_blank" class="try-it">Try it live →</a>
         </div>
 
@@ -248,7 +248,7 @@ const res = await fetch('https://getapipulse.com/api/pricing');
 const { models, meta } = await res.json();
 
 console.log(`Tracking ${meta.count} models across ${meta.providers.length} providers`);
-// → Tracking 39 models across 10 providers
+// → Tracking 42 models across 10 providers
 
 // Find cheapest model
 const sorted = models

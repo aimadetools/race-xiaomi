@@ -4,17 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AI API Monthly Spend Estimator — Compare All 39 Models | APIpulse</title>
-    <meta name="description" content="Estimate your monthly AI API spend across all 39 models from 10 providers. Side-by-side cost comparison with sorting, filtering, and export. Free, no signup.">
+    <meta name="description" content="Estimate your monthly AI API spend across all 42 models from 10 providers. Side-by-side cost comparison with sorting, filtering, and export. Free, no signup.">
     <meta name="keywords" content="AI API cost estimator, monthly API spend, LLM cost comparison, AI API pricing, model cost comparison, API budget calculator">
     <meta property="og:title" content="AI API Monthly Spend Estimator — Compare All 39 Models">
-    <meta property="og:description" content="Enter your usage. See costs across 39 models instantly. Find the cheapest AI API for your workload.">
+    <meta property="og:description" content="Enter your usage. See costs across 42 models instantly. Find the cheapest AI API for your workload.">
     <meta property="og:type" content="website">
     <meta property="og:image" content="https://getapipulse.com/og-image.png">
     <meta property="og:url" content="https://getapipulse.com/monthly-spend-estimator.html">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="AI API Monthly Spend Estimator — Compare All 39 Models">
     <meta name="twitter:image" content="https://getapipulse.com/og-image.png">
-    <meta name="twitter:description" content="Enter your usage. See costs across 39 models instantly.">
+    <meta name="twitter:description" content="Enter your usage. See costs across 42 models instantly.">
     <link rel="canonical" href="https://getapipulse.com/monthly-spend-estimator.html">
     <link rel="alternate" type="application/rss+xml" title="APIpulse Blog" href="https://getapipulse.com/rss.xml">
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
@@ -36,7 +36,7 @@
         "@type": "WebApplication",
         "name": "AI API Monthly Spend Estimator",
         "url": "https://getapipulse.com/monthly-spend-estimator.html",
-        "description": "Estimate your monthly AI API spend across 39 models from 10 providers. Side-by-side comparison with sorting and filtering.",
+        "description": "Estimate your monthly AI API spend across 42 models from 10 providers. Side-by-side comparison with sorting and filtering.",
         "applicationCategory": "DeveloperApplication",
         "operatingSystem": "Web",
         "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
@@ -60,7 +60,7 @@
                 "name": "Which AI model is cheapest for my workload?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "For most workloads, budget models like Gemini 2.0 Flash Lite ($0.075/$0.30 per 1M tokens), Llama 3.1 8B ($0.10/$0.10), or GPT-4o mini ($0.15/$0.60) are cheapest. But quality matters — the best model depends on your use case. Use our estimator to compare costs, then test quality with a few samples."
+                    "text": "For most workloads, budget models like GPT-oss 20B at $0.08/$0.35 is the cheapest. But quality matters — the best model depends on your use case. Use our estimator to compare costs, then test quality with a few samples."
                 }
             },
             {
@@ -244,7 +244,7 @@
 
     <div class="estimator-hero">
         <h1>AI API Monthly Spend Estimator</h1>
-        <p>Enter your usage. See what every model costs you per month. Find the cheapest option for your workload — across 39 models and 10 providers.</p>
+        <p>Enter your usage. See what every model costs you per month. Find the cheapest option for your workload — across 42 models and 10 providers.</p>
     </div>
 
     <div class="estimator-section">
@@ -482,8 +482,8 @@
         const url = generateShareUrl();
         const cheapest = currentResults[0];
         const text = cheapest
-            ? `I estimated my AI API costs across 39 models. ${cheapest.name} is cheapest at $${cheapest.monthlyCost.toFixed(2)}/mo. See the full breakdown:`
-            : 'Compare AI API costs across 39 models:';
+            ? `I estimated my AI API costs across 42 models. ${cheapest.name} is cheapest at $${cheapest.monthlyCost.toFixed(2)}/mo. See the full breakdown:`
+            : 'Compare AI API costs across 42 models:';
 
         document.getElementById('shareUrl').value = url;
         document.getElementById('shareTwitter').href =
@@ -616,9 +616,9 @@
         <h2>Related Tools</h2>
         <ul>
             <li><a href="calculator.html">Cost Calculator</a> — Estimate costs for your exact usage</li>
-            <li><a href="cost-explorer.html">Cost Explorer</a> — Interactive cost dashboard for all 39 models</li>
+            <li><a href="cost-explorer.html">Cost Explorer</a> — Interactive cost dashboard for all 42 models</li>
             <li><a href="budget-planner.html">Budget Planner</a> — Step-by-step budget planning wizard</li>
-            <li><a href="cheapest-ai-api.html">Cheapest AI API Finder</a> — 39 models ranked cheapest first</li>
+            <li><a href="cheapest-ai-api.html">Cheapest AI API Finder</a> — 42 models ranked cheapest first</li>
             <li><a href="prompt-cost-calculator.html">Prompt Cost Calculator</a> — Paste any prompt, see costs</li>
         </ul>
     </section>
