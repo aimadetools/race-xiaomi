@@ -71,7 +71,7 @@
                 "name": "What happens if I don't migrate by June 15?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "All API calls using Claude 4 Sonnet model IDs will return HTTP 404 errors immediately. There is no grace period. Your application will break."
+                    "text": "All API calls using Claude 4 Sonnet model IDs will return HTTP 410 Gone errors immediately. There is no grace period. Your application will break."
                 }
             }
         ]
@@ -139,7 +139,7 @@
     <main id="main">
     <div class="blog-hero">
         <div class="breadcrumb"><a href="blog.html">Blog</a> &rsaquo; Claude 4 to Sonnet 4.6 Migration</div>
-        <div class="deprecation-alert"><strong>⏰ 3 DAYS LEFT:</strong> Claude 4 Opus and Claude 4 Sonnet shut down on <strong>June 15, 2026</strong>. After this date, all API calls will return HTTP 404 errors. Migrate now to avoid downtime.</div>
+        <div class="deprecation-alert"><strong>⏰ 3 DAYS LEFT:</strong> Claude 4 Opus and Claude 4 Sonnet shut down on <strong>June 15, 2026</strong>. After this date, all API calls will return HTTP 410 Gone errors. Migrate now to avoid downtime.</div>
         <h1>Claude 4 to Sonnet 4.6: One-Line Migration Guide</h1>
         <p class="meta">Published Jun 12, 2026 &middot; 6 min read &middot; By APIpulse</p>
     </div>
@@ -202,7 +202,7 @@ const response = await anthropic.messages.create({
             <li><strong>Search your codebase</strong> for <code>claude-sonnet-4-20250514</code> or any reference to Claude 4 Sonnet model IDs. Use <code>grep -r "claude-sonnet-4" .</code> to find all occurrences.</li>
             <li><strong>Update the model ID</strong> to <code>claude-sonnet-4-6-20260101</code> in each file.</li>
             <li><strong>Run your test suite</strong> to verify everything works. The response format is identical, but test edge cases like long context, streaming, and tool use.</li>
-            <li><strong>Deploy to production</strong> before June 15. After that date, the old model ID returns HTTP 404 immediately.</li>
+            <li><strong>Deploy to production</strong> before June 15. After that date, the old model ID returns HTTP 410 Gone immediately.</li>
         </ol>
 
         <div class="cta-box">
@@ -240,7 +240,7 @@ const response = await anthropic.messages.create({
         <h2>Frequently Asked Questions</h2>
 
         <h3>What happens if I don't migrate by June 15?</h3>
-        <p>All API calls using Claude 4 Sonnet model IDs will return HTTP 404 errors immediately. There is no grace period, no partial shutdown, and no extensions. Your application will break.</p>
+        <p>All API calls using Claude 4 Sonnet model IDs will return HTTP 410 Gone errors immediately. There is no grace period, no partial shutdown, and no extensions. Your application will break.</p>
 
         <h3>Does Sonnet 4.6 produce the same outputs as Claude 4 Sonnet?</h3>
         <p>For most use cases, yes. Claude Sonnet 4.6 matches or exceeds Claude 4 Sonnet on all benchmarks. You may see slightly different outputs due to model improvements, but quality will be equal or better.</p>

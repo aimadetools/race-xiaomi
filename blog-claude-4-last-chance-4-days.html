@@ -64,7 +64,7 @@
                 "name": "What happens if I don't migrate from Claude 4 before June 15?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "All API calls to claude-4-opus and claude-4-sonnet will return 404 errors immediately. Your application will break with no fallback. Migrate now to avoid downtime."
+                    "text": "All API calls to claude-4-opus and claude-4-sonnet will return 410 Gone errors immediately. Your application will break with no fallback. Migrate now to avoid downtime."
                 }
             },
             {
@@ -328,7 +328,7 @@ llm = Anthropic(model="claude-opus-4-8")  # was "claude-4-opus"</code></pre>
 
         <div class="faq-item">
             <h3>What if I miss the deadline?</h3>
-            <p>Your API calls will fail immediately with a 404 error. You'll need to update your model ID and redeploy. There's no way to keep using Claude 4 after June 15.</p>
+            <p>Your API calls will fail immediately with a 410 Gone error. You'll need to update your model ID and redeploy. There's no way to keep using Claude 4 after June 15.</p>
         </div>
 
         <div class="faq-item">

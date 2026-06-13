@@ -74,7 +74,7 @@
                 "name": "What does the Claude 4 deprecated model error look like?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "The error response typically includes: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"model 'claude-4-opus' is deprecated\"}}. The HTTP status is 400 or 404. The fix is to update the model name string in your code."
+                    "text": "The error response typically includes: {\"type\":\"error\",\"error\":{\"type\":\"invalid_request_error\",\"message\":\"model 'claude-4-opus' is deprecated\"}}. The HTTP status is 410 Gone. The fix is to update the model name string in your code."
                 }
             },
             {
@@ -331,7 +331,7 @@
             <p><strong>TL;DR:</strong> Replace <code>claude-4-opus</code> with <code>claude-opus-4-8</code> and <code>claude-sonnet-4</code> with <code>claude-sonnet-4-6</code> everywhere in your code. Same API key, same SDK, same endpoint — just a model name change. Fix takes ~5 minutes.</p>
         </div>
 
-        <h2>Error #1: "Model Not Found" (404)</h2>
+        <h2>Error #1: "Model Not Found" (410 Gone)</h2>
         <p>This is the most common error after June 15. The API can't find the model because the name has been retired.</p>
 
         <div class="error-box">
@@ -345,7 +345,7 @@
 }</code></pre>
         </div>
 
-        <p><strong>Why it happens:</strong> The model ID <code>claude-4-opus</code> no longer exists after June 15. The API returns a 404 because the model has been removed from Anthropic's infrastructure.</p>
+        <p><strong>Why it happens:</strong> The model ID <code>claude-4-opus</code> no longer exists after June 15. The API returns a 410 Gone because the model has been removed from Anthropic's infrastructure.</p>
 
         <div class="fix-box">
             <div class="fix-title">Fix</div>

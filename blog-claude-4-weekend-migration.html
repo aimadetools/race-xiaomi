@@ -75,7 +75,7 @@
                 "name": "What happens if I don't migrate before June 15?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "After June 15, 2026, API calls to 'claude-4-opus' and 'claude-sonnet-4' will return errors (HTTP 404 or 400). Your app will break if it depends on these models. Your API key still works — you just need to update the model name string."
+                    "text": "After June 15, 2026, API calls to 'claude-4-opus' and 'claude-sonnet-4' will return errors (HTTP 410 Gone or 400). Your app will break if it depends on these models. Your API key still works — you just need to update the model name string."
                 }
             },
             {
@@ -358,7 +358,7 @@ grep -r "claude-sonnet-4" . --include="*.py" --include="*.js" --include="*.ts" -
             </div>
             <p>Run your test suite with the new model names. Focus on:</p>
             <ul>
-                <li>API calls succeed (no 404 or 400 errors)</li>
+                <li>API calls succeed (no 410 Gone or 400 errors)</li>
                 <li>Response format is compatible (it should be — same Anthropic API)</li>
                 <li>Token limits work correctly (new models have larger context windows)</li>
                 <li>Streaming responses work if you use streaming</li>
