@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Claude 4 API Error Codes Complete Reference — Every Error & Fix | APIpulse</title>
+    <meta name="description" content="Complete reference for every Claude 4 API error code: 410 Gone, 400 Bad Request, 401 Unauthorized, 429 Rate Limit. Exact JSON responses, fixes, and code snippets for each error.">
+    <meta name="keywords" content="claude 4 error codes, claude api error 410, claude api error 400, claude api error 401, claude api error 429, anthropic api errors, claude 4 invalid_model_error, claude 4 model not found, claude api response codes">
+    <meta property="og:title" content="Claude 4 API Error Codes Complete Reference">
+    <meta property="og:description" content="Every Claude 4 API error code explained with exact JSON responses and fixes.">
+    <meta property="og:type" content="article">
+    <meta property="article:published_time" content="2026-06-13">
+    <meta property="article:modified_time" content="2026-06-13">
+    <meta property="article:author" content="APIpulse">
+    <meta property="og:image" content="https://getapipulse.com/og-image.png">
+    <meta property="og:url" content="https://getapipulse.com/claude-4-error-codes-reference.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Claude 4 API Error Codes Complete Reference">
+    <meta name="twitter:description" content="Every Claude 4 API error code with exact JSON responses and fixes.">
+    <meta name="twitter:image" content="https://getapipulse.com/og-image.png">
+    <link rel="canonical" href="https://getapipulse.com/claude-4-error-codes-reference.html">
+    <link rel="alternate" type="application/rss+xml" title="APIpulse Blog" href="https://getapipulse.com/rss.xml">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="styles.css">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0CEP7S9Y3J"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-0CEP7S9Y3J');
+    </script>
+    <script src="analytics.js" defer></script>
+    <script src="dynamic-date.js" defer></script>
+    <script src="shared.js" defer></script>
+    <script src="pricing-data.js" defer></script>
+    <script src="pro-features.js" defer></script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "Claude 4 API Error Codes Complete Reference — Every Error & Fix",
+        "description": "Complete reference for every Claude 4 API error code with exact JSON responses and fixes.",
+        "datePublished": "2026-06-13",
+        "dateModified": "2026-06-13",
+        "author": { "@type": "Organization", "name": "APIpulse" },
+        "publisher": { "@type": "Organization", "name": "APIpulse", "url": "https://getapipulse.com" }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "What does Claude 4 error 410 Gone mean?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "HTTP 410 Gone means Claude 4 Opus and Sonnet 4 have been permanently retired (June 15, 2026). The model ID no longer exists. Fix: change model='claude-4-opus' to model='claude-opus-4-8' or model='claude-sonnet-4-6'."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Why am I getting 'model not found' error from Claude API?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "The model name 'claude-4-opus' or 'claude-sonnet-4' was retired on June 15, 2026. The API returns 'model not found' because these model IDs no longer exist. Replace them with 'claude-opus-4-8' or 'claude-sonnet-4-6'."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What HTTP status codes does the Claude API return for errors?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Common Claude API error codes: 400 (Bad Request — invalid parameters), 401 (Unauthorized — bad API key), 403 (Forbidden — no access to model), 404 (Not Found — wrong endpoint), 410 (Gone — retired model), 429 (Rate Limit — too many requests), 500 (Server Error — Anthropic issue), 529 (Overloaded — API at capacity)."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How do I fix Claude API authentication error 401?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Error 401 means your API key is invalid or missing. Fix: 1) Check your ANTHROPIC_API_KEY environment variable is set, 2) Ensure you're using the x-api-key header (not Authorization: Bearer), 3) Generate a new key from console.anthropic.com if needed."
+                }
+            }
+        ]
+    }
+    </script>
+    <style>
+        .content { max-width: 860px; margin: 0 auto; padding: 120px 24px 80px; }
+        h1 { font-size: clamp(28px, 4vw, 40px); font-weight: 800; margin-bottom: 12px; }
+        .subtitle { color: var(--text-secondary); font-size: 17px; margin-bottom: 32px; line-height: 1.6; }
+        .post-meta { display: flex; gap: 12px; align-items: center; margin-bottom: 32px; font-size: 13px; color: var(--text-muted); flex-wrap: wrap; }
+        .post-tag { background: rgba(239,68,68,0.15); color: #ef4444; padding: 2px 10px; border-radius: 4px; font-size: 11px; font-weight: 600; text-transform: uppercase; }
+
+        h2 { font-size: 26px; font-weight: 700; margin: 48px 0 16px; }
+        h3 { font-size: 20px; font-weight: 600; margin: 32px 0 12px; }
+        p { color: var(--text-secondary); line-height: 1.8; margin-bottom: 16px; }
+        a { color: var(--accent); text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        ul, ol { color: var(--text-secondary); line-height: 1.8; padding-left: 24px; margin-bottom: 16px; }
+        li { margin-bottom: 8px; }
+
+        /* Quick Nav */
+        .quick-nav { background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 12px; padding: 24px; margin-bottom: 40px; }
+        .quick-nav h3 { font-size: 16px; margin: 0 0 12px; color: var(--text-primary); }
+        .quick-nav-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 8px; }
+        .quick-nav a { font-size: 13px; padding: 6px 10px; background: var(--bg-card); border: 1px solid var(--border); border-radius: 6px; display: block; transition: all 0.2s; }
+        .quick-nav a:hover { border-color: var(--accent); background: rgba(99,102,241,0.05); text-decoration: none; }
+
+        /* Error Code Cards */
+        .error-card { background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 16px; margin-bottom: 32px; overflow: hidden; }
+        .error-card-header { padding: 20px 24px; border-bottom: 1px solid var(--border); display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+        .error-code-badge { font-size: 13px; font-weight: 800; padding: 4px 12px; border-radius: 6px; font-family: monospace; }
+        .badge-410 { background: rgba(239,68,68,0.15); color: #ef4444; }
+        .badge-400 { background: rgba(245,158,11,0.15); color: #d97706; }
+        .badge-401 { background: rgba(239,68,68,0.15); color: #ef4444; }
+        .badge-403 { background: rgba(168,85,247,0.15); color: #a855f7; }
+        .badge-404 { background: rgba(107,114,128,0.15); color: #6b7280; }
+        .badge-429 { background: rgba(245,158,11,0.15); color: #d97706; }
+        .badge-500 { background: rgba(239,68,68,0.15); color: #ef4444; }
+        .badge-529 { background: rgba(239,68,68,0.15); color: #ef4444; }
+        .error-card-title { font-size: 18px; font-weight: 700; color: var(--text-primary); }
+        .error-card-body { padding: 24px; }
+
+        /* JSON Response */
+        .json-response { background: #1a1a2e; border: 1px solid #2d2d44; border-radius: 8px; padding: 16px; margin: 12px 0; overflow-x: auto; }
+        .json-response pre { font-family: 'JetBrains Mono', 'Fira Code', monospace; font-size: 13px; line-height: 1.6; color: #e2e8f0; margin: 0; white-space: pre-wrap; }
+        .json-key { color: #7dd3fc; }
+        .json-string { color: #86efac; }
+        .json-error { color: #fca5a5; }
+
+        /* Fix Box */
+        .fix-box { background: rgba(34,197,94,0.06); border: 1px solid rgba(34,197,94,0.2); border-radius: 8px; padding: 20px; margin: 16px 0; }
+        .fix-box .fix-title { font-size: 13px; font-weight: 700; color: #22c55e; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px; }
+        .fix-box code { background: rgba(34,197,94,0.1); padding: 2px 8px; border-radius: 4px; font-size: 13px; color: #22c55e; font-family: 'JetBrains Mono', 'Fira Code', monospace; }
+
+        /* Cause */
+        .cause-box { background: rgba(99,102,241,0.06); border: 1px solid rgba(99,102,241,0.2); border-radius: 8px; padding: 16px; margin: 12px 0; }
+        .cause-box .cause-title { font-size: 12px; font-weight: 700; color: var(--accent); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 6px; }
+
+        /* Code Blocks */
+        pre { background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 8px; padding: 20px; overflow-x: auto; font-size: 13px; line-height: 1.6; margin: 16px 0; }
+        code { font-family: 'JetBrains Mono', 'Fira Code', monospace; }
+        .code-fix { color: #22c55e; font-weight: 700; }
+        .code-err { color: #ef4444; }
+
+        /* Quick Reference Table */
+        .ref-table { width: 100%; border-collapse: collapse; margin: 24px 0; background: var(--bg-secondary); border-radius: 8px; overflow: hidden; }
+        .ref-table th { background: var(--bg-tertiary, rgba(99,102,241,0.1)); padding: 12px 16px; text-align: left; font-size: 12px; font-weight: 700; color: var(--text-primary); text-transform: uppercase; letter-spacing: 0.5px; }
+        .ref-table td { padding: 12px 16px; border-top: 1px solid var(--border); font-size: 13px; color: var(--text-secondary); }
+        .ref-table tr:hover td { background: rgba(99,102,241,0.03); }
+        .deprecated { color: #ef4444; font-weight: 600; }
+        .replacement { color: #22c55e; font-weight: 600; }
+
+        /* CTA */
+        .cta-box { background: linear-gradient(135deg, rgba(99,102,241,0.12), rgba(99,102,241,0.04)); border: 1px solid rgba(99,102,241,0.2); border-radius: 12px; padding: 32px; text-align: center; margin: 40px 0; }
+        .cta-box h3 { margin: 0 0 8px; }
+        .cta-box p { margin: 0 0 20px; }
+        .cta-btn { display: inline-block; background: var(--accent); color: white; padding: 12px 28px; border-radius: 8px; font-weight: 700; text-decoration: none; transition: opacity 0.2s; margin: 6px; }
+        .cta-btn:hover { opacity: 0.9; text-decoration: none; }
+        .cta-btn.green { background: #22c55e; }
+
+        /* Alert */
+        .alert { background: rgba(239,68,68,0.08); border-left: 3px solid #ef4444; padding: 20px 24px; border-radius: 0 8px 8px 0; margin: 24px 0; }
+        .alert p { margin: 0; color: var(--text-primary); }
+        .alert strong { color: #ef4444; }
+
+        .success { background: rgba(34,197,94,0.08); border-left: 3px solid #22c55e; padding: 20px 24px; border-radius: 0 8px 8px 0; margin: 24px 0; }
+        .success p { margin: 0; color: var(--text-primary); }
+        .success strong { color: #22c55e; }
+
+        .callout { background: rgba(99,102,241,0.08); border-left: 3px solid var(--accent); padding: 20px 24px; border-radius: 0 8px 8px 0; margin: 24px 0; }
+        .callout p { margin: 0; color: var(--text-primary); }
+
+        /* Model Mapping Table */
+        .model-table { width: 100%; border-collapse: collapse; margin: 24px 0; background: var(--bg-secondary); border-radius: 8px; overflow: hidden; }
+        .model-table th { background: var(--bg-tertiary, rgba(99,102,241,0.1)); padding: 12px 16px; text-align: left; font-size: 12px; font-weight: 700; color: var(--text-primary); text-transform: uppercase; letter-spacing: 0.5px; }
+        .model-table td { padding: 12px 16px; border-top: 1px solid var(--border); font-size: 13px; color: var(--text-secondary); }
+
+        @media (max-width: 768px) {
+            .content { padding: 100px 16px 60px; }
+            h1 { font-size: 28px; }
+            h2 { font-size: 22px; }
+            .quick-nav-grid { grid-template-columns: 1fr 1fr; }
+            .error-card-header { flex-direction: column; align-items: flex-start; }
+        }
+    </style>
+    <meta name="theme-color" content="#6366f1">
+</head>
+<body>
+    <nav>
+        <div class="nav-inner">
+            <a href="index.html" class="logo">API<span>pulse</span></a>
+            <button class="hamburger" onclick="toggleMobileNav()" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+            <div class="nav-links">
+                <a href="claude-4-migration-hub.html">Migration Hub</a>
+                <a href="claude-4-alternatives-comparison.html">Alternatives</a>
+                <a href="claude-deprecation-calculator.html">Calculator</a>
+                <a href="compare.html">Compare</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="pricing.html" class="nav-cta" onclick="if(window.trackEvent)window.trackEvent('pro_button_clicked',{source:'nav'})">Get Pro — $29</a>
+                <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
+            </div>
+        </div>
+    </nav>
+
+    <main id="main">
+    <div class="content article">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+            <a href="blog.html">Blog</a>
+            <span class="separator">›</span>
+            <span class="current">Claude 4 Error Codes Reference</span>
+        </nav>
+        <a href="blog.html" class="back-link">← Back to blog</a>
+        <div class="post-meta">
+            <span class="post-tag">Reference</span>
+            <span>June 13, 2026</span>
+            <span>·</span>
+            <span>12 min read</span>
+        </div>
+        <h1>Claude 4 API Error Codes Complete Reference</h1>
+        <p class="subtitle">Every Claude 4 API error code explained with <strong>exact JSON responses</strong>, root causes, and specific fixes. Bookmark this page — you'll need it when your code breaks after June 15.</p>
+
+        <div class="alert">
+            <p><strong>🚨 Claude 4 was retired on June 15, 2026.</strong> All API calls to <code>claude-4-opus</code> and <code>claude-sonnet-4</code> now return errors. Fix: change the model name to <code>claude-opus-4-8</code> or <code>claude-sonnet-4-6</code>.</p>
+        </div>
+
+        <!-- Quick Navigation -->
+        <div class="quick-nav">
+            <h3>⚡ Jump to Error Code</h3>
+            <div class="quick-nav-grid">
+                <a href="#error-410">410 Gone — Model Retired</a>
+                <a href="#error-400-invalid">400 — Invalid Model Name</a>
+                <a href="#error-400-params">400 — Invalid Parameters</a>
+                <a href="#error-400-context">400 — Context Length Exceeded</a>
+                <a href="#error-401">401 — Authentication Failed</a>
+                <a href="#error-403">403 — Forbidden / No Access</a>
+                <a href="#error-404">404 — Endpoint Not Found</a>
+                <a href="#error-429">429 — Rate Limit Exceeded</a>
+                <a href="#error-500">500 — Internal Server Error</a>
+                <a href="#error-529">529 — API Overloaded</a>
+                <a href="#error-timeout">Timeout — No Response</a>
+                <a href="#error-streaming">Streaming Errors</a>
+            </div>
+        </div>
+
+        <!-- Error #1: 410 Gone -->
+        <div class="error-card" id="error-410">
+            <div class="error-card-header">
+                <span class="error-code-badge badge-410">410</span>
+                <span class="error-card-title">Gone — Model Retired</span>
+            </div>
+            <div class="error-card-body">
+                <p><strong>The most common error after June 15.</strong> Claude 4 Opus and Sonnet 4 have been permanently removed from Anthropic's infrastructure.</p>
+
+                <div class="cause-box">
+                    <div class="cause-title">Root Cause</div>
+                    <p style="margin:0">The model ID <code>claude-4-opus</code> or <code>claude-sonnet-4</code> no longer exists. Anthropic retired these models on June 15, 2026.</p>
+                </div>
+
+                <div class="json-response">
+<pre>{
+  "<span class="json-key">type</span>": "<span class="json-string">error</span>",
+  "<span class="json-key">error</span>": {
+    "<span class="json-key">type</span>": "<span class="json-error">invalid_request_error</span>",
+    "<span class="json-key">message</span>": "<span class="json-error">model 'claude-4-opus' has been retired</span>"
+  }
+}</pre>
+                </div>
+
+                <div class="fix-box">
+                    <div class="fix-title">Fix</div>
+                    <p>Change the model name in your code:</p>
+                    <table class="model-table">
+                        <thead><tr><th>Retired Model</th><th>Replace With</th><th>Price Change</th></tr></thead>
+                        <tbody>
+                            <tr><td><code class="deprecated">claude-4-opus</code></td><td><code class="replacement">claude-opus-4-8</code></td><td>$15/$75 → $5/$25 (67% cheaper)</td></tr>
+                            <tr><td><code class="deprecated">claude-sonnet-4</code></td><td><code class="replacement">claude-sonnet-4-6</code></td><td>$3/$15 → $3/$15 (same price, 5x context)</td></tr>
+                        </tbody>
+                    </table>
+<pre><span style="color:#6b7280"># Python — change one line</span>
+response = client.messages.create(
+    model=<span class="code-fix">"claude-opus-4-8"</span>,  <span style="color:#6b7280"># was "claude-4-opus"</span>
+    messages=[{"role": "user", "content": "Hello"}]
+)
+
+<span style="color:#6b7280"># Node.js — change one line</span>
+const response = await client.messages.create({
+  model: <span class="code-fix">"claude-opus-4-8"</span>,  <span style="color:#6b7280">// was "claude-4-opus"</span>
+  messages: [{ role: "user", content: "Hello" }]
+});</pre>
+                </div>
+            </div>
+        </div>
+
+        <!-- Error #2: 400 Invalid Model -->
+        <div class="error-card" id="error-400-invalid">
+            <div class="error-card-header">
+                <span class="error-code-badge badge-400">400</span>
+                <span class="error-card-title">Bad Request — Invalid Model Name</span>
+            </div>
+            <div class="error-card-body">
+                <p>Some SDK versions validate model names client-side before sending the request, producing a different error format.</p>
+
+                <div class="json-response">
+<pre>{
+  "<span class="json-key">type</span>": "<span class="json-string">error</span>",
+  "<span class="json-key">error</span>": {
+    "<span class="json-key">type</span>": "<span class="json-error">invalid_request_error</span>",
+    "<span class="json-key">message</span>": "<span class="json-error">Invalid model name: claude-4-opus</span>"
+  }
+}</pre>
+                </div>
+
+                <div class="fix-box">
+                    <div class="fix-title">Fix</div>
+                    <p>Same as 410 — update the model name. Also update your SDK to the latest version:</p>
+<pre><span style="color:#6b7280"># Python</span>
+pip install --upgrade anthropic
+
+<span style="color:#6b7280"># Node.js</span>
+npm update @anthropic-ai/sdk</pre>
+                </div>
+            </div>
+        </div>
+
+        <!-- Error #3: 400 Invalid Parameters -->
+        <div class="error-card" id="error-400-params">
+            <div class="error-card-header">
+                <span class="error-code-badge badge-400">400</span>
+                <span class="error-card-title">Bad Request — Invalid Parameters</span>
+            </div>
+            <div class="error-card-body">
+                <p>This error occurs when you send parameters that the new model doesn't support, or when you mix old and new parameter formats.</p>
+
+                <div class="json-response">
+<pre>{
+  "<span class="json-key">type</span>": "<span class="json-string">error</span>",
+  "<span class="json-key">error</span>": {
+    "<span class="json-key">type</span>": "<span class="json-error">invalid_request_error</span>",
+    "<span class="json-key">message</span>": "<span class="json-error">max_tokens: 1000000 exceeds model maximum of 8192</span>"
+  }
+}</pre>
+                </div>
+
+                <div class="fix-box">
+                    <div class="fix-title">Fix</div>
+                    <p>Check the max output tokens for your new model:</p>
+                    <table class="model-table">
+                        <thead><tr><th>Model</th><th>Max Output Tokens</th><th>Max Input Tokens</th></tr></thead>
+                        <tbody>
+                            <tr><td>claude-opus-4-8</td><td>32,768</td><td>1,000,000</td></tr>
+                            <tr><td>claude-sonnet-4-6</td><td>64,000</td><td>1,000,000</td></tr>
+                            <tr><td>claude-haiku-4-5</td><td>8,192</td><td>200,000</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- Error #4: 400 Context Length -->
+        <div class="error-card" id="error-400-context">
+            <div class="error-card-header">
+                <span class="error-code-badge badge-400">400</span>
+                <span class="error-card-title">Bad Request — Context Length Exceeded</span>
+            </div>
+            <div class="error-card-body">
+                <p>Your input tokens exceed the model's context window. The new models have larger context windows (1M tokens), so this is less common — but still possible with very large inputs.</p>
+
+                <div class="json-response">
+<pre>{
+  "<span class="json-key">type</span>": "<span class="json-string">error</span>",
+  "<span class="json-key">error</span>": {
+    "<span class="json-key">type</span>": "<span class="json-error">invalid_request_error</span>",
+    "<span class="json-key">message</span>": "<span class="json-error">input length exceeds maximum context length of 1000000 tokens</span>"
+  }
+}</pre>
+                </div>
+
+                <div class="fix-box">
+                    <div class="fix-title">Fix</div>
+                    <ol>
+                        <li>Truncate your input or summarize long documents</li>
+                        <li>Use <code>max_tokens</code> to limit output, freeing input space</li>
+                        <li>Switch to a model with a larger context window if needed</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+
+        <!-- Error #5: 401 -->
+        <div class="error-card" id="error-401">
+            <div class="error-card-header">
+                <span class="error-code-badge badge-401">401</span>
+                <span class="error-card-title">Unauthorized — Authentication Failed</span>
+            </div>
+            <div class="error-card-body">
+                <p>Your API key is missing, invalid, or being passed in the wrong format. This is usually <strong>not</strong> related to the model migration — it's a separate authentication issue.</p>
+
+                <div class="json-response">
+<pre>{
+  "<span class="json-key">type</span>": "<span class="json-string">error</span>",
+  "<span class="json-key">error</span>": {
+    "<span class="json-key">type</span>": "<span class="json-error">authentication_error</span>",
+    "<span class="json-key">message</span>": "<span class="json-error">invalid x-api-key</span>"
+  }
+}</pre>
+                </div>
+
+                <div class="fix-box">
+                    <div class="fix-title">Fix</div>
+                    <ol>
+                        <li>Check <code>ANTHROPIC_API_KEY</code> environment variable is set</li>
+                        <li>Ensure you're using the <code>x-api-key</code> header (not <code>Authorization: Bearer</code>)</li>
+                        <li>Generate a new key from <a href="https://console.anthropic.com" target="_blank" rel="noopener">console.anthropic.com</a></li>
+                    </ol>
+<pre><span style="color:#6b7280"># Correct header format</span>
+curl https://api.anthropic.com/v1/messages \
+  -H <span class="code-fix">"x-api-key: $ANTHROPIC_API_KEY"</span> \
+  -H "anthropic-version: 2023-06-01" \
+  -d '{"model": "claude-opus-4-8", "messages": [...]}'
+
+<span style="color:#6b7280"># ❌ WRONG — this causes 401</span>
+curl https://api.anthropic.com/v1/messages \
+  -H <span class="code-err">"Authorization: Bearer $ANTHROPIC_API_KEY"</span> \</pre>
+                </div>
+            </div>
+        </div>
+
+        <!-- Error #6: 403 -->
+        <div class="error-card" id="error-403">
+            <div class="error-card-header">
+                <span class="error-code-badge badge-403">403</span>
+                <span class="error-card-title">Forbidden — No Access to Model</span>
+            </div>
+            <div class="error-card-body">
+                <p>Your API key is valid, but you don't have access to the requested model. This can happen with restricted models or organization-level permissions.</p>
+
+                <div class="json-response">
+<pre>{
+  "<span class="json-key">type</span>": "<span class="json-string">error</span>",
+  "<span class="json-key">error</span>": {
+    "<span class="json-key">type</span>": "<span class="json-error">permission_error</span>",
+    "<span class="json-key">message</span>": "<span class="json-error">you do not have access to model 'claude-opus-4-8'</span>"
+  }
+}</pre>
+                </div>
+
+                <div class="fix-box">
+                    <div class="fix-title">Fix</div>
+                    <ol>
+                        <li>Check your Anthropic plan — some models require higher tiers</li>
+                        <li>Verify organization permissions in the Anthropic Console</li>
+                        <li>Contact Anthropic support if you believe you should have access</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+
+        <!-- Error #7: 404 -->
+        <div class="error-card" id="error-404">
+            <div class="error-card-header">
+                <span class="error-code-badge badge-404">404</span>
+                <span class="error-card-title">Not Found — Endpoint Not Found</span>
+            </div>
+            <div class="error-card-body">
+                <p>You're calling the wrong API endpoint. This usually happens when using an outdated base URL or SDK version.</p>
+
+                <div class="json-response">
+<pre>{
+  "<span class="json-key">type</span>": "<span class="json-string">error</span>",
+  "<span class="json-key">error</span>": {
+    "<span class="json-key">type</span>": "<span class="json-error">not_found_error</span>",
+    "<span class="json-key">message</span>": "<span class="json-error">endpoint not found</span>"
+  }
+}</pre>
+                </div>
+
+                <div class="fix-box">
+                    <div class="fix-title">Fix</div>
+                    <p>Verify your base URL:</p>
+<pre><span style="color:#6b7280"># Correct base URL</span>
+<span class="code-fix">https://api.anthropic.com/v1/messages</span>
+
+<span style="color:#6b7280"># ❌ Common mistakes</span>
+<span class="code-err">https://api.anthropic.com/v1/chat/completions</span>  <span style="color:#6b7280"># OpenAI format</span>
+<span class="code-err">https://api.anthropic.com/messages</span>  <span style="color:#6b7280"># Missing /v1</span></pre>
+                </div>
+            </div>
+        </div>
+
+        <!-- Error #8: 429 -->
+        <div class="error-card" id="error-429">
+            <div class="error-card-header">
+                <span class="error-code-badge badge-429">429</span>
+                <span class="error-card-title">Too Many Requests — Rate Limit Exceeded</span>
+            </div>
+            <div class="error-card-body">
+                <p>You've exceeded your rate limit. Each model has its own rate limit bucket — migrating to a new model means a fresh bucket.</p>
+
+                <div class="json-response">
+<pre>{
+  "<span class="json-key">type</span>": "<span class="json-string">error</span>",
+  "<span class="json-key">error</span>": {
+    "<span class="json-key">type</span>": "<span class="json-error">rate_limit_error</span>",
+    "<span class="json-key">message</span>": "<span class="json-error">Rate limit exceeded. Please retry after 60 seconds.</span>"
+  }
+}</pre>
+                </div>
+
+                <div class="fix-box">
+                    <div class="fix-title">Fix</div>
+                    <ol>
+                        <li>Add retry logic with exponential backoff</li>
+                        <li>Check your rate limits in the Anthropic Console</li>
+                        <li>Request a rate limit increase if needed</li>
+                    </ol>
+<pre><span style="color:#6b7280"># Python — retry with backoff</span>
+import time
+
+def call_with_retry(fn, max_retries=3):
+    for i in range(max_retries):
+        try:
+            return fn()
+        except anthropic.RateLimitError:
+            if i == max_retries - 1:
+                raise
+            time.sleep(2 ** i)  <span style="color:#6b7280"># 1s, 2s, 4s</span></pre>
+                </div>
+            </div>
+        </div>
+
+        <!-- Error #9: 500 -->
+        <div class="error-card" id="error-500">
+            <div class="error-card-header">
+                <span class="error-code-badge badge-500">500</span>
+                <span class="error-card-title">Internal Server Error</span>
+            </div>
+            <div class="error-card-body">
+                <p>Anthropic's servers encountered an error. This is <strong>not your fault</strong> — it's an Anthropic infrastructure issue.</p>
+
+                <div class="json-response">
+<pre>{
+  "<span class="json-key">type</span>": "<span class="json-string">error</span>",
+  "<span class="json-key">error</span>": {
+    "<span class="json-key">type</span>": "<span class="json-error">api_error</span>",
+    "<span class="json-key">message</span>": "<span class="json-error">internal server error</span>"
+  }
+}</pre>
+                </div>
+
+                <div class="fix-box">
+                    <div class="fix-title">Fix</div>
+                    <ol>
+                        <li>Retry after 30-60 seconds</li>
+                        <li>Check <a href="https://status.anthropic.com" target="_blank" rel="noopener">status.anthropic.com</a> for incidents</li>
+                        <li>If persistent, switch to a fallback model</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+
+        <!-- Error #10: 529 -->
+        <div class="error-card" id="error-529">
+            <div class="error-card-header">
+                <span class="error-code-badge badge-529">529</span>
+                <span class="error-card-title">Overloaded — API at Capacity</span>
+            </div>
+            <div class="error-card-body">
+                <p>Anthropic's API is at capacity. Common during high-traffic periods (like right after the Claude 4 shutdown when everyone migrates at once).</p>
+
+                <div class="json-response">
+<pre>{
+  "<span class="json-key">type</span>": "<span class="json-string">error</span>",
+  "<span class="json-key">error</span>": {
+    "<span class="json-key">type</span>": "<span class="json-error">overloaded_error</span>",
+    "<span class="json-key">message</span>": "<span class="json-error">API is temporarily overloaded</span>"
+  }
+}</pre>
+                </div>
+
+                <div class="fix-box">
+                    <div class="fix-title">Fix</div>
+                    <ol>
+                        <li>Retry with exponential backoff (start at 5 seconds)</li>
+                        <li>Implement a fallback model (e.g., GPT-5 or Gemini)</li>
+                        <li>Avoid peak migration hours if possible</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+
+        <!-- Error #11: Timeout -->
+        <div class="error-card" id="error-timeout">
+            <div class="error-card-header">
+                <span class="error-code-badge badge-400">TIMEOUT</span>
+                <span class="error-card-title">Request Timeout — No Response</span>
+            </div>
+            <div class="error-card-body">
+                <p>The API didn't respond within your timeout window. Common with very long prompts or during high-load periods.</p>
+
+                <div class="json-response">
+<pre><span style="color:#6b7280"># Python SDK error</span>
+anthropic.APITimeoutError: Request timed out
+
+<span style="color:#6b7280"># Node.js SDK error</span>
+Anthropic.APITimeoutError: Request timed out after 60000ms</pre>
+                </div>
+
+                <div class="fix-box">
+                    <div class="fix-title">Fix</div>
+                    <ol>
+                        <li>Increase your timeout (default is 600s in Python, 60s in Node)</li>
+                        <li>Reduce input length</li>
+                        <li>Use streaming for long outputs</li>
+                    </ol>
+<pre><span style="color:#6b7280"># Python — increase timeout</span>
+client = anthropic.Anthropic(timeout=300.0)  <span style="color:#6b7280"># 5 minutes</span>
+
+<span style="color:#6b7280"># Node.js — increase timeout</span>
+const client = new Anthropic({ timeout: 300000 });  <span style="color:#6b7280"># 5 minutes</span></pre>
+                </div>
+            </div>
+        </div>
+
+        <!-- Error #12: Streaming -->
+        <div class="error-card" id="error-streaming">
+            <div class="error-card-header">
+                <span class="error-code-badge badge-400">STREAM</span>
+                <span class="error-card-title">Streaming Errors</span>
+            </div>
+            <div class="error-card-body">
+                <p>Errors that occur during streaming responses. The connection may drop mid-stream, or you may receive incomplete JSON.</p>
+
+                <div class="json-response">
+<pre><span style="color:#6b7280"># Common streaming errors</span>
+anthropic.APIError: stream closed unexpectedly
+anthropic.APIError: incomplete JSON at position 0
+
+<span style="color:#6b7280"># Node.js</span>
+Anthropic.APIError: stream closed unexpectedly</pre>
+                </div>
+
+                <div class="fix-box">
+                    <div class="fix-title">Fix</div>
+                    <ol>
+                        <li>Implement stream reconnection logic</li>
+                        <li>Handle partial responses gracefully</li>
+                        <li>Use <code>max_retries</code> parameter for automatic retries</li>
+                    </ol>
+<pre><span style="color:#6b7280"># Python — enable auto-retries</span>
+client = anthropic.Anthropic(max_retries=3)
+
+<span style="color:#6b7280"># Node.js — enable auto-retries</span>
+const client = new Anthropic({ maxRetries: 3 });</pre>
+                </div>
+            </div>
+        </div>
+
+        <!-- Quick Reference Table -->
+        <h2>Quick Reference: All Error Codes</h2>
+        <table class="ref-table">
+            <thead>
+                <tr><th>HTTP Code</th><th>Error Type</th><th>Common Cause</th><th>Fix</th></tr>
+            </thead>
+            <tbody>
+                <tr><td><code style="background:rgba(239,68,68,0.1);color:#ef4444;padding:2px 8px;border-radius:4px;">410</code></td><td>Gone</td><td>Model retired (June 15)</td><td>Change model name to <code>claude-opus-4-8</code></td></tr>
+                <tr><td><code style="background:rgba(245,158,11,0.1);color:#d97706;padding:2px 8px;border-radius:4px;">400</code></td><td>Bad Request</td><td>Invalid model or parameters</td><td>Check model name and parameter limits</td></tr>
+                <tr><td><code style="background:rgba(239,68,68,0.1);color:#ef4444;padding:2px 8px;border-radius:4px;">401</code></td><td>Unauthorized</td><td>Invalid API key</td><td>Check <code>x-api-key</code> header and env var</td></tr>
+                <tr><td><code style="background:rgba(168,85,247,0.1);color:#a855f7;padding:2px 8px;border-radius:4px;">403</code></td><td>Forbidden</td><td>No access to model</td><td>Check plan tier and permissions</td></tr>
+                <tr><td><code style="background:rgba(107,114,128,0.1);color:#6b7280;padding:2px 8px;border-radius:4px;">404</code></td><td>Not Found</td><td>Wrong endpoint URL</td><td>Use <code>/v1/messages</code></td></tr>
+                <tr><td><code style="background:rgba(245,158,11,0.1);color:#d97706;padding:2px 8px;border-radius:4px;">429</code></td><td>Rate Limit</td><td>Too many requests</td><td>Add retry with backoff</td></tr>
+                <tr><td><code style="background:rgba(239,68,68,0.1);color:#ef4444;padding:2px 8px;border-radius:4px;">500</code></td><td>Server Error</td><td>Anthropic infrastructure issue</td><td>Retry after 30-60s</td></tr>
+                <tr><td><code style="background:rgba(239,68,68,0.1);color:#ef4444;padding:2px 8px;border-radius:4px;">529</code></td><td>Overloaded</td><td>API at capacity</td><td>Retry with exponential backoff</td></tr>
+            </tbody>
+        </table>
+
+        <!-- Diagnostic Commands -->
+        <h2>Diagnostic: Find All Deprecated References</h2>
+        <p>Run these commands to find every reference to deprecated Claude 4 models in your codebase:</p>
+<pre><span style="color:#6b7280"># Find all Claude 4 Opus references</span>
+grep -r "claude-4-opus" . --include="*.js" --include="*.py" --include="*.ts" \
+  --include="*.json" --include="*.yaml" --include="*.yml" --include="*.env"
+
+<span style="color:#6b7280"># Find all Claude Sonnet 4 references</span>
+grep -r "claude-sonnet-4" . --include="*.js" --include="*.py" --include="*.ts" \
+  --include="*.json" --include="*.yaml" --include="*.yml" --include="*.env"
+
+<span style="color:#6b7280"># Find all deprecated model references at once</span>
+grep -rE "claude-4-(opus|sonnet)" . --include="*.js" --include="*.py" --include="*.ts"</pre>
+
+        <p>Also check these often-missed locations:</p>
+        <ul>
+            <li><strong>Environment variables</strong> — <code>.env</code>, <code>.env.local</code>, <code>.env.production</code></li>
+            <li><strong>Docker configs</strong> — <code>docker-compose.yml</code>, <code>Dockerfile</code></li>
+            <li><strong>CI/CD pipelines</strong> — GitHub Actions, Vercel env vars, AWS Parameter Store</li>
+            <li><strong>Prompt templates</strong> — any file that hardcodes a model name in a string</li>
+            <li><strong>Database records</strong> — stored model preferences in your database</li>
+            <li><strong>Third-party libraries</strong> — check if your AI framework has cached model names</li>
+        </ul>
+
+        <!-- Model Mapping -->
+        <h2>Complete Model Name Mapping</h2>
+        <table class="model-table">
+            <thead>
+                <tr><th>Retired Model</th><th>Replacement</th><th>Price (Input/Output per 1M)</th><th>Context Window</th></tr>
+            </thead>
+            <tbody>
+                <tr><td><code class="deprecated">claude-4-opus</code></td><td><code class="replacement">claude-opus-4-8</code></td><td>$5 / $25</td><td>1,000,000</td></tr>
+                <tr><td><code class="deprecated">claude-sonnet-4</code></td><td><code class="replacement">claude-sonnet-4-6</code></td><td>$3 / $15</td><td>1,000,000</td></tr>
+                <tr><td><code class="deprecated">claude-haiku-3-5</code></td><td><code class="replacement">claude-haiku-4-5</code></td><td>$0.80 / $4</td><td>200,000</td></tr>
+            </tbody>
+        </table>
+
+        <div class="success">
+            <p><strong>Good news:</strong> Migrating doesn't just fix errors — it saves money. Claude Opus 4.8 is 67% cheaper than Claude 4 Opus, with a 5x larger context window. You're not just fixing a bug; you're upgrading.</p>
+        </div>
+
+        <!-- CTA -->
+        <div class="cta-box">
+            <h3>Calculate Your Migration Savings</h3>
+            <p>See exactly how much you'll save by switching from Claude 4 to the new models or alternatives.</p>
+            <a href="claude-deprecation-calculator.html" class="cta-btn green" onclick="if(window.trackEvent)window.trackEvent('cta_clicked',{source:'error-codes-ref',target:'calculator'})">Free Calculator →</a>
+            <a href="claude-4-alternatives-comparison.html" class="cta-btn" onclick="if(window.trackEvent)window.trackEvent('cta_clicked',{source:'error-codes-ref',target:'alternatives'})">Compare All Alternatives →</a>
+        </div>
+
+        <!-- Related -->
+        <h2>Related Resources</h2>
+        <ul>
+            <li><a href="claude-4-error.html">Claude 4 Error? Fix It in 60 Seconds</a> — Quick visual fix guide</li>
+            <li><a href="blog-claude-4-api-errors.html">Claude 4 API Errors After June 15</a> — Detailed error walkthrough</li>
+            <li><a href="claude-4-migration-hub.html">Claude 4 Migration Hub</a> — Complete migration resource center</li>
+            <li><a href="claude-4-alternatives-comparison.html">Claude 4 Alternatives Comparison</a> — Side-by-side pricing and features</li>
+            <li><a href="claude-deprecation-calculator.html">Deprecation Calculator</a> — Calculate your exact savings</li>
+            <li><a href="claude-4-migration-tool.html">Migration Tool</a> — Compare all 42 alternatives</li>
+        </ul>
+
+        <div style="padding:16px 20px;background:rgba(245,158,11,0.08);border:1px solid rgba(245,158,11,0.2);border-radius:8px;margin:24px 0;">
+            <p style="margin:0;font-size:14px;"><strong>📚 Bookmark this page.</strong> You'll need it when your code breaks after June 15. Or better yet — <a href="claude-4-migration-hub.html" style="color:#d97706;font-weight:600;">migrate now</a> and avoid the errors entirely.</p>
+        </div>
+
+    </div>
+    </main>
+
+    <!-- Footer -->
+    <footer style="border-top:1px solid var(--border);padding:48px 24px;text-align:center;color:var(--text-muted);font-size:13px;">
+        <p style="margin-bottom:8px;"><a href="index.html" style="color:var(--text-primary);text-decoration:none;font-weight:700;">API<span style="color:var(--accent)">pulse</span></a> — Real-time AI API pricing for 42 models across 10 providers.</p>
+        <p style="margin:0;">© 2026 APIpulse. All prices in USD. Updated daily from provider APIs.</p>
+    </footer>
+</body>
+</html>
