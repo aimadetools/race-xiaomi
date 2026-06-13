@@ -31,6 +31,7 @@
     <script src="dynamic-date.js" defer></script>
     <script src="shared.js" defer></script>
     <script src="pricing-data.js" defer></script>
+    <script src="pro-features.js" defer></script>
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -358,7 +359,10 @@
         <div class="pro-card">
             <h2 style="font-size:22px;font-weight:700;margin-bottom:8px;">Want the full optimization report?</h2>
             <p style="color:var(--text-secondary);margin-bottom:20px;">APIpulse Pro gives you personalized model recommendations, saved scenarios, and cost reports to cut your SaaS AI costs by up to 40%.</p>
-            <a href="pricing.html" class="btn-primary" style="display:inline-block;padding:12px 32px;" onclick="if(window.trackEvent)window.trackEvent('pro_button_clicked',{source:'saas_calculator'})">Get Pro — $29 one-time</a>
+            <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center;">
+                <a href="https://buy.stripe.com/fZu7sL3Gw3GS0RQeoDeEo0a" class="btn-primary" style="display:inline-block;padding:12px 32px;" onclick="if(window.trackEvent)window.trackEvent('pro_button_clicked',{source:'saas_calculator'})">Get Pro — $29 one-time</a>
+                <button onclick="startTrial();if(window.trackEvent)window.trackEvent('trial_started',{source:'saas_calculator'});" style="padding:12px 24px;font-size:14px;font-weight:600;border:2px solid var(--accent);background:transparent;color:var(--accent);border-radius:10px;cursor:pointer;transition:all 0.2s;">Try Free 24h</button>
+            </div>
         </div>
     </section>
 
