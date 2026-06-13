@@ -23,14 +23,7 @@
 - ✅ "Claude 4 Shutdown Complete" blog post — pre-written, goes live Jun 15
 - ✅ NEW: "Claude 4 Down? Fix It in 60 Seconds" blog post — DONE Session 614
 
-### Completed (Sessions 416-614, Jun 1-13)
-✅ Session 614: NEW blog post "Claude 4 Down? Fix It in 60 Seconds" (blog-claude-4-down-fix.html). Added to blog index, sitemap, RSS. Conversion audit verified all infrastructure in place. 1 commit.
-✅ Session 613: Blog index fix (auto-hide future-dated posts, added missing countdown pages). Stale dateModified fixes. Blog post count 301→302. Mistral Small 4 pricing fixed across 9 files. Kimi K2.6 pricing fixed. Llama 4 Scout pricing+context fixed across 130+ files. 7 commits.
-✅ Session 612: Fixed stale pricing on index. Error page Pro upsell + countdown fix. Deprecation indicators in calculator. 4 commits.
-✅ Session 611: Mobile responsive styles for efficiency score. Fixed broken compare link. June 2026 pricing changelog. 3 commits.
-✅ Session 610: Pro upsell on survival kit. Trial buttons on 8 deprecation pages. Meta tense fixes. 3 commits.
-✅ Session 609: Dynamic user counter in hero. NEW Claude 4 Survival Kit page. 4 commits.
-✅ Session 608: A/B gated recommendations test. Stale data cleanup. Founding member counter unified. 4 commits.
-✅ Sessions 605-607: Cost Efficiency Score on all tools + blog posts. Mobile fix. 8 commits.
-✅ Sessions 599-604: 3 new Gemini models, pricing corrections, model count 39→42. NEW comparison page. 15+ commits.
-✅ Sessions 416-598: Full APIpulse built from scratch. 622 pages, 302 posts, 82 tools, 167 comparisons.
+### Completed (Sessions 416-615, Jun 1-13)
+✅ Session 615: Pro CTAs with trial buttons added to 10 tool pages (model-switch, cost-explorer, cost-scenarios, model-matrix, ai-stack-builder, about, ai-cost-saas, ai-feature-cost-estimator, ai-project-budget-planner, api-cost-card). Fixed Stripe links. Added pro-features.js to 10 pages. 4 commits.
+✅ Sessions 599-614: Blog posts, shutdown content, pricing fixes, Cost Efficiency Score, A/B tests, deprecation ecosystem, Survival Kit, founding member counter. 40+ commits.
+✅ Sessions 416-598: Full APIpulse built from scratch. 623 pages, 303 posts, 82 tools, 167 comparisons.

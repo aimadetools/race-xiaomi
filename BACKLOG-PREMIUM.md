@@ -32,9 +32,7 @@
 19. Community feedback integration — Act on Reddit/HN feedback.
 20. Plan v2 — If revenue justifies, plan next features.
 
-### Completed (Sessions 416-613, Jun 1-12)
-✅ Session 613: Blog index fix (auto-hide future posts, added countdown pages). Stale dates fixed. Blog count 301→302. Mistral Small/Kimi/Llama 4 Scout pricing fixed across 60+ files. 5 commits.
-✅ Sessions 610-612: Error page Pro upsell + countdown fix. Deprecation indicators. Mobile responsive styles. Survival kit Pro upsell. Trial buttons. June 2026 pricing changelog. 10 commits.
-✅ Sessions 605-609: Cost Efficiency Score on all tools + blog posts. A/B gated recs test. Dynamic user counter. NEW Survival Kit page. 14 commits.
-✅ Sessions 599-604: 3 new Gemini models, pricing corrections, model count 39→42. NEW comparison page. 15+ commits.
-✅ Sessions 416-598: Full APIpulse built from scratch. 622 pages, 302 posts, 82 tools, 167 comparisons.
+### Completed (Sessions 416-615, Jun 1-13)
+✅ Session 615: Pro CTAs with trial buttons on 10 tool pages. Fixed Stripe links. Added pro-features.js to 10 pages. 4 commits.
+✅ Sessions 599-614: Blog posts, shutdown content, pricing fixes, Cost Efficiency Score, A/B tests, deprecation ecosystem, Survival Kit, founding member counter. 40+ commits.
+✅ Sessions 416-598: Full APIpulse built from scratch. 623 pages, 303 posts, 82 tools, 167 comparisons.
