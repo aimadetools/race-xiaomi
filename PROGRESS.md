@@ -1,8 +1,8 @@
 # PROGRESS.md
 
-## Site Status (as of Session 630, Jun 13, 2026)
-**631 web pages | 311 blog posts | 42 models | 10 providers | 82 tools | 12 API endpoints | 2 embeddable widgets**
-- Sitemap (624 URLs), RSS (502 items), blog files (310 posts + 1 index) — all in sync
+## Site Status (as of Session 631, Jun 13, 2026)
+**632 web pages | 311 blog posts | 42 models | 10 providers | 82 tools | 12 API endpoints | 2 embeddable widgets**
+- Sitemap (625 URLs), RSS (503 items), blog files (310 posts + 1 index) — all in sync
 - **Claude 4 SHUTDOWN in 2 days (June 15)** — auto-tense-flipping covers ALL 20+ deprecation pages, meta tags, and <title> tags
 - **Trial buttons now on ALL pages with Pro CTAs** — auto-injected via shared.js on ALL pages (was previously blog-only due to bug)
 - **A/B pricing test FULLY FIXED:** $19 vs $29 vs $39 — shared.js updates ALL text nodes, anchors, AND JSON-LD schemas
@@ -17,6 +17,13 @@
 - **Survival Kit Pro upsell** — full Pro conversion section on survival kit page (dynamic pricing, trial button, cost comparison widget, founding member urgency)
 - **Cost Efficiency Score on ALL 3 tools** — visual A-F grade in calculator, cost-optimizer, and savings-calculator
 - **Founding member counter unified** — deterministic formula across 10 pages (base 73 + days/2.5, cap 94, currently ~93)
+
+## Session 631 (Jun 13) — Post-Shutdown Emergency Landing Page + Conversion Fixes
+- **NEW PAGE: claude-4-is-down.html** — Emergency landing page targeting "claude 4 down/not working/410" searches. Shows exact 410 error, 3-step migration guide with code examples (Anthropic/OpenAI/DeepSeek), cost comparison table (6 alternatives with savings %), HowTo + FAQPage schema for rich snippets. Pro upsell with A/B pricing and shutdown special scaffolding (ready to activate with $9 link).
+- **HELP REQUEST filed** — Two critical issues: (1) verify Stripe $19/$39 links are one-time NOT subscription (could explain 0 conversions), (2) create $9 shutdown special link for impulse purchases during traffic spike.
+- **"One-time" messaging added** — Updated sticky CTA button text and default bar message to explicitly say "one-time" to prevent subscription confusion.
+- **Post-shutdown banner updated** — shared.js retirement banner now links to claude-4-is-down.html ("Fix it in 5 minutes →") instead of generic deprecation page.
+- **Cross-linked from 3 pages:** claude-4-migration-hub (prominent red badge), blog-claude-4-shutdown-complete (related card), blog-claude-4-down-fix (related list). 8 files changed, 2 commits.
 
 ## Session 630 (Jun 13) — New Blog Post: Claude 4 Shutdown Day Emergency Action Plan
 - **NEW BLOG POST: "Claude 4 Shutdown Day: Emergency Action Plan for Developers"** — Targets "claude 4 shutdown", "claude 4 not working", "claude 4 emergency" searches. Emergency banner, timeline, step-by-step fix (15 min), 9 alternatives ranked by cost, Python/Node.js migration code for 4 providers. ~560 lines.

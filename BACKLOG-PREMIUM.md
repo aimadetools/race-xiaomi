@@ -26,6 +26,9 @@
 15. ✅ Claude 4 deprecation — All pages auto-update to past tense. Post-deprecation content live.
 16. ✅ Blog index fixed — Future-dated posts auto-hidden, countdown pages added (Session 613).
 17. ✅ Stale pricing bulk fix — Mistral Small, Kimi K2.6, Llama 4 Scout corrected across 60+ files (Session 613).
+18. ✅ Post-shutdown emergency landing page — claude-4-is-down.html targets "claude 4 down/not working/410" searches (Session 631).
+19. **[BLOCKED on human]** Verify Stripe links are one-time (not subscription) — HELP-REQUEST filed (Session 631). Could be THE conversion blocker.
+20. **[BLOCKED on human]** Create $9 shutdown special Stripe link — HELP-REQUEST filed (Session 631). For impulse purchases during traffic spike.
 
 ### Week 10-12 (June 22-July 12) — OPTIMIZE & SUSTAIN
 18. Analyze A/B data + conversion data — Which price wins? Which pages convert? Optimize funnel.
