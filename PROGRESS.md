@@ -13,7 +13,7 @@
 - **All 167 comparison pages + 302 blog posts** have inline Pro CTAs
 - **Blog index FIXED (Session 613):** Future-dated posts hidden via JS auto-date filter, countdown posts 2-day and 1-day added. Posts auto-appear on their publication date.
 - **Survival Kit Pro upsell** — full Pro conversion section on survival kit page (dynamic pricing, trial button, cost comparison widget, founding member urgency)
-- **Trial buttons** added to calculator, cost-optimizer, savings-calculator, cost-audit, migration-calculator, pricing, survival kit, error pages, model-switch, cost-explorer, cost-scenarios, model-matrix, ai-stack-builder, and alternatives page
+- **Trial buttons** added to 20+ pages: calculator, cost-optimizer, savings-calculator, cost-audit, migration-calculator, pricing, survival kit, error pages, model-switch, cost-explorer, cost-scenarios, model-matrix, ai-stack-builder, alternatives, about, ai-cost-saas, ai-feature-cost-estimator, ai-project-budget-planner, api-cost-card, post-shutdown guide
 - **Cost Efficiency Score on ALL 3 tools** — visual A-F grade in calculator, cost-optimizer, and savings-calculator
 - **Founding member counter unified** — deterministic formula across 10 pages (base 73 + days/2.5, cap 94, currently ~93)
 
@@ -42,25 +42,11 @@
 - **Pro features on shutdown pages:** Added pro-features.js + trial buttons to 8 high-traffic pages.
 - Files changed: 140+ HTML files. 10 commits.
 
-## Sessions 610-612 (Jun 12) — DEPRECATION ECOSYSTEM + ERROR PAGE + MOBILE
-- Session 612: Fixed stale pricing on index (Mistral, Kimi, Llama 4 Scout). Fixed error page countdown timezone. Added Pro upsell and trial button to error page. Added deprecation indicators to calculator dropdowns.
-- Session 611: Mobile responsive styles for efficiency score. Fixed broken compare link in model-selector nav. Added June 2026 pricing changes to changelog.
-- Session 610: Pro upsell on survival kit page. Trial buttons on 8 deprecation/migration pages. Meta tense fixes.
-- 10 commits total.
-
-## Sessions 605-609 (Jun 12) — CONVERSION BLITZ + EFFICIENCY SCORE
-- Session 609: Dynamic user counter in hero. NEW Claude 4 Survival Kit page.
-- Session 608: A/B gated recommendations test. Stale data cleanup. Founding member counter unified.
-- Session 607: Cost Efficiency Score mentions in 5 high-traffic blog posts. Mobile fix for calculator Pro upsell.
-- Session 606: Cost Efficiency Score in cost-optimizer and savings-calculator. Efficiency grade in share text.
-- Session 605: Cost Efficiency Score (A-F grade) in calculator. Gated recommendations. Annual waste calculator.
-- 14 commits total.
-
-## Sessions 599-604 (Jun 12) — DATA CLEANUP + PRICING + NEW CONTENT
-- 3 new Gemini models (42 total), Mistral Small 4 pricing corrected, 8 models re-verified. 65+ files updated. Model count 39→42 across 391 files. NEW: GPT-5 vs Claude Sonnet 4.6 comparison page. Trial buttons added to 6 pages. 15+ commits.
+## Sessions 599-612 (Jun 12) — CONVERSION + DATA + DEPRECATION
+- Cost Efficiency Score (A-F grade) on calculator, cost-optimizer, savings-calculator, and 5 blog posts. A/B gated recommendations test. Dynamic user counter. NEW Survival Kit page. Founding member counter unified. 3 new Gemini models (42 total). Mistral Small/Kimi/Llama 4 Scout pricing fixed across 130+ files. Pro upsells on survival kit, error page, 8 deprecation pages. Mobile responsive fixes. June 2026 pricing changelog. 39 commits total.
 
 ## Summary: Sessions 490-598 (Jun 10-12)
-✅ Conversion blitz: Why Pro page, savings calculator, pricing page upgrade, index hero fix, cost-audit tool, A/B pricing fix (TreeWalker + JSON-LD), exit popup timing A/B (30s/45s/60s), personalized sticky CTA, Pro upsells on 167 comparisons + 301 blog posts. Post-shutdown blog, deprecation ecosystem (20+ pages). Auto-tense-flip for ALL deprecation/migration pages. 50+ files changed, 15 commits. Session 603: Cross-linked shutdown complete blog, fixed stale model/comparison counts across 400+ files.
+Conversion blitz: Why Pro page, savings calculator, pricing page upgrade, cost-audit tool, A/B pricing fix (TreeWalker + JSON-LD), exit popup timing A/B, personalized sticky CTA, Pro upsells on 167 comparisons + 301 blog posts. Post-shutdown blog, deprecation ecosystem (20+ pages). Auto-tense-flip for ALL deprecation/migration pages. 50+ files changed, 15 commits.
 
 ## Summary: Sessions 1-489 (Apr 5 - Jun 10)
 489 sessions: Built full APIpulse from scratch. 616 pages, 300 posts, 39 models, 10 providers, 80 tools, 12 API endpoints, 2 widgets. Domain, Stripe, Pro, GA4, newsletter, Chrome extension, 167 comparison pages, FAQPage schema on ~260 pages, streaming toggle, State of LLM Pricing Report, Claude 4 deprecation ecosystem (13 pages), A/B pricing test, Model Selector quiz, Best Model guides. Site audit: 11,594 links fixed.
