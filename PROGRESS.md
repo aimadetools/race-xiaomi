@@ -1,8 +1,8 @@
 # PROGRESS.md
 
-## Site Status (as of Session 637, Jun 13, 2026)
-**636 web pages | 315 blog posts | 42 models | 10 providers | 82 tools | 12 API endpoints | 2 embeddable widgets**
-- Sitemap (630 URLs), RSS (508 items), blog files (315 posts + 1 index) — all in sync
+## Site Status (as of Session 638, Jun 13, 2026)
+**637 web pages | 315 blog posts | 42 models | 10 providers | 82 tools | 12 API endpoints | 2 embeddable widgets**
+- Sitemap (631 URLs), RSS (509 items), blog files (315 posts + 1 index) — all in sync
 - **Claude 4 SHUTDOWN in 2 days (June 15)** — auto-tense-flipping covers ALL 20+ deprecation pages, meta tags, and <title> tags
 - **Emergency landing page OPTIMIZED for shutdown traffic** — A/B price bug fixed, trust badges, time-pressure counter, quick-fix trust bar, cross-links from 10+ pages, **interactive cost calculator** (Session 634)
 - **Trial buttons now on ALL pages with Pro CTAs** — auto-injected via shared.js on ALL pages (was previously blog-only due to bug)
@@ -19,6 +19,13 @@
 - **Cost Efficiency Score on ALL 3 tools** — visual A-F grade in calculator, cost-optimizer, and savings-calculator
 - **Founding member counter unified** — deterministic formula across 10 pages (base 73 + days/2.5, cap 94, currently ~93)
 
+## Session 638 (Jun 13) — Claude 4 Alternatives Comparison
+- **NEW PAGE: claude-4-alternatives-comparison.html** — Comprehensive side-by-side comparison of all 10 alternatives. Full pricing table (input/output per 1M tokens, monthly costs), migration difficulty table (code changes, API compatibility, time to migrate), quick picks (Drop-In/Cheapest/Best Value/Best for RAG), Python/Node.js migration code snippets, FAQPage schema with 4 questions, bottom line recommendations by use case. Targets high-volume search queries: "claude 4 alternatives comparison", "best claude 4 replacement", "cheapest claude 4 alternative".
+- **Added to sitemap.xml (631 URLs), rss.xml (509 items), blog.html index** — positioned at top of Claude 4 section
+- **Cross-linked from emergency page** — Added to claude-4-is-down.html related resources
+- **Cross-linked from migration hub** — Added to claude-4-migration-hub.html tools section
+- **1 commit, 6 files changed, 732 insertions.**
+
 ## Session 637 (Jun 13) — Claude 4 Shutdown Timeline
 - **NEW BLOG POST: blog-claude-4-shutdown-timeline.html** — Complete deprecation timeline from April 2026 announcement through July 2026+ aftermath. Every key date, every milestone, what happens at each stage. Emergency fix code snippets (Python/Node.js/curl), 10 migration guides grid, FAQPage schema with 6 questions, Pro upsell with cost calculator CTA. ~670 lines.
 - **Added to sitemap.xml (630 URLs), rss.xml (508 items), blog.html index** — positioned with emergency content
@@ -33,17 +40,8 @@
 - **Cross-linked from migration hub** — Added to claude-4-migration-hub.html guides section
 - **1 commit, 6 files changed, 775 insertions.**
 
-## Session 635 (Jun 13) — 2 New Migration Guides: Grok & Cohere
-- **NEW BLOG POST: blog-claude-4-to-grok-migration.html** — Grok 4.3 at $1.25/$2.50 per 1M tokens, 92% cheaper than Claude 4 Opus. 1M context window, real-time X/Twitter data access, OpenAI-compatible SDK (zero code changes). Python/Node.js migration code, FAQPage schema, cost comparison tables.
-- **NEW BLOG POST: blog-claude-4-to-cohere-migration.html** — Cohere Command A at $2.50/$10 per 1M tokens, 83% cheaper. Native RAG with citation support, enterprise security (SOC 2, HIPAA), multilingual. Python/Node.js migration code, FAQPage schema, cost comparison tables.
-- **Added to sitemap.xml (628 URLs), rss.xml (506 items), blog.html index** — positioned with other migration guides
-- **Cross-linked from migration hub** — 2 new guide cards added to claude-4-migration-hub.html
-- **Total migration guides: 10** — DeepSeek, Gemini, GPT-5, Llama 4 Maverick, Mistral, Kimi K2.6, Opus 4.8, Sonnet 4.6, Grok, Cohere. 1 commit, 6 files changed, 1058 insertions.
-
-## Session 634 (Jun 13) — Interactive Cost Calculator on Emergency Page
-- **Added interactive cost calculator to claude-4-is-down.html** — Visitors can select Claude 4 Opus or Sonnet, input their monthly usage (input/output tokens in millions), and see exact costs across 9 alternatives. Shows max savings, direct replacement cost, and cheapest option. Top 6 alternatives ranked in a table with badges (CHEAPEST, DIRECT). Auto-recalculates on model switch. Mobile responsive. Tracked via shutdown_calc_used event.
-- **Cross-linked calculator from migration tool** — Added "Emergency Cost Calculator" as first item in related links on claude-4-migration-tool.html.
-- **2 files changed.** No new pages created.
+## Summary: Sessions 634-635 (Jun 13) — 2 sessions
+2 migration guides (Grok save 83%, Cohere save 83%) — FAQPage schema, Python/Node.js code, cost comparisons. Interactive cost calculator on emergency page — 9 alternatives, model selector, savings hero, auto-recalculate. Total: 10 migration guides. Counts: 636 pages, 315 posts.
 
 ## Summary: Sessions 628-633 (Jun 13) — 6 sessions
 Emergency conversion optimization: A/B price bug fix, trust badges, time-pressure counter, quick-fix trust bar, cross-links from 10+ pages. Emergency landing page (claude-4-is-down.html). Migration FAQ (25 questions). Emergency Action Plan post. CTA improvements (price in button, one-time messaging). Counts: 633 pages, 312 posts.
