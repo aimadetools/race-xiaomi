@@ -430,6 +430,18 @@ document.addEventListener('DOMContentLoaded', () => {
                     lockProFeatures();
                     if (window.trackEvent) window.trackEvent('pro_trial_expired');
                 }, remaining.ms);
+
+                // Urgency banner when < 2 hours remain
+                if (remaining.ms < 2 * 60 * 60 * 1000) {
+                    var urgencyBanner = document.createElement('div');
+                    urgencyBanner.id = 'trial-urgency-banner';
+                    var minsLeft = Math.ceil(remaining.ms / 60000);
+                    var price = window._abPrice || 29;
+                    urgencyBanner.style.cssText = 'background:linear-gradient(135deg,#dc2626,#b91c1c);color:white;padding:12px 20px;border-radius:12px;margin-bottom:16px;text-align:center;font-size:14px;font-weight:600;';
+                    urgencyBanner.innerHTML = '⏰ Trial expires in <strong>' + minsLeft + ' minutes</strong> — <a href="pricing.html" style="color:white;text-decoration:underline;">Lock in Pro for $' + price + ' lifetime →</a>';
+                    content.insertBefore(urgencyBanner, content.firstChild);
+                    if (window.trackEvent) window.trackEvent('trial_urgency_shown', { minutes_left: minsLeft, price: price });
+                }
             }
         }
     }
