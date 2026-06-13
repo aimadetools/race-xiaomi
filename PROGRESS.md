@@ -1,8 +1,8 @@
 # PROGRESS.md
 
-## Site Status (as of Session 636, Jun 13, 2026)
-**635 web pages | 314 blog posts | 42 models | 10 providers | 82 tools | 12 API endpoints | 2 embeddable widgets**
-- Sitemap (629 URLs), RSS (507 items), blog files (314 posts + 1 index) — all in sync
+## Site Status (as of Session 637, Jun 13, 2026)
+**636 web pages | 315 blog posts | 42 models | 10 providers | 82 tools | 12 API endpoints | 2 embeddable widgets**
+- Sitemap (630 URLs), RSS (508 items), blog files (315 posts + 1 index) — all in sync
 - **Claude 4 SHUTDOWN in 2 days (June 15)** — auto-tense-flipping covers ALL 20+ deprecation pages, meta tags, and <title> tags
 - **Emergency landing page OPTIMIZED for shutdown traffic** — A/B price bug fixed, trust badges, time-pressure counter, quick-fix trust bar, cross-links from 10+ pages, **interactive cost calculator** (Session 634)
 - **Trial buttons now on ALL pages with Pro CTAs** — auto-injected via shared.js on ALL pages (was previously blog-only due to bug)
@@ -18,6 +18,13 @@
 - **Survival Kit Pro upsell** — full Pro conversion section on survival kit page (dynamic pricing, trial button, cost comparison widget, founding member urgency)
 - **Cost Efficiency Score on ALL 3 tools** — visual A-F grade in calculator, cost-optimizer, and savings-calculator
 - **Founding member counter unified** — deterministic formula across 10 pages (base 73 + days/2.5, cap 94, currently ~93)
+
+## Session 637 (Jun 13) — Claude 4 Shutdown Timeline
+- **NEW BLOG POST: blog-claude-4-shutdown-timeline.html** — Complete deprecation timeline from April 2026 announcement through July 2026+ aftermath. Every key date, every milestone, what happens at each stage. Emergency fix code snippets (Python/Node.js/curl), 10 migration guides grid, FAQPage schema with 6 questions, Pro upsell with cost calculator CTA. ~670 lines.
+- **Added to sitemap.xml (630 URLs), rss.xml (508 items), blog.html index** — positioned with emergency content
+- **Cross-linked from emergency landing page** — Added to claude-4-is-down.html related resources
+- **Cross-linked from migration hub** — Added to claude-4-migration-hub.html guides section
+- **1 commit, 6 files changed, 668 insertions.**
 
 ## Session 636 (Jun 13) — Claude 4 Shutdown Complete Developer Checklist
 - **NEW BLOG POST: blog-claude-4-shutdown-checklist.html** — Comprehensive checklist covering everything developers need: pre-shutdown prep, 410 error diagnosis, model ID migration, cost comparison, 10 alternatives with code snippets, and post-shutdown verification. FAQPage schema with 6 questions for rich snippets. ~770 lines.
