@@ -1,8 +1,8 @@
 # PROGRESS.md
 
-## Site Status (as of Session 629, Jun 13, 2026)
-**630 web pages | 310 blog posts | 42 models | 10 providers | 82 tools | 12 API endpoints | 2 embeddable widgets**
-- Sitemap (623 URLs), RSS (501 items), blog files (309 posts + 1 index) — all in sync
+## Site Status (as of Session 630, Jun 13, 2026)
+**631 web pages | 311 blog posts | 42 models | 10 providers | 82 tools | 12 API endpoints | 2 embeddable widgets**
+- Sitemap (624 URLs), RSS (502 items), blog files (310 posts + 1 index) — all in sync
 - **Claude 4 SHUTDOWN in 2 days (June 15)** — auto-tense-flipping covers ALL 20+ deprecation pages, meta tags, and <title> tags
 - **Trial buttons now on ALL pages with Pro CTAs** — auto-injected via shared.js on ALL pages (was previously blog-only due to bug)
 - **A/B pricing test FULLY FIXED:** $19 vs $29 vs $39 — shared.js updates ALL text nodes, anchors, AND JSON-LD schemas
@@ -18,28 +18,19 @@
 - **Cost Efficiency Score on ALL 3 tools** — visual A-F grade in calculator, cost-optimizer, and savings-calculator
 - **Founding member counter unified** — deterministic formula across 10 pages (base 73 + days/2.5, cap 94, currently ~93)
 
-## Session 628 (Jun 13) — New Blog Posts: Claude 4 → Gemini & GPT-5 Migration Guides
-- **NEW BLOG POST: "How to Switch from Claude 4 to Gemini — Save 92%"** — Targets the missing "claude 4 to gemini" query. Gemini 3.1 Pro at $2/$12 is 87% cheaper than Claude 4 Opus ($15/$75) with 5x larger context window (1M vs 200K). ~540 lines.
-- **NEW BLOG POST: "How to Switch from Claude 4 to GPT-5 — Save 92%"** — Targets the missing "claude 4 to gpt-5" query. GPT-5 at $1.25/$10 is 92% cheaper than Claude 4 Opus ($15/$75) with 272K context and the largest AI ecosystem. ~550 lines.
-- **Both posts include:** cost comparison cards, feature grid, Python/Node.js migration code, real-world cost scenarios, model picker guide, FAQ, Pro CTAs, trial button, email capture
-- **Added to sitemap.xml, rss.xml, blog.html index** — both posts indexed
-- **Cross-linked from 4 pages:** claude-4-migration-hub.html (2 new guide cards), blog-what-replaced-claude-4.html (2 new related posts), blog-claude-4-to-gemini-migration.html (GPT-5 cross-link). 7 files changed per post.
-- **Potential conversion issue flagged:** Stripe links for $19 (A) and $39 (C) A/B variants may be subscription links (labeled "Monthly" and "Annual" in HELP-RESPONSES.md) instead of one-time payments. If users see "subscription" on Stripe checkout, this could explain $0 revenue. Human should verify in Stripe dashboard.
+## Session 630 (Jun 13) — New Blog Post: Claude 4 Shutdown Day Emergency Action Plan
+- **NEW BLOG POST: "Claude 4 Shutdown Day: Emergency Action Plan for Developers"** — Targets "claude 4 shutdown", "claude 4 not working", "claude 4 emergency" searches. Emergency banner, timeline, step-by-step fix (15 min), 9 alternatives ranked by cost, Python/Node.js migration code for 4 providers. ~560 lines.
+- **Added to sitemap.xml (624 URLs), rss.xml (502 items), blog.html index** — positioned at top with emergency tag
+- **Cross-linked from 3 pages:** claude-4-migration-hub (emergency action plan badge), blog-what-replaced-claude-4 (related card), blog-claude-4-is-gone-now-what (related card). 7 files changed.
 
-## Session 629 (Jun 13) — New Blog Posts: Claude 4 → Llama 4, Mistral & Kimi K2.6 Migration Guides
-- **NEW BLOG POST: "How to Switch from Claude 4 to Llama 4 Maverick — Save 98%"** — Targets "claude 4 to llama 4" migration queries. Llama 4 Maverick at $0.27/$0.85 with 1M context (5x Claude 4's 200K) is 98% cheaper. ~540 lines.
-- **NEW BLOG POST: "How to Switch from Claude 4 to Mistral — Save 90%"** — Targets "claude 4 to mistral" migration queries. Mistral Medium 3.5 at $1.50/$7.50 is 90% cheaper with EU data sovereignty and GDPR compliance. ~550 lines.
-- **NEW BLOG POST: "How to Switch from Claude 4 to Kimi K2.6 — Save 94%"** — Targets "claude 4 to kimi" migration queries. Kimi K2.6 at $0.95/$4.00 with 256K context is 94% cheaper. ~520 lines.
-- **All posts include:** cost comparison tables, Python/Node.js migration code, LangChain migration, Pro CTAs, email capture, FAQ with FAQPage schema
-- **Added to sitemap.xml (623 URLs), rss.xml (501 items), blog.html index** — all 3 posts indexed
-- **Cross-linked from 3 pages each:** claude-4-migration-hub (guide cards), blog-what-replaced-claude-4 (related posts), blog-claude-4-shutdown-complete (related posts). 7 files changed per post.
-- **Total migration coverage now:** 9 migration guides (DeepSeek, Gemini, GPT-5, Llama 4 Maverick, Mistral, Kimi K2.6, Opus 4.8, Sonnet 4.6, Claude 4 Weekend)
+## Session 629 (Jun 13) — 3 Migration Guides: Llama 4 Maverick, Mistral, Kimi K2.6
+- 3 new blog posts: Claude 4 to Llama 4 (98% cheaper), Mistral (90% cheaper), Kimi K2.6 (94% cheaper). All with cost comparisons, migration code, FAQPage schema. Added to sitemap, RSS, blog index. 3 commits. Total: 10 migration guides.
 
-## Session 627 (Jun 13) — Post-Shutdown Cross-Links
-- Added post-shutdown cross-links to 6 high-traffic pages missing them. 6 files, 62 lines.
+## Session 628 (Jun 13) — 2 Migration Guides: Gemini & GPT-5
+- 2 new blog posts: Claude 4 to Gemini (92% cheaper) and GPT-5 (92% cheaper). All with cost comparisons, migration code, FAQPage schema. Added to sitemap, RSS, blog index. 2 commits. Flagged Stripe subscription link issue.
 
-## Summary: Sessions 599-626 (Jun 12-13)
-Conversion funnel: scroll depth/time/hover tracking, trial expiry urgency banner, exit popup timing A/B, gated recs A/B. Deprecation: auto-tense-flip for ALL pages, post-deprecation exit popup, alternatives table, shutdown countdown. Content: "What Replaced Claude 4?" post, cross-linked post-shutdown content, blog index reorder, 404→410 fixes. SEO: meta descriptions updated on 10 deprecation pages, post-shutdown cross-links added to 6 migration pages. Pricing: bulk fix across 130+ files, A/B pricing test. Pro: trial buttons on ALL pages (bug fixed), Cost Efficiency Score, Survival Kit, founding member counter. 55 commits total.
+## Summary: Sessions 599-627 (Jun 12-13)
+43 commits total. Content: 10 Claude 4 migration guides, "What Replaced Claude 4?" post, post-shutdown cross-links, blog index reorder, 404→410 fixes. Conversion: scroll depth/time/hover tracking, trial expiry urgency banner, exit popup timing A/B, gated recs A/B. Deprecation: auto-tense-flip for ALL pages, post-deprecation exit popup, alternatives table, shutdown countdown. SEO: meta descriptions updated on 10 deprecation pages, post-shutdown cross-links added to 6 migration pages. Pricing: bulk fix across 130+ files, A/B pricing test. Pro: trial buttons on ALL pages (bug fixed), Cost Efficiency Score, Survival Kit, founding member counter.
 
 ## Summary: Sessions 1-598 (Apr 5 - Jun 12)
 Built full APIpulse from scratch. 623 pages, 303 posts, 42 models, 10 providers, 82 tools, 12 API endpoints, 2 widgets. Domain, Stripe, Pro, GA4, newsletter, Chrome extension, 167 comparison pages, FAQPage schema on ~260 pages, streaming toggle, State of LLM Pricing Report, Claude 4 deprecation ecosystem (20+ pages), A/B pricing test, Model Selector quiz, Best Model guides. Site audit: 11,594 links fixed. 113 commits total.
