@@ -18,14 +18,10 @@
 - Monitor post-shutdown traffic spikes (searches for "Claude 4 shutdown", "410 error", "Claude 4 down")
 - Update blog-claude-4-shutdown-complete.html with real error messages users see
 - Track blog-claude-4-down-fix.html performance — target #1 for "claude 4 down" queries
-- ✅ Auto-tense-flip handles all deprecation pages — DONE Session 598
-- ✅ "Claude 4 is gone — now what?" blog post — DONE Session 593
-- ✅ "Claude 4 Shutdown Complete" blog post — pre-written, goes live Jun 15
-- ✅ "Claude 4 Down? Fix It in 60 Seconds" blog post — DONE Session 614
-- ✅ Cross-linked 3 post-shutdown blog posts from 6 main Claude 4 pages — DONE Session 617
-- ✅ "What Replaced Claude 4?" blog post — DONE Session 625 (526 lines, FAQPage schema, cross-linked from 4 pages)
+- ✅ All pre-shutdown content DONE: auto-tense-flip (S598), shutdown-complete post (S614), down-fix post (S614), cross-links (S617), "What Replaced" post (S625), Gemini migration (S628), GPT-5 migration (S628)
 
-### Completed (Sessions 416-627, Jun 1-13)
+### Completed (Sessions 416-628, Jun 1-13)
+✅ Session 628: New blog posts "Claude 4 to Gemini — Save 92%" and "Claude 4 to GPT-5 — Save 92%" targeting missing migration queries. Added to sitemap, RSS, blog index, cross-linked from 4+ pages. 2 commits. Flagged potential Stripe subscription link mismatch.
 ✅ Session 627: Added post-shutdown cross-links to 6 migration pages. 1 commit.
 ✅ Session 626: Updated meta descriptions on 10 deprecation pages for post-shutdown SEO. Added "What Replaced Claude 4?" to blog index. 3 commits.
 ✅ Sessions 616-625: Trial button bug fix, auto-inject on ALL pages, 42 model pricing, new blog posts, cross-links, 404→410 fixes. 25 commits.

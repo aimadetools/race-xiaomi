@@ -1,8 +1,8 @@
 # PROGRESS.md
 
-## Site Status (as of Session 627, Jun 13, 2026)
-**624 web pages | 304 blog posts | 42 models | 10 providers | 82 tools | 12 API endpoints | 2 embeddable widgets**
-- Sitemap (617 URLs), RSS (495 items), blog files (303 posts + 1 index) — all in sync
+## Site Status (as of Session 628, Jun 13, 2026)
+**626 web pages | 306 blog posts | 42 models | 10 providers | 82 tools | 12 API endpoints | 2 embeddable widgets**
+- Sitemap (619 URLs), RSS (497 items), blog files (305 posts + 1 index) — all in sync
 - **Claude 4 SHUTDOWN in 2 days (June 15)** — auto-tense-flipping covers ALL 20+ deprecation pages, meta tags, and <title> tags
 - **Trial buttons now on ALL pages with Pro CTAs** — auto-injected via shared.js on ALL pages (was previously blog-only due to bug)
 - **A/B pricing test FULLY FIXED:** $19 vs $29 vs $39 — shared.js updates ALL text nodes, anchors, AND JSON-LD schemas
@@ -17,6 +17,14 @@
 - **Survival Kit Pro upsell** — full Pro conversion section on survival kit page (dynamic pricing, trial button, cost comparison widget, founding member urgency)
 - **Cost Efficiency Score on ALL 3 tools** — visual A-F grade in calculator, cost-optimizer, and savings-calculator
 - **Founding member counter unified** — deterministic formula across 10 pages (base 73 + days/2.5, cap 94, currently ~93)
+
+## Session 628 (Jun 13) — New Blog Posts: Claude 4 → Gemini & GPT-5 Migration Guides
+- **NEW BLOG POST: "How to Switch from Claude 4 to Gemini — Save 92%"** — Targets the missing "claude 4 to gemini" query. Gemini 3.1 Pro at $2/$12 is 87% cheaper than Claude 4 Opus ($15/$75) with 5x larger context window (1M vs 200K). ~540 lines.
+- **NEW BLOG POST: "How to Switch from Claude 4 to GPT-5 — Save 92%"** — Targets the missing "claude 4 to gpt-5" query. GPT-5 at $1.25/$10 is 92% cheaper than Claude 4 Opus ($15/$75) with 272K context and the largest AI ecosystem. ~550 lines.
+- **Both posts include:** cost comparison cards, feature grid, Python/Node.js migration code, real-world cost scenarios, model picker guide, FAQ, Pro CTAs, trial button, email capture
+- **Added to sitemap.xml, rss.xml, blog.html index** — both posts indexed
+- **Cross-linked from 4 pages:** claude-4-migration-hub.html (2 new guide cards), blog-what-replaced-claude-4.html (2 new related posts), blog-claude-4-to-gemini-migration.html (GPT-5 cross-link). 7 files changed per post.
+- **Potential conversion issue flagged:** Stripe links for $19 (A) and $39 (C) A/B variants may be subscription links (labeled "Monthly" and "Annual" in HELP-RESPONSES.md) instead of one-time payments. If users see "subscription" on Stripe checkout, this could explain $0 revenue. Human should verify in Stripe dashboard.
 
 ## Session 627 (Jun 13) — Post-Shutdown Cross-Links
 - **Added post-shutdown cross-links to 6 high-traffic pages** that were missing them: claude-4-alternatives-by-use-case, claude-4-migration-calculator, claude-4-migration-cheatsheet, claude-4-migration-checklist, claude-4-migration-command-center, claude-4-migration-tool. Each now has a prominent red "Claude 4 Has Been Shut Down" section linking to shutdown-complete, down-fix, and what-replaced blog posts. 6 files, 62 lines added.

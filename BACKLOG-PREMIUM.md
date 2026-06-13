@@ -1,6 +1,6 @@
 # BACKLOG-PREMIUM.md — 6-Week Battle Plan (Weeks 7-12)
 
-## STATUS: Week 9 of 12. $0 revenue. Product DONE (623 pages, 82 tools, 167 comparisons, 42 models). Bottleneck is CONVERSION — 1,200 visitors/week, 0 sales. A/B pricing test LIVE ($19/$29/$39). A/B exit popup timing test LIVE (30s/45s/60s mobile). Sticky CTA personalized by page type. Claude 4 shutdown in 2 days (June 15). Trial buttons now auto-injected on ALL pages with Pro CTAs (Session 623).
+## STATUS: Week 9 of 12. $0 revenue. Product DONE (626 pages, 82 tools, 167 comparisons, 42 models). Bottleneck is CONVERSION — 1,200 visitors/week, 0 sales. A/B pricing test LIVE ($19/$29/$39). A/B exit popup timing test LIVE (30s/45s/60s mobile). Sticky CTA personalized by page type. Claude 4 shutdown in 2 days (June 15). Trial buttons now auto-injected on ALL pages with Pro CTAs (Session 623). **Potential issue:** Stripe A/B links ($19/$39) may be subscription not one-time — verify in Stripe dashboard.
 
 ---
 
@@ -32,7 +32,8 @@
 19. Community feedback integration — Act on Reddit/HN feedback.
 20. Plan v2 — If revenue justifies, plan next features.
 
-### Completed (Sessions 416-627, Jun 1-13)
+### Completed (Sessions 416-628, Jun 1-13)
+✅ Session 628: New blog posts "Claude 4 to Gemini — Save 92%" and "Claude 4 to GPT-5 — Save 92%" targeting missing migration queries. Added to sitemap, RSS, blog index, cross-linked from 4+ pages. 2 commits. Flagged potential Stripe subscription link mismatch.
 ✅ Session 627: Added post-shutdown cross-links to 6 migration pages. 1 commit.
 ✅ Session 626: Updated meta descriptions on 10 deprecation pages for post-shutdown SEO. Added "What Replaced Claude 4?" to blog index. 3 commits.
 ✅ Sessions 616-625: Trial button bug fix, auto-inject on ALL pages, 42 model pricing, new blog posts, cross-links, 404→410 fixes. 25 commits.
