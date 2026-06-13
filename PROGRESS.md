@@ -1,10 +1,10 @@
 # PROGRESS.md
 
-## Site Status (as of Session 623, Jun 13, 2026)
+## Site Status (as of Session 624, Jun 13, 2026)
 **623 web pages | 303 blog posts | 42 models | 10 providers | 82 tools | 12 API endpoints | 2 embeddable widgets**
 - Sitemap (617 URLs), RSS (495 items), blog files (303 posts + 1 index) — all in sync
 - **Claude 4 SHUTDOWN in 2 days (June 15)** — auto-tense-flipping covers ALL 20+ deprecation pages, meta tags, and <title> tags
-- **Trial buttons now on ALL pages with Pro CTAs** — auto-injected via shared.js on 167 comparison + 303 blog posts + 46 tool pages
+- **Trial buttons now on ALL pages with Pro CTAs** — auto-injected via shared.js on ALL pages (was previously blog-only due to bug)
 - **A/B pricing test FULLY FIXED:** $19 vs $29 vs $39 — shared.js updates ALL text nodes, anchors, AND JSON-LD schemas
 - **A/B exit popup timing test running:** 30s vs 45s vs 60s on mobile — all events tagged with timing_variant
 - **A/B gated recommendations test running:** show 1 free vs 0 free alternatives — tracks ab_gated_recs_assigned and pro_gated_rec_click events
@@ -18,17 +18,19 @@
 - **Cost Efficiency Score on ALL 3 tools** — visual A-F grade in calculator, cost-optimizer, and savings-calculator
 - **Founding member counter unified** — deterministic formula across 10 pages (base 73 + days/2.5, cap 94, currently ~93)
 
-## Session 623 (Jun 13) — UNIVERSAL TRIAL BUTTONS
-- **Auto-inject trial buttons via shared.js:** Finds all "Get Pro" / "Unlock Pro" links and appends a "Try Free 24h" button next to them. Works on 167 comparison pages + 303 blog posts without editing each file.
-- **Added pro-features.js to 569 pages** (was only on ~58 tool pages). Now all pages with shared.js have pro-features.js for trial functionality.
-- **Added trial CTA buttons to 28 tool pages:** ai-stack-cost-optimizer, agent-cost-calculator, ai-api-tco-calculator, ai-chatbot-cost-calculator, mcp-cost-calculator, xai-grok-cost-calculator, cost-per-task-calculator, embedding-cost-calculator, fine-tuning-calculator, claude-alternatives-calculator, budget-planner, monthly-spend-estimator, token-estimator, model-selector, model-advisor, model-decision-tree, model-value-score, cost-projection, cost-per-request, cost-report, cost-health-check, cost-leak-detector, cost-migration, multi-model-routing, pipeline, latency-comparison, model-benchmarks, model-capabilities.
-- Files changed: 583 files. 7 commits.
+## Session 624 (Jun 13) — CRITICAL: Trial Button Bug Fix
+- **FIXED: Trial button injection was blog-only, not global.** The auto-inject trial button code (shared.js lines 980-1000) was inside the blog email capture block (`if (!window.location.pathname.includes('blog-')) return;`), meaning trial buttons were ONLY injected on blog posts — NOT on comparison pages, tool pages, calculator pages, or any other page with Pro CTAs.
+- **Impact:** 167 comparison pages + 82 tool pages with Pro CTAs were missing trial buttons. This was a critical conversion bug — the "Try Free 24h" button was not appearing next to "Get Pro" CTAs on most pages.
+- **Fix:** Extracted trial button injection into a separate global `DOMContentLoaded` handler that runs on ALL pages, not just blog posts. 1 file changed, 1 commit.
 
-## Summary: Sessions 599-622 (Jun 12-13)
+## Session 623 (Jun 13) — UNIVERSAL TRIAL BUTTONS
+- Auto-inject trial buttons via shared.js. Added pro-features.js to 569 pages. Added trial CTAs to 28 tool pages. 583 files, 7 commits.
+
+## Summary: Sessions 599-623 (Jun 12-13)
 Conversion funnel: scroll depth/time/hover tracking, trial expiry urgency banner, exit popup timing A/B, gated recs A/B. Deprecation: auto-tense-flip for ALL pages, post-deprecation exit popup, alternatives table, shutdown countdown. Content: 303 blog posts, cross-linked post-shutdown content, blog index reorder, 404→410 fixes. Pricing: bulk fix across 130+ files, A/B pricing test. Pro: trial buttons on 46+ tool pages, Cost Efficiency Score, Survival Kit, founding member counter. 51 commits total.
 
 ## Summary: Sessions 1-598 (Apr 5 - Jun 12)
-598 sessions: Built full APIpulse from scratch. 623 pages, 303 posts, 42 models, 10 providers, 82 tools, 12 API endpoints, 2 widgets. Domain, Stripe, Pro, GA4, newsletter, Chrome extension, 167 comparison pages, FAQPage schema on ~260 pages, streaming toggle, State of LLM Pricing Report, Claude 4 deprecation ecosystem (20+ pages), A/B pricing test, Model Selector quiz, Best Model guides. Site audit: 11,594 links fixed. 113 commits total.
+Built full APIpulse from scratch. 623 pages, 303 posts, 42 models, 10 providers, 82 tools, 12 API endpoints, 2 widgets. Domain, Stripe, Pro, GA4, newsletter, Chrome extension, 167 comparison pages, FAQPage schema on ~260 pages, streaming toggle, State of LLM Pricing Report, Claude 4 deprecation ecosystem (20+ pages), A/B pricing test, Model Selector quiz, Best Model guides. Site audit: 11,594 links fixed. 113 commits total.
 
 ## Blocked on Human Action
 1. **Directory submissions** — DIRECTORY-SUBMISSIONS.md has 22 ready-to-submit listings. ~45 min human time.
