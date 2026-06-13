@@ -24,7 +24,8 @@
 - ✅ NEW: "Claude 4 Down? Fix It in 60 Seconds" blog post — DONE Session 614
 - ✅ Cross-linked 3 post-shutdown blog posts from 6 main Claude 4 pages — DONE Session 617
 
-### Completed (Sessions 416-619, Jun 1-13)
+### Completed (Sessions 416-620, Jun 1-13)
+✅ Session 620: Fixed post-deprecation exit popup gap (was only showing pre-June 15). Expanded deprecation page detection. Updated sticky CTA for post-shutdown. Added alternatives comparison table to deprecation calculator. Updated countdown timer. 1 commit.
 ✅ Session 619: Cross-linked blog-claude-4-retired-what-to-do.html to 4 main pages. Cross-linked all 5 post-shutdown blog posts to each other. 3 commits.
 ✅ Session 618: Fixed stale dates on 4 countdown posts, 404→410 Gone across 13 posts, added missing pro-features.js to 2 pages. 4 commits.
 ✅ Session 617: Cross-linked 3 post-shutdown blog posts (down-fix, is-dead, is-gone) from 6 main Claude 4 pages.

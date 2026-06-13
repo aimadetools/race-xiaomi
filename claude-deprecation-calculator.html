@@ -394,6 +394,13 @@
                 </div>
             </div>
 
+            <!-- All alternatives comparison table -->
+            <div class="calc-card" style="margin-top:24px;" id="alternatives-section">
+                <h2>Compare All Alternatives — Monthly Cost & Savings</h2>
+                <p style="color:var(--text-secondary);margin-bottom:16px;font-size:14px;">Every non-deprecated model ranked by savings vs your current ' + (selectedModel === 'opus' ? 'Claude 4 Opus' : 'Claude Sonnet 4') + ' usage.</p>
+                <div id="alternatives-table"></div>
+            </div>
+
             <div class="calc-card" style="margin-top:24px;">
                 <h2>3. Code migration — it's just one line</h2>
                 <p style="color:var(--text-secondary);margin-bottom:16px;">Change the model name string. Your API key, endpoint, and SDK stay the same.</p>
@@ -498,9 +505,9 @@
             var now = new Date();
             var diff = dep - now;
             if (diff <= 0) {
-                document.getElementById('cd-days').textContent = 'EXPIRED';
-                document.getElementById('cd-hours').textContent = '—';
-                document.getElementById('cd-mins').textContent = '—';
+                document.getElementById('cd-days').textContent = 'RETIRED';
+                document.getElementById('cd-hours').textContent = 'June 15';
+                document.getElementById('cd-mins').textContent = '2026';
                 return;
             }
             var days = Math.floor(diff / 86400000);
@@ -517,9 +524,13 @@
         (function(){
             var dep = new Date('2026-06-15T00:00:00');
             var diff = dep - new Date();
-            var days = diff > 0 ? Math.ceil(diff / 86400000) : 0;
             var el = document.getElementById('ctaDeadline');
-            if (el) el.textContent = 'Deadline: June 15 — ' + days + ' days left';
+            if (diff <= 0) {
+                if (el) { el.textContent = 'Claude 4 has been retired — migrate now'; el.style.background = 'var(--red)'; }
+            } else {
+                var days = Math.ceil(diff / 86400000);
+                if (el) el.textContent = 'Deadline: June 15 — ' + days + ' days left';
+            }
         })();
 
         window.selectModel = function(model) {
@@ -541,6 +552,7 @@
             document.getElementById('newModelStr').textContent = '"' + m.replacement.modelId + '"';
             document.getElementById('currentModel').textContent = m.current.name;
             document.getElementById('replacementModel').textContent = m.replacement.name;
+            document.getElementById('alternatives-section').querySelector('p').textContent = 'Every non-deprecated model ranked by savings vs your current ' + m.current.name + ' usage.';
             document.getElementById('results').classList.remove('visible');
         };
 
@@ -572,6 +584,37 @@
             }
 
             document.getElementById('results').classList.add('visible');
+
+            // Build alternatives comparison table
+            var altHtml = '<table style="width:100%;border-collapse:collapse;font-size:14px;">';
+            altHtml += '<thead><tr style="border-bottom:2px solid var(--border);">';
+            altHtml += '<th style="text-align:left;padding:12px 8px;font-size:12px;text-transform:uppercase;color:var(--text-muted);">Model</th>';
+            altHtml += '<th style="text-align:left;padding:12px 8px;font-size:12px;text-transform:uppercase;color:var(--text-muted);">Provider</th>';
+            altHtml += '<th style="text-align:right;padding:12px 8px;font-size:12px;text-transform:uppercase;color:var(--text-muted);">Monthly Cost</th>';
+            altHtml += '<th style="text-align:right;padding:12px 8px;font-size:12px;text-transform:uppercase;color:var(--text-muted);">Savings</th>';
+            altHtml += '</tr></thead><tbody>';
+
+            var alts = API_MODELS.filter(function(am) { return !am.deprecated; }).map(function(am) {
+                var cost = (inputM * am.input) + (outputM * am.output);
+                var sav = currentCost - cost;
+                var pct = currentCost > 0 ? Math.round((sav / currentCost) * 100) : 0;
+                return { model: am, cost: cost, savings: sav, savingsPct: pct };
+            }).filter(function(a) { return a.savings > 0; }).sort(function(a, b) { return b.savingsPct - a.savingsPct; });
+
+            alts.slice(0, 12).forEach(function(a, i) {
+                var isBest = i === 0;
+                var bgColor = isBest ? 'background:rgba(34,197,94,0.06);' : (i % 2 === 0 ? 'background:var(--bg-secondary);' : '');
+                altHtml += '<tr style="border-bottom:1px solid var(--border);' + bgColor + '">';
+                altHtml += '<td style="padding:12px 8px;font-weight:600;">' + a.model.name + (isBest ? ' <span style="background:rgba(34,197,94,0.15);color:var(--green);padding:2px 6px;border-radius:4px;font-size:10px;font-weight:700;">BEST</span>' : '') + '</td>';
+                altHtml += '<td style="padding:12px 8px;color:var(--text-muted);">' + a.model.provider + '</td>';
+                altHtml += '<td style="padding:12px 8px;text-align:right;font-weight:700;">$' + a.cost.toFixed(2) + '</td>';
+                altHtml += '<td style="padding:12px 8px;text-align:right;font-weight:700;color:var(--green);">' + a.savingsPct + '% <span style="color:var(--text-muted);font-weight:400;font-size:12px;">($' + a.savings.toFixed(2) + ')</span></td>';
+                altHtml += '</tr>';
+            });
+
+            altHtml += '</tbody></table>';
+            document.getElementById('alternatives-table').innerHTML = altHtml;
+
             document.getElementById('results').scrollIntoView({ behavior: 'smooth', block: 'start' });
             if (window.trackEvent) {
                 window.trackEvent('deprecation_calc_used', {

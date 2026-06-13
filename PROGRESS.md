@@ -1,6 +1,6 @@
 # PROGRESS.md
 
-## Site Status (as of Session 619, Jun 13, 2026)
+## Site Status (as of Session 620, Jun 13, 2026)
 **623 web pages | 303 blog posts | 42 models | 10 providers | 82 tools | 12 API endpoints | 2 embeddable widgets**
 - Sitemap (617 URLs), RSS (495 items), blog files (303 posts + 1 index) — all in sync
 - **Claude 4 SHUTDOWN in 2 days (June 15)** — auto-tense-flipping covers ALL 20+ deprecation pages, meta tags, and <title> tags
@@ -16,6 +16,14 @@
 - **Trial buttons** added to 20+ pages: calculator, cost-optimizer, savings-calculator, cost-audit, migration-calculator, pricing, survival kit, error pages, model-switch, cost-explorer, cost-scenarios, model-matrix, ai-stack-builder, alternatives, about, ai-cost-saas, ai-feature-cost-estimator, ai-project-budget-planner, api-cost-card, post-shutdown guide
 - **Cost Efficiency Score on ALL 3 tools** — visual A-F grade in calculator, cost-optimizer, and savings-calculator
 - **Founding member counter unified** — deterministic formula across 10 pages (base 73 + days/2.5, cap 94, currently ~93)
+
+## Session 620 (Jun 13) — POST-DEPRECATION CONVERSION FIX + CALCULATOR IMPROVEMENT
+- **Fixed post-deprecation exit popup gap:** The deprecation exit popup in shared.js only showed when `daysLeft > 0`. After June 15, deprecation pages got a generic email popup instead of a Pro CTA. Fixed by changing condition to `daysLeft <= 14` and adding post-shutdown messaging ("Claude 4 is retired — your API calls are failing").
+- **Expanded deprecation page detection:** Added `claude-4` and `shutdown` to the `isDeprecationPage` check in shared.js exit popup — now covers all 27 Claude 4 blog posts and status pages.
+- **Updated sticky CTA bar for post-deprecation:** Sticky bar now shows "Claude 4 is retired — Pro finds your cheapest replacement" instead of "Migrating off Claude 4?" after June 15.
+- **Added alternatives comparison table to deprecation calculator:** claude-deprecation-calculator.html now shows all 42 non-deprecated models ranked by savings (was only showing Claude 4 → 4.8/4.6 direct replacement).
+- **Updated countdown timer for post-June 15:** Shows "RETIRED / June 15 / 2026" instead of "EXPIRED". CTA text changes to "Claude 4 has been retired — migrate now".
+- Files changed: 2 files (shared.js, claude-deprecation-calculator.html). 1 commit.
 
 ## Session 619 (Jun 13) — CROSS-LINK POST-SHUTDOWN BLOG POSTS
 - **Added cross-links for blog-claude-4-retired-what-to-do.html** to 4 main Claude 4 pages (claude-4-error, claude-4-status, claude-4-survival-kit, claude-4-migration-hub) — was missing from all 4.

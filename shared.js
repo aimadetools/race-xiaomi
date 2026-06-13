@@ -482,11 +482,11 @@ async function saveEmail(e) {
     if (window.location.pathname.includes('unsubscribe') || window.location.pathname.includes('ph.html')) return;
     if (localStorage.getItem('apipulse_popup_dismissed')) return;
 
-    // Deprecation-specific exit popup (shows on deprecation/migration pages)
-    var isDeprecationPage = window.location.pathname.includes('deprecation') || window.location.pathname.includes('migration') || window.location.pathname.includes('last-chance') || window.location.pathname.includes('survival');
+    // Deprecation-specific exit popup (shows on deprecation/migration/claude-4 pages)
+    var isDeprecationPage = window.location.pathname.includes('deprecation') || window.location.pathname.includes('migration') || window.location.pathname.includes('last-chance') || window.location.pathname.includes('survival') || window.location.pathname.includes('claude-4') || window.location.pathname.includes('shutdown');
     var daysLeft = Math.ceil((new Date('2026-06-15T00:00:00Z') - new Date()) / 86400000);
 
-    if (isDeprecationPage && daysLeft > 0 && daysLeft <= 14) {
+    if (isDeprecationPage && daysLeft <= 14) {
         if (localStorage.getItem('apipulse_deprecation_popup_dismissed')) return;
         var depPopupShown = false;
         function showDeprecationPopup() {
@@ -502,12 +502,25 @@ async function saveEmail(e) {
             overlay.style.cssText = 'position:fixed;inset:0;background:rgba(0,0,0,0.7);z-index:9999;display:flex;align-items:center;justify-content:center;padding:20px;animation:fadeIn 0.3s ease;';
             var popup = document.createElement('div');
             popup.style.cssText = 'background:var(--bg-card);border:1px solid var(--red);border-radius:16px;padding:40px;max-width:440px;width:100%;position:relative;box-shadow:0 24px 64px rgba(0,0,0,0.5);';
+            var isPostShutdown = daysLeft <= 0;
+            var popupTitle, popupIcon, popupDesc, popupHighlight;
+            if (isPostShutdown) {
+                popupIcon = '🔴';
+                popupTitle = 'Claude 4 is retired — your API calls are failing';
+                popupDesc = 'Claude 4 Opus and Sonnet 4 returned HTTP 410 errors since June 15. Pro shows you the cheapest replacement for your exact workload — most devs save 67-97%.';
+                popupHighlight = 'Stop losing money on failed API calls — find your cheapest alternative now';
+            } else {
+                popupIcon = '⏰';
+                popupTitle = daysLeft + ' Days Until Claude 4 Dies';
+                popupDesc = 'Your API calls to Claude 4 Opus and Sonnet 4 will fail on June 15. Pro gives you personalized migration recommendations, saved scenarios, and cost reports — so you pick the right replacement.';
+                popupHighlight = 'Pro pays for itself in your first month of savings';
+            }
             popup.innerHTML = '<button id="exit-popup-close" style="position:absolute;top:12px;right:12px;background:none;border:none;color:var(--text-muted);font-size:20px;cursor:pointer;padding:4px 8px;border-radius:6px;" onmouseover="this.style.color=\'var(--text-primary)\'" onmouseout="this.style.color=\'var(--text-muted)\'">&times;</button>' +
                 '<div style="text-align:center;">' +
-                '<div style="font-size:40px;margin-bottom:16px;">⏰</div>' +
-                '<h3 style="font-size:22px;font-weight:700;margin-bottom:8px;color:var(--red);">' + daysLeft + ' Days Until Claude 4 Dies</h3>' +
-                '<p style="font-size:14px;color:var(--text-secondary);margin-bottom:20px;line-height:1.6;">Your API calls to Claude 4 Opus and Sonnet 4 will fail on June 15. Pro gives you personalized migration recommendations, saved scenarios, and cost reports — so you pick the right replacement.</p>' +
-                '<div style="background:rgba(34,197,94,0.08);border:1px solid rgba(34,197,94,0.25);border-radius:8px;padding:12px;margin-bottom:20px;font-size:14px;color:var(--green);font-weight:600;">Pro pays for itself in your first month of savings</div>' +
+                '<div style="font-size:40px;margin-bottom:16px;">' + popupIcon + '</div>' +
+                '<h3 style="font-size:22px;font-weight:700;margin-bottom:8px;color:var(--red);">' + popupTitle + '</h3>' +
+                '<p style="font-size:14px;color:var(--text-secondary);margin-bottom:20px;line-height:1.6;">' + popupDesc + '</p>' +
+                '<div style="background:rgba(34,197,94,0.08);border:1px solid rgba(34,197,94,0.25);border-radius:8px;padding:12px;margin-bottom:20px;font-size:14px;color:var(--green);font-weight:600;">' + popupHighlight + '</div>' +
                 '<a href="' + stripeLink + '" target="_blank" rel="noopener" id="deprecation-popup-cta" style="display:inline-block;background:var(--accent);color:white;padding:14px 32px;border-radius:10px;font-size:16px;font-weight:700;text-decoration:none;transition:all 0.2s;box-shadow:0 4px 20px rgba(99,102,241,0.3);" onmouseover="this.style.transform=\'translateY(-2px)\'" onmouseout="this.style.transform=\'none\'">Get Pro — $' + price + ' lifetime</a>' +
                 '<p style="font-size:12px;color:var(--text-muted);margin-top:12px;">14-day money-back guarantee</p>' +
                 '</div>';
@@ -792,7 +805,8 @@ function renderPricingFreshness(containerId) {
         var isCostPage = path.includes('cost-') || path.includes('optimizer') || path.includes('explorer') || path.includes('finder');
         var barMsg, ctaContext;
         if (isDepPage) {
-            barMsg = 'Migrating off Claude 4? Pro shows the cheapest path';
+            var postDep = new Date() >= new Date('2026-06-15T00:00:00Z');
+            barMsg = postDep ? 'Claude 4 is retired — Pro finds your cheapest replacement' : 'Migrating off Claude 4? Pro shows the cheapest path';
             ctaContext = 'sticky_bar_deprecation';
         } else if (isCalcPage) {
             barMsg = 'Done calculating? Pro shows how to cut those costs by 40%';
