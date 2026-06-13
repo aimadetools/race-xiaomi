@@ -1,6 +1,6 @@
 # BACKLOG-PREMIUM.md — 6-Week Battle Plan (Weeks 7-12)
 
-## STATUS: Week 9 of 12. $0 revenue. Product DONE (622 pages, 82 tools, 167 comparisons, 42 models). Bottleneck is CONVERSION — 1,200 visitors/week, 0 sales. A/B pricing test LIVE ($19/$29/$39). A/B exit popup timing test LIVE (30s/45s/60s mobile). Sticky CTA personalized by page type. Claude 4 shutdown in 3 days (June 15). Pricing data fully corrected across 60+ files (Session 613).
+## STATUS: Week 9 of 12. $0 revenue. Product DONE (623 pages, 82 tools, 167 comparisons, 42 models). Bottleneck is CONVERSION — 1,200 visitors/week, 0 sales. A/B pricing test LIVE ($19/$29/$39). A/B exit popup timing test LIVE (30s/45s/60s mobile). Sticky CTA personalized by page type. Claude 4 shutdown in 2 days (June 15). Trial buttons now auto-injected on ALL pages with Pro CTAs (Session 623).
 
 ---
 
@@ -32,8 +32,9 @@
 19. Community feedback integration — Act on Reddit/HN feedback.
 20. Plan v2 — If revenue justifies, plan next features.
 
-### Completed (Sessions 416-622, Jun 1-13)
-✅ Session 622: Fixed hardcoded $29 in trial banner. Added conversion funnel tracking (scroll depth, time-on-page, CTA hover). Added trial expiry urgency banner. Added trial buttons to 10 calculator pages. 4 commits.
+### Completed (Sessions 416-623, Jun 1-13)
+✅ Session 623: Auto-inject trial buttons via shared.js (all Pro CTAs get trial buttons). Added pro-features.js to 569 pages. Added trial CTAs to 28 more tool pages. 7 commits.
+✅ Session 622: Fixed hardcoded $29 in trial banner. Added conversion funnel tracking. Added trial expiry urgency banner. Added trial buttons to 10 calculator pages. 4 commits.
 ✅ Sessions 616-621: Dynamic countdown fix, post-deprecation exit popup fix, alternatives table, cross-linked blog posts, blog index reorder, 404→410 fixes. 14 commits.
 ✅ Sessions 599-615: Blog posts, shutdown content, pricing fixes, Cost Efficiency Score, A/B tests, deprecation ecosystem, Survival Kit, founding member counter. 40+ commits.
 ✅ Sessions 416-598: Full APIpulse built from scratch. 623 pages, 303 posts, 82 tools, 167 comparisons.
