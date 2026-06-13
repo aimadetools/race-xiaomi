@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Claude 4 Alternatives Comparison — Side-by-Side Pricing, Features & Migration Guide | APIpulse</title>
+    <meta name="description" content="Compare ALL Claude 4 alternatives side by side. Pricing, context windows, speed, code quality, and migration difficulty. Find the cheapest drop-in replacement in 2 minutes.">
+    <meta name="keywords" content="claude 4 alternatives comparison, best claude 4 replacement, claude 4 alternative pricing, cheapest claude 4 alternative, claude 4 vs gpt-5, claude 4 vs gemini, claude 4 vs deepseek, claude 4 migration alternatives">
+    <meta property="og:title" content="Claude 4 Alternatives Comparison — Side-by-Side">
+    <meta property="og:description" content="Compare all Claude 4 alternatives side by side. Pricing, features, migration difficulty. Save up to 97%.">
+    <meta property="og:type" content="article">
+    <meta property="article:published_time" content="2026-06-13">
+    <meta property="article:modified_time" content="2026-06-13">
+    <meta property="article:author" content="APIpulse">
+    <meta property="og:image" content="https://getapipulse.com/og-image.png">
+    <meta property="og:url" content="https://getapipulse.com/claude-4-alternatives-comparison.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Claude 4 Alternatives Comparison">
+    <meta name="twitter:image" content="https://getapipulse.com/og-image.png">
+    <meta name="twitter:description" content="Compare all Claude 4 alternatives side by side. Pricing, features, migration difficulty.">
+    <link rel="canonical" href="https://getapipulse.com/claude-4-alternatives-comparison.html">
+    <link rel="alternate" type="application/rss+xml" title="APIpulse Blog" href="https://getapipulse.com/rss.xml">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="styles.css">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0CEP7S9Y3J"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-0CEP7S9Y3J');
+    </script>
+    <script src="analytics.js" defer></script>
+    <script src="dynamic-date.js" defer></script>
+    <script src="shared.js" defer></script>
+    <script src="pricing-data.js" defer></script>
+    <script src="pro-features.js" defer></script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "Claude 4 Alternatives Comparison — Side-by-Side Pricing, Features & Migration Guide",
+        "description": "Compare all Claude 4 alternatives side by side with pricing, context windows, and migration notes.",
+        "datePublished": "2026-06-13",
+        "dateModified": "2026-06-13",
+        "author": { "@type": "Organization", "name": "APIpulse" },
+        "publisher": { "@type": "Organization", "name": "APIpulse", "url": "https://getapipulse.com" }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "What is the cheapest Claude 4 alternative?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "DeepSeek V4 Pro at $0.435/$0.87 per 1M tokens is the cheapest Claude 4 alternative — 97% cheaper than Claude 4 Opus. For even lower cost, Gemini 2.0 Flash at $0.10/$0.40 is 99% cheaper but trades some quality."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What is the best drop-in replacement for Claude 4?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Claude Opus 4.8 ($5/$25) is the direct drop-in replacement — same API, just change the model name. Claude Sonnet 4.6 ($3/$15) replaces Claude Sonnet 4. Both are 67% cheaper than the models they replace."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Can I switch from Claude 4 to GPT-5 without changing code?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes — GPT-5 uses the same OpenAI-compatible API format that Claude 4 supported. Change your model ID from 'claude-4-opus' to 'gpt-5' and update your API key. Most apps need fewer than 5 lines of code changed."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How much can I save by switching from Claude 4?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Savings range from 67% (Claude Opus 4.8) to 97% (DeepSeek V4 Pro). For a typical workload of 10M input + 2M output tokens monthly, Claude 4 Opus costs $100 while DeepSeek V4 Pro costs $6.09 — saving $93.91/month."
+                }
+            }
+        ]
+    }
+    </script>
+    <style>
+        .comp-page { max-width: 1000px; margin: 0 auto; padding: 120px 24px 80px; }
+        h1 { font-size: 34px; font-weight: 800; margin-bottom: 8px; }
+        .subtitle { color: var(--text-secondary); font-size: 16px; margin-bottom: 40px; line-height: 1.6; max-width: 700px; }
+
+        /* Countdown */
+        .countdown-bar{background:linear-gradient(135deg,rgba(239,68,68,0.12),rgba(245,158,11,0.12));border:1px solid rgba(239,68,68,0.3);border-radius:12px;padding:16px 20px;margin-bottom:32px;display:flex;align-items:center;justify-content:center;gap:20px;flex-wrap:wrap}
+        .countdown-unit{text-align:center}
+        .countdown-number{font-size:28px;font-weight:800;color:var(--red)}
+        .countdown-label{font-size:11px;color:var(--text-muted);text-transform:uppercase;letter-spacing:1px}
+        .countdown-sep{font-size:22px;color:var(--text-muted);font-weight:300}
+        @media(max-width:600px){.countdown-bar{gap:10px;padding:12px}.countdown-number{font-size:22px}}
+
+        /* Hero */
+        .hero-stats { display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 32px; }
+        .hero-stat { background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 12px; padding: 16px 20px; flex: 1; min-width: 140px; text-align: center; }
+        .hero-stat .num { font-size: 28px; font-weight: 800; color: var(--accent); }
+        .hero-stat .label { font-size: 12px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px; }
+
+        /* Main comparison table */
+        .comp-section { margin-bottom: 40px; }
+        .comp-section h2 { font-size: 22px; font-weight: 700; margin-bottom: 16px; display: flex; align-items: center; gap: 10px; }
+        .comp-section h2 .icon { font-size: 24px; }
+        .comp-table-wrap { overflow-x: auto; margin-bottom: 16px; border-radius: 12px; border: 1px solid var(--border); }
+        .comp-table { width: 100%; border-collapse: collapse; min-width: 700px; }
+        .comp-table th, .comp-table td { padding: 12px 16px; text-align: left; border-bottom: 1px solid var(--border); font-size: 14px; }
+        .comp-table th { background: var(--bg-card); font-weight: 700; font-size: 11px; text-transform: uppercase; letter-spacing: 0.5px; color: var(--text-secondary); position: sticky; top: 0; }
+        .comp-table td { color: var(--text-secondary); }
+        .comp-table tr:last-child td { border-bottom: none; }
+        .comp-table tr:hover td { background: rgba(99,102,241,0.04); }
+        .comp-table .model-name { font-weight: 700; color: var(--text-primary); white-space: nowrap; }
+        .comp-table .price { font-weight: 600; white-space: nowrap; }
+        .comp-table .cheapest { color: var(--green); font-weight: 700; }
+        .comp-table .expensive { color: var(--red); }
+        .comp-table .direct { color: var(--accent); font-weight: 600; }
+
+        /* Badges */
+        .badge { display: inline-block; padding: 2px 8px; border-radius: 4px; font-size: 10px; font-weight: 700; text-transform: uppercase; white-space: nowrap; }
+        .badge-direct { background: rgba(99,102,241,0.15); color: var(--accent); }
+        .badge-cheapest { background: rgba(34,197,94,0.15); color: var(--green); }
+        .badge-best { background: rgba(245,158,11,0.15); color: #d97706; }
+        .badge-easy { background: rgba(34,197,94,0.15); color: var(--green); }
+        .badge-medium { background: rgba(245,158,11,0.15); color: #d97706; }
+        .badge-hard { background: rgba(239,68,68,0.15); color: var(--red); }
+
+        /* Savings bar */
+        .savings-bar { display: flex; align-items: center; gap: 8px; margin-top: 4px; }
+        .savings-bar .bar { height: 6px; border-radius: 3px; background: var(--green); min-width: 4px; }
+        .savings-bar .pct { font-size: 12px; font-weight: 700; color: var(--green); }
+
+        /* Quick pick cards */
+        .quick-picks { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; margin-bottom: 40px; }
+        .pick-card { background: var(--bg-secondary); border: 2px solid var(--border); border-radius: 16px; padding: 24px; text-align: center; transition: border-color 0.2s, transform 0.2s; }
+        .pick-card:hover { border-color: var(--accent); transform: translateY(-2px); }
+        .pick-card .pick-label { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--text-muted); margin-bottom: 8px; }
+        .pick-card .pick-model { font-size: 18px; font-weight: 800; color: var(--text-primary); margin-bottom: 4px; }
+        .pick-card .pick-price { font-size: 14px; color: var(--green); font-weight: 600; margin-bottom: 8px; }
+        .pick-card .pick-save { font-size: 13px; color: var(--text-secondary); }
+        .pick-card.highlighted { border-color: var(--accent); background: linear-gradient(135deg, rgba(99,102,241,0.05), rgba(139,92,246,0.05)); }
+
+        /* Code snippet */
+        .code-block { background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; padding: 20px; margin: 16px 0; overflow-x: auto; }
+        .code-block code { font-family: 'SF Mono', 'Fira Code', monospace; font-size: 13px; line-height: 1.6; color: var(--text-secondary); white-space: pre; }
+        .code-block .comment { color: var(--text-muted); }
+        .code-block .keyword { color: var(--accent); }
+        .code-block .string { color: var(--green); }
+        .code-block .highlight-line { background: rgba(99,102,241,0.08); margin: 0 -20px; padding: 0 20px; border-left: 3px solid var(--accent); }
+
+        /* CTA */
+        .cta-box { background: linear-gradient(135deg, rgba(99,102,241,0.1), rgba(139,92,246,0.1)); border: 1px solid var(--accent); border-radius: 16px; padding: 32px; text-align: center; margin: 40px 0; }
+        .cta-box h2 { font-size: 22px; font-weight: 700; margin-bottom: 8px; }
+        .cta-box p { color: var(--text-secondary); font-size: 15px; margin-bottom: 20px; max-width: 500px; margin-left: auto; margin-right: auto; }
+
+        /* Bottom line */
+        .bottom-line { background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 16px; padding: 28px; margin-bottom: 32px; }
+        .bottom-line h2 { font-size: 18px; font-weight: 700; margin-bottom: 12px; }
+        .bottom-line ul { list-style: none; padding: 0; }
+        .bottom-line li { padding: 8px 0; border-bottom: 1px solid var(--border); font-size: 14px; color: var(--text-secondary); display: flex; align-items: center; gap: 8px; }
+        .bottom-line li:last-child { border-bottom: none; }
+        .bottom-line li strong { color: var(--text-primary); }
+
+        @media (max-width: 768px) {
+            .comp-page { padding: 100px 16px 60px; }
+            h1 { font-size: 26px; }
+            .hero-stats { flex-direction: column; }
+            .quick-picks { grid-template-columns: 1fr; }
+            .comp-table th, .comp-table td { padding: 10px 8px; font-size: 12px; }
+        }
+    </style>
+    <meta name="theme-color" content="#6366f1">
+</head>
+<body>
+    <a href="#main" class="skip-link">Skip to content</a>
+    <nav>
+        <div class="nav-inner">
+            <a href="index.html" class="logo">API<span>pulse</span></a>
+            <button class="hamburger" onclick="toggleMobileNav()" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+            <div class="nav-links">
+                <a href="claude-4-status.html">Status</a>
+                <a href="claude-4-migration-tool.html">Migration</a>
+                <a href="compare.html">Compare</a>
+                <a href="calculator.html">Calculator</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="blog.html">Blog</a>
+                <a href="api-docs.html" style="color:var(--accent);">API</a>
+                <a href="pricing.html" class="nav-cta" onclick="if(window.trackEvent)window.trackEvent('pro_button_clicked',{source:'nav'})">Get Pro — $29</a>
+                <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
+            </div>
+        </div>
+    </nav>
+
+    <main id="main">
+        <div class="comp-page">
+            <h1>Claude 4 Alternatives: Complete Comparison</h1>
+            <p class="subtitle">Claude 4 was retired on June 15, 2026. Every alternative, every price, every tradeoff — in one page. Compare 10 models side by side and find your cheapest migration path in 2 minutes.</p>
+
+            <div class="countdown-bar">
+                <div class="countdown-unit"><div class="countdown-number" id="cd-days">--</div><div class="countdown-label">Days</div></div>
+                <div class="countdown-sep">:</div>
+                <div class="countdown-unit"><div class="countdown-number" id="cd-hours">--</div><div class="countdown-label">Hours</div></div>
+                <div class="countdown-sep">:</div>
+                <div class="countdown-unit"><div class="countdown-number" id="cd-mins">--</div><div class="countdown-label">Minutes</div></div>
+                <div class="countdown-sep">:</div>
+                <div class="countdown-unit"><div class="countdown-number" id="cd-secs">--</div><div class="countdown-label">Seconds</div></div>
+            </div>
+
+            <!-- Quick Stats -->
+            <div class="hero-stats">
+                <div class="hero-stat"><div class="num">10</div><div class="label">Alternatives Compared</div></div>
+                <div class="hero-stat"><div class="num">97%</div><div class="label">Max Savings</div></div>
+                <div class="hero-stat"><div class="num">5 min</div><div class="label">Average Migration</div></div>
+                <div class="hero-stat"><div class="num">$0.10</div><div class="label">Cheapest Input/1M</div></div>
+            </div>
+
+            <!-- Quick Picks -->
+            <h2 style="font-size:20px;font-weight:700;margin-bottom:16px;">⚡ Quick Picks</h2>
+            <div class="quick-picks">
+                <div class="pick-card highlighted">
+                    <div class="pick-label">🏆 Best Drop-In</div>
+                    <div class="pick-model">Claude Opus 4.8</div>
+                    <div class="pick-price">$5 / $25 per 1M tokens</div>
+                    <div class="pick-save">67% cheaper than Claude 4 Opus</div>
+                </div>
+                <div class="pick-card">
+                    <div class="pick-label">💰 Cheapest</div>
+                    <div class="pick-model">DeepSeek V4 Pro</div>
+                    <div class="pick-price">$0.435 / $0.87 per 1M tokens</div>
+                    <div class="pick-save">97% cheaper — $6/mo vs $100/mo</div>
+                </div>
+                <div class="pick-card">
+                    <div class="pick-label">⚖️ Best Value</div>
+                    <div class="pick-model">GPT-5</div>
+                    <div class="pick-price">$1.25 / $10 per 1M tokens</div>
+                    <div class="pick-save">89% cheaper — great quality</div>
+                </div>
+                <div class="pick-card">
+                    <div class="pick-label">📄 Best for RAG</div>
+                    <div class="pick-model">Gemini 3.1 Pro</div>
+                    <div class="pick-price">$2 / $12 per 1M tokens</div>
+                    <div class="pick-save">1M context, 80% cheaper</div>
+                </div>
+            </div>
+
+            <!-- Full Comparison Table -->
+            <div class="comp-section">
+                <h2><span class="icon">📊</span> Full Pricing Comparison</h2>
+                <p style="color:var(--text-secondary);font-size:14px;margin-bottom:16px;">All prices per 1 million tokens. Monthly estimates based on 10M input + 2M output tokens.</p>
+                <div class="comp-table-wrap">
+                    <table class="comp-table">
+                        <thead>
+                            <tr>
+                                <th>Model</th>
+                                <th>Input / 1M</th>
+                                <th>Output / 1M</th>
+                                <th>Monthly Cost</th>
+                                <th>Savings vs Claude 4</th>
+                                <th>Context</th>
+                                <th>Best For</th>
+                                <th>Migration</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="model-name">Claude 4 Opus <span class="badge badge-direct">RETIRED</span></td>
+                                <td class="price expensive">$15.00</td>
+                                <td class="price expensive">$75.00</td>
+                                <td class="price expensive">$300</td>
+                                <td>—</td>
+                                <td>200K</td>
+                                <td>Baseline</td>
+                                <td>—</td>
+                            </tr>
+                            <tr>
+                                <td class="model-name">Claude Opus 4.8 <span class="badge badge-direct">Drop-In</span></td>
+                                <td class="price direct">$5.00</td>
+                                <td class="price direct">$25.00</td>
+                                <td class="price">$100</td>
+                                <td>
+                                    <div class="savings-bar"><div class="bar" style="width:67px"></div><span class="pct">67%</span></div>
+                                </td>
+                                <td>1M</td>
+                                <td>Direct replacement</td>
+                                <td><span class="badge badge-easy">Easy</span></td>
+                            </tr>
+                            <tr>
+                                <td class="model-name">Claude Sonnet 4.6 <span class="badge badge-direct">Drop-In</span></td>
+                                <td class="price direct">$3.00</td>
+                                <td class="price direct">$15.00</td>
+                                <td class="price">$60</td>
+                                <td>
+                                    <div class="savings-bar"><div class="bar" style="width:80px"></div><span class="pct">80%</span></div>
+                                </td>
+                                <td>200K</td>
+                                <td>Code, chat, writing</td>
+                                <td><span class="badge badge-easy">Easy</span></td>
+                            </tr>
+                            <tr>
+                                <td class="model-name">Claude Haiku 4.5</td>
+                                <td class="price">$1.00</td>
+                                <td class="price">$5.00</td>
+                                <td class="price">$20</td>
+                                <td>
+                                    <div class="savings-bar"><div class="bar" style="width:93px"></div><span class="pct">93%</span></div>
+                                </td>
+                                <td>200K</td>
+                                <td>Budget chat, light tasks</td>
+                                <td><span class="badge badge-easy">Easy</span></td>
+                            </tr>
+                            <tr>
+                                <td class="model-name">GPT-5 <span class="badge badge-best">Best Value</span></td>
+                                <td class="price">$1.25</td>
+                                <td class="price">$10.00</td>
+                                <td class="price">$32.50</td>
+                                <td>
+                                    <div class="savings-bar"><div class="bar" style="width:89px"></div><span class="pct">89%</span></div>
+                                </td>
+                                <td>256K</td>
+                                <td>General, code, writing</td>
+                                <td><span class="badge badge-easy">Easy</span></td>
+                            </tr>
+                            <tr>
+                                <td class="model-name">Gemini 3.1 Pro</td>
+                                <td class="price">$2.00</td>
+                                <td class="price">$12.00</td>
+                                <td class="price">$44</td>
+                                <td>
+                                    <div class="savings-bar"><div class="bar" style="width:85px"></div><span class="pct">85%</span></div>
+                                </td>
+                                <td>1M</td>
+                                <td>RAG, long docs</td>
+                                <td><span class="badge badge-medium">Medium</span></td>
+                            </tr>
+                            <tr>
+                                <td class="model-name">Gemini 2.0 Flash</td>
+                                <td class="price cheapest">$0.10</td>
+                                <td class="price cheapest">$0.40</td>
+                                <td class="price cheapest">$1.80</td>
+                                <td>
+                                    <div class="savings-bar"><div class="bar" style="width:99px"></div><span class="pct">99%</span></div>
+                                </td>
+                                <td>1M</td>
+                                <td>Ultra-budget, fast</td>
+                                <td><span class="badge badge-medium">Medium</span></td>
+                            </tr>
+                            <tr>
+                                <td class="model-name">Grok 4.3</td>
+                                <td class="price">$1.25</td>
+                                <td class="price">$2.50</td>
+                                <td class="price">$17.50</td>
+                                <td>
+                                    <div class="savings-bar"><div class="bar" style="width:94px"></div><span class="pct">94%</span></div>
+                                </td>
+                                <td>1M</td>
+                                <td>Real-time data, X/Twitter</td>
+                                <td><span class="badge badge-easy">Easy</span></td>
+                            </tr>
+                            <tr>
+                                <td class="model-name">DeepSeek V4 Pro <span class="badge badge-cheapest">Cheapest</span></td>
+                                <td class="price cheapest">$0.435</td>
+                                <td class="price cheapest">$0.87</td>
+                                <td class="price cheapest">$6.09</td>
+                                <td>
+                                    <div class="savings-bar"><div class="bar" style="width:97px"></div><span class="pct">97%</span></div>
+                                </td>
+                                <td>1M</td>
+                                <td>Budget everything</td>
+                                <td><span class="badge badge-easy">Easy</span></td>
+                            </tr>
+                            <tr>
+                                <td class="model-name">Cohere Command A</td>
+                                <td class="price">$2.50</td>
+                                <td class="price">$10.00</td>
+                                <td class="price">$45</td>
+                                <td>
+                                    <div class="savings-bar"><div class="bar" style="width:85px"></div><span class="pct">85%</span></div>
+                                </td>
+                                <td>128K</td>
+                                <td>RAG, enterprise</td>
+                                <td><span class="badge badge-medium">Medium</span></td>
+                            </tr>
+                            <tr>
+                                <td class="model-name">Mistral Large 3</td>
+                                <td class="price">$0.50</td>
+                                <td class="price">$1.50</td>
+                                <td class="price">$8</td>
+                                <td>
+                                    <div class="savings-bar"><div class="bar" style="width:97px"></div><span class="pct">97%</span></div>
+                                </td>
+                                <td>128K</td>
+                                <td>EU data residency</td>
+                                <td><span class="badge badge-easy">Easy</span></td>
+                            </tr>
+                            <tr>
+                                <td class="model-name">Kimi K2.6</td>
+                                <td class="price">$0.60</td>
+                                <td class="price">$2.20</td>
+                                <td class="price">$10.40</td>
+                                <td>
+                                    <div class="savings-bar"><div class="bar" style="width:96px"></div><span class="pct">96%</span></div>
+                                </td>
+                                <td>128K</td>
+                                <td>Chinese/English</td>
+                                <td><span class="badge badge-medium">Medium</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Migration Difficulty -->
+            <div class="comp-section">
+                <h2><span class="icon">🔄</span> Migration Difficulty</h2>
+                <div class="comp-table-wrap">
+                    <table class="comp-table">
+                        <thead>
+                            <tr>
+                                <th>Model</th>
+                                <th>Code Changes</th>
+                                <th>API Compatible</th>
+                                <th>Model ID Change</th>
+                                <th>Time to Migrate</th>
+                                <th>Guide</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="model-name">Claude Opus 4.8</td>
+                                <td>0 lines</td>
+                                <td>✅ Same API</td>
+                                <td><code>claude-4-opus → claude-opus-4.8</code></td>
+                                <td>1 min</td>
+                                <td><a href="blog-claude-4-to-opus48-migration.html" style="color:var(--accent);">Guide →</a></td>
+                            </tr>
+                            <tr>
+                                <td class="model-name">Claude Sonnet 4.6</td>
+                                <td>0 lines</td>
+                                <td>✅ Same API</td>
+                                <td><code>claude-sonnet-4 → claude-sonnet-4.6</code></td>
+                                <td>1 min</td>
+                                <td><a href="blog-claude-4-to-sonnet46-migration.html" style="color:var(--accent);">Guide →</a></td>
+                            </tr>
+                            <tr>
+                                <td class="model-name">Claude Haiku 4.5</td>
+                                <td>0 lines</td>
+                                <td>✅ Same API</td>
+                                <td><code>claude-sonnet-4 → claude-haiku-4.5</code></td>
+                                <td>1 min</td>
+                                <td><a href="claude-4-migration-tool.html" style="color:var(--accent);">Tool →</a></td>
+                            </tr>
+                            <tr>
+                                <td class="model-name">GPT-5</td>
+                                <td>~5 lines</td>
+                                <td>✅ OpenAI format</td>
+                                <td><code>claude-4-opus → gpt-5</code></td>
+                                <td>5 min</td>
+                                <td><a href="blog-claude-4-to-gpt5-migration.html" style="color:var(--accent);">Guide →</a></td>
+                            </tr>
+                            <tr>
+                                <td class="model-name">Gemini 3.1 Pro</td>
+                                <td>~10 lines</td>
+                                <td>⚠️ Google SDK</td>
+                                <td>New SDK import</td>
+                                <td>15 min</td>
+                                <td><a href="blog-claude-4-to-gemini-migration.html" style="color:var(--accent);">Guide →</a></td>
+                            </tr>
+                            <tr>
+                                <td class="model-name">Gemini 2.0 Flash</td>
+                                <td>~10 lines</td>
+                                <td>⚠️ Google SDK</td>
+                                <td>New SDK import</td>
+                                <td>15 min</td>
+                                <td><a href="blog-claude-4-to-gemini-migration.html" style="color:var(--accent);">Guide →</a></td>
+                            </tr>
+                            <tr>
+                                <td class="model-name">Grok 4.3</td>
+                                <td>~3 lines</td>
+                                <td>✅ OpenAI format</td>
+                                <td><code>claude-4-opus → grok-4.3</code></td>
+                                <td>3 min</td>
+                                <td><a href="blog-claude-4-to-grok-migration.html" style="color:var(--accent);">Guide →</a></td>
+                            </tr>
+                            <tr>
+                                <td class="model-name">DeepSeek V4 Pro</td>
+                                <td>~3 lines</td>
+                                <td>✅ OpenAI format</td>
+                                <td><code>claude-4-opus → deepseek-v4-pro</code></td>
+                                <td>3 min</td>
+                                <td><a href="blog-claude-4-to-deepseek-migration.html" style="color:var(--accent);">Guide →</a></td>
+                            </tr>
+                            <tr>
+                                <td class="model-name">Cohere Command A</td>
+                                <td>~15 lines</td>
+                                <td>⚠️ Cohere SDK</td>
+                                <td>New SDK import</td>
+                                <td>20 min</td>
+                                <td><a href="blog-claude-4-to-cohere-migration.html" style="color:var(--accent);">Guide →</a></td>
+                            </tr>
+                            <tr>
+                                <td class="model-name">Mistral Large 3</td>
+                                <td>~5 lines</td>
+                                <td>✅ OpenAI format</td>
+                                <td><code>claude-4-opus → mistral-large-3</code></td>
+                                <td>5 min</td>
+                                <td><a href="blog-claude-4-to-mistral-migration.html" style="color:var(--accent);">Guide →</a></td>
+                            </tr>
+                            <tr>
+                                <td class="model-name">Kimi K2.6</td>
+                                <td>~5 lines</td>
+                                <td>✅ OpenAI format</td>
+                                <td><code>claude-4-opus → kimi-k2.6</code></td>
+                                <td>5 min</td>
+                                <td><a href="blog-claude-4-to-kimi-migration.html" style="color:var(--accent);">Guide →</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Quick Migration Code -->
+            <div class="comp-section">
+                <h2><span class="icon">⚡</span> Quick Migration Code</h2>
+                <p style="color:var(--text-secondary);font-size:14px;margin-bottom:16px;">The fastest path: change 1 line in your code. Here's how for each provider.</p>
+
+                <h3 style="font-size:16px;font-weight:600;margin:20px 0 12px;">Python (Anthropic SDK → any provider)</h3>
+                <div class="code-block"><code><span class="comment"># Before: Claude 4 Opus ($15/$75 per 1M tokens)</span>
+response = client.messages.create(
+    model=<span class="string">"claude-4-opus-20250514"</span>,
+    messages=[{"role": "user", "content": prompt}]
+)
+
+<span class="comment"># After: Claude Opus 4.8 — same API, 67% cheaper</span>
+<span class="highlight-line">response = client.messages.create(</span>
+<span class="highlight-line">    model=<span class="string">"claude-opus-4-8-20260101"</span>,  <span class="comment"># ← just change this</span></span>
+<span class="highlight-line">    messages=[{"role": "user", "content": prompt}]</span>
+<span class="highlight-line">)</span>
+
+<span class="comment"># After: DeepSeek V4 Pro — 97% cheaper, OpenAI-compatible</span>
+<span class="keyword">from</span> openai <span class="keyword">import</span> OpenAI
+deepseek = OpenAI(base_url=<span class="string">"https://api.deepseek.com/v1"</span>, api_key=ds_key)
+<span class="highlight-line">response = deepseek.chat.completions.create(</span>
+<span class="highlight-line">    model=<span class="string">"deepseek-v4-pro"</span>,</span>
+<span class="highlight-line">    messages=[{"role": "user", "content": prompt}]</span>
+<span class="highlight-line">)</span></code></div>
+
+                <h3 style="font-size:16px;font-weight:600;margin:20px 0 12px;">Node.js (Anthropic SDK → any provider)</h3>
+                <div class="code-block"><code><span class="comment">// Before: Claude 4 Opus ($15/$75 per 1M tokens)</span>
+const response = await anthropic.messages.create({
+  model: <span class="string">"claude-4-opus-20250514"</span>,
+  messages: [{ role: "user", content: prompt }]
+});
+
+<span class="comment">// After: Claude Opus 4.8 — same API, 67% cheaper</span>
+<span class="highlight-line">const response = await anthropic.messages.create({</span>
+<span class="highlight-line">  model: <span class="string">"claude-opus-4-8-20260101"</span>,  <span class="comment">// ← just change this</span></span>
+<span class="highlight-line">  messages: [{ role: "user", content: prompt }]</span>
+<span class="highlight-line">});</span>
+
+<span class="comment">// After: GPT-5 — 89% cheaper, OpenAI-compatible</span>
+<span class="keyword">import</span> OpenAI <span class="keyword">from</span> <span class="string">'openai'</span>;
+<span class="keyword">const</span> openai = <span class="keyword">new</span> OpenAI({ apiKey: openaiKey });
+<span class="highlight-line">const response = await openai.chat.completions.create({</span>
+<span class="highlight-line">  model: <span class="string">"gpt-5"</span>,</span>
+<span class="highlight-line">  messages: [{ role: "user", content: prompt }]</span>
+<span class="highlight-line">});</span></code></div>
+            </div>
+
+            <!-- CTA -->
+            <div class="cta-box">
+                <h2>Calculate Your Exact Savings</h2>
+                <p>Enter your actual Claude 4 usage and see exactly how much you'll save with each alternative. Pro users get personalized optimization recommendations.</p>
+                <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
+                    <a href="claude-deprecation-calculator.html" class="btn-primary" style="padding:14px 32px;">Free Calculator →</a>
+                    <a href="claude-4-migration-tool.html" class="btn-primary" style="padding:14px 32px;background:linear-gradient(135deg,var(--accent),#8b5cf6);">Migration Tool →</a>
+                </div>
+            </div>
+
+            <!-- PRO CTA -->
+            <div style="max-width:600px;margin:0 auto 40px;background:var(--bg-secondary);border:1px solid var(--accent);border-radius:12px;padding:24px;text-align:center;">
+                <p style="font-size:15px;color:var(--text-secondary);margin-bottom:12px;"><strong style="color:var(--text-primary);">Get the full migration toolkit.</strong> Pro users get custom model routing strategies, saved scenarios, cost reports, and optimization tips — plus all current and future tools.</p>
+                <div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap;">
+                    <a href="https://buy.stripe.com/fZu7sL3Gw3GS0RQeoDeEo0a" class="btn-primary" style="display:inline-block;padding:12px 28px;font-size:15px;" target="_blank" rel="noopener" onclick="if(window.trackEvent)window.trackEvent('pro_button_clicked',{source:'comparison_cta'})">Get Pro — $29 lifetime</a>
+                    <button onclick="startTrial();if(window.trackEvent)window.trackEvent('trial_started',{source:'comparison_cta'});" style="padding:12px 24px;font-size:14px;font-weight:600;border:2px solid var(--accent);background:transparent;color:var(--accent);border-radius:10px;cursor:pointer;transition:all 0.2s;" onmouseover="this.style.background='rgba(99,102,241,0.1)'" onmouseout="this.style.background='transparent'">Try Free for 24h →</button>
+                </div>
+                <p style="font-size:11px;color:var(--text-muted);margin-top:8px;">14-day money-back guarantee · Lock in founding member pricing · Or try free for 24 hours</p>
+            </div>
+
+            <!-- Bottom Line -->
+            <div class="bottom-line">
+                <h2>🎯 The Bottom Line</h2>
+                <ul>
+                    <li><strong>Zero code changes?</strong> → Claude Opus 4.8 or Sonnet 4.6 — same API, just change the model name</li>
+                    <li><strong>Maximum savings?</strong> → DeepSeek V4 Pro — 97% cheaper, $6/mo vs $100/mo</li>
+                    <li><strong>Best quality per dollar?</strong> → GPT-5 — 89% cheaper, excellent across all tasks</li>
+                    <li><strong>Long documents / RAG?</strong> → Gemini 3.1 Pro — 1M context, 80% cheaper</li>
+                    <li><strong>Enterprise / compliance?</strong> → Cohere Command A — SOC 2, HIPAA, native RAG</li>
+                    <li><strong>EU data residency?</strong> → Mistral Large 3 — European company, 97% cheaper</li>
+                    <li><strong>Real-time data?</strong> → Grok 4.3 — X/Twitter access, 94% cheaper</li>
+                    <li><strong>Chinese/English?</strong> → Kimi K2.6 — best bilingual performance, 96% cheaper</li>
+                </ul>
+            </div>
+
+            <!-- Related -->
+            <div style="margin-bottom:32px;">
+                <h2 style="font-size:18px;font-weight:700;margin-bottom:12px;">📋 Related Guides</h2>
+                <div style="display:flex;flex-wrap:wrap;gap:8px;">
+                    <a href="claude-4-status.html" style="background:var(--bg-secondary);border:1px solid var(--border);border-radius:8px;padding:8px 16px;font-size:13px;color:var(--text-secondary);text-decoration:none;">🔴 API Status</a>
+                    <a href="claude-4-is-down.html" style="background:rgba(239,68,68,0.1);border:1px solid rgba(239,68,68,0.3);border-radius:8px;padding:8px 16px;font-size:13px;color:var(--red);text-decoration:none;font-weight:600;">🚨 Claude 4 Down?</a>
+                    <a href="claude-4-migration-tool.html" style="background:var(--bg-secondary);border:1px solid var(--border);border-radius:8px;padding:8px 16px;font-size:13px;color:var(--text-secondary);text-decoration:none;">🔄 Migration Tool</a>
+                    <a href="claude-4-alternatives-by-use-case.html" style="background:var(--bg-secondary);border:1px solid var(--border);border-radius:8px;padding:8px 16px;font-size:13px;color:var(--text-secondary);text-decoration:none;">By Use Case</a>
+                    <a href="claude-4-migration-hub.html" style="background:rgba(99,102,241,0.1);border:1px solid rgba(99,102,241,0.3);border-radius:8px;padding:8px 16px;font-size:13px;color:var(--accent);text-decoration:none;font-weight:600;">📋 Migration Hub</a>
+                    <a href="claude-deprecation-calculator.html" style="background:var(--bg-secondary);border:1px solid var(--border);border-radius:8px;padding:8px 16px;font-size:13px;color:var(--text-secondary);text-decoration:none;">💰 Cost Calculator</a>
+                    <a href="claude-4-survival-kit.html" style="background:var(--bg-secondary);border:1px solid var(--border);border-radius:8px;padding:8px 16px;font-size:13px;color:var(--text-secondary);text-decoration:none;">🧰 Survival Kit</a>
+                </div>
+            </div>
+
+            <!-- Footer CTA -->
+            <div style="text-align:center;padding:32px 0;border-top:1px solid var(--border);">
+                <p style="font-size:14px;color:var(--text-secondary);margin-bottom:16px;">Data from <a href="pricing.html" style="color:var(--accent);">APIpulse Pricing Database</a> — updated daily. Prices as of June 13, 2026.</p>
+                <a href="index.html" style="color:var(--accent);text-decoration:none;font-weight:600;">← Back to APIpulse</a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-inner">
+            <div class="footer-grid">
+                <div>
+                    <a href="index.html" class="logo">API<span>pulse</span></a>
+                    <p style="font-size:13px;color:var(--text-muted);margin-top:8px;">Real-time AI model pricing.<br>Compare 42+ models across 10 providers.</p>
+                </div>
+                <div>
+                    <h4>Tools</h4>
+                    <a href="compare.html">Model Compare</a>
+                    <a href="calculator.html">Cost Calculator</a>
+                    <a href="pricing.html">Pricing Data</a>
+                    <a href="api-docs.html">API</a>
+                    <a href="model-selector.html">Model Selector</a>
+                </div>
+                <div>
+                    <h4>Claude 4 Shutdown</h4>
+                    <a href="claude-4-status.html">API Status</a>
+                    <a href="claude-4-is-down.html">Emergency Fix</a>
+                    <a href="claude-4-migration-tool.html">Migration Tool</a>
+                    <a href="claude-4-migration-hub.html">Migration Hub</a>
+                    <a href="claude-4-alternatives-comparison.html">Alternatives Comparison</a>
+                </div>
+                <div>
+                    <h4>Blog</h4>
+                    <a href="blog.html">All Posts</a>
+                    <a href="blog-pricing-report.html">Pricing Report</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 APIpulse. Built with data, not hype.</p>
+                <div class="footer-links">
+                    <a href="privacy.html">Privacy</a>
+                    <a href="terms.html">Terms</a>
+                    <a href="https://github.com" target="_blank" rel="noopener">GitHub</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+    // Countdown to Claude 4 shutdown (June 15, 2026)
+    (function(){
+        const target = new Date('2026-06-15T00:00:00Z').getTime();
+        function update(){
+            const now = Date.now();
+            const diff = target - now;
+            if(diff <= 0){
+                document.getElementById('cd-days').textContent = '0';
+                document.getElementById('cd-hours').textContent = '0';
+                document.getElementById('cd-mins').textContent = '0';
+                document.getElementById('cd-secs').textContent = '0';
+                return;
+            }
+            const d = Math.floor(diff / 86400000);
+            const h = Math.floor((diff % 86400000) / 3600000);
+            const m = Math.floor((diff % 3600000) / 60000);
+            const s = Math.floor((diff % 60000) / 1000);
+            document.getElementById('cd-days').textContent = d;
+            document.getElementById('cd-hours').textContent = h;
+            document.getElementById('cd-mins').textContent = m;
+            document.getElementById('cd-secs').textContent = s;
+        }
+        update();
+        setInterval(update, 1000);
+    })();
+    </script>
+</body>
+</html>
