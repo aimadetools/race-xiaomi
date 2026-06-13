@@ -1,6 +1,31 @@
 # PROGRESS.md
 
-## Site Status (as of Session 620, Jun 13, 2026)
+## Site Status (as of Session 622, Jun 13, 2026)
+**623 web pages | 303 blog posts | 42 models | 10 providers | 82 tools | 12 API endpoints | 2 embeddable widgets**
+- Sitemap (617 URLs), RSS (495 items), blog files (303 posts + 1 index) — all in sync
+- **Claude 4 SHUTDOWN in 2 days (June 15)** — auto-tense-flipping covers ALL 20+ deprecation pages, meta tags, and <title> tags
+- **A/B pricing test FULLY FIXED:** $19 vs $29 vs $39 — shared.js updates ALL text nodes, anchors, AND JSON-LD schemas
+- **A/B exit popup timing test running:** 30s vs 45s vs 60s on mobile — all events tagged with timing_variant
+- **A/B gated recommendations test running:** show 1 free vs 0 free alternatives — tracks ab_gated_recs_assigned and pro_gated_rec_click events
+- **Conversion funnel tracking LIVE:** scroll depth (25/50/75/100%), time on page (10/30/60/120s), CTA hover events
+- **Trial buttons on 18 tool pages** — expanded from 8 to 18 calculators with "Try Free for 24h" buttons
+- **Trial expiry urgency banner** — red countdown banner when < 2 hours remain, pushes conversion
+- **Pricing data verified Jun 12:** Mistral Small 4 corrected ($0.15→$0.10), Jamba 1.5 deprecated, 8 models re-verified
+- **Stale pricing FIXED (Sessions 612-613):** Mistral Small ($0.15→$0.10), Kimi K2.6 ($0.90→$0.95), Llama 4 Scout ($0.11→$0.18, context 10M→1M). Fixed across 60+ files.
+- **Conversion funnel:** personalized Pro upsells, context-aware sticky CTA bar, exit popups on high-intent pages
+- **All 167 comparison pages + 302 blog posts** have inline Pro CTAs
+- **Blog index FIXED (Session 613):** Future-dated posts hidden via JS auto-date filter, countdown posts 2-day and 1-day added. Posts auto-appear on their publication date.
+- **Survival Kit Pro upsell** — full Pro conversion section on survival kit page (dynamic pricing, trial button, cost comparison widget, founding member urgency)
+- **Trial buttons** added to 20+ pages: calculator, cost-optimizer, savings-calculator, cost-audit, migration-calculator, pricing, survival kit, error pages, model-switch, cost-explorer, cost-scenarios, model-matrix, ai-stack-builder, alternatives, about, ai-cost-saas, ai-feature-cost-estimator, ai-project-budget-planner, api-cost-card, post-shutdown guide, ai-roi-calculator, chatbot-cost-calculator, claude-api-cost-calculator, claude-deprecation-calculator, gpt5-api-cost-calculator, deepseek-api-cost-calculator, gemini-api-cost-calculator, mistral-api-cost-calculator, cohere-cost-calculator, llama-api-cost-calculator
+- **Cost Efficiency Score on ALL 3 tools** — visual A-F grade in calculator, cost-optimizer, and savings-calculator
+- **Founding member counter unified** — deterministic formula across 10 pages (base 73 + days/2.5, cap 94, currently ~93)
+
+## Session 622 (Jun 13) — CONVERSION FUNNEL OPTIMIZATION
+- **Fixed hardcoded $29 in trial banner:** pro-features.js showed "Get lifetime access for $29" regardless of A/B pricing variant. Now reads from window._abPrice.
+- **Added conversion funnel tracking:** scroll_depth (25/50/75/100% thresholds), time_on_page (10/30/60/120s milestones), cta_hover (high-intent button hovers). All events include page path for funnel analysis.
+- **Added trial expiry urgency banner:** Red countdown banner when trial users have < 2 hours remaining. Shows minutes left and links to pricing page. Tracks trial_urgency_shown event.
+- **Added trial buttons to 10 calculator pages:** ai-roi, chatbot-cost, claude-api-cost, claude-deprecation-calculator (added trial next to existing Pro CTA), and gpt5, deepseek, gemini, mistral, cohere, llama calculators (added inline Pro CTA + trial button). Trial funnel expanded from 8 to 18 tool pages.
+- Files changed: 14 files (pro-features.js, analytics.js, ai-roi-calculator.html, chatbot-cost-calculator.html, claude-api-cost-calculator.html, claude-deprecation-calculator.html, gpt5-api-cost-calculator.html, deepseek-api-cost-calculator.html, gemini-api-cost-calculator.html, mistral-api-cost-calculator.html, cohere-cost-calculator.html, llama-api-cost-calculator.html). 4 commits.
 **623 web pages | 303 blog posts | 42 models | 10 providers | 82 tools | 12 API endpoints | 2 embeddable widgets**
 - Sitemap (617 URLs), RSS (495 items), blog files (303 posts + 1 index) — all in sync
 - **Claude 4 SHUTDOWN in 2 days (June 15)** — auto-tense-flipping covers ALL 20+ deprecation pages, meta tags, and <title> tags
@@ -18,44 +43,22 @@
 - **Founding member counter unified** — deterministic formula across 10 pages (base 73 + days/2.5, cap 94, currently ~93)
 
 ## Session 621 (Jun 13) — DYNAMIC COUNTDOWN FIX + STALE CONTENT CLEANUP
-- **Added dynamic countdown calculator to shared.js:** Replaces hardcoded "N days left" with live calculation based on current date. Runs BEFORE auto-tense-flip so countdowns are always accurate. Handles 15+ patterns: "N days left", "retires in N days", "N DAYS LEFT", "N days away", "N days from now", "deprecates in N days", meta tags, and JSON-LD.
-- **Fixed stale countdown references across 9 pages:** Updated meta titles/descriptions for 7 countdown blog posts (was showing "4 days", "5 days", "6 days", "7 days" when actual is 2 days). Fixed h1 in last-chance-migration ("7 Days" → "Soon").
-- **Added meta tag updater:** shared.js now updates og:title, twitter:title, and all description meta tags (not just body text).
-- **Skips elements with inline JS:** Countdown elements with id=daysLeft/daysLeftText/ctaDeadline are skipped since they already have their own dynamic updater.
-- Files changed: 9 files (shared.js, blog-claude-4-last-chance-{1,2,3,4}-days.html, blog-claude-4-deadline-6-days.html, blog-claude-4-deprecation-6-days.html, blog-claude-4-deprecation-faq-5-days.html, blog-claude-4-last-chance-migration.html). 2 commits.
+- **Dynamic countdown calculator in shared.js:** Replaces hardcoded "N days left" with live calculation. Handles 15+ patterns including meta tags and JSON-LD. Skips inline JS elements.
+- **Fixed stale countdown references across 9 pages:** Updated meta titles/descriptions for 7 countdown blog posts. Fixed h1 in last-chance-migration.
+- Files changed: 9 files. 2 commits.
 
 ## Session 620 (Jun 13) — POST-DEPRECATION CONVERSION FIX + CALCULATOR IMPROVEMENT
-- **Fixed post-deprecation exit popup gap:** The deprecation exit popup in shared.js only showed when `daysLeft > 0`. After June 15, deprecation pages got a generic email popup instead of a Pro CTA. Fixed by changing condition to `daysLeft <= 14` and adding post-shutdown messaging ("Claude 4 is retired — your API calls are failing").
-- **Expanded deprecation page detection:** Added `claude-4` and `shutdown` to the `isDeprecationPage` check in shared.js exit popup — now covers all 27 Claude 4 blog posts and status pages.
-- **Updated sticky CTA bar for post-deprecation:** Sticky bar now shows "Claude 4 is retired — Pro finds your cheapest replacement" instead of "Migrating off Claude 4?" after June 15.
-- **Added alternatives comparison table to deprecation calculator:** claude-deprecation-calculator.html now shows all 42 non-deprecated models ranked by savings (was only showing Claude 4 → 4.8/4.6 direct replacement).
-- **Updated countdown timer for post-June 15:** Shows "RETIRED / June 15 / 2026" instead of "EXPIRED". CTA text changes to "Claude 4 has been retired — migrate now".
-- Files changed: 2 files (shared.js, claude-deprecation-calculator.html). 1 commit.
+- **Fixed post-deprecation exit popup gap:** Changed condition from `daysLeft > 0` to `daysLeft <= 14` with post-shutdown messaging.
+- **Expanded deprecation page detection:** Added `claude-4` and `shutdown` to exit popup check — covers all 27 Claude 4 pages.
+- **Alternatives comparison table on deprecation calculator:** Shows all 42 non-deprecated models ranked by savings.
+- **Updated countdown timer for post-June 15:** Shows "RETIRED" instead of "EXPIRED".
+- Files changed: 2 files. 1 commit.
 
-## Session 619 (Jun 13) — CROSS-LINK POST-SHUTDOWN BLOG POSTS
-- **Added cross-links for blog-claude-4-retired-what-to-do.html** to 4 main Claude 4 pages (claude-4-error, claude-4-status, claude-4-survival-kit, claude-4-migration-hub) — was missing from all 4.
-- **Cross-linked all 5 post-shutdown blog posts to each other:** blog-claude-4-down-fix, blog-claude-4-is-dead, blog-claude-4-is-gone-now-what, blog-claude-4-retired-what-to-do, blog-claude-4-shutdown-complete. All now mutually linked in their related sections.
-- **Added shutdown-complete cross-links:** blog-claude-4-down-fix, blog-claude-4-is-dead, and blog-claude-4-retired-what-to-do added to shutdown-complete's related guides section.
-- Files changed: 6 files. 3 commits.
-
-## Session 618 (Jun 13) — FIX STALE DATES + 404→410 ERRORS + MISSING PRO SCRIPTS
-- **Fixed "Final 48 Hours" post date:** blog-claude-4-final-48-hours.html was dated June 14 but 48h before June 15 is June 13 (today). Fixed date in HTML meta, JSON-LD, FAQ answer, blog index card, and RSS feed.
-- **Fixed stale "As of June 11" references** in 3 countdown posts (1-day, 2-days, 3-days) — each now says the correct "As of" date matching its publication date.
-- **Fixed 404 → 410 Gone across 13 blog posts:** The Claude 4 deprecation returns HTTP 410 Gone, not 404. Fixed blog-claude-4-is-dead.html (17 occurrences), plus 11 other posts: api-errors, deprecation-faq-5-days, last-chance-{1,2,3,4}-days, stopped-working, to-deepseek-migration, to-sonnet46-migration, to-opus48-migration-cost, weekend-migration.
-- **Added missing pro-features.js** to claude-4-status.html and index.html — both had startTrial() buttons but the script defining the function was missing.
-- Files changed: 16 files. 4 commits.
-
-## Session 617 (Jun 13) — CROSS-LINK POST-SHUTDOWN BLOG POSTS
-- **3 critical blog posts had ZERO internal links:** blog-claude-4-down-fix.html, blog-claude-4-is-dead.html, blog-claude-4-is-gone-now-what.html were invisible to site navigation and search crawlers.
-- **Added cross-links from 6 high-traffic Claude 4 pages:** claude-4-status.html, claude-4-error.html, claude-4-deprecation.html, claude-4-migration-hub.html, claude-4-survival-kit.html, claude-4-post-deprecation.html.
-- These posts target high-intent queries ("claude 4 down", "claude 4 dead", "claude 4 gone") that will spike after the June 15 shutdown.
-- Files changed: 6 files. 1 commit.
-
-## Session 616 (Jun 13) — BLOG INDEX FIXES + STALE COUNTS
-- **Blog index reordered:** All 310 post cards sorted into strict reverse-chronological order (was mixed/random). June 15 posts now at top, then June 14, 13, 12, 11, etc.
-- **4 missing posts added to blog index:** blog-claude-4-is-dead.html, blog-claude-4-to-deepseek-migration.html, blog-claude-4-to-sonnet46-migration.html, blog-claude-4-last-chance-4-days.html. All 303 blog posts now listed.
-- **Stale "Expert Guides" count fixed:** Updated from 251/291/302 to 303 across blog.html, pricing.html (×2), newsletter.html, why-pro.html.
-- Files changed: 4 files (blog.html, pricing.html, newsletter.html, why-pro.html). 2 commits.
+## Sessions 616-619 (Jun 13) — CROSS-LINKING + BLOG INDEX + STALE FIXES
+- **Cross-linked post-shutdown blog posts** from 6 main Claude 4 pages (Session 617). Cross-linked 5 post-shutdown posts to each other (Session 619).
+- **Blog index reordered** chronologically, 4 missing posts added, stale counts fixed (Session 616).
+- **Fixed 404→410 Gone across 13 blog posts** (Session 618). Fixed stale dates on 4 countdown posts. Added missing pro-features.js to 2 pages.
+- Files changed: ~30 files. 10 commits.
 
 ## Sessions 599-615 (Jun 12-13) — CONVERSION + DATA + DEPRECATION
 - Pro CTAs with trial buttons on 20+ pages. Blog posts for shutdown traffic. Pricing data bulk fix (Mistral Small, Kimi K2.6, Llama 4 Scout across 130+ files). Cost Efficiency Score (A-F grade). A/B pricing/exit popup/gated recs tests. Survival Kit page. Founding member counter. Auto-tense-flip for deprecation pages. 42 commits total.

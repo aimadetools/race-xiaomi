@@ -24,12 +24,8 @@
 - ✅ NEW: "Claude 4 Down? Fix It in 60 Seconds" blog post — DONE Session 614
 - ✅ Cross-linked 3 post-shutdown blog posts from 6 main Claude 4 pages — DONE Session 617
 
-### Completed (Sessions 416-620, Jun 1-13)
-✅ Session 620: Fixed post-deprecation exit popup gap (was only showing pre-June 15). Expanded deprecation page detection. Updated sticky CTA for post-shutdown. Added alternatives comparison table to deprecation calculator. Updated countdown timer. 1 commit.
-✅ Session 619: Cross-linked blog-claude-4-retired-what-to-do.html to 4 main pages. Cross-linked all 5 post-shutdown blog posts to each other. 3 commits.
-✅ Session 618: Fixed stale dates on 4 countdown posts, 404→410 Gone across 13 posts, added missing pro-features.js to 2 pages. 4 commits.
-✅ Session 617: Cross-linked 3 post-shutdown blog posts (down-fix, is-dead, is-gone) from 6 main Claude 4 pages.
-✅ Session 616: Blog index reordered (310 posts chronological), 4 missing posts added, stale counts fixed.
-✅ Session 615: Pro CTAs with trial buttons added to 10 tool pages. Fixed Stripe links. 4 commits.
-✅ Sessions 599-614: Blog posts, shutdown content, pricing fixes, Cost Efficiency Score, A/B tests, deprecation ecosystem, Survival Kit, founding member counter. 40+ commits.
+### Completed (Sessions 416-622, Jun 1-13)
+✅ Session 622: Fixed hardcoded $29 in trial banner (A/B variant mismatch). Added conversion funnel tracking (scroll depth, time-on-page, CTA hover). Added trial expiry urgency banner. Added trial buttons to 10 calculator pages (expanded from 8 to 18 tool pages). 4 commits.
+✅ Sessions 616-621: Dynamic countdown fix, stale content cleanup, post-deprecation exit popup fix, alternatives comparison table, cross-linked post-shutdown blog posts, blog index reorder, 404→410 fixes, missing pro-features.js. 14 commits.
+✅ Sessions 599-615: Blog posts, shutdown content, pricing fixes, Cost Efficiency Score, A/B tests, deprecation ecosystem, Survival Kit, founding member counter. 40+ commits.
 ✅ Sessions 416-598: Full APIpulse built from scratch. 623 pages, 303 posts, 82 tools, 167 comparisons.

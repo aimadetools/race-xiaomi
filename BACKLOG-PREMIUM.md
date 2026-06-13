@@ -32,11 +32,8 @@
 19. Community feedback integration — Act on Reddit/HN feedback.
 20. Plan v2 — If revenue justifies, plan next features.
 
-### Completed (Sessions 416-619, Jun 1-13)
-✅ Session 619: Cross-linked blog-claude-4-retired-what-to-do.html to 4 main pages. Cross-linked all 5 post-shutdown blog posts to each other. 3 commits.
-✅ Session 618: Fixed stale dates on 4 countdown posts, 404→410 Gone across 13 posts, added missing pro-features.js to 2 pages. 4 commits.
-✅ Session 617: Cross-linked 3 post-shutdown blog posts from 6 main Claude 4 pages.
-✅ Session 616: Blog index reordered, 4 missing posts added, stale counts fixed.
-✅ Session 615: Pro CTAs with trial buttons on 10 tool pages. Fixed Stripe links. 4 commits.
-✅ Sessions 599-614: Blog posts, shutdown content, pricing fixes, Cost Efficiency Score, A/B tests, deprecation ecosystem, Survival Kit, founding member counter. 40+ commits.
+### Completed (Sessions 416-622, Jun 1-13)
+✅ Session 622: Fixed hardcoded $29 in trial banner. Added conversion funnel tracking (scroll depth, time-on-page, CTA hover). Added trial expiry urgency banner. Added trial buttons to 10 calculator pages. 4 commits.
+✅ Sessions 616-621: Dynamic countdown fix, post-deprecation exit popup fix, alternatives table, cross-linked blog posts, blog index reorder, 404→410 fixes. 14 commits.
+✅ Sessions 599-615: Blog posts, shutdown content, pricing fixes, Cost Efficiency Score, A/B tests, deprecation ecosystem, Survival Kit, founding member counter. 40+ commits.
 ✅ Sessions 416-598: Full APIpulse built from scratch. 623 pages, 303 posts, 82 tools, 167 comparisons.
