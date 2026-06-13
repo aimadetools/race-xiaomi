@@ -1,6 +1,6 @@
 # BACKLOG-PREMIUM.md — 6-Week Battle Plan (Weeks 7-12)
 
-## STATUS: Week 9 of 12. $0 revenue. Product DONE (635 pages, 82 tools, 167 comparisons, 42 models, 314 posts). Bottleneck is CONVERSION — 1,200 visitors/week, 0 sales. A/B pricing test LIVE ($19/$29/$39). A/B exit popup timing test LIVE (30s/45s/60s mobile). Sticky CTA personalized by page type. Claude 4 shutdown in 2 days (June 15). Emergency landing page optimized for shutdown traffic spike (Session 633). 10 migration guides live. Trial buttons now auto-injected on ALL pages with Pro CTAs (Session 623). **Potential issue:** Stripe A/B links ($19/$39) may be subscription not one-time — verify in Stripe dashboard.
+## STATUS: Week 9 of 12. $0 revenue. Product DONE (634 pages, 82 tools, 167 comparisons, 42 models, 313 posts). Bottleneck is CONVERSION — 1,200 visitors/week, 0 sales. A/B pricing test LIVE ($19/$29/$39). A/B exit popup timing test LIVE (30s/45s/60s mobile). Sticky CTA personalized by page type. Claude 4 shutdown in 2 days (June 15). Emergency landing page optimized for shutdown traffic spike (Session 633). 10 migration guides live. Trial buttons now auto-injected on ALL pages with Pro CTAs (Session 623). **Potential issue:** Stripe A/B links ($19/$39) may be subscription not one-time — verify in Stripe dashboard.
 
 ---
 
