@@ -653,7 +653,7 @@ claude-sonnet-4-6</code>
                     <span class="price-note">One-time payment · Lifetime access · No subscription</span>
                 </div>
                 <a href="#" class="pro-cta" id="pro-cta-link">Get Pro — Lifetime Access</a>
-                <p class="pro-guarantee">14-day money-back guarantee · Instant access after payment</p>
+                <p class="pro-guarantee">14-day money-back guarantee · Instant access · No subscription — ever</p>
             </div>
         </section>
 
@@ -716,6 +716,10 @@ claude-sonnet-4-6</code>
             }
             if (priceEl && window._abPrice) {
                 priceEl.textContent = '$' + window._abPrice;
+            }
+            // Update CTA button text with price
+            if (cta && window._abPrice) {
+                cta.textContent = 'Get Pro — $' + window._abPrice + ' Lifetime Access';
             }
 
             // Shutdown Special: uncomment and set URL when $9 Stripe link is available
