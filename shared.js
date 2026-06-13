@@ -977,8 +977,10 @@ document.addEventListener('DOMContentLoaded', function() {
         btn.textContent = 'Subscribe';
     });
 
-    // --- Auto-inject trial buttons next to existing Pro CTAs ---
-    // Finds all "Get Pro" / "Unlock Pro" links and adds a trial button after them
+});
+
+// Auto-inject trial buttons next to existing Pro CTAs — runs on ALL pages (not just blog)
+document.addEventListener('DOMContentLoaded', function() {
     if (typeof startTrial === 'function') {
         document.querySelectorAll('a[href*="buy.stripe.com"], a[href*="pricing.html"]').forEach(function(a) {
             var text = (a.textContent || '').trim();
