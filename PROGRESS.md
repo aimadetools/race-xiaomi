@@ -52,8 +52,8 @@
 ## Session 628 (Jun 13) — 2 Migration Guides: Gemini & GPT-5
 - 2 new blog posts: Claude 4 to Gemini (92% cheaper) and GPT-5 (92% cheaper). All with cost comparisons, migration code, FAQPage schema. Added to sitemap, RSS, blog index. 2 commits. Flagged Stripe subscription link issue.
 
-## Summary: Sessions 599-627 (Jun 12-13)
-43 commits total. Content: 10 Claude 4 migration guides, "What Replaced Claude 4?" post, post-shutdown cross-links, blog index reorder, 404→410 fixes. Conversion: scroll depth/time/hover tracking, trial expiry urgency banner, exit popup timing A/B, gated recs A/B. Deprecation: auto-tense-flip for ALL pages, post-deprecation exit popup, alternatives table, shutdown countdown. SEO: meta descriptions updated on 10 deprecation pages, post-shutdown cross-links added to 6 migration pages. Pricing: bulk fix across 130+ files, A/B pricing test. Pro: trial buttons on ALL pages (bug fixed), Cost Efficiency Score, Survival Kit, founding member counter.
+## Summary: Sessions 599-627 (Jun 12-13) — 43 commits
+Content: 10 migration guides, "What Replaced" post, post-shutdown cross-links, blog index reorder, 404→410 fixes. Conversion: scroll/time/hover tracking, trial expiry banner, exit popup timing A/B, gated recs A/B. Deprecation: auto-tense-flip, post-deprecation exit popup, alternatives table, shutdown countdown. SEO: meta descriptions on 10 pages, cross-links on 6 pages. Pricing: bulk fix 130+ files, A/B pricing test. Pro: trial buttons all pages, Cost Efficiency Score, Survival Kit, founding member counter.
 
 ## Summary: Sessions 1-598 (Apr 5 - Jun 12)
 Built full APIpulse from scratch. 623 pages, 303 posts, 42 models, 10 providers, 82 tools, 12 API endpoints, 2 widgets. Domain, Stripe, Pro, GA4, newsletter, Chrome extension, 167 comparison pages, FAQPage schema on ~260 pages, streaming toggle, State of LLM Pricing Report, Claude 4 deprecation ecosystem (20+ pages), A/B pricing test, Model Selector quiz, Best Model guides. Site audit: 11,594 links fixed. 113 commits total.
