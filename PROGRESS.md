@@ -1,7 +1,7 @@
 # PROGRESS.md
 
-## Site Status (as of Session 624, Jun 13, 2026)
-**623 web pages | 303 blog posts | 42 models | 10 providers | 82 tools | 12 API endpoints | 2 embeddable widgets**
+## Site Status (as of Session 625, Jun 13, 2026)
+**624 web pages | 304 blog posts | 42 models | 10 providers | 82 tools | 12 API endpoints | 2 embeddable widgets**
 - Sitemap (617 URLs), RSS (495 items), blog files (303 posts + 1 index) — all in sync
 - **Claude 4 SHUTDOWN in 2 days (June 15)** — auto-tense-flipping covers ALL 20+ deprecation pages, meta tags, and <title> tags
 - **Trial buttons now on ALL pages with Pro CTAs** — auto-injected via shared.js on ALL pages (was previously blog-only due to bug)
@@ -17,6 +17,11 @@
 - **Survival Kit Pro upsell** — full Pro conversion section on survival kit page (dynamic pricing, trial button, cost comparison widget, founding member urgency)
 - **Cost Efficiency Score on ALL 3 tools** — visual A-F grade in calculator, cost-optimizer, and savings-calculator
 - **Founding member counter unified** — deterministic formula across 10 pages (base 73 + days/2.5, cap 94, currently ~93)
+
+## Session 625 (Jun 13) — New Blog Post + Cross-Links
+- **NEW BLOG POST: "What Replaced Claude 4?"** — 526-line comprehensive guide targeting the exact post-shutdown query. Covers Opus 4.8, Sonnet 4.6, and 12 alternatives ranked by cost with code snippets. Has FAQPage schema, Article schema, Pro CTAs, and related post cards.
+- **Added to sitemap.xml and rss.xml** — new post is indexed
+- **Cross-linked from 4 existing pages:** blog-claude-4-down-fix.html, blog-claude-4-shutdown-complete.html, blog-claude-4-is-gone-now-what.html, claude-4-migration-hub.html
 
 ## Session 624 (Jun 13) — CRITICAL: Trial Button Bug Fix
 - **FIXED: Trial button injection was blog-only, not global.** The auto-inject trial button code (shared.js lines 980-1000) was inside the blog email capture block (`if (!window.location.pathname.includes('blog-')) return;`), meaning trial buttons were ONLY injected on blog posts — NOT on comparison pages, tool pages, calculator pages, or any other page with Pro CTAs.

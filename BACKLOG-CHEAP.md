@@ -21,8 +21,9 @@
 - ✅ Auto-tense-flip handles all deprecation pages — DONE Session 598
 - ✅ "Claude 4 is gone — now what?" blog post — DONE Session 593
 - ✅ "Claude 4 Shutdown Complete" blog post — pre-written, goes live Jun 15
-- ✅ NEW: "Claude 4 Down? Fix It in 60 Seconds" blog post — DONE Session 614
+- ✅ "Claude 4 Down? Fix It in 60 Seconds" blog post — DONE Session 614
 - ✅ Cross-linked 3 post-shutdown blog posts from 6 main Claude 4 pages — DONE Session 617
+- ✅ "What Replaced Claude 4?" blog post — DONE Session 625 (526 lines, FAQPage schema, cross-linked from 4 pages)
 
 ### Completed (Sessions 416-624, Jun 1-13)
 ✅ Session 624: Fixed critical trial button injection bug — was blog-only, now runs on ALL pages. 167 comparison + 82 tool pages now get trial buttons. 1 commit.
