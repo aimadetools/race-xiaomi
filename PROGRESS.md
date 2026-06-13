@@ -33,32 +33,13 @@
 - **All posts include:** cost comparison tables, Python/Node.js migration code, LangChain migration, Pro CTAs, email capture, FAQ with FAQPage schema
 - **Added to sitemap.xml (623 URLs), rss.xml (501 items), blog.html index** — all 3 posts indexed
 - **Cross-linked from 3 pages each:** claude-4-migration-hub (guide cards), blog-what-replaced-claude-4 (related posts), blog-claude-4-shutdown-complete (related posts). 7 files changed per post.
-- **Total migration coverage now:** 9 migration guides (DeepSeek, Gemini, GPT-5, Llama 4 Maverick, Mistral, Kimi K2.6, Opus 4.8, Sonnet 4.6, Claude 4 to DeepSeek)
+- **Total migration coverage now:** 9 migration guides (DeepSeek, Gemini, GPT-5, Llama 4 Maverick, Mistral, Kimi K2.6, Opus 4.8, Sonnet 4.6, Claude 4 Weekend)
 
 ## Session 627 (Jun 13) — Post-Shutdown Cross-Links
-- **Added post-shutdown cross-links to 6 high-traffic pages** that were missing them: claude-4-alternatives-by-use-case, claude-4-migration-calculator, claude-4-migration-cheatsheet, claude-4-migration-checklist, claude-4-migration-command-center, claude-4-migration-tool. Each now has a prominent red "Claude 4 Has Been Shut Down" section linking to shutdown-complete, down-fix, and what-replaced blog posts. 6 files, 62 lines added.
+- Added post-shutdown cross-links to 6 high-traffic pages missing them. 6 files, 62 lines.
 
-## Session 626 (Jun 13) — Post-Shutdown SEO Meta Updates
-- **Updated meta descriptions on 10 deprecation pages** for post-shutdown SEO. Changed "before June 15", "retire June 15", "will fail" to past tense ("is retired", "are failing", "save 67-97%"). Pages: migration-hub, migration-tool, migration-checklist, migration-command-center, deprecation, status, last-chance, cheatsheet.
-- **Added "What Replaced Claude 4?" to blog index** — the post (Session 625) was in sitemap and RSS but missing from blog.html. Added post card in June 15 section.
-- **Updated migration-hub FAQ and subtitle** — "before June 15" → removed time reference, FAQ question updated to past tense.
-- **Updated migration-tool hero text and FAQ** — "retire June 15" → "are retired", FAQ updated for post-deadline context.
-
-## Session 625 (Jun 13) — New Blog Post + Cross-Links
-- **NEW BLOG POST: "What Replaced Claude 4?"** — 526-line comprehensive guide targeting the exact post-shutdown query. Covers Opus 4.8, Sonnet 4.6, and 12 alternatives ranked by cost with code snippets. Has FAQPage schema, Article schema, Pro CTAs, and related post cards.
-- **Added to sitemap.xml and rss.xml** — new post is indexed
-- **Cross-linked from 4 existing pages:** blog-claude-4-down-fix.html, blog-claude-4-shutdown-complete.html, blog-claude-4-is-gone-now-what.html, claude-4-migration-hub.html
-
-## Session 624 (Jun 13) — CRITICAL: Trial Button Bug Fix
-- **FIXED: Trial button injection was blog-only, not global.** The auto-inject trial button code (shared.js lines 980-1000) was inside the blog email capture block (`if (!window.location.pathname.includes('blog-')) return;`), meaning trial buttons were ONLY injected on blog posts — NOT on comparison pages, tool pages, calculator pages, or any other page with Pro CTAs.
-- **Impact:** 167 comparison pages + 82 tool pages with Pro CTAs were missing trial buttons. This was a critical conversion bug — the "Try Free 24h" button was not appearing next to "Get Pro" CTAs on most pages.
-- **Fix:** Extracted trial button injection into a separate global `DOMContentLoaded` handler that runs on ALL pages, not just blog posts. 1 file changed, 1 commit.
-
-## Session 623 (Jun 13) — UNIVERSAL TRIAL BUTTONS
-- Auto-inject trial buttons via shared.js. Added pro-features.js to 569 pages. Added trial CTAs to 28 tool pages. 583 files, 7 commits.
-
-## Summary: Sessions 599-627 (Jun 12-13)
-Conversion funnel: scroll depth/time/hover tracking, trial expiry urgency banner, exit popup timing A/B, gated recs A/B. Deprecation: auto-tense-flip for ALL pages, post-deprecation exit popup, alternatives table, shutdown countdown. Content: 304 blog posts, cross-linked post-shutdown content, blog index reorder, 404→410 fixes. SEO: meta descriptions updated on 10 deprecation pages, post-shutdown cross-links added to 6 migration pages. Pricing: bulk fix across 130+ files, A/B pricing test. Pro: trial buttons on 46+ tool pages, Cost Efficiency Score, Survival Kit, founding member counter. 55 commits total.
+## Summary: Sessions 599-626 (Jun 12-13)
+Conversion funnel: scroll depth/time/hover tracking, trial expiry urgency banner, exit popup timing A/B, gated recs A/B. Deprecation: auto-tense-flip for ALL pages, post-deprecation exit popup, alternatives table, shutdown countdown. Content: "What Replaced Claude 4?" post, cross-linked post-shutdown content, blog index reorder, 404→410 fixes. SEO: meta descriptions updated on 10 deprecation pages, post-shutdown cross-links added to 6 migration pages. Pricing: bulk fix across 130+ files, A/B pricing test. Pro: trial buttons on ALL pages (bug fixed), Cost Efficiency Score, Survival Kit, founding member counter. 55 commits total.
 
 ## Summary: Sessions 1-598 (Apr 5 - Jun 12)
 Built full APIpulse from scratch. 623 pages, 303 posts, 42 models, 10 providers, 82 tools, 12 API endpoints, 2 widgets. Domain, Stripe, Pro, GA4, newsletter, Chrome extension, 167 comparison pages, FAQPage schema on ~260 pages, streaming toggle, State of LLM Pricing Report, Claude 4 deprecation ecosystem (20+ pages), A/B pricing test, Model Selector quiz, Best Model guides. Site audit: 11,594 links fixed. 113 commits total.
