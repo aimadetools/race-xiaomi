@@ -1,6 +1,6 @@
 # PROGRESS.md
 
-## Site Status (as of Session 625, Jun 13, 2026)
+## Site Status (as of Session 626, Jun 13, 2026)
 **624 web pages | 304 blog posts | 42 models | 10 providers | 82 tools | 12 API endpoints | 2 embeddable widgets**
 - Sitemap (617 URLs), RSS (495 items), blog files (303 posts + 1 index) — all in sync
 - **Claude 4 SHUTDOWN in 2 days (June 15)** — auto-tense-flipping covers ALL 20+ deprecation pages, meta tags, and <title> tags
@@ -18,6 +18,12 @@
 - **Cost Efficiency Score on ALL 3 tools** — visual A-F grade in calculator, cost-optimizer, and savings-calculator
 - **Founding member counter unified** — deterministic formula across 10 pages (base 73 + days/2.5, cap 94, currently ~93)
 
+## Session 626 (Jun 13) — Post-Shutdown SEO Meta Updates
+- **Updated meta descriptions on 10 deprecation pages** for post-shutdown SEO. Changed "before June 15", "retire June 15", "will fail" to past tense ("is retired", "are failing", "save 67-97%"). Pages: migration-hub, migration-tool, migration-checklist, migration-command-center, deprecation, status, last-chance, cheatsheet.
+- **Added "What Replaced Claude 4?" to blog index** — the post (Session 625) was in sitemap and RSS but missing from blog.html. Added post card in June 15 section.
+- **Updated migration-hub FAQ and subtitle** — "before June 15" → removed time reference, FAQ question updated to past tense.
+- **Updated migration-tool hero text and FAQ** — "retire June 15" → "are retired", FAQ updated for post-deadline context.
+
 ## Session 625 (Jun 13) — New Blog Post + Cross-Links
 - **NEW BLOG POST: "What Replaced Claude 4?"** — 526-line comprehensive guide targeting the exact post-shutdown query. Covers Opus 4.8, Sonnet 4.6, and 12 alternatives ranked by cost with code snippets. Has FAQPage schema, Article schema, Pro CTAs, and related post cards.
 - **Added to sitemap.xml and rss.xml** — new post is indexed
@@ -31,8 +37,8 @@
 ## Session 623 (Jun 13) — UNIVERSAL TRIAL BUTTONS
 - Auto-inject trial buttons via shared.js. Added pro-features.js to 569 pages. Added trial CTAs to 28 tool pages. 583 files, 7 commits.
 
-## Summary: Sessions 599-623 (Jun 12-13)
-Conversion funnel: scroll depth/time/hover tracking, trial expiry urgency banner, exit popup timing A/B, gated recs A/B. Deprecation: auto-tense-flip for ALL pages, post-deprecation exit popup, alternatives table, shutdown countdown. Content: 303 blog posts, cross-linked post-shutdown content, blog index reorder, 404→410 fixes. Pricing: bulk fix across 130+ files, A/B pricing test. Pro: trial buttons on 46+ tool pages, Cost Efficiency Score, Survival Kit, founding member counter. 51 commits total.
+## Summary: Sessions 599-626 (Jun 12-13)
+Conversion funnel: scroll depth/time/hover tracking, trial expiry urgency banner, exit popup timing A/B, gated recs A/B. Deprecation: auto-tense-flip for ALL pages, post-deprecation exit popup, alternatives table, shutdown countdown. Content: 304 blog posts, cross-linked post-shutdown content, blog index reorder, 404→410 fixes. SEO: meta descriptions updated on 10 deprecation pages for post-shutdown. Pricing: bulk fix across 130+ files, A/B pricing test. Pro: trial buttons on 46+ tool pages, Cost Efficiency Score, Survival Kit, founding member counter. 54 commits total.
 
 ## Summary: Sessions 1-598 (Apr 5 - Jun 12)
 Built full APIpulse from scratch. 623 pages, 303 posts, 42 models, 10 providers, 82 tools, 12 API endpoints, 2 widgets. Domain, Stripe, Pro, GA4, newsletter, Chrome extension, 167 comparison pages, FAQPage schema on ~260 pages, streaming toggle, State of LLM Pricing Report, Claude 4 deprecation ecosystem (20+ pages), A/B pricing test, Model Selector quiz, Best Model guides. Site audit: 11,594 links fixed. 113 commits total.
