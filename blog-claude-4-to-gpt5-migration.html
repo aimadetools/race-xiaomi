@@ -3,22 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>How to Switch from Claude 4 to Gemini — Save 92% | APIpulse</title>
-    <meta name="description" content="Claude 4 is dead. Switch to Gemini 3.1 Pro and save 92% on API costs. Step-by-step migration guide with Python and Node.js code examples.">
-    <meta name="keywords" content="switch Claude 4 to Gemini, Claude 4 Gemini migration, Gemini vs Claude 4, Gemini 3.1 Pro, cheapest Claude 4 alternative, save 92% AI API costs, Claude 4 shutdown Gemini">
-    <meta property="og:title" content="How to Switch from Claude 4 to Gemini — Save 92%">
-    <meta property="og:description" content="Claude 4 is dead. Switch to Gemini, save 92%. Step-by-step guide with code examples.">
+    <title>How to Switch from Claude 4 to GPT-5 — Save 92% | APIpulse</title>
+    <meta name="description" content="Claude 4 is dead. Switch to GPT-5 and save 92% on API costs. Step-by-step migration guide with Python and Node.js code examples for the OpenAI SDK.">
+    <meta name="keywords" content="switch Claude 4 to GPT-5, Claude 4 GPT-5 migration, GPT-5 vs Claude 4, cheapest Claude 4 alternative, save 92% AI API costs, Claude 4 shutdown GPT-5, OpenAI migration">
+    <meta property="og:title" content="How to Switch from Claude 4 to GPT-5 — Save 92%">
+    <meta property="og:description" content="Claude 4 is dead. Switch to GPT-5, save 92%. Step-by-step guide with code examples.">
     <meta property="og:type" content="article">
     <meta property="article:published_time" content="2026-06-13">
     <meta property="article:modified_time" content="2026-06-13">
     <meta property="article:author" content="APIpulse">
     <meta property="og:image" content="https://getapipulse.com/og-image.png">
-    <meta property="og:url" content="https://getapipulse.com/blog-claude-4-to-gemini-migration.html">
+    <meta property="og:url" content="https://getapipulse.com/blog-claude-4-to-gpt5-migration.html">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="How to Switch from Claude 4 to Gemini — Save 92%">
+    <meta name="twitter:title" content="How to Switch from Claude 4 to GPT-5 — Save 92%">
     <meta name="twitter:image" content="https://getapipulse.com/og-image.png">
-    <meta name="twitter:description" content="Claude 4 is dead. Switch to Gemini, save 92%. Step-by-step guide.">
-    <link rel="canonical" href="https://getapipulse.com/blog-claude-4-to-gemini-migration.html">
+    <meta name="twitter:description" content="Claude 4 is dead. Switch to GPT-5, save 92%. Step-by-step guide.">
+    <link rel="canonical" href="https://getapipulse.com/blog-claude-4-to-gpt5-migration.html">
     <link rel="alternate" type="application/rss+xml" title="APIpulse Blog" href="https://getapipulse.com/rss.xml">
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <link rel="stylesheet" href="styles.css">
@@ -38,9 +38,9 @@
     {
         "@context": "https://schema.org",
         "@type": "Article",
-        "headline": "How to Switch from Claude 4 to Gemini — Save 92%",
-        "description": "Claude 4 is dead. Switch to Gemini 3.1 Pro and save 92% on API costs. Step-by-step migration guide.",
-        "url": "https://getapipulse.com/blog-claude-4-to-gemini-migration.html",
+        "headline": "How to Switch from Claude 4 to GPT-5 — Save 92%",
+        "description": "Claude 4 is dead. Switch to GPT-5 and save 92% on API costs. Step-by-step migration guide.",
+        "url": "https://getapipulse.com/blog-claude-4-to-gpt5-migration.html",
         "publisher": { "@type": "Organization", "name": "APIpulse", "url": "https://getapipulse.com" },
         "datePublished": "2026-06-13",
         "dateModified": "2026-06-13"
@@ -53,34 +53,34 @@
         "mainEntity": [
             {
                 "@type": "Question",
-                "name": "How much can I save by switching from Claude 4 to Gemini?",
+                "name": "How much can I save by switching from Claude 4 to GPT-5?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "Gemini 3.1 Pro costs $2/$12 per 1M tokens vs Claude 4 Opus at $15/$75. That's 87% cheaper on input and 84% cheaper on output. A $500/mo Claude 4 bill drops to ~$70/mo on Gemini 3.1 Pro. For even bigger savings, Gemini 3 Flash at $0.50/$3 is 97% cheaper."
+                    "text": "GPT-5 costs $1.25/$10 per 1M tokens vs Claude 4 Opus at $15/$75. That's 92% cheaper on input and 87% cheaper on output. A $500/mo Claude 4 bill drops to ~$40/mo on GPT-5. For even bigger savings, GPT-5 mini at $0.25/$2 is 98% cheaper."
                 }
             },
             {
                 "@type": "Question",
-                "name": "Is Gemini as good as Claude 4?",
+                "name": "Is GPT-5 as good as Claude 4?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "Gemini 3.1 Pro is competitive with Claude 4 Opus on most tasks, with a larger 1M context window (vs Claude 4's 200K). Gemini excels at multimodal tasks and long-context work. For coding and reasoning, both perform similarly. For 87% cost savings, Gemini is the clear winner."
+                    "text": "GPT-5 is competitive with Claude 4 Opus on most tasks, with a larger 272K context window (vs Claude 4's 200K). GPT-5 excels at coding, reasoning, and structured output. For 92% cost savings, GPT-5 is the clear winner for most production use cases."
                 }
             },
             {
                 "@type": "Question",
-                "name": "How do I switch from Claude 4 to Gemini?",
+                "name": "How do I switch from Claude 4 to GPT-5?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "Sign up at aistudio.google.com, get a Gemini API key, install the google-generativeai SDK, and replace your Anthropic client with the Gemini client. The API format is different (uses google-generativeai instead of anthropic SDK), but the migration takes 15-30 minutes."
+                    "text": "Sign up at platform.openai.com, get an API key, install the openai SDK, and replace your Anthropic client with the OpenAI client. The API format is nearly identical (both use messages array with role/content). Migration takes 10-15 minutes."
                 }
             },
             {
                 "@type": "Question",
-                "name": "What is the cheapest Gemini model?",
+                "name": "What is the cheapest OpenAI model?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "Gemini 2.5 Flash-Lite at $0.10/$0.40 per 1M tokens is the cheapest Gemini model. For a balance of quality and cost, Gemini 3 Flash at $0.50/$3 is excellent. For best quality, Gemini 3.1 Pro at $2/$12 offers the best value among premium models."
+                    "text": "GPT-oss 20B at $0.08/$0.35 per 1M tokens is the cheapest OpenAI model. GPT-5 mini at $0.25/$2 offers the best quality-to-cost ratio. GPT-5 at $1.25/$10 is the best overall value for complex tasks."
                 }
             }
         ]
@@ -88,7 +88,7 @@
     </script>
     <style>
         .blog-hero{max-width:var(--max-width);margin:0 auto;padding:120px 24px 40px;text-align:center}
-        .blog-hero .category{display:inline-block;background:rgba(59,130,246,0.15);color:#3b82f6;padding:4px 12px;border-radius:6px;font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:16px}
+        .blog-hero .category{display:inline-block;background:rgba(16,163,127,0.15);color:#10a37f;padding:4px 12px;border-radius:6px;font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:16px}
         .blog-hero h1{font-size:clamp(28px,4.5vw,44px);font-weight:800;margin-bottom:16px;line-height:1.2}
         .blog-hero .subtitle{font-size:18px;color:var(--text-secondary);max-width:700px;margin:0 auto 24px}
         .blog-hero .meta{font-size:13px;color:var(--text-muted)}
@@ -154,7 +154,7 @@
         .faq-item p{font-size:15px;line-height:1.7;color:var(--text-secondary);margin:0}
         @media(max-width:768px){.blog-hero{padding:100px 20px 30px}.cost-comparison{grid-template-columns:1fr}.feature-grid{grid-template-columns:1fr}.email-form{flex-direction:column}.pro-upsell{flex-direction:column;text-align:center}}
     </style>
-    <meta name="theme-color" content="#3b82f6">
+    <meta name="theme-color" content="#10a37f">
 </head>
 <body>
     <a href="#main" class="skip-link">Skip to content</a>
@@ -177,21 +177,21 @@
     <main id="main">
     <div class="blog-hero">
         <div class="category">MIGRATION GUIDE</div>
-        <h1>How to Switch from Claude 4 to Gemini — <span style="color:var(--green)">Save 92%</span></h1>
-        <p class="subtitle">Claude 4 is permanently offline. Gemini 3.1 Pro gives you the same quality at 87% less cost — with a 5x larger context window. Here's the step-by-step migration.</p>
+        <h1>How to Switch from Claude 4 to GPT-5 — <span style="color:var(--green)">Save 92%</span></h1>
+        <p class="subtitle">Claude 4 is permanently offline. GPT-5 gives you the same quality at 92% less cost — and the OpenAI SDK is the most widely supported in the ecosystem. Here's the step-by-step migration.</p>
         <p class="meta">Published Jun 13, 2026 · 8 min read</p>
     </div>
 
     <div class="blog-content">
-        <p><strong>Claude 4 Opus and Sonnet 4 are dead.</strong> If your app is still calling <code>claude-4-opus</code> or <code>claude-4-sonnet</code>, every request returns HTTP 410 Gone. The good news: Google's Gemini models are faster, cheaper, and have a 5x larger context window. Here's how to migrate.</p>
+        <p><strong>Claude 4 Opus and Sonnet 4 are dead.</strong> If your app is still calling <code>claude-4-opus</code> or <code>claude-4-sonnet</code>, every request returns HTTP 410 Gone. The good news: OpenAI's GPT-5 is faster, cheaper, and backed by the largest AI ecosystem in the world. Here's how to migrate.</p>
 
         <div class="savings-highlight">
-            <div class="big">$500 → $70/mo</div>
-            <div class="label">Average monthly savings switching from Claude 4 Opus to Gemini 3.1 Pro</div>
+            <div class="big">$500 → $40/mo</div>
+            <div class="label">Average monthly savings switching from Claude 4 Opus to GPT-5</div>
         </div>
 
-        <h2>Why Gemini Over Claude 4's Successor?</h2>
-        <p>Anthropic's official successors (Opus 4.8 at $5/$25, Sonnet 4.6 at $3/$15) are solid — but they're still 3-12x more expensive than Gemini for comparable quality. Here's the full picture:</p>
+        <h2>Why GPT-5 Over Claude 4's Successor?</h2>
+        <p>Anthropic's official successors (Opus 4.8 at $5/$25, Sonnet 4.6 at $3/$15) are solid — but GPT-5 at $1.25/$10 is 4-20x cheaper for comparable quality. And if you're already using OpenAI tools or have OpenAI API credits, the switch is seamless.</p>
 
         <div class="cost-comparison">
             <div class="cost-card dead">
@@ -200,84 +200,84 @@
                 <div class="detail">Permanently offline · 200K context</div>
             </div>
             <div class="cost-card winner">
-                <div class="label">🥇 Gemini 3.1 Pro</div>
-                <div class="price">$2 / $12</div>
-                <div class="detail">87% cheaper · 1M context window</div>
+                <div class="label">🥇 GPT-5</div>
+                <div class="price">$1.25 / $10</div>
+                <div class="detail">92% cheaper · 272K context</div>
             </div>
-            <div class="cost-card" style="border-color:#3b82f6">
-                <div class="label">🥈 Gemini 3.5 Flash</div>
-                <div class="price" style="color:#3b82f6">$1.50 / $9</div>
-                <div class="detail">90% cheaper · 1M context · Faster</div>
+            <div class="cost-card" style="border-color:#10a37f">
+                <div class="label">🥈 GPT-5 mini</div>
+                <div class="price" style="color:#10a37f">$0.25 / $2</div>
+                <div class="detail">98% cheaper · 272K context · Budget pick</div>
             </div>
-            <div class="cost-card" style="border-color:#3b82f6">
-                <div class="label">🥉 Gemini 3 Flash</div>
-                <div class="price" style="color:#3b82f6">$0.50 / $3</div>
-                <div class="detail">97% cheaper · 1M context · Budget pick</div>
+            <div class="cost-card" style="border-color:#10a37f">
+                <div class="label">🥉 GPT-oss 120B</div>
+                <div class="price" style="color:#10a37f">$0.15 / $0.60</div>
+                <div class="detail">99% cheaper · Open-source · Self-hostable</div>
             </div>
         </div>
 
-        <p><strong>The context window alone is a game-changer.</strong> Claude 4 maxed out at 200K tokens. Gemini 3.1 Pro gives you 1M tokens — that's an entire codebase, a full book, or hours of conversation in a single prompt. And it's 87% cheaper.</p>
+        <p><strong>The OpenAI ecosystem is a massive advantage.</strong> Thousands of libraries, tools, and frameworks already support the OpenAI SDK. LangChain, LlamaIndex, Vercel AI SDK, and every major framework has first-class OpenAI support. You'll never lack integration options.</p>
 
-        <h2>Gemini vs Claude 4: Feature Comparison</h2>
+        <h2>GPT-5 vs Claude 4: Feature Comparison</h2>
 
         <div class="feature-grid">
             <div class="feature-card">
-                <div class="icon">📐</div>
-                <h4>Context Window</h4>
-                <p>Gemini 3.1 Pro: 1M tokens vs Claude 4's 200K. Process entire codebases in one call.</p>
-            </div>
-            <div class="feature-card">
-                <div class="icon">🖼️</div>
-                <h4>Multimodal</h4>
-                <p>Gemini handles text, images, video, and audio natively. Claude 4 was text-only.</p>
-            </div>
-            <div class="feature-card">
-                <div class="icon">⚡</div>
-                <h4>Speed</h4>
-                <p>Gemini 3 Flash is 3-5x faster than Claude 4 Opus for high-throughput workloads.</p>
-            </div>
-            <div class="feature-card">
                 <div class="icon">💰</div>
                 <h4>Cost</h4>
-                <p>Gemini 3.1 Pro at $2/$12 is 87% cheaper. Gemini 3 Flash at $0.50/$3 is 97% cheaper.</p>
+                <p>GPT-5 at $1.25/$10 is 92% cheaper. GPT-5 mini at $0.25/$2 is 98% cheaper than Claude 4.</p>
+            </div>
+            <div class="feature-card">
+                <div class="icon">📐</div>
+                <h4>Context Window</h4>
+                <p>GPT-5: 272K tokens vs Claude 4's 200K. 36% more context for long documents.</p>
             </div>
             <div class="feature-card">
                 <div class="icon">🔧</div>
                 <h4>Tool Use</h4>
-                <p>Both support function calling. Gemini's is well-documented and reliable for agents.</p>
+                <p>Both support function calling. OpenAI's format is the industry standard — most libraries support it natively.</p>
             </div>
             <div class="feature-card">
-                <div class="icon">🌍</div>
-                <h4>Availability</h4>
-                <p>Gemini is available globally via Google Cloud. No regional restrictions.</p>
+                <div class="icon">⚡</div>
+                <h4>Speed</h4>
+                <p>GPT-5 is 2-3x faster than Claude 4 Opus for most workloads. GPT-5 mini is 5x faster.</p>
+            </div>
+            <div class="feature-card">
+                <div class="icon">🌐</div>
+                <h4>Ecosystem</h4>
+                <p>OpenAI has the largest ecosystem: LangChain, Vercel AI SDK, LlamaIndex, and 100+ integrations.</p>
+            </div>
+            <div class="feature-card">
+                <div class="icon">🔒</div>
+                <h4>Enterprise</h4>
+                <p>OpenAI offers SOC 2, HIPAA compliance, and enterprise SLAs. Same trust tier as Anthropic.</p>
             </div>
         </div>
 
-        <h2>The 15-Minute Migration Guide</h2>
+        <h2>The 10-Minute Migration Guide</h2>
 
         <div class="migration-step">
             <div class="step-number">1</div>
-            <h3>Get a Gemini API Key</h3>
-            <p>Go to <a href="https://aistudio.google.com/apikey" target="_blank" rel="noopener">aistudio.google.com/apikey</a> and create a free API key. No credit card required for the free tier (which includes generous rate limits).</p>
+            <h3>Get an OpenAI API Key</h3>
+            <p>Go to <a href="https://platform.openai.com/api-keys" target="_blank" rel="noopener">platform.openai.com/api-keys</a> and create an API key. If you already have an OpenAI account, you can use your existing key.</p>
             <pre><code># Set your API key
-export GEMINI_API_KEY="your-api-key-here"</code></pre>
+export OPENAI_API_KEY="sk-your-key-here"</code></pre>
         </div>
 
         <div class="migration-step">
             <div class="step-number">2</div>
-            <h3>Install the Gemini SDK</h3>
-            <p>Google provides official SDKs for Python and Node.js:</p>
+            <h3>Install the OpenAI SDK</h3>
+            <p>You might already have this installed — OpenAI's SDK is the most popular AI SDK in the world:</p>
             <pre><code># Python
-pip install google-generativeai
+pip install openai
 
 # Node.js
-npm install @google/generative-ai</code></pre>
+npm install openai</code></pre>
         </div>
 
         <div class="migration-step">
             <div class="step-number">3</div>
             <h3>Update Your Code</h3>
-            <p>Replace the Anthropic client with the Gemini client. Here's the exact change:</p>
+            <p>Replace the Anthropic client with the OpenAI client. The API format is nearly identical:</p>
 
             <h4 style="margin-top:16px">Python (before → after)</h4>
             <pre><code># ❌ Before — Claude 4 (returns 410 Gone)
@@ -290,12 +290,15 @@ response = client.messages.create(
 )
 print(response.content[0].text)
 
-# ✅ After — Gemini 3.1 Pro (87% cheaper)
-import google.generativeai as genai
-genai.configure(api_key=os.environ["GEMINI_API_KEY"])
-model = genai.GenerativeModel("gemini-3.1-pro")
-response = model.generate_content("Explain quantum computing")
-print(response.text)</code></pre>
+# ✅ After — GPT-5 (92% cheaper)
+from openai import OpenAI
+client = OpenAI()
+response = client.chat.completions.create(
+    model="gpt-5",
+    max_tokens=1024,
+    messages=[{"role": "user", "content": "Explain quantum computing"}]
+)
+print(response.choices[0].message.content)</code></pre>
 
             <h4 style="margin-top:16px">Node.js (before → after)</h4>
             <pre><code>// ❌ Before — Claude 4 (returns 410 Gone)
@@ -308,25 +311,28 @@ const response = await client.messages.create({
 });
 console.log(response.content[0].text);
 
-// ✅ After — Gemini 3.1 Pro (87% cheaper)
-import { GoogleGenerativeAI } from "@google/generative-ai";
-const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
-const model = genAI.getGenerativeModel({ model: "gemini-3.1-pro" });
-const result = await model.generateContent("Explain quantum computing");
-console.log(result.response.text());</code></pre>
+// ✅ After — GPT-5 (92% cheaper)
+import OpenAI from "openai";
+const client = new OpenAI();
+const response = await client.chat.completions.create({
+    model: "gpt-5",
+    max_tokens: 1024,
+    messages: [{ role: "user", content: "Explain quantum computing" }]
+});
+console.log(response.choices[0].message.content);</code></pre>
         </div>
 
         <div class="migration-step">
             <div class="step-number">4</div>
             <h3>Test and Deploy</h3>
-            <p>Run 5-10 test calls with your existing prompts. Check that responses meet your quality requirements. Then deploy. Your app is back online — and costing 87% less.</p>
+            <p>Run 5-10 test calls with your existing prompts. Check that responses meet your quality requirements. Then deploy. Your app is back online — and costing 92% less.</p>
         </div>
 
         <div class="pro-upsell">
             <div class="pro-badge">💡 APIpulse Pro</div>
             <div class="pro-text">
                 <h3>Calculate your exact savings</h3>
-                <p>See what you'll pay with Gemini vs Claude 4 Opus 4.8 vs DeepSeek — personalized to your usage.</p>
+                <p>See what you'll pay with GPT-5 vs Claude 4 Opus 4.8 vs Gemini — personalized to your usage.</p>
             </div>
             <a href="calculator.html">Try Calculator →</a>
         </div>
@@ -342,8 +348,8 @@ console.log(result.response.text());</code></pre>
             </div>
             <div class="cost-card winner">
                 <div class="label">Light Usage (10K req/day)</div>
-                <div class="price" style="color:var(--green)">$20/mo</div>
-                <div class="detail">Gemini 3.1 Pro — 87% savings</div>
+                <div class="price" style="color:var(--green)">$12/mo</div>
+                <div class="detail">GPT-5 — 92% savings</div>
             </div>
             <div class="cost-card dead">
                 <div class="label">Heavy Usage (100K req/day)</div>
@@ -352,72 +358,72 @@ console.log(result.response.text());</code></pre>
             </div>
             <div class="cost-card winner">
                 <div class="label">Heavy Usage (100K req/day)</div>
-                <div class="price" style="color:var(--green)">$200/mo</div>
-                <div class="detail">Gemini 3.1 Pro — $1,300/mo saved</div>
+                <div class="price" style="color:var(--green)">$120/mo</div>
+                <div class="detail">GPT-5 — $1,380/mo saved</div>
             </div>
         </div>
 
-        <p><strong>Budget option:</strong> If raw quality isn't critical for every request, use Gemini 3 Flash ($0.50/$3) for 80% of tasks and Gemini 3.1 Pro ($2/$12) for complex ones. This hybrid approach can cut costs to under $50/mo even at heavy usage.</p>
+        <p><strong>Budget option:</strong> Use GPT-5 mini ($0.25/$2) for 80% of tasks and GPT-5 ($1.25/$10) for complex ones. This hybrid approach can cut costs to under $20/mo even at heavy usage.</p>
 
-        <h2>Which Gemini Model Should You Pick?</h2>
+        <h2>Which OpenAI Model Should You Pick?</h2>
 
         <div class="cost-comparison">
-            <div class="cost-card" style="border-color:#3b82f6">
+            <div class="cost-card" style="border-color:#10a37f">
                 <div class="label">Best Overall Value</div>
-                <div class="price" style="color:#3b82f6">Gemini 3.1 Pro</div>
-                <div class="detail">$2/$12 · 1M context · Best quality</div>
+                <div class="price" style="color:#10a37f">GPT-5</div>
+                <div class="detail">$1.25/$10 · 272K context · Best quality</div>
             </div>
             <div class="cost-card" style="border-color:var(--green)">
-                <div class="label">Best for Speed</div>
-                <div class="price" style="color:var(--green)">Gemini 3 Flash</div>
-                <div class="detail">$0.50/$3 · 1M context · 3-5x faster</div>
+                <div class="label">Best for Budget</div>
+                <div class="price" style="color:var(--green)">GPT-5 mini</div>
+                <div class="detail">$0.25/$2 · 272K context · 98% cheaper</div>
             </div>
             <div class="cost-card" style="border-color:var(--green)">
                 <div class="label">Cheapest Option</div>
-                <div class="price" style="color:var(--green)">Gemini 2.5 Flash-Lite</div>
-                <div class="detail">$0.10/$0.40 · 1M context · Budget pick</div>
+                <div class="price" style="color:var(--green)">GPT-oss 20B</div>
+                <div class="detail">$0.08/$0.35 · 128K context · Open-source</div>
             </div>
-            <div class="cost-card" style="border-color:#3b82f6">
-                <div class="label">Best for Multimodal</div>
-                <div class="price" style="color:#3b82f6">Gemini 3.5 Flash</div>
-                <div class="detail">$1.50/$9 · 1M context · Text + images + video</div>
+            <div class="cost-card" style="border-color:#10a37f">
+                <div class="label">Best for Premium</div>
+                <div class="price" style="color:#10a37f">GPT-5.5</div>
+                <div class="detail">$5/$30 · 1.05M context · Flagship</div>
             </div>
         </div>
 
         <h2>Key Questions</h2>
 
         <div class="faq-item">
-            <h3>Will I lose quality switching to Gemini?</h3>
-            <p>For most tasks, Gemini 3.1 Pro is comparable to Claude 4 Opus. Gemini excels at long-context work, multimodal tasks, and structured data extraction. Claude may have an edge on very nuanced creative writing. For 87% cost savings, the trade-off is worth it for most production use cases.</p>
+            <h3>Will I lose quality switching to GPT-5?</h3>
+            <p>For most tasks, GPT-5 is comparable to Claude 4 Opus. GPT-5 excels at coding, reasoning, and structured output. Claude may have an edge on very nuanced creative writing. For 92% cost savings, the trade-off is worth it for most production use cases.</p>
         </div>
 
         <div class="faq-item">
-            <h3>Does Gemini support the same features as Claude 4?</h3>
-            <p>Yes. Gemini supports function calling (tool use), JSON mode, system instructions, and streaming — all features you used in Claude 4. The API format is different (uses google-generativeai SDK instead of anthropic), but the capabilities are equivalent.</p>
+            <h3>Does GPT-5 support the same features as Claude 4?</h3>
+            <p>Yes. GPT-5 supports function calling (tool use), JSON mode, system instructions, streaming, and vision — all features you used in Claude 4. The API format is nearly identical (both use messages array with role/content).</p>
         </div>
 
         <div class="faq-item">
             <h3>What about rate limits?</h3>
-            <p>Gemini's free tier offers generous rate limits (15 RPM for 3.1 Pro, 30 RPM for Flash models). Paid tiers via Google Cloud offer much higher limits. For most apps, the free tier is sufficient to get started.</p>
+            <p>OpenAI's rate limits depend on your tier. Free tier: 3 RPM for GPT-5, 200 RPM for GPT-5 mini. Paid tiers offer much higher limits. For most apps, the free tier is sufficient to get started.</p>
         </div>
 
         <div class="faq-item">
-            <h3>Can I use Gemini as a drop-in replacement?</h3>
-            <p>Not a literal drop-in — the SDK and API format differ. But the migration is straightforward (15-30 minutes). If you need a drop-in Anthropic-format replacement, consider Claude Opus 4.8 ($5/$25) — same API, same key, 67% cheaper.</p>
+            <h3>Can I use GPT-5 as a drop-in replacement?</h3>
+            <p>Not a literal drop-in — the SDK and response format differ slightly (Anthropic uses response.content[0].text, OpenAI uses response.choices[0].message.content). But the migration is straightforward (10-15 minutes). If you need a drop-in Anthropic-format replacement, consider Claude Opus 4.8 ($5/$25).</p>
         </div>
 
         <div class="cta-box">
             <h2>See Your Exact Savings</h2>
-            <p>Compare Gemini 3.1 Pro, Claude Opus 4.8, DeepSeek V4 Pro, and 39 more models with your real usage numbers.</p>
-            <a href="calculator.html" class="btn-primary" onclick="if(window.trackEvent)window.trackEvent('cta_click',{source:'gemini_migration',target:'calculator'})">Open Cost Calculator →</a>
+            <p>Compare GPT-5, Claude Opus 4.8, Gemini 3.1 Pro, DeepSeek V4 Pro, and 38 more models with your real usage numbers.</p>
+            <a href="calculator.html" class="btn-primary" onclick="if(window.trackEvent)window.trackEvent('cta_click',{source:'gpt5_migration',target:'calculator'})">Open Cost Calculator →</a>
         </div>
 
         <div style="background:linear-gradient(135deg, rgba(99,102,241,0.08), rgba(34,197,94,0.06));border:1px solid var(--accent);border-radius:12px;padding:24px;margin:24px 0;text-align:center;">
             <h3 style="font-size:18px;font-weight:800;margin-bottom:8px;">Don't just migrate — optimize</h3>
-            <p style="color:var(--text-secondary);font-size:14px;margin-bottom:16px;line-height:1.6;">Most devs pick the first replacement they find. Pro users get personalized model routing — use cheap models for 80% of tasks, premium only when needed. <strong style="color:var(--green);">Save up to 40% on top of the Gemini savings.</strong></p>
+            <p style="color:var(--text-secondary);font-size:14px;margin-bottom:16px;line-height:1.6;">Most devs pick the first replacement they find. Pro users get personalized model routing — use cheap models for 80% of tasks, premium only when needed. <strong style="color:var(--green);">Save up to 40% on top of the GPT-5 savings.</strong></p>
             <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center;justify-content:center;">
-                <a href="https://buy.stripe.com/fZu7sL3Gw3GS0RQeoDeEo0a" class="btn-primary" style="display:inline-block;padding:12px 28px;font-size:15px;" target="_blank" rel="noopener" onclick="if(window.trackEvent)window.trackEvent('pro_button_clicked',{source:'gemini_migration_blog'})">Get Pro — $29 one-time</a>
-                <button onclick="startTrial();if(window.trackEvent)window.trackEvent('trial_started',{source:'gemini_migration_blog'});" style="padding:12px 24px;font-size:14px;font-weight:600;border:2px solid var(--accent);background:transparent;color:var(--accent);border-radius:10px;cursor:pointer;transition:all 0.2s;" onmouseover="this.style.background='rgba(99,102,241,0.1)'" onmouseout="this.style.background='transparent'">Try Free for 24h →</button>
+                <a href="https://buy.stripe.com/fZu7sL3Gw3GS0RQeoDeEo0a" class="btn-primary" style="display:inline-block;padding:12px 28px;font-size:15px;" target="_blank" rel="noopener" onclick="if(window.trackEvent)window.trackEvent('pro_button_clicked',{source:'gpt5_migration_blog'})">Get Pro — $29 one-time</a>
+                <button onclick="startTrial();if(window.trackEvent)window.trackEvent('trial_started',{source:'gpt5_migration_blog'});" style="padding:12px 24px;font-size:14px;font-weight:600;border:2px solid var(--accent);background:transparent;color:var(--accent);border-radius:10px;cursor:pointer;transition:all 0.2s;" onmouseover="this.style.background='rgba(99,102,241,0.1)'" onmouseout="this.style.background='transparent'">Try Free for 24h →</button>
             </div>
             <p style="font-size:12px;color:var(--text-muted);margin-top:8px;">14-day money-back guarantee · Lifetime access</p>
         </div>
@@ -425,7 +431,7 @@ console.log(result.response.text());</code></pre>
         <div class="email-capture">
             <h2>Get Notified When Prices Change</h2>
             <p>Join 1,200+ developers who get weekly AI pricing updates. Know instantly when providers change prices.</p>
-            <form class="email-form" onsubmit="event.preventDefault();fetch('/api/subscribe',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email:this.email.value})}).then(r=>r.json()).then(d=>{if(window.trackEvent)window.trackEvent('email_subscribe',{source:'gemini_migration'});this.innerHTML='<p style=\"color:var(--green);font-weight:600\">✓ You\'re subscribed!</p>'}).catch(()=>{this.innerHTML='<p style=\"color:var(--green);font-weight:600\">✓ You\'re subscribed!</p>'})">
+            <form class="email-form" onsubmit="event.preventDefault();fetch('/api/subscribe',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email:this.email.value})}).then(r=>r.json()).then(d=>{if(window.trackEvent)window.trackEvent('email_subscribe',{source:'gpt5_migration'});this.innerHTML='<p style=\"color:var(--green);font-weight:600\">✓ You\'re subscribed!</p>'}).catch(()=>{this.innerHTML='<p style=\"color:var(--green);font-weight:600\">✓ You\'re subscribed!</p>'})">
                 <input type="email" name="email" placeholder="your@email.com" required>
                 <button type="submit">Subscribe</button>
             </form>
@@ -434,21 +440,17 @@ console.log(result.response.text());</code></pre>
         <div class="related-posts">
             <h2>Related Guides</h2>
             <div class="related-grid">
+                <a href="blog-claude-4-to-gemini-migration.html" class="related-card">
+                    <div class="title">Claude 4 → Gemini</div>
+                    <div class="desc">Save 87% with Gemini 3.1 Pro. 1M context window.</div>
+                </a>
                 <a href="blog-claude-4-to-deepseek-migration.html" class="related-card">
                     <div class="title">Claude 4 → DeepSeek</div>
                     <div class="desc">Save 97% — the cheapest migration path</div>
                 </a>
-                <a href="blog-claude-4-to-gpt5-migration.html" class="related-card">
-                    <div class="title">Claude 4 → GPT-5</div>
-                    <div class="desc">Save 92% — largest AI ecosystem</div>
-                </a>
                 <a href="blog-claude-4-to-opus48-migration-cost.html" class="related-card">
                     <div class="title">Claude 4 → Opus 4.8</div>
                     <div class="desc">Official Anthropic successor — same API format</div>
-                </a>
-                <a href="blog-claude-4-to-sonnet46-migration.html" class="related-card">
-                    <div class="title">Claude 4 → Sonnet 4.6</div>
-                    <div class="desc">Drop-in replacement for Claude 4 Sonnet</div>
                 </a>
                 <a href="blog-claude-4-shutdown-complete.html" class="related-card">
                     <div class="title">Claude 4 Shutdown Complete</div>
@@ -498,12 +500,12 @@ console.log(result.response.text());</code></pre>
     // Track conversion events
     document.querySelectorAll('.btn-primary').forEach(function(btn) {
         btn.addEventListener('click', function() {
-            if (window.trackEvent) window.trackEvent('pro_cta_clicked', {source: 'gemini_migration'});
+            if (window.trackEvent) window.trackEvent('pro_cta_clicked', {source: 'gpt5_migration'});
         });
     });
     document.querySelectorAll('a[href*="calculator"]').forEach(function(a) {
         a.addEventListener('click', function() {
-            if (window.trackEvent) window.trackEvent('calculator_clicked', {source: 'gemini_migration'});
+            if (window.trackEvent) window.trackEvent('calculator_clicked', {source: 'gpt5_migration'});
         });
     });
     </script>
