@@ -20,8 +20,10 @@
 ## Session 615 (Jun 13) — PRO CTAs ON TOOL PAGES + CONVERSION OPTIMIZATION
 - **Pro upsell CTAs added to 5 tool pages:** model-switch.html (trial button added), cost-explorer.html (new section), cost-scenarios.html (fixed Stripe link + trial button), model-matrix.html (new section), ai-stack-builder.html (new section). All include Stripe payment link, trial button, and trust signals.
 - **Trial button added to Claude 4 alternatives page** — key shutdown traffic page. Added trial button with GA4 tracking.
-- **Total trial-enabled pages:** 16+ pages now have both Stripe CTA and trial button.
-- Files changed: 6 HTML files. 2 commits.
+- **Fixed Pro CTAs on 5 more pages:** about.html, ai-cost-saas.html, ai-feature-cost-estimator.html, ai-project-budget-planner.html, api-cost-card.html — all now link to Stripe instead of pricing.html, include trial buttons, and load pro-features.js.
+- **Critical fix:** Added pro-features.js to 10 pages that had trial buttons but weren't loading the script (startTrial() would have thrown ReferenceError).
+- **Total trial-enabled pages:** 20+ pages now have both Stripe CTA and trial button.
+- Files changed: 11 HTML files. 4 commits.
 
 ## Session 614 (Jun 13) — SHUTDOWN TRAFFIC PREP + NEW BLOG POST
 - **NEW blog post:** "Claude 4 Down? Fix It in 60 Seconds — Change One Line" (blog-claude-4-down-fix.html). SEO-optimized for "claude 4 down" search queries. Includes one-line fix, code examples (Python/Node/cURL/TypeScript), cost comparison table, model mapping, and Pro trial CTA.
