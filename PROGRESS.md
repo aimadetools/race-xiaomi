@@ -1,6 +1,6 @@
 # PROGRESS.md
 
-## Site Status (as of Session 617, Jun 13, 2026)
+## Site Status (as of Session 618, Jun 13, 2026)
 **623 web pages | 303 blog posts | 42 models | 10 providers | 82 tools | 12 API endpoints | 2 embeddable widgets**
 - Sitemap (617 URLs), RSS (495 items), blog files (303 posts + 1 index) — all in sync
 - **Claude 4 SHUTDOWN in 2 days (June 15)** — auto-tense-flipping covers ALL 20+ deprecation pages, meta tags, and <title> tags
@@ -16,6 +16,13 @@
 - **Trial buttons** added to 20+ pages: calculator, cost-optimizer, savings-calculator, cost-audit, migration-calculator, pricing, survival kit, error pages, model-switch, cost-explorer, cost-scenarios, model-matrix, ai-stack-builder, alternatives, about, ai-cost-saas, ai-feature-cost-estimator, ai-project-budget-planner, api-cost-card, post-shutdown guide
 - **Cost Efficiency Score on ALL 3 tools** — visual A-F grade in calculator, cost-optimizer, and savings-calculator
 - **Founding member counter unified** — deterministic formula across 10 pages (base 73 + days/2.5, cap 94, currently ~93)
+
+## Session 618 (Jun 13) — FIX STALE DATES + 404→410 ERRORS + MISSING PRO SCRIPTS
+- **Fixed "Final 48 Hours" post date:** blog-claude-4-final-48-hours.html was dated June 14 but 48h before June 15 is June 13 (today). Fixed date in HTML meta, JSON-LD, FAQ answer, blog index card, and RSS feed.
+- **Fixed stale "As of June 11" references** in 3 countdown posts (1-day, 2-days, 3-days) — each now says the correct "As of" date matching its publication date.
+- **Fixed 404 → 410 Gone across 13 blog posts:** The Claude 4 deprecation returns HTTP 410 Gone, not 404. Fixed blog-claude-4-is-dead.html (17 occurrences), plus 11 other posts: api-errors, deprecation-faq-5-days, last-chance-{1,2,3,4}-days, stopped-working, to-deepseek-migration, to-sonnet46-migration, to-opus48-migration-cost, weekend-migration.
+- **Added missing pro-features.js** to claude-4-status.html and index.html — both had startTrial() buttons but the script defining the function was missing.
+- Files changed: 16 files. 4 commits.
 
 ## Session 617 (Jun 13) — CROSS-LINK POST-SHUTDOWN BLOG POSTS
 - **3 critical blog posts had ZERO internal links:** blog-claude-4-down-fix.html, blog-claude-4-is-dead.html, blog-claude-4-is-gone-now-what.html were invisible to site navigation and search crawlers.

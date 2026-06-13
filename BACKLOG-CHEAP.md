@@ -24,7 +24,8 @@
 - ✅ NEW: "Claude 4 Down? Fix It in 60 Seconds" blog post — DONE Session 614
 - ✅ Cross-linked 3 post-shutdown blog posts from 6 main Claude 4 pages — DONE Session 617
 
-### Completed (Sessions 416-617, Jun 1-13)
+### Completed (Sessions 416-618, Jun 1-13)
+✅ Session 618: Fixed stale dates on 4 countdown posts, 404→410 Gone across 13 posts, added missing pro-features.js to 2 pages. 4 commits.
 ✅ Session 617: Cross-linked 3 post-shutdown blog posts (down-fix, is-dead, is-gone) from 6 main Claude 4 pages.
 ✅ Session 616: Blog index reordered (310 posts chronological), 4 missing posts added, stale counts fixed.
 ✅ Session 615: Pro CTAs with trial buttons added to 10 tool pages. Fixed Stripe links. 4 commits.
