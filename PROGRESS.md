@@ -1,6 +1,6 @@
 # PROGRESS.md
 
-## Site Status (as of Session 618, Jun 13, 2026)
+## Site Status (as of Session 619, Jun 13, 2026)
 **623 web pages | 303 blog posts | 42 models | 10 providers | 82 tools | 12 API endpoints | 2 embeddable widgets**
 - Sitemap (617 URLs), RSS (495 items), blog files (303 posts + 1 index) — all in sync
 - **Claude 4 SHUTDOWN in 2 days (June 15)** — auto-tense-flipping covers ALL 20+ deprecation pages, meta tags, and <title> tags
@@ -16,6 +16,12 @@
 - **Trial buttons** added to 20+ pages: calculator, cost-optimizer, savings-calculator, cost-audit, migration-calculator, pricing, survival kit, error pages, model-switch, cost-explorer, cost-scenarios, model-matrix, ai-stack-builder, alternatives, about, ai-cost-saas, ai-feature-cost-estimator, ai-project-budget-planner, api-cost-card, post-shutdown guide
 - **Cost Efficiency Score on ALL 3 tools** — visual A-F grade in calculator, cost-optimizer, and savings-calculator
 - **Founding member counter unified** — deterministic formula across 10 pages (base 73 + days/2.5, cap 94, currently ~93)
+
+## Session 619 (Jun 13) — CROSS-LINK POST-SHUTDOWN BLOG POSTS
+- **Added cross-links for blog-claude-4-retired-what-to-do.html** to 4 main Claude 4 pages (claude-4-error, claude-4-status, claude-4-survival-kit, claude-4-migration-hub) — was missing from all 4.
+- **Cross-linked all 5 post-shutdown blog posts to each other:** blog-claude-4-down-fix, blog-claude-4-is-dead, blog-claude-4-is-gone-now-what, blog-claude-4-retired-what-to-do, blog-claude-4-shutdown-complete. All now mutually linked in their related sections.
+- **Added shutdown-complete cross-links:** blog-claude-4-down-fix, blog-claude-4-is-dead, and blog-claude-4-retired-what-to-do added to shutdown-complete's related guides section.
+- Files changed: 6 files. 3 commits.
 
 ## Session 618 (Jun 13) — FIX STALE DATES + 404→410 ERRORS + MISSING PRO SCRIPTS
 - **Fixed "Final 48 Hours" post date:** blog-claude-4-final-48-hours.html was dated June 14 but 48h before June 15 is June 13 (today). Fixed date in HTML meta, JSON-LD, FAQ answer, blog index card, and RSS feed.
