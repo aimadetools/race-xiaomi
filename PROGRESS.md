@@ -1,8 +1,8 @@
 # PROGRESS.md
 
-## Site Status (as of Session 638, Jun 13, 2026)
-**637 web pages | 315 blog posts | 42 models | 10 providers | 82 tools | 12 API endpoints | 2 embeddable widgets**
-- Sitemap (631 URLs), RSS (509 items), blog files (315 posts + 1 index) — all in sync
+## Site Status (as of Session 639, Jun 13, 2026)
+**638 web pages | 315 blog posts | 42 models | 10 providers | 82 tools | 12 API endpoints | 2 embeddable widgets**
+- Sitemap (632 URLs), RSS (510 items), blog files (315 posts + 1 index) — all in sync
 - **Claude 4 SHUTDOWN in 2 days (June 15)** — auto-tense-flipping covers ALL 20+ deprecation pages, meta tags, and <title> tags
 - **Emergency landing page OPTIMIZED for shutdown traffic** — A/B price bug fixed, trust badges, time-pressure counter, quick-fix trust bar, cross-links from 10+ pages, **interactive cost calculator** (Session 634)
 - **Trial buttons now on ALL pages with Pro CTAs** — auto-injected via shared.js on ALL pages (was previously blog-only due to bug)
@@ -18,6 +18,13 @@
 - **Survival Kit Pro upsell** — full Pro conversion section on survival kit page (dynamic pricing, trial button, cost comparison widget, founding member urgency)
 - **Cost Efficiency Score on ALL 3 tools** — visual A-F grade in calculator, cost-optimizer, and savings-calculator
 - **Founding member counter unified** — deterministic formula across 10 pages (base 73 + days/2.5, cap 94, currently ~93)
+
+## Session 639 (Jun 13) — Claude 4 API Error Codes Complete Reference
+- **NEW PAGE: claude-4-error-codes-reference.html** — Comprehensive reference for every Claude 4 API error code. Covers 12 error types: 410 Gone, 400 Invalid Model Name, 400 Invalid Parameters, 400 Context Length, 401 Authentication, 403 Forbidden, 404 Not Found, 429 Rate Limit, 500 Server Error, 529 Overloaded, Timeout, Streaming Errors. Each error has: exact JSON response, root cause, specific fix with code snippets (Python/Node.js/cURL). Quick reference table, diagnostic grep commands, model name mapping table. FAQPage schema with 4 questions. Targets long-tail searches: "claude 4 error [code]", "anthropic api 410 response", "claude api error codes".
+- **Added to sitemap.xml (632 URLs), rss.xml (510 items), blog.html index** — positioned with Claude 4 emergency content
+- **Cross-linked from emergency page** — Added to claude-4-is-down.html related resources
+- **Cross-linked from migration hub** — Added to claude-4-migration-hub.html tools section
+- **1 commit, 6 files changed, 784 insertions.**
 
 ## Session 638 (Jun 13) — Claude 4 Alternatives Comparison
 - **NEW PAGE: claude-4-alternatives-comparison.html** — Comprehensive side-by-side comparison of all 10 alternatives. Full pricing table (input/output per 1M tokens, monthly costs), migration difficulty table (code changes, API compatibility, time to migrate), quick picks (Drop-In/Cheapest/Best Value/Best for RAG), Python/Node.js migration code snippets, FAQPage schema with 4 questions, bottom line recommendations by use case. Targets high-volume search queries: "claude 4 alternatives comparison", "best claude 4 replacement", "cheapest claude 4 alternative".
