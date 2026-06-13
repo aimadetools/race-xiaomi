@@ -476,6 +476,37 @@
     </nav>
 
     <main id="main">
+    <!-- Claude 4 Shutdown Countdown Banner -->
+    <div id="shutdown-banner" style="display:none;background:linear-gradient(135deg,rgba(239,68,68,0.08),rgba(245,158,11,0.08));border-bottom:1px solid rgba(239,68,68,0.2);padding:12px 24px;text-align:center;">
+        <p style="margin:0;font-size:14px;color:var(--text-secondary);">
+            <strong style="color:#ef4444;">🚨 Claude 4 Shutdown in <span id="banner-countdown">--</span></strong> —
+            API calls to claude-4-opus and claude-sonnet-4 will return 410 errors after June 15.
+            <a href="claude-4-migration-hub.html" style="color:var(--accent);font-weight:600;text-decoration:none;">Migrate now →</a>
+        </p>
+    </div>
+    <script>
+    (function(){
+        var shutdown = new Date('2026-06-15T00:00:00Z');
+        var now = new Date();
+        var diff = shutdown - now;
+        var el = document.getElementById('banner-countdown');
+        var banner = document.getElementById('shutdown-banner');
+        if (diff > 0 && diff < 7 * 86400000) {
+            var days = Math.floor(diff / 86400000);
+            var hours = Math.floor((diff % 86400000) / 3600000);
+            if (el) el.textContent = days + 'd ' + hours + 'h';
+            if (banner) banner.style.display = 'block';
+        } else if (diff <= 0) {
+            if (el) el.textContent = 'completed';
+            if (banner) { banner.style.display = 'block'; banner.style.background = 'linear-gradient(135deg,rgba(239,68,68,0.12),rgba(239,68,68,0.04))'; }
+            var link = banner ? banner.querySelector('a') : null;
+            if (link) link.href = 'claude-4-is-down.html';
+            var strong = banner ? banner.querySelector('strong') : null;
+            if (strong) strong.innerHTML = '🔴 Claude 4 is now offline';
+        }
+    })();
+    </script>
+
     <section class="hero">
         <div class="hero-badge">
             <span id="hero-pricing-info">42 models · 10 providers · Updated Jun 2026</span>
