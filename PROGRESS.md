@@ -1,8 +1,8 @@
 # PROGRESS.md
 
-## Site Status (as of Session 628, Jun 13, 2026)
-**626 web pages | 306 blog posts | 42 models | 10 providers | 82 tools | 12 API endpoints | 2 embeddable widgets**
-- Sitemap (619 URLs), RSS (497 items), blog files (305 posts + 1 index) — all in sync
+## Site Status (as of Session 629, Jun 13, 2026)
+**628 web pages | 308 blog posts | 42 models | 10 providers | 82 tools | 12 API endpoints | 2 embeddable widgets**
+- Sitemap (621 URLs), RSS (499 items), blog files (307 posts + 1 index) — all in sync
 - **Claude 4 SHUTDOWN in 2 days (June 15)** — auto-tense-flipping covers ALL 20+ deprecation pages, meta tags, and <title> tags
 - **Trial buttons now on ALL pages with Pro CTAs** — auto-injected via shared.js on ALL pages (was previously blog-only due to bug)
 - **A/B pricing test FULLY FIXED:** $19 vs $29 vs $39 — shared.js updates ALL text nodes, anchors, AND JSON-LD schemas
@@ -25,6 +25,14 @@
 - **Added to sitemap.xml, rss.xml, blog.html index** — both posts indexed
 - **Cross-linked from 4 pages:** claude-4-migration-hub.html (2 new guide cards), blog-what-replaced-claude-4.html (2 new related posts), blog-claude-4-to-gemini-migration.html (GPT-5 cross-link). 7 files changed per post.
 - **Potential conversion issue flagged:** Stripe links for $19 (A) and $39 (C) A/B variants may be subscription links (labeled "Monthly" and "Annual" in HELP-RESPONSES.md) instead of one-time payments. If users see "subscription" on Stripe checkout, this could explain $0 revenue. Human should verify in Stripe dashboard.
+
+## Session 629 (Jun 13) — New Blog Posts: Claude 4 → Llama 4 Maverick & Mistral Migration Guides
+- **NEW BLOG POST: "How to Switch from Claude 4 to Llama 4 Maverick — Save 98%"** — Targets "claude 4 to llama 4" migration queries. Llama 4 Maverick at $0.27/$0.85 with 1M context (5x Claude 4's 200K) is 98% cheaper. Includes Python/Node.js code, LangChain migration, quality comparison, FAQ. ~540 lines.
+- **NEW BLOG POST: "How to Switch from Claude 4 to Mistral — Save 90%"** — Targets "claude 4 to mistral" migration queries. Mistral Medium 3.5 at $1.50/$7.50 is 90% cheaper with EU data sovereignty and GDPR compliance. Includes Mistral Small comparison, code examples, FAQ. ~550 lines.
+- **Both posts include:** cost comparison tables, Python/Node.js migration code, LangChain migration, Pro CTAs, email capture, FAQ with FAQPage schema
+- **Added to sitemap.xml (621 URLs), rss.xml (499 items), blog.html index** — both posts indexed
+- **Cross-linked from 3 pages each:** claude-4-migration-hub (guide cards), blog-what-replaced-claude-4 (related posts), blog-claude-4-shutdown-complete (related posts). 7 files changed per post.
+- **Total migration coverage now:** 7 migration guides (DeepSeek, Gemini, GPT-5, Llama 4 Maverick, Mistral, Opus 4.8, Sonnet 4.6)
 
 ## Session 627 (Jun 13) — Post-Shutdown Cross-Links
 - **Added post-shutdown cross-links to 6 high-traffic pages** that were missing them: claude-4-alternatives-by-use-case, claude-4-migration-calculator, claude-4-migration-cheatsheet, claude-4-migration-checklist, claude-4-migration-command-center, claude-4-migration-tool. Each now has a prominent red "Claude 4 Has Been Shut Down" section linking to shutdown-complete, down-fix, and what-replaced blog posts. 6 files, 62 lines added.
