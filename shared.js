@@ -254,6 +254,88 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
+// Claude 4 Dynamic Countdown — replaces hardcoded "N days left" with live calculation
+// Runs BEFORE auto-tense-flip so countdowns are correct, then tense-flip handles post-June 15
+document.addEventListener('DOMContentLoaded', function() {
+    var deadline = new Date('2026-06-15T00:00:00Z');
+    var now = new Date();
+    var daysLeft = Math.ceil((deadline - now) / (1000 * 60 * 60 * 24));
+    if (daysLeft <= 0) return; // auto-tense-flip handles post-deadline
+
+    // Replace countdown class elements: <span class="countdown">N days left</span>
+    document.querySelectorAll('.countdown').forEach(function(el) {
+        el.textContent = daysLeft + ' day' + (daysLeft === 1 ? '' : 's') + ' left';
+    });
+
+    // Replace hardcoded countdown patterns in all text nodes (skip script/style)
+    // Skip elements with id="daysLeft", "daysLeftText", "ctaDeadline" — those have inline JS
+    var SKIP_IDS = {'daysLeft':1, 'daysLeftText':1, 'ctaDeadline':1};
+    var patterns = [
+        [/You have (\d+) days/gi, 'You have ' + daysLeft + ' days'],
+        [/(\d+) days left/gi, daysLeft + ' days left'],
+        [/(\d+) DAYS LEFT/g, daysLeft + ' DAYS LEFT'],
+        [/(\d+) days until deadline/gi, daysLeft + ' days until deadline'],
+        [/(\d+) days until Claude 4/gi, daysLeft + ' days until Claude 4'],
+        [/(\d+) days until the/gi, daysLeft + ' days until the'],
+        [/(\d+) days until/gi, daysLeft + ' days until'],
+        [/retires? in (\d+) days/gi, 'retire' + (daysLeft === 1 ? 's' : '') + ' in ' + daysLeft + ' days'],
+        [/deprecates? in (\d+) days/gi, 'deprecate' + (daysLeft === 1 ? 's' : '') + ' in ' + daysLeft + ' days'],
+        [/just (\d+) days from now/gi, 'just ' + daysLeft + ' days from now'],
+        [/(\d+) days from now/gi, daysLeft + ' days from now'],
+        [/(\d+) days away/gi, daysLeft + ' days away'],
+        [/(\d+) days to Claude 4/gi, daysLeft + ' days to Claude 4'],
+        [/(\d+) days to deprecation/gi, daysLeft + ' days to deprecation'],
+        [/- (\d+) days left:/gi, '- ' + daysLeft + ' days left:'],
+        [/- (\d+) days until deadline:/gi, '- ' + daysLeft + ' days until deadline:'],
+        [/(\d+) days from June/gi, daysLeft + ' days remaining'],
+        [/If you're reading this on June \d+, you have (\d+) days/gi, 'You have ' + daysLeft + ' days remaining'],
+    ];
+    var walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, {
+        acceptNode: function(n) {
+            if (n.parentNode.tagName === 'SCRIPT' || n.parentNode.tagName === 'STYLE')
+                return NodeFilter.FILTER_REJECT;
+            // Skip elements with IDs already handled by inline JS
+            var p = n.parentNode;
+            while (p && p !== document.body) {
+                if (p.id && SKIP_IDS[p.id]) return NodeFilter.FILTER_REJECT;
+                p = p.parentNode;
+            }
+            return NodeFilter.FILTER_ACCEPT;
+        }
+    });
+    var nodes = [];
+    while (walker.nextNode()) nodes.push(walker.currentNode);
+    nodes.forEach(function(node) {
+        var text = node.nodeValue;
+        var changed = false;
+        patterns.forEach(function(p) {
+            if (p[0].test(text)) { text = text.replace(p[0], p[1]); changed = true; }
+        });
+        if (changed) node.nodeValue = text;
+    });
+    // Also update JSON-LD structured data
+    document.querySelectorAll('script[type="application/ld+json"]').forEach(function(s) {
+        try {
+            var text = s.textContent;
+            var changed = false;
+            patterns.forEach(function(p) {
+                if (p[0].test(text)) { text = text.replace(p[0], p[1]); changed = true; }
+            });
+            if (changed) s.textContent = text;
+        } catch(e) {}
+    });
+    // Update meta tags (not caught by TreeWalker — they're in <head>)
+    document.querySelectorAll('meta[name="description"], meta[property="og:description"], meta[name="twitter:description"], meta[property="og:title"], meta[name="twitter:title"]').forEach(function(m) {
+        var content = m.getAttribute('content');
+        if (!content) return;
+        var changed = false;
+        patterns.forEach(function(p) {
+            if (p[0].test(content)) { content = content.replace(p[0], p[1]); changed = true; }
+        });
+        if (changed) m.setAttribute('content', content);
+    });
+});
+
 // Claude 4 Deprecation Text Auto-Transition (flips future→past tense on June 15)
 // Covers blog posts, comparison pages, AND dedicated deprecation/migration pages
 document.addEventListener('DOMContentLoaded', () => {
