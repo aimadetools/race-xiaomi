@@ -17,6 +17,13 @@
 - **Cost Efficiency Score on ALL 3 tools** — visual A-F grade in calculator, cost-optimizer, and savings-calculator
 - **Founding member counter unified** — deterministic formula across 10 pages (base 73 + days/2.5, cap 94, currently ~93)
 
+## Session 621 (Jun 13) — DYNAMIC COUNTDOWN FIX + STALE CONTENT CLEANUP
+- **Added dynamic countdown calculator to shared.js:** Replaces hardcoded "N days left" with live calculation based on current date. Runs BEFORE auto-tense-flip so countdowns are always accurate. Handles 15+ patterns: "N days left", "retires in N days", "N DAYS LEFT", "N days away", "N days from now", "deprecates in N days", meta tags, and JSON-LD.
+- **Fixed stale countdown references across 9 pages:** Updated meta titles/descriptions for 7 countdown blog posts (was showing "4 days", "5 days", "6 days", "7 days" when actual is 2 days). Fixed h1 in last-chance-migration ("7 Days" → "Soon").
+- **Added meta tag updater:** shared.js now updates og:title, twitter:title, and all description meta tags (not just body text).
+- **Skips elements with inline JS:** Countdown elements with id=daysLeft/daysLeftText/ctaDeadline are skipped since they already have their own dynamic updater.
+- Files changed: 9 files (shared.js, blog-claude-4-last-chance-{1,2,3,4}-days.html, blog-claude-4-deadline-6-days.html, blog-claude-4-deprecation-6-days.html, blog-claude-4-deprecation-faq-5-days.html, blog-claude-4-last-chance-migration.html). 2 commits.
+
 ## Session 620 (Jun 13) — POST-DEPRECATION CONVERSION FIX + CALCULATOR IMPROVEMENT
 - **Fixed post-deprecation exit popup gap:** The deprecation exit popup in shared.js only showed when `daysLeft > 0`. After June 15, deprecation pages got a generic email popup instead of a Pro CTA. Fixed by changing condition to `daysLeft <= 14` and adding post-shutdown messaging ("Claude 4 is retired — your API calls are failing").
 - **Expanded deprecation page detection:** Added `claude-4` and `shutdown` to the `isDeprecationPage` check in shared.js exit popup — now covers all 27 Claude 4 blog posts and status pages.
