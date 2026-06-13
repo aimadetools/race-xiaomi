@@ -1,10 +1,10 @@
 # PROGRESS.md
 
-## Site Status (as of Session 633, Jun 13, 2026)
+## Site Status (as of Session 634, Jun 13, 2026)
 **633 web pages | 312 blog posts | 42 models | 10 providers | 82 tools | 12 API endpoints | 2 embeddable widgets**
 - Sitemap (626 URLs), RSS (504 items), blog files (311 posts + 1 index) — all in sync
 - **Claude 4 SHUTDOWN in 2 days (June 15)** — auto-tense-flipping covers ALL 20+ deprecation pages, meta tags, and <title> tags
-- **Emergency landing page OPTIMIZED for shutdown traffic** — A/B price bug fixed, trust badges, time-pressure counter, quick-fix trust bar, cross-links from 10+ pages
+- **Emergency landing page OPTIMIZED for shutdown traffic** — A/B price bug fixed, trust badges, time-pressure counter, quick-fix trust bar, cross-links from 10+ pages, **interactive cost calculator** (Session 634)
 - **Trial buttons now on ALL pages with Pro CTAs** — auto-injected via shared.js on ALL pages (was previously blog-only due to bug)
 - **A/B pricing test FULLY FIXED:** $19 vs $29 vs $39 — shared.js updates ALL text nodes, anchors, AND JSON-LD schemas
 - **A/B exit popup timing test running:** 30s vs 45s vs 60s on mobile — all events tagged with timing_variant
@@ -18,6 +18,11 @@
 - **Survival Kit Pro upsell** — full Pro conversion section on survival kit page (dynamic pricing, trial button, cost comparison widget, founding member urgency)
 - **Cost Efficiency Score on ALL 3 tools** — visual A-F grade in calculator, cost-optimizer, and savings-calculator
 - **Founding member counter unified** — deterministic formula across 10 pages (base 73 + days/2.5, cap 94, currently ~93)
+
+## Session 634 (Jun 13) — Interactive Cost Calculator on Emergency Page
+- **Added interactive cost calculator to claude-4-is-down.html** — Visitors can select Claude 4 Opus or Sonnet, input their monthly usage (input/output tokens in millions), and see exact costs across 9 alternatives. Shows max savings, direct replacement cost, and cheapest option. Top 6 alternatives ranked in a table with badges (CHEAPEST, DIRECT). Auto-recalculates on model switch. Mobile responsive. Tracked via shutdown_calc_used event.
+- **Cross-linked calculator from migration tool** — Added "Emergency Cost Calculator" as first item in related links on claude-4-migration-tool.html.
+- **2 files changed.** No new pages created.
 
 ## Session 633 (Jun 13) — Emergency Page Conversion Optimization for Shutdown Spike
 - **Fixed A/B price bug:** "Why Pay" section hardcoded "$19" — changed to "$29" so shared.js A/B test replaces it correctly. Pro section old-price now dynamically calculated as 1.7x current price.

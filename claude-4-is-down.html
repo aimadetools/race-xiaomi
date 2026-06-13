@@ -436,6 +436,9 @@
             .step-card { flex-direction: column; gap: 12px; }
             .pro-card { padding: 28px 20px; }
             .why-pay-grid { grid-template-columns: 1fr !important; }
+            #calc-cost-cards { grid-template-columns: 1fr !important; }
+            #calc-alt-table th:nth-child(3), #calc-alt-table td:nth-child(3),
+            #calc-alt-table th:nth-child(4), #calc-alt-table td:nth-child(4) { font-size: 12px; }
         }
     </style>
 </head>
@@ -659,6 +662,67 @@ claude-sonnet-4-6</code>
             </p>
         </section>
 
+        <!-- Interactive Cost Calculator -->
+        <section style="max-width:800px;margin:0 auto 48px;padding:0 24px;">
+            <div style="background:var(--bg-secondary);border:1px solid var(--border);border-radius:16px;padding:32px;">
+                <h2 style="font-size:24px;font-weight:800;text-align:center;margin-bottom:8px;">🧮 Calculate YOUR Exact Savings</h2>
+                <p style="text-align:center;color:var(--text-secondary);margin-bottom:24px;font-size:15px;">Enter your Claude 4 usage below. See what you'd pay with each alternative.</p>
+
+                <!-- Model selector -->
+                <div style="display:flex;gap:8px;justify-content:center;margin-bottom:20px;flex-wrap:wrap;">
+                    <button id="calc-opus-btn" onclick="setCalcModel('opus')" style="padding:10px 20px;background:rgba(239,68,68,0.1);border:2px solid #ef4444;border-radius:10px;cursor:pointer;font-size:14px;font-weight:600;color:#ef4444;">Claude 4 Opus — $15/$75</button>
+                    <button id="calc-sonnet-btn" onclick="setCalcModel('sonnet')" style="padding:10px 20px;background:var(--bg-primary);border:2px solid var(--border);border-radius:10px;cursor:pointer;font-size:14px;font-weight:600;color:var(--text-secondary);">Claude Sonnet 4 — $3/$15</button>
+                </div>
+
+                <!-- Usage inputs -->
+                <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:20px;">
+                    <div>
+                        <label style="display:block;font-size:13px;font-weight:600;color:var(--text-secondary);margin-bottom:6px;text-transform:uppercase;letter-spacing:0.5px;">Input tokens (millions/month)</label>
+                        <input type="number" id="calc-input-tokens" value="10" min="0" step="0.1" placeholder="e.g. 10" style="width:100%;padding:12px 16px;background:var(--bg-primary);border:1px solid var(--border);border-radius:8px;color:var(--text-primary);font-size:16px;font-family:inherit;">
+                    </div>
+                    <div>
+                        <label style="display:block;font-size:13px;font-weight:600;color:var(--text-secondary);margin-bottom:6px;text-transform:uppercase;letter-spacing:0.5px;">Output tokens (millions/month)</label>
+                        <input type="number" id="calc-output-tokens" value="2" min="0" step="0.1" placeholder="e.g. 2" style="width:100%;padding:12px 16px;background:var(--bg-primary);border:1px solid var(--border);border-radius:8px;color:var(--text-primary);font-size:16px;font-family:inherit;">
+                    </div>
+                </div>
+
+                <button onclick="calculateSavings()" style="display:block;width:100%;background:var(--accent);color:white;border:none;border-radius:10px;padding:14px 24px;font-size:16px;font-weight:700;cursor:pointer;transition:background 0.2s;">Calculate My Savings</button>
+
+                <!-- Results (hidden by default) -->
+                <div id="calc-results" style="display:none;margin-top:24px;">
+                    <!-- Savings hero -->
+                    <div style="background:linear-gradient(135deg,rgba(34,197,94,0.12),rgba(34,197,94,0.04));border:1px solid rgba(34,197,94,0.2);border-radius:14px;padding:28px;text-align:center;margin-bottom:20px;">
+                        <div style="font-size:16px;color:var(--text-secondary);margin-bottom:4px;">Maximum savings vs your current model</div>
+                        <div id="calc-max-savings" style="font-size:40px;font-weight:800;color:var(--green);">$0/mo</div>
+                        <div id="calc-max-savings-note" style="font-size:14px;color:var(--text-secondary);margin-top:4px;">by switching to the cheapest alternative</div>
+                    </div>
+
+                    <!-- Cost comparison -->
+                    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin-bottom:20px;" id="calc-cost-cards">
+                    </div>
+
+                    <!-- Top alternatives table -->
+                    <div style="overflow-x:auto;">
+                        <table style="width:100%;border-collapse:collapse;" id="calc-alt-table">
+                            <thead>
+                                <tr style="background:var(--bg-tertiary,rgba(99,102,241,0.1));">
+                                    <th style="padding:10px 14px;text-align:left;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;">Model</th>
+                                    <th style="padding:10px 14px;text-align:left;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;">Provider</th>
+                                    <th style="padding:10px 14px;text-align:right;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;">Your Cost</th>
+                                    <th style="padding:10px 14px;text-align:right;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;">Savings</th>
+                                </tr>
+                            </thead>
+                            <tbody id="calc-alt-body"></tbody>
+                        </table>
+                    </div>
+
+                    <div style="text-align:center;margin-top:16px;">
+                        <a href="calculator.html" style="display:inline-block;padding:10px 24px;background:var(--bg-secondary);border:1px solid var(--border);border-radius:8px;color:var(--text-primary);font-size:14px;font-weight:600;text-decoration:none;transition:border-color 0.2s;">See all 42 models → Full Calculator</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- Pro Upsell -->
         <section class="pro-upsell">
             <div class="pro-card">
@@ -803,6 +867,132 @@ claude-sonnet-4-6</code>
                 hoursDown.parentElement.querySelector('div:last-child').textContent = 'hours until shutdown';
             }
         });
+    </script>
+
+    <script>
+    // Interactive Cost Calculator for Emergency Page
+    (function(){
+        var calcModel = 'opus';
+        var alternatives = [
+            { name: 'Claude Opus 4.8', provider: 'Anthropic', input: 5.00, output: 25.00, direct: true },
+            { name: 'Claude Sonnet 4.6', provider: 'Anthropic', input: 3.00, output: 15.00 },
+            { name: 'GPT-5', provider: 'OpenAI', input: 1.25, output: 10.00 },
+            { name: 'Gemini 2.5 Pro', provider: 'Google', input: 1.25, output: 10.00 },
+            { name: 'DeepSeek V4 Pro', provider: 'DeepSeek', input: 0.435, output: 0.87 },
+            { name: 'DeepSeek V4 Flash', provider: 'DeepSeek', input: 0.14, output: 0.28, cheapest: true },
+            { name: 'Mistral Large 3', provider: 'Mistral', input: 0.50, output: 1.50 },
+            { name: 'GPT-5 mini', provider: 'OpenAI', input: 0.25, output: 2.00 },
+            { name: 'Llama 4 Scout', provider: 'Meta', input: 0.18, output: 0.59 },
+        ];
+
+        var deprecated = {
+            opus: { name: 'Claude 4 Opus', input: 15.00, output: 75.00 },
+            sonnet: { name: 'Claude Sonnet 4', input: 3.00, output: 15.00 }
+        };
+
+        window.setCalcModel = function(model) {
+            calcModel = model;
+            var opusBtn = document.getElementById('calc-opus-btn');
+            var sonnetBtn = document.getElementById('calc-sonnet-btn');
+            if (model === 'opus') {
+                opusBtn.style.background = 'rgba(239,68,68,0.1)';
+                opusBtn.style.borderColor = '#ef4444';
+                opusBtn.style.color = '#ef4444';
+                sonnetBtn.style.background = 'var(--bg-primary)';
+                sonnetBtn.style.borderColor = 'var(--border)';
+                sonnetBtn.style.color = 'var(--text-secondary)';
+            } else {
+                sonnetBtn.style.background = 'rgba(239,68,68,0.1)';
+                sonnetBtn.style.borderColor = '#ef4444';
+                sonnetBtn.style.color = '#ef4444';
+                opusBtn.style.background = 'var(--bg-primary)';
+                opusBtn.style.borderColor = 'var(--border)';
+                opusBtn.style.color = 'var(--text-secondary)';
+            }
+            // Recalculate if results are showing
+            if (document.getElementById('calc-results').style.display !== 'none') {
+                calculateSavings();
+            }
+        };
+
+        window.calculateSavings = function() {
+            var inputM = parseFloat(document.getElementById('calc-input-tokens').value) || 0;
+            var outputM = parseFloat(document.getElementById('calc-output-tokens').value) || 0;
+            var current = deprecated[calcModel];
+            var currentCost = (inputM * current.input) + (outputM * current.output);
+
+            // Calculate costs for all alternatives
+            var results = alternatives.map(function(a) {
+                var cost = (inputM * a.input) + (outputM * a.output);
+                var savings = currentCost - cost;
+                var pct = currentCost > 0 ? ((savings / currentCost) * 100).toFixed(0) : 0;
+                return { name: a.name, provider: a.provider, input: a.input, output: a.output, cost: cost, savings: savings, pct: pct, direct: a.direct, cheapest: a.cheapest };
+            });
+
+            // Sort by cost
+            results.sort(function(a, b) { return a.cost - b.cost; });
+
+            var cheapest = results[results.length - 1];
+            var bestAlt = results[0];
+            var maxSavings = currentCost - bestAlt.cost;
+
+            // Update savings hero
+            var maxSavingsEl = document.getElementById('calc-max-savings');
+            var maxSavingsNote = document.getElementById('calc-max-savings-note');
+            if (maxSavingsEl) maxSavingsEl.textContent = '$' + maxSavings.toFixed(2) + '/mo';
+            if (maxSavingsNote) maxSavingsNote.textContent = 'by switching to ' + bestAlt.name + ' (' + bestAlt.pct + '% cheaper)';
+
+            // Update cost cards
+            var cardsHtml = '<div style="background:var(--bg-primary);border:1px solid var(--border);border-radius:10px;padding:16px;text-align:center;">' +
+                '<div style="font-size:11px;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.5px;margin-bottom:6px;">Your Current Cost</div>' +
+                '<div style="font-size:24px;font-weight:800;color:#ef4444;">$' + currentCost.toFixed(2) + '</div>' +
+                '<div style="font-size:12px;color:var(--text-secondary);margin-top:2px;">' + current.name + '</div></div>' +
+                '<div style="background:var(--bg-primary);border:1px solid var(--border);border-radius:10px;padding:16px;text-align:center;">' +
+                '<div style="font-size:11px;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.5px;margin-bottom:6px;">Direct Replacement</div>' +
+                '<div style="font-size:24px;font-weight:800;color:var(--green);">$' + (results.find(function(r){return r.direct}) || results[0]).cost.toFixed(2) + '</div>' +
+                '<div style="font-size:12px;color:var(--text-secondary);margin-top:2px;">' + (results.find(function(r){return r.direct}) || results[0]).name + '</div></div>' +
+                '<div style="background:var(--bg-primary);border:1px solid var(--border);border-radius:10px;padding:16px;text-align:center;">' +
+                '<div style="font-size:11px;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.5px;margin-bottom:6px;">Cheapest Option</div>' +
+                '<div style="font-size:24px;font-weight:800;color:var(--accent);">$' + bestAlt.cost.toFixed(2) + '</div>' +
+                '<div style="font-size:12px;color:var(--text-secondary);margin-top:2px;">' + bestAlt.name + '</div></div>';
+            document.getElementById('calc-cost-cards').innerHTML = cardsHtml;
+
+            // Update alternatives table (top 6)
+            var tableHtml = '';
+            results.slice(0, 6).forEach(function(r, i) {
+                var savingsColor = r.savings > 0 ? 'var(--green)' : r.savings < 0 ? 'var(--red)' : 'var(--text-muted)';
+                var savingsText = r.savings > 0 ? '-' + r.pct + '%' : r.savings < 0 ? '+' + Math.abs(r.pct) + '%' : '—';
+                var rowStyle = r.cheapest ? 'background:rgba(34,197,94,0.05);' : r.direct ? 'background:rgba(99,102,241,0.05);' : '';
+                var badge = r.cheapest ? ' <span style="display:inline-block;background:var(--green);color:#000;padding:2px 8px;border-radius:4px;font-size:10px;font-weight:700;margin-left:6px;">CHEAPEST</span>' :
+                    r.direct ? ' <span style="display:inline-block;background:var(--accent);color:white;padding:2px 8px;border-radius:4px;font-size:10px;font-weight:700;margin-left:6px;">DIRECT</span>' : '';
+                tableHtml += '<tr style="' + rowStyle + '">' +
+                    '<td style="padding:10px 14px;border-top:1px solid var(--border);font-size:13px;font-weight:600;color:var(--text-primary);">' + r.name + badge + '</td>' +
+                    '<td style="padding:10px 14px;border-top:1px solid var(--border);font-size:13px;color:var(--text-secondary);">' + r.provider + '</td>' +
+                    '<td style="padding:10px 14px;border-top:1px solid var(--border);font-size:13px;font-weight:600;text-align:right;color:var(--text-primary);">$' + r.cost.toFixed(2) + '</td>' +
+                    '<td style="padding:10px 14px;border-top:1px solid var(--border);font-size:13px;font-weight:700;text-align:right;color:' + savingsColor + ';">' + savingsText + '</td></tr>';
+            });
+            document.getElementById('calc-alt-body').innerHTML = tableHtml;
+
+            // Show results
+            document.getElementById('calc-results').style.display = 'block';
+
+            // Track
+            if (window.trackEvent) window.trackEvent('shutdown_calc_used', { model: calcModel, input_m: inputM, output_m: outputM, max_savings: maxSavings.toFixed(2) });
+
+            // Scroll to results
+            document.getElementById('calc-results').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        };
+
+        // Auto-calculate on Enter key
+        document.addEventListener('DOMContentLoaded', function() {
+            var inputs = document.querySelectorAll('#calc-input-tokens, #calc-output-tokens');
+            inputs.forEach(function(input) {
+                input.addEventListener('keydown', function(e) {
+                    if (e.key === 'Enter') { e.preventDefault(); calculateSavings(); }
+                });
+            });
+        });
+    })();
     </script>
 </body>
 </html>
