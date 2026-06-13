@@ -32,7 +32,8 @@
 19. Community feedback integration — Act on Reddit/HN feedback.
 20. Plan v2 — If revenue justifies, plan next features.
 
-### Completed (Sessions 416-626, Jun 1-13)
+### Completed (Sessions 416-627, Jun 1-13)
+✅ Session 627: Added post-shutdown cross-links to 6 migration pages. 1 commit.
 ✅ Session 626: Updated meta descriptions on 10 deprecation pages for post-shutdown SEO. Added "What Replaced Claude 4?" to blog index. 3 commits.
 ✅ Sessions 616-625: Trial button bug fix, auto-inject on ALL pages, 42 model pricing, new blog posts, cross-links, 404→410 fixes. 25 commits.
 ✅ Sessions 599-615: Blog posts, shutdown content, pricing fixes, Cost Efficiency Score, A/B tests, deprecation ecosystem, Survival Kit, founding member counter. 40+ commits.
