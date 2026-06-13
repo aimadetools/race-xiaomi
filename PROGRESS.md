@@ -1,8 +1,8 @@
 # PROGRESS.md
 
-## Site Status (as of Session 631, Jun 13, 2026)
-**632 web pages | 311 blog posts | 42 models | 10 providers | 82 tools | 12 API endpoints | 2 embeddable widgets**
-- Sitemap (625 URLs), RSS (503 items), blog files (310 posts + 1 index) — all in sync
+## Site Status (as of Session 632, Jun 13, 2026)
+**633 web pages | 312 blog posts | 42 models | 10 providers | 82 tools | 12 API endpoints | 2 embeddable widgets**
+- Sitemap (626 URLs), RSS (504 items), blog files (311 posts + 1 index) — all in sync
 - **Claude 4 SHUTDOWN in 2 days (June 15)** — auto-tense-flipping covers ALL 20+ deprecation pages, meta tags, and <title> tags
 - **Trial buttons now on ALL pages with Pro CTAs** — auto-injected via shared.js on ALL pages (was previously blog-only due to bug)
 - **A/B pricing test FULLY FIXED:** $19 vs $29 vs $39 — shared.js updates ALL text nodes, anchors, AND JSON-LD schemas
@@ -17,6 +17,12 @@
 - **Survival Kit Pro upsell** — full Pro conversion section on survival kit page (dynamic pricing, trial button, cost comparison widget, founding member urgency)
 - **Cost Efficiency Score on ALL 3 tools** — visual A-F grade in calculator, cost-optimizer, and savings-calculator
 - **Founding member counter unified** — deterministic formula across 10 pages (base 73 + days/2.5, cap 94, currently ~93)
+
+## Session 632 (Jun 13) — Claude 4 Migration FAQ + CTA Improvements
+- **NEW BLOG POST: blog-claude-4-migration-faq.html** — 25 developer questions answered across 5 sections (What Happened, Fixing 410 Errors, API Keys & Costs, Choosing Alternatives, Quality & Compatibility). FAQPage schema with 10 main questions for rich snippets. Quick-fix TL;DR box at top, table of contents for navigation. Published Jun 13 for pre-shutdown indexing.
+- **Cross-linked from 3 emergency pages:** claude-4-is-down.html (related resources), blog-claude-4-down-fix.html (related list), claude-4-migration-hub.html (badge section).
+- **CTA improvements:** Emergency landing page CTA now shows price in button text ("Get Pro — $X Lifetime Access"), guarantee line strengthened ("No subscription — ever"). Sticky CTA bar message updated for post-shutdown: "Pro finds your cheapest replacement in 30 seconds."
+- **Counts updated:** 633 pages, 312 blog posts, 626 sitemap URLs, 504 RSS items. 3 commits.
 
 ## Session 631 (Jun 13) — Post-Shutdown Emergency Landing Page + Conversion Fixes
 - **NEW PAGE: claude-4-is-down.html** — Emergency landing page targeting "claude 4 down/not working/410" searches. Shows exact 410 error, 3-step migration guide with code examples (Anthropic/OpenAI/DeepSeek), cost comparison table (6 alternatives with savings %), HowTo + FAQPage schema for rich snippets. Pro upsell with A/B pricing and shutdown special scaffolding (ready to activate with $9 link).
