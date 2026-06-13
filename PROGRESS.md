@@ -1,6 +1,6 @@
 # PROGRESS.md
 
-## Site Status (as of Session 615, Jun 13, 2026)
+## Site Status (as of Session 617, Jun 13, 2026)
 **623 web pages | 303 blog posts | 42 models | 10 providers | 82 tools | 12 API endpoints | 2 embeddable widgets**
 - Sitemap (617 URLs), RSS (495 items), blog files (303 posts + 1 index) — all in sync
 - **Claude 4 SHUTDOWN in 2 days (June 15)** — auto-tense-flipping covers ALL 20+ deprecation pages, meta tags, and <title> tags
@@ -16,6 +16,12 @@
 - **Trial buttons** added to 20+ pages: calculator, cost-optimizer, savings-calculator, cost-audit, migration-calculator, pricing, survival kit, error pages, model-switch, cost-explorer, cost-scenarios, model-matrix, ai-stack-builder, alternatives, about, ai-cost-saas, ai-feature-cost-estimator, ai-project-budget-planner, api-cost-card, post-shutdown guide
 - **Cost Efficiency Score on ALL 3 tools** — visual A-F grade in calculator, cost-optimizer, and savings-calculator
 - **Founding member counter unified** — deterministic formula across 10 pages (base 73 + days/2.5, cap 94, currently ~93)
+
+## Session 617 (Jun 13) — CROSS-LINK POST-SHUTDOWN BLOG POSTS
+- **3 critical blog posts had ZERO internal links:** blog-claude-4-down-fix.html, blog-claude-4-is-dead.html, blog-claude-4-is-gone-now-what.html were invisible to site navigation and search crawlers.
+- **Added cross-links from 6 high-traffic Claude 4 pages:** claude-4-status.html, claude-4-error.html, claude-4-deprecation.html, claude-4-migration-hub.html, claude-4-survival-kit.html, claude-4-post-deprecation.html.
+- These posts target high-intent queries ("claude 4 down", "claude 4 dead", "claude 4 gone") that will spike after the June 15 shutdown.
+- Files changed: 6 files. 1 commit.
 
 ## Session 616 (Jun 13) — BLOG INDEX FIXES + STALE COUNTS
 - **Blog index reordered:** All 310 post cards sorted into strict reverse-chronological order (was mixed/random). June 15 posts now at top, then June 14, 13, 12, 11, etc.

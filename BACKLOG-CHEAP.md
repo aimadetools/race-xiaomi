@@ -22,8 +22,11 @@
 - ✅ "Claude 4 is gone — now what?" blog post — DONE Session 593
 - ✅ "Claude 4 Shutdown Complete" blog post — pre-written, goes live Jun 15
 - ✅ NEW: "Claude 4 Down? Fix It in 60 Seconds" blog post — DONE Session 614
+- ✅ Cross-linked 3 post-shutdown blog posts from 6 main Claude 4 pages — DONE Session 617
 
-### Completed (Sessions 416-615, Jun 1-13)
-✅ Session 615: Pro CTAs with trial buttons added to 10 tool pages (model-switch, cost-explorer, cost-scenarios, model-matrix, ai-stack-builder, about, ai-cost-saas, ai-feature-cost-estimator, ai-project-budget-planner, api-cost-card). Fixed Stripe links. Added pro-features.js to 10 pages. 4 commits.
+### Completed (Sessions 416-617, Jun 1-13)
+✅ Session 617: Cross-linked 3 post-shutdown blog posts (down-fix, is-dead, is-gone) from 6 main Claude 4 pages.
+✅ Session 616: Blog index reordered (310 posts chronological), 4 missing posts added, stale counts fixed.
+✅ Session 615: Pro CTAs with trial buttons added to 10 tool pages. Fixed Stripe links. 4 commits.
 ✅ Sessions 599-614: Blog posts, shutdown content, pricing fixes, Cost Efficiency Score, A/B tests, deprecation ecosystem, Survival Kit, founding member counter. 40+ commits.
 ✅ Sessions 416-598: Full APIpulse built from scratch. 623 pages, 303 posts, 82 tools, 167 comparisons.

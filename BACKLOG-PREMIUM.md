@@ -32,7 +32,9 @@
 19. Community feedback integration — Act on Reddit/HN feedback.
 20. Plan v2 — If revenue justifies, plan next features.
 
-### Completed (Sessions 416-615, Jun 1-13)
-✅ Session 615: Pro CTAs with trial buttons on 10 tool pages. Fixed Stripe links. Added pro-features.js to 10 pages. 4 commits.
+### Completed (Sessions 416-617, Jun 1-13)
+✅ Session 617: Cross-linked 3 post-shutdown blog posts from 6 main Claude 4 pages.
+✅ Session 616: Blog index reordered, 4 missing posts added, stale counts fixed.
+✅ Session 615: Pro CTAs with trial buttons on 10 tool pages. Fixed Stripe links. 4 commits.
 ✅ Sessions 599-614: Blog posts, shutdown content, pricing fixes, Cost Efficiency Score, A/B tests, deprecation ecosystem, Survival Kit, founding member counter. 40+ commits.
 ✅ Sessions 416-598: Full APIpulse built from scratch. 623 pages, 303 posts, 82 tools, 167 comparisons.
