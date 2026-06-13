@@ -976,4 +976,26 @@ document.addEventListener('DOMContentLoaded', function() {
         btn.disabled = false;
         btn.textContent = 'Subscribe';
     });
+
+    // --- Auto-inject trial buttons next to existing Pro CTAs ---
+    // Finds all "Get Pro" / "Unlock Pro" links and adds a trial button after them
+    if (typeof startTrial === 'function') {
+        document.querySelectorAll('a[href*="buy.stripe.com"], a[href*="pricing.html"]').forEach(function(a) {
+            var text = (a.textContent || '').trim();
+            if (!text.match(/Get Pro|Unlock Pro|Buy Pro|Pro — \$|Pro —/i)) return;
+            // Don't add if already has a trial button next to it
+            var next = a.nextElementSibling;
+            if (next && next.tagName === 'BUTTON' && next.textContent.indexOf('Free') !== -1) return;
+            // Also check parent for existing trial button
+            if (a.parentElement && a.parentElement.querySelector('button[onclick*="startTrial"]')) return;
+            var btn = document.createElement('button');
+            btn.onclick = function() {
+                startTrial();
+                if (window.trackEvent) window.trackEvent('trial_started', { source: 'auto_cta_' + (a.className || 'link') });
+            };
+            btn.style.cssText = 'display:inline-block;padding:8px 16px;font-size:13px;font-weight:600;border:2px solid var(--accent);background:transparent;color:var(--accent);border-radius:8px;cursor:pointer;transition:all 0.2s;margin-left:8px;vertical-align:middle;';
+            btn.textContent = 'Try Free 24h';
+            a.insertAdjacentElement('afterend', btn);
+        });
+    }
 });
