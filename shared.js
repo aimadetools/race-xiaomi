@@ -888,7 +888,7 @@ function renderPricingFreshness(containerId) {
         var barMsg, ctaContext;
         if (isDepPage) {
             var postDep = new Date() >= new Date('2026-06-15T00:00:00Z');
-            barMsg = postDep ? 'Claude 4 is retired — Pro finds your cheapest replacement' : 'Migrating off Claude 4? Pro shows the cheapest path';
+            barMsg = postDep ? 'Claude 4 is down — Pro finds your cheapest replacement in 30 seconds' : 'Migrating off Claude 4? Pro shows the cheapest path';
             ctaContext = 'sticky_bar_deprecation';
         } else if (isCalcPage) {
             barMsg = 'Done calculating? Pro shows how to cut those costs by 40%';
