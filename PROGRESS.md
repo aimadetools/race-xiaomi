@@ -1,9 +1,10 @@
 # PROGRESS.md
 
-## Site Status (as of Session 632, Jun 13, 2026)
+## Site Status (as of Session 633, Jun 13, 2026)
 **633 web pages | 312 blog posts | 42 models | 10 providers | 82 tools | 12 API endpoints | 2 embeddable widgets**
 - Sitemap (626 URLs), RSS (504 items), blog files (311 posts + 1 index) — all in sync
 - **Claude 4 SHUTDOWN in 2 days (June 15)** — auto-tense-flipping covers ALL 20+ deprecation pages, meta tags, and <title> tags
+- **Emergency landing page OPTIMIZED for shutdown traffic** — A/B price bug fixed, trust badges, time-pressure counter, quick-fix trust bar, cross-links from 10+ pages
 - **Trial buttons now on ALL pages with Pro CTAs** — auto-injected via shared.js on ALL pages (was previously blog-only due to bug)
 - **A/B pricing test FULLY FIXED:** $19 vs $29 vs $39 — shared.js updates ALL text nodes, anchors, AND JSON-LD schemas
 - **A/B exit popup timing test running:** 30s vs 45s vs 60s on mobile — all events tagged with timing_variant
@@ -17,6 +18,15 @@
 - **Survival Kit Pro upsell** — full Pro conversion section on survival kit page (dynamic pricing, trial button, cost comparison widget, founding member urgency)
 - **Cost Efficiency Score on ALL 3 tools** — visual A-F grade in calculator, cost-optimizer, and savings-calculator
 - **Founding member counter unified** — deterministic formula across 10 pages (base 73 + days/2.5, cap 94, currently ~93)
+
+## Session 633 (Jun 13) — Emergency Page Conversion Optimization for Shutdown Spike
+- **Fixed A/B price bug:** "Why Pay" section hardcoded "$19" — changed to "$29" so shared.js A/B test replaces it correctly. Pro section old-price now dynamically calculated as 1.7x current price.
+- **Added time-pressure section:** Hours-since-shutdown counter (or countdown if pre-shutdown), urgency messaging ("Every hour your API returns 410 errors, you're losing users"), 3-stat display (hours down / fix time / savings %).
+- **Added trust badges:** One-time payment, instant access, 14-day refund, lifetime updates — displayed below Pro CTA button.
+- **Added quick-fix trust bar:** "Fix in 5 minutes", "No new API key needed (Anthropic)", "Same SDK, same code" — shown below error box.
+- **Updated social proof:** "$0 subscription — ever" emphasis added to developer count line.
+- **Added cross-links from 5 more pages:** blog-claude-4-shutdown-action-plan, blog-what-replaced-claude-4, blog-claude-4-is-gone-now-what, blog-claude-4-retired-what-to-do, blog-claude-4-is-dead. Emergency page now linked from 10+ pages.
+- **1 commit.** 6 files changed, 88 insertions.
 
 ## Session 632 (Jun 13) — Claude 4 Migration FAQ + CTA Improvements
 - **NEW BLOG POST: blog-claude-4-migration-faq.html** — 25 developer questions answered across 5 sections (What Happened, Fixing 410 Errors, API Keys & Costs, Choosing Alternatives, Quality & Compatibility). FAQPage schema with 10 main questions for rich snippets. Quick-fix TL;DR box at top, table of contents for navigation. Published Jun 13 for pre-shutdown indexing.
