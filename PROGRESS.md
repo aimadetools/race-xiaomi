@@ -26,21 +26,6 @@
 - **Added trial expiry urgency banner:** Red countdown banner when trial users have < 2 hours remaining. Shows minutes left and links to pricing page. Tracks trial_urgency_shown event.
 - **Added trial buttons to 10 calculator pages:** ai-roi, chatbot-cost, claude-api-cost, claude-deprecation-calculator (added trial next to existing Pro CTA), and gpt5, deepseek, gemini, mistral, cohere, llama calculators (added inline Pro CTA + trial button). Trial funnel expanded from 8 to 18 tool pages.
 - Files changed: 14 files (pro-features.js, analytics.js, ai-roi-calculator.html, chatbot-cost-calculator.html, claude-api-cost-calculator.html, claude-deprecation-calculator.html, gpt5-api-cost-calculator.html, deepseek-api-cost-calculator.html, gemini-api-cost-calculator.html, mistral-api-cost-calculator.html, cohere-cost-calculator.html, llama-api-cost-calculator.html). 4 commits.
-**623 web pages | 303 blog posts | 42 models | 10 providers | 82 tools | 12 API endpoints | 2 embeddable widgets**
-- Sitemap (617 URLs), RSS (495 items), blog files (303 posts + 1 index) — all in sync
-- **Claude 4 SHUTDOWN in 2 days (June 15)** — auto-tense-flipping covers ALL 20+ deprecation pages, meta tags, and <title> tags
-- **A/B pricing test FULLY FIXED:** $19 vs $29 vs $39 — shared.js updates ALL text nodes, anchors, AND JSON-LD schemas
-- **A/B exit popup timing test running:** 30s vs 45s vs 60s on mobile — all events tagged with timing_variant
-- **A/B gated recommendations test running:** show 1 free vs 0 free alternatives — tracks ab_gated_recs_assigned and pro_gated_rec_click events
-- **Pricing data verified Jun 12:** Mistral Small 4 corrected ($0.15→$0.10), Jamba 1.5 deprecated, 8 models re-verified
-- **Stale pricing FIXED (Sessions 612-613):** Mistral Small ($0.15→$0.10), Kimi K2.6 ($0.90→$0.95), Llama 4 Scout ($0.11→$0.18, context 10M→1M). Fixed across 60+ files.
-- **Conversion funnel:** personalized Pro upsells, context-aware sticky CTA bar, exit popups on high-intent pages
-- **All 167 comparison pages + 302 blog posts** have inline Pro CTAs
-- **Blog index FIXED (Session 613):** Future-dated posts hidden via JS auto-date filter, countdown posts 2-day and 1-day added. Posts auto-appear on their publication date.
-- **Survival Kit Pro upsell** — full Pro conversion section on survival kit page (dynamic pricing, trial button, cost comparison widget, founding member urgency)
-- **Trial buttons** added to 20+ pages: calculator, cost-optimizer, savings-calculator, cost-audit, migration-calculator, pricing, survival kit, error pages, model-switch, cost-explorer, cost-scenarios, model-matrix, ai-stack-builder, alternatives, about, ai-cost-saas, ai-feature-cost-estimator, ai-project-budget-planner, api-cost-card, post-shutdown guide
-- **Cost Efficiency Score on ALL 3 tools** — visual A-F grade in calculator, cost-optimizer, and savings-calculator
-- **Founding member counter unified** — deterministic formula across 10 pages (base 73 + days/2.5, cap 94, currently ~93)
 
 ## Session 621 (Jun 13) — DYNAMIC COUNTDOWN FIX + STALE CONTENT CLEANUP
 - **Dynamic countdown calculator in shared.js:** Replaces hardcoded "N days left" with live calculation. Handles 15+ patterns including meta tags and JSON-LD. Skips inline JS elements.
