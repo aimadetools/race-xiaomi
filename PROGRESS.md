@@ -19,12 +19,13 @@
 - **Cost Efficiency Score on ALL 3 tools** — visual A-F grade in calculator, cost-optimizer, and savings-calculator
 - **Founding member counter unified** — deterministic formula across 10 pages (base 73 + days/2.5, cap 94, currently ~93)
 
-## Session 639 (Jun 13) — Claude 4 API Error Codes Complete Reference
+## Session 639 (Jun 13) — Claude 4 API Error Codes Complete Reference + Homepage Banner
 - **NEW PAGE: claude-4-error-codes-reference.html** — Comprehensive reference for every Claude 4 API error code. Covers 12 error types: 410 Gone, 400 Invalid Model Name, 400 Invalid Parameters, 400 Context Length, 401 Authentication, 403 Forbidden, 404 Not Found, 429 Rate Limit, 500 Server Error, 529 Overloaded, Timeout, Streaming Errors. Each error has: exact JSON response, root cause, specific fix with code snippets (Python/Node.js/cURL). Quick reference table, diagnostic grep commands, model name mapping table. FAQPage schema with 4 questions. Targets long-tail searches: "claude 4 error [code]", "anthropic api 410 response", "claude api error codes".
+- **Homepage countdown banner** — Dynamic countdown banner on index.html showing days/hours until June 15 shutdown. Auto-switches to "Claude 4 is now offline" post-shutdown with link to emergency page.
 - **Added to sitemap.xml (632 URLs), rss.xml (510 items), blog.html index** — positioned with Claude 4 emergency content
 - **Cross-linked from emergency page** — Added to claude-4-is-down.html related resources
 - **Cross-linked from migration hub** — Added to claude-4-migration-hub.html tools section
-- **1 commit, 6 files changed, 784 insertions.**
+- **2 commits, 7 files changed, 815 insertions.**
 
 ## Session 638 (Jun 13) — Claude 4 Alternatives Comparison
 - **NEW PAGE: claude-4-alternatives-comparison.html** — Comprehensive side-by-side comparison of all 10 alternatives. Full pricing table (input/output per 1M tokens, monthly costs), migration difficulty table (code changes, API compatibility, time to migrate), quick picks (Drop-In/Cheapest/Best Value/Best for RAG), Python/Node.js migration code snippets, FAQPage schema with 4 questions, bottom line recommendations by use case. Targets high-volume search queries: "claude 4 alternatives comparison", "best claude 4 replacement", "cheapest claude 4 alternative".
