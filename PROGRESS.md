@@ -1,6 +1,6 @@
 # PROGRESS.md
 
-## Site Status (as of Session 614, Jun 13, 2026)
+## Site Status (as of Session 615, Jun 13, 2026)
 **623 web pages | 303 blog posts | 42 models | 10 providers | 82 tools | 12 API endpoints | 2 embeddable widgets**
 - Sitemap (617 URLs), RSS (495 items), blog files (303 posts + 1 index) — all in sync
 - **Claude 4 SHUTDOWN in 2 days (June 15)** — auto-tense-flipping covers ALL 20+ deprecation pages, meta tags, and <title> tags
@@ -13,9 +13,15 @@
 - **All 167 comparison pages + 302 blog posts** have inline Pro CTAs
 - **Blog index FIXED (Session 613):** Future-dated posts hidden via JS auto-date filter, countdown posts 2-day and 1-day added. Posts auto-appear on their publication date.
 - **Survival Kit Pro upsell** — full Pro conversion section on survival kit page (dynamic pricing, trial button, cost comparison widget, founding member urgency)
-- **Trial buttons** added to calculator, cost-optimizer, savings-calculator, cost-audit, migration-calculator, pricing, survival kit, and error pages
+- **Trial buttons** added to calculator, cost-optimizer, savings-calculator, cost-audit, migration-calculator, pricing, survival kit, error pages, model-switch, cost-explorer, cost-scenarios, model-matrix, ai-stack-builder, and alternatives page
 - **Cost Efficiency Score on ALL 3 tools** — visual A-F grade in calculator, cost-optimizer, and savings-calculator
 - **Founding member counter unified** — deterministic formula across 10 pages (base 73 + days/2.5, cap 94, currently ~93)
+
+## Session 615 (Jun 13) — PRO CTAs ON TOOL PAGES + CONVERSION OPTIMIZATION
+- **Pro upsell CTAs added to 5 tool pages:** model-switch.html (trial button added), cost-explorer.html (new section), cost-scenarios.html (fixed Stripe link + trial button), model-matrix.html (new section), ai-stack-builder.html (new section). All include Stripe payment link, trial button, and trust signals.
+- **Trial button added to Claude 4 alternatives page** — key shutdown traffic page. Added trial button with GA4 tracking.
+- **Total trial-enabled pages:** 16+ pages now have both Stripe CTA and trial button.
+- Files changed: 6 HTML files. 2 commits.
 
 ## Session 614 (Jun 13) — SHUTDOWN TRAFFIC PREP + NEW BLOG POST
 - **NEW blog post:** "Claude 4 Down? Fix It in 60 Seconds — Change One Line" (blog-claude-4-down-fix.html). SEO-optimized for "claude 4 down" search queries. Includes one-line fix, code examples (Python/Node/cURL/TypeScript), cost comparison table, model mapping, and Pro trial CTA.
