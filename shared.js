@@ -245,7 +245,7 @@ document.addEventListener('DOMContentLoaded', () => {
         banner.id = 'deprecation-urgency-banner';
         banner.style.cssText = 'background:#dc2626;color:white;padding:10px 16px;text-align:center;font-size:13px;font-weight:600;position:relative;z-index:9999;display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap;';
         banner.innerHTML = '<span>🔴 Claude 4 Opus & Sonnet have been retired — API calls will fail</span>' +
-            '<a href="claude-4-deprecation.html" style="color:white;text-decoration:underline;font-weight:700;">Find a cheaper alternative →</a>' +
+            '<a href="claude-4-is-down.html" style="color:white;text-decoration:underline;font-weight:700;">Fix it in 5 minutes →</a>' +
             '<button onclick="document.getElementById(\'deprecation-urgency-banner\').remove();localStorage.setItem(\'apipulse_deprecation_retired_dismissed\',\'1\');" style="background:none;border:none;color:white;cursor:pointer;font-size:16px;padding:0 4px;opacity:0.8;position:absolute;right:12px;" aria-label="Dismiss">✕</button>';
         document.body.insertBefore(banner, document.body.firstChild);
         var nav = document.querySelector('nav');
@@ -900,11 +900,11 @@ function renderPricingFreshness(containerId) {
             barMsg = 'Stop guessing — Pro gives data-driven cost optimization';
             ctaContext = 'sticky_bar_cost_tools';
         } else {
-            barMsg = 'Founding Member: Pro for $' + price + ' <span style="opacity:0.7;font-weight:400;font-size:12px;">(goes to $' + futurePrice + ' soon)</span>';
+            barMsg = 'Founding Member: Pro for $' + price + ' one-time <span style="opacity:0.7;font-weight:400;font-size:12px;">(goes to $' + futurePrice + ' soon)</span>';
             ctaContext = 'sticky_bar_default';
         }
         bar.innerHTML = '<span style="color:white;font-size:14px;font-weight:600;">' + barMsg + '</span>' +
-            '<a href="' + stripeLink + '" target="_blank" rel="noopener" style="background:white;color:#4f46e5;padding:8px 20px;border-radius:8px;font-size:13px;font-weight:700;text-decoration:none;white-space:nowrap;" onclick="if(window.trackEvent)window.trackEvent(\'pro_button_clicked\',{source:\'' + ctaContext + '\',variant:\'' + variant + '\',price:' + price + '})">Get Pro — $' + price + '</a>' +
+            '<a href="' + stripeLink + '" target="_blank" rel="noopener" style="background:white;color:#4f46e5;padding:8px 20px;border-radius:8px;font-size:13px;font-weight:700;text-decoration:none;white-space:nowrap;" onclick="if(window.trackEvent)window.trackEvent(\'pro_button_clicked\',{source:\'' + ctaContext + '\',variant:\'' + variant + '\',price:' + price + '})">Get Pro — $' + price + ' one-time</a>' +
             '<button onclick="document.getElementById(\'sticky-pro-cta\').remove();localStorage.setItem(\'apipulse_pro_cta_dismissed\',\'1\');" style="background:none;border:none;color:rgba(255,255,255,0.7);font-size:18px;cursor:pointer;padding:0 4px;" aria-label="Dismiss">&times;</button>';
         document.body.appendChild(bar);
         requestAnimationFrame(function() { bar.style.transform = 'translateY(0)'; });
