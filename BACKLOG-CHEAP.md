@@ -14,14 +14,17 @@
 - Review last-chance page and calculator → Pro upsell funnel
 - Monitor cost-audit, savings-calculator, trial button, efficiency_score, pro_gated_rec engagement
 
-### Post-Claude 4 Shutdown (after June 15)
-- Monitor post-shutdown traffic spikes (searches for "Claude 4 shutdown", "410 error")
+### Post-Claude 4 Shutdown (June 15 — in 2 days)
+- Monitor post-shutdown traffic spikes (searches for "Claude 4 shutdown", "410 error", "Claude 4 down")
 - Update blog-claude-4-shutdown-complete.html with real error messages users see
+- Track blog-claude-4-down-fix.html performance — target #1 for "claude 4 down" queries
 - ✅ Auto-tense-flip handles all deprecation pages — DONE Session 598
 - ✅ "Claude 4 is gone — now what?" blog post — DONE Session 593
 - ✅ "Claude 4 Shutdown Complete" blog post — pre-written, goes live Jun 15
+- ✅ NEW: "Claude 4 Down? Fix It in 60 Seconds" blog post — DONE Session 614
 
-### Completed (Sessions 416-613, Jun 1-12)
+### Completed (Sessions 416-614, Jun 1-13)
+✅ Session 614: NEW blog post "Claude 4 Down? Fix It in 60 Seconds" (blog-claude-4-down-fix.html). Added to blog index, sitemap, RSS. Conversion audit verified all infrastructure in place. 1 commit.
 ✅ Session 613: Blog index fix (auto-hide future-dated posts, added missing countdown pages). Stale dateModified fixes. Blog post count 301→302. Mistral Small 4 pricing fixed across 9 files. Kimi K2.6 pricing fixed. Llama 4 Scout pricing+context fixed across 130+ files. 7 commits.
 ✅ Session 612: Fixed stale pricing on index. Error page Pro upsell + countdown fix. Deprecation indicators in calculator. 4 commits.
 ✅ Session 611: Mobile responsive styles for efficiency score. Fixed broken compare link. June 2026 pricing changelog. 3 commits.

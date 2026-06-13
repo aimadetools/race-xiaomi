@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Claude 4 Down? Fix It in 60 Seconds — Change One Line | APIpulse</title>
+    <meta name="description" content="Claude 4 stopped working? You're getting HTTP 410 errors. Here's the one-line fix — and how to save 67-97% on your API costs while you're at it.">
+    <meta name="keywords" content="claude 4 down, claude api not working, claude 4 error, claude 410 gone, claude api broken, claude 4 deprecated, claude 4 shutdown fix">
+    <meta property="og:title" content="Claude 4 Down? Fix It in 60 Seconds">
+    <meta property="og:description" content="Claude 4 stopped working. Here's the one-line fix and how to save up to 97% on your API costs.">
+    <meta property="og:type" content="article">
+    <meta property="article:published_time" content="2026-06-15">
+    <meta property="article:modified_time" content="2026-06-15">
+    <meta property="article:author" content="APIpulse">
+    <meta property="og:image" content="https://getapipulse.com/og-image.png">
+    <meta property="og:url" content="https://getapipulse.com/blog-claude-4-down-fix.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Claude 4 Down? Fix It in 60 Seconds">
+    <meta name="twitter:image" content="https://getapipulse.com/og-image.png">
+    <meta name="twitter:description" content="Claude 4 stopped working. Fix it in 60 seconds.">
+    <link rel="canonical" href="https://getapipulse.com/blog-claude-4-down-fix.html">
+    <link rel="alternate" type="application/rss+xml" title="APIpulse Blog" href="https://getapipulse.com/rss.xml">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="styles.css">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0CEP7S9Y3J"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-0CEP7S9Y3J');
+    </script>
+    <script src="analytics.js" defer></script>
+    <script src="dynamic-date.js" defer></script>
+    <script src="shared.js" defer></script>
+    <script src="pricing-data.js" defer></script>
+    <script src="pro-features.js" defer></script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "Claude 4 Down? Fix It in 60 Seconds — Change One Line",
+        "description": "Claude 4 stopped working. Here's the one-line fix and how to save up to 97% on your API costs.",
+        "datePublished": "2026-06-15",
+        "dateModified": "2026-06-15",
+        "author": { "@type": "Organization", "name": "APIpulse" },
+        "publisher": { "@type": "Organization", "name": "APIpulse", "url": "https://getapipulse.com" }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "Why is Claude 4 not working?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Claude 4 Opus and Claude 4 Sonnet were permanently retired on June 15, 2026. All API calls now return HTTP 410 Gone errors. This is not a temporary outage — the models have been replaced by Claude Opus 4.8 and Claude Sonnet 4.6."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How do I fix Claude 4 API error?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Change one line in your code: replace 'claude-4-opus' with 'claude-opus-4-8' or 'claude-4-sonnet' with 'claude-sonnet-4-6'. Your API key and SDK stay the same — only the model name changes."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What is the cheapest Claude 4 alternative?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "DeepSeek V4 Pro at $0.435/$0.87 per 1M tokens (97% cheaper). For drop-in replacement, Claude Opus 4.8 at $5/$25 (67% cheaper). For budget: Gemini 2.0 Flash Lite at $0.075/$0.30 (99% cheaper)."
+                }
+            }
+        ]
+    }
+    </script>
+    <style>
+        .article { max-width: 760px; margin: 0 auto; padding: 120px 24px 60px; }
+        .article h1 { font-size: clamp(28px, 4vw, 40px); font-weight: 800; margin-bottom: 16px; line-height: 1.2; }
+        .article-meta { font-size: 14px; color: var(--text-muted); margin-bottom: 32px; }
+        .article p { font-size: 17px; line-height: 1.8; color: var(--text-secondary); margin-bottom: 20px; }
+        .article h2 { font-size: 24px; font-weight: 700; margin: 40px 0 16px; color: var(--text-primary); }
+        .article h3 { font-size: 18px; font-weight: 700; margin: 24px 0 12px; color: var(--text-primary); }
+
+        /* Urgency banner */
+        .urgency-banner {
+            background: linear-gradient(135deg, rgba(239,68,68,0.1), rgba(245,158,11,0.08));
+            border: 2px solid rgba(239,68,68,0.3); border-radius: 12px;
+            padding: 20px 24px; margin-bottom: 32px; text-align: center;
+        }
+        .urgency-banner .emoji { font-size: 28px; margin-bottom: 8px; }
+        .urgency-banner h2 { font-size: 18px; font-weight: 800; color: var(--red); margin-bottom: 4px; }
+        .urgency-banner p { font-size: 14px; color: var(--text-secondary); margin: 0; }
+
+        /* Fix box */
+        .fix-box {
+            background: var(--bg-secondary); border: 2px solid var(--green);
+            border-radius: 12px; padding: 28px; margin: 24px 0;
+        }
+        .fix-box h3 { font-size: 18px; color: var(--green); margin-bottom: 16px; }
+        .fix-before, .fix-after {
+            font-family: 'SF Mono', 'Fira Code', monospace; font-size: 14px;
+            padding: 16px; border-radius: 8px; margin-bottom: 12px; line-height: 1.6;
+        }
+        .fix-before { background: rgba(239,68,68,0.08); border: 1px solid rgba(239,68,68,0.3); color: var(--red); }
+        .fix-after { background: rgba(34,197,94,0.08); border: 1px solid rgba(34,197,94,0.3); color: var(--green); }
+        .fix-label { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px; }
+        .fix-label.before { color: var(--red); }
+        .fix-label.after { color: var(--green); }
+
+        /* Savings table */
+        .savings-table {
+            width: 100%; border-collapse: collapse; margin: 20px 0;
+            background: var(--bg-secondary); border-radius: 12px; overflow: hidden;
+            border: 1px solid var(--border);
+        }
+        .savings-table th {
+            background: var(--bg-card); padding: 12px 16px;
+            text-align: left; font-size: 12px; font-weight: 700;
+            text-transform: uppercase; letter-spacing: 0.5px; color: var(--text-secondary);
+        }
+        .savings-table td {
+            padding: 12px 16px; border-bottom: 1px solid var(--border);
+            font-size: 14px; color: var(--text-secondary);
+        }
+        .savings-table tr:last-child td { border-bottom: none; }
+        .savings-table .model-name { font-weight: 700; color: var(--text-primary); }
+        .savings-table .price { font-weight: 700; color: var(--accent); }
+        .savings-table .savings { color: var(--green); font-weight: 700; }
+        .savings-table .expensive { color: var(--red); text-decoration: line-through; }
+
+        /* Pro CTA */
+        .pro-cta {
+            background: linear-gradient(135deg, rgba(99,102,241,0.08), rgba(139,92,246,0.08));
+            border: 2px solid var(--accent); border-radius: 16px;
+            padding: 32px; text-align: center; margin: 32px 0;
+        }
+        .pro-cta h3 { font-size: 22px; font-weight: 800; margin-bottom: 8px; }
+        .pro-cta p { font-size: 15px; color: var(--text-secondary); margin-bottom: 20px; max-width: 500px; margin-left: auto; margin-right: auto; }
+        .cta-buttons { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+
+        /* Code tabs */
+        .code-tabs { margin: 20px 0; }
+        .tab-buttons { display: flex; gap: 4px; margin-bottom: -1px; position: relative; z-index: 1; }
+        .tab-btn {
+            padding: 8px 16px; background: var(--bg-card); border: 1px solid var(--border);
+            border-radius: 8px 8px 0 0; font-size: 13px; font-weight: 600;
+            color: var(--text-secondary); cursor: pointer; transition: all 0.2s;
+        }
+        .tab-btn.active { background: var(--bg-secondary); border-bottom-color: var(--bg-secondary); color: var(--accent); }
+        .tab-content { display: none; }
+        .tab-content.active { display: block; }
+        .tab-content pre {
+            background: var(--bg-secondary); border: 1px solid var(--border);
+            border-radius: 0 8px 8px 8px; padding: 20px; overflow-x: auto;
+            font-family: 'SF Mono', 'Fira Code', monospace; font-size: 13px;
+            line-height: 1.6; color: var(--text-secondary);
+        }
+        .code-old { color: var(--red); text-decoration: line-through; }
+        .code-new { color: var(--green); font-weight: 700; }
+
+        .article ul { margin: 16px 0; padding-left: 24px; }
+        .article li { font-size: 16px; line-height: 1.8; color: var(--text-secondary); margin-bottom: 8px; }
+        .article strong { color: var(--text-primary); }
+        .article a { color: var(--accent); text-decoration: underline; }
+        .article a:hover { color: var(--accent); }
+
+        @media (max-width: 768px) {
+            .article { padding: 100px 20px 40px; }
+            .fix-before, .fix-after { font-size: 12px; padding: 12px; }
+        }
+    </style>
+</head>
+<body>
+    <a href="#main" class="skip-link">Skip to content</a>
+    <nav>
+        <div class="nav-inner">
+            <a href="index.html" class="logo">API<span>pulse</span></a>
+            <button class="hamburger" onclick="toggleMobileNav()" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+            <div class="nav-links">
+                <a href="calculator.html">Calculator</a>
+                <a href="compare.html">Compare</a>
+                <a href="blog.html">Blog</a>
+                <a href="pricing.html" class="nav-cta" onclick="if(window.trackEvent)window.trackEvent('pro_button_clicked',{source:'nav'})">Get Pro — $29</a>
+                <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
+            </div>
+        </div>
+    </nav>
+
+    <main id="main">
+        <article class="article">
+            <!-- Urgency Banner -->
+            <div class="urgency-banner">
+                <div class="emoji">🔴</div>
+                <h2>Claude 4 Is Down — For Good</h2>
+                <p>Claude 4 Opus and Claude 4 Sonnet were permanently retired on June 15, 2026. API calls return HTTP 410 Gone.</p>
+            </div>
+
+            <h1>Claude 4 Down? Fix It in 60 Seconds — Change One Line</h1>
+            <p class="article-meta">Published June 15, 2026 · 3 min read · Updated in real-time</p>
+
+            <p><strong>If your Claude 4 API calls just started failing, you're not alone.</strong> Thousands of developers woke up today to HTTP 410 errors, "model not found" messages, and broken applications. Claude 4 Opus and Claude 4 Sonnet were permanently retired on June 15, 2026.</p>
+
+            <p>The good news? <strong>You can fix this in 60 seconds</strong> by changing one line of code. And while you're at it, you'll save 67-97% on your API costs.</p>
+
+            <!-- The Fix -->
+            <div class="fix-box">
+                <h3>⚡ The One-Line Fix</h3>
+                <div class="fix-label before">❌ Before (broken — you're seeing this now)</div>
+                <div class="fix-before">
+model = <span style="text-decoration:line-through">"claude-4-opus"</span>  // or "claude-4-sonnet"<br>
+<span style="color:var(--text-muted)">// → HTTP 410 Gone: "claude-4-opus has been deprecated"</span>
+                </div>
+                <div class="fix-label after">✅ After (fixed — works immediately)</div>
+                <div class="fix-after">
+model = <span style="font-weight:700">"claude-opus-4-8"</span>  // or "claude-sonnet-4-6"<br>
+<span style="color:var(--text-muted)">// → Works. Same API key. Same SDK. Just a new model name.</span>
+                </div>
+                <p style="font-size:14px;color:var(--text-secondary);margin:0;">That's it. No new API key. No SDK update. No configuration change. Just the model name string.</p>
+            </div>
+
+            <!-- Language-specific fixes -->
+            <h2>Code Fixes by Language</h2>
+
+            <div class="code-tabs">
+                <div class="tab-buttons">
+                    <button class="tab-btn active" onclick="switchTab('python')">Python</button>
+                    <button class="tab-btn" onclick="switchTab('node')">Node.js</button>
+                    <button class="tab-btn" onclick="switchTab('curl')">cURL</button>
+                    <button class="tab-btn" onclick="switchTab('typescript')">TypeScript</button>
+                </div>
+                <div id="tab-python" class="tab-content active">
+<pre><span style="color:var(--text-muted)"># Before (broken)</span>
+import anthropic
+client = anthropic.Anthropic()
+response = client.messages.create(
+    model=<span class="code-old">"claude-4-opus"</span>,
+    messages=[{"role": "user", "content": "Hello"}]
+)
+
+<span style="color:var(--text-muted)"># After (fixed) — only the model name changes</span>
+response = client.messages.create(
+    model=<span class="code-new">"claude-opus-4-8"</span>,
+    messages=[{"role": "user", "content": "Hello"}]
+)</pre>
+                </div>
+                <div id="tab-node" class="tab-content">
+<pre><span style="color:var(--text-muted)">// Before (broken)</span>
+import Anthropic from '@anthropic-ai/sdk';
+const client = new Anthropic();
+const response = await client.messages.create({
+  model: <span class="code-old">"claude-4-opus"</span>,
+  messages: [{ role: "user", content: "Hello" }]
+});
+
+<span style="color:var(--text-muted)">// After (fixed) — only the model name changes</span>
+const response = await client.messages.create({
+  model: <span class="code-new">"claude-opus-4-8"</span>,
+  messages: [{ role: "user", content: "Hello" }]
+});</pre>
+                </div>
+                <div id="tab-curl" class="tab-content">
+<pre><span style="color:var(--text-muted)"># Before (broken)</span>
+curl https://api.anthropic.com/v1/messages \
+  -H "x-api-key: $ANTHROPIC_API_KEY" \
+  -d '"model": <span class="code-old">"claude-4-opus"</span>'
+
+<span style="color:var(--text-muted)"># After (fixed)</span>
+curl https://api.anthropic.com/v1/messages \
+  -H "x-api-key: $ANTHROPIC_API_KEY" \
+  -d '"model": <span class="code-new">"claude-opus-4-8"</span>'</pre>
+                </div>
+                <div id="tab-typescript" class="tab-content">
+<pre><span style="color:var(--text-muted)">// Before (broken)</span>
+import Anthropic from '@anthropic-ai/sdk';
+const client = new Anthropic();
+
+const message = await client.messages.create({
+  model: <span class="code-old">"claude-4-opus"</span>,
+  max_tokens: 1024,
+  messages: [{ role: "user", content: "Hello" }]
+});
+
+<span style="color:var(--text-muted)">// After (fixed)</span>
+const message = await client.messages.create({
+  model: <span class="code-new">"claude-opus-4-8"</span>,
+  max_tokens: 1024,
+  messages: [{ role: "user", content: "Hello" }]
+});</pre>
+                </div>
+            </div>
+
+            <!-- The savings -->
+            <h2>You're About to Save a Lot of Money</h2>
+
+            <p>Here's the thing — Claude 4 Opus was expensive. <strong>$15 per million input tokens, $75 per million output tokens.</strong> The new alternatives are dramatically cheaper:</p>
+
+            <table class="savings-table">
+                <thead>
+                    <tr>
+                        <th>Model</th>
+                        <th>Input / Output</th>
+                        <th>vs Claude 4 Opus</th>
+                        <th>Monthly (10M in + 2M out)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><span class="expensive">Claude 4 Opus (retired)</span></td>
+                        <td><span class="expensive">$15 / $75</span></td>
+                        <td>—</td>
+                        <td><span class="expensive">$300/mo</span></td>
+                    </tr>
+                    <tr>
+                        <td class="model-name">Claude Opus 4.8</td>
+                        <td class="price">$5 / $25</td>
+                        <td class="savings">67% cheaper</td>
+                        <td>$100/mo</td>
+                    </tr>
+                    <tr>
+                        <td class="model-name">Claude Sonnet 4.6</td>
+                        <td class="price">$3 / $15</td>
+                        <td class="savings">80% cheaper</td>
+                        <td>$60/mo</td>
+                    </tr>
+                    <tr>
+                        <td class="model-name">GPT-5</td>
+                        <td class="price">$1.25 / $10</td>
+                        <td class="savings">89% cheaper</td>
+                        <td>$32.50/mo</td>
+                    </tr>
+                    <tr>
+                        <td class="model-name">Gemini 3.1 Pro</td>
+                        <td class="price">$2 / $12</td>
+                        <td class="savings">85% cheaper</td>
+                        <td>$44/mo</td>
+                    </tr>
+                    <tr>
+                        <td class="model-name">DeepSeek V4 Pro</td>
+                        <td class="price">$0.435 / $0.87</td>
+                        <td class="savings">97% cheaper</td>
+                        <td>$6.09/mo</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p><strong>That's $2,400+/year in savings just by switching models.</strong> And the fix takes 60 seconds.</p>
+
+            <!-- Pro CTA -->
+            <div class="pro-cta">
+                <h3>🚀 Get Your Personalized Migration Report</h3>
+                <p>Enter your exact Claude 4 usage. See your custom cost comparison across 42 alternatives. Most developers save $60-200/month.</p>
+                <div class="cta-buttons">
+                    <a href="claude-4-migration-calculator.html" class="btn-primary" style="padding:14px 32px;display:inline-block;">Calculate My Savings →</a>
+                    <a href="javascript:void(0)" onclick="if(typeof startProTrial==='function')startProTrial();else alert('Loading...')" class="btn-secondary" style="padding:14px 32px;display:inline-block;">Try Pro Free for 24h</a>
+                </div>
+            </div>
+
+            <!-- What about my data? -->
+            <h2>What About My API Keys and Data?</h2>
+            <p>Your existing Anthropic API key still works with the new models. <strong>You don't need to:</strong></p>
+            <ul>
+                <li>Generate a new API key</li>
+                <li>Update your SDK version</li>
+                <li>Change your authentication code</li>
+                <li>Migrate your data or conversation history</li>
+            </ul>
+            <p><strong>You only need to change the model name string.</strong> Everything else stays the same.</p>
+
+            <!-- Common errors -->
+            <h2>Error Messages You Might Be Seeing</h2>
+            <p>Depending on how your code handles errors, you might see one of these:</p>
+            <ul>
+                <li><strong>HTTP 410 Gone</strong> — The model endpoint no longer exists</li>
+                <li><strong>"model_not_found"</strong> — The model ID isn't recognized</li>
+                <li><strong>"invalid_model_error"</strong> — You're using a deprecated model name</li>
+                <li><strong>"claude-4-opus has been deprecated"</strong> — Direct deprecation message</li>
+            </ul>
+            <p>All of these have the same fix: <strong>change the model name</strong>.</p>
+
+            <!-- Model mapping -->
+            <h2>Claude 4 → New Model Mapping</h2>
+            <table class="savings-table">
+                <thead>
+                    <tr>
+                        <th>Old Model Name</th>
+                        <th>New Model Name</th>
+                        <th>What Changed</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code style="font-size:13px;background:var(--bg-card);padding:2px 6px;border-radius:4px;">claude-4-opus</code></td>
+                        <td><code style="font-size:13px;background:var(--bg-card);padding:2px 6px;border-radius:4px;color:var(--green);font-weight:700;">claude-opus-4-8</code></td>
+                        <td class="savings">67% cheaper, 5x context (1M)</td>
+                    </tr>
+                    <tr>
+                        <td><code style="font-size:13px;background:var(--bg-card);padding:2px 6px;border-radius:4px;">claude-4-opus-20250514</code></td>
+                        <td><code style="font-size:13px;background:var(--bg-card);padding:2px 6px;border-radius:4px;color:var(--green);font-weight:700;">claude-opus-4-8</code></td>
+                        <td class="savings">67% cheaper, 5x context (1M)</td>
+                    </tr>
+                    <tr>
+                        <td><code style="font-size:13px;background:var(--bg-card);padding:2px 6px;border-radius:4px;">claude-4-sonnet</code></td>
+                        <td><code style="font-size:13px;background:var(--bg-card);padding:2px 6px;border-radius:4px;color:var(--green);font-weight:700;">claude-sonnet-4-6</code></td>
+                        <td class="savings">Same price, 5x context (1M)</td>
+                    </tr>
+                    <tr>
+                        <td><code style="font-size:13px;background:var(--bg-card);padding:2px 6px;border-radius:4px;">claude-4-sonnet-20250514</code></td>
+                        <td><code style="font-size:13px;background:var(--bg-card);padding:2px 6px;border-radius:4px;color:var(--green);font-weight:700;">claude-sonnet-4-6</code></td>
+                        <td class="savings">Same price, 5x context (1M)</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <!-- Cross-provider alternatives -->
+            <h2>Looking to Switch Providers Entirely?</h2>
+            <p>If you want to explore alternatives beyond Anthropic, here are the best options across providers:</p>
+            <ul>
+                <li><strong>OpenAI GPT-5</strong> — $1.25/$10 per 1M tokens. Great for general tasks.</li>
+                <li><strong>Google Gemini 3.1 Pro</strong> — $2/$12 per 1M tokens. 1M context window.</li>
+                <li><strong>DeepSeek V4 Pro</strong> — $0.435/$0.87 per 1M tokens. Budget king.</li>
+                <li><strong>Mistral Large</strong> — $2/$6 per 1M tokens. Strong European option.</li>
+            </ul>
+            <p>Use our <a href="compare.html">side-by-side comparison tool</a> to see all 42 models compared.</p>
+
+            <!-- Final CTA -->
+            <div class="pro-cta" style="margin-top:40px;">
+                <h3>📊 Save Even More with APIpulse Pro</h3>
+                <p>Get a personalized optimization report showing exactly which model mix saves you the most money. Most developers save $2,400+/year.</p>
+                <div class="cta-buttons">
+                    <a href="cost-optimizer.html" class="btn-primary" style="padding:14px 32px;display:inline-block;">Free Cost Optimizer →</a>
+                    <a href="pricing.html" class="btn-secondary" style="padding:14px 32px;display:inline-block;">Get Pro — $29 lifetime</a>
+                </div>
+                <p style="font-size:12px;color:var(--text-muted);margin-top:12px;">14-day money-back guarantee · Instant access · No subscription</p>
+            </div>
+
+            <!-- Related resources -->
+            <h2>Related Resources</h2>
+            <ul>
+                <li><a href="claude-4-status.html">Claude 4 API Status — Live Checker</a></li>
+                <li><a href="claude-4-migration-calculator.html">Claude 4 Migration Cost Calculator</a></li>
+                <li><a href="claude-4-migration-hub.html">Claude 4 Migration Hub — Complete Guide</a></li>
+                <li><a href="claude-4-alternatives-by-use-case.html">Claude 4 Alternatives by Use Case</a></li>
+                <li><a href="blog-claude-4-shutdown-complete.html">Claude 4 Shutdown Complete — What Happened</a></li>
+                <li><a href="calculator.html">AI API Cost Calculator — Compare All Models</a></li>
+            </ul>
+        </article>
+    </main>
+
+    <footer style="border-top:1px solid var(--border);padding:32px 24px;text-align:center;color:var(--text-muted);font-size:13px;">
+        <p>APIpulse — Know your AI API costs before you commit</p>
+        <p style="margin-top:8px;">
+            <a href="index.html" style="color:var(--accent);text-decoration:none;">Home</a> ·
+            <a href="calculator.html" style="color:var(--accent);text-decoration:none;">Calculator</a> ·
+            <a href="compare.html" style="color:var(--accent);text-decoration:none;">Compare</a> ·
+            <a href="blog.html" style="color:var(--accent);text-decoration:none;">Blog</a> ·
+            <a href="about.html" style="color:var(--accent);text-decoration:none;">About</a>
+        </p>
+    </footer>
+
+    <script>
+    // Tab switching
+    function switchTab(tab) {
+        document.querySelectorAll('.tab-btn').forEach(function(btn) { btn.classList.remove('active'); });
+        document.querySelectorAll('.tab-content').forEach(function(tc) { tc.classList.remove('active'); });
+        event.target.classList.add('active');
+        document.getElementById('tab-' + tab).classList.add('active');
+    }
+    </script>
+</body>
+</html>

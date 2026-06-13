@@ -1,9 +1,9 @@
 # PROGRESS.md
 
-## Site Status (as of Session 613, Jun 12, 2026)
-**622 web pages | 302 blog posts | 42 models | 10 providers | 82 tools | 12 API endpoints | 2 embeddable widgets**
-- Sitemap (616 URLs), RSS (494 items), blog files (302 posts + 1 index) — all in sync
-- **Claude 4 SHUTDOWN in 3 days (June 15)** — auto-tense-flipping covers ALL 20+ deprecation pages, meta tags, and <title> tags
+## Site Status (as of Session 614, Jun 13, 2026)
+**623 web pages | 303 blog posts | 42 models | 10 providers | 82 tools | 12 API endpoints | 2 embeddable widgets**
+- Sitemap (617 URLs), RSS (495 items), blog files (303 posts + 1 index) — all in sync
+- **Claude 4 SHUTDOWN in 2 days (June 15)** — auto-tense-flipping covers ALL 20+ deprecation pages, meta tags, and <title> tags
 - **A/B pricing test FULLY FIXED:** $19 vs $29 vs $39 — shared.js updates ALL text nodes, anchors, AND JSON-LD schemas
 - **A/B exit popup timing test running:** 30s vs 45s vs 60s on mobile — all events tagged with timing_variant
 - **A/B gated recommendations test running:** show 1 free vs 0 free alternatives — tracks ab_gated_recs_assigned and pro_gated_rec_click events
@@ -17,14 +17,21 @@
 - **Cost Efficiency Score on ALL 3 tools** — visual A-F grade in calculator, cost-optimizer, and savings-calculator
 - **Founding member counter unified** — deterministic formula across 10 pages (base 73 + days/2.5, cap 94, currently ~93)
 
+## Session 614 (Jun 13) — SHUTDOWN TRAFFIC PREP + NEW BLOG POST
+- **NEW blog post:** "Claude 4 Down? Fix It in 60 Seconds — Change One Line" (blog-claude-4-down-fix.html). SEO-optimized for "claude 4 down" search queries. Includes one-line fix, code examples (Python/Node/cURL/TypeScript), cost comparison table, model mapping, and Pro trial CTA.
+- **Blog index updated:** New post added to blog.html with "Breaking" tag and red highlight styling.
+- **Sitemap + RSS updated:** New post added to sitemap.xml (priority 0.95) and rss.xml.
+- **Conversion audit:** Verified all conversion infrastructure is in place — calculator Pro upsell with personalized savings, pricing page with trust signals and ROI calculator, trial buttons on 8+ pages, exit popups, sticky CTAs.
+- Files changed: 4 files (blog-claude-4-down-fix.html new, blog.html, sitemap.xml, rss.xml). 1 commit.
+
 ## Session 613 (Jun 12) — STALE DATA BULK FIX + BLOG INDEX
-- **blog.html:** Added JS script to auto-hide future-dated posts (countdown posts auto-appear on their publication dates). Added missing "last-chance-2-days" (June 13) and "last-chance-1-day" (June 14) posts to blog index. Prevents visitors from seeing "Claude 4 Is Gone" before shutdown.
-- **SEO freshness:** Fixed stale dateModified on claude-4-error.html (06-10→06-12) and claude-4-post-deprecation.html (06-04→06-12).
+- **blog.html:** Added JS script to auto-hide future-dated posts (countdown posts auto-appear on their publication dates). Added missing "last-chance-2-days" (June 13) and "last-chance-1-day" (June 14) posts to blog index.
+- **SEO freshness:** Fixed stale dateModified on claude-4-error.html and claude-4-post-deprecation.html.
 - **Stale counts:** Fixed blog post count 301→302 on pricing.html and why-pro.html.
-- **Mistral Small 4 pricing ($0.15→$0.10):** Fixed across 9 files — blog-cost-calculator-api, cost-report, 7 comparison pages.
+- **Mistral Small 4 pricing ($0.15→$0.10):** Fixed across 9 files.
 - **Kimi K2.6 pricing ($0.90→$0.95):** Fixed in pricing-changelog.html.
-- **Llama 4 Scout pricing ($0.11→$0.18, 10M→1M context):** Bulk fixed across 130+ files — blog posts, comparison pages, tools, calculators, landing pages. Session 612 corrected index/calculator but these were missed across the site.
-- **Pro features on shutdown pages:** Added pro-features.js + trial buttons + dynamic A/B pricing to migration-hub, post-deprecation, migration-tool, deprecation-calculator, migration-command-center, migration-checklist, migration-cheatsheet, alternatives-by-use-case. 8 high-traffic pages now support free 24h trials.
+- **Llama 4 Scout pricing ($0.11→$0.18, 10M→1M context):** Bulk fixed across 130+ files.
+- **Pro features on shutdown pages:** Added pro-features.js + trial buttons to 8 high-traffic pages.
 - Files changed: 140+ HTML files. 10 commits.
 
 ## Sessions 610-612 (Jun 12) — DEPRECATION ECOSYSTEM + ERROR PAGE + MOBILE
