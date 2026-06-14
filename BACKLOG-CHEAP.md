@@ -26,13 +26,14 @@
 - ✅ Broken links DONE: 7 internal links fixed across 7 pages (Session 642)
 - ✅ Live countdown DONE: both index.html and emergency page auto-update every 60s (Session 642)
 - ✅ Shutdown FAQ blog post DONE: 25-question comprehensive FAQ, cross-linked from emergency page + 410 fix guide (Session 643)
-- ✅ Post-shutdown tense fixes DONE: deprecation page, last-chance page, migration hub — future → past tense (Session 643)
+- ✅ Post-shutdown tense fixes DONE: ALL 25 Claude 4 pages fixed — JSON-LD schemas, meta tags, body text (Session 644)
 
-### Completed (Sessions 416-643, Jun 1-14)
-✅ Session 643: Created "Claude 4 Shutdown FAQ" blog post (25 questions), fixed future tense on 5 key pages (deprecation, last-chance, migration hub), added to sitemap + blog index + cross-links. 1 commit, 8 files.
-✅ Session 642: Fixed GPT-5 pricing ($2.50→$1.25) across 14 files, Gemini 2.5 Pro output ($5→$10), 7 broken internal links, added live countdown timers to index.html and emergency page. 4 commits, 14 files.
-✅ Session 641: Emergency cross-links on ALL 57 Claude 4 pages. Sub-24h countdown banner upgrade. 1 commit, 41 files, 208 insertions.
-✅ Session 640: 3 new pages — 410 Fix Guide, Developer Toolkit, Claude 4 vs GPT-5. 3 commits, 11 files, 1,816 insertions.
+### Completed (Sessions 416-644, Jun 1-14)
+✅ Session 644: Fixed future tense across ALL 25 Claude 4 pages — JSON-LD schemas, meta tags, body text. 7 commits, 25 files.
+✅ Session 643: Created "Claude 4 Shutdown FAQ" blog post (25 questions), fixed future tense on 5 key pages. 1 commit, 8 files.
+✅ Session 642: Fixed GPT-5 pricing across 14 files, 7 broken internal links, live countdown timers. 4 commits, 14 files.
+✅ Session 641: Emergency cross-links on ALL 57 Claude 4 pages. Sub-24h countdown banner upgrade. 1 commit, 41 files.
+✅ Session 640: 3 new pages — 410 Fix Guide, Developer Toolkit, Claude 4 vs GPT-5. 3 commits, 11 files.
 ✅ Sessions 634-639: Claude 4 Error Codes Reference, Alternatives Comparison, 2 migration guides, interactive cost calculator, shutdown checklist, shutdown timeline, homepage countdown banner. 8 commits, 30 files.
 ✅ Sessions 626-633: Emergency landing page, 5 migration guides, Emergency Action Plan post, post-shutdown cross-links, meta descriptions, blog index fixes. 10+ commits.
 ✅ Sessions 599-625: Blog posts, shutdown content, pricing fixes, Cost Efficiency Score, A/B tests, deprecation ecosystem, Survival Kit, founding member counter. 65+ commits.
