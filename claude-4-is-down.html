@@ -439,6 +439,9 @@
             #calc-cost-cards { grid-template-columns: 1fr !important; }
             #calc-alt-table th:nth-child(3), #calc-alt-table td:nth-child(3),
             #calc-alt-table th:nth-child(4), #calc-alt-table td:nth-child(4) { font-size: 12px; }
+            .calc-inputs-2col { grid-template-columns: 1fr !important; }
+            .inaction-results-3col { grid-template-columns: 1fr !important; }
+            .inaction-hero { font-size: 36px !important; }
         }
     </style>
 </head>
@@ -462,16 +465,16 @@
     <main>
         <!-- Emergency Hero -->
         <section class="emergency-hero">
-            <div class="error-badge" id="emergency-badge">🔴 LIVE — Claude 4 Retired</div>
+            <div class="error-badge" id="emergency-badge">⚠️ FINAL DAY — Claude 4 Retires Tomorrow</div>
             <h1>Claude 4 Is Down — Here's Your 5-Minute Fix</h1>
             <p class="subtitle">
-                Claude 4 Opus and Sonnet 4 were retired on June 15, 2026.
-                Your API calls are returning <strong>HTTP 410 Gone</strong> errors.
-                Here's exactly how to fix it.
+                Claude 4 Opus and Sonnet 4 will be retired on June 15, 2026.
+                Your API calls will return <strong>HTTP 410 Gone</strong> errors.
+                Here's exactly how to fix it — before or after shutdown.
             </p>
 
             <div class="error-box">
-                <div class="error-header">❌ Your API is returning this error:</div>
+                <div class="error-header">❌ Your API will return this error:</div>
                 <pre>HTTP/1.1 410 Gone
 Content-Type: application/json
 
@@ -483,7 +486,7 @@ Content-Type: application/json
                 https://anthropic.com/models for alternatives."
   }
 }</pre>
-                <div class="error-note">This error started on June 15, 2026 when Anthropic retired Claude 4.</div>
+                <div class="error-note">This error will start on June 15, 2026 when Anthropic retires Claude 4.</div>
             </div>
 
             <!-- Quick-fix trust bar -->
@@ -611,9 +614,9 @@ claude-sonnet-4-6</code>
         <section style="max-width:800px;margin:0 auto 48px;padding:0 24px;">
             <div style="background:linear-gradient(135deg,rgba(239,68,68,0.08),rgba(234,88,12,0.08));border:1px solid rgba(239,68,68,0.2);border-radius:12px;padding:24px;text-align:center;">
                 <div style="font-size:14px;font-weight:700;color:#ef4444;margin-bottom:8px;">⏰ The clock is ticking</div>
-                <p style="font-size:15px;color:var(--text-secondary);line-height:1.6;margin:0;">
-                    Every hour your API returns 410 errors, you're losing users and revenue.
-                    <strong>The fix takes 5 minutes.</strong> The cost of waiting? That's on you.
+                <p id="time-pressure-text" style="font-size:15px;color:var(--text-secondary);line-height:1.6;margin:0;">
+                    Claude 4 Opus and Sonnet 4 retire on June 15, 2026. After that, your API calls will return 410 errors.
+                    <strong>Fix it in 5 minutes — before or after shutdown.</strong>
                 </p>
                 <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:24px;margin-top:16px;font-size:13px;">
                     <div style="text-align:center;">
@@ -638,7 +641,7 @@ claude-sonnet-4-6</code>
                 <h2 style="font-size:24px;font-weight:800;text-align:center;margin-bottom:8px;">💸 How Much Are You Losing Right Now?</h2>
                 <p style="text-align:center;color:var(--text-secondary);margin-bottom:24px;font-size:15px;">Your Claude 4 API is down. Enter your monthly spend to see the real cost of waiting.</p>
 
-                <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:20px;">
+                <div class="calc-inputs-2col" style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:20px;">
                     <div>
                         <label style="display:block;font-size:13px;font-weight:600;color:var(--text-secondary);margin-bottom:6px;text-transform:uppercase;letter-spacing:0.5px;">Your monthly Claude 4 spend</label>
                         <div style="position:relative;">
@@ -664,10 +667,10 @@ claude-sonnet-4-6</code>
                 <div id="inaction-results" style="display:none;margin-top:24px;">
                     <div style="background:rgba(239,68,68,0.08);border:1px solid rgba(239,68,68,0.2);border-radius:14px;padding:28px;text-align:center;margin-bottom:16px;">
                         <div style="font-size:14px;color:var(--text-secondary);margin-bottom:4px;">You've lost since shutdown</div>
-                        <div id="inaction-total" style="font-size:48px;font-weight:800;color:#ef4444;">$0</div>
+                        <div id="inaction-total" class="inaction-hero" style="font-size:48px;font-weight:800;color:#ef4444;">$0</div>
                         <div id="inaction-total-note" style="font-size:14px;color:var(--text-secondary);margin-top:4px;"></div>
                     </div>
-                    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;">
+                    <div class="inaction-results-3col" style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;">
                         <div style="background:var(--bg-primary);border:1px solid var(--border);border-radius:10px;padding:16px;text-align:center;">
                             <div style="font-size:11px;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.5px;margin-bottom:6px;">Per Day</div>
                             <div id="inaction-per-day" style="font-size:24px;font-weight:800;color:#ef4444;">$0</div>
@@ -731,7 +734,7 @@ claude-sonnet-4-6</code>
                 </div>
 
                 <!-- Usage inputs -->
-                <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:20px;">
+                <div class="calc-inputs-2col" style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:20px;">
                     <div>
                         <label style="display:block;font-size:13px;font-weight:600;color:var(--text-secondary);margin-bottom:6px;text-transform:uppercase;letter-spacing:0.5px;">Input tokens (millions/month)</label>
                         <input type="number" id="calc-input-tokens" value="10" min="0" step="0.1" placeholder="e.g. 10" style="width:100%;padding:12px 16px;background:var(--bg-primary);border:1px solid var(--border);border-radius:8px;color:var(--text-primary);font-size:16px;font-family:inherit;">
@@ -954,12 +957,16 @@ claude-sonnet-4-6</code>
             // Track page view
             if (window.trackEvent) window.trackEvent('claude4_is_down_page_view');
 
-            // Dynamic emergency badge — updates with hours since shutdown
+            // Shared shutdown date (must be declared before functions that use it)
+            var shutdownDate = new Date('2026-06-15T00:00:00Z');
+
+            // Dynamic emergency badge — updates with countdown (pre) or downtime (post)
             var emergencyBadge = document.getElementById('emergency-badge');
             function updateEmergencyBadge() {
                 var now = new Date();
                 var ms = now - shutdownDate;
                 if (ms > 0) {
+                    // POST-SHUTDOWN: show how long it's been down
                     var hours = Math.floor(ms / (1000 * 60 * 60));
                     if (hours < 1) {
                         emergencyBadge.textContent = '🔴 LIVE — Claude 4 just retired';
@@ -969,14 +976,24 @@ claude-sonnet-4-6</code>
                         var days = Math.floor(hours / 24);
                         emergencyBadge.textContent = '🔴 DOWN ' + days + 'd ' + (hours % 24) + 'h — Claude 4 retired June 15';
                     }
+                } else {
+                    // PRE-SHUTDOWN: show countdown to retirement
+                    var hoursUntil = Math.ceil((shutdownDate - now) / (1000 * 60 * 60));
+                    if (hoursUntil <= 1) {
+                        emergencyBadge.textContent = '🔴 FINAL HOURS — Claude 4 retires within the hour';
+                        emergencyBadge.style.animation = 'pulse 1s infinite';
+                    } else if (hoursUntil <= 24) {
+                        emergencyBadge.textContent = '⚠️ FINAL DAY — Claude 4 retires in ' + hoursUntil + ' hours';
+                    } else {
+                        var daysUntil = Math.ceil(hoursUntil / 24);
+                        emergencyBadge.textContent = '⚠️ ' + daysUntil + ' days until Claude 4 retirement';
+                    }
                 }
             }
             updateEmergencyBadge();
             setInterval(updateEmergencyBadge, 60000);
 
             // Hours since shutdown counter — live updating
-            var shutdownDate = new Date('2026-06-15T00:00:00Z');
-            var now = new Date();
             var hoursDown = document.getElementById('hours-down');
             function updateHoursDown() {
                 var now = new Date();
