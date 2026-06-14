@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>APIpulse Analytics Dashboard</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .dash { max-width: 1100px; margin: 0 auto; padding: 24px; }
+        .dash h1 { font-size: 28px; margin-bottom: 8px; }
+        .dash .subtitle { color: var(--text-muted); margin-bottom: 32px; font-size: 14px; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; margin-bottom: 32px; }
+        .card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; padding: 20px; }
+        .card h3 { font-size: 13px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px; }
+        .card .value { font-size: 36px; font-weight: 800; color: var(--accent); }
+        .card .detail { font-size: 12px; color: var(--text-muted); margin-top: 4px; }
+        .section { background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; padding: 24px; margin-bottom: 24px; }
+        .section h2 { font-size: 18px; margin-bottom: 16px; display: flex; align-items: center; gap: 8px; }
+        table { width: 100%; border-collapse: collapse; font-size: 14px; }
+        th { text-align: left; padding: 10px 12px; border-bottom: 2px solid var(--border); color: var(--text-muted); font-size: 12px; text-transform: uppercase; letter-spacing: 0.5px; }
+        td { padding: 10px 12px; border-bottom: 1px solid var(--border); }
+        tr:hover td { background: rgba(99,102,241,0.04); }
+        .bar-container { display: flex; align-items: center; gap: 10px; }
+        .bar { height: 24px; border-radius: 4px; min-width: 2px; transition: width 0.3s; }
+        .bar-a { background: #6366f1; }
+        .bar-b { background: #22c55e; }
+        .bar-c { background: #f59e0b; }
+        .bar-label { font-size: 13px; font-weight: 600; min-width: 40px; }
+        .bar-value { font-size: 13px; color: var(--text-muted); min-width: 60px; text-align: right; }
+        .variant-tag { display: inline-block; padding: 2px 8px; border-radius: 4px; font-size: 12px; font-weight: 600; }
+        .variant-a { background: rgba(99,102,241,0.15); color: #6366f1; }
+        .variant-b { background: rgba(34,197,94,0.15); color: #22c55e; }
+        .variant-c { background: rgba(245,158,11,0.15); color: #f59e0b; }
+        .empty { text-align: center; padding: 40px; color: var(--text-muted); }
+        .refresh-btn { background: var(--accent); color: white; border: none; padding: 8px 16px; border-radius: 8px; cursor: pointer; font-size: 13px; font-weight: 600; }
+        .refresh-btn:hover { opacity: 0.9; }
+        .filter-row { display: flex; gap: 8px; margin-bottom: 16px; flex-wrap: wrap; }
+        .filter-btn { background: var(--bg-secondary); border: 1px solid var(--border); padding: 6px 14px; border-radius: 6px; cursor: pointer; font-size: 13px; color: var(--text-primary); }
+        .filter-btn.active { background: var(--accent); color: white; border-color: var(--accent); }
+        .event-list { max-height: 400px; overflow-y: auto; }
+        .event-row { display: flex; gap: 12px; padding: 8px 0; border-bottom: 1px solid var(--border); font-size: 13px; align-items: center; }
+        .event-name { font-weight: 600; min-width: 200px; color: var(--accent); }
+        .event-props { color: var(--text-muted); flex: 1; }
+        .event-time { color: var(--text-muted); min-width: 140px; text-align: right; }
+        .event-page { color: var(--text-secondary); min-width: 160px; }
+    </style>
+</head>
+<body>
+    <div class="dash">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+            <h1>📊 APIpulse Analytics</h1>
+            <button class="refresh-btn" onclick="loadData()">↻ Refresh</button>
+        </div>
+        <p class="subtitle">Client-side analytics from localStorage — data stays in your browser. <span id="event-count"></span></p>
+
+        <!-- Summary Cards -->
+        <div class="grid" id="summary-cards"></div>
+
+        <!-- A/B Pricing Test -->
+        <div class="section" id="ab-pricing-section">
+            <h2>💰 A/B Pricing Test ($19 / $29 / $39)</h2>
+            <div id="ab-pricing-content"></div>
+        </div>
+
+        <!-- A/B Popup Timing Test -->
+        <div class="section" id="ab-popup-section">
+            <h2>⏱️ Exit Popup Timing Test (30s / 45s / 60s)</h2>
+            <div id="ab-popup-content"></div>
+        </div>
+
+        <!-- A/B Gated Recs Test -->
+        <div class="section" id="ab-gated-section">
+            <h2>🔒 Gated Recommendations Test (1 free vs 0 free)</h2>
+            <div id="ab-gated-content"></div>
+        </div>
+
+        <!-- A/B Hero Test -->
+        <div class="section" id="ab-hero-section">
+            <h2>🏠 Hero A/B Test (index vs launch)</h2>
+            <div id="ab-hero-content"></div>
+        </div>
+
+        <!-- Conversion Funnel -->
+        <div class="section" id="funnel-section">
+            <h2>📈 Conversion Funnel</h2>
+            <div id="funnel-content"></div>
+        </div>
+
+        <!-- Popup Engagement -->
+        <div class="section" id="popup-section">
+            <h2>🖱️ Exit Popup Engagement</h2>
+            <div id="popup-content"></div>
+        </div>
+
+        <!-- Email Signups -->
+        <div class="section" id="email-section">
+            <h2>📧 Email Signups</h2>
+            <div id="email-content"></div>
+        </div>
+
+        <!-- Event Log -->
+        <div class="section">
+            <h2>📋 Event Log (last 200)</h2>
+            <div class="filter-row" id="event-filters"></div>
+            <div class="event-list" id="event-log"></div>
+        </div>
+    </div>
+
+    <script>
+    function loadData() {
+        var events = JSON.parse(localStorage.getItem('apipulse_events') || '[]');
+        document.getElementById('event-count').textContent = events.length + ' events stored';
+
+        // --- Summary Cards ---
+        var pageViews = events.filter(e => e.name === 'page_view').length;
+        var uniquePages = new Set(events.filter(e => e.name === 'page_view').map(e => e.props.page_path)).size;
+        var signups = events.filter(e => e.name === 'email_signup' || e.name === 'email_subscribe' || e.name === 'exit_popup_signup').length;
+        var proClicks = events.filter(e => e.name === 'pro_button_clicked' || e.name === 'deprecation_popup_cta_clicked').length;
+        var scrollFull = events.filter(e => e.name === 'scroll_depth' && e.props.depth === 100).length;
+        var time120 = events.filter(e => e.name === 'time_on_page' && e.props.seconds === 120).length;
+
+        document.getElementById('summary-cards').innerHTML =
+            card('Page Views', pageViews, uniquePages + ' unique pages') +
+            card('Email Signups', signups, 'across all sources') +
+            card('Pro Clicks', proClicks, 'CTA + popup clicks') +
+            card('Full Reads', scrollFull, '100% scroll depth') +
+            card('Engaged (2min+)', time120, 'stayed 120s+');
+
+        // --- A/B Pricing Test ---
+        var pricingAssigned = events.filter(e => e.name === 'ab_pricing_variant_assigned');
+        var pricingCounts = {A:0, B:0, C:0};
+        pricingAssigned.forEach(e => { if (pricingCounts[e.props.variant] !== undefined) pricingCounts[e.props.variant]++; });
+        var totalPricing = pricingCounts.A + pricingCounts.B + pricingCounts.C;
+        document.getElementById('ab-pricing-content').innerHTML = totalPricing ?
+            barChart([
+                {label: '$19', count: pricingCounts.A, total: totalPricing, cls: 'bar-a'},
+                {label: '$29', count: pricingCounts.B, total: totalPricing, cls: 'bar-b'},
+                {label: '$39', count: pricingCounts.C, total: totalPricing, cls: 'bar-c'}
+            ]) + '<p style="font-size:12px;color:var(--text-muted);margin-top:12px;">Stripe links: $19=bJecN5, $29=fZu7s, $39=28EfZh</p>' :
+            '<p class="empty">No pricing variant assignments yet</p>';
+
+        // --- A/B Popup Timing ---
+        var timingAssigned = events.filter(e => e.name === 'ab_popup_timing_assigned');
+        var timingCounts = {fast:0, medium:0, slow:0};
+        timingAssigned.forEach(e => { if (timingCounts[e.props.variant] !== undefined) timingCounts[e.props.variant]++; });
+        var totalTiming = timingCounts.fast + timingCounts.medium + timingCounts.slow;
+        document.getElementById('ab-popup-content').innerHTML = totalTiming ?
+            barChart([
+                {label: '30s', count: timingCounts.fast, total: totalTiming, cls: 'bar-a'},
+                {label: '45s', count: timingCounts.medium, total: totalTiming, cls: 'bar-b'},
+                {label: '60s', count: timingCounts.slow, total: totalTiming, cls: 'bar-c'}
+            ]) : '<p class="empty">No popup timing assignments yet</p>';
+
+        // --- A/B Gated Recs ---
+        var gatedAssigned = events.filter(e => e.name === 'ab_gated_recs_assigned');
+        var gatedCounts = {show_1:0, show_0:0};
+        gatedAssigned.forEach(e => { if (gatedCounts[e.props.variant] !== undefined) gatedCounts[e.props.variant]++; });
+        var totalGated = gatedCounts.show_1 + gatedCounts.show_0;
+        document.getElementById('ab-gated-content').innerHTML = totalGated ?
+            barChart([
+                {label: '1 free', count: gatedCounts.show_1, total: totalGated, cls: 'bar-a'},
+                {label: '0 free', count: gatedCounts.show_0, total: totalGated, cls: 'bar-b'}
+            ]) : '<p class="empty">No gated recs assignments yet</p>';
+
+        // --- A/B Hero Test ---
+        var heroAssigned = events.filter(e => e.name === 'ab_test_assigned');
+        var heroCounts = {index:0, launch:0};
+        heroAssigned.forEach(e => { if (heroCounts[e.props.variant] !== undefined) heroCounts[e.props.variant]++; });
+        var totalHero = heroCounts.index + heroCounts.launch;
+        document.getElementById('ab-hero-content').innerHTML = totalHero ?
+            barChart([
+                {label: 'index', count: heroCounts.index, total: totalHero, cls: 'bar-a'},
+                {label: 'launch', count: heroCounts.launch, total: totalHero, cls: 'bar-b'}
+            ]) : '<p class="empty">No hero variant assignments yet</p>';
+
+        // --- Conversion Funnel ---
+        var funnel = [
+            {name: 'Page View', count: pageViews},
+            {name: 'Scrolled 25%', count: events.filter(e => e.name === 'scroll_depth' && e.props.depth === 25).length},
+            {name: 'Scrolled 50%', count: events.filter(e => e.name === 'scroll_depth' && e.props.depth === 50).length},
+            {name: 'Scrolled 75%', count: events.filter(e => e.name === 'scroll_depth' && e.props.depth === 75).length},
+            {name: 'Scrolled 100%', count: scrollFull},
+            {name: 'Stayed 10s+', count: events.filter(e => e.name === 'time_on_page' && e.props.seconds === 10).length},
+            {name: 'Stayed 30s+', count: events.filter(e => e.name === 'time_on_page' && e.props.seconds === 30).length},
+            {name: 'Stayed 60s+', count: events.filter(e => e.name === 'time_on_page' && e.props.seconds === 60).length},
+            {name: 'Stayed 120s+', count: time120},
+            {name: 'CTA Hover', count: events.filter(e => e.name === 'cta_hover').length},
+            {name: 'Email Signup', count: signups},
+            {name: 'Pro Click', count: proClicks}
+        ];
+        var maxFunnel = Math.max(...funnel.map(f => f.count), 1);
+        document.getElementById('funnel-content').innerHTML = '<table><tr><th>Stage</th><th>Count</th><th>% of Views</th><th></th></tr>' +
+            funnel.map(f => {
+                var pct = pageViews ? Math.round(f.count / pageViews * 100) : 0;
+                var barW = Math.round(f.count / maxFunnel * 200);
+                return '<tr><td>' + f.name + '</td><td>' + f.count + '</td><td>' + pct + '%</td><td><div class="bar-container"><div class="bar bar-a" style="width:' + barW + 'px"></div></div></td></tr>';
+            }).join('') + '</table>';
+
+        // --- Popup Engagement ---
+        var depShown = events.filter(e => e.name === 'deprecation_popup_shown').length;
+        var depDismissed = events.filter(e => e.name === 'deprecation_popup_dismissed').length;
+        var depCTA = events.filter(e => e.name === 'deprecation_popup_cta_clicked').length;
+        var proShown = events.filter(e => e.name === 'pro_exit_popup_shown').length;
+        var proDismissed = events.filter(e => e.name === 'pro_exit_popup_dismissed').length;
+        var exitShown = events.filter(e => e.name === 'exit_popup_variant_shown').length;
+        var exitDismissed = events.filter(e => e.name === 'exit_popup_dismissed').length;
+        var exitSignup = events.filter(e => e.name === 'exit_popup_signup').length;
+
+        document.getElementById('popup-content').innerHTML = '<table><tr><th>Popup Type</th><th>Shown</th><th>Dismissed</th><th>CTA/Signup</th><th>Engagement</th></tr>' +
+            popupRow('Deprecation (post-shutdown)', depShown, depDismissed, depCTA) +
+            popupRow('Pro Exit (high-intent)', proShown, proDismissed, 0) +
+            popupRow('Email Exit (generic)', exitShown, exitDismissed, exitSignup) +
+            '</table>';
+
+        // --- Email Signups ---
+        var signupEvents = events.filter(e => e.name === 'email_signup' || e.name === 'email_subscribe' || e.name === 'exit_popup_signup');
+        var signupSources = {};
+        signupEvents.forEach(e => {
+            var src = e.props.source || e.page || 'unknown';
+            signupSources[src] = (signupSources[src] || 0) + 1;
+        });
+        document.getElementById('email-content').innerHTML = signupEvents.length ?
+            '<table><tr><th>Source</th><th>Count</th></tr>' +
+            Object.entries(signupSources).sort((a,b) => b[1]-a[1]).map(([src, count]) =>
+                '<tr><td>' + src + '</td><td>' + count + '</td></tr>'
+            ).join('') + '</table>' :
+            '<p class="empty">No email signups tracked yet</p>';
+
+        // --- Event Log ---
+        renderEventLog(events);
+    }
+
+    function card(title, value, detail) {
+        return '<div class="card"><h3>' + title + '</h3><div class="value">' + value + '</div><div class="detail">' + detail + '</div></div>';
+    }
+
+    function barChart(items) {
+        var max = Math.max(...items.map(i => i.count), 1);
+        return items.map(i => {
+            var pct = Math.round(i.count / (i.total || 1) * 100);
+            var barW = Math.round(i.count / max * 200);
+            return '<div style="margin-bottom:10px;"><div class="bar-container">' +
+                '<span class="bar-label">' + i.label + '</span>' +
+                '<div class="bar ' + i.cls + '" style="width:' + barW + 'px"></div>' +
+                '<span class="bar-value">' + i.count + ' (' + pct + '%)</span>' +
+                '</div></div>';
+        }).join('');
+    }
+
+    function popupRow(type, shown, dismissed, cta) {
+        var eng = shown ? Math.round((cta || dismissed) / shown * 100) : 0;
+        return '<tr><td>' + type + '</td><td>' + shown + '</td><td>' + dismissed + '</td><td>' + (cta || '-') + '</td><td>' + eng + '%</td></tr>';
+    }
+
+    var allEvents = [];
+    var activeFilter = 'all';
+
+    function renderEventLog(events) {
+        allEvents = events.slice().reverse().slice(0, 200);
+
+        // Build filter buttons
+        var names = [...new Set(allEvents.map(e => e.name))].sort();
+        document.getElementById('event-filters').innerHTML =
+            '<button class="filter-btn active" onclick="filterEvents(\'all\', this)">All</button>' +
+            names.map(n => '<button class="filter-btn" onclick="filterEvents(\'' + n + '\', this)">' + n + '</button>').join('');
+
+        filterEvents('all', document.querySelector('.filter-btn'));
+    }
+
+    function filterEvents(name, btn) {
+        activeFilter = name;
+        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+        if (btn) btn.classList.add('active');
+
+        var filtered = name === 'all' ? allEvents : allEvents.filter(e => e.name === name);
+        document.getElementById('event-log').innerHTML = filtered.length ?
+            filtered.map(e => {
+                var ts = new Date(e.ts).toLocaleString();
+                var props = Object.entries(e.props || {}).map(([k,v]) => k + '=' + v).join(', ');
+                return '<div class="event-row">' +
+                    '<span class="event-name">' + e.name + '</span>' +
+                    '<span class="event-props">' + props + '</span>' +
+                    '<span class="event-page">' + (e.page || '') + '</span>' +
+                    '<span class="event-time">' + ts + '</span>' +
+                    '</div>';
+            }).join('') :
+            '<p class="empty">No events match this filter</p>';
+    }
+
+    // Load on page load
+    loadData();
+    </script>
+</body>
+</html>
