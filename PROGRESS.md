@@ -24,6 +24,11 @@
 - **14 comparison pages** — Fixed 'being deprecated on June 15' → 'was retired', 'deprecates on June 15' → 'was retired', 'will fail with errors' → 'return 410 Gone errors', FAQ questions from future to past tense
 - **5 commits, 19 files changed**
 
+## Session 652 (Jun 14) — Deprecation Link Sweep + Stale Content
+- **Updated 233 pages** — All links to claude-4-deprecation.html now point to claude-4-is-down.html (the active emergency landing page)
+- **Fixed stale future-tense content across 19 files** — Provider pages, blog index, comparison pages
+- **6 commits, 258 files changed total**
+
 ## Session 651 (Jun 14) — Analytics Dashboard
 - **Created admin.html** — Client-side analytics dashboard that reads localStorage events
 - **A/B test visualization** — Shows variant splits for all 4 concurrent A/B tests (pricing, popup timing, gated recs, hero)
