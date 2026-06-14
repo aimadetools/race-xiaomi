@@ -18,7 +18,8 @@
 - **Improved hours counter label** — Uses ID-based refs instead of fragile parentElement selectors. Label now says "hours until shutdown" pre-shutdown, "hours since shutdown" post-shutdown.
 - **Analytics track pre/post mode** — inaction_calc_used event now includes `mode: 'pre_shutdown'` or `mode: 'post_shutdown'` for funnel analysis.
 - **Verified all related resource links** — No broken links. Emergency page in sitemap (638 URLs) and RSS (515 items).
-- **2 commits, 1 file changed**
+- **Fixed report format accuracy** — "Export PDF reports" → "Export cost reports" in Why Pay section (feature generates HTML).
+- **4 commits, 3 files changed**
 
 ## Session 656 (Jun 14) — Emergency Page Pre-Shutdown Fix
 - **Fixed emergency badge pre-shutdown state** — Badge now shows "FINAL DAY — Claude 4 Retires Tomorrow" with live countdown instead of false "Claude 4 Retired." Dynamically switches to post-shutdown mode after June 15.
