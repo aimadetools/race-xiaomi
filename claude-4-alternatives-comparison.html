@@ -174,6 +174,16 @@
             .quick-picks { grid-template-columns: 1fr; }
             .comp-table th, .comp-table td { padding: 10px 8px; font-size: 12px; }
         }
+
+        /* Sticky bottom CTA bar */
+        .sticky-cta-bar { display: none; position: fixed; bottom: 0; left: 0; right: 0; background: var(--bg-card); border-top: 2px solid var(--accent); padding: 12px 20px; z-index: 9990; align-items: center; justify-content: center; gap: 16px; box-shadow: 0 -4px 24px rgba(0,0,0,0.3); }
+        .sticky-cta-bar .sticky-msg { font-size: 14px; font-weight: 600; color: var(--text-primary); }
+        .sticky-cta-bar .sticky-msg span { color: #ef4444; }
+        .sticky-cta-bar .sticky-btn { display: inline-block; background: var(--accent); color: white; padding: 10px 24px; border-radius: 8px; font-size: 14px; font-weight: 700; text-decoration: none; white-space: nowrap; transition: all 0.2s; }
+        .sticky-cta-bar .sticky-btn:hover { transform: translateY(-1px); box-shadow: 0 4px 16px rgba(99,102,241,0.4); }
+        .sticky-cta-bar.visible { display: flex; }
+        body.sticky-active { padding-bottom: 64px; }
+        @media (max-width: 640px) { .sticky-cta-bar { flex-direction: column; gap: 8px; padding: 10px 16px; } .sticky-cta-bar .sticky-msg { font-size: 13px; text-align: center; } .sticky-cta-bar .sticky-btn { width: 100%; text-align: center; } body.sticky-active { padding-bottom: 90px; } }
     </style>
     <meta name="theme-color" content="#6366f1">
 </head>
@@ -629,6 +639,12 @@ const response = await anthropic.messages.create({
         </div>
     </main>
 
+    <!-- Sticky bottom CTA bar -->
+    <div class="sticky-cta-bar" id="sticky-cta-bar">
+        <span class="sticky-msg">🔴 <span>Claude 4 is retired</span> — Find your cheapest alternative</span>
+        <a href="#" class="sticky-btn" id="sticky-cta-btn">Get Pro — $29 lifetime</a>
+    </div>
+
     <footer>
         <div class="footer-inner">
             <div class="footer-grid">
@@ -695,6 +711,33 @@ const response = await anthropic.messages.create({
         update();
         setInterval(update, 1000);
     })();
+    </script>
+
+    <script>
+    // Sticky bottom CTA bar
+    document.addEventListener('DOMContentLoaded', function() {
+        var stickyBar = document.getElementById('sticky-cta-bar');
+        var stickyBtn = document.getElementById('sticky-cta-btn');
+        var hero = document.querySelector('.comp-page') || document.querySelector('.hero');
+        if (stickyBar && stickyBtn) {
+            stickyBtn.href = window._abStripeLink || 'https://buy.stripe.com/fZu7sL3Gw3GS0RQeoDeEo0a';
+            var price = window._abPrice || 29;
+            stickyBtn.textContent = 'Get Pro — $' + price + ' lifetime';
+            var heroBottom = hero ? hero.offsetTop + hero.offsetHeight : 400;
+            var stickyVisible = false;
+            window.addEventListener('scroll', function() {
+                var shouldShow = window.scrollY > heroBottom;
+                if (shouldShow !== stickyVisible) {
+                    stickyVisible = shouldShow;
+                    stickyBar.classList.toggle('visible', shouldShow);
+                    document.body.classList.toggle('sticky-active', shouldShow);
+                }
+            }, { passive: true });
+            stickyBtn.addEventListener('click', function() {
+                if (window.trackEvent) window.trackEvent('pro_button_clicked', { source: 'sticky_cta_bar', price: price, page: 'claude-4-alternatives-comparison' });
+            });
+        }
+    });
     </script>
 </body>
 </html>
