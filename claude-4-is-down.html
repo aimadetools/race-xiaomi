@@ -546,13 +546,13 @@ claude-sonnet-4-6</code>
                             </tr>
                             <tr>
                                 <td class="model-name">GPT-5 <span style="color:var(--text-muted);font-size:12px;">(OpenAI)</span></td>
-                                <td>$2.50 / $10.00</td>
-                                <td class="savings">87% cheaper</td>
+                                <td>$1.25 / $10.00</td>
+                                <td class="savings">92% cheaper</td>
                             </tr>
                             <tr>
                                 <td class="model-name">Gemini 2.5 Pro <span style="color:var(--text-muted);font-size:12px;">(Google)</span></td>
-                                <td>$1.25 / $5.00</td>
-                                <td class="savings">93% cheaper</td>
+                                <td>$1.25 / $10.00</td>
+                                <td class="savings">90% cheaper</td>
                             </tr>
                             <tr>
                                 <td class="model-name">DeepSeek V4 Pro <span style="color:var(--text-muted);font-size:12px;">(DeepSeek)</span></td>
@@ -889,19 +889,25 @@ claude-sonnet-4-6</code>
             // Track page view
             if (window.trackEvent) window.trackEvent('claude4_is_down_page_view');
 
-            // Hours since shutdown counter
+            // Hours since shutdown counter — live updating
             var shutdownDate = new Date('2026-06-15T00:00:00Z');
             var now = new Date();
             var hoursDown = document.getElementById('hours-down');
-            if (hoursDown && now > shutdownDate) {
-                var hours = Math.floor((now - shutdownDate) / (1000 * 60 * 60));
-                hoursDown.textContent = hours + '+';
-            } else if (hoursDown) {
-                // Pre-shutdown: show countdown
-                var hoursUntil = Math.ceil((shutdownDate - now) / (1000 * 60 * 60));
-                hoursDown.textContent = hoursUntil + 'h';
-                hoursDown.parentElement.querySelector('div:last-child').textContent = 'hours until shutdown';
+            function updateHoursDown() {
+                var now = new Date();
+                if (hoursDown && now > shutdownDate) {
+                    var ms = now - shutdownDate;
+                    var hours = Math.floor(ms / (1000 * 60 * 60));
+                    var mins = Math.floor((ms % (1000 * 60 * 60)) / (1000 * 60));
+                    hoursDown.textContent = hours + 'h ' + mins + 'm';
+                } else if (hoursDown) {
+                    var hoursUntil = Math.ceil((shutdownDate - now) / (1000 * 60 * 60));
+                    hoursDown.textContent = hoursUntil + 'h';
+                    hoursDown.parentElement.querySelector('div:last-child').textContent = 'hours until shutdown';
+                }
             }
+            updateHoursDown();
+            setInterval(updateHoursDown, 60000);
         });
     </script>
 
