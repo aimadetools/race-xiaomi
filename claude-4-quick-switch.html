@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Claude 4 Quick Switch — Generate Migration Code in 10 Seconds | APIpulse</title>
+    <meta name="description" content="Select your language and target model. Get the exact code to switch from Claude 4 to DeepSeek, GPT-5, Gemini, or Claude Opus 4.8. Copy, paste, deploy.">
+    <meta name="keywords" content="claude 4 migration code, switch from claude 4, python claude 4 alternative, node.js claude 4 replacement, claude 4 to deepseek, claude 4 to gpt-5">
+    <meta property="og:title" content="Claude 4 Quick Switch — Generate Migration Code Instantly">
+    <meta property="og:description" content="Select your language and target. Get copy-paste code to switch from Claude 4 in 10 seconds.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://getapipulse.com/og-image.png">
+    <meta property="og:url" content="https://getapipulse.com/claude-4-quick-switch.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="canonical" href="https://getapipulse.com/claude-4-quick-switch.html">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="styles.css">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0CEP7S9Y3J"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-0CEP7S9Y3J');
+    </script>
+    <script src="analytics.js" defer></script>
+    <script src="dynamic-date.js" defer></script>
+    <script src="shared.js" defer></script>
+    <script src="pricing-data.js" defer></script>
+    <script src="pro-features.js" defer></script>
+    <style>
+        .qs-hero {
+            padding: 80px 24px 40px;
+            max-width: 700px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        .qs-hero .badge {
+            display: inline-block;
+            background: var(--accent);
+            color: white;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+        .qs-hero h1 { font-size: 36px; font-weight: 800; line-height: 1.2; margin-bottom: 16px; }
+        .qs-hero .subtitle { font-size: 18px; color: var(--text-secondary); line-height: 1.6; max-width: 550px; margin: 0 auto 32px; }
+
+        .qs-card {
+            max-width: 700px;
+            margin: 0 auto 48px;
+            padding: 0 24px;
+        }
+        .qs-inner {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 32px;
+        }
+        .qs-step { margin-bottom: 24px; }
+        .qs-step:last-child { margin-bottom: 0; }
+        .qs-step label {
+            display: block;
+            font-size: 14px;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        /* Selector pills */
+        .pill-group {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+        .pill {
+            padding: 10px 18px;
+            background: var(--bg-primary);
+            border: 2px solid var(--border);
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--text-secondary);
+            transition: all 0.2s;
+        }
+        .pill:hover { border-color: var(--accent); }
+        .pill.selected {
+            border-color: var(--accent);
+            background: rgba(99, 102, 241, 0.1);
+            color: var(--accent);
+        }
+        .pill .pill-sub {
+            display: block;
+            font-size: 11px;
+            font-weight: 400;
+            color: var(--text-muted);
+            margin-top: 2px;
+        }
+        .pill.selected .pill-sub { color: var(--text-secondary); }
+
+        .qs-btn {
+            display: block;
+            width: 100%;
+            background: var(--accent);
+            color: white;
+            border: none;
+            border-radius: 12px;
+            padding: 16px;
+            font-size: 18px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .qs-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 24px rgba(99,102,241,0.4); }
+
+        /* Code output */
+        .qs-output {
+            display: none;
+            max-width: 700px;
+            margin: 0 auto 48px;
+            padding: 0 24px;
+        }
+        .qs-output.visible { display: block; }
+
+        .code-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: #0d1117;
+            border: 1px solid #30363d;
+            border-bottom: none;
+            border-radius: 12px 12px 0 0;
+            padding: 12px 16px;
+        }
+        .code-header .lang-badge {
+            font-size: 12px;
+            font-weight: 700;
+            color: #8b949e;
+            text-transform: uppercase;
+        }
+        .copy-btn {
+            padding: 6px 14px;
+            background: rgba(99,102,241,0.15);
+            border: 1px solid var(--accent);
+            border-radius: 6px;
+            color: var(--accent);
+            font-size: 12px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .copy-btn:hover { background: var(--accent); color: white; }
+        .copy-btn.copied { background: var(--green); border-color: var(--green); color: white; }
+
+        .code-output {
+            background: #0d1117;
+            border: 1px solid #30363d;
+            border-radius: 0 0 12px 12px;
+            padding: 20px;
+            overflow-x: auto;
+        }
+        .code-output pre {
+            margin: 0;
+            font-family: 'SF Mono', 'Fira Code', monospace;
+            font-size: 13px;
+            line-height: 1.6;
+            color: #e6edf3;
+        }
+        .code-output .comment { color: #8b949e; }
+        .code-output .old { color: #f87171; text-decoration: line-through; }
+        .code-output .new { color: #4ade80; }
+        .code-output .string { color: #a5d6ff; }
+        .code-output .key { color: #d2a8ff; }
+
+        /* Steps after code */
+        .qs-steps {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 20px;
+            margin-top: 16px;
+        }
+        .qs-steps h3 {
+            font-size: 14px;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+        .qs-steps ol {
+            padding-left: 20px;
+            margin: 0;
+        }
+        .qs-steps li {
+            padding: 4px 0;
+            font-size: 14px;
+            color: var(--text-secondary);
+        }
+        .qs-steps code {
+            background: var(--bg-primary);
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 13px;
+        }
+
+        /* Pro upsell */
+        .qs-pro {
+            max-width: 700px;
+            margin: 0 auto 48px;
+            padding: 0 24px;
+        }
+        .qs-pro-inner {
+            background: linear-gradient(135deg, rgba(99,102,241,0.1), rgba(168,85,247,0.1));
+            border: 1px solid var(--accent);
+            border-radius: 14px;
+            padding: 28px;
+            text-align: center;
+        }
+        .qs-pro-inner h3 { font-size: 20px; font-weight: 800; margin-bottom: 8px; }
+        .qs-pro-inner p { color: var(--text-secondary); font-size: 14px; line-height: 1.6; margin-bottom: 16px; max-width: 480px; margin-left: auto; margin-right: auto; }
+        .qs-pro-inner .pro-cta {
+            display: inline-block;
+            background: var(--accent);
+            color: white;
+            padding: 14px 32px;
+            border-radius: 10px;
+            font-size: 16px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+        .qs-pro-inner .pro-cta:hover { transform: translateY(-2px); }
+
+        @media (max-width: 640px) {
+            .qs-hero h1 { font-size: 26px; }
+            .pill-group { flex-direction: column; }
+            .pill { width: 100%; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-inner">
+            <a href="index.html" class="logo">API<span>pulse</span></a>
+            <div class="nav-links">
+                <a href="calculator.html">Calculator</a>
+                <a href="compare.html">Compare</a>
+                <a href="blog.html">Blog</a>
+                <a href="claude-4-migration-hub.html">Migration Hub</a>
+                <a href="pro.html" class="nav-cta">Get Pro</a>
+            </div>
+            <button class="hamburger" onclick="toggleMobileNav()" aria-label="Menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <main>
+        <section class="qs-hero">
+            <div class="badge">⚡ 10-Second Migration</div>
+            <h1>Copy, Paste, Deploy — Claude 4 Migration Code</h1>
+            <p class="subtitle">
+                Select your language and target model.
+                Get the exact code to switch from Claude 4.
+                No sign-up. No docs to read. Just code.
+            </p>
+        </section>
+
+        <!-- Selector -->
+        <section class="qs-card">
+            <div class="qs-inner">
+                <!-- Language -->
+                <div class="qs-step">
+                    <label>1. What language are you using?</label>
+                    <div class="pill-group" id="lang-pills">
+                        <div class="pill selected" onclick="selectLang(this,'python')">🐍 Python<span class="pill-sub">anthropic SDK</span></div>
+                        <div class="pill" onclick="selectLang(this,'node')">📦 Node.js<span class="pill-sub">anthropic SDK</span></div>
+                        <div class="pill" onclick="selectLang(this,'curl')">🔌 cURL<span class="pill-sub">REST API</span></div>
+                        <div class="pill" onclick="selectLang(this,'go')">🔷 Go<span class="pill-sub">go-anthropic</span></div>
+                        <div class="pill" onclick="selectLang(this,'ruby')">💎 Ruby<span class="pill-sub">ruby-anthropic</span></div>
+                    </div>
+                </div>
+
+                <!-- Target model -->
+                <div class="qs-step">
+                    <label>2. What do you want to switch to?</label>
+                    <div class="pill-group" id="target-pills">
+                        <div class="pill selected" onclick="selectTarget(this,'opus48')">Claude Opus 4.8<span class="pill-sub">$5/$25 · 67% cheaper</span></div>
+                        <div class="pill" onclick="selectTarget(this,'sonnet46')">Claude Sonnet 4.6<span class="pill-sub">$3/$15 · 80% cheaper</span></div>
+                        <div class="pill" onclick="selectTarget(this,'gpt5')">GPT-5<span class="pill-sub">$1.25/$10 · 92% cheaper</span></div>
+                        <div class="pill" onclick="selectTarget(this,'gemini')">Gemini 2.5 Pro<span class="pill-sub">$1.25/$10 · 92% cheaper</span></div>
+                        <div class="pill" onclick="selectTarget(this,'deepseek')">DeepSeek V4 Pro<span class="pill-sub">$0.44/$0.87 · 97% cheaper</span></div>
+                        <div class="pill" onclick="selectTarget(this,'deepseek-flash')">DeepSeek V4 Flash<span class="pill-sub">$0.14/$0.28 · 99% cheaper</span></div>
+                    </div>
+                </div>
+
+                <button class="qs-btn" onclick="generateCode()">⚡ Generate My Migration Code</button>
+            </div>
+        </section>
+
+        <!-- Output -->
+        <section class="qs-output" id="qs-output">
+            <div class="code-header">
+                <span class="lang-badge" id="code-lang">PYTHON</span>
+                <button class="copy-btn" id="copy-btn" onclick="copyCode()">📋 Copy Code</button>
+            </div>
+            <div class="code-output">
+                <pre id="code-block"></pre>
+            </div>
+
+            <div class="qs-steps">
+                <h3>Next steps:</h3>
+                <ol id="next-steps"></ol>
+            </div>
+        </section>
+
+        <!-- Pro upsell -->
+        <section class="qs-pro">
+            <div class="qs-pro-inner">
+                <h3>🚀 Need Help Choosing?</h3>
+                <p>
+                    Pro compares all 42 models against YOUR exact usage.
+                    See which model saves you the most — with cost reports and optimization recommendations.
+                </p>
+                <a href="#" id="qs-pro-cta" class="pro-cta">Get Pro — $29 Once</a>
+            </div>
+        </section>
+
+        <!-- Related -->
+        <section style="max-width:700px;margin:0 auto 48px;padding:0 24px;">
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
+                <a href="claude-4-migration-advisor.html" style="background:var(--bg-secondary);border:1px solid var(--border);border-radius:10px;padding:16px;text-decoration:none;color:var(--text-primary);transition:all 0.2s;">
+                    <div style="font-size:14px;font-weight:600;margin-bottom:4px;">🎯 Migration Advisor</div>
+                    <div style="font-size:12px;color:var(--text-muted);">Find your cheapest alternative in 60 seconds</div>
+                </a>
+                <a href="claude-4-410-fix.html" style="background:var(--bg-secondary);border:1px solid var(--border);border-radius:10px;padding:16px;text-decoration:none;color:var(--text-primary);transition:all 0.2s;">
+                    <div style="font-size:14px;font-weight:600;margin-bottom:4px;">🔧 410 Error Fix Guide</div>
+                    <div style="font-size:12px;color:var(--text-muted);">Language-specific fix with all code snippets</div>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-inner">
+            <div class="footer-brand">API<span>pulse</span></div>
+            <p>Know your AI API costs before you commit.</p>
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="calculator.html">Calculator</a>
+                <a href="compare.html">Compare</a>
+                <a href="blog.html">Blog</a>
+                <a href="pro.html">Pro</a>
+                <a href="about.html">About</a>
+            </div>
+            <p class="footer-copy">© 2026 APIpulse. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+    var selectedLang = 'python';
+    var selectedTarget = 'opus48';
+
+    function selectLang(el, lang) {
+        document.querySelectorAll('#lang-pills .pill').forEach(function(p) { p.classList.remove('selected'); });
+        el.classList.add('selected');
+        selectedLang = lang;
+    }
+    function selectTarget(el, target) {
+        document.querySelectorAll('#target-pills .pill').forEach(function(p) { p.classList.remove('selected'); });
+        el.classList.add('selected');
+        selectedTarget = target;
+    }
+
+    var MODELS = {
+        opus48:        { id: 'claude-opus-4-8',     name: 'Claude Opus 4.8',  provider: 'anthropic', base: 'https://api.anthropic.com' },
+        sonnet46:      { id: 'claude-sonnet-4-6',   name: 'Claude Sonnet 4.6', provider: 'anthropic', base: 'https://api.anthropic.com' },
+        gpt5:          { id: 'gpt-5',               name: 'GPT-5',            provider: 'openai',    base: 'https://api.openai.com/v1' },
+        gemini:        { id: 'gemini-2.5-pro',      name: 'Gemini 2.5 Pro',   provider: 'google',    base: 'https://generativelanguage.googleapis.com/v1' },
+        deepseek:      { id: 'deepseek-v4-pro',     name: 'DeepSeek V4 Pro',  provider: 'deepseek',  base: 'https://api.deepseek.com' },
+        'deepseek-flash': { id: 'deepseek-v4-flash', name: 'DeepSeek V4 Flash', provider: 'deepseek', base: 'https://api.deepseek.com' }
+    };
+
+    var CODE = {
+        python: {
+            anthropic: function(m) {
+                return '<span class="comment"># Before (Claude 4 — RETIRED)</span>\n' +
+                    '<span class="old">model = "claude-4-opus-20250615"</span>\n\n' +
+                    '<span class="comment"># After (' + m.name + ')</span>\n' +
+                    '<span class="new">model = "' + m.id + '"</span>\n\n' +
+                    '<span class="comment"># If staying with Anthropic — same API key, same SDK</span>\n' +
+                    '<span class="comment"># Just change the model name. That\'s it.</span>\n\n' +
+                    'client = anthropic.Anthropic()  <span class="comment"># API_KEY from env</span>\n' +
+                    'message = client.messages.create(\n' +
+                    '    <span class="key">model</span>=<span class="new">"' + m.id + '"</span>,\n' +
+                    '    <span class="key">max_tokens</span>=1024,\n' +
+                    '    <span class="key">messages</span>=[{<span class="key">"role"</span>: <span class="key">"user"</span>, <span class="key">"content"</span>: <span class="string">"Hello"</span>}]\n' +
+                    ')\n' +
+                    'print(message.content[0].text)';
+            },
+            openai: function(m) {
+                return '<span class="comment"># Switch from Claude 4 to ' + m.name + '</span>\n' +
+                    '<span class="comment"># Requires: pip install openai</span>\n' +
+                    '<span class="comment"># Set OPENAI_API_KEY environment variable</span>\n\n' +
+                    'client = openai.OpenAI()\n' +
+                    'response = client.chat.completions.create(\n' +
+                    '    <span class="key">model</span>=<span class="new">"' + m.id + '"</span>,\n' +
+                    '    <span class="key">messages</span>=[{<span class="key">"role"</span>: <span class="key">"user"</span>, <span class="key">"content"</span>: <span class="string">"Hello"</span>}]\n' +
+                    ')\n' +
+                    'print(response.choices[0].message.content)';
+            },
+            google: function(m) {
+                return '<span class="comment"># Switch from Claude 4 to ' + m.name + '</span>\n' +
+                    '<span class="comment"># Requires: pip install google-generativeai</span>\n' +
+                    '<span class="comment"># Set GEMINI_API_KEY environment variable</span>\n\n' +
+                    'import google.generativeai as genai\n' +
+                    'genai.configure(api_key=os.environ[<span class="string">"GEMINI_API_KEY"</span>])\n' +
+                    'model = genai.GenerativeModel(<span class="new">"' + m.id + '"</span>)\n' +
+                    'response = model.generate_content(<span class="string">"Hello"</span>)\n' +
+                    'print(response.text)';
+            },
+            deepseek: function(m) {
+                return '<span class="comment"># Switch from Claude 4 to ' + m.name + '</span>\n' +
+                    '<span class="comment"># DeepSeek is OpenAI-compatible — use openai SDK</span>\n' +
+                    '<span class="comment"># Requires: pip install openai</span>\n' +
+                    '<span class="comment"># Set DEEPSEEK_API_KEY environment variable</span>\n\n' +
+                    'client = openai.OpenAI(\n' +
+                    '    <span class="key">api_key</span>=os.environ[<span class="string">"DEEPSEEK_API_KEY"</span>],\n' +
+                    '    <span class="key">base_url</span>=<span class="new">"https://api.deepseek.com"</span>\n' +
+                    ')\n' +
+                    'response = client.chat.completions.create(\n' +
+                    '    <span class="key">model</span>=<span class="new">"' + m.id + '"</span>,\n' +
+                    '    <span class="key">messages</span>=[{<span class="key">"role"</span>: <span class="key">"user"</span>, <span class="key">"content"</span>: <span class="string">"Hello"</span>}]\n' +
+                    ')\n' +
+                    'print(response.choices[0].message.content)';
+            }
+        },
+        node: {
+            anthropic: function(m) {
+                return '<span class="comment">// Before (Claude 4 — RETIRED)</span>\n' +
+                    '<span class="old">model: "claude-4-opus-20250615"</span>\n\n' +
+                    '<span class="comment">// After (' + m.name + ')</span>\n' +
+                    '<span class="new">model: "' + m.id + '"</span>\n\n' +
+                    '<span class="comment">// Same API key, same SDK. Just change the model name.</span>\n\n' +
+                    'import Anthropic from <span class="string">"@anthropic-ai/sdk"</span>;\n\n' +
+                    'const client = new Anthropic();\n' +
+                    'const message = await client.messages.create({\n' +
+                    '  <span class="key">model</span>: <span class="new">"' + m.id + '"</span>,\n' +
+                    '  <span class="key">max_tokens</span>: 1024,\n' +
+                    '  <span class="key">messages</span>: [{ <span class="key">role</span>: <span class="key">"user"</span>, <span class="key">content</span>: <span class="string">"Hello"</span> }]\n' +
+                    '});\n' +
+                    'console.log(message.content[0].text);';
+            },
+            openai: function(m) {
+                return '<span class="comment">// Switch from Claude 4 to ' + m.name + '</span>\n' +
+                    '<span class="comment">// Requires: npm install openai</span>\n\n' +
+                    'import OpenAI from <span class="string">"openai"</span>;\n\n' +
+                    'const client = new OpenAI();\n' +
+                    'const response = await client.chat.completions.create({\n' +
+                    '  <span class="key">model</span>: <span class="new">"' + m.id + '"</span>,\n' +
+                    '  <span class="key">messages</span>: [{ <span class="key">role</span>: <span class="key">"user"</span>, <span class="key">content</span>: <span class="string">"Hello"</span> }]\n' +
+                    '});\n' +
+                    'console.log(response.choices[0].message.content);';
+            },
+            google: function(m) {
+                return '<span class="comment">// Switch from Claude 4 to ' + m.name + '</span>\n' +
+                    '<span class="comment">// Requires: npm install @google/generative-ai</span>\n\n' +
+                    'import { GoogleGenerativeAI } from <span class="string">"@google/generative-ai"</span>;\n\n' +
+                    'const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);\n' +
+                    'const model = genAI.getGenerativeModel({ <span class="key">model</span>: <span class="new">"' + m.id + '"</span> });\n' +
+                    'const result = await model.generateContent(<span class="string">"Hello"</span>);\n' +
+                    'console.log(result.response.text());';
+            },
+            deepseek: function(m) {
+                return '<span class="comment">// Switch from Claude 4 to ' + m.name + '</span>\n' +
+                    '<span class="comment">// DeepSeek is OpenAI-compatible — use openai SDK</span>\n' +
+                    '<span class="comment">// Requires: npm install openai</span>\n\n' +
+                    'import OpenAI from <span class="string">"openai"</span>;\n\n' +
+                    'const client = new OpenAI({\n' +
+                    '  <span class="key">apiKey</span>: process.env.DEEPSEEK_API_KEY,\n' +
+                    '  <span class="key">baseURL</span>: <span class="new">"https://api.deepseek.com"</span>\n' +
+                    '});\n' +
+                    'const response = await client.chat.completions.create({\n' +
+                    '  <span class="key">model</span>: <span class="new">"' + m.id + '"</span>,\n' +
+                    '  <span class="key">messages</span>: [{ <span class="key">role</span>: <span class="key">"user"</span>, <span class="key">content</span>: <span class="string">"Hello"</span> }]\n' +
+                    '});\n' +
+                    'console.log(response.choices[0].message.content);';
+            }
+        },
+        curl: {
+            anthropic: function(m) {
+                return '<span class="comment"># Claude 4 to ' + m.name + ' (Anthropic API)</span>\n' +
+                    '<span class="comment"># Same API key — just change the model</span>\n\n' +
+                    'curl https://api.anthropic.com/v1/messages \\\n' +
+                    '  -H <span class="string">"x-api-key: $ANTHROPIC_API_KEY"</span> \\\n' +
+                    '  -H <span class="string">"anthropic-version: 2023-06-01"</span> \\\n' +
+                    '  -H <span class="string">"content-type: application/json"</span> \\\n' +
+                    '  -d <span class="string">\'{\n' +
+                    '    "model": "<span class="new">' + m.id + '</span>",\n' +
+                    '    "max_tokens": 1024,\n' +
+                    '    "messages": [{"role": "user", "content": "Hello"}]\n' +
+                    '  }\'</span>';
+            },
+            openai: function(m) {
+                return '<span class="comment"># Claude 4 to ' + m.name + ' (OpenAI API)</span>\n\n' +
+                    'curl https://api.openai.com/v1/chat/completions \\\n' +
+                    '  -H <span class="string">"Authorization: Bearer $OPENAI_API_KEY"</span> \\\n' +
+                    '  -H <span class="string">"Content-Type: application/json"</span> \\\n' +
+                    '  -d <span class="string">\'{\n' +
+                    '    "model": "<span class="new">' + m.id + '</span>",\n' +
+                    '    "messages": [{"role": "user", "content": "Hello"}]\n' +
+                    '  }\'</span>';
+            },
+            google: function(m) {
+                return '<span class="comment"># Claude 4 to ' + m.name + ' (Google AI API)</span>\n\n' +
+                    'curl "https://generativelanguage.googleapis.com/v1/models/<span class="new">' + m.id + '</span>:generateContent?key=$GEMINI_API_KEY" \\\n' +
+                    '  -H <span class="string">"Content-Type: application/json"</span> \\\n' +
+                    '  -d <span class="string">\'{\n' +
+                    '    "contents": [{"parts": [{"text": "Hello"}]}]\n' +
+                    '  }\'</span>';
+            },
+            deepseek: function(m) {
+                return '<span class="comment"># Claude 4 to ' + m.name + ' (DeepSeek API — OpenAI-compatible)</span>\n\n' +
+                    'curl https://api.deepseek.com/chat/completions \\\n' +
+                    '  -H <span class="string">"Authorization: Bearer $DEEPSEEK_API_KEY"</span> \\\n' +
+                    '  -H <span class="string">"Content-Type: application/json"</span> \\\n' +
+                    '  -d <span class="string">\'{\n' +
+                    '    "model": "<span class="new">' + m.id + '</span>",\n' +
+                    '    "messages": [{"role": "user", "content": "Hello"}]\n' +
+                    '  }\'</span>';
+            }
+        },
+        go: {
+            anthropic: function(m) {
+                return '<span class="comment">// Claude 4 to ' + m.name + ' (Go)</span>\n' +
+                    '<span class="comment">// Requires: go get github.com/anthropics/anthropic-sdk-go</span>\n\n' +
+                    'client := anthropic.NewClient()\n' +
+                    'msg, err := client.Messages.New(ctx, &anthropic.MessageNewParams{\n' +
+                    '    <span class="key">Model</span>: <span class="new">"' + m.id + '"</span>,\n' +
+                    '    <span class="key">MaxTokens</span>: 1024,\n' +
+                    '    <span class="key">Messages</span>: []anthropic.MessageParam{\n' +
+                    '        anthropic.NewUserMessage(anthropic.NewTextBlock(<span class="string">"Hello"</span>)),\n' +
+                    '    },\n' +
+                    '})';
+            },
+            openai: function(m) {
+                return '<span class="comment">// Claude 4 to ' + m.name + ' (Go)</span>\n' +
+                    '<span class="comment">// Requires: go get github.com/sashabaranov/go-openai</span>\n\n' +
+                    'client := openai.NewClient(os.Getenv(<span class="string">"OPENAI_API_KEY"</span>))\n' +
+                    'resp, err := client.CreateChatCompletion(ctx, openai.ChatCompletionRequest{\n' +
+                    '    <span class="key">Model</span>: <span class="new">"' + m.id + '"</span>,\n' +
+                    '    <span class="key">Messages</span>: []openai.ChatCompletionMessage{\n' +
+                    '        {<span class="key">Role</span>: openai.ChatMessageRoleUser, <span class="key">Content</span>: <span class="string">"Hello"</span>},\n' +
+                    '    },\n' +
+                    '})';
+            },
+            google: function(m) {
+                return '<span class="comment">// Claude 4 to ' + m.name + ' (Go)</span>\n' +
+                    '<span class="comment">// Requires: go get google.golang.org/api/generativeai/v1</span>\n\n' +
+                    'client, _ := generativeli.NewClient(ctx, os.Getenv(<span class="string">"GEMINI_API_KEY"</span>))\n' +
+                    'resp, err := client.GenerateContent(ctx, &generativeli.GenerateContentRequest{\n' +
+                    '    <span class="key">Model</span>: <span class="new">"models/' + m.id + '"</span>,\n' +
+                    '    Contents: []*generativeli.Content{\n' +
+                    '        {Parts: []*generativeli.Part{{Text: <span class="string">"Hello"</span>}}},\n' +
+                    '    },\n' +
+                    '})';
+            },
+            deepseek: function(m) {
+                return '<span class="comment">// Claude 4 to ' + m.name + ' (Go — use OpenAI SDK)</span>\n' +
+                    '<span class="comment">// DeepSeek is OpenAI-compatible</span>\n\n' +
+                    'config := openai.DefaultConfig(os.Getenv(<span class="string">"DEEPSEEK_API_KEY"</span>))\n' +
+                    'config.BaseURL = <span class="new">"https://api.deepseek.com"</span>\n' +
+                    'client := openai.NewClientWithConfig(config)\n' +
+                    'resp, err := client.CreateChatCompletion(ctx, openai.ChatCompletionRequest{\n' +
+                    '    <span class="key">Model</span>: <span class="new">"' + m.id + '"</span>,\n' +
+                    '    <span class="key">Messages</span>: []openai.ChatCompletionMessage{\n' +
+                    '        {<span class="key">Role</span>: openai.ChatMessageRoleUser, <span class="key">Content</span>: <span class="string">"Hello"</span>},\n' +
+                    '    },\n' +
+                    '})';
+            }
+        },
+        ruby: {
+            anthropic: function(m) {
+                return '<span class="comment"># Claude 4 to ' + m.name + ' (Ruby)</span>\n' +
+                    '<span class="comment"># Requires: gem install anthropic</span>\n\n' +
+                    'client = Anthropic::Client.new\n' +
+                    'message = client.messages(\n' +
+                    '  <span class="key">model</span>: <span class="new">"' + m.id + '"</span>,\n' +
+                    '  <span class="key">max_tokens</span>: 1024,\n' +
+                    '  <span class="key">messages</span>: [{ <span class="key">role</span>: <span class="key">"user"</span>, <span class="key">content</span>: <span class="string">"Hello"</span> }]\n' +
+                    ')\n' +
+                    'puts message.content[0].text';
+            },
+            openai: function(m) {
+                return '<span class="comment"># Claude 4 to ' + m.name + ' (Ruby)</span>\n' +
+                    '<span class="comment"># Requires: gem install openai</span>\n\n' +
+                    'client = OpenAI::Client.new\n' +
+                    'response = client.chat(\n' +
+                    '  <span class="key">parameters</span>: {\n' +
+                    '    <span class="key">model</span>: <span class="new">"' + m.id + '"</span>,\n' +
+                    '    <span class="key">messages</span>: [{ <span class="key">role</span>: <span class="key">"user"</span>, <span class="key">content</span>: <span class="string">"Hello"</span> }]\n' +
+                    '  }\n' +
+                    ')\n' +
+                    'puts response.dig(<span class="key">"choices"</span>, 0, <span class="key">"message"</span>, <span class="key">"content"</span>)';
+            },
+            google: function(m) {
+                return '<span class="comment"># Claude 4 to ' + m.name + ' (Ruby)</span>\n' +
+                    '<span class="comment"># Requires: gem install google-apis-generative_language</span>\n\n' +
+                    'client = Google::Apis::GenerativeLanguage::GenerativeLanguageService.new\n' +
+                    'response = client.generate_content(<span class="new">"' + m.id + '"</span>, contents: <span class="string">"Hello"</span>)\n' +
+                    'puts response.candidates[0].content.parts[0].text';
+            },
+            deepseek: function(m) {
+                return '<span class="comment"># Claude 4 to ' + m.name + ' (Ruby — use OpenAI SDK)</span>\n' +
+                    '<span class="comment"># DeepSeek is OpenAI-compatible</span>\n\n' +
+                    'client = OpenAI::Client.new(\n' +
+                    '  <span class="key">access_token</span>: ENV[<span class="string">"DEEPSEEK_API_KEY"</span>],\n' +
+                    '  <span class="key">uri_base</span>: <span class="new">"https://api.deepseek.com"</span>\n' +
+                    ')\n' +
+                    'response = client.chat(\n' +
+                    '  <span class="key">parameters</span>: {\n' +
+                    '    <span class="key">model</span>: <span class="new">"' + m.id + '"</span>,\n' +
+                    '    <span class="key">messages</span>: [{ <span class="key">role</span>: <span class="key">"user"</span>, <span class="key">content</span>: <span class="string">"Hello"</span> }]\n' +
+                    '  }\n' +
+                    ')\n' +
+                    'puts response.dig(<span class="key">"choices"</span>, 0, <span class="key">"message"</span>, <span class="key">"content"</span>)';
+            }
+        }
+    };
+
+    var NEXT_STEPS = {
+        anthropic: [
+            'Change the model name in your code (shown above)',
+            'Your existing API key works — no new key needed',
+            'Redeploy your app',
+            'Test with a simple request to verify it works'
+        ],
+        openai: [
+            'Get an API key from <code>platform.openai.com</code>',
+            'Set <code>OPENAI_API_KEY</code> environment variable',
+            'Install the SDK: <code>pip install openai</code> or <code>npm install openai</code>',
+            'Update your code (shown above) and redeploy'
+        ],
+        google: [
+            'Get an API key from <code>aistudio.google.com</code>',
+            'Set <code>GEMINI_API_KEY</code> environment variable',
+            'Install the SDK for your language',
+            'Update your code (shown above) and redeploy'
+        ],
+        deepseek: [
+            'Get an API key from <code>platform.deepseek.com</code>',
+            'Set <code>DEEPSEEK_API_KEY</code> environment variable',
+            'DeepSeek uses the OpenAI SDK — no new dependency needed',
+            'Update your code (shown above) and redeploy'
+        ]
+    };
+
+    function generateCode() {
+        var m = MODELS[selectedTarget];
+        var langCode = CODE[selectedLang];
+        if (!langCode || !langCode[m.provider]) {
+            alert('Code not available for this combination yet.');
+            return;
+        }
+
+        var code = langCode[m.provider](m);
+        document.getElementById('code-block').innerHTML = code;
+        document.getElementById('code-lang').textContent = selectedLang.toUpperCase();
+
+        // Next steps
+        var steps = NEXT_STEPS[m.provider];
+        var stepsHtml = '';
+        steps.forEach(function(s) { stepsHtml += '<li>' + s + '</li>'; });
+        document.getElementById('next-steps').innerHTML = stepsHtml;
+
+        // Show output
+        document.getElementById('qs-output').classList.add('visible');
+        document.getElementById('qs-output').scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+        // Reset copy button
+        var btn = document.getElementById('copy-btn');
+        btn.textContent = '📋 Copy Code';
+        btn.classList.remove('copied');
+
+        // Track
+        if (window.trackEvent) {
+            window.trackEvent('quick_switch_generated', {
+                lang: selectedLang,
+                target: selectedTarget,
+                model: m.name
+            });
+        }
+    }
+
+    function copyCode() {
+        var codeEl = document.getElementById('code-block');
+        var text = codeEl.textContent || codeEl.innerText;
+        navigator.clipboard.writeText(text).then(function() {
+            var btn = document.getElementById('copy-btn');
+            btn.textContent = '✅ Copied!';
+            btn.classList.add('copied');
+            setTimeout(function() {
+                btn.textContent = '📋 Copy Code';
+                btn.classList.remove('copied');
+            }, 2000);
+        });
+    }
+    </script>
+</body>
+</html>
