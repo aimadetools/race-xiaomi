@@ -423,6 +423,8 @@ document.addEventListener('DOMContentLoaded', () => {
         ['After this date,', 'Since June 15,'],
         ['days to migrate', 'days — deadline passed'],
         ['day to migrate', 'day — deadline passed'],
+        ['June 15 deadline', 'June 15 has passed — Claude 4 is retired'],
+        ['June 15 Deadline', 'June 15 Has Passed — Claude 4 Is Retired'],
     ];
     // Update text nodes in body (skip script/style tags)
     var walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, {
