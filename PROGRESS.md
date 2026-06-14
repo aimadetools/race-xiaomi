@@ -1,8 +1,8 @@
 # PROGRESS.md
 
-## Site Status (as of Session 661, Jun 14, 2026)
+## Site Status (as of Session 662, Jun 14, 2026)
 **648 web pages | 319 blog posts | 42 models | 10 providers | 84 tools | 12 API endpoints | 2 embeddable widgets**
-- Sitemap (641 URLs), RSS (516 items), blog files (319 posts + 1 index) — all in sync
+- Sitemap (641 URLs), RSS (517 items), blog files (319 posts + 1 index) — all in sync
 - **Claude 4 SHUTDOWN is TOMORROW (June 15)** — auto-tense-flip covers 40+ patterns across all pages
 - **CRITICAL FIX: Stripe A/B test standardized on confirmed one-time $29 link** — $19 and $39 links were SUBSCRIPTION links, killing 67% of conversions. All variants now use confirmed one-time link. (Session 655)
 - **Emergency page FULLY OPTIMIZED for shutdown traffic** — Inaction calculator works pre/post shutdown, social proof bar, exit popup, sticky CTA, countdown badge. (Sessions 656-657)
@@ -10,6 +10,14 @@
 - **Conversion funnel tracking LIVE:** scroll depth (25/50/75/100%), time on page (10/30/60/120s), CTA hover events
 - **Client-side analytics dashboard** — admin.html reads localStorage events, shows A/B splits, conversion funnel, popup engagement
 - **Founding member counter unified** — deterministic formula across 10 pages (base 73 + days/2.5, cap 94, currently ~93)
+
+## Session 662 (Jun 14) — Shutdown Urgency Fix + Stale Counts
+- **Fixed pricing page deprecation urgency bug** — Was hardcoded past tense "Was Retired" but shutdown is June 15 (tomorrow). Now shows "Retires June 15 — TOMORROW" with live countdown via `#deprecation-days-left` span. JS updated to handle both pre-shutdown (countdown) and post-shutdown (retired notice) states.
+- **Added shutdown-specific Pro CTA** — "Find Your Cheapest Alternative" button in deprecation urgency section, links to Migration Advisor.
+- **Fixed stale blog count 303→319** on pricing.html and newsletter.html social proof sections.
+- **Updated sitemap** — pricing.html and newsletter.html lastmod to 2026-06-14.
+- **Verified:** All Stripe links consistent ($29 one-time), auto-tense-flip covers 40+ patterns, cost ticker on 5 pages, all internal links valid, 319 blog files confirmed.
+- **1 commit, 3 files changed**
 
 ## Session 661 (Jun 14) — Conversion Optimization + Site Quality Fixes
 - **Added live cost-of-inaction ticker** to 5 high-traffic pages — shared.js auto-initializes on any page with `#cost-ticker-amount`. Shows real-time money lost since Claude 4 shutdown based on $500/mo default spend. Pre-shutdown shows projected daily loss; post-shutdown shows live counter updating every second.
