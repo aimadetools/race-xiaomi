@@ -76,7 +76,7 @@
                 "name": "What happens if I don't migrate before June 15?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "After June 15, 2026, API calls to 'claude-4-opus' and 'claude-sonnet-4' will return errors (HTTP 410 Gone or 400). Your app will break if it depends on these models. Your API key still works — you just need to update the model name string."
+                    "text": "After June 15, 2026, API calls to 'claude-4-opus' and 'claude-sonnet-4' return errors (HTTP 410 Gone or 400). Your app will break if it depends on these models. Your API key still works — you just need to update the model name string."
                 }
             },
             {
@@ -299,7 +299,7 @@
         </div>
 
         <h2>Why This Weekend Matters</h2>
-        <p>After June 15, every API call to <code>claude-4-opus</code> and <code>claude-sonnet-4</code> will return errors. If your app uses these models, it will break. But the fix is trivial — and the replacement models are actually better:</p>
+        <p>After June 15, every API call to <code>claude-4-opus</code> and <code>claude-sonnet-4</code> return errors. If your app uses these models, it will break. But the fix is trivial — and the replacement models are actually better:</p>
         <ul>
             <li><strong>Claude Opus 4.8</strong> replaces Claude 4 Opus — 67% cheaper, 5x context window</li>
             <li><strong>Claude Sonnet 4.6</strong> replaces Claude Sonnet 4 — same price, 5x context window</li>
@@ -473,7 +473,7 @@ grep -r "claude-sonnet-4" . --include="*.py" --include="*.js" --include="*.ts" -
         <p>Check your proxy's documentation — they may handle the model mapping automatically. If not, update the model name in your proxy config.</p>
 
         <h3>Can I keep using Claude 4 after June 15?</h3>
-        <p>No. The model IDs will be retired and return errors. There's no extended support or grace period.</p>
+        <p>No. The model IDs were retired and return errors. There's no extended support or grace period.</p>
 
         <h3>What about Claude 4 Opus on claude.ai (the web interface)?</h3>
         <p>This deprecation only affects the API. The claude.ai web interface manages its own model availability separately.</p>

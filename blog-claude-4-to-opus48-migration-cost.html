@@ -150,7 +150,7 @@
     <main id="main">
     <div class="blog-hero">
         <div class="breadcrumb"><a href="blog.html">Blog</a> &rsaquo; Claude 4 to Opus 4.8 Migration</div>
-        <div class="deprecation-alert"><strong>⏰ 5 DAYS LEFT:</strong> Claude 4 Opus and Claude 4 Sonnet shut down on <strong>June 15, 2026</strong>. After this date, all API calls will return HTTP 410 Gone errors. Migrate now to avoid downtime.</div>
+        <div class="deprecation-alert"><strong>⏰ 5 DAYS LEFT:</strong> Claude 4 Opus and Claude 4 Sonnet shut down on <strong>June 15, 2026</strong>. After this date, all API calls return HTTP 410 Gone errors. Migrate now to avoid downtime.</div>
         <h1>Claude 4 to Opus 4.8 Migration: Cost & Code Changes</h1>
         <p class="meta">Published Jun 10, 2026 &middot; 8 min read &middot; By APIpulse</p>
     </div>
@@ -225,7 +225,7 @@ const response = await anthropic.messages.create({
             <li><strong>Update the model ID</strong> in each location. Use the replacement IDs from the table above.</li>
             <li><strong>Test your application</strong> with the new model. The response format is identical, but run your test suite to be sure.</li>
             <li><strong>Update your cost estimates</strong> — you're now paying 67% less. Use the <a href="calculator.html">APIpulse Calculator</a> to recalculate your monthly budget.</li>
-            <li><strong>Deploy to production</strong> before June 15. After that date, the old model IDs will return HTTP 410 Gone errors immediately.</li>
+            <li><strong>Deploy to production</strong> before June 15. After that date, the old model IDs return HTTP 410 Gone errors immediately.</li>
         </ol>
 
         <h2>Why Opus 4.8 Is Actually Better</h2>
@@ -265,7 +265,7 @@ const response = await anthropic.messages.create({
         <h2>Frequently Asked Questions</h2>
 
         <h3>What happens if I don't migrate by June 15?</h3>
-        <p>All API calls using Claude 4 model IDs will return HTTP 410 Gone errors immediately. There is no grace period, no partial shutdown, and no extensions. Your application will break.</p>
+        <p>All API calls using Claude 4 model IDs return HTTP 410 Gone errors immediately. There is no grace period, no partial shutdown, and no extensions. Your application will break.</p>
 
         <h3>Can I use Claude Opus 4.8 as a drop-in replacement?</h3>
         <p>Yes. Change the model ID and everything else stays the same. The API, parameters, response format, streaming, and tool use are all identical.</p>

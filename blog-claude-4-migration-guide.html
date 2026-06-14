@@ -75,7 +75,7 @@
                 "name": "What happens if I don't migrate before June 15?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "After June 15, 2026, API calls to 'claude-4-opus' and 'claude-sonnet-4' will return errors. Your API key still works — you just need to update the model name string. If you're using the Anthropic SDK, update to the latest version which includes the new model IDs."
+                    "text": "After June 15, 2026, API calls to 'claude-4-opus' and 'claude-sonnet-4' return errors. Your API key still works — you just need to update the model name string. If you're using the Anthropic SDK, update to the latest version which includes the new model IDs."
                 }
             },
             {
@@ -239,7 +239,7 @@
         </script>
 
         <div class="alert">
-            <p><strong>Deadline: June 15, 2026.</strong> After this date, API calls to <code>claude-4-opus</code> and <code>claude-sonnet-4</code> will return errors. Your API key still works — you just need to update the model name.</p>
+            <p><strong>Deadline: June 15, 2026.</strong> After this date, API calls to <code>claude-4-opus</code> and <code>claude-sonnet-4</code> return errors. Your API key still works — you just need to update the model name.</p>
         </div>
 
         <h2>What's Retiring and What Replaces It</h2>
@@ -400,7 +400,7 @@ NEW_MODEL = <span class="str">"claude-opus-4-8"</span>
         </ul>
 
         <h3>Rollback plan</h3>
-        <p>If something goes wrong, you can switch back instantly — just change the model name back. But note: after June 15, the old model IDs will stop working entirely. Keep your rollback window within the next <strong id="rollbackDays">10 days</strong>.</p>
+        <p>If something goes wrong, you can switch back instantly — just change the model name back. But note: after June 15, the old model IDs stopped working entirely. Keep your rollback window within the next <strong id="rollbackDays">10 days</strong>.</p>
         <script>
             (function(){
                 var dep = new Date('2026-06-15T00:00:00');
