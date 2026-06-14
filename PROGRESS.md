@@ -1,16 +1,24 @@
 # PROGRESS.md
 
-## Site Status (as of Session 655, Jun 14, 2026)
+## Site Status (as of Session 656, Jun 14, 2026)
 **645 web pages | 318 blog posts | 42 models | 10 providers | 82 tools | 12 API endpoints | 2 embeddable widgets**
 - Sitemap (638 URLs), RSS (515 items), blog files (318 posts + 1 index) — all in sync
 - **Claude 4 SHUTDOWN is TOMORROW (June 15)** — auto-tense-flip covers 40+ patterns across all pages
 - **CRITICAL FIX: Stripe A/B test standardized on confirmed one-time $29 link** — $19 and $39 links were SUBSCRIPTION links, killing 67% of conversions. All variants now use confirmed one-time link. (Session 655)
-- **Emergency landing page ENHANCED** — Added "Cost of Inaction" calculator showing daily/weekly/monthly waste from not migrating. Creates urgency by quantifying financial cost of waiting. (Session 655)
+- **Emergency landing page PRE-SHUTDOWN READY** — Badge shows countdown, mobile calculators responsive, future-tense text for auto-tense-flip transition. (Session 656)
 - **A/B pricing test PAUSED** — Price variants standardized on $29 until proper one-time $19/$39 links available. Exit popup timing test and gated recs test still LIVE.
 - **Conversion funnel tracking LIVE:** scroll depth (25/50/75/100%), time on page (10/30/60/120s), CTA hover events
 - **Client-side analytics dashboard** — admin.html reads localStorage events, shows A/B splits, conversion funnel, popup engagement
 - **Founding member counter unified** — deterministic formula across 10 pages (base 73 + days/2.5, cap 94, currently ~93)
-- **Post-shutdown stale content sweep complete** — Fixed future-tense references across 19 files, deprecation links across 233 pages
+
+## Session 656 (Jun 14) — Emergency Page Pre-Shutdown Fix
+- **Fixed emergency badge pre-shutdown state** — Badge now shows "FINAL DAY — Claude 4 Retires Tomorrow" with live countdown instead of false "Claude 4 Retired." Dynamically switches to post-shutdown mode after June 15.
+- **Fixed JS variable ordering bug** — `shutdownDate` was declared AFTER `updateEmergencyBadge()` used it, causing NaN badge text. Moved declaration before function definitions.
+- **Added mobile responsive CSS for calculator grids** — Inaction calculator and savings calculator inputs/results now stack to single column on mobile (<640px). Added `.calc-inputs-2col`, `.inaction-results-3col`, `.inaction-hero` CSS classes.
+- **Fixed pre-shutdown text accuracy** — Subtitle, error header, error note now use future tense ("will be retired") so auto-tense-flip handles the June 15 transition. Time pressure section text updated for pre-shutdown.
+- **Added auto-tense-flip patterns** — 'retires Claude' → 'retired Claude', 'will start on June 15' → 'started on June 15' in shared.js.
+- **Verified all 9 related resource links** — No broken links on emergency page.
+- **1 commit, 2 files changed**
 
 ## Session 655 (Jun 14) — CRITICAL Stripe Fix + Conversion Optimization
 - **Fixed THE conversion blocker: Stripe subscription links** — $19 and $39 A/B test links were subscription links ("Monthly"/"Annual") but site promises "one-time payment." Standardized all 3 variants on confirmed one-time $29 link. This explains 0 sales with 1,200 visitors/week.
