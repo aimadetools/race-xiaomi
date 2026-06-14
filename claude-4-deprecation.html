@@ -209,10 +209,20 @@
     <meta name="theme-color" content="#6366f1">
 </head>
 <body>
-    <!-- Redirect notice for users landing on old deprecation page -->
-    <div style="background:#dc2626;color:white;padding:12px 16px;text-align:center;font-size:14px;font-weight:600;z-index:10000;position:relative;">
+    <!-- Redirect notice — shows after June 15 via auto-tense-flip or JS -->
+    <div id="deprecation-redirect-notice" style="background:#dc2626;color:white;padding:12px 16px;text-align:center;font-size:14px;font-weight:600;z-index:10000;position:relative;display:none;">
         🔴 Claude 4 has been retired. This page is outdated. <a href="claude-4-is-down.html" style="color:white;text-decoration:underline;font-weight:700;">Get the current migration guide →</a>
     </div>
+    <script>
+    // Show redirect notice only after June 15
+    (function(){
+        var deadline = new Date('2026-06-15T00:00:00Z');
+        if (new Date() >= deadline) {
+            var notice = document.getElementById('deprecation-redirect-notice');
+            if (notice) notice.style.display = 'block';
+        }
+    })();
+    </script>
     <a href="#main" class="skip-link">Skip to content</a>
     <nav>
         <div class="nav-inner">
