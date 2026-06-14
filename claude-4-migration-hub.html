@@ -51,10 +51,10 @@
         "mainEntity": [
             {
                 "@type": "Question",
-                "name": "When is Claude 4 being deprecated?",
+                "name": "When was Claude 4 deprecated?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "Claude 4 Opus and Claude Sonnet 4 are both being retired on June 15, 2026. After this date, API calls to these model IDs will return errors. You must migrate to a replacement model before then."
+                    "text": "Claude 4 Opus and Claude Sonnet 4 were retired on June 15, 2026. API calls to these model IDs now return HTTP 410 Gone errors. You must migrate to a supported replacement."
                 }
             },
             {
@@ -94,7 +94,7 @@
                 "name": "What happens if I didn't migrate before June 15?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "All API calls to claude-4-opus and claude-sonnet-4 model IDs will return HTTP 410 Gone errors. Your application will stop working until you update the model name. There is no grace period."
+                    "text": "All API calls to claude-4-opus and claude-sonnet-4 model IDs now return HTTP 410 Gone errors. Your application has stopped working until you update the model name. There is no grace period."
                 }
             }
         ]
@@ -749,8 +749,8 @@
     <section class="faq-section" style="max-width:700px;margin:0 auto;padding:0 24px;">
         <h2>Frequently Asked Questions</h2>
         <div class="faq-item" onclick="this.classList.toggle('open')">
-            <h3>When is Claude 4 being deprecated?</h3>
-            <p>Claude 4 Opus and Claude Sonnet 4 are both being retired on June 15, 2026. After this date, API calls to these model IDs will return errors. You must migrate to a replacement model before then.</p>
+            <h3>When was Claude 4 deprecated?</h3>
+            <p>Claude 4 Opus and Claude Sonnet 4 were retired on June 15, 2026. API calls to these model IDs now return HTTP 410 Gone errors. You must migrate to a supported replacement.</p>
         </div>
         <div class="faq-item" onclick="this.classList.toggle('open')">
             <h3>What is the cheapest alternative to Claude 4 Opus?</h3>
@@ -765,8 +765,8 @@
             <p>Change one line of code: replace the model name string (e.g., 'claude-4-opus' → 'claude-opus-4-8'). Your API key, SDK, and endpoint stay the same. The entire migration takes under 5 minutes for most codebases.</p>
         </div>
         <div class="faq-item" onclick="this.classList.toggle('open')">
-            <h3>What happens if I didn't migrate before June 15?</h3>
-            <p>All API calls to claude-4-opus and claude-sonnet-4 model IDs will return HTTP 410 Gone errors. Your application will stop working until you update the model name. There is no grace period.</p>
+            <h3>It's after June 15 — what happens now?</h3>
+            <p>All API calls to claude-4-opus and claude-sonnet-4 model IDs now return HTTP 410 Gone errors. Your application has stopped working until you update the model name. There is no grace period.</p>
         </div>
         <div class="faq-item" onclick="this.classList.toggle('open')">
             <h3>How much can I save by switching from Claude 4?</h3>
