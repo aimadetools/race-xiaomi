@@ -18,7 +18,8 @@
 - ✅ ALL pre-shutdown content DONE (Sessions 598-648): auto-tense-flip (40+ patterns, 3 filter extensions), 39 blog posts, 15+ pages, emergency landing page, 57/57 cross-links, pricing fixes, broken links, live countdown, Shutdown FAQ, future tense fixes across 30+ pages, dynamic emergency badge, non-claude-4 blog tense fixes, founding member urgency countdown
 - Swap $29 shutdown special to $9 when human provides the link (HELP-REQUEST Jun 13)
 
-### Completed (Sessions 416-653, Jun 1-16)
+### Completed (Sessions 416-654, Jun 1-16)
+✅ Session 654: Post-shutdown auto-tense-flip fix + deprecation link sweep — removed path filter so tense-flip runs on ALL pages, updated 263 deprecation banner links to emergency page, added 8 new auto-tense-flip replacements. 8 commits, 260+ files.
 ✅ Session 653: Stale stats fix (303→318 blogs, 39→42 models) + conversion friction removal (confusing post-purchase instruction, stale Stripe broken reference in blog). 2 commits, 7 files.
 ✅ Session 652: Post-shutdown cleanup — stale content sweep (19 files), deprecation link sweep (233 pages), emergency page optimization (20→8 resources), old deprecation redirect. 8 commits, 260+ files.
 ✅ Sessions 649-651: Analytics dashboard, migration calculator post-shutdown update, email capture, Opus 4.8 blog post, founding member urgency, shutdown activation, 410 error fix blog. 12 commits, 17 files.
