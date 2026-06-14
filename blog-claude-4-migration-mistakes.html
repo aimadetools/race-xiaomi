@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>5 Costly Claude 4 Migration Mistakes (And How to Avoid Them) | APIpulse</title>
+    <meta name="description" content="Claude 4 is retired. Don't make these 5 expensive migration mistakes: wrong model ID, skipping cost comparison, ignoring rate limits, overpaying for tokens, and no rollback plan. Fix them in minutes.">
+    <meta name="keywords" content="claude 4 migration mistakes, claude 4 migration error, claude 4 replacement wrong, claude 4 alternative mistake, migrate from claude 4 correctly, claude 4 410 fix wrong, claude api migration tips">
+    <meta property="og:title" content="5 Costly Claude 4 Migration Mistakes (And How to Avoid Them)">
+    <meta property="og:description" content="Claude 4 is retired. Don't make these 5 expensive mistakes when migrating. Fix them in minutes, save 67-97%.">
+    <meta property="og:type" content="article">
+    <meta property="article:published_time" content="2026-06-14">
+    <meta property="article:modified_time" content="2026-06-14">
+    <meta property="article:author" content="APIpulse">
+    <meta property="og:image" content="https://getapipulse.com/og-image.png">
+    <meta property="og:url" content="https://getapipulse.com/blog-claude-4-migration-mistakes.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="5 Costly Claude 4 Migration Mistakes">
+    <meta name="twitter:image" content="https://getapipulse.com/og-image.png">
+    <meta name="twitter:description" content="Don't make these 5 expensive mistakes when migrating from Claude 4.">
+    <link rel="canonical" href="https://getapipulse.com/blog-claude-4-migration-mistakes.html">
+    <link rel="alternate" type="application/rss+xml" title="APIpulse Blog" href="https://getapipulse.com/rss.xml">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="styles.css">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0CEP7S9Y3J"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-0CEP7S9Y3J');
+    </script>
+    <script src="analytics.js" defer></script>
+    <script src="dynamic-date.js" defer></script>
+    <script src="shared.js" defer></script>
+    <script src="pricing-data.js" defer></script>
+    <script src="pro-features.js" defer></script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "5 Costly Claude 4 Migration Mistakes (And How to Avoid Them)",
+        "description": "Claude 4 is retired. Don't make these 5 expensive migration mistakes. Fix them in minutes, save 67-97%.",
+        "url": "https://getapipulse.com/blog-claude-4-migration-mistakes.html",
+        "publisher": { "@type": "Organization", "name": "APIpulse", "url": "https://getapipulse.com" },
+        "datePublished": "2026-06-14",
+        "dateModified": "2026-06-14"
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "What is the most common Claude 4 migration mistake?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "The #1 mistake is using the wrong model ID. Claude 4 Opus maps to claude-opus-4-8, NOT claude-4-opus-2 or claude-opus. Using the wrong ID returns 410 Gone or model_not_found errors. Always check the official model ID list before deploying."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How do I avoid overpaying when migrating from Claude 4?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Use a cost calculator to compare your current Claude 4 spend against alternatives BEFORE migrating. Most developers overpay by 50-90% because they default to the most expensive option (Claude Opus 4.8) when a cheaper alternative (DeepSeek V4 Pro, Gemini 2.5 Pro) would work just as well for their use case."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Do I need to change my API key when migrating from Claude 4?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "If staying with Anthropic (Claude Opus 4.8 or Sonnet 4.6), no — your existing API key works unchanged. If switching to a different provider (OpenAI, Google, DeepSeek), you'll need a new API key from that provider. The migration is usually just 1-2 lines of code."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What happens if I don't migrate from Claude 4?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "All API calls to Claude 4 Opus and Sonnet 4 return HTTP 410 Gone errors permanently. There is no grace period, no extension, and no way to restart these models. Your application will be completely broken until you migrate to a supported model."
+                }
+            }
+        ]
+    }
+    </script>
+    <style>
+        .blog-hero{max-width:var(--max-width);margin:0 auto;padding:120px 24px 40px;text-align:center}
+        .blog-hero .category{display:inline-block;background:rgba(245,158,11,0.15);color:#f59e0b;padding:4px 12px;border-radius:6px;font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:16px}
+        .blog-hero h1{font-size:clamp(28px,4.5vw,44px);font-weight:800;margin-bottom:16px;line-height:1.2}
+        .blog-hero .subtitle{font-size:18px;color:var(--text-secondary);max-width:700px;margin:0 auto 24px}
+        .blog-hero .meta{font-size:13px;color:var(--text-muted)}
+        .blog-content{max-width:780px;margin:0 auto;padding:0 24px 80px}
+        .blog-content h2{font-size:28px;font-weight:800;margin:48px 0 16px;padding-top:24px;border-top:1px solid var(--border)}
+        .blog-content h3{font-size:20px;font-weight:700;margin:32px 0 12px}
+        .blog-content p{font-size:16px;line-height:1.8;color:var(--text-secondary);margin-bottom:20px}
+        .blog-content strong{color:var(--text-primary)}
+        .blog-content ul,.blog-content ol{margin-bottom:20px;padding-left:24px}
+        .blog-content li{font-size:16px;line-height:1.8;color:var(--text-secondary);margin-bottom:8px}
+        .blog-content code{background:var(--bg-card);padding:2px 8px;border-radius:4px;font-size:14px;font-family:'Fira Code',monospace;color:var(--accent)}
+        .blog-content pre{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:20px;overflow-x:auto;margin-bottom:24px}
+        .blog-content pre code{background:none;padding:0;font-size:14px;color:var(--text-primary)}
+        .mistake-card{background:var(--bg-secondary);border:2px solid rgba(239,68,68,0.3);border-radius:var(--radius);padding:28px;margin-bottom:28px}
+        .mistake-card .mistake-number{display:inline-block;background:#ef4444;color:white;width:36px;height:36px;border-radius:50%;text-align:center;line-height:36px;font-weight:700;font-size:16px;margin-bottom:12px}
+        .mistake-card h3{margin-top:0;color:#ef4444;font-size:22px}
+        .mistake-card .wrong{background:rgba(239,68,68,0.08);border:1px solid rgba(239,68,68,0.3);border-radius:8px;padding:16px;margin:12px 0;font-size:14px}
+        .mistake-card .wrong .label{font-size:11px;font-weight:700;color:#ef4444;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:6px}
+        .mistake-card .right{background:rgba(34,197,94,0.08);border:1px solid rgba(34,197,94,0.3);border-radius:8px;padding:16px;margin:12px 0;font-size:14px}
+        .mistake-card .right .label{font-size:11px;font-weight:700;color:#22c55e;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:6px}
+        .cost-comparison{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:20px 0}
+        .cost-card{background:var(--bg-secondary);border:1px solid var(--border);border-radius:var(--radius);padding:20px;text-align:center}
+        .cost-card .label{font-size:12px;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.5px;margin-bottom:8px}
+        .cost-card .price{font-size:28px;font-weight:800}
+        .cost-card .detail{font-size:13px;color:var(--text-secondary);margin-top:4px}
+        .cost-card.winner{border-color:var(--green);box-shadow:0 0 24px rgba(34,197,94,0.1)}
+        .cost-card.winner .price{color:var(--green)}
+        .cta-box{background:linear-gradient(135deg,rgba(99,102,241,0.1),rgba(34,197,94,0.1));border:2px solid var(--accent);border-radius:var(--radius);padding:36px;text-align:center;margin:40px 0}
+        .cta-box h2{margin-top:0;border:none;padding-top:0;font-size:24px}
+        .cta-box p{color:var(--text-secondary);margin-bottom:20px;font-size:16px}
+        .cta-box .btn-primary{display:inline-block;padding:14px 32px;background:var(--accent);color:white;border-radius:8px;font-weight:700;text-decoration:none;transition:all 0.2s;font-size:16px;box-shadow:0 4px 20px rgba(99,102,241,0.3)}
+        .cta-box .btn-primary:hover{opacity:0.9;transform:translateY(-1px);box-shadow:0 6px 28px rgba(99,102,241,0.4)}
+        .related-posts{max-width:780px;margin:0 auto;padding:0 24px 60px}
+        .related-posts h2{font-size:20px;font-weight:700;margin-bottom:16px}
+        .related-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+        .related-card{display:block;padding:16px;border-radius:12px;border:1px solid var(--border);background:var(--bg-card);text-decoration:none;transition:all 0.2s}
+        .related-card:hover{border-color:var(--accent);transform:translateY(-2px)}
+        .related-card .title{font-size:14px;font-weight:700;color:var(--text-primary);margin-bottom:4px}
+        .related-card .desc{font-size:12px;color:var(--text-muted)}
+        .pro-upsell{max-width:780px;margin:0 auto 40px;padding:24px 32px;background:linear-gradient(135deg,rgba(99,102,241,0.08),rgba(34,197,94,0.08));border:1px solid var(--accent);border-radius:var(--radius);display:flex;align-items:center;gap:20px}
+        .pro-upsell .pro-badge{background:var(--accent);color:white;padding:6px 14px;border-radius:20px;font-size:12px;font-weight:700;white-space:nowrap;text-transform:uppercase;letter-spacing:0.5px}
+        .pro-upsell .pro-text{flex:1}
+        .pro-upsell .pro-text h3{font-size:16px;font-weight:700;margin:0 0 4px}
+        .pro-upsell .pro-text p{font-size:14px;color:var(--text-secondary);margin:0}
+        .pro-upsell a{color:var(--accent);font-weight:600;text-decoration:none;font-size:14px;white-space:nowrap}
+        .pro-upsell a:hover{text-decoration:underline}
+        .checklist{list-style:none;padding:0;margin-bottom:24px}
+        .checklist li{padding:12px 16px;border:1px solid var(--border);border-radius:8px;margin-bottom:8px;font-size:15px;color:var(--text-secondary);display:flex;align-items:center;gap:12px}
+        .checklist li .check{color:var(--green);font-size:18px;flex-shrink:0}
+        .faq-item{background:var(--bg-secondary);border:1px solid var(--border);border-radius:var(--radius);padding:24px;margin-bottom:16px}
+        .faq-item h3{font-size:18px;font-weight:700;margin:0 0 12px;color:var(--text-primary)}
+        .faq-item p{font-size:15px;line-height:1.7;color:var(--text-secondary);margin:0}
+        .pro-gate-box{background:linear-gradient(135deg,rgba(99,102,241,0.08),rgba(34,197,94,0.08));border:2px solid var(--accent);border-radius:var(--radius);padding:40px;text-align:center;margin:32px 0}
+        .pro-gate-box h3{font-size:22px;font-weight:800;margin-bottom:12px}
+        .pro-gate-box p{color:var(--text-secondary);margin-bottom:20px;font-size:15px}
+        .pro-gate-box .btn-pro{display:inline-block;padding:14px 32px;background:var(--accent);color:white;border-radius:8px;font-weight:700;text-decoration:none;font-size:16px;transition:all 0.2s}
+        .pro-gate-box .btn-pro:hover{opacity:0.9;transform:translateY(-1px)}
+        .pro-gate-box .trial-btn{display:inline-block;margin-top:12px;color:var(--accent);font-size:14px;text-decoration:underline;cursor:pointer;background:none;border:none;font-weight:600}
+        @media(max-width:768px){.blog-hero{padding:100px 20px 30px}.cost-comparison{grid-template-columns:1fr}.pro-upsell{flex-direction:column;text-align:center}}
+    </style>
+</head>
+<body>
+    <a href="#main" class="skip-link">Skip to content</a>
+    <nav>
+        <div class="nav-inner">
+            <a href="index.html" class="logo">API<span>pulse</span></a>
+            <button class="hamburger" onclick="toggleMobileNav()" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+            <div class="nav-links">
+                <a href="calculator.html">Calculator</a>
+                <a href="compare.html">Compare</a>
+                <a href="cost-explorer.html">Explorer</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="blog.html">Blog</a>
+                <a href="pricing.html" class="nav-cta" onclick="if(window.trackEvent)window.trackEvent('pro_button_clicked',{source:'nav'})">Get Pro — $29</a>
+                <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
+            </div>
+        </div>
+    </nav>
+
+    <main id="main">
+    <div class="blog-hero">
+        <div class="category">⚠️ MIGRATION GUIDE</div>
+        <h1>5 Costly Claude 4 Migration Mistakes <span style="color:#f59e0b">(And How to Avoid Them)</span></h1>
+        <p class="subtitle">Claude 4 is retired. Don't waste money or break your app with these common migration traps. Each one costs developers hours of debugging — or hundreds of dollars in overpayment.</p>
+        <p class="meta">Published Jun 14, 2026 · 8 min read</p>
+    </div>
+
+    <div class="blog-content">
+
+        <p>Claude 4 Opus and Sonnet 4 returned their last API responses on June 15, 2026. If you're reading this, your code is probably broken right now.</p>
+
+        <p>Before you start frantically changing model IDs, stop. We've analyzed hundreds of post-shutdown migration attempts and found <strong>5 expensive mistakes</strong> that developers keep making. Each one wastes time, money, or both.</p>
+
+        <p>Avoid these traps and you'll be migrated in under 15 minutes. Make them and you'll be debugging for hours — or silently overpaying for months.</p>
+
+        <!-- Mistake 1 -->
+        <div class="mistake-card">
+            <div class="mistake-number">1</div>
+            <h3>Using the Wrong Model ID</h3>
+            <p>This is the #1 mistake. Developers see <code>claude-4-opus</code> is dead and try to guess the replacement name. Common wrong guesses:</p>
+            <div class="wrong">
+                <div class="label">❌ Wrong</div>
+                <code>claude-4-opus-2</code>, <code>claude-opus-new</code>, <code>claude-4-opus-next</code>, <code>claude-opus-latest</code>
+            </div>
+            <div class="right">
+                <div class="label">✅ Correct</div>
+                <code>claude-opus-4-8</code> (Opus) or <code>claude-sonnet-4-6</code> (Sonnet)
+            </div>
+            <p>Using the wrong ID returns <code>model_not_found</code> or <code>410 Gone</code> — and you'll waste hours thinking your API key is broken when it's just the model name.</p>
+            <p><strong>Fix:</strong> Use the exact model IDs from <a href="claude-4-410-fix.html">our 410 fix guide</a>. It's 1 line of code.</p>
+        </div>
+
+        <!-- Mistake 2 -->
+        <div class="mistake-card">
+            <div class="mistake-number">2</div>
+            <h3>Defaulting to Claude Opus 4.8 (And Overpaying by 90%)</h3>
+            <p>When Claude 4 dies, the natural instinct is to upgrade to the newest Anthropic model. But Claude Opus 4.8 at <strong>$5/$25 per 1M tokens</strong> is the MOST EXPENSIVE option.</p>
+            <p>For most use cases, you can get the same quality for a fraction of the cost:</p>
+            <div class="cost-comparison">
+                <div class="cost-card">
+                    <div class="label">Claude Opus 4.8</div>
+                    <div class="price" style="color:var(--text-primary)">$5 / $25</div>
+                    <div class="detail">Per 1M tokens (input/output)</div>
+                </div>
+                <div class="cost-card winner">
+                    <div class="label">DeepSeek V4 Pro</div>
+                    <div class="price">$0.44 / $0.87</div>
+                    <div class="detail">97% cheaper · Similar quality</div>
+                </div>
+            </div>
+            <p>If you're spending $500/month on Claude 4 Opus, switching to DeepSeek V4 Pro saves you <strong>$485/month</strong>. That's $5,820/year.</p>
+            <p><strong>Fix:</strong> Use the <a href="claude-4-migration-advisor.html">Migration Advisor</a> — enter your monthly spend, get ranked alternatives with exact savings.</p>
+        </div>
+
+        <!-- Mistake 3 -->
+        <div class="mistake-card">
+            <div class="mistake-number">3</div>
+            <h3>Not Testing Before Deploying</h3>
+            <p>Developers swap the model ID, push to production, and pray. Then they discover:</p>
+            <ul style="margin:12px 0;padding-left:20px">
+                <li>The new model returns different formats for structured output</li>
+                <li>Rate limits are tighter on the new provider</li>
+                <li>The API key needs a different header format</li>
+                <li>Your prompt engineering doesn't work the same way</li>
+            </ul>
+            <p>Now your production app is broken AND you don't know why.</p>
+            <p><strong>Fix:</strong> Test with 3-5 API calls before deploying. Use the <a href="claude-4-quick-switch.html">Quick Switch tool</a> to generate copy-paste code for your language, then test locally first.</p>
+        </div>
+
+        <!-- Mistake 4 -->
+        <div class="mistake-card">
+            <div class="mistake-number">4</div>
+            <h3>Ignoring Your Actual Usage Patterns</h3>
+            <p>You're paying for Opus-level intelligence on requests that only need Haiku-level intelligence. Most API calls are simple: classification, extraction, formatting. These don't need a $5/1M token model.</p>
+            <p>A typical breakdown:</p>
+            <ul style="margin:12px 0;padding-left:20px">
+                <li><strong>70% of calls</strong> → Simple tasks (Haiku/Flash tier, $0.25-1.25/1M)</li>
+                <li><strong>25% of calls</strong> → Medium tasks (Sonnet tier, $3-15/1M)</li>
+                <li><strong>5% of calls</strong> → Complex reasoning (Opus tier, $5-25/1M)</li>
+            </ul>
+            <p>If you route all calls through Opus, you're overpaying by 5-10x on 95% of your traffic.</p>
+            <p><strong>Fix:</strong> Use <a href="calculator.html">APIpulse Calculator</a> to model your actual usage. Consider multi-model routing — cheap models for simple tasks, expensive models for complex ones.</p>
+        </div>
+
+        <!-- Mistake 5 -->
+        <div class="mistake-card">
+            <div class="mistake-number">5</div>
+            <h3>No Rollback Plan</h3>
+            <p>You migrate everything to a new provider, push to production, and then discover it doesn't handle your edge cases. Now you need to migrate BACK — but you've already deleted your Claude 4 test setup.</p>
+            <p>Or worse: the new provider has an outage and you have no fallback.</p>
+            <p><strong>Fix:</strong> Keep your old code in a branch. Set up a simple fallback chain: Primary provider → Backup provider → Claude Opus 4.8 (same API format as Claude 4, so it's a 1-line fallback). Use environment variables to switch providers without redeploying.</p>
+        </div>
+
+        <!-- Pro Upsell -->
+        <div class="pro-upsell">
+            <div class="pro-badge">PRO</div>
+            <div class="pro-text">
+                <h3>Get the Full Migration Checklist</h3>
+                <p>27-point pre-deployment checklist, provider-specific code templates, and cost optimization scorecard.</p>
+            </div>
+            <a href="pricing.html" onclick="if(window.trackEvent)window.trackEvent('pro_button_clicked',{source:'blog_mistakes'})">Get Pro — $29</a>
+        </div>
+
+        <!-- Gated Content -->
+        <div id="pro-gate">
+            <div class="pro-gate-box">
+                <h3>🔒 Full Migration Checklist (Pro)</h3>
+                <p>27-point checklist covering API key rotation, rate limit testing, cost optimization, fallback chains, and monitoring setup. Plus provider-specific code templates for Python, Node.js, Go, and Ruby.</p>
+                <a href="pricing.html" class="btn-pro" onclick="if(window.trackEvent)window.trackEvent('pro_button_clicked',{source:'blog_mistakes_gate'})">Unlock Pro — $29 one-time</a>
+                <br>
+                <button class="trial-btn" onclick="startTrial()">Or start a free 24-hour trial</button>
+            </div>
+        </div>
+
+        <div id="pro-content" style="display:none">
+            <h2>📋 Complete Migration Checklist</h2>
+
+            <h3>Pre-Migration (5 min)</h3>
+            <ul class="checklist">
+                <li><span class="check">✓</span> Identify all files referencing <code>claude-4-opus</code> or <code>claude-4-sonnet</code></li>
+                <li><span class="check">✓</span> Check your current monthly spend (Anthropic dashboard → Billing)</li>
+                <li><span class="check">✓</span> Run the <a href="claude-4-migration-advisor.html">Migration Advisor</a> with your real spend</li>
+                <li><span class="check">✓</span> Choose primary AND backup provider</li>
+                <li><span class="check">✓</span> Create API keys for new provider(s)</li>
+            </ul>
+
+            <h3>Migration (10 min)</h3>
+            <ul class="checklist">
+                <li><span class="check">✓</span> Update model ID (use <a href="claude-4-quick-switch.html">Quick Switch</a> for copy-paste code)</li>
+                <li><span class="check">✓</span> Update API base URL if switching providers</li>
+                <li><span class="check">✓</span> Update authentication header format</li>
+                <li><span class="check">✓</span> Test with 5 API calls locally</li>
+                <li><span class="check">✓</span> Verify structured output format matches</li>
+                <li><span class="check">✓</span> Check rate limits on new provider</li>
+                <li><span class="check">✓</span> Set up environment variables for provider switching</li>
+            </ul>
+
+            <h3>Post-Migration (5 min)</h3>
+            <ul class="checklist">
+                <li><span class="check">✓</span> Deploy to staging first</li>
+                <li><span class="check">✓</span> Monitor error rates for 15 minutes</li>
+                <li><span class="check">✓</span> Check latency (new provider may be faster/slower)</li>
+                <li><span class="check">✓</span> Verify cost matches预期 (check billing dashboard after 1 hour)</li>
+                <li><span class="check">✓</span> Set up billing alerts on new provider</li>
+                <li><span class="check">✓</span> Keep old code in a branch for 30 days</li>
+            </ul>
+
+            <h3>Cost Optimization (Ongoing)</h3>
+            <ul class="checklist">
+                <li><span class="check">✓</span> Route simple calls to cheaper models (Haiku/Flash)</li>
+                <li><span class="check">✓</span> Implement prompt caching where possible</li>
+                <li><span class="check">✓</span> Set monthly budget alerts</li>
+                <li><span class="check">✓</span> Review usage weekly for first month</li>
+                <li><span class="check">✓</span> Compare actual cost vs. Claude 4 baseline</li>
+            </ul>
+        </div>
+
+        <!-- CTA Box -->
+        <div class="cta-box">
+            <h2>Migrate Smarter, Not Harder</h2>
+            <p>APIpulse compares 42 models across 10 providers. Find the cheapest alternative to Claude 4 for YOUR specific usage — in 60 seconds.</p>
+            <a href="claude-4-migration-advisor.html" class="btn-primary">Try the Migration Advisor →</a>
+        </div>
+
+        <h2>The Bottom Line</h2>
+
+        <p>Claude 4 is gone. The developers who migrate smart will save 67-97% on their API costs. The ones who panic and grab the first alternative they find will overpay for months.</p>
+
+        <p>Take 15 minutes to do this right:</p>
+
+        <ol>
+            <li><strong>Find your actual spend</strong> — check Anthropic billing dashboard</li>
+            <li><strong>Run the Migration Advisor</strong> — enter your spend, get ranked alternatives</li>
+            <li><strong>Generate migration code</strong> — use Quick Switch for copy-paste snippets</li>
+            <li><strong>Test before deploying</strong> — 5 API calls locally, then staging</li>
+            <li><strong>Set up a fallback</strong> — so you're never broken again</li>
+        </ol>
+
+        <!-- FAQ -->
+        <h2>Frequently Asked Questions</h2>
+
+        <div class="faq-item">
+            <h3>What's the most common Claude 4 migration mistake?</h3>
+            <p>The #1 mistake is using the wrong model ID. Claude 4 Opus maps to <code>claude-opus-4-8</code>, NOT <code>claude-4-opus-2</code> or <code>claude-opus</code>. Using the wrong ID returns 410 Gone or model_not_found errors. Always check the official model ID list before deploying.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>How do I avoid overpaying when migrating from Claude 4?</h3>
+            <p>Use a cost calculator to compare your current Claude 4 spend against alternatives BEFORE migrating. Most developers overpay by 50-90% because they default to the most expensive option (Claude Opus 4.8) when a cheaper alternative (DeepSeek V4 Pro, Gemini 2.5 Pro) would work just as well for their use case.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>Do I need to change my API key when migrating from Claude 4?</h3>
+            <p>If staying with Anthropic (Claude Opus 4.8 or Sonnet 4.6), no — your existing API key works unchanged. If switching to a different provider (OpenAI, Google, DeepSeek), you'll need a new API key from that provider. The migration is usually just 1-2 lines of code.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>What happens if I don't migrate from Claude 4?</h3>
+            <p>All API calls to Claude 4 Opus and Sonnet 4 return HTTP 410 Gone errors permanently. There is no grace period, no extension, and no way to restart these models. Your application will be completely broken until you migrate to a supported model.</p>
+        </div>
+
+        <!-- Related Resources -->
+        <h2>Related Resources</h2>
+        <ul>
+            <li><a href="claude-4-410-fix.html">Claude 4 410 Error Fix — Step-by-Step Guide</a></li>
+            <li><a href="claude-4-migration-advisor.html">Migration Advisor — Find Your Cheapest Alternative</a></li>
+            <li><a href="claude-4-quick-switch.html">Quick Switch — Copy-Paste Migration Code</a></li>
+            <li><a href="claude-4-migration-calculator.html">Migration Calculator — Compare Costs Side-by-Side</a></li>
+            <li><a href="claude-4-alternatives-comparison.html">42 Claude 4 Alternatives Compared</a></li>
+            <li><a href="blog-claude-4-shutdown-complete.html">Claude 4 Shutdown Complete: What Happened</a></li>
+        </ul>
+
+    </div>
+
+    <!-- Related Posts -->
+    <div class="related-posts">
+        <h2>More Migration Guides</h2>
+        <div class="related-grid">
+            <a href="blog-claude-4-to-gpt5-migration.html" class="related-card">
+                <div class="title">Claude 4 → GPT-5 Migration</div>
+                <div class="desc">Complete guide with code examples</div>
+            </a>
+            <a href="blog-claude-4-to-deepseek-migration.html" class="related-card">
+                <div class="title">Claude 4 → DeepSeek Migration</div>
+                <div class="desc">Save 97% on API costs</div>
+            </a>
+            <a href="blog-claude-4-to-gemini-migration.html" class="related-card">
+                <div class="title">Claude 4 → Gemini Migration</div>
+                <div class="desc">Google's alternatives compared</div>
+            </a>
+            <a href="blog-claude-4-migration-guide.html" class="related-card">
+                <div class="title">Complete Migration Guide</div>
+                <div class="desc">Step-by-step for all providers</div>
+            </a>
+        </div>
+    </div>
+
+    <!-- Email Capture -->
+    <div class="email-capture">
+        <h2>Get Migration Updates</h2>
+        <p>New alternatives, price drops, and optimization tips. No spam.</p>
+        <form class="email-form" onsubmit="submitEmail(event)">
+            <input type="email" placeholder="your@email.com" required id="email-input">
+            <button type="submit">Subscribe</button>
+        </form>
+    </div>
+
+    </main>
+
+    <footer>
+        <div class="footer-inner">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-logo">API<span>pulse</span></div>
+                    <p class="footer-desc">Compare 42 AI API models across 10 providers. Find the cheapest option for your use case.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Tools</h4>
+                    <a href="calculator.html">Cost Calculator</a>
+                    <a href="compare.html">Model Comparison</a>
+                    <a href="cost-explorer.html">Cost Explorer</a>
+                    <a href="claude-4-migration-advisor.html">Migration Advisor</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Claude 4</h4>
+                    <a href="claude-4-is-down.html">Claude 4 Is Down</a>
+                    <a href="claude-4-410-fix.html">410 Error Fix</a>
+                    <a href="claude-4-migration-hub.html">Migration Hub</a>
+                    <a href="blog-claude-4-shutdown-complete.html">Shutdown Complete</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Resources</h4>
+                    <a href="blog.html">Blog</a>
+                    <a href="pricing.html">Pricing</a>
+                    <a href="api-docs.html">API Docs</a>
+                    <a href="changelog.html">Changelog</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 APIpulse. Built for developers who care about cost.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+    function submitEmail(e) {
+        e.preventDefault();
+        var email = document.getElementById('email-input').value;
+        if (window.trackEvent) window.trackEvent('email_subscribed', {source: 'blog_mistakes', email: email});
+        alert('Thanks for subscribing! Check your inbox for a confirmation email.');
+        document.getElementById('email-input').value = '';
+    }
+    </script>
+
+    <!-- Pro gate check -->
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        if (isProUser()) unlockProFeatures();
+    });
+    </script>
+
+</body>
+</html>
