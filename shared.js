@@ -222,9 +222,9 @@ document.addEventListener('DOMContentLoaded', () => {
     var now = new Date();
     var daysLeft = Math.ceil((deprecationDate - now) / (1000 * 60 * 60 * 24));
 
-    // Don't show on deprecation/migration pages (they have their own urgency)
+    // Don't show on deprecation/migration/emergency pages (they have their own urgency)
     var path = window.location.pathname;
-    if (path.includes('deprecation') || path.includes('migration')) return;
+    if (path.includes('deprecation') || path.includes('migration') || path.includes('claude-4-is-down')) return;
 
     if (daysLeft > 0 && daysLeft <= 14) {
         // PRE-DEPRECATION: Show countdown banner
