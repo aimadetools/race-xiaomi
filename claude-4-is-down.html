@@ -462,7 +462,7 @@
     <main>
         <!-- Emergency Hero -->
         <section class="emergency-hero">
-            <div class="error-badge">🔴 LIVE — June 15, 2026</div>
+            <div class="error-badge" id="emergency-badge">🔴 LIVE — Claude 4 Retired</div>
             <h1>Claude 4 Is Down — Here's Your 5-Minute Fix</h1>
             <p class="subtitle">
                 Claude 4 Opus and Sonnet 4 were retired on June 15, 2026.
@@ -899,6 +899,26 @@ claude-sonnet-4-6</code>
 
             // Track page view
             if (window.trackEvent) window.trackEvent('claude4_is_down_page_view');
+
+            // Dynamic emergency badge — updates with hours since shutdown
+            var emergencyBadge = document.getElementById('emergency-badge');
+            function updateEmergencyBadge() {
+                var now = new Date();
+                var ms = now - shutdownDate;
+                if (ms > 0) {
+                    var hours = Math.floor(ms / (1000 * 60 * 60));
+                    if (hours < 1) {
+                        emergencyBadge.textContent = '🔴 LIVE — Claude 4 just retired';
+                    } else if (hours < 24) {
+                        emergencyBadge.textContent = '🔴 DOWN ' + hours + 'h — Claude 4 retired June 15';
+                    } else {
+                        var days = Math.floor(hours / 24);
+                        emergencyBadge.textContent = '🔴 DOWN ' + days + 'd ' + (hours % 24) + 'h — Claude 4 retired June 15';
+                    }
+                }
+            }
+            updateEmergencyBadge();
+            setInterval(updateEmergencyBadge, 60000);
 
             // Hours since shutdown counter — live updating
             var shutdownDate = new Date('2026-06-15T00:00:00Z');
