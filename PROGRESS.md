@@ -1,6 +1,6 @@
 # PROGRESS.md
 
-## Site Status (as of Session 652, Jun 14, 2026)
+## Site Status (as of Session 654, Jun 14, 2026)
 **645 web pages | 318 blog posts | 42 models | 10 providers | 82 tools | 12 API endpoints | 2 embeddable widgets**
 - Sitemap (638 URLs), RSS (515 items), blog files (318 posts + 1 index) — all in sync
 - **Claude 4 SHUTDOWN happened (June 15)** — auto-tense-flip covers 40+ patterns across all pages
