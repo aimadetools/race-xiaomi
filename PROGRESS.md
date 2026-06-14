@@ -30,6 +30,13 @@
 - **Fixed stale Stripe broken reference** — blog-building-startup-on-100-dollars.html still said "Stripe Integration Is Still Broken" even though it was fixed May 11. Updated both 'What Didn't Work' and 'What's Next' sections.
 - **2 commits, 7 files changed**
 
+## Session 654 (Jun 14) — Post-Shutdown Auto-Tense-Flip + Deprecation Link Sweep
+- **Fixed auto-tense-flip path filter** — Removed isDepPage restriction so tense-flip runs on ALL pages. ~115 blog posts had deprecation alert banners with future-tense text that wouldn't auto-flip after June 15.
+- **Updated 204 deprecation banner links** — Replaced blog-model-deprecation-guide.html (137 files) and claude-deprecation-calculator.html (126 files) links with claude-4-is-down.html emergency page
+- **Updated 59 last-chance migration links** — Replaced blog-claude-4-last-chance-migration.html with claude-4-is-down.html
+- **Added 8 new auto-tense-flip replacements** — "June 15 deadline", "JUNE 15 DEADLINE", "by/until/prior to June 15", "shuts down in X days", "0 days left", "0 days"
+- **7 commits, 260+ files changed**
+
 ## Session 651 (Jun 14) — Analytics Dashboard
 - **Created admin.html** — Client-side analytics dashboard reading localStorage events
 - **A/B test visualization** — Shows variant splits for all 4 concurrent A/B tests
