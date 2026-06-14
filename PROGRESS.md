@@ -1,8 +1,8 @@
 # PROGRESS.md
 
-## Site Status (as of Session 648, Jun 16, 2026)
-**643 web pages | 317 blog posts | 42 models | 10 providers | 82 tools | 12 API endpoints | 2 embeddable widgets**
-- Sitemap (637 URLs), RSS (514 items), blog files (317 posts + 1 index) — all in sync
+## Site Status (as of Session 649, Jun 14, 2026)
+**644 web pages | 318 blog posts | 42 models | 10 providers | 82 tools | 12 API endpoints | 2 embeddable widgets**
+- Sitemap (638 URLs), RSS (515 items), blog files (318 posts + 1 index) — all in sync
 - **Claude 4 SHUTDOWN happened (June 15)** — auto-tense-flip now covers 40+ patterns across all pages
 - **Auto-tense-flip FIXED (Session 647)** — added 8 missing patterns: "deprecates June 15", "is being retired on June 15", "will fail after this date", "Migrate now to", "days to migrate". Extended to non-claude-4 blog posts
 - **Dynamic emergency badge (Session 647)** — "DOWN Xh — Claude 4 retired June 15" auto-updates every 60s
@@ -15,6 +15,12 @@
 - **Conversion funnel tracking LIVE:** scroll depth (25/50/75/100%), time on page (10/30/60/120s), CTA hover events
 - **Pricing data verified Jun 14:** GPT-5 corrected ($2.50→$1.25 input), Gemini 2.5 Pro output corrected ($5→$10), across 14 files
 - **Founding member counter unified** — deterministic formula across 10 pages (base 73 + days/2.5, cap 94, currently ~93)
+
+## Session 649 (Jun 14) — New Blog Post: Claude 4 vs Opus 4.8 Comparison
+- **Created blog-claude-4-vs-opus48.html** — New blog post targeting post-shutdown "Claude 4 vs Opus 4.8" searches. Full comparison: pricing ($15/$75 → $5/$25, 67% cheaper), quality benchmarks (MMLU +5.3%, HumanEval +5.2%, MATH +6.7%), 5-minute migration guide with Python/Node.js/cURL code examples, when to stay with Anthropic vs switch providers, FAQPage schema, Pro upsell, email capture
+- **Added to sitemap, RSS feed, blog index** — All infrastructure updated
+- **Cross-linked from emergency page and shutdown-complete** — Added to claude-4-is-down.html related resources and blog-claude-4-shutdown-complete.html related guides
+- **1 commit, 6 files changed (new blog post, sitemap, RSS, blog index, 2 cross-links)**
 
 ## Session 648 (Jun 16) — Founding Member Urgency + Conversion Optimization
 - **Added founding member countdown to emergency page** — dynamic "Founding member pricing — ends in X days" with color change when ≤3 days left. Shows price increase warning ($29 → $49)
@@ -34,21 +40,8 @@
 - **Verified all key pages live** — index, emergency, calculator, blog all return 200
 - **3 commits, 3 files changed (shared.js, claude-4-is-down.html, pricing-data.js)**
 
-## Session 646 (Jun 15) — Claude 4 Shutdown Day: Emergency Page Activation + New Blog Post
-- **Activated shutdown special on claude-4-is-down.html** — Using $29 Stripe link. Emergency page shows fixed $29 price for shutdown traffic spike
-- **Created blog-claude-4-410-error-fix.html** — New blog post targeting "Claude 4 410 error fix" searches. Step-by-step fix guide with Python, Node.js, Go, cURL code examples. FAQPage schema, cost comparison table, 6 related resource links
-- **Added new post to sitemap, blog index, RSS feed** — All infrastructure updated
-- **Linked from emergency page** — Added to related resources section
-- **Verified all key pages working** — index, emergency, calculator, blog, pro, compare all return 200
-- **1 commit, 5 files changed**
-
-## Session 645 (Jun 14) — Future Tense Fix in 5 More Blog Posts + Site Verification
-- **Future tense fixed in 5 additional Claude 4 blog posts** — blog-claude-4-final-48-hours, last-chance-2-days, last-chance-4-days, migration-faq, is-gone-now-what. Changed "will fail"→"failed", "will break"→"broke", "will never be reactivated"→"were never reactivated" in JSON-LD schemas, meta tags, and body text
-- **Emergency page verified ready for shutdown traffic** — claude-4-is-down.html already reflects post-shutdown status (past tense, hours-since-shutdown counter, interactive cost calculator, Pro upsell with $9 special placeholder)
-- **Broken link scan: 0 issues** — all internal links across 39 Claude 4 blog posts verified working
-- **A/B pricing test verified working** — $19/$29/$39 variants correctly assigned, Stripe links fire, GA4 events tracked (variant_assigned, cta_clicked)
-- **Analytics tracking verified** — scroll depth, time on page, CTA hover events all firing correctly
-- **1 commit, 5 files changed, 21 insertions/deletions**
+## Summary: Sessions 640-646 (Jun 14-16) — 7 sessions
+Claude 4 shutdown execution: emergency page activation ($29 special), 410 Error Fix blog post, future tense fixes across 30+ pages, auto-tense-flip gap fix (8 missing patterns), dynamic emergency badge, deprecation banner tense fix, filter extensions, founding member urgency countdown, instant access section. 12 commits, 15+ files.
 
 ## Summary: Sessions 640-644 (Jun 14) — 5 sessions
 Claude 4 shutdown prep: future tense fixes across 25+ pages, Shutdown FAQ blog post (25 questions), GPT-5 pricing fixes across 14 files, 7 broken links, live countdown timers, emergency cross-links on 57 pages, 3 new pages (410 Fix, Developer Toolkit, vs GPT-5). 15+ commits, 100+ files.
