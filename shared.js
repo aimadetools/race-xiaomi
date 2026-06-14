@@ -496,6 +496,35 @@ document.addEventListener('DOMContentLoaded', () => {
     if (path.includes('blog-claude-4-')) return; // already handled above
     var deadline = new Date('2026-06-15T00:00:00Z');
     if (new Date() < deadline) return;
+    // Also flip Claude 4 deprecation text on non-claude-4 blog posts
+    var depReplacements = [
+        ['Claude 4 retires June 15', 'Claude 4 was retired on June 15'],
+        ['Claude 4 retires on June 15', 'Claude 4 was retired on June 15'],
+        ['Claude 4 retirement', 'Claude 4 retirement (completed)'],
+        ['retires June 15, 2026', 'was retired on June 15, 2026'],
+        ['retire June 15, 2026', 'were retired on June 15, 2026'],
+        ['API calls will fail after that date', 'API calls now return 410 errors'],
+        ['API calls will fail after this date', 'API calls now return 410 errors'],
+        ['API calls will fail', 'API calls now fail'],
+        ['will fail after June 15', 'are failing — June 15 has passed'],
+        ['days left:', 'days left (past deadline):'],
+    ];
+    var walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, {
+        acceptNode: function(n) {
+            return n.parentNode.tagName === 'SCRIPT' || n.parentNode.tagName === 'STYLE'
+                ? NodeFilter.FILTER_REJECT : NodeFilter.FILTER_ACCEPT;
+        }
+    });
+    var nodes = [];
+    while (walker.nextNode()) nodes.push(walker.currentNode);
+    nodes.forEach(function(node) {
+        var text = node.nodeValue;
+        var changed = false;
+        depReplacements.forEach(function(r) {
+            if (text.indexOf(r[0]) !== -1) { text = text.split(r[0]).join(r[1]); changed = true; }
+        });
+        if (changed) node.nodeValue = text;
+    });
     // Replace deprecated model IDs in code blocks and inline code
     // Use word-boundary-aware replacements to avoid breaking claude-sonnet-4-6
     document.querySelectorAll('code, pre').forEach(function(el) {
