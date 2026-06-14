@@ -1,7 +1,7 @@
 # PROGRESS.md
 
-## Site Status (as of Session 658, Jun 14, 2026)
-**645 web pages | 318 blog posts | 42 models | 10 providers | 82 tools | 12 API endpoints | 2 embeddable widgets**
+## Site Status (as of Session 659, Jun 14, 2026)
+**647 web pages | 318 blog posts | 42 models | 10 providers | 84 tools | 12 API endpoints | 2 embeddable widgets**
 - Sitemap (638 URLs), RSS (515 items), blog files (318 posts + 1 index) — all in sync
 - **Claude 4 SHUTDOWN is TOMORROW (June 15)** — auto-tense-flip covers 40+ patterns across all pages
 - **CRITICAL FIX: Stripe A/B test standardized on confirmed one-time $29 link** — $19 and $39 links were SUBSCRIPTION links, killing 67% of conversions. All variants now use confirmed one-time link. (Session 655)
@@ -10,6 +10,12 @@
 - **Conversion funnel tracking LIVE:** scroll depth (25/50/75/100%), time on page (10/30/60/120s), CTA hover events
 - **Client-side analytics dashboard** — admin.html reads localStorage events, shows A/B splits, conversion funnel, popup engagement
 - **Founding member counter unified** — deterministic formula across 10 pages (base 73 + days/2.5, cap 94, currently ~93)
+
+## Session 659 (Jun 14) — Migration Advisor + Quick Switch Code Generator
+- **Created Claude 4 Migration Advisor (claude-4-migration-advisor.html)** — Interactive tool: select model (Opus/Sonnet), enter monthly spend, get ranked list of all 9 alternatives with exact savings. Targets "cheapest alternative to claude 4" post-shutdown searches. FAQPage schema for SEO.
+- **Created Claude 4 Quick Switch (claude-4-quick-switch.html)** — Code generator: select language (Python/Node.js/Go/Ruby/cURL) + target model, get copy-paste migration code. Covers Anthropic, OpenAI, Google, DeepSeek providers with next steps for each.
+- **Linked from 6 high-traffic pages** — emergency page, migration hub, developer toolkit, 410 fix page, blog index, index shutdown banner. Added to sitemap (priority 1.0).
+- **4 commits, 8 files changed**
 
 ## Session 658 (Jun 14) — Sticky CTA Bars for Shutdown Traffic Conversion
 - **Added sticky CTA bar to emergency page (claude-4-is-down.html)** — Scroll-triggered bottom bar with dynamic pre/post shutdown messaging, Stripe checkout link, responsive mobile layout, and click tracking. Ensures Pro upsell is always visible during long page scroll.
