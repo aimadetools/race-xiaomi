@@ -64,7 +64,7 @@
                 "name": "What happens if I don't migrate from Claude 4 before June 15?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "All API calls to claude-4-opus and claude-4-sonnet return 410 Gone errors immediately. Your application will break with no fallback. Migrate now to avoid downtime."
+                    "text": "All API calls to claude-4-opus and claude-4-sonnet returned 410 Gone errors immediately. Your application broke with no fallback. Migrate now to avoid downtime."
                 }
             },
             {
@@ -191,7 +191,7 @@
 
     <div class="urgency-banner">
         <div class="countdown" id="countdown-display">4 DAYS REMAINING</div>
-        <div class="message">Claude 4 Opus and Claude 4 Sonnet API calls <strong>will fail after June 15, 2026</strong>. No extensions. No grace period. No exceptions.</div>
+        <div class="message">Claude 4 Opus and Claude 4 Sonnet API calls <strong>failed after June 15, 2026</strong>. No extensions. No grace period. No exceptions.</div>
     </div>
 
     <div class="blog-content">
@@ -226,7 +226,7 @@
             <div class="step-number">2</div>
             <h3>Update Model IDs</h3>
             <p>The API format is identical — you only change the model name:</p>
-            <pre><code>// Before (deprecated — will fail June 15)
+            <pre><code>// Before (deprecated — failed June 15)
 model: "claude-4-opus"
 
 // After (official successor)
@@ -328,7 +328,7 @@ llm = Anthropic(model="claude-opus-4-8")  # was "claude-4-opus"</code></pre>
 
         <div class="faq-item">
             <h3>What if I miss the deadline?</h3>
-            <p>Your API calls will fail immediately with a 410 Gone error. You'll need to update your model ID and redeploy. There's no way to keep using Claude 4 after June 15.</p>
+            <p>Your API calls failed immediately with a 410 Gone error. You'll need to update your model ID and redeploy. There's no way to keep using Claude 4 after June 15.</p>
         </div>
 
         <div class="faq-item">
@@ -338,7 +338,7 @@ llm = Anthropic(model="claude-opus-4-8")  # was "claude-4-opus"</code></pre>
 
         <div class="faq-item">
             <h3>What if I have fine-tuned Claude 4 models?</h3>
-            <p>Fine-tuned models will also stop working. You'll need to re-fine-tune on Claude Opus 4.8 or Claude Sonnet 4.6. Contact Anthropic support for guidance on transferring fine-tuned weights.</p>
+            <p>Fine-tuned models also stopped working. You'll need to re-fine-tune on Claude Opus 4.8 or Claude Sonnet 4.6. Contact Anthropic support for guidance on transferring fine-tuned weights.</p>
         </div>
 
         <div class="faq-item">
