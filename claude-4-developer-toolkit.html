@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Claude 4 Shutdown: Complete Developer Toolkit — Fix, Migrate, Save | APIpulse</title>
+    <meta name="description" content="Everything developers need after Claude 4 shutdown: quick fix code, 10 alternatives ranked by cost, migration guides for Python/Node.js/Go, interactive cost calculator, and step-by-step checklist.">
+    <meta name="keywords" content="claude 4 shutdown, claude 4 migration, claude 4 alternative, claude 4 fix, claude 4 developer guide, claude 4 replacement, claude 4 API migration, what to do after claude 4 shutdown">
+    <meta property="og:title" content="Claude 4 Shutdown: Complete Developer Toolkit">
+    <meta property="og:description" content="Everything you need after Claude 4 shutdown: quick fix, 10 alternatives, migration guides, cost calculator.">
+    <meta property="og:type" content="article">
+    <meta property="article:published_time" content="2026-06-14">
+    <meta property="article:modified_time" content="2026-06-14">
+    <meta property="article:author" content="APIpulse">
+    <meta property="og:image" content="https://getapipulse.com/og-image.png">
+    <meta property="og:url" content="https://getapipulse.com/claude-4-developer-toolkit.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Claude 4 Shutdown: Complete Developer Toolkit">
+    <meta name="twitter:description" content="Everything you need after Claude 4 shutdown: quick fix, alternatives, migration guides.">
+    <meta name="twitter:image" content="https://getapipulse.com/og-image.png">
+    <link rel="canonical" href="https://getapipulse.com/claude-4-developer-toolkit.html">
+    <link rel="alternate" type="application/rss+xml" title="APIpulse Blog" href="https://getapipulse.com/rss.xml">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="styles.css">
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0CEP7S9Y3J"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-0CEP7S9Y3J');
+    </script>
+    <script src="analytics.js" defer></script>
+    <script src="dynamic-date.js" defer></script>
+    <script src="shared.js" defer></script>
+    <script src="pricing-data.js" defer></script>
+    <script src="pro-features.js" defer></script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "Claude 4 Shutdown: Complete Developer Toolkit — Fix, Migrate, Save",
+        "description": "Everything developers need after Claude 4 shutdown: quick fix code, 10 alternatives ranked by cost, migration guides, and interactive cost calculator.",
+        "url": "https://getapipulse.com/claude-4-developer-toolkit.html",
+        "publisher": { "@type": "Organization", "name": "APIpulse", "url": "https://getapipulse.com" },
+        "datePublished": "2026-06-14",
+        "dateModified": "2026-06-14"
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "What happened to Claude 4?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Anthropic retired Claude 4 Opus and Claude Sonnet 4 on June 15, 2026. All API calls to these model IDs now return HTTP 410 Gone errors. The models have been replaced by Claude Opus 4.8 and Claude Sonnet 4.6."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What is the cheapest alternative to Claude 4?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "DeepSeek V4 Flash at $0.14/$0.28 per million tokens is 99% cheaper than Claude 4 Opus. For similar quality, DeepSeek V4 Pro at $0.44/$0.87 is 97% cheaper. To stay with Anthropic, Claude Opus 4.8 at $5/$25 is 67% cheaper."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How do I fix the Claude 4 410 error?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Replace the model name in your code: change 'claude-4-opus' to 'claude-opus-4-8'. Same API key, same SDK, same endpoint. Takes 1 line of code and 5 minutes."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Do I need to change my API key after Claude 4 shutdown?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "If staying with Anthropic (Claude Opus 4.8 or Sonnet 4.6), no — your existing API key works. If switching to OpenAI, DeepSeek, or Google, you need a new API key from that provider."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Is there a Claude 4 migration guide?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes. Our Complete Developer Toolkit includes migration guides for Python, Node.js, Go, Ruby, and cURL. Each guide shows the exact code change needed — typically just changing one line."
+                }
+            }
+        ]
+    }
+    </script>
+    <style>
+        .toolkit-hero { padding: 60px 24px 40px; max-width: 860px; margin: 0 auto; text-align: center; }
+        .toolkit-hero h1 { font-size: 36px; font-weight: 800; line-height: 1.2; margin-bottom: 16px; }
+        .toolkit-hero .subtitle { font-size: 18px; color: var(--text-secondary); line-height: 1.6; max-width: 640px; margin: 0 auto 32px; }
+
+        .quick-fix { max-width: 860px; margin: 0 auto 48px; padding: 0 24px; }
+        .quick-fix-card { background: linear-gradient(135deg, rgba(34,197,94,0.08), rgba(34,197,94,0.02)); border: 1px solid rgba(34,197,94,0.3); border-radius: 16px; padding: 32px; }
+        .quick-fix-card h2 { font-size: 24px; font-weight: 800; margin-bottom: 16px; }
+
+        .content-section { max-width: 860px; margin: 0 auto 48px; padding: 0 24px; }
+        .content-section h2 { font-size: 28px; font-weight: 800; margin-bottom: 16px; }
+        .content-section h3 { font-size: 20px; font-weight: 700; margin: 24px 0 12px; }
+        .content-section p { color: var(--text-secondary); font-size: 15px; line-height: 1.7; margin-bottom: 12px; }
+
+        /* Model comparison table */
+        .model-table { width: 100%; border-collapse: collapse; margin: 16px 0; }
+        .model-table th { background: rgba(99,102,241,0.1); padding: 12px 16px; text-align: left; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; }
+        .model-table td { padding: 12px 16px; border-bottom: 1px solid var(--border); font-size: 14px; }
+        .model-table tr:hover { background: rgba(99,102,241,0.04); }
+        .model-table .model-name { font-weight: 600; }
+        .model-table .savings { color: var(--green); font-weight: 700; }
+        .model-table .recommended { background: rgba(34,197,94,0.06); }
+        .badge-best { background: var(--green); color: #000; font-size: 10px; font-weight: 700; padding: 2px 8px; border-radius: 10px; margin-left: 8px; }
+        .badge-easy { background: rgba(59,130,246,0.2); color: #3b82f6; font-size: 10px; font-weight: 700; padding: 2px 8px; border-radius: 10px; margin-left: 8px; }
+        .badge-popular { background: rgba(168,85,247,0.2); color: #a855f7; font-size: 10px; font-weight: 700; padding: 2px 8px; border-radius: 10px; margin-left: 8px; }
+
+        /* Guide cards */
+        .guide-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 16px; margin: 16px 0; }
+        .guide-card { background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 12px; padding: 20px; transition: all 0.2s; }
+        .guide-card:hover { border-color: var(--accent); transform: translateY(-2px); }
+        .guide-card .guide-icon { font-size: 28px; margin-bottom: 12px; }
+        .guide-card h3 { font-size: 16px; font-weight: 700; margin-bottom: 8px; }
+        .guide-card p { font-size: 13px; color: var(--text-secondary); margin: 0; line-height: 1.5; }
+        .guide-card .guide-link { display: inline-block; margin-top: 12px; font-size: 13px; font-weight: 600; color: var(--accent); text-decoration: none; }
+        .guide-card .guide-link:hover { text-decoration: underline; }
+
+        /* Checklist */
+        .checklist { background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 12px; padding: 24px; margin: 16px 0; }
+        .checklist-item { display: flex; align-items: flex-start; gap: 12px; padding: 10px 0; border-bottom: 1px solid var(--border); }
+        .checklist-item:last-child { border-bottom: none; }
+        .checklist-check { width: 24px; height: 24px; background: var(--bg-primary); border: 2px solid var(--border); border-radius: 6px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; cursor: pointer; transition: all 0.2s; }
+        .checklist-check.done { background: var(--green); border-color: var(--green); color: white; }
+        .checklist-text { font-size: 14px; color: var(--text-primary); }
+        .checklist-text small { display: block; color: var(--text-muted); font-size: 12px; margin-top: 2px; }
+
+        /* Pro upsell */
+        .pro-section { background: linear-gradient(135deg, rgba(99,102,241,0.08), rgba(168,85,247,0.08)); border: 1px solid var(--accent); border-radius: 16px; padding: 32px; text-align: center; max-width: 600px; margin: 0 auto 48px; }
+        .pro-section h2 { font-size: 24px; margin-bottom: 8px; }
+        .pro-section .price { font-size: 36px; font-weight: 800; margin: 16px 0; }
+        .pro-section .cta { display: inline-block; padding: 14px 32px; background: var(--accent); color: white; border-radius: 10px; font-size: 16px; font-weight: 700; text-decoration: none; transition: transform 0.2s; }
+        .pro-section .cta:hover { transform: translateY(-2px); }
+
+        /* Related grid */
+        .related-section { max-width: 860px; margin: 0 auto 48px; padding: 0 24px; }
+        .related-section h2 { font-size: 24px; font-weight: 800; margin-bottom: 20px; text-align: center; }
+        .related-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 12px; }
+        .related-card { background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 10px; padding: 16px; text-decoration: none; color: var(--text-primary); transition: all 0.2s; }
+        .related-card:hover { border-color: var(--accent); transform: translateY(-2px); }
+        .related-card h3 { font-size: 14px; font-weight: 600; margin-bottom: 4px; }
+        .related-card p { font-size: 12px; color: var(--text-muted); margin: 0; }
+
+        @media (max-width: 640px) {
+            .toolkit-hero h1 { font-size: 26px; }
+            .guide-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-inner">
+            <a href="index.html" class="logo">API<span>pulse</span></a>
+            <div class="nav-links">
+                <a href="calculator.html">Calculator</a>
+                <a href="compare.html">Compare</a>
+                <a href="blog.html">Blog</a>
+                <a href="claude-4-migration-hub.html">Migration Hub</a>
+                <a href="pro.html" class="nav-cta">Get Pro</a>
+            </div>
+            <button class="hamburger" onclick="toggleMobileNav()" aria-label="Menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Hero -->
+        <section class="toolkit-hero">
+            <div style="display:inline-block;background:rgba(99,102,241,0.1);color:var(--accent);padding:6px 16px;border-radius:20px;font-size:13px;font-weight:700;letter-spacing:0.5px;margin-bottom:20px;">🔧 COMPLETE DEVELOPER TOOLKIT</div>
+            <h1>Claude 4 Shutdown: Complete Developer Toolkit</h1>
+            <p class="subtitle">
+                Everything you need in one place: quick fix code, 10 alternatives ranked by cost,
+                language-specific migration guides, interactive cost calculator, and step-by-step checklist.
+            </p>
+            <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:20px;font-size:13px;color:var(--text-secondary);">
+                <span style="display:flex;align-items:center;gap:6px;"><span style="color:var(--green);font-size:16px;">✓</span> Quick fix in 5 minutes</span>
+                <span style="display:flex;align-items:center;gap:6px;"><span style="color:var(--green);font-size:16px;">✓</span> 10 alternatives compared</span>
+                <span style="display:flex;align-items:center;gap:6px;"><span style="color:var(--green);font-size:16px;">✓</span> 5 languages covered</span>
+                <span style="display:flex;align-items:center;gap:6px;"><span style="color:var(--green);font-size:16px;">✓</span> Save 67-97%</span>
+            </div>
+        </section>
+
+        <!-- Quick Fix -->
+        <section class="quick-fix">
+            <div class="quick-fix-card">
+                <h2>⚡ Quick Fix — Change One Line</h2>
+                <p style="color:var(--text-secondary);margin-bottom:16px;">
+                    Claude 4 Opus and Sonnet were retired on June 15, 2026. API calls return <strong>410 Gone</strong>.
+                    The fix: change the model name. Same API key, same SDK, same endpoint.
+                </p>
+                <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px;">
+                    <div style="background:#0d1117;border:1px solid #30363d;border-radius:8px;padding:16px;">
+                        <div style="font-size:11px;font-weight:700;color:#f87171;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:8px;">❌ Before (broken)</div>
+                        <code style="color:#f87171;font-family:'SF Mono','Fira Code',monospace;font-size:13px;">model: "claude-4-opus"</code>
+                    </div>
+                    <div style="background:#0d1117;border:1px solid #30363d;border-radius:8px;padding:16px;">
+                        <div style="font-size:11px;font-weight:700;color:#4ade80;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:8px;">✅ After (fixed)</div>
+                        <code style="color:#4ade80;font-family:'SF Mono','Fira Code',monospace;font-size:13px;">model: "claude-opus-4-8"</code>
+                    </div>
+                </div>
+                <p style="font-size:13px;color:var(--text-muted);margin:0;">
+                    💡 <strong>67% cheaper</strong> with Claude Opus 4.8. Or save up to 97% by switching providers — see alternatives below.
+                </p>
+            </div>
+        </section>
+
+        <!-- Alternatives Comparison -->
+        <section class="content-section">
+            <h2>📊 10 Alternatives Ranked by Cost</h2>
+            <p>
+                Every alternative to Claude 4 Opus, ranked by total monthly cost. Use our
+                <a href="calculator.html" style="color:var(--accent);">Cost Calculator</a> to find the cheapest model for YOUR specific token usage.
+            </p>
+            <div style="overflow-x:auto;">
+                <table class="model-table">
+                    <thead>
+                        <tr>
+                            <th>Model</th>
+                            <th>Provider</th>
+                            <th>Input / Output (per 1M tokens)</th>
+                            <th>vs Claude 4 Opus ($15/$75)</th>
+                            <th>Migration</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="model-name">Claude Opus 4.8 <span class="badge-easy">DROP-IN</span></td>
+                            <td>Anthropic</td>
+                            <td>$5.00 / $25.00</td>
+                            <td class="savings">67% cheaper</td>
+                            <td>Change model name only</td>
+                        </tr>
+                        <tr>
+                            <td class="model-name">Claude Sonnet 4.6 <span class="badge-easy">DROP-IN</span></td>
+                            <td>Anthropic</td>
+                            <td>$3.00 / $15.00</td>
+                            <td class="savings">80% cheaper</td>
+                            <td>Change model name only</td>
+                        </tr>
+                        <tr>
+                            <td class="model-name">GPT-5 <span class="badge-popular">POPULAR</span></td>
+                            <td>OpenAI</td>
+                            <td>$2.50 / $10.00</td>
+                            <td class="savings">87% cheaper</td>
+                            <td>New API key + model name</td>
+                        </tr>
+                        <tr>
+                            <td class="model-name">Gemini 2.5 Pro</td>
+                            <td>Google</td>
+                            <td>$1.25 / $5.00</td>
+                            <td class="savings">93% cheaper</td>
+                            <td>New API key + model name</td>
+                        </tr>
+                        <tr>
+                            <td class="model-name">DeepSeek V4 Pro <span class="badge-popular">BEST VALUE</span></td>
+                            <td>DeepSeek</td>
+                            <td>$0.44 / $0.87</td>
+                            <td class="savings">97% cheaper</td>
+                            <td>New API key + base URL</td>
+                        </tr>
+                        <tr>
+                            <td class="model-name">Llama 4 Maverick</td>
+                            <td>Meta (via providers)</td>
+                            <td>$0.20 / $0.40</td>
+                            <td class="savings">98% cheaper</td>
+                            <td>New API key + base URL</td>
+                        </tr>
+                        <tr>
+                            <td class="model-name">Mistral Large 2</td>
+                            <td>Mistral</td>
+                            <td>$2.00 / $6.00</td>
+                            <td class="savings">92% cheaper</td>
+                            <td>New API key + base URL</td>
+                        </tr>
+                        <tr>
+                            <td class="model-name">Grok 3</td>
+                            <td>xAI</td>
+                            <td>$3.00 / $15.00</td>
+                            <td class="savings">80% cheaper</td>
+                            <td>New API key + base URL</td>
+                        </tr>
+                        <tr>
+                            <td class="model-name">Cohere Command R+</td>
+                            <td>Cohere</td>
+                            <td>$2.50 / $10.00</td>
+                            <td class="savings">87% cheaper</td>
+                            <td>New API key + SDK</td>
+                        </tr>
+                        <tr class="recommended">
+                            <td class="model-name">DeepSeek V4 Flash <span class="badge-best">CHEAPEST</span></td>
+                            <td>DeepSeek</td>
+                            <td>$0.14 / $0.28</td>
+                            <td class="savings">99% cheaper</td>
+                            <td>New API key + base URL</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <p style="margin-top:16px;font-size:13px;color:var(--text-muted);">
+                💡 <strong>Drop-in</strong> = same API key, same SDK, just change model name.
+                <strong>Popular</strong> = most widely used alternative.
+                <strong>Best Value</strong> = best quality-to-price ratio.
+            </p>
+        </section>
+
+        <!-- Language-Specific Guides -->
+        <section class="content-section">
+            <h2>📝 Language-Specific Migration Guides</h2>
+            <p>
+                Find your language below. Each guide shows the exact code change needed.
+                For detailed code snippets, see our <a href="claude-4-410-fix.html" style="color:var(--accent);">410 Error Fix Guide</a>.
+            </p>
+
+            <div class="guide-grid">
+                <div class="guide-card">
+                    <div class="guide-icon">🐍</div>
+                    <h3>Python</h3>
+                    <p>Change <code>model="claude-4-opus"</code> to <code>model="claude-opus-4-8"</code> in your Anthropic Python client.</p>
+                    <a href="claude-4-410-fix.html#panel-python" class="guide-link">See Python Fix →</a>
+                </div>
+                <div class="guide-card">
+                    <div class="guide-icon">💚</div>
+                    <h3>Node.js</h3>
+                    <p>Change <code>model: 'claude-4-opus'</code> to <code>model: 'claude-opus-4-8'</code> in your SDK call.</p>
+                    <a href="claude-4-410-fix.html#panel-nodejs" class="guide-link">See Node.js Fix →</a>
+                </div>
+                <div class="guide-card">
+                    <div class="guide-icon">📡</div>
+                    <h3>cURL</h3>
+                    <p>Change <code>"model": "claude-4-opus"</code> to <code>"model": "claude-opus-4-8"</code> in your request body.</p>
+                    <a href="claude-4-410-fix.html#panel-curl" class="guide-link">See cURL Fix →</a>
+                </div>
+                <div class="guide-card">
+                    <div class="guide-icon">🔵</div>
+                    <h3>Go</h3>
+                    <p>Change <code>Model: "claude-4-opus"</code> to <code>Model: "claude-opus-4-8"</code> in your Go client.</p>
+                    <a href="claude-4-410-fix.html#panel-go" class="guide-link">See Go Fix →</a>
+                </div>
+                <div class="guide-card">
+                    <div class="guide-icon">💎</div>
+                    <h3>Ruby</h3>
+                    <p>Change <code>model: 'claude-4-opus'</code> to <code>model: 'claude-opus-4-8'</code> in your Ruby client.</p>
+                    <a href="claude-4-410-fix.html#panel-ruby" class="guide-link">See Ruby Fix →</a>
+                </div>
+                <div class="guide-card">
+                    <div class="guide-icon">🔍</div>
+                    <h3>Search Your Codebase</h3>
+                    <p>Run grep commands to find every instance of the old model IDs in your project.</p>
+                    <a href="claude-4-410-fix.html" class="guide-link">See Search Commands →</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Step-by-Step Checklist -->
+        <section class="content-section">
+            <h2>✅ Step-by-Step Migration Checklist</h2>
+            <p>Follow this checklist to migrate from Claude 4 to a working alternative:</p>
+
+            <div class="checklist">
+                <div class="checklist-item">
+                    <div class="checklist-check" onclick="this.classList.toggle('done');this.innerHTML=this.classList.contains('done')?'✓':''"></div>
+                    <div class="checklist-text">
+                        <strong>1. Find all Claude 4 model IDs in your codebase</strong>
+                        <small>Search for "claude-4-opus", "claude-sonnet-4", "claude-4-haiku" in all files</small>
+                    </div>
+                </div>
+                <div class="checklist-item">
+                    <div class="checklist-check" onclick="this.classList.toggle('done');this.innerHTML=this.classList.contains('done')?'✓':''"></div>
+                    <div class="checklist-text">
+                        <strong>2. Choose your replacement model</strong>
+                        <small>Stay with Anthropic (cheapest drop-in) or switch providers (bigger savings)</small>
+                    </div>
+                </div>
+                <div class="checklist-item">
+                    <div class="checklist-check" onclick="this.classList.toggle('done');this.innerHTML=this.classList.contains('done')?'✓':''"></div>
+                    <div class="checklist-text">
+                        <strong>3. Update model names in your code</strong>
+                        <small>Change "claude-4-opus" → "claude-opus-4-8" (or your chosen replacement)</small>
+                    </div>
+                </div>
+                <div class="checklist-item">
+                    <div class="checklist-check" onclick="this.classList.toggle('done');this.innerHTML=this.classList.contains('done')?'✓':''"></div>
+                    <div class="checklist-text">
+                        <strong>4. Update base URL (only if switching providers)</strong>
+                        <small>Anthropic: no change. OpenAI: api.openai.com. DeepSeek: api.deepseek.com</small>
+                    </div>
+                </div>
+                <div class="checklist-item">
+                    <div class="checklist-check" onclick="this.classList.toggle('done');this.innerHTML=this.classList.contains('done')?'✓':''"></div>
+                    <div class="checklist-text">
+                        <strong>5. Get new API key (only if switching providers)</strong>
+                        <small>Anthropic: existing key works. New provider: get key from their dashboard</small>
+                    </div>
+                </div>
+                <div class="checklist-item">
+                    <div class="checklist-check" onclick="this.classList.toggle('done');this.innerHTML=this.classList.contains('done')?'✓':''"></div>
+                    <div class="checklist-text">
+                        <strong>6. Update environment variables</strong>
+                        <small>Check .env files, CI/CD configs, Docker files, and deployment configs</small>
+                    </div>
+                </div>
+                <div class="checklist-item">
+                    <div class="checklist-check" onclick="this.classList.toggle('done');this.innerHTML=this.classList.contains('done')?'✓':''"></div>
+                    <div class="checklist-text">
+                        <strong>7. Test your application</strong>
+                        <small>Make a test API call to verify the new model works correctly</small>
+                    </div>
+                </div>
+                <div class="checklist-item">
+                    <div class="checklist-check" onclick="this.classList.toggle('done');this.innerHTML=this.classList.contains('done')?'✓':''"></div>
+                    <div class="checklist-text">
+                        <strong>8. Deploy and monitor</strong>
+                        <small>Deploy your changes and monitor for any errors in the first hour</small>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Cost Calculator -->
+        <section class="content-section">
+            <h2>🧮 Calculate Your Exact Savings</h2>
+            <p>
+                Don't guess. Use our interactive calculator to find the cheapest model for YOUR specific token usage.
+                Enter your monthly input/output tokens and see exact costs for all 42 models.
+            </p>
+            <div style="background:var(--bg-secondary);border:1px solid var(--border);border-radius:16px;padding:32px;text-align:center;">
+                <div style="font-size:48px;margin-bottom:16px;">🧮</div>
+                <h3 style="font-size:20px;font-weight:700;margin-bottom:8px;">Interactive Cost Calculator</h3>
+                <p style="color:var(--text-secondary);margin-bottom:20px;">Compare costs across 42 models from 10 providers. See exactly how much you'd save.</p>
+                <a href="calculator.html" style="display:inline-block;padding:14px 32px;background:var(--accent);color:white;border-radius:10px;font-size:16px;font-weight:700;text-decoration:none;transition:transform 0.2s;">Open Calculator →</a>
+                <p style="font-size:12px;color:var(--text-muted);margin-top:12px;">Free · No signup required · 42 models · 10 providers</p>
+            </div>
+        </section>
+
+        <!-- Model ID Reference -->
+        <section class="content-section">
+            <h2>📋 Model ID Reference</h2>
+            <p>Complete mapping from old Claude 4 model IDs to new ones:</p>
+            <div style="overflow-x:auto;">
+                <table class="model-table">
+                    <thead>
+                        <tr>
+                            <th>Old Model ID (Retired)</th>
+                            <th>New Model ID (Anthropic)</th>
+                            <th>New Model ID (Cheapest)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><code>claude-4-opus</code></td>
+                            <td><code style="color:var(--green);">claude-opus-4-8</code></td>
+                            <td><code style="color:var(--accent);">deepseek-v4-pro</code></td>
+                        </tr>
+                        <tr>
+                            <td><code>claude-4-opus-20250615</code></td>
+                            <td><code style="color:var(--green);">claude-opus-4-8</code></td>
+                            <td><code style="color:var(--accent);">deepseek-v4-pro</code></td>
+                        </tr>
+                        <tr>
+                            <td><code>claude-sonnet-4</code></td>
+                            <td><code style="color:var(--green);">claude-sonnet-4-6</code></td>
+                            <td><code style="color:var(--accent);">deepseek-v4-flash</code></td>
+                        </tr>
+                        <tr>
+                            <td><code>claude-sonnet-4-20250514</code></td>
+                            <td><code style="color:var(--green);">claude-sonnet-4-6</code></td>
+                            <td><code style="color:var(--accent);">deepseek-v4-flash</code></td>
+                        </tr>
+                        <tr>
+                            <td><code>claude-4-haiku</code></td>
+                            <td><code style="color:var(--green);">claude-haiku-4-5</code></td>
+                            <td><code style="color:var(--accent);">deepseek-v4-flash</code></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Pro Upsell -->
+        <section class="content-section">
+            <div class="pro-section">
+                <h2>🚀 Get Your Personalized Migration Plan</h2>
+                <p style="color:var(--text-secondary);margin-bottom:8px;">
+                    Don't guess which model is cheapest for YOUR workload. Pro analyzes your exact token usage
+                    and shows you the optimal provider.
+                </p>
+                <ul style="list-style:none;padding:0;margin:0 0 16px;text-align:left;max-width:400px;margin-left:auto;margin-right:auto;">
+                    <li style="padding:4px 0;font-size:14px;color:var(--text-secondary);">✓ Save & compare up to 10 migration scenarios</li>
+                    <li style="padding:4px 0;font-size:14px;color:var(--text-secondary);">✓ Export PDF cost reports for your team</li>
+                    <li style="padding:4px 0;font-size:14px;color:var(--text-secondary);">✓ Get personalized optimization recommendations</li>
+                    <li style="padding:4px 0;font-size:14px;color:var(--text-secondary);">✓ Cost alerts when provider prices change</li>
+                </ul>
+                <div class="price"><span id="ab-pro-price">$29</span> <span style="font-size:14px;color:var(--text-muted);font-weight:400;">one-time · lifetime</span></div>
+                <a href="#" class="cta" id="ab-pro-cta">Get Pro — Lifetime Access</a>
+                <p style="font-size:12px;color:var(--text-muted);margin-top:12px;">14-day money-back guarantee · No subscription — ever</p>
+            </div>
+        </section>
+
+        <!-- Related Resources -->
+        <section class="related-section">
+            <h2>📚 All Migration Resources</h2>
+            <div class="related-grid">
+                <a href="claude-4-is-down.html" class="related-card">
+                    <h3>🚨 Emergency Landing Page</h3>
+                    <p>Quick overview with 3-step fix and cost calculator</p>
+                </a>
+                <a href="claude-4-410-fix.html" class="related-card">
+                    <h3>🔧 410 Error Fix Guide</h3>
+                    <p>Language-specific guides for Python, Node.js, Go, Ruby, cURL</p>
+                </a>
+                <a href="claude-4-alternatives-comparison.html" class="related-card">
+                    <h3>📊 Alternatives Comparison</h3>
+                    <p>Compare ALL 10 alternatives side by side</p>
+                </a>
+                <a href="claude-4-migration-hub.html" class="related-card">
+                    <h3>🗺️ Migration Hub</h3>
+                    <p>18 head-to-head comparisons, calculators, code snippets</p>
+                </a>
+                <a href="claude-4-error-codes-reference.html" class="related-card">
+                    <h3>📋 Error Codes Reference</h3>
+                    <p>Every Claude 4 API error code with fixes</p>
+                </a>
+                <a href="blog-claude-4-shutdown-checklist.html" class="related-card">
+                    <h3>✅ Shutdown Checklist</h3>
+                    <p>Complete checklist: pre-shutdown, fix, migrate, verify</p>
+                </a>
+                <a href="calculator.html" class="related-card">
+                    <h3>🧮 Cost Calculator</h3>
+                    <p>Calculate your exact costs with 42 models</p>
+                </a>
+                <a href="claude-4-survival-kit.html" class="related-card">
+                    <h3>🎒 Survival Kit</h3>
+                    <p>Everything you need in one place</p>
+                </a>
+            </div>
+        </section>
+
+        <!-- Footer CTA -->
+        <section style="text-align:center;padding:48px 24px;">
+            <p style="font-size:14px;color:var(--text-muted);margin-bottom:16px;">
+                Built by <a href="https://getapipulse.com" style="color:var(--accent);">APIpulse</a> — Know your AI API costs before you commit.
+            </p>
+            <p style="font-size:13px;color:var(--text-muted);">
+                42 models · 10 providers · 82 tools · Always up-to-date pricing data
+            </p>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-inner">
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="calculator.html">Calculator</a>
+                <a href="compare.html">Compare</a>
+                <a href="blog.html">Blog</a>
+                <a href="pro.html">Pro</a>
+                <a href="sitemap.html">Sitemap</a>
+            </div>
+            <p class="footer-copy">© 2026 APIpulse · Built for developers who care about costs</p>
+        </div>
+    </footer>
+</body>
+</html>
