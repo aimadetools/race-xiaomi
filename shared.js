@@ -438,6 +438,7 @@ document.addEventListener('DOMContentLoaded', () => {
         ['day to migrate', 'day — deadline passed'],
         ['June 15 deadline', 'June 15 has passed — Claude 4 is retired'],
         ['June 15 Deadline', 'June 15 Has Passed — Claude 4 Is Retired'],
+        ['JUNE 15 DEADLINE', 'JUNE 15 HAS PASSED — CLAUDE 4 RETIRED'],
         ['by June 15', '— the June 15 deadline has passed'],
         ['until June 15', '— the June 15 deadline has passed'],
         ['prior to June 15', '— the June 15 deadline has passed'],
