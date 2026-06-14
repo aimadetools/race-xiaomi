@@ -100,7 +100,7 @@
                 "name": "How much can I save by switching from Claude 4?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "Savings depend on your replacement: Claude Opus 4.8 saves 67%, Sonnet 4.6 saves 50%, GPT-5 saves 87%, Gemini 3.1 Pro saves 92%, DeepSeek V4 Pro saves 97%, Llama 4 Maverick saves 98%. Most developers save $500-$5,000/month depending on usage."
+                    "text": "Savings depend on your replacement: Claude Opus 4.8 saves 67%, Sonnet 4.6 saves 50%, GPT-5 saves 92%, Gemini 2.5 Pro saves 87%, DeepSeek V4 Pro saves 97%, Llama 4 Maverick saves 98%. Most developers save $500-$5,000/month depending on usage."
                 }
             },
             {
@@ -370,8 +370,8 @@ print(response.content[0].text)
                 <ul>
                     <li><strong>Claude Opus 4.8</strong> — $5/$25 → <strong>67% cheaper</strong></li>
                     <li><strong>Claude Sonnet 4.6</strong> — $3/$15 → <strong>80% cheaper</strong></li>
-                    <li><strong>GPT-5</strong> — $2.50/$10 → <strong>87% cheaper</strong></li>
-                    <li><strong>Gemini 3.1 Pro</strong> — $1.25/$5 → <strong>92% cheaper</strong></li>
+                    <li><strong>GPT-5</strong> — $1.25/$10 → <strong>92% cheaper</strong></li>
+                    <li><strong>Gemini 2.5 Pro</strong> — $1.25/$10 → <strong>87% cheaper</strong></li>
                     <li><strong>DeepSeek V4 Pro</strong> — $0.44/$0.87 → <strong>97% cheaper</strong></li>
                     <li><strong>Llama 4 Maverick</strong> — $0.27/$0.85 → <strong>98% cheaper</strong></li>
                     <li><strong>DeepSeek V4 Flash</strong> — $0.14/$0.28 → <strong>99% cheaper</strong></li>
@@ -399,7 +399,7 @@ print(response.content[0].text)
                     <li><strong>Cheapest overall</strong> → DeepSeek V4 Flash (99% cheaper, $0.14/$0.28)</li>
                     <li><strong>Best quality-per-dollar</strong> → DeepSeek V4 Pro (97% cheaper, near-Opus quality)</li>
                     <li><strong>Best ecosystem</strong> → GPT-5 (OpenAI's ecosystem, tools, plugins)</li>
-                    <li><strong>Largest context</strong> → Gemini 3.1 Pro (1M tokens)</li>
+                    <li><strong>Largest context</strong> → Gemini 2.5 Pro (1M tokens)</li>
                     <li><strong>EU compliance</strong> → Mistral Medium 3.5 (EU data sovereignty)</li>
                     <li><strong>Open source</strong> → Llama 4 Maverick (self-hostable)</li>
                 </ul>
@@ -421,21 +421,21 @@ print(response.content[0].text)
             <div class="faq-item" id="openai">
                 <h3><span class="q">Q</span> What about GPT-5?</h3>
                 <div class="quick-answer">Great choice if you're already in the OpenAI ecosystem.</div>
-                <p>GPT-5 ($2.50/$10) is 87% cheaper than Claude 4 Opus with excellent quality. If you're already using OpenAI for other models, it's a natural fit. The API format is different from Anthropic's, so you'll need to update your code. See our <a href="blog-claude-4-to-gpt5.html">Claude 4 to GPT-5 migration guide</a>.</p>
+                <p>GPT-5 ($1.25/$10) is 92% cheaper than Claude 4 Opus with excellent quality. If you're already using OpenAI for other models, it's a natural fit. The API format is different from Anthropic's, so you'll need to update your code. See our <a href="blog-claude-4-to-gpt5-migration.html">Claude 4 to GPT-5 migration guide</a>.</p>
             </div>
 
             <div class="faq-item" id="gemini">
                 <h3><span class="q">Q</span> Is Gemini a good replacement?</h3>
                 <div class="quick-answer">Yes, especially if you need a large context window.</div>
-                <p>Gemini 3.1 Pro ($1.25/$5) is 92% cheaper with a 1M token context window — the largest available. It's excellent for tasks that require processing long documents. The API is different from Anthropic's, so you'll need to update your code. See our <a href="blog-claude-4-to-gemini.html">Claude 4 to Gemini migration guide</a>.</p>
+                <p>Gemini 2.5 Pro ($1.25/$10) is 87% cheaper with a 1M token context window — the largest available. It's excellent for tasks that require processing long documents. The API is different from Anthropic's, so you'll need to update your code. See our <a href="blog-claude-4-to-gemini-migration.html">Claude 4 to Gemini migration guide</a>.</p>
             </div>
 
             <div class="faq-item" id="context-window">
                 <h3><span class="q">Q</span> Which alternative has the largest context window?</h3>
-                <div class="quick-answer">Gemini 3.1 Pro and Llama 4 Maverick both offer 1M tokens.</div>
+                <div class="quick-answer">Gemini 2.5 Pro and Llama 4 Maverick both offer 1M tokens.</div>
                 <p>If you need a large context window (for processing long documents, codebases, or conversations), your best options are:</p>
                 <ul>
-                    <li><strong>Gemini 3.1 Pro</strong> — 1M tokens, $1.25/$5 per 1M tokens</li>
+                    <li><strong>Gemini 2.5 Pro ($1.25/$10) per 1M tokens</li>
                     <li><strong>Llama 4 Maverick</strong> — 1M tokens, $0.27/$0.85 per 1M tokens (open source)</li>
                     <li><strong>Claude Opus 4.8</strong> — 200K tokens, $5/$25 per 1M tokens</li>
                 </ul>
@@ -465,7 +465,7 @@ print(response.content[0].text)
                 <ul>
                     <li><strong>DeepSeek V4 Pro</strong> — Near-Opus quality for most tasks. Slightly weaker on complex reasoning.</li>
                     <li><strong>GPT-5</strong> — Comparable quality. Different strengths (better at some tasks, worse at others).</li>
-                    <li><strong>Gemini 3.1 Pro</strong> — Good quality, especially for long-context tasks.</li>
+                    <li><strong>Gemini 2.5 Pro</strong> — Good quality, especially for long-context tasks.</li>
                     <li><strong>DeepSeek V4 Flash</strong> — Lower quality, but 99% cheaper. Good for simple tasks.</li>
                 </ul>
                 <p>For most production use cases, DeepSeek V4 Pro or GPT-5 will feel identical to Claude 4 Opus. Test with your specific workload to be sure.</p>
