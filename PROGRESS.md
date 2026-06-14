@@ -1,20 +1,23 @@
 # PROGRESS.md
 
-## Site Status (as of Session 654, Jun 14, 2026)
+## Site Status (as of Session 655, Jun 14, 2026)
 **645 web pages | 318 blog posts | 42 models | 10 providers | 82 tools | 12 API endpoints | 2 embeddable widgets**
 - Sitemap (638 URLs), RSS (515 items), blog files (318 posts + 1 index) — all in sync
-- **Claude 4 SHUTDOWN happened (June 15)** — auto-tense-flip covers 40+ patterns across all pages
-- **Emergency landing page OPTIMIZED** — 3-step fix guide, cost comparison, interactive calculator, Pro upsell with A/B pricing, founding member urgency, trust badges, 8 curated related resources
-- **A/B pricing test LIVE:** $19 vs $29 vs $39 — shared.js updates ALL text nodes, anchors, AND JSON-LD schemas
-- **A/B exit popup timing test LIVE:** 30s vs 45s vs 60s on mobile
-- **A/B gated recommendations test LIVE:** show 1 free vs 0 free alternatives
+- **Claude 4 SHUTDOWN is TOMORROW (June 15)** — auto-tense-flip covers 40+ patterns across all pages
+- **CRITICAL FIX: Stripe A/B test standardized on confirmed one-time $29 link** — $19 and $39 links were SUBSCRIPTION links, killing 67% of conversions. All variants now use confirmed one-time link. (Session 655)
+- **Emergency landing page ENHANCED** — Added "Cost of Inaction" calculator showing daily/weekly/monthly waste from not migrating. Creates urgency by quantifying financial cost of waiting. (Session 655)
+- **A/B pricing test PAUSED** — Price variants standardized on $29 until proper one-time $19/$39 links available. Exit popup timing test and gated recs test still LIVE.
 - **Conversion funnel tracking LIVE:** scroll depth (25/50/75/100%), time on page (10/30/60/120s), CTA hover events
 - **Client-side analytics dashboard** — admin.html reads localStorage events, shows A/B splits, conversion funnel, popup engagement
-- **Pricing data verified Jun 14:** GPT-5 corrected ($2.50→$1.25 input), Gemini 2.5 Pro output corrected ($5→$10), across 14 files
 - **Founding member counter unified** — deterministic formula across 10 pages (base 73 + days/2.5, cap 94, currently ~93)
-- **Post-shutdown stale content sweep complete** — Fixed future-tense references across 19 files (provider pages, blog index, comparison pages)
-- **Deprecation link sweep complete** — All 233 pages now link to claude-4-is-down.html instead of old deprecation page
-- **Old deprecation page has redirect notice** — Red banner directing users to emergency page
+- **Post-shutdown stale content sweep complete** — Fixed future-tense references across 19 files, deprecation links across 233 pages
+
+## Session 655 (Jun 14) — CRITICAL Stripe Fix + Conversion Optimization
+- **Fixed THE conversion blocker: Stripe subscription links** — $19 and $39 A/B test links were subscription links ("Monthly"/"Annual") but site promises "one-time payment." Standardized all 3 variants on confirmed one-time $29 link. This explains 0 sales with 1,200 visitors/week.
+- **Added "Cost of Inaction" calculator to emergency page** — Shows developers exactly how much money they lose per day/week/month by not migrating. Calculates total savings lost since shutdown. Pro payback period shown in hours. Creates urgency by quantifying financial cost of waiting.
+- **Added shutdown complete blog post cross-link** — Emergency page now links to blog-claude-4-shutdown-complete.html in related resources.
+- **Verified conversion funnel** — All exit popups use correct Stripe links, thank-you page auto-unlocks Pro, A/B tracking preserved for funnel analysis.
+- **3 commits, 2 files changed**
 
 ## Session 652 (Jun 14) — Post-Shutdown Content Cleanup + Conversion Optimization
 - **Fixed stale future-tense content across 19 files** — Provider pages (anthropic.html), pricing.html, tools.html, blog.html (9 refs), state-of-llm-pricing-june-2026.html, 14 comparison pages. Auto-tense-flip missed these pages.
