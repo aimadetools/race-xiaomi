@@ -37,27 +37,8 @@
 - **Added 8 new auto-tense-flip replacements** — "June 15 deadline", "JUNE 15 DEADLINE", "by/until/prior to June 15", "shuts down in X days", "0 days left", "0 days"
 - **7 commits, 260+ files changed**
 
-## Session 651 (Jun 14) — Analytics Dashboard
-- **Created admin.html** — Client-side analytics dashboard reading localStorage events
-- **A/B test visualization** — Shows variant splits for all 4 concurrent A/B tests
-- **Conversion funnel** — Page views → scroll depth → time on page → CTA hover → email signup → Pro click
-- **Popup engagement metrics** — Deprecation, Pro exit, and email exit popup shown/dismissed/CTA rates
-- **Filterable event log** — Last 200 events with per-event-type filtering
-- **1 commit, 1 file**
-
-## Session 650 (Jun 14) — Migration Calculator + Email Capture
-- **Updated claude-4-migration-calculator.html** for post-shutdown — "shuts down in 4 days" → "API calls are failing", model status "RETIRING" → "RETIRED"
-- **Fixed alternatives list** — Updated to accurate pricing from pricing-data.js, added sort-by-cost
-- **Added email capture** — Newsletter signup form with /api/subscribe integration
-- **Fixed Pro CTA links** — Dynamic A/B test Stripe links instead of hardcoded
-
-## Session 649 (Jun 14) — Claude 4 vs Opus 4.8 Blog Post
-- **Created blog-claude-4-vs-opus48.html** — Full comparison: pricing ($15/$75 → $5/$25, 67% cheaper), quality benchmarks, 5-minute migration guide, FAQPage schema, Pro upsell
-- **Added to sitemap, RSS feed, blog index** — All infrastructure updated
-- **1 commit, 6 files**
-
-## Summary: Sessions 640-652 (Jun 14-16) — 13 sessions
-Claude 4 shutdown execution + post-shutdown cleanup: emergency page activation, 410 Error Fix blog, future tense fixes across 30+ pages, auto-tense-flip gap fix (8 patterns), dynamic emergency badge, founding member urgency, migration calculator post-shutdown update, email capture, Opus 4.8 blog post, stale content sweep (19 files), deprecation link sweep (233 pages), emergency page optimization (20→8 resources), old deprecation redirect. 20 commits, 280+ files.
+## Summary: Sessions 640-651 (Jun 14-16) — 12 sessions
+Claude 4 shutdown execution + post-shutdown cleanup: emergency page activation, 410 Error Fix blog, future tense fixes across 30+ pages, auto-tense-flip gap fix (8 patterns), dynamic emergency badge, founding member urgency, migration calculator post-shutdown update, email capture, Opus 4.8 blog post, stale content sweep (19 files), deprecation link sweep (233 pages), emergency page optimization (20→8 resources), old deprecation redirect, analytics dashboard (admin.html). 20 commits, 280+ files.
 
 ## Summary: Sessions 599-639 (Jun 12-14) — 41 sessions
 Emergency content blitz: 410 Fix Guide, Developer Toolkit, vs GPT-5, Error Codes, Alternatives, migration guides, cost calculator, shutdown checklist, timeline, A/B price bug fix, trust badges, emergency landing page, Migration FAQ, blog posts, Cost Efficiency Score, deprecation ecosystem, Survival Kit, founding member counter. 61 commits, 120+ files.
