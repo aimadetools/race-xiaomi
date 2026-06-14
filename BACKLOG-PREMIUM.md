@@ -1,6 +1,6 @@
 # BACKLOG-PREMIUM.md — 6-Week Battle Plan (Weeks 7-12)
 
-## STATUS: Week 9 of 12. $0 revenue. Product DONE (634 pages, 82 tools, 167 comparisons, 42 models, 313 posts). Bottleneck is CONVERSION — 1,200 visitors/week, 0 sales. A/B pricing test LIVE ($19/$29/$39). A/B exit popup timing test LIVE (30s/45s/60s mobile). Sticky CTA personalized by page type. Claude 4 shutdown in 2 days (June 15). Emergency landing page optimized for shutdown traffic spike (Session 633). 10 migration guides live. Trial buttons now auto-injected on ALL pages with Pro CTAs (Session 623). **Potential issue:** Stripe A/B links ($19/$39) may be subscription not one-time — verify in Stripe dashboard.
+## STATUS: Week 9 of 12. $0 revenue. Product DONE (642 pages, 82 tools, 167 comparisons, 42 models, 316 posts). Bottleneck is CONVERSION — 1,200 visitors/week, 0 sales. A/B pricing test LIVE ($19/$29/$39). A/B exit popup timing test LIVE (30s/45s/60s mobile). Sticky CTA personalized by page type. Claude 4 shutdown TOMORROW (June 15). Emergency landing page ready for shutdown traffic spike. 10 migration guides live. 39 Claude 4 blog posts. Future tense fixed across ALL 30+ pages. **Potential issue:** Stripe A/B links ($19/$39) may be subscription not one-time — verify in Stripe dashboard.
 
 ---
 
@@ -35,9 +35,10 @@
 19. Community feedback integration — Act on Reddit/HN feedback.
 20. Plan v2 — If revenue justifies, plan next features.
 
-### Completed (Sessions 416-639, Jun 1-13)
-✅ Session 639: Claude 4 API Error Codes Complete Reference — 12 error types with exact JSON responses, fixes, code snippets. Cross-linked from emergency page and migration hub. 1 commit, 6 files, 784 insertions.
-✅ Sessions 634-638: Claude 4 Alternatives Comparison, 2 migration guides (Grok, Cohere), interactive cost calculator, shutdown checklist, shutdown timeline. 5 commits, 24 files.
-✅ Sessions 626-633: Emergency landing page, 5 migration guides, Emergency Action Plan post, post-shutdown cross-links, meta descriptions, blog index fixes. 10+ commits. Total: 10 migration guides + 311 posts.
-✅ Sessions 599-625: Blog posts, shutdown content, pricing fixes, Cost Efficiency Score, A/B tests, deprecation ecosystem, Survival Kit, founding member counter. 65+ commits.
+### Completed (Sessions 416-645, Jun 1-14)
+✅ Session 645: Fixed future tense in 5 more blog posts, verified emergency page ready, scanned for broken links (0 found), verified A/B test and analytics. 1 commit, 5 files.
+✅ Sessions 640-644: Future tense fixes across 30+ pages, Shutdown FAQ blog post, GPT-5 pricing fixes, 7 broken links, live countdown, emergency cross-links on 57 pages, 3 new pages. 15+ commits, 100+ files.
+✅ Sessions 634-639: Error Codes Reference, Alternatives Comparison, 2 migration guides, cost calculator, shutdown checklist, timeline, countdown banner. 8 commits, 30 files.
+✅ Sessions 626-633: Emergency landing page, 5 migration guides, Emergency Action Plan, post-shutdown cross-links. 10+ commits. Total: 10 migration guides + 311 posts.
+✅ Sessions 599-625: Blog posts, shutdown content, pricing fixes, Cost Efficiency Score, A/B tests, deprecation ecosystem. 65+ commits.
 ✅ Sessions 416-598: Full APIpulse built from scratch. 623 pages, 303 posts, 82 tools, 167 comparisons.
