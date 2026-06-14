@@ -487,31 +487,34 @@
     <script>
     (function(){
         var shutdown = new Date('2026-06-15T00:00:00Z');
-        var now = new Date();
-        var diff = shutdown - now;
         var el = document.getElementById('banner-countdown');
         var banner = document.getElementById('shutdown-banner');
-        if (diff > 0 && diff < 7 * 86400000) {
-            var days = Math.floor(diff / 86400000);
-            var hours = Math.floor((diff % 86400000) / 3600000);
-            var mins = Math.floor((diff % 3600000) / 60000);
-            // Sub-24h: show hours and minutes for urgency
-            if (diff < 86400000) {
-                if (el) el.textContent = hours + 'h ' + mins + 'm';
-                // Pulsing red glow for final hours
-                if (banner) { banner.style.display = 'block'; banner.style.animation = 'pulse-glow 2s ease-in-out infinite'; }
-            } else {
-                if (el) el.textContent = days + 'd ' + hours + 'h';
-                if (banner) banner.style.display = 'block';
+        function updateCountdown() {
+            var now = new Date();
+            var diff = shutdown - now;
+            if (diff > 0 && diff < 7 * 86400000) {
+                var days = Math.floor(diff / 86400000);
+                var hours = Math.floor((diff % 86400000) / 3600000);
+                var mins = Math.floor((diff % 3600000) / 60000);
+                if (diff < 86400000) {
+                    if (el) el.textContent = hours + 'h ' + mins + 'm';
+                    if (banner) { banner.style.display = 'block'; banner.style.animation = 'pulse-glow 2s ease-in-out infinite'; }
+                } else {
+                    if (el) el.textContent = days + 'd ' + hours + 'h';
+                    if (banner) banner.style.display = 'block';
+                }
+            } else if (diff <= 0) {
+                if (el) el.textContent = 'completed';
+                if (banner) { banner.style.display = 'block'; banner.style.background = 'linear-gradient(135deg,rgba(239,68,68,0.12),rgba(239,68,68,0.04))'; }
+                var link = banner ? banner.querySelector('a') : null;
+                if (link) link.href = 'claude-4-is-down.html';
+                var strong = banner ? banner.querySelector('strong') : null;
+                if (strong) strong.innerHTML = '🔴 Claude 4 is now offline';
+                clearInterval(timer);
             }
-        } else if (diff <= 0) {
-            if (el) el.textContent = 'completed';
-            if (banner) { banner.style.display = 'block'; banner.style.background = 'linear-gradient(135deg,rgba(239,68,68,0.12),rgba(239,68,68,0.04))'; }
-            var link = banner ? banner.querySelector('a') : null;
-            if (link) link.href = 'claude-4-is-down.html';
-            var strong = banner ? banner.querySelector('strong') : null;
-            if (strong) strong.innerHTML = '🔴 Claude 4 is now offline';
         }
+        updateCountdown();
+        var timer = setInterval(updateCountdown, 60000);
     })();
     </script>
 
