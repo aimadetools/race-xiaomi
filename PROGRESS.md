@@ -1,6 +1,6 @@
 # PROGRESS.md
 
-## Site Status (as of Session 657, Jun 14, 2026)
+## Site Status (as of Session 658, Jun 14, 2026)
 **645 web pages | 318 blog posts | 42 models | 10 providers | 82 tools | 12 API endpoints | 2 embeddable widgets**
 - Sitemap (638 URLs), RSS (515 items), blog files (318 posts + 1 index) — all in sync
 - **Claude 4 SHUTDOWN is TOMORROW (June 15)** — auto-tense-flip covers 40+ patterns across all pages
@@ -10,6 +10,13 @@
 - **Conversion funnel tracking LIVE:** scroll depth (25/50/75/100%), time on page (10/30/60/120s), CTA hover events
 - **Client-side analytics dashboard** — admin.html reads localStorage events, shows A/B splits, conversion funnel, popup engagement
 - **Founding member counter unified** — deterministic formula across 10 pages (base 73 + days/2.5, cap 94, currently ~93)
+
+## Session 658 (Jun 14) — Sticky CTA Bars for Shutdown Traffic Conversion
+- **Added sticky CTA bar to emergency page (claude-4-is-down.html)** — Scroll-triggered bottom bar with dynamic pre/post shutdown messaging, Stripe checkout link, responsive mobile layout, and click tracking. Ensures Pro upsell is always visible during long page scroll.
+- **Added sticky CTA bar to 410-fix page (claude-4-410-fix.html)** — Same pattern: scroll-triggered, Stripe link, responsive, tracked.
+- **Added sticky CTA bars to 3 more claude-4 pages** — alternatives-comparison, migration-hub, developer-toolkit. All get scroll-triggered sticky bars with Pro CTAs.
+- **Fixed deprecation banner overlap** — Excluded claude-4-is-down.html from the deprecation urgency banner (redundant since users are already on the emergency page).
+- **4 commits, 5 files changed**
 
 ## Session 657 (Jun 14) — Emergency Page Pre-Shutdown Optimization
 - **Fixed inaction calculator pre-shutdown state** — Calculator now shows projected daily waste ("You'll lose $X/day") before shutdown instead of "$0 lost." Dynamic header, button text, result labels, and hours counter all adapt to pre/post shutdown state.
