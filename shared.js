@@ -509,6 +509,8 @@ document.addEventListener('DOMContentLoaded', () => {
         ['API calls will fail', 'API calls now fail'],
         ['will fail after June 15', 'are failing — June 15 has passed'],
         ['days left:', 'days left (past deadline):'],
+        ['days until deadline', 'deadline has passed'],
+        ['days until Claude 4', 'Claude 4 has been retired since June 15'],
     ];
     var walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, {
         acceptNode: function(n) {
