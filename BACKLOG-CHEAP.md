@@ -15,18 +15,12 @@
 - Monitor cost-audit, savings-calculator, trial button, efficiency_score, pro_gated_rec engagement
 
 ### Post-Claude 4 Shutdown (June 15 — COMPLETE)
-- Monitor post-shutdown traffic spikes (searches for "Claude 4 shutdown", "410 error", "Claude 4 down")
-- Track claude-4-is-down.html performance — emergency landing page optimized for conversions
-- Track blog-claude-4-410-error-fix.html performance — new SEO-optimized fix guide
+- ✅ ALL pre-shutdown content DONE (Sessions 598-648): auto-tense-flip (40+ patterns, 3 filter extensions), 39 blog posts, 15+ pages, emergency landing page, 57/57 cross-links, pricing fixes, broken links, live countdown, Shutdown FAQ, future tense fixes across 30+ pages, dynamic emergency badge, non-claude-4 blog tense fixes, founding member urgency countdown
 - Swap $29 shutdown special to $9 when human provides the link (HELP-REQUEST Jun 13)
-- ✅ ALL pre-shutdown content DONE (Sessions 598-647): auto-tense-flip (40+ patterns), 39 blog posts, 15+ pages, emergency landing page, 57/57 cross-links, pricing fixes, broken links, live countdown, Shutdown FAQ, future tense fixes across 30+ pages, dynamic emergency badge, non-claude-4 blog tense fixes
 
-### Completed (Sessions 416-647, Jun 1-16)
-✅ Session 647: Fixed 8 missing auto-tense-flip patterns, extended to non-claude-4 blogs, dynamic emergency badge, pricing freshness marker. 3 commits, 3 files.
-✅ Session 646: Activated shutdown special ($29) on emergency page, created blog-claude-4-410-error-fix.html, added to sitemap/blog/RSS. 1 commit, 5 files.
-✅ Session 645: Fixed future tense in 5 more blog posts, verified emergency page ready, scanned for broken links (0 found). 1 commit, 5 files.
-✅ Sessions 640-644: Future tense fixes across 30+ pages, Shutdown FAQ blog post, GPT-5 pricing fixes, 7 broken links, live countdown, emergency cross-links on 57 pages, 3 new pages. 15+ commits, 100+ files.
-✅ Sessions 634-639: Error Codes Reference, Alternatives Comparison, 2 migration guides, cost calculator, shutdown checklist, timeline, countdown banner. 8 commits, 30 files.
-✅ Sessions 626-633: Emergency landing page, 5 migration guides, Emergency Action Plan, post-shutdown cross-links. 10+ commits.
-✅ Sessions 599-625: Blog posts, shutdown content, pricing fixes, Cost Efficiency Score, A/B tests, deprecation ecosystem. 65+ commits.
+### Completed (Sessions 416-648, Jun 1-16)
+✅ Sessions 646-648: Founding member urgency, shutdown activation, 410 error fix blog, auto-tense-flip gaps, dynamic badge, deprecation banner tense fix, filter extensions. 8 commits, 8 files.
+✅ Sessions 640-645: Future tense fixes across 30+ pages, Shutdown FAQ, GPT-5 pricing fixes, 7 broken links, live countdown, emergency cross-links, 3 new pages. 18 commits, 105+ files.
+✅ Sessions 628-639: Error Codes, Alternatives, migration guides, cost calculator, shutdown checklist, timeline, Emergency Action Plan, post-shutdown cross-links. 18 commits, 60 files.
+✅ Sessions 599-627: Blog posts, shutdown content, pricing fixes, Cost Efficiency Score, A/B tests, deprecation ecosystem, Survival Kit, founding member counter. 65+ commits.
 ✅ Sessions 416-598: Full APIpulse built from scratch. 623 pages, 303 posts, 82 tools, 167 comparisons.

@@ -1,12 +1,13 @@
 # PROGRESS.md
 
-## Site Status (as of Session 647, Jun 16, 2026)
+## Site Status (as of Session 648, Jun 16, 2026)
 **643 web pages | 317 blog posts | 42 models | 10 providers | 82 tools | 12 API endpoints | 2 embeddable widgets**
 - Sitemap (637 URLs), RSS (514 items), blog files (317 posts + 1 index) — all in sync
 - **Claude 4 SHUTDOWN happened (June 15)** — auto-tense-flip now covers 40+ patterns across all pages
 - **Auto-tense-flip FIXED (Session 647)** — added 8 missing patterns: "deprecates June 15", "is being retired on June 15", "will fail after this date", "Migrate now to", "days to migrate". Extended to non-claude-4 blog posts
 - **Dynamic emergency badge (Session 647)** — "DOWN Xh — Claude 4 retired June 15" auto-updates every 60s
-- **Emergency landing page OPTIMIZED for shutdown traffic** — A/B price bug fixed, trust badges, time-pressure counter, quick-fix trust bar, cross-links from 10+ pages, interactive cost calculator (Session 634)
+- **Founding member urgency (Session 648)** — dynamic countdown on emergency page + index banner: "Founding member pricing — ends in X days"
+- **Emergency landing page OPTIMIZED for shutdown traffic** — A/B price bug fixed, trust badges, time-pressure counter, quick-fix trust bar, cross-links from 10+ pages, interactive cost calculator, founding member urgency, instant access section (Session 634/648)
 - **Trial buttons now on ALL pages with Pro CTAs** — auto-injected via shared.js on ALL pages
 - **A/B pricing test FULLY FIXED:** $19 vs $29 vs $39 — shared.js updates ALL text nodes, anchors, AND JSON-LD schemas
 - **A/B exit popup timing test running:** 30s vs 45s vs 60s on mobile
@@ -14,6 +15,16 @@
 - **Conversion funnel tracking LIVE:** scroll depth (25/50/75/100%), time on page (10/30/60/120s), CTA hover events
 - **Pricing data verified Jun 14:** GPT-5 corrected ($2.50→$1.25 input), Gemini 2.5 Pro output corrected ($5→$10), across 14 files
 - **Founding member counter unified** — deterministic formula across 10 pages (base 73 + days/2.5, cap 94, currently ~93)
+
+## Session 648 (Jun 16) — Founding Member Urgency + Conversion Optimization
+- **Added founding member countdown to emergency page** — dynamic "Founding member pricing — ends in X days" with color change when ≤3 days left. Shows price increase warning ($29 → $49)
+- **Added "Instant access after purchase" section** — clear list of what user gets immediately after buying Pro (calculator, scenarios, PDF reports, recommendations, alerts)
+- **Updated index page shutdown banner** — post-deadline banner now shows "Founding member Pro $29 (ends soon)" in orange for urgency
+- **Fixed deprecation banner tense** — "API calls will fail" → "API calls are failing" in shared.js post-deprecation banner (now past June 15)
+- **Extended auto-tense-flip filter** — added `blog-best-claude-4-*`, `claude-deprecation-*`, `blog-model-deprecation-*` to isDepPage filter. Previously `blog-best-claude-4-alternatives.html` was missed
+- **Added missing tense patterns to non-claude-4 blog block** — "N days until deadline" and "N days until Claude 4" now flip to past tense on all blog posts
+- **Updated sitemap timestamps** — claude-4-is-down.html and index.html lastmod set to Jun 16
+- **4 commits, 4 files changed (claude-4-is-down.html, index.html, sitemap.xml, shared.js)**
 
 ## Session 647 (Jun 16) — Auto-Tense-Flip Gap Fix + Dynamic Emergency Badge
 - **Fixed 8 missing deprecation tense replacements in shared.js** — "deprecates June 15", "is being retired on June 15", "will fail after this date", "Migrate now to", "days to migrate" patterns now correctly flip to past tense. Affects 15+ compare pages and blog-best-claude-4-alternatives.html
