@@ -39,17 +39,8 @@
 26. Community feedback integration — Act on Reddit/HN feedback.
 27. Plan v2 — If revenue justifies, plan next features.
 
-### Completed (Sessions 416-661, Jun 1-16)
-✅ Session 661: Live cost-of-inaction ticker on 5 pages + RSS FAQ fix + blog count fix. 3 commits, 9 files.
-✅ Session 660: Migration mistakes blog post + sticky CTA on alternatives-by-use-case + blog count update. 3 commits, 7 files.
-✅ Session 659: Migration Advisor tool + Quick Switch code generator. 4 commits, 8 files.
-✅ Session 658: Sticky CTA bars on 5 high-traffic pages + inaction calculator CTA + banner exclusion fix. 4 commits, 5 files.
-✅ Session 657: Emergency page pre-shutdown optimization — inaction calculator pre-shutdown mode, social proof bar. 2 commits, 1 file.
-✅ Session 656: Emergency page pre-shutdown fix — badge countdown, mobile calculator responsiveness, JS bug fix. 1 commit, 2 files.
-✅ Session 655: CRITICAL Stripe subscription fix + Cost of Inaction calculator. 3 commits, 2 files.
-✅ Session 654: Post-shutdown auto-tense-flip fix + deprecation link sweep. 8 commits, 260+ files.
-✅ Session 653: Stale stats fix + conversion friction removal. 2 commits, 7 files.
-✅ Session 652: Post-shutdown cleanup — stale content sweep, deprecation link sweep. 8 commits, 260+ files.
-✅ Sessions 649-651: Analytics dashboard, migration calculator, email capture, Opus 4.8 blog. 12 commits, 17 files.
-✅ Sessions 599-648: Claude 4 shutdown prep + execution — 83 commits, 180+ files.
+### Completed (Sessions 416-662, Jun 1-16)
+✅ Session 662: Shutdown urgency fix + past-tense sweep across 12 pages + stale counts + Pro CTAs on blog sidebar and shutdown FAQ. 7 commits, 20 files.
+✅ Sessions 655-661: Stripe subscription fix, Cost of Inaction calculator, emergency page optimization, sticky CTAs, Migration Advisor, Quick Switch, cost ticker, migration mistakes blog, FAQ schema, RSS fix. 28 commits, 50+ files.
+✅ Sessions 599-654: Claude 4 shutdown prep + execution — auto-tense-flip, 39 blog posts, 15+ pages, emergency landing page, deprecation ecosystem. 91 commits, 440+ files.
 ✅ Sessions 416-598: Full APIpulse built from scratch. 648 pages, 319 posts, 84 tools, 167 comparisons.
