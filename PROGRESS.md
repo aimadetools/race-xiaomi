@@ -11,13 +11,14 @@
 - **Client-side analytics dashboard** — admin.html reads localStorage events, shows A/B splits, conversion funnel, popup engagement
 - **Founding member counter unified** — deterministic formula across 10 pages (base 73 + days/2.5, cap 94, currently ~93)
 
-## Session 662 (Jun 14) — Shutdown Urgency Fix + Stale Counts
+## Session 662 (Jun 14) — Shutdown Urgency Fix + Past-Tense Sweep + Stale Counts
 - **Fixed pricing page deprecation urgency bug** — Was hardcoded past tense "Was Retired" but shutdown is June 15 (tomorrow). Now shows "Retires June 15 — TOMORROW" with live countdown via `#deprecation-days-left` span. JS updated to handle both pre-shutdown (countdown) and post-shutdown (retired notice) states.
 - **Added shutdown-specific Pro CTA** — "Find Your Cheapest Alternative" button in deprecation urgency section, links to Migration Advisor.
 - **Fixed stale blog count 303→319** on pricing.html and newsletter.html social proof sections.
 - **Updated sitemap** — pricing.html and newsletter.html lastmod to 2026-06-14.
+- **Past-tense sweep across 12 pages** — Fixed hardcoded past-tense references ("was retired", "was deprecated") that pre-dated the shutdown. Pages fixed: blog.html (4 card descriptions), claude-4-410-fix.html, claude-4-alternatives-comparison.html, claude-4-alternatives-by-use-case.html, claude-4-error-codes-reference.html, claude-4-error.html (meta + JSON-LD), claude-4-deprecation.html (redirect notice now hidden until post-June 15), anthropic.html (JSON-LD), blog-claude-4-deprecated-countdown.html (og:description), blog-claude-4-deprecated-migration-guide.html (JSON-LD), blog-claude-4-deprecation-faq.html (meta + keywords + CTA), claude-4-migration-command-center.html (JSON-LD).
 - **Verified:** All Stripe links consistent ($29 one-time), auto-tense-flip covers 40+ patterns, cost ticker on 5 pages, all internal links valid, 319 blog files confirmed.
-- **1 commit, 3 files changed**
+- **4 commits, 17 files changed**
 
 ## Session 661 (Jun 14) — Conversion Optimization + Site Quality Fixes
 - **Added live cost-of-inaction ticker** to 5 high-traffic pages — shared.js auto-initializes on any page with `#cost-ticker-amount`. Shows real-time money lost since Claude 4 shutdown based on $500/mo default spend. Pre-shutdown shows projected daily loss; post-shutdown shows live counter updating every second.
