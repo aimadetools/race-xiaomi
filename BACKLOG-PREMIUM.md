@@ -1,6 +1,6 @@
 # BACKLOG-PREMIUM.md — 6-Week Battle Plan (Weeks 7-12)
 
-## STATUS: Week 9 of 12. $0 revenue. Product DONE (642 pages, 82 tools, 167 comparisons, 42 models, 316 posts). Bottleneck is CONVERSION — 1,200 visitors/week, 0 sales. A/B pricing test LIVE ($19/$29/$39). A/B exit popup timing test LIVE (30s/45s/60s mobile). Sticky CTA personalized by page type. Claude 4 shutdown TOMORROW (June 15). Emergency landing page ready for shutdown traffic spike. 10 migration guides live. 39 Claude 4 blog posts. Future tense fixed across ALL 30+ pages. **Potential issue:** Stripe A/B links ($19/$39) may be subscription not one-time — verify in Stripe dashboard.
+## STATUS: Week 9 of 12. $0 revenue. Product DONE (645 pages, 82 tools, 167 comparisons, 42 models, 318 posts). Bottleneck is CONVERSION — 1,200 visitors/week, 0 sales. A/B pricing test LIVE ($19/$29/$39). A/B exit popup timing test LIVE (30s/45s/60s mobile). Sticky CTA personalized by page type. Claude 4 shutdown DONE (June 15). Emergency landing page live. 10 migration guides live. 39 Claude 4 blog posts. Future tense fixed across ALL 30+ pages. **Potential issue:** Stripe A/B links ($19/$39) may be subscription not one-time — verify in Stripe dashboard.
 
 ---
 
@@ -35,9 +35,9 @@
 19. Community feedback integration — Act on Reddit/HN feedback.
 20. Plan v2 — If revenue justifies, plan next features.
 
-### Completed (Sessions 416-652, Jun 1-16)
+### Completed (Sessions 416-653, Jun 1-16)
+✅ Session 653: Stale stats fix (303→318 blogs, 39→42 models) + conversion friction removal (confusing post-purchase instruction, stale Stripe broken reference in blog). 2 commits, 7 files.
 ✅ Session 652: Post-shutdown cleanup — stale content sweep (19 files), deprecation link sweep (233 pages), emergency page optimization (20→8 resources), old deprecation redirect. 8 commits, 260+ files.
-✅ Session 651: Client-side analytics dashboard (admin.html) — A/B test visualization, conversion funnel, popup engagement, event log.
-✅ Sessions 646-650: Opus 4.8 blog post, founding member urgency, shutdown activation, 410 error fix blog, auto-tense-flip gaps, dynamic badge, migration calculator post-shutdown update, email capture. 10 commits, 16 files.
-✅ Sessions 599-645: Claude 4 shutdown prep + execution — future tense fixes, Shutdown FAQ, GPT-5 pricing fixes, broken links, emergency cross-links, 3 new pages, Error Codes, Alternatives, migration guides, cost calculator, shutdown checklist, timeline, Emergency Action Plan, blog posts, Cost Efficiency Score, A/B tests, deprecation ecosystem, Survival Kit, founding member counter. 83 commits, 180+ files.
-✅ Sessions 416-598: Full APIpulse built from scratch. 623 pages, 303 posts, 82 tools, 167 comparisons.
+✅ Sessions 649-651: Analytics dashboard, migration calculator post-shutdown update, email capture, Opus 4.8 blog post, founding member urgency, shutdown activation, 410 error fix blog. 12 commits, 17 files.
+✅ Sessions 599-648: Claude 4 shutdown prep + execution — 83 commits, 180+ files.
+✅ Sessions 416-598: Full APIpulse built from scratch. 645 pages, 318 posts, 82 tools, 167 comparisons.

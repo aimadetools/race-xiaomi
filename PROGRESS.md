@@ -27,7 +27,8 @@
 - **Fixed stale blog count 303→318** across 4 files: blog.html, pricing.html (2x), why-pro.html
 - **Fixed stale model count 39→42** across 4 files: cost-scenarios.html, cost-report.html, shared.js (3 refs)
 - **Removed confusing post-purchase instruction** — pricing.html told users to "return to pro.html and click 'Already paid? Unlock here'" but thank-you.html auto-unlocks Pro. Updated to say "you'll be redirected to activate automatically"
-- **6 files changed, 10 insertions, 10 deletions**
+- **Fixed stale Stripe broken reference** — blog-building-startup-on-100-dollars.html still said "Stripe Integration Is Still Broken" even though it was fixed May 11. Updated both 'What Didn't Work' and 'What's Next' sections.
+- **2 commits, 7 files changed**
 
 ## Session 651 (Jun 14) — Analytics Dashboard
 - **Created admin.html** — Client-side analytics dashboard reading localStorage events
