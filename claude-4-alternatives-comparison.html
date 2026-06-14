@@ -594,6 +594,12 @@ const response = await anthropic.messages.create({
 
             <!-- PRO CTA -->
             <div style="max-width:600px;margin:0 auto 40px;background:var(--bg-secondary);border:1px solid var(--accent);border-radius:12px;padding:24px;text-align:center;">
+                <!-- Live cost-of-inaction ticker -->
+                <div style="background:rgba(239,68,68,0.08);border:1px solid rgba(239,68,68,0.2);border-radius:10px;padding:12px 16px;margin-bottom:16px;">
+                    <div style="font-size:11px;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.5px;margin-bottom:4px;">⏱️ Money leaking since shutdown</div>
+                    <div id="cost-ticker-amount" style="font-size:22px;font-weight:800;color:#ef4444;font-variant-numeric:tabular-nums;">$0.00</div>
+                    <div style="font-size:11px;color:var(--text-muted);margin-top:2px;">based on $500/mo Claude 4 spend</div>
+                </div>
                 <p style="font-size:15px;color:var(--text-secondary);margin-bottom:12px;"><strong style="color:var(--text-primary);">Get the full migration toolkit.</strong> Pro users get custom model routing strategies, saved scenarios, cost reports, and optimization tips — plus all current and future tools.</p>
                 <div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap;">
                     <a href="https://buy.stripe.com/fZu7sL3Gw3GS0RQeoDeEo0a" class="btn-primary" style="display:inline-block;padding:12px 28px;font-size:15px;" target="_blank" rel="noopener" onclick="if(window.trackEvent)window.trackEvent('pro_button_clicked',{source:'comparison_cta'})">Get Pro — $29 lifetime</a>

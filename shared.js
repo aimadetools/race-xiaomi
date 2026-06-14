@@ -1066,3 +1066,30 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 });
+
+// Live cost-of-inaction ticker — auto-initializes on any page with #cost-ticker-amount
+// Shows money lost per second since Claude 4 shutdown (based on $500/mo default spend)
+(function(){
+    var TICKER_KEY = 'cost_ticker_monthly_spend';
+    var DEFAULT_MONTHLY = 500;
+    var SHUTDOWN = new Date('2026-06-15T00:00:00Z');
+    document.addEventListener('DOMContentLoaded', function(){
+        var el = document.getElementById('cost-ticker-amount');
+        if (!el) return;
+        var monthly = parseInt(localStorage.getItem(TICKER_KEY)) || DEFAULT_MONTHLY;
+        function update(){
+            var now = new Date();
+            if (now <= SHUTDOWN) {
+                var dailyLoss = (monthly * 0.92) / 30;
+                el.textContent = '$' + dailyLoss.toFixed(2) + '/day at risk';
+                return;
+            }
+            var seconds = Math.floor((now - SHUTDOWN) / 1000);
+            var costPerSec = (monthly * 0.92) / (30 * 24 * 60 * 60);
+            var total = costPerSec * seconds;
+            el.textContent = total < 1 ? '$' + total.toFixed(2) : total < 100 ? '$' + total.toFixed(0) : '$' + Math.round(total).toLocaleString();
+        }
+        update();
+        setInterval(update, 1000);
+    });
+})();
