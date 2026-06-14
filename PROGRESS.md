@@ -1,9 +1,9 @@
 # PROGRESS.md
 
-## Site Status (as of Session 639, Jun 13, 2026)
-**638 web pages | 315 blog posts | 42 models | 10 providers | 82 tools | 12 API endpoints | 2 embeddable widgets**
-- Sitemap (632 URLs), RSS (510 items), blog files (315 posts + 1 index) — all in sync
-- **Claude 4 SHUTDOWN in 2 days (June 15)** — auto-tense-flipping covers ALL 20+ deprecation pages, meta tags, and <title> tags
+## Site Status (as of Session 640, Jun 14, 2026)
+**641 web pages | 315 blog posts | 42 models | 10 providers | 82 tools | 12 API endpoints | 2 embeddable widgets**
+- Sitemap (635 URLs), RSS (513 items), blog files (315 posts + 1 index) — all in sync
+- **Claude 4 SHUTDOWN TOMORROW (June 15)** — auto-tense-flipping covers ALL 20+ deprecation pages, meta tags, and <title> tags
 - **Emergency landing page OPTIMIZED for shutdown traffic** — A/B price bug fixed, trust badges, time-pressure counter, quick-fix trust bar, cross-links from 10+ pages, **interactive cost calculator** (Session 634)
 - **Trial buttons now on ALL pages with Pro CTAs** — auto-injected via shared.js on ALL pages (was previously blog-only due to bug)
 - **A/B pricing test FULLY FIXED:** $19 vs $29 vs $39 — shared.js updates ALL text nodes, anchors, AND JSON-LD schemas
@@ -18,6 +18,15 @@
 - **Survival Kit Pro upsell** — full Pro conversion section on survival kit page (dynamic pricing, trial button, cost comparison widget, founding member urgency)
 - **Cost Efficiency Score on ALL 3 tools** — visual A-F grade in calculator, cost-optimizer, and savings-calculator
 - **Founding member counter unified** — deterministic formula across 10 pages (base 73 + days/2.5, cap 94, currently ~93)
+
+## Session 640 (Jun 14) — 3 New Pages for Post-Shutdown Traffic
+- **NEW PAGE: claude-4-410-fix.html** — Language-specific fix guides for Python, Node.js, Go, Ruby, cURL. Copy-paste code for each language, model ID mapping table, common mistakes to avoid, codebase search commands. FAQPage schema with 5 questions. Targets high-intent "claude 4 410 error" searches.
+- **NEW PAGE: claude-4-developer-toolkit.html** — Comprehensive one-stop resource: quick fix, 10 alternatives ranked by cost, language-specific guides, interactive checklist, cost calculator CTA, model ID reference table. FAQPage schema with 5 questions. Targets broad "claude 4 shutdown" and "claude 4 migration" searches.
+- **NEW PAGE: claude-4-vs-gpt5.html** — Claude 4 vs GPT-5 comparison: pricing (87% cheaper), performance, API compatibility, migration difficulty, use case recommendations. FAQPage schema with 4 questions. Targets "claude 4 vs gpt 5" search queries.
+- **Cross-linked from emergency page** — Added all 3 new pages to claude-4-is-down.html related resources
+- **Cross-linked from migration hub** — Added 410 fix guide to claude-4-migration-hub.html
+- **Added to sitemap.xml (635 URLs), rss.xml (513 items), blog.html index** — positioned at top of Claude 4 section
+- **3 commits, 11 files changed, 1,816 insertions.**
 
 ## Session 639 (Jun 13) — Claude 4 API Error Codes Complete Reference + Homepage Banner
 - **NEW PAGE: claude-4-error-codes-reference.html** — Comprehensive reference for every Claude 4 API error code. Covers 12 error types: 410 Gone, 400 Invalid Model Name, 400 Invalid Parameters, 400 Context Length, 401 Authentication, 403 Forbidden, 404 Not Found, 429 Rate Limit, 500 Server Error, 529 Overloaded, Timeout, Streaming Errors. Each error has: exact JSON response, root cause, specific fix with code snippets (Python/Node.js/cURL). Quick reference table, diagnostic grep commands, model name mapping table. FAQPage schema with 4 questions. Targets long-tail searches: "claude 4 error [code]", "anthropic api 410 response", "claude api error codes".

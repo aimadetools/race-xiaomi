@@ -14,16 +14,20 @@
 - Review last-chance page and calculator → Pro upsell funnel
 - Monitor cost-audit, savings-calculator, trial button, efficiency_score, pro_gated_rec engagement
 
-### Post-Claude 4 Shutdown (June 15 — in 2 days)
+### Post-Claude 4 Shutdown (June 15 — TOMORROW)
 - Monitor post-shutdown traffic spikes (searches for "Claude 4 shutdown", "410 error", "Claude 4 down")
 - Track blog-claude-4-down-fix.html performance — target #1 for "claude 4 down" queries
 - Track claude-4-is-down.html performance — emergency landing page optimized for conversions (Session 633)
+- Track claude-4-410-fix.html performance — language-specific fix guide (Session 640)
+- Track claude-4-developer-toolkit.html performance — one-stop resource (Session 640)
+- Track claude-4-vs-gpt5.html performance — comparison guide (Session 640)
 - Activate shutdown special offer on claude-4-is-down.html once $9 Stripe link is provided
 - Update all Pro CTAs to use $9 shutdown special link during spike (then revert)
-- ✅ All pre-shutdown content DONE: auto-tense-flip (S598), shutdown-complete post (S614), down-fix post (S614), cross-links (S617), "What Replaced" post (S625), 10 migration guides (S628-630), Emergency Action Plan (S630), Emergency Landing Page (S631), Emergency Page Conversion Optimization (S633), Complete Developer Checklist (S636)
+- ✅ All pre-shutdown content DONE: auto-tense-flip (S598), shutdown-complete post (S614), down-fix post (S614), cross-links (S617), "What Replaced" post (S625), 10 migration guides (S628-630), Emergency Action Plan (S630), Emergency Landing Page (S631), Emergency Page Conversion Optimization (S633), Complete Developer Checklist (S636), 410 Fix Guide (S640), Developer Toolkit (S640), Claude 4 vs GPT-5 (S640)
 - ✅ Emergency page cross-links DONE: linked from 10+ pages including all major blog posts and hub page (Session 633)
 
-### Completed (Sessions 416-639, Jun 1-13)
+### Completed (Sessions 416-640, Jun 1-14)
+✅ Session 640: 3 new pages — 410 Fix Guide (language-specific), Developer Toolkit (one-stop resource), Claude 4 vs GPT-5 (comparison). Cross-linked from emergency page and hub. 3 commits, 11 files, 1,816 insertions.
 ✅ Session 639: Claude 4 API Error Codes Complete Reference — 12 error types with exact JSON responses, fixes, code snippets. Cross-linked from emergency page and migration hub. 1 commit, 6 files, 784 insertions.
 ✅ Sessions 634-638: Claude 4 Alternatives Comparison, 2 migration guides (Grok, Cohere), interactive cost calculator, shutdown checklist, shutdown timeline. 5 commits, 24 files.
 ✅ Sessions 626-633: Emergency landing page, 5 migration guides, Emergency Action Plan post, post-shutdown cross-links, meta descriptions, blog index fixes. 10+ commits. Total: 10 migration guides + 311 posts.
