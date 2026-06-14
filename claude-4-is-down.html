@@ -632,6 +632,62 @@ claude-sonnet-4-6</code>
             </div>
         </section>
 
+        <!-- Cost of Inaction Calculator -->
+        <section style="max-width:800px;margin:0 auto 48px;padding:0 24px;">
+            <div style="background:linear-gradient(135deg,rgba(239,68,68,0.06),rgba(245,158,11,0.06));border:1px solid rgba(239,68,68,0.2);border-radius:16px;padding:32px;">
+                <h2 style="font-size:24px;font-weight:800;text-align:center;margin-bottom:8px;">💸 How Much Are You Losing Right Now?</h2>
+                <p style="text-align:center;color:var(--text-secondary);margin-bottom:24px;font-size:15px;">Your Claude 4 API is down. Enter your monthly spend to see the real cost of waiting.</p>
+
+                <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:20px;">
+                    <div>
+                        <label style="display:block;font-size:13px;font-weight:600;color:var(--text-secondary);margin-bottom:6px;text-transform:uppercase;letter-spacing:0.5px;">Your monthly Claude 4 spend</label>
+                        <div style="position:relative;">
+                            <span style="position:absolute;left:14px;top:50%;transform:translateY(-50%);color:var(--text-muted);font-size:16px;font-weight:600;">$</span>
+                            <input type="number" id="inaction-monthly" value="500" min="0" step="10" placeholder="500" style="width:100%;padding:12px 16px 12px 30px;background:var(--bg-primary);border:1px solid var(--border);border-radius:8px;color:var(--text-primary);font-size:16px;font-family:inherit;">
+                        </div>
+                    </div>
+                    <div>
+                        <label style="display:block;font-size:13px;font-weight:600;color:var(--text-secondary);margin-bottom:6px;text-transform:uppercase;letter-spacing:0.5px;">Best alternative savings</label>
+                        <select id="inaction-savings-pct" style="width:100%;padding:12px 16px;background:var(--bg-primary);border:1px solid var(--border);border-radius:8px;color:var(--text-primary);font-size:16px;font-family:inherit;cursor:pointer;">
+                            <option value="0.67">67% — Claude Opus 4.8</option>
+                            <option value="0.80">80% — Claude Sonnet 4.6</option>
+                            <option value="0.92" selected>92% — GPT-5</option>
+                            <option value="0.97">97% — DeepSeek V4 Pro</option>
+                            <option value="0.99">99% — DeepSeek V4 Flash</option>
+                        </select>
+                    </div>
+                </div>
+
+                <button onclick="calculateInaction()" style="display:block;width:100%;background:#ef4444;color:white;border:none;border-radius:10px;padding:14px 24px;font-size:16px;font-weight:700;cursor:pointer;transition:background 0.2s;">Show Me the Real Cost of Waiting</button>
+
+                <!-- Results -->
+                <div id="inaction-results" style="display:none;margin-top:24px;">
+                    <div style="background:rgba(239,68,68,0.08);border:1px solid rgba(239,68,68,0.2);border-radius:14px;padding:28px;text-align:center;margin-bottom:16px;">
+                        <div style="font-size:14px;color:var(--text-secondary);margin-bottom:4px;">You've lost since shutdown</div>
+                        <div id="inaction-total" style="font-size:48px;font-weight:800;color:#ef4444;">$0</div>
+                        <div id="inaction-total-note" style="font-size:14px;color:var(--text-secondary);margin-top:4px;"></div>
+                    </div>
+                    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;">
+                        <div style="background:var(--bg-primary);border:1px solid var(--border);border-radius:10px;padding:16px;text-align:center;">
+                            <div style="font-size:11px;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.5px;margin-bottom:6px;">Per Day</div>
+                            <div id="inaction-per-day" style="font-size:24px;font-weight:800;color:#ef4444;">$0</div>
+                        </div>
+                        <div style="background:var(--bg-primary);border:1px solid var(--border);border-radius:10px;padding:16px;text-align:center;">
+                            <div style="font-size:11px;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.5px;margin-bottom:6px;">Per Week</div>
+                            <div id="inaction-per-week" style="font-size:24px;font-weight:800;color:#ef4444;">$0</div>
+                        </div>
+                        <div style="background:var(--bg-primary);border:1px solid var(--border);border-radius:10px;padding:16px;text-align:center;">
+                            <div style="font-size:11px;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.5px;margin-bottom:6px;">Per Month</div>
+                            <div id="inaction-per-month" style="font-size:24px;font-weight:800;color:var(--green);">$0</div>
+                        </div>
+                    </div>
+                    <div style="text-align:center;margin-top:16px;padding:14px;background:rgba(34,197,94,0.06);border:1px solid rgba(34,197,94,0.15);border-radius:10px;">
+                        <div style="font-size:14px;color:var(--text-secondary);">Pro costs <strong style="color:var(--accent);">$29 once</strong>. It pays for itself in <strong id="inaction-payback" style="color:var(--green);">less than a day</strong>.</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- Why Pay Section -->
         <section style="max-width:800px;margin:0 auto 48px;padding:0 24px;">
             <h2 style="font-size:24px;font-weight:800;text-align:center;margin-bottom:8px;">Why Pay When the Free Guide Is So Good?</h2>
@@ -1058,6 +1114,77 @@ claude-sonnet-4-6</code>
                     if (e.key === 'Enter') { e.preventDefault(); calculateSavings(); }
                 });
             });
+        });
+    })();
+    </script>
+
+    <!-- Cost of Inaction Calculator -->
+    <script>
+    (function(){
+        var SHUTDOWN_DATE = new Date('2026-06-15T00:00:00Z');
+
+        window.calculateInaction = function() {
+            var monthlySpend = parseFloat(document.getElementById('inaction-monthly').value) || 0;
+            var savingsPct = parseFloat(document.getElementById('inaction-savings-pct').value) || 0.92;
+            var wastedPerMonth = monthlySpend; // Full spend is wasted while API is down
+            var savingsPerMonth = monthlySpend * savingsPct;
+            var wastedPerDay = wastedPerMonth / 30;
+            var wastedPerWeek = wastedPerMonth / 4.33;
+
+            // Calculate time since shutdown
+            var now = new Date();
+            var msSinceShutdown = Math.max(0, now - SHUTDOWN_DATE);
+            var hoursSince = msSinceShutdown / (1000 * 60 * 60);
+            var daysSince = hoursSince / 24;
+
+            // Total wasted = daily waste * days since shutdown
+            // But also account for the savings they COULD have had
+            var totalWasted = wastedPerDay * daysSince;
+            var totalSavingsLost = savingsPerMonth * (daysSince / 30);
+
+            // Update results
+            document.getElementById('inaction-total').textContent = '$' + totalSavingsLost.toFixed(2);
+            document.getElementById('inaction-total-note').textContent = 'in potential savings left on the table since June 15';
+            document.getElementById('inaction-per-day').textContent = '$' + wastedPerDay.toFixed(2);
+            document.getElementById('inaction-per-week').textContent = '$' + wastedPerWeek.toFixed(2);
+            document.getElementById('inaction-per-month').textContent = '$' + savingsPerMonth.toFixed(2);
+
+            // Payback period: $29 Pro cost / daily savings
+            var dailySavings = savingsPerMonth / 30;
+            var paybackDays = 29 / dailySavings;
+            var paybackEl = document.getElementById('inaction-payback');
+            if (paybackDays < 1) {
+                var paybackHours = Math.ceil(paybackDays * 24);
+                paybackEl.textContent = paybackHours + ' hour' + (paybackHours === 1 ? '' : 's');
+            } else if (paybackDays < 30) {
+                paybackEl.textContent = Math.ceil(paybackDays) + ' day' + (Math.ceil(paybackDays) === 1 ? '' : 's');
+            } else {
+                paybackEl.textContent = '— (your spend is low)';
+            }
+
+            // Show results
+            document.getElementById('inaction-results').style.display = 'block';
+
+            // Track
+            if (window.trackEvent) window.trackEvent('inaction_calc_used', {
+                monthly_spend: monthlySpend,
+                savings_pct: savingsPct,
+                total_lost: totalSavingsLost.toFixed(2),
+                days_since: daysSince.toFixed(1)
+            });
+
+            // Scroll to results
+            document.getElementById('inaction-results').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        };
+
+        // Auto-calculate on Enter key
+        document.addEventListener('DOMContentLoaded', function() {
+            var input = document.getElementById('inaction-monthly');
+            if (input) {
+                input.addEventListener('keydown', function(e) {
+                    if (e.key === 'Enter') { e.preventDefault(); calculateInaction(); }
+                });
+            }
         });
     })();
     </script>
