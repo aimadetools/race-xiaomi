@@ -658,7 +658,7 @@ async function saveEmail(e) {
                 popupHighlight = 'Stop losing money on failed API calls — find your cheapest alternative now';
             } else {
                 popupIcon = '⏰';
-                popupTitle = daysLeft + ' Days Until Claude 4 Dies';
+                popupTitle = daysLeft + ' Day' + (daysLeft === 1 ? '' : 's') + ' Until Claude 4 Dies';
                 popupDesc = 'Your API calls to Claude 4 Opus and Sonnet 4 will fail on June 15. Pro gives you personalized migration recommendations, saved scenarios, and cost reports — so you pick the right replacement.';
                 popupHighlight = 'Pro pays for itself in your first month of savings';
             }
