@@ -1,6 +1,6 @@
 # PROGRESS.md
 
-## Site Status (as of Session 660, Jun 14, 2026)
+## Site Status (as of Session 661, Jun 14, 2026)
 **648 web pages | 319 blog posts | 42 models | 10 providers | 84 tools | 12 API endpoints | 2 embeddable widgets**
 - Sitemap (641 URLs), RSS (516 items), blog files (319 posts + 1 index) — all in sync
 - **Claude 4 SHUTDOWN is TOMORROW (June 15)** — auto-tense-flip covers 40+ patterns across all pages
@@ -10,6 +10,12 @@
 - **Conversion funnel tracking LIVE:** scroll depth (25/50/75/100%), time on page (10/30/60/120s), CTA hover events
 - **Client-side analytics dashboard** — admin.html reads localStorage events, shows A/B splits, conversion funnel, popup engagement
 - **Founding member counter unified** — deterministic formula across 10 pages (base 73 + days/2.5, cap 94, currently ~93)
+
+## Session 661 (Jun 14) — Live Cost-of-Inaction Ticker for Conversion Optimization
+- **Added live cost-of-inaction ticker** to 5 high-traffic pages — shared.js auto-initializes on any page with `#cost-ticker-amount`. Shows real-time money lost since Claude 4 shutdown based on $500/mo default spend. Pre-shutdown shows projected daily loss; post-shutdown shows live counter updating every second.
+- **Pages updated:** claude-4-is-down.html, claude-4-migration-hub.html, claude-4-alternatives-comparison.html, claude-4-developer-toolkit.html, claude-4-410-fix.html
+- **Site audit:** No broken links, GA4 on all public pages, sitemap (641 URLs) and RSS in sync, no stale Claude 4 present-tense references in HTML attributes
+- **1 commit, 6 files changed**
 
 ## Session 660 (Jun 14) — Migration Mistakes Blog Post + Sticky CTA Expansion
 - **Created "5 Costly Claude 4 Migration Mistakes" blog post** — Targets high-intent "claude 4 migration mistakes" searches post-shutdown. 5 real mistakes: wrong model ID, overpaying for Opus 4.8, skipping tests, ignoring usage patterns, no rollback plan. Gated Pro checklist (27-point), FAQPage schema, links to Migration Advisor, Quick Switch, Calculator.
