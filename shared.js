@@ -337,14 +337,8 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 // Claude 4 Deprecation Text Auto-Transition (flips future→past tense on June 15)
-// Covers blog posts, comparison pages, AND dedicated deprecation/migration pages
+// Runs on ALL pages — replacements are string-match based and harmless on pages without deprecation text
 document.addEventListener('DOMContentLoaded', () => {
-    var path = window.location.pathname;
-    // Match: blog-claude-4-*, blog-best-claude-4-*, compare-*, claude-4-*, claude-deprecation-*, *migration*, cost-migration, blog-model-deprecation-*
-    var isDepPage = path.includes('blog-claude-4-') || path.includes('blog-best-claude-4-') ||
-        path.includes('compare-') || path.includes('claude-4-') || path.includes('claude-deprecation-') ||
-        path.includes('migration') || path.includes('cost-migration') || path.includes('blog-model-deprecation-');
-    if (!isDepPage) return;
     var deadline = new Date('2026-06-15T00:00:00Z');
     if (new Date() < deadline) return;
     var replacements = [
