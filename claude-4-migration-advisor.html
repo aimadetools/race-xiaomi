@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Claude 4 Migration Advisor — Find Your Cheapest Alternative in 60 Seconds | APIpulse</title>
+    <meta name="description" content="Claude 4 is retired. Enter your monthly spend and instantly see which AI API alternative saves you the most money. Compare DeepSeek, GPT-5, Gemini, and Claude Opus 4.8.">
+    <meta name="keywords" content="claude 4 migration, claude 4 alternative, cheapest ai api, claude 4 replacement, deepseek vs claude, gpt-5 pricing, ai api cost comparison, migrate from claude 4">
+    <meta property="og:title" content="Claude 4 Migration Advisor — Find Your Cheapest Alternative">
+    <meta property="og:description" content="Claude 4 is retired. Enter your spend, see your cheapest alternative instantly. Most devs save 67-97%.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://getapipulse.com/og-image.png">
+    <meta property="og:url" content="https://getapipulse.com/claude-4-migration-advisor.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Claude 4 Migration Advisor — Find Your Cheapest Alternative">
+    <meta name="twitter:description" content="Claude 4 is retired. Enter your spend, see your cheapest alternative instantly.">
+    <meta name="twitter:image" content="https://getapipulse.com/og-image.png">
+    <link rel="canonical" href="https://getapipulse.com/claude-4-migration-advisor.html">
+    <link rel="alternate" type="application/rss+xml" title="APIpulse Blog" href="https://getapipulse.com/rss.xml">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="styles.css">
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0CEP7S9Y3J"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-0CEP7S9Y3J');
+    </script>
+    <script src="analytics.js" defer></script>
+    <script src="dynamic-date.js" defer></script>
+    <script src="shared.js" defer></script>
+    <script src="pricing-data.js" defer></script>
+    <script src="pro-features.js" defer></script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Claude 4 Migration Advisor",
+        "url": "https://getapipulse.com/claude-4-migration-advisor.html",
+        "description": "Find the cheapest AI API alternative to Claude 4. Enter your usage, see your savings instantly.",
+        "applicationCategory": "DeveloperApplication",
+        "operatingSystem": "Web"
+    }
+    </script>
+    <style>
+        .advisor-hero {
+            padding: 80px 24px 40px;
+            max-width: 700px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        .advisor-hero .badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #ef4444, #f59e0b);
+            color: white;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            margin-bottom: 20px;
+        }
+        .advisor-hero h1 {
+            font-size: 36px;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 16px;
+        }
+        .advisor-hero .subtitle {
+            font-size: 18px;
+            color: var(--text-secondary);
+            line-height: 1.6;
+            max-width: 550px;
+            margin: 0 auto 32px;
+        }
+        .advisor-hero .trust-bar {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            font-size: 13px;
+            color: var(--text-secondary);
+        }
+        .advisor-hero .trust-bar span {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .advisor-hero .trust-bar .check { color: var(--green); font-size: 16px; }
+
+        /* Advisor card */
+        .advisor-card {
+            max-width: 640px;
+            margin: 0 auto 48px;
+            padding: 0 24px;
+        }
+        .advisor-inner {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 32px;
+        }
+        .advisor-step {
+            margin-bottom: 28px;
+        }
+        .advisor-step:last-child { margin-bottom: 0; }
+        .advisor-step label {
+            display: block;
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 10px;
+        }
+        .advisor-step .hint {
+            font-size: 12px;
+            color: var(--text-muted);
+            font-weight: 400;
+            margin-left: 8px;
+        }
+        .model-options {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+        }
+        .model-option {
+            background: var(--bg-primary);
+            border: 2px solid var(--border);
+            border-radius: 10px;
+            padding: 14px 16px;
+            cursor: pointer;
+            transition: all 0.2s;
+            text-align: left;
+        }
+        .model-option:hover { border-color: var(--accent); }
+        .model-option.selected {
+            border-color: var(--accent);
+            background: rgba(99, 102, 241, 0.08);
+        }
+        .model-option .model-name {
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 2px;
+        }
+        .model-option .model-price {
+            font-size: 12px;
+            color: var(--text-muted);
+        }
+        .spend-input-wrap {
+            position: relative;
+        }
+        .spend-input-wrap .dollar {
+            position: absolute;
+            left: 14px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--text-muted);
+            font-size: 18px;
+            font-weight: 700;
+        }
+        .spend-input {
+            width: 100%;
+            padding: 14px 16px 14px 32px;
+            background: var(--bg-primary);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            color: var(--text-primary);
+            font-size: 20px;
+            font-weight: 700;
+            font-family: inherit;
+        }
+        .spend-input:focus { outline: none; border-color: var(--accent); }
+        .spend-presets {
+            display: flex;
+            gap: 8px;
+            margin-top: 10px;
+            flex-wrap: wrap;
+        }
+        .spend-preset {
+            padding: 6px 14px;
+            background: var(--bg-primary);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            font-size: 13px;
+            color: var(--text-secondary);
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .spend-preset:hover { border-color: var(--accent); color: var(--accent); }
+        .advisor-btn {
+            display: block;
+            width: 100%;
+            background: var(--accent);
+            color: white;
+            border: none;
+            border-radius: 12px;
+            padding: 16px 24px;
+            font-size: 18px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.2s;
+            box-shadow: 0 4px 20px rgba(99, 102, 241, 0.3);
+        }
+        .advisor-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 24px rgba(99, 102, 241, 0.4);
+        }
+        .advisor-btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        /* Results */
+        .advisor-results {
+            display: none;
+            max-width: 640px;
+            margin: 0 auto 48px;
+            padding: 0 24px;
+        }
+        .advisor-results.visible { display: block; }
+
+        .result-hero {
+            background: linear-gradient(135deg, rgba(34, 197, 94, 0.12), rgba(34, 197, 94, 0.04));
+            border: 1px solid rgba(34, 197, 94, 0.25);
+            border-radius: 16px;
+            padding: 32px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .result-hero .savings-label {
+            font-size: 14px;
+            color: var(--text-secondary);
+            margin-bottom: 4px;
+        }
+        .result-hero .savings-amount {
+            font-size: 48px;
+            font-weight: 800;
+            color: var(--green);
+            line-height: 1.1;
+        }
+        .result-hero .savings-note {
+            font-size: 14px;
+            color: var(--text-secondary);
+            margin-top: 8px;
+        }
+        .result-hero .savings-note strong { color: var(--green); }
+
+        .result-breakdown {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+        .result-stat {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 16px;
+            text-align: center;
+        }
+        .result-stat .stat-label {
+            font-size: 11px;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 6px;
+        }
+        .result-stat .stat-value {
+            font-size: 22px;
+            font-weight: 800;
+        }
+        .result-stat .stat-value.green { color: var(--green); }
+        .result-stat .stat-value.red { color: var(--red); }
+
+        /* Alternatives list */
+        .alt-list {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            overflow: hidden;
+            margin-bottom: 20px;
+        }
+        .alt-list-header {
+            padding: 14px 20px;
+            background: var(--bg-card);
+            border-bottom: 1px solid var(--border);
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .alt-item {
+            display: flex;
+            align-items: center;
+            padding: 14px 20px;
+            border-bottom: 1px solid var(--border);
+            gap: 12px;
+        }
+        .alt-item:last-child { border-bottom: none; }
+        .alt-item.winner {
+            background: rgba(34, 197, 94, 0.06);
+        }
+        .alt-rank {
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            font-weight: 800;
+            flex-shrink: 0;
+            background: var(--bg-primary);
+            border: 1px solid var(--border);
+            color: var(--text-muted);
+        }
+        .alt-item.winner .alt-rank {
+            background: var(--green);
+            color: #000;
+            border-color: var(--green);
+        }
+        .alt-info { flex: 1; min-width: 0; }
+        .alt-name {
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--text-primary);
+        }
+        .alt-provider {
+            font-size: 12px;
+            color: var(--text-muted);
+        }
+        .alt-cost {
+            text-align: right;
+            flex-shrink: 0;
+        }
+        .alt-cost .cost-amount {
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--text-primary);
+        }
+        .alt-item.winner .alt-cost .cost-amount { color: var(--green); }
+        .alt-cost .cost-savings {
+            font-size: 12px;
+            color: var(--green);
+            font-weight: 600;
+        }
+        .alt-badge {
+            display: inline-block;
+            background: var(--green);
+            color: #000;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 10px;
+            font-weight: 700;
+            margin-left: 6px;
+        }
+
+        /* Pro upsell in results */
+        .result-pro {
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(168, 85, 247, 0.1));
+            border: 1px solid var(--accent);
+            border-radius: 14px;
+            padding: 28px;
+            text-align: center;
+        }
+        .result-pro h3 {
+            font-size: 20px;
+            font-weight: 800;
+            margin-bottom: 8px;
+        }
+        .result-pro p {
+            color: var(--text-secondary);
+            font-size: 14px;
+            line-height: 1.6;
+            margin-bottom: 16px;
+            max-width: 480px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .result-pro .pro-cta {
+            display: inline-block;
+            background: var(--accent);
+            color: white;
+            padding: 14px 32px;
+            border-radius: 10px;
+            font-size: 16px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: all 0.2s;
+            box-shadow: 0 4px 16px rgba(99, 102, 241, 0.3);
+        }
+        .result-pro .pro-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(99, 102, 241, 0.4);
+        }
+        .result-pro .pro-guarantee {
+            font-size: 12px;
+            color: var(--text-muted);
+            margin-top: 10px;
+        }
+
+        /* Related */
+        .related-section {
+            max-width: 640px;
+            margin: 0 auto 48px;
+            padding: 0 24px;
+        }
+        .related-section h2 {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 16px;
+            text-align: center;
+        }
+        .related-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+        }
+        .related-card {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 16px;
+            text-decoration: none;
+            color: var(--text-primary);
+            transition: all 0.2s;
+        }
+        .related-card:hover {
+            border-color: var(--accent);
+            transform: translateY(-2px);
+        }
+        .related-card h3 {
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+        .related-card p {
+            font-size: 12px;
+            color: var(--text-muted);
+            margin: 0;
+        }
+
+        @media (max-width: 640px) {
+            .advisor-hero h1 { font-size: 26px; }
+            .model-options { grid-template-columns: 1fr; }
+            .result-breakdown { grid-template-columns: 1fr; }
+            .result-hero .savings-amount { font-size: 36px; }
+            .related-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-inner">
+            <a href="index.html" class="logo">API<span>pulse</span></a>
+            <div class="nav-links">
+                <a href="calculator.html">Calculator</a>
+                <a href="compare.html">Compare</a>
+                <a href="blog.html">Blog</a>
+                <a href="claude-4-migration-hub.html">Migration Hub</a>
+                <a href="pro.html" class="nav-cta">Get Pro</a>
+            </div>
+            <button class="hamburger" onclick="toggleMobileNav()" aria-label="Menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Hero -->
+        <section class="advisor-hero">
+            <div class="badge">⚠️ Claude 4 Retired June 15 — Migration Required</div>
+            <h1>Find Your Cheapest Claude 4 Alternative — In 60 Seconds</h1>
+            <p class="subtitle">
+                Claude 4 Opus and Sonnet 4 are gone. Enter your monthly spend below
+                and we'll show you exactly which alternative saves you the most money.
+            </p>
+            <div class="trust-bar">
+                <span><span class="check">✓</span> 42 models compared</span>
+                <span><span class="check">✓</span> 10 providers</span>
+                <span><span class="check">✓</span> 1,200+ devs/week</span>
+                <span><span class="check">✓</span> Save 67-97%</span>
+            </div>
+        </section>
+
+        <!-- Advisor Tool -->
+        <section class="advisor-card">
+            <div class="advisor-inner">
+                <!-- Step 1: Model -->
+                <div class="advisor-step">
+                    <label>What were you using? <span class="hint">(pick the model you had)</span></label>
+                    <div class="model-options">
+                        <div class="model-option selected" onclick="selectModel(this, 'opus')" data-model="opus">
+                            <div class="model-name">Claude 4 Opus</div>
+                            <div class="model-price">$15 input / $75 output per 1M tokens</div>
+                        </div>
+                        <div class="model-option" onclick="selectModel(this, 'sonnet')" data-model="sonnet">
+                            <div class="model-name">Claude Sonnet 4</div>
+                            <div class="model-price">$3 input / $15 output per 1M tokens</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 2: Spend -->
+                <div class="advisor-step">
+                    <label>What's your monthly Claude 4 spend?</label>
+                    <div class="spend-input-wrap">
+                        <span class="dollar">$</span>
+                        <input type="number" id="advisor-spend" class="spend-input" value="500" min="1" step="10" placeholder="500">
+                    </div>
+                    <div class="spend-presets">
+                        <button class="spend-preset" onclick="setSpend(100)">$100/mo</button>
+                        <button class="spend-preset" onclick="setSpend(500)">$500/mo</button>
+                        <button class="spend-preset" onclick="setSpend(1000)">$1,000/mo</button>
+                        <button class="spend-preset" onclick="setSpend(5000)">$5,000/mo</button>
+                        <button class="spend-preset" onclick="setSpend(10000)">$10,000/mo</button>
+                    </div>
+                </div>
+
+                <!-- Step 3: Get results -->
+                <button class="advisor-btn" onclick="runAdvisor()">🔍 Find My Cheapest Alternative</button>
+            </div>
+        </section>
+
+        <!-- Results (hidden by default) -->
+        <section class="advisor-results" id="advisor-results">
+            <div class="result-hero" id="result-hero">
+                <div class="savings-label">Your maximum monthly savings</div>
+                <div class="savings-amount" id="result-savings">$0/mo</div>
+                <div class="savings-note" id="result-savings-note">by switching to the cheapest alternative</div>
+            </div>
+
+            <div class="result-breakdown">
+                <div class="result-stat">
+                    <div class="stat-label">You were paying</div>
+                    <div class="stat-value red" id="result-old-cost">$0</div>
+                </div>
+                <div class="result-stat">
+                    <div class="stat-label">You'll pay now</div>
+                    <div class="stat-value green" id="result-new-cost">$0</div>
+                </div>
+                <div class="result-stat">
+                    <div class="stat-label">Pro pays for itself in</div>
+                    <div class="stat-value" id="result-payback" style="color:var(--accent);">0 days</div>
+                </div>
+            </div>
+
+            <!-- Alternatives ranked -->
+            <div class="alt-list">
+                <div class="alt-list-header">All alternatives ranked by cost (cheapest first)</div>
+                <div id="alt-list-body"></div>
+            </div>
+
+            <!-- Pro upsell -->
+            <div class="result-pro">
+                <h3>🚀 Want the Optimal Migration Plan?</h3>
+                <p>
+                    Pro analyzes your <strong>exact token mix</strong> (input vs output ratio),
+                    compares all 42 models, and generates a personalized migration report.
+                    Most devs save <strong>67-97%</strong> on their first month.
+                </p>
+                <a href="#" id="result-pro-cta" class="pro-cta">Get Pro — $29 Once</a>
+                <div class="pro-guarantee">One-time payment · No subscription · Instant access</div>
+            </div>
+        </section>
+
+        <!-- Related Resources -->
+        <section class="related-section">
+            <h2>Migration Resources</h2>
+            <div class="related-grid">
+                <a href="claude-4-is-down.html" class="related-card">
+                    <h3>🔧 Claude 4 Is Down — 5-Minute Fix</h3>
+                    <p>Step-by-step guide to fix 410 errors and migrate your code.</p>
+                </a>
+                <a href="claude-4-migration-calculator.html" class="related-card">
+                    <h3>🧮 Migration Cost Calculator</h3>
+                    <p>Calculate exact costs for every alternative based on your usage.</p>
+                </a>
+                <a href="claude-4-alternatives-comparison.html" class="related-card">
+                    <h3>📊 Claude 4 Alternatives Compared</h3>
+                    <p>Side-by-side comparison of all replacement models.</p>
+                </a>
+                <a href="calculator.html" class="related-card">
+                    <h3>💰 Full API Cost Calculator</h3>
+                    <p>Compare pricing across all 42 models and 10 providers.</p>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-inner">
+            <div class="footer-brand">API<span>pulse</span></div>
+            <p>Know your AI API costs before you commit.</p>
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="calculator.html">Calculator</a>
+                <a href="compare.html">Compare</a>
+                <a href="blog.html">Blog</a>
+                <a href="pro.html">Pro</a>
+                <a href="about.html">About</a>
+            </div>
+            <p class="footer-copy">© 2026 APIpulse. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+    // Model selection
+    var selectedModel = 'opus';
+    function selectModel(el, model) {
+        document.querySelectorAll('.model-option').forEach(function(o) { o.classList.remove('selected'); });
+        el.classList.add('selected');
+        selectedModel = model;
+        if (window.trackEvent) window.trackEvent('migration_advisor_model_selected', { model: model });
+    }
+
+    // Spend presets
+    function setSpend(amount) {
+        document.getElementById('advisor-spend').value = amount;
+    }
+
+    // Pricing data — per 1M tokens
+    var ALTERNATIVES = [
+        { name: 'DeepSeek V4 Flash', provider: 'DeepSeek', input: 0.14, output: 0.28, best: true },
+        { name: 'DeepSeek V4 Pro', provider: 'DeepSeek', input: 0.435, output: 0.87 },
+        { name: 'Gemini 2.5 Flash', provider: 'Google', input: 0.15, output: 0.60 },
+        { name: 'GPT-4o mini', provider: 'OpenAI', input: 0.15, output: 0.60 },
+        { name: 'Gemini 2.5 Pro', provider: 'Google', input: 1.25, output: 10.00 },
+        { name: 'GPT-5', provider: 'OpenAI', input: 1.25, output: 10.00 },
+        { name: 'Mistral Large', provider: 'Mistral', input: 2.00, output: 6.00 },
+        { name: 'Claude Sonnet 4.6', provider: 'Anthropic', input: 3.00, output: 15.00 },
+        { name: 'Claude Opus 4.8', provider: 'Anthropic', input: 5.00, output: 25.00 }
+    ];
+
+    var OLD_PRICING = {
+        opus:   { input: 15, output: 75, label: 'Claude 4 Opus' },
+        sonnet: { input: 3,  output: 15, label: 'Claude Sonnet 4' }
+    };
+
+    // Estimate input/output split (rough: 70% input, 30% output by cost)
+    function estimateCost(spend, inputPrice, outputPrice) {
+        // Given total spend on old model, estimate token mix
+        // Assume 70% of spend was on input, 30% on output
+        var inputSpend = spend * 0.7;
+        var outputSpend = spend * 0.3;
+        var old = OLD_PRICING[selectedModel];
+        var inputTokens = inputSpend / old.input;  // millions
+        var outputTokens = outputSpend / old.output; // millions
+        return (inputTokens * inputPrice) + (outputTokens * outputPrice);
+    }
+
+    function formatMoney(n) {
+        if (n >= 1000) return '$' + Math.round(n).toLocaleString();
+        if (n >= 100) return '$' + Math.round(n);
+        return '$' + n.toFixed(2);
+    }
+
+    function runAdvisor() {
+        var spend = parseFloat(document.getElementById('advisor-spend').value);
+        if (!spend || spend <= 0) { alert('Please enter your monthly spend.'); return; }
+
+        var old = OLD_PRICING[selectedModel];
+
+        // Calculate cost for each alternative
+        var results = ALTERNATIVES.map(function(alt) {
+            var newCost = estimateCost(spend, alt.input, alt.output);
+            return {
+                name: alt.name,
+                provider: alt.provider,
+                newCost: newCost,
+                savings: spend - newCost,
+                savingsPct: ((spend - newCost) / spend * 100),
+                best: alt.best
+            };
+        });
+
+        // Sort by cost (cheapest first)
+        results.sort(function(a, b) { return a.newCost - b.newCost; });
+
+        var cheapest = results[0];
+        var maxSavings = spend - cheapest.newCost;
+
+        // Update hero
+        document.getElementById('result-savings').textContent = formatMoney(maxSavings) + '/mo';
+        document.getElementById('result-savings-note').innerHTML =
+            'by switching to <strong>' + cheapest.name + '</strong> (' + Math.round(cheapest.savingsPct) + '% savings)';
+
+        // Update breakdown
+        document.getElementById('result-old-cost').textContent = formatMoney(spend);
+        document.getElementById('result-new-cost').textContent = formatMoney(cheapest.newCost);
+
+        // Pro payback in days (assuming $29 / monthly savings * 30)
+        var paybackDays = Math.max(1, Math.ceil(29 / (maxSavings / 30)));
+        document.getElementById('result-payback').textContent =
+            paybackDays <= 1 ? '< 1 day' : paybackDays + ' days';
+
+        // Build alternatives list
+        var html = '';
+        results.forEach(function(r, i) {
+            var winnerClass = i === 0 ? ' winner' : '';
+            var badge = r.best ? '<span class="alt-badge">CHEAPEST</span>' : '';
+            var savingsText = i === 0 ? formatMoney(r.savings) + '/mo saved' :
+                r.savings > 0 ? formatMoney(r.savings) + '/mo saved' : 'costs more';
+            html += '<div class="alt-item' + winnerClass + '">' +
+                '<div class="alt-rank">' + (i + 1) + '</div>' +
+                '<div class="alt-info">' +
+                    '<div class="alt-name">' + r.name + badge + '</div>' +
+                    '<div class="alt-provider">' + r.provider + '</div>' +
+                '</div>' +
+                '<div class="alt-cost">' +
+                    '<div class="cost-amount">' + formatMoney(r.newCost) + '/mo</div>' +
+                    '<div class="cost-savings">' + savingsText + '</div>' +
+                '</div>' +
+            '</div>';
+        });
+        document.getElementById('alt-list-body').innerHTML = html;
+
+        // Show results
+        document.getElementById('advisor-results').classList.add('visible');
+        document.getElementById('advisor-results').scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+        // Track
+        if (window.trackEvent) {
+            window.trackEvent('migration_advisor_completed', {
+                model: selectedModel,
+                spend: spend,
+                top_alternative: cheapest.name,
+                savings: Math.round(maxSavings)
+            });
+        }
+    }
+
+    // Auto-scroll to results if hash
+    if (window.location.hash === '#results') {
+        window.addEventListener('load', function() {
+            document.getElementById('advisor-results').classList.add('visible');
+        });
+    }
+    </script>
+</body>
+</html>
