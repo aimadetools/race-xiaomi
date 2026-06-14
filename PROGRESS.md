@@ -1,15 +1,24 @@
 # PROGRESS.md
 
-## Site Status (as of Session 656, Jun 14, 2026)
+## Site Status (as of Session 657, Jun 14, 2026)
 **645 web pages | 318 blog posts | 42 models | 10 providers | 82 tools | 12 API endpoints | 2 embeddable widgets**
 - Sitemap (638 URLs), RSS (515 items), blog files (318 posts + 1 index) — all in sync
 - **Claude 4 SHUTDOWN is TOMORROW (June 15)** — auto-tense-flip covers 40+ patterns across all pages
 - **CRITICAL FIX: Stripe A/B test standardized on confirmed one-time $29 link** — $19 and $39 links were SUBSCRIPTION links, killing 67% of conversions. All variants now use confirmed one-time link. (Session 655)
-- **Emergency landing page PRE-SHUTDOWN READY** — Badge shows countdown, mobile calculators responsive, future-tense text for auto-tense-flip transition. (Session 656)
+- **Emergency page FULLY OPTIMIZED for shutdown traffic** — Inaction calculator works pre/post shutdown, social proof bar, exit popup, sticky CTA, countdown badge. (Sessions 656-657)
 - **A/B pricing test PAUSED** — Price variants standardized on $29 until proper one-time $19/$39 links available. Exit popup timing test and gated recs test still LIVE.
 - **Conversion funnel tracking LIVE:** scroll depth (25/50/75/100%), time on page (10/30/60/120s), CTA hover events
 - **Client-side analytics dashboard** — admin.html reads localStorage events, shows A/B splits, conversion funnel, popup engagement
 - **Founding member counter unified** — deterministic formula across 10 pages (base 73 + days/2.5, cap 94, currently ~93)
+
+## Session 657 (Jun 14) — Emergency Page Pre-Shutdown Optimization
+- **Fixed inaction calculator pre-shutdown state** — Calculator now shows projected daily waste ("You'll lose $X/day") before shutdown instead of "$0 lost." Dynamic header, button text, result labels, and hours counter all adapt to pre/post shutdown state.
+- **Added social proof bar to Pro upsell** — Developer avatar stack, "1,200+ devs/week," "67-97% avg. savings," "42 models · 10 providers" positioned above CTA for maximum trust.
+- **Fixed auto-tense-flip gap** — "After that" changed to "After June 15" so the existing pattern catches it.
+- **Improved hours counter label** — Uses ID-based refs instead of fragile parentElement selectors. Label now says "hours until shutdown" pre-shutdown, "hours since shutdown" post-shutdown.
+- **Analytics track pre/post mode** — inaction_calc_used event now includes `mode: 'pre_shutdown'` or `mode: 'post_shutdown'` for funnel analysis.
+- **Verified all related resource links** — No broken links. Emergency page in sitemap (638 URLs) and RSS (515 items).
+- **2 commits, 1 file changed**
 
 ## Session 656 (Jun 14) — Emergency Page Pre-Shutdown Fix
 - **Fixed emergency badge pre-shutdown state** — Badge now shows "FINAL DAY — Claude 4 Retires Tomorrow" with live countdown instead of false "Claude 4 Retired." Dynamically switches to post-shutdown mode after June 15.

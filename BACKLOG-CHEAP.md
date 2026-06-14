@@ -18,10 +18,11 @@
 
 ### Conversion Funnel Optimization
 - ✅ Test inaction calculator on mobile devices — fixed responsive layout (Session 656)
+- ✅ Fix inaction calculator pre-shutdown state — shows projected daily waste instead of $0 (Session 657)
+- ✅ Add social proof bar to Pro upsell — dev avatars, 1,200+ devs/week, savings stats (Session 657)
 - Review exit popup timing data — which variant (30s/45s/60s) gets most engagement?
 - Check if "Cost of Inaction" calculator increases time-on-page for emergency page
 - Monitor scroll depth on emergency page — do users reach the Pro upsell?
-- A/B test different Pro upsell headlines (current: "Get Your Personalized Migration Plan")
 
 ### Post-Claude 4 Shutdown (June 15)
 - ✅ ALL pre-shutdown content DONE (Sessions 598-648): auto-tense-flip, 39 blog posts, 15+ pages, emergency landing page, 57/57 cross-links, pricing fixes, broken links, live countdown, Shutdown FAQ, future tense fixes across 30+ pages, dynamic emergency badge, founding member urgency countdown
@@ -29,7 +30,8 @@
 - ✅ CRITICAL: Stripe subscription fix — $19/$39 links were subscriptions, standardized on one-time $29 (Session 655)
 - ✅ Cost of Inaction calculator added to emergency page (Session 655)
 
-### Completed (Sessions 416-656, Jun 1-16)
+### Completed (Sessions 416-657, Jun 1-16)
+✅ Session 657: Emergency page pre-shutdown optimization — inaction calculator pre-shutdown mode, social proof bar, auto-tense-flip fix, ID-based label refs. 2 commits, 1 file.
 ✅ Session 656: Emergency page pre-shutdown fix — badge countdown, JS ordering bug, mobile calculators, future-tense text, auto-tense-flip patterns. 1 commit, 2 files.
 ✅ Session 655: CRITICAL Stripe subscription fix + Cost of Inaction calculator + cross-link optimization. 3 commits, 2 files.
 ✅ Session 654: Post-shutdown auto-tense-flip fix + deprecation link sweep. 8 commits, 260+ files.
