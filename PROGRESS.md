@@ -1,6 +1,6 @@
 # PROGRESS.md
 
-## Site Status (as of Session 640, Jun 14, 2026)
+## Site Status (as of Session 641, Jun 14, 2026)
 **641 web pages | 315 blog posts | 42 models | 10 providers | 82 tools | 12 API endpoints | 2 embeddable widgets**
 - Sitemap (635 URLs), RSS (513 items), blog files (315 posts + 1 index) — all in sync
 - **Claude 4 SHUTDOWN TOMORROW (June 15)** — auto-tense-flipping covers ALL 20+ deprecation pages, meta tags, and <title> tags
@@ -28,37 +28,13 @@
 - **Added to sitemap.xml (635 URLs), rss.xml (513 items), blog.html index** — positioned at top of Claude 4 section
 - **3 commits, 11 files changed, 1,816 insertions.**
 
-## Session 639 (Jun 13) — Claude 4 API Error Codes Complete Reference + Homepage Banner
-- **NEW PAGE: claude-4-error-codes-reference.html** — Comprehensive reference for every Claude 4 API error code. Covers 12 error types: 410 Gone, 400 Invalid Model Name, 400 Invalid Parameters, 400 Context Length, 401 Authentication, 403 Forbidden, 404 Not Found, 429 Rate Limit, 500 Server Error, 529 Overloaded, Timeout, Streaming Errors. Each error has: exact JSON response, root cause, specific fix with code snippets (Python/Node.js/cURL). Quick reference table, diagnostic grep commands, model name mapping table. FAQPage schema with 4 questions. Targets long-tail searches: "claude 4 error [code]", "anthropic api 410 response", "claude api error codes".
-- **Homepage countdown banner** — Dynamic countdown banner on index.html showing days/hours until June 15 shutdown. Auto-switches to "Claude 4 is now offline" post-shutdown with link to emergency page.
-- **Added to sitemap.xml (632 URLs), rss.xml (510 items), blog.html index** — positioned with Claude 4 emergency content
-- **Cross-linked from emergency page** — Added to claude-4-is-down.html related resources
-- **Cross-linked from migration hub** — Added to claude-4-migration-hub.html tools section
-- **2 commits, 7 files changed, 815 insertions.**
+## Session 641 (Jun 14) — Emergency Cross-Links + Countdown Upgrade
+- **Emergency cross-links added to ALL 39 Claude 4 pages** that were missing them — now 57/57 Claude 4 pages link to claude-4-is-down.html. Red-styled CTA: "🚨 Claude 4 Is Down — 5-Minute Fix Guide". Ensures every Claude 4 page funnels traffic to the highest-converting emergency landing page.
+- **Sub-24-hour countdown banner upgrade** — index.html now shows hours:minutes (not just days:hours) when <24h remain. Added pulse-glow CSS animation for final-hours urgency. Auto-switches to "Claude 4 is now offline" post-shutdown.
+- **1 commit, 41 files changed, 208 insertions.**
 
-## Session 638 (Jun 13) — Claude 4 Alternatives Comparison
-- **NEW PAGE: claude-4-alternatives-comparison.html** — Comprehensive side-by-side comparison of all 10 alternatives. Full pricing table (input/output per 1M tokens, monthly costs), migration difficulty table (code changes, API compatibility, time to migrate), quick picks (Drop-In/Cheapest/Best Value/Best for RAG), Python/Node.js migration code snippets, FAQPage schema with 4 questions, bottom line recommendations by use case. Targets high-volume search queries: "claude 4 alternatives comparison", "best claude 4 replacement", "cheapest claude 4 alternative".
-- **Added to sitemap.xml (631 URLs), rss.xml (509 items), blog.html index** — positioned at top of Claude 4 section
-- **Cross-linked from emergency page** — Added to claude-4-is-down.html related resources
-- **Cross-linked from migration hub** — Added to claude-4-migration-hub.html tools section
-- **1 commit, 6 files changed, 732 insertions.**
-
-## Session 637 (Jun 13) — Claude 4 Shutdown Timeline
-- **NEW BLOG POST: blog-claude-4-shutdown-timeline.html** — Complete deprecation timeline from April 2026 announcement through July 2026+ aftermath. Every key date, every milestone, what happens at each stage. Emergency fix code snippets (Python/Node.js/curl), 10 migration guides grid, FAQPage schema with 6 questions, Pro upsell with cost calculator CTA. ~670 lines.
-- **Added to sitemap.xml (630 URLs), rss.xml (508 items), blog.html index** — positioned with emergency content
-- **Cross-linked from emergency landing page** — Added to claude-4-is-down.html related resources
-- **Cross-linked from migration hub** — Added to claude-4-migration-hub.html guides section
-- **1 commit, 6 files changed, 668 insertions.**
-
-## Session 636 (Jun 13) — Claude 4 Shutdown Complete Developer Checklist
-- **NEW BLOG POST: blog-claude-4-shutdown-checklist.html** — Comprehensive checklist covering everything developers need: pre-shutdown prep, 410 error diagnosis, model ID migration, cost comparison, 10 alternatives with code snippets, and post-shutdown verification. FAQPage schema with 6 questions for rich snippets. ~770 lines.
-- **Added to sitemap.xml (629 URLs), rss.xml (507 items), blog.html index** — positioned with emergency content
-- **Cross-linked from emergency landing page** — Added to claude-4-is-down.html related resources section
-- **Cross-linked from migration hub** — Added to claude-4-migration-hub.html guides section
-- **1 commit, 6 files changed, 775 insertions.**
-
-## Summary: Sessions 634-635 (Jun 13) — 2 sessions
-2 migration guides (Grok save 83%, Cohere save 83%) — FAQPage schema, Python/Node.js code, cost comparisons. Interactive cost calculator on emergency page — 9 alternatives, model selector, savings hero, auto-recalculate. Total: 10 migration guides. Counts: 636 pages, 315 posts.
+## Summary: Sessions 634-639 (Jun 13-14) — 6 sessions
+Claude 4 emergency content blitz: Error Codes Reference (12 error types), Alternatives Comparison (10 alternatives), Shutdown Timeline, Shutdown Checklist, 2 migration guides (Grok, Cohere), interactive cost calculator, homepage countdown banner. 11 new pages/posts total. Counts: 641 pages, 315 posts.
 
 ## Summary: Sessions 628-633 (Jun 13) — 6 sessions
 Emergency conversion optimization: A/B price bug fix, trust badges, time-pressure counter, quick-fix trust bar, cross-links from 10+ pages. Emergency landing page (claude-4-is-down.html). Migration FAQ (25 questions). Emergency Action Plan post. CTA improvements (price in button, one-time messaging). Counts: 633 pages, 312 posts.

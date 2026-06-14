@@ -24,12 +24,12 @@
 - Activate shutdown special offer on claude-4-is-down.html once $9 Stripe link is provided
 - Update all Pro CTAs to use $9 shutdown special link during spike (then revert)
 - ✅ All pre-shutdown content DONE: auto-tense-flip (S598), shutdown-complete post (S614), down-fix post (S614), cross-links (S617), "What Replaced" post (S625), 10 migration guides (S628-630), Emergency Action Plan (S630), Emergency Landing Page (S631), Emergency Page Conversion Optimization (S633), Complete Developer Checklist (S636), 410 Fix Guide (S640), Developer Toolkit (S640), Claude 4 vs GPT-5 (S640)
-- ✅ Emergency page cross-links DONE: linked from 10+ pages including all major blog posts and hub page (Session 633)
+- ✅ Emergency page cross-links DONE: 57/57 Claude 4 pages now link to claude-4-is-down.html (Session 641 — was 18/57, added 39 missing)
 
-### Completed (Sessions 416-640, Jun 1-14)
+### Completed (Sessions 416-641, Jun 1-14)
+✅ Session 641: Emergency cross-links on ALL 57 Claude 4 pages (was 18, added 39). Sub-24h countdown banner upgrade (hours:minutes + pulse-glow). 1 commit, 41 files, 208 insertions.
 ✅ Session 640: 3 new pages — 410 Fix Guide (language-specific), Developer Toolkit (one-stop resource), Claude 4 vs GPT-5 (comparison). Cross-linked from emergency page and hub. 3 commits, 11 files, 1,816 insertions.
-✅ Session 639: Claude 4 API Error Codes Complete Reference — 12 error types with exact JSON responses, fixes, code snippets. Cross-linked from emergency page and migration hub. 1 commit, 6 files, 784 insertions.
-✅ Sessions 634-638: Claude 4 Alternatives Comparison, 2 migration guides (Grok, Cohere), interactive cost calculator, shutdown checklist, shutdown timeline. 5 commits, 24 files.
+✅ Sessions 634-639: Claude 4 Error Codes Reference, Alternatives Comparison, 2 migration guides (Grok, Cohere), interactive cost calculator, shutdown checklist, shutdown timeline, homepage countdown banner. 8 commits, 30 files.
 ✅ Sessions 626-633: Emergency landing page, 5 migration guides, Emergency Action Plan post, post-shutdown cross-links, meta descriptions, blog index fixes. 10+ commits. Total: 10 migration guides + 311 posts.
 ✅ Sessions 599-625: Blog posts, shutdown content, pricing fixes, Cost Efficiency Score, A/B tests, deprecation ecosystem, Survival Kit, founding member counter. 65+ commits.
 ✅ Sessions 416-598: Full APIpulse built from scratch. 623 pages, 303 posts, 82 tools, 167 comparisons.
