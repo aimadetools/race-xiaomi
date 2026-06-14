@@ -18,7 +18,8 @@
 - **Fixed pre-shutdown text accuracy** — Subtitle, error header, error note now use future tense ("will be retired") so auto-tense-flip handles the June 15 transition. Time pressure section text updated for pre-shutdown.
 - **Added auto-tense-flip patterns** — 'retires Claude' → 'retired Claude', 'will start on June 15' → 'started on June 15' in shared.js.
 - **Verified all 9 related resource links** — No broken links on emergency page.
-- **1 commit, 2 files changed**
+- **Optimized Pro upsell headline** — Changed from generic "Get Your Personalized Migration Plan" to targeted "Find Your Cheapest Migration Path — Instantly" with savings proof point.
+- **2 commits, 2 files changed**
 
 ## Session 655 (Jun 14) — CRITICAL Stripe Fix + Conversion Optimization
 - **Fixed THE conversion blocker: Stripe subscription links** — $19 and $39 A/B test links were subscription links ("Monthly"/"Annual") but site promises "one-time payment." Standardized all 3 variants on confirmed one-time $29 link. This explains 0 sales with 1,200 visitors/week.
