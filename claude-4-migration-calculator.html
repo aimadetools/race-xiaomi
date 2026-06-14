@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Claude 4 Migration Cost Calculator — Save 67-97% | APIpulse</title>
-    <meta name="description" content="Calculate exact savings from migrating off Claude 4. Input your usage, see cost comparison across 10 alternatives. Most devs save $500+/mo.">
-    <meta name="keywords" content="Claude 4 migration calculator, Claude 4 cost savings, migrate from Claude 4, Claude 4 alternative cost, Claude 4 replacement calculator">
-    <meta property="og:title" content="Claude 4 Migration Cost Calculator — Save 67-97%">
-    <meta property="og:description" content="Input your Claude 4 usage, see exact savings across 10 alternatives. Free tool.">
+    <meta name="description" content="Claude 4 is retired — API calls return 410 errors. Calculate exact savings migrating to DeepSeek, GPT-5, Gemini, or Claude Opus 4.8. Most devs save 67-97%.">
+    <meta name="keywords" content="claude 4 alternative, claude 4 migration, claude 4 replacement, cheapest claude alternative, claude 4 cost comparison, switch from claude 4, claude 4 API error 410">
+    <meta property="og:title" content="Claude 4 Is Dead — Find Your Cheapest Replacement">
+    <meta property="og:description" content="Claude 4 API is returning 410 errors. Calculate your exact savings switching to a cheaper alternative. Most devs save 67-97%.">
     <meta property="og:type" content="website">
     <meta property="og:image" content="https://getapipulse.com/og-image.png">
     <meta property="og:url" content="https://getapipulse.com/claude-4-migration-calculator.html">
@@ -133,12 +133,12 @@
 
     <main id="main">
     <div class="calc-hero">
-        <h1>Claude 4 Migration Calculator</h1>
-        <p>Enter your current Claude 4 usage below. See exactly how much you'll save by migrating to a replacement model — before the June 15 shutdown.</p>
+        <h1>Claude 4 Is Dead. <span style="color:#ef4444;">Find Your Cheapest Fix.</span></h1>
+        <p>Claude 4 Opus & Sonnet 4 returned HTTP 410 errors since June 15. Enter your usage below to see exactly how much you'll save with each alternative.</p>
     </div>
 
     <div class="urgency-bar">
-        ⏰ <strong>Claude 4 shuts down in 4 days</strong> (June 15, 2026). Calculate your savings and migrate today.
+        🔴 <strong>Claude 4 API calls are failing — HTTP 410 Gone.</strong> Calculate your savings and switch to a working model today.
     </div>
 
     <section class="calculator-section">
@@ -155,7 +155,7 @@
                 <div class="label">Currently using</div>
                 <div class="model-name">Claude 4 Opus</div>
                 <div class="model-price">$15.00 / $75.00 per 1M tokens (input/output)</div>
-                <div class="model-status">⚠️ RETIRING JUNE 15, 2026</div>
+                <div class="model-status">🔴 RETIRED — API calls return 410 Gone</div>
             </div>
 
             <div class="calc-grid">
@@ -299,18 +299,18 @@
     // Claude 4 pricing (deprecated)
     var CLAUDE4 = { input: 15, output: 75, name: 'Claude 4 Opus' };
 
-    // Alternatives ranked by savings
+    // Alternatives — accurate pricing from pricing-data.js, will be sorted by cost
     var ALTERNATIVES = [
-        { id: 'llama-4-maverick', provider: 'Meta (Together.ai)', name: 'Llama 4 Maverick', input: 0.27, output: 0.85, tier: 'Budget', context: '1M', quality: 'Good for most tasks' },
-        { id: 'deepseek-v4-pro', provider: 'DeepSeek', name: 'V4 Pro', input: 0.435, output: 0.87, tier: 'Budget', context: '128K', quality: 'Near Claude quality' },
-        { id: 'deepseek-v4-flash', provider: 'DeepSeek', name: 'V4 Flash', input: 0.14, output: 0.28, tier: 'Budget', context: '128K', quality: 'Fast, cost-effective' },
-        { id: 'google-flash', provider: 'Google', name: 'Gemini 2.0 Flash', input: 0.10, output: 0.40, tier: 'Budget', context: '1M', quality: 'Multimodal, fast' },
-        { id: 'google-pro', provider: 'Google', name: 'Gemini 2.5 Pro', input: 1.25, output: 10.00, tier: 'Mid-tier', context: '1M', quality: 'Strong reasoning' },
-        { id: 'openai-gpt5-mini', provider: 'OpenAI', name: 'GPT-5 mini', input: 0.25, output: 2.00, tier: 'Budget', context: '128K', quality: 'Good general purpose' },
-        { id: 'anthropic-opus48', provider: 'Anthropic', name: 'Claude Opus 4.8', input: 5.00, output: 25.00, tier: 'Premium', context: '200K', quality: 'Same quality tier' },
-        { id: 'anthropic-sonnet46', provider: 'Anthropic', name: 'Claude Sonnet 4.6', input: 3.00, output: 15.00, tier: 'Mid-tier', context: '200K', quality: 'Fast, capable' },
-        { id: 'mistral-large', provider: 'Mistral', name: 'Large', input: 2.00, output: 6.00, tier: 'Mid-tier', context: '128K', quality: 'Strong multilingual' },
-        { id: 'openai-gpt5', provider: 'OpenAI', name: 'GPT-5', input: 1.25, output: 10.00, tier: 'Mid-tier', context: '128K', quality: 'Flagship' }
+        { id: 'deepseek-v4-flash', provider: 'DeepSeek', name: 'V4 Flash', input: 0.14, output: 0.28, tier: 'Budget', context: '1M', quality: 'Fast, cheapest capable model' },
+        { id: 'deepseek-v4-pro', provider: 'DeepSeek', name: 'V4 Pro', input: 0.435, output: 0.87, tier: 'Budget', context: '1M', quality: 'Near Opus quality at 97% less' },
+        { id: 'llama-4-maverick', provider: 'Meta (Together.ai)', name: 'Llama 4 Maverick', input: 0.27, output: 0.85, tier: 'Budget', context: '1M', quality: 'Open source, self-hostable' },
+        { id: 'openai-gpt5-mini', provider: 'OpenAI', name: 'GPT-5 mini', input: 0.25, output: 2.00, tier: 'Budget', context: '272K', quality: 'Great value, strong general purpose' },
+        { id: 'mistral-large', provider: 'Mistral', name: 'Mistral Large 3', input: 0.50, output: 1.50, tier: 'Budget', context: '262K', quality: 'Good EU/data residency option' },
+        { id: 'google-gemini3-flash', provider: 'Google', name: 'Gemini 3 Flash', input: 0.50, output: 3.00, tier: 'Budget', context: '1M', quality: 'Fast, multimodal' },
+        { id: 'anthropic-sonnet46', provider: 'Anthropic', name: 'Claude Sonnet 4.6', input: 3.00, output: 15.00, tier: 'Mid', context: '1M', quality: 'Same API, just update model name' },
+        { id: 'openai-gpt5', provider: 'OpenAI', name: 'GPT-5', input: 1.25, output: 10.00, tier: 'Mid', context: '272K', quality: 'Strong reasoning, huge context' },
+        { id: 'google-pro', provider: 'Google', name: 'Gemini 2.5 Pro', input: 1.25, output: 10.00, tier: 'Mid', context: '1M', quality: 'Excellent coding, 1M context' },
+        { id: 'anthropic-opus48', provider: 'Anthropic', name: 'Claude Opus 4.8', input: 5.00, output: 25.00, tier: 'Premium', context: '1M', quality: 'Same quality tier, 67% cheaper' }
     ];
 
     function calculateMigration() {
@@ -362,13 +362,15 @@
             bestContainer.innerHTML = '';
         }
 
-        // Update alternative cards
+        // Update alternative cards — sort by monthly cost ascending
         var altGrid = document.getElementById('alt-grid');
-        var html = '';
-        ALTERNATIVES.forEach(function(alt) {
+        var sortedAlts = ALTERNATIVES.map(function(alt) {
             var altCost = ((totalInput / 1000000) * alt.input) + ((totalOutput / 1000000) * alt.output);
-            var savings = totalCost - altCost;
-            var pct = totalCost > 0 ? Math.round((savings / totalCost) * 100) : 0;
+            return { alt: alt, cost: altCost, savings: totalCost - altCost, pct: totalCost > 0 ? Math.round(((totalCost - altCost) / totalCost) * 100) : 0 };
+        }).sort(function(a, b) { return a.cost - b.cost; });
+        var html = '';
+        sortedAlts.forEach(function(item) {
+            var alt = item.alt, altCost = item.cost, savings = item.savings, pct = item.pct;
             html += '<div class="alt-card">';
             html += '<div class="provider">' + alt.provider + '</div>';
             html += '<div class="model">' + alt.name + '</div>';
@@ -413,5 +415,55 @@
             <a href="claude-4-is-down.html" style="color:#ef4444;text-decoration:underline;font-weight:600;">Get the 5-minute fix guide →</a>
         </div>
     </div>
+
+    <!-- Email capture -->
+    <div style="max-width:500px;margin:40px auto;padding:24px;background:var(--bg-card);border:1px solid var(--border);border-radius:12px;text-align:center;">
+        <h3 style="font-size:16px;font-weight:700;margin-bottom:8px;">📬 Get pricing alerts when models change</h3>
+        <p style="font-size:13px;color:var(--text-secondary);margin-bottom:16px;">Free weekly digest: new models, price drops, and deprecation warnings. Join 500+ developers.</p>
+        <form id="migration-email-form" style="display:flex;gap:8px;max-width:400px;margin:0 auto;" onsubmit="handleMigrationSubscribe(event)">
+            <input type="email" placeholder="you@company.com" required id="migration-email-input" style="flex:1;padding:12px 16px;border-radius:8px;border:1px solid var(--border);background:var(--bg-secondary);color:var(--text-primary);font-size:14px;font-family:inherit;">
+            <button type="submit" id="migration-subscribe-btn" style="padding:12px 20px;border-radius:8px;border:none;background:var(--accent);color:white;font-size:14px;font-weight:700;cursor:pointer;white-space:nowrap;">Subscribe</button>
+        </form>
+        <p id="migration-subscribe-msg" style="margin-top:8px;font-size:13px;display:none;"></p>
+    </div>
+
+    <script>
+    // Fix Pro CTA links to use A/B test
+    document.addEventListener('DOMContentLoaded', function() {
+        var proLinks = document.querySelectorAll('a[href*="buy.stripe.com"]');
+        proLinks.forEach(function(a) {
+            if (window._abStripeLink) a.href = window._abStripeLink;
+        });
+        var proPriceEls = document.querySelectorAll('.pro-price');
+        proPriceEls.forEach(function(el) {
+            if (window._abPrice) el.textContent = '$' + window._abPrice;
+        });
+    });
+
+    function handleMigrationSubscribe(e) {
+        e.preventDefault();
+        var email = document.getElementById('migration-email-input').value;
+        var btn = document.getElementById('migration-subscribe-btn');
+        var msg = document.getElementById('migration-subscribe-msg');
+        btn.disabled = true; btn.textContent = '...';
+        fetch('/api/subscribe', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ email: email })
+        })
+        .then(function(r) { return r.json(); })
+        .then(function(data) {
+            msg.style.display = 'block'; msg.style.color = 'var(--green)';
+            msg.textContent = '✓ ' + data.message;
+            document.getElementById('migration-email-input').value = '';
+            if (window.trackEvent) window.trackEvent('email_signup', { source: 'migration_calculator' });
+        })
+        .catch(function() {
+            msg.style.display = 'block'; msg.style.color = 'var(--red)';
+            msg.textContent = 'Something went wrong. Try again.';
+        })
+        .finally(function() { btn.disabled = false; btn.textContent = 'Subscribe'; });
+    }
+    </script>
 </body>
 </html>

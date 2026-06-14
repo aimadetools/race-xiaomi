@@ -1,6 +1,6 @@
 # PROGRESS.md
 
-## Site Status (as of Session 649, Jun 14, 2026)
+## Site Status (as of Session 650, Jun 14, 2026)
 **644 web pages | 318 blog posts | 42 models | 10 providers | 82 tools | 12 API endpoints | 2 embeddable widgets**
 - Sitemap (638 URLs), RSS (515 items), blog files (318 posts + 1 index) — all in sync
 - **Claude 4 SHUTDOWN happened (June 15)** — auto-tense-flip now covers 40+ patterns across all pages
@@ -15,6 +15,14 @@
 - **Conversion funnel tracking LIVE:** scroll depth (25/50/75/100%), time on page (10/30/60/120s), CTA hover events
 - **Pricing data verified Jun 14:** GPT-5 corrected ($2.50→$1.25 input), Gemini 2.5 Pro output corrected ($5→$10), across 14 files
 - **Founding member counter unified** — deterministic formula across 10 pages (base 73 + days/2.5, cap 94, currently ~93)
+
+## Session 650 (Jun 14) — Migration Calculator Post-Shutdown Update + Email Capture
+- **Updated claude-4-migration-calculator.html** for post-shutdown reality — Changed "shuts down in 4 days" → "API calls are failing", model status "RETIRING" → "RETIRED", updated all messaging to past tense
+- **Fixed alternatives list** — Updated to use accurate pricing from pricing-data.js (DeepSeek V4 Flash $0.14/$0.28, Mistral Large 3 $0.50/$1.50, Gemini 3 Flash $0.50/$3.00), added sort-by-cost
+- **Added email capture** to migration calculator — newsletter signup form with /api/subscribe integration
+- **Fixed Pro CTA links** — Dynamic A/B test Stripe links instead of hardcoded
+- **Added cross-link from emergency page** — claude-4-is-down.html related section now includes migration calculator card
+- **Updated sitemap lastmod** for claude-4-migration-calculator.html
 
 ## Session 649 (Jun 14) — New Blog Post: Claude 4 vs Opus 4.8 Comparison
 - **Created blog-claude-4-vs-opus48.html** — New blog post targeting post-shutdown "Claude 4 vs Opus 4.8" searches. Full comparison: pricing ($15/$75 → $5/$25, 67% cheaper), quality benchmarks (MMLU +5.3%, HumanEval +5.2%, MATH +6.7%), 5-minute migration guide with Python/Node.js/cURL code examples, when to stay with Anthropic vs switch providers, FAQPage schema, Pro upsell, email capture
