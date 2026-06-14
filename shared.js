@@ -399,6 +399,8 @@ document.addEventListener('DOMContentLoaded', () => {
         ['3 days left', 'deadline has passed'],
         ['2 days left', 'deadline has passed'],
         ['1 day left', 'deadline has passed'],
+        ['0 days left', 'deadline has passed'],
+        ['0 days', 'deadline has passed'],
         ['4 days until deadline', 'deadline has passed'],
         ['4 days until Claude 4', 'Claude 4 has been retired since June 15'],
         ['3 days until Claude 4', 'Claude 4 has been retired since June 15'],
