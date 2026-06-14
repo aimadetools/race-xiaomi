@@ -19,7 +19,8 @@
 - **Past-tense sweep across 12 pages** — Fixed hardcoded past-tense references ("was retired", "was deprecated") that pre-dated the shutdown. Pages fixed: blog.html (4 card descriptions), claude-4-410-fix.html, claude-4-alternatives-comparison.html, claude-4-alternatives-by-use-case.html, claude-4-error-codes-reference.html, claude-4-error.html (meta + JSON-LD), claude-4-deprecation.html (redirect notice now hidden until post-June 15), anthropic.html (JSON-LD), blog-claude-4-deprecated-countdown.html (og:description), blog-claude-4-deprecated-migration-guide.html (JSON-LD), blog-claude-4-deprecation-faq.html (meta + keywords + CTA), claude-4-migration-command-center.html (JSON-LD).
 - **Verified:** All Stripe links consistent ($29 one-time), auto-tense-flip covers 40+ patterns, cost ticker on 5 pages, all internal links valid, 319 blog files confirmed.
 - **Added Pro CTA to blog sidebar** — "Lock in Founding Member Price — $29" card below shutdown urgency box. Targets developers browsing shutdown content.
-- **5 commits, 18 files changed**
+- **Added Pro CTA to shutdown FAQ** — blog-claude-4-shutdown-faq.html had no Stripe link. Added founding member CTA card with urgency messaging.
+- **6 commits, 19 files changed**
 
 ## Session 661 (Jun 14) — Conversion Optimization + Site Quality Fixes
 - **Added live cost-of-inaction ticker** to 5 high-traffic pages — shared.js auto-initializes on any page with `#cost-ticker-amount`. Shows real-time money lost since Claude 4 shutdown based on $500/mo default spend. Pre-shutdown shows projected daily loss; post-shutdown shows live counter updating every second.
