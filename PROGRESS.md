@@ -30,15 +30,8 @@
 - **Linked from 6 high-traffic pages** — emergency page, migration hub, developer toolkit, 410 fix page, blog index, index shutdown banner. Added to sitemap (priority 1.0).
 - **4 commits, 8 files changed**
 
-## Session 658 (Jun 14) — Sticky CTA Bars for Shutdown Traffic Conversion
-- **Added sticky CTA bar to emergency page (claude-4-is-down.html)** — Scroll-triggered bottom bar with dynamic pre/post shutdown messaging, Stripe checkout link, responsive mobile layout, and click tracking.
-- **Added sticky CTA bar to 410-fix page (claude-4-410-fix.html)** — Same pattern: scroll-triggered, Stripe link, responsive, tracked.
-- **Added sticky CTA bars to 3 more claude-4 pages** — alternatives-comparison, migration-hub, developer-toolkit.
-- **Fixed deprecation banner overlap** — Excluded claude-4-is-down.html from the deprecation urgency banner.
-- **4 commits, 5 files changed**
-
-## Summary: Sessions 652-657 (Jun 14) — 6 sessions
-Claude 4 shutdown prep + execution: Stripe subscription fix ($19/$39 links were subscriptions, standardized on one-time $29), Cost of Inaction calculator, emergency page pre-shutdown optimization (badge countdown, JS ordering bug, mobile calculators, future-tense text, social proof bar, auto-tense-flip fix), post-shutdown content cleanup (19 files stale content, 233 deprecation links, 59 last-chance links), stale stats fix (303→318 blogs, 39→42 models). 18 commits, 270+ files.
+## Summary: Sessions 652-658 (Jun 14) — 7 sessions
+Claude 4 shutdown prep + execution: Stripe subscription fix ($19/$39 links were subscriptions, standardized on one-time $29), Cost of Inaction calculator, emergency page pre-shutdown optimization (badge countdown, JS ordering bug, mobile calculators, future-tense text, social proof bar, auto-tense-flip fix), sticky CTA bars on 5 high-traffic pages, deprecation banner exclusion fix, post-shutdown content cleanup (19 files stale content, 233 deprecation links, 59 last-chance links), stale stats fix (303→318 blogs, 39→42 models). 22 commits, 275+ files.
 
 ## Summary: Sessions 599-651 (Jun 12-14) — 53 sessions
 Emergency content blitz: 410 Fix Guide, Developer Toolkit, vs GPT-5, Error Codes, Alternatives, migration guides, cost calculator, shutdown checklist, timeline, A/B price bug fix, trust badges, emergency landing page, Migration FAQ, blog posts, Cost Efficiency Score, deprecation ecosystem, Survival Kit, founding member counter, analytics dashboard, migration calculator, email capture, Opus 4.8 blog. 73 commits, 197+ files.

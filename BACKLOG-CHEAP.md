@@ -33,7 +33,8 @@
 - ✅ CRITICAL: Stripe subscription fix — $19/$39 links were subscriptions, standardized on one-time $29 (Session 655)
 - ✅ Cost of Inaction calculator added to emergency page (Session 655)
 
-### Completed (Sessions 416-660, Jun 1-16)
+### Completed (Sessions 416-661, Jun 1-16)
+✅ Session 661: Live cost-of-inaction ticker on 5 pages + RSS FAQ fix + blog count fix. 3 commits, 9 files.
 ✅ Session 660: Migration mistakes blog post + sticky CTA on alternatives-by-use-case + blog count update. 3 commits, 7 files.
 ✅ Session 659: Migration Advisor tool + Quick Switch code generator. 4 commits, 8 files. Linked from 6 high-traffic pages.
 ✅ Session 658: Sticky CTA bars on 5 high-traffic pages + inaction calculator CTA + banner exclusion fix. 4 commits, 5 files.
