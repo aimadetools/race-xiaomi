@@ -744,6 +744,11 @@ claude-sonnet-4-6</code>
                     <div style="font-size:28px;font-weight:800;color:#ef4444;">$29 <span style="font-size:14px;color:var(--text-muted);text-decoration:line-through;">$49</span></div>
                     <div style="font-size:12px;color:var(--text-muted);">One-time · Lifetime · Only during the shutdown</div>
                 </div>
+                <!-- Founding member urgency -->
+                <div style="background:linear-gradient(135deg,rgba(245,158,11,0.08),rgba(239,68,68,0.06));border:1px solid rgba(245,158,11,0.25);border-radius:10px;padding:14px 16px;margin-bottom:16px;text-align:center;">
+                    <div style="font-size:13px;font-weight:700;color:#d97706;">🔥 Founding member pricing — <span id="founding-countdown">locks soon</span></div>
+                    <div style="font-size:12px;color:var(--text-muted);margin-top:4px;">Price increases to $49 after founding period ends</div>
+                </div>
                 <div class="pro-price" id="regular-price">
                     <span class="old-price" id="pro-old-price">$29</span>
                     <span class="new-price" id="pro-price">$29</span>
@@ -751,6 +756,13 @@ claude-sonnet-4-6</code>
                 </div>
                 <a href="#" class="pro-cta" id="pro-cta-link">Get Pro — Lifetime Access</a>
                 <p class="pro-guarantee">14-day money-back guarantee · Instant access · No subscription — ever</p>
+                <!-- What you get immediately -->
+                <div style="margin-top:16px;padding:14px;background:var(--bg-secondary);border:1px solid var(--border);border-radius:8px;text-align:left;">
+                    <div style="font-size:12px;font-weight:700;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.5px;margin-bottom:8px;">Instant access after purchase:</div>
+                    <div style="font-size:13px;color:var(--text-secondary);line-height:1.6;">
+                        ✅ Cost calculator with your exact usage · ✅ 10 saved scenarios · ✅ PDF cost reports · ✅ Optimization recommendations · ✅ Cost alerts
+                    </div>
+                </div>
                 <!-- Trust badges -->
                 <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:16px;margin-top:20px;">
                     <div style="display:flex;align-items:center;gap:6px;font-size:12px;color:var(--text-muted);background:var(--bg-secondary);padding:6px 12px;border-radius:6px;border:1px solid var(--border);">
@@ -896,6 +908,28 @@ claude-sonnet-4-6</code>
                 var specialPriceEl = document.querySelector('#shutdown-special .new-price, #shutdown-special div[style*="font-size:28px"]');
                 if (specialPriceEl) specialPriceEl.textContent = '$29';
             }
+
+            // Founding member countdown — shows days until price increase
+            var foundingEnd = new Date('2026-07-15T00:00:00Z'); // 30 days after shutdown
+            var foundingEl = document.getElementById('founding-countdown');
+            function updateFoundingCountdown() {
+                if (!foundingEl) return;
+                var now = new Date();
+                var diff = foundingEnd - now;
+                if (diff <= 0) {
+                    foundingEl.textContent = 'ended — price is now $49';
+                    return;
+                }
+                var days = Math.ceil(diff / (1000 * 60 * 60 * 24));
+                if (days <= 3) {
+                    foundingEl.textContent = 'ends in ' + days + ' day' + (days === 1 ? '' : 's') + ' — lock in $29 now';
+                    foundingEl.style.color = '#ef4444';
+                } else {
+                    foundingEl.textContent = 'ends in ' + days + ' days';
+                }
+            }
+            updateFoundingCountdown();
+            setInterval(updateFoundingCountdown, 60000);
 
             // Track page view
             if (window.trackEvent) window.trackEvent('claude4_is_down_page_view');
