@@ -35,7 +35,8 @@
 19. Community feedback integration — Act on Reddit/HN feedback.
 20. Plan v2 — If revenue justifies, plan next features.
 
-### Completed (Sessions 416-651, Jun 1-16)
+### Completed (Sessions 416-652, Jun 1-16)
+✅ Session 652: Post-shutdown stale content sweep — Fixed future-tense references across 5 files. Auto-tense-flip missed provider pages and blog index.
 ✅ Session 651: Client-side analytics dashboard (admin.html) — A/B test visualization, conversion funnel, popup engagement, event log.
 ✅ Sessions 646-650: Opus 4.8 blog post, founding member urgency, shutdown activation, 410 error fix blog, auto-tense-flip gaps, dynamic badge, migration calculator post-shutdown update, email capture. 10 commits, 16 files.
 ✅ Sessions 599-645: Claude 4 shutdown prep + execution — future tense fixes, Shutdown FAQ, GPT-5 pricing fixes, broken links, emergency cross-links, 3 new pages, Error Codes, Alternatives, migration guides, cost calculator, shutdown checklist, timeline, Emergency Action Plan, blog posts, Cost Efficiency Score, A/B tests, deprecation ecosystem, Survival Kit, founding member counter. 83 commits, 180+ files.

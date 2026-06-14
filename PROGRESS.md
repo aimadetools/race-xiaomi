@@ -1,6 +1,6 @@
 # PROGRESS.md
 
-## Site Status (as of Session 651, Jun 14, 2026)
+## Site Status (as of Session 652, Jun 14, 2026)
 **645 web pages | 318 blog posts | 42 models | 10 providers | 82 tools | 12 API endpoints | 2 embeddable widgets**
 - Sitemap (638 URLs), RSS (515 items), blog files (318 posts + 1 index) — all in sync
 - **Claude 4 SHUTDOWN happened (June 15)** — auto-tense-flip covers 40+ patterns across all pages
@@ -12,6 +12,16 @@
 - **Client-side analytics dashboard** — admin.html reads localStorage events, shows A/B splits, conversion funnel, popup engagement (no GA4 needed)
 - **Pricing data verified Jun 14:** GPT-5 corrected ($2.50→$1.25 input), Gemini 2.5 Pro output corrected ($5→$10), across 14 files
 - **Founding member counter unified** — deterministic formula across 10 pages (base 73 + days/2.5, cap 94, currently ~93)
+- **Post-shutdown stale content sweep complete** — Fixed future-tense references across anthropic.html, pricing.html, tools.html, blog.html, state-of-llm-pricing-june-2026.html (auto-tense-flip missed provider pages and blog index)
+
+## Session 652 (Jun 14) — Post-Shutdown Stale Content Sweep
+- **Fixed stale future-tense content across 5 files** — The auto-tense-flip in shared.js only covers pages matching *claude-4-*, *compare-*, *migration*, etc. Provider pages and the blog index were missed.
+- **anthropic.html** — Changed "is being deprecated June 15" → "was retired on June 15", updated deprecation alert banner to retirement notice with red styling
+- **pricing.html** — Changed "Claude 4 Retires" → "Claude 4 Was Retired June 15", "Your API calls will fail" → "Your API calls are failing"
+- **tools.html** — Fixed 2 stale references on deprecation calculator and migration tool cards
+- **blog.html** — Fixed 9 stale references across blog post descriptions ('shuts down in 2/4 days', 'retires June 15', 'before June 15', '10 days left')
+- **state-of-llm-pricing-june-2026.html** — Changed "4 days left — deprecation deadline" → "Claude 4 retired June 15, 2026"
+- **3 commits, 5 files changed**
 
 ## Session 651 (Jun 14) — Analytics Dashboard
 - **Created admin.html** — Client-side analytics dashboard that reads localStorage events
