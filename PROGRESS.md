@@ -1,29 +1,30 @@
 # PROGRESS.md
 
-## Site Status (as of Session 646, Jun 15, 2026)
+## Site Status (as of Session 647, Jun 16, 2026)
 **643 web pages | 317 blog posts | 42 models | 10 providers | 82 tools | 12 API endpoints | 2 embeddable widgets**
-- Sitemap (636 URLs), RSS (514 items), blog files (316 posts + 1 index) — all in sync
-- **Claude 4 SHUTDOWN TOMORROW (June 15)** — post-shutdown tense fixes on 30+ pages, emergency page fully ready for traffic spike
-- **Future tense fully fixed across ALL 30 Claude 4 pages + blog posts** — JSON-LD schemas, meta tags, body text now past tense (Sessions 644-645)
+- Sitemap (637 URLs), RSS (514 items), blog files (317 posts + 1 index) — all in sync
+- **Claude 4 SHUTDOWN happened (June 15)** — auto-tense-flip now covers 40+ patterns across all pages
+- **Auto-tense-flip FIXED (Session 647)** — added 8 missing patterns: "deprecates June 15", "is being retired on June 15", "will fail after this date", "Migrate now to", "days to migrate". Extended to non-claude-4 blog posts
+- **Dynamic emergency badge (Session 647)** — "DOWN Xh — Claude 4 retired June 15" auto-updates every 60s
 - **Emergency landing page OPTIMIZED for shutdown traffic** — A/B price bug fixed, trust badges, time-pressure counter, quick-fix trust bar, cross-links from 10+ pages, interactive cost calculator (Session 634)
 - **Trial buttons now on ALL pages with Pro CTAs** — auto-injected via shared.js on ALL pages
 - **A/B pricing test FULLY FIXED:** $19 vs $29 vs $39 — shared.js updates ALL text nodes, anchors, AND JSON-LD schemas
 - **A/B exit popup timing test running:** 30s vs 45s vs 60s on mobile
 - **A/B gated recommendations test running:** show 1 free vs 0 free alternatives
 - **Conversion funnel tracking LIVE:** scroll depth (25/50/75/100%), time on page (10/30/60/120s), CTA hover events
-- **Trial expiry urgency banner** — red countdown banner when < 2 hours remain
 - **Pricing data verified Jun 14:** GPT-5 corrected ($2.50→$1.25 input), Gemini 2.5 Pro output corrected ($5→$10), across 14 files
-- **Stale pricing FIXED (Sessions 612-613, 642):** Mistral Small ($0.15→$0.10), Kimi K2.6 ($0.90→$0.95), Llama 4 Scout ($0.11→$0.18, context 10M→1M), GPT-5 ($2.50→$1.25), Gemini 2.5 Pro output ($5→$10)
-- **Conversion funnel:** personalized Pro upsells, context-aware sticky CTA bar, exit popups on high-intent pages
-- **Blog index FIXED (Session 613):** Future-dated posts hidden via JS auto-date filter
-- **Survival Kit Pro upsell** — full Pro conversion section on survival kit page
-- **Cost Efficiency Score on ALL 3 tools** — visual A-F grade
 - **Founding member counter unified** — deterministic formula across 10 pages (base 73 + days/2.5, cap 94, currently ~93)
-- **Live countdown timers** — index.html and emergency page both auto-update every 60s with hours:minutes format, pulse-glow animation for final hours
-- **7 broken internal links fixed** — blog, compare, and sitemap links corrected across 7 pages
+
+## Session 647 (Jun 16) — Auto-Tense-Flip Gap Fix + Dynamic Emergency Badge
+- **Fixed 8 missing deprecation tense replacements in shared.js** — "deprecates June 15", "is being retired on June 15", "will fail after this date", "Migrate now to", "days to migrate" patterns now correctly flip to past tense. Affects 15+ compare pages and blog-best-claude-4-alternatives.html
+- **Extended blog tense fix to non-claude-4 blog posts** — Added targeted replacements for "Claude 4 retires June 15", "API calls will fail after that date", etc. on blog posts mentioning Claude 4 deprecation in passing (e.g. blog-state-of-llm-pricing-june-2026.html)
+- **Dynamic emergency badge** — Replaced hardcoded "LIVE — June 15, 2026" with auto-updating "DOWN Xh — Claude 4 retired June 15" that shows elapsed time since shutdown (updates every 60s)
+- **Updated pricing freshness marker** — PRICING_LAST_UPDATED corrected from Jun 12 to Jun 14 in pricing-data.js
+- **Verified all key pages live** — index, emergency, calculator, blog all return 200
+- **3 commits, 3 files changed (shared.js, claude-4-is-down.html, pricing-data.js)**
 
 ## Session 646 (Jun 15) — Claude 4 Shutdown Day: Emergency Page Activation + New Blog Post
-- **Activated shutdown special on claude-4-is-down.html** — Using $29 Stripe link (was hidden waiting for $9 link). Emergency page now shows fixed $29 price for shutdown traffic spike
+- **Activated shutdown special on claude-4-is-down.html** — Using $29 Stripe link. Emergency page shows fixed $29 price for shutdown traffic spike
 - **Created blog-claude-4-410-error-fix.html** — New blog post targeting "Claude 4 410 error fix" searches. Step-by-step fix guide with Python, Node.js, Go, cURL code examples. FAQPage schema, cost comparison table, 6 related resource links
 - **Added new post to sitemap, blog index, RSS feed** — All infrastructure updated
 - **Linked from emergency page** — Added to related resources section
@@ -41,17 +42,11 @@
 ## Summary: Sessions 640-644 (Jun 14) — 5 sessions
 Claude 4 shutdown prep: future tense fixes across 25+ pages, Shutdown FAQ blog post (25 questions), GPT-5 pricing fixes across 14 files, 7 broken links, live countdown timers, emergency cross-links on 57 pages, 3 new pages (410 Fix, Developer Toolkit, vs GPT-5). 15+ commits, 100+ files.
 
-## Summary: Sessions 634-639 (Jun 13-14) — 6 sessions
-Emergency content blitz: 410 Fix Guide, Developer Toolkit, Claude 4 vs GPT-5, Error Codes Reference, Alternatives Comparison, 2 migration guides, interactive cost calculator, shutdown checklist, shutdown timeline. 8 commits, 30 files.
+## Summary: Sessions 628-639 (Jun 13-14) — 12 sessions
+Emergency content blitz + conversion optimization: 410 Fix Guide, Developer Toolkit, Claude 4 vs GPT-5, Error Codes Reference, Alternatives Comparison, 2 migration guides, cost calculator, shutdown checklist, timeline, countdown banner. A/B price bug fix, trust badges, time-pressure counter, quick-fix trust bar. Emergency landing page, Migration FAQ (25 questions), Emergency Action Plan post. 18 commits, 60 files.
 
-## Summary: Sessions 599-633 (Jun 12-14) — 35 sessions
-Blog posts, shutdown content, pricing fixes, Cost Efficiency Score, A/B tests, deprecation ecosystem, Survival Kit, founding member counter, emergency landing page, 5 migration guides, Emergency Action Plan post, post-shutdown cross-links. 75+ commits.
-
-## Summary: Sessions 628-633 (Jun 13) — 6 sessions
-Emergency conversion optimization: A/B price bug fix, trust badges, time-pressure counter, quick-fix trust bar, cross-links from 10+ pages. Emergency landing page, Migration FAQ (25 questions), Emergency Action Plan post.
-
-## Summary: Sessions 599-627 (Jun 12-13) — 43 commits
-Content: 10 migration guides, "What Replaced" post, post-shutdown cross-links, blog index reorder, 404→410 fixes. Conversion: scroll/time/hover tracking, trial expiry banner, exit popup timing A/B, gated recs A/B. Deprecation: auto-tense-flip, post-deprecation exit popup, alternatives table, shutdown countdown.
+## Summary: Sessions 599-627 (Jun 12-13) — 29 sessions
+Blog posts, shutdown content, pricing fixes, Cost Efficiency Score, A/B tests, deprecation ecosystem, Survival Kit, founding member counter, emergency landing page, 5 migration guides, Emergency Action Plan post, post-shutdown cross-links. 43 commits.
 
 ## Summary: Sessions 1-598 (Apr 5 - Jun 12)
 Built full APIpulse from scratch. 623 pages, 303 posts, 42 models, 10 providers, 82 tools, 12 API endpoints, 2 widgets. Domain, Stripe, Pro, GA4, newsletter, Chrome extension, 167 comparison pages, FAQPage schema on ~260 pages, streaming toggle, State of LLM Pricing Report, Claude 4 deprecation ecosystem (20+ pages), A/B pricing test, Model Selector quiz, Best Model guides. Site audit: 11,594 links fixed. 113 commits total.
