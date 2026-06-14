@@ -15,13 +15,14 @@
 - **Post-shutdown stale content sweep complete** — Fixed future-tense references across anthropic.html, pricing.html, tools.html, blog.html, state-of-llm-pricing-june-2026.html (auto-tense-flip missed provider pages and blog index)
 
 ## Session 652 (Jun 14) — Post-Shutdown Stale Content Sweep
-- **Fixed stale future-tense content across 5 files** — The auto-tense-flip in shared.js only covers pages matching *claude-4-*, *compare-*, *migration*, etc. Provider pages and the blog index were missed.
+- **Fixed stale future-tense content across 19 files** — The auto-tense-flip in shared.js only covers pages matching *claude-4-*, *compare-*, *migration*, etc. Provider pages, blog index, and comparison pages were missed.
 - **anthropic.html** — Changed "is being deprecated June 15" → "was retired on June 15", updated deprecation alert banner to retirement notice with red styling
 - **pricing.html** — Changed "Claude 4 Retires" → "Claude 4 Was Retired June 15", "Your API calls will fail" → "Your API calls are failing"
 - **tools.html** — Fixed 2 stale references on deprecation calculator and migration tool cards
 - **blog.html** — Fixed 9 stale references across blog post descriptions ('shuts down in 2/4 days', 'retires June 15', 'before June 15', '10 days left')
 - **state-of-llm-pricing-june-2026.html** — Changed "4 days left — deprecation deadline" → "Claude 4 retired June 15, 2026"
-- **3 commits, 5 files changed**
+- **14 comparison pages** — Fixed 'being deprecated on June 15' → 'was retired', 'deprecates on June 15' → 'was retired', 'will fail with errors' → 'return 410 Gone errors', FAQ questions from future to past tense
+- **5 commits, 19 files changed**
 
 ## Session 651 (Jun 14) — Analytics Dashboard
 - **Created admin.html** — Client-side analytics dashboard that reads localStorage events
