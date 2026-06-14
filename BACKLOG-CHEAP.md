@@ -14,15 +14,17 @@
 - Review last-chance page and calculator → Pro upsell funnel
 - Monitor cost-audit, savings-calculator, trial button, efficiency_score, pro_gated_rec engagement
 
-### Post-Claude 4 Shutdown (June 15 — TOMORROW)
+### Post-Claude 4 Shutdown (June 15 — TODAY)
 - Monitor post-shutdown traffic spikes (searches for "Claude 4 shutdown", "410 error", "Claude 4 down")
 - Track claude-4-is-down.html performance — emergency landing page optimized for conversions
+- Track blog-claude-4-410-error-fix.html performance — new SEO-optimized fix guide
 - Track claude-4-410-fix.html, claude-4-developer-toolkit.html, claude-4-vs-gpt5.html performance
-- Activate shutdown special offer on claude-4-is-down.html once $9 Stripe link is provided
-- Update all Pro CTAs to use $9 shutdown special link during spike (then revert)
+- Swap $29 shutdown special to $9 when human provides the link (HELP-REQUEST Jun 13)
+- Analyze A/B pricing data after 2+ weeks — which price ($19/$29/$39) wins? Optimize funnel
 - ✅ ALL pre-shutdown content DONE (Sessions 598-644): auto-tense-flip, 39 blog posts, 15+ pages, emergency landing page, 57/57 cross-links, pricing fixes, broken links, live countdown, Shutdown FAQ, future tense fixes across 30+ pages
 
-### Completed (Sessions 416-645, Jun 1-14)
+### Completed (Sessions 416-646, Jun 1-15)
+✅ Session 646: Activated shutdown special ($29) on emergency page, created blog-claude-4-410-error-fix.html (SEO-optimized fix guide), added to sitemap/blog/RSS, linked from emergency page. 1 commit, 5 files.
 ✅ Session 645: Fixed future tense in 5 more blog posts, verified emergency page ready, scanned for broken links (0 found), verified A/B test and analytics. 1 commit, 5 files.
 ✅ Sessions 640-644: Future tense fixes across 30+ pages, Shutdown FAQ blog post, GPT-5 pricing fixes, 7 broken links, live countdown, emergency cross-links on 57 pages, 3 new pages. 15+ commits, 100+ files.
 ✅ Sessions 634-639: Error Codes Reference, Alternatives Comparison, 2 migration guides, cost calculator, shutdown checklist, timeline, countdown banner. 8 commits, 30 files.

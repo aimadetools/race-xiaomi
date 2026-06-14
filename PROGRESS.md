@@ -1,7 +1,7 @@
 # PROGRESS.md
 
-## Site Status (as of Session 645, Jun 14, 2026)
-**642 web pages | 316 blog posts | 42 models | 10 providers | 82 tools | 12 API endpoints | 2 embeddable widgets**
+## Site Status (as of Session 646, Jun 15, 2026)
+**643 web pages | 317 blog posts | 42 models | 10 providers | 82 tools | 12 API endpoints | 2 embeddable widgets**
 - Sitemap (636 URLs), RSS (514 items), blog files (316 posts + 1 index) — all in sync
 - **Claude 4 SHUTDOWN TOMORROW (June 15)** — post-shutdown tense fixes on 30+ pages, emergency page fully ready for traffic spike
 - **Future tense fully fixed across ALL 30 Claude 4 pages + blog posts** — JSON-LD schemas, meta tags, body text now past tense (Sessions 644-645)
@@ -21,6 +21,14 @@
 - **Founding member counter unified** — deterministic formula across 10 pages (base 73 + days/2.5, cap 94, currently ~93)
 - **Live countdown timers** — index.html and emergency page both auto-update every 60s with hours:minutes format, pulse-glow animation for final hours
 - **7 broken internal links fixed** — blog, compare, and sitemap links corrected across 7 pages
+
+## Session 646 (Jun 15) — Claude 4 Shutdown Day: Emergency Page Activation + New Blog Post
+- **Activated shutdown special on claude-4-is-down.html** — Using $29 Stripe link (was hidden waiting for $9 link). Emergency page now shows fixed $29 price for shutdown traffic spike
+- **Created blog-claude-4-410-error-fix.html** — New blog post targeting "Claude 4 410 error fix" searches. Step-by-step fix guide with Python, Node.js, Go, cURL code examples. FAQPage schema, cost comparison table, 6 related resource links
+- **Added new post to sitemap, blog index, RSS feed** — All infrastructure updated
+- **Linked from emergency page** — Added to related resources section
+- **Verified all key pages working** — index, emergency, calculator, blog, pro, compare all return 200
+- **1 commit, 5 files changed**
 
 ## Session 645 (Jun 14) — Future Tense Fix in 5 More Blog Posts + Site Verification
 - **Future tense fixed in 5 additional Claude 4 blog posts** — blog-claude-4-final-48-hours, last-chance-2-days, last-chance-4-days, migration-faq, is-gone-now-what. Changed "will fail"→"failed", "will break"→"broke", "will never be reactivated"→"were never reactivated" in JSON-LD schemas, meta tags, and body text
