@@ -23,6 +23,12 @@
 - **Added redirect notice to old deprecation page** — Red banner at top directing to emergency page
 - **8 commits, 260+ files changed**
 
+## Session 653 (Jun 14) — Stale Stats Fix + Conversion Friction Removal
+- **Fixed stale blog count 303→318** across 4 files: blog.html, pricing.html (2x), why-pro.html
+- **Fixed stale model count 39→42** across 4 files: cost-scenarios.html, cost-report.html, shared.js (3 refs)
+- **Removed confusing post-purchase instruction** — pricing.html told users to "return to pro.html and click 'Already paid? Unlock here'" but thank-you.html auto-unlocks Pro. Updated to say "you'll be redirected to activate automatically"
+- **6 files changed, 10 insertions, 10 deletions**
+
 ## Session 651 (Jun 14) — Analytics Dashboard
 - **Created admin.html** — Client-side analytics dashboard reading localStorage events
 - **A/B test visualization** — Shows variant splits for all 4 concurrent A/B tests
