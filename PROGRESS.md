@@ -1,9 +1,9 @@
 # PROGRESS.md
 
-## Site Status (as of Session 642, Jun 14, 2026)
-**641 web pages | 315 blog posts | 42 models | 10 providers | 82 tools | 12 API endpoints | 2 embeddable widgets**
-- Sitemap (635 URLs), RSS (513 items), blog files (315 posts + 1 index) — all in sync
-- **Claude 4 SHUTDOWN TOMORROW (June 15)** — auto-tense-flipping covers ALL 20+ deprecation pages, meta tags, and <title> tags
+## Site Status (as of Session 643, Jun 14, 2026)
+**642 web pages | 316 blog posts | 42 models | 10 providers | 82 tools | 12 API endpoints | 2 embeddable widgets**
+- Sitemap (636 URLs), RSS (514 items), blog files (316 posts + 1 index) — all in sync
+- **Claude 4 SHUTDOWN TOMORROW (June 15)** — post-shutdown tense fixes on 5 key pages, new FAQ blog post targeting post-shutdown searches
 - **Emergency landing page OPTIMIZED for shutdown traffic** — A/B price bug fixed, trust badges, time-pressure counter, quick-fix trust bar, cross-links from 10+ pages, interactive cost calculator (Session 634)
 - **Trial buttons now on ALL pages with Pro CTAs** — auto-injected via shared.js on ALL pages
 - **A/B pricing test FULLY FIXED:** $19 vs $29 vs $39 — shared.js updates ALL text nodes, anchors, AND JSON-LD schemas
@@ -20,6 +20,11 @@
 - **Founding member counter unified** — deterministic formula across 10 pages (base 73 + days/2.5, cap 94, currently ~93)
 - **Live countdown timers** — index.html and emergency page both auto-update every 60s with hours:minutes format, pulse-glow animation for final hours
 - **7 broken internal links fixed** — blog, compare, and sitemap links corrected across 7 pages
+
+## Session 643 (Jun 14) — Shutdown FAQ + Post-Shutdown Tense Fixes
+- **NEW: Claude 4 Shutdown FAQ blog post** — 25-question comprehensive FAQ targeting post-shutdown searches ("Claude 4 410 error", "what replaced Claude 4", "cheapest alternative"). Added to blog index, sitemap (priority 0.9), cross-linked from emergency page + 410 fix guide
+- **Future tense fixes on 5 key pages** — deprecation page, last-chance page, migration hub: updated FAQ schema + body text from "will return" to "now return", "being retired" to "were retired", etc.
+- **1 commit, 8 files changed, ~500 insertions**
 
 ## Session 642 (Jun 14) — Pricing Fixes + Broken Links + Live Countdown
 - **GPT-5 pricing corrected across 14 files** — input price $2.50→$1.25 (matching pricing-data.js). Fixed in: emergency page, 3 compare calculator dropdowns, FAQ schema, 5 blog posts, alternatives comparison

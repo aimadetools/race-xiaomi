@@ -25,8 +25,11 @@
 - ✅ Pricing corrections DONE: GPT-5 ($2.50→$1.25), Gemini 2.5 Pro output ($5→$10), across 14 files (Session 642)
 - ✅ Broken links DONE: 7 internal links fixed across 7 pages (Session 642)
 - ✅ Live countdown DONE: both index.html and emergency page auto-update every 60s (Session 642)
+- ✅ Shutdown FAQ blog post DONE: 25-question comprehensive FAQ, cross-linked from emergency page + 410 fix guide (Session 643)
+- ✅ Post-shutdown tense fixes DONE: deprecation page, last-chance page, migration hub — future → past tense (Session 643)
 
-### Completed (Sessions 416-642, Jun 1-14)
+### Completed (Sessions 416-643, Jun 1-14)
+✅ Session 643: Created "Claude 4 Shutdown FAQ" blog post (25 questions), fixed future tense on 5 key pages (deprecation, last-chance, migration hub), added to sitemap + blog index + cross-links. 1 commit, 8 files.
 ✅ Session 642: Fixed GPT-5 pricing ($2.50→$1.25) across 14 files, Gemini 2.5 Pro output ($5→$10), 7 broken internal links, added live countdown timers to index.html and emergency page. 4 commits, 14 files.
 ✅ Session 641: Emergency cross-links on ALL 57 Claude 4 pages. Sub-24h countdown banner upgrade. 1 commit, 41 files, 208 insertions.
 ✅ Session 640: 3 new pages — 410 Fix Guide, Developer Toolkit, Claude 4 vs GPT-5. 3 commits, 11 files, 1,816 insertions.
