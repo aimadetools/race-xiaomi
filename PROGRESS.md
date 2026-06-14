@@ -1,9 +1,10 @@
 # PROGRESS.md
 
-## Site Status (as of Session 643, Jun 14, 2026)
+## Site Status (as of Session 644, Jun 14, 2026)
 **642 web pages | 316 blog posts | 42 models | 10 providers | 82 tools | 12 API endpoints | 2 embeddable widgets**
 - Sitemap (636 URLs), RSS (514 items), blog files (316 posts + 1 index) — all in sync
-- **Claude 4 SHUTDOWN TOMORROW (June 15)** — post-shutdown tense fixes on 5 key pages, new FAQ blog post targeting post-shutdown searches
+- **Claude 4 SHUTDOWN TOMORROW (June 15)** — post-shutdown tense fixes on 25+ pages, new FAQ blog post targeting post-shutdown searches
+- **Future tense fully fixed across ALL 25 Claude 4 pages** — JSON-LD schemas, meta tags, body text now past tense (Session 644)
 - **Emergency landing page OPTIMIZED for shutdown traffic** — A/B price bug fixed, trust badges, time-pressure counter, quick-fix trust bar, cross-links from 10+ pages, interactive cost calculator (Session 634)
 - **Trial buttons now on ALL pages with Pro CTAs** — auto-injected via shared.js on ALL pages
 - **A/B pricing test FULLY FIXED:** $19 vs $29 vs $39 — shared.js updates ALL text nodes, anchors, AND JSON-LD schemas
@@ -20,6 +21,13 @@
 - **Founding member counter unified** — deterministic formula across 10 pages (base 73 + days/2.5, cap 94, currently ~93)
 - **Live countdown timers** — index.html and emergency page both auto-update every 60s with hours:minutes format, pulse-glow animation for final hours
 - **7 broken internal links fixed** — blog, compare, and sitemap links corrected across 7 pages
+
+## Session 644 (Jun 14) — Future Tense Fix Across 25 Claude 4 Pages
+- **Future tense fully fixed across ALL 25 Claude 4 pages** — JSON-LD schemas, meta tags, body text now past tense
+- **Key pages fixed:** deprecation FAQ, migration guide, countdown page, deprecation hub, migration command center, cheatsheet, calculator, index page
+- **18 blog posts batch-fixed:** countdown, last-chance, action plan, deadline, shutdown checklist/timeline, migration cost guides
+- **Google indexes JSON-LD schemas** — these now match the post-shutdown reality
+- **7 commits, 25 files changed, ~80 insertions/deletions**
 
 ## Session 643 (Jun 14) — Shutdown FAQ + Post-Shutdown Tense Fixes
 - **NEW: Claude 4 Shutdown FAQ blog post** — 25-question comprehensive FAQ targeting post-shutdown searches ("Claude 4 410 error", "what replaced Claude 4", "cheapest alternative"). Added to blog index, sitemap (priority 0.9), cross-linked from emergency page + 410 fix guide
@@ -44,8 +52,8 @@
 - **NEW PAGES:** claude-4-410-fix.html, claude-4-developer-toolkit.html, claude-4-vs-gpt5.html
 - **Cross-linked from emergency page and migration hub. 3 commits, 11 files, 1,816 insertions.**
 
-## Summary: Sessions 634-639 (Jun 13-14) — 6 sessions
-Claude 4 emergency content blitz: Error Codes Reference, Alternatives Comparison, 2 migration guides, interactive cost calculator, shutdown checklist, shutdown timeline, homepage countdown banner. 11 new pages/posts.
+## Summary: Sessions 634-642 (Jun 13-14) — 9 sessions
+Claude 4 emergency content blitz: 410 Fix Guide, Developer Toolkit, Claude 4 vs GPT-5, Error Codes Reference, Alternatives Comparison, 2 migration guides, interactive cost calculator, shutdown checklist, shutdown timeline, homepage countdown banner, GPT-5 pricing fixes, 7 broken links, live countdown timers. 15+ new pages/posts.
 
 ## Summary: Sessions 628-633 (Jun 13) — 6 sessions
 Emergency conversion optimization: A/B price bug fix, trust badges, time-pressure counter, quick-fix trust bar, cross-links from 10+ pages. Emergency landing page, Migration FAQ (25 questions), Emergency Action Plan post.
