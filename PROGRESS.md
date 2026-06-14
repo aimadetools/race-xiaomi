@@ -11,11 +11,14 @@
 - **Client-side analytics dashboard** — admin.html reads localStorage events, shows A/B splits, conversion funnel, popup engagement
 - **Founding member counter unified** — deterministic formula across 10 pages (base 73 + days/2.5, cap 94, currently ~93)
 
-## Session 661 (Jun 14) — Live Cost-of-Inaction Ticker for Conversion Optimization
+## Session 661 (Jun 14) — Conversion Optimization + Site Quality Fixes
 - **Added live cost-of-inaction ticker** to 5 high-traffic pages — shared.js auto-initializes on any page with `#cost-ticker-amount`. Shows real-time money lost since Claude 4 shutdown based on $500/mo default spend. Pre-shutdown shows projected daily loss; post-shutdown shows live counter updating every second.
 - **Pages updated:** claude-4-is-down.html, claude-4-migration-hub.html, claude-4-alternatives-comparison.html, claude-4-developer-toolkit.html, claude-4-410-fix.html
+- **Added FAQPage schema** to claude-4-quick-switch.html for SEO
+- **Fixed blog count 318→319** on blog.html and pricing.html (missed in Session 660)
+- **Fixed RSS feed** — added missing blog-claude-4-shutdown-faq.html entry
 - **Site audit:** No broken links, GA4 on all public pages, sitemap (641 URLs) and RSS in sync, no stale Claude 4 present-tense references in HTML attributes
-- **1 commit, 6 files changed**
+- **5 commits, 9 files changed**
 
 ## Session 660 (Jun 14) — Migration Mistakes Blog Post + Sticky CTA Expansion
 - **Created "5 Costly Claude 4 Migration Mistakes" blog post** — Targets high-intent "claude 4 migration mistakes" searches post-shutdown. 5 real mistakes: wrong model ID, overpaying for Opus 4.8, skipping tests, ignoring usage patterns, no rollback plan. Gated Pro checklist (27-point), FAQPage schema, links to Migration Advisor, Quick Switch, Calculator.
