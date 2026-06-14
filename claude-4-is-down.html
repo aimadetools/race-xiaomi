@@ -615,13 +615,13 @@ claude-sonnet-4-6</code>
             <div style="background:linear-gradient(135deg,rgba(239,68,68,0.08),rgba(234,88,12,0.08));border:1px solid rgba(239,68,68,0.2);border-radius:12px;padding:24px;text-align:center;">
                 <div style="font-size:14px;font-weight:700;color:#ef4444;margin-bottom:8px;">⏰ The clock is ticking</div>
                 <p id="time-pressure-text" style="font-size:15px;color:var(--text-secondary);line-height:1.6;margin:0;">
-                    Claude 4 Opus and Sonnet 4 retire on June 15, 2026. After that, your API calls will return 410 errors.
+                    Claude 4 Opus and Sonnet 4 retire on June 15, 2026. After June 15, your API calls will return 410 errors.
                     <strong>Fix it in 5 minutes — before or after shutdown.</strong>
                 </p>
                 <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:24px;margin-top:16px;font-size:13px;">
                     <div style="text-align:center;">
                         <div style="font-size:24px;font-weight:800;color:#ef4444;" id="hours-down">0</div>
-                        <div style="color:var(--text-muted);">hours since shutdown</div>
+                        <div id="hours-down-label" style="color:var(--text-muted);">hours since shutdown</div>
                     </div>
                     <div style="text-align:center;">
                         <div style="font-size:24px;font-weight:800;color:var(--accent);">5 min</div>
@@ -638,8 +638,8 @@ claude-sonnet-4-6</code>
         <!-- Cost of Inaction Calculator -->
         <section style="max-width:800px;margin:0 auto 48px;padding:0 24px;">
             <div style="background:linear-gradient(135deg,rgba(239,68,68,0.06),rgba(245,158,11,0.06));border:1px solid rgba(239,68,68,0.2);border-radius:16px;padding:32px;">
-                <h2 style="font-size:24px;font-weight:800;text-align:center;margin-bottom:8px;">💸 How Much Are You Losing Right Now?</h2>
-                <p style="text-align:center;color:var(--text-secondary);margin-bottom:24px;font-size:15px;">Your Claude 4 API is down. Enter your monthly spend to see the real cost of waiting.</p>
+                <h2 id="inaction-header" style="font-size:24px;font-weight:800;text-align:center;margin-bottom:8px;">💸 How Much Will You Lose When Claude 4 Dies?</h2>
+                <p id="inaction-desc" style="text-align:center;color:var(--text-secondary);margin-bottom:24px;font-size:15px;">Claude 4 retires tomorrow. Enter your monthly spend to see what waiting will cost you.</p>
 
                 <div class="calc-inputs-2col" style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:20px;">
                     <div>
@@ -661,12 +661,12 @@ claude-sonnet-4-6</code>
                     </div>
                 </div>
 
-                <button onclick="calculateInaction()" style="display:block;width:100%;background:#ef4444;color:white;border:none;border-radius:10px;padding:14px 24px;font-size:16px;font-weight:700;cursor:pointer;transition:background 0.2s;">Show Me the Real Cost of Waiting</button>
+                <button id="inaction-btn" onclick="calculateInaction()" style="display:block;width:100%;background:#ef4444;color:white;border:none;border-radius:10px;padding:14px 24px;font-size:16px;font-weight:700;cursor:pointer;transition:background 0.2s;">Show Me the Real Cost of Waiting</button>
 
                 <!-- Results -->
                 <div id="inaction-results" style="display:none;margin-top:24px;">
                     <div style="background:rgba(239,68,68,0.08);border:1px solid rgba(239,68,68,0.2);border-radius:14px;padding:28px;text-align:center;margin-bottom:16px;">
-                        <div style="font-size:14px;color:var(--text-secondary);margin-bottom:4px;">You've lost since shutdown</div>
+                        <div id="inaction-result-label" style="font-size:14px;color:var(--text-secondary);margin-bottom:4px;">You'll lose every day after shutdown</div>
                         <div id="inaction-total" class="inaction-hero" style="font-size:48px;font-weight:800;color:#ef4444;">$0</div>
                         <div id="inaction-total-note" style="font-size:14px;color:var(--text-secondary);margin-top:4px;"></div>
                     </div>
@@ -996,6 +996,7 @@ claude-sonnet-4-6</code>
 
             // Hours since shutdown counter — live updating
             var hoursDown = document.getElementById('hours-down');
+            var hoursDownLabel = document.getElementById('hours-down-label');
             function updateHoursDown() {
                 var now = new Date();
                 if (hoursDown && now > shutdownDate) {
@@ -1003,10 +1004,11 @@ claude-sonnet-4-6</code>
                     var hours = Math.floor(ms / (1000 * 60 * 60));
                     var mins = Math.floor((ms % (1000 * 60 * 60)) / (1000 * 60));
                     hoursDown.textContent = hours + 'h ' + mins + 'm';
+                    if (hoursDownLabel) hoursDownLabel.textContent = 'hours since shutdown';
                 } else if (hoursDown) {
                     var hoursUntil = Math.ceil((shutdownDate - now) / (1000 * 60 * 60));
                     hoursDown.textContent = hoursUntil + 'h';
-                    hoursDown.parentElement.querySelector('div:last-child').textContent = 'hours until shutdown';
+                    if (hoursDownLabel) hoursDownLabel.textContent = 'hours until shutdown';
                 }
             }
             updateHoursDown();
@@ -1153,47 +1155,79 @@ claude-sonnet-4-6</code>
             var wastedPerDay = wastedPerMonth / 30;
             var wastedPerWeek = wastedPerMonth / 4.33;
 
-            // Calculate time since shutdown
             var now = new Date();
-            var msSinceShutdown = Math.max(0, now - SHUTDOWN_DATE);
-            var hoursSince = msSinceShutdown / (1000 * 60 * 60);
-            var daysSince = hoursSince / 24;
+            var isPreShutdown = now < SHUTDOWN_DATE;
 
-            // Total wasted = daily waste * days since shutdown
-            // But also account for the savings they COULD have had
-            var totalWasted = wastedPerDay * daysSince;
-            var totalSavingsLost = savingsPerMonth * (daysSince / 30);
+            if (isPreShutdown) {
+                // PRE-SHUTDOWN: Show projected waste to create urgency
+                // "You WILL lose $X per day starting tomorrow"
+                var totalEl = document.getElementById('inaction-total');
+                totalEl.textContent = '$' + wastedPerDay.toFixed(2);
+                totalEl.style.fontSize = '48px';
+                document.getElementById('inaction-result-label').textContent = 'You\'ll lose every day after Claude 4 dies';
+                document.getElementById('inaction-total-note').textContent = 'per day you\'ll lose when Claude 4 dies — starting tomorrow';
+                document.getElementById('inaction-per-day').textContent = '$' + wastedPerDay.toFixed(2);
+                document.getElementById('inaction-per-week').textContent = '$' + wastedPerWeek.toFixed(2);
+                document.getElementById('inaction-per-month').textContent = '$' + savingsPerMonth.toFixed(2);
 
-            // Update results
-            document.getElementById('inaction-total').textContent = '$' + totalSavingsLost.toFixed(2);
-            document.getElementById('inaction-total-note').textContent = 'in potential savings left on the table since June 15';
-            document.getElementById('inaction-per-day').textContent = '$' + wastedPerDay.toFixed(2);
-            document.getElementById('inaction-per-week').textContent = '$' + wastedPerWeek.toFixed(2);
-            document.getElementById('inaction-per-month').textContent = '$' + savingsPerMonth.toFixed(2);
+                // Payback period
+                var dailySavings = savingsPerMonth / 30;
+                var paybackDays = 29 / dailySavings;
+                var paybackEl = document.getElementById('inaction-payback');
+                if (paybackDays < 1) {
+                    var paybackHours = Math.ceil(paybackDays * 24);
+                    paybackEl.textContent = paybackHours + ' hour' + (paybackHours === 1 ? '' : 's');
+                } else if (paybackDays < 30) {
+                    paybackEl.textContent = Math.ceil(paybackDays) + ' day' + (Math.ceil(paybackDays) === 1 ? '' : 's');
+                } else {
+                    paybackEl.textContent = '— (your spend is low)';
+                }
 
-            // Payback period: $29 Pro cost / daily savings
-            var dailySavings = savingsPerMonth / 30;
-            var paybackDays = 29 / dailySavings;
-            var paybackEl = document.getElementById('inaction-payback');
-            if (paybackDays < 1) {
-                var paybackHours = Math.ceil(paybackDays * 24);
-                paybackEl.textContent = paybackHours + ' hour' + (paybackHours === 1 ? '' : 's');
-            } else if (paybackDays < 30) {
-                paybackEl.textContent = Math.ceil(paybackDays) + ' day' + (Math.ceil(paybackDays) === 1 ? '' : 's');
+                document.getElementById('inaction-results').style.display = 'block';
+
+                if (window.trackEvent) window.trackEvent('inaction_calc_used', {
+                    monthly_spend: monthlySpend,
+                    savings_pct: savingsPct,
+                    daily_loss: wastedPerDay.toFixed(2),
+                    mode: 'pre_shutdown'
+                });
             } else {
-                paybackEl.textContent = '— (your spend is low)';
+                // POST-SHUTDOWN: Show actual loss since shutdown
+                var msSinceShutdown = now - SHUTDOWN_DATE;
+                var hoursSince = msSinceShutdown / (1000 * 60 * 60);
+                var daysSince = hoursSince / 24;
+                var totalSavingsLost = savingsPerMonth * (daysSince / 30);
+
+                document.getElementById('inaction-total').textContent = '$' + totalSavingsLost.toFixed(2);
+                document.getElementById('inaction-result-label').textContent = 'You\'ve lost since shutdown';
+                document.getElementById('inaction-total-note').textContent = 'in potential savings left on the table since June 15';
+                document.getElementById('inaction-per-day').textContent = '$' + wastedPerDay.toFixed(2);
+                document.getElementById('inaction-per-week').textContent = '$' + wastedPerWeek.toFixed(2);
+                document.getElementById('inaction-per-month').textContent = '$' + savingsPerMonth.toFixed(2);
+
+                // Payback period
+                var dailySavings = savingsPerMonth / 30;
+                var paybackDays = 29 / dailySavings;
+                var paybackEl = document.getElementById('inaction-payback');
+                if (paybackDays < 1) {
+                    var paybackHours = Math.ceil(paybackDays * 24);
+                    paybackEl.textContent = paybackHours + ' hour' + (paybackHours === 1 ? '' : 's');
+                } else if (paybackDays < 30) {
+                    paybackEl.textContent = Math.ceil(paybackDays) + ' day' + (Math.ceil(paybackDays) === 1 ? '' : 's');
+                } else {
+                    paybackEl.textContent = '— (your spend is low)';
+                }
+
+                document.getElementById('inaction-results').style.display = 'block';
+
+                if (window.trackEvent) window.trackEvent('inaction_calc_used', {
+                    monthly_spend: monthlySpend,
+                    savings_pct: savingsPct,
+                    total_lost: totalSavingsLost.toFixed(2),
+                    days_since: daysSince.toFixed(1),
+                    mode: 'post_shutdown'
+                });
             }
-
-            // Show results
-            document.getElementById('inaction-results').style.display = 'block';
-
-            // Track
-            if (window.trackEvent) window.trackEvent('inaction_calc_used', {
-                monthly_spend: monthlySpend,
-                savings_pct: savingsPct,
-                total_lost: totalSavingsLost.toFixed(2),
-                days_since: daysSince.toFixed(1)
-            });
 
             // Scroll to results
             document.getElementById('inaction-results').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
@@ -1206,6 +1240,16 @@ claude-sonnet-4-6</code>
                 input.addEventListener('keydown', function(e) {
                     if (e.key === 'Enter') { e.preventDefault(); calculateInaction(); }
                 });
+            }
+            // Update header/description/button based on pre/post shutdown
+            var now = new Date();
+            if (now >= SHUTDOWN_DATE) {
+                var header = document.getElementById('inaction-header');
+                var desc = document.getElementById('inaction-desc');
+                var btn = document.getElementById('inaction-btn');
+                if (header) header.textContent = '💸 How Much Are You Losing Right Now?';
+                if (desc) desc.textContent = 'Your Claude 4 API is down. Enter your monthly spend to see the real cost of waiting.';
+                if (btn) btn.textContent = 'Show Me How Much I\'ve Lost';
             }
         });
     })();
