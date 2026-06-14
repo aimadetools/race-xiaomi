@@ -340,9 +340,10 @@ document.addEventListener('DOMContentLoaded', function() {
 // Covers blog posts, comparison pages, AND dedicated deprecation/migration pages
 document.addEventListener('DOMContentLoaded', () => {
     var path = window.location.pathname;
-    // Match: blog-claude-4-*, compare-*, claude-4-*, *migration*, cost-migration
-    var isDepPage = path.includes('blog-claude-4-') || path.includes('compare-') ||
-        path.includes('claude-4-') || path.includes('migration') || path.includes('cost-migration');
+    // Match: blog-claude-4-*, blog-best-claude-4-*, compare-*, claude-4-*, claude-deprecation-*, *migration*, cost-migration, blog-model-deprecation-*
+    var isDepPage = path.includes('blog-claude-4-') || path.includes('blog-best-claude-4-') ||
+        path.includes('compare-') || path.includes('claude-4-') || path.includes('claude-deprecation-') ||
+        path.includes('migration') || path.includes('cost-migration') || path.includes('blog-model-deprecation-');
     if (!isDepPage) return;
     var deadline = new Date('2026-06-15T00:00:00Z');
     if (new Date() < deadline) return;
@@ -493,7 +494,7 @@ document.addEventListener('DOMContentLoaded', () => {
 document.addEventListener('DOMContentLoaded', () => {
     var path = window.location.pathname;
     if (!path.includes('blog-')) return;
-    if (path.includes('blog-claude-4-')) return; // already handled above
+    if (path.includes('blog-claude-4-') || path.includes('blog-best-claude-4-')) return; // already handled above
     var deadline = new Date('2026-06-15T00:00:00Z');
     if (new Date() < deadline) return;
     // Also flip Claude 4 deprecation text on non-claude-4 blog posts
