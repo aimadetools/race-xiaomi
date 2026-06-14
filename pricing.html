@@ -247,9 +247,10 @@
         <!-- Deprecation urgency (dynamic — shows when Claude 4 deadline is near) -->
         <div id="deprecation-pricing-urgency" style="display:none;max-width:600px;margin:0 auto 32px;background:linear-gradient(135deg,rgba(239,68,68,0.1),rgba(245,158,11,0.08));border:2px solid rgba(239,68,68,0.3);border-radius:14px;padding:24px;text-align:center;">
             <div style="font-size:32px;margin-bottom:8px;">⏰</div>
-            <h2 style="font-size:20px;font-weight:800;margin-bottom:8px;color:var(--red);">Claude 4 Was Retired June 15</h2>
-            <p style="font-size:14px;color:var(--text-secondary);margin-bottom:16px;line-height:1.6;">Your API calls are failing. Pro gives you personalized migration recommendations — pick the cheapest replacement for your exact workload.</p>
-            <a href="claude-4-is-down.html" style="font-size:13px;color:var(--accent);text-decoration:underline;">Fix it now →</a>
+            <h2 style="font-size:20px;font-weight:800;margin-bottom:8px;color:var(--red);">Claude 4 Retires June 15 — <span id="deprecation-days-left">TOMORROW</span></h2>
+            <p style="font-size:14px;color:var(--text-secondary);margin-bottom:16px;line-height:1.6;">Your API calls will fail. Pro gives you personalized migration recommendations — pick the cheapest replacement for your exact workload and save up to 93%.</p>
+            <a href="claude-4-migration-advisor.html" style="display:inline-block;background:var(--accent);color:white;padding:10px 20px;border-radius:8px;text-decoration:none;font-weight:700;font-size:14px;margin-bottom:8px;">Find Your Cheapest Alternative →</a>
+            <div style="font-size:12px;color:var(--text-muted);">Lock in $29 founding member price before the deadline</div>
         </div>
 
         <div class="pricing-grid">
@@ -337,7 +338,7 @@
                     <div class="stat-label">API Providers</div>
                 </div>
                 <div class="stat-item">
-                    <div class="stat-number">303</div>
+                    <div class="stat-number">319</div>
                     <div class="stat-label">Expert Guides</div>
                 </div>
                 <div class="stat-item">
@@ -929,19 +930,27 @@
             });
         })();
 
-        // Show deprecation urgency banner when Claude 4 deadline is near
+        // Show deprecation urgency banner when Claude 4 deadline is near or passed
         (function(){
             var deadline = new Date('2026-06-15T00:00:00Z');
             var now = new Date();
             var daysLeft = Math.ceil((deadline - now) / 86400000);
+            var el = document.getElementById('deprecation-pricing-urgency');
+            if (!el) return;
             if (daysLeft > 0 && daysLeft <= 14) {
-                var el = document.getElementById('deprecation-pricing-urgency');
+                // Pre-deprecation: countdown
                 var daysEl = document.getElementById('deprecation-days-left');
-                if (el && daysEl) {
-                    daysEl.textContent = daysLeft <= 1 ? 'TOMORROW' : 'in ' + daysLeft + ' days';
-                    el.style.display = 'block';
-                    if (window.trackEvent) window.trackEvent('deprecation_pricing_urgency_shown', { days_left: daysLeft });
-                }
+                if (daysEl) daysEl.textContent = daysLeft <= 1 ? 'TOMORROW' : 'in ' + daysLeft + ' days';
+                el.style.display = 'block';
+                if (window.trackEvent) window.trackEvent('deprecation_pricing_urgency_shown', { days_left: daysLeft });
+            } else if (daysLeft <= 0 && daysLeft > -90) {
+                // Post-deprecation: retired notice
+                el.innerHTML = '<div style="font-size:32px;margin-bottom:8px;">🔴</div>' +
+                    '<h2 style="font-size:20px;font-weight:800;margin-bottom:8px;color:var(--red);">Claude 4 Was Retired June 15</h2>' +
+                    '<p style="font-size:14px;color:var(--text-secondary);margin-bottom:16px;line-height:1.6;">Your API calls are failing. Pro gives you personalized migration recommendations — pick the cheapest replacement for your exact workload.</p>' +
+                    '<a href="claude-4-is-down.html" style="display:inline-block;background:var(--accent);color:white;padding:10px 20px;border-radius:8px;text-decoration:none;font-weight:700;font-size:14px;">Fix it now →</a>';
+                el.style.display = 'block';
+                if (window.trackEvent) window.trackEvent('deprecation_pricing_urgency_shown', { post_shutdown: true });
             }
         })();
     </script>
