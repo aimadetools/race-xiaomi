@@ -217,3 +217,28 @@ footer a { color: var(--text-secondary); }
 
 /* Animations */
 @keyframes fadeIn { from { opacity: 0; transform: translateX(-50%) translateY(-10px); } to { opacity: 1; transform: translateX(-50%) translateY(0); } }
+
+/* Shutdown Banner */
+.shutdown-banner {
+    max-width: 800px;
+    margin: 0 auto 40px;
+    padding: 28px;
+    background: rgba(239, 68, 68, 0.12);
+    border: 2px solid rgba(239, 68, 68, 0.5);
+    border-radius: var(--radius);
+    text-align: center;
+}
+.shutdown-banner .status {
+    font-size: clamp(24px, 4vw, 36px);
+    font-weight: 900;
+    color: #ef4444;
+    margin-bottom: 8px;
+}
+.shutdown-banner .message {
+    font-size: 16px;
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+.shutdown-banner .message strong {
+    color: #ef4444;
+}
