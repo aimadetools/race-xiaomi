@@ -945,10 +945,15 @@
                 if (window.trackEvent) window.trackEvent('deprecation_pricing_urgency_shown', { days_left: daysLeft });
             } else if (daysLeft <= 0 && daysLeft > -90) {
                 // Post-deprecation: retired notice
+                var stripeLink = window._abStripeLink || 'https://buy.stripe.com/fZu7sL3Gw3GS0RQeoDeEo0a';
+                var price = window._abPrice || 29;
                 el.innerHTML = '<div style="font-size:32px;margin-bottom:8px;">🔴</div>' +
-                    '<h2 style="font-size:20px;font-weight:800;margin-bottom:8px;color:var(--red);">Claude 4 Was Retired June 15</h2>' +
-                    '<p style="font-size:14px;color:var(--text-secondary);margin-bottom:16px;line-height:1.6;">Your API calls are failing. Pro gives you personalized migration recommendations — pick the cheapest replacement for your exact workload.</p>' +
-                    '<a href="claude-4-is-down.html" style="display:inline-block;background:var(--accent);color:white;padding:10px 20px;border-radius:8px;text-decoration:none;font-weight:700;font-size:14px;">Fix it now →</a>';
+                    '<h2 style="font-size:20px;font-weight:800;margin-bottom:8px;color:var(--red);">Claude 4 Was Retired June 15 — Your API Is Failing</h2>' +
+                    '<p style="font-size:14px;color:var(--text-secondary);margin-bottom:16px;line-height:1.6;">Pro shows you the cheapest replacement for <strong>your exact workload</strong> — most devs save 67-97%. Pay once, use forever.</p>' +
+                    '<div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap;">' +
+                    '<a href="' + stripeLink + '" style="display:inline-block;background:var(--accent);color:white;padding:10px 20px;border-radius:8px;text-decoration:none;font-weight:700;font-size:14px;" target="_blank" rel="noopener">Get Pro — $' + price + ' lifetime</a>' +
+                    '<a href="claude-4-is-down.html" style="display:inline-block;background:transparent;color:var(--text-primary);padding:10px 20px;border-radius:8px;text-decoration:none;font-weight:600;font-size:14px;border:1px solid var(--border);">Free migration guide →</a>' +
+                    '</div>';
                 el.style.display = 'block';
                 if (window.trackEvent) window.trackEvent('deprecation_pricing_urgency_shown', { post_shutdown: true });
             }
