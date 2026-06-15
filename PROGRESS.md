@@ -1,6 +1,6 @@
 # PROGRESS.md
 
-## Site Status (as of Session 663, Jun 15, 2026)
+## Site Status (as of Session 664, Jun 15, 2026)
 **649 web pages | 319 blog posts | 42 models | 10 providers | 84 tools | 12 API endpoints | 2 embeddable widgets**
 - Sitemap (642 URLs), RSS (518 items), blog files (319 posts + 1 index) — all in sync
 - **Claude 4 SHUTDOWN IS TODAY (June 15)** — auto-tense-flip covers 40+ patterns, post-shutdown banner live on all non-emergency pages
@@ -10,6 +10,15 @@
 - **Conversion funnel tracking LIVE:** scroll depth (25/50/75/100%), time on page (10/30/60/120s), CTA hover events
 - **Client-side analytics dashboard** — admin.html reads localStorage events, shows A/B splits, conversion funnel, popup engagement
 - **Founding member counter unified** — deterministic formula across 10 pages (base 73 + days/2.5, cap 94, currently ~93)
+
+## Session 664 (Jun 15) — Cross-links, Tense Fixes, Broken Link Fix
+- **Added Best Replacement cross-links to 6 high-traffic pages** — claude-4-410-fix.html, claude-4-developer-toolkit.html, claude-4-alternatives-by-use-case.html, claude-4-deprecation.html (top of related tools), blog-claude-4-shutdown-complete.html (top of related guides), blog-claude-4-shutdown-faq.html (first in related resources).
+- **Added Best Replacement to blog index** — Green-highlighted card at the very top of blog.html featured section.
+- **Added Claude 4 migration link to 404 page** — Users hitting 404s during shutdown get a helpful redirect to Best Replacement.
+- **Fixed broken Cost Calculator link** — claude-4-cost-calculator.html → claude-4-migration-calculator.html (2 occurrences in Best Replacement page).
+- **Fixed pre-shutdown tense across 6 pages** — claude-4-alternatives-by-use-case, claude-4-deprecation (h1 + subtitle), blog-best-claude-4-alternatives (meta), blog-best-claude-4-alternatives-by-cost (meta + subtitle + JSON-LD), blog-claude-4-deprecation-faq (CTA), anthropic.html (JSON-LD).
+- **Updated sitemap** — 11 pages lastmod updated to 2026-06-15.
+- **6 commits, 13 files changed**
 
 ## Session 663 (Jun 15) — Shutdown Day: Best Replacement Page + Internal Links
 - **Created "Best Claude 4 Replacement" comparison page** (`claude-4-best-replacement.html`) — Targets "best claude 4 replacement" and "what to use instead of claude 4" searches. Quick-pick cards (Opus 4.8, DeepSeek V4 Pro, V4 Flash), full comparison table with savings bars, decision helper by use case, code examples (Python/Node/cURL), FAQPage schema, Pro CTA, sticky bottom bar. Page 649.
