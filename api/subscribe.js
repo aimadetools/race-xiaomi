@@ -80,10 +80,17 @@ async function sendWelcomeEmail(email) {
               Thanks for subscribing. You'll get weekly updates on AI API pricing changes, new models, and cost-saving tips.
             </p>
             <div style="background: #1e293b; border-radius: 8px; padding: 20px; margin: 20px 0;">
+              <h2 style="color: #818cf8; font-size: 18px; margin-bottom: 12px;">Your Migration Checklist</h2>
+              <p style="margin-bottom: 12px;">Here's the print-ready cheat sheet you signed up for:</p>
+              <p style="margin-bottom: 16px;">
+                <a href="https://getapipulse.com/claude-4-migration-checklist.html" style="display: inline-block; background: #818cf8; color: white; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: 600;">📋 Open Migration Checklist →</a>
+              </p>
+              <p style="margin-bottom: 8px; font-size: 14px; color: #94a3b8;">Includes: model IDs, pricing comparison, copy-paste code snippets, framework fixes, and post-migration checklist.</p>
+              <hr style="border: none; border-top: 1px solid #334155; margin: 16px 0;">
               <h2 style="color: #818cf8; font-size: 18px; margin-bottom: 12px;">Quick Start</h2>
               <p style="margin-bottom: 8px;">Here's what you can do right now:</p>
               <ul style="padding-left: 20px; line-height: 1.8;">
-                <li><a href="https://getapipulse.com/calculator.html" style="color: #818cf8;">Estimate your AI costs</a> — 39 models across 10 providers</li>
+                <li><a href="https://getapipulse.com/calculator.html" style="color: #818cf8;">Estimate your AI costs</a> — 42 models across 10 providers</li>
                 <li><a href="https://getapipulse.com/compare.html" style="color: #818cf8;">Compare models side-by-side</a> — find the cheapest option</li>
                 <li><a href="https://getapipulse.com/pricing-index.html" style="color: #818cf8;">Browse all pricing</a> — sortable reference table</li>
               </ul>

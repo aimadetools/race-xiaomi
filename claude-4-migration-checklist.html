@@ -3,18 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Claude 4 Migration Checklist — Fix Your Broken App Now | APIpulse</title>
-    <meta name="description" content="Claude 4 Migration Checklist: step-by-step guide to migrate from Claude 4 Opus and Sonnet 4. Exact code changes, cost savings, and migration tracker. Save 67-97%.">
-    <meta name="keywords" content="Claude 4 migration checklist, Claude 4 deprecated, Claude 4 migration guide, Claude 4 replacement, migrate from Claude 4, Claude 4 API shutdown checklist">
-    <meta property="og:title" content="Claude 4 Migration Checklist — Fix Your Broken App">
-    <meta property="og:description" content="Step-by-step checklist to migrate from Claude 4. Exact code changes, cost savings, and migration tracker.">
-    <meta property="og:type" content="website">
+    <title>Claude 4 Migration Checklist — Print-Ready Cheat Sheet | APIpulse</title>
+    <meta name="description" content="One-page Claude 4 migration checklist. Model IDs, pricing, code snippets, and step-by-step migration for every provider. Print it, save it, fix your 410 errors.">
+    <meta name="keywords" content="claude 4 migration checklist, claude 4 cheat sheet, claude 4 410 fix, claude 4 model IDs, claude 4 replacement">
+    <meta property="og:title" content="Claude 4 Migration Checklist — Print-Ready Cheat Sheet">
+    <meta property="og:description" content="One-page checklist with model IDs, pricing, and code snippets for every Claude 4 replacement.">
+    <meta property="og:type" content="article">
     <meta property="og:image" content="https://getapipulse.com/og-image.png">
     <meta property="og:url" content="https://getapipulse.com/claude-4-migration-checklist.html">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Free Claude 4 Migration Checklist">
-    <meta name="twitter:image" content="https://getapipulse.com/og-image.png">
-    <meta name="twitter:description" content="Step-by-step checklist to migrate from Claude 4. Fix your broken app now.">
+    <meta name="twitter:title" content="Claude 4 Migration Checklist — Print-Ready Cheat Sheet">
+    <meta name="twitter:description" content="One-page checklist with model IDs, pricing, and code snippets.">
     <link rel="canonical" href="https://getapipulse.com/claude-4-migration-checklist.html">
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <link rel="stylesheet" href="styles.css">
@@ -27,132 +26,85 @@
       gtag('config', 'G-0CEP7S9Y3J');
     </script>
     <script src="analytics.js" defer></script>
-    <script src="dynamic-date.js" defer></script>
-    <script src="shared.js" defer></script>
-    <script src="pricing-data.js" defer></script>
     <script src="pro-features.js" defer></script>
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
-        "@type": "WebPage",
+        "@type": "TechArticle",
         "name": "Claude 4 Migration Checklist",
-        "description": "Free step-by-step checklist for migrating from Claude 4 Opus and Sonnet 4 by the June 15 deadline.",
-        "url": "https://getapipulse.com/claude-4-migration-checklist.html",
-        "about": {
-            "@type": "SoftwareApplication",
-            "name": "Claude 4 API"
+        "description": "One-page checklist for migrating from Claude 4 to alternatives after the June 15, 2026 shutdown.",
+        "datePublished": "2026-06-15",
+        "dateModified": "2026-06-15",
+        "publisher": {
+            "@type": "Organization",
+            "name": "APIpulse",
+            "url": "https://getapipulse.com"
         }
     }
     </script>
     <style>
-        .lp-content { max-width: 720px; margin: 0 auto; padding: 120px 24px 80px; }
-        .lp-urgency {
-            background: linear-gradient(135deg, #dc2626, #b91c1c);
-            color: white; padding: 12px 24px; border-radius: 8px;
-            text-align: center; margin-bottom: 32px; font-size: 14px; font-weight: 600;
+        .checklist-page { max-width: 800px; margin: 0 auto; padding: 120px 24px 80px; }
+        .checklist-header { text-align: center; margin-bottom: 32px; padding-bottom: 24px; border-bottom: 3px solid var(--accent); }
+        .checklist-header h1 { font-size: 36px; font-weight: 800; margin-bottom: 8px; }
+        .checklist-header .subtitle { color: var(--text-secondary); font-size: 16px; }
+        .checklist-header .meta { display: flex; justify-content: center; gap: 20px; margin-top: 12px; font-size: 13px; color: var(--text-muted); }
+        .section-title { font-size: 20px; font-weight: 700; margin: 32px 0 16px; padding-bottom: 8px; border-bottom: 1px solid var(--border); display: flex; align-items: center; gap: 10px; }
+        .section-title .icon { font-size: 20px; }
+        .model-table { width: 100%; border-collapse: collapse; margin-bottom: 24px; font-size: 14px; }
+        .model-table th { background: var(--bg-secondary); padding: 10px 12px; text-align: left; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; color: var(--text-muted); border-bottom: 2px solid var(--border); }
+        .model-table td { padding: 10px 12px; border-bottom: 1px solid var(--border); vertical-align: top; }
+        .model-table tr:last-child td { border-bottom: none; }
+        .model-table .old-id { color: #ef4444; text-decoration: line-through; font-family: 'SF Mono', 'Fira Code', monospace; font-size: 13px; }
+        .model-table .new-id { color: var(--green); font-family: 'SF Mono', 'Fira Code', monospace; font-size: 13px; font-weight: 600; }
+        .model-table .savings { color: var(--green); font-weight: 700; font-size: 13px; }
+        .model-table .provider-badge { display: inline-block; padding: 2px 8px; border-radius: 4px; font-size: 11px; font-weight: 600; }
+        .badge-anthropic { background: rgba(99,102,241,0.15); color: var(--accent); }
+        .badge-openai { background: rgba(34,197,94,0.15); color: var(--green); }
+        .badge-google { background: rgba(59,130,246,0.15); color: #3b82f6; }
+        .badge-deepseek { background: rgba(245,158,11,0.15); color: #f59e0b; }
+        .checklist { list-style: none; padding: 0; margin: 0 0 24px; }
+        .checklist li { display: flex; align-items: flex-start; gap: 12px; padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.05); font-size: 14px; line-height: 1.5; }
+        .checklist li:last-child { border-bottom: none; }
+        .checklist .checkbox { width: 20px; height: 20px; border: 2px solid var(--border); border-radius: 4px; flex-shrink: 0; margin-top: 2px; }
+        .code-block { background: #0d1117; border: 1px solid #30363d; border-radius: 8px; padding: 14px; margin: 12px 0; overflow-x: auto; font-family: 'SF Mono', 'Fira Code', monospace; font-size: 13px; line-height: 1.5; color: #e6edf3; }
+        .code-block .comment { color: #8b949e; }
+        .code-block .remove { color: #f87171; }
+        .code-block .add { color: #4ade80; }
+        .action-box { background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 10px; padding: 16px; margin: 16px 0; }
+        .action-box h3 { font-size: 15px; font-weight: 700; margin-bottom: 8px; }
+        .action-box p { font-size: 13px; color: var(--text-secondary); margin: 0; line-height: 1.5; }
+        @media print {
+            body { background: white !important; color: #1a1a2e !important; padding: 0 !important; }
+            nav, .sticky-cta-bar, footer, .no-print { display: none !important; }
+            .checklist-page { padding: 20px !important; max-width: 100% !important; }
+            .checklist-header { border-bottom-color: #6366f1 !important; }
+            .checklist-header h1 { font-size: 28px !important; }
+            .section-title { color: #1a1a2e !important; border-bottom-color: #e5e7eb !important; }
+            .model-table th { background: #f3f4f6 !important; color: #374151 !important; }
+            .model-table td { border-bottom-color: #e5e7eb !important; color: #1a1a2e !important; }
+            .model-table .old-id { color: #dc2626 !important; }
+            .model-table .new-id { color: #16a34a !important; }
+            .model-table .savings { color: #16a34a !important; }
+            .code-block { background: #f3f4f6 !important; border-color: #d1d5db !important; color: #1a1a2e !important; }
+            .code-block .comment { color: #6b7280 !important; }
+            .code-block .remove { color: #dc2626 !important; }
+            .code-block .add { color: #16a34a !important; }
+            .action-box { background: #f9fafb !important; border-color: #e5e7eb !important; }
+            .action-box h3, .checklist li { color: #1a1a2e !important; }
+            .checklist .checkbox { border-color: #9ca3af !important; }
+            a { color: #6366f1 !important; }
         }
-        h1 { font-size: 38px; font-weight: 800; text-align: center; margin-bottom: 12px; line-height: 1.2; }
-        .lp-subtitle { text-align: center; color: var(--text-secondary); font-size: 17px; margin-bottom: 40px; line-height: 1.6; }
-
-        /* Preview */
-        .preview-section {
-            background: var(--bg-secondary); border: 1px solid var(--border);
-            border-radius: 16px; padding: 28px; margin-bottom: 32px;
-        }
-        .preview-section h2 { font-size: 20px; font-weight: 700; margin-bottom: 16px; }
-        .preview-list { list-style: none; padding: 0; }
-        .preview-list li {
-            padding: 10px 0; border-bottom: 1px solid var(--border);
-            display: flex; align-items: flex-start; gap: 12px; font-size: 15px;
-        }
-        .preview-list li:last-child { border-bottom: none; }
-        .preview-list li::before { content: "✓"; color: var(--green); font-weight: 700; flex-shrink: 0; }
-        .preview-list .section-header {
-            font-weight: 700; color: var(--accent); font-size: 13px;
-            text-transform: uppercase; letter-spacing: 0.5px; padding-top: 16px;
-        }
-        .preview-list .section-header::before { content: ""; }
-
-        /* Capture form */
-        .capture-section {
-            background: linear-gradient(135deg, rgba(99,102,241,0.1), rgba(139,92,246,0.1));
-            border: 2px solid var(--accent); border-radius: 16px;
-            padding: 32px; margin-bottom: 32px; text-align: center;
-        }
-        .capture-section h2 { font-size: 24px; font-weight: 800; margin-bottom: 8px; }
-        .capture-section p { color: var(--text-secondary); font-size: 15px; margin-bottom: 20px; }
-        .capture-form { display: flex; gap: 12px; max-width: 480px; margin: 0 auto; }
-        .capture-form input {
-            flex: 1; padding: 14px 18px; border-radius: 10px;
-            border: 1px solid var(--border); background: var(--bg-secondary);
-            color: var(--text-primary); font-size: 15px;
-        }
-        .capture-form input:focus { outline: none; border-color: var(--accent); }
-        .capture-form button {
-            padding: 14px 28px; background: var(--accent); color: white;
-            border: none; border-radius: 10px; font-size: 15px; font-weight: 700;
-            cursor: pointer; white-space: nowrap;
-        }
-        .capture-form button:hover { opacity: 0.9; }
-        .capture-form button:disabled { opacity: 0.5; cursor: not-allowed; }
-        .capture-msg { margin-top: 12px; font-size: 14px; display: none; }
-        .capture-msg.success { color: var(--green); display: block; }
-        .capture-msg.error { color: var(--red); display: block; }
-        .capture-note { font-size: 12px; color: var(--text-muted); margin-top: 12px; }
-
-        /* Social proof */
-        .social-proof {
-            background: var(--bg-secondary); border: 1px solid var(--border);
-            border-radius: 12px; padding: 24px; margin-bottom: 32px; text-align: center;
-        }
-        .social-proof p { font-size: 14px; color: var(--text-secondary); font-style: italic; }
-        .social-proof .author { font-size: 13px; color: var(--text-muted); margin-top: 8px; font-style: normal; }
-
-        /* Stats */
-        .stats-bar {
-            display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;
-            margin-bottom: 32px;
-        }
-        .stat-card {
-            background: var(--bg-secondary); border: 1px solid var(--border);
-            border-radius: 12px; padding: 20px; text-align: center;
-        }
-        .stat-card .num { font-size: 28px; font-weight: 800; color: var(--accent); }
-        .stat-card .label { font-size: 13px; color: var(--text-muted); margin-top: 4px; }
-
-        /* Alternatives preview */
-        .alternatives-section {
-            background: var(--bg-secondary); border: 1px solid var(--border);
-            border-radius: 16px; padding: 28px; margin-bottom: 32px;
-        }
-        .alternatives-section h2 { font-size: 20px; font-weight: 700; margin-bottom: 16px; }
-        .alt-table { width: 100%; border-collapse: collapse; font-size: 14px; }
-        .alt-table th { text-align: left; padding: 10px 12px; border-bottom: 2px solid var(--border); font-size: 12px; text-transform: uppercase; letter-spacing: 0.5px; color: var(--text-muted); }
-        .alt-table td { padding: 10px 12px; border-bottom: 1px solid var(--border); }
-        .alt-table .savings { color: var(--green); font-weight: 700; }
-
-        /* Bottom CTA */
-        .bottom-cta {
-            background: var(--bg-secondary); border: 1px solid var(--border);
-            border-radius: 16px; padding: 32px; text-align: center; margin-bottom: 32px;
-        }
-        .bottom-cta h2 { font-size: 22px; font-weight: 800; margin-bottom: 8px; }
-        .bottom-cta p { color: var(--text-secondary); font-size: 15px; margin-bottom: 20px; }
-
-        @media (max-width: 768px) {
-            .lp-content { padding: 100px 16px 60px; }
-            h1 { font-size: 28px; }
-            .lp-subtitle { font-size: 15px; }
-            .capture-form { flex-direction: column; }
-            .stats-bar { grid-template-columns: 1fr; }
-            .alt-table { font-size: 12px; }
-            .alt-table th, .alt-table td { padding: 8px; }
+        @media (max-width: 640px) {
+            .checklist-page { padding: 100px 16px 60px; }
+            .checklist-header h1 { font-size: 24px; }
+            .model-table { font-size: 12px; }
+            .model-table th, .model-table td { padding: 8px; }
+            .code-block { font-size: 11px; padding: 10px; }
         }
     </style>
-    <meta name="theme-color" content="#dc2626">
+    <meta name="theme-color" content="#6366f1">
 </head>
 <body>
-    <a href="#main" class="skip-link">Skip to content</a>
     <nav>
         <div class="nav-inner">
             <a href="index.html" class="logo">API<span>pulse</span></a>
@@ -160,258 +112,147 @@
             <div class="nav-links">
                 <a href="calculator.html">Calculator</a>
                 <a href="compare.html">Compare</a>
-                <a href="claude-4-is-down.html" style="color:var(--red);">Claude 4 Deprecation</a>
-                <a href="pricing.html">Pricing</a>
-                <a href="pro.html" class="nav-cta" onclick="if(window.trackEvent)window.trackEvent('pro_button_clicked',{source:'nav'})">Pro — $29</a>
+                <a href="claude-4-is-down.html">Emergency Fix</a>
+                <a href="blog.html">Blog</a>
+                <a href="pricing.html" class="nav-cta">Get Pro — $29</a>
                 <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
             </div>
         </div>
     </nav>
 
-    <main id="main">
-    <div class="lp-content">
+    <main>
+        <div class="checklist-page">
+            <div class="checklist-header">
+                <div style="font-size:13px;color:var(--accent);font-weight:700;margin-bottom:8px;">📋 PRINT-READY CHEAT SHEET</div>
+                <h1>Claude 4 Migration Checklist</h1>
+                <p class="subtitle">Everything you need to fix your 410 errors and migrate to a cheaper alternative — in one page.</p>
+                <div class="meta">
+                    <span>Last updated: June 15, 2026</span>
+                    <span>42 models · 10 providers</span>
+                    <span>Save: Ctrl+P / ⌘+P</span>
+                </div>
+            </div>
 
-        <div class="lp-urgency" id="urgency-banner">
-            Claude 4 Opus & Sonnet 4 retired June 15, 2026 — <span id="days-left" style="color:var(--red);">PASSED</span>
-        </div>
-
-        <h1>Don't let Claude 4 break your app</h1>
-        <p class="lp-subtitle">Get the free migration checklist with exact code changes, cost comparisons, and a step-by-step plan to switch after Claude 4's retirement.</p>
-
-        <!-- CAPTURE FORM -->
-        <div class="capture-section" id="capture-top">
-            <h2>Get the Free Checklist</h2>
-            <p>Enter your email and we'll send you the complete migration checklist — including the exact code changes for Python, JavaScript, and curl.</p>
-            <form class="capture-form" onsubmit="submitEmail(event, 'top')">
-                <input type="email" id="email-top" placeholder="you@company.com" required aria-label="Email address">
-                <button type="submit" id="btn-top">Send Me the Checklist</button>
-            </form>
-            <div class="capture-msg" id="msg-top"></div>
-            <p class="capture-note">No spam. Unsubscribe anytime. We only email you about AI API pricing updates.</p>
-        </div>
-
-        <!-- PREVIEW -->
-        <div class="preview-section">
-            <h2>What's in the checklist:</h2>
-            <ul class="preview-list">
-                <li class="section-header">Before You Start</li>
-                <li>Identify all Claude 4 references in your codebase (grep commands included)</li>
-                <li>Choose your replacement model (decision guide for every use case)</li>
-                <li>Estimate your cost savings with each alternative</li>
-                <li class="section-header">The Migration</li>
-                <li>Exact code changes for Python (Anthropic SDK)</li>
-                <li>Exact code changes for JavaScript/Node.js</li>
-                <li>Exact code changes for curl/REST API</li>
-                <li>How to switch providers (if going to DeepSeek, OpenAI, or Google)</li>
-                <li class="section-header">After Migration</li>
-                <li>Testing checklist to verify your migration works</li>
-                <li>Cost monitoring setup to track actual vs. expected savings</li>
-                <li>Rollback plan if something goes wrong</li>
+            <h2 class="section-title"><span class="icon">⚡</span> Quick Fix (2 Minutes)</h2>
+            <p style="font-size:14px;color:var(--text-secondary);margin-bottom:16px;">If you just need to get back online fast, change your model ID and redeploy:</p>
+            <ul class="checklist">
+                <li><span class="checkbox"></span><div><strong>Find your Claude 4 model IDs</strong> — Search your codebase for: <code style="background:var(--bg-secondary);padding:2px 6px;border-radius:4px;font-size:12px;">claude-4-opus</code>, <code style="background:var(--bg-secondary);padding:2px 6px;border-radius:4px;font-size:12px;">claude-sonnet-4</code></div></li>
+                <li><span class="checkbox"></span><div><strong>Replace with new model ID</strong> — See table below</div></li>
+                <li><span class="checkbox"></span><div><strong>Update base_url</strong> (only if switching providers)</div></li>
+                <li><span class="checkbox"></span><div><strong>Test locally</strong> — Make one API call to verify</div></li>
+                <li><span class="checkbox"></span><div><strong>Deploy</strong> — Push to production</div></li>
             </ul>
-        </div>
 
-        <!-- STATS -->
-        <div class="stats-bar">
-            <div class="stat-card">
-                <div class="num">34</div>
-                <div class="label">Replacement Models Compared</div>
-            </div>
-            <div class="stat-card">
-                <div class="num" style="color:var(--green);">97%</div>
-                <div class="label">Max Cost Savings</div>
-            </div>
-            <div class="stat-card">
-                <div class="num">1</div>
-                <div class="label">Line of Code to Change</div>
-            </div>
-        </div>
-
-        <!-- ALTERNATIVES PREVIEW -->
-        <div class="alternatives-section">
-            <h2>Quick comparison (per 1M tokens):</h2>
-            <table class="alt-table">
+            <h2 class="section-title"><span class="icon">🔄</span> Model ID Reference</h2>
+            <table class="model-table">
                 <thead>
-                    <tr>
-                        <th>Model</th>
-                        <th>Input</th>
-                        <th>Output</th>
-                        <th>Savings</th>
-                    </tr>
+                    <tr><th>Old ID (Dead)</th><th>New ID (Live)</th><th>Provider</th><th>Price (In/Out per 1M)</th><th>Savings</th></tr>
                 </thead>
                 <tbody>
-                    <tr style="color:var(--red);">
-                        <td><strong>Claude 4 Opus (retiring)</strong></td>
-                        <td>$15.00</td>
-                        <td>$75.00</td>
-                        <td>—</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Claude Opus 4.8</strong></td>
-                        <td>$5.00</td>
-                        <td>$25.00</td>
-                        <td class="savings">-67%</td>
-                    </tr>
-                    <tr>
-                        <td><strong>GPT-5</strong></td>
-                        <td>$1.25</td>
-                        <td>$10.00</td>
-                        <td class="savings">-87%</td>
-                    </tr>
-                    <tr>
-                        <td><strong>DeepSeek V4 Pro</strong></td>
-                        <td>$0.435</td>
-                        <td>$0.87</td>
-                        <td class="savings">-97%</td>
-                    </tr>
+                    <tr><td><span class="old-id">claude-4-opus-20250615</span></td><td><span class="new-id">claude-opus-4-8</span></td><td><span class="provider-badge badge-anthropic">Anthropic</span></td><td>$5.00 / $25.00</td><td class="savings">67%</td></tr>
+                    <tr><td><span class="old-id">claude-4-opus</span></td><td><span class="new-id">claude-sonnet-4-6</span></td><td><span class="provider-badge badge-anthropic">Anthropic</span></td><td>$3.00 / $15.00</td><td class="savings">80%</td></tr>
+                    <tr><td><span class="old-id">claude-sonnet-4-20250514</span></td><td><span class="new-id">gpt-5</span></td><td><span class="provider-badge badge-openai">OpenAI</span></td><td>$1.25 / $10.00</td><td class="savings">92%</td></tr>
+                    <tr><td><span class="old-id">claude-sonnet-4</span></td><td><span class="new-id">gemini-2.5-pro</span></td><td><span class="provider-badge badge-google">Google</span></td><td>$1.25 / $10.00</td><td class="savings">90%</td></tr>
+                    <tr><td></td><td><span class="new-id">deepseek-v4-pro</span></td><td><span class="provider-badge badge-deepseek">DeepSeek</span></td><td>$0.44 / $0.87</td><td class="savings">97%</td></tr>
+                    <tr><td></td><td><span class="new-id">deepseek-v4-flash</span></td><td><span class="provider-badge badge-deepseek">DeepSeek</span></td><td>$0.14 / $0.28</td><td class="savings">99%</td></tr>
                 </tbody>
             </table>
-            <p style="text-align:center;margin-top:16px;font-size:14px;"><a href="claude-4-migration-cheatsheet.html" style="color:var(--accent);font-weight:600;">See full comparison table with all 42 alternatives →</a></p>
-        </div>
 
-        <!-- SOCIAL PROOF -->
-        <div class="social-proof">
-            <p>"The model switch calculator answers that question directly. I switch between 3 providers depending on the task."</p>
-            <div class="author">— Hacker News user</div>
-        </div>
+            <h2 class="section-title"><span class="icon">💻</span> Code Snippets (Copy-Paste)</h2>
+            <div class="action-box">
+                <h3>Anthropic — Same API Key, Same SDK</h3>
+                <div class="code-block"><span class="comment">// Just change the model name. That's it.</span>
+<span class="remove">- model: "claude-4-opus-20250615"</span>
+<span class="add">+ model: "claude-opus-4-8"</span>
 
-        <!-- BOTTOM CTA -->
-        <div class="bottom-cta" id="capture-bottom">
-            <h2>Get the migration checklist</h2>
-            <p>It takes 2 minutes to read and could save you hours of debugging when Claude 4 stops working.</p>
-            <form class="capture-form" onsubmit="submitEmail(event, 'bottom')" style="max-width:480px;margin:0 auto;">
-                <input type="email" id="email-bottom" placeholder="you@company.com" required aria-label="Email address">
-                <button type="submit" id="btn-bottom">Send Me the Checklist</button>
-            </form>
-            <div class="capture-msg" id="msg-bottom"></div>
-        </div>
+<span class="comment">// Or for Sonnet:</span>
+<span class="remove">- model: "claude-sonnet-4-20250514"</span>
+<span class="add">+ model: "claude-sonnet-4-6"</span></div>
+            </div>
+            <div class="action-box">
+                <h3>OpenAI — New API Key Required</h3>
+                <div class="code-block"><span class="comment">// Get key from platform.openai.com</span>
+<span class="remove">- model: "claude-4-opus-20250615"</span>
+<span class="add">+ model: "gpt-5"</span>
+<span class="remove">- base_url: "https://api.anthropic.com/v1"</span>
+<span class="add">+ base_url: "https://api.openai.com/v1"</span></div>
+            </div>
+            <div class="action-box">
+                <h3>DeepSeek — Cheapest Option (97% Savings)</h3>
+                <div class="code-block"><span class="comment">// Get key from platform.deepseek.com</span>
+<span class="remove">- model: "claude-4-opus-20250615"</span>
+<span class="add">+ model: "deepseek-v4-pro"</span>
+<span class="remove">- base_url: "https://api.anthropic.com/v1"</span>
+<span class="add">+ base_url: "https://api.deepseek.com/v1"</span></div>
+            </div>
 
-        <!-- PRO CTA -->
-        <div style="max-width:600px;margin:0 auto 40px;background:var(--bg-secondary);border:1px solid var(--accent);border-radius:12px;padding:24px;text-align:center;">
-            <p style="font-size:15px;color:var(--text-secondary);margin-bottom:8px;"><strong style="color:var(--text-primary);">Want personalized migration recommendations?</strong> Pro users get custom model routing strategies, saved scenarios, cost reports, and optimization tips.</p>
-            <a href="https://buy.stripe.com/fZu7sL3Gw3GS0RQeoDeEo0a" class="btn-primary" style="display:inline-block;padding:12px 28px;font-size:15px;" target="_blank" rel="noopener" onclick="if(window.trackEvent)window.trackEvent('pro_button_clicked',{source:'checklist_page_cta'})">Get Pro — $29 lifetime</a>
-            <p style="font-size:11px;color:var(--text-muted);margin-top:8px;">14-day money-back guarantee. Lock in founding member pricing.</p>
-        </div>
+            <h2 class="section-title"><span class="icon">🔧</span> Framework Quick Fixes</h2>
+            <table class="model-table">
+                <thead><tr><th>Framework</th><th>What to Change</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>LangChain</strong></td><td><code style="font-size:12px;">ChatAnthropic(model="claude-opus-4-8")</code></td></tr>
+                    <tr><td><strong>LlamaIndex</strong></td><td><code style="font-size:12px;">Anthropic(model="claude-opus-4-8")</code></td></tr>
+                    <tr><td><strong>Vercel AI SDK</strong></td><td><code style="font-size:12px;">import { anthropic } from '@ai-sdk/anthropic'</code> — no model change needed</td></tr>
+                    <tr><td><strong>Anthropic SDK</strong></td><td><code style="font-size:12px;">client.messages.create({ model: "claude-opus-4-8" })</code></td></tr>
+                    <tr><td><strong>OpenAI SDK</strong></td><td>Change <code style="font-size:12px;">base_url</code> + model name</td></tr>
+                    <tr><td><strong>CrewAI</strong></td><td><code style="font-size:12px;">Agent(llm={"model": "claude-opus-4-8"})</code></td></tr>
+                </tbody>
+            </table>
 
-        <!-- RELATED -->
-        <div style="text-align:center;padding:24px;background:var(--bg-secondary);border-radius:12px;border:1px solid var(--border);">
-            <p style="font-size:14px;color:var(--text-secondary);margin-bottom:12px;">More Claude 4 migration resources:</p>
-            <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:12px;">
-                <a href="claude-4-migration-cheatsheet.html" style="color:var(--green);font-weight:600;font-size:14px;">Migration Cheat Sheet</a>
-                <span style="color:var(--text-muted);">·</span>
-                <a href="claude-4-is-down.html" style="color:var(--accent);font-weight:600;font-size:14px;">Full Deprecation Guide</a>
-                <span style="color:var(--text-muted);">·</span>
-                <a href="claude-4-migration-tool.html" style="color:var(--accent);font-weight:600;font-size:14px;">Migration Calculator</a>
-                <span style="color:var(--text-muted);">·</span>
-                <a href="calculator.html" style="color:var(--accent);font-weight:600;font-size:14px;">Cost Calculator</a>
+            <h2 class="section-title"><span class="icon">✅</span> Post-Migration Checklist</h2>
+            <ul class="checklist">
+                <li><span class="checkbox"></span><div><strong>Test with real prompts</strong> — Run your actual workload, not just "hello world"</div></li>
+                <li><span class="checkbox"></span><div><strong>Check output quality</strong> — Compare responses side-by-side if possible</div></li>
+                <li><span class="checkbox"></span><div><strong>Update rate limits</strong> — Different providers have different limits</div></li>
+                <li><span class="checkbox"></span><div><strong>Monitor costs</strong> — Check your first week's spend matches expectations</div></li>
+                <li><span class="checkbox"></span><div><strong>Update error handling</strong> — Different providers return different error codes</div></li>
+                <li><span class="checkbox"></span><div><strong>Remove old Claude 4 references</strong> — Clean up config files, env vars, documentation</div></li>
+                <li><span class="checkbox"></span><div><strong>Notify your team</strong> — Make sure everyone knows about the model change</div></li>
+            </ul>
+
+            <h2 class="section-title"><span class="icon">🤔</span> Which Provider Should You Pick?</h2>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:24px;">
+                <div class="action-box" style="border-color:var(--accent);"><h3 style="color:var(--accent);">Stay with Anthropic if:</h3><p>• You need the same API key<br>• You want zero code changes beyond model name<br>• Quality is more important than cost<br>• You use Claude-specific features (tool use, etc.)</p></div>
+                <div class="action-box" style="border-color:var(--green);"><h3 style="color:var(--green);">Switch to DeepSeek if:</h3><p>• Cost is your #1 priority<br>• You're okay with a different API format<br>• You need high volume at low cost<br>• You can handle slightly different behavior</p></div>
+                <div class="action-box" style="border-color:#3b82f6;"><h3 style="color:#3b82f6;">Switch to OpenAI/Google if:</h3><p>• You already have their API keys<br>• You need multimodal (vision, audio)<br>• You want the largest ecosystem<br>• You use their other services (Azure, GCP)</p></div>
+                <div class="action-box" style="border-color:#f59e0b;"><h3 style="color:#f59e0b;">Use multiple providers if:</h3><p>• You want redundancy (no single point of failure)<br>• Different models for different tasks<br>• You're optimizing for cost per task type<br>• You want to hedge against future shutdowns</p></div>
+            </div>
+
+            <div style="background:linear-gradient(135deg,rgba(99,102,241,0.1),rgba(168,85,247,0.1));border:1px solid var(--accent);border-radius:14px;padding:28px;text-align:center;margin-top:32px;">
+                <h3 style="font-size:20px;font-weight:800;margin-bottom:8px;">Need Help Choosing?</h3>
+                <p style="color:var(--text-secondary);margin-bottom:16px;font-size:14px;">Use our free tools to find the cheapest model for YOUR specific usage:</p>
+                <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
+                    <a href="claude-4-migration-advisor.html" style="display:inline-block;background:var(--accent);color:white;padding:12px 24px;border-radius:8px;font-size:14px;font-weight:700;text-decoration:none;">Migration Advisor — 60 Seconds</a>
+                    <a href="calculator.html" style="display:inline-block;background:var(--bg-secondary);color:var(--text-primary);padding:12px 24px;border-radius:8px;font-size:14px;font-weight:700;text-decoration:none;border:1px solid var(--border);">Full Calculator — 42 Models</a>
+                </div>
+                <p style="font-size:12px;color:var(--text-muted);margin-top:12px;">Or get Pro ($29 lifetime) for saved scenarios, cost reports, and optimization tips.</p>
+            </div>
+
+            <div style="text-align:center;margin-top:24px;font-size:13px;color:var(--text-muted);">
+                <p>Print this page: <strong>Ctrl+P</strong> (Windows) or <strong>⌘+P</strong> (Mac)</p>
+                <p style="margin-top:4px;">© 2026 APIpulse · <a href="https://getapipulse.com" style="color:var(--accent);">getapipulse.com</a></p>
             </div>
         </div>
-
-        <!-- Post-Shutdown Updates -->
-        <div style="margin-top:16px;text-align:center;padding:20px;background:rgba(239,68,68,0.06);border:1px solid rgba(239,68,68,0.2);border-radius:12px;">
-            <p style="font-size:14px;font-weight:700;color:#ef4444;margin-bottom:12px;">🔴 Claude 4 Has Been Shut Down — Read the Latest:</p>
-            <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:8px;">
-                <a href="blog-claude-4-shutdown-complete.html" style="background:var(--bg-card);border:1px solid rgba(239,68,68,0.3);border-radius:8px;padding:8px 16px;font-size:13px;color:var(--text-primary);text-decoration:none;font-weight:600;">✅ Shutdown Complete</a>
-                <a href="blog-claude-4-down-fix.html" style="background:var(--bg-card);border:1px solid rgba(239,68,68,0.3);border-radius:8px;padding:8px 16px;font-size:13px;color:#ef4444;text-decoration:none;font-weight:600;">🔴 Fix 410 Errors in 60s</a>
-                <a href="blog-what-replaced-claude-4.html" style="background:var(--bg-card);border:1px solid rgba(239,68,68,0.3);border-radius:8px;padding:8px 16px;font-size:13px;color:var(--text-primary);text-decoration:none;font-weight:600;">🔄 What Replaced Claude 4?</a>
-            </div>
-        </div>
-
-    </div>
-
-    <button class="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">↑</button>
     </main>
 
-    <script>
-        // Countdown
-        (function() {
-            var deadline = new Date('2026-06-15T00:00:00Z');
-            var now = new Date();
-            var diff = deadline - now;
-            var days = diff > 0 ? Math.ceil(diff / 86400000) : 0;
-            var el = document.getElementById('days-left');
-            if (el) el.textContent = days;
-            if (days <= 7) {
-                var banner = document.getElementById('urgency-banner');
-                if (banner) banner.style.background = 'linear-gradient(135deg, #991b1b, #7f1d1d)';
-            }
-        })();
-
-        // Email submission
-        function submitEmail(e, position) {
-            e.preventDefault();
-            var emailInput = document.getElementById('email-' + position);
-            var btn = document.getElementById('btn-' + position);
-            var msg = document.getElementById('msg-' + position);
-            var email = emailInput.value.trim();
-
-            if (!email) return;
-
-            btn.disabled = true;
-            btn.textContent = 'Sending...';
-            msg.className = 'capture-msg';
-            msg.textContent = '';
-
-            fetch('/api/subscribe', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ email: email })
-            })
-            .then(function(r) { return r.json(); })
-            .then(function(data) {
-                if (data.message && data.message.includes('uccess')) {
-                    msg.className = 'capture-msg success';
-                    msg.textContent = 'Check your inbox! The migration checklist is on its way.';
-                    emailInput.value = '';
-                    btn.textContent = 'Sent!';
-                    if (window.trackEvent) window.trackEvent('checklist_signup', {
-                        position: position,
-                        email_domain: email.split('@')[1]
-                    });
-                } else if (data.alreadySubscribed) {
-                    msg.className = 'capture-msg success';
-                    msg.textContent = "You're already subscribed! Check your inbox for the checklist.";
-                    btn.textContent = 'Already subscribed';
-                } else {
-                    msg.className = 'capture-msg error';
-                    msg.textContent = 'Something went wrong. Please try again.';
-                    btn.disabled = false;
-                    btn.textContent = 'Send Me the Checklist';
-                }
-            })
-            .catch(function() {
-                msg.className = 'capture-msg error';
-                msg.textContent = 'Network error. Please try again.';
-                btn.disabled = false;
-                btn.textContent = 'Send Me the Checklist';
-            });
-        }
-
-        // Track page view
-        if (window.trackEvent) window.trackEvent('checklist_page_viewed', {
-            referrer: document.referrer || 'direct'
-        });
-    </script>
-
-    <section style="max-width:600px;margin:0 auto 40px;padding:0 24px;text-align:center;">
-        <p style="font-size:14px;color:var(--text-muted);">Also see: <a href="blog-claude-4-10-day-action-plan.html">10-Day Action Plan</a> — day-by-day countdown with code changes and cost comparisons.</p>
-    </section>
-
-        <div style="max-width:760px;margin:32px auto;padding:20px 24px;background:rgba(99,102,241,0.08);border:1px solid rgba(99,102,241,0.2);border-radius:12px;text-align:center;">
-        <p style="font-size:16px;font-weight:700;margin-bottom:8px;">🔄 Want everything in one page?</p>
-        <p style="font-size:14px;color:var(--text-secondary);margin-bottom:12px;">The <strong>Claude 4 Migration Command Center</strong> combines a live countdown, savings calculator, exact code changes, decision tree, and persistent checklist.</p>
-        <a href="claude-4-migration-command-center.html" style="display:inline-block;padding:10px 24px;background:var(--accent);color:white;border-radius:8px;font-weight:600;text-decoration:none;">Open Migration Command Center →</a>
-    </div>
-
     <footer>
-        <p>&copy; 2026 APIpulse. <a href="index.html">Home</a> &middot; <a href="claude-4-is-down.html">Claude 4 Deprecation</a> &middot; <a href="calculator.html">Calculator</a> &middot; <a href="pricing.html">Pricing</a> &middot; <a href="blog.html">Blog</a></p>
+        <div class="footer-inner">
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="calculator.html">Calculator</a>
+                <a href="compare.html">Compare</a>
+                <a href="blog.html">Blog</a>
+                <a href="pro.html">Pro</a>
+            </div>
+            <p class="footer-copy">© 2026 APIpulse · <a href="mailto:support@getapipulse.com">support@getapipulse.com</a></p>
+        </div>
     </footer>
 
-    <!-- Emergency cross-link -->
-    <div style="max-width:800px;margin:32px auto;padding:0 24px;">
-        <div style="background:rgba(239,68,68,0.06);border:1px solid rgba(239,68,68,0.2);border-radius:12px;padding:20px;text-align:center;">
-            <p style="margin:0 0 8px 0;font-weight:700;color:#ef4444;">🚨 Claude 4 Is Down — Getting 410 Errors?</p>
-            <a href="claude-4-is-down.html" style="color:#ef4444;text-decoration:underline;font-weight:600;">Get the 5-minute fix guide →</a>
-        </div>
-    </div>
+    <script>
+        if (window.trackEvent) window.trackEvent('checklist_page_view');
+        window.addEventListener('beforeprint', function() {
+            if (window.trackEvent) window.trackEvent('checklist_printed');
+        });
+    </script>
 </body>
 </html>
