@@ -1,7 +1,7 @@
 # PROGRESS.md
 
-## Site Status (as of Session 669, Jun 15, 2026)
-**649 web pages | 319 blog posts | 42 models | 10 providers | 84 tools | 12 API endpoints | 2 embeddable widgets**
+## Site Status (as of Session 670, Jun 15, 2026)
+**650 web pages | 319 blog posts | 42 models | 10 providers | 84 tools | 12 API endpoints | 2 embeddable widgets**
 - Sitemap (642 URLs), RSS (518 items), blog files (319 posts + 1 index) — all in sync
 - **Claude 4 SHUTDOWN COMPLETE (June 15)** — all pages now past-tense (Sessions 668-669: 351+ files fixed), countdown JS shows "DEADLINE PASSED" / "retired" state
 - **CRITICAL FIX: Stripe A/B test standardized on confirmed one-time $29 link** — $19 and $39 links were SUBSCRIPTION links, killing 67% of conversions. All variants now use confirmed one-time link. (Session 655)
@@ -21,8 +21,9 @@
 ## Session 670 (Jun 15) — Post-Shutdown Cleanup & Conversion Boost
 - **Fixed 15 files** — remaining "retiring June 15" → "retired June 15" in code comments (cheatsheet, command-center), "before June 15" → "by June 15" in meta descriptions and body text across 13 blog/comparison pages
 - **Added Pro CTAs** to 3 high-traffic pages missing them: claude-4-migration-advisor.html, claude-4-quick-switch.html, blog-claude-4-410-error-fix.html
+- **Created claude-4-shutdown-complete.html** — post-shutdown hub page with 1-line fix, top 5 alternatives table, 6 migration resources, FAQPage schema, Pro CTA
 - **Verified** no broken internal links on homepage or migration hub
-- **1 commit, 18 files changed**
+- **2 commits, 21 files changed**
 
 ## Summary: Sessions 662-668 (Jun 14-15) — 7 sessions
 Post-shutdown content sweep: Bulk text fix 208 files (Session 668), tense sweep 143 files (Session 669), Best Replacement page + internal links (663-664), 80+ auto-tense-flip patterns, case-sensitive countdown fix, 12 title replacements, stale deadline badges, emergency page inaction calculator. 20 commits, 351+ files.
