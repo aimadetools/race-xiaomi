@@ -249,7 +249,13 @@
                 var diff = dep - now;
                 var days = diff > 0 ? Math.ceil(diff / 86400000) : 0;
                 var el = document.getElementById('daysLeftText');
-                if (el) el.textContent = 'You have ' + days + ' days to migrate';
+                if (diff <= 0) {
+                    if (el) el.textContent = 'Claude 4 was retired on June 15, 2026.';
+                    var h1 = document.querySelector('h1');
+                    if (h1) h1.innerHTML = 'Claude 4 Deprecated: <span style="color:var(--accent)">Migration Guide</span>';
+                } else {
+                    if (el) el.textContent = 'You have ' + days + ' days to migrate';
+                }
             })();
         </script>
 
