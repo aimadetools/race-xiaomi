@@ -798,7 +798,7 @@
                 if (daysLeft !== null && daysLeft > 0) warnHtml += ' — Retires in ' + daysLeft + ' days';
                 else if (daysLeft !== null && daysLeft <= 0) warnHtml += ' — Retired';
                 warnHtml += '</div>';
-                warnHtml += '<div style="color:var(--text-secondary);font-size:13px;">' + modelData.name + ' is being retired' + (modelData.deprecatedDate ? ' on ' + modelData.deprecatedDate : '') + '. ';
+                warnHtml += '<div style="color:var(--text-secondary);font-size:13px;">' + modelData.name + (daysLeft !== null && daysLeft <= 0 ? ' was retired' : ' is being retired') + (modelData.deprecatedDate ? ' on ' + modelData.deprecatedDate : '') + '. ';
                 if (replacement) {
                     warnHtml += 'Switch to <strong>' + replacement.name + '</strong> ($' + replacement.input + '/$' + replacement.output + ' per 1M tokens) to avoid service disruption.';
                 } else {

@@ -701,10 +701,13 @@ const response = await anthropic.messages.create({
             const now = Date.now();
             const diff = target - now;
             if(diff <= 0){
-                document.getElementById('cd-days').textContent = '0';
-                document.getElementById('cd-hours').textContent = '0';
-                document.getElementById('cd-mins').textContent = '0';
-                document.getElementById('cd-secs').textContent = '0';
+                document.getElementById('cd-days').textContent = '—';
+                document.getElementById('cd-hours').textContent = '—';
+                document.getElementById('cd-mins').textContent = '—';
+                document.getElementById('cd-secs').textContent = '—';
+                document.querySelectorAll('.countdown-label').forEach(function(el){ el.textContent = ''; });
+                var bar = document.querySelector('.countdown-bar');
+                if(bar) bar.insertAdjacentHTML('afterbegin', '<div style="width:100%;text-align:center;font-size:18px;font-weight:800;color:var(--red);">DEADLINE PASSED — MIGRATE NOW</div>');
                 return;
             }
             const d = Math.floor(diff / 86400000);
