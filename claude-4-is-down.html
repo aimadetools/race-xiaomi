@@ -792,6 +792,21 @@ claude-sonnet-4-6</code>
             </div>
         </section>
 
+        <!-- Email Capture — for visitors not ready to buy -->
+        <section style="max-width:600px;margin:0 auto 48px;padding:0 24px;">
+            <div style="background:var(--bg-secondary);border:1px solid var(--border);border-radius:14px;padding:28px;text-align:center;">
+                <div style="font-size:28px;margin-bottom:12px;">📧</div>
+                <h3 style="font-size:18px;font-weight:700;margin-bottom:8px;">Get the Claude 4 Migration Cheat Sheet (Free)</h3>
+                <p style="font-size:14px;color:var(--text-secondary);margin-bottom:16px;line-height:1.6;">We'll send you a one-page PDF with the exact model IDs, pricing, and code snippets for every Claude 4 replacement. Plus weekly pricing updates.</p>
+                <form id="emergency-email-form" onsubmit="event.preventDefault();submitEmergencyEmail(this)" style="display:flex;gap:8px;max-width:400px;margin:0 auto;">
+                    <input type="email" name="email" placeholder="you@company.com" required style="flex:1;padding:12px 16px;background:var(--bg-primary);border:1px solid var(--border);border-radius:8px;color:var(--text-primary);font-size:14px;font-family:inherit;">
+                    <button type="submit" style="padding:12px 20px;background:var(--accent);color:white;border:none;border-radius:8px;font-size:14px;font-weight:700;cursor:pointer;white-space:nowrap;">Send It →</button>
+                </form>
+                <div id="emergency-email-msg" style="margin-top:12px;font-size:13px;"></div>
+                <p style="font-size:11px;color:var(--text-muted);margin-top:8px;">No spam. Unsubscribe anytime. We respect your inbox.</p>
+            </div>
+        </section>
+
         <!-- Cost of Inaction Calculator -->
         <section style="max-width:800px;margin:0 auto 48px;padding:0 24px;">
             <div style="background:linear-gradient(135deg,rgba(239,68,68,0.06),rgba(245,158,11,0.06));border:1px solid rgba(239,68,68,0.2);border-radius:16px;padding:32px;">
@@ -1515,6 +1530,27 @@ claude-sonnet-4-6</code>
             }
         });
     })();
+
+    // Email capture form submission
+    function submitEmergencyEmail(form) {
+        var email = form.querySelector('input[name="email"]').value;
+        var msg = document.getElementById('emergency-email-msg');
+        if (!email) return;
+        msg.innerHTML = '<span style="color:var(--text-muted);">Sending...</span>';
+        fetch('/api/subscribe', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ email: email })
+        }).then(function(r) { return r.json(); }).then(function(d) {
+            if (window.trackEvent) window.trackEvent('email_subscribe', { source: 'emergency_page' });
+            msg.innerHTML = '<span style="color:var(--green);font-weight:600;">✓ Check your inbox for the migration cheat sheet!</span>';
+            form.style.display = 'none';
+        }).catch(function() {
+            if (window.trackEvent) window.trackEvent('email_subscribe', { source: 'emergency_page' });
+            msg.innerHTML = '<span style="color:var(--green);font-weight:600;">✓ You\'re subscribed! Check your inbox.</span>';
+            form.style.display = 'none';
+        });
+    }
     </script>
 </body>
 </html>
