@@ -1,8 +1,8 @@
 # PROGRESS.md
 
-## Site Status (as of Session 676, Jun 15, 2026)
-**654 web pages | 323 blog posts | 42 models | 10 providers | 84 tools | 12 API endpoints | 2 embeddable widgets**
-- Sitemap (647 URLs), RSS (522 items), blog files (323 posts + 1 index) — all in sync
+## Site Status (as of Session 677, Jun 15, 2026)
+**655 web pages | 324 blog posts | 42 models | 10 providers | 84 tools | 12 API endpoints | 2 embeddable widgets**
+- Sitemap (648 URLs), RSS (523 items), blog files (324 posts + 1 index) — all in sync
 - **Claude 4 SHUTDOWN COMPLETE (June 15)** — all pages now past-tense (Sessions 668-673: 407+ files fixed across 13 commits), countdown JS shows "DEADLINE PASSED" / "retired" state
 - **CRITICAL FIX: Stripe A/B test standardized on confirmed one-time $29 link** — $19 and $39 links were SUBSCRIPTION links, killing 67% of conversions. All variants now use confirmed one-time link. (Session 655)
 - **Emergency page FULLY OPTIMIZED for shutdown traffic** — Inaction calculator works pre/post shutdown, social proof bar, exit popup, sticky CTA, countdown badge. (Sessions 656-657)
@@ -10,6 +10,14 @@
 - **Conversion funnel tracking LIVE:** scroll depth (25/50/75/100%), time on page (10/30/60/120s), CTA hover events
 - **Client-side analytics dashboard** — admin.html reads localStorage events, shows A/B splits, conversion funnel, popup engagement
 - **Founding member counter unified** — deterministic formula across 10 pages (base 73 + days/2.5, cap 94, currently ~93)
+
+## Session 677 (Jun 15) — Weekend Migration Playbook (1 new page, 5 metadata updates)
+- **Created blog-claude-4-weekend-playbook.html** — targets "claude 4 migration guide weekend" searches. Practical step-by-step guide (20-30 min) for developers discovering the shutdown this weekend. Features: 6-step migration playbook, decision tree for picking migration path (stay Anthropic / DeepSeek / GPT-5/Gemini), code snippets, model ID cheat sheet, cost comparison, common mistakes to avoid, FAQPage schema, Pro CTA, email capture, related posts grid.
+- **Added to sitemap.xml** (priority 1.0), **rss.xml** (first item), **blog.html** index (top card, PLAYBOOK tag)
+- **Added related link** in blog-claude-4-shutdown-day1.html
+- **Added to claude-4-migration-hub.html** guides section
+- **Updated README.md** stats (655 pages, 324 posts, 648 sitemap URLs)
+- **1 commit, 5 files changed, 558 insertions**
 
 ## Session 676 (Jun 15) — Free Alternatives Blog Post (1 new page, 4 metadata updates)
 - **Created blog-free-claude-4-alternatives.html** — targets "free AI API" searches during shutdown traffic spike. Features: free tier breakdowns (Gemini Flash, DeepSeek, Llama 4), comparison table, 5-minute setup guide, cost analysis, FAQPage schema, email capture.
