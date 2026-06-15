@@ -22,6 +22,7 @@
 - **Changelog:** pricing-changelog — "is retiring" → "retired"
 - **Countdown:** claude-4-alternatives-comparison — shows "DEADLINE PASSED" instead of 0:0:0:0
 - **1 commit, 12 files changed, 23 insertions, 20 deletions**
+- **Updated README.md** — fixed stale stats (39→42 models, 445→651 pages, 261→319 posts, 71→84 tools, Week 7→9)
 
 ## Session 672 (Jun 15) — Post-Shutdown Tense Cleanup (44 files, 99 line fixes)
 - **Fixed 44 files** with remaining pre-shutdown future tense missed by Sessions 668-671
