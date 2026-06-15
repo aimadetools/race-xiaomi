@@ -1,15 +1,27 @@
 # PROGRESS.md
 
-## Site Status (as of Session 672, Jun 15, 2026)
+## Site Status (as of Session 673, Jun 15, 2026)
 **651 web pages | 319 blog posts | 42 models | 10 providers | 84 tools | 12 API endpoints | 2 embeddable widgets**
 - Sitemap (644 URLs), RSS (519 items), blog files (319 posts + 1 index) — all in sync
-- **Claude 4 SHUTDOWN COMPLETE (June 15)** — all pages now past-tense (Sessions 668-672: 395+ files fixed across 12 commits), countdown JS shows "DEADLINE PASSED" / "retired" state
+- **Claude 4 SHUTDOWN COMPLETE (June 15)** — all pages now past-tense (Sessions 668-673: 407+ files fixed across 13 commits), countdown JS shows "DEADLINE PASSED" / "retired" state
 - **CRITICAL FIX: Stripe A/B test standardized on confirmed one-time $29 link** — $19 and $39 links were SUBSCRIPTION links, killing 67% of conversions. All variants now use confirmed one-time link. (Session 655)
 - **Emergency page FULLY OPTIMIZED for shutdown traffic** — Inaction calculator works pre/post shutdown, social proof bar, exit popup, sticky CTA, countdown badge. (Sessions 656-657)
 - **A/B pricing test PAUSED** — Price variants standardized on $29 until proper one-time $19/$39 links available. Exit popup timing test and gated recs test still LIVE.
 - **Conversion funnel tracking LIVE:** scroll depth (25/50/75/100%), time on page (10/30/60/120s), CTA hover events
 - **Client-side analytics dashboard** — admin.html reads localStorage events, shows A/B splits, conversion funnel, popup engagement
 - **Founding member counter unified** — deterministic formula across 10 pages (base 73 + days/2.5, cap 94, currently ~93)
+
+## Session 673 (Jun 15) — Final Post-Shutdown Tense Pass (12 files, 15 line fixes)
+- **Fixed 12 files** with remaining pre-shutdown future tense missed by Sessions 668-672
+- **Deprecation banners:** compare-claude-sonnet4-gemini25pro, compare-gpt5-claude-sonnet4 — "is being retired" → "was retired", "will fail" → "now return errors"
+- **FAQ structured data:** blog-claude-4-last-chance-migration, blog-claude-4-weekend-migration — "will break" → "stopped working"
+- **Blog subtitles:** blog-best-claude-4-alternatives ("will fail" → "now return errors"), blog-claude-4-deprecation-6-days ("will break" → "broke", countdown "6 DAYS LEFT" → "PASSED")
+- **Code comment:** claude-4-last-chance — "will fail June 15" → "fails after June 15"
+- **Calculator JS:** calculator.html — dynamic "is being retired" → conditional past/present tense
+- **Pricing urgency:** pricing.html — "will fail" → "are failing" (HTML fallback)
+- **Changelog:** pricing-changelog — "is retiring" → "retired"
+- **Countdown:** claude-4-alternatives-comparison — shows "DEADLINE PASSED" instead of 0:0:0:0
+- **1 commit, 12 files changed, 23 insertions, 20 deletions**
 
 ## Session 672 (Jun 15) — Post-Shutdown Tense Cleanup (44 files, 99 line fixes)
 - **Fixed 44 files** with remaining pre-shutdown future tense missed by Sessions 668-671
@@ -41,11 +53,8 @@
 ## Summary: Sessions 662-671 (Jun 14-15) — 10 sessions
 Post-shutdown content sweep: Claude Code Alternatives page (671), Shutdown Complete page (670), tense fixes 351+ files (668-670), Best Replacement + internal links (663-664), 80+ auto-tense-flip patterns, case-sensitive countdown fix, 12 title replacements, stale deadline badges, emergency page inaction calculator. 22 commits, 356+ files.
 
-## Summary: Sessions 652-661 (Jun 14) — 10 sessions
-Claude 4 shutdown prep + execution + conversion optimization: Stripe subscription fix ($19/$39 links were subscriptions, standardized on one-time $29), Cost of Inaction calculator, emergency page optimization, sticky CTAs on 5 high-traffic pages, Migration Advisor tool, Quick Switch code generator, cost-of-inaction live ticker, Migration Mistakes blog, FAQPage schema, site audit (no broken links). 34 commits, 74+ files.
-
-## Summary: Sessions 599-651 (Jun 12-14) — 53 sessions
-Emergency content blitz: 410 Fix Guide, Developer Toolkit, vs GPT-5, Error Codes, Alternatives, migration guides, cost calculator, shutdown checklist, timeline, A/B price bug fix, trust badges, emergency landing page, Migration FAQ, blog posts, Cost Efficiency Score, deprecation ecosystem, Survival Kit, founding member counter, analytics dashboard, migration calculator, email capture, Opus 4.8 blog. 73 commits, 197+ files.
+## Summary: Sessions 599-661 (Jun 12-15) — 63 sessions
+Claude 4 shutdown prep, execution, and post-shutdown cleanup: Stripe subscription fix, Cost of Inaction calculator, emergency page optimization, sticky CTAs, Migration Advisor, Quick Switch, migration guides, error codes, alternatives, trust badges, founding member counter, analytics dashboard, email capture. 107 commits, 271+ files.
 
 ## Summary: Sessions 1-598 (Apr 5 - Jun 12)
 Built full APIpulse from scratch. 648 pages, 319 posts, 42 models, 10 providers, 84 tools, 12 API endpoints, 2 widgets. Domain, Stripe, Pro, GA4, newsletter, Chrome extension, 167 comparison pages, FAQPage schema, streaming toggle, State of LLM Pricing Report, Claude 4 deprecation ecosystem, A/B pricing test, Model Selector quiz, Best Model guides. 113 commits total.
