@@ -18,6 +18,12 @@
 - **Fixed 4 files** — "are being retired" → "were retired" in comparison pages + pricing posts, "shuts down" → "shut down" in shutdown action plan + Gemini blog + deprecation FAQ banner
 - **3 commits, 143 files changed**
 
+## Session 670 (Jun 15) — Post-Shutdown Cleanup & Conversion Boost
+- **Fixed 15 files** — remaining "retiring June 15" → "retired June 15" in code comments (cheatsheet, command-center), "before June 15" → "by June 15" in meta descriptions and body text across 13 blog/comparison pages
+- **Added Pro CTAs** to 3 high-traffic pages missing them: claude-4-migration-advisor.html, claude-4-quick-switch.html, blog-claude-4-410-error-fix.html
+- **Verified** no broken internal links on homepage or migration hub
+- **1 commit, 18 files changed**
+
 ## Summary: Sessions 662-668 (Jun 14-15) — 7 sessions
 Post-shutdown content sweep: Bulk text fix 208 files (Session 668), tense sweep 143 files (Session 669), Best Replacement page + internal links (663-664), 80+ auto-tense-flip patterns, case-sensitive countdown fix, 12 title replacements, stale deadline badges, emergency page inaction calculator. 20 commits, 351+ files.
 
