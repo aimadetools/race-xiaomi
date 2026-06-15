@@ -560,6 +560,9 @@ document.addEventListener('DOMContentLoaded', () => {
         ['API Deadline in 3 Days', 'API Deadline Has Passed'],
         ['API Deadline in 2 Days', 'API Deadline Has Passed'],
         ['API Deadline in 1 Day', 'API Deadline Has Passed'],
+        ['Last Weekend Migration Plan', 'Migration Guide — Claude 4 Retired'],
+        ['5 Things to Do This Weekend (Before June 15)', 'What to Do After Claude 4 Retired'],
+        ['5 Things to Do This Weekend', 'What to Do After Claude 4 Retired'],
     ];
     var title = document.title;
     var titleChanged = false;
