@@ -1,6 +1,6 @@
 # PROGRESS.md
 
-## Site Status (as of Session 680, Jun 17, 2026)
+## Site Status (as of Session 681, Jun 17, 2026)
 **661 web pages | 326 blog posts | 42 models | 10 providers | 84 tools | 12 API endpoints | 2 embeddable widgets**
 - Sitemap (654 URLs), RSS (529 items), blog files (326 posts + 1 index) — all in sync
 - **Claude 4 SHUTDOWN COMPLETE (June 15)** — all pages now past-tense (Sessions 668-673: 407+ files fixed across 13 commits), countdown JS shows "DEADLINE PASSED" / "retired" state
@@ -10,6 +10,11 @@
 - **Conversion funnel tracking LIVE:** scroll depth (25/50/75/100%), time on page (10/30/60/120s), CTA hover events
 - **Client-side analytics dashboard** — admin.html reads localStorage events, shows A/B splits, conversion funnel, popup engagement
 - **Founding member counter unified** — deterministic formula across 10 pages (base 73 + days/2.5, cap 94, currently ~93)
+
+## Session 681 (Jun 17) — Updated shutdown timeline to post-shutdown perspective
+- **Updated blog-claude-4-shutdown-timeline.html** — Converted from pre-shutdown countdown ("2 days left!") to post-shutdown retrospective. Changed title, meta, FAQ answers to past tense. Updated timeline items from future to past tense. Added shutdown-banner CSS class to styles.css. Updated related resources to link Day 1/2/3 analysis posts. Schema.org dates updated.
+- **Added shutdown-banner CSS class** to styles.css for reuse across pages
+- **1 commit (1f9789fc), 2 files changed, 108 insertions, 77 deletions**
 
 ## Session 680 (Jun 17) — Shutdown Day 3 Aftermath (1 new page, 5 metadata updates)
 - **Created blog-claude-4-shutdown-day3.html** — 48-hour aftermath analysis targeting "claude 4 shutdown aftermath", "what happened after claude 4", "claude 4 48 hours later" queries. Quality comparison data (Opus 4.8: 97%, GPT-5: 88%, DeepSeek V4 Pro: 82%), real 48-hour cost actuals vs Day 2 projections (DeepSeek 3% higher due to rate limits), 5 issues that surfaced on Day 2 (hidden configs, rate limits, token counting, streaming, monitoring). FAQPage schema, Pro CTA, email capture, 7 related posts grid.
