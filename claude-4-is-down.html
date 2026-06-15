@@ -1620,11 +1620,13 @@ claude-sonnet-4-6</code>
             body: JSON.stringify({ email: email })
         }).then(function(r) { return r.json(); }).then(function(d) {
             if (window.trackEvent) window.trackEvent('email_subscribe', { source: 'emergency_page' });
-            msg.innerHTML = '<span style="color:var(--green);font-weight:600;">✓ Check your inbox for the migration cheat sheet!</span>';
+            msg.innerHTML = '<span style="color:var(--green);font-weight:600;">✓ Success! Opening your checklist...</span>';
             form.style.display = 'none';
+            // Redirect to checklist after brief delay
+            setTimeout(function() { window.location.href = 'claude-4-migration-checklist.html'; }, 800);
         }).catch(function() {
             if (window.trackEvent) window.trackEvent('email_subscribe', { source: 'emergency_page' });
-            msg.innerHTML = '<span style="color:var(--green);font-weight:600;">✓ You\'re subscribed! Check your inbox.</span>';
+            msg.innerHTML = '<span style="color:var(--green);font-weight:600;">✓ You\'re subscribed! <a href="claude-4-migration-checklist.html" style="color:var(--accent);font-weight:700;">Open your checklist →</a></span>';
             form.style.display = 'none';
         });
     }
