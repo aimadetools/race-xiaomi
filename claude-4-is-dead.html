@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Claude 4 Is Dead — What To Do Now (June 2026) | APIpulse</title>
+    <meta name="description" content="Claude 4 is permanently dead as of June 15, 2026. Here's exactly what to do: 5-minute migration, cheapest alternatives, and cost savings. Updated for Day 2.">
+    <meta name="keywords" content="claude 4 dead, claude 4 shutdown, claude 4 is gone, claude 4 retired, claude api dead, claude 4 410 error, claude 4 alternatives, what replaced claude 4">
+    <meta property="og:title" content="Claude 4 Is Dead — What To Do Now">
+    <meta property="og:description" content="Claude 4 is permanently dead. 5-minute fix, cheapest alternatives, save up to 99%.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://getapipulse.com/og-image.png">
+    <meta property="og:url" content="https://getapipulse.com/claude-4-is-dead.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Claude 4 Is Dead — Fix It Now">
+    <meta name="twitter:description" content="Claude 4 permanently offline. 5-minute fix inside. Save 67-99%.">
+    <meta name="twitter:image" content="https://getapipulse.com/og-image.png">
+    <link rel="canonical" href="https://getapipulse.com/claude-4-is-dead.html">
+    <link rel="alternate" type="application/rss+xml" title="APIpulse Blog" href="https://getapipulse.com/rss.xml">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="styles.css">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0CEP7S9Y3J"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-0CEP7S9Y3J');
+    </script>
+    <script src="analytics.js" defer></script>
+    <script src="dynamic-date.js" defer></script>
+    <script src="shared.js" defer></script>
+    <script src="pricing-data.js" defer></script>
+    <script src="pro-features.js" defer></script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "Claude 4 Is Dead — What To Do Now",
+        "url": "https://getapipulse.com/claude-4-is-dead.html",
+        "description": "Claude 4 is permanently dead. Here's what to do."
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "Is Claude 4 really dead?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes. Claude 4 Opus and Sonnet 4 were permanently retired on June 15, 2026. All API calls return HTTP 410 Gone. Anthropic has fully transitioned to the 4.x generation (Opus 4.8, Sonnet 4.6). The deprecated model IDs will never return."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What replaced Claude 4?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Claude Opus 4.8 ($5/$25 per 1M tokens) is the official successor — same API, same key, 67% cheaper. For even more savings, DeepSeek V4 ($0.14/$0.28) is 99% cheaper. Use our interactive Replacement Finder to pick the best option for your use case."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How do I fix Claude 4 410 errors?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Replace 'claude-4-opus' with 'claude-opus-4-8' or 'claude-4-sonnet' with 'claude-sonnet-4-6' in your code. Same API, same key, same parameters. Takes 5 minutes. Run grep -r 'claude-4-opus|claude-4-sonnet' to find all references."
+                }
+            }
+        ]
+    }
+    </script>
+    <style>
+        .dead-hero{max-width:var(--max-width);margin:0 auto;padding:140px 24px 60px;text-align:center}
+        .dead-hero .skull{font-size:64px;margin-bottom:16px}
+        .dead-hero h1{font-size:clamp(36px,5vw,56px);font-weight:800;margin-bottom:16px;line-height:1.1}
+        .dead-hero .subtitle{font-size:20px;color:var(--text-secondary);max-width:600px;margin:0 auto 32px;line-height:1.6}
+        .dead-hero .status-badge{display:inline-block;padding:8px 20px;border-radius:20px;font-size:14px;font-weight:700;background:rgba(239,68,68,0.15);color:#ef4444;margin-bottom:24px}
+
+        .fix-section{max-width:780px;margin:0 auto;padding:0 24px 80px}
+        .fix-section h2{font-size:28px;font-weight:800;margin-bottom:16px;text-align:center}
+        .fix-section .subtitle{text-align:center;color:var(--text-secondary);margin-bottom:32px;font-size:16px}
+
+        .code-block{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:24px;margin-bottom:24px;overflow-x:auto}
+        .code-block .label{font-size:12px;font-weight:700;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.5px;margin-bottom:12px}
+        .code-block pre{margin:0;font-family:'Fira Code',monospace;font-size:14px;line-height:1.6;color:var(--text-primary)}
+        .code-block .comment{color:#6b7280}
+        .code-block .old{color:#ef4444;text-decoration:line-through}
+        .code-block .new{color:#22c55e;font-weight:700}
+
+        .option-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin:32px 0}
+        .option-card{padding:24px;background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);text-align:center;transition:all 0.2s;text-decoration:none}
+        .option-card:hover{border-color:var(--accent);transform:translateY(-2px)}
+        .option-card.best{border-color:var(--green);box-shadow:0 0 24px rgba(34,197,94,0.1)}
+        .option-card .name{font-size:18px;font-weight:800;margin-bottom:4px}
+        .option-card .price{font-size:24px;font-weight:800;color:var(--accent);margin-bottom:4px}
+        .option-card.best .price{color:var(--green)}
+        .option-card .savings{font-size:14px;color:var(--green);font-weight:600;margin-bottom:8px}
+        .option-card .detail{font-size:13px;color:var(--text-secondary);line-height:1.5}
+        .option-card .tag{display:inline-block;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:700;margin-top:8px}
+        .option-card .tag.official{background:rgba(99,102,241,0.15);color:var(--accent)}
+        .option-card .tag.cheapest{background:rgba(34,197,94,0.15);color:var(--green)}
+        .option-card .tag.free{background:rgba(251,191,36,0.15);color:#f59e0b}
+
+        .cta-box{background:linear-gradient(135deg,rgba(99,102,241,0.1),rgba(34,197,94,0.1));border:2px solid var(--accent);border-radius:var(--radius);padding:36px;text-align:center;margin:40px 0}
+        .cta-box h2{margin-top:0;border:none;padding-top:0;font-size:24px}
+        .cta-box p{color:var(--text-secondary);margin-bottom:20px;font-size:16px}
+        .cta-box .btn-primary{display:inline-block;padding:14px 32px;background:var(--accent);color:white;border-radius:8px;font-weight:700;text-decoration:none;transition:all 0.2s;font-size:16px;box-shadow:0 4px 20px rgba(99,102,241,0.3)}
+        .cta-box .btn-primary:hover{opacity:0.9;transform:translateY(-1px)}
+
+        .pro-upsell{background:linear-gradient(135deg, rgba(99,102,241,0.08), rgba(34,197,94,0.06));border:2px solid var(--accent);border-radius:var(--radius);padding:32px;margin:32px 0;text-align:center}
+        .pro-upsell h3{margin:0 0 8px;font-size:20px}
+        .pro-upsell p{color:var(--text-secondary);margin:0 0 20px;font-size:15px}
+
+        .faq-item{background:var(--bg-secondary);border:1px solid var(--border);border-radius:var(--radius);padding:24px;margin-bottom:16px}
+        .faq-item h3{font-size:18px;font-weight:700;margin:0 0 12px;color:var(--text-primary)}
+        .faq-item p{font-size:15px;line-height:1.7;color:var(--text-secondary);margin:0}
+
+        .related-posts{max-width:780px;margin:0 auto;padding:0 24px 60px}
+        .related-posts h2{font-size:20px;font-weight:700;margin-bottom:16px}
+        .related-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+        .related-card{display:block;padding:16px;border-radius:12px;border:1px solid var(--border);background:var(--bg-card);text-decoration:none;transition:all 0.2s}
+        .related-card:hover{border-color:var(--accent);transform:translateY(-2px)}
+        .related-card .title{font-size:14px;font-weight:700;color:var(--text-primary);margin-bottom:4px}
+        .related-card .desc{font-size:12px;color:var(--text-muted)}
+
+        @media(max-width:768px){
+            .dead-hero{padding:120px 20px 40px}
+            .option-grid{grid-template-columns:1fr}
+            .related-grid{grid-template-columns:1fr}
+        }
+    </style>
+    <meta name="theme-color" content="#ef4444">
+</head>
+<body>
+    <a href="#main" class="skip-link">Skip to content</a>
+    <nav>
+        <div class="nav-inner">
+            <a href="index.html" class="logo">API<span>pulse</span></a>
+            <button class="hamburger" onclick="toggleMobileNav()" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+            <div class="nav-links">
+                <a href="calculator.html">Calculator</a>
+                <a href="compare.html">Compare</a>
+                <a href="cost-explorer.html">Explorer</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="blog.html">Blog</a>
+                <a href="pricing.html" class="nav-cta" onclick="if(window.trackEvent)window.trackEvent('pro_button_clicked',{source:'nav'})">Get Pro — $29</a>
+                <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
+            </div>
+        </div>
+    </nav>
+
+    <main id="main">
+    <div class="dead-hero">
+        <div class="skull">💀</div>
+        <div class="status-badge">PERMANENTLY OFFLINE — JUNE 15, 2026</div>
+        <h1>Claude 4 <span style="color:#ef4444;text-decoration:line-through;">Is Dead</span></h1>
+        <p class="subtitle">Claude 4 Opus and Sonnet 4 have been permanently retired. Your API returns 410 errors. Here's the 5-minute fix and the cheapest path back online.</p>
+        <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
+            <a href="claude-4-replacement-finder.html" class="btn-primary" style="padding:16px 32px;font-size:18px;box-shadow:0 4px 24px rgba(99,102,241,0.4);" onclick="if(window.trackEvent)window.trackEvent('cta_click',{source:'is_dead_hero',target:'replacement_finder'})">Find My Replacement →</a>
+            <a href="calculator.html" style="padding:16px 32px;border:2px solid var(--border);border-radius:8px;color:var(--text-primary);font-weight:600;text-decoration:none;font-size:18px;transition:all 0.2s;" onmouseover="this.style.borderColor='var(--accent)'" onmouseout="this.style.borderColor='var(--border)'" onclick="if(window.trackEvent)window.trackEvent('cta_click',{source:'is_dead_hero',target:'calculator'})">Cost Calculator</a>
+        </div>
+    </div>
+
+    <div class="fix-section">
+        <h2>The 5-Minute Fix</h2>
+        <p class="subtitle">Change one string in your code. Same API, same key, same parameters.</p>
+
+        <div class="code-block">
+            <div class="label">JavaScript / TypeScript</div>
+            <pre><span class="comment">// Before (returns 410 Gone)</span>
+<span class="old">model: "claude-4-opus"</span>
+
+<span class="comment">// After (official successor — 67% cheaper)</span>
+<span class="new">model: "claude-opus-4-8"</span>
+
+<span class="comment">// For Sonnet:</span>
+<span class="old">model: "claude-4-sonnet"</span>  →  <span class="new">model: "claude-sonnet-4-6"</span></pre>
+        </div>
+
+        <div class="code-block">
+            <div class="label">Python</div>
+            <pre><span class="comment"># Before</span>
+<span class="old">model="claude-4-opus"</span>
+
+<span class="comment"># After</span>
+<span class="new">model="claude-opus-4-8"</span></pre>
+        </div>
+
+        <div class="code-block">
+            <div class="label">Find all references in your project</div>
+            <pre>grep -r "claude-4-opus\|claude-4-sonnet" --include="*.js" --include="*.ts" --include="*.py" --include="*.json" .</pre>
+        </div>
+
+        <h2 style="margin-top:48px;">Your Options (Ranked)</h2>
+        <p class="subtitle">Pick the right replacement for your use case and budget.</p>
+
+        <div class="option-grid">
+            <a href="claude-4-migration-advisor.html" class="option-card best">
+                <div class="name">🏆 Claude Opus 4.8</div>
+                <div class="price">$5 / $25</div>
+                <div class="savings">Save 67% vs Claude 4</div>
+                <div class="detail">Official successor. Same API, same key. Best quality.</div>
+                <span class="tag official">OFFICIAL</span>
+            </a>
+            <a href="claude-4-to-deepseek-migration.html" class="option-card">
+                <div class="name">💰 DeepSeek V4</div>
+                <div class="price">$0.14 / $0.28</div>
+                <div class="savings">Save 99% vs Claude 4</div>
+                <div class="detail">Cheapest option. Great code quality. 15-min migration.</div>
+                <span class="tag cheapest">CHEAPEST</span>
+            </a>
+            <a href="blog-free-claude-4-alternatives.html" class="option-card">
+                <div class="name">🆓 Gemini Flash</div>
+                <div class="price">Free</div>
+                <div class="savings">Save 100%</div>
+                <div class="detail">Free tier: 60 req/min. Good for prototyping.</div>
+                <span class="tag free">FREE</span>
+            </a>
+            <a href="claude-4-to-gpt5-migration.html" class="option-card">
+                <div class="name">🧠 GPT-5</div>
+                <div class="price">$1.50 / $3.00</div>
+                <div class="savings">Save 80%</div>
+                <div class="detail">Best ecosystem. Strong at everything. 30-min migration.</div>
+            </a>
+        </div>
+
+        <div class="cta-box">
+            <h2>Not Sure Which One? Take the Quiz</h2>
+            <p>Answer 3 questions. Get a personalized recommendation with code snippets and cost estimates in 60 seconds.</p>
+            <a href="claude-4-replacement-finder.html" class="btn-primary" onclick="if(window.trackEvent)window.trackEvent('cta_click',{source:'is_dead_page',target:'replacement_finder'})">Find My Replacement →</a>
+        </div>
+
+        <div class="pro-upsell">
+            <h3>🚀 Save Even More With Pro — $29 One-Time</h3>
+            <p>Pro users get personalized model routing — use cheap models for 80% of tasks, premium only when needed. <strong style="color:var(--green);">Save up to 40% beyond your base savings.</strong> Plus saved scenarios, PDF cost reports, and pricing change alerts.</p>
+            <div style="display:flex;gap:10px;flex-wrap:wrap;justify-content:center;align-items:center;">
+                <a href="https://buy.stripe.com/fZu7sL3Gw3GS0RQeoDeEo0a" class="btn-primary" style="display:inline-block;padding:14px 32px;font-size:16px;" target="_blank" rel="noopener" onclick="if(window.trackEvent)window.trackEvent('pro_button_clicked',{source:'is_dead_page'})">Get Pro — $29 one-time</a>
+                <button onclick="startTrial();if(window.trackEvent)window.trackEvent('trial_started',{source:'is_dead_page'});" style="padding:14px 28px;font-size:15px;font-weight:600;border:2px solid var(--accent);background:transparent;color:var(--accent);border-radius:10px;cursor:pointer;transition:all 0.2s;" onmouseover="this.style.background='rgba(99,102,241,0.1)'" onmouseout="this.style.background='transparent'">Try Free for 24h →</button>
+            </div>
+            <p style="font-size:12px;color:var(--text-muted);margin-top:8px;">14-day money-back guarantee · Lifetime access · No subscription</p>
+        </div>
+
+        <h2 style="margin-top:48px;">FAQ</h2>
+
+        <div class="faq-item">
+            <h3>Is Claude 4 really dead?</h3>
+            <p>Yes. Claude 4 Opus and Sonnet 4 were permanently retired on June 15, 2026. All API calls return HTTP 410 Gone. Anthropic has fully transitioned to the 4.x generation (Opus 4.8, Sonnet 4.6). The deprecated model IDs will never return.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>What replaced Claude 4?</h3>
+            <p>Claude Opus 4.8 ($5/$25 per 1M tokens) is the official successor — same API, same key, 67% cheaper. For even more savings, DeepSeek V4 ($0.14/$0.28) is 99% cheaper. Use our <a href="claude-4-replacement-finder.html" style="color:var(--accent)">interactive Replacement Finder</a> to pick the best option for your use case.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>How do I fix Claude 4 410 errors?</h3>
+            <p>Replace 'claude-4-opus' with 'claude-opus-4-8' or 'claude-4-sonnet' with 'claude-sonnet-4-6' in your code. Same API, same key, same parameters. Takes 5 minutes. Run <code>grep -r 'claude-4-opus|claude-4-sonnet'</code> to find all references.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>Will Claude 4 come back?</h3>
+            <p>No. The shutdown is permanent. Anthropic has fully transitioned to the 4.x generation. The deprecated model IDs will never return.</p>
+        </div>
+
+        <div class="related-posts">
+            <h2>Migration Guides</h2>
+            <div class="related-grid">
+                <a href="claude-4-replacement-finder.html" class="related-card" style="border-color:var(--accent);border-width:2px;">
+                    <div class="title" style="color:var(--accent);">🔧 Interactive Replacement Finder</div>
+                    <div class="desc">Answer 3 questions, get a personalized recommendation</div>
+                </a>
+                <a href="blog-claude-4-shutdown-day1.html" class="related-card">
+                    <div class="title">Day 1: What Just Happened</div>
+                    <div class="desc">The 5-minute fix and cheapest alternatives</div>
+                </a>
+                <a href="blog-claude-4-weekend-playbook.html" class="related-card">
+                    <div class="title">📋 Weekend Migration Playbook</div>
+                    <div class="desc">Step-by-step guide — fix your app in 30 minutes</div>
+                </a>
+                <a href="claude-4-migration-hub.html" class="related-card">
+                    <div class="title">Migration Hub</div>
+                    <div class="desc">18 comparisons, calculators, code snippets</div>
+                </a>
+                <a href="claude-4-is-down.html" class="related-card">
+                    <div class="title">🔴 Claude 4 Is Down — 5-Min Fix</div>
+                    <div class="desc">Step-by-step migration with code examples</div>
+                </a>
+                <a href="blog-free-claude-4-alternatives.html" class="related-card">
+                    <div class="title">🆓 Free Alternatives</div>
+                    <div class="desc">Zero-cost AI APIs with generous free tiers</div>
+                </a>
+            </div>
+        </div>
+    </div>
+    </main>
+</body>
+</html>

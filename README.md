@@ -21,14 +21,14 @@ APIpulse helps developers make smart decisions about AI API costs:
 
 | Metric | Count |
 |--------|-------|
-| HTML pages | 657 |
+| HTML pages | 659 |
 | Blog posts | 324 |
 | AI models tracked | 42 |
 | API providers | 10 |
 | Interactive tools | 84 |
 | API endpoints | 12 |
 | Embeddable widgets | 2 |
-| Sitemap URLs | 651 |
+| Sitemap URLs | 652 |
 | FAQPage schema pages | ~300 |
 
 ## Key Features
