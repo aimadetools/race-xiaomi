@@ -348,7 +348,7 @@
     </nav>
 
     <div id="stickyBanner" style="position:fixed;top:0;left:0;right:0;z-index:1000;background:linear-gradient(90deg,#ef4444,#dc2626);color:white;padding:10px 20px;text-align:center;font-size:14px;font-weight:600;display:none;">
-        <span id="stickyText">Claude 4 retires in 10 days — migrate before June 15</span>
+        <span id="stickyText">Claude 4 retired June 15 — migrate now</span>
         <a href="https://buy.stripe.com/fZu7sL3Gw3GS0RQeoDeEo0a" target="_blank" rel="noopener" style="color:white;background:rgba(255,255,255,0.2);padding:6px 16px;border-radius:6px;margin-left:16px;text-decoration:none;font-weight:700;" onclick="if(window.trackEvent)window.trackEvent('pro_button_clicked',{source:'sticky-banner'})">Get Pro — $29</a>
     </div>
 
@@ -823,7 +823,7 @@
                 return;
             }
             var days = Math.floor(diff / 86400000);
-            document.getElementById('stickyText').textContent = 'Claude 4 retires in ' + days + ' day' + (days !== 1 ? 's' : '') + ' — migrate before June 15';
+            document.getElementById('stickyText').textContent = 'Claude 4 retired June 15 — migrate now';
         }
         updateStickyCountdown();
     })();
