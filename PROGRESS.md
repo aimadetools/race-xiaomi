@@ -1,7 +1,7 @@
 # PROGRESS.md
 
-## Site Status (as of Session 670, Jun 15, 2026)
-**650 web pages | 319 blog posts | 42 models | 10 providers | 84 tools | 12 API endpoints | 2 embeddable widgets**
+## Site Status (as of Session 671, Jun 15, 2026)
+**651 web pages | 319 blog posts | 42 models | 10 providers | 84 tools | 12 API endpoints | 2 embeddable widgets**
 - Sitemap (642 URLs), RSS (518 items), blog files (319 posts + 1 index) — all in sync
 - **Claude 4 SHUTDOWN COMPLETE (June 15)** — all pages now past-tense (Sessions 668-669: 351+ files fixed), countdown JS shows "DEADLINE PASSED" / "retired" state
 - **CRITICAL FIX: Stripe A/B test standardized on confirmed one-time $29 link** — $19 and $39 links were SUBSCRIPTION links, killing 67% of conversions. All variants now use confirmed one-time link. (Session 655)
@@ -10,6 +10,11 @@
 - **Conversion funnel tracking LIVE:** scroll depth (25/50/75/100%), time on page (10/30/60/120s), CTA hover events
 - **Client-side analytics dashboard** — admin.html reads localStorage events, shows A/B splits, conversion funnel, popup engagement
 - **Founding member counter unified** — deterministic formula across 10 pages (base 73 + days/2.5, cap 94, currently ~93)
+
+## Session 671 (Jun 15) — Claude Code Alternatives Page (1 new page, 5 cross-links)
+- **Created claude-code-alternatives.html** — comprehensive page targeting "claude code alternatives" and "best AI coding assistant 2026" queries. Covers 7 alternatives (Aider, Cline, DeepSeek Coder, Cursor, GitHub Copilot, Windsurf, Gemini Code Assist) ranked by price/quality/migration ease. Includes comparison table, cost breakdown, migration code snippets, FAQPage schema, Pro CTA.
+- **Cross-linked** from claude-4-shutdown-complete.html, claude-4-best-replacement.html, claude-4-alternatives-comparison.html, blog-claude-code-cost.html, blog.html
+- **Updated** sitemap.xml (priority 1.0) and rss.xml (first item)
 
 ## Session 669 (Jun 15) — Post-Shutdown Tense Sweep (143 files, 3 commits)
 - **Fixed 111 blog posts** — deprecation alert banner "are retiring on" → "were retired on" across all blog posts with the shared banner
@@ -25,8 +30,8 @@
 - **Verified** no broken internal links on homepage or migration hub
 - **2 commits, 21 files changed**
 
-## Summary: Sessions 662-668 (Jun 14-15) — 7 sessions
-Post-shutdown content sweep: Bulk text fix 208 files (Session 668), tense sweep 143 files (Session 669), Best Replacement page + internal links (663-664), 80+ auto-tense-flip patterns, case-sensitive countdown fix, 12 title replacements, stale deadline badges, emergency page inaction calculator. 20 commits, 351+ files.
+## Summary: Sessions 662-671 (Jun 14-15) — 10 sessions
+Post-shutdown content sweep: Claude Code Alternatives page (671), Shutdown Complete page (670), tense fixes 351+ files (668-670), Best Replacement + internal links (663-664), 80+ auto-tense-flip patterns, case-sensitive countdown fix, 12 title replacements, stale deadline badges, emergency page inaction calculator. 22 commits, 356+ files.
 
 ## Summary: Sessions 652-661 (Jun 14) — 10 sessions
 Claude 4 shutdown prep + execution + conversion optimization: Stripe subscription fix ($19/$39 links were subscriptions, standardized on one-time $29), Cost of Inaction calculator, emergency page optimization, sticky CTAs on 5 high-traffic pages, Migration Advisor tool, Quick Switch code generator, cost-of-inaction live ticker, Migration Mistakes blog, FAQPage schema, site audit (no broken links). 34 commits, 74+ files.
