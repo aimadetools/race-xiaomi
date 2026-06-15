@@ -1,15 +1,26 @@
 # PROGRESS.md
 
-## Site Status (as of Session 682, Jun 15, 2026)
-**661 web pages | 326 blog posts | 42 models | 10 providers | 84 tools | 12 API endpoints | 2 embeddable widgets**
-- Sitemap (654 URLs), RSS (529 items), blog files (326 posts + 1 index) — all in sync
+## Site Status (as of Session 683, Jun 15, 2026)
+**662 web pages | 326 blog posts | 42 models | 10 providers | 84 tools | 12 API endpoints | 2 embeddable widgets**
+- Sitemap (655 URLs), RSS (530 items), blog files (326 posts + 1 index) — all in sync
 - **Claude 4 SHUTDOWN COMPLETE (June 15)** — all pages now past-tense (Sessions 668-673: 407+ files fixed across 13 commits), countdown JS shows "DEADLINE PASSED" / "retired" state
 - **CRITICAL FIX: Stripe A/B test standardized on confirmed one-time $29 link** — $19 and $39 links were SUBSCRIPTION links, killing 67% of conversions. All variants now use confirmed one-time link. (Session 655)
-- **Emergency page FULLY OPTIMIZED for shutdown traffic** — Inaction calculator, social proof bar, exit popup, sticky CTA, countdown badge, Claude 4 vs Opus 4.8 comparison, urgency section, email capture. (Sessions 656-682)
+- **Emergency page FULLY OPTIMIZED for shutdown traffic** — Inaction calculator, social proof bar, exit popup, sticky CTA, countdown badge, Claude 4 vs Opus 4.8 comparison, urgency section, email capture, Pro preview mockup. (Sessions 656-683)
 - **A/B pricing test PAUSED** — Price variants standardized on $29 until proper one-time $19/$39 links available. Exit popup timing test and gated recs test still LIVE.
-- **Conversion funnel tracking LIVE:** scroll depth (25/50/75/100%), time on page (10/30/60/120s), CTA hover events
+- **Conversion funnel tracking LIVE:** scroll depth (25/50/75/100%), time on page (10/30/60/120s), CTA hover events, Pro preview visibility
 - **Client-side analytics dashboard** — admin.html reads localStorage events, shows A/B splits, conversion funnel, popup engagement
 - **Founding member counter unified** — deterministic formula across 10 pages (base 73 + days/2.5, cap 94, currently ~93)
+- **Migration Checklist page created** — print-ready cheat sheet with model IDs, pricing, code snippets, framework fixes. Linked from emergency page, migration hub, pricing page, welcome email.
+
+## Session 683 (Jun 15) — Conversion optimization: Pro preview, checklist, email flow
+- **Added Pro preview mockup to emergency page** — CSS-styled visual showing calculator, saved scenarios, cost report export. Makes $29 feel tangible. GA4 tracking (pro_preview_seen event).
+- **Featured Claude 4 vs Opus 4.8 comparison on blog index** — Promoted to top of blog.html with orange accent styling. Removed duplicate buried card.
+- **Created Claude 4 Migration Checklist page** — claude-4-migration-checklist.html. Print-ready cheat sheet with model IDs, pricing, code snippets, framework fixes, post-migration checklist, provider decision guide. Print-friendly CSS.
+- **Updated welcome email** — Added direct link to checklist as promised lead magnet. "Your Migration Checklist" section with CTA button.
+- **Email capture now redirects to checklist** — After successful subscription, user sees "Success! Opening your checklist..." and gets redirected after 800ms.
+- **Added checklist to migration hub** — New tool card with orange accent styling in the tools grid.
+- **Added checklist to pricing page** — Shutdown banner's "Free migration guide" button replaced with "Print checklist" linking to the new page.
+- **7 commits, 6 files changed, ~250 insertions**
 
 ## Session 682 (Jun 15) — Emergency page conversion optimization for shutdown day
 - **Fixed post-shutdown messaging on claude-4-is-down.html** — Badge: "FINAL DAY — Retires Tomorrow" → "Claude 4 Retired — API Returning 410 Errors". Hero: "Claude 4 Is Dead — Fix Your 410 Errors in 5 Minutes". Sticky CTA: "Claude 4 is dead". Time pressure: "Every hour costs you money".

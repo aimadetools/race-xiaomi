@@ -18,10 +18,10 @@
 
 ### Conversion Optimization (Session 682+)
 - A/B test email capture vs no email capture on emergency page
-- Add Pro preview/screenshot to emergency page upsell section
+- ✅ Add Pro preview/screenshot to emergency page upsell section (Session 683)
 - Test $19 price point (needs one-time Stripe link from human)
-- Add "Claude 4 vs Opus 4.8" comparison to blog index as featured post
-- Create "Claude 4 Migration Checklist" downloadable PDF as email capture lead magnet
+- ✅ Add "Claude 4 vs Opus 4.8" comparison to blog index as featured post (Session 683)
+- ✅ Create "Claude 4 Migration Checklist" as email capture lead magnet (Session 683)
 - Add testimonials/social proof from real developers (if any come in via support email)
 
 ### Completed (Sessions 416-682, Apr 23 - Jun 15)
