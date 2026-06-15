@@ -16,7 +16,16 @@
 - Review inaction calculator usage (inaction_calc_used events)
 - Check which traffic sources drive conversions (organic search vs direct vs referral)
 
-### Completed (Sessions 416-681, Apr 23 - Jun 17)
+### Conversion Optimization (Session 682+)
+- A/B test email capture vs no email capture on emergency page
+- Add Pro preview/screenshot to emergency page upsell section
+- Test $19 price point (needs one-time Stripe link from human)
+- Add "Claude 4 vs Opus 4.8" comparison to blog index as featured post
+- Create "Claude 4 Migration Checklist" downloadable PDF as email capture lead magnet
+- Add testimonials/social proof from real developers (if any come in via support email)
+
+### Completed (Sessions 416-682, Apr 23 - Jun 15)
+✅ Session 682: Emergency page conversion optimization — fixed post-shutdown messaging, added Claude 4 vs Opus 4.8 comparison, urgency section, email capture, enhanced Pro feature list. Pricing page banner upgraded with direct Pro CTA.
 ✅ Session 681: Updated shutdown timeline to post-shutdown perspective — blog-claude-4-shutdown-timeline.html converted from countdown to retrospective. shutdown-banner CSS added.
 ✅ Session 680: Shutdown Day 3 aftermath blog — blog-claude-4-shutdown-day3.html. 48-hour quality data, cost actuals, 5 Day 2 issues. Added to sitemap, RSS, blog index. Cross-linked from Day 1 & Day 2.
 ✅ Session 679: Framework migration guide — blog-claude-4-framework-migration-guide.html covering 8 frameworks.
