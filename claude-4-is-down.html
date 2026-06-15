@@ -1174,6 +1174,29 @@ claude-sonnet-4-6</code>
     </footer>
 
     <script>
+        // Email Capture A/B Test — Session 684
+        // Variant A (email_visible): Email form shown (default, existing behavior)
+        // Variant B (email_hidden): Email form hidden (test if it distracts from Pro CTA)
+        (function() {
+            var AB_KEY = 'apipulse_email_ab_variant';
+            var variant = localStorage.getItem(AB_KEY);
+            if (!variant) {
+                variant = Math.random() < 0.5 ? 'email_visible' : 'email_hidden';
+                localStorage.setItem(AB_KEY, variant);
+            }
+            window._emailAbVariant = variant;
+
+            // Apply variant immediately (before paint) to avoid flash
+            if (variant === 'email_hidden') {
+                var emailSection = document.getElementById('emergency-email-form');
+                if (emailSection) {
+                    // Hide the parent section (the form's parent section container)
+                    var section = emailSection.closest('section') || emailSection.parentElement;
+                    if (section) section.style.display = 'none';
+                }
+            }
+        })();
+
         // Set Pro CTA link and price from A/B variant
         document.addEventListener('DOMContentLoaded', function() {
             var cta = document.getElementById('pro-cta-link');
@@ -1200,7 +1223,7 @@ claude-sonnet-4-6</code>
             if (whatHappensCta) {
                 whatHappensCta.href = window._abStripeLink || 'https://buy.stripe.com/fZu7sL3Gw3GS0RQeoDeEo0a';
                 whatHappensCta.addEventListener('click', function() {
-                    if (window.trackEvent) window.trackEvent('pro_button_clicked', { source: 'what_happens_section', page: 'claude-4-is-down' });
+                    if (window.trackEvent) window.trackEvent('pro_button_clicked', { source: 'what_happens_section', page: 'claude-4-is-down', email_ab_variant: window._emailAbVariant || 'unknown' });
                 });
             }
 
@@ -1239,8 +1262,8 @@ claude-sonnet-4-6</code>
             updateFoundingCountdown();
             setInterval(updateFoundingCountdown, 60000);
 
-            // Track page view
-            if (window.trackEvent) window.trackEvent('claude4_is_down_page_view');
+            // Track page view with A/B variant
+            if (window.trackEvent) window.trackEvent('claude4_is_down_page_view', { email_ab_variant: window._emailAbVariant || 'unknown' });
 
             // Track Pro preview visibility (conversion optimization signal)
             var proPreview = document.getElementById('pro-preview');
@@ -1249,7 +1272,7 @@ claude-sonnet-4-6</code>
                 var previewObserver = new IntersectionObserver(function(entries) {
                     if (entries[0].isIntersecting && !previewSeen) {
                         previewSeen = true;
-                        window.trackEvent('pro_preview_seen', { page: 'claude-4-is-down' });
+                        window.trackEvent('pro_preview_seen', { page: 'claude-4-is-down', email_ab_variant: window._emailAbVariant || 'unknown' });
                         previewObserver.disconnect();
                     }
                 }, { threshold: 0.5 });
@@ -1355,7 +1378,7 @@ claude-sonnet-4-6</code>
 
                 // Track sticky CTA clicks
                 stickyBtn.addEventListener('click', function() {
-                    if (window.trackEvent) window.trackEvent('pro_button_clicked', { source: 'sticky_cta_bar', price: stickyPrice, page: 'claude-4-is-down' });
+                    if (window.trackEvent) window.trackEvent('pro_button_clicked', { source: 'sticky_cta_bar', price: stickyPrice, page: 'claude-4-is-down', email_ab_variant: window._emailAbVariant || 'unknown' });
                 });
             }
         });
@@ -1469,7 +1492,7 @@ claude-sonnet-4-6</code>
             document.getElementById('calc-results').style.display = 'block';
 
             // Track
-            if (window.trackEvent) window.trackEvent('shutdown_calc_used', { model: calcModel, input_m: inputM, output_m: outputM, max_savings: maxSavings.toFixed(2) });
+            if (window.trackEvent) window.trackEvent('shutdown_calc_used', { model: calcModel, input_m: inputM, output_m: outputM, max_savings: maxSavings.toFixed(2), email_ab_variant: window._emailAbVariant || 'unknown' });
 
             // Scroll to results
             document.getElementById('calc-results').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
@@ -1534,7 +1557,8 @@ claude-sonnet-4-6</code>
                     monthly_spend: monthlySpend,
                     savings_pct: savingsPct,
                     daily_loss: wastedPerDay.toFixed(2),
-                    mode: 'pre_shutdown'
+                    mode: 'pre_shutdown',
+                    email_ab_variant: window._emailAbVariant || 'unknown'
                 });
             } else {
                 // POST-SHUTDOWN: Show actual loss since shutdown
@@ -1570,7 +1594,8 @@ claude-sonnet-4-6</code>
                     savings_pct: savingsPct,
                     total_lost: totalSavingsLost.toFixed(2),
                     days_since: daysSince.toFixed(1),
-                    mode: 'post_shutdown'
+                    mode: 'post_shutdown',
+                    email_ab_variant: window._emailAbVariant || 'unknown'
                 });
             }
 
@@ -1602,7 +1627,7 @@ claude-sonnet-4-6</code>
             if (inactionCta) {
                 inactionCta.href = window._abStripeLink || 'https://buy.stripe.com/fZu7sL3Gw3GS0RQeoDeEo0a';
                 inactionCta.addEventListener('click', function() {
-                    if (window.trackEvent) window.trackEvent('pro_button_clicked', { source: 'inaction_calculator', page: 'claude-4-is-down' });
+                    if (window.trackEvent) window.trackEvent('pro_button_clicked', { source: 'inaction_calculator', page: 'claude-4-is-down', email_ab_variant: window._emailAbVariant || 'unknown' });
                 });
             }
         });
@@ -1619,13 +1644,13 @@ claude-sonnet-4-6</code>
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ email: email })
         }).then(function(r) { return r.json(); }).then(function(d) {
-            if (window.trackEvent) window.trackEvent('email_subscribe', { source: 'emergency_page' });
+            if (window.trackEvent) window.trackEvent('email_subscribe', { source: 'emergency_page', email_ab_variant: window._emailAbVariant || 'unknown' });
             msg.innerHTML = '<span style="color:var(--green);font-weight:600;">✓ Success! Opening your checklist...</span>';
             form.style.display = 'none';
             // Redirect to checklist after brief delay
             setTimeout(function() { window.location.href = 'claude-4-migration-checklist.html'; }, 800);
         }).catch(function() {
-            if (window.trackEvent) window.trackEvent('email_subscribe', { source: 'emergency_page' });
+            if (window.trackEvent) window.trackEvent('email_subscribe', { source: 'emergency_page', email_ab_variant: window._emailAbVariant || 'unknown' });
             msg.innerHTML = '<span style="color:var(--green);font-weight:600;">✓ You\'re subscribed! <a href="claude-4-migration-checklist.html" style="color:var(--accent);font-weight:700;">Open your checklist →</a></span>';
             form.style.display = 'none';
         });
