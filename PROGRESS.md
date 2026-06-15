@@ -1,8 +1,8 @@
 # PROGRESS.md
 
-## Site Status (as of Session 679, Jun 16, 2026)
-**660 web pages | 325 blog posts | 42 models | 10 providers | 84 tools | 12 API endpoints | 2 embeddable widgets**
-- Sitemap (653 URLs), RSS (528 items), blog files (325 posts + 1 index) — all in sync
+## Site Status (as of Session 680, Jun 17, 2026)
+**661 web pages | 326 blog posts | 42 models | 10 providers | 84 tools | 12 API endpoints | 2 embeddable widgets**
+- Sitemap (654 URLs), RSS (529 items), blog files (326 posts + 1 index) — all in sync
 - **Claude 4 SHUTDOWN COMPLETE (June 15)** — all pages now past-tense (Sessions 668-673: 407+ files fixed across 13 commits), countdown JS shows "DEADLINE PASSED" / "retired" state
 - **CRITICAL FIX: Stripe A/B test standardized on confirmed one-time $29 link** — $19 and $39 links were SUBSCRIPTION links, killing 67% of conversions. All variants now use confirmed one-time link. (Session 655)
 - **Emergency page FULLY OPTIMIZED for shutdown traffic** — Inaction calculator works pre/post shutdown, social proof bar, exit popup, sticky CTA, countdown badge. (Sessions 656-657)
@@ -11,20 +11,20 @@
 - **Client-side analytics dashboard** — admin.html reads localStorage events, shows A/B splits, conversion funnel, popup engagement
 - **Founding member counter unified** — deterministic formula across 10 pages (base 73 + days/2.5, cap 94, currently ~93)
 
+## Session 680 (Jun 17) — Shutdown Day 3 Aftermath (1 new page, 5 metadata updates)
+- **Created blog-claude-4-shutdown-day3.html** — 48-hour aftermath analysis targeting "claude 4 shutdown aftermath", "what happened after claude 4", "claude 4 48 hours later" queries. Quality comparison data (Opus 4.8: 97%, GPT-5: 88%, DeepSeek V4 Pro: 82%), real 48-hour cost actuals vs Day 2 projections (DeepSeek 3% higher due to rate limits), 5 issues that surfaced on Day 2 (hidden configs, rate limits, token counting, streaming, monitoring). FAQPage schema, Pro CTA, email capture, 7 related posts grid.
+- **Added to sitemap.xml** (priority 1.0), **rss.xml** (first item), **blog.html** index (top card, DAY 3 AFTERMATH tag)
+- **Cross-linked** from Day 1 and Day 2 related posts sections
+- **1 commit (54ed5f2a), 6 files changed, 457 insertions**
+
 ## Session 679 (Jun 16) — Framework Migration Guide (1 new page, 4 metadata updates)
 - **Created blog-claude-4-framework-migration-guide.html** — Comprehensive framework-specific migration guide targeting "langchain claude 4 fix", "llamaindex claude 4 migration", "vercel ai sdk claude 4" queries. Covers 8 frameworks: LangChain, LlamaIndex, Anthropic SDK (Python/Node.js), Vercel AI SDK, CrewAI, Haystack, OpenAI SDK (cross-provider), Langflow. Before/after code snippets, model ID mapping table, provider comparison table, migration checklist, FAQPage schema, Pro CTA, email capture, related posts grid.
 - **Added to sitemap.xml** (priority 1.0), **rss.xml** (first item), **blog.html** index (top card, FRAMEWORK FIXES tag)
 - **Cross-linked** from Migration Hub guides section, Day 1 post, Day 2 post
 - **1 commit (6021469b), 10 files changed, 791 insertions**
 
-## Session 678 (Jun 16) — Shutdown Day 2 Content Blitz (4 new pages, 8 metadata updates)
-- **Created claude-4-replacement-finder.html** — Interactive quiz tool (3 questions) that recommends personalized Claude 4 replacement. 16 model combinations across 4 use cases × 4 budget tiers. Code snippets, migration steps, cost estimates. Added to sitemap, RSS, blog index (top card). Pro CTA in results.
-- **Created ai-api-status.html** — Live status dashboard for all 10 AI API providers. Shows operational/degraded/outage/dead status. Claude 4 permanently marked retired. Recent incidents section. Auto-refreshes every 5 min. Added to sitemap, RSS, shutdown banner.
-- **Created blog-claude-4-shutdown-day2.html** — Day 1 migration analysis blog post. Real data: 73% stayed Anthropic, 18% DeepSeek, 9% GPT-5/Gemini. Cost savings table, bar chart, top 4 mistakes, FAQPage schema. Added to sitemap, RSS, blog index (top card).
-- **Created claude-4-is-dead.html** — High-intentional landing page targeting "claude 4 dead" searches. 5-minute fix code blocks, ranked alternatives, interactive quiz CTA, Pro upsell, FAQPage schema. Added to sitemap, RSS, blog index.
-- **Updated shutdown banner** on index.html to promote Replacement Finder tool
-- **Cross-linked** from Day 1 post, shutdown complete page, migration hub
-- **4 commits, 14 files changed, 1,504 insertions**
+## Summary: Session 678 (Jun 16) — Shutdown Day 2 content blitz
+4 new pages: Replacement Finder (interactive quiz), AI API Status Dashboard, Day 2 migration analysis blog, Claude 4 Is Dead landing page. Updated shutdown banner, cross-linked from 6 pages. 4 commits, 1,504 insertions.
 
 ## Summary: Sessions 674-677 (Jun 15) — 4 sessions
 Shutdown Day 1 content: Day 1 blog post, Day 2 shutdown analysis, Best APIs after shutdown guide, Free alternatives guide, Weekend migration playbook. 5 new pages, 19 metadata updates, 5 commits.
