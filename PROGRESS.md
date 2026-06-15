@@ -1,15 +1,23 @@
 # PROGRESS.md
 
-## Site Status (as of Session 671, Jun 15, 2026)
+## Site Status (as of Session 672, Jun 15, 2026)
 **651 web pages | 319 blog posts | 42 models | 10 providers | 84 tools | 12 API endpoints | 2 embeddable widgets**
 - Sitemap (644 URLs), RSS (519 items), blog files (319 posts + 1 index) — all in sync
-- **Claude 4 SHUTDOWN COMPLETE (June 15)** — all pages now past-tense (Sessions 668-669: 351+ files fixed), countdown JS shows "DEADLINE PASSED" / "retired" state
+- **Claude 4 SHUTDOWN COMPLETE (June 15)** — all pages now past-tense (Sessions 668-672: 395+ files fixed across 12 commits), countdown JS shows "DEADLINE PASSED" / "retired" state
 - **CRITICAL FIX: Stripe A/B test standardized on confirmed one-time $29 link** — $19 and $39 links were SUBSCRIPTION links, killing 67% of conversions. All variants now use confirmed one-time link. (Session 655)
 - **Emergency page FULLY OPTIMIZED for shutdown traffic** — Inaction calculator works pre/post shutdown, social proof bar, exit popup, sticky CTA, countdown badge. (Sessions 656-657)
 - **A/B pricing test PAUSED** — Price variants standardized on $29 until proper one-time $19/$39 links available. Exit popup timing test and gated recs test still LIVE.
 - **Conversion funnel tracking LIVE:** scroll depth (25/50/75/100%), time on page (10/30/60/120s), CTA hover events
 - **Client-side analytics dashboard** — admin.html reads localStorage events, shows A/B splits, conversion funnel, popup engagement
 - **Founding member counter unified** — deterministic formula across 10 pages (base 73 + days/2.5, cap 94, currently ~93)
+
+## Session 672 (Jun 15) — Post-Shutdown Tense Cleanup (44 files, 99 line fixes)
+- **Fixed 44 files** with remaining pre-shutdown future tense missed by Sessions 668-671
+- **Patterns fixed:** "will stop working" → "stopped working", "will return errors" → "return errors", "will fail" → "fail", "will break" → "broke", "is shutting down" → "shut down", "deprecates June 15" → "was deprecated June 15", "will be permanently retired" → "were permanently retired", "before June 15" → "by June 15"
+- **Fixed 8 static countdown badges** ("10 days left" → "PASSED")
+- **Fixed awkward phrasing** ("at the time" replacement, "will start failing" → "started failing")
+- Files: 16 compare-claude4-*, 14 blog-claude-4-*, 5 blog-best-claude-4-*, 3 claude-4-*, 6 other posts
+- **1 commit, 44 files changed, 99 insertions, 99 deletions**
 
 ## Session 671 (Jun 15) — Claude Code Alternatives Page (1 new page, 5 cross-links)
 - **Created claude-code-alternatives.html** — comprehensive page targeting "claude code alternatives" and "best AI coding assistant 2026" queries. Covers 7 alternatives (Aider, Cline, DeepSeek Coder, Cursor, GitHub Copilot, Windsurf, Gemini Code Assist) ranked by price/quality/migration ease. Includes comparison table, cost breakdown, migration code snippets, FAQPage schema, Pro CTA.
