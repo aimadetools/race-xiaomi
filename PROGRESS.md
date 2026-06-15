@@ -1,8 +1,8 @@
 # PROGRESS.md
 
-## Site Status (as of Session 678, Jun 16, 2026)
-**659 web pages | 324 blog posts | 42 models | 10 providers | 84 tools | 12 API endpoints | 2 embeddable widgets**
-- Sitemap (652 URLs), RSS (527 items), blog files (324 posts + 1 index) — all in sync
+## Site Status (as of Session 679, Jun 16, 2026)
+**660 web pages | 325 blog posts | 42 models | 10 providers | 84 tools | 12 API endpoints | 2 embeddable widgets**
+- Sitemap (653 URLs), RSS (528 items), blog files (325 posts + 1 index) — all in sync
 - **Claude 4 SHUTDOWN COMPLETE (June 15)** — all pages now past-tense (Sessions 668-673: 407+ files fixed across 13 commits), countdown JS shows "DEADLINE PASSED" / "retired" state
 - **CRITICAL FIX: Stripe A/B test standardized on confirmed one-time $29 link** — $19 and $39 links were SUBSCRIPTION links, killing 67% of conversions. All variants now use confirmed one-time link. (Session 655)
 - **Emergency page FULLY OPTIMIZED for shutdown traffic** — Inaction calculator works pre/post shutdown, social proof bar, exit popup, sticky CTA, countdown badge. (Sessions 656-657)
@@ -10,6 +10,12 @@
 - **Conversion funnel tracking LIVE:** scroll depth (25/50/75/100%), time on page (10/30/60/120s), CTA hover events
 - **Client-side analytics dashboard** — admin.html reads localStorage events, shows A/B splits, conversion funnel, popup engagement
 - **Founding member counter unified** — deterministic formula across 10 pages (base 73 + days/2.5, cap 94, currently ~93)
+
+## Session 679 (Jun 16) — Framework Migration Guide (1 new page, 4 metadata updates)
+- **Created blog-claude-4-framework-migration-guide.html** — Comprehensive framework-specific migration guide targeting "langchain claude 4 fix", "llamaindex claude 4 migration", "vercel ai sdk claude 4" queries. Covers 8 frameworks: LangChain, LlamaIndex, Anthropic SDK (Python/Node.js), Vercel AI SDK, CrewAI, Haystack, OpenAI SDK (cross-provider), Langflow. Before/after code snippets, model ID mapping table, provider comparison table, migration checklist, FAQPage schema, Pro CTA, email capture, related posts grid.
+- **Added to sitemap.xml** (priority 1.0), **rss.xml** (first item), **blog.html** index (top card, FRAMEWORK FIXES tag)
+- **Cross-linked** from Migration Hub guides section, Day 1 post, Day 2 post
+- **1 commit, 5 files changed, ~600 insertions**
 
 ## Session 678 (Jun 16) — Shutdown Day 2 Content Blitz (4 new pages, 8 metadata updates)
 - **Created claude-4-replacement-finder.html** — Interactive quiz tool (3 questions) that recommends personalized Claude 4 replacement. 16 model combinations across 4 use cases × 4 budget tiers. Code snippets, migration steps, cost estimates. Added to sitemap, RSS, blog index (top card). Pro CTA in results.
@@ -20,29 +26,8 @@
 - **Cross-linked** from Day 1 post, shutdown complete page, migration hub
 - **4 commits, 14 files changed, 1,504 insertions**
 
-## Session 677 (Jun 15) — Weekend Migration Playbook (1 new page, 4 metadata updates)
-- **Created blog-claude-4-weekend-playbook.html** — targets "claude 4 migration guide weekend" searches. Practical step-by-step guide (20-30 min) for developers discovering the shutdown this weekend. Features: 6-step migration playbook, decision tree for picking migration path (stay Anthropic / DeepSeek / GPT-5/Gemini), code snippets, model ID cheat sheet, cost comparison, common mistakes to avoid, FAQPage schema, Pro CTA, email capture, related posts grid.
-- **Added to sitemap.xml** (priority 1.0), **rss.xml** (first item), **blog.html** index (top card, PLAYBOOK tag)
-- **Added related link** in blog-claude-4-shutdown-day1.html
-- **Added to claude-4-migration-hub.html** guides section
-- **Updated README.md** stats (655 pages, 323 posts, 648 sitemap URLs)
-- **1 commit, 5 files changed, 558 insertions**
-
-## Session 676 (Jun 15) — Free Alternatives Blog Post (1 new page, 4 metadata updates)
-- **Created blog-free-claude-4-alternatives.html** — targets "free AI API" searches during shutdown traffic spike. Features: free tier breakdowns (Gemini Flash, DeepSeek, Llama 4), comparison table, 5-minute setup guide, cost analysis, FAQPage schema, email capture.
-- **Added to sitemap.xml** (priority 1.0), **rss.xml** (first item), **blog.html** index (2nd card, Free Options tag)
-- **Updated blog-claude-4-shutdown-day1.html** related links to include new Day 2 post
-- **1 commit, 5 files changed, 551 insertions**
-
-## Session 675 (Jun 15) — Day 2 Shutdown Blog Post (1 new page, 3 metadata updates)
-- **Created blog-best-ai-apis-after-claude-shutdown.html** — comprehensive "Best AI APIs After Claude 4" guide targeting high-intent Day 2 shutdown traffic. Features: decision tree (6 use cases), ranked comparison table (12 AI APIs), use-case cards (6 categories), migration code snippets (4 providers), monthly cost comparison, FAQPage schema, email capture, related posts grid.
-- **Added to sitemap.xml** (priority 1.0), **rss.xml** (first item), **blog.html** index (2nd card, Comparison tag)
-- **1 commit, 4 files changed, 638 insertions**
-
-## Session 674 (Jun 15) — Shutdown Day 1 Blog Post (1 new page, 3 metadata updates)
-- **Created blog-claude-4-shutdown-day1.html** — timely Day 1 post targeting developers discovering Claude 4 is down RIGHT NOW. Targets high-intent queries: "claude 4 shutdown", "claude 4 down today", "claude 4 410 error fix". Includes shutdown timeline, 5-minute migration steps, cost comparison (410 vs alternatives), FAQPage schema, Pro CTA, email capture, related posts grid.
-- **Added to sitemap.xml** (priority 1.0), **rss.xml** (first item), **blog.html** index (top card, BREAKING tag)
-- **1 commit, 4 files changed, 445 insertions**
+## Summary: Sessions 674-677 (Jun 15) — 4 sessions
+Shutdown Day 1 content: Day 1 blog post, Day 2 shutdown analysis, Best APIs after shutdown guide, Free alternatives guide, Weekend migration playbook. 5 new pages, 19 metadata updates, 5 commits.
 
 ## Summary: Sessions 668-673 (Jun 15) — 6 sessions
 Post-shutdown tense sweep: 407+ files fixed across 13 commits. Blog deprecation banners (111), non-blog meta/body/structured data (10), Twitter share texts (3), comparison page fixes (4), code comments, countdown badges, dynamic tense logic. Claude Code Alternatives page + Shutdown Complete hub. Pro CTAs on 3 high-traffic pages. README stats corrected.

@@ -16,7 +16,8 @@
 - Review inaction calculator usage (inaction_calc_used events)
 - Check which traffic sources drive conversions (organic search vs direct vs referral)
 
-### Completed (Sessions 416-678, Apr 23 - Jun 16)
+### Completed (Sessions 416-679, Apr 23 - Jun 16)
+✅ Session 679: Framework migration guide — blog-claude-4-framework-migration-guide.html covering 8 frameworks: LangChain, LlamaIndex, Anthropic SDK, Vercel AI SDK, CrewAI, Haystack, OpenAI SDK, Langflow. Copy-paste code fixes, model ID mapping, provider comparison. Added to sitemap, RSS, blog index. Cross-linked from 3 pages.
 ✅ Session 678: Shutdown Day 2 content blitz — 3 new pages: Replacement Finder (interactive quiz), AI API Status Dashboard, Day 2 migration analysis blog. Updated shutdown banner, cross-linked from 6 pages. 3 commits, 1,180 insertions.
 ✅ Session 676: Free alternatives blog post — blog-free-claude-4-alternatives.html targeting "free AI API" searches. Free tier breakdowns, comparison table, 5-min setup guide. Added to sitemap, RSS, blog index.
 ✅ Session 675: Day 2 shutdown blog post — blog-best-ai-apis-after-claude-shutdown.html targeting high-intent Day 2 traffic. Decision tree, ranked comparison, migration code. Added to sitemap, RSS, blog index.

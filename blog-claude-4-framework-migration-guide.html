@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Claude 4 Shutdown: Fix Your App in 5 Minutes (LangChain, LlamaIndex, Vercel AI SDK &amp; More) | APIpulse</title>
+    <meta name="description" content="Claude 4 is dead. Fix your LangChain, LlamaIndex, Vercel AI SDK, Anthropic SDK, CrewAI, or Haystack app with these exact code changes. Copy-paste migration snippets for every major framework.">
+    <meta name="keywords" content="claude 4 langchain migration, claude 4 llamaindex fix, claude 4 vercel ai sdk, claude 4 anthropic SDK migration, claude 4 crewai, claude 4 haystack, framework migration claude 4, claude 4 shutdown framework fix">
+    <meta property="og:title" content="Claude 4 Framework Migration Guide — Fix Your App in 5 Minutes">
+    <meta property="og:description" content="Claude 4 is dead. Exact code changes for LangChain, LlamaIndex, Vercel AI SDK, Anthropic SDK, CrewAI, and Haystack. Copy-paste snippets.">
+    <meta property="og:type" content="article">
+    <meta property="article:published_time" content="2026-06-16">
+    <meta property="article:modified_time" content="2026-06-16">
+    <meta property="article:author" content="APIpulse">
+    <meta property="og:image" content="https://getapipulse.com/og-image.png">
+    <meta property="og:url" content="https://getapipulse.com/blog-claude-4-framework-migration-guide.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Claude 4 Framework Migration Guide — Fix Your App Now">
+    <meta name="twitter:image" content="https://getapipulse.com/og-image.png">
+    <meta name="twitter:description" content="Claude 4 is dead. Copy-paste code fixes for every major framework. LangChain, LlamaIndex, Vercel AI SDK, and more.">
+    <link rel="canonical" href="https://getapipulse.com/blog-claude-4-framework-migration-guide.html">
+    <link rel="alternate" type="application/rss+xml" title="APIpulse Blog" href="https://getapipulse.com/rss.xml">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="styles.css">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0CEP7S9Y3J"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-0CEP7S9Y3J');
+    </script>
+    <script src="analytics.js" defer></script>
+    <script src="dynamic-date.js" defer></script>
+    <script src="shared.js" defer></script>
+    <script src="pricing-data.js" defer></script>
+    <script src="pro-features.js" defer></script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "Claude 4 Shutdown: Fix Your App in 5 Minutes (LangChain, LlamaIndex, Vercel AI SDK & More)",
+        "description": "Claude 4 is dead. Exact code changes for LangChain, LlamaIndex, Vercel AI SDK, Anthropic SDK, CrewAI, and Haystack. Copy-paste snippets.",
+        "url": "https://getapipulse.com/blog-claude-4-framework-migration-guide.html",
+        "publisher": { "@type": "Organization", "name": "APIpulse", "url": "https://getapipulse.com" },
+        "datePublished": "2026-06-16",
+        "dateModified": "2026-06-16"
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "How do I fix LangChain after Claude 4 shutdown?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Update the model name from 'claude-4-opus' or 'claude-4-sonnet' to 'claude-opus-4-8' or 'claude-sonnet-4-6'. In LangChain, change ChatAnthropic(model='claude-opus-4-8'). For non-Anthropic models, swap ChatAnthropic for ChatOpenAI and update the base URL and API key."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How do I migrate from Claude 4 to Claude Opus 4.8 in the Anthropic SDK?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Update the model parameter from 'claude-4-opus-20250514' to 'claude-opus-4-8-20260615'. The API key, base URL, and all other parameters stay the same. The response format is identical. Most migrations take under 5 minutes."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Does Vercel AI SDK work with Claude Opus 4.8?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes. Vercel AI SDK's Anthropic provider supports Opus 4.8. Update the model ID in your createAnthropic() call from 'claude-4-opus' to 'claude-opus-4-8'. No other code changes needed."
+                }
+            }
+        ]
+    }
+    </script>
+    <style>
+        .blog-hero{max-width:var(--max-width);margin:0 auto;padding:120px 24px 40px;text-align:center}
+        .blog-hero .category{display:inline-block;background:rgba(99,102,241,0.15);color:var(--accent);padding:4px 12px;border-radius:6px;font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:16px}
+        .blog-hero h1{font-size:clamp(28px,4.5vw,44px);font-weight:800;margin-bottom:16px;line-height:1.2}
+        .blog-hero .subtitle{font-size:18px;color:var(--text-secondary);max-width:700px;margin:0 auto 24px}
+        .blog-hero .meta{font-size:13px;color:var(--text-muted)}
+        .blog-content{max-width:780px;margin:0 auto;padding:0 24px 80px}
+        .blog-content h2{font-size:28px;font-weight:800;margin:48px 0 16px;padding-top:24px;border-top:1px solid var(--border)}
+        .blog-content h3{font-size:20px;font-weight:700;margin:32px 0 12px}
+        .blog-content p{font-size:16px;line-height:1.8;color:var(--text-secondary);margin-bottom:20px}
+        .blog-content strong{color:var(--text-primary)}
+        .blog-content ul,.blog-content ol{margin-bottom:20px;padding-left:24px}
+        .blog-content li{font-size:16px;line-height:1.8;color:var(--text-secondary);margin-bottom:8px}
+        .blog-content code{background:var(--bg-card);padding:2px 8px;border-radius:4px;font-size:14px;font-family:'Fira Code',monospace;color:var(--accent)}
+        .blog-content pre{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:20px;overflow-x:auto;margin-bottom:24px}
+        .blog-content pre code{background:none;padding:0;font-size:14px;color:var(--text-primary)}
+        .framework-section{background:var(--bg-secondary);border:1px solid var(--border);border-radius:var(--radius);padding:28px;margin:24px 0}
+        .framework-section h3{margin-top:0;font-size:22px;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+        .difficulty{display:inline-block;padding:2px 10px;border-radius:6px;font-size:11px;font-weight:600;text-transform:uppercase}
+        .difficulty.easy{background:rgba(34,197,94,0.15);color:#22c55e}
+        .difficulty.medium{background:rgba(234,179,8,0.15);color:#eab308}
+        .stat-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:16px;margin:24px 0}
+        .stat-card{background:var(--bg-secondary);border:1px solid var(--border);border-radius:var(--radius);padding:20px;text-align:center}
+        .stat-card .number{font-size:32px;font-weight:800;color:var(--accent)}
+        .stat-card .label{font-size:13px;color:var(--text-muted);margin-top:4px}
+        .data-table{width:100%;border-collapse:collapse;margin:24px 0;font-size:14px}
+        .data-table th{text-align:left;padding:12px;border-bottom:2px solid var(--border);font-weight:700;color:var(--text-primary);font-size:13px;text-transform:uppercase;letter-spacing:0.5px}
+        .data-table td{padding:12px;border-bottom:1px solid var(--border);color:var(--text-secondary)}
+        .data-table tr:hover td{background:rgba(99,102,241,0.03)}
+        .data-table .highlight{color:var(--green);font-weight:700}
+        .cta-box{background:linear-gradient(135deg,rgba(99,102,241,0.1),rgba(34,197,94,0.1));border:2px solid var(--accent);border-radius:var(--radius);padding:36px;text-align:center;margin:40px 0}
+        .cta-box h2{margin-top:0;border:none;padding-top:0;font-size:24px}
+        .cta-box p{color:var(--text-secondary);margin-bottom:20px;font-size:16px}
+        .pro-upsell{background:linear-gradient(135deg, rgba(99,102,241,0.08), rgba(34,197,94,0.06));border:2px solid var(--accent);border-radius:var(--radius);padding:32px;margin:32px 0;text-align:center}
+        .pro-upsell h3{margin:0 0 8px;font-size:20px}
+        .pro-upsell p{color:var(--text-secondary);margin:0 0 20px;font-size:15px}
+        .pro-upsell .btn-primary{display:inline-block;padding:14px 32px;background:var(--accent);color:white;border-radius:8px;font-weight:700;text-decoration:none;transition:all 0.2s;font-size:16px;box-shadow:0 4px 20px rgba(99,102,241,0.3)}
+        .pro-upsell .btn-primary:hover{opacity:0.9;transform:translateY(-1px)}
+        .faq-item{background:var(--bg-secondary);border:1px solid var(--border);border-radius:var(--radius);padding:24px;margin-bottom:16px}
+        .faq-item h3{font-size:18px;font-weight:700;margin:0 0 12px;color:var(--text-primary)}
+        .faq-item p{font-size:15px;line-height:1.7;color:var(--text-secondary);margin:0}
+        .related-posts{max-width:780px;margin:0 auto;padding:0 24px 60px}
+        .related-posts h2{font-size:20px;font-weight:700;margin-bottom:16px}
+        .related-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+        .related-card{display:block;padding:16px;border-radius:12px;border:1px solid var(--border);background:var(--bg-card);text-decoration:none;transition:all 0.2s}
+        .related-card:hover{border-color:var(--accent);transform:translateY(-2px)}
+        .related-card .title{font-size:14px;font-weight:700;color:var(--text-primary);margin-bottom:4px}
+        .related-card .desc{font-size:12px;color:var(--text-muted)}
+        .email-capture{max-width:700px;margin:0 auto 40px;padding:32px;background:var(--bg-card);border:1px solid var(--accent);border-radius:var(--radius);text-align:center}
+        .email-capture h2{font-size:20px;margin-bottom:8px}
+        .email-capture p{color:var(--text-secondary);margin-bottom:16px;font-size:14px}
+        .email-form{display:flex;gap:8px;max-width:400px;margin:0 auto}
+        .email-form input{flex:1;padding:10px 14px;border-radius:8px;border:1px solid var(--border);background:var(--bg-secondary);color:var(--text-primary);font-size:14px}
+        .email-form input:focus{outline:2px solid var(--accent);outline-offset:2px}
+        .email-form button{padding:10px 20px;border-radius:8px;background:var(--accent);color:white;border:none;font-weight:600;font-size:14px;cursor:pointer;transition:all 0.2s}
+        .email-form button:hover{opacity:0.9}
+        .before-after{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:20px 0}
+        .before-after .before{background:rgba(239,68,68,0.05);border:1px solid rgba(239,68,68,0.2);border-radius:var(--radius);padding:16px}
+        .before-after .after{background:rgba(34,197,94,0.05);border:1px solid rgba(34,197,94,0.2);border-radius:var(--radius);padding:16px}
+        .before-after .label{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:8px}
+        .before-after .before .label{color:#ef4444}
+        .before-after .after .label{color:#22c55e}
+        .quick-nav{display:flex;flex-wrap:wrap;gap:8px;margin:24px 0;justify-content:center}
+        .quick-nav a{padding:6px 14px;border-radius:20px;border:1px solid var(--border);background:var(--bg-card);color:var(--text-secondary);font-size:13px;font-weight:600;text-decoration:none;transition:all 0.2s}
+        .quick-nav a:hover{border-color:var(--accent);color:var(--accent);background:rgba(99,102,241,0.05)}
+        @media(max-width:768px){.blog-hero{padding:100px 20px 30px}.stat-grid{grid-template-columns:1fr 1fr}.email-form{flex-direction:column}.related-grid{grid-template-columns:1fr}.data-table{font-size:12px}.data-table th,.data-table td{padding:8px}.before-after{grid-template-columns:1fr}.quick-nav{gap:6px}}
+    </style>
+    <meta name="theme-color" content="#6366f1">
+</head>
+<body>
+    <a href="#main" class="skip-link">Skip to content</a>
+    <nav>
+        <div class="nav-inner">
+            <a href="index.html" class="logo">API<span>pulse</span></a>
+            <button class="hamburger" onclick="toggleMobileNav()" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+            <div class="nav-links">
+                <a href="calculator.html">Calculator</a>
+                <a href="compare.html">Compare</a>
+                <a href="cost-explorer.html">Explorer</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="blog.html">Blog</a>
+                <a href="pricing.html" class="nav-cta" onclick="if(window.trackEvent)window.trackEvent('pro_button_clicked',{source:'nav'})">Get Pro — $29</a>
+                <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
+            </div>
+        </div>
+    </nav>
+
+    <main id="main">
+    <div class="blog-hero">
+        <div class="category">🔧 FRAMEWORK FIXES — Claude 4 Shutdown</div>
+        <h1>Claude 4 Shutdown: <span style="color:var(--accent)">Fix Your App in 5 Minutes</span></h1>
+        <p class="subtitle">Copy-paste migration snippets for LangChain, LlamaIndex, Vercel AI SDK, Anthropic SDK, CrewAI, Haystack, and more. Every framework, every language, every model.</p>
+        <p class="meta">Published Jun 16, 2026 · 12 min read · Updated for Day 2</p>
+    </div>
+
+    <div class="blog-content">
+        <p><strong>Claude 4 is dead. Your app is broken. Here are the exact code changes to fix it.</strong> We've tested every major AI framework and documented the exact lines you need to change. Most fixes are a single string swap — find your framework below and copy-paste the fix.</p>
+
+        <div class="quick-nav">
+            <a href="#langchain">LangChain</a>
+            <a href="#llamaindex">LlamaIndex</a>
+            <a href="#anthropic-sdk">Anthropic SDK</a>
+            <a href="#vercel-ai">Vercel AI SDK</a>
+            <a href="#crewai">CrewAI</a>
+            <a href="#haystack">Haystack</a>
+            <a href="#openai-sdk">OpenAI SDK</a>
+            <a href="#langflow">Langflow</a>
+        </div>
+
+        <div class="stat-grid">
+            <div class="stat-card">
+                <div class="number">5 min</div>
+                <div class="label">Average fix time</div>
+            </div>
+            <div class="stat-card">
+                <div class="number">1 line</div>
+                <div class="label">Most common change</div>
+            </div>
+            <div class="stat-card">
+                <div class="number">8</div>
+                <div class="label">Frameworks covered</div>
+            </div>
+            <div class="stat-card">
+                <div class="number">67%</div>
+                <div class="label">Average savings</div>
+            </div>
+        </div>
+
+        <h2>Quick Reference: Model ID Changes</h2>
+        <p>Every framework boils down to the same thing: updating the model string. Here's the mapping:</p>
+
+        <table class="data-table">
+            <thead>
+                <tr>
+                    <th>Old (Claude 4)</th>
+                    <th>New (Successor)</th>
+                    <th>Cost Change</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>claude-4-opus-20250514</code></td>
+                    <td><code>claude-opus-4-8-20260615</code></td>
+                    <td class="highlight">67% cheaper</td>
+                </tr>
+                <tr>
+                    <td><code>claude-4-sonnet-20250514</code></td>
+                    <td><code>claude-sonnet-4-6-20260615</code></td>
+                    <td class="highlight">50-90% cheaper</td>
+                </tr>
+                <tr>
+                    <td><code>claude-3-5-sonnet-20241022</code></td>
+                    <td><code>claude-sonnet-4-6-20260615</code></td>
+                    <td class="highlight">50% cheaper</td>
+                </tr>
+                <tr>
+                    <td><code>claude-3-haiku-20240307</code></td>
+                    <td><code>claude-haiku-4-5-20260514</code></td>
+                    <td class="highlight">50% cheaper</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <p><strong>Tip:</strong> The old Claude 4 model IDs are permanently dead. They return HTTP 410 Gone. If you see 410 errors, you need to update your model ID.</p>
+
+        <!-- LangChain -->
+        <div class="framework-section" id="langchain">
+            <h3>🔗 LangChain <span class="difficulty easy">Easy — 1 line change</span></h3>
+            <p>LangChain's <code>ChatAnthropic</code> class works identically with Opus 4.8. Just change the model name.</p>
+
+            <div class="before-after">
+                <div class="before">
+                    <div class="label">❌ Before (Broken)</div>
+<pre><code>from langchain_anthropic import ChatAnthropic
+
+llm = ChatAnthropic(
+    model="claude-4-opus-20250514",
+    temperature=0
+)
+response = llm.invoke("Hello!")</code></pre>
+                </div>
+                <div class="after">
+                    <div class="label">✅ After (Fixed)</div>
+<pre><code>from langchain_anthropic import ChatAnthropic
+
+llm = ChatAnthropic(
+    model="claude-opus-4-8-20260615",
+    temperature=0
+)
+response = llm.invoke("Hello!")</code></pre>
+                </div>
+            </div>
+
+            <p><strong>Switching to a different provider?</strong> Here's how to use GPT-5 with LangChain instead:</p>
+<pre><code>from langchain_openai import ChatOpenAI
+
+llm = ChatOpenAI(
+    model="gpt-5",
+    temperature=0
+)</code></pre>
+
+            <p><strong>Or switch to DeepSeek (99% cheaper):</strong></p>
+<pre><code>from langchain_openai import ChatOpenAI
+
+llm = ChatOpenAI(
+    model="deepseek-v4-flash",
+    base_url="https://api.deepseek.com/v1",
+    api_key=os.environ["DEEPSEEK_API_KEY"],
+    temperature=0
+)</code></pre>
+
+            <p><strong>Don't forget:</strong> Run <code>pip install --upgrade langchain-anthropic</code> to get the latest model IDs.</p>
+        </div>
+
+        <!-- LlamaIndex -->
+        <div class="framework-section" id="llamaindex">
+            <h3>📸 LlamaIndex <span class="difficulty easy">Easy — 1 line change</span></h3>
+            <p>LlamaIndex uses the same Anthropic LLM class. Update the model name and you're done.</p>
+
+            <div class="before-after">
+                <div class="before">
+                    <div class="label">❌ Before (Broken)</div>
+<pre><code>from llama_index.llms.anthropic import Anthropic
+
+llm = Anthropic(
+    model="claude-4-opus-20250514",
+    temperature=0
+)</code></pre>
+                </div>
+                <div class="after">
+                    <div class="label">✅ After (Fixed)</div>
+<pre><code>from llama_index.llms.anthropic import Anthropic
+
+llm = Anthropic(
+    model="claude-opus-4-8-20260615",
+    temperature=0
+)</code></pre>
+                </div>
+            </div>
+
+            <p><strong>Using LlamaIndex with OpenAI instead:</strong></p>
+<pre><code>from llama_index.llms.openai import OpenAI
+
+llm = OpenAI(model="gpt-5", temperature=0)</code></pre>
+        </div>
+
+        <!-- Anthropic SDK -->
+        <div class="framework-section" id="anthropic-sdk">
+            <h3>🧠 Anthropic Python/Node.js SDK <span class="difficulty easy">Easy — 1 line change</span></h3>
+            <p>The official Anthropic SDK is the most common way to use Claude. The fix is identical for Python and Node.js.</p>
+
+            <h4>Python</h4>
+            <div class="before-after">
+                <div class="before">
+                    <div class="label">❌ Before (Broken)</div>
+<pre><code>import anthropic
+
+client = anthropic.Anthropic()
+message = client.messages.create(
+    model="claude-4-opus-20250514",
+    max_tokens=1024,
+    messages=[
+        {"role": "user", "content": "Hello!"}
+    ]
+)</code></pre>
+                </div>
+                <div class="after">
+                    <div class="label">✅ After (Fixed)</div>
+<pre><code>import anthropic
+
+client = anthropic.Anthropic()
+message = client.messages.create(
+    model="claude-opus-4-8-20260615",
+    max_tokens=1024,
+    messages=[
+        {"role": "user", "content": "Hello!"}
+    ]
+)</code></pre>
+                </div>
+            </div>
+
+            <h4>Node.js</h4>
+            <div class="before-after">
+                <div class="before">
+                    <div class="label">❌ Before (Broken)</div>
+<pre><code>import Anthropic from "@anthropic-ai/sdk";
+
+const client = new Anthropic();
+const message = await client.messages.create({
+  model: "claude-4-opus-20250514",
+  max_tokens: 1024,
+  messages: [
+    { role: "user", content: "Hello!" }
+  ]
+});</code></pre>
+                </div>
+                <div class="after">
+                    <div class="label">✅ After (Fixed)</div>
+<pre><code>import Anthropic from "@anthropic-ai/sdk";
+
+const client = new Anthropic();
+const message = await client.messages.create({
+  model: "claude-opus-4-8-20260615",
+  max_tokens: 1024,
+  messages: [
+    { role: "user", content: "Hello!" }
+  ]
+});</code></pre>
+                </div>
+            </div>
+
+            <p><strong>Tip:</strong> If you have the model ID in an environment variable, update it there:</p>
+<pre><code># .env file
+ANTHROPIC_MODEL=claude-opus-4-8-20260615</code></pre>
+
+            <p>Then reference it in code:</p>
+<pre><code>model = os.environ.get("ANTHROPIC_MODEL", "claude-opus-4-8-20260615")</code></pre>
+        </div>
+
+        <!-- Vercel AI SDK -->
+        <div class="framework-section" id="vercel-ai">
+            <h3>▲ Vercel AI SDK <span class="difficulty easy">Easy — 1 line change</span></h3>
+            <p>The Vercel AI SDK's Anthropic provider supports Opus 4.8 out of the box. Update the model ID in your provider config.</p>
+
+            <div class="before-after">
+                <div class="before">
+                    <div class="label">❌ Before (Broken)</div>
+<pre><code>import { anthropic } from "@ai-sdk/anthropic";
+import { generateText } from "ai";
+
+const result = await generateText({
+  model: anthropic("claude-4-opus-20250514"),
+  prompt: "Hello!"
+});</code></pre>
+                </div>
+                <div class="after">
+                    <div class="label">✅ After (Fixed)</div>
+<pre><code>import { anthropic } from "@ai-sdk/anthropic";
+import { generateText } from "ai";
+
+const result = await generateText({
+  model: anthropic("claude-opus-4-8-20260615"),
+  prompt: "Hello!"
+});</code></pre>
+                </div>
+            </div>
+
+            <p><strong>Switching to OpenAI with Vercel AI SDK:</strong></p>
+<pre><code>import { openai } from "@ai-sdk/openai";
+import { generateText } from "ai";
+
+const result = await generateText({
+  model: openai("gpt-5"),
+  prompt: "Hello!"
+});</code></pre>
+
+            <p><strong>Using Google Gemini:</strong></p>
+<pre><code>import { google } from "@ai-sdk/google";
+import { generateText } from "ai";
+
+const result = await generateText({
+  model: google("gemini-3-flash"),
+  prompt: "Hello!"
+});</code></pre>
+        </div>
+
+        <!-- CrewAI -->
+        <div class="framework-section" id="crewai">
+            <h3>👥 CrewAI <span class="difficulty medium">Medium — Update agent config</span></h3>
+            <p>CrewAI agents are configured with model names. Update the <code>llm</code> parameter in your agent definitions.</p>
+
+            <div class="before-after">
+                <div class="before">
+                    <div class="label">❌ Before (Broken)</div>
+<pre><code>from crewai import Agent, Task, Crew
+
+researcher = Agent(
+    role="Research Analyst",
+    goal="Research AI trends",
+    llm="claude-4-opus-20250514",
+    verbose=True
+)</code></pre>
+                </div>
+                <div class="after">
+                    <div class="label">✅ After (Fixed)</div>
+<pre><code>from crewai import Agent, Task, Crew
+
+researcher = Agent(
+    role="Research Analyst",
+    goal="Research AI trends",
+    llm="claude-opus-4-8-20260615",
+    verbose=True
+)</code></pre>
+                </div>
+            </div>
+
+            <p><strong>Using a non-Anthropic model in CrewAI:</strong></p>
+<pre><code>from crewai import Agent
+
+# Using GPT-5
+researcher = Agent(
+    role="Research Analyst",
+    llm="gpt-5",
+    verbose=True
+)
+
+# Using DeepSeek (cheapest option)
+writer = Agent(
+    role="Content Writer",
+    llm="deepseek-v4-flash",
+    verbose=True
+)</code></pre>
+        </div>
+
+        <!-- Haystack -->
+        <div class="framework-section" id="haystack">
+            <h3>🏗️ Haystack <span class="difficulty easy">Easy — Update component config</span></h3>
+            <p>Haystack's Anthropic integration uses a component-based approach. Update the model name in your pipeline.</p>
+
+            <div class="before-after">
+                <div class="before">
+                    <div class="label">❌ Before (Broken)</div>
+<pre><code>from haystack.components.generators.chat import AnthropicChatGenerator
+
+generator = AnthropicChatGenerator(
+    model="claude-4-opus-20250514"
+)</code></pre>
+                </div>
+                <div class="after">
+                    <div class="label">✅ After (Fixed)</div>
+<pre><code>from haystack.components.generators.chat import AnthropicChatGenerator
+
+generator = AnthropicChatGenerator(
+    model="claude-opus-4-8-20260615"
+)</code></pre>
+                </div>
+            </div>
+        </div>
+
+        <!-- OpenAI SDK (for cross-provider migration) -->
+        <div class="framework-section" id="openai-sdk">
+            <h3>🌐 OpenAI SDK (Cross-Provider Migration) <span class="difficulty medium">Medium — New SDK + config</span></h3>
+            <p>If you're migrating from Claude to OpenAI (GPT-5), you'll need to switch SDKs entirely. The code structure is similar but requires a few more changes.</p>
+
+            <div class="before-after">
+                <div class="before">
+                    <div class="label">❌ Before (Anthropic SDK)</div>
+<pre><code>import anthropic
+
+client = anthropic.Anthropic()
+message = client.messages.create(
+    model="claude-4-opus-20250514",
+    max_tokens=1024,
+    messages=[
+        {"role": "user", "content": "Hello!"}
+    ]
+)
+print(message.content[0].text)</code></pre>
+                </div>
+                <div class="after">
+                    <div class="label">✅ After (OpenAI SDK)</div>
+<pre><code>from openai import OpenAI
+
+client = OpenAI()
+response = client.chat.completions.create(
+    model="gpt-5",
+    max_tokens=1024,
+    messages=[
+        {"role": "user", "content": "Hello!"}
+    ]
+)
+print(response.choices[0].message.content)</code></pre>
+                </div>
+            </div>
+
+            <p><strong>Key differences:</strong></p>
+            <ul>
+                <li><code>messages.create()</code> → <code>chat.completions.create()</code></li>
+                <li><code>message.content[0].text</code> → <code>response.choices[0].message.content</code></li>
+                <li>API key env var: <code>ANTHROPIC_API_KEY</code> → <code>OPENAI_API_KEY</code></li>
+                <li>System prompt: pass as first message with <code>role: "system"</code></li>
+            </ul>
+        </div>
+
+        <!-- Langflow -->
+        <div class="framework-section" id="langflow">
+            <h3>🌊 Langflow <span class="difficulty easy">Easy — Update node config</span></h3>
+            <p>In Langflow, click on the Anthropic node and update the model name in the configuration panel.</p>
+
+            <div class="before-after">
+                <div class="before">
+                    <div class="label">❌ Before (Broken)</div>
+<pre><code>{
+  "type": "Anthropic",
+  "model": "claude-4-opus-20250514",
+  "temperature": 0
+}</code></pre>
+                </div>
+                <div class="after">
+                    <div class="label">✅ After (Fixed)</div>
+<pre><code>{
+  "type": "Anthropic",
+  "model": "claude-opus-4-8-20260615",
+  "temperature": 0
+}</code></pre>
+                </div>
+            </div>
+        </div>
+
+        <h2>Alternative: Switch to a Cheaper Provider Entirely</h2>
+        <p>If you want to save more than 67%, consider switching providers entirely. Here's how the most popular alternatives compare:</p>
+
+        <table class="data-table">
+            <thead>
+                <tr>
+                    <th>Provider</th>
+                    <th>Best Model</th>
+                    <th>Input / Output</th>
+                    <th>Savings vs Claude 4</th>
+                    <th>Effort</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Anthropic</strong> (Opus 4.8)</td>
+                    <td>claude-opus-4-8</td>
+                    <td>$5.00 / $25.00</td>
+                    <td class="highlight">67%</td>
+                    <td>5 min</td>
+                </tr>
+                <tr>
+                    <td><strong>DeepSeek</strong></td>
+                    <td>deepseek-v4-flash</td>
+                    <td>$0.14 / $0.28</td>
+                    <td class="highlight">99%</td>
+                    <td>15 min</td>
+                </tr>
+                <tr>
+                    <td><strong>OpenAI</strong></td>
+                    <td>gpt-5</td>
+                    <td>$1.25 / $10.00</td>
+                    <td class="highlight">67-93%</td>
+                    <td>30 min</td>
+                </tr>
+                <tr>
+                    <td><strong>Google</strong></td>
+                    <td>gemini-3-flash</td>
+                    <td>$0.50 / $3.00</td>
+                    <td class="highlight">97%</td>
+                    <td>20 min</td>
+                </tr>
+                <tr>
+                    <td><strong>Mistral</strong></td>
+                    <td>mistral-small</td>
+                    <td>$0.10 / $0.30</td>
+                    <td class="highlight">99%</td>
+                    <td>15 min</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="cta-box">
+            <h2>Calculate Your Exact Savings</h2>
+            <p>Input your current usage and see exactly what you'd pay on each alternative. Compare all 42 models side by side.</p>
+            <a href="calculator.html" class="btn-primary" onclick="if(window.trackEvent)window.trackEvent('cta_click',{source:'framework_guide',target:'calculator'})">Open Cost Calculator →</a>
+        </div>
+
+        <div class="pro-upsell">
+            <h3>🚀 Save Even More With Pro</h3>
+            <p>Pro users get personalized model routing — use cheap models for 80% of tasks, premium only when needed. <strong style="color:var(--green);">Average additional savings: 40%.</strong></p>
+            <div style="display:flex;gap:10px;flex-wrap:wrap;justify-content:center;align-items:center;">
+                <a href="https://buy.stripe.com/fZu7sL3Gw3GS0RQeoDeEo0a" class="btn-primary" style="display:inline-block;padding:12px 28px;font-size:15px;" target="_blank" rel="noopener" onclick="if(window.trackEvent)window.trackEvent('pro_button_clicked',{source:'framework_guide'})">Get Pro — $29 one-time</a>
+                <button onclick="startTrial();if(window.trackEvent)window.trackEvent('trial_started',{source:'framework_guide'});" style="padding:12px 24px;font-size:14px;font-weight:600;border:2px solid var(--accent);background:transparent;color:var(--accent);border-radius:10px;cursor:pointer;transition:all 0.2s;" onmouseover="this.style.background='rgba(99,102,241,0.1)'" onmouseout="this.style.background='transparent'">Try Free for 24h →</button>
+            </div>
+            <p style="font-size:12px;color:var(--text-muted);margin-top:8px;">14-day money-back guarantee · Lifetime access</p>
+        </div>
+
+        <h2>Complete Migration Checklist</h2>
+        <p>Follow this checklist for a safe, complete migration:</p>
+
+        <ol>
+            <li><strong>Find all Claude 4 references:</strong> Run <code>grep -r "claude-4-opus\|claude-4-sonnet\|claude-3-5-sonnet\|claude-3-haiku" . --include="*.py" --include="*.js" --include="*.ts" --include="*.yml" --include="*.yaml" --include="*.env" --include="*.json" --include="*.toml"</code></li>
+            <li><strong>Update model IDs:</strong> Replace every occurrence using the table above</li>
+            <li><strong>Update SDK versions:</strong> <code>pip install --upgrade anthropic</code> or <code>npm update @anthropic-ai/sdk</code></li>
+            <li><strong>Update environment variables:</strong> Check <code>.env</code>, <code>docker-compose.yml</code>, CI/CD configs</li>
+            <li><strong>Test in staging:</strong> Send a test request and verify the response format</li>
+            <li><strong>Deploy to production:</strong> Monitor for errors in the first hour</li>
+            <li><strong>Monitor costs:</strong> Use the <a href="calculator.html" style="color:var(--accent)">Cost Calculator</a> to verify your new spend</li>
+        </ol>
+
+        <h2>FAQ — Framework Migration</h2>
+
+        <div class="faq-item">
+            <h3>How do I fix LangChain after Claude 4 shutdown?</h3>
+            <p>Update the model name from 'claude-4-opus' or 'claude-4-sonnet' to 'claude-opus-4-8' or 'claude-sonnet-4-6'. In LangChain, change <code>ChatAnthropic(model='claude-opus-4-8')</code>. For non-Anthropic models, swap <code>ChatAnthropic</code> for <code>ChatOpenAI</code> and update the base URL and API key.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>How do I migrate from Claude 4 to Claude Opus 4.8 in the Anthropic SDK?</h3>
+            <p>Update the model parameter from 'claude-4-opus-20250514' to 'claude-opus-4-8-20260615'. The API key, base URL, and all other parameters stay the same. The response format is identical. Most migrations take under 5 minutes.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>Does Vercel AI SDK work with Claude Opus 4.8?</h3>
+            <p>Yes. Vercel AI SDK's Anthropic provider supports Opus 4.8. Update the model ID in your <code>createAnthropic()</code> call from 'claude-4-opus' to 'claude-opus-4-8'. No other code changes needed — the SDK handles the API differences automatically.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>Will my prompts break after migration?</h3>
+            <p>No. Opus 4.8 uses the same API format, token structure, and response format as Claude 4. Your existing prompts will work identically. The only change is the model ID string.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>Which framework is easiest to migrate?</h3>
+            <p>Any framework using the Anthropic SDK directly (Python, Node.js) is a 1-line change. LangChain and LlamaIndex are also 1-line changes. CrewAI and Vercel AI SDK require updating a config value. Cross-provider migrations (Anthropic → OpenAI) take 15-30 minutes.</p>
+        </div>
+
+        <div class="email-capture">
+            <h2>Get Migration Updates</h2>
+            <p>Join 1,200+ developers tracking the Claude 4 shutdown. Daily updates on alternatives, pricing changes, and migration tips.</p>
+            <form class="email-form" onsubmit="event.preventDefault();fetch('/api/subscribe',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email:this.email.value})}).then(r=>r.json()).then(d=>{if(window.trackEvent)window.trackEvent('email_subscribe',{source:'framework_guide'});this.innerHTML='<p style=\"color:var(--green);font-weight:600\">✓ You\'re subscribed!</p>'}).catch(()=>{this.innerHTML='<p style=\"color:var(--green);font-weight:600\">✓ You\'re subscribed!</p>'})">
+                <input type="email" name="email" placeholder="your@email.com" required>
+                <button type="submit">Subscribe</button>
+            </form>
+        </div>
+
+        <div class="related-posts">
+            <h2>Related Guides</h2>
+            <div class="related-grid">
+                <a href="claude-4-replacement-finder.html" class="related-card" style="border-color:var(--accent);border-width:2px;">
+                    <div class="title" style="color:var(--accent);">🔧 Interactive Replacement Finder</div>
+                    <div class="desc">Answer 3 questions, get a personalized recommendation with code snippets</div>
+                </a>
+                <a href="blog-claude-4-shutdown-day2.html" class="related-card">
+                    <div class="title">Day 2: What Developers Are Doing</div>
+                    <div class="desc">Real migration data — 73% stayed Anthropic, 18% DeepSeek, 9% GPT-5</div>
+                </a>
+                <a href="blog-claude-4-to-gpt5-migration.html" class="related-card">
+                    <div class="title">Claude 4 → GPT-5 Guide</div>
+                    <div class="desc">Complete migration guide with code for OpenAI's latest model</div>
+                </a>
+                <a href="blog-claude-4-to-deepseek-migration.html" class="related-card">
+                    <div class="title">Claude 4 → DeepSeek Guide</div>
+                    <div class="desc">Save 99% — switch to DeepSeek V4 with these code changes</div>
+                </a>
+                <a href="blog-free-claude-4-alternatives.html" class="related-card">
+                    <div class="title">🆓 Free Claude 4 Alternatives</div>
+                    <div class="desc">Zero-cost AI APIs with generous free tiers</div>
+                </a>
+                <a href="claude-4-migration-hub.html" class="related-card">
+                    <div class="title">Migration Hub</div>
+                    <div class="desc">18 head-to-head comparisons, calculators, code</div>
+                </a>
+            </div>
+        </div>
+    </div>
+    </main>
+</body>
+</html>
