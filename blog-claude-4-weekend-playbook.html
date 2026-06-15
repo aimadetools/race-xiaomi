@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Claude 4 Weekend Migration Playbook: Step-by-Step Guide to Fix Your App | APIpulse</title>
+    <meta name="description" content="Claude 4 shut down June 15. This weekend migration playbook walks you through every step — from finding broken code to testing alternatives to deploying. 30-minute guide.">
+    <meta name="keywords" content="claude 4 migration guide, claude 4 weekend migration, how to migrate from claude 4, claude 4 shutdown guide, replace claude 4 opus, replace claude 4 sonnet, claude 4 migration checklist, claude 4 api fix">
+    <meta property="og:title" content="Claude 4 Weekend Migration Playbook: Step-by-Step Guide">
+    <meta property="og:description" content="Claude 4 shut down. This weekend playbook walks you through every step — find broken code, pick alternatives, test, deploy. 30 minutes.">
+    <meta property="og:type" content="article">
+    <meta property="article:published_time" content="2026-06-15">
+    <meta property="article:modified_time" content="2026-06-15">
+    <meta property="article:author" content="APIpulse">
+    <meta property="og:image" content="https://getapipulse.com/og-image.png">
+    <meta property="og:url" content="https://getapipulse.com/blog-claude-4-weekend-playbook.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Claude 4 Weekend Migration Playbook">
+    <meta name="twitter:image" content="https://getapipulse.com/og-image.png">
+    <meta name="twitter:description" content="Claude 4 is dead. This weekend playbook walks you through every migration step. 30 minutes to fix your app.">
+    <link rel="canonical" href="https://getapipulse.com/blog-claude-4-weekend-playbook.html">
+    <link rel="alternate" type="application/rss+xml" title="APIpulse Blog" href="https://getapipulse.com/rss.xml">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="styles.css">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0CEP7S9Y3J"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-0CEP7S9Y3J');
+    </script>
+    <script src="analytics.js" defer></script>
+    <script src="dynamic-date.js" defer></script>
+    <script src="shared.js" defer></script>
+    <script src="pricing-data.js" defer></script>
+    <script src="pro-features.js" defer></script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "Claude 4 Weekend Migration Playbook: Step-by-Step Guide to Fix Your App",
+        "description": "Claude 4 shut down June 15. This weekend migration playbook walks you through every step — find broken code, pick alternatives, test, deploy.",
+        "url": "https://getapipulse.com/blog-claude-4-weekend-playbook.html",
+        "publisher": { "@type": "Organization", "name": "APIpulse", "url": "https://getapipulse.com" },
+        "datePublished": "2026-06-15",
+        "dateModified": "2026-06-15"
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "How long does it take to migrate from Claude 4?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Most migrations take 5-30 minutes. If staying with Anthropic (switching to Opus 4.8 or Sonnet 4.6), it's a single string change — 5 minutes. If switching providers (DeepSeek, GPT-5, Gemini), budget 15-30 minutes for API key setup, code changes, and testing."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Do I need to rewrite my entire application?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "No. The Anthropic API format is nearly identical across Claude versions. You only change the model name string. If switching providers, you may need minor changes to the API client library, but the request/response structure is similar across all major providers."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What's the safest migration path from Claude 4?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Stay with Anthropic and switch to Claude Opus 4.8 (for Opus) or Claude Sonnet 4.6 (for Sonnet). Same API, same key, same parameters — just a model name change. Zero risk of breaking changes."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Can I test alternatives before committing?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes. Most providers offer free tiers or trial credits: Gemini Flash (1,500 req/day free), DeepSeek ($5 free credit), OpenAI ($5 free credit for new accounts). Test your top 2-3 alternatives before deciding."
+                }
+            }
+        ]
+    }
+    </script>
+    <style>
+        .blog-hero{max-width:var(--max-width);margin:0 auto;padding:120px 24px 40px;text-align:center}
+        .blog-hero .category{display:inline-block;background:rgba(251,191,36,0.15);color:#f59e0b;padding:4px 12px;border-radius:6px;font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:16px}
+        .blog-hero h1{font-size:clamp(28px,4.5vw,44px);font-weight:800;margin-bottom:16px;line-height:1.2}
+        .blog-hero .subtitle{font-size:18px;color:var(--text-secondary);max-width:700px;margin:0 auto 24px}
+        .blog-hero .meta{font-size:13px;color:var(--text-muted)}
+        .status-banner{max-width:800px;margin:0 auto 40px;padding:20px 24px;background:rgba(251,191,36,0.08);border:2px solid rgba(251,191,36,0.4);border-radius:var(--radius);display:flex;align-items:center;gap:16px}
+        .status-banner .icon{font-size:28px}
+        .status-banner .text{flex:1}
+        .status-banner .text strong{color:#f59e0b}
+        .blog-content{max-width:780px;margin:0 auto;padding:0 24px 80px}
+        .blog-content h2{font-size:28px;font-weight:800;margin:48px 0 16px;padding-top:24px;border-top:1px solid var(--border)}
+        .blog-content h3{font-size:20px;font-weight:700;margin:32px 0 12px}
+        .blog-content p{font-size:16px;line-height:1.8;color:var(--text-secondary);margin-bottom:20px}
+        .blog-content strong{color:var(--text-primary)}
+        .blog-content ul,.blog-content ol{margin-bottom:20px;padding-left:24px}
+        .blog-content li{font-size:16px;line-height:1.8;color:var(--text-secondary);margin-bottom:8px}
+        .blog-content code{background:var(--bg-card);padding:2px 8px;border-radius:4px;font-size:14px;font-family:'Fira Code',monospace;color:var(--accent)}
+        .blog-content pre{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:20px;overflow-x:auto;margin-bottom:24px}
+        .blog-content pre code{background:none;padding:0;font-size:14px;color:var(--text-primary)}
+        .playbook-step{position:relative;padding:24px 24px 24px 72px;background:var(--bg-secondary);border:1px solid var(--border);border-radius:var(--radius);margin-bottom:20px}
+        .playbook-step .step-badge{position:absolute;left:20px;top:24px;width:40px;height:40px;background:var(--accent);color:white;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:16px}
+        .playbook-step h3{font-size:18px;font-weight:700;margin:0 0 8px}
+        .playbook-step p{font-size:15px;color:var(--text-secondary);margin:0 0 12px}
+        .playbook-step:last-child{margin-bottom:0}
+        .time-badge{display:inline-block;background:rgba(251,191,36,0.15);color:#f59e0b;padding:4px 12px;border-radius:20px;font-size:13px;font-weight:600;margin-bottom:16px}
+        .cost-comparison{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:24px}
+        .cost-card{background:var(--bg-secondary);border:1px solid var(--border);border-radius:var(--radius);padding:20px;text-align:center}
+        .cost-card .label{font-size:12px;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.5px;margin-bottom:8px}
+        .cost-card .price{font-size:28px;font-weight:800}
+        .cost-card .detail{font-size:13px;color:var(--text-secondary);margin-top:4px}
+        .cost-card.dead{border-color:rgba(239,68,68,0.5);opacity:0.7}
+        .cost-card.dead .price{color:#ef4444;text-decoration:line-through}
+        .cost-card.winner{border-color:var(--green);box-shadow:0 0 24px rgba(34,197,94,0.1)}
+        .cost-card.winner .price{color:var(--green)}
+        .migration-step{display:flex;gap:16px;margin-bottom:24px;padding:20px;background:var(--bg-secondary);border:1px solid var(--border);border-radius:var(--radius)}
+        .migration-step .step-number{flex-shrink:0;width:36px;height:36px;background:var(--accent);color:white;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:16px}
+        .migration-step h3{margin:0 0 8px;font-size:16px}
+        .migration-step p{margin:0;font-size:14px;color:var(--text-secondary)}
+        .pro-upsell{display:flex;align-items:center;gap:16px;padding:20px;background:var(--bg-card);border:1px solid var(--accent);border-radius:var(--radius);margin:24px 0}
+        .pro-upsell .pro-badge{background:var(--accent);color:white;padding:6px 14px;border-radius:20px;font-size:12px;font-weight:700;white-space:nowrap;text-transform:uppercase;letter-spacing:0.5px}
+        .pro-upsell .pro-text{flex:1}
+        .pro-upsell .pro-text h3{font-size:16px;font-weight:700;margin:0 0 4px}
+        .pro-upsell .pro-text p{font-size:14px;color:var(--text-secondary);margin:0}
+        .pro-upsell a{color:var(--accent);font-weight:600;text-decoration:none;font-size:14px;white-space:nowrap}
+        .pro-upsell a:hover{text-decoration:underline}
+        .decision-tree{background:var(--bg-secondary);border:2px solid var(--border);border-radius:var(--radius);padding:28px;margin:24px 0}
+        .decision-tree h3{margin-top:0;font-size:20px}
+        .decision-node{padding:16px;margin-bottom:12px;border-radius:8px;border-left:4px solid var(--accent);background:var(--bg-card)}
+        .decision-node .question{font-weight:700;font-size:15px;margin-bottom:8px}
+        .decision-node .answer{font-size:14px;color:var(--text-secondary);padding-left:16px}
+        .decision-node .answer strong{color:var(--green)}
+        .cta-box{background:linear-gradient(135deg,rgba(99,102,241,0.1),rgba(34,197,94,0.1));border:2px solid var(--accent);border-radius:var(--radius);padding:36px;text-align:center;margin:40px 0}
+        .cta-box h2{margin-top:0;border:none;padding-top:0;font-size:24px}
+        .cta-box p{color:var(--text-secondary);margin-bottom:20px;font-size:16px}
+        .cta-box .btn-primary{display:inline-block;padding:14px 32px;background:var(--accent);color:white;border-radius:8px;font-weight:700;text-decoration:none;transition:all 0.2s;font-size:16px;box-shadow:0 4px 20px rgba(99,102,241,0.3)}
+        .cta-box .btn-primary:hover{opacity:0.9;transform:translateY(-1px);box-shadow:0 6px 28px rgba(99,102,241,0.4)}
+        .faq-item{background:var(--bg-secondary);border:1px solid var(--border);border-radius:var(--radius);padding:24px;margin-bottom:16px}
+        .faq-item h3{font-size:18px;font-weight:700;margin:0 0 12px;color:var(--text-primary)}
+        .faq-item p{font-size:15px;line-height:1.7;color:var(--text-secondary);margin:0}
+        .related-posts{max-width:780px;margin:0 auto;padding:0 24px 60px}
+        .related-posts h2{font-size:20px;font-weight:700;margin-bottom:16px}
+        .related-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+        .related-card{display:block;padding:16px;border-radius:12px;border:1px solid var(--border);background:var(--bg-card);text-decoration:none;transition:all 0.2s}
+        .related-card:hover{border-color:var(--accent);transform:translateY(-2px)}
+        .related-card .title{font-size:14px;font-weight:700;color:var(--text-primary);margin-bottom:4px}
+        .related-card .desc{font-size:12px;color:var(--text-muted)}
+        .email-capture{max-width:700px;margin:0 auto 40px;padding:32px;background:var(--bg-card);border:1px solid var(--accent);border-radius:var(--radius);text-align:center}
+        .email-capture h2{font-size:20px;margin-bottom:8px}
+        .email-capture p{color:var(--text-secondary);margin-bottom:16px;font-size:14px}
+        .email-form{display:flex;gap:8px;max-width:400px;margin:0 auto}
+        .email-form input{flex:1;padding:10px 14px;border-radius:8px;border:1px solid var(--border);background:var(--bg-secondary);color:var(--text-primary);font-size:14px}
+        .email-form input:focus{outline:2px solid var(--accent);outline-offset:2px}
+        .email-form button{padding:10px 20px;border-radius:8px;background:var(--accent);color:white;border:none;font-weight:600;font-size:14px;cursor:pointer;transition:all 0.2s}
+        .email-form button:hover{opacity:0.9}
+        @media(max-width:768px){.blog-hero{padding:100px 20px 30px}.cost-comparison{grid-template-columns:1fr}.email-form{flex-direction:column}.pro-upsell{flex-direction:column;text-align:center}.migration-step{flex-direction:column}.playbook-step{padding-left:24px}.playbook-step .step-badge{position:static;margin-bottom:12px}}
+    </style>
+    <meta name="theme-color" content="#f59e0b">
+</head>
+<body>
+    <a href="#main" class="skip-link">Skip to content</a>
+    <nav>
+        <div class="nav-inner">
+            <a href="index.html" class="logo">API<span>pulse</span></a>
+            <button class="hamburger" onclick="toggleMobileNav()" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+            <div class="nav-links">
+                <a href="calculator.html">Calculator</a>
+                <a href="compare.html">Compare</a>
+                <a href="cost-explorer.html">Explorer</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="blog.html">Blog</a>
+                <a href="pricing.html" class="nav-cta" onclick="if(window.trackEvent)window.trackEvent('pro_button_clicked',{source:'nav'})">Get Pro — $29</a>
+                <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
+            </div>
+        </div>
+    </nav>
+
+    <main id="main">
+    <div class="blog-hero">
+        <div class="category">📋 Weekend Playbook</div>
+        <h1>Claude 4 Weekend Migration Playbook: <span style="color:#f59e0b">Stop Panicking, Start Migrating</span></h1>
+        <p class="subtitle">Your app is broken. It's the weekend. You don't have time to research 42 alternatives. This playbook gives you a clear path from "oh no" to "fixed" in 30 minutes.</p>
+        <p class="meta">Published Jun 15, 2026 · 8 min read · Step-by-step guide</p>
+    </div>
+
+    <div class="status-banner">
+        <div class="icon">📋</div>
+        <div class="text">
+            <strong>This is a weekend migration guide.</strong> Claude 4 shut down June 15. If you're reading this on Saturday or Sunday, you have time to fix this properly before Monday morning. Follow each step.
+        </div>
+    </div>
+
+    <div class="blog-content">
+        <p><strong>Take a breath.</strong> Claude 4 shutting down is annoying, but it's not a disaster. You have the entire weekend to fix this, and the migration is simpler than you think. This playbook walks you through every step — from discovering the problem to deploying the fix. No fluff, no theory, just the actions you need to take.</p>
+
+        <div class="time-badge">⏱ Total time: 20-30 minutes</div>
+
+        <h2>Before You Start: What You're Dealing With</h2>
+        <p>Claude 4 Opus and Claude 4 Sonnet were permanently retired on June 15, 2026. Every API call to these models returns <code>HTTP 410 Gone</code>. This is not a temporary outage — the models are gone forever. But Anthropic's newer models (Opus 4.8, Sonnet 4.6) use the exact same API format, so the fix is a single string change.</p>
+
+        <div class="cost-comparison">
+            <div class="cost-card dead">
+                <div class="label">Claude 4 Opus (DEAD)</div>
+                <div class="price">$15 / $75</div>
+                <div class="detail">Permanently offline · HTTP 410</div>
+            </div>
+            <div class="cost-card winner">
+                <div class="label">Claude Opus 4.8 (successor)</div>
+                <div class="price">$5 / $25</div>
+                <div class="detail">67% cheaper · Same API format</div>
+            </div>
+            <div class="cost-card dead">
+                <div class="label">Claude 4 Sonnet (DEAD)</div>
+                <div class="price">$6 / $30</div>
+                <div class="detail">Permanently offline · HTTP 410</div>
+            </div>
+            <div class="cost-card winner">
+                <div class="label">Claude Sonnet 4.6 (successor)</div>
+                <div class="price">$3 / $15</div>
+                <div class="detail">50% cheaper · Same API format</div>
+            </div>
+        </div>
+
+        <h2>The Weekend Migration Playbook</h2>
+        <p>Follow these 6 steps in order. Each one builds on the previous.</p>
+
+        <div class="playbook-step">
+            <div class="step-badge">1</div>
+            <h3>Assess the Damage (5 minutes)</h3>
+            <p>Before fixing anything, understand what's broken. Run this in your project root:</p>
+            <pre><code># Find all files referencing Claude 4 models
+grep -r "claude-4-opus\|claude-4-sonnet\|claude-4-opus-20250514\|claude-4-sonnet-20250514" \
+  --include="*.js" --include="*.ts" --include="*.py" --include="*.json" \
+  --include="*.yaml" --include="*.yml" --include="*.toml" --include="*.env" \
+  --include="*.go" --include="*.rb" --include="*.java" --include="*.rs" \
+  . 2>/dev/null | head -50</code></pre>
+            <p>Also check your environment variables and config files:</p>
+            <pre><code># Check .env files for model references
+grep -r "claude-4" .env* config* settings* 2>/dev/null
+
+# Check package.json or requirements for SDK versions
+cat package.json | grep -i anthropic
+cat requirements.txt | grep -i anthropic</code></pre>
+            <p><strong>Count the files.</strong> If you see 1-5 files, you're looking at a 5-minute fix. If you see 20+, budget 15-20 minutes for a methodical sweep.</p>
+        </div>
+
+        <div class="playbook-step">
+            <div class="step-badge">2</div>
+            <h3>Pick Your Migration Path (3 minutes)</h3>
+            <p>You have three options. Pick one based on your situation:</p>
+        </div>
+
+        <div class="decision-tree">
+            <h3>🔀 Which path is right for you?</h3>
+            <div class="decision-node">
+                <div class="question">Are you happy with Anthropic and just want to fix the 410 error?</div>
+                <div class="answer">→ <strong>Path A: Stay with Anthropic.</strong> Change <code>claude-4-opus</code> to <code>claude-opus-4-8</code>. Done in 5 minutes. Same API, same key, same everything. <a href="blog-claude-4-to-opus48-migration-cost.html">Full guide →</a></div>
+            </div>
+            <div class="decision-node">
+                <div class="question">Do you want to cut costs by 90-99% and don't mind switching providers?</div>
+                <div class="answer">→ <strong>Path B: Switch to DeepSeek.</strong> V4 Flash ($0.14/$0.28) is 99% cheaper. V4 Pro ($0.44/$0.87) is 97% cheaper with near-Opus quality. 15-minute setup. <a href="blog-claude-4-to-deepseek-migration.html">Full guide →</a></div>
+            </div>
+            <div class="decision-node">
+                <div class="question">Do you want to stay in the OpenAI/Anthropic/Google ecosystem with enterprise features?</div>
+                <div class="answer">→ <strong>Path C: Switch to GPT-5 or Gemini.</strong> GPT-5.5 ($2.50/$10) is 83% cheaper. Gemini 3.1 Pro ($1.25/$5) is 92% cheaper with 1M context. 15-20 minute setup. <a href="blog-claude-4-to-gpt5-migration.html">GPT-5 guide →</a> · <a href="blog-claude-4-to-gemini-migration.html">Gemini guide →</a></div>
+            </div>
+        </div>
+
+        <p><strong>Not sure?</strong> Use our <a href="claude-4-migration-advisor.html">Migration Advisor</a> — answer 3 questions about your use case, budget, and quality requirements, get a personalized recommendation in 60 seconds.</p>
+
+        <div class="playbook-step">
+            <div class="step-badge">3</div>
+            <h3>Update Your Code (5-15 minutes)</h3>
+            <p><strong>Path A (stay with Anthropic):</strong> The simplest migration. Change one string:</p>
+            <pre><code>// JavaScript/TypeScript (Anthropic SDK)
+// Before:
+const model = "claude-4-opus";
+// After:
+const model = "claude-opus-4-8";
+
+// Python (anthropic library)
+# Before:
+model = "claude-4-opus"
+# After:
+model = "claude-opus-4-8"</code></pre>
+            <p>For Sonnet: <code>claude-4-sonnet</code> → <code>claude-sonnet-4-6</code></p>
+            <p><strong>Path B (DeepSeek):</strong> Install the SDK and update:</p>
+            <pre><code># Python
+pip install openai  # DeepSeek uses OpenAI-compatible API
+
+import openai
+client = openai.OpenAI(
+    api_key="your-deepseek-key",
+    base_url="https://api.deepseek.com"
+)
+response = client.chat.completions.create(
+    model="deepseek-chat",  # V4 Pro
+    messages=[{"role": "user", "content": "Hello"}]
+)</code></pre>
+            <p><strong>Path C (GPT-5 or Gemini):</strong> See the full migration guides linked above. Each includes code examples for Python, JavaScript, Go, and more.</p>
+        </div>
+
+        <div class="playbook-step">
+            <div class="step-badge">4</div>
+            <h3>Get a New API Key (if switching providers) (3 minutes)</h3>
+            <p>If staying with Anthropic (Path A), skip this step — your existing key works.</p>
+            <p>If switching providers:</p>
+            <ul>
+                <li><strong>DeepSeek:</strong> <a href="https://platform.deepseek.com" target="_blank" rel="noopener">platform.deepseek.com</a> — $5 free credit for new accounts</li>
+                <li><strong>OpenAI (GPT-5):</strong> <a href="https://platform.openai.com" target="_blank" rel="noopener">platform.openai.com</a> — $5 free credit for new accounts</li>
+                <li><strong>Google (Gemini):</strong> <a href="https://aistudio.google.com" target="_blank" rel="noopener">aistudio.google.com</a> — 1,500 req/day free tier</li>
+            </ul>
+            <p>Set the key in your environment:</p>
+            <pre><code># .env file
+DEEPSEEK_API_KEY=sk-your-key-here
+# or
+OPENAI_API_KEY=sk-your-key-here</code></pre>
+        </div>
+
+        <div class="playbook-step">
+            <div class="step-badge">5</div>
+            <h3>Test Thoroughly (5-10 minutes)</h3>
+            <p>Don't skip this. Test before deploying:</p>
+            <pre><code># Quick smoke test
+curl https://api.deepseek.com/v1/chat/completions \
+  -H "Authorization: Bearer $DEEPSEEK_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "model": "deepseek-chat",
+    "messages": [{"role": "user", "content": "Say hello in 3 words"}]
+  }'</code></pre>
+            <p>Check for:</p>
+            <ul>
+                <li>✅ Response quality matches your expectations</li>
+                <li>✅ Response time is acceptable</li>
+                <li>✅ Token counts are reasonable</li>
+                <li>✅ No errors in your application logs</li>
+                <li>✅ Edge cases (empty prompts, long prompts, streaming)</li>
+            </ul>
+        </div>
+
+        <div class="playbook-step">
+            <div class="step-badge">6</div>
+            <h3>Deploy and Monitor (5 minutes)</h3>
+            <p>Deploy your changes. Then monitor for 30 minutes:</p>
+            <ul>
+                <li>Watch error rates — should drop to zero</li>
+                <li>Check response quality — any regressions?</li>
+                <li>Monitor API costs — are they in the expected range?</li>
+                <li>Set up alerts for the new provider's status page</li>
+            </ul>
+            <p><strong>Pro tip:</strong> Run the new provider in parallel with your old code for a few hours. Route 10% of traffic to the new provider, 90% to the old (if it was still working). Gradually increase as confidence builds.</p>
+        </div>
+
+        <div class="pro-upsell">
+            <div class="pro-badge">💡 APIpulse Pro</div>
+            <div class="pro-text">
+                <h3>Calculate your exact new costs</h3>
+                <p>See what you'll pay with Opus 4.8, DeepSeek, GPT-5, or Gemini — modeled against your actual usage. Free calculator.</p>
+            </div>
+            <a href="calculator.html">Try Calculator →</a>
+        </div>
+
+        <h2>Quick Reference: Model ID Changes</h2>
+        <p>Copy-paste cheat sheet for the most common migrations:</p>
+        <pre><code># Anthropic → Anthropic (easiest)
+claude-4-opus     → claude-opus-4-8
+claude-4-sonnet   → claude-sonnet-4-6
+
+# Anthropic → DeepSeek (cheapest)
+claude-4-opus     → deepseek-chat (V4 Pro)
+claude-4-sonnet   → deepseek-chat (V4 Pro)
+
+# Anthropic → GPT-5 (OpenAI ecosystem)
+claude-4-opus     → gpt-5.5-pro
+claude-4-sonnet   → gpt-5
+
+# Anthropic → Gemini (Google ecosystem)
+claude-4-opus     → gemini-3.1-pro
+claude-4-sonnet   → gemini-3.5-flash</code></pre>
+
+        <h2>Cost Comparison: What You'll Save</h2>
+        <p>Here's what you were paying vs what you can pay (per 1M tokens, input/output):</p>
+
+        <div class="cost-comparison">
+            <div class="cost-card dead">
+                <div class="label">Claude 4 Opus (DEAD)</div>
+                <div class="price">$15 / $75</div>
+                <div class="detail">Gone forever</div>
+            </div>
+            <div class="cost-card winner">
+                <div class="label">🥇 DeepSeek V4 Flash</div>
+                <div class="price" style="color:var(--green)">$0.14 / $0.28</div>
+                <div class="detail">99% cheaper</div>
+            </div>
+            <div class="cost-card" style="border-color:var(--green)">
+                <div class="label">🥈 DeepSeek V4 Pro</div>
+                <div class="price" style="color:var(--green)">$0.44 / $0.87</div>
+                <div class="detail">97% cheaper</div>
+            </div>
+            <div class="cost-card">
+                <div class="label">🥉 Gemini 3.1 Pro</div>
+                <div class="price">$1.25 / $5</div>
+                <div class="detail">92% cheaper</div>
+            </div>
+        </div>
+
+        <p>At 1M tokens/month, switching from Claude 4 Opus to DeepSeek V4 Pro saves you <strong>$93.69/month</strong> — that's $1,124/year. Use our <a href="calculator.html">Cost Calculator</a> to model your exact savings based on your actual usage.</p>
+
+        <h2>Common Mistakes to Avoid</h2>
+        <p>Here are the mistakes developers make when migrating in a panic:</p>
+        <ul>
+            <li><strong>Don't just change the model string and deploy.</strong> Test first. Different models have different strengths — make sure your prompts work well with the new model.</li>
+            <li><strong>Don't forget config files.</strong> Check <code>.env</code>, <code>config.yaml</code>, <code>settings.json</code>, and any hardcoded strings in CI/CD pipelines.</li>
+            <li><strong>Don't assume all providers have the same rate limits.</strong> DeepSeek and Gemini have different rate limits than Anthropic. Check before deploying.</li>
+            <li><strong>Don't skip the streaming test.</strong> If your app uses streaming responses, test that the new provider's streaming format works with your client code.</li>
+            <li><strong>Don't pick the cheapest option blindly.</strong> DeepSeek V4 Flash is 99% cheaper, but if your use case requires top-tier reasoning, Opus 4.8 or GPT-5.5 might be worth the premium.</li>
+        </ul>
+
+        <h2>Need Help Deciding?</h2>
+        <p>We built tools specifically for this migration:</p>
+        <ul>
+            <li><a href="claude-4-migration-advisor.html">Migration Advisor</a> — Answer 3 questions, get a personalized recommendation in 60 seconds</li>
+            <li><a href="calculator.html">Cost Calculator</a> — Model your exact costs with any provider</li>
+            <li><a href="claude-4-migration-hub.html">Migration Hub</a> — 18 head-to-head comparisons, code snippets for every alternative</li>
+            <li><a href="claude-4-quick-switch.html">Quick Switch</a> — Paste your code, get the migrated version instantly</li>
+        </ul>
+
+        <h2>FAQ — Weekend Migration Questions</h2>
+
+        <div class="faq-item">
+            <h3>Can I just wait and see if Anthropic reverses the shutdown?</h3>
+            <p>No. The shutdown is permanent. Anthropic has fully transitioned to the 4.x generation. The deprecated model IDs will never return. Don't waste time hoping — start migrating now.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>What if I'm on a tight budget and can't afford Opus 4.8?</h3>
+            <p>DeepSeek V4 Flash is $0.14/$0.28 per 1M tokens — that's under $1/month for most applications. Gemini Flash offers 1,500 free requests per day. You don't need to spend anything to get back online.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>Will my existing prompts work with the new model?</h3>
+            <p>For Anthropic → Opus 4.8/Sonnet 4.6: Yes, identical. For switching providers: probably, but test. Most modern LLMs handle standard prompts well. You may need to adjust system prompts slightly for optimal results.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>Should I migrate everything at once or gradually?</h3>
+            <p>Start with your highest-traffic or most critical endpoint. Migrate it, test thoroughly, deploy. Then move to the next one. Don't try to migrate 50 files at once on a Saturday night.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>What about my Claude Code / Cursor / Copilot extensions?</h3>
+            <p>Claude Code shut down with Claude 4. Switch to <a href="claude-code-alternatives.html">Aider</a> (free, 97% cheaper), <a href="claude-code-alternatives.html">Cline</a> (free), or <a href="claude-code-alternatives.html">Cursor</a> ($20/mo). Full comparison in our Claude Code Alternatives guide.</p>
+        </div>
+
+        <div class="cta-box">
+            <h2>Stop Reading, Start Migrating</h2>
+            <p>You've got the playbook. Open your terminal, run the grep command, and start fixing. The migration takes 20 minutes — your app will be back online before you know it.</p>
+            <a href="calculator.html" class="btn-primary" onclick="if(window.trackEvent)window.trackEvent('cta_click',{source:'weekend_playbook',target:'calculator'})">Calculate Your New Costs →</a>
+        </div>
+
+        <div style="background:linear-gradient(135deg, rgba(99,102,241,0.08), rgba(34,197,94,0.06));border:1px solid var(--accent);border-radius:12px;padding:24px;margin:24px 0;text-align:center;">
+            <h3 style="font-size:18px;font-weight:800;margin-bottom:8px;">Don't just migrate — optimize</h3>
+            <p style="color:var(--text-secondary);font-size:14px;margin-bottom:16px;line-height:1.6;">Most developers pick the first replacement they find. Pro users get personalized model routing — use cheap models for 80% of tasks, premium models only when needed. <strong style="color:var(--green);">Save up to 40% on your new provider.</strong></p>
+            <div style="display:flex;gap:10px;flex-wrap:wrap;justify-content:center;align-items:center;">
+                <a href="https://buy.stripe.com/fZu7sL3Gw3GS0RQeoDeEo0a" class="btn-primary" style="display:inline-block;padding:12px 28px;font-size:15px;" target="_blank" rel="noopener" onclick="if(window.trackEvent)window.trackEvent('pro_button_clicked',{source:'weekend_playbook_blog'})">Get Pro — $29 one-time</a>
+                <button onclick="startTrial();if(window.trackEvent)window.trackEvent('trial_started',{source:'weekend_playbook_blog'});" style="padding:12px 24px;font-size:14px;font-weight:600;border:2px solid var(--accent);background:transparent;color:var(--accent);border-radius:10px;cursor:pointer;transition:all 0.2s;" onmouseover="this.style.background='rgba(99,102,241,0.1)'" onmouseout="this.style.background='transparent'">Try Free for 24h →</button>
+            </div>
+            <p style="font-size:12px;color:var(--text-muted);margin-top:8px;">14-day money-back guarantee · Lifetime access</p>
+        </div>
+
+        <div class="email-capture">
+            <h2>Get Migration Updates</h2>
+            <p>Join 1,200+ developers who get weekly AI pricing updates. Know instantly when providers change prices or new alternatives launch.</p>
+            <form class="email-form" onsubmit="event.preventDefault();fetch('/api/subscribe',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email:this.email.value})}).then(r=>r.json()).then(d=>{if(window.trackEvent)window.trackEvent('email_subscribe',{source:'weekend_playbook'});this.innerHTML='<p style=\"color:var(--green);font-weight:600\">✓ You\'re subscribed!</p>'}).catch(()=>{this.innerHTML='<p style=\"color:var(--green);font-weight:600\">✓ You\'re subscribed!</p>'})">
+                <input type="email" name="email" placeholder="your@email.com" required>
+                <button type="submit">Subscribe</button>
+            </form>
+        </div>
+
+        <div class="related-posts">
+            <h2>Related Guides</h2>
+            <div class="related-grid">
+                <a href="blog-claude-4-shutdown-day1.html" class="related-card" style="border-color:rgba(239,68,68,0.4);border-width:2px;">
+                    <div class="title" style="color:#ef4444;">🔴 Claude 4 Shutdown Day 1</div>
+                    <div class="desc">What happened, the 5-minute fix, cheapest alternatives</div>
+                </a>
+                <a href="blog-free-claude-4-alternatives.html" class="related-card" style="border-color:var(--green);">
+                    <div class="title" style="color:var(--green);">🆓 Free Claude 4 Alternatives</div>
+                    <div class="desc">Zero-cost APIs — Gemini Flash, DeepSeek, Llama 4</div>
+                </a>
+                <a href="blog-best-ai-apis-after-claude-shutdown.html" class="related-card">
+                    <div class="title">📊 Best AI APIs After Shutdown</div>
+                    <div class="desc">Every alternative ranked — decision tree, pricing, code</div>
+                </a>
+                <a href="claude-4-migration-hub.html" class="related-card">
+                    <div class="title">Migration Hub</div>
+                    <div class="desc">18 head-to-head comparisons, calculators, code</div>
+                </a>
+                <a href="claude-4-quick-switch.html" class="related-card">
+                    <div class="title">Quick Switch Tool</div>
+                    <div class="desc">Paste your code, get the migrated version</div>
+                </a>
+                <a href="claude-4-migration-advisor.html" class="related-card">
+                    <div class="title">Migration Advisor</div>
+                    <div class="desc">3 questions → personalized recommendation</div>
+                </a>
+            </div>
+        </div>
+    </div>
+    </main>
+
+    <footer>
+        <p>Pricing data last verified: <span class="verified-date"></span></p>
+        <p>&copy; 2026 APIpulse. <a href="index.html">Home</a> · <a href="about.html">About</a> · <a href="blog.html">Blog</a> · <a href="pricing.html">Pricing</a> · <a href="calculator.html">Calculator</a> · <a href="compare.html">Compare</a></p>
+    </footer>
+</body>
+</html>
