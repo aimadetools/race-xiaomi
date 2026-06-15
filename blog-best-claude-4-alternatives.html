@@ -440,7 +440,14 @@ model: <span class="str">"claude-opus-4-8"</span></code></pre>
                     var diff = dep - new Date();
                     var days = diff > 0 ? Math.ceil(diff / 86400000) : 0;
                     var el = document.getElementById('ctaDeadline');
-                    if (el) el.textContent = 'Deadline: June 15 — ' + days + ' days left';
+                    if (el) {
+                        if (days > 0) {
+                            el.textContent = 'Deadline: June 15 — ' + days + ' days left';
+                        } else {
+                            el.textContent = 'Claude 4 Was Retired on June 15';
+                            el.style.color = '#94a3b8';
+                        }
+                    }
                 })();
             </script>
             <p>Compare all 42 alternatives to Claude 4 with your exact usage. See costs ranked cheapest-first.</p>

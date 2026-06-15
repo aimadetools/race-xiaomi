@@ -265,7 +265,15 @@ document.addEventListener('DOMContentLoaded', function() {
     var deadline = new Date('2026-06-15T00:00:00Z');
     var now = new Date();
     var daysLeft = Math.ceil((deadline - now) / (1000 * 60 * 60 * 24));
-    if (daysLeft <= 0) return; // auto-tense-flip handles post-deadline
+    if (daysLeft <= 0) {
+        // Post-deadline: replace countdown elements without inline JS handlers
+        // Elements with id="countdown-display" have their own JS — skip those
+        document.querySelectorAll('.countdown:not(#countdown-display)').forEach(function(el) {
+            el.textContent = 'DEADLINE PASSED';
+            el.style.color = '#94a3b8';
+        });
+        return;
+    }
 
     // Replace countdown class elements: <span class="countdown">N days left</span>
     document.querySelectorAll('.countdown').forEach(function(el) {
@@ -389,6 +397,7 @@ document.addEventListener('DOMContentLoaded', () => {
         ['Get the checklist before June 15', 'Get the checklist — the deadline has passed'],
         ['Migrate Before June 15', 'Migrated — June 15 has passed'],
         ['migrate before June 15', 'migrated — June 15 has passed'],
+        ['before June 15, 2026', '— June 15, 2026 has passed'],
         ['before June 15', '— the June 15 deadline has passed'],
         ['before the June 15', '— the June 15 deadline has passed'],
         ['You have 10 days', 'The deadline has passed'],
@@ -414,6 +423,18 @@ document.addEventListener('DOMContentLoaded', () => {
         ['3 Days Left', 'Deadline Passed'],
         ['2 Days Left', 'Deadline Passed'],
         ['1 Day Left', 'Deadline Passed'],
+        ['6 DAYS LEFT', 'DEADLINE PASSED'],
+        ['5 DAYS LEFT', 'DEADLINE PASSED'],
+        ['4 DAYS LEFT', 'DEADLINE PASSED'],
+        ['3 DAYS LEFT', 'DEADLINE PASSED'],
+        ['2 DAYS LEFT', 'DEADLINE PASSED'],
+        ['1 DAY LEFT', 'DEADLINE PASSED'],
+        ['6 DAYS REMAINING', 'DEADLINE PASSED'],
+        ['5 DAYS REMAINING', 'DEADLINE PASSED'],
+        ['4 DAYS REMAINING', 'DEADLINE PASSED'],
+        ['3 DAYS REMAINING', 'DEADLINE PASSED'],
+        ['2 DAYS REMAINING', 'DEADLINE PASSED'],
+        ['1 DAY REMAINING', 'DEADLINE PASSED'],
         ['4 days until deadline', 'deadline has passed'],
         ['4 days until Claude 4', 'Claude 4 has been retired since June 15'],
         ['3 days until Claude 4', 'Claude 4 has been retired since June 15'],
@@ -439,6 +460,12 @@ document.addEventListener('DOMContentLoaded', () => {
         ['shuts down in 6 days', 'shut down on June 15'],
         ['shuts down in 7 days', 'shut down on June 15'],
         ['shuts down in 10 days', 'shut down on June 15'],
+        ['Deadline in 6 Days', 'Deadline Has Passed — Claude 4 Is Retired'],
+        ['Deadline in 5 Days', 'Deadline Has Passed — Claude 4 Is Retired'],
+        ['Deadline in 4 Days', 'Deadline Has Passed — Claude 4 Is Retired'],
+        ['Deadline in 3 Days', 'Deadline Has Passed — Claude 4 Is Retired'],
+        ['Deadline in 2 Days', 'Deadline Has Passed — Claude 4 Is Retired'],
+        ['Deadline in 1 Day', 'Deadline Has Passed — Claude 4 Is Retired'],
         ['shuts down on June 15', 'shut down on June 15'],
         ['is shutting down June 15', 'shut down on June 15'],
         ['is shutting down on June 15', 'shut down on June 15'],
@@ -466,8 +493,13 @@ document.addEventListener('DOMContentLoaded', () => {
         ['June 15 deadline', 'June 15 has passed — Claude 4 is retired'],
         ['June 15 Deadline', 'June 15 Has Passed — Claude 4 Is Retired'],
         ['JUNE 15 DEADLINE', 'JUNE 15 HAS PASSED — CLAUDE 4 RETIRED'],
+        ['by June 15, 2026', '— June 15, 2026 has passed'],
         ['by June 15', '— the June 15 deadline has passed'],
+        ['Until June 15, 2026', '— June 15, 2026 Has Passed'],
+        ['Until June 15', '— the June 15 Deadline Has Passed'],
+        ['until June 15, 2026', '— June 15, 2026 has passed'],
         ['until June 15', '— the June 15 deadline has passed'],
+        ['prior to June 15, 2026', '— June 15, 2026 has passed'],
         ['prior to June 15', '— the June 15 deadline has passed'],
         ['starting tomorrow', '— the deadline has passed'],
         ['Claude 4 dies', 'Claude 4 is retired'],
