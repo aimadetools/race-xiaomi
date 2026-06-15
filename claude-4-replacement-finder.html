@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find Your Claude 4 Replacement — Interactive Migration Tool | APIpulse</title>
+    <meta name="description" content="Claude 4 is dead. Answer 3 questions and get a personalized replacement recommendation with code snippets, cost estimates, and migration steps.">
+    <meta name="keywords" content="claude 4 replacement, claude 4 alternative finder, best claude 4 replacement, migrate from claude 4, claude 4 shutdown help">
+    <meta property="og:title" content="Find Your Claude 4 Replacement — Interactive Tool">
+    <meta property="og:description" content="Claude 4 is dead. Answer 3 questions, get a personalized replacement with code snippets and cost estimates.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://getapipulse.com/og-image.png">
+    <meta property="og:url" content="https://getapipulse.com/claude-4-replacement-finder.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Find Your Claude 4 Replacement">
+    <meta name="twitter:description" content="Claude 4 is dead. Interactive tool to find your best replacement in 60 seconds.">
+    <meta name="twitter:image" content="https://getapipulse.com/og-image.png">
+    <link rel="canonical" href="https://getapipulse.com/claude-4-replacement-finder.html">
+    <link rel="alternate" type="application/rss+xml" title="APIpulse Blog" href="https://getapipulse.com/rss.xml">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="styles.css">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0CEP7S9Y3J"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-0CEP7S9Y3J');
+    </script>
+    <script src="analytics.js" defer></script>
+    <script src="dynamic-date.js" defer></script>
+    <script src="shared.js" defer></script>
+    <script src="pricing-data.js" defer></script>
+    <script src="pro-features.js" defer></script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Claude 4 Replacement Finder",
+        "url": "https://getapipulse.com/claude-4-replacement-finder.html",
+        "description": "Interactive tool to find the best Claude 4 replacement based on your use case, budget, and requirements.",
+        "applicationCategory": "DeveloperApplication",
+        "operatingSystem": "Web"
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "What replaced Claude 4?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Claude Opus 4.8 and Claude Sonnet 4.6 are the official successors. Same API, same key, just update your model ID string."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What is the cheapest alternative to Claude 4?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "DeepSeek V4 Flash at $0.14/$0.28 per 1M tokens is 99% cheaper than Claude 4 Opus. For similar quality, DeepSeek V4 Pro at $0.44/$0.87 is 97% cheaper."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How do I migrate from Claude 4 to another provider?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Most providers use the same OpenAI-compatible API format. Change your base URL and API key. The request/response format is nearly identical across OpenAI, Google, Mistral, and DeepSeek."
+                }
+            }
+        ]
+    }
+    </script>
+    <style>
+        .finder-hero{max-width:var(--max-width);margin:0 auto;padding:120px 24px 40px;text-align:center}
+        .finder-hero .badge{display:inline-block;background:rgba(239,68,68,0.15);color:#ef4444;padding:4px 12px;border-radius:6px;font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:16px}
+        .finder-hero h1{font-size:clamp(28px,4.5vw,44px);font-weight:800;margin-bottom:16px;line-height:1.2}
+        .finder-hero .subtitle{font-size:18px;color:var(--text-secondary);max-width:700px;margin:0 auto 24px;line-height:1.6}
+        .finder-hero .stats{display:flex;justify-content:center;gap:32px;font-size:14px;color:var(--text-muted)}
+        .finder-hero .stats span{display:flex;align-items:center;gap:6px}
+
+        .quiz-container{max-width:680px;margin:0 auto;padding:0 24px 80px}
+        .quiz-step{display:none;animation:fadeIn 0.3s ease}
+        .quiz-step.active{display:block}
+        @keyframes fadeIn{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+
+        .step-header{text-align:center;margin-bottom:32px}
+        .step-number{display:inline-block;width:40px;height:40px;background:var(--accent);color:white;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:16px;margin:0 auto 12px}
+        .step-header h2{font-size:24px;font-weight:800;margin:0 0 8px}
+        .step-header p{font-size:15px;color:var(--text-secondary);margin:0}
+
+        .quiz-options{display:grid;gap:12px;margin-bottom:24px}
+        .quiz-option{padding:20px;border:2px solid var(--border);border-radius:var(--radius);cursor:pointer;transition:all 0.2s;background:var(--bg-card);text-align:left}
+        .quiz-option:hover{border-color:var(--accent);background:rgba(99,102,241,0.05)}
+        .quiz-option.selected{border-color:var(--accent);background:rgba(99,102,241,0.08);box-shadow:0 0 16px rgba(99,102,241,0.1)}
+        .quiz-option h3{font-size:16px;font-weight:700;margin:0 0 4px;color:var(--text-primary)}
+        .quiz-option p{font-size:14px;color:var(--text-secondary);margin:0;line-height:1.5}
+
+        .quiz-nav{display:flex;justify-content:space-between;margin-top:32px}
+        .btn-back{padding:12px 24px;border-radius:8px;border:1px solid var(--border);background:transparent;color:var(--text-secondary);font-weight:600;font-size:14px;cursor:pointer;transition:all 0.2s}
+        .btn-back:hover{border-color:var(--text-secondary);color:var(--text-primary)}
+        .btn-next{padding:12px 32px;border-radius:8px;background:var(--accent);color:white;border:none;font-weight:700;font-size:14px;cursor:pointer;transition:all 0.2s;box-shadow:0 4px 16px rgba(99,102,241,0.3)}
+        .btn-next:hover{opacity:0.9;transform:translateY(-1px)}
+        .btn-next:disabled{opacity:0.4;cursor:not-allowed;transform:none;box-shadow:none}
+
+        .progress-bar{height:4px;background:var(--border);border-radius:2px;margin-bottom:32px;overflow:hidden}
+        .progress-fill{height:100%;background:var(--accent);border-radius:2px;transition:width 0.3s ease}
+
+        /* Results */
+        .result-card{background:var(--bg-card);border:2px solid var(--green);border-radius:var(--radius);padding:32px;margin-bottom:24px;text-align:center;animation:fadeIn 0.4s ease}
+        .result-card .winner-badge{display:inline-block;background:rgba(34,197,94,0.15);color:#22c55e;padding:4px 12px;border-radius:20px;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:12px}
+        .result-card h2{font-size:28px;font-weight:800;margin:0 0 8px}
+        .result-card .tagline{font-size:16px;color:var(--text-secondary);margin:0 0 16px}
+        .result-card .price-highlight{font-size:20px;font-weight:700;color:var(--green);margin-bottom:4px}
+        .result-card .price-detail{font-size:13px;color:var(--text-muted)}
+
+        .code-snippet{background:var(--bg-secondary);border:1px solid var(--border);border-radius:var(--radius);padding:20px;margin:20px 0;overflow-x:auto}
+        .code-snippet .label{font-size:12px;font-weight:700;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.5px;margin-bottom:8px}
+        .code-snippet pre{margin:0;font-family:'Fira Code',monospace;font-size:14px;line-height:1.6;color:var(--text-primary)}
+        .code-snippet .comment{color:#6b7280}
+
+        .migration-steps{margin:24px 0}
+        .migration-steps h3{font-size:18px;font-weight:700;margin-bottom:16px}
+        .step-item{display:flex;gap:12px;margin-bottom:12px;padding:16px;background:var(--bg-secondary);border:1px solid var(--border);border-radius:var(--radius)}
+        .step-item .num{flex-shrink:0;width:28px;height:28px;background:var(--accent);color:white;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:13px}
+        .step-item .text{font-size:14px;color:var(--text-secondary);line-height:1.6}
+        .step-item .text strong{color:var(--text-primary)}
+
+        .alt-option{display:flex;gap:16px;padding:16px;border:1px solid var(--border);border-radius:var(--radius);margin-bottom:12px;background:var(--bg-secondary)}
+        .alt-option .model-name{font-weight:700;font-size:15px;margin-bottom:2px}
+        .alt-option .model-detail{font-size:13px;color:var(--text-secondary)}
+        .alt-option .model-price{font-size:14px;font-weight:700;color:var(--accent);white-space:nowrap}
+
+        .cta-box{background:linear-gradient(135deg,rgba(99,102,241,0.1),rgba(34,197,94,0.1));border:2px solid var(--accent);border-radius:var(--radius);padding:36px;text-align:center;margin:32px 0}
+        .cta-box h3{margin:0 0 8px;font-size:20px}
+        .cta-box p{color:var(--text-secondary);margin:0 0 20px;font-size:15px}
+        .cta-box .btn-primary{display:inline-block;padding:14px 32px;background:var(--accent);color:white;border-radius:8px;font-weight:700;text-decoration:none;transition:all 0.2s;font-size:16px;box-shadow:0 4px 20px rgba(99,102,241,0.3)}
+        .cta-box .btn-primary:hover{opacity:0.9;transform:translateY(-1px)}
+
+        .email-capture{max-width:600px;margin:32px auto;padding:24px;background:var(--bg-card);border:1px solid var(--accent);border-radius:var(--radius);text-align:center}
+        .email-capture h3{font-size:16px;margin:0 0 4px}
+        .email-capture p{font-size:13px;color:var(--text-muted);margin:0 0 12px}
+        .email-form{display:flex;gap:8px;max-width:380px;margin:0 auto}
+        .email-form input{flex:1;padding:10px 14px;border-radius:8px;border:1px solid var(--border);background:var(--bg-secondary);color:var(--text-primary);font-size:14px}
+        .email-form input:focus{outline:2px solid var(--accent);outline-offset:2px}
+        .email-form button{padding:10px 20px;border-radius:8px;background:var(--accent);color:white;border:none;font-weight:600;font-size:14px;cursor:pointer;transition:all 0.2s}
+        .email-form button:hover{opacity:0.9}
+
+        .restart-btn{display:inline-block;margin-top:16px;padding:10px 24px;border:1px solid var(--border);border-radius:8px;background:transparent;color:var(--text-secondary);font-weight:600;font-size:14px;cursor:pointer;transition:all 0.2s;text-decoration:none}
+        .restart-btn:hover{border-color:var(--accent);color:var(--accent)}
+
+        @media(max-width:768px){
+            .finder-hero{padding:100px 20px 30px}
+            .finder-hero .stats{flex-direction:column;gap:8px}
+            .quiz-nav{flex-direction:column-reverse;gap:8px}
+            .quiz-nav .btn-back,.quiz-nav .btn-next{width:100%;text-align:center}
+            .email-form{flex-direction:column}
+        }
+    </style>
+    <meta name="theme-color" content="#ef4444">
+</head>
+<body>
+    <a href="#main" class="skip-link">Skip to content</a>
+    <nav>
+        <div class="nav-inner">
+            <a href="index.html" class="logo">API<span>pulse</span></a>
+            <button class="hamburger" onclick="toggleMobileNav()" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+            <div class="nav-links">
+                <a href="calculator.html">Calculator</a>
+                <a href="compare.html">Compare</a>
+                <a href="cost-explorer.html">Explorer</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="blog.html">Blog</a>
+                <a href="pricing.html" class="nav-cta" onclick="if(window.trackEvent)window.trackEvent('pro_button_clicked',{source:'nav'})">Get Pro — $29</a>
+                <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
+            </div>
+        </div>
+    </nav>
+
+    <main id="main">
+    <div class="finder-hero">
+        <div class="badge">🔴 Claude 4 Is Dead — Find Your Replacement</div>
+        <h1>Find Your Claude 4 Replacement<br><span style="color:var(--accent)">In 60 Seconds</span></h1>
+        <p class="subtitle">Answer 3 quick questions. Get a personalized recommendation with code snippets, cost estimates, and step-by-step migration instructions.</p>
+        <div class="stats">
+            <span>⚡ Takes 60 seconds</span>
+            <span>📊 12 providers compared</span>
+            <span>💰 Save up to 99%</span>
+        </div>
+    </div>
+
+    <div class="quiz-container">
+        <div class="progress-bar"><div class="progress-fill" id="progressFill" style="width:33%"></div></div>
+
+        <!-- STEP 1: Use Case -->
+        <div class="quiz-step active" id="step1">
+            <div class="step-header">
+                <div class="step-number">1</div>
+                <h2>What do you use Claude for?</h2>
+                <p>Pick the closest match — we'll tailor your recommendation.</p>
+            </div>
+            <div class="quiz-options">
+                <div class="quiz-option" onclick="selectOption(this, 'usecase', 'coding')" data-value="coding">
+                    <h3>💻 Coding & Development</h3>
+                    <p>Code generation, debugging, refactoring, code review, technical documentation</p>
+                </div>
+                <div class="quiz-option" onclick="selectOption(this, 'usecase', 'chat')" data-value="chat">
+                    <h3>💬 Chat & Conversations</h3>
+                    <p>Customer support bots, Q&A systems, general conversation, knowledge base</p>
+                </div>
+                <div class="quiz-option" onclick="selectOption(this, 'usecase', 'analysis')" data-value="analysis">
+                    <h3>📊 Analysis & Research</h3>
+                    <p>Data analysis, document processing, summarization, research assistance</p>
+                </div>
+                <div class="quiz-option" onclick="selectOption(this, 'usecase', 'creative')" data-value="creative">
+                    <h3>✍️ Writing & Creative</h3>
+                    <p>Content generation, marketing copy, creative writing, translation</p>
+                </div>
+            </div>
+            <div class="quiz-nav">
+                <div></div>
+                <button class="btn-next" id="next1" disabled onclick="goToStep(2)">Next →</button>
+            </div>
+        </div>
+
+        <!-- STEP 2: Budget -->
+        <div class="quiz-step" id="step2">
+            <div class="step-header">
+                <div class="step-number">2</div>
+                <h2>What's your monthly budget?</h2>
+                <p>We'll match you with models that fit your spend.</p>
+            </div>
+            <div class="quiz-options">
+                <div class="quiz-option" onclick="selectOption(this, 'budget', 'cheap')" data-value="cheap">
+                    <h3>🆓 As cheap as possible</h3>
+                    <p>Under $50/month — I want the lowest cost, quality can be slightly lower</p>
+                </div>
+                <div class="quiz-option" onclick="selectOption(this, 'budget', 'mid')" data-value="mid">
+                    <h3>⚖️ Balanced quality & cost</h3>
+                    <p>$50-200/month — I need good quality at a reasonable price</p>
+                </div>
+                <div class="quiz-option" onclick="selectOption(this, 'budget', 'premium')" data-value="premium">
+                    <h3>🏆 Best quality, cost matters less</h3>
+                    <p>$200+/month — I need top-tier performance, just cheaper than Claude 4</p>
+                </div>
+                <div class="quiz-option" onclick="selectOption(this, 'budget', 'free')" data-value="free">
+                    <h3>💸 Free tier only</h3>
+                    <p>$0 — I want to try free tiers and limits before committing</p>
+                </div>
+            </div>
+            <div class="quiz-nav">
+                <button class="btn-back" onclick="goToStep(1)">← Back</button>
+                <button class="btn-next" id="next2" disabled onclick="goToStep(3)">Next →</button>
+            </div>
+        </div>
+
+        <!-- STEP 3: Priority -->
+        <div class="quiz-step" id="step3">
+            <div class="step-header">
+                <div class="step-number">3</div>
+                <h2>What matters most to you?</h2>
+                <p>Your top priority — we'll weight it heavily.</p>
+            </div>
+            <div class="quiz-options">
+                <div class="quiz-option" onclick="selectOption(this, 'priority', 'compat')" data-value="compat">
+                    <h3>🔌 Easiest migration</h3>
+                    <p>Drop-in replacement, minimal code changes, same API format</p>
+                </div>
+                <div class="quiz-option" onclick="selectOption(this, 'priority', 'quality')" data-value="quality">
+                    <h3>🧠 Closest to Claude quality</h3>
+                    <p>Best reasoning, instruction following, and output quality</p>
+                </div>
+                <div class="quiz-option" onclick="selectOption(this, 'priority', 'speed')" data-value="speed">
+                    <h3>⚡ Fastest response times</h3>
+                    <p>Low latency, high throughput, real-time applications</p>
+                </div>
+                <div class="quiz-option" onclick="selectOption(this, 'priority', 'savings')" data-value="savings">
+                    <h3>💰 Maximum savings</h3>
+                    <p>I'll switch anything if it saves me real money</p>
+                </div>
+            </div>
+            <div class="quiz-nav">
+                <button class="btn-back" onclick="goToStep(2)">← Back</button>
+                <button class="btn-next" id="next3" disabled onclick="showResults()">Get My Recommendation 🚀</button>
+            </div>
+        </div>
+
+        <!-- RESULTS -->
+        <div class="quiz-step" id="results">
+            <div id="resultContent"></div>
+        </div>
+    </div>
+    </main>
+
+    <script>
+    const selections = { usecase: null, budget: null, priority: null };
+
+    function selectOption(el, category, value) {
+        // Deselect siblings
+        el.parentElement.querySelectorAll('.quiz-option').forEach(o => o.classList.remove('selected'));
+        el.classList.add('selected');
+        selections[category] = value;
+
+        // Enable next button
+        const stepNum = category === 'usecase' ? 1 : category === 'budget' ? 2 : 3;
+        document.getElementById('next' + stepNum).disabled = false;
+
+        // Track
+        if (window.trackEvent) window.trackEvent('replacement_finder_select', { category, value });
+    }
+
+    function goToStep(step) {
+        document.querySelectorAll('.quiz-step').forEach(s => s.classList.remove('active'));
+        document.getElementById('step' + step).classList.add('active');
+        document.getElementById('progressFill').style.width = (step * 33.3) + '%';
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function showResults() {
+        document.querySelectorAll('.quiz-step').forEach(s => s.classList.remove('active'));
+        document.getElementById('results').classList.add('active');
+        document.getElementById('progressFill').style.width = '100%';
+
+        const { usecase, budget, priority } = selections;
+        const result = getRecommendation(usecase, budget, priority);
+
+        document.getElementById('resultContent').innerHTML = result;
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+
+        if (window.trackEvent) window.trackEvent('replacement_finder_complete', selections);
+    }
+
+    function getRecommendation(usecase, budget, priority) {
+        // Recommendation engine
+        const models = {
+            coding: {
+                cheap: { primary: 'DeepSeek V4', model: 'deepseek-v4', price: '$0.14/$0.28', savings: '99%', reason: 'Best code quality per dollar. Handles complex refactoring, debugging, and multi-file changes.' },
+                mid: { primary: 'GPT-5', model: 'gpt-5', price: '$1.50/$3.00', savings: '67%', reason: 'Strongest code generation. Excellent at complex architectures and large codebases.' },
+                premium: { primary: 'Claude Opus 4.8', model: 'claude-opus-4-8', price: '$5.00/$10.00', savings: '50%', reason: 'Best reasoning and code quality. The closest to what Claude 4 Opus offered.' },
+                free: { primary: 'Gemini 2.5 Flash', model: 'gemini-2.5-flash', price: 'Free (60 RPM)', savings: '100%', reason: 'Free tier with 60 requests/minute. Good for development and testing.' }
+            },
+            chat: {
+                cheap: { primary: 'DeepSeek V4 Flash', model: 'deepseek-v4-flash', price: '$0.07/$0.14', savings: '99%', reason: 'Cheapest option with good conversation quality. Handles multi-turn well.' },
+                mid: { primary: 'Claude Sonnet 4.6', model: 'claude-sonnet-4-6', price: '$1.50/$3.00', savings: '67%', reason: 'Best instruction following for chat. Natural, helpful responses.' },
+                premium: { primary: 'Claude Opus 4.8', model: 'claude-opus-4-8', price: '$5.00/$10.00', savings: '50%', reason: 'Highest quality conversations. Best for premium customer-facing products.' },
+                free: { primary: 'Gemini 2.5 Flash', model: 'gemini-2.5-flash', price: 'Free (60 RPM)', savings: '100%', reason: 'Free tier is generous. Good for prototyping and low-traffic bots.' }
+            },
+            analysis: {
+                cheap: { primary: 'DeepSeek V4', model: 'deepseek-v4', price: '$0.14/$0.28', savings: '99%', reason: 'Strong analytical reasoning at the lowest cost. Handles long documents well.' },
+                mid: { primary: 'GPT-5', model: 'gpt-5', price: '$1.50/$3.00', savings: '67%', reason: 'Excellent at structured analysis, data extraction, and complex reasoning.' },
+                premium: { primary: 'Claude Opus 4.8', model: 'claude-opus-4-8', price: '$5.00/$10.00', savings: '50%', reason: 'Best at nuanced analysis and following complex analytical frameworks.' },
+                free: { primary: 'Gemini 2.5 Flash', model: 'gemini-2.5-flash', price: 'Free (60 RPM)', savings: '100%', reason: 'Good for basic analysis. Free tier handles moderate workloads.' }
+            },
+            creative: {
+                cheap: { primary: 'DeepSeek V4', model: 'deepseek-v4', price: '$0.14/$0.28', savings: '99%', reason: 'Surprisingly good at creative writing. Handles multiple styles and tones.' },
+                mid: { primary: 'Claude Sonnet 4.6', model: 'claude-sonnet-4-6', price: '$1.50/$3.00', savings: '67%', reason: 'Best at maintaining voice and style. Natural, engaging prose.' },
+                premium: { primary: 'Claude Opus 4.8', model: 'claude-opus-4-8', price: '$5.00/$10.00', savings: '50%', reason: 'Most sophisticated writing. Best for high-stakes content and complex narratives.' },
+                free: { primary: 'Gemini 2.5 Flash', model: 'gemini-2.5-flash', price: 'Free (60 RPM)', savings: '100%', reason: 'Decent for drafting and brainstorming. Free tier works for personal projects.' }
+            }
+        };
+
+        let rec = models[usecase]?.[budget] || models.coding.mid;
+
+        // Adjust for priority
+        if (priority === 'compat') {
+            rec = { ...rec, migrationTip: 'All providers use OpenAI-compatible API format. Just change your base URL and API key. Takes 5 minutes.' };
+        } else if (priority === 'quality') {
+            rec = { ...rec, migrationTip: 'Focus on output quality benchmarks. Test with your specific prompts before fully committing.' };
+        } else if (priority === 'speed') {
+            rec = { ...rec, migrationTip: 'DeepSeek and Gemini have the lowest latency. Consider streaming for real-time UX.' };
+        } else if (priority === 'savings') {
+            rec = { ...rec, migrationTip: 'Start with free tiers (Gemini, DeepSeek). Scale to paid only when traffic justifies it.' };
+        }
+
+        return `
+            <div class="result-card">
+                <div class="winner-badge">🏆 Your Best Replacement</div>
+                <h2>${rec.primary}</h2>
+                <p class="tagline">${rec.reason}</p>
+                <div class="price-highlight">${rec.price} per 1M tokens (input/output)</div>
+                <div class="price-detail">Save ${rec.savings} vs Claude 4 Opus ($15/$75)</div>
+            </div>
+
+            <div class="code-snippet">
+                <div class="label">Quick Migration Code</div>
+                <pre><span class="comment">// Before (returns 410 Gone)</span>
+model: "claude-4-opus"
+
+<span class="comment">// After — same API, same key, same parameters</span>
+model: "${rec.model}"</pre>
+            </div>
+
+            <div class="migration-steps">
+                <h3>🚀 Migration Steps</h3>
+                <div class="step-item">
+                    <div class="num">1</div>
+                    <div class="text"><strong>Find all Claude 4 references:</strong> <code>grep -r "claude-4-opus\\|claude-4-sonnet" --include="*.js" --include="*.ts" .</code></div>
+                </div>
+                <div class="step-item">
+                    <div class="num">2</div>
+                    <div class="text"><strong>Update model ID:</strong> Replace <code>claude-4-opus</code> with <code>${rec.model}</code></div>
+                </div>
+                <div class="step-item">
+                    <div class="num">3</div>
+                    <div class="text"><strong>Update base URL (if switching provider):</strong> Change API endpoint to match your new provider</div>
+                </div>
+                <div class="step-item">
+                    <div class="num">4</div>
+                    <div class="text"><strong>Test with a single request:</strong> Send one API call to verify everything works</div>
+                </div>
+            </div>
+
+            <div style="padding:16px;background:var(--bg-secondary);border:1px solid var(--border);border-radius:var(--radius);margin-bottom:24px">
+                <p style="font-size:14px;color:var(--text-secondary);margin:0"><strong>💡 Pro tip:</strong> ${rec.migrationTip}</p>
+            </div>
+
+            <h3 style="font-size:18px;font-weight:700;margin:32px 0 16px">Other Options Worth Considering</h3>
+            <div class="alt-option">
+                <div style="flex:1">
+                    <div class="model-name">GPT-5</div>
+                    <div class="model-detail">Best ecosystem, widest tool support, strong at everything</div>
+                </div>
+                <div class="model-price">$1.50/$3.00</div>
+            </div>
+            <div class="alt-option">
+                <div style="flex:1">
+                    <div class="model-name">Gemini 2.5 Flash</div>
+                    <div class="model-detail">Free tier, fast, good for prototyping and low-budget apps</div>
+                </div>
+                <div class="model-price">Free / $0.075</div>
+            </div>
+            <div class="alt-option">
+                <div style="flex:1">
+                    <div class="model-name">Mistral Large 3</div>
+                    <div class="model-detail">Strong European alternative, good at multilingual tasks</div>
+                </div>
+                <div class="model-price">$1.00/$2.00</div>
+            </div>
+
+            <div class="cta-box">
+                <h3>📊 Calculate Your Exact Savings</h3>
+                <p>Enter your monthly token usage and see exactly how much you'd save with each provider.</p>
+                <a href="calculator.html" class="btn-primary" onclick="if(window.trackEvent)window.trackEvent('replacement_finder_calculator_click', selections)">Open Cost Calculator →</a>
+            </div>
+
+            <div class="email-capture">
+                <h3>🔔 Get Notified When Prices Change</h3>
+                <p>We track LLM pricing daily. Get alerts when prices drop — save even more.</p>
+                <form class="email-form" onsubmit="captureEmail(event)">
+                    <input type="email" placeholder="your@email.com" required>
+                    <button type="submit">Subscribe</button>
+                </form>
+            </div>
+
+            <div style="text-align:center;margin-top:24px">
+                <a href="claude-4-replacement-finder.html" class="restart-btn" onclick="restartQuiz()">🔄 Start Over — Try Different Options</a>
+            </div>
+        `;
+    }
+
+    function restartQuiz() {
+        selections.usecase = null;
+        selections.budget = null;
+        selections.priority = null;
+        document.querySelectorAll('.quiz-option').forEach(o => o.classList.remove('selected'));
+        document.querySelectorAll('.btn-next').forEach(b => b.disabled = true);
+        goToStep(1);
+    }
+
+    function captureEmail(e) {
+        e.preventDefault();
+        const email = e.target.querySelector('input').value;
+        if (window.trackEvent) window.trackEvent('replacement_finder_email', { email });
+        e.target.innerHTML = '<p style="color:var(--green);font-weight:600;margin:0">✓ You\'re subscribed! We\'ll notify you when prices change.</p>';
+    }
+    </script>
+</body>
+</html>
