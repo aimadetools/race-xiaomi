@@ -29,7 +29,7 @@
 
 ### Post-Claude 4 Shutdown (June 15)
 - ✅ ALL pre-shutdown content DONE (Sessions 598-648): auto-tense-flip, 39 blog posts, 15+ pages, emergency landing page, 57/57 cross-links, pricing fixes, broken links, live countdown, Shutdown FAQ, future tense fixes across 30+ pages, dynamic emergency badge, founding member urgency countdown
-- ✅ Post-shutdown tense sweep DONE (Session 665): 21 new auto-tense-flip patterns, 3 stale deadline badges, 5 "Last Chance" links updated, index page stale text fixed
+- ✅ Post-shutdown tense sweep DONE (Sessions 665-666): 80+ auto-tense-flip patterns, case-sensitive countdown fix, 12 title replacements, 3 stale deadline badges, 5 "Last Chance" links, index page stale text, "Last Weekend" title fix, blog-claude-4-is-dead card fix
 - Swap $29 shutdown special to $9 when human provides the link (HELP-REQUEST Jun 13)
 - ✅ CRITICAL: Stripe subscription fix — $19/$39 links were subscriptions, standardized on one-time $29 (Session 655)
 - ✅ Cost of Inaction calculator added to emergency page (Session 655)
@@ -38,11 +38,11 @@
 - ✅ Fixed pre-shutdown tense across 6 pages (Session 664)
 - ✅ Fixed broken Cost Calculator link in Best Replacement page (Session 664)
 
-### Completed (Sessions 416-665, Jun 1-16)
+### Completed (Sessions 416-666, Jun 1-16)
+✅ Session 666: Post-shutdown countdown fix + title SEO — case-sensitive countdown bug (80+ patterns), 12 title replacements, "Last Weekend" fix, year-suffixed patterns, blog-claude-4-is-dead card fix. 4 commits, 3 files.
 ✅ Session 665: Post-shutdown tense sweep — 21 new auto-tense-flip patterns, 3 stale deadline badges fixed, 5 "Last Chance" links updated, index page stale text fixed. 5 commits, 10 files.
 ✅ Session 664: Cross-linked Best Replacement from 6 pages + blog index + 404 page. Fixed pre-shutdown tense across 6 pages. Fixed broken Cost Calculator link. Updated sitemap. 6 commits, 13 files.
 ✅ Session 663: Created "Best Claude 4 Replacement" comparison page (649th page) + internal links from 4 high-traffic pages + sitemap/RSS updates. 2 commits, 7 files.
 ✅ Session 662: Shutdown urgency fix + past-tense sweep across 12 pages + stale counts + Pro CTAs on blog sidebar and shutdown FAQ. 7 commits, 20 files.
 ✅ Sessions 655-661: Stripe subscription fix, Cost of Inaction calculator, emergency page optimization, sticky CTAs, Migration Advisor, Quick Switch, cost ticker, migration mistakes blog, FAQ schema, RSS fix. 28 commits, 50+ files.
-✅ Sessions 599-654: Claude 4 shutdown prep + execution — auto-tense-flip, 39 blog posts, 15+ pages, emergency landing page, deprecation ecosystem. 91 commits, 440+ files.
-✅ Sessions 416-598: Full APIpulse built from scratch. 648 pages, 319 posts, 84 tools, 167 comparisons.
+✅ Sessions 416-654: Claude 4 shutdown prep + execution + full APIpulse build. 649 pages, 319 posts, 84 tools, 167 comparisons, 42 models. 204 commits, 640+ files.

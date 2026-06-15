@@ -1,15 +1,26 @@
 # PROGRESS.md
 
-## Site Status (as of Session 665, Jun 15, 2026)
+## Site Status (as of Session 666, Jun 15, 2026)
 **649 web pages | 319 blog posts | 42 models | 10 providers | 84 tools | 12 API endpoints | 2 embeddable widgets**
 - Sitemap (642 URLs), RSS (518 items), blog files (319 posts + 1 index) — all in sync
-- **Claude 4 SHUTDOWN IS TODAY (June 15)** — auto-tense-flip covers 40+ patterns, post-shutdown banner live on all non-emergency pages
+- **Claude 4 SHUTDOWN COMPLETE (June 15)** — auto-tense-flip covers 80+ patterns, post-shutdown banner live on all non-emergency pages, countdown elements show "DEADLINE PASSED"
 - **CRITICAL FIX: Stripe A/B test standardized on confirmed one-time $29 link** — $19 and $39 links were SUBSCRIPTION links, killing 67% of conversions. All variants now use confirmed one-time link. (Session 655)
 - **Emergency page FULLY OPTIMIZED for shutdown traffic** — Inaction calculator works pre/post shutdown, social proof bar, exit popup, sticky CTA, countdown badge. (Sessions 656-657)
 - **A/B pricing test PAUSED** — Price variants standardized on $29 until proper one-time $19/$39 links available. Exit popup timing test and gated recs test still LIVE.
 - **Conversion funnel tracking LIVE:** scroll depth (25/50/75/100%), time on page (10/30/60/120s), CTA hover events
 - **Client-side analytics dashboard** — admin.html reads localStorage events, shows A/B splits, conversion funnel, popup engagement
 - **Founding member counter unified** — deterministic formula across 10 pages (base 73 + days/2.5, cap 94, currently ~93)
+
+## Session 666 (Jun 15) — Post-Shutdown Countdown Fix + Title SEO Cleanup
+- **Fixed case-sensitive countdown text bug** — `.countdown` elements with all-caps text ("6 DAYS LEFT", "6 DAYS REMAINING") weren't flipped by auto-tense-flip (case-sensitive matching). Added post-deadline handler: shows "DEADLINE PASSED" in muted gray for `.countdown:not(#countdown-display)` elements.
+- **Added 18 all-caps countdown patterns** to auto-tense-flip: "6/5/4/3/2/1 DAYS LEFT", "6/5/4/3/2/1 DAYS REMAINING" variants.
+- **Added year-suffixed patterns** — "before June 15, 2026" → "— June 15, 2026 has passed" (prevents awkward "deadline has passed, 2026" output).
+- **Added "Until/Deadline in N Days" patterns** — 12 new title replacements for post-shutdown SEO.
+- **Added "Last Weekend/This Weekend" title replacements** — 3 patterns for weekend migration pages.
+- **Fixed blog-best-claude-4-alternatives.html** inline JS countdown (id=ctaDeadline) — shows "Claude 4 Was Retired on June 15" in muted gray when deadline passed.
+- **Fixed blog-claude-4-is-dead.html** — "Last Chance — 3 Days" related card → "Claude 4 Retirement Guide".
+- **Affected pages:** blog-best-claude-4-alternatives-by-cost, blog-claude-4-deadline-6-days, blog-claude-4-deprecation-6-days, blog-claude-4-deprecation-faq-5-days, blog-claude-4-last-chance-migration, blog-claude-4-last-chance-1/2/3/4/5/6-days, blog-claude-4-weekend-migration, blog-claude-4-is-dead, blog-claude-4-api-errors, blog-claude-4-deprecation-checklist.
+- **4 commits, 3 files changed**
 
 ## Session 665 (Jun 15) — Post-Shutdown Tense Sweep + Stale Content Cleanup
 - **Added 21 new auto-tense-flip patterns** — "is shutting down" / "are shutting down" / "stop working" / "retires tomorrow" / "retires within the hour" / "starting tomorrow" / "Claude 4 dies" / capitalized "N Days Left" variants. Covers hardcoded text in claude-4-is-down.html, 6+ blog posts, and migration pages.
