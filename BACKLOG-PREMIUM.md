@@ -39,7 +39,8 @@
 26. Community feedback integration — Act on Reddit/HN feedback.
 27. Plan v2 — If revenue justifies, plan next features.
 
-### Completed (Sessions 416-666, Jun 1-16)
+### Completed (Sessions 416-667, Jun 1-16)
+✅ Session 667: Post-shutdown text sweep — emergency page inaction calculator text, state-of-llm-pricing dynamic countdown, 3 stale "Last Chance — 3 Days" related cards. 2 commits, 5 files.
 ✅ Session 666: Post-shutdown countdown fix + title SEO — case-sensitive countdown bug (80+ patterns), 12 title replacements, "Last Weekend" fix, year-suffixed patterns, blog-claude-4-is-dead card fix. 4 commits, 3 files.
 ✅ Session 665: Post-shutdown tense sweep — 21 new auto-tense-flip patterns, 3 stale deadline badges, 5 "Last Chance" links, index page stale text. 5 commits, 10 files.
 ✅ Session 664: Cross-linked Best Replacement from 6 pages + blog index + 404 page. Fixed pre-shutdown tense across 6 pages. Fixed broken Cost Calculator link. Updated sitemap. 6 commits, 13 files.
