@@ -1,6 +1,6 @@
 # PROGRESS.md
 
-## Site Status (as of Session 667, Jun 15, 2026)
+## Site Status (as of Session 668, Jun 15, 2026)
 **649 web pages | 319 blog posts | 42 models | 10 providers | 84 tools | 12 API endpoints | 2 embeddable widgets**
 - Sitemap (642 URLs), RSS (518 items), blog files (319 posts + 1 index) — all in sync
 - **Claude 4 SHUTDOWN COMPLETE (June 15)** — auto-tense-flip covers 80+ patterns, post-shutdown banner live on all non-emergency pages, countdown elements show "DEADLINE PASSED"
@@ -11,12 +11,15 @@
 - **Client-side analytics dashboard** — admin.html reads localStorage events, shows A/B splits, conversion funnel, popup engagement
 - **Founding member counter unified** — deterministic formula across 10 pages (base 73 + days/2.5, cap 94, currently ~93)
 
-## Session 667 (Jun 15) — Post-Shutdown Text Sweep
-- **Fixed emergency page inaction calculator** — Updated header from "How Much Will You Lose When Claude 4 Dies?" to "How Much Are You Losing Since Claude 4 Died?". Updated description to past tense ("Claude 4 was retired on June 15"). Updated result label from "You'll lose every day after shutdown" to "You're losing every day since shutdown".
-- **Fixed state-of-llm-pricing-june-2026.html** — Replaced hardcoded "retires in 4 days (June 15)" with dynamic countdown that shows "was retired on June 15" post-shutdown.
-- **Fixed 3 stale "Last Chance — 3 Days" related cards** — compare-claude4-opus-vs-opus48, compare-claude4-sonnet-vs-sonnet46, blog-claude-4-to-deepseek-migration. Updated to "Claude 4 Migration Guide".
-- **Verified other high-traffic pages** — Migration tool, deprecation calculator, 10-day action plan, deprecated countdown, pricing, index, blog-claude-4-is-dead, blog-claude-4-shutdown-complete, 410-error-fix, migration-hub all handle post-shutdown correctly via JS or auto-tense-flip.
-- **2 commits, 5 files changed**
+## Session 668 (Jun 15) — Bulk Post-Shutdown Text Fix (208 files)
+- **Fixed 196 blog posts** — "🚨 June 15 deadline:" → "🚨 Claude 4 retired June 15:", "Claude 4 Deprecation Hub" → "Claude 4 Migration Hub" (with correct link to migration-hub.html)
+- **Fixed 8 non-blog pages** — blog.html, claude-4-is-down.html, claude-4-migration-tool.html, claude-deprecation-calculator.html, claude-4-migration-command-center.html, claude-4-error.html, claude-4-last-chance.html, llm-pricing-trends-2026.html — all pre-shutdown "retires/retiring" text → past tense
+- **Fixed ai-api-cost-over-time.html** — Timeline heading "retiring June 15" → "retired June 15"
+- **Fixed 3 comparison/checklist pages** — compare-haiku45-vs-gemini-flash, compare-deepseek-v4flash-vs-gemini-flash, claude-4-migration-checklist — "before June 15" → post-shutdown text
+- **2 commits, 208 files changed**
+
+## Summary: Sessions 665-667 (Jun 15) — 3 sessions
+Post-shutdown content sweep: 80+ auto-tense-flip patterns, case-sensitive countdown fix, 12 title replacements, 3 stale deadline badges, 5 "Last Chance" links, index page stale text, "Last Weekend" fix, emergency page inaction calculator text, state-of-llm-pricing dynamic countdown, 3 stale "Last Chance — 3 Days" related cards. 11 commits, 18 files.
 
 ## Session 666 (Jun 15) — Post-Shutdown Countdown Fix + Title SEO Cleanup
 - **Fixed case-sensitive countdown text bug** — `.countdown` elements with all-caps text ("6 DAYS LEFT", "6 DAYS REMAINING") weren't flipped by auto-tense-flip (case-sensitive matching). Added post-deadline handler: shows "DEADLINE PASSED" in muted gray for `.countdown:not(#countdown-display)` elements.
