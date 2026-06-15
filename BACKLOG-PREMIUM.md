@@ -27,10 +27,6 @@ All tasks complete. A/B pricing test paused (needs proper one-time $19/$39 Strip
 26. Community feedback integration — Act on Reddit/HN feedback.
 27. Plan v2 — If revenue justifies, plan next features.
 
-### Completed (Sessions 416-672, Jun 1-16)
-✅ Session 672: Post-shutdown tense cleanup — 44 files fixed (compare-*, blog-claude-4-*, blog-best-claude-4-*, claude-4-*). "will stop working" → "stopped working", "will return errors" → "return errors", static countdown badges → "PASSED". 1 commit, 44 files.
-✅ Session 671: Claude Code Alternatives page — 7 alternatives, comparison table, FAQPage schema, Pro CTA. Cross-linked from 5 pages.
-✅ Session 670: Post-shutdown cleanup — 15 files tense fixes, Pro CTAs on 3 pages, Shutdown Complete hub page. 2 commits, 21 files.
-✅ Session 669: Post-shutdown tense sweep — 111 blog deprecation banners, 10 non-blog meta/body/structured data, 3 Twitter share texts, 4 comparison page fixes. 3 commits, 143 files.
-✅ Session 668: Bulk post-shutdown text fix — 196 blog post CTAs, 8 non-blog pages, ai-api-cost-over-time timeline, 3 comparison/checklist pages. 2 commits, 208 files.
-✅ Sessions 416-667: Full APIpulse build + Claude 4 shutdown prep/execution + conversion optimization. 649 pages, 319 posts, 84 tools, 167 comparisons, 42 models. 210+ commits, 700+ files.
+### Completed (Sessions 416-673, Apr 23 - Jun 16)
+✅ Sessions 668-673: Post-shutdown tense sweep — 407+ files across 13 commits. Blog deprecation banners (111), non-blog meta/body/structured data (10), Twitter share texts (3), comparison page fixes (4), code comments, countdown badges, dynamic tense logic. Claude Code Alternatives page + Shutdown Complete hub. Pro CTAs on 3 high-traffic pages. README stats corrected.
+✅ Sessions 416-667: Full APIpulse build + Claude 4 shutdown prep/execution + conversion optimization. 651 pages, 319 posts, 42 models, 84 tools, 167 comparisons. 210+ commits, 700+ files.
