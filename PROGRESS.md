@@ -1,8 +1,8 @@
 # PROGRESS.md
 
-## Site Status (as of Session 675, Jun 15, 2026)
-**653 web pages | 322 blog posts | 42 models | 10 providers | 84 tools | 12 API endpoints | 2 embeddable widgets**
-- Sitemap (646 URLs), RSS (521 items), blog files (322 posts + 1 index) — all in sync
+## Site Status (as of Session 676, Jun 15, 2026)
+**654 web pages | 323 blog posts | 42 models | 10 providers | 84 tools | 12 API endpoints | 2 embeddable widgets**
+- Sitemap (647 URLs), RSS (522 items), blog files (323 posts + 1 index) — all in sync
 - **Claude 4 SHUTDOWN COMPLETE (June 15)** — all pages now past-tense (Sessions 668-673: 407+ files fixed across 13 commits), countdown JS shows "DEADLINE PASSED" / "retired" state
 - **CRITICAL FIX: Stripe A/B test standardized on confirmed one-time $29 link** — $19 and $39 links were SUBSCRIPTION links, killing 67% of conversions. All variants now use confirmed one-time link. (Session 655)
 - **Emergency page FULLY OPTIMIZED for shutdown traffic** — Inaction calculator works pre/post shutdown, social proof bar, exit popup, sticky CTA, countdown badge. (Sessions 656-657)
@@ -10,6 +10,12 @@
 - **Conversion funnel tracking LIVE:** scroll depth (25/50/75/100%), time on page (10/30/60/120s), CTA hover events
 - **Client-side analytics dashboard** — admin.html reads localStorage events, shows A/B splits, conversion funnel, popup engagement
 - **Founding member counter unified** — deterministic formula across 10 pages (base 73 + days/2.5, cap 94, currently ~93)
+
+## Session 676 (Jun 15) — Free Alternatives Blog Post (1 new page, 4 metadata updates)
+- **Created blog-free-claude-4-alternatives.html** — targets "free AI API" searches during shutdown traffic spike. Features: free tier breakdowns (Gemini Flash, DeepSeek, Llama 4), comparison table, 5-minute setup guide, cost analysis, FAQPage schema, email capture.
+- **Added to sitemap.xml** (priority 1.0), **rss.xml** (first item), **blog.html** index (2nd card, Free Options tag)
+- **Updated blog-claude-4-shutdown-day1.html** related links to include new Day 2 post
+- **1 commit, 5 files changed, 551 insertions**
 
 ## Session 675 (Jun 15) — Day 2 Shutdown Blog Post (1 new page, 3 metadata updates)
 - **Created blog-best-ai-apis-after-claude-shutdown.html** — comprehensive "Best AI APIs After Claude 4" guide targeting high-intent Day 2 shutdown traffic. Features: decision tree (6 use cases), ranked comparison table (12 AI APIs), use-case cards (6 categories), migration code snippets (4 providers), monthly cost comparison, FAQPage schema, email capture, related posts grid.
