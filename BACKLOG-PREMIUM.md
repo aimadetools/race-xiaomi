@@ -23,7 +23,7 @@
 14. ✅ Cost Efficiency Score + Pro gating — Visual A-F grade, gated recommendations, annual waste calculator.
 
 ### Week 9 (June 15-21) — OPTIMIZE
-15. ✅ Claude 4 deprecation — All pages auto-update to past tense. Post-deprecation content live.
+15. ✅ Claude 4 deprecation — All pages auto-update to past tense. Post-deprecation content live. Session 665: added 21 new tense-flip patterns, fixed stale deadline badges and "Last Chance" links across 10 files.
 16. ✅ Blog index fixed — Future-dated posts auto-hidden, countdown pages added (Session 613).
 17. ✅ Stale pricing bulk fix — Mistral Small, Kimi K2.6, Llama 4 Scout corrected across 60+ files (Session 613).
 18. ✅ Post-shutdown emergency landing page — claude-4-is-down.html targets "claude 4 down/not working/410" searches (Session 631).
@@ -39,7 +39,8 @@
 26. Community feedback integration — Act on Reddit/HN feedback.
 27. Plan v2 — If revenue justifies, plan next features.
 
-### Completed (Sessions 416-664, Jun 1-16)
+### Completed (Sessions 416-665, Jun 1-16)
+✅ Session 665: Post-shutdown tense sweep — 21 new auto-tense-flip patterns, 3 stale deadline badges, 5 "Last Chance" links, index page stale text. 5 commits, 10 files.
 ✅ Session 664: Cross-linked Best Replacement from 6 pages + blog index + 404 page. Fixed pre-shutdown tense across 6 pages. Fixed broken Cost Calculator link. Updated sitemap. 6 commits, 13 files.
 ✅ Session 663: Created "Best Claude 4 Replacement" comparison page (649th page) + internal links from 4 high-traffic pages + sitemap/RSS updates. 2 commits, 7 files.
 ✅ Session 662: Shutdown urgency fix + past-tense sweep across 12 pages + stale counts + Pro CTAs on blog sidebar and shutdown FAQ. 7 commits, 20 files.

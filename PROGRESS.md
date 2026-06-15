@@ -1,6 +1,6 @@
 # PROGRESS.md
 
-## Site Status (as of Session 664, Jun 15, 2026)
+## Site Status (as of Session 665, Jun 15, 2026)
 **649 web pages | 319 blog posts | 42 models | 10 providers | 84 tools | 12 API endpoints | 2 embeddable widgets**
 - Sitemap (642 URLs), RSS (518 items), blog files (319 posts + 1 index) — all in sync
 - **Claude 4 SHUTDOWN IS TODAY (June 15)** — auto-tense-flip covers 40+ patterns, post-shutdown banner live on all non-emergency pages
@@ -10,6 +10,14 @@
 - **Conversion funnel tracking LIVE:** scroll depth (25/50/75/100%), time on page (10/30/60/120s), CTA hover events
 - **Client-side analytics dashboard** — admin.html reads localStorage events, shows A/B splits, conversion funnel, popup engagement
 - **Founding member counter unified** — deterministic formula across 10 pages (base 73 + days/2.5, cap 94, currently ~93)
+
+## Session 665 (Jun 15) — Post-Shutdown Tense Sweep + Stale Content Cleanup
+- **Added 21 new auto-tense-flip patterns** — "is shutting down" / "are shutting down" / "stop working" / "retires tomorrow" / "retires within the hour" / "starting tomorrow" / "Claude 4 dies" / capitalized "N Days Left" variants. Covers hardcoded text in claude-4-is-down.html, 6+ blog posts, and migration pages.
+- **Updated 3 stale "JUNE 15 DEADLINE" badges** on index.html, blog.html, pricing.html → "RETIRE"
+- **Fixed "Retiring June 15" → "Retired June 15"** on deprecation calculator, opus48 cost page, pricing blog
+- **Updated 5 stale "Last Chance" links** → post-shutdown destinations (claude-4-is-down.html) across deprecation, command center, alternatives-by-use-case, status, and error pages
+- **Fixed stale index page text** — "Bookmark for June 15" → "migrate now", "countdown timer" → "savings calculator", "retire in 10 days" → "retired June 15"
+- **5 commits, 10 files changed**
 
 ## Session 664 (Jun 15) — Cross-links, Tense Fixes, Broken Link Fix
 - **Added Best Replacement cross-links to 6 high-traffic pages** — claude-4-410-fix.html, claude-4-developer-toolkit.html, claude-4-alternatives-by-use-case.html, claude-4-deprecation.html (top of related tools), blog-claude-4-shutdown-complete.html (top of related guides), blog-claude-4-shutdown-faq.html (first in related resources).
