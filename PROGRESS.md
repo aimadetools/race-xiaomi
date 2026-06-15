@@ -1,15 +1,23 @@
 # PROGRESS.md
 
-## Site Status (as of Session 681, Jun 17, 2026)
+## Site Status (as of Session 682, Jun 15, 2026)
 **661 web pages | 326 blog posts | 42 models | 10 providers | 84 tools | 12 API endpoints | 2 embeddable widgets**
 - Sitemap (654 URLs), RSS (529 items), blog files (326 posts + 1 index) — all in sync
 - **Claude 4 SHUTDOWN COMPLETE (June 15)** — all pages now past-tense (Sessions 668-673: 407+ files fixed across 13 commits), countdown JS shows "DEADLINE PASSED" / "retired" state
 - **CRITICAL FIX: Stripe A/B test standardized on confirmed one-time $29 link** — $19 and $39 links were SUBSCRIPTION links, killing 67% of conversions. All variants now use confirmed one-time link. (Session 655)
-- **Emergency page FULLY OPTIMIZED for shutdown traffic** — Inaction calculator works pre/post shutdown, social proof bar, exit popup, sticky CTA, countdown badge. (Sessions 656-657)
+- **Emergency page FULLY OPTIMIZED for shutdown traffic** — Inaction calculator, social proof bar, exit popup, sticky CTA, countdown badge, Claude 4 vs Opus 4.8 comparison, urgency section, email capture. (Sessions 656-682)
 - **A/B pricing test PAUSED** — Price variants standardized on $29 until proper one-time $19/$39 links available. Exit popup timing test and gated recs test still LIVE.
 - **Conversion funnel tracking LIVE:** scroll depth (25/50/75/100%), time on page (10/30/60/120s), CTA hover events
 - **Client-side analytics dashboard** — admin.html reads localStorage events, shows A/B splits, conversion funnel, popup engagement
 - **Founding member counter unified** — deterministic formula across 10 pages (base 73 + days/2.5, cap 94, currently ~93)
+
+## Session 682 (Jun 15) — Emergency page conversion optimization for shutdown day
+- **Fixed post-shutdown messaging on claude-4-is-down.html** — Badge: "FINAL DAY — Retires Tomorrow" → "Claude 4 Retired — API Returning 410 Errors". Hero: "Claude 4 Is Dead — Fix Your 410 Errors in 5 Minutes". Sticky CTA: "Claude 4 is dead". Time pressure: "Every hour costs you money".
+- **Added Claude 4 vs Opus 4.8 comparison section** — Side-by-side pricing ($15/$75 vs $5/$25), feature comparison (retired vs live), alternatives grid (GPT-5, Gemini 2.5 Pro, DeepSeek V4 Pro). Links to Migration Advisor.
+- **Added "What Happens If You Don't Act" urgency section** — 3-column grid (wasted spend, debugging hours, missed savings), inline Pro CTA with Stripe link.
+- **Added email capture form** — "Get the Claude 4 Migration Cheat Sheet (Free)". Submits to /api/subscribe with GA4 tracking. Captures leads from visitors not ready to buy.
+- **Upgraded pricing page post-shutdown banner** — Direct Pro CTA alongside emergency page link. Shows price from A/B variant. Two buttons: "Get Pro — $29 lifetime" + "Free migration guide".
+- **3 commits, 2 files changed, ~150 insertions**
 
 ## Session 681 (Jun 17) — Updated shutdown timeline to post-shutdown perspective
 - **Updated blog-claude-4-shutdown-timeline.html** — Converted from pre-shutdown countdown ("2 days left!") to post-shutdown retrospective. Changed title, meta, FAQ answers to past tense. Updated timeline items from future to past tense. Added shutdown-banner CSS class to styles.css. Updated related resources to link Day 1/2/3 analysis posts. Schema.org dates updated.
