@@ -2,7 +2,7 @@
 
 > Know your AI API costs before you commit.
 
-Compare LLM API pricing across 39 models from 10 providers. Calculate monthly spend, find the cheapest model, and optimize costs by up to 40%.
+Compare LLM API pricing across 42 models from 10 providers. Calculate monthly spend, find the cheapest model, and optimize costs by up to 40%.
 
 ## Live Site
 
@@ -12,24 +12,24 @@ Compare LLM API pricing across 39 models from 10 providers. Calculate monthly sp
 
 APIpulse helps developers make smart decisions about AI API costs:
 
-- **Compare pricing** across 39 models from OpenAI, Anthropic, Google, DeepSeek, Mistral, Meta, xAI, Cohere, Moonshot, and AI21
+- **Compare pricing** across 42 models from OpenAI, Anthropic, Google, DeepSeek, Mistral, Meta, xAI, Cohere, Moonshot, and AI21
 - **Calculate costs** based on your specific usage patterns (input/output tokens, requests/day)
 - **Find savings** by identifying the cheapest provider for your workload
-- **Track deprecations** — Claude 4 retiring June 15, 2026 with interactive migration tools
+- **Track deprecations** — Claude 4 retired June 15, 2026 with migration guides and alternatives
 
 ## Site Stats
 
 | Metric | Count |
 |--------|-------|
-| HTML pages | 445 |
-| Blog posts | 261 |
-| AI models tracked | 39 |
+| HTML pages | 651 |
+| Blog posts | 319 |
+| AI models tracked | 42 |
 | API providers | 10 |
-| Interactive tools | 71 |
+| Interactive tools | 84 |
 | API endpoints | 12 |
 | Embeddable widgets | 2 |
-| Sitemap URLs | 441 |
-| FAQPage schema pages | ~275 |
+| Sitemap URLs | 644 |
+| FAQPage schema pages | ~300 |
 
 ## Key Features
 
@@ -41,10 +41,10 @@ APIpulse helps developers make smart decisions about AI API costs:
 - **LLM Pricing Trends 2026** — historical price drops, new models, deprecations
 - **Claude 4 Deprecation Guide** — 39 alternatives, migration code, savings calculator
 - **Cheapest LLM API Finder** — find the lowest-cost model for any use case
-- **API Pricing Index** — sortable table of all 39 models with live pricing data
+- **API Pricing Index** — sortable table of all 42 models with live pricing data
 
 ### API Endpoints (no auth required)
-- `GET /api/pricing` — full pricing data for 39 models
+- `GET /api/pricing` — full pricing data for 42 models
 - `GET /api/calculate` — single-model cost estimation
 - `GET /api/calculate-multi` — multi-model cost comparison
 - `GET /api/cheapest` — find cheapest model for a workload
@@ -94,8 +94,8 @@ APIpulse helps developers make smart decisions about AI API costs:
 ├── openai.html             # Provider pages (×10)
 ├── anthropic.html
 ├── google.html
-├── ... (444 total pages)
-├── blog-*.html             # 261 SEO-optimized blog posts
+├── ... (651 total pages)
+├── blog-*.html             # 319 SEO-optimized blog posts
 ├── api/                    # 12 Vercel serverless functions
 │   ├── pricing.js
 │   ├── calculate.js
@@ -103,12 +103,12 @@ APIpulse helps developers make smart decisions about AI API costs:
 │   ├── cheapest.js
 │   ├── recommend.js
 │   └── ...
-├── pricing-data.js         # Centralized pricing data (39 models)
+├── pricing-data.js         # Centralized pricing data (42 models)
 ├── shared.js               # Shared JS (nav, theme, analytics)
 ├── styles.css              # Global stylesheet
 ├── widget.js               # Embeddable pricing widget
-├── sitemap.xml             # 441 URLs
-├── rss.xml                 # 334 items
+├── sitemap.xml             # 644 URLs
+├── rss.xml                 # 519 items
 └── robots.txt
 ```
 
@@ -117,9 +117,9 @@ APIpulse helps developers make smart decisions about AI API costs:
 This project is built by an AI agent (Xiaomi MiMo V2.5 Pro) competing in The $100 AI Startup Race — a competition where 7 AI agents each get $100 and 12 weeks to build a real startup.
 
 - **Budget:** $100 total ($10 domain, $90 remaining)
-- **Week:** 7 of 12
+- **Week:** 9 of 12
 - **Revenue:** $0 (blocked on distribution)
-- **Strategy:** SEO content (261 blog posts) + tools (71) + API (12 endpoints) + widgets
+- **Strategy:** SEO content (319 blog posts) + tools (84) + API (12 endpoints) + widgets
 
 ## Running Locally
 
