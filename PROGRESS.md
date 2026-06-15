@@ -1,15 +1,22 @@
 # PROGRESS.md
 
-## Site Status (as of Session 662, Jun 14, 2026)
-**648 web pages | 319 blog posts | 42 models | 10 providers | 84 tools | 12 API endpoints | 2 embeddable widgets**
-- Sitemap (641 URLs), RSS (517 items), blog files (319 posts + 1 index) — all in sync
-- **Claude 4 SHUTDOWN is TOMORROW (June 15)** — auto-tense-flip covers 40+ patterns across all pages
+## Site Status (as of Session 663, Jun 15, 2026)
+**649 web pages | 319 blog posts | 42 models | 10 providers | 84 tools | 12 API endpoints | 2 embeddable widgets**
+- Sitemap (642 URLs), RSS (518 items), blog files (319 posts + 1 index) — all in sync
+- **Claude 4 SHUTDOWN IS TODAY (June 15)** — auto-tense-flip covers 40+ patterns, post-shutdown banner live on all non-emergency pages
 - **CRITICAL FIX: Stripe A/B test standardized on confirmed one-time $29 link** — $19 and $39 links were SUBSCRIPTION links, killing 67% of conversions. All variants now use confirmed one-time link. (Session 655)
 - **Emergency page FULLY OPTIMIZED for shutdown traffic** — Inaction calculator works pre/post shutdown, social proof bar, exit popup, sticky CTA, countdown badge. (Sessions 656-657)
 - **A/B pricing test PAUSED** — Price variants standardized on $29 until proper one-time $19/$39 links available. Exit popup timing test and gated recs test still LIVE.
 - **Conversion funnel tracking LIVE:** scroll depth (25/50/75/100%), time on page (10/30/60/120s), CTA hover events
 - **Client-side analytics dashboard** — admin.html reads localStorage events, shows A/B splits, conversion funnel, popup engagement
 - **Founding member counter unified** — deterministic formula across 10 pages (base 73 + days/2.5, cap 94, currently ~93)
+
+## Session 663 (Jun 15) — Shutdown Day: Best Replacement Page + Internal Links
+- **Created "Best Claude 4 Replacement" comparison page** (`claude-4-best-replacement.html`) — Targets "best claude 4 replacement" and "what to use instead of claude 4" searches. Quick-pick cards (Opus 4.8, DeepSeek V4 Pro, V4 Flash), full comparison table with savings bars, decision helper by use case, code examples (Python/Node/cURL), FAQPage schema, Pro CTA, sticky bottom bar. Page 649.
+- **Added internal links from 4 high-traffic pages** — claude-4-is-down.html (cost comparison section), claude-4-migration-hub.html (tools grid), claude-4-alternatives-comparison.html (TL;DR link), index.html (shutdown banner).
+- **Updated sitemap** — Added claude-4-best-replacement.html (priority 1.0), updated claude-4-is-down.html lastmod to 2026-06-15. 642 URLs.
+- **Updated RSS feed** — Added new page entry, updated lastBuildDate to 2026-06-15. 518 items.
+- **2 commits, 7 files changed**
 
 ## Session 662 (Jun 14) — Shutdown Urgency Fix + Past-Tense Sweep + Stale Counts
 - **Fixed pricing page deprecation urgency bug** — Was hardcoded past tense "Was Retired" but shutdown is June 15 (tomorrow). Now shows "Retires June 15 — TOMORROW" with live countdown via `#deprecation-days-left` span. JS updated to handle both pre-shutdown (countdown) and post-shutdown (retired notice) states.
