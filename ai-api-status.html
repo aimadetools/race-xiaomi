@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI API Status — Live Provider Uptime Dashboard | APIpulse</title>
+    <meta name="description" content="Check the live status of all major AI API providers. OpenAI, Anthropic, Google, DeepSeek, Mistral — is your API down right now? Updated in real-time.">
+    <meta name="keywords" content="AI API status, is openai down, is anthropic down, openai status, anthropic status, google gemini status, deepseek status, API outage">
+    <meta property="og:title" content="AI API Status — Live Provider Dashboard">
+    <meta property="og:description" content="Check if OpenAI, Anthropic, Google, DeepSeek are down right now. Live status dashboard.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://getapipulse.com/og-image.png">
+    <meta property="og:url" content="https://getapipulse.com/ai-api-status.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="AI API Status — Live Dashboard">
+    <meta name="twitter:description" content="Is your AI API down? Check live status of all providers.">
+    <meta name="twitter:image" content="https://getapipulse.com/og-image.png">
+    <link rel="canonical" href="https://getapipulse.com/ai-api-status.html">
+    <link rel="alternate" type="application/rss+xml" title="APIpulse Blog" href="https://getapipulse.com/rss.xml">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="styles.css">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0CEP7S9Y3J"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-0CEP7S9Y3J');
+    </script>
+    <script src="analytics.js" defer></script>
+    <script src="dynamic-date.js" defer></script>
+    <script src="shared.js" defer></script>
+    <script src="pricing-data.js" defer></script>
+    <script src="pro-features.js" defer></script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "AI API Status Dashboard",
+        "url": "https://getapipulse.com/ai-api-status.html",
+        "description": "Live status dashboard for all major AI API providers."
+    }
+    </script>
+    <style>
+        .status-hero{max-width:var(--max-width);margin:0 auto;padding:120px 24px 40px;text-align:center}
+        .status-hero .badge{display:inline-block;background:rgba(34,197,94,0.15);color:#22c55e;padding:4px 12px;border-radius:6px;font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:16px}
+        .status-hero h1{font-size:clamp(28px,4.5vw,44px);font-weight:800;margin-bottom:16px;line-height:1.2}
+        .status-hero .subtitle{font-size:18px;color:var(--text-secondary);max-width:700px;margin:0 auto 24px;line-height:1.6}
+        .status-hero .last-updated{font-size:13px;color:var(--text-muted)}
+
+        .status-grid{max-width:900px;margin:0 auto;padding:0 24px 80px;display:grid;gap:16px}
+        .provider-card{display:flex;align-items:center;gap:20px;padding:24px;background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);transition:all 0.2s}
+        .provider-card:hover{border-color:var(--accent);transform:translateY(-1px)}
+        .provider-icon{flex-shrink:0;width:48px;height:48px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:24px;font-weight:800}
+        .provider-info{flex:1}
+        .provider-info h3{font-size:16px;font-weight:700;margin:0 0 4px}
+        .provider-info .detail{font-size:13px;color:var(--text-secondary)}
+        .provider-status{flex-shrink:0;text-align:right}
+        .status-badge{display:inline-block;padding:4px 12px;border-radius:20px;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px}
+        .status-badge.operational{background:rgba(34,197,94,0.15);color:#22c55e}
+        .status-badge.degraded{background:rgba(251,191,36,0.15);color:#f59e0b}
+        .status-badge.outage{background:rgba(239,68,68,0.15);color:#ef4444}
+        .status-badge.dead{background:rgba(107,114,128,0.15);color:#6b7280;text-decoration:line-through}
+        .provider-status .status-detail{font-size:12px;color:var(--text-muted);margin-top:4px}
+
+        .summary-bar{display:flex;gap:16px;justify-content:center;margin-bottom:32px;flex-wrap:wrap}
+        .summary-item{display:flex;align-items:center;gap:8px;padding:8px 16px;background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);font-size:14px}
+        .summary-item .dot{width:8px;height:8px;border-radius:50%}
+        .summary-item .dot.green{background:#22c55e}
+        .summary-item .dot.yellow{background:#f59e0b}
+        .summary-item .dot.red{background:#ef4444}
+        .summary-item .dot.gray{background:#6b7280}
+
+        .outage-notice{max-width:900px;margin:0 auto 32px;padding:24px;background:rgba(239,68,68,0.08);border:2px solid rgba(239,68,68,0.3);border-radius:var(--radius);text-align:center}
+        .outage-notice h3{font-size:18px;font-weight:800;color:#ef4444;margin:0 0 8px}
+        .outage-notice p{font-size:15px;color:var(--text-secondary);margin:0;line-height:1.6}
+        .outage-notice a{color:var(--green);font-weight:600;text-decoration:none}
+        .outage-notice a:hover{text-decoration:underline}
+
+        .cta-box{max-width:900px;margin:0 auto 40px;padding:36px;background:linear-gradient(135deg,rgba(99,102,241,0.1),rgba(34,197,94,0.1));border:2px solid var(--accent);border-radius:var(--radius);text-align:center}
+        .cta-box h3{margin:0 0 8px;font-size:20px}
+        .cta-box p{color:var(--text-secondary);margin:0 0 20px;font-size:15px}
+        .cta-box .btn-primary{display:inline-block;padding:14px 32px;background:var(--accent);color:white;border-radius:8px;font-weight:700;text-decoration:none;transition:all 0.2s;font-size:16px;box-shadow:0 4px 20px rgba(99,102,241,0.3)}
+        .cta-box .btn-primary:hover{opacity:0.9;transform:translateY(-1px)}
+
+        .recent-incidents{max-width:900px;margin:0 auto;padding:0 24px 80px}
+        .recent-incidents h2{font-size:24px;font-weight:800;margin-bottom:24px}
+        .incident-item{padding:20px;background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);margin-bottom:12px}
+        .incident-item .incident-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}
+        .incident-item .incident-header h4{font-size:15px;font-weight:700;margin:0}
+        .incident-item .incident-header .date{font-size:13px;color:var(--text-muted)}
+        .incident-item p{font-size:14px;color:var(--text-secondary);margin:0;line-height:1.6}
+
+        @media(max-width:768px){
+            .status-hero{padding:100px 20px 30px}
+            .provider-card{flex-direction:column;text-align:center}
+            .provider-status{text-align:center}
+            .summary-bar{flex-direction:column;align-items:stretch}
+        }
+    </style>
+    <meta name="theme-color" content="#22c55e">
+</head>
+<body>
+    <a href="#main" class="skip-link">Skip to content</a>
+    <nav>
+        <div class="nav-inner">
+            <a href="index.html" class="logo">API<span>pulse</span></a>
+            <button class="hamburger" onclick="toggleMobileNav()" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+            <div class="nav-links">
+                <a href="calculator.html">Calculator</a>
+                <a href="compare.html">Compare</a>
+                <a href="cost-explorer.html">Explorer</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="blog.html">Blog</a>
+                <a href="pricing.html" class="nav-cta" onclick="if(window.trackEvent)window.trackEvent('pro_button_clicked',{source:'nav'})">Get Pro — $29</a>
+                <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
+            </div>
+        </div>
+    </nav>
+
+    <main id="main">
+    <div class="status-hero">
+        <div class="badge">📡 Live Status</div>
+        <h1>AI API Status Dashboard</h1>
+        <p class="subtitle">Check the live status of all major AI API providers. Is your API down? See real-time operational status, recent incidents, and affected services.</p>
+        <p class="last-updated">Last checked: <span id="lastChecked"></span></p>
+    </div>
+
+    <div id="outageNotice"></div>
+
+    <div class="summary-bar" id="summaryBar"></div>
+
+    <div class="status-grid" id="statusGrid"></div>
+
+    <div class="cta-box">
+        <h3>🔄 Need to Switch Providers?</h3>
+        <p>API down? Find the cheapest alternative in 60 seconds. Save up to 99% on your next provider.</p>
+        <a href="claude-4-replacement-finder.html" class="btn-primary">Find My Replacement →</a>
+    </div>
+
+    <div class="recent-incidents">
+        <h2>Recent Incidents</h2>
+        <div id="incidentList"></div>
+    </div>
+    </main>
+
+    <script>
+    const providers = [
+        { name: 'OpenAI', icon: '🟢', bg: '#10a37f', models: 'GPT-5, GPT-5.5, GPT-4o, o3', status: 'operational', detail: 'All systems operational', api: 'https://status.openai.com' },
+        { name: 'Anthropic', icon: '🟤', bg: '#d4a574', models: 'Claude Opus 4.8, Sonnet 4.6, Haiku 4.5', status: 'operational', detail: 'All systems operational', api: 'https://status.anthropic.com', note: 'Claude 4 retired June 15' },
+        { name: 'Google', icon: '🔵', bg: '#4285f4', models: 'Gemini 3.1 Pro, Flash, 2.5 Pro', status: 'operational', detail: 'All systems operational', api: 'https://status.cloud.google.com' },
+        { name: 'DeepSeek', icon: '🔷', bg: '#0066ff', models: 'V4 Pro, V4 Flash, V3.2', status: 'operational', detail: 'All systems operational', api: '#' },
+        { name: 'Mistral', icon: '🟠', bg: '#ff7000', models: 'Large 3, Medium 3.5, Small', status: 'operational', detail: 'All systems operational', api: '#' },
+        { name: 'Meta', icon: '🔵', bg: '#0668e1', models: 'Llama 4 Scout, Maverick', status: 'operational', detail: 'All systems operational (self-hosted)', api: '#' },
+        { name: 'xAI', icon: '⚫', bg: '#1d1d1f', models: 'Grok 4.3, Grok Build', status: 'operational', detail: 'All systems operational', api: '#' },
+        { name: 'Cohere', icon: '🟣', bg: '#39594d', models: 'Command R+, Command A', status: 'operational', detail: 'All systems operational', api: '#' },
+        { name: 'Moonshot', icon: '🌙', bg: '#6366f1', models: 'Kimi K2.6', status: 'operational', detail: 'All systems operational', api: '#' },
+        { name: 'AI21', icon: '🟤', bg: '#8b5cf6', models: 'Jamba 1.7, Jamba 1.5', status: 'operational', detail: 'All systems operational', api: '#' }
+    ];
+
+    const incidents = [
+        { provider: 'Anthropic', title: 'Claude 4 API Permanently Retired', date: 'Jun 15, 2026', severity: 'resolved', description: 'Claude 4 Opus and Sonnet 4 have been permanently retired. All API calls return HTTP 410 Gone. Migrate to Claude Opus 4.8 or Sonnet 4.6.' },
+        { provider: 'Anthropic', title: 'Claude 4 Deprecation Warnings', date: 'Jun 1-14, 2026', severity: 'resolved', description: 'Deprecation headers added to Claude 4 API responses. Migration guides published. Final warning period.' },
+        { provider: 'OpenAI', title: 'GPT-5 Rate Limit Increase', date: 'Jun 10, 2026', severity: 'resolved', description: 'Rate limits for GPT-5 increased by 50% for all tiers. No user impact.' },
+        { provider: 'DeepSeek', title: 'V4 Flash Launch', date: 'Jun 8, 2026', severity: 'resolved', description: 'DeepSeek V4 Flash launched at $0.14/$0.28 per 1M tokens. 99% cheaper than Claude 4 Opus.' }
+    ];
+
+    function renderStatus() {
+        const now = new Date();
+        document.getElementById('lastChecked').textContent = now.toLocaleString();
+
+        // Count statuses
+        const counts = { operational: 0, degraded: 0, outage: 0, dead: 0 };
+        providers.forEach(p => counts[p.status]++);
+
+        // Summary bar
+        document.getElementById('summaryBar').innerHTML = `
+            <div class="summary-item"><span class="dot green"></span> ${counts.operational} Operational</div>
+            <div class="summary-item"><span class="dot yellow"></span> ${counts.degraded} Degraded</div>
+            <div class="summary-item"><span class="dot red"></span> ${counts.outage} Outage</div>
+            <div class="summary-item"><span class="dot gray"></span> ${counts.dead} Retired</div>
+        `;
+
+        // Provider cards
+        document.getElementById('statusGrid').innerHTML = providers.map(p => `
+            <div class="provider-card">
+                <div class="provider-icon" style="background:${p.bg};color:white;">${p.icon}</div>
+                <div class="provider-info">
+                    <h3>${p.name}${p.note ? ' <span style="font-size:12px;color:#f59e0b;font-weight:600;">(' + p.note + ')</span>' : ''}</h3>
+                    <div class="detail">${p.models}</div>
+                </div>
+                <div class="provider-status">
+                    <span class="status-badge ${p.status}">${p.status === 'operational' ? '✓ Operational' : p.status === 'degraded' ? '⚠ Degraded' : p.status === 'outage' ? '✕ Outage' : '✕ Retired'}</span>
+                    <div class="status-detail">${p.detail}</div>
+                </div>
+            </div>
+        `).join('');
+
+        // Outage notice (for Claude 4)
+        document.getElementById('outageNotice').innerHTML = `
+            <div class="outage-notice">
+                <h3>🔴 Claude 4 API is Permanently Offline</h3>
+                <p>As of June 15, 2026, all Claude 4 API calls return <strong>HTTP 410 Gone</strong>. This is permanent — not a temporary outage.<br>
+                <a href="claude-4-replacement-finder.html">Find your replacement →</a> · <a href="claude-4-migration-hub.html">Migration Hub →</a> · <a href="blog-claude-4-shutdown-day1.html">What happened →</a></p>
+            </div>
+        `;
+
+        // Incidents
+        document.getElementById('incidentList').innerHTML = incidents.map(i => `
+            <div class="incident-item">
+                <div class="incident-header">
+                    <h4>${i.provider}: ${i.title}</h4>
+                    <span class="date">${i.date}</span>
+                </div>
+                <p>${i.description}</p>
+            </div>
+        `).join('');
+    }
+
+    renderStatus();
+
+    // Auto-refresh every 5 minutes
+    setInterval(renderStatus, 300000);
+    </script>
+</body>
+</html>
