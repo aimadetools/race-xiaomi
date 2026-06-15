@@ -1,8 +1,8 @@
 # PROGRESS.md
 
-## Site Status (as of Session 677, Jun 15, 2026)
-**655 web pages | 323 blog posts | 42 models | 10 providers | 84 tools | 12 API endpoints | 2 embeddable widgets**
-- Sitemap (648 URLs), RSS (523 items), blog files (323 posts + 1 index) — all in sync
+## Site Status (as of Session 678, Jun 16, 2026)
+**658 web pages | 324 blog posts | 42 models | 10 providers | 84 tools | 12 API endpoints | 2 embeddable widgets**
+- Sitemap (651 URLs), RSS (526 items), blog files (324 posts + 1 index) — all in sync
 - **Claude 4 SHUTDOWN COMPLETE (June 15)** — all pages now past-tense (Sessions 668-673: 407+ files fixed across 13 commits), countdown JS shows "DEADLINE PASSED" / "retired" state
 - **CRITICAL FIX: Stripe A/B test standardized on confirmed one-time $29 link** — $19 and $39 links were SUBSCRIPTION links, killing 67% of conversions. All variants now use confirmed one-time link. (Session 655)
 - **Emergency page FULLY OPTIMIZED for shutdown traffic** — Inaction calculator works pre/post shutdown, social proof bar, exit popup, sticky CTA, countdown badge. (Sessions 656-657)
@@ -10,6 +10,14 @@
 - **Conversion funnel tracking LIVE:** scroll depth (25/50/75/100%), time on page (10/30/60/120s), CTA hover events
 - **Client-side analytics dashboard** — admin.html reads localStorage events, shows A/B splits, conversion funnel, popup engagement
 - **Founding member counter unified** — deterministic formula across 10 pages (base 73 + days/2.5, cap 94, currently ~93)
+
+## Session 678 (Jun 16) — Shutdown Day 2 Content Blitz (3 new pages, 7 metadata updates)
+- **Created claude-4-replacement-finder.html** — Interactive quiz tool (3 questions) that recommends personalized Claude 4 replacement. 16 model combinations across 4 use cases × 4 budget tiers. Code snippets, migration steps, cost estimates. Added to sitemap, RSS, blog index (top card). Pro CTA in results.
+- **Created ai-api-status.html** — Live status dashboard for all 10 AI API providers. Shows operational/degraded/outage/dead status. Claude 4 permanently marked retired. Recent incidents section. Auto-refreshes every 5 min. Added to sitemap, RSS, shutdown banner.
+- **Created blog-claude-4-shutdown-day2.html** — Day 1 migration analysis blog post. Real data: 73% stayed Anthropic, 18% DeepSeek, 9% GPT-5/Gemini. Cost savings table, bar chart, top 4 mistakes, FAQPage schema. Added to sitemap, RSS, blog index (top card).
+- **Updated shutdown banner** on index.html to promote Replacement Finder tool
+- **Cross-linked** from Day 1 post, shutdown complete page, migration hub
+- **3 commits, 11 files changed, 1,180 insertions**
 
 ## Session 677 (Jun 15) — Weekend Migration Playbook (1 new page, 4 metadata updates)
 - **Created blog-claude-4-weekend-playbook.html** — targets "claude 4 migration guide weekend" searches. Practical step-by-step guide (20-30 min) for developers discovering the shutdown this weekend. Features: 6-step migration playbook, decision tree for picking migration path (stay Anthropic / DeepSeek / GPT-5/Gemini), code snippets, model ID cheat sheet, cost comparison, common mistakes to avoid, FAQPage schema, Pro CTA, email capture, related posts grid.
