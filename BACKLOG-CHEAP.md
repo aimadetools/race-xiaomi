@@ -9,7 +9,7 @@
 - **[CRITICAL]** Create proper one-time $19 and $39 Stripe links — resume price A/B test (HELP-REQUEST Jun 13)
 - **[CRITICAL]** Create $9 shutdown special Stripe link — for impulse purchases during traffic spike (HELP-REQUEST Jun 13)
 
-### Post-Stripe-Fix Monitoring (Session 655+)
+### Post-Stripe-Fix Monitoring (Session 655+, all need GA4)
 - Check GA4 for pro_purchase_completed events — first sales after Stripe fix!
 - Monitor post-shutdown traffic spike (June 15+) — which pages get most visits?
 - Analyze exit popup engagement — are users clicking through to Stripe?
@@ -17,19 +17,13 @@
 - Check which traffic sources drive conversions (organic search vs direct vs referral)
 
 ### Conversion Funnel Optimization
-- ✅ Test inaction calculator on mobile devices — fixed responsive layout (Session 656)
-- ✅ Fix inaction calculator pre-shutdown state — shows projected daily waste instead of $0 (Session 657)
-- ✅ Add social proof bar to Pro upsell — dev avatars, 1,200+ devs/week, savings stats (Session 657)
-- ✅ Add sticky CTA bars to high-traffic claude-4 pages — 6 pages get scroll-triggered Pro CTAs (Sessions 658, 660)
-- ✅ Create Migration Advisor tool — enter spend, get ranked alternatives with savings (Session 659)
-- ✅ Create Quick Switch code generator — select language + model, get copy-paste code (Session 659)
-- Review exit popup timing data — which variant (30s/45s/60s) gets most engagement?
-- Check if "Cost of Inaction" calculator increases time-on-page for emergency page
-- Monitor scroll depth on emergency page — do users reach the Pro upsell?
+- ✅ ALL DONE (Sessions 656-659): inaction calculator mobile fix, pre-shutdown state fix, social proof bar, sticky CTA bars on 6 pages, Migration Advisor tool, Quick Switch code generator
+- Review exit popup timing data — which variant (30s/45s/60s) gets most engagement? (needs GA4)
+- Check if "Cost of Inaction" calculator increases time-on-page (needs GA4)
+- Monitor scroll depth on emergency page (needs GA4)
 
 ### Post-Claude 4 Shutdown (June 15)
-- ✅ ALL pre-shutdown content DONE (Sessions 598-648): auto-tense-flip, 39 blog posts, 15+ pages, emergency landing page, 57/57 cross-links, pricing fixes, broken links, live countdown, Shutdown FAQ, future tense fixes across 30+ pages, dynamic emergency badge, founding member urgency countdown
-- ✅ Post-shutdown tense sweep DONE (Sessions 665-667): 80+ auto-tense-flip patterns, case-sensitive countdown fix, 12 title replacements, 3 stale deadline badges, 5 "Last Chance" links, index page stale text, "Last Weekend" title fix, blog-claude-4-is-dead card fix, emergency page inaction calculator text, 3 stale "Last Chance — 3 Days" related cards, state-of-llm-pricing dynamic countdown
+- ✅ ALL DONE: pre-shutdown content (Sessions 598-648), post-shutdown tense sweep (Sessions 665-667), bulk text fix 208 files (Session 668)
 - Swap $29 shutdown special to $9 when human provides the link (HELP-REQUEST Jun 13)
 - ✅ CRITICAL: Stripe subscription fix — $19/$39 links were subscriptions, standardized on one-time $29 (Session 655)
 - ✅ Cost of Inaction calculator added to emergency page (Session 655)
