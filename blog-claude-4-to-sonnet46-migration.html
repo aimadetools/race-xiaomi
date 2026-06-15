@@ -72,7 +72,7 @@
                 "name": "What happens if I don't migrate by June 15?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "All API calls using Claude 4 Sonnet model IDs return HTTP 410 Gone errors immediately. There is no grace period. Your application will break."
+                    "text": "All API calls using Claude 4 Sonnet model IDs return HTTP 410 Gone errors immediately. There is no grace period. Your application broke."
                 }
             }
         ]
@@ -145,7 +145,7 @@
         <p class="meta">Published Jun 12, 2026 &middot; 6 min read &middot; By APIpulse</p>
     </div>
     <div class="blog-content">
-        <p>Claude 4 Sonnet is shutting down June 15. If you're using it, you need to migrate — and the fix is a single line of code. Claude Sonnet 4.6 is Anthropic's direct replacement: <strong>same price</strong>, <strong>same quality</strong>, and a <strong>5x larger context window</strong>.</p>
+        <p>Claude 4 Sonnet shut down June 15. If you're using it, you need to migrate — and the fix is a single line of code. Claude Sonnet 4.6 is Anthropic's direct replacement: <strong>same price</strong>, <strong>same quality</strong>, and a <strong>5x larger context window</strong>.</p>
 
         <p>This guide shows you exactly what to change, what it costs, and how to test before the deadline.</p>
 
@@ -153,7 +153,7 @@
 
         <p>Here's the complete diff — change the model ID and nothing else:</p>
 
-        <pre><code>// Before (Claude 4 Sonnet — will break June 15)
+        <pre><code>// Before (Claude 4 Sonnet — broke June 15)
 const response = await anthropic.messages.create({
   model: "claude-sonnet-4-20250514",  // &larr; CHANGE THIS
   max_tokens: 4096,
@@ -241,7 +241,7 @@ const response = await anthropic.messages.create({
         <h2>Frequently Asked Questions</h2>
 
         <h3>What happens if I don't migrate by June 15?</h3>
-        <p>All API calls using Claude 4 Sonnet model IDs return HTTP 410 Gone errors immediately. There is no grace period, no partial shutdown, and no extensions. Your application will break.</p>
+        <p>All API calls using Claude 4 Sonnet model IDs return HTTP 410 Gone errors immediately. There is no grace period, no partial shutdown, and no extensions. Your application broke.</p>
 
         <h3>Does Sonnet 4.6 produce the same outputs as Claude 4 Sonnet?</h3>
         <p>For most use cases, yes. Claude Sonnet 4.6 matches or exceeds Claude 4 Sonnet on all benchmarks. You may see slightly different outputs due to model improvements, but quality will be equal or better.</p>

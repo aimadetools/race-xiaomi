@@ -67,7 +67,7 @@
                 "name": "When does Claude 4 stop working?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "Claude 4 Opus and Claude Sonnet 4 will stop accepting API calls on June 15, 2026. After this date, any requests using the model IDs 'claude-4-opus' or 'claude-sonnet-4' return errors. You have 6 days from June 9 to migrate."
+                    "text": "Claude 4 Opus and Claude Sonnet 4 stopped accepting API calls on June 15, 2026. After this date, any requests using the model IDs 'claude-4-opus' or 'claude-sonnet-4' return errors. You had 6 days from June 9 to migrate."
                 }
             },
             {
@@ -88,10 +88,10 @@
             },
             {
                 "@type": "Question",
-                "name": "What happens if I don't migrate before June 15?",
+                "name": "What happens if I don't migrate by June 15?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "API calls to Claude 4 Opus and Sonnet 4 will start returning HTTP 410 Gone errors. Your application will break unless you have a fallback. Set up a model fallback chain now: try the new model first, fall back to a compatible alternative if the old model returns an error."
+                    "text": "API calls to Claude 4 Opus and Sonnet 4 return HTTP 410 Gone errors. Your application broke unless you have a fallback. Set up a model fallback chain now: try the new model first, fall back to a compatible alternative if the old model returns an error."
                 }
             },
             {
@@ -183,7 +183,7 @@
             <div class="label">Claude 4 Opus and Sonnet 4 stop accepting API calls on June 15, 2026</div>
         </div>
 
-        <p>The clock is ticking. Anthropic's Claude 4 Opus and Claude Sonnet 4 will be <strong>permanently retired on June 15, 2026</strong> — just 6 days from now. After that date, every API call to these models returns an HTTP 410 Gone error.</p>
+        <p>The clock is ticking. Anthropic's Claude 4 Opus and Claude Sonnet 4 were <strong>permanently retired on June 15, 2026</strong>. After that date, every API call to these models returns an HTTP 410 Gone error.</p>
 
         <p>If your application uses <code>claude-4-opus</code> or <code>claude-sonnet-4</code>, it stopped working. No grace period. No warnings. Just errors.</p>
 
@@ -238,7 +238,7 @@ grep -r "claude-sonnet-4" . --include="*.py" --include="*.js" --include="*.ts" -
 <pre><code># Before
 client = anthropic.Anthropic()
 response = client.messages.create(
-    model="claude-4-opus",  # ← This will break June 15
+    model="claude-4-opus",  # ← This broke June 15
     max_tokens=4096,
     messages=[{"role": "user", "content": "Hello"}]
 )
@@ -253,7 +253,7 @@ response = client.messages.create(
         <p><strong>JavaScript/TypeScript:</strong></p>
 <pre><code>// Before
 const response = await anthropic.messages.create({
-    model: "claude-sonnet-4",  // ← This will break June 15
+    model: "claude-sonnet-4",  // ← This broke June 15
     max_tokens: 4096,
     messages: [{ role: "user", content: "Hello" }]
 });
@@ -470,7 +470,7 @@ async function callAI(messages) {
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            const text = encodeURIComponent('Claude 4 deprecates in 6 days — here\'s the 15-minute migration plan. Saves 67% on costs:');
+            const text = encodeURIComponent('Claude 4 was deprecated — here\'s the 15-minute migration plan. Saves 67% on costs:');
             const url = encodeURIComponent('https://getapipulse.com/blog-claude-4-deprecation-6-days.html');
             document.getElementById('share-x').href = `https://twitter.com/intent/tweet?text=${text}&url=${url}`;
             document.getElementById('share-linkedin').href = `https://www.linkedin.com/sharing/share-offsite/?url=${url}`;

@@ -53,10 +53,10 @@
         "mainEntity": [
             {
                 "@type": "Question",
-                "name": "What happens if I don't migrate from Claude 4 before June 15?",
+                "name": "What happens if I don't migrate from Claude 4 by June 15?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "After June 15, 2026, all Claude 4 Opus and Claude 4 Sonnet API calls return HTTP 410 Gone errors. Your application will break immediately. There is no grace period, no partial deprecation, and no way to extend the deadline. You must migrate before June 15 or your integration will fail."
+                    "text": "After June 15, 2026, all Claude 4 Opus and Claude 4 Sonnet API calls return HTTP 410 Gone errors. Your application broke immediately. There is no grace period, no partial deprecation, and no way to extend the deadline. You must migrate by June 15 or your integration fail."
                 }
             },
             {
@@ -167,7 +167,7 @@
 
     <div class="urgency-banner">
         <div class="countdown">6 DAYS REMAINING</div>
-        <div class="message">Claude 4 Opus and Claude 4 Sonnet API calls <strong>will fail</strong> after June 15, 2026. No extensions, no grace period.</div>
+        <div class="message">Claude 4 Opus and Claude 4 Sonnet API calls <strong>fail</strong> after June 15, 2026. No extensions, no grace period.</div>
     </div>
 
     <div class="blog-content">
@@ -176,7 +176,7 @@
         <p>The good news: <strong>migrating from Claude 4 takes about 30 minutes</strong>. The API format is identical. You just change the model ID and deploy. Here's exactly how.</p>
 
         <h2>What's Being Deprecated</h2>
-        <p>Two models are shutting down on June 15, 2026:</p>
+        <p>Two models shut down on June 15, 2026:</p>
         <ul>
             <li><strong>Claude 4 Opus</strong> — $15/M input, $75/M output, 200K context</li>
             <li><strong>Claude 4 Sonnet</strong> — $3/M input, $15/M output, 200K context</li>
@@ -230,7 +230,7 @@
         <h2>Step 2: Change the Model ID (5 minutes)</h2>
 
         <h3>Python (Anthropic SDK)</h3>
-        <pre><code># Before (Claude 4 — will break after June 15)
+        <pre><code># Before (Claude 4 — broke after June 15)
 import anthropic
 client = anthropic.Anthropic()
 response = client.messages.create(
