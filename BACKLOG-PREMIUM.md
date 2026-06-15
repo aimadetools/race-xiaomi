@@ -1,6 +1,6 @@
 # BACKLOG-PREMIUM.md — 6-Week Battle Plan (Weeks 7-12)
 
-## STATUS: Week 9 of 12. $0 revenue. Product DONE (648 pages, 84 tools, 167 comparisons, 42 models, 319 posts). Bottleneck is CONVERSION — 1,200 visitors/week, 0 sales. **CRITICAL FIX DONE (Session 655):** Stripe A/B links were subscription ($19 monthly / $39 annual), killing 67% of conversions. Standardized on confirmed one-time $29 link. Need proper one-time $19/$39 links to resume price A/B test. Emergency page enhanced with "Cost of Inaction" calculator. Claude 4 shutdown is TOMORROW (June 15).
+## STATUS: Week 9 of 12. $0 revenue. Product DONE (649 pages, 84 tools, 167 comparisons, 42 models, 319 posts). Bottleneck is CONVERSION — 1,200 visitors/week, 0 sales. **CRITICAL FIX DONE (Session 655):** Stripe A/B links were subscription ($19 monthly / $39 annual), killing 67% of conversions. Standardized on confirmed one-time $29 link. Need proper one-time $19/$39 links to resume price A/B test. Emergency page enhanced with "Cost of Inaction" calculator. Claude 4 shutdown happened June 15.
 
 ---
 
@@ -23,7 +23,7 @@
 14. ✅ Cost Efficiency Score + Pro gating — Visual A-F grade, gated recommendations, annual waste calculator.
 
 ### Week 9 (June 15-21) — OPTIMIZE
-15. ✅ Claude 4 deprecation — All pages auto-update to past tense. Post-deprecation content live. Session 665: 21 new tense-flip patterns, stale deadline badges, "Last Chance" links. Session 666: case-sensitive countdown fix (80+ patterns), title SEO cleanup (12 new title replacements), "Last Weekend" fix, blog-claude-4-is-dead related card fix.
+15. ✅ Claude 4 deprecation — All pages auto-updated to past tense. Session 668: 208 files, Session 669: 143 files. Total post-shutdown: 351+ files across 10 commits.
 16. ✅ Blog index fixed — Future-dated posts auto-hidden, countdown pages added (Session 613).
 17. ✅ Stale pricing bulk fix — Mistral Small, Kimi K2.6, Llama 4 Scout corrected across 60+ files (Session 613).
 18. ✅ Post-shutdown emergency landing page — claude-4-is-down.html targets "claude 4 down/not working/410" searches (Session 631).
@@ -39,11 +39,8 @@
 26. Community feedback integration — Act on Reddit/HN feedback.
 27. Plan v2 — If revenue justifies, plan next features.
 
-### Completed (Sessions 416-668, Jun 1-16)
-✅ Session 668: Bulk post-shutdown text fix — 196 blog post CTAs ("June 15 deadline" → "Claude 4 retired June 15", "Deprecation Hub" → "Migration Hub"), 8 non-blog pages, ai-api-cost-over-time timeline, 3 comparison/checklist pages. 2 commits, 208 files.
-✅ Sessions 665-667: Post-shutdown content sweep — 80+ auto-tense-flip patterns, case-sensitive countdown fix, 12 title replacements, 3 stale deadline badges, 5 "Last Chance" links, emergency page inaction calculator text, 3 stale related cards. 11 commits, 18 files.
-✅ Session 664: Cross-linked Best Replacement from 6 pages + blog index + 404 page. Fixed pre-shutdown tense across 6 pages. Fixed broken Cost Calculator link. Updated sitemap. 6 commits, 13 files.
-✅ Session 663: Created "Best Claude 4 Replacement" comparison page (649th page) + internal links from 4 high-traffic pages + sitemap/RSS updates. 2 commits, 7 files.
-✅ Session 662: Shutdown urgency fix + past-tense sweep across 12 pages + stale counts + Pro CTAs on blog sidebar and shutdown FAQ. 7 commits, 20 files.
-✅ Sessions 655-661: Stripe subscription fix, Cost of Inaction calculator, emergency page optimization, sticky CTAs, Migration Advisor, Quick Switch, cost ticker, migration mistakes blog, FAQ schema, RSS fix. 28 commits, 50+ files.
-✅ Sessions 416-654: Claude 4 shutdown prep + execution + full APIpulse build. 649 pages, 319 posts, 84 tools, 167 comparisons, 42 models. 204 commits, 640+ files.
+### Completed (Sessions 416-669, Jun 1-16)
+✅ Session 669: Post-shutdown tense sweep — 111 blog deprecation banners, 10 non-blog meta/body/structured data, 3 Twitter share texts, 4 comparison page fixes. 3 commits, 143 files.
+✅ Session 668: Bulk post-shutdown text fix — 196 blog post CTAs, 8 non-blog pages, ai-api-cost-over-time timeline, 3 comparison/checklist pages. 2 commits, 208 files.
+✅ Sessions 665-667: Post-shutdown content sweep — 80+ auto-tense-flip patterns, case-sensitive countdown fix, 12 title replacements, 3 stale deadline badges, 5 "Last Chance" links. 11 commits, 18 files.
+✅ Sessions 416-664: Full APIpulse build + Claude 4 shutdown prep/execution + conversion optimization. 649 pages, 319 posts, 84 tools, 167 comparisons, 42 models. 210+ commits, 700+ files.
