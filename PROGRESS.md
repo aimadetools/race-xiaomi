@@ -1,5 +1,14 @@
 # PROGRESS.md
 
+## Session 688 (Jun 17) — Mobile responsiveness sweep across 5 key pages
+- **Fixed scanner mobile** (claude-4-migration-scanner.html) — Trust grid, related tools grid, and sample code buttons now collapse to 1 column on narrow screens. Added CSS classes and media queries.
+- **Fixed emergency page mobile** (claude-4-is-down.html) — Claude 4 vs Opus 4.8 comparison grid, alternatives grid, and "What Happens If You Don't Fix This" consequences grid all now collapse to 1 column on mobile.
+- **Fixed pricing page mobile** (pricing.html) — "How It Works" 3-step grid and ROI calculator 2-column grid now collapse on narrow screens.
+- **Fixed checklist page mobile** (claude-4-migration-checklist.html) — Provider comparison grid ("Which Provider Should You Pick?") now collapses to 1 column.
+- **Fixed Quick Switch mobile** (claude-4-quick-switch.html) — Related tools grid now collapses to 1 column.
+- **Verified other key pages already mobile-ready**: Index page (comprehensive media queries), Migration Advisor (all grids covered), Day 1/2/3 blog posts (all have media queries).
+- **5 commits, 5 files changed, ~15 insertions**
+
 ## Session 687 (Jun 17) — Scanner cross-links + blog post
 - **Created scanner blog post** (blog-how-to-find-deprecated-claude-4-code.html) — "How to Find Deprecated Claude 4 Code in 10 Seconds." Targets "claude 4 scanner" searches. Covers manual vs automated scanning, 8 deprecated patterns, framework auto-detection, privacy-first client-side design. FAQPage schema with 5 questions, Pro CTA, related resources grid.
 - **Added scanner to deprecation banner** (shared.js) — Post-shutdown banner now shows "Or scan your code first →" alongside existing "Fix it in 5 minutes →" CTA. Red link styling for visibility.
