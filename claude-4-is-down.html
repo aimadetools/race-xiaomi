@@ -779,7 +779,7 @@ claude-sonnet-4-6</code>
                     </div>
                 </div>
                 <div style="text-align:center;padding:16px;background:rgba(34,197,94,0.06);border:1px solid rgba(34,197,94,0.2);border-radius:10px;">
-                    <div style="font-size:15px;color:var(--text-secondary);margin-bottom:12px;">Or spend <strong style="color:var(--accent);">$29 once</strong> and get your personalized migration plan in 60 seconds — the exact model, the exact cost, and a PDF report for your team.</div>
+                    <div style="font-size:15px;color:var(--text-secondary);margin-bottom:12px;">Or spend <strong style="color:var(--accent);">$<span class="ab-dynamic-price">29</span> once</strong> and get your personalized migration plan in 60 seconds — the exact model, the exact cost, and a PDF report for your team.</div>
                     <a href="#" id="what-happens-cta" style="display:inline-block;background:var(--accent);color:white;padding:14px 32px;border-radius:10px;font-size:16px;font-weight:700;text-decoration:none;transition:all 0.2s;box-shadow:0 4px 20px rgba(99,102,241,0.3);">Get Your Migration Plan — $29</a>
                 </div>
             </div>
@@ -875,7 +875,7 @@ claude-sonnet-4-6</code>
                         </div>
                     </div>
                     <div style="text-align:center;margin-top:16px;padding:14px;background:rgba(34,197,94,0.06);border:1px solid rgba(34,197,94,0.15);border-radius:10px;">
-                        <div style="font-size:14px;color:var(--text-secondary);margin-bottom:12px;">Pro costs <strong style="color:var(--accent);">$29 once</strong>. It pays for itself in <strong id="inaction-payback" style="color:var(--green);">less than a day</strong> — and you get your personalized migration plan instantly.</div>
+                        <div style="font-size:14px;color:var(--text-secondary);margin-bottom:12px;">Pro costs <strong style="color:var(--accent);">$<span class="ab-dynamic-price">29</span> once</strong>. It pays for itself in <strong id="inaction-payback" style="color:var(--green);">less than a day</strong> — and you get your personalized migration plan instantly.</div>
                         <a href="#" id="inaction-cta" style="display:inline-block;background:var(--accent);color:white;padding:12px 28px;border-radius:8px;font-size:15px;font-weight:700;text-decoration:none;transition:all 0.2s;box-shadow:0 4px 16px rgba(99,102,241,0.3);">Get Your Migration Plan — $29</a>
                     </div>
                 </div>
@@ -884,7 +884,7 @@ claude-sonnet-4-6</code>
 
         <!-- Why Pay Section -->
         <section style="max-width:800px;margin:0 auto 48px;padding:0 24px;">
-            <h2 style="font-size:24px;font-weight:800;text-align:center;margin-bottom:8px;">Why $29 When the Free Guide Is So Good?</h2>
+            <h2 style="font-size:24px;font-weight:800;text-align:center;margin-bottom:8px;">Why $<span class="ab-dynamic-price">29</span> When the Free Guide Is So Good?</h2>
             <p style="text-align:center;color:var(--text-secondary);margin-bottom:24px;font-size:15px;">Fair question. The free guide shows you the options. Pro shows you the <strong>right one for YOUR code.</strong></p>
             <div class="why-pay-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
                 <div style="background:var(--bg-secondary);border:1px solid var(--border);border-radius:12px;padding:20px;">
@@ -897,7 +897,7 @@ claude-sonnet-4-6</code>
                     </ul>
                 </div>
                 <div style="background:linear-gradient(135deg,rgba(99,102,241,0.08),rgba(168,85,247,0.08));border:1px solid var(--accent);border-radius:12px;padding:20px;">
-                    <div style="font-size:13px;font-weight:700;color:var(--accent);text-transform:uppercase;letter-spacing:0.5px;margin-bottom:12px;">Pro — $29 one-time</div>
+                    <div style="font-size:13px;font-weight:700;color:var(--accent);text-transform:uppercase;letter-spacing:0.5px;margin-bottom:12px;">Pro — $<span class="ab-dynamic-price">29</span> one-time</div>
                     <ul style="list-style:none;padding:0;margin:0;">
                         <li style="padding:6px 0;font-size:14px;color:var(--text-primary);">✓ <strong>YOUR personalized migration plan</strong> — exact model, exact cost</li>
                         <li style="padding:6px 0;font-size:14px;color:var(--text-primary);">✓ <strong>10 saved scenarios</strong> — compare "stay Anthropic" vs "switch" side by side</li>
@@ -1292,6 +1292,13 @@ claude-sonnet-4-6</code>
                 if (window._abPrice) midProCta.textContent = 'Get Your Migration Plan — $' + window._abPrice;
                 midProCta.addEventListener('click', function() {
                     if (window.trackEvent) window.trackEvent('pro_button_clicked', { source: 'mid_page_upsell', page: 'claude-4-is-down', email_ab_variant: window._emailAbVariant || 'unknown' });
+                });
+            }
+
+            // Update all inline price references with A/B variant price
+            if (window._abPrice) {
+                document.querySelectorAll('.ab-dynamic-price').forEach(function(el) {
+                    el.textContent = window._abPrice;
                 });
             }
 
