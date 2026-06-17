@@ -1,0 +1,801 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Claude 4 Migration Scanner — Find Deprecated Code Instantly | APIpulse</title>
+    <meta name="description" content="Paste your code and instantly find all Claude 4 model references that need migration. Free scan shows what needs to change. Pro shows exact replacement code for your framework.">
+    <meta name="keywords" content="claude 4 migration, claude 4 scanner, claude 4 deprecated, claude 4 model id, migration tool, claude 4 opus, claude sonnet 4">
+    <meta property="og:title" content="Claude 4 Migration Scanner — Find Deprecated Code Instantly">
+    <meta property="og:description" content="Paste your code, find all Claude 4 references, get exact migration fixes. Free scan, paid detailed fixes.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://getapipulse.com/og-image.png">
+    <meta property="og:url" content="https://getapipulse.com/claude-4-migration-scanner.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Claude 4 Migration Scanner">
+    <meta name="twitter:description" content="Paste your code, find deprecated Claude 4 references, get exact fixes.">
+    <link rel="canonical" href="https://getapipulse.com/claude-4-migration-scanner.html">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="styles.css">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0CEP7S9Y3J"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-0CEP7S9Y3J');
+    </script>
+    <script src="analytics.js" defer></script>
+    <script src="shared.js" defer></script>
+    <script src="pricing-data.js" defer></script>
+    <script src="pro-features.js" defer></script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Claude 4 Migration Scanner",
+        "applicationCategory": "DeveloperApplication",
+        "operatingSystem": "Web",
+        "description": "Paste your code and instantly find all deprecated Claude 4 model references. Free scan shows what needs to change. Pro shows exact replacement code.",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        }
+    }
+    </script>
+    <style>
+        .scanner-hero {
+            padding: 60px 24px 40px;
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        .scanner-hero h1 {
+            font-size: 36px;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 12px;
+        }
+        .scanner-hero .subtitle {
+            font-size: 16px;
+            color: var(--text-secondary);
+            line-height: 1.6;
+            max-width: 600px;
+            margin: 0 auto 24px;
+        }
+        .scanner-container {
+            max-width: 800px;
+            margin: 0 auto 48px;
+            padding: 0 24px;
+        }
+        .input-area {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            overflow: hidden;
+            margin-bottom: 16px;
+        }
+        .input-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 12px 16px;
+            background: var(--bg-card);
+            border-bottom: 1px solid var(--border);
+        }
+        .input-header .label {
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--text-secondary);
+        }
+        .input-actions {
+            display: flex;
+            gap: 8px;
+        }
+        .input-actions button {
+            padding: 4px 12px;
+            border-radius: 6px;
+            border: 1px solid var(--border);
+            background: var(--bg-secondary);
+            color: var(--text-secondary);
+            font-size: 12px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .input-actions button:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+        }
+        #code-input {
+            width: 100%;
+            min-height: 200px;
+            padding: 16px;
+            background: transparent;
+            border: none;
+            color: var(--text-primary);
+            font-family: 'SF Mono', 'Fira Code', monospace;
+            font-size: 13px;
+            line-height: 1.6;
+            resize: vertical;
+            outline: none;
+        }
+        #code-input::placeholder {
+            color: var(--text-muted);
+        }
+        .scan-btn {
+            display: block;
+            width: 100%;
+            padding: 16px;
+            background: var(--accent);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 16px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.2s;
+            margin-bottom: 24px;
+        }
+        .scan-btn:hover {
+            opacity: 0.9;
+            transform: translateY(-1px);
+        }
+        .scan-btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        /* Results */
+        .results-container {
+            display: none;
+        }
+        .results-container.visible {
+            display: block;
+        }
+        .result-summary {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+            margin-bottom: 24px;
+        }
+        .summary-card {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 16px;
+            text-align: center;
+        }
+        .summary-card.danger {
+            border-color: rgba(239,68,68,0.3);
+            background: rgba(239,68,68,0.05);
+        }
+        .summary-card.warning {
+            border-color: rgba(245,158,11,0.3);
+            background: rgba(245,158,11,0.05);
+        }
+        .summary-card.success {
+            border-color: rgba(34,197,94,0.3);
+            background: rgba(34,197,94,0.05);
+        }
+        .summary-card .count {
+            font-size: 32px;
+            font-weight: 800;
+            margin-bottom: 4px;
+        }
+        .summary-card.danger .count { color: #ef4444; }
+        .summary-card.warning .count { color: #f59e0b; }
+        .summary-card.success .count { color: var(--green); }
+        .summary-card .label {
+            font-size: 12px;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* Findings list */
+        .findings-list {
+            margin-bottom: 24px;
+        }
+        .finding-item {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 16px;
+            margin-bottom: 8px;
+            display: flex;
+            gap: 16px;
+            align-items: flex-start;
+        }
+        .finding-item.critical {
+            border-left: 3px solid #ef4444;
+        }
+        .finding-item.warning {
+            border-left: 3px solid #f59e0b;
+        }
+        .finding-icon {
+            font-size: 18px;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+        .finding-content {
+            flex: 1;
+        }
+        .finding-title {
+            font-weight: 700;
+            font-size: 14px;
+            margin-bottom: 4px;
+        }
+        .finding-detail {
+            font-size: 13px;
+            color: var(--text-secondary);
+            margin-bottom: 8px;
+        }
+        .finding-code {
+            background: #0d1117;
+            border: 1px solid #30363d;
+            border-radius: 6px;
+            padding: 10px 14px;
+            font-family: 'SF Mono', 'Fira Code', monospace;
+            font-size: 12px;
+            color: #e6edf3;
+            overflow-x: auto;
+        }
+        .finding-code .old { color: #f87171; text-decoration: line-through; }
+        .finding-code .new { color: #4ade80; }
+        .finding-code .locked { color: #8b949e; font-style: italic; }
+
+        /* Pro upsell in results */
+        .pro-upsell-result {
+            background: linear-gradient(135deg, rgba(99,102,241,0.08), rgba(168,85,247,0.08));
+            border: 1px solid var(--accent);
+            border-radius: 14px;
+            padding: 28px;
+            text-align: center;
+            margin-top: 24px;
+        }
+        .pro-upsell-result h3 {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+        .pro-upsell-result p {
+            color: var(--text-secondary);
+            font-size: 14px;
+            margin-bottom: 16px;
+        }
+
+        /* No issues found */
+        .no-issues {
+            text-align: center;
+            padding: 40px;
+        }
+        .no-issues .icon { font-size: 48px; margin-bottom: 16px; }
+        .no-issues h3 { font-size: 20px; margin-bottom: 8px; color: var(--green); }
+        .no-issues p { color: var(--text-secondary); font-size: 14px; }
+
+        /* Sample code buttons */
+        .sample-codes {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            margin-bottom: 16px;
+            justify-content: center;
+        }
+        .sample-btn {
+            padding: 6px 14px;
+            border-radius: 6px;
+            border: 1px solid var(--border);
+            background: var(--bg-secondary);
+            color: var(--text-secondary);
+            font-size: 12px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .sample-btn:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+        }
+
+        @media (max-width: 640px) {
+            .scanner-hero h1 { font-size: 26px; }
+            .result-summary { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-inner">
+            <a href="index.html" class="logo">API<span>pulse</span></a>
+            <div class="nav-links">
+                <a href="calculator.html">Calculator</a>
+                <a href="compare.html">Compare</a>
+                <a href="blog.html">Blog</a>
+                <a href="claude-4-migration-hub.html">Migration Hub</a>
+                <a href="pro.html" class="nav-cta">Get Pro</a>
+            </div>
+            <button class="hamburger" onclick="toggleMobileNav()" aria-label="Menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <main>
+        <section class="scanner-hero">
+            <div style="display:inline-block;background:#dc2626;color:white;padding:4px 14px;border-radius:20px;font-size:12px;font-weight:700;margin-bottom:16px;">NEW TOOL</div>
+            <h1>Find Your Deprecated Claude 4 Code — Instantly</h1>
+            <p class="subtitle">
+                Paste your code below. The scanner finds every Claude 4 model reference that needs migration
+                and shows you <strong>exactly what to change</strong> — for your specific framework.
+            </p>
+            <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:20px;font-size:13px;color:var(--text-secondary);">
+                <span>✓ Scans 8 deprecated patterns</span>
+                <span>✓ Detects your framework</span>
+                <span>✓ Shows exact fix code</span>
+            </div>
+        </section>
+
+        <section class="scanner-container">
+            <!-- Sample code buttons -->
+            <div class="sample-codes">
+                <button class="sample-btn" onclick="loadSample('python')">Load Python example</button>
+                <button class="sample-btn" onclick="loadSample('node')">Load Node.js example</button>
+                <button class="sample-btn" onclick="loadSample('curl')">Load cURL example</button>
+                <button class="sample-btn" onclick="loadSample('config')">Load config file</button>
+            </div>
+
+            <!-- Code input -->
+            <div class="input-area">
+                <div class="input-header">
+                    <span class="label">Paste your code (any language)</span>
+                    <div class="input-actions">
+                        <button onclick="clearInput()">Clear</button>
+                        <button onclick="loadFromFile()">Load file</button>
+                    </div>
+                </div>
+                <textarea id="code-input" placeholder="# Paste your code here...
+# The scanner detects these deprecated Claude 4 patterns:
+#   claude-4-opus, claude-4-opus-20250615
+#   claude-sonnet-4, claude-sonnet-4-20250514
+#   claude-4 (general references)
+#
+# Also detects framework-specific patterns:
+#   anthropic.Anthropic() — Python SDK
+#   new Anthropic() — Node.js SDK
+#   model='claude-*' — API calls
+#   base_url with anthropic.com — endpoint configs"></textarea>
+            </div>
+
+            <input type="file" id="file-input" style="display:none" accept=".py,.js,.ts,.json,.yaml,.yml,.toml,.env,.txt,.cfg,.ini,.conf,.rb,.go,.rs,.java,.php" onchange="handleFileLoad(event)">
+
+            <button class="scan-btn" id="scan-btn" onclick="scanCode()">
+                🔍 Scan My Code — Free
+            </button>
+
+            <!-- Results -->
+            <div class="results-container" id="results-container">
+                <div class="result-summary" id="result-summary"></div>
+                <div id="findings-list"></div>
+                <div id="pro-upsell-container"></div>
+            </div>
+        </section>
+
+        <!-- Trust section -->
+        <section style="max-width:800px;margin:0 auto 48px;padding:0 24px;">
+            <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;">
+                <div style="text-align:center;padding:20px;background:var(--bg-secondary);border:1px solid var(--border);border-radius:12px;">
+                    <div style="font-size:24px;margin-bottom:8px;">🔒</div>
+                    <div style="font-size:14px;font-weight:700;margin-bottom:4px;">Code stays private</div>
+                    <div style="font-size:12px;color:var(--text-muted);">Scanning runs 100% in your browser. Your code is never sent to any server.</div>
+                </div>
+                <div style="text-align:center;padding:20px;background:var(--bg-secondary);border:1px solid var(--border);border-radius:12px;">
+                    <div style="font-size:24px;margin-bottom:8px;">⚡</div>
+                    <div style="font-size:14px;font-weight:700;margin-bottom:4px;">Instant results</div>
+                    <div style="font-size:12px;color:var(--text-muted);">Paste any code — Python, Node.js, Go, Ruby, cURL, config files. Results in milliseconds.</div>
+                </div>
+                <div style="text-align:center;padding:20px;background:var(--bg-secondary);border:1px solid var(--border);border-radius:12px;">
+                    <div style="font-size:24px;margin-bottom:8px;">🎯</div>
+                    <div style="font-size:14px;font-weight:700;margin-bottom:4px;">Framework-aware</div>
+                    <div style="font-size:12px;color:var(--text-muted);">Detects your SDK and shows framework-specific migration code — not generic advice.</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Related tools -->
+        <section style="max-width:800px;margin:0 auto 48px;padding:0 24px;">
+            <h2 style="font-size:20px;font-weight:700;margin-bottom:16px;">More Migration Tools</h2>
+            <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:12px;">
+                <a href="claude-4-migration-advisor.html" class="related-card" style="display:block;background:var(--bg-secondary);border:1px solid var(--border);border-radius:10px;padding:16px;text-decoration:none;color:var(--text-primary);border-color:var(--green);">
+                    <h3 style="font-size:14px;font-weight:600;margin-bottom:4px;">🎯 Migration Advisor</h3>
+                    <p style="font-size:12px;color:var(--text-muted);margin:0;">Find your cheapest replacement in 60 seconds</p>
+                </a>
+                <a href="claude-4-quick-switch.html" class="related-card" style="display:block;background:var(--bg-secondary);border:1px solid var(--border);border-radius:10px;padding:16px;text-decoration:none;color:var(--text-primary);border-color:var(--accent);">
+                    <h3 style="font-size:14px;font-weight:600;margin-bottom:4px;">⚡ Quick Switch</h3>
+                    <p style="font-size:12px;color:var(--text-muted);margin:0;">Get copy-paste migration code in 10 seconds</p>
+                </a>
+                <a href="claude-4-is-down.html" class="related-card" style="display:block;background:var(--bg-secondary);border:1px solid var(--border);border-radius:10px;padding:16px;text-decoration:none;color:var(--text-primary);">
+                    <h3 style="font-size:14px;font-weight:600;margin-bottom:4px;">🚨 Emergency Guide</h3>
+                    <p style="font-size:12px;color:var(--text-muted);margin:0;">Fix your 410 errors in 5 minutes</p>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-inner">
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="calculator.html">Calculator</a>
+                <a href="compare.html">Compare</a>
+                <a href="blog.html">Blog</a>
+                <a href="pro.html">Pro</a>
+            </div>
+            <p class="footer-copy">© 2026 APIpulse · <a href="mailto:support@getapipulse.com">support@getapipulse.com</a></p>
+        </div>
+    </footer>
+
+    <script>
+    // Claude 4 Migration Scanner — Client-side code analysis
+    (function() {
+        // Deprecated patterns to detect
+        var DEPRECATED_PATTERNS = [
+            {
+                regex: /\bclaude-4-opus-20250615\b/gi,
+                name: 'Claude 4 Opus (dated)',
+                severity: 'critical',
+                replacement: 'claude-opus-4-8',
+                provider: 'Anthropic',
+                savings: '67%'
+            },
+            {
+                regex: /\bclaude-4-opus\b/gi,
+                name: 'Claude 4 Opus',
+                severity: 'critical',
+                replacement: 'claude-opus-4-8',
+                provider: 'Anthropic',
+                savings: '67%'
+            },
+            {
+                regex: /\bclaude-sonnet-4-20250514\b/gi,
+                name: 'Claude Sonnet 4 (dated)',
+                severity: 'critical',
+                replacement: 'claude-sonnet-4-6',
+                provider: 'Anthropic',
+                savings: '80%'
+            },
+            {
+                regex: /\bclaude-sonnet-4\b(?![-\d])/gi,
+                name: 'Claude Sonnet 4',
+                severity: 'critical',
+                replacement: 'claude-sonnet-4-6',
+                provider: 'Anthropic',
+                savings: '80%'
+            },
+            {
+                regex: /\bclaude-4\b(?![-\.\d]|opus|sonnet|haiku)/gi,
+                name: 'Claude 4 (generic reference)',
+                severity: 'warning',
+                replacement: null,
+                note: 'May reference deprecated model IDs. Check context.'
+            },
+            {
+                regex: /\bmodel\s*[:=]\s*['"](claude-4[^'"]*|claude-sonnet-4[^'"]*?)['"]/gi,
+                name: 'Model configuration',
+                severity: 'critical',
+                replacement: null,
+                note: 'API call using deprecated model ID'
+            },
+            {
+                regex: /\banthropic\.com\/v1\b/gi,
+                name: 'Anthropic API endpoint',
+                severity: 'info',
+                replacement: null,
+                note: 'Endpoint is still valid — only the model IDs changed'
+            },
+            {
+                regex: /\bANTHROPIC_API_KEY\b/gi,
+                name: 'Anthropic API key',
+                severity: 'info',
+                replacement: null,
+                note: 'Your API key still works with new Claude models'
+            }
+        ];
+
+        // Framework detection patterns
+        var FRAMEWORK_PATTERNS = [
+            { regex: /import\s+anthropic|from\s+anthropic\s+import|anthropic\.Anthropic\s*\(/i, name: 'Python SDK (anthropic)', lang: 'python' },
+            { regex: /require\s*\(\s*['"]@anthropic-ai\/sdk['"]\s*\)|new\s+Anthropic\s*\(|from\s+['"]@anthropic-ai/i, name: 'Node.js SDK (@anthropic-ai/sdk)', lang: 'node' },
+            { regex: /ChatAnthropic|langchain.*anthropic/i, name: 'LangChain', lang: 'python' },
+            { regex: /llama_index.*anthropic|Anthropic.*LlamaIndex/i, name: 'LlamaIndex', lang: 'python' },
+            { regex: /curl\s+.*anthropic\.com/i, name: 'cURL / REST API', lang: 'curl' },
+            { regex: /import\s+openai|from\s+openai\s+import|new\s+OpenAI\s*\(/i, name: 'OpenAI SDK (cross-provider)', lang: 'python' },
+            { regex: /crewai|CrewAI/i, name: 'CrewAI', lang: 'python' },
+            { regex: /vercel.*ai|ai\s*sdk|streamText|generateText/i, name: 'Vercel AI SDK', lang: 'node' }
+        ];
+
+        // Framework-specific migration code
+        var MIGRATION_CODE = {
+            'Python SDK (anthropic)': {
+                before: 'import anthropic\nclient = anthropic.Anthropic()\n\nresponse = client.messages.create(\n    model="claude-4-opus-20250615",\n    ...\n)',
+                after: 'import anthropic\nclient = anthropic.Anthropic()\n\nresponse = client.messages.create(\n    model="claude-opus-4-8",  # 67% cheaper, better quality\n    ...\n)',
+                note: 'Same SDK, same API key. Just change the model name.'
+            },
+            'Node.js SDK (@anthropic-ai/sdk)': {
+                before: 'const anthropic = new Anthropic();\n\nconst response = await anthropic.messages.create({\n    model: "claude-4-opus-20250615",\n    ...\n});',
+                after: 'const anthropic = new Anthropic();\n\nconst response = await anthropic.messages.create({\n    model: "claude-opus-4-8",  // 67% cheaper\n    ...\n});',
+                note: 'Same SDK, same API key. Just change the model name.'
+            },
+            'LangChain': {
+                before: 'from langchain_anthropic import ChatAnthropic\n\nllm = ChatAnthropic(\n    model="claude-4-opus-20250615",\n    anthropic_api_key="sk-..."\n)',
+                after: 'from langchain_anthropic import ChatAnthropic\n\nllm = ChatAnthropic(\n    model="claude-opus-4-8",  # 67% cheaper\n    anthropic_api_key="sk-..."\n)',
+                note: 'LangChain automatically uses the Anthropic endpoint. Just update the model name.'
+            },
+            'cURL / REST API': {
+                before: 'curl https://api.anthropic.com/v1/messages \\\n  -H "x-api-key: $ANTHROPIC_API_KEY" \\\n  -H "anthropic-version: 2023-06-01" \\\n  -d \'{"model": "claude-4-opus-20250615", ...}\'',
+                after: 'curl https://api.anthropic.com/v1/messages \\\n  -H "x-api-key: $ANTHROPIC_API_KEY" \\\n  -H "anthropic-version: 2023-06-01" \\\n  -d \'{"model": "claude-opus-4-8", ...}\'',
+                note: 'Same endpoint, same API key. Only the model name changed.'
+            }
+        };
+
+        var SAMPLE_CODES = {
+            python: '# Python — Using Anthropic SDK\nimport anthropic\n\nclient = anthropic.Anthropic(\n    api_key="sk-ant-..."\n)\n\n# Chat with Claude 4 Opus\nresponse = client.messages.create(\n    model="claude-4-opus-20250615",\n    max_tokens=1024,\n    messages=[\n        {"role": "user", "content": "Hello, Claude!"}\n    ]\n)\n\nprint(response.content[0].text)\n\n# Also using Claude Sonnet 4 for lighter tasks\nsonnet_response = client.messages.create(\n    model="claude-sonnet-4",\n    max_tokens=512,\n    messages=[{"role": "user", "content": "Summarize this"}]\n)',
+            node: '// Node.js — Using @anthropic-ai/sdk\nimport Anthropic from "@anthropic-ai/sdk";\n\nconst client = new Anthropic({\n  apiKey: process.env.ANTHROPIC_API_KEY\n});\n\n// Chat with Claude 4\nconst response = await client.messages.create({\n  model: "claude-4-opus-20250615",\n  max_tokens: 1024,\n  messages: [\n    { role: "user", content: "Hello!" }\n  ]\n});\n\nconsole.log(response.content[0].text);\n\n// Fallback to Sonnet for speed\nconst quickResponse = await client.messages.create({\n  model: "claude-sonnet-4-20250514",\n  messages: [{ role: "user", content: "Quick question" }]\n});',
+            curl: '# cURL — Direct API calls\n\n# Call Claude 4 Opus\ncurl https://api.anthropic.com/v1/messages \\\n  -H "x-api-key: $ANTHROPIC_API_KEY" \\\n  -H "anthropic-version: 2023-06-01" \\\n  -H "content-type: application/json" \\\n  -d \'{\n    "model": "claude-4-opus-20250615",\n    "max_tokens": 1024,\n    "messages": [{"role": "user", "content": "Hello"}]\n  }\'\n\n# Call Claude Sonnet 4\ncurl https://api.anthropic.com/v1/messages \\\n  -H "x-api-key: $ANTHROPIC_API_KEY" \\\n  -H "anthropic-version: 2023-06-01" \\\n  -d \'{"model": "claude-sonnet-4", "messages": [{"role": "user", "content": "Hi"}]}\'',
+            config: '# config.yaml — AI service configuration\nai:\n  provider: anthropic\n  model: "claude-4-opus-20250615"\n  api_key: ${ANTHROPIC_API_KEY}\n  max_tokens: 4096\n  temperature: 0.7\n\n# .env file\nANTHROPIC_API_KEY=sk-ant-...\nCLAUDE_MODEL=claude-4-opus\nCLAUDE_SONNET_MODEL=claude-sonnet-4-20250514\n\n# docker-compose.yml\nenvironment:\n  - AI_MODEL=claude-4-opus\n  - AI_FALLBACK=claude-sonnet-4'
+        };
+
+        // Make functions global
+        window.loadSample = function(type) {
+            document.getElementById('code-input').value = SAMPLE_CODES[type] || '';
+            document.getElementById('code-input').focus();
+        };
+
+        window.clearInput = function() {
+            document.getElementById('code-input').value = '';
+            document.getElementById('results-container').classList.remove('visible');
+        };
+
+        window.loadFromFile = function() {
+            document.getElementById('file-input').click();
+        };
+
+        window.handleFileLoad = function(e) {
+            var file = e.target.files[0];
+            if (!file) return;
+            var reader = new FileReader();
+            reader.onload = function(ev) {
+                document.getElementById('code-input').value = ev.target.result;
+            };
+            reader.readAsText(file);
+            e.target.value = '';
+        };
+
+        window.scanCode = function() {
+            var code = document.getElementById('code-input').value;
+            if (!code.trim()) {
+                alert('Please paste some code first.');
+                return;
+            }
+
+            var btn = document.getElementById('scan-btn');
+            btn.disabled = true;
+            btn.textContent = '🔍 Scanning...';
+
+            // Small delay for UX
+            setTimeout(function() {
+                var results = analyzeCode(code);
+                renderResults(results);
+                btn.disabled = false;
+                btn.textContent = '🔍 Scan Again — Free';
+
+                // Track scan event
+                if (window.trackEvent) window.trackEvent('migration_scan_completed', {
+                    findings: results.findings.length,
+                    frameworks: results.frameworks.map(function(f) { return f.name; }).join(', '),
+                    critical: results.critical,
+                    warnings: results.warnings
+                });
+            }, 300);
+        };
+
+        function analyzeCode(code) {
+            var findings = [];
+            var frameworks = [];
+            var seenPatterns = {};
+
+            // Detect deprecated patterns
+            DEPRECATED_PATTERNS.forEach(function(pattern) {
+                var match;
+                var regex = new RegExp(pattern.regex.source, pattern.regex.flags);
+                while ((match = regex.exec(code)) !== null) {
+                    var key = pattern.name + ':' + match[0];
+                    if (seenPatterns[key]) continue;
+                    seenPatterns[key] = true;
+
+                    // Find line number
+                    var lineNum = 1;
+                    for (var i = 0; i < match.index; i++) {
+                        if (code[i] === '\n') lineNum++;
+                    }
+
+                    // Get context (the line)
+                    var lineStart = code.lastIndexOf('\n', match.index) + 1;
+                    var lineEnd = code.indexOf('\n', match.index);
+                    if (lineEnd === -1) lineEnd = code.length;
+                    var line = code.substring(lineStart, lineEnd).trim();
+
+                    findings.push({
+                        name: pattern.name,
+                        severity: pattern.severity,
+                        match: match[0],
+                        line: lineNum,
+                        context: line,
+                        replacement: pattern.replacement,
+                        provider: pattern.provider,
+                        savings: pattern.savings,
+                        note: pattern.note
+                    });
+                }
+            });
+
+            // Detect frameworks
+            FRAMEWORK_PATTERNS.forEach(function(fp) {
+                if (fp.regex.test(code)) {
+                    frameworks.push({ name: fp.name, lang: fp.lang });
+                }
+            });
+
+            return {
+                findings: findings,
+                frameworks: frameworks,
+                critical: findings.filter(function(f) { return f.severity === 'critical'; }).length,
+                warnings: findings.filter(function(f) { return f.severity === 'warning'; }).length,
+                infos: findings.filter(function(f) { return f.severity === 'info'; }).length,
+                codeLength: code.split('\n').length
+            };
+        }
+
+        function renderResults(results) {
+            var container = document.getElementById('results-container');
+            var summaryEl = document.getElementById('result-summary');
+            var findingsEl = document.getElementById('findings-list');
+            var proEl = document.getElementById('pro-upsell-container');
+
+            container.classList.add('visible');
+
+            // Summary cards
+            summaryEl.innerHTML =
+                '<div class="summary-card ' + (results.critical > 0 ? 'danger' : 'success') + '">' +
+                    '<div class="count">' + results.critical + '</div>' +
+                    '<div class="label">Critical Issues</div>' +
+                '</div>' +
+                '<div class="summary-card ' + (results.warnings > 0 ? 'warning' : 'success') + '">' +
+                    '<div class="count">' + results.warnings + '</div>' +
+                    '<div class="label">Warnings</div>' +
+                '</div>' +
+                '<div class="summary-card">' +
+                    '<div class="count">' + results.frameworks.length + '</div>' +
+                    '<div class="label">SDK' + (results.frameworks.length !== 1 ? 's' : '') + ' Detected</div>' +
+                '</div>';
+
+            // Findings
+            if (results.findings.length === 0) {
+                findingsEl.innerHTML =
+                    '<div class="no-issues">' +
+                        '<div class="icon">✅</div>' +
+                        '<h3>No deprecated Claude 4 code found!</h3>' +
+                        '<p>Your code looks clean. No references to retired Claude 4 models detected.</p>' +
+                    '</div>';
+                proEl.innerHTML = '';
+                return;
+            }
+
+            var html = '<h3 style="font-size:16px;margin-bottom:12px;">Findings (' + results.findings.length + ' issues)</h3>';
+
+            results.findings.forEach(function(f) {
+                var icon = f.severity === 'critical' ? '🔴' : f.severity === 'warning' ? '⚠️' : 'ℹ️';
+                var fixHtml = '';
+
+                if (f.replacement) {
+                    // Show free fix for critical items
+                    fixHtml = '<div class="finding-code">' +
+                        '<span class="old">' + escapeHtml(f.match) + '</span> → ' +
+                        '<span class="new">' + escapeHtml(f.replacement) + '</span>' +
+                        (f.savings ? ' <span style="color:var(--green);font-size:11px;">(' + f.savings + ' cheaper)</span>' : '') +
+                    '</div>';
+                } else if (f.severity === 'critical') {
+                    // Pro-gated for complex fixes
+                    fixHtml = '<div class="finding-code">' +
+                        '<span class="locked">🔒 Pro shows exact replacement code for your framework</span>' +
+                    '</div>';
+                }
+
+                html += '<div class="finding-item ' + f.severity + '">' +
+                    '<span class="finding-icon">' + icon + '</span>' +
+                    '<div class="finding-content">' +
+                        '<div class="finding-title">' + escapeHtml(f.name) + ' <span style="color:var(--text-muted);font-size:12px;">(line ' + f.line + ')</span></div>' +
+                        '<div class="finding-detail">' +
+                            '<code style="background:var(--bg-card);padding:2px 6px;border-radius:4px;font-size:12px;">' + escapeHtml(f.context.substring(0, 80)) + (f.context.length > 80 ? '...' : '') + '</code>' +
+                        '</div>' +
+                        fixHtml +
+                        (f.note ? '<div style="font-size:12px;color:var(--text-muted);margin-top:6px;">💡 ' + escapeHtml(f.note) + '</div>' : '') +
+                    '</div>' +
+                '</div>';
+            });
+
+            findingsEl.innerHTML = html;
+
+            // Pro upsell — show if there are critical issues
+            if (results.critical > 0) {
+                var frameworkName = results.frameworks.length > 0 ? results.frameworks[0].name : 'your framework';
+                var migrationCode = MIGRATION_CODE[frameworkName];
+
+                var proHtml = '<div class="pro-upsell-result">' +
+                    '<h3>🚀 Get the Complete Migration Fix — $29</h3>' +
+                    '<p>The scan found <strong>' + results.critical + ' critical issue' + (results.critical > 1 ? 's' : '') + '</strong>. ' +
+                    'Pro gives you exact replacement code for <strong>' + escapeHtml(frameworkName) + '</strong>, ' +
+                    'side-by-side before/after, and a migration checklist you can share with your team.</p>';
+
+                proHtml += '<div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:16px 0;text-align:left;">' +
+                    '<div style="background:var(--bg-secondary);border:1px solid var(--border);border-radius:8px;padding:14px;">' +
+                        '<div style="font-size:12px;color:var(--text-muted);font-weight:700;margin-bottom:8px;">What Pro gives you:</div>' +
+                        '<ul style="list-style:none;padding:0;margin:0;font-size:13px;">' +
+                            '<li style="padding:4px 0;">✅ Exact fix code for <strong>' + escapeHtml(frameworkName) + '</strong></li>' +
+                            '<li style="padding:4px 0;">✅ Before/after diff for each finding</li>' +
+                            '<li style="padding:4px 0;">✅ 10 saved migration scenarios</li>' +
+                            '<li style="padding:4px 0;">✅ PDF report for your team</li>' +
+                            '<li style="padding:4px 0;">✅ Priority migration support</li>' +
+                        '</ul>' +
+                    '</div>' +
+                    '<div style="background:var(--bg-secondary);border:1px solid var(--border);border-radius:8px;padding:14px;">' +
+                        '<div style="font-size:12px;color:var(--text-muted);font-weight:700;margin-bottom:8px;">Your scan results:</div>' +
+                        '<ul style="list-style:none;padding:0;margin:0;font-size:13px;">' +
+                            '<li style="padding:4px 0;color:#ef4444;">🔴 ' + results.critical + ' critical issue' + (results.critical > 1 ? 's' : '') + '</li>' +
+                            '<li style="padding:4px 0;color:#f59e0b;">⚠️ ' + results.warnings + ' warning' + (results.warnings > 1 ? 's' : '') + '</li>' +
+                            '<li style="padding:4px 0;">📦 ' + results.frameworks.length + ' SDK' + (results.frameworks.length !== 1 ? 's' : '') + ' detected</li>' +
+                            '<li style="padding:4px 0;">📄 ' + results.codeLength + ' lines scanned</li>' +
+                        '</ul>' +
+                    '</div>' +
+                '</div>';
+
+                proHtml += '<a href="#" id="scanner-pro-cta" style="display:inline-block;background:var(--accent);color:white;padding:14px 32px;border-radius:10px;font-size:16px;font-weight:700;text-decoration:none;transition:all 0.2s;box-shadow:0 4px 20px rgba(99,102,241,0.3);">Get Your Migration Fix — $29</a>' +
+                    '<p style="font-size:12px;color:var(--text-muted);margin-top:10px;">14-day money-back guarantee · Instant access</p>' +
+                '</div>';
+
+                proEl.innerHTML = proHtml;
+
+                // Set CTA link
+                var cta = document.getElementById('scanner-pro-cta');
+                if (cta) {
+                    cta.href = window._abStripeLink || 'https://buy.stripe.com/fZu7sL3Gw3GS0RQeoDeEo0a';
+                    cta.addEventListener('click', function() {
+                        if (window.trackEvent) window.trackEvent('pro_button_clicked', {
+                            source: 'migration_scanner',
+                            findings: results.findings.length,
+                            critical: results.critical,
+                            framework: frameworkName
+                        });
+                    });
+                }
+            } else {
+                proEl.innerHTML = '';
+            }
+
+            // Scroll to results
+            container.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+
+        function escapeHtml(str) {
+            var div = document.createElement('div');
+            div.textContent = str;
+            return div.innerHTML;
+        }
+
+        // Track page view
+        document.addEventListener('DOMContentLoaded', function() {
+            if (window.trackEvent) window.trackEvent('migration_scanner_page_view');
+        });
+    })();
+    </script>
+</body>
+</html>
