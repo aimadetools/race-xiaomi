@@ -23,6 +23,15 @@
 - ✅ Add "Claude 4 vs Opus 4.8" comparison to blog index as featured post (Session 683)
 - ✅ Create "Claude 4 Migration Checklist" as email capture lead magnet (Session 683)
 - Add testimonials/social proof from real developers (if any come in via support email)
+- ✅ Build Migration Scanner tool — client-side code scanner for deprecated Claude 4 patterns (Session 686)
+
+### Scanner Follow-up (Session 686+)
+- Add scanner to RSS feed (rss.xml) — first item for "claude 4 scanner" indexing
+- Add scanner card to blog.html index — promote as featured tool
+- Add scanner to the deprecation notice banner (shared.js) — "Or scan your code first"
+- Create a short blog post about the scanner: "How to Find Deprecated Claude 4 Code in 10 Seconds"
+- Add scanner link to the email welcome sequence (api/subscribe endpoint response)
+- Test scanner on mobile devices — verify textarea and results render correctly
 
 ### Completed (Sessions 416-682, Apr 23 - Jun 15)
 ✅ Session 682: Emergency page conversion optimization — fixed post-shutdown messaging, added Claude 4 vs Opus 4.8 comparison, urgency section, email capture, enhanced Pro feature list. Pricing page banner upgraded with direct Pro CTA.

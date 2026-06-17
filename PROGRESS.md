@@ -1,5 +1,13 @@
 # PROGRESS.md
 
+## Session 686 (Jun 17) — Migration Scanner tool + conversion funnel fix
+- **Built Migration Scanner tool** (claude-4-migration-scanner.html) — Interactive tool where developers paste code to find deprecated Claude 4 model references. Client-side scanning (privacy-first), detects 8 deprecated patterns, identifies frameworks (Python SDK, Node.js, LangChain, LlamaIndex, cURL, CrewAI, Vercel AI SDK), shows exact line numbers and context. Free scan shows WHAT needs to change; Pro upsell teases exact framework-specific fix code.
+- **Key conversion insight**: Emergency page gave away complete migration solution for free (exact code, model IDs, step-by-step). Scanner creates natural conversion point: free scan → Pro fix code.
+- **Cross-linked scanner from 3 places on emergency page**: Step 1 CTA ("Don't want to search manually?"), related resources grid, sticky bottom bar ("Scan My Code" button alongside "Get Migration Plan").
+- **Added to migration hub**: New tool card with red accent styling.
+- **Added to sitemap**: priority 0.9.
+- **1 commit, 4 files changed, 822 insertions**
+
 ## Session 685 (Jun 17) — Conversion messaging overhaul: "migration plan" positioning
 - **Reframed all emergency page CTAs** from generic "Get Pro" to specific "Get Your Migration Plan — $29" — positions the purchase as getting a personalized action plan, not buying a product.
 - **Updated Pro features list** to emphasize migration-specific benefits: personalized migration plan, exact cost calculation, PDF cost report, model recommendations, priority migration support.
