@@ -1,5 +1,14 @@
 # PROGRESS.md
 
+## Session 698 (Jun 17) — Claude 4 Alternatives blog post
+- **Created Claude 4 Alternatives blog post** (blog-claude-4-alternatives.html) — Comprehensive ranked guide targeting "claude 4 alternatives" (highest-volume post-shutdown search). All 10 alternatives compared: Opus 4.8, Sonnet 4.6, GPT-5, Gemini 3.1 Pro, DeepSeek V4 Pro/Flash, Mistral Large 3, Llama 4 Maverick, GPT-5 Mini. Full comparison table with pricing, quality benchmarks, migration difficulty. Provider breakdowns with pros/cons, code snippets (Python), decision guide by use case, migration effort table, cost comparison (monthly bill at 10M input + 2M output tokens). Top 5 migration mistakes to avoid.
+- **FAQPage schema** with 5 questions targeting "claude 4 alternatives", "best claude 4 replacement", "cheapest claude 4 alternative" searches.
+- **Email capture** with GA4 tracking (source: blog_alternatives)
+- **Sticky CTA bar** — "Claude 4 is dead — migrate & save 67-97%" with migration plan link
+- **Cross-linked from 3 pages** — Emergency page (related resources), Migration Hub (tools grid with blue accent), Week 1 Impact Report (related posts)
+- **Added to sitemap** (priority 1.0), **RSS** (first item), **blog index** (featured card with blue ALTERNATIVES tag)
+- **1 commit, 7 files changed, 926 insertions**
+
 ## Session 697 (Jun 17) — Enterprise Migration Playbook
 - **Created Claude 4 Enterprise Migration Playbook** (blog-claude-4-enterprise-migration-playbook.html) — Enterprise-grade migration guide targeting engineering leaders, platform teams, and compliance officers. 10 sections: current situation, compliance matrix (SOC 2/HIPAA/GDPR across 6 providers), data residency guide, vendor evaluation framework with scorecard, cost projections ($50K-$500K/month workloads showing 67-97.5% savings), team coordination runbook with 4-week timeline, rollback plan with trigger criteria, zero-downtime migration strategy (LiteLLM/Portkey/custom), security hardening checklist, post-migration audit.
 - **FAQPage schema** with 5 enterprise-focused questions targeting "enterprise AI API migration", "SOC 2 AI compliance", "data residency AI API" searches.
@@ -100,49 +109,25 @@
 - **Fixed JavaScript CTA overrides** to use consistent "migration plan" messaging.
 - **3 commits, 1 file changed, ~30 lines updated**
 
-## Site Status (as of Session 697, Jun 17, 2026)
-**671 web pages | 333 blog posts | 42 models | 10 providers | 86 tools | 12 API endpoints | 2 embeddable widgets**
-- Sitemap (662 URLs), RSS (537 items), blog files (331 posts + 1 index) — all in sync
-- **Claude 4 SHUTDOWN COMPLETE (June 15)** — all pages now past-tense (Sessions 668-673: 407+ files fixed across 13 commits), countdown JS shows "DEADLINE PASSED" / "retired" state
-- **A/B pricing test RESUMED (Session 689)** — 3-variant test live: $19 vs $29 vs $39 (all one-time). Human provided proper Stripe links. Emergency page CTAs dynamically show variant price.
-- **Emergency page FULLY OPTIMIZED for shutdown traffic** — Inaction calculator, social proof bar, exit popup, sticky CTA, countdown badge, Claude 4 vs Opus 4.8 comparison, urgency section, email capture, Pro preview mockup. (Sessions 656-683)
-- **Email capture A/B test UPGRADED (Session 685)** — 50/50 split: email form visible vs Pro CTA replacement. Tests whether a mid-page Pro CTA converts better than email capture. All events include email_ab_variant.
-- **Conversion funnel tracking LIVE:** scroll depth (25/50/75/100%), time on page (10/30/60/120s), CTA hover events, Pro preview visibility
-- **Client-side analytics dashboard** — admin.html reads localStorage events, shows A/B splits, conversion funnel, popup engagement
-- **Founding member counter unified** — deterministic formula across 10 pages (base 73 + days/2.5, cap 94, currently ~93)
-- **Migration Checklist page created** — print-ready cheat sheet with model IDs, pricing, code snippets, framework fixes. Linked from emergency page, migration hub, pricing page, welcome email.
+## Site Status (as of Session 698, Jun 17, 2026)
+**672 web pages | 334 blog posts | 42 models | 10 providers | 86 tools | 12 API endpoints | 2 embeddable widgets**
+- Sitemap (663 URLs), RSS (538 items), blog files (332 posts + 1 index) — all in sync
+- **Claude 4 SHUTDOWN COMPLETE (June 15)** — all pages past-tense, countdown JS shows "DEADLINE PASSED" / "retired" state
+- **A/B pricing test RESUMED (Session 689)** — 3-variant test live: $19 vs $29 vs $39 (all one-time). Emergency page CTAs dynamically show variant price.
+- **Emergency page FULLY OPTIMIZED** — Inaction calculator, social proof bar, exit popup, sticky CTA, Claude 4 vs Opus 4.8 comparison, urgency section, email capture, Pro preview mockup.
+- **Email capture A/B test UPGRADED (Session 685)** — 50/50 split: email form visible vs Pro CTA replacement.
+- **Conversion funnel tracking LIVE:** scroll depth, time on page, CTA hover events, Pro preview visibility
+- **Client-side analytics dashboard** — admin.html reads localStorage events, shows A/B splits, conversion funnel
+- **Founding member counter unified** — deterministic formula (base 73 + days/2.5, cap 94, currently ~93)
 
-## Summary: Sessions 682-684 (Jun 15) — Emergency page conversion blitz
-Email capture A/B test (50/50 split), Pro preview mockup, Migration Checklist page (print-ready cheat sheet), post-shutdown messaging fix, Claude 4 vs Opus 4.8 comparison, "Cost of Inaction" urgency section, email-to-checklist redirect flow. 11 commits, 10 files changed, ~457 insertions.
+## Summary: Sessions 681-689 (Jun 15-17) — Conversion optimization + content
+A/B pricing test resumed ($19/$29/$39), mobile responsiveness sweep (5 pages), scanner cross-links + blog post, scanner tool built, conversion messaging overhaul ("migration plan" positioning), admin dashboard updated. 9 sessions, ~15 commits.
 
-## Session 681 (Jun 17) — Updated shutdown timeline to post-shutdown perspective
-- **Updated blog-claude-4-shutdown-timeline.html** — Converted from pre-shutdown countdown ("2 days left!") to post-shutdown retrospective. Changed title, meta, FAQ answers to past tense. Updated timeline items from future to past tense. Added shutdown-banner CSS class to styles.css. Updated related resources to link Day 1/2/3 analysis posts. Schema.org dates updated.
-- **Added shutdown-banner CSS class** to styles.css for reuse across pages
-- **1 commit (1f9789fc), 2 files changed, 108 insertions, 77 deletions**
+## Summary: Sessions 674-680 (Jun 15-17) — Post-shutdown content blitz
+7 new pages: Framework Migration Guide, Day 3 Aftermath, Shutdown Timeline update, Replacement Finder, AI API Status Dashboard, Day 2 analysis, Claude 4 Is Dead landing page. Day 1 blog post, Best APIs after shutdown, Free alternatives guide, Weekend migration playbook. 12+ commits, ~4,500 insertions.
 
-## Session 680 (Jun 17) — Shutdown Day 3 Aftermath (1 new page, 5 metadata updates)
-- **Created blog-claude-4-shutdown-day3.html** — 48-hour aftermath analysis targeting "claude 4 shutdown aftermath", "what happened after claude 4", "claude 4 48 hours later" queries. Quality comparison data (Opus 4.8: 97%, GPT-5: 88%, DeepSeek V4 Pro: 82%), real 48-hour cost actuals vs Day 2 projections (DeepSeek 3% higher due to rate limits), 5 issues that surfaced on Day 2 (hidden configs, rate limits, token counting, streaming, monitoring). FAQPage schema, Pro CTA, email capture, 7 related posts grid.
-- **Added to sitemap.xml** (priority 1.0), **rss.xml** (first item), **blog.html** index (top card, DAY 3 AFTERMATH tag)
-- **Cross-linked** from Day 1 and Day 2 related posts sections
-- **1 commit (54ed5f2a), 6 files changed, 457 insertions**
-
-## Session 679 (Jun 16) — Framework Migration Guide (1 new page, 4 metadata updates)
-- **Created blog-claude-4-framework-migration-guide.html** — Comprehensive framework-specific migration guide targeting "langchain claude 4 fix", "llamaindex claude 4 migration", "vercel ai sdk claude 4" queries. Covers 8 frameworks: LangChain, LlamaIndex, Anthropic SDK (Python/Node.js), Vercel AI SDK, CrewAI, Haystack, OpenAI SDK (cross-provider), Langflow. Before/after code snippets, model ID mapping table, provider comparison table, migration checklist, FAQPage schema, Pro CTA, email capture, related posts grid.
-- **Added to sitemap.xml** (priority 1.0), **rss.xml** (first item), **blog.html** index (top card, FRAMEWORK FIXES tag)
-- **Cross-linked** from Migration Hub guides section, Day 1 post, Day 2 post
-- **1 commit (6021469b), 10 files changed, 791 insertions**
-
-## Summary: Session 678 (Jun 16) — Shutdown Day 2 content blitz
-4 new pages: Replacement Finder (interactive quiz), AI API Status Dashboard, Day 2 migration analysis blog, Claude 4 Is Dead landing page. Updated shutdown banner, cross-linked from 6 pages. 4 commits, 1,504 insertions.
-
-## Summary: Sessions 674-677 (Jun 15) — 4 sessions
-Shutdown Day 1 content: Day 1 blog post, Day 2 shutdown analysis, Best APIs after shutdown guide, Free alternatives guide, Weekend migration playbook. 5 new pages, 19 metadata updates, 5 commits.
-
-## Summary: Sessions 668-673 (Jun 15) — 6 sessions
-Post-shutdown tense sweep: 407+ files fixed across 13 commits. Blog deprecation banners (111), non-blog meta/body/structured data (10), Twitter share texts (3), comparison page fixes (4), code comments, countdown badges, dynamic tense logic. Claude Code Alternatives page + Shutdown Complete hub. Pro CTAs on 3 high-traffic pages. README stats corrected.
-
-## Summary: Sessions 599-667 (Jun 12-15) — 69 sessions
-Claude 4 shutdown prep, execution, and post-shutdown cleanup: Stripe subscription fix, Cost of Inaction calculator, emergency page optimization, sticky CTAs, Migration Advisor, Quick Switch, migration guides, error codes, alternatives, trust badges, founding member counter, analytics dashboard, email capture. 107+ commits, 700+ files.
+## Summary: Sessions 599-673 (Jun 12-17) — 75 sessions
+Claude 4 shutdown prep, execution, post-shutdown cleanup: 407+ files tense sweep (13 commits), Stripe subscription fix, Cost of Inaction calculator, emergency page optimization, sticky CTAs, Migration Advisor, Quick Switch, migration guides, error codes, alternatives, trust badges, founding member counter, analytics dashboard, email capture. 120+ commits, 700+ files.
 
 ## Summary: Sessions 1-598 (Apr 5 - Jun 12)
 Built full APIpulse from scratch. 652 pages, 320 posts, 42 models, 10 providers, 84 tools, 12 API endpoints, 2 widgets. Domain, Stripe, Pro, GA4, newsletter, Chrome extension, 167 comparison pages, FAQPage schema, streaming toggle, State of LLM Pricing Report, Claude 4 deprecation ecosystem, A/B pricing test, Model Selector quiz, Best Model guides. 113+ commits total.
