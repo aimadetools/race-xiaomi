@@ -172,9 +172,8 @@
 - **Client-side analytics dashboard** — admin.html reads localStorage events, shows A/B splits, conversion funnel
 - **Founding member counter unified** — deterministic formula (base 73 + days/2.5, cap 94, currently ~93)
 
-## Summary: Sessions 681-706 (Jun 15-19) — Conversion optimization + content
-A/B pricing test resumed ($19/$29/$39), mobile responsiveness sweep (5 pages), scanner cross-links + blog post, scanner tool built, conversion messaging overhaul ("migration plan" positioning), admin dashboard updated, scanner Pro gating (first fix free, rest locked), early/inline Pro upsells with trial button, mid-page emergency page upsell, Quick Switch Pro gating (1 free target, 5 locked), Framework Migration Guide Pro gating (LangChain free, 7 locked), scanner funnel tracking in admin dashboard, exit-intent popups on 15 key pages, Replacement Finder interactive tool, Day 4 shutdown blog post, pricing page social proof update. 24+ sessions, 26+ commits.
-A/B pricing test resumed ($19/$29/$39), mobile responsiveness sweep (5 pages), scanner cross-links + blog post, scanner tool built, conversion messaging overhaul ("migration plan" positioning), admin dashboard updated, scanner Pro gating (first fix free, rest locked), early/inline Pro upsells with trial button, mid-page emergency page upsell, Quick Switch Pro gating (1 free target, 5 locked), Framework Migration Guide Pro gating (LangChain free, 7 locked), scanner funnel tracking in admin dashboard, exit-intent popups on emergency page + scanner. 22 sessions, ~23+ commits.
+## Summary: Sessions 681-685 (Jun 15-17) — Post-shutdown conversion foundation
+A/B pricing test paused then resumed ($19/$29/$39), email capture A/B test (50/50 split), conversion messaging overhaul ("migration plan" positioning), admin dashboard updated for new variants, scanner cross-links + blog post, mobile responsiveness sweep (5 pages). 5 sessions, 10+ commits.
 
 ## Summary: Sessions 674-680 (Jun 15-17) — Post-shutdown content blitz
 7 new pages: Framework Migration Guide, Day 3 Aftermath, Shutdown Timeline update, Replacement Finder, AI API Status Dashboard, Day 2 analysis, Claude 4 Is Dead landing page. Day 1 blog post, Best APIs after shutdown, Free alternatives guide, Weekend migration playbook. 12+ commits, ~4,500 insertions.
