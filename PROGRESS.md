@@ -1,5 +1,13 @@
 # PROGRESS.md
 
+## Session 697 (Jun 17) — Enterprise Migration Playbook
+- **Created Claude 4 Enterprise Migration Playbook** (blog-claude-4-enterprise-migration-playbook.html) — Enterprise-grade migration guide targeting engineering leaders, platform teams, and compliance officers. 10 sections: current situation, compliance matrix (SOC 2/HIPAA/GDPR across 6 providers), data residency guide, vendor evaluation framework with scorecard, cost projections ($50K-$500K/month workloads showing 67-97.5% savings), team coordination runbook with 4-week timeline, rollback plan with trigger criteria, zero-downtime migration strategy (LiteLLM/Portkey/custom), security hardening checklist, post-migration audit.
+- **FAQPage schema** with 5 enterprise-focused questions targeting "enterprise AI API migration", "SOC 2 AI compliance", "data residency AI API" searches.
+- **Email capture** with GA4 tracking (source: enterprise_migration)
+- **Cross-linked from 3 pages** — Migration Hub (enterprise guide card with red accent), Emergency page (related resources), Blog index (featured card with ENTERPRISE tag)
+- **Added to sitemap** (priority 1.0), **RSS** (first item)
+- **1 commit, 6 files changed, 897 insertions**
+
 ## Session 696 (Jun 17) — Post-Migration Cost Optimization blog post
 - **Created Post-Migration Cost Optimization guide** (blog-post-migration-cost-optimization.html) — Targets developers who already migrated from Claude 4 but haven't optimized costs. 7 mistakes: using one model for everything, sending full history, ignoring prompt length, not caching, over-generating output, ignoring rate limits, not monitoring usage. Each with problem explanation, fix, and savings estimate. Combined realistic savings: 30-50% on top of migration savings. Quick-start action plan (today/this week/next week).
 - **FAQPage schema** with 5 questions targeting "optimize ai api costs after migration", "reduce deepseek costs", "gpt-5 cost optimization" searches.
@@ -92,9 +100,9 @@
 - **Fixed JavaScript CTA overrides** to use consistent "migration plan" messaging.
 - **3 commits, 1 file changed, ~30 lines updated**
 
-## Site Status (as of Session 696, Jun 17, 2026)
-**670 web pages | 332 blog posts | 42 models | 10 providers | 86 tools | 12 API endpoints | 2 embeddable widgets**
-- Sitemap (661 URLs), RSS (536 items), blog files (330 posts + 1 index) — all in sync
+## Site Status (as of Session 697, Jun 17, 2026)
+**671 web pages | 333 blog posts | 42 models | 10 providers | 86 tools | 12 API endpoints | 2 embeddable widgets**
+- Sitemap (662 URLs), RSS (537 items), blog files (331 posts + 1 index) — all in sync
 - **Claude 4 SHUTDOWN COMPLETE (June 15)** — all pages now past-tense (Sessions 668-673: 407+ files fixed across 13 commits), countdown JS shows "DEADLINE PASSED" / "retired" state
 - **A/B pricing test RESUMED (Session 689)** — 3-variant test live: $19 vs $29 vs $39 (all one-time). Human provided proper Stripe links. Emergency page CTAs dynamically show variant price.
 - **Emergency page FULLY OPTIMIZED for shutdown traffic** — Inaction calculator, social proof bar, exit popup, sticky CTA, countdown badge, Claude 4 vs Opus 4.8 comparison, urgency section, email capture, Pro preview mockup. (Sessions 656-683)
@@ -104,30 +112,8 @@
 - **Founding member counter unified** — deterministic formula across 10 pages (base 73 + days/2.5, cap 94, currently ~93)
 - **Migration Checklist page created** — print-ready cheat sheet with model IDs, pricing, code snippets, framework fixes. Linked from emergency page, migration hub, pricing page, welcome email.
 
-## Session 684 (Jun 15) — Email capture A/B test on emergency page
-- **Implemented A/B test for email capture form** — 50/50 split: variant A shows email form, variant B hides it. Tests whether email form helps or hurts Pro conversions.
-- **Variant assignment in localStorage** — consistent experience per visitor, survives page reloads
-- **All tracking events include email_ab_variant** — page views, Pro CTA clicks, email signups, calculator usage
-- **Admin dashboard updated** — new "Email Capture A/B Test" section shows visitor counts, Pro clicks, conversion rates per variant, and verdict logic (recommends action after 20+ visitors per variant)
-- **1 commit, 2 files changed, ~107 insertions**
-
-## Session 683 (Jun 15) — Conversion optimization: Pro preview, checklist, email flow
-- **Added Pro preview mockup to emergency page** — CSS-styled visual showing calculator, saved scenarios, cost report export. Makes $29 feel tangible. GA4 tracking (pro_preview_seen event).
-- **Featured Claude 4 vs Opus 4.8 comparison on blog index** — Promoted to top of blog.html with orange accent styling. Removed duplicate buried card.
-- **Created Claude 4 Migration Checklist page** — claude-4-migration-checklist.html. Print-ready cheat sheet with model IDs, pricing, code snippets, framework fixes, post-migration checklist, provider decision guide. Print-friendly CSS.
-- **Updated welcome email** — Added direct link to checklist as promised lead magnet. "Your Migration Checklist" section with CTA button.
-- **Email capture now redirects to checklist** — After successful subscription, user sees "Success! Opening your checklist..." and gets redirected after 800ms.
-- **Added checklist to migration hub** — New tool card with orange accent styling in the tools grid.
-- **Added checklist to pricing page** — Shutdown banner's "Free migration guide" button replaced with "Print checklist" linking to the new page.
-- **7 commits, 6 files changed, ~250 insertions**
-
-## Session 682 (Jun 15) — Emergency page conversion optimization for shutdown day
-- **Fixed post-shutdown messaging on claude-4-is-down.html** — Badge: "FINAL DAY — Retires Tomorrow" → "Claude 4 Retired — API Returning 410 Errors". Hero: "Claude 4 Is Dead — Fix Your 410 Errors in 5 Minutes". Sticky CTA: "Claude 4 is dead". Time pressure: "Every hour costs you money".
-- **Added Claude 4 vs Opus 4.8 comparison section** — Side-by-side pricing ($15/$75 vs $5/$25), feature comparison (retired vs live), alternatives grid (GPT-5, Gemini 2.5 Pro, DeepSeek V4 Pro). Links to Migration Advisor.
-- **Added "What Happens If You Don't Act" urgency section** — 3-column grid (wasted spend, debugging hours, missed savings), inline Pro CTA with Stripe link.
-- **Added email capture form** — "Get the Claude 4 Migration Cheat Sheet (Free)". Submits to /api/subscribe with GA4 tracking. Captures leads from visitors not ready to buy.
-- **Upgraded pricing page post-shutdown banner** — Direct Pro CTA alongside emergency page link. Shows price from A/B variant. Two buttons: "Get Pro — $29 lifetime" + "Free migration guide".
-- **3 commits, 2 files changed, ~150 insertions**
+## Summary: Sessions 682-684 (Jun 15) — Emergency page conversion blitz
+Email capture A/B test (50/50 split), Pro preview mockup, Migration Checklist page (print-ready cheat sheet), post-shutdown messaging fix, Claude 4 vs Opus 4.8 comparison, "Cost of Inaction" urgency section, email-to-checklist redirect flow. 11 commits, 10 files changed, ~457 insertions.
 
 ## Session 681 (Jun 17) — Updated shutdown timeline to post-shutdown perspective
 - **Updated blog-claude-4-shutdown-timeline.html** — Converted from pre-shutdown countdown ("2 days left!") to post-shutdown retrospective. Changed title, meta, FAQ answers to past tense. Updated timeline items from future to past tense. Added shutdown-banner CSS class to styles.css. Updated related resources to link Day 1/2/3 analysis posts. Schema.org dates updated.
