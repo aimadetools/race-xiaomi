@@ -1728,5 +1728,67 @@ claude-sonnet-4-6</code>
         });
     }
     </script>
+
+    <!-- Exit-intent popup — captures leaving visitors -->
+    <div id="exit-popup" style="display:none;position:fixed;inset:0;z-index:10000;background:rgba(0,0,0,0.7);backdrop-filter:blur(4px);">
+        <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);background:var(--bg-card);border:1px solid var(--border);border-radius:16px;padding:40px;max-width:480px;width:calc(100% - 48px);text-align:center;box-shadow:0 24px 64px rgba(0,0,0,0.5);">
+            <button onclick="closeExitPopup()" style="position:absolute;top:12px;right:16px;background:none;border:none;color:var(--text-muted);font-size:24px;cursor:pointer;padding:4px 8px;">✕</button>
+            <div style="font-size:48px;margin-bottom:12px;">⏳</div>
+            <h2 style="font-size:24px;font-weight:800;margin-bottom:8px;">Wait — your Claude 4 code is still broken</h2>
+            <p style="color:var(--text-secondary);font-size:15px;margin-bottom:20px;line-height:1.5;">Every day you wait costs you <strong id="exit-popup-daily">$16+</strong> in wasted spend. Get your personalized migration plan now — it takes 2 minutes, not 2 hours.</p>
+            <div style="display:flex;align-items:center;justify-content:center;gap:12px;margin-bottom:20px;flex-wrap:wrap;">
+                <div style="font-size:13px;color:var(--text-muted);">✓ 42 models compared</div>
+                <div style="font-size:13px;color:var(--text-muted);">✓ Instant access</div>
+                <div style="font-size:13px;color:var(--text-muted);">✓ One-time payment</div>
+            </div>
+            <a href="#" id="exit-popup-cta" style="display:inline-block;background:var(--accent);color:white;padding:14px 36px;border-radius:10px;font-size:16px;font-weight:700;text-decoration:none;transition:all 0.2s;box-shadow:0 4px 20px rgba(99,102,241,0.3);">Get Your Migration Plan — $29</a>
+            <p style="font-size:12px;color:var(--text-muted);margin-top:12px;">No subscription. Pay once, use forever.</p>
+        </div>
+    </div>
+    <script>
+    (function() {
+        if (sessionStorage.getItem('exit_popup_shown')) return;
+        var triggered = false;
+        function showExitPopup() {
+            if (triggered) return;
+            triggered = true;
+            sessionStorage.setItem('exit_popup_shown', '1');
+            var popup = document.getElementById('exit-popup');
+            popup.style.display = 'block';
+            // Update price with A/B variant
+            if (window._abPrice) {
+                document.getElementById('exit-popup-cta').textContent = 'Get Your Migration Plan — $' + window._abPrice;
+            }
+            if (window._abStripeLink) {
+                document.getElementById('exit-popup-cta').href = window._abStripeLink;
+            }
+            // Track impression
+            if (window.trackEvent) window.trackEvent('exit_popup_shown', { page: 'claude-4-is-down' });
+        }
+        // Exit intent: mouse leaves viewport from the top
+        document.addEventListener('mouseout', function(e) {
+            if (e.clientY <= 0) showExitPopup();
+        });
+        // CTA click tracking
+        document.getElementById('exit-popup-cta').addEventListener('click', function() {
+            if (window.trackEvent) window.trackEvent('pro_button_clicked', { source: 'exit_popup', page: 'claude-4-is-down' });
+        });
+        // Close on backdrop click
+        document.getElementById('exit-popup').addEventListener('click', function(e) {
+            if (e.target === this) closeExitPopup();
+        });
+    })();
+    function closeExitPopup() {
+        document.getElementById('exit-popup').style.display = 'none';
+        if (window.trackEvent) window.trackEvent('exit_popup_dismissed', { page: 'claude-4-is-down' });
+    }
+    // Update daily cost from inaction calculator if available
+    (function() {
+        var daily = document.getElementById('inaction-per-day');
+        if (daily && daily.textContent !== '$0') {
+            document.getElementById('exit-popup-daily').textContent = daily.textContent;
+        }
+    })();
+    </script>
 </body>
 </html>
