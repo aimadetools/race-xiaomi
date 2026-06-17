@@ -1244,38 +1244,41 @@ claude-sonnet-4-6</code>
             var whatHappensCta = document.getElementById('what-happens-cta');
             if (whatHappensCta) {
                 whatHappensCta.href = window._abStripeLink || 'https://buy.stripe.com/fZu7sL3Gw3GS0RQeoDeEo0a';
+                if (window._abPrice) whatHappensCta.textContent = 'Get Your Migration Plan — $' + window._abPrice;
                 whatHappensCta.addEventListener('click', function() {
                     if (window.trackEvent) window.trackEvent('pro_button_clicked', { source: 'what_happens_section', page: 'claude-4-is-down', email_ab_variant: window._emailAbVariant || 'unknown' });
                 });
             }
 
-            // Shutdown Special: Claude 4 shutdown traffic spike — $29 one-time
-            // TODO: Swap to $9 link when human provides it (see HELP-REQUEST Jun 13)
-            var SHUTDOWN_SPECIAL_URL = 'https://buy.stripe.com/fZu7sL3Gw3GS0RQeoDeEo0a';
+            // Shutdown Special: Use A/B test variant price and link
+            var abPrice = window._abPrice || 29;
+            var abStripeLink = window._abStripeLink || 'https://buy.stripe.com/fZu7sL3Gw3GS0RQeoDeEo0a';
+            var SHUTDOWN_SPECIAL_URL = abStripeLink;
             if (SHUTDOWN_SPECIAL_URL) {
                 document.getElementById('shutdown-special').style.display = 'block';
                 document.getElementById('regular-price').style.display = 'none';
                 cta.href = SHUTDOWN_SPECIAL_URL;
-                cta.textContent = 'Get Your Migration Plan — $29';
+                cta.textContent = 'Get Your Migration Plan — $' + abPrice;
                 // Update shutdown special price display
                 var specialPriceEl = document.querySelector('#shutdown-special .new-price, #shutdown-special div[style*="font-size:28px"]');
-                if (specialPriceEl) specialPriceEl.textContent = '$29';
+                if (specialPriceEl) specialPriceEl.textContent = '$' + abPrice;
             }
 
             // Founding member countdown — shows days until price increase
             var foundingEnd = new Date('2026-07-15T00:00:00Z'); // 30 days after shutdown
             var foundingEl = document.getElementById('founding-countdown');
+            var futureAbPrice = Math.round(abPrice * 1.7);
             function updateFoundingCountdown() {
                 if (!foundingEl) return;
                 var now = new Date();
                 var diff = foundingEnd - now;
                 if (diff <= 0) {
-                    foundingEl.textContent = 'ended — price is now $49';
+                    foundingEl.textContent = 'ended — price is now $' + futureAbPrice;
                     return;
                 }
                 var days = Math.ceil(diff / (1000 * 60 * 60 * 24));
                 if (days <= 3) {
-                    foundingEl.textContent = 'ends in ' + days + ' day' + (days === 1 ? '' : 's') + ' — lock in $29 now';
+                    foundingEl.textContent = 'ends in ' + days + ' day' + (days === 1 ? '' : 's') + ' — lock in $' + abPrice + ' now';
                     foundingEl.style.color = '#ef4444';
                 } else {
                     foundingEl.textContent = 'ends in ' + days + ' days';
@@ -1648,6 +1651,7 @@ claude-sonnet-4-6</code>
             var inactionCta = document.getElementById('inaction-cta');
             if (inactionCta) {
                 inactionCta.href = window._abStripeLink || 'https://buy.stripe.com/fZu7sL3Gw3GS0RQeoDeEo0a';
+                if (window._abPrice) inactionCta.textContent = 'Get Your Migration Plan — $' + window._abPrice;
                 inactionCta.addEventListener('click', function() {
                     if (window.trackEvent) window.trackEvent('pro_button_clicked', { source: 'inaction_calculator', page: 'claude-4-is-down', email_ab_variant: window._emailAbVariant || 'unknown' });
                 });

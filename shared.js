@@ -28,18 +28,15 @@ const savedTheme = localStorage.getItem('theme') || 'dark';
 document.documentElement.setAttribute('data-theme', savedTheme);
 updateThemeIcon();
 
-// A/B Pricing Test — TEMPORARILY standardized on $29 one-time
-// BUG FIX (Session 655): $19 and $39 Stripe links were SUBSCRIPTION links ("Monthly"/"Annual"),
-// but site promises "one-time payment." This killed 67% of conversions.
-// All variants now use the confirmed one-time $29 link until proper one-time $19/$39 links exist.
-// Variant tracking preserved for funnel analysis — we still know which price users SAW.
+// A/B Pricing Test — $19 vs $29 vs $39 (one-time payment links)
+// Session 689: Resumed with proper one-time Stripe links from human (HELP-RESPONSES Issue #17).
+// Variant A = $19 (Budget), Variant B = $29 (Control), Variant C = $39 (Premium)
 (function(){
-    var CONFIRMED_ONE_TIME_LINK = 'https://buy.stripe.com/fZu7sL3Gw3GS0RQeoDeEo0a';
-    var VARIANTS = {A:{price:29,label:'Budget',futurePrice:39},B:{price:29,label:'Control',futurePrice:49},C:{price:29,label:'Premium',futurePrice:59}};
+    var VARIANTS = {A:{price:19,label:'Budget',futurePrice:39},B:{price:29,label:'Control',futurePrice:49},C:{price:39,label:'Premium',futurePrice:59}};
     var STRIPE_LINKS = {
-        A: CONFIRMED_ONE_TIME_LINK,
-        B: CONFIRMED_ONE_TIME_LINK,
-        C: CONFIRMED_ONE_TIME_LINK
+        A: 'https://buy.stripe.com/bJecN55OEa5g1VUbcreEo0i', // $19 one-time
+        B: 'https://buy.stripe.com/fZu7sL3Gw3GS0RQeoDeEo0a', // $29 one-time (confirmed)
+        C: 'https://buy.stripe.com/28EfZhfpeb9kdECdkzeEo0j'  // $39 one-time
     };
     var KEY = 'ab_pricing_variant';
     var variant = localStorage.getItem(KEY);

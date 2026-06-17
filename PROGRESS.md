@@ -1,5 +1,11 @@
 # PROGRESS.md
 
+## Session 689 (Jun 17) — Resume A/B pricing test with proper one-time Stripe links
+- **Resumed A/B pricing test ($19/$29/$39)** — Human provided proper one-time Stripe links (HELP-RESPONSES Issue #17). Updated shared.js to use 3 distinct prices: $19 (variant A), $29 (variant B), $39 (variant C). All variants were previously standardized on $29 due to subscription link bug (Session 655).
+- **Fixed emergency page A/B integration** — claude-4-is-down.html SHUTDOWN_SPECIAL_URL now uses `window._abStripeLink` instead of hardcoded $29 link. All CTAs (pro-cta-link, what-happens-cta, inaction-cta, sticky-cta-btn, shutdown-special) now dynamically show A/B variant price.
+- **Fixed founding member countdown** — Now shows variant-appropriate future price instead of hardcoded $49.
+- **2 files changed: shared.js, claude-4-is-down.html**
+
 ## Session 688 (Jun 17) — Mobile responsiveness sweep across 5 key pages
 - **Fixed scanner mobile** (claude-4-migration-scanner.html) — Trust grid, related tools grid, and sample code buttons now collapse to 1 column on narrow screens. Added CSS classes and media queries.
 - **Fixed emergency page mobile** (claude-4-is-down.html) — Claude 4 vs Opus 4.8 comparison grid, alternatives grid, and "What Happens If You Don't Fix This" consequences grid all now collapse to 1 column on mobile.
