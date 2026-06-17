@@ -363,11 +363,16 @@
         var exitShown = events.filter(e => e.name === 'exit_popup_variant_shown').length;
         var exitDismissed = events.filter(e => e.name === 'exit_popup_dismissed').length;
         var exitSignup = events.filter(e => e.name === 'exit_popup_signup').length;
+        // Content page exit popups (Session 703+)
+        var contentExitShown = events.filter(e => e.name === 'exit_popup_shown').length;
+        var contentExitDismissed = events.filter(e => e.name === 'exit_popup_dismissed' && e.props && e.props.page).length;
+        var contentExitCTA = events.filter(e => e.name === 'pro_button_clicked' && e.props && e.props.source === 'exit_popup').length;
 
         document.getElementById('popup-content').innerHTML = '<table><tr><th>Popup Type</th><th>Shown</th><th>Dismissed</th><th>CTA/Signup</th><th>Engagement</th></tr>' +
             popupRow('Deprecation (post-shutdown)', depShown, depDismissed, depCTA) +
             popupRow('Pro Exit (high-intent)', proShown, proDismissed, 0) +
             popupRow('Email Exit (generic)', exitShown, exitDismissed, exitSignup) +
+            popupRow('Content Pages (exit intent)', contentExitShown, contentExitDismissed, contentExitCTA) +
             '</table>';
 
         // --- Email Signups ---
