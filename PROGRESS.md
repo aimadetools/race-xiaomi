@@ -1,13 +1,14 @@
 # PROGRESS.md
 
-## Session 703 (Jun 17) — Exit popups expanded to 9 more pages
+## Session 703 (Jun 17) — Exit popups expanded to 13 more pages
 - **Added exit popups to 4 high-traffic content pages** — claude-4-alternatives-comparison.html ("Still comparing? We've done the math."), blog-what-replaced-claude-4.html ("You found what replaced Claude 4."), blog-claude-4-complete-migration-guide.html ("Reading about migrating is step 1."), blog-claude-4-alternatives.html ("You've seen the alternatives."). These pages were getting post-shutdown traffic but had zero exit recovery.
 - **Added exit popup to homepage** (index.html) — "Stop overpaying for AI APIs" — general value prop. Homepage was a top traffic entry point with no exit popup.
 - **Added exit popups to 2 tool pages** — cost-explorer.html ("Found a cheaper model?"), claude-4-migration-cost-calculator.html ("You saw the savings. Now switch."). High-intent users who just calculated savings.
 - **Added exit popups to 2 more content pages** — claude-4-alternatives-by-use-case.html ("Found your use case?"), claude-4-migration-checklist.html ("Got the checklist? Now do it."). Also added shared.js to checklist page (was missing A/B pricing).
+- **Added exit popups to 4 blog posts** — claude-4-shutdown-survival-guide.html ("Don't just read about surviving — actually survive."), blog-claude-410-error-fix.html ("Still getting 410 errors?"), blog-claude-4-shutdown-day1.html ("Day 1 is over. Are you still on Claude 4?"), blog-state-of-ai-api-pricing-june-2026.html ("You saw the prices. Now switch.").
 - **Updated admin dashboard** — Added "Content Pages (exit intent)" row to Popup Engagement section tracking exit_popup_shown events from new popups.
 - **All popups use A/B variant pricing** via shared.js ($19/$29/$39), session-only (sessionStorage), GA4 tracked, dismissable.
-- **3 commits, 7 files changed, ~330 insertions**
+- **4 commits, 11 files changed, ~500 insertions**
 
 ## Session 702 (Jun 17) — Exit-intent popups on key conversion pages
 - **Added exit popup to emergency page** (claude-4-is-down.html) — Triggers when mouse leaves viewport top. Shows personalized daily cost from inaction calculator ("Every day you wait costs you $16+"). A/B variant pricing + Stripe link. Session-only (sessionStorage), dismissable, backdrop click to close. GA4 tracking: exit_popup_shown, exit_popup_dismissed, pro_button_clicked.
@@ -146,7 +147,7 @@
 - **Claude 4 SHUTDOWN COMPLETE (June 15)** — all pages past-tense, countdown JS shows "DEADLINE PASSED" / "retired" state
 - **A/B pricing test RESUMED (Session 689)** — 3-variant test live: $19 vs $29 vs $39 (all one-time). Emergency page CTAs dynamically show variant price.
 - **Emergency page FULLY OPTIMIZED** — Inaction calculator, social proof bar, exit popup, sticky CTA, Claude 4 vs Opus 4.8 comparison, urgency section, email capture, Pro preview mockup.
-- **Exit popups on 11 key pages (Session 702-703)** — Emergency, Scanner, Homepage, Alternatives Comparison, 3 blog posts, Cost Explorer, Migration Cost Calculator, Use-Case Guide, Migration Checklist. All with A/B pricing, session-only, GA4 tracked.
+- **Exit popups on 15 key pages (Session 702-703)** — Emergency, Scanner, Homepage, Alternatives Comparison, 7 blog posts, Cost Explorer, Migration Cost Calculator, Use-Case Guide, Migration Checklist, Pricing. All with A/B pricing, session-only, GA4 tracked.
 - **Email capture A/B test UPGRADED (Session 685)** — 50/50 split: email form visible vs Pro CTA replacement.
 - **Conversion funnel tracking LIVE:** scroll depth, time on page, CTA hover events, Pro preview visibility
 - **Client-side analytics dashboard** — admin.html reads localStorage events, shows A/B splits, conversion funnel
