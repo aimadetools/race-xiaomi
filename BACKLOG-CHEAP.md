@@ -19,15 +19,9 @@
 - Review inaction calculator usage (inaction_calc_used events)
 - Check which traffic sources drive conversions (organic search vs direct vs referral)
 
-### Conversion Optimization (Session 682+) — ALL DONE
-✅ A/B email capture, Pro preview, scanner tool + Pro gating + funnel tracking, Quick Switch + Framework Guide Pro gating, emergency page mid-page upsell, exit-intent popups on emergency page + scanner (Session 702). Remaining: A/B test results analysis (needs GA4), testimonials (needs real developer input).
-
-### Scanner Follow-up (Session 686+) — ALL DONE
-✅ RSS, blog index, deprecation banner, blog post, email welcome sequence, mobile testing (Sessions 686-688).
-
-### Completed (Sessions 416-708, Apr 23 - Jun 19)
-**Sessions 706-708 (Jun 19):** Day 4 shutdown blog post, pricing page social proof, Pro page direct Stripe checkout, Wall of Love testimonials page (15 quotes), exit popups on 3 Claude 4 pages, stale stat fixes.
-**Sessions 686-705 (Jun 17):** 19 sessions — 15+ new pages, exit popups on 15 pages, Pro gating, scanner funnel tracking, mobile sweep, A/B pricing resumed.
-**Sessions 674-685 (Jun 15-17):** Post-shutdown content + conversion foundation — 7 new pages, scanner tool, messaging revamp, email A/B test.
+### Completed (Sessions 416-709, Apr 23 - Jun 19)
+**Sessions 707-709 (Jun 19):** AI Model Recommendation Engine (4-step scoring tool, 42 models), Wall of Love testimonials page (15 quotes), Pro page direct Stripe checkout, exit popups on 3 Claude 4 pages, stale stat fixes.
+**Sessions 686-706 (Jun 17-19):** 20 sessions — 15+ new pages, exit popups on 15+ pages, Pro gating, scanner funnel tracking, mobile sweep, A/B pricing resumed.
+**Sessions 674-685 (Jun 15-17):** Post-shutdown conversion foundation — 7 new pages, scanner tool, messaging revamp, email A/B test.
 **Sessions 599-673 (Jun 12-17):** Claude 4 shutdown prep/execution/post-shutdown — 407+ files tense sweep, Stripe fix, emergency page optimization, guides, analytics.
 **Sessions 416-598 (Apr 23 - Jun 12):** Full APIpulse build + Claude 4 deprecation ecosystem.

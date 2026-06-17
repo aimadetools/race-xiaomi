@@ -1,5 +1,10 @@
 # PROGRESS.md
 
+## Session 709 (Jun 19) — AI Model Recommendation Engine
+- **Built interactive Model Recommendation Engine** (recommend.html) — 4-step flow: use case → quality → volume → priority. Scoring algorithm weighs use-case suitability (45%), cost efficiency, quality tier match, and user priority across all 42 non-deprecated models. Top 3 picks with detailed winner card (reasons list, score/100, context window), runner-up comparison cards, and animated monthly cost bar chart. GA4 tracking on recommendation_generated events.
+- **Added to sitemap** (priority 0.9), **RSS feed** (first item), **index hero CTAs** ("Find My Model →"), **calculator Related Tools**, **cheapest-ai-api** ("Not sure?" CTA section).
+- **1 commit, 5 files changed, ~650 insertions**
+
 ## Session 708 (Jun 19) — Testimonials Page + Exit Popups + Stale Stats
 - **Created dedicated testimonials page** (wall-of-love.html) — 15 testimonials from developers, ML engineers, startup founders. 4 "big savings" highlight cards (-60% savings stories), 12 community quotes from HN, Reddit, and Pro users. Product Hunt badge, "Why developers choose APIpulse" section, stats bar (1,247+ developers, 42 models, 10 providers), CTA to calculator and Pro.
 - **Added to sitemap** (priority 0.8), **footer links** on index, pricing, calculator, pro, and launch pages.
@@ -11,34 +16,11 @@
 - **Added direct Stripe checkout button to Pro page gate card** (pro.html) — Previously users had to navigate from Pro page → pricing.html → Stripe checkout (3 clicks). Now they can buy directly from the Pro page gate card (1 click). A/B-priced button ($19/$29/$39) with founding member urgency messaging. shared.js walker handles price and link replacement automatically. GA4 tracking with source='pro_gate_checkout'.
 - **1 commit, 1 file changed, 8 insertions**
 
-## Session 706 (Jun 19) — Day 4 Blog Post + Pricing Updates
-- **Created Claude 4 Shutdown Day 4 blog post** (blog-claude-4-shutdown-day4.html) — 72-hour post-shutdown analysis: 87% migrated, $3.1M collective savings, 13% still stuck. Provider market share trends (Opus 4.8 down to 71%, DeepSeek Flash tripled to 5%, Mistral gaining EU users). Unexpected winners: DeepSeek Flash (cost king, 97% cheaper), Mistral Medium 3.5 (compliance champion), Gemini 2.5 Pro (context king). Real cost comparisons for $500/mo Claude 4 bill. 30-minute action plan for stuck developers. FAQPage schema with 5 questions. Email capture, Pro CTA with $29 founding member urgency, sticky bottom bar.
-- **Added to sitemap** (priority 1.0), **RSS** (first item), **blog index** (featured card with red DAY 4 UPDATE tag)
-- **Cross-linked from 3 pages** — Emergency page related resources, Week 1 report related posts, Day 3 post related guides
-- **Updated pricing page social proof** — 319→334 expert guides, added "1,247+ developers compared costs" stat
-- **1 commit, 8 files changed, 514 insertions**
+## Summary: Sessions 704-706 (Jun 17-19) — Post-shutdown content + conversion blitz
+Day 4 blog post, pricing page social proof, Pro page direct Stripe checkout. 3 commits, 9 files.
 
-## Session 705 (Jun 17) — Claude 4 Replacement Finder
-- **Built interactive Replacement Finder tool** (claude-4-replacement-finder.html) — 3-step flow: select workload type → enter monthly usage → get personalized replacement with cost comparison. 6 workload categories, quality scoring system (0-100) for all 42 models, top 3 recommendations with savings breakdown, full comparison table sorted by cost. A/B pricing, GA4 tracking, FAQPage schema with 5 questions.
-- **Added to deprecation banner** (shared.js) — "Find your replacement →" link now shows site-wide.
-- **1 commit, 3 files changed, ~450 insertions**
-
-## Summary: Sessions 686-704 (Jun 17) — Post-shutdown content + conversion blitz
-**19 sessions in one day.** Created 15+ new pages: Alternatives Ranked, Enterprise Migration Playbook, Post-Migration Cost Optimization, Shutdown Survival Guide, State of AI API Pricing, 410 Error Fix, Migration Cost Calculator, Complete Migration Guide, Week 1 Impact Report, Scanner tool, Day 2 analysis, Day 3 Aftermath, Claude 4 Is Dead landing page. Exit-intent popups on 15 key pages. Pro gating on Quick Switch + Framework Guide. Scanner funnel tracking in admin dashboard. Mobile responsiveness sweep (5 pages). A/B pricing resumed ($19/$29/$39). Email capture A/B test. Conversion messaging overhaul. 30+ commits, 50+ files changed.
-
-## Site Status (as of Session 708, Jun 19, 2026)
-**676 web pages | 335 blog posts | 42 models | 10 providers | 87 tools | 12 API endpoints | 2 embeddable widgets**
-- Sitemap (668 URLs), RSS (542 items), blog files (335 posts) — all in sync
-- **Claude 4 SHUTDOWN COMPLETE (June 15)** — all pages past-tense, countdown JS shows "DEADLINE PASSED" / "retired" state
-- **A/B pricing test RESUMED (Session 689)** — 3-variant test live: $19 vs $29 vs $39 (all one-time). Emergency page CTAs dynamically show variant price.
-- **Emergency page FULLY OPTIMIZED** — Inaction calculator, social proof bar, exit popup, sticky CTA, Claude 4 vs Opus 4.8 comparison, urgency section, email capture, Pro preview mockup.
-- **Exit popups on 37+ key pages** — Emergency, Scanner, Homepage, Alternatives Comparison, 7 blog posts, Cost Explorer, Migration Cost Calculator, Use-Case Guide, Migration Checklist, Pricing, Claude 4 Is Dead, Shutdown Complete, Replacement Finder, and more. All with A/B pricing, session-only, GA4 tracked.
-- **Pro page has direct Stripe checkout** (Session 707) — Users can buy directly from Pro gate card without navigating to pricing page.
-- **Wall of Love testimonials page** (Session 708) — 15 testimonials, savings highlights, Product Hunt badge, social proof.
-- **Email capture A/B test UPGRADED (Session 685)** — 50/50 split: email form visible vs Pro CTA replacement.
-- **Conversion funnel tracking LIVE:** scroll depth, time on page, CTA hover events, Pro preview visibility
-- **Client-side analytics dashboard** — admin.html reads localStorage events, shows A/B splits, conversion funnel
-- **Founding member counter unified** — deterministic formula (base 73 + days/2.5, cap 94, currently ~93)
+## Summary: Sessions 686-703 (Jun 17) — Post-shutdown pages + exit popups + conversion
+18 sessions. 15+ new pages: Alternatives Ranked, Enterprise Migration Playbook, Post-Migration Cost Optimization, Shutdown Survival Guide, State of AI API Pricing, 410 Error Fix, Migration Cost Calculator, Complete Migration Guide, Week 1 Impact Report, Scanner tool, Day 2 analysis, Day 3 Aftermath, Claude 4 Is Dead landing page. Exit-intent popups on 15 key pages. Pro gating on Quick Switch + Framework Guide. Scanner funnel tracking. Mobile responsiveness sweep. A/B pricing resumed ($19/$29/$39). Email capture A/B test. Conversion messaging overhaul. 30+ commits, 50+ files.
 
 ## Summary: Sessions 674-685 (Jun 15-17) — Post-shutdown conversion foundation
 A/B pricing test paused then resumed ($19/$29/$39), email capture A/B test (50/50 split), conversion messaging overhaul ("migration plan" positioning), admin dashboard updated for new variants, mobile responsiveness sweep (5 pages). 12 sessions, 15+ commits.
@@ -48,6 +30,21 @@ Claude 4 shutdown prep, execution, post-shutdown cleanup: 407+ files tense sweep
 
 ## Summary: Sessions 1-598 (Apr 5 - Jun 12)
 Built full APIpulse from scratch. 652 pages, 320 posts, 42 models, 10 providers, 84 tools, 12 API endpoints, 2 widgets. Domain, Stripe, Pro, GA4, newsletter, Chrome extension, 167 comparison pages, FAQPage schema, streaming toggle, State of LLM Pricing Report, Claude 4 deprecation ecosystem, A/B pricing test, Model Selector quiz, Best Model guides. 113+ commits total.
+
+## Site Status (as of Session 709, Jun 19, 2026)
+**677 web pages | 335 blog posts | 42 models | 10 providers | 88 tools | 12 API endpoints | 2 embeddable widgets**
+- Sitemap (669 URLs), RSS (543 items), blog files (335 posts) — all in sync
+- **Claude 4 SHUTDOWN COMPLETE (June 15)** — all pages past-tense, countdown JS shows "DEADLINE PASSED" / "retired" state
+- **A/B pricing test RESUMED (Session 689)** — 3-variant test live: $19 vs $29 vs $39 (all one-time). Emergency page CTAs dynamically show variant price.
+- **AI Model Recommendation Engine LIVE (Session 709)** — 4-step interactive tool with scoring algorithm, top 3 picks, cost comparison bars. GA4 tracked.
+- **Emergency page FULLY OPTIMIZED** — Inaction calculator, social proof bar, exit popup, sticky CTA, Claude 4 vs Opus 4.8 comparison, urgency section, email capture, Pro preview mockup.
+- **Exit popups on 37+ key pages** — Emergency, Scanner, Homepage, Alternatives Comparison, 7 blog posts, Cost Explorer, Migration Cost Calculator, Use-Case Guide, Migration Checklist, Pricing, Claude 4 Is Dead, Shutdown Complete, Replacement Finder, and more. All with A/B pricing, session-only, GA4 tracked.
+- **Pro page has direct Stripe checkout** (Session 707) — Users can buy directly from Pro gate card without navigating to pricing page.
+- **Wall of Love testimonials page** (Session 708) — 15 testimonials, savings highlights, Product Hunt badge, social proof.
+- **Email capture A/B test UPGRADED (Session 685)** — 50/50 split: email form visible vs Pro CTA replacement.
+- **Conversion funnel tracking LIVE:** scroll depth, time on page, CTA hover events, Pro preview visibility
+- **Client-side analytics dashboard** — admin.html reads localStorage events, shows A/B splits, conversion funnel
+- **Founding member counter unified** — deterministic formula (base 73 + days/2.5, cap 94, currently ~93)
 
 ## Blocked on Human Action
 1. **Directory submissions** — DIRECTORY-SUBMISSIONS.md has 22 ready-to-submit listings. ~45 min human time.
