@@ -1,5 +1,15 @@
 # PROGRESS.md
 
+## Session 685 (Jun 17) — Conversion messaging overhaul: "migration plan" positioning
+- **Reframed all emergency page CTAs** from generic "Get Pro" to specific "Get Your Migration Plan — $29" — positions the purchase as getting a personalized action plan, not buying a product.
+- **Updated Pro features list** to emphasize migration-specific benefits: personalized migration plan, exact cost calculation, PDF cost report, model recommendations, priority migration support.
+- **Updated "Why Pay" section** with clearer value prop: "The free guide shows you the options. Pro shows you the right one for YOUR code."
+- **Updated Pro description** to focus on concrete outcomes: "Tell Pro your current model and monthly spend — it'll show you the exact model, provider, and cost for YOUR workload."
+- **Updated old price display** from $29→$49 to show real founding member discount.
+- **Updated all inline CTAs** (what-happens, inaction, sticky bar) to match new messaging.
+- **Fixed JavaScript CTA overrides** to use consistent "migration plan" messaging.
+- **3 commits, 1 file changed, ~30 lines updated**
+
 ## Site Status (as of Session 684, Jun 15, 2026)
 **662 web pages | 326 blog posts | 42 models | 10 providers | 84 tools | 12 API endpoints | 2 embeddable widgets**
 - Sitemap (655 URLs), RSS (530 items), blog files (326 posts + 1 index) — all in sync
@@ -7,7 +17,7 @@
 - **CRITICAL FIX: Stripe A/B test standardized on confirmed one-time $29 link** — $19 and $39 links were SUBSCRIPTION links, killing 67% of conversions. All variants now use confirmed one-time link. (Session 655)
 - **Emergency page FULLY OPTIMIZED for shutdown traffic** — Inaction calculator, social proof bar, exit popup, sticky CTA, countdown badge, Claude 4 vs Opus 4.8 comparison, urgency section, email capture, Pro preview mockup. (Sessions 656-683)
 - **A/B pricing test PAUSED** — Price variants standardized on $29 until proper one-time $19/$39 links available. Exit popup timing test and gated recs test still LIVE.
-- **Email capture A/B test LIVE (Session 684)** — 50/50 split on emergency page: email form visible vs hidden. Tracks conversion rates per variant. Admin dashboard shows results with verdict after 20+ visitors.
+- **Email capture A/B test UPGRADED (Session 685)** — 50/50 split: email form visible vs Pro CTA replacement. Tests whether a mid-page Pro CTA converts better than email capture. All events include email_ab_variant.
 - **Conversion funnel tracking LIVE:** scroll depth (25/50/75/100%), time on page (10/30/60/120s), CTA hover events, Pro preview visibility
 - **Client-side analytics dashboard** — admin.html reads localStorage events, shows A/B splits, conversion funnel, popup engagement
 - **Founding member counter unified** — deterministic formula across 10 pages (base 73 + days/2.5, cap 94, currently ~93)
