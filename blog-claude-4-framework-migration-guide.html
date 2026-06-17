@@ -143,7 +143,23 @@
         .quick-nav{display:flex;flex-wrap:wrap;gap:8px;margin:24px 0;justify-content:center}
         .quick-nav a{padding:6px 14px;border-radius:20px;border:1px solid var(--border);background:var(--bg-card);color:var(--text-secondary);font-size:13px;font-weight:600;text-decoration:none;transition:all 0.2s}
         .quick-nav a:hover{border-color:var(--accent);color:var(--accent);background:rgba(99,102,241,0.05)}
-        @media(max-width:768px){.blog-hero{padding:100px 20px 30px}.stat-grid{grid-template-columns:1fr 1fr}.email-form{flex-direction:column}.related-grid{grid-template-columns:1fr}.data-table{font-size:12px}.data-table th,.data-table td{padding:8px}.before-after{grid-template-columns:1fr}.quick-nav{gap:6px}}
+        .framework-section.pro-gated{position:relative;overflow:hidden}
+        .framework-section.pro-gated .framework-gated-content{filter:blur(6px);pointer-events:none;user-select:none}
+        .framework-section.pro-gated .framework-gate-overlay{position:absolute;top:0;left:0;right:0;bottom:0;background:linear-gradient(180deg,rgba(15,17,23,0) 0%,rgba(15,17,23,0.85) 40%,rgba(15,17,23,0.98) 100%);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:40px 24px;z-index:2}
+        .framework-section.pro-gated .framework-gate-overlay h4{font-size:20px;font-weight:800;margin-bottom:8px}
+        .framework-section.pro-gated .framework-gate-overlay p{color:var(--text-secondary);font-size:14px;margin-bottom:16px;max-width:400px}
+        .framework-gate-cta{display:inline-block;background:var(--accent);color:white;padding:12px 28px;border-radius:10px;font-size:15px;font-weight:700;text-decoration:none;transition:all 0.2s;box-shadow:0 4px 20px rgba(99,102,241,0.3)}
+        .framework-gate-cta:hover{transform:translateY(-2px)}
+        .framework-gate-trial{display:inline-block;color:var(--accent);font-size:13px;font-weight:600;text-decoration:underline;margin-top:10px;cursor:pointer}
+        .early-pro-upsell{background:linear-gradient(135deg,rgba(99,102,241,0.1),rgba(34,197,94,0.06));border:2px solid var(--accent);border-radius:var(--radius);padding:32px;margin:32px 0;text-align:center}
+        .early-pro-upsell h3{margin:0 0 8px;font-size:20px}
+        .early-pro-upsell p{color:var(--text-secondary);margin:0 0 16px;font-size:15px}
+        .early-pro-upsell .pro-compare-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:16px 0;text-align:left}
+        .early-pro-upsell .pro-compare-grid>div{background:var(--bg-secondary);border:1px solid var(--border);border-radius:10px;padding:14px}
+        .early-pro-upsell .pro-compare-grid .label{font-size:12px;font-weight:700;margin-bottom:8px;text-transform:uppercase;letter-spacing:.5px}
+        .early-pro-upsell .pro-compare-grid ul{list-style:none;padding:0;margin:0;font-size:13px}
+        .early-pro-upsell .pro-compare-grid li{padding:3px 0}
+        @media(max-width:768px){.blog-hero{padding:100px 20px 30px}.stat-grid{grid-template-columns:1fr 1fr}.email-form{flex-direction:column}.related-grid{grid-template-columns:1fr}.data-table{font-size:12px}.data-table th,.data-table td{padding:8px}.before-after{grid-template-columns:1fr}.quick-nav{gap:6px}.early-pro-upsell .pro-compare-grid{grid-template-columns:1fr}}
     </style>
     <meta name="theme-color" content="#6366f1">
 </head>
@@ -292,47 +308,87 @@ llm = ChatOpenAI(
             <p><strong>Don't forget:</strong> Run <code>pip install --upgrade langchain-anthropic</code> to get the latest model IDs.</p>
         </div>
 
-        <!-- LlamaIndex -->
-        <div class="framework-section" id="llamaindex">
-            <h3>📸 LlamaIndex <span class="difficulty easy">Easy — 1 line change</span></h3>
-            <p>LlamaIndex uses the same Anthropic LLM class. Update the model name and you're done.</p>
+        <!-- Early Pro upsell (shown after free LangChain section) -->
+        <div class="early-pro-upsell" id="early-framework-upsell" style="display:none;">
+            <h3>🔒 7 More Frameworks Locked</h3>
+            <p>LangChain fix is free. Unlock migration code for LlamaIndex, Anthropic SDK, Vercel AI SDK, CrewAI, Haystack, OpenAI SDK, and Langflow.</p>
+            <div class="pro-compare-grid">
+                <div>
+                    <div class="label" style="color:var(--green);">✅ With Pro</div>
+                    <ul>
+                        <li>✅ All 8 framework fixes</li>
+                        <li>✅ Before/after code for each</li>
+                        <li>✅ Cross-provider migration snippets</li>
+                        <li>✅ Complete migration checklist</li>
+                    </ul>
+                </div>
+                <div>
+                    <div class="label" style="color:#ef4444;">❌ Free (Current)</div>
+                    <ul>
+                        <li>❌ Only LangChain fix</li>
+                        <li>❌ 7 frameworks still broken</li>
+                        <li>❌ No cross-provider code</li>
+                        <li>❌ Hours of manual research</li>
+                    </ul>
+                </div>
+            </div>
+            <div style="display:flex;gap:12px;align-items:center;justify-content:center;flex-wrap:wrap;">
+                <a href="#" id="fw-early-pro-cta" class="framework-gate-cta">Unlock All Frameworks — $<span class="fw-ab-price">29</span></a>
+                <a href="#" id="fw-early-trial" class="framework-gate-trial">Or try Pro free for 24 hours →</a>
+            </div>
+            <p style="font-size:12px;color:var(--text-muted);margin-top:10px;">14-day money-back guarantee · Lifetime access</p>
+        </div>
 
-            <div class="before-after">
-                <div class="before">
-                    <div class="label">❌ Before (Broken)</div>
+        <!-- LlamaIndex (PRO GATED) -->
+        <div class="framework-section pro-gated" id="llamaindex">
+            <div class="framework-gated-content">
+                <h3>📸 LlamaIndex <span class="difficulty easy">Easy — 1 line change</span></h3>
+                <p>LlamaIndex uses the same Anthropic LLM class. Update the model name and you're done.</p>
+
+                <div class="before-after">
+                    <div class="before">
+                        <div class="label">❌ Before (Broken)</div>
 <pre><code>from llama_index.llms.anthropic import Anthropic
 
 llm = Anthropic(
     model="claude-4-opus-20250514",
     temperature=0
 )</code></pre>
-                </div>
-                <div class="after">
-                    <div class="label">✅ After (Fixed)</div>
+                    </div>
+                    <div class="after">
+                        <div class="label">✅ After (Fixed)</div>
 <pre><code>from llama_index.llms.anthropic import Anthropic
 
 llm = Anthropic(
     model="claude-opus-4-8-20260615",
     temperature=0
 )</code></pre>
+                    </div>
                 </div>
-            </div>
 
-            <p><strong>Using LlamaIndex with OpenAI instead:</strong></p>
+                <p><strong>Using LlamaIndex with OpenAI instead:</strong></p>
 <pre><code>from llama_index.llms.openai import OpenAI
 
 llm = OpenAI(model="gpt-5", temperature=0)</code></pre>
+            </div>
+            <div class="framework-gate-overlay">
+                <h4>🔒 LlamaIndex Migration — Pro Only</h4>
+                <p>Unlock copy-paste migration code for LlamaIndex + 6 other frameworks. Exact before/after snippets for every provider.</p>
+                <a href="#" class="framework-gate-cta fw-pro-cta-link">Unlock All Frameworks — $<span class="fw-ab-price">29</span></a>
+                <a href="#" class="framework-gate-trial fw-trial-link">Or try Pro free for 24 hours →</a>
+            </div>
         </div>
 
-        <!-- Anthropic SDK -->
-        <div class="framework-section" id="anthropic-sdk">
-            <h3>🧠 Anthropic Python/Node.js SDK <span class="difficulty easy">Easy — 1 line change</span></h3>
-            <p>The official Anthropic SDK is the most common way to use Claude. The fix is identical for Python and Node.js.</p>
+        <!-- Anthropic SDK (PRO GATED) -->
+        <div class="framework-section pro-gated" id="anthropic-sdk">
+            <div class="framework-gated-content">
+                <h3>🧠 Anthropic Python/Node.js SDK <span class="difficulty easy">Easy — 1 line change</span></h3>
+                <p>The official Anthropic SDK is the most common way to use Claude. The fix is identical for Python and Node.js.</p>
 
-            <h4>Python</h4>
-            <div class="before-after">
-                <div class="before">
-                    <div class="label">❌ Before (Broken)</div>
+                <h4>Python</h4>
+                <div class="before-after">
+                    <div class="before">
+                        <div class="label">❌ Before (Broken)</div>
 <pre><code>import anthropic
 
 client = anthropic.Anthropic()
@@ -343,9 +399,9 @@ message = client.messages.create(
         {"role": "user", "content": "Hello!"}
     ]
 )</code></pre>
-                </div>
-                <div class="after">
-                    <div class="label">✅ After (Fixed)</div>
+                    </div>
+                    <div class="after">
+                        <div class="label">✅ After (Fixed)</div>
 <pre><code>import anthropic
 
 client = anthropic.Anthropic()
@@ -356,13 +412,13 @@ message = client.messages.create(
         {"role": "user", "content": "Hello!"}
     ]
 )</code></pre>
+                    </div>
                 </div>
-            </div>
 
-            <h4>Node.js</h4>
-            <div class="before-after">
-                <div class="before">
-                    <div class="label">❌ Before (Broken)</div>
+                <h4>Node.js</h4>
+                <div class="before-after">
+                    <div class="before">
+                        <div class="label">❌ Before (Broken)</div>
 <pre><code>import Anthropic from "@anthropic-ai/sdk";
 
 const client = new Anthropic();
@@ -373,9 +429,9 @@ const message = await client.messages.create({
     { role: "user", content: "Hello!" }
   ]
 });</code></pre>
-                </div>
-                <div class="after">
-                    <div class="label">✅ After (Fixed)</div>
+                    </div>
+                    <div class="after">
+                        <div class="label">✅ After (Fixed)</div>
 <pre><code>import Anthropic from "@anthropic-ai/sdk";
 
 const client = new Anthropic();
@@ -386,25 +442,33 @@ const message = await client.messages.create({
     { role: "user", content: "Hello!" }
   ]
 });</code></pre>
+                    </div>
                 </div>
-            </div>
 
-            <p><strong>Tip:</strong> If you have the model ID in an environment variable, update it there:</p>
+                <p><strong>Tip:</strong> If you have the model ID in an environment variable, update it there:</p>
 <pre><code># .env file
 ANTHROPIC_MODEL=claude-opus-4-8-20260615</code></pre>
 
-            <p>Then reference it in code:</p>
+                <p>Then reference it in code:</p>
 <pre><code>model = os.environ.get("ANTHROPIC_MODEL", "claude-opus-4-8-20260615")</code></pre>
+            </div>
+            <div class="framework-gate-overlay">
+                <h4>🔒 Anthropic SDK Migration — Pro Only</h4>
+                <p>Unlock Python + Node.js migration code with env variable patterns, error handling, and best practices.</p>
+                <a href="#" class="framework-gate-cta fw-pro-cta-link">Unlock All Frameworks — $<span class="fw-ab-price">29</span></a>
+                <a href="#" class="framework-gate-trial fw-trial-link">Or try Pro free for 24 hours →</a>
+            </div>
         </div>
 
-        <!-- Vercel AI SDK -->
-        <div class="framework-section" id="vercel-ai">
-            <h3>▲ Vercel AI SDK <span class="difficulty easy">Easy — 1 line change</span></h3>
-            <p>The Vercel AI SDK's Anthropic provider supports Opus 4.8 out of the box. Update the model ID in your provider config.</p>
+        <!-- Vercel AI SDK (PRO GATED) -->
+        <div class="framework-section pro-gated" id="vercel-ai">
+            <div class="framework-gated-content">
+                <h3>▲ Vercel AI SDK <span class="difficulty easy">Easy — 1 line change</span></h3>
+                <p>The Vercel AI SDK's Anthropic provider supports Opus 4.8 out of the box. Update the model ID in your provider config.</p>
 
-            <div class="before-after">
-                <div class="before">
-                    <div class="label">❌ Before (Broken)</div>
+                <div class="before-after">
+                    <div class="before">
+                        <div class="label">❌ Before (Broken)</div>
 <pre><code>import { anthropic } from "@ai-sdk/anthropic";
 import { generateText } from "ai";
 
@@ -412,9 +476,9 @@ const result = await generateText({
   model: anthropic("claude-4-opus-20250514"),
   prompt: "Hello!"
 });</code></pre>
-                </div>
-                <div class="after">
-                    <div class="label">✅ After (Fixed)</div>
+                    </div>
+                    <div class="after">
+                        <div class="label">✅ After (Fixed)</div>
 <pre><code>import { anthropic } from "@ai-sdk/anthropic";
 import { generateText } from "ai";
 
@@ -422,10 +486,10 @@ const result = await generateText({
   model: anthropic("claude-opus-4-8-20260615"),
   prompt: "Hello!"
 });</code></pre>
+                    </div>
                 </div>
-            </div>
 
-            <p><strong>Switching to OpenAI with Vercel AI SDK:</strong></p>
+                <p><strong>Switching to OpenAI with Vercel AI SDK:</strong></p>
 <pre><code>import { openai } from "@ai-sdk/openai";
 import { generateText } from "ai";
 
@@ -434,7 +498,7 @@ const result = await generateText({
   prompt: "Hello!"
 });</code></pre>
 
-            <p><strong>Using Google Gemini:</strong></p>
+                <p><strong>Using Google Gemini:</strong></p>
 <pre><code>import { google } from "@ai-sdk/google";
 import { generateText } from "ai";
 
@@ -442,16 +506,24 @@ const result = await generateText({
   model: google("gemini-3-flash"),
   prompt: "Hello!"
 });</code></pre>
+            </div>
+            <div class="framework-gate-overlay">
+                <h4>🔒 Vercel AI SDK Migration — Pro Only</h4>
+                <p>Unlock migration code for Vercel AI SDK including multi-provider switching patterns.</p>
+                <a href="#" class="framework-gate-cta fw-pro-cta-link">Unlock All Frameworks — $<span class="fw-ab-price">29</span></a>
+                <a href="#" class="framework-gate-trial fw-trial-link">Or try Pro free for 24 hours →</a>
+            </div>
         </div>
 
-        <!-- CrewAI -->
-        <div class="framework-section" id="crewai">
-            <h3>👥 CrewAI <span class="difficulty medium">Medium — Update agent config</span></h3>
-            <p>CrewAI agents are configured with model names. Update the <code>llm</code> parameter in your agent definitions.</p>
+        <!-- CrewAI (PRO GATED) -->
+        <div class="framework-section pro-gated" id="crewai">
+            <div class="framework-gated-content">
+                <h3>👥 CrewAI <span class="difficulty medium">Medium — Update agent config</span></h3>
+                <p>CrewAI agents are configured with model names. Update the <code>llm</code> parameter in your agent definitions.</p>
 
-            <div class="before-after">
-                <div class="before">
-                    <div class="label">❌ Before (Broken)</div>
+                <div class="before-after">
+                    <div class="before">
+                        <div class="label">❌ Before (Broken)</div>
 <pre><code>from crewai import Agent, Task, Crew
 
 researcher = Agent(
@@ -460,9 +532,9 @@ researcher = Agent(
     llm="claude-4-opus-20250514",
     verbose=True
 )</code></pre>
-                </div>
-                <div class="after">
-                    <div class="label">✅ After (Fixed)</div>
+                    </div>
+                    <div class="after">
+                        <div class="label">✅ After (Fixed)</div>
 <pre><code>from crewai import Agent, Task, Crew
 
 researcher = Agent(
@@ -471,10 +543,10 @@ researcher = Agent(
     llm="claude-opus-4-8-20260615",
     verbose=True
 )</code></pre>
+                    </div>
                 </div>
-            </div>
 
-            <p><strong>Using a non-Anthropic model in CrewAI:</strong></p>
+                <p><strong>Using a non-Anthropic model in CrewAI:</strong></p>
 <pre><code>from crewai import Agent
 
 # Using GPT-5
@@ -490,41 +562,57 @@ writer = Agent(
     llm="deepseek-v4-flash",
     verbose=True
 )</code></pre>
+            </div>
+            <div class="framework-gate-overlay">
+                <h4>🔒 CrewAI Migration — Pro Only</h4>
+                <p>Unlock CrewAI agent config migration with multi-model patterns and cost optimization.</p>
+                <a href="#" class="framework-gate-cta fw-pro-cta-link">Unlock All Frameworks — $<span class="fw-ab-price">29</span></a>
+                <a href="#" class="framework-gate-trial fw-trial-link">Or try Pro free for 24 hours →</a>
+            </div>
         </div>
 
-        <!-- Haystack -->
-        <div class="framework-section" id="haystack">
-            <h3>🏗️ Haystack <span class="difficulty easy">Easy — Update component config</span></h3>
-            <p>Haystack's Anthropic integration uses a component-based approach. Update the model name in your pipeline.</p>
+        <!-- Haystack (PRO GATED) -->
+        <div class="framework-section pro-gated" id="haystack">
+            <div class="framework-gated-content">
+                <h3>🏗️ Haystack <span class="difficulty easy">Easy — Update component config</span></h3>
+                <p>Haystack's Anthropic integration uses a component-based approach. Update the model name in your pipeline.</p>
 
-            <div class="before-after">
-                <div class="before">
-                    <div class="label">❌ Before (Broken)</div>
+                <div class="before-after">
+                    <div class="before">
+                        <div class="label">❌ Before (Broken)</div>
 <pre><code>from haystack.components.generators.chat import AnthropicChatGenerator
 
 generator = AnthropicChatGenerator(
     model="claude-4-opus-20250514"
 )</code></pre>
-                </div>
-                <div class="after">
-                    <div class="label">✅ After (Fixed)</div>
+                    </div>
+                    <div class="after">
+                        <div class="label">✅ After (Fixed)</div>
 <pre><code>from haystack.components.generators.chat import AnthropicChatGenerator
 
 generator = AnthropicChatGenerator(
     model="claude-opus-4-8-20260615"
 )</code></pre>
+                    </div>
                 </div>
+            </div>
+            <div class="framework-gate-overlay">
+                <h4>🔒 Haystack Migration — Pro Only</h4>
+                <p>Unlock Haystack pipeline migration code with component-level changes.</p>
+                <a href="#" class="framework-gate-cta fw-pro-cta-link">Unlock All Frameworks — $<span class="fw-ab-price">29</span></a>
+                <a href="#" class="framework-gate-trial fw-trial-link">Or try Pro free for 24 hours →</a>
             </div>
         </div>
 
-        <!-- OpenAI SDK (for cross-provider migration) -->
-        <div class="framework-section" id="openai-sdk">
-            <h3>🌐 OpenAI SDK (Cross-Provider Migration) <span class="difficulty medium">Medium — New SDK + config</span></h3>
-            <p>If you're migrating from Claude to OpenAI (GPT-5), you'll need to switch SDKs entirely. The code structure is similar but requires a few more changes.</p>
+        <!-- OpenAI SDK (PRO GATED) -->
+        <div class="framework-section pro-gated" id="openai-sdk">
+            <div class="framework-gated-content">
+                <h3>🌐 OpenAI SDK (Cross-Provider Migration) <span class="difficulty medium">Medium — New SDK + config</span></h3>
+                <p>If you're migrating from Claude to OpenAI (GPT-5), you'll need to switch SDKs entirely. The code structure is similar but requires a few more changes.</p>
 
-            <div class="before-after">
-                <div class="before">
-                    <div class="label">❌ Before (Anthropic SDK)</div>
+                <div class="before-after">
+                    <div class="before">
+                        <div class="label">❌ Before (Anthropic SDK)</div>
 <pre><code>import anthropic
 
 client = anthropic.Anthropic()
@@ -536,9 +624,9 @@ message = client.messages.create(
     ]
 )
 print(message.content[0].text)</code></pre>
-                </div>
-                <div class="after">
-                    <div class="label">✅ After (OpenAI SDK)</div>
+                    </div>
+                    <div class="after">
+                        <div class="label">✅ After (OpenAI SDK)</div>
 <pre><code>from openai import OpenAI
 
 client = OpenAI()
@@ -550,40 +638,55 @@ response = client.chat.completions.create(
     ]
 )
 print(response.choices[0].message.content)</code></pre>
+                    </div>
                 </div>
-            </div>
 
-            <p><strong>Key differences:</strong></p>
-            <ul>
-                <li><code>messages.create()</code> → <code>chat.completions.create()</code></li>
-                <li><code>message.content[0].text</code> → <code>response.choices[0].message.content</code></li>
-                <li>API key env var: <code>ANTHROPIC_API_KEY</code> → <code>OPENAI_API_KEY</code></li>
-                <li>System prompt: pass as first message with <code>role: "system"</code></li>
-            </ul>
+                <p><strong>Key differences:</strong></p>
+                <ul>
+                    <li><code>messages.create()</code> → <code>chat.completions.create()</code></li>
+                    <li><code>message.content[0].text</code> → <code>response.choices[0].message.content</code></li>
+                    <li>API key env var: <code>ANTHROPIC_API_KEY</code> → <code>OPENAI_API_KEY</code></li>
+                    <li>System prompt: pass as first message with <code>role: "system"</code></li>
+                </ul>
+            </div>
+            <div class="framework-gate-overlay">
+                <h4>🔒 OpenAI SDK Migration — Pro Only</h4>
+                <p>Unlock complete cross-provider migration code with error handling and response mapping.</p>
+                <a href="#" class="framework-gate-cta fw-pro-cta-link">Unlock All Frameworks — $<span class="fw-ab-price">29</span></a>
+                <a href="#" class="framework-gate-trial fw-trial-link">Or try Pro free for 24 hours →</a>
+            </div>
         </div>
 
-        <!-- Langflow -->
-        <div class="framework-section" id="langflow">
-            <h3>🌊 Langflow <span class="difficulty easy">Easy — Update node config</span></h3>
-            <p>In Langflow, click on the Anthropic node and update the model name in the configuration panel.</p>
+        <!-- Langflow (PRO GATED) -->
+        <div class="framework-section pro-gated" id="langflow">
+            <div class="framework-gated-content">
+                <h3>🌊 Langflow <span class="difficulty easy">Easy — Update node config</span></h3>
+                <p>In Langflow, click on the Anthropic node and update the model name in the configuration panel.</p>
 
-            <div class="before-after">
-                <div class="before">
-                    <div class="label">❌ Before (Broken)</div>
+                <div class="before-after">
+                    <div class="before">
+                        <div class="label">❌ Before (Broken)</div>
 <pre><code>{
   "type": "Anthropic",
   "model": "claude-4-opus-20250514",
   "temperature": 0
 }</code></pre>
-                </div>
-                <div class="after">
-                    <div class="label">✅ After (Fixed)</div>
+                    </div>
+                    <div class="after">
+                        <div class="label">✅ After (Fixed)</div>
 <pre><code>{
   "type": "Anthropic",
   "model": "claude-opus-4-8-20260615",
   "temperature": 0
 }</code></pre>
+                    </div>
                 </div>
+            </div>
+            <div class="framework-gate-overlay">
+                <h4>🔒 Langflow Migration — Pro Only</h4>
+                <p>Unlock Langflow node configuration migration with visual pipeline update guide.</p>
+                <a href="#" class="framework-gate-cta fw-pro-cta-link">Unlock All Frameworks — $<span class="fw-ab-price">29</span></a>
+                <a href="#" class="framework-gate-trial fw-trial-link">Or try Pro free for 24 hours →</a>
             </div>
         </div>
 
@@ -649,8 +752,8 @@ print(response.choices[0].message.content)</code></pre>
             <h3>🚀 Save Even More With Pro</h3>
             <p>Pro users get personalized model routing — use cheap models for 80% of tasks, premium only when needed. <strong style="color:var(--green);">Average additional savings: 40%.</strong></p>
             <div style="display:flex;gap:10px;flex-wrap:wrap;justify-content:center;align-items:center;">
-                <a href="https://buy.stripe.com/fZu7sL3Gw3GS0RQeoDeEo0a" class="btn-primary" style="display:inline-block;padding:12px 28px;font-size:15px;" target="_blank" rel="noopener" onclick="if(window.trackEvent)window.trackEvent('pro_button_clicked',{source:'framework_guide'})">Get Pro — $29 one-time</a>
-                <button onclick="startTrial();if(window.trackEvent)window.trackEvent('trial_started',{source:'framework_guide'});" style="padding:12px 24px;font-size:14px;font-weight:600;border:2px solid var(--accent);background:transparent;color:var(--accent);border-radius:10px;cursor:pointer;transition:all 0.2s;" onmouseover="this.style.background='rgba(99,102,241,0.1)'" onmouseout="this.style.background='transparent'">Try Free for 24h →</button>
+                <a href="https://buy.stripe.com/fZu7sL3Gw3GS0RQeoDeEo0a" id="fw-bottom-pro-cta" class="btn-primary" style="display:inline-block;padding:12px 28px;font-size:15px;" target="_blank" rel="noopener" onclick="if(window.trackEvent)window.trackEvent('pro_button_clicked',{source:'framework_guide'})">Get Pro — $<span class="fw-ab-price">29</span> one-time</a>
+                <button onclick="startTrial();unlockFrameworkGates();if(window.trackEvent)window.trackEvent('trial_started',{source:'framework_guide'});" style="padding:12px 24px;font-size:14px;font-weight:600;border:2px solid var(--accent);background:transparent;color:var(--accent);border-radius:10px;cursor:pointer;transition:all 0.2s;" onmouseover="this.style.background='rgba(99,102,241,0.1)'" onmouseout="this.style.background='transparent'">Try Free for 24h →</button>
             </div>
             <p style="font-size:12px;color:var(--text-muted);margin-top:8px;">14-day money-back guarantee · Lifetime access</p>
         </div>
@@ -735,5 +838,77 @@ print(response.choices[0].message.content)</code></pre>
         </div>
     </div>
     </main>
+
+    <script>
+    function unlockFrameworkGates() {
+        // Remove all pro-gated overlays
+        document.querySelectorAll('.framework-section.pro-gated').forEach(function(section) {
+            section.classList.remove('pro-gated');
+            var overlay = section.querySelector('.framework-gate-overlay');
+            if (overlay) overlay.remove();
+        });
+        // Hide early upsell
+        var upsell = document.getElementById('early-framework-upsell');
+        if (upsell) upsell.style.display = 'none';
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+        var price = window._abPrice || 29;
+        // Update all A/B prices
+        document.querySelectorAll('.fw-ab-price').forEach(function(el) { el.textContent = price; });
+
+        // Update Stripe links
+        var stripeLink = window._abStripeLink || 'https://buy.stripe.com/fZu7sL3Gw3GS0RQeoDeEo0a';
+        var bottomCta = document.getElementById('fw-bottom-pro-cta');
+        if (bottomCta) bottomCta.href = stripeLink;
+
+        if (isProUser()) {
+            unlockFrameworkGates();
+            return; // No upsells needed for Pro users
+        }
+
+        // Show early upsell for non-Pro users
+        var upsell = document.getElementById('early-framework-upsell');
+        if (upsell) upsell.style.display = 'block';
+
+        // Bind all Pro CTA links
+        document.querySelectorAll('.fw-pro-cta-link').forEach(function(link) {
+            link.href = stripeLink;
+            link.addEventListener('click', function() {
+                if (window.trackEvent) window.trackEvent('pro_button_clicked', { source: 'framework_gate_overlay', page: 'framework-migration-guide' });
+            });
+        });
+
+        // Bind early upsell Pro CTA
+        var earlyCta = document.getElementById('fw-early-pro-cta');
+        if (earlyCta) {
+            earlyCta.href = stripeLink;
+            earlyCta.addEventListener('click', function() {
+                if (window.trackEvent) window.trackEvent('pro_button_clicked', { source: 'framework_early_upsell', page: 'framework-migration-guide' });
+            });
+        }
+
+        // Bind all trial links
+        document.querySelectorAll('.fw-trial-link').forEach(function(link) {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                startTrial();
+                unlockFrameworkGates();
+                if (window.trackEvent) window.trackEvent('trial_started', { source: 'framework_gate', page: 'framework-migration-guide' });
+            });
+        });
+
+        // Bind early trial link
+        var earlyTrial = document.getElementById('fw-early-trial');
+        if (earlyTrial) {
+            earlyTrial.addEventListener('click', function(e) {
+                e.preventDefault();
+                startTrial();
+                unlockFrameworkGates();
+                if (window.trackEvent) window.trackEvent('trial_started', { source: 'framework_early_upsell', page: 'framework-migration-guide' });
+            });
+        }
+    });
+    </script>
 </body>
 </html>

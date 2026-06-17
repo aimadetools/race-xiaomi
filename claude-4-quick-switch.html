@@ -262,11 +262,89 @@
         }
         .qs-pro-inner .pro-cta:hover { transform: translateY(-2px); }
 
+        .pill.locked {
+            opacity: 0.55;
+            cursor: pointer;
+            position: relative;
+        }
+        .pill.locked:hover { border-color: var(--accent); opacity: 0.75; }
+        .pill .lock-badge {
+            display: none;
+            position: absolute;
+            top: -6px;
+            right: -6px;
+            background: var(--accent);
+            color: white;
+            font-size: 10px;
+            font-weight: 800;
+            padding: 2px 6px;
+            border-radius: 8px;
+        }
+        .pill.locked .lock-badge { display: inline-block; }
+
+        .qs-pro-gate {
+            display: none;
+            max-width: 700px;
+            margin: 0 auto 48px;
+            padding: 0 24px;
+        }
+        .qs-pro-gate.visible { display: block; }
+        .qs-pro-gate-inner {
+            background: linear-gradient(135deg, rgba(99,102,241,0.1), rgba(168,85,247,0.1));
+            border: 2px solid var(--accent);
+            border-radius: 16px;
+            padding: 32px;
+            text-align: center;
+        }
+        .qs-pro-gate-inner h3 { font-size: 20px; font-weight: 800; margin-bottom: 8px; }
+        .qs-pro-gate-inner p { color: var(--text-secondary); font-size: 14px; line-height: 1.6; margin-bottom: 16px; max-width: 500px; margin-left: auto; margin-right: auto; }
+        .qs-pro-gate-inner .pro-compare {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            margin: 16px 0;
+            text-align: left;
+        }
+        .qs-pro-gate-inner .pro-compare > div {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 14px;
+        }
+        .qs-pro-gate-inner .pro-compare .label { font-size: 12px; font-weight: 700; margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.5px; }
+        .qs-pro-gate-inner .pro-compare ul { list-style: none; padding: 0; margin: 0; font-size: 13px; }
+        .qs-pro-gate-inner .pro-compare li { padding: 3px 0; }
+        .qs-pro-gate-inner .pro-compare .with-pro .label { color: var(--green); }
+        .qs-pro-gate-inner .pro-compare .without-pro .label { color: #ef4444; }
+        .qs-pro-gate-inner .pro-cta-btn {
+            display: inline-block;
+            background: var(--accent);
+            color: white;
+            padding: 14px 32px;
+            border-radius: 10px;
+            font-size: 16px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: all 0.2s;
+            box-shadow: 0 4px 20px rgba(99,102,241,0.3);
+        }
+        .qs-pro-gate-inner .pro-cta-btn:hover { transform: translateY(-2px); }
+        .qs-pro-gate-inner .trial-link {
+            display: inline-block;
+            color: var(--accent);
+            font-size: 14px;
+            font-weight: 600;
+            text-decoration: underline;
+            margin-top: 10px;
+            cursor: pointer;
+        }
+
         @media (max-width: 640px) {
             .qs-hero h1 { font-size: 26px; }
             .pill-group { flex-direction: column; }
             .pill { width: 100%; }
             .related-grid { grid-template-columns: 1fr !important; }
+            .qs-pro-gate-inner .pro-compare { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -317,13 +395,14 @@
                 <div class="qs-step">
                     <label>2. What do you want to switch to?</label>
                     <div class="pill-group" id="target-pills">
-                        <div class="pill selected" onclick="selectTarget(this,'opus48')">Claude Opus 4.8<span class="pill-sub">$5/$25 · 67% cheaper</span></div>
-                        <div class="pill" onclick="selectTarget(this,'sonnet46')">Claude Sonnet 4.6<span class="pill-sub">$3/$15 · 80% cheaper</span></div>
-                        <div class="pill" onclick="selectTarget(this,'gpt5')">GPT-5<span class="pill-sub">$1.25/$10 · 92% cheaper</span></div>
-                        <div class="pill" onclick="selectTarget(this,'gemini')">Gemini 2.5 Pro<span class="pill-sub">$1.25/$10 · 92% cheaper</span></div>
-                        <div class="pill" onclick="selectTarget(this,'deepseek')">DeepSeek V4 Pro<span class="pill-sub">$0.44/$0.87 · 97% cheaper</span></div>
-                        <div class="pill" onclick="selectTarget(this,'deepseek-flash')">DeepSeek V4 Flash<span class="pill-sub">$0.14/$0.28 · 99% cheaper</span></div>
+                        <div class="pill selected" data-target="opus48" onclick="selectTarget(this,'opus48')">Claude Opus 4.8<span class="pill-sub">$5/$25 · 67% cheaper</span></div>
+                        <div class="pill locked" data-target="sonnet46" onclick="selectTarget(this,'sonnet46')"><span class="lock-badge">PRO</span>Claude Sonnet 4.6<span class="pill-sub">$3/$15 · 80% cheaper</span></div>
+                        <div class="pill locked" data-target="gpt5" onclick="selectTarget(this,'gpt5')"><span class="lock-badge">PRO</span>GPT-5<span class="pill-sub">$1.25/$10 · 92% cheaper</span></div>
+                        <div class="pill locked" data-target="gemini" onclick="selectTarget(this,'gemini')"><span class="lock-badge">PRO</span>Gemini 2.5 Pro<span class="pill-sub">$1.25/$10 · 92% cheaper</span></div>
+                        <div class="pill locked" data-target="deepseek" onclick="selectTarget(this,'deepseek')"><span class="lock-badge">PRO</span>DeepSeek V4 Pro<span class="pill-sub">$0.44/$0.87 · 97% cheaper</span></div>
+                        <div class="pill locked" data-target="deepseek-flash" onclick="selectTarget(this,'deepseek-flash')"><span class="lock-badge">PRO</span>DeepSeek V4 Flash<span class="pill-sub">$0.14/$0.28 · 99% cheaper</span></div>
                     </div>
+                    <p id="pro-hint" style="display:none;font-size:12px;color:var(--accent);margin-top:8px;font-weight:600;">🔒 Opus 4.8 is free. Unlock Pro to generate code for all 6 targets.</p>
                 </div>
 
                 <button class="qs-btn" onclick="generateCode()">⚡ Generate My Migration Code</button>
@@ -346,6 +425,39 @@
             </div>
         </section>
 
+        <!-- Pro gate (shown when locked target selected) -->
+        <section class="qs-pro-gate" id="qs-pro-gate">
+            <div class="qs-pro-gate-inner">
+                <h3>🔒 Unlock Migration Code for All Targets</h3>
+                <p>You're viewing the free preview (Claude Opus 4.8 only). Pro unlocks code generation for all 6 targets — including DeepSeek at 99% savings.</p>
+                <div class="pro-compare">
+                    <div class="with-pro">
+                        <div class="label">✅ With Pro</div>
+                        <ul>
+                            <li>✅ All 6 target models unlocked</li>
+                            <li>✅ 5 languages × 6 targets = 30 combos</li>
+                            <li>✅ Framework-specific migration code</li>
+                            <li>✅ Cost comparison for your usage</li>
+                        </ul>
+                    </div>
+                    <div class="without-pro">
+                        <div class="label">❌ Free (Current)</div>
+                        <ul>
+                            <li>❌ Only Claude Opus 4.8 target</li>
+                            <li>❌ Can't generate DeepSeek code</li>
+                            <li>❌ Can't generate GPT-5 code</li>
+                            <li>❌ No cost comparison</li>
+                        </ul>
+                    </div>
+                </div>
+                <div style="display:flex;gap:12px;align-items:center;justify-content:center;flex-wrap:wrap;">
+                    <a href="#" id="qs-gate-pro-cta" class="pro-cta-btn">Unlock All Targets — $<span class="ab-price">29</span></a>
+                    <a href="#" id="qs-gate-trial" class="trial-link">Or try Pro free for 24 hours →</a>
+                </div>
+                <p style="font-size:12px;color:var(--text-muted);margin-top:10px;">14-day money-back guarantee · Lifetime access</p>
+            </div>
+        </section>
+
         <!-- Pro upsell -->
         <section class="qs-pro">
             <div class="qs-pro-inner">
@@ -354,7 +466,7 @@
                     Pro compares all 42 models against YOUR exact usage.
                     See which model saves you the most — with cost reports and optimization recommendations.
                 </p>
-                <a href="#" id="qs-pro-cta" class="pro-cta">Get Pro — $29 Once</a>
+                <a href="#" id="qs-pro-cta" class="pro-cta">Get Pro — $<span class="ab-price">29</span> Once</a>
             </div>
         </section>
 
@@ -392,6 +504,25 @@
     <script>
     var selectedLang = 'python';
     var selectedTarget = 'opus48';
+    var FREE_TARGETS = ['opus48'];
+
+    function isLockedTarget(target) {
+        return FREE_TARGETS.indexOf(target) === -1 && !isProUser();
+    }
+
+    function updateProHint() {
+        var hint = document.getElementById('pro-hint');
+        if (!hint) return;
+        hint.style.display = isProUser() ? 'none' : 'block';
+        // Remove locked class from all pills if Pro
+        if (isProUser()) {
+            document.querySelectorAll('#target-pills .pill.locked').forEach(function(p) {
+                p.classList.remove('locked');
+                var badge = p.querySelector('.lock-badge');
+                if (badge) badge.style.display = 'none';
+            });
+        }
+    }
 
     function selectLang(el, lang) {
         document.querySelectorAll('#lang-pills .pill').forEach(function(p) { p.classList.remove('selected'); });
@@ -402,6 +533,16 @@
         document.querySelectorAll('#target-pills .pill').forEach(function(p) { p.classList.remove('selected'); });
         el.classList.add('selected');
         selectedTarget = target;
+
+        // Show/hide Pro gate
+        var gate = document.getElementById('qs-pro-gate');
+        var output = document.getElementById('qs-output');
+        if (isLockedTarget(target)) {
+            if (gate) gate.classList.add('visible');
+            if (output) output.classList.remove('visible');
+        } else {
+            if (gate) gate.classList.remove('visible');
+        }
     }
 
     var MODELS = {
@@ -688,6 +829,17 @@
     };
 
     function generateCode() {
+        // Pro gate: block locked targets for non-Pro users
+        if (isLockedTarget(selectedTarget)) {
+            var gate = document.getElementById('qs-pro-gate');
+            if (gate) {
+                gate.classList.add('visible');
+                gate.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }
+            if (window.trackEvent) window.trackEvent('pro_gate_shown', { source: 'quick_switch', target: selectedTarget });
+            return;
+        }
+
         var m = MODELS[selectedTarget];
         var langCode = CODE[selectedLang];
         if (!langCode || !langCode[m.provider]) {
@@ -737,6 +889,44 @@
             }, 2000);
         });
     }
+
+    // Init: Pro gating + A/B pricing
+    document.addEventListener('DOMContentLoaded', function() {
+        updateProHint();
+
+        // Update A/B prices in all .ab-price spans
+        var price = window._abPrice || 29;
+        document.querySelectorAll('.ab-price').forEach(function(el) { el.textContent = price; });
+
+        // Update Pro CTA links to use A/B variant Stripe link
+        var stripeLink = window._abStripeLink || 'https://buy.stripe.com/fZu7sL3Gw3GS0RQeoDeEo0a';
+        var proCta = document.getElementById('qs-pro-cta');
+        if (proCta) proCta.href = stripeLink;
+        var bottomCta = document.getElementById('qs-bottom-cta');
+        if (bottomCta) bottomCta.href = stripeLink;
+        var gateProCta = document.getElementById('qs-gate-pro-cta');
+        if (gateProCta) {
+            gateProCta.href = stripeLink;
+            gateProCta.addEventListener('click', function() {
+                if (window.trackEvent) window.trackEvent('pro_button_clicked', { source: 'quick_switch_gate', page: 'claude-4-quick-switch' });
+            });
+        }
+
+        // Trial button in Pro gate
+        var trialBtn = document.getElementById('qs-gate-trial');
+        if (trialBtn) {
+            trialBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                startTrial();
+                // Re-render: unlock targets and generate code
+                updateProHint();
+                var gate = document.getElementById('qs-pro-gate');
+                if (gate) gate.classList.remove('visible');
+                generateCode();
+                if (window.trackEvent) window.trackEvent('trial_started', { source: 'quick_switch_gate' });
+            });
+        }
+    });
     </script>
 
     <!-- Pro Upsell CTA -->
@@ -744,7 +934,7 @@
         <div style="background:linear-gradient(135deg,rgba(99,102,241,0.08),rgba(168,85,247,0.08));border:1px solid rgba(99,102,241,0.25);border-radius:16px;padding:40px;text-align:center;">
             <h2 style="font-size:22px;font-weight:700;margin-bottom:8px;">Compare All Alternatives Side by Side</h2>
             <p style="font-size:15px;color:var(--text-secondary);margin-bottom:20px;max-width:500px;margin-left:auto;margin-right:auto;">Pro users can save scenarios and compare up to 10 configurations side by side — perfect for teams deciding on a migration path.</p>
-            <a href="https://buy.stripe.com/fZu7sL3Gw3GS0RQeoDeEo0a" target="_blank" rel="noopener" onclick="if(window.trackEvent)window.trackEvent('pro_button_clicked',{source:'quick_switch_cta'})" style="display:inline-block;padding:14px 36px;background:var(--accent);color:white;border-radius:10px;font-size:16px;font-weight:700;text-decoration:none;transition:all 0.2s;box-shadow:0 4px 20px rgba(99,102,241,0.3);">Get Pro — $29 lifetime</a>
+            <a href="https://buy.stripe.com/fZu7sL3Gw3GS0RQeoDeEo0a" id="qs-bottom-cta" target="_blank" rel="noopener" onclick="if(window.trackEvent)window.trackEvent('pro_button_clicked',{source:'quick_switch_cta'})" style="display:inline-block;padding:14px 36px;background:var(--accent);color:white;border-radius:10px;font-size:16px;font-weight:700;text-decoration:none;transition:all 0.2s;box-shadow:0 4px 20px rgba(99,102,241,0.3);">Get Pro — $<span class="ab-price">29</span> lifetime</a>
             <p style="font-size:12px;color:var(--text-muted);margin-top:12px;">One-time payment · Lifetime access · 14-day money-back guarantee</p>
         </div>
     </div>
