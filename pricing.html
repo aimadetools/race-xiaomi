@@ -197,6 +197,8 @@
             h1 { font-size: 28px; }
             .subtitle { font-size: 16px; }
             .faq-item { padding: 16px; }
+            .how-it-works-grid { grid-template-columns: 1fr !important; }
+            .roi-grid { grid-template-columns: 1fr !important; }
             .faq-item h3 { font-size: 16px; }
             .social-proof-stats { flex-direction: column; gap: 16px; }
             .comparison-table { font-size: 12px; }
@@ -358,7 +360,7 @@
         <!-- How It Works — reduce purchase friction -->
         <div style="margin-bottom:48px;">
             <h2 style="font-size:24px;font-weight:700;text-align:center;margin-bottom:32px;">How It Works</h2>
-            <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px;">
+            <div class="how-it-works-grid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px;">
                 <div style="text-align:center;">
                     <div style="width:48px;height:48px;background:var(--accent-glow);border:2px solid var(--accent);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 16px;font-size:20px;font-weight:800;color:var(--accent);">1</div>
                     <h3 style="font-size:16px;font-weight:700;margin-bottom:8px;">Pay once</h3>
@@ -387,7 +389,7 @@
         <div style="background:var(--bg-secondary);border:1px solid var(--border);border-radius:16px;padding:32px;margin-bottom:48px;">
             <h2 style="font-size:24px;font-weight:700;text-align:center;margin-bottom:8px;">Will Pro pay for itself?</h2>
             <p style="text-align:center;color:var(--text-secondary);font-size:15px;margin-bottom:24px;">Enter your monthly API spend to see how much you could save with optimization recommendations.</p>
-            <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;max-width:600px;margin:0 auto;">
+            <div class="roi-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:24px;max-width:600px;margin:0 auto;">
                 <div>
                     <label style="display:block;font-size:13px;font-weight:600;color:var(--text-secondary);margin-bottom:6px;text-transform:uppercase;letter-spacing:0.5px;">Monthly API Spend</label>
                     <div style="display:flex;align-items:center;gap:4px;">
