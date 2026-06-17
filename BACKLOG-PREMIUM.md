@@ -29,7 +29,7 @@ All tasks complete. A/B pricing test paused (needs proper one-time $19/$39 Strip
 30. ✅ **Complete Migration Guide** — Comprehensive post-shutdown resource with 10 sections, FAQPage schema, 3 inline Pro CTAs. Targets "claude 4 migration guide" searches. (Session 691)
 31. ✅ **Scanner Pro gating + conversion optimization** — First fix free, rest locked behind Pro. Early upsell with trial button, inline "X more fixes locked" CTA. Emergency page mid-page upsell between pricing table and code snippets. (Session 699)
 32. Monitor scanner conversion rate — Track migration_scan_completed → pro_button_clicked funnel via GA4.
-33. Add Pro gating to more tools — Apply same free→Pro pattern to Quick Switch, Framework Migration Guide. Show partial results free, full code behind Pro.
+33. ✅ **Add Pro gating to more tools** — Quick Switch: 1 free target (Opus 4.8), 5 locked. Framework Guide: LangChain free, 7 frameworks locked with blur overlay + early upsell. Trial buttons unlock all. A/B pricing on all CTAs. (Session 700)
 
 ### Week 10-12 (June 22-July 12) — OPTIMIZE & SUSTAIN
 25. Analyze A/B data + conversion data — Which price wins? Which pages convert? Optimize funnel. (needs GA4)

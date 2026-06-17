@@ -29,8 +29,8 @@
 - ✅ Build Migration Scanner tool — client-side code scanner for deprecated Claude 4 patterns (Session 686)
 - ✅ Scanner Pro gating — first fix free, rest locked (Session 699)
 - ✅ Emergency page mid-page Pro upsell (Session 699)
-- Apply Pro gating pattern to Quick Switch tool — show first provider free, rest behind Pro
-- Apply Pro gating pattern to Framework Migration Guide — show first framework free, rest behind Pro
+- ✅ Apply Pro gating pattern to Quick Switch tool — first target (Opus 4.8) free, 5 locked (Session 700)
+- ✅ Apply Pro gating pattern to Framework Migration Guide — LangChain free, 7 locked (Session 700)
 - Add scanner usage to GA4 dashboard — track scan→upsell→purchase funnel
 - Check if exit popup timing A/B test results are available in GA4
 
