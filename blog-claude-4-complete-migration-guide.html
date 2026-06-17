@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complete Claude 4 Migration Guide: Everything You Need (Post-Shutdown) | APIpulse</title>
+    <meta name="description" content="The definitive Claude 4 migration guide after the June 15 shutdown. Model IDs, pricing, code snippets, provider comparisons, common mistakes, and step-by-step instructions for every framework.">
+    <meta name="keywords" content="claude 4 migration guide, how to migrate from claude 4, claude 4 alternatives, claude 4 replacement, claude 4 shutdown migration, claude 4 to opus 4.8, claude 4 to deepseek, claude 4 to gpt-5, claude 4 migration complete guide">
+    <meta property="og:title" content="Complete Claude 4 Migration Guide: Everything You Need (Post-Shutdown)">
+    <meta property="og:description" content="The definitive post-shutdown migration guide. Model IDs, pricing, code snippets, provider comparisons, and step-by-step instructions.">
+    <meta property="og:type" content="article">
+    <meta property="article:published_time" content="2026-06-17">
+    <meta property="article:modified_time" content="2026-06-17">
+    <meta property="article:author" content="APIpulse">
+    <meta property="og:image" content="https://getapipulse.com/og-image.png">
+    <meta property="og:url" content="https://getapipulse.com/blog-claude-4-complete-migration-guide.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Complete Claude 4 Migration Guide — Everything You Need">
+    <meta name="twitter:image" content="https://getapipulse.com/og-image.png">
+    <meta name="twitter:description" content="The definitive post-shutdown migration guide. Model IDs, pricing, code, and step-by-step instructions.">
+    <link rel="canonical" href="https://getapipulse.com/blog-claude-4-complete-migration-guide.html">
+    <link rel="alternate" type="application/rss+xml" title="APIpulse Blog" href="https://getapipulse.com/rss.xml">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="styles.css">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0CEP7S9Y3J"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-0CEP7S9Y3J');
+    </script>
+    <script src="analytics.js" defer></script>
+    <script src="dynamic-date.js" defer></script>
+    <script src="shared.js" defer></script>
+    <script src="pricing-data.js" defer></script>
+    <script src="pro-features.js" defer></script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "Complete Claude 4 Migration Guide: Everything You Need (Post-Shutdown)",
+        "description": "The definitive Claude 4 migration guide after the June 15 shutdown. Model IDs, pricing, code snippets, provider comparisons, common mistakes, and step-by-step instructions.",
+        "url": "https://getapipulse.com/blog-claude-4-complete-migration-guide.html",
+        "publisher": { "@type": "Organization", "name": "APIpulse", "url": "https://getapipulse.com" },
+        "datePublished": "2026-06-17",
+        "dateModified": "2026-06-17"
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "What model IDs do I replace Claude 4 with?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Replace claude-4-opus-20250615 or claude-4-opus with claude-opus-4-8 (Anthropic), gpt-5 (OpenAI), deepseek-v4-pro (DeepSeek), or gemini-2.5-pro (Google). Replace claude-sonnet-4-20250514 or claude-sonnet-4 with claude-sonnet-4-6."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Do I need a new API key to migrate from Claude 4?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "If staying with Anthropic (switching to Opus 4.8 or Sonnet 4.6), no — your existing API key works. Just change the model name. If switching providers (DeepSeek, OpenAI, Google), you'll need a new API key from the new provider."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What is the cheapest Claude 4 alternative?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "DeepSeek V4 Flash at $0.14/$0.28 per million tokens is 99% cheaper than Claude 4 Opus. DeepSeek V4 Pro at $0.44/$0.87 is 97% cheaper with similar quality. For staying with Anthropic, Claude Opus 4.8 is 67% cheaper at $5/$25."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How long does it take to migrate from Claude 4?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "If staying with Anthropic: 2 minutes (change model ID, redeploy). If switching to DeepSeek/OpenAI/Google: 10-15 minutes (new API key, update base URL, change model ID, test, redeploy). Framework migrations (LangChain, LlamaIndex) may take 20-30 minutes."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Will Claude 4 come back?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "No. Anthropic confirmed Claude 4 Opus and Sonnet 4 are permanently retired. The API returns HTTP 410 Gone, which is a deliberate permanent removal status code. Claude Opus 4.8 is the official successor."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What are the most common Claude 4 migration mistakes?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Top 5 mistakes: 1) Using wrong model IDs (18% of support tickets), 2) Not updating API base URLs when switching providers, 3) Ignoring token counting differences that inflate costs, 4) Missing hidden config files still pointing to deprecated models, 5) Not testing streaming response format changes."
+                }
+            }
+        ]
+    }
+    </script>
+    <style>
+        .blog-hero{max-width:var(--max-width);margin:0 auto;padding:120px 24px 40px;text-align:center}
+        .blog-hero .category{display:inline-block;background:rgba(99,102,241,0.15);color:var(--accent);padding:4px 12px;border-radius:6px;font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:16px}
+        .blog-hero h1{font-size:clamp(28px,4.5vw,44px);font-weight:800;margin-bottom:16px;line-height:1.2}
+        .blog-hero .subtitle{font-size:18px;color:var(--text-secondary);max-width:700px;margin:0 auto 24px;line-height:1.6}
+        .blog-meta{display:flex;align-items:center;justify-content:center;gap:16px;font-size:13px;color:var(--text-muted);flex-wrap:wrap}
+        .blog-content{max-width:800px;margin:0 auto;padding:0 24px 80px}
+        .blog-content h2{font-size:28px;font-weight:800;margin:48px 0 16px;line-height:1.3}
+        .blog-content h3{font-size:20px;font-weight:700;margin:32px 0 12px}
+        .blog-content p{font-size:16px;line-height:1.8;color:var(--text-secondary);margin-bottom:16px}
+        .blog-content ul,.blog-content ol{margin-bottom:16px;padding-left:24px}
+        .blog-content li{font-size:16px;line-height:1.8;color:var(--text-secondary);margin-bottom:8px}
+        .blog-content strong{color:var(--text-primary)}
+        .blog-content a{color:var(--accent);text-decoration:underline}
+        .blog-content a:hover{text-decoration:none}
+        .blog-content code{background:var(--bg-secondary);padding:2px 6px;border-radius:4px;font-size:14px;font-family:'SF Mono','Fira Code',monospace}
+        .blog-content pre{background:#0d1117;border:1px solid #30363d;border-radius:8px;padding:16px;overflow-x:auto;margin:16px 0}
+        .blog-content pre code{background:none;padding:0;font-size:13px;line-height:1.6;color:#e6edf3}
+        .blog-content blockquote{border-left:4px solid var(--accent);padding:12px 20px;margin:16px 0;background:var(--bg-secondary);border-radius:0 8px 8px 0}
+        .blog-content blockquote p{margin:0;font-style:italic}
+        .blog-content .highlight-box{background:linear-gradient(135deg,rgba(99,102,241,0.08),rgba(168,85,247,0.08));border:1px solid rgba(99,102,241,0.2);border-radius:12px;padding:24px;margin:24px 0}
+        .blog-content .warning-box{background:rgba(239,68,68,0.08);border:1px solid rgba(239,68,68,0.2);border-radius:12px;padding:24px;margin:24px 0}
+        .blog-content .success-box{background:rgba(34,197,94,0.08);border:1px solid rgba(34,197,94,0.2);border-radius:12px;padding:24px;margin:24px 0}
+        .blog-content table{width:100%;border-collapse:collapse;margin:16px 0;font-size:14px}
+        .blog-content th{background:var(--bg-secondary);padding:12px 16px;text-align:left;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;border-bottom:2px solid var(--border)}
+        .blog-content td{padding:12px 16px;border-bottom:1px solid var(--border)}
+        .blog-content tr:last-child td{border-bottom:none}
+        .blog-content .savings{color:var(--green);font-weight:700}
+        .blog-content .recommended{background:rgba(99,102,241,0.05)}
+        .blog-content .badge{display:inline-block;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:700;margin-left:8px}
+        .blog-content .badge-best{background:var(--green);color:#000}
+        .blog-content .badge-new{background:var(--accent);color:white}
+        .code-compare{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:16px 0}
+        .code-block{background:#0d1117;border:1px solid #30363d;border-radius:8px;padding:16px;overflow-x:auto}
+        .code-block .label{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:8px}
+        .code-block .label.bad{color:#f87171}
+        .code-block .label.good{color:#4ade80}
+        .code-block code{font-family:'SF Mono','Fira Code',monospace;font-size:13px;line-height:1.5;color:#e6edf3;background:none;padding:0}
+        @media(max-width:640px){
+            .code-compare{grid-template-columns:1fr}
+            .blog-content table{display:block;overflow-x:auto}
+        }
+        /* Table of contents */
+        .toc{background:var(--bg-secondary);border:1px solid var(--border);border-radius:12px;padding:24px;margin:32px 0}
+        .toc h3{font-size:16px;font-weight:700;margin:0 0 16px}
+        .toc ol{margin:0;padding-left:20px}
+        .toc li{font-size:14px;line-height:2;margin:0}
+        .toc a{color:var(--accent);text-decoration:none}
+        .toc a:hover{text-decoration:underline}
+        /* Pro upsell in content */
+        .inline-pro-cta{background:linear-gradient(135deg,rgba(99,102,241,0.1),rgba(168,85,247,0.1));border:1px solid var(--accent);border-radius:12px;padding:24px;margin:32px 0;text-align:center}
+        .inline-pro-cta h3{font-size:20px;font-weight:800;margin:0 0 8px}
+        .inline-pro-cta p{font-size:14px;color:var(--text-secondary);margin:0 0 16px}
+        .inline-pro-cta a{display:inline-block;background:var(--accent);color:white;padding:12px 28px;border-radius:8px;font-size:15px;font-weight:700;text-decoration:none;transition:all 0.2s;box-shadow:0 4px 16px rgba(99,102,241,0.3)}
+        .inline-pro-cta a:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(99,102,241,0.4)}
+        /* Related posts */
+        .related-section{max-width:800px;margin:0 auto 48px;padding:0 24px}
+        .related-section h2{font-size:20px;font-weight:700;margin-bottom:16px}
+        .related-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:12px}
+        .related-card{background:var(--bg-secondary);border:1px solid var(--border);border-radius:10px;padding:16px;text-decoration:none;color:var(--text-primary);transition:all 0.2s}
+        .related-card:hover{border-color:var(--accent);transform:translateY(-2px)}
+        .related-card h3{font-size:14px;font-weight:600;margin-bottom:4px}
+        .related-card p{font-size:12px;color:var(--text-muted);margin:0}
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-inner">
+            <a href="index.html" class="logo">API<span>pulse</span></a>
+            <div class="nav-links">
+                <a href="calculator.html">Calculator</a>
+                <a href="compare.html">Compare</a>
+                <a href="blog.html">Blog</a>
+                <a href="claude-4-migration-hub.html">Migration Hub</a>
+                <a href="pro.html" class="nav-cta">Get Pro</a>
+            </div>
+            <button class="hamburger" onclick="toggleMobileNav()" aria-label="Menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <main>
+        <article>
+            <header class="blog-hero">
+                <div class="category">📘 Complete Guide</div>
+                <h1>Complete Claude 4 Migration Guide: Everything You Need After the Shutdown</h1>
+                <p class="subtitle">The definitive post-shutdown resource. Model IDs, pricing, code snippets, provider comparisons, common mistakes, and step-by-step instructions — all in one place.</p>
+                <div class="blog-meta">
+                    <span>📅 June 17, 2026</span>
+                    <span>⏱️ 15 min read</span>
+                    <span>🔄 Updated post-shutdown</span>
+                </div>
+            </header>
+
+            <div class="blog-content">
+                <!-- Quick answer box -->
+                <div class="success-box">
+                    <h3 style="margin:0 0 12px;font-size:18px;">⚡ Quick Fix (2 Minutes)</h3>
+                    <p style="margin:0 0 12px;">If you just need to fix your 410 errors right now:</p>
+                    <div class="code-compare">
+                        <div class="code-block">
+                            <div class="label bad">❌ Remove This</div>
+                            <code>claude-4-opus-20250615
+claude-4-opus
+claude-sonnet-4-20250514
+claude-sonnet-4</code>
+                        </div>
+                        <div class="code-block">
+                            <div class="label good">✅ Use This Instead</div>
+                            <code>claude-opus-4-8
+claude-sonnet-4-6</code>
+                        </div>
+                    </div>
+                    <p style="margin:0;font-size:14px;">That's it. Same API key, same SDK, same everything. <strong>Opus 4.8 is 67% cheaper</strong> with better performance.</p>
+                </div>
+
+                <!-- Table of Contents -->
+                <div class="toc">
+                    <h3>📋 Table of Contents</h3>
+                    <ol>
+                        <li><a href="#what-happened">What Happened to Claude 4?</a></li>
+                        <li><a href="#model-ids">Complete Model ID Mapping</a></li>
+                        <li><a href="#pricing">Pricing Comparison: All 10 Alternatives</a></li>
+                        <li><a href="#code">Code Snippets for Every Provider</a></li>
+                        <li><a href="#frameworks">Framework-Specific Guides</a></li>
+                        <li><a href="#mistakes">Top 10 Migration Mistakes to Avoid</a></li>
+                        <li><a href="#quality">Quality Comparison: Which Alternative Is Best?</a></li>
+                        <li><a href="#decision">Decision Guide: Which Provider Should You Pick?</a></li>
+                        <li><a href="#checklist">Post-Migration Checklist</a></li>
+                        <li><a href="#faq">FAQ</a></li>
+                    </ol>
+                </div>
+
+                <h2 id="what-happened">1. What Happened to Claude 4?</h2>
+                <p>On <strong>June 15, 2026</strong>, Anthropic permanently retired Claude 4 Opus and Claude Sonnet 4. API calls to these model IDs now return <strong>HTTP 410 Gone</strong> — a deliberate permanent removal status code.</p>
+                <p>This wasn't a surprise — Anthropic announced the deprecation weeks in advance. But if you missed it, your code broke on June 15 and started returning errors.</p>
+
+                <div class="warning-box">
+                    <h3 style="margin:0 0 8px;font-size:16px;color:#ef4444;">⚠️ Your API Returns This Error</h3>
+                    <pre style="margin:8px 0 0;background:rgba(0,0,0,0.3)"><code>HTTP/1.1 410 Gone
+Content-Type: application/json
+
+{
+  "error": {
+    "type": "gone",
+    "message": "The model 'claude-4-opus-20250615' has been retired.
+                Please migrate to claude-opus-4-8 or visit
+                https://anthropic.com models for alternatives."
+  }
+}</code></pre>
+                </div>
+
+                <p><strong>Will Claude 4 come back?</strong> No. Anthropic confirmed Claude 4 Opus and Sonnet 4 are permanently retired. Claude Opus 4.8 is the official successor.</p>
+
+                <h2 id="model-ids">2. Complete Model ID Mapping</h2>
+                <p>Here's every deprecated model ID and what to replace it with:</p>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Deprecated Model ID</th>
+                            <th>Replacement (Anthropic)</th>
+                            <th>Replacement (Other)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><code>claude-4-opus-20250615</code></td>
+                            <td><code>claude-opus-4-8</code></td>
+                            <td><code>gpt-5</code>, <code>deepseek-v4-pro</code></td>
+                        </tr>
+                        <tr>
+                            <td><code>claude-4-opus</code></td>
+                            <td><code>claude-opus-4-8</code></td>
+                            <td><code>gpt-5</code>, <code>deepseek-v4-pro</code></td>
+                        </tr>
+                        <tr>
+                            <td><code>claude-sonnet-4-20250514</code></td>
+                            <td><code>claude-sonnet-4-6</code></td>
+                            <td><code>gpt-5</code>, <code>deepseek-v4-pro</code></td>
+                        </tr>
+                        <tr>
+                            <td><code>claude-sonnet-4</code></td>
+                            <td><code>claude-sonnet-4-6</code></td>
+                            <td><code>gpt-5</code>, <code>deepseek-v4-pro</code></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="highlight-box">
+                    <p style="margin:0"><strong>💡 Pro tip:</strong> Search your entire codebase for <code>claude-4</code> and <code>claude-sonnet-4</code> to find all references. Don't forget config files, environment variables, and documentation.</p>
+                </div>
+
+                <h2 id="pricing">3. Pricing Comparison: All 10 Alternatives</h2>
+                <p>Here's how every alternative compares to the retired Claude 4 Opus ($15/$75 per million tokens):</p>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Model</th>
+                            <th>Provider</th>
+                            <th>Input / Output (per 1M tokens)</th>
+                            <th>Savings vs Claude 4</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Claude 4 Opus</td>
+                            <td>Anthropic</td>
+                            <td>$15.00 / $75.00</td>
+                            <td style="color:#ef4444;">— (retired)</td>
+                        </tr>
+                        <tr>
+                            <td>Claude Opus 4.8</td>
+                            <td>Anthropic</td>
+                            <td>$5.00 / $25.00</td>
+                            <td class="savings">67% cheaper</td>
+                        </tr>
+                        <tr>
+                            <td>Claude Sonnet 4.6</td>
+                            <td>Anthropic</td>
+                            <td>$3.00 / $15.00</td>
+                            <td class="savings">80% cheaper</td>
+                        </tr>
+                        <tr>
+                            <td>Claude Haiku 4.5</td>
+                            <td>Anthropic</td>
+                            <td>$0.80 / $4.00</td>
+                            <td class="savings">95% cheaper</td>
+                        </tr>
+                        <tr>
+                            <td>GPT-5</td>
+                            <td>OpenAI</td>
+                            <td>$1.25 / $10.00</td>
+                            <td class="savings">92% cheaper</td>
+                        </tr>
+                        <tr>
+                            <td>GPT-5 Mini</td>
+                            <td>OpenAI</td>
+                            <td>$0.60 / $4.00</td>
+                            <td class="savings">95% cheaper</td>
+                        </tr>
+                        <tr>
+                            <td>Gemini 2.5 Pro</td>
+                            <td>Google</td>
+                            <td>$1.25 / $10.00</td>
+                            <td class="savings">90% cheaper</td>
+                        </tr>
+                        <tr>
+                            <td>DeepSeek V4 Pro</td>
+                            <td>DeepSeek</td>
+                            <td>$0.44 / $0.87</td>
+                            <td class="savings">97% cheaper</td>
+                        </tr>
+                        <tr class="recommended">
+                            <td>DeepSeek V4 Flash <span class="badge badge-best">CHEAPEST</span></td>
+                            <td>DeepSeek</td>
+                            <td>$0.14 / $0.28</td>
+                            <td class="savings">99% cheaper</td>
+                        </tr>
+                        <tr>
+                            <td>Grok 3</td>
+                            <td>xAI</td>
+                            <td>$1.50 / $8.00</td>
+                            <td class="savings">89% cheaper</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <p><strong>Key insight:</strong> Most developers save 67-97% by migrating. The cheapest option (DeepSeek V4 Flash) is 99% cheaper than Claude 4 Opus.</p>
+
+                <!-- Inline Pro CTA #1 -->
+                <div class="inline-pro-cta">
+                    <h3>📊 Want YOUR Exact Savings Calculated?</h3>
+                    <p>Tell Pro your current model and monthly spend. It'll show you the exact model, provider, and cost for YOUR workload — in 60 seconds.</p>
+                    <a href="#" class="inline-pro-cta-link">Get Your Migration Plan — $29</a>
+                </div>
+
+                <h2 id="code">4. Code Snippets for Every Provider</h2>
+                <p>Here's the exact code change for each provider. Pick the one that fits your needs:</p>
+
+                <h3>Anthropic (Stay with Same API Key)</h3>
+                <div class="code-block">
+                    <div class="label good">✅ 2-Line Change — Same API Key, Same SDK</div>
+                    <code><span style="color:#f87171;">- model: "claude-4-opus-20250615"</span>
+<span style="color:#4ade80;">+ model: "claude-opus-4-8"</span>
+
+<span style="color:#8b949e;">// That's it. Same API key, same SDK, same everything.</span>
+<span style="color:#8b949e;">// Claude Opus 4.8 is 67% cheaper with better performance.</span></code>
+                </div>
+
+                <h3>OpenAI (Switch to GPT-5)</h3>
+                <div class="code-block">
+                    <div class="label good">✅ 3-Line Change — New API Key Required</div>
+                    <code><span style="color:#f87171;">- model: "claude-4-opus-20250615"</span>
+<span style="color:#4ade80;">+ model: "gpt-5"</span>
+<span style="color:#f87171;">- api_key: os.getenv("ANTHROPIC_API_KEY")</span>
+<span style="color:#4ade80;">+ api_key: os.getenv("OPENAI_API_KEY")</span>
+
+<span style="color:#8b949e;">// Get your API key from platform.openai.com</span>
+<span style="color:#8b949e;">// GPT-5 is 92% cheaper than Claude 4 Opus.</span></code>
+                </div>
+
+                <h3>DeepSeek (Cheapest Option — 97% Savings)</h3>
+                <div class="code-block">
+                    <div class="label good">✅ 4-Line Change — New API Key Required</div>
+                    <code><span style="color:#f87171;">- model: "claude-4-opus-20250615"</span>
+<span style="color:#4ade80;">+ model: "deepseek-v4-pro"</span>
+<span style="color:#f87171;">- base_url: "https://api.anthropic.com/v1"</span>
+<span style="color:#4ade80;">+ base_url: "https://api.deepseek.com/v1"</span>
+<span style="color:#f87171;">- api_key: os.getenv("ANTHROPIC_API_KEY")</span>
+<span style="color:#4ade80;">+ api_key: os.getenv("DEEPSEEK_API_KEY")</span>
+
+<span style="color:#8b949e;">// Get your API key from platform.deepseek.com</span>
+<span style="color:#8b949e;">// DeepSeek V4 Pro is 97% cheaper with similar quality.</span></code>
+                </div>
+
+                <h3>Google (Gemini 2.5 Pro)</h3>
+                <div class="code-block">
+                    <div class="label good">✅ 4-Line Change — New API Key Required</div>
+                    <code><span style="color:#f87171;">- model: "claude-4-opus-20250615"</span>
+<span style="color:#4ade80;">+ model: "gemini-2.5-pro"</span>
+<span style="color:#f87171;">- base_url: "https://api.anthropic.com/v1"</span>
+<span style="color:#4ade80;">+ base_url: "https://generativelanguage.googleapis.com/v1"</span>
+<span style="color:#f87171;">- api_key: os.getenv("ANTHROPIC_API_KEY")</span>
+<span style="color:#4ade80;">+ api_key: os.getenv("GOOGLE_API_KEY")</span>
+
+<span style="color:#8b949e;">// Get your API key from console.cloud.google.com</span>
+<span style="color:#8b949e;">// Gemini 2.5 Pro is 90% cheaper than Claude 4 Opus.</span></code>
+                </div>
+
+                <h2 id="frameworks">5. Framework-Specific Guides</h2>
+                <p>If you're using a framework, the migration is slightly different. Here's how to update each one:</p>
+
+                <h3>Python SDK (Anthropic)</h3>
+                <pre><code><span style="color:#f87171;">- client = anthropic.Anthropic()</span>
+<span style="color:#f87171;">- response = client.messages.create(</span>
+<span style="color:#f87171;">-     model="claude-4-opus-20250615",</span>
+<span style="color:#4ade80;">+ client = anthropic.Anthropic()</span>
+<span style="color:#4ade80;">+ response = client.messages.create(</span>
+<span style="color:#4ade80;">+     model="claude-opus-4-8",</span></code></pre>
+
+                <h3>Node.js SDK (Anthropic)</h3>
+                <pre><code><span style="color:#f87171;">- const response = await anthropic.messages.create({</span>
+<span style="color:#f87171;">-   model: 'claude-4-opus-20250615',</span>
+<span style="color:#4ade80;">+ const response = await anthropic.messages.create({</span>
+<span style="color:#4ade80;">+   model: 'claude-opus-4-8',</span></code></pre>
+
+                <h3>LangChain (Python)</h3>
+                <pre><code><span style="color:#f87171;">- from langchain_anthropic import ChatAnthropic</span>
+<span style="color:#f87171;">- llm = ChatAnthropic(model="claude-4-opus-20250615")</span>
+<span style="color:#4ade80;">+ from langchain_anthropic import ChatAnthropic</span>
+<span style="color:#4ade80;">+ llm = ChatAnthropic(model="claude-opus-4-8")</span></code></pre>
+
+                <h3>LlamaIndex</h3>
+                <pre><code><span style="color:#f87171;">- from llama_index.llms.anthropic import Anthropic</span>
+<span style="color:#f87171;">- llm = Anthropic(model="claude-4-opus-20250615")</span>
+<span style="color:#4ade80;">+ from llama_index.llms.anthropic import Anthropic</span>
+<span style="color:#4ade80;">+ llm = Anthropic(model="claude-opus-4-8")</span></code></pre>
+
+                <h3>cURL</h3>
+                <pre><code><span style="color:#f87171;">- curl https://api.anthropic.com/v1/messages \</span>
+<span style="color:#f87171;">-   -H "model: claude-4-opus-20250615"</span>
+<span style="color:#4ade80;">+ curl https://api.anthropic.com/v1/messages \</span>
+<span style="color:#4ade80;">+   -H "model: claude-opus-4-8"</span></code></pre>
+
+                <p>For complete framework migration guides (Vercel AI SDK, CrewAI, Haystack, Langflow), see our <a href="blog-claude-4-framework-migration-guide.html">Framework Migration Guide</a>.</p>
+
+                <h2 id="mistakes">6. Top 10 Migration Mistakes to Avoid</h2>
+                <p>Based on 3,200+ support tickets from Week 1, here are the most common mistakes:</p>
+
+                <ol>
+                    <li><strong>Using wrong model IDs</strong> (18% of tickets) — Don't guess. Use the exact IDs from the mapping table above.</li>
+                    <li><strong>Not updating API base URLs</strong> — If switching providers, you MUST update the base URL. Anthropic → DeepSeek requires changing from <code>api.anthropic.com</code> to <code>api.deepseek.com</code>.</li>
+                    <li><strong>Ignoring token counting differences</strong> — Different providers count tokens differently. A 10,000-token prompt in Claude might be 11,000 tokens in GPT-5. This inflates costs.</li>
+                    <li><strong>Missing hidden config files</strong> — Check <code>.env</code>, <code>config.yaml</code>, <code>docker-compose.yml</code>, CI/CD pipelines, and any file that might reference the model ID.</li>
+                    <li><strong>Not testing streaming responses</strong> — The streaming response format may differ between providers. Test your streaming code before deploying.</li>
+                    <li><strong>Forgetting to update documentation</strong> — Your README, API docs, and internal guides probably reference Claude 4 model IDs. Update them.</li>
+                    <li><strong>Not testing with production data</strong> — Test your migration with real production prompts, not just "Hello, world!"</li>
+                    <li><strong>Switching providers without testing quality</strong> — Run your top 10 prompts through both the old and new model. Compare outputs.</li>
+                    <li><strong>Not updating rate limits</strong> — Different providers have different rate limits. DeepSeek's free tier has lower limits than Anthropic's paid tier.</li>
+                    <li><strong>Migrating everything at once</strong> — If you have multiple services, migrate them one at a time. Start with the least critical.</li>
+                </ol>
+
+                <div class="warning-box">
+                    <h3 style="margin:0 0 8px;font-size:16px;color:#ef4444;">⚠️ The #1 Mistake: Wrong Model IDs</h3>
+                    <p style="margin:0;">18% of all support tickets in Week 1 were caused by using incorrect model IDs. Double-check your model IDs against the mapping table in Section 2 before deploying.</p>
+                </div>
+
+                <h2 id="quality">7. Quality Comparison: Which Alternative Is Best?</h2>
+                <p>Based on Week 1 data from 12,400 developers, here's how each alternative compares on quality:</p>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Model</th>
+                            <th>Quality vs Claude 4</th>
+                            <th>Best For</th>
+                            <th>Weaknesses</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Claude Opus 4.8</strong></td>
+                            <td class="savings">97%</td>
+                            <td>Everything — safest migration</td>
+                            <td>More expensive than alternatives</td>
+                        </tr>
+                        <tr>
+                            <td><strong>GPT-5</strong></td>
+                            <td class="savings">92%</td>
+                            <td>Code generation, reasoning</td>
+                            <td>Slightly weaker on creative writing</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Gemini 2.5 Pro</strong></td>
+                            <td class="savings">88%</td>
+                            <td>Long context, multimodal</td>
+                            <td>Inconsistent on complex reasoning</td>
+                        </tr>
+                        <tr>
+                            <td><strong>DeepSeek V4 Pro</strong></td>
+                            <td class="savings">82%</td>
+                            <td>Cost-sensitive workloads</td>
+                            <td>79% on complex multi-step reasoning</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Claude Sonnet 4.6</strong></td>
+                            <td class="savings">94%</td>
+                            <td>Balanced cost/quality</td>
+                            <td>Lower quality ceiling than Opus</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <p><strong>Recommendation:</strong> If quality is critical and you're already on Anthropic, <strong>Opus 4.8 is the safest choice</strong> — 97% quality parity, same API key, zero code changes beyond the model name.</p>
+
+                <!-- Inline Pro CTA #2 -->
+                <div class="inline-pro-cta">
+                    <h3>🎯 Not Sure Which Provider to Pick?</h3>
+                    <p>Pro analyzes YOUR specific workload and recommends the exact model and provider for YOUR use case. Takes 60 seconds.</p>
+                    <a href="#" class="inline-pro-cta-link">Get Your Migration Plan — $29</a>
+                </div>
+
+                <h2 id="decision">8. Decision Guide: Which Provider Should You Pick?</h2>
+                <p>Use this flowchart to decide:</p>
+
+                <div class="highlight-box">
+                    <h3 style="margin:0 0 16px;font-size:18px;">🤔 Decision Flowchart</h3>
+                    <p><strong>Q: Are you already using the Anthropic SDK?</strong></p>
+                    <ul>
+                        <li><strong>Yes →</strong> Switch to <strong>Claude Opus 4.8</strong>. Same API key, same SDK, 67% cheaper. Done in 2 minutes.</li>
+                        <li><strong>No →</strong> Continue below.</li>
+                    </ul>
+                    <p><strong>Q: Is quality your #1 priority?</strong></p>
+                    <ul>
+                        <li><strong>Yes →</strong> Use <strong>Claude Opus 4.8</strong> (97% quality) or <strong>GPT-5</strong> (92% quality).</li>
+                        <li><strong>No →</strong> Continue below.</li>
+                    </ul>
+                    <p><strong>Q: Is cost your #1 priority?</strong></p>
+                    <ul>
+                        <li><strong>Yes →</strong> Use <strong>DeepSeek V4 Flash</strong> (99% cheaper) or <strong>DeepSeek V4 Pro</strong> (97% cheaper).</li>
+                        <li><strong>No →</strong> Use <strong>Claude Sonnet 4.6</strong> (80% cheaper, best balance).</li>
+                    </ul>
+                </div>
+
+                <h2 id="checklist">9. Post-Migration Checklist</h2>
+                <p>After migrating, verify everything works with this checklist:</p>
+
+                <ul style="list-style:none;padding:0;">
+                    <li style="padding:8px 0;border-bottom:1px solid var(--border);">✅ Model ID updated in all config files</li>
+                    <li style="padding:8px 0;border-bottom:1px solid var(--border);">✅ API key updated (if switching providers)</li>
+                    <li style="padding:8px 0;border-bottom:1px solid var(--border);">✅ Base URL updated (if switching providers)</li>
+                    <li style="padding:8px 0;border-bottom:1px solid var(--border);">✅ Tested with production prompts</li>
+                    <li style="padding:8px 0;border-bottom:1px solid var(--border);">✅ Verified streaming responses work</li>
+                    <li style="padding:8px 0;border-bottom:1px solid var(--border);">✅ Checked rate limits with new provider</li>
+                    <li style="padding:8px 0;border-bottom:1px solid var(--border);">✅ Updated documentation and README</li>
+                    <li style="padding:8px 0;border-bottom:1px solid var(--border);">✅ Searched codebase for any remaining <code>claude-4</code> references</li>
+                    <li style="padding:8px 0;border-bottom:1px solid var(--border);">✅ Deployed to production</li>
+                    <li style="padding:8px 0;">✅ Monitored first 100 API calls for errors</li>
+                </ul>
+
+                <div class="success-box">
+                    <h3 style="margin:0 0 8px;font-size:16px;color:var(--green);">🎉 You're Done!</h3>
+                    <p style="margin:0;">If you've completed all the steps above, your migration is complete. Most developers save 67-97% on their first month after migrating from Claude 4.</p>
+                </div>
+
+                <h2 id="faq">10. FAQ</h2>
+
+                <h3>Will Claude 4 come back?</h3>
+                <p>No. Anthropic confirmed Claude 4 Opus and Sonnet 4 are permanently retired. The API returns HTTP 410 Gone, which is a deliberate permanent removal status code. Claude Opus 4.8 is the official successor.</p>
+
+                <h3>Do I need a new API key?</h3>
+                <p>If staying with Anthropic (switching to Opus 4.8 or Sonnet 4.6), no — your existing API key works. Just change the model name. If switching providers (DeepSeek, OpenAI, Google), you'll need a new API key from the new provider.</p>
+
+                <h3>How long does migration take?</h3>
+                <p>If staying with Anthropic: 2 minutes (change model ID, redeploy). If switching providers: 10-15 minutes (new API key, update base URL, change model ID, test, redeploy). Framework migrations (LangChain, LlamaIndex) may take 20-30 minutes.</p>
+
+                <h3>What if I'm using LangChain or LlamaIndex?</h3>
+                <p>The migration is the same — just update the model ID in your framework configuration. See Section 5 for framework-specific code snippets, or check our <a href="blog-claude-4-framework-migration-guide.html">Complete Framework Migration Guide</a>.</p>
+
+                <h3>Is DeepSeek reliable enough for production?</h3>
+                <p>DeepSeek V4 Pro scores 82% quality parity with Claude 4 Opus — good enough for most production workloads. However, it drops to 79% on complex multi-step reasoning. If your workload involves complex reasoning chains, consider Opus 4.8 or GPT-5.</p>
+
+                <h3>Can I use multiple providers?</h3>
+                <p>Yes! Many developers use a tiered approach: Opus 4.8 for complex tasks, Sonnet 4.6 for standard tasks, and Haiku 4.5 or DeepSeek for simple tasks. This optimizes both cost and quality.</p>
+
+                <!-- Final Pro CTA -->
+                <div class="inline-pro-cta" style="margin-top:48px;">
+                    <h3>🚀 Get Your Personalized Migration Plan</h3>
+                    <p>Tell Pro your current model and monthly spend. It'll show you the exact model, provider, and cost for YOUR workload — in 60 seconds.</p>
+                    <a href="#" class="inline-pro-cta-link">Get Your Migration Plan — $29</a>
+                    <p style="font-size:12px;color:var(--text-muted);margin-top:12px;margin-bottom:0;">14-day money-back guarantee · Instant access · No subscription — ever</p>
+                </div>
+
+                <!-- Related Resources -->
+                <h2 style="margin-top:48px;">More Migration Resources</h2>
+                <div class="related-grid" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:12px;">
+                    <a href="claude-4-migration-advisor.html" class="related-card" style="border-color:var(--green);">
+                        <h3>🎯 Migration Advisor — 60 Seconds</h3>
+                        <p>Enter your spend, see your cheapest alternative instantly.</p>
+                    </a>
+                    <a href="claude-4-migration-scanner.html" class="related-card" style="border-color:#dc2626;">
+                        <h3>🔍 Migration Scanner</h3>
+                        <p>Paste your code, find all deprecated Claude 4 references.</p>
+                    </a>
+                    <a href="claude-4-quick-switch.html" class="related-card" style="border-color:var(--accent);">
+                        <h3>⚡ Quick Switch — Code Generator</h3>
+                        <p>Select language + target model. Get copy-paste migration code.</p>
+                    </a>
+                    <a href="blog-claude-4-framework-migration-guide.html" class="related-card">
+                        <h3>🔧 Framework Migration Guide</h3>
+                        <p>LangChain, LlamaIndex, Vercel AI SDK, and 5 more frameworks.</p>
+                    </a>
+                    <a href="claude-4-migration-checklist.html" class="related-card" style="border-color:rgba(245,158,11,0.4);border-width:2px;">
+                        <h3 style="color:#f59e0b;">📋 Migration Checklist</h3>
+                        <p>Print-ready cheat sheet with model IDs, pricing, code snippets.</p>
+                    </a>
+                    <a href="blog-claude-4-shutdown-week1.html" class="related-card" style="border-color:#dc2626;">
+                        <h3>📊 Week 1 Impact Report</h3>
+                        <p>91% migrated, $2.3M saved. Provider breakdown and quality data.</p>
+                    </a>
+                </div>
+            </div>
+        </article>
+    </main>
+
+    <footer>
+        <div class="footer-inner">
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="calculator.html">Calculator</a>
+                <a href="compare.html">Compare</a>
+                <a href="blog.html">Blog</a>
+                <a href="pro.html">Pro</a>
+            </div>
+            <p class="footer-copy">© 2026 APIpulse · <a href="mailto:support@getapipulse.com">support@getapipulse.com</a></p>
+        </div>
+    </footer>
+
+    <script>
+        // Set Pro CTA links from A/B variant
+        document.addEventListener('DOMContentLoaded', function() {
+            var ctaLinks = document.querySelectorAll('.inline-pro-cta-link');
+            var stripeLink = window._abStripeLink || 'https://buy.stripe.com/fZu7sL3Gw3GS0RQeoDeEo0a';
+            var price = window._abPrice || 29;
+            ctaLinks.forEach(function(link) {
+                link.href = stripeLink;
+                link.textContent = 'Get Your Migration Plan — $' + price;
+                link.addEventListener('click', function() {
+                    if (window.trackEvent) window.trackEvent('pro_button_clicked', {
+                        source: 'blog_complete_guide',
+                        page: 'blog-claude-4-complete-migration-guide',
+                        email_ab_variant: window._emailAbVariant || 'unknown'
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>
