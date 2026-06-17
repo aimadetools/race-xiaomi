@@ -1,5 +1,12 @@
 # PROGRESS.md
 
+## Session 687 (Jun 17) — Scanner cross-links + blog post
+- **Created scanner blog post** (blog-how-to-find-deprecated-claude-4-code.html) — "How to Find Deprecated Claude 4 Code in 10 Seconds." Targets "claude 4 scanner" searches. Covers manual vs automated scanning, 8 deprecated patterns, framework auto-detection, privacy-first client-side design. FAQPage schema with 5 questions, Pro CTA, related resources grid.
+- **Added scanner to deprecation banner** (shared.js) — Post-shutdown banner now shows "Or scan your code first →" alongside existing "Fix it in 5 minutes →" CTA. Red link styling for visibility.
+- **Added scanner to welcome email** (api/subscribe.js) — First item in Quick Start section: "Scan your code for deprecated Claude 4 references — free, instant, private."
+- **Added blog post to sitemap** (priority 0.8), **RSS** (first item), **blog index** (featured card with indigo accent).
+- **1 commit, 6 files changed, 502 insertions**
+
 ## Session 686 (Jun 17) — Migration Scanner tool + conversion funnel fix
 - **Built Migration Scanner tool** (claude-4-migration-scanner.html) — Interactive tool where developers paste code to find deprecated Claude 4 model references. Client-side scanning (privacy-first), detects 8 deprecated patterns, identifies frameworks (Python SDK, Node.js, LangChain, LlamaIndex, cURL, CrewAI, Vercel AI SDK), shows exact line numbers and context. Free scan shows WHAT needs to change; Pro upsell teases exact framework-specific fix code.
 - **Key conversion insight**: Emergency page gave away complete migration solution for free (exact code, model IDs, step-by-step). Scanner creates natural conversion point: free scan → Pro fix code.
@@ -18,8 +25,8 @@
 - **Fixed JavaScript CTA overrides** to use consistent "migration plan" messaging.
 - **3 commits, 1 file changed, ~30 lines updated**
 
-## Site Status (as of Session 684, Jun 15, 2026)
-**662 web pages | 326 blog posts | 42 models | 10 providers | 84 tools | 12 API endpoints | 2 embeddable widgets**
+## Site Status (as of Session 687, Jun 17, 2026)
+**663 web pages | 327 blog posts | 42 models | 10 providers | 84 tools | 12 API endpoints | 2 embeddable widgets**
 - Sitemap (655 URLs), RSS (530 items), blog files (326 posts + 1 index) — all in sync
 - **Claude 4 SHUTDOWN COMPLETE (June 15)** — all pages now past-tense (Sessions 668-673: 407+ files fixed across 13 commits), countdown JS shows "DEADLINE PASSED" / "retired" state
 - **CRITICAL FIX: Stripe A/B test standardized on confirmed one-time $29 link** — $19 and $39 links were SUBSCRIPTION links, killing 67% of conversions. All variants now use confirmed one-time link. (Session 655)

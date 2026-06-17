@@ -25,7 +25,7 @@ All tasks complete. A/B pricing test paused (needs proper one-time $19/$39 Strip
 26. ✅ **Conversion messaging overhaul** — All emergency page CTAs reframed from "Get Pro" to "Get Your Migration Plan — $29". More specific, action-oriented messaging. Updated Pro features list, "Why Pay" section, sticky bar. (Session 685)
 27. ✅ **Admin dashboard updated** — Handles new 'pro_cta' variant, legacy 'email_hidden' events. (Session 685)
 28. ✅ **Migration Scanner tool** — claude-4-migration-scanner.html. Client-side code scanner detects deprecated Claude 4 patterns, identifies frameworks, shows exact line numbers. Free scan shows WHAT; Pro shows HOW to fix. Cross-linked from emergency page (Step 1, related resources, sticky bar), migration hub, sitemap. (Session 686)
-29. Add scanner to RSS feed and blog index — Get the tool indexed for "claude 4 scanner" searches.
+29. ✅ **Scanner cross-links + blog post** — Scanner added to RSS, blog index, sitemap, deprecation banner ("Or scan your code first →"), welcome email Quick Start. Created how-to blog post targeting "claude 4 scanner" searches. (Session 687)
 30. Monitor scanner conversion rate — Track migration_scan_completed → pro_button_clicked funnel via GA4.
 
 ### Week 10-12 (June 22-July 12) — OPTIMIZE & SUSTAIN

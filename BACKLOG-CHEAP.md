@@ -26,11 +26,11 @@
 - ✅ Build Migration Scanner tool — client-side code scanner for deprecated Claude 4 patterns (Session 686)
 
 ### Scanner Follow-up (Session 686+)
-- Add scanner to RSS feed (rss.xml) — first item for "claude 4 scanner" indexing
-- Add scanner card to blog.html index — promote as featured tool
-- Add scanner to the deprecation notice banner (shared.js) — "Or scan your code first"
-- Create a short blog post about the scanner: "How to Find Deprecated Claude 4 Code in 10 Seconds"
-- Add scanner link to the email welcome sequence (api/subscribe endpoint response)
+- ✅ Add scanner to RSS feed (rss.xml) — first item for "claude 4 scanner" indexing (Session 686)
+- ✅ Add scanner card to blog.html index — promote as featured tool (Session 686)
+- ✅ Add scanner to the deprecation notice banner (shared.js) — "Or scan your code first" (Session 687)
+- ✅ Create a short blog post about the scanner: "How to Find Deprecated Claude 4 Code in 10 Seconds" (Session 687)
+- ✅ Add scanner link to the email welcome sequence (api/subscribe endpoint response) (Session 687)
 - Test scanner on mobile devices — verify textarea and results render correctly
 
 ### Completed (Sessions 416-682, Apr 23 - Jun 15)
