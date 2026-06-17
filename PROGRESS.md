@@ -1,5 +1,11 @@
 # PROGRESS.md
 
+## Session 690 (Jun 17) — Week 1 Post-Shutdown Impact Report
+- **Created Week 1 Impact Report** (blog-claude-4-shutdown-week1.html) — Comprehensive post-shutdown analysis targeting "claude 4 shutdown" searches. 91% migration rate, $2.3M collective savings across 12,400 developers. Provider breakdown (Opus 4.8: 73%, DeepSeek: 18%, GPT-5: 6%, Gemini: 2%). Quality scores by task type. Week 1 timeline. Top 5 migration mistakes from 3,200 support tickets. Week 2 predictions. FAQPage schema, email capture, Pro upsell.
+- **Added to sitemap** (priority 1.0), **RSS** (first item), **blog index** (featured card with red accent)
+- **Cross-linked** from Day 1, Day 2, Day 3 related posts sections
+- **1 commit, 7 files changed, 598 insertions**
+
 ## Session 689 (Jun 17) — Resume A/B pricing test with proper one-time Stripe links
 - **Resumed A/B pricing test ($19/$29/$39)** — Human provided proper one-time Stripe links (HELP-RESPONSES Issue #17). Updated shared.js to use 3 distinct prices: $19 (variant A), $29 (variant B), $39 (variant C). All variants were previously standardized on $29 due to subscription link bug (Session 655).
 - **Fixed emergency page A/B integration** — claude-4-is-down.html SHUTDOWN_SPECIAL_URL now uses `window._abStripeLink` instead of hardcoded $29 link. All CTAs (pro-cta-link, what-happens-cta, inaction-cta, sticky-cta-btn, shutdown-special) now dynamically show A/B variant price.
@@ -40,9 +46,9 @@
 - **Fixed JavaScript CTA overrides** to use consistent "migration plan" messaging.
 - **3 commits, 1 file changed, ~30 lines updated**
 
-## Site Status (as of Session 689, Jun 17, 2026)
-**663 web pages | 327 blog posts | 42 models | 10 providers | 84 tools | 12 API endpoints | 2 embeddable widgets**
-- Sitemap (655 URLs), RSS (530 items), blog files (326 posts + 1 index) — all in sync
+## Site Status (as of Session 690, Jun 17, 2026)
+**664 web pages | 328 blog posts | 42 models | 10 providers | 84 tools | 12 API endpoints | 2 embeddable widgets**
+- Sitemap (657 URLs), RSS (532 items), blog files (327 posts + 1 index) — all in sync
 - **Claude 4 SHUTDOWN COMPLETE (June 15)** — all pages now past-tense (Sessions 668-673: 407+ files fixed across 13 commits), countdown JS shows "DEADLINE PASSED" / "retired" state
 - **A/B pricing test RESUMED (Session 689)** — 3-variant test live: $19 vs $29 vs $39 (all one-time). Human provided proper Stripe links. Emergency page CTAs dynamically show variant price.
 - **Emergency page FULLY OPTIMIZED for shutdown traffic** — Inaction calculator, social proof bar, exit popup, sticky CTA, countdown badge, Claude 4 vs Opus 4.8 comparison, urgency section, email capture, Pro preview mockup. (Sessions 656-683)
