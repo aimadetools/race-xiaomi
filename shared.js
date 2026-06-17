@@ -251,6 +251,7 @@ document.addEventListener('DOMContentLoaded', () => {
         banner.style.cssText = 'background:#dc2626;color:white;padding:10px 16px;text-align:center;font-size:13px;font-weight:600;position:relative;z-index:9999;display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap;';
         banner.innerHTML = '<span>🔴 Claude 4 Opus & Sonnet have been retired — API calls are failing</span>' +
             '<a href="claude-4-is-down.html" style="color:white;text-decoration:underline;font-weight:700;">Fix it in 5 minutes →</a>' +
+            '<a href="claude-4-migration-scanner.html" style="color:#fca5a5;text-decoration:underline;font-weight:600;">Or scan your code first →</a>' +
             '<button onclick="document.getElementById(\'deprecation-urgency-banner\').remove();localStorage.setItem(\'apipulse_deprecation_retired_dismissed\',\'1\');" style="background:none;border:none;color:white;cursor:pointer;font-size:16px;padding:0 4px;opacity:0.8;position:absolute;right:12px;" aria-label="Dismiss">✕</button>';
         document.body.insertBefore(banner, document.body.firstChild);
         var nav = document.querySelector('nav');
