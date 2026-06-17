@@ -180,24 +180,27 @@
                 {label: 'launch', count: heroCounts.launch, total: totalHero, cls: 'bar-b'}
             ]) : '<p class="empty">No hero variant assignments yet</p>';
 
-        // --- A/B Email Capture Test (Emergency Page) ---
+        // --- A/B Email Capture vs Pro CTA Test (Emergency Page) ---
+        // Session 685: Variant B changed from 'email_hidden' to 'pro_cta'
         var emailAbPageViews = events.filter(e => e.name === 'claude4_is_down_page_view');
         var emailAbVisible = emailAbPageViews.filter(e => e.props.email_ab_variant === 'email_visible');
-        var emailAbHidden = emailAbPageViews.filter(e => e.props.email_ab_variant === 'email_hidden');
+        var emailAbProCta = emailAbPageViews.filter(e => e.props.email_ab_variant === 'pro_cta');
+        var emailAbLegacyHidden = emailAbPageViews.filter(e => e.props.email_ab_variant === 'email_hidden');
         var emailAbUnknown = emailAbPageViews.filter(e => !e.props.email_ab_variant || e.props.email_ab_variant === 'unknown');
 
         // Pro clicks per variant (on emergency page only)
         var emergencyProClicks = events.filter(e => e.name === 'pro_button_clicked' && e.page === '/claude-4-is-down.html');
         var proClicksVisible = emergencyProClicks.filter(e => e.props.email_ab_variant === 'email_visible');
-        var proClicksHidden = emergencyProClicks.filter(e => e.props.email_ab_variant === 'email_hidden');
+        var proClicksProCta = emergencyProClicks.filter(e => e.props.email_ab_variant === 'pro_cta');
+        var proClicksLegacyHidden = emergencyProClicks.filter(e => e.props.email_ab_variant === 'email_hidden');
 
         // Email signups (only from email_visible group)
         var emergencyEmailSignups = events.filter(e => e.name === 'email_subscribe' && e.props.source === 'emergency_page');
         var emailSignupsVisible = emergencyEmailSignups.filter(e => e.props.email_ab_variant === 'email_visible');
 
-        var totalEmailAb = emailAbVisible.length + emailAbHidden.length;
+        var totalEmailAb = emailAbVisible.length + emailAbProCta.length + emailAbLegacyHidden.length;
         var convRateVisible = emailAbVisible.length ? (proClicksVisible.length / emailAbVisible.length * 100).toFixed(1) : '0.0';
-        var convRateHidden = emailAbHidden.length ? (proClicksHidden.length / emailAbHidden.length * 100).toFixed(1) : '0.0';
+        var convRateProCta = emailAbProCta.length ? (proClicksProCta.length / emailAbProCta.length * 100).toFixed(1) : '0.0';
 
         if (totalEmailAb > 0) {
             var emailAbHtml = '<div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px;">';
@@ -211,24 +214,24 @@
             emailAbHtml += '<div style="font-size:13px;color:var(--text-muted);margin-top:8px;margin-bottom:4px;">Email Signups</div><div style="font-size:20px;font-weight:700;">' + emailSignupsVisible.length + '</div>';
             emailAbHtml += '</div>';
 
-            // Variant B: Email Hidden
+            // Variant B: Pro CTA Replacement
             emailAbHtml += '<div style="background:var(--bg-secondary);border:1px solid var(--border);border-radius:10px;padding:16px;">';
-            emailAbHtml += '<div style="display:flex;align-items:center;gap:8px;margin-bottom:12px;"><span class="variant-tag variant-b">B</span><span style="font-weight:700;">Email Form Hidden</span></div>';
-            emailAbHtml += '<div style="font-size:13px;color:var(--text-muted);margin-bottom:4px;">Visitors</div><div style="font-size:28px;font-weight:800;color:#22c55e;">' + emailAbHidden.length + '</div>';
-            emailAbHtml += '<div style="font-size:13px;color:var(--text-muted);margin-top:8px;margin-bottom:4px;">Pro Clicks</div><div style="font-size:28px;font-weight:800;color:var(--green);">' + proClicksHidden.length + '</div>';
-            emailAbHtml += '<div style="font-size:13px;color:var(--text-muted);margin-top:8px;margin-bottom:4px;">Conversion Rate</div><div style="font-size:24px;font-weight:800;color:var(--accent);">' + convRateHidden + '%</div>';
+            emailAbHtml += '<div style="display:flex;align-items:center;gap:8px;margin-bottom:12px;"><span class="variant-tag variant-b">B</span><span style="font-weight:700;">Pro CTA Replacement</span></div>';
+            emailAbHtml += '<div style="font-size:13px;color:var(--text-muted);margin-bottom:4px;">Visitors</div><div style="font-size:28px;font-weight:800;color:#22c55e;">' + emailAbProCta.length + '</div>';
+            emailAbHtml += '<div style="font-size:13px;color:var(--text-muted);margin-top:8px;margin-bottom:4px;">Pro Clicks</div><div style="font-size:28px;font-weight:800;color:var(--green);">' + proClicksProCta.length + '</div>';
+            emailAbHtml += '<div style="font-size:13px;color:var(--text-muted);margin-top:8px;margin-bottom:4px;">Conversion Rate</div><div style="font-size:24px;font-weight:800;color:var(--accent);">' + convRateProCta + '%</div>';
             emailAbHtml += '<div style="font-size:13px;color:var(--text-muted);margin-top:8px;margin-bottom:4px;">Email Signups</div><div style="font-size:20px;font-weight:700;">N/A</div>';
             emailAbHtml += '</div>';
 
             emailAbHtml += '</div>';
 
             // Verdict
-            var diff = parseFloat(convRateHidden) - parseFloat(convRateVisible);
+            var diff = parseFloat(convRateProCta) - parseFloat(convRateVisible);
             if (totalEmailAb >= 20) {
                 if (diff > 2) {
-                    emailAbHtml += '<div style="background:rgba(34,197,94,0.08);border:1px solid rgba(34,197,94,0.2);border-radius:8px;padding:12px;font-size:14px;"><strong>📈 Early signal:</strong> Hiding email form improves Pro conversions by ' + diff.toFixed(1) + ' percentage points. Consider removing the email form from the emergency page.</div>';
+                    emailAbHtml += '<div style="background:rgba(34,197,94,0.08);border:1px solid rgba(34,197,94,0.2);border-radius:8px;padding:12px;font-size:14px;"><strong>📈 Early signal:</strong> Pro CTA replacement improves conversions by ' + diff.toFixed(1) + ' percentage points. Consider replacing email form with Pro CTA.</div>';
                 } else if (diff < -2) {
-                    emailAbHtml += '<div style="background:rgba(99,102,241,0.08);border:1px solid rgba(99,102,241,0.2);border-radius:8px;padding:12px;font-size:14px;"><strong>📈 Early signal:</strong> Email form improves Pro conversions by ' + Math.abs(diff).toFixed(1) + ' percentage points. Keep the email form.</div>';
+                    emailAbHtml += '<div style="background:rgba(99,102,241,0.08);border:1px solid rgba(99,102,241,0.2);border-radius:8px;padding:12px;font-size:14px;"><strong>📈 Early signal:</strong> Email form improves conversions by ' + Math.abs(diff).toFixed(1) + ' percentage points. Keep the email form.</div>';
                 } else {
                     emailAbHtml += '<div style="background:rgba(245,158,11,0.08);border:1px solid rgba(245,158,11,0.2);border-radius:8px;padding:12px;font-size:14px;"><strong>⏳ No clear winner yet:</strong> Conversion rates are within 2 points. Need more data.</div>';
                 }
@@ -236,6 +239,9 @@
                 emailAbHtml += '<div style="background:rgba(245,158,11,0.08);border:1px solid rgba(245,158,11,0.2);border-radius:8px;padding:12px;font-size:14px;"><strong>⏳ Need more data:</strong> ' + totalEmailAb + '/20 visitors tracked. Wait for at least 20 per variant for meaningful results.</div>';
             }
 
+            if (emailAbLegacyHidden.length > 0) {
+                emailAbHtml += '<p style="font-size:11px;color:var(--text-muted);margin-top:8px;">Note: ' + emailAbLegacyHidden.length + ' events from legacy "email_hidden" variant (before Session 685)</p>';
+            }
             if (emailAbUnknown.length > 0) {
                 emailAbHtml += '<p style="font-size:11px;color:var(--text-muted);margin-top:8px;">Note: ' + emailAbUnknown.length + ' events from before A/B test was set up (variant=unknown)</p>';
             }
