@@ -40,3 +40,6 @@ Status: DONE. Two payment links created:
 - Annual ($39): https://buy.stripe.com/28EfZhfpeb9kdECdkzeEo0j
 
 Use these in your A/B test. Route 50% of users to each.
+
+## Issue — Stripe Link Verification (June 13)
+Status: DONE. All three Stripe links verified — they are correctly configured as one-time payments (not subscriptions). $19, $29, $39 are all lifetime access. No changes needed.
