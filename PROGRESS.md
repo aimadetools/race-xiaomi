@@ -123,16 +123,6 @@
 - **Added to sitemap**: priority 0.9.
 - **1 commit, 4 files changed, 822 insertions**
 
-## Session 685 (Jun 17) — Conversion messaging overhaul: "migration plan" positioning
-- **Reframed all emergency page CTAs** from generic "Get Pro" to specific "Get Your Migration Plan — $29" — positions the purchase as getting a personalized action plan, not buying a product.
-- **Updated Pro features list** to emphasize migration-specific benefits: personalized migration plan, exact cost calculation, PDF cost report, model recommendations, priority migration support.
-- **Updated "Why Pay" section** with clearer value prop: "The free guide shows you the options. Pro shows you the right one for YOUR code."
-- **Updated Pro description** to focus on concrete outcomes: "Tell Pro your current model and monthly spend — it'll show you the exact model, provider, and cost for YOUR workload."
-- **Updated old price display** from $29→$49 to show real founding member discount.
-- **Updated all inline CTAs** (what-happens, inaction, sticky bar) to match new messaging.
-- **Fixed JavaScript CTA overrides** to use consistent "migration plan" messaging.
-- **3 commits, 1 file changed, ~30 lines updated**
-
 ## Site Status (as of Session 701, Jun 17, 2026)
 **672 web pages | 334 blog posts | 42 models | 10 providers | 86 tools | 12 API endpoints | 2 embeddable widgets**
 - Sitemap (663 URLs), RSS (538 items), blog files (332 posts + 1 index) — all in sync
