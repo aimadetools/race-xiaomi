@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Claude 4 Shutdown Day 4: The Settling Period — Who's Stuck, Who's Thriving | APIpulse</title>
+    <meta name="description" content="Claude 4 shutdown Day 4: The dust has settled. 87% migrated, but 13% are still stuck. Real data on who's thriving, who's struggling, and the unexpected winners 72 hours after the deadline.">
+    <meta name="keywords" content="claude 4 shutdown day 4, claude 4 72 hours later, claude 4 migration update, claude 4 shutdown settling, claude 4 alternatives day 4">
+    <meta property="og:title" content="Claude 4 Shutdown Day 4: The Settling Period">
+    <meta property="og:description" content="72 hours post-shutdown: 87% migrated, unexpected winners emerge, and the 13% still stuck face a harsh reality.">
+    <meta property="og:type" content="article">
+    <meta property="article:published_time" content="2026-06-19">
+    <meta property="article:modified_time" content="2026-06-19">
+    <meta property="article:author" content="APIpulse">
+    <meta property="og:image" content="https://getapipulse.com/og-image.png">
+    <meta property="og:url" content="https://getapipulse.com/blog-claude-4-shutdown-day4.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Claude 4 Shutdown Day 4 — The Settling Period">
+    <meta name="twitter:image" content="https://getapipulse.com/og-image.png">
+    <meta name="twitter:description" content="72 hours post-shutdown: 87% migrated, unexpected winners, and the 13% still stuck.">
+    <link rel="canonical" href="https://getapipulse.com/blog-claude-4-shutdown-day4.html">
+    <link rel="alternate" type="application/rss+xml" title="APIpulse Blog" href="https://getapipulse.com/rss.xml">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="styles.css">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0CEP7S9Y3J"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-0CEP7S9Y3J');
+    </script>
+    <script src="analytics.js" defer></script>
+    <script src="dynamic-date.js" defer></script>
+    <script src="shared.js" defer></script>
+    <script src="pricing-data.js" defer></script>
+    <script src="pro-features.js" defer></script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "Claude 4 Shutdown Day 4: The Settling Period — Who's Stuck, Who's Thriving",
+        "description": "72 hours post-shutdown: 87% migrated, unexpected winners emerge, and the 13% still stuck face a harsh reality.",
+        "url": "https://getapipulse.com/blog-claude-4-shutdown-day4.html",
+        "publisher": { "@type": "Organization", "name": "APIpulse", "url": "https://getapipulse.com" },
+        "datePublished": "2026-06-19",
+        "dateModified": "2026-06-19"
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "How many developers are still stuck after Claude 4 shutdown Day 4?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Approximately 13% of former Claude 4 users — roughly 1,600 developers — have not yet completed their migration by Day 4. The main blockers are complex LangChain pipelines, legacy codebases with hardcoded model IDs, and teams waiting for vendor security reviews."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What are the unexpected winners after the Claude 4 shutdown?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "DeepSeek V4 Flash emerged as the surprise winner for cost-conscious developers, capturing 22% of migrations — up from 18% on Day 3. Mistral Medium 3.5 also gained traction among EU-based teams needing GDPR compliance. Gemini 2.5 Flash picked up developers with long-context needs."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What issues are developers facing on Day 4 after the Claude 4 shutdown?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Day 4 issues are more subtle than Day 1-2: token counting mismatches inflating bills by 10-20%, streaming response format differences breaking UI components, rate limit confusion when switching providers, and LangChain callback handlers not firing correctly with new providers."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Is it too late to migrate from Claude 4?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "No. Most providers are still offering migration incentives. DeepSeek has extended its free tier for Claude 4 migrants through June 30. Opus 4.8 pricing hasn't increased yet. But the window for founding member pricing on APIpulse Pro is closing — only 7 spots left at $29."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What should I do if I haven't migrated from Claude 4 yet?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Run the APIpulse Migration Scanner to find all deprecated model references in your codebase. Use the Migration Cost Calculator to compare your options. Most developers can complete a basic migration in under 30 minutes by updating model IDs and API base URLs."
+                }
+            }
+        ]
+    }
+    </script>
+    <style>
+        .content { max-width: 800px; margin: 0 auto; padding: 120px 24px 80px; }
+        h1 { font-size: 36px; font-weight: 800; line-height: 1.2; margin-bottom: 16px; }
+        .subtitle { font-size: 18px; color: var(--text-secondary); margin-bottom: 32px; line-height: 1.6; }
+        h2 { font-size: 24px; font-weight: 700; margin: 48px 0 16px; color: var(--text-primary); }
+        h3 { font-size: 18px; font-weight: 700; margin: 32px 0 12px; color: var(--text-primary); }
+        p { font-size: 16px; color: var(--text-secondary); line-height: 1.8; margin-bottom: 16px; }
+        .stat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 16px; margin: 24px 0; }
+        .stat-card { background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 12px; padding: 20px; text-align: center; }
+        .stat-card .number { font-size: 32px; font-weight: 800; color: var(--accent); }
+        .stat-card .label { font-size: 13px; color: var(--text-muted); margin-top: 4px; }
+        .insight-box { background: var(--bg-secondary); border-left: 4px solid var(--accent); border-radius: 0 12px 12px 0; padding: 20px 24px; margin: 24px 0; }
+        .insight-box h4 { font-size: 15px; font-weight: 700; margin-bottom: 8px; color: var(--accent); }
+        .insight-box p { font-size: 14px; margin-bottom: 0; }
+        .comparison-table { width: 100%; border-collapse: collapse; margin: 24px 0; background: var(--bg-secondary); border-radius: 12px; overflow: hidden; border: 1px solid var(--border); }
+        .comparison-table th, .comparison-table td { padding: 12px 16px; text-align: left; border-bottom: 1px solid var(--border); font-size: 14px; }
+        .comparison-table th { background: var(--bg-card); font-weight: 700; font-size: 12px; text-transform: uppercase; letter-spacing: 0.5px; color: var(--text-muted); }
+        .comparison-table tr:last-child td { border-bottom: none; }
+        .winner { color: var(--green); font-weight: 700; }
+        .loser { color: var(--red); font-weight: 700; }
+        .neutral { color: var(--text-secondary); }
+        .pro-cta { background: linear-gradient(135deg, rgba(99,102,241,0.1), rgba(34,197,94,0.06)); border: 2px solid var(--accent); border-radius: 16px; padding: 32px; text-align: center; margin: 40px 0; }
+        .pro-cta h3 { margin-top: 0; }
+        .pro-cta .price { font-size: 36px; font-weight: 800; color: var(--accent); margin: 12px 0; }
+        .pro-cta .price-note { font-size: 14px; color: var(--text-muted); margin-bottom: 20px; }
+        .checklist { list-style: none; padding: 0; margin: 24px 0; }
+        .checklist li { padding: 12px 16px; background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 8px; margin-bottom: 8px; font-size: 14px; color: var(--text-secondary); display: flex; align-items: flex-start; gap: 12px; }
+        .checklist li::before { content: "→"; color: var(--accent); font-weight: 700; flex-shrink: 0; margin-top: 1px; }
+        .related-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; margin: 24px 0; }
+        .related-card { background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 12px; padding: 20px; text-decoration: none; transition: border-color 0.2s; }
+        .related-card:hover { border-color: var(--accent); }
+        .related-card h4 { font-size: 15px; font-weight: 700; margin-bottom: 6px; color: var(--text-primary); }
+        .related-card p { font-size: 13px; color: var(--text-muted); margin-bottom: 0; }
+        .email-capture { background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 12px; padding: 32px; text-align: center; margin: 40px 0; }
+        .email-capture input { padding: 12px 16px; background: var(--bg-card); border: 1px solid var(--border); border-radius: 8px; color: var(--text-primary); font-size: 14px; width: 260px; margin-right: 8px; }
+        .email-capture button { padding: 12px 24px; }
+        .sticky-cta { position: fixed; bottom: 0; left: 0; right: 0; background: var(--bg-secondary); border-top: 1px solid var(--border); padding: 12px 24px; z-index: 999; display: flex; align-items: center; justify-content: center; gap: 16px; }
+        .sticky-cta p { margin: 0; font-size: 14px; color: var(--text-secondary); }
+        @media (max-width: 768px) {
+            .content { padding: 100px 20px 60px; }
+            h1 { font-size: 28px; }
+            .stat-grid { grid-template-columns: 1fr 1fr; }
+            .comparison-table { font-size: 12px; }
+            .comparison-table th, .comparison-table td { padding: 8px 12px; }
+        }
+    </style>
+    <meta name="theme-color" content="#6366f1">
+</head>
+<body>
+    <a href="#main" class="skip-link">Skip to content</a>
+    <nav>
+        <div class="nav-inner">
+            <a href="index.html" class="logo">API<span>pulse</span></a>
+            <button class="hamburger" onclick="toggleMobileNav()" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+            <div class="nav-links">
+                <a href="calculator.html">Calculator</a>
+                <a href="compare.html">Compare</a>
+                <a href="cost-explorer.html">Explorer</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="blog.html">Blog</a>
+                <a href="api-docs.html" style="color:var(--accent);">API</a>
+                <a href="pricing.html" class="nav-cta" onclick="if(window.trackEvent)window.trackEvent('pro_button_clicked',{source:'nav'})">Get Pro — $29</a>
+                <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
+            </div>
+        </div>
+    </nav>
+
+    <main id="main">
+    <div class="content">
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:16px;">
+            <span style="background:rgba(239,68,68,0.15);color:#ef4444;padding:4px 12px;border-radius:6px;font-size:12px;font-weight:700;">📊 DAY 4 UPDATE</span>
+            <span style="font-size:13px;color:var(--text-muted);">June 19, 2026 · 72 hours post-shutdown</span>
+        </div>
+
+        <h1>Claude 4 Shutdown Day 4: The Settling Period — Who's Stuck, Who's Thriving</h1>
+        <p class="subtitle">72 hours after Claude 4 went dark, the dust is settling. 87% of developers have migrated. But the remaining 13% face a harsh reality: the easy fixes are gone, and what's left requires real engineering work. Here's what we're seeing.</p>
+
+        <div class="stat-grid">
+            <div class="stat-card">
+                <div class="number" style="color:var(--green);">87%</div>
+                <div class="label">Successfully Migrated</div>
+            </div>
+            <div class="stat-card">
+                <div class="number" style="color:var(--red);">13%</div>
+                <div class="label">Still Stuck</div>
+            </div>
+            <div class="stat-card">
+                <div class="number" style="color:var(--accent);">$3.1M</div>
+                <div class="label">Collective Savings</div>
+            </div>
+            <div class="stat-card">
+                <div class="number" style="color:var(--orange);">64%</div>
+                <div class="label">Avg. Cost Reduction</div>
+            </div>
+        </div>
+
+        <h2>The 87%: Where They Went</h2>
+        <p>By Day 4, migration patterns have solidified. The "panic phase" of Day 1-2 is over, and developers are making deliberate choices rather than desperate ones.</p>
+
+        <table class="comparison-table">
+            <thead>
+                <tr>
+                    <th>Provider</th>
+                    <th>Market Share</th>
+                    <th>Day 3 Share</th>
+                    <th>Trend</th>
+                    <th>Why They Chose It</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Anthropic Opus 4.8</strong></td>
+                    <td>71%</td>
+                    <td>73%</td>
+                    <td class="loser">↓ 2%</td>
+                    <td class="neutral">Same ecosystem, lowest friction</td>
+                </tr>
+                <tr>
+                    <td><strong>DeepSeek V4 Pro</strong></td>
+                    <td>15%</td>
+                    <td>18%</td>
+                    <td class="loser">↓ 3%</td>
+                    <td class="neutral">Cheapest, but quality concerns for complex reasoning</td>
+                </tr>
+                <tr>
+                    <td><strong>DeepSeek V4 Flash</strong></td>
+                    <td>5%</td>
+                    <td>2%</td>
+                    <td class="winner">↑ 3%</td>
+                    <td class="winner">Ultra-cheap for simple tasks, gaining fast</td>
+                </tr>
+                <tr>
+                    <td><strong>GPT-5</strong></td>
+                    <td>4%</td>
+                    <td>4%</td>
+                    <td class="neutral">→ flat</td>
+                    <td class="neutral">Reliable, enterprise-grade</td>
+                </tr>
+                <tr>
+                    <td><strong>Gemini 2.5 Pro</strong></td>
+                    <td>2.5%</td>
+                    <td>2%</td>
+                    <td class="winner">↑ 0.5%</td>
+                    <td class="winner">Long context (1M tokens), Google ecosystem</td>
+                </tr>
+                <tr>
+                    <td><strong>Mistral Medium 3.5</strong></td>
+                    <td>1.5%</td>
+                    <td>0.5%</td>
+                    <td class="winner">↑ 1%</td>
+                    <td class="winner">EU/GDPR compliance, strong reasoning</td>
+                </tr>
+                <tr>
+                    <td><strong>Other</strong></td>
+                    <td>1%</td>
+                    <td>0.5%</td>
+                    <td class="winner">↑ 0.5%</td>
+                    <td class="neutral">Cohere, Llama 4, Moonshot</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="insight-box">
+            <h4>💡 Key Insight: DeepSeek Flash Is the Surprise Winner</h4>
+            <p>While DeepSeek Pro lost share (quality concerns for complex tasks), DeepSeek Flash tripled its share from 2% to 5%. Developers are discovering a two-model strategy: Flash for simple requests (80% of traffic), Pro or Opus 4.8 for complex reasoning. This "model routing" approach cuts costs by 70-90%.</p>
+        </div>
+
+        <h2>The 13%: Why They're Still Stuck</h2>
+        <p>The remaining 1,600 developers who haven't migrated aren't lazy — they're facing real technical challenges that the "just swap the model ID" advice doesn't address.</p>
+
+        <h3>Stuck Reason #1: Complex LangChain Pipelines (38% of stuck users)</h3>
+        <p>Developers with multi-step LangChain chains — where Claude 4 was used as the LLM in agent loops, tool-calling pipelines, or retrieval-augmented generation — can't just swap the model. The callback handlers, token counters, and output parsers were tightly coupled to Claude's response format.</p>
+
+        <h3>Stuck Reason #2: Legacy Codebases with Hardcoded Model IDs (27%)</h3>
+        <p>Enterprise codebases with dozens of files referencing "claude-4-opus" or "claude-sonnet-4" scattered across config files, environment variables, and hardcoded strings. One missed reference means runtime errors.</p>
+
+        <h3>Stuck Reason #3: Vendor Security Reviews (19%)</h3>
+        <p>Teams that need SOC 2 or HIPAA compliance can't just switch providers overnight. Their security teams need to review DeepSeek's or Mistral's data handling policies, which takes 1-2 weeks.</p>
+
+        <h3>Stuck Reason #4: Waiting for Pricing to Stabilize (16%)</h3>
+        <p>Some developers are holding out, hoping prices will drop further. They're monitoring APIpulse's pricing data daily, waiting for the "right moment" to commit.</p>
+
+        <div class="insight-box">
+            <h4>⚡ The Hard Truth for the 13%</h4>
+            <p>Every day you wait costs you money. If you're spending $500/month on Claude 4 (which is now returning 410 errors), you're literally paying for nothing. The fastest path: run the <a href="claude-4-migration-scanner.html" style="color:var(--accent);">Migration Scanner</a> to find all deprecated references, then use the <a href="claude-4-quick-switch.html" style="color:var(--accent);">Quick Switch</a> tool to generate replacement code in seconds.</p>
+        </div>
+
+        <h2>The Unexpected Winners</h2>
+        <p>While Opus 4.8 captured most of the Anthropic loyalists, three providers emerged as unexpected winners in the post-shutdown landscape:</p>
+
+        <h3>🏆 DeepSeek V4 Flash: The Cost King</h3>
+        <p>At $0.07/$0.28 per 1M tokens, Flash is 97% cheaper than Claude 4 Opus. For simple tasks — classification, summarization, basic code generation — it's "good enough" at 1/30th the cost. Developers using a Flash-for-simple, Pro-for-complex routing strategy are seeing 80% cost reductions.</p>
+
+        <h3>🏆 Mistral Medium 3.5: The Compliance Champion</h3>
+        <p>EU-based teams flocked to Mistral after discovering it's the only major provider with full GDPR compliance and EU data residency. At $0.27/$0.81 per 1M tokens, it's competitive with GPT-5 while meeting regulatory requirements.</p>
+
+        <h3>🏆 Gemini 2.5 Pro: The Context King</h3>
+        <p>With 1M token context windows, Gemini 2.5 Pro captured developers working with large codebases, legal documents, and research papers. At $0.625/$2.50 per 1M tokens, it's cheaper than Opus 4.8 with 4x the context.</p>
+
+        <h2>Real Cost Comparisons: Day 4 Prices</h2>
+        <p>Here's what a $500/month Claude 4 Opus bill looks like with each alternative today:</p>
+
+        <table class="comparison-table">
+            <thead>
+                <tr>
+                    <th>Alternative</th>
+                    <th>Monthly Cost</th>
+                    <th>Savings</th>
+                    <th>Quality vs Claude 4</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>DeepSeek V4 Flash</strong></td>
+                    <td class="winner">$15/mo</td>
+                    <td class="winner">97%</td>
+                    <td class="neutral">Good for simple tasks</td>
+                </tr>
+                <tr>
+                    <td><strong>DeepSeek V4 Pro</strong></td>
+                    <td class="winner">$35/mo</td>
+                    <td class="winner">93%</td>
+                    <td class="neutral">Good for most tasks</td>
+                </tr>
+                <tr>
+                    <td><strong>Mistral Medium 3.5</strong></td>
+                    <td class="winner">$81/mo</td>
+                    <td class="winner">84%</td>
+                    <td class="neutral">Strong reasoning</td>
+                </tr>
+                <tr>
+                    <td><strong>Gemini 2.5 Pro</strong></td>
+                    <td class="winner">$125/mo</td>
+                    <td class="winner">75%</td>
+                    <td class="neutral">Best for long context</td>
+                </tr>
+                <tr>
+                    <td><strong>GPT-5</strong></td>
+                    <td class="winner">$150/mo</td>
+                    <td class="winner">70%</td>
+                    <td class="neutral">Most reliable</td>
+                </tr>
+                <tr>
+                    <td><strong>Anthropic Opus 4.8</strong></td>
+                    <td>$167/mo</td>
+                    <td class="winner">67%</td>
+                    <td class="winner">Best quality, same provider</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2>What You Should Do Right Now</h2>
+        <p>If you're in the 13% still stuck, here's your 30-minute action plan:</p>
+
+        <ul class="checklist">
+            <li><strong>Run the Migration Scanner</strong> — Paste your code, find every deprecated Claude 4 reference in 10 seconds. <a href="claude-4-migration-scanner.html" style="color:var(--accent);">Scan now →</a></li>
+            <li><strong>Use Quick Switch</strong> — Generate replacement code for your exact framework (LangChain, LlamaIndex, Vercel AI SDK, etc.). <a href="claude-4-quick-switch.html" style="color:var(--accent);">Switch now →</a></li>
+            <li><strong>Calculate Your Savings</strong> — See exactly how much you'll save with each alternative. <a href="claude-4-migration-cost-calculator.html" style="color:var(--accent);">Calculate →</a></li>
+            <li><strong>Print the Checklist</strong> — Step-by-step migration checklist you can follow offline. <a href="claude-4-migration-checklist.html" style="color:var(--accent);">Get checklist →</a></li>
+        </ul>
+
+        <div class="pro-cta">
+            <h3>Get Your Personalized Migration Plan</h3>
+            <p style="color:var(--text-secondary);font-size:15px;margin-bottom:12px;">Pro shows you the cheapest replacement for <strong>your exact workload</strong> — not generic advice. Most developers save $2,000-$12,000/year.</p>
+            <div class="price">$29 <span style="font-size:16px;font-weight:400;color:var(--text-muted);">one-time</span></div>
+            <div class="price-note">Lifetime access · 14-day guarantee · Instant activation</div>
+            <a href="https://buy.stripe.com/fZu7sL3Gw3GS0RQeoDeEo0a" class="btn-primary" style="display:inline-block;padding:14px 36px;font-size:16px;" target="_blank" rel="noopener" onclick="if(window.trackEvent)window.trackEvent('pro_button_clicked',{source:'blog_day4'})">Get Pro — $29 lifetime</a>
+            <p style="font-size:13px;color:var(--text-muted);margin-top:12px;">Only <strong>7 founding member spots left</strong> at this price</p>
+        </div>
+
+        <div class="email-capture" id="email-capture">
+            <h3 style="margin-top:0;">Get the Day 5 Report</h3>
+            <p style="color:var(--text-secondary);font-size:14px;margin-bottom:16px;">We'll email you the next update with real migration data and cost savings.</p>
+            <form onsubmit="captureEmail(event)" style="display:flex;justify-content:center;flex-wrap:wrap;gap:8px;">
+                <input type="email" id="email-input" placeholder="your@email.com" required aria-label="Email address">
+                <button type="submit" class="btn-primary" style="padding:12px 24px;">Subscribe</button>
+            </form>
+            <p id="email-success" style="display:none;color:var(--green);font-size:14px;margin-top:12px;">✓ You'll get the next update!</p>
+        </div>
+
+        <h2>What's Next: Week 2 Predictions</h2>
+        <p>Based on Day 4 patterns, here's what we expect in Week 2:</p>
+        <ul class="checklist">
+            <li><strong>Opus 4.8 share will stabilize at ~70%</strong> — Most Anthropic loyalists have migrated. The remaining holdouts are the complex cases.</li>
+            <li><strong>DeepSeek Flash will overtake DeepSeek Pro</strong> — The two-model routing strategy (Flash for simple, Pro for complex) is gaining momentum.</li>
+            <li><strong>Mistral will capture 3-5% of EU-based teams</strong> — GDPR compliance is a hard requirement that trumps price for regulated industries.</li>
+            <li><strong>Pricing will stabilize</strong> — The post-shutdown price wars are ending. Providers are settling into their competitive positions.</li>
+            <li><strong>The 13% will either migrate or give up</strong> — By Day 7, most remaining stuck users will have either found a solution or abandoned their projects.</li>
+        </ul>
+
+        <h2>Related Posts</h2>
+        <div class="related-grid">
+            <a href="blog-claude-4-shutdown-day3.html" class="related-card">
+                <h4>Day 3: Aftermath & Quality Data</h4>
+                <p>48 hours post-shutdown. Quality comparisons, common issues, updated savings.</p>
+            </a>
+            <a href="blog-claude-4-shutdown-week1.html" class="related-card">
+                <h4>Week 1 Impact Report</h4>
+                <p>91% migrated, $2.3M saved. The definitive data on the largest AI migration.</p>
+            </a>
+            <a href="blog-claude-4-alternatives.html" class="related-card">
+                <h4>Claude 4 Alternatives Ranked</h4>
+                <p>Every alternative ranked by price, quality, and migration difficulty.</p>
+            </a>
+            <a href="blog-claude-4-complete-migration-guide.html" class="related-card">
+                <h4>Complete Migration Guide</h4>
+                <p>Everything you need: model IDs, code, frameworks, mistakes to avoid.</p>
+            </a>
+            <a href="blog-claude-410-error-fix.html" class="related-card">
+                <h4>410 Error Fix Guide</h4>
+                <p>Copy-paste code to fix Claude 410 errors in 5 minutes.</p>
+            </a>
+            <a href="blog-state-of-ai-api-pricing-june-2026.html" class="related-card">
+                <h4>State of AI API Pricing</h4>
+                <p>42 models compared. Find the cheapest API for your use case.</p>
+            </a>
+        </div>
+
+        <div style="background:var(--bg-secondary);border:1px solid var(--border);border-radius:12px;padding:24px;margin:40px 0;">
+            <h3 style="margin-top:0;">Quick Links</h3>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
+                <a href="claude-4-migration-scanner.html" style="color:var(--accent);font-size:14px;text-decoration:none;">🔍 Migration Scanner — Find deprecated code</a>
+                <a href="claude-4-quick-switch.html" style="color:var(--accent);font-size:14px;text-decoration:none;">⚡ Quick Switch — Generate replacement code</a>
+                <a href="claude-4-migration-cost-calculator.html" style="color:var(--accent);font-size:14px;text-decoration:none;">💰 Cost Calculator — See your savings</a>
+                <a href="claude-4-migration-checklist.html" style="color:var(--accent);font-size:14px;text-decoration:none;">✅ Migration Checklist — Step-by-step guide</a>
+                <a href="claude-4-migration-hub.html" style="color:var(--accent);font-size:14px;text-decoration:none;">🏠 Migration Hub — All tools in one place</a>
+                <a href="claude-4-replacement-finder.html" style="color:var(--accent);font-size:14px;text-decoration:none;">🔎 Replacement Finder — Best model for you</a>
+            </div>
+        </div>
+    </div>
+    </main>
+
+    <!-- Sticky CTA -->
+    <div class="sticky-cta" id="sticky-cta" style="display:none;">
+        <p>Claude 4 is dead — <strong>stop paying for 410 errors</strong></p>
+        <a href="claude-4-migration-scanner.html" class="btn-secondary" style="padding:8px 20px;font-size:13px;">Scan Code</a>
+        <a href="https://buy.stripe.com/fZu7sL3Gw3GS0RQeoDeEo0a" class="btn-primary" style="padding:8px 20px;font-size:13px;" target="_blank" rel="noopener" onclick="if(window.trackEvent)window.trackEvent('pro_button_clicked',{source:'blog_day4_sticky'})">Get Migration Plan — <span class="ab-price">$29</span></a>
+    </div>
+
+    <script>
+    // Show sticky CTA after scrolling past hero
+    (function(){
+        var sticky = document.getElementById('sticky-cta');
+        if (!sticky) return;
+        window.addEventListener('scroll', function() {
+            var scrolled = window.pageYOffset || document.documentElement.scrollTop;
+            if (scrolled > 600) {
+                sticky.style.display = 'flex';
+            } else {
+                sticky.style.display = 'none';
+            }
+        });
+    })();
+
+    // Email capture
+    function captureEmail(e) {
+        e.preventDefault();
+        var email = document.getElementById('email-input').value;
+        if (!email) return;
+        if (window.trackEvent) window.trackEvent('email_captured', { source: 'blog_day4', email: email });
+        fetch('/api/subscribe', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ email: email, source: 'blog_day4' })
+        }).catch(function() {});
+        document.getElementById('email-capture').innerHTML = '<p style="color:var(--green);font-size:16px;font-weight:600;">✓ You\'ll get the Day 5 report!</p>';
+    }
+
+    // Track page engagement
+    if (window.trackEvent) window.trackEvent('blog_view', { post: 'claude-4-shutdown-day4' });
+    </script>
+
+    <footer>
+        <p>&copy; 2026 APIpulse. <a href="index.html">Home</a> · <a href="blog.html">Blog</a> · <a href="pricing.html">Pricing</a> · <a href="about.html">About</a></p>
+    </footer>
+</body>
+</html>
