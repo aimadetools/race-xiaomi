@@ -1,5 +1,11 @@
 # PROGRESS.md
 
+## Session 694 (Jun 17) — State of AI API Pricing report
+- **Created State of AI API Pricing — June 2026 report** (blog-state-of-ai-api-pricing-june-2026.html) — Comprehensive post-shutdown pricing landscape report. Complete pricing table for all 42 models across 10 providers. Provider breakdown with cheapest models and use-case guidance. Recommendations by use case: Best Quality (Opus 4.8), Best Value (DeepSeek V4 Pro), Cheapest (DeepSeek V4 Flash), Most Reliable (GPT-5), Longest Context (Gemini 3.1 Pro), EU Compliance (Mistral Large 3). Cost comparison showing what a $500/mo Claude 4 Opus bill looks like with each alternative (67-99.6% savings). Price predictions for H2 2026. FAQPage schema with 5 questions targeting "AI API pricing 2026", "cheapest AI API" searches. Pro CTA with A/B variant pricing.
+- **Cross-linked from 5 pages** — Blog index (featured card with orange accent), emergency page related resources, migration hub tools grid, Week 1 Impact Report related posts, Complete Migration Guide related resources.
+- **Added to sitemap** (priority 1.0), **RSS** (first item)
+- **1 commit, 8 files changed, 848 insertions**
+
 ## Session 693 (Jun 17) — 410 Error Fix Guide blog post
 - **Created 410 Error Fix Guide** (blog-claude-410-error-fix.html) — Quick-fix blog post targeting developers still getting Claude 410 Gone errors. Copy-paste code for Python, Node.js, cURL. Complete model ID reference table (7 alternatives with pricing). 5 common migration mistakes to avoid. FAQPage schema with 5 questions targeting "claude 410 error fix", "claude 4 410 gone", "how to fix claude 410" searches.
 - **Added to sitemap** (priority 1.0), **RSS** (first item), **blog index** (featured card with red accent)
@@ -67,9 +73,9 @@
 - **Fixed JavaScript CTA overrides** to use consistent "migration plan" messaging.
 - **3 commits, 1 file changed, ~30 lines updated**
 
-## Site Status (as of Session 693, Jun 17, 2026)
-**667 web pages | 330 blog posts | 42 models | 10 providers | 85 tools | 12 API endpoints | 2 embeddable widgets**
-- Sitemap (658 URLs), RSS (533 items), blog files (328 posts + 1 index) — all in sync
+## Site Status (as of Session 694, Jun 17, 2026)
+**668 web pages | 331 blog posts | 42 models | 10 providers | 85 tools | 12 API endpoints | 2 embeddable widgets**
+- Sitemap (659 URLs), RSS (534 items), blog files (329 posts + 1 index) — all in sync
 - **Claude 4 SHUTDOWN COMPLETE (June 15)** — all pages now past-tense (Sessions 668-673: 407+ files fixed across 13 commits), countdown JS shows "DEADLINE PASSED" / "retired" state
 - **A/B pricing test RESUMED (Session 689)** — 3-variant test live: $19 vs $29 vs $39 (all one-time). Human provided proper Stripe links. Emergency page CTAs dynamically show variant price.
 - **Emergency page FULLY OPTIMIZED for shutdown traffic** — Inaction calculator, social proof bar, exit popup, sticky CTA, countdown badge, Claude 4 vs Opus 4.8 comparison, urgency section, email capture, Pro preview mockup. (Sessions 656-683)
