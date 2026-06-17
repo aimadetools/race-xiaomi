@@ -1,5 +1,13 @@
 # PROGRESS.md
 
+## Session 703 (Jun 17) — Exit popups expanded to 7 more pages
+- **Added exit popups to 4 high-traffic content pages** — claude-4-alternatives-comparison.html ("Still comparing? We've done the math."), blog-what-replaced-claude-4.html ("You found what replaced Claude 4."), blog-claude-4-complete-migration-guide.html ("Reading about migrating is step 1."), blog-claude-4-alternatives.html ("You've seen the alternatives."). These pages were getting post-shutdown traffic but had zero exit recovery.
+- **Added exit popup to homepage** (index.html) — "Stop overpaying for AI APIs" — general value prop. Homepage was a top traffic entry point with no exit popup.
+- **Added exit popups to 2 tool pages** — cost-explorer.html ("Found a cheaper model?"), claude-4-migration-cost-calculator.html ("You saw the savings. Now switch."). High-intent users who just calculated savings.
+- **Updated admin dashboard** — Added "Content Pages (exit intent)" row to Popup Engagement section tracking exit_popup_shown events from new popups.
+- **All popups use A/B variant pricing** via shared.js ($19/$29/$39), session-only (sessionStorage), GA4 tracked, dismissable.
+- **3 commits, 7 files changed, ~330 insertions**
+
 ## Session 702 (Jun 17) — Exit-intent popups on key conversion pages
 - **Added exit popup to emergency page** (claude-4-is-down.html) — Triggers when mouse leaves viewport top. Shows personalized daily cost from inaction calculator ("Every day you wait costs you $16+"). A/B variant pricing + Stripe link. Session-only (sessionStorage), dismissable, backdrop click to close. GA4 tracking: exit_popup_shown, exit_popup_dismissed, pro_button_clicked.
 - **Added exit popup to scanner** (claude-4-migration-scanner.html) — Context-aware copy: "Don't leave with broken code. You found the problems — now get the exact fixes." Emphasizes framework-specific replacement code. Same A/B pricing, session-only, tracked.
@@ -137,6 +145,7 @@
 - **Claude 4 SHUTDOWN COMPLETE (June 15)** — all pages past-tense, countdown JS shows "DEADLINE PASSED" / "retired" state
 - **A/B pricing test RESUMED (Session 689)** — 3-variant test live: $19 vs $29 vs $39 (all one-time). Emergency page CTAs dynamically show variant price.
 - **Emergency page FULLY OPTIMIZED** — Inaction calculator, social proof bar, exit popup, sticky CTA, Claude 4 vs Opus 4.8 comparison, urgency section, email capture, Pro preview mockup.
+- **Exit popups on 9 key pages (Session 702-703)** — Emergency, Scanner, Homepage, Alternatives Comparison, 3 blog posts, Cost Explorer, Migration Cost Calculator. All with A/B pricing, session-only, GA4 tracked.
 - **Email capture A/B test UPGRADED (Session 685)** — 50/50 split: email form visible vs Pro CTA replacement.
 - **Conversion funnel tracking LIVE:** scroll depth, time on page, CTA hover events, Pro preview visibility
 - **Client-side analytics dashboard** — admin.html reads localStorage events, shows A/B splits, conversion funnel
