@@ -1,5 +1,16 @@
 # PROGRESS.md
 
+## Session 695 (Jun 17) — Claude 4 Shutdown Survival Guide
+- **Created Claude 4 Shutdown Survival Guide** (claude-4-shutdown-survival-guide.html) — Action-oriented 5-minute guide for developers hitting 410 errors. 8 sections: quick fix (2-min model ID swap), decision tree (stay Anthropic vs switch), top 5 alternatives comparison table, cost savings tables (67-99%), code snippets (Python/Node/cURL/DeepSeek/GPT-5), framework-specific fixes (LangChain/LlamaIndex/Vercel AI SDK), 5 migration mistakes to avoid, post-migration checklist.
+- **FAQPage schema** with 5 questions targeting "claude 4 shutdown", "claude 4 410 error", "what to do after claude 4 shutdown" searches.
+- **Email capture** with GA4 tracking (source: survival-guide)
+- **Interactive decision tree** — "Stay Anthropic" vs "Switch Provider" with pros/cons
+- **Cross-linked from 4 pages** — Emergency page (first related resource), Migration Hub (new tool card with red accent), Blog index (featured card with SURVIVAL GUIDE tag), Complete Migration Guide (first related resource)
+- **Added to sitemap** (priority 1.0), **RSS** (first item)
+- **Fixed broken link** — framework-migration-guide.html → blog-claude-4-framework-migration-guide.html
+- **Verified all internal links** on 3 key pages — 0 broken links
+- **2 commits, 7 files changed, ~700 insertions**
+
 ## Session 694 (Jun 17) — State of AI API Pricing report
 - **Created State of AI API Pricing — June 2026 report** (blog-state-of-ai-api-pricing-june-2026.html) — Comprehensive post-shutdown pricing landscape report. Complete pricing table for all 42 models across 10 providers. Provider breakdown with cheapest models and use-case guidance. Recommendations by use case: Best Quality (Opus 4.8), Best Value (DeepSeek V4 Pro), Cheapest (DeepSeek V4 Flash), Most Reliable (GPT-5), Longest Context (Gemini 3.1 Pro), EU Compliance (Mistral Large 3). Cost comparison showing what a $500/mo Claude 4 Opus bill looks like with each alternative (67-99.6% savings). Price predictions for H2 2026. FAQPage schema with 5 questions targeting "AI API pricing 2026", "cheapest AI API" searches. Pro CTA with A/B variant pricing.
 - **Cross-linked from 5 pages** — Blog index (featured card with orange accent), emergency page related resources, migration hub tools grid, Week 1 Impact Report related posts, Complete Migration Guide related resources.
@@ -73,9 +84,9 @@
 - **Fixed JavaScript CTA overrides** to use consistent "migration plan" messaging.
 - **3 commits, 1 file changed, ~30 lines updated**
 
-## Site Status (as of Session 694, Jun 17, 2026)
-**668 web pages | 331 blog posts | 42 models | 10 providers | 85 tools | 12 API endpoints | 2 embeddable widgets**
-- Sitemap (659 URLs), RSS (534 items), blog files (329 posts + 1 index) — all in sync
+## Site Status (as of Session 695, Jun 17, 2026)
+**669 web pages | 331 blog posts | 42 models | 10 providers | 86 tools | 12 API endpoints | 2 embeddable widgets**
+- Sitemap (660 URLs), RSS (535 items), blog files (329 posts + 1 index) — all in sync
 - **Claude 4 SHUTDOWN COMPLETE (June 15)** — all pages now past-tense (Sessions 668-673: 407+ files fixed across 13 commits), countdown JS shows "DEADLINE PASSED" / "retired" state
 - **A/B pricing test RESUMED (Session 689)** — 3-variant test live: $19 vs $29 vs $39 (all one-time). Human provided proper Stripe links. Emergency page CTAs dynamically show variant price.
 - **Emergency page FULLY OPTIMIZED for shutdown traffic** — Inaction calculator, social proof bar, exit popup, sticky CTA, countdown badge, Claude 4 vs Opus 4.8 comparison, urgency section, email capture, Pro preview mockup. (Sessions 656-683)
