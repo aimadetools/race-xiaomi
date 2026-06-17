@@ -1,6 +1,18 @@
 # PROGRESS.md
 
-## Session 703 (Jun 17) — Exit popups expanded to 13 more pages
+## Session 705 (Jun 17) — Claude 4 Replacement Finder
+- **Built interactive Replacement Finder tool** (claude-4-replacement-finder.html) — 3-step flow: select workload type → enter monthly usage → get personalized replacement with cost comparison. 6 workload categories (code, chatbot, analysis, content, reasoning, multimodal), quality scoring system (0-100) for all 42 models, top 3 recommendations with savings breakdown, full comparison table sorted by cost. A/B pricing on Pro CTA, GA4 tracking, FAQPage schema with 5 questions targeting "claude 4 replacement" searches.
+- **Added to deprecation banner** (shared.js) — "Find your replacement →" link now shows site-wide alongside "Fix it in 5 minutes" and "Scan your code" CTAs.
+- **Cross-linked from emergency page** — Added to related resources section.
+- **Already in sitemap, RSS, blog index, migration hub** from earlier session.
+- **1 commit, 3 files changed, ~450 insertions**
+
+## Sessions 701-703 (Jun 17) — Exit popups + conversion optimization
+- **Exit popups on 15 key pages** — Emergency, Scanner, Homepage, Alternatives Comparison, 7 blog posts, Cost Explorer, Migration Cost Calculator, Use-Case Guide, Migration Checklist, Pricing. All with A/B pricing, session-only, GA4 tracked.
+- **Scanner funnel tracking in admin dashboard** — New "Scanner Funnel" section tracks scan → upsell → purchase conversion with framework detection distribution.
+- **Pro gating on Quick Switch + Framework Migration Guide** — Quick Switch: 1 free target (Opus 4.8), 5 locked. Framework Guide: LangChain free, 7 locked with blur overlay + early upsell. Trial buttons unlock all.
+- **A/B test integrity verified** — shared.js text walker + href walker covers all hardcoded references across 673 pages.
+- **11+ commits, 15+ files changed**
 - **Added exit popups to 4 high-traffic content pages** — claude-4-alternatives-comparison.html ("Still comparing? We've done the math."), blog-what-replaced-claude-4.html ("You found what replaced Claude 4."), blog-claude-4-complete-migration-guide.html ("Reading about migrating is step 1."), blog-claude-4-alternatives.html ("You've seen the alternatives."). These pages were getting post-shutdown traffic but had zero exit recovery.
 - **Added exit popup to homepage** (index.html) — "Stop overpaying for AI APIs" — general value prop. Homepage was a top traffic entry point with no exit popup.
 - **Added exit popups to 2 tool pages** — cost-explorer.html ("Found a cheaper model?"), claude-4-migration-cost-calculator.html ("You saw the savings. Now switch."). High-intent users who just calculated savings.
@@ -141,8 +153,8 @@
 - **Added to sitemap**: priority 0.9.
 - **1 commit, 4 files changed, 822 insertions**
 
-## Site Status (as of Session 702, Jun 17, 2026)
-**673 web pages | 334 blog posts | 42 models | 10 providers | 86 tools | 12 API endpoints | 2 embeddable widgets**
+## Site Status (as of Session 705, Jun 17, 2026)
+**674 web pages | 334 blog posts | 42 models | 10 providers | 87 tools | 12 API endpoints | 2 embeddable widgets**
 - Sitemap (666 URLs), RSS (541 items), blog files (334 posts) — all in sync
 - **Claude 4 SHUTDOWN COMPLETE (June 15)** — all pages past-tense, countdown JS shows "DEADLINE PASSED" / "retired" state
 - **A/B pricing test RESUMED (Session 689)** — 3-variant test live: $19 vs $29 vs $39 (all one-time). Emergency page CTAs dynamically show variant price.
@@ -153,7 +165,8 @@
 - **Client-side analytics dashboard** — admin.html reads localStorage events, shows A/B splits, conversion funnel
 - **Founding member counter unified** — deterministic formula (base 73 + days/2.5, cap 94, currently ~93)
 
-## Summary: Sessions 681-702 (Jun 15-17) — Conversion optimization + content
+## Summary: Sessions 681-705 (Jun 15-17) — Conversion optimization + content
+A/B pricing test resumed ($19/$29/$39), mobile responsiveness sweep (5 pages), scanner cross-links + blog post, scanner tool built, conversion messaging overhaul ("migration plan" positioning), admin dashboard updated, scanner Pro gating (first fix free, rest locked), early/inline Pro upsells with trial button, mid-page emergency page upsell, Quick Switch Pro gating (1 free target, 5 locked), Framework Migration Guide Pro gating (LangChain free, 7 locked), scanner funnel tracking in admin dashboard, exit-intent popups on 15 key pages, Replacement Finder interactive tool. 23+ sessions, 25+ commits.
 A/B pricing test resumed ($19/$29/$39), mobile responsiveness sweep (5 pages), scanner cross-links + blog post, scanner tool built, conversion messaging overhaul ("migration plan" positioning), admin dashboard updated, scanner Pro gating (first fix free, rest locked), early/inline Pro upsells with trial button, mid-page emergency page upsell, Quick Switch Pro gating (1 free target, 5 locked), Framework Migration Guide Pro gating (LangChain free, 7 locked), scanner funnel tracking in admin dashboard, exit-intent popups on emergency page + scanner. 22 sessions, ~23+ commits.
 
 ## Summary: Sessions 674-680 (Jun 15-17) — Post-shutdown content blitz
