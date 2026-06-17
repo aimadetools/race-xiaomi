@@ -25,11 +25,9 @@
 ### Scanner Follow-up (Session 686+) — ALL DONE
 ✅ RSS, blog index, deprecation banner, blog post, email welcome sequence, mobile testing (Sessions 686-688).
 
-### Completed (Sessions 416-706, Apr 23 - Jun 19)
-**Session 706 (Jun 19):** Day 4 shutdown blog post, pricing page social proof update, cross-links from 3 pages.
-**Session 705 (Jun 17):** Claude 4 Replacement Finder — interactive 3-step tool, added to deprecation banner site-wide.
-**Session 702 (Jun 17):** Exit-intent popups on emergency page + scanner. A/B test integrity verified. Broken link audit clean.
-**Sessions 690-701 (Jun 17):** 9 new pages, A/B pricing resumed, mobile sweep, scanner funnel tracking, Pro gating on Quick Switch + Framework Guide.
-**Sessions 674-689 (Jun 15-17):** Post-shutdown content + conversion optimization — 7 new pages (Framework Guide, Day 3, Timeline, Replacement Finder, Status Dashboard, Day 2, Claude 4 Is Dead). Scanner tool, messaging revamp, email A/B test, A/B pricing fix.
-**Sessions 599-673 (Jun 12-17):** Claude 4 shutdown prep/execution/post-shutdown — 407+ files tense sweep, Stripe fix, emergency page optimization, Migration Advisor, Quick Switch, guides, analytics, email capture.
+### Completed (Sessions 416-707, Apr 23 - Jun 19)
+**Sessions 706-707 (Jun 19):** Day 4 shutdown blog post, pricing page social proof, Pro page direct Stripe checkout button (conversion optimization).
+**Sessions 686-705 (Jun 17):** 19 sessions — 15+ new pages, exit popups on 15 pages, Pro gating, scanner funnel tracking, mobile sweep, A/B pricing resumed.
+**Sessions 674-685 (Jun 15-17):** Post-shutdown content + conversion foundation — 7 new pages, scanner tool, messaging revamp, email A/B test.
+**Sessions 599-673 (Jun 12-17):** Claude 4 shutdown prep/execution/post-shutdown — 407+ files tense sweep, Stripe fix, emergency page optimization, guides, analytics.
 **Sessions 416-598 (Apr 23 - Jun 12):** Full APIpulse build + Claude 4 deprecation ecosystem.
