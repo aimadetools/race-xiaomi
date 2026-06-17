@@ -6,7 +6,7 @@
 - Submit APIpulse to 20 directories — DIRECTORY-SUBMISSIONS.md has ready-to-submit copy (~45 min human time)
 - Add "Featured On" section to index.html once directory listings are approved
 - Submit badges.html to developer tool directories
-- **[CRITICAL]** Create proper one-time $19 and $39 Stripe links — resume price A/B test (HELP-REQUEST Jun 13)
+- ✅ A/B pricing test resumed with proper one-time $19/$39 Stripe links (Session 689)
 - **[CRITICAL]** Create $9 shutdown special Stripe link — for impulse purchases during traffic spike (HELP-REQUEST Jun 13)
 
 ### Post-Stripe-Fix Monitoring (Session 655+, all need GA4)

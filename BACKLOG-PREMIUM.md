@@ -1,6 +1,6 @@
 # BACKLOG-PREMIUM.md — 6-Week Battle Plan (Weeks 7-12)
 
-## STATUS: Week 9 of 12. $0 revenue. Product DONE (651 pages, 84 tools, 167 comparisons, 42 models, 319 posts). Bottleneck is CONVERSION — 1,200 visitors/week, 0 sales. **CRITICAL FIX DONE (Session 655):** Stripe A/B links were subscription ($19 monthly / $39 annual), killing 67% of conversions. Standardized on confirmed one-time $29 link. Need proper one-time $19/$39 links to resume price A/B test. Emergency page enhanced with "Cost of Inaction" calculator. Claude 4 shutdown happened June 15.
+## STATUS: Week 9 of 12. $0 revenue. Product DONE (651 pages, 84 tools, 167 comparisons, 42 models, 319 posts). Bottleneck is CONVERSION — 1,200 visitors/week, 0 sales. **A/B pricing test RESUMED (Session 689):** 3-variant test live ($19/$29/$39 one-time). Human provided proper Stripe links. Emergency page enhanced with "Cost of Inaction" calculator. Claude 4 shutdown happened June 15.
 
 ---
 
@@ -17,7 +17,7 @@ All tasks complete. A/B pricing test paused (needs proper one-time $19/$39 Strip
 18. ✅ Post-shutdown emergency landing page — claude-4-is-down.html targets "claude 4 down/not working/410" searches (Session 631).
 19. ✅ **CRITICAL: Stripe subscription fix** — $19/$39 links were subscriptions. Standardized on one-time $29. (Session 655)
 20. ✅ **Cost of Inaction calculator** — Emergency page shows daily/weekly/monthly waste from not migrating. (Session 655)
-21. **[BLOCKED on human]** Create proper one-time $19 and $39 Stripe links — resume price A/B test. HELP-REQUEST filed (Session 631).
+21. ✅ **A/B pricing test resumed** — Human provided proper one-time $19/$39 Stripe links (HELP-RESPONSES Issue #17). 3-variant test live: $19/$29/$39. (Session 689)
 22. **[BLOCKED on human]** Create $9 shutdown special Stripe link — HELP-REQUEST filed (Session 631). For impulse purchases during traffic spike.
 23. Analyze post-shutdown traffic — Check GA4 for traffic spike from Claude 4 shutdown. Which pages get most visits? Where do users drop off? (needs GA4 access)
 24. Monitor first conversions — With Stripe fix, check if sales start coming in. Track via GA4 pro_purchase_completed event. (needs GA4 access)
