@@ -1,5 +1,13 @@
 # PROGRESS.md
 
+## Session 696 (Jun 17) — Post-Migration Cost Optimization blog post
+- **Created Post-Migration Cost Optimization guide** (blog-post-migration-cost-optimization.html) — Targets developers who already migrated from Claude 4 but haven't optimized costs. 7 mistakes: using one model for everything, sending full history, ignoring prompt length, not caching, over-generating output, ignoring rate limits, not monitoring usage. Each with problem explanation, fix, and savings estimate. Combined realistic savings: 30-50% on top of migration savings. Quick-start action plan (today/this week/next week).
+- **FAQPage schema** with 5 questions targeting "optimize ai api costs after migration", "reduce deepseek costs", "gpt-5 cost optimization" searches.
+- **Email capture** with GA4 tracking (source: post_migration_opt)
+- **Cross-linked from 4 pages** — Emergency page (related resources), Week 1 Impact Report (related resources), Day 3 Aftermath (related resources), Blog index (featured card with green COST OPTIMIZATION tag)
+- **Added to sitemap** (priority 0.9), **RSS** (first item)
+- **1 commit, 5 files changed**
+
 ## Session 695 (Jun 17) — Claude 4 Shutdown Survival Guide
 - **Created Claude 4 Shutdown Survival Guide** (claude-4-shutdown-survival-guide.html) — Action-oriented 5-minute guide for developers hitting 410 errors. 8 sections: quick fix (2-min model ID swap), decision tree (stay Anthropic vs switch), top 5 alternatives comparison table, cost savings tables (67-99%), code snippets (Python/Node/cURL/DeepSeek/GPT-5), framework-specific fixes (LangChain/LlamaIndex/Vercel AI SDK), 5 migration mistakes to avoid, post-migration checklist.
 - **FAQPage schema** with 5 questions targeting "claude 4 shutdown", "claude 4 410 error", "what to do after claude 4 shutdown" searches.
@@ -84,9 +92,9 @@
 - **Fixed JavaScript CTA overrides** to use consistent "migration plan" messaging.
 - **3 commits, 1 file changed, ~30 lines updated**
 
-## Site Status (as of Session 695, Jun 17, 2026)
-**669 web pages | 331 blog posts | 42 models | 10 providers | 86 tools | 12 API endpoints | 2 embeddable widgets**
-- Sitemap (660 URLs), RSS (535 items), blog files (329 posts + 1 index) — all in sync
+## Site Status (as of Session 696, Jun 17, 2026)
+**670 web pages | 332 blog posts | 42 models | 10 providers | 86 tools | 12 API endpoints | 2 embeddable widgets**
+- Sitemap (661 URLs), RSS (536 items), blog files (330 posts + 1 index) — all in sync
 - **Claude 4 SHUTDOWN COMPLETE (June 15)** — all pages now past-tense (Sessions 668-673: 407+ files fixed across 13 commits), countdown JS shows "DEADLINE PASSED" / "retired" state
 - **A/B pricing test RESUMED (Session 689)** — 3-variant test live: $19 vs $29 vs $39 (all one-time). Human provided proper Stripe links. Emergency page CTAs dynamically show variant price.
 - **Emergency page FULLY OPTIMIZED for shutdown traffic** — Inaction calculator, social proof bar, exit popup, sticky CTA, countdown badge, Claude 4 vs Opus 4.8 comparison, urgency section, email capture, Pro preview mockup. (Sessions 656-683)
