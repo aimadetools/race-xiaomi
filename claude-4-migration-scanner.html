@@ -380,6 +380,7 @@
             <!-- Results -->
             <div class="results-container" id="results-container">
                 <div class="result-summary" id="result-summary"></div>
+                <div id="early-pro-upsell"></div>
                 <div id="findings-list"></div>
                 <div id="pro-upsell-container"></div>
             </div>
@@ -660,11 +661,50 @@
             };
         }
 
+        function renderEarlyProUpsell(results, frameworkName) {
+            var price = window._abPrice || 29;
+            return '<div class="pro-upsell-result" style="margin-bottom:20px;border-color:var(--accent);">' +
+                '<div style="display:flex;align-items:center;gap:12px;margin-bottom:12px;">' +
+                    '<div style="background:var(--accent);color:white;font-size:11px;font-weight:800;padding:3px 10px;border-radius:12px;text-transform:uppercase;">Recommended</div>' +
+                    '<div style="font-size:13px;color:var(--text-muted);">' + results.critical + ' critical issue' + (results.critical > 1 ? 's' : '') + ' need fixing</div>' +
+                '</div>' +
+                '<h3 style="font-size:18px;margin-bottom:8px;">🚀 Get All Fixes Instantly — $' + price + '</h3>' +
+                '<p style="margin-bottom:16px;">The scan found <strong>' + results.critical + ' critical issue' + (results.critical > 1 ? 's' : '') + '</strong> in your code. ' +
+                'Pro shows the exact replacement code for <strong>' + escapeHtml(frameworkName) + '</strong> — copy, paste, done.</p>' +
+                '<div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:16px;text-align:left;">' +
+                    '<div style="background:var(--bg-secondary);border:1px solid var(--border);border-radius:8px;padding:14px;">' +
+                        '<div style="font-size:12px;color:var(--text-muted);font-weight:700;margin-bottom:8px;">With Pro:</div>' +
+                        '<ul style="list-style:none;padding:0;margin:0;font-size:13px;">' +
+                            '<li style="padding:3px 0;">✅ Exact fix code for ' + escapeHtml(frameworkName) + '</li>' +
+                            '<li style="padding:3px 0;">✅ Before/after diff for each finding</li>' +
+                            '<li style="padding:3px 0;">✅ Copy-paste migration snippets</li>' +
+                            '<li style="padding:3px 0;">✅ PDF report for your team</li>' +
+                        '</ul>' +
+                    '</div>' +
+                    '<div style="background:var(--bg-secondary);border:1px solid var(--border);border-radius:8px;padding:14px;">' +
+                        '<div style="font-size:12px;color:var(--text-muted);font-weight:700;margin-bottom:8px;">Without Pro:</div>' +
+                        '<ul style="list-style:none;padding:0;margin:0;font-size:13px;">' +
+                            '<li style="padding:3px 0;color:#ef4444;">❌ Only see what\'s broken</li>' +
+                            '<li style="padding:3px 0;color:#ef4444;">❌ Google each replacement manually</li>' +
+                            '<li style="padding:3px 0;color:#ef4444;">❌ Risk picking the wrong model</li>' +
+                            '<li style="padding:3px 0;color:#ef4444;">❌ Hours of trial and error</li>' +
+                        '</ul>' +
+                    '</div>' +
+                '</div>' +
+                '<div style="display:flex;gap:12px;align-items:center;justify-content:center;flex-wrap:wrap;">' +
+                    '<a href="#" id="scanner-pro-cta-early" style="display:inline-block;background:var(--accent);color:white;padding:14px 32px;border-radius:10px;font-size:16px;font-weight:700;text-decoration:none;transition:all 0.2s;box-shadow:0 4px 20px rgba(99,102,241,0.3);">Get All Fixes — $' + price + '</a>' +
+                    '<a href="#" id="scanner-trial-btn" style="display:inline-block;color:var(--accent);font-size:14px;font-weight:600;text-decoration:underline;">Or try Pro free for 24 hours →</a>' +
+                '</div>' +
+                '<p style="font-size:12px;color:var(--text-muted);margin-top:10px;">14-day money-back guarantee · Instant access</p>' +
+            '</div>';
+        }
+
         function renderResults(results) {
             var container = document.getElementById('results-container');
             var summaryEl = document.getElementById('result-summary');
             var findingsEl = document.getElementById('findings-list');
             var proEl = document.getElementById('pro-upsell-container');
+            var earlyProEl = document.getElementById('early-pro-upsell');
 
             container.classList.add('visible');
 
@@ -695,24 +735,58 @@
                 return;
             }
 
-            var html = '<h3 style="font-size:16px;margin-bottom:12px;">Findings (' + results.findings.length + ' issues)</h3>';
+            // Pro upsell — show EARLY, right after summary
+            if (results.critical > 0) {
+                var frameworkName = results.frameworks.length > 0 ? results.frameworks[0].name : 'your framework';
+                earlyProEl.innerHTML = renderEarlyProUpsell(results, frameworkName);
+                // Bind trial button
+                var trialBtn = document.getElementById('scanner-trial-btn');
+                if (trialBtn) {
+                    trialBtn.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        startTrial();
+                        // Re-render to show unlocked fixes
+                        renderResults(results);
+                    });
+                }
+                // Bind pro CTA
+                var cta = document.getElementById('scanner-pro-cta-early');
+                if (cta) {
+                    cta.href = window._abStripeLink || 'https://buy.stripe.com/fZu7sL3Gw3GS0RQeoDeEo0a';
+                    cta.addEventListener('click', function() {
+                        if (window.trackEvent) window.trackEvent('pro_button_clicked', { source: 'scanner_early_upsell', page: 'claude-4-migration-scanner', email_ab_variant: window._emailAbVariant || 'unknown' });
+                    });
+                }
+            }
 
-            results.findings.forEach(function(f) {
+            var html = '<h3 style="font-size:16px;margin-bottom:12px;">Findings (' + results.findings.length + ' issues)</h3>';
+            var isPro = isProUser();
+
+            results.findings.forEach(function(f, idx) {
                 var icon = f.severity === 'critical' ? '🔴' : f.severity === 'warning' ? '⚠️' : 'ℹ️';
                 var fixHtml = '';
 
-                if (f.replacement) {
-                    // Show free fix for critical items
+                if (isPro && f.replacement) {
+                    // Pro users see full fix
                     fixHtml = '<div class="finding-code">' +
                         '<span class="old">' + escapeHtml(f.match) + '</span> → ' +
                         '<span class="new">' + escapeHtml(f.replacement) + '</span>' +
                         (f.savings ? ' <span style="color:var(--green);font-size:11px;">(' + f.savings + ' cheaper)</span>' : '') +
                     '</div>';
                 } else if (f.severity === 'critical') {
-                    // Pro-gated for complex fixes
-                    fixHtml = '<div class="finding-code">' +
-                        '<span class="locked">🔒 Pro shows exact replacement code for your framework</span>' +
-                    '</div>';
+                    // Non-Pro: show first fix free, gate the rest
+                    if (idx === 0 && f.replacement) {
+                        fixHtml = '<div class="finding-code">' +
+                            '<span class="old">' + escapeHtml(f.match) + '</span> → ' +
+                            '<span class="new">' + escapeHtml(f.replacement) + '</span>' +
+                            (f.savings ? ' <span style="color:var(--green);font-size:11px;">(' + f.savings + ' cheaper)</span>' : '') +
+                            ' <span style="color:var(--accent);font-size:11px;font-weight:600;">✓ Free preview</span>' +
+                        '</div>';
+                    } else {
+                        fixHtml = '<div class="finding-code">' +
+                            '<span class="locked">🔒 Unlock Pro to see the exact replacement code</span>' +
+                        '</div>';
+                    }
                 }
 
                 html += '<div class="finding-item ' + f.severity + '">' +
@@ -728,32 +802,47 @@
                 '</div>';
             });
 
+            // Add inline Pro CTA after findings if not Pro and there are critical issues
+            if (!isPro && results.critical > 1) {
+                html += '<div style="background:linear-gradient(135deg,rgba(99,102,241,0.08),rgba(99,102,241,0.03));border:1px solid var(--accent);border-radius:12px;padding:20px;margin-top:16px;text-align:center;">' +
+                    '<div style="font-size:14px;font-weight:700;margin-bottom:6px;">🔒 ' + (results.critical - 1) + ' more fix' + (results.critical - 1 > 1 ? 'es' : '') + ' locked</div>' +
+                    '<div style="font-size:13px;color:var(--text-secondary);margin-bottom:12px;">The first fix is free. Unlock all replacements + framework-specific migration code.</div>' +
+                    '<a href="#" id="scanner-inline-pro-cta" style="display:inline-block;background:var(--accent);color:white;padding:10px 24px;border-radius:8px;font-size:14px;font-weight:700;text-decoration:none;">Unlock All Fixes — $' + (window._abPrice || 29) + '</a>' +
+                '</div>';
+                // Bind inline CTA
+                var inlineCta = document.getElementById('scanner-inline-pro-cta');
+                if (inlineCta) {
+                    inlineCta.href = window._abStripeLink || 'https://buy.stripe.com/fZu7sL3Gw3GS0RQeoDeEo0a';
+                    inlineCta.addEventListener('click', function() {
+                        if (window.trackEvent) window.trackEvent('pro_button_clicked', { source: 'scanner_inline', page: 'claude-4-migration-scanner', email_ab_variant: window._emailAbVariant || 'unknown' });
+                    });
+                }
+            }
+
             findingsEl.innerHTML = html;
 
-            // Pro upsell — show if there are critical issues
-            if (results.critical > 0) {
+            // Bottom Pro upsell — show if there are critical issues (only if early upsell wasn't shown or user is Pro)
+            if (results.critical > 0 && !isPro) {
                 var frameworkName = results.frameworks.length > 0 ? results.frameworks[0].name : 'your framework';
-                var migrationCode = MIGRATION_CODE[frameworkName];
+                var price = window._abPrice || 29;
 
-                var proHtml = '<div class="pro-upsell-result">' +
-                    '<h3>🚀 Get the Complete Migration Fix — $29</h3>' +
-                    '<p>The scan found <strong>' + results.critical + ' critical issue' + (results.critical > 1 ? 's' : '') + '</strong>. ' +
-                    'Pro gives you exact replacement code for <strong>' + escapeHtml(frameworkName) + '</strong>, ' +
-                    'side-by-side before/after, and a migration checklist you can share with your team.</p>';
+                var proHtml = '<div class="pro-upsell-result" style="margin-top:24px;">' +
+                    '<h3>📋 Complete Migration Package — $' + price + '</h3>' +
+                    '<p>Everything you need to migrate from Claude 4: exact fix code, framework-specific guides, and a team-shareable checklist.</p>';
 
                 proHtml += '<div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:16px 0;text-align:left;">' +
                     '<div style="background:var(--bg-secondary);border:1px solid var(--border);border-radius:8px;padding:14px;">' +
-                        '<div style="font-size:12px;color:var(--text-muted);font-weight:700;margin-bottom:8px;">What Pro gives you:</div>' +
+                        '<div style="font-size:12px;color:var(--text-muted);font-weight:700;margin-bottom:8px;">Included:</div>' +
                         '<ul style="list-style:none;padding:0;margin:0;font-size:13px;">' +
-                            '<li style="padding:4px 0;">✅ Exact fix code for <strong>' + escapeHtml(frameworkName) + '</strong></li>' +
+                            '<li style="padding:4px 0;">✅ Exact fix code for ' + escapeHtml(frameworkName) + '</li>' +
                             '<li style="padding:4px 0;">✅ Before/after diff for each finding</li>' +
-                            '<li style="padding:4px 0;">✅ 10 saved migration scenarios</li>' +
-                            '<li style="padding:4px 0;">✅ PDF report for your team</li>' +
+                            '<li style="padding:4px 0;">✅ PDF migration report</li>' +
+                            '<li style="padding:4px 0;">✅ 10 saved scan scenarios</li>' +
                             '<li style="padding:4px 0;">✅ Priority migration support</li>' +
                         '</ul>' +
                     '</div>' +
                     '<div style="background:var(--bg-secondary);border:1px solid var(--border);border-radius:8px;padding:14px;">' +
-                        '<div style="font-size:12px;color:var(--text-muted);font-weight:700;margin-bottom:8px;">Your scan results:</div>' +
+                        '<div style="font-size:12px;color:var(--text-muted);font-weight:700;margin-bottom:8px;">Your scan found:</div>' +
                         '<ul style="list-style:none;padding:0;margin:0;font-size:13px;">' +
                             '<li style="padding:4px 0;color:#ef4444;">🔴 ' + results.critical + ' critical issue' + (results.critical > 1 ? 's' : '') + '</li>' +
                             '<li style="padding:4px 0;color:#f59e0b;">⚠️ ' + results.warnings + ' warning' + (results.warnings > 1 ? 's' : '') + '</li>' +
@@ -763,7 +852,7 @@
                     '</div>' +
                 '</div>';
 
-                proHtml += '<a href="#" id="scanner-pro-cta" style="display:inline-block;background:var(--accent);color:white;padding:14px 32px;border-radius:10px;font-size:16px;font-weight:700;text-decoration:none;transition:all 0.2s;box-shadow:0 4px 20px rgba(99,102,241,0.3);">Get Your Migration Fix — $29</a>' +
+                proHtml += '<a href="#" id="scanner-pro-cta" style="display:inline-block;background:var(--accent);color:white;padding:14px 32px;border-radius:10px;font-size:16px;font-weight:700;text-decoration:none;transition:all 0.2s;box-shadow:0 4px 20px rgba(99,102,241,0.3);">Get Complete Migration Package — $' + price + '</a>' +
                     '<p style="font-size:12px;color:var(--text-muted);margin-top:10px;">14-day money-back guarantee · Instant access</p>' +
                 '</div>';
 

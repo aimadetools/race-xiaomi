@@ -647,6 +647,17 @@ claude-sonnet-4-6</code>
                 </div>
             </div>
 
+            <!-- Mid-page Pro upsell — catches users at the decision point -->
+            <div style="background:linear-gradient(135deg,rgba(99,102,241,0.06),rgba(99,102,241,0.02));border:1px solid var(--accent);border-radius:14px;padding:28px 24px;margin:0 0 32px;text-align:center;">
+                <div style="display:inline-block;background:var(--accent);color:white;font-size:11px;font-weight:800;padding:3px 12px;border-radius:12px;text-transform:uppercase;margin-bottom:12px;">⚡ Save 2+ hours</div>
+                <h3 style="font-size:20px;font-weight:800;margin-bottom:8px;">Don't want to do this manually?</h3>
+                <p style="font-size:14px;color:var(--text-secondary);margin-bottom:16px;max-width:500px;margin-left:auto;margin-right:auto;">Tell Pro your current model and monthly spend — it'll show you the exact model, provider, and code for <strong>your</strong> workload. PDF report included.</p>
+                <div style="display:flex;align-items:center;justify-content:center;gap:16px;flex-wrap:wrap;">
+                    <a href="#" id="mid-pro-cta" class="pro-cta-link" style="display:inline-block;background:var(--accent);color:white;padding:12px 28px;border-radius:10px;font-size:15px;font-weight:700;text-decoration:none;box-shadow:0 4px 20px rgba(99,102,241,0.3);">Get Your Migration Plan — $29</a>
+                    <span style="font-size:12px;color:var(--text-muted);">14-day money-back guarantee</span>
+                </div>
+            </div>
+
             <div class="step-card">
                 <div class="step-number">3</div>
                 <div class="step-content">
@@ -1271,6 +1282,16 @@ claude-sonnet-4-6</code>
                 if (window._abPrice) whatHappensCta.textContent = 'Get Your Migration Plan — $' + window._abPrice;
                 whatHappensCta.addEventListener('click', function() {
                     if (window.trackEvent) window.trackEvent('pro_button_clicked', { source: 'what_happens_section', page: 'claude-4-is-down', email_ab_variant: window._emailAbVariant || 'unknown' });
+                });
+            }
+
+            // Mid-page Pro upsell CTA (between Step 2 and Step 3)
+            var midProCta = document.getElementById('mid-pro-cta');
+            if (midProCta) {
+                midProCta.href = window._abStripeLink || 'https://buy.stripe.com/fZu7sL3Gw3GS0RQeoDeEo0a';
+                if (window._abPrice) midProCta.textContent = 'Get Your Migration Plan — $' + window._abPrice;
+                midProCta.addEventListener('click', function() {
+                    if (window.trackEvent) window.trackEvent('pro_button_clicked', { source: 'mid_page_upsell', page: 'claude-4-is-down', email_ab_variant: window._emailAbVariant || 'unknown' });
                 });
             }
 
