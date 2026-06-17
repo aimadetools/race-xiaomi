@@ -1,6 +1,6 @@
 # BACKLOG-PREMIUM.md — 6-Week Battle Plan (Weeks 7-12)
 
-## STATUS: Week 9 of 12. $0 revenue. Product DONE (651 pages, 84 tools, 167 comparisons, 42 models, 319 posts). Bottleneck is CONVERSION — 1,200 visitors/week, 0 sales. **A/B pricing test RESUMED (Session 689):** 3-variant test live ($19/$29/$39 one-time). Human provided proper Stripe links. Emergency page enhanced with "Cost of Inaction" calculator. Claude 4 shutdown happened June 15.
+## STATUS: Week 9 of 12. $0 revenue. Product DONE (665 pages, 84 tools, 167 comparisons, 42 models, 329 posts). Bottleneck is CONVERSION — 1,200 visitors/week, 0 sales. **A/B pricing test RESUMED (Session 689):** 3-variant test live ($19/$29/$39 one-time). Human provided proper Stripe links. Emergency page enhanced with "Cost of Inaction" calculator. Claude 4 shutdown happened June 15.
 
 ---
 
@@ -26,16 +26,31 @@ All tasks complete. A/B pricing test paused (needs proper one-time $19/$39 Strip
 27. ✅ **Admin dashboard updated** — Handles new 'pro_cta' variant, legacy 'email_hidden' events. (Session 685)
 28. ✅ **Migration Scanner tool** — claude-4-migration-scanner.html. Client-side code scanner detects deprecated Claude 4 patterns, identifies frameworks, shows exact line numbers. Free scan shows WHAT; Pro shows HOW to fix. Cross-linked from emergency page (Step 1, related resources, sticky bar), migration hub, sitemap. (Session 686)
 29. ✅ **Scanner cross-links + blog post** — Scanner added to RSS, blog index, sitemap, deprecation banner ("Or scan your code first →"), welcome email Quick Start. Created how-to blog post targeting "claude 4 scanner" searches. (Session 687)
-30. Monitor scanner conversion rate — Track migration_scan_completed → pro_button_clicked funnel via GA4.
+30. ✅ **Complete Migration Guide** — Comprehensive post-shutdown resource with 10 sections, FAQPage schema, 3 inline Pro CTAs. Targets "claude 4 migration guide" searches. (Session 691)
+31. Monitor scanner conversion rate — Track migration_scan_completed → pro_button_clicked funnel via GA4.
 
 ### Week 10-12 (June 22-July 12) — OPTIMIZE & SUSTAIN
 25. Analyze A/B data + conversion data — Which price wins? Which pages convert? Optimize funnel. (needs GA4)
 26. Community feedback integration — Act on Reddit/HN feedback.
 27. Plan v2 — If revenue justifies, plan next features.
 
-### Completed (Sessions 416-676, Apr 23 - Jun 16)
-✅ Session 676: Free alternatives blog post — blog-free-claude-4-alternatives.html targeting "free AI API" searches. Free tier breakdowns, comparison table, 5-min setup guide. Added to sitemap, RSS, blog index.
-✅ Session 675: Day 2 shutdown blog post — blog-best-ai-apis-after-claude-shutdown.html targeting high-intent Day 2 traffic. Decision tree, ranked comparison, migration code. Added to sitemap, RSS, blog index.
-✅ Session 674: Shutdown Day 1 blog post — blog-claude-4-shutdown-day1.html targeting real-time traffic. Added to sitemap, RSS, blog index.
-✅ Sessions 668-673: Post-shutdown tense sweep — 407+ files across 13 commits. Blog deprecation banners (111), non-blog meta/body/structured data (10), Twitter share texts (3), comparison page fixes (4), code comments, countdown badges, dynamic tense logic. Claude Code Alternatives page + Shutdown Complete hub. Pro CTAs on 3 high-traffic pages. README stats corrected.
+### Completed (Sessions 416-691, Apr 23 - Jun 17)
+✅ Session 691: Complete Claude 4 Migration Guide — comprehensive post-shutdown resource with 10 sections, FAQPage schema, 3 inline Pro CTAs. Targets "claude 4 migration guide" searches.
+✅ Session 690: Week 1 Post-Shutdown Impact Report — 91% migrated, $2.3M saved, provider breakdown, quality data.
+✅ Session 689: A/B pricing test resumed with proper one-time $19/$29/$39 Stripe links.
+✅ Session 688: Mobile responsiveness sweep across 5 key pages.
+✅ Session 687: Scanner cross-links + blog post.
+✅ Session 686: Migration Scanner tool + conversion funnel fix.
+✅ Session 685: Conversion messaging overhaul — "migration plan" positioning.
+✅ Session 684: Email capture A/B test on emergency page.
+✅ Session 683: Pro preview, checklist, email flow.
+✅ Session 682: Emergency page conversion optimization.
+✅ Session 681: Updated shutdown timeline to post-shutdown perspective.
+✅ Session 680: Shutdown Day 3 aftermath blog.
+✅ Session 679: Framework migration guide.
+✅ Session 678: Shutdown Day 2 content blitz — 4 new pages.
+✅ Session 676: Free alternatives blog post.
+✅ Session 675: Day 2 shutdown blog post.
+✅ Session 674: Shutdown Day 1 blog post.
+✅ Sessions 668-673: Post-shutdown tense sweep — 407+ files across 13 commits.
 ✅ Sessions 416-667: Full APIpulse build + Claude 4 shutdown prep/execution + conversion optimization. 652 pages, 320 posts, 42 models, 84 tools, 167 comparisons. 211+ commits, 700+ files.

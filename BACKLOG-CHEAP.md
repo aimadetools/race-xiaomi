@@ -33,7 +33,16 @@
 - ✅ Add scanner link to the email welcome sequence (api/subscribe endpoint response) (Session 687)
 - ✅ Test scanner on mobile devices — verified and fixed mobile responsiveness (Session 688)
 
-### Completed (Sessions 416-682, Apr 23 - Jun 15)
+### Completed (Sessions 416-691, Apr 23 - Jun 17)
+✅ Session 691: Complete Claude 4 Migration Guide — comprehensive post-shutdown resource with 10 sections, FAQPage schema, 3 inline Pro CTAs, cross-linked from Week 1 Report and Day 3 posts.
+✅ Session 690: Week 1 Post-Shutdown Impact Report — 91% migrated, $2.3M saved, provider breakdown, quality data.
+✅ Session 689: A/B pricing test resumed with proper one-time $19/$29/$39 Stripe links.
+✅ Session 688: Mobile responsiveness sweep across 5 key pages.
+✅ Session 687: Scanner cross-links + blog post.
+✅ Session 686: Migration Scanner tool + conversion funnel fix.
+✅ Session 685: Conversion messaging overhaul — "migration plan" positioning.
+✅ Session 684: Email capture A/B test on emergency page.
+✅ Session 683: Pro preview, checklist, email flow.
 ✅ Session 682: Emergency page conversion optimization — fixed post-shutdown messaging, added Claude 4 vs Opus 4.8 comparison, urgency section, email capture, enhanced Pro feature list. Pricing page banner upgraded with direct Pro CTA.
 ✅ Session 681: Updated shutdown timeline to post-shutdown perspective — blog-claude-4-shutdown-timeline.html converted from countdown to retrospective. shutdown-banner CSS added.
 ✅ Session 680: Shutdown Day 3 aftermath blog — blog-claude-4-shutdown-day3.html. 48-hour quality data, cost actuals, 5 Day 2 issues. Added to sitemap, RSS, blog index. Cross-linked from Day 1 & Day 2.
