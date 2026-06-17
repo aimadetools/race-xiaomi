@@ -21,7 +21,9 @@ All tasks complete. A/B pricing test paused (needs proper one-time $19/$39 Strip
 22. **[BLOCKED on human]** Create $9 shutdown special Stripe link — HELP-REQUEST filed (Session 631). For impulse purchases during traffic spike.
 23. Analyze post-shutdown traffic — Check GA4 for traffic spike from Claude 4 shutdown. Which pages get most visits? Where do users drop off? (needs GA4 access)
 24. Monitor first conversions — With Stripe fix, check if sales start coming in. Track via GA4 pro_purchase_completed event. (needs GA4 access)
-25. ✅ **Email capture A/B test** — 50/50 split on emergency page: email form visible vs hidden. Tracks conversion rates per variant. Admin dashboard shows results. (Session 684)
+25. ✅ **Email capture A/B test UPGRADED** — 50/50 split: email form visible vs Pro CTA replacement. Tests whether mid-page Pro CTA converts better than email capture. (Sessions 684-685)
+26. ✅ **Conversion messaging overhaul** — All emergency page CTAs reframed from "Get Pro" to "Get Your Migration Plan — $29". More specific, action-oriented messaging. Updated Pro features list, "Why Pay" section, sticky bar. (Session 685)
+27. ✅ **Admin dashboard updated** — Handles new 'pro_cta' variant, legacy 'email_hidden' events. (Session 685)
 
 ### Week 10-12 (June 22-July 12) — OPTIMIZE & SUSTAIN
 25. Analyze A/B data + conversion data — Which price wins? Which pages convert? Optimize funnel. (needs GA4)
