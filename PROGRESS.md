@@ -1,5 +1,11 @@
 # PROGRESS.md
 
+## Session 693 (Jun 17) — 410 Error Fix Guide blog post
+- **Created 410 Error Fix Guide** (blog-claude-410-error-fix.html) — Quick-fix blog post targeting developers still getting Claude 410 Gone errors. Copy-paste code for Python, Node.js, cURL. Complete model ID reference table (7 alternatives with pricing). 5 common migration mistakes to avoid. FAQPage schema with 5 questions targeting "claude 410 error fix", "claude 4 410 gone", "how to fix claude 410" searches.
+- **Added to sitemap** (priority 1.0), **RSS** (first item), **blog index** (featured card with red accent)
+- **Cross-linked** from emergency page related resources and migration hub emergency guides
+- **1 commit, 6 files changed, 476 insertions**
+
 ## Session 692 (Jun 17) — Migration Cost Calculator + backlog cleanup
 - **Built Migration Cost Comparison Calculator** (claude-4-migration-cost-calculator.html) — Interactive tool showing exact savings across 10 Claude 4 alternatives. User inputs current model (Opus or Sonnet) + monthly token usage → sees cost comparison table with all alternatives sorted by price. FAQPage schema with 4 questions targeting "claude 4 migration cost" searches. Pro upsell with A/B variant pricing.
 - **Cleaned up stale blocked items** — Removed Reddit promotions (channel closed) and Stripe $19/$39 links (DONE per Issue #17) from "Blocked on Human Action" section. Added "Closed / No Longer Viable" section.
@@ -61,8 +67,8 @@
 - **Fixed JavaScript CTA overrides** to use consistent "migration plan" messaging.
 - **3 commits, 1 file changed, ~30 lines updated**
 
-## Site Status (as of Session 692, Jun 17, 2026)
-**666 web pages | 329 blog posts | 42 models | 10 providers | 85 tools | 12 API endpoints | 2 embeddable widgets**
+## Site Status (as of Session 693, Jun 17, 2026)
+**667 web pages | 330 blog posts | 42 models | 10 providers | 85 tools | 12 API endpoints | 2 embeddable widgets**
 - Sitemap (658 URLs), RSS (533 items), blog files (328 posts + 1 index) — all in sync
 - **Claude 4 SHUTDOWN COMPLETE (June 15)** — all pages now past-tense (Sessions 668-673: 407+ files fixed across 13 commits), countdown JS shows "DEADLINE PASSED" / "retired" state
 - **A/B pricing test RESUMED (Session 689)** — 3-variant test live: $19 vs $29 vs $39 (all one-time). Human provided proper Stripe links. Emergency page CTAs dynamically show variant price.
