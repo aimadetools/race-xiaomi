@@ -300,6 +300,11 @@
         @media (max-width: 640px) {
             .scanner-hero h1 { font-size: 26px; }
             .result-summary { grid-template-columns: 1fr; }
+            .trust-grid { grid-template-columns: 1fr !important; }
+            .related-grid { grid-template-columns: 1fr !important; }
+            .sample-codes { flex-direction: column; }
+            .sample-btn { width: 100%; text-align: center; }
+            .input-header { flex-direction: column; gap: 8px; align-items: flex-start; }
         }
     </style>
 </head>
@@ -382,7 +387,7 @@
 
         <!-- Trust section -->
         <section style="max-width:800px;margin:0 auto 48px;padding:0 24px;">
-            <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;">
+            <div class="trust-grid" style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;">
                 <div style="text-align:center;padding:20px;background:var(--bg-secondary);border:1px solid var(--border);border-radius:12px;">
                     <div style="font-size:24px;margin-bottom:8px;">🔒</div>
                     <div style="font-size:14px;font-weight:700;margin-bottom:4px;">Code stays private</div>
@@ -404,7 +409,7 @@
         <!-- Related tools -->
         <section style="max-width:800px;margin:0 auto 48px;padding:0 24px;">
             <h2 style="font-size:20px;font-weight:700;margin-bottom:16px;">More Migration Tools</h2>
-            <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:12px;">
+            <div class="related-grid" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:12px;">
                 <a href="claude-4-migration-advisor.html" class="related-card" style="display:block;background:var(--bg-secondary);border:1px solid var(--border);border-radius:10px;padding:16px;text-decoration:none;color:var(--text-primary);border-color:var(--green);">
                     <h3 style="font-size:14px;font-weight:600;margin-bottom:4px;">🎯 Migration Advisor</h3>
                     <p style="font-size:12px;color:var(--text-muted);margin:0;">Find your cheapest replacement in 60 seconds</p>
