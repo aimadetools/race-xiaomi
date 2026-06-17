@@ -1215,7 +1215,7 @@ claude-sonnet-4-6</code>
             }
             // Update CTA button text with price
             if (cta && window._abPrice) {
-                cta.textContent = 'Get Pro — $' + window._abPrice + ' Lifetime Access';
+                cta.textContent = 'Get Your Migration Plan — $' + window._abPrice;
             }
 
             // Set new inline CTAs
@@ -1234,7 +1234,7 @@ claude-sonnet-4-6</code>
                 document.getElementById('shutdown-special').style.display = 'block';
                 document.getElementById('regular-price').style.display = 'none';
                 cta.href = SHUTDOWN_SPECIAL_URL;
-                cta.textContent = 'Get Pro — $29 Shutdown Special';
+                cta.textContent = 'Get Your Migration Plan — $29';
                 // Update shutdown special price display
                 var specialPriceEl = document.querySelector('#shutdown-special .new-price, #shutdown-special div[style*="font-size:28px"]');
                 if (specialPriceEl) specialPriceEl.textContent = '$29';
@@ -1344,7 +1344,7 @@ claude-sonnet-4-6</code>
                 var stickyLink = SHUTDOWN_SPECIAL_URL || window._abStripeLink || 'https://buy.stripe.com/fZu7sL3Gw3GS0RQeoDeEo0a';
                 stickyBtn.href = stickyLink;
                 var stickyPrice = window._abPrice || 29;
-                stickyBtn.textContent = 'Get Pro — $' + stickyPrice + ' lifetime';
+                stickyBtn.textContent = 'Get Migration Plan — $' + stickyPrice;
 
                 // Update sticky bar message based on pre/post shutdown
                 var stickyStatus = document.getElementById('sticky-status');
