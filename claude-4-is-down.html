@@ -1174,25 +1174,35 @@ claude-sonnet-4-6</code>
     </footer>
 
     <script>
-        // Email Capture A/B Test — Session 684
-        // Variant A (email_visible): Email form shown (default, existing behavior)
-        // Variant B (email_hidden): Email form hidden (test if it distracts from Pro CTA)
+        // Email Capture A/B Test — Session 684/685
+        // Variant A (email_visible): Email form shown (existing behavior)
+        // Variant B (pro_cta): Email form replaced with Pro CTA (test if Pro CTA converts better)
         (function() {
             var AB_KEY = 'apipulse_email_ab_variant';
             var variant = localStorage.getItem(AB_KEY);
             if (!variant) {
-                variant = Math.random() < 0.5 ? 'email_visible' : 'email_hidden';
+                variant = Math.random() < 0.5 ? 'email_visible' : 'pro_cta';
                 localStorage.setItem(AB_KEY, variant);
             }
             window._emailAbVariant = variant;
 
             // Apply variant immediately (before paint) to avoid flash
-            if (variant === 'email_hidden') {
+            if (variant === 'pro_cta') {
                 var emailSection = document.getElementById('emergency-email-form');
                 if (emailSection) {
-                    // Hide the parent section (the form's parent section container)
+                    // Replace the email section with a Pro CTA
                     var section = emailSection.closest('section') || emailSection.parentElement;
-                    if (section) section.style.display = 'none';
+                    if (section) {
+                        var stripeLink = window._abStripeLink || 'https://buy.stripe.com/fZu7sL3Gw3GS0RQeoDeEo0a';
+                        var price = window._abPrice || 29;
+                        section.innerHTML = '<div style="background:linear-gradient(135deg,rgba(99,102,241,0.1),rgba(168,85,247,0.1));border:1px solid var(--accent);border-radius:14px;padding:28px;text-align:center;">' +
+                            '<div style="font-size:28px;margin-bottom:12px;">🚀</div>' +
+                            '<h3 style="font-size:20px;font-weight:700;margin-bottom:8px;">Ready to migrate? Get your plan.</h3>' +
+                            '<p style="font-size:14px;color:var(--text-secondary);margin-bottom:16px;line-height:1.6;">Tell us your current model and monthly spend. Pro calculates your exact savings and shows you the cheapest alternative — in 60 seconds.</p>' +
+                            '<a href="' + stripeLink + '" style="display:inline-block;background:var(--accent);color:white;padding:14px 32px;border-radius:10px;font-size:16px;font-weight:700;text-decoration:none;transition:all 0.2s;box-shadow:0 4px 20px rgba(99,102,241,0.3);">Get Your Migration Plan — $' + price + '</a>' +
+                            '<p style="font-size:12px;color:var(--text-muted);margin-top:10px;">14-day money-back guarantee · Instant access</p>' +
+                            '</div>';
+                    }
                 }
             }
         })();
