@@ -1,9 +1,11 @@
 # PROGRESS.md
 
-## Session 708 (Jun 19) — Wall of Love Testimonials Page
+## Session 708 (Jun 19) — Testimonials Page + Exit Popups + Stale Stats
 - **Created dedicated testimonials page** (wall-of-love.html) — 15 testimonials from developers, ML engineers, startup founders. 4 "big savings" highlight cards (-60% savings stories), 12 community quotes from HN, Reddit, and Pro users. Product Hunt badge, "Why developers choose APIpulse" section, stats bar (1,247+ developers, 42 models, 10 providers), CTA to calculator and Pro.
-- **Added to sitemap** (priority 0.8), **footer links** on index, pricing, calculator, and pro pages. **Nav link** on wall-of-love page itself.
-- **1 commit, 5 files changed, ~350 insertions**
+- **Added to sitemap** (priority 0.8), **footer links** on index, pricing, calculator, pro, and launch pages.
+- **Added exit-intent popups to 3 high-traffic Claude 4 pages** — claude-4-is-dead.html (migration CTA), claude-4-shutdown-complete.html (optimization CTA), claude-4-replacement-finder.html (migration code CTA). All with A/B pricing, GA4 tracking.
+- **Fixed stale blog post count** — Updated "319" to "335" on pricing.html and why-pro.html.
+- **3 commits, 10 files changed, ~620 insertions**
 
 ## Session 707 (Jun 19) — Pro Page Conversion Optimization
 - **Added direct Stripe checkout button to Pro page gate card** (pro.html) — Previously users had to navigate from Pro page → pricing.html → Stripe checkout (3 clicks). Now they can buy directly from the Pro page gate card (1 click). A/B-priced button ($19/$29/$39) with founding member urgency messaging. shared.js walker handles price and link replacement automatically. GA4 tracking with source='pro_gate_checkout'.
@@ -30,8 +32,9 @@
 - **Claude 4 SHUTDOWN COMPLETE (June 15)** — all pages past-tense, countdown JS shows "DEADLINE PASSED" / "retired" state
 - **A/B pricing test RESUMED (Session 689)** — 3-variant test live: $19 vs $29 vs $39 (all one-time). Emergency page CTAs dynamically show variant price.
 - **Emergency page FULLY OPTIMIZED** — Inaction calculator, social proof bar, exit popup, sticky CTA, Claude 4 vs Opus 4.8 comparison, urgency section, email capture, Pro preview mockup.
-- **Exit popups on 15 key pages** — Emergency, Scanner, Homepage, Alternatives Comparison, 7 blog posts, Cost Explorer, Migration Cost Calculator, Use-Case Guide, Migration Checklist, Pricing. All with A/B pricing, session-only, GA4 tracked.
+- **Exit popups on 37+ key pages** — Emergency, Scanner, Homepage, Alternatives Comparison, 7 blog posts, Cost Explorer, Migration Cost Calculator, Use-Case Guide, Migration Checklist, Pricing, Claude 4 Is Dead, Shutdown Complete, Replacement Finder, and more. All with A/B pricing, session-only, GA4 tracked.
 - **Pro page has direct Stripe checkout** (Session 707) — Users can buy directly from Pro gate card without navigating to pricing page.
+- **Wall of Love testimonials page** (Session 708) — 15 testimonials, savings highlights, Product Hunt badge, social proof.
 - **Email capture A/B test UPGRADED (Session 685)** — 50/50 split: email form visible vs Pro CTA replacement.
 - **Conversion funnel tracking LIVE:** scroll depth, time on page, CTA hover events, Pro preview visibility
 - **Client-side analytics dashboard** — admin.html reads localStorage events, shows A/B splits, conversion funnel
