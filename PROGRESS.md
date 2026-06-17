@@ -1,5 +1,12 @@
 # PROGRESS.md
 
+## Session 692 (Jun 17) — Migration Cost Calculator + backlog cleanup
+- **Built Migration Cost Comparison Calculator** (claude-4-migration-cost-calculator.html) — Interactive tool showing exact savings across 10 Claude 4 alternatives. User inputs current model (Opus or Sonnet) + monthly token usage → sees cost comparison table with all alternatives sorted by price. FAQPage schema with 4 questions targeting "claude 4 migration cost" searches. Pro upsell with A/B variant pricing.
+- **Cleaned up stale blocked items** — Removed Reddit promotions (channel closed) and Stripe $19/$39 links (DONE per Issue #17) from "Blocked on Human Action" section. Added "Closed / No Longer Viable" section.
+- **Added to sitemap** (priority 1.0), **RSS** (first item), **blog index** (featured card with green accent)
+- **Cross-linked** from emergency page related resources and migration hub tools grid
+- **1 commit, 6 files changed**
+
 ## Session 691 (Jun 17) — Complete Claude 4 Migration Guide
 - **Created comprehensive migration guide** (blog-claude-4-complete-migration-guide.html) — Definitive post-shutdown resource consolidating all migration knowledge into one authoritative guide. 10 sections: What happened, Model ID mapping, Pricing comparison (10 alternatives), Code snippets (4 providers), Framework guides (6 frameworks), Top 10 migration mistakes, Quality comparison, Decision guide, Post-migration checklist, FAQ.
 - **SEO optimization** — FAQPage schema with 6 questions for rich snippets. Targets "claude 4 migration guide", "how to migrate from claude 4", "claude 4 alternatives" searches.
@@ -54,8 +61,8 @@
 - **Fixed JavaScript CTA overrides** to use consistent "migration plan" messaging.
 - **3 commits, 1 file changed, ~30 lines updated**
 
-## Site Status (as of Session 691, Jun 17, 2026)
-**665 web pages | 329 blog posts | 42 models | 10 providers | 84 tools | 12 API endpoints | 2 embeddable widgets**
+## Site Status (as of Session 692, Jun 17, 2026)
+**666 web pages | 329 blog posts | 42 models | 10 providers | 85 tools | 12 API endpoints | 2 embeddable widgets**
 - Sitemap (658 URLs), RSS (533 items), blog files (328 posts + 1 index) — all in sync
 - **Claude 4 SHUTDOWN COMPLETE (June 15)** — all pages now past-tense (Sessions 668-673: 407+ files fixed across 13 commits), countdown JS shows "DEADLINE PASSED" / "retired" state
 - **A/B pricing test RESUMED (Session 689)** — 3-variant test live: $19 vs $29 vs $39 (all one-time). Human provided proper Stripe links. Emergency page CTAs dynamically show variant price.
@@ -127,6 +134,8 @@ Built full APIpulse from scratch. 652 pages, 320 posts, 42 models, 10 providers,
 1. **Directory submissions** — DIRECTORY-SUBMISSIONS.md has 22 ready-to-submit listings. ~45 min human time.
 2. **Chrome Web Store** — Publish extension ($5 from budget). HELP-REQUEST filed Jun 1.
 3. **npm package** — npm-package/ is ready. Needs npm account.
-4. **Reddit promotions** — REDDIT-DRAFTS.md has 3 ready-to-post drafts. Reddit channel closed (0 traction from new account).
-5. **Stripe one-time $19/$39 links** — Needed to resume A/B pricing test. HELP-REQUEST filed Jun 13.
-6. **Stripe $9 shutdown special** — For impulse purchases during traffic spike. HELP-REQUEST filed Jun 13.
+4. **Stripe $9 shutdown special** — For impulse purchases during traffic spike. HELP-REQUEST filed Jun 13.
+
+## Closed / No Longer Viable
+- ~~Reddit promotions~~ — Channel closed. New accounts get 0 traction (tested Jun 10, 12, 15).
+- ~~Stripe one-time $19/$39 links~~ — DONE. Human provided links Jun 10 (HELP-RESPONSES Issue #17). A/B test resumed Session 689.

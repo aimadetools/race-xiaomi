@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Claude 4 Migration Cost Calculator — See Your Exact Savings | APIpulse</title>
+    <meta name="description" content="Calculate your exact Claude 4 migration cost. Compare 10 alternatives side-by-side. See how much you'll save switching from Claude 4 Opus or Sonnet to cheaper providers.">
+    <meta name="keywords" content="claude 4 migration cost, claude 4 alternative pricing, claude 4 migration calculator, claude 4 savings, claude 4 opus cost, claude 4 sonnet cost, deepseek vs claude, gpt-5 vs claude 4">
+    <meta property="og:title" content="Claude 4 Migration Cost Calculator — See Your Exact Savings">
+    <meta property="og:description" content="Calculate your exact savings when migrating from Claude 4. Compare 10 alternatives side-by-side.">
+    <meta property="og:type" content="article">
+    <meta property="og:image" content="https://getapipulse.com/og-image.png">
+    <meta property="og:url" content="https://getapipulse.com/claude-4-migration-cost-calculator.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Claude 4 Migration Cost Calculator — See Your Exact Savings">
+    <meta name="twitter:description" content="Calculate your exact savings when migrating from Claude 4. Compare 10 alternatives side-by-side.">
+    <link rel="canonical" href="https://getapipulse.com/claude-4-migration-cost-calculator.html">
+    <link rel="alternate" type="application/rss+xml" title="APIpulse Blog" href="https://getapipulse.com/rss.xml">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="styles.css">
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0CEP7S9Y3J"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-0CEP7S9Y3J');
+    </script>
+    <script src="analytics.js" defer></script>
+    <script src="shared.js" defer></script>
+    <script src="pricing-data.js" defer></script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "How much does it cost to migrate from Claude 4?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Migration itself is free — you just change your model ID and API key. The cost savings depend on which alternative you choose: Claude Opus 4.8 saves 67%, GPT-5 saves 92%, DeepSeek V4 Pro saves 97%, and DeepSeek V4 Flash saves 99% compared to Claude 4 Opus pricing."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What is the cheapest Claude 4 alternative?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "DeepSeek V4 Flash at $0.14/$0.28 per million tokens is 99% cheaper than Claude 4 Opus ($15/$75). For similar quality, DeepSeek V4 Pro at $0.44/$0.87 is 97% cheaper. The cheapest Anthropic option is Claude Opus 4.8 at $5/$25 (67% cheaper)."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Is Claude 4 migration worth it?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes. Most developers save 67-97% by migrating from Claude 4. A typical $500/month Claude 4 Opus user would pay $165/month with Opus 4.8, $40/month with GPT-5, or $14.50/month with DeepSeek V4 Pro. The migration takes 5 minutes and requires changing 2 lines of code."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Do I need a new API key to migrate from Claude 4?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "If staying with Anthropic (switching to Opus 4.8 or Sonnet 4.6), your existing API key works. Just change the model name. If switching to OpenAI, Google, or DeepSeek, you'll need a new API key from that provider."
+                }
+            }
+        ]
+    }
+    </script>
+    <style>
+        .calculator-hero {
+            padding: 80px 24px 40px;
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        .calculator-hero h1 {
+            font-size: 36px;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 16px;
+        }
+        .calculator-hero .subtitle {
+            font-size: 18px;
+            color: var(--text-secondary);
+            line-height: 1.6;
+            max-width: 600px;
+            margin: 0 auto 32px;
+        }
+
+        /* Calculator section */
+        .calc-section {
+            max-width: 800px;
+            margin: 0 auto 48px;
+            padding: 0 24px;
+        }
+        .calc-card {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 32px;
+        }
+        .calc-card h2 {
+            font-size: 24px;
+            font-weight: 800;
+            text-align: center;
+            margin-bottom: 8px;
+        }
+        .calc-card .section-sub {
+            text-align: center;
+            color: var(--text-secondary);
+            margin-bottom: 24px;
+            font-size: 15px;
+        }
+
+        /* Model selector tabs */
+        .model-tabs {
+            display: flex;
+            gap: 8px;
+            justify-content: center;
+            margin-bottom: 24px;
+            flex-wrap: wrap;
+        }
+        .model-tab {
+            padding: 12px 24px;
+            background: var(--bg-primary);
+            border: 2px solid var(--border);
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--text-secondary);
+            transition: all 0.2s;
+        }
+        .model-tab:hover {
+            border-color: var(--accent);
+        }
+        .model-tab.active {
+            background: rgba(239, 68, 68, 0.1);
+            border-color: #ef4444;
+            color: #ef4444;
+        }
+
+        /* Input grid */
+        .input-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin-bottom: 20px;
+        }
+        .input-group label {
+            display: block;
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--text-secondary);
+            margin-bottom: 6px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .input-group input {
+            width: 100%;
+            padding: 12px 16px;
+            background: var(--bg-primary);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            color: var(--text-primary);
+            font-size: 16px;
+            font-family: inherit;
+        }
+
+        /* Results */
+        .results-container {
+            display: none;
+            margin-top: 24px;
+        }
+        .savings-hero {
+            background: linear-gradient(135deg, rgba(34, 197, 94, 0.12), rgba(34, 197, 94, 0.04));
+            border: 1px solid rgba(34, 197, 94, 0.2);
+            border-radius: 14px;
+            padding: 28px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .savings-hero .label {
+            font-size: 16px;
+            color: var(--text-secondary);
+            margin-bottom: 4px;
+        }
+        .savings-hero .amount {
+            font-size: 48px;
+            font-weight: 800;
+            color: var(--green);
+        }
+        .savings-hero .note {
+            font-size: 14px;
+            color: var(--text-secondary);
+            margin-top: 4px;
+        }
+
+        /* Comparison table */
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        .comparison-table th {
+            background: var(--bg-tertiary, rgba(99, 102, 241, 0.1));
+            padding: 12px 14px;
+            text-align: left;
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .comparison-table td {
+            padding: 14px;
+            border-bottom: 1px solid var(--border);
+            font-size: 14px;
+        }
+        .comparison-table tr:last-child td {
+            border-bottom: none;
+        }
+        .comparison-table .cheapest {
+            background: rgba(34, 197, 94, 0.06);
+        }
+        .comparison-table .cheapest td:first-child::before {
+            content: "⭐ ";
+        }
+        .comparison-table .savings-cell {
+            color: var(--green);
+            font-weight: 700;
+        }
+        .comparison-table .cost-cell {
+            font-weight: 600;
+        }
+
+        /* Pro upsell */
+        .pro-upsell {
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(168, 85, 247, 0.1));
+            border: 1px solid var(--accent);
+            border-radius: 12px;
+            padding: 24px;
+            text-align: center;
+            margin-top: 24px;
+        }
+        .pro-upsell h3 {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+        .pro-upsell p {
+            color: var(--text-secondary);
+            font-size: 14px;
+            margin-bottom: 16px;
+        }
+        .pro-upsell .cta {
+            display: inline-block;
+            background: var(--accent);
+            color: white;
+            padding: 14px 32px;
+            border-radius: 10px;
+            font-size: 16px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: all 0.2s;
+            box-shadow: 0 4px 20px rgba(99, 102, 241, 0.3);
+        }
+        .pro-upsell .cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 24px rgba(99, 102, 241, 0.4);
+        }
+
+        /* FAQ section */
+        .faq-section {
+            max-width: 800px;
+            margin: 0 auto 48px;
+            padding: 0 24px;
+        }
+        .faq-section h2 {
+            font-size: 28px;
+            font-weight: 800;
+            text-align: center;
+            margin-bottom: 24px;
+        }
+        .faq-item {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 12px;
+        }
+        .faq-item h3 {
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+        .faq-item p {
+            color: var(--text-secondary);
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        /* Related tools */
+        .related-section {
+            max-width: 800px;
+            margin: 0 auto 48px;
+            padding: 0 24px;
+        }
+        .related-section h2 {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+        .related-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+            gap: 12px;
+        }
+        .related-card {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 16px;
+            text-decoration: none;
+            color: var(--text-primary);
+            transition: all 0.2s;
+        }
+        .related-card:hover {
+            border-color: var(--accent);
+            transform: translateY(-2px);
+        }
+        .related-card h3 {
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+        .related-card p {
+            font-size: 12px;
+            color: var(--text-muted);
+            margin: 0;
+        }
+
+        @media (max-width: 640px) {
+            .calculator-hero h1 { font-size: 26px; }
+            .input-grid { grid-template-columns: 1fr; }
+            .model-tabs { flex-direction: column; }
+            .savings-hero .amount { font-size: 36px; }
+            .related-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-inner">
+            <a href="index.html" class="logo">API<span>pulse</span></a>
+            <div class="nav-links">
+                <a href="calculator.html">Calculator</a>
+                <a href="compare.html">Compare</a>
+                <a href="blog.html">Blog</a>
+                <a href="claude-4-migration-hub.html">Migration Hub</a>
+                <a href="pro.html" class="nav-cta">Get Pro</a>
+            </div>
+            <button class="hamburger" onclick="toggleMobileNav()" aria-label="Menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Hero -->
+        <section class="calculator-hero">
+            <div style="display:inline-block;background:rgba(34,197,94,0.1);color:var(--green);padding:6px 16px;border-radius:20px;font-size:13px;font-weight:700;margin-bottom:20px;">💰 See Your Exact Savings</div>
+            <h1>Claude 4 Migration Cost Calculator</h1>
+            <p class="subtitle">
+                Claude 4 was retired on June 15, 2026. Enter your usage below to see exactly how much you'll save with each alternative — in 30 seconds.
+            </p>
+            <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:20px;font-size:13px;color:var(--text-secondary);">
+                <span style="display:flex;align-items:center;gap:6px;"><span style="color:var(--green);font-size:16px;">✓</span> 10 alternatives compared</span>
+                <span style="display:flex;align-items:center;gap:6px;"><span style="color:var(--green);font-size:16px;">✓</span> Real-time pricing</span>
+                <span style="display:flex;align-items:center;gap:6px;"><span style="color:var(--green);font-size:16px;">✓</span> 67-99% savings possible</span>
+            </div>
+        </section>
+
+        <!-- Calculator -->
+        <section class="calc-section">
+            <div class="calc-card">
+                <h2>📊 Calculate Your Migration Savings</h2>
+                <p class="section-sub">Select your current model and enter your monthly usage to see exact costs across all alternatives.</p>
+
+                <!-- Model selector -->
+                <div class="model-tabs">
+                    <button class="model-tab active" id="tab-opus" onclick="selectModel('opus')">Claude 4 Opus — $15/$75</button>
+                    <button class="model-tab" id="tab-sonnet" onclick="selectModel('sonnet')">Claude Sonnet 4 — $3/$15</button>
+                </div>
+
+                <!-- Usage inputs -->
+                <div class="input-grid">
+                    <div class="input-group">
+                        <label>Input tokens (millions/month)</label>
+                        <input type="number" id="input-tokens" value="10" min="0" step="0.1" placeholder="e.g. 10">
+                    </div>
+                    <div class="input-group">
+                        <label>Output tokens (millions/month)</label>
+                        <input type="number" id="output-tokens" value="2" min="0" step="0.1" placeholder="e.g. 2">
+                    </div>
+                </div>
+
+                <button onclick="calculateSavings()" style="display:block;width:100%;background:var(--accent);color:white;border:none;border-radius:10px;padding:14px 24px;font-size:16px;font-weight:700;cursor:pointer;transition:background 0.2s;">Calculate My Savings</button>
+
+                <!-- Results -->
+                <div class="results-container" id="results">
+                    <div class="savings-hero">
+                        <div class="label">Maximum monthly savings vs your current model</div>
+                        <div class="amount" id="max-savings">$0</div>
+                        <div class="note" id="savings-note">by switching to the cheapest alternative</div>
+                    </div>
+
+                    <!-- Comparison table -->
+                    <div style="overflow-x:auto;">
+                        <table class="comparison-table">
+                            <thead>
+                                <tr>
+                                    <th>Model</th>
+                                    <th>Provider</th>
+                                    <th>Your Monthly Cost</th>
+                                    <th>Savings</th>
+                                </tr>
+                            </thead>
+                            <tbody id="comparison-body">
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- Pro upsell -->
+                    <div class="pro-upsell">
+                        <h3>🚀 Get Your Personalized Migration Plan</h3>
+                        <p>This calculator shows generic savings. Pro shows you the <strong>exact model for YOUR specific workload</strong> — with saved scenarios, PDF reports, and priority support.</p>
+                        <a href="#" class="cta" id="pro-cta">Get Your Migration Plan — $29</a>
+                        <p style="font-size:12px;color:var(--text-muted);margin-top:10px;">14-day money-back guarantee · Instant access · One-time payment</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section class="faq-section">
+            <h2>Frequently Asked Questions</h2>
+
+            <div class="faq-item">
+                <h3>How much does it cost to migrate from Claude 4?</h3>
+                <p>Migration itself is free — you just change your model ID and API key. The cost savings depend on which alternative you choose: Claude Opus 4.8 saves 67%, GPT-5 saves 92%, DeepSeek V4 Pro saves 97%, and DeepSeek V4 Flash saves 99% compared to Claude 4 Opus pricing.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>What is the cheapest Claude 4 alternative?</h3>
+                <p>DeepSeek V4 Flash at $0.14/$0.28 per million tokens is 99% cheaper than Claude 4 Opus ($15/$75). For similar quality, DeepSeek V4 Pro at $0.44/$0.87 is 97% cheaper. The cheapest Anthropic option is Claude Opus 4.8 at $5/$25 (67% cheaper).</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>Is Claude 4 migration worth it?</h3>
+                <p>Yes. Most developers save 67-97% by migrating from Claude 4. A typical $500/month Claude 4 Opus user would pay $165/month with Opus 4.8, $40/month with GPT-5, or $14.50/month with DeepSeek V4 Pro. The migration takes 5 minutes and requires changing 2 lines of code.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>Do I need a new API key to migrate from Claude 4?</h3>
+                <p>If staying with Anthropic (switching to Opus 4.8 or Sonnet 4.6), your existing API key works. Just change the model name. If switching to OpenAI, Google, or DeepSeek, you'll need a new API key from that provider.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>How long does Claude 4 migration take?</h3>
+                <p>Most developers complete the migration in 5 minutes. You need to: 1) Find your Claude 4 model ID in your code, 2) Replace it with the new model ID, and 3) Redeploy. If switching providers, you'll also need to update your API key and base URL.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3>Will my Claude 4 API key stop working?</h3>
+                <p>Your Anthropic API key still works for Claude Opus 4.8, Sonnet 4.6, and Haiku 4.5. It only stops working for the retired Claude 4 models. If switching to another provider, you'll need their API key.</p>
+            </div>
+        </section>
+
+        <!-- Related tools -->
+        <section class="related-section">
+            <h2>More Migration Tools</h2>
+            <div class="related-grid">
+                <a href="claude-4-migration-advisor.html" class="related-card" style="border-color:var(--green);">
+                    <h3>🎯 Migration Advisor</h3>
+                    <p>Find your best alternative in 60 seconds based on your specific needs.</p>
+                </a>
+                <a href="claude-4-migration-scanner.html" class="related-card" style="border-color:#dc2626;">
+                    <h3>🔍 Migration Scanner</h3>
+                    <p>Paste your code, find all deprecated Claude 4 references instantly.</p>
+                </a>
+                <a href="claude-4-quick-switch.html" class="related-card" style="border-color:var(--accent);">
+                    <h3>⚡ Quick Switch</h3>
+                    <p>Get copy-paste migration code for your specific language and target model.</p>
+                </a>
+                <a href="claude-4-migration-checklist.html" class="related-card" style="border-color:rgba(245,158,11,0.4);">
+                    <h3>📋 Migration Checklist</h3>
+                    <p>Print-ready cheat sheet with model IDs, pricing, and step-by-step guide.</p>
+                </a>
+                <a href="claude-4-is-down.html" class="related-card" style="border-color:#dc2626;">
+                    <h3>🚨 Emergency Page</h3>
+                    <p>Fix your 410 errors in 5 minutes with our step-by-step guide.</p>
+                </a>
+                <a href="blog-claude-4-complete-migration-guide.html" class="related-card">
+                    <h3>📖 Complete Guide</h3>
+                    <p>Everything you need to know about Claude 4 migration in one place.</p>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-inner">
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="calculator.html">Calculator</a>
+                <a href="compare.html">Compare</a>
+                <a href="blog.html">Blog</a>
+                <a href="pro.html">Pro</a>
+            </div>
+            <p class="footer-copy">© 2026 APIpulse · <a href="mailto:support@getapipulse.com">support@getapipulse.com</a></p>
+        </div>
+    </footer>
+
+    <script>
+        // Model pricing (per 1M tokens)
+        var MODELS = {
+            opus: { input: 15, output: 75, name: 'Claude 4 Opus', provider: 'Anthropic', retired: true },
+            sonnet: { input: 3, output: 15, name: 'Claude Sonnet 4', provider: 'Anthropic', retired: true },
+            opus48: { input: 5, output: 25, name: 'Claude Opus 4.8', provider: 'Anthropic', savings: 67 },
+            sonnet46: { input: 3, output: 15, name: 'Claude Sonnet 4.6', provider: 'Anthropic', savings: 80 },
+            gpt5: { input: 1.25, output: 10, name: 'GPT-5', provider: 'OpenAI', savings: 92 },
+            gemini25pro: { input: 1.25, output: 10, name: 'Gemini 2.5 Pro', provider: 'Google', savings: 90 },
+            deepseekv4pro: { input: 0.44, output: 0.87, name: 'DeepSeek V4 Pro', provider: 'DeepSeek', savings: 97 },
+            deepseekv4flash: { input: 0.14, output: 0.28, name: 'DeepSeek V4 Flash', provider: 'DeepSeek', savings: 99 },
+            mistralmedium: { input: 0.45, output: 1.5, name: 'Mistral Medium 3.5', provider: 'Mistral', savings: 95 },
+            grok3: { input: 0.5, output: 2, name: 'Grok 3', provider: 'xAI', savings: 96 }
+        };
+
+        var currentModel = 'opus';
+
+        function selectModel(model) {
+            currentModel = model;
+            document.querySelectorAll('.model-tab').forEach(function(tab) {
+                tab.classList.remove('active');
+            });
+            document.getElementById('tab-' + model).classList.add('active');
+            calculateSavings();
+        }
+
+        function calculateSavings() {
+            var inputTokens = parseFloat(document.getElementById('input-tokens').value) || 0;
+            var outputTokens = parseFloat(document.getElementById('output-tokens').value) || 0;
+
+            if (inputTokens === 0 && outputTokens === 0) {
+                alert('Please enter your token usage');
+                return;
+            }
+
+            var current = MODELS[currentModel];
+            var currentCost = (inputTokens * current.input) + (outputTokens * current.output);
+
+            // Calculate costs for all alternatives
+            var alternatives = [];
+            Object.keys(MODELS).forEach(function(key) {
+                var model = MODELS[key];
+                if (model.retired) return; // Skip retired models
+                var cost = (inputTokens * model.input) + (outputTokens * model.output);
+                var savings = currentCost > 0 ? ((currentCost - cost) / currentCost * 100) : 0;
+                alternatives.push({
+                    name: model.name,
+                    provider: model.provider,
+                    cost: cost,
+                    savings: savings
+                });
+            });
+
+            // Sort by cost (cheapest first)
+            alternatives.sort(function(a, b) { return a.cost - b.cost; });
+
+            // Update savings hero
+            var maxSavings = currentCost - alternatives[0].cost;
+            document.getElementById('max-savings').textContent = '$' + maxSavings.toFixed(2) + '/mo';
+            document.getElementById('savings-note').textContent = 'by switching to ' + alternatives[0].name + ' (cheapest option)';
+
+            // Update comparison table
+            var tbody = document.getElementById('comparison-body');
+            tbody.innerHTML = '';
+
+            // Add current model row
+            var currentRow = document.createElement('tr');
+            currentRow.innerHTML = '<td style="font-weight:600;color:#ef4444;">' + current.name + ' <span style="font-size:11px;color:var(--text-muted);">(current)</span></td>' +
+                '<td>' + current.provider + '</td>' +
+                '<td class="cost-cell" style="color:#ef4444;">$' + currentCost.toFixed(2) + '/mo</td>' +
+                '<td style="color:var(--text-muted);">—</td>';
+            tbody.appendChild(currentRow);
+
+            // Add alternatives
+            alternatives.forEach(function(alt, i) {
+                var row = document.createElement('tr');
+                if (i === 0) row.className = 'cheapest';
+                row.innerHTML = '<td style="font-weight:600;">' + alt.name + '</td>' +
+                    '<td>' + alt.provider + '</td>' +
+                    '<td class="cost-cell">$' + alt.cost.toFixed(2) + '/mo</td>' +
+                    '<td class="savings-cell">' + alt.savings.toFixed(0) + '% cheaper</td>';
+                tbody.appendChild(row);
+            });
+
+            // Show results
+            document.getElementById('results').style.display = 'block';
+
+            // Track event
+            if (window.trackEvent) {
+                window.trackEvent('migration_calculator_used', {
+                    current_model: currentModel,
+                    input_tokens: inputTokens,
+                    output_tokens: outputTokens,
+                    max_savings: maxSavings.toFixed(2)
+                });
+            }
+
+            // Scroll to results
+            document.getElementById('results').scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+
+        // Set Pro CTA link from A/B variant
+        document.addEventListener('DOMContentLoaded', function() {
+            var proCta = document.getElementById('pro-cta');
+            if (proCta && window._abStripeLink) {
+                proCta.href = window._abStripeLink;
+            }
+            if (proCta && window._abPrice) {
+                proCta.textContent = 'Get Your Migration Plan — $' + window._abPrice;
+            }
+        });
+
+        // Auto-calculate on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            calculateSavings();
+        });
+    </script>
+</body>
+</html>
