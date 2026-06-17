@@ -100,6 +100,7 @@
             .model-table { font-size: 12px; }
             .model-table th, .model-table td { padding: 8px; }
             .code-block { font-size: 11px; padding: 10px; }
+            .provider-grid { grid-template-columns: 1fr !important; }
         }
     </style>
     <meta name="theme-color" content="#6366f1">
@@ -211,7 +212,7 @@
             </ul>
 
             <h2 class="section-title"><span class="icon">🤔</span> Which Provider Should You Pick?</h2>
-            <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:24px;">
+            <div class="provider-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:24px;">
                 <div class="action-box" style="border-color:var(--accent);"><h3 style="color:var(--accent);">Stay with Anthropic if:</h3><p>• You need the same API key<br>• You want zero code changes beyond model name<br>• Quality is more important than cost<br>• You use Claude-specific features (tool use, etc.)</p></div>
                 <div class="action-box" style="border-color:var(--green);"><h3 style="color:var(--green);">Switch to DeepSeek if:</h3><p>• Cost is your #1 priority<br>• You're okay with a different API format<br>• You need high volume at low cost<br>• You can handle slightly different behavior</p></div>
                 <div class="action-box" style="border-color:#3b82f6;"><h3 style="color:#3b82f6;">Switch to OpenAI/Google if:</h3><p>• You already have their API keys<br>• You need multimodal (vision, audio)<br>• You want the largest ecosystem<br>• You use their other services (Azure, GCP)</p></div>
