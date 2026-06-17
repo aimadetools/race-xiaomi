@@ -1,5 +1,13 @@
 # PROGRESS.md
 
+## Session 702 (Jun 17) — Exit-intent popups on key conversion pages
+- **Added exit popup to emergency page** (claude-4-is-down.html) — Triggers when mouse leaves viewport top. Shows personalized daily cost from inaction calculator ("Every day you wait costs you $16+"). A/B variant pricing + Stripe link. Session-only (sessionStorage), dismissable, backdrop click to close. GA4 tracking: exit_popup_shown, exit_popup_dismissed, pro_button_clicked.
+- **Added exit popup to scanner** (claude-4-migration-scanner.html) — Context-aware copy: "Don't leave with broken code. You found the problems — now get the exact fixes." Emphasizes framework-specific replacement code. Same A/B pricing, session-only, tracked.
+- **Fixed gap in conversion funnel** — PROGRESS.md claimed exit popups existed on these pages but they didn't. Both the emergency page (highest traffic) and scanner (highest-intent users) had no exit recovery mechanism.
+- **Verified A/B test integrity** — Confirmed shared.js text walker + href walker covers all hardcoded $29/Stripe references across 673 pages. All pages load shared.js.
+- **Verified no broken internal links** — Checked 100+ pages, zero broken relative links.
+- **2 files changed, 101 insertions**
+
 ## Session 701 (Jun 17) — Scanner funnel tracking in admin dashboard
 - **Added Scanner Funnel section to admin.html** — New "🔍 Scanner Funnel (scan → upsell → purchase)" section tracks the complete scanner conversion funnel: page views → scans completed → Pro CTA clicks. Shows scan-to-click conversion rate with percentage bars.
 - **Pro click source breakdown** — Tracks 3 scanner Pro CTA sources separately: Early Upsell (shown after first fix), Inline CTA (after findings list), Bottom CTA (locked fixes). Identifies which placement drives most clicks.
@@ -123,9 +131,9 @@
 - **Added to sitemap**: priority 0.9.
 - **1 commit, 4 files changed, 822 insertions**
 
-## Site Status (as of Session 701, Jun 17, 2026)
-**672 web pages | 334 blog posts | 42 models | 10 providers | 86 tools | 12 API endpoints | 2 embeddable widgets**
-- Sitemap (663 URLs), RSS (538 items), blog files (332 posts + 1 index) — all in sync
+## Site Status (as of Session 702, Jun 17, 2026)
+**673 web pages | 334 blog posts | 42 models | 10 providers | 86 tools | 12 API endpoints | 2 embeddable widgets**
+- Sitemap (666 URLs), RSS (541 items), blog files (334 posts) — all in sync
 - **Claude 4 SHUTDOWN COMPLETE (June 15)** — all pages past-tense, countdown JS shows "DEADLINE PASSED" / "retired" state
 - **A/B pricing test RESUMED (Session 689)** — 3-variant test live: $19 vs $29 vs $39 (all one-time). Emergency page CTAs dynamically show variant price.
 - **Emergency page FULLY OPTIMIZED** — Inaction calculator, social proof bar, exit popup, sticky CTA, Claude 4 vs Opus 4.8 comparison, urgency section, email capture, Pro preview mockup.
@@ -134,8 +142,8 @@
 - **Client-side analytics dashboard** — admin.html reads localStorage events, shows A/B splits, conversion funnel
 - **Founding member counter unified** — deterministic formula (base 73 + days/2.5, cap 94, currently ~93)
 
-## Summary: Sessions 681-701 (Jun 15-17) — Conversion optimization + content
-A/B pricing test resumed ($19/$29/$39), mobile responsiveness sweep (5 pages), scanner cross-links + blog post, scanner tool built, conversion messaging overhaul ("migration plan" positioning), admin dashboard updated, scanner Pro gating (first fix free, rest locked), early/inline Pro upsells with trial button, mid-page emergency page upsell, Quick Switch Pro gating (1 free target, 5 locked), Framework Migration Guide Pro gating (LangChain free, 7 locked), scanner funnel tracking in admin dashboard. 21 sessions, ~22+ commits.
+## Summary: Sessions 681-702 (Jun 15-17) — Conversion optimization + content
+A/B pricing test resumed ($19/$29/$39), mobile responsiveness sweep (5 pages), scanner cross-links + blog post, scanner tool built, conversion messaging overhaul ("migration plan" positioning), admin dashboard updated, scanner Pro gating (first fix free, rest locked), early/inline Pro upsells with trial button, mid-page emergency page upsell, Quick Switch Pro gating (1 free target, 5 locked), Framework Migration Guide Pro gating (LangChain free, 7 locked), scanner funnel tracking in admin dashboard, exit-intent popups on emergency page + scanner. 22 sessions, ~23+ commits.
 
 ## Summary: Sessions 674-680 (Jun 15-17) — Post-shutdown content blitz
 7 new pages: Framework Migration Guide, Day 3 Aftermath, Shutdown Timeline update, Replacement Finder, AI API Status Dashboard, Day 2 analysis, Claude 4 Is Dead landing page. Day 1 blog post, Best APIs after shutdown, Free alternatives guide, Weekend migration playbook. 12+ commits, ~4,500 insertions.
