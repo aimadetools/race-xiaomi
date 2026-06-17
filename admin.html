@@ -93,6 +93,12 @@
             <div id="funnel-content"></div>
         </div>
 
+        <!-- Scanner Funnel -->
+        <div class="section" id="scanner-section">
+            <h2>🔍 Scanner Funnel (scan → upsell → purchase)</h2>
+            <div id="scanner-content"></div>
+        </div>
+
         <!-- Popup Engagement -->
         <div class="section" id="popup-section">
             <h2>🖱️ Exit Popup Engagement</h2>
@@ -274,6 +280,80 @@
                 return '<tr><td>' + f.name + '</td><td>' + f.count + '</td><td>' + pct + '%</td><td><div class="bar-container"><div class="bar bar-a" style="width:' + barW + 'px"></div></div></td></tr>';
             }).join('') + '</table>';
 
+        // --- Scanner Funnel ---
+        var scannerPageViews = events.filter(e => e.name === 'migration_scanner_page_view').length;
+        var scannerScans = events.filter(e => e.name === 'migration_scan_completed').length;
+        var scannerProClicks = events.filter(e => e.name === 'pro_button_clicked' &&
+            (e.props.source === 'scanner_early_upsell' || e.props.source === 'scanner_inline' || e.props.source === 'migration_scanner'));
+        var scannerProTotal = scannerProClicks.length;
+
+        // Breakdown by source
+        var scannerEarlyUpsell = scannerProClicks.filter(e => e.props.source === 'scanner_early_upsell').length;
+        var scannerInline = scannerProClicks.filter(e => e.props.source === 'scanner_inline').length;
+        var scannerBottomCta = scannerProClicks.filter(e => e.props.source === 'migration_scanner').length;
+
+        // Scan-to-click conversion rate
+        var scanToClickRate = scannerScans ? (scannerProTotal / scannerScans * 100).toFixed(1) : '0.0';
+
+        // Framework distribution from scans
+        var scanFrameworks = {};
+        events.filter(e => e.name === 'migration_scan_completed').forEach(function(e) {
+            var fws = (e.props.frameworks || '').split(',').map(function(s) { return s.trim(); }).filter(Boolean);
+            fws.forEach(function(fw) { scanFrameworks[fw] = (scanFrameworks[fw] || 0) + 1; });
+        });
+
+        if (scannerPageViews > 0 || scannerScans > 0) {
+            var scanHtml = '<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;margin-bottom:20px;">';
+            scanHtml += '<div style="background:var(--bg-secondary);border:1px solid var(--border);border-radius:10px;padding:16px;text-align:center;">';
+            scanHtml += '<div style="font-size:12px;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.5px;">Page Views</div>';
+            scanHtml += '<div style="font-size:32px;font-weight:800;color:var(--accent);margin-top:4px;">' + scannerPageViews + '</div></div>';
+            scanHtml += '<div style="background:var(--bg-secondary);border:1px solid var(--border);border-radius:10px;padding:16px;text-align:center;">';
+            scanHtml += '<div style="font-size:12px;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.5px;">Scans Run</div>';
+            scanHtml += '<div style="font-size:32px;font-weight:800;color:#22c55e;margin-top:4px;">' + scannerScans + '</div></div>';
+            scanHtml += '<div style="background:var(--bg-secondary);border:1px solid var(--border);border-radius:10px;padding:16px;text-align:center;">';
+            scanHtml += '<div style="font-size:12px;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.5px;">Pro Clicks</div>';
+            scanHtml += '<div style="font-size:32px;font-weight:800;color:#f59e0b;margin-top:4px;">' + scannerProTotal + '</div></div>';
+            scanHtml += '<div style="background:var(--bg-secondary);border:1px solid var(--border);border-radius:10px;padding:16px;text-align:center;">';
+            scanHtml += '<div style="font-size:12px;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.5px;">Scan→Click Rate</div>';
+            scanHtml += '<div style="font-size:32px;font-weight:800;color:var(--accent);margin-top:4px;">' + scanToClickRate + '%</div></div>';
+            scanHtml += '</div>';
+
+            // Funnel visualization
+            var maxScanFunnel = Math.max(scannerPageViews, scannerScans, scannerProTotal, 1);
+            scanHtml += '<table><tr><th>Funnel Stage</th><th>Count</th><th>% of Page Views</th><th></th></tr>';
+            scanHtml += funnelRow('Page View', scannerPageViews, scannerPageViews, maxScanFunnel);
+            scanHtml += funnelRow('Scan Completed', scannerScans, scannerPageViews, maxScanFunnel);
+            scanHtml += funnelRow('Pro CTA Clicked', scannerProTotal, scannerPageViews, maxScanFunnel);
+            scanHtml += '</table>';
+
+            // Pro click source breakdown
+            if (scannerProTotal > 0) {
+                scanHtml += '<div style="margin-top:16px;">';
+                scanHtml += '<div style="font-size:13px;font-weight:600;margin-bottom:8px;color:var(--text-secondary);">Pro Click Sources</div>';
+                scanHtml += '<div style="display:flex;gap:16px;flex-wrap:wrap;">';
+                if (scannerEarlyUpsell > 0) scanHtml += '<div style="font-size:13px;"><span style="color:var(--text-muted);">Early Upsell:</span> <strong>' + scannerEarlyUpsell + '</strong></div>';
+                if (scannerInline > 0) scanHtml += '<div style="font-size:13px;"><span style="color:var(--text-muted);">Inline CTA:</span> <strong>' + scannerInline + '</strong></div>';
+                if (scannerBottomCta > 0) scanHtml += '<div style="font-size:13px;"><span style="color:var(--text-muted);">Bottom CTA:</span> <strong>' + scannerBottomCta + '</strong></div>';
+                scanHtml += '</div></div>';
+            }
+
+            // Framework distribution
+            var fwEntries = Object.entries(scanFrameworks).sort(function(a,b) { return b[1] - a[1]; });
+            if (fwEntries.length > 0) {
+                scanHtml += '<div style="margin-top:16px;">';
+                scanHtml += '<div style="font-size:13px;font-weight:600;margin-bottom:8px;color:var(--text-secondary);">Detected Frameworks</div>';
+                scanHtml += '<div style="display:flex;gap:16px;flex-wrap:wrap;">';
+                fwEntries.forEach(function(entry) {
+                    scanHtml += '<div style="font-size:13px;"><span style="color:var(--text-muted);">' + entry[0] + ':</span> <strong>' + entry[1] + '</strong></div>';
+                });
+                scanHtml += '</div></div>';
+            }
+
+            document.getElementById('scanner-content').innerHTML = scanHtml;
+        } else {
+            document.getElementById('scanner-content').innerHTML = '<p class="empty">No scanner events tracked yet — events start when users visit the scanner page.</p>';
+        }
+
         // --- Popup Engagement ---
         var depShown = events.filter(e => e.name === 'deprecation_popup_shown').length;
         var depDismissed = events.filter(e => e.name === 'deprecation_popup_dismissed').length;
@@ -323,6 +403,12 @@
                 '<span class="bar-value">' + i.count + ' (' + pct + '%)</span>' +
                 '</div></div>';
         }).join('');
+    }
+
+    function funnelRow(name, count, total, max) {
+        var pct = total ? Math.round(count / total * 100) : 0;
+        var barW = Math.round(count / max * 200);
+        return '<tr><td>' + name + '</td><td>' + count + '</td><td>' + pct + '%</td><td><div class="bar-container"><div class="bar bar-a" style="width:' + barW + 'px"></div></div></td></tr>';
     }
 
     function popupRow(type, shown, dismissed, cta) {

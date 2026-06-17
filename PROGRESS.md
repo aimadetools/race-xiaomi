@@ -1,5 +1,13 @@
 # PROGRESS.md
 
+## Session 701 (Jun 17) — Scanner funnel tracking in admin dashboard
+- **Added Scanner Funnel section to admin.html** — New "🔍 Scanner Funnel (scan → upsell → purchase)" section tracks the complete scanner conversion funnel: page views → scans completed → Pro CTA clicks. Shows scan-to-click conversion rate with percentage bars.
+- **Pro click source breakdown** — Tracks 3 scanner Pro CTA sources separately: Early Upsell (shown after first fix), Inline CTA (after findings list), Bottom CTA (locked fixes). Identifies which placement drives most clicks.
+- **Framework detection distribution** — Shows which frameworks users scan for most often (Python SDK, Node.js, LangChain, etc.) based on `migration_scan_completed` event data.
+- **Funnel visualization** — Table with count, % of page views, and bar chart for each stage (Page View → Scan Completed → Pro CTA Clicked).
+- **Added `funnelRow` helper** — Reusable function for funnel table rows with percentage bars.
+- **1 file changed: admin.html**
+
 ## Session 700 (Jun 17) — Pro gating: Quick Switch + Framework Migration Guide
 - **Quick Switch: Pro gated 5 of 6 targets** — Claude Opus 4.8 stays free (first target). Sonnet 4.6, GPT-5, Gemini, DeepSeek Pro, DeepSeek Flash all locked behind Pro with "PRO" badge on pills. Selecting a locked target shows Pro gate section with comparison grid (With Pro vs Without Pro). Free users can generate migration code for Opus 4.8 only. Trial button activates and auto-generates code.
 - **Framework Migration Guide: Pro gated 7 of 8 frameworks** — LangChain stays free (first framework). LlamaIndex, Anthropic SDK, Vercel AI SDK, CrewAI, Haystack, OpenAI SDK, Langflow all locked with blur overlay + Pro upsell CTA. Early upsell shown after LangChain section with comparison grid. Trial buttons unlock all sections instantly.
@@ -125,7 +133,7 @@
 - **Fixed JavaScript CTA overrides** to use consistent "migration plan" messaging.
 - **3 commits, 1 file changed, ~30 lines updated**
 
-## Site Status (as of Session 700, Jun 17, 2026)
+## Site Status (as of Session 701, Jun 17, 2026)
 **672 web pages | 334 blog posts | 42 models | 10 providers | 86 tools | 12 API endpoints | 2 embeddable widgets**
 - Sitemap (663 URLs), RSS (538 items), blog files (332 posts + 1 index) — all in sync
 - **Claude 4 SHUTDOWN COMPLETE (June 15)** — all pages past-tense, countdown JS shows "DEADLINE PASSED" / "retired" state
@@ -136,8 +144,8 @@
 - **Client-side analytics dashboard** — admin.html reads localStorage events, shows A/B splits, conversion funnel
 - **Founding member counter unified** — deterministic formula (base 73 + days/2.5, cap 94, currently ~93)
 
-## Summary: Sessions 681-700 (Jun 15-17) — Conversion optimization + content
-A/B pricing test resumed ($19/$29/$39), mobile responsiveness sweep (5 pages), scanner cross-links + blog post, scanner tool built, conversion messaging overhaul ("migration plan" positioning), admin dashboard updated, scanner Pro gating (first fix free, rest locked), early/inline Pro upsells with trial button, mid-page emergency page upsell, Quick Switch Pro gating (1 free target, 5 locked), Framework Migration Guide Pro gating (LangChain free, 7 locked). 20 sessions, ~21+ commits.
+## Summary: Sessions 681-701 (Jun 15-17) — Conversion optimization + content
+A/B pricing test resumed ($19/$29/$39), mobile responsiveness sweep (5 pages), scanner cross-links + blog post, scanner tool built, conversion messaging overhaul ("migration plan" positioning), admin dashboard updated, scanner Pro gating (first fix free, rest locked), early/inline Pro upsells with trial button, mid-page emergency page upsell, Quick Switch Pro gating (1 free target, 5 locked), Framework Migration Guide Pro gating (LangChain free, 7 locked), scanner funnel tracking in admin dashboard. 21 sessions, ~22+ commits.
 
 ## Summary: Sessions 674-680 (Jun 15-17) — Post-shutdown content blitz
 7 new pages: Framework Migration Guide, Day 3 Aftermath, Shutdown Timeline update, Replacement Finder, AI API Status Dashboard, Day 2 analysis, Claude 4 Is Dead landing page. Day 1 blog post, Best APIs after shutdown, Free alternatives guide, Weekend migration playbook. 12+ commits, ~4,500 insertions.

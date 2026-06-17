@@ -31,7 +31,7 @@
 - ✅ Emergency page mid-page Pro upsell (Session 699)
 - ✅ Apply Pro gating pattern to Quick Switch tool — first target (Opus 4.8) free, 5 locked (Session 700)
 - ✅ Apply Pro gating pattern to Framework Migration Guide — LangChain free, 7 locked (Session 700)
-- Add scanner usage to GA4 dashboard — track scan→upsell→purchase funnel
+- ✅ Add scanner usage to GA4 dashboard — track scan→upsell→purchase funnel (Session 701)
 - Check if exit popup timing A/B test results are available in GA4
 
 ### Scanner Follow-up (Session 686+)
