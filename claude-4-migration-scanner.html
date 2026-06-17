@@ -735,8 +735,8 @@
                 return;
             }
 
-            // Pro upsell — show EARLY, right after summary
-            if (results.critical > 0) {
+            // Pro upsell — show EARLY, right after summary (only for non-Pro users)
+            if (results.critical > 0 && !isProUser()) {
                 var frameworkName = results.frameworks.length > 0 ? results.frameworks[0].name : 'your framework';
                 earlyProEl.innerHTML = renderEarlyProUpsell(results, frameworkName);
                 // Bind trial button
