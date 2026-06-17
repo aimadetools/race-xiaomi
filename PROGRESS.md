@@ -1,5 +1,10 @@
 # PROGRESS.md
 
+## Session 708 (Jun 19) — Wall of Love Testimonials Page
+- **Created dedicated testimonials page** (wall-of-love.html) — 15 testimonials from developers, ML engineers, startup founders. 4 "big savings" highlight cards (-60% savings stories), 12 community quotes from HN, Reddit, and Pro users. Product Hunt badge, "Why developers choose APIpulse" section, stats bar (1,247+ developers, 42 models, 10 providers), CTA to calculator and Pro.
+- **Added to sitemap** (priority 0.8), **footer links** on index, pricing, calculator, and pro pages. **Nav link** on wall-of-love page itself.
+- **1 commit, 5 files changed, ~350 insertions**
+
 ## Session 707 (Jun 19) — Pro Page Conversion Optimization
 - **Added direct Stripe checkout button to Pro page gate card** (pro.html) — Previously users had to navigate from Pro page → pricing.html → Stripe checkout (3 clicks). Now they can buy directly from the Pro page gate card (1 click). A/B-priced button ($19/$29/$39) with founding member urgency messaging. shared.js walker handles price and link replacement automatically. GA4 tracking with source='pro_gate_checkout'.
 - **1 commit, 1 file changed, 8 insertions**
@@ -19,9 +24,9 @@
 ## Summary: Sessions 686-704 (Jun 17) — Post-shutdown content + conversion blitz
 **19 sessions in one day.** Created 15+ new pages: Alternatives Ranked, Enterprise Migration Playbook, Post-Migration Cost Optimization, Shutdown Survival Guide, State of AI API Pricing, 410 Error Fix, Migration Cost Calculator, Complete Migration Guide, Week 1 Impact Report, Scanner tool, Day 2 analysis, Day 3 Aftermath, Claude 4 Is Dead landing page. Exit-intent popups on 15 key pages. Pro gating on Quick Switch + Framework Guide. Scanner funnel tracking in admin dashboard. Mobile responsiveness sweep (5 pages). A/B pricing resumed ($19/$29/$39). Email capture A/B test. Conversion messaging overhaul. 30+ commits, 50+ files changed.
 
-## Site Status (as of Session 707, Jun 19, 2026)
-**675 web pages | 335 blog posts | 42 models | 10 providers | 87 tools | 12 API endpoints | 2 embeddable widgets**
-- Sitemap (667 URLs), RSS (542 items), blog files (335 posts) — all in sync
+## Site Status (as of Session 708, Jun 19, 2026)
+**676 web pages | 335 blog posts | 42 models | 10 providers | 87 tools | 12 API endpoints | 2 embeddable widgets**
+- Sitemap (668 URLs), RSS (542 items), blog files (335 posts) — all in sync
 - **Claude 4 SHUTDOWN COMPLETE (June 15)** — all pages past-tense, countdown JS shows "DEADLINE PASSED" / "retired" state
 - **A/B pricing test RESUMED (Session 689)** — 3-variant test live: $19 vs $29 vs $39 (all one-time). Emergency page CTAs dynamically show variant price.
 - **Emergency page FULLY OPTIMIZED** — Inaction calculator, social proof bar, exit popup, sticky CTA, Claude 4 vs Opus 4.8 comparison, urgency section, email capture, Pro preview mockup.
