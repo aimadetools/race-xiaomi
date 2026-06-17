@@ -27,14 +27,17 @@ All tasks complete. A/B pricing test paused (needs proper one-time $19/$39 Strip
 28. ✅ **Migration Scanner tool** — claude-4-migration-scanner.html. Client-side code scanner detects deprecated Claude 4 patterns, identifies frameworks, shows exact line numbers. Free scan shows WHAT; Pro shows HOW to fix. Cross-linked from emergency page (Step 1, related resources, sticky bar), migration hub, sitemap. (Session 686)
 29. ✅ **Scanner cross-links + blog post** — Scanner added to RSS, blog index, sitemap, deprecation banner ("Or scan your code first →"), welcome email Quick Start. Created how-to blog post targeting "claude 4 scanner" searches. (Session 687)
 30. ✅ **Complete Migration Guide** — Comprehensive post-shutdown resource with 10 sections, FAQPage schema, 3 inline Pro CTAs. Targets "claude 4 migration guide" searches. (Session 691)
-31. Monitor scanner conversion rate — Track migration_scan_completed → pro_button_clicked funnel via GA4.
+31. ✅ **Scanner Pro gating + conversion optimization** — First fix free, rest locked behind Pro. Early upsell with trial button, inline "X more fixes locked" CTA. Emergency page mid-page upsell between pricing table and code snippets. (Session 699)
+32. Monitor scanner conversion rate — Track migration_scan_completed → pro_button_clicked funnel via GA4.
+33. Add Pro gating to more tools — Apply same free→Pro pattern to Quick Switch, Framework Migration Guide. Show partial results free, full code behind Pro.
 
 ### Week 10-12 (June 22-July 12) — OPTIMIZE & SUSTAIN
 25. Analyze A/B data + conversion data — Which price wins? Which pages convert? Optimize funnel. (needs GA4)
 26. Community feedback integration — Act on Reddit/HN feedback.
 27. Plan v2 — If revenue justifies, plan next features.
 
-### Completed (Sessions 416-698, Apr 23 - Jun 17)
+### Completed (Sessions 416-699, Apr 23 - Jun 17)
+**Session 699 (Jun 17):** Scanner Pro gating (first fix free, rest locked), early/inline upsells with trial button, emergency page mid-page upsell, A/B pricing verification.
 **Sessions 690-698 (Jun 17):** 9 new pages — Alternatives Ranked, Enterprise Migration Playbook, Post-Migration Cost Optimization, Shutdown Survival Guide, State of AI API Pricing, 410 Error Fix, Migration Cost Calculator, Complete Migration Guide, Week 1 Impact Report. A/B pricing resumed. Mobile sweep. Broken link fixed.
 **Sessions 674-689 (Jun 15-17):** Post-shutdown content + conversion optimization — 7 new pages (Framework Guide, Day 3, Timeline, Replacement Finder, Status Dashboard, Day 2, Claude 4 Is Dead). Scanner tool, messaging revamp, email A/B test, A/B pricing fix.
 **Sessions 599-673 (Jun 12-17):** Claude 4 shutdown prep/execution/post-shutdown — 407+ files tense sweep, Stripe fix, emergency page optimization, Migration Advisor, Quick Switch, guides, analytics, email capture.

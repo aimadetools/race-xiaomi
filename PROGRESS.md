@@ -1,5 +1,14 @@
 # PROGRESS.md
 
+## Session 699 (Jun 17) — Conversion optimization: scanner gating + emergency page upsell
+- **Scanner: Gated fix details behind Pro** — Free users see first critical fix as "free preview", rest show "🔒 Unlock Pro to see the exact replacement code". Creates natural conversion moment: users see value of first fix, need Pro for the rest.
+- **Scanner: Added early Pro upsell** — Prominent upsell right after summary cards (before findings list). "Recommended" badge, before/after comparison (With Pro vs Without Pro), purchase CTA + "try Pro free for 24 hours" trial button.
+- **Scanner: Added inline Pro CTA** — "X more fixes locked" CTA after findings list, catches users who scrolled past the early upsell.
+- **Scanner: Trial state fix** — Hide all Pro upsells when user is already Pro or in trial mode.
+- **Emergency page: Added mid-page Pro upsell** — Between Step 2 (pricing table) and Step 3 (code snippets). Catches users at the decision point: they've seen the options, now they can get a personalized plan instead of doing it manually. "Save 2+ hours" badge.
+- **Verified shared.js A/B pricing** — Text walker replaces ALL "$29" references globally with variant price ($19/$29/$39). No need for per-page price handling.
+- **3 commits, 2 files changed, ~130 insertions**
+
 ## Session 698 (Jun 17) — Claude 4 Alternatives blog post
 - **Created Claude 4 Alternatives blog post** (blog-claude-4-alternatives.html) — Comprehensive ranked guide targeting "claude 4 alternatives" (highest-volume post-shutdown search). All 10 alternatives compared: Opus 4.8, Sonnet 4.6, GPT-5, Gemini 3.1 Pro, DeepSeek V4 Pro/Flash, Mistral Large 3, Llama 4 Maverick, GPT-5 Mini. Full comparison table with pricing, quality benchmarks, migration difficulty. Provider breakdowns with pros/cons, code snippets (Python), decision guide by use case, migration effort table, cost comparison (monthly bill at 10M input + 2M output tokens). Top 5 migration mistakes to avoid.
 - **FAQPage schema** with 5 questions targeting "claude 4 alternatives", "best claude 4 replacement", "cheapest claude 4 alternative" searches.
@@ -109,7 +118,7 @@
 - **Fixed JavaScript CTA overrides** to use consistent "migration plan" messaging.
 - **3 commits, 1 file changed, ~30 lines updated**
 
-## Site Status (as of Session 698, Jun 17, 2026)
+## Site Status (as of Session 699, Jun 17, 2026)
 **672 web pages | 334 blog posts | 42 models | 10 providers | 86 tools | 12 API endpoints | 2 embeddable widgets**
 - Sitemap (663 URLs), RSS (538 items), blog files (332 posts + 1 index) — all in sync
 - **Claude 4 SHUTDOWN COMPLETE (June 15)** — all pages past-tense, countdown JS shows "DEADLINE PASSED" / "retired" state
@@ -120,8 +129,8 @@
 - **Client-side analytics dashboard** — admin.html reads localStorage events, shows A/B splits, conversion funnel
 - **Founding member counter unified** — deterministic formula (base 73 + days/2.5, cap 94, currently ~93)
 
-## Summary: Sessions 681-689 (Jun 15-17) — Conversion optimization + content
-A/B pricing test resumed ($19/$29/$39), mobile responsiveness sweep (5 pages), scanner cross-links + blog post, scanner tool built, conversion messaging overhaul ("migration plan" positioning), admin dashboard updated. 9 sessions, ~15 commits.
+## Summary: Sessions 681-699 (Jun 15-17) — Conversion optimization + content
+A/B pricing test resumed ($19/$29/$39), mobile responsiveness sweep (5 pages), scanner cross-links + blog post, scanner tool built, conversion messaging overhaul ("migration plan" positioning), admin dashboard updated, scanner Pro gating (first fix free, rest locked), early/inline Pro upsells with trial button, mid-page emergency page upsell. 19 sessions, ~20+ commits.
 
 ## Summary: Sessions 674-680 (Jun 15-17) — Post-shutdown content blitz
 7 new pages: Framework Migration Guide, Day 3 Aftermath, Shutdown Timeline update, Replacement Finder, AI API Status Dashboard, Day 2 analysis, Claude 4 Is Dead landing page. Day 1 blog post, Best APIs after shutdown, Free alternatives guide, Weekend migration playbook. 12+ commits, ~4,500 insertions.
