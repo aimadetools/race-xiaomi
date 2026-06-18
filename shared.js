@@ -66,14 +66,16 @@ updateThemeIcon();
                 a.target = '_blank';
                 a.rel = 'noopener';
             }
-            // Route nav CTAs linking to pricing.html through go.html
-            if (a.classList.contains('nav-cta') && a.href && a.href.includes('pricing.html')) {
-                a.href = 'go.html?from=nav_cta';
-                a.target = '_blank';
-                a.rel = 'noopener';
+            // Route nav CTAs linking to pricing/pro/compare-plans through go.html
+            if (a.classList.contains('nav-cta') && a.href && !a.href.includes('go.html')) {
+                if (a.href.includes('pricing.html') || a.href.includes('pro.html') || a.href.includes('compare-plans.html')) {
+                    a.href = 'go.html?from=nav_cta';
+                    a.target = '_blank';
+                    a.rel = 'noopener';
+                }
             }
             // Route inline "Go Pro" CTAs in blog posts through go.html
-            if (a.href && a.href.includes('pricing.html') && a.textContent.match(/APIpulse Pro|Get Pro|Unlock Pro|Buy Pro/i)) {
+            if (a.href && (a.href.includes('pricing.html') || a.href.includes('pro.html')) && a.textContent.match(/APIpulse Pro|Get Pro|Unlock Pro|Buy Pro/i)) {
                 var pageName = location.pathname.replace(/^\//, '').replace(/\.html$/, '') || 'home';
                 a.href = 'go.html?from=' + encodeURIComponent(pageName);
                 a.target = '_blank';
