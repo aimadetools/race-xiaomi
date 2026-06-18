@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How APIpulse Works — 3 Steps to Lower AI API Costs | APIpulse</title>
+    <meta name="description" content="See how APIpulse helps you find cheaper AI models and reduce API costs in 3 simple steps. Free calculator, savings estimates, and optimization recommendations.">
+    <meta name="keywords" content="how APIpulse works, AI API cost calculator, save on AI costs, LLM pricing tool">
+    <meta property="og:title" content="How APIpulse Works — 3 Steps to Lower Costs">
+    <meta property="og:description" content="Find cheaper AI models and reduce API costs in 3 simple steps. Free, no signup.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://getapipulse.com/og-image.png">
+    <meta property="og:url" content="https://getapipulse.com/how-it-works.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="How APIpulse Works — 3 Steps to Lower Costs">
+    <meta name="twitter:description" content="Find cheaper AI models and reduce API costs in 3 simple steps.">
+    <meta name="twitter:image" content="https://getapipulse.com/og-image.png">
+    <link rel="canonical" href="https://getapipulse.com/how-it-works.html">
+    <link rel="alternate" type="application/rss+xml" title="APIpulse Blog" href="https://getapipulse.com/rss.xml">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="styles.css">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0CEP7S9Y3J"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-0CEP7S9Y3J');
+    </script>
+    <script src="analytics.js" defer></script>
+    <script src="shared.js" defer></script>
+    <script src="pro-features.js" defer></script>
+    <style>
+        .hiw-container { max-width: 800px; margin: 0 auto; padding: 120px 24px 80px; }
+        .hiw-hero { text-align: center; margin-bottom: 56px; }
+        .hiw-hero h1 {
+            font-size: clamp(28px, 5vw, 44px); font-weight: 800; margin-bottom: 12px;
+            background: linear-gradient(135deg, #60a5fa, #a78bfa);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+        }
+        .hiw-hero p { font-size: 17px; color: var(--text-secondary); max-width: 500px; margin: 0 auto; line-height: 1.6; }
+
+        .hiw-steps { margin-bottom: 56px; }
+        .hiw-step {
+            display: grid; grid-template-columns: 80px 1fr; gap: 24px;
+            padding: 32px; background: var(--bg-secondary); border: 1px solid var(--border);
+            border-radius: 16px; margin-bottom: 20px; align-items: start;
+        }
+        .hiw-step-num {
+            width: 64px; height: 64px; background: linear-gradient(135deg, var(--accent), #8b5cf6);
+            color: white; border-radius: 16px; display: flex; align-items: center; justify-content: center;
+            font-size: 28px; font-weight: 900; flex-shrink: 0;
+        }
+        .hiw-step h3 { font-size: 20px; font-weight: 700; margin-bottom: 8px; }
+        .hiw-step p { font-size: 15px; color: var(--text-secondary); line-height: 1.6; margin-bottom: 12px; }
+        .hiw-step .step-link {
+            display: inline-flex; align-items: center; gap: 6px;
+            color: var(--accent); font-size: 14px; font-weight: 600; text-decoration: none;
+        }
+        .hiw-step .step-link:hover { text-decoration: underline; }
+        .hiw-step .step-features {
+            display: flex; gap: 12px; flex-wrap: wrap; margin-top: 12px;
+        }
+        .hiw-step .step-feature {
+            display: flex; align-items: center; gap: 6px;
+            font-size: 13px; color: var(--text-muted);
+        }
+        .hiw-step .step-feature .check { color: var(--green); font-weight: 700; }
+
+        .hiw-proof {
+            background: var(--bg-secondary); border: 2px solid var(--green);
+            border-radius: 16px; padding: 40px; text-align: center; margin-bottom: 56px;
+        }
+        .hiw-proof h2 { font-size: 24px; font-weight: 800; margin-bottom: 16px; }
+        .hiw-stats {
+            display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-bottom: 24px;
+        }
+        .hiw-stat {
+            background: var(--bg-card); border: 1px solid var(--border);
+            border-radius: 12px; padding: 20px;
+        }
+        .hiw-stat .stat-num { font-size: 28px; font-weight: 800; color: var(--accent); }
+        .hiw-stat .stat-label { font-size: 13px; color: var(--text-muted); margin-top: 4px; }
+
+        .hiw-cta {
+            text-align: center; padding: 40px; background: var(--bg-secondary);
+            border: 2px solid var(--accent); border-radius: 16px;
+        }
+        .hiw-cta h2 { font-size: 24px; font-weight: 800; margin-bottom: 8px; }
+        .hiw-cta p { font-size: 15px; color: var(--text-secondary); margin-bottom: 20px; }
+        .hiw-cta .btn-row { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
+        .hiw-cta .btn-primary {
+            display: inline-block; padding: 16px 36px;
+            background: linear-gradient(135deg, var(--accent), #8b5cf6);
+            color: white; border-radius: 12px; font-size: 18px; font-weight: 700;
+            text-decoration: none; transition: all 0.2s;
+            box-shadow: 0 4px 20px rgba(99,102,241,0.3);
+        }
+        .hiw-cta .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 6px 24px rgba(99,102,241,0.4); }
+        .hiw-cta .btn-secondary {
+            display: inline-block; padding: 14px 28px;
+            background: transparent; border: 2px solid var(--accent); color: var(--accent);
+            border-radius: 10px; font-size: 16px; font-weight: 600;
+            text-decoration: none; transition: all 0.2s;
+        }
+        .hiw-cta .btn-secondary:hover { background: rgba(99,102,241,0.08); }
+
+        .hiw-trust {
+            display: flex; justify-content: center; gap: 24px; margin-top: 32px;
+            flex-wrap: wrap;
+        }
+        .hiw-trust-item {
+            display: flex; align-items: center; gap: 6px;
+            font-size: 13px; color: var(--text-muted);
+        }
+
+        @media (max-width: 768px) {
+            .hiw-container { padding: 100px 16px 60px; }
+            .hiw-step { grid-template-columns: 1fr; text-align: center; }
+            .hiw-step-num { margin: 0 auto; }
+            .hiw-stats { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <a href="#main" class="skip-link">Skip to content</a>
+    <nav>
+        <div class="nav-inner">
+            <a href="index.html" class="logo">API<span>pulse</span></a>
+            <button class="hamburger" onclick="toggleMobileNav()" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+            <div class="nav-links">
+                <a href="calculator.html">Calculator</a>
+                <a href="compare.html">Compare</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="blog.html">Blog</a>
+                <a href="about.html">About</a>
+                <a href="api-docs.html" style="color:var(--accent);">API</a>
+                <a href="pricing.html" class="nav-cta" onclick="if(window.trackEvent)window.trackEvent('pro_button_clicked',{source:'nav'})">Get Pro — $29</a>
+                <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
+            </div>
+        </div>
+    </nav>
+
+    <main id="main">
+    <div class="hiw-container">
+        <div class="hiw-hero">
+            <h1>How APIpulse works</h1>
+            <p>Find cheaper AI models and reduce your API costs in 3 simple steps. No signup required.</p>
+        </div>
+
+        <div class="hiw-steps">
+            <div class="hiw-step">
+                <div class="hiw-step-num">1</div>
+                <div>
+                    <h3>Pick your current model</h3>
+                    <p>Select the AI model you're currently using from our database of 42 models across 10 providers. Whether you're on GPT-5, Claude, Gemini, or DeepSeek — we've got you covered.</p>
+                    <div class="step-features">
+                        <div class="step-feature"><span class="check">✓</span> 42 models tracked</div>
+                        <div class="step-feature"><span class="check">✓</span> 10 providers compared</div>
+                        <div class="step-feature"><span class="check">✓</span> Prices verified Jun 2026</div>
+                    </div>
+                    <a href="quick-savings.html" class="step-link" onclick="if(window.trackEvent)window.trackEvent('how_it Works_step1_clicked')">Try it now — 10 seconds →</a>
+                </div>
+            </div>
+
+            <div class="hiw-step">
+                <div class="hiw-step-num">2</div>
+                <div>
+                    <h3>See your savings</h3>
+                    <p>Enter your usage or pick a usage level. We'll instantly calculate your current spend and show you 3 cheaper alternatives with exact monthly savings. Most developers find 40-60% savings.</p>
+                    <div class="step-features">
+                        <div class="step-feature"><span class="check">✓</span> Instant calculations</div>
+                        <div class="step-feature"><span class="check">✓</span> Personalized savings</div>
+                        <div class="step-feature"><span class="check">✓</span> 3 cheaper alternatives</div>
+                    </div>
+                    <a href="savings-calculator.html" class="step-link" onclick="if(window.trackEvent)window.trackEvent('how_it_works_step2_clicked')">Calculate your savings →</a>
+                </div>
+            </div>
+
+            <div class="hiw-step">
+                <div class="hiw-step-num">3</div>
+                <div>
+                    <h3>Optimize with Pro</h3>
+                    <p>Get the full optimization report: model routing guides, batch processing tips, caching strategies, and exportable cost reports. Most Pro users save $60-200/month — paying for itself in the first week.</p>
+                    <div class="step-features">
+                        <div class="step-feature"><span class="check">✓</span> 10+ alternatives ranked</div>
+                        <div class="step-feature"><span class="check">✓</span> Migration code included</div>
+                        <div class="step-feature"><span class="check">✓</span> Exportable reports</div>
+                    </div>
+                    <a href="why-pro.html" class="step-link" onclick="if(window.trackEvent)window.trackEvent('how_it_works_step3_clicked')">See what Pro includes →</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="hiw-proof">
+            <h2>Trusted by 1,247+ developers</h2>
+            <div class="hiw-stats">
+                <div class="hiw-stat">
+                    <div class="stat-num">42</div>
+                    <div class="stat-label">Models compared</div>
+                </div>
+                <div class="hiw-stat">
+                    <div class="stat-num">40%</div>
+                    <div class="stat-label">Avg. savings</div>
+                </div>
+                <div class="hiw-stat">
+                    <div class="stat-num">$0</div>
+                    <div class="stat-label">Free to start</div>
+                </div>
+            </div>
+            <p style="font-size:14px;color:var(--text-secondary);">"Cut my API bill by 60% — paid for itself in a day." — Indie developer</p>
+        </div>
+
+        <div class="hiw-cta">
+            <h2>Ready to start saving?</h2>
+            <p>It takes 10 seconds to see how much you could save. No signup required.</p>
+            <div class="btn-row">
+                <a href="quick-savings.html" class="btn-primary">Get My Savings Estimate →</a>
+                <a href="calculator.html" class="btn-secondary">Full Calculator</a>
+            </div>
+            <div class="hiw-trust">
+                <div class="hiw-trust-item">🔒 No signup required</div>
+                <div class="hiw-trust-item">⚡ 10-second estimates</div>
+                <div class="hiw-trust-item">💰 14-day money-back guarantee</div>
+            </div>
+        </div>
+    </div>
+    </main>
+
+    <footer>
+        <div class="footer-inner">
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="calculator.html">Calculator</a>
+                <a href="compare.html">Compare</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="blog.html">Blog</a>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
+                <a href="privacy.html">Privacy</a>
+                <a href="terms.html">Terms</a>
+            </div>
+            <p class="footer-copy">&copy; <span class="dynamic-year"></span> APIpulse. Know your AI API costs before you commit.</p>
+        </div>
+    </footer>
+</body>
+</html>
