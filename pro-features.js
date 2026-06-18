@@ -417,7 +417,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     banner.innerHTML = `
                         <div>
                             <div style="font-weight:700;font-size:15px;">Free Trial Active</div>
-                            <div style="font-size:13px;color:var(--text-secondary);">Expires in ${remaining.hours}h ${remaining.mins}m · <a href="${window._abStripeLink || 'https://buy.stripe.com/fZu7sL3Gw3GS0RQeoDeEo0a'}" target="_blank" rel="noopener" style="color:var(--accent);font-weight:600;">Get lifetime access for $${window._abPrice || 29}</a></div>
+                            <div style="font-size:13px;color:var(--text-secondary);">Expires in ${remaining.hours}h ${remaining.mins}m · <a href="go.html?from=trial_banner" target="_blank" rel="noopener" style="color:var(--accent);font-weight:600;">Get lifetime access for $${window._abPrice || 29}</a></div>
                         </div>
                     `;
                     content.insertBefore(banner, content.firstChild);

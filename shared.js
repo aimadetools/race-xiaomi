@@ -58,19 +58,24 @@ updateThemeIcon();
             if (a.textContent.includes('$29')) {
                 a.textContent = a.textContent.replace('$29', '$' + v.price);
             }
-            // Also update Stripe links to use the variant checkout
-            if (a.href && a.href.includes('buy.stripe.com')) {
-                a.href = window._abStripeLink;
-            }
-            // Fix nav CTAs linking to pricing.html — send directly to Stripe checkout
-            if (a.classList.contains('nav-cta') && a.href && a.href.includes('pricing.html')) {
-                a.href = window._abStripeLink;
+            // Route ALL Stripe checkout links through go.html for trust-building
+            // go.html shows social proof, testimonials, FAQ, and guarantee before Stripe
+            if (a.href && a.href.includes('buy.stripe.com') && !a.href.includes('go.html')) {
+                var pageName = location.pathname.replace(/^\//, '').replace(/\.html$/, '') || 'home';
+                a.href = 'go.html?from=' + encodeURIComponent(pageName);
                 a.target = '_blank';
                 a.rel = 'noopener';
             }
-            // Fix inline "Go Pro" CTAs in blog posts — send directly to Stripe checkout
+            // Route nav CTAs linking to pricing.html through go.html
+            if (a.classList.contains('nav-cta') && a.href && a.href.includes('pricing.html')) {
+                a.href = 'go.html?from=nav_cta';
+                a.target = '_blank';
+                a.rel = 'noopener';
+            }
+            // Route inline "Go Pro" CTAs in blog posts through go.html
             if (a.href && a.href.includes('pricing.html') && a.textContent.match(/APIpulse Pro|Get Pro|Unlock Pro|Buy Pro/i)) {
-                a.href = window._abStripeLink;
+                var pageName = location.pathname.replace(/^\//, '').replace(/\.html$/, '') || 'home';
+                a.href = 'go.html?from=' + encodeURIComponent(pageName);
                 a.target = '_blank';
                 a.rel = 'noopener';
             }
@@ -1334,7 +1339,7 @@ document.addEventListener('DOMContentLoaded', function() {
 // Auto-inject trial buttons next to existing Pro CTAs — runs on ALL pages (not just blog)
 document.addEventListener('DOMContentLoaded', function() {
     if (typeof startTrial === 'function') {
-        document.querySelectorAll('a[href*="buy.stripe.com"], a[href*="pricing.html"]').forEach(function(a) {
+        document.querySelectorAll('a[href*="buy.stripe.com"], a[href*="pricing.html"], a[href*="go.html"]').forEach(function(a) {
             var text = (a.textContent || '').trim();
             if (!text.match(/Get Pro|Unlock Pro|Buy Pro|Pro — \$|Pro —/i)) return;
             // Don't add if already has a trial button next to it
@@ -1396,7 +1401,7 @@ document.addEventListener('DOMContentLoaded', function() {
         if (upsell.querySelector('a[href*="savings-calculator"]')) return;
 
         // Add savings calculator link below the Pro CTA
-        var cta = upsell.querySelector('a[href*="buy.stripe.com"], a[href*="pricing.html"]');
+        var cta = upsell.querySelector('a[href*="buy.stripe.com"], a[href*="pricing.html"], a[href*="go.html"]');
         if (!cta) return;
 
         var savingsLink = document.createElement('p');
