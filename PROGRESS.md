@@ -1,5 +1,11 @@
 # PROGRESS.md
 
+## Session 730 (Jun 18) — Conversion Optimization: Personalized Pro CTAs
+- **Savings calculator Pro gate overhaul** — Lowered threshold from 3+ to 1+ alternatives (more users see the gate). Personalized CTA now shows user's actual savings: "Get Pro — $29 · Save $X/yr →". Shows total alternatives count for social proof. Payback period messaging ("pays for itself on day one" / "in X months"). Added 14-day money-back guarantee line. A/B price-aware. Fixed pluralization bug.
+- **Homepage calculator recommendations upgrade** — Added annual savings callout ("You could save $X/year by switching"). Changed "Compare these models" link to "See all alternatives + full savings report" pointing to savings-calculator.html for better conversion flow. Natural Pro upsell right where users see their savings.
+- **Verified deprecation page Pro CTAs** — Dynamic ROI message already personalized with user's savings and payback period. Multiple CTA placements (inline, upsell section, footer).
+- **1 commit, 2 files changed, 20 insertions, 11 deletions**
+
 ## Session 729 (Jun 18) — Cross-link migrate.html from Deprecation Pages + RSS
 - **Added migrate.html cross-links to 3 deprecation pages** — "Migration Hub — Start Here" card added to top of Related Resources in claude-4-is-down.html, claude-4-deprecation.html, and claude-4-replacement-finder.html. All use amber (#f59e0b) border for visual consistency.
 - **Added migrate.html to RSS feed** — First item in feed, titled "Claude 4 Migration Hub — Your Complete Migration Guide".
@@ -62,9 +68,10 @@ Shutdown prep/execution/cleanup: 407+ files tense sweep, Stripe fix, emergency p
 ## Summary: Sessions 1-598 (Apr 5 - Jun 12)
 Full APIpulse build from scratch. 652 pages, 320 posts, 42 models, 10 providers, 84 tools, 12 API endpoints, 2 widgets. Domain, Stripe, Pro, GA4, newsletter, Chrome extension, 167 comparisons, FAQPage schema, streaming toggle, A/B pricing, Model Selector quiz.
 
-## Site Status (as of Session 727, Jun 18, 2026)
+## Site Status (as of Session 730, Jun 18, 2026)
 **680 web pages | 338 blog posts | 42 models | 10 providers | 89 tools | 12 API endpoints | 2 embeddable widgets**
 - Sitemap (671 URLs), RSS (545 items), blog files (338 posts) — all in sync
+- **Personalized Pro CTAs (Session 730)** — Savings calculator Pro gate shows user's actual savings in CTA ("Save $X/yr"). Homepage calculator shows annual savings callout. Both link to savings-calculator.html for full report.
 - **Homepage What's New banner (Session 727)** — Replaced dead shutdown banner with dynamic "What's New" highlighting ROI Calculator, Usage-Gated Savings, A/B Pricing. Dismissible via X.
 - **Social proof consistent (Session 727)** — Developer count updated from 500+ to 1,200+ across exit popups, email capture, and all conversion copy.
 - **Nav restructured for conversion (Session 726)** — 5 essential links visible + "More" dropdown for 20 secondary links. CTA is gradient button. Affects all 679 pages via shared.js.

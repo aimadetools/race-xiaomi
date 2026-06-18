@@ -4,7 +4,9 @@
 - **[DONE Session 729]** Add migrate.html link to footer nav (shared.js) for cross-page visibility
 - **[DONE Session 729]** Cross-link migrate.html from claude-4-is-down.html, claude-4-deprecation.html, claude-4-replacement-finder.html
 - **[DONE Session 729]** Add migrate.html to RSS feed
-- Test hero CTA "Check My Costs — Free" link works correctly on mobile
+- **[DONE Session 730]** Test hero CTA — verified link to savings-calculator.html, mobile CSS responsive
+- **[DONE Session 730]** Savings calculator Pro gate: personalized CTAs with savings, lower threshold, payback messaging
+- **[DONE Session 730]** Homepage calculator: annual savings callout, link to savings-calculator.html
 - Monitor GA4 for migration page engagement — bounce rate, time on page, Pro click-through
 
 ### Active Tasks — Conversion Optimization (Session 722)
@@ -38,7 +40,10 @@
 - Review inaction calculator usage (inaction_calc_used events)
 - Check which traffic sources drive conversions (organic search vs direct vs referral)
 
-### Completed (Sessions 416-727, Apr 23 - Jun 18)
+### Completed (Sessions 416-730, Apr 23 - Jun 18)
+**Session 730 (Jun 18):** Conversion optimization — personalized Pro CTAs on savings calculator and homepage calculator. 1 commit, 2 files.
+**Session 729 (Jun 18):** Cross-linked migrate.html from 3 deprecation pages + RSS feed. 1 commit, 4 files.
+**Session 728 (Jun 18):** Conversion funnel fixes — hero 4→2 CTAs, deprecation banner reframed, migrate.html landing page. 3 commits, 4 files.
 **Session 727 (Jun 18):** Homepage What's New banner, developer count 500+ → 1,200+ across popups/email. 2 commits, 2 files.
 **Session 726 (Jun 18):** Nav restructured (25+ → 5 visible + More dropdown), Pro page trial-first design. 1 commit, 2 files.
 **Sessions 722-725 (Jun 18):** Nav CTA fix (579 pages), ROI calculator, cost-health-check boost, blog post, usage-gated calculator, A/B simplification. 8 commits, 20 files.
