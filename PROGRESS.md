@@ -1,12 +1,11 @@
 # PROGRESS.md
 
-## Session 721 (Jun 18) — Pricing Page Conversion + Direct Stripe CTAs
-- **Added real-time cost-of-inaction counter to pricing page** (pricing.html) — Shows daily waste rate ($3.33/day), running total since page load, and personalized payback period for Pro. Appears 3 seconds after page load to create urgency. A/B-variant-aware CTA links directly to Stripe. GA4 tracked. Addresses the "I'll do it later" objection with visceral real-time money loss visualization.
+## Session 721 (Jun 18) — Pricing Page Conversion + Direct Stripe CTAs (16 pages)
+- **Added real-time cost-of-inaction counter to pricing page** (pricing.html) — Shows daily waste rate ($3.33/day), running total since page load, and personalized payback period for Pro. Appears 3 seconds after page load to create urgency. A/B-variant-aware CTA links directly to Stripe. GA4 tracked.
 - **Added mobile exit popup to pricing page** (pricing.html) — Pricing page exit popup only fired on mouseleave (desktop-only). Added 30-second timeout for touch devices. Mobile visitors (~40% of traffic) were seeing no exit popup on the key conversion page.
-- **Added direct Pro CTA to cheapest-ai-api.html** — High-intent page (people searching "cheapest AI API") had no direct Stripe link. Added conversion-focused Pro upsell section with direct Stripe CTA, benefit bullets, and GA4 tracking.
-- **Fixed recommend.html Pro CTA** — Was linking to pricing.html (extra click). Now links directly to Stripe checkout with GA4 tracking.
-- **Fixed Pro CTAs on 7 high-traffic tools** — calculator, savings-calculator, cost-explorer, context-window-visualizer, free-tier-comparison, provider-switch-calculator, claude-alternatives-calculator all had Pro CTAs linking to pricing.html instead of Stripe. Removed unnecessary friction from conversion funnel.
-- **4 commits, 11 files changed, ~80 insertions**
+- **Added direct Pro CTA to cheapest-ai-api.html** — High-intent page had no direct Stripe link. Added conversion-focused Pro upsell section.
+- **Fixed 16 pages with Pro CTAs linking to pricing.html instead of Stripe** — calculator, savings-calculator, cost-explorer, recommend, cheapest-ai-api, context-window-visualizer, free-tier-comparison, provider-switch-calculator, claude-alternatives-calculator, pipeline, cost-migration, pricing-trends, state-of-llm-pricing, token-estimator, use-cases. Every unnecessary click between intent and purchase is a lost sale.
+- **5 commits, 20 files changed, ~95 insertions**
 
 ## Session 720 (Jun 18) — Thank-You Page: Activation + Social Proof + Feedback
 - **Enhanced post-purchase thank-you page** (thank-you.html) — Transformed bare-bones confirmation into full activation experience.
@@ -77,7 +76,7 @@ Built full APIpulse from scratch. 652 pages, 320 posts, 42 models, 10 providers,
 - **Bleeding counter on calculator (Session 719)** — Real-time "cost of inaction" counter shows daily waste rate + running total since page load. Direct Stripe CTA (A/B-aware). Pulse animation. GA4 tracked.
 - **Bleeding counter on pricing page (Session 721)** — Same real-time waste counter added to pricing page. Shows daily waste, running total, payback period. Appears 3s after load. A/B-aware CTA. GA4 tracked.
 - **Mobile exit popup on pricing page (Session 721)** — 30s timeout for touch devices. Previously mobile visitors saw no exit popup on the key conversion page.
-- **Direct Stripe CTAs on 9 tool pages (Session 721)** — calculator, savings-calculator, cost-explorer, recommend, cheapest-ai-api, context-window-visualizer, free-tier-comparison, provider-switch-calculator, claude-alternatives-calculator. Removed unnecessary pricing.html intermediate step.
+- **Direct Stripe CTAs on 16 tool pages (Session 721)** — calculator, savings-calculator, cost-explorer, recommend, cheapest-ai-api, context-window-visualizer, free-tier-comparison, provider-switch-calculator, claude-alternatives-calculator, pipeline, cost-migration, pricing-trends, state-of-llm-pricing, token-estimator, use-cases. Removed unnecessary pricing.html intermediate step.
 - **Sticky bottom CTA bar (Session 719)** — Time-based (45s) bar on content pages catches passive visitors. Social proof + Pro CTA. Dismissible, session-only. GA4 tracked.
 - **Trial expiry conversion messaging (Session 719)** — On-page expiry: red message + CTA. Returning expired users: "Welcome back" message after 5s. Both GA4 tracked.
 - **Enhanced thank-you page (Session 720)** — Post-purchase activation: 5-step onboarding checklist, social share buttons (X/LinkedIn/Copy), feedback capture (stars + text), quick-start CTA. GA4 tracked.
