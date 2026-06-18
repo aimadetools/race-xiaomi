@@ -1,16 +1,16 @@
 # BACKLOG-CHEAP.md — Routine Tasks
 
-### Active Tasks — New Tool Follow-up (Session 716)
-- **[DONE Session 717]** Add migration code generator link to footer nav on all pages (via shared.js)
-- **[DONE Session 717]** Cross-link migration code generator from claude-4-is-dead.html and claude-4-shutdown-complete.html
-- **[DONE Session 717]** Add migration code generator to blog.html related tools section
-- **[DONE Session 718]** Add "env file generator" feature — generates .env snippet with correct API key var + dashboard URL, dual-key mode for migration period
-- Monitor GA4 for migration_generated events — which model pairs are most popular?
+### Active Tasks — Conversion Optimization (Session 722)
+- **[DONE Session 722]** Usage-gated calculator: 3 free calculations per session, then upgrade wall with trial/purchase
+- **[DONE Session 722]** Simplified A/B pricing from 3 variants ($19/$29/$39) to 2 ($19/$29)
+- **[DONE Session 722]** Added pricing freshness badges to 5 key pages
+- **[DONE Session 722]** Added Cost Health Check tool to footer nav for cross-page visibility
+- Monitor GA4 for usage_gate_wall_shown → pro_button_clicked conversion rate
+- Monitor which A/B price variant ($19 vs $29) converts better
 
-### Active Tasks — Conversion Optimization (Session 711+)
-- Monitor exit popup conversion rate after copy change (GA4: pro_exit_popup_shown → pro_button_clicked, filter by `copy_variant`)
-- **[DONE Session 713]** A/B test exit popup copy: loss-framed vs social proof — 50/50 test live, tracked in GA4 via `copy_variant` param
-- **[DONE Session 712]** Test different CTA button colors on exit popup — 3-variant A/B test live (purple/red/green), tracked in GA4 via `button_color` param
+### Active Tasks — New Tool Follow-up (Session 716)
+- **[DONE]** All migration code generator follow-up tasks complete
+- Monitor GA4 for migration_generated events — which model pairs are most popular?
 
 ### Active Tasks — Blocked on Human Action
 - Chrome Web Store — publish extension ($5 from budget) — HELP-REQUEST filed Jun 1

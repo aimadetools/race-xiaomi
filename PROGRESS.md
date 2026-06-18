@@ -1,5 +1,12 @@
 # PROGRESS.md
 
+## Session 722 (Jun 18) — Usage-Gated Calculator + A/B Pricing Simplification
+- **Created usage-gate.js** — Tracks unique model calculations per session (3 free limit). After 3, shows upgrade wall with trial/purchase options. Pro/trial users bypass entirely. GA4 tracked: `usage_gate_wall_shown`, `usage_gate_upgrade_clicked`.
+- **Simplified A/B pricing from 3 to 2 variants** — Was $19/$29/$39 (decision paralysis). Now $19/$29 (50/50). Migrates existing $39 users to $29 control.
+- **Added pricing freshness badges to 5 key pages** — "Prices verified Jun 2026" on savings-calculator, recommend, cheapest-ai-api, migration-code, cost-health-check. Builds trust.
+- **Added Cost Health Check to footer nav** — Cross-page visibility via shared.js footer injection.
+- **1 commit, 10 files changed, 185 insertions**
+
 ## Session 721 (Jun 18) — Pricing Page Conversion + Direct Stripe CTAs (16 pages)
 - **Added real-time cost-of-inaction counter to pricing page** (pricing.html) — Shows daily waste rate ($3.33/day), running total since page load, and personalized payback period for Pro. Appears 3 seconds after page load to create urgency. A/B-variant-aware CTA links directly to Stripe. GA4 tracked.
 - **Added mobile exit popup to pricing page** (pricing.html) — Pricing page exit popup only fired on mouseleave (desktop-only). Added 30-second timeout for touch devices. Mobile visitors (~40% of traffic) were seeing no exit popup on the key conversion page.
@@ -68,11 +75,14 @@ Claude 4 shutdown prep, execution, post-shutdown cleanup: 407+ files tense sweep
 ## Summary: Sessions 1-598 (Apr 5 - Jun 12)
 Built full APIpulse from scratch. 652 pages, 320 posts, 42 models, 10 providers, 84 tools, 12 API endpoints, 2 widgets. Domain, Stripe, Pro, GA4, newsletter, Chrome extension, 167 comparison pages, FAQPage schema, streaming toggle, State of LLM Pricing Report, Claude 4 deprecation ecosystem, A/B pricing test, Model Selector quiz, Best Model guides. 113+ commits total.
 
-## Site Status (as of Session 721, Jun 18, 2026)
+## Site Status (as of Session 722, Jun 18, 2026)
 **679 web pages | 336 blog posts | 42 models | 10 providers | 89 tools | 12 API endpoints | 2 embeddable widgets**
 - Sitemap (670 URLs), RSS (544 items), blog files (336 posts) — all in sync
 - **Claude 4 SHUTDOWN COMPLETE (June 15)** — all pages past-tense, countdown JS shows "DEADLINE PASSED" / "retired" state
-- **A/B pricing test RESUMED (Session 689)** — 3-variant test live: $19 vs $29 vs $39 (all one-time). Emergency page CTAs dynamically show variant price.
+- **Usage-gated calculator (Session 722)** — 3 free unique model calculations per session, then upgrade wall with trial/purchase options. Pro/trial users bypass. GA4 tracked.
+- **A/B pricing SIMPLIFIED (Session 722)** — Reduced from 3 variants ($19/$29/$39) to 2 ($19/$29). 50/50 split. Reduces decision paralysis.
+- **Pricing freshness badges (Session 722)** — "Prices verified Jun 2026" on savings-calculator, recommend, cheapest-ai-api, migration-code, cost-health-check. Builds trust.
+- **Cost Health Check in footer nav (Session 722)** — Cross-page visibility via shared.js footer injection.
 - **Bleeding counter on calculator (Session 719)** — Real-time "cost of inaction" counter shows daily waste rate + running total since page load. Direct Stripe CTA (A/B-aware). Pulse animation. GA4 tracked.
 - **Bleeding counter on pricing page (Session 721)** — Same real-time waste counter added to pricing page. Shows daily waste, running total, payback period. Appears 3s after load. A/B-aware CTA. GA4 tracked.
 - **Mobile exit popup on pricing page (Session 721)** — 30s timeout for touch devices. Previously mobile visitors saw no exit popup on the key conversion page.
