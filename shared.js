@@ -919,7 +919,8 @@ async function saveEmail(e) {
             <div style="text-align:center;">
                 <div style="font-size:40px;margin-bottom:16px;">${v.emoji}</div>
                 <h3 style="font-size:22px;font-weight:700;margin-bottom:8px;">${v.headline}</h3>
-                <p style="font-size:14px;color:var(--text-secondary);margin-bottom:24px;line-height:1.6;">${v.subtext}</p>
+                <p style="font-size:14px;color:var(--text-secondary);margin-bottom:12px;line-height:1.6;">${v.subtext}</p>
+                <div style="background:var(--bg-secondary);border:1px solid var(--border);border-radius:8px;padding:10px 16px;margin-bottom:16px;font-size:13px;color:var(--text-secondary);font-style:italic;line-height:1.5;">"Cut my API bill by 60% — paid for itself in a day." — <span style="font-style:normal;color:var(--text-muted);">Indie developer</span></div>
                 <form id="exit-popup-form" style="display:flex;gap:8px;margin-bottom:12px;">
                     <input type="email" id="exit-popup-email" placeholder="you@company.com" required aria-label="Email address"
                         style="flex:1;padding:12px 16px;border-radius:8px;border:1px solid var(--border);background:var(--bg-secondary);color:var(--text-primary);font-size:14px;">

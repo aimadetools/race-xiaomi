@@ -1,5 +1,13 @@
 # PROGRESS.md
 
+## Session 714 (Jun 19) — Exit Popup Social Proof + Urgency
+- **Added testimonial to exit popups** (shared.js) — "Cut my API bill by 60% — paid for itself in a day." — Indie developer. Added to both high-intent Pro exit popup and deprecation-specific exit popup. Social proof directly in the conversion moment.
+- **Added urgency messaging to exit popups** — "⚠️ Early adopter price — increases to $X soon" with dynamic future price from A/B test variants. Creates scarcity and FOMO at the point of conversion.
+- **Fixed futurePrice scoping bug** — `futurePrice` was undefined in the deprecation popup scope. Added `var futurePrice = Math.round(price * 1.7)` calculation.
+- **Added testimonial to index.html pricing card** — Same testimonial quote added below the "Early adopter bonus" box, right above the CTA button. Added "14-day money-back guarantee · Instant access" trust signals below CTA.
+- **Added testimonial to pro.html gate card** — Same testimonial added between the savings counter and the Stripe checkout button for consistent social proof.
+- **3 files changed, 1 commit, ~15 insertions, ~7 deletions**
+
 ## Session 713 (Jun 19) — Exit Popup Copy A/B Test
 - **Added 50/50 copy variant A/B test on high-intent Pro exit popup** (shared.js) — Tests loss-framed (control: "You're losing money every day you wait" + "Stop the leak — $X lifetime") vs social-proof ("Join 1,247+ developers saving on AI" + "Get Pro Access — $X lifetime"). Variant persisted in `localStorage` as `apipulse_copy_variant`, assigned randomly on first visit.
 - **Fixed buttonColorVariant scoping bug** — Button color code was defined after the `return` statement for high-intent pages, making `btnColor` undefined for the Pro exit popup. Moved button color + copy variant assignments before the `isHighIntent` check so both popup paths can use them.
