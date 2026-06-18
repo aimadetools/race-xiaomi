@@ -1,5 +1,12 @@
 # PROGRESS.md
 
+## Session 733 (Jun 18) — Content Quality & Consistency Fixes
+- **Fixed stale "500+ developers" references** — Updated 4 pages (blog-how-to-find-deprecated-claude-4-code, cheapest-llm-api-2026, claude-4-migration-calculator, cost-optimizer) to "1,247+ developers" matching homepage.
+- **Fixed stale deadline language in JSON-LD schemas** — Removed "by the June 15 deadline" from claude-4-deprecation.html and claude-4-migration-cheatsheet.html structured data.
+- **Fixed duplicate meta descriptions** — 4 countdown blog posts (1-day, 2-day, 3-day, 4-day) all had identical meta descriptions. Updated each to have unique, descriptive meta tags.
+- **Verified all internal links** — Scanned all 683 pages, confirmed zero broken internal links across nav, footer, and cross-links.
+- **1 commit, 10 files changed, 14 insertions, 14 deletions**
+
 ## Session 732 (Jun 18) — Quick Savings Page + Conversion Improvements
 - **Created quick-savings.html — ultra-fast 2-click savings estimate** — Pick model → pick usage level → instant results with 3 cheaper alternatives and annual savings. No forms, no signup, just clicks. Targets users who want a fast answer without filling out detailed calculators. A/B-price-aware Pro CTA. GA4 tracked (quick_savings_model_selected, quick_savings_usage_selected, quick_savings_results_shown).
 - **Added quick-savings to sitemap, RSS feed, and homepage tools section** — Cross-linked from savings-calculator.html as "Want a faster answer?"
@@ -80,7 +87,7 @@ Shutdown prep/execution/cleanup: 407+ files tense sweep, Stripe fix, emergency p
 ## Summary: Sessions 1-598 (Apr 5 - Jun 12)
 Full APIpulse build from scratch. 652 pages, 320 posts, 42 models, 10 providers, 84 tools, 12 API endpoints, 2 widgets. Domain, Stripe, Pro, GA4, newsletter, Chrome extension, 167 comparisons, FAQPage schema, streaming toggle, A/B pricing, Model Selector quiz.
 
-## Site Status (as of Session 732, Jun 18, 2026)
+## Site Status (as of Session 733, Jun 18, 2026)
 **684 web pages | 338 blog posts | 42 models | 10 providers | 89 tools | 12 API endpoints | 2 embeddable widgets**
 - Sitemap (674 URLs), RSS (546 items), blog files (338 posts) — all in sync
 - **Quick Savings page (Session 732)** — Ultra-fast 2-click savings estimate. Pick model + usage → instant results. Cross-linked from savings calculator, exit popups, and 167 comparison pages. Includes email capture.
