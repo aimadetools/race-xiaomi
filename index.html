@@ -2241,7 +2241,7 @@
                 <div style="background:var(--accent-glow);border:1px solid var(--accent);border-radius:8px;padding:12px;margin-bottom:16px;font-size:13px;color:var(--accent);">
                     Early adopter bonus: Get lifetime access to all future Pro features at no extra cost. Price will increase to $49 after the first 100 customers.
                 </div>
-                <a href="https://buy.stripe.com/fZu7sL3Gw3GS0RQeoDeEo0a" class="btn-primary" style="text-align:center;" target="_blank" rel="noopener" onclick="if(window.trackEvent)window.trackEvent('pro_button_clicked',{source:'pricing_card'})">Unlock All Pro Features — $29</a>
+                <a href="https://buy.stripe.com/fZu7sL3Gw3GS0RQeoDeEo0a" class="btn-primary" style="text-align:center;" target="_blank" rel="noopener" onclick="if(window.trackEvent)window.trackEvent('pro_button_clicked',{source:'pricing_card'})">Stop Losing Money — Get Pro for $29</a>
             </div>
         </div>
     </section>
@@ -2546,16 +2546,16 @@
     <div id="exit-popup" style="display:none;position:fixed;inset:0;z-index:10000;background:rgba(0,0,0,0.7);backdrop-filter:blur(4px);">
         <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);background:var(--bg-card);border:1px solid var(--border);border-radius:16px;padding:40px;max-width:480px;width:calc(100% - 48px);text-align:center;box-shadow:0 24px 64px rgba(0,0,0,0.5);">
             <button onclick="closeExitPopup()" style="position:absolute;top:12px;right:16px;background:none;border:none;color:var(--text-muted);font-size:24px;cursor:pointer;padding:4px 8px;">✕</button>
-            <div style="font-size:48px;margin-bottom:12px;">🚀</div>
-            <h2 style="font-size:24px;font-weight:800;margin-bottom:8px;">Stop overpaying for AI APIs</h2>
-            <p style="color:var(--text-secondary);font-size:15px;margin-bottom:20px;line-height:1.5;">42 models, 10 providers, real-time pricing. Find the cheapest model for your use case — most teams save 67-97% after switching.</p>
+            <div style="font-size:48px;margin-bottom:12px;">💸</div>
+            <h2 style="font-size:24px;font-weight:800;margin-bottom:8px;">You're losing money right now</h2>
+            <p style="color:var(--text-secondary);font-size:15px;margin-bottom:20px;line-height:1.5;">Most developers save <strong style="color:var(--green);">$60-200/month</strong> after switching to cheaper models. Pro shows you exactly which model to switch to — with migration code.</p>
             <div style="display:flex;align-items:center;justify-content:center;gap:12px;margin-bottom:20px;flex-wrap:wrap;">
                 <div style="font-size:13px;color:var(--text-muted);">✓ Free cost calculator</div>
                 <div style="font-size:13px;color:var(--text-muted);">✓ 42 models compared</div>
                 <div style="font-size:13px;color:var(--text-muted);">✓ Instant access</div>
             </div>
-            <a href="#" id="exit-popup-cta" style="display:inline-block;background:var(--accent);color:white;padding:14px 36px;border-radius:10px;font-size:16px;font-weight:700;text-decoration:none;transition:all 0.2s;box-shadow:0 4px 20px rgba(99,102,241,0.3);">Get Pro Access — $29</a>
-            <p style="font-size:12px;color:var(--text-muted);margin-top:12px;">No subscription. Pay once, use forever.</p>
+            <a href="#" id="exit-popup-cta" style="display:inline-block;background:var(--accent);color:white;padding:14px 36px;border-radius:10px;font-size:16px;font-weight:700;text-decoration:none;transition:all 0.2s;box-shadow:0 4px 20px rgba(99,102,241,0.3);">Stop the Leak — $29 lifetime</a>
+            <p style="font-size:12px;color:var(--text-muted);margin-top:12px;">14-day money-back guarantee. No questions asked.</p>
         </div>
     </div>
     <script>
@@ -2568,7 +2568,7 @@
             sessionStorage.setItem('exit_popup_shown', '1');
             var popup = document.getElementById('exit-popup');
             popup.style.display = 'block';
-            if (window._abPrice) document.getElementById('exit-popup-cta').textContent = 'Get Pro Access — $' + window._abPrice;
+            if (window._abPrice) document.getElementById('exit-popup-cta').textContent = 'Stop the Leak — $' + window._abPrice + ' lifetime';
             if (window._abStripeLink) document.getElementById('exit-popup-cta').href = window._abStripeLink;
             if (window.trackEvent) window.trackEvent('exit_popup_shown', { page: 'index' });
         }
