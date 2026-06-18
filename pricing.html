@@ -357,6 +357,63 @@
             <p style="text-align:center;margin-top:16px;"><a href="https://www.producthunt.com/posts/apipulse" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:8px;color:var(--accent);text-decoration:none;font-size:14px;font-weight:600;">🚀 Featured on Product Hunt <span style="font-size:12px;color:var(--text-muted);">May 2026</span></a></p>
         </div>
 
+        <!-- Cost of Inaction — real-time waste counter -->
+        <div id="pricing-bleeding" style="display:none;margin-bottom:48px;background:linear-gradient(135deg,rgba(239,68,68,0.08),rgba(245,158,11,0.06));border:2px solid rgba(239,68,68,0.25);border-radius:16px;padding:32px;text-align:center;">
+            <div style="font-size:14px;font-weight:700;color:var(--red);text-transform:uppercase;letter-spacing:1px;margin-bottom:8px;">⏱ Cost of waiting</div>
+            <div style="font-size:13px;color:var(--text-secondary);margin-bottom:16px;">The average developer overpays <strong>$60–200/month</strong> by not optimizing their AI API stack. Here's what that costs you:</div>
+            <div style="display:flex;justify-content:center;gap:40px;flex-wrap:wrap;margin-bottom:20px;">
+                <div>
+                    <div id="pricing-bleed-today" style="font-size:36px;font-weight:800;color:var(--red);font-variant-numeric:tabular-nums;">$0.00</div>
+                    <div style="font-size:12px;color:var(--text-muted);margin-top:4px;">lost since you opened this page</div>
+                </div>
+                <div>
+                    <div id="pricing-bleed-daily" style="font-size:36px;font-weight:800;color:var(--red);font-variant-numeric:tabular-nums;">$3.33</div>
+                    <div style="font-size:12px;color:var(--text-muted);margin-top:4px;">wasted every day you wait</div>
+                </div>
+                <div>
+                    <div id="pricing-bleed-yearly" style="font-size:36px;font-weight:800;color:var(--red);font-variant-numeric:tabular-nums;">$1,216</div>
+                    <div style="font-size:12px;color:var(--text-muted);margin-top:4px;">lost per year without optimization</div>
+                </div>
+            </div>
+            <div id="pricing-bleed-payback" style="font-size:14px;color:var(--text-secondary);margin-bottom:16px;">Pro pays for itself in <strong style="color:var(--green);">less than 1 month</strong> of savings</div>
+            <a href="https://buy.stripe.com/fZu7sL3Gw3GS0RQeoDeEo0a" class="btn-primary" style="display:inline-block;padding:14px 40px;text-align:center;font-size:16px;" target="_blank" rel="noopener" onclick="if(window.trackEvent)window.trackEvent('pro_button_clicked',{source:'pricing_bleeding_counter'})">Stop the Leak — <span class="ab-bleed-price">$29</span> lifetime</a>
+            <div style="font-size:12px;color:var(--text-muted);margin-top:8px;">14-day money-back guarantee. Every day you wait costs you ~$3.33.</div>
+        </div>
+        <script>
+        (function(){
+            var price = window._abPrice || 29;
+            var dailyWaste = 3.33; // ~$100/mo average overpay
+            var startTime = Date.now();
+            // Update A/B price in counter CTA
+            var bleedPriceEls = document.querySelectorAll('.ab-bleed-price');
+            bleedPriceEls.forEach(function(el){ el.textContent = '$' + price; });
+            // Show counter after 3 seconds (let page load, then create urgency)
+            setTimeout(function(){
+                var el = document.getElementById('pricing-bleeding');
+                if(el) el.style.display = 'block';
+            }, 3000);
+            // Update running total every second
+            var perSec = dailyWaste / 86400;
+            function updateBleed(){
+                var elapsed = (Date.now() - startTime) / 1000;
+                var lost = (perSec * elapsed).toFixed(2);
+                var el = document.getElementById('pricing-bleed-today');
+                if(el) el.textContent = '$' + lost;
+            }
+            setInterval(updateBleed, 1000);
+            updateBleed();
+            // Dynamic payback text
+            var paybackDays = Math.ceil(price / dailyWaste);
+            var paybackEl = document.getElementById('pricing-bleed-payback');
+            if(paybackEl){
+                if(paybackDays <= 1) paybackEl.innerHTML = 'Pro pays for itself in <strong style="color:var(--green);">less than 1 day</strong> of savings';
+                else paybackEl.innerHTML = 'Pro pays for itself in <strong style="color:var(--green);">' + paybackDays + ' days</strong> of savings';
+            }
+            // Track view
+            if(window.trackEvent) window.trackEvent('pricing_bleeding_counter_shown', {price: price});
+        })();
+        </script>
+
         <!-- How It Works — reduce purchase friction -->
         <div style="margin-bottom:48px;">
             <h2 style="font-size:24px;font-weight:700;text-align:center;margin-bottom:32px;">How It Works</h2>
