@@ -800,8 +800,8 @@ async function saveEmail(e) {
             popup.innerHTML = '<button id="exit-popup-close" style="position:absolute;top:12px;right:12px;background:none;border:none;color:var(--text-muted);font-size:20px;cursor:pointer;padding:4px 8px;border-radius:6px;" onmouseover="this.style.color=\'var(--text-primary)\'" onmouseout="this.style.color=\'var(--text-muted)\'">&times;</button>' +
                 '<div style="text-align:center;">' +
                 '<div style="font-size:40px;margin-bottom:16px;">🚀</div>' +
-                '<h3 style="font-size:22px;font-weight:700;margin-bottom:8px;">Stop overpaying for AI APIs</h3>' +
-                '<p style="font-size:14px;color:var(--text-secondary);margin-bottom:20px;line-height:1.6;">Pro gives you personalized optimization recommendations, saved scenarios, and cost reports — so you always pick the cheapest model for each task.</p>' +
+                '<h3 style="font-size:22px;font-weight:700;margin-bottom:8px;">You\'re losing money every day you wait</h3>' +
+                '<p style="font-size:14px;color:var(--text-secondary);margin-bottom:20px;line-height:1.6;">Most developers overpay 40-80% on AI APIs. Pro shows you exactly which model to switch to — with migration code, cost projections, and a personalized optimization plan.</p>' +
                 '<div style="display:flex;gap:12px;justify-content:center;margin-bottom:20px;">' +
                 '<div style="background:var(--bg-secondary);border:1px solid var(--border);border-radius:8px;padding:10px 16px;text-align:center;">' +
                 '<div style="font-size:20px;font-weight:800;color:var(--accent);">$' + price + '</div>' +
@@ -809,7 +809,7 @@ async function saveEmail(e) {
                 '<div style="background:var(--bg-secondary);border:1px solid var(--border);border-radius:8px;padding:10px 16px;text-align:center;">' +
                 '<div style="font-size:20px;font-weight:800;color:var(--green);">40%</div>' +
                 '<div style="font-size:11px;color:var(--text-muted);">avg. savings</div></div></div>' +
-                '<a href="' + stripeLink + '" target="_blank" rel="noopener" id="pro-exit-cta" style="display:inline-block;background:var(--accent);color:white;padding:14px 32px;border-radius:10px;font-size:16px;font-weight:700;text-decoration:none;transition:all 0.2s;box-shadow:0 4px 20px rgba(99,102,241,0.3);" onmouseover="this.style.transform=\'translateY(-2px)\'" onmouseout="this.style.transform=\'none\'">Get Pro — $' + price + ' lifetime</a>' +
+                '<a href="' + stripeLink + '" target="_blank" rel="noopener" id="pro-exit-cta" style="display:inline-block;background:var(--accent);color:white;padding:14px 32px;border-radius:10px;font-size:16px;font-weight:700;text-decoration:none;transition:all 0.2s;box-shadow:0 4px 20px rgba(99,102,241,0.3);" onmouseover="this.style.transform=\'translateY(-2px)\'" onmouseout="this.style.transform=\'none\'">Stop the leak — $' + price + ' lifetime</a>' +
                 '<p style="font-size:12px;color:var(--text-muted);margin-top:12px;">14-day money-back guarantee · <a href="#" id="pro-exit-dismiss" style="color:var(--text-muted);">No thanks</a></p>' +
                 '</div>';
 
