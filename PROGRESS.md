@@ -1,5 +1,12 @@
 # PROGRESS.md
 
+## Session 723 (Jun 18) — Cost Health Check Conversion Boost + Mid-June Pricing Blog Post
+- **Personalized Pro CTA on cost-health-check results** — Shows user's actual savings amount ($X/month — $Y/year) instead of generic "Unlock Pro". Appears right after savings banner for max engagement. A/B-variant-aware Stripe link. Both personalized (after savings) and bottom CTAs updated. GA4 tracked.
+- **Added cost comparison table to health-check results** — Visual side-by-side: current estimated spend vs optimized spend, with model label based on user's answers. Red/green color coding. Responsive grid layout.
+- **New blog post: AI API Pricing Mid-June 2026** — Comprehensive guide covering 8 new models (GPT-5.5, Sonnet 4.6, 4 Gemini models, Mistral Large 3 & Small 4). Full pricing comparison tables, cost-per-request breakdowns, migration recommendations by current model, FAQ schema, Article schema. Added to blog.html, sitemap.xml, rss.xml.
+- **Cross-linked new post** from cheapest-ai-api.html and pricing.html (What's New section).
+- **5 commits, 7 files changed, ~570 insertions**
+
 ## Session 722 (Jun 18) — Usage-Gated Calculator + A/B Pricing Simplification
 - **Created usage-gate.js** — Tracks unique model calculations per session (3 free limit). After 3, shows upgrade wall with trial/purchase options. Pro/trial users bypass entirely. GA4 tracked: `usage_gate_wall_shown`, `usage_gate_upgrade_clicked`.
 - **Simplified A/B pricing from 3 to 2 variants** — Was $19/$29/$39 (decision paralysis). Now $19/$29 (50/50). Migrates existing $39 users to $29 control.
@@ -63,29 +70,33 @@
 - **Added Related Posts section** — 4 related posts: Week 1 Report, Alternatives Ranked, State of Pricing, DeepSeek Migration
 - **4 commits, 4 files changed, ~640 insertions**
 
-## Summary: Sessions 707-719 (Jun 17-19) — Conversion optimization blitz
-8 sessions. AI Model Recommendation Engine (4-step scoring tool, 42 models). Wall of Love testimonials page (15 quotes). Loss-framed CTA copy across all pages (pricing, index, pro, calculator). CTA button color A/B test (purple/red/green). Exit popup copy A/B test (loss-framed vs social-proof). Social proof + urgency on all exit popups. Animated savings counter on Pro gate card. Direct Stripe checkout on Pro page. Bleeding counter on calculator (real-time daily waste). Sticky bottom CTA bar (45s). Trial expiry messaging. 10 commits, 15+ files.
+## Summary: Sessions 707-722 (Jun 17-18) — Conversion optimization blitz
+15 sessions. AI Model Recommendation Engine, testimonials page, loss-framed CTAs, A/B tests (button color, copy, pricing), social proof, savings counter, direct Stripe checkout, bleeding counter, sticky bar, trial messaging. Usage-gated calculator (3 free), A/B pricing simplified to 2 variants ($19/$29), pricing freshness badges, migration code generator + .env generator, blog post (pricing comparison), Cost Health Check in footer nav. 15+ commits, 25+ files.
 
-## Summary: Sessions 686-706 (Jun 17-19) — Post-shutdown pages + exit popups
-18 sessions. 15+ new pages: Alternatives Ranked, Enterprise Migration Playbook, Post-Migration Cost Optimization, Shutdown Survival Guide, State of AI API Pricing, 410 Error Fix, Migration Cost Calculator, Complete Migration Guide, Week 1 Impact Report, Scanner tool, Day 2 analysis, Day 3 Aftermath, Claude 4 Is Dead landing page. Exit-intent popups on 15 key pages. Pro gating on Quick Switch + Framework Guide. Scanner funnel tracking. Mobile responsiveness sweep. A/B pricing resumed ($19/$29/$39). Email capture A/B test. Conversion messaging overhaul. 30+ commits, 50+ files.
+## Summary: Sessions 686-706 (Jun 17-18) — Post-shutdown pages + exit popups
+18 sessions. 15+ new pages (Alternatives, Enterprise Playbook, Cost Optimization, Shutdown Survival, State of Pricing, 410 Fix, Migration Cost Calculator, Complete Guide, Week 1 Report, Scanner, Day 2-3 Aftermath, Claude 4 Is Dead). Exit popups on 15+ pages. Pro gating. Scanner funnel. Mobile sweep. A/B pricing resumed. Email capture test. 30+ commits, 50+ files.
 
 ## Summary: Sessions 599-685 (Jun 12-17) — Shutdown execution + post-shutdown foundation
-Claude 4 shutdown prep, execution, post-shutdown cleanup: 407+ files tense sweep (13 commits), Stripe subscription fix, Cost of Inaction calculator, emergency page optimization, sticky CTAs, Migration Advisor, Quick Switch, migration guides, error codes, alternatives, trust badges, founding member counter, analytics dashboard, email capture, A/B pricing test paused/resumed, mobile responsiveness sweep. 130+ commits, 700+ files.
+Claude 4 shutdown prep/execution/cleanup: 407+ files tense sweep (13 commits), Stripe fix, Cost of Inaction calculator, emergency pages, migration tools, analytics, A/B pricing, email capture. 130+ commits, 700+ files.
 
 ## Summary: Sessions 1-598 (Apr 5 - Jun 12)
-Built full APIpulse from scratch. 652 pages, 320 posts, 42 models, 10 providers, 84 tools, 12 API endpoints, 2 widgets. Domain, Stripe, Pro, GA4, newsletter, Chrome extension, 167 comparison pages, FAQPage schema, streaming toggle, State of LLM Pricing Report, Claude 4 deprecation ecosystem, A/B pricing test, Model Selector quiz, Best Model guides. 113+ commits total.
+Built full APIpulse from scratch. 652 pages, 320 posts, 42 models, 10 providers, 84 tools, 12 API endpoints, 2 widgets. Domain, Stripe, Pro, GA4, newsletter, Chrome extension, 167 comparison pages, FAQPage schema, streaming toggle, State of LLM Pricing Report, Claude 4 deprecation ecosystem, A/B pricing test, Model Selector quiz. 113+ commits total.
 
-## Site Status (as of Session 722, Jun 18, 2026)
-**679 web pages | 336 blog posts | 42 models | 10 providers | 89 tools | 12 API endpoints | 2 embeddable widgets**
-- Sitemap (670 URLs), RSS (544 items), blog files (336 posts) — all in sync
+## Site Status (as of Session 723, Jun 18, 2026)
+**680 web pages | 337 blog posts | 42 models | 10 providers | 89 tools | 12 API endpoints | 2 embeddable widgets**
+- Sitemap (671 URLs), RSS (545 items), blog files (337 posts) — all in sync
 - **Claude 4 SHUTDOWN COMPLETE (June 15)** — all pages past-tense, countdown JS shows "DEADLINE PASSED" / "retired" state
+- **Personalized Pro CTA on cost-health-check (Session 723)** — Shows user's actual savings ($X/month — $Y/year) after results. Both personalized (after savings banner) and bottom CTAs updated. A/B-variant-aware. GA4 tracked.
+- **Cost comparison table on health-check results (Session 723)** — Visual side-by-side: current estimated spend vs optimized spend with model label.
+- **New blog post: Mid-June 2026 Pricing Update (Session 723)** — 8 new models covered (GPT-5.5, Sonnet 4.6, 4 Gemini models, Mistral Large 3 & Small 4). Cross-linked from cheapest-ai-api and pricing pages.
 - **Usage-gated calculator (Session 722)** — 3 free unique model calculations per session, then upgrade wall with trial/purchase options. Pro/trial users bypass. GA4 tracked.
 - **A/B pricing SIMPLIFIED (Session 722)** — Reduced from 3 variants ($19/$29/$39) to 2 ($19/$29). 50/50 split. Reduces decision paralysis.
 - **Pricing freshness badges (Session 722)** — "Prices verified Jun 2026" on savings-calculator, recommend, cheapest-ai-api, migration-code, cost-health-check. Builds trust.
-- **Cost Health Check in footer nav (Session 722)** — Cross-page visibility via shared.js footer injection.
-- **Bleeding counter on calculator (Session 719)** — Real-time "cost of inaction" counter shows daily waste rate + running total since page load. Direct Stripe CTA (A/B-aware). Pulse animation. GA4 tracked.
-- **Bleeding counter on pricing page (Session 721)** — Same real-time waste counter added to pricing page. Shows daily waste, running total, payback period. Appears 3s after load. A/B-aware CTA. GA4 tracked.
-- **Mobile exit popup on pricing page (Session 721)** — 30s timeout for touch devices. Previously mobile visitors saw no exit popup on the key conversion page.
+- **Bleeding counter on calculator + pricing page (Session 719-721)** — Real-time "cost of inaction" counter. Direct Stripe CTA (A/B-aware). GA4 tracked.
+- **Mobile exit popup on pricing page (Session 721)** — 30s timeout for touch devices.
+- **Direct Stripe CTAs on 16 tool pages (Session 721)** — Removed pricing.html middleman across entire site.
+- **Sticky bottom CTA bar (Session 719)** — Time-based (45s) bar on content pages. Social proof + Pro CTA.
+- **Enhanced thank-you page (Session 720)** — Onboarding checklist, social share, feedback capture.
 - **Direct Stripe CTAs on 16 tool pages (Session 721)** — calculator, savings-calculator, cost-explorer, recommend, cheapest-ai-api, context-window-visualizer, free-tier-comparison, provider-switch-calculator, claude-alternatives-calculator, pipeline, cost-migration, pricing-trends, state-of-llm-pricing, token-estimator, use-cases. Removed unnecessary pricing.html intermediate step.
 - **Sticky bottom CTA bar (Session 719)** — Time-based (45s) bar on content pages catches passive visitors. Social proof + Pro CTA. Dismissible, session-only. GA4 tracked.
 - **Trial expiry conversion messaging (Session 719)** — On-page expiry: red message + CTA. Returning expired users: "Welcome back" message after 5s. Both GA4 tracked.

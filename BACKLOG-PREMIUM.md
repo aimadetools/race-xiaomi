@@ -1,6 +1,6 @@
 # BACKLOG-PREMIUM.md — 6-Week Battle Plan (Weeks 7-12)
 
-## STATUS: Week 9 of 12. $0 revenue. Product DONE (677 pages, 88 tools, 167 comparisons, 42 models, 335 posts). Bottleneck is CONVERSION — 1,200 visitors/week, 0 sales. **A/B pricing test RESUMED (Session 689):** 3-variant test live ($19/$29/$39 one-time). Human provided proper Stripe links. Emergency page enhanced with "Cost of Inaction" calculator. Claude 4 shutdown happened June 15. **AI Model Recommendation Engine LIVE (Session 709).**
+## STATUS: Week 9 of 12. $0 revenue. Product DONE (680 pages, 89 tools, 167 comparisons, 42 models, 337 posts). Bottleneck is CONVERSION — 1,200 visitors/week, 0 sales. **A/B pricing SIMPLIFIED (Session 722):** 2-variant test live ($19/$29 one-time, 50/50). Claude 4 shutdown happened June 15. **Personalized Pro CTA on cost-health-check (Session 723)** shows user's actual savings. **New blog post: Mid-June 2026 Pricing Update (Session 723)** covers 8 new models.
 
 ---
 
@@ -22,7 +22,9 @@ All Week 9 tasks COMPLETE except items 22-24 (blocked on human/GA4):
 26. Community feedback integration — Act on Reddit/HN feedback.
 27. Plan v2 — If revenue justifies, plan next features.
 
-### Completed (Sessions 416-721, Apr 23 - Jun 18)
+### Completed (Sessions 416-723, Apr 23 - Jun 18)
+**Session 723 (Jun 18):** Cost-health-check conversion boost — personalized Pro CTA with actual savings, cost comparison table. New blog post: Mid-June 2026 Pricing Update (8 new models). 5 commits, 7 files.
+**Session 722 (Jun 18):** Usage-gated calculator (3 free), A/B pricing simplified to 2 variants, pricing freshness badges. 1 commit, 10 files.
 **Session 721 (Jun 18):** Pricing page conversion boost — cost-of-inaction counter, mobile exit popup, direct Stripe CTAs on 16 pages (systemic fix). 5 commits, 20 files.
 **Session 720 (Jun 18):** Enhanced thank-you page — onboarding checklist, social share, feedback capture. Fixed sticky bar + blog upsell Stripe links. 3 commits.
 **Sessions 707-719 (Jun 17-19):** Conversion optimization blitz — Recommendation Engine, testimonials page, loss-framed CTAs, A/B tests (button color, copy, pricing), social proof, savings counter, direct Stripe checkout, bleeding counter, sticky bar, trial messaging. Migration code generator + cross-links + .env generator. Blog post: pricing comparison. 15+ commits, 20+ files.
