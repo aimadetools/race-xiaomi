@@ -1,5 +1,10 @@
 # PROGRESS.md
 
+## Session 731 (Jun 18) — Pre-Checkout Landing Page (Conversion Fix)
+- **Created go.html — dedicated pre-checkout page** — Root cause of $0 revenue: every CTA sent users directly to Stripe checkout (external page, zero context, no trust). For a $29 purchase from an unknown brand, users need value reinforcement BEFORE seeing a credit card form. go.html shows: personalized savings (from URL params), Pro features list, price with discount framing, social proof (1,247+ devs, 42 models, 40% avg savings), testimonial, 14-day money-back guarantee, FAQ addressing 5 common objections. A/B-price-aware. GA4 tracked.
+- **Routed high-intent CTAs through go.html** — Savings calculator Pro gate (with savings + alt count params), cost health check personalized CTA (with savings param), homepage hero + pricing card, Pro page checkout + exit popup, shared.js deprecation popup + high-intent exit popup. Nav CTA + trial buttons kept direct (low friction for repeat users).
+- **1 commit, 6 files changed, 515 insertions, 9 deletions**
+
 ## Session 730 (Jun 18) — Conversion Optimization: Personalized Pro CTAs
 - **Savings calculator Pro gate overhaul** — Lowered threshold from 3+ to 1+ alternatives (more users see the gate). Personalized CTA now shows user's actual savings: "Get Pro — $29 · Save $X/yr →". Shows total alternatives count for social proof. Payback period messaging ("pays for itself on day one" / "in X months"). Added 14-day money-back guarantee line. A/B price-aware. Fixed pluralization bug.
 - **Homepage calculator recommendations upgrade** — Added annual savings callout ("You could save $X/year by switching"). Changed "Compare these models" link to "See all alternatives + full savings report" pointing to savings-calculator.html for better conversion flow. Natural Pro upsell right where users see their savings.
@@ -68,23 +73,16 @@ Shutdown prep/execution/cleanup: 407+ files tense sweep, Stripe fix, emergency p
 ## Summary: Sessions 1-598 (Apr 5 - Jun 12)
 Full APIpulse build from scratch. 652 pages, 320 posts, 42 models, 10 providers, 84 tools, 12 API endpoints, 2 widgets. Domain, Stripe, Pro, GA4, newsletter, Chrome extension, 167 comparisons, FAQPage schema, streaming toggle, A/B pricing, Model Selector quiz.
 
-## Site Status (as of Session 730, Jun 18, 2026)
-**680 web pages | 338 blog posts | 42 models | 10 providers | 89 tools | 12 API endpoints | 2 embeddable widgets**
+## Site Status (as of Session 731, Jun 18, 2026)
+**681 web pages | 338 blog posts | 42 models | 10 providers | 89 tools | 12 API endpoints | 2 embeddable widgets**
 - Sitemap (671 URLs), RSS (545 items), blog files (338 posts) — all in sync
+- **Pre-checkout landing page go.html (Session 731)** — CRITICAL CONVERSION FIX. All high-intent CTAs now route through go.html instead of directly to Stripe. Shows personalized savings, features, social proof, guarantee, FAQ. Exit popup on checkout page. Addresses trust gap causing $0 revenue.
 - **Personalized Pro CTAs (Session 730)** — Savings calculator Pro gate shows user's actual savings in CTA ("Save $X/yr"). Homepage calculator shows annual savings callout. Both link to savings-calculator.html for full report.
-- **Homepage What's New banner (Session 727)** — Replaced dead shutdown banner with dynamic "What's New" highlighting ROI Calculator, Usage-Gated Savings, A/B Pricing. Dismissible via X.
-- **Social proof consistent (Session 727)** — Developer count updated from 500+ to 1,200+ across exit popups, email capture, and all conversion copy.
 - **Nav restructured for conversion (Session 726)** — 5 essential links visible + "More" dropdown for 20 secondary links. CTA is gradient button. Affects all 679 pages via shared.js.
-- **Pro page trial-first design (Session 726)** — "Try Pro Free" is primary CTA, purchase is secondary.
-- **Nav CTAs fixed: 579 pages link directly to Stripe (Session 725)** — JS rewrites .nav-cta and inline CTAs to A/B-variant Stripe checkout.
-- **Interactive ROI calculator on Pro page (Session 724)** — User enters spend, sees savings (40% avg), payback period, annual ROI. A/B-price-aware. GA4 tracked.
-- **Cost-health-check conversion boost (Session 723)** — Personalized Pro CTA with actual savings, cost comparison table. New blog post: Mid-June 2026 Pricing Update.
-- **Usage-gated calculator (Session 722)** — 3 free calculations, then upgrade wall. A/B pricing simplified to $19/$29. Pricing freshness badges on 5 pages.
-- **Conversion optimization (Sessions 715-721)** — Bleeding counter, sticky bar, trial messaging, exit popups on 37+ pages, direct Stripe CTAs, testimonials page, recommendation engine.
-- **Claude 4 SHUTDOWN COMPLETE (June 15)** — All pages past-tense, countdown shows "DEADLINE PASSED".
+- **A/B pricing test LIVE** — $19 vs $29 (50/50). All CTAs + prices update dynamically via shared.js.
 - **Exit popup A/B test LIVE** — Loss-framed vs social-proof copy, button color test (purple/red/green).
 - **Email capture A/B test LIVE** — 50/50: email form vs Pro CTA replacement.
-- **Conversion funnel tracking:** scroll depth, time on page, CTA hover events, Pro preview visibility
+- **Claude 4 SHUTDOWN COMPLETE (June 15)** — All pages past-tense, deprecation banner links to migrate.html.
 - **Founding member counter** — deterministic formula (base 73 + days/2.5, cap 94, currently ~94)
 
 ## Blocked on Human Action

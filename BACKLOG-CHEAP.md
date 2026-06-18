@@ -7,6 +7,7 @@
 - **[DONE Session 730]** Test hero CTA — verified link to savings-calculator.html, mobile CSS responsive
 - **[DONE Session 730]** Savings calculator Pro gate: personalized CTAs with savings, lower threshold, payback messaging
 - **[DONE Session 730]** Homepage calculator: annual savings callout, link to savings-calculator.html
+- **[DONE Session 731]** Pre-checkout landing page go.html — route high-intent CTAs through trust-building page before Stripe
 - Monitor GA4 for migration page engagement — bounce rate, time on page, Pro click-through
 
 ### Active Tasks — Conversion Optimization (Session 722)
