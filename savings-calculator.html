@@ -302,6 +302,7 @@
     <div class="container">
         <div class="header">
             <h1>How much are you overpaying?</h1>
+            <div id="pricing-freshness" style="margin-bottom:8px;"></div>
             <p>Select your current model, enter your usage, and see exactly how much you could save by switching. Most developers find 40-60% savings.</p>
         </div>
 
@@ -626,6 +627,7 @@
     // Init
     renderModels();
     if (window.trackEvent) window.trackEvent('savings_page_view');
+    renderPricingFreshness('pricing-freshness');
     </script>
 </body>
 </html>

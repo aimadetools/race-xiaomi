@@ -28,21 +28,21 @@ const savedTheme = localStorage.getItem('theme') || 'dark';
 document.documentElement.setAttribute('data-theme', savedTheme);
 updateThemeIcon();
 
-// A/B Pricing Test — $19 vs $29 vs $39 (one-time payment links)
-// Session 689: Resumed with proper one-time Stripe links from human (HELP-RESPONSES Issue #17).
-// Variant A = $19 (Budget), Variant B = $29 (Control), Variant C = $39 (Premium)
+// A/B Pricing Test — $19 vs $29 (one-time payment links)
+// Session 722: Simplified from 3 variants to 2 to reduce decision paralysis.
+// Variant A = $19 (Budget), Variant B = $29 (Control)
 (function(){
-    var VARIANTS = {A:{price:19,label:'Budget',futurePrice:39},B:{price:29,label:'Control',futurePrice:49},C:{price:39,label:'Premium',futurePrice:59}};
+    var VARIANTS = {A:{price:19,label:'Budget',futurePrice:39},B:{price:29,label:'Control',futurePrice:49}};
     var STRIPE_LINKS = {
         A: 'https://buy.stripe.com/bJecN55OEa5g1VUbcreEo0i', // $19 one-time
-        B: 'https://buy.stripe.com/fZu7sL3Gw3GS0RQeoDeEo0a', // $29 one-time (confirmed)
-        C: 'https://buy.stripe.com/28EfZhfpeb9kdECdkzeEo0j'  // $39 one-time
+        B: 'https://buy.stripe.com/fZu7sL3Gw3GS0RQeoDeEo0a'  // $29 one-time (confirmed)
     };
     var KEY = 'ab_pricing_variant';
     var variant = localStorage.getItem(KEY);
+    // Migrate $39 variant users to $29 control
+    if (variant === 'C') { variant = 'B'; localStorage.setItem(KEY, variant); }
     if (!variant || !VARIANTS[variant]) {
-        var r = Math.random();
-        variant = r < 0.334 ? 'A' : r < 0.667 ? 'B' : 'C';
+        variant = Math.random() < 0.5 ? 'A' : 'B';
         localStorage.setItem(KEY, variant);
     }
     var v = VARIANTS[variant];
@@ -660,7 +660,8 @@ document.addEventListener('DOMContentLoaded', () => {
     // Footer tools row — migration code generator
     var toolsRow = document.createElement('div');
     toolsRow.style.cssText = 'display:flex;align-items:center;justify-content:center;gap:12px;margin-top:12px;flex-wrap:wrap;';
-    toolsRow.innerHTML = '<a href="migration-code.html" style="display:inline-flex;align-items:center;gap:6px;padding:6px 14px;border-radius:6px;border:1px solid var(--border);background:var(--bg-secondary);color:var(--text-primary);font-size:12px;font-weight:600;text-decoration:none;transition:all 0.2s;" onmouseover="this.style.borderColor=\'var(--accent)\'" onmouseout="this.style.borderColor=\'var(--border)\'"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>Migration Code Generator</a>';
+    toolsRow.innerHTML = '<a href="migration-code.html" style="display:inline-flex;align-items:center;gap:6px;padding:6px 14px;border-radius:6px;border:1px solid var(--border);background:var(--bg-secondary);color:var(--text-primary);font-size:12px;font-weight:600;text-decoration:none;transition:all 0.2s;" onmouseover="this.style.borderColor=\'var(--accent)\'" onmouseout="this.style.borderColor=\'var(--border)\'"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>Migration Code Generator</a>' +
+        '<a href="cost-health-check.html" style="display:inline-flex;align-items:center;gap:6px;padding:6px 14px;border-radius:6px;border:1px solid var(--border);background:var(--bg-secondary);color:var(--text-primary);font-size:12px;font-weight:600;text-decoration:none;transition:all 0.2s;" onmouseover="this.style.borderColor=\'var(--accent)\'" onmouseout="this.style.borderColor=\'var(--border)\'"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>Cost Health Check</a>';
     mapLink.parentNode.insertBefore(toolsRow, mapLink.nextSibling);
 });
 

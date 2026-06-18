@@ -33,6 +33,7 @@
     <script src="shared.js" defer></script>
     <script src="pricing-data.js" defer></script>
     <script src="pro-features.js" defer></script>
+    <script src="usage-gate.js" defer></script>
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -2423,6 +2424,31 @@
                         requests_per_day: requests
                     });
                 }, 1000);
+            }
+
+            // Usage gate: track unique model calculations, show wall at limit
+            if (window.APIpulseGate && totalCost > 0) {
+                var hitLimit = window.APIpulseGate.track(provider);
+                var remaining = window.APIpulseGate.getRemaining();
+                // Show remaining count indicator near the calculator
+                var gateIndicator = document.getElementById('gate-remaining');
+                if (!gateIndicator && remaining < Infinity && remaining > 0) {
+                    gateIndicator = document.createElement('div');
+                    gateIndicator.id = 'gate-remaining';
+                    gateIndicator.style.cssText = 'margin-top:12px;padding:8px 14px;background:rgba(99,102,241,0.06);border:1px solid rgba(99,102,241,0.15);border-radius:8px;font-size:13px;color:var(--text-secondary);text-align:center;';
+                    var resultsEl = document.querySelector('.calc-results');
+                    if (resultsEl) resultsEl.appendChild(gateIndicator);
+                }
+                if (gateIndicator) {
+                    if (remaining <= 0) {
+                        gateIndicator.innerHTML = '<span style="color:var(--accent);font-weight:600;">🔒 Free limit reached</span> — <a href="pricing.html" style="color:var(--accent);text-decoration:underline;">Get unlimited with Pro</a>';
+                    } else if (remaining <= 2) {
+                        gateIndicator.innerHTML = '💡 <strong>' + remaining + '</strong> free calculation' + (remaining === 1 ? '' : 's') + ' left this session — <a href="pricing.html" style="color:var(--accent);text-decoration:underline;">Get unlimited →</a>';
+                    }
+                }
+                if (hitLimit) {
+                    setTimeout(function() { window.APIpulseGate.showWall(); }, 800);
+                }
             }
         }
 
