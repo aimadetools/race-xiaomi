@@ -974,6 +974,13 @@
             document.addEventListener('mouseleave',function(e){
                 if(shown||e.clientY>0)return;
                 shown=true;
+                showPricingExit();
+            });
+            // Mobile fallback: timed popup after 30s
+            if('ontouchstart' in window){
+                setTimeout(function(){ if(!shown){ shown=true; showPricingExit(); } },30000);
+            }
+            function showPricingExit(){
                 var overlay=document.createElement('div');
                 overlay.id='pricing-exit-popup';
                 overlay.style.cssText='position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.7);z-index:10000;display:flex;align-items:center;justify-content:center;';
@@ -986,7 +993,7 @@
                     if(window.trackEvent)window.trackEvent('pro_button_clicked',{source:'exit_popup_pricing',variant:variant,price:price,timing_variant:window._abPopupTimingVariant});
                 });
                 if(window.trackEvent)window.trackEvent('exit_popup_shown',{page:'pricing',variant:variant,timing_variant:window._abPopupTimingVariant});
-            });
+            }
         })();
 
         // Show deprecation urgency banner when Claude 4 deadline is near or passed
