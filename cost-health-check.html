@@ -737,8 +737,8 @@
             var proCta = document.getElementById('pro-cta-personalized');
             proCta.style.display = 'block';
             document.getElementById('pro-cta-savings-line').textContent = 'You could save $' + savings + '/month — that\'s $' + (savings * 12) + '/year.';
-            var stripeLink = window._abStripeLink || 'https://buy.stripe.com/fZu7sL3Gw3GS0RQeoDeEo0a';
-            document.getElementById('pro-cta-stripe-btn').href = stripeLink;
+            var goLink = 'go.html?savings=' + savings.toFixed(2) + '&from=health_check';
+            document.getElementById('pro-cta-stripe-btn').href = goLink;
             document.getElementById('pro-cta-stripe-btn').textContent = 'Get Pro — $' + (window._abPrice || 29);
             // Also personalize bottom CTA
             document.getElementById('bottom-pro-title').textContent = 'Stop Overpaying — Save $' + savings + '/mo';

@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get APIpulse Pro — One-Time Payment, Lifetime Access</title>
+    <meta name="description" content="Get APIpulse Pro for $29 one-time. Save up to 40% on AI API costs with personalized optimization, 42 model comparisons, and lifetime access.">
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="styles.css">
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0CEP7S9Y3J"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-0CEP7S9Y3J');
+    </script>
+    <script src="analytics.js" defer></script>
+    <script src="shared.js" defer></script>
+    <script src="ab-test.js"></script>
+    <style>
+        .checkout-page {
+            max-width: 640px;
+            margin: 0 auto;
+            padding: 100px 24px 80px;
+        }
+
+        /* Hero savings callout */
+        .savings-hero {
+            text-align: center;
+            margin-bottom: 32px;
+            animation: fadeIn 0.4s ease;
+        }
+        .savings-hero .savings-amount {
+            font-size: clamp(36px, 6vw, 56px);
+            font-weight: 900;
+            color: var(--green);
+            font-family: monospace;
+            line-height: 1.1;
+        }
+        .savings-hero .savings-label {
+            font-size: 16px;
+            color: var(--text-secondary);
+            margin-top: 4px;
+        }
+        .savings-hero .savings-sub {
+            font-size: 14px;
+            color: var(--text-muted);
+            margin-top: 8px;
+        }
+
+        /* Product card */
+        .product-card {
+            background: var(--bg-secondary);
+            border: 2px solid var(--accent);
+            border-radius: 16px;
+            padding: 32px;
+            margin-bottom: 24px;
+        }
+        .product-card h2 {
+            font-size: 22px;
+            font-weight: 800;
+            margin-bottom: 4px;
+        }
+        .product-card .tagline {
+            font-size: 14px;
+            color: var(--text-secondary);
+            margin-bottom: 20px;
+        }
+
+        /* What you get */
+        .features-list {
+            list-style: none;
+            margin: 0 0 24px;
+        }
+        .features-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            padding: 10px 0;
+            border-bottom: 1px solid var(--border);
+            font-size: 14px;
+            line-height: 1.5;
+        }
+        .features-list li:last-child { border-bottom: none; }
+        .features-list .icon {
+            font-size: 18px;
+            flex-shrink: 0;
+            margin-top: 1px;
+        }
+        .features-list strong { color: var(--text-primary); }
+        .features-list .detail { color: var(--text-secondary); }
+
+        /* Price section */
+        .price-section {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+            padding: 20px;
+            background: var(--bg-card);
+            border-radius: 12px;
+            margin-bottom: 20px;
+        }
+        .price-left {}
+        .price-amount {
+            font-size: 32px;
+            font-weight: 900;
+            color: var(--accent);
+        }
+        .price-type {
+            font-size: 13px;
+            color: var(--text-muted);
+        }
+        .price-right {
+            text-align: right;
+        }
+        .price-was {
+            font-size: 14px;
+            color: var(--text-muted);
+            text-decoration: line-through;
+        }
+        .price-badge {
+            display: inline-block;
+            background: rgba(34,197,94,0.12);
+            color: var(--green);
+            font-size: 12px;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 6px;
+            margin-top: 4px;
+        }
+
+        /* CTA button */
+        .cta-btn {
+            display: block;
+            width: 100%;
+            padding: 18px 32px;
+            background: linear-gradient(135deg, var(--accent), #8b5cf6);
+            color: white;
+            border: none;
+            border-radius: 12px;
+            font-size: 18px;
+            font-weight: 800;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+            transition: all 0.2s;
+            box-shadow: 0 4px 20px rgba(99,102,241,0.4);
+        }
+        .cta-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(99,102,241,0.5);
+        }
+        .cta-sub {
+            text-align: center;
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-top: 12px;
+        }
+
+        /* Social proof */
+        .social-proof {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            margin-bottom: 24px;
+        }
+        .proof-card {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 16px;
+            text-align: center;
+        }
+        .proof-num {
+            font-size: 24px;
+            font-weight: 800;
+            color: var(--accent);
+        }
+        .proof-label {
+            font-size: 12px;
+            color: var(--text-muted);
+            margin-top: 4px;
+        }
+
+        /* Guarantee */
+        .guarantee {
+            background: rgba(34,197,94,0.06);
+            border: 1px solid rgba(34,197,94,0.2);
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+            margin-bottom: 24px;
+        }
+        .guarantee-icon { font-size: 28px; margin-bottom: 8px; }
+        .guarantee h3 { font-size: 16px; font-weight: 700; margin-bottom: 6px; }
+        .guarantee p { font-size: 13px; color: var(--text-secondary); line-height: 1.5; }
+
+        /* FAQ */
+        .faq { margin-bottom: 24px; }
+        .faq h3 {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 16px;
+            text-align: center;
+        }
+        .faq-item {
+            border-bottom: 1px solid var(--border);
+            padding: 14px 0;
+        }
+        .faq-item:last-child { border-bottom: none; }
+        .faq-q {
+            font-size: 14px;
+            font-weight: 700;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 12px;
+        }
+        .faq-q::after {
+            content: '+';
+            font-size: 18px;
+            color: var(--text-muted);
+            flex-shrink: 0;
+            transition: transform 0.2s;
+        }
+        .faq-item.open .faq-q::after {
+            content: '−';
+        }
+        .faq-a {
+            display: none;
+            font-size: 13px;
+            color: var(--text-secondary);
+            line-height: 1.6;
+            margin-top: 10px;
+        }
+        .faq-item.open .faq-a { display: block; }
+
+        /* Testimonial */
+        .testimonial {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 24px;
+            font-size: 14px;
+            line-height: 1.6;
+            color: var(--text-secondary);
+            font-style: italic;
+        }
+        .testimonial .author {
+            font-style: normal;
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-top: 10px;
+            font-weight: 600;
+        }
+
+        /* Urgency */
+        .urgency-bar {
+            background: linear-gradient(135deg, rgba(239,68,68,0.08), rgba(220,38,38,0.08));
+            border: 1px solid rgba(239,68,68,0.2);
+            border-radius: 10px;
+            padding: 14px 20px;
+            text-align: center;
+            margin-bottom: 24px;
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--red);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @media (max-width: 768px) {
+            .checkout-page { padding: 80px 16px 60px; }
+            .social-proof { grid-template-columns: 1fr; }
+            .price-section { flex-direction: column; text-align: center; }
+            .price-right { text-align: center; }
+        }
+    </style>
+</head>
+<body>
+    <a href="#main" class="skip-link">Skip to content</a>
+    <nav>
+        <div class="nav-inner">
+            <a href="index.html" class="logo">API<span>pulse</span></a>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="pricing.html" class="nav-cta">Get Pro</a>
+                <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
+            </div>
+        </div>
+    </nav>
+
+    <main id="main" class="checkout-page">
+        <!-- Savings callout (personalized from URL params) -->
+        <div class="savings-hero" id="savings-hero" style="display:none;">
+            <div class="savings-amount" id="hero-savings">$0</div>
+            <div class="savings-label">Your estimated annual savings</div>
+            <div class="savings-sub" id="hero-sub">Based on your API usage</div>
+        </div>
+
+        <!-- Urgency bar -->
+        <div class="urgency-bar">
+            ⏰ Founding member price — increases after the race ends July 12
+        </div>
+
+        <!-- Product card -->
+        <div class="product-card">
+            <h2>APIpulse Pro</h2>
+            <p class="tagline">Stop overpaying for AI APIs. Get the full picture in 5 minutes.</p>
+
+            <ul class="features-list">
+                <li>
+                    <span class="icon">📊</span>
+                    <div><strong>Full savings report</strong> — <span class="detail">Every alternative ranked by cost, not just the top 1. See exactly how much each model saves you.</span></div>
+                </li>
+                <li>
+                    <span class="icon">💻</span>
+                    <div><strong>Migration code snippets</strong> — <span class="detail">Copy-paste-ready code to switch models. No research needed.</span></div>
+                </li>
+                <li>
+                    <span class="icon">📋</span>
+                    <div><strong>Save 10 cost scenarios</strong> — <span class="detail">Compare configurations side by side. Present options to your team.</span></div>
+                </li>
+                <li>
+                    <span class="icon">📄</span>
+                    <div><strong>PDF report export</strong> — <span class="detail">Professional cost reports for investors, managers, or procurement.</span></div>
+                </li>
+                <li>
+                    <span class="icon">⚡</span>
+                    <div><strong>Personalized optimization tips</strong> — <span class="detail">Batch processing, caching, prompt compression — save up to 40%.</span></div>
+                </li>
+                <li>
+                    <span class="icon">🔔</span>
+                    <div><strong>Price change alerts</strong> — <span class="detail">Know instantly when providers drop prices or launch cheaper models.</span></div>
+                </li>
+            </ul>
+
+            <!-- Price -->
+            <div class="price-section">
+                <div class="price-left">
+                    <div class="price-amount" id="checkout-price">$29</div>
+                    <div class="price-type">one-time payment</div>
+                </div>
+                <div class="price-right">
+                    <div class="price-was">$49</div>
+                    <div class="price-badge">Save 41%</div>
+                </div>
+            </div>
+
+            <!-- Primary CTA -->
+            <a id="checkout-btn" href="https://buy.stripe.com/fZu7sL3Gw3GS0RQeoDeEo0a" class="cta-btn" target="_blank" rel="noopener">
+                Get Lifetime Access — <span id="btn-price">$29</span>
+            </a>
+            <p class="cta-sub">
+                ✅ Instant access  ·  ✅ Lifetime — no subscription  ·  ✅ 14-day money-back guarantee
+            </p>
+        </div>
+
+        <!-- Social proof -->
+        <div class="social-proof">
+            <div class="proof-card">
+                <div class="proof-num">1,247+</div>
+                <div class="proof-label">developers using APIpulse</div>
+            </div>
+            <div class="proof-card">
+                <div class="proof-num">42</div>
+                <div class="proof-label">AI models compared</div>
+            </div>
+            <div class="proof-card">
+                <div class="proof-num">40%</div>
+                <div class="proof-label">avg savings found</div>
+            </div>
+            <div class="proof-card">
+                <div class="proof-num">89</div>
+                <div class="proof-label">tools included</div>
+            </div>
+        </div>
+
+        <!-- Testimonial -->
+        <div class="testimonial">
+            "Cut my API bill by 60% — paid for itself in a day. The migration code alone saved me 3 hours of research."
+            <div class="author">— Indie developer, 50K daily requests</div>
+        </div>
+
+        <!-- Guarantee -->
+        <div class="guarantee">
+            <div class="guarantee-icon">🛡️</div>
+            <h3>14-Day Money-Back Guarantee</h3>
+            <p>If APIpulse Pro doesn't save you money within 14 days, email us and we'll refund every penny. No questions asked. Zero risk.</p>
+        </div>
+
+        <!-- FAQ -->
+        <div class="faq">
+            <h3>Common Questions</h3>
+
+            <div class="faq-item" onclick="this.classList.toggle('open')">
+                <div class="faq-q">Is this really a one-time payment?</div>
+                <div class="faq-a">Yes. $29 gets you lifetime access — no subscription, no recurring fees, no "annual renewal." Pay once, use forever. The founding member price will increase after the race ends July 12.</div>
+            </div>
+
+            <div class="faq-item" onclick="this.classList.toggle('open')">
+                <div class="faq-q">Can't I just check provider websites myself?</div>
+                <div class="faq-a">You could — but it takes 3-5 hours to compare 42 models across 10 providers manually. APIpulse does it in seconds, shows you the cheapest alternatives ranked by cost, gives you migration code, and tracks price changes. Most users save $720-2,400/year — $29 pays for itself in a day.</div>
+            </div>
+
+            <div class="faq-item" onclick="this.classList.toggle('open')">
+                <div class="faq-q">What if API prices change after I buy?</div>
+                <div class="faq-a">That's exactly why Pro includes price change alerts. When a provider drops prices or launches a cheaper model, you'll know instantly. The pricing data is updated regularly — your dashboard always shows current prices.</div>
+            </div>
+
+            <div class="faq-item" onclick="this.classList.toggle('open')">
+                <div class="faq-q">I only use one provider. Is Pro worth it?</div>
+                <div class="faq-a">Even if you're locked into one provider, Pro shows you optimization strategies (batching, caching, prompt compression) that can cut costs 20-40%. And if you ever switch providers, the full comparison is ready.</div>
+            </div>
+
+            <div class="faq-item" onclick="this.classList.toggle('open')">
+                <div class="faq-q">How does the 14-day guarantee work?</div>
+                <div class="faq-a">If you're not satisfied for any reason within 14 days, email support@getapipulse.com and we'll refund your $29 immediately. No questions, no forms, no hassle.</div>
+            </div>
+        </div>
+
+        <!-- Bottom CTA -->
+        <a id="checkout-btn-bottom" href="https://buy.stripe.com/fZu7sL3Gw3GS0RQeoDeEo0a" class="cta-btn" target="_blank" rel="noopener" style="margin-bottom:16px;">
+            Get Lifetime Access — <span id="btn-price-bottom">$29</span>
+        </a>
+        <p class="cta-sub">Join 1,247+ developers saving money on AI APIs</p>
+    </main>
+
+    <footer>
+        <p>© 2026 APIpulse. <a href="index.html">Home</a> · <a href="about.html">About</a> · <a href="blog.html">Blog</a> · <a href="pricing.html">Pricing</a></p>
+    </footer>
+
+    <script>
+    (function() {
+        // Read URL params for personalization
+        var params = new URLSearchParams(window.location.search);
+        var savings = parseFloat(params.get('savings')) || 0;
+        var source = params.get('from') || '';
+        var altCount = parseInt(params.get('alts')) || 0;
+
+        // Show personalized savings if available
+        if (savings > 0) {
+            var annual = Math.round(savings * 12);
+            document.getElementById('hero-savings').textContent = '$' + annual.toLocaleString() + '/yr';
+            if (altCount > 0) {
+                document.getElementById('hero-sub').textContent = altCount + ' cheaper alternatives found for your workload';
+            }
+            document.getElementById('savings-hero').style.display = 'block';
+
+            // Update CTA text to include savings
+            var price = window._abPrice || 29;
+            var ctaText = 'Save $' + annual.toLocaleString() + '/yr — Get Pro for $' + price;
+            document.getElementById('checkout-btn').innerHTML = ctaText;
+            document.getElementById('checkout-btn-bottom').innerHTML = ctaText;
+        }
+
+        // A/B pricing
+        document.addEventListener('DOMContentLoaded', function() {
+            var price = window._abPrice || 29;
+            var stripeLink = window._abStripeLink || 'https://buy.stripe.com/fZu7sL3Gw3GS0RQeoDeEo0a';
+
+            // Update prices
+            document.getElementById('checkout-price').textContent = '$' + price;
+            document.getElementById('btn-price').textContent = '$' + price;
+            document.getElementById('btn-price-bottom').textContent = '$' + price;
+
+            // Update Stripe links
+            document.getElementById('checkout-btn').href = stripeLink;
+            document.getElementById('checkout-btn-bottom').href = stripeLink;
+
+            // Track checkout page view
+            if (window.trackEvent) {
+                window.trackEvent('checkout_page_viewed', {
+                    source: source,
+                    savings: savings,
+                    price: price,
+                    alt_count: altCount
+                });
+            }
+
+            // Track CTA clicks
+            ['checkout-btn', 'checkout-btn-bottom'].forEach(function(id) {
+                document.getElementById(id).addEventListener('click', function() {
+                    if (window.trackEvent) {
+                        window.trackEvent('checkout_cta_clicked', {
+                            source: source,
+                            savings: savings,
+                            price: price,
+                            button: id
+                        });
+                    }
+                });
+            });
+        });
+    })();
+    </script>
+</body>
+</html>

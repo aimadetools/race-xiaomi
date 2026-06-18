@@ -557,7 +557,7 @@
                 '<span class="feature">Batch & caching strategies</span>' +
                 '<span class="feature">PDF report for your team</span>' +
                 '</div>' +
-                '<a href="https://buy.stripe.com/fZu7sL3Gw3GS0RQeoDeEo0a" class="btn-primary" target="_blank" rel="noopener" onclick="if(window.trackEvent)window.trackEvent(\'pro_button_clicked\',{source:\'savings_calc_gate\',savings:\'+' + monthlySavings.toFixed(2) + '\'})">Get Pro — $' + (window._abPrice || 29) + ' · Save $' + proAnnual + '/yr →</a> ' +
+                '<a href="go.html?savings=' + monthlySavings.toFixed(2) + '&from=savings_calc&alts=' + alternatives.length + '" class="btn-primary" onclick="if(window.trackEvent)window.trackEvent(\'pro_button_clicked\',{source:\'savings_calc_gate\',savings:\'+' + monthlySavings.toFixed(2) + '\'})">Get Pro — $' + (window._abPrice || 29) + ' · Save $' + proAnnual + '/yr →</a> ' +
                 '<button onclick="startTrial()" style="display:inline-block;padding:12px 20px;font-size:13px;font-weight:600;border:2px solid var(--accent);background:transparent;color:var(--accent);border-radius:10px;cursor:pointer;margin-top:8px;">Try Free for 24h →</button>' +
                 '<p style="font-size:12px;color:var(--text-muted);margin-top:12px;">✅ ' + paybackText.charAt(0).toUpperCase() + paybackText.slice(1) + ' · 14-day money-back guarantee</p>' +
                 '</div>';
