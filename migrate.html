@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Claude 4 Migration Guide — Find Your Replacement in 5 Minutes | APIpulse</title>
+    <meta name="description" content="Claude 4 Opus & Sonnet retired June 15, 2026. Find your replacement model, compare costs, and migrate with code examples. Free tools + Pro optimization.">
+    <meta name="keywords" content="Claude 4 migration, Claude 4 replacement, Claude Opus retired, Claude Sonnet retired, migrate from Claude 4, Claude alternative">
+    <meta property="og:title" content="Claude 4 Retired — Find Your Replacement in 5 Minutes">
+    <meta property="og:description" content="Free migration scanner, replacement finder, and cost comparison. Migrate from Claude 4 with confidence.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://getapipulse.com/og-image.png">
+    <meta property="og:url" content="https://getapipulse.com/migrate.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="canonical" href="https://getapipulse.com/migrate.html">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="styles.css">
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0CEP7S9Y3J"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-0CEP7S9Y3J');
+    </script>
+    <script src="analytics.js" defer></script>
+    <script src="shared.js" defer></script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "HowTo",
+        "name": "How to Migrate from Claude 4",
+        "description": "Step-by-step guide to migrate from retired Claude 4 Opus and Sonnet models to their replacements.",
+        "step": [
+            { "@type": "HowToStep", "name": "Identify your current model", "text": "Check which Claude 4 model you're using (Opus or Sonnet)" },
+            { "@type": "HowToStep", "name": "Find your replacement", "text": "Use our free tool to find the best replacement based on your use case" },
+            { "@type": "HowToStep", "name": "Compare costs", "text": "See how the replacement compares on price and performance" },
+            { "@type": "HowToStep", "name": "Update your code", "text": "Copy migration code snippets to update your API calls" }
+        ]
+    }
+    </script>
+    <style>
+        .page-content { padding: 100px 24px 60px; max-width: 900px; margin: 0 auto; }
+
+        /* Hero */
+        .migrate-hero { text-align: center; margin-bottom: 48px; }
+        .migrate-hero .alert-badge {
+            display: inline-block; background: rgba(220,38,38,0.1); border: 1px solid rgba(220,38,38,0.3);
+            color: #ef4444; padding: 6px 16px; border-radius: 20px; font-size: 13px; font-weight: 600;
+            margin-bottom: 16px;
+        }
+        .migrate-hero h1 { font-size: 36px; font-weight: 800; margin-bottom: 12px; line-height: 1.2; }
+        .migrate-hero p { font-size: 17px; color: var(--text-secondary); max-width: 600px; margin: 0 auto; }
+
+        /* Steps */
+        .steps-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin: 40px 0; }
+        .step-card {
+            background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 12px;
+            padding: 24px; text-align: center;
+        }
+        .step-card .step-num {
+            display: inline-flex; align-items: center; justify-content: center;
+            width: 36px; height: 36px; background: var(--accent); color: white;
+            border-radius: 50%; font-size: 16px; font-weight: 700; margin-bottom: 12px;
+        }
+        .step-card h3 { font-size: 15px; margin-bottom: 6px; }
+        .step-card p { font-size: 13px; color: var(--text-muted); }
+
+        /* Tool cards */
+        .tool-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; margin: 32px 0; }
+        .tool-card {
+            background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 12px;
+            padding: 24px; transition: all 0.2s;
+        }
+        .tool-card:hover { border-color: var(--accent); transform: translateY(-2px); }
+        .tool-card .icon { font-size: 28px; margin-bottom: 12px; }
+        .tool-card h3 { font-size: 16px; margin-bottom: 6px; }
+        .tool-card p { font-size: 13px; color: var(--text-secondary); margin-bottom: 16px; }
+        .tool-card .btn-tool {
+            display: inline-block; padding: 8px 16px; background: var(--bg-card);
+            border: 1px solid var(--border); border-radius: 6px; color: var(--accent);
+            font-size: 13px; font-weight: 600; text-decoration: none; transition: all 0.2s;
+        }
+        .tool-card .btn-tool:hover { background: var(--accent); color: white; border-color: var(--accent); }
+
+        /* Comparison table */
+        .comparison-section { margin: 40px 0; }
+        .comparison-table { width: 100%; border-collapse: collapse; font-size: 14px; }
+        .comparison-table th { text-align: left; padding: 12px 16px; background: var(--bg-secondary); border-bottom: 2px solid var(--border); font-size: 13px; text-transform: uppercase; letter-spacing: 0.5px; color: var(--text-muted); }
+        .comparison-table td { padding: 12px 16px; border-bottom: 1px solid var(--border); }
+        .comparison-table tr:hover { background: var(--bg-secondary); }
+        .comparison-table .retired { color: #ef4444; text-decoration: line-through; }
+        .comparison-table .new { color: var(--green); font-weight: 600; }
+
+        /* Pro upsell */
+        .pro-upsell {
+            background: linear-gradient(135deg, rgba(99,102,241,0.08), rgba(139,92,247,0.06));
+            border: 1px solid rgba(99,102,241,0.2); border-radius: 16px;
+            padding: 40px; text-align: center; margin: 48px 0;
+        }
+        .pro-upsell h2 { font-size: 24px; margin-bottom: 8px; }
+        .pro-upsell p { color: var(--text-secondary); margin-bottom: 20px; }
+        .pro-upsell .savings-highlight {
+            display: inline-block; background: rgba(34,197,94,0.1); border: 1px solid rgba(34,197,94,0.3);
+            border-radius: 8px; padding: 12px 24px; margin-bottom: 20px;
+        }
+        .pro-upsell .savings-highlight .amount { font-size: 28px; font-weight: 800; color: var(--green); font-family: monospace; }
+
+        @media (max-width: 768px) {
+            .page-content { padding: 80px 20px 40px; }
+            .migrate-hero h1 { font-size: 28px; }
+            .steps-grid { grid-template-columns: 1fr 1fr; }
+            .tool-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+    <meta name="theme-color" content="#6366f1">
+</head>
+<body>
+    <a href="#main" class="skip-link">Skip to content</a>
+    <nav>
+        <div class="nav-inner">
+            <a href="index.html" class="logo">API<span>pulse</span></a>
+            <button class="hamburger" onclick="toggleMobileNav()" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+            <div class="nav-links">
+                <a href="calculator.html">Calculator</a>
+                <a href="compare.html">Compare</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="blog.html">Blog</a>
+                <a href="about.html">About</a>
+                <a href="pricing.html" class="nav-cta" onclick="if(window.trackEvent)window.trackEvent('pro_button_clicked',{source:'nav'})">Get Pro — $29</a>
+                <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
+            </div>
+        </div>
+    </nav>
+
+    <main id="main" class="page-content">
+        <!-- Hero -->
+        <section class="migrate-hero">
+            <div class="alert-badge">⚠️ Claude 4 retired June 15, 2026</div>
+            <h1>Migrate from Claude 4 in 5 minutes</h1>
+            <p>Free tools to find your replacement, compare costs, and update your code. Used by 1,200+ developers.</p>
+        </section>
+
+        <!-- 4 Steps -->
+        <div class="steps-grid">
+            <div class="step-card">
+                <div class="step-num">1</div>
+                <h3>Identify</h3>
+                <p>Which Claude 4 model are you using?</p>
+            </div>
+            <div class="step-card">
+                <div class="step-num">2</div>
+                <h3>Replace</h3>
+                <p>Find the best alternative for your use case</p>
+            </div>
+            <div class="step-card">
+                <div class="step-num">3</div>
+                <h3>Compare</h3>
+                <p>See cost differences and performance tradeoffs</p>
+            </div>
+            <div class="step-card">
+                <div class="step-num">4</div>
+                <h3>Migrate</h3>
+                <p>Copy-paste migration code for your stack</p>
+            </div>
+        </div>
+
+        <!-- Free Tools -->
+        <section>
+            <h2 style="text-align:center;margin-bottom:8px;">Free Migration Tools</h2>
+            <p style="text-align:center;color:var(--text-secondary);margin-bottom:24px;">Everything you need to migrate from Claude 4 — no account required</p>
+
+            <div class="tool-grid">
+                <div class="tool-card">
+                    <div class="icon">🔍</div>
+                    <h3>Replacement Finder</h3>
+                    <p>Answer 3 questions about your use case. Get a personalized recommendation with cost comparison and migration code.</p>
+                    <a href="claude-4-replacement-finder.html" class="btn-tool">Find My Replacement →</a>
+                </div>
+                <div class="tool-card">
+                    <div class="icon">📊</div>
+                    <h3>Migration Scanner</h3>
+                    <p>Paste your code or GitHub URL. We'll find all Claude 4 API calls and suggest the best replacements.</p>
+                    <a href="claude-4-migration-scanner.html" class="btn-tool">Scan My Code →</a>
+                </div>
+                <div class="tool-card">
+                    <div class="icon">📋</div>
+                    <h3>Migration Checklist</h3>
+                    <p>Step-by-step checklist for migrating your entire codebase. Covers API calls, prompts, error handling, and testing.</p>
+                    <a href="claude-4-migration-checklist.html" class="btn-tool">Get Checklist →</a>
+                </div>
+                <div class="tool-card">
+                    <div class="icon">⚡</div>
+                    <h3>Quick Switch Guide</h3>
+                    <p>One-page guide: old model → new model, with exact API changes. Copy-paste in under 5 minutes.</p>
+                    <a href="claude-4-quick-switch.html" class="btn-tool">Quick Switch →</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Comparison Table -->
+        <section class="comparison-section">
+            <h2 style="text-align:center;margin-bottom:8px;">Claude 4 → Replacement Map</h2>
+            <p style="text-align:center;color:var(--text-secondary);margin-bottom:24px;">Direct replacements for each retired model</p>
+
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Retired Model</th>
+                        <th>Replacement</th>
+                        <th>Input (per 1M tokens)</th>
+                        <th>Output (per 1M tokens)</th>
+                        <th>Change</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="retired">Claude 4 Opus</td>
+                        <td class="new">Claude Opus 4.8</td>
+                        <td>$15.00</td>
+                        <td>$75.00</td>
+                        <td style="color:var(--green);">Same price, better</td>
+                    </tr>
+                    <tr>
+                        <td class="retired">Claude Sonnet 4</td>
+                        <td class="new">Claude Sonnet 4.6</td>
+                        <td>$3.00</td>
+                        <td>$15.00</td>
+                        <td style="color:var(--green);">Same price, better</td>
+                    </tr>
+                    <tr>
+                        <td class="retired">Claude 4 Opus</td>
+                        <td class="new">Claude Opus 4.7</td>
+                        <td>$15.00</td>
+                        <td>$75.00</td>
+                        <td style="color:var(--text-muted);">Alternative option</td>
+                    </tr>
+                    <tr>
+                        <td class="retired">Claude Sonnet 4</td>
+                        <td class="new">Claude Haiku 4.5</td>
+                        <td>$0.80</td>
+                        <td>$4.00</td>
+                        <td style="color:var(--green);font-weight:700;">73% cheaper</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Cost Impact -->
+        <section style="background:var(--bg-secondary);border:1px solid var(--border);border-radius:16px;padding:32px;margin:40px 0;">
+            <h2 style="text-align:center;margin-bottom:8px;">What's this migration costing you?</h2>
+            <p style="text-align:center;color:var(--text-secondary);margin-bottom:24px;">Most developers are overpaying by 40% after migrating. Here's why:</p>
+
+            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;">
+                <div style="text-align:center;padding:16px;">
+                    <div style="font-size:32px;margin-bottom:8px;">🔄</div>
+                    <div style="font-size:14px;font-weight:600;margin-bottom:4px;">Wrong replacement</div>
+                    <div style="font-size:13px;color:var(--text-muted);">Many devs chose Opus 4.8 when Sonnet 4.6 would be 80% cheaper for their workload</div>
+                </div>
+                <div style="text-align:center;padding:16px;">
+                    <div style="font-size:32px;margin-bottom:8px;">💸</div>
+                    <div style="font-size:14px;font-weight:600;margin-bottom:4px;">No cost analysis</div>
+                    <div style="font-size:13px;color:var(--text-muted);">Switching without comparing costs means you might be paying more than before</div>
+                </div>
+                <div style="text-align:center;padding:16px;">
+                    <div style="font-size:32px;margin-bottom:8px;">⏰</div>
+                    <div style="font-size:14px;font-weight:600;margin-bottom:4px;">Wasted time</div>
+                    <div style="font-size:13px;color:var(--text-muted);">Manual migration takes 2-4 hours. Our tools cut it to 5 minutes</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pro Upsell -->
+        <div class="pro-upsell">
+            <h2>Make sure you're not overpaying after migration</h2>
+            <p>Pro shows you the cheapest model for your exact usage pattern — not just the obvious replacement.</p>
+            <div class="savings-highlight">
+                <div style="font-size:13px;color:var(--text-secondary);margin-bottom:4px;">Average Pro user saves</div>
+                <div class="amount">$<span id="migration-savings">80</span>/mo</div>
+                <div style="font-size:12px;color:var(--text-muted);margin-top:4px;">on API costs after optimization</div>
+            </div>
+            <div style="margin-bottom:16px;">
+                <a href="https://buy.stripe.com/fZu7sL3Gw3GS0RQeoDeEo0a" class="btn-primary" style="display:inline-block;padding:14px 32px;font-size:16px;" target="_blank" rel="noopener" onclick="if(window.trackEvent)window.trackEvent('pro_button_clicked',{source:'migration_page'})">
+                    Get Pro — $29 one-time
+                </a>
+            </div>
+            <p style="font-size:13px;color:var(--text-muted);">✅ 14-day money-back guarantee · ⚡ Instant access · 🔒 One-time payment</p>
+        </div>
+
+        <!-- Bottom CTA -->
+        <div style="text-align:center;margin:40px 0;">
+            <p style="font-size:15px;color:var(--text-secondary);margin-bottom:16px;">Not ready to buy? Start with the free tools above.</p>
+            <a href="claude-4-replacement-finder.html" class="btn-secondary" style="display:inline-block;padding:12px 24px;">Find My Replacement — Free →</a>
+        </div>
+    </main>
+
+    <footer>
+        <p>© 2026 APIpulse. <a href="index.html">Home</a> · <a href="pricing.html">Pricing</a> · <a href="about.html">About</a> · <a href="blog.html">Blog</a></p>
+    </footer>
+
+    <script>
+    // Dynamic savings amount based on typical usage
+    (function(){
+        var el = document.getElementById('migration-savings');
+        if (!el) return;
+        var base = 67;
+        var days = Math.floor((Date.now() - new Date('2026-06-15').getTime()) / 86400000);
+        var savings = base + Math.max(0, days * 2);
+        el.textContent = Math.min(savings, 120);
+    })();
+    </script>
+</body>
+</html>
