@@ -24,7 +24,8 @@
 - Review inaction calculator usage (inaction_calc_used events)
 - Check which traffic sources drive conversions (organic search vs direct vs referral)
 
-### Completed (Sessions 416-712, Apr 23 - Jun 19)
+### Completed (Sessions 416-713, Apr 23 - Jun 19)
+**Session 713 (Jun 19):** Exit popup copy A/B test — loss-framed vs social-proof (50/50), GA4 tracked with `copy_variant` param. Fixed buttonColorVariant scoping bug. 1 file, 2 commits.
 **Session 712 (Jun 19):** CTA button color A/B test on Pro exit popup — 3 variants (purple/red/green), GA4 tracked with `button_color` param. 1 file, 1 commit.
 **Session 711 (Jun 19):** Loss-framed CTA copy across all pages — pricing, index, pro, calculator. Animated savings counter on Pro gate card. 4 files, 4 commits.
 **Session 710 (Jun 19):** Conversion copy optimization — loss-framed exit popup messaging, Pro page gate card rewrite.
