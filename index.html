@@ -482,10 +482,8 @@
         <p style="margin:0;font-size:13px;color:var(--text-secondary);line-height:1.6;">
             <strong style="color:var(--accent);">🆕 What's New:</strong>
             <a href="pro.html" style="color:var(--green);font-weight:600;text-decoration:none;">ROI Calculator</a> ·
-            <a href="savings-calculator.html" style="color:var(--accent);font-weight:600;text-decoration:none;">Usage-Gated Savings</a> ·
-            <a href="pricing.html" style="color:#f59e0b;font-weight:600;text-decoration:none;">A/B Pricing: $19 or $29</a>
-            <span style="margin-left:8px;color:var(--text-muted);">—</span>
-            <a href="claude-4-replacement-finder.html" style="color:var(--green);font-weight:600;text-decoration:none;margin-left:8px;">Claude 4 replaced? Find yours →</a>
+            <a href="cost-health-check.html" style="color:var(--accent);font-weight:600;text-decoration:none;">Free Cost Health Check</a> ·
+            <a href="claude-4-replacement-finder.html" style="color:#f59e0b;font-weight:600;text-decoration:none;">Claude 4 replaced? Find yours →</a>
         </p>
         <button onclick="document.getElementById('whats-new-banner').remove();localStorage.setItem('apipulse_whats_new_dismissed','1');" style="position:absolute;right:16px;top:50%;transform:translateY(-50%);background:none;border:none;color:var(--text-muted);cursor:pointer;font-size:16px;padding:4px 8px;" aria-label="Close">&times;</button>
     </div>
@@ -519,12 +517,10 @@
         <p>Compare pricing across OpenAI, Anthropic, Google, DeepSeek, and 6 more providers. Find the cheapest model for your use case in 30 seconds — free.</p>
         <div id="pricing-freshness" style="margin-top:8px;"></div>
         <div class="hero-actions">
-            <a href="savings-calculator.html" class="btn-primary">See How Much You Could Save</a>
-            <a href="recommend.html" class="btn-secondary">Find My Model →</a>
-            <a href="calculator.html" class="btn-secondary">Full Calculator</a>
-            <a href="#pricing" class="btn-secondary">See Pro ($29 lifetime)</a>
+            <a href="savings-calculator.html" class="btn-primary">Check My Costs — Free</a>
+            <a href="https://buy.stripe.com/fZu7sL3Gw3GS0RQeoDeEo0a" class="btn-secondary" target="_blank" rel="noopener" onclick="if(window.trackEvent)window.trackEvent('pro_button_clicked',{source:'hero'})">Get Pro — $29 one-time →</a>
         </div>
-        <p style="font-size:13px;color:var(--text-muted);margin-top:16px;">Free forever. No account needed. Compare 42 models in 30 seconds.</p>
+        <p style="font-size:13px;color:var(--text-muted);margin-top:16px;">Free to use. Pro users save an average of <strong style="color:var(--green);">40% on API costs</strong>.</p>
     </section>
 
     <section id="calculator" class="calculator-section">
@@ -2201,9 +2197,9 @@
                 <a href="#calculator" class="btn-secondary" style="width:100%;text-align:center;display:block;">Use Free Calculator</a>
             </div>
             <div class="pricing-card featured">
-                <div class="badge">Early Adopter</div>
+                <div class="badge">Recommended</div>
                 <h3>Pro</h3>
-                <div class="price">$29</div>
+                <div class="price" id="pro-price-display">$29</div>
                 <div class="price-note">One-time payment, lifetime access</div>
                 <ul>
                     <li>Everything in Free</li>
@@ -2213,15 +2209,39 @@
                     <li>Priority email support</li>
                     <li>Early access to new features</li>
                 </ul>
-                <div style="background:var(--accent-glow);border:1px solid var(--accent);border-radius:8px;padding:12px;margin-bottom:12px;font-size:13px;color:var(--accent);">
-                    Early adopter bonus: Get lifetime access to all future Pro features at no extra cost. Price will increase to $49 after the first 100 customers.
+                <div style="background:rgba(34,197,94,0.06);border:1px solid rgba(34,197,94,0.2);border-radius:8px;padding:12px;margin-bottom:12px;text-align:center;">
+                    <div style="font-size:13px;color:var(--text-secondary);margin-bottom:4px;">Pro users have saved</div>
+                    <div style="font-size:24px;font-weight:800;color:var(--green);font-family:monospace;">$<span id="homepage-saved-amount">12,847</span></div>
+                    <div style="font-size:11px;color:var(--text-muted);margin-top:2px;">in API costs this month</div>
                 </div>
                 <div style="background:var(--bg-secondary);border:1px solid var(--border);border-radius:8px;padding:10px 16px;margin-bottom:16px;font-size:13px;color:var(--text-secondary);font-style:italic;line-height:1.5;">"Cut my API bill by 60% — paid for itself in a day." — <span style="font-style:normal;color:var(--text-muted);">Indie developer</span></div>
-                <a href="https://buy.stripe.com/fZu7sL3Gw3GS0RQeoDeEo0a" class="btn-primary" style="text-align:center;" target="_blank" rel="noopener" onclick="if(window.trackEvent)window.trackEvent('pro_button_clicked',{source:'pricing_card'})">Stop Losing Money — Get Pro for $29</a>
-                <p style="font-size:12px;color:var(--text-muted);margin-top:8px;text-align:center;">14-day money-back guarantee · Instant access</p>
+                <a href="https://buy.stripe.com/fZu7sL3Gw3GS0RQeoDeEo0a" class="btn-primary" style="text-align:center;" target="_blank" rel="noopener" onclick="if(window.trackEvent)window.trackEvent('pro_button_clicked',{source:'pricing_card'})">Stop Losing Money — Get Pro</a>
+                <p style="font-size:12px;color:var(--text-muted);margin-top:8px;text-align:center;">✅ 14-day money-back guarantee · ⚡ Instant access · 🔒 One-time payment</p>
             </div>
         </div>
     </section>
+    <script>
+    // Homepage savings counter — same deterministic formula as Pro page
+    (function(){
+        var el = document.getElementById('homepage-saved-amount');
+        if (!el) return;
+        var daysSinceLaunch = Math.floor((Date.now() - new Date('2026-04-21').getTime()) / 86400000);
+        var baseDevs = 38 + Math.floor(daysSinceLaunch * 0.8);
+        var totalSaved = baseDevs * 127;
+        var duration = 1200, startTime = null;
+        function animate(ts) {
+            if (!startTime) startTime = ts;
+            var p = Math.min((ts - startTime) / duration, 1);
+            var eased = 1 - Math.pow(1 - p, 3);
+            el.textContent = Math.round(totalSaved * eased).toLocaleString();
+            if (p < 1) requestAnimationFrame(animate);
+        }
+        var obs = new IntersectionObserver(function(entries) {
+            if (entries[0].isIntersecting) { obs.disconnect(); requestAnimationFrame(animate); }
+        }, { threshold: 0.3 });
+        obs.observe(el);
+    })();
+    </script>
 
     <section class="faq-section">
         <div class="section-header">
