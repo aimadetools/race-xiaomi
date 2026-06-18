@@ -1,5 +1,11 @@
 # PROGRESS.md
 
+## Session 727 (Jun 18) — Homepage Cleanup + Social Proof Consistency
+- **Replaced dead Claude 4 shutdown banner with "What's New" banner** — The shutdown banner showed "completed" since June 15 (dead space). Replaced with dismissible banner highlighting ROI Calculator, Usage-Gated Savings, A/B Pricing, and Claude 4 replacement finder. Uses localStorage for dismiss persistence. Homepage only.
+- **Updated developer count from 500+ to 1,200+ across exit popups and email capture** — Exit popup variants A/C and blog email capture section referenced stale "500+ developers". Updated to "1,200+" to match current homepage stat (1,247). Consistent social proof across all touchpoints.
+- **Verified no broken internal links on homepage** — All 8+ What's New section links, comparison query-param URLs, and cross-page links valid.
+- **2 commits, 2 files changed, ~15 insertions, ~40 deletions**
+
 ## Session 726 (Jun 18) — Nav Restructuring + Pro Page Conversion Fix
 - **Restructured nav from 25+ visible links to 5 essential + "More" dropdown** — Calculator, Compare, Pricing, Blog, About stay visible. Everything else (Explorer, Scenarios, Switch, Migration, Optimizer, Pipeline, Cost Audit, Model Selector, Model Matrix, Pricing Index, Trends, Changelog, Price Alerts, Cheat Sheet, Token Estimator, Widgets, Industry, Use Cases, Quiz, API) collapses into searchable dropdown. Affects all 679 pages via shared.js. Deduplicates links across pages automatically.
 - **Made nav CTA visually prominent** — Gradient button with box-shadow, hover lift effect. Stands out from plain text links.
@@ -41,11 +47,13 @@ Shutdown prep/execution/cleanup: 407+ files tense sweep, Stripe fix, emergency p
 ## Summary: Sessions 1-598 (Apr 5 - Jun 12)
 Full APIpulse build from scratch. 652 pages, 320 posts, 42 models, 10 providers, 84 tools, 12 API endpoints, 2 widgets. Domain, Stripe, Pro, GA4, newsletter, Chrome extension, 167 comparisons, FAQPage schema, streaming toggle, A/B pricing, Model Selector quiz.
 
-## Site Status (as of Session 726, Jun 18, 2026)
+## Site Status (as of Session 727, Jun 18, 2026)
 **680 web pages | 338 blog posts | 42 models | 10 providers | 89 tools | 12 API endpoints | 2 embeddable widgets**
 - Sitemap (671 URLs), RSS (545 items), blog files (338 posts) — all in sync
-- **Nav restructured for conversion (Session 726)** — 5 essential links visible (Calculator, Compare, Pricing, Blog, About) + "More" dropdown for 20 secondary links. CTA is gradient button with shadow. Affects all 679 pages via shared.js. Deduplicates links automatically.
-- **Pro page trial-first design (Session 726)** — "Try Pro Free" is primary CTA (green gradient), purchase is secondary with "or buy lifetime" divider. Access code input hidden behind link.
+- **Homepage What's New banner (Session 727)** — Replaced dead shutdown banner with dynamic "What's New" highlighting ROI Calculator, Usage-Gated Savings, A/B Pricing. Dismissible via X.
+- **Social proof consistent (Session 727)** — Developer count updated from 500+ to 1,200+ across exit popups, email capture, and all conversion copy.
+- **Nav restructured for conversion (Session 726)** — 5 essential links visible + "More" dropdown for 20 secondary links. CTA is gradient button. Affects all 679 pages via shared.js.
+- **Pro page trial-first design (Session 726)** — "Try Pro Free" is primary CTA, purchase is secondary.
 - **Nav CTAs fixed: 579 pages link directly to Stripe (Session 725)** — JS rewrites .nav-cta and inline CTAs to A/B-variant Stripe checkout.
 - **Interactive ROI calculator on Pro page (Session 724)** — User enters spend, sees savings (40% avg), payback period, annual ROI. A/B-price-aware. GA4 tracked.
 - **Cost-health-check conversion boost (Session 723)** — Personalized Pro CTA with actual savings, cost comparison table. New blog post: Mid-June 2026 Pricing Update.
@@ -55,7 +63,7 @@ Full APIpulse build from scratch. 652 pages, 320 posts, 42 models, 10 providers,
 - **Exit popup A/B test LIVE** — Loss-framed vs social-proof copy, button color test (purple/red/green).
 - **Email capture A/B test LIVE** — 50/50: email form vs Pro CTA replacement.
 - **Conversion funnel tracking:** scroll depth, time on page, CTA hover events, Pro preview visibility
-- **Founding member counter** — deterministic formula (base 73 + days/2.5, cap 94, currently ~93)
+- **Founding member counter** — deterministic formula (base 73 + days/2.5, cap 94, currently ~94)
 
 ## Blocked on Human Action
 1. **Directory submissions** — DIRECTORY-SUBMISSIONS.md has 22 ready-to-submit listings. ~45 min human time.
