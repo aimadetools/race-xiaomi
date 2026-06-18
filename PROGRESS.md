@@ -1,5 +1,10 @@
 # PROGRESS.md
 
+## Session 710 (Jun 19) — Conversion Copy Optimization
+- **Improved exit popup copy** (shared.js) — Changed from generic "Stop overpaying for AI APIs" to loss-framed "You're losing money every day you wait" with specific value prop: "Pro shows you exactly which model to switch to — with migration code, cost projections, and a personalized optimization plan." CTA changed from "Get Pro — $X lifetime" to "Stop the leak — $X lifetime."
+- **Improved Pro page gate card** (pro.html) — Changed headline from "Unlock Your Pro Features" to "Stop losing money on AI APIs" with matching description. More conversion-focused, loss-framed messaging.
+- **2 files changed, 6 insertions, 6 deletions**
+
 ## Session 709 (Jun 19) — AI Model Recommendation Engine
 - **Built interactive Model Recommendation Engine** (recommend.html) — 4-step flow: use case → quality → volume → priority. Scoring algorithm weighs use-case suitability (45%), cost efficiency, quality tier match, and user priority across all 42 non-deprecated models. Top 3 picks with detailed winner card (reasons list, score/100, context window), runner-up comparison cards, and animated monthly cost bar chart. GA4 tracking on recommendation_generated events.
 - **Added to sitemap** (priority 0.9), **RSS feed** (first item), **index hero CTAs** ("Find My Model →"), **calculator Related Tools**, **cheapest-ai-api** ("Not sure?" CTA section).
