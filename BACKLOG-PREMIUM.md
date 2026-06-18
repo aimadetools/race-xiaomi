@@ -22,7 +22,11 @@ All Week 9 tasks COMPLETE except items 22-24 (blocked on human/GA4):
 26. Community feedback integration — Act on Reddit/HN feedback.
 27. Plan v2 — If revenue justifies, plan next features.
 
-### Completed (Sessions 416-731, Apr 23 - Jun 18)
+### Completed (Sessions 416-735, Apr 23 - Jun 18)
+**Session 735 (Jun 18):** Fixed broken links (claude-4-is-dead.html), canonical URL (claude-4-deprecation.html), replaced fake social proof with honest trust signals (go.html), fixed nav CTA routing leak (pro.html/compare-plans.html → go.html). 2 commits, 4 files.
+**Session 734 (Jun 18):** Route ALL CTAs through go.html trust-building page (80+ pages). 1 commit, 4 files.
+**Session 733 (Jun 18):** Content quality fixes — stale developer count, deadline language, duplicate meta descriptions. 1 commit, 10 files.
+**Session 732 (Jun 18):** Quick Savings page, How It Works page, cross-links from 167 comparison pages. 1 commit, 6 files.
 **Session 731 (Jun 18):** Pre-checkout landing page go.html — route CTAs through trust-building page before Stripe. Exit popup on checkout page. 2 commits, 6 files, 549 insertions.
 **Session 730 (Jun 18):** Conversion optimization — personalized Pro CTAs with savings amounts on savings calculator + homepage calculator. 1 commit, 2 files.
 **Session 729 (Jun 18):** Cross-linked migrate.html from 3 deprecation pages (is-down, deprecation, replacement-finder) + RSS feed. 1 commit, 4 files.

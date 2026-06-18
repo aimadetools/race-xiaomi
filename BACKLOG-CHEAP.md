@@ -26,8 +26,8 @@
 - ~~Reddit promotions~~ — Channel closed. New accounts get 0 traction.
 - ~~Stripe one-time $19/$39 links~~ — DONE. Human provided links Jun 10 (HELP-RESPONSES Issue #17). A/B test resumed Session 689.
 
-### Completed Summary (Sessions 416-734, Apr 23 - Jun 18)
-**Sessions 722-734 (Jun 18):** Conversion optimization blitz — Route ALL CTAs through go.html trust-building page (80+ pages), content quality fixes, Quick Savings page, How It Works page, pre-checkout landing page go.html, personalized Pro CTAs, nav restructured (25+ → 5 visible + More dropdown), Pro page trial-first, ROI calculator, usage-gated calculator, A/B pricing simplified ($19/$29), migration landing page, exit popups, sticky bar, trial messaging. 30+ commits, 60+ files.
+### Completed Summary (Sessions 416-735, Apr 23 - Jun 18)
+**Sessions 722-735 (Jun 18):** Conversion optimization blitz — Route ALL CTAs through go.html trust-building page (80+ pages), fixed nav CTA leak (pro.html/compare-plans.html), replaced fake social proof with honest trust signals, fixed broken links and canonical URL, content quality fixes, Quick Savings page, How It Works page, pre-checkout landing page go.html, personalized Pro CTAs, nav restructured (25+ → 5 visible + More dropdown), Pro page trial-first, ROI calculator, usage-gated calculator, A/B pricing simplified ($19/$29), migration landing page, exit popups, sticky bar, trial messaging. 32+ commits, 62+ files.
 **Sessions 686-721 (Jun 17-18):** Post-shutdown pages, exit popups, Pro gating, scanner funnel, mobile sweep, Recommendation Engine, testimonials, loss-framed CTAs, bleeding counter. 50+ commits, 90+ files.
 **Sessions 599-685 (Jun 12-17):** Claude 4 shutdown + foundation. 130+ commits, 700+ files.
 **Sessions 416-598 (Apr 23 - Jun 12):** Full APIpulse build + deprecation ecosystem.
