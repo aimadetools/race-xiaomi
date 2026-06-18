@@ -788,7 +788,7 @@ async function saveEmail(e) {
             var stripeLink = window._abStripeLink || 'https://buy.stripe.com/fZu7sL3Gw3GS0RQeoDeEo0a';
             var variant = window._abVariant || 'B';
 
-            if (window.trackEvent) window.trackEvent('pro_exit_popup_shown', { variant: variant, price: price, page: location.pathname, timing_variant: window._abPopupTimingVariant });
+            if (window.trackEvent) window.trackEvent('pro_exit_popup_shown', { variant: variant, price: price, page: location.pathname, timing_variant: window._abPopupTimingVariant, button_color: buttonColorVariant });
 
             var overlay = document.createElement('div');
             overlay.id = 'exit-popup-overlay';
@@ -809,7 +809,7 @@ async function saveEmail(e) {
                 '<div style="background:var(--bg-secondary);border:1px solid var(--border);border-radius:8px;padding:10px 16px;text-align:center;">' +
                 '<div style="font-size:20px;font-weight:800;color:var(--green);">40%</div>' +
                 '<div style="font-size:11px;color:var(--text-muted);">avg. savings</div></div></div>' +
-                '<a href="' + stripeLink + '" target="_blank" rel="noopener" id="pro-exit-cta" style="display:inline-block;background:var(--accent);color:white;padding:14px 32px;border-radius:10px;font-size:16px;font-weight:700;text-decoration:none;transition:all 0.2s;box-shadow:0 4px 20px rgba(99,102,241,0.3);" onmouseover="this.style.transform=\'translateY(-2px)\'" onmouseout="this.style.transform=\'none\'">Stop the leak — $' + price + ' lifetime</a>' +
+                '<a href="' + stripeLink + '" target="_blank" rel="noopener" id="pro-exit-cta" style="display:inline-block;background:' + btnColor.bg + ';color:white;padding:14px 32px;border-radius:10px;font-size:16px;font-weight:700;text-decoration:none;transition:all 0.2s;box-shadow:0 4px 20px ' + btnColor.shadow + ';" onmouseover="this.style.transform=\'translateY(-2px)\'" onmouseout="this.style.transform=\'none\'">Stop the leak — $' + price + ' lifetime</a>' +
                 '<p style="font-size:12px;color:var(--text-muted);margin-top:12px;">14-day money-back guarantee · <a href="#" id="pro-exit-dismiss" style="color:var(--text-muted);">No thanks</a></p>' +
                 '</div>';
 
@@ -817,25 +817,25 @@ async function saveEmail(e) {
             document.body.appendChild(overlay);
 
             document.getElementById('exit-popup-close').addEventListener('click', function() {
-                if (window.trackEvent) window.trackEvent('pro_exit_popup_dismissed', { variant: variant, timing_variant: window._abPopupTimingVariant });
+                if (window.trackEvent) window.trackEvent('pro_exit_popup_dismissed', { variant: variant, timing_variant: window._abPopupTimingVariant, button_color: buttonColorVariant });
                 overlay.remove();
                 localStorage.setItem('apipulse_popup_dismissed', '1');
             });
             document.getElementById('pro-exit-dismiss').addEventListener('click', function(e) {
                 e.preventDefault();
-                if (window.trackEvent) window.trackEvent('pro_exit_popup_dismissed', { variant: variant, timing_variant: window._abPopupTimingVariant });
+                if (window.trackEvent) window.trackEvent('pro_exit_popup_dismissed', { variant: variant, timing_variant: window._abPopupTimingVariant, button_color: buttonColorVariant });
                 overlay.remove();
                 localStorage.setItem('apipulse_popup_dismissed', '1');
             });
             overlay.addEventListener('click', function(e) {
                 if (e.target === overlay) {
-                    if (window.trackEvent) window.trackEvent('pro_exit_popup_dismissed', { variant: variant, timing_variant: window._abPopupTimingVariant });
+                    if (window.trackEvent) window.trackEvent('pro_exit_popup_dismissed', { variant: variant, timing_variant: window._abPopupTimingVariant, button_color: buttonColorVariant });
                     overlay.remove();
                     localStorage.setItem('apipulse_popup_dismissed', '1');
                 }
             });
             document.getElementById('pro-exit-cta').addEventListener('click', function() {
-                if (window.trackEvent) window.trackEvent('pro_button_clicked', { source: 'exit_popup', variant: variant, price: price, timing_variant: window._abPopupTimingVariant });
+                if (window.trackEvent) window.trackEvent('pro_button_clicked', { source: 'exit_popup', variant: variant, price: price, timing_variant: window._abPopupTimingVariant, button_color: buttonColorVariant });
             });
         }
 
@@ -858,6 +858,19 @@ async function saveEmail(e) {
         localStorage.setItem('apipulse_popup_variant', variant);
     }
     var v = popupVariants[variant];
+
+    // CTA button color A/B test — persisted across sessions
+    var buttonColorVariant = localStorage.getItem('apipulse_button_color');
+    if (!buttonColorVariant || !['purple', 'red', 'green'].includes(buttonColorVariant)) {
+        buttonColorVariant = ['purple', 'red', 'green'][Math.floor(Math.random() * 3)];
+        localStorage.setItem('apipulse_button_color', buttonColorVariant);
+    }
+    var buttonColorMap = {
+        purple: { bg: 'var(--accent)', shadow: 'rgba(99,102,241,0.3)', label: 'purple' },
+        red:    { bg: '#dc2626', shadow: 'rgba(220,38,38,0.3)', label: 'red' },
+        green:  { bg: '#16a34a', shadow: 'rgba(22,163,74,0.3)', label: 'green' }
+    };
+    var btnColor = buttonColorMap[buttonColorVariant];
 
     let popupShown = false;
     function showExitPopup() {
