@@ -253,6 +253,13 @@
         .pro-tips-cta a { color: var(--accent); font-weight: 700; text-decoration: none; }
         .pro-tips-cta a:hover { text-decoration: underline; }
 
+        /* Bleeding counter pulse animation */
+        @keyframes bleedingPulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+        .bleeding-pulse { animation: bleedingPulse 2s ease-in-out infinite; }
+
         .info-section {
             max-width: 700px; margin: 0 auto; padding: 40px 24px 60px;
         }
@@ -454,6 +461,22 @@
                         </div>
                         <div class="efficiency-message" id="efficiency-message"></div>
                         <div id="efficiency-waste-container"></div>
+                        <div id="bleeding-counter" style="display:none;margin-top:14px;background:linear-gradient(135deg,rgba(239,68,68,0.08),rgba(239,68,68,0.04));border:1px solid rgba(239,68,68,0.25);border-radius:10px;padding:14px 16px;">
+                            <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;">
+                                <div>
+                                    <div style="font-size:12px;font-weight:700;color:var(--red);text-transform:uppercase;letter-spacing:0.5px;margin-bottom:4px;">💸 You're losing money right now</div>
+                                    <div style="font-size:13px;color:var(--text-secondary);">Since opening this page, you've lost <strong style="color:var(--red);font-size:16px;" id="bleeding-total">$0.00</strong> by not optimizing</div>
+                                </div>
+                                <div style="text-align:center;min-width:100px;">
+                                    <div style="font-size:11px;color:var(--text-muted);margin-bottom:2px;">Bleeding at</div>
+                                    <div style="font-size:20px;font-weight:800;color:var(--red);font-variant-numeric:tabular-nums;" class="bleeding-pulse" id="bleeding-rate">$0.00<span style="font-size:12px;font-weight:600;">/day</span></div>
+                                </div>
+                            </div>
+                            <div style="margin-top:12px;display:flex;gap:8px;align-items:center;flex-wrap:wrap;">
+                                <a href="pricing.html" style="display:inline-block;background:var(--red);color:white;padding:8px 18px;border-radius:8px;text-decoration:none;font-size:13px;font-weight:700;white-space:nowrap;" onclick="if(window.trackEvent)window.trackEvent('pro_button_clicked',{source:'calculator_bleeding_counter'})">Stop the Bleeding — $29</a>
+                                <span style="font-size:12px;color:var(--text-muted);">One-time payment. Pays for itself in <span id="bleeding-payback">days</span>.</span>
+                            </div>
+                        </div>
                     </div>
                     <div id="deprecation-warning" style="display:none;margin-top:12px;"></div>
                     <div id="savings-container"></div>
@@ -858,8 +881,43 @@
 
                 efficiencyContainer.style.display = 'block';
                 if (window.trackEvent) window.trackEvent('efficiency_score_shown', { grade: grade, efficiency: Math.round(efficiency), overpay_pct: Math.round(overpayPct), current_model: provider });
+
+                // Bleeding counter — real-time cost of inaction
+                const bleedingEl = document.getElementById('bleeding-counter');
+                if (bleedingEl && annualWaste > 5) {
+                    const dailyWaste = annualWaste / 365;
+                    window._bleedingDailyRate = dailyWaste;
+                    window._bleedingStartMs = window._bleedingStartMs || Date.now();
+                    bleedingEl.style.display = 'block';
+                    document.getElementById('bleeding-rate').innerHTML = '$' + dailyWaste.toFixed(2) + '<span style="font-size:12px;font-weight:600;">/day</span>';
+                    // Payback calculation
+                    var price = window._abPrice || 29;
+                    var paybackDays = dailyWaste > 0 ? Math.ceil(price / dailyWaste) : 999;
+                    document.getElementById('bleeding-payback').textContent = paybackDays <= 1 ? 'less than 1 day' : paybackDays + ' days';
+                    // Start counter if not already running
+                    if (!window._bleedingInterval) {
+                        window._bleedingStartMs = Date.now();
+                        window._bleedingInterval = setInterval(function() {
+                            if (!window._bleedingDailyRate || window._bleedingDailyRate <= 0) return;
+                            var elapsed = (Date.now() - window._bleedingStartMs) / 1000; // seconds
+                            var lost = (window._bleedingDailyRate / 86400) * elapsed;
+                            var el = document.getElementById('bleeding-total');
+                            if (el) el.textContent = '$' + lost.toFixed(2);
+                        }, 100);
+                    }
+                    if (window.trackEvent && !window._bleedingTracked) {
+                        window._bleedingTracked = true;
+                        window.trackEvent('bleeding_counter_shown', { daily_waste: dailyWaste.toFixed(2), annual_waste: annualWaste.toFixed(0), grade: grade });
+                    }
+                } else if (bleedingEl) {
+                    bleedingEl.style.display = 'none';
+                    if (window._bleedingInterval) { clearInterval(window._bleedingInterval); window._bleedingInterval = null; window._bleedingTracked = false; }
+                }
             } else {
                 efficiencyContainer.style.display = 'none';
+                var bleedingEl2 = document.getElementById('bleeding-counter');
+                if (bleedingEl2) bleedingEl2.style.display = 'none';
+                if (window._bleedingInterval) { clearInterval(window._bleedingInterval); window._bleedingInterval = null; window._bleedingTracked = false; }
             }
 
             // Recommended alternatives — gate behind Pro (A/B: show 1 free vs 0 free)
