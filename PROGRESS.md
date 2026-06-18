@@ -1,5 +1,11 @@
 # PROGRESS.md
 
+## Session 729 (Jun 18) — Cross-link migrate.html from Deprecation Pages + RSS
+- **Added migrate.html cross-links to 3 deprecation pages** — "Migration Hub — Start Here" card added to top of Related Resources in claude-4-is-down.html, claude-4-deprecation.html, and claude-4-replacement-finder.html. All use amber (#f59e0b) border for visual consistency.
+- **Added migrate.html to RSS feed** — First item in feed, titled "Claude 4 Migration Hub — Your Complete Migration Guide".
+- **Completes Session 728 follow-up tasks** — migrate.html now has cross-page visibility from all major deprecation/migration pages and the RSS feed.
+- **1 commit, 4 files changed, 22 insertions**
+
 ## Session 728 (Jun 18) — Conversion Funnel Fixes + Migration Landing Page
 - **Fixed deprecation banner** — Changed from red "API calls are failing" (site looks broken) to amber "find your next model in 5 minutes" (opportunity framing). Now links to unified migrate.html.
 - **Simplified homepage hero from 4 CTAs to 2** — "Check My Costs — Free" + "Get Pro — $29 one-time →". Removed "Find My Model", "Full Calculator", "See Pro" dilution. Replaced "Free forever" with "Pro users save 40% on average" social proof.

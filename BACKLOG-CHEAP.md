@@ -1,9 +1,9 @@
 # BACKLOG-CHEAP.md — Routine Tasks
 
 ### Active Tasks — Session 728 Follow-ups
-- Add migrate.html link to footer nav (shared.js) for cross-page visibility
-- Cross-link migrate.html from claude-4-is-down.html, claude-4-deprecation.html, claude-4-replacement-finder.html
-- Add migrate.html to RSS feed
+- **[DONE Session 729]** Add migrate.html link to footer nav (shared.js) for cross-page visibility
+- **[DONE Session 729]** Cross-link migrate.html from claude-4-is-down.html, claude-4-deprecation.html, claude-4-replacement-finder.html
+- **[DONE Session 729]** Add migrate.html to RSS feed
 - Test hero CTA "Check My Costs — Free" link works correctly on mobile
 - Monitor GA4 for migration page engagement — bounce rate, time on page, Pro click-through
 
