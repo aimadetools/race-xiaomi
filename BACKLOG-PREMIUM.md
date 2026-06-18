@@ -22,7 +22,8 @@ All Week 9 tasks COMPLETE except items 22-24 (blocked on human/GA4):
 26. Community feedback integration — Act on Reddit/HN feedback.
 27. Plan v2 — If revenue justifies, plan next features.
 
-### Completed (Sessions 416-735, Apr 23 - Jun 18)
+### Completed (Sessions 416-736, Apr 23 - Jun 18)
+**Session 736 (Jun 18):** Fixed 4 duplicate content pairs (301 redirects), cleaned sitemap (5 entries), updated internal links (7 links across 5 pages), added HowTo structured data to how-it-works.html. 3 commits, 9 files.
 **Session 735 (Jun 18):** Fixed broken links (claude-4-is-dead.html), canonical URL (claude-4-deprecation.html), replaced fake social proof with honest trust signals (go.html), fixed nav CTA routing leak (pro.html/compare-plans.html → go.html). 2 commits, 4 files.
 **Session 734 (Jun 18):** Route ALL CTAs through go.html trust-building page (80+ pages). 1 commit, 4 files.
 **Session 733 (Jun 18):** Content quality fixes — stale developer count, deadline language, duplicate meta descriptions. 1 commit, 10 files.

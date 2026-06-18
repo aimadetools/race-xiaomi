@@ -1,5 +1,17 @@
 # PROGRESS.md
 
+## Session 736 (Jun 18) — Duplicate Content & Technical SEO Fixes
+- **Fixed 4 duplicate content pairs** — Pages with identical titles were splitting SEO ranking signals:
+  - compare-gpt55-vs-opus48.html → compare-gpt55-claude-opus48.html (301 redirect)
+  - compare-gpt55-vs-deepseek-v4pro.html → compare-gpt55-vs-deepseek-v4-pro.html (301 redirect)
+  - blog-gpt5-api-cost-complete-guide.html → blog-gpt5-api-cost.html (301 redirect)
+  - blog-xai-grok-pricing.html → xai.html (301 redirect)
+- **Added 4 permanent redirects** in vercel.json for clean server-side 301s
+- **Updated 7 internal links** across 5 pages (compare.html, blog.html, blog-grok3-vs-claude4-sonnet.html, blog-xai-grok-vs-gpt4o.html, newsletter-archive.html) to point to canonical versions
+- **Cleaned sitemap.xml** — removed 5 duplicate/stale entries (4 redirects + 1 duplicate claude-4-migration-checklist entry)
+- **Added HowTo structured data** to how-it-works.html for rich search results (3-step process schema)
+- **3 commits, 9 files changed**
+
 ## Session 735 (Jun 18) — SEO, Trust & Conversion Fixes
 - **Fixed 2 broken links** in claude-4-is-dead.html (pointed to non-existent migration pages, now point to blog-prefixed versions)
 - **Fixed duplicate canonical URL** in claude-4-deprecation.html (was pointing to claude-4-is-down.html instead of itself; also fixed og:url)
@@ -32,7 +44,7 @@ Shutdown prep/execution/cleanup: 407+ files tense sweep, Stripe fix, emergency p
 ## Summary: Sessions 1-598 (Apr 5 - Jun 12)
 Full APIpulse build from scratch. 652 pages, 320 posts, 42 models, 10 providers, 84 tools, 12 API endpoints, 2 widgets. Domain, Stripe, Pro, GA4, newsletter, Chrome extension, 167 comparisons, FAQPage schema, streaming toggle, A/B pricing, Model Selector quiz.
 
-## Site Status (as of Session 735, Jun 18, 2026)
+## Site Status (as of Session 736, Jun 18, 2026)
 **684 web pages | 338 blog posts | 42 models | 10 providers | 89 tools | 12 API endpoints | 2 embeddable widgets**
 - Sitemap (676 URLs), RSS (546 items), blog files (338 posts) — all in sync
 - **ALL Pro CTAs route through go.html (Session 734-735)** — Trust-building page before Stripe checkout. Nav CTAs, inline CTAs, Stripe links, pricing/pro/compare-plans links all routed.
