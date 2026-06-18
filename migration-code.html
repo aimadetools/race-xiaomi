@@ -36,7 +36,7 @@
         "@type": "WebApplication",
         "name": "APIpulse — AI Model Migration Code Generator",
         "url": "https://getapipulse.com/migration-code.html",
-        "description": "Generate copy-paste migration code to switch between AI model providers. Python, Node.js, and curl examples for 42 models across 10 providers.",
+        "description": "Generate copy-paste migration code to switch between AI model providers. Python, Node.js, and curl examples for 42 models across 10 providers. Includes .env file generator for API key setup.",
         "applicationCategory": "DeveloperApplication",
         "operatingSystem": "Web",
         "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
@@ -77,6 +77,14 @@
                 "acceptedAnswer": {
                     "@type": "Answer",
                     "text": "Savings depend on your current provider and usage. Switching from GPT-4o ($2.50/$10 per 1M tokens) to DeepSeek V4 Pro ($0.44/$0.87) saves 82% on input and 91% on output tokens. Even switching from Claude Sonnet 4.6 ($3/$15) to Gemini 2.5 Pro ($1.25/$10) saves 58% on input tokens."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What environment variables do I need for AI API providers?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Each provider uses a different environment variable for its API key: OpenAI uses OPENAI_API_KEY, Anthropic uses ANTHROPIC_API_KEY, Google uses GOOGLE_API_KEY, DeepSeek uses DEEPSEEK_API_KEY, Mistral uses MISTRAL_API_KEY, and so on. Our migration code generator includes an .env file generator that shows the exact variable name and setup instructions for your target provider."
                 }
             }
         ]
@@ -236,6 +244,25 @@
                 <div class="code-block" id="code-curl">
                     <button class="copy-btn" onclick="copyCode('curl')">Copy</button>
                     <pre><code id="code-curl-content"></code></pre>
+                </div>
+            </div>
+
+            <!-- .env File Generator -->
+            <div class="step-card" id="env-section" style="margin-top: 24px;">
+                <span class="step-label" style="background:#059669;">Step 3b</span>
+                <h3>⚙️ Environment Setup — .env File</h3>
+                <p style="font-size:14px;color:var(--text-muted,#6b7280);margin:0 0 16px;">Add this to your <code>.env</code> file to configure your new provider. The migration code above reads the API key from this environment variable.</p>
+                <div style="position:relative;">
+                    <button class="copy-btn" onclick="copyEnv()" style="top:8px;right:8px;">Copy</button>
+                    <pre style="background:#1e1e2e;color:#cdd6f4;padding:20px;border-radius:8px;overflow-x:auto;font-size:13px;line-height:1.6;margin:0;"><code id="env-content"></code></pre>
+                </div>
+                <div id="env-multi-keys" style="margin-top:16px;padding-top:16px;border-top:1px solid var(--border,#e5e7eb);display:none;">
+                    <p style="font-size:14px;font-weight:600;margin:0 0 8px;">🔑 Need both providers during migration?</p>
+                    <p style="font-size:13px;color:var(--text-muted,#6b7280);margin:0 0 12px;">Keep your old key while testing — remove it once the migration is confirmed working.</p>
+                    <div style="position:relative;">
+                        <button class="copy-btn" onclick="copyEnvBoth()" style="top:8px;right:8px;">Copy</button>
+                        <pre style="background:#1e1e2e;color:#cdd6f4;padding:20px;border-radius:8px;overflow-x:auto;font-size:13px;line-height:1.6;margin:0;"><code id="env-both-content"></code></pre>
+                    </div>
                 </div>
             </div>
 
@@ -514,6 +541,7 @@
             generatePythonCode(source, target, srcConfig, tgtConfig);
             generateNodeCode(source, target, srcConfig, tgtConfig);
             generateCurlCode(source, target, srcConfig, tgtConfig);
+            generateEnvFile(source, target, srcConfig, tgtConfig);
         }
 
         // Track
@@ -973,9 +1001,79 @@ curl ${tgtConfig.baseUrl}/chat/completions \\
         if (window.trackEvent) window.trackEvent('migration_code_copied', { language: lang });
     }
 
+    // ========== ENV FILE GENERATOR ==========
+    function generateEnvFile(source, target, srcConfig, tgtConfig) {
+        const envKey = tgtConfig.envKey;
+        const srcEnvKey = srcConfig.envKey;
+        const sameKey = envKey === srcEnvKey;
+
+        // Target-only .env (for after migration is complete)
+        let envCode = `# ${target.provider} API key — for ${target.name}\n`;
+        envCode += `# Get your key at: ${getProviderDashboardUrl(target.providerSlug)}\n`;
+        envCode += `${envKey}=your-${envKey.toLowerCase().replace(/_/g, '-')}-here`;
+
+        document.getElementById('env-content').textContent = envCode;
+
+        // Show dual-key section if providers use different env vars
+        const multiSection = document.getElementById('env-multi-keys');
+        if (!sameKey) {
+            let bothCode = `# === DURING MIGRATION: keep both keys ===\n`;
+            bothCode += `# Remove ${srcEnvKey} once migration is confirmed\n\n`;
+            bothCode += `# ${source.provider} (old — remove after testing)\n`;
+            bothCode += `${srcEnvKey}=your-existing-key\n\n`;
+            bothCode += `# ${target.provider} (new)\n`;
+            bothCode += `${envKey}=your-${envKey.toLowerCase().replace(/_/g, '-')}-here`;
+            document.getElementById('env-both-content').textContent = bothCode;
+            multiSection.style.display = '';
+        } else {
+            multiSection.style.display = 'none';
+        }
+
+        // Show the section
+        document.getElementById('env-section').style.display = '';
+    }
+
+    function getProviderDashboardUrl(providerSlug) {
+        const dashboards = {
+            openai: 'https://platform.openai.com/api-keys',
+            anthropic: 'https://console.anthropic.com/settings/keys',
+            google: 'https://aistudio.google.com/apikey',
+            deepseek: 'https://platform.deepseek.com/api_keys',
+            mistral: 'https://console.mistral.ai/api-keys/',
+            cohere: 'https://dashboard.cohere.com/api-keys',
+            together: 'https://api.together.xyz/settings/api-keys',
+            xai: 'https://console.x.ai/team/default/api-keys',
+            ai21: 'https://studio.ai21.com/account/api-key',
+            moonshot: 'https://platform.moonshot.cn/console/api-keys'
+        };
+        return dashboards[providerSlug] || '#';
+    }
+
+    function copyEnv() {
+        const code = document.getElementById('env-content').textContent;
+        navigator.clipboard.writeText(code).then(() => {
+            const btn = document.querySelector('#env-section .copy-btn');
+            btn.textContent = 'Copied!';
+            setTimeout(() => btn.textContent = 'Copy', 2000);
+        });
+        if (window.trackEvent) window.trackEvent('migration_env_copied', { type: 'target_only' });
+    }
+
+    function copyEnvBoth() {
+        const code = document.getElementById('env-both-content').textContent;
+        navigator.clipboard.writeText(code).then(() => {
+            const btns = document.querySelectorAll('#env-section .copy-btn');
+            const btn = btns[btns.length - 1];
+            btn.textContent = 'Copied!';
+            setTimeout(() => btn.textContent = 'Copy', 2000);
+        });
+        if (window.trackEvent) window.trackEvent('migration_env_copied', { type: 'both_keys' });
+    }
+
     // ========== INIT ==========
     document.addEventListener('DOMContentLoaded', function() {
         renderModels('source-grid', 'source');
+        document.getElementById('env-section').style.display = 'none';
     });
     </script>
 </body>
