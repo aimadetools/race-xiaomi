@@ -473,7 +473,7 @@
                                 </div>
                             </div>
                             <div style="margin-top:12px;display:flex;gap:8px;align-items:center;flex-wrap:wrap;">
-                                <a href="pricing.html" style="display:inline-block;background:var(--red);color:white;padding:8px 18px;border-radius:8px;text-decoration:none;font-size:13px;font-weight:700;white-space:nowrap;" onclick="if(window.trackEvent)window.trackEvent('pro_button_clicked',{source:'calculator_bleeding_counter'})">Stop the Bleeding — $29</a>
+                                <a href="https://buy.stripe.com/fZu7sL3Gw3GS0RQeoDeEo0a" target="_blank" rel="noopener" style="display:inline-block;background:var(--red);color:white;padding:8px 18px;border-radius:8px;text-decoration:none;font-size:13px;font-weight:700;white-space:nowrap;" id="bleeding-cta-btn" onclick="if(window.trackEvent)window.trackEvent('pro_button_clicked',{source:'calculator_bleeding_counter'})">Stop the Bleeding — $29</a>
                                 <span style="font-size:12px;color:var(--text-muted);">One-time payment. Pays for itself in <span id="bleeding-payback">days</span>.</span>
                             </div>
                         </div>
@@ -894,6 +894,12 @@
                     var price = window._abPrice || 29;
                     var paybackDays = dailyWaste > 0 ? Math.ceil(price / dailyWaste) : 999;
                     document.getElementById('bleeding-payback').textContent = paybackDays <= 1 ? 'less than 1 day' : paybackDays + ' days';
+                    // Update CTA with A/B variant link and price
+                    var bleedingCta = document.getElementById('bleeding-cta-btn');
+                    if (bleedingCta) {
+                        bleedingCta.href = window._abStripeLink || 'https://buy.stripe.com/fZu7sL3Gw3GS0RQeoDeEo0a';
+                        bleedingCta.textContent = 'Stop the Bleeding — $' + price;
+                    }
                     // Start counter if not already running
                     if (!window._bleedingInterval) {
                         window._bleedingStartMs = Date.now();
