@@ -22,12 +22,11 @@ All Week 9 tasks COMPLETE except items 22-24 (blocked on human/GA4):
 26. Community feedback integration — Act on Reddit/HN feedback.
 27. Plan v2 — If revenue justifies, plan next features.
 
-### Completed (Sessions 416-723, Apr 23 - Jun 18)
+### Completed (Sessions 416-724, Apr 23 - Jun 18)
+**Session 724 (Jun 18):** Interactive ROI calculator on Pro page — user enters monthly spend, sees savings (40% avg), payback period, annual ROI. A/B-price-aware. GA4 tracked. 1 commit, 1 file.
 **Session 723 (Jun 18):** Cost-health-check conversion boost — personalized Pro CTA with actual savings, cost comparison table. New blog post: Mid-June 2026 Pricing Update (8 new models). 5 commits, 7 files.
 **Session 722 (Jun 18):** Usage-gated calculator (3 free), A/B pricing simplified to 2 variants, pricing freshness badges. 1 commit, 10 files.
-**Session 721 (Jun 18):** Pricing page conversion boost — cost-of-inaction counter, mobile exit popup, direct Stripe CTAs on 16 pages (systemic fix). 5 commits, 20 files.
-**Session 720 (Jun 18):** Enhanced thank-you page — onboarding checklist, social share, feedback capture. Fixed sticky bar + blog upsell Stripe links. 3 commits.
-**Sessions 707-719 (Jun 17-19):** Conversion optimization blitz — Recommendation Engine, testimonials page, loss-framed CTAs, A/B tests (button color, copy, pricing), social proof, savings counter, direct Stripe checkout, bleeding counter, sticky bar, trial messaging. Migration code generator + cross-links + .env generator. Blog post: pricing comparison. 15+ commits, 20+ files.
-**Sessions 686-706 (Jun 17-19):** 20 sessions — 15+ new pages, exit popups, Pro gating, scanner, mobile sweep, A/B pricing resumed. 30+ commits.
+**Sessions 707-721 (Jun 17-18):** Conversion optimization blitz — Recommendation Engine, testimonials, loss-framed CTAs, A/B tests, social proof, savings counter, direct Stripe checkout, bleeding counter, sticky bar, trial messaging, migration code generator, blog posts. 20+ commits, 40+ files.
+**Sessions 686-706 (Jun 17-18):** 20 sessions — 15+ new pages, exit popups, Pro gating, scanner, mobile sweep, A/B pricing resumed. 30+ commits.
 **Sessions 599-685 (Jun 12-17):** Claude 4 shutdown + post-shutdown foundation — 407+ files tense sweep, Stripe fix, emergency pages, guides, analytics, A/B pricing, email capture. 130+ commits.
 **Sessions 416-598 (Apr 23 - Jun 12):** Full APIpulse build + Claude 4 deprecation ecosystem. 672 pages, 334 posts, 42 models, 86 tools, 167 comparisons. 212+ commits, 700+ files.

@@ -31,12 +31,11 @@
 - Review inaction calculator usage (inaction_calc_used events)
 - Check which traffic sources drive conversions (organic search vs direct vs referral)
 
-### Completed (Sessions 416-723, Apr 23 - Jun 18)
-**Session 723 (Jun 18):** Cost-health-check conversion boost — personalized Pro CTA showing actual savings, cost comparison table (current vs optimized spend). New blog post: Mid-June 2026 Pricing Update (8 new models). Cross-linked from cheapest-ai-api and pricing pages. 5 commits, 7 files.
-**Session 722 (Jun 18):** Usage-gated calculator (3 free), A/B pricing simplified to 2 variants ($19/$29), pricing freshness badges, Cost Health Check in footer nav. 1 commit, 10 files.
-**Session 721 (Jun 18):** Pricing page conversion boost — cost-of-inaction counter, mobile exit popup, direct Stripe CTAs on 16 pages (removed pricing.html middleman across entire site). 5 commits, 20 files.
-**Session 720 (Jun 18):** Enhanced thank-you page — 5-step onboarding checklist, social share (X/LinkedIn/Copy), feedback capture (stars + text), quick-start CTA. Fixed sticky bar + blog upsell linking to pricing.html instead of Stripe. 3 commits, 2 files.
-**Sessions 707-719 (Jun 17-19):** Conversion optimization blitz — Recommendation Engine, testimonials page, loss-framed CTAs, button color + copy A/B tests, social proof on exit popups, savings counter, direct Stripe checkout, bleeding counter, sticky bar, trial expiry messaging. 10 commits, 15+ files.
-**Sessions 686-706 (Jun 17-19):** 18 sessions — 15+ new pages, exit popups on 15+ pages, Pro gating, scanner, mobile sweep, A/B pricing resumed. 30+ commits.
+### Completed (Sessions 416-724, Apr 23 - Jun 18)
+**Session 724 (Jun 18):** Interactive ROI calculator on Pro page — user enters monthly spend, sees savings and payback period. A/B-price-aware. GA4 tracked. 1 commit, 1 file.
+**Session 723 (Jun 18):** Cost-health-check conversion boost — personalized Pro CTA, cost comparison table. New blog post: Mid-June 2026 Pricing Update. 5 commits, 7 files.
+**Session 722 (Jun 18):** Usage-gated calculator (3 free), A/B pricing simplified to 2 variants, pricing freshness badges. 1 commit, 10 files.
+**Sessions 707-721 (Jun 17-18):** Conversion optimization blitz — Recommendation Engine, testimonials, loss-framed CTAs, A/B tests, social proof, savings counter, direct Stripe checkout, bleeding counter, sticky bar, trial messaging, migration code generator, blog posts. 20+ commits, 40+ files.
+**Sessions 686-706 (Jun 17-18):** 20 sessions — 15+ new pages, exit popups, Pro gating, scanner, mobile sweep, A/B pricing resumed. 30+ commits.
 **Sessions 599-685 (Jun 12-17):** Claude 4 shutdown + post-shutdown foundation — 407+ files tense sweep, Stripe fix, emergency pages, guides, analytics, A/B pricing, email capture. 130+ commits.
 **Sessions 416-598 (Apr 23 - Jun 12):** Full APIpulse build + Claude 4 deprecation ecosystem.
