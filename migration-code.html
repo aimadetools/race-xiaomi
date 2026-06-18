@@ -1,0 +1,982 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Model Migration Code Generator — Switch Providers in Minutes | APIpulse</title>
+    <meta name="description" content="Generate copy-paste migration code to switch between AI model providers. Python, Node.js, and curl examples for OpenAI, Anthropic, Google, DeepSeek, Mistral, and more.">
+    <meta name="keywords" content="AI API migration code, switch AI provider, OpenAI to Anthropic migration, migrate from Claude, GPT migration code, AI model switch code, LLM provider migration">
+    <meta property="og:title" content="AI Model Migration Code Generator — APIpulse">
+    <meta property="og:description" content="Pick your current model and target. Get copy-paste migration code in Python, Node.js, and curl. 42 models, 10 providers.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://getapipulse.com/og-image.png">
+    <meta property="og:url" content="https://getapipulse.com/migration-code.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="AI Model Migration Code Generator — APIpulse">
+    <meta name="twitter:image" content="https://getapipulse.com/og-image.png">
+    <link rel="canonical" href="https://getapipulse.com/migration-code.html">
+    <link rel="alternate" type="application/rss+xml" title="APIpulse Blog" href="https://getapipulse.com/rss.xml">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="styles.css">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0CEP7S9Y3J"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-0CEP7S9Y3J');
+    </script>
+    <script src="analytics.js" defer></script>
+    <script src="dynamic-date.js" defer></script>
+    <script src="shared.js" defer></script>
+    <script src="pro-features.js" defer></script>
+    <script src="pricing-data.js" defer></script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "APIpulse — AI Model Migration Code Generator",
+        "url": "https://getapipulse.com/migration-code.html",
+        "description": "Generate copy-paste migration code to switch between AI model providers. Python, Node.js, and curl examples for 42 models across 10 providers.",
+        "applicationCategory": "DeveloperApplication",
+        "operatingSystem": "Web",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "How do I switch from OpenAI to Anthropic API?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Change the base URL from https://api.openai.com/v1 to https://api.anthropic.com/v1, replace the Authorization header with x-api-key, update the model name, and adjust the request format (Anthropic uses 'messages' endpoint with different parameter names). Our generator above creates the exact code you need."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Can I use the OpenAI SDK with other providers?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes. DeepSeek, Together AI, xAI (Grok), and Moonshot (Kimi) all support the OpenAI-compatible API format. Just change the base_url and API key — no other code changes needed. Our migration code generator shows you exactly what to change."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What is the easiest AI model to migrate to?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Providers using the OpenAI-compatible format are easiest: DeepSeek, Together AI, xAI, and Moonshot require only a URL and key change. Google Gemini and Anthropic Claude require more code changes due to their unique API formats, but the migration is still straightforward with our code templates."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How much can I save by switching AI providers?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Savings depend on your current provider and usage. Switching from GPT-4o ($2.50/$10 per 1M tokens) to DeepSeek V4 Pro ($0.44/$0.87) saves 82% on input and 91% on output tokens. Even switching from Claude Sonnet 4.6 ($3/$15) to Gemini 2.5 Pro ($1.25/$10) saves 58% on input tokens."
+                }
+            }
+        ]
+    }
+    </script>
+    <style>
+        .tool-hero { text-align: center; padding: 60px 24px 40px; }
+        .tool-hero h1 { font-size: clamp(28px, 4vw, 42px); font-weight: 700; line-height: 1.2; margin-bottom: 16px; }
+        .tool-hero p { font-size: 18px; color: var(--text-secondary); max-width: 600px; margin: 0 auto; }
+        .migration-container { max-width: 900px; margin: 0 auto; padding: 0 24px; }
+        .step-card { background: var(--card-bg, #fff); border: 1px solid var(--border, #e5e7eb); border-radius: 12px; padding: 28px; margin-bottom: 24px; }
+        .step-label { display: inline-block; background: var(--accent, #6366f1); color: #fff; font-size: 12px; font-weight: 700; padding: 3px 10px; border-radius: 4px; margin-bottom: 12px; text-transform: uppercase; letter-spacing: 0.5px; }
+        .step-label.to { background: #16a34a; }
+        .step-card h3 { margin: 0 0 16px; font-size: 20px; }
+        .model-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 10px; }
+        .model-btn { padding: 12px 16px; border: 2px solid var(--border, #e5e7eb); border-radius: 8px; background: var(--card-bg, #fff); cursor: pointer; text-align: left; transition: all 0.15s; }
+        .model-btn:hover { border-color: var(--accent, #6366f1); background: rgba(99,102,241,0.04); }
+        .model-btn.selected { border-color: var(--accent, #6366f1); background: rgba(99,102,241,0.08); }
+        .model-btn .m-name { font-weight: 600; font-size: 14px; }
+        .model-btn .m-provider { font-size: 12px; color: var(--text-muted, #6b7280); }
+        .model-btn .m-price { font-size: 12px; color: var(--text-muted, #6b7280); margin-top: 2px; }
+        .model-btn.locked { opacity: 0.55; position: relative; }
+        .model-btn.locked::after { content: '🔒'; position: absolute; top: 8px; right: 8px; font-size: 14px; }
+        .model-btn.locked:hover { border-color: var(--border, #e5e7eb); background: var(--card-bg, #fff); cursor: pointer; }
+
+        .comparison-bar { display: flex; gap: 20px; flex-wrap: wrap; justify-content: center; padding: 20px 0; }
+        .compare-stat { text-align: center; min-width: 120px; }
+        .compare-stat .value { font-size: 28px; font-weight: 700; }
+        .compare-stat .label { font-size: 13px; color: var(--text-muted, #6b7280); margin-top: 4px; }
+        .savings-positive { color: #16a34a; }
+        .savings-negative { color: #dc2626; }
+
+        .code-section { margin-top: 32px; }
+        .code-tabs { display: flex; gap: 0; border-bottom: 2px solid var(--border, #e5e7eb); margin-bottom: 0; }
+        .code-tab { padding: 10px 20px; background: none; border: none; border-bottom: 2px solid transparent; margin-bottom: -2px; cursor: pointer; font-size: 14px; font-weight: 600; color: var(--text-muted, #6b7280); transition: all 0.15s; }
+        .code-tab:hover { color: var(--text, #111); }
+        .code-tab.active { color: var(--accent, #6366f1); border-bottom-color: var(--accent, #6366f1); }
+        .code-block { display: none; position: relative; }
+        .code-block.active { display: block; }
+        .code-block pre { background: #1e1e2e; color: #cdd6f4; padding: 20px; border-radius: 0 0 8px 8px; overflow-x: auto; font-size: 13px; line-height: 1.6; margin: 0; }
+        .code-block code { font-family: 'JetBrains Mono', 'Fira Code', 'Cascadia Code', monospace; }
+        .copy-btn { position: absolute; top: 8px; right: 8px; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); color: #cdd6f4; padding: 6px 12px; border-radius: 6px; cursor: pointer; font-size: 12px; }
+        .copy-btn:hover { background: rgba(255,255,255,0.2); }
+
+        .gated-code { background: var(--card-bg, #fff); border: 2px dashed var(--border, #e5e7eb); border-radius: 12px; padding: 40px 24px; text-align: center; margin-top: 32px; }
+        .gated-code h3 { margin: 0 0 8px; }
+        .gated-code p { color: var(--text-muted, #6b7280); margin: 0 0 20px; }
+
+        .steps-indicator { display: flex; justify-content: center; gap: 32px; margin-bottom: 32px; }
+        .step-dot { display: flex; align-items: center; gap: 8px; font-size: 14px; color: var(--text-muted, #6b7280); }
+        .step-dot .dot { width: 28px; height: 28px; border-radius: 50%; border: 2px solid var(--border, #e5e7eb); display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 700; }
+        .step-dot.active .dot { background: var(--accent, #6366f1); border-color: var(--accent, #6366f1); color: #fff; }
+        .step-dot.done .dot { background: #16a34a; border-color: #16a34a; color: #fff; }
+        .step-dot.active { color: var(--text, #111); font-weight: 600; }
+
+        .migration-tips { background: var(--card-bg, #fff); border: 1px solid var(--border, #e5e7eb); border-radius: 12px; padding: 24px; margin-top: 32px; }
+        .migration-tips h3 { margin: 0 0 16px; font-size: 18px; }
+        .tip-item { display: flex; gap: 12px; padding: 12px 0; border-bottom: 1px solid var(--border, #e5e7eb); }
+        .tip-item:last-child { border-bottom: none; }
+        .tip-icon { font-size: 20px; flex-shrink: 0; }
+        .tip-text { font-size: 14px; line-height: 1.5; }
+        .tip-text strong { display: block; margin-bottom: 2px; }
+
+        .provider-badge { display: inline-block; padding: 2px 8px; border-radius: 4px; font-size: 11px; font-weight: 600; }
+        .provider-badge.openai { background: #e8f5e9; color: #1b5e20; }
+        .provider-badge.anthropic { background: #fff3e0; color: #e65100; }
+        .provider-badge.google { background: #e3f2fd; color: #0d47a1; }
+        .provider-badge.deepseek { background: #e8eaf6; color: #1a237e; }
+        .provider-badge.mistral { background: #fce4ec; color: #880e4f; }
+        .provider-badge.cohere { background: #f3e5f5; color: #4a148c; }
+        .provider-badge.together { background: #e0f2f1; color: #004d40; }
+        .provider-badge.xai { background: #eceff1; color: #263238; }
+        .provider-badge.ai21 { background: #fff8e1; color: #f57f17; }
+        .provider-badge.moonshot { background: #e0f7fa; color: #006064; }
+
+        .related-tools { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 12px; margin-top: 32px; }
+        .related-tool { padding: 16px; background: var(--card-bg, #fff); border: 1px solid var(--border, #e5e7eb); border-radius: 8px; text-decoration: none; color: inherit; transition: all 0.15s; }
+        .related-tool:hover { border-color: var(--accent, #6366f1); transform: translateY(-1px); }
+        .related-tool .rt-title { font-weight: 600; font-size: 14px; }
+        .related-tool .rt-desc { font-size: 12px; color: var(--text-muted, #6b7280); margin-top: 4px; }
+
+        @media (max-width: 640px) {
+            .model-grid { grid-template-columns: 1fr 1fr; }
+            .tool-hero { padding: 40px 16px 24px; }
+            .step-card { padding: 20px; }
+            .code-tabs { overflow-x: auto; }
+            .comparison-bar { gap: 12px; }
+            .compare-stat .value { font-size: 22px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="tool-hero">
+        <h1>AI Model Migration Code Generator</h1>
+        <p>Pick your current model and where you want to switch. Get production-ready migration code in Python, Node.js, and curl.</p>
+    </div>
+
+    <div class="migration-container">
+        <!-- Steps Indicator -->
+        <div class="steps-indicator">
+            <div class="step-dot active" id="step-ind-1">
+                <span class="dot">1</span>
+                <span>Current model</span>
+            </div>
+            <div class="step-dot" id="step-ind-2">
+                <span class="dot">2</span>
+                <span>Target model</span>
+            </div>
+            <div class="step-dot" id="step-ind-3">
+                <span class="dot">3</span>
+                <span>Migration code</span>
+            </div>
+        </div>
+
+        <!-- Step 1: Select Source Model -->
+        <div class="step-card" id="step-1">
+            <span class="step-label">Step 1</span>
+            <h3>What model are you currently using?</h3>
+            <div class="model-grid" id="source-grid"></div>
+        </div>
+
+        <!-- Step 2: Select Target Model -->
+        <div class="step-card" id="step-2" style="display:none;">
+            <span class="step-label to">Step 2</span>
+            <h3>Which model do you want to switch to?</h3>
+            <div class="model-grid" id="target-grid"></div>
+        </div>
+
+        <!-- Step 3: Results -->
+        <div id="step-3" style="display:none;">
+            <!-- Cost Comparison -->
+            <div class="step-card">
+                <span class="step-label">Cost Comparison</span>
+                <h3 id="comparison-title"></h3>
+                <div class="comparison-bar" id="comparison-bar"></div>
+            </div>
+
+            <!-- Migration Code -->
+            <div class="code-section">
+                <div class="step-card" style="padding-bottom: 0;">
+                    <span class="step-label">Migration Code</span>
+                    <h3>Copy-paste code for your migration</h3>
+                </div>
+                <div class="code-tabs" id="code-tabs">
+                    <button class="code-tab active" data-tab="python">Python</button>
+                    <button class="code-tab" data-tab="nodejs">Node.js</button>
+                    <button class="code-tab" data-tab="curl">curl</button>
+                </div>
+                <div class="code-block active" id="code-python">
+                    <button class="copy-btn" onclick="copyCode('python')">Copy</button>
+                    <pre><code id="code-python-content"></code></pre>
+                </div>
+                <div class="code-block" id="code-nodejs">
+                    <button class="copy-btn" onclick="copyCode('nodejs')">Copy</button>
+                    <pre><code id="code-nodejs-content"></code></pre>
+                </div>
+                <div class="code-block" id="code-curl">
+                    <button class="copy-btn" onclick="copyCode('curl')">Copy</button>
+                    <pre><code id="code-curl-content"></code></pre>
+                </div>
+            </div>
+
+            <!-- Gated code for Pro users -->
+            <div class="gated-code" id="gated-notice" style="display:none;">
+                <h3>🔒 Full migration code for this pair requires Pro</h3>
+                <p>Generate migration code for all 42 models across 10 providers.</p>
+                <a href="pricing.html" class="cta-button" style="display:inline-block;padding:12px 28px;background:var(--accent,#6366f1);color:#fff;border-radius:8px;text-decoration:none;font-weight:600;">Unlock Pro — $29 lifetime</a>
+                <p style="margin-top:12px;font-size:13px;">One-time payment. No subscription. 14-day money-back guarantee.</p>
+            </div>
+
+            <!-- Migration Tips -->
+            <div class="migration-tips">
+                <h3>⚡ Migration Tips</h3>
+                <div class="tip-item">
+                    <span class="tip-icon">🔄</span>
+                    <div class="tip-text">
+                        <strong>OpenAI-compatible providers need minimal changes</strong>
+                        DeepSeek, Together AI, xAI, and Moonshot use the same API format as OpenAI. Just change the base URL and API key.
+                    </div>
+                </div>
+                <div class="tip-item">
+                    <span class="tip-icon">🧪</span>
+                    <div class="tip-text">
+                        <strong>Test with a small batch first</strong>
+                        Run 10-20 requests through the new provider before migrating your full traffic. Watch for differences in output quality, latency, and rate limits.
+                    </div>
+                </div>
+                <div class="tip-item">
+                    <span class="tip-icon">📊</span>
+                    <div class="tip-text">
+                        <strong>Monitor your new costs</strong>
+                        Use the APIpulse <a href="calculator.html">cost calculator</a> to estimate your monthly bill at the new provider before switching.
+                    </div>
+                </div>
+                <div class="tip-item">
+                    <span class="tip-icon">🔐</span>
+                    <div class="tip-text">
+                        <strong>Rotate API keys after migration</strong>
+                        Once confirmed working, revoke old API keys to prevent unauthorized usage and accidental charges.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Related Tools -->
+        <h3 style="margin-top:40px;margin-bottom:16px;">Related Tools</h3>
+        <div class="related-tools">
+            <a href="recommend.html" class="related-tool">
+                <div class="rt-title">🤖 Model Recommendation Engine</div>
+                <div class="rt-desc">Answer 4 questions, get a personalized model pick.</div>
+            </a>
+            <a href="calculator.html" class="related-tool">
+                <div class="rt-title">🧮 Cost Calculator</div>
+                <div class="rt-desc">Estimate monthly costs for any model and usage level.</div>
+            </a>
+            <a href="compare.html" class="related-tool">
+                <div class="rt-title">📊 Model Comparison</div>
+                <div class="rt-desc">Side-by-side pricing comparison for any two models.</div>
+            </a>
+            <a href="cheapest-ai-api.html" class="related-tool">
+                <div class="rt-title">💰 Cheapest AI APIs</div>
+                <div class="rt-desc">Ranked by cost for every use case.</div>
+            </a>
+        </div>
+    </div>
+
+    <footer style="text-align:center;padding:40px 24px;border-top:1px solid var(--border);margin-top:40px;">
+        <p style="font-size:13px;color:var(--text-muted);">© 2026 APIpulse. Pricing data updated Jun 14, 2026.</p>
+    </footer>
+
+    <script>
+    // ========== PROVIDER API CONFIG ==========
+    const PROVIDER_CONFIG = {
+        openai: {
+            name: 'OpenAI',
+            baseUrl: 'https://api.openai.com/v1',
+            authType: 'bearer',
+            sdk: 'openai',
+            envKey: 'OPENAI_API_KEY',
+            compatGroup: 'openai' // providers sharing OpenAI-compatible format
+        },
+        anthropic: {
+            name: 'Anthropic',
+            baseUrl: 'https://api.anthropic.com/v1',
+            authType: 'x-api-key',
+            sdk: 'anthropic',
+            envKey: 'ANTHROPIC_API_KEY',
+            compatGroup: 'anthropic'
+        },
+        google: {
+            name: 'Google',
+            baseUrl: 'https://generativelanguage.googleapis.com/v1beta',
+            authType: 'query-param',
+            sdk: 'google-genai',
+            envKey: 'GOOGLE_API_KEY',
+            compatGroup: 'google'
+        },
+        deepseek: {
+            name: 'DeepSeek',
+            baseUrl: 'https://api.deepseek.com/v1',
+            authType: 'bearer',
+            sdk: 'openai',
+            envKey: 'DEEPSEEK_API_KEY',
+            compatGroup: 'openai'
+        },
+        mistral: {
+            name: 'Mistral',
+            baseUrl: 'https://api.mistral.ai/v1',
+            authType: 'bearer',
+            sdk: 'openai',
+            envKey: 'MISTRAL_API_KEY',
+            compatGroup: 'openai'
+        },
+        cohere: {
+            name: 'Cohere',
+            baseUrl: 'https://api.cohere.com/v2',
+            authType: 'bearer',
+            sdk: 'cohere',
+            envKey: 'COHERE_API_KEY',
+            compatGroup: 'cohere'
+        },
+        together: {
+            name: 'Together AI',
+            baseUrl: 'https://api.together.xyz/v1',
+            authType: 'bearer',
+            sdk: 'openai',
+            envKey: 'TOGETHER_API_KEY',
+            compatGroup: 'openai'
+        },
+        xai: {
+            name: 'xAI',
+            baseUrl: 'https://api.x.ai/v1',
+            authType: 'bearer',
+            sdk: 'openai',
+            envKey: 'XAI_API_KEY',
+            compatGroup: 'openai'
+        },
+        ai21: {
+            name: 'AI21',
+            baseUrl: 'https://api.ai21.com/studio/v1',
+            authType: 'bearer',
+            sdk: 'openai',
+            envKey: 'AI21_API_KEY',
+            compatGroup: 'openai'
+        },
+        moonshot: {
+            name: 'Moonshot',
+            baseUrl: 'https://api.moonshot.cn/v1',
+            authType: 'bearer',
+            sdk: 'openai',
+            envKey: 'MOONSHOT_API_KEY',
+            compatGroup: 'openai'
+        }
+    };
+
+    // Map API_MODELS to include provider config reference
+    // FREE models: top 8 most popular for free code generation
+    const FREE_MODEL_IDS = new Set([
+        'openai-gpt4o', 'openai-gpt4o-mini', 'openai-gpt5', 'openai-gpt5-mini',
+        'anthropic-sonnet46', 'anthropic-haiku', 'anthropic-opus48',
+        'google-pro', 'google-gemini3-flash',
+        'deepseek-v4-pro', 'deepseek-v4-flash',
+        'mistral-large'
+    ]);
+
+    let selectedSource = null;
+    let selectedTarget = null;
+
+    // ========== RENDER MODELS ==========
+    function renderModels(gridId, type) {
+        const grid = document.getElementById(gridId);
+        const isPro = typeof isProUser === 'function' ? isProUser() : false;
+        grid.innerHTML = '';
+
+        // Filter to non-deprecated models
+        const models = API_MODELS.filter(m => !m.deprecated);
+
+        models.forEach(m => {
+            const btn = document.createElement('div');
+            const isFree = FREE_MODEL_IDS.has(m.id);
+            const locked = !isFree && !isPro && type === 'target';
+            btn.className = 'model-btn' + (locked ? ' locked' : '');
+            btn.dataset.id = m.id;
+
+            const provClass = m.providerSlug.replace(/[^a-z]/g, '');
+            btn.innerHTML = '<div class="m-name">' + escapeHtml(m.name) + '</div>' +
+                '<div class="m-provider"><span class="provider-badge ' + provClass + '">' + escapeHtml(m.provider) + '</span></div>' +
+                '<div class="m-price">$' + m.input.toFixed(2) + ' / $' + m.output.toFixed(2) + ' per 1M tokens</div>';
+
+            btn.addEventListener('click', function() {
+                if (locked) {
+                    // Show Pro upsell
+                    window.location.href = 'pricing.html';
+                    return;
+                }
+                handleModelSelect(type, m.id);
+            });
+
+            grid.appendChild(btn);
+        });
+    }
+
+    function handleModelSelect(type, modelId) {
+        const gridId = type === 'source' ? 'source-grid' : 'target-grid';
+        const grid = document.getElementById(gridId);
+
+        // Deselect previous
+        grid.querySelectorAll('.model-btn').forEach(b => b.classList.remove('selected'));
+
+        // Select new
+        const btn = grid.querySelector('[data-id="' + modelId + '"]');
+        if (btn) btn.classList.add('selected');
+
+        if (type === 'source') {
+            selectedSource = modelId;
+            // Update step indicator
+            document.getElementById('step-ind-1').className = 'step-dot done';
+            document.getElementById('step-ind-2').className = 'step-dot active';
+            // Show step 2
+            document.getElementById('step-2').style.display = '';
+            // Re-render target grid (hide source model)
+            renderModels('target-grid', 'target');
+            // Hide the source model in target grid
+            const srcBtn = document.querySelector('#target-grid [data-id="' + modelId + '"]');
+            if (srcBtn) srcBtn.style.display = 'none';
+            // Hide step 3
+            document.getElementById('step-3').style.display = 'none';
+            // Scroll to step 2
+            document.getElementById('step-2').scrollIntoView({ behavior: 'smooth', block: 'center' });
+        } else {
+            selectedTarget = modelId;
+            // Update step indicator
+            document.getElementById('step-ind-2').className = 'step-dot done';
+            document.getElementById('step-ind-3').className = 'step-dot active';
+            // Generate and show results
+            generateMigration();
+            document.getElementById('step-3').style.display = '';
+            document.getElementById('step-3').scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+
+        // Track event
+        if (window.trackEvent) {
+            window.trackEvent('migration_' + type + '_selected', { model_id: modelId });
+        }
+    }
+
+    // ========== GENERATE MIGRATION ==========
+    function generateMigration() {
+        const source = getModelById(selectedSource);
+        const target = getModelById(selectedTarget);
+        if (!source || !target) return;
+
+        const srcConfig = PROVIDER_CONFIG[source.providerSlug];
+        const tgtConfig = PROVIDER_CONFIG[target.providerSlug];
+
+        // Comparison title
+        document.getElementById('comparison-title').textContent =
+            source.provider + ' ' + source.name + ' → ' + target.provider + ' ' + target.name;
+
+        // Cost comparison
+        renderComparison(source, target);
+
+        // Check if this pair requires Pro
+        const isFree = FREE_MODEL_IDS.has(selectedSource) && FREE_MODEL_IDS.has(selectedTarget);
+        const isPro = typeof isProUser === 'function' ? isProUser() : false;
+
+        if (!isFree && !isPro) {
+            // Show gated notice
+            document.getElementById('gated-notice').style.display = '';
+            document.querySelector('.code-section').style.display = 'none';
+        } else {
+            document.getElementById('gated-notice').style.display = 'none';
+            document.querySelector('.code-section').style.display = '';
+            // Generate code
+            generatePythonCode(source, target, srcConfig, tgtConfig);
+            generateNodeCode(source, target, srcConfig, tgtConfig);
+            generateCurlCode(source, target, srcConfig, tgtConfig);
+        }
+
+        // Track
+        if (window.trackEvent) {
+            window.trackEvent('migration_generated', {
+                source: selectedSource,
+                target: selectedTarget,
+                source_provider: source.provider,
+                target_provider: target.provider,
+                is_free_pair: isFree
+            });
+        }
+    }
+
+    function renderComparison(source, target) {
+        const bar = document.getElementById('comparison-bar');
+        const inputSavings = ((source.input - target.input) / source.input * 100).toFixed(0);
+        const outputSavings = ((source.output - target.output) / source.output * 100).toFixed(0);
+        const inputClass = parseFloat(inputSavings) >= 0 ? 'savings-positive' : 'savings-negative';
+        const outputClass = parseFloat(outputSavings) >= 0 ? 'savings-positive' : 'savings-negative';
+
+        // Monthly cost at 10K requests/day, 1K input + 500 output tokens per request
+        const dailyRequests = 10000;
+        const inputTokens = 1000;
+        const outputTokens = 500;
+        const srcMonthly = (source.input * dailyRequests * inputTokens + source.output * dailyRequests * outputTokens) / 1000000 * 30;
+        const tgtMonthly = (target.input * dailyRequests * inputTokens + target.output * dailyRequests * outputTokens) / 1000000 * 30;
+        const monthlySavings = srcMonthly - tgtMonthly;
+        const monthlyClass = monthlySavings >= 0 ? 'savings-positive' : 'savings-negative';
+
+        bar.innerHTML = `
+            <div class="compare-stat">
+                <div class="value ${inputClass}">${parseFloat(inputSavings) >= 0 ? '↓' : '↑'}${Math.abs(inputSavings)}%</div>
+                <div class="label">Input token cost</div>
+            </div>
+            <div class="compare-stat">
+                <div class="value ${outputClass}">${parseFloat(outputSavings) >= 0 ? '↓' : '↑'}${Math.abs(outputSavings)}%</div>
+                <div class="label">Output token cost</div>
+            </div>
+            <div class="compare-stat">
+                <div class="value ${monthlyClass}">$${Math.abs(monthlySavings).toFixed(2)}</div>
+                <div class="label">${monthlySavings >= 0 ? 'Saved' : 'Extra'}/month (10K req/day)</div>
+            </div>
+            <div class="compare-stat">
+                <div class="value">${target.context}</div>
+                <div class="label">Context window</div>
+            </div>
+        `;
+    }
+
+    // ========== CODE GENERATORS ==========
+    function getModelIdForProvider(model) {
+        // Return the actual API model ID string for each provider
+        // These are the strings used in API requests
+        const modelIdMap = {
+            // OpenAI
+            'openai-gpt55': 'gpt-5.5',
+            'openai-gpt55-pro': 'gpt-5.5-pro',
+            'openai-gpt53-codex': 'gpt-5.3-codex',
+            'openai-gpt5': 'gpt-5',
+            'openai-gpt5-mini': 'gpt-5-mini',
+            'openai-gpt-oss-120b': 'gpt-oss-120b',
+            'openai-gpt-oss-20b': 'gpt-oss-20b',
+            'openai-gpt4o': 'gpt-4o',
+            'openai-gpt4o-mini': 'gpt-4o-mini',
+            // Anthropic
+            'anthropic-opus48': 'claude-opus-4-8',
+            'anthropic-opus47': 'claude-opus-4-7',
+            'anthropic-opus': 'claude-4-opus',
+            'anthropic-sonnet46': 'claude-sonnet-4-6',
+            'anthropic-sonnet': 'claude-sonnet-4',
+            'anthropic-haiku': 'claude-haiku-4-5',
+            // Google
+            'google-gemini35-flash': 'gemini-3.5-flash',
+            'google-gemini31-flash-lite': 'gemini-3.1-flash-lite',
+            'google-gemini3-pro': 'gemini-3.1-pro',
+            'google-gemini3-flash': 'gemini-3-flash',
+            'google-pro': 'gemini-2.5-pro',
+            'google-25-flash-lite': 'gemini-2.5-flash-lite',
+            // DeepSeek
+            'deepseek-v4-pro': 'deepseek-v4-pro',
+            'deepseek-v4-flash': 'deepseek-v4-flash',
+            'deepseek-v32': 'deepseek-v3.2',
+            // Mistral
+            'mistral-large': 'mistral-large-latest',
+            'mistral-medium': 'mistral-medium-3.5-latest',
+            'mistral-small': 'mistral-small-latest',
+            // Cohere
+            'cohere-command-a': 'command-a',
+            'cohere-command-r-plus': 'command-r-plus',
+            'cohere-command-r': 'command-r',
+            // Together
+            'llama-4-scout': 'meta-llama/Llama-4-Scout',
+            'llama-4-maverick': 'meta-llama/Llama-4-Maverick',
+            'llama-3.1-70b': 'meta-llama/Meta-Llama-3.1-70B-Instruct-Turbo',
+            'llama-3.1-8b': 'meta-llama/Meta-Llama-3.1-8B-Instruct-Turbo',
+            // Moonshot
+            'kimi-k26': 'kimi-k2.6',
+            // xAI
+            'xai-grok3': 'grok-4.3',
+            'xai-grok3-mini': 'grok-build-0.1',
+            // AI21
+            'ai21-jamba17': 'jamba-1.7-large',
+            'ai21-jamba': 'jamba-1.5-large',
+        };
+        return modelIdMap[model.id] || model.id;
+    }
+
+    function generatePythonCode(source, target, srcConfig, tgtConfig) {
+        const srcModelId = getModelIdForProvider(source);
+        const tgtModelId = getModelIdForProvider(target);
+        const sameCompat = srcConfig.compatGroup === tgtConfig.compatGroup;
+        const needsSdkChange = srcConfig.sdk !== tgtConfig.sdk;
+
+        let code = '';
+
+        if (sameCompat && tgtConfig.sdk === 'openai') {
+            // OpenAI-compatible: just change base_url and key
+            code = `# Switch from ${source.provider} ${source.name} → ${target.provider} ${target.name}
+# Only the base URL and API key need to change!
+
+from openai import OpenAI
+
+client = OpenAI(
+    api_key="${tgtModelId.includes('/') ? 'your-' + tgtConfig.envKey.toLowerCase() : 'your-' + tgtConfig.envKey.toLowerCase().replace(/_/g, '-').replace('api-key', 'api-key')}",
+    base_url="${tgtConfig.baseUrl}"  # ← Changed from ${srcConfig.baseUrl}
+)
+
+response = client.chat.completions.create(
+    model="${tgtModelId}",  # ← Changed from ${srcModelId}
+    messages=[
+        {"role": "system", "content": "You are a helpful assistant."},
+        {"role": "user", "content": "Hello, how are you?"}
+    ],
+    temperature=0.7,
+    max_tokens=1024
+)
+
+print(response.choices[0].message.content)`;
+        } else if (tgtConfig.compatGroup === 'anthropic') {
+            // Switching to Anthropic
+            code = `# Switch from ${source.provider} ${source.name} → ${target.provider} ${target.name}
+# Anthropic uses its own SDK and API format
+
+import anthropic  # pip install anthropic
+
+client = anthropic.Anthropic(
+    api_key="your-${tgtConfig.envKey.toLowerCase().replace(/_/g, '-')}"
+)
+
+response = client.messages.create(
+    model="${tgtModelId}",
+    max_tokens=1024,
+    system="You are a helpful assistant.",  # System is a top-level param, not a message
+    messages=[
+        {"role": "user", "content": "Hello, how are you?"}
+    ],
+    temperature=0.7
+)
+
+# Note: Response format differs from OpenAI
+print(response.content[0].text)
+
+# Key differences from OpenAI format:
+# - System prompt is a top-level parameter, not a message role
+# - max_tokens is required (no default)
+# - Response is in response.content[0].text (not response.choices[0].message.content)`;
+        } else if (tgtConfig.compatGroup === 'google') {
+            // Switching to Google Gemini
+            code = `# Switch from ${source.provider} ${source.name} → ${target.provider} ${target.name}
+# Google Gemini uses its own SDK
+
+from google import genai  # pip install google-genai
+
+client = genai.Client(
+    api_key="your-${tgtConfig.envKey.toLowerCase().replace(/_/g, '-')}"
+)
+
+response = client.models.generate_content(
+    model="${tgtModelId}",
+    contents="Hello, how are you?",
+    config=genai.types.GenerateContentConfig(
+        system_instruction="You are a helpful assistant.",
+        temperature=0.7,
+        max_output_tokens=1024
+    )
+)
+
+print(response.text)
+
+# Key differences:
+# - Single 'contents' string for simple messages (or list for multi-turn)
+# - System instruction is in GenerateContentConfig
+# - Response is response.text (not nested in choices)`;
+        } else if (tgtConfig.compatGroup === 'cohere') {
+            // Switching to Cohere
+            code = `# Switch from ${source.provider} ${source.name} → ${target.provider} ${target.name}
+# Cohere uses its own SDK and API format
+
+import cohere  # pip install cohere
+
+client = cohere.ClientV2(
+    api_key="your-${tgtConfig.envKey.toLowerCase().replace(/_/g, '-')}"
+)
+
+response = client.chat(
+    model="${tgtModelId}",
+    messages=[
+        {"role": "system", "message": "You are a helpful assistant."},
+        {"role": "user", "message": "Hello, how are you?"}
+    ],
+    temperature=0.7,
+    max_tokens=1024
+)
+
+print(response.message.content[0].text)`;
+        } else {
+            // Fallback: generic OpenAI-compatible
+            code = `# Switch from ${source.provider} ${source.name} → ${target.provider} ${target.name}
+
+from openai import OpenAI
+
+client = OpenAI(
+    api_key="your-${tgtConfig.envKey.toLowerCase().replace(/_/g, '-')}",
+    base_url="${tgtConfig.baseUrl}"
+)
+
+response = client.chat.completions.create(
+    model="${tgtModelId}",
+    messages=[
+        {"role": "system", "content": "You are a helpful assistant."},
+        {"role": "user", "content": "Hello, how are you?"}
+    ],
+    temperature=0.7,
+    max_tokens=1024
+)
+
+print(response.choices[0].message.content)`;
+        }
+
+        document.getElementById('code-python-content').textContent = code;
+    }
+
+    function generateNodeCode(source, target, srcConfig, tgtConfig) {
+        const srcModelId = getModelIdForProvider(source);
+        const tgtModelId = getModelIdForProvider(target);
+        const sameCompat = srcConfig.compatGroup === tgtConfig.compatGroup;
+
+        let code = '';
+
+        if (sameCompat && tgtConfig.sdk === 'openai') {
+            code = `// Switch from ${source.provider} ${source.name} → ${target.provider} ${target.name}
+// Only the base URL and API key need to change!
+
+import OpenAI from "openai";
+
+const client = new OpenAI({
+    apiKey: process.env.${tgtConfig.envKey},
+    baseURL: "${tgtConfig.baseUrl}",  // ← Changed from ${srcConfig.baseUrl}
+});
+
+const response = await client.chat.completions.create({
+    model: "${tgtModelId}",  // ← Changed from ${srcModelId}
+    messages: [
+        { role: "system", content: "You are a helpful assistant." },
+        { role: "user", content: "Hello, how are you?" },
+    ],
+    temperature: 0.7,
+    max_tokens: 1024,
+});
+
+console.log(response.choices[0].message.content);`;
+        } else if (tgtConfig.compatGroup === 'anthropic') {
+            code = `// Switch from ${source.provider} ${source.name} → ${target.provider} ${target.name}
+// Anthropic uses its own SDK
+
+import Anthropic from "@anthropic-ai/sdk";  // npm install @anthropic-ai/sdk
+
+const client = new Anthropic({
+    apiKey: process.env.${tgtConfig.envKey},
+});
+
+const response = await client.messages.create({
+    model: "${tgtModelId}",
+    max_tokens: 1024,
+    system: "You are a helpful assistant.",  // System is top-level, not a message
+    messages: [
+        { role: "user", content: "Hello, how are you?" },
+    ],
+    temperature: 0.7,
+});
+
+// Note: Response format differs from OpenAI
+console.log(response.content[0].text);`;
+        } else if (tgtConfig.compatGroup === 'google') {
+            code = `// Switch from ${source.provider} ${source.name} → ${target.provider} ${target.name}
+// Google Gemini uses its own SDK
+
+import { GoogleGenAI } from "@google/genai";  // npm install @google/genai
+
+const ai = new GoogleGenAI({ apiKey: process.env.${tgtConfig.envKey} });
+
+const response = await ai.models.generateContent({
+    model: "${tgtModelId}",
+    contents: "Hello, how are you?",
+    config: {
+        systemInstruction: "You are a helpful assistant.",
+        temperature: 0.7,
+        maxOutputTokens: 1024,
+    },
+});
+
+console.log(response.text);`;
+        } else if (tgtConfig.compatGroup === 'cohere') {
+            code = `// Switch from ${source.provider} ${source.name} → ${target.provider} ${target.name}
+// Cohere uses its own SDK
+
+import { CohereClientV2 } from "cohere-ai";  // npm install cohere-ai
+
+const client = new CohereClientV2({ token: process.env.${tgtConfig.envKey} });
+
+const response = await client.chat({
+    model: "${tgtModelId}",
+    messages: [
+        { role: "system", content: "You are a helpful assistant." },
+        { role: "user", content: "Hello, how are you?" },
+    ],
+    temperature: 0.7,
+    maxTokens: 1024,
+});
+
+console.log(response.message.content[0].text);`;
+        } else {
+            code = `// Switch from ${source.provider} ${source.name} → ${target.provider} ${target.name}
+
+import OpenAI from "openai";
+
+const client = new OpenAI({
+    apiKey: process.env.${tgtConfig.envKey},
+    baseURL: "${tgtConfig.baseUrl}",
+});
+
+const response = await client.chat.completions.create({
+    model: "${tgtModelId}",
+    messages: [
+        { role: "system", content: "You are a helpful assistant." },
+        { role: "user", content: "Hello, how are you?" },
+    ],
+    temperature: 0.7,
+    max_tokens: 1024,
+});
+
+console.log(response.choices[0].message.content);`;
+        }
+
+        document.getElementById('code-nodejs-content').textContent = code;
+    }
+
+    function generateCurlCode(source, target, srcConfig, tgtConfig) {
+        const tgtModelId = getModelIdForProvider(target);
+        let code = '';
+
+        if (tgtConfig.compatGroup === 'openai') {
+            // OpenAI-compatible curl
+            code = `# Switch from ${source.provider} ${source.name} → ${target.provider} ${target.name}
+curl ${tgtConfig.baseUrl}/chat/completions \\
+  -H "Content-Type: application/json" \\
+  -H "Authorization: Bearer $${tgtConfig.envKey}" \\
+  -d '{
+    "model": "${tgtModelId}",
+    "messages": [
+      {"role": "system", "content": "You are a helpful assistant."},
+      {"role": "user", "content": "Hello, how are you?"}
+    ],
+    "temperature": 0.7,
+    "max_tokens": 1024
+  }'`;
+        } else if (tgtConfig.compatGroup === 'anthropic') {
+            code = `# Switch from ${source.provider} ${source.name} → ${target.provider} ${target.name}
+# Anthropic uses x-api-key header and different request format
+curl https://api.anthropic.com/v1/messages \\
+  -H "Content-Type: application/json" \\
+  -H "x-api-key: $${tgtConfig.envKey}" \\
+  -H "anthropic-version: 2023-06-01" \\
+  -d '{
+    "model": "${tgtModelId}",
+    "max_tokens": 1024,
+    "system": "You are a helpful assistant.",
+    "messages": [
+      {"role": "user", "content": "Hello, how are you?"}
+    ],
+    "temperature": 0.7
+  }'`;
+        } else if (tgtConfig.compatGroup === 'google') {
+            code = `# Switch from ${source.provider} ${source.name} → ${target.provider} ${target.name}
+# Google Gemini uses query param for API key
+curl "https://generativelanguage.googleapis.com/v1beta/models/${tgtModelId}:generateContent?key=$${tgtConfig.envKey}" \\
+  -H "Content-Type: application/json" \\
+  -d '{
+    "contents": [{"parts": [{"text": "Hello, how are you?"}]}],
+    "systemInstruction": {"parts": [{"text": "You are a helpful assistant."}]},
+    "generationConfig": {
+      "temperature": 0.7,
+      "maxOutputTokens": 1024
+    }
+  }'`;
+        } else if (tgtConfig.compatGroup === 'cohere') {
+            code = `# Switch from ${source.provider} ${source.name} → ${target.provider} ${target.name}
+curl https://api.cohere.com/v2/chat \\
+  -H "Content-Type: application/json" \\
+  -H "Authorization: Bearer $${tgtConfig.envKey}" \\
+  -d '{
+    "model": "${tgtModelId}",
+    "messages": [
+      {"role": "user", "content": "Hello, how are you?"}
+    ],
+    "temperature": 0.7,
+    "max_tokens": 1024
+  }'`;
+        } else {
+            code = `# Switch from ${source.provider} ${source.name} → ${target.provider} ${target.name}
+curl ${tgtConfig.baseUrl}/chat/completions \\
+  -H "Content-Type: application/json" \\
+  -H "Authorization: Bearer $${tgtConfig.envKey}" \\
+  -d '{
+    "model": "${tgtModelId}",
+    "messages": [
+      {"role": "system", "content": "You are a helpful assistant."},
+      {"role": "user", "content": "Hello, how are you?"}
+    ],
+    "temperature": 0.7,
+    "max_tokens": 1024
+  }'`;
+        }
+
+        document.getElementById('code-curl-content').textContent = code;
+    }
+
+    // ========== TAB SWITCHING ==========
+    document.querySelectorAll('.code-tab').forEach(tab => {
+        tab.addEventListener('click', function() {
+            document.querySelectorAll('.code-tab').forEach(t => t.classList.remove('active'));
+            document.querySelectorAll('.code-block').forEach(b => b.classList.remove('active'));
+            this.classList.add('active');
+            document.getElementById('code-' + this.dataset.tab).classList.add('active');
+        });
+    });
+
+    // ========== COPY CODE ==========
+    function copyCode(lang) {
+        const code = document.getElementById('code-' + lang + '-content').textContent;
+        navigator.clipboard.writeText(code).then(() => {
+            const btn = document.querySelector('#code-' + lang + ' .copy-btn');
+            btn.textContent = 'Copied!';
+            setTimeout(() => btn.textContent = 'Copy', 2000);
+        });
+        if (window.trackEvent) window.trackEvent('migration_code_copied', { language: lang });
+    }
+
+    // ========== INIT ==========
+    document.addEventListener('DOMContentLoaded', function() {
+        renderModels('source-grid', 'source');
+    });
+    </script>
+</body>
+</html>
