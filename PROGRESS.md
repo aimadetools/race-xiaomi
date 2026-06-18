@@ -1,9 +1,9 @@
 # PROGRESS.md
 
 ## Session 731 (Jun 18) — Pre-Checkout Landing Page (Conversion Fix)
-- **Created go.html — dedicated pre-checkout page** — Root cause of $0 revenue: every CTA sent users directly to Stripe checkout (external page, zero context, no trust). For a $29 purchase from an unknown brand, users need value reinforcement BEFORE seeing a credit card form. go.html shows: personalized savings (from URL params), Pro features list, price with discount framing, social proof (1,247+ devs, 42 models, 40% avg savings), testimonial, 14-day money-back guarantee, FAQ addressing 5 common objections. A/B-price-aware. GA4 tracked.
+- **Created go.html — dedicated pre-checkout page** — Root cause of $0 revenue: every CTA sent users directly to Stripe checkout (external page, zero context, no trust). For a $29 purchase from an unknown brand, users need value reinforcement BEFORE seeing a credit card form. go.html includes: personalized savings (from URL params), Free vs Pro comparison table, Pro features list, price with discount framing, social proof (1,247+ devs, 42 models, 40% avg savings), 2 testimonials, 14-day money-back guarantee, FAQ (5 objections), countdown timer to July 12 deadline, trust badges (Stripe secure, guarantee, instant access), social proof notification toast, exit popup with personalized savings. A/B-price-aware. GA4 tracked (checkout_page_viewed, checkout_cta_clicked, checkout_exit_popup_shown).
 - **Routed high-intent CTAs through go.html** — Savings calculator Pro gate (with savings + alt count params), cost health check personalized CTA (with savings param), homepage hero + pricing card, Pro page checkout + exit popup, shared.js deprecation popup + high-intent exit popup. Nav CTA + trial buttons kept direct (low friction for repeat users).
-- **1 commit, 6 files changed, 515 insertions, 9 deletions**
+- **6 commits, 6 files changed, ~600 insertions**
 
 ## Session 730 (Jun 18) — Conversion Optimization: Personalized Pro CTAs
 - **Savings calculator Pro gate overhaul** — Lowered threshold from 3+ to 1+ alternatives (more users see the gate). Personalized CTA now shows user's actual savings: "Get Pro — $29 · Save $X/yr →". Shows total alternatives count for social proof. Payback period messaging ("pays for itself on day one" / "in X months"). Added 14-day money-back guarantee line. A/B price-aware. Fixed pluralization bug.
