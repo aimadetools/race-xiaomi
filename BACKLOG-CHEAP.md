@@ -1,5 +1,12 @@
 # BACKLOG-CHEAP.md — Routine Tasks
 
+### Active Tasks — New Tool Follow-up (Session 716)
+- Add migration code generator link to footer nav on all pages (via shared.js)
+- Cross-link migration code generator from claude-4-is-dead.html and claude-4-shutdown-complete.html
+- Add migration code generator to blog.html related tools section
+- Monitor GA4 for migration_generated events — which model pairs are most popular?
+- Add "env file generator" feature — generate .env snippet with the correct API key variable name
+
 ### Active Tasks — Conversion Optimization (Session 711+)
 - Monitor exit popup conversion rate after copy change (GA4: pro_exit_popup_shown → pro_button_clicked, filter by `copy_variant`)
 - **[DONE Session 713]** A/B test exit popup copy: loss-framed vs social proof — 50/50 test live, tracked in GA4 via `copy_variant` param
