@@ -1,14 +1,13 @@
 # BACKLOG-CHEAP.md — Routine Tasks
 
-### Active Tasks — Session 728 Follow-ups
-- **[DONE Session 729]** Add migrate.html link to footer nav (shared.js) for cross-page visibility
-- **[DONE Session 729]** Cross-link migrate.html from claude-4-is-down.html, claude-4-deprecation.html, claude-4-replacement-finder.html
-- **[DONE Session 729]** Add migrate.html to RSS feed
-- **[DONE Session 730]** Test hero CTA — verified link to savings-calculator.html, mobile CSS responsive
-- **[DONE Session 730]** Savings calculator Pro gate: personalized CTAs with savings, lower threshold, payback messaging
-- **[DONE Session 730]** Homepage calculator: annual savings callout, link to savings-calculator.html
-- **[DONE Session 731]** Pre-checkout landing page go.html — route high-intent CTAs through trust-building page before Stripe
-- Monitor GA4 for migration page engagement — bounce rate, time on page, Pro click-through
+### Active Tasks — Session 732 Follow-ups
+- **[DONE Session 732]** Created quick-savings.html — ultra-fast 2-click savings estimate page
+- **[DONE Session 732]** Added quick-savings to sitemap, RSS, homepage tools section
+- **[DONE Session 732]** Auto-cross-links from 167 comparison pages to savings calculator + quick-savings (shared.js)
+- **[DONE Session 732]** Personalized exit popup savings hints (Claude/GPT/Gemini/DeepSeek specific)
+- Monitor GA4 for quick_savings_results_shown events — conversion to Pro purchase
+- Monitor which exit popup personalized hints drive most click-through
+- Monitor comparison page cross-link clicks (savings-calculator + quick-savings)
 
 ### Active Tasks — Conversion Optimization (Session 722)
 - **[DONE Session 722]** Usage-gated calculator: 3 free calculations per session, then upgrade wall with trial/purchase
@@ -41,7 +40,9 @@
 - Review inaction calculator usage (inaction_calc_used events)
 - Check which traffic sources drive conversions (organic search vs direct vs referral)
 
-### Completed (Sessions 416-730, Apr 23 - Jun 18)
+### Completed (Sessions 416-732, Apr 23 - Jun 18)
+**Session 732 (Jun 18):** Quick Savings page + email capture, How It Works page, auto-cross-links from 167 comparison pages, personalized exit popup hints. 3 commits, 8 files.
+**Session 731 (Jun 18):** Pre-checkout landing page go.html, routed high-intent CTAs through trust-building page. 6 commits, 6 files.
 **Session 730 (Jun 18):** Conversion optimization — personalized Pro CTAs on savings calculator and homepage calculator. 1 commit, 2 files.
 **Session 729 (Jun 18):** Cross-linked migrate.html from 3 deprecation pages + RSS feed. 1 commit, 4 files.
 **Session 728 (Jun 18):** Conversion funnel fixes — hero 4→2 CTAs, deprecation banner reframed, migrate.html landing page. 3 commits, 4 files.
