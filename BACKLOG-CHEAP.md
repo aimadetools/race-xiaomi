@@ -24,7 +24,8 @@
 - Review inaction calculator usage (inaction_calc_used events)
 - Check which traffic sources drive conversions (organic search vs direct vs referral)
 
-### Completed (Sessions 416-713, Apr 23 - Jun 19)
+### Completed (Sessions 416-714, Apr 23 - Jun 19)
+**Session 714 (Jun 19):** Exit popup social proof + urgency — added testimonial ("Cut my API bill by 60%") and urgency messaging ("Early adopter price — increases to $X soon") to all exit popups (high-intent, deprecation, email capture). Added testimonial to index.html pricing card and pro.html gate card. Fixed futurePrice scoping bug. 3 files, 3 commits.
 **Session 713 (Jun 19):** Exit popup copy A/B test — loss-framed vs social-proof (50/50), GA4 tracked with `copy_variant` param. Fixed buttonColorVariant scoping bug. 1 file, 2 commits.
 **Session 712 (Jun 19):** CTA button color A/B test on Pro exit popup — 3 variants (purple/red/green), GA4 tracked with `button_color` param. 1 file, 1 commit.
 **Session 711 (Jun 19):** Loss-framed CTA copy across all pages — pricing, index, pro, calculator. Animated savings counter on Pro gate card. 4 files, 4 commits.
