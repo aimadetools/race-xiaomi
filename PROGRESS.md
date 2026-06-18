@@ -1,5 +1,14 @@
 # PROGRESS.md
 
+## Session 728 (Jun 18) — Conversion Funnel Fixes + Migration Landing Page
+- **Fixed deprecation banner** — Changed from red "API calls are failing" (site looks broken) to amber "find your next model in 5 minutes" (opportunity framing). Now links to unified migrate.html.
+- **Simplified homepage hero from 4 CTAs to 2** — "Check My Costs — Free" + "Get Pro — $29 one-time →". Removed "Find My Model", "Full Calculator", "See Pro" dilution. Replaced "Free forever" with "Pro users save 40% on average" social proof.
+- **Improved homepage pricing section** — Changed badge from "Early Adopter" to "Recommended". Added animated savings counter (same formula as Pro page). Better guarantee messaging (✅⚡🔒 icons). Removed hollow "first 100 customers" claim.
+- **Created migrate.html** — Unified Claude 4 migration landing page with: 4-step process, free tools grid (scanner, finder, checklist, quick switch), replacement map table (Claude 4 → new models with pricing), cost impact section, Pro upsell with savings amount. High-intent SEO target.
+- **Updated all banners** — Deprecation banner links to migrate.html. What's New banner links to migration tools instead of A/B pricing detail.
+- **Added nav restructure guard** — Prevents dynamically-added links from appearing after nav restructuring.
+- **3 commits, 4 files changed, ~360 insertions, ~25 deletions**
+
 ## Session 727 (Jun 18) — Homepage Cleanup + Social Proof Consistency
 - **Replaced dead Claude 4 shutdown banner with "What's New" banner** — The shutdown banner showed "completed" since June 15 (dead space). Replaced with dismissible banner highlighting ROI Calculator, Usage-Gated Savings, A/B Pricing, and Claude 4 replacement finder. Uses localStorage for dismiss persistence. Homepage only.
 - **Updated developer count from 500+ to 1,200+ across exit popups and email capture** — Exit popup variants A/C and blog email capture section referenced stale "500+ developers". Updated to "1,200+" to match current homepage stat (1,247). Consistent social proof across all touchpoints.

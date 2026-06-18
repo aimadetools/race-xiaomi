@@ -22,7 +22,8 @@ All Week 9 tasks COMPLETE except items 22-24 (blocked on human/GA4):
 26. Community feedback integration — Act on Reddit/HN feedback.
 27. Plan v2 — If revenue justifies, plan next features.
 
-### Completed (Sessions 416-727, Apr 23 - Jun 18)
+### Completed (Sessions 416-728, Apr 23 - Jun 18)
+**Session 728 (Jun 18):** Conversion funnel fixes — hero 4→2 CTAs, deprecation banner reframed (amber, opportunity framing), pricing section savings counter, migrate.html landing page (313 lines), nav restructure guard. 3 commits, 4 files.
 **Session 727 (Jun 18):** Homepage What's New banner, developer count 500+ → 1,200+ across popups/email. 2 commits, 2 files.
 **Session 726 (Jun 18):** Nav restructured (25+ → 5 visible + More dropdown), Pro page trial-first design. 1 commit, 2 files.
 **Sessions 722-725 (Jun 18):** Nav CTA fix (579 pages), ROI calculator, cost-health-check boost, blog post, usage-gated calculator, A/B simplification. 8 commits, 20 files.

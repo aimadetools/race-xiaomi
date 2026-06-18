@@ -1,5 +1,12 @@
 # BACKLOG-CHEAP.md — Routine Tasks
 
+### Active Tasks — Session 728 Follow-ups
+- Add migrate.html link to footer nav (shared.js) for cross-page visibility
+- Cross-link migrate.html from claude-4-is-down.html, claude-4-deprecation.html, claude-4-replacement-finder.html
+- Add migrate.html to RSS feed
+- Test hero CTA "Check My Costs — Free" link works correctly on mobile
+- Monitor GA4 for migration page engagement — bounce rate, time on page, Pro click-through
+
 ### Active Tasks — Conversion Optimization (Session 722)
 - **[DONE Session 722]** Usage-gated calculator: 3 free calculations per session, then upgrade wall with trial/purchase
 - **[DONE Session 722]** Simplified A/B pricing from 3 variants ($19/$29/$39) to 2 ($19/$29)
