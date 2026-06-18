@@ -541,20 +541,25 @@
                 '</div>';
         }
 
-        // Pro gate
-        if (alternatives.length > 3) {
+        // Pro gate — show whenever there are cheaper alternatives
+        if (alternatives.length > 0) {
+            var paybackMonths = monthlySavings > 0 ? Math.ceil(29 / monthlySavings) : 99;
+            var paybackText = paybackMonths <= 1 ? 'pays for itself on day one' : 'pays for itself in ' + paybackMonths + ' months';
+            var hiddenAlts = alternatives.length - 5;
+            var proAnnual = (monthlySavings * 12).toFixed(0);
+
             html += '<div class="pro-gate" style="margin-top:24px;">' +
-                '<h3>🚀 Get the full optimization report</h3>' +
-                '<p>Pro gives you 10+ alternatives ranked by cost, batch processing tips, caching strategies, and a PDF report you can share with your team.</p>' +
+                '<h3>🚀 Unlock your full savings report</h3>' +
+                '<p>You found <strong>$' + monthlySavings.toFixed(2) + '/mo in savings</strong> — Pro shows you the complete picture with ' + alternatives.length + ' alternatives ranked by cost, plus migration code and optimization strategies.</p>' +
                 '<div class="features">' +
-                '<span class="feature">10+ model alternatives</span>' +
-                '<span class="feature">Batch processing tips</span>' +
-                '<span class="feature">Caching strategies</span>' +
-                '<span class="feature">PDF export</span>' +
+                '<span class="feature">' + alternatives.length + ' cheaper alternatives</span>' +
+                '<span class="feature">Migration code snippets</span>' +
+                '<span class="feature">Batch & caching strategies</span>' +
+                '<span class="feature">PDF report for your team</span>' +
                 '</div>' +
-                '<a href="https://buy.stripe.com/fZu7sL3Gw3GS0RQeoDeEo0a" class="btn-primary" target="_blank" rel="noopener">Get Pro — $29 lifetime</a> ' +
+                '<a href="https://buy.stripe.com/fZu7sL3Gw3GS0RQeoDeEo0a" class="btn-primary" target="_blank" rel="noopener" onclick="if(window.trackEvent)window.trackEvent(\'pro_button_clicked\',{source:\'savings_calc_gate\',savings:\'+' + monthlySavings.toFixed(2) + '\'})">Get Pro — $' + (window._abPrice || 29) + ' · Save $' + proAnnual + '/yr →</a> ' +
                 '<button onclick="startTrial()" style="display:inline-block;padding:12px 20px;font-size:13px;font-weight:600;border:2px solid var(--accent);background:transparent;color:var(--accent);border-radius:10px;cursor:pointer;margin-top:8px;">Try Free for 24h →</button>' +
-                '<p style="font-size:12px;color:var(--text-muted);margin-top:12px;">Pays for itself in ' + (monthlySavings > 0 ? Math.ceil(29 / monthlySavings) : '—') + ' month' + (monthlySavings > 29 ? '' : 's') + '</p>' +
+                '<p style="font-size:12px;color:var(--text-muted);margin-top:12px;">✅ ' + paybackText.charAt(0).toUpperCase() + paybackText.slice(1) + ' · 14-day money-back guarantee</p>' +
                 '</div>';
         }
 
