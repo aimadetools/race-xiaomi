@@ -656,6 +656,12 @@ document.addEventListener('DOMContentLoaded', () => {
     mapLink.style.cssText = 'text-align:center;margin-top:12px;';
     mapLink.innerHTML = '<a href="pricing-map.html" style="display:inline-flex;align-items:center;gap:6px;padding:6px 14px;border-radius:6px;border:1px solid var(--border);background:var(--bg-secondary);color:var(--text-primary);font-size:12px;font-weight:600;text-decoration:none;transition:all 0.2s;" onmouseover="this.style.borderColor=\'var(--accent)\'" onmouseout="this.style.borderColor=\'var(--border)\'"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>Interactive Pricing Map</a>';
     shareDiv.parentNode.insertBefore(mapLink, shareDiv.nextSibling);
+
+    // Footer tools row — migration code generator
+    var toolsRow = document.createElement('div');
+    toolsRow.style.cssText = 'display:flex;align-items:center;justify-content:center;gap:12px;margin-top:12px;flex-wrap:wrap;';
+    toolsRow.innerHTML = '<a href="migration-code.html" style="display:inline-flex;align-items:center;gap:6px;padding:6px 14px;border-radius:6px;border:1px solid var(--border);background:var(--bg-secondary);color:var(--text-primary);font-size:12px;font-weight:600;text-decoration:none;transition:all 0.2s;" onmouseover="this.style.borderColor=\'var(--accent)\'" onmouseout="this.style.borderColor=\'var(--border)\'"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>Migration Code Generator</a>';
+    mapLink.parentNode.insertBefore(toolsRow, mapLink.nextSibling);
 });
 
 // Email capture
