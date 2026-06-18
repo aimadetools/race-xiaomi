@@ -1,8 +1,8 @@
 # BACKLOG-CHEAP.md — Routine Tasks
 
 ### Active Tasks — Conversion Optimization (Session 711+)
-- A/B test exit popup copy: loss-framed ("You're losing money") vs social proof ("Join 500+ developers") — need GA4 data
-- Monitor exit popup conversion rate after copy change (GA4: pro_exit_popup_shown → pro_button_clicked)
+- Monitor exit popup conversion rate after copy change (GA4: pro_exit_popup_shown → pro_button_clicked, filter by `copy_variant`)
+- **[DONE Session 713]** A/B test exit popup copy: loss-framed vs social proof — 50/50 test live, tracked in GA4 via `copy_variant` param
 - **[DONE Session 712]** Test different CTA button colors on exit popup — 3-variant A/B test live (purple/red/green), tracked in GA4 via `button_color` param
 
 ### Active Tasks — Blocked on Human Action
