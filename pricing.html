@@ -323,7 +323,7 @@
                         <div style="font-size:11px;color:var(--text-muted);">Unlock immediately after payment</div>
                     </div>
                 </div>
-                <a href="https://buy.stripe.com/fZu7sL3Gw3GS0RQeoDeEo0a" class="btn-primary" style="text-align:center;" target="_blank" rel="noopener" onclick="if(window.trackEvent)window.trackEvent('pro_button_clicked',{source:'pricing_page'})">Lock in Founding Member Price — $29</a>
+                <a href="https://buy.stripe.com/fZu7sL3Gw3GS0RQeoDeEo0a" class="btn-primary" style="text-align:center;" target="_blank" rel="noopener" onclick="if(window.trackEvent)window.trackEvent('pro_button_clicked',{source:'pricing_page'})">Stop Losing Money — Get Pro for $29</a>
                 <button onclick="startTrial()" style="width:100%;text-align:center;display:block;padding:14px 32px;font-size:15px;font-weight:600;border:2px solid var(--accent);background:transparent;color:var(--accent);border-radius:10px;cursor:pointer;margin-top:10px;transition:all 0.2s;" onmouseover="this.style.background='rgba(99,102,241,0.1)'" onmouseout="this.style.background='transparent'">Try Free for 24 Hours — No Card Needed</button>
                 <p style="font-size:12px;color:var(--text-muted);margin-top:12px;text-align:center;">After checkout, you'll be redirected to activate your Pro features automatically.</p>
             </div>
@@ -676,7 +676,7 @@
         <div style="text-align:center;margin-top:16px;padding:24px;background:linear-gradient(135deg,rgba(99,102,241,0.08),rgba(139,92,247,0.08));border-radius:12px;border:1px solid rgba(99,102,241,0.3);">
             <p style="font-size:15px;color:var(--text-secondary);margin-bottom:8px;">Every day you wait, you're overpaying for AI APIs.</p>
             <p style="font-size:14px;color:var(--text-muted);margin-bottom:16px;">Pro users save an average of <strong style="color:var(--green);">$60-200/month</strong> with optimization recommendations.</p>
-            <a href="https://buy.stripe.com/fZu7sL3Gw3GS0RQeoDeEo0a" class="btn-primary" style="display:inline-block;padding:14px 32px;text-align:center;" target="_blank" rel="noopener" onclick="if(window.trackEvent)window.trackEvent('pro_button_clicked',{source:'pricing_bottom_cta'})">Lock in $29 — Founding Member</a>
+            <a href="https://buy.stripe.com/fZu7sL3Gw3GS0RQeoDeEo0a" class="btn-primary" style="display:inline-block;padding:14px 32px;text-align:center;" target="_blank" rel="noopener" onclick="if(window.trackEvent)window.trackEvent('pro_button_clicked',{source:'pricing_bottom_cta'})">Stop the Leak — $29 One-Time</a>
             <p style="font-size:12px;color:var(--text-muted);margin-top:8px;">14-day money-back guarantee. No questions asked.</p>
         </div>
     </div>
@@ -863,7 +863,7 @@
             // Update CTA buttons
             var ctaBtn = document.querySelector('.pricing-card.featured .btn-primary');
             if(ctaBtn){
-                ctaBtn.textContent = 'Lock in Founding Member Price — $' + price;
+                ctaBtn.textContent = 'Stop Losing Money — Get Pro for $' + price;
                 ctaBtn.href = stripeLink;
             }
             var navCta = document.querySelector('.nav-cta');
@@ -895,7 +895,7 @@
             var bottomCtas = document.querySelectorAll('a[href*="buy.stripe.com"]');
             bottomCtas.forEach(function(a){
                 a.href = stripeLink;
-                if(a.textContent.includes('$29')) a.textContent = a.textContent.replace('$29', '$' + price);
+                if(a.textContent.includes('Stop the Leak')) a.textContent = 'Stop the Leak — $' + price + ' One-Time';
             });
 
             // Track CTA clicks with variant
@@ -922,7 +922,7 @@
                 overlay.style.cssText='position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.7);z-index:10000;display:flex;align-items:center;justify-content:center;';
                 var popup=document.createElement('div');
                 popup.style.cssText='background:var(--bg-secondary);border:1px solid var(--border);border-radius:16px;padding:40px;max-width:480px;text-align:center;margin:20px;';
-                popup.innerHTML='<h2 style="font-size:24px;font-weight:800;margin-bottom:12px;">Wait — before you go</h2><p style="color:var(--text-secondary);font-size:15px;margin-bottom:20px;line-height:1.6;">Most developers save <strong style="color:var(--green);">$60-200/month</strong> after using APIpulse Pro optimization recommendations. That\'s $720-2,400/year.</p><div style="background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:16px;margin-bottom:12px;"><div style="font-size:36px;font-weight:800;color:var(--accent);">$'+price+'</div><div style="font-size:13px;color:var(--text-muted);text-decoration:line-through;">$'+futurePrice+' after founding period</div><div style="font-size:13px;color:var(--text-muted);">one-time, lifetime access</div></div><div style="background:rgba(245,158,11,0.08);border:1px solid rgba(245,158,11,0.3);border-radius:8px;padding:10px 14px;margin-bottom:20px;font-size:13px;color:#d97706;">🔥 Founding member pricing — lock in $'+price+' before it goes to $'+futurePrice+'</div><a href="'+stripeLink+'" class="btn-primary" style="display:block;text-align:center;margin-bottom:12px;" target="_blank" rel="noopener" id="exit-popup-cta">Lock in $'+price+' — Founding Member</a><button onclick="document.getElementById(\'pricing-exit-popup\').remove()" style="background:none;border:none;color:var(--text-muted);cursor:pointer;font-size:13px;">No thanks, I\'ll pay $'+futurePrice+' later</button>';
+                popup.innerHTML='<h2 style="font-size:24px;font-weight:800;margin-bottom:12px;">You\'re losing money right now</h2><p style="color:var(--text-secondary);font-size:15px;margin-bottom:20px;line-height:1.6;">Most developers save <strong style="color:var(--green);">$60-200/month</strong> after using APIpulse Pro. That\'s $720-2,400/year you\'re leaving on the table.</p><div style="background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:16px;margin-bottom:12px;"><div style="font-size:36px;font-weight:800;color:var(--accent);">$'+price+'</div><div style="font-size:13px;color:var(--text-muted);text-decoration:line-through;">$'+futurePrice+' after founding period</div><div style="font-size:13px;color:var(--text-muted);">one-time, lifetime access</div></div><div style="background:rgba(245,158,11,0.08);border:1px solid rgba(245,158,11,0.3);border-radius:8px;padding:10px 14px;margin-bottom:20px;font-size:13px;color:#d97706;">🔥 Founding member pricing — lock in $'+price+' before it goes to $'+futurePrice+'</div><a href="'+stripeLink+'" class="btn-primary" style="display:block;text-align:center;margin-bottom:12px;" target="_blank" rel="noopener" id="exit-popup-cta">Stop the Leak — $'+price+' lifetime</a><button onclick="document.getElementById(\'pricing-exit-popup\').remove()" style="background:none;border:none;color:var(--text-muted);cursor:pointer;font-size:13px;">No thanks, I\'ll keep overpaying</button>';
                 overlay.appendChild(popup);
                 document.body.appendChild(overlay);
                 document.getElementById('exit-popup-cta').addEventListener('click',function(){
@@ -953,7 +953,7 @@
                     '<h2 style="font-size:20px;font-weight:800;margin-bottom:8px;color:var(--red);">Claude 4 Was Retired June 15 — Your API Is Failing</h2>' +
                     '<p style="font-size:14px;color:var(--text-secondary);margin-bottom:16px;line-height:1.6;">Pro shows you the cheapest replacement for <strong>your exact workload</strong> — most devs save 67-97%. Pay once, use forever.</p>' +
                     '<div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap;">' +
-                    '<a href="' + stripeLink + '" style="display:inline-block;background:var(--accent);color:white;padding:10px 20px;border-radius:8px;text-decoration:none;font-weight:700;font-size:14px;" target="_blank" rel="noopener">Get Pro — $' + price + ' lifetime</a>' +
+                    '<a href="' + stripeLink + '" style="display:inline-block;background:var(--accent);color:white;padding:10px 20px;border-radius:8px;text-decoration:none;font-weight:700;font-size:14px;" target="_blank" rel="noopener">Stop Losing Money — $' + price + ' lifetime</a>' +
                     '<a href="claude-4-migration-checklist.html" style="display:inline-block;background:transparent;color:var(--text-primary);padding:10px 20px;border-radius:8px;text-decoration:none;font-weight:600;font-size:14px;border:1px solid var(--border);">Print checklist →</a>' +
                     '</div>';
                 el.style.display = 'block';
