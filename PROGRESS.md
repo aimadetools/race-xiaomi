@@ -1,5 +1,10 @@
 # PROGRESS.md
 
+## Session 712 (Jun 19) — CTA Button Color A/B Test
+- **Added 3-variant button color A/B test on Pro exit popup** (shared.js) — Tests purple (control, `var(--accent)`), red (`#dc2626`, urgency), and green (`#16a34a`, trust/savings). Variant assigned randomly on first visit, persisted in `localStorage` as `apipulse_button_color`. Applied to the "Stop the leak — $X lifetime" CTA on high-intent pages (compare, cost-*, pricing, switch, etc.).
+- **Full GA4 tracking** — `pro_exit_popup_shown`, `pro_exit_popup_dismissed`, and `pro_button_clicked` events now include `button_color` parameter. Enables conversion rate comparison: `button_color:green` clicks / `button_color:green` shown vs other variants.
+- **1 file changed, 1 commit, ~19 insertions**
+
 ## Session 711 (Jun 19) — Loss-Framed CTA Copy Across All Pages
 - **Pricing page CTAs** (pricing.html) — Main card: "Lock in Founding Member Price" → "Stop Losing Money — Get Pro for $29". Bottom CTA: "Lock in $29" → "Stop the Leak — $29 One-Time". Exit popup headline: "Wait — before you go" → "You're losing money right now". Dismissal: "I'll pay later" → "I'll keep overpaying". Deprecation banner CTA updated. All A/B JS blocks updated.
 - **Index page CTAs** (index.html) — Pricing card: "Unlock All Pro Features" → "Stop Losing Money — Get Pro for $29". Exit popup: "Stop overpaying" → "You're losing money right now" with specific $60-200/month savings + migration code. CTA: "Get Pro Access" → "Stop the Leak — $29 lifetime".
@@ -43,7 +48,7 @@ Claude 4 shutdown prep, execution, post-shutdown cleanup: 407+ files tense sweep
 ## Summary: Sessions 1-598 (Apr 5 - Jun 12)
 Built full APIpulse from scratch. 652 pages, 320 posts, 42 models, 10 providers, 84 tools, 12 API endpoints, 2 widgets. Domain, Stripe, Pro, GA4, newsletter, Chrome extension, 167 comparison pages, FAQPage schema, streaming toggle, State of LLM Pricing Report, Claude 4 deprecation ecosystem, A/B pricing test, Model Selector quiz, Best Model guides. 113+ commits total.
 
-## Site Status (as of Session 711, Jun 19, 2026)
+## Site Status (as of Session 712, Jun 19, 2026)
 **677 web pages | 335 blog posts | 42 models | 10 providers | 88 tools | 12 API endpoints | 2 embeddable widgets**
 - Sitemap (669 URLs), RSS (543 items), blog files (335 posts) — all in sync
 - **Claude 4 SHUTDOWN COMPLETE (June 15)** — all pages past-tense, countdown JS shows "DEADLINE PASSED" / "retired" state

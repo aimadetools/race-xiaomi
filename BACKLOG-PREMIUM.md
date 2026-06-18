@@ -22,8 +22,9 @@ All Week 9 tasks COMPLETE except items 22-24 (blocked on human/GA4):
 26. Community feedback integration — Act on Reddit/HN feedback.
 27. Plan v2 — If revenue justifies, plan next features.
 
-### Completed (Sessions 416-709, Apr 23 - Jun 19)
-**Sessions 707-709 (Jun 19):** AI Model Recommendation Engine (4-step scoring tool, 42 models), Wall of Love testimonials page (15 quotes), Pro page direct Stripe checkout, exit popups on 3 Claude 4 pages, stale stat fixes.
+### Completed (Sessions 416-712, Apr 23 - Jun 19)
+**Session 712 (Jun 19):** CTA button color A/B test on Pro exit popup — 3 variants (purple/red/green), GA4 tracked.
+**Sessions 707-711 (Jun 19):** AI Model Recommendation Engine (4-step scoring tool, 42 models), Wall of Love testimonials page (15 quotes), Pro page direct Stripe checkout, exit popups on 3 Claude 4 pages, stale stat fixes, loss-framed CTA copy, conversion copy optimization.
 **Sessions 686-706 (Jun 17-19):** 20 sessions — 15+ new pages, exit popups on 15+ pages, Pro gating, scanner funnel tracking, mobile sweep, A/B pricing resumed.
 **Sessions 674-685 (Jun 15-17):** Post-shutdown conversion foundation — 7 new pages, scanner tool, messaging revamp, email A/B test.
 **Sessions 599-673 (Jun 12-17):** Claude 4 shutdown prep/execution/post-shutdown — 407+ files tense sweep, Stripe fix, emergency page optimization, guides, analytics.

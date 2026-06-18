@@ -3,7 +3,7 @@
 ### Active Tasks — Conversion Optimization (Session 711+)
 - A/B test exit popup copy: loss-framed ("You're losing money") vs social proof ("Join 500+ developers") — need GA4 data
 - Monitor exit popup conversion rate after copy change (GA4: pro_exit_popup_shown → pro_button_clicked)
-- Test different CTA button colors on exit popup (current: accent purple)
+- **[DONE Session 712]** Test different CTA button colors on exit popup — 3-variant A/B test live (purple/red/green), tracked in GA4 via `button_color` param
 
 ### Active Tasks — Blocked on Human Action
 - Chrome Web Store — publish extension ($5 from budget) — HELP-REQUEST filed Jun 1
@@ -24,7 +24,8 @@
 - Review inaction calculator usage (inaction_calc_used events)
 - Check which traffic sources drive conversions (organic search vs direct vs referral)
 
-### Completed (Sessions 416-711, Apr 23 - Jun 19)
+### Completed (Sessions 416-712, Apr 23 - Jun 19)
+**Session 712 (Jun 19):** CTA button color A/B test on Pro exit popup — 3 variants (purple/red/green), GA4 tracked with `button_color` param. 1 file, 1 commit.
 **Session 711 (Jun 19):** Loss-framed CTA copy across all pages — pricing, index, pro, calculator. Animated savings counter on Pro gate card. 4 files, 4 commits.
 **Session 710 (Jun 19):** Conversion copy optimization — loss-framed exit popup messaging, Pro page gate card rewrite.
 **Sessions 707-709 (Jun 19):** AI Model Recommendation Engine (4-step scoring tool, 42 models), Wall of Love testimonials page (15 quotes), Pro page direct Stripe checkout, exit popups on 3 Claude 4 pages, stale stat fixes.
