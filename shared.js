@@ -62,6 +62,18 @@ updateThemeIcon();
             if (a.href && a.href.includes('buy.stripe.com')) {
                 a.href = window._abStripeLink;
             }
+            // Fix nav CTAs linking to pricing.html — send directly to Stripe checkout
+            if (a.classList.contains('nav-cta') && a.href && a.href.includes('pricing.html')) {
+                a.href = window._abStripeLink;
+                a.target = '_blank';
+                a.rel = 'noopener';
+            }
+            // Fix inline "Go Pro" CTAs in blog posts — send directly to Stripe checkout
+            if (a.href && a.href.includes('pricing.html') && a.textContent.match(/APIpulse Pro|Get Pro|Unlock Pro|Buy Pro/i)) {
+                a.href = window._abStripeLink;
+                a.target = '_blank';
+                a.rel = 'noopener';
+            }
         });
         // Update ALL text nodes containing $29 (paragraphs, spans, etc.)
         var walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, {
