@@ -1,5 +1,12 @@
 # PROGRESS.md
 
+## Session 718 (Jun 18) — .env File Generator for Migration Tool
+- **Added .env file generator to migration code tool** (migration-code.html) — New "Step 3b" section appears after migration code. Generates correct `.env` snippet with the target provider's env variable name and API key dashboard URL for all 10 providers. Dual-key mode shows both old + new keys during migration period (when providers use different env vars). Copy buttons for both variants. Hidden by default, appears when migration code is generated.
+- **Added 5th FAQ schema entry** — "What environment variables do I need for AI API providers?" with comprehensive answer covering all 10 providers.
+- **Updated WebApplication schema description** — Mentions .env file generator.
+- **GA4 tracking** — `migration_env_copied` events with `type` param (`target_only` or `both_keys`).
+- **1 commit, 1 file changed, 99 insertions**
+
 ## Session 717 (Jun 18) — Migration Code Generator Cross-Linking
 - **Added migration code generator to footer nav** (shared.js) — New tools row with code icon, appears on all pages via shared.js footer injection. Sits below the Interactive Pricing Map link.
 - **Cross-linked from claude-4-is-dead.html** — Added migration code generator card to related migration guides grid (purple accent, after Replacement Finder).
@@ -87,7 +94,7 @@ Claude 4 shutdown prep, execution, post-shutdown cleanup: 407+ files tense sweep
 ## Summary: Sessions 1-598 (Apr 5 - Jun 12)
 Built full APIpulse from scratch. 652 pages, 320 posts, 42 models, 10 providers, 84 tools, 12 API endpoints, 2 widgets. Domain, Stripe, Pro, GA4, newsletter, Chrome extension, 167 comparison pages, FAQPage schema, streaming toggle, State of LLM Pricing Report, Claude 4 deprecation ecosystem, A/B pricing test, Model Selector quiz, Best Model guides. 113+ commits total.
 
-## Site Status (as of Session 717, Jun 18, 2026)
+## Site Status (as of Session 718, Jun 18, 2026)
 **679 web pages | 336 blog posts | 42 models | 10 providers | 89 tools | 12 API endpoints | 2 embeddable widgets**
 - Sitemap (670 URLs), RSS (544 items), blog files (336 posts) — all in sync
 - **Claude 4 SHUTDOWN COMPLETE (June 15)** — all pages past-tense, countdown JS shows "DEADLINE PASSED" / "retired" state
