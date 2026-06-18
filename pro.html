@@ -227,6 +227,33 @@
                 <!-- Testimonial -->
                 <div style="background:var(--bg-secondary);border:1px solid var(--border);border-radius:8px;padding:10px 16px;margin:16px auto;max-width:360px;font-size:13px;color:var(--text-secondary);font-style:italic;line-height:1.5;text-align:center;">"Cut my API bill by 60% — paid for itself in a day." — <span style="font-style:normal;color:var(--text-muted);">Indie developer</span></div>
 
+                <!-- Interactive ROI Calculator -->
+                <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:12px;padding:20px;margin:20px auto;max-width:360px;">
+                    <div style="font-size:13px;font-weight:700;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.5px;margin-bottom:12px;text-align:center;">ROI Calculator</div>
+                    <div style="display:flex;align-items:center;gap:8px;margin-bottom:12px;">
+                        <label for="roi-spend" style="font-size:13px;color:var(--text-secondary);white-space:nowrap;">I spend $</label>
+                        <input type="number" id="roi-spend" value="200" min="10" max="50000" step="10"
+                            style="flex:1;padding:8px 12px;background:var(--bg-secondary);border:1px solid var(--border);border-radius:6px;color:var(--text-primary);font-size:14px;font-weight:600;font-family:monospace;"
+                            oninput="updateROI()">
+                        <span style="font-size:13px;color:var(--text-secondary);">/mo</span>
+                    </div>
+                    <div id="roi-results" style="text-align:center;">
+                        <div style="display:flex;justify-content:center;gap:16px;margin-bottom:12px;">
+                            <div style="text-align:center;">
+                                <div style="font-size:22px;font-weight:800;color:var(--green);font-family:monospace;" id="roi-savings">$80</div>
+                                <div style="font-size:11px;color:var(--text-muted);">est. monthly savings</div>
+                            </div>
+                            <div style="text-align:center;">
+                                <div style="font-size:22px;font-weight:800;color:var(--accent);font-family:monospace;" id="roi-payback">11 days</div>
+                                <div style="font-size:11px;color:var(--text-muted);">Pro payback</div>
+                            </div>
+                        </div>
+                        <div style="background:rgba(34,197,94,0.08);border:1px solid rgba(34,197,94,0.2);border-radius:6px;padding:8px 12px;font-size:13px;color:var(--green);font-weight:600;" id="roi-message">
+                            Pro pays for itself in 11 days. That's $931/yr back in your pocket.
+                        </div>
+                    </div>
+                </div>
+
                 <!-- Direct Stripe checkout button (A/B priced) -->
                 <div style="margin:20px auto;max-width:360px;">
                     <a id="pro-stripe-btn" href="https://buy.stripe.com/fZu7sL3Gw3GS0RQeoDeEo0a" onclick="if(window.trackEvent)window.trackEvent('pro_button_clicked',{source:'pro_gate_checkout'})" style="display:block;width:100%;padding:14px 24px;background:linear-gradient(135deg,var(--accent),#8b5cf6);color:white;border:none;border-radius:8px;font-size:15px;font-weight:700;cursor:pointer;text-align:center;text-decoration:none;transition:all 0.2s;" onmouseover="this.style.opacity='0.9'" onmouseout="this.style.opacity='1'">
@@ -411,6 +438,32 @@
             document.getElementById('output-cost').textContent = '$' + outputCost.toFixed(2);
             document.getElementById('monthly-total').textContent = '$' + (inputCost + outputCost).toFixed(2);
         }
+
+        // ROI Calculator — shows payback period for Pro
+        function updateROI() {
+            var spend = parseInt(document.getElementById('roi-spend').value) || 200;
+            var price = window._abPrice || 29;
+            var savingsRate = 0.40; // 40% avg savings
+            var monthlySavings = Math.round(spend * savingsRate);
+            var paybackDays = Math.ceil(price / (monthlySavings / 30));
+            var annualSavings = monthlySavings * 12 - price;
+            document.getElementById('roi-savings').textContent = '$' + monthlySavings.toLocaleString();
+            document.getElementById('roi-payback').textContent = paybackDays <= 1 ? 'Same day' : paybackDays + ' days';
+            var msg;
+            if (paybackDays <= 1) {
+                msg = 'Pro pays for itself on day one. That\'s $' + annualSavings.toLocaleString() + '/yr back in your pocket.';
+            } else if (paybackDays <= 7) {
+                msg = 'Pro pays for itself in ' + paybackDays + ' days. That\'s $' + annualSavings.toLocaleString() + '/yr back in your pocket.';
+            } else if (paybackDays <= 30) {
+                msg = 'Pro pays for itself in ' + paybackDays + ' days. That\'s $' + annualSavings.toLocaleString() + '/yr back in your pocket.';
+            } else {
+                msg = 'At $' + monthlySavings + '/mo savings, Pro pays for itself in ' + paybackDays + ' days.';
+            }
+            document.getElementById('roi-message').textContent = msg;
+            if (window.trackEvent) window.trackEvent('roi_calculator_used', { spend: spend, monthly_savings: monthlySavings, payback_days: paybackDays });
+        }
+        // Initialize ROI on load
+        document.addEventListener('DOMContentLoaded', updateROI);
 
         async function submitCode() {
             const code = document.getElementById('access-code').value;
