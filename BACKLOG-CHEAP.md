@@ -1,10 +1,8 @@
 # BACKLOG-CHEAP.md — Routine Tasks
 
-### Active Tasks — Conversion Optimization (Session 710+)
+### Active Tasks — Conversion Optimization (Session 711+)
 - A/B test exit popup copy: loss-framed ("You're losing money") vs social proof ("Join 500+ developers") — need GA4 data
-- Add loss-framed copy to pricing page CTA buttons
 - Monitor exit popup conversion rate after copy change (GA4: pro_exit_popup_shown → pro_button_clicked)
-- Add "You've saved $X" counter to Pro page for existing users (social proof)
 - Test different CTA button colors on exit popup (current: accent purple)
 
 ### Active Tasks — Blocked on Human Action
@@ -26,7 +24,8 @@
 - Review inaction calculator usage (inaction_calc_used events)
 - Check which traffic sources drive conversions (organic search vs direct vs referral)
 
-### Completed (Sessions 416-710, Apr 23 - Jun 19)
+### Completed (Sessions 416-711, Apr 23 - Jun 19)
+**Session 711 (Jun 19):** Loss-framed CTA copy across all pages — pricing, index, pro, calculator. Animated savings counter on Pro gate card. 4 files, 4 commits.
 **Session 710 (Jun 19):** Conversion copy optimization — loss-framed exit popup messaging, Pro page gate card rewrite.
 **Sessions 707-709 (Jun 19):** AI Model Recommendation Engine (4-step scoring tool, 42 models), Wall of Love testimonials page (15 quotes), Pro page direct Stripe checkout, exit popups on 3 Claude 4 pages, stale stat fixes.
 **Sessions 686-706 (Jun 17-19):** 20 sessions — 15+ new pages, exit popups on 15+ pages, Pro gating, scanner funnel tracking, mobile sweep, A/B pricing resumed.
