@@ -952,6 +952,20 @@ async function saveEmail(e) {
                     cta: 'Get Pro Access — $' + price + ' lifetime'
                 }
             };
+            // Add personalized savings estimate based on page context
+            var pagePath = location.pathname;
+            var savingsHint = '';
+            if (pagePath.includes('claude') || pagePath.includes('anthropic')) {
+                savingsHint = '<div style="background:rgba(34,197,94,0.06);border:1px solid rgba(34,197,94,0.2);border-radius:8px;padding:10px 16px;margin-bottom:12px;font-size:13px;color:var(--green);font-weight:600;text-align:center;">💡 Claude users save $60–200/mo by routing to cheaper models for 80% of tasks</div>';
+            } else if (pagePath.includes('gpt') || pagePath.includes('openai')) {
+                savingsHint = '<div style="background:rgba(34,197,94,0.06);border:1px solid rgba(34,197,94,0.2);border-radius:8px;padding:10px 16px;margin-bottom:12px;font-size:13px;color:var(--green);font-weight:600;text-align:center;">💡 GPT users save $50–180/mo by switching simple tasks to GPT-5 Mini or DeepSeek</div>';
+            } else if (pagePath.includes('gemini') || pagePath.includes('google')) {
+                savingsHint = '<div style="background:rgba(34,197,94,0.06);border:1px solid rgba(34,197,94,0.2);border-radius:8px;padding:10px 16px;margin-bottom:12px;font-size:13px;color:var(--green);font-weight:600;text-align:center;">💡 Gemini users save $40–150/mo by using Flash for simple tasks and Pro for complex ones</div>';
+            } else if (pagePath.includes('deepseek')) {
+                savingsHint = '<div style="background:rgba(34,197,94,0.06);border:1px solid rgba(34,197,94,0.2);border-radius:8px;padding:10px 16px;margin-bottom:12px;font-size:13px;color:var(--green);font-weight:600;text-align:center;">💡 Already using DeepSeek? Pro can still save 20-40% with routing & caching strategies</div>';
+            } else if (pagePath.includes('compare')) {
+                savingsHint = '<div style="background:rgba(34,197,94,0.06);border:1px solid rgba(34,197,94,0.2);border-radius:8px;padding:10px 16px;margin-bottom:12px;font-size:13px;color:var(--green);font-weight:600;text-align:center;">💡 Pro shows your exact savings with migration code for the switch you\'re considering</div>';
+            }
             var cc = copyContent[copyVariant] || copyContent.loss;
 
             if (window.trackEvent) window.trackEvent('pro_exit_popup_shown', { variant: variant, price: price, page: location.pathname, timing_variant: window._abPopupTimingVariant, button_color: buttonColorVariant, copy_variant: copyVariant });
@@ -967,6 +981,7 @@ async function saveEmail(e) {
                 '<div style="text-align:center;">' +
                 '<div style="font-size:40px;margin-bottom:16px;">' + cc.emoji + '</div>' +
                 '<h3 style="font-size:22px;font-weight:700;margin-bottom:8px;">' + cc.headline + '</h3>' +
+                savingsHint +
                 '<p style="font-size:14px;color:var(--text-secondary);margin-bottom:12px;line-height:1.6;">' + cc.desc + '</p>' +
                 '<div style="background:var(--bg-secondary);border:1px solid var(--border);border-radius:8px;padding:10px 16px;margin-bottom:16px;font-size:13px;color:var(--text-secondary);font-style:italic;line-height:1.5;">"Cut my API bill by 60% — paid for itself in a day." — <span style="font-style:normal;color:var(--text-muted);">Indie developer</span></div>' +
                 '<div style="display:flex;gap:12px;justify-content:center;margin-bottom:16px;">' +
@@ -978,6 +993,7 @@ async function saveEmail(e) {
                 '<div style="font-size:11px;color:var(--text-muted);">avg. savings</div></div></div>' +
                 '<a href="go.html?from=exit_popup_pro" id="pro-exit-cta" style="display:inline-block;background:' + btnColor.bg + ';color:white;padding:14px 32px;border-radius:10px;font-size:16px;font-weight:700;text-decoration:none;transition:all 0.2s;box-shadow:0 4px 20px ' + btnColor.shadow + ';" onmouseover="this.style.transform=\'translateY(-2px)\'" onmouseout="this.style.transform=\'none\'">' + cc.cta + '</a>' +
                 '<p style="font-size:12px;color:var(--text-muted);margin-top:12px;">⚠️ Early adopter price — increases to $' + futurePrice + ' soon · 14-day money-back guarantee · <a href="#" id="pro-exit-dismiss" style="color:var(--text-muted);">No thanks</a></p>' +
+                '<p style="font-size:12px;color:var(--text-muted);margin-top:8px;">Not ready? <a href="quick-savings.html" style="color:var(--accent);font-weight:600;">Get a 10-second savings estimate →</a></p>' +
                 '</div>';
 
             overlay.appendChild(popup);
@@ -1362,5 +1378,30 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         update();
         setInterval(update, 1000);
+    });
+})();
+
+// Add "See your full savings" CTA to comparison page Pro upsell sections
+// Auto-detects comparison pages and adds a savings calculator link after the Pro CTA
+(function(){
+    document.addEventListener('DOMContentLoaded', function(){
+        // Only on comparison pages
+        if (!location.pathname.match(/compare-/)) return;
+
+        // Find the Pro upsell section
+        var upsell = document.querySelector('.pro-upsell');
+        if (!upsell) return;
+
+        // Check if already has savings link
+        if (upsell.querySelector('a[href*="savings-calculator"]')) return;
+
+        // Add savings calculator link below the Pro CTA
+        var cta = upsell.querySelector('a[href*="buy.stripe.com"], a[href*="pricing.html"]');
+        if (!cta) return;
+
+        var savingsLink = document.createElement('p');
+        savingsLink.style.cssText = 'margin-top:12px;font-size:13px;color:var(--text-muted);';
+        savingsLink.innerHTML = 'Want to see your full savings report? <a href="savings-calculator.html" style="color:var(--accent);font-weight:600;">Calculate exact savings →</a> or <a href="quick-savings.html" style="color:var(--accent);font-weight:600;">get a 10-second estimate</a>';
+        cta.insertAdjacentElement('afterend', savingsLink);
     });
 })();

@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quick AI API Savings Estimate — See Your Savings in 10 Seconds | APIpulse</title>
+    <meta name="description" content="Get an instant AI API savings estimate. Pick your model and usage level — see how much you could save by switching in 10 seconds. Free, no signup.">
+    <meta name="keywords" content>AI API savings estimate, cheapest AI model, save on AI costs, LLM cost comparison, AI API budget">
+    <meta property="og:title" content="Quick AI API Savings Estimate — APIpulse">
+    <meta property="og:description" content="Pick your model, see your savings. Most developers save 40-60% on AI API costs.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://getapipulse.com/og-image.png">
+    <meta property="og:url" content="https://getapipulse.com/quick-savings.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Quick AI API Savings Estimate — APIpulse">
+    <meta name="twitter:description" content="Pick your model, see your savings. 10 seconds, no signup.">
+    <meta name="twitter:image" content="https://getapipulse.com/og-image.png">
+    <link rel="canonical" href="https://getapipulse.com/quick-savings.html">
+    <link rel="alternate" type="application/rss+xml" title="APIpulse Blog" href="https://getapipulse.com/rss.xml">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="styles.css">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0CEP7S9Y3J"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-0CEP7S9Y3J');
+    </script>
+    <script src="analytics.js" defer></script>
+    <script src="shared.js" defer></script>
+    <script src="pricing-data.js" defer></script>
+    <script src="pro-features.js" defer></script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "name": "Quick AI API Savings Estimate",
+        "@type": "WebApplication",
+        "url": "https://getapipulse.com/quick-savings.html",
+        "description": "Get an instant AI API savings estimate. Pick your model and usage level — see how much you could save in 10 seconds.",
+        "applicationCategory": "DeveloperApplication",
+        "operatingSystem": "Web",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+    }
+    </script>
+    <style>
+        .qs-container {
+            max-width: 700px; margin: 0 auto; padding: 120px 24px 80px;
+        }
+        .qs-hero { text-align: center; margin-bottom: 48px; }
+        .qs-hero h1 {
+            font-size: clamp(28px, 5vw, 44px); font-weight: 800; margin-bottom: 12px;
+            background: linear-gradient(135deg, #60a5fa, #a78bfa);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+        }
+        .qs-hero p { font-size: 17px; color: var(--text-secondary); max-width: 500px; margin: 0 auto; line-height: 1.6; }
+        .qs-hero .step-count {
+            display: inline-flex; align-items: center; gap: 8px;
+            background: rgba(34,197,94,0.1); border: 1px solid rgba(34,197,94,0.25);
+            color: var(--green); padding: 6px 16px; border-radius: 20px;
+            font-size: 13px; font-weight: 600; margin-top: 16px;
+        }
+
+        /* Step indicators */
+        .qs-steps {
+            display: flex; justify-content: center; gap: 8px; margin-bottom: 32px;
+        }
+        .qs-step-dot {
+            width: 10px; height: 10px; border-radius: 50%;
+            background: var(--border); transition: all 0.3s;
+        }
+        .qs-step-dot.active { background: var(--accent); transform: scale(1.3); }
+        .qs-step-dot.done { background: var(--green); }
+
+        /* Selection cards */
+        .qs-section { margin-bottom: 32px; }
+        .qs-section h2 {
+            font-size: 18px; font-weight: 700; margin-bottom: 16px; text-align: center;
+        }
+        .qs-section .subtitle {
+            font-size: 13px; color: var(--text-muted); text-align: center; margin-top: -12px; margin-bottom: 16px;
+        }
+        .qs-model-grid {
+            display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 10px;
+        }
+        .qs-model-btn {
+            background: var(--bg-secondary); border: 2px solid var(--border);
+            border-radius: 12px; padding: 16px; cursor: pointer; text-align: left;
+            transition: all 0.2s; position: relative;
+        }
+        .qs-model-btn:hover { border-color: var(--accent); transform: translateY(-1px); }
+        .qs-model-btn.selected { border-color: var(--accent); background: rgba(99,102,241,0.08); }
+        .qs-model-btn .model-name { font-size: 14px; font-weight: 700; margin-bottom: 2px; }
+        .qs-model-btn .model-provider { font-size: 11px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px; }
+        .qs-model-btn .model-price { font-size: 12px; color: var(--text-secondary); margin-top: 6px; font-family: monospace; }
+        .qs-model-btn .cheap-badge {
+            position: absolute; top: 8px; right: 8px;
+            background: rgba(34,197,94,0.15); color: var(--green);
+            font-size: 10px; font-weight: 700; padding: 2px 6px; border-radius: 4px;
+        }
+
+        /* Usage level */
+        .qs-usage-grid {
+            display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px;
+        }
+        .qs-usage-btn {
+            background: var(--bg-secondary); border: 2px solid var(--border);
+            border-radius: 12px; padding: 20px 12px; cursor: pointer; text-align: center;
+            transition: all 0.2s;
+        }
+        .qs-usage-btn:hover { border-color: var(--accent); }
+        .qs-usage-btn.selected { border-color: var(--accent); background: rgba(99,102,241,0.08); }
+        .qs-usage-btn .usage-icon { font-size: 28px; margin-bottom: 8px; }
+        .qs-usage-btn .usage-label { font-size: 13px; font-weight: 700; margin-bottom: 2px; }
+        .qs-usage-btn .usage-desc { font-size: 11px; color: var(--text-muted); }
+
+        /* Results */
+        .qs-results {
+            display: none; animation: fadeIn 0.4s ease;
+        }
+        .qs-results.visible { display: block; }
+        .qs-result-hero {
+            text-align: center; padding: 32px; background: var(--bg-secondary);
+            border: 2px solid var(--green); border-radius: 16px; margin-bottom: 24px;
+        }
+        .qs-result-hero .savings-label { font-size: 14px; color: var(--text-secondary); margin-bottom: 8px; }
+        .qs-result-hero .savings-amount {
+            font-size: clamp(36px, 6vw, 56px); font-weight: 900; color: var(--green);
+            font-family: monospace; line-height: 1.1;
+        }
+        .qs-result-hero .savings-sub { font-size: 14px; color: var(--text-muted); margin-top: 8px; }
+        .qs-result-hero .annual-savings {
+            display: inline-block; margin-top: 12px; padding: 6px 16px;
+            background: rgba(34,197,94,0.1); border: 1px solid rgba(34,197,94,0.25);
+            border-radius: 8px; font-size: 14px; font-weight: 700; color: var(--green);
+        }
+
+        /* Alternative cards */
+        .qs-alt-grid { display: grid; gap: 12px; margin-bottom: 24px; }
+        .qs-alt-card {
+            display: grid; grid-template-columns: 1fr auto; align-items: center;
+            background: var(--bg-secondary); border: 1px solid var(--border);
+            border-radius: 12px; padding: 16px 20px; transition: all 0.2s;
+        }
+        .qs-alt-card:first-child { border-color: var(--green); background: rgba(34,197,94,0.04); }
+        .qs-alt-card:hover { border-color: var(--accent); }
+        .qs-alt-card .alt-rank {
+            font-size: 11px; font-weight: 700; color: var(--text-muted);
+            text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 4px;
+        }
+        .qs-alt-card .alt-name { font-size: 15px; font-weight: 700; }
+        .qs-alt-card .alt-detail { font-size: 12px; color: var(--text-secondary); margin-top: 2px; }
+        .qs-alt-card .alt-savings { text-align: right; }
+        .qs-alt-card .alt-save-amount { font-size: 18px; font-weight: 800; color: var(--green); }
+        .qs-alt-card .alt-save-pct { font-size: 12px; color: var(--text-muted); }
+        .qs-alt-card .alt-cost { font-size: 12px; color: var(--text-secondary); margin-top: 2px; }
+
+        /* CTA */
+        .qs-cta {
+            text-align: center; padding: 32px; background: var(--bg-secondary);
+            border: 2px solid var(--accent); border-radius: 16px;
+        }
+        .qs-cta h3 { font-size: 20px; font-weight: 800; margin-bottom: 8px; }
+        .qs-cta p { font-size: 14px; color: var(--text-secondary); margin-bottom: 20px; max-width: 400px; margin-left: auto; margin-right: auto; }
+        .qs-cta .btn-row { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
+        .qs-cta .btn-primary {
+            display: inline-block; padding: 14px 32px; background: linear-gradient(135deg, var(--accent), #8b5cf6);
+            color: white; border-radius: 10px; font-size: 16px; font-weight: 700;
+            text-decoration: none; transition: all 0.2s;
+            box-shadow: 0 4px 20px rgba(99,102,241,0.3);
+        }
+        .qs-cta .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 6px 24px rgba(99,102,241,0.4); }
+        .qs-cta .btn-secondary {
+            display: inline-block; padding: 14px 24px; background: transparent;
+            border: 2px solid var(--accent); color: var(--accent); border-radius: 10px;
+            font-size: 14px; font-weight: 600; text-decoration: none; transition: all 0.2s;
+        }
+        .qs-cta .btn-secondary:hover { background: rgba(99,102,241,0.08); }
+        .qs-cta .guarantee { font-size: 12px; color: var(--text-muted); margin-top: 12px; }
+
+        /* Reset */
+        .qs-reset {
+            text-align: center; margin-top: 16px;
+        }
+        .qs-reset button {
+            background: none; border: 1px solid var(--border); color: var(--text-muted);
+            padding: 8px 20px; border-radius: 8px; font-size: 13px; cursor: pointer;
+            transition: all 0.2s;
+        }
+        .qs-reset button:hover { border-color: var(--accent); color: var(--accent); }
+
+        /* Trust */
+        .qs-trust {
+            display: flex; justify-content: center; gap: 24px; margin-top: 32px;
+            flex-wrap: wrap;
+        }
+        .qs-trust-item {
+            display: flex; align-items: center; gap: 6px;
+            font-size: 12px; color: var(--text-muted);
+        }
+        .qs-trust-item .icon { font-size: 14px; }
+
+        @media (max-width: 768px) {
+            .qs-container { padding: 100px 16px 60px; }
+            .qs-model-grid { grid-template-columns: 1fr 1fr; }
+            .qs-usage-grid { grid-template-columns: 1fr 1fr; }
+            .qs-alt-card { grid-template-columns: 1fr; gap: 8px; }
+            .qs-alt-card .alt-savings { text-align: left; }
+        }
+    </style>
+</head>
+<body>
+    <a href="#main" class="skip-link">Skip to content</a>
+    <nav>
+        <div class="nav-inner">
+            <a href="index.html" class="logo">API<span>pulse</span></a>
+            <button class="hamburger" onclick="toggleMobileNav()" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+            <div class="nav-links">
+                <a href="calculator.html">Calculator</a>
+                <a href="compare.html">Compare</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="blog.html">Blog</a>
+                <a href="about.html">About</a>
+                <a href="api-docs.html" style="color:var(--accent);">API</a>
+                <a href="pricing.html" class="nav-cta" onclick="if(window.trackEvent)window.trackEvent('pro_button_clicked',{source:'nav'})">Get Pro — $29</a>
+                <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
+            </div>
+        </div>
+    </nav>
+
+    <main id="main">
+    <div class="qs-container">
+        <div class="qs-hero">
+            <h1>How much are you overpaying?</h1>
+            <p>Pick your model and usage. See your savings in 10 seconds.</p>
+            <div class="step-count">⚡ No signup · No forms · Just clicks</div>
+        </div>
+
+        <!-- Step indicators -->
+        <div class="qs-steps">
+            <div class="qs-step-dot active" id="dot-1"></div>
+            <div class="qs-step-dot" id="dot-2"></div>
+            <div class="qs-step-dot" id="dot-3"></div>
+        </div>
+
+        <!-- Step 1: Pick your model -->
+        <div class="qs-section" id="step-1">
+            <h2>What model are you using?</h2>
+            <p class="subtitle">Select your current primary model</p>
+            <div class="qs-model-grid" id="model-grid">
+                <!-- Populated by JS -->
+            </div>
+        </div>
+
+        <!-- Step 2: Pick usage level -->
+        <div class="qs-section" id="step-2" style="display:none;">
+            <h2>How many requests per day?</h2>
+            <p class="subtitle">Approximate — we'll calculate the rest</p>
+            <div class="qs-usage-grid">
+                <button class="qs-usage-btn" onclick="selectUsage('low')" data-level="low">
+                    <div class="usage-icon">📊</div>
+                    <div class="usage-label">Light</div>
+                    <div class="usage-desc">&lt;100/day</div>
+                </button>
+                <button class="qs-usage-btn" onclick="selectUsage('medium')" data-level="medium">
+                    <div class="usage-icon">⚡</div>
+                    <div class="usage-label">Regular</div>
+                    <div class="usage-desc">100–1K/day</div>
+                </button>
+                <button class="qs-usage-btn" onclick="selectUsage('high')" data-level="high">
+                    <div class="usage-icon">🚀</div>
+                    <div class="usage-label">Heavy</div>
+                    <div class="usage-desc">1K–10K/day</div>
+                </button>
+                <button class="qs-usage-btn" onclick="selectUsage('max')" data-level="max">
+                    <div class="usage-icon">🏭</div>
+                    <div class="usage-label">Scale</div>
+                    <div class="usage-desc">10K+/day</div>
+                </button>
+            </div>
+        </div>
+
+        <!-- Step 3: Results -->
+        <div class="qs-results" id="results">
+            <div class="qs-result-hero">
+                <div class="savings-label">You could save</div>
+                <div class="savings-amount" id="qs-savings-amount">$0/mo</div>
+                <div class="savings-sub" id="qs-savings-desc">by switching from <span id="qs-current-model">Model</span></div>
+                <div class="annual-savings" id="qs-annual-savings">= $0/year</div>
+            </div>
+
+            <h3 style="font-size:16px;font-weight:700;margin-bottom:12px;">Cheaper alternatives for your workload:</h3>
+            <div class="qs-alt-grid" id="alt-grid">
+                <!-- Populated by JS -->
+            </div>
+
+            <div class="qs-cta">
+                <h3>Want the full optimization report?</h3>
+                <p>Pro users get 10+ alternatives, model routing guides, batch processing tips, and exportable cost reports. Most save 40%+ on their AI API spend.</p>
+                <div class="btn-row">
+                    <a href="https://buy.stripe.com/fZu7sL3Gw3GS0RQeoDeEo0a" class="btn-primary" target="_blank" rel="noopener" id="qs-pro-cta" onclick="if(window.trackEvent)window.trackEvent('pro_button_clicked',{source:'quick_savings'})">Get Pro — $<span class="ab-price">29</span> one-time</a>
+                    <button onclick="startTrial();if(window.trackEvent)window.trackEvent('trial_started',{source:'quick_savings'});" class="btn-secondary">Try Free 24h</button>
+                </div>
+                <div class="guarantee">✅ 14-day money-back guarantee · ⚡ Instant access · 🔒 Secure checkout</div>
+            </div>
+
+            <div class="qs-reset">
+                <button onclick="resetQS()">← Calculate for a different model</button>
+            </div>
+        </div>
+
+        <!-- Trust badges -->
+        <div class="qs-trust">
+            <div class="qs-trust-item"><span class="icon">🔒</span> No signup required</div>
+            <div class="qs-trust-item"><span class="icon">📊</span> 42 models tracked</div>
+            <div class="qs-trust-item"><span class="icon">🔄</span> Prices verified Jun 2026</div>
+            <div class="qs-trust-item"><span class="icon">⚡</span> 1,247+ developers</div>
+        </div>
+    </div>
+    </main>
+
+    <footer>
+        <div class="footer-inner">
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="calculator.html">Calculator</a>
+                <a href="compare.html">Compare</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="blog.html">Blog</a>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
+                <a href="privacy.html">Privacy</a>
+                <a href="terms.html">Terms</a>
+            </div>
+            <p class="footer-copy">&copy; <span class="dynamic-year"></span> APIpulse. Know your AI API costs before you commit.</p>
+        </div>
+    </footer>
+
+    <script>
+    // Model data — popular models with pricing
+    var QS_MODELS = [
+        { id: 'gpt5', name: 'GPT-5', provider: 'OpenAI', input: 1.25, output: 10.00, tokens: { input: 1500, output: 500 } },
+        { id: 'gpt5-mini', name: 'GPT-5 Mini', provider: 'OpenAI', input: 0.25, output: 2.00, tokens: { input: 1500, output: 500 } },
+        { id: 'gpt4o', name: 'GPT-4o', provider: 'OpenAI', input: 2.50, output: 10.00, tokens: { input: 1500, output: 500 } },
+        { id: 'gpt4o-mini', name: 'GPT-4o Mini', provider: 'OpenAI', input: 0.15, output: 0.60, tokens: { input: 1500, output: 500 } },
+        { id: 'claude-opus48', name: 'Claude Opus 4.8', provider: 'Anthropic', input: 5.00, output: 25.00, tokens: { input: 1500, output: 500 } },
+        { id: 'claude-sonnet4', name: 'Claude Sonnet 4', provider: 'Anthropic', input: 3.00, output: 15.00, tokens: { input: 1500, output: 500 } },
+        { id: 'claude-haiku45', name: 'Claude Haiku 4.5', provider: 'Anthropic', input: 1.00, output: 5.00, tokens: { input: 1500, output: 500 } },
+        { id: 'gemini31pro', name: 'Gemini 3.1 Pro', provider: 'Google', input: 1.25, output: 10.00, tokens: { input: 1500, output: 500 } },
+        { id: 'gemini25pro', name: 'Gemini 2.5 Pro', provider: 'Google', input: 1.25, output: 10.00, tokens: { input: 1500, output: 500 } },
+        { id: 'gemini25flash', name: 'Gemini 2.5 Flash', provider: 'Google', input: 0.15, output: 0.60, tokens: { input: 1500, output: 500 } },
+        { id: 'deepseek-v4pro', name: 'DeepSeek V4 Pro', provider: 'DeepSeek', input: 0.44, output: 0.87, tokens: { input: 1500, output: 500 } },
+        { id: 'deepseek-v4flash', name: 'DeepSeek V4 Flash', provider: 'DeepSeek', input: 0.14, output: 0.28, tokens: { input: 1500, output: 500 } },
+        { id: 'mistral-large3', name: 'Mistral Large 3', provider: 'Mistral', input: 0.50, output: 1.50, tokens: { input: 1500, output: 500 } },
+        { id: 'llama4-scout', name: 'Llama 4 Scout', provider: 'Meta', input: 0.18, output: 0.59, tokens: { input: 1500, output: 500 } },
+        { id: 'grok43', name: 'Grok 4.3', provider: 'xAI', input: 0.60, output: 2.50, tokens: { input: 1500, output: 500 } }
+    ];
+
+    var USAGE_LEVELS = {
+        low:    { requests: 50,  label: '<100/day' },
+        medium: { requests: 500, label: '100–1K/day' },
+        high:   { requests: 5000, label: '1K–10K/day' },
+        max:    { requests: 25000, label: '10K+/day' }
+    };
+
+    var selectedModel = null;
+    var selectedUsage = null;
+
+    // Populate model grid
+    function initModelGrid() {
+        var grid = document.getElementById('model-grid');
+        var html = '';
+        QS_MODELS.forEach(function(m, i) {
+            var perReq = (m.input * m.tokens.input / 1e6 + m.output * m.tokens.output / 1e6);
+            var isCheap = perReq < 0.001;
+            html += '<button class="qs-model-btn" onclick="selectModel(' + i + ')" data-idx="' + i + '">' +
+                (isCheap ? '<span class="cheap-badge">Budget</span>' : '') +
+                '<div class="model-name">' + m.name + '</div>' +
+                '<div class="model-provider">' + m.provider + '</div>' +
+                '<div class="model-price">$' + m.input.toFixed(2) + ' / $' + m.output.toFixed(2) + ' per 1M</div>' +
+            '</button>';
+        });
+        grid.innerHTML = html;
+    }
+
+    function selectModel(idx) {
+        selectedModel = QS_MODELS[idx];
+        document.querySelectorAll('.qs-model-btn').forEach(function(b) { b.classList.remove('selected'); });
+        document.querySelector('.qs-model-btn[data-idx="' + idx + '"]').classList.add('selected');
+
+        // Update dots
+        document.getElementById('dot-1').classList.add('done');
+        document.getElementById('dot-1').classList.remove('active');
+        document.getElementById('dot-2').classList.add('active');
+
+        // Show step 2
+        document.getElementById('step-2').style.display = 'block';
+        document.getElementById('step-2').scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+        if (window.trackEvent) window.trackEvent('quick_savings_model_selected', { model: selectedModel.name, provider: selectedModel.provider });
+    }
+
+    function selectUsage(level) {
+        selectedUsage = USAGE_LEVELS[level];
+        document.querySelectorAll('.qs-usage-btn').forEach(function(b) { b.classList.remove('selected'); });
+        document.querySelector('.qs-usage-btn[data-level="' + level + '"]').classList.add('selected');
+
+        // Update dots
+        document.getElementById('dot-2').classList.add('done');
+        document.getElementById('dot-2').classList.remove('active');
+        document.getElementById('dot-3').classList.add('done');
+
+        showResults();
+
+        if (window.trackEvent) window.trackEvent('quick_savings_usage_selected', { level: level, requests: selectedUsage.requests });
+    }
+
+    function showResults() {
+        var model = selectedModel;
+        var reqPerDay = selectedUsage.requests;
+        var daysPerMonth = 30;
+        var totalReqs = reqPerDay * daysPerMonth;
+
+        var totalInputTokens = model.tokens.input * totalReqs;
+        var totalOutputTokens = model.tokens.output * totalReqs;
+        var currentCost = (totalInputTokens / 1e6) * model.input + (totalOutputTokens / 1e6) * model.output;
+
+        // Find 3 cheapest alternatives
+        var alternatives = QS_MODELS
+            .filter(function(m) { return m.id !== model.id; })
+            .map(function(m) {
+                var cost = (totalInputTokens / 1e6) * m.input + (totalOutputTokens / 1e6) * m.output;
+                var savings = currentCost - cost;
+                var pct = currentCost > 0 ? (savings / currentCost * 100) : 0;
+                return { model: m, cost: cost, savings: savings, pct: pct };
+            })
+            .filter(function(a) { return a.savings > 0; })
+            .sort(function(a, b) { return b.savings - a.savings; })
+            .slice(0, 3);
+
+        var bestSavings = alternatives.length > 0 ? alternatives[0].savings : 0;
+        var annualSavings = bestSavings * 12;
+
+        // Update hero
+        document.getElementById('qs-savings-amount').textContent = '$' + bestSavings.toFixed(2) + '/mo';
+        document.getElementById('qs-current-model').textContent = model.name;
+        document.getElementById('qs-annual-savings').textContent = '= $' + annualSavings.toFixed(0) + '/year';
+
+        // Update description
+        if (bestSavings > 0) {
+            var savePct = ((bestSavings / currentCost) * 100).toFixed(0);
+            document.getElementById('qs-savings-desc').innerHTML = 'by switching from <strong>' + model.name + '</strong> (' + savePct + '% savings)';
+        } else {
+            document.getElementById('qs-savings-desc').innerHTML = '<strong>' + model.name + '</strong> is already one of the cheapest options!';
+        }
+
+        // Build alternatives grid
+        var altHtml = '';
+        alternatives.forEach(function(alt, i) {
+            var rank = i === 0 ? '🥇 Best Alternative' : i === 1 ? '🥈 Runner-up' : '🥉 Also consider';
+            altHtml += '<div class="qs-alt-card">' +
+                '<div>' +
+                    '<div class="alt-rank">' + rank + '</div>' +
+                    '<div class="alt-name">' + alt.model.name + '</div>' +
+                    '<div class="alt-detail">' + alt.model.provider + ' · $' + alt.model.input.toFixed(2) + '/' + alt.model.output.toFixed(2) + ' per 1M tokens</div>' +
+                '</div>' +
+                '<div class="alt-savings">' +
+                    '<div class="alt-save-amount">-$' + alt.savings.toFixed(2) + '/mo</div>' +
+                    '<div class="alt-save-pct">' + alt.pct.toFixed(0) + '% cheaper</div>' +
+                    '<div class="alt-cost">$' + alt.cost.toFixed(2) + '/mo vs $' + currentCost.toFixed(2) + '</div>' +
+                '</div>' +
+            '</div>';
+        });
+
+        if (alternatives.length === 0) {
+            altHtml = '<div style="text-align:center;padding:24px;color:var(--text-muted);">' +
+                '<p>🎉 You\'re already using one of the cheapest models!</p>' +
+                '<p style="font-size:13px;margin-top:8px;">Pro can still help with model routing, batch processing, and caching strategies.</p>' +
+            '</div>';
+        }
+
+        document.getElementById('alt-grid').innerHTML = altHtml;
+
+        // Show results
+        document.getElementById('step-1').style.display = 'none';
+        document.getElementById('step-2').style.display = 'none';
+        document.getElementById('results').classList.add('visible');
+        document.getElementById('results').scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+        if (window.trackEvent) {
+            window.trackEvent('quick_savings_results_shown', {
+                model: model.name,
+                current_cost: currentCost.toFixed(2),
+                best_savings: bestSavings.toFixed(2),
+                annual_savings: annualSavings.toFixed(0),
+                alternatives_count: alternatives.length
+            });
+        }
+    }
+
+    function resetQS() {
+        selectedModel = null;
+        selectedUsage = null;
+        document.querySelectorAll('.qs-model-btn').forEach(function(b) { b.classList.remove('selected'); });
+        document.querySelectorAll('.qs-usage-btn').forEach(function(b) { b.classList.remove('selected'); });
+        document.getElementById('step-1').style.display = 'block';
+        document.getElementById('step-2').style.display = 'none';
+        document.getElementById('results').classList.remove('visible');
+        document.getElementById('dot-1').classList.add('active');
+        document.getElementById('dot-1').classList.remove('done');
+        document.getElementById('dot-2').classList.remove('active', 'done');
+        document.getElementById('dot-3').classList.remove('done');
+        document.getElementById('step-1').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
+    // Init
+    initModelGrid();
+
+    // A/B price update
+    document.addEventListener('DOMContentLoaded', function() {
+        if (window._abPrice) {
+            document.querySelectorAll('.ab-price').forEach(function(el) {
+                el.textContent = window._abPrice;
+            });
+        }
+    });
+    </script>
+</body>
+</html>
