@@ -293,6 +293,18 @@
                 <!-- Populated by JS -->
             </div>
 
+            <!-- Email capture -->
+            <div id="qs-email-capture" style="display:none;background:var(--bg-secondary);border:1px solid var(--border);border-radius:12px;padding:24px;text-align:center;margin-bottom:24px;">
+                <p style="font-size:15px;font-weight:700;margin-bottom:4px;">📧 Get your free optimization guide</p>
+                <p style="font-size:13px;color:var(--text-secondary);margin-bottom:16px;">We'll send you a personalized report with model routing tips, batch processing strategies, and caching recommendations for <span id="qs-email-model">your model</span>.</p>
+                <form id="qs-email-form" style="display:flex;gap:8px;max-width:400px;margin:0 auto;" onsubmit="submitQSEmail(event)">
+                    <input type="email" id="qs-email-input" placeholder="you@company.com" required style="flex:1;padding:12px 16px;background:var(--bg-card);border:1px solid var(--border);border-radius:8px;color:var(--text-primary);font-size:14px;" aria-label="Email address">
+                    <button type="submit" style="padding:12px 20px;background:var(--accent);color:white;border:none;border-radius:8px;font-size:14px;font-weight:700;cursor:pointer;white-space:nowrap;">Send Report</button>
+                </form>
+                <p style="font-size:11px;color:var(--text-muted);margin-top:8px;">No spam. Unsubscribe anytime. We respect your inbox.</p>
+                <p id="qs-email-success" style="display:none;font-size:14px;color:var(--green);font-weight:600;margin-top:12px;">✅ Check your inbox for your optimization guide!</p>
+            </div>
+
             <div class="qs-cta">
                 <h3>Want the full optimization report?</h3>
                 <p>Pro users get 10+ alternatives, model routing guides, batch processing tips, and exportable cost reports. Most save 40%+ on their AI API spend.</p>
@@ -480,6 +492,14 @@
 
         document.getElementById('alt-grid').innerHTML = altHtml;
 
+        // Show email capture
+        var emailCapture = document.getElementById('qs-email-capture');
+        var emailModel = document.getElementById('qs-email-model');
+        if (emailCapture && emailModel) {
+            emailModel.textContent = model.name;
+            emailCapture.style.display = 'block';
+        }
+
         // Show results
         document.getElementById('step-1').style.display = 'none';
         document.getElementById('step-2').style.display = 'none';
@@ -523,6 +543,25 @@
             });
         }
     });
+
+    // Email capture submission
+    function submitQSEmail(e) {
+        e.preventDefault();
+        var email = document.getElementById('qs-email-input').value;
+        if (!email) return;
+
+        // Store in localStorage for now (no backend)
+        var leads = JSON.parse(localStorage.getItem('apipulse_leads') || '[]');
+        leads.push({ email: email, model: selectedModel ? selectedModel.name : 'unknown', usage: selectedUsage ? selectedUsage.label : 'unknown', ts: Date.now() });
+        localStorage.setItem('apipulse_leads', JSON.stringify(leads));
+
+        // Track
+        if (window.trackEvent) window.trackEvent('quick_savings_email_submitted', { model: selectedModel ? selectedModel.name : 'unknown' });
+
+        // Show success
+        document.getElementById('qs-email-form').style.display = 'none';
+        document.getElementById('qs-email-success').style.display = 'block';
+    }
     </script>
 </body>
 </html>
