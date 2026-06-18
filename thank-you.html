@@ -17,15 +17,131 @@
     </script>
     <script src="analytics.js" defer></script>
     <style>
-        .content { max-width: 600px; margin: 0 auto; padding: 120px 24px 80px; text-align: center; }
-        .checkmark { width: 80px; height: 80px; background: rgba(34,197,94,0.15); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 24px; font-size: 40px; }
-        h1 { font-size: 32px; font-weight: 800; margin-bottom: 12px; }
-        .subtitle { color: var(--text-secondary); font-size: 16px; margin-bottom: 32px; line-height: 1.6; }
-        .features { text-align: left; background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 12px; padding: 24px; margin-bottom: 32px; }
-        .features h3 { font-size: 16px; margin-bottom: 12px; }
-        .features li { padding: 8px 0; color: var(--text-secondary); font-size: 14px; display: flex; align-items: center; gap: 10px; }
+        .content { max-width: 640px; margin: 0 auto; padding: 100px 24px 80px; }
+        .hero { text-align: center; margin-bottom: 40px; }
+        .checkmark {
+            width: 80px; height: 80px; background: rgba(34,197,94,0.15);
+            border-radius: 50%; display: flex; align-items: center; justify-content: center;
+            margin: 0 auto 20px; font-size: 40px;
+            animation: popIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        @keyframes popIn { 0% { transform: scale(0); opacity: 0; } 100% { transform: scale(1); opacity: 1; } }
+        h1 { font-size: 32px; font-weight: 800; margin-bottom: 10px; }
+        .subtitle { color: var(--text-secondary); font-size: 16px; line-height: 1.6; }
+
+        /* First step card */
+        .first-step {
+            background: linear-gradient(135deg, rgba(99,102,241,0.08), rgba(139,92,246,0.08));
+            border: 1px solid rgba(99,102,241,0.25); border-radius: 14px;
+            padding: 24px; margin-bottom: 28px; text-align: center;
+        }
+        .first-step h2 { font-size: 18px; margin-bottom: 8px; }
+        .first-step p { color: var(--text-secondary); font-size: 14px; margin-bottom: 16px; }
+
+        /* Onboarding checklist */
+        .checklist {
+            background: var(--bg-secondary); border: 1px solid var(--border);
+            border-radius: 14px; padding: 24px; margin-bottom: 28px;
+        }
+        .checklist h3 {
+            font-size: 15px; font-weight: 700; margin-bottom: 16px;
+            display: flex; align-items: center; gap: 8px;
+        }
+        .checklist h3 .progress-badge {
+            font-size: 11px; font-weight: 600; color: var(--accent);
+            background: rgba(99,102,241,0.1); padding: 3px 10px; border-radius: 20px;
+            margin-left: auto;
+        }
+        .check-item {
+            display: flex; align-items: center; gap: 12px;
+            padding: 12px 14px; border-radius: 10px; margin-bottom: 6px;
+            transition: all 0.2s; cursor: pointer; text-decoration: none; color: inherit;
+        }
+        .check-item:hover { background: var(--bg-card); }
+        .check-item .check-box {
+            width: 22px; height: 22px; border-radius: 6px; flex-shrink: 0;
+            border: 2px solid var(--border); display: flex; align-items: center;
+            justify-content: center; font-size: 12px; transition: all 0.3s;
+        }
+        .check-item.done .check-box {
+            background: var(--green); border-color: var(--green); color: white;
+        }
+        .check-item .check-label { font-size: 14px; flex: 1; }
+        .check-item .check-label small { display: block; color: var(--text-muted); font-size: 12px; margin-top: 2px; }
+        .check-item .check-link {
+            font-size: 12px; color: var(--accent); font-weight: 600;
+            text-decoration: none; white-space: nowrap;
+        }
+        .check-item .check-link:hover { text-decoration: underline; }
+
+        /* Share section */
+        .share-section {
+            background: var(--bg-secondary); border: 1px solid var(--border);
+            border-radius: 14px; padding: 24px; margin-bottom: 28px; text-align: center;
+        }
+        .share-section h3 { font-size: 16px; margin-bottom: 6px; }
+        .share-section p { color: var(--text-secondary); font-size: 13px; margin-bottom: 16px; }
+        .share-buttons { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
+        .share-btn {
+            display: inline-flex; align-items: center; gap: 8px;
+            padding: 10px 20px; border-radius: 8px; font-size: 13px;
+            font-weight: 600; text-decoration: none; transition: all 0.2s;
+            border: 1px solid var(--border); color: var(--text-primary);
+            background: var(--bg-card);
+        }
+        .share-btn:hover { border-color: var(--accent); transform: translateY(-1px); }
+        .share-btn.twitter { color: #1da1f2; }
+        .share-btn.linkedin { color: #0a66c2; }
+        .share-btn.copy-link { cursor: pointer; }
+        .share-btn.copy-link.copied { color: var(--green); border-color: var(--green); }
+
+        /* Feedback section */
+        .feedback-section {
+            background: var(--bg-secondary); border: 1px solid var(--border);
+            border-radius: 14px; padding: 24px; margin-bottom: 28px; text-align: center;
+        }
+        .feedback-section h3 { font-size: 16px; margin-bottom: 6px; }
+        .feedback-section p { color: var(--text-secondary); font-size: 13px; margin-bottom: 16px; }
+        .star-rating { display: flex; gap: 6px; justify-content: center; margin-bottom: 16px; }
+        .star { font-size: 32px; cursor: pointer; transition: all 0.15s; filter: grayscale(1) opacity(0.4); }
+        .star:hover, .star.active { filter: none; transform: scale(1.15); }
+        .feedback-form { display: none; margin-top: 16px; }
+        .feedback-form.visible { display: block; }
+        .feedback-form textarea {
+            width: 100%; padding: 12px; background: var(--bg-card); border: 1px solid var(--border);
+            border-radius: 8px; color: var(--text-primary); font-size: 14px;
+            font-family: inherit; resize: vertical; min-height: 80px;
+        }
+        .feedback-form textarea:focus { outline: 2px solid var(--accent); border-color: var(--accent); }
+        .feedback-form .submit-row { display: flex; gap: 8px; margin-top: 10px; align-items: center; }
+        .feedback-form .submit-row .hint { font-size: 12px; color: var(--text-muted); flex: 1; text-align: left; }
+        .feedback-thanks { display: none; color: var(--green); font-size: 14px; font-weight: 600; padding: 12px; }
+        .feedback-thanks.visible { display: block; }
+
+        /* Features recap */
+        .features {
+            text-align: left; background: var(--bg-secondary);
+            border: 1px solid var(--border); border-radius: 14px;
+            padding: 24px; margin-bottom: 28px;
+        }
+        .features h3 { font-size: 15px; margin-bottom: 14px; }
+        .features li {
+            padding: 7px 0; color: var(--text-secondary); font-size: 14px;
+            display: flex; align-items: center; gap: 10px;
+        }
         .features li::before { content: "✓"; color: var(--green); font-weight: 700; }
-        .actions { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+
+        .actions { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-bottom: 28px; }
+        .actions a { display: inline-block; padding: 14px 32px; }
+
+        .trust { text-align: center; font-size: 13px; color: var(--text-muted); }
+        .trust a { color: var(--accent); }
+
+        @media (max-width: 600px) {
+            .content { padding: 80px 16px 60px; }
+            h1 { font-size: 26px; }
+            .share-buttons { flex-direction: column; align-items: stretch; }
+        }
     </style>
 </head>
 <body>
@@ -37,27 +153,119 @@
 
     <main>
         <div class="content">
-            <div class="checkmark">✓</div>
-            <h1>Welcome to APIpulse Pro!</h1>
-            <p class="subtitle">Your payment was successful. You now have lifetime access to all Pro features.</p>
+            <!-- Hero -->
+            <div class="hero">
+                <div class="checkmark">✓</div>
+                <h1>Welcome to APIpulse Pro!</h1>
+                <p class="subtitle">Your payment was successful. You now have <strong>lifetime access</strong> to all Pro features.</p>
+            </div>
 
+            <!-- Quick-start: first action -->
+            <div class="first-step">
+                <h2>🚀 Start saving in 2 minutes</h2>
+                <p>The fastest way to see ROI — run your first cost analysis right now.</p>
+                <a href="calculator.html" class="btn-primary" style="display:inline-block;padding:12px 28px;" onclick="if(window.trackEvent)window.trackEvent('thankyou_cta_clicked',{action:'calculator'})">Open the Calculator →</a>
+            </div>
+
+            <!-- Onboarding checklist -->
+            <div class="checklist">
+                <h3>
+                    <span>Getting Started</span>
+                    <span class="progress-badge" id="progress-badge">0 / 5 done</span>
+                </h3>
+                <a href="calculator.html" class="check-item" data-step="calculator" onclick="completeStep('calculator')">
+                    <span class="check-box" id="check-calculator"></span>
+                    <span class="check-label">Run a cost calculation<small>See your current monthly spend breakdown</small></span>
+                    <span class="check-link">Open →</span>
+                </a>
+                <a href="compare.html" class="check-item" data-step="compare" onclick="completeStep('compare')">
+                    <span class="check-box" id="check-compare"></span>
+                    <span class="check-label">Compare provider prices<small>Find cheaper alternatives for your workload</small></span>
+                    <span class="check-link">Open →</span>
+                </a>
+                <a href="recommend.html" class="check-item" data-step="recommend" onclick="completeStep('recommend')">
+                    <span class="check-box" id="check-recommend"></span>
+                    <span class="check-label">Get a model recommendation<small>4-step wizard picks the best model for your use case</small></span>
+                    <span class="check-link">Open →</span>
+                </a>
+                <a href="pro.html" class="check-item" data-step="save" onclick="completeStep('save')">
+                    <span class="check-box" id="check-save"></span>
+                    <span class="check-label">Save a cost scenario<small>Bookmark configurations for side-by-side comparison</small></span>
+                    <span class="check-link">Open Pro →</span>
+                </a>
+                <a href="migration-code.html" class="check-item" data-step="migration" onclick="completeStep('migration')">
+                    <span class="check-box" id="check-migration"></span>
+                    <span class="check-label">Generate migration code<small>Get copy-paste code to switch providers in minutes</small></span>
+                    <span class="check-link">Open →</span>
+                </a>
+            </div>
+
+            <!-- Pro features recap -->
             <div class="features">
-                <h3>Your Pro features are now unlocked:</h3>
+                <h3>What's included with Pro:</h3>
                 <ul style="list-style:none;padding:0;">
-                    <li>Save & compare up to 10 cost scenarios</li>
-                    <li>Export professional cost reports (HTML)</li>
-                    <li>Personalized optimization recommendations</li>
-                    <li>Priority email support</li>
-                    <li>Early access to new features</li>
+                    <li>Save & compare up to <strong>10 cost scenarios</strong> side by side</li>
+                    <li>Export <strong>professional cost reports</strong> for your team or investors</li>
+                    <li><strong>Personalized optimization tips</strong> — save up to 40% on API costs</li>
+                    <li><strong>Migration code generator</strong> — switch providers with copy-paste code</li>
+                    <li><strong>Cost Efficiency Score</strong> — all alternatives ranked, not just the top 1</li>
+                    <li><strong>Priority email support</strong> & early access to new features</li>
+                    <li><strong>Cost alerts</strong> when pricing changes across providers</li>
                 </ul>
             </div>
 
+            <!-- Action buttons -->
             <div class="actions">
-                <a href="pro.html" class="btn-primary" style="display:inline-block;padding:14px 32px;">Open Pro Dashboard</a>
-                <a href="calculator.html" class="btn-secondary" style="display:inline-block;padding:14px 32px;">Try the Calculator</a>
+                <a href="pro.html" class="btn-primary" style="display:inline-block;padding:14px 32px;" onclick="if(window.trackEvent)window.trackEvent('thankyou_cta_clicked',{action:'pro_dashboard'})">Open Pro Dashboard</a>
+                <a href="calculator.html" class="btn-secondary" style="display:inline-block;padding:14px 32px;" onclick="if(window.trackEvent)window.trackEvent('thankyou_cta_clicked',{action:'calculator'})">Try the Calculator</a>
             </div>
 
-            <p style="margin-top:32px;font-size:13px;color:var(--text-muted);">Your Pro access is saved in this browser. Bookmark this site to access your features anytime.</p>
+            <!-- Share / Refer -->
+            <div class="share-section">
+                <h3>Know someone overpaying for AI APIs?</h3>
+                <p>Share APIpulse and help them save. You helped build this — spread the word.</p>
+                <div class="share-buttons">
+                    <a href="#" class="share-btn twitter" id="share-twitter" onclick="shareTwitter();return false;">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                        Share on X
+                    </a>
+                    <a href="#" class="share-btn linkedin" id="share-linkedin" onclick="shareLinkedIn();return false;">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452z"/></svg>
+                        Share on LinkedIn
+                    </a>
+                    <button class="share-btn copy-link" id="share-copy" onclick="copyShareLink()">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+                        Copy Link
+                    </button>
+                </div>
+            </div>
+
+            <!-- Feedback -->
+            <div class="feedback-section">
+                <h3>How's your experience so far?</h3>
+                <p>Your feedback shapes what we build next.</p>
+                <div class="star-rating" id="star-rating">
+                    <span class="star" data-rating="1" onclick="setRating(1)">⭐</span>
+                    <span class="star" data-rating="2" onclick="setRating(2)">⭐</span>
+                    <span class="star" data-rating="3" onclick="setRating(3)">⭐</span>
+                    <span class="star" data-rating="4" onclick="setRating(4)">⭐</span>
+                    <span class="star" data-rating="5" onclick="setRating(5)">⭐</span>
+                </div>
+                <div class="feedback-form" id="feedback-form">
+                    <textarea id="feedback-text" placeholder="What could be better? What feature should we build next? (Optional)" rows="3"></textarea>
+                    <div class="submit-row">
+                        <span class="hint">Optional — but every message gets read</span>
+                        <button class="btn-primary" style="padding:8px 20px;font-size:13px;" onclick="submitFeedback()">Send Feedback</button>
+                    </div>
+                </div>
+                <div class="feedback-thanks" id="feedback-thanks">🎉 Thank you! Your feedback helps us build a better product.</div>
+            </div>
+
+            <!-- Trust -->
+            <p class="trust">
+                Your Pro access is saved in this browser. Bookmark this site to access your features anytime.<br>
+                Questions? Email <a href="mailto:support@getapipulse.com">support@getapipulse.com</a>
+            </p>
         </div>
     </main>
 
@@ -65,10 +273,133 @@
         // Auto-unlock Pro features on payment confirmation
         localStorage.setItem('apipulse_pro', 'true');
         localStorage.setItem('apipulse_pro_date', new Date().toISOString());
+
+        // Track purchase event
         if (window.trackEvent) window.trackEvent('pro_purchase_completed', {
             ab_variant: localStorage.getItem('ab_pricing_variant') || 'unknown',
             price: window._abPrice || 29
         });
+
+        // Track thank-you page view
+        if (window.trackEvent) window.trackEvent('thankyou_page_viewed', {
+            ab_variant: localStorage.getItem('ab_pricing_variant') || 'unknown',
+            price: window._abPrice || 29,
+            referrer: document.referrer || 'direct'
+        });
+
+        // === ONBOARDING CHECKLIST ===
+        var CHECKLIST_KEY = 'apipulse_onboarding_done';
+        var completedSteps = JSON.parse(localStorage.getItem(CHECKLIST_KEY) || '[]');
+
+        function updateChecklistUI() {
+            var steps = ['calculator', 'compare', 'recommend', 'save', 'migration'];
+            steps.forEach(function(step) {
+                var el = document.getElementById('check-' + step);
+                if (!el) return;
+                if (completedSteps.indexOf(step) !== -1) {
+                    el.textContent = '✓';
+                    el.parentElement.classList.add('done');
+                } else {
+                    el.textContent = '';
+                    el.parentElement.classList.remove('done');
+                }
+            });
+            var badge = document.getElementById('progress-badge');
+            if (badge) {
+                badge.textContent = completedSteps.length + ' / 5 done';
+                if (completedSteps.length === 5) {
+                    badge.textContent = '✓ All done!';
+                    badge.style.background = 'rgba(34,197,94,0.15)';
+                    badge.style.color = 'var(--green)';
+                }
+            }
+        }
+
+        function completeStep(step) {
+            if (completedSteps.indexOf(step) === -1) {
+                completedSteps.push(step);
+                localStorage.setItem(CHECKLIST_KEY, JSON.stringify(completedSteps));
+                if (window.trackEvent) window.trackEvent('onboarding_step_completed', {
+                    step: step,
+                    total_completed: completedSteps.length
+                });
+                if (completedSteps.length === 5 && window.trackEvent) {
+                    window.trackEvent('onboarding_completed');
+                }
+            }
+            updateChecklistUI();
+        }
+
+        // Init checklist on load
+        updateChecklistUI();
+
+        // === SOCIAL SHARING ===
+        var shareText = 'I just got APIpulse Pro — compare AI API pricing across 42 models and 10 providers. Worth it if you\'re spending on LLM APIs.';
+        var shareUrl = 'https://getapipulse.com';
+
+        function shareTwitter() {
+            var url = 'https://twitter.com/intent/tweet?text=' + encodeURIComponent(shareText) + '&url=' + encodeURIComponent(shareUrl);
+            window.open(url, '_blank', 'width=600,height=400');
+            if (window.trackEvent) window.trackEvent('share_clicked', { platform: 'twitter' });
+        }
+
+        function shareLinkedIn() {
+            var url = 'https://www.linkedin.com/sharing/share-offsite/?url=' + encodeURIComponent(shareUrl);
+            window.open(url, '_blank', 'width=600,height=400');
+            if (window.trackEvent) window.trackEvent('share_clicked', { platform: 'linkedin' });
+        }
+
+        function copyShareLink() {
+            var btn = document.getElementById('share-copy');
+            navigator.clipboard.writeText(shareUrl + '?ref=pro-share').then(function() {
+                btn.classList.add('copied');
+                btn.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Copied!';
+                setTimeout(function() {
+                    btn.classList.remove('copied');
+                    btn.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg> Copy Link';
+                }, 2000);
+            });
+            if (window.trackEvent) window.trackEvent('share_clicked', { platform: 'copy_link' });
+        }
+
+        // === FEEDBACK ===
+        var selectedRating = 0;
+
+        function setRating(rating) {
+            selectedRating = rating;
+            var stars = document.querySelectorAll('#star-rating .star');
+            stars.forEach(function(star) {
+                var r = parseInt(star.getAttribute('data-rating'));
+                if (r <= rating) {
+                    star.classList.add('active');
+                } else {
+                    star.classList.remove('active');
+                }
+            });
+            document.getElementById('feedback-form').classList.add('visible');
+            if (window.trackEvent) window.trackEvent('feedback_rating_selected', { rating: rating });
+        }
+
+        function submitFeedback() {
+            var text = document.getElementById('feedback-text').value.trim();
+            if (window.trackEvent) window.trackEvent('feedback_submitted', {
+                rating: selectedRating,
+                has_text: text.length > 0,
+                text_length: text.length
+            });
+            document.getElementById('feedback-form').classList.remove('visible');
+            document.getElementById('star-rating').style.display = 'none';
+            document.getElementById('feedback-thanks').classList.add('visible');
+            // Store locally as backup
+            var feedback = JSON.parse(localStorage.getItem('apipulse_feedback') || '[]');
+            feedback.push({
+                rating: selectedRating,
+                text: text,
+                date: new Date().toISOString(),
+                ab_variant: localStorage.getItem('ab_pricing_variant') || 'unknown'
+            });
+            localStorage.setItem('apipulse_feedback', JSON.stringify(feedback));
+        }
     </script>
 </body>
 </html>

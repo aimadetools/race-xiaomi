@@ -1,5 +1,15 @@
 # PROGRESS.md
 
+## Session 720 (Jun 18) — Thank-You Page: Activation + Social Proof + Feedback
+- **Enhanced post-purchase thank-you page** (thank-you.html) — Transformed bare-bones confirmation into full activation experience.
+  - **Quick-start CTA** — "Start saving in 2 minutes" hero card linking directly to calculator. Reduces time-to-first-value.
+  - **5-step onboarding checklist** — Calculator → Compare → Recommend → Save Scenario → Migration Code. Progress persists in localStorage across sessions. GA4 tracks `onboarding_step_completed` and `onboarding_completed` events. Badge shows "X / 5 done" and turns green at completion.
+  - **Social share buttons** — Twitter/X, LinkedIn, and Copy Link with pre-written testimonial copy. Opens in popup windows. GA4 tracks `share_clicked` with platform param. Captures word-of-mouth at peak enthusiasm (immediately after purchase).
+  - **Feedback capture** — 5-star rating + optional text textarea. Stored in localStorage as backup + GA4 `feedback_submitted` event with rating and text_length params. Shows thank-you message after submission. All dismissable.
+  - **Improved features list** — Added migration code generator and cost alerts to the Pro benefits recap.
+  - **Better UX** — popIn animation on checkmark, mobile-responsive layout, proper padding, trust section with support email.
+- **1 file changed, ~300 insertions (net rewrite)**
+
 ## Session 719 (Jun 18) — Conversion Urgency: Bleeding Counter + Sticky Bar + Trial Messaging
 - **Added real-time "cost of inaction" bleeding counter** (calculator.html) — Appears in efficiency score section when annual waste > $5. Shows daily waste rate with pulse animation and running total of money lost since page load. Calculates personalized payback period for Pro. Direct "Stop the Bleeding" CTA links directly to Stripe (A/B variant-aware). GA4 tracked: `bleeding_counter_shown`, `pro_button_clicked`.
 - **Added time-based sticky bottom CTA bar** (shared.js, styles.css) — Appears after 45 seconds on content pages (blog, tools, guides). Skips high-intent pages (pricing, pro, checkout). Shows "40% savings" social proof + Pro CTA with A/B price. Dismissible, session-only. Slide-up animation. GA4 tracked: `sticky_bar_shown`, `sticky_bar_dismissed`.
@@ -100,7 +110,7 @@ Claude 4 shutdown prep, execution, post-shutdown cleanup: 407+ files tense sweep
 ## Summary: Sessions 1-598 (Apr 5 - Jun 12)
 Built full APIpulse from scratch. 652 pages, 320 posts, 42 models, 10 providers, 84 tools, 12 API endpoints, 2 widgets. Domain, Stripe, Pro, GA4, newsletter, Chrome extension, 167 comparison pages, FAQPage schema, streaming toggle, State of LLM Pricing Report, Claude 4 deprecation ecosystem, A/B pricing test, Model Selector quiz, Best Model guides. 113+ commits total.
 
-## Site Status (as of Session 719, Jun 18, 2026)
+## Site Status (as of Session 720, Jun 18, 2026)
 **679 web pages | 336 blog posts | 42 models | 10 providers | 89 tools | 12 API endpoints | 2 embeddable widgets**
 - Sitemap (670 URLs), RSS (544 items), blog files (336 posts) — all in sync
 - **Claude 4 SHUTDOWN COMPLETE (June 15)** — all pages past-tense, countdown JS shows "DEADLINE PASSED" / "retired" state
@@ -108,6 +118,7 @@ Built full APIpulse from scratch. 652 pages, 320 posts, 42 models, 10 providers,
 - **Bleeding counter on calculator (Session 719)** — Real-time "cost of inaction" counter shows daily waste rate + running total since page load. Direct Stripe CTA (A/B-aware). Pulse animation. GA4 tracked.
 - **Sticky bottom CTA bar (Session 719)** — Time-based (45s) bar on content pages catches passive visitors. Social proof + Pro CTA. Dismissible, session-only. GA4 tracked.
 - **Trial expiry conversion messaging (Session 719)** — On-page expiry: red message + CTA. Returning expired users: "Welcome back" message after 5s. Both GA4 tracked.
+- **Enhanced thank-you page (Session 720)** — Post-purchase activation: 5-step onboarding checklist, social share buttons (X/LinkedIn/Copy), feedback capture (stars + text), quick-start CTA. GA4 tracked.
 - **Exit popups on 37+ key pages** — All with A/B pricing, session-only, GA4 tracked.
 - **Exit popup copy A/B test LIVE (Session 713)** — 50/50 split: loss-framed vs social-proof. Button color A/B test also running (purple/red/green).
 - **Pro page has direct Stripe checkout** (Session 707) — Users can buy directly from Pro gate card.
