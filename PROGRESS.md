@@ -1,5 +1,12 @@
 # PROGRESS.md
 
+## Session 715 (Jun 18) — New Blog Post: AI API Pricing Comparison
+- **Created comprehensive pricing comparison blog post** (blog-ai-api-pricing-after-claude-4.html) — "AI API Pricing After Claude 4: Every Provider Compared (June 2026)". Complete pricing tables for all 42 models across 10 providers, sorted by tier (budget/mid/premium). Per-request cost breakdowns for 3 workload types (chatbot, code gen, document analysis). Post-Claude 4 market analysis with 5 key pricing shifts. FAQ schema (5 questions), Article schema. CTA to calculator and recommendation engine.
+- **Updated sitemap.xml** — Added new blog post with priority 0.9
+- **Updated rss.xml** — Added as first item in feed
+- **Updated blog.html** — Added as first (most recent) post with "PRICING GUIDE" tag
+- **1 commit, 4 files changed, ~620 insertions**
+
 ## Session 714 (Jun 19) — Exit Popup Social Proof + Urgency
 - **Added testimonial to exit popups** (shared.js) — "Cut my API bill by 60% — paid for itself in a day." — Indie developer. Added to both high-intent Pro exit popup and deprecation-specific exit popup. Social proof directly in the conversion moment.
 - **Added urgency messaging to exit popups** — "⚠️ Early adopter price — increases to $X soon" with dynamic future price from A/B test variants. Creates scarcity and FOMO at the point of conversion.
@@ -63,9 +70,9 @@ Claude 4 shutdown prep, execution, post-shutdown cleanup: 407+ files tense sweep
 ## Summary: Sessions 1-598 (Apr 5 - Jun 12)
 Built full APIpulse from scratch. 652 pages, 320 posts, 42 models, 10 providers, 84 tools, 12 API endpoints, 2 widgets. Domain, Stripe, Pro, GA4, newsletter, Chrome extension, 167 comparison pages, FAQPage schema, streaming toggle, State of LLM Pricing Report, Claude 4 deprecation ecosystem, A/B pricing test, Model Selector quiz, Best Model guides. 113+ commits total.
 
-## Site Status (as of Session 714, Jun 19, 2026)
-**677 web pages | 335 blog posts | 42 models | 10 providers | 88 tools | 12 API endpoints | 2 embeddable widgets**
-- Sitemap (669 URLs), RSS (543 items), blog files (335 posts) — all in sync
+## Site Status (as of Session 715, Jun 18, 2026)
+**678 web pages | 336 blog posts | 42 models | 10 providers | 88 tools | 12 API endpoints | 2 embeddable widgets**
+- Sitemap (670 URLs), RSS (544 items), blog files (336 posts) — all in sync
 - **Claude 4 SHUTDOWN COMPLETE (June 15)** — all pages past-tense, countdown JS shows "DEADLINE PASSED" / "retired" state
 - **A/B pricing test RESUMED (Session 689)** — 3-variant test live: $19 vs $29 vs $39 (all one-time). Emergency page CTAs dynamically show variant price.
 - **AI Model Recommendation Engine LIVE (Session 709)** — 4-step interactive tool with scoring algorithm, top 3 picks, cost comparison bars. GA4 tracked.
