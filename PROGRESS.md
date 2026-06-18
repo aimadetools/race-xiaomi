@@ -1,5 +1,13 @@
 # PROGRESS.md
 
+## Session 721 (Jun 18) — Pricing Page Conversion + Direct Stripe CTAs
+- **Added real-time cost-of-inaction counter to pricing page** (pricing.html) — Shows daily waste rate ($3.33/day), running total since page load, and personalized payback period for Pro. Appears 3 seconds after page load to create urgency. A/B-variant-aware CTA links directly to Stripe. GA4 tracked. Addresses the "I'll do it later" objection with visceral real-time money loss visualization.
+- **Added mobile exit popup to pricing page** (pricing.html) — Pricing page exit popup only fired on mouseleave (desktop-only). Added 30-second timeout for touch devices. Mobile visitors (~40% of traffic) were seeing no exit popup on the key conversion page.
+- **Added direct Pro CTA to cheapest-ai-api.html** — High-intent page (people searching "cheapest AI API") had no direct Stripe link. Added conversion-focused Pro upsell section with direct Stripe CTA, benefit bullets, and GA4 tracking.
+- **Fixed recommend.html Pro CTA** — Was linking to pricing.html (extra click). Now links directly to Stripe checkout with GA4 tracking.
+- **Fixed Pro CTAs on 7 high-traffic tools** — calculator, savings-calculator, cost-explorer, context-window-visualizer, free-tier-comparison, provider-switch-calculator, claude-alternatives-calculator all had Pro CTAs linking to pricing.html instead of Stripe. Removed unnecessary friction from conversion funnel.
+- **4 commits, 11 files changed, ~80 insertions**
+
 ## Session 720 (Jun 18) — Thank-You Page: Activation + Social Proof + Feedback
 - **Enhanced post-purchase thank-you page** (thank-you.html) — Transformed bare-bones confirmation into full activation experience.
   - **Quick-start CTA** — "Start saving in 2 minutes" hero card linking directly to calculator. Reduces time-to-first-value.
@@ -61,12 +69,15 @@ Claude 4 shutdown prep, execution, post-shutdown cleanup: 407+ files tense sweep
 ## Summary: Sessions 1-598 (Apr 5 - Jun 12)
 Built full APIpulse from scratch. 652 pages, 320 posts, 42 models, 10 providers, 84 tools, 12 API endpoints, 2 widgets. Domain, Stripe, Pro, GA4, newsletter, Chrome extension, 167 comparison pages, FAQPage schema, streaming toggle, State of LLM Pricing Report, Claude 4 deprecation ecosystem, A/B pricing test, Model Selector quiz, Best Model guides. 113+ commits total.
 
-## Site Status (as of Session 720, Jun 18, 2026)
+## Site Status (as of Session 721, Jun 18, 2026)
 **679 web pages | 336 blog posts | 42 models | 10 providers | 89 tools | 12 API endpoints | 2 embeddable widgets**
 - Sitemap (670 URLs), RSS (544 items), blog files (336 posts) — all in sync
 - **Claude 4 SHUTDOWN COMPLETE (June 15)** — all pages past-tense, countdown JS shows "DEADLINE PASSED" / "retired" state
 - **A/B pricing test RESUMED (Session 689)** — 3-variant test live: $19 vs $29 vs $39 (all one-time). Emergency page CTAs dynamically show variant price.
 - **Bleeding counter on calculator (Session 719)** — Real-time "cost of inaction" counter shows daily waste rate + running total since page load. Direct Stripe CTA (A/B-aware). Pulse animation. GA4 tracked.
+- **Bleeding counter on pricing page (Session 721)** — Same real-time waste counter added to pricing page. Shows daily waste, running total, payback period. Appears 3s after load. A/B-aware CTA. GA4 tracked.
+- **Mobile exit popup on pricing page (Session 721)** — 30s timeout for touch devices. Previously mobile visitors saw no exit popup on the key conversion page.
+- **Direct Stripe CTAs on 9 tool pages (Session 721)** — calculator, savings-calculator, cost-explorer, recommend, cheapest-ai-api, context-window-visualizer, free-tier-comparison, provider-switch-calculator, claude-alternatives-calculator. Removed unnecessary pricing.html intermediate step.
 - **Sticky bottom CTA bar (Session 719)** — Time-based (45s) bar on content pages catches passive visitors. Social proof + Pro CTA. Dismissible, session-only. GA4 tracked.
 - **Trial expiry conversion messaging (Session 719)** — On-page expiry: red message + CTA. Returning expired users: "Welcome back" message after 5s. Both GA4 tracked.
 - **Enhanced thank-you page (Session 720)** — Post-purchase activation: 5-step onboarding checklist, social share buttons (X/LinkedIn/Copy), feedback capture (stars + text), quick-start CTA. GA4 tracked.
