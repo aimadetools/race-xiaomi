@@ -225,6 +225,115 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
+// Nav Restructuring: Collapse secondary links into "More" dropdown
+// Keeps nav clean and CTA prominent for better conversion
+(function() {
+    var style = document.createElement('style');
+    style.textContent = '.nav-more{position:relative;display:inline-block}.nav-more-btn{background:none;border:1px solid var(--border);color:var(--text-secondary);padding:6px 12px;border-radius:6px;font-size:13px;font-weight:500;cursor:pointer;display:flex;align-items:center;gap:4px;transition:all .2s;font-family:inherit}.nav-more-btn:hover{border-color:var(--accent);color:var(--accent)}.nav-more-btn .arrow{font-size:10px;transition:transform .2s}.nav-more.open .nav-more-btn .arrow{transform:rotate(180deg)}.nav-more-dropdown{display:none;position:absolute;top:calc(100% + 6px);right:0;background:var(--bg-card);border:1px solid var(--border);border-radius:10px;padding:8px 0;min-width:220px;max-height:400px;overflow-y:auto;z-index:1000;box-shadow:0 8px 24px rgba(0,0,0,.2)}.nav-more.open .nav-more-dropdown{display:block}.nav-more-dropdown a{display:block;padding:8px 16px;font-size:13px;color:var(--text-secondary);text-decoration:none;transition:all .15s;white-space:nowrap}.nav-more-dropdown a:hover{background:var(--bg-secondary);color:var(--accent)}.nav-more-divider{height:1px;background:var(--border);margin:4px 0}.nav-cta{display:inline-block!important;padding:8px 18px!important;background:linear-gradient(135deg,var(--accent),#8b5cf6)!important;color:white!important;border-radius:8px!important;font-weight:700!important;font-size:14px!important;border:none!important;text-decoration:none!important;transition:all .2s!important;box-shadow:0 2px 8px rgba(99,102,241,.3)!important}.nav-cta:hover{opacity:.9!important;transform:translateY(-1px)!important;box-shadow:0 4px 12px rgba(99,102,241,.4)!important}@media(max-width:900px){.nav-more-dropdown{right:0;left:auto}}@media(max-width:768px){.nav-more{width:100%}.nav-more-btn{width:100%;justify-content:center;padding:14px 0;font-size:16px;border-bottom:1px solid var(--border);border-radius:0;border-left:none;border-right:none;border-top:none}.nav-more-dropdown{position:static;display:none;box-shadow:none;border:none;border-radius:0;max-height:none;width:100%}.nav-more.open .nav-more-dropdown{display:block}.nav-more-dropdown a{padding:12px 24px;font-size:15px;border-bottom:1px solid var(--border)}}';
+    document.head.appendChild(style);
+
+    var ESSENTIAL_HREFS = {
+        'calculator.html': 1,
+        'compare.html': 1,
+        'pricing.html': 1,
+        'blog.html': 1,
+        'about.html': 1
+    };
+
+    function restructureNav() {
+        var navLinks = document.querySelector('.nav-links');
+        if (!navLinks) return;
+        // Skip if already restructured
+        if (navLinks.querySelector('.nav-more')) return;
+
+        var cta = navLinks.querySelector('.nav-cta');
+        var themeBtn = navLinks.querySelector('.theme-toggle');
+        var links = Array.from(navLinks.querySelectorAll('a:not(.nav-cta)'));
+        var essential = [];
+        var secondary = [];
+        var seen = {};
+
+        links.forEach(function(a) {
+            var href = a.getAttribute('href');
+            if (!href || seen[href]) { a.remove(); return; }
+            seen[href] = 1;
+            if (ESSENTIAL_HREFS[href]) {
+                essential.push(a);
+            } else {
+                secondary.push(a);
+            }
+        });
+
+        if (secondary.length === 0) return;
+
+        // Sort secondary alphabetically
+        secondary.sort(function(a, b) {
+            return (a.textContent || '').localeCompare(b.textContent || '');
+        });
+
+        // Build More dropdown
+        var more = document.createElement('div');
+        more.className = 'nav-more';
+        var btn = document.createElement('button');
+        btn.className = 'nav-more-btn';
+        btn.innerHTML = 'More <span class="arrow">▾</span>';
+        btn.setAttribute('aria-label', 'More navigation links');
+        btn.setAttribute('aria-expanded', 'false');
+        var dropdown = document.createElement('div');
+        dropdown.className = 'nav-more-dropdown';
+
+        secondary.forEach(function(a, i) {
+            if (i > 0 && a.textContent.trim().charAt(0).toUpperCase() === a.textContent.trim().charAt(0)) {
+                // Add visual grouping for capital-letter starts (tools vs resources)
+            }
+            dropdown.appendChild(a);
+        });
+
+        more.appendChild(btn);
+        more.appendChild(dropdown);
+
+        // Rebuild nav: essential links, More dropdown, CTA, theme
+        navLinks.innerHTML = '';
+        essential.forEach(function(a) { navLinks.appendChild(a); });
+        navLinks.appendChild(more);
+        if (cta) navLinks.appendChild(cta);
+        if (themeBtn) navLinks.appendChild(themeBtn);
+
+        // Toggle dropdown
+        btn.addEventListener('click', function(e) {
+            e.stopPropagation();
+            var isOpen = more.classList.toggle('open');
+            btn.setAttribute('aria-expanded', isOpen);
+        });
+
+        // Close dropdown on outside click
+        document.addEventListener('click', function() {
+            more.classList.remove('open');
+            btn.setAttribute('aria-expanded', 'false');
+        });
+
+        // Close mobile nav when clicking More links
+        dropdown.querySelectorAll('a').forEach(function(a) {
+            a.addEventListener('click', function() {
+                var nl = document.querySelector('.nav-links');
+                var hm = document.querySelector('.hamburger');
+                if (nl) nl.classList.remove('open');
+                if (hm) hm.classList.remove('open');
+                more.classList.remove('open');
+            });
+        });
+    }
+
+    // Run after all JS-injected links are added
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', function() {
+            setTimeout(restructureNav, 50);
+        });
+    } else {
+        setTimeout(restructureNav, 50);
+    }
+})();
+
 // Claude 4 Deprecation Banner (pre-deprecation countdown + post-deprecation notice)
 document.addEventListener('DOMContentLoaded', () => {
     var deprecationDate = new Date('2026-06-15T00:00:00Z');

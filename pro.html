@@ -254,33 +254,39 @@
                     </div>
                 </div>
 
-                <!-- Direct Stripe checkout button (A/B priced) -->
+                <!-- Try Free — Primary CTA (zero friction) -->
                 <div style="margin:20px auto;max-width:360px;">
+                    <button onclick="startTrial()" style="width:100%;padding:16px 24px;background:linear-gradient(135deg,var(--green),#16a34a);color:white;border:none;border-radius:8px;font-size:16px;font-weight:700;cursor:pointer;transition:all 0.2s;box-shadow:0 4px 12px rgba(34,197,94,0.3);" onmouseover="this.style.opacity='0.9';this.style.transform='translateY(-1px)'" onmouseout="this.style.opacity='1';this.style.transform='none'">
+                        ⚡ Try Pro Free for 24 Hours
+                    </button>
+                    <p style="font-size:12px;color:var(--text-muted);margin-top:8px;text-align:center;">No credit card required · Full access · Cancel anytime</p>
+                </div>
+
+                <!-- Direct Stripe checkout button (A/B priced) — Secondary CTA -->
+                <div style="margin:16px auto;max-width:360px;">
+                    <div style="display:flex;align-items:center;gap:12px;margin-bottom:12px;">
+                        <div style="flex:1;height:1px;background:var(--border);"></div>
+                        <span style="font-size:12px;color:var(--text-muted);font-weight:500;">or buy lifetime access</span>
+                        <div style="flex:1;height:1px;background:var(--border);"></div>
+                    </div>
                     <a id="pro-stripe-btn" href="https://buy.stripe.com/fZu7sL3Gw3GS0RQeoDeEo0a" onclick="if(window.trackEvent)window.trackEvent('pro_button_clicked',{source:'pro_gate_checkout'})" style="display:block;width:100%;padding:14px 24px;background:linear-gradient(135deg,var(--accent),#8b5cf6);color:white;border:none;border-radius:8px;font-size:15px;font-weight:700;cursor:pointer;text-align:center;text-decoration:none;transition:all 0.2s;" onmouseover="this.style.opacity='0.9'" onmouseout="this.style.opacity='1'">
-                        Get Pro — $29
+                        Get Pro — $29 one-time
                     </a>
                     <p style="font-size:12px;color:var(--text-muted);margin-top:8px;text-align:center;">⚡ Founding member price — increases after the race ends</p>
                 </div>
 
-                <div class="gate-input">
-                    <input type="text" id="access-code" placeholder="APIPULSE-XXXX-XXXX"
-                        onkeydown="if(event.key==='Enter')submitCode()" autofocus
-                        style="text-transform:uppercase;" aria-label="Access code">
-                    <button class="btn-primary" onclick="submitCode()">Unlock</button>
-                </div>
-                <p id="gate-error" class="gate-error">Invalid access code. Check your purchase confirmation email.</p>
-                <p style="margin-top:20px;font-size:13px;color:var(--text-muted);">
-                    Don't have a code? <a href="pricing.html" onclick="if(window.trackEvent)window.trackEvent('pro_button_clicked',{source:'pro_gate'})">Get Pro access for $29</a>
-                </p>
-                <p style="margin-top:12px;font-size:13px;color:var(--text-muted);">
-                    Already paid? <a href="#" onclick="unlockWithoutCode();return false;" style="color:var(--accent);font-weight:600;">Unlock here</a>
-                </p>
-
-                <div style="margin-top:24px;padding-top:20px;border-top:1px solid var(--border);">
-                    <button onclick="startTrial()" style="width:100%;padding:14px 24px;background:linear-gradient(135deg,var(--accent),#8b5cf6);color:white;border:none;border-radius:8px;font-size:15px;font-weight:700;cursor:pointer;transition:all 0.2s;" onmouseover="this.style.opacity='0.9'" onmouseout="this.style.opacity='1'">
-                        Try Pro Free for 24 Hours
-                    </button>
-                    <p style="font-size:12px;color:var(--text-muted);margin-top:8px;">No credit card required. Full access to all Pro features.</p>
+                <!-- Access code for existing users -->
+                <div style="margin-top:20px;">
+                    <p style="font-size:13px;color:var(--text-muted);margin-bottom:8px;text-align:center;">
+                        Already have a code? <a href="#" onclick="document.getElementById('access-code-section').style.display='block';this.parentElement.style.display='none';return false;" style="color:var(--accent);font-weight:600;">Enter it here</a>
+                    </p>
+                    <div id="access-code-section" class="gate-input" style="display:none;">
+                        <input type="text" id="access-code" placeholder="APIPULSE-XXXX-XXXX"
+                            onkeydown="if(event.key==='Enter')submitCode()"
+                            style="text-transform:uppercase;" aria-label="Access code">
+                        <button class="btn-primary" onclick="submitCode()">Unlock</button>
+                    </div>
+                    <p id="gate-error" class="gate-error">Invalid access code. Check your purchase confirmation email.</p>
                 </div>
             </div>
         </div>
