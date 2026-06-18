@@ -31,8 +31,8 @@
 - Review inaction calculator usage (inaction_calc_used events)
 - Check which traffic sources drive conversions (organic search vs direct vs referral)
 
-### Completed (Sessions 416-718, Apr 23 - Jun 18)
-**Session 718 (Jun 18):** .env file generator for migration tool — new Step 3b section with correct env var, API dashboard URL, dual-key mode. FAQ schema expanded to 5 questions. 1 file, 99 insertions.
+### Completed (Sessions 416-719, Apr 23 - Jun 18)
+**Session 719 (Jun 18):** Conversion urgency — bleeding counter on calculator (real-time daily waste + running total + direct Stripe CTA), sticky bottom CTA bar after 45s on content pages, trial expiry conversion messaging (on-page + returning users). 3 files, 115 insertions.
 **Session 717 (Jun 18):** Migration code generator cross-linking — footer nav (shared.js, all pages), claude-4-is-dead.html, claude-4-shutdown-complete.html, blog.html What's New section. Fixed stale blog post count (319→336). 4 files, 1 commit.
 **Session 714 (Jun 19):** Exit popup social proof + urgency — added testimonial ("Cut my API bill by 60%") and urgency messaging ("Early adopter price — increases to $X soon") to all exit popups (high-intent, deprecation, email capture). Added testimonial to index.html pricing card and pro.html gate card. Fixed futurePrice scoping bug. 3 files, 3 commits.
 **Session 713 (Jun 19):** Exit popup copy A/B test — loss-framed vs social-proof (50/50), GA4 tracked with `copy_variant` param. Fixed buttonColorVariant scoping bug. 1 file, 2 commits.

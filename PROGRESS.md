@@ -1,5 +1,11 @@
 # PROGRESS.md
 
+## Session 719 (Jun 18) — Conversion Urgency: Bleeding Counter + Sticky Bar + Trial Messaging
+- **Added real-time "cost of inaction" bleeding counter** (calculator.html) — Appears in efficiency score section when annual waste > $5. Shows daily waste rate with pulse animation and running total of money lost since page load. Calculates personalized payback period for Pro. Direct "Stop the Bleeding" CTA links directly to Stripe (A/B variant-aware). GA4 tracked: `bleeding_counter_shown`, `pro_button_clicked`.
+- **Added time-based sticky bottom CTA bar** (shared.js, styles.css) — Appears after 45 seconds on content pages (blog, tools, guides). Skips high-intent pages (pricing, pro, checkout). Shows "40% savings" social proof + Pro CTA with A/B price. Dismissible, session-only. Slide-up animation. GA4 tracked: `sticky_bar_shown`, `sticky_bar_dismissed`.
+- **Added trial expiry conversion messaging** (pro-features.js) — When trial expires on-page: red conversion message for 8 seconds with lifetime access CTA. Set `apipulse_trial_expired` flag for cross-session tracking. Returning expired trial users see subtle "Welcome back" message after 5 seconds with upgrade CTA. Both dismissable and GA4 tracked.
+- **3 commits, 3 files changed, ~115 insertions**
+
 ## Session 718 (Jun 18) — .env File Generator for Migration Tool
 - **Added .env file generator to migration code tool** (migration-code.html) — New "Step 3b" section appears after migration code. Generates correct `.env` snippet with the target provider's env variable name and API key dashboard URL for all 10 providers. Dual-key mode shows both old + new keys during migration period (when providers use different env vars). Copy buttons for both variants. Hidden by default, appears when migration code is generated.
 - **Added 5th FAQ schema entry** — "What environment variables do I need for AI API providers?" with comprehensive answer covering all 10 providers.
@@ -94,18 +100,18 @@ Claude 4 shutdown prep, execution, post-shutdown cleanup: 407+ files tense sweep
 ## Summary: Sessions 1-598 (Apr 5 - Jun 12)
 Built full APIpulse from scratch. 652 pages, 320 posts, 42 models, 10 providers, 84 tools, 12 API endpoints, 2 widgets. Domain, Stripe, Pro, GA4, newsletter, Chrome extension, 167 comparison pages, FAQPage schema, streaming toggle, State of LLM Pricing Report, Claude 4 deprecation ecosystem, A/B pricing test, Model Selector quiz, Best Model guides. 113+ commits total.
 
-## Site Status (as of Session 718, Jun 18, 2026)
+## Site Status (as of Session 719, Jun 18, 2026)
 **679 web pages | 336 blog posts | 42 models | 10 providers | 89 tools | 12 API endpoints | 2 embeddable widgets**
 - Sitemap (670 URLs), RSS (544 items), blog files (336 posts) — all in sync
 - **Claude 4 SHUTDOWN COMPLETE (June 15)** — all pages past-tense, countdown JS shows "DEADLINE PASSED" / "retired" state
 - **A/B pricing test RESUMED (Session 689)** — 3-variant test live: $19 vs $29 vs $39 (all one-time). Emergency page CTAs dynamically show variant price.
-- **AI Model Recommendation Engine LIVE (Session 709)** — 4-step interactive tool with scoring algorithm, top 3 picks, cost comparison bars. GA4 tracked.
-- **Emergency page FULLY OPTIMIZED** — Inaction calculator, social proof bar, exit popup, sticky CTA, Claude 4 vs Opus 4.8 comparison, urgency section, email capture, Pro preview mockup.
-- **Exit popups on 37+ key pages** — Emergency, Scanner, Homepage, Alternatives Comparison, 7 blog posts, Cost Explorer, Migration Cost Calculator, Use-Case Guide, Migration Checklist, Pricing, Claude 4 Is Dead, Shutdown Complete, Replacement Finder, and more. All with A/B pricing, session-only, GA4 tracked.
-- **Exit popup copy A/B test LIVE (Session 713)** — 50/50 split: loss-framed ("You're losing money") vs social-proof ("Join 1,247+ developers"). Tracked via `copy_variant` param in GA4. Button color A/B test also running (purple/red/green).
-- **Exit popup social proof + urgency (Session 714)** — Added testimonial ("Cut my API bill by 60%") and urgency messaging ("Early adopter price — increases to $X soon") to all exit popups (high-intent, deprecation, email capture). Also added to index.html pricing card and pro.html gate card.
-- **Pro page has direct Stripe checkout** (Session 707) — Users can buy directly from Pro gate card without navigating to pricing page.
-- **Wall of Love testimonials page** (Session 708) — 15 testimonials, savings highlights, Product Hunt badge, social proof.
+- **Bleeding counter on calculator (Session 719)** — Real-time "cost of inaction" counter shows daily waste rate + running total since page load. Direct Stripe CTA (A/B-aware). Pulse animation. GA4 tracked.
+- **Sticky bottom CTA bar (Session 719)** — Time-based (45s) bar on content pages catches passive visitors. Social proof + Pro CTA. Dismissible, session-only. GA4 tracked.
+- **Trial expiry conversion messaging (Session 719)** — On-page expiry: red message + CTA. Returning expired users: "Welcome back" message after 5s. Both GA4 tracked.
+- **Exit popups on 37+ key pages** — All with A/B pricing, session-only, GA4 tracked.
+- **Exit popup copy A/B test LIVE (Session 713)** — 50/50 split: loss-framed vs social-proof. Button color A/B test also running (purple/red/green).
+- **Pro page has direct Stripe checkout** (Session 707) — Users can buy directly from Pro gate card.
+- **Wall of Love testimonials page** (Session 708) — 15 testimonials, savings highlights, Product Hunt badge.
 - **Email capture A/B test UPGRADED (Session 685)** — 50/50 split: email form visible vs Pro CTA replacement.
 - **Conversion funnel tracking LIVE:** scroll depth, time on page, CTA hover events, Pro preview visibility
 - **Client-side analytics dashboard** — admin.html reads localStorage events, shows A/B splits, conversion funnel
