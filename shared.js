@@ -1021,8 +1021,9 @@ async function saveEmail(e) {
         var bar = document.createElement('div');
         bar.id = 'sticky-bottom-bar';
         bar.style.cssText = 'position:fixed;bottom:0;left:0;right:0;z-index:9999;background:linear-gradient(135deg,rgba(15,15,20,0.97),rgba(25,25,35,0.97));backdrop-filter:blur(12px);border-top:1px solid rgba(99,102,241,0.3);padding:12px 20px;display:flex;align-items:center;justify-content:center;gap:16px;flex-wrap:wrap;box-shadow:0 -4px 20px rgba(0,0,0,0.3);animation:stickySlideUp 0.4s ease;';
+        var stripeLink = window._abStripeLink || 'https://buy.stripe.com/fZu7sL3Gw3GS0RQeoDeEo0a';
         bar.innerHTML = '<span style="font-size:14px;color:var(--text-secondary);">💡 Developers using APIpulse save an average of <strong style="color:var(--green);">40% on API costs</strong></span>' +
-            '<a href="pricing.html" style="display:inline-block;background:var(--accent);color:white;padding:8px 20px;border-radius:8px;text-decoration:none;font-size:13px;font-weight:700;white-space:nowrap;" onclick="if(window.trackEvent)window.trackEvent(\'pro_button_clicked\',{source:\'sticky_bottom_bar\'})">Get Pro — $' + price + ' One-Time</a>' +
+            '<a href="' + stripeLink + '" target="_blank" rel="noopener" style="display:inline-block;background:var(--accent);color:white;padding:8px 20px;border-radius:8px;text-decoration:none;font-size:13px;font-weight:700;white-space:nowrap;" onclick="if(window.trackEvent)window.trackEvent(\'pro_button_clicked\',{source:\'sticky_bottom_bar\'})">Get Pro — $' + price + ' One-Time</a>' +
             '<button onclick="document.getElementById(\'sticky-bottom-bar\').remove();localStorage.setItem(\'apipulse_sticky_bar_dismissed\',\'1\');if(window.trackEvent)window.trackEvent(\'sticky_bar_dismissed\');" style="background:none;border:none;color:var(--text-muted);cursor:pointer;font-size:18px;padding:4px 8px;line-height:1;" aria-label="Close">×</button>';
         document.body.appendChild(bar);
         if (window.trackEvent) window.trackEvent('sticky_bar_shown', { page: path, price: price });
