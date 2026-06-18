@@ -7,19 +7,13 @@
 - **[DONE Session 733]** Verified all internal links valid (683 pages, 0 broken)
 
 ### Active Tasks — Session 732 Follow-ups
-- **[DONE Session 732]** Created quick-savings.html — ultra-fast 2-click savings estimate page
-- **[DONE Session 732]** Added quick-savings to sitemap, RSS, homepage tools section
-- **[DONE Session 732]** Auto-cross-links from 167 comparison pages to savings calculator + quick-savings (shared.js)
-- **[DONE Session 732]** Personalized exit popup savings hints (Claude/GPT/Gemini/DeepSeek specific)
+- **[DONE Session 732]** Quick Savings page, How It Works page, auto-cross-links from 167 comparison pages, personalized exit popup hints
 - Monitor GA4 for quick_savings_results_shown events — conversion to Pro purchase
 - Monitor which exit popup personalized hints drive most click-through
 - Monitor comparison page cross-link clicks (savings-calculator + quick-savings)
 
 ### Active Tasks — Conversion Optimization (Session 722)
-- **[DONE Session 722]** Usage-gated calculator: 3 free calculations per session, then upgrade wall with trial/purchase
-- **[DONE Session 722]** Simplified A/B pricing from 3 variants ($19/$29/$39) to 2 ($19/$29)
-- **[DONE Session 722]** Added pricing freshness badges to 5 key pages
-- **[DONE Session 722]** Added Cost Health Check tool to footer nav for cross-page visibility
+- **[DONE Session 722]** Usage-gated calculator, A/B pricing simplified (2 variants), pricing freshness badges, footer nav additions
 - Monitor GA4 for usage_gate_wall_shown → pro_button_clicked conversion rate
 - Monitor which A/B price variant ($19 vs $29) converts better
 
