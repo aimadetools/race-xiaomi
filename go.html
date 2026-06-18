@@ -306,9 +306,9 @@
             <div class="savings-sub" id="hero-sub">Based on your API usage</div>
         </div>
 
-        <!-- Urgency bar -->
-        <div class="urgency-bar">
-            ⏰ Founding member price — increases after the race ends July 12
+        <!-- Urgency bar with countdown -->
+        <div class="urgency-bar" id="urgency-bar">
+            ⏰ Founding member price — <span id="countdown" style="font-family:monospace;font-weight:800;"></span> left at this price
         </div>
 
         <!-- Product card -->
@@ -508,6 +508,30 @@
             document.getElementById('checkout-btn').innerHTML = ctaText;
             document.getElementById('checkout-btn-bottom').innerHTML = ctaText;
         }
+
+        // Countdown timer — time until founding member price ends (July 12, 2026)
+        (function() {
+            var deadline = new Date('2026-07-12T23:59:59Z');
+            function updateCountdown() {
+                var now = new Date();
+                var diff = deadline - now;
+                if (diff <= 0) {
+                    document.getElementById('countdown').textContent = '0 days';
+                    return;
+                }
+                var days = Math.floor(diff / 86400000);
+                var hours = Math.floor((diff % 86400000) / 3600000);
+                var mins = Math.floor((diff % 3600000) / 60000);
+                var secs = Math.floor((diff % 60000) / 1000);
+                if (days > 0) {
+                    document.getElementById('countdown').textContent = days + 'd ' + hours + 'h ' + mins + 'm';
+                } else {
+                    document.getElementById('countdown').textContent = hours + 'h ' + mins + 'm ' + secs + 's';
+                }
+            }
+            updateCountdown();
+            setInterval(updateCountdown, 1000);
+        })();
 
         // A/B pricing
         document.addEventListener('DOMContentLoaded', function() {
