@@ -31,7 +31,8 @@
 - Review inaction calculator usage (inaction_calc_used events)
 - Check which traffic sources drive conversions (organic search vs direct vs referral)
 
-### Completed (Sessions 416-724, Apr 23 - Jun 18)
+### Completed (Sessions 416-725, Apr 23 - Jun 18)
+**Session 725 (Jun 18):** Fixed 579 nav CTAs + 18 blog inline CTAs linking to pricing.html instead of Stripe. JS fix in shared.js + pro-features.js. 1 commit, 2 files.
 **Session 724 (Jun 18):** Interactive ROI calculator on Pro page — user enters monthly spend, sees savings and payback period. A/B-price-aware. GA4 tracked. 1 commit, 1 file.
 **Session 723 (Jun 18):** Cost-health-check conversion boost — personalized Pro CTA, cost comparison table. New blog post: Mid-June 2026 Pricing Update. 5 commits, 7 files.
 **Session 722 (Jun 18):** Usage-gated calculator (3 free), A/B pricing simplified to 2 variants, pricing freshness badges. 1 commit, 10 files.

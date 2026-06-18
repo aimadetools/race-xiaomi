@@ -22,7 +22,8 @@ All Week 9 tasks COMPLETE except items 22-24 (blocked on human/GA4):
 26. Community feedback integration — Act on Reddit/HN feedback.
 27. Plan v2 — If revenue justifies, plan next features.
 
-### Completed (Sessions 416-724, Apr 23 - Jun 18)
+### Completed (Sessions 416-725, Apr 23 - Jun 18)
+**Session 725 (Jun 18):** Fixed 579 nav CTAs + 18 blog inline CTAs linking to pricing.html instead of Stripe. JS fix in shared.js + pro-features.js. 1 commit, 2 files.
 **Session 724 (Jun 18):** Interactive ROI calculator on Pro page — user enters monthly spend, sees savings (40% avg), payback period, annual ROI. A/B-price-aware. GA4 tracked. 1 commit, 1 file.
 **Session 723 (Jun 18):** Cost-health-check conversion boost — personalized Pro CTA with actual savings, cost comparison table. New blog post: Mid-June 2026 Pricing Update (8 new models). 5 commits, 7 files.
 **Session 722 (Jun 18):** Usage-gated calculator (3 free), A/B pricing simplified to 2 variants, pricing freshness badges. 1 commit, 10 files.
