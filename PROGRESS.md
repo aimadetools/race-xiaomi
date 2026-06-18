@@ -1,5 +1,13 @@
 # PROGRESS.md
 
+## Session 717 (Jun 18) — Migration Code Generator Cross-Linking
+- **Added migration code generator to footer nav** (shared.js) — New tools row with code icon, appears on all pages via shared.js footer injection. Sits below the Interactive Pricing Map link.
+- **Cross-linked from claude-4-is-dead.html** — Added migration code generator card to related migration guides grid (purple accent, after Replacement Finder).
+- **Cross-linked from claude-4-shutdown-complete.html** — Added migration code generator card to migration resources grid (purple accent, after Replacement Finder).
+- **Added to blog.html What's New section** — Purple-accented card promoting the new tool, positioned between Claude 4 retirement alert and Pro pricing CTA.
+- **Fixed stale blog post count** — Updated 319 → 336 on blog.html.
+- **1 commit, 4 files changed, 19 insertions, 1 deletion**
+
 ## Session 716 (Jun 18) — AI Model Migration Code Generator
 - **Built interactive Migration Code Generator** (migration-code.html) — New high-value tool where developers select their current model and target model to get production-ready migration code. Features: 2-step model selector, cost comparison with savings percentages and monthly projections, copy-paste code in Python/Node.js/curl, accurate API endpoints for all 10 providers. Recognizes OpenAI-compatible providers (DeepSeek, Together, xAI, Moonshot, Mistral, AI21) that need only URL/key changes. Anthropic, Google, Cohere get full SDK-specific code. Pro-gated for less common model pairs (12 popular models free). FAQPage schema (4 questions), WebApplication schema, GA4 tracking.
 - **Cross-linked from 4 high-traffic pages** — recommend.html (migration code CTA in results), calculator.html (related tools), cheapest-ai-api.html (bottom CTA), claude-4-replacement-finder.html (related cards).
@@ -79,7 +87,7 @@ Claude 4 shutdown prep, execution, post-shutdown cleanup: 407+ files tense sweep
 ## Summary: Sessions 1-598 (Apr 5 - Jun 12)
 Built full APIpulse from scratch. 652 pages, 320 posts, 42 models, 10 providers, 84 tools, 12 API endpoints, 2 widgets. Domain, Stripe, Pro, GA4, newsletter, Chrome extension, 167 comparison pages, FAQPage schema, streaming toggle, State of LLM Pricing Report, Claude 4 deprecation ecosystem, A/B pricing test, Model Selector quiz, Best Model guides. 113+ commits total.
 
-## Site Status (as of Session 716, Jun 18, 2026)
+## Site Status (as of Session 717, Jun 18, 2026)
 **679 web pages | 336 blog posts | 42 models | 10 providers | 89 tools | 12 API endpoints | 2 embeddable widgets**
 - Sitemap (670 URLs), RSS (544 items), blog files (336 posts) — all in sync
 - **Claude 4 SHUTDOWN COMPLETE (June 15)** — all pages past-tense, countdown JS shows "DEADLINE PASSED" / "retired" state

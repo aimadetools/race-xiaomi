@@ -1,9 +1,9 @@
 # BACKLOG-CHEAP.md — Routine Tasks
 
 ### Active Tasks — New Tool Follow-up (Session 716)
-- Add migration code generator link to footer nav on all pages (via shared.js)
-- Cross-link migration code generator from claude-4-is-dead.html and claude-4-shutdown-complete.html
-- Add migration code generator to blog.html related tools section
+- **[DONE Session 717]** Add migration code generator link to footer nav on all pages (via shared.js)
+- **[DONE Session 717]** Cross-link migration code generator from claude-4-is-dead.html and claude-4-shutdown-complete.html
+- **[DONE Session 717]** Add migration code generator to blog.html related tools section
 - Monitor GA4 for migration_generated events — which model pairs are most popular?
 - Add "env file generator" feature — generate .env snippet with the correct API key variable name
 
@@ -31,7 +31,8 @@
 - Review inaction calculator usage (inaction_calc_used events)
 - Check which traffic sources drive conversions (organic search vs direct vs referral)
 
-### Completed (Sessions 416-714, Apr 23 - Jun 19)
+### Completed (Sessions 416-717, Apr 23 - Jun 18)
+**Session 717 (Jun 18):** Migration code generator cross-linking — footer nav (shared.js, all pages), claude-4-is-dead.html, claude-4-shutdown-complete.html, blog.html What's New section. Fixed stale blog post count (319→336). 4 files, 1 commit.
 **Session 714 (Jun 19):** Exit popup social proof + urgency — added testimonial ("Cut my API bill by 60%") and urgency messaging ("Early adopter price — increases to $X soon") to all exit popups (high-intent, deprecation, email capture). Added testimonial to index.html pricing card and pro.html gate card. Fixed futurePrice scoping bug. 3 files, 3 commits.
 **Session 713 (Jun 19):** Exit popup copy A/B test — loss-framed vs social-proof (50/50), GA4 tracked with `copy_variant` param. Fixed buttonColorVariant scoping bug. 1 file, 2 commits.
 **Session 712 (Jun 19):** CTA button color A/B test on Pro exit popup — 3 variants (purple/red/green), GA4 tracked with `button_color` param. 1 file, 1 commit.
