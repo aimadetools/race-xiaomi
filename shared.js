@@ -1135,7 +1135,8 @@ document.addEventListener('DOMContentLoaded', function() {
     var upsell = document.createElement('div');
     var price = window._abPrice || 29;
     upsell.style.cssText = 'text-align:center;margin-top:12px;padding:12px;background:rgba(99,102,241,0.06);border:1px solid rgba(99,102,241,0.15);border-radius:8px;font-size:13px;color:var(--text-secondary);';
-    upsell.innerHTML = 'Want to save scenarios and export PDF reports? <a href="pricing.html" style="color:var(--accent);font-weight:600;text-decoration:none;">Upgrade to Pro — $' + price + ' one-time</a>';
+    var stripeLink = window._abStripeLink || 'https://buy.stripe.com/fZu7sL3Gw3GS0RQeoDeEo0a';
+    upsell.innerHTML = 'Want to save scenarios and export PDF reports? <a href="' + stripeLink + '" target="_blank" rel="noopener" style="color:var(--accent);font-weight:600;text-decoration:none;" onclick="if(window.trackEvent)window.trackEvent(\'pro_button_clicked\',{source:\'blog_inline_upsell\'})">Upgrade to Pro — $' + price + ' one-time</a>';
     cta.parentNode.insertBefore(upsell, cta.nextSibling);
 });
 
