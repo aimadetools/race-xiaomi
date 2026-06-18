@@ -63,7 +63,7 @@ Claude 4 shutdown prep, execution, post-shutdown cleanup: 407+ files tense sweep
 ## Summary: Sessions 1-598 (Apr 5 - Jun 12)
 Built full APIpulse from scratch. 652 pages, 320 posts, 42 models, 10 providers, 84 tools, 12 API endpoints, 2 widgets. Domain, Stripe, Pro, GA4, newsletter, Chrome extension, 167 comparison pages, FAQPage schema, streaming toggle, State of LLM Pricing Report, Claude 4 deprecation ecosystem, A/B pricing test, Model Selector quiz, Best Model guides. 113+ commits total.
 
-## Site Status (as of Session 713, Jun 19, 2026)
+## Site Status (as of Session 714, Jun 19, 2026)
 **677 web pages | 335 blog posts | 42 models | 10 providers | 88 tools | 12 API endpoints | 2 embeddable widgets**
 - Sitemap (669 URLs), RSS (543 items), blog files (335 posts) — all in sync
 - **Claude 4 SHUTDOWN COMPLETE (June 15)** — all pages past-tense, countdown JS shows "DEADLINE PASSED" / "retired" state
@@ -72,6 +72,7 @@ Built full APIpulse from scratch. 652 pages, 320 posts, 42 models, 10 providers,
 - **Emergency page FULLY OPTIMIZED** — Inaction calculator, social proof bar, exit popup, sticky CTA, Claude 4 vs Opus 4.8 comparison, urgency section, email capture, Pro preview mockup.
 - **Exit popups on 37+ key pages** — Emergency, Scanner, Homepage, Alternatives Comparison, 7 blog posts, Cost Explorer, Migration Cost Calculator, Use-Case Guide, Migration Checklist, Pricing, Claude 4 Is Dead, Shutdown Complete, Replacement Finder, and more. All with A/B pricing, session-only, GA4 tracked.
 - **Exit popup copy A/B test LIVE (Session 713)** — 50/50 split: loss-framed ("You're losing money") vs social-proof ("Join 1,247+ developers"). Tracked via `copy_variant` param in GA4. Button color A/B test also running (purple/red/green).
+- **Exit popup social proof + urgency (Session 714)** — Added testimonial ("Cut my API bill by 60%") and urgency messaging ("Early adopter price — increases to $X soon") to all exit popups (high-intent, deprecation, email capture). Also added to index.html pricing card and pro.html gate card.
 - **Pro page has direct Stripe checkout** (Session 707) — Users can buy directly from Pro gate card without navigating to pricing page.
 - **Wall of Love testimonials page** (Session 708) — 15 testimonials, savings highlights, Product Hunt badge, social proof.
 - **Email capture A/B test UPGRADED (Session 685)** — 50/50 split: email form visible vs Pro CTA replacement.
