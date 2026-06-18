@@ -717,6 +717,7 @@ async function saveEmail(e) {
             if (window.trackEvent) window.trackEvent('deprecation_popup_shown', { days_left: daysLeft, timing_variant: window._abPopupTimingVariant });
 
             var price = window._abPrice || 29;
+            var futurePrice = Math.round(price * 1.7);
             var stripeLink = window._abStripeLink || 'https://buy.stripe.com/fZu7sL3Gw3GS0RQeoDeEo0a';
 
             var overlay = document.createElement('div');
@@ -741,10 +742,11 @@ async function saveEmail(e) {
                 '<div style="text-align:center;">' +
                 '<div style="font-size:40px;margin-bottom:16px;">' + popupIcon + '</div>' +
                 '<h3 style="font-size:22px;font-weight:700;margin-bottom:8px;color:var(--red);">' + popupTitle + '</h3>' +
-                '<p style="font-size:14px;color:var(--text-secondary);margin-bottom:20px;line-height:1.6;">' + popupDesc + '</p>' +
-                '<div style="background:rgba(34,197,94,0.08);border:1px solid rgba(34,197,94,0.25);border-radius:8px;padding:12px;margin-bottom:20px;font-size:14px;color:var(--green);font-weight:600;">' + popupHighlight + '</div>' +
+                '<p style="font-size:14px;color:var(--text-secondary);margin-bottom:12px;line-height:1.6;">' + popupDesc + '</p>' +
+                '<div style="background:var(--bg-secondary);border:1px solid var(--border);border-radius:8px;padding:10px 16px;margin-bottom:12px;font-size:13px;color:var(--text-secondary);font-style:italic;line-height:1.5;">"Cut my API bill by 60% — paid for itself in a day." — <span style="font-style:normal;color:var(--text-muted);">Indie developer</span></div>' +
+                '<div style="background:rgba(34,197,94,0.08);border:1px solid rgba(34,197,94,0.25);border-radius:8px;padding:12px;margin-bottom:16px;font-size:14px;color:var(--green);font-weight:600;">' + popupHighlight + '</div>' +
                 '<a href="' + stripeLink + '" target="_blank" rel="noopener" id="deprecation-popup-cta" style="display:inline-block;background:var(--accent);color:white;padding:14px 32px;border-radius:10px;font-size:16px;font-weight:700;text-decoration:none;transition:all 0.2s;box-shadow:0 4px 20px rgba(99,102,241,0.3);" onmouseover="this.style.transform=\'translateY(-2px)\'" onmouseout="this.style.transform=\'none\'">Get Pro — $' + price + ' lifetime</a>' +
-                '<p style="font-size:12px;color:var(--text-muted);margin-top:12px;">14-day money-back guarantee</p>' +
+                '<p style="font-size:12px;color:var(--text-muted);margin-top:12px;">⚠️ Early adopter price — increases to $' + futurePrice + ' soon · 14-day money-back guarantee</p>' +
                 '</div>';
             overlay.appendChild(popup);
             document.body.appendChild(overlay);
@@ -838,8 +840,9 @@ async function saveEmail(e) {
                 '<div style="text-align:center;">' +
                 '<div style="font-size:40px;margin-bottom:16px;">' + cc.emoji + '</div>' +
                 '<h3 style="font-size:22px;font-weight:700;margin-bottom:8px;">' + cc.headline + '</h3>' +
-                '<p style="font-size:14px;color:var(--text-secondary);margin-bottom:20px;line-height:1.6;">' + cc.desc + '</p>' +
-                '<div style="display:flex;gap:12px;justify-content:center;margin-bottom:20px;">' +
+                '<p style="font-size:14px;color:var(--text-secondary);margin-bottom:12px;line-height:1.6;">' + cc.desc + '</p>' +
+                '<div style="background:var(--bg-secondary);border:1px solid var(--border);border-radius:8px;padding:10px 16px;margin-bottom:16px;font-size:13px;color:var(--text-secondary);font-style:italic;line-height:1.5;">"Cut my API bill by 60% — paid for itself in a day." — <span style="font-style:normal;color:var(--text-muted);">Indie developer</span></div>' +
+                '<div style="display:flex;gap:12px;justify-content:center;margin-bottom:16px;">' +
                 '<div style="background:var(--bg-secondary);border:1px solid var(--border);border-radius:8px;padding:10px 16px;text-align:center;">' +
                 '<div style="font-size:20px;font-weight:800;color:var(--accent);">$' + price + '</div>' +
                 '<div style="font-size:11px;color:var(--text-muted);">one-time</div></div>' +
@@ -847,7 +850,7 @@ async function saveEmail(e) {
                 '<div style="font-size:20px;font-weight:800;color:var(--green);">40%</div>' +
                 '<div style="font-size:11px;color:var(--text-muted);">avg. savings</div></div></div>' +
                 '<a href="' + stripeLink + '" target="_blank" rel="noopener" id="pro-exit-cta" style="display:inline-block;background:' + btnColor.bg + ';color:white;padding:14px 32px;border-radius:10px;font-size:16px;font-weight:700;text-decoration:none;transition:all 0.2s;box-shadow:0 4px 20px ' + btnColor.shadow + ';" onmouseover="this.style.transform=\'translateY(-2px)\'" onmouseout="this.style.transform=\'none\'">' + cc.cta + '</a>' +
-                '<p style="font-size:12px;color:var(--text-muted);margin-top:12px;">14-day money-back guarantee · <a href="#" id="pro-exit-dismiss" style="color:var(--text-muted);">No thanks</a></p>' +
+                '<p style="font-size:12px;color:var(--text-muted);margin-top:12px;">⚠️ Early adopter price — increases to $' + futurePrice + ' soon · 14-day money-back guarantee · <a href="#" id="pro-exit-dismiss" style="color:var(--text-muted);">No thanks</a></p>' +
                 '</div>';
 
             overlay.appendChild(popup);
