@@ -5,7 +5,9 @@
 - **Updated sitemap.xml** — Added new blog post with priority 0.9
 - **Updated rss.xml** — Added as first item in feed
 - **Updated blog.html** — Added as first (most recent) post with "PRICING GUIDE" tag
-- **1 commit, 4 files changed, ~620 insertions**
+- **Cross-linked from cheapest-ai-api.html** — Added link to full comparison in "Not sure?" CTA section
+- **Added Related Posts section** — 4 related posts: Week 1 Report, Alternatives Ranked, State of Pricing, DeepSeek Migration
+- **4 commits, 4 files changed, ~640 insertions**
 
 ## Session 714 (Jun 19) — Exit Popup Social Proof + Urgency
 - **Added testimonial to exit popups** (shared.js) — "Cut my API bill by 60% — paid for itself in a day." — Indie developer. Added to both high-intent Pro exit popup and deprecation-specific exit popup. Social proof directly in the conversion moment.
