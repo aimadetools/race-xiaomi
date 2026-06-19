@@ -202,15 +202,15 @@
             <div id="alternatives"></div>
 
             <div class="pro-upsell">
-                <h3>Want the full migration code?</h3>
-                <p>Pro includes ready-to-paste migration snippets for every alternative, plus PDF reports, price alerts, and 42-model comparisons.</p>
+                <h3 id="proUpsellTitle">Want the full migration code?</h3>
+                <p id="proUpsellDesc">Pro includes ready-to-paste migration snippets for every alternative, plus PDF reports, price alerts, and 42-model comparisons.</p>
                 <div class="pro-features">
                     <span>Migration code for every model</span>
                     <span>PDF savings reports</span>
                     <span>Real-time price alerts</span>
                     <span>42-model comparison tables</span>
                 </div>
-                <a href="/go.html?from=api-cost-audit" class="pro-btn">Get Pro — Lifetime Access</a>
+                <a href="/go.html?from=api-cost-audit" class="pro-btn" id="proUpsellBtn">Get Pro — Lifetime Access</a>
                 <div class="social-strip">
                     <div class="stat"><div class="stat-num">42</div><div class="stat-label">Models</div></div>
                     <div class="stat"><div class="stat-num">10</div><div class="stat-label">Providers</div></div>
@@ -352,6 +352,13 @@
                 '</div>';
         });
         document.getElementById('alternatives').innerHTML = altHtml;
+
+        // Personalize Pro upsell with user's actual savings
+        if (bestAnnual > 0) {
+            document.getElementById('proUpsellTitle').textContent = 'Unlock your $' + Math.round(bestAnnual).toLocaleString() + '/yr savings report';
+            document.getElementById('proUpsellBtn').textContent = 'Get Full Report — Lifetime Access';
+            document.getElementById('proUpsellBtn').href = '/go.html?from=api-cost-audit&savings=' + (bestAnnual / 12).toFixed(2);
+        }
 
         // Show results, hide form
         document.getElementById('auditForm').style.display = 'none';
