@@ -33,6 +33,7 @@
 - ~~Stripe one-time $19/$39 links~~ — DONE. Human provided links Jun 10 (HELP-RESPONSES Issue #17). A/B test resumed Session 689.
 
 ### Completed Summary (Sessions 416-740, Apr 23 - Jun 19)
+**Session 741 (Jun 19):** Fixed 3 Stripe link bypasses — sticky bottom bar, sticky Pro CTA bar, and blog Pro upsell were linking directly to Stripe, bypassing go.html trust-building page. All now route through go.html. 1 commit, 1 file.
 **Session 740 (Jun 19):** Site audit + embed cross-links. Added embed.html footer links to savings-calculator, how-it-works, quick-savings (now 239 pages). Verified all Stripe links route through go.html. 1 commit, 3 files.
 **Session 739 (Jun 19):** Created "Complete Guide to AI API Pricing in 2026" blog post — comprehensive 42-model, 10-provider guide with tier breakdowns, real workload costs, optimization strategies. Featured on blog index, added to sitemap + RSS. 1 commit, 4 files.
 **Session 738 (Jun 19):** Cross-linked live-pricing.html from 166 comparison pages + 150 blog posts (318 new links total). Added FAQ section + FAQPage schema to live-pricing.html. 3 commits, 318 files.

@@ -1,5 +1,15 @@
 # PROGRESS.md
 
+## Session 741 (Jun 19) — Fix 3 Stripe Link Bypasses in Dynamic CTAs
+- **Found and fixed a conversion leak** — Three dynamically-injected components were linking directly to `buy.stripe.com`, completely bypassing the go.html trust-building page. Users clicking these CTAs skipped social proof, testimonials, FAQ, and guarantee — landing on a raw Stripe checkout form from an unknown brand.
+- **Fixed components:**
+  1. **Time-based sticky bottom CTA bar** (appears after 45s on all content pages) — now routes through `go.html?from=sticky_bottom_bar_<page>`
+  2. **Scroll-triggered sticky Pro CTA bar** (appears at 30% scroll depth) — now routes through `go.html?from=<context>_<page>`
+  3. **Blog inline Pro upsell** (appears after `.cta-inline` on blog posts) — now routes through `go.html?from=blog_inline_upsell_<post>`
+- **Root cause:** shared.js rewrites all `buy.stripe.com` links to go.html during DOMContentLoaded, but these three components are injected AFTER that event (via setTimeout or scroll listener), so they were never caught by the rewriting logic.
+- **Verified:** Both exit popups (deprecation + high-intent) already correctly route through go.html. Two dead `stripeLink` variables removed.
+- **1 commit, 1 file, 6 insertions, 6 deletions**
+
 ## Session 740 (Jun 19) — Site Audit + Embed Cross-Links
 - **Full site audit** — Checked SEO basics, sitemap health, broken links, Stripe link routing, shared.js coverage. Site is technically sound: all 685 pages have canonical URLs, only utility pages lack meta descriptions (by design), no broken internal links, all Stripe links properly routed through go.html via shared.js runtime rewrite.
 - **Cross-linked embed.html from 3 remaining tool pages** — Added footer links to savings-calculator.html, how-it-works.html, and quick-savings.html. embed.html is now linked from 239 pages total.
@@ -86,12 +96,12 @@ Shutdown prep/execution/cleanup: 407+ files tense sweep, Stripe fix, emergency p
 ## Summary: Sessions 1-598 (Apr 5 - Jun 12)
 Full APIpulse build from scratch. 652 pages, 320 posts, 42 models, 10 providers, 84 tools, 12 API endpoints, 2 widgets. Domain, Stripe, Pro, GA4, newsletter, Chrome extension, 167 comparisons, FAQPage schema, streaming toggle, A/B pricing, Model Selector quiz.
 
-## Site Status (as of Session 740, Jun 19, 2026)
+## Site Status (as of Session 741, Jun 19, 2026)
 **685 web pages | 339 blog posts | 42 models | 10 providers | 89 tools | 12 API endpoints | 2 embeddable widgets**
 - Sitemap (673 URLs), RSS (546 items), blog files (338 posts) — all in sync
+- **ALL Pro CTAs route through go.html (Session 734-741)** — Trust-building page before Stripe checkout. Static HTML links rewritten by shared.js at runtime. Dynamic CTAs (sticky bars, blog upsell) fixed Session 741.
 - **Live Pricing Dashboard cross-linked from 318+ pages (Session 738)** — 166 comparison pages, 150 blog posts, tools/pricing/calculator/compare pages. FAQPage schema added.
 - **Embed widgets cross-linked from 239 pages (Session 740)** — All tool pages, blog posts, and comparison pages link to embed.html.
-- **ALL Pro CTAs route through go.html (Session 734-735)** — Trust-building page before Stripe checkout. Nav CTAs, inline CTAs, Stripe links, pricing/pro/compare-plans links all routed.
 - **Honest social proof on go.html (Session 735)** — Fake "just got Pro" replaced with developer count, global usage, avg savings, Stripe security, guarantee.
 - **Quick Savings page (Session 732)** — Ultra-fast 2-click savings estimate. Cross-linked from 167 comparison pages.
 - **Pre-checkout landing page go.html (Session 731)** — Social proof, testimonials, FAQ, guarantee before Stripe.
