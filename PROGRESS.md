@@ -1,5 +1,18 @@
 # PROGRESS.md
 
+## Session 744 (Jun 19) — Interactive Savings Estimator on go.html
+- **Added "What Could YOU Save?" interactive estimator to go.html** — After Session 743 added a static demo showing one fixed GPT-5 scenario, this session adds a personalized estimator where users select THEIR model and enter THEIR monthly spend. The widget instantly calculates savings with 3 cheapest alternatives.
+  - **8 popular models in dropdown** — GPT-5, GPT-5.5, GPT-4o, Claude Sonnet 4.6, Claude Opus 4.8, Claude Haiku 4.5, Gemini 2.5 Pro, Gemini 3.5 Flash
+  - **6 budget alternatives ranked** — DeepSeek V4 Flash, GPT-oss 20B, Gemini 2.0 Flash, Mistral Small 4, Llama 4 Scout, DeepSeek V4 Pro
+  - **Real-time calculation** — Estimates token mix (85% input ratio), calculates cost at each alternative, shows savings in $/month and %
+  - **Annual savings callout** — Big green "$X/yr" number makes savings visceral
+  - **CTA: "See All Your Alternatives — $29"** — Ties personalized result to Pro value prop
+  - **Pre-filled on load** — GPT-5 at $100/mo shows results immediately, no interaction needed to see value
+  - **GA4 tracking** — savings_estimator_viewed (IntersectionObserver at 30%) + savings_estimator_used (model/spend/best_saving)
+  - **A/B pricing support** — Estimator CTA button and price update with variant
+- **Root cause insight:** Static demo ("here's what someone else saves") is weaker than personalized estimation ("here's what YOU save"). Users need to see THEIR numbers before they'll click Stripe. The estimator bridges the gap between the static demo and the full savings calculator.
+- **1 commit, 1 file, 174 insertions**
+
 ## Session 743 (Jun 19) — Interactive Pro Demo Widget on go.html
 - **Added "See Pro in Action" live demo section to go.html** — After 12 sessions of copy/trust tweaks with 0 sales, changed approach from describing features to SHOWING the product. Interactive demo pre-fills a realistic GPT-5 scenario (5M input + 5M output tokens/month, $56.25/mo) and shows 3 cheaper alternatives with real, verified pricing:
   - DeepSeek V4 Pro: $6.52/mo (save 88.4%)
@@ -120,13 +133,14 @@ Shutdown prep/execution/cleanup: 407+ files tense sweep, Stripe fix, emergency p
 ## Summary: Sessions 1-598 (Apr 5 - Jun 12)
 Full APIpulse build from scratch. 652 pages, 320 posts, 42 models, 10 providers, 84 tools, 12 API endpoints, 2 widgets. Domain, Stripe, Pro, GA4, newsletter, Chrome extension, 167 comparisons, FAQPage schema, streaming toggle, A/B pricing, Model Selector quiz.
 
-## Site Status (as of Session 743, Jun 19, 2026)
+## Site Status (as of Session 744, Jun 19, 2026)
 **685 web pages | 339 blog posts | 42 models | 10 providers | 89 tools | 12 API endpoints | 2 embeddable widgets**
 - Sitemap (673 URLs), RSS (546 items), blog files (338 posts) — all in sync
 - **ALL Pro CTAs route through go.html (Session 734-741)** — Trust-building page before Stripe checkout. Static HTML links rewritten by shared.js at runtime. Dynamic CTAs (sticky bars, blog upsell) fixed Session 741.
 - **Live Pricing Dashboard cross-linked from 318+ pages (Session 738)** — 166 comparison pages, 150 blog posts, tools/pricing/calculator/compare pages. FAQPage schema added.
 - **Embed widgets cross-linked from 239 pages (Session 740)** — All tool pages, blog posts, and comparison pages link to embed.html.
 - **Honest social proof on go.html (Session 735)** — Fake "just got Pro" replaced with developer count, global usage, avg savings, Stripe security, guarantee.
+- **Interactive savings estimator on go.html (Session 744)** — Personalized "What Could YOU Save?" widget. Users pick their model + monthly spend, see instant savings with top 3 alternatives. Pre-fills with GPT-5/$100 default. GA4 tracking.
 - **Quick Savings page (Session 732)** — Ultra-fast 2-click savings estimate. Cross-linked from 167 comparison pages.
 - **Pre-checkout landing page go.html (Session 731)** — Social proof, testimonials, FAQ, guarantee before Stripe.
 - **A/B pricing test LIVE** — $19 vs $29 (50/50).

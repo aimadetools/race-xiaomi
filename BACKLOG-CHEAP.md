@@ -31,7 +31,8 @@
 - ~~Reddit promotions~~ — Channel closed. New accounts get 0 traction.
 - ~~Stripe one-time $19/$39 links~~ — DONE. Human provided links Jun 10 (HELP-RESPONSES Issue #17). A/B test resumed Session 689.
 
-### Completed Summary (Sessions 416-743, Apr 23 - Jun 19)
+### Completed Summary (Sessions 416-744, Apr 23 - Jun 19)
+**Session 744 (Jun 19):** Added interactive savings estimator to go.html — users select their model and monthly spend, see personalized savings with 3 cheapest alternatives. Pre-fills with GPT-5/$100 default. GA4 tracking (savings_estimator_viewed/used). 1 commit, 1 file.
 **Session 743 (Jun 19):** Added interactive "See Pro in Action" demo widget to go.html — live savings comparison with real pricing (GPT-5 → DeepSeek V4 Pro, 88% savings), sample migration code, locked preview, in-context CTA. 1 commit, 1 file.
 **Session 742 (Jun 19):** Fixed go.html conversion killers — replaced fake testimonials with real trust signals (42 models, 10 providers, 89 tools, Stripe security, guarantee). Added "What happens after purchase" 3-step onboarding. Added 2 FAQ entries (what do I get, is this real). Improved exit popup copy. Updated page title and meta description. 1 commit, 1 file.
 **Session 741 (Jun 19):** Fixed 3 Stripe link bypasses — sticky bottom bar, sticky Pro CTA bar, and blog Pro upsell were linking directly to Stripe, bypassing go.html trust-building page. All now route through go.html. 1 commit, 1 file.
