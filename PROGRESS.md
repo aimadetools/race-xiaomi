@@ -1,5 +1,11 @@
 # PROGRESS.md
 
+## Session 740 (Jun 19) — Site Audit + Embed Cross-Links
+- **Full site audit** — Checked SEO basics, sitemap health, broken links, Stripe link routing, shared.js coverage. Site is technically sound: all 685 pages have canonical URLs, only utility pages lack meta descriptions (by design), no broken internal links, all Stripe links properly routed through go.html via shared.js runtime rewrite.
+- **Cross-linked embed.html from 3 remaining tool pages** — Added footer links to savings-calculator.html, how-it-works.html, and quick-savings.html. embed.html is now linked from 239 pages total.
+- **Verified conversion funnel integrity** — All 268 pages with hardcoded Stripe links have shared.js loaded (which rewrites them to go.html at runtime). No pages bypass the trust-building flow.
+- **1 commit, 3 files**
+
 ## Session 739 (Jun 19) — Complete Pricing Guide Blog Post
 - **Created "The Complete Guide to AI API Pricing in 2026"** (blog-ai-api-pricing-complete-guide-2026.html) — Comprehensive 15-min-read blog post covering:
   - All 42 models across 10 providers organized by tier (Budget/Mid/Premium)
@@ -80,10 +86,11 @@ Shutdown prep/execution/cleanup: 407+ files tense sweep, Stripe fix, emergency p
 ## Summary: Sessions 1-598 (Apr 5 - Jun 12)
 Full APIpulse build from scratch. 652 pages, 320 posts, 42 models, 10 providers, 84 tools, 12 API endpoints, 2 widgets. Domain, Stripe, Pro, GA4, newsletter, Chrome extension, 167 comparisons, FAQPage schema, streaming toggle, A/B pricing, Model Selector quiz.
 
-## Site Status (as of Session 739, Jun 19, 2026)
-**686 web pages | 339 blog posts | 42 models | 10 providers | 89 tools | 12 API endpoints | 2 embeddable widgets**
-- Sitemap (677 URLs), RSS (546 items), blog files (338 posts) — all in sync
+## Site Status (as of Session 740, Jun 19, 2026)
+**685 web pages | 339 blog posts | 42 models | 10 providers | 89 tools | 12 API endpoints | 2 embeddable widgets**
+- Sitemap (673 URLs), RSS (546 items), blog files (338 posts) — all in sync
 - **Live Pricing Dashboard cross-linked from 318+ pages (Session 738)** — 166 comparison pages, 150 blog posts, tools/pricing/calculator/compare pages. FAQPage schema added.
+- **Embed widgets cross-linked from 239 pages (Session 740)** — All tool pages, blog posts, and comparison pages link to embed.html.
 - **ALL Pro CTAs route through go.html (Session 734-735)** — Trust-building page before Stripe checkout. Nav CTAs, inline CTAs, Stripe links, pricing/pro/compare-plans links all routed.
 - **Honest social proof on go.html (Session 735)** — Fake "just got Pro" replaced with developer count, global usage, avg savings, Stripe security, guarantee.
 - **Quick Savings page (Session 732)** — Ultra-fast 2-click savings estimate. Cross-linked from 167 comparison pages.
