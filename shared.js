@@ -1182,9 +1182,9 @@ async function saveEmail(e) {
         var bar = document.createElement('div');
         bar.id = 'sticky-bottom-bar';
         bar.style.cssText = 'position:fixed;bottom:0;left:0;right:0;z-index:9999;background:linear-gradient(135deg,rgba(15,15,20,0.97),rgba(25,25,35,0.97));backdrop-filter:blur(12px);border-top:1px solid rgba(99,102,241,0.3);padding:12px 20px;display:flex;align-items:center;justify-content:center;gap:16px;flex-wrap:wrap;box-shadow:0 -4px 20px rgba(0,0,0,0.3);animation:stickySlideUp 0.4s ease;';
-        var stripeLink = window._abStripeLink || 'https://buy.stripe.com/fZu7sL3Gw3GS0RQeoDeEo0a';
+        var stickyPageName = location.pathname.replace(/^\//, '').replace(/\.html$/, '') || 'home';
         bar.innerHTML = '<span style="font-size:14px;color:var(--text-secondary);">💡 Developers using APIpulse save an average of <strong style="color:var(--green);">40% on API costs</strong></span>' +
-            '<a href="' + stripeLink + '" target="_blank" rel="noopener" style="display:inline-block;background:var(--accent);color:white;padding:8px 20px;border-radius:8px;text-decoration:none;font-size:13px;font-weight:700;white-space:nowrap;" onclick="if(window.trackEvent)window.trackEvent(\'pro_button_clicked\',{source:\'sticky_bottom_bar\'})">Get Pro — $' + price + ' One-Time</a>' +
+            '<a href="go.html?from=sticky_bottom_bar_' + encodeURIComponent(stickyPageName) + '" target="_blank" rel="noopener" style="display:inline-block;background:var(--accent);color:white;padding:8px 20px;border-radius:8px;text-decoration:none;font-size:13px;font-weight:700;white-space:nowrap;" onclick="if(window.trackEvent)window.trackEvent(\'pro_button_clicked\',{source:\'sticky_bottom_bar\'})">Get Pro — $' + price + ' One-Time</a>' +
             '<button onclick="document.getElementById(\'sticky-bottom-bar\').remove();localStorage.setItem(\'apipulse_sticky_bar_dismissed\',\'1\');if(window.trackEvent)window.trackEvent(\'sticky_bar_dismissed\');" style="background:none;border:none;color:var(--text-muted);cursor:pointer;font-size:18px;padding:4px 8px;line-height:1;" aria-label="Close">×</button>';
         document.body.appendChild(bar);
         if (window.trackEvent) window.trackEvent('sticky_bar_shown', { page: path, price: price });
@@ -1244,7 +1244,6 @@ function renderPricingFreshness(containerId) {
     var price = window._abPrice || 29;
     var futurePrice = Math.round(price * 1.7);
     var variant = window._abVariant || 'B';
-    var stripeLink = window._abStripeLink || 'https://buy.stripe.com/fZu7sL3Gw3GS0RQeoDeEo0a';
 
     var shown = false;
     window.addEventListener('scroll', function() {
@@ -1278,8 +1277,9 @@ function renderPricingFreshness(containerId) {
             barMsg = 'Founding Member: Pro for $' + price + ' one-time <span style="opacity:0.7;font-weight:400;font-size:12px;">(goes to $' + futurePrice + ' soon)</span>';
             ctaContext = 'sticky_bar_default';
         }
+        var stickyProPageName = location.pathname.replace(/^\//, '').replace(/\.html$/, '') || 'home';
         bar.innerHTML = '<span style="color:white;font-size:14px;font-weight:600;">' + barMsg + '</span>' +
-            '<a href="' + stripeLink + '" target="_blank" rel="noopener" style="background:white;color:#4f46e5;padding:8px 20px;border-radius:8px;font-size:13px;font-weight:700;text-decoration:none;white-space:nowrap;" onclick="if(window.trackEvent)window.trackEvent(\'pro_button_clicked\',{source:\'' + ctaContext + '\',variant:\'' + variant + '\',price:' + price + '})">Get Pro — $' + price + ' one-time</a>' +
+            '<a href="go.html?from=' + encodeURIComponent(ctaContext + '_' + stickyProPageName) + '" target="_blank" rel="noopener" style="background:white;color:#4f46e5;padding:8px 20px;border-radius:8px;font-size:13px;font-weight:700;text-decoration:none;white-space:nowrap;" onclick="if(window.trackEvent)window.trackEvent(\'pro_button_clicked\',{source:\'' + ctaContext + '\',variant:\'' + variant + '\',price:' + price + '})">Get Pro — $' + price + ' one-time</a>' +
             '<button onclick="document.getElementById(\'sticky-pro-cta\').remove();localStorage.setItem(\'apipulse_pro_cta_dismissed\',\'1\');" style="background:none;border:none;color:rgba(255,255,255,0.7);font-size:18px;cursor:pointer;padding:0 4px;" aria-label="Dismiss">&times;</button>';
         document.body.appendChild(bar);
         requestAnimationFrame(function() { bar.style.transform = 'translateY(0)'; });
@@ -1296,8 +1296,8 @@ document.addEventListener('DOMContentLoaded', function() {
     var upsell = document.createElement('div');
     var price = window._abPrice || 29;
     upsell.style.cssText = 'text-align:center;margin-top:12px;padding:12px;background:rgba(99,102,241,0.06);border:1px solid rgba(99,102,241,0.15);border-radius:8px;font-size:13px;color:var(--text-secondary);';
-    var stripeLink = window._abStripeLink || 'https://buy.stripe.com/fZu7sL3Gw3GS0RQeoDeEo0a';
-    upsell.innerHTML = 'Want to save scenarios and export PDF reports? <a href="' + stripeLink + '" target="_blank" rel="noopener" style="color:var(--accent);font-weight:600;text-decoration:none;" onclick="if(window.trackEvent)window.trackEvent(\'pro_button_clicked\',{source:\'blog_inline_upsell\'})">Upgrade to Pro — $' + price + ' one-time</a>';
+    var blogPageName = location.pathname.replace(/^\//, '').replace(/\.html$/, '') || 'blog';
+    upsell.innerHTML = 'Want to save scenarios and export PDF reports? <a href="go.html?from=blog_inline_upsell_' + encodeURIComponent(blogPageName) + '" target="_blank" rel="noopener" style="color:var(--accent);font-weight:600;text-decoration:none;" onclick="if(window.trackEvent)window.trackEvent(\'pro_button_clicked\',{source:\'blog_inline_upsell\'})">Upgrade to Pro — $' + price + ' one-time</a>';
     cta.parentNode.insertBefore(upsell, cta.nextSibling);
 });
 
