@@ -999,10 +999,11 @@
     }, 8000);
 
     // Exit popup — last chance to convert users leaving the checkout page
+    // Triggers: desktop mouseout, mobile back button, tab visibility change
     (function() {
         if (sessionStorage.getItem('go_exit_popup_shown')) return;
         var triggered = false;
-        function showExitPopup() {
+        function showExitPopup(trigger) {
             if (triggered) return;
             triggered = true;
             sessionStorage.setItem('go_exit_popup_shown', '1');
@@ -1027,9 +1028,41 @@
                 '<p style="font-size:12px;color:var(--text-muted);margin-top:10px;">14-day money-back guarantee · No questions asked</p>' +
                 '</div>';
             document.body.appendChild(overlay);
-            if (window.trackEvent) window.trackEvent('checkout_exit_popup_shown', { source: new URLSearchParams(window.location.search).get('from') || '', savings: savings });
+
+            // If triggered by back button, restore the current URL so the page stays
+            if (trigger === 'backbutton') {
+                history.pushState(null, '', location.href);
+            }
+
+            if (window.trackEvent) window.trackEvent('checkout_exit_popup_shown', { source: new URLSearchParams(window.location.search).get('from') || '', savings: savings, trigger: trigger || 'mouseout' });
         }
-        document.addEventListener('mouseout', function(e) { if (e.clientY <= 0) showExitPopup(); });
+
+        // Desktop: mouse leaves viewport from top
+        document.addEventListener('mouseout', function(e) { if (e.clientY <= 0) showExitPopup('mouseout'); });
+
+        // Mobile: back button interception — push a state so popstate fires instead of navigating away
+        history.pushState(null, '', location.href);
+        window.addEventListener('popstate', function() {
+            showExitPopup('backbutton');
+        });
+
+        // Tab visibility change — catches mobile app switches, tab changes, and lock screen
+        document.addEventListener('visibilitychange', function() {
+            if (document.visibilityState === 'hidden') {
+                // Delay slightly to avoid false positives from normal tab switches
+                // Use sessionStorage to avoid re-triggering on same session
+                var hiddenAt = Date.now();
+                document.addEventListener('visibilitychange', function onReturn() {
+                    if (document.visibilityState === 'visible') {
+                        document.removeEventListener('visibilitychange', onReturn);
+                        // Only trigger if they were gone for 5+ seconds (likely considered leaving)
+                        if (Date.now() - hiddenAt >= 5000) {
+                            showExitPopup('tab_return');
+                        }
+                    }
+                }, { once: false });
+            }
+        });
     })();
     </script>
 </body>
