@@ -31,8 +31,9 @@
 - ~~Reddit promotions~~ — Channel closed. New accounts get 0 traction.
 - ~~Stripe one-time $19/$39 links~~ — DONE. Human provided links Jun 10 (HELP-RESPONSES Issue #17). A/B test resumed Session 689.
 
-### Completed Summary (Sessions 416-750, Apr 23 - Jun 19)
-**Session 750 (Jun 19):** Pro CTA gap-filling for calculator pages — added Pro CTAs to prompt-cost-calculator.html (was completely missing, added dynamic savings CTA after results) and ai-api-budget-planner.html (added Pro CTA above Compare Models link). Verified all 200+ pages with buy.stripe.com links have shared.js loaded (runtime rewrite to go.html). 1 commit, 2 files.
+### Completed Summary (Sessions 416-751, Apr 23 - Jun 19)
+**Session 751 (Jun 19):** results-cta.js integration — added the Pro CTA widget to 34 calculator pages that show results but had no Pro CTA. Every calculator now auto-injects a contextual Pro CTA after users see their results. 2 commits, 34 files.
+**Session 750 (Jun 19):** Pro CTA gap-filling for calculator pages — added Pro CTAs to prompt-cost-calculator.html and ai-api-budget-planner.html. Verified all Stripe links route through go.html. 1 commit, 2 files.
 **Session 749 (Jun 19):** Pro CTA gaps filled — added Pro CTAs to ai-stack-builder, live-pricing, ai-stack-cost-optimizer, claude-4-migration-cost-calculator (all were missing CTAs in results). Created results-cta.js reusable widget. Added popular models quick links to live-pricing. 3 commits, 5 files.
 **Session 748 (Jun 19):** go.html conversion improvements — added mobile exit-intent detection (back button + tab visibility, previously desktop-only mouseout), synced all CTAs with estimator savings on user interaction, fixed nav CTA reload loop (shared.js rewrote to go.html, now scrolls to CTA), added urgency countdown below bottom CTA. 3 commits, 1 file.
 **Session 747 (Jun 19):** go.html conversion fixes — fixed estimator CTA text overwrite bug (DOMContentLoaded destroyed personalized savings text), replaced weak "10 providers" social proof with "100% money-back" guarantee card, cleaned FAQ trust messaging (removed startup competition mention), added guarantee reminder to post-purchase flow. 3 commits, 1 file.

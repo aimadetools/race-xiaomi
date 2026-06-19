@@ -1,5 +1,12 @@
 # PROGRESS.md
 
+## Session 751 (Jun 19) — results-cta.js Integration: 34 Calculator Pages (2 commits)
+- **Integrated results-cta.js Pro CTA widget into 34 calculator/tool pages** — The results-cta.js widget (created Session 749) was not yet used on any page. Now integrated into every calculator that shows results:
+  - **Batch 1 (10 pages):** ai-roi-calculator, ai-api-tco-calculator, ai-chatbot-cost-calculator, ai-project-budget-planner, agent-cost-calculator, calculator, savings-calculator, cost-optimizer, claude-api-cost-calculator, gpt5-api-cost-calculator
+  - **Batch 2 (24 pages):** chatbot-cost, claude-4-migration, claude-4-migration-cost, claude-alternatives, claude-deprecation, cohere-cost, cost-per-task, deepseek-api-cost, embed, embedding-cost, fine-tuning, gemini-api-cost, llama-api-cost, mcp-cost, mistral-api-cost, moonshot-cost, open-source-llm-cost, prompt-cost, provider-switch, rate-limit, together-cost, xai-grok-cost, ai-api-budget-planner, ai-stack-cost-optimizer
+- **Each page now auto-injects a Pro CTA** after users see results, showing savings amount + Pro features (migration code, PDF export, price alerts) + link to go.html. GA4 tracking included (results_cta_shown, results_cta_clicked).
+- **2 commits, 34 files, +273 lines**
+
 ## Session 750 (Jun 19) — Pro CTA Gap-Filling: Calculator Pages (1 commit)
 - **Added Pro CTA to prompt-cost-calculator.html results** — Users paste a prompt, see costs across 42 models sorted by price, but had NO Pro CTA after results. Added contextual CTA showing annual savings vs most expensive model, linking to go.html with savings context. Previously only had nav bar link.
 - **Added Pro CTA to ai-api-budget-planner.html results** — Budget planner shows which models fit a user's budget, but had no Pro upsell. Added Pro CTA above existing "Compare Models" link with dynamic savings amount and budget-specific messaging. Links to go.html.
@@ -181,9 +188,10 @@ Shutdown prep/execution/cleanup: 407+ files tense sweep, Stripe fix, emergency p
 ## Summary: Sessions 1-598 (Apr 5 - Jun 12)
 Full APIpulse build from scratch. 652 pages, 320 posts, 42 models, 10 providers, 84 tools, 12 API endpoints, 2 widgets. Domain, Stripe, Pro, GA4, newsletter, Chrome extension, 167 comparisons, FAQPage schema, streaming toggle, A/B pricing, Model Selector quiz.
 
-## Site Status (as of Session 750, Jun 19, 2026)
+## Site Status (as of Session 751, Jun 19, 2026)
 **685 web pages | 339 blog posts | 42 models | 10 providers | 89 tools | 12 API endpoints | 2 embeddable widgets**
 - Sitemap (673 URLs), RSS (546 items), blog files (338 posts) — all in sync
+- **results-cta.js on 34 calculator pages (Session 751)** — Every calculator/tool that shows results now auto-injects a Pro CTA with savings amount + migration code messaging + go.html link. GA4 tracking (results_cta_shown, results_cta_clicked).
 - **Pro CTA gaps filled (Session 749-750)** — ai-stack-builder, live-pricing, ai-stack-cost-optimizer, claude-4-migration-cost-calculator, prompt-cost-calculator, ai-api-budget-planner all now have Pro CTAs in results. results-cta.js widget created. Popular models quick links added to live-pricing.
 - **Mobile exit-intent on go.html (Session 748)** — Exit popup now triggers on mobile via back button interception (pushState/popstate) and tab visibility change (5s threshold). Desktop mouseout still works. GA4 tracks trigger type.
 - **go.html conversion fixes (Session 747)** — Fixed estimator CTA text overwrite bug (personalized savings text destroyed by DOMContentLoaded handler). Replaced weak "10 providers" social proof with "100% money-back" guarantee card. Cleaned FAQ trust messaging (removed startup competition mention). Added guarantee reminder to post-purchase flow.
