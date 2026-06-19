@@ -1,5 +1,11 @@
 # PROGRESS.md
 
+## Session 754 (Jun 19) — Exit-Intent Feedback Survey + Free API Cost Audit Tool (2 commits)
+- **Replaced sales exit popup with 2-step feedback survey on go.html** — After 12 sessions of conversion optimization with 0 sales, changed approach from "try harder to sell" to "ask why they're not buying." Step 1: 5 reasons (price too high, not sure of value, free enough, don't trust, other). Step 2: tailored response based on answer (price math with annual ROI, free tool redirect, trust guarantee, or standard CTA). All responses tracked via GA4 (exit_survey_response, exit_survey_step2_shown, exit_survey_skipped). Root cause: we've been guessing at objections — now we'll have real data.
+- **Created api-cost-audit.html** — Free standalone cost audit tool. Users select current model (28 models across 8 providers), enter monthly spend and input token ratio, instantly see top 6 cheaper alternatives with monthly/annual savings. Includes "BEST VALUE" badge on top alternative, quality scores, and a Pro upsell section. Personalized Pro CTA shows user's actual savings ("Unlock your $X/yr savings report"). Passes savings to go.html for personalized exit popup. GA4 tracking (audit_completed with model/spend/bestAlternative, audit_retake).
+- **Cross-linked audit tool** from homepage (Explore Tools section, top position), savings-calculator.html (More Free Tools section), quick-savings.html (More Free Tools section), sitemap.xml (priority 0.9), and rss.xml.
+- **2 commits, 7 files, +558 lines**
+
 ## Session 753 (Jun 19) — New Tool Pages + Broken Link Fixes (5 commits)
 - **Created best-ai-model-for-rag.html** — Interactive RAG cost calculator with embedding + generation model rankings, use case recommendations, 8 FAQ entries with FAQPage schema. Targets "best AI model for RAG" search traffic.
 - **Created best-ai-model-for-content-writing.html** — Interactive content writing cost calculator with 7 model rankings, use case recommendations (blog, marketing, social, long-form, technical), FAQ schema. Targets "best AI for content writing" search traffic.

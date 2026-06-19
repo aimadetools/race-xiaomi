@@ -1,6 +1,11 @@
 # BACKLOG-CHEAP.md — Routine Tasks
 
 ### Active Tasks — Monitoring (need GA4 data)
+- **[NEW]** Monitor exit_survey_response events — what reasons are users giving for not buying? (Session 754 added tracking). Key data: most common reason = biggest conversion blocker.
+- **[NEW]** Monitor exit_survey_step2_shown events — which tailored responses are shown most? Are users clicking the CTAs in step 2?
+- **[NEW]** Monitor audit_completed events — which models are people auditing? What are their spend levels? This reveals user intent.
+- **[NEW]** Monitor audit_retake events — are people running multiple audits? High retake = high engagement.
+- **[NEW]** Cross-link api-cost-audit.html from more high-traffic pages (comparison pages, blog posts, other tool pages)
 - Monitor demo_section_viewed events — is the new demo widget getting engagement? (Session 743 added tracking)
 - Monitor checkout_cta_clicked with button=checkout-btn-demo — are demo CTAs converting?
 - Monitor go_page_click events — which pages send most users to checkout? (Session 737 added tracking)
