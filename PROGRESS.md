@@ -1,10 +1,11 @@
 # PROGRESS.md
 
-## Session 746 (Jun 19) — go.html Conversion: Stronger Urgency, Shorter FAQ
-- **Strengthened urgency bar copy** — Changed from generic "Founding member price — X left at this price" to specific "Price doubles to $49 on July 12 — X left at $29". Concrete price increase ($29→$49) creates real urgency vs vague "this price".
-- **Reduced FAQ from 9 items to 5** — Removed 4 weakest FAQs that didn't address core objections: "What if API prices change?" (niche), "I only use one provider?" (niche), "Is the demo real data?" (redundant with trust signals), and one duplicate. Kept 5 that address the 5 core purchase objections: (1) one-time payment? (2) why not DIY? (3) guarantee? (4) what do I get? (5) is this real?
-- **16 fewer lines** — Less cognitive load for a $29 impulse purchase page. Fewer items = each remaining FAQ gets more attention.
-- **1 commit, 1 file, -16 lines**
+## Session 746 (Jun 19) — go.html Conversion Tightening (3 commits)
+- **Strengthened urgency bar copy** — "Founding member price — X left" → "Price doubles to $49 on July 12 — X left at $29". Concrete price increase creates real urgency.
+- **Reduced FAQ 9→5 items** — Removed 4 weakest (niche/redundant). Kept 5 core objection handlers: one-time payment, DIY vs Pro, guarantee, deliverables, trust.
+- **Removed "What Pro Unlocks" grid** — 2×2 feature grid + sample migration code + CTA duplicated the features list and savings estimator. -45 lines, 3 CTAs instead of 4 (less choice paralysis).
+- **Strengthened Free vs Pro table** — Consolidated 3 weak "both ✓" rows into 1 strong row ("Top 3 only" vs "ALL 15 ranked"). Removed redundant "All alternatives ranked" row. Table: 8 rows → 5, every row shows clear ✕ vs ✓ contrast.
+- **Total: -79 lines, 3 CTAs instead of 4, much tighter page for $29 impulse purchase**
 
 ## Session 745 (Jun 19) — Conversion Optimization: Payback Period + Page Tightening
 - **Added payback period to savings estimator (go.html)** — Shows "⚡ $29 Pro pays for itself in X days" below the annual savings number. Calculates dynamically: `price / monthly_saving * 30`. For GPT-5 at $100/mo spend, shows "pays for itself in 6 days". Updates instantly as user changes model or spend amount.
@@ -150,17 +151,16 @@ Shutdown prep/execution/cleanup: 407+ files tense sweep, Stripe fix, emergency p
 ## Summary: Sessions 1-598 (Apr 5 - Jun 12)
 Full APIpulse build from scratch. 652 pages, 320 posts, 42 models, 10 providers, 84 tools, 12 API endpoints, 2 widgets. Domain, Stripe, Pro, GA4, newsletter, Chrome extension, 167 comparisons, FAQPage schema, streaming toggle, A/B pricing, Model Selector quiz.
 
-## Site Status (as of Session 745, Jun 19, 2026)
+## Site Status (as of Session 746, Jun 19, 2026)
 **685 web pages | 339 blog posts | 42 models | 10 providers | 89 tools | 12 API endpoints | 2 embeddable widgets**
 - Sitemap (673 URLs), RSS (546 items), blog files (338 posts) — all in sync
+- **go.html conversion-tightened (Session 746)** — FAQ 9→5, urgency bar strengthened, redundant Pro Unlocks grid removed, Free vs Pro table 8→5 rows (every row clear contrast). 3 CTAs (was 4). -79 lines total.
 - **ALL Pro CTAs route through go.html (Session 734-741)** — Trust-building page before Stripe checkout. Static HTML links rewritten by shared.js at runtime. Dynamic CTAs (sticky bars, blog upsell) fixed Session 741.
 - **Live Pricing Dashboard cross-linked from 318+ pages (Session 738)** — 166 comparison pages, 150 blog posts, tools/pricing/calculator/compare pages. FAQPage schema added.
 - **Embed widgets cross-linked from 239 pages (Session 740)** — All tool pages, blog posts, and comparison pages link to embed.html.
 - **Honest social proof on go.html (Session 735)** — Fake "just got Pro" replaced with developer count, global usage, avg savings, Stripe security, guarantee.
 - **Interactive savings estimator on go.html (Session 744-745)** — Personalized "What Could YOU Save?" widget with payback period ("Pro pays for itself in X days"). Users pick their model + monthly spend, see instant savings with top 3 alternatives. Pre-fills with GPT-5/$100 default. CTA shows personalized savings amount. GA4 tracking.
-- **Sticky bars suppressed on go.html (Session 745)** — Both time-based and scroll-triggered sticky CTAs now skip go.html (page has 4 native CTAs; sticky bars linked back to go.html creating a loop).
-- **Quick Savings page (Session 732)** — Ultra-fast 2-click savings estimate. Cross-linked from 167 comparison pages.
-- **Pre-checkout landing page go.html (Session 731)** — Social proof, testimonials, FAQ, guarantee before Stripe.
+- **Sticky bars suppressed on go.html (Session 745)** — Both time-based and scroll-triggered sticky CTAs now skip go.html.
 - **A/B pricing test LIVE** — $19 vs $29 (50/50).
 - **Exit popup A/B test LIVE** — Loss-framed vs social-proof copy, button color test, personalized savings hints.
 - **Claude 4 SHUTDOWN COMPLETE (June 15)** — All pages past-tense, deprecation banner links to migrate.html.
