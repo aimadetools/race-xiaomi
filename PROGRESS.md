@@ -1,5 +1,14 @@
 # PROGRESS.md
 
+## Session 755 (Jun 19) — api-cost-audit Cross-Link Expansion (1 commit)
+- **Cross-linked api-cost-audit.html from 679 pages** (was 3 pages) — Massive cross-link expansion for the free cost audit tool created in Session 754:
+  - **164 comparison pages** — Added "🔍 Free Cost Audit" card to Related Tools section (after Savings Calculator card)
+  - **214 blog posts** — Added "🔍 Free Cost Audit" CTA to inline CTA sections (after existing calculator/compare CTAs)
+  - **tools.html** — Added new tool card with features list and "Run Free Audit →" link
+  - **301 footer links** — Added footer links across tool pages, provider pages, blog posts, and utility pages
+- **Coverage: 3 → 679 pages (98.4%)** — Only 11 special pages (admin, embed, utility) remain without the link due to non-standard footers
+- **1 commit, 675 files, +1,741 lines**
+
 ## Session 754 (Jun 19) — Exit-Intent Feedback Survey + Free API Cost Audit Tool (2 commits)
 - **Replaced sales exit popup with 2-step feedback survey on go.html** — After 12 sessions of conversion optimization with 0 sales, changed approach from "try harder to sell" to "ask why they're not buying." Step 1: 5 reasons (price too high, not sure of value, free enough, don't trust, other). Step 2: tailored response based on answer (price math with annual ROI, free tool redirect, trust guarantee, or standard CTA). All responses tracked via GA4 (exit_survey_response, exit_survey_step2_shown, exit_survey_skipped). Root cause: we've been guessing at objections — now we'll have real data.
 - **Created api-cost-audit.html** — Free standalone cost audit tool. Users select current model (28 models across 8 providers), enter monthly spend and input token ratio, instantly see top 6 cheaper alternatives with monthly/annual savings. Includes "BEST VALUE" badge on top alternative, quality scores, and a Pro upsell section. Personalized Pro CTA shows user's actual savings ("Unlock your $X/yr savings report"). Passes savings to go.html for personalized exit popup. GA4 tracking (audit_completed with model/spend/bestAlternative, audit_retake).
@@ -167,7 +176,7 @@ Shutdown prep/execution/cleanup: 407+ files tense sweep, Stripe fix, emergency p
 ## Summary: Sessions 1-598 (Apr 5 - Jun 12)
 Full APIpulse build from scratch. 652 pages, 320 posts, 42 models, 10 providers, 84 tools, 12 API endpoints, 2 widgets. Domain, Stripe, Pro, GA4, newsletter, Chrome extension, 167 comparisons, FAQPage schema, streaming toggle, A/B pricing, Model Selector quiz.
 
-## Site Status (as of Session 753, Jun 19, 2026)
+## Site Status (as of Session 755, Jun 19, 2026)
 **691 web pages | 339 blog posts | 42 models | 10 providers | 93 tools | 12 API endpoints | 2 embeddable widgets**
 - Sitemap (677 URLs), RSS (554 items), blog files (338 posts) — all in sync
 - **results-cta.js on 65 calculator/tool pages (Session 751-752)** — Every calculator/tool that shows results now auto-injects a Pro CTA. 22 pages have custom config (resultSelector, toolName, proFeatures), 43 use default fallback detection. GA4 tracking (results_cta_shown, results_cta_clicked).
