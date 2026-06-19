@@ -1,5 +1,22 @@
 # PROGRESS.md
 
+## Session 760 (Jun 19) — New Tool Pages: Customer Support + Data Analysis (1 commit)
+- **Created best-ai-model-for-customer-support.html** — Interactive cost calculator for AI customer support:
+  - 7 models ranked by cost per support ticket (1.5K input + 400 output tokens)
+  - TL;DR cards: Cheapest (DeepSeek V4 Flash $0.00032/ticket), Best Quality (Claude Sonnet 4.6), Best Balance (GPT-5 mini), Budget Volume (Llama 4 Scout)
+  - Interactive calculator with customizable system prompt, user message, context, output tokens, tickets/day
+  - 6 use cases: E-commerce, Technical Troubleshooting, SaaS Onboarding, Insurance Claims, Scheduling, Multi-language
+  - FAQPage schema (6 questions), Article schema, share buttons, exit popup, GA4 tracking
+- **Created best-ai-model-for-data-analysis.html** — Interactive cost calculator for AI data analysis:
+  - 7 models ranked by cost per analysis (3K input + 1K output tokens)
+  - TL;DR cards: Cheapest (DeepSeek V4 Flash $0.00070/analysis), Best Quality (Claude Sonnet 4.6), Best Balance (GPT-5 mini), Budget Volume (DeepSeek V4 Flash)
+  - Interactive calculator with customizable data context, instructions, output tokens, analyses/day
+  - 6 use cases: SQL Generation, CSV/Excel, Statistical Analysis, BI Reports, Log Analysis, Financial Modeling
+  - FAQPage schema (6 questions), Article schema, share buttons, exit popup, GA4 tracking
+- **Cross-linked from 47 pages** — Added to tools.html (88→90 tools), 45 comparison page footers, 2 blog post footers
+- **Added to sitemap.xml (686 URLs) and rss.xml (563 items)**
+- **1 commit, 52 files, +1,432 lines**
+
 ## Session 759 (Jun 19) — New Tool Pages: Agents + Vision (1 commit)
 - **Created best-ai-model-for-agents.html** — Interactive cost calculator for autonomous AI agents:
   - 7 models ranked by cost per agent task (6K input + 1.5K output tokens)
@@ -115,81 +132,6 @@
 ## Summary: Sessions 732-755 (Jun 18-19) — Conversion optimization + SEO fixes
 24 sessions. go.html conversion overhaul (interactive savings estimator, demo widget, mobile exit-intent, CTA sync, urgency countdown, FAQ tightened). results-cta.js widget created + integrated into 65 calculator/tool pages. Pro CTA gaps filled across all pages. Nav restructured (25+ → 5 visible + More dropdown). Pre-checkout landing page go.html. Exit popups, sticky bars, trial messaging. Route ALL CTAs through go.html trust-building page (80+ pages). Fixed nav CTA leak, replaced fake social proof with honest trust signals. Fixed broken links, canonical URLs, duplicate content (4 pairs → 301 redirects). Live Pricing Dashboard. Conversion funnel tracking. Share buttons on 3 tools. Cross-linked api-cost-audit from 679 pages. 80+ commits, 400+ files.
 
-## Session 741 (Jun 19) — Fix Stripe Link Bypasses + go.html A/B Pricing Fix
-- **Found and fixed a conversion leak** — Three dynamically-injected components were linking directly to `buy.stripe.com`, completely bypassing the go.html trust-building page. Users clicking these CTAs skipped social proof, testimonials, FAQ, and guarantee — landing on a raw Stripe checkout form from an unknown brand.
-- **Fixed components:**
-  1. **Time-based sticky bottom CTA bar** (appears after 45s on all content pages) — now routes through `go.html?from=sticky_bottom_bar_<page>`
-  2. **Scroll-triggered sticky Pro CTA bar** (appears at 30% scroll depth) — now routes through `go.html?from=<context>_<page>`
-  3. **Blog inline Pro upsell** (appears after `.cta-inline` on blog posts) — now routes through `go.html?from=blog_inline_upsell_<post>`
-- **Root cause:** shared.js rewrites all `buy.stripe.com` links to go.html during DOMContentLoaded, but these three components are injected AFTER that event (via setTimeout or scroll listener), so they were never caught by the rewriting logic.
-- **Fixed go.html A/B pricing mismatch** — The "was" price ($49) and savings badge (Save 41%) were hardcoded, but the A/B test has two variants ($19 and $29). For the $19 variant, the actual discount is 61% off $49, not 41% — a misleading inconsistency on the most critical conversion page. Now dynamically calculates correct values per variant ($19→$39/51%, $29→$49/41%).
-- **Verified:** Both exit popups (deprecation + high-intent) already correctly route through go.html. Two dead `stripeLink` variables removed.
-- **3 commits, 2 files**
-
-## Session 740 (Jun 19) — Site Audit + Embed Cross-Links
-- **Full site audit** — Checked SEO basics, sitemap health, broken links, Stripe link routing, shared.js coverage. Site is technically sound: all 685 pages have canonical URLs, only utility pages lack meta descriptions (by design), no broken internal links, all Stripe links properly routed through go.html via shared.js runtime rewrite.
-- **Cross-linked embed.html from 3 remaining tool pages** — Added footer links to savings-calculator.html, how-it-works.html, and quick-savings.html. embed.html is now linked from 239 pages total.
-- **Verified conversion funnel integrity** — All 268 pages with hardcoded Stripe links have shared.js loaded (which rewrites them to go.html at runtime). No pages bypass the trust-building flow.
-- **1 commit, 3 files**
-
-## Session 739 (Jun 19) — Complete Pricing Guide Blog Post
-- **Created "The Complete Guide to AI API Pricing in 2026"** (blog-ai-api-pricing-complete-guide-2026.html) — Comprehensive 15-min-read blog post covering:
-  - All 42 models across 10 providers organized by tier (Budget/Mid/Premium)
-  - Provider-by-provider breakdown with links to individual pricing pages
-  - Real-world cost comparison across 4 workloads (coding assistant, RAG, chatbot, content gen)
-  - 5 cost optimization strategies (multi-model routing, batch APIs, quarterly re-evaluation)
-  - Quick decision framework for model selection
-  - Prominent CTA linking to live-pricing.html dashboard
-  - Cross-links to savings calculator, cost alerts, model recommendation engine, changelog
-  - Article + FAQPage + BreadcrumbList structured data (5 FAQ entries targeting long-tail keywords)
-  - Social share buttons (X, LinkedIn), GA4 event tracking
-- **Featured on blog index** — Added as top featured post with gold "COMPLETE GUIDE" tag
-- **Added to sitemap.xml and rss.xml** — Full distribution
-- **1 commit, 4 files, 708 insertions**
-
-## Session 738 (Jun 19) — Live Pricing Cross-Links + FAQ Schema
-- **Cross-linked live-pricing.html from 166 comparison pages** — Added "📊 Live Pricing" card to Related Tools section on every comparison page (both old and new template patterns). Also added footer link to 42 pages with full footer columns.
-- **Added live-pricing links to 150 blog posts** — Added "📊 Live API Pricing" to the Save Money CTA section on 148 blog posts + footer links on 2 posts with full footer columns. Total: 318 new cross-links to the pricing dashboard.
-- **Added FAQ section to live-pricing.html** — 5 common questions (update frequency, cheapest model, input vs output pricing, savings potential, hidden costs) with expandable UI.
-- **Added FAQPage structured data schema** — Rich search result eligibility for live-pricing.html.
-- **3 commits, 318 files changed**
-
-## Session 737 (Jun 19) — Live Pricing Dashboard + Conversion Funnel Tracking
-- **Built Live API Pricing Dashboard** (live-pricing.html) — Interactive, sortable table of all 42 models across 10 providers:
-  - Sort by model name, provider, tier, input price, output price, context window
-  - Filter by tier (Budget/Mid/Premium), search by name/provider
-  - Cheapest model highlighting (green badges for lowest input/output prices)
-  - Stats bar: cheapest input, cheapest output, price range, active model count
-  - Links each model to savings-calculator.html with model pre-selected
-  - Schema.org WebApplication structured data for rich search results
-  - GA4 event tracking (live_pricing_viewed)
-- **Added to essential navigation** — live-pricing.html promoted to top 5 nav links (replacing About, which moved to More dropdown)
-- **Added conversion funnel tracking** — New go_page_click GA4 event tracks every click on go.html links with source page, link text, A/B price variant. Full funnel: page_view → go_page_click → checkout_page_viewed → checkout_cta_clicked → Stripe
-- **Cross-linked** from index.html nav, savings-calculator.html footer, and embed widget link
-- **3 commits, 5 files changed**
-
-## Session 736 (Jun 18) — Duplicate Content & Technical SEO Fixes
-- **Fixed 4 duplicate content pairs** — Pages with identical titles were splitting SEO ranking signals:
-  - compare-gpt55-vs-opus48.html → compare-gpt55-claude-opus48.html (301 redirect)
-  - compare-gpt55-vs-deepseek-v4pro.html → compare-gpt55-vs-deepseek-v4-pro.html (301 redirect)
-  - blog-gpt5-api-cost-complete-guide.html → blog-gpt5-api-cost.html (301 redirect)
-  - blog-xai-grok-pricing.html → xai.html (301 redirect)
-- **Added 4 permanent redirects** in vercel.json for clean server-side 301s
-- **Updated 7 internal links** across 5 pages (compare.html, blog.html, blog-grok3-vs-claude4-sonnet.html, blog-xai-grok-vs-gpt4o.html, newsletter-archive.html) to point to canonical versions
-- **Cleaned sitemap.xml** — removed 5 duplicate/stale entries (4 redirects + 1 duplicate claude-4-migration-checklist entry)
-- **Added HowTo structured data** to how-it-works.html for rich search results (3-step process schema)
-- **3 commits, 9 files changed**
-
-## Session 735 (Jun 18) — SEO, Trust & Conversion Fixes
-- **Fixed 2 broken links** in claude-4-is-dead.html (pointed to non-existent migration pages, now point to blog-prefixed versions)
-- **Fixed duplicate canonical URL** in claude-4-deprecation.html (was pointing to claude-4-is-down.html instead of itself; also fixed og:url)
-- **Replaced fake social proof** on go.html — "Someone in [city] just got Pro" (0 actual sales) replaced with rotating honest trust signals: developer count, global usage, avg savings, Stripe security, money-back guarantee
-- **Fixed nav CTA conversion leak** — shared.js now routes nav CTAs pointing to pro.html and compare-plans.html through go.html (previously only pricing.html was caught). Inline "Get Pro" CTAs on pro.html also now route through go.html.
-- **2 commits, 4 files, 24 insertions, 16 deletions**
-
-## Summary: Sessions 732-741 (Jun 18) — Conversion funnel + SEO fixes
-10 sessions. Route ALL CTAs through go.html trust-building page (80+ pages), fixed nav CTA leak, replaced fake social proof with honest trust signals, fixed broken links and canonical URL, content quality fixes, Quick Savings page, How It Works page, duplicate content fixes (4 pairs → 301 redirects), HowTo schema, Live Pricing Dashboard, conversion funnel tracking. 20+ commits, 330+ files.
-
 ## Summary: Sessions 715-731 (Jun 18) — Conversion optimization blitz
 17 sessions. Pre-checkout landing page (go.html), personalized Pro CTAs, nav restructured (25+ → 5 visible + More dropdown), Pro page trial-first, ROI calculator, usage-gated calculator, A/B pricing simplified ($19/$29), migration landing page, exit popups, sticky bar, trial messaging, migration code generator, blog posts. 30+ commits, 60+ files.
 
@@ -202,9 +144,9 @@ Shutdown prep/execution/cleanup: 407+ files tense sweep, Stripe fix, emergency p
 ## Summary: Sessions 1-598 (Apr 5 - Jun 12)
 Full APIpulse build from scratch. 652 pages, 320 posts, 42 models, 10 providers, 84 tools, 12 API endpoints, 2 widgets. Domain, Stripe, Pro, GA4, newsletter, Chrome extension, 167 comparisons, FAQPage schema, streaming toggle, A/B pricing, Model Selector quiz.
 
-## Site Status (as of Session 759, Jun 19, 2026)
-**697 web pages | 339 blog posts | 42 models | 10 providers | 88 tools | 12 API endpoints | 2 embeddable widgets**
-- Sitemap (684 URLs), RSS (561 items), blog files (339 posts) — all in sync
+## Site Status (as of Session 760, Jun 19, 2026)
+**699 web pages | 339 blog posts | 42 models | 10 providers | 90 tools | 12 API endpoints | 2 embeddable widgets**
+- Sitemap (686 URLs), RSS (563 items), blog files (339 posts) — all in sync
 - **results-cta.js on 65 calculator/tool pages (Session 751-752)** — Every calculator/tool that shows results now auto-injects a Pro CTA. 22 pages have custom config (resultSelector, toolName, proFeatures), 43 use default fallback detection. GA4 tracking (results_cta_shown, results_cta_clicked).
 - **Pro CTA gaps filled (Session 749-750)** — ai-stack-builder, live-pricing, ai-stack-cost-optimizer, claude-4-migration-cost-calculator, prompt-cost-calculator, ai-api-budget-planner all now have Pro CTAs in results. results-cta.js widget created. Popular models quick links added to live-pricing.
 - **Mobile exit-intent on go.html (Session 748)** — Exit popup now triggers on mobile via back button interception (pushState/popstate) and tab visibility change (5s threshold). Desktop mouseout still works. GA4 tracks trigger type.
