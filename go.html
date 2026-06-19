@@ -590,6 +590,63 @@
             </div>
         </div>
 
+        <!-- INTERACTIVE SAVINGS ESTIMATOR -->
+        <div class="demo-section" id="savings-estimator">
+            <div class="demo-title">⚡ What Could YOU Save?</div>
+            <div class="demo-subtitle">Select your model and monthly spend — see instant savings:</div>
+
+            <div style="display:flex;flex-direction:column;gap:14px;margin-bottom:16px;">
+                <div>
+                    <label style="font-size:13px;font-weight:600;color:var(--text-secondary);display:block;margin-bottom:6px;">Your current model</label>
+                    <select id="est-model" style="width:100%;padding:10px 14px;background:var(--bg-card);border:1px solid var(--border);border-radius:8px;color:var(--text-primary);font-size:14px;cursor:pointer;">
+                        <option value="openai-gpt5">GPT-5 (OpenAI) — $1.25 / $10.00</option>
+                        <option value="openai-gpt55">GPT-5.5 (OpenAI) — $5.00 / $30.00</option>
+                        <option value="openai-gpt4o">GPT-4o (OpenAI) — $2.50 / $10.00</option>
+                        <option value="anthropic-sonnet46">Claude Sonnet 4.6 (Anthropic) — $3.00 / $15.00</option>
+                        <option value="anthropic-opus48">Claude Opus 4.8 (Anthropic) — $5.00 / $25.00</option>
+                        <option value="anthropic-haiku">Claude Haiku 4.5 (Anthropic) — $1.00 / $5.00</option>
+                        <option value="google-pro">Gemini 2.5 Pro (Google) — $1.25 / $10.00</option>
+                        <option value="google-gemini35-flash">Gemini 3.5 Flash (Google) — $1.50 / $9.00</option>
+                    </select>
+                </div>
+                <div>
+                    <label style="font-size:13px;font-weight:600;color:var(--text-secondary);display:block;margin-bottom:6px;">Monthly API spend</label>
+                    <div style="display:flex;align-items:center;gap:8px;">
+                        <span style="font-size:16px;font-weight:700;color:var(--text-muted);">$</span>
+                        <input id="est-spend" type="number" min="1" max="100000" value="100" style="flex:1;padding:10px 14px;background:var(--bg-card);border:1px solid var(--border);border-radius:8px;color:var(--text-primary);font-size:14px;font-family:monospace;">
+                        <span style="font-size:13px;color:var(--text-muted);white-space:nowrap;">/month</span>
+                    </div>
+                </div>
+            </div>
+
+            <div id="est-results" style="display:none;">
+                <div id="est-result-best" style="background:var(--bg-card);border:1px solid rgba(34,197,94,0.2);border-radius:12px;padding:16px;margin-bottom:12px;text-align:center;">
+                    <div style="font-size:13px;color:var(--text-muted);margin-bottom:4px;">You could save up to</div>
+                    <div id="est-savings-amount" style="font-size:32px;font-weight:900;color:var(--green);font-family:monospace;">$0/yr</div>
+                    <div id="est-savings-pct" style="font-size:14px;color:var(--text-secondary);margin-top:2px;"></div>
+                </div>
+                <table class="demo-table" style="margin-bottom:12px;">
+                    <thead>
+                        <tr>
+                            <th>Switch to</th>
+                            <th>Provider</th>
+                            <th>New cost</th>
+                            <th>You save</th>
+                        </tr>
+                    </thead>
+                    <tbody id="est-alts-body"></tbody>
+                </table>
+                <div style="font-size:12px;color:var(--text-muted);text-align:center;margin-bottom:12px;">Pro shows all alternatives ranked by cost + migration code for each</div>
+            </div>
+
+            <div id="est-cta-area">
+                <a id="checkout-btn-est" href="https://buy.stripe.com/fZu7sL3Gw3GS0RQeoDeEo0a" class="cta-btn demo-cta" target="_blank" rel="noopener">
+                    See All Your Alternatives — <span id="btn-price-est">$29</span>
+                </a>
+                <p class="cta-sub">14-day money-back guarantee · One-time payment · Lifetime access</p>
+            </div>
+        </div>
+
         <!-- LIVE DEMO: See Pro in Action -->
         <div class="demo-section">
             <div class="demo-title">📊 See a Real Pro Savings Report</div>
@@ -843,6 +900,10 @@
             if (demoBtn) demoBtn.href = stripeLink;
             var demoPrice = document.getElementById('btn-price-demo');
             if (demoPrice) demoPrice.textContent = '$' + price;
+            var estBtn = document.getElementById('checkout-btn-est');
+            if (estBtn) estBtn.href = stripeLink;
+            var estPrice = document.getElementById('btn-price-est');
+            if (estPrice) estPrice.textContent = '$' + price;
 
             // Track checkout page view
             if (window.trackEvent) {
@@ -855,7 +916,7 @@
             }
 
             // Track CTA clicks
-            ['checkout-btn', 'checkout-btn-bottom', 'checkout-btn-demo'].forEach(function(id) {
+            ['checkout-btn', 'checkout-btn-bottom', 'checkout-btn-demo', 'checkout-btn-est'].forEach(function(id) {
                 document.getElementById(id).addEventListener('click', function() {
                     if (window.trackEvent) {
                         window.trackEvent('checkout_cta_clicked', {
@@ -868,6 +929,118 @@
                 });
             });
         });
+    })();
+
+    // Interactive Savings Estimator
+    (function() {
+        var modelSel = document.getElementById('est-model');
+        var spendInput = document.getElementById('est-spend');
+        var resultsDiv = document.getElementById('est-results');
+        var altsBody = document.getElementById('est-alts-body');
+        var savingsAmount = document.getElementById('est-savings-amount');
+        var savingsPct = document.getElementById('est-savings-pct');
+        if (!modelSel || !spendInput) return;
+
+        // Pricing data (per 1M tokens)
+        var models = {
+            'openai-gpt5':           {name:'GPT-5',input:1.25,output:10.00,ratio:0.85},
+            'openai-gpt55':          {name:'GPT-5.5',input:5.00,output:30.00,ratio:0.85},
+            'openai-gpt4o':          {name:'GPT-4o',input:2.50,output:10.00,ratio:0.85},
+            'anthropic-sonnet46':    {name:'Claude Sonnet 4.6',input:3.00,output:15.00,ratio:0.85},
+            'anthropic-opus48':      {name:'Claude Opus 4.8',input:5.00,output:25.00,ratio:0.85},
+            'anthropic-haiku':       {name:'Claude Haiku 4.5',input:1.00,output:5.00,ratio:0.85},
+            'google-pro':            {name:'Gemini 2.5 Pro',input:1.25,output:10.00,ratio:0.85},
+            'google-gemini35-flash': {name:'Gemini 3.5 Flash',input:1.50,output:9.00,ratio:0.85}
+        };
+        // Top 3 budget alternatives
+        var alts = [
+            {name:'DeepSeek V4 Flash',provider:'DeepSeek',input:0.14,output:0.28},
+            {name:'GPT-oss 20B',provider:'OpenAI',input:0.08,output:0.35},
+            {name:'Gemini 2.0 Flash',provider:'Google',input:0.10,output:0.40},
+            {name:'Mistral Small 4',provider:'Mistral',input:0.10,output:0.30},
+            {name:'Llama 4 Scout',provider:'Meta (Together)',input:0.18,output:0.59},
+            {name:'DeepSeek V4 Pro',provider:'DeepSeek',input:0.435,output:0.87}
+        ];
+
+        function calcTokens(spend, inputPrice, outputPrice, ratio) {
+            // Assume ratio of input:output tokens = 0.85 (typical usage)
+            // Cost = (inputTokens/1M * inputPrice) + (outputTokens/1M * outputPrice)
+            // Let x = inputTokens/1M, then outputTokens/1M = x*ratio
+            // spend = x*inputPrice + x*ratio*outputPrice
+            // x = spend / (inputPrice + ratio*outputPrice)
+            var x = spend / (inputPrice + ratio * outputPrice);
+            return {inputM: x, outputM: x * ratio};
+        }
+
+        function calculate() {
+            var model = models[modelSel.value];
+            var spend = parseFloat(spendInput.value) || 0;
+            if (spend <= 0) { resultsDiv.style.display = 'none'; return; }
+
+            var tokens = calcTokens(spend, model.input, model.output, model.ratio);
+            var bestSaving = 0;
+            var bestAlt = null;
+
+            // Calculate cost with each alt
+            var results = alts.map(function(alt) {
+                var cost = tokens.inputM * alt.input + tokens.outputM * alt.output;
+                var saving = spend - cost;
+                return {name:alt.name, provider:alt.provider, cost:cost, saving:saving, pct:(saving/spend*100)};
+            }).filter(function(r) { return r.saving > 0.01; })
+              .sort(function(a,b) { return b.saving - a.saving; })
+              .slice(0,3);
+
+            if (results.length === 0) {
+                resultsDiv.style.display = 'none';
+                return;
+            }
+
+            bestSaving = results[0].saving;
+            bestAlt = results[0];
+
+            // Update display
+            var annualSaving = Math.round(bestSaving * 12);
+            savingsAmount.textContent = '$' + annualSaving.toLocaleString() + '/yr';
+            savingsPct.textContent = 'Switch to ' + bestAlt.name + ' — save ' + Math.round(bestAlt.pct) + '%';
+
+            // Build table
+            altsBody.innerHTML = results.map(function(r,i) {
+                var cls = i === 0 ? ' class="demo-highlight"' : '';
+                return '<tr' + cls + '><td>' + (i === 0 ? '<strong>' + r.name + '</strong>' : r.name) + '</td>' +
+                    '<td>' + r.provider + '</td>' +
+                    '<td><strong>$' + r.cost.toFixed(2) + '</strong></td>' +
+                    '<td class="demo-savings-cell">$' + r.saving.toFixed(2) + '/mo (' + Math.round(r.pct) + '%)</td></tr>';
+            }).join('');
+
+            resultsDiv.style.display = 'block';
+
+            // Track
+            if (window.trackEvent) {
+                window.trackEvent('savings_estimator_used', {
+                    model: modelSel.value,
+                    spend: spend,
+                    best_saving: Math.round(bestSaving * 12)
+                });
+            }
+        }
+
+        modelSel.addEventListener('change', calculate);
+        spendInput.addEventListener('input', calculate);
+        // Auto-calculate on load
+        calculate();
+
+        // Track estimator section visibility
+        var estSection = document.getElementById('savings-estimator');
+        if (estSection && window.IntersectionObserver) {
+            var estViewed = false;
+            new IntersectionObserver(function(entries) {
+                if (entries[0].isIntersecting && !estViewed) {
+                    estViewed = true;
+                    if (window.trackEvent) window.trackEvent('savings_estimator_viewed');
+                    if (typeof gtag === 'function') gtag('event', 'savings_estimator_viewed');
+                }
+            }, {threshold: 0.3}).observe(estSection);
+        }
     })();
 
     // Track demo section visibility
