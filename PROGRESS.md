@@ -95,43 +95,8 @@
 - **Pro CTA gaps filled** — Added Pro CTAs to 65 calculator/tool pages (ai-stack-builder, live-pricing, ai-stack-cost-optimizer, claude-4-migration-cost-calculator, prompt-cost-calculator, ai-api-budget-planner, and 59 more). Every calculator that shows results now auto-injects a contextual Pro CTA.
 - **18 commits, ~70 files, ~1,200 lines**
 
-## Session 742 (Jun 19) — go.html Conversion Killers Fixed (1 commit)
-
-## Session 744 (Jun 19) — Interactive Savings Estimator on go.html
-- **Added "What Could YOU Save?" interactive estimator to go.html** — After Session 743 added a static demo showing one fixed GPT-5 scenario, this session adds a personalized estimator where users select THEIR model and enter THEIR monthly spend. The widget instantly calculates savings with 3 cheapest alternatives.
-  - **8 popular models in dropdown** — GPT-5, GPT-5.5, GPT-4o, Claude Sonnet 4.6, Claude Opus 4.8, Claude Haiku 4.5, Gemini 2.5 Pro, Gemini 3.5 Flash
-  - **6 budget alternatives ranked** — DeepSeek V4 Flash, GPT-oss 20B, Gemini 2.0 Flash, Mistral Small 4, Llama 4 Scout, DeepSeek V4 Pro
-  - **Real-time calculation** — Estimates token mix (85% input ratio), calculates cost at each alternative, shows savings in $/month and %
-  - **Annual savings callout** — Big green "$X/yr" number makes savings visceral
-  - **CTA: "See All Your Alternatives — $29"** — Ties personalized result to Pro value prop
-  - **Pre-filled on load** — GPT-5 at $100/mo shows results immediately, no interaction needed to see value
-  - **GA4 tracking** — savings_estimator_viewed (IntersectionObserver at 30%) + savings_estimator_used (model/spend/best_saving)
-  - **A/B pricing support** — Estimator CTA button and price update with variant
-- **Root cause insight:** Static demo ("here's what someone else saves") is weaker than personalized estimation ("here's what YOU save"). Users need to see THEIR numbers before they'll click Stripe. The estimator bridges the gap between the static demo and the full savings calculator.
-- **1 commit, 1 file, 174 insertions**
-
-## Session 743 (Jun 19) — Interactive Pro Demo Widget on go.html
-- **Added "See Pro in Action" live demo section to go.html** — After 12 sessions of copy/trust tweaks with 0 sales, changed approach from describing features to SHOWING the product. Interactive demo pre-fills a realistic GPT-5 scenario (5M input + 5M output tokens/month, $56.25/mo) and shows 3 cheaper alternatives with real, verified pricing:
-  - DeepSeek V4 Pro: $6.52/mo (save 88.4%)
-  - Gemini 2.0 Flash: $2.50/mo (save 95.6%)
-  - Llama 4 Scout: $3.85/mo (save 93.2%)
-- **Includes sample migration code** — Python snippet showing OpenAI SDK → DeepSeek switch. Teases "Pro includes ready-to-paste snippets for every alternative."
-- **Locked preview section** — Shows what Pro unlocks (all 15 alternatives, complete migration code, PDF exports, saved scenarios) with a visual lock overlay.
-- **In-context CTA** — "Unlock Your Savings Report — $29" button placed directly below the demo, with A/B pricing support and click tracking.
-- **GA4 tracking** — IntersectionObserver fires `demo_section_viewed` event when 30% of demo is visible.
-- **Responsive design** — Mobile breakpoint at 600px, scenario bar stacks vertically, table font reduces.
-- **Root cause insight:** 12 sessions of copy tweaks (testimonials, FAQ, trust badges, urgency) didn't convert because feature LISTS don't demonstrate value. Users need to SEE the product working. The demo makes savings concrete — "$49.73/mo saved" is visceral in a way that "Full savings report" is not.
-- **1 commit, 1 file, 241 insertions**
-
-## Session 742 (Jun 19) — Fix go.html Conversion Killers
-- **Replaced fake testimonials with real trust signals** — The two testimonials on go.html ("Indie developer, 50K daily requests" and "CTO, AI startup (Series A)") were obviously fabricated and destroyed trust on the most critical conversion page. Replaced with verifiable accomplishments: 42 models, 10 providers, 89 tools, 339 posts, Stripe security, money-back guarantee.
-- **Added "What happens after purchase" section** — 3-step onboarding flow (instant access → savings report → switch and save) to reduce purchase anxiety. Users who've never heard of APIpulse need to know what happens after they pay.
-- **Added 2 new FAQ entries** — "What exactly do I get after purchase?" (detailed feature list) and "Is this a real product? Why is it so cheap?" (honest about the $100 race and $49 post-race price increase).
-- **Improved exit popup copy** — Replaced generic "Wait — before you go" with specific value recap ("Still deciding? Here's the deal" + concrete deliverables).
-- **Updated page title** — From "Save 40% on AI API Costs, $29 One-Time" to "Lifetime Access, $29 One-Time" (more specific value prop).
-- **Updated meta description** — Added "Compare 42 AI models" and "Instant delivery" for better search snippets.
-- **Root cause analysis:** 1,200 visitors/week, 0 sales. Fake testimonials and weak FAQ were major trust killers on the checkout page. The conversion funnel (any page → go.html → Stripe) is technically sound — the issue is page-level persuasion, not routing.
-- **1 commit, 1 file, 52 insertions, 11 deletions**
+## Summary: Sessions 732-755 (Jun 18-19) — Conversion optimization + SEO fixes
+24 sessions. go.html conversion overhaul (interactive savings estimator, demo widget, mobile exit-intent, CTA sync, urgency countdown, FAQ tightened). results-cta.js widget created + integrated into 65 calculator/tool pages. Pro CTA gaps filled across all pages. Nav restructured (25+ → 5 visible + More dropdown). Pre-checkout landing page go.html. Exit popups, sticky bars, trial messaging. Route ALL CTAs through go.html trust-building page (80+ pages). Fixed nav CTA leak, replaced fake social proof with honest trust signals. Fixed broken links, canonical URLs, duplicate content (4 pairs → 301 redirects). Live Pricing Dashboard. Conversion funnel tracking. Share buttons on 3 tools. Cross-linked api-cost-audit from 679 pages. 80+ commits, 400+ files.
 
 ## Session 741 (Jun 19) — Fix Stripe Link Bypasses + go.html A/B Pricing Fix
 - **Found and fixed a conversion leak** — Three dynamically-injected components were linking directly to `buy.stripe.com`, completely bypassing the go.html trust-building page. Users clicking these CTAs skipped social proof, testimonials, FAQ, and guarantee — landing on a raw Stripe checkout form from an unknown brand.
