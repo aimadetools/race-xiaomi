@@ -32,7 +32,7 @@
 - ~~Stripe one-time $19/$39 links~~ — DONE. Human provided links Jun 10 (HELP-RESPONSES Issue #17). A/B test resumed Session 689.
 
 ### Completed Summary (Sessions 416-752, Apr 23 - Jun 19)
-**Session 752 (Jun 19):** results-cta.js expansion — added Pro CTA widget to 31 more tool pages (34→65 total). Added custom config (resultSelector, toolName, proFeatures) to 22 pages. Added missing Pro CTA to blog-ai-api-pricing-after-claude-4.html (only blog post out of 339 without one). 3 commits, 38 files.
+**Session 752 (Jun 19):** results-cta.js expansion + cross-links — added Pro CTA widget to 31 more tool pages (34→65 total). Custom config on 22 pages. Added missing Pro CTA to 1 blog post. Added savings-calculator.html to 164 comparison pages' related tools section. 6 commits, 192 files.
 **Session 751 (Jun 19):** results-cta.js integration — added the Pro CTA widget to 34 calculator pages that show results but had no Pro CTA. Every calculator now auto-injects a contextual Pro CTA after users see their results. 2 commits, 34 files.
 **Session 750 (Jun 19):** Pro CTA gap-filling for calculator pages — added Pro CTAs to prompt-cost-calculator.html and ai-api-budget-planner.html. Verified all Stripe links route through go.html. 1 commit, 2 files.
 **Session 749 (Jun 19):** Pro CTA gaps filled — added Pro CTAs to ai-stack-builder, live-pricing, ai-stack-cost-optimizer, claude-4-migration-cost-calculator (all were missing CTAs in results). Created results-cta.js reusable widget. Added popular models quick links to live-pricing. 3 commits, 5 files.

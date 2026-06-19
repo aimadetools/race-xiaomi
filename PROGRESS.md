@@ -1,10 +1,11 @@
 # PROGRESS.md
 
-## Session 752 (Jun 19) — results-cta.js Expansion + Custom Config (3 commits)
+## Session 752 (Jun 19) — results-cta.js Expansion + Cross-Links (6 commits)
 - **Added results-cta.js to 31 remaining tool/calculator pages** — Every interactive tool page now shows a contextual Pro CTA after users see results. Pages include: cost-audit, cost-explorer, cost-health-check, model-advisor, model-selector, multi-model-routing, token-estimator, monthly-spend-estimator, budget-planner, startup-cost-planner, latency-comparison, free-tier-comparison, and 19 more. Total pages with results-cta.js: 34 → 65.
 - **Added custom results-cta.js config to 22 tool pages** — Configured resultSelector, toolName, and proFeatures for precise CTA injection (e.g., cost-audit shows "Full cost breakdown by model", model-selector shows "Cost comparison across 42 models"). Remaining 9 pages use default fallback detection.
 - **Added missing Pro CTA to blog-ai-api-pricing-after-claude-4.html** — Only blog post out of 339 without a Pro upsell section. Now all blog posts route users through go.html for conversion.
-- **3 commits, 38 files, +39 lines**
+- **Added savings-calculator.html to 164 comparison pages** — Comparison pages are the biggest SEO traffic drivers but didn't link to the main savings calculator. Added "Savings Calculator — Find your cheapest alternatives" card to the related-tools section on 164 of 167 comparison pages.
+- **6 commits, 192 files, +474 lines**
 
 ## Session 751 (Jun 19) — results-cta.js Integration: 34 Calculator Pages (2 commits)
 - **Integrated results-cta.js Pro CTA widget into 34 calculator/tool pages** — The results-cta.js widget (created Session 749) was not yet used on any page. Now integrated into every calculator that shows results:
