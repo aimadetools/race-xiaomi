@@ -25,7 +25,7 @@ All Week 9 tasks COMPLETE except items 22-24 (blocked on human/GA4):
 27. Plan v2 — If revenue justifies, plan next features.
 
 ### Completed (Sessions 416-746, Apr 23 - Jun 19)
-**Session 746 (Jun 19):** go.html conversion tightening — stronger urgency bar (concrete $29→$49 price increase), FAQ 9→5 items (kept 5 core objection handlers). 1 commit, 1 file, -16 lines.
+**Session 746 (Jun 19):** go.html conversion tightening — stronger urgency bar, FAQ 9→5, removed redundant Pro Unlocks grid, strengthened Free vs Pro table. 3 commits, 1 file, -79 lines.
 **Session 745 (Jun 19):** Conversion optimization — payback period in estimator, replaced redundant demo with compact Pro features grid, improved social proof ($720+/yr), fixed sticky bar UX loop on go.html, fixed pricing + migration calculator A/B CTA selectors. 3 commits, 3 files.
 **Session 744 (Jun 19):** Added interactive savings estimator to go.html — personalized "What Could YOU Save?" widget with model selector, spend input, instant calculation of savings with top 3 alternatives. Bridges gap between static demo and full calculator. 1 commit, 1 file.
 **Session 743 (Jun 19):** Added interactive "See Pro in Action" demo widget to go.html — shows real GPT-5 → DeepSeek V4 Pro savings (88%), sample migration code, locked preview, in-context CTA. Changed approach from copy tweaks to product demonstration. 1 commit, 1 file.
