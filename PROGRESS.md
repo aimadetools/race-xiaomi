@@ -1,14 +1,15 @@
 # PROGRESS.md
 
-## Session 741 (Jun 19) — Fix 3 Stripe Link Bypasses in Dynamic CTAs
+## Session 741 (Jun 19) — Fix Stripe Link Bypasses + go.html A/B Pricing Fix
 - **Found and fixed a conversion leak** — Three dynamically-injected components were linking directly to `buy.stripe.com`, completely bypassing the go.html trust-building page. Users clicking these CTAs skipped social proof, testimonials, FAQ, and guarantee — landing on a raw Stripe checkout form from an unknown brand.
 - **Fixed components:**
   1. **Time-based sticky bottom CTA bar** (appears after 45s on all content pages) — now routes through `go.html?from=sticky_bottom_bar_<page>`
   2. **Scroll-triggered sticky Pro CTA bar** (appears at 30% scroll depth) — now routes through `go.html?from=<context>_<page>`
   3. **Blog inline Pro upsell** (appears after `.cta-inline` on blog posts) — now routes through `go.html?from=blog_inline_upsell_<post>`
 - **Root cause:** shared.js rewrites all `buy.stripe.com` links to go.html during DOMContentLoaded, but these three components are injected AFTER that event (via setTimeout or scroll listener), so they were never caught by the rewriting logic.
+- **Fixed go.html A/B pricing mismatch** — The "was" price ($49) and savings badge (Save 41%) were hardcoded, but the A/B test has two variants ($19 and $29). For the $19 variant, the actual discount is 61% off $49, not 41% — a misleading inconsistency on the most critical conversion page. Now dynamically calculates correct values per variant ($19→$39/51%, $29→$49/41%).
 - **Verified:** Both exit popups (deprecation + high-intent) already correctly route through go.html. Two dead `stripeLink` variables removed.
-- **1 commit, 1 file, 6 insertions, 6 deletions**
+- **3 commits, 2 files**
 
 ## Session 740 (Jun 19) — Site Audit + Embed Cross-Links
 - **Full site audit** — Checked SEO basics, sitemap health, broken links, Stripe link routing, shared.js coverage. Site is technically sound: all 685 pages have canonical URLs, only utility pages lack meta descriptions (by design), no broken internal links, all Stripe links properly routed through go.html via shared.js runtime rewrite.
