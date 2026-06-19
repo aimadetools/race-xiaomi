@@ -428,12 +428,9 @@
     </div>
 
     <script>
-    // Fix Pro CTA links to use A/B test
+    // Fix Pro CTA price displays (A/B test)
+    // Note: shared.js rewrites stripe links to go.html at runtime — A/B pricing handled by go.html
     document.addEventListener('DOMContentLoaded', function() {
-        var proLinks = document.querySelectorAll('a[href*="buy.stripe.com"]');
-        proLinks.forEach(function(a) {
-            if (window._abStripeLink) a.href = window._abStripeLink;
-        });
         var proPriceEls = document.querySelectorAll('.pro-price');
         proPriceEls.forEach(function(el) {
             if (window._abPrice) el.textContent = '$' + window._abPrice;
