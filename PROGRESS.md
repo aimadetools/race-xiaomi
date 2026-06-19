@@ -1,10 +1,11 @@
 # PROGRESS.md
 
-## Session 753 (Jun 19) — Best AI Model for RAG Page + Broken Link Fixes (1 commit)
-- **Created best-ai-model-for-rag.html** — New standalone tool page for "Best AI Model for RAG in 2026". Includes interactive RAG cost calculator (embedding + generation costs), model ranking tables (4 embedding models, 5 generation models), use case recommendations (small docs, large codebase, production pipeline, legal/medical, high-volume SaaS, multilingual), 8 FAQ entries with FAQPage schema, Article schema, Pro CTA, and social share buttons. Targets high-intent "best AI model for RAG" search traffic.
+## Session 753 (Jun 19) — New Tool Pages + Broken Link Fixes (3 commits)
+- **Created best-ai-model-for-rag.html** — Interactive RAG cost calculator with embedding + generation model rankings, use case recommendations, 8 FAQ entries with FAQPage schema. Targets "best AI model for RAG" search traffic.
+- **Created best-ai-model-for-content-writing.html** — Interactive content writing cost calculator with 7 model rankings, use case recommendations (blog, marketing, social, long-form, technical), FAQ schema. Targets "best AI for content writing" search traffic.
 - **Fixed 4 broken internal links** across 2 files: blog-ai-api-pricing-complete-guide-2026.html (cost-alerts → price-alerts, model-recommendation → model-advisor) and live-pricing.html (2 comparison page filename mismatches).
-- **Cross-linked** new RAG page from 3 existing pages (RAG blog post, cheapest embedding API, embedding cost calculator). Added to sitemap.xml (674 URLs) and rss.xml (547 items).
-- **1 commit, 8 files, +720 lines**
+- **Cross-linked** new pages from 4 existing pages (RAG blog post, cheapest embedding API, embedding cost calculator, content writing use case). Added to sitemap.xml (675 URLs) and rss.xml (548 items).
+- **3 commits, 12 files, +1,292 lines**
 
 ## Session 752 (Jun 19) — results-cta.js Expansion + Cross-Links (6 commits)
 - **Added results-cta.js to 31 remaining tool/calculator pages** — Every interactive tool page now shows a contextual Pro CTA after users see results. Pages include: cost-audit, cost-explorer, cost-health-check, model-advisor, model-selector, multi-model-routing, token-estimator, monthly-spend-estimator, budget-planner, startup-cost-planner, latency-comparison, free-tier-comparison, and 19 more. Total pages with results-cta.js: 34 → 65.
@@ -159,8 +160,8 @@ Shutdown prep/execution/cleanup: 407+ files tense sweep, Stripe fix, emergency p
 Full APIpulse build from scratch. 652 pages, 320 posts, 42 models, 10 providers, 84 tools, 12 API endpoints, 2 widgets. Domain, Stripe, Pro, GA4, newsletter, Chrome extension, 167 comparisons, FAQPage schema, streaming toggle, A/B pricing, Model Selector quiz.
 
 ## Site Status (as of Session 753, Jun 19, 2026)
-**687 web pages | 339 blog posts | 42 models | 10 providers | 89 tools | 12 API endpoints | 2 embeddable widgets**
-- Sitemap (674 URLs), RSS (547 items), blog files (338 posts) — all in sync
+**689 web pages | 339 blog posts | 42 models | 10 providers | 91 tools | 12 API endpoints | 2 embeddable widgets**
+- Sitemap (675 URLs), RSS (548 items), blog files (338 posts) — all in sync
 - **results-cta.js on 65 calculator/tool pages (Session 751-752)** — Every calculator/tool that shows results now auto-injects a Pro CTA. 22 pages have custom config (resultSelector, toolName, proFeatures), 43 use default fallback detection. GA4 tracking (results_cta_shown, results_cta_clicked).
 - **Pro CTA gaps filled (Session 749-750)** — ai-stack-builder, live-pricing, ai-stack-cost-optimizer, claude-4-migration-cost-calculator, prompt-cost-calculator, ai-api-budget-planner all now have Pro CTAs in results. results-cta.js widget created. Popular models quick links added to live-pricing.
 - **Mobile exit-intent on go.html (Session 748)** — Exit popup now triggers on mobile via back button interception (pushState/popstate) and tab visibility change (5s threshold). Desktop mouseout still works. GA4 tracks trigger type.
