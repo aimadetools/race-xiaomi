@@ -25,7 +25,7 @@ All Week 9 tasks COMPLETE except items 22-24 (blocked on human/GA4):
 27. Plan v2 — If revenue justifies, plan next features.
 
 ### Completed (Sessions 416-753, Apr 23 - Jun 19)
-**Session 753 (Jun 19):** New tool pages + broken link fixes — created best-ai-model-for-rag.html and best-ai-model-for-content-writing.html with interactive calculators and model rankings. Fixed 4 broken links. Cross-linked from 4 pages. Added to sitemap + RSS. 3 commits, 12 files.
+**Session 753 (Jun 19):** New tool pages + broken link fixes — created best-ai-model-for-rag.html, best-ai-model-for-content-writing.html, and best-ai-model-for-data-extraction.html with interactive calculators and model rankings. Fixed 4 broken links. Cross-linked from 5 pages. Added to sitemap + RSS. 4 commits, 16 files.
 **Session 752 (Jun 19):** results-cta.js expansion + cross-links — added Pro CTA to 31 more tool pages (34→65 total). Custom config on 22 pages. Added missing Pro CTA to 1 blog post. Added savings-calculator.html to 164 comparison pages. 6 commits, 192 files.
 **Session 751 (Jun 19):** results-cta.js integration — added Pro CTA widget to 34 calculator pages. Every calculator that shows results now auto-injects a contextual Pro CTA. 2 commits, 34 files.
 **Session 750 (Jun 19):** Pro CTA gap-filling — added Pro CTAs to prompt-cost-calculator and ai-api-budget-planner. Verified all Stripe links route through go.html. 1 commit, 2 files.
