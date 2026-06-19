@@ -230,6 +230,82 @@
         <div style="text-align:center;margin-top:24px;">
             <p style="font-size:13px;color:var(--text-muted);">📊 Want these prices on your site? <a href="embed.html" style="color:var(--accent);">Embed a live widget →</a></p>
         </div>
+
+        <!-- FAQ Section -->
+        <section style="max-width:800px;margin:48px auto 0;padding:0 20px;">
+            <h2 style="font-size:24px;font-weight:800;margin-bottom:24px;text-align:center;">Frequently Asked Questions</h2>
+            <div style="display:flex;flex-direction:column;gap:16px;">
+                <details style="border:1px solid var(--border);border-radius:10px;padding:16px 20px;background:var(--bg-secondary);">
+                    <summary style="font-weight:700;font-size:15px;cursor:pointer;color:var(--text-primary);">How often is this pricing data updated?</summary>
+                    <p style="margin-top:12px;font-size:14px;color:var(--text-secondary);line-height:1.6;">We verify pricing data regularly from official provider documentation. Prices shown reflect the latest publicly listed rates from each provider's API pricing page. Last verified date is shown at the bottom of the page.</p>
+                </details>
+                <details style="border:1px solid var(--border);border-radius:10px;padding:16px 20px;background:var(--bg-secondary);">
+                    <summary style="font-weight:700;font-size:15px;cursor:pointer;color:var(--text-primary);">Which AI model is cheapest right now?</summary>
+                    <p style="margin-top:12px;font-size:14px;color:var(--text-secondary);line-height:1.6;">The cheapest models change frequently. Use the table above — sort by "Output" or "Input" price to find the current cheapest option. Budget-tier models like Gemini Flash Lite, DeepSeek V4 Flash, and Llama 4 Scout typically offer the lowest per-token costs.</p>
+                </details>
+                <details style="border:1px solid var(--border);border-radius:10px;padding:16px 20px;background:var(--bg-secondary);">
+                    <summary style="font-weight:700;font-size:15px;cursor:pointer;color:var(--text-primary);">What's the difference between input and output pricing?</summary>
+                    <p style="margin-top:12px;font-size:14px;color:var(--text-secondary);line-height:1.6;">Input pricing is what you pay for tokens sent TO the model (your prompt + context). Output pricing is what you pay for tokens the model generates (its response). Output tokens are typically 2-10x more expensive than input tokens.</p>
+                </details>
+                <details style="border:1px solid var(--border);border-radius:10px;padding:16px 20px;background:var(--bg-secondary);">
+                    <summary style="font-weight:700;font-size:15px;cursor:pointer;color:var(--text-primary);">How much can I save by switching models?</summary>
+                    <p style="margin-top:12px;font-size:14px;color:var(--text-secondary);line-height:1.6;">Savings depend on your usage pattern. Our users save an average of 40% by switching to the right model for their workload. Use the <a href="savings-calculator.html" style="color:var(--accent);">Savings Calculator</a> to see your exact potential savings based on your token usage.</p>
+                </details>
+                <details style="border:1px solid var(--border);border-radius:10px;padding:16px 20px;background:var(--bg-secondary);">
+                    <summary style="font-weight:700;font-size:15px;cursor:pointer;color:var(--text-primary);">Are there hidden costs beyond per-token pricing?</summary>
+                    <p style="margin-top:12px;font-size:14px;color:var(--text-secondary);line-height:1.6;">Some providers charge for image generation, fine-tuning, or dedicated capacity. Most standard text API calls only incur per-token costs. Always check the provider's pricing page for edge cases like batch processing discounts or rate limit tiers.</p>
+                </details>
+            </div>
+        </section>
+
+        <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+                {
+                    "@type": "Question",
+                    "name": "How often is this pricing data updated?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "We verify pricing data regularly from official provider documentation. Prices shown reflect the latest publicly listed rates from each provider's API pricing page."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "Which AI model is cheapest right now?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "The cheapest models change frequently. Sort by Output or Input price to find the current cheapest option. Budget-tier models like Gemini Flash Lite, DeepSeek V4 Flash, and Llama 4 Scout typically offer the lowest per-token costs."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "What's the difference between input and output pricing?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Input pricing is what you pay for tokens sent TO the model (your prompt + context). Output pricing is what you pay for tokens the model generates. Output tokens are typically 2-10x more expensive than input tokens."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "How much can I save by switching models?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Savings depend on your usage pattern. Our users save an average of 40% by switching to the right model for their workload."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "Are there hidden costs beyond per-token pricing?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Some providers charge for image generation, fine-tuning, or dedicated capacity. Most standard text API calls only incur per-token costs. Always check the provider's pricing page for edge cases."
+                    }
+                }
+            ]
+        }
+        </script>
     </main>
 
     <footer>
