@@ -1,5 +1,11 @@
 # PROGRESS.md
 
+## Session 746 (Jun 19) — go.html Conversion: Stronger Urgency, Shorter FAQ
+- **Strengthened urgency bar copy** — Changed from generic "Founding member price — X left at this price" to specific "Price doubles to $49 on July 12 — X left at $29". Concrete price increase ($29→$49) creates real urgency vs vague "this price".
+- **Reduced FAQ from 9 items to 5** — Removed 4 weakest FAQs that didn't address core objections: "What if API prices change?" (niche), "I only use one provider?" (niche), "Is the demo real data?" (redundant with trust signals), and one duplicate. Kept 5 that address the 5 core purchase objections: (1) one-time payment? (2) why not DIY? (3) guarantee? (4) what do I get? (5) is this real?
+- **16 fewer lines** — Less cognitive load for a $29 impulse purchase page. Fewer items = each remaining FAQ gets more attention.
+- **1 commit, 1 file, -16 lines**
+
 ## Session 745 (Jun 19) — Conversion Optimization: Payback Period + Page Tightening
 - **Added payback period to savings estimator (go.html)** — Shows "⚡ $29 Pro pays for itself in X days" below the annual savings number. Calculates dynamically: `price / monthly_saving * 30`. For GPT-5 at $100/mo spend, shows "pays for itself in 6 days". Updates instantly as user changes model or spend amount.
 - **Updated estimator CTA text** — Changed from static "See All Your Alternatives — $29" to personalized "Save $600/yr — Get Pro for $29" (dynamically shows user's actual savings amount).

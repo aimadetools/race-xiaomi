@@ -651,51 +651,6 @@
             </div>
         </div>
 
-        <!-- What Pro Unlocks — compact feature grid replacing redundant static demo -->
-        <div class="demo-section">
-            <div class="demo-title">🔓 What Pro Unlocks</div>
-            <div class="demo-subtitle">Everything the free calculator can't show you:</div>
-
-            <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:20px;">
-                <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:10px;padding:14px;">
-                    <div style="font-size:20px;margin-bottom:6px;">📊</div>
-                    <div style="font-size:14px;font-weight:700;margin-bottom:4px;">All 15 Alternatives</div>
-                    <div style="font-size:12px;color:var(--text-secondary);">Ranked by cost — not just the top 3 the free tool shows</div>
-                </div>
-                <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:10px;padding:14px;">
-                    <div style="font-size:20px;margin-bottom:6px;">💻</div>
-                    <div style="font-size:14px;font-weight:700;margin-bottom:4px;">Migration Code</div>
-                    <div style="font-size:12px;color:var(--text-secondary);">Copy-paste snippets for every alternative in Python, Node, Go, more</div>
-                </div>
-                <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:10px;padding:14px;">
-                    <div style="font-size:20px;margin-bottom:6px;">📄</div>
-                    <div style="font-size:14px;font-weight:700;margin-bottom:4px;">PDF Reports</div>
-                    <div style="font-size:12px;color:var(--text-secondary);">Professional cost reports for your team, investors, or procurement</div>
-                </div>
-                <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:10px;padding:14px;">
-                    <div style="font-size:20px;margin-bottom:6px;">🔔</div>
-                    <div style="font-size:14px;font-weight:700;margin-bottom:4px;">Price Alerts</div>
-                    <div style="font-size:12px;color:var(--text-secondary);">Know when providers drop prices or launch cheaper models</div>
-                </div>
-            </div>
-
-            <!-- Sample migration code teaser -->
-            <div class="demo-code-header">Sample migration code (Pro includes snippets for every alternative)</div>
-            <div class="demo-code">
-                <span class="demo-code-comment"># Switch from OpenAI to DeepSeek (Python)</span><br>
-                <span class="demo-code-keyword">import</span> openai<br><br>
-                client = openai.OpenAI(<br>
-                  api_key=<span class="demo-code-string">"your-deepseek-key"</span>,<br>
-                  base_url=<span class="demo-code-string">"https://api.deepseek.com/v1"</span><br>
-                )
-            </div>
-
-            <a id="checkout-btn-demo" href="https://buy.stripe.com/fZu7sL3Gw3GS0RQeoDeEo0a" class="cta-btn demo-cta" target="_blank" rel="noopener">
-                Get Lifetime Access — <span id="btn-price-demo">$29</span>
-            </a>
-            <p class="cta-sub">14-day money-back guarantee · One-time payment · Lifetime access</p>
-        </div>
-
         <!-- What you get after purchase -->
         <div style="background:var(--bg-secondary);border:1px solid var(--border);border-radius:12px;padding:20px;margin-bottom:24px;">
             <div style="font-size:14px;font-weight:700;margin-bottom:12px;text-align:center;">⏱️ What happens after you buy?</div>
@@ -854,10 +809,6 @@
             // Update Stripe links
             document.getElementById('checkout-btn').href = stripeLink;
             document.getElementById('checkout-btn-bottom').href = stripeLink;
-            var demoBtn = document.getElementById('checkout-btn-demo');
-            if (demoBtn) demoBtn.href = stripeLink;
-            var demoPrice = document.getElementById('btn-price-demo');
-            if (demoPrice) demoPrice.textContent = '$' + price;
             var estBtn = document.getElementById('checkout-btn-est');
             if (estBtn) estBtn.href = stripeLink;
             var estPrice = document.getElementById('btn-price-est');
@@ -874,7 +825,7 @@
             }
 
             // Track CTA clicks
-            ['checkout-btn', 'checkout-btn-bottom', 'checkout-btn-demo', 'checkout-btn-est'].forEach(function(id) {
+            ['checkout-btn', 'checkout-btn-bottom', 'checkout-btn-est'].forEach(function(id) {
                 document.getElementById(id).addEventListener('click', function() {
                     if (window.trackEvent) {
                         window.trackEvent('checkout_cta_clicked', {
