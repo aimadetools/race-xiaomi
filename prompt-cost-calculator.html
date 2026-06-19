@@ -366,6 +366,19 @@
             </div>
         </div>
 
+        <!-- Pro CTA after results -->
+        <div id="proCta" style="display:none;background:var(--bg-secondary);border:1px solid var(--accent);border-radius:16px;padding:32px;margin-top:32px;text-align:center;">
+            <h3 style="font-size:22px;font-weight:700;margin-bottom:8px;">🚀 Unlock Your Full Cost Report</h3>
+            <p style="color:var(--text-secondary);font-size:15px;margin-bottom:16px;">You just compared <strong id="ctaModelCount">42 models</strong> — Pro shows you the complete optimization roadmap with migration code, batch strategies, and PDF export for your team.</p>
+            <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-bottom:16px;">
+                <span style="font-size:13px;color:var(--text-secondary);">✓ Migration code snippets</span>
+                <span style="font-size:13px;color:var(--text-secondary);">✓ Batch & caching strategies</span>
+                <span style="font-size:13px;color:var(--text-secondary);">✓ PDF report for your team</span>
+            </div>
+            <a id="ctaLink" href="go.html?from=prompt_calc" class="btn-primary" style="padding:14px 36px;font-size:16px;" onclick="if(window.trackEvent)window.trackEvent('pro_button_clicked',{source:'prompt_calc_results'})">Get Pro — $<span class="ab-price">29</span> →</a>
+            <p style="font-size:12px;color:var(--text-muted);margin-top:12px;">✅ 14-day money-back guarantee · Instant access</p>
+        </div>
+
         <div class="share-section" id="shareSection" style="display:none;">
             <h3>Share This Calculation</h3>
             <p>Send this link to your team — it loads your exact configuration.</p>
@@ -551,6 +564,16 @@
         renderResults(results, monthlyRequests);
         document.getElementById('resultsSection').style.display = 'block';
         document.getElementById('emptyState').style.display = 'none';
+
+        // Show Pro CTA with savings context
+        const cheapest = results[0];
+        const mostExpensive = results[results.length - 1];
+        const monthlySavings = mostExpensive.monthlyCost - cheapest.monthlyCost;
+        const ctaLink = document.getElementById('ctaLink');
+        ctaLink.href = 'go.html?savings=' + monthlySavings.toFixed(2) + '&from=prompt_calc&model=' + encodeURIComponent(cheapest.name);
+        ctaLink.innerHTML = 'Get Pro — $' + (window._abPrice || 29) + ' · Save $' + (monthlySavings * 12).toFixed(0) + '/yr →';
+        document.getElementById('ctaModelCount').textContent = results.length + ' models';
+        document.getElementById('proCta').style.display = 'block';
     }
 
     function sortResults(by) {
