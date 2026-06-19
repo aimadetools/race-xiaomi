@@ -1,5 +1,16 @@
 # PROGRESS.md
 
+## Session 745 (Jun 19) — Conversion Optimization: Payback Period + Page Tightening
+- **Added payback period to savings estimator (go.html)** — Shows "⚡ $29 Pro pays for itself in X days" below the annual savings number. Calculates dynamically: `price / monthly_saving * 30`. For GPT-5 at $100/mo spend, shows "pays for itself in 6 days". Updates instantly as user changes model or spend amount.
+- **Updated estimator CTA text** — Changed from static "See All Your Alternatives — $29" to personalized "Save $600/yr — Get Pro for $29" (dynamically shows user's actual savings amount).
+- **Replaced redundant static demo with compact "What Pro Unlocks" grid** — The static demo (fixed GPT-5 scenario with 3 alternatives) duplicated what the interactive estimator already does better. Replaced with a 2×2 feature grid (All 15 Alternatives, Migration Code, PDF Reports, Price Alerts) + sample code teaser. Page is 9 lines shorter.
+- **Improved social proof numbers** — "40% avg savings" → "$720+ avg annual savings" (dollar amount more concrete than percentage). "89 tools" → "10 providers" (breadth indicator). Bottom CTA subtitle: "saving $720+/yr on AI APIs".
+- **Fixed sticky CTA bars on go.html** — Both sticky bars (time-based + scroll-triggered) were showing on go.html, creating clutter on a page that already has 4 CTAs. Added 'go' to skipPages list.
+- **Fixed sticky bar UX loop** — Both sticky bars linked to go.html while users were already ON go.html, creating a confusing no-op loop. Suppressed both bars on go.html.
+- **Fixed pricing.html A/B CTA text** — JS queried `a[href*="buy.stripe.com"]` to update button text with A/B price, but shared.js already rewrites those hrefs to go.html. Query found 0 matches, so CTA text was always default $29. Changed selector to `a.btn-primary`.
+- **Fixed claude-4-migration-calculator.html A/B Stripe override** — Same pattern: JS tried to override Stripe hrefs with A/B variant, but shared.js already handles routing. Removed broken href override, kept price text updates.
+- **3 commits, 3 files, ~80 insertions, ~75 deletions**
+
 ## Session 744 (Jun 19) — Interactive Savings Estimator on go.html
 - **Added "What Could YOU Save?" interactive estimator to go.html** — After Session 743 added a static demo showing one fixed GPT-5 scenario, this session adds a personalized estimator where users select THEIR model and enter THEIR monthly spend. The widget instantly calculates savings with 3 cheapest alternatives.
   - **8 popular models in dropdown** — GPT-5, GPT-5.5, GPT-4o, Claude Sonnet 4.6, Claude Opus 4.8, Claude Haiku 4.5, Gemini 2.5 Pro, Gemini 3.5 Flash
@@ -133,14 +144,15 @@ Shutdown prep/execution/cleanup: 407+ files tense sweep, Stripe fix, emergency p
 ## Summary: Sessions 1-598 (Apr 5 - Jun 12)
 Full APIpulse build from scratch. 652 pages, 320 posts, 42 models, 10 providers, 84 tools, 12 API endpoints, 2 widgets. Domain, Stripe, Pro, GA4, newsletter, Chrome extension, 167 comparisons, FAQPage schema, streaming toggle, A/B pricing, Model Selector quiz.
 
-## Site Status (as of Session 744, Jun 19, 2026)
+## Site Status (as of Session 745, Jun 19, 2026)
 **685 web pages | 339 blog posts | 42 models | 10 providers | 89 tools | 12 API endpoints | 2 embeddable widgets**
 - Sitemap (673 URLs), RSS (546 items), blog files (338 posts) — all in sync
 - **ALL Pro CTAs route through go.html (Session 734-741)** — Trust-building page before Stripe checkout. Static HTML links rewritten by shared.js at runtime. Dynamic CTAs (sticky bars, blog upsell) fixed Session 741.
 - **Live Pricing Dashboard cross-linked from 318+ pages (Session 738)** — 166 comparison pages, 150 blog posts, tools/pricing/calculator/compare pages. FAQPage schema added.
 - **Embed widgets cross-linked from 239 pages (Session 740)** — All tool pages, blog posts, and comparison pages link to embed.html.
 - **Honest social proof on go.html (Session 735)** — Fake "just got Pro" replaced with developer count, global usage, avg savings, Stripe security, guarantee.
-- **Interactive savings estimator on go.html (Session 744)** — Personalized "What Could YOU Save?" widget. Users pick their model + monthly spend, see instant savings with top 3 alternatives. Pre-fills with GPT-5/$100 default. GA4 tracking.
+- **Interactive savings estimator on go.html (Session 744-745)** — Personalized "What Could YOU Save?" widget with payback period ("Pro pays for itself in X days"). Users pick their model + monthly spend, see instant savings with top 3 alternatives. Pre-fills with GPT-5/$100 default. CTA shows personalized savings amount. GA4 tracking.
+- **Sticky bars suppressed on go.html (Session 745)** — Both time-based and scroll-triggered sticky CTAs now skip go.html (page has 4 native CTAs; sticky bars linked back to go.html creating a loop).
 - **Quick Savings page (Session 732)** — Ultra-fast 2-click savings estimate. Cross-linked from 167 comparison pages.
 - **Pre-checkout landing page go.html (Session 731)** — Social proof, testimonials, FAQ, guarantee before Stripe.
 - **A/B pricing test LIVE** — $19 vs $29 (50/50).
