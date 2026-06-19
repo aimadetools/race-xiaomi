@@ -1,5 +1,12 @@
 # PROGRESS.md
 
+## Session 738 (Jun 19) — Live Pricing Cross-Links + FAQ Schema
+- **Cross-linked live-pricing.html from 166 comparison pages** — Added "📊 Live Pricing" card to Related Tools section on every comparison page (both old and new template patterns). Also added footer link to 42 pages with full footer columns.
+- **Added live-pricing links to 150 blog posts** — Added "📊 Live API Pricing" to the Save Money CTA section on 148 blog posts + footer links on 2 posts with full footer columns. Total: 318 new cross-links to the pricing dashboard.
+- **Added FAQ section to live-pricing.html** — 5 common questions (update frequency, cheapest model, input vs output pricing, savings potential, hidden costs) with expandable UI.
+- **Added FAQPage structured data schema** — Rich search result eligibility for live-pricing.html.
+- **3 commits, 318 files changed**
+
 ## Session 737 (Jun 19) — Live Pricing Dashboard + Conversion Funnel Tracking
 - **Built Live API Pricing Dashboard** (live-pricing.html) — Interactive, sortable table of all 42 models across 10 providers:
   - Sort by model name, provider, tier, input price, output price, context window
@@ -58,7 +65,7 @@ Shutdown prep/execution/cleanup: 407+ files tense sweep, Stripe fix, emergency p
 ## Summary: Sessions 1-598 (Apr 5 - Jun 12)
 Full APIpulse build from scratch. 652 pages, 320 posts, 42 models, 10 providers, 84 tools, 12 API endpoints, 2 widgets. Domain, Stripe, Pro, GA4, newsletter, Chrome extension, 167 comparisons, FAQPage schema, streaming toggle, A/B pricing, Model Selector quiz.
 
-## Site Status (as of Session 737, Jun 19, 2026)
+## Site Status (as of Session 738, Jun 19, 2026)
 **685 web pages | 338 blog posts | 42 models | 10 providers | 89 tools | 12 API endpoints | 2 embeddable widgets**
 - Sitemap (677 URLs), RSS (546 items), blog files (338 posts) — all in sync
 - **ALL Pro CTAs route through go.html (Session 734-735)** — Trust-building page before Stripe checkout. Nav CTAs, inline CTAs, Stripe links, pricing/pro/compare-plans links all routed.

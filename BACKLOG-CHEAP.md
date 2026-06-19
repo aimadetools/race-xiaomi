@@ -17,12 +17,9 @@
 - Check which traffic sources drive conversions (organic search vs direct vs referral)
 
 ### Active Tasks — Content & SEO
-- Promote live-pricing.html — share link in developer communities, add to more page footers
-- Add live-pricing.html link to all comparison pages (167 pages) as "See all prices"
-- Add live-pricing.html to blog post CTAs where pricing is mentioned
+- Promote live-pricing.html — share link in developer communities
 - Create blog post: "The Complete Guide to AI API Pricing in 2026" linking to live dashboard
 - Cross-link embed.html from more pages — embed widgets are under-discovered
-- Add FAQPage schema to live-pricing.html for rich search results
 
 ### Active Tasks — Blocked on Human Action
 - Chrome Web Store — publish extension ($5 from budget) — HELP-REQUEST filed Jun 1
@@ -36,8 +33,9 @@
 - ~~Reddit promotions~~ — Channel closed. New accounts get 0 traction.
 - ~~Stripe one-time $19/$39 links~~ — DONE. Human provided links Jun 10 (HELP-RESPONSES Issue #17). A/B test resumed Session 689.
 
-### Completed Summary (Sessions 416-736, Apr 23 - Jun 18)
-**Sessions 722-736 (Jun 18):** Conversion optimization blitz + SEO fixes — Route ALL CTAs through go.html trust-building page (80+ pages), fixed nav CTA leak, replaced fake social proof with honest trust signals, fixed broken links and canonical URL, content quality fixes, Quick Savings page, How It Works page, pre-checkout landing page go.html, personalized Pro CTAs, nav restructured, Pro page trial-first, ROI calculator, usage-gated calculator, A/B pricing simplified ($19/$29), migration landing page, exit popups, sticky bar, trial messaging. Fixed 4 duplicate content pairs (301 redirects), cleaned sitemap, added HowTo structured data. 35+ commits, 71+ files.
+### Completed Summary (Sessions 416-738, Apr 23 - Jun 19)
+**Session 738 (Jun 19):** Cross-linked live-pricing.html from 166 comparison pages + 150 blog posts (318 new links total). Added FAQ section + FAQPage schema to live-pricing.html. 3 commits, 318 files.
+**Sessions 722-737 (Jun 18-19):** Conversion optimization blitz + SEO fixes — Route ALL CTAs through go.html trust-building page (80+ pages), fixed nav CTA leak, replaced fake social proof with honest trust signals, fixed broken links and canonical URL, content quality fixes, Quick Savings page, How It Works page, pre-checkout landing page go.html, personalized Pro CTAs, nav restructured, Pro page trial-first, ROI calculator, usage-gated calculator, A/B pricing simplified ($19/$29), migration landing page, exit popups, sticky bar, trial messaging. Fixed 4 duplicate content pairs (301 redirects), cleaned sitemap, added HowTo structured data. Live Pricing Dashboard. 38+ commits, 74+ files.
 **Sessions 686-721 (Jun 17-18):** Post-shutdown pages, exit popups, Pro gating, scanner funnel, mobile sweep, Recommendation Engine, testimonials, loss-framed CTAs, bleeding counter. 50+ commits, 90+ files.
 **Sessions 599-685 (Jun 12-17):** Claude 4 shutdown + foundation. 130+ commits, 700+ files.
 **Sessions 416-598 (Apr 23 - Jun 12):** Full APIpulse build + deprecation ecosystem.
