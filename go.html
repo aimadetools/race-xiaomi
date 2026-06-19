@@ -838,6 +838,7 @@
         var savingsAmount = document.getElementById('est-savings-amount');
         var savingsPct = document.getElementById('est-savings-pct');
         if (!modelSel || !spendInput) return;
+        var userInteracted = false; // Track if user changed model/spend (vs auto-load)
 
         // Pricing data (per 1M tokens)
         var models = {
@@ -916,10 +917,23 @@
                 }
             }
 
-            // Update CTA button text with savings context
-            var estCtaBtn = document.getElementById('checkout-btn-est');
-            if (estCtaBtn) {
-                estCtaBtn.innerHTML = 'Save $' + annualSaving.toLocaleString() + '/yr — Get Pro for $' + price;
+            // Update ALL CTAs on page with personalized savings — not just the estimator CTA
+            // Users who interact with the estimator are high-intent; every CTA should reinforce their savings
+            // Only sync all CTAs after user interaction — auto-load uses GPT-5/$100 defaults which may
+            // be less accurate than savings passed via URL param from the savings calculator
+            if (userInteracted) {
+                ['checkout-btn', 'checkout-btn-est', 'checkout-btn-bottom'].forEach(function(id) {
+                    var btn = document.getElementById(id);
+                    if (btn) {
+                        btn.innerHTML = 'Save $' + annualSaving.toLocaleString() + '/yr — Get Pro for $' + price;
+                    }
+                });
+            } else {
+                // On auto-load, only update the estimator CTA (others may have URL-param-based text)
+                var estCtaBtn = document.getElementById('checkout-btn-est');
+                if (estCtaBtn) {
+                    estCtaBtn.innerHTML = 'Save $' + annualSaving.toLocaleString() + '/yr — Get Pro for $' + price;
+                }
             }
 
             // Build table
@@ -943,8 +957,8 @@
             }
         }
 
-        modelSel.addEventListener('change', calculate);
-        spendInput.addEventListener('input', calculate);
+        modelSel.addEventListener('change', function() { userInteracted = true; calculate(); });
+        spendInput.addEventListener('input', function() { userInteracted = true; calculate(); });
         // Auto-calculate on load
         calculate();
 
