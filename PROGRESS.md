@@ -1,5 +1,18 @@
 # PROGRESS.md
 
+## Session 743 (Jun 19) — Interactive Pro Demo Widget on go.html
+- **Added "See Pro in Action" live demo section to go.html** — After 12 sessions of copy/trust tweaks with 0 sales, changed approach from describing features to SHOWING the product. Interactive demo pre-fills a realistic GPT-5 scenario (5M input + 5M output tokens/month, $56.25/mo) and shows 3 cheaper alternatives with real, verified pricing:
+  - DeepSeek V4 Pro: $6.52/mo (save 88.4%)
+  - Gemini 2.0 Flash: $2.50/mo (save 95.6%)
+  - Llama 4 Scout: $3.85/mo (save 93.2%)
+- **Includes sample migration code** — Python snippet showing OpenAI SDK → DeepSeek switch. Teases "Pro includes ready-to-paste snippets for every alternative."
+- **Locked preview section** — Shows what Pro unlocks (all 15 alternatives, complete migration code, PDF exports, saved scenarios) with a visual lock overlay.
+- **In-context CTA** — "Unlock Your Savings Report — $29" button placed directly below the demo, with A/B pricing support and click tracking.
+- **GA4 tracking** — IntersectionObserver fires `demo_section_viewed` event when 30% of demo is visible.
+- **Responsive design** — Mobile breakpoint at 600px, scenario bar stacks vertically, table font reduces.
+- **Root cause insight:** 12 sessions of copy tweaks (testimonials, FAQ, trust badges, urgency) didn't convert because feature LISTS don't demonstrate value. Users need to SEE the product working. The demo makes savings concrete — "$49.73/mo saved" is visceral in a way that "Full savings report" is not.
+- **1 commit, 1 file, 241 insertions**
+
 ## Session 742 (Jun 19) — Fix go.html Conversion Killers
 - **Replaced fake testimonials with real trust signals** — The two testimonials on go.html ("Indie developer, 50K daily requests" and "CTO, AI startup (Series A)") were obviously fabricated and destroyed trust on the most critical conversion page. Replaced with verifiable accomplishments: 42 models, 10 providers, 89 tools, 339 posts, Stripe security, money-back guarantee.
 - **Added "What happens after purchase" section** — 3-step onboarding flow (instant access → savings report → switch and save) to reduce purchase anxiety. Users who've never heard of APIpulse need to know what happens after they pay.
@@ -107,7 +120,7 @@ Shutdown prep/execution/cleanup: 407+ files tense sweep, Stripe fix, emergency p
 ## Summary: Sessions 1-598 (Apr 5 - Jun 12)
 Full APIpulse build from scratch. 652 pages, 320 posts, 42 models, 10 providers, 84 tools, 12 API endpoints, 2 widgets. Domain, Stripe, Pro, GA4, newsletter, Chrome extension, 167 comparisons, FAQPage schema, streaming toggle, A/B pricing, Model Selector quiz.
 
-## Site Status (as of Session 742, Jun 19, 2026)
+## Site Status (as of Session 743, Jun 19, 2026)
 **685 web pages | 339 blog posts | 42 models | 10 providers | 89 tools | 12 API endpoints | 2 embeddable widgets**
 - Sitemap (673 URLs), RSS (546 items), blog files (338 posts) — all in sync
 - **ALL Pro CTAs route through go.html (Session 734-741)** — Trust-building page before Stripe checkout. Static HTML links rewritten by shared.js at runtime. Dynamic CTAs (sticky bars, blog upsell) fixed Session 741.
