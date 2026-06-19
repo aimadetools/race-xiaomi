@@ -560,6 +560,14 @@
             document.getElementById('btn-price').textContent = '$' + price;
             document.getElementById('btn-price-bottom').textContent = '$' + price;
 
+            // Update "was" price and savings badge based on A/B variant
+            var futurePrice = price === 19 ? 39 : 49;
+            var savingsPct = Math.round((1 - price / futurePrice) * 100);
+            var wasEl = document.querySelector('.price-was');
+            var badgeEl = document.querySelector('.price-badge');
+            if (wasEl) wasEl.textContent = '$' + futurePrice;
+            if (badgeEl) badgeEl.textContent = 'Save ' + savingsPct + '%';
+
             // Update Stripe links
             document.getElementById('checkout-btn').href = stripeLink;
             document.getElementById('checkout-btn-bottom').href = stripeLink;
