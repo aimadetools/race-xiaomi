@@ -1,5 +1,13 @@
 # PROGRESS.md
 
+## Session 756 (Jun 19) — "Share Your Savings" Viral Feature (1 commit)
+- **Added share buttons to 3 key conversion tools** — Creates viral distribution loop where every savings calculation becomes a potential social media post driving new traffic:
+  - **savings-calculator.html** — Copy-to-clipboard, Tweet, and LinkedIn share buttons appear after users see results. Share text includes model names, exact savings amounts, and link back to APIpulse.
+  - **api-cost-audit.html** — Share section with copy, Tweet, and LinkedIn buttons appears after audit results. Share text includes current model, best alternative, and annual savings.
+  - **cost-optimizer.html** — Added copy-to-clipboard button and dynamic tweet link that updates with actual savings amounts. Full optimization summary in share text.
+- **GA4 tracking** — savings_shared event tracks method (clipboard/twitter/linkedin) and source (savings_calc/audit/optimizer)
+- **1 commit, 3 files, +121 lines**
+
 ## Session 755 (Jun 19) — Cross-Link Expansion: Audit Tool + Best-Model Pages (2 commits)
 - **Cross-linked api-cost-audit.html from 679 pages** (was 3 pages) — Massive cross-link expansion for the free cost audit tool created in Session 754:
   - **164 comparison pages** — Added "🔍 Free Cost Audit" card to Related Tools section (after Savings Calculator card)
