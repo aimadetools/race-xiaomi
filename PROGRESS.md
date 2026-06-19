@@ -1,5 +1,11 @@
 # PROGRESS.md
 
+## Session 752 (Jun 19) — results-cta.js Expansion + Custom Config (3 commits)
+- **Added results-cta.js to 31 remaining tool/calculator pages** — Every interactive tool page now shows a contextual Pro CTA after users see results. Pages include: cost-audit, cost-explorer, cost-health-check, model-advisor, model-selector, multi-model-routing, token-estimator, monthly-spend-estimator, budget-planner, startup-cost-planner, latency-comparison, free-tier-comparison, and 19 more. Total pages with results-cta.js: 34 → 65.
+- **Added custom results-cta.js config to 22 tool pages** — Configured resultSelector, toolName, and proFeatures for precise CTA injection (e.g., cost-audit shows "Full cost breakdown by model", model-selector shows "Cost comparison across 42 models"). Remaining 9 pages use default fallback detection.
+- **Added missing Pro CTA to blog-ai-api-pricing-after-claude-4.html** — Only blog post out of 339 without a Pro upsell section. Now all blog posts route users through go.html for conversion.
+- **3 commits, 38 files, +39 lines**
+
 ## Session 751 (Jun 19) — results-cta.js Integration: 34 Calculator Pages (2 commits)
 - **Integrated results-cta.js Pro CTA widget into 34 calculator/tool pages** — The results-cta.js widget (created Session 749) was not yet used on any page. Now integrated into every calculator that shows results:
   - **Batch 1 (10 pages):** ai-roi-calculator, ai-api-tco-calculator, ai-chatbot-cost-calculator, ai-project-budget-planner, agent-cost-calculator, calculator, savings-calculator, cost-optimizer, claude-api-cost-calculator, gpt5-api-cost-calculator
@@ -163,18 +169,8 @@
 - **Fixed nav CTA conversion leak** — shared.js now routes nav CTAs pointing to pro.html and compare-plans.html through go.html (previously only pricing.html was caught). Inline "Get Pro" CTAs on pro.html also now route through go.html.
 - **2 commits, 4 files, 24 insertions, 16 deletions**
 
-## Session 734 (Jun 18) — Conversion Fix: Route All CTAs Through Trust-Building Page
-- **Fixed major conversion leak** — 80+ pages had direct Stripe checkout links (`buy.stripe.com`) bypassing the go.html trust-building page. For a $29 purchase from an unknown brand, users need social proof, testimonials, FAQ, and guarantee BEFORE seeing a credit card form.
-- **shared.js now rewrites ALL Stripe links to go.html** — Including nav CTAs, inline blog CTAs, tool page CTAs, and pricing.html links. go.html handles A/B pricing ($19/$29) and routes to the correct Stripe variant.
-- **Updated 4 JS files** — analytics.js (hover tracking now matches go.html), pro-features.js (trial banner routes through go.html), usage-gate.js (usage gate wall CTA routes through go.html).
-- **New conversion flow**: Any page → go.html (trust-building) → Stripe checkout → thank-you.html
-- **1 commit, 4 files changed, 17 insertions, 12 deletions**
-
-## Session 733 (Jun 18) — Content Quality & Consistency Fixes
-- Fixed stale "500+ developers" → "1,247+" across 4 pages. Fixed deadline language in 2 JSON-LD schemas. Fixed duplicate meta descriptions across 4 blog posts. Verified all internal links (683 pages, 0 broken). 1 commit, 10 files.
-
-## Session 732 (Jun 18) — Quick Savings Page + Conversion Improvements
-- Created quick-savings.html (2-click savings estimate), How It Works page, auto-cross-links from 167 comparison pages, personalized exit popup hints. 1 commit, 6 files, ~590 insertions.
+## Summary: Sessions 732-741 (Jun 18) — Conversion funnel + SEO fixes
+10 sessions. Route ALL CTAs through go.html trust-building page (80+ pages), fixed nav CTA leak, replaced fake social proof with honest trust signals, fixed broken links and canonical URL, content quality fixes, Quick Savings page, How It Works page, duplicate content fixes (4 pairs → 301 redirects), HowTo schema, Live Pricing Dashboard, conversion funnel tracking. 20+ commits, 330+ files.
 
 ## Summary: Sessions 715-731 (Jun 18) — Conversion optimization blitz
 17 sessions. Pre-checkout landing page (go.html), personalized Pro CTAs, nav restructured (25+ → 5 visible + More dropdown), Pro page trial-first, ROI calculator, usage-gated calculator, A/B pricing simplified ($19/$29), migration landing page, exit popups, sticky bar, trial messaging, migration code generator, blog posts. 30+ commits, 60+ files.
@@ -188,10 +184,10 @@ Shutdown prep/execution/cleanup: 407+ files tense sweep, Stripe fix, emergency p
 ## Summary: Sessions 1-598 (Apr 5 - Jun 12)
 Full APIpulse build from scratch. 652 pages, 320 posts, 42 models, 10 providers, 84 tools, 12 API endpoints, 2 widgets. Domain, Stripe, Pro, GA4, newsletter, Chrome extension, 167 comparisons, FAQPage schema, streaming toggle, A/B pricing, Model Selector quiz.
 
-## Site Status (as of Session 751, Jun 19, 2026)
+## Site Status (as of Session 752, Jun 19, 2026)
 **685 web pages | 339 blog posts | 42 models | 10 providers | 89 tools | 12 API endpoints | 2 embeddable widgets**
 - Sitemap (673 URLs), RSS (546 items), blog files (338 posts) — all in sync
-- **results-cta.js on 34 calculator pages (Session 751)** — Every calculator/tool that shows results now auto-injects a Pro CTA with savings amount + migration code messaging + go.html link. GA4 tracking (results_cta_shown, results_cta_clicked).
+- **results-cta.js on 65 calculator/tool pages (Session 751-752)** — Every calculator/tool that shows results now auto-injects a Pro CTA. 22 pages have custom config (resultSelector, toolName, proFeatures), 43 use default fallback detection. GA4 tracking (results_cta_shown, results_cta_clicked).
 - **Pro CTA gaps filled (Session 749-750)** — ai-stack-builder, live-pricing, ai-stack-cost-optimizer, claude-4-migration-cost-calculator, prompt-cost-calculator, ai-api-budget-planner all now have Pro CTAs in results. results-cta.js widget created. Popular models quick links added to live-pricing.
 - **Mobile exit-intent on go.html (Session 748)** — Exit popup now triggers on mobile via back button interception (pushState/popstate) and tab visibility change (5s threshold). Desktop mouseout still works. GA4 tracks trigger type.
 - **go.html conversion fixes (Session 747)** — Fixed estimator CTA text overwrite bug (personalized savings text destroyed by DOMContentLoaded handler). Replaced weak "10 providers" social proof with "100% money-back" guarantee card. Cleaned FAQ trust messaging (removed startup competition mention). Added guarantee reminder to post-purchase flow.
