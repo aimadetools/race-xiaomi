@@ -796,8 +796,8 @@
             document.getElementById('checkout-btn-bottom').href = stripeLink;
             var estBtn = document.getElementById('checkout-btn-est');
             if (estBtn) estBtn.href = stripeLink;
-            var estPrice = document.getElementById('btn-price-est');
-            if (estPrice) estPrice.textContent = '$' + price;
+            // Note: btn-price-est span is replaced by calculate() innerHTML on load.
+            // Estimator CTA text is managed by calculate() — don't overwrite it here.
 
             // Track checkout page view
             if (window.trackEvent) {
