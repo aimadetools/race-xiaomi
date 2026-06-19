@@ -1032,7 +1032,7 @@
         setTimeout(function() { el.style.opacity = '0'; el.style.transition = 'opacity 0.5s'; setTimeout(function() { el.remove(); }, 500); }, 6000);
     }, 8000);
 
-    // Exit popup — last chance to convert users leaving the checkout page
+    // Exit popup — feedback survey + last-chance conversion
     // Triggers: desktop mouseout, mobile back button, tab visibility change
     (function() {
         if (sessionStorage.getItem('go_exit_popup_shown')) return;
@@ -1044,31 +1044,137 @@
 
             var price = window._abPrice || 29;
             var savings = parseFloat(new URLSearchParams(window.location.search).get('savings')) || 0;
-            var headline = savings > 0
-                ? 'Wait — you\'re about to leave $' + (savings * 12).toFixed(0) + '/yr on the table'
-                : 'Still deciding? Here\'s the deal';
-            var desc = savings > 0
-                ? 'Pro shows you exactly how to save $' + (savings * 12).toFixed(0) + '/year on AI APIs. It costs $' + price + ' once — and pays for itself in ' + Math.ceil(price / (savings || 10)) + ' days.'
-                : 'You get lifetime access to 42-model comparisons, migration code, PDF reports, and price alerts for $' + price + ' one-time. 14-day money-back guarantee — zero risk.';
+            var from = new URLSearchParams(window.location.search).get('from') || '';
 
+            // Step 1: Feedback survey
             var overlay = document.createElement('div');
             overlay.style.cssText = 'position:fixed;inset:0;background:rgba(0,0,0,0.7);z-index:10000;display:flex;align-items:center;justify-content:center;padding:20px;animation:fadeIn 0.3s ease;';
-            overlay.innerHTML = '<div style="background:var(--bg-card);border:1px solid var(--accent);border-radius:16px;padding:36px;max-width:420px;width:100%;position:relative;text-align:center;">' +
-                '<button onclick="this.closest(\'div[style*=fixed]\').remove()" style="position:absolute;top:12px;right:16px;background:none;border:none;color:var(--text-muted);font-size:24px;cursor:pointer;padding:4px 8px;">✕</button>' +
-                '<div style="font-size:36px;margin-bottom:12px;">💸</div>' +
-                '<h3 style="font-size:20px;font-weight:800;margin-bottom:8px;">' + headline + '</h3>' +
-                '<p style="font-size:14px;color:var(--text-secondary);margin-bottom:16px;line-height:1.5;">' + desc + '</p>' +
-                '<a href="' + (window._abStripeLink || 'https://buy.stripe.com/fZu7sL3Gw3GS0RQeoDeEo0a') + '" target="_blank" rel="noopener" style="display:block;background:var(--accent);color:white;padding:14px 24px;border-radius:10px;font-size:16px;font-weight:700;text-decoration:none;transition:all 0.2s;box-shadow:0 4px 20px rgba(99,102,241,0.3);">Get Pro — $' + price + ' lifetime</a>' +
-                '<p style="font-size:12px;color:var(--text-muted);margin-top:10px;">14-day money-back guarantee · No questions asked</p>' +
+
+            var card = document.createElement('div');
+            card.style.cssText = 'background:var(--bg-card);border:1px solid var(--accent);border-radius:16px;padding:36px;max-width:420px;width:100%;position:relative;';
+
+            var closeBtn = document.createElement('button');
+            closeBtn.style.cssText = 'position:absolute;top:12px;right:16px;background:none;border:none;color:var(--text-muted);font-size:24px;cursor:pointer;padding:4px 8px;';
+            closeBtn.textContent = '✕';
+            closeBtn.onclick = function() { overlay.remove(); };
+
+            var step1 = document.createElement('div');
+            step1.id = 'exit-survey-step1';
+            step1.innerHTML = '<div style="text-align:center;margin-bottom:16px;">' +
+                '<div style="font-size:36px;margin-bottom:8px;">🤔</div>' +
+                '<h3 style="font-size:20px;font-weight:800;margin-bottom:4px;">Quick question before you go</h3>' +
+                '<p style="font-size:14px;color:var(--text-secondary);">What stopped you from getting Pro today? (helps us improve)</p>' +
                 '</div>';
+
+            var reasons = [
+                { id: 'too_expensive', icon: '💰', label: 'Price is too high' },
+                { id: 'not_sure_value', icon: '❓', label: 'Not sure it\'s worth it' },
+                { id: 'free_enough', icon: '🆓', label: 'Free tools are enough for me' },
+                { id: 'dont_trust', icon: '🔒', label: 'Don\'t trust the product yet' },
+                { id: 'other', icon: '💭', label: 'Something else' }
+            ];
+
+            var btnContainer = document.createElement('div');
+            btnContainer.style.cssText = 'display:flex;flex-direction:column;gap:8px;';
+            reasons.forEach(function(r) {
+                var btn = document.createElement('button');
+                btn.style.cssText = 'display:flex;align-items:center;gap:10px;width:100%;padding:12px 16px;background:var(--bg-secondary);border:1px solid var(--border);border-radius:10px;font-size:14px;color:var(--text-primary);cursor:pointer;transition:all 0.15s;text-align:left;';
+                btn.innerHTML = '<span style="font-size:18px;">' + r.icon + '</span> ' + r.label;
+                btn.onmouseover = function() { this.style.borderColor = 'var(--accent)'; this.style.background = 'var(--bg-tertiary, var(--bg-secondary))'; };
+                btn.onmouseout = function() { this.style.borderColor = 'var(--border)'; this.style.background = 'var(--bg-secondary)'; };
+                btn.onclick = function() {
+                    // Track the feedback
+                    if (window.trackEvent) window.trackEvent('exit_survey_response', {
+                        reason: r.id,
+                        source: from,
+                        savings: savings,
+                        price: price,
+                        trigger: trigger || 'mouseout'
+                    });
+                    // Show step 2
+                    showStep2(r.id);
+                };
+                btnContainer.appendChild(btn);
+            });
+            step1.appendChild(btnContainer);
+
+            var skipLink = document.createElement('div');
+            skipLink.style.cssText = 'text-align:center;margin-top:12px;';
+            skipLink.innerHTML = '<a href="#" id="exit-survey-skip" style="font-size:12px;color:var(--text-muted);text-decoration:underline;">Skip — just show me the deal</a>';
+            skipLink.querySelector('a').onclick = function(e) {
+                e.preventDefault();
+                if (window.trackEvent) window.trackEvent('exit_survey_skipped', { source: from, trigger: trigger });
+                showStep2('skipped');
+            };
+            step1.appendChild(skipLink);
+
+            card.appendChild(closeBtn);
+            card.appendChild(step1);
+            overlay.appendChild(card);
             document.body.appendChild(overlay);
+
+            // Step 2: Tailored response based on feedback
+            function showStep2(reason) {
+                step1.remove();
+                var step2 = document.createElement('div');
+                step2.style.cssText = 'text-align:center;';
+
+                if (reason === 'too_expensive') {
+                    step2.innerHTML =
+                        '<div style="font-size:36px;margin-bottom:8px;">💰</div>' +
+                        '<h3 style="font-size:20px;font-weight:800;margin-bottom:8px;">We hear you — here\'s the math</h3>' +
+                        '<p style="font-size:14px;color:var(--text-secondary);line-height:1.5;margin-bottom:16px;">APIpulse Pro costs $' + price + ' <strong>once</strong>. The average user saves $720+/year on AI APIs. That\'s a 25× return — and it\'s lifetime access.</p>' +
+                        (savings > 0 ? '<p style="font-size:16px;font-weight:700;color:var(--green);margin-bottom:16px;">Your estimated savings: $' + (savings * 12).toFixed(0) + '/year</p>' : '') +
+                        '<a href="' + (window._abStripeLink || 'https://buy.stripe.com/fZu7sL3Gw3GS0RQeoDeEo0a') + '" target="_blank" rel="noopener" style="display:block;background:var(--accent);color:white;padding:14px 24px;border-radius:10px;font-size:16px;font-weight:700;text-decoration:none;transition:all 0.2s;box-shadow:0 4px 20px rgba(99,102,241,0.3);">Get Lifetime Access — $' + price + '</a>' +
+                        '<p style="font-size:12px;color:var(--text-muted);margin-top:8px;">14-day money-back guarantee · No questions asked</p>';
+                } else if (reason === 'not_sure_value' || reason === 'free_enough') {
+                    step2.innerHTML =
+                        '<div style="font-size:36px;margin-bottom:8px;">📊</div>' +
+                        '<h3 style="font-size:20px;font-weight:800;margin-bottom:8px;">See it in action</h3>' +
+                        '<p style="font-size:14px;color:var(--text-secondary);line-height:1.5;margin-bottom:16px;">Our free savings calculator already shows you cheaper alternatives. Pro gives you the complete migration code, PDF reports, and real-time price alerts for 42 models.</p>' +
+                        '<div style="display:flex;flex-direction:column;gap:8px;">' +
+                        '<a href="/savings-calculator.html" style="display:block;background:var(--bg-secondary);border:1px solid var(--accent);color:var(--accent);padding:12px 20px;border-radius:10px;font-size:14px;font-weight:600;text-decoration:none;">Try Free Savings Calculator →</a>' +
+                        '<a href="' + (window._abStripeLink || 'https://buy.stripe.com/fZu7sL3Gw3GS0RQeoDeEo0a') + '" target="_blank" rel="noopener" style="display:block;background:var(--accent);color:white;padding:14px 24px;border-radius:10px;font-size:16px;font-weight:700;text-decoration:none;box-shadow:0 4px 20px rgba(99,102,241,0.3);">Get Pro — $' + price + ' lifetime</a>' +
+                        '</div>' +
+                        '<p style="font-size:12px;color:var(--text-muted);margin-top:8px;">14-day money-back guarantee</p>';
+                } else if (reason === 'dont_trust') {
+                    step2.innerHTML =
+                        '<div style="font-size:36px;margin-bottom:8px;">🔒</div>' +
+                        '<h3 style="font-size:20px;font-weight:800;margin-bottom:8px;">Fair enough — here\'s our guarantee</h3>' +
+                        '<p style="font-size:14px;color:var(--text-secondary);line-height:1.5;margin-bottom:16px;">APIpulse compares 42 AI models across 10 providers with real-time pricing. We\'re used by 1,200+ developers. Stripe handles payment (you never share card details with us). And you get a <strong>14-day, no-questions-asked money-back guarantee</strong>.</p>' +
+                        '<div style="display:flex;flex-direction:column;gap:8px;">' +
+                        '<a href="/how-it-works.html" style="display:block;background:var(--bg-secondary);border:1px solid var(--accent);color:var(--accent);padding:12px 20px;border-radius:10px;font-size:14px;font-weight:600;text-decoration:none;">See How It Works →</a>' +
+                        '<a href="' + (window._abStripeLink || 'https://buy.stripe.com/fZu7sL3Gw3GS0RQeoDeEo0a') + '" target="_blank" rel="noopener" style="display:block;background:var(--accent);color:white;padding:14px 24px;border-radius:10px;font-size:16px;font-weight:700;text-decoration:none;box-shadow:0 4px 20px rgba(99,102,241,0.3);">Risk-Free: Get Pro — $' + price + '</a>' +
+                        '</div>' +
+                        '<p style="font-size:12px;color:var(--text-muted);margin-top:8px;">Stripe secure payment · Full refund within 14 days</p>';
+                } else {
+                    // other / skipped
+                    var headline = savings > 0
+                        ? 'You\'re about to leave $' + (savings * 12).toFixed(0) + '/yr on the table'
+                        : 'Here\'s what you get for $' + price;
+                    var desc = savings > 0
+                        ? 'Pro shows you exactly how to save $' + (savings * 12).toFixed(0) + '/year on AI APIs. It costs $' + price + ' once — pays for itself in ' + Math.ceil(price / (savings || 10)) + ' days.'
+                        : 'Lifetime access to 42-model comparisons, migration code, PDF reports, and price alerts. $' + price + ' one-time. 14-day money-back guarantee.';
+                    step2.innerHTML =
+                        '<div style="font-size:36px;margin-bottom:8px;">💸</div>' +
+                        '<h3 style="font-size:20px;font-weight:800;margin-bottom:8px;">' + headline + '</h3>' +
+                        '<p style="font-size:14px;color:var(--text-secondary);line-height:1.5;margin-bottom:16px;">' + desc + '</p>' +
+                        '<a href="' + (window._abStripeLink || 'https://buy.stripe.com/fZu7sL3Gw3GS0RQeoDeEo0a') + '" target="_blank" rel="noopener" style="display:block;background:var(--accent);color:white;padding:14px 24px;border-radius:10px;font-size:16px;font-weight:700;text-decoration:none;transition:all 0.2s;box-shadow:0 4px 20px rgba(99,102,241,0.3);">Get Pro — $' + price + ' lifetime</a>' +
+                        '<p style="font-size:12px;color:var(--text-muted);margin-top:8px;">14-day money-back guarantee · No questions asked</p>';
+                }
+
+                card.appendChild(step2);
+
+                // Track step 2 shown
+                if (window.trackEvent) window.trackEvent('exit_survey_step2_shown', { reason: reason, source: from });
+            }
 
             // If triggered by back button, restore the current URL so the page stays
             if (trigger === 'backbutton') {
                 history.pushState(null, '', location.href);
             }
 
-            if (window.trackEvent) window.trackEvent('checkout_exit_popup_shown', { source: new URLSearchParams(window.location.search).get('from') || '', savings: savings, trigger: trigger || 'mouseout' });
+            if (window.trackEvent) window.trackEvent('checkout_exit_popup_shown', { source: from, savings: savings, trigger: trigger || 'mouseout' });
         }
 
         // Desktop: mouse leaves viewport from top

@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free AI API Cost Audit — Find Your Cheapest Alternative in 60 Seconds</title>
+    <meta name="description" content="Free AI API cost audit tool. Enter your current model and monthly spend to instantly see cheaper alternatives with estimated savings. 42 models, 10 providers, real-time pricing.">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="canonical" href="https://getapipulse.com/api-cost-audit.html">
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0CEP7S9Y3J"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-0CEP7S9Y3J');
+    </script>
+    <script src="analytics.js" defer></script>
+    <script src="shared.js" defer></script>
+    <!-- Open Graph -->
+    <meta property="og:title" content="Free AI API Cost Audit — Find Cheaper Alternatives Instantly">
+    <meta property="og:description" content="Enter your current AI model and monthly spend. Get instant savings recommendations across 42 models.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://getapipulse.com/api-cost-audit.html">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "AI API Cost Audit Tool",
+        "description": "Free tool to audit your AI API costs and find cheaper alternatives across 42 models and 10 providers.",
+        "url": "https://getapipulse.com/api-cost-audit.html",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "Web",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+    }
+    </script>
+    <style>
+        .audit-page { max-width: 720px; margin: 0 auto; padding: 100px 24px 80px; }
+        .audit-hero { text-align: center; margin-bottom: 40px; }
+        .audit-hero h1 { font-size: clamp(28px, 4vw, 42px); font-weight: 900; line-height: 1.15; margin-bottom: 12px; }
+        .audit-hero p { font-size: 16px; color: var(--text-secondary); max-width: 520px; margin: 0 auto; }
+        .audit-badge { display: inline-block; background: var(--green); color: #000; font-size: 12px; font-weight: 700; padding: 4px 12px; border-radius: 20px; margin-bottom: 16px; }
+
+        /* Form */
+        .audit-form { background: var(--bg-card); border: 1px solid var(--border); border-radius: 16px; padding: 32px; margin-bottom: 32px; }
+        .form-group { margin-bottom: 20px; }
+        .form-group label { display: block; font-size: 14px; font-weight: 600; margin-bottom: 8px; color: var(--text-primary); }
+        .form-group select, .form-group input {
+            width: 100%; padding: 12px 16px; background: var(--bg-secondary); border: 1px solid var(--border);
+            border-radius: 10px; font-size: 15px; color: var(--text-primary); font-family: inherit;
+            box-sizing: border-box; appearance: auto;
+        }
+        .form-group select:focus, .form-group input:focus { outline: none; border-color: var(--accent); }
+        .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+        @media (max-width: 500px) { .form-row { grid-template-columns: 1fr; } }
+        .form-hint { font-size: 12px; color: var(--text-muted); margin-top: 4px; }
+        .audit-btn {
+            width: 100%; padding: 16px; background: var(--accent); color: white; border: none; border-radius: 12px;
+            font-size: 17px; font-weight: 700; cursor: pointer; transition: all 0.2s;
+            box-shadow: 0 4px 20px rgba(99,102,241,0.3);
+        }
+        .audit-btn:hover { transform: translateY(-1px); box-shadow: 0 6px 24px rgba(99,102,241,0.4); }
+        .audit-btn:disabled { opacity: 0.5; cursor: not-allowed; transform: none; }
+
+        /* Results */
+        .audit-results { display: none; animation: fadeIn 0.4s ease; }
+        .results-header { text-align: center; margin-bottom: 28px; }
+        .results-header h2 { font-size: 26px; font-weight: 900; margin-bottom: 8px; }
+        .savings-big { font-size: clamp(36px, 6vw, 52px); font-weight: 900; color: var(--green); font-family: monospace; }
+        .savings-sub { font-size: 14px; color: var(--text-secondary); margin-top: 4px; }
+
+        /* Current cost card */
+        .current-cost { background: var(--bg-card); border: 1px solid var(--border); border-radius: 14px; padding: 24px; margin-bottom: 20px; }
+        .current-cost h3 { font-size: 14px; font-weight: 600; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 12px; }
+        .cost-row { display: flex; justify-content: space-between; align-items: center; padding: 8px 0; border-bottom: 1px solid var(--border); }
+        .cost-row:last-child { border-bottom: none; }
+        .cost-label { font-size: 14px; color: var(--text-secondary); }
+        .cost-value { font-size: 15px; font-weight: 700; font-family: monospace; }
+
+        /* Alternatives */
+        .alt-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 14px; padding: 20px; margin-bottom: 12px; position: relative; transition: border-color 0.2s; }
+        .alt-card:hover { border-color: var(--accent); }
+        .alt-card.best { border-color: var(--green); }
+        .alt-card.best::before { content: 'BEST VALUE'; position: absolute; top: -10px; right: 16px; background: var(--green); color: #000; font-size: 10px; font-weight: 800; padding: 2px 10px; border-radius: 10px; letter-spacing: 0.5px; }
+        .alt-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 10px; }
+        .alt-name { font-size: 17px; font-weight: 700; }
+        .alt-provider { font-size: 12px; color: var(--text-muted); margin-top: 2px; }
+        .alt-price { text-align: right; }
+        .alt-price .price-main { font-size: 20px; font-weight: 900; font-family: monospace; color: var(--green); }
+        .alt-price .price-sub { font-size: 11px; color: var(--text-muted); }
+        .alt-savings { display: inline-block; background: rgba(34,197,94,0.1); color: var(--green); font-size: 12px; font-weight: 700; padding: 3px 10px; border-radius: 8px; }
+        .alt-quality { font-size: 12px; color: var(--text-muted); margin-top: 6px; }
+
+        /* Pro upsell */
+        .pro-upsell { background: linear-gradient(135deg, var(--bg-card), rgba(99,102,241,0.08)); border: 2px solid var(--accent); border-radius: 16px; padding: 28px; margin-top: 28px; text-align: center; }
+        .pro-upsell h3 { font-size: 20px; font-weight: 800; margin-bottom: 8px; }
+        .pro-upsell p { font-size: 14px; color: var(--text-secondary); margin-bottom: 16px; line-height: 1.5; }
+        .pro-features { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 20px; text-align: left; }
+        .pro-features span { font-size: 13px; color: var(--text-secondary); display: flex; align-items: center; gap: 6px; }
+        .pro-features span::before { content: '✓'; color: var(--green); font-weight: 700; }
+        @media (max-width: 500px) { .pro-features { grid-template-columns: 1fr; } }
+        .pro-btn { display: inline-block; background: var(--accent); color: white; padding: 14px 36px; border-radius: 12px; font-size: 16px; font-weight: 700; text-decoration: none; transition: all 0.2s; box-shadow: 0 4px 20px rgba(99,102,241,0.3); }
+        .pro-btn:hover { transform: translateY(-1px); box-shadow: 0 6px 24px rgba(99,102,241,0.4); }
+
+        /* Social proof */
+        .social-strip { display: flex; justify-content: center; gap: 24px; flex-wrap: wrap; margin-top: 20px; padding-top: 16px; border-top: 1px solid var(--border); }
+        .social-strip .stat { text-align: center; }
+        .social-strip .stat-num { font-size: 18px; font-weight: 800; }
+        .social-strip .stat-label { font-size: 11px; color: var(--text-muted); }
+
+        /* Retake */
+        .retake-btn { display: inline-block; margin-top: 16px; background: var(--bg-secondary); border: 1px solid var(--border); color: var(--text-secondary); padding: 10px 20px; border-radius: 10px; font-size: 13px; cursor: pointer; text-decoration: none; }
+        .retake-btn:hover { border-color: var(--accent); color: var(--accent); }
+    </style>
+</head>
+<body>
+    <div class="audit-page">
+        <div class="audit-hero">
+            <span class="audit-badge">100% FREE — NO SIGNUP</span>
+            <h1>🔍 Audit Your AI API Costs</h1>
+            <p>Enter your current model and monthly spend. Get instant recommendations for cheaper alternatives — with estimated savings.</p>
+        </div>
+
+        <div class="audit-form" id="auditForm">
+            <div class="form-group">
+                <label for="currentModel">What model are you using?</label>
+                <select id="currentModel">
+                    <optgroup label="OpenAI">
+                        <option value="gpt-5">GPT-5</option>
+                        <option value="gpt-5-mini">GPT-5 Mini</option>
+                        <option value="gpt-5-nano">GPT-5 Nano</option>
+                        <option value="gpt-4o" selected>GPT-4o</option>
+                        <option value="gpt-4o-mini">GPT-4o Mini</option>
+                        <option value="gpt-4.1">GPT-4.1</option>
+                        <option value="gpt-4.1-mini">GPT-4.1 Mini</option>
+                        <option value="o3">o3</option>
+                        <option value="o3-mini">o3 Mini</option>
+                        <option value="o4-mini">o4 Mini</option>
+                    </optgroup>
+                    <optgroup label="Anthropic">
+                        <option value="claude-opus-4.8">Claude Opus 4.8</option>
+                        <option value="claude-sonnet-4.6">Claude Sonnet 4.6</option>
+                        <option value="claude-haiku-4.5">Claude Haiku 4.5</option>
+                    </optgroup>
+                    <optgroup label="Google">
+                        <option value="gemini-2.5-pro">Gemini 2.5 Pro</option>
+                        <option value="gemini-2.5-flash">Gemini 2.5 Flash</option>
+                        <option value="gemini-2.0-flash">Gemini 2.0 Flash</option>
+                    </optgroup>
+                    <optgroup label="DeepSeek">
+                        <option value="deepseek-v4">DeepSeek V4</option>
+                        <option value="deepseek-v4-pro">DeepSeek V4 Pro</option>
+                        <option value="deepseek-v4-flash">DeepSeek V4 Flash</option>
+                    </optgroup>
+                    <optgroup label="Mistral">
+                        <option value="mistral-large-3">Mistral Large 3</option>
+                        <option value="mistral-small-4">Mistral Small 4</option>
+                        <option value="mistral-nemo">Mistral Nemo</option>
+                    </optgroup>
+                    <optgroup label="Meta (via providers)">
+                        <option value="llama-4-maverick">Llama 4 Maverick</option>
+                        <option value="llama-4-scout">Llama 4 Scout</option>
+                    </optgroup>
+                    <optgroup label="xAI">
+                        <option value="grok-3">Grok 3</option>
+                        <option value="grok-3-mini">Grok 3 Mini</option>
+                    </optgroup>
+                    <optgroup label="Cohere">
+                        <option value="command-r-plus">Command R+</option>
+                        <option value="command-r">Command R</option>
+                    </optgroup>
+                </select>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="monthlySpend">Monthly spend ($)</label>
+                    <input type="number" id="monthlySpend" value="100" min="1" max="100000" step="1">
+                    <div class="form-hint">Your total monthly API cost for this model</div>
+                </div>
+                <div class="form-group">
+                    <label for="inputRatio">Input token %</label>
+                    <input type="number" id="inputRatio" value="85" min="10" max="99" step="5">
+                    <div class="form-hint">Typical: 80-90% input, 10-20% output</div>
+                </div>
+            </div>
+
+            <button class="audit-btn" id="auditBtn" onclick="runAudit()">🔍 Show My Cheaper Alternatives</button>
+        </div>
+
+        <div class="audit-results" id="auditResults">
+            <div class="results-header">
+                <h2>Your Cost Audit Results</h2>
+                <div class="savings-big" id="bestSavings">—</div>
+                <div class="savings-sub" id="savingsSub">estimated annual savings with your best alternative</div>
+            </div>
+
+            <div class="current-cost" id="currentCostCard"></div>
+
+            <h3 style="font-size:16px;font-weight:700;margin-bottom:14px;">⬇️ Cheaper Alternatives</h3>
+            <div id="alternatives"></div>
+
+            <div class="pro-upsell">
+                <h3>Want the full migration code?</h3>
+                <p>Pro includes ready-to-paste migration snippets for every alternative, plus PDF reports, price alerts, and 42-model comparisons.</p>
+                <div class="pro-features">
+                    <span>Migration code for every model</span>
+                    <span>PDF savings reports</span>
+                    <span>Real-time price alerts</span>
+                    <span>42-model comparison tables</span>
+                </div>
+                <a href="/go.html?from=api-cost-audit" class="pro-btn">Get Pro — Lifetime Access</a>
+                <div class="social-strip">
+                    <div class="stat"><div class="stat-num">42</div><div class="stat-label">Models</div></div>
+                    <div class="stat"><div class="stat-num">10</div><div class="stat-label">Providers</div></div>
+                    <div class="stat"><div class="stat-num">$720+</div><div class="stat-label">Avg savings/yr</div></div>
+                </div>
+            </div>
+
+            <div style="text-align:center;">
+                <a href="#" class="retake-btn" onclick="resetAudit(); return false;">← Audit a different model</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+    // Model pricing data (per 1M tokens, USD) — input / output
+    var MODELS = {
+        'gpt-5':                { input: 8.00,  output: 24.00, name: 'GPT-5',              provider: 'OpenAI',    quality: 95 },
+        'gpt-5-mini':           { input: 2.00,  output: 6.00,  name: 'GPT-5 Mini',         provider: 'OpenAI',    quality: 88 },
+        'gpt-5-nano':           { input: 0.40,  output: 1.20,  name: 'GPT-5 Nano',         provider: 'OpenAI',    quality: 78 },
+        'gpt-4o':               { input: 2.50,  output: 10.00, name: 'GPT-4o',             provider: 'OpenAI',    quality: 88 },
+        'gpt-4o-mini':          { input: 0.15,  output: 0.60,  name: 'GPT-4o Mini',        provider: 'OpenAI',    quality: 80 },
+        'gpt-4.1':              { input: 2.00,  output: 8.00,  name: 'GPT-4.1',            provider: 'OpenAI',    quality: 87 },
+        'gpt-4.1-mini':         { input: 0.40,  output: 1.60,  name: 'GPT-4.1 Mini',       provider: 'OpenAI',    quality: 82 },
+        'o3':                   { input: 10.00, output: 40.00, name: 'o3',                 provider: 'OpenAI',    quality: 96 },
+        'o3-mini':              { input: 1.10,  output: 4.40,  name: 'o3 Mini',            provider: 'OpenAI',    quality: 85 },
+        'o4-mini':              { input: 1.10,  output: 4.40,  name: 'o4 Mini',            provider: 'OpenAI',    quality: 86 },
+        'claude-opus-4.8':      { input: 15.00, output: 75.00, name: 'Claude Opus 4.8',    provider: 'Anthropic', quality: 97 },
+        'claude-sonnet-4.6':    { input: 3.00,  output: 15.00, name: 'Claude Sonnet 4.6',  provider: 'Anthropic', quality: 91 },
+        'claude-haiku-4.5':     { input: 0.80,  output: 4.00,  name: 'Claude Haiku 4.5',   provider: 'Anthropic', quality: 82 },
+        'gemini-2.5-pro':       { input: 1.25,  output: 5.00,  name: 'Gemini 2.5 Pro',     provider: 'Google',    quality: 90 },
+        'gemini-2.5-flash':     { input: 0.15,  output: 0.60,  name: 'Gemini 2.5 Flash',   provider: 'Google',    quality: 82 },
+        'gemini-2.0-flash':     { input: 0.10,  output: 0.40,  name: 'Gemini 2.0 Flash',   provider: 'Google',    quality: 78 },
+        'deepseek-v4':          { input: 0.27,  output: 1.10,  name: 'DeepSeek V4',        provider: 'DeepSeek',  quality: 87 },
+        'deepseek-v4-pro':      { input: 0.55,  output: 2.19,  name: 'DeepSeek V4 Pro',    provider: 'DeepSeek',  quality: 90 },
+        'deepseek-v4-flash':    { input: 0.07,  output: 0.28,  name: 'DeepSeek V4 Flash',  provider: 'DeepSeek',  quality: 78 },
+        'mistral-large-3':      { input: 2.00,  output: 6.00,  name: 'Mistral Large 3',    provider: 'Mistral',   quality: 87 },
+        'mistral-small-4':      { input: 0.10,  output: 0.30,  name: 'Mistral Small 4',    provider: 'Mistral',   quality: 78 },
+        'mistral-nemo':         { input: 0.15,  output: 0.15,  name: 'Mistral Nemo',       provider: 'Mistral',   quality: 72 },
+        'llama-4-maverick':     { input: 0.25,  output: 1.00,  name: 'Llama 4 Maverick',   provider: 'Meta',      quality: 85 },
+        'llama-4-scout':        { input: 0.10,  output: 0.40,  name: 'Llama 4 Scout',      provider: 'Meta',      quality: 78 },
+        'grok-3':               { input: 3.00,  output: 15.00, name: 'Grok 3',             provider: 'xAI',       quality: 89 },
+        'grok-3-mini':          { input: 0.30,  output: 0.50,  name: 'Grok 3 Mini',        provider: 'xAI',       quality: 78 },
+        'command-r-plus':       { input: 2.50,  output: 10.00, name: 'Command R+',         provider: 'Cohere',    quality: 82 },
+        'command-r':            { input: 0.15,  output: 0.60,  name: 'Command R',          provider: 'Cohere',    quality: 72 }
+    };
+
+    function estimateTokensPerDollar(model) {
+        // Estimate how many tokens you get per dollar at 85/15 input/output ratio
+        var inputRatio = 0.85;
+        var outputRatio = 0.15;
+        var blended = (model.input * inputRatio + model.output * outputRatio);
+        return blended > 0 ? 1000000 / blended : 0;
+    }
+
+    function costForTokens(model, totalTokens, inputRatio) {
+        var inputTokens = totalTokens * (inputRatio / 100);
+        var outputTokens = totalTokens * (1 - inputRatio / 100);
+        return (inputTokens * model.input + outputTokens * model.output) / 1000000;
+    }
+
+    function tokensForSpend(model, spend, inputRatio) {
+        // How many total tokens can you get for $spend?
+        var inputFraction = inputRatio / 100;
+        var outputFraction = 1 - inputFraction;
+        var costPerToken = (model.input * inputFraction + model.output * outputFraction) / 1000000;
+        return costPerToken > 0 ? spend / costPerToken : 0;
+    }
+
+    function runAudit() {
+        var modelKey = document.getElementById('currentModel').value;
+        var spend = parseFloat(document.getElementById('monthlySpend').value) || 100;
+        var inputRatio = parseInt(document.getElementById('inputRatio').value) || 85;
+        var current = MODELS[modelKey];
+        if (!current) return;
+
+        // How many tokens does the user get with current model?
+        var totalTokens = tokensForSpend(current, spend, inputRatio);
+
+        // Find all alternatives and calculate their cost for the same tokens
+        var alternatives = [];
+        Object.keys(MODELS).forEach(function(key) {
+            if (key === modelKey) return;
+            var m = MODELS[key];
+            var altCost = costForTokens(m, totalTokens, inputRatio);
+            var saving = spend - altCost;
+            var savingPct = (saving / spend * 100);
+            // Only include if it's actually cheaper and quality is within 20 points
+            if (saving > 0) {
+                alternatives.push({
+                    key: key,
+                    model: m,
+                    monthlyCost: altCost,
+                    saving: saving,
+                    savingPct: savingPct,
+                    annualSaving: saving * 12
+                });
+            }
+        });
+
+        // Sort by savings (highest first)
+        alternatives.sort(function(a, b) { return b.saving - a.saving; });
+
+        // Take top 6
+        alternatives = alternatives.slice(0, 6);
+
+        if (alternatives.length === 0) {
+            alternatives = [{ note: 'You\'re already using one of the cheapest options!' }];
+        }
+
+        // Update UI
+        var bestAnnual = alternatives[0].annualSaving || 0;
+        document.getElementById('bestSavings').textContent = '$' + Math.round(bestAnnual).toLocaleString() + '/yr';
+
+        // Current cost card
+        var tokensM = (totalTokens / 1000000).toFixed(1);
+        document.getElementById('currentCostCard').innerHTML =
+            '<h3>Your Current Setup</h3>' +
+            '<div class="cost-row"><span class="cost-label">Model</span><span class="cost-value">' + current.name + '</span></div>' +
+            '<div class="cost-row"><span class="cost-label">Provider</span><span class="cost-value">' + current.provider + '</span></div>' +
+            '<div class="cost-row"><span class="cost-label">Monthly spend</span><span class="cost-value">$' + spend.toFixed(2) + '</span></div>' +
+            '<div class="cost-row"><span class="cost-label">Tokens/month (est.)</span><span class="cost-value">' + tokensM + 'M</span></div>' +
+            '<div class="cost-row"><span class="cost-label">Annual cost</span><span class="cost-value">$' + (spend * 12).toFixed(0) + '</span></div>';
+
+        // Alternatives
+        var altHtml = '';
+        alternatives.forEach(function(alt, i) {
+            if (alt.note) {
+                altHtml += '<div class="alt-card"><p>' + alt.note + '</p></div>';
+                return;
+            }
+            var isBest = i === 0;
+            altHtml += '<div class="alt-card' + (isBest ? ' best' : '') + '">' +
+                '<div class="alt-header">' +
+                '<div><div class="alt-name">' + alt.model.name + '</div><div class="alt-provider">' + alt.model.provider + '</div></div>' +
+                '<div class="alt-price"><div class="price-main">$' + alt.monthlyCost.toFixed(2) + '</div><div class="price-sub">/month</div></div>' +
+                '</div>' +
+                '<span class="alt-savings">Save $' + alt.saving.toFixed(2) + '/mo (' + alt.savingPct.toFixed(1) + '%)</span>' +
+                '<div class="alt-quality">Quality score: ' + alt.model.quality + '/100 · Annual savings: $' + Math.round(alt.annualSaving).toLocaleString() + '</div>' +
+                '</div>';
+        });
+        document.getElementById('alternatives').innerHTML = altHtml;
+
+        // Show results, hide form
+        document.getElementById('auditForm').style.display = 'none';
+        document.getElementById('auditResults').style.display = 'block';
+
+        // Track
+        if (window.trackEvent) window.trackEvent('audit_completed', {
+            model: modelKey,
+            spend: spend,
+            inputRatio: inputRatio,
+            bestAlternative: alternatives[0].key || 'none',
+            bestSaving: Math.round(bestAnnual),
+            alternativeCount: alternatives.length
+        });
+    }
+
+    function resetAudit() {
+        document.getElementById('auditForm').style.display = 'block';
+        document.getElementById('auditResults').style.display = 'none';
+        if (window.trackEvent) window.trackEvent('audit_retake');
+    }
+    </script>
+</body>
+</html>
