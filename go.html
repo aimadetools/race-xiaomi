@@ -277,6 +277,152 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
+        /* Live Demo Section */
+        .demo-section {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 28px 24px;
+            margin-bottom: 24px;
+            animation: fadeIn 0.5s ease;
+        }
+        .demo-title {
+            font-size: 20px;
+            font-weight: 800;
+            text-align: center;
+            margin-bottom: 4px;
+        }
+        .demo-subtitle {
+            font-size: 14px;
+            color: var(--text-secondary);
+            text-align: center;
+            margin-bottom: 16px;
+        }
+        .demo-scenario {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 14px 16px;
+            font-size: 14px;
+            color: var(--text-secondary);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 16px;
+        }
+        .demo-scenario-cost {
+            font-family: monospace;
+            font-weight: 800;
+            font-size: 18px;
+            color: var(--red);
+        }
+        .demo-result {
+            background: var(--bg-card);
+            border: 1px solid rgba(34,197,94,0.2);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 16px;
+        }
+        .demo-result-header {
+            font-size: 15px;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+        .demo-savings-amount {
+            font-size: 22px;
+            font-weight: 900;
+            color: var(--green);
+            font-family: monospace;
+            margin-bottom: 16px;
+        }
+        .demo-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 13px;
+            margin-bottom: 16px;
+        }
+        .demo-table th {
+            padding: 10px 8px;
+            border-bottom: 2px solid var(--border);
+            font-weight: 700;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-size: 11px;
+            text-align: left;
+        }
+        .demo-table td {
+            padding: 10px 8px;
+            border-bottom: 1px solid var(--border);
+            color: var(--text-secondary);
+        }
+        .demo-table tr:last-child td { border-bottom: none; }
+        .demo-highlight {
+            background: rgba(34,197,94,0.06);
+        }
+        .demo-highlight td { color: var(--text-primary) !important; }
+        .demo-savings-cell {
+            color: var(--green) !important;
+            font-weight: 600;
+        }
+        .demo-code-header {
+            font-size: 12px;
+            color: var(--text-muted);
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-weight: 600;
+        }
+        .demo-code {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 16px;
+            font-family: monospace;
+            font-size: 13px;
+            line-height: 1.6;
+            color: var(--text-secondary);
+            overflow-x: auto;
+            margin-bottom: 16px;
+        }
+        .demo-code-comment { color: var(--text-muted); }
+        .demo-code-keyword { color: #c084fc; }
+        .demo-code-string { color: var(--green); }
+        .demo-locked {
+            background: var(--bg-secondary);
+            border: 1px dashed var(--border);
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .demo-locked::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to bottom, transparent 0%, var(--bg-secondary) 100%);
+            pointer-events: none;
+        }
+        .demo-locked-overlay { position: relative; z-index: 1; }
+        .demo-locked-icon { font-size: 24px; margin-bottom: 8px; }
+        .demo-locked-text {
+            font-size: 14px;
+            color: var(--text-secondary);
+            line-height: 1.5;
+        }
+        .demo-cta {
+            margin-bottom: 8px;
+        }
+        @media (max-width: 600px) {
+            .demo-section { padding: 20px 16px; }
+            .demo-scenario { flex-direction: column; text-align: center; }
+            .demo-table { font-size: 12px; }
+            .demo-table th, .demo-table td { padding: 8px 4px; }
+        }
+
         @media (max-width: 768px) {
             .checkout-page { padding: 80px 16px 60px; }
             .social-proof { grid-template-columns: 1fr; }
@@ -442,6 +588,82 @@
                 <div class="proof-num">89</div>
                 <div class="proof-label">tools included</div>
             </div>
+        </div>
+
+        <!-- LIVE DEMO: See Pro in Action -->
+        <div class="demo-section">
+            <div class="demo-title">📊 See a Real Pro Savings Report</div>
+            <div class="demo-subtitle">Here's what APIpulse Pro found for a developer using GPT-5:</div>
+
+            <!-- Scenario bar -->
+            <div class="demo-scenario">
+                <span style="font-weight:700;">Your current setup:</span> GPT-5 · 5M input + 5M output tokens/month
+                <span class="demo-scenario-cost">$56.25/mo</span>
+            </div>
+
+            <!-- Results -->
+            <div class="demo-result">
+                <div class="demo-result-header">
+                    <span>🏆</span> <strong>Best alternative found</strong>
+                </div>
+                <div class="demo-savings-amount">Save $49.73/mo — 88% less</div>
+
+                <table class="demo-table">
+                    <thead>
+                        <tr>
+                            <th>Model</th>
+                            <th>Provider</th>
+                            <th>Monthly cost</th>
+                            <th>You save</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="demo-highlight">
+                            <td><strong>DeepSeek V4 Pro</strong></td>
+                            <td>DeepSeek</td>
+                            <td><strong>$6.52</strong></td>
+                            <td class="demo-savings-cell">$49.73/mo (88.4%)</td>
+                        </tr>
+                        <tr>
+                            <td>Gemini 2.0 Flash</td>
+                            <td>Google</td>
+                            <td>$2.50</td>
+                            <td class="demo-savings-cell">$53.75/mo (95.6%)</td>
+                        </tr>
+                        <tr>
+                            <td>Llama 4 Scout</td>
+                            <td>Meta (Together.ai)</td>
+                            <td>$3.85</td>
+                            <td class="demo-savings-cell">$52.40/mo (93.2%)</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <!-- Sample migration code -->
+                <div class="demo-code-header">Sample migration code (Pro includes ready-to-paste snippets for every alternative)</div>
+                <div class="demo-code">
+                    <span class="demo-code-comment"># Switch from OpenAI to DeepSeek (Python)</span><br>
+                    <span class="demo-code-keyword">import</span> openai<br><br>
+                    client = openai.OpenAI(<br>
+                      api_key=<span class="demo-code-string">"your-deepseek-key"</span>,<br>
+                      base_url=<span class="demo-code-string">"https://api.deepseek.com/v1"</span><br>
+                    )
+                </div>
+
+                <!-- Locked preview -->
+                <div class="demo-locked">
+                    <div class="demo-locked-overlay">
+                        <div class="demo-locked-icon">🔒</div>
+                        <div class="demo-locked-text">Pro unlocks <strong>all 15 alternatives</strong> ranked by cost, complete migration code for every model & language, PDF exports, and saved comparison scenarios.</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- In-context CTA -->
+            <a id="checkout-btn-demo" href="https://buy.stripe.com/fZu7sL3Gw3GS0RQeoDeEo0a" class="cta-btn demo-cta" target="_blank" rel="noopener">
+                Unlock Your Savings Report — <span id="btn-price-demo">$29</span>
+            </a>
+            <p class="cta-sub">14-day money-back guarantee · One-time payment · Lifetime access</p>
         </div>
 
         <!-- What you get after purchase -->
@@ -612,6 +834,10 @@
             // Update Stripe links
             document.getElementById('checkout-btn').href = stripeLink;
             document.getElementById('checkout-btn-bottom').href = stripeLink;
+            var demoBtn = document.getElementById('checkout-btn-demo');
+            if (demoBtn) demoBtn.href = stripeLink;
+            var demoPrice = document.getElementById('btn-price-demo');
+            if (demoPrice) demoPrice.textContent = '$' + price;
 
             // Track checkout page view
             if (window.trackEvent) {
@@ -624,7 +850,7 @@
             }
 
             // Track CTA clicks
-            ['checkout-btn', 'checkout-btn-bottom'].forEach(function(id) {
+            ['checkout-btn', 'checkout-btn-bottom', 'checkout-btn-demo'].forEach(function(id) {
                 document.getElementById(id).addEventListener('click', function() {
                     if (window.trackEvent) {
                         window.trackEvent('checkout_cta_clicked', {
@@ -637,6 +863,20 @@
                 });
             });
         });
+    })();
+
+    // Track demo section visibility
+    (function() {
+        var demo = document.querySelector('.demo-section');
+        if (!demo || !window.IntersectionObserver) return;
+        var viewed = false;
+        new IntersectionObserver(function(entries) {
+            if (entries[0].isIntersecting && !viewed) {
+                viewed = true;
+                if (window.trackEvent) window.trackEvent('demo_section_viewed');
+                if (typeof gtag === 'function') gtag('event', 'demo_section_viewed');
+            }
+        }, {threshold: 0.3}).observe(demo);
     })();
 
     // Social proof notification — shows after 8 seconds
