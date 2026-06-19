@@ -547,9 +547,11 @@
             <div style="text-align:center;padding:24px;background:var(--bg-secondary);border-radius:12px;border:1px solid var(--border);">
                 <p style="font-size:15px;font-weight:600;margin-bottom:12px;">Found this useful? Share it with your team</p>
                 <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
-                    <a href="https://twitter.com/intent/tweet?text=I+just+found+out+I+can+save+%240%2Fmonth+on+AI+API+costs.+Get+your+free+optimization+report:&url=https://getapipulse.com/cost-optimizer.html" target="_blank" rel="noopener" class="btn-secondary" style="padding:10px 20px;font-size:14px;">Share on X</a>
+                    <button onclick="copyOptimizerShare()" id="copyOptimizerBtn" style="padding:10px 20px;font-size:14px;font-weight:600;background:var(--accent);color:white;border:none;border-radius:8px;cursor:pointer;display:flex;align-items:center;gap:6px;">📋 Copy Summary</button>
+                    <a href="https://twitter.com/intent/tweet?text=I+just+found+out+I+can+save+%240%2Fmonth+on+AI+API+costs.+Get+your+free+optimization+report:&url=https://getapipulse.com/cost-optimizer.html" target="_blank" rel="noopener" class="btn-secondary" style="padding:10px 20px;font-size:14px;" id="optimizerTweetLink">Share on X</a>
                     <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://getapipulse.com/cost-optimizer.html" target="_blank" rel="noopener" class="btn-secondary" style="padding:10px 20px;font-size:14px;">Share on LinkedIn</a>
                 </div>
+                <p id="optimizerShareConfirm" style="font-size:12px;color:var(--green);margin-top:8px;display:none;">✅ Copied to clipboard!</p>
             </div>
         </div>
     </div>
@@ -726,12 +728,20 @@
                 efficiencyContainer.style.display = 'none';
             }
 
-            // Update share link
+            // Update share link with actual savings
             var shareText = 'I+just+found+out+I+can+save+%24' + Math.round(monthlySave) + '%2Fmonth+on+AI+API+costs.+Get+your+free+optimization+report:';
-            var tweetLink = document.querySelector('a[href*="twitter.com/intent/tweet"]');
+            var tweetLink = document.getElementById('optimizerTweetLink');
             if (tweetLink) {
                 tweetLink.href = 'https://twitter.com/intent/tweet?text=' + shareText + '&url=https://getapipulse.com/cost-optimizer.html';
             }
+
+            // Store share text for copy function
+            window._optimizerShareText = '💰 I just optimized my AI API costs!\n\n' +
+                'Current: ' + (currentModel ? currentModel.name : 'Unknown') + ' → $' + spend.toFixed(2) + '/mo\n' +
+                'Best alternative: ' + (best ? best.model.name : 'N/A') + ' → $' + (best ? best.estMonthly.toFixed(2) : 'N/A') + '/mo\n' +
+                'Monthly savings: $' + Math.round(monthlySave).toLocaleString() + ' (' + Math.round(pctSave) + '%)\n' +
+                'Annual savings: $' + Math.round(annualSave).toLocaleString() + '\n\n' +
+                'Optimize your AI costs → https://getapipulse.com/cost-optimizer.html';
 
             // Current vs Recommended
             document.getElementById('current-name').textContent = currentModel.name;
@@ -925,6 +935,26 @@
                 if(window.trackEvent)window.trackEvent('exit_popup_shown',{page:'cost_optimizer',variant:window._abVariant});
             });
         })();
+
+        // Copy optimizer share summary
+        window.copyOptimizerShare = function() {
+            var text = window._optimizerShareText || 'Check out the AI API Cost Optimizer: https://getapipulse.com/cost-optimizer.html';
+            navigator.clipboard.writeText(text).then(function() {
+                var el = document.getElementById('optimizerShareConfirm');
+                if (el) { el.style.display = 'block'; setTimeout(function() { el.style.display = 'none'; }, 3000); }
+                if (window.trackEvent) window.trackEvent('savings_shared', { method: 'clipboard', source: 'optimizer' });
+            }).catch(function() {
+                var ta = document.createElement('textarea');
+                ta.value = text;
+                document.body.appendChild(ta);
+                ta.select();
+                document.execCommand('copy');
+                document.body.removeChild(ta);
+                var el = document.getElementById('optimizerShareConfirm');
+                if (el) { el.style.display = 'block'; setTimeout(function() { el.style.display = 'none'; }, 3000); }
+                if (window.trackEvent) window.trackEvent('savings_shared', { method: 'fallback', source: 'optimizer' });
+            });
+        };
     })();
     </script>
 </body>

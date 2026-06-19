@@ -576,6 +576,25 @@
 
         html += '</div>'; // close results-card
 
+        // Share button
+        if (monthlySavings > 0 && topAlts.length > 0) {
+            var shareText = '💰 I just found $' + monthlySavings.toFixed(2) + '/mo in AI API savings!\n\n' +
+                'Current: ' + selectedModel.name + ' → $' + currentCost.toFixed(2) + '/mo\n' +
+                'Best alternative: ' + topAlts[0].model.name + ' → $' + topAlts[0].cost.toFixed(2) + '/mo\n' +
+                'Savings: $' + monthlySavings.toFixed(2) + '/mo (' + bestPct + '%)\n\n' +
+                'Check your AI API costs → https://getapipulse.com/savings-calculator.html';
+
+            html += '<div style="margin-top:20px;padding:16px;background:var(--bg-card);border:1px solid var(--border);border-radius:12px;text-align:center;">' +
+                '<p style="font-size:13px;color:var(--text-secondary);margin-bottom:10px;">📢 Share your savings with your team</p>' +
+                '<div style="display:flex;gap:8px;justify-content:center;flex-wrap:wrap;">' +
+                '<button onclick="copySavingsSummary(this)" data-text="' + encodeURIComponent(shareText) + '" style="padding:8px 16px;background:var(--accent);color:white;border:none;border-radius:8px;font-size:13px;font-weight:600;cursor:pointer;display:flex;align-items:center;gap:6px;">📋 Copy Summary</button>' +
+                '<a href="https://twitter.com/intent/tweet?text=' + encodeURIComponent('I just found $' + monthlySavings.toFixed(2) + '/mo in AI API savings by switching from ' + selectedModel.name + ' to ' + topAlts[0].model.name + ' (' + bestPct + '% less)! 🔍') + '&url=' + encodeURIComponent('https://getapipulse.com/savings-calculator.html') + '" target="_blank" rel="noopener" style="padding:8px 16px;background:#1da1f2;color:white;border:none;border-radius:8px;font-size:13px;font-weight:600;cursor:pointer;text-decoration:none;display:flex;align-items:center;gap:6px;">🐦 Tweet</a>' +
+                '<a href="https://www.linkedin.com/sharing/share-offsite/?url=' + encodeURIComponent('https://getapipulse.com/savings-calculator.html') + '" target="_blank" rel="noopener" style="padding:8px 16px;background:#0077b5;color:white;border:none;border-radius:8px;font-size:13px;font-weight:600;cursor:pointer;text-decoration:none;display:flex;align-items:center;gap:6px;">💼 LinkedIn</a>' +
+                '</div>' +
+                '<p id="share-confirm" style="font-size:12px;color:var(--green);margin-top:8px;display:none;">✅ Copied to clipboard!</p>' +
+                '</div>';
+        }
+
         // CTA
         html += '<div style="text-align:center;margin-top:24px;">' +
             '<button class="btn-secondary" onclick="resetCalc()" style="margin-right:12px;">← Calculate again</button>' +
@@ -625,6 +644,32 @@
         }
 
         window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function copySavingsSummary(btn) {
+        var text = decodeURIComponent(btn.getAttribute('data-text'));
+        navigator.clipboard.writeText(text).then(function() {
+            var confirm = document.getElementById('share-confirm');
+            if (confirm) {
+                confirm.style.display = 'block';
+                setTimeout(function() { confirm.style.display = 'none'; }, 3000);
+            }
+            if (window.trackEvent) window.trackEvent('savings_shared', { method: 'clipboard', model: selectedModel ? selectedModel.id : '' });
+        }).catch(function() {
+            // Fallback
+            var ta = document.createElement('textarea');
+            ta.value = text;
+            document.body.appendChild(ta);
+            ta.select();
+            document.execCommand('copy');
+            document.body.removeChild(ta);
+            var confirm = document.getElementById('share-confirm');
+            if (confirm) {
+                confirm.style.display = 'block';
+                setTimeout(function() { confirm.style.display = 'none'; }, 3000);
+            }
+            if (window.trackEvent) window.trackEvent('savings_shared', { method: 'fallback', model: selectedModel ? selectedModel.id : '' });
+        });
     }
 
     function resetCalc() {

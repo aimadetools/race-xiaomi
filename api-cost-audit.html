@@ -201,6 +201,17 @@
             <h3 style="font-size:16px;font-weight:700;margin-bottom:14px;">⬇️ Cheaper Alternatives</h3>
             <div id="alternatives"></div>
 
+            <!-- Share Section -->
+            <div id="shareSection" style="display:none;padding:16px;background:var(--bg-card);border:1px solid var(--border);border-radius:12px;text-align:center;margin-bottom:20px;">
+                <p style="font-size:13px;color:var(--text-secondary);margin-bottom:10px;">📢 Share your savings with your team</p>
+                <div style="display:flex;gap:8px;justify-content:center;flex-wrap:wrap;">
+                    <button onclick="copyAuditShare()" id="copyAuditBtn" style="padding:8px 16px;background:var(--accent);color:white;border:none;border-radius:8px;font-size:13px;font-weight:600;cursor:pointer;display:flex;align-items:center;gap:6px;">📋 Copy Summary</button>
+                    <a id="tweetAuditLink" href="#" target="_blank" rel="noopener" style="padding:8px 16px;background:#1da1f2;color:white;border:none;border-radius:8px;font-size:13px;font-weight:600;cursor:pointer;text-decoration:none;display:flex;align-items:center;gap:6px;">🐦 Tweet</a>
+                    <a id="linkedinAuditLink" href="#" target="_blank" rel="noopener" style="padding:8px 16px;background:#0077b5;color:white;border:none;border-radius:8px;font-size:13px;font-weight:600;cursor:pointer;text-decoration:none;display:flex;align-items:center;gap:6px;">💼 LinkedIn</a>
+                </div>
+                <p id="auditShareConfirm" style="font-size:12px;color:var(--green);margin-top:8px;display:none;">✅ Copied to clipboard!</p>
+            </div>
+
             <div class="pro-upsell">
                 <h3 id="proUpsellTitle">Want the full migration code?</h3>
                 <p id="proUpsellDesc">Pro includes ready-to-paste migration snippets for every alternative, plus PDF reports, price alerts, and 42-model comparisons.</p>
@@ -372,6 +383,38 @@
             bestAlternative: alternatives[0].key || 'none',
             bestSaving: Math.round(bestAnnual),
             alternativeCount: alternatives.length
+        });
+
+        // Populate share section
+        if (bestAnnual > 0 && alternatives.length > 0 && alternatives[0].model) {
+            var shareText = '💰 I just audited my AI API costs!\n\n' +
+                'Current: ' + current.name + ' (' + current.provider + ') → $' + spend.toFixed(2) + '/mo\n' +
+                'Best alternative: ' + alternatives[0].model.name + ' → $' + alternatives[0].monthlyCost.toFixed(2) + '/mo\n' +
+                'Annual savings: $' + Math.round(bestAnnual).toLocaleString() + ' (' + alternatives[0].savingPct.toFixed(0) + '% less)\n\n' +
+                'Audit your AI costs → https://getapipulse.com/api-cost-audit.html';
+            window._auditShareText = shareText;
+            window._auditTweetText = '💰 I just found $' + Math.round(bestAnnual).toLocaleString() + '/yr in AI API savings by switching from ' + current.name + ' to ' + alternatives[0].model.name + '! 🔍';
+            document.getElementById('tweetAuditLink').href = 'https://twitter.com/intent/tweet?text=' + encodeURIComponent(window._auditTweetText) + '&url=' + encodeURIComponent('https://getapipulse.com/api-cost-audit.html');
+            document.getElementById('shareSection').style.display = 'block';
+        }
+    }
+
+    function copyAuditShare() {
+        var text = window._auditShareText || '';
+        navigator.clipboard.writeText(text).then(function() {
+            var confirm = document.getElementById('auditShareConfirm');
+            if (confirm) { confirm.style.display = 'block'; setTimeout(function() { confirm.style.display = 'none'; }, 3000); }
+            if (window.trackEvent) window.trackEvent('savings_shared', { method: 'clipboard', source: 'audit' });
+        }).catch(function() {
+            var ta = document.createElement('textarea');
+            ta.value = text;
+            document.body.appendChild(ta);
+            ta.select();
+            document.execCommand('copy');
+            document.body.removeChild(ta);
+            var confirm = document.getElementById('auditShareConfirm');
+            if (confirm) { confirm.style.display = 'block'; setTimeout(function() { confirm.style.display = 'none'; }, 3000); }
+            if (window.trackEvent) window.trackEvent('savings_shared', { method: 'fallback', source: 'audit' });
         });
     }
 
