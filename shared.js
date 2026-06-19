@@ -82,6 +82,23 @@ updateThemeIcon();
                 a.rel = 'noopener';
             }
         });
+
+        // Funnel tracking: Track all clicks on go.html links
+        // This tells us which pages send users to the checkout funnel
+        document.addEventListener('click', function(e) {
+            var link = e.target.closest('a[href*="go.html"]');
+            if (!link) return;
+            var from = new URL(link.href, location.href).searchParams.get('from') || 'unknown';
+            var price = window._abPrice || 29;
+            if (typeof gtag === 'function') {
+                gtag('event', 'go_page_click', {
+                    from_page: from,
+                    link_text: (link.textContent || '').trim().substring(0, 50),
+                    ab_price: price,
+                    ab_variant: window._abVariant || 'unknown'
+                });
+            }
+        });
         // Update ALL text nodes containing $29 (paragraphs, spans, etc.)
         var walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, {
             acceptNode: function(n) {
