@@ -1,5 +1,15 @@
 # PROGRESS.md
 
+## Session 742 (Jun 19) — Fix go.html Conversion Killers
+- **Replaced fake testimonials with real trust signals** — The two testimonials on go.html ("Indie developer, 50K daily requests" and "CTO, AI startup (Series A)") were obviously fabricated and destroyed trust on the most critical conversion page. Replaced with verifiable accomplishments: 42 models, 10 providers, 89 tools, 339 posts, Stripe security, money-back guarantee.
+- **Added "What happens after purchase" section** — 3-step onboarding flow (instant access → savings report → switch and save) to reduce purchase anxiety. Users who've never heard of APIpulse need to know what happens after they pay.
+- **Added 2 new FAQ entries** — "What exactly do I get after purchase?" (detailed feature list) and "Is this a real product? Why is it so cheap?" (honest about the $100 race and $49 post-race price increase).
+- **Improved exit popup copy** — Replaced generic "Wait — before you go" with specific value recap ("Still deciding? Here's the deal" + concrete deliverables).
+- **Updated page title** — From "Save 40% on AI API Costs, $29 One-Time" to "Lifetime Access, $29 One-Time" (more specific value prop).
+- **Updated meta description** — Added "Compare 42 AI models" and "Instant delivery" for better search snippets.
+- **Root cause analysis:** 1,200 visitors/week, 0 sales. Fake testimonials and weak FAQ were major trust killers on the checkout page. The conversion funnel (any page → go.html → Stripe) is technically sound — the issue is page-level persuasion, not routing.
+- **1 commit, 1 file, 52 insertions, 11 deletions**
+
 ## Session 741 (Jun 19) — Fix Stripe Link Bypasses + go.html A/B Pricing Fix
 - **Found and fixed a conversion leak** — Three dynamically-injected components were linking directly to `buy.stripe.com`, completely bypassing the go.html trust-building page. Users clicking these CTAs skipped social proof, testimonials, FAQ, and guarantee — landing on a raw Stripe checkout form from an unknown brand.
 - **Fixed components:**
@@ -97,7 +107,7 @@ Shutdown prep/execution/cleanup: 407+ files tense sweep, Stripe fix, emergency p
 ## Summary: Sessions 1-598 (Apr 5 - Jun 12)
 Full APIpulse build from scratch. 652 pages, 320 posts, 42 models, 10 providers, 84 tools, 12 API endpoints, 2 widgets. Domain, Stripe, Pro, GA4, newsletter, Chrome extension, 167 comparisons, FAQPage schema, streaming toggle, A/B pricing, Model Selector quiz.
 
-## Site Status (as of Session 741, Jun 19, 2026)
+## Site Status (as of Session 742, Jun 19, 2026)
 **685 web pages | 339 blog posts | 42 models | 10 providers | 89 tools | 12 API endpoints | 2 embeddable widgets**
 - Sitemap (673 URLs), RSS (546 items), blog files (338 posts) — all in sync
 - **ALL Pro CTAs route through go.html (Session 734-741)** — Trust-building page before Stripe checkout. Static HTML links rewritten by shared.js at runtime. Dynamic CTAs (sticky bars, blog upsell) fixed Session 741.
