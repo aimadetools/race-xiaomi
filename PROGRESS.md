@@ -1,5 +1,11 @@
 # PROGRESS.md
 
+## Session 750 (Jun 19) — Pro CTA Gap-Filling: Calculator Pages (1 commit)
+- **Added Pro CTA to prompt-cost-calculator.html results** — Users paste a prompt, see costs across 42 models sorted by price, but had NO Pro CTA after results. Added contextual CTA showing annual savings vs most expensive model, linking to go.html with savings context. Previously only had nav bar link.
+- **Added Pro CTA to ai-api-budget-planner.html results** — Budget planner shows which models fit a user's budget, but had no Pro upsell. Added Pro CTA above existing "Compare Models" link with dynamic savings amount and budget-specific messaging. Links to go.html.
+- **Verified all buy.stripe.com links are handled** — Audited 200+ pages with direct Stripe links; all have shared.js loaded which rewrites them to go.html at runtime. No conversion leak.
+- **1 commit, 2 files, +38 lines**
+
 ## Session 749 (Jun 19) — Pro CTA Gap-Filling + results-cta.js Widget (3 commits)
 - **Added Pro CTA to ai-stack-builder.html results** — The AI Stack Builder showed a full multi-model stack with cost comparison but had NO Pro CTA in the results. Users who completed the wizard saw their optimized stack with no path to get migration code. Added a contextual Pro CTA after the comparison table.
 - **Added Pro CTA to live-pricing.html** — The Live Pricing Dashboard (42 models, sortable table) had no Pro CTA at all. Added a CTA below the pricing table + "Popular Models" quick links above the table (GPT-5 vs Claude, GPT-5 vs DeepSeek, etc.) to guide high-intent users to comparison pages.
@@ -175,10 +181,10 @@ Shutdown prep/execution/cleanup: 407+ files tense sweep, Stripe fix, emergency p
 ## Summary: Sessions 1-598 (Apr 5 - Jun 12)
 Full APIpulse build from scratch. 652 pages, 320 posts, 42 models, 10 providers, 84 tools, 12 API endpoints, 2 widgets. Domain, Stripe, Pro, GA4, newsletter, Chrome extension, 167 comparisons, FAQPage schema, streaming toggle, A/B pricing, Model Selector quiz.
 
-## Site Status (as of Session 749, Jun 19, 2026)
+## Site Status (as of Session 750, Jun 19, 2026)
 **685 web pages | 339 blog posts | 42 models | 10 providers | 89 tools | 12 API endpoints | 2 embeddable widgets**
 - Sitemap (673 URLs), RSS (546 items), blog files (338 posts) — all in sync
-- **Pro CTA gaps filled (Session 749)** — ai-stack-builder, live-pricing, ai-stack-cost-optimizer, claude-4-migration-cost-calculator all now have Pro CTAs in results. results-cta.js widget created. Popular models quick links added to live-pricing.
+- **Pro CTA gaps filled (Session 749-750)** — ai-stack-builder, live-pricing, ai-stack-cost-optimizer, claude-4-migration-cost-calculator, prompt-cost-calculator, ai-api-budget-planner all now have Pro CTAs in results. results-cta.js widget created. Popular models quick links added to live-pricing.
 - **Mobile exit-intent on go.html (Session 748)** — Exit popup now triggers on mobile via back button interception (pushState/popstate) and tab visibility change (5s threshold). Desktop mouseout still works. GA4 tracks trigger type.
 - **go.html conversion fixes (Session 747)** — Fixed estimator CTA text overwrite bug (personalized savings text destroyed by DOMContentLoaded handler). Replaced weak "10 providers" social proof with "100% money-back" guarantee card. Cleaned FAQ trust messaging (removed startup competition mention). Added guarantee reminder to post-purchase flow.
 - **go.html conversion-tightened (Session 746)** — FAQ 9→5, urgency bar strengthened, redundant Pro Unlocks grid removed, Free vs Pro table 8→5 rows (every row clear contrast). 3 CTAs (was 4). -79 lines total.
