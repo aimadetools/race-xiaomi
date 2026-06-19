@@ -1,13 +1,15 @@
 # PROGRESS.md
 
-## Session 755 (Jun 19) — api-cost-audit Cross-Link Expansion (1 commit)
+## Session 755 (Jun 19) — Cross-Link Expansion: Audit Tool + Best-Model Pages (2 commits)
 - **Cross-linked api-cost-audit.html from 679 pages** (was 3 pages) — Massive cross-link expansion for the free cost audit tool created in Session 754:
   - **164 comparison pages** — Added "🔍 Free Cost Audit" card to Related Tools section (after Savings Calculator card)
   - **214 blog posts** — Added "🔍 Free Cost Audit" CTA to inline CTA sections (after existing calculator/compare CTAs)
   - **tools.html** — Added new tool card with features list and "Run Free Audit →" link
   - **301 footer links** — Added footer links across tool pages, provider pages, blog posts, and utility pages
-- **Coverage: 3 → 679 pages (98.4%)** — Only 11 special pages (admin, embed, utility) remain without the link due to non-standard footers
-- **1 commit, 675 files, +1,741 lines**
+  - **Coverage: 3 → 679 pages (98.4%)** — Only 11 special pages (admin, embed, utility) remain without the link due to non-standard footers
+- **Added 4 best-model tool cards to tools.html** — best-ai-model-for-rag, content-writing, data-extraction, translation (created Session 753, were missing from tools grid)
+- **Cross-linked 4 best-model pages from 49 footers** — Added to multi-column footer Tools section on comparison pages and other pages
+- **2 commits, 728 files, +2,015 lines**
 
 ## Session 754 (Jun 19) — Exit-Intent Feedback Survey + Free API Cost Audit Tool (2 commits)
 - **Replaced sales exit popup with 2-step feedback survey on go.html** — After 12 sessions of conversion optimization with 0 sales, changed approach from "try harder to sell" to "ask why they're not buying." Step 1: 5 reasons (price too high, not sure of value, free enough, don't trust, other). Step 2: tailored response based on answer (price math with annual ROI, free tool redirect, trust guarantee, or standard CTA). All responses tracked via GA4 (exit_survey_response, exit_survey_step2_shown, exit_survey_skipped). Root cause: we've been guessing at objections — now we'll have real data.
