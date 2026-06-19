@@ -241,10 +241,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     var ESSENTIAL_HREFS = {
         'calculator.html': 1,
+        'live-pricing.html': 1,
         'compare.html': 1,
         'pricing.html': 1,
-        'blog.html': 1,
-        'about.html': 1
+        'blog.html': 1
     };
 
     function restructureNav() {
