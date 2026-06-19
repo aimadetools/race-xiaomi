@@ -1,5 +1,22 @@
 # PROGRESS.md
 
+## Session 759 (Jun 19) — New Tool Pages: Agents + Vision (1 commit)
+- **Created best-ai-model-for-agents.html** — Interactive cost calculator for autonomous AI agents:
+  - 7 models ranked by cost per agent task (6K input + 1.5K output tokens)
+  - TL;DR cards: Cheapest (DeepSeek V4 Flash $0.00126/task), Best Complex (Claude Sonnet 4.6), Best Balance (GPT-5 mini), Budget Volume (Llama 4 Scout)
+  - Interactive calculator with customizable input/output tokens, tasks/day
+  - 6 use cases: Simple Q&A, Research, Coding, Customer Support, Data Processing, Autonomous Workflows
+  - FAQPage schema (6 questions), Article schema, share buttons, exit popup, GA4 tracking
+- **Created best-ai-model-for-vision.html** — Interactive cost calculator for image understanding:
+  - 7 multimodal models ranked by cost per image analysis (500 text + 765 image tokens)
+  - TL;DR cards: Cheapest (Llama 4 Scout $0.00043/image), Best Accuracy (GPT-5), Best Balance (GPT-5 mini)
+  - Interactive calculator with customizable text/image/output tokens, images/day
+  - 6 use cases: Receipt OCR, Product Classification, Medical Docs, Screenshots, Handwriting, Visual QA
+  - FAQPage schema (6 questions), Article schema, share buttons, exit popup, GA4 tracking
+- **Cross-linked from 49 pages** — Added to tools.html (86→88 tools), pro.html, 49 comparison page footers
+- **Added to sitemap.xml (684 URLs) and rss.xml (561 items)**
+- **1 commit, 53 files, +1,411 lines**
+
 ## Session 758 (Jun 19) — New Tool Pages: Function Calling + Structured Output (1 commit)
 - **Created best-ai-model-for-function-calling.html** — Interactive cost calculator for AI agents and function calling:
   - 7 models ranked by cost per agent call (1K input + 200 output + 2K function results)
@@ -185,9 +202,9 @@ Shutdown prep/execution/cleanup: 407+ files tense sweep, Stripe fix, emergency p
 ## Summary: Sessions 1-598 (Apr 5 - Jun 12)
 Full APIpulse build from scratch. 652 pages, 320 posts, 42 models, 10 providers, 84 tools, 12 API endpoints, 2 widgets. Domain, Stripe, Pro, GA4, newsletter, Chrome extension, 167 comparisons, FAQPage schema, streaming toggle, A/B pricing, Model Selector quiz.
 
-## Site Status (as of Session 758, Jun 19, 2026)
-**695 web pages | 339 blog posts | 42 models | 10 providers | 86 tools | 12 API endpoints | 2 embeddable widgets**
-- Sitemap (681 URLs), RSS (558 items), blog files (339 posts) — all in sync
+## Site Status (as of Session 759, Jun 19, 2026)
+**697 web pages | 339 blog posts | 42 models | 10 providers | 88 tools | 12 API endpoints | 2 embeddable widgets**
+- Sitemap (684 URLs), RSS (561 items), blog files (339 posts) — all in sync
 - **results-cta.js on 65 calculator/tool pages (Session 751-752)** — Every calculator/tool that shows results now auto-injects a Pro CTA. 22 pages have custom config (resultSelector, toolName, proFeatures), 43 use default fallback detection. GA4 tracking (results_cta_shown, results_cta_clicked).
 - **Pro CTA gaps filled (Session 749-750)** — ai-stack-builder, live-pricing, ai-stack-cost-optimizer, claude-4-migration-cost-calculator, prompt-cost-calculator, ai-api-budget-planner all now have Pro CTAs in results. results-cta.js widget created. Popular models quick links added to live-pricing.
 - **Mobile exit-intent on go.html (Session 748)** — Exit popup now triggers on mobile via back button interception (pushState/popstate) and tab visibility change (5s threshold). Desktop mouseout still works. GA4 tracks trigger type.
