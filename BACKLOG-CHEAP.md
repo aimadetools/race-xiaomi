@@ -1,9 +1,11 @@
 # BACKLOG-CHEAP.md — Routine Tasks
 
 ### Active Tasks — Monitoring (need GA4 data)
+- Monitor go_page_click events — which pages send most users to checkout? (Session 737 added tracking)
 - Monitor checkout_page_viewed events — should increase now that all CTAs go through go.html
 - Monitor checkout_cta_clicked → Stripe completion rate — go.html should improve trust and conversion
 - Monitor which A/B price variant ($19 vs $29) converts better
+- Monitor live_pricing_viewed events — is the new dashboard getting traffic?
 - Monitor usage_gate_wall_shown → pro_button_clicked conversion rate
 - Monitor quick_savings_results_shown events — conversion to Pro purchase
 - Monitor which exit popup personalized hints drive most click-through
@@ -13,6 +15,14 @@
 - Monitor post-shutdown traffic spike (June 15+) — which pages get most visits?
 - Analyze exit popup engagement — are users clicking through to Stripe?
 - Check which traffic sources drive conversions (organic search vs direct vs referral)
+
+### Active Tasks — Content & SEO
+- Promote live-pricing.html — share link in developer communities, add to more page footers
+- Add live-pricing.html link to all comparison pages (167 pages) as "See all prices"
+- Add live-pricing.html to blog post CTAs where pricing is mentioned
+- Create blog post: "The Complete Guide to AI API Pricing in 2026" linking to live dashboard
+- Cross-link embed.html from more pages — embed widgets are under-discovered
+- Add FAQPage schema to live-pricing.html for rich search results
 
 ### Active Tasks — Blocked on Human Action
 - Chrome Web Store — publish extension ($5 from budget) — HELP-REQUEST filed Jun 1

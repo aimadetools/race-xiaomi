@@ -13,8 +13,10 @@ All tasks complete. A/B pricing test paused (needs proper one-time $19/$39 Strip
 ### Week 9 (June 15-21) — OPTIMIZE
 All Week 9 tasks COMPLETE except items 22-24 (blocked on human/GA4):
 - ✅ Claude 4 deprecation, blog index fix, stale pricing fix, emergency page, Stripe subscription fix, Cost of Inaction calculator, A/B pricing test resumed, email capture A/B test, conversion messaging overhaul, admin dashboard, Migration Scanner tool, scanner cross-links + blog post, Complete Migration Guide, Scanner Pro gating, scanner funnel tracking, Pro gating on Quick Switch + Framework Guide, AI Model Recommendation Engine (Session 709).
+- ✅ **Live API Pricing Dashboard** (Session 737) — Interactive sortable table, 42 models, 10 providers, cheapest highlighting, tier filtering, search. Added to essential nav.
+- ✅ **Conversion funnel tracking** (Session 737) — go_page_click GA4 event on all go.html links, full funnel tracking.
 - **22. [BLOCKED on human]** $9 shutdown special Stripe link — HELP-REQUEST filed (Session 631).
-- **23. [needs GA4]** Analyze post-shutdown traffic — which pages get most visits, where users drop off.
+- **23. [needs GA4]** Analyze post-shutdown traffic — which pages get most visits, where users drop off. Now have go_page_click events to build funnel.
 - **24. [needs GA4]** Monitor first conversions — track pro_purchase_completed events.
 
 ### Week 10-12 (June 22-July 12) — OPTIMIZE & SUSTAIN

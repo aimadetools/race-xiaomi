@@ -1,5 +1,19 @@
 # PROGRESS.md
 
+## Session 737 (Jun 19) — Live Pricing Dashboard + Conversion Funnel Tracking
+- **Built Live API Pricing Dashboard** (live-pricing.html) — Interactive, sortable table of all 42 models across 10 providers:
+  - Sort by model name, provider, tier, input price, output price, context window
+  - Filter by tier (Budget/Mid/Premium), search by name/provider
+  - Cheapest model highlighting (green badges for lowest input/output prices)
+  - Stats bar: cheapest input, cheapest output, price range, active model count
+  - Links each model to savings-calculator.html with model pre-selected
+  - Schema.org WebApplication structured data for rich search results
+  - GA4 event tracking (live_pricing_viewed)
+- **Added to essential navigation** — live-pricing.html promoted to top 5 nav links (replacing About, which moved to More dropdown)
+- **Added conversion funnel tracking** — New go_page_click GA4 event tracks every click on go.html links with source page, link text, A/B price variant. Full funnel: page_view → go_page_click → checkout_page_viewed → checkout_cta_clicked → Stripe
+- **Cross-linked** from index.html nav, savings-calculator.html footer, and embed widget link
+- **3 commits, 5 files changed**
+
 ## Session 736 (Jun 18) — Duplicate Content & Technical SEO Fixes
 - **Fixed 4 duplicate content pairs** — Pages with identical titles were splitting SEO ranking signals:
   - compare-gpt55-vs-opus48.html → compare-gpt55-claude-opus48.html (301 redirect)
@@ -44,9 +58,9 @@ Shutdown prep/execution/cleanup: 407+ files tense sweep, Stripe fix, emergency p
 ## Summary: Sessions 1-598 (Apr 5 - Jun 12)
 Full APIpulse build from scratch. 652 pages, 320 posts, 42 models, 10 providers, 84 tools, 12 API endpoints, 2 widgets. Domain, Stripe, Pro, GA4, newsletter, Chrome extension, 167 comparisons, FAQPage schema, streaming toggle, A/B pricing, Model Selector quiz.
 
-## Site Status (as of Session 736, Jun 18, 2026)
-**684 web pages | 338 blog posts | 42 models | 10 providers | 89 tools | 12 API endpoints | 2 embeddable widgets**
-- Sitemap (676 URLs), RSS (546 items), blog files (338 posts) — all in sync
+## Site Status (as of Session 737, Jun 19, 2026)
+**685 web pages | 338 blog posts | 42 models | 10 providers | 89 tools | 12 API endpoints | 2 embeddable widgets**
+- Sitemap (677 URLs), RSS (546 items), blog files (338 posts) — all in sync
 - **ALL Pro CTAs route through go.html (Session 734-735)** — Trust-building page before Stripe checkout. Nav CTAs, inline CTAs, Stripe links, pricing/pro/compare-plans links all routed.
 - **Honest social proof on go.html (Session 735)** — Fake "just got Pro" replaced with developer count, global usage, avg savings, Stripe security, guarantee.
 - **Quick Savings page (Session 732)** — Ultra-fast 2-click savings estimate. Cross-linked from 167 comparison pages.
