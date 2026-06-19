@@ -611,6 +611,19 @@
             // Show results
             document.getElementById('results').style.display = 'block';
 
+            // Pro CTA
+            if (!document.getElementById('migration-pro-cta')) {
+                var ctaHtml = '<div id="migration-pro-cta" style="background:linear-gradient(135deg,rgba(99,102,241,0.08),rgba(139,92,246,0.08));border:2px solid var(--accent);border-radius:16px;padding:28px 24px;margin:24px 0;text-align:center;">' +
+                    '<div style="font-size:14px;font-weight:700;color:var(--accent);text-transform:uppercase;letter-spacing:0.5px;margin-bottom:8px;">🔓 Get migration code for your switch</div>' +
+                    '<div style="font-size:15px;color:var(--text-secondary);margin-bottom:16px;">Pro includes copy-paste code to migrate from Claude 4 to any alternative. Plus full savings reports for all 15 alternatives ranked by cost.</div>' +
+                    '<a href="go.html?from=claude4_migration_calc" target="_blank" rel="noopener" ' +
+                    'style="display:inline-block;background:linear-gradient(135deg,var(--accent),#8b5cf6);color:white;padding:14px 32px;border-radius:10px;font-size:16px;font-weight:800;text-decoration:none;box-shadow:0 4px 20px rgba(99,102,241,0.4);">' +
+                    'Get Pro — $' + (window._abPrice || 29) + ' lifetime</a>' +
+                    '<div style="font-size:12px;color:var(--text-muted);margin-top:10px;">14-day money-back guarantee · Instant access</div>' +
+                    '</div>';
+                document.getElementById('results').insertAdjacentHTML('afterend', ctaHtml);
+            }
+
             // Track event
             if (window.trackEvent) {
                 window.trackEvent('migration_calculator_used', {
