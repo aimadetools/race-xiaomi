@@ -24,7 +24,8 @@ All Week 9 tasks COMPLETE except items 22-24 (blocked on human/GA4):
 26. Community feedback integration — Act on Reddit/HN feedback.
 27. Plan v2 — If revenue justifies, plan next features.
 
-### Completed (Sessions 416-748, Apr 23 - Jun 19)
+### Completed (Sessions 416-750, Apr 23 - Jun 19)
+**Session 750 (Jun 19):** Pro CTA gap-filling — added Pro CTAs to prompt-cost-calculator and ai-api-budget-planner (both missing CTAs after results). Verified all Stripe links route through go.html. 1 commit, 2 files.
 **Session 748 (Jun 19):** go.html conversion improvements — mobile exit-intent (back button + tab visibility), CTA sync with estimator savings, nav CTA loop fix, bottom urgency countdown. 3 commits, 1 file.
 **Session 747 (Jun 19):** go.html conversion fixes — estimator CTA text overwrite bug, social proof replacement, FAQ trust cleanup, guarantee in post-purchase flow. 3 commits, 1 file.
 **Session 746 (Jun 19):** go.html conversion tightening — stronger urgency bar, FAQ 9→5, removed redundant Pro Unlocks grid, strengthened Free vs Pro table. 3 commits, 1 file, -79 lines.
