@@ -719,6 +719,9 @@
         </div>
 
         <!-- Bottom CTA -->
+        <div class="urgency-bar" style="margin-bottom:16px;font-size:13px;">
+            ⏰ Price increases to $49 on July 12 — <span id="countdown-bottom" style="font-family:monospace;font-weight:800;"></span> left at $29
+        </div>
         <a id="checkout-btn-bottom" href="https://buy.stripe.com/fZu7sL3Gw3GS0RQeoDeEo0a" class="cta-btn" target="_blank" rel="noopener" style="margin-bottom:16px;">
             Get Lifetime Access — <span id="btn-price-bottom">$29</span>
         </a>
@@ -736,6 +739,21 @@
         var savings = parseFloat(params.get('savings')) || 0;
         var source = params.get('from') || '';
         var altCount = parseInt(params.get('alts')) || 0;
+
+        // Fix nav CTA on go.html — shared.js rewrites it to go.html?from=nav_cta,
+        // creating a reload loop. Override to scroll to the main CTA instead.
+        document.addEventListener('DOMContentLoaded', function() {
+            var navCta = document.querySelector('.nav-cta');
+            if (navCta) {
+                navCta.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    var productCard = document.querySelector('.product-card');
+                    if (productCard) {
+                        productCard.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                });
+            }
+        });
 
         // Show personalized savings if available
         if (savings > 0) {
@@ -759,19 +777,21 @@
             function updateCountdown() {
                 var now = new Date();
                 var diff = deadline - now;
+                var timeStr;
                 if (diff <= 0) {
-                    document.getElementById('countdown').textContent = '0 days';
-                    return;
-                }
-                var days = Math.floor(diff / 86400000);
-                var hours = Math.floor((diff % 86400000) / 3600000);
-                var mins = Math.floor((diff % 3600000) / 60000);
-                var secs = Math.floor((diff % 60000) / 1000);
-                if (days > 0) {
-                    document.getElementById('countdown').textContent = days + 'd ' + hours + 'h ' + mins + 'm';
+                    timeStr = '0 days';
                 } else {
-                    document.getElementById('countdown').textContent = hours + 'h ' + mins + 'm ' + secs + 's';
+                    var days = Math.floor(diff / 86400000);
+                    var hours = Math.floor((diff % 86400000) / 3600000);
+                    var mins = Math.floor((diff % 3600000) / 60000);
+                    var secs = Math.floor((diff % 60000) / 1000);
+                    timeStr = days > 0
+                        ? days + 'd ' + hours + 'h ' + mins + 'm'
+                        : hours + 'h ' + mins + 'm ' + secs + 's';
                 }
+                document.getElementById('countdown').textContent = timeStr;
+                var bottom = document.getElementById('countdown-bottom');
+                if (bottom) bottom.textContent = timeStr;
             }
             updateCountdown();
             setInterval(updateCountdown, 1000);
