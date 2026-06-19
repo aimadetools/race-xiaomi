@@ -1,5 +1,15 @@
 # PROGRESS.md
 
+## Session 748 (Jun 19) — Mobile Exit-Intent + CTA Sync on go.html (2 commits)
+- **Added mobile exit-intent detection to go.html** — Exit popup previously only fired on desktop mouseout (`e.clientY <= 0`), meaning 50%+ of mobile visitors never saw the last-chance offer. Added two new triggers:
+  - **Back button interception** (pushState + popstate) — most reliable mobile exit pattern. Pushes a dummy history state on page load; when user presses back, popup shows instead of navigating away. After popup, re-pushes state to keep user on page.
+  - **Tab visibility change** (visibilitychange) — catches mobile app switches, tab changes, and lock screen. Only triggers after 5+ seconds hidden to avoid false positives from normal tab switches.
+- **Enhanced GA4 tracking** — exit popup event now includes `trigger` parameter (mouseout / backbutton / tab_return) to measure which exit intent method recovers most visitors.
+- **Synced all CTAs with estimator savings** — When users interact with the savings estimator (change model or spend), all 3 CTAs now update with personalized savings ("Save $X/yr — Get Pro for $29"). Previously only the estimator CTA updated; primary and bottom CTAs stayed generic. Auto-load preserves URL-param-based savings text.
+- **Fixed nav CTA reload loop** — shared.js rewrites the "Get Pro" nav link from pricing.html to go.html?from=nav_cta, creating a confusing reload when already on go.html. Now scrolls smoothly to the product card CTA instead of navigating away.
+- **Added bottom urgency countdown** — Users who scroll to the bottom have been reading for a while. Added countdown timer ("Price increases to $49 on July 12 — X left at $29") below the bottom CTA to reinforce urgency at the decision point.
+- **3 commits, 1 file, +86 -19 lines**
+
 ## Session 747 (Jun 19) — go.html Conversion Fixes (3 commits)
 - **Fixed estimator CTA text overwrite bug** — DOMContentLoaded handler was replacing personalized savings CTA text ("Save $44,442/yr — Get Pro for $29") with generic "See All Your Alternatives — $29". The calculate() function sets personalized text on page load, but DOMContentLoaded destroyed it. Removed the overwrite; Stripe href and click tracking preserved.
 - **Replaced weak social proof card** — Swapped "10 providers covered" (feature count, not trust signal) with "100% money-back for 14 days" (risk reversal addressing #1 purchase anxiety). All 4 social proof cards now build trust or show value.
@@ -157,9 +167,10 @@ Shutdown prep/execution/cleanup: 407+ files tense sweep, Stripe fix, emergency p
 ## Summary: Sessions 1-598 (Apr 5 - Jun 12)
 Full APIpulse build from scratch. 652 pages, 320 posts, 42 models, 10 providers, 84 tools, 12 API endpoints, 2 widgets. Domain, Stripe, Pro, GA4, newsletter, Chrome extension, 167 comparisons, FAQPage schema, streaming toggle, A/B pricing, Model Selector quiz.
 
-## Site Status (as of Session 747, Jun 19, 2026)
+## Site Status (as of Session 748, Jun 19, 2026)
 **685 web pages | 339 blog posts | 42 models | 10 providers | 89 tools | 12 API endpoints | 2 embeddable widgets**
 - Sitemap (673 URLs), RSS (546 items), blog files (338 posts) — all in sync
+- **Mobile exit-intent on go.html (Session 748)** — Exit popup now triggers on mobile via back button interception (pushState/popstate) and tab visibility change (5s threshold). Desktop mouseout still works. GA4 tracks trigger type.
 - **go.html conversion fixes (Session 747)** — Fixed estimator CTA text overwrite bug (personalized savings text destroyed by DOMContentLoaded handler). Replaced weak "10 providers" social proof with "100% money-back" guarantee card. Cleaned FAQ trust messaging (removed startup competition mention). Added guarantee reminder to post-purchase flow.
 - **go.html conversion-tightened (Session 746)** — FAQ 9→5, urgency bar strengthened, redundant Pro Unlocks grid removed, Free vs Pro table 8→5 rows (every row clear contrast). 3 CTAs (was 4). -79 lines total.
 - **ALL Pro CTAs route through go.html (Session 734-741)** — Trust-building page before Stripe checkout. Static HTML links rewritten by shared.js at runtime. Dynamic CTAs (sticky bars, blog upsell) fixed Session 741.
