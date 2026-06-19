@@ -1,5 +1,22 @@
 # PROGRESS.md
 
+## Session 757 (Jun 19) — New Tool Pages: Summarization + Code Review (1 commit)
+- **Created best-ai-model-for-summarization.html** — Interactive cost calculator for text summarization:
+  - 7 models ranked by cost per summary (4K input → 500 output tokens)
+  - TL;DR cards: Cheapest (DeepSeek V4 Flash $0.00070), Best Quality (Claude Sonnet 4.6), Best Balance (GPT-5 mini), Budget Volume (Llama 4 Scout)
+  - Interactive calculator with customizable input/output tokens, summaries/day
+  - 6 use cases: Meeting transcripts, Legal docs, Research papers, Support tickets, News articles, Book abstracts
+  - FAQPage schema (6 questions), Article schema, share buttons, exit popup, GA4 tracking
+- **Created best-ai-model-for-code-review.html** — Interactive cost calculator for automated code review:
+  - 7 models ranked by cost per review (3K input → 800 output tokens)
+  - TL;DR cards: Cheapest (DeepSeek V4 Flash $0.00065), Best Quality (Claude Sonnet 4.6), Best Balance (GPT-5 mini), Budget Volume (Llama 4 Scout)
+  - Interactive calculator with customizable diff size, review comments, reviews/day
+  - 6 use cases: CI/CD pipelines, PR automation, Security scanning, Style/linting, Performance review, Legacy modernization
+  - FAQPage schema (6 questions), Article schema, share buttons, exit popup, GA4 tracking
+- **Cross-linked from 48 pages** — Added to tools.html (82→84 tools), 45 comparison page footers, 3 blog post footers
+- **Added to sitemap.xml (679 URLs) and rss.xml (556 items)**
+- **1 commit, 53 files, +1,413 lines**
+
 ## Session 756 (Jun 19) — "Share Your Savings" Viral Feature (1 commit)
 - **Added share buttons to 3 key conversion tools** — Creates viral distribution loop where every savings calculation becomes a potential social media post driving new traffic:
   - **savings-calculator.html** — Copy-to-clipboard, Tweet, and LinkedIn share buttons appear after users see results. Share text includes model names, exact savings amounts, and link back to APIpulse.
@@ -186,9 +203,9 @@ Shutdown prep/execution/cleanup: 407+ files tense sweep, Stripe fix, emergency p
 ## Summary: Sessions 1-598 (Apr 5 - Jun 12)
 Full APIpulse build from scratch. 652 pages, 320 posts, 42 models, 10 providers, 84 tools, 12 API endpoints, 2 widgets. Domain, Stripe, Pro, GA4, newsletter, Chrome extension, 167 comparisons, FAQPage schema, streaming toggle, A/B pricing, Model Selector quiz.
 
-## Site Status (as of Session 755, Jun 19, 2026)
-**691 web pages | 339 blog posts | 42 models | 10 providers | 93 tools | 12 API endpoints | 2 embeddable widgets**
-- Sitemap (677 URLs), RSS (554 items), blog files (338 posts) — all in sync
+## Site Status (as of Session 757, Jun 19, 2026)
+**693 web pages | 339 blog posts | 42 models | 10 providers | 95 tools | 12 API endpoints | 2 embeddable widgets**
+- Sitemap (679 URLs), RSS (556 items), blog files (339 posts) — all in sync
 - **results-cta.js on 65 calculator/tool pages (Session 751-752)** — Every calculator/tool that shows results now auto-injects a Pro CTA. 22 pages have custom config (resultSelector, toolName, proFeatures), 43 use default fallback detection. GA4 tracking (results_cta_shown, results_cta_clicked).
 - **Pro CTA gaps filled (Session 749-750)** — ai-stack-builder, live-pricing, ai-stack-cost-optimizer, claude-4-migration-cost-calculator, prompt-cost-calculator, ai-api-budget-planner all now have Pro CTAs in results. results-cta.js widget created. Popular models quick links added to live-pricing.
 - **Mobile exit-intent on go.html (Session 748)** — Exit popup now triggers on mobile via back button interception (pushState/popstate) and tab visibility change (5s threshold). Desktop mouseout still works. GA4 tracks trigger type.
