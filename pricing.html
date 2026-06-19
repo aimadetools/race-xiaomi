@@ -960,10 +960,9 @@
                 }
             });
 
-            // Update bottom CTA
-            var bottomCtas = document.querySelectorAll('a[href*="buy.stripe.com"]');
+            // Update bottom CTA — shared.js rewrites stripe links to go.html, so match by class+text
+            var bottomCtas = document.querySelectorAll('a.btn-primary');
             bottomCtas.forEach(function(a){
-                a.href = stripeLink;
                 if(a.textContent.includes('Stop the Leak')) a.textContent = 'Stop the Leak — $' + price + ' One-Time';
             });
 
