@@ -68,6 +68,7 @@ Full APIpulse build from scratch. 652 pages, 320 posts, 42 models, 10 providers,
 ## Site Status (as of Session 738, Jun 19, 2026)
 **685 web pages | 338 blog posts | 42 models | 10 providers | 89 tools | 12 API endpoints | 2 embeddable widgets**
 - Sitemap (677 URLs), RSS (546 items), blog files (338 posts) — all in sync
+- **Live Pricing Dashboard cross-linked from 318+ pages (Session 738)** — 166 comparison pages, 150 blog posts, tools/pricing/calculator/compare pages. FAQPage schema added.
 - **ALL Pro CTAs route through go.html (Session 734-735)** — Trust-building page before Stripe checkout. Nav CTAs, inline CTAs, Stripe links, pricing/pro/compare-plans links all routed.
 - **Honest social proof on go.html (Session 735)** — Fake "just got Pro" replaced with developer count, global usage, avg savings, Stripe security, guarantee.
 - **Quick Savings page (Session 732)** — Ultra-fast 2-click savings estimate. Cross-linked from 167 comparison pages.
