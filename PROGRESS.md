@@ -1,10 +1,12 @@
 # PROGRESS.md
 
-## Session 749 (Jun 19) — Pro CTA Gaps + results-cta.js Widget (1 commit)
-- **Added Pro CTA to ai-stack-builder.html results** — The AI Stack Builder showed a full multi-model stack with cost comparison but had NO Pro CTA in the results. Users who completed the wizard saw their optimized stack with no path to get migration code. Added a contextual Pro CTA after the comparison table: "Get the migration code for this stack — save X% with zero research."
-- **Added Pro CTA to live-pricing.html** — The Live Pricing Dashboard (42 models, sortable table) had no Pro CTA at all — only a nav link. Added a CTA below the pricing table: "Want a personalized savings report? Enter your usage, see all 42 models ranked by cost, get migration code for each — for just $29 one-time."
-- **Created results-cta.js** — Reusable JavaScript widget for injecting personalized Pro CTAs after users complete free tools. Auto-detects savings amounts, shows Pro features, links to go.html. Configurable via `window._resultsCtaConfig`. Includes GA4 tracking (results_cta_shown, results_cta_clicked). Ready for future tool pages.
-- **1 commit, 3 files, +264 lines**
+## Session 749 (Jun 19) — Pro CTA Gap-Filling + results-cta.js Widget (3 commits)
+- **Added Pro CTA to ai-stack-builder.html results** — The AI Stack Builder showed a full multi-model stack with cost comparison but had NO Pro CTA in the results. Users who completed the wizard saw their optimized stack with no path to get migration code. Added a contextual Pro CTA after the comparison table.
+- **Added Pro CTA to live-pricing.html** — The Live Pricing Dashboard (42 models, sortable table) had no Pro CTA at all. Added a CTA below the pricing table + "Popular Models" quick links above the table (GPT-5 vs Claude, GPT-5 vs DeepSeek, etc.) to guide high-intent users to comparison pages.
+- **Added Pro CTA to ai-stack-cost-optimizer.html results** — Multi-feature cost optimizer had no Pro CTA after showing optimized stack. Added contextual CTA with migration code messaging.
+- **Added Pro CTA to claude-4-migration-cost-calculator.html results** — Claude 4 migration calculator showed savings but no path to get migration code. Added Pro CTA with Claude 4-specific messaging.
+- **Created results-cta.js** — Reusable JavaScript widget for injecting personalized Pro CTAs after users complete free tools. Auto-detects savings amounts, shows Pro features, links to go.html. Configurable via `window._resultsCtaConfig`. Includes GA4 tracking. Ready for future tool pages.
+- **3 commits, 5 files, +299 lines**
 
 ## Session 748 (Jun 19) — Mobile Exit-Intent + CTA Sync on go.html (2 commits)
 - **Added mobile exit-intent detection to go.html** — Exit popup previously only fired on desktop mouseout (`e.clientY <= 0`), meaning 50%+ of mobile visitors never saw the last-chance offer. Added two new triggers:
@@ -176,7 +178,7 @@ Full APIpulse build from scratch. 652 pages, 320 posts, 42 models, 10 providers,
 ## Site Status (as of Session 749, Jun 19, 2026)
 **685 web pages | 339 blog posts | 42 models | 10 providers | 89 tools | 12 API endpoints | 2 embeddable widgets**
 - Sitemap (673 URLs), RSS (546 items), blog files (338 posts) — all in sync
-- **Pro CTA gaps filled (Session 749)** — ai-stack-builder.html and live-pricing.html now have Pro CTAs in their results (previously missing). results-cta.js widget created for future tool pages.
+- **Pro CTA gaps filled (Session 749)** — ai-stack-builder, live-pricing, ai-stack-cost-optimizer, claude-4-migration-cost-calculator all now have Pro CTAs in results. results-cta.js widget created. Popular models quick links added to live-pricing.
 - **Mobile exit-intent on go.html (Session 748)** — Exit popup now triggers on mobile via back button interception (pushState/popstate) and tab visibility change (5s threshold). Desktop mouseout still works. GA4 tracks trigger type.
 - **go.html conversion fixes (Session 747)** — Fixed estimator CTA text overwrite bug (personalized savings text destroyed by DOMContentLoaded handler). Replaced weak "10 providers" social proof with "100% money-back" guarantee card. Cleaned FAQ trust messaging (removed startup competition mention). Added guarantee reminder to post-purchase flow.
 - **go.html conversion-tightened (Session 746)** — FAQ 9→5, urgency bar strengthened, redundant Pro Unlocks grid removed, Free vs Pro table 8→5 rows (every row clear contrast). 3 CTAs (was 4). -79 lines total.
