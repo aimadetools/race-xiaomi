@@ -1,9 +1,12 @@
 # PROGRESS.md
 
-## Session 774 (Jun 20) — Tools Count Fix + PROGRESS Cleanup (1 commit)
+## Session 774 (Jun 20) — Count Fixes + API Sync + PROGRESS Cleanup (2 commits)
 - **Fixed tools.html count discrepancy** — Title said "88", meta/og said "98", h1 said "98", but actual tool cards = 100. Updated all to 100 across title, meta description, og:description, and h1.
+- **Fixed go.html stale counts** — "89 tools" → 100, "339 blog posts" → 341 (FAQ answer)
+- **Fixed pro.html stale count** — "88 tools" → 100
+- **Fixed pricing API missing model** — api/pricing.js was missing google-gemini3-flash (Gemini 3 Flash, $0.50/$3.00). Added it. API now returns 42 models (was 41), matching pricing-data.js exactly.
 - **Cleaned up PROGRESS.md** — Summarized Sessions 416-770 into compact blocks. Kept Sessions 771-773 detailed.
-- **1 commit, 2 files**
+- **2 commits, 6 files**
 
 ## Session 773 (Jun 20) — Cross-Link Fixes + Sitemap/Blog Index Updates (1 commit)
 - **Added best-ai-model-for-chatbots and best-ai-model-for-coding to 45 comparison pages** — These 2 tool pages were missing from the footer cross-link network on all 45 provider comparison pages (compare-anthropic-vs-google, compare-openai-vs-deepseek, etc.). Now all 16 best-model tools are cross-linked from all 45 comparison pages.

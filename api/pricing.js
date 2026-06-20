@@ -25,6 +25,7 @@ module.exports = (req, res) => {
         { id: 'google-pro', n: 'Gemini 2.5 Pro', p: 'Google', ps: 'google', t: 'Mid', i: 1.25, o: 10, c: '1M' },
         { id: 'google-flash', n: 'Gemini 2.0 Flash', p: 'Google', ps: 'google', t: 'Budget', i: 0.1, o: 0.4, c: '1M' },
         { id: 'google-flash-lite', n: 'Gemini 2.0 Flash Lite', p: 'Google', ps: 'google', t: 'Budget', i: 0.075, o: 0.3, c: '1M' },
+        { id: 'google-gemini3-flash', n: 'Gemini 3 Flash', p: 'Google', ps: 'google', t: 'Budget', i: 0.50, o: 3.00, c: '1M' },
         { id: 'google-gemini35-flash', n: 'Gemini 3.5 Flash', p: 'Google', ps: 'google', t: 'Mid', i: 1.5, o: 9, c: '1M' },
         { id: 'google-gemini31-flash-lite', n: 'Gemini 3.1 Flash-Lite', p: 'Google', ps: 'google', t: 'Budget', i: 0.25, o: 1.5, c: '1M' },
         { id: 'google-25-flash-lite', n: 'Gemini 2.5 Flash-Lite', p: 'Google', ps: 'google', t: 'Budget', i: 0.10, o: 0.40, c: '1M' },
