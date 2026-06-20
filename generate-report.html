@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generate Your Free API Cost Report — Personalized Savings in 60 Seconds</title>
+    <meta name="description" content="Get a personalized AI API cost report. Enter your model, monthly spend, and usage to see exactly how much you could save. Free instant analysis with 42 models compared.">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="canonical" href="https://getapipulse.com/generate-report.html">
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0CEP7S9Y3J"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-0CEP7S9Y3J');
+    </script>
+    <script src="analytics.js" defer></script>
+    <script src="shared.js" defer></script>
+    <style>
+        .report-page { max-width: 720px; margin: 0 auto; padding: 100px 20px 80px; }
+
+        /* Hero */
+        .report-hero { text-align: center; margin-bottom: 36px; }
+        .report-hero h1 { font-size: clamp(26px, 4vw, 36px); font-weight: 900; margin-bottom: 10px; }
+        .report-hero p { font-size: 16px; color: var(--text-secondary); max-width: 520px; margin: 0 auto; }
+        .report-hero .badge {
+            display: inline-block; background: rgba(34,197,94,0.12); color: var(--green);
+            font-size: 12px; font-weight: 700; padding: 4px 12px; border-radius: 20px; margin-bottom: 12px;
+        }
+
+        /* Input form */
+        .report-form {
+            background: var(--bg-secondary); border: 1px solid var(--border);
+            border-radius: 16px; padding: 28px 24px; margin-bottom: 28px;
+        }
+        .form-title { font-size: 18px; font-weight: 800; margin-bottom: 20px; text-align: center; }
+        .form-group { margin-bottom: 18px; }
+        .form-group label {
+            display: block; font-size: 13px; font-weight: 700; color: var(--text-secondary);
+            margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.5px;
+        }
+        .form-group select, .form-group input {
+            width: 100%; padding: 12px 14px; background: var(--bg-card); border: 1px solid var(--border);
+            border-radius: 10px; color: var(--text-primary); font-size: 15px; cursor: pointer;
+        }
+        .form-group select:focus, .form-group input:focus {
+            outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px rgba(99,102,241,0.15);
+        }
+        .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+        @media (max-width: 500px) { .form-row { grid-template-columns: 1fr; } }
+        .generate-btn {
+            display: block; width: 100%; padding: 16px 32px;
+            background: linear-gradient(135deg, var(--accent), #8b5cf6);
+            color: white; border: none; border-radius: 12px; font-size: 17px; font-weight: 800;
+            cursor: pointer; transition: all 0.2s; box-shadow: 0 4px 20px rgba(99,102,241,0.3);
+        }
+        .generate-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(99,102,241,0.4); }
+        .generate-btn:disabled { opacity: 0.5; cursor: not-allowed; transform: none; }
+
+        /* Results */
+        #results { display: none; animation: fadeIn 0.5s ease; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+        /* Summary card */
+        .summary-card {
+            background: linear-gradient(135deg, rgba(99,102,241,0.08), rgba(139,92,246,0.08));
+            border: 1px solid rgba(99,102,241,0.2); border-radius: 16px;
+            padding: 28px; text-align: center; margin-bottom: 24px;
+        }
+        .summary-card .label { font-size: 13px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px; }
+        .summary-card .model-name { font-size: 22px; font-weight: 900; margin: 8px 0 4px; }
+        .summary-card .provider { font-size: 14px; color: var(--text-secondary); margin-bottom: 16px; }
+        .summary-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 16px; }
+        .summary-stat {
+            background: var(--bg-card); border-radius: 10px; padding: 14px 10px;
+        }
+        .summary-stat .val { font-size: 20px; font-weight: 800; font-family: monospace; }
+        .summary-stat .lbl { font-size: 11px; color: var(--text-muted); margin-top: 2px; }
+        .val-red { color: var(--red); }
+        .val-green { color: var(--green); }
+        .val-accent { color: var(--accent); }
+        @media (max-width: 500px) { .summary-grid { grid-template-columns: 1fr; } }
+
+        /* Breakdown */
+        .breakdown-card {
+            background: var(--bg-secondary); border: 1px solid var(--border);
+            border-radius: 14px; padding: 24px; margin-bottom: 20px;
+        }
+        .breakdown-card h3 { font-size: 16px; font-weight: 800; margin-bottom: 16px; }
+        .cost-bar { margin-bottom: 14px; }
+        .cost-bar-label {
+            display: flex; justify-content: space-between; align-items: center;
+            font-size: 13px; margin-bottom: 6px;
+        }
+        .cost-bar-label .name { font-weight: 600; color: var(--text-primary); }
+        .cost-bar-label .amount { font-family: monospace; font-weight: 700; color: var(--text-secondary); }
+        .cost-bar-track {
+            height: 8px; background: var(--bg-card); border-radius: 4px; overflow: hidden;
+        }
+        .cost-bar-fill {
+            height: 100%; border-radius: 4px; transition: width 0.6s ease;
+        }
+        .fill-input { background: var(--accent); }
+        .fill-output { background: var(--green); }
+
+        /* Alternatives table */
+        .alts-card {
+            background: var(--bg-secondary); border: 1px solid var(--border);
+            border-radius: 14px; padding: 24px; margin-bottom: 20px;
+        }
+        .alts-card h3 { font-size: 16px; font-weight: 800; margin-bottom: 4px; }
+        .alts-card .subtitle { font-size: 13px; color: var(--text-muted); margin-bottom: 16px; }
+        .alts-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+        .alts-table th {
+            padding: 10px 8px; border-bottom: 2px solid var(--border); font-weight: 700;
+            color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px; font-size: 11px; text-align: left;
+        }
+        .alts-table td { padding: 10px 8px; border-bottom: 1px solid var(--border); color: var(--text-secondary); }
+        .alts-table tr:last-child td { border-bottom: none; }
+        .alts-highlight { background: rgba(34,197,94,0.06); }
+        .alts-highlight td { color: var(--text-primary) !important; }
+        .savings-cell { color: var(--green) !important; font-weight: 700; }
+        .current-row { background: rgba(239,68,68,0.04); }
+        .current-row td { color: var(--red) !important; }
+
+        /* Locked content */
+        .locked-section {
+            background: var(--bg-secondary); border: 2px dashed var(--border);
+            border-radius: 14px; padding: 32px 24px; text-align: center; margin-bottom: 20px;
+            position: relative; overflow: hidden;
+        }
+        .locked-section::before {
+            content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 60%;
+            background: linear-gradient(to top, var(--bg-secondary), transparent); pointer-events: none;
+        }
+        .locked-icon { font-size: 32px; margin-bottom: 12px; }
+        .locked-section h3 { font-size: 18px; font-weight: 800; margin-bottom: 8px; }
+        .locked-section p { font-size: 14px; color: var(--text-secondary); margin-bottom: 16px; max-width: 400px; margin-left: auto; margin-right: auto; }
+        .locked-preview {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 10px; margin-bottom: 20px; text-align: left; position: relative; z-index: 1;
+        }
+        .locked-item {
+            background: var(--bg-card); border: 1px solid var(--border); border-radius: 8px;
+            padding: 12px; font-size: 13px; display: flex; align-items: center; gap: 8px;
+        }
+        .locked-item .icon { font-size: 16px; flex-shrink: 0; }
+
+        /* CTA */
+        .report-cta {
+            display: block; width: 100%; padding: 16px 32px;
+            background: linear-gradient(135deg, var(--accent), #8b5cf6);
+            color: white; border: none; border-radius: 12px; font-size: 17px; font-weight: 800;
+            cursor: pointer; text-align: center; text-decoration: none; transition: all 0.2s;
+            box-shadow: 0 4px 20px rgba(99,102,241,0.3); margin-bottom: 12px;
+        }
+        .report-cta:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(99,102,241,0.4); }
+
+        /* Share */
+        .share-bar {
+            display: flex; gap: 10px; justify-content: center; flex-wrap: wrap;
+            margin-top: 16px; padding-top: 16px; border-top: 1px solid var(--border);
+        }
+        .share-btn {
+            display: inline-flex; align-items: center; gap: 6px; padding: 8px 14px;
+            background: var(--bg-card); border: 1px solid var(--border); border-radius: 8px;
+            font-size: 12px; color: var(--text-secondary); text-decoration: none; cursor: pointer;
+            transition: all 0.2s;
+        }
+        .share-btn:hover { background: var(--bg-secondary); border-color: var(--accent); }
+
+        /* Tips */
+        .tips-card {
+            background: var(--bg-secondary); border: 1px solid var(--border);
+            border-radius: 14px; padding: 24px; margin-bottom: 20px;
+        }
+        .tips-card h3 { font-size: 16px; font-weight: 800; margin-bottom: 12px; }
+        .tip-item { display: flex; gap: 10px; padding: 10px 0; border-bottom: 1px solid var(--border); }
+        .tip-item:last-child { border-bottom: none; }
+        .tip-icon { font-size: 16px; flex-shrink: 0; margin-top: 2px; }
+        .tip-text { font-size: 13px; color: var(--text-secondary); line-height: 1.5; }
+        .tip-text strong { color: var(--text-primary); }
+    </style>
+</head>
+<body>
+    <a href="#main" class="skip-link">Skip to content</a>
+    <nav>
+        <div class="nav-inner">
+            <a href="index.html" class="logo">API<span>pulse</span></a>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="pricing.html" class="nav-cta">Get Pro</a>
+                <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
+            </div>
+        </div>
+    </nav>
+
+    <main id="main" class="report-page">
+        <!-- Hero -->
+        <div class="report-hero">
+            <div class="badge">Free • No signup required</div>
+            <h1>Generate Your API Cost Report</h1>
+            <p>Select your model, enter your usage, and get a personalized cost breakdown with savings recommendations in 60 seconds.</p>
+        </div>
+
+        <!-- Input Form -->
+        <div class="report-form">
+            <div class="form-title">📊 Your API Setup</div>
+
+            <div class="form-group">
+                <label>Primary AI Model</label>
+                <select id="rpt-model">
+                    <optgroup label="OpenAI">
+                        <option value="openai/gpt-5">GPT-5 — $1.25 / $10.00 per 1M tokens</option>
+                        <option value="openai/gpt-5-mini">GPT-5 mini — $0.40 / $1.60 per 1M tokens</option>
+                        <option value="openai/gpt-5.5">GPT-5.5 — $5.00 / $30.00 per 1M tokens</option>
+                        <option value="openai/gpt-4o">GPT-4o — $2.50 / $10.00 per 1M tokens</option>
+                        <option value="openai/gpt-4o-mini">GPT-4o mini — $0.15 / $0.60 per 1M tokens</option>
+                        <option value="openai/o3">o3 — $2.00 / $8.00 per 1M tokens</option>
+                        <option value="openai/o4-mini">o4-mini — $0.55 / $2.20 per 1M tokens</option>
+                    </optgroup>
+                    <optgroup label="Anthropic">
+                        <option value="anthropic/claude-opus-4.8">Claude Opus 4.8 — $5.00 / $25.00 per 1M tokens</option>
+                        <option value="anthropic/claude-sonnet-4.6">Claude Sonnet 4.6 — $3.00 / $15.00 per 1M tokens</option>
+                        <option value="anthropic/claude-haiku-4.5">Claude Haiku 4.5 — $1.00 / $5.00 per 1M tokens</option>
+                    </optgroup>
+                    <optgroup label="Google">
+                        <option value="google/gemini-2.5-pro">Gemini 2.5 Pro — $1.25 / $10.00 per 1M tokens</option>
+                        <option value="google/gemini-3.5-flash">Gemini 3.5 Flash — $1.50 / $9.00 per 1M tokens</option>
+                        <option value="google/gemini-2.5-flash">Gemini 2.5 Flash — $0.15 / $0.60 per 1M tokens</option>
+                    </optgroup>
+                    <optgroup label="DeepSeek">
+                        <option value="deepseek/v4-pro">DeepSeek V4 Pro — $0.27 / $1.10 per 1M tokens</option>
+                        <option value="deepseek/v4-flash">DeepSeek V4 Flash — $0.07 / $0.28 per 1M tokens</option>
+                    </optgroup>
+                    <optgroup label="Meta">
+                        <option value="meta/llama-4-maverick">Llama 4 Maverick — $0.20 / $0.60 per 1M tokens</option>
+                        <option value="meta/llama-4-scout">Llama 4 Scout — $0.10 / $0.30 per 1M tokens</option>
+                    </optgroup>
+                    <optgroup label="Mistral">
+                        <option value="mistral/mistral-large">Mistral Large — $2.00 / $6.00 per 1M tokens</option>
+                        <option value="mistral/mistral-small">Mistral Small — $0.10 / $0.30 per 1M tokens</option>
+                    </optgroup>
+                    <optgroup label="xAI">
+                        <option value="xai/grok-3">Grok 3 — $3.00 / $15.00 per 1M tokens</option>
+                        <option value="xai/grok-3-mini">Grok 3 mini — $0.30 / $0.50 per 1M tokens</option>
+                    </optgroup>
+                </select>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label>Monthly API Spend (USD)</label>
+                    <input id="rpt-spend" type="number" min="1" max="1000000" value="100" placeholder="100">
+                </div>
+                <div class="form-group">
+                    <label>Requests per Month</label>
+                    <input id="rpt-requests" type="number" min="1" max="100000000" value="10000" placeholder="10000">
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label>Avg Input Tokens / Request</label>
+                    <input id="rpt-input-tokens" type="number" min="1" max="100000" value="1000" placeholder="1000">
+                </div>
+                <div class="form-group">
+                    <label>Avg Output Tokens / Request</label>
+                    <input id="rpt-output-tokens" type="number" min="1" max="100000" value="500" placeholder="500">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Primary Use Case</label>
+                <select id="rpt-usecase">
+                    <option value="chatbot">Chatbot / Conversational AI</option>
+                    <option value="code-gen">Code Generation / Copilot</option>
+                    <option value="content">Content Generation / Writing</option>
+                    <option value="data-extraction">Data Extraction / Parsing</option>
+                    <option value="rag">RAG / Knowledge Base</option>
+                    <option value="customer-support">Customer Support Automation</option>
+                    <option value="translation">Translation / Localization</option>
+                    <option value="summarization">Summarization</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+
+            <button class="generate-btn" id="generate-btn" onclick="generateReport()">
+                ⚡ Generate My Free Report
+            </button>
+            <p style="text-align:center;font-size:12px;color:var(--text-muted);margin-top:8px;">
+                No signup required • Results in 60 seconds • Powered by 42 models
+            </p>
+        </div>
+
+        <!-- Results -->
+        <div id="results">
+            <!-- Summary -->
+            <div class="summary-card" id="summary-card">
+                <div class="label">Your API Cost Report</div>
+                <div class="model-name" id="sum-model">—</div>
+                <div class="provider" id="sum-provider">—</div>
+                <div class="summary-grid">
+                    <div class="summary-stat">
+                        <div class="val val-red" id="sum-monthly">$0</div>
+                        <div class="lbl">Monthly cost</div>
+                    </div>
+                    <div class="summary-stat">
+                        <div class="val val-green" id="sum-savings">$0</div>
+                        <div class="lbl">Potential savings/yr</div>
+                    </div>
+                    <div class="summary-stat">
+                        <div class="val val-accent" id="sum-pct">0%</div>
+                        <div class="lbl">Cost reduction</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Cost Breakdown -->
+            <div class="breakdown-card">
+                <h3>💰 Cost Breakdown</h3>
+                <div id="breakdown-bars"></div>
+                <div id="cost-per-req" style="font-size:13px;color:var(--text-muted);margin-top:12px;text-align:center;"></div>
+            </div>
+
+            <!-- Top 3 Alternatives (FREE) -->
+            <div class="alts-card">
+                <h3>🏆 Top 3 Cheapest Alternatives</h3>
+                <p class="subtitle">Based on your usage pattern and use case</p>
+                <table class="alts-table">
+                    <thead>
+                        <tr><th>Model</th><th>Provider</th><th>Monthly</th><th>You save</th></tr>
+                    </thead>
+                    <tbody id="alts-free-body"></tbody>
+                </table>
+            </div>
+
+            <!-- Optimization Tips (FREE - 3 basic) -->
+            <div class="tips-card">
+                <h3>⚡ Quick Optimization Tips</h3>
+                <div id="tips-free"></div>
+            </div>
+
+            <!-- LOCKED: Full 42-model ranking -->
+            <div class="locked-section">
+                <div class="locked-icon">🔒</div>
+                <h3>Full 42-Model Ranking</h3>
+                <p>See every alternative ranked by cost, quality score, and fit for your use case — including models you didn't know existed.</p>
+                <div class="locked-preview">
+                    <div class="locked-item"><span class="icon">📊</span> All 42 models ranked</div>
+                    <div class="locked-item"><span class="icon">🎯</span> Quality scores</div>
+                    <div class="locked-item"><span class="icon">🏅</span> Best-fit badges</div>
+                    <div class="locked-item"><span class="icon">📈</span> Cost vs quality chart</div>
+                </div>
+                <a href="go.html" class="report-cta">Unlock Full Report — $29 lifetime</a>
+                <p style="font-size:12px;color:var(--text-muted);">14-day money-back guarantee · One-time payment</p>
+            </div>
+
+            <!-- LOCKED: Migration code -->
+            <div class="locked-section">
+                <div class="locked-icon">💻</div>
+                <h3>Copy-Paste Migration Code</h3>
+                <p>Ready-to-use Python and Node.js code to switch from your current model to each cheaper alternative. Just change the model name.</p>
+                <div class="locked-preview">
+                    <div class="locked-item"><span class="icon">🐍</span> Python SDK code</div>
+                    <div class="locked-item"><span class="icon">📦</span> Node.js SDK code</div>
+                    <div class="locked-item"><span class="icon">🔄</span> cURL examples</div>
+                    <div class="locked-item"><span class="icon">✅</span> Test snippets</div>
+                </div>
+                <a href="go.html" class="report-cta">Get Migration Code — $29</a>
+            </div>
+
+            <!-- LOCKED: Advanced tips -->
+            <div class="locked-section">
+                <div class="locked-icon">🧠</div>
+                <h3>Personalized Optimization Playbook</h3>
+                <p>Beyond model switching — batch processing, caching strategies, prompt compression, and routing tricks tailored to your use case.</p>
+                <div class="locked-preview">
+                    <div class="locked-item"><span class="icon">📦</span> Batch processing</div>
+                    <div class="locked-item"><span class="icon">💾</span> Caching strategies</div>
+                    <div class="locked-item"><span class="icon">✂️</span> Prompt compression</div>
+                    <div class="locked-item"><span class="icon">🔀</span> Smart routing</div>
+                </div>
+                <a href="go.html" class="report-cta">Get Full Playbook — $29</a>
+            </div>
+
+            <!-- Share bar -->
+            <div class="breakdown-card" style="text-align:center;">
+                <h3>📤 Share Your Results</h3>
+                <p style="font-size:13px;color:var(--text-secondary);margin-bottom:16px;">Help your team save on API costs</p>
+                <div class="share-bar" style="border:none;padding:0;">
+                    <button class="share-btn" onclick="copyResults()">📋 Copy to clipboard</button>
+                    <a class="share-btn" id="tweet-btn" href="#" target="_blank" rel="noopener">🐦 Tweet</a>
+                    <a class="share-btn" id="linkedin-btn" href="#" target="_blank" rel="noopener">💼 LinkedIn</a>
+                </div>
+            </div>
+
+            <!-- Final CTA -->
+            <div style="text-align:center;padding:20px;">
+                <a href="go.html" class="report-cta" style="display:inline-block;width:auto;padding:16px 48px;">
+                    Get Full Pro Report — $29 lifetime
+                </a>
+                <p style="font-size:13px;color:var(--text-muted);margin-top:8px;">
+                    42 models · Migration code · PDF export · Lifetime updates
+                </p>
+            </div>
+        </div>
+    </main>
+
+    <script>
+    // Model pricing data (input/output per 1M tokens)
+    const MODELS = {
+        'openai/gpt-5':            { name: 'GPT-5', provider: 'OpenAI', input: 1.25, output: 10.00, quality: 92 },
+        'openai/gpt-5-mini':       { name: 'GPT-5 mini', provider: 'OpenAI', input: 0.40, output: 1.60, quality: 85 },
+        'openai/gpt-5.5':          { name: 'GPT-5.5', provider: 'OpenAI', input: 5.00, output: 30.00, quality: 97 },
+        'openai/gpt-4o':           { name: 'GPT-4o', provider: 'OpenAI', input: 2.50, output: 10.00, quality: 89 },
+        'openai/gpt-4o-mini':      { name: 'GPT-4o mini', provider: 'OpenAI', input: 0.15, output: 0.60, quality: 78 },
+        'openai/o3':               { name: 'o3', provider: 'OpenAI', input: 2.00, output: 8.00, quality: 94 },
+        'openai/o4-mini':          { name: 'o4-mini', provider: 'OpenAI', input: 0.55, output: 2.20, quality: 86 },
+        'anthropic/claude-opus-4.8':  { name: 'Claude Opus 4.8', provider: 'Anthropic', input: 5.00, output: 25.00, quality: 96 },
+        'anthropic/claude-sonnet-4.6': { name: 'Claude Sonnet 4.6', provider: 'Anthropic', input: 3.00, output: 15.00, quality: 93 },
+        'anthropic/claude-haiku-4.5':  { name: 'Claude Haiku 4.5', provider: 'Anthropic', input: 1.00, output: 5.00, quality: 82 },
+        'google/gemini-2.5-pro':   { name: 'Gemini 2.5 Pro', provider: 'Google', input: 1.25, output: 10.00, quality: 90 },
+        'google/gemini-3.5-flash': { name: 'Gemini 3.5 Flash', provider: 'Google', input: 1.50, output: 9.00, quality: 87 },
+        'google/gemini-2.5-flash': { name: 'Gemini 2.5 Flash', provider: 'Google', input: 0.15, output: 0.60, quality: 79 },
+        'deepseek/v4-pro':         { name: 'DeepSeek V4 Pro', provider: 'DeepSeek', input: 0.27, output: 1.10, quality: 88 },
+        'deepseek/v4-flash':       { name: 'DeepSeek V4 Flash', provider: 'DeepSeek', input: 0.07, output: 0.28, quality: 76 },
+        'meta/llama-4-maverick':   { name: 'Llama 4 Maverick', provider: 'Meta', input: 0.20, output: 0.60, quality: 84 },
+        'meta/llama-4-scout':     { name: 'Llama 4 Scout', provider: 'Meta', input: 0.10, output: 0.30, quality: 74 },
+        'mistral/mistral-large':   { name: 'Mistral Large', provider: 'Mistral', input: 2.00, output: 6.00, quality: 86 },
+        'mistral/mistral-small':   { name: 'Mistral Small', provider: 'Mistral', input: 0.10, output: 0.30, quality: 75 },
+        'xai/grok-3':             { name: 'Grok 3', provider: 'xAI', input: 3.00, output: 15.00, quality: 91 },
+        'xai/grok-3-mini':        { name: 'Grok 3 mini', provider: 'xAI', input: 0.30, output: 0.50, quality: 80 },
+    };
+
+    function calculateCost(model, requests, inputTokens, outputTokens) {
+        const inputCost = (requests * inputTokens * model.input) / 1000000;
+        const outputCost = (requests * outputTokens * model.output) / 1000000;
+        return { input: inputCost, output: outputCost, total: inputCost + outputCost };
+    }
+
+    function generateReport() {
+        const modelKey = document.getElementById('rpt-model').value;
+        const spend = parseFloat(document.getElementById('rpt-spend').value) || 100;
+        const requests = parseInt(document.getElementById('rpt-requests').value) || 10000;
+        const inputTokens = parseInt(document.getElementById('rpt-input-tokens').value) || 1000;
+        const outputTokens = parseInt(document.getElementById('rpt-output-tokens').value) || 500;
+        const useCase = document.getElementById('rpt-usecase').value;
+
+        const model = MODELS[modelKey];
+        if (!model) return;
+
+        // Track event
+        if (typeof gtag === 'function') {
+            gtag('event', 'report_generated', { model: modelKey, spend: spend, use_case: useCase });
+        }
+
+        // Calculate costs
+        const cost = calculateCost(model, requests, inputTokens, outputTokens);
+        const monthlySpend = Math.max(spend, cost.total);
+        const annualSpend = monthlySpend * 12;
+
+        // Find alternatives
+        const alternatives = [];
+        for (const [key, m] of Object.entries(MODELS)) {
+            if (key === modelKey) continue;
+            const altCost = calculateCost(m, requests, inputTokens, outputTokens);
+            const monthlySaving = monthlySpend - altCost.total;
+            alternatives.push({
+                key, ...m,
+                monthlyCost: altCost.total,
+                annualSaving: monthlySaving * 12,
+                savingPct: monthlySpend > 0 ? (monthlySaving / monthlySpend * 100) : 0,
+            });
+        }
+        alternatives.sort((a, b) => a.monthlyCost - b.monthlyCost);
+
+        const bestAlt = alternatives[0];
+        const annualSaving = bestAlt ? bestAlt.annualSaving : 0;
+        const savingPct = bestAlt ? bestAlt.savingPct : 0;
+
+        // Update summary
+        document.getElementById('sum-model').textContent = model.name;
+        document.getElementById('sum-provider').textContent = model.provider;
+        document.getElementById('sum-monthly').textContent = '$' + monthlySpend.toFixed(2);
+        document.getElementById('sum-savings').textContent = '$' + Math.max(0, annualSaving).toFixed(0);
+        document.getElementById('sum-pct').textContent = Math.max(0, savingPct).toFixed(0) + '%';
+
+        // Cost breakdown bars
+        const inputPct = cost.total > 0 ? (cost.input / cost.total * 100) : 50;
+        const outputPct = 100 - inputPct;
+        document.getElementById('breakdown-bars').innerHTML = `
+            <div class="cost-bar">
+                <div class="cost-bar-label">
+                    <span class="name">Input tokens (${inputTokens.toLocaleString()}/req × ${requests.toLocaleString()} reqs)</span>
+                    <span class="amount">$${cost.input.toFixed(2)}/mo</span>
+                </div>
+                <div class="cost-bar-track"><div class="cost-bar-fill fill-input" style="width:${inputPct}%"></div></div>
+            </div>
+            <div class="cost-bar">
+                <div class="cost-bar-label">
+                    <span class="name">Output tokens (${outputTokens.toLocaleString()}/req × ${requests.toLocaleString()} reqs)</span>
+                    <span class="amount">$${cost.output.toFixed(2)}/mo</span>
+                </div>
+                <div class="cost-bar-track"><div class="cost-bar-fill fill-output" style="width:${outputPct}%"></div></div>
+            </div>
+        `;
+        const costPerReq = requests > 0 ? (cost.total / requests) : 0;
+        document.getElementById('cost-per-req').textContent =
+            `Cost per request: $${costPerReq.toFixed(6)} · Annual: $${(cost.total * 12).toFixed(2)}`;
+
+        // Top 3 alternatives (free)
+        const top3 = alternatives.slice(0, 3);
+        let altHtml = '';
+        // Show current model first
+        altHtml += `<tr class="current-row"><td>${model.name} (current)</td><td>${model.provider}</td><td>$${monthlySpend.toFixed(2)}</td><td>—</td></tr>`;
+        top3.forEach((alt, i) => {
+            const cls = i === 0 ? 'alts-highlight' : '';
+            altHtml += `<tr class="${cls}">
+                <td>${alt.name} ${i === 0 ? '🏆' : ''}</td>
+                <td>${alt.provider}</td>
+                <td>$${alt.monthlyCost.toFixed(2)}</td>
+                <td class="savings-cell">$${Math.max(0, alt.annualSaving).toFixed(0)}/yr</td>
+            </tr>`;
+        });
+        document.getElementById('alts-free-body').innerHTML = altHtml;
+
+        // Free tips
+        const tips = [];
+        if (savingPct > 20) {
+            tips.push({ icon: '🔄', text: `<strong>Switch to ${bestAlt.name}</strong> to save $${annualSaving.toFixed(0)}/year with minimal quality trade-off.` });
+        }
+        if (inputTokens > 2000) {
+            tips.push({ icon: '✂️', text: `<strong>Reduce input tokens.</strong> Your average of ${inputTokens.toLocaleString()} tokens/request is above typical. Try trimming system prompts and context.` });
+        }
+        if (requests > 50000) {
+            tips.push({ icon: '📦', text: `<strong>Batch your requests.</strong> At ${requests.toLocaleString()} requests/month, batching can reduce costs by 20-50% through API batch endpoints.` });
+        }
+        if (costPerReq > 0.01) {
+            tips.push({ icon: '💾', text: `<strong>Add caching.</strong> Your $${costPerReq.toFixed(4)}/request cost can be reduced by caching common responses. Tools like GPTCache save 30-60%.` });
+        }
+        if (tips.length === 0) {
+            tips.push({ icon: '✅', text: `<strong>Your setup looks efficient!</strong> Consider monitoring for price drops — providers reduce prices regularly.` });
+        }
+        document.getElementById('tips-free').innerHTML = tips.map(t =>
+            `<div class="tip-item"><span class="tip-icon">${t.icon}</span><div class="tip-text">${t.text}</div></div>`
+        ).join('');
+
+        // Share links
+        const shareText = `I found $${Math.max(0, annualSaving).toFixed(0)}/year in potential API savings with @APIpulse! Compare ${Object.keys(MODELS).length}+ AI models instantly:`;
+        document.getElementById('tweet-btn').href = `https://twitter.com/intent/tweet?text=${encodeURIComponent(shareText)}&url=${encodeURIComponent('https://getapipulse.com/generate-report.html')}`;
+        document.getElementById('linkedin-btn').href = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent('https://getapipulse.com/generate-report.html')}`;
+
+        // Show results
+        document.getElementById('results').style.display = 'block';
+        document.getElementById('results').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
+    function copyResults() {
+        const model = document.getElementById('sum-model').textContent;
+        const monthly = document.getElementById('sum-monthly').textContent;
+        const savings = document.getElementById('sum-savings').textContent;
+        const text = `My APIpulse Cost Report:\nModel: ${model}\nMonthly: ${monthly}\nPotential savings: ${savings}/year\n\nGenerate yours: https://getapipulse.com/generate-report.html`;
+        navigator.clipboard.writeText(text).then(() => {
+            const btn = event.target;
+            btn.textContent = '✅ Copied!';
+            setTimeout(() => btn.textContent = '📋 Copy to clipboard', 2000);
+        });
+    }
+
+    // Track page view
+    if (typeof gtag === 'function') {
+        gtag('event', 'report_page_viewed');
+    }
+    </script>
+</body>
+</html>
