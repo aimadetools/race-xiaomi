@@ -26,13 +26,15 @@ module.exports = (req, res) => {
         { id: 'google-flash', n: 'Gemini 2.0 Flash', p: 'Google', ps: 'google', t: 'Budget', i: 0.1, o: 0.4, c: '1M' },
         { id: 'google-flash-lite', n: 'Gemini 2.0 Flash Lite', p: 'Google', ps: 'google', t: 'Budget', i: 0.075, o: 0.3, c: '1M' },
         { id: 'google-gemini35-flash', n: 'Gemini 3.5 Flash', p: 'Google', ps: 'google', t: 'Mid', i: 1.5, o: 9, c: '1M' },
+        { id: 'google-gemini31-flash-lite', n: 'Gemini 3.1 Flash-Lite', p: 'Google', ps: 'google', t: 'Budget', i: 0.25, o: 1.5, c: '1M' },
+        { id: 'google-25-flash-lite', n: 'Gemini 2.5 Flash-Lite', p: 'Google', ps: 'google', t: 'Budget', i: 0.10, o: 0.40, c: '1M' },
         { id: 'deepseek-v4-pro', n: 'DeepSeek V4 Pro', p: 'DeepSeek', ps: 'deepseek', t: 'Budget', i: 0.435, o: 0.87, c: '1M' },
         { id: 'deepseek-v4-flash', n: 'DeepSeek V4 Flash', p: 'DeepSeek', ps: 'deepseek', t: 'Budget', i: 0.14, o: 0.28, c: '1M' },
         { id: 'deepseek-v32', n: 'DeepSeek V3.2', p: 'DeepSeek', ps: 'deepseek', t: 'Budget', i: 0.23, o: 0.34, c: '128K' },
         { id: 'deepseek-v3', n: 'DeepSeek V3', p: 'DeepSeek', ps: 'deepseek', t: 'Budget', i: 0.27, o: 1.1, c: '128K', dep: true },
         { id: 'mistral-large', n: 'Mistral Large 3', p: 'Mistral', ps: 'mistral', t: 'Budget', i: 0.5, o: 1.5, c: '262K' },
         { id: 'mistral-medium', n: 'Mistral Medium 3.5', p: 'Mistral', ps: 'mistral', t: 'Mid', i: 1.5, o: 7.5, c: '128K' },
-        { id: 'mistral-small', n: 'Mistral Small 4', p: 'Mistral', ps: 'mistral', t: 'Budget', i: 0.15, o: 0.6, c: '128K' },
+        { id: 'mistral-small', n: 'Mistral Small 4', p: 'Mistral', ps: 'mistral', t: 'Budget', i: 0.10, o: 0.30, c: '128K' },
         { id: 'cohere-command-a', n: 'Command A', p: 'Cohere', ps: 'cohere', t: 'Mid', i: 2.5, o: 10, c: '128K' },
         { id: 'cohere-command-r-plus', n: 'Command R+', p: 'Cohere', ps: 'cohere', t: 'Mid', i: 2.5, o: 10, c: '128K' },
         { id: 'cohere-command-r', n: 'Command R', p: 'Cohere', ps: 'cohere', t: 'Budget', i: 0.5, o: 1.5, c: '128K' },
@@ -56,6 +58,6 @@ module.exports = (req, res) => {
     }
     return res.status(200).json({
         models: d,
-        meta: { count: d.length, lastUpdated: '2026-06-10', source: 'https://getapipulse.com' }
+        meta: { count: d.length, lastUpdated: '2026-06-20', source: 'https://getapipulse.com' }
     });
 };
