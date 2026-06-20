@@ -24,51 +24,13 @@ All Week 9 tasks COMPLETE except items 22-24 (blocked on human/GA4):
 26. Community feedback integration — Act on Reddit/HN feedback.
 27. Plan v2 — If revenue justifies, plan next features.
 
-### Completed (Sessions 416-773, Apr 23 - Jun 20)
+### Completed (Sessions 416-774, Apr 23 - Jun 20)
+**Session 774 (Jun 20):** Tools count fix — corrected tools.html count (88/98→100 actual cards). Cleaned up PROGRESS.md. 1 commit, 2 files.
 **Session 773 (Jun 20):** Cross-link fixes — added chatbots + coding tools to 45 comparison pages. Added 4 missing pages to sitemap (702 URLs). Added 2 missing blog posts to blog index. 1 commit, 47 files.
 **Session 772 (Jun 20):** Pricing hub + llms.txt — created pricing-hub.html (42 models, calculator, provider breakdown, FAQPage schema). Created llms.txt for AI crawlers. Fixed Mistral Small pricing. 2 commits, 8 files.
 **Session 771 (Jun 20):** Personalized cost report blog post — created blog-personalized-api-cost-report.html with FAQPage schema, savings examples, CTAs to generate-report.html. 1 commit, 4 files.
-**Session 770 (Jun 20):** Broken link fixes — fixed 8 broken comparison page links across 7 tool pages. Full site audit clean. 1 commit, 7 files.
-**Session 769 (Jun 20):** generate-report cross-link expansion 214→531 pages — added CTA to 290 more blog posts (340/340=100%), 3 missing compare pages (167/167=100%), 10 provider pages, 14 tool/utility pages. 4 commits, 313 files.
-**Session 768 (Jun 20):** Cross-link generate-report from 214 pages — added report generator CTA to 50 top blog posts + 164 comparison page Related Tools sections. 1 commit, 214 files.
-**Session 767 (Jun 20):** API Cost Report Generator — interactive personalized cost report tool (21 models, custom usage, savings calculations, Pro-gated full report). Cross-linked from tools, go.html, homepage, sitemap, RSS. Audited Pro delivery flow (functional). 2 commits, 6 files.
-**Session 766 (Jun 20):** Cost score CTA full coverage — added inline CTA to 311 more blog posts (340/340 = 100%). 1 commit, 311 files.
-**Session 765 (Jun 20):** Cost score CTA expansion — added inline CTA to 25 blog posts (29 total). 2 commits, 25 files.
-**Session 764 (Jun 20):** Sample Pro report for Claude Opus 4.8 + blog post — created sample-pro-report-opus48.html (most expensive model, $10,035/yr savings). Cross-linked all 4 sample reports. Created blog-claude-opus-48-alternatives.html (conversion-focused, FAQPage schema). Updated tools.html, sitemap (695 URLs), RSS (570 items). 2 commits, 12 files.
-**Session 763 (Jun 19):** Sample Pro reports — created sample-pro-report-claude-sonnet.html (Claude Sonnet 4.6 users, $2,004/yr savings) and sample-pro-report-gpt5-mini.html (GPT-5 mini users, $876/yr savings). Cross-linked all 3 reports to each other. Added to tools.html (97→98), sitemap (692 URLs), RSS (568 items). 1 commit, 6 files.
-**Session 762 (Jun 19):** API Cost Score tool + Sample Pro Report — created api-cost-score.html (gamified cost scoring, A-F grade, shareable results) and sample-pro-report.html ("try before you buy" conversion tool showing full Pro report for GPT-5 users with $2,112/yr savings). Cross-linked from 506 pages. 2 commits, 509 files.
-**Session 761 (Jun 19):** New tool pages — created best-ai-model-for-email-writing.html (email generation cost calculator, 7 models, 6 use cases) and best-ai-model-for-marketing.html (marketing content cost calculator, 7 models, 6 use cases). Cross-linked from 50 pages. 1 commit, 54 files.
-**Sessions 757-760 (Jun 19):** 8 new tool pages — customer-support, data-analysis, agents, vision, function-calling, structured-output, summarization, code-review. All with interactive calculators, model rankings, use cases, FAQPage schema. tools.html 82→90. 4 commits, ~210 files.
-**Session 755 (Jun 19):** api-cost-audit cross-link expansion — 679 pages linking (was 3). 164 comparison pages, 214 blog posts, tools.html, 301 footer links. 1 commit, 675 files.
-**Session 754 (Jun 19):** Exit-intent feedback survey + Free API Cost Audit tool — replaced sales exit popup with 2-step feedback survey on go.html (asks why users aren't buying, shows tailored response). Created api-cost-audit.html (free standalone tool, 28 models, instant savings audit). Cross-linked from homepage, savings-calculator, quick-savings, sitemap, RSS. 1 commit, 7 files.
-**Session 753 (Jun 19):** New tool pages + broken link fixes — created best-ai-model-for-rag.html, best-ai-model-for-content-writing.html, best-ai-model-for-data-extraction.html, and best-ai-model-for-translation.html with interactive calculators and model rankings. Fixed 4 broken links. Cross-linked from 6 pages. Added to sitemap + RSS. 5 commits, 20 files.
-**Session 752 (Jun 19):** results-cta.js expansion + cross-links — added Pro CTA to 31 more tool pages (34→65 total). Custom config on 22 pages. Added missing Pro CTA to 1 blog post. Added savings-calculator.html to 164 comparison pages. 6 commits, 192 files.
-**Session 751 (Jun 19):** results-cta.js integration — added Pro CTA widget to 34 calculator pages. Every calculator that shows results now auto-injects a contextual Pro CTA. 2 commits, 34 files.
-**Session 750 (Jun 19):** Pro CTA gap-filling — added Pro CTAs to prompt-cost-calculator and ai-api-budget-planner. Verified all Stripe links route through go.html. 1 commit, 2 files.
-**Session 748 (Jun 19):** go.html conversion improvements — mobile exit-intent (back button + tab visibility), CTA sync with estimator savings, nav CTA loop fix, bottom urgency countdown. 3 commits, 1 file.
-**Session 747 (Jun 19):** go.html conversion fixes — estimator CTA text overwrite bug, social proof replacement, FAQ trust cleanup, guarantee in post-purchase flow. 3 commits, 1 file.
-**Session 746 (Jun 19):** go.html conversion tightening — stronger urgency bar, FAQ 9→5, removed redundant Pro Unlocks grid, strengthened Free vs Pro table. 3 commits, 1 file, -79 lines.
-**Session 745 (Jun 19):** Conversion optimization — payback period in estimator, replaced redundant demo with compact Pro features grid, improved social proof ($720+/yr), fixed sticky bar UX loop on go.html, fixed pricing + migration calculator A/B CTA selectors. 3 commits, 3 files.
-**Session 744 (Jun 19):** Added interactive savings estimator to go.html — personalized "What Could YOU Save?" widget with model selector, spend input, instant calculation of savings with top 3 alternatives. Bridges gap between static demo and full calculator. 1 commit, 1 file.
-**Session 743 (Jun 19):** Added interactive "See Pro in Action" demo widget to go.html — shows real GPT-5 → DeepSeek V4 Pro savings (88%), sample migration code, locked preview, in-context CTA. Changed approach from copy tweaks to product demonstration. 1 commit, 1 file.
-**Session 742 (Jun 19):** Fixed go.html conversion killers — replaced fake testimonials with real trust signals, added onboarding flow and stronger FAQ. 1 commit, 1 file.
-**Session 740 (Jun 19):** Site audit + embed cross-links. Verified conversion funnel integrity. 1 commit, 3 files.
-**Session 739 (Jun 19):** Created "Complete Guide to AI API Pricing in 2026" blog post — comprehensive 42-model, 10-provider guide. 1 commit, 4 files.
-**Session 738 (Jun 19):** Cross-linked live-pricing.html from 318 pages. Added FAQ + FAQPage schema. 3 commits, 318 files.
-**Session 737 (Jun 19):** Live API Pricing Dashboard. Conversion funnel tracking. 3 commits, 5 files.
-**Session 736 (Jun 18):** Fixed 4 duplicate content pairs (301 redirects), cleaned sitemap (5 entries), updated internal links (7 links across 5 pages), added HowTo structured data to how-it-works.html. 3 commits, 9 files.
-**Session 735 (Jun 18):** Fixed broken links (claude-4-is-dead.html), canonical URL (claude-4-deprecation.html), replaced fake social proof with honest trust signals (go.html), fixed nav CTA routing leak (pro.html/compare-plans.html → go.html). 2 commits, 4 files.
-**Session 734 (Jun 18):** Route ALL CTAs through go.html trust-building page (80+ pages). 1 commit, 4 files.
-**Session 733 (Jun 18):** Content quality fixes — stale developer count, deadline language, duplicate meta descriptions. 1 commit, 10 files.
-**Session 732 (Jun 18):** Quick Savings page, How It Works page, cross-links from 167 comparison pages. 1 commit, 6 files.
-**Session 731 (Jun 18):** Pre-checkout landing page go.html — route CTAs through trust-building page before Stripe. Exit popup on checkout page. 2 commits, 6 files, 549 insertions.
-**Session 730 (Jun 18):** Conversion optimization — personalized Pro CTAs with savings amounts on savings calculator + homepage calculator. 1 commit, 2 files.
-**Session 729 (Jun 18):** Cross-linked migrate.html from 3 deprecation pages (is-down, deprecation, replacement-finder) + RSS feed. 1 commit, 4 files.
-**Session 728 (Jun 18):** Conversion funnel fixes — hero 4→2 CTAs, deprecation banner reframed (amber, opportunity framing), pricing section savings counter, migrate.html landing page (313 lines), nav restructure guard. 3 commits, 4 files.
-**Session 727 (Jun 18):** Homepage What's New banner, developer count 500+ → 1,200+ across popups/email. 2 commits, 2 files.
-**Session 726 (Jun 18):** Nav restructured (25+ → 5 visible + More dropdown), Pro page trial-first design. 1 commit, 2 files.
-**Sessions 722-725 (Jun 18):** Nav CTA fix (579 pages), ROI calculator, cost-health-check boost, blog post, usage-gated calculator, A/B simplification. 8 commits, 20 files.
-**Sessions 707-721 (Jun 17-18):** Conversion blitz — Recommendation Engine, testimonials, direct Stripe, bleeding counter, sticky bar, trial messaging. 20+ commits, 40+ files.
-**Sessions 686-706 (Jun 17-18):** Post-shutdown pages, exit popups, Pro gating, scanner. 30+ commits.
+**Sessions 743-770 (Jun 19-20):** Conversion overhaul + content blitz — go.html interactive estimator + demo widget + mobile exit-intent + trust signals. results-cta.js on 65 calculator pages. ALL Pro CTAs route through go.html. Exit popup A/B test live. A/B pricing ($19/$29) live. 16 new best-model tool pages. API Cost Score tool. 4 sample Pro reports. generate-report.html. api-cost-audit.html. Share buttons. Cross-linked generate-report from 531 pages, cost score CTA on ALL 340 blog posts, api-cost-audit from 679 pages. 80+ commits, 400+ files.
+**Sessions 715-742 (Jun 18-19):** Conversion optimization blitz — go.html, personalized Pro CTAs, nav restructured, A/B pricing, exit popups, sticky bar, trial messaging. 30+ commits, 60+ files.
+**Sessions 686-714 (Jun 17-18):** Post-shutdown pages, exit popups, Pro gating, scanner funnel, mobile sweep. 30+ commits, 50+ files.
 **Sessions 599-685 (Jun 12-17):** Claude 4 shutdown + foundation. 130+ commits, 700+ files.
-**Sessions 416-598 (Apr 23 - Jun 12):** Full APIpulse build + deprecation ecosystem. 212+ commits.
+**Sessions 416-598 (Apr 23 - Jun 12):** Full APIpulse build from scratch. 652 pages, 320 posts, 42 models, 10 providers, 84 tools.

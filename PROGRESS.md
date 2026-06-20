@@ -1,5 +1,10 @@
 # PROGRESS.md
 
+## Session 774 (Jun 20) — Tools Count Fix + PROGRESS Cleanup (1 commit)
+- **Fixed tools.html count discrepancy** — Title said "88", meta/og said "98", h1 said "98", but actual tool cards = 100. Updated all to 100 across title, meta description, og:description, and h1.
+- **Cleaned up PROGRESS.md** — Summarized Sessions 416-770 into compact blocks. Kept Sessions 771-773 detailed.
+- **1 commit, 2 files**
+
 ## Session 773 (Jun 20) — Cross-Link Fixes + Sitemap/Blog Index Updates (1 commit)
 - **Added best-ai-model-for-chatbots and best-ai-model-for-coding to 45 comparison pages** — These 2 tool pages were missing from the footer cross-link network on all 45 provider comparison pages (compare-anthropic-vs-google, compare-openai-vs-deepseek, etc.). Now all 16 best-model tools are cross-linked from all 45 comparison pages.
 - **Added 4 missing pages to sitemap.xml** — blog-gpt5-api-cost-complete-guide.html, blog-xai-grok-pricing.html, compare-gpt55-vs-deepseek-v4pro.html, compare-gpt55-vs-opus48.html were created in earlier sessions but never added to the sitemap. Sitemap now 702 URLs (was 698).
@@ -35,263 +40,35 @@
 - **Added to sitemap.xml (696 URLs) and rss.xml (572 items)**
 - **1 commit, 4 files, +400 lines**
 
-## Session 770 (Jun 20) — Broken Link Fixes + Site Audit (1 commit)
-- **Fixed 8 broken comparison page links across 7 tool pages** — Site-wide link audit found 3 incorrect comparison page filenames:
-  - `compare-claude-sonnet46-vs-gpt5.html` → `compare-sonnet46-vs-gpt5.html` (6 files: agents, customer-support, data-analysis, email-writing, marketing, vision)
-  - `compare-haiku45-vs-gpt5-mini.html` → `compare-haiku45-vs-gpt5mini.html` (1 file: code-review)
-  - `compare-deepseek-v4-pro-vs-gpt5-mini.html` → `compare-gpt5-mini-vs-deepseek-v4-pro.html` (1 file: data-analysis)
-- **Full site broken link audit** — Scanned all 707 HTML files, 340 blog posts, 167 compare pages. All internal links now resolve correctly.
-- **1 commit, 7 files, +8 lines**
+## Summary: Sessions 743-770 (Jun 19-20) — Conversion Optimization + Content Blitz
+30 sessions. Site-wide conversion overhaul: go.html interactive savings estimator + demo widget + mobile exit-intent + urgency countdown + trust signals. results-cta.js reusable Pro CTA widget on 65 calculator pages. ALL Pro CTAs route through go.html. Exit popup A/B test live. A/B pricing test ($19/$29) live. 16 new best-model tool pages (agents, chatbots, code-review, coding, content-writing, customer-support, data-analysis, data-extraction, email-writing, function-calling, marketing, rag, structured-output, summarization, translation, vision). API Cost Score tool (A-F grading). 4 sample Pro reports (GPT-5, Sonnet 4.6, GPT-5 mini, Opus 4.8). generate-report.html interactive cost report generator. api-cost-audit.html free audit tool. Share buttons on 3 tools. Cross-linked generate-report from 531 pages, cost score CTA on ALL 340 blog posts, api-cost-audit from 679 pages. 80+ commits, 400+ files.
 
-## Session 769 (Jun 20) — generate-report Cross-Link Expansion: 214 → 531 Pages (4 commits)
-- **Added generate-report CTA to 290 more blog posts** — All 340 blog posts now have "📊 Generate Your Personalized API Cost Report" CTA box (was 50/340 = 14.7%, now 340/340 = 100%).
-  - Pattern: inserted after existing cost score CTA, before `</article>`
-  - Same approach as Session 766 cost score CTA expansion (50 → 340)
-- **Added generate-report to 3 missing compare pages** — compare-claude4-opus-vs-opus48, compare-claude4-sonnet-vs-sonnet46, compare-plans (was 164/167, now 167/167 = 100%)
-- **Added generate-report to 4 key tool pages** — calculator.html (Related Tools section), savings-calculator.html (More Free Tools section), cost-optimizer.html (footer), pricing.html (footer)
-- **Added generate-report to 6 more tool/utility pages** — quick-savings.html (More Free Tools), how-it-works.html, cost-health-check.html, model-advisor.html, api-cost-score.html, model-selector.html (all footers)
-- **Added generate-report to all 10 provider pages** — openai.html, anthropic.html, google.html, deepseek.html, mistral.html, cohere.html, xai.html, moonshot.html, together.html, ai21.html (all footers)
-- **Total generate-report cross-links: 214 → 531 pages** — 148% increase in coverage
-- **4 commits, 313 files, +1,490 lines**
+## Summary: Sessions 715-742 (Jun 18-19) — Conversion Optimization Blitz
+28 sessions. Pre-checkout landing page (go.html), personalized Pro CTAs, nav restructured (25+ → 5 visible + More dropdown), Pro page trial-first, ROI calculator, usage-gated calculator, A/B pricing simplified ($19/$29), migration landing page, exit popups, sticky bar, trial messaging, migration code generator, blog posts. 30+ commits, 60+ files.
 
-## Session 768 (Jun 20) — Cross-Link generate-report from 214 Pages (1 commit)
-- **Added generate-report CTA to 50 top blog posts** — "📊 Generate Your Personalized API Cost Report" CTA box with accent-colored button linking to generate-report.html. Inserted after existing cost score CTA on each post.
-  - Prioritized: cost-focused posts (cost-per-token, reduce-costs, optimization guides), model-specific posts (GPT-5, Claude, DeepSeek, Gemini pricing), comparison/pricing posts, and how-to guides
-  - **Coverage: 0 → 50 blog posts** (was 0% — no blog posts linked to the report generator)
-- **Added generate-report card to 164 comparison pages** — "📊 Cost Report Generator — Personalized savings report in 60 seconds" card in Related Tools section, alongside existing Savings Calculator, Free Cost Audit, and API Cost Score cards
-  - **Coverage: 0 → 164 comparison pages** (was 0% — no comparison pages linked to the report generator)
-- **Total cross-link coverage: 214 pages** now drive users to the interactive report generator tool
-- **1 commit, 214 files, +1,120 lines**
+## Summary: Sessions 686-714 (Jun 17-18) — Post-Shutdown Pages + Exit Popups
+29 sessions. 15+ new pages, exit popups on 37+ pages, Pro gating, scanner funnel, mobile sweep, A/B pricing, email capture test. 30+ commits, 50+ files.
 
-## Session 767 (Jun 20) — API Cost Report Generator + Pro Flow Audit (2 commits)
-- **Created generate-report.html** — Interactive personalized API cost report generator:
-  - Users select their model (21 models, 8 providers), input monthly spend, requests/month, and token counts
-  - Generates personalized cost breakdown (input vs output tokens with visual bars)
-  - Shows top 3 cheapest alternatives with annual savings
-  - Quick optimization tips (model switching, token reduction, batching, caching)
-  - Shareable results (copy to clipboard, tweet, LinkedIn share)
-  - Pro-gated sections: Full 42-model ranking, migration code, optimization playbook
-  - GA4 tracking (report_generated, report_page_viewed events)
-  - Sample: GPT-5 user with $100/mo spend → $652/yr savings by switching to DeepSeek V4 Pro (87% reduction)
-- **Cross-linked from 5 key pages**: tools.html (new tool card), go.html (prominent link in sample reports), homepage Explore Tools section, sitemap.xml (695 URLs), rss.xml (571 items)
-- **Audited Pro delivery flow** — Verified thank-you.html auto-locks Pro via localStorage, pro.html has working access gate with SHA-256 code validation, Stripe checkout → thank-you → pro.html flow is functional
-- **1 commit, 6 files, +611 lines**
-
-## Session 766 (Jun 20) — Cost Score CTA: ALL 340 Blog Posts (1 commit)
-- **Added inline cost score CTA to 311 more blog posts** — All 340 blog posts now have "🎯 Rate Your API Setup in 30 Seconds" CTA linking to api-cost-score.html.
-  - **Before:** 29/340 posts (8.5%) had the CTA
-  - **After:** 340/340 posts (100%) have the CTA
-  - **Insertion logic:** Prioritized share-section > social-share > share-row > Related Articles/Posts/Guides > cta-inline > </article>
-  - **Impact:** Every blog visitor now sees a clear path to the cost score tool → conversion funnel
-- **1 commit, 311 files, +1,635 lines**
-
-## Session 765 (Jun 20) — Cost Score CTA Expansion: 4 → 29 Blog Posts (2 commits)
-- **Added inline cost score CTA to 25 blog posts** — "🎯 Rate Your API Setup in 30 Seconds" green CTA box linking to api-cost-score.html. Each post now has a visible inline CTA (not just footer link).
-  - **Batch 1 (10 posts):** 10-ai-api-cost-mistakes, reduce-ai-api-costs, cut-api-bill, cost-optimization-guide, how-to-reduce-ai-api-costs-50-percent, cheapest-llm, best-cheap-ai-api-2026, ai-api-budget-2026, pricing-mistakes, ai-api-cost-optimization-checklist
-  - **Batch 2 (3 posts):** hidden-costs-ai-api, ai-startup-api-budget-2026, save-openai-costs
-  - **Batch 3 (2 posts):** cheapest-ai-model-2026, ai-api-cost-optimization-guide
-  - **Batch 4 (5 posts):** how-much-developers-spend-on-ai-apis, ai-cost-per-request, cost-per-request, reduce-costs, estimate-costs
-  - **Batch 5 (5 posts):** gpt5-api-cost, claude-api-cost-2026, deepseek-v4-pricing, openai-pricing-guide, gemini-api-pricing-2026
-- **Coverage: 4 → 29 blog posts** — Prioritized cost-focused and model-specific posts that get the most search traffic. Each CTA has green gradient background to stand out from other CTAs.
-- **2 commits, 25 files, +125 lines**
-
-## Session 764 (Jun 20) — Sample Pro Report + Blog Post + Cost Score Expansion (3 commits)
-- **Created sample-pro-report-opus48.html** — "Try before you buy" report for Claude Opus 4.8 users (most expensive model):
-  - Current cost analysis ($850/mo for 20K code gen requests, 2.5K input + 1.2K output tokens)
-  - 15 alternatives ranked by cost with quality scores and badges
-  - Top 3: DeepSeek V4 Pro ($10,035/yr savings, 88 vs 97 quality), GPT-5 mini ($9,474/yr), Claude Sonnet 4.6 ($4,080/yr)
-  - Migration code: Anthropic SDK → OpenAI SDK (Python + Node.js)
-  - Locked content teaser, Pro CTA, trust signals, GA4 tracking
-- **Cross-linked all 4 sample reports** — Each report links to the other three via "More Sample Pro Reports" section
-- **Added to tools.html (98 tools)** — Updated Sample Pro Reports card with Opus 4.8 at top
-- **Created blog-claude-opus-48-alternatives.html** — Conversion-focused blog post targeting "Claude Opus 4.8 alternatives":
-  - 5 alternatives ranked with cost comparison table ($850/mo → $43/mo)
-  - Decision framework for choosing the right alternative
-  - FAQPage schema (5 questions) for featured snippets
-  - Inline CTAs linking to savings calculator and Pro
-  - Related articles section
-- **Added cost score tool to 4 blog posts** — blog-ai-api-cost-per-token, blog-chatgpt-clone-cost, blog-cheapest-ai-api-june-2026, blog-top-10-cheapest-ai-apis-2026. Each now has green CTA: "Rate Your API Setup in 30 Seconds"
-- **Added to sitemap.xml (695 URLs) and rss.xml (570 items)**
-- **3 commits, 16 files, +1,185 lines**
-
-## Session 763 (Jun 19) — Sample Pro Reports: Claude Sonnet 4.6 + GPT-5 mini (1 commit)
-- **Created sample-pro-report-claude-sonnet.html** — "Try before you buy" report for Claude Sonnet 4.6 users:
-  - Current cost analysis ($250/mo for 20K code review requests, 1.2K input + 600 output tokens)
-  - 15 alternatives ranked by cost with quality scores and badges
-  - Top 3: DeepSeek V4 Pro ($2,004/yr savings, 88 vs 93 quality), GPT-5 mini ($2,124/yr), Gemini 2.5 Pro ($684/yr)
-  - Migration code: Anthropic SDK → OpenAI SDK (Python + Node.js)
-  - Locked content teaser, Pro CTA, trust signals, GA4 tracking
-- **Created sample-pro-report-gpt5-mini.html** — "Try before you buy" report for GPT-5 mini users:
-  - Current cost analysis ($100/mo for 100K content gen requests, 800 input + 400 output tokens)
-  - 15 alternatives ranked — current model shown in position 9 (cheaper options above, expensive below)
-  - Top 3: DeepSeek V4 Pro ($876/yr savings, quality IMPROVES 82→88), DeepSeek V4 Flash ($1,094/yr), GPT-4o mini ($998/yr)
-  - Migration code: OpenAI SDK with different base_url (Python + Node.js)
-  - Unique angle: shows quality IMPROVEMENT, not just cost savings
-- **Cross-linked all 3 sample reports** — Each report links to the other two via "More Sample Pro Reports" section
-- **Added to tools.html (97→98 tools)** — New tool card with all 3 sample report links
-- **Added to sitemap.xml (692 URLs) and rss.xml (568 items)**
-- **1 commit, 6 files, +1,342 lines**
-
-## Session 762 (Jun 19) — API Cost Score + Sample Pro Report (2 commits)
-- **Created api-cost-score.html** — Gamified cost scoring tool that rates a developer's API setup (A+ to F):
-  - 4-question quiz: primary model, monthly spend, requests/month, use case
-  - Score breakdown across 4 dimensions: price efficiency (30pts), quality match (25pts), spend level (25pts), cost per request (20pts)
-  - Visual score card with letter grade, color-coded breakdown, and personalized recommendations
-  - Top 3 cheaper alternatives shown free, 2 locked behind Pro (creates conversion funnel)
-  - Shareable results: copy to clipboard, tweet, LinkedIn share buttons
-  - Pro CTA with personalized savings context (annual savings, alternative count)
-  - GA4 tracking (cost_score_calculated with grade, model, spend, savings)
-  - Responsive design, FAQPage schema, accessible
-- **Cross-linked from 501 pages** — Added to tools.html (96→97 tools), 164 comparison page footers, 337 blog post footers, homepage Explore Tools section
-- **Added to sitemap.xml (690 URLs) and rss.xml (566 items)**
-- **1 commit, 504 files, +5,099 lines**
-- **Created sample-pro-report.html** — "Try before you buy" conversion tool showing a full Pro-quality report for GPT-5 users:
-  - Current cost analysis ($250/mo, $3,000/yr for 50K chatbot requests)
-  - 15 alternatives ranked by cost with quality scores and badges (Best Value, High Quality, Budget Pick)
-  - Top 3 recommendations with quality comparison bars
-  - Migration code (Python + Node.js) for switching to DeepSeek V4 Pro
-  - Locked content teaser showing Pro features (batch tips, caching, PDF export)
-  - Pro CTA with personalized savings context ($2,112/yr, Pro pays for itself in 5 days)
-  - Cross-linked from api-cost-score.html, go.html, sitemap, RSS
-- **1 commit, 5 files, +657 lines**
-
-## Session 761 (Jun 19) — New Tool Pages: Email Writing + Marketing (1 commit)
-- **Created best-ai-model-for-email-writing.html** — Interactive cost calculator for AI email generation:
-  - 7 models ranked by cost per email (600 input + 300 output tokens)
-  - TL;DR cards: Cheapest (DeepSeek V4 Flash $0.00028/email), Best Quality (Claude Sonnet 4.6), Best Balance (GPT-5 mini), Budget Volume (Llama 4 Scout)
-  - Interactive calculator with customizable system prompt, context, output tokens, emails/day
-  - 6 use cases: Cold Outreach, Marketing Newsletters, Transactional, Customer Follow-ups, Drip Campaigns, A/B Test Variants
-  - FAQPage schema (6 questions), Article schema, share buttons, exit popup, GA4 tracking
-- **Created best-ai-model-for-marketing.html** — Interactive cost calculator for AI marketing content:
-  - 7 models ranked by cost per piece (2K input + 800 output tokens)
-  - TL;DR cards: Cheapest (DeepSeek V4 Flash $0.00050/piece), Best Quality (Claude Sonnet 4.6), Best Balance (GPT-5 mini), Budget Volume (Llama 4 Scout)
-  - Interactive calculator with customizable brand context, brief, output tokens, pieces/day
-  - 6 use cases: PPC Ad Copy, Landing Pages, SEO Blog Posts, Social Media, Product Descriptions, Email Campaigns
-  - FAQPage schema (6 questions), Article schema, share buttons, exit popup, GA4 tracking
-- **Cross-linked from 50 pages** — Added to tools.html (90→92 tools), 45 comparison page footers, 2 blog post footers
-- **Added to sitemap.xml (688 URLs) and rss.xml (565 items)**
-- **1 commit, 54 files, +1,433 lines**
-
-## Session 760 (Jun 19) — New Tool Pages: Customer Support + Data Analysis (1 commit)
-- **Created best-ai-model-for-customer-support.html** — Interactive cost calculator for AI customer support:
-  - 7 models ranked by cost per support ticket (1.5K input + 400 output tokens)
-  - TL;DR cards: Cheapest (DeepSeek V4 Flash $0.00032/ticket), Best Quality (Claude Sonnet 4.6), Best Balance (GPT-5 mini), Budget Volume (Llama 4 Scout)
-  - Interactive calculator with customizable system prompt, user message, context, output tokens, tickets/day
-  - 6 use cases: E-commerce, Technical Troubleshooting, SaaS Onboarding, Insurance Claims, Scheduling, Multi-language
-  - FAQPage schema (6 questions), Article schema, share buttons, exit popup, GA4 tracking
-- **Created best-ai-model-for-data-analysis.html** — Interactive cost calculator for AI data analysis:
-  - 7 models ranked by cost per analysis (3K input + 1K output tokens)
-  - TL;DR cards: Cheapest (DeepSeek V4 Flash $0.00070/analysis), Best Quality (Claude Sonnet 4.6), Best Balance (GPT-5 mini), Budget Volume (DeepSeek V4 Flash)
-  - Interactive calculator with customizable data context, instructions, output tokens, analyses/day
-  - 6 use cases: SQL Generation, CSV/Excel, Statistical Analysis, BI Reports, Log Analysis, Financial Modeling
-  - FAQPage schema (6 questions), Article schema, share buttons, exit popup, GA4 tracking
-- **Cross-linked from 47 pages** — Added to tools.html (88→90 tools), 45 comparison page footers, 2 blog post footers
-- **Added to sitemap.xml (686 URLs) and rss.xml (563 items)**
-- **1 commit, 52 files, +1,432 lines**
-
-## Session 759 (Jun 19) — New Tool Pages: Agents + Vision (1 commit)
-- **Created best-ai-model-for-agents.html** — Interactive cost calculator for autonomous AI agents:
-  - 7 models ranked by cost per agent task (6K input + 1.5K output tokens)
-  - TL;DR cards: Cheapest (DeepSeek V4 Flash $0.00126/task), Best Complex (Claude Sonnet 4.6), Best Balance (GPT-5 mini), Budget Volume (Llama 4 Scout)
-  - Interactive calculator with customizable input/output tokens, tasks/day
-  - 6 use cases: Simple Q&A, Research, Coding, Customer Support, Data Processing, Autonomous Workflows
-  - FAQPage schema (6 questions), Article schema, share buttons, exit popup, GA4 tracking
-- **Created best-ai-model-for-vision.html** — Interactive cost calculator for image understanding:
-  - 7 multimodal models ranked by cost per image analysis (500 text + 765 image tokens)
-  - TL;DR cards: Cheapest (Llama 4 Scout $0.00043/image), Best Accuracy (GPT-5), Best Balance (GPT-5 mini)
-  - Interactive calculator with customizable text/image/output tokens, images/day
-  - 6 use cases: Receipt OCR, Product Classification, Medical Docs, Screenshots, Handwriting, Visual QA
-  - FAQPage schema (6 questions), Article schema, share buttons, exit popup, GA4 tracking
-- **Cross-linked from 49 pages** — Added to tools.html (86→88 tools), pro.html, 49 comparison page footers
-- **Added to sitemap.xml (684 URLs) and rss.xml (561 items)**
-- **1 commit, 53 files, +1,411 lines**
-
-## Session 758 (Jun 19) — New Tool Pages: Function Calling + Structured Output (1 commit)
-- **Created best-ai-model-for-function-calling.html** — Interactive cost calculator for AI agents and function calling (7 models, 6 use cases, calculator, FAQPage schema).
-- **Created best-ai-model-for-structured-output.html** — Interactive cost calculator for JSON mode and structured data (7 models, 6 use cases, calculator, FAQPage schema).
-- **Cross-linked from 50 pages** — Added to tools.html (84→86 tools), sitemap (681 URLs), RSS (558 items). 1 commit, 52 files.
-
-## Session 757 (Jun 19) — New Tool Pages: Summarization + Code Review (1 commit)
-- **Created best-ai-model-for-summarization.html** — Interactive cost calculator for text summarization (7 models, 6 use cases, calculator, FAQPage schema).
-- **Created best-ai-model-for-code-review.html** — Interactive cost calculator for automated code review (7 models, 6 use cases, calculator, FAQPage schema).
-- **Cross-linked from 48 pages** — Added to tools.html (82→84 tools), sitemap (679 URLs), RSS (556 items). 1 commit, 53 files.
-
-## Session 756 (Jun 19) — "Share Your Savings" Viral Feature (1 commit)
-- **Added share buttons to 3 key conversion tools** — Creates viral distribution loop where every savings calculation becomes a potential social media post driving new traffic:
-  - **savings-calculator.html** — Copy-to-clipboard, Tweet, and LinkedIn share buttons appear after users see results. Share text includes model names, exact savings amounts, and link back to APIpulse.
-  - **api-cost-audit.html** — Share section with copy, Tweet, and LinkedIn buttons appears after audit results. Share text includes current model, best alternative, and annual savings.
-  - **cost-optimizer.html** — Added copy-to-clipboard button and dynamic tweet link that updates with actual savings amounts. Full optimization summary in share text.
-- **GA4 tracking** — savings_shared event tracks method (clipboard/twitter/linkedin) and source (savings_calc/audit/optimizer)
-- **1 commit, 3 files, +121 lines**
-
-## Session 755 (Jun 19) — Cross-Link Expansion: Audit Tool + Best-Model Pages (2 commits)
-- **Cross-linked api-cost-audit.html from 679 pages** (was 3 pages) — Massive cross-link expansion for the free cost audit tool created in Session 754:
-  - **164 comparison pages** — Added "🔍 Free Cost Audit" card to Related Tools section (after Savings Calculator card)
-  - **214 blog posts** — Added "🔍 Free Cost Audit" CTA to inline CTA sections (after existing calculator/compare CTAs)
-  - **tools.html** — Added new tool card with features list and "Run Free Audit →" link
-  - **301 footer links** — Added footer links across tool pages, provider pages, blog posts, and utility pages
-  - **Coverage: 3 → 679 pages (98.4%)** — Only 11 special pages (admin, embed, utility) remain without the link due to non-standard footers
-- **Added 4 best-model tool cards to tools.html** — best-ai-model-for-rag, content-writing, data-extraction, translation (created Session 753, were missing from tools grid)
-- **Cross-linked 4 best-model pages from 49 footers** — Added to multi-column footer Tools section on comparison pages and other pages
-- **2 commits, 728 files, +2,015 lines**
-
-## Session 754 (Jun 19) — Exit-Intent Feedback Survey + Free API Cost Audit Tool (2 commits)
-- **Replaced sales exit popup with 2-step feedback survey on go.html** — After 12 sessions of conversion optimization with 0 sales, changed approach from "try harder to sell" to "ask why they're not buying." Step 1: 5 reasons (price too high, not sure of value, free enough, don't trust, other). Step 2: tailored response based on answer (price math with annual ROI, free tool redirect, trust guarantee, or standard CTA). All responses tracked via GA4 (exit_survey_response, exit_survey_step2_shown, exit_survey_skipped). Root cause: we've been guessing at objections — now we'll have real data.
-- **Created api-cost-audit.html** — Free standalone cost audit tool. Users select current model (28 models across 8 providers), enter monthly spend and input token ratio, instantly see top 6 cheaper alternatives with monthly/annual savings. Includes "BEST VALUE" badge on top alternative, quality scores, and a Pro upsell section. Personalized Pro CTA shows user's actual savings ("Unlock your $X/yr savings report"). Passes savings to go.html for personalized exit popup. GA4 tracking (audit_completed with model/spend/bestAlternative, audit_retake).
-- **Cross-linked audit tool** from homepage (Explore Tools section, top position), savings-calculator.html (More Free Tools section), quick-savings.html (More Free Tools section), sitemap.xml (priority 0.9), and rss.xml.
-- **2 commits, 7 files, +558 lines**
-
-## Session 753 (Jun 19) — New Tool Pages + Broken Link Fixes (5 commits)
-- **Created best-ai-model-for-rag.html** — Interactive RAG cost calculator with embedding + generation model rankings, use case recommendations, 8 FAQ entries with FAQPage schema. Targets "best AI model for RAG" search traffic.
-- **Created best-ai-model-for-content-writing.html** — Interactive content writing cost calculator with 7 model rankings, use case recommendations (blog, marketing, social, long-form, technical), FAQ schema. Targets "best AI for content writing" search traffic.
-- **Created best-ai-model-for-data-extraction.html** — Interactive data extraction cost calculator with 7 model rankings (structured output accuracy, JSON mode, cost per document), use case recommendations (invoice parsing, receipt scanning, form processing, web scraping, database migration, API response parsing), FAQ schema. Targets "best AI for data extraction" search traffic.
-- **Created best-ai-model-for-translation.html** — Interactive translation cost calculator with 7 model rankings (quality, cost per word, language coverage), use case recommendations (website localization, product descriptions, customer support, legal documents, marketing content, multilingual chatbots), FAQ schema. Targets "best AI for translation" search traffic.
-- **Fixed 4 broken internal links** across 2 files: blog-ai-api-pricing-complete-guide-2026.html (cost-alerts → price-alerts, model-recommendation → model-advisor) and live-pricing.html (2 comparison page filename mismatches).
-- **Cross-linked** new pages from 6 existing pages. Added to sitemap.xml (677 URLs) and rss.xml (550 items).
-- **5 commits, 20 files, +2,601 lines**
-
-## Session 752 (Jun 19) — results-cta.js Expansion + Cross-Links (6 commits)
-- **Added results-cta.js to 31 remaining tool/calculator pages** — Every interactive tool page now shows a contextual Pro CTA after users see results. Pages include: cost-audit, cost-explorer, cost-health-check, model-advisor, model-selector, multi-model-routing, token-estimator, monthly-spend-estimator, budget-planner, startup-cost-planner, latency-comparison, free-tier-comparison, and 19 more. Total pages with results-cta.js: 34 → 65.
-- **Added custom results-cta.js config to 22 tool pages** — Configured resultSelector, toolName, and proFeatures for precise CTA injection (e.g., cost-audit shows "Full cost breakdown by model", model-selector shows "Cost comparison across 42 models"). Remaining 9 pages use default fallback detection.
-- **Added missing Pro CTA to blog-ai-api-pricing-after-claude-4.html** — Only blog post out of 339 without a Pro upsell section. Now all blog posts route users through go.html for conversion.
-- **Added savings-calculator.html to 164 comparison pages** — Comparison pages are the biggest SEO traffic drivers but didn't link to the main savings calculator. Added "Savings Calculator — Find your cheapest alternatives" card to the related-tools section on 164 of 167 comparison pages.
-- **6 commits, 192 files, +474 lines**
-
-## Summary: Sessions 743-755 (Jun 19) — go.html Conversion Blitz + Pro CTA Coverage (18+ commits)
-go.html conversion overhaul (interactive savings estimator with payback period, "See Pro in Action" demo widget, mobile exit-intent via back button + tab visibility, CTA sync with estimator, urgency countdown, stronger social proof with 100% money-back guarantee, FAQ tightened 9→5, Free vs Pro table strengthened 8→5 rows). results-cta.js reusable Pro CTA widget created + integrated into 65 calculator/tool pages (22 custom configs, 43 default fallback). Pro CTA gaps filled across all pages. Nav restructured (25+ → 5 visible + More dropdown). Pre-checkout landing page go.html. Exit popups, sticky bars, trial messaging. Route ALL CTAs through go.html trust-building page (80+ pages). Fixed nav CTA leak, replaced fake social proof with honest trust signals. Fixed broken links, canonical URLs, duplicate content (4 pairs → 301 redirects). Live Pricing Dashboard. Conversion funnel tracking. Share buttons on 3 tools. Cross-linked api-cost-audit from 679 pages. 80+ commits, 400+ files.
-
-## Summary: Sessions 715-731 (Jun 18) — Conversion optimization blitz
-17 sessions. Pre-checkout landing page (go.html), personalized Pro CTAs, nav restructured (25+ → 5 visible + More dropdown), Pro page trial-first, ROI calculator, usage-gated calculator, A/B pricing simplified ($19/$29), migration landing page, exit popups, sticky bar, trial messaging, migration code generator, blog posts. 30+ commits, 60+ files.
-
-## Summary: Sessions 686-714 (Jun 17-18) — Post-shutdown pages + exit popups
-20+ sessions. 15+ new pages, exit popups on 37+ pages, Pro gating, scanner funnel, mobile sweep, A/B pricing, email capture test. 30+ commits, 50+ files.
-
-## Summary: Sessions 599-685 (Jun 12-17) — Claude 4 shutdown + foundation
-Shutdown prep/execution/cleanup: 407+ files tense sweep, Stripe fix, emergency pages, migration tools, analytics, A/B pricing. 130+ commits, 700+ files.
+## Summary: Sessions 599-685 (Jun 12-17) — Claude 4 Shutdown + Foundation
+87 sessions. Shutdown prep/execution/cleanup: 407+ files tense sweep, Stripe fix, emergency pages, migration tools, analytics, A/B pricing. 130+ commits, 700+ files.
 
 ## Summary: Sessions 1-598 (Apr 5 - Jun 12)
 Full APIpulse build from scratch. 652 pages, 320 posts, 42 models, 10 providers, 84 tools, 12 API endpoints, 2 widgets. Domain, Stripe, Pro, GA4, newsletter, Chrome extension, 167 comparisons, FAQPage schema, streaming toggle, A/B pricing, Model Selector quiz.
 
-## Site Status (as of Session 773, Jun 20, 2026)
-**709 web pages | 341 blog posts | 42 models | 10 providers | 99 tools | 12 API endpoints | 2 embeddable widgets**
+## Site Status (as of Session 774, Jun 20, 2026)
+**709 web pages | 341 blog posts | 42 models | 10 providers | 100 tools | 12 API endpoints | 2 embeddable widgets**
 - Sitemap (702 URLs), RSS (574 items), blog files (341 posts) — all in sync
-- **Cross-link fixes (Session 773)** — Added chatbots + coding tools to 45 comparison pages. Added 4 missing pages to sitemap. Added 2 missing blog posts to blog index.
-- **llms.txt created (Session 772)** — Standard file for AI crawlers. Lists all tools, pricing data, and key pages. Helps ChatGPT/Claude/Perplexity recommend APIpulse.
-- **pricing-hub.html created (Session 772)** — Comprehensive pricing comparison page with 42 models organized by tier, interactive calculator, provider breakdown, optimization tips. FAQPage schema (5 questions).
-- **generate-report cross-linked from 531 pages (Session 769)** — 340/340 blog posts (100%), 167/167 compare pages (100%), 10 provider pages, 14 tool/utility pages. Was 214 pages before Session 769.
-- **Cost score CTA on ALL 340 blog posts (Session 766)** — 100% coverage. Every blog post has inline "🎯 Rate Your API Setup in 30 Seconds" CTA linking to api-cost-score.html. Prior posts had 8.5% coverage (29/340).
+- **Tools count fixed (Session 774)** — tools.html now correctly says 100 tools (was 88/98 inconsistent)
+- **llms.txt created (Session 772)** — Standard file for AI crawlers. Lists all tools, pricing data, and key pages.
+- **pricing-hub.html created (Session 772)** — Comprehensive pricing comparison page with 42 models, interactive calculator, provider breakdown, FAQPage schema.
+- **generate-report cross-linked from 531 pages (Session 769)** — 340/340 blog posts (100%), 167/167 compare pages (100%), 10 provider pages, 14 tool/utility pages.
+- **Cost score CTA on ALL 340 blog posts (Session 766)** — 100% coverage.
 - **4 sample Pro reports** — GPT-5, Claude Sonnet 4.6, GPT-5 mini, Claude Opus 4.8. All cross-linked. Biggest savings: Opus 4.8 ($10,035/yr).
-- **results-cta.js on 65 calculator/tool pages (Session 751-752)** — Every calculator/tool that shows results now auto-injects a Pro CTA. 22 pages have custom config (resultSelector, toolName, proFeatures), 43 use default fallback detection. GA4 tracking (results_cta_shown, results_cta_clicked).
-- **Pro CTA gaps filled (Session 749-750)** — ai-stack-builder, live-pricing, ai-stack-cost-optimizer, claude-4-migration-cost-calculator, prompt-cost-calculator, ai-api-budget-planner all now have Pro CTAs in results. results-cta.js widget created. Popular models quick links added to live-pricing.
-- **Mobile exit-intent on go.html (Session 748)** — Exit popup now triggers on mobile via back button interception (pushState/popstate) and tab visibility change (5s threshold). Desktop mouseout still works. GA4 tracks trigger type.
-- **go.html conversion fixes (Session 747)** — Fixed estimator CTA text overwrite bug (personalized savings text destroyed by DOMContentLoaded handler). Replaced weak "10 providers" social proof with "100% money-back" guarantee card. Cleaned FAQ trust messaging (removed startup competition mention). Added guarantee reminder to post-purchase flow.
-- **go.html conversion-tightened (Session 746)** — FAQ 9→5, urgency bar strengthened, redundant Pro Unlocks grid removed, Free vs Pro table 8→5 rows (every row clear contrast). 3 CTAs (was 4). -79 lines total.
-- **ALL Pro CTAs route through go.html (Session 734-741)** — Trust-building page before Stripe checkout. Static HTML links rewritten by shared.js at runtime. Dynamic CTAs (sticky bars, blog upsell) fixed Session 741.
-- **Live Pricing Dashboard cross-linked from 318+ pages (Session 738)** — 166 comparison pages, 150 blog posts, tools/pricing/calculator/compare pages. FAQPage schema added.
-- **Embed widgets cross-linked from 239 pages (Session 740)** — All tool pages, blog posts, and comparison pages link to embed.html.
-- **Honest social proof on go.html (Session 735-747)** — Fake "just got Pro" replaced with developer count, avg savings, model count, 100% money-back guarantee.
-- **Interactive savings estimator on go.html (Session 744-745)** — Personalized "What Could YOU Save?" widget with payback period ("Pro pays for itself in X days"). Users pick their model + monthly spend, see instant savings with top 3 alternatives. Pre-fills with GPT-5/$100 default. CTA shows personalized savings amount. GA4 tracking.
-- **Sticky bars suppressed on go.html (Session 745)** — Both time-based and scroll-triggered sticky CTAs now skip go.html.
+- **results-cta.js on 65 calculator/tool pages (Session 751-752)** — Every calculator/tool that shows results now auto-injects a Pro CTA.
+- **Mobile exit-intent on go.html (Session 748)** — Exit popup triggers on mobile via back button + tab visibility.
+- **ALL Pro CTAs route through go.html (Session 734-741)** — Trust-building page before Stripe checkout.
+- **Live Pricing Dashboard cross-linked from 318+ pages (Session 738)**
+- **Embed widgets cross-linked from 239 pages (Session 740)**
 - **A/B pricing test LIVE** — $19 vs $29 (50/50).
 - **Exit popup A/B test LIVE** — Loss-framed vs social-proof copy, button color test, personalized savings hints.
 - **Claude 4 SHUTDOWN COMPLETE (June 15)** — All pages past-tense, deprecation banner links to migrate.html.
