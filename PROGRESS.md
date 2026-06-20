@@ -1,6 +1,6 @@
 # PROGRESS.md
 
-## Session 764 (Jun 20) — Sample Pro Report: Claude Opus 4.8 (1 commit)
+## Session 764 (Jun 20) — Sample Pro Report + Blog Post: Claude Opus 4.8 (2 commits)
 - **Created sample-pro-report-opus48.html** — "Try before you buy" report for Claude Opus 4.8 users (most expensive model):
   - Current cost analysis ($850/mo for 20K code gen requests, 2.5K input + 1.2K output tokens)
   - 15 alternatives ranked by cost with quality scores and badges
@@ -9,8 +9,14 @@
   - Locked content teaser, Pro CTA, trust signals, GA4 tracking
 - **Cross-linked all 4 sample reports** — Each report links to the other three via "More Sample Pro Reports" section
 - **Added to tools.html (98 tools)** — Updated Sample Pro Reports card with Opus 4.8 at top
-- **Added to sitemap.xml (694 URLs) and rss.xml (569 items)**
-- **1 commit, 7 files, +690 lines**
+- **Created blog-claude-opus-48-alternatives.html** — Conversion-focused blog post targeting "Claude Opus 4.8 alternatives":
+  - 5 alternatives ranked with cost comparison table ($850/mo → $43/mo)
+  - Decision framework for choosing the right alternative
+  - FAQPage schema (5 questions) for featured snippets
+  - Inline CTAs linking to savings calculator and Pro
+  - Related articles section
+- **Added to sitemap.xml (695 URLs) and rss.xml (570 items)**
+- **2 commits, 12 files, +1,161 lines**
 
 ## Session 763 (Jun 19) — Sample Pro Reports: Claude Sonnet 4.6 + GPT-5 mini (1 commit)
 - **Created sample-pro-report-claude-sonnet.html** — "Try before you buy" report for Claude Sonnet 4.6 users:
@@ -190,9 +196,10 @@ Shutdown prep/execution/cleanup: 407+ files tense sweep, Stripe fix, emergency p
 ## Summary: Sessions 1-598 (Apr 5 - Jun 12)
 Full APIpulse build from scratch. 652 pages, 320 posts, 42 models, 10 providers, 84 tools, 12 API endpoints, 2 widgets. Domain, Stripe, Pro, GA4, newsletter, Chrome extension, 167 comparisons, FAQPage schema, streaming toggle, A/B pricing, Model Selector quiz.
 
-## Site Status (as of Session 763, Jun 19, 2026)
-**705 web pages | 339 blog posts | 42 models | 10 providers | 98 tools | 12 API endpoints | 2 embeddable widgets**
-- Sitemap (693 URLs), RSS (568 items), blog files (339 posts) — all in sync
+## Site Status (as of Session 764, Jun 20, 2026)
+**707 web pages | 340 blog posts | 42 models | 10 providers | 98 tools | 12 API endpoints | 2 embeddable widgets**
+- Sitemap (695 URLs), RSS (570 items), blog files (340 posts) — all in sync
+- **4 sample Pro reports** — GPT-5, Claude Sonnet 4.6, GPT-5 mini, Claude Opus 4.8. All cross-linked. Biggest savings: Opus 4.8 ($10,035/yr).
 - **results-cta.js on 65 calculator/tool pages (Session 751-752)** — Every calculator/tool that shows results now auto-injects a Pro CTA. 22 pages have custom config (resultSelector, toolName, proFeatures), 43 use default fallback detection. GA4 tracking (results_cta_shown, results_cta_clicked).
 - **Pro CTA gaps filled (Session 749-750)** — ai-stack-builder, live-pricing, ai-stack-cost-optimizer, claude-4-migration-cost-calculator, prompt-cost-calculator, ai-api-budget-planner all now have Pro CTAs in results. results-cta.js widget created. Popular models quick links added to live-pricing.
 - **Mobile exit-intent on go.html (Session 748)** — Exit popup now triggers on mobile via back button interception (pushState/popstate) and tab visibility change (5s threshold). Desktop mouseout still works. GA4 tracks trigger type.
