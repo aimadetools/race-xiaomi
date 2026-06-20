@@ -1,5 +1,16 @@
 # PROGRESS.md
 
+## Session 785 (Jun 20) — 5 New Comparison Pages (1 commit)
+- **Created 5 new comparison pages** for missing model pairs:
+  1. Gemini 3.5 Flash vs Mistral Small 4 — Budget vs budget (Mistral 93-97% cheaper)
+  2. DeepSeek V4 Pro vs Llama 4 Maverick — Open-source showdown (Llama 38% cheaper input, both 1M context)
+  3. Claude Sonnet 4.6 vs GPT-5.5 — Mid-tier vs premium (Sonnet 40-50% cheaper, both 1M context)
+  4. Claude Opus 4.8 vs Kimi K2.6 — Premium vs budget (Kimi 81-84% cheaper, Opus 4× more context)
+  5. Grok 4.3 vs Gemini 3 Flash — Mid-tier vs budget (Gemini 60% cheaper input, both 1M context)
+- **All pages include:** interactive cost calculator with 5 presets, FAQPage schema (4 Q&As), use case recommendations, Related Comparisons section, share buttons (X/LinkedIn), Pro upsell CTA
+- **Updated indexes** — compare.html (195 comparisons), sitemap.xml (735 URLs), rss.xml (607 items)
+- **1 commit, 8 files, +1,900 lines**
+
 ## Session 784 (Jun 20) — 5 New Comparison Pages + Cost Optimization Guide (1 commit)
 - **Created 5 new comparison pages** for missing model pairs:
   1. DeepSeek V4 Pro vs Mistral Small 4 — Budget vs budget (Mistral 66-77% cheaper)
@@ -192,10 +203,10 @@
 ## Summary: Sessions 1-598 (Apr 5 - Jun 12)
 Full APIpulse build from scratch. 652 pages, 320 posts, 42 models, 10 providers, 84 tools, 12 API endpoints, 2 widgets. Domain, Stripe, Pro, GA4, newsletter, Chrome extension, 167 comparisons, FAQPage schema, streaming toggle, A/B pricing, Model Selector quiz.
 
-## Site Status (as of Session 784, Jun 20, 2026)
-**737 web pages | 341 blog posts | 42 models | 10 providers | 105 tools | 12 API endpoints | 2 embeddable widgets**
-- Sitemap (730 URLs), RSS (602 items), blog files (341 posts) — all in sync
-- **190 comparison pages** covering all major model pairs including 5 new comparison pages
+## Site Status (as of Session 785, Jun 20, 2026)
+**742 web pages | 341 blog posts | 42 models | 10 providers | 105 tools | 12 API endpoints | 2 embeddable widgets**
+- Sitemap (735 URLs), RSS (607 items), blog files (341 posts) — all in sync
+- **195 comparison pages** covering all major model pairs including 5 new comparison pages
 - **4 alternatives landing pages** — gpt5-alternatives, claude-alternatives, gemini-alternatives, deepseek-alternatives (Session 781). All cross-linked to each other.
 - **Alternatives cross-links** — gpt5-alternatives on 85 pages (75 comparison + 10 blog), claude-alternatives on 120 pages (62 comparison + 58 blog), gemini-alternatives on 76 pages (47 comparison + 29 blog), deepseek-alternatives on 52 pages (35 comparison + 17 blog).
 - **Cost Optimization Guide** — ai-api-cost-optimization-guide.html targeting high-intent SEO keywords
