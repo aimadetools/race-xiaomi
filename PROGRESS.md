@@ -1,5 +1,20 @@
 # PROGRESS.md
 
+## Session 778 (Jun 20) — GPT-5 Alternatives Landing Page (2 commits)
+- **Created gpt5-alternatives.html** — High-converting SEO landing page targeting "cheapest GPT-5 alternative":
+  - 5 ranked alternatives: DeepSeek V4 Pro (save 91%), Gemini 3 Flash (70%), Mistral Small 4 (97%), Gemini 3.5 Flash (10%), Claude Haiku 4.5 (50%)
+  - Interactive savings calculator with real-time cost comparison
+  - Cost comparison table with verified June 2026 pricing
+  - FAQPage schema (5 questions) for featured snippets
+  - "Why Teams Are Switching" section (cost, context, lock-in, speed)
+  - Pro CTA linking to go.html
+  - Mobile responsive design
+- **Added to sitemap.xml** (707 URLs), **rss.xml** (579 items), **llms.txt** (first tool in Key Tools)
+- **Added tool card to tools.html** — New "GPT-5 Alternatives" card with savings badge
+- **Cross-linked from compare-gpt5-deepseek-v4pro.html** — Prominent green "5 Cheaper Alternatives" card in Related Comparisons
+- **Cross-linked from cheapest-ai-api.html** — Related Tools section with green border accent
+- **2 commits, 7 files, +581 lines**
+
 ## Session 777 (Jun 20) — New Comparison Page + Broken Link Fixes
 - **Created compare-sonnet46-vs-gpt5mini.html** — Mid-tier vs budget: Claude Sonnet 4.6 ($3/$15, 1M context) vs GPT-5 mini ($0.25/$2, 272K context). GPT-5 mini 87-92% cheaper, Sonnet 3.7x more context. Interactive calculator with 5 presets, use case recommendations, FAQPage schema, share buttons.
 - **Added to compare.html index** — 171 comparison pages (was 170).
@@ -81,9 +96,10 @@
 ## Summary: Sessions 1-598 (Apr 5 - Jun 12)
 Full APIpulse build from scratch. 652 pages, 320 posts, 42 models, 10 providers, 84 tools, 12 API endpoints, 2 widgets. Domain, Stripe, Pro, GA4, newsletter, Chrome extension, 167 comparisons, FAQPage schema, streaming toggle, A/B pricing, Model Selector quiz.
 
-## Site Status (as of Session 777, Jun 20, 2026)
-**713 web pages | 341 blog posts | 42 models | 10 providers | 100 tools | 12 API endpoints | 2 embeddable widgets**
-- Sitemap (706 URLs), RSS (578 items), blog files (341 posts) — all in sync
+## Site Status (as of Session 778, Jun 20, 2026)
+**714 web pages | 341 blog posts | 42 models | 10 providers | 101 tools | 12 API endpoints | 2 embeddable widgets**
+- Sitemap (707 URLs), RSS (579 items), blog files (341 posts) — all in sync
+- **New landing page (Session 778)** — gpt5-alternatives.html — high-converting SEO page targeting "cheapest GPT-5 alternative". 5 ranked alternatives, interactive calculator, FAQPage schema.
 - **New comparison page (Session 777)** — Claude Sonnet 4.6 vs GPT-5 mini (mid-tier vs budget).
 - **compare.html indexes all 171 pages (Session 777)** — Was 170. Added 1 new comparison page.
 - **Fixed 2 broken links in llms.txt (Session 777)** — DeepSeek V4 Pro vs GPT-5 and Gemini 2.5 Pro vs GPT-5 URLs corrected.
