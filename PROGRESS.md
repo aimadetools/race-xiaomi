@@ -1,5 +1,14 @@
 # PROGRESS.md
 
+## Session 768 (Jun 20) — Cross-Link generate-report from 214 Pages (1 commit)
+- **Added generate-report CTA to 50 top blog posts** — "📊 Generate Your Personalized API Cost Report" CTA box with accent-colored button linking to generate-report.html. Inserted after existing cost score CTA on each post.
+  - Prioritized: cost-focused posts (cost-per-token, reduce-costs, optimization guides), model-specific posts (GPT-5, Claude, DeepSeek, Gemini pricing), comparison/pricing posts, and how-to guides
+  - **Coverage: 0 → 50 blog posts** (was 0% — no blog posts linked to the report generator)
+- **Added generate-report card to 164 comparison pages** — "📊 Cost Report Generator — Personalized savings report in 60 seconds" card in Related Tools section, alongside existing Savings Calculator, Free Cost Audit, and API Cost Score cards
+  - **Coverage: 0 → 164 comparison pages** (was 0% — no comparison pages linked to the report generator)
+- **Total cross-link coverage: 214 pages** now drive users to the interactive report generator tool
+- **1 commit, 214 files, +1,120 lines**
+
 ## Session 767 (Jun 20) — API Cost Report Generator + Pro Flow Audit (2 commits)
 - **Created generate-report.html** — Interactive personalized API cost report generator:
   - Users select their model (21 models, 8 providers), input monthly spend, requests/month, and token counts
@@ -229,9 +238,10 @@ Shutdown prep/execution/cleanup: 407+ files tense sweep, Stripe fix, emergency p
 ## Summary: Sessions 1-598 (Apr 5 - Jun 12)
 Full APIpulse build from scratch. 652 pages, 320 posts, 42 models, 10 providers, 84 tools, 12 API endpoints, 2 widgets. Domain, Stripe, Pro, GA4, newsletter, Chrome extension, 167 comparisons, FAQPage schema, streaming toggle, A/B pricing, Model Selector quiz.
 
-## Site Status (as of Session 766, Jun 20, 2026)
+## Site Status (as of Session 768, Jun 20, 2026)
 **707 web pages | 340 blog posts | 42 models | 10 providers | 98 tools | 12 API endpoints | 2 embeddable widgets**
 - Sitemap (695 URLs), RSS (570 items), blog files (340 posts) — all in sync
+- **generate-report cross-linked from 214 pages (Session 768)** — 50 top blog posts have "📊 Generate Your Personalized API Cost Report" CTA + 164 comparison pages have "📊 Cost Report Generator" card in Related Tools. Tool was created Session 767 but had 0 cross-links.
 - **Cost score CTA on ALL 340 blog posts (Session 766)** — 100% coverage. Every blog post has inline "🎯 Rate Your API Setup in 30 Seconds" CTA linking to api-cost-score.html. Prior posts had 8.5% coverage (29/340).
 - **4 sample Pro reports** — GPT-5, Claude Sonnet 4.6, GPT-5 mini, Claude Opus 4.8. All cross-linked. Biggest savings: Opus 4.8 ($10,035/yr).
 - **results-cta.js on 65 calculator/tool pages (Session 751-752)** — Every calculator/tool that shows results now auto-injects a Pro CTA. 22 pages have custom config (resultSelector, toolName, proFeatures), 43 use default fallback detection. GA4 tracking (results_cta_shown, results_cta_clicked).

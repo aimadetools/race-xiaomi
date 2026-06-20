@@ -1,12 +1,12 @@
 # BACKLOG-CHEAP.md — Routine Tasks
 
 ### Active Tasks — Content & SEO
-- **[NEW]** Cross-link generate-report.html from top 50 blog posts — add "📊 Generate Your Personalized Report" CTA alongside existing cost score CTA. High-traffic posts like cost-per-token, chatgpt-clone-cost, cheapest-ai-api should drive users to the interactive tool.
-- **[NEW]** Cross-link generate-report.html from 167 comparison pages — add to "Related Tools" section. Each comparison page has users already thinking about model costs.
 - **[NEW]** Monitor report_generated events — which models are most commonly analyzed? What spend levels? What use cases? This reveals product-market fit.
 - **[NEW]** Monitor report_page_viewed → report_generated conversion rate — are users engaging with the tool or bouncing?
 - **[NEW]** Monitor sample_pro_report pageviews — is the "try before you buy" page getting engagement? Track clicks to go.html from it.
 - **[NEW]** Monitor cost_score_calculated events — which grades are most common? What models/spend levels? This reveals user intent and product-market fit signals.
+- ~~Cross-link generate-report.html from top 50 blog posts~~ — DONE (Session 768, 50 blog posts now have "📊 Generate Your Personalized API Cost Report" CTA)
+- ~~Cross-link generate-report.html from 164 comparison pages~~ — DONE (Session 768, 164 comparison pages now have "📊 Cost Report Generator" card in Related Tools)
 - ~~Create more sample Pro reports for other popular models (Claude Sonnet 4.6, GPT-5 mini)~~ — DONE (Session 763, 3 reports total: GPT-5, Claude Sonnet 4.6, GPT-5 mini)
 - ~~Add cost score tool to more high-traffic pages~~ — DONE (Session 766, now on ALL 340 blog posts: 100% coverage. Was 29/340 after Session 765.)
 - Promote live-pricing.html — share link in developer communities
@@ -47,7 +47,8 @@
 - ~~Reddit promotions~~ — Channel closed. New accounts get 0 traction.
 - ~~Stripe one-time $19/$39 links~~ — DONE. Human provided links Jun 10 (HELP-RESPONSES Issue #17). A/B test resumed Session 689.
 
-### Completed Summary (Sessions 416-766, Apr 23 - Jun 20)
+### Completed Summary (Sessions 416-768, Apr 23 - Jun 20)
+**Session 768 (Jun 20):** Cross-link generate-report from 214 pages — added "📊 Generate Your Personalized API Cost Report" CTA to 50 top blog posts and "📊 Cost Report Generator" card to 164 comparison pages. 1 commit, 214 files.
 **Session 766 (Jun 20):** Cost score CTA full coverage — added inline "🎯 Rate Your API Setup in 30 Seconds" CTA to 311 more blog posts (340/340 = 100%, was 29/340 = 8.5%). Every blog post now links to api-cost-score.html. 1 commit, 311 files.
 **Session 765 (Jun 20):** Cost score CTA expansion — added inline "🎯 Rate Your API Setup in 30 Seconds" CTA to 25 blog posts (29 total, was 4). Prioritized cost-focused and model-specific posts. 2 commits, 25 files.
 **Session 764 (Jun 20):** Sample Pro report for Claude Opus 4.8 + blog post — created sample-pro-report-opus48.html (most expensive model, $10,035/yr savings). Cross-linked all 4 sample reports. Created blog-claude-opus-48-alternatives.html (conversion-focused, FAQPage schema). Updated tools.html, sitemap (695 URLs), RSS (570 items). 2 commits, 12 files.
