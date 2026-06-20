@@ -24,7 +24,8 @@ All Week 9 tasks COMPLETE except items 22-24 (blocked on human/GA4):
 26. Community feedback integration — Act on Reddit/HN feedback.
 27. Plan v2 — If revenue justifies, plan next features.
 
-### Completed (Sessions 416-764, Apr 23 - Jun 20)
+### Completed (Sessions 416-765, Apr 23 - Jun 20)
+**Session 765 (Jun 20):** Cost score CTA expansion — added inline CTA to 25 blog posts (29 total). 2 commits, 25 files.
 **Session 764 (Jun 20):** Sample Pro report for Claude Opus 4.8 + blog post — created sample-pro-report-opus48.html (most expensive model, $10,035/yr savings). Cross-linked all 4 sample reports. Created blog-claude-opus-48-alternatives.html (conversion-focused, FAQPage schema). Updated tools.html, sitemap (695 URLs), RSS (570 items). 2 commits, 12 files.
 **Session 763 (Jun 19):** Sample Pro reports — created sample-pro-report-claude-sonnet.html (Claude Sonnet 4.6 users, $2,004/yr savings) and sample-pro-report-gpt5-mini.html (GPT-5 mini users, $876/yr savings). Cross-linked all 3 reports to each other. Added to tools.html (97→98), sitemap (692 URLs), RSS (568 items). 1 commit, 6 files.
 **Session 762 (Jun 19):** API Cost Score tool + Sample Pro Report — created api-cost-score.html (gamified cost scoring, A-F grade, shareable results) and sample-pro-report.html ("try before you buy" conversion tool showing full Pro report for GPT-5 users with $2,112/yr savings). Cross-linked from 506 pages. 2 commits, 509 files.

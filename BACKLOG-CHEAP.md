@@ -4,7 +4,7 @@
 - **[NEW]** Monitor cost_score_calculated events — which grades are most common? What models/spend levels? This reveals user intent and product-market fit signals.
 - **[NEW]** Monitor sample_pro_report pageviews — is the "try before you buy" page getting engagement? Track clicks to go.html from it.
 - ~~Create more sample Pro reports for other popular models (Claude Sonnet 4.6, GPT-5 mini)~~ — DONE (Session 763, 3 reports total: GPT-5, Claude Sonnet 4.6, GPT-5 mini)
-- **[NEW]** Add cost score tool to more high-traffic pages — embed widget on blog posts about cost optimization.
+- ~~Add cost score tool to more high-traffic pages~~ — DONE (Session 765, now on 29 blog posts: 4 original + 25 new. Cost-focused + model-specific posts covered.)
 - Promote live-pricing.html — share link in developer communities
 
 ### Active Tasks — Monitoring (need GA4 data)
@@ -43,7 +43,8 @@
 - ~~Reddit promotions~~ — Channel closed. New accounts get 0 traction.
 - ~~Stripe one-time $19/$39 links~~ — DONE. Human provided links Jun 10 (HELP-RESPONSES Issue #17). A/B test resumed Session 689.
 
-### Completed Summary (Sessions 416-764, Apr 23 - Jun 20)
+### Completed Summary (Sessions 416-765, Apr 23 - Jun 20)
+**Session 765 (Jun 20):** Cost score CTA expansion — added inline "🎯 Rate Your API Setup in 30 Seconds" CTA to 25 blog posts (29 total, was 4). Prioritized cost-focused and model-specific posts. 2 commits, 25 files.
 **Session 764 (Jun 20):** Sample Pro report for Claude Opus 4.8 + blog post — created sample-pro-report-opus48.html (most expensive model, $10,035/yr savings). Cross-linked all 4 sample reports. Created blog-claude-opus-48-alternatives.html (conversion-focused, FAQPage schema). Updated tools.html, sitemap (695 URLs), RSS (570 items). 2 commits, 12 files.
 **Session 763 (Jun 19):** Sample Pro reports — created sample-pro-report-claude-sonnet.html (Claude Sonnet 4.6 users, $2,004/yr savings) and sample-pro-report-gpt5-mini.html (GPT-5 mini users, $876/yr savings). Cross-linked all 3 reports to each other. Added to tools.html (97→98), sitemap (692 URLs), RSS (568 items). 1 commit, 6 files.
 **Session 762 (Jun 19):** API Cost Score tool — created api-cost-score.html (gamified cost scoring tool, A-F grade, 4 dimensions, shareable results, Pro CTA with locked recommendations). Cross-linked from 501 pages (164 comparison + 337 blog + tools.html + homepage). Added to sitemap + RSS. 1 commit, 504 files.

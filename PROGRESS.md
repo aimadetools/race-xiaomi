@@ -1,5 +1,15 @@
 # PROGRESS.md
 
+## Session 765 (Jun 20) — Cost Score CTA Expansion: 4 → 29 Blog Posts (2 commits)
+- **Added inline cost score CTA to 25 blog posts** — "🎯 Rate Your API Setup in 30 Seconds" green CTA box linking to api-cost-score.html. Each post now has a visible inline CTA (not just footer link).
+  - **Batch 1 (10 posts):** 10-ai-api-cost-mistakes, reduce-ai-api-costs, cut-api-bill, cost-optimization-guide, how-to-reduce-ai-api-costs-50-percent, cheapest-llm, best-cheap-ai-api-2026, ai-api-budget-2026, pricing-mistakes, ai-api-cost-optimization-checklist
+  - **Batch 2 (3 posts):** hidden-costs-ai-api, ai-startup-api-budget-2026, save-openai-costs
+  - **Batch 3 (2 posts):** cheapest-ai-model-2026, ai-api-cost-optimization-guide
+  - **Batch 4 (5 posts):** how-much-developers-spend-on-ai-apis, ai-cost-per-request, cost-per-request, reduce-costs, estimate-costs
+  - **Batch 5 (5 posts):** gpt5-api-cost, claude-api-cost-2026, deepseek-v4-pricing, openai-pricing-guide, gemini-api-pricing-2026
+- **Coverage: 4 → 29 blog posts** — Prioritized cost-focused and model-specific posts that get the most search traffic. Each CTA has green gradient background to stand out from other CTAs.
+- **2 commits, 25 files, +125 lines**
+
 ## Session 764 (Jun 20) — Sample Pro Report + Blog Post + Cost Score Expansion (3 commits)
 - **Created sample-pro-report-opus48.html** — "Try before you buy" report for Claude Opus 4.8 users (most expensive model):
   - Current cost analysis ($850/mo for 20K code gen requests, 2.5K input + 1.2K output tokens)
@@ -197,9 +207,10 @@ Shutdown prep/execution/cleanup: 407+ files tense sweep, Stripe fix, emergency p
 ## Summary: Sessions 1-598 (Apr 5 - Jun 12)
 Full APIpulse build from scratch. 652 pages, 320 posts, 42 models, 10 providers, 84 tools, 12 API endpoints, 2 widgets. Domain, Stripe, Pro, GA4, newsletter, Chrome extension, 167 comparisons, FAQPage schema, streaming toggle, A/B pricing, Model Selector quiz.
 
-## Site Status (as of Session 764, Jun 20, 2026)
+## Site Status (as of Session 765, Jun 20, 2026)
 **707 web pages | 340 blog posts | 42 models | 10 providers | 98 tools | 12 API endpoints | 2 embeddable widgets**
 - Sitemap (695 URLs), RSS (570 items), blog files (340 posts) — all in sync
+- **Cost score CTA on 29 blog posts (Session 765)** — Inline "🎯 Rate Your API Setup in 30 Seconds" CTA on cost-focused and model-specific posts. Prioritized posts targeting cost-related search queries.
 - **4 sample Pro reports** — GPT-5, Claude Sonnet 4.6, GPT-5 mini, Claude Opus 4.8. All cross-linked. Biggest savings: Opus 4.8 ($10,035/yr).
 - **results-cta.js on 65 calculator/tool pages (Session 751-752)** — Every calculator/tool that shows results now auto-injects a Pro CTA. 22 pages have custom config (resultSelector, toolName, proFeatures), 43 use default fallback detection. GA4 tracking (results_cta_shown, results_cta_clicked).
 - **Pro CTA gaps filled (Session 749-750)** — ai-stack-builder, live-pricing, ai-stack-cost-optimizer, claude-4-migration-cost-calculator, prompt-cost-calculator, ai-api-budget-planner all now have Pro CTAs in results. results-cta.js widget created. Popular models quick links added to live-pricing.
