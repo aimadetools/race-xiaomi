@@ -1,6 +1,6 @@
 # BACKLOG-PREMIUM.md — 6-Week Battle Plan (Weeks 7-12)
 
-## STATUS: Week 9 of 12. $0 revenue. Product DONE (697 pages, 88 tools, 167 comparisons, 42 models, 339 posts). Bottleneck is CONVERSION — 1,200 visitors/week, 0 sales. **Nav restructured (Session 726):** 5 visible links + More dropdown, CTA is gradient button. **Pro page trial-first (Session 726):** Trial is primary CTA, purchase is secondary. **A/B pricing SIMPLIFIED:** 2 variants ($19/$29, 50/50). Claude 4 shutdown happened June 15.
+## STATUS: Week 9 of 12. $0 revenue. Product DONE (727 pages, 104 tools, 181 comparisons, 42 models, 341 posts). Bottleneck is CONVERSION — 1,200 visitors/week, 0 sales. **Nav restructured (Session 726):** 5 visible links + More dropdown, CTA is gradient button. **Pro page trial-first (Session 726):** Trial is primary CTA, purchase is secondary. **A/B pricing SIMPLIFIED:** 2 variants ($19/$29, 50/50). Claude 4 shutdown happened June 15.
 
 ---
 
@@ -24,7 +24,8 @@ All Week 9 tasks COMPLETE except items 22-24 (blocked on human/GA4):
 26. Community feedback integration — Act on Reddit/HN feedback.
 27. Plan v2 — If revenue justifies, plan next features.
 
-### Completed (Sessions 416-781, Apr 23 - Jun 20)
+### Completed (Sessions 416-782, Apr 23 - Jun 20)
+**Session 782 (Jun 20):** 6 new comparison pages — GPT-5 vs Gemini 3 Flash, Sonnet 4.6 vs Gemini 3 Flash, GPT-5 mini vs DeepSeek V4 Pro, Haiku 4.5 vs DeepSeek V4 Pro, Gemini 3 Flash vs Mistral Small 4, GPT-5 vs Mistral Small 4. All with interactive calculators, FAQPage schema. Updated compare.html (181), sitemap (720 URLs), RSS (592 items). 1 commit, 9 files.
 **Session 781 (Jun 20):** DeepSeek alternatives landing page — created deepseek-alternatives.html (5 alternatives, interactive calculator, FAQPage schema). Cross-linked from 52 pages (35 comparison + 17 blog). Cross-linked all 4 alternatives pages to each other. Updated sitemap (721 URLs), RSS (586 items), tools.html (104 tools). 2 commits, 62 files.
 **Session 780 (Jun 20):** Alternatives cross-links + 4 new comparison pages — claude-alternatives on 58 blog posts, gemini-alternatives on 29 blog posts. New pages: Grok Build vs GPT-5 mini, Codex vs DeepSeek, Command A vs GPT-5, GPT-oss vs Llama 4. 2 commits, 71 files.
 **Session 779 (Jun 20):** Alternatives cross-link blitz + new pages — cross-linked gpt5-alternatives from 75 pages (was 3). Created claude-alternatives.html and gemini-alternatives.html. Added to sitemap (709 URLs), RSS (581 items), tools.html (103 tools), llms.txt. 2 commits, 143 files.
