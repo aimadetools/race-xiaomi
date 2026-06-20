@@ -1,5 +1,13 @@
 # PROGRESS.md
 
+## Session 766 (Jun 20) — Cost Score CTA: ALL 340 Blog Posts (1 commit)
+- **Added inline cost score CTA to 311 more blog posts** — All 340 blog posts now have "🎯 Rate Your API Setup in 30 Seconds" CTA linking to api-cost-score.html.
+  - **Before:** 29/340 posts (8.5%) had the CTA
+  - **After:** 340/340 posts (100%) have the CTA
+  - **Insertion logic:** Prioritized share-section > social-share > share-row > Related Articles/Posts/Guides > cta-inline > </article>
+  - **Impact:** Every blog visitor now sees a clear path to the cost score tool → conversion funnel
+- **1 commit, 311 files, +1,635 lines**
+
 ## Session 765 (Jun 20) — Cost Score CTA Expansion: 4 → 29 Blog Posts (2 commits)
 - **Added inline cost score CTA to 25 blog posts** — "🎯 Rate Your API Setup in 30 Seconds" green CTA box linking to api-cost-score.html. Each post now has a visible inline CTA (not just footer link).
   - **Batch 1 (10 posts):** 10-ai-api-cost-mistakes, reduce-ai-api-costs, cut-api-bill, cost-optimization-guide, how-to-reduce-ai-api-costs-50-percent, cheapest-llm, best-cheap-ai-api-2026, ai-api-budget-2026, pricing-mistakes, ai-api-cost-optimization-checklist
@@ -207,10 +215,10 @@ Shutdown prep/execution/cleanup: 407+ files tense sweep, Stripe fix, emergency p
 ## Summary: Sessions 1-598 (Apr 5 - Jun 12)
 Full APIpulse build from scratch. 652 pages, 320 posts, 42 models, 10 providers, 84 tools, 12 API endpoints, 2 widgets. Domain, Stripe, Pro, GA4, newsletter, Chrome extension, 167 comparisons, FAQPage schema, streaming toggle, A/B pricing, Model Selector quiz.
 
-## Site Status (as of Session 765, Jun 20, 2026)
+## Site Status (as of Session 766, Jun 20, 2026)
 **707 web pages | 340 blog posts | 42 models | 10 providers | 98 tools | 12 API endpoints | 2 embeddable widgets**
 - Sitemap (695 URLs), RSS (570 items), blog files (340 posts) — all in sync
-- **Cost score CTA on 29 blog posts (Session 765)** — Inline "🎯 Rate Your API Setup in 30 Seconds" CTA on cost-focused and model-specific posts. Prioritized posts targeting cost-related search queries.
+- **Cost score CTA on ALL 340 blog posts (Session 766)** — 100% coverage. Every blog post has inline "🎯 Rate Your API Setup in 30 Seconds" CTA linking to api-cost-score.html. Prior posts had 8.5% coverage (29/340).
 - **4 sample Pro reports** — GPT-5, Claude Sonnet 4.6, GPT-5 mini, Claude Opus 4.8. All cross-linked. Biggest savings: Opus 4.8 ($10,035/yr).
 - **results-cta.js on 65 calculator/tool pages (Session 751-752)** — Every calculator/tool that shows results now auto-injects a Pro CTA. 22 pages have custom config (resultSelector, toolName, proFeatures), 43 use default fallback detection. GA4 tracking (results_cta_shown, results_cta_clicked).
 - **Pro CTA gaps filled (Session 749-750)** — ai-stack-builder, live-pricing, ai-stack-cost-optimizer, claude-4-migration-cost-calculator, prompt-cost-calculator, ai-api-budget-planner all now have Pro CTAs in results. results-cta.js widget created. Popular models quick links added to live-pricing.
