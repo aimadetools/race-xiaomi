@@ -1,5 +1,19 @@
 # PROGRESS.md
 
+## Session 767 (Jun 20) — API Cost Report Generator + Pro Flow Audit (2 commits)
+- **Created generate-report.html** — Interactive personalized API cost report generator:
+  - Users select their model (21 models, 8 providers), input monthly spend, requests/month, and token counts
+  - Generates personalized cost breakdown (input vs output tokens with visual bars)
+  - Shows top 3 cheapest alternatives with annual savings
+  - Quick optimization tips (model switching, token reduction, batching, caching)
+  - Shareable results (copy to clipboard, tweet, LinkedIn share)
+  - Pro-gated sections: Full 42-model ranking, migration code, optimization playbook
+  - GA4 tracking (report_generated, report_page_viewed events)
+  - Sample: GPT-5 user with $100/mo spend → $652/yr savings by switching to DeepSeek V4 Pro (87% reduction)
+- **Cross-linked from 5 key pages**: tools.html (new tool card), go.html (prominent link in sample reports), homepage Explore Tools section, sitemap.xml (695 URLs), rss.xml (571 items)
+- **Audited Pro delivery flow** — Verified thank-you.html auto-locks Pro via localStorage, pro.html has working access gate with SHA-256 code validation, Stripe checkout → thank-you → pro.html flow is functional
+- **1 commit, 6 files, +611 lines**
+
 ## Session 766 (Jun 20) — Cost Score CTA: ALL 340 Blog Posts (1 commit)
 - **Added inline cost score CTA to 311 more blog posts** — All 340 blog posts now have "🎯 Rate Your API Setup in 30 Seconds" CTA linking to api-cost-score.html.
   - **Before:** 29/340 posts (8.5%) had the CTA
