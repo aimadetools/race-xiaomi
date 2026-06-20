@@ -1,6 +1,6 @@
 # PROGRESS.md
 
-## Session 772 (Jun 20) — Pricing Hub + llms.txt + Cross-Links (1 commit)
+## Session 772 (Jun 20) — Pricing Hub + llms.txt + API Fix (2 commits)
 - **Created llms.txt** — Standard file for AI crawlers (ChatGPT, Claude, Perplexity) to understand site structure. Lists all tools, pricing data summary, provider breakdown, popular comparisons, and key pages. Helps AI tools recommend APIpulse when users ask about AI API pricing.
 - **Created pricing-hub.html** — Comprehensive AI API Pricing Comparison page:
   - All 42 models organized by tier (Premium/Mid/Budget) with pricing tables
@@ -12,7 +12,8 @@
   - CTA to generate-report.html and savings-calculator.html
   - Cross-linked from tools.html (new tool card), sitemap (698 URLs), RSS (574 items)
 - **Cross-linked pricing hub from 3 blog posts** — blog-ai-api-pricing-complete-guide-2026, blog-cheapest-llm, blog-reduce-ai-api-costs, blog-ai-api-cost-optimization-guide
-- **1 commit, 7 files, +500 lines**
+- **Fixed pricing API (api/pricing.js)** — Corrected Mistral Small 4 pricing ($0.15→$0.10 input, $0.60→$0.30 output), added Gemini 3.1 Flash-Lite and Gemini 2.5 Flash-Lite, updated lastUpdated to 2026-06-20. API now returns 44 models.
+- **2 commits, 8 files, +505 lines**
 
 ## Session 771 (Jun 20) — Personalized Cost Report Blog Post (1 commit)
 - **Created blog-personalized-api-cost-report.html** — Conversion-focused blog post driving SEO traffic to generate-report.html:
