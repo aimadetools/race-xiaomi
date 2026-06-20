@@ -1,5 +1,28 @@
 # PROGRESS.md
 
+## Session 781 (Jun 20) — DeepSeek Alternatives Landing Page (2 commits)
+- **Created deepseek-alternatives.html** — 5 alternatives with better quality, reliability, or compliance:
+  1. Gemini 3 Flash ($0.50/$3.00) — Best overall, Google infrastructure
+  2. GPT-5 mini ($0.25/$2.00) — Budget US provider, OpenAI reliability
+  3. Mistral Small 4 ($0.10/$0.30) — Cheapest, European/GDPR
+  4. Claude Haiku 4.5 ($1.00/$5.00) — Best quality/instruction following
+  5. Gemini 2.5 Flash-Lite ($0.10/$0.40) — Cheapest Google option
+  - Interactive cost comparison calculator, FAQPage schema (6 Q&As)
+  - "Why Teams Are Switching" section (data sovereignty, reliability, quality, enterprise)
+  - CTA to go.html for personalized savings report
+- **Cross-linked from 52 pages total:**
+  - 25 DeepSeek comparison pages (compare-deepseek-v4pro-vs-*, compare-*-vs-deepseek-v4pro, etc.)
+  - 10 provider-level DeepSeek comparison pages (compare-anthropic-vs-deepseek, etc.)
+  - 17 DeepSeek blog posts (blog-deepseek-*, blog-*-vs-deepseek-*, etc.)
+- **Cross-linked all 4 alternatives pages to each other:**
+  - gpt5-alternatives → deepseek, claude, gemini alternatives
+  - claude-alternatives → gpt5, deepseek, gemini alternatives
+  - gemini-alternatives → gpt5, claude, deepseek alternatives
+  - deepseek-alternatives → (already has Related Comparisons section)
+- **Updated sitemap (721 URLs), RSS (586 items), tools.html (104 tools), llms.txt**
+- **Updated tool count** — 100 → 104 in tools.html, go.html, pro.html
+- **2 commits, 62 files, +915 lines**
+
 ## Session 780 (Jun 20) — Alternatives Cross-Links + New Comparison Pages (2 commits)
 - **Cross-linked claude-alternatives.html from 41 blog posts (17→58 total):**
   - Added green-bordered card to 8 posts with Related Reading section (H2/H3 pattern)
@@ -129,11 +152,12 @@
 ## Summary: Sessions 1-598 (Apr 5 - Jun 12)
 Full APIpulse build from scratch. 652 pages, 320 posts, 42 models, 10 providers, 84 tools, 12 API endpoints, 2 widgets. Domain, Stripe, Pro, GA4, newsletter, Chrome extension, 167 comparisons, FAQPage schema, streaming toggle, A/B pricing, Model Selector quiz.
 
-## Site Status (as of Session 780, Jun 20, 2026)
-**720 web pages | 341 blog posts | 42 models | 10 providers | 103 tools | 12 API endpoints | 2 embeddable widgets**
-- Sitemap (713 URLs), RSS (585 items), blog files (341 posts) — all in sync
+## Site Status (as of Session 781, Jun 20, 2026)
+**721 web pages | 341 blog posts | 42 models | 10 providers | 104 tools | 12 API endpoints | 2 embeddable widgets**
+- Sitemap (721 URLs), RSS (586 items), blog files (341 posts) — all in sync
 - **175 comparison pages** covering all major model pairs including underserved models (Grok Build, GPT-5.3 Codex, GPT-oss, Cohere Command A)
-- **Alternatives cross-links (Sessions 779-780)** — gpt5-alternatives on 85 pages (75 comparison + 10 blog), claude-alternatives on 120 pages (62 comparison + 58 blog), gemini-alternatives on 76 pages (47 comparison + 29 blog). 3 alternatives landing pages with interactive calculators + FAQPage schema.
+- **4 alternatives landing pages** — gpt5-alternatives, claude-alternatives, gemini-alternatives, deepseek-alternatives (Session 781). All cross-linked to each other.
+- **Alternatives cross-links** — gpt5-alternatives on 85 pages (75 comparison + 10 blog), claude-alternatives on 120 pages (62 comparison + 58 blog), gemini-alternatives on 76 pages (47 comparison + 29 blog), deepseek-alternatives on 52 pages (35 comparison + 17 blog).
 - **A/B pricing test LIVE** — $19 vs $29 (50/50).
 - **Exit popup A/B test LIVE** — Loss-framed vs social-proof copy.
 - **Claude 4 SHUTDOWN COMPLETE (June 15)** — All pages past-tense.
