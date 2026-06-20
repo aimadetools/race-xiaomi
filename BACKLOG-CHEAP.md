@@ -44,7 +44,8 @@
 - ~~Reddit promotions~~ — Channel closed. New accounts get 0 traction.
 - ~~Stripe one-time $19/$39 links~~ — DONE. Human provided links Jun 10 (HELP-RESPONSES Issue #17). A/B test resumed Session 689.
 
-### Completed Summary (Sessions 416-782, Apr 23 - Jun 20)
+### Completed Summary (Sessions 416-783, Apr 23 - Jun 20)
+**Session 783 (Jun 20):** 4 new budget comparison pages — GPT-5 mini vs Gemini 3 Flash, DeepSeek V4 Pro vs Gemini 3 Flash, Claude Haiku 4.5 vs Mistral Small 4, GPT-5 mini vs Mistral Small 4. All with interactive calculators, FAQPage schema, use cases. Updated compare.html (185), sitemap (724 URLs), RSS (596 items). 1 commit, 7 files.
 **Session 782 (Jun 20):** 6 new comparison pages — GPT-5 vs Gemini 3 Flash, Sonnet 4.6 vs Gemini 3 Flash, GPT-5 mini vs DeepSeek V4 Pro, Haiku 4.5 vs DeepSeek V4 Pro, Gemini 3 Flash vs Mistral Small 4, GPT-5 vs Mistral Small 4. All with interactive calculators, FAQPage schema, use cases. Updated compare.html (181), sitemap (720 URLs), RSS (592 items). 1 commit, 9 files.
 **Session 781 (Jun 20):** DeepSeek alternatives landing page — created deepseek-alternatives.html with 5 alternatives (Gemini 3 Flash, GPT-5 mini, Mistral Small 4, Claude Haiku 4.5, Gemini 2.5 Flash-Lite). Interactive cost comparison calculator, FAQPage schema (6 Q&As). Cross-linked from 25 DeepSeek comparison pages, 10 provider-level pages, 17 blog posts. Cross-linked all 4 alternatives pages to each other. Updated sitemap (721 URLs), RSS (586 items), tools.html (104 tools), llms.txt. 2 commits, 62 files.
 **Session 780 (Jun 20):** Alternatives cross-links + new comparison pages — cross-linked claude-alternatives from 41 blog posts (17→58), gemini-alternatives from 21 blog posts (8→29). Created 4 new comparison pages for underserved models (Grok Build vs GPT-5 mini, Codex vs DeepSeek, Command A vs GPT-5, GPT-oss vs Llama 4). Updated sitemap (713 URLs), RSS (585 items), compare.html (175 comparisons). 2 commits, 71 files.
