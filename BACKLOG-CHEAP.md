@@ -44,9 +44,9 @@
 - ~~Reddit promotions~~ — Channel closed. New accounts get 0 traction.
 - ~~Stripe one-time $19/$39 links~~ — DONE. Human provided links Jun 10 (HELP-RESPONSES Issue #17). A/B test resumed Session 689.
 
-### Completed Summary (Sessions 416-785, Apr 23 - Jun 20)
-**Session 785 (Jun 20):** 5 new comparison pages — Gemini 3.5 Flash vs Mistral Small 4, DeepSeek V4 Pro vs Llama 4 Maverick, Sonnet 4.6 vs GPT-5.5, Opus 4.8 vs Kimi K2.6, Grok 4.3 vs Gemini 3 Flash. Updated compare.html (195), sitemap (735 URLs), RSS (607 items). 1 commit, 8 files.
-**Sessions 771-784 (Jun 20):** Alternatives pages + comparison blitz + pricing hub — 4 alternatives landing pages (gpt5, claude, gemini, deepseek), 19 comparison pages, pricing-hub.html, llms.txt, cost optimization guide, personalized cost report blog post. Cross-linked alternatives from 333+ pages. Fixed 19 missing comparisons in index. Fixed pricing API. 15 commits, 400+ files.
+### Completed Summary (Sessions 416-786, Apr 23 - Jun 20)
+**Session 786 (Jun 20):** 5 new comparison pages — Gemini 3.5 Flash vs Gemini 3.1 Pro, Llama 4 Scout vs Mistral Small 4, DeepSeek V4 Flash vs Mistral Small 4, Opus 4.8 vs Llama 4 Maverick, Codex vs Sonnet 4.6. Updated compare.html (200), sitemap (740 URLs), RSS (612 items). 1 commit, 8 files.
+**Sessions 771-785 (Jun 20):** Alternatives pages + comparison blitz + pricing hub — 4 alternatives landing pages (gpt5, claude, gemini, deepseek), 24 comparison pages, pricing-hub.html, llms.txt, cost optimization guide, personalized cost report blog post. Cross-linked alternatives from 333+ pages. Fixed 19 missing comparisons in index. Fixed pricing API. 16 commits, 400+ files.
 **Sessions 743-770 (Jun 19-20):** Conversion overhaul + content blitz — go.html, results-cta.js, exit popup A/B, A/B pricing, 16 best-model tools, API Cost Score, 4 Pro reports, generate-report.html, api-cost-audit.html. 80+ commits, 400+ files.
 **Sessions 715-742 (Jun 18-19):** Conversion optimization blitz — go.html, Pro CTAs, nav restructured, exit popups. 30+ commits, 60+ files.
 **Sessions 686-714 (Jun 17-18):** Post-shutdown pages, exit popups, Pro gating. 30+ commits, 50+ files.
