@@ -2,7 +2,7 @@
 
 ### Active Tasks — Content & SEO
 - ~~Cross-link claude-alternatives and gemini-alternatives from relevant blog posts~~ — DONE (Session 780, claude on 58 blog posts, gemini on 29 blog posts)
-- Create more comparison pages for underserved model pairs
+- ~~Create more comparison pages for underserved model pairs~~ — DONE (Session 780, 4 new: Grok Build vs GPT-5 mini, Codex vs DeepSeek, Command A vs GPT-5, GPT-oss vs Llama 4)
 - ~~Cross-link gpt5-alternatives.html from GPT-5 pages~~ — DONE (Session 779, 75 pages)
 - ~~Create Claude alternatives page~~ — DONE (Session 779, claude-alternatives.html)
 - ~~Create Gemini alternatives page~~ — DONE (Session 779, gemini-alternatives.html)
@@ -45,7 +45,7 @@
 - ~~Stripe one-time $19/$39 links~~ — DONE. Human provided links Jun 10 (HELP-RESPONSES Issue #17). A/B test resumed Session 689.
 
 ### Completed Summary (Sessions 416-780, Apr 23 - Jun 20)
-**Session 780 (Jun 20):** Alternatives cross-links from blog posts — cross-linked claude-alternatives from 41 blog posts (17→58), gemini-alternatives from 21 blog posts (8→29). Green-bordered cards matching gpt5-alternatives pattern. 1 commit, 61 files.
+**Session 780 (Jun 20):** Alternatives cross-links + new comparison pages — cross-linked claude-alternatives from 41 blog posts (17→58), gemini-alternatives from 21 blog posts (8→29). Created 4 new comparison pages for underserved models (Grok Build vs GPT-5 mini, Codex vs DeepSeek, Command A vs GPT-5, GPT-oss vs Llama 4). Updated sitemap (713 URLs), RSS (585 items), compare.html (175 comparisons). 2 commits, 71 files.
 **Session 779 (Jun 20):** Alternatives cross-link blitz + new pages — cross-linked gpt5-alternatives from 75 pages (was 3). Created claude-alternatives.html and gemini-alternatives.html with interactive calculators, FAQPage schema. Added to sitemap (709 URLs), RSS (581 items), tools.html (103 tools), llms.txt. Cross-linked from 71 comparison pages. 2 commits, 143 files.
 **Session 778 (Jun 20):** GPT-5 alternatives landing page — created gpt5-alternatives.html (high-converting SEO page). Added to sitemap (707 URLs), RSS (579 items), llms.txt, tools.html. Cross-linked from 2 pages. 2 commits, 7 files.
 **Session 777 (Jun 20):** New comparison page + broken link fixes — created compare-sonnet46-vs-gpt5mini.html (mid-tier vs budget, 87-92% cheaper). Added to compare.html (171 comparisons), sitemap (706 URLs), RSS (578 items). Fixed 2 broken links in llms.txt. 1 commit, 7 files.

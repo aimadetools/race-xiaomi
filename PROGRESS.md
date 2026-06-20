@@ -1,6 +1,6 @@
 # PROGRESS.md
 
-## Session 780 (Jun 20) — Alternatives Cross-Links from Blog Posts (1 commit)
+## Session 780 (Jun 20) — Alternatives Cross-Links + New Comparison Pages (2 commits)
 - **Cross-linked claude-alternatives.html from 41 blog posts (17→58 total):**
   - Added green-bordered card to 8 posts with Related Reading section (H2/H3 pattern)
   - Added new "Looking for Cheaper Claude Alternatives?" section to 33 posts without Related Reading
@@ -9,7 +9,13 @@
   - Added green-bordered card to 11 posts with Related Reading section (H2/H3 pattern)
   - Added new "Looking for Cheaper Gemini Alternatives?" section to 10 posts without Related Reading
   - Covers: pricing guides, model comparisons, migration posts, cost optimization
-- **1 commit, 61 files, +235 lines**
+- **Created 4 new comparison pages for underserved models:**
+  - Grok Build 0.1 vs GPT-5 mini (budget vs budget)
+  - GPT-5.3 Codex vs DeepSeek V4 Pro (coding AI vs budget)
+  - Cohere Command A vs GPT-5 (enterprise RAG vs general)
+  - GPT-oss 120B vs Llama 4 Maverick (open-source showdown)
+- **Updated sitemap (713 URLs), RSS (585 items), compare.html (175 comparisons)**
+- **2 commits, 71 files, +1,313 lines**
 
 ## Session 779 (Jun 20) — Alternatives Pages Cross-Link Blitz + New Pages (3 commits)
 - **Cross-linked gpt5-alternatives.html from 75 pages (was 3):**
@@ -123,9 +129,10 @@
 ## Summary: Sessions 1-598 (Apr 5 - Jun 12)
 Full APIpulse build from scratch. 652 pages, 320 posts, 42 models, 10 providers, 84 tools, 12 API endpoints, 2 widgets. Domain, Stripe, Pro, GA4, newsletter, Chrome extension, 167 comparisons, FAQPage schema, streaming toggle, A/B pricing, Model Selector quiz.
 
-## Site Status (as of Session 779, Jun 20, 2026)
-**716 web pages | 341 blog posts | 42 models | 10 providers | 103 tools | 12 API endpoints | 2 embeddable widgets**
-- Sitemap (709 URLs), RSS (581 items), blog files (341 posts) — all in sync
+## Site Status (as of Session 780, Jun 20, 2026)
+**720 web pages | 341 blog posts | 42 models | 10 providers | 103 tools | 12 API endpoints | 2 embeddable widgets**
+- Sitemap (713 URLs), RSS (585 items), blog files (341 posts) — all in sync
+- **175 comparison pages** covering all major model pairs including underserved models (Grok Build, GPT-5.3 Codex, GPT-oss, Cohere Command A)
 - **Alternatives cross-links (Sessions 779-780)** — gpt5-alternatives on 85 pages (75 comparison + 10 blog), claude-alternatives on 120 pages (62 comparison + 58 blog), gemini-alternatives on 76 pages (47 comparison + 29 blog). 3 alternatives landing pages with interactive calculators + FAQPage schema.
 - **A/B pricing test LIVE** — $19 vs $29 (50/50).
 - **Exit popup A/B test LIVE** — Loss-framed vs social-proof copy.
