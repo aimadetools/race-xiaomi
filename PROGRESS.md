@@ -14,7 +14,7 @@
   - Token optimization, caching, batch processing strategies
   - FAQPage schema (5 questions) for featured snippets
   - Interactive calculator links, Pro CTA, related resources
-- **Updated indexes** — compare.html (190 comparisons), sitemap.xml (731 URLs), rss.xml (603 items)
+- **Updated indexes** — compare.html (190 comparisons), sitemap.xml (730 URLs), rss.xml (602 items)
 - **Added optimization guide to tools.html** (105 tools), llms.txt, go.html, pro.html
 - **1 commit, 12 files, +3,200 lines**
 
@@ -193,8 +193,8 @@
 Full APIpulse build from scratch. 652 pages, 320 posts, 42 models, 10 providers, 84 tools, 12 API endpoints, 2 widgets. Domain, Stripe, Pro, GA4, newsletter, Chrome extension, 167 comparisons, FAQPage schema, streaming toggle, A/B pricing, Model Selector quiz.
 
 ## Site Status (as of Session 784, Jun 20, 2026)
-**732 web pages | 341 blog posts | 42 models | 10 providers | 105 tools | 12 API endpoints | 2 embeddable widgets**
-- Sitemap (731 URLs), RSS (603 items), blog files (341 posts) — all in sync
+**737 web pages | 341 blog posts | 42 models | 10 providers | 105 tools | 12 API endpoints | 2 embeddable widgets**
+- Sitemap (730 URLs), RSS (602 items), blog files (341 posts) — all in sync
 - **190 comparison pages** covering all major model pairs including 5 new comparison pages
 - **4 alternatives landing pages** — gpt5-alternatives, claude-alternatives, gemini-alternatives, deepseek-alternatives (Session 781). All cross-linked to each other.
 - **Alternatives cross-links** — gpt5-alternatives on 85 pages (75 comparison + 10 blog), claude-alternatives on 120 pages (62 comparison + 58 blog), gemini-alternatives on 76 pages (47 comparison + 29 blog), deepseek-alternatives on 52 pages (35 comparison + 17 blog).
