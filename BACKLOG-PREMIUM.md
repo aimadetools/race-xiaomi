@@ -25,7 +25,7 @@ All Week 9 tasks COMPLETE except items 22-24 (blocked on human/GA4):
 27. Plan v2 — If revenue justifies, plan next features.
 
 ### Completed (Sessions 416-761, Apr 23 - Jun 19)
-**Session 762 (Jun 19):** API Cost Score tool — created api-cost-score.html (gamified cost scoring tool, A-F grade, 4 dimensions, shareable results, Pro CTA). Cross-linked from 501 pages. 1 commit, 504 files.
+**Session 762 (Jun 19):** API Cost Score tool + Sample Pro Report — created api-cost-score.html (gamified cost scoring, A-F grade, shareable results) and sample-pro-report.html ("try before you buy" conversion tool showing full Pro report for GPT-5 users with $2,112/yr savings). Cross-linked from 506 pages. 2 commits, 509 files.
 **Session 761 (Jun 19):** New tool pages — created best-ai-model-for-email-writing.html (email generation cost calculator, 7 models, 6 use cases) and best-ai-model-for-marketing.html (marketing content cost calculator, 7 models, 6 use cases). Cross-linked from 50 pages. 1 commit, 54 files.
 **Sessions 757-760 (Jun 19):** 8 new tool pages — customer-support, data-analysis, agents, vision, function-calling, structured-output, summarization, code-review. All with interactive calculators, model rankings, use cases, FAQPage schema. tools.html 82→90. 4 commits, ~210 files.
 **Session 755 (Jun 19):** api-cost-audit cross-link expansion — 679 pages linking (was 3). 164 comparison pages, 214 blog posts, tools.html, 301 footer links. 1 commit, 675 files.

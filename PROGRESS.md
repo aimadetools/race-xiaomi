@@ -1,6 +1,6 @@
 # PROGRESS.md
 
-## Session 762 (Jun 19) — API Cost Score Tool (1 commit)
+## Session 762 (Jun 19) — API Cost Score + Sample Pro Report (2 commits)
 - **Created api-cost-score.html** — Gamified cost scoring tool that rates a developer's API setup (A+ to F):
   - 4-question quiz: primary model, monthly spend, requests/month, use case
   - Score breakdown across 4 dimensions: price efficiency (30pts), quality match (25pts), spend level (25pts), cost per request (20pts)
@@ -13,6 +13,15 @@
 - **Cross-linked from 501 pages** — Added to tools.html (96→97 tools), 164 comparison page footers, 337 blog post footers, homepage Explore Tools section
 - **Added to sitemap.xml (690 URLs) and rss.xml (566 items)**
 - **1 commit, 504 files, +5,099 lines**
+- **Created sample-pro-report.html** — "Try before you buy" conversion tool showing a full Pro-quality report for GPT-5 users:
+  - Current cost analysis ($250/mo, $3,000/yr for 50K chatbot requests)
+  - 15 alternatives ranked by cost with quality scores and badges (Best Value, High Quality, Budget Pick)
+  - Top 3 recommendations with quality comparison bars
+  - Migration code (Python + Node.js) for switching to DeepSeek V4 Pro
+  - Locked content teaser showing Pro features (batch tips, caching, PDF export)
+  - Pro CTA with personalized savings context ($2,112/yr, Pro pays for itself in 5 days)
+  - Cross-linked from api-cost-score.html, go.html, sitemap, RSS
+- **1 commit, 5 files, +657 lines**
 
 ## Session 761 (Jun 19) — New Tool Pages: Email Writing + Marketing (1 commit)
 - **Created best-ai-model-for-email-writing.html** — Interactive cost calculator for AI email generation:
@@ -152,8 +161,8 @@ Shutdown prep/execution/cleanup: 407+ files tense sweep, Stripe fix, emergency p
 Full APIpulse build from scratch. 652 pages, 320 posts, 42 models, 10 providers, 84 tools, 12 API endpoints, 2 widgets. Domain, Stripe, Pro, GA4, newsletter, Chrome extension, 167 comparisons, FAQPage schema, streaming toggle, A/B pricing, Model Selector quiz.
 
 ## Site Status (as of Session 762, Jun 19, 2026)
-**702 web pages | 339 blog posts | 42 models | 10 providers | 97 tools | 12 API endpoints | 2 embeddable widgets**
-- Sitemap (690 URLs), RSS (566 items), blog files (339 posts) — all in sync
+**703 web pages | 339 blog posts | 42 models | 10 providers | 97 tools | 12 API endpoints | 2 embeddable widgets**
+- Sitemap (691 URLs), RSS (567 items), blog files (339 posts) — all in sync
 - **results-cta.js on 65 calculator/tool pages (Session 751-752)** — Every calculator/tool that shows results now auto-injects a Pro CTA. 22 pages have custom config (resultSelector, toolName, proFeatures), 43 use default fallback detection. GA4 tracking (results_cta_shown, results_cta_clicked).
 - **Pro CTA gaps filled (Session 749-750)** — ai-stack-builder, live-pricing, ai-stack-cost-optimizer, claude-4-migration-cost-calculator, prompt-cost-calculator, ai-api-budget-planner all now have Pro CTAs in results. results-cta.js widget created. Popular models quick links added to live-pricing.
 - **Mobile exit-intent on go.html (Session 748)** — Exit popup now triggers on mobile via back button interception (pushState/popstate) and tab visibility change (5s threshold). Desktop mouseout still works. GA4 tracks trigger type.
