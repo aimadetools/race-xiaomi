@@ -1,5 +1,13 @@
 # PROGRESS.md
 
+## Session 777 (Jun 20) — New Comparison Page + Broken Link Fixes
+- **Created compare-sonnet46-vs-gpt5mini.html** — Mid-tier vs budget: Claude Sonnet 4.6 ($3/$15, 1M context) vs GPT-5 mini ($0.25/$2, 272K context). GPT-5 mini 87-92% cheaper, Sonnet 3.7x more context. Interactive calculator with 5 presets, use case recommendations, FAQPage schema, share buttons.
+- **Added to compare.html index** — 171 comparison pages (was 170).
+- **Added to sitemap.xml** (706 URLs) and RSS feed (578 items).
+- **Fixed 2 broken links in llms.txt** — compare-deepseek-v4-pro-vs-gpt5.html → compare-deepseek-v4pro-vs-gpt5.html, compare-gemini-25-pro-vs-gpt5.html → compare-gpt5-vs-gemini25pro.html.
+- **Updated comparison count** — compare-opus48-vs-deepseek-v4pro.html and compare-sonnet46-vs-gpt5mini.html updated from 169/170 to 171.
+- **1 commit, 5 files**
+
 ## Session 776 (Jun 20) — New Comparison Pages (3 commits)
 - **Created compare-gpt55-vs-gemini35flash.html** — Premium vs mid-tier: GPT-5.5 ($5/$30) vs Gemini 3.5 Flash ($1.50/$9). Flash is 70% cheaper. Interactive calculator, FAQPage schema.
 - **Created compare-gpt5-vs-gemini35flash.html** — Premium vs mid-tier: GPT-5 ($1.25/$10) vs Gemini 3.5 Flash ($1.50/$9). Close pricing — GPT-5 17% cheaper input, Flash 10% cheaper output. Interactive calculator, FAQPage schema.
@@ -73,11 +81,12 @@
 ## Summary: Sessions 1-598 (Apr 5 - Jun 12)
 Full APIpulse build from scratch. 652 pages, 320 posts, 42 models, 10 providers, 84 tools, 12 API endpoints, 2 widgets. Domain, Stripe, Pro, GA4, newsletter, Chrome extension, 167 comparisons, FAQPage schema, streaming toggle, A/B pricing, Model Selector quiz.
 
-## Site Status (as of Session 776, Jun 20, 2026)
-**712 web pages | 341 blog posts | 42 models | 10 providers | 100 tools | 12 API endpoints | 2 embeddable widgets**
-- Sitemap (705 URLs), RSS (577 items), blog files (341 posts) — all in sync
-- **New comparison pages (Session 776)** — 3 new pages: GPT-5.5 vs Gemini 3.5 Flash, GPT-5 vs Gemini 3.5 Flash, Opus 4.8 vs DeepSeek V4 Pro.
-- **compare.html indexes all 170 pages (Session 776)** — Was 167. Added 3 new comparison pages.
+## Site Status (as of Session 777, Jun 20, 2026)
+**713 web pages | 341 blog posts | 42 models | 10 providers | 100 tools | 12 API endpoints | 2 embeddable widgets**
+- Sitemap (706 URLs), RSS (578 items), blog files (341 posts) — all in sync
+- **New comparison page (Session 777)** — Claude Sonnet 4.6 vs GPT-5 mini (mid-tier vs budget).
+- **compare.html indexes all 171 pages (Session 777)** — Was 170. Added 1 new comparison page.
+- **Fixed 2 broken links in llms.txt (Session 777)** — DeepSeek V4 Pro vs GPT-5 and Gemini 2.5 Pro vs GPT-5 URLs corrected.
 - **pricing-hub cross-linked from 177 pages (Session 775)** — 166/167 compare pages, 15 blog posts, tools.html. Was 6 pages.
 - **llms.txt updated (Session 776)** — 3 new comparison entries added to popular comparisons.
 - **Tools count fixed (Session 774)** — tools.html now correctly says 100 tools (was 88/98 inconsistent)
