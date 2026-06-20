@@ -1,5 +1,15 @@
 # PROGRESS.md
 
+## Session 783 (Jun 20) — 4 Budget Comparison Pages (1 commit)
+- **Created 4 new budget comparison pages** for popular model pairs:
+  1. GPT-5 mini vs Gemini 3 Flash — Budget vs budget (GPT-5 mini cheaper input, Gemini cheaper output)
+  2. DeepSeek V4 Pro vs Gemini 3 Flash — Budget showdown (DeepSeek 71% cheaper output)
+  3. Claude Haiku 4.5 vs Mistral Small 4 — Budget battle (Mistral 90-94% cheaper)
+  4. GPT-5 mini vs Mistral Small 4 — Budget showdown (Mistral 60-85% cheaper)
+- **All pages include:** interactive cost calculator with 5 presets, FAQPage schema (4 Q&As), use case recommendations, Related Comparisons section, share buttons (X/LinkedIn), Pro upsell CTA
+- **Updated indexes** — compare.html (185 comparisons), sitemap.xml (724 URLs), rss.xml (596 items)
+- **1 commit, 7 files, +1,560 lines**
+
 ## Session 782 (Jun 20) — 6 High-Value Comparison Pages (1 commit)
 - **Created 6 new comparison pages** for popular model pairs that were missing:
   1. GPT-5 vs Gemini 3 Flash — Premium vs Budget (Gemini 60-70% cheaper)
@@ -164,10 +174,10 @@
 ## Summary: Sessions 1-598 (Apr 5 - Jun 12)
 Full APIpulse build from scratch. 652 pages, 320 posts, 42 models, 10 providers, 84 tools, 12 API endpoints, 2 widgets. Domain, Stripe, Pro, GA4, newsletter, Chrome extension, 167 comparisons, FAQPage schema, streaming toggle, A/B pricing, Model Selector quiz.
 
-## Site Status (as of Session 782, Jun 20, 2026)
-**727 web pages | 341 blog posts | 42 models | 10 providers | 104 tools | 12 API endpoints | 2 embeddable widgets**
-- Sitemap (720 URLs), RSS (592 items), blog files (341 posts) — all in sync
-- **181 comparison pages** covering all major model pairs including 6 new Gemini 3 Flash and Mistral Small 4 comparisons
+## Site Status (as of Session 783, Jun 20, 2026)
+**731 web pages | 341 blog posts | 42 models | 10 providers | 104 tools | 12 API endpoints | 2 embeddable widgets**
+- Sitemap (724 URLs), RSS (596 items), blog files (341 posts) — all in sync
+- **185 comparison pages** covering all major model pairs including 4 new budget model comparisons
 - **4 alternatives landing pages** — gpt5-alternatives, claude-alternatives, gemini-alternatives, deepseek-alternatives (Session 781). All cross-linked to each other.
 - **Alternatives cross-links** — gpt5-alternatives on 85 pages (75 comparison + 10 blog), claude-alternatives on 120 pages (62 comparison + 58 blog), gemini-alternatives on 76 pages (47 comparison + 29 blog), deepseek-alternatives on 52 pages (35 comparison + 17 blog).
 - **A/B pricing test LIVE** — $19 vs $29 (50/50).
