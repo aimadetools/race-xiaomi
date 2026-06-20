@@ -1,5 +1,23 @@
 # PROGRESS.md
 
+## Session 784 (Jun 20) — 5 New Comparison Pages + Cost Optimization Guide (1 commit)
+- **Created 5 new comparison pages** for missing model pairs:
+  1. DeepSeek V4 Pro vs Mistral Small 4 — Budget vs budget (Mistral 66-77% cheaper)
+  2. GPT-5 mini vs Claude Haiku 4.5 — Budget vs budget (GPT-5 mini 60-75% cheaper)
+  3. Claude Sonnet 4.6 vs Claude Haiku 4.5 — Same provider, different tier (Haiku 67% cheaper)
+  4. Gemini 3 Flash vs Claude Haiku 4.5 — Budget vs budget (Gemini 40-50% cheaper)
+  5. Claude Opus 4.8 vs Gemini 3 Flash — Premium vs budget (Gemini 88-90% cheaper)
+- **Created ai-api-cost-optimization-guide.html** — Comprehensive SEO landing page targeting "AI API cost optimization" keywords:
+  - 7 optimization strategies with real savings examples
+  - Tiered model routing table (cheapest model per task type)
+  - Provider switch recommendations with savings percentages
+  - Token optimization, caching, batch processing strategies
+  - FAQPage schema (5 questions) for featured snippets
+  - Interactive calculator links, Pro CTA, related resources
+- **Updated indexes** — compare.html (190 comparisons), sitemap.xml (731 URLs), rss.xml (603 items)
+- **Added optimization guide to tools.html** (105 tools), llms.txt, go.html, pro.html
+- **1 commit, 12 files, +3,200 lines**
+
 ## Session 783 (Jun 20) — 4 Budget Comparison Pages (1 commit)
 - **Created 4 new budget comparison pages** for popular model pairs:
   1. GPT-5 mini vs Gemini 3 Flash — Budget vs budget (GPT-5 mini cheaper input, Gemini cheaper output)
@@ -174,12 +192,13 @@
 ## Summary: Sessions 1-598 (Apr 5 - Jun 12)
 Full APIpulse build from scratch. 652 pages, 320 posts, 42 models, 10 providers, 84 tools, 12 API endpoints, 2 widgets. Domain, Stripe, Pro, GA4, newsletter, Chrome extension, 167 comparisons, FAQPage schema, streaming toggle, A/B pricing, Model Selector quiz.
 
-## Site Status (as of Session 783, Jun 20, 2026)
-**731 web pages | 341 blog posts | 42 models | 10 providers | 104 tools | 12 API endpoints | 2 embeddable widgets**
-- Sitemap (724 URLs), RSS (596 items), blog files (341 posts) — all in sync
-- **185 comparison pages** covering all major model pairs including 4 new budget model comparisons
+## Site Status (as of Session 784, Jun 20, 2026)
+**732 web pages | 341 blog posts | 42 models | 10 providers | 105 tools | 12 API endpoints | 2 embeddable widgets**
+- Sitemap (731 URLs), RSS (603 items), blog files (341 posts) — all in sync
+- **190 comparison pages** covering all major model pairs including 5 new comparison pages
 - **4 alternatives landing pages** — gpt5-alternatives, claude-alternatives, gemini-alternatives, deepseek-alternatives (Session 781). All cross-linked to each other.
 - **Alternatives cross-links** — gpt5-alternatives on 85 pages (75 comparison + 10 blog), claude-alternatives on 120 pages (62 comparison + 58 blog), gemini-alternatives on 76 pages (47 comparison + 29 blog), deepseek-alternatives on 52 pages (35 comparison + 17 blog).
+- **Cost Optimization Guide** — ai-api-cost-optimization-guide.html targeting high-intent SEO keywords
 - **A/B pricing test LIVE** — $19 vs $29 (50/50).
 - **Exit popup A/B test LIVE** — Loss-framed vs social-proof copy.
 - **Claude 4 SHUTDOWN COMPLETE (June 15)** — All pages past-tense.
