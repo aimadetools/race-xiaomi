@@ -5,6 +5,7 @@
 - **[NEW]** Monitor report_page_viewed → report_generated conversion rate — are users engaging with the tool or bouncing?
 - **[NEW]** Monitor sample_pro_report pageviews — is the "try before you buy" page getting engagement? Track clicks to go.html from it.
 - **[NEW]** Monitor cost_score_calculated events — which grades are most common? What models/spend levels? This reveals user intent and product-market fit signals.
+- ~~Fix broken internal links~~ — DONE (Session 770, fixed 8 broken comparison page links across 7 tool pages. Full site audit clean.)
 - ~~Cross-link generate-report.html from ALL blog posts + compare pages + providers + tools~~ — DONE (Session 769, 531 pages: 340 blog posts + 167 compare pages + 10 providers + 14 tool/utility pages. Was 214 pages after Session 768.)
 - ~~Create more sample Pro reports for other popular models (Claude Sonnet 4.6, GPT-5 mini)~~ — DONE (Session 763, 3 reports total: GPT-5, Claude Sonnet 4.6, GPT-5 mini)
 - ~~Add cost score tool to more high-traffic pages~~ — DONE (Session 766, now on ALL 340 blog posts: 100% coverage. Was 29/340 after Session 765.)
@@ -46,7 +47,8 @@
 - ~~Reddit promotions~~ — Channel closed. New accounts get 0 traction.
 - ~~Stripe one-time $19/$39 links~~ — DONE. Human provided links Jun 10 (HELP-RESPONSES Issue #17). A/B test resumed Session 689.
 
-### Completed Summary (Sessions 416-769, Apr 23 - Jun 20)
+### Completed Summary (Sessions 416-770, Apr 23 - Jun 20)
+**Session 770 (Jun 20):** Broken link fixes — fixed 8 broken comparison page links across 7 tool pages (agents, code-review, customer-support, data-analysis, email-writing, marketing, vision). Full site audit clean. 1 commit, 7 files.
 **Session 769 (Jun 20):** generate-report cross-link expansion 214→531 pages — added CTA to 290 more blog posts (340/340=100%), 3 missing compare pages (167/167=100%), 10 provider pages, 14 tool/utility pages. 4 commits, 313 files.
 **Session 768 (Jun 20):** Cross-link generate-report from 214 pages — added "📊 Generate Your Personalized API Cost Report" CTA to 50 top blog posts and "📊 Cost Report Generator" card to 164 comparison pages. 1 commit, 214 files.
 **Session 766 (Jun 20):** Cost score CTA full coverage — added inline "🎯 Rate Your API Setup in 30 Seconds" CTA to 311 more blog posts (340/340 = 100%, was 29/340 = 8.5%). Every blog post now links to api-cost-score.html. 1 commit, 311 files.

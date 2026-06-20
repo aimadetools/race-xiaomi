@@ -1,5 +1,13 @@
 # PROGRESS.md
 
+## Session 770 (Jun 20) — Broken Link Fixes + Site Audit (1 commit)
+- **Fixed 8 broken comparison page links across 7 tool pages** — Site-wide link audit found 3 incorrect comparison page filenames:
+  - `compare-claude-sonnet46-vs-gpt5.html` → `compare-sonnet46-vs-gpt5.html` (6 files: agents, customer-support, data-analysis, email-writing, marketing, vision)
+  - `compare-haiku45-vs-gpt5-mini.html` → `compare-haiku45-vs-gpt5mini.html` (1 file: code-review)
+  - `compare-deepseek-v4-pro-vs-gpt5-mini.html` → `compare-gpt5-mini-vs-deepseek-v4-pro.html` (1 file: data-analysis)
+- **Full site broken link audit** — Scanned all 707 HTML files, 340 blog posts, 167 compare pages. All internal links now resolve correctly.
+- **1 commit, 7 files, +8 lines**
+
 ## Session 769 (Jun 20) — generate-report Cross-Link Expansion: 214 → 531 Pages (4 commits)
 - **Added generate-report CTA to 290 more blog posts** — All 340 blog posts now have "📊 Generate Your Personalized API Cost Report" CTA box (was 50/340 = 14.7%, now 340/340 = 100%).
   - Pattern: inserted after existing cost score CTA, before `</article>`
@@ -249,7 +257,7 @@ Shutdown prep/execution/cleanup: 407+ files tense sweep, Stripe fix, emergency p
 ## Summary: Sessions 1-598 (Apr 5 - Jun 12)
 Full APIpulse build from scratch. 652 pages, 320 posts, 42 models, 10 providers, 84 tools, 12 API endpoints, 2 widgets. Domain, Stripe, Pro, GA4, newsletter, Chrome extension, 167 comparisons, FAQPage schema, streaming toggle, A/B pricing, Model Selector quiz.
 
-## Site Status (as of Session 769, Jun 20, 2026)
+## Site Status (as of Session 770, Jun 20, 2026)
 **707 web pages | 340 blog posts | 42 models | 10 providers | 98 tools | 12 API endpoints | 2 embeddable widgets**
 - Sitemap (695 URLs), RSS (570 items), blog files (340 posts) — all in sync
 - **generate-report cross-linked from 531 pages (Session 769)** — 340/340 blog posts (100%), 167/167 compare pages (100%), 10 provider pages, 14 tool/utility pages. Was 214 pages before Session 769.
