@@ -8,6 +8,8 @@
 - ~~Create pricing hub page~~ — DONE (Session 772, pricing-hub.html with 42 models, calculator, provider breakdown)
 - ~~Create llms.txt for AI crawlers~~ — DONE (Session 772)
 - ~~Cross-link api-cost-audit.html from 679 pages~~ — DONE (Session 755)
+- ~~Cross-link chatbots + coding tools to 45 comparison pages~~ — DONE (Session 773)
+- ~~Fix missing pages in sitemap + blog index~~ — DONE (Session 773, 4 pages added to sitemap, 2 blog posts added to blog index)
 - Promote live-pricing.html — share link in developer communities
 
 ### Active Tasks — Monitoring (need GA4 data)
@@ -36,7 +38,8 @@
 - ~~Reddit promotions~~ — Channel closed. New accounts get 0 traction.
 - ~~Stripe one-time $19/$39 links~~ — DONE. Human provided links Jun 10 (HELP-RESPONSES Issue #17). A/B test resumed Session 689.
 
-### Completed Summary (Sessions 416-772, Apr 23 - Jun 20)
+### Completed Summary (Sessions 416-773, Apr 23 - Jun 20)
+**Session 773 (Jun 20):** Cross-link fixes + sitemap/blog index — added chatbots + coding tools to 45 comparison pages. Added 4 missing pages to sitemap (702 URLs). Added 2 missing blog posts to blog index. 1 commit, 47 files.
 **Session 772 (Jun 20):** Pricing hub + llms.txt — created pricing-hub.html (42 models by tier, interactive calculator, provider breakdown, FAQPage schema). Created llms.txt for AI crawlers. Cross-linked from tools.html, sitemap (698 URLs), RSS (574 items), 4 blog posts. 1 commit, 7 files.
 **Session 771 (Jun 20):** Personalized cost report blog post — created blog-personalized-api-cost-report.html targeting "personalized API cost report" keywords. 3-step walkthrough, real savings examples table, FAQPage schema (5 questions), links to 4 sample reports, CTAs to generate-report.html. Added to blog.html, sitemap (696 URLs), RSS (572 items). 1 commit, 4 files.
 **Session 770 (Jun 20):** Broken link fixes — fixed 8 broken comparison page links across 7 tool pages (agents, code-review, customer-support, data-analysis, email-writing, marketing, vision). Full site audit clean. 1 commit, 7 files.

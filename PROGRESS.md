@@ -1,5 +1,11 @@
 # PROGRESS.md
 
+## Session 773 (Jun 20) — Cross-Link Fixes + Sitemap/Blog Index Updates (1 commit)
+- **Added best-ai-model-for-chatbots and best-ai-model-for-coding to 45 comparison pages** — These 2 tool pages were missing from the footer cross-link network on all 45 provider comparison pages (compare-anthropic-vs-google, compare-openai-vs-deepseek, etc.). Now all 16 best-model tools are cross-linked from all 45 comparison pages.
+- **Added 4 missing pages to sitemap.xml** — blog-gpt5-api-cost-complete-guide.html, blog-xai-grok-pricing.html, compare-gpt55-vs-deepseek-v4pro.html, compare-gpt55-vs-opus48.html were created in earlier sessions but never added to the sitemap. Sitemap now 702 URLs (was 698).
+- **Added 2 missing blog posts to blog.html index** — blog-gpt5-api-cost-complete-guide.html and blog-xai-grok-pricing.html were not listed on the blog index page. Now all 341 blog posts appear on blog.html.
+- **1 commit, 47 files, +134 lines**
+
 ## Session 772 (Jun 20) — Pricing Hub + llms.txt + API Fix (2 commits)
 - **Created llms.txt** — Standard file for AI crawlers (ChatGPT, Claude, Perplexity) to understand site structure. Lists all tools, pricing data summary, provider breakdown, popular comparisons, and key pages. Helps AI tools recommend APIpulse when users ask about AI API pricing.
 - **Created pricing-hub.html** — Comprehensive AI API Pricing Comparison page:
@@ -251,28 +257,8 @@
 - **Added savings-calculator.html to 164 comparison pages** — Comparison pages are the biggest SEO traffic drivers but didn't link to the main savings calculator. Added "Savings Calculator — Find your cheapest alternatives" card to the related-tools section on 164 of 167 comparison pages.
 - **6 commits, 192 files, +474 lines**
 
-## Session 751 (Jun 19) — results-cta.js Integration: 34 Calculator Pages (2 commits)
-- **Integrated results-cta.js Pro CTA widget into 34 calculator/tool pages** — The results-cta.js widget (created Session 749) was not yet used on any page. Now integrated into every calculator that shows results:
-  - **Batch 1 (10 pages):** ai-roi-calculator, ai-api-tco-calculator, ai-chatbot-cost-calculator, ai-project-budget-planner, agent-cost-calculator, calculator, savings-calculator, cost-optimizer, claude-api-cost-calculator, gpt5-api-cost-calculator
-  - **Batch 2 (24 pages):** chatbot-cost, claude-4-migration, claude-4-migration-cost, claude-alternatives, claude-deprecation, cohere-cost, cost-per-task, deepseek-api-cost, embed, embedding-cost, fine-tuning, gemini-api-cost, llama-api-cost, mcp-cost, mistral-api-cost, moonshot-cost, open-source-llm-cost, prompt-cost, provider-switch, rate-limit, together-cost, xai-grok-cost, ai-api-budget-planner, ai-stack-cost-optimizer
-- **Each page now auto-injects a Pro CTA** after users see results, showing savings amount + Pro features (migration code, PDF export, price alerts) + link to go.html. GA4 tracking included (results_cta_shown, results_cta_clicked).
-- **2 commits, 34 files, +273 lines**
-
-## Session 750 (Jun 19) — Pro CTA Gap-Filling: Calculator Pages (1 commit)
-- **Added Pro CTA to prompt-cost-calculator.html results** — Users paste a prompt, see costs across 42 models sorted by price, but had NO Pro CTA after results. Added contextual CTA showing annual savings vs most expensive model, linking to go.html with savings context. Previously only had nav bar link.
-- **Added Pro CTA to ai-api-budget-planner.html results** — Budget planner shows which models fit a user's budget, but had no Pro upsell. Added Pro CTA above existing "Compare Models" link with dynamic savings amount and budget-specific messaging. Links to go.html.
-- **Verified all buy.stripe.com links are handled** — Audited 200+ pages with direct Stripe links; all have shared.js loaded which rewrites them to go.html at runtime. No conversion leak.
-- **1 commit, 2 files, +38 lines**
-
-## Sessions 743-750 (Jun 19) — go.html Conversion Blitz + Pro CTA Gap-Filling (18 commits)
-8 sessions of intensive conversion optimization on go.html and Pro CTA coverage:
-- **go.html conversion overhaul** — Interactive savings estimator with payback period, "See Pro in Action" demo widget with real pricing, mobile exit-intent (back button + tab visibility), CTA sync with estimator, urgency countdown, stronger social proof (100% money-back guarantee), FAQ tightened 9→5, Free vs Pro table strengthened (8→5 rows, every row clear contrast), -79 lines total.
-- **results-cta.js widget created** — Reusable Pro CTA injection widget for calculator/tool pages. Auto-detects savings, shows Pro features, links to go.html. GA4 tracking included.
-- **Pro CTA gaps filled** — Added Pro CTAs to 65 calculator/tool pages (ai-stack-builder, live-pricing, ai-stack-cost-optimizer, claude-4-migration-cost-calculator, prompt-cost-calculator, ai-api-budget-planner, and 59 more). Every calculator that shows results now auto-injects a contextual Pro CTA.
-- **18 commits, ~70 files, ~1,200 lines**
-
-## Summary: Sessions 732-755 (Jun 18-19) — Conversion optimization + SEO fixes
-24 sessions. go.html conversion overhaul (interactive savings estimator, demo widget, mobile exit-intent, CTA sync, urgency countdown, FAQ tightened). results-cta.js widget created + integrated into 65 calculator/tool pages. Pro CTA gaps filled across all pages. Nav restructured (25+ → 5 visible + More dropdown). Pre-checkout landing page go.html. Exit popups, sticky bars, trial messaging. Route ALL CTAs through go.html trust-building page (80+ pages). Fixed nav CTA leak, replaced fake social proof with honest trust signals. Fixed broken links, canonical URLs, duplicate content (4 pairs → 301 redirects). Live Pricing Dashboard. Conversion funnel tracking. Share buttons on 3 tools. Cross-linked api-cost-audit from 679 pages. 80+ commits, 400+ files.
+## Summary: Sessions 743-755 (Jun 19) — go.html Conversion Blitz + Pro CTA Coverage (18+ commits)
+go.html conversion overhaul (interactive savings estimator with payback period, "See Pro in Action" demo widget, mobile exit-intent via back button + tab visibility, CTA sync with estimator, urgency countdown, stronger social proof with 100% money-back guarantee, FAQ tightened 9→5, Free vs Pro table strengthened 8→5 rows). results-cta.js reusable Pro CTA widget created + integrated into 65 calculator/tool pages (22 custom configs, 43 default fallback). Pro CTA gaps filled across all pages. Nav restructured (25+ → 5 visible + More dropdown). Pre-checkout landing page go.html. Exit popups, sticky bars, trial messaging. Route ALL CTAs through go.html trust-building page (80+ pages). Fixed nav CTA leak, replaced fake social proof with honest trust signals. Fixed broken links, canonical URLs, duplicate content (4 pairs → 301 redirects). Live Pricing Dashboard. Conversion funnel tracking. Share buttons on 3 tools. Cross-linked api-cost-audit from 679 pages. 80+ commits, 400+ files.
 
 ## Summary: Sessions 715-731 (Jun 18) — Conversion optimization blitz
 17 sessions. Pre-checkout landing page (go.html), personalized Pro CTAs, nav restructured (25+ → 5 visible + More dropdown), Pro page trial-first, ROI calculator, usage-gated calculator, A/B pricing simplified ($19/$29), migration landing page, exit popups, sticky bar, trial messaging, migration code generator, blog posts. 30+ commits, 60+ files.
@@ -286,9 +272,10 @@ Shutdown prep/execution/cleanup: 407+ files tense sweep, Stripe fix, emergency p
 ## Summary: Sessions 1-598 (Apr 5 - Jun 12)
 Full APIpulse build from scratch. 652 pages, 320 posts, 42 models, 10 providers, 84 tools, 12 API endpoints, 2 widgets. Domain, Stripe, Pro, GA4, newsletter, Chrome extension, 167 comparisons, FAQPage schema, streaming toggle, A/B pricing, Model Selector quiz.
 
-## Site Status (as of Session 772, Jun 20, 2026)
+## Site Status (as of Session 773, Jun 20, 2026)
 **709 web pages | 341 blog posts | 42 models | 10 providers | 99 tools | 12 API endpoints | 2 embeddable widgets**
-- Sitemap (698 URLs), RSS (574 items), blog files (341 posts) — all in sync
+- Sitemap (702 URLs), RSS (574 items), blog files (341 posts) — all in sync
+- **Cross-link fixes (Session 773)** — Added chatbots + coding tools to 45 comparison pages. Added 4 missing pages to sitemap. Added 2 missing blog posts to blog index.
 - **llms.txt created (Session 772)** — Standard file for AI crawlers. Lists all tools, pricing data, and key pages. Helps ChatGPT/Claude/Perplexity recommend APIpulse.
 - **pricing-hub.html created (Session 772)** — Comprehensive pricing comparison page with 42 models organized by tier, interactive calculator, provider breakdown, optimization tips. FAQPage schema (5 questions).
 - **generate-report cross-linked from 531 pages (Session 769)** — 340/340 blog posts (100%), 167/167 compare pages (100%), 10 provider pages, 14 tool/utility pages. Was 214 pages before Session 769.
