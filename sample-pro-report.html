@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sample Pro Report — GPT-5 Cost Optimization | APIpulse</title>
+    <meta name="description" content="See a real APIpulse Pro report: GPT-5 user spending $200/mo could save $2,112/year by switching to DeepSeek V4 Pro. Full analysis with migration code.">
+    <link rel="canonical" href="https://getapipulse.com/sample-pro-report.html">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="styles.css">
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0CEP7S9Y3J"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-0CEP7S9Y3J');
+    </script>
+    <script src="analytics.js" defer></script>
+    <script src="shared.js" defer></script>
+    <!-- Article Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Sample Pro Report: GPT-5 Cost Optimization",
+      "description": "A real APIpulse Pro report showing how a GPT-5 user spending $200/mo could save $2,112/year.",
+      "url": "https://getapipulse.com/sample-pro-report.html",
+      "datePublished": "2026-06-19",
+      "author": { "@type": "Organization", "name": "APIpulse" }
+    }
+    </script>
+    <style>
+        .report-page { max-width: 780px; margin: 0 auto; padding: 100px 24px 60px; }
+
+        /* Sample banner */
+        .sample-banner {
+            background: linear-gradient(135deg, rgba(99,102,241,0.1), rgba(139,92,246,0.1));
+            border: 1px solid var(--accent);
+            border-radius: 12px; padding: 16px 20px;
+            text-align: center; margin-bottom: 32px;
+            font-size: 14px; color: var(--accent); font-weight: 600;
+        }
+
+        /* Report header */
+        .report-header {
+            background: var(--bg-secondary); border: 1px solid var(--border);
+            border-radius: 16px; padding: 32px; margin-bottom: 24px;
+        }
+        .report-header h1 {
+            font-size: 28px; font-weight: 900; margin-bottom: 8px;
+        }
+        .report-header .subtitle {
+            font-size: 16px; color: var(--text-secondary); margin-bottom: 20px;
+        }
+        .report-meta {
+            display: flex; gap: 20px; flex-wrap: wrap;
+            font-size: 13px; color: var(--text-muted);
+        }
+        .report-meta span { display: flex; align-items: center; gap: 6px; }
+
+        /* Savings highlight */
+        .savings-highlight {
+            background: linear-gradient(135deg, rgba(34,197,94,0.08), rgba(34,197,94,0.02));
+            border: 2px solid rgba(34,197,94,0.3); border-radius: 16px;
+            padding: 32px; text-align: center; margin-bottom: 24px;
+        }
+        .savings-highlight .label {
+            font-size: 14px; color: var(--text-secondary); margin-bottom: 4px;
+        }
+        .savings-highlight .amount {
+            font-size: clamp(36px, 6vw, 56px); font-weight: 900;
+            color: var(--green); font-family: monospace;
+        }
+        .savings-highlight .sub {
+            font-size: 15px; color: var(--text-secondary); margin-top: 8px;
+        }
+        .savings-highlight .payback {
+            font-size: 18px; font-weight: 700; color: var(--accent);
+            margin-top: 12px;
+        }
+
+        /* Section card */
+        .section-card {
+            background: var(--bg-secondary); border: 1px solid var(--border);
+            border-radius: 16px; padding: 24px; margin-bottom: 24px;
+        }
+        .section-card h2 {
+            font-size: 20px; font-weight: 800; margin-bottom: 16px;
+        }
+        .section-card h3 {
+            font-size: 16px; font-weight: 700; margin: 20px 0 12px;
+        }
+
+        /* Cost table */
+        .cost-table {
+            width: 100%; border-collapse: collapse;
+            font-size: 14px; margin: 16px 0;
+        }
+        .cost-table th {
+            padding: 12px 10px; border-bottom: 2px solid var(--border);
+            font-weight: 700; color: var(--text-muted);
+            text-transform: uppercase; letter-spacing: 0.5px;
+            font-size: 11px; text-align: left;
+        }
+        .cost-table td {
+            padding: 12px 10px; border-bottom: 1px solid var(--border);
+            color: var(--text-secondary);
+        }
+        .cost-table tr:last-child td { border-bottom: none; }
+        .cost-table .highlight { background: rgba(34,197,94,0.06); }
+        .cost-table .highlight td { color: var(--text-primary) !important; font-weight: 600; }
+        .cost-table .savings-cell { color: var(--green) !important; font-weight: 700; }
+        .cost-table .current-row { background: rgba(239,68,68,0.04); }
+        .cost-table .current-row td { color: var(--text-primary); }
+        .cost-table .badge {
+            display: inline-block; font-size: 11px; font-weight: 700;
+            padding: 2px 8px; border-radius: 4px;
+        }
+        .badge-best { background: rgba(34,197,94,0.15); color: var(--green); }
+        .badge-quality { background: rgba(99,102,241,0.15); color: var(--accent); }
+        .badge-budget { background: rgba(245,158,11,0.15); color: var(--orange); }
+
+        /* Code block */
+        .code-block {
+            background: var(--bg-card); border: 1px solid var(--border);
+            border-radius: 12px; padding: 20px; margin: 16px 0;
+            font-family: 'SF Mono', Monaco, 'Cascadia Code', monospace;
+            font-size: 13px; line-height: 1.7; overflow-x: auto;
+            color: var(--text-secondary);
+        }
+        .code-block .comment { color: var(--text-muted); }
+        .code-block .keyword { color: #c084fc; }
+        .code-block .string { color: var(--green); }
+        .code-block .func { color: #60a5fa; }
+
+        /* Quality comparison */
+        .quality-grid {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 12px; margin: 16px 0;
+        }
+        .quality-item {
+            background: var(--bg-card); border: 1px solid var(--border);
+            border-radius: 10px; padding: 16px; text-align: center;
+        }
+        .quality-item .model-name { font-size: 14px; font-weight: 700; margin-bottom: 8px; }
+        .quality-bar {
+            height: 8px; border-radius: 4px; background: var(--bg-secondary);
+            overflow: hidden; margin-bottom: 6px;
+        }
+        .quality-fill { height: 100%; border-radius: 4px; }
+        .quality-score { font-size: 13px; color: var(--text-muted); }
+
+        /* Locked section */
+        .locked-section {
+            border: 2px dashed var(--border); border-radius: 16px;
+            padding: 32px; text-align: center; margin-bottom: 24px;
+            position: relative; overflow: hidden;
+        }
+        .locked-section::before {
+            content: ''; position: absolute; inset: 0;
+            background: linear-gradient(to bottom, transparent 40%, var(--bg-primary) 100%);
+            pointer-events: none; z-index: 1;
+        }
+        .locked-content { position: relative; z-index: 2; }
+        .locked-section .lock-icon { font-size: 32px; margin-bottom: 12px; }
+        .locked-section h3 { font-size: 18px; font-weight: 700; margin-bottom: 8px; }
+        .locked-section p { font-size: 14px; color: var(--text-secondary); margin-bottom: 20px; }
+        .locked-features {
+            display: flex; flex-wrap: wrap; gap: 8px; justify-content: center;
+            margin-bottom: 20px;
+        }
+        .locked-features span {
+            background: var(--bg-card); border: 1px solid var(--border);
+            padding: 6px 14px; border-radius: 8px; font-size: 13px;
+            color: var(--text-secondary);
+        }
+
+        /* Pro CTA */
+        .pro-cta {
+            background: linear-gradient(135deg, var(--bg-secondary), var(--bg-card));
+            border: 2px solid var(--accent); border-radius: 16px;
+            padding: 32px; text-align: center; margin-bottom: 24px;
+        }
+        .pro-cta h2 { font-size: 24px; font-weight: 900; margin-bottom: 8px; }
+        .pro-cta .subtitle { font-size: 16px; color: var(--text-secondary); margin-bottom: 20px; }
+        .pro-cta .cta-btn {
+            display: inline-block; padding: 18px 40px;
+            background: linear-gradient(135deg, var(--accent), #8b5cf6);
+            color: white; border: none; border-radius: 12px;
+            font-size: 18px; font-weight: 800; cursor: pointer;
+            text-decoration: none; transition: all 0.2s;
+            box-shadow: 0 4px 20px rgba(99,102,241,0.4);
+        }
+        .pro-cta .cta-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(99,102,241,0.5); }
+        .pro-cta .cta-sub { font-size: 13px; color: var(--text-muted); margin-top: 12px; }
+
+        /* What you get */
+        .features-grid {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 12px; margin: 20px 0;
+        }
+        .feature-item {
+            background: var(--bg-card); border: 1px solid var(--border);
+            border-radius: 10px; padding: 16px;
+        }
+        .feature-item .icon { font-size: 20px; margin-bottom: 8px; }
+        .feature-item .title { font-size: 14px; font-weight: 700; margin-bottom: 4px; }
+        .feature-item .desc { font-size: 13px; color: var(--text-secondary); }
+
+        @media (max-width: 600px) {
+            .report-meta { flex-direction: column; gap: 8px; }
+            .cost-table { font-size: 12px; }
+            .cost-table th, .cost-table td { padding: 8px 6px; }
+        }
+    </style>
+</head>
+<body>
+    <a href="#main" class="skip-link">Skip to content</a>
+    <nav>
+        <div class="nav-inner">
+            <a href="index.html" class="logo">API<span>pulse</span></a>
+            <div class="nav-links">
+                <a href="tools.html">Tools</a>
+                <a href="api-cost-score.html">Cost Score</a>
+                <a href="index.html" class="nav-cta">Get Pro</a>
+                <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
+            </div>
+        </div>
+    </nav>
+
+    <main id="main" class="report-page">
+        <!-- Sample banner -->
+        <div class="sample-banner">
+            📋 This is a sample Pro report — see what you'd get with APIpulse Pro
+        </div>
+
+        <!-- Report header -->
+        <div class="report-header">
+            <h1>📊 API Cost Optimization Report</h1>
+            <p class="subtitle">GPT-5 user spending $200/mo — full analysis with 15 alternatives ranked</p>
+            <div class="report-meta">
+                <span>📅 Generated: June 19, 2026</span>
+                <span>🤖 Model: GPT-5 (OpenAI)</span>
+                <span>💰 Monthly spend: $200</span>
+                <span>📊 Use case: Chatbot / General AI</span>
+            </div>
+        </div>
+
+        <!-- Savings highlight -->
+        <div class="savings-highlight">
+            <div class="label">You could save up to</div>
+            <div class="amount">$2,112/yr</div>
+            <div class="sub">by switching from GPT-5 to DeepSeek V4 Pro</div>
+            <div class="payback">Pro pays for itself in 5 days</div>
+        </div>
+
+        <!-- Section 1: Current Cost Analysis -->
+        <div class="section-card">
+            <h2>1. Current Cost Analysis</h2>
+            <p style="color:var(--text-secondary);margin-bottom:16px;">Based on your input: GPT-5 at $200/month with 50,000 requests (chatbot use case).</p>
+
+            <table class="cost-table">
+                <tr>
+                    <th>Metric</th>
+                    <th>Value</th>
+                </tr>
+                <tr>
+                    <td>Model</td>
+                    <td><strong>GPT-5</strong> (OpenAI)</td>
+                </tr>
+                <tr>
+                    <td>Input price</td>
+                    <td>$1.25 per 1M tokens</td>
+                </tr>
+                <tr>
+                    <td>Output price</td>
+                    <td>$10.00 per 1M tokens</td>
+                </tr>
+                <tr>
+                    <td>Avg input tokens/request</td>
+                    <td>800</td>
+                </tr>
+                <tr>
+                    <td>Avg output tokens/request</td>
+                    <td>400</td>
+                </tr>
+                <tr>
+                    <td>Monthly requests</td>
+                    <td>50,000</td>
+                </tr>
+                <tr>
+                    <td>Monthly input tokens</td>
+                    <td>40,000,000 (40M)</td>
+                </tr>
+                <tr>
+                    <td>Monthly output tokens</td>
+                    <td>20,000,000 (20M)</td>
+                </tr>
+                <tr>
+                    <td><strong>Monthly cost</strong></td>
+                    <td><strong style="color:var(--red);">$250.00</strong></td>
+                </tr>
+                <tr>
+                    <td><strong>Annual cost</strong></td>
+                    <td><strong style="color:var(--red);">$3,000.00</strong></td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- Section 2: All Alternatives Ranked -->
+        <div class="section-card">
+            <h2>2. All Alternatives Ranked by Cost</h2>
+            <p style="color:var(--text-secondary);margin-bottom:16px;">15 models cheaper than GPT-5, ranked by monthly cost for your workload.</p>
+
+            <table class="cost-table">
+                <tr>
+                    <th>#</th>
+                    <th>Model</th>
+                    <th>Provider</th>
+                    <th>Monthly</th>
+                    <th>You Save</th>
+                    <th>Quality</th>
+                </tr>
+                <tr class="current-row">
+                    <td>—</td>
+                    <td><strong>GPT-5</strong> (current)</td>
+                    <td>OpenAI</td>
+                    <td>$250.00</td>
+                    <td>—</td>
+                    <td>95/100</td>
+                </tr>
+                <tr class="highlight">
+                    <td>1</td>
+                    <td><strong>DeepSeek V4 Flash</strong> <span class="badge badge-best">BEST VALUE</span></td>
+                    <td>DeepSeek</td>
+                    <td>$11.20</td>
+                    <td class="savings-cell">-$238.80</td>
+                    <td>76/100</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Gemini 2.5 Flash</td>
+                    <td>Google</td>
+                    <td>$12.00</td>
+                    <td class="savings-cell">-$238.00</td>
+                    <td>78/100</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Llama 4 Scout</td>
+                    <td>Meta</td>
+                    <td>$19.00</td>
+                    <td class="savings-cell">-$231.00</td>
+                    <td>77/100</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>Mistral Small</td>
+                    <td>Mistral</td>
+                    <td>$19.50</td>
+                    <td class="savings-cell">-$230.50</td>
+                    <td>72/100</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>GPT-4o mini</td>
+                    <td>OpenAI</td>
+                    <td>$21.00</td>
+                    <td class="savings-cell">-$229.00</td>
+                    <td>75/100</td>
+                </tr>
+                <tr>
+                    <td>6</td>
+                    <td>DeepSeek V4 Pro <span class="badge badge-quality">HIGH QUALITY</span></td>
+                    <td>DeepSeek</td>
+                    <td>$34.60</td>
+                    <td class="savings-cell">-$215.40</td>
+                    <td>88/100</td>
+                </tr>
+                <tr>
+                    <td>7</td>
+                    <td>Llama 4 Maverick</td>
+                    <td>Meta</td>
+                    <td>$36.50</td>
+                    <td class="savings-cell">-$213.50</td>
+                    <td>82/100</td>
+                </tr>
+                <tr>
+                    <td>8</td>
+                    <td>Mistral Large</td>
+                    <td>Mistral</td>
+                    <td>$55.00</td>
+                    <td class="savings-cell">-$195.00</td>
+                    <td>85/100</td>
+                </tr>
+                <tr>
+                    <td>9</td>
+                    <td>GPT-5 mini <span class="badge badge-budget">BUDGET PICK</span></td>
+                    <td>OpenAI</td>
+                    <td>$62.50</td>
+                    <td class="savings-cell">-$187.50</td>
+                    <td>82/100</td>
+                </tr>
+                <tr>
+                    <td>10</td>
+                    <td>Claude Haiku 4.5</td>
+                    <td>Anthropic</td>
+                    <td>$140.00</td>
+                    <td class="savings-cell">-$110.00</td>
+                    <td>80/100</td>
+                </tr>
+                <tr>
+                    <td>11</td>
+                    <td>DeepSeek V3</td>
+                    <td>DeepSeek</td>
+                    <td>$159.00</td>
+                    <td class="savings-cell">-$91.00</td>
+                    <td>85/100</td>
+                </tr>
+                <tr>
+                    <td>12</td>
+                    <td>Gemini 2.5 Pro</td>
+                    <td>Google</td>
+                    <td>$162.50</td>
+                    <td class="savings-cell">-$87.50</td>
+                    <td>92/100</td>
+                </tr>
+                <tr>
+                    <td>13</td>
+                    <td>GPT-5</td>
+                    <td>OpenAI</td>
+                    <td>$162.50</td>
+                    <td class="savings-cell">-$87.50</td>
+                    <td>95/100</td>
+                </tr>
+                <tr>
+                    <td>14</td>
+                    <td>Claude Sonnet 4.6</td>
+                    <td>Anthropic</td>
+                    <td>$195.00</td>
+                    <td class="savings-cell">-$55.00</td>
+                    <td>93/100</td>
+                </tr>
+                <tr>
+                    <td>15</td>
+                    <td>GPT-4o</td>
+                    <td>OpenAI</td>
+                    <td>$200.00</td>
+                    <td class="savings-cell">-$50.00</td>
+                    <td>90/100</td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- Section 3: Top 3 Recommendations -->
+        <div class="section-card">
+            <h2>3. Top 3 Recommendations</h2>
+
+            <h3>🥇 Best Value: DeepSeek V4 Pro</h3>
+            <p style="color:var(--text-secondary);margin-bottom:8px;">Saves $215.40/mo ($2,585/yr) with only 7-point quality drop. Best for most chatbot workloads.</p>
+            <div class="quality-grid">
+                <div class="quality-item">
+                    <div class="model-name">GPT-5 (current)</div>
+                    <div class="quality-bar"><div class="quality-fill" style="width:95%;background:var(--accent);"></div></div>
+                    <div class="quality-score">95/100 quality</div>
+                </div>
+                <div class="quality-item">
+                    <div class="model-name">DeepSeek V4 Pro</div>
+                    <div class="quality-bar"><div class="quality-fill" style="width:88%;background:var(--green);"></div></div>
+                    <div class="quality-score">88/100 quality</div>
+                </div>
+            </div>
+
+            <h3>🥈 Budget Pick: GPT-5 mini</h3>
+            <p style="color:var(--text-secondary);margin-bottom:8px;">Stay in the OpenAI ecosystem, save $187.50/mo ($2,250/yr). Quality drop is noticeable but acceptable for many use cases.</p>
+
+            <h3>🥉 Quality Match: Gemini 2.5 Pro</h3>
+            <p style="color:var(--text-secondary);margin-bottom:8px;">Near-identical quality (92 vs 95) at $162.50/mo — save $87.50/mo ($1,050/yr). Best if quality matters most.</p>
+        </div>
+
+        <!-- Section 4: Migration Code -->
+        <div class="section-card">
+            <h2>4. Migration Code</h2>
+            <p style="color:var(--text-secondary);margin-bottom:16px;">Ready-to-use code to switch from GPT-5 to DeepSeek V4 Pro.</p>
+
+            <h3>Python (OpenAI SDK)</h3>
+            <div class="code-block">
+<span class="comment"># Before (GPT-5)</span>
+<span class="keyword">from</span> openai <span class="keyword">import</span> OpenAI
+client = OpenAI(api_key=<span class="string">"sk-..."</span>)
+response = client.chat.completions.create(
+    model=<span class="string">"gpt-5"</span>,
+    messages=[{<span class="string">"role"</span>: <span class="string">"user"</span>, <span class="string">"content"</span>: <span class="string">"Hello"</span>}]
+)
+
+<span class="comment"># After (DeepSeek V4 Pro)</span>
+<span class="keyword">from</span> openai <span class="keyword">import</span> OpenAI
+client = OpenAI(
+    api_key=<span class="string">"sk-..."</span>,
+    base_url=<span class="string">"https://api.deepseek.com/v1"</span>
+)
+response = client.chat.completions.create(
+    model=<span class="string">"deepseek-v4-pro"</span>,
+    messages=[{<span class="string">"role"</span>: <span class="string">"user"</span>, <span class="string">"content"</span>: <span class="string">"Hello"</span>}]
+)
+            </div>
+
+            <h3>Node.js</h3>
+            <div class="code-block">
+<span class="comment">// Before</span>
+<span class="keyword">import</span> OpenAI <span class="keyword">from</span> <span class="string">'openai'</span>;
+<span class="keyword">const</span> client = <span class="keyword">new</span> <span class="func">OpenAI</span>({ apiKey: <span class="string">'sk-...'</span> });
+<span class="keyword">const</span> response = <span class="keyword">await</span> client.chat.completions.<span class="func">create</span>({
+  model: <span class="string">'gpt-5'</span>,
+  messages: [{ role: <span class="string">'user'</span>, content: <span class="string">'Hello'</span> }]
+});
+
+<span class="comment">// After</span>
+<span class="keyword">import</span> OpenAI <span class="keyword">from</span> <span class="string">'openai'</span>;
+<span class="keyword">const</span> client = <span class="keyword">new</span> <span class="func">OpenAI</span>({
+  apiKey: <span class="string">'sk-...'</span>,
+  baseURL: <span class="string">'https://api.deepseek.com/v1'</span>
+});
+<span class="keyword">const</span> response = <span class="keyword">await</span> client.chat.completions.<span class="func">create</span>({
+  model: <span class="string">'deepseek-v4-pro'</span>,
+  messages: [{ role: <span class="string">'user'</span>, content: <span class="string">'Hello'</span> }]
+});
+            </div>
+        </div>
+
+        <!-- Section 5: Locked content -->
+        <div class="locked-section">
+            <div class="locked-content">
+                <div class="lock-icon">🔒</div>
+                <h3>Unlock the Full Report</h3>
+                <p>This sample shows 3 of 15 alternatives. Pro includes the complete analysis plus:</p>
+                <div class="locked-features">
+                    <span>All 15 alternatives ranked</span>
+                    <span>Migration code for each</span>
+                    <span>Quality trade-off analysis</span>
+                    <span>Batch processing tips</span>
+                    <span>Caching strategies</span>
+                    <span>PDF export</span>
+                    <span>10 saved scenarios</span>
+                    <span>Price change alerts</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pro CTA -->
+        <div class="pro-cta">
+            <h2>Get YOUR Personalized Report</h2>
+            <p class="subtitle">This sample shows GPT-5. Pro analyzes YOUR model, YOUR spend, YOUR use case — in 60 seconds.</p>
+
+            <div class="features-grid">
+                <div class="feature-item">
+                    <div class="icon">📊</div>
+                    <div class="title">Full savings report</div>
+                    <div class="desc">Every alternative ranked by cost</div>
+                </div>
+                <div class="feature-item">
+                    <div class="icon">💻</div>
+                    <div class="title">Migration code</div>
+                    <div class="desc">Copy-paste ready for each model</div>
+                </div>
+                <div class="feature-item">
+                    <div class="icon">📋</div>
+                    <div class="title">10 saved scenarios</div>
+                    <div class="desc">Compare configurations side by side</div>
+                </div>
+                <div class="feature-item">
+                    <div class="icon">📄</div>
+                    <div class="title">PDF export</div>
+                    <div class="desc">Share with your team or manager</div>
+                </div>
+            </div>
+
+            <a id="pro-cta-btn" href="go.html?from=sample-report" class="cta-btn" target="_blank" rel="noopener">
+                Get APIpulse Pro — <span id="pro-price">$29</span>
+            </a>
+            <p class="cta-sub">✅ One-time payment · ✅ Lifetime access · ✅ 14-day money-back guarantee</p>
+        </div>
+
+        <!-- Trust -->
+        <div style="background:var(--bg-secondary);border:1px solid var(--border);border-radius:12px;padding:20px;text-align:center;margin-bottom:24px;">
+            <div style="display:flex;justify-content:center;gap:20px;flex-wrap:wrap;font-size:13px;color:var(--text-secondary);">
+                <span>🛡️ 14-day money-back guarantee</span>
+                <span>🔒 Stripe secure checkout</span>
+                <span>⚡ Instant access</span>
+            </div>
+        </div>
+
+        <!-- Related -->
+        <div style="margin-top:32px;">
+            <h3 style="font-size:17px;font-weight:700;margin-bottom:16px;">🔧 Try These Free Tools First</h3>
+            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;">
+                <a href="api-cost-score.html" style="background:var(--bg-secondary);border:1px solid var(--border);border-radius:12px;padding:16px;text-decoration:none;transition:all 0.2s;">
+                    <div style="font-size:24px;margin-bottom:8px;">🎯</div>
+                    <div style="font-size:14px;font-weight:700;color:var(--text-primary);">API Cost Score</div>
+                    <div style="font-size:12px;color:var(--text-muted);margin-top:4px;">Rate your setup in 30 seconds</div>
+                </a>
+                <a href="savings-calculator.html" style="background:var(--bg-secondary);border:1px solid var(--border);border-radius:12px;padding:16px;text-decoration:none;transition:all 0.2s;">
+                    <div style="font-size:24px;margin-bottom:8px;">💰</div>
+                    <div style="font-size:14px;font-weight:700;color:var(--text-primary);">Savings Calculator</div>
+                    <div style="font-size:12px;color:var(--text-muted);margin-top:4px;">Find your cheapest alternatives</div>
+                </a>
+                <a href="api-cost-audit.html" style="background:var(--bg-secondary);border:1px solid var(--border);border-radius:12px;padding:16px;text-decoration:none;transition:all 0.2s;">
+                    <div style="font-size:24px;margin-bottom:8px;">🔍</div>
+                    <div style="font-size:14px;font-weight:700;color:var(--text-primary);">Free Cost Audit</div>
+                    <div style="font-size:12px;color:var(--text-muted);margin-top:4px;">Audit your current spending</div>
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>© 2026 APIpulse. <a href="index.html">Home</a> · <a href="tools.html">Tools</a> · <a href="blog.html">Blog</a> · <a href="pricing.html">Pricing</a></p>
+    </footer>
+
+    <script>
+        // A/B pricing
+        document.addEventListener('DOMContentLoaded', function() {
+            var price = window._abPrice || 29;
+            document.getElementById('pro-price').textContent = '$' + price;
+            document.getElementById('pro-cta-btn').href = 'go.html?from=sample-report&savings=215&alts=15';
+        });
+    </script>
+    <script src="results-cta.js" defer></script>
+</body>
+</html>
