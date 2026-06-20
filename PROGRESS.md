@@ -1,6 +1,6 @@
 # PROGRESS.md
 
-## Session 764 (Jun 20) — Sample Pro Report + Blog Post: Claude Opus 4.8 (2 commits)
+## Session 764 (Jun 20) — Sample Pro Report + Blog Post + Cost Score Expansion (3 commits)
 - **Created sample-pro-report-opus48.html** — "Try before you buy" report for Claude Opus 4.8 users (most expensive model):
   - Current cost analysis ($850/mo for 20K code gen requests, 2.5K input + 1.2K output tokens)
   - 15 alternatives ranked by cost with quality scores and badges
@@ -15,8 +15,9 @@
   - FAQPage schema (5 questions) for featured snippets
   - Inline CTAs linking to savings calculator and Pro
   - Related articles section
+- **Added cost score tool to 4 blog posts** — blog-ai-api-cost-per-token, blog-chatgpt-clone-cost, blog-cheapest-ai-api-june-2026, blog-top-10-cheapest-ai-apis-2026. Each now has green CTA: "Rate Your API Setup in 30 Seconds"
 - **Added to sitemap.xml (695 URLs) and rss.xml (570 items)**
-- **2 commits, 12 files, +1,161 lines**
+- **3 commits, 16 files, +1,185 lines**
 
 ## Session 763 (Jun 19) — Sample Pro Reports: Claude Sonnet 4.6 + GPT-5 mini (1 commit)
 - **Created sample-pro-report-claude-sonnet.html** — "Try before you buy" report for Claude Sonnet 4.6 users:
