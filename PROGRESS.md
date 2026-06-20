@@ -1,5 +1,19 @@
 # PROGRESS.md
 
+## Session 771 (Jun 20) — Personalized Cost Report Blog Post (1 commit)
+- **Created blog-personalized-api-cost-report.html** — Conversion-focused blog post driving SEO traffic to generate-report.html:
+  - Targets "personalized API cost report", "AI API savings calculator", "how much can I save on AI APIs" keywords
+  - 3-step walkthrough with visual step boxes (select model → enter usage → get report)
+  - Real savings examples table: GPT-5 ($652/yr), Claude Sonnet 4.6 ($2,004/yr), Claude Opus 4.8 ($10,035/yr)
+  - FAQPage schema (5 questions) for featured snippets
+  - Links to all 4 sample Pro reports (GPT-5, Sonnet 4.6, GPT-5 mini, Opus 4.8)
+  - 2 inline CTAs to generate-report.html + cost score CTA + Pro upsell
+  - Social share buttons (Twitter/X, LinkedIn, Reddit)
+  - Related articles section (5 posts)
+- **Cross-linked from blog.html** — Newest post card with purple accent
+- **Added to sitemap.xml (696 URLs) and rss.xml (572 items)**
+- **1 commit, 4 files, +400 lines**
+
 ## Session 770 (Jun 20) — Broken Link Fixes + Site Audit (1 commit)
 - **Fixed 8 broken comparison page links across 7 tool pages** — Site-wide link audit found 3 incorrect comparison page filenames:
   - `compare-claude-sonnet46-vs-gpt5.html` → `compare-sonnet46-vs-gpt5.html` (6 files: agents, customer-support, data-analysis, email-writing, marketing, vision)
@@ -257,9 +271,9 @@ Shutdown prep/execution/cleanup: 407+ files tense sweep, Stripe fix, emergency p
 ## Summary: Sessions 1-598 (Apr 5 - Jun 12)
 Full APIpulse build from scratch. 652 pages, 320 posts, 42 models, 10 providers, 84 tools, 12 API endpoints, 2 widgets. Domain, Stripe, Pro, GA4, newsletter, Chrome extension, 167 comparisons, FAQPage schema, streaming toggle, A/B pricing, Model Selector quiz.
 
-## Site Status (as of Session 770, Jun 20, 2026)
-**707 web pages | 340 blog posts | 42 models | 10 providers | 98 tools | 12 API endpoints | 2 embeddable widgets**
-- Sitemap (695 URLs), RSS (570 items), blog files (340 posts) — all in sync
+## Site Status (as of Session 771, Jun 20, 2026)
+**708 web pages | 341 blog posts | 42 models | 10 providers | 98 tools | 12 API endpoints | 2 embeddable widgets**
+- Sitemap (696 URLs), RSS (572 items), blog files (341 posts) — all in sync
 - **generate-report cross-linked from 531 pages (Session 769)** — 340/340 blog posts (100%), 167/167 compare pages (100%), 10 provider pages, 14 tool/utility pages. Was 214 pages before Session 769.
 - **Cost score CTA on ALL 340 blog posts (Session 766)** — 100% coverage. Every blog post has inline "🎯 Rate Your API Setup in 30 Seconds" CTA linking to api-cost-score.html. Prior posts had 8.5% coverage (29/340).
 - **4 sample Pro reports** — GPT-5, Claude Sonnet 4.6, GPT-5 mini, Claude Opus 4.8. All cross-linked. Biggest savings: Opus 4.8 ($10,035/yr).

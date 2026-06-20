@@ -24,7 +24,9 @@ All Week 9 tasks COMPLETE except items 22-24 (blocked on human/GA4):
 26. Community feedback integration — Act on Reddit/HN feedback.
 27. Plan v2 — If revenue justifies, plan next features.
 
-### Completed (Sessions 416-770, Apr 23 - Jun 20)
+### Completed (Sessions 416-771, Apr 23 - Jun 20)
+**Session 771 (Jun 20):** Personalized cost report blog post — created blog-personalized-api-cost-report.html with FAQPage schema, savings examples, CTAs to generate-report.html. 1 commit, 4 files.
+**Session 770 (Jun 20):** Broken link fixes — fixed 8 broken comparison page links across 7 tool pages. Full site audit clean. 1 commit, 7 files.
 **Session 770 (Jun 20):** Broken link fixes — fixed 8 broken comparison page links across 7 tool pages. Full site audit clean. 1 commit, 7 files.
 **Session 769 (Jun 20):** generate-report cross-link expansion 214→531 pages — added CTA to 290 more blog posts (340/340=100%), 3 missing compare pages (167/167=100%), 10 provider pages, 14 tool/utility pages. 4 commits, 313 files.
 **Session 768 (Jun 20):** Cross-link generate-report from 214 pages — added report generator CTA to 50 top blog posts + 164 comparison page Related Tools sections. 1 commit, 214 files.
