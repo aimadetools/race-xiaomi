@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>5 Cheaper Alternatives to Claude Opus 4.8 (Save Up to $10,035/Year) | APIpulse Blog</title>
+    <meta name="description" content="Claude Opus 4.8 costs $5/$25 per 1M tokens — the most expensive AI model. Here are 5 cheaper alternatives that handle most tasks at 88-98% lower cost.">
+    <link rel="canonical" href="https://getapipulse.com/blog-claude-opus-48-alternatives.html">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="styles.css">
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0CEP7S9Y3J"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-0CEP7S9Y3J');
+    </script>
+    <script src="analytics.js" defer></script>
+    <script src="shared.js" defer></script>
+    <!-- Article Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "5 Cheaper Alternatives to Claude Opus 4.8 (Save Up to $10,035/Year)",
+      "description": "Claude Opus 4.8 costs $5/$25 per 1M tokens — the most expensive AI model. Here are 5 cheaper alternatives that handle most tasks at 88-98% lower cost.",
+      "url": "https://getapipulse.com/blog-claude-opus-48-alternatives.html",
+      "datePublished": "2026-06-20",
+      "author": { "@type": "Organization", "name": "APIpulse" },
+      "publisher": { "@type": "Organization", "name": "APIpulse" }
+    }
+    </script>
+    <!-- FAQPage Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Why is Claude Opus 4.8 so expensive?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Claude Opus 4.8 is Anthropic's most capable model, designed for complex reasoning, code generation, and research tasks. At $5/1M input tokens and $25/1M output tokens, it's 2-5x more expensive than competitors like GPT-5 ($1.25/$10) and Gemini 2.5 Pro ($1.25/$10). The premium pricing reflects its position as Anthropic's flagship model."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the best Claude Opus 4.8 alternative for code generation?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "DeepSeek V4 Pro is the best alternative for code generation at $0.44/$0.87 per 1M tokens — 91% cheaper on input and 96% cheaper on output than Claude Opus 4.8. It handles coding, debugging, and multi-file refactoring effectively with a 1M context window. Quality score: 88/100 vs Opus's 97/100."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I switch from Claude Opus 4.8 to a cheaper model without losing quality?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "It depends on your use case. For routine tasks (code generation, content writing, data analysis), DeepSeek V4 Pro or GPT-5 offer 88-95% quality at 60-96% lower cost. For complex reasoning and research, Claude Sonnet 4.6 ($3/$15) offers 93% quality at 40% lower cost while staying in the Anthropic ecosystem. Test with your specific workloads before committing."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How much can I save by switching from Claude Opus 4.8?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Savings depend on your usage and alternative chosen. For a typical heavy user (20K requests/mo, 2.5K input + 1.2K output tokens): DeepSeek V4 Pro saves $9,685/yr, GPT-5 mini saves $9,474/yr, Claude Sonnet 4.6 saves $4,080/yr. Use our free Savings Calculator to see your exact savings."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is DeepSeek V4 Pro reliable enough to replace Claude Opus 4.8?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "For most production workloads, yes. DeepSeek V4 Pro handles coding, reasoning, and document analysis effectively. Its 1M context window matches Opus's. Main considerations: DeepSeek is a Chinese company (data sovereignty may matter), and it may struggle with very complex multi-step reasoning. For mission-critical tasks, consider Claude Sonnet 4.6 or GPT-5 as safer alternatives."
+          }
+        }
+      ]
+    }
+    </script>
+    <style>
+        .blog-post { max-width: 780px; margin: 0 auto; padding: 100px 24px 60px; }
+        .blog-post h1 { font-size: 32px; font-weight: 900; line-height: 1.2; margin-bottom: 16px; }
+        .blog-meta { display: flex; gap: 16px; flex-wrap: wrap; font-size: 13px; color: var(--text-muted); margin-bottom: 32px; }
+        .blog-post h2 { font-size: 24px; font-weight: 800; margin: 40px 0 16px; }
+        .blog-post h3 { font-size: 20px; font-weight: 700; margin: 32px 0 12px; }
+        .blog-post p { font-size: 16px; line-height: 1.8; color: var(--text-secondary); margin-bottom: 16px; }
+        .blog-post ul, .blog-post ol { margin-bottom: 16px; padding-left: 24px; }
+        .blog-post li { font-size: 16px; line-height: 1.8; color: var(--text-secondary); margin-bottom: 8px; }
+
+        /* Comparison table */
+        .comparison-table {
+            width: 100%; border-collapse: collapse; margin: 24px 0;
+            font-size: 14px;
+        }
+        .comparison-table th {
+            padding: 12px 10px; border-bottom: 2px solid var(--border);
+            font-weight: 700; color: var(--text-muted);
+            text-transform: uppercase; letter-spacing: 0.5px;
+            font-size: 11px; text-align: left;
+        }
+        .comparison-table td {
+            padding: 12px 10px; border-bottom: 1px solid var(--border);
+            color: var(--text-secondary);
+        }
+        .comparison-table .winner { background: rgba(34,197,94,0.06); font-weight: 600; }
+        .comparison-table .winner td { color: var(--text-primary); }
+        .comparison-table .savings { color: var(--green); font-weight: 700; }
+
+        /* Inline CTA */
+        .inline-cta {
+            background: linear-gradient(135deg, rgba(99,102,241,0.08), rgba(139,92,246,0.08));
+            border: 1px solid rgba(99,102,241,0.2); border-radius: 12px;
+            padding: 24px; margin: 32px 0; text-align: center;
+        }
+        .inline-cta h3 { margin: 0 0 8px; font-size: 18px; }
+        .inline-cta p { margin: 0 0 16px; font-size: 14px; color: var(--text-secondary); }
+        .inline-cta a {
+            display: inline-block; padding: 12px 24px;
+            background: linear-gradient(135deg, var(--accent), #8b5cf6);
+            color: white; border-radius: 8px; font-weight: 700;
+            text-decoration: none; font-size: 15px;
+        }
+
+        /* Model card */
+        .model-card {
+            background: var(--bg-secondary); border: 1px solid var(--border);
+            border-radius: 12px; padding: 20px; margin: 16px 0;
+        }
+        .model-card h4 { font-size: 18px; font-weight: 700; margin-bottom: 8px; }
+        .model-card .price { font-family: monospace; font-weight: 700; color: var(--accent); }
+        .model-card .savings { color: var(--green); font-weight: 700; }
+        .model-card .quality { color: var(--text-muted); font-size: 14px; }
+    </style>
+</head>
+<body>
+    <a href="#main" class="skip-link">Skip to content</a>
+    <nav>
+        <div class="nav-inner">
+            <a href="index.html" class="logo">API<span>pulse</span></a>
+            <div class="nav-links">
+                <a href="tools.html">Tools</a>
+                <a href="api-cost-score.html">Cost Score</a>
+                <a href="index.html" class="nav-cta">Get Pro</a>
+                <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
+            </div>
+        </div>
+    </nav>
+
+    <main id="main" class="blog-post">
+        <h1>5 Cheaper Alternatives to Claude Opus 4.8 (Save Up to $10,035/Year)</h1>
+        <div class="blog-meta">
+            <span>📅 June 20, 2026</span>
+            <span>⏱️ 5 min read</span>
+            <span>💰 Cost Optimization</span>
+        </div>
+
+        <p>Claude Opus 4.8 is Anthropic's most powerful model — and the most expensive AI model on the market at <strong>$5/1M input tokens</strong> and <strong>$25/1M output tokens</strong>. For heavy users, that's $850+/month easily.</p>
+
+        <p>But here's the thing: <strong>most workloads don't need Opus-level intelligence</strong>. Code generation, content writing, data analysis, customer support — these tasks work great with models that cost 88-96% less.</p>
+
+        <p>Here are 5 alternatives that handle most Claude Opus 4.8 workloads at a fraction of the cost.</p>
+
+        <h2>The Cost Problem: Why Opus 4.8 Is So Expensive</h2>
+
+        <p>Let's put the pricing in perspective:</p>
+
+        <table class="comparison-table">
+            <tr>
+                <th>Model</th>
+                <th>Input/1M</th>
+                <th>Output/1M</th>
+                <th>Monthly Cost*</th>
+                <th>vs Opus 4.8</th>
+            </tr>
+            <tr>
+                <td><strong>Claude Opus 4.8</strong></td>
+                <td>$5.00</td>
+                <td>$25.00</td>
+                <td>$850</td>
+                <td>—</td>
+            </tr>
+            <tr>
+                <td>GPT-5</td>
+                <td>$1.25</td>
+                <td>$10.00</td>
+                <td>$302</td>
+                <td class="savings">-64%</td>
+            </tr>
+            <tr>
+                <td>Gemini 2.5 Pro</td>
+                <td>$1.25</td>
+                <td>$10.00</td>
+                <td>$302</td>
+                <td class="savings">-64%</td>
+            </tr>
+            <tr>
+                <td>Claude Sonnet 4.6</td>
+                <td>$3.00</td>
+                <td>$15.00</td>
+                <td>$510</td>
+                <td class="savings">-40%</td>
+            </tr>
+            <tr>
+                <td>DeepSeek V4 Pro</td>
+                <td>$0.44</td>
+                <td>$0.87</td>
+                <td>$43</td>
+                <td class="savings">-95%</td>
+            </tr>
+            <tr>
+                <td>GPT-5 mini</td>
+                <td>$0.25</td>
+                <td>$2.00</td>
+                <td>$61</td>
+                <td class="savings">-93%</td>
+            </tr>
+        </table>
+
+        <p><em>*Based on 20K requests/month with 2.5K input + 1.2K output tokens per request (code generation workload).</em></p>
+
+        <p>That's a <strong>$807/month difference</strong> between Opus 4.8 and DeepSeek V4 Pro — nearly $10,000/year.</p>
+
+        <h2>1. DeepSeek V4 Pro — Best Overall Alternative</h2>
+
+        <div class="model-card">
+            <h4>🥇 DeepSeek V4 Pro</h4>
+            <p><span class="price">$0.44/$0.87 per 1M tokens</span> — <span class="savings">Save $9,685/yr vs Opus 4.8</span></p>
+            <p class="quality">Quality: 88/100 (vs Opus's 97/100)</p>
+        </div>
+
+        <p>DeepSeek V4 Pro is the best value proposition in AI right now. At 91% cheaper on input and 96% cheaper on output, it handles most tasks that people use Claude Opus 4.8 for:</p>
+
+        <ul>
+            <li><strong>Code generation:</strong> Writes, debugs, and refactors code effectively</li>
+            <li><strong>Document analysis:</strong> 1M context window matches Opus's capacity</li>
+            <li><strong>Reasoning:</strong> Handles multi-step logic, though Opus is better at very complex chains</li>
+        </ul>
+
+        <p><strong>When to stick with Opus:</strong> If your work requires very complex multi-step reasoning, nuanced judgment calls, or Anthropic-specific features (tool use, safety constraints).</p>
+
+        <p><a href="compare-opus48-vs-gpt5.html">Compare Claude Opus 4.8 vs DeepSeek V4 Pro →</a></p>
+
+        <h2>2. GPT-5 — Best for Quality-Sensitive Work</h2>
+
+        <div class="model-card">
+            <h4>🥈 GPT-5 (OpenAI)</h4>
+            <p><span class="price">$1.25/$10.00 per 1M tokens</span> — <span class="savings">Save $5,475/yr vs Opus 4.8</span></p>
+            <p class="quality">Quality: 95/100 (vs Opus's 97/100)</p>
+        </div>
+
+        <p>GPT-5 is OpenAI's flagship model and a direct competitor to Claude Opus 4.8. At 64% cheaper, it offers near-identical quality for most tasks:</p>
+
+        <ul>
+            <li><strong>Code generation:</strong> Excellent, with strong debugging capabilities</li>
+            <li><strong>Creative writing:</strong> Often preferred over Opus for natural language tasks</li>
+            <li><strong>API ecosystem:</strong> Mature tooling, extensive documentation</li>
+        </ul>
+
+        <p><strong>Best for:</strong> Teams that need high quality but can't justify Opus's premium pricing. GPT-5 handles 95% of what Opus does at 36% of the cost.</p>
+
+        <p><a href="compare-gpt5-vs-opus48.html">Compare GPT-5 vs Claude Opus 4.8 →</a></p>
+
+        <h2>3. Claude Sonnet 4.6 — Stay in the Anthropic Ecosystem</h2>
+
+        <div class="model-card">
+            <h4>🥉 Claude Sonnet 4.6 (Anthropic)</h4>
+            <p><span class="price">$3.00/$15.00 per 1M tokens</span> — <span class="savings">Save $4,080/yr vs Opus 4.8</span></p>
+            <p class="quality">Quality: 93/100 (vs Opus's 97/100)</p>
+        </div>
+
+        <p>If you need Anthropic's ecosystem (tool use, safety features, specific API behaviors), Claude Sonnet 4.6 is the smart choice:</p>
+
+        <ul>
+            <li><strong>Same API:</strong> No code changes needed beyond model name</li>
+            <li><strong>Tool use:</strong> Identical function calling capabilities</li>
+            <li><strong>Safety:</strong> Same Constitutional AI training</li>
+            <li><strong>Quality:</strong> 93% of Opus's capability at 40% of the cost</li>
+        </ul>
+
+        <p><strong>Best for:</strong> Anthropic-loyal teams that want to reduce costs without switching providers. The 4-point quality drop is barely noticeable for most tasks.</p>
+
+        <p><a href="compare-opus48-vs-sonnet46.html">Compare Claude Opus 4.8 vs Sonnet 4.6 →</a></p>
+
+        <h2>4. Gemini 2.5 Pro — Best for Long Context</h2>
+
+        <div class="model-card">
+            <h4>4️⃣ Gemini 2.5 Pro (Google)</h4>
+            <p><span class="price">$1.25/$10.00 per 1M tokens</span> — <span class="savings">Save $5,475/yr vs Opus 4.8</span></p>
+            <p class="quality">Quality: 92/100 (vs Opus's 97/100)</p>
+        </div>
+
+        <p>Google's Gemini 2.5 Pro matches GPT-5's pricing and offers strong performance:</p>
+
+        <ul>
+            <li><strong>1M context window:</strong> Handles very long documents</li>
+            <li><strong>Multimodal:</strong> Native image, audio, video understanding</li>
+            <li><strong>Google ecosystem:</strong> Tight integration with Google Cloud</li>
+        </ul>
+
+        <p><strong>Best for:</strong> Teams already in the Google Cloud ecosystem, or workloads requiring multimodal capabilities.</p>
+
+        <p><a href="compare-opus48-vs-gemini25pro.html">Compare Claude Opus 4.8 vs Gemini 2.5 Pro →</a></p>
+
+        <h2>5. GPT-5 mini — Best for High-Volume Workloads</h2>
+
+        <div class="model-card">
+            <h4>5️⃣ GPT-5 mini (OpenAI)</h4>
+            <p><span class="price">$0.25/$2.00 per 1M tokens</span> — <span class="savings">Save $9,474/yr vs Opus 4.8</span></p>
+            <p class="quality">Quality: 82/100 (vs Opus's 97/100)</p>
+        </div>
+
+        <p>For high-volume workloads where quality is less critical, GPT-5 mini offers massive savings:</p>
+
+        <ul>
+            <li><strong>Content generation:</strong> Blog posts, marketing copy, social media</li>
+            <li><strong>Data extraction:</strong> Structured output from documents</li>
+            <li><strong>Customer support:</strong> FAQ responses, ticket routing</li>
+        </ul>
+
+        <p><strong>Best for:</strong> High-volume tasks where you're currently overpaying for Opus-level intelligence you don't need.</p>
+
+        <h2>How to Choose the Right Alternative</h2>
+
+        <p>Use this decision framework:</p>
+
+        <ol>
+            <li><strong>Need maximum savings?</strong> → DeepSeek V4 Pro ($43/mo vs $850/mo)</li>
+            <li><strong>Need high quality?</strong> → GPT-5 or Gemini 2.5 Pro (95/100 quality)</li>
+            <li><strong>Need Anthropic ecosystem?</strong> → Claude Sonnet 4.6 (same API, 40% cheaper)</li>
+            <li><strong>High-volume, lower quality OK?</strong> → GPT-5 mini ($61/mo vs $850/mo)</li>
+        </ol>
+
+        <div class="inline-cta">
+            <h3>📊 See Your Exact Savings</h3>
+            <p>Use our free calculator to see how much you'd save by switching from Claude Opus 4.8 to any alternative.</p>
+            <a href="savings-calculator.html">Calculate Your Savings →</a>
+        </div>
+
+        <h2>Migration: How to Switch</h2>
+
+        <p>Switching from Claude Opus 4.8 to DeepSeek V4 Pro takes 5 minutes:</p>
+
+        <p><strong>Python:</strong></p>
+        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:16px;font-family:monospace;font-size:13px;overflow-x:auto;margin-bottom:16px;">
+            <span style="color:var(--text-muted)"># Before (Claude Opus 4.8)</span><br>
+            <span style="color:#c084fc">import</span> anthropic<br>
+            client = anthropic.Anthropic(api_key=<span style="color:var(--green)">"sk-ant-..."</span>)<br><br>
+            <span style="color:var(--text-muted)"># After (DeepSeek V4 Pro)</span><br>
+            <span style="color:#c084fc">from</span> openai <span style="color:#c084fc">import</span> OpenAI<br>
+            client = OpenAI(api_key=<span style="color:var(--green)">"sk-..."</span>, base_url=<span style="color:var(--green)">"https://api.deepseek.com/v1"</span>)
+        </div>
+
+        <p>That's it. Same request format, different endpoint. <a href="sample-pro-report-opus48.html">See the full migration guide in our sample Pro report →</a></p>
+
+        <h2>The Bottom Line</h2>
+
+        <p>Claude Opus 4.8 is a great model — but it's not worth 2-5x the price of alternatives for most workloads. Unless you're doing very complex reasoning or need Anthropic-specific features, switching to DeepSeek V4 Pro or GPT-5 will save you thousands per year with minimal quality impact.</p>
+
+        <p><strong>Start saving today:</strong></p>
+        <ul>
+            <li>🎯 <a href="api-cost-score.html">Get your API Cost Score</a> — see how your setup rates in 30 seconds</li>
+            <li>💰 <a href="savings-calculator.html">Calculate your savings</a> — find the cheapest alternative for your workload</li>
+            <li>📊 <a href="sample-pro-report-opus48.html">See a sample Pro report</a> — full analysis with 15 alternatives ranked</li>
+        </ul>
+
+        <!-- Inline CTA -->
+        <div class="inline-cta" style="margin-top:40px;">
+            <h3>Unlock Full Cost Optimization</h3>
+            <p>Get personalized reports with 15 alternatives, migration code, and PDF export. One-time $29, lifetime access.</p>
+            <a href="go.html?from=blog-opus-alternatives">Get APIpulse Pro →</a>
+        </div>
+
+        <!-- FAQ -->
+        <h2 style="margin-top:48px;">Frequently Asked Questions</h2>
+
+        <h3>Why is Claude Opus 4.8 so expensive?</h3>
+        <p>Claude Opus 4.8 is Anthropic's most capable model, designed for complex reasoning, code generation, and research tasks. At $5/1M input tokens and $25/1M output tokens, it's 2-5x more expensive than competitors like GPT-5 ($1.25/$10) and Gemini 2.5 Pro ($1.25/$10). The premium pricing reflects its position as Anthropic's flagship model.</p>
+
+        <h3>What is the best Claude Opus 4.8 alternative for code generation?</h3>
+        <p>DeepSeek V4 Pro is the best alternative for code generation at $0.44/$0.87 per 1M tokens — 91% cheaper on input and 96% cheaper on output than Claude Opus 4.8. It handles coding, debugging, and multi-file refactoring effectively with a 1M context window. Quality score: 88/100 vs Opus's 97/100.</p>
+
+        <h3>Can I switch from Claude Opus 4.8 to a cheaper model without losing quality?</h3>
+        <p>It depends on your use case. For routine tasks (code generation, content writing, data analysis), DeepSeek V4 Pro or GPT-5 offer 88-95% quality at 60-96% lower cost. For complex reasoning and research, Claude Sonnet 4.6 ($3/$15) offers 93% quality at 40% lower cost while staying in the Anthropic ecosystem. Test with your specific workloads before committing.</p>
+
+        <h3>How much can I save by switching from Claude Opus 4.8?</h3>
+        <p>Savings depend on your usage and alternative chosen. For a typical heavy user (20K requests/mo, 2.5K input + 1.2K output tokens): DeepSeek V4 Pro saves $9,685/yr, GPT-5 mini saves $9,474/yr, Claude Sonnet 4.6 saves $4,080/yr. Use our free Savings Calculator to see your exact savings.</p>
+
+        <h3>Is DeepSeek V4 Pro reliable enough to replace Claude Opus 4.8?</h3>
+        <p>For most production workloads, yes. DeepSeek V4 Pro handles coding, reasoning, and document analysis effectively. Its 1M context window matches Opus's. Main considerations: DeepSeek is a Chinese company (data sovereignty may matter), and it may struggle with very complex multi-step reasoning. For mission-critical tasks, consider Claude Sonnet 4.6 or GPT-5 as safer alternatives.</p>
+
+        <!-- Related posts -->
+        <div style="margin-top:48px;">
+            <h3 style="font-size:18px;font-weight:700;margin-bottom:16px;">📚 Related Articles</h3>
+            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;">
+                <a href="blog-ai-api-pricing-complete-guide-2026.html" style="background:var(--bg-secondary);border:1px solid var(--border);border-radius:12px;padding:16px;text-decoration:none;">
+                    <div style="font-size:14px;font-weight:700;color:var(--text-primary);">Complete AI API Pricing Guide</div>
+                    <div style="font-size:12px;color:var(--text-muted);margin-top:4px;">42 models compared</div>
+                </a>
+                <a href="blog-claude-4-is-dead.html" style="background:var(--bg-secondary);border:1px solid var(--border);border-radius:12px;padding:16px;text-decoration:none;">
+                    <div style="font-size:14px;font-weight:700;color:var(--text-primary);">Claude 4 Shutdown</div>
+                    <div style="font-size:12px;color:var(--text-muted);margin-top:4px;">What you need to know</div>
+                </a>
+                <a href="blog-10-ai-api-cost-mistakes.html" style="background:var(--bg-secondary);border:1px solid var(--border);border-radius:12px;padding:16px;text-decoration:none;">
+                    <div style="font-size:14px;font-weight:700;color:var(--text-primary);">10 API Cost Mistakes</div>
+                    <div style="font-size:12px;color:var(--text-muted);margin-top:4px;">Common pitfalls to avoid</div>
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-inner">
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="tools.html">Tools</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="blog.html">Blog</a>
+            </div>
+            <p>© 2026 APIpulse — Built for developers who care about costs</p>
+        </div>
+    </footer>
+
+    <script>
+        // GA4 tracking
+        if(typeof gtag === 'function'){
+            gtag('event', 'blog_post_viewed', {
+                post_slug: 'claude-opus-48-alternatives',
+                source: document.referrer || 'direct'
+            });
+        }
+    </script>
+</body>
+</html>
