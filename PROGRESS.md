@@ -130,63 +130,8 @@
 - **Updated comparison count** — compare-opus48-vs-deepseek-v4pro.html and compare-sonnet46-vs-gpt5mini.html updated from 169/170 to 171.
 - **1 commit, 5 files**
 
-## Session 776 (Jun 20) — New Comparison Pages (3 commits)
-- **Created compare-gpt55-vs-gemini35flash.html** — Premium vs mid-tier: GPT-5.5 ($5/$30) vs Gemini 3.5 Flash ($1.50/$9). Flash is 70% cheaper. Interactive calculator, FAQPage schema.
-- **Created compare-gpt5-vs-gemini35flash.html** — Premium vs mid-tier: GPT-5 ($1.25/$10) vs Gemini 3.5 Flash ($1.50/$9). Close pricing — GPT-5 17% cheaper input, Flash 10% cheaper output. Interactive calculator, FAQPage schema.
-- **Created compare-opus48-vs-deepseek-v4pro.html** — Premium vs budget: Claude Opus 4.8 ($5/$25) vs DeepSeek V4 Pro ($0.435/$0.87). DeepSeek 91-97% cheaper. Interactive calculator, FAQPage schema.
-- **Updated indexes** — compare.html (170 comparisons), sitemap (705 URLs), RSS (577 items), llms.txt.
-- **Cross-linked from 4 related comparison pages** — compare-gpt55-vs-opus48, compare-opus48-vs-gemini35flash, compare-gpt5-vs-gemini31pro, compare-opus48-vs-gemini35flash.
-- **3 commits, 19 files, +1,795 lines**
-
-## Session 775 (Jun 20) — Cross-Links + Index Updates + llms.txt (3 commits)
-- **Cross-linked pricing-hub.html from 166 comparison pages** — Added pricing-hub card to Related Tools section on 166/167 comparison pages (compare-plans.html excluded — utility page). pricing-hub now linked from 177 pages (was 6).
-- **Added pricing-hub.html to 11 key pricing blog posts** — Added to Related Reading sections on pricing guides, cheapest model posts, and cost optimization articles.
-- **Added pricing-hub.html to llms.txt** — Added as first tool in Key Tools section and referenced in AI Assistants section for better AI crawler discovery.
-- **Added 19 missing comparison pages to compare.html index** — Claude 4 legacy comparisons (9), DeepSeek/Gemini/GPT cross-comparisons (10). compare.html now lists all 167 comparison pages (was 148).
-- **3 commits, 179 files, +756 lines**
-
-## Session 774 (Jun 20) — Count Fixes + API Sync + PROGRESS Cleanup (2 commits)
-- **Fixed tools.html count discrepancy** — Title said "88", meta/og said "98", h1 said "98", but actual tool cards = 100. Updated all to 100 across title, meta description, og:description, and h1.
-- **Fixed go.html stale counts** — "89 tools" → 100, "339 blog posts" → 341 (FAQ answer)
-- **Fixed pro.html stale count** — "88 tools" → 100
-- **Fixed pricing API missing model** — api/pricing.js was missing google-gemini3-flash (Gemini 3 Flash, $0.50/$3.00). Added it. API now returns 42 models (was 41), matching pricing-data.js exactly.
-- **Cleaned up PROGRESS.md** — Summarized Sessions 416-770 into compact blocks. Kept Sessions 771-773 detailed.
-- **2 commits, 6 files**
-
-## Session 773 (Jun 20) — Cross-Link Fixes + Sitemap/Blog Index Updates (1 commit)
-- **Added best-ai-model-for-chatbots and best-ai-model-for-coding to 45 comparison pages** — These 2 tool pages were missing from the footer cross-link network on all 45 provider comparison pages (compare-anthropic-vs-google, compare-openai-vs-deepseek, etc.). Now all 16 best-model tools are cross-linked from all 45 comparison pages.
-- **Added 4 missing pages to sitemap.xml** — blog-gpt5-api-cost-complete-guide.html, blog-xai-grok-pricing.html, compare-gpt55-vs-deepseek-v4pro.html, compare-gpt55-vs-opus48.html were created in earlier sessions but never added to the sitemap. Sitemap now 702 URLs (was 698).
-- **Added 2 missing blog posts to blog.html index** — blog-gpt5-api-cost-complete-guide.html and blog-xai-grok-pricing.html were not listed on the blog index page. Now all 341 blog posts appear on blog.html.
-- **1 commit, 47 files, +134 lines**
-
-## Session 772 (Jun 20) — Pricing Hub + llms.txt + API Fix (2 commits)
-- **Created llms.txt** — Standard file for AI crawlers (ChatGPT, Claude, Perplexity) to understand site structure. Lists all tools, pricing data summary, provider breakdown, popular comparisons, and key pages. Helps AI tools recommend APIpulse when users ask about AI API pricing.
-- **Created pricing-hub.html** — Comprehensive AI API Pricing Comparison page:
-  - All 42 models organized by tier (Premium/Mid/Budget) with pricing tables
-  - Quick Picks section (Cheapest: Gemini 2.5 Flash-Lite, Best Value: DeepSeek V4 Pro, Best Mid-Tier: GPT-5, Best Quality: Claude Opus 4.8)
-  - Interactive cost calculator — enter input/output tokens, see costs across all models sorted cheapest first
-  - Provider breakdown cards (10 providers, model count, price ranges)
-  - 6 optimization tips with estimated savings
-  - FAQPage schema (5 questions) for featured snippets
-  - CTA to generate-report.html and savings-calculator.html
-  - Cross-linked from tools.html (new tool card), sitemap (698 URLs), RSS (574 items)
-- **Cross-linked pricing hub from 3 blog posts** — blog-ai-api-pricing-complete-guide-2026, blog-cheapest-llm, blog-reduce-ai-api-costs, blog-ai-api-cost-optimization-guide
-- **Fixed pricing API (api/pricing.js)** — Corrected Mistral Small 4 pricing ($0.15→$0.10 input, $0.60→$0.30 output), added Gemini 3.1 Flash-Lite and Gemini 2.5 Flash-Lite, updated lastUpdated to 2026-06-20. API now returns 44 models.
-- **2 commits, 8 files, +505 lines**
-
-## Session 771 (Jun 20) — Personalized Cost Report Blog Post (1 commit)
-- **Created blog-personalized-api-cost-report.html** — Conversion-focused blog post driving SEO traffic to generate-report.html:
-  - Targets "personalized API cost report", "AI API savings calculator", "how much can I save on AI APIs" keywords
-  - 3-step walkthrough with visual step boxes (select model → enter usage → get report)
-  - Real savings examples table: GPT-5 ($652/yr), Claude Sonnet 4.6 ($2,004/yr), Claude Opus 4.8 ($10,035/yr)
-  - FAQPage schema (5 questions) for featured snippets
-  - Links to all 4 sample Pro reports (GPT-5, Sonnet 4.6, GPT-5 mini, Opus 4.8)
-  - 2 inline CTAs to generate-report.html + cost score CTA + Pro upsell
-  - Social share buttons (Twitter/X, LinkedIn, Reddit)
-  - Related articles section (5 posts)
-- **Cross-linked from blog.html** — Newest post card with purple accent
-- **Added to sitemap.xml (696 URLs) and rss.xml (572 items)**
-- **1 commit, 4 files, +400 lines**
+## Summary: Sessions 771-780 (Jun 20) — Alternatives Pages + Comparison Blitz + Pricing Hub
+10 sessions. Created 4 alternatives landing pages (gpt5, claude, gemini, deepseek) all cross-linked to each other and from 333+ pages. Created 14 comparison pages. Cross-linked alternatives from 292 pages (75 gpt5 + 58 claude + 29 gemini + 17 deepseek + 114 blog). Created pricing-hub.html (42 models, calculator, provider breakdown, FAQPage schema), llms.txt, blog-personalized-api-cost-report.html. Fixed 19 missing comparison pages in compare.html index (148→167). Fixed pricing API (44 models). 10 commits, 300+ files.
 
 ## Summary: Sessions 743-770 (Jun 19-20) — Conversion Optimization + Content Blitz
 30 sessions. Site-wide conversion overhaul: go.html interactive savings estimator + demo widget + mobile exit-intent + urgency countdown + trust signals. results-cta.js reusable Pro CTA widget on 65 calculator pages. ALL Pro CTAs route through go.html. Exit popup A/B test live. A/B pricing test ($19/$29) live. 16 new best-model tool pages (agents, chatbots, code-review, coding, content-writing, customer-support, data-analysis, data-extraction, email-writing, function-calling, marketing, rag, structured-output, summarization, translation, vision). API Cost Score tool (A-F grading). 4 sample Pro reports (GPT-5, Sonnet 4.6, GPT-5 mini, Opus 4.8). generate-report.html interactive cost report generator. api-cost-audit.html free audit tool. Share buttons on 3 tools. Cross-linked generate-report from 531 pages, cost score CTA on ALL 340 blog posts, api-cost-audit from 679 pages. 80+ commits, 400+ files.
