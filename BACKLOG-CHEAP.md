@@ -2,9 +2,9 @@
 
 ### Active Tasks — Content & SEO
 - **[NEW]** Monitor cost_score_calculated events — which grades are most common? What models/spend levels? This reveals user intent and product-market fit signals.
-- **[NEW]** Share API Cost Score on social media — the gamified score is inherently shareable. Promote the tool to drive organic traffic.
+- **[NEW]** Monitor sample_pro_report pageviews — is the "try before you buy" page getting engagement? Track clicks to go.html from it.
+- **[NEW]** Create more sample Pro reports for other popular models (Claude Sonnet 4.6, GPT-5 mini) — expand "try before you buy" coverage.
 - **[NEW]** Add cost score tool to more high-traffic pages — embed widget on blog posts about cost optimization.
-- **[NEW]** Create "I got a [grade] — what did you get?" social media graphics from cost score data.
 - Promote live-pricing.html — share link in developer communities
 
 ### Active Tasks — Monitoring (need GA4 data)
