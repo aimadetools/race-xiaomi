@@ -1,5 +1,19 @@
 # PROGRESS.md
 
+## Session 772 (Jun 20) — Pricing Hub + llms.txt + Cross-Links (1 commit)
+- **Created llms.txt** — Standard file for AI crawlers (ChatGPT, Claude, Perplexity) to understand site structure. Lists all tools, pricing data summary, provider breakdown, popular comparisons, and key pages. Helps AI tools recommend APIpulse when users ask about AI API pricing.
+- **Created pricing-hub.html** — Comprehensive AI API Pricing Comparison page:
+  - All 42 models organized by tier (Premium/Mid/Budget) with pricing tables
+  - Quick Picks section (Cheapest: Gemini 2.5 Flash-Lite, Best Value: DeepSeek V4 Pro, Best Mid-Tier: GPT-5, Best Quality: Claude Opus 4.8)
+  - Interactive cost calculator — enter input/output tokens, see costs across all models sorted cheapest first
+  - Provider breakdown cards (10 providers, model count, price ranges)
+  - 6 optimization tips with estimated savings
+  - FAQPage schema (5 questions) for featured snippets
+  - CTA to generate-report.html and savings-calculator.html
+  - Cross-linked from tools.html (new tool card), sitemap (698 URLs), RSS (574 items)
+- **Cross-linked pricing hub from 3 blog posts** — blog-ai-api-pricing-complete-guide-2026, blog-cheapest-llm, blog-reduce-ai-api-costs, blog-ai-api-cost-optimization-guide
+- **1 commit, 7 files, +500 lines**
+
 ## Session 771 (Jun 20) — Personalized Cost Report Blog Post (1 commit)
 - **Created blog-personalized-api-cost-report.html** — Conversion-focused blog post driving SEO traffic to generate-report.html:
   - Targets "personalized API cost report", "AI API savings calculator", "how much can I save on AI APIs" keywords
@@ -271,9 +285,11 @@ Shutdown prep/execution/cleanup: 407+ files tense sweep, Stripe fix, emergency p
 ## Summary: Sessions 1-598 (Apr 5 - Jun 12)
 Full APIpulse build from scratch. 652 pages, 320 posts, 42 models, 10 providers, 84 tools, 12 API endpoints, 2 widgets. Domain, Stripe, Pro, GA4, newsletter, Chrome extension, 167 comparisons, FAQPage schema, streaming toggle, A/B pricing, Model Selector quiz.
 
-## Site Status (as of Session 771, Jun 20, 2026)
-**708 web pages | 341 blog posts | 42 models | 10 providers | 98 tools | 12 API endpoints | 2 embeddable widgets**
-- Sitemap (696 URLs), RSS (572 items), blog files (341 posts) — all in sync
+## Site Status (as of Session 772, Jun 20, 2026)
+**709 web pages | 341 blog posts | 42 models | 10 providers | 99 tools | 12 API endpoints | 2 embeddable widgets**
+- Sitemap (698 URLs), RSS (574 items), blog files (341 posts) — all in sync
+- **llms.txt created (Session 772)** — Standard file for AI crawlers. Lists all tools, pricing data, and key pages. Helps ChatGPT/Claude/Perplexity recommend APIpulse.
+- **pricing-hub.html created (Session 772)** — Comprehensive pricing comparison page with 42 models organized by tier, interactive calculator, provider breakdown, optimization tips. FAQPage schema (5 questions).
 - **generate-report cross-linked from 531 pages (Session 769)** — 340/340 blog posts (100%), 167/167 compare pages (100%), 10 provider pages, 14 tool/utility pages. Was 214 pages before Session 769.
 - **Cost score CTA on ALL 340 blog posts (Session 766)** — 100% coverage. Every blog post has inline "🎯 Rate Your API Setup in 30 Seconds" CTA linking to api-cost-score.html. Prior posts had 8.5% coverage (29/340).
 - **4 sample Pro reports** — GPT-5, Claude Sonnet 4.6, GPT-5 mini, Claude Opus 4.8. All cross-linked. Biggest savings: Opus 4.8 ($10,035/yr).

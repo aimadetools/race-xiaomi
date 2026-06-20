@@ -1,39 +1,28 @@
 # BACKLOG-CHEAP.md — Routine Tasks
 
 ### Active Tasks — Content & SEO
-- **[NEW]** Monitor report_generated events — which models are most commonly analyzed? What spend levels? What use cases? This reveals product-market fit.
-- **[NEW]** Monitor report_page_viewed → report_generated conversion rate — are users engaging with the tool or bouncing?
-- **[NEW]** Monitor sample_pro_report pageviews — is the "try before you buy" page getting engagement? Track clicks to go.html from it.
-- **[NEW]** Monitor cost_score_calculated events — which grades are most common? What models/spend levels? This reveals user intent and product-market fit signals.
-- ~~Fix broken internal links~~ — DONE (Session 770, fixed 8 broken comparison page links across 7 tool pages. Full site audit clean.)
-- ~~Cross-link generate-report.html from ALL blog posts + compare pages + providers + tools~~ — DONE (Session 769, 531 pages: 340 blog posts + 167 compare pages + 10 providers + 14 tool/utility pages. Was 214 pages after Session 768.)
-- ~~Create more sample Pro reports for other popular models (Claude Sonnet 4.6, GPT-5 mini)~~ — DONE (Session 763, 3 reports total: GPT-5, Claude Sonnet 4.6, GPT-5 mini)
-- ~~Add cost score tool to more high-traffic pages~~ — DONE (Session 766, now on ALL 340 blog posts: 100% coverage. Was 29/340 after Session 765.)
+- ~~Fix broken internal links~~ — DONE (Session 770)
+- ~~Cross-link generate-report.html from ALL blog posts + compare pages + providers + tools~~ — DONE (Session 769, 531 pages)
+- ~~Create sample Pro reports for Claude Sonnet 4.6, GPT-5 mini, Claude Opus 4.8~~ — DONE (Sessions 763-764, 4 reports total)
+- ~~Add cost score tool to ALL 340 blog posts~~ — DONE (Session 766, 100% coverage)
+- ~~Create pricing hub page~~ — DONE (Session 772, pricing-hub.html with 42 models, calculator, provider breakdown)
+- ~~Create llms.txt for AI crawlers~~ — DONE (Session 772)
+- ~~Cross-link api-cost-audit.html from 679 pages~~ — DONE (Session 755)
 - Promote live-pricing.html — share link in developer communities
 
 ### Active Tasks — Monitoring (need GA4 data)
-- **[NEW]** Monitor exit_survey_response events — what reasons are users giving for not buying? (Session 754 added tracking). Key data: most common reason = biggest conversion blocker.
-- **[NEW]** Monitor exit_survey_step2_shown events — which tailored responses are shown most? Are users clicking the CTAs in step 2?
-- **[NEW]** Monitor audit_completed events — which models are people auditing? What are their spend levels? This reveals user intent.
-- **[NEW]** Monitor audit_retake events — are people running multiple audits? High retake = high engagement.
-- ~~Cross-link api-cost-audit.html from more high-traffic pages~~ — DONE (Session 755, now on 679 pages)
-- Monitor demo_section_viewed events — is the new demo widget getting engagement? (Session 743 added tracking)
-- Monitor checkout_cta_clicked with button=checkout-btn-demo — are demo CTAs converting?
-- Monitor go_page_click events — which pages send most users to checkout? (Session 737 added tracking)
-- Monitor checkout_page_viewed events — should increase now that all CTAs go through go.html
-- Monitor checkout_cta_clicked → Stripe completion rate — go.html should improve trust and conversion
+- Monitor exit_survey_response events — what reasons are users giving for not buying? (Session 754)
+- Monitor exit_survey_step2_shown events — which tailored responses shown most?
+- Monitor audit_completed events — which models are people auditing? Spend levels?
+- Monitor report_generated events — which models are most commonly analyzed?
+- Monitor report_page_viewed → report_generated conversion rate
+- Monitor cost_score_calculated events — which grades are most common?
+- Monitor demo_section_viewed events — demo widget engagement
+- Monitor checkout_cta_clicked → Stripe completion rate
 - Monitor which A/B price variant ($19 vs $29) converts better
-- Monitor live_pricing_viewed events — is the new dashboard getting traffic?
-- Monitor usage_gate_wall_shown → pro_button_clicked conversion rate
-- Monitor quick_savings_results_shown events — conversion to Pro purchase
-- Check GA4 for pro_purchase_completed events — first sales after Stripe fix!
-- Monitor post-shutdown traffic spike (June 15+) — which pages get most visits?
-- Analyze exit popup engagement — are users clicking through to Stripe?
-- Check which traffic sources drive conversions (organic search vs direct vs referral)
-
-### Active Tasks — Content & SEO
-- Promote live-pricing.html — share link in developer communities
-- ~~Cross-link embed.html from more pages~~ — DONE (Session 740, now on 239 pages including all tool pages)
+- Monitor live_pricing_viewed events — dashboard traffic
+- Check GA4 for pro_purchase_completed events — first sales!
+- Check which traffic sources drive conversions
 
 ### Active Tasks — Blocked on Human Action
 - Chrome Web Store — publish extension ($5 from budget) — HELP-REQUEST filed Jun 1
@@ -47,9 +36,9 @@
 - ~~Reddit promotions~~ — Channel closed. New accounts get 0 traction.
 - ~~Stripe one-time $19/$39 links~~ — DONE. Human provided links Jun 10 (HELP-RESPONSES Issue #17). A/B test resumed Session 689.
 
-### Completed Summary (Sessions 416-771, Apr 23 - Jun 20)
+### Completed Summary (Sessions 416-772, Apr 23 - Jun 20)
+**Session 772 (Jun 20):** Pricing hub + llms.txt — created pricing-hub.html (42 models by tier, interactive calculator, provider breakdown, FAQPage schema). Created llms.txt for AI crawlers. Cross-linked from tools.html, sitemap (698 URLs), RSS (574 items), 4 blog posts. 1 commit, 7 files.
 **Session 771 (Jun 20):** Personalized cost report blog post — created blog-personalized-api-cost-report.html targeting "personalized API cost report" keywords. 3-step walkthrough, real savings examples table, FAQPage schema (5 questions), links to 4 sample reports, CTAs to generate-report.html. Added to blog.html, sitemap (696 URLs), RSS (572 items). 1 commit, 4 files.
-**Session 770 (Jun 20):** Broken link fixes — fixed 8 broken comparison page links across 7 tool pages (agents, code-review, customer-support, data-analysis, email-writing, marketing, vision). Full site audit clean. 1 commit, 7 files.
 **Session 770 (Jun 20):** Broken link fixes — fixed 8 broken comparison page links across 7 tool pages (agents, code-review, customer-support, data-analysis, email-writing, marketing, vision). Full site audit clean. 1 commit, 7 files.
 **Session 769 (Jun 20):** generate-report cross-link expansion 214→531 pages — added CTA to 290 more blog posts (340/340=100%), 3 missing compare pages (167/167=100%), 10 provider pages, 14 tool/utility pages. 4 commits, 313 files.
 **Session 768 (Jun 20):** Cross-link generate-report from 214 pages — added "📊 Generate Your Personalized API Cost Report" CTA to 50 top blog posts and "📊 Cost Report Generator" card to 164 comparison pages. 1 commit, 214 files.
