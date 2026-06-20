@@ -1,5 +1,12 @@
 # BACKLOG-CHEAP.md — Routine Tasks
 
+### Active Tasks — Content & SEO
+- **[NEW]** Monitor cost_score_calculated events — which grades are most common? What models/spend levels? This reveals user intent and product-market fit signals.
+- **[NEW]** Share API Cost Score on social media — the gamified score is inherently shareable. Promote the tool to drive organic traffic.
+- **[NEW]** Add cost score tool to more high-traffic pages — embed widget on blog posts about cost optimization.
+- **[NEW]** Create "I got a [grade] — what did you get?" social media graphics from cost score data.
+- Promote live-pricing.html — share link in developer communities
+
 ### Active Tasks — Monitoring (need GA4 data)
 - **[NEW]** Monitor exit_survey_response events — what reasons are users giving for not buying? (Session 754 added tracking). Key data: most common reason = biggest conversion blocker.
 - **[NEW]** Monitor exit_survey_step2_shown events — which tailored responses are shown most? Are users clicking the CTAs in step 2?
@@ -36,7 +43,8 @@
 - ~~Reddit promotions~~ — Channel closed. New accounts get 0 traction.
 - ~~Stripe one-time $19/$39 links~~ — DONE. Human provided links Jun 10 (HELP-RESPONSES Issue #17). A/B test resumed Session 689.
 
-### Completed Summary (Sessions 416-761, Apr 23 - Jun 19)
+### Completed Summary (Sessions 416-762, Apr 23 - Jun 19)
+**Session 762 (Jun 19):** API Cost Score tool — created api-cost-score.html (gamified cost scoring tool, A-F grade, 4 dimensions, shareable results, Pro CTA with locked recommendations). Cross-linked from 501 pages (164 comparison + 337 blog + tools.html + homepage). Added to sitemap + RSS. 1 commit, 504 files.
 **Session 761 (Jun 19):** New tool pages — created best-ai-model-for-email-writing.html (email generation cost calculator, 7 models, 6 use cases) and best-ai-model-for-marketing.html (marketing content cost calculator, 7 models, 6 use cases). Cross-linked from 50 pages. Added to tools.html (90→92 tools), sitemap (688 URLs), RSS (565 items). 1 commit, 54 files.
 **Sessions 757-760 (Jun 19):** 8 new tool pages — customer-support, data-analysis, agents, vision, function-calling, structured-output, summarization, code-review. All with interactive calculators, model rankings, use cases, FAQPage schema. Cross-linked from 45-50 pages each. tools.html 82→90. 4 commits, ~210 files.
 **Session 756 (Jun 19):** Share Your Savings viral feature — added copy-to-clipboard, Tweet, and LinkedIn share buttons to savings-calculator.html, api-cost-audit.html, and cost-optimizer.html. 1 commit, 3 files.
