@@ -1,5 +1,21 @@
 # PROGRESS.md
 
+## Session 779 (Jun 20) — Alternatives Pages Cross-Link Blitz + New Pages (2 commits)
+- **Cross-linked gpt5-alternatives.html from 75 pages (was 3):**
+  - Added green-bordered card to 46 GPT-5 comparison pages with Related Comparisons section
+  - Added Related Comparisons section + card to 16 GPT-5 comparison pages missing the section
+  - Added gpt5-alternatives link to 10 GPT-5 pricing/cost blog posts (Related Reading section)
+- **Created claude-alternatives.html** — 5 cheaper alternatives to Claude Opus 4.8 ($5/$25):
+  - DeepSeek V4 Pro (save 97%), Gemini 3 Flash (88%), Mistral Small 4 (98%), GPT-5 (60%), Claude Sonnet 4.6 (40%)
+  - Interactive savings calculator, FAQPage schema (5 questions), verified June 2026 pricing
+  - Cross-linked from 33 Claude comparison pages (Opus/Sonnet)
+- **Created gemini-alternatives.html** — 5 cheaper alternatives to Gemini 3.5 Flash ($1.50/$9):
+  - DeepSeek V4 Pro (save 90%), Gemini 3 Flash (67%), Mistral Small 4 (97%), GPT-5 (17%), Claude Sonnet 4.6 (premium)
+  - Interactive savings calculator, FAQPage schema (5 questions), verified June 2026 pricing
+  - Cross-linked from 38 Gemini comparison pages
+- **Added to sitemap (709 URLs), RSS (581 items), tools.html (103 tools), llms.txt**
+- **2 commits, 143 files, +1,911 lines**
+
 ## Session 778 (Jun 20) — GPT-5 Alternatives Landing Page (2 commits)
 - **Created gpt5-alternatives.html** — High-converting SEO landing page targeting "cheapest GPT-5 alternative":
   - 5 ranked alternatives: DeepSeek V4 Pro (save 91%), Gemini 3 Flash (70%), Mistral Small 4 (97%), Gemini 3.5 Flash (10%), Claude Haiku 4.5 (50%)
@@ -96,9 +112,10 @@
 ## Summary: Sessions 1-598 (Apr 5 - Jun 12)
 Full APIpulse build from scratch. 652 pages, 320 posts, 42 models, 10 providers, 84 tools, 12 API endpoints, 2 widgets. Domain, Stripe, Pro, GA4, newsletter, Chrome extension, 167 comparisons, FAQPage schema, streaming toggle, A/B pricing, Model Selector quiz.
 
-## Site Status (as of Session 778, Jun 20, 2026)
-**714 web pages | 341 blog posts | 42 models | 10 providers | 101 tools | 12 API endpoints | 2 embeddable widgets**
-- Sitemap (707 URLs), RSS (579 items), blog files (341 posts) — all in sync
+## Site Status (as of Session 779, Jun 20, 2026)
+**716 web pages | 341 blog posts | 42 models | 10 providers | 103 tools | 12 API endpoints | 2 embeddable widgets**
+- Sitemap (709 URLs), RSS (581 items), blog files (341 posts) — all in sync
+- **New alternatives pages (Session 779)** — claude-alternatives.html, gemini-alternatives.html. Interactive calculators, FAQPage schema. gpt5-alternatives cross-linked from 75 pages (was 3).
 - **New landing page (Session 778)** — gpt5-alternatives.html — high-converting SEO page targeting "cheapest GPT-5 alternative". 5 ranked alternatives, interactive calculator, FAQPage schema.
 - **New comparison page (Session 777)** — Claude Sonnet 4.6 vs GPT-5 mini (mid-tier vs budget).
 - **compare.html indexes all 171 pages (Session 777)** — Was 170. Added 1 new comparison page.
