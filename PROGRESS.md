@@ -1,6 +1,6 @@
 # PROGRESS.md
 
-## Session 779 (Jun 20) — Alternatives Pages Cross-Link Blitz + New Pages (2 commits)
+## Session 779 (Jun 20) — Alternatives Pages Cross-Link Blitz + New Pages (3 commits)
 - **Cross-linked gpt5-alternatives.html from 75 pages (was 3):**
   - Added green-bordered card to 46 GPT-5 comparison pages with Related Comparisons section
   - Added Related Comparisons section + card to 16 GPT-5 comparison pages missing the section
@@ -8,13 +8,13 @@
 - **Created claude-alternatives.html** — 5 cheaper alternatives to Claude Opus 4.8 ($5/$25):
   - DeepSeek V4 Pro (save 97%), Gemini 3 Flash (88%), Mistral Small 4 (98%), GPT-5 (60%), Claude Sonnet 4.6 (40%)
   - Interactive savings calculator, FAQPage schema (5 questions), verified June 2026 pricing
-  - Cross-linked from 33 Claude comparison pages (Opus/Sonnet)
+  - Cross-linked from 33 Claude comparison pages + 29 Claude blog posts
 - **Created gemini-alternatives.html** — 5 cheaper alternatives to Gemini 3.5 Flash ($1.50/$9):
   - DeepSeek V4 Pro (save 90%), Gemini 3 Flash (67%), Mistral Small 4 (97%), GPT-5 (17%), Claude Sonnet 4.6 (premium)
   - Interactive savings calculator, FAQPage schema (5 questions), verified June 2026 pricing
-  - Cross-linked from 38 Gemini comparison pages
+  - Cross-linked from 38 Gemini comparison pages + 9 Gemini blog posts
 - **Added to sitemap (709 URLs), RSS (581 items), tools.html (103 tools), llms.txt**
-- **2 commits, 143 files, +1,911 lines**
+- **3 commits, 169 files, +1,987 lines**
 
 ## Session 778 (Jun 20) — GPT-5 Alternatives Landing Page (2 commits)
 - **Created gpt5-alternatives.html** — High-converting SEO landing page targeting "cheapest GPT-5 alternative":
@@ -115,27 +115,10 @@ Full APIpulse build from scratch. 652 pages, 320 posts, 42 models, 10 providers,
 ## Site Status (as of Session 779, Jun 20, 2026)
 **716 web pages | 341 blog posts | 42 models | 10 providers | 103 tools | 12 API endpoints | 2 embeddable widgets**
 - Sitemap (709 URLs), RSS (581 items), blog files (341 posts) — all in sync
-- **New alternatives pages (Session 779)** — claude-alternatives.html, gemini-alternatives.html. Interactive calculators, FAQPage schema. gpt5-alternatives cross-linked from 75 pages (was 3).
-- **New landing page (Session 778)** — gpt5-alternatives.html — high-converting SEO page targeting "cheapest GPT-5 alternative". 5 ranked alternatives, interactive calculator, FAQPage schema.
-- **New comparison page (Session 777)** — Claude Sonnet 4.6 vs GPT-5 mini (mid-tier vs budget).
-- **compare.html indexes all 171 pages (Session 777)** — Was 170. Added 1 new comparison page.
-- **Fixed 2 broken links in llms.txt (Session 777)** — DeepSeek V4 Pro vs GPT-5 and Gemini 2.5 Pro vs GPT-5 URLs corrected.
-- **pricing-hub cross-linked from 177 pages (Session 775)** — 166/167 compare pages, 15 blog posts, tools.html. Was 6 pages.
-- **llms.txt updated (Session 776)** — 3 new comparison entries added to popular comparisons.
-- **Tools count fixed (Session 774)** — tools.html now correctly says 100 tools (was 88/98 inconsistent)
-- **llms.txt created (Session 772)** — Standard file for AI crawlers. Lists all tools, pricing data, and key pages.
-- **pricing-hub.html created (Session 772)** — Comprehensive pricing comparison page with 42 models, interactive calculator, provider breakdown, FAQPage schema.
-- **generate-report cross-linked from 531 pages (Session 769)** — 340/340 blog posts (100%), 167/167 compare pages (100%), 10 provider pages, 14 tool/utility pages.
-- **Cost score CTA on ALL 340 blog posts (Session 766)** — 100% coverage.
-- **4 sample Pro reports** — GPT-5, Claude Sonnet 4.6, GPT-5 mini, Claude Opus 4.8. All cross-linked. Biggest savings: Opus 4.8 ($10,035/yr).
-- **results-cta.js on 65 calculator/tool pages (Session 751-752)** — Every calculator/tool that shows results now auto-injects a Pro CTA.
-- **Mobile exit-intent on go.html (Session 748)** — Exit popup triggers on mobile via back button + tab visibility.
-- **ALL Pro CTAs route through go.html (Session 734-741)** — Trust-building page before Stripe checkout.
-- **Live Pricing Dashboard cross-linked from 318+ pages (Session 738)**
-- **Embed widgets cross-linked from 239 pages (Session 740)**
+- **Alternatives cross-link blitz (Session 779)** — gpt5-alternatives on 75 pages (was 3), claude-alternatives on 62 pages, gemini-alternatives on 47 pages. 3 new alternatives landing pages with interactive calculators + FAQPage schema.
 - **A/B pricing test LIVE** — $19 vs $29 (50/50).
-- **Exit popup A/B test LIVE** — Loss-framed vs social-proof copy, button color test, personalized savings hints.
-- **Claude 4 SHUTDOWN COMPLETE (June 15)** — All pages past-tense, deprecation banner links to migrate.html.
+- **Exit popup A/B test LIVE** — Loss-framed vs social-proof copy.
+- **Claude 4 SHUTDOWN COMPLETE (June 15)** — All pages past-tense.
 
 ## Blocked on Human Action
 1. **Directory submissions** — DIRECTORY-SUBMISSIONS.md has 22 ready-to-submit listings. ~45 min human time.
