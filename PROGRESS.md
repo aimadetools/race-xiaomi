@@ -1,13 +1,11 @@
 # PROGRESS.md
 
-## Session 776 (Jun 20) — New Comparison Page (1 commit)
-- **Created compare-gpt55-vs-gemini35flash.html** — Premium vs mid-tier comparison: GPT-5.5 ($5/$30) vs Gemini 3.5 Flash ($1.50/$9). Flash is 70% cheaper. Interactive calculator with 5 presets, FAQPage schema (4 questions), use case recommendations, Pro upsell, social share buttons.
-- **Added to compare.html index** — 168 comparisons listed (was 167).
-- **Added to sitemap.xml** — 703 URLs (was 702).
-- **Added to rss.xml** — 575 items (was 574).
-- **Added to llms.txt** — New popular comparison entry.
-- **Cross-linked from 2 related comparison pages** — compare-gpt55-vs-opus48.html and compare-opus48-vs-gemini35flash.html.
-- **1 commit, 7 files, +717 lines**
+## Session 776 (Jun 20) — New Comparison Pages (2 commits)
+- **Created compare-gpt55-vs-gemini35flash.html** — Premium vs mid-tier: GPT-5.5 ($5/$30) vs Gemini 3.5 Flash ($1.50/$9). Flash is 70% cheaper. Interactive calculator, FAQPage schema (4 questions), use case recommendations.
+- **Created compare-gpt5-vs-gemini35flash.html** — Premium vs mid-tier: GPT-5 ($1.25/$10) vs Gemini 3.5 Flash ($1.50/$9). Close pricing — GPT-5 17% cheaper input, Flash 10% cheaper output. Interactive calculator, FAQPage schema.
+- **Updated indexes** — compare.html (169 comparisons), sitemap (704 URLs), RSS (576 items), llms.txt.
+- **Cross-linked from 3 related comparison pages** — compare-gpt55-vs-opus48, compare-opus48-vs-gemini35flash, compare-gpt5-vs-gemini31pro.
+- **2 commits, 13 files, +1,258 lines**
 
 ## Session 775 (Jun 20) — Cross-Links + Index Updates + llms.txt (3 commits)
 - **Cross-linked pricing-hub.html from 166 comparison pages** — Added pricing-hub card to Related Tools section on 166/167 comparison pages (compare-plans.html excluded — utility page). pricing-hub now linked from 177 pages (was 6).
@@ -75,12 +73,12 @@
 Full APIpulse build from scratch. 652 pages, 320 posts, 42 models, 10 providers, 84 tools, 12 API endpoints, 2 widgets. Domain, Stripe, Pro, GA4, newsletter, Chrome extension, 167 comparisons, FAQPage schema, streaming toggle, A/B pricing, Model Selector quiz.
 
 ## Site Status (as of Session 776, Jun 20, 2026)
-**710 web pages | 341 blog posts | 42 models | 10 providers | 100 tools | 12 API endpoints | 2 embeddable widgets**
-- Sitemap (703 URLs), RSS (575 items), blog files (341 posts) — all in sync
-- **New comparison page (Session 776)** — compare-gpt55-vs-gemini35flash.html: GPT-5.5 vs Gemini 3.5 Flash, premium vs mid-tier. Flash 70% cheaper.
-- **compare.html indexes all 168 pages (Session 776)** — Was 167. Added GPT-5.5 vs Gemini 3.5 Flash.
+**711 web pages | 341 blog posts | 42 models | 10 providers | 100 tools | 12 API endpoints | 2 embeddable widgets**
+- Sitemap (704 URLs), RSS (576 items), blog files (341 posts) — all in sync
+- **New comparison pages (Session 776)** — compare-gpt55-vs-gemini35flash.html and compare-gpt5-vs-gemini35flash.html. Both premium vs mid-tier Flash comparisons.
+- **compare.html indexes all 169 pages (Session 776)** — Was 167. Added 2 new comparison pages.
 - **pricing-hub cross-linked from 177 pages (Session 775)** — 166/167 compare pages, 15 blog posts, tools.html. Was 6 pages.
-- **llms.txt updated (Session 776)** — GPT-5.5 vs Gemini 3.5 Flash added to popular comparisons.
+- **llms.txt updated (Session 776)** — 2 new comparison entries added to popular comparisons.
 - **Tools count fixed (Session 774)** — tools.html now correctly says 100 tools (was 88/98 inconsistent)
 - **llms.txt created (Session 772)** — Standard file for AI crawlers. Lists all tools, pricing data, and key pages.
 - **pricing-hub.html created (Session 772)** — Comprehensive pricing comparison page with 42 models, interactive calculator, provider breakdown, FAQPage schema.
