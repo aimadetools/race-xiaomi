@@ -1,0 +1,853 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI API Cost Score — Rate Your Setup in 30 Seconds | APIpulse</title>
+    <meta name="description" content="Get your AI API Cost Score (A-F) in 30 seconds. See how optimized your LLM spending is and get personalized recommendations to cut costs by 40%+. Free tool.">
+    <meta name="keywords" content="AI API cost score, API cost optimization, LLM cost calculator, AI spending audit, API budget score">
+    <link rel="canonical" href="https://getapipulse.com/api-cost-score.html">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="styles.css">
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0CEP7S9Y3J"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-0CEP7S9Y3J');
+    </script>
+    <script src="analytics.js" defer></script>
+    <script src="shared.js" defer></script>
+    <!-- Open Graph -->
+    <meta property="og:title" content="AI API Cost Score — Rate Your Setup in 30 Seconds">
+    <meta property="og:description" content="Get your AI API Cost Score (A-F). See how optimized your LLM spending is and get personalized recommendations.">
+    <meta property="og:url" content="https://getapipulse.com/api-cost-score.html">
+    <meta property="og:type" content="website">
+    <!-- Article Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "AI API Cost Score Calculator",
+      "description": "Free tool to rate your AI API cost efficiency (A-F score) with personalized optimization recommendations.",
+      "url": "https://getapipulse.com/api-cost-score.html",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Web",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+    }
+    </script>
+    <style>
+        .score-page { max-width: 800px; margin: 0 auto; padding: 100px 24px 80px; }
+
+        /* Hero */
+        .score-hero { text-align: center; margin-bottom: 40px; }
+        .score-hero h1 { font-size: clamp(28px, 4vw, 42px); font-weight: 900; margin-bottom: 12px; }
+        .score-hero h1 .highlight { color: var(--accent); }
+        .score-hero p { font-size: 17px; color: var(--text-secondary); max-width: 520px; margin: 0 auto; }
+        .score-hero .time-badge {
+            display: inline-flex; align-items: center; gap: 6px;
+            background: rgba(34,197,94,0.1); color: var(--green);
+            font-size: 13px; font-weight: 600; padding: 6px 14px;
+            border-radius: 20px; margin-top: 12px;
+        }
+
+        /* Quiz Form */
+        .quiz-card {
+            background: var(--bg-secondary); border: 1px solid var(--border);
+            border-radius: 16px; padding: 32px; margin-bottom: 32px;
+        }
+        .quiz-step { margin-bottom: 24px; }
+        .quiz-step:last-child { margin-bottom: 0; }
+        .quiz-step label {
+            display: block; font-size: 15px; font-weight: 700;
+            margin-bottom: 8px; color: var(--text-primary);
+        }
+        .quiz-step .hint {
+            font-size: 13px; color: var(--text-muted); font-weight: 400;
+            margin-left: 4px;
+        }
+        .quiz-step select,
+        .quiz-step input[type="number"] {
+            width: 100%; padding: 12px 16px; background: var(--bg-card);
+            border: 1px solid var(--border); border-radius: 10px;
+            color: var(--text-primary); font-size: 15px; cursor: pointer;
+        }
+        .quiz-step select:focus,
+        .quiz-step input[type="number"]:focus {
+            outline: none; border-color: var(--accent);
+            box-shadow: 0 0 0 3px var(--accent-glow);
+        }
+        .quiz-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+        @media (max-width: 600px) { .quiz-grid { grid-template-columns: 1fr; } }
+
+        .quiz-btn {
+            display: block; width: 100%; padding: 16px 32px;
+            background: linear-gradient(135deg, var(--accent), #8b5cf6);
+            color: white; border: none; border-radius: 12px;
+            font-size: 18px; font-weight: 800; cursor: pointer;
+            transition: all 0.2s; box-shadow: 0 4px 20px rgba(99,102,241,0.4);
+        }
+        .quiz-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(99,102,241,0.5); }
+        .quiz-btn:disabled { opacity: 0.5; cursor: not-allowed; transform: none; }
+
+        /* Results */
+        .results-section { display: none; animation: fadeIn 0.5s ease; }
+        .results-section.visible { display: block; }
+
+        /* Score Card */
+        .score-card {
+            background: var(--bg-secondary); border: 2px solid var(--border);
+            border-radius: 20px; padding: 40px; text-align: center;
+            margin-bottom: 24px; position: relative; overflow: hidden;
+        }
+        .score-card::before {
+            content: ''; position: absolute; top: -50%; left: -50%;
+            width: 200%; height: 200%;
+            background: radial-gradient(circle, var(--accent-glow) 0%, transparent 60%);
+            opacity: 0.3; pointer-events: none;
+        }
+        .score-grade {
+            font-size: clamp(72px, 12vw, 120px); font-weight: 900;
+            line-height: 1; margin-bottom: 8px; position: relative;
+            background: linear-gradient(135deg, var(--accent), #8b5cf6);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .score-grade.grade-a { background: linear-gradient(135deg, #22c55e, #16a34a); -webkit-background-clip: text; background-clip: text; }
+        .score-grade.grade-b { background: linear-gradient(135deg, #84cc16, #65a30d); -webkit-background-clip: text; background-clip: text; }
+        .score-grade.grade-c { background: linear-gradient(135deg, #f59e0b, #d97706); -webkit-background-clip: text; background-clip: text; }
+        .score-grade.grade-d { background: linear-gradient(135deg, #f97316, #ea580c); -webkit-background-clip: text; background-clip: text; }
+        .score-grade.grade-f { background: linear-gradient(135deg, #ef4444, #dc2626); -webkit-background-clip: text; background-clip: text; }
+        .score-label {
+            font-size: 20px; font-weight: 700; color: var(--text-primary);
+            margin-bottom: 4px; position: relative;
+        }
+        .score-sublabel {
+            font-size: 15px; color: var(--text-secondary); position: relative;
+        }
+
+        /* Stats Row */
+        .stats-row {
+            display: grid; grid-template-columns: repeat(3, 1fr);
+            gap: 16px; margin-bottom: 24px;
+        }
+        @media (max-width: 600px) { .stats-row { grid-template-columns: 1fr; } }
+        .stat-card {
+            background: var(--bg-secondary); border: 1px solid var(--border);
+            border-radius: 14px; padding: 20px; text-align: center;
+        }
+        .stat-value {
+            font-size: 28px; font-weight: 900; font-family: monospace;
+            margin-bottom: 4px;
+        }
+        .stat-value.savings { color: var(--green); }
+        .stat-value.cost { color: var(--red); }
+        .stat-value.potential { color: var(--accent); }
+        .stat-label { font-size: 13px; color: var(--text-muted); }
+
+        /* Breakdown */
+        .breakdown-card {
+            background: var(--bg-secondary); border: 1px solid var(--border);
+            border-radius: 16px; padding: 24px; margin-bottom: 24px;
+        }
+        .breakdown-card h3 {
+            font-size: 17px; font-weight: 700; margin-bottom: 16px;
+        }
+        .breakdown-item {
+            display: flex; align-items: center; gap: 12px;
+            padding: 12px 0; border-bottom: 1px solid var(--border);
+        }
+        .breakdown-item:last-child { border-bottom: none; }
+        .breakdown-icon {
+            width: 36px; height: 36px; border-radius: 10px;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 18px; flex-shrink: 0;
+        }
+        .breakdown-icon.good { background: rgba(34,197,94,0.1); }
+        .breakdown-icon.warn { background: rgba(245,158,11,0.1); }
+        .breakdown-icon.bad { background: rgba(239,68,68,0.1); }
+        .breakdown-text { flex: 1; }
+        .breakdown-text .title { font-size: 14px; font-weight: 600; }
+        .breakdown-text .desc { font-size: 13px; color: var(--text-secondary); }
+        .breakdown-score {
+            font-size: 14px; font-weight: 700; white-space: nowrap;
+        }
+        .breakdown-score.good { color: var(--green); }
+        .breakdown-score.warn { color: var(--orange); }
+        .breakdown-score.bad { color: var(--red); }
+
+        /* Recommendations */
+        .recs-card {
+            background: var(--bg-secondary); border: 1px solid var(--border);
+            border-radius: 16px; padding: 24px; margin-bottom: 24px;
+        }
+        .recs-card h3 { font-size: 17px; font-weight: 700; margin-bottom: 16px; }
+        .rec-item {
+            display: flex; gap: 16px; padding: 16px;
+            background: var(--bg-card); border-radius: 12px;
+            margin-bottom: 12px; border: 1px solid var(--border);
+        }
+        .rec-item:last-child { margin-bottom: 0; }
+        .rec-rank {
+            width: 32px; height: 32px; border-radius: 50%;
+            background: var(--accent); color: white;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 14px; font-weight: 800; flex-shrink: 0;
+        }
+        .rec-content { flex: 1; }
+        .rec-content .rec-title { font-size: 14px; font-weight: 700; margin-bottom: 2px; }
+        .rec-content .rec-desc { font-size: 13px; color: var(--text-secondary); }
+        .rec-savings {
+            font-size: 16px; font-weight: 800; color: var(--green);
+            white-space: nowrap; font-family: monospace;
+        }
+
+        /* Locked Recs */
+        .rec-locked {
+            position: relative; overflow: hidden;
+            border: 1px dashed var(--border) !important;
+            background: var(--bg-secondary) !important;
+        }
+        .rec-locked::after {
+            content: ''; position: absolute; inset: 0;
+            background: linear-gradient(to bottom, transparent 50%, var(--bg-secondary) 100%);
+            pointer-events: none;
+        }
+        .rec-locked .rec-content .rec-title,
+        .rec-locked .rec-content .rec-desc { filter: blur(3px); }
+        .rec-locked .rec-savings { filter: blur(3px); }
+        .rec-lock-badge {
+            position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+            z-index: 2; background: var(--accent); color: white;
+            padding: 8px 20px; border-radius: 8px; font-size: 13px;
+            font-weight: 700; white-space: nowrap;
+        }
+
+        /* Share Section */
+        .share-card {
+            background: var(--bg-secondary); border: 1px solid var(--border);
+            border-radius: 16px; padding: 24px; margin-bottom: 24px; text-align: center;
+        }
+        .share-card h3 { font-size: 17px; font-weight: 700; margin-bottom: 12px; }
+        .share-card p { font-size: 14px; color: var(--text-secondary); margin-bottom: 16px; }
+        .share-buttons { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+        .share-btn {
+            display: inline-flex; align-items: center; gap: 8px;
+            padding: 10px 20px; border-radius: 10px; font-size: 14px;
+            font-weight: 600; border: 1px solid var(--border);
+            background: var(--bg-card); color: var(--text-primary);
+            cursor: pointer; transition: all 0.2s; text-decoration: none;
+        }
+        .share-btn:hover { background: var(--bg-card-hover); transform: translateY(-1px); }
+        .share-btn.twitter { background: #1da1f2; color: white; border-color: #1da1f2; }
+        .share-btn.twitter:hover { background: #0d95e8; }
+        .share-btn.linkedin { background: #0077b5; color: white; border-color: #0077b5; }
+        .share-btn.linkedin:hover { background: #006097; }
+
+        /* Pro CTA */
+        .pro-cta {
+            background: linear-gradient(135deg, var(--bg-secondary), var(--bg-card));
+            border: 2px solid var(--accent); border-radius: 16px;
+            padding: 32px; text-align: center; margin-bottom: 24px;
+        }
+        .pro-cta h3 { font-size: 20px; font-weight: 800; margin-bottom: 8px; }
+        .pro-cta p { font-size: 14px; color: var(--text-secondary); margin-bottom: 20px; max-width: 480px; margin-left: auto; margin-right: auto; }
+        .pro-features { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin-bottom: 20px; }
+        .pro-features span {
+            background: rgba(99,102,241,0.1); color: var(--accent);
+            padding: 6px 14px; border-radius: 8px; font-size: 13px; font-weight: 600;
+        }
+        .pro-cta .cta-btn {
+            display: inline-block; padding: 16px 40px;
+            background: linear-gradient(135deg, var(--accent), #8b5cf6);
+            color: white; border: none; border-radius: 12px;
+            font-size: 18px; font-weight: 800; cursor: pointer;
+            text-decoration: none; transition: all 0.2s;
+            box-shadow: 0 4px 20px rgba(99,102,241,0.4);
+        }
+        .pro-cta .cta-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(99,102,241,0.5); }
+        .pro-cta .cta-sub {
+            font-size: 13px; color: var(--text-muted); margin-top: 12px;
+        }
+
+        /* Retake Button */
+        .retake-btn {
+            display: inline-flex; align-items: center; gap: 6px;
+            background: none; border: 1px solid var(--border);
+            color: var(--text-secondary); padding: 10px 20px;
+            border-radius: 8px; font-size: 14px; cursor: pointer;
+            transition: all 0.2s; margin-top: 16px;
+        }
+        .retake-btn:hover { background: var(--bg-card); color: var(--text-primary); }
+
+        /* Related Tools */
+        .related-tools {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 16px; margin-top: 32px;
+        }
+        .related-card {
+            background: var(--bg-secondary); border: 1px solid var(--border);
+            border-radius: 12px; padding: 16px; text-decoration: none;
+            transition: all 0.2s;
+        }
+        .related-card:hover { border-color: var(--accent); transform: translateY(-2px); }
+        .related-card .icon { font-size: 24px; margin-bottom: 8px; }
+        .related-card .title { font-size: 14px; font-weight: 700; color: var(--text-primary); }
+        .related-card .desc { font-size: 12px; color: var(--text-muted); margin-top: 4px; }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+    <a href="#main" class="skip-link">Skip to content</a>
+    <nav>
+        <div class="nav-inner">
+            <a href="index.html" class="logo">API<span>pulse</span></a>
+            <div class="nav-links">
+                <a href="tools.html">Tools</a>
+                <a href="api-cost-audit.html">Cost Audit</a>
+                <a href="index.html" class="nav-cta">Get Pro</a>
+                <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
+            </div>
+        </div>
+    </nav>
+
+    <main id="main" class="score-page">
+        <!-- Hero -->
+        <div class="score-hero">
+            <h1>What's Your <span class="highlight">API Cost Score?</span></h1>
+            <p>Rate your AI API setup in 30 seconds. Get a letter grade (A-F) and personalized tips to cut your costs.</p>
+            <div class="time-badge">⏱️ Takes 30 seconds · No signup required</div>
+        </div>
+
+        <!-- Quiz Form -->
+        <div class="quiz-card" id="quiz-card">
+            <div class="quiz-step">
+                <label>🤖 Your primary AI model <span class="hint">(the one you use most)</span></label>
+                <select id="q-model">
+                    <optgroup label="OpenAI">
+                        <option value="openai-gpt55">GPT-5.5 — $5.00 / $30.00 per 1M tokens</option>
+                        <option value="openai-gpt5">GPT-5 — $1.25 / $10.00</option>
+                        <option value="openai-gpt4o">GPT-4o — $2.50 / $10.00</option>
+                        <option value="openai-gpt5-mini">GPT-5 mini — $0.25 / $2.00</option>
+                        <option value="openai-gpt4o-mini">GPT-4o mini — $0.15 / $0.60</option>
+                    </optgroup>
+                    <optgroup label="Anthropic">
+                        <option value="anthropic-opus48">Claude Opus 4.8 — $5.00 / $25.00</option>
+                        <option value="anthropic-sonnet46">Claude Sonnet 4.6 — $3.00 / $15.00</option>
+                        <option value="anthropic-haiku">Claude Haiku 4.5 — $1.00 / $5.00</option>
+                    </optgroup>
+                    <optgroup label="Google">
+                        <option value="google-pro">Gemini 2.5 Pro — $1.25 / $10.00</option>
+                        <option value="google-flash">Gemini 2.5 Flash — $0.10 / $0.40</option>
+                    </optgroup>
+                    <optgroup label="DeepSeek">
+                        <option value="deepseek-v4-pro">DeepSeek V4 Pro — $0.44 / $0.87</option>
+                        <option value="deepseek-v4-flash">DeepSeek V4 Flash — $0.14 / $0.28</option>
+                    </optgroup>
+                    <optgroup label="Meta (via providers)">
+                        <option value="llama-4-scout">Llama 4 Scout — $0.18 / $0.59</option>
+                        <option value="llama-4-maverick">Llama 4 Maverick — $0.27 / $0.85</option>
+                    </optgroup>
+                    <optgroup label="Mistral">
+                        <option value="mistral-large">Mistral Large — $0.50 / $1.50</option>
+                        <option value="mistral-small">Mistral Small — $0.15 / $0.60</option>
+                    </optgroup>
+                    <optgroup label="xAI">
+                        <option value="xai-grok3">Grok 3 — $1.25 / $2.50</option>
+                    </optgroup>
+                </select>
+            </div>
+
+            <div class="quiz-grid">
+                <div class="quiz-step">
+                    <label>💰 Monthly API spend <span class="hint">(approximate)</span></label>
+                    <div style="display:flex;align-items:center;gap:8px;">
+                        <span style="font-size:18px;font-weight:700;color:var(--text-muted);">$</span>
+                        <input type="number" id="q-spend" min="1" max="100000" value="100" style="flex:1;">
+                    </div>
+                </div>
+                <div class="quiz-step">
+                    <label>📊 Monthly API requests <span class="hint">(approximate)</span></label>
+                    <select id="q-requests">
+                        <option value="1000">Under 1,000</option>
+                        <option value="10000" selected>1,000 — 10,000</option>
+                        <option value="50000">10,000 — 50,000</option>
+                        <option value="200000">50,000 — 200,000</option>
+                        <option value="1000000">200,000+</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="quiz-step">
+                <label>🎯 Primary use case</label>
+                <select id="q-usecase">
+                    <option value="chatbot">Chatbot / Conversational AI</option>
+                    <option value="content">Content Generation / Writing</option>
+                    <option value="code">Code Generation / Review</option>
+                    <option value="data">Data Processing / Analysis</option>
+                    <option value="rag">RAG / Knowledge Base</option>
+                    <option value="agent">AI Agents / Automation</option>
+                    <option value="translation">Translation</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+
+            <button class="quiz-btn" id="score-btn" onclick="calculateScore()">
+                Calculate My Score →
+            </button>
+        </div>
+
+        <!-- Results Section -->
+        <div class="results-section" id="results">
+            <!-- Score Card -->
+            <div class="score-card" id="score-card">
+                <div class="score-grade" id="score-grade">A</div>
+                <div class="score-label" id="score-label">Excellent</div>
+                <div class="score-sublabel" id="score-sublabel">Your API costs are well optimized</div>
+            </div>
+
+            <!-- Stats Row -->
+            <div class="stats-row">
+                <div class="stat-card">
+                    <div class="stat-value cost" id="stat-spend">$100/mo</div>
+                    <div class="stat-label">Your current spend</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value savings" id="stat-cheapest">$45/mo</div>
+                    <div class="stat-label">Cheapest alternative</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value potential" id="stat-savings">$660/yr</div>
+                    <div class="stat-label">Potential savings</div>
+                </div>
+            </div>
+
+            <!-- Breakdown -->
+            <div class="breakdown-card">
+                <h3>📊 Score Breakdown</h3>
+                <div id="breakdown-items"></div>
+            </div>
+
+            <!-- Recommendations -->
+            <div class="recs-card">
+                <h3>💡 Personalized Recommendations</h3>
+                <div id="recs-items"></div>
+            </div>
+
+            <!-- Share -->
+            <div class="share-card">
+                <h3>📢 Share Your Score</h3>
+                <p>Challenge your developer friends to beat your API cost efficiency.</p>
+                <div class="share-buttons">
+                    <button class="share-btn" onclick="copyScore()">📋 Copy Results</button>
+                    <a id="tweet-btn" class="share-btn twitter" href="#" target="_blank" rel="noopener">🐦 Tweet</a>
+                    <a id="linkedin-btn" class="share-btn linkedin" href="#" target="_blank" rel="noopener">💼 LinkedIn</a>
+                </div>
+            </div>
+
+            <!-- Pro CTA -->
+            <div class="pro-cta">
+                <h3>🔓 Unlock Your Full Optimization Report</h3>
+                <p>See ALL cheaper alternatives ranked by cost, get migration code snippets, and save your report for your team.</p>
+                <div class="pro-features">
+                    <span>All alternatives ranked</span>
+                    <span>Migration code</span>
+                    <span>PDF export</span>
+                    <span>10 saved scenarios</span>
+                    <span>Price alerts</span>
+                </div>
+                <a id="pro-cta-btn" href="go.html?from=cost-score" class="cta-btn" target="_blank" rel="noopener">
+                    Get APIpulse Pro — <span id="pro-price">$29</span>
+                </a>
+                <p class="cta-sub">✅ One-time payment · ✅ Lifetime access · ✅ 14-day money-back guarantee</p>
+            </div>
+
+            <!-- Retake -->
+            <div style="text-align:center;">
+                <button class="retake-btn" onclick="retakeQuiz()">
+                    🔄 Retake the quiz with different values
+                </button>
+            </div>
+
+            <!-- Related Tools -->
+            <div style="margin-top:40px;">
+                <h3 style="font-size:17px;font-weight:700;margin-bottom:16px;">🔧 More Free Tools</h3>
+                <div class="related-tools">
+                    <a href="savings-calculator.html" class="related-card">
+                        <div class="icon">💰</div>
+                        <div class="title">Savings Calculator</div>
+                        <div class="desc">Find your cheapest model alternative</div>
+                    </a>
+                    <a href="api-cost-audit.html" class="related-card">
+                        <div class="icon">🔍</div>
+                        <div class="title">Free Cost Audit</div>
+                        <div class="desc">Audit your current API spending</div>
+                    </a>
+                    <a href="model-recommendation.html" class="related-card">
+                        <div class="icon">🎯</div>
+                        <div class="title">Model Advisor</div>
+                        <div class="desc">Get the best model for your use case</div>
+                    </a>
+                    <a href="live-pricing.html" class="related-card">
+                        <div class="icon">📊</div>
+                        <div class="title">Live Pricing</div>
+                        <div class="desc">Compare 42 models in real-time</div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>© 2026 APIpulse. <a href="index.html">Home</a> · <a href="tools.html">Tools</a> · <a href="blog.html">Blog</a> · <a href="api-cost-audit.html">🔍 Cost Audit</a> · <a href="pricing.html">Pricing</a></p>
+    </footer>
+
+    <script>
+    // Price data per 1M tokens
+    var PRICES = {
+        'openai-gpt55':       { input: 5.00, output: 30.00, quality: 98, name: 'GPT-5.5', provider: 'OpenAI' },
+        'openai-gpt5':        { input: 1.25, output: 10.00, quality: 95, name: 'GPT-5', provider: 'OpenAI' },
+        'openai-gpt4o':       { input: 2.50, output: 10.00, quality: 90, name: 'GPT-4o', provider: 'OpenAI' },
+        'openai-gpt5-mini':   { input: 0.25, output: 2.00, quality: 82, name: 'GPT-5 mini', provider: 'OpenAI' },
+        'openai-gpt4o-mini':  { input: 0.15, output: 0.60, quality: 75, name: 'GPT-4o mini', provider: 'OpenAI' },
+        'anthropic-opus48':   { input: 5.00, output: 25.00, quality: 97, name: 'Claude Opus 4.8', provider: 'Anthropic' },
+        'anthropic-sonnet46': { input: 3.00, output: 15.00, quality: 93, name: 'Claude Sonnet 4.6', provider: 'Anthropic' },
+        'anthropic-haiku':    { input: 1.00, output: 5.00, quality: 80, name: 'Claude Haiku 4.5', provider: 'Anthropic' },
+        'google-pro':         { input: 1.25, output: 10.00, quality: 92, name: 'Gemini 2.5 Pro', provider: 'Google' },
+        'google-flash':       { input: 0.10, output: 0.40, quality: 78, name: 'Gemini 2.5 Flash', provider: 'Google' },
+        'deepseek-v4-pro':    { input: 0.435, output: 0.87, quality: 88, name: 'DeepSeek V4 Pro', provider: 'DeepSeek' },
+        'deepseek-v4-flash':  { input: 0.14, output: 0.28, quality: 76, name: 'DeepSeek V4 Flash', provider: 'DeepSeek' },
+        'llama-4-scout':      { input: 0.18, output: 0.59, quality: 77, name: 'Llama 4 Scout', provider: 'Meta' },
+        'llama-4-maverick':   { input: 0.27, output: 0.85, quality: 82, name: 'Llama 4 Maverick', provider: 'Meta' },
+        'mistral-large':      { input: 0.50, output: 1.50, quality: 85, name: 'Mistral Large', provider: 'Mistral' },
+        'mistral-small':      { input: 0.15, output: 0.60, quality: 72, name: 'Mistral Small', provider: 'Mistral' },
+        'xai-grok3':          { input: 1.25, output: 2.50, quality: 88, name: 'Grok 3', provider: 'xAI' }
+    };
+
+    // Use case token estimates: [avgInputTokens, avgOutputTokens] per request
+    var USECASE_TOKENS = {
+        'chatbot':    [800, 400],
+        'content':    [600, 1200],
+        'code':       [1500, 800],
+        'data':       [2000, 1000],
+        'rag':        [3000, 600],
+        'agent':      [4000, 1500],
+        'translation': [500, 500],
+        'other':      [1000, 500]
+    };
+
+    function calculateScore() {
+        var model = document.getElementById('q-model').value;
+        var spend = parseFloat(document.getElementById('q-spend').value) || 100;
+        var requests = parseInt(document.getElementById('q-requests').value) || 10000;
+        var usecase = document.getElementById('q-usecase').value;
+
+        var current = PRICES[model];
+        if (!current) return;
+
+        // Calculate current cost based on usage
+        var tokens = USECASE_TOKENS[usecase];
+        var inputTokensPerMonth = tokens[0] * requests;
+        var outputTokensPerMonth = tokens[1] * requests;
+        var calculatedCost = (inputTokensPerMonth / 1000000 * current.input) + (outputTokensPerMonth / 1000000 * current.output);
+
+        // Use the higher of stated spend or calculated cost
+        var effectiveCost = Math.max(spend, calculatedCost);
+
+        // Find cheapest alternative that maintains reasonable quality
+        var alternatives = [];
+        Object.keys(PRICES).forEach(function(key) {
+            if (key === model) return;
+            var p = PRICES[key];
+            var altCost = (inputTokensPerMonth / 1000000 * p.input) + (outputTokensPerMonth / 1000000 * p.output);
+            alternatives.push({
+                id: key,
+                name: p.name,
+                provider: p.provider,
+                quality: p.quality,
+                cost: altCost,
+                savings: effectiveCost - altCost,
+                qualityDiff: p.quality - current.quality
+            });
+        });
+
+        // Sort by cost (cheapest first)
+        alternatives.sort(function(a, b) { return a.cost - b.cost; });
+
+        // Find cheapest with quality within 10 points
+        var qualityThreshold = current.quality - 10;
+        var bestValue = null;
+        for (var i = 0; i < alternatives.length; i++) {
+            if (alternatives[i].quality >= qualityThreshold && alternatives[i].savings > 0) {
+                bestValue = alternatives[i];
+                break;
+            }
+        }
+
+        var cheapest = alternatives[0];
+        var annualSavings = Math.round((effectiveCost - cheapest.cost) * 12);
+
+        // === SCORING ===
+        var score = 100;
+        var breakdown = [];
+
+        // Factor 1: Price efficiency (0-30 points)
+        // How cheap is your model compared to the cheapest available?
+        var priceRatio = cheapest.cost / effectiveCost;
+        var pricePoints = Math.round(priceRatio * 30);
+        var priceDeduction = 30 - pricePoints;
+        score -= priceDeduction;
+        var priceStatus = priceDeduction <= 5 ? 'good' : priceDeduction <= 15 ? 'warn' : 'bad';
+        breakdown.push({
+            icon: priceDeduction <= 5 ? '✅' : priceDeduction <= 15 ? '⚠️' : '🔴',
+            title: 'Price Efficiency',
+            desc: priceDeduction <= 5
+                ? 'Your model is competitively priced'
+                : 'You could save ' + Math.round((1 - priceRatio) * 100) + '% by switching to ' + cheapest.name,
+            score: '+' + pricePoints + '/30',
+            status: priceStatus
+        });
+
+        // Factor 2: Quality match (0-25 points)
+        // Is your model appropriately powerful for your use case?
+        var qualityNeeded = {
+            'chatbot': 75, 'content': 78, 'code': 85, 'data': 80,
+            'rag': 78, 'agent': 88, 'translation': 75, 'other': 75
+        };
+        var needed = qualityNeeded[usecase] || 75;
+        var qualityOverkill = current.quality - needed;
+        var qualPoints, qualDeduction, qualStatus;
+        if (qualityOverkill <= 5) {
+            qualPoints = 25; qualDeduction = 0; qualStatus = 'good';
+        } else if (qualityOverkill <= 15) {
+            qualPoints = 18; qualDeduction = 7; qualStatus = 'warn';
+        } else {
+            qualPoints = 10; qualDeduction = 15; qualStatus = 'bad';
+        }
+        score -= qualDeduction;
+        breakdown.push({
+            icon: qualStatus === 'good' ? '✅' : qualStatus === 'warn' ? '⚠️' : '🔴',
+            title: 'Quality Match',
+            desc: qualStatus === 'good'
+                ? 'Model quality matches your use case needs'
+                : 'Overkill: You\'re paying for ' + qualityOverkill + ' quality points you don\'t need for ' + usecase,
+            score: '+' + qualPoints + '/25',
+            status: qualStatus
+        });
+
+        // Factor 3: Cost level (0-25 points)
+        // Absolute spend level — higher spend = more room to optimize
+        var costPoints, costDeduction, costStatus;
+        if (effectiveCost <= 20) {
+            costPoints = 25; costDeduction = 0; costStatus = 'good';
+        } else if (effectiveCost <= 50) {
+            costPoints = 22; costDeduction = 3; costStatus = 'good';
+        } else if (effectiveCost <= 100) {
+            costPoints = 18; costDeduction = 7; costStatus = 'warn';
+        } else if (effectiveCost <= 500) {
+            costPoints = 12; costDeduction = 13; costStatus = 'warn';
+        } else {
+            costPoints = 5; costDeduction = 20; costStatus = 'bad';
+        }
+        score -= costDeduction;
+        breakdown.push({
+            icon: costStatus === 'good' ? '✅' : costStatus === 'warn' ? '⚠️' : '🔴',
+            title: 'Spend Level',
+            desc: costStatus === 'good'
+                ? 'Your monthly spend is well controlled'
+                : 'At $' + Math.round(effectiveCost) + '/mo, you have significant savings potential',
+            score: '+' + costPoints + '/25',
+            status: costStatus
+        });
+
+        // Factor 4: Request volume efficiency (0-20 points)
+        // Cost per request
+        var costPerRequest = effectiveCost / requests * 100; // cents
+        var volPoints, volDeduction, volStatus;
+        if (costPerRequest <= 0.1) {
+            volPoints = 20; volDeduction = 0; volStatus = 'good';
+        } else if (costPerRequest <= 0.5) {
+            volPoints = 16; volDeduction = 4; volStatus = 'good';
+        } else if (costPerRequest <= 2) {
+            volPoints = 10; volDeduction = 10; volStatus = 'warn';
+        } else {
+            volPoints = 5; volDeduction = 15; volStatus = 'bad';
+        }
+        score -= volDeduction;
+        breakdown.push({
+            icon: volStatus === 'good' ? '✅' : volStatus === 'warn' ? '⚠️' : '🔴',
+            title: 'Cost Per Request',
+            desc: volStatus === 'good'
+                ? '$' + costPerRequest.toFixed(3) + '/request — efficient'
+                : '$' + costPerRequest.toFixed(2) + '/request — consider batching or caching',
+            score: '+' + volPoints + '/20',
+            status: volStatus
+        });
+
+        // Clamp score
+        score = Math.max(0, Math.min(100, score));
+
+        // Grade
+        var grade, gradeLabel, gradeDesc;
+        if (score >= 90) { grade = 'A+'; gradeLabel = 'Outstanding'; gradeDesc = 'Your API costs are extremely well optimized'; }
+        else if (score >= 80) { grade = 'A'; gradeLabel = 'Excellent'; gradeDesc = 'Your API costs are well optimized'; }
+        else if (score >= 70) { grade = 'B'; gradeLabel = 'Good'; gradeDesc = 'Room for some improvement'; }
+        else if (score >= 60) { grade = 'C'; gradeLabel = 'Average'; gradeDesc = 'You\'re overpaying — significant savings available'; }
+        else if (score >= 40) { grade = 'D'; gradeLabel = 'Below Average'; gradeDesc = 'You\'re leaving serious money on the table'; }
+        else { grade = 'F'; gradeLabel = 'Poor'; gradeDesc = 'Urgent: you\'re dramatically overpaying for AI APIs'; }
+
+        // Build recommendations
+        var recs = [];
+        // Always show top 3 cheaper alternatives (free)
+        var freeAlts = alternatives.slice(0, 3);
+        freeAlts.forEach(function(alt, i) {
+            var qualityNote = alt.qualityDiff <= -10 ? ' (lower quality)' : alt.qualityDiff >= -5 ? ' (similar quality)' : '';
+            recs.push({
+                rank: i + 1,
+                title: 'Switch to ' + alt.name + ' (' + alt.provider + ')',
+                desc: 'Quality: ' + alt.quality + '/100' + qualityNote + ' · Save $' + Math.round(alt.savings * 12) + '/yr',
+                savings: '-$' + Math.round(alt.cost) + '/mo',
+                locked: false
+            });
+        });
+        // Show 2 more locked
+        if (alternatives.length > 3) {
+            recs.push({
+                rank: 4,
+                title: 'See all ' + alternatives.length + ' cheaper alternatives',
+                desc: 'Including migration code for each option',
+                savings: '',
+                locked: true
+            });
+            recs.push({
+                rank: 5,
+                title: 'Get personalized optimization tips',
+                desc: 'Batch processing, caching, prompt compression strategies',
+                savings: '',
+                locked: true
+            });
+        }
+
+        // === RENDER RESULTS ===
+        // Score
+        var gradeEl = document.getElementById('score-grade');
+        gradeEl.textContent = grade;
+        gradeEl.className = 'score-grade grade-' + grade.charAt(0).toLowerCase();
+        document.getElementById('score-label').textContent = gradeLabel;
+        document.getElementById('score-sublabel').textContent = gradeDesc;
+
+        // Stats
+        document.getElementById('stat-spend').textContent = '$' + Math.round(effectiveCost) + '/mo';
+        document.getElementById('stat-cheapest').textContent = '$' + Math.round(cheapest.cost) + '/mo';
+        document.getElementById('stat-savings').textContent = '$' + annualSavings.toLocaleString() + '/yr';
+
+        // Breakdown
+        var breakdownHtml = '';
+        breakdown.forEach(function(item) {
+            breakdownHtml += '<div class="breakdown-item">' +
+                '<div class="breakdown-icon ' + item.status + '">' + item.icon + '</div>' +
+                '<div class="breakdown-text"><div class="title">' + item.title + '</div>' +
+                '<div class="desc">' + item.desc + '</div></div>' +
+                '<div class="breakdown-score ' + item.status + '">' + item.score + '</div>' +
+                '</div>';
+        });
+        document.getElementById('breakdown-items').innerHTML = breakdownHtml;
+
+        // Recommendations
+        var recsHtml = '';
+        recs.forEach(function(rec) {
+            if (rec.locked) {
+                recsHtml += '<div class="rec-item rec-locked">' +
+                    '<div class="rec-rank" style="background:var(--text-muted);">' + rec.rank + '</div>' +
+                    '<div class="rec-content"><div class="rec-title">' + rec.title + '</div>' +
+                    '<div class="rec-desc">' + rec.desc + '</div></div>' +
+                    '<div class="rec-savings">—</div>' +
+                    '<div class="rec-lock-badge">🔒 Pro</div></div>';
+            } else {
+                recsHtml += '<div class="rec-item">' +
+                    '<div class="rec-rank">' + rec.rank + '</div>' +
+                    '<div class="rec-content"><div class="rec-title">' + rec.title + '</div>' +
+                    '<div class="rec-desc">' + rec.desc + '</div></div>' +
+                    '<div class="rec-savings">' + rec.savings + '</div></div>';
+            }
+        });
+        document.getElementById('recs-items').innerHTML = recsHtml;
+
+        // Share
+        var shareText = '🎯 My AI API Cost Score: ' + grade + ' (' + gradeLabel + ')\n\n' +
+            'Current spend: $' + Math.round(effectiveCost) + '/mo\n' +
+            'Cheapest alternative: $' + Math.round(cheapest.cost) + '/mo\n' +
+            'Potential savings: $' + annualSavings.toLocaleString() + '/yr\n\n' +
+            'Get your score → https://getapipulse.com/api-cost-score.html';
+        var tweetText = encodeURIComponent('🎯 My AI API Cost Score: ' + grade + ' — I could save $' + annualSavings.toLocaleString() + '/yr on AI APIs. Get your score:');
+        var tweetUrl = 'https://twitter.com/intent/tweet?text=' + tweetText + '&url=' + encodeURIComponent('https://getapipulse.com/api-cost-score.html');
+        var linkedinUrl = 'https://www.linkedin.com/sharing/share-offsite/?url=' + encodeURIComponent('https://getapipulse.com/api-cost-score.html');
+        document.getElementById('tweet-btn').href = tweetUrl;
+        document.getElementById('linkedin-btn').href = linkedinUrl;
+
+        // Pro CTA with savings context
+        document.getElementById('pro-cta-btn').href = 'go.html?from=cost-score&savings=' + Math.round(effectiveCost - cheapest.cost) + '&alts=' + alternatives.length;
+        var proPrice = window._abPrice || 29;
+        document.getElementById('pro-price').textContent = '$' + proPrice;
+
+        // Show results
+        document.getElementById('quiz-card').style.display = 'none';
+        document.getElementById('results').classList.add('visible');
+
+        // Scroll to results
+        document.getElementById('score-card').scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+        // Track
+        if (window.trackEvent) {
+            window.trackEvent('cost_score_calculated', {
+                grade: grade,
+                score: score,
+                model: model,
+                spend: Math.round(effectiveCost),
+                annual_savings: annualSavings,
+                usecase: usecase
+            });
+        }
+
+        // Update page title with score
+        document.title = 'My AI API Cost Score: ' + grade + ' — Can You Beat It? | APIpulse';
+
+        // Store for copy
+        window._shareText = shareText;
+    }
+
+    function retakeQuiz() {
+        document.getElementById('quiz-card').style.display = 'block';
+        document.getElementById('results').classList.remove('visible');
+        document.title = 'AI API Cost Score — Rate Your Setup in 30 Seconds | APIpulse';
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function copyScore() {
+        if (navigator.clipboard && window._shareText) {
+            navigator.clipboard.writeText(window._shareText).then(function() {
+                var btn = document.querySelector('.share-btn');
+                var original = btn.innerHTML;
+                btn.innerHTML = '✅ Copied!';
+                setTimeout(function() { btn.innerHTML = original; }, 2000);
+            });
+        }
+    }
+
+    // Load score from URL if shared
+    (function() {
+        var params = new URLSearchParams(window.location.search);
+        var grade = params.get('grade');
+        if (grade) {
+            // Pre-fill from shared URL (future enhancement)
+        }
+    })();
+    </script>
+    <script src="results-cta.js" defer></script>
+</body>
+</html>
