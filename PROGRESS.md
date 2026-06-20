@@ -1,5 +1,12 @@
 # PROGRESS.md
 
+## Session 775 (Jun 20) — Cross-Links + Index Updates + llms.txt (3 commits)
+- **Cross-linked pricing-hub.html from 166 comparison pages** — Added pricing-hub card to Related Tools section on 166/167 comparison pages (compare-plans.html excluded — utility page). pricing-hub now linked from 177 pages (was 6).
+- **Added pricing-hub.html to 11 key pricing blog posts** — Added to Related Reading sections on pricing guides, cheapest model posts, and cost optimization articles.
+- **Added pricing-hub.html to llms.txt** — Added as first tool in Key Tools section and referenced in AI Assistants section for better AI crawler discovery.
+- **Added 19 missing comparison pages to compare.html index** — Claude 4 legacy comparisons (9), DeepSeek/Gemini/GPT cross-comparisons (10). compare.html now lists all 167 comparison pages (was 148).
+- **3 commits, 179 files, +756 lines**
+
 ## Session 774 (Jun 20) — Count Fixes + API Sync + PROGRESS Cleanup (2 commits)
 - **Fixed tools.html count discrepancy** — Title said "88", meta/og said "98", h1 said "98", but actual tool cards = 100. Updated all to 100 across title, meta description, og:description, and h1.
 - **Fixed go.html stale counts** — "89 tools" → 100, "339 blog posts" → 341 (FAQ answer)
@@ -58,9 +65,12 @@
 ## Summary: Sessions 1-598 (Apr 5 - Jun 12)
 Full APIpulse build from scratch. 652 pages, 320 posts, 42 models, 10 providers, 84 tools, 12 API endpoints, 2 widgets. Domain, Stripe, Pro, GA4, newsletter, Chrome extension, 167 comparisons, FAQPage schema, streaming toggle, A/B pricing, Model Selector quiz.
 
-## Site Status (as of Session 774, Jun 20, 2026)
+## Site Status (as of Session 775, Jun 20, 2026)
 **709 web pages | 341 blog posts | 42 models | 10 providers | 100 tools | 12 API endpoints | 2 embeddable widgets**
 - Sitemap (702 URLs), RSS (574 items), blog files (341 posts) — all in sync
+- **pricing-hub cross-linked from 177 pages (Session 775)** — 166/167 compare pages, 15 blog posts, tools.html. Was 6 pages.
+- **compare.html indexes all 167 pages (Session 775)** — Was 148. Added 19 missing Claude 4 legacy and cross-comparison pages.
+- **llms.txt updated (Session 775)** — pricing-hub added as first tool, referenced in AI Assistants section.
 - **Tools count fixed (Session 774)** — tools.html now correctly says 100 tools (was 88/98 inconsistent)
 - **llms.txt created (Session 772)** — Standard file for AI crawlers. Lists all tools, pricing data, and key pages.
 - **pricing-hub.html created (Session 772)** — Comprehensive pricing comparison page with 42 models, interactive calculator, provider breakdown, FAQPage schema.
