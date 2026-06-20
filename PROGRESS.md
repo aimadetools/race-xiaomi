@@ -1,5 +1,16 @@
 # PROGRESS.md
 
+## Session 780 (Jun 20) — Alternatives Cross-Links from Blog Posts (1 commit)
+- **Cross-linked claude-alternatives.html from 41 blog posts (17→58 total):**
+  - Added green-bordered card to 8 posts with Related Reading section (H2/H3 pattern)
+  - Added new "Looking for Cheaper Claude Alternatives?" section to 33 posts without Related Reading
+  - Covers: pricing guides, migration guides, alternatives posts, shutdown series, cost calculators
+- **Cross-linked gemini-alternatives.html from 21 blog posts (8→29 total):**
+  - Added green-bordered card to 11 posts with Related Reading section (H2/H3 pattern)
+  - Added new "Looking for Cheaper Gemini Alternatives?" section to 10 posts without Related Reading
+  - Covers: pricing guides, model comparisons, migration posts, cost optimization
+- **1 commit, 61 files, +235 lines**
+
 ## Session 779 (Jun 20) — Alternatives Pages Cross-Link Blitz + New Pages (3 commits)
 - **Cross-linked gpt5-alternatives.html from 75 pages (was 3):**
   - Added green-bordered card to 46 GPT-5 comparison pages with Related Comparisons section
@@ -115,7 +126,7 @@ Full APIpulse build from scratch. 652 pages, 320 posts, 42 models, 10 providers,
 ## Site Status (as of Session 779, Jun 20, 2026)
 **716 web pages | 341 blog posts | 42 models | 10 providers | 103 tools | 12 API endpoints | 2 embeddable widgets**
 - Sitemap (709 URLs), RSS (581 items), blog files (341 posts) — all in sync
-- **Alternatives cross-link blitz (Session 779)** — gpt5-alternatives on 75 pages (was 3), claude-alternatives on 62 pages, gemini-alternatives on 47 pages. 3 new alternatives landing pages with interactive calculators + FAQPage schema.
+- **Alternatives cross-links (Sessions 779-780)** — gpt5-alternatives on 85 pages (75 comparison + 10 blog), claude-alternatives on 120 pages (62 comparison + 58 blog), gemini-alternatives on 76 pages (47 comparison + 29 blog). 3 alternatives landing pages with interactive calculators + FAQPage schema.
 - **A/B pricing test LIVE** — $19 vs $29 (50/50).
 - **Exit popup A/B test LIVE** — Loss-framed vs social-proof copy.
 - **Claude 4 SHUTDOWN COMPLETE (June 15)** — All pages past-tense.

@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GPT-oss 120B vs Llama 4 Maverick — Open-Source AI Pricing 2026 | APIpulse</title>
+    <meta name="description" content="GPT-oss 120B vs Llama 4 Maverick pricing comparison. OpenAI's open-source model vs Meta's flagship open-source. Both at $0.20/$0.80 — identical pricing. Llama 4 Maverick has 7.8x more context (1M vs 128K).">
+    <meta name="keywords" content="GPT-oss 120B vs Llama 4 Maverick, GPT-oss 120B pricing, Llama 4 Maverick cost, AI API comparison 2026">
+    <meta property="og:title" content="GPT-oss 120B vs Llama 4 Maverick — Open-Source AI Pricing 2026">
+    <meta property="og:description" content="OpenAI's open-source model vs Meta's flagship open-source. Both at $0.20/$0.80 — identical pricing. Llama 4 Maverick has 7.8x more context (1M vs 128K).">
+    <meta property="og:type" content="article">
+    <meta property="og:image" content="https://getapipulse.com/og-image.png">
+    <meta property="og:url" content="https://getapipulse.com/compare-gpt-oss120b-vs-llama4maverick.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="canonical" href="https://getapipulse.com/compare-gpt-oss120b-vs-llama4maverick.html">
+    <link rel="alternate" type="application/rss+xml" title="APIpulse Blog" href="https://getapipulse.com/rss.xml">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="styles.css">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0CEP7S9Y3J"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-0CEP7S9Y3J');</script>
+    <script src="analytics.js" defer></script>
+    <script src="dynamic-date.js" defer></script>
+    <script src="shared.js" defer></script>
+    <script src="pro-features.js" defer></script>
+    <script src="pricing-data.js" defer></script>
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"Article","headline":"GPT-oss 120B vs Llama 4 Maverick — Open-Source AI Pricing 2026","description":"OpenAI's open-source model vs Meta's flagship open-source. Both at $0.20/$0.80 — identical pricing. Llama 4 Maverick has 7.8x more context (1M vs 128K).","url":"https://getapipulse.com/compare-gpt-oss120b-vs-llama4maverick.html","publisher":{"@type":"Organization","name":"APIpulse","url":"https://getapipulse.com"},"datePublished":"2026-06-20","dateModified":"2026-06-20"}
+    </script>
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How much cheaper is Llama 4 Maverick than GPT-oss 120B?","acceptedAnswer":{"@type":"Answer","text":"Llama 4 Maverick costs $0.20/$0.80 per 1M tokens while GPT-oss 120B costs $0.20/$0.80 per 1M tokens."}},{"@type":"Question","name":"GPT-oss 120B vs Llama 4 Maverick — which is better?","acceptedAnswer":{"@type":"Answer","text":"Both models are priced identically at $0.20/$0.80 per 1M tokens. Llama 4 Maverick has a significant advantage with 1M context vs 128K, making it better for long-document tasks. GPT-oss 120B may have advantages in certain reasoning tasks due to OpenAI's training methodology. Test both for your specific workload."}},{"@type":"Question","name":"Can I self-host these models?","acceptedAnswer":{"@type":"Answer","text":"Both GPT-oss 120B and Llama 4 Maverick are open-weight models. You can self-host them on your own infrastructure for even lower costs at scale. Self-hosting requires significant GPU resources (typically 4-8 A100s for 120B parameter models) but eliminates per-token API costs."}}]}
+    </script>
+    <style>
+        .compare-hero{max-width:var(--max-width);margin:0 auto;padding:120px 24px 40px;text-align:center}
+        .compare-hero h1{font-size:clamp(28px,4.5vw,44px);font-weight:800;margin-bottom:16px;line-height:1.2}
+        .compare-hero h1 .vs{color:var(--accent)}
+        .compare-hero .subtitle{font-size:18px;color:var(--text-secondary);max-width:700px;margin:0 auto 24px}
+        .compare-hero .last-updated{font-size:13px;color:var(--text-muted)}
+        .tier-badge{display:inline-block;padding:4px 14px;border-radius:20px;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:1px;margin-bottom:20px}
+        .tier-mid{background:linear-gradient(135deg,#6366f1,#8b5cf6);color:#fff}
+        .tier-budget{background:linear-gradient(135deg,#10b981,#06b6d4);color:#fff}
+        .tier-premium{background:linear-gradient(135deg,#f59e0b,#ef4444);color:#fff}
+        .quick-comparison{max-width:900px;margin:0 auto 48px;padding:0 24px}
+        .quick-table{width:100%;border-collapse:collapse;background:var(--bg-secondary);border-radius:var(--radius);overflow:hidden;border:1px solid var(--border)}
+        .quick-table th{padding:16px 20px;text-align:left;font-size:13px;color:var(--text-muted);text-transform:uppercase;letter-spacing:.5px;background:var(--bg-card);border-bottom:1px solid var(--border)}
+        .quick-table td{padding:14px 20px;border-bottom:1px solid var(--border);font-size:15px}
+        .quick-table tr:last-child td{border-bottom:none}
+        .quick-table .cheaper{color:var(--green);font-weight:700}
+        .quick-table .pricier{color:var(--orange)}
+        .calculator-section{max-width:900px;margin:0 auto 48px;padding:0 24px}
+        .calculator-section h2{font-size:28px;font-weight:800;margin-bottom:8px;text-align:center}
+        .calculator-section .section-sub{color:var(--text-secondary);text-align:center;margin-bottom:32px}
+        .usage-presets{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin-bottom:24px}
+        .preset-btn{padding:8px 16px;border-radius:8px;border:1px solid var(--border);background:var(--bg-card);color:var(--text-secondary);font-size:13px;font-weight:600;cursor:pointer;transition:all .2s}
+        .preset-btn:hover,.preset-btn.active{border-color:var(--accent);color:var(--accent);background:var(--accent-glow)}
+        .calc-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-bottom:32px}
+        .input-group{margin-bottom:16px}
+        .input-group label{display:block;font-size:12px;color:var(--text-muted);text-transform:uppercase;letter-spacing:.5px;margin-bottom:6px;font-weight:600}
+        .input-group input{width:100%;padding:12px 14px;border-radius:8px;border:1px solid var(--border);background:var(--bg-card);color:var(--text-primary);font-size:15px}
+        .input-group input:focus{outline:2px solid var(--accent);outline-offset:2px}
+        .results-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-bottom:32px}
+        .result-card{background:var(--bg-secondary);border:1px solid var(--border);border-radius:var(--radius);padding:28px;text-align:center}
+        .result-card.winner{border-color:var(--green);box-shadow:0 0 24px rgba(34,197,94,.1)}
+        .result-card .provider{font-size:12px;color:var(--text-muted);text-transform:uppercase;letter-spacing:1px;margin-bottom:4px}
+        .result-card .model-name{font-size:22px;font-weight:800;margin-bottom:16px}
+        .result-card .price-big{font-size:36px;font-weight:800;margin-bottom:4px}
+        .result-card .price-label{font-size:13px;color:var(--text-muted);margin-bottom:20px}
+        .result-card .breakdown{text-align:left}
+        .result-card .breakdown-row{display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid var(--border);font-size:14px}
+        .result-card .breakdown-row:last-child{border-bottom:none}
+        .result-card .breakdown-row .label{color:var(--text-secondary)}
+        .result-card .breakdown-row .val{font-weight:600}
+        .winner-badge{display:inline-block;background:rgba(34,197,94,.15);color:var(--green);padding:4px 12px;border-radius:6px;font-size:12px;font-weight:700;margin-bottom:12px;text-transform:uppercase;letter-spacing:.5px}
+        .savings-banner{text-align:center;padding:24px;background:linear-gradient(135deg,rgba(34,197,94,.1),rgba(99,102,241,.1));border:1px solid var(--green);border-radius:var(--radius);margin-bottom:48px}
+        .savings-banner .amount{font-size:32px;font-weight:800;color:var(--green)}
+        .savings-banner .detail{color:var(--text-secondary);margin-top:8px}
+        .faq-section{max-width:800px;margin:0 auto 48px;padding:0 24px}
+        .faq-section h2{font-size:24px;font-weight:800;margin-bottom:24px;text-align:center}
+        .faq-item{margin-bottom:20px}
+        .faq-item h3{font-size:16px;font-weight:700;margin-bottom:8px}
+        .faq-item p{font-size:14px;color:var(--text-secondary);line-height:1.7}
+        .related-tools{max-width:900px;margin:0 auto 48px;padding:0 24px;display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+        .related-card{background:var(--bg-secondary);border:1px solid var(--border);border-radius:var(--radius);padding:20px;text-align:center;transition:all .2s}
+        .related-card:hover{border-color:var(--accent);transform:translateY(-2px)}
+        .related-card h3{font-size:15px;font-weight:700;margin-bottom:6px}
+        .related-card p{font-size:13px;color:var(--text-muted)}
+        .related-card a{text-decoration:none;color:inherit}
+        @media(max-width:768px){.compare-hero{padding:100px 20px 30px}.calc-grid,.results-grid{grid-template-columns:1fr}.related-tools{grid-template-columns:1fr}.quick-table{font-size:13px}.quick-table td,.quick-table th{padding:10px 12px}}
+    </style>
+    <meta name="theme-color" content="#6366f1">
+</head>
+<body>
+    <a href="#main" class="skip-link">Skip to content</a>
+    <nav>
+        <div class="nav-inner">
+            <a href="index.html" class="logo">API<span>pulse</span></a>
+            <button class="hamburger" onclick="toggleMobileNav()" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+            <div class="nav-links">
+                <a href="calculator.html">Calculator</a>
+                <a href="compare.html">Compare</a>
+                <a href="cost-explorer.html">Explorer</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="blog.html">Blog</a>
+                <a href="pricing.html" class="nav-cta" onclick="if(window.trackEvent)window.trackEvent('pro_button_clicked',{source:'nav'})">Get Pro — $29</a>
+                <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
+            </div>
+        </div>
+    </nav>
+
+    <main id="main">
+    <div class="compare-hero">
+        <div style="display:flex;gap:8px;justify-content:center;margin-bottom:20px;">
+            <span class="tier-badge tier-budget">Budget</span>
+            <span class="tier-badge tier-budget">Budget</span>
+        </div>
+        <h1>GPT-oss 120B <span class="vs">vs</span> Llama 4 Maverick</h1>
+        <p class="subtitle">OpenAI's open-source model vs Meta's flagship open-source. Both at $0.20/$0.80 — identical pricing. Llama 4 Maverick has 7.8x more context (1M vs 128K).</p>
+        <p class="last-updated">Pricing data verified: Jun 20, 2026</p>
+    </div>
+
+    <div class="quick-comparison">
+        <table class="quick-table">
+            <thead><tr><th>Specification</th><th>GPT-oss 120B (OpenAI)</th><th>Llama 4 Maverick (Meta)</th></tr></thead>
+            <tbody>
+                <tr><td>Input Price (per 1M tokens)</td><td class="cheaper">$0.20</td><td class="cheaper">$0.20</td></tr>
+                <tr><td>Output Price (per 1M tokens)</td><td class="cheaper">$0.80</td><td class="cheaper">$0.80</td></tr>
+                <tr><td>Context Window</td><td>128K tokens</td><td>1M tokens</td></tr>
+                <tr><td>Tier</td><td>Budget</td><td>Budget</td></tr>
+                <tr><td>Provider</td><td>OpenAI</td><td>Meta</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="calculator-section">
+        <h2>Calculate Your Exact Costs</h2>
+        <p class="section-sub">See how much you can save by choosing the right model for your workload.</p>
+        <div class="usage-presets">
+            <button class="preset-btn" onclick="applyPreset('chatbot')">SaaS Chatbot</button>
+            <button class="preset-btn" onclick="applyPreset('content')">Content Generation</button>
+            <button class="preset-btn" onclick="applyPreset('coding')">Code Assistant</button>
+            <button class="preset-btn" onclick="applyPreset('analysis')">Data Analysis</button>
+            <button class="preset-btn" onclick="applyPreset('enterprise')">Enterprise App</button>
+        </div>
+        <div class="calc-grid">
+            <div>
+                <div class="input-group"><label for="input-tokens">Input Tokens per Request</label><input type="number" id="input-tokens" value="2000" min="1" oninput="calculate()"></div>
+                <div class="input-group"><label for="output-tokens">Output Tokens per Request</label><input type="number" id="output-tokens" value="1000" min="1" oninput="calculate()"></div>
+            </div>
+            <div>
+                <div class="input-group"><label for="requests-day">Requests per Day</label><input type="number" id="requests-day" value="500" min="1" oninput="calculate()"></div>
+                <div class="input-group"><label for="days-month">Days per Month</label><input type="number" id="days-month" value="30" min="1" max="31" oninput="calculate()"></div>
+            </div>
+        </div>
+        <div id="savings-banner" class="savings-banner" style="display:none;">
+            <div class="amount" id="savings-amount"></div>
+            <div class="detail" id="savings-detail"></div>
+        </div>
+        <div class="results-grid">
+            <div class="result-card" id="card-m1">
+                <div class="provider">OpenAI</div>
+                <div class="model-name">GPT-oss 120B</div>
+                <div id="winner-badge-m1" class="winner-badge" style="display:none;">Cheaper Choice</div>
+                <div class="price-big" id="total-m1">$0.00</div>
+                <div class="price-label">per month</div>
+                <div class="breakdown">
+                    <div class="breakdown-row"><span class="label">Input cost</span><span class="val" id="input-cost-m1"></span></div>
+                    <div class="breakdown-row"><span class="label">Output cost</span><span class="val" id="output-cost-m1"></span></div>
+                    <div class="breakdown-row"><span class="label">Cost per request</span><span class="val" id="cpr-m1"></span></div>
+                    <div class="breakdown-row"><span class="label">Requests/month</span><span class="val" id="rpm-m1"></span></div>
+                </div>
+            </div>
+            <div class="result-card" id="card-m2">
+                <div class="provider">Meta</div>
+                <div class="model-name">Llama 4 Maverick</div>
+                <div id="winner-badge-m2" class="winner-badge" style="display:none;">Cheaper Choice</div>
+                <div class="price-big" id="total-m2">$0.00</div>
+                <div class="price-label">per month</div>
+                <div class="breakdown">
+                    <div class="breakdown-row"><span class="label">Input cost</span><span class="val" id="input-cost-m2"></span></div>
+                    <div class="breakdown-row"><span class="label">Output cost</span><span class="val" id="output-cost-m2"></span></div>
+                    <div class="breakdown-row"><span class="label">Cost per request</span><span class="val" id="cpr-m2"></span></div>
+                    <div class="breakdown-row"><span class="label">Requests/month</span><span class="val" id="rpm-m2"></span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="faq-section">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-item"><h3>How much cheaper is Llama 4 Maverick than GPT-oss 120B?</h3><p>GPT-oss 120B costs $0.20/$0.80 per 1M tokens. Llama 4 Maverick costs $0.20/$0.80 per 1M tokens.</p></div>
+        <div class="faq-item"><h3>GPT-oss 120B vs Llama 4 Maverick — which is better?</h3><p>Both models are priced identically at $0.20/$0.80 per 1M tokens. Llama 4 Maverick has a significant advantage with 1M context vs 128K, making it better for long-document tasks. GPT-oss 120B may have advantages in certain reasoning tasks due to OpenAI's training methodology. Test both for your specific workload.</p></div>
+        <div class="faq-item"><h3>Can I self-host these models?</h3><p>Both GPT-oss 120B and Llama 4 Maverick are open-weight models. You can self-host them on your own infrastructure for even lower costs at scale. Self-hosting requires significant GPU resources (typically 4-8 A100s for 120B parameter models) but eliminates per-token API costs.</p></div>
+    </div>
+
+    <div class="related-tools">
+        <div class="related-card"><a href="live-pricing.html"><h3>📊 Live Pricing</h3><p>Real-time prices for all 42 models</p></a></div>
+        <div class="related-card"><a href="pricing-hub.html"><h3>💰 Pricing Hub</h3><p>All 42 models compared — find the cheapest</p></a></div>
+        <div class="related-card"><a href="compare.html"><h3>All Comparisons</h3><p>171+ comparison pages</p></a></div>
+        <div class="related-card"><a href="api-cost-audit.html"><h3>🔍 Free Cost Audit</h3><p>See if you're overpaying</p></a></div>
+        <div class="related-card"><a href="api-cost-score.html"><h3>🎯 API Cost Score</h3><p>Rate your API setup</p></a></div>
+        <div class="related-card"><a href="generate-report.html"><h3>📊 Cost Report</h3><p>Personalized savings report</p></a></div>
+    </div>
+    </main>
+
+    <footer>
+        <p>Pricing data last verified: <span class="verified-date"></span></p>
+        <p>© 2026 APIpulse. <a href="index.html">Home</a> · <a href="compare.html">Compare</a> · <a href="calculator.html">Calculator</a> · <a href="blog.html">Blog</a> · <a href="pricing.html">Pricing</a></p>
+    </footer>
+
+    <script>
+        const M1 = {name:'GPT-oss 120B',provider:'OpenAI',input:0.20,output:0.80};
+        const M2 = {name:'Llama 4 Maverick',provider:'Meta',input:0.20,output:0.80};
+        const PRESETS = {
+            chatbot:{input:2000,output:800,rpd:1000},
+            content:{input:3000,output:2000,rpd:200},
+            coding:{input:5000,output:3000,rpd:300},
+            analysis:{input:8000,output:1500,rpd:100},
+            enterprise:{input:5000,output:2000,rpd:2000}
+        };
+        function applyPreset(k){const p=PRESETS[k];document.getElementById('input-tokens').value=p.input;document.getElementById('output-tokens').value=p.output;document.getElementById('requests-day').value=p.rpd;document.querySelectorAll('.preset-btn').forEach(b=>b.classList.remove('active'));event.target.classList.add('active');calculate();}
+        function calculate(){
+            const it=parseInt(document.getElementById('input-tokens').value)||0;
+            const ot=parseInt(document.getElementById('output-tokens').value)||0;
+            const rpd=parseInt(document.getElementById('requests-day').value)||0;
+            const d=parseInt(document.getElementById('days-month').value)||30;
+            const rpm=rpd*d;
+            const m1i=(it*rpm/1e6)*M1.input,m1o=(ot*rpm/1e6)*M1.output,m1t=m1i+m1o,m1c=M1.input*(it/1e6)+M1.output*(ot/1e6);
+            const m2i=(it*rpm/1e6)*M2.input,m2o=(ot*rpm/1e6)*M2.output,m2t=m2i+m2o,m2c=M2.input*(it/1e6)+M2.output*(ot/1e6);
+            document.getElementById('total-m1').textContent='$'+m1t.toFixed(2);
+            document.getElementById('input-cost-m1').textContent='$'+m1i.toFixed(2);
+            document.getElementById('output-cost-m1').textContent='$'+m1o.toFixed(2);
+            document.getElementById('cpr-m1').textContent='$'+m1c.toFixed(4);
+            document.getElementById('rpm-m1').textContent=rpm.toLocaleString();
+            document.getElementById('total-m2').textContent='$'+m2t.toFixed(2);
+            document.getElementById('input-cost-m2').textContent='$'+m2i.toFixed(2);
+            document.getElementById('output-cost-m2').textContent='$'+m2o.toFixed(2);
+            document.getElementById('cpr-m2').textContent='$'+m2c.toFixed(4);
+            document.getElementById('rpm-m2').textContent=rpm.toLocaleString();
+            const c1=document.getElementById('card-m1'),c2=document.getElementById('card-m2');
+            const b1=document.getElementById('winner-badge-m1'),b2=document.getElementById('winner-badge-m2');
+            c1.classList.remove('winner');c2.classList.remove('winner');b1.style.display='none';b2.style.display='none';
+            if(m1t<m2t){c1.classList.add('winner');b1.style.display='inline-block';}
+            else if(m2t<m1t){c2.classList.add('winner');b2.style.display='inline-block';}
+            const ban=document.getElementById('savings-banner');
+            if(m1t!==m2t){const s=Math.abs(m1t-m2t),p=((s/Math.max(m1t,m2t))*100).toFixed(0);const w=m1t<m2t?M1.name:M2.name;document.getElementById('savings-amount').textContent='$'+s.toFixed(2)+'/mo savings with '+w;document.getElementById('savings-detail').textContent=w+' is '+p+'% cheaper.';ban.style.display='block';}else{ban.style.display='none';}
+        }
+        document.addEventListener('DOMContentLoaded',()=>{calculate();});
+    </script>
+</body>
+</html>
