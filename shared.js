@@ -894,7 +894,7 @@ async function saveEmail(e) {
                 '<div style="font-size:40px;margin-bottom:16px;">' + popupIcon + '</div>' +
                 '<h3 style="font-size:22px;font-weight:700;margin-bottom:8px;color:var(--red);">' + popupTitle + '</h3>' +
                 '<p style="font-size:14px;color:var(--text-secondary);margin-bottom:12px;line-height:1.6;">' + popupDesc + '</p>' +
-                '<div style="background:var(--bg-secondary);border:1px solid var(--border);border-radius:8px;padding:10px 16px;margin-bottom:12px;font-size:13px;color:var(--text-secondary);font-style:italic;line-height:1.5;">"Cut my API bill by 60% — paid for itself in a day." — <span style="font-style:normal;color:var(--text-muted);">Indie developer</span></div>' +
+                '<div style="background:var(--bg-secondary);border:1px solid var(--border);border-radius:8px;padding:10px 16px;margin-bottom:12px;font-size:13px;color:var(--text-secondary);font-style:italic;line-height:1.5;">Switching from GPT-5 to DeepSeek V4 Flash saves <strong style="font-style:normal;color:var(--green);">96% on input costs</strong> — see your exact savings with Pro.</div>' +
                 '<div style="background:rgba(34,197,94,0.08);border:1px solid rgba(34,197,94,0.25);border-radius:8px;padding:12px;margin-bottom:16px;font-size:14px;color:var(--green);font-weight:600;">' + popupHighlight + '</div>' +
                 '<a href="go.html?from=exit_popup_deprecation" id="deprecation-popup-cta" style="display:inline-block;background:var(--accent);color:white;padding:14px 32px;border-radius:10px;font-size:16px;font-weight:700;text-decoration:none;transition:all 0.2s;box-shadow:0 4px 20px rgba(99,102,241,0.3);" onmouseover="this.style.transform=\'translateY(-2px)\'" onmouseout="this.style.transform=\'none\'">Get Pro — $' + price + ' lifetime</a>' +
                 '<p style="font-size:12px;color:var(--text-muted);margin-top:12px;">⚠️ Early adopter price — increases to $' + futurePrice + ' soon · 14-day money-back guarantee</p>' +
@@ -1007,7 +1007,7 @@ async function saveEmail(e) {
                 '<h3 style="font-size:22px;font-weight:700;margin-bottom:8px;">' + cc.headline + '</h3>' +
                 savingsHint +
                 '<p style="font-size:14px;color:var(--text-secondary);margin-bottom:12px;line-height:1.6;">' + cc.desc + '</p>' +
-                '<div style="background:var(--bg-secondary);border:1px solid var(--border);border-radius:8px;padding:10px 16px;margin-bottom:16px;font-size:13px;color:var(--text-secondary);font-style:italic;line-height:1.5;">"Cut my API bill by 60% — paid for itself in a day." — <span style="font-style:normal;color:var(--text-muted);">Indie developer</span></div>' +
+                '<div style="background:var(--bg-secondary);border:1px solid var(--border);border-radius:8px;padding:10px 16px;margin-bottom:16px;font-size:13px;color:var(--text-secondary);font-style:italic;line-height:1.5;">Switching from GPT-5 to DeepSeek V4 Flash saves <strong style="font-style:normal;color:var(--green);">96% on input costs</strong> — see your exact savings with Pro.</div>' +
                 '<div style="display:flex;gap:12px;justify-content:center;margin-bottom:16px;">' +
                 '<div style="background:var(--bg-secondary);border:1px solid var(--border);border-radius:8px;padding:10px 16px;text-align:center;">' +
                 '<div style="font-size:20px;font-weight:800;color:var(--accent);">$' + price + '</div>' +
@@ -1087,7 +1087,7 @@ async function saveEmail(e) {
                 <div style="font-size:40px;margin-bottom:16px;">${v.emoji}</div>
                 <h3 style="font-size:22px;font-weight:700;margin-bottom:8px;">${v.headline}</h3>
                 <p style="font-size:14px;color:var(--text-secondary);margin-bottom:12px;line-height:1.6;">${v.subtext}</p>
-                <div style="background:var(--bg-secondary);border:1px solid var(--border);border-radius:8px;padding:10px 16px;margin-bottom:16px;font-size:13px;color:var(--text-secondary);font-style:italic;line-height:1.5;">"Cut my API bill by 60% — paid for itself in a day." — <span style="font-style:normal;color:var(--text-muted);">Indie developer</span></div>
+                <div style="background:var(--bg-secondary);border:1px solid var(--border);border-radius:8px;padding:10px 16px;margin-bottom:16px;font-size:13px;color:var(--text-secondary);font-style:italic;line-height:1.5;">Switching from GPT-5 to DeepSeek V4 Flash saves <strong style="font-style:normal;color:var(--green);">96% on input costs</strong> — see your exact savings with Pro.</div>
                 <form id="exit-popup-form" style="display:flex;gap:8px;margin-bottom:12px;">
                     <input type="email" id="exit-popup-email" placeholder="you@company.com" required aria-label="Email address"
                         style="flex:1;padding:12px 16px;border-radius:8px;border:1px solid var(--border);background:var(--bg-secondary);color:var(--text-primary);font-size:14px;">
