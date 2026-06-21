@@ -86,7 +86,7 @@ function showTrialMessage() {
     var msg = document.createElement('div');
     msg.id = 'trial-activated-msg';
     msg.style.cssText = 'position:fixed;top:80px;left:50%;transform:translateX(-50%);background:linear-gradient(135deg,#22c55e,#16a34a);color:white;padding:16px 28px;border-radius:12px;font-size:15px;font-weight:700;z-index:10000;box-shadow:0 8px 30px rgba(34,197,94,0.4);animation:fadeIn 0.3s ease;max-width:90vw;text-align:center;';
-    msg.innerHTML = '✅ Free trial activated! Pro features unlocked for 24 hours. <a href="pricing.html" style="color:white;text-decoration:underline;">Get lifetime access →</a>';
+    msg.innerHTML = '✅ Free trial activated! Pro features unlocked for 24 hours. <a href="go.html?from=trial_activated" style="color:white;text-decoration:underline;">Get lifetime access →</a>';
     document.body.appendChild(msg);
     setTimeout(function() { msg.style.opacity = '0'; msg.style.transition = 'opacity 0.5s'; setTimeout(function() { msg.remove(); }, 500); }, 5000);
 }
@@ -417,7 +417,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     banner.innerHTML = `
                         <div>
                             <div style="font-weight:700;font-size:15px;">Free Trial Active</div>
-                            <div style="font-size:13px;color:var(--text-secondary);">Expires in ${remaining.hours}h ${remaining.mins}m · <a href="go.html?from=trial_banner" target="_blank" rel="noopener" style="color:var(--accent);font-weight:600;">Get lifetime access for $${window._abPrice || 29}</a></div>
+                            <div style="font-size:13px;color:var(--text-secondary);">Expires in ${remaining.hours}h ${remaining.mins}m · <a href="go.html?from=trial_banner" style="color:var(--accent);font-weight:600;">Get lifetime access for $${window._abPrice || 29}</a></div>
                         </div>
                     `;
                     content.insertBefore(banner, content.firstChild);
@@ -436,7 +436,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         var msg = document.createElement('div');
                         msg.id = 'trial-expired-msg';
                         msg.style.cssText = 'position:fixed;top:80px;left:50%;transform:translateX(-50%);background:linear-gradient(135deg,rgba(239,68,68,0.95),rgba(220,38,38,0.95));color:white;padding:16px 28px;border-radius:12px;font-size:15px;font-weight:700;z-index:10000;box-shadow:0 8px 30px rgba(239,68,68,0.4);max-width:90vw;text-align:center;';
-                        msg.innerHTML = '⏰ Your 24-hour Pro trial has ended. <a href="pricing.html" style="color:white;text-decoration:underline;">Get lifetime access for $' + price + ' →</a>';
+                        msg.innerHTML = '⏰ Your 24-hour Pro trial has ended. <a href="go.html?from=trial_expired" style="color:white;text-decoration:underline;">Get lifetime access for $' + price + ' →</a>';
                         document.body.appendChild(msg);
                         setTimeout(function() { msg.style.opacity = '0'; msg.style.transition = 'opacity 0.5s'; setTimeout(function() { msg.remove(); }, 500); }, 8000);
                     }
@@ -449,7 +449,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     var minsLeft = Math.ceil(remaining.ms / 60000);
                     var price = window._abPrice || 29;
                     urgencyBanner.style.cssText = 'background:linear-gradient(135deg,#dc2626,#b91c1c);color:white;padding:12px 20px;border-radius:12px;margin-bottom:16px;text-align:center;font-size:14px;font-weight:600;';
-                    urgencyBanner.innerHTML = '⏰ Trial expires in <strong>' + minsLeft + ' minutes</strong> — <a href="pricing.html" style="color:white;text-decoration:underline;">Lock in Pro for $' + price + ' lifetime →</a>';
+                    urgencyBanner.innerHTML = '⏰ Trial expires in <strong>' + minsLeft + ' minutes</strong> — <a href="go.html?from=trial_urgency" style="color:white;text-decoration:underline;">Lock in Pro for $' + price + ' lifetime →</a>';
                     content.insertBefore(urgencyBanner, content.firstChild);
                     if (window.trackEvent) window.trackEvent('trial_urgency_shown', { minutes_left: minsLeft, price: price });
                 }
@@ -471,7 +471,7 @@ document.addEventListener('DOMContentLoaded', function() {
         msg.id = 'trial-return-msg';
         msg.style.cssText = 'position:fixed;bottom:80px;left:50%;transform:translateX(-50%);background:var(--bg-card);border:1px solid var(--accent);padding:14px 24px;border-radius:12px;font-size:14px;z-index:9998;box-shadow:0 4px 20px rgba(0,0,0,0.2);max-width:90vw;text-align:center;display:flex;align-items:center;gap:12px;flex-wrap:wrap;justify-content:center;';
         msg.innerHTML = '<span style="color:var(--text-secondary);">👋 Enjoyed Pro? Get lifetime access for <strong style="color:var(--accent);">$' + price + '</strong></span>' +
-            '<a href="pricing.html" style="display:inline-block;background:var(--accent);color:white;padding:6px 16px;border-radius:8px;text-decoration:none;font-size:13px;font-weight:700;white-space:nowrap;" onclick="if(window.trackEvent)window.trackEvent(\'pro_button_clicked\',{source:\'trial_return_msg\'})">Upgrade →</a>' +
+            '<a href="go.html?from=trial_return" style="display:inline-block;background:var(--accent);color:white;padding:6px 16px;border-radius:8px;text-decoration:none;font-size:13px;font-weight:700;white-space:nowrap;" onclick="if(window.trackEvent)window.trackEvent(\'pro_button_clicked\',{source:\'trial_return_msg\'})">Upgrade →</a>' +
             '<button onclick="document.getElementById(\'trial-return-msg\').remove();localStorage.setItem(\'apipulse_trial_expired_dismissed\',\'1\');" style="background:none;border:none;color:var(--text-muted);cursor:pointer;font-size:16px;padding:2px 6px;" aria-label="Close">×</button>';
         document.body.appendChild(msg);
         if (window.trackEvent) window.trackEvent('trial_return_msg_shown', { price: price });

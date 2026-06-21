@@ -502,7 +502,7 @@
         </div>
         <div style="display:flex;gap:24px;justify-content:center;margin-bottom:24px;flex-wrap:wrap;">
             <div style="display:flex;align-items:center;gap:6px;font-size:13px;color:var(--text-muted);">
-                <span style="color:var(--green);font-weight:700;" id="hero-user-count">1,247</span> developers compared costs
+                <span style="color:var(--green);font-weight:700;">215</span> head-to-head comparisons
             </div>
             <div style="display:flex;align-items:center;gap:6px;font-size:13px;color:var(--text-muted);">
                 <span style="color:var(--accent);font-weight:700;">42</span> models tracked
@@ -1251,7 +1251,7 @@
                 </div>
             </div>
             <div class="testimonial-card">
-                <p class="testimonial-text">"Switched from GPT-4o to Gemini Flash for simple tasks. Cut my API bill by 60%. APIpulse showed me exactly where the savings were."</p>
+                <p class="testimonial-text">"Switching from GPT-5 to DeepSeek V4 Flash saves 96% on input costs. APIpulse shows exactly which model is cheapest for your workload."</p>
                 <div class="testimonial-author">
                     <div class="testimonial-avatar">-60%</div>
                     <div>
@@ -2226,38 +2226,16 @@
                     <li>Early access to new features</li>
                 </ul>
                 <div style="background:rgba(34,197,94,0.06);border:1px solid rgba(34,197,94,0.2);border-radius:8px;padding:12px;margin-bottom:12px;text-align:center;">
-                    <div style="font-size:13px;color:var(--text-secondary);margin-bottom:4px;">Pro users have saved</div>
-                    <div style="font-size:24px;font-weight:800;color:var(--green);font-family:monospace;">$<span id="homepage-saved-amount">12,847</span></div>
-                    <div style="font-size:11px;color:var(--text-muted);margin-top:2px;">in API costs this month</div>
+                    <div style="font-size:13px;color:var(--text-secondary);margin-bottom:4px;">Typical savings by switching models</div>
+                    <div style="font-size:24px;font-weight:800;color:var(--green);font-family:monospace;">$720–2,400/yr</div>
+                    <div style="font-size:11px;color:var(--text-muted);margin-top:2px;">based on 42-model comparison data</div>
                 </div>
-                <div style="background:var(--bg-secondary);border:1px solid var(--border);border-radius:8px;padding:10px 16px;margin-bottom:16px;font-size:13px;color:var(--text-secondary);font-style:italic;line-height:1.5;">"Cut my API bill by 60% — paid for itself in a day." — <span style="font-style:normal;color:var(--text-muted);">Indie developer</span></div>
+                <div style="background:var(--bg-secondary);border:1px solid var(--border);border-radius:8px;padding:10px 16px;margin-bottom:16px;font-size:13px;color:var(--text-secondary);font-style:italic;line-height:1.5;">"DeepSeek V4 Pro is 91% cheaper than GPT-5 on output tokens — APIpulse makes these comparisons instant." — <span style="font-style:normal;color:var(--text-muted);">Real pricing fact</span></div>
                 <a href="go.html?from=pricing_card" class="btn-primary" style="text-align:center;" onclick="if(window.trackEvent)window.trackEvent('pro_button_clicked',{source:'pricing_card'})">Stop Losing Money — Get Pro</a>
                 <p style="font-size:12px;color:var(--text-muted);margin-top:8px;text-align:center;">✅ 14-day money-back guarantee · ⚡ Instant access · 🔒 One-time payment</p>
             </div>
         </div>
     </section>
-    <script>
-    // Homepage savings counter — same deterministic formula as Pro page
-    (function(){
-        var el = document.getElementById('homepage-saved-amount');
-        if (!el) return;
-        var daysSinceLaunch = Math.floor((Date.now() - new Date('2026-04-21').getTime()) / 86400000);
-        var baseDevs = 38 + Math.floor(daysSinceLaunch * 0.8);
-        var totalSaved = baseDevs * 127;
-        var duration = 1200, startTime = null;
-        function animate(ts) {
-            if (!startTime) startTime = ts;
-            var p = Math.min((ts - startTime) / duration, 1);
-            var eased = 1 - Math.pow(1 - p, 3);
-            el.textContent = Math.round(totalSaved * eased).toLocaleString();
-            if (p < 1) requestAnimationFrame(animate);
-        }
-        var obs = new IntersectionObserver(function(entries) {
-            if (entries[0].isIntersecting) { obs.disconnect(); requestAnimationFrame(animate); }
-        }, { threshold: 0.3 });
-        obs.observe(el);
-    })();
-    </script>
 
     <section class="faq-section">
         <div class="section-header">
