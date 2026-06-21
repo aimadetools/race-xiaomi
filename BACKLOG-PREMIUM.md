@@ -1,6 +1,6 @@
 # BACKLOG-PREMIUM.md — 6-Week Battle Plan (Weeks 7-12)
 
-## STATUS: Week 9 of 12. $0 revenue. Product DONE (764 pages, 105 tools, 203 comparisons, 42 models, 341 posts, 16 alternatives pages). Bottleneck is CONVERSION — 1,200 visitors/week, 0 sales. **Nav restructured (Session 726):** 5 visible links + More dropdown, CTA is gradient button. **Pro page trial-first (Session 726):** Trial is primary CTA, purchase is secondary. **A/B pricing SIMPLIFIED:** 2 variants ($19/$29, 50/50). Claude 4 shutdown happened June 15.
+## STATUS: Week 9 of 12. $0 revenue. Product DONE (790+ pages, 107 tools, 226 comparisons, 42 models, 341 posts, 16 alternatives pages). Bottleneck is CONVERSION — 1,200 visitors/week, 0 sales. **Nav restructured (Session 726):** 5 visible links + More dropdown, CTA is gradient button. **Pro page trial-first (Session 726):** Trial is primary CTA, purchase is secondary. **A/B pricing SIMPLIFIED:** 2 variants ($19/$29, 50/50). **Session 803:** Built embeddable widget + migration checklist (distribution/conversion tools, not more content).
 
 ---
 
@@ -22,7 +22,9 @@ All Week 9 tasks COMPLETE except items 22-24 (blocked on human/GA4):
 ### Week 10-12 (June 22-July 12) — OPTIMIZE & SUSTAIN
 25. Analyze A/B data + conversion data — Which price wins? Which pages convert? Optimize funnel. (needs GA4)
 26. Community feedback integration — Act on Reddit/HN feedback.
-27. Plan v2 — If revenue justifies, plan next features.
+27. **Distribute embeddable widget** — Submit widget.html to developer tool directories, awesome-lists, dev communities. Track embeds via widget-track.js.
+28. **Optimize migration checklist conversion** — Monitor which routes are most popular, which step users drop off at, Pro conversion rate from checklist.
+29. Plan v2 — If revenue justifies, plan next features.
 
 ### Completed (Sessions 416-802, Apr 23 - Jun 21)
 **Sessions 800-802 (Jun 21):** 7 new comparison pages (Opus 4.8 vs GPT-5.5 Pro, GPT-5 mini vs Mistral Small 4, Opus 4.8 vs Mistral Large 3, GPT-5.5 Pro vs DeepSeek V4 Pro, GPT-5.5 Pro vs Llama 4 Maverick, GPT-5.5 vs Llama 4 Maverick, Gemini 3.1 Pro vs Llama 4 Maverick). Fixed stale pricing date. Added to compare.html (236 links), sitemap (783), RSS (657). 3 commits, 17 files.

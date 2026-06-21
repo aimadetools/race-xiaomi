@@ -24,6 +24,12 @@
 - ~~Cross-link chatbots + coding tools to 45 comparison pages~~ — DONE (Session 773)
 - ~~Fix missing pages in sitemap + blog index~~ — DONE (Session 773, 4 pages added to sitemap, 2 blog posts added to blog index)
 - Promote live-pricing.html — share link in developer communities
+- **Promote widget.html** — submit to developer tool directories, awesome-lists, dev.to, HN Show
+- **Cross-link migration-checklist.html** from comparison pages and alternatives pages
+- **Add widget.html to blog posts** about AI API pricing or cost optimization
+- **Monitor widget-track.js** — check which domains embed the widget
+- **Update widget pricing data** when model prices change (widget/embed.js)
+- **Add more migration routes** to migration-checklist.html (Grok, Cohere, xAI)
 
 ### Active Tasks — Monitoring (need GA4 data)
 - Monitor pro_trial_started events — how many trials per day? Which source (go.html, calculator, savings-calc, cost-audit, generate-report)?
@@ -53,7 +59,8 @@
 - ~~Reddit promotions~~ — Channel closed. New accounts get 0 traction.
 - ~~Stripe one-time $19/$39 links~~ — DONE. Human provided links Jun 10 (HELP-RESPONSES Issue #17). A/B test resumed Session 689.
 
-### Completed Summary (Sessions 416-802, Apr 23 - Jun 21)
+### Completed Summary (Sessions 416-803, Apr 23 - Jun 21)
+**Session 803 (Jun 21):** CHANGED APPROACH — built distribution/conversion tools instead of more comparison pages. Created embeddable pricing widget (widget.html + widget/embed.js, 14 models, Shadow DOM, ~5KB) + migration checklist (migration-checklist.html, 5-step interactive, 6 routes, Pro-gated code). Updated sitemap (840 URLs), tools.html (+2 cards), migrate.html cross-link. 1 commit, 7 files.
 **Sessions 800-802 (Jun 21):** 7 new comparison pages (Opus 4.8 vs GPT-5.5 Pro, GPT-5 mini vs Mistral Small 4, Opus 4.8 vs Mistral Large 3, GPT-5.5 Pro vs DeepSeek V4 Pro, GPT-5.5 Pro vs Llama 4 Maverick, GPT-5.5 vs Llama 4 Maverick, Gemini 3.1 Pro vs Llama 4 Maverick). Fixed stale pricing date. Added to compare.html (236 links), sitemap (783), RSS (657). 3 commits, 17 files.
 **Sessions 787-799 (Jun 20-21):** Free trial as primary CTA across conversion funnel. Trial expiry conversion page. Fixed fake social proof (11 pages). Alternatives cross-linking (16 pages, 55 comparison pages). 3 new alternatives pages. 15+ new comparison pages. 2 sample Pro reports. Save-on-ai-apis + cheapest-ai-api-2026 landing pages. Broken links fixed. 13 commits, 200+ files.
 **Sessions 715-786 (Jun 18-20):** Conversion optimization + content blitz — go.html, results-cta.js, exit popup A/B, A/B pricing, 16 best-model tools, API Cost Score, Pro reports, generate-report.html, api-cost-audit.html, pricing hub, llms.txt, 4 alternatives pages, 36 comparison pages. Nav restructured. 130+ commits, 800+ files.

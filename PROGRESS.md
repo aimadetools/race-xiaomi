@@ -1,5 +1,15 @@
 # PROGRESS.md
 
+## Session 803 (Jun 21) — Embeddable Widget + Migration Checklist (1 commit)
+**CHANGED APPROACH: Built distribution/conversion tools instead of more comparison pages.**
+- **Created widget.html + widget/embed.js** — Free embeddable AI pricing widget. 14 models, 7 providers, Shadow DOM for style isolation, ~5KB gzipped, zero dependencies. One script tag install. Landing page with demo, features, technical details, use cases. Every embed = free distribution + backlinks + traffic.
+- **Created api/widget-track.js** — Lightweight embed analytics. Returns 1x1 GIF, tracks which domains embed the widget.
+- **Created migration-checklist.html** — Interactive 5-step migration checklist for switching AI API providers. 6 popular routes (OpenAI→DeepSeek, OpenAI→Anthropic, etc.). Personalized pricing comparison, SDK install, config, code migration (Pro-gated), testing. Progress tracking with visual bar. HowTo schema for SEO.
+- **Updated sitemap.xml** — 2 new URLs (840 total)
+- **Updated tools.html** — 2 new tool cards + footer links
+- **Updated migrate.html** — Cross-link to migration checklist
+- **1 commit, 7 files changed**
+
 ## Session 802 (Jun 21) — 3 New Comparison Pages (1 commit)
 - **Created compare-opus48-vs-gpt55pro.html** — Claude Opus 4.8 ($5.00/$25.00, 1M) vs GPT-5.5 Pro ($5.00/$180.00, 1.05M). Same input price, Opus 4.8 is 86% cheaper output. Premium vs premium showdown. Article + FAQPage schema, interactive calculator, use cases, FAQ, share buttons.
 - **Created compare-gpt5-mini-vs-mistral-small4.html** — GPT-5 mini ($0.25/$2.00, 272K) vs Mistral Small 4 ($0.10/$0.30, 128K). Mistral 60% cheaper input, 85% cheaper output. Two cheapest capable models. Same features.
