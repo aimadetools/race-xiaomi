@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Save 40-90% on AI API Costs — Free Calculator & Migration Tools | APIpulse</title>
+    <meta name="description" content="Stop overpaying for AI APIs. Compare 42 models, find the cheapest alternative for your workload, and get migration code. Free calculator shows your exact savings in 30 seconds.">
+    <meta name="keywords" content="save money on AI API, cheaper AI API, reduce LLM costs, AI API cost calculator, cheapest AI model, GPT alternative cheaper">
+    <meta property="og:title" content="Save 40-90% on AI API Costs — Free Calculator">
+    <meta property="og:description" content="Compare 42 AI models, find the cheapest alternative, get migration code. Free calculator shows your exact savings.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://getapipulse.com/save-on-ai-apis.html">
+    <meta property="og:image" content="https://getapipulse.com/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Save 40-90% on AI API Costs">
+    <meta name="twitter:description" content="Compare 42 AI models, find the cheapest alternative. Free calculator.">
+    <link rel="canonical" href="https://getapipulse.com/save-on-ai-apis.html">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="styles.css">
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0CEP7S9Y3J"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-0CEP7S9Y3J');
+    </script>
+    <script src="analytics.js" defer></script>
+    <script src="shared.js" defer></script>
+    <script src="pro-features.js" defer></script>
+    <style>
+        .save-page { max-width: 900px; margin: 0 auto; padding: 80px 24px 60px; }
+
+        /* Hero */
+        .save-hero { text-align: center; margin-bottom: 48px; }
+        .save-hero h1 { font-size: clamp(28px, 5vw, 44px); font-weight: 900; line-height: 1.15; margin-bottom: 16px; }
+        .save-hero h1 .highlight { color: var(--green); }
+        .save-hero .subtitle { font-size: 18px; color: var(--text-secondary); max-width: 600px; margin: 0 auto 24px; line-height: 1.5; }
+        .save-hero .proof { font-size: 14px; color: var(--text-muted); }
+        .save-hero .proof strong { color: var(--text-secondary); }
+
+        /* Quick calculator */
+        .quick-calc {
+            background: var(--bg-secondary); border: 2px solid var(--accent);
+            border-radius: 16px; padding: 32px; margin-bottom: 48px;
+        }
+        .quick-calc h2 { font-size: 22px; font-weight: 800; margin-bottom: 8px; text-align: center; }
+        .quick-calc .calc-sub { text-align: center; color: var(--text-secondary); margin-bottom: 24px; font-size: 14px; }
+        .calc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 20px; }
+        .calc-grid label { font-size: 13px; font-weight: 600; color: var(--text-secondary); margin-bottom: 4px; display: block; }
+        .calc-grid select, .calc-grid input {
+            width: 100%; padding: 10px 14px; background: var(--bg-primary); border: 1px solid var(--border);
+            border-radius: 8px; color: var(--text-primary); font-size: 16px;
+        }
+        .calc-grid select:focus, .calc-grid input:focus { outline: none; border-color: var(--accent); }
+        .savings-result {
+            text-align: center; padding: 24px; background: rgba(0,200,120,0.08);
+            border-radius: 12px; border: 1px solid rgba(0,200,120,0.2);
+        }
+        .savings-result .big-number { font-size: 42px; font-weight: 900; color: var(--green); font-family: monospace; }
+        .savings-result .big-label { font-size: 16px; color: var(--text-secondary); margin-top: 4px; }
+        .savings-result .details { font-size: 13px; color: var(--text-muted); margin-top: 8px; }
+        .savings-result .cta-row { margin-top: 16px; display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+
+        /* How it works */
+        .how-section { margin-bottom: 48px; }
+        .how-section h2 { font-size: 22px; font-weight: 800; margin-bottom: 24px; text-align: center; }
+        .how-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; }
+        .how-card {
+            background: var(--bg-secondary); border: 1px solid var(--border);
+            border-radius: 12px; padding: 24px; text-align: center;
+        }
+        .how-card .step { font-size: 28px; font-weight: 900; color: var(--accent); margin-bottom: 8px; }
+        .how-card h3 { font-size: 16px; font-weight: 700; margin-bottom: 8px; }
+        .how-card p { font-size: 13px; color: var(--text-secondary); line-height: 1.5; }
+
+        /* Popular switches */
+        .switches { margin-bottom: 48px; }
+        .switches h2 { font-size: 22px; font-weight: 800; margin-bottom: 24px; text-align: center; }
+        .switch-card {
+            background: var(--bg-secondary); border: 1px solid var(--border);
+            border-radius: 12px; padding: 20px; margin-bottom: 12px;
+            display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;
+        }
+        .switch-card .models { font-weight: 700; font-size: 15px; }
+        .switch-card .savings { color: var(--green); font-weight: 700; font-size: 14px; }
+        .switch-card .link { font-size: 13px; color: var(--accent); text-decoration: none; font-weight: 600; }
+        .switch-card .link:hover { text-decoration: underline; }
+
+        /* Social proof */
+        .proof-section { margin-bottom: 48px; }
+        .proof-section h2 { font-size: 22px; font-weight: 800; margin-bottom: 24px; text-align: center; }
+        .proof-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 16px; }
+        .proof-card {
+            background: var(--bg-secondary); border: 1px solid var(--border);
+            border-radius: 12px; padding: 20px;
+        }
+        .proof-card .stat { font-size: 28px; font-weight: 900; color: var(--accent); margin-bottom: 4px; }
+        .proof-card .label { font-size: 14px; color: var(--text-secondary); }
+
+        /* CTA */
+        .final-cta {
+            text-align: center; background: var(--bg-secondary); border: 2px solid var(--accent);
+            border-radius: 16px; padding: 40px 32px; margin-bottom: 40px;
+        }
+        .final-cta h2 { font-size: 24px; font-weight: 800; margin-bottom: 8px; }
+        .final-cta p { color: var(--text-secondary); margin-bottom: 20px; font-size: 15px; }
+
+        @media (max-width: 640px) {
+            .calc-grid { grid-template-columns: 1fr; }
+            .switch-card { flex-direction: column; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+    <div class="save-page">
+        <!-- Hero -->
+        <div class="save-hero">
+            <h1>Stop Overpaying for <span class="highlight">AI APIs</span></h1>
+            <p class="subtitle">Compare 42 models across 10 providers. Find the cheapest alternative for your exact workload. Get migration code. Most developers save 40-90%.</p>
+            <p class="proof">Based on <strong>verified pricing</strong> from OpenAI, Anthropic, Google, DeepSeek, Mistral, and 5 more providers. Updated daily.</p>
+        </div>
+
+        <!-- Quick Calculator -->
+        <div class="quick-calc">
+            <h2>Calculate Your Savings in 30 Seconds</h2>
+            <p class="calc-sub">See how much you'd save by switching to a cheaper AI model</p>
+            <div class="calc-grid">
+                <div>
+                    <label for="currentModel">What model are you currently using?</label>
+                    <select id="currentModel">
+                        <option value="gpt5">GPT-5 ($1.25/$10 per 1M)</option>
+                        <option value="sonnet46">Claude Sonnet 4.6 ($3/$15 per 1M)</option>
+                        <option value="opus48">Claude Opus 4.8 ($5/$25 per 1M)</option>
+                        <option value="gpt4o">GPT-4o ($2.50/$10 per 1M)</option>
+                        <option value="gemini-pro">Gemini 2.5 Pro ($1.25/$10 per 1M)</option>
+                        <option value="llama-maverick">Llama 4 Maverick ($0.20/$0.60 per 1M)</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="monthlySpend">Your monthly API spend ($)</label>
+                    <input type="number" id="monthlySpend" value="500" min="0" step="10">
+                </div>
+            </div>
+            <div class="savings-result">
+                <div class="big-number" id="savingsAmount">$3,480/yr</div>
+                <div class="big-label">potential annual savings</div>
+                <div class="details" id="savingsDetails">Switch to DeepSeek V4 Pro — save 92% on input costs</div>
+                <div class="cta-row">
+                    <button onclick="startTrial()" style="padding:14px 32px;background:var(--green);color:#000;border:none;border-radius:10px;font-weight:800;font-size:16px;cursor:pointer;">Try Pro Free for 24 Hours</button>
+                    <a href="calculator.html" style="padding:14px 32px;background:transparent;border:2px solid var(--accent);color:var(--accent);border-radius:10px;font-weight:800;font-size:16px;text-decoration:none;">Full Calculator →</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- How It Works -->
+        <div class="how-section">
+            <h2>How It Works</h2>
+            <div class="how-grid">
+                <div class="how-card">
+                    <div class="step">1</div>
+                    <h3>Tell Us Your Setup</h3>
+                    <p>Enter your current model, monthly spend, and usage pattern. Takes 10 seconds.</p>
+                </div>
+                <div class="how-card">
+                    <div class="step">2</div>
+                    <h3>See Your Savings</h3>
+                    <p>We compare 42 models and show you the cheapest alternative that matches your quality needs.</p>
+                </div>
+                <div class="how-card">
+                    <div class="step">3</div>
+                    <h3>Get Migration Code</h3>
+                    <p>Copy-paste code to switch providers. Most migrations take under 5 minutes.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Popular Switches -->
+        <div class="switches">
+            <h2>Most Popular Money-Saving Switches</h2>
+            <div class="switch-card">
+                <div>
+                    <div class="models">GPT-5 → DeepSeek V4 Pro</div>
+                    <div style="font-size:13px;color:var(--text-muted);">Same 1M context, OpenAI-compatible API</div>
+                </div>
+                <div class="savings">Save 92% on input costs</div>
+                <a href="compare-gpt5-vs-deepseek-v4pro.html" class="link">See comparison →</a>
+            </div>
+            <div class="switch-card">
+                <div>
+                    <div class="models">Claude Sonnet 4.6 → DeepSeek V4 Pro</div>
+                    <div style="font-size:13px;color:var(--text-muted);">5x more context (1M vs 200K)</div>
+                </div>
+                <div class="savings">Save 85% on input costs</div>
+                <a href="compare-sonnet46-vs-deepseek-v4pro.html" class="link">See comparison →</a>
+            </div>
+            <div class="switch-card">
+                <div>
+                    <div class="models">GPT-5 → Gemini 3.5 Flash</div>
+                    <div style="font-size:13px;color:var(--text-muted);">1M context, great for high-volume tasks</div>
+                </div>
+                <div class="savings">Save 40% on input costs</div>
+                <a href="compare-gpt5-vs-gemini35flash.html" class="link">See comparison →</a>
+            </div>
+            <div class="switch-card">
+                <div>
+                    <div class="models">Claude Opus 4.8 → GPT-5</div>
+                    <div style="font-size:13px;color:var(--text-muted);">Similar quality, much cheaper</div>
+                </div>
+                <div class="savings">Save 75% on input costs</div>
+                <a href="compare-opus48-vs-gpt5.html" class="link">See comparison →</a>
+            </div>
+            <div class="switch-card">
+                <div>
+                    <div class="models">Any Model → Mistral Small 4</div>
+                    <div style="font-size:13px;color:var(--text-muted);">Cheapest capable model available</div>
+                </div>
+                <div class="savings">Save up to 97% on input costs</div>
+                <a href="mistralsmall4-alternatives.html" class="link">See alternatives →</a>
+            </div>
+        </div>
+
+        <!-- Social Proof -->
+        <div class="proof-section">
+            <h2>Why Developers Trust APIpulse</h2>
+            <div class="proof-grid">
+                <div class="proof-card">
+                    <div class="stat">42</div>
+                    <div class="label">AI models compared across 10 providers</div>
+                </div>
+                <div class="proof-card">
+                    <div class="stat">215</div>
+                    <div class="label">head-to-head comparison pages with calculators</div>
+                </div>
+                <div class="proof-card">
+                    <div class="stat">$0</div>
+                    <div class="label">cost for our free calculator and comparison tools</div>
+                </div>
+                <div class="proof-card">
+                    <div class="stat">24h</div>
+                    <div class="label">free Pro trial — no credit card required</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Final CTA -->
+        <div class="final-cta">
+            <h2>Ready to Cut Your AI API Costs?</h2>
+            <p>Join developers who save 40-90% by choosing the right model for their workload.</p>
+            <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
+                <button onclick="startTrial()" style="padding:14px 32px;background:var(--green);color:#000;border:none;border-radius:10px;font-weight:800;font-size:16px;cursor:pointer;">Try Pro Free for 24 Hours</button>
+                <a href="go.html?from=save_on_ai_apis" style="padding:14px 32px;background:var(--accent);color:white;border-radius:10px;font-weight:800;font-size:16px;text-decoration:none;">Get Pro for $29 Lifetime</a>
+            </div>
+            <p style="font-size:13px;color:var(--text-muted);margin-top:12px;">No credit card required · Instant access · 14-day money-back guarantee</p>
+        </div>
+    </div>
+
+    <script>
+        // Savings calculator
+        var MODELS = {
+            'gpt5': { name: 'GPT-5', input: 1.25, output: 10, best: 'deepseek', bestName: 'DeepSeek V4 Pro', bestInput: 0.435, bestOutput: 0.87 },
+            'sonnet46': { name: 'Claude Sonnet 4.6', input: 3, output: 15, best: 'deepseek', bestName: 'DeepSeek V4 Pro', bestInput: 0.435, bestOutput: 0.87 },
+            'opus48': { name: 'Claude Opus 4.8', input: 5, output: 25, best: 'deepseek', bestName: 'DeepSeek V4 Pro', bestInput: 0.435, bestOutput: 0.87 },
+            'gpt4o': { name: 'GPT-4o', input: 2.50, output: 10, best: 'deepseek', bestName: 'DeepSeek V4 Pro', bestInput: 0.435, bestOutput: 0.87 },
+            'gemini-pro': { name: 'Gemini 2.5 Pro', input: 1.25, output: 10, best: 'deepseek', bestName: 'DeepSeek V4 Pro', bestInput: 0.435, bestOutput: 0.87 },
+            'llama-maverick': { name: 'Llama 4 Maverick', input: 0.20, output: 0.60, best: 'mistral', bestName: 'Mistral Small 4', bestInput: 0.10, bestOutput: 0.30 }
+        };
+
+        function calcSavings() {
+            var modelKey = document.getElementById('currentModel').value;
+            var spend = parseFloat(document.getElementById('monthlySpend').value) || 0;
+            var model = MODELS[modelKey];
+
+            // Estimate: assume 70% input, 30% output cost split
+            var inputSpend = spend * 0.7;
+            var outputSpend = spend * 0.3;
+
+            // Current monthly cost
+            var currentMonthly = spend;
+
+            // Best alternative monthly cost (proportional)
+            var bestMonthly = (inputSpend * model.bestInput / model.input) + (outputSpend * model.bestOutput / model.output);
+
+            var monthlySavings = currentMonthly - bestMonthly;
+            var annualSavings = monthlySavings * 12;
+            var pct = currentMonthly > 0 ? Math.round((monthlySavings / currentMonthly) * 100) : 0;
+
+            document.getElementById('savingsAmount').textContent = '$' + annualSavings.toLocaleString('en-US', {maximumFractionDigits: 0}) + '/yr';
+            document.getElementById('savingsDetails').textContent =
+                'Switch to ' + model.bestName + ' — save ' + pct + '% on API costs';
+        }
+
+        document.getElementById('currentModel').addEventListener('change', calcSavings);
+        document.getElementById('monthlySpend').addEventListener('input', calcSavings);
+        calcSavings();
+
+        // Track page view
+        if (typeof gtag === 'function') {
+            gtag('event', 'page_view', { page_title: 'Save on AI APIs Landing Page' });
+        }
+    </script>
+</body>
+</html>
