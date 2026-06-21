@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Embeddable AI Pricing Widget — Free | APIpulse</title>
+    <meta name="description" content="Free embeddable widget showing live AI API pricing for 14 models. One script tag. Zero dependencies. Add to any site.">
+    <meta name="robots" content="index, follow">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="canonical" href="https://getapipulse.com/widget.html">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0CEP7S9Y3J"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-0CEP7S9Y3J');
+    </script>
+    <script src="analytics.js" defer></script>
+    <script src="shared.js" defer></script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "APIpulse AI Pricing Widget",
+        "description": "Free embeddable widget showing live AI API pricing for 14 models across 7 providers. One script tag, zero dependencies.",
+        "url": "https://getapipulse.com/widget.html",
+        "applicationCategory": "DeveloperApplication",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+        "operatingSystem": "Any",
+        "publisher": { "@type": "Organization", "name": "APIpulse", "url": "https://getapipulse.com" }
+    }
+    </script>
+    <style>
+        .widget-page {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 100px 24px 80px;
+        }
+        .widget-hero {
+            text-align: center;
+            margin-bottom: 48px;
+        }
+        .widget-hero h1 {
+            font-size: clamp(28px, 5vw, 42px);
+            font-weight: 900;
+            margin-bottom: 12px;
+            line-height: 1.2;
+        }
+        .widget-hero h1 span { color: var(--accent); }
+        .widget-hero p {
+            font-size: 17px;
+            color: var(--text-secondary);
+            max-width: 560px;
+            margin: 0 auto 24px;
+            line-height: 1.6;
+        }
+        .badge-row {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 16px;
+        }
+        .stat-badge {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 6px 14px;
+            font-size: 13px;
+            color: var(--text-secondary);
+        }
+        .stat-badge strong { color: var(--text-primary); }
+        .embed-section {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 32px;
+            margin-bottom: 32px;
+        }
+        .embed-section h2 {
+            font-size: 20px;
+            font-weight: 800;
+            margin-bottom: 8px;
+        }
+        .embed-section p {
+            font-size: 14px;
+            color: var(--text-secondary);
+            margin-bottom: 16px;
+            line-height: 1.5;
+        }
+        .code-block {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 20px;
+            font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
+            font-size: 14px;
+            color: var(--accent);
+            overflow-x: auto;
+            position: relative;
+            margin-bottom: 16px;
+            line-height: 1.6;
+        }
+        .code-comment { color: var(--text-muted); }
+        .copy-btn {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            background: var(--accent);
+            color: white;
+            border: none;
+            padding: 6px 14px;
+            border-radius: 6px;
+            font-size: 12px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .copy-btn:hover { transform: translateY(-1px); box-shadow: 0 4px 12px rgba(99,102,241,0.3); }
+        .copy-btn.copied { background: var(--green); }
+        .features-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin-bottom: 32px;
+        }
+        .feature-card {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 20px;
+        }
+        .feature-card .icon { font-size: 24px; margin-bottom: 8px; }
+        .feature-card h3 { font-size: 15px; font-weight: 700; margin-bottom: 4px; }
+        .feature-card p { font-size: 13px; color: var(--text-secondary); line-height: 1.5; }
+        .preview-section {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 32px;
+            margin-bottom: 32px;
+            text-align: center;
+        }
+        .preview-section h2 { font-size: 20px; font-weight: 800; margin-bottom: 8px; }
+        .preview-section p { font-size: 14px; color: var(--text-secondary); margin-bottom: 20px; }
+        .preview-demo {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 24px;
+            min-height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .widget-cta {
+            text-align: center;
+            background: linear-gradient(135deg, rgba(99,102,241,0.08), rgba(139,92,246,0.08));
+            border: 1px solid rgba(99,102,241,0.2);
+            border-radius: 16px;
+            padding: 40px 32px;
+        }
+        .widget-cta h2 { font-size: 24px; font-weight: 800; margin-bottom: 8px; }
+        .widget-cta p { font-size: 15px; color: var(--text-secondary); margin-bottom: 20px; max-width: 480px; margin-left: auto; margin-right: auto; }
+        @media (max-width: 600px) {
+            .features-grid { grid-template-columns: 1fr; }
+            .widget-page { padding: 80px 16px 60px; }
+            .embed-section { padding: 20px 16px; }
+        }
+    </style>
+</head>
+<body>
+    <a href="#main" class="skip-link">Skip to content</a>
+    <nav>
+        <div class="nav-inner">
+            <a href="index.html" class="logo">API<span>pulse</span></a>
+            <div class="nav-links">
+                <a href="pricing.html">Pricing</a>
+                <a href="compare.html">Comparisons</a>
+                <a href="pricing.html" class="nav-cta">Get Pro</a>
+                <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
+            </div>
+        </div>
+    </nav>
+
+    <main id="main" class="widget-page">
+        <div class="widget-hero">
+            <h1>Free AI Pricing <span>Widget</span></h1>
+            <p>Add live AI API pricing to any website with one script tag. 14 models, 7 providers. Zero dependencies. Free forever.</p>
+            <div class="badge-row">
+                <span class="stat-badge"><strong>14</strong> models</span>
+                <span class="stat-badge"><strong>7</strong> providers</span>
+                <span class="stat-badge"><strong>~5KB</strong> gzipped</span>
+                <span class="stat-badge"><strong>$0</strong> forever</span>
+            </div>
+        </div>
+
+        <div class="embed-section">
+            <h2>Add to Your Site</h2>
+            <p>Copy this one line into your HTML. That's it — no signup, no API key, no configuration.</p>
+            <div class="code-block" id="embed-code">
+                <button class="copy-btn" onclick="copyCode()">Copy</button>
+<span class="code-comment"><!-- Add before </body> --></span>
+<script src="https://getapipulse.com/widget/embed.js" defer></script>
+            </div>
+            <div style="font-size:13px;color:var(--text-muted);">
+                <strong>That's it.</strong> The widget appears as a floating badge in the bottom-right corner. Visitors click to see live pricing for 14 AI models sorted by cost.
+            </div>
+        </div>
+
+        <div class="preview-section">
+            <h2>What It Looks Like</h2>
+            <p>A floating badge in the corner. Click to expand the pricing panel. Try it — there's a live demo on this page!</p>
+            <div class="preview-demo">
+                <div style="text-align:center;">
+                    <div style="display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,#6366f1,#8b5cf6);color:white;padding:10px 16px;border-radius:50px;font-size:13px;font-weight:600;box-shadow:0 4px 20px rgba(99,102,241,0.4);">
+                        <span style="font-size:16px;">⚡</span> AI API Pricing
+                    </div>
+                    <div style="font-size:12px;color:var(--text-muted);margin-top:12px;">Look for the badge in the bottom-right corner of this page →</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="icon">📦</div>
+                <h3>Zero Dependencies</h3>
+                <p>Pure JavaScript. No React, no jQuery, no frameworks. Won't conflict with your existing code.</p>
+            </div>
+            <div class="feature-card">
+                <div class="icon">🔒</div>
+                <h3>Style-Isolated</h3>
+                <p>Uses Shadow DOM to prevent CSS conflicts with your site. Your styles stay clean.</p>
+            </div>
+            <div class="feature-card">
+                <div class="icon">📱</div>
+                <h3>Mobile Friendly</h3>
+                <p>Responsive design that works on all screen sizes. Tested on mobile, tablet, and desktop.</p>
+            </div>
+            <div class="feature-card">
+                <div class="icon">⚡</div>
+                <h3>Fast Loading</h3>
+                <p>~5KB gzipped. Loads async so it never blocks your page. No external requests at runtime.</p>
+            </div>
+            <div class="feature-card">
+                <div class="icon">🔄</div>
+                <h3>Always Up to Date</h3>
+                <p>Pricing data updated regularly. One script tag update = latest prices for all embeds.</p>
+            </div>
+            <div class="feature-card">
+                <div class="icon">🆓</div>
+                <h3>Free Forever</h3>
+                <p>No signup, no API key, no usage limits. Embed on unlimited sites. Free for everyone.</p>
+            </div>
+        </div>
+
+        <div class="embed-section">
+            <h2>Who Should Embed This?</h2>
+            <p>The widget is perfect for developer-focused sites that discuss AI, APIs, or software costs.</p>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:16px;">
+                <div style="display:flex;align-items:flex-start;gap:8px;font-size:14px;color:var(--text-secondary);">
+                    <span style="color:var(--green);">✓</span> AI/ML blogs and tutorials
+                </div>
+                <div style="display:flex;align-items:flex-start;gap:8px;font-size:14px;color:var(--text-secondary);">
+                    <span style="color:var(--green);">✓</span> Developer documentation sites
+                </div>
+                <div style="display:flex;align-items:flex-start;gap:8px;font-size:14px;color:var(--text-secondary);">
+                    <span style="color:var(--green);">✓</span> SaaS comparison sites
+                </div>
+                <div style="display:flex;align-items:flex-start;gap:8px;font-size:14px;color:var(--text-secondary);">
+                    <span style="color:var(--green);">✓</span> Startup resource pages
+                </div>
+                <div style="display:flex;align-items:flex-start;gap:8px;font-size:14px;color:var(--text-secondary);">
+                    <span style="color:var(--green);">✓</span> Engineering team wikis
+                </div>
+                <div style="display:flex;align-items:flex-start;gap:8px;font-size:14px;color:var(--text-secondary);">
+                    <span style="color:var(--green);">✓</span> AI tool directories
+                </div>
+            </div>
+        </div>
+
+        <div class="embed-section">
+            <h2>Technical Details</h2>
+            <table style="width:100%;border-collapse:collapse;font-size:14px;margin-top:12px;">
+                <tr style="border-bottom:1px solid var(--border);">
+                    <td style="padding:10px 0;color:var(--text-muted);width:140px;">File size</td>
+                    <td style="padding:10px 0;color:var(--text-primary);">~5KB gzipped, ~14KB raw</td>
+                </tr>
+                <tr style="border-bottom:1px solid var(--border);">
+                    <td style="padding:10px 0;color:var(--text-muted);">Dependencies</td>
+                    <td style="padding:10px 0;color:var(--text-primary);">None (pure JavaScript)</td>
+                </tr>
+                <tr style="border-bottom:1px solid var(--border);">
+                    <td style="padding:10px 0;color:var(--text-muted);">Style isolation</td>
+                    <td style="padding:10px 0;color:var(--text-primary);">Shadow DOM (no CSS conflicts)</td>
+                </tr>
+                <tr style="border-bottom:1px solid var(--border);">
+                    <td style="padding:10px 0;color:var(--text-muted);">Browser support</td>
+                    <td style="padding:10px 0;color:var(--text-primary);">Chrome, Firefox, Safari, Edge (modern)</td>
+                </tr>
+                <tr style="border-bottom:1px solid var(--border);">
+                    <td style="padding:10px 0;color:var(--text-muted);">Position</td>
+                    <td style="padding:10px 0;color:var(--text-primary);">Fixed bottom-right (customizable via CSS)</td>
+                </tr>
+                <tr>
+                    <td style="padding:10px 0;color:var(--text-muted);">License</td>
+                    <td style="padding:10px 0;color:var(--text-primary);">Free for any use, no attribution required</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="widget-cta">
+            <h2>Need Full Cost Analysis?</h2>
+            <p>The widget shows pricing. APIpulse Pro shows you exactly how much you can save — with migration code.</p>
+            <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
+                <a href="generate-report.html" class="btn btn-primary">Generate Free Report →</a>
+                <a href="pricing.html" class="btn btn-secondary">See Pro Features</a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>© 2026 APIpulse. <a href="index.html">Home</a> · <a href="about.html">About</a> · <a href="blog.html">Blog</a> · <a href="api-cost-audit.html">🔍 Cost Audit</a> · <a href="pricing.html">Pricing</a></p>
+    </footer>
+
+    <script>
+    function copyCode() {
+        var code = '<script src="https://getapipulse.com/widget/embed.js" defer><\/script>';
+        navigator.clipboard.writeText(code).then(function() {
+            var btn = document.querySelector('.copy-btn');
+            btn.textContent = 'Copied!';
+            btn.classList.add('copied');
+            setTimeout(function() { btn.textContent = 'Copy'; btn.classList.remove('copied'); }, 2000);
+        });
+        if (window.trackEvent) window.trackEvent('widget_code_copied');
+    }
+    </script>
+    <!-- Live widget demo on this page -->
+    <script src="widget/embed.js" defer></script>
+</body>
+</html>
