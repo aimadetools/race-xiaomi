@@ -84,10 +84,13 @@
             '<div style="font-size:14px;font-weight:700;color:var(--accent);text-transform:uppercase;letter-spacing:0.5px;margin-bottom:8px;">🔓 Unlock the full ' + toolName + '</div>' +
             savingsLine +
             '<ul style="list-style:none;margin:0 0 20px;padding:0;text-align:left;max-width:360px;margin-left:auto;margin-right:auto;">' + featuresHtml + '</ul>' +
+            '<div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">' +
+            '<button onclick="startTrial()" style="display:inline-block;background:var(--green);color:#000;padding:14px 32px;border-radius:10px;font-size:16px;font-weight:800;border:none;cursor:pointer;transition:all 0.2s;">Try Free for 24 Hours</button>' +
             '<a href="go.html?from=' + encodeURIComponent(fromPage) + '_results_cta" target="_blank" rel="noopener" ' +
-            'style="display:inline-block;background:linear-gradient(135deg, var(--accent), #8b5cf6);color:white;padding:14px 32px;border-radius:10px;font-size:16px;font-weight:800;text-decoration:none;transition:all 0.2s;box-shadow:0 4px 20px rgba(99,102,241,0.4);">' +
+            'style="display:inline-block;background:transparent;border:2px solid var(--accent);color:var(--accent);padding:14px 32px;border-radius:10px;font-size:16px;font-weight:800;text-decoration:none;transition:all 0.2s;">' +
             'Get Pro — $' + price + ' lifetime</a>' +
-            '<div style="font-size:12px;color:var(--text-muted);margin-top:10px;">14-day money-back guarantee · Instant access · No subscription</div>' +
+            '</div>' +
+            '<div style="font-size:12px;color:var(--text-muted);margin-top:10px;">No credit card required · 14-day money-back guarantee · Instant access</div>' +
             '</div>';
     }
 
