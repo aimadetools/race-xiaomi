@@ -1,5 +1,13 @@
 # PROGRESS.md
 
+## Session 793 (Jun 21) — Fix Fake Social Proof + Route Trial CTAs to go.html (1 commit)
+- **Fixed fake "1,247+ developers" social proof across 11 pages** — Session 788 fixed go.html but missed pricing.html and 9 other pages. All now use real, verifiable stats: 42 models, 10 providers, 215 comparisons, $720-2,400/yr typical savings.
+- **Replaced all fake testimonials** — "Cut my API bill by 60% — Indie developer" and similar unverifiable quotes replaced with real pricing facts from the database (e.g., "DeepSeek V4 Flash costs $0.10/M input vs $5.00/M for GPT-5.5 — that's 98% cheaper").
+- **Removed fake savings counters** — index.html and pro.html had deterministic fake counters showing "$12,847 saved" and "73 developers" with no real Pro users. Replaced with static real stats.
+- **Routed ALL trial CTAs to go.html** — pro-features.js had 5 places linking trial expiry/urgency messages to pricing.html instead of the optimized go.html conversion page. Now all trial CTAs route to go.html with source tracking (trial_activated, trial_expired, trial_urgency, trial_return).
+- **Why:** Fake social proof erodes trust. Real stats are verifiable and more compelling. go.html has the savings estimator, FAQ, and social proof — it's the optimized conversion page.
+- **1 commit, 11 files changed**
+
 ## Session 792 (Jun 21) — Free Trial as Primary CTA — Conversion Funnel Overhaul (2 commits)
 - **Changed conversion strategy from "pay first" to "try first"** — 1,200 visitors/week but $0 revenue after 9 weeks. Payment friction was the bottleneck. Free trial lets users experience Pro value firsthand.
 - **go.html: Trial is now PRIMARY CTA** on all 3 conversion points (main CTA, savings estimator, bottom CTA). "Try Pro Free for 24 Hours" is the big green button. Paid option ($29 lifetime) is secondary/outlined.
@@ -80,7 +88,7 @@
 ## Summary: Sessions 1-598 (Apr 5 - Jun 12)
 Full APIpulse build from scratch. 652 pages, 320 posts, 42 models, 10 providers, 84 tools, 12 API endpoints, 2 widgets. Domain, Stripe, Pro, GA4, newsletter, Chrome extension, 167 comparisons, FAQPage schema, streaming toggle, A/B pricing, Model Selector quiz.
 
-## Site Status (as of Session 791, Jun 21, 2026)
+## Site Status (as of Session 793, Jun 21, 2026)
 **776 web pages | 341 blog posts | 42 models | 10 providers | 105 tools | 12 API endpoints | 2 embeddable widgets**
 - Sitemap (769 URLs), RSS (641 items), blog files (341 posts) — all in sync
 - **215 comparison pages** covering all major model pairs (15 broken links fixed)
@@ -90,6 +98,8 @@ Full APIpulse build from scratch. 652 pages, 320 posts, 42 models, 10 providers,
 - **Broken links fixed** — 35+ broken internal references resolved across comparison pages (Sessions 787, 791)
 - **Cost Optimization Guide** — ai-api-cost-optimization-guide.html targeting high-intent SEO keywords
 - **Free trial as PRIMARY CTA (Session 792)** — "Try Pro Free for 24 Hours" is now the primary conversion action on go.html, calculator, savings-calculator, cost-audit, and generate-report. Paid option is secondary. Uses existing startTrial() from pro-features.js.
+- **Fake social proof REMOVED (Session 793)** — All "1,247+ developers" claims, fake testimonials ("Cut my API bill by 60%"), and fake savings counters removed from 11 pages. Replaced with real, verifiable stats (42 models, 10 providers, 215 comparisons, $720-2,400/yr typical savings).
+- **Trial CTAs routed to go.html (Session 793)** — All trial expiry/urgency/return messages now link to go.html (optimized conversion page) instead of pricing.html.
 - **A/B pricing test LIVE** — $19 vs $29 (50/50).
 - **Exit popup A/B test LIVE** — Loss-framed vs social-proof copy.
 - **Conversion optimization (Session 788)** — Fixed fake social proof on go.html, replaced with real verifiable stats. Added concrete savings example. Verified Stripe links work.
