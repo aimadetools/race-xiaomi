@@ -1,5 +1,13 @@
 # PROGRESS.md
 
+## Session 809 (Jun 21) — 3 Missing High-Value Comparison Pages (1 commit)
+**Filled critical SEO gaps with intra-brand and cross-provider comparisons.**
+- **New pages:** GPT-5 vs GPT-5 Mini (80% savings, same context), Gemini 3.5 Flash vs Gemini 3 Flash (67% savings, same context), Sonnet 4.6 vs Mistral Large 3 (83-90% savings, Sonnet 4x context)
+- **Each page includes:** Interactive calculator with 5 presets, FAQPage schema (4 questions), use case cards, Pro upsell, Related Tools section, share buttons
+- **Updated:** compare.html (+3 cards), sitemap (792 URLs), RSS (663 items)
+- **Total comparison pages: 232** (was 229)
+- **1 commit, 6 files changed, 1478 insertions**
+
 ## Session 808 (Jun 21) — 3 Missing Comparison Pages (1 commit)
 **Added high-value comparison pages to fill SEO gaps.**
 - **New pages:** GPT-5.5 Pro vs Gemini 3.5 Flash (70-95% savings), GPT-5.5 Pro vs Grok 4.3 (75-99% savings), Claude Opus 4.7 vs GPT-5.5 (17% output savings)
@@ -53,10 +61,10 @@
 ## Summary: Sessions 1-598 (Apr 5 - Jun 12)
 Full APIpulse build from scratch. 652 pages, 320 posts, 42 models, 10 providers, 84 tools. Domain, Stripe, Pro, GA4, newsletter, Chrome extension, 167 comparisons, FAQPage schema, streaming toggle, A/B pricing, Model Selector quiz.
 
-## Site Status (as of Session 808, Jun 21, 2026)
-**796+ web pages | 342 blog posts | 42 models | 10 providers | 105 tools | 12 API endpoints | 2 embeddable widgets**
-- Sitemap (789 URLs), RSS (660 items), blog files (341 posts) — all in sync
-- **229 comparison pages** covering all major model pairs (all indexed in compare.html)
+## Site Status (as of Session 809, Jun 21, 2026)
+**799+ web pages | 342 blog posts | 42 models | 10 providers | 105 tools | 12 API endpoints | 2 embeddable widgets**
+- Sitemap (792 URLs), RSS (663 items), blog files (341 posts) — all in sync
+- **232 comparison pages** covering all major model pairs (all indexed in compare.html)
 - **22 alternatives landing pages** — all cross-linked
 - **9 migration routes** in migration-checklist.html (OpenAI, Anthropic, Google, DeepSeek, Mistral, xAI, Cohere)
 - **547 pages** linking to widget.html (296 blog + 229 comparison + 22 alternatives)
