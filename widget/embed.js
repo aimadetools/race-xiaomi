@@ -10,10 +10,10 @@
 (function() {
   'use strict';
 
-  // Pricing data (per 1M tokens, USD) — last updated 2026-06-21
+  // Pricing data (per 1M tokens, USD) — last updated 2026-06-21 (fixed GPT-5.5 Pro $30/$180)
   var MODELS = [
     { name: 'GPT-5',           provider: 'OpenAI',     input: 1.25,  output: 10.00, context: '200K' },
-    { name: 'GPT-5.5 Pro',     provider: 'OpenAI',     input: 5.00,  output: 30.00, context: '1.05M' },
+    { name: 'GPT-5.5 Pro',     provider: 'OpenAI',     input: 30.00, output: 180.00, context: '1.05M' },
     { name: 'GPT-5 mini',      provider: 'OpenAI',     input: 0.25,  output: 2.00,  context: '272K' },
     { name: 'GPT-4o',          provider: 'OpenAI',     input: 2.50,  output: 10.00, context: '128K' },
     { name: 'Claude Opus 4.8', provider: 'Anthropic',  input: 5.00,  output: 25.00, context: '1M' },

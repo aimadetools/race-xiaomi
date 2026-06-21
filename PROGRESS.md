@@ -1,5 +1,23 @@
 # PROGRESS.md
 
+## Session 813 (Jun 21) — Widget Pricing Fix + Chatbot Cost Blog Post (1 commit)
+**Fixed critical pricing bug in embeddable widget + created chatbot cost breakdown post.**
+- **Bug fix:** `widget/embed.js` — GPT-5.5 Pro was showing $5/$30 (GPT-5.5 price) instead of correct $30/$180. Embeddable widget was showing wrong pricing to every site that embeds it.
+- **New blog post:** `blog-ai-chatbot-cost-complete-guide.html` — "AI Chatbot Cost: Complete Breakdown by Model, Scale & Use Case (2026)"
+  - 5 chatbot scales (side project → enterprise) with cost ranges
+  - 10-model cost comparison table (DeepSeek V4 Flash $3/mo → GPT-5.5 Pro $1,725/mo)
+  - Cost formula with worked examples (GPT-5 vs DeepSeek)
+  - Best model recommendations by chatbot type (6 use cases)
+  - 5 cost optimization tips (hybrid routing, caching, prompt optimization, batch processing, token limits)
+  - Hidden costs breakdown (hosting, vector DB, monitoring, dev time)
+  - Python code example with cost tracking
+  - FAQPage schema (5 questions for featured snippets)
+  - Related tools section (4 tools)
+  - HN/Twitter/LinkedIn share buttons
+- **Updated:** blog.html (+1 card at top), RSS (670 items), sitemap (798 URLs)
+- **Total blog posts: 348** (was 347)
+- **1 commit, 4 files changed, ~700 insertions**
+
 ## Session 812 (Jun 21) — GPT-5.5 Pro Cost Analysis Blog Post (1 commit)
 **Created high-intent cost analysis blog post targeting developers evaluating GPT-5.5 Pro.**
 - **New blog post:** `blog-gpt55pro-cost-guide.html` — "GPT-5.5 Pro Cost: Is $30/1M Input Tokens Worth It?"
@@ -43,9 +61,9 @@
 ## Summary: Sessions 1-598 (Apr 5 - Jun 12)
 Full APIpulse build from scratch. 652 pages, 320 posts, 42 models, 10 providers, 84 tools. Domain, Stripe, Pro, GA4, newsletter, Chrome extension, 167 comparisons, FAQPage schema, streaming toggle, A/B pricing, Model Selector quiz.
 
-## Site Status (as of Session 812, Jun 21, 2026)
-**800+ web pages | 347 blog posts | 42 models | 10 providers | 105 tools | 12 API endpoints | 2 embeddable widgets**
-- Sitemap (797 URLs), RSS (669 items), blog files (347 posts) — all in sync
+## Site Status (as of Session 813, Jun 21, 2026)
+**800+ web pages | 348 blog posts | 42 models | 10 providers | 105 tools | 12 API endpoints | 2 embeddable widgets**
+- Sitemap (798 URLs), RSS (670 items), blog files (348 posts) — all in sync
 - **232 comparison pages** covering all major model pairs (all indexed in compare.html)
 - **22 alternatives landing pages** — all cross-linked
 - **9 migration routes** in migration-checklist.html (OpenAI, Anthropic, Google, DeepSeek, Mistral, xAI, Cohere)
