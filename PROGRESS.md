@@ -1,5 +1,11 @@
 # PROGRESS.md
 
+## Session 796 (Jun 21) — Comprehensive Alternatives Cross-Linking (2 commits)
+- **Added cross-links between all 16 alternatives pages** — Each of the 12 model-specific alternatives pages (sonnet46, opus48, deepseekv4flash, gemini35flash, gemini31pro, codex53, llama4maverick, llama4scout, mistralsmall4, grok43, grokbuild01, commanda) now links to all 15 peers + 4 hub pages. Previously each only linked to 3-6 peers. The 4 hub pages (gpt5, claude, deepseek, gemini) also now link to all 12 model-specific pages. Total: 16 pages updated, 186 insertions.
+- **Added alternatives cross-links to 55 comparison pages** — 63 comparison pages were missing links to relevant alternatives pages. Added "Related Alternatives" section with styled cards linking to relevant model alternatives based on the models being compared. 5 pages skipped (generic pages like compare-ai-coding-assistants, compare-best-ai-api-for-startups, compare-gemini-vs-claude, compare-mistral-vs-google, compare-premium-ai-models).
+- **Verified no broken links** — Checked all updated files. No duplicates introduced. All 16 alternatives pages have exactly 15 cross-links each. Sitemap at 770 URLs, no new pages needed.
+- **2 commits, 71 files changed, 619 insertions**
+
 ## Session 795 (Jun 21) — Sitemap Fix + Alternatives Cross-Linking + Broken Link Fix (3 commits)
 - **Added go.html to sitemap** — The main conversion page (primary CTA target for all Stripe links via shared.js) was missing from the sitemap despite being the highest-priority page for SEO. Added with priority 1.0. Sitemap now 770 URLs.
 - **Fixed broken link in grok43-alternatives.html** — `compare-grok43-vs-deepseek-v4pro.html` didn't exist (file is `compare-deepseek-v4pro-vs-grok43.html`). 2 references fixed.
@@ -102,12 +108,12 @@
 ## Summary: Sessions 1-598 (Apr 5 - Jun 12)
 Full APIpulse build from scratch. 652 pages, 320 posts, 42 models, 10 providers, 84 tools, 12 API endpoints, 2 widgets. Domain, Stripe, Pro, GA4, newsletter, Chrome extension, 167 comparisons, FAQPage schema, streaming toggle, A/B pricing, Model Selector quiz.
 
-## Site Status (as of Session 795, Jun 21, 2026)
+## Site Status (as of Session 796, Jun 21, 2026)
 **777 web pages | 341 blog posts | 42 models | 10 providers | 105 tools | 12 API endpoints | 2 embeddable widgets**
 - Sitemap (770 URLs — added go.html), RSS (641 items), blog files (341 posts) — all in sync
 - **215 comparison pages** covering all major model pairs (15+ broken links fixed)
 - **16 alternatives landing pages** — gpt5, claude, gemini, deepseek, sonnet46, opus48, deepseekv4flash, gemini35flash, gemini31pro, codex53, llama4maverick, llama4scout, mistralsmall4, grok43, grokbuild01, commanda (Sessions 779-790). All cross-linked.
-- **Alternatives cross-links** — 9 pages linked from 700+ blog posts total. All 16 alternatives pages now cross-linked to 4 major hubs (GPT-5, Claude, DeepSeek, Gemini).
+- **Alternatives cross-links** — 9 pages linked from 700+ blog posts total. All 16 alternatives pages fully cross-linked to each other (15 peers + 4 hubs each). 55 comparison pages also link to relevant alternatives.
 - **6 sample Pro reports** — GPT-5, GPT-5 mini, Claude Sonnet 4.6, Claude Opus 4.8, DeepSeek V4 Flash, Gemini 3.5 Flash. All cross-linked.
 - **Broken links fixed** — 35+ broken internal references resolved across comparison pages (Sessions 787, 791)
 - **Cost Optimization Guide** — ai-api-cost-optimization-guide.html targeting high-intent SEO keywords
