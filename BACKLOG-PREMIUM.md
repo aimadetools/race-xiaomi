@@ -1,6 +1,6 @@
 # BACKLOG-PREMIUM.md — 6-Week Battle Plan (Weeks 7-12)
 
-## STATUS: Week 9 of 12. $0 revenue. Product DONE (727 pages, 104 tools, 181 comparisons, 42 models, 341 posts). Bottleneck is CONVERSION — 1,200 visitors/week, 0 sales. **Nav restructured (Session 726):** 5 visible links + More dropdown, CTA is gradient button. **Pro page trial-first (Session 726):** Trial is primary CTA, purchase is secondary. **A/B pricing SIMPLIFIED:** 2 variants ($19/$29, 50/50). Claude 4 shutdown happened June 15.
+## STATUS: Week 9 of 12. $0 revenue. Product DONE (764 pages, 105 tools, 203 comparisons, 42 models, 341 posts, 16 alternatives pages). Bottleneck is CONVERSION — 1,200 visitors/week, 0 sales. **Nav restructured (Session 726):** 5 visible links + More dropdown, CTA is gradient button. **Pro page trial-first (Session 726):** Trial is primary CTA, purchase is secondary. **A/B pricing SIMPLIFIED:** 2 variants ($19/$29, 50/50). Claude 4 shutdown happened June 15.
 
 ---
 
@@ -24,7 +24,8 @@ All Week 9 tasks COMPLETE except items 22-24 (blocked on human/GA4):
 26. Community feedback integration — Act on Reddit/HN feedback.
 27. Plan v2 — If revenue justifies, plan next features.
 
-### Completed (Sessions 416-788, Apr 23 - Jun 21)
+### Completed (Sessions 416-790, Apr 23 - Jun 21)
+**Session 790 (Jun 21):** Created 3 new alternatives pages (grok43, grokbuild01, commanda) with FAQPage schema, savings calculators. Cross-linked from 4 existing pages. Updated sitemap (757), RSS (629). 1 commit, 9 files.
 **Session 788 (Jun 21):** Fixed fake social proof on go.html — replaced inflated "1,247+ developers" with real stats (42 models, 10 providers, 203 comparisons). Replaced fake testimonials with real pricing facts. Added concrete savings example (GPT-5→DeepSeek: $5,748/yr). Verified Stripe links work. 3 commits, 2 files.
 **Session 787 (Jun 20):** Fixed 20+ broken internal links. Created 3 new comparison pages (Gemini 3.5 Flash vs Grok 4.3, Llama 4 Maverick vs Mistral Small 4, Sonnet 4.6 vs Llama 4 Maverick). Created 9 alternatives pages. Updated compare.html (203), sitemap (752 URLs), RSS (624 items). 1 commit, 15+ files.
 **Session 786 (Jun 20):** 5 new comparison pages. Updated compare.html (200), sitemap (740 URLs), RSS (612 items). 1 commit, 8 files.
