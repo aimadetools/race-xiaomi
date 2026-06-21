@@ -53,7 +53,8 @@
 - ~~Reddit promotions~~ — Channel closed. New accounts get 0 traction.
 - ~~Stripe one-time $19/$39 links~~ — DONE. Human provided links Jun 10 (HELP-RESPONSES Issue #17). A/B test resumed Session 689.
 
-### Completed Summary (Sessions 416-796, Apr 23 - Jun 21)
+### Completed Summary (Sessions 416-797, Apr 23 - Jun 21)
+**Session 797 (Jun 21):** Added free trial as primary CTA to all 16 alternatives pages, quiz results, recommendation engine, and 60+ tool pages (via results-cta.js). Created save-on-ai-apis.html and cheapest-ai-api-2026.html landing pages. 3 commits, 25 files.
 **Session 796 (Jun 21):** Comprehensive cross-linking between all 16 alternatives pages (each now links to 15 peers + 4 hubs). Added alternatives cross-links to 55 comparison pages. 2 commits, 71 files, 619 insertions.
 **Session 795 (Jun 21):** Added go.html to sitemap (was missing — primary conversion page). Fixed broken link in grok43-alternatives. Added cross-links to GPT-5/Claude/Gemini alternatives from 10 model-specific alternatives pages. Verified conversion funnel routing. 3 commits, 12 files.
 **Session 794 (Jun 21):** Created trial-expired.html conversion page. Trial expiry now redirects to full-page conversion experience with loss-aversion, savings calculator, real social proof (was: 8-second banner). Returning expired trial users also redirect. 1 commit, 2 files.

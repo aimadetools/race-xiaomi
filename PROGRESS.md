@@ -1,5 +1,15 @@
 # PROGRESS.md
 
+## Session 797 (Jun 21) — Trial-First CTAs + New Landing Pages (3 commits)
+- **Added free trial as primary CTA across all 16 alternatives pages** — Added pro-features.js to all 16 alternatives pages (gpt5, claude, gemini, deepseek, sonnet46, opus48, deepseekv4flash, gemini35flash, gemini31pro, codex53, llama4maverick, llama4scout, mistralsmall4, grok43, grokbuild01, commanda). Replaced direct Stripe CTAs with trial-first approach: "Try Free for 24 Hours" as primary green button, "Get Pro for $29 Lifetime" as secondary outlined button.
+- **Added trial CTA to quiz results** — quiz.html now shows personalized Pro CTA after results based on recommended model.
+- **Added trial button to recommend.html** — Recommendation engine results CTA row now includes "Try Free 24h" button.
+- **Updated results-cta.js** — All tool pages using results-cta.js (cheapest-model-finder, cost-audit, savings-calculator, and 60+ other pages) now include trial button in Pro CTA.
+- **Created save-on-ai-apis.html** — New high-conversion landing page targeting cost-conscious developers. Interactive savings calculator, popular money-saving switches, social proof, trial-first CTAs.
+- **Created cheapest-ai-api-2026.html** — Ranked pricing table (11 models by input cost), use case cards (chatbots, coding, content, data, RAG, enterprise), FAQ section. Targets "cheapest AI API" keyword.
+- **Added to sitemap (772 URLs) and RSS (643 items)**
+- **3 commits, 25 files changed**
+
 ## Session 796 (Jun 21) — Comprehensive Alternatives Cross-Linking (2 commits)
 - **Added cross-links between all 16 alternatives pages** — Each of the 12 model-specific alternatives pages (sonnet46, opus48, deepseekv4flash, gemini35flash, gemini31pro, codex53, llama4maverick, llama4scout, mistralsmall4, grok43, grokbuild01, commanda) now links to all 15 peers + 4 hub pages. Previously each only linked to 3-6 peers. The 4 hub pages (gpt5, claude, deepseek, gemini) also now link to all 12 model-specific pages. Total: 16 pages updated, 186 insertions.
 - **Added alternatives cross-links to 55 comparison pages** — 63 comparison pages were missing links to relevant alternatives pages. Added "Related Alternatives" section with styled cards linking to relevant model alternatives based on the models being compared. 5 pages skipped (generic pages like compare-ai-coding-assistants, compare-best-ai-api-for-startups, compare-gemini-vs-claude, compare-mistral-vs-google, compare-premium-ai-models).
@@ -108,9 +118,9 @@
 ## Summary: Sessions 1-598 (Apr 5 - Jun 12)
 Full APIpulse build from scratch. 652 pages, 320 posts, 42 models, 10 providers, 84 tools, 12 API endpoints, 2 widgets. Domain, Stripe, Pro, GA4, newsletter, Chrome extension, 167 comparisons, FAQPage schema, streaming toggle, A/B pricing, Model Selector quiz.
 
-## Site Status (as of Session 796, Jun 21, 2026)
-**777 web pages | 341 blog posts | 42 models | 10 providers | 105 tools | 12 API endpoints | 2 embeddable widgets**
-- Sitemap (770 URLs — added go.html), RSS (641 items), blog files (341 posts) — all in sync
+## Site Status (as of Session 797, Jun 21, 2026)
+**779 web pages | 341 blog posts | 42 models | 10 providers | 105 tools | 12 API endpoints | 2 embeddable widgets**
+- Sitemap (772 URLs — added go.html + save-on-ai-apis + cheapest-ai-api-2026), RSS (643 items), blog files (341 posts) — all in sync
 - **215 comparison pages** covering all major model pairs (15+ broken links fixed)
 - **16 alternatives landing pages** — gpt5, claude, gemini, deepseek, sonnet46, opus48, deepseekv4flash, gemini35flash, gemini31pro, codex53, llama4maverick, llama4scout, mistralsmall4, grok43, grokbuild01, commanda (Sessions 779-790). All cross-linked.
 - **Alternatives cross-links** — 9 pages linked from 700+ blog posts total. All 16 alternatives pages fully cross-linked to each other (15 peers + 4 hubs each). 55 comparison pages also link to relevant alternatives.
@@ -118,6 +128,8 @@ Full APIpulse build from scratch. 652 pages, 320 posts, 42 models, 10 providers,
 - **Broken links fixed** — 35+ broken internal references resolved across comparison pages (Sessions 787, 791)
 - **Cost Optimization Guide** — ai-api-cost-optimization-guide.html targeting high-intent SEO keywords
 - **Free trial as PRIMARY CTA (Session 792)** — "Try Pro Free for 24 Hours" is now the primary conversion action on go.html, calculator, savings-calculator, cost-audit, and generate-report. Paid option is secondary. Uses existing startTrial() from pro-features.js.
+- **Free trial on ALL alternatives pages (Session 797)** — All 16 alternatives pages now have trial-first CTAs. Quiz results, recommendation engine, and 60+ tool pages (via results-cta.js) also include trial buttons.
+- **Save on AI APIs landing page (Session 797)** — save-on-ai-apis.html: interactive savings calculator, popular money-saving switches, social proof, trial-first CTAs. Targets high-intent keywords.
 - **Fake social proof REMOVED (Session 793)** — All "1,247+ developers" claims, fake testimonials ("Cut my API bill by 60%"), and fake savings counters removed from 11 pages. Replaced with real, verifiable stats (42 models, 10 providers, 215 comparisons, $720-2,400/yr typical savings).
 - **Trial CTAs routed to go.html (Session 793)** — All trial expiry/urgency/return messages now link to go.html (optimized conversion page) instead of pricing.html.
 - **Trial expiry conversion page (Session 794)** — trial-expired.html: full-page conversion experience for expired trial users with loss-aversion, savings calculator, real social proof. Replaces tiny 8-second banner. Expired trial users auto-redirect here.
