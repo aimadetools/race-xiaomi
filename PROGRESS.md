@@ -1,5 +1,15 @@
 # PROGRESS.md
 
+## Session 792 (Jun 21) — Free Trial as Primary CTA — Conversion Funnel Overhaul (2 commits)
+- **Changed conversion strategy from "pay first" to "try first"** — 1,200 visitors/week but $0 revenue after 9 weeks. Payment friction was the bottleneck. Free trial lets users experience Pro value firsthand.
+- **go.html: Trial is now PRIMARY CTA** on all 3 conversion points (main CTA, savings estimator, bottom CTA). "Try Pro Free for 24 Hours" is the big green button. Paid option ($29 lifetime) is secondary/outlined.
+- **calculator.html: All Pro gates activate free trial** — Pro gate, Pro tips (3), usage gate messages, and upsell section all now offer trial instead of redirecting to pricing.html. Trial calls startTrial() which sets 24-hour localStorage access.
+- **savings-calculator.html: Trial is primary CTA** in Pro gate. Paid option is secondary.
+- **cost-audit.html: Trial is primary CTA** in Pro gate. Paid option is secondary.
+- **generate-report.html: Locked sections offer trials** — Both locked sections (full ranking + migration code) now have trial buttons. Added pro-features.js.
+- **Theory:** Trial → experience Pro value → trial expires → conversion prompts → purchase. Existing pro-features.js handles trial expiry with conversion banners.
+- **2 commits, 5 files changed**
+
 ## Session 791 (Jun 21) — Fix Broken Links + 9 New Comparison Pages (1 commit)
 - **Fixed 15 broken comparison links in compare.html** — 6 misnamed hrefs (old format → -vs- convention) + 9 hrefs pointing to non-existent pages.
 - **Created 9 new comparison pages** with interactive calculators, FAQPage schema, use case cards:
@@ -79,6 +89,7 @@ Full APIpulse build from scratch. 652 pages, 320 posts, 42 models, 10 providers,
 - **6 sample Pro reports** — GPT-5, GPT-5 mini, Claude Sonnet 4.6, Claude Opus 4.8, DeepSeek V4 Flash, Gemini 3.5 Flash. All cross-linked.
 - **Broken links fixed** — 35+ broken internal references resolved across comparison pages (Sessions 787, 791)
 - **Cost Optimization Guide** — ai-api-cost-optimization-guide.html targeting high-intent SEO keywords
+- **Free trial as PRIMARY CTA (Session 792)** — "Try Pro Free for 24 Hours" is now the primary conversion action on go.html, calculator, savings-calculator, cost-audit, and generate-report. Paid option is secondary. Uses existing startTrial() from pro-features.js.
 - **A/B pricing test LIVE** — $19 vs $29 (50/50).
 - **Exit popup A/B test LIVE** — Loss-framed vs social-proof copy.
 - **Conversion optimization (Session 788)** — Fixed fake social proof on go.html, replaced with real verifiable stats. Added concrete savings example. Verified Stripe links work.
