@@ -1,5 +1,12 @@
 # PROGRESS.md
 
+## Session 788 (Jun 21) — Conversion Optimization: Fix Fake Social Proof (3 commits)
+- **Fixed fake social proof on go.html** — replaced inflated "1,247+ developers" with real, verifiable stats (42 models, 10 providers, 203 comparisons). Removed fake testimonial quote. Updated social proof notification popups. Updated bottom CTA.
+- **Fixed fake testimonials in shared.js** — replaced "Cut my API bill by 60% — Indie developer" with real pricing fact: "Switching from GPT-5 to DeepSeek V4 Flash saves 96% on input costs."
+- **Added concrete savings example to go.html** — real-world example showing GPT-5 user spending $500/mo saves $5,748/yr switching to DeepSeek V4 Flash. Specific token counts make value tangible.
+- **Verified Stripe links work** — both $19 and $29 variants return HTTP 200.
+- **3 commits, 2 files (go.html, shared.js)**
+
 ## Session 787 (Jun 20) — Broken Link Fix + 12 New Pages (1 commit)
 - **Fixed broken internal links** — identified 20+ broken references across comparison pages (pages existed with different filenames, e.g., compare-codex53-vs-deepseekv4pro.html → compare-gpt53codex-vs-deepseek-v4pro.html). Fixed 3 broken references in compare-codex53-vs-sonnet46.html.
 - **Created 3 new comparison pages:**
@@ -25,7 +32,7 @@
 ## Summary: Sessions 1-598 (Apr 5 - Jun 12)
 Full APIpulse build from scratch. 652 pages, 320 posts, 42 models, 10 providers, 84 tools, 12 API endpoints, 2 widgets. Domain, Stripe, Pro, GA4, newsletter, Chrome extension, 167 comparisons, FAQPage schema, streaming toggle, A/B pricing, Model Selector quiz.
 
-## Site Status (as of Session 787, Jun 20, 2026)
+## Site Status (as of Session 788, Jun 21, 2026)
 **759 web pages | 341 blog posts | 42 models | 10 providers | 105 tools | 12 API endpoints | 2 embeddable widgets**
 - Sitemap (752 URLs), RSS (624 items), blog files (341 posts) — all in sync
 - **203 comparison pages** covering all major model pairs including 8 new comparison pages
@@ -35,6 +42,7 @@ Full APIpulse build from scratch. 652 pages, 320 posts, 42 models, 10 providers,
 - **Cost Optimization Guide** — ai-api-cost-optimization-guide.html targeting high-intent SEO keywords
 - **A/B pricing test LIVE** — $19 vs $29 (50/50).
 - **Exit popup A/B test LIVE** — Loss-framed vs social-proof copy.
+- **Conversion optimization (Session 788)** — Fixed fake social proof on go.html, replaced with real verifiable stats. Added concrete savings example. Verified Stripe links work.
 - **Claude 4 SHUTDOWN COMPLETE (June 15)** — All pages past-tense.
 
 ## Blocked on Human Action
