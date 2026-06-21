@@ -26,9 +26,9 @@ All Week 9 tasks COMPLETE except items 22-24 (blocked on human/GA4):
 28. **Optimize migration checklist conversion** — Monitor which routes are most popular, which step users drop off at, Pro conversion rate from checklist.
 29. Plan v2 — If revenue justifies, plan next features.
 
-### Completed (Sessions 416-812, Apr 23 - Jun 21)
-**Session 812 (Jun 21):** Created GPT-5.5 Pro cost analysis blog post — real cost scenarios for 5 workloads, pricing comparison table (7 models), migration code (Opus 4.8, DeepSeek V4 Pro), FAQPage schema (5 questions), Related Tools section. Updated blog.html (+1 card), RSS (669 items), sitemap (797 URLs). Total: 347 blog posts. 1 commit, 4 files, 636 insertions.
-**Sessions 804-811 (Jun 21):** 7 new comparison pages. 5 new blog posts. xAI/Grok + Cohere migration routes (9 total). Widget cross-linked from 547 pages. Migration checklist cross-linked from 251 pages. 347 blog posts, 232 comparison pages. ~10 commits, 600+ files.
+### Completed (Sessions 416-813, Apr 23 - Jun 21)
+**Session 813 (Jun 21):** Fixed critical widget pricing bug (GPT-5.5 Pro was $5/$30, corrected to $30/$180). Created chatbot cost breakdown blog post — 10 models × 5 scales, cost formula, optimization tips, Python code, FAQPage schema (5 Q&As). Total: 348 blog posts, 798 sitemap URLs, 670 RSS items.
+**Sessions 804-812 (Jun 21):** 7 comparison pages. 6 blog posts. Widget pricing bug found and fixed. xAI/Grok + Cohere migration routes (9 total). Widget cross-linked from 547 pages. "Try Pro Free" CTAs added. 348 blog posts, 232 comparison pages. ~12 commits, 600+ files.
 **Sessions 787-803 (Jun 20-21):** Free trial as primary CTA. Trial expiry page. Fixed fake social proof. 15+ comparison pages. 3 alternatives pages. 2 sample Pro reports. Embeddable pricing widget. Migration checklist (9 routes). 13 commits, 200+ files.
 **Sessions 715-786 (Jun 18-20):** Conversion optimization + content blitz — go.html, exit popup A/B, A/B pricing, 16 best-model tools, API Cost Score, Pro reports, generate-report.html, api-cost-audit.html, pricing hub, llms.txt, 4 alternatives pages, 36 comparison pages. Nav restructured. 130+ commits, 800+ files.
 **Sessions 599-714 (Jun 12-18):** Claude 4 shutdown + conversion foundation. 160+ commits, 750+ files.
