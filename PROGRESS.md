@@ -1,5 +1,12 @@
 # PROGRESS.md
 
+## Session 804 (Jun 21) — Cross-link Migration Checklist + Widget (1 commit)
+**Added 'Related Tools' section to 248 pages linking to migration-checklist.html and widget.html.**
+- **226 comparison pages** — Added Related Tools grid with migration checklist + widget cards before share buttons
+- **22 alternatives pages** — Added Related Tools section with migration checklist + widget links before CTA
+- Internal linking drives authority to conversion-focused pages. Every page now promotes the two new tools from Session 803.
+- **1 commit, 247 files changed, 3340 insertions**
+
 ## Session 803 (Jun 21) — Embeddable Widget + Migration Checklist (1 commit)
 **CHANGED APPROACH: Built distribution/conversion tools instead of more comparison pages.**
 - **Created widget.html + widget/embed.js** — Free embeddable AI pricing widget. 14 models, 7 providers, Shadow DOM for style isolation, ~5KB gzipped, zero dependencies. One script tag install. Landing page with demo, features, technical details, use cases. Every embed = free distribution + backlinks + traffic.
@@ -34,7 +41,7 @@ Free trial as PRIMARY CTA across conversion surfaces. Trial expiry page. Fixed f
 ## Summary: Sessions 1-598 (Apr 5 - Jun 12)
 Full APIpulse build from scratch. 652 pages, 320 posts, 42 models, 10 providers, 84 tools. Domain, Stripe, Pro, GA4, newsletter, Chrome extension, 167 comparisons, FAQPage schema, streaming toggle, A/B pricing, Model Selector quiz.
 
-## Site Status (as of Session 802, Jun 21, 2026)
+## Site Status (as of Session 804, Jun 21, 2026)
 **790 web pages | 341 blog posts | 42 models | 10 providers | 105 tools | 12 API endpoints | 2 embeddable widgets**
 - Sitemap (783 URLs), RSS (657 items), blog files (341 posts) — all in sync
 - **226 comparison pages** covering all major model pairs (all indexed in compare.html)
