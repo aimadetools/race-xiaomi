@@ -394,6 +394,7 @@
                         <option value="google">Google (Gemini)</option>
                         <option value="mistral">Mistral</option>
                         <option value="cohere">Cohere</option>
+                        <option value="xai">xAI (Grok)</option>
                     </select>
                 </div>
                 <div class="selector-arrow">→</div>
@@ -405,6 +406,8 @@
                         <option value="google">Google (Gemini)</option>
                         <option value="mistral">Mistral (save 70-90%)</option>
                         <option value="openai">OpenAI (GPT-5)</option>
+                        <option value="xai">xAI / Grok (save 60-85%)</option>
+                        <option value="cohere">Cohere (Command A)</option>
                     </select>
                 </div>
             </div>
@@ -537,6 +540,18 @@
                     <div><div class="from-to">Anthropic → Google</div><div class="arrow">Claude → Gemini 2.5 Pro</div></div>
                     <div class="savings-tag">Save 75%</div>
                 </a>
+                <a class="migration-card" href="#" onclick="setMigration('openai','xai');return false;">
+                    <div><div class="from-to">OpenAI → xAI</div><div class="arrow">GPT-5 → Grok 4.3</div></div>
+                    <div class="savings-tag">Save 60%</div>
+                </a>
+                <a class="migration-card" href="#" onclick="setMigration('anthropic','xai');return false;">
+                    <div><div class="from-to">Anthropic → xAI</div><div class="arrow">Claude → Grok 4.3</div></div>
+                    <div class="savings-tag">Save 85%</div>
+                </a>
+                <a class="migration-card" href="#" onclick="setMigration('openai','cohere');return false;">
+                    <div><div class="from-to">OpenAI → Cohere</div><div class="arrow">GPT-5 → Command A</div></div>
+                    <div class="savings-tag">Save 50%</div>
+                </a>
             </div>
         </div>
 
@@ -621,6 +636,17 @@
             import: "import cohere",
             init: "client = cohere.ClientV2(\n    api_key=os.getenv('COHERE_API_KEY')\n)",
             call: "response = client.chat(\n    model='command-a',\n    messages=[{'role':'user','content':'Hello'}]\n)"
+        },
+        xai: {
+            name: 'xAI (Grok)',
+            models: [{ name: 'Grok 4.3', input: 1.25, output: 2.50 }, { name: 'Grok Build 0.1', input: 0.30, output: 0.50 }],
+            sdk: 'npm install xai-sdk',
+            sdkPy: 'pip install xai-sdk',
+            envVar: 'XAI_API_KEY',
+            baseURL: 'https://api.x.ai/v1',
+            import: "from xai_sdk import Client",
+            init: "client = Client(\n    api_key=os.getenv('XAI_API_KEY')\n)",
+            call: "response = client.chat.completions.create(\n    model='grok-4.3',\n    messages=[{'role':'user','content':'Hello'}]\n)"
         }
     };
 
