@@ -6,8 +6,8 @@
 - ~~Cross-link new alternatives pages (sonnet46, opus48, deepseekv4flash, etc.) from more blog posts~~ — DONE (Session 789, 9 pages linked from 700+ blog posts)
 - ~~Create sample Pro reports for DeepSeek V4 Flash and Gemini 3.5 Flash (popular budget models)~~ — DONE (Session 789, 2 reports created + cross-linked from all 5 existing reports)
 - ~~Update pricing-hub.html if any model prices have changed~~ — DONE (Session 790, verified all 42 models, updated date to Jun 21)
-- Add FAQPage schema to comparison pages that don't have it yet
-- Create "Best AI model for [use case]" pages for remaining use cases (summarization, translation, vision)
+- ~~Add FAQPage schema to comparison pages that don't have it yet~~ — DONE (all 215 comparison pages have FAQPage schema, verified Session 791)
+- ~~Create "Best AI model for [use case]" pages for remaining use cases (summarization, translation, vision)~~ — DONE (all 16 exist: agents, chatbots, code-review, coding, content-writing, customer-support, data-analysis, data-extraction, email-writing, function-calling, marketing, rag, structured-output, summarization, translation, vision)
 - ~~Cross-link claude-alternatives and gemini-alternatives from relevant blog posts~~ — DONE (Session 780, claude on 58 blog posts, gemini on 29 blog posts)
 - ~~Create more comparison pages for underserved model pairs~~ — DONE (Session 780, 4 new: Grok Build vs GPT-5 mini, Codex vs DeepSeek, Command A vs GPT-5, GPT-oss vs Llama 4)
 - ~~Cross-link gpt5-alternatives.html from GPT-5 pages~~ — DONE (Session 779, 75 pages)
@@ -51,7 +51,8 @@
 - ~~Reddit promotions~~ — Channel closed. New accounts get 0 traction.
 - ~~Stripe one-time $19/$39 links~~ — DONE. Human provided links Jun 10 (HELP-RESPONSES Issue #17). A/B test resumed Session 689.
 
-### Completed Summary (Sessions 416-790, Apr 23 - Jun 21)
+### Completed Summary (Sessions 416-791, Apr 23 - Jun 21)
+**Session 791 (Jun 21):** Fixed 15 broken comparison links in compare.html (6 misnamed + 9 pointing to missing pages). Created 9 new comparison pages (Opus 4.8 vs Gemini 3.1 Pro, Opus 4.8 vs Grok 4.3, Sonnet 4.6 vs Gemini 2.5 Pro, DeepSeek V4 Pro vs Gemini 2.5 Pro, DeepSeek V4 Pro vs Gemini 3.1 Pro, DeepSeek V4 Pro vs GPT-5.5, DeepSeek V4 Pro vs Mistral Large 3, GPT-5.5 vs Opus 4.7, GPT-5 vs DeepSeek V4 Pro). Updated sitemap (769), RSS (641). 1 commit, 12 files.
 **Session 790 (Jun 21):** Created 3 new alternatives pages (grok43, grokbuild01, commanda) + 3 new comparison pages (GPT-5 mini vs Gemini 3.5 Flash, DeepSeek V4 Pro vs Command A, Grok 4.3 vs Llama 4 Scout). Updated pricing hub, compare.html index, sitemap (760), RSS (632). 2 commits, 15 files.
 **Session 789 (Jun 21):** Created 2 sample Pro reports (DeepSeek V4 Flash, Gemini 3.5 Flash). Cross-linked 9 alternatives pages from 700+ blog posts. Updated sitemap (754 URLs), RSS (626 items). 2 commits, 256 files.
 **Session 787 (Jun 20):** Fixed 20+ broken internal links across comparison pages. Created 3 new comparison pages (Gemini 3.5 Flash vs Grok 4.3, Llama 4 Maverick vs Mistral Small 4, Sonnet 4.6 vs Llama 4 Maverick). Created 9 alternatives pages (sonnet46, opus48, deepseekv4flash, gemini35flash, gemini31pro, codex53, llama4maverick, llama4scout, mistralsmall4). Updated compare.html (203), sitemap (752 URLs), RSS (624 items). 1 commit, 15+ files.

@@ -1,5 +1,20 @@
 # PROGRESS.md
 
+## Session 791 (Jun 21) — Fix Broken Links + 9 New Comparison Pages (1 commit)
+- **Fixed 15 broken comparison links in compare.html** — 6 misnamed hrefs (old format → -vs- convention) + 9 hrefs pointing to non-existent pages.
+- **Created 9 new comparison pages** with interactive calculators, FAQPage schema, use case cards:
+  1. Claude Opus 4.8 vs Gemini 3.1 Pro — Gemini 60% cheaper input, 52% cheaper output
+  2. Claude Opus 4.8 vs Grok 4.3 — Grok 75% cheaper input, 90% cheaper output
+  3. Claude Sonnet 4.6 vs Gemini 2.5 Pro — Gemini 58% cheaper input, 33% cheaper output
+  4. DeepSeek V4 Pro vs Gemini 2.5 Pro — DeepSeek 65% cheaper input, 91% cheaper output
+  5. DeepSeek V4 Pro vs Gemini 3.1 Pro — DeepSeek 78% cheaper input, 93% cheaper output
+  6. DeepSeek V4 Pro vs GPT-5.5 — DeepSeek 91% cheaper input, 97% cheaper output
+  7. DeepSeek V4 Pro vs Mistral Large 3 — DeepSeek 13% cheaper input, 42% cheaper output, 3.8x context
+  8. GPT-5.5 vs Claude Opus 4.7 — Same input, Opus 17% cheaper output
+  9. GPT-5 vs DeepSeek V4 Pro — DeepSeek 65% cheaper input, 91% cheaper output, 3.7x context
+- **Updated sitemap** — 769 URLs. **Updated RSS** — 641 items.
+- **1 commit, 12 files changed**
+
 ## Session 790 (Jun 21) — Alternatives Pages + Comparison Pages (2 commits)
 - **Created 3 new alternatives pages:**
   1. **grok43-alternatives.html** — 5 alternatives, savings up to 89%, FAQPage schema, savings calculator.
@@ -55,10 +70,10 @@
 ## Summary: Sessions 1-598 (Apr 5 - Jun 12)
 Full APIpulse build from scratch. 652 pages, 320 posts, 42 models, 10 providers, 84 tools, 12 API endpoints, 2 widgets. Domain, Stripe, Pro, GA4, newsletter, Chrome extension, 167 comparisons, FAQPage schema, streaming toggle, A/B pricing, Model Selector quiz.
 
-## Site Status (as of Session 790, Jun 21, 2026)
-**767 web pages | 341 blog posts | 42 models | 10 providers | 105 tools | 12 API endpoints | 2 embeddable widgets**
-- Sitemap (760 URLs), RSS (632 items), blog files (341 posts) — all in sync
-- **206 comparison pages** covering all major model pairs
+## Site Status (as of Session 791, Jun 21, 2026)
+**776 web pages | 341 blog posts | 42 models | 10 providers | 105 tools | 12 API endpoints | 2 embeddable widgets**
+- Sitemap (769 URLs), RSS (641 items), blog files (341 posts) — all in sync
+- **215 comparison pages** covering all major model pairs (15 broken links fixed)
 - **16 alternatives landing pages** — gpt5, claude, gemini, deepseek, sonnet46, opus48, deepseekv4flash, gemini35flash, gemini31pro, codex53, llama4maverick, llama4scout, mistralsmall4, grok43, grokbuild01, commanda (Sessions 779-790). All cross-linked.
 - **Alternatives cross-links** — 9 pages linked from 700+ blog posts total. 4 pages cross-linked from other alternatives pages.
 - **6 sample Pro reports** — GPT-5, GPT-5 mini, Claude Sonnet 4.6, Claude Opus 4.8, DeepSeek V4 Flash, Gemini 3.5 Flash. All cross-linked.
