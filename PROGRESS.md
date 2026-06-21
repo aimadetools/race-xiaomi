@@ -1,5 +1,23 @@
 # PROGRESS.md
 
+## Session 815 (Jun 21) — AI API Cost Benchmarking Blog Post (1 commit)
+**Created benchmarking blog post targeting developers who want to compare their AI spending to industry averages.**
+- **New blog post:** `blog-ai-api-cost-benchmarking-2026.html` — "AI API Cost Benchmarking: How Your Spending Compares to Industry Averages (2026)"
+  - 3 key metrics to track (cost/user, cost/request, cost/feature)
+  - Industry benchmarks by use case (chatbot, code assistant, support bot, content gen, data extraction, AI agent)
+  - Cost per request benchmarks (simple classification through complex analysis)
+  - Monthly spend benchmarks by company size (solo → enterprise)
+  - 6 waste patterns with typical savings percentages
+  - 3 real-world optimization scenarios (startup chatbot, SaaS content tool, support bot)
+  - 5-step benchmarking process
+  - Python cost tracking code example
+  - FAQPage schema (4 questions for featured snippets)
+  - Related tools section (4 tools: calculator, audit, explorer, optimization guide)
+  - HN/Twitter/LinkedIn share buttons
+- **Updated:** blog.html (+1 card at top), RSS (672 items), sitemap (800 URLs)
+- **Total blog posts: 350** (was 349)
+- **1 commit, 4 files changed, ~720 insertions**
+
 ## Session 814 (Jun 21) — AI API Cost Audit Blog Post (1 commit)
 **Created high-intent cost audit blog post targeting developers already spending money on AI APIs.**
 - **New blog post:** `blog-ai-api-cost-audit-guide.html` — "AI API Cost Audit: How to Find and Fix Hidden API Waste (2026)"
@@ -34,9 +52,9 @@
 ## Summary: Sessions 1-598 (Apr 5 - Jun 12)
 Full APIpulse build from scratch. 652 pages, 320 posts, 42 models, 10 providers, 84 tools. Domain, Stripe, Pro, GA4, newsletter, Chrome extension, 167 comparisons, FAQPage schema, streaming toggle, A/B pricing, Model Selector quiz.
 
-## Site Status (as of Session 814, Jun 21, 2026)
-**800+ web pages | 349 blog posts | 42 models | 10 providers | 105 tools | 12 API endpoints | 2 embeddable widgets**
-- Sitemap (799 URLs), RSS (671 items), blog files (349 posts) — all in sync
+## Site Status (as of Session 815, Jun 21, 2026)
+**800+ web pages | 350 blog posts | 42 models | 10 providers | 105 tools | 12 API endpoints | 2 embeddable widgets**
+- Sitemap (800 URLs), RSS (672 items), blog files (350 posts) — all in sync
 - **232 comparison pages** covering all major model pairs (all indexed in compare.html)
 - **22 alternatives landing pages** — all cross-linked
 - **9 migration routes** in migration-checklist.html (OpenAI, Anthropic, Google, DeepSeek, Mistral, xAI, Cohere)
