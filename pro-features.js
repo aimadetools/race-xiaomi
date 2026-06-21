@@ -422,7 +422,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     `;
                     content.insertBefore(banner, content.firstChild);
                 }
-                // Auto-lock when trial expires
+                // Auto-lock when trial expires — redirect to conversion page
                 setTimeout(() => {
                     localStorage.removeItem('apipulse_pro');
                     localStorage.removeItem('apipulse_pro_trial');
@@ -430,16 +430,8 @@ document.addEventListener('DOMContentLoaded', () => {
                     localStorage.setItem('apipulse_trial_expired', '1');
                     lockProFeatures();
                     if (window.trackEvent) window.trackEvent('pro_trial_expired');
-                    // Show conversion message to expired trial users
-                    if (!document.getElementById('trial-expired-msg')) {
-                        var price = window._abPrice || 29;
-                        var msg = document.createElement('div');
-                        msg.id = 'trial-expired-msg';
-                        msg.style.cssText = 'position:fixed;top:80px;left:50%;transform:translateX(-50%);background:linear-gradient(135deg,rgba(239,68,68,0.95),rgba(220,38,38,0.95));color:white;padding:16px 28px;border-radius:12px;font-size:15px;font-weight:700;z-index:10000;box-shadow:0 8px 30px rgba(239,68,68,0.4);max-width:90vw;text-align:center;';
-                        msg.innerHTML = '⏰ Your 24-hour Pro trial has ended. <a href="go.html?from=trial_expired" style="color:white;text-decoration:underline;">Get lifetime access for $' + price + ' →</a>';
-                        document.body.appendChild(msg);
-                        setTimeout(function() { msg.style.opacity = '0'; msg.style.transition = 'opacity 0.5s'; setTimeout(function() { msg.remove(); }, 500); }, 8000);
-                    }
+                    // Redirect to trial-expired conversion page
+                    window.location.href = 'trial-expired.html?from=trial_expired';
                 }, remaining.ms);
 
                 // Urgency banner when < 2 hours remain
@@ -459,21 +451,15 @@ document.addEventListener('DOMContentLoaded', () => {
     renderScenarios();
 });
 
-// Returning expired trial users — show conversion message on first page view after trial ends
+// Returning expired trial users — redirect to conversion page (once per session)
 document.addEventListener('DOMContentLoaded', function() {
     if (localStorage.getItem('apipulse_trial_expired') !== '1') return;
-    if (localStorage.getItem('apipulse_trial_expired_dismissed')) return;
     if (typeof isProUser === 'function' && isProUser()) { localStorage.removeItem('apipulse_trial_expired'); return; }
-    var price = window._abPrice || 29;
-    setTimeout(function() {
-        if (document.getElementById('trial-return-msg')) return;
-        var msg = document.createElement('div');
-        msg.id = 'trial-return-msg';
-        msg.style.cssText = 'position:fixed;bottom:80px;left:50%;transform:translateX(-50%);background:var(--bg-card);border:1px solid var(--accent);padding:14px 24px;border-radius:12px;font-size:14px;z-index:9998;box-shadow:0 4px 20px rgba(0,0,0,0.2);max-width:90vw;text-align:center;display:flex;align-items:center;gap:12px;flex-wrap:wrap;justify-content:center;';
-        msg.innerHTML = '<span style="color:var(--text-secondary);">👋 Enjoyed Pro? Get lifetime access for <strong style="color:var(--accent);">$' + price + '</strong></span>' +
-            '<a href="go.html?from=trial_return" style="display:inline-block;background:var(--accent);color:white;padding:6px 16px;border-radius:8px;text-decoration:none;font-size:13px;font-weight:700;white-space:nowrap;" onclick="if(window.trackEvent)window.trackEvent(\'pro_button_clicked\',{source:\'trial_return_msg\'})">Upgrade →</a>' +
-            '<button onclick="document.getElementById(\'trial-return-msg\').remove();localStorage.setItem(\'apipulse_trial_expired_dismissed\',\'1\');" style="background:none;border:none;color:var(--text-muted);cursor:pointer;font-size:16px;padding:2px 6px;" aria-label="Close">×</button>';
-        document.body.appendChild(msg);
-        if (window.trackEvent) window.trackEvent('trial_return_msg_shown', { price: price });
-    }, 5000);
+    // Don't redirect if already on trial-expired page
+    if (window.location.pathname.indexOf('trial-expired') !== -1) return;
+    // Don't redirect if user already dismissed this session
+    if (sessionStorage.getItem('trial_expired_redirect_shown')) return;
+    sessionStorage.setItem('trial_expired_redirect_shown', '1');
+    if (window.trackEvent) window.trackEvent('trial_return_redirect', { page: window.location.pathname });
+    window.location.href = 'trial-expired.html?from=trial_return';
 });

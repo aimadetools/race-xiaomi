@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Pro Trial Has Ended — Get Lifetime Access | APIpulse</title>
+    <meta name="description" content="Your 24-hour APIpulse Pro trial has ended. Get lifetime access for $29 — save up to 40% on AI API costs with 42 model comparisons, migration code, and PDF reports.">
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="styles.css">
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0CEP7S9Y3J"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-0CEP7S9Y3J');
+    </script>
+    <script src="analytics.js" defer></script>
+    <script src="shared.js" defer></script>
+    <script src="pro-features.js" defer></script>
+    <script src="ab-test.js"></script>
+    <style>
+        .trial-page {
+            max-width: 640px;
+            margin: 0 auto;
+            padding: 100px 24px 80px;
+        }
+
+        /* Hero */
+        .trial-hero {
+            text-align: center;
+            margin-bottom: 32px;
+        }
+        .trial-hero .emoji {
+            font-size: 48px;
+            margin-bottom: 12px;
+        }
+        .trial-hero h1 {
+            font-size: clamp(24px, 4vw, 32px);
+            font-weight: 900;
+            margin-bottom: 8px;
+            line-height: 1.2;
+        }
+        .trial-hero .sub {
+            font-size: 16px;
+            color: var(--text-secondary);
+            line-height: 1.5;
+        }
+
+        /* Loss card */
+        .loss-card {
+            background: linear-gradient(135deg, rgba(239,68,68,0.06), rgba(220,38,38,0.06));
+            border: 1px solid rgba(239,68,68,0.2);
+            border-radius: 16px;
+            padding: 24px;
+            margin-bottom: 24px;
+        }
+        .loss-card h2 {
+            font-size: 16px;
+            font-weight: 700;
+            color: #ef4444;
+            margin-bottom: 16px;
+            text-align: center;
+        }
+        .loss-list {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        .loss-list li {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 8px 0;
+            font-size: 14px;
+            color: var(--text-secondary);
+        }
+        .loss-list .x {
+            color: #ef4444;
+            font-weight: 700;
+            font-size: 16px;
+            flex-shrink: 0;
+        }
+
+        /* Savings calculator */
+        .savings-section {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 24px;
+            margin-bottom: 24px;
+        }
+        .savings-section h3 {
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 16px;
+            text-align: center;
+        }
+        .savings-form {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        .savings-form label {
+            font-size: 13px;
+            color: var(--text-secondary);
+            font-weight: 600;
+        }
+        .savings-form select, .savings-form input {
+            padding: 10px 14px;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+            background: var(--bg-secondary);
+            color: var(--text-primary);
+            font-size: 14px;
+            width: 100%;
+        }
+        .savings-result {
+            text-align: center;
+            padding: 16px;
+            background: rgba(34,197,94,0.08);
+            border: 1px solid rgba(34,197,94,0.2);
+            border-radius: 12px;
+            margin-top: 8px;
+            display: none;
+        }
+        .savings-result .amount {
+            font-size: 28px;
+            font-weight: 900;
+            color: var(--green);
+        }
+        .savings-result .label {
+            font-size: 13px;
+            color: var(--text-secondary);
+            margin-top: 4px;
+        }
+
+        /* Price + CTA */
+        .price-box {
+            background: var(--bg-card);
+            border: 2px solid var(--accent);
+            border-radius: 16px;
+            padding: 24px;
+            margin-bottom: 16px;
+            text-align: center;
+        }
+        .price-box .price {
+            font-size: 40px;
+            font-weight: 900;
+            color: var(--accent);
+        }
+        .price-box .was {
+            font-size: 14px;
+            color: var(--text-muted);
+            text-decoration: line-through;
+            margin-left: 8px;
+        }
+        .price-box .badge {
+            display: inline-block;
+            background: rgba(34,197,94,0.12);
+            color: var(--green);
+            font-size: 12px;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 6px;
+            margin-top: 8px;
+        }
+        .cta-btn {
+            display: block;
+            width: 100%;
+            padding: 18px 32px;
+            background: linear-gradient(135deg, var(--accent), #8b5cf6);
+            color: white;
+            border: none;
+            border-radius: 12px;
+            font-size: 18px;
+            font-weight: 800;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+            transition: all 0.2s;
+            box-shadow: 0 4px 20px rgba(99,102,241,0.4);
+        }
+        .cta-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(99,102,241,0.5);
+        }
+
+        /* Trust */
+        .trust-row {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 16px;
+            margin-bottom: 24px;
+            flex-wrap: wrap;
+        }
+        .trust-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 12px;
+            color: var(--text-muted);
+        }
+
+        /* Social proof */
+        .proof-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            margin-bottom: 24px;
+        }
+        .proof-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 16px;
+            text-align: center;
+        }
+        .proof-card .num {
+            font-size: 24px;
+            font-weight: 900;
+            color: var(--accent);
+        }
+        .proof-card .label {
+            font-size: 12px;
+            color: var(--text-muted);
+            margin-top: 4px;
+        }
+
+        /* FAQ */
+        .faq-section { margin-top: 32px; }
+        .faq-section h3 {
+            font-size: 18px;
+            font-weight: 800;
+            margin-bottom: 16px;
+            text-align: center;
+        }
+        .faq-item {
+            border-bottom: 1px solid var(--border);
+            padding: 14px 0;
+        }
+        .faq-q {
+            font-weight: 700;
+            font-size: 14px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .faq-a {
+            font-size: 14px;
+            color: var(--text-secondary);
+            line-height: 1.6;
+            margin-top: 8px;
+            display: none;
+        }
+        .faq-item.open .faq-a { display: block; }
+        .faq-item.open .faq-q span { transform: rotate(180deg); }
+    </style>
+</head>
+<body>
+    <main class="trial-page">
+        <!-- Hero -->
+        <div class="trial-hero">
+            <div class="emoji">⏰</div>
+            <h1>Your 24-Hour Pro Trial Has Ended</h1>
+            <p class="sub">You just experienced what APIpulse Pro can do. Here's what you're missing:</p>
+        </div>
+
+        <!-- What they lost -->
+        <div class="loss-card">
+            <h2>🔓 Pro features are now locked</h2>
+            <ul class="loss-list">
+                <li><span class="x">✕</span> <span>Full alternative rankings (15 models, not just 3)</span></li>
+                <li><span class="x">✕</span> <span>Migration code snippets for switching providers</span></li>
+                <li><span class="x">✕</span> <span>Save & compare cost scenarios (10 slots)</span></li>
+                <li><span class="x">✕</span> <span>PDF report export for investors/managers</span></li>
+                <li><span class="x">✕</span> <span>Personalized optimization tips (save up to 40%)</span></li>
+                <li><span class="x">✕</span> <span>Price change alerts when models get cheaper</span></li>
+            </ul>
+        </div>
+
+        <!-- Savings calculator -->
+        <div class="savings-section">
+            <h3>💰 Calculate your savings</h3>
+            <div class="savings-form">
+                <div>
+                    <label>Current model</label>
+                    <select id="trial-model">
+                        <option value="gpt5">GPT-5 ($5.00/M input)</option>
+                        <option value="opus48">Claude Opus 4.8 ($15.00/M input)</option>
+                        <option value="sonnet46">Claude Sonnet 4.6 ($3.00/M input)</option>
+                        <option value="gemini31pro">Gemini 3.1 Pro ($1.25/M input)</option>
+                        <option value="other">Other model</option>
+                    </select>
+                </div>
+                <div>
+                    <label>Monthly API spend ($)</label>
+                    <input type="number" id="trial-spend" value="200" min="10" max="100000">
+                </div>
+                <button onclick="calcTrialSavings()" style="padding:12px;background:var(--accent);color:white;border:none;border-radius:8px;font-size:14px;font-weight:700;cursor:pointer;">Calculate Savings</button>
+            </div>
+            <div class="savings-result" id="trial-savings-result">
+                <div class="amount" id="trial-savings-amount">$0/yr</div>
+                <div class="label">Potential annual savings with optimal model selection</div>
+                <div style="margin-top:8px;font-size:13px;color:var(--text-muted);">Pro pays for itself in <span id="trial-payback" style="color:var(--green);font-weight:700;"></span></div>
+            </div>
+        </div>
+
+        <!-- Real social proof -->
+        <div class="proof-grid">
+            <div class="proof-card">
+                <div class="num">42</div>
+                <div class="label">AI models compared</div>
+            </div>
+            <div class="proof-card">
+                <div class="num">10</div>
+                <div class="label">Providers tracked</div>
+            </div>
+            <div class="proof-card">
+                <div class="num">215</div>
+                <div class="label">Head-to-head comparisons</div>
+            </div>
+            <div class="proof-card">
+                <div class="num">$720-2,400</div>
+                <div class="label">Typical annual savings</div>
+            </div>
+        </div>
+
+        <!-- Price + CTA -->
+        <div class="price-box">
+            <div>
+                <span class="price" id="trial-price">$29</span>
+                <span class="was" id="trial-was">$49</span>
+            </div>
+            <div class="badge">Founding member price — lock it in forever</div>
+        </div>
+
+        <a id="trial-cta" href="https://buy.stripe.com/fZu7sL3Gw3GS0RQeoDeEo0a" target="_blank" rel="noopener" class="cta-btn" onclick="if(window.trackEvent)window.trackEvent('pro_button_clicked',{source:'trial_expired_page'})">
+            Get Lifetime Access — <span id="cta-price">$29</span>
+        </a>
+
+        <div class="trust-row">
+            <div class="trust-item"><span style="font-size:16px;">🔒</span> Stripe secure checkout</div>
+            <div class="trust-item"><span style="font-size:16px;">🛡️</span> 14-day money-back guarantee</div>
+            <div class="trust-item"><span style="font-size:16px;">⚡</span> Instant access</div>
+        </div>
+
+        <p style="text-align:center;font-size:13px;color:var(--text-muted);margin-bottom:32px;">
+            One-time payment. No subscriptions. Cancel-proof.
+        </p>
+
+        <!-- Real pricing example -->
+        <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:12px;padding:20px;margin-bottom:24px;">
+            <div style="font-size:13px;font-weight:700;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.5px;margin-bottom:12px;text-align:center;">Real example</div>
+            <p style="font-size:14px;color:var(--text-secondary);line-height:1.6;text-align:center;">
+                A developer spending <strong>$500/mo on GPT-5</strong> could switch to <strong>DeepSeek V4 Flash</strong> and pay just <strong>$20/mo</strong> — saving <strong style="color:var(--green);">$5,748/year</strong>. APIpulse Pro shows you exactly which model gives you the best quality-to-cost ratio for your use case.
+            </p>
+        </div>
+
+        <!-- FAQ -->
+        <div class="faq-section">
+            <h3>Common questions</h3>
+            <div class="faq-item" onclick="this.classList.toggle('open')">
+                <div class="faq-q">Can I try again for free?<span>▾</span></div>
+                <div class="faq-a">The 24-hour trial is one per device. But at $29 one-time (less than most monthly API bills), most developers find Pro pays for itself within the first month.</div>
+            </div>
+            <div class="faq-item" onclick="this.classList.toggle('open')">
+                <div class="faq-q">What if it doesn't save me money?<span>▾</span></div>
+                <div class="faq-a">We offer a 14-day money-back guarantee. If APIpulse Pro doesn't help you optimize your API costs, just email us for a full refund. No questions asked.</div>
+            </div>
+            <div class="faq-item" onclick="this.classList.toggle('open')">
+                <div class="faq-q">Is this a subscription?<span>▾</span></div>
+                <div class="faq-a">No. It's a one-time payment of $29. You get lifetime access. No recurring charges, no surprise price increases.</div>
+            </div>
+            <div class="faq-item" onclick="this.classList.toggle('open')">
+                <div class="faq-q">How is this different from just comparing prices manually?<span>▾</span></div>
+                <div class="faq-a">APIpulse Pro tracks 42 models across 10 providers with real-time pricing. It calculates costs for YOUR specific token usage, suggests cheaper alternatives that match your quality needs, and provides migration code. Manual comparison would take hours and would be outdated within days.</div>
+            </div>
+        </div>
+
+        <!-- Bottom CTA -->
+        <div style="text-align:center;margin-top:32px;">
+            <a href="https://buy.stripe.com/fZu7sL3Gw3GS0RQeoDeEo0a" target="_blank" rel="noopener" class="cta-btn" onclick="if(window.trackEvent)window.trackEvent('pro_button_clicked',{source:'trial_expired_bottom'})" style="margin-bottom:12px;">
+                Get Lifetime Access — $29
+            </a>
+            <p style="font-size:12px;color:var(--text-muted);">
+                Questions? <a href="mailto:hello@getapipulse.com" style="color:var(--accent);">hello@getapipulse.com</a>
+            </p>
+        </div>
+    </main>
+
+    <script>
+    // Savings calculator
+    function calcTrialSavings() {
+        var model = document.getElementById('trial-model').value;
+        var spend = parseFloat(document.getElementById('trial-spend').value) || 200;
+        // Savings estimates (% reduction switching to optimal model)
+        var savings = {
+            'gpt5': 0.65,      // Switch to DeepSeek/Gemini
+            'opus48': 0.85,    // Switch to Sonnet/DeepSeek
+            'sonnet46': 0.40,  // Switch to DeepSeek/Gemini
+            'gemini31pro': 0.20, // Already cheap
+            'other': 0.35      // Conservative estimate
+        };
+        var pct = savings[model] || 0.35;
+        var annual = Math.round(spend * 12 * pct);
+        var paybackDays = Math.ceil(29 / (spend * pct / 30));
+
+        document.getElementById('trial-savings-amount').textContent = '$' + annual.toLocaleString() + '/yr';
+        document.getElementById('trial-payback').textContent = paybackDays < 1 ? 'less than a day' : paybackDays + ' day' + (paybackDays > 1 ? 's' : '');
+        document.getElementById('trial-savings-result').style.display = 'block';
+
+        if (window.trackEvent) window.trackEvent('savings_calculated', {
+            source: 'trial_expired',
+            model: model,
+            monthly_spend: spend,
+            annual_savings: annual
+        });
+    }
+
+    // A/B pricing
+    document.addEventListener('DOMContentLoaded', function() {
+        var price = window._abPrice || 29;
+        var stripeLink = window._abStripeLink || 'https://buy.stripe.com/fZu7sL3Gw3GS0RQeoDeEo0a';
+        document.getElementById('trial-price').textContent = '$' + price;
+        document.getElementById('cta-price').textContent = '$' + price;
+        document.getElementById('trial-cta').href = stripeLink;
+        if (price === 19) {
+            document.getElementById('trial-was').textContent = '$39';
+        }
+        if (window.trackEvent) window.trackEvent('trial_expired_page_viewed');
+    });
+    </script>
+</body>
+</html>
