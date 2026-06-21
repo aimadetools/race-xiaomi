@@ -28,12 +28,12 @@
 **Added widget.html promotion to 296 blog posts.**
 - Widget card with accent border appears before `</main>` on every blog post that didn't already link to widget.html
 - Styling matches existing alternatives cross-link pattern (green accent, icon, description, CTA link)
-- Total widget cross-links: 296 blog posts + 226 comparison pages + 22 alternatives pages = 544 pages linking to widget
+- Total widget cross-links: 296 blog posts + 229 comparison pages + 22 alternatives pages = 547 pages linking to widget
 - **1 commit, 296 files changed, 2678 insertions**
 
 ## Session 804 (Jun 21) — Cross-link Migration Checklist + Widget (1 commit)
-**Added 'Related Tools' section to 248 pages linking to migration-checklist.html and widget.html.**
-- **226 comparison pages** — Added Related Tools grid with migration checklist + widget cards before share buttons
+**Added 'Related Tools' section to 251 pages linking to migration-checklist.html and widget.html.**
+- **229 comparison pages** — Added Related Tools grid with migration checklist + widget cards before share buttons
 - **22 alternatives pages** — Added Related Tools section with migration checklist + widget links before CTA
 - Internal linking drives authority to conversion-focused pages. Every page now promotes the two new tools from Session 803.
 - **1 commit, 247 files changed, 3340 insertions**
@@ -59,8 +59,8 @@ Full APIpulse build from scratch. 652 pages, 320 posts, 42 models, 10 providers,
 - **229 comparison pages** covering all major model pairs (all indexed in compare.html)
 - **22 alternatives landing pages** — all cross-linked
 - **9 migration routes** in migration-checklist.html (OpenAI, Anthropic, Google, DeepSeek, Mistral, xAI, Cohere)
-- **544 pages** linking to widget.html (296 blog + 226 comparison + 22 alternatives)
-- **248 pages** linking to migration-checklist.html (226 comparison + 22 alternatives)
+- **547 pages** linking to widget.html (296 blog + 229 comparison + 22 alternatives)
+- **251 pages** linking to migration-checklist.html (229 comparison + 22 alternatives)
 - **Free trial as PRIMARY CTA** — "Try Pro Free for 24 Hours" across conversion funnel
 - **A/B pricing test LIVE** — $19 vs $29 (50/50)
 - **Exit popup A/B test LIVE** — Loss-framed vs social-proof copy
