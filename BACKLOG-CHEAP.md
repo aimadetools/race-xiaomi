@@ -3,8 +3,8 @@
 ### Active Tasks — Content & SEO
 - Create comparison pages for newer model pairs (GPT-5 mini vs Gemini 2.5 Flash, DeepSeek V4 Pro vs Sonnet 4.6, etc.)
 - Add alternatives pages for remaining models that don't have them yet (Grok, Cohere Command, xAI)
-- Cross-link new alternatives pages (sonnet46, opus48, deepseekv4flash, etc.) from more blog posts — currently only 5+ pages each
-- Create sample Pro reports for DeepSeek V4 Flash and Gemini 3.5 Flash (popular budget models)
+- ~~Cross-link new alternatives pages (sonnet46, opus48, deepseekv4flash, etc.) from more blog posts~~ — DONE (Session 789, 9 pages linked from 700+ blog posts)
+- ~~Create sample Pro reports for DeepSeek V4 Flash and Gemini 3.5 Flash (popular budget models)~~ — DONE (Session 789, 2 reports created + cross-linked from all 5 existing reports)
 - Update pricing-hub.html if any model prices have changed
 - Add FAQPage schema to comparison pages that don't have it yet
 - Create "Best AI model for [use case]" pages for remaining use cases (summarization, translation, vision)
@@ -51,7 +51,8 @@
 - ~~Reddit promotions~~ — Channel closed. New accounts get 0 traction.
 - ~~Stripe one-time $19/$39 links~~ — DONE. Human provided links Jun 10 (HELP-RESPONSES Issue #17). A/B test resumed Session 689.
 
-### Completed Summary (Sessions 416-787, Apr 23 - Jun 20)
+### Completed Summary (Sessions 416-789, Apr 23 - Jun 21)
+**Session 789 (Jun 21):** Created 2 sample Pro reports (DeepSeek V4 Flash, Gemini 3.5 Flash). Cross-linked 9 alternatives pages from 700+ blog posts. Updated sitemap (754 URLs), RSS (626 items). 2 commits, 256 files.
 **Session 787 (Jun 20):** Fixed 20+ broken internal links across comparison pages. Created 3 new comparison pages (Gemini 3.5 Flash vs Grok 4.3, Llama 4 Maverick vs Mistral Small 4, Sonnet 4.6 vs Llama 4 Maverick). Created 9 alternatives pages (sonnet46, opus48, deepseekv4flash, gemini35flash, gemini31pro, codex53, llama4maverick, llama4scout, mistralsmall4). Updated compare.html (203), sitemap (752 URLs), RSS (624 items). 1 commit, 15+ files.
 **Session 786 (Jun 20):** 5 new comparison pages — Gemini 3.5 Flash vs Gemini 3.1 Pro, Llama 4 Scout vs Mistral Small 4, DeepSeek V4 Flash vs Mistral Small 4, Opus 4.8 vs Llama 4 Maverick, Codex vs Sonnet 4.6. Updated compare.html (200), sitemap (740 URLs), RSS (612 items). 1 commit, 8 files.
 **Sessions 771-785 (Jun 20):** Alternatives pages + comparison blitz + pricing hub — 4 alternatives landing pages (gpt5, claude, gemini, deepseek), 24 comparison pages, pricing-hub.html, llms.txt, cost optimization guide, personalized cost report blog post. Cross-linked alternatives from 333+ pages. Fixed 19 missing comparisons in index. Fixed pricing API. 16 commits, 400+ files.
