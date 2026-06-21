@@ -495,19 +495,19 @@
                             <div class="tip-title"><span class="tip-icon">🔄</span> Model Routing</div>
                             <div class="tip-preview">Use cheaper models for 80% of tasks, premium only for complex reasoning…</div>
                             <div class="tip-blur" style="font-size:13px;color:var(--text-secondary);line-height:1.5;margin-top:4px;">Route simple queries to GPT-5 mini ($0.25/$2.00) and reserve Opus 4.8 ($5/$25) for complex tasks. Most teams save 60-70% with this strategy. Pro includes a personalized routing guide for your workload.</div>
-                            <div class="tip-lock"><a href="pricing.html" onclick="if(window.trackEvent)window.trackEvent('pro_button_clicked',{source:'calculator_tip_routing'})">Unlock with Pro →</a></div>
+                            <div class="tip-lock"><a href="#" onclick="event.preventDefault();startTrial();if(window.trackEvent)window.trackEvent('pro_trial_started',{source:'calculator_tip_routing'});" style="color:var(--accent);font-weight:600;">Try Pro Free for 24h →</a></div>
                         </div>
                         <div class="pro-tip-card">
                             <div class="tip-title"><span class="tip-icon">📦</span> Batch Processing</div>
                             <div class="tip-preview">Combine multiple API calls into batch requests to reduce overhead…</div>
                             <div class="tip-blur" style="font-size:13px;color:var(--text-secondary);line-height:1.5;margin-top:4px;">Batch API calls reduce per-request overhead by 30-50%. Group similar tasks, use async processing, and implement request queuing. Pro shows exact batch sizes for your usage pattern.</div>
-                            <div class="tip-lock"><a href="pricing.html" onclick="if(window.trackEvent)window.trackEvent('pro_button_clicked',{source:'calculator_tip_batch'})">Unlock with Pro →</a></div>
+                            <div class="tip-lock"><a href="#" onclick="event.preventDefault();startTrial();if(window.trackEvent)window.trackEvent('pro_trial_started',{source:'calculator_tip_batch'});" style="color:var(--accent);font-weight:600;">Try Pro Free for 24h →</a></div>
                         </div>
                         <div class="pro-tip-card">
                             <div class="tip-title"><span class="tip-icon">💾</span> Response Caching</div>
                             <div class="tip-preview">Cache common API responses to avoid redundant calls…</div>
                             <div class="tip-blur" style="font-size:13px;color:var(--text-secondary);line-height:1.5;margin-top:4px;">Implement semantic caching for repeated queries. Even 20% cache hit rate cuts costs significantly. Use embeddings-based similarity matching for fuzzy cache hits. Pro includes a caching implementation guide.</div>
-                            <div class="tip-lock"><a href="pricing.html" onclick="if(window.trackEvent)window.trackEvent('pro_button_clicked',{source:'calculator_tip_cache'})">Unlock with Pro →</a></div>
+                            <div class="tip-lock"><a href="#" onclick="event.preventDefault();startTrial();if(window.trackEvent)window.trackEvent('pro_trial_started',{source:'calculator_tip_cache'});" style="color:var(--accent);font-weight:600;">Try Pro Free for 24h →</a></div>
                         </div>
                         <div style="background:linear-gradient(135deg,rgba(99,102,241,0.08),rgba(34,197,94,0.06));border:1px solid var(--accent);border-radius:10px;padding:16px 20px;margin-top:16px;text-align:center;">
                             <p style="font-size:14px;font-weight:600;margin-bottom:10px;">These are just 3 of 12 strategies. Pro users save an average of 40% on API costs.</p>
@@ -953,13 +953,13 @@
                 });
 
                 if (hiddenCount > 0 && !isPro) {
-                    html += '<div class="pro-gated-rec" onclick="if(window.trackEvent)window.trackEvent(\'pro_gated_rec_click\',{variant:window._abGatedRecsVariant||\'show_1\',hidden_count:' + hiddenCount + '});window.location.href=\'pricing.html\'">';
+                    html += '<div class="pro-gated-rec" onclick="if(window.trackEvent)window.trackEvent(\'pro_gated_rec_click\',{variant:window._abGatedRecsVariant||\'show_1\',hidden_count:' + hiddenCount + ',action:\'trial\'});if(typeof startTrial===\'function\'){startTrial();if(typeof calculate===\'function\')calculate();}else{window.location.href=\'pricing.html\'}">';
                     if (visibleRecs.length > 0) {
-                        html += '<div class="gated-count">🔒 ' + hiddenCount + ' more savings opportunities</div>';
+                        html += '<div class="gated-count">⚡ ' + hiddenCount + ' more savings — try Pro free for 24 hours</div>';
                     } else {
-                        html += '<div class="gated-count">🔒 ' + hiddenCount + ' cheaper alternatives available</div>';
+                        html += '<div class="gated-count">⚡ ' + hiddenCount + ' cheaper alternatives — try Pro free for 24 hours</div>';
                     }
-                    html += '<div class="gated-text">Pro users see all alternatives ranked by savings + personalized optimization plan</div>';
+                    html += '<div class="gated-text">Click to unlock all alternatives instantly — no credit card needed</div>';
                     html += '</div>';
                 }
 
@@ -1045,9 +1045,9 @@
                 }
                 if (gateIndicator) {
                     if (remaining <= 0) {
-                        gateIndicator.innerHTML = '<span style="color:var(--accent);font-weight:600;">🔒 Free limit reached</span> — <a href="pricing.html" style="color:var(--accent);text-decoration:underline;">Get unlimited with Pro</a>';
+                        gateIndicator.innerHTML = '<span style="color:var(--accent);font-weight:600;">🔒 Free limit reached</span> — <a href="#" onclick="event.preventDefault();startTrial();" style="color:var(--accent);text-decoration:underline;font-weight:600;">Try Pro Free for 24h</a> or <a href="pricing.html" style="color:var(--text-muted);text-decoration:underline;">buy $29</a>';
                     } else if (remaining <= 2) {
-                        gateIndicator.innerHTML = '💡 <strong>' + remaining + '</strong> free calculation' + (remaining === 1 ? '' : 's') + ' left — <a href="pricing.html" style="color:var(--accent);text-decoration:underline;">Get unlimited →</a>';
+                        gateIndicator.innerHTML = '💡 <strong>' + remaining + '</strong> free calculation' + (remaining === 1 ? '' : 's') + ' left — <a href="#" onclick="event.preventDefault();startTrial();" style="color:var(--accent);text-decoration:underline;font-weight:600;">Try Pro Free for 24h →</a>';
                     }
                 }
                 if (hitLimit) {

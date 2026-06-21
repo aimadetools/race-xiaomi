@@ -18,6 +18,7 @@
     </script>
     <script src="analytics.js" defer></script>
     <script src="shared.js" defer></script>
+    <script src="pro-features.js" defer></script>
     <script src="ab-test.js"></script>
     <style>
         .checkout-page {
@@ -554,15 +555,22 @@
                 </div>
             </div>
 
-            <!-- Primary CTA -->
-            <a id="checkout-btn" href="https://buy.stripe.com/fZu7sL3Gw3GS0RQeoDeEo0a" class="cta-btn" target="_blank" rel="noopener">
-                Get Lifetime Access — <span id="btn-price">$29</span>
+            <!-- Primary CTA: Free Trial -->
+            <button id="trial-btn" class="cta-btn" onclick="if(typeof startTrial==='function'){startTrial();window.location.href='calculator.html?from=go_trial';}else{window.location.href='calculator.html';}" style="cursor:pointer;margin-bottom:12px;">
+                ⚡ Try Pro Free for 24 Hours
+            </button>
+            <p class="cta-sub" style="margin-bottom:16px;">
+                ✅ No credit card needed   ·  ✅ Full Pro access instantly   ·  ✅ Cancel anytime
+            </p>
+            <!-- Secondary CTA: Buy Now -->
+            <a id="checkout-btn" href="https://buy.stripe.com/fZu7sL3Gw3GS0RQeoDeEo0a" target="_blank" rel="noopener" style="display:block;width:100%;padding:14px 32px;background:transparent;border:2px solid var(--accent);color:var(--accent);border-radius:12px;font-size:15px;font-weight:700;cursor:pointer;text-align:center;text-decoration:none;transition:all 0.2s;box-shadow:none;margin-bottom:12px;">
+                Or buy now — <span id="btn-price">$29</span> lifetime
             </a>
             <p class="cta-sub">
-                ✅ Instant access  ·  ✅ Lifetime — no subscription  ·  ✅ 14-day money-back guarantee
+                ✅ One-time payment   ·  ✅ Lifetime access   ·  ✅ 14-day money-back guarantee
             </p>
             <p style="text-align:center;font-size:12px;color:var(--text-muted);margin-top:8px;">
-                Price increases to <strong>$49</strong> on <strong>July 12, 2026</strong> — founding members lock in $29 forever
+                Founding member price — lock in $29 forever before it increases to $49
             </p>
 
             <!-- Trust badges -->
@@ -659,10 +667,13 @@
             </div>
 
             <div id="est-cta-area">
-                <a id="checkout-btn-est" href="https://buy.stripe.com/fZu7sL3Gw3GS0RQeoDeEo0a" class="cta-btn demo-cta" target="_blank" rel="noopener">
-                    See All Your Alternatives — <span id="btn-price-est">$29</span>
+                <button class="cta-btn demo-cta" onclick="if(typeof startTrial==='function'){startTrial();window.location.href='calculator.html?from=go_estimator_trial';}else{window.location.href='calculator.html';}" style="cursor:pointer;margin-bottom:10px;">
+                    ⚡ Try Pro Free — See All Alternatives
+                </button>
+                <a id="checkout-btn-est" href="https://buy.stripe.com/fZu7sL3Gw3GS0RQeoDeEo0a" target="_blank" rel="noopener" style="display:block;padding:12px 24px;background:transparent;border:2px solid var(--accent);color:var(--accent);border-radius:10px;font-size:14px;font-weight:600;text-align:center;text-decoration:none;transition:all 0.2s;">
+                    Or buy now — <span id="btn-price-est">$29</span> lifetime
                 </a>
-                <p class="cta-sub">14-day money-back guarantee · One-time payment · Lifetime access</p>
+                <p class="cta-sub" style="margin-top:10px;">No credit card for trial · 14-day money-back guarantee</p>
             </div>
         </div>
 
@@ -749,11 +760,11 @@
         </div>
 
         <!-- Bottom CTA -->
-        <div class="urgency-bar" style="margin-bottom:16px;font-size:13px;">
-            ⏰ Price increases to $49 on July 12 — <span id="countdown-bottom" style="font-family:monospace;font-weight:800;"></span> left at $29
-        </div>
-        <a id="checkout-btn-bottom" href="https://buy.stripe.com/fZu7sL3Gw3GS0RQeoDeEo0a" class="cta-btn" target="_blank" rel="noopener" style="margin-bottom:16px;">
-            Get Lifetime Access — <span id="btn-price-bottom">$29</span>
+        <button class="cta-btn" onclick="if(typeof startTrial==='function'){startTrial();window.location.href='calculator.html?from=go_trial_bottom';}else{window.location.href='calculator.html';}" style="cursor:pointer;margin-bottom:12px;">
+            ⚡ Try Pro Free for 24 Hours
+        </button>
+        <a id="checkout-btn-bottom" href="https://buy.stripe.com/fZu7sL3Gw3GS0RQeoDeEo0a" target="_blank" rel="noopener" style="display:block;width:100%;padding:14px 32px;background:transparent;border:2px solid var(--accent);color:var(--accent);border-radius:12px;font-size:15px;font-weight:700;cursor:pointer;text-align:center;text-decoration:none;transition:all 0.2s;box-shadow:none;margin-bottom:16px;">
+            Or buy now — <span id="btn-price-bottom">$29</span> lifetime
         </a>
         <p class="cta-sub">42 models · 203 comparisons · 14-day money-back guarantee</p>
     </main>
