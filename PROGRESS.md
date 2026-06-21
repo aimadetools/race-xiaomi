@@ -1,5 +1,13 @@
 # PROGRESS.md
 
+## Session 806 (Jun 21) — xAI/Grok + Cohere Migration Routes (1 commit)
+**Added xAI (Grok) and Cohere to migration checklist.**
+- **xAI provider added:** Grok 4.3 ($1.25/$2.50, 1M context), Grok Build 0.1 ($0.30/$0.50, 256K). Full SDK docs.
+- **3 new route cards:** OpenAI → xAI (60% savings), Anthropic → xAI (85% savings), OpenAI → Cohere (50% savings)
+- **Updated dropdowns:** xAI added to "From" dropdown, xAI + Cohere added to "Target" dropdown
+- **Total routes:** 9 popular migration routes now available (was 6)
+- **1 commit, 1 file changed, 26 insertions**
+
 ## Session 805 (Jun 21) — Widget Cross-links from Blog Posts (1 commit)
 **Added widget.html promotion to 296 blog posts.**
 - Widget card with accent border appears before `</main>` on every blog post that didn't already link to widget.html
