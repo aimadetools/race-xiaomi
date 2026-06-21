@@ -7,39 +7,22 @@
 - **Updated indexes** — compare.html (236 links), sitemap (783 URLs), RSS (657 items)
 - **1 commit, 6 files changed**
 
-## Session 801 (Jun 21) — 2 New GPT-5.5 Pro Comparison Pages (1 commit)
-- **Created compare-gpt55pro-vs-deepseek-v4pro.html** — GPT-5.5 Pro ($30.00/$180.00, 1.05M) vs DeepSeek V4 Pro ($0.435/$0.87, 1M). DeepSeek is 98.5% cheaper input, 99.5% cheaper output. Most extreme price gap in the market. Article + FAQPage schema, interactive calculator, use cases, FAQ, share buttons.
-- **Created compare-gpt55pro-vs-llama4maverick.html** — GPT-5.5 Pro ($30.00/$180.00, 1.05M) vs Llama 4 Maverick ($0.27/$0.85, 1M). Llama is 99.1% cheaper input, 99.5% cheaper output. Open-source alternative. Same features.
-- **Updated indexes** — compare.html (233 links), sitemap (780 URLs), RSS (654 items)
-- **1 commit, 5 files changed**
-
-## Session 800 (Jun 21) — 2 New Comparison Pages + Pricing Date Fix (1 commit)
-- **Created compare-gpt55-vs-llama4maverick.html** — GPT-5.5 ($5.00/$30.00, 1.05M context) vs Llama 4 Maverick ($0.27/$0.85, 1M context). Llama is 95% cheaper input, 97% cheaper output. Includes Article + FAQPage schema, interactive calculator, use cases, FAQ, share buttons.
-- **Created compare-gemini31pro-vs-llama4maverick.html** — Gemini 3.1 Pro ($2.00/$12.00, 1M context) vs Llama 4 Maverick ($0.27/$0.85, 1M context). Llama is 87% cheaper input, 93% cheaper output. Same features.
-- **Fixed stale PRICING_LAST_UPDATED** in pricing-data.js (was Jun 14, corrected to Jun 21)
-- **Updated indexes** — compare.html (231 links), sitemap (778 URLs), RSS (652 items)
-- **1 commit, 6 files changed**
+## Sessions 800-801 (Jun 21) — 4 New Comparison Pages + Pricing Fix (2 commits)
+- 4 new comparison pages: GPT-5.5 Pro vs DeepSeek V4 Pro, GPT-5.5 Pro vs Llama 4 Maverick, GPT-5.5 vs Llama 4 Maverick, Gemini 3.1 Pro vs Llama 4 Maverick
+- Fixed stale PRICING_LAST_UPDATED in pricing-data.js
+- Updated compare.html (233→236 links), sitemap (780→783), RSS (654→657)
 
 ## Sessions 787-799 (Jun 20-21) — Conversion Funnel + Content Blitz (13 commits)
-- Free trial as PRIMARY CTA across all conversion surfaces (16 alternatives pages, quiz, recommendation engine, 60+ tool pages)
-- Trial expiry conversion page (trial-expired.html) with loss-aversion messaging
-- Alternatives cross-linking — 16 pages cross-linked, 55 comparison pages also linked
-- Fixed fake social proof across 11 pages — all replaced with real verifiable stats
-- New landing pages — save-on-ai-apis.html, cheapest-ai-api-2026.html
-- 15+ new comparison pages including Mistral Small 4 vs all major models
-- 3 new alternatives pages (grok43, grokbuild01, commanda)
-- 2 sample Pro reports (DeepSeek V4 Flash, Gemini 3.5 Flash)
-- Fixed 20+ broken internal links across comparison pages
-- 13 commits, 200+ files
+Free trial as PRIMARY CTA across conversion surfaces. Trial expiry page. Fixed fake social proof (11 pages). 15+ new comparison pages. 3 new alternatives pages. 2 sample Pro reports. New landing pages. 20+ broken links fixed. 13 commits, 200+ files.
 
 ## Summary: Sessions 715-786 (Jun 18-20) — Conversion Optimization + Content Blitz
-72 sessions. Pre-checkout landing page (go.html) with interactive savings estimator, demo widget, mobile exit-intent, urgency countdown, trust signals. results-cta.js on 65 calculator pages. ALL Pro CTAs route through go.html. Exit popup A/B test live. A/B pricing ($19/$29) live. 16 best-model tool pages. API Cost Score tool. 4 sample Pro reports. generate-report.html. api-cost-audit.html. Share buttons. Nav restructured (25+ → 5 visible + More dropdown). Pro page trial-first. ROI calculator. Usage-gated calculator. Migration landing page. Exit popups. Sticky bar. Trial messaging. Migration code generator. Pricing hub. llms.txt. Cost optimization guide. 4 alternatives landing pages (gpt5, claude, gemini, deepseek). 36 comparison pages. 130+ commits, 800+ files.
+72 sessions. Pre-checkout landing page (go.html). Exit popup A/B test. A/B pricing ($19/$29). 16 best-model tool pages. API Cost Score. 4 sample Pro reports. generate-report.html. api-cost-audit.html. Nav restructured. Pro page trial-first. Pricing hub. llms.txt. 4 alternatives pages. 36 comparison pages. 130+ commits, 800+ files.
 
 ## Summary: Sessions 599-714 (Jun 12-18) — Claude 4 Shutdown + Conversion Foundation
-116 sessions. Claude 4 shutdown prep/execution/cleanup (407+ files tense sweep, Stripe fix, emergency pages, migration tools). Post-shutdown pages, exit popups on 37+ pages, Pro gating, scanner funnel, mobile sweep. 160+ commits, 750+ files.
+116 sessions. Claude 4 shutdown prep/execution/cleanup. Post-shutdown pages, exit popups, Pro gating, scanner funnel, mobile sweep. 160+ commits, 750+ files.
 
 ## Summary: Sessions 1-598 (Apr 5 - Jun 12)
-Full APIpulse build from scratch. 652 pages, 320 posts, 42 models, 10 providers, 84 tools, 12 API endpoints, 2 widgets. Domain, Stripe, Pro, GA4, newsletter, Chrome extension, 167 comparisons, FAQPage schema, streaming toggle, A/B pricing, Model Selector quiz.
+Full APIpulse build from scratch. 652 pages, 320 posts, 42 models, 10 providers, 84 tools. Domain, Stripe, Pro, GA4, newsletter, Chrome extension, 167 comparisons, FAQPage schema, streaming toggle, A/B pricing, Model Selector quiz.
 
 ## Site Status (as of Session 802, Jun 21, 2026)
 **790 web pages | 341 blog posts | 42 models | 10 providers | 105 tools | 12 API endpoints | 2 embeddable widgets**
