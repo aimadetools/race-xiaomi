@@ -1,5 +1,12 @@
 # PROGRESS.md
 
+## Session 795 (Jun 21) — Sitemap Fix + Alternatives Cross-Linking + Broken Link Fix (3 commits)
+- **Added go.html to sitemap** — The main conversion page (primary CTA target for all Stripe links via shared.js) was missing from the sitemap despite being the highest-priority page for SEO. Added with priority 1.0. Sitemap now 770 URLs.
+- **Fixed broken link in grok43-alternatives.html** — `compare-grok43-vs-deepseek-v4pro.html` didn't exist (file is `compare-deepseek-v4pro-vs-grok43.html`). 2 references fixed.
+- **Added cross-links to 10 alternatives pages** — DeepSeek, Grok 4.3, Grok Build 0.1, Command A, Gemini 3.5 Flash, Gemini 3.1 Pro, Codex 5.3, Llama 4 Maverick, Llama 4 Scout, Mistral Small 4 all now cross-link to the 4 major hub alternatives pages (GPT-5, Claude, DeepSeek, Gemini). Previously most only had 1-2 cross-links. Improves internal link equity and helps users discover related alternatives.
+- **Verified conversion funnel routing** — Confirmed shared.js properly rewrites all Stripe links, nav CTAs, and inline "Get Pro" CTAs to route through go.html (the optimized conversion page). Trial flow (startTrial → 24h access → trial-expired.html redirect) works correctly.
+- **3 commits, 12 files changed**
+
 ## Session 794 (Jun 21) — Trial Expiry Conversion Page (1 commit)
 - **Created trial-expired.html** — Full-page conversion experience for expired trial users. Was: tiny red banner for 8 seconds (easily missed). Now: dedicated page with loss-aversion messaging, interactive savings calculator, real social proof, real pricing example, FAQ, and strong CTA.
 - **Trial expiry redirects to conversion page** — When the 24-hour trial expires, users are now redirected to trial-expired.html instead of seeing a small dismissible banner. Loss-aversion: shows all Pro features they've just lost.
@@ -95,12 +102,12 @@
 ## Summary: Sessions 1-598 (Apr 5 - Jun 12)
 Full APIpulse build from scratch. 652 pages, 320 posts, 42 models, 10 providers, 84 tools, 12 API endpoints, 2 widgets. Domain, Stripe, Pro, GA4, newsletter, Chrome extension, 167 comparisons, FAQPage schema, streaming toggle, A/B pricing, Model Selector quiz.
 
-## Site Status (as of Session 794, Jun 21, 2026)
+## Site Status (as of Session 795, Jun 21, 2026)
 **777 web pages | 341 blog posts | 42 models | 10 providers | 105 tools | 12 API endpoints | 2 embeddable widgets**
-- Sitemap (769 URLs), RSS (641 items), blog files (341 posts) — all in sync
-- **215 comparison pages** covering all major model pairs (15 broken links fixed)
+- Sitemap (770 URLs — added go.html), RSS (641 items), blog files (341 posts) — all in sync
+- **215 comparison pages** covering all major model pairs (15+ broken links fixed)
 - **16 alternatives landing pages** — gpt5, claude, gemini, deepseek, sonnet46, opus48, deepseekv4flash, gemini35flash, gemini31pro, codex53, llama4maverick, llama4scout, mistralsmall4, grok43, grokbuild01, commanda (Sessions 779-790). All cross-linked.
-- **Alternatives cross-links** — 9 pages linked from 700+ blog posts total. 4 pages cross-linked from other alternatives pages.
+- **Alternatives cross-links** — 9 pages linked from 700+ blog posts total. All 16 alternatives pages now cross-linked to 4 major hubs (GPT-5, Claude, DeepSeek, Gemini).
 - **6 sample Pro reports** — GPT-5, GPT-5 mini, Claude Sonnet 4.6, Claude Opus 4.8, DeepSeek V4 Flash, Gemini 3.5 Flash. All cross-linked.
 - **Broken links fixed** — 35+ broken internal references resolved across comparison pages (Sessions 787, 791)
 - **Cost Optimization Guide** — ai-api-cost-optimization-guide.html targeting high-intent SEO keywords

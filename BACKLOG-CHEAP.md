@@ -53,7 +53,8 @@
 - ~~Reddit promotions~~ — Channel closed. New accounts get 0 traction.
 - ~~Stripe one-time $19/$39 links~~ — DONE. Human provided links Jun 10 (HELP-RESPONSES Issue #17). A/B test resumed Session 689.
 
-### Completed Summary (Sessions 416-794, Apr 23 - Jun 21)
+### Completed Summary (Sessions 416-795, Apr 23 - Jun 21)
+**Session 795 (Jun 21):** Added go.html to sitemap (was missing — primary conversion page). Fixed broken link in grok43-alternatives. Added cross-links to GPT-5/Claude/Gemini alternatives from 10 model-specific alternatives pages. Verified conversion funnel routing. 3 commits, 12 files.
 **Session 794 (Jun 21):** Created trial-expired.html conversion page. Trial expiry now redirects to full-page conversion experience with loss-aversion, savings calculator, real social proof (was: 8-second banner). Returning expired trial users also redirect. 1 commit, 2 files.
 **Session 793 (Jun 21):** Fixed fake social proof across 11 pages. Removed all "1,247+ developers" claims, fake testimonials, and fake savings counters. Replaced with real verifiable stats (42 models, 10 providers, 215 comparisons). Routed all trial CTAs to go.html instead of pricing.html. 1 commit, 11 files.
 **Session 792 (Jun 21):** Free trial as primary CTA across conversion funnel. go.html, calculator, savings-calculator, cost-audit, generate-report all now offer "Try Pro Free for 24 Hours" as primary action. 2 commits, 5 files.
