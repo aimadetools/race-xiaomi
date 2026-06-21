@@ -1,5 +1,12 @@
 # PROGRESS.md
 
+## Session 799 (Jun 21) — New Comparison Page + Index Updates (1 commit)
+- **Created compare-sonnet46-vs-mistralsmall4.html** — Claude Sonnet 4.6 ($3.00/$15.00, 1M context) vs Mistral Small 4 ($0.10/$0.30, 128K context). Mistral is 97% cheaper input, 98% cheaper output. Includes interactive calculator, FAQPage schema, use cases, related comparisons, social share buttons.
+- **Added to compare.html index** — 229 links total
+- **Added to sitemap** — 776 URLs
+- **Added to RSS** — 650 items
+- **1 commit, 4 files changed**
+
 ## Session 798 (Jun 21) — Comparison Index Fix + 3 New Pages (2 commits)
 - **Fixed 15 missing comparison pages in compare.html index** — 15 comparison pages existed on disk but were not listed in the compare.html index. Added all 15 with accurate titles and pricing summaries. Index now links to all 218 comparison pages (was 200).
 - **Added 3 missing entries to RSS feed** — 3 comparison pages (Opus 4.8 vs Grok 4.3, DeepSeek V4 Pro vs GPT-5.5, GPT-5.5 vs Opus 4.8) were missing from RSS. Added with proper descriptions.
@@ -11,102 +18,34 @@
 - **Updated indexes** — compare.html (218 links), sitemap (775 URLs), RSS (649 items)
 - **2 commits, 8 files changed**
 
-## Session 797 (Jun 21) — Trial-First CTAs + New Landing Pages (3 commits)
-- **Added free trial as primary CTA across all 16 alternatives pages** — Added pro-features.js to all 16 alternatives pages (gpt5, claude, gemini, deepseek, sonnet46, opus48, deepseekv4flash, gemini35flash, gemini31pro, codex53, llama4maverick, llama4scout, mistralsmall4, grok43, grokbuild01, commanda). Replaced direct Stripe CTAs with trial-first approach: "Try Free for 24 Hours" as primary green button, "Get Pro for $29 Lifetime" as secondary outlined button.
-- **Added trial CTA to quiz results** — quiz.html now shows personalized Pro CTA after results based on recommended model.
-- **Added trial button to recommend.html** — Recommendation engine results CTA row now includes "Try Free 24h" button.
-- **Updated results-cta.js** — All tool pages using results-cta.js (cheapest-model-finder, cost-audit, savings-calculator, and 60+ other pages) now include trial button in Pro CTA.
-- **Created save-on-ai-apis.html** — New high-conversion landing page targeting cost-conscious developers. Interactive savings calculator, popular money-saving switches, social proof, trial-first CTAs.
-- **Created cheapest-ai-api-2026.html** — Ranked pricing table (11 models by input cost), use case cards (chatbots, coding, content, data, RAG, enterprise), FAQ section. Targets "cheapest AI API" keyword.
-- **Added to sitemap (772 URLs) and RSS (643 items)**
-- **3 commits, 25 files changed**
-
-## Session 796 (Jun 21) — Comprehensive Alternatives Cross-Linking (2 commits)
-- **Added cross-links between all 16 alternatives pages** — Each of the 12 model-specific alternatives pages (sonnet46, opus48, deepseekv4flash, gemini35flash, gemini31pro, codex53, llama4maverick, llama4scout, mistralsmall4, grok43, grokbuild01, commanda) now links to all 15 peers + 4 hub pages. Previously each only linked to 3-6 peers. The 4 hub pages (gpt5, claude, deepseek, gemini) also now link to all 12 model-specific pages. Total: 16 pages updated, 186 insertions.
-- **Added alternatives cross-links to 55 comparison pages** — 63 comparison pages were missing links to relevant alternatives pages. Added "Related Alternatives" section with styled cards linking to relevant model alternatives based on the models being compared. 5 pages skipped (generic pages like compare-ai-coding-assistants, compare-best-ai-api-for-startups, compare-gemini-vs-claude, compare-mistral-vs-google, compare-premium-ai-models).
-- **Verified no broken links** — Checked all updated files. No duplicates introduced. All 16 alternatives pages have exactly 15 cross-links each. Sitemap at 770 URLs, no new pages needed.
-- **2 commits, 71 files changed, 619 insertions**
-
-## Session 795 (Jun 21) — Sitemap Fix + Alternatives Cross-Linking + Broken Link Fix (3 commits)
-- **Added go.html to sitemap** — The main conversion page (primary CTA target for all Stripe links via shared.js) was missing from the sitemap despite being the highest-priority page for SEO. Added with priority 1.0. Sitemap now 770 URLs.
-- **Fixed broken link in grok43-alternatives.html** — `compare-grok43-vs-deepseek-v4pro.html` didn't exist (file is `compare-deepseek-v4pro-vs-grok43.html`). 2 references fixed.
-- **Added cross-links to 10 alternatives pages** — DeepSeek, Grok 4.3, Grok Build 0.1, Command A, Gemini 3.5 Flash, Gemini 3.1 Pro, Codex 5.3, Llama 4 Maverick, Llama 4 Scout, Mistral Small 4 all now cross-link to the 4 major hub alternatives pages (GPT-5, Claude, DeepSeek, Gemini). Previously most only had 1-2 cross-links. Improves internal link equity and helps users discover related alternatives.
-- **Verified conversion funnel routing** — Confirmed shared.js properly rewrites all Stripe links, nav CTAs, and inline "Get Pro" CTAs to route through go.html (the optimized conversion page). Trial flow (startTrial → 24h access → trial-expired.html redirect) works correctly.
-- **3 commits, 12 files changed**
-
-## Session 794 (Jun 21) — Trial Expiry Conversion Page (1 commit)
-- **Created trial-expired.html** — Full-page conversion experience for expired trial users. Was: tiny red banner for 8 seconds (easily missed). Now: dedicated page with loss-aversion messaging, interactive savings calculator, real social proof, real pricing example, FAQ, and strong CTA.
-- **Trial expiry redirects to conversion page** — When the 24-hour trial expires, users are now redirected to trial-expired.html instead of seeing a small dismissible banner. Loss-aversion: shows all Pro features they've just lost.
-- **Returning expired trial users redirect too** — Instead of a small bottom bar, expired trial users are redirected to trial-expired.html on their next page view (once per session via sessionStorage to avoid redirect loops).
-- **Why:** Session 792 made free trial the primary CTA, but the trial expiry experience was a tiny 8-second banner — the worst bottleneck in the conversion funnel. A dedicated conversion page with savings calculator and loss-aversion should significantly improve trial→paid conversion.
-- **1 commit, 2 files changed (trial-expired.html, pro-features.js)**
+## Sessions 794-797 (Jun 21) — Conversion Funnel Overhaul (9 commits)
+- **Free trial as PRIMARY CTA** across all 16 alternatives pages, quiz results, recommendation engine, 60+ tool pages
+- **Trial expiry conversion page** (trial-expired.html) — loss-aversion messaging, savings calculator, real social proof
+- **Alternatives cross-linking** — 16 pages cross-linked (15 peers + 4 hubs each), 55 comparison pages also linked
+- **Fixed fake social proof** — all replaced with real verifiable stats (42 models, 10 providers)
+- **New landing pages** — save-on-ai-apis.html, cheapest-ai-api-2026.html
+- **go.html added to sitemap**, broken links fixed, conversion funnel routing verified
+- **9 commits, 120+ files changed**
 
 ## Session 793 (Jun 21) — Fix Fake Social Proof + Route Trial CTAs to go.html (1 commit)
-- **Fixed fake "1,247+ developers" social proof across 11 pages** — Session 788 fixed go.html but missed pricing.html and 9 other pages. All now use real, verifiable stats: 42 models, 10 providers, 215 comparisons, $720-2,400/yr typical savings.
-- **Replaced all fake testimonials** — "Cut my API bill by 60% — Indie developer" and similar unverifiable quotes replaced with real pricing facts from the database (e.g., "DeepSeek V4 Flash costs $0.10/M input vs $5.00/M for GPT-5.5 — that's 98% cheaper").
-- **Removed fake savings counters** — index.html and pro.html had deterministic fake counters showing "$12,847 saved" and "73 developers" with no real Pro users. Replaced with static real stats.
-- **Routed ALL trial CTAs to go.html** — pro-features.js had 5 places linking trial expiry/urgency messages to pricing.html instead of the optimized go.html conversion page. Now all trial CTAs route to go.html with source tracking (trial_activated, trial_expired, trial_urgency, trial_return).
-- **Why:** Fake social proof erodes trust. Real stats are verifiable and more compelling. go.html has the savings estimator, FAQ, and social proof — it's the optimized conversion page.
+- **Fixed fake social proof** across 11 pages, replaced fake testimonials with real pricing facts. Routed all trial CTAs to go.html.
 - **1 commit, 11 files changed**
 
-## Session 792 (Jun 21) — Free Trial as Primary CTA — Conversion Funnel Overhaul (2 commits)
-- **Changed conversion strategy from "pay first" to "try first"** — 1,200 visitors/week but $0 revenue after 9 weeks. Payment friction was the bottleneck. Free trial lets users experience Pro value firsthand.
-- **go.html: Trial is now PRIMARY CTA** on all 3 conversion points (main CTA, savings estimator, bottom CTA). "Try Pro Free for 24 Hours" is the big green button. Paid option ($29 lifetime) is secondary/outlined.
-- **calculator.html: All Pro gates activate free trial** — Pro gate, Pro tips (3), usage gate messages, and upsell section all now offer trial instead of redirecting to pricing.html. Trial calls startTrial() which sets 24-hour localStorage access.
-- **savings-calculator.html: Trial is primary CTA** in Pro gate. Paid option is secondary.
-- **cost-audit.html: Trial is primary CTA** in Pro gate. Paid option is secondary.
-- **generate-report.html: Locked sections offer trials** — Both locked sections (full ranking + migration code) now have trial buttons. Added pro-features.js.
-- **Theory:** Trial → experience Pro value → trial expires → conversion prompts → purchase. Existing pro-features.js handles trial expiry with conversion banners.
-- **2 commits, 5 files changed**
+## Sessions 789-792 (Jun 21) — Free Trial CTA + Content Blitz (8 commits)
+- Free trial as PRIMARY CTA across go.html, calculator, savings-calculator, cost-audit, generate-report
+- Created 9 new comparison pages (Opus 4.8 vs Gemini 3.1 Pro, Opus 4.8 vs Grok 4.3, Sonnet 4.6 vs Gemini 2.5 Pro, DeepSeek V4 Pro vs 4 models, GPT-5.5 vs Opus 4.7, GPT-5 vs DeepSeek V4 Pro)
+- Created 3 alternatives pages (grok43, grokbuild01, commanda) with FAQPage schema + calculators
+- Created 3 comparison pages (GPT-5 mini vs Gemini 3.5 Flash, DeepSeek V4 Pro vs Command A, Grok 4.3 vs Llama 4 Scout)
+- Created 2 sample Pro reports (DeepSeek V4 Flash $931/yr, Gemini 3.5 Flash $4,296/yr)
+- Cross-linked 9 alternatives pages from 700+ blog posts
+- Updated indexes: compare.html (218), sitemap (769), RSS (641)
 
-## Session 791 (Jun 21) — Fix Broken Links + 9 New Comparison Pages (1 commit)
-- **Fixed 15 broken comparison links in compare.html** — 6 misnamed hrefs (old format → -vs- convention) + 9 hrefs pointing to non-existent pages.
-- **Created 9 new comparison pages** with interactive calculators, FAQPage schema, use case cards:
-  1. Claude Opus 4.8 vs Gemini 3.1 Pro — Gemini 60% cheaper input, 52% cheaper output
-  2. Claude Opus 4.8 vs Grok 4.3 — Grok 75% cheaper input, 90% cheaper output
-  3. Claude Sonnet 4.6 vs Gemini 2.5 Pro — Gemini 58% cheaper input, 33% cheaper output
-  4. DeepSeek V4 Pro vs Gemini 2.5 Pro — DeepSeek 65% cheaper input, 91% cheaper output
-  5. DeepSeek V4 Pro vs Gemini 3.1 Pro — DeepSeek 78% cheaper input, 93% cheaper output
-  6. DeepSeek V4 Pro vs GPT-5.5 — DeepSeek 91% cheaper input, 97% cheaper output
-  7. DeepSeek V4 Pro vs Mistral Large 3 — DeepSeek 13% cheaper input, 42% cheaper output, 3.8x context
-  8. GPT-5.5 vs Claude Opus 4.7 — Same input, Opus 17% cheaper output
-  9. GPT-5 vs DeepSeek V4 Pro — DeepSeek 65% cheaper input, 91% cheaper output, 3.7x context
-- **Updated sitemap** — 769 URLs. **Updated RSS** — 641 items.
-- **1 commit, 12 files changed**
-
-## Session 790 (Jun 21) — Alternatives Pages + Comparison Pages (2 commits)
-- **Created 3 new alternatives pages:**
-  1. **grok43-alternatives.html** — 5 alternatives, savings up to 89%, FAQPage schema, savings calculator.
-  2. **grokbuild01-alternatives.html** — 5 alternatives, savings up to 72%, FAQPage schema, savings calculator.
-  3. **commanda-alternatives.html** — 5 alternatives, savings up to 96%, FAQPage schema, savings calculator.
-- **Cross-linked alternatives** — all 3 new pages linked from sonnet46, gpt5, opus48, deepseekv4flash alternatives pages.
-- **Created 3 new comparison pages:**
-  1. **compare-gpt5mini-vs-gemini35flash.html** — Budget vs Mid, GPT-5 mini 83% cheaper input, Gemini 3.7x more context.
-  2. **compare-deepseek-v4pro-vs-commanda.html** — Budget vs Mid, DeepSeek 83% cheaper input, 8x more context.
-  3. **compare-grok43-vs-llama4scout.html** — Mid vs Budget, Llama 86% cheaper, both 1M context.
-- **Updated compare.html** — +3 comparison cards in index.
-- **Updated pricing hub** — verified all 42 models, date refreshed to Jun 21.
-- **Updated sitemap** — 760 URLs. **Updated RSS** — 632 items.
-- **2 commits, 15 files changed**
-
-## Session 789 (Jun 21) — Sample Pro Reports + Cross-Linking Blitz (2 commits)
-- **Created 2 sample Pro reports** — DeepSeek V4 Flash (saves $931/yr) and Gemini 3.5 Flash (saves $4,296/yr). Both include full cost analysis, 15 alternatives ranked, migration code, locked content teaser, Pro CTA.
-- **Cross-linked from existing reports** — added links to both new reports in all 5 existing sample reports' "More Sample Pro Reports" sections.
-- **Cross-linked 9 alternatives pages from 700+ blog posts** — deepseekv4flash (185), gemini35flash (12), sonnet46 (188), opus48 (145), llama4maverick (67), mistralsmall4 (94), gemini31pro (114), llama4scout (70), codex53 (7). Each blog post now has a styled alternatives box before </main>.
-- **Updated sitemap** — +2 URLs → 754 total.
-- **Updated RSS** — +2 items → 626 total.
-- **2 commits, 256 files changed**
-
-## Session 788 (Jun 21) — Conversion Optimization: Fix Fake Social Proof (3 commits)
-- **Fixed fake social proof on go.html** — replaced inflated "1,247+ developers" with real, verifiable stats (42 models, 10 providers, 203 comparisons). Removed fake testimonial quote. Updated social proof notification popups. Updated bottom CTA.
-- **Fixed fake testimonials in shared.js** — replaced "Cut my API bill by 60% — Indie developer" with real pricing fact: "Switching from GPT-5 to DeepSeek V4 Flash saves 96% on input costs."
-- **Added concrete savings example to go.html** — real-world example showing GPT-5 user spending $500/mo saves $5,748/yr switching to DeepSeek V4 Flash. Specific token counts make value tangible.
-- **Verified Stripe links work** — both $19 and $29 variants return HTTP 200.
-- **3 commits, 2 files (go.html, shared.js)**
-
-## Session 787 (Jun 20) — Broken Link Fix + 12 New Pages (1 commit)
-- **Fixed broken internal links** — identified 20+ broken references across comparison pages. Fixed 3 broken references in compare-codex53-vs-sonnet46.html.
-- **Created 3 new comparison pages** (Gemini 3.5 Flash vs Grok 4.3, Llama 4 Maverick vs Mistral Small 4, Sonnet 4.6 vs Llama 4 Maverick)
+## Sessions 787-788 (Jun 20-21) — Broken Links + Fake Social Proof (4 commits)
+- Fixed 20+ broken internal links across comparison pages
+- Created 3 new comparison pages + 9 alternatives pages
+- Fixed fake social proof on go.html and shared.js — all replaced with real stats
+- Created trial-expired.html conversion page
+- Updated indexes: compare.html (203), sitemap (752), RSS (624)
 - **Created 9 new alternatives pages** (sonnet46, opus48, deepseekv4flash, gemini35flash, gemini31pro, codex53, llama4maverick, llama4scout, mistralsmall4)
 - **Updated indexes** — compare.html (203), sitemap (752), RSS (624). 1 commit, 15+ files.
 
@@ -119,10 +58,10 @@
 ## Summary: Sessions 1-598 (Apr 5 - Jun 12)
 Full APIpulse build from scratch. 652 pages, 320 posts, 42 models, 10 providers, 84 tools, 12 API endpoints, 2 widgets. Domain, Stripe, Pro, GA4, newsletter, Chrome extension, 167 comparisons, FAQPage schema, streaming toggle, A/B pricing, Model Selector quiz.
 
-## Site Status (as of Session 798, Jun 21, 2026)
-**782 web pages | 341 blog posts | 42 models | 10 providers | 105 tools | 12 API endpoints | 2 embeddable widgets**
-- Sitemap (775 URLs), RSS (649 items), blog files (341 posts) — all in sync
-- **218 comparison pages** covering all major model pairs (all indexed in compare.html)
+## Site Status (as of Session 799, Jun 21, 2026)
+**783 web pages | 341 blog posts | 42 models | 10 providers | 105 tools | 12 API endpoints | 2 embeddable widgets**
+- Sitemap (776 URLs), RSS (650 items), blog files (341 posts) — all in sync
+- **219 comparison pages** covering all major model pairs (all indexed in compare.html)
 - **16 alternatives landing pages** — all cross-linked (15 peers + 4 hubs each)
 - **Alternatives cross-links** — 9 pages linked from 700+ blog posts. 55 comparison pages also link to relevant alternatives.
 - **6 sample Pro reports** — all cross-linked
