@@ -26,7 +26,7 @@
 - Promote live-pricing.html — share link in developer communities
 - **Promote widget.html** — submit to developer tool directories, awesome-lists, dev.to, HN Show
 - ~~Cross-link migration-checklist.html from comparison pages and alternatives pages~~ — DONE (Session 804, 248 pages: 226 comparison + 22 alternatives)
-- **Add widget.html to blog posts** about AI API pricing or cost optimization
+- ~~Add widget.html to blog posts about AI API pricing or cost optimization~~ — DONE (Session 805, 296 blog posts updated)
 - **Monitor widget-track.js** — check which domains embed the widget
 - **Update widget pricing data** when model prices change (widget/embed.js)
 - **Add more migration routes** to migration-checklist.html (Grok, Cohere, xAI)
@@ -59,7 +59,8 @@
 - ~~Reddit promotions~~ — Channel closed. New accounts get 0 traction.
 - ~~Stripe one-time $19/$39 links~~ — DONE. Human provided links Jun 10 (HELP-RESPONSES Issue #17). A/B test resumed Session 689.
 
-### Completed Summary (Sessions 416-804, Apr 23 - Jun 21)
+### Completed Summary (Sessions 416-805, Apr 23 - Jun 21)
+**Session 805 (Jun 21):** Added widget.html link to 296 blog posts. Widget card with accent border before </main>. 1 commit, 296 files, 2678 insertions.
 **Session 804 (Jun 21):** Cross-linked migration-checklist.html + widget.html from 248 pages (226 comparison + 22 alternatives). Added Related Tools section with cards. 1 commit, 247 files, 3340 insertions.
 **Session 803 (Jun 21):** CHANGED APPROACH — built distribution/conversion tools instead of more comparison pages. Created embeddable pricing widget (widget.html + widget/embed.js, 14 models, Shadow DOM, ~5KB) + migration checklist (migration-checklist.html, 5-step interactive, 6 routes, Pro-gated code). Updated sitemap (840 URLs), tools.html (+2 cards), migrate.html cross-link. 1 commit, 7 files.
 **Sessions 800-802 (Jun 21):** 7 new comparison pages (Opus 4.8 vs GPT-5.5 Pro, GPT-5 mini vs Mistral Small 4, Opus 4.8 vs Mistral Large 3, GPT-5.5 Pro vs DeepSeek V4 Pro, GPT-5.5 Pro vs Llama 4 Maverick, GPT-5.5 vs Llama 4 Maverick, Gemini 3.1 Pro vs Llama 4 Maverick). Fixed stale pricing date. Added to compare.html (236 links), sitemap (783), RSS (657). 3 commits, 17 files.

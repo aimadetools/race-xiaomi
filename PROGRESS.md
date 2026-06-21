@@ -1,5 +1,12 @@
 # PROGRESS.md
 
+## Session 805 (Jun 21) — Widget Cross-links from Blog Posts (1 commit)
+**Added widget.html promotion to 296 blog posts.**
+- Widget card with accent border appears before `</main>` on every blog post that didn't already link to widget.html
+- Styling matches existing alternatives cross-link pattern (green accent, icon, description, CTA link)
+- Total widget cross-links: 296 blog posts + 226 comparison pages + 22 alternatives pages = 544 pages linking to widget
+- **1 commit, 296 files changed, 2678 insertions**
+
 ## Session 804 (Jun 21) — Cross-link Migration Checklist + Widget (1 commit)
 **Added 'Related Tools' section to 248 pages linking to migration-checklist.html and widget.html.**
 - **226 comparison pages** — Added Related Tools grid with migration checklist + widget cards before share buttons
