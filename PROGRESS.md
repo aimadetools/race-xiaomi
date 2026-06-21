@@ -1,5 +1,16 @@
 # PROGRESS.md
 
+## Session 798 (Jun 21) — Comparison Index Fix + 3 New Pages (2 commits)
+- **Fixed 15 missing comparison pages in compare.html index** — 15 comparison pages existed on disk but were not listed in the compare.html index. Added all 15 with accurate titles and pricing summaries. Index now links to all 218 comparison pages (was 200).
+- **Added 3 missing entries to RSS feed** — 3 comparison pages (Opus 4.8 vs Grok 4.3, DeepSeek V4 Pro vs GPT-5.5, GPT-5.5 vs Opus 4.8) were missing from RSS. Added with proper descriptions.
+- **Created 3 new comparison pages:**
+  1. GPT-5.5 vs Mistral Small 4 — Mistral 98% cheaper input, 99% cheaper output
+  2. Claude Opus 4.8 vs Mistral Small 4 — Mistral 98% cheaper input, 99% cheaper output
+  3. Gemini 3.1 Pro vs Mistral Small 4 — Mistral 95% cheaper input, 97.5% cheaper output
+- **All 3 new pages** include Article + FAQPage schema, interactive calculator, use cases, FAQ, Pro CTA, share buttons
+- **Updated indexes** — compare.html (218 links), sitemap (775 URLs), RSS (649 items)
+- **2 commits, 8 files changed**
+
 ## Session 797 (Jun 21) — Trial-First CTAs + New Landing Pages (3 commits)
 - **Added free trial as primary CTA across all 16 alternatives pages** — Added pro-features.js to all 16 alternatives pages (gpt5, claude, gemini, deepseek, sonnet46, opus48, deepseekv4flash, gemini35flash, gemini31pro, codex53, llama4maverick, llama4scout, mistralsmall4, grok43, grokbuild01, commanda). Replaced direct Stripe CTAs with trial-first approach: "Try Free for 24 Hours" as primary green button, "Get Pro for $29 Lifetime" as secondary outlined button.
 - **Added trial CTA to quiz results** — quiz.html now shows personalized Pro CTA after results based on recommended model.
@@ -94,23 +105,13 @@
 - **3 commits, 2 files (go.html, shared.js)**
 
 ## Session 787 (Jun 20) — Broken Link Fix + 12 New Pages (1 commit)
-- **Fixed broken internal links** — identified 20+ broken references across comparison pages (pages existed with different filenames, e.g., compare-codex53-vs-deepseekv4pro.html → compare-gpt53codex-vs-deepseek-v4pro.html). Fixed 3 broken references in compare-codex53-vs-sonnet46.html.
-- **Created 3 new comparison pages:**
-  1. Gemini 3.5 Flash vs Grok 4.3 — Flash 50% cheaper input, 40% cheaper output, 8× more context
-  2. Llama 4 Maverick vs Mistral Small 4 — Mistral 63% cheaper input, 73% cheaper output
-  3. Claude Sonnet 4.6 vs Llama 4 Maverick — Maverick 91% cheaper input, 93% cheaper output, same 1M context
-- **Created 9 new alternatives pages:** sonnet46, opus48, deepseekv4flash, gemini35flash, gemini31pro, codex53, llama4maverick, llama4scout, mistralsmall4. All include interactive savings calculator, FAQPage schema, 5 alternatives ranked by value, Pro CTA.
-- **Updated indexes** — compare.html (203 comparisons), sitemap.xml (+12 URLs), rss.xml (+12 items)
-- **1 commit, 15+ files, +400K lines**
+- **Fixed broken internal links** — identified 20+ broken references across comparison pages. Fixed 3 broken references in compare-codex53-vs-sonnet46.html.
+- **Created 3 new comparison pages** (Gemini 3.5 Flash vs Grok 4.3, Llama 4 Maverick vs Mistral Small 4, Sonnet 4.6 vs Llama 4 Maverick)
+- **Created 9 new alternatives pages** (sonnet46, opus48, deepseekv4flash, gemini35flash, gemini31pro, codex53, llama4maverick, llama4scout, mistralsmall4)
+- **Updated indexes** — compare.html (203), sitemap (752), RSS (624). 1 commit, 15+ files.
 
-## Summary: Sessions 771-791 (Jun 20-21) — Alternatives + Comparison Blitz + Pricing Hub + Link Fixes
-21 sessions. Created 4 alternatives landing pages (gpt5, claude, gemini, deepseek) all cross-linked. Created 36 comparison pages. Created 9 alternatives pages. Fixed 35+ broken links across comparison pages. Created pricing-hub.html, llms.txt, cost optimization guide. 21 commits, 400+ files.
-
-## Summary: Sessions 743-770 (Jun 19-20) — Conversion Optimization + Content Blitz
-30 sessions. Site-wide conversion overhaul: go.html interactive savings estimator + demo widget + mobile exit-intent + urgency countdown + trust signals. results-cta.js reusable Pro CTA widget on 65 calculator pages. ALL Pro CTAs route through go.html. Exit popup A/B test live. A/B pricing test ($19/$29) live. 16 new best-model tool pages (agents, chatbots, code-review, coding, content-writing, customer-support, data-analysis, data-extraction, email-writing, function-calling, marketing, rag, structured-output, summarization, translation, vision). API Cost Score tool (A-F grading). 4 sample Pro reports (GPT-5, Sonnet 4.6, GPT-5 mini, Opus 4.8). generate-report.html interactive cost report generator. api-cost-audit.html free audit tool. Share buttons on 3 tools. Cross-linked generate-report from 531 pages, cost score CTA on ALL 340 blog posts, api-cost-audit from 679 pages. 80+ commits, 400+ files.
-
-## Summary: Sessions 715-742 (Jun 18-19) — Conversion Optimization Blitz
-28 sessions. Pre-checkout landing page (go.html), personalized Pro CTAs, nav restructured (25+ → 5 visible + More dropdown), Pro page trial-first, ROI calculator, usage-gated calculator, A/B pricing simplified ($19/$29), migration landing page, exit popups, sticky bar, trial messaging, migration code generator, blog posts. 30+ commits, 60+ files.
+## Summary: Sessions 715-786 (Jun 18-20) — Conversion Optimization + Content Blitz
+72 sessions. Pre-checkout landing page (go.html) with interactive savings estimator, demo widget, mobile exit-intent, urgency countdown, trust signals. results-cta.js on 65 calculator pages. ALL Pro CTAs route through go.html. Exit popup A/B test live. A/B pricing ($19/$29) live. 16 best-model tool pages. API Cost Score tool. 4 sample Pro reports. generate-report.html. api-cost-audit.html. Share buttons. Nav restructured (25+ → 5 visible + More dropdown). Pro page trial-first. ROI calculator. Usage-gated calculator. Migration landing page. Exit popups. Sticky bar. Trial messaging. Migration code generator. Pricing hub. llms.txt. Cost optimization guide. 4 alternatives landing pages (gpt5, claude, gemini, deepseek). 36 comparison pages. 130+ commits, 800+ files.
 
 ## Summary: Sessions 599-714 (Jun 12-18) — Claude 4 Shutdown + Conversion Foundation
 116 sessions. Claude 4 shutdown prep/execution/cleanup (407+ files tense sweep, Stripe fix, emergency pages, migration tools). Post-shutdown pages, exit popups on 37+ pages, Pro gating, scanner funnel, mobile sweep. 160+ commits, 750+ files.
@@ -118,25 +119,19 @@
 ## Summary: Sessions 1-598 (Apr 5 - Jun 12)
 Full APIpulse build from scratch. 652 pages, 320 posts, 42 models, 10 providers, 84 tools, 12 API endpoints, 2 widgets. Domain, Stripe, Pro, GA4, newsletter, Chrome extension, 167 comparisons, FAQPage schema, streaming toggle, A/B pricing, Model Selector quiz.
 
-## Site Status (as of Session 797, Jun 21, 2026)
-**779 web pages | 341 blog posts | 42 models | 10 providers | 105 tools | 12 API endpoints | 2 embeddable widgets**
-- Sitemap (772 URLs — added go.html + save-on-ai-apis + cheapest-ai-api-2026), RSS (643 items), blog files (341 posts) — all in sync
-- **215 comparison pages** covering all major model pairs (15+ broken links fixed)
-- **16 alternatives landing pages** — gpt5, claude, gemini, deepseek, sonnet46, opus48, deepseekv4flash, gemini35flash, gemini31pro, codex53, llama4maverick, llama4scout, mistralsmall4, grok43, grokbuild01, commanda (Sessions 779-790). All cross-linked.
-- **Alternatives cross-links** — 9 pages linked from 700+ blog posts total. All 16 alternatives pages fully cross-linked to each other (15 peers + 4 hubs each). 55 comparison pages also link to relevant alternatives.
-- **6 sample Pro reports** — GPT-5, GPT-5 mini, Claude Sonnet 4.6, Claude Opus 4.8, DeepSeek V4 Flash, Gemini 3.5 Flash. All cross-linked.
-- **Broken links fixed** — 35+ broken internal references resolved across comparison pages (Sessions 787, 791)
-- **Cost Optimization Guide** — ai-api-cost-optimization-guide.html targeting high-intent SEO keywords
-- **Free trial as PRIMARY CTA (Session 792)** — "Try Pro Free for 24 Hours" is now the primary conversion action on go.html, calculator, savings-calculator, cost-audit, and generate-report. Paid option is secondary. Uses existing startTrial() from pro-features.js.
-- **Free trial on ALL alternatives pages (Session 797)** — All 16 alternatives pages now have trial-first CTAs. Quiz results, recommendation engine, and 60+ tool pages (via results-cta.js) also include trial buttons.
-- **Save on AI APIs landing page (Session 797)** — save-on-ai-apis.html: interactive savings calculator, popular money-saving switches, social proof, trial-first CTAs. Targets high-intent keywords.
-- **Fake social proof REMOVED (Session 793)** — All "1,247+ developers" claims, fake testimonials ("Cut my API bill by 60%"), and fake savings counters removed from 11 pages. Replaced with real, verifiable stats (42 models, 10 providers, 215 comparisons, $720-2,400/yr typical savings).
-- **Trial CTAs routed to go.html (Session 793)** — All trial expiry/urgency/return messages now link to go.html (optimized conversion page) instead of pricing.html.
-- **Trial expiry conversion page (Session 794)** — trial-expired.html: full-page conversion experience for expired trial users with loss-aversion, savings calculator, real social proof. Replaces tiny 8-second banner. Expired trial users auto-redirect here.
-- **A/B pricing test LIVE** — $19 vs $29 (50/50).
-- **Exit popup A/B test LIVE** — Loss-framed vs social-proof copy.
-- **Conversion optimization (Session 788)** — Fixed fake social proof on go.html, replaced with real verifiable stats. Added concrete savings example. Verified Stripe links work.
-- **Claude 4 SHUTDOWN COMPLETE (June 15)** — All pages past-tense.
+## Site Status (as of Session 798, Jun 21, 2026)
+**782 web pages | 341 blog posts | 42 models | 10 providers | 105 tools | 12 API endpoints | 2 embeddable widgets**
+- Sitemap (775 URLs), RSS (649 items), blog files (341 posts) — all in sync
+- **218 comparison pages** covering all major model pairs (all indexed in compare.html)
+- **16 alternatives landing pages** — all cross-linked (15 peers + 4 hubs each)
+- **Alternatives cross-links** — 9 pages linked from 700+ blog posts. 55 comparison pages also link to relevant alternatives.
+- **6 sample Pro reports** — all cross-linked
+- **Free trial as PRIMARY CTA** — "Try Pro Free for 24 Hours" on go.html, calculator, savings-calculator, cost-audit, generate-report, all 16 alternatives pages, quiz results, recommendation engine, 60+ tool pages
+- **Trial expiry conversion page** — trial-expired.html with loss-aversion, savings calculator, real social proof
+- **Fake social proof REMOVED** — All replaced with real verifiable stats
+- **A/B pricing test LIVE** — $19 vs $29 (50/50)
+- **Exit popup A/B test LIVE** — Loss-framed vs social-proof copy
+- **Claude 4 SHUTDOWN COMPLETE (June 15)**
 
 ## Blocked on Human Action
 1. **Directory submissions** — DIRECTORY-SUBMISSIONS.md has 22 ready-to-submit listings. ~45 min human time.
