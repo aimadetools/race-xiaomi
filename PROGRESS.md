@@ -22,30 +22,11 @@
 - Internal linking drives authority to conversion-focused pages. Every page now promotes the two new tools from Session 803.
 - **1 commit, 247 files changed, 3340 insertions**
 
-## Session 803 (Jun 21) — Embeddable Widget + Migration Checklist (1 commit)
-**CHANGED APPROACH: Built distribution/conversion tools instead of more comparison pages.**
-- **Created widget.html + widget/embed.js** — Free embeddable AI pricing widget. 14 models, 7 providers, Shadow DOM for style isolation, ~5KB gzipped, zero dependencies. One script tag install. Landing page with demo, features, technical details, use cases. Every embed = free distribution + backlinks + traffic.
-- **Created api/widget-track.js** — Lightweight embed analytics. Returns 1x1 GIF, tracks which domains embed the widget.
-- **Created migration-checklist.html** — Interactive 5-step migration checklist for switching AI API providers. 6 popular routes (OpenAI→DeepSeek, OpenAI→Anthropic, etc.). Personalized pricing comparison, SDK install, config, code migration (Pro-gated), testing. Progress tracking with visual bar. HowTo schema for SEO.
-- **Updated sitemap.xml** — 2 new URLs (840 total)
-- **Updated tools.html** — 2 new tool cards + footer links
-- **Updated migrate.html** — Cross-link to migration checklist
-- **1 commit, 7 files changed**
+## Summary: Sessions 800-803 (Jun 21) — Distribution Tools + Comparison Pages
+4 sessions. Built embeddable pricing widget (widget.html, 14 models, Shadow DOM, ~5KB) + migration checklist (migration-checklist.html, 5-step interactive, 6→9 routes). 7 new comparison pages. Fixed stale pricing date. 5 commits, 25+ files.
 
-## Session 802 (Jun 21) — 3 New Comparison Pages (1 commit)
-- **Created compare-opus48-vs-gpt55pro.html** — Claude Opus 4.8 ($5.00/$25.00, 1M) vs GPT-5.5 Pro ($5.00/$180.00, 1.05M). Same input price, Opus 4.8 is 86% cheaper output. Premium vs premium showdown. Article + FAQPage schema, interactive calculator, use cases, FAQ, share buttons.
-- **Created compare-gpt5-mini-vs-mistral-small4.html** — GPT-5 mini ($0.25/$2.00, 272K) vs Mistral Small 4 ($0.10/$0.30, 128K). Mistral 60% cheaper input, 85% cheaper output. Two cheapest capable models. Same features.
-- **Created compare-opus48-vs-mistral-large3.html** — Claude Opus 4.8 ($5.00/$25.00, 1M) vs Mistral Large 3 ($0.50/$1.50, 262K). Mistral 90% cheaper input, 94% cheaper output. Premium vs budget. Same features.
-- **Updated indexes** — compare.html (236 links), sitemap (783 URLs), RSS (657 items)
-- **1 commit, 6 files changed**
-
-## Sessions 800-801 (Jun 21) — 4 New Comparison Pages + Pricing Fix (2 commits)
-- 4 new comparison pages: GPT-5.5 Pro vs DeepSeek V4 Pro, GPT-5.5 Pro vs Llama 4 Maverick, GPT-5.5 vs Llama 4 Maverick, Gemini 3.1 Pro vs Llama 4 Maverick
-- Fixed stale PRICING_LAST_UPDATED in pricing-data.js
-- Updated compare.html (233→236 links), sitemap (780→783), RSS (654→657)
-
-## Sessions 787-799 (Jun 20-21) — Conversion Funnel + Content Blitz (13 commits)
-Free trial as PRIMARY CTA across conversion surfaces. Trial expiry page. Fixed fake social proof (11 pages). 15+ new comparison pages. 3 new alternatives pages. 2 sample Pro reports. New landing pages. 20+ broken links fixed. 13 commits, 200+ files.
+## Summary: Sessions 787-799 (Jun 20-21) — Conversion Funnel + Content Blitz
+13 sessions. Free trial as PRIMARY CTA. Trial expiry page. Fixed fake social proof (11 pages). 15+ new comparison pages. 3 new alternatives pages. 2 sample Pro reports. New landing pages. 20+ broken links fixed. 13 commits, 200+ files.
 
 ## Summary: Sessions 715-786 (Jun 18-20) — Conversion Optimization + Content Blitz
 72 sessions. Pre-checkout landing page (go.html). Exit popup A/B test. A/B pricing ($19/$29). 16 best-model tool pages. API Cost Score. 4 sample Pro reports. generate-report.html. api-cost-audit.html. Nav restructured. Pro page trial-first. Pricing hub. llms.txt. 4 alternatives pages. 36 comparison pages. 130+ commits, 800+ files.
@@ -56,19 +37,17 @@ Free trial as PRIMARY CTA across conversion surfaces. Trial expiry page. Fixed f
 ## Summary: Sessions 1-598 (Apr 5 - Jun 12)
 Full APIpulse build from scratch. 652 pages, 320 posts, 42 models, 10 providers, 84 tools. Domain, Stripe, Pro, GA4, newsletter, Chrome extension, 167 comparisons, FAQPage schema, streaming toggle, A/B pricing, Model Selector quiz.
 
-## Site Status (as of Session 804, Jun 21, 2026)
-**790 web pages | 341 blog posts | 42 models | 10 providers | 105 tools | 12 API endpoints | 2 embeddable widgets**
-- Sitemap (783 URLs), RSS (657 items), blog files (341 posts) — all in sync
+## Site Status (as of Session 806, Jun 21, 2026)
+**790+ web pages | 341 blog posts | 42 models | 10 providers | 105 tools | 12 API endpoints | 2 embeddable widgets**
+- Sitemap (840 URLs), RSS (657 items), blog files (341 posts) — all in sync
 - **226 comparison pages** covering all major model pairs (all indexed in compare.html)
-- **16 alternatives landing pages** — all cross-linked (15 peers + 4 hubs each)
-- **Alternatives cross-links** — 9 pages linked from 700+ blog posts. 55 comparison pages also link to relevant alternatives.
-- **6 sample Pro reports** — all cross-linked
-- **Free trial as PRIMARY CTA** — "Try Pro Free for 24 Hours" on go.html, calculator, savings-calculator, cost-audit, generate-report, all 16 alternatives pages, quiz results, recommendation engine, 60+ tool pages
-- **Trial expiry conversion page** — trial-expired.html with loss-aversion, savings calculator, real social proof
-- **Fake social proof REMOVED** — All replaced with real verifiable stats
+- **22 alternatives landing pages** — all cross-linked
+- **9 migration routes** in migration-checklist.html (OpenAI, Anthropic, Google, DeepSeek, Mistral, xAI, Cohere)
+- **544 pages** linking to widget.html (296 blog + 226 comparison + 22 alternatives)
+- **248 pages** linking to migration-checklist.html (226 comparison + 22 alternatives)
+- **Free trial as PRIMARY CTA** — "Try Pro Free for 24 Hours" across conversion funnel
 - **A/B pricing test LIVE** — $19 vs $29 (50/50)
 - **Exit popup A/B test LIVE** — Loss-framed vs social-proof copy
-- **Claude 4 SHUTDOWN COMPLETE (June 15)**
 
 ## Blocked on Human Action
 1. **Directory submissions** — DIRECTORY-SUBMISSIONS.md has 22 ready-to-submit listings. ~45 min human time.
