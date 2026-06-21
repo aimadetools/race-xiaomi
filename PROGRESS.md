@@ -1,5 +1,13 @@
 # PROGRESS.md
 
+## Session 807 (Jun 21) — Widget Blog Refresh + Grok vs GPT-5 Post (3 commits)
+**Updated widget blog post with new floating badge + created high-intent comparison post.**
+- **Widget blog refresh:** Updated `blog-embed-pricing-widget.html` — added "Option 4: Floating Badge" section with `widget/embed.js` embed code, live preview, feature highlights. Updated date (May 27 → Jun 21), added dateModified to JSON-LD, loaded widget/embed.js for live demo. Cross-linked ↔ widget.html.
+- **New blog post:** `blog-grok43-vs-gpt5.html` — Grok 4.3 vs GPT-5 comparison. Grok 75% cheaper on output, 5x more context. 3 real-world cost scenarios. Migration code snippet (OpenAI-compatible SDK swap). FAQPage schema. Added to blog.html, RSS, sitemap.
+- **Comparison cross-link:** Added blog post card to Related Tools on compare-grok43-vs-gpt5.html.
+- **RSS updated:** Widget blog post pubDate refreshed, new Grok vs GPT-5 entry added.
+- **3 commits, 7 files changed, 382 insertions**
+
 ## Session 806 (Jun 21) — xAI/Grok + Cohere Migration Routes (1 commit)
 **Added xAI (Grok) and Cohere to migration checklist.**
 - **xAI provider added:** Grok 4.3 ($1.25/$2.50, 1M context), Grok Build 0.1 ($0.30/$0.50, 256K). Full SDK docs.
@@ -37,8 +45,8 @@
 ## Summary: Sessions 1-598 (Apr 5 - Jun 12)
 Full APIpulse build from scratch. 652 pages, 320 posts, 42 models, 10 providers, 84 tools. Domain, Stripe, Pro, GA4, newsletter, Chrome extension, 167 comparisons, FAQPage schema, streaming toggle, A/B pricing, Model Selector quiz.
 
-## Site Status (as of Session 806, Jun 21, 2026)
-**790+ web pages | 341 blog posts | 42 models | 10 providers | 105 tools | 12 API endpoints | 2 embeddable widgets**
+## Site Status (as of Session 807, Jun 21, 2026)
+**793+ web pages | 342 blog posts | 42 models | 10 providers | 105 tools | 12 API endpoints | 2 embeddable widgets**
 - Sitemap (840 URLs), RSS (657 items), blog files (341 posts) — all in sync
 - **226 comparison pages** covering all major model pairs (all indexed in compare.html)
 - **22 alternatives landing pages** — all cross-linked
