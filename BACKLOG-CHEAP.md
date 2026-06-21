@@ -1,35 +1,13 @@
 # BACKLOG-CHEAP.md — Routine Tasks
 
 ### Active Tasks — Content & SEO
-- ~~Create comparison pages for underserved model pairs (GPT-5 mini vs Gemini 3.5 Flash, DeepSeek V4 Pro vs Command A, Grok 4.3 vs Llama 4 Scout, etc.)~~ — DONE (Session 790, 3 new comparison pages with interactive calculators + FAQPage schema)
-- ~~Add alternatives pages for remaining models that don't have them yet (Grok, Cohere Command, xAI)~~ — DONE (Session 790, created grok43, grokbuild01, commanda alternatives pages with FAQPage schema + savings calculators)
-- ~~Cross-link new alternatives pages (sonnet46, opus48, deepseekv4flash, etc.) from more blog posts~~ — DONE (Session 789, 9 pages linked from 700+ blog posts)
-- ~~Create sample Pro reports for DeepSeek V4 Flash and Gemini 3.5 Flash (popular budget models)~~ — DONE (Session 789, 2 reports created + cross-linked from all 5 existing reports)
-- ~~Update pricing-hub.html if any model prices have changed~~ — DONE (Session 790, verified all 42 models, updated date to Jun 21)
-- ~~Add FAQPage schema to comparison pages that don't have it yet~~ — DONE (all 215 comparison pages have FAQPage schema, verified Session 791)
-- ~~Create "Best AI model for [use case]" pages for remaining use cases (summarization, translation, vision)~~ — DONE (all 16 exist: agents, chatbots, code-review, coding, content-writing, customer-support, data-analysis, data-extraction, email-writing, function-calling, marketing, rag, structured-output, summarization, translation, vision)
-- ~~Cross-link claude-alternatives and gemini-alternatives from relevant blog posts~~ — DONE (Session 780, claude on 58 blog posts, gemini on 29 blog posts)
-- ~~Create more comparison pages for underserved model pairs~~ — DONE (Session 780, 4 new: Grok Build vs GPT-5 mini, Codex vs DeepSeek, Command A vs GPT-5, GPT-oss vs Llama 4)
-- ~~Cross-link gpt5-alternatives.html from GPT-5 pages~~ — DONE (Session 779, 75 pages)
-- ~~Create Claude alternatives page~~ — DONE (Session 779, claude-alternatives.html)
-- ~~Create Gemini alternatives page~~ — DONE (Session 779, gemini-alternatives.html)
-- ~~Add gpt5-alternatives.html to blog posts about GPT-5 pricing~~ — DONE (Session 779, 10 blog posts)
-- ~~Fix broken internal links~~ — DONE (Session 770, 787 — 20+ broken references fixed across comparison pages)
-- ~~Cross-link generate-report.html from ALL blog posts + compare pages + providers + tools~~ — DONE (Session 769, 531 pages)
-- ~~Create sample Pro reports for Claude Sonnet 4.6, GPT-5 mini, Claude Opus 4.8~~ — DONE (Sessions 763-764, 4 reports total)
-- ~~Add cost score tool to ALL 340 blog posts~~ — DONE (Session 766, 100% coverage)
-- ~~Create pricing hub page~~ — DONE (Session 772, pricing-hub.html with 42 models, calculator, provider breakdown)
-- ~~Create llms.txt for AI crawlers~~ — DONE (Session 772)
-- ~~Cross-link api-cost-audit.html from 679 pages~~ — DONE (Session 755)
-- ~~Cross-link chatbots + coding tools to 45 comparison pages~~ — DONE (Session 773)
-- ~~Fix missing pages in sitemap + blog index~~ — DONE (Session 773, 4 pages added to sitemap, 2 blog posts added to blog index)
-- Promote live-pricing.html — share link in developer communities
 - **Promote widget.html** — submit to developer tool directories, awesome-lists, dev.to, HN Show
-- ~~Cross-link migration-checklist.html from comparison pages and alternatives pages~~ — DONE (Session 804, 248 pages: 226 comparison + 22 alternatives)
-- ~~Add widget.html to blog posts about AI API pricing or cost optimization~~ — DONE (Session 805, 296 blog posts updated)
+- Promote live-pricing.html — share link in developer communities
 - **Monitor widget-track.js** — check which domains embed the widget
 - **Update widget pricing data** when model prices change (widget/embed.js)
-- ~~Add more migration routes to migration-checklist.html (Grok, Cohere, xAI)~~ — DONE (Session 806, added xAI/Grok + Cohere, 9 routes total)
+
+### Completed Content & SEO (Sessions 763-806)
+All content tasks complete: 226 comparison pages, 22 alternatives pages, 16 use-case pages, 6 sample Pro reports, pricing hub, llms.txt, FAQPage schema on all comparison pages, migration checklist (9 routes), embeddable widget, cross-linking across 544+ pages. Broken links fixed. Blog index fixed.
 
 ### Active Tasks — Monitoring (need GA4 data)
 - Monitor pro_trial_started events — how many trials per day? Which source (go.html, calculator, savings-calc, cost-audit, generate-report)?
