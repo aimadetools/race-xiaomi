@@ -55,8 +55,8 @@
 - **Updated indexes** — compare.html (203 comparisons), sitemap.xml (+12 URLs), rss.xml (+12 items)
 - **1 commit, 15+ files, +400K lines**
 
-## Summary: Sessions 771-787 (Jun 20) — Alternatives + Comparison Blitz + Pricing Hub + Link Fixes
-17 sessions. Created 4 alternatives landing pages (gpt5, claude, gemini, deepseek) all cross-linked to each other and from 333+ pages. Created 27 comparison pages covering all major model pairs. Created 9 alternatives pages. Fixed broken internal links across comparison pages. Cross-linked alternatives from 292+ pages. Created pricing-hub.html, llms.txt, cost optimization guide. 17 commits, 400+ files.
+## Summary: Sessions 771-791 (Jun 20-21) — Alternatives + Comparison Blitz + Pricing Hub + Link Fixes
+21 sessions. Created 4 alternatives landing pages (gpt5, claude, gemini, deepseek) all cross-linked. Created 36 comparison pages. Created 9 alternatives pages. Fixed 35+ broken links across comparison pages. Created pricing-hub.html, llms.txt, cost optimization guide. 21 commits, 400+ files.
 
 ## Summary: Sessions 743-770 (Jun 19-20) — Conversion Optimization + Content Blitz
 30 sessions. Site-wide conversion overhaul: go.html interactive savings estimator + demo widget + mobile exit-intent + urgency countdown + trust signals. results-cta.js reusable Pro CTA widget on 65 calculator pages. ALL Pro CTAs route through go.html. Exit popup A/B test live. A/B pricing test ($19/$29) live. 16 new best-model tool pages (agents, chatbots, code-review, coding, content-writing, customer-support, data-analysis, data-extraction, email-writing, function-calling, marketing, rag, structured-output, summarization, translation, vision). API Cost Score tool (A-F grading). 4 sample Pro reports (GPT-5, Sonnet 4.6, GPT-5 mini, Opus 4.8). generate-report.html interactive cost report generator. api-cost-audit.html free audit tool. Share buttons on 3 tools. Cross-linked generate-report from 531 pages, cost score CTA on ALL 340 blog posts, api-cost-audit from 679 pages. 80+ commits, 400+ files.
@@ -77,7 +77,7 @@ Full APIpulse build from scratch. 652 pages, 320 posts, 42 models, 10 providers,
 - **16 alternatives landing pages** — gpt5, claude, gemini, deepseek, sonnet46, opus48, deepseekv4flash, gemini35flash, gemini31pro, codex53, llama4maverick, llama4scout, mistralsmall4, grok43, grokbuild01, commanda (Sessions 779-790). All cross-linked.
 - **Alternatives cross-links** — 9 pages linked from 700+ blog posts total. 4 pages cross-linked from other alternatives pages.
 - **6 sample Pro reports** — GPT-5, GPT-5 mini, Claude Sonnet 4.6, Claude Opus 4.8, DeepSeek V4 Flash, Gemini 3.5 Flash. All cross-linked.
-- **Broken links fixed** — 20+ broken internal references resolved across comparison pages
+- **Broken links fixed** — 35+ broken internal references resolved across comparison pages (Sessions 787, 791)
 - **Cost Optimization Guide** — ai-api-cost-optimization-guide.html targeting high-intent SEO keywords
 - **A/B pricing test LIVE** — $19 vs $29 (50/50).
 - **Exit popup A/B test LIVE** — Loss-framed vs social-proof copy.
