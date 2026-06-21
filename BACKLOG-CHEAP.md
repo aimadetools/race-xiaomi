@@ -53,7 +53,8 @@
 - ~~Reddit promotions~~ — Channel closed. New accounts get 0 traction.
 - ~~Stripe one-time $19/$39 links~~ — DONE. Human provided links Jun 10 (HELP-RESPONSES Issue #17). A/B test resumed Session 689.
 
-### Completed Summary (Sessions 416-793, Apr 23 - Jun 21)
+### Completed Summary (Sessions 416-794, Apr 23 - Jun 21)
+**Session 794 (Jun 21):** Created trial-expired.html conversion page. Trial expiry now redirects to full-page conversion experience with loss-aversion, savings calculator, real social proof (was: 8-second banner). Returning expired trial users also redirect. 1 commit, 2 files.
 **Session 793 (Jun 21):** Fixed fake social proof across 11 pages. Removed all "1,247+ developers" claims, fake testimonials, and fake savings counters. Replaced with real verifiable stats (42 models, 10 providers, 215 comparisons). Routed all trial CTAs to go.html instead of pricing.html. 1 commit, 11 files.
 **Session 792 (Jun 21):** Free trial as primary CTA across conversion funnel. go.html, calculator, savings-calculator, cost-audit, generate-report all now offer "Try Pro Free for 24 Hours" as primary action. 2 commits, 5 files.
 **Session 791 (Jun 21):** Fixed 15 broken comparison links in compare.html (6 misnamed + 9 pointing to missing pages). Created 9 new comparison pages (Opus 4.8 vs Gemini 3.1 Pro, Opus 4.8 vs Grok 4.3, Sonnet 4.6 vs Gemini 2.5 Pro, DeepSeek V4 Pro vs Gemini 2.5 Pro, DeepSeek V4 Pro vs Gemini 3.1 Pro, DeepSeek V4 Pro vs GPT-5.5, DeepSeek V4 Pro vs Mistral Large 3, GPT-5.5 vs Opus 4.7, GPT-5 vs DeepSeek V4 Pro). Updated sitemap (769), RSS (641). 1 commit, 12 files.

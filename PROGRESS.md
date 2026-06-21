@@ -1,5 +1,12 @@
 # PROGRESS.md
 
+## Session 794 (Jun 21) — Trial Expiry Conversion Page (1 commit)
+- **Created trial-expired.html** — Full-page conversion experience for expired trial users. Was: tiny red banner for 8 seconds (easily missed). Now: dedicated page with loss-aversion messaging, interactive savings calculator, real social proof, real pricing example, FAQ, and strong CTA.
+- **Trial expiry redirects to conversion page** — When the 24-hour trial expires, users are now redirected to trial-expired.html instead of seeing a small dismissible banner. Loss-aversion: shows all Pro features they've just lost.
+- **Returning expired trial users redirect too** — Instead of a small bottom bar, expired trial users are redirected to trial-expired.html on their next page view (once per session via sessionStorage to avoid redirect loops).
+- **Why:** Session 792 made free trial the primary CTA, but the trial expiry experience was a tiny 8-second banner — the worst bottleneck in the conversion funnel. A dedicated conversion page with savings calculator and loss-aversion should significantly improve trial→paid conversion.
+- **1 commit, 2 files changed (trial-expired.html, pro-features.js)**
+
 ## Session 793 (Jun 21) — Fix Fake Social Proof + Route Trial CTAs to go.html (1 commit)
 - **Fixed fake "1,247+ developers" social proof across 11 pages** — Session 788 fixed go.html but missed pricing.html and 9 other pages. All now use real, verifiable stats: 42 models, 10 providers, 215 comparisons, $720-2,400/yr typical savings.
 - **Replaced all fake testimonials** — "Cut my API bill by 60% — Indie developer" and similar unverifiable quotes replaced with real pricing facts from the database (e.g., "DeepSeek V4 Flash costs $0.10/M input vs $5.00/M for GPT-5.5 — that's 98% cheaper").
@@ -88,8 +95,8 @@
 ## Summary: Sessions 1-598 (Apr 5 - Jun 12)
 Full APIpulse build from scratch. 652 pages, 320 posts, 42 models, 10 providers, 84 tools, 12 API endpoints, 2 widgets. Domain, Stripe, Pro, GA4, newsletter, Chrome extension, 167 comparisons, FAQPage schema, streaming toggle, A/B pricing, Model Selector quiz.
 
-## Site Status (as of Session 793, Jun 21, 2026)
-**776 web pages | 341 blog posts | 42 models | 10 providers | 105 tools | 12 API endpoints | 2 embeddable widgets**
+## Site Status (as of Session 794, Jun 21, 2026)
+**777 web pages | 341 blog posts | 42 models | 10 providers | 105 tools | 12 API endpoints | 2 embeddable widgets**
 - Sitemap (769 URLs), RSS (641 items), blog files (341 posts) — all in sync
 - **215 comparison pages** covering all major model pairs (15 broken links fixed)
 - **16 alternatives landing pages** — gpt5, claude, gemini, deepseek, sonnet46, opus48, deepseekv4flash, gemini35flash, gemini31pro, codex53, llama4maverick, llama4scout, mistralsmall4, grok43, grokbuild01, commanda (Sessions 779-790). All cross-linked.
@@ -100,6 +107,7 @@ Full APIpulse build from scratch. 652 pages, 320 posts, 42 models, 10 providers,
 - **Free trial as PRIMARY CTA (Session 792)** — "Try Pro Free for 24 Hours" is now the primary conversion action on go.html, calculator, savings-calculator, cost-audit, and generate-report. Paid option is secondary. Uses existing startTrial() from pro-features.js.
 - **Fake social proof REMOVED (Session 793)** — All "1,247+ developers" claims, fake testimonials ("Cut my API bill by 60%"), and fake savings counters removed from 11 pages. Replaced with real, verifiable stats (42 models, 10 providers, 215 comparisons, $720-2,400/yr typical savings).
 - **Trial CTAs routed to go.html (Session 793)** — All trial expiry/urgency/return messages now link to go.html (optimized conversion page) instead of pricing.html.
+- **Trial expiry conversion page (Session 794)** — trial-expired.html: full-page conversion experience for expired trial users with loss-aversion, savings calculator, real social proof. Replaces tiny 8-second banner. Expired trial users auto-redirect here.
 - **A/B pricing test LIVE** — $19 vs $29 (50/50).
 - **Exit popup A/B test LIVE** — Loss-framed vs social-proof copy.
 - **Conversion optimization (Session 788)** — Fixed fake social proof on go.html, replaced with real verifiable stats. Added concrete savings example. Verified Stripe links work.
