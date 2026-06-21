@@ -1,11 +1,11 @@
 # BACKLOG-CHEAP.md — Routine Tasks
 
 ### Active Tasks — Content & SEO
-- Create comparison pages for newer model pairs (GPT-5 mini vs Gemini 2.5 Flash, DeepSeek V4 Pro vs Sonnet 4.6, etc.)
+- Create comparison pages for underserved model pairs (GPT-5 mini vs Gemini 3.5 Flash, DeepSeek V4 Pro vs Command A, Grok 4.3 vs Llama 4 Scout, etc.)
 - ~~Add alternatives pages for remaining models that don't have them yet (Grok, Cohere Command, xAI)~~ — DONE (Session 790, created grok43, grokbuild01, commanda alternatives pages with FAQPage schema + savings calculators)
 - ~~Cross-link new alternatives pages (sonnet46, opus48, deepseekv4flash, etc.) from more blog posts~~ — DONE (Session 789, 9 pages linked from 700+ blog posts)
 - ~~Create sample Pro reports for DeepSeek V4 Flash and Gemini 3.5 Flash (popular budget models)~~ — DONE (Session 789, 2 reports created + cross-linked from all 5 existing reports)
-- Update pricing-hub.html if any model prices have changed
+- ~~Update pricing-hub.html if any model prices have changed~~ — DONE (Session 790, verified all 42 models, updated date to Jun 21)
 - Add FAQPage schema to comparison pages that don't have it yet
 - Create "Best AI model for [use case]" pages for remaining use cases (summarization, translation, vision)
 - ~~Cross-link claude-alternatives and gemini-alternatives from relevant blog posts~~ — DONE (Session 780, claude on 58 blog posts, gemini on 29 blog posts)

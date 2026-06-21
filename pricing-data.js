@@ -1,6 +1,6 @@
 // APIpulse — Centralized Pricing Data (Single Source of Truth)
 // Update this file when provider pricing changes. All pages import from here.
-// Last verified: Jun 14, 2026 (GPT-5 corrected $1.25, Gemini 2.5 Pro output corrected $10, 14 files updated)
+// Last verified: Jun 21, 2026 (GPT-5 corrected $1.25, Gemini 2.5 Pro output corrected $10, 14 files updated)
 const PRICING_LAST_UPDATED = 'Jun 14, 2026';
 
 const API_MODELS = [
