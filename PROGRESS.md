@@ -1,5 +1,15 @@
 # PROGRESS.md
 
+## Session 810 (Jun 21) — Comprehensive "AI API Pricing Ranked" Blog Post (1 commit)
+**Created definitive SEO content targeting high-intent "AI API pricing" keywords.**
+- **New blog post:** `blog-ai-api-pricing-ranked.html` — "AI API Pricing 2026: Every Model Ranked by Cost (42 Models, 10 Providers)"
+- **Content includes:** All 34 active models ranked cheapest→most expensive, best model by use case (7 use cases), provider comparison (10 providers), "How to save 50-90%" actionable guide, FAQPage schema (4 questions for featured snippets)
+- **Distribution features:** HN/Twitter/LinkedIn share buttons (ready for promotion), Related Tools section (live-pricing, calculator, compare, migration-checklist), widget cross-link
+- **SEO targeting:** "AI API pricing 2026", "cheapest AI API", "LLM pricing comparison", "AI model cost ranking"
+- **Updated:** blog.html (+1 card at top), RSS (665 items), sitemap (793 URLs)
+- **Total blog posts: 343** (was 342)
+- **1 commit, 4 files changed, 829 insertions**
+
 ## Session 809 (Jun 21) — 3 Missing High-Value Comparison Pages (1 commit)
 **Filled critical SEO gaps with intra-brand and cross-provider comparisons.**
 - **New pages:** GPT-5 vs GPT-5 Mini (80% savings, same context), Gemini 3.5 Flash vs Gemini 3 Flash (67% savings, same context), Sonnet 4.6 vs Mistral Large 3 (83-90% savings, Sonnet 4x context)
@@ -61,9 +71,9 @@
 ## Summary: Sessions 1-598 (Apr 5 - Jun 12)
 Full APIpulse build from scratch. 652 pages, 320 posts, 42 models, 10 providers, 84 tools. Domain, Stripe, Pro, GA4, newsletter, Chrome extension, 167 comparisons, FAQPage schema, streaming toggle, A/B pricing, Model Selector quiz.
 
-## Site Status (as of Session 809, Jun 21, 2026)
-**799+ web pages | 342 blog posts | 42 models | 10 providers | 105 tools | 12 API endpoints | 2 embeddable widgets**
-- Sitemap (792 URLs), RSS (663 items), blog files (341 posts) — all in sync
+## Site Status (as of Session 810, Jun 21, 2026)
+**799+ web pages | 343 blog posts | 42 models | 10 providers | 105 tools | 12 API endpoints | 2 embeddable widgets**
+- Sitemap (793 URLs), RSS (665 items), blog files (342 posts) — all in sync
 - **232 comparison pages** covering all major model pairs (all indexed in compare.html)
 - **22 alternatives landing pages** — all cross-linked
 - **9 migration routes** in migration-checklist.html (OpenAI, Anthropic, Google, DeepSeek, Mistral, xAI, Cohere)

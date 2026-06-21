@@ -26,7 +26,8 @@ All Week 9 tasks COMPLETE except items 22-24 (blocked on human/GA4):
 28. **Optimize migration checklist conversion** — Monitor which routes are most popular, which step users drop off at, Pro conversion rate from checklist.
 29. Plan v2 — If revenue justifies, plan next features.
 
-### Completed (Sessions 416-809, Apr 23 - Jun 21)
+### Completed (Sessions 416-810, Apr 23 - Jun 21)
+**Session 810 (Jun 21):** Created comprehensive "AI API Pricing 2026: Every Model Ranked" blog post — 34 active models ranked, best-by-use-case table, provider comparison, "save 50-90%" guide, FAQPage schema, HN/Twitter/LinkedIn share buttons, Related Tools section. Updated blog.html, RSS (665 items), sitemap (793 URLs). 1 commit, 4 files.
 **Session 809 (Jun 21):** Added 3 missing high-value comparison pages — GPT-5 vs GPT-5 Mini (80% savings), Gemini 3.5 Flash vs Gemini 3 Flash (67% savings), Sonnet 4.6 vs Mistral Large 3 (83-90% savings). Updated compare.html, sitemap (792 URLs), RSS (663 items). Total: 232 comparison pages. 1 commit, 6 files.
 **Session 804 (Jun 21):** Cross-linked migration-checklist.html + widget.html from 248 pages (226 comparison + 22 alternatives). 1 commit, 247 files.
 **Session 803 (Jun 21):** Built embeddable pricing widget (widget.html + widget/embed.js, 14 models, Shadow DOM, ~5KB) + migration checklist (migration-checklist.html, 5-step interactive, 6 routes). Updated sitemap (840 URLs), tools.html, migrate.html. 1 commit, 7 files.
