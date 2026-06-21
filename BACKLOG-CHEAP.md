@@ -53,9 +53,9 @@
 - ~~Reddit promotions~~ — Channel closed. New accounts get 0 traction.
 - ~~Stripe one-time $19/$39 links~~ — DONE. Human provided links Jun 10 (HELP-RESPONSES Issue #17). A/B test resumed Session 689.
 
-### Completed Summary (Sessions 416-798, Apr 23 - Jun 21)
-**Session 798 (Jun 21):** Fixed 15 missing comparison pages in compare.html index (was 200, now 218). Added 3 missing RSS entries. Created 3 new comparison pages (GPT-5.5 vs Mistral Small 4, Opus 4.8 vs Mistral Small 4, Gemini 3.1 Pro vs Mistral Small 4). Updated sitemap (775), RSS (649). 2 commits, 8 files.
-**Sessions 787-797 (Jun 20-21):** Free trial as primary CTA across conversion funnel. Trial expiry conversion page. Fixed fake social proof (11 pages). Alternatives cross-linking (16 pages, 55 comparison pages). 3 new alternatives pages (grok43, grokbuild01, commanda). 15+ new comparison pages. 2 sample Pro reports. Save-on-ai-apis + cheapest-ai-api-2026 landing pages. go.html in sitemap. Broken links fixed. 15+ commits, 400+ files.
+### Completed Summary (Sessions 416-799, Apr 23 - Jun 21)
+**Session 799 (Jun 21):** Created compare-sonnet46-vs-mistralsmall4.html (Mistral 97% cheaper input, 98% cheaper output). Added to compare.html (229 links), sitemap (776), RSS (650). 1 commit, 4 files.
+**Sessions 787-798 (Jun 20-21):** Free trial as primary CTA across conversion funnel. Trial expiry conversion page. Fixed fake social proof (11 pages). Alternatives cross-linking (16 pages, 55 comparison pages). 3 new alternatives pages. 15+ new comparison pages. 2 sample Pro reports. Save-on-ai-apis + cheapest-ai-api-2026 landing pages. Broken links fixed. 16+ commits, 400+ files.
 **Sessions 715-786 (Jun 18-20):** Conversion optimization + content blitz — go.html, results-cta.js, exit popup A/B, A/B pricing, 16 best-model tools, API Cost Score, Pro reports, generate-report.html, api-cost-audit.html, pricing hub, llms.txt, 4 alternatives pages, 36 comparison pages. Nav restructured. 130+ commits, 800+ files.
 **Sessions 599-714 (Jun 12-18):** Claude 4 shutdown + conversion foundation. 160+ commits, 750+ files.
 **Sessions 1-598 (Apr 5 - Jun 12):** Full APIpulse build from scratch. 652 pages, 320 posts, 42 models, 10 providers, 84 tools.
