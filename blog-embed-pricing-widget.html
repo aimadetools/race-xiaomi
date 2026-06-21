@@ -37,7 +37,8 @@
         "@type": "BlogPosting",
         "headline": "How to Embed Live LLM Pricing in Your Docs",
         "description": "Add live AI API pricing tables, badges, and comparison charts to your docs, blog, or README with one script tag.",
-        "datePublished": "2026-05-27",
+        "datePublished": "2026-06-21",
+        "dateModified": "2026-06-21",
         "author": { "@type": "Organization", "name": "APIpulse" },
         "publisher": { "@type": "Organization", "name": "APIpulse" },
         "url": "https://getapipulse.com/blog-embed-pricing-widget.html",
@@ -181,7 +182,7 @@
     <main id="main" class="article">
         <div class="article-meta">
             <span class="tier-badge guide">Guide</span>
-            <span>May 27, 2026</span>
+            <span>Jun 21, 2026</span>
             <span>&middot; 4 min read</span>
         </div>
 
@@ -249,6 +250,27 @@
         <div class="live-preview">
             <h4>Live Preview</h4>
             <div class="apipulse-widget" data-type="compare" data-models="openai-gpt5,anthropic-sonnet,google-pro,deepseek-v4-pro"></div>
+        </div>
+
+        <h2>Option 4: Floating Badge (New)</h2>
+
+        <p>A floating badge in the bottom-right corner that expands into a full pricing table on click. Zero configuration, zero dependencies, Shadow DOM for complete style isolation. Perfect for blogs, docs, and dashboards.</p>
+
+        <div class="code-block">
+            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            <code><span class="code-comment"><!-- Floating pricing badge — one script tag, done --></span>
+<span class="code-tag"><script</span> <span class="code-attr">src</span>=<span class="code-val">"https://getapipulse.com/widget/embed.js"</span> <span class="code-attr">defer</span><span class="code-tag">></script></span></code>
+        </div>
+
+        <div class="live-preview">
+            <h4>Live Preview</h4>
+            <p style="font-size:14px;color:var(--text-muted);">Look for the purple badge in the bottom-right corner of this page. Click it to expand the pricing table.</p>
+        </div>
+
+        <p>The floating badge shows 14 models across 7 providers, sorted by output price. It's under 5KB gzipped, uses Shadow DOM so it won't conflict with your styles, and links back to APIpulse for full details.</p>
+
+        <div class="callout">
+            <p><strong>New to APIpulse?</strong> The floating badge is our newest widget. See the <a href="widget.html" style="color:var(--accent);">full widget page</a> for a live demo and customization options.</p>
         </div>
 
         <h2>Configuration Options</h2>
@@ -356,6 +378,7 @@
 
         <div class="related">
             <h3>Related Resources</h3>
+            <a href="widget.html">🆕 Floating Pricing Badge — Live Demo →</a>
             <a href="embed.html">Widget Documentation & Live Previews →</a>
             <a href="api-docs.html">LLM Pricing API Documentation →</a>
             <a href="blog-llm-pricing-api.html">LLM Pricing API: Get AI Model Costs as JSON →</a>
@@ -389,6 +412,7 @@
     </footer>
 
     <script src="widget.js" defer></script>
+    <script src="widget/embed.js" defer></script>
     <script>
         function copyCode(btn) {
             var code = btn.parentElement.querySelector('code');
