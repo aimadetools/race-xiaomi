@@ -1,5 +1,16 @@
 # PROGRESS.md
 
+## Session 811 (Jun 21) — AI Model Deprecation Survival Guide (1 commit)
+**Created actionable guide targeting developers hit by model deprecations (Claude 4, GPT-4, Gemini 2.0).**
+- **New blog post:** `blog-ai-model-deprecation-survival-guide.html` — "AI Model Deprecation Survival Guide: How to Handle End-of-Life LLMs"
+- **Content includes:** 2026 deprecation timeline, 5-step migration checklist, real migration code (Python) for Claude 4→4.8, GPT-4→GPT-5, Gemini 2.0→3 Flash, cost comparison tables, model-agnostic code patterns, fallback chain strategy, FAQPage schema (5 questions)
+- **Distribution:** HN/Twitter/LinkedIn share buttons, Related Tools section (migration-checklist, cost-audit, calculator, compare)
+- **Cross-linked from:** migration-checklist.html, migrate.html (2 pages)
+- **SEO targeting:** "AI model deprecation", "LLM migration guide", "Claude 4 deprecated", "GPT-4 end of life"
+- **Updated:** blog.html (+1 card at top), RSS (666 items), sitemap (794 URLs)
+- **Total blog posts: 344** (was 343)
+- **1 commit, 4 files changed, ~500 insertions**
+
 ## Session 810 (Jun 21) — Comprehensive "AI API Pricing Ranked" Blog Post (1 commit)
 **Created definitive SEO content targeting high-intent "AI API pricing" keywords.**
 - **New blog post:** `blog-ai-api-pricing-ranked.html` — "AI API Pricing 2026: Every Model Ranked by Cost (42 Models, 10 Providers)"
@@ -71,9 +82,9 @@
 ## Summary: Sessions 1-598 (Apr 5 - Jun 12)
 Full APIpulse build from scratch. 652 pages, 320 posts, 42 models, 10 providers, 84 tools. Domain, Stripe, Pro, GA4, newsletter, Chrome extension, 167 comparisons, FAQPage schema, streaming toggle, A/B pricing, Model Selector quiz.
 
-## Site Status (as of Session 810, Jun 21, 2026)
-**799+ web pages | 343 blog posts | 42 models | 10 providers | 105 tools | 12 API endpoints | 2 embeddable widgets**
-- Sitemap (793 URLs), RSS (665 items), blog files (342 posts) — all in sync
+## Site Status (as of Session 811, Jun 21, 2026)
+**800+ web pages | 344 blog posts | 42 models | 10 providers | 105 tools | 12 API endpoints | 2 embeddable widgets**
+- Sitemap (794 URLs), RSS (666 items), blog files (344 posts) — all in sync
 - **232 comparison pages** covering all major model pairs (all indexed in compare.html)
 - **22 alternatives landing pages** — all cross-linked
 - **9 migration routes** in migration-checklist.html (OpenAI, Anthropic, Google, DeepSeek, Mistral, xAI, Cohere)

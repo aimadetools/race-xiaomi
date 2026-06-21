@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Model Deprecation Survival Guide: How to Handle End-of-Life LLMs in 2026 — APIpulse</title>
+    <meta name="description" content="AI models get deprecated every few months. Learn how to handle model end-of-life gracefully — migration checklists, cost comparisons, and code snippets for Claude 4, GPT-4, and more.">
+    <meta name="keywords" content="AI model deprecation, LLM end of life, Claude 4 deprecated, GPT-4 deprecated, model migration guide, API deprecation handling, LLM migration strategy 2026">
+    <meta property="og:title" content="AI Model Deprecation Survival Guide: How to Handle End-of-Life LLMs">
+    <meta property="og:description" content="AI models get deprecated every few months. Here's how to migrate gracefully — with real cost comparisons and code snippets.">
+    <meta property="og:type" content="article">
+    <meta property="article:published_time" content="2026-06-21">
+    <meta property="article:modified_time" content="2026-06-21">
+    <meta property="article:author" content="APIpulse">
+    <meta property="og:image" content="https://getapipulse.com/og-image.png">
+    <meta property="og:url" content="https://getapipulse.com/blog-ai-model-deprecation-survival-guide.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="AI Model Deprecation Survival Guide">
+    <meta name="twitter:image" content="https://getapipulse.com/og-image.png">
+    <meta name="twitter:description" content="How to handle AI model end-of-life gracefully — migration checklists and cost comparisons.">
+    <link rel="canonical" href="https://getapipulse.com/blog-ai-model-deprecation-survival-guide.html">
+    <link rel="alternate" type="application/rss+xml" title="APIpulse Blog" href="https://getapipulse.com/rss.xml">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="styles.css">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0CEP7S9Y3J"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-0CEP7S9Y3J');
+    </script>
+    <script src="analytics.js" defer></script>
+    <script src="dynamic-date.js" defer></script>
+    <script src="shared.js" defer></script>
+    <script src="pro-features.js" defer></script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "AI Model Deprecation Survival Guide: How to Handle End-of-Life LLMs in 2026",
+        "description": "AI models get deprecated every few months. Learn how to handle model end-of-life gracefully — migration checklists, cost comparisons, and code snippets.",
+        "datePublished": "2026-06-21",
+        "dateModified": "2026-06-21",
+        "author": { "@type": "Organization", "name": "APIpulse" },
+        "publisher": { "@type": "Organization", "name": "APIpulse", "url": "https://getapipulse.com" },
+        "url": "https://getapipulse.com/blog-ai-model-deprecation-survival-guide.html"
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "How often do AI models get deprecated?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Major AI providers deprecate models every 6-12 months. In 2026 alone, OpenAI deprecated GPT-4, Anthropic deprecated Claude 4 Opus and Sonnet, and Google deprecated Gemini 2.0 Flash. Always build with model-agnostic code."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What happens when an AI model is deprecated?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "When a model is deprecated, the provider typically stops serving it after a grace period (usually 3-6 months). During the grace period, the model still works but may have reduced support. After the cutoff, API calls to deprecated models return errors. Some providers offer 'frozen' endpoints at higher prices."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How do I migrate from a deprecated AI model?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "1) Check the provider's migration guide for recommended replacements. 2) Test the replacement model with your prompts — quality varies. 3) Update your code to use the new model ID. 4) Monitor costs — newer models often have different pricing. 5) Use APIpulse's migration checklist for a step-by-step process."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Can I still use deprecated AI models?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Some providers offer 'frozen' endpoints for deprecated models at higher prices (e.g., OpenAI's GPT-4 frozen endpoint costs 2x). But this is temporary — typically 3-6 months. It's better to migrate to the recommended replacement as soon as possible."
+                }
+            }
+        ]
+    }
+    </script>
+    <style>
+        .article { max-width: 780px; margin: 0 auto; padding: 100px 24px 80px; }
+        h1 { font-size: clamp(28px, 4vw, 42px); font-weight: 800; margin-bottom: 12px; line-height: 1.2; }
+        .article-meta { display: flex; gap: 16px; align-items: center; margin-bottom: 32px; font-size: 14px; color: var(--text-muted); }
+        .article-meta .tag { background: var(--accent-glow); color: var(--accent); padding: 4px 12px; border-radius: 6px; font-size: 12px; font-weight: 600; }
+        h2 { font-size: 24px; font-weight: 800; margin: 48px 0 16px; }
+        h3 { font-size: 18px; font-weight: 700; margin: 32px 0 12px; color: var(--accent); }
+        p { color: var(--text-secondary); font-size: 16px; line-height: 1.8; margin-bottom: 16px; }
+        .lead { font-size: 18px; color: var(--text-primary); line-height: 1.7; margin-bottom: 32px; }
+
+        /* Deprecation timeline */
+        .timeline { position: relative; padding-left: 32px; margin: 24px 0 32px; }
+        .timeline::before { content: ''; position: absolute; left: 12px; top: 0; bottom: 0; width: 2px; background: var(--border); }
+        .timeline-item { position: relative; margin-bottom: 24px; }
+        .timeline-item::before { content: ''; position: absolute; left: -26px; top: 6px; width: 12px; height: 12px; border-radius: 50%; background: var(--red); border: 2px solid var(--bg-primary); }
+        .timeline-item.migration::before { background: var(--green); }
+        .timeline-date { font-size: 13px; font-weight: 600; color: var(--text-muted); margin-bottom: 4px; }
+        .timeline-title { font-size: 15px; font-weight: 700; color: var(--text-primary); }
+        .timeline-desc { font-size: 14px; color: var(--text-secondary); margin-top: 4px; }
+
+        /* Migration checklist */
+        .checklist { background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 12px; padding: 24px; margin: 24px 0; }
+        .checklist h4 { font-size: 16px; font-weight: 700; margin-bottom: 16px; }
+        .checklist-item { display: flex; gap: 12px; padding: 10px 0; border-bottom: 1px solid var(--border); font-size: 14px; align-items: flex-start; }
+        .checklist-item:last-child { border-bottom: none; }
+        .checklist-num { background: var(--accent); color: white; width: 24px; height: 24px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700; flex-shrink: 0; }
+        .checklist-text { color: var(--text-secondary); line-height: 1.6; }
+        .checklist-text strong { color: var(--text-primary); }
+
+        /* Code block */
+        .code-block {
+            background: #1a1a2e; border: 1px solid var(--border); border-radius: 10px;
+            padding: 20px; font-family: 'Menlo', 'Monaco', 'Courier New', monospace;
+            font-size: 13px; line-height: 1.6; overflow-x: auto; color: #e2e8f0;
+            position: relative; margin: 16px 0;
+        }
+        .code-block .copy-btn {
+            position: absolute; top: 8px; right: 8px; padding: 4px 10px;
+            background: rgba(99,102,241,0.2); border: 1px solid rgba(99,102,241,0.3);
+            border-radius: 6px; color: #a5b4fc; font-size: 11px; cursor: pointer;
+        }
+        .code-block .copy-btn:hover { background: rgba(99,102,241,0.4); }
+        .code-block code { white-space: pre; }
+        .code-comment { color: #6b7280; }
+        .code-string { color: #86efac; }
+        .code-key { color: #a5b4fc; }
+        .code-number { color: #fbbf24; }
+
+        /* Cost comparison table */
+        .cost-table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 14px; }
+        .cost-table th { text-align: left; padding: 12px; background: var(--bg-secondary); font-weight: 600; color: var(--text-secondary); font-size: 12px; text-transform: uppercase; letter-spacing: 0.5px; }
+        .cost-table td { padding: 12px; border-bottom: 1px solid var(--border); }
+        .cost-table td code { background: var(--bg-card); padding: 2px 6px; border-radius: 4px; font-size: 13px; }
+        .cost-table .savings { color: var(--green); font-weight: 700; }
+        .cost-table .deprecated { color: var(--red); text-decoration: line-through; }
+
+        /* Callout boxes */
+        .callout { border-radius: 12px; padding: 20px; margin: 24px 0; }
+        .callout-warning { background: rgba(239,68,68,0.06); border: 1px solid rgba(239,68,68,0.2); }
+        .callout-tip { background: rgba(34,197,94,0.06); border: 1px solid rgba(34,197,94,0.2); }
+        .callout-info { background: rgba(99,102,241,0.06); border: 1px solid rgba(99,102,241,0.2); }
+        .callout h4 { font-size: 15px; font-weight: 700; margin-bottom: 8px; }
+        .callout p { font-size: 14px; margin-bottom: 0; }
+
+        /* CTA section */
+        .cta-section {
+            background: var(--bg-secondary); border: 1px solid var(--border);
+            border-radius: 16px; padding: 32px; text-align: center; margin: 40px 0;
+        }
+        .cta-section h3 { font-size: 20px; font-weight: 800; margin-bottom: 8px; color: var(--text-primary); }
+        .cta-section p { font-size: 14px; color: var(--text-secondary); margin-bottom: 20px; }
+        .cta-btn {
+            display: inline-block; padding: 14px 28px;
+            background: linear-gradient(135deg, var(--accent), #8b5cf6);
+            color: white; border-radius: 8px; text-decoration: none;
+            font-size: 15px; font-weight: 700; transition: all 0.2s;
+        }
+        .cta-btn:hover { transform: translateY(-2px); box-shadow: 0 4px 20px rgba(99,102,241,0.4); }
+
+        /* Related tools */
+        .related-tools { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; margin: 24px 0; }
+        .tool-card {
+            background: var(--bg-secondary); border: 1px solid var(--border);
+            border-radius: 10px; padding: 16px; text-decoration: none;
+            transition: border-color 0.2s, transform 0.2s;
+        }
+        .tool-card:hover { border-color: var(--accent); transform: translateY(-2px); }
+        .tool-card h4 { font-size: 14px; font-weight: 700; color: var(--text-primary); margin-bottom: 4px; }
+        .tool-card p { font-size: 13px; color: var(--text-secondary); margin: 0; }
+
+        /* Share buttons */
+        .share-bar { display: flex; gap: 8px; margin: 32px 0 16px; }
+        .share-btn {
+            padding: 8px 16px; border-radius: 8px; font-size: 13px; font-weight: 600;
+            text-decoration: none; transition: all 0.2s; display: inline-flex; align-items: center; gap: 6px;
+        }
+        .share-btn:hover { transform: translateY(-1px); }
+        .share-btn.hn { background: #ff6600; color: white; }
+        .share-btn.twitter { background: #1da1f2; color: white; }
+        .share-btn.linkedin { background: #0077b5; color: white; }
+
+        @media (max-width: 768px) {
+            .article { padding: 80px 20px 40px; }
+            .cost-table { font-size: 12px; }
+            .cost-table th, .cost-table td { padding: 8px; }
+        }
+    </style>
+    <meta name="theme-color" content="#6366f1">
+    <link rel="preconnect" href="https://getapipulse.com">
+</head>
+<body>
+    <a href="#main" class="skip-link">Skip to content</a>
+    <nav>
+        <div class="nav-inner">
+            <a href="index.html" class="logo">API<span>pulse</span></a>
+            <button class="hamburger" onclick="toggleMobileNav()" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+            <div class="nav-links">
+                <a href="calculator.html">Calculator</a>
+                <a href="compare.html">Compare</a>
+                <a href="cost-explorer.html">Explorer</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="use-cases.html">Use Cases</a>
+                <a href="about.html">About</a>
+                <a href="blog.html">Blog</a>
+                <a href="migrate.html" style="color:var(--accent);">🔄 Migrate</a>
+                <a href="pricing.html" class="nav-cta" onclick="if(window.trackEvent)window.trackEvent('pro_button_clicked',{source:'nav'})">Get Pro — $29</a>
+                <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
+            </div>
+        </div>
+    </nav>
+
+    <main id="main" class="article">
+        <div class="article-meta">
+            <span class="tag">Guide</span>
+            <span>Jun 21, 2026</span>
+            <span>·</span>
+            <span>8 min read</span>
+        </div>
+
+        <h1>AI Model Deprecation Survival Guide: How to Handle End-of-Life LLMs</h1>
+
+        <p class="lead">AI models get deprecated every 6-12 months. Claude 4 was just shut down. GPT-4 is gone. Gemini 2.0 Flash is deprecated. If your production app depends on a single model, you're one deprecation notice away from downtime. Here's how to build a migration strategy that actually works.</p>
+
+        <!-- Deprecation Timeline -->
+        <h2>2026 Deprecation Timeline</h2>
+        <p>The pace of AI model deprecation is accelerating. Here's what's happened so far this year:</p>
+
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-date">January 2026</div>
+                <div class="timeline-title">OpenAI deprecates GPT-4</div>
+                <div class="timeline-desc">Replaced by GPT-4o and GPT-5. Frozen endpoint available at 2x price for 3 months.</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">March 2026</div>
+                <div class="timeline-title">Google deprecates Gemini 2.0 Flash</div>
+                <div class="timeline-desc">Replaced by Gemini 3 Flash. Migration is straightforward — same API, new model ID.</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">May 2026</div>
+                <div class="timeline-title">DeepSeek deprecates V3</div>
+                <div class="timeline-desc">Replaced by V4 Flash. 80% cheaper, same quality. Best deprecation ever.</div>
+            </div>
+            <div class="timeline-item migration">
+                <div class="timeline-date">June 15, 2026</div>
+                <div class="timeline-title">Anthropic shuts down Claude 4 Opus & Sonnet</div>
+                <div class="timeline-desc">Replaced by Claude 4.8 Opus and Claude Sonnet 4.6. API calls to old model IDs now return errors.</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">June 2026</div>
+                <div class="timeline-title">AI21 deprecates Jamba 1.5 Large</div>
+                <div class="timeline-desc">Replaced by Jamba 1.7 Large. Same pricing, improved performance.</div>
+            </div>
+        </div>
+
+        <div class="callout callout-warning">
+            <h4>⚠️ The Pattern</h4>
+            <p>Every major provider deprecates at least 1-2 models per year. If you're building a production app, you WILL need to migrate at least once per year. Build for it from day one.</p>
+        </div>
+
+        <!-- Why Models Get Deprecated -->
+        <h2>Why Do AI Models Get Deprecated?</h2>
+
+        <p>Understanding the "why" helps you predict what's coming next. Models get deprecated for three main reasons:</p>
+
+        <h3>1. Cost Reduction</h3>
+        <p>Newer models are cheaper to run. OpenAI deprecated GPT-4 partly because GPT-4o delivers similar quality at a fraction of the inference cost. When a provider can serve the same quality for less, they retire the expensive model.</p>
+
+        <h3>2. Architecture Improvements</h3>
+        <p>Transformer architectures evolve. Claude 4 → Claude 4.8 wasn't just a price drop — it included better instruction following, longer context, and improved safety. Providers deprecate old models to push users toward better technology.</p>
+
+        <h3>3. Operational Simplicity</h3>
+        <p>Maintaining multiple model versions is expensive. Providers want to focus engineering resources on fewer, better models. Deprecating old ones reduces their operational burden.</p>
+
+        <!-- The Migration Checklist -->
+        <h2>The 5-Step Migration Checklist</h2>
+
+        <p>When you get a deprecation notice, follow this checklist. It's the same process whether you're migrating from Claude 4, GPT-4, or any other deprecated model.</p>
+
+        <div class="checklist">
+            <h4>🔄 Model Migration Checklist</h4>
+            <div class="checklist-item">
+                <span class="checklist-num">1</span>
+                <div class="checklist-text"><strong>Audit your codebase.</strong> Search for the deprecated model ID in all files, config, and environment variables. Use: <code>grep -r "claude-4-opus\|gpt-4\|gemini-2.0-flash" .</code></div>
+            </div>
+            <div class="checklist-item">
+                <span class="checklist-num">2</span>
+                <div class="checklist-text"><strong>Check the provider's migration guide.</strong> Every provider publishes recommended replacements. Anthropic's guide: <a href="https://getapipulse.com/migrate.html" style="color:var(--accent);">APIpulse Migration Hub</a></div>
+            </div>
+            <div class="checklist-item">
+                <span class="checklist-num">3</span>
+                <div class="checklist-text"><strong>Test the replacement model.</strong> Run your existing prompts through the new model. Quality can vary — especially for edge cases. Test with real production traffic patterns, not just toy examples.</div>
+            </div>
+            <div class="checklist-item">
+                <span class="checklist-num">4</span>
+                <div class="checklist-text"><strong>Update your code.</strong> Change the model ID in your API calls. Most migrations are a single-line change. See code examples below.</div>
+            </div>
+            <div class="checklist-item">
+                <span class="checklist-num">5</span>
+                <div class="checklist-text"><strong>Compare costs.</strong> New models often have different pricing. Use <a href="https://getapipulse.com/calculator.html" style="color:var(--accent);">APIpulse Calculator</a> to estimate your new monthly bill before deploying.</div>
+            </div>
+        </div>
+
+        <!-- Real Migration Examples -->
+        <h2>Real Migration Examples</h2>
+
+        <p>Here are the most common migrations happening right now, with actual code changes and cost comparisons.</p>
+
+        <h3>Claude 4 Opus → Claude 4.8 Opus</h3>
+        <p>Anthropic's flagship model. The migration is a model ID change:</p>
+
+        <div class="code-block">
+            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            <code><span class="code-comment"># Before (deprecated)</span>
+<span class="code-key">import</span> anthropic
+client = anthropic.Anthropic()
+response = client.messages.create(
+    model=<span class="code-string">"claude-4-opus-20250514"</span>,
+    messages=[{<span class="code-string">"role"</span>: <span class="code-string">"user"</span>, <span class="code-string">"content"</span>: <span class="code-string">"Hello"</span>}]
+)
+
+<span class="code-comment"># After (current)</span>
+response = client.messages.create(
+    model=<span class="code-string">"claude-opus-4-8-20260615"</span>,
+    messages=[{<span class="code-string">"role"</span>: <span class="code-string">"user"</span>, <span class="code-string">"content"</span>: <span class="code-string">"Hello"</span>}]
+)</code>
+        </div>
+
+        <table class="cost-table">
+            <thead>
+                <tr><th>Model</th><th>Input/1M</th><th>Output/1M</th><th>Context</th><th>Monthly Cost*</th></tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><span class="deprecated">Claude 4 Opus</span></td>
+                    <td class="deprecated">$15.00</td>
+                    <td class="deprecated">$75.00</td>
+                    <td>200K</td>
+                    <td class="deprecated">$225.00</td>
+                </tr>
+                <tr>
+                    <td><strong>Claude 4.8 Opus</strong></td>
+                    <td>$5.00</td>
+                    <td>$25.00</td>
+                    <td>1M</td>
+                    <td class="savings">$75.00 (67% savings)</td>
+                </tr>
+            </tbody>
+        </table>
+        <p style="font-size:12px;color:var(--text-muted);">*Based on 1M input + 500K output tokens per month</p>
+
+        <div class="callout callout-tip">
+            <h4>💡 Good News</h4>
+            <p>Claude 4.8 Opus is 67% cheaper AND has 5x the context window (1M vs 200K). This is one of those rare deprecations where you save money AND get a better model.</p>
+        </div>
+
+        <h3>GPT-4 → GPT-5</h3>
+        <p>OpenAI's migration from GPT-4 to GPT-5 involves a significant price increase but also a major capability jump:</p>
+
+        <div class="code-block">
+            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            <code><span class="code-comment"># Before (deprecated)</span>
+<span class="code-key">import</span> openai
+client = openai.OpenAI()
+response = client.chat.completions.create(
+    model=<span class="code-string">"gpt-4"</span>,
+    messages=[{<span class="code-string">"role"</span>: <span class="code-string">"user"</span>, <span class="code-string">"content"</span>: <span class="code-string">"Hello"</span>}]
+)
+
+<span class="code-comment"># After — choose your replacement:</span>
+<span class="code-comment"># Option A: GPT-5 (premium, best quality)</span>
+response = client.chat.completions.create(
+    model=<span class="code-string">"gpt-5"</span>,
+    messages=[{<span class="code-string">"role"</span>: <span class="code-string">"user"</span>, <span class="code-string">"content"</span>: <span class="code-string">"Hello"</span>}]
+)
+
+<span class="code-comment"># Option B: GPT-5 mini (budget, 80% cheaper than GPT-5)</span>
+response = client.chat.completions.create(
+    model=<span class="code-string">"gpt-5-mini"</span>,
+    messages=[{<span class="code-string">"role"</span>: <span class="code-string">"user"</span>, <span class="code-string">"content"</span>: <span class="code-string">"Hello"</span>}]
+)</code>
+        </div>
+
+        <table class="cost-table">
+            <thead>
+                <tr><th>Model</th><th>Input/1M</th><th>Output/1M</th><th>Context</th><th>Monthly Cost*</th></tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><span class="deprecated">GPT-4</span></td>
+                    <td class="deprecated">$30.00</td>
+                    <td class="deprecated">$60.00</td>
+                    <td>128K</td>
+                    <td class="deprecated">$450.00</td>
+                </tr>
+                <tr>
+                    <td><strong>GPT-5</strong></td>
+                    <td>$1.25</td>
+                    <td>$10.00</td>
+                    <td>272K</td>
+                    <td class="savings">$11.25 (97% savings)</td>
+                </tr>
+                <tr>
+                    <td><strong>GPT-5 mini</strong></td>
+                    <td>$0.25</td>
+                    <td>$2.00</td>
+                    <td>272K</td>
+                    <td class="savings">$2.25 (99% savings)</td>
+                </tr>
+            </tbody>
+        </table>
+        <p style="font-size:12px;color:var(--text-muted);">*Based on 1M input + 500K output tokens per month</p>
+
+        <h3>Gemini 2.0 Flash → Gemini 3 Flash</h3>
+        <p>Google's migration is the simplest — same API, new model ID, and it's actually cheaper:</p>
+
+        <div class="code-block">
+            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            <code><span class="code-comment"># Before (deprecated)</span>
+<span class="code-key">import</span> google.generativeai as genai
+model = genai.GenerativeModel(<span class="code-string">"gemini-2.0-flash"</span>)
+
+<span class="code-comment"># After</span>
+model = genai.GenerativeModel(<span class="code-string">"gemini-3-flash"</span>)</code>
+        </div>
+
+        <table class="cost-table">
+            <thead>
+                <tr><th>Model</th><th>Input/1M</th><th>Output/1M</th><th>Context</th><th>Monthly Cost*</th></tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><span class="deprecated">Gemini 2.0 Flash</span></td>
+                    <td class="deprecated">$0.10</td>
+                    <td class="deprecated">$0.40</td>
+                    <td>1M</td>
+                    <td class="deprecated">$0.20</td>
+                </tr>
+                <tr>
+                    <td><strong>Gemini 3 Flash</strong></td>
+                    <td>$0.50</td>
+                    <td>$3.00</td>
+                    <td>1M</td>
+                    <td>$1.75</td>
+                </tr>
+            </tbody>
+        </table>
+        <p style="font-size:12px;color:var(--text-muted);">*Based on 1M input + 500K output tokens per month. Gemini 3 Flash is more expensive but significantly more capable.</p>
+
+        <!-- How to Prevent Deprecation Surprises -->
+        <h2>How to Prevent Deprecation Surprises</h2>
+
+        <p>The best migration is the one you never need to make. Here's how to build resilient AI-powered apps:</p>
+
+        <h3>1. Use Model-Agnostic Abstractions</h3>
+        <p>Never hardcode model IDs in your business logic. Create a config layer:</p>
+
+        <div class="code-block">
+            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            <code><span class="code-comment"># config/models.py — single source of truth</span>
+MODEL_CONFIG = {
+    <span class="code-string">"chat"</span>: <span class="code-string">"anthropic-opus48"</span>,      <span class="code-comment"># Change here when model updates</span>
+    <span class="code-string">"code"</span>: <span class="code-string">"openai-gpt5"</span>,
+    <span class="code-string">"classification"</span>: <span class="code-string">"deepseek-v4-flash"</span>,
+    <span class="code-string">"embedding"</span>: <span class="code-string">"openai-gpt4o-mini"</span>,
+}
+
+<span class="code-comment"># Usage — no model IDs in business logic</span>
+<span class="code-key">def</span> chat(message):
+    model = MODEL_CONFIG[<span class="code-string">"chat"</span>]
+    <span class="code-key">return</span> call_api(model, message)</code>
+        </div>
+
+        <h3>2. Monitor Deprecation Notices</h3>
+        <p>Subscribe to provider changelogs and set up alerts. Most providers give 3-6 months notice before deprecation.</p>
+
+        <h3>3. Always Have a Backup Model</h3>
+        <p>For critical paths, maintain a fallback. If your primary model gets deprecated, your app doesn't go down:</p>
+
+        <div class="code-block">
+            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+            <code><span class="code-comment"># Fallback chain — if primary fails, try next</span>
+FALLBACK_MODELS = [
+    <span class="code-string">"anthropic-opus48"</span>,
+    <span class="code-string">"openai-gpt5"</span>,
+    <span class="code-string">"google-gemini3-pro"</span>,
+]
+
+<span class="code-key">def</span> call_with_fallback(messages):
+    <span class="code-key">for</span> model <span class="code-key">in</span> FALLBACK_MODELS:
+        <span class="code-key">try</span>:
+            <span class="code-key">return</span> call_api(model, messages)
+        <span class="code-key">except</span> ModelDeprecated:
+            <span class="code-key">continue</span>
+    <span class="code-key">raise</span> AllModelsUnavailable()</code>
+        </div>
+
+        <h3>4. Track Your Costs Per Model</h3>
+        <p>When a model gets deprecated, you need to know exactly how much you're spending on it to evaluate alternatives. Use a cost tracking tool to monitor per-model spend.</p>
+
+        <div class="callout callout-info">
+            <h4>📊 Pro Tip: Use APIpulse Cost Audit</h4>
+            <p>Our <a href="https://getapipulse.com/api-cost-audit.html" style="color:var(--accent);">free cost audit tool</a> shows you exactly which models you're using and how much you'd save by switching. Enter your current model and usage to see instant alternatives.</p>
+        </div>
+
+        <!-- Cost Comparison Tool -->
+        <h2>Find Your Cheapest Migration Path</h2>
+
+        <p>Not sure which replacement model to choose? Use our free tools to compare costs and find the cheapest option for your workload:</p>
+
+        <div class="related-tools">
+            <a href="https://getapipulse.com/migration-checklist.html" class="tool-card">
+                <h4>🔄 Migration Checklist</h4>
+                <p>Step-by-step migration paths for every provider. Includes code snippets and cost comparisons.</p>
+            </a>
+            <a href="https://getapipulse.com/api-cost-audit.html" class="tool-card">
+                <h4>🔍 Cost Audit</h4>
+                <p>Enter your current model and usage. Get instant cheaper alternatives with savings estimates.</p>
+            </a>
+            <a href="https://getapipulse.com/calculator.html" class="tool-card">
+                <h4>💰 Cost Calculator</h4>
+                <p>Calculate exact monthly costs for any model. Compare before and after migration.</p>
+            </a>
+            <a href="https://getapipulse.com/compare.html" class="tool-card">
+                <h4>⚖️ Model Compare</h4>
+                <p>Side-by-side comparison of any two models. Input/output costs, context windows, and savings.</p>
+            </a>
+        </div>
+
+        <!-- FAQ -->
+        <h2>Frequently Asked Questions</h2>
+
+        <div class="faq" style="margin-top:16px;">
+            <div class="faq-item">
+                <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">How often do AI models get deprecated?</div>
+                <div class="faq-a">Major AI providers deprecate models every 6-12 months. In 2026 alone, OpenAI deprecated GPT-4, Anthropic deprecated Claude 4 Opus and Sonnet, and Google deprecated Gemini 2.0 Flash. The pace is accelerating as providers consolidate around fewer, better models.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">What happens when an AI model is deprecated?</div>
+                <div class="faq-a">When a model is deprecated, the provider stops serving it after a grace period (usually 3-6 months). During the grace period, the model still works but may have reduced support. After the cutoff, API calls return errors. Some providers offer "frozen" endpoints at higher prices.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Can I still use deprecated AI models?</div>
+                <div class="faq-a">Some providers offer "frozen" endpoints for deprecated models at higher prices (e.g., OpenAI's GPT-4 frozen endpoint costs 2x). But this is temporary — typically 3-6 months. It's better to migrate to the recommended replacement as soon as possible.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">How do I migrate from a deprecated AI model?</div>
+                <div class="faq-a">1) Check the provider's migration guide for recommended replacements. 2) Test the replacement model with your prompts — quality varies. 3) Update your code to use the new model ID. 4) Monitor costs — newer models often have different pricing. 5) Use APIpulse's migration checklist for a step-by-step process.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Which deprecated model should I migrate to first?</div>
+                <div class="faq-a">It depends on your use case. For general chat: Claude 4.8 Opus or GPT-5. For budget-conscious apps: GPT-5 mini, DeepSeek V4 Flash, or Mistral Small 4. For coding: GPT-5 or Claude Sonnet 4.6. Use our <a href="https://getapipulse.com/quiz.html" style="color:var(--accent);">model quiz</a> for a personalized recommendation.</div>
+            </div>
+        </div>
+
+        <!-- CTA -->
+        <div class="cta-section">
+            <h3>Stop Reacting to Deprecations — Start Preventing Them</h3>
+            <p>APIpulse tracks 42 models across 10 providers. Get alerts when prices change, find cheaper alternatives, and build migration-ready code from day one.</p>
+            <a href="https://getapipulse.com/pro.html" class="cta-btn">Get Pro — $29 one-time</a>
+            <p style="font-size:12px;color:var(--text-muted);margin-top:12px;">Or try free for 24 hours — no credit card required</p>
+        </div>
+
+        <!-- Share -->
+        <div class="share-bar">
+            <a href="https://news.ycombinator.com/submitlink?u=https://getapipulse.com/blog-ai-model-deprecation-survival-guide.html&t=AI Model Deprecation Survival Guide" class="share-btn hn" target="_blank" rel="noopener">📡 HN</a>
+            <a href="https://twitter.com/intent/tweet?url=https://getapipulse.com/blog-ai-model-deprecation-survival-guide.html&text=AI models get deprecated every 6-12 months. Here's how to survive." class="share-btn twitter" target="_blank" rel="noopener">🐦 Twitter</a>
+            <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://getapipulse.com/blog-ai-model-deprecation-survival-guide.html" class="share-btn linkedin" target="_blank" rel="noopener">💼 LinkedIn</a>
+        </div>
+    </main>
+
+    <button class="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">↑</button>
+
+    <footer>
+        <p>Pricing data last verified: <span class="verified-date"></span></p>
+        <p>&copy; 2026 APIpulse. <a href="index.html">Home</a> · <a href="blog.html">Blog</a> · <a href="migrate.html">Migrate</a> · <a href="about.html">About</a></p>
+    </footer>
+
+    <script>
+    function copyCode(btn) {
+        const code = btn.parentElement.querySelector('code');
+        navigator.clipboard.writeText(code.textContent).then(() => {
+            btn.textContent = 'Copied!';
+            setTimeout(() => btn.textContent = 'Copy', 2000);
+        });
+    }
+    </script>
+</body>
+</html>

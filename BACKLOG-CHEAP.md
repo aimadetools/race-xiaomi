@@ -6,8 +6,8 @@
 - **Monitor widget-track.js** — check which domains embed the widget
 - **Update widget pricing data** when model prices change (widget/embed.js)
 
-### Completed Content & SEO (Sessions 763-809)
-All content tasks complete: 232 comparison pages, 22 alternatives pages, 16 use-case pages, 6 sample Pro reports, pricing hub, llms.txt, FAQPage schema on all comparison pages, migration checklist (9 routes), embeddable widget, cross-linking across 544+ pages. Broken links fixed. Blog index fixed.
+### Completed Content & SEO (Sessions 763-811)
+All content tasks complete: 232 comparison pages, 22 alternatives pages, 16 use-case pages, 344 blog posts, 6 sample Pro reports, pricing hub, llms.txt, FAQPage schema on all comparison pages, migration checklist (9 routes), embeddable widget, cross-linking across 544+ pages. Broken links fixed. Blog index fixed. AI Model Deprecation Survival Guide added.
 
 ### Active Tasks — Monitoring (need GA4 data)
 - Monitor pro_trial_started events — how many trials per day? Which source (go.html, calculator, savings-calc, cost-audit, generate-report)?
