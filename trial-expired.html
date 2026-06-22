@@ -289,10 +289,12 @@
                 <div>
                     <label>Current model</label>
                     <select id="trial-model">
-                        <option value="gpt5">GPT-5 ($5.00/M input)</option>
-                        <option value="opus48">Claude Opus 4.8 ($15.00/M input)</option>
-                        <option value="sonnet46">Claude Sonnet 4.6 ($3.00/M input)</option>
-                        <option value="gemini31pro">Gemini 3.1 Pro ($1.25/M input)</option>
+                        <option value="gpt5">GPT-5 (OpenAI) — $1.25 / $10.00 per 1M tokens</option>
+                        <option value="opus48">Claude Opus 4.8 (Anthropic) — $5.00 / $25.00 per 1M tokens</option>
+                        <option value="sonnet46">Claude Sonnet 4.6 (Anthropic) — $3.00 / $15.00 per 1M tokens</option>
+                        <option value="gemini31pro">Gemini 3.1 Pro (Google) — $2.00 / $12.00 per 1M tokens</option>
+                        <option value="gpt5mini">GPT-5 mini (OpenAI) — $0.25 / $2.00 per 1M tokens</option>
+                        <option value="deepseek">DeepSeek V4 Flash — $0.14 / $0.28 per 1M tokens</option>
                         <option value="other">Other model</option>
                     </select>
                 </div>
@@ -320,7 +322,7 @@
                 <div class="label">Providers tracked</div>
             </div>
             <div class="proof-card">
-                <div class="num">215</div>
+                <div class="num">232</div>
                 <div class="label">Head-to-head comparisons</div>
             </div>
             <div class="proof-card">
@@ -365,7 +367,7 @@
             <h3>Common questions</h3>
             <div class="faq-item" onclick="this.classList.toggle('open')">
                 <div class="faq-q">Can I try again for free?<span>▾</span></div>
-                <div class="faq-a">The 24-hour trial is one per device. But at $29 one-time (less than most monthly API bills), most developers find Pro pays for itself within the first month.</div>
+                <div class="faq-a">The 24-hour trial is one per device. But at the founding member price (less than most monthly API bills), most developers find Pro pays for itself within the first month.</div>
             </div>
             <div class="faq-item" onclick="this.classList.toggle('open')">
                 <div class="faq-q">What if it doesn't save me money?<span>▾</span></div>
@@ -373,7 +375,7 @@
             </div>
             <div class="faq-item" onclick="this.classList.toggle('open')">
                 <div class="faq-q">Is this a subscription?<span>▾</span></div>
-                <div class="faq-a">No. It's a one-time payment of $29. You get lifetime access. No recurring charges, no surprise price increases.</div>
+                <div class="faq-a">No. It's a one-time payment. You get lifetime access. No recurring charges, no surprise price increases.</div>
             </div>
             <div class="faq-item" onclick="this.classList.toggle('open')">
                 <div class="faq-q">How is this different from just comparing prices manually?<span>▾</span></div>
@@ -383,8 +385,8 @@
 
         <!-- Bottom CTA -->
         <div style="text-align:center;margin-top:32px;">
-            <a href="https://buy.stripe.com/fZu7sL3Gw3GS0RQeoDeEo0a" target="_blank" rel="noopener" class="cta-btn" onclick="if(window.trackEvent)window.trackEvent('pro_button_clicked',{source:'trial_expired_bottom'})" style="margin-bottom:12px;">
-                Get Lifetime Access — $29
+            <a id="trial-bottom-cta" href="https://buy.stripe.com/fZu7sL3Gw3GS0RQeoDeEo0a" target="_blank" rel="noopener" class="cta-btn" onclick="if(window.trackEvent)window.trackEvent('pro_button_clicked',{source:'trial_expired_bottom'})" style="margin-bottom:12px;">
+                Get Lifetime Access — <span id="bottom-cta-price">$29</span>
             </a>
             <p style="font-size:12px;color:var(--text-muted);">
                 Questions? <a href="mailto:hello@getapipulse.com" style="color:var(--accent);">hello@getapipulse.com</a>
@@ -393,21 +395,25 @@
     </main>
 
     <script>
-    // Savings calculator
+    // Savings calculator — uses actual pricing data for accurate estimates
     function calcTrialSavings() {
         var model = document.getElementById('trial-model').value;
         var spend = parseFloat(document.getElementById('trial-spend').value) || 200;
-        // Savings estimates (% reduction switching to optimal model)
+        // Estimated savings (% reduction switching to optimal budget model)
+        // Based on: GPT-5→DeepSeek V4 Flash, Opus→DeepSeek, Sonnet→DeepSeek, etc.
         var savings = {
-            'gpt5': 0.65,      // Switch to DeepSeek/Gemini
-            'opus48': 0.85,    // Switch to Sonnet/DeepSeek
-            'sonnet46': 0.40,  // Switch to DeepSeek/Gemini
-            'gemini31pro': 0.20, // Already cheap
-            'other': 0.35      // Conservative estimate
+            'gpt5': 0.65,        // GPT-5 $10/M out → DeepSeek $0.28/M out = ~97% on output
+            'opus48': 0.85,      // Opus 4.8 $25/M out → DeepSeek $0.28/M out = ~99%
+            'sonnet46': 0.40,    // Sonnet 4.6 $15/M out → cheaper alternatives
+            'gemini31pro': 0.25, // Already mid-tier, modest savings possible
+            'gpt5mini': 0.30,   // Budget model, limited room to go cheaper
+            'deepseek': 0.10,   // Already cheapest, minimal savings
+            'other': 0.35       // Conservative estimate
         };
         var pct = savings[model] || 0.35;
         var annual = Math.round(spend * 12 * pct);
-        var paybackDays = Math.ceil(29 / (spend * pct / 30));
+        var price = window._abPrice || 29;
+        var paybackDays = Math.ceil(price / (spend * pct / 30));
 
         document.getElementById('trial-savings-amount').textContent = '$' + annual.toLocaleString() + '/yr';
         document.getElementById('trial-payback').textContent = paybackDays < 1 ? 'less than a day' : paybackDays + ' day' + (paybackDays > 1 ? 's' : '');
@@ -421,13 +427,36 @@
         });
     }
 
-    // A/B pricing
+    // Pre-fill model from go.html URL params + A/B pricing
     document.addEventListener('DOMContentLoaded', function() {
+        // Pre-fill model if passed via URL (e.g. ?model=openai-gpt5)
+        var params = new URLSearchParams(window.location.search);
+        var urlModel = params.get('model');
+        if (urlModel) {
+            var sel = document.getElementById('trial-model');
+            // Map go.html model IDs to trial-expired option values
+            var modelMap = {
+                'openai-gpt5': 'gpt5', 'openai-gpt-5': 'gpt5', 'gpt5': 'gpt5',
+                'anthropic-opus48': 'opus48', 'opus48': 'opus48',
+                'anthropic-sonnet46': 'sonnet46', 'sonnet46': 'sonnet46',
+                'google-gemini3-pro': 'gemini31pro', 'gemini31pro': 'gemini31pro',
+                'openai-gpt5-mini': 'gpt5mini', 'gpt5mini': 'gpt5mini',
+                'deepseek-v4-flash': 'deepseek', 'deepseek': 'deepseek'
+            };
+            var mapped = modelMap[urlModel] || modelMap[urlModel.toLowerCase()];
+            if (mapped && sel.querySelector('option[value="' + mapped + '"]')) {
+                sel.value = mapped;
+            }
+        }
+
+        // A/B pricing
         var price = window._abPrice || 29;
         var stripeLink = window._abStripeLink || 'https://buy.stripe.com/fZu7sL3Gw3GS0RQeoDeEo0a';
         document.getElementById('trial-price').textContent = '$' + price;
         document.getElementById('cta-price').textContent = '$' + price;
         document.getElementById('trial-cta').href = stripeLink;
+        document.getElementById('trial-bottom-cta').href = stripeLink;
+        document.getElementById('bottom-cta-price').textContent = '$' + price;
         if (price === 19) {
             document.getElementById('trial-was').textContent = '$39';
         }
