@@ -637,6 +637,26 @@
         var savingsPayback = document.getElementById('savings-payback');
         if (!modelSel || !spendInput) return;
 
+        // Pre-fill from URL params (comparison pages, blog posts pass model + spend)
+        var params = new URLSearchParams(window.location.search);
+        var urlModel = params.get('model');
+        var urlSpend = params.get('spend');
+        var urlSavings = params.get('savings');
+        if (urlModel && modelSel.querySelector('option[value="' + urlModel + '"]')) {
+            modelSel.value = urlModel;
+        }
+        if (urlSpend && parseFloat(urlSpend) > 0) {
+            spendInput.value = urlSpend;
+        }
+        // If savings passed via URL, update hero title immediately
+        if (urlSavings && parseFloat(urlSavings) > 0) {
+            var annualSavings = Math.round(parseFloat(urlSavings) * 12);
+            var titleEl = document.querySelector('.hero-calc-title');
+            if (titleEl) titleEl.textContent = 'Save $' + annualSavings.toLocaleString() + '/year';
+            var subEl = document.querySelector('.hero-calc-sub');
+            if (subEl) subEl.textContent = 'Switch from your current model to cheaper alternatives';
+        }
+
         var models = {
             'openai-gpt5':           {name:'GPT-5',input:1.25,output:10.00,ratio:0.85},
             'openai-gpt55':          {name:'GPT-5.5',input:5.00,output:30.00,ratio:0.85},
