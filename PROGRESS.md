@@ -1,5 +1,19 @@
 # PROGRESS.md
 
+## Session 833 (Jun 22) — E-Commerce Use-Case Page (1 commit)
+**Created high-intent use-case page targeting e-commerce founders — high-volume AI customers.**
+- **Created use-case-ecommerce.html** — Best AI API for E-Commerce 2026
+  - 6 e-commerce AI use cases with cost ranges: product descriptions ($0.0001–$0.002), chatbots ($0.005–$0.08), review analysis, search, recommendations, category tagging
+  - 10 models compared with real e-commerce workload costs (1K and 10K conversations/day)
+  - 4 budget tiers: $5–50 (small store), $50–300 (growing), $300–2K (established), $2K+ (enterprise)
+  - E-commerce-specific optimization: description caching, query routing, batch processing, context trimming
+  - FAQPage schema (3 Q&As), Article schema, BreadcrumbList
+  - Pro upsell + budget planner CTA
+- **Updated use-cases.html** — added E-Commerce entry (position 9, 12 total use cases)
+- **Updated indexes** — sitemap (802 URLs), RSS (682 items)
+- **Cross-linked** from existing blog-ai-api-cost-ecommerce.html
+- **1 commit, 5 files changed, +631 lines**
+
 ## Session 832 (Jun 22) — Startups Use-Case Page (1 commit)
 **Created high-intent use-case page targeting startup founders — ideal $29 customer profile.**
 - **Created use-case-startups.html** — Best AI API for Startups 2026
@@ -95,12 +109,12 @@
 ## Summary: Sessions 1-598 (Apr 5 - Jun 12)
 Full APIpulse build from scratch. 652 pages, 320 posts, 42 models, 10 providers, 84 tools. Domain, Stripe, Pro, GA4, newsletter, Chrome extension, 167 comparisons, FAQPage schema, streaming toggle, A/B pricing, Model Selector quiz.
 
-## Site Status (as of Session 832, Jun 22, 2026)
-**816+ web pages | 354 blog posts | 40+ models | 10 providers | 106 tools | 12 API endpoints | 2 embeddable widgets**
-- Sitemap (801 URLs), RSS (682 items), blog files (354 posts) — all in sync
+## Site Status (as of Session 833, Jun 22, 2026)
+**817+ web pages | 354 blog posts | 40+ models | 10 providers | 106 tools | 12 API endpoints | 2 embeddable widgets**
+- Sitemap (802 URLs), RSS (682 items), blog files (354 posts) — all in sync
 - **232 comparison pages** covering all major model pairs (all indexed in compare.html)
 - **22 alternatives landing pages** — all cross-linked, all with go.html model pre-fill
-- **11 use-case pages** — chatbot, code-gen, content-writing, customer-support, data-extraction, document-analysis, enterprise, agents, RAG, translation, startups
+- **12 use-case pages** — chatbot, code-gen, content-writing, customer-support, data-extraction, document-analysis, enterprise, agents, RAG, translation, startups, ecommerce
 - **9 migration routes** in migration-checklist.html (OpenAI, Anthropic, Google, DeepSeek, Mistral, xAI, Cohere)
 - **547 pages** linking to widget.html (296 blog + 229 comparison + 22 alternatives)
 - **251 pages** linking to migration-checklist.html (229 comparison + 22 alternatives)
