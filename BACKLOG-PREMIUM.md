@@ -28,7 +28,8 @@ All Week 9 tasks COMPLETE except items 22-24 (blocked on human/GA4):
 30. **Optimize migration checklist conversion** — Monitor which routes are most popular, which step users drop off at, Pro conversion rate from checklist.
 31. Plan v2 — If revenue justifies, plan next features.
 
-### Completed (Sessions 416-821, Apr 23 - Jun 22)
+### Completed (Sessions 416-822, Apr 23 - Jun 22)
+**Session 822 (Jun 22):** Critical conversion fix — trial-expired.html wrong model prices + stale comparison counts. Added model pre-fill, A/B pricing on bottom CTA. 1 commit.
 **Session 821 (Jun 22):** Upgraded hidden costs blog post to comprehensive 7-category guide. Fixed go.html stale comparison count (203 → 232). 1 commit.
 **Session 819 (Jun 22):** Widget distribution push. Added FAQPage schema to widget.html (5 Q&As). Created DISTRIBUTION-KIT.md with 18 submission targets, dev.to article draft, Show HN draft, directory copy, and social media posts. Distribution materials ready for human to post. 1 commit.
 **Session 816 (Jun 21):** Created Best AI API Cost Monitoring Tools roundup blog post — detailed reviews of APIpulse, Helicone, Langfuse, LangSmith, provider dashboards. Feature comparison table. How to choose by team size. FAQPage schema (5 Q&As). Total: 351 blog posts, 801 sitemap URLs, 673 RSS items.

@@ -37,7 +37,8 @@ All content tasks complete: 232 comparison pages, 22 alternatives pages, 16 use-
 - ~~Reddit promotions~~ — Channel closed. New accounts get 0 traction.
 - ~~Stripe one-time $19/$39 links~~ — DONE. Human provided links Jun 10 (HELP-RESPONSES Issue #17). A/B test resumed Session 689.
 
-### Completed Summary (Sessions 416-821, Apr 23 - Jun 22)
+### Completed Summary (Sessions 416-822, Apr 23 - Jun 22)
+**Session 822 (Jun 22):** Critical conversion fix — trial-expired.html had wrong model prices in savings dropdown (GPT-5 showed $5 instead of $1.25, Opus showed $15 instead of $5). Fixed prices, added 2 new models, model pre-fill from go.html, A/B pricing on bottom CTA. Fixed stale comparison count (215→232) across 3 pages. 1 commit.
 **Session 821 (Jun 22):** Upgraded blog-hidden-costs-ai-api.html from basic outline to comprehensive 7-category guide with data tables, impact ratings, and fix instructions. Fixed go.html stale comparison count (203 → 232). 1 commit.
 **Session 819 (Jun 22):** Widget distribution push. Added FAQPage schema to widget.html (5 Q&As). Created DISTRIBUTION-KIT.md with 18 submission targets, dev.to article draft, Show HN draft, directory copy. Distribution materials ready for human posting. 1 commit.
 **Session 818 (Jun 22):** Added model pre-fill to go.html links across comparison pages + blog posts. GO_MODEL_MAP (130+ variants). All 212 vs-pages + 351 blog posts auto-detect model. 1 commit.

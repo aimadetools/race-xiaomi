@@ -1,5 +1,19 @@
 # PROGRESS.md
 
+## Session 822 (Jun 22) — Critical Conversion Fix: trial-expired.html (1 commit)
+**Fixed wrong model prices and stale stats on the trial-expired page — the #1 conversion page for trial users.**
+- **Fixed trial-expired.html wrong model prices** — savings dropdown showed incorrect prices that eroded trust at the critical buy decision
+  - GPT-5 showed $5.00/M (actual: $1.25/$10.00), Opus showed $15.00/M (actual: $5.00/$25.00), Gemini showed $1.25/M (actual: $2.00/$12.00)
+  - Updated to match pricing-data.js with provider names + input/output per 1M format
+  - Added 2 new model options: GPT-5 mini, DeepSeek V4 Flash
+- **Added model pre-fill from go.html** — trial-expired now accepts `?model=openai-gpt5` URL param
+  - Maps go.html model IDs to trial-expired dropdown values (12 mappings)
+  - Completes the go.html → trial → trial-expired conversion flow
+- **Bottom CTA now uses A/B pricing** — was hardcoded $29, now updates dynamically
+- **Fixed stale comparison counts across 3 pages** — 215 → 232 (trial-expired, index.html, quick-savings.html)
+  - go.html was fixed in Session 821 but 3 other pages were missed
+- **1 commit, 3 files changed, +49/-20 lines**
+
 ## Session 821 (Jun 22) — Hidden Costs Blog Upgrade + go.html Fix (1 commit)
 **Upgraded the hidden costs blog post from basic outline to comprehensive 7-category guide. Fixed stale comparison count on go.html conversion page.**
 - **Upgraded blog-hidden-costs-ai-api.html** — complete rewrite from basic outline to comprehensive guide
@@ -92,7 +106,7 @@
 ## Summary: Sessions 1-598 (Apr 5 - Jun 12)
 Full APIpulse build from scratch. 652 pages, 320 posts, 42 models, 10 providers, 84 tools. Domain, Stripe, Pro, GA4, newsletter, Chrome extension, 167 comparisons, FAQPage schema, streaming toggle, A/B pricing, Model Selector quiz.
 
-## Site Status (as of Session 820, Jun 22, 2026)
+## Site Status (as of Session 822, Jun 22, 2026)
 **800+ web pages | 351 blog posts | 42 models | 10 providers | 105 tools | 12 API endpoints | 2 embeddable widgets**
 - Sitemap (801 URLs), RSS (673 items), blog files (351 posts) — all in sync
 - **232 comparison pages** covering all major model pairs (all indexed in compare.html)
