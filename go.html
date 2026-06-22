@@ -440,6 +440,27 @@
             </div>
         </div>
 
+        <!-- ROI Payback -->
+        <div id="roi-section" style="background:linear-gradient(135deg,rgba(34,197,94,0.06),rgba(34,197,94,0.02));border:2px solid rgba(34,197,94,0.25);border-radius:14px;padding:24px;margin-bottom:24px;text-align:center;">
+            <div style="font-size:13px;font-weight:700;color:var(--green);text-transform:uppercase;letter-spacing:1px;margin-bottom:8px;">⏱️ Your Payback Period</div>
+            <div style="font-size:clamp(28px,5vw,40px);font-weight:900;color:var(--green);font-family:monospace;margin-bottom:4px;" id="payback-days">3 days</div>
+            <div style="font-size:14px;color:var(--text-secondary);margin-bottom:12px;">At your <span id="roi-spend">$500</span>/mo spend, Pro pays for itself in <span id="payback-text">3 days</span></div>
+            <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;font-size:13px;">
+                <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:10px 16px;">
+                    <div style="color:var(--text-muted);font-size:11px;">Monthly savings</div>
+                    <div style="font-weight:800;color:var(--green);font-family:monospace;" id="monthly-savings">$200</div>
+                </div>
+                <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:10px 16px;">
+                    <div style="color:var(--text-muted);font-size:11px;">Annual savings</div>
+                    <div style="font-weight:800;color:var(--green);font-family:monospace;" id="annual-savings">$2,400</div>
+                </div>
+                <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:10px 16px;">
+                    <div style="color:var(--text-muted);font-size:11px;">ROI</div>
+                    <div style="font-weight:800;color:var(--green);font-family:monospace;" id="roi-multiple">83×</div>
+                </div>
+            </div>
+        </div>
+
         <!-- Urgency countdown -->
         <div class="urgency">
             ⏰ Founding member price ends July 12 — <span id="countdown"></span> left at $29
@@ -715,6 +736,29 @@
                 savingsPayback.textContent = '⚡ $' + price + ' Pro pays for itself in ' + paybackDays + ' days';
             } else {
                 savingsPayback.textContent = '⚡ $' + price + ' Pro pays for itself in ' + Math.ceil(paybackDays / 30) + ' months';
+            }
+
+            // Update ROI section
+            var roiSpend = document.getElementById('roi-spend');
+            var paybackDaysEl = document.getElementById('payback-days');
+            var paybackText = document.getElementById('payback-text');
+            var monthlySavings = document.getElementById('monthly-savings');
+            var annualSavingsEl = document.getElementById('annual-savings');
+            var roiMultiple = document.getElementById('roi-multiple');
+            if (roiSpend) roiSpend.textContent = '$' + spend.toLocaleString();
+            if (paybackDaysEl) {
+                var pbDays = Math.ceil((price / bestSaving) * 30);
+                paybackDaysEl.textContent = pbDays <= 1 ? '1 day' : pbDays + ' days';
+            }
+            if (paybackText) {
+                var pbDays2 = Math.ceil((price / bestSaving) * 30);
+                paybackText.textContent = pbDays2 <= 1 ? '1 day' : pbDays2 + ' days';
+            }
+            if (monthlySavings) monthlySavings.textContent = '$' + Math.round(bestSaving).toLocaleString();
+            if (annualSavingsEl) annualSavingsEl.textContent = '$' + annualSaving.toLocaleString();
+            if (roiMultiple) {
+                var roiVal = Math.round(annualSaving / price);
+                roiMultiple.textContent = roiVal + '×';
             }
 
             // Update CTAs with personalized savings (always, not just after interaction)
