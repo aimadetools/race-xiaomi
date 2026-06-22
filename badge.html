@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI API Cost Badge — Show Your Monthly AI Spend in Your README | APIpulse</title>
+    <meta name="description" content="Free AI API cost badge for GitHub READMEs. Shows your estimated monthly AI API spend. Works with OpenAI, Anthropic, Google, DeepSeek, and 6 more providers. Copy-paste embed code.">
+    <meta name="keywords" content="AI API badge, GitHub badge, README badge, AI cost badge, API spending badge, OpenAI badge, Claude badge, LLM cost display">
+    <meta property="og:title" content="AI API Cost Badge — Show Your AI Spend on GitHub">
+    <meta property="og:description" content="Add a live AI API cost badge to your GitHub README. Shows monthly spend across 42 models. Free, one line of markdown.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://getapipulse.com/og-image.png">
+    <meta property="og:url" content="https://getapipulse.com/badge.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="AI API Cost Badge for GitHub READMEs">
+    <meta name="twitter:description" content="Show your monthly AI API spend. Free badge, one line of markdown.">
+    <meta name="twitter:image" content="https://getapipulse.com/og-image.png">
+    <link rel="canonical" href="https://getapipulse.com/badge.html">
+    <link rel="alternate" type="application/rss+xml" title="APIpulse Blog" href="https://getapipulse.com/rss.xml">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="styles.css">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0CEP7S9Y3J"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-0CEP7S9Y3J');
+    </script>
+    <script src="analytics.js" defer></script>
+    <script src="shared.js" defer></script>
+    <script src="pricing-data.js" defer></script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "AI API Cost Badge Generator",
+        "url": "https://getapipulse.com/badge.html",
+        "description": "Generate a free AI API cost badge for your GitHub README. Shows estimated monthly spend across 42 AI models.",
+        "applicationCategory": "DeveloperApplication",
+        "operatingSystem": "Web",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+    }
+    </script>
+    <style>
+        .badge-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 100px 20px 60px;
+        }
+        .badge-hero {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .badge-hero h1 {
+            font-size: clamp(28px, 5vw, 42px);
+            font-weight: 900;
+            margin-bottom: 12px;
+            background: linear-gradient(135deg, #60a5fa, #a78bfa);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .badge-hero p {
+            font-size: 17px;
+            color: var(--text-secondary);
+            max-width: 540px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        /* Badge preview */
+        .badge-preview {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 32px;
+            margin-bottom: 24px;
+            text-align: center;
+        }
+        .badge-preview h2 {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+        .badge-display {
+            display: inline-flex;
+            align-items: center;
+            gap: 0;
+            border-radius: 6px;
+            overflow: hidden;
+            font-family: 'Verdana', 'Geneva', sans-serif;
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+            margin-bottom: 20px;
+        }
+        .badge-left {
+            background: #555;
+            color: white;
+            padding: 5px 10px;
+            text-transform: uppercase;
+        }
+        .badge-right {
+            padding: 5px 10px;
+            color: white;
+        }
+        .badge-right.green { background: #22c55e; }
+        .badge-right.yellow { background: #eab308; }
+        .badge-right.red { background: #ef4444; }
+        .badge-right.blue { background: #3b82f6; }
+
+        /* Config */
+        .config-panel {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 28px;
+            margin-bottom: 24px;
+        }
+        .config-panel h2 {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+        .config-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin-bottom: 20px;
+        }
+        @media (max-width: 600px) {
+            .config-grid { grid-template-columns: 1fr; }
+        }
+        .config-group label {
+            display: block;
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--text-secondary);
+            margin-bottom: 6px;
+        }
+        .config-group select, .config-group input {
+            width: 100%;
+            padding: 10px 12px;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            color: var(--text-primary);
+            font-size: 14px;
+            font-family: inherit;
+        }
+
+        /* Code output */
+        .code-output {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            overflow: hidden;
+            margin-bottom: 24px;
+        }
+        .code-tabs {
+            display: flex;
+            border-bottom: 1px solid var(--border);
+        }
+        .code-tab {
+            padding: 10px 20px;
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--text-muted);
+            cursor: pointer;
+            border-bottom: 2px solid transparent;
+            transition: all 0.2s;
+            background: none;
+            border-top: none;
+            border-left: none;
+            border-right: none;
+            font-family: inherit;
+        }
+        .code-tab.active {
+            color: var(--accent);
+            border-bottom-color: var(--accent);
+        }
+        .code-body {
+            padding: 16px;
+            font-family: 'SF Mono', 'Monaco', 'Menlo', monospace;
+            font-size: 13px;
+            color: var(--text-secondary);
+            white-space: pre-wrap;
+            word-break: break-all;
+            line-height: 1.6;
+            max-height: 150px;
+            overflow-y: auto;
+        }
+        .copy-btn {
+            display: block;
+            width: 100%;
+            padding: 12px;
+            background: var(--accent);
+            color: white;
+            border: none;
+            font-size: 14px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: opacity 0.2s;
+            font-family: inherit;
+        }
+        .copy-btn:hover { opacity: 0.9; }
+        .copy-btn.copied {
+            background: var(--green);
+        }
+
+        /* Badge variants */
+        .variants-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 12px;
+            margin-bottom: 24px;
+        }
+        .variant-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 16px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .variant-card:hover, .variant-card.active {
+            border-color: var(--accent);
+            box-shadow: 0 0 0 2px rgba(99,102,241,0.15);
+        }
+        .variant-card .label {
+            font-size: 12px;
+            color: var(--text-muted);
+            margin-top: 8px;
+        }
+
+        /* Why section */
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 16px;
+            margin-bottom: 32px;
+        }
+        .why-card {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 20px;
+        }
+        .why-card h3 {
+            font-size: 15px;
+            font-weight: 700;
+            margin-bottom: 6px;
+        }
+        .why-card p {
+            font-size: 13px;
+            color: var(--text-secondary);
+            line-height: 1.5;
+        }
+
+        /* CTA */
+        .badge-cta {
+            text-align: center;
+            padding: 32px;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+        }
+        .badge-cta h2 { font-size: 22px; font-weight: 800; margin-bottom: 8px; }
+        .badge-cta p { color: var(--text-secondary); margin-bottom: 16px; font-size: 15px; }
+        .cta-link {
+            display: inline-block;
+            padding: 14px 32px;
+            background: linear-gradient(135deg, var(--accent), #8b5cf6);
+            color: white;
+            border-radius: 10px;
+            font-weight: 700;
+            font-size: 16px;
+            text-decoration: none;
+            transition: all 0.2s;
+            box-shadow: 0 4px 20px rgba(99,102,241,0.3);
+        }
+        .cta-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(99,102,241,0.4);
+        }
+    </style>
+</head>
+<body>
+    <nav id="nav"></nav>
+
+    <main class="badge-container">
+        <div class="badge-hero">
+            <div style="display:inline-flex;align-items:center;gap:6px;background:rgba(34,197,94,0.1);border:1px solid rgba(34,197,94,0.25);color:var(--green);padding:5px 14px;border-radius:20px;font-size:12px;font-weight:600;margin-bottom:16px;">🏷️ Free — No Signup</div>
+            <h1>AI API Cost Badge</h1>
+            <p>Show your monthly AI API spend in your GitHub README. One line of markdown. Works with <strong>42 models</strong> from <strong>10 providers</strong>.</p>
+        </div>
+
+        <!-- Live Preview -->
+        <div class="badge-preview">
+            <h2>Live Preview</h2>
+            <div id="badge-live" class="badge-display">
+                <span class="badge-left">ai api cost</span>
+                <span class="badge-right green" id="badge-value">$127/mo</span>
+            </div>
+            <p style="font-size:13px;color:var(--text-muted);">This is what your badge will look like in a GitHub README</p>
+        </div>
+
+        <!-- Config -->
+        <div class="config-panel">
+            <h2>Configure Your Badge</h2>
+            <div class="config-grid">
+                <div class="config-group">
+                    <label for="badge-model">Primary Model</label>
+                    <select id="badge-model"></select>
+                </div>
+                <div class="config-group">
+                    <label for="badge-spend">Monthly Spend</label>
+                    <select id="badge-spend">
+                        <option value="25">Under $25/mo</option>
+                        <option value="50">$25-50/mo</option>
+                        <option value="100" selected>$50-100/mo</option>
+                        <option value="250">$100-250/mo</option>
+                        <option value="500">$250-500/mo</option>
+                        <option value="1000">$500-1,000/mo</option>
+                        <option value="2500">$1,000-2,500/mo</option>
+                        <option value="5000">$2,500+/mo</option>
+                    </select>
+                </div>
+            </div>
+            <div class="config-grid">
+                <div class="config-group">
+                    <label for="badge-style">Badge Style</label>
+                    <select id="badge-style">
+                        <option value="flat">Flat (default)</option>
+                        <option value="flat-square">Flat Square</option>
+                        <option value="plastic">Plastic</option>
+                    </select>
+                </div>
+                <div class="config-group">
+                    <label for="badge-color">Cost Color</label>
+                    <select id="badge-color">
+                        <option value="auto">Auto (by amount)</option>
+                        <option value="brightgreen">Green</option>
+                        <option value="yellow">Yellow</option>
+                        <option value="red">Red</option>
+                        <option value="blue">Blue</option>
+                        <option value="informational">Gray</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <!-- Code Output -->
+        <div class="code-output">
+            <div class="code-tabs">
+                <button class="code-tab active" data-tab="markdown">Markdown</button>
+                <button class="code-tab" data-tab="html">HTML</button>
+                <button class="code-tab" data-tab="rst">reStructuredText</button>
+            </div>
+            <div class="code-body" id="code-output"></div>
+            <button class="copy-btn" id="copy-btn">📋 Copy to Clipboard</button>
+        </div>
+
+        <!-- Badge Variants -->
+        <div class="config-panel">
+            <h2>Badge Variants</h2>
+            <p style="font-size:14px;color:var(--text-secondary);margin-bottom:16px;">Click a variant to use it, or mix and match above.</p>
+            <div class="variants-grid" id="variants-grid"></div>
+        </div>
+
+        <!-- Why -->
+        <div style="margin-bottom:32px;">
+            <h2 style="font-size:22px;font-weight:800;text-align:center;margin-bottom:20px;">Why Add a Cost Badge?</h2>
+            <div class="why-grid">
+                <div class="why-card">
+                    <h3>💰 Cost Transparency</h3>
+                    <p>Show your community the real cost of running your AI-powered project. Builds trust with users and contributors.</p>
+                </div>
+                <div class="why-card">
+                    <h3>📊 Budget Awareness</h3>
+                    <p>Track your AI spend at a glance. Update the badge monthly to keep yourself accountable.</p>
+                </div>
+                <div class="why-card">
+                    <h3>🔄 Provider Comparison</h3>
+                    <p>Switched from OpenAI to DeepSeek? Update your badge and show the savings. Inspire others to optimize.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- CTA -->
+        <div class="badge-cta">
+            <h2>Want to show your exact savings?</h2>
+            <p>APIpulse Pro shows your personalized cost comparison across 42 models with migration code for cheaper alternatives.</p>
+            <a href="go.html?from=badge" class="cta-link">Try Pro Free for 24 Hours →</a>
+        </div>
+    </main>
+
+    <footer id="footer"></footer>
+
+    <script>
+    (function() {
+        function init() {
+            if (typeof API_MODELS === 'undefined') { setTimeout(init, 50); return; }
+            setup();
+        }
+
+        var modelId = 'openai-gpt5';
+        var spend = 100;
+        var style = 'flat';
+        var colorMode = 'auto';
+
+        function setup() {
+            var modelSelect = document.getElementById('badge-model');
+            var providers = {};
+            API_MODELS.forEach(function(m) {
+                if (!providers[m.provider]) providers[m.provider] = [];
+                providers[m.provider].push(m);
+            });
+            Object.keys(providers).sort().forEach(function(prov) {
+                var group = document.createElement('optgroup');
+                group.label = prov;
+                providers[prov].forEach(function(m) {
+                    var opt = document.createElement('option');
+                    opt.value = m.id;
+                    opt.textContent = m.name + ' (' + m.tier + ')';
+                    if (m.id === modelId) opt.selected = true;
+                    group.appendChild(opt);
+                });
+                modelSelect.appendChild(group);
+            });
+
+            modelSelect.addEventListener('change', function() { modelId = this.value; render(); });
+            document.getElementById('badge-spend').addEventListener('change', function() { spend = parseInt(this.value); render(); });
+            document.getElementById('badge-style').addEventListener('change', function() { style = this.value; render(); });
+            document.getElementById('badge-color').addEventListener('change', function() { colorMode = this.value; render(); });
+
+            // Tabs
+            document.querySelectorAll('.code-tab').forEach(function(tab) {
+                tab.addEventListener('click', function() {
+                    document.querySelectorAll('.code-tab').forEach(function(t) { t.classList.remove('active'); });
+                    this.classList.add('active');
+                    render();
+                });
+            });
+
+            // Copy
+            document.getElementById('copy-btn').addEventListener('click', function() {
+                var code = document.getElementById('code-output').textContent;
+                navigator.clipboard.writeText(code).then(function() {
+                    var btn = document.getElementById('copy-btn');
+                    btn.textContent = '✅ Copied!';
+                    btn.classList.add('copied');
+                    setTimeout(function() { btn.textContent = '📋 Copy to Clipboard'; btn.classList.remove('copied'); }, 2000);
+                });
+            });
+
+            // Variants
+            buildVariants();
+            render();
+        }
+
+        function getColor(cost) {
+            if (colorMode !== 'auto') return colorMode;
+            if (cost < 50) return 'brightgreen';
+            if (cost < 200) return 'yellow';
+            return 'red';
+        }
+
+        function buildVariants() {
+            var grid = document.getElementById('variants-grid');
+            var variants = [
+                { model: 'openai-gpt5', label: 'GPT-5', spend: 500 },
+                { model: 'anthropic-opus48', label: 'Claude Opus 4.8', spend: 250 },
+                { model: 'deepseek-v4-flash', label: 'DeepSeek V4 Flash', spend: 50 },
+                { model: 'google-gemini35-flash', label: 'Gemini 3.5 Flash', spend: 100 },
+                { model: 'mistral-large', label: 'Mistral Large 3', spend: 75 },
+                { model: 'llama-4-scout', label: 'Llama 4 Scout', spend: 25 },
+            ];
+            variants.forEach(function(v) {
+                var m = API_MODELS.find(function(mm) { return mm.id === v.model; });
+                if (!m) return;
+                var cost = v.spend;
+                var card = document.createElement('div');
+                card.className = 'variant-card';
+                card.innerHTML = '<div class="badge-display" style="font-size:10px;"><span class="badge-left">ai api cost</span><span class="badge-right ' + (cost < 50 ? 'green' : cost < 200 ? 'yellow' : 'red') + '">' + m.name + ' ~$' + cost + '/mo</span></div>' +
+                    '<div class="label">' + m.name + ' · ~$' + cost + '/mo</div>';
+                card.addEventListener('click', function() {
+                    modelId = v.model;
+                    document.getElementById('badge-model').value = v.model;
+                    // Find closest spend option
+                    var sel = document.getElementById('badge-spend');
+                    var best = sel.options[0];
+                    Array.from(sel.options).forEach(function(opt) {
+                        if (Math.abs(parseInt(opt.value) - v.spend) < Math.abs(parseInt(best.value) - v.spend)) best = opt;
+                    });
+                    sel.value = best.value;
+                    spend = parseInt(best.value);
+                    render();
+                    document.querySelector('.badge-preview').scrollIntoView({ behavior: 'smooth', block: 'center' });
+                });
+                grid.appendChild(card);
+            });
+        }
+
+        function render() {
+            var model = API_MODELS.find(function(m) { return m.id === modelId; });
+            if (!model) return;
+
+            var color = getColor(spend);
+            var label = model.name + ' ~$' + spend + '/mo';
+
+            // Live preview
+            var preview = document.getElementById('badge-live');
+            preview.innerHTML = '<span class="badge-left">ai api cost</span><span class="badge-right ' + (color === 'brightgreen' ? 'green' : color === 'yellow' ? 'yellow' : color === 'red' ? 'red' : 'blue') + '">' + label + '</span>';
+
+            // Badge URL (shields.io static badge format)
+            // Format: /badge/<label>-<message>-<color> where dashes in text become --, underscores become __
+            var shieldLabel = 'AI API Cost';
+            var shieldMsg = model.name + ' ~$' + spend + '/mo';
+            // Shields.io encoding: _ = __, - = --, then URL-encode other chars
+            var enc = function(s) { return s.replace(/_/g, '__').replace(/-/g, '--').replace(/ /g, '_').replace(/\$/g, '%24').replace(/~/g, '~'); };
+            var badgeUrl = 'https://img.shields.io/badge/' + enc(shieldLabel) + '-' + enc(shieldMsg) + '-' + color + '?style=' + style;
+            var linkUrl = 'https://getapipulse.com/calculator.html?model=' + modelId;
+
+            // Code
+            var activeTab = document.querySelector('.code-tab.active').dataset.tab;
+            var code = '';
+            if (activeTab === 'markdown') {
+                code = '[![AI API Cost](' + badgeUrl + ')](' + linkUrl + ')';
+            } else if (activeTab === 'html') {
+                code = '<a href="' + linkUrl + '">\n  <img src="' + badgeUrl + '" alt="AI API Cost">\n</a>';
+            } else {
+                code = '.. image:: ' + badgeUrl + '\n   :target: ' + linkUrl + '\n   :alt: AI API Cost';
+            }
+            document.getElementById('code-output').textContent = code;
+        }
+
+        init();
+    })();
+    </script>
+</body>
+</html>
