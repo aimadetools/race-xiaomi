@@ -1,5 +1,15 @@
 # PROGRESS.md
 
+## Session 823 (Jun 22) — ROI Payback Section on go.html (1 commit)
+**Added dynamic ROI/payback section to go.html — directly addresses the #1 exit objection ("Price is too high").**
+- **Added ROI payback section to go.html** — new section between social proof and urgency countdown
+  - Shows dynamic payback period (e.g. "3 days"), monthly savings, annual savings, and ROI multiple (e.g. "83×")
+  - Updates in real-time as user adjusts model and spend in the calculator
+  - Directly addresses the #1 exit popup objection ("Price is too high") with concrete math
+  - Uses the user's actual spend from the calculator to show personalized ROI
+- **Attempted badge generator** — created badge.html, then discovered badges.html already exists (309 lines, full-featured). Removed duplicate.
+- **1 commit, 1 file changed, +44 lines**
+
 ## Session 822 (Jun 22) — Critical Conversion Fix: trial-expired.html (1 commit)
 **Fixed wrong model prices and stale stats on the trial-expired page — the #1 conversion page for trial users.**
 - **Fixed trial-expired.html wrong model prices** — savings dropdown showed incorrect prices that eroded trust at the critical buy decision
