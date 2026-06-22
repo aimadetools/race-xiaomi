@@ -420,23 +420,23 @@
             </p>
         </div>
 
-        <!-- Social proof -->
+        <!-- Social proof — savings-focused -->
         <div class="proof-row">
             <div class="proof-item">
-                <div class="num">1,200+</div>
-                <div class="lbl">weekly users</div>
+                <div class="num" style="color:var(--green);">$2,400</div>
+                <div class="lbl">avg. yearly savings</div>
             </div>
             <div class="proof-item">
                 <div class="num">42</div>
-                <div class="lbl">models</div>
+                <div class="lbl">models compared</div>
             </div>
             <div class="proof-item">
-                <div class="num">232</div>
-                <div class="lbl">comparisons</div>
+                <div class="num">40%</div>
+                <div class="lbl">typical reduction</div>
             </div>
             <div class="proof-item">
                 <div class="num" style="color:var(--green);">14d</div>
-                <div class="lbl">guarantee</div>
+                <div class="lbl">money back</div>
             </div>
         </div>
 
@@ -485,7 +485,7 @@
 
         <!-- Urgency countdown -->
         <div class="urgency">
-            ⏰ Founding member price ends July 12 — <span id="countdown"></span> left at $29
+            ⏰ Founding member price ends July 12 — <span id="countdown"></span> left at <span id="urgency-price">$29</span>. Price goes up to <span id="urgency-future">$49</span> after.
         </div>
 
         <!-- What you get -->
@@ -653,9 +653,13 @@
             var badgeEl = document.getElementById('price-badge');
             if (wasEl) wasEl.textContent = '$' + futurePrice;
             if (badgeEl) badgeEl.textContent = 'Save ' + savingsPct + '%';
-            // Update FAQ future price to match variant
+            // Update FAQ future price and urgency to match variant
             var faqFuture = document.getElementById('faq-future-price');
             if (faqFuture) faqFuture.textContent = '$' + futurePrice;
+            var urgencyPrice = document.getElementById('urgency-price');
+            if (urgencyPrice) urgencyPrice.textContent = '$' + price;
+            var urgencyFuture = document.getElementById('urgency-future');
+            if (urgencyFuture) urgencyFuture.textContent = '$' + futurePrice;
 
             // Update Stripe links
             document.getElementById('buy-cta').href = stripeLink;

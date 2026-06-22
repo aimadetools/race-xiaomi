@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Best AI API for Your Budget 2026 — Find the Right Model for $50, $100, $500/mo | APIpulse</title>
+    <meta name="description" content="Enter your monthly AI API budget and get personalized model recommendations. See exactly which models fit your budget, how many requests you get, and which gives the best value. 42 models compared.">
+    <meta name="keywords" content="best AI API for budget, AI API budget planner, which AI model should I use, AI API cost recommendation, cheapest AI API, AI model for $100 month, AI API monthly cost">
+    <meta property="og:title" content="Best AI API for Your Budget 2026 — Personalized Recommendations">
+    <meta property="og:description" content="Enter your monthly budget. Get ranked model recommendations with exact request counts. 42 models across 10 providers.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://getapipulse.com/og-image.png">
+    <meta property="og:url" content="https://getapipulse.com/best-ai-api-by-budget.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Best AI API for Your Budget 2026">
+    <meta name="twitter:image" content="https://getapipulse.com/og-image.png">
+    <meta name="twitter:description" content="Enter your budget. Get ranked model recommendations.">
+    <link rel="canonical" href="https://getapipulse.com/best-ai-api-by-budget.html">
+    <link rel="alternate" type="application/rss+xml" title="APIpulse Blog" href="https://getapipulse.com/rss.xml">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="styles.css">
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0CEP7S9Y3J"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-0CEP7S9Y3J');
+    </script>
+    <script src="analytics.js" defer></script>
+    <script src="pricing-data.js" defer></script>
+    <script src="shared.js" defer></script>
+    <script src="pro-features.js" defer></script>
+    <script src="results-cta.js" defer></script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "AI API Budget Planner — Find the Best Model for Your Budget",
+        "url": "https://getapipulse.com/best-ai-api-by-budget.html",
+        "description": "Enter your monthly AI API budget and get personalized model recommendations across 42 models from 10 providers.",
+        "applicationCategory": "DeveloperApplication",
+        "operatingSystem": "Web",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "How do I choose the right AI API model for my budget?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Enter your monthly budget and usage pattern above. The tool ranks all 42 models by how many requests you can make within your budget, factoring in input and output token costs. The #1 recommendation gives you the most requests for your money while matching your quality needs."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What's the cheapest AI API model in 2026?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "As of June 2026, the cheapest models are DeepSeek V4 Flash ($0.14/$0.28 per 1M tokens), Gemini 2.0 Flash Lite ($0.075/$0.30), and Mistral Small 4 ($0.10/$0.30). For a $50/month budget, DeepSeek V4 Flash gives you roughly 50,000+ standard chat requests."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How many API requests can I get for $100/month?",
+                "acceptedAnswer": {
+                        "@type": "Answer",
+                    "text": "It depends on the model and your average token usage. For a typical chat request (1,000 input + 500 output tokens), $100/month gets you: ~330,000 requests on DeepSeek V4 Flash, ~33,000 on Claude Haiku 4.5, ~14,000 on GPT-5 mini, or ~1,600 on GPT-5.5. Use the calculator above for exact numbers based on your usage."
+                }
+            }
+        ]
+    }
+    </script>
+    <style>
+        .budget-page { max-width: 860px; margin: 0 auto; padding: 100px 20px 80px; }
+
+        /* Hero */
+        .budget-hero { text-align: center; margin-bottom: 36px; }
+        .budget-hero h1 { font-size: clamp(26px, 4vw, 38px); font-weight: 900; margin-bottom: 10px; }
+        .budget-hero p { font-size: 16px; color: var(--text-secondary); max-width: 560px; margin: 0 auto; }
+
+        /* Input section */
+        .budget-input-section {
+            background: var(--bg-secondary); border: 2px solid var(--accent);
+            border-radius: 16px; padding: 28px 24px; margin-bottom: 28px;
+        }
+        .budget-presets {
+            display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 16px; justify-content: center;
+        }
+        .budget-preset {
+            padding: 10px 20px; border-radius: 10px; border: 2px solid var(--border);
+            background: var(--bg-card); color: var(--text-primary); font-size: 15px;
+            font-weight: 700; cursor: pointer; transition: all 0.2s; font-family: inherit;
+        }
+        .budget-preset:hover, .budget-preset.active {
+            border-color: var(--accent); background: rgba(99,102,241,0.1); color: var(--accent);
+        }
+        .budget-custom {
+            display: flex; align-items: center; gap: 8px; justify-content: center; margin-top: 12px;
+        }
+        .budget-custom label { font-size: 14px; font-weight: 600; color: var(--text-secondary); }
+        .budget-custom input {
+            width: 140px; padding: 10px 14px; background: var(--bg-card); border: 1px solid var(--border);
+            border-radius: 8px; color: var(--text-primary); font-size: 18px; font-weight: 700;
+            font-family: monospace; text-align: center;
+        }
+        .budget-custom input:focus { outline: none; border-color: var(--accent); }
+
+        /* Usage pattern */
+        .usage-section { margin-bottom: 20px; }
+        .usage-section h3 { font-size: 14px; font-weight: 700; color: var(--text-secondary); text-align: center; margin-bottom: 10px; text-transform: uppercase; letter-spacing: 0.5px; }
+        .usage-presets { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; }
+        .usage-preset {
+            padding: 8px 16px; border-radius: 8px; border: 1px solid var(--border);
+            background: var(--bg-card); color: var(--text-secondary); font-size: 13px;
+            font-weight: 600; cursor: pointer; transition: all 0.2s; font-family: inherit;
+        }
+        .usage-preset:hover, .usage-preset.active {
+            border-color: var(--accent); color: var(--accent); background: rgba(99,102,241,0.08);
+        }
+
+        /* Results */
+        .results-section { display: none; animation: fadeIn 0.4s ease; }
+        .results-header {
+            text-align: center; margin-bottom: 24px;
+        }
+        .results-header h2 { font-size: 22px; font-weight: 800; margin-bottom: 4px; }
+        .results-header p { font-size: 14px; color: var(--text-secondary); }
+
+        /* Summary cards */
+        .summary-cards {
+            display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-bottom: 24px;
+        }
+        .summary-card {
+            background: var(--bg-secondary); border: 1px solid var(--border);
+            border-radius: 12px; padding: 16px; text-align: center;
+        }
+        .summary-card .num { font-size: 24px; font-weight: 900; color: var(--accent); font-family: monospace; }
+        .summary-card .lbl { font-size: 12px; color: var(--text-muted); margin-top: 4px; }
+
+        /* Model table */
+        .model-table {
+            width: 100%; border-collapse: collapse; font-size: 14px; margin-bottom: 24px;
+        }
+        .model-table th {
+            padding: 12px 10px; border-bottom: 2px solid var(--border); font-weight: 700;
+            color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px;
+            font-size: 11px; text-align: left; white-space: nowrap;
+        }
+        .model-table td {
+            padding: 12px 10px; border-bottom: 1px solid var(--border); color: var(--text-secondary);
+        }
+        .model-table tr:last-child td { border-bottom: none; }
+        .model-table .rank { font-weight: 800; color: var(--accent); font-family: monospace; width: 36px; }
+        .model-table .model-name { font-weight: 700; color: var(--text-primary); }
+        .model-table .provider { color: var(--text-muted); font-size: 12px; }
+        .model-table .requests { font-weight: 700; font-family: monospace; }
+        .model-table .cost { font-family: monospace; }
+        .model-table .best-value {
+            background: rgba(34,197,94,0.06);
+        }
+        .model-table .best-value td { color: var(--text-primary) !important; }
+        .model-table .best-badge {
+            display: inline-block; background: rgba(34,197,94,0.15); color: var(--green);
+            font-size: 10px; font-weight: 800; padding: 2px 8px; border-radius: 4px;
+            text-transform: uppercase; letter-spacing: 0.5px; margin-left: 6px;
+        }
+        .model-table .dep-badge {
+            display: inline-block; background: rgba(239,68,68,0.12); color: var(--red);
+            font-size: 10px; font-weight: 700; padding: 2px 6px; border-radius: 4px;
+            margin-left: 6px;
+        }
+
+        /* Pro upsell */
+        .pro-upsell {
+            background: linear-gradient(135deg, rgba(99,102,241,0.08), rgba(139,92,246,0.08));
+            border: 2px solid var(--accent); border-radius: 16px;
+            padding: 28px 24px; text-align: center; margin-bottom: 24px;
+        }
+        .pro-upsell h3 { font-size: 18px; font-weight: 800; margin-bottom: 8px; }
+        .pro-upsell p { font-size: 14px; color: var(--text-secondary); margin-bottom: 16px; }
+        .pro-upsell-features {
+            display: flex; flex-wrap: wrap; gap: 8px 20px; justify-content: center;
+            margin-bottom: 16px; font-size: 13px;
+        }
+        .pro-upsell-features span { color: var(--green); }
+
+        /* FAQ */
+        .faq { margin-top: 36px; }
+        .faq h2 { font-size: 20px; font-weight: 800; text-align: center; margin-bottom: 16px; }
+        .faq-item { border-bottom: 1px solid var(--border); padding: 14px 0; }
+        .faq-item:last-child { border-bottom: none; }
+        .faq-q {
+            font-size: 15px; font-weight: 700; cursor: pointer;
+            display: flex; justify-content: space-between; align-items: center; gap: 12px;
+        }
+        .faq-q::after { content: '+'; font-size: 18px; color: var(--text-muted); flex-shrink: 0; transition: transform 0.2s; }
+        .faq-item.open .faq-q::after { content: '−'; }
+        .faq-a {
+            display: none; font-size: 14px; color: var(--text-secondary); line-height: 1.7; margin-top: 8px;
+        }
+        .faq-item.open .faq-a { display: block; }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @media (max-width: 600px) {
+            .budget-page { padding: 80px 16px 60px; }
+            .summary-cards { grid-template-columns: 1fr; }
+            .model-table { font-size: 12px; }
+            .model-table th, .model-table td { padding: 8px 6px; }
+            .budget-presets { gap: 6px; }
+            .budget-preset { padding: 8px 14px; font-size: 13px; }
+        }
+    </style>
+</head>
+<body>
+    <a href="#main" class="skip-link">Skip to content</a>
+    <nav>
+        <div class="nav-inner">
+            <a href="index.html" class="logo">API<span>pulse</span></a>
+            <div class="nav-links">
+                <a href="calculator.html">Calculator</a>
+                <a href="live-pricing.html">Live Pricing</a>
+                <a href="blog.html">Blog</a>
+                <a href="pricing.html" class="nav-cta">Get Pro</a>
+                <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
+            </div>
+        </div>
+    </nav>
+
+    <main id="main" class="budget-page">
+        <div class="budget-hero">
+            <h1>Best AI API for Your Budget</h1>
+            <p>Enter your monthly budget — see exactly which models you can afford, how many requests you get, and which gives the best value.</p>
+        </div>
+
+        <!-- Budget Input -->
+        <div class="budget-input-section">
+            <div class="budget-presets" id="budget-presets">
+                <button class="budget-preset" data-budget="25">$25/mo</button>
+                <button class="budget-preset active" data-budget="100">$100/mo</button>
+                <button class="budget-preset" data-budget="250">$250/mo</button>
+                <button class="budget-preset" data-budget="500">$500/mo</button>
+                <button class="budget-preset" data-budget="1000">$1,000/mo</button>
+                <button class="budget-preset" data-budget="5000">$5,000/mo</button>
+            </div>
+            <div class="budget-custom">
+                <label for="custom-budget">Or enter your budget: $</label>
+                <input type="number" id="custom-budget" min="5" max="100000" value="100" step="10">
+            </div>
+        </div>
+
+        <!-- Usage Pattern -->
+        <div class="usage-section">
+            <h3>Your primary use case</h3>
+            <div class="usage-presets" id="usage-presets">
+                <button class="usage-preset active" data-usage="chat" data-in="800" data-out="400">Chatbot / Assistant</button>
+                <button class="usage-preset" data-usage="code" data-in="2000" data-out="1500">Code Generation</button>
+                <button class="usage-preset" data-usage="content" data-in="500" data-out="2000">Content Writing</button>
+                <button class="usage-preset" data-usage="extraction" data-in="1500" data-out="300">Data Extraction</button>
+                <button class="usage-preset" data-usage="summarize" data-in="3000" data-out="500">Summarization</button>
+                <button class="usage-preset" data-usage="rag" data-in="2500" data-out="600">RAG Pipeline</button>
+            </div>
+        </div>
+
+        <!-- Results -->
+        <div class="results-section" id="results">
+            <div class="results-header">
+                <h2>Your Recommendations</h2>
+                <p id="results-subtitle">Showing models ranked by requests within your budget</p>
+            </div>
+
+            <div class="summary-cards" id="summary-cards">
+                <div class="summary-card">
+                    <div class="num" id="sum-budget">$100</div>
+                    <div class="lbl">monthly budget</div>
+                </div>
+                <div class="summary-card">
+                    <div class="num" id="sum-best-requests">—</div>
+                    <div class="lbl">max requests (best model)</div>
+                </div>
+                <div class="summary-card">
+                    <div class="num" id="sum-models">—</div>
+                    <div class="lbl">models within budget</div>
+                </div>
+            </div>
+
+            <table class="model-table">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Model</th>
+                        <th>Price (in/out per 1M)</th>
+                        <th>Requests/mo</th>
+                        <th>Cost/request</th>
+                        <th>Budget used</th>
+                    </tr>
+                </thead>
+                <tbody id="results-body"></tbody>
+            </table>
+
+            <!-- Pro upsell -->
+            <div class="pro-upsell">
+                <h3>🔓 Want the full analysis?</h3>
+                <p>Pro shows migration code for every alternative, PDF reports, and saves your budget configuration.</p>
+                <div class="pro-upsell-features">
+                    <div><span>✓</span> Migration code for each model</div>
+                    <div><span>✓</span> PDF export for your team</div>
+                    <div><span>✓</span> Save 10 budget scenarios</div>
+                    <div><span>✓</span> Price change alerts</div>
+                </div>
+                <a href="go.html?from=budget-tool" class="cta-btn" style="display:inline-block;padding:14px 36px;font-size:16px;">
+                    ⚡ Try Pro Free for 24 Hours
+                </a>
+                <div style="font-size:12px;color:var(--text-muted);margin-top:8px;">No credit card · 14-day money-back guarantee</div>
+            </div>
+        </div>
+
+        <!-- FAQ -->
+        <div class="faq">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-item" onclick="this.classList.toggle('open')">
+                <div class="faq-q">How do I choose the right AI API model for my budget?</div>
+                <div class="faq-a">Enter your monthly budget and usage pattern above. The tool ranks all 42 models by how many requests you can make within your budget, factoring in input and output token costs. The #1 recommendation gives you the most requests for your money while matching your quality needs.</div>
+            </div>
+            <div class="faq-item" onclick="this.classList.toggle('open')">
+                <div class="faq-q">What's the cheapest AI API model in 2026?</div>
+                <div class="faq-a">As of June 2026, the cheapest models are DeepSeek V4 Flash ($0.14/$0.28 per 1M tokens), Gemini 2.0 Flash Lite ($0.075/$0.30), and Mistral Small 4 ($0.10/$0.30). For a $50/month budget, DeepSeek V4 Flash gives you roughly 50,000+ standard chat requests.</div>
+            </div>
+            <div class="faq-item" onclick="this.classList.toggle('open')">
+                <div class="faq-q">How many API requests can I get for $100/month?</div>
+                <div class="faq-a">It depends on the model and your average token usage. For a typical chat request (800 input + 400 output tokens), $100/month gets you: ~275,000 requests on DeepSeek V4 Flash, ~55,000 on Llama 3.1 8B, ~28,000 on Claude Haiku 4.5, or ~2,400 on GPT-5. Use the calculator above for exact numbers based on your usage.</div>
+            </div>
+            <div class="faq-item" onclick="this.classList.toggle('open')">
+                <div class="faq-q">Should I pick the cheapest model or the best quality?</div>
+                <div class="faq-a">It depends on your use case. For internal tools, prototyping, or high-volume classification, budget models (DeepSeek, Llama, Gemini Flash) work great. For customer-facing applications, code generation, or complex reasoning, mid-tier models (Claude Sonnet, GPT-5, Gemini Pro) offer the best quality-per-dollar. The calculator above lets you filter by your quality needs.</div>
+            </div>
+        </div>
+
+        <!-- Related tools -->
+        <div style="text-align:center;margin-top:36px;padding-top:24px;border-top:1px solid var(--border);">
+            <div style="font-size:13px;color:var(--text-muted);margin-bottom:8px;">More tools from APIpulse:</div>
+            <div style="display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:center;font-size:14px;">
+                <a href="calculator.html" style="color:var(--accent);">Cost Calculator</a>
+                <a href="live-pricing.html" style="color:var(--accent);">Live Pricing Dashboard</a>
+                <a href="ai-api-cost-per-request.html" style="color:var(--accent);">Cost Per Request</a>
+                <a href="model-matrix.html" style="color:var(--accent);">Model Matrix</a>
+                <a href="compare.html" style="color:var(--accent);">232 Comparisons</a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>© 2026 APIpulse. <a href="index.html">Home</a> · <a href="about.html">About</a> · <a href="blog.html">Blog</a> · <a href="pricing.html">Pricing</a></p>
+    </footer>
+
+    <script>
+    (function() {
+        var budget = 100;
+        var avgInput = 800;
+        var avgOutput = 400;
+
+        // Budget preset buttons
+        document.querySelectorAll('.budget-preset').forEach(function(btn) {
+            btn.addEventListener('click', function() {
+                document.querySelectorAll('.budget-preset').forEach(function(b) { b.classList.remove('active'); });
+                btn.classList.add('active');
+                budget = parseInt(btn.dataset.budget);
+                document.getElementById('custom-budget').value = budget;
+                calculate();
+            });
+        });
+
+        // Custom budget input
+        document.getElementById('custom-budget').addEventListener('input', function() {
+            var val = parseInt(this.value);
+            if (val > 0) {
+                budget = val;
+                document.querySelectorAll('.budget-preset').forEach(function(b) { b.classList.remove('active'); });
+                calculate();
+            }
+        });
+
+        // Usage preset buttons
+        document.querySelectorAll('.usage-preset').forEach(function(btn) {
+            btn.addEventListener('click', function() {
+                document.querySelectorAll('.usage-preset').forEach(function(b) { b.classList.remove('active'); });
+                btn.classList.add('active');
+                avgInput = parseInt(btn.dataset.in);
+                avgOutput = parseInt(btn.dataset.out);
+                calculate();
+            });
+        });
+
+        function calculate() {
+            if (typeof API_MODELS === 'undefined') return;
+
+            var results = [];
+            API_MODELS.forEach(function(m) {
+                if (m.deprecated) return;
+                // Cost per request = (avgInput / 1M * input price) + (avgOutput / 1M * output price)
+                var costPerRequest = (avgInput / 1000000 * m.input) + (avgOutput / 1000000 * m.output);
+                var maxRequests = Math.floor(budget / costPerRequest);
+                var monthlyCost = costPerRequest * maxRequests;
+                var budgetPct = (monthlyCost / budget * 100).toFixed(1);
+
+                results.push({
+                    model: m,
+                    costPerRequest: costPerRequest,
+                    maxRequests: maxRequests,
+                    monthlyCost: monthlyCost,
+                    budgetPct: budgetPct
+                });
+            });
+
+            // Sort by max requests (descending)
+            results.sort(function(a, b) { return b.maxRequests - a.maxRequests; });
+
+            // Update summary
+            document.getElementById('sum-budget').textContent = '$' + budget.toLocaleString();
+            document.getElementById('sum-best-requests').textContent = results.length > 0 ? results[0].maxRequests.toLocaleString() : '—';
+            document.getElementById('sum-models').textContent = results.length;
+
+            // Update table
+            var tbody = document.getElementById('results-body');
+            tbody.innerHTML = '';
+
+            results.forEach(function(r, i) {
+                var tr = document.createElement('tr');
+                if (i === 0) tr.className = 'best-value';
+
+                var nameHtml = '<span class="model-name">' + escapeH(r.model.name) + '</span>';
+                if (i === 0) nameHtml += '<span class="best-badge">Best value</span>';
+                if (r.model.deprecated) nameHtml += '<span class="dep-badge">Deprecated</span>';
+
+                tr.innerHTML =
+                    '<td class="rank">' + (i + 1) + '</td>' +
+                    '<td>' + nameHtml + '<br><span class="provider">' + escapeH(r.model.provider) + ' · ' + r.model.tier + '</span></td>' +
+                    '<td class="cost">$' + r.model.input.toFixed(2) + ' / $' + r.model.output.toFixed(2) + '</td>' +
+                    '<td class="requests">' + r.maxRequests.toLocaleString() + '</td>' +
+                    '<td class="cost">$' + r.costPerRequest.toFixed(4) + '</td>' +
+                    '<td class="cost">' + r.budgetPct + '%</td>';
+
+                tbody.appendChild(tr);
+            });
+
+            // Show results
+            document.getElementById('results').style.display = 'block';
+
+            // Update subtitle
+            var usageName = document.querySelector('.usage-preset.active');
+            document.getElementById('results-subtitle').textContent =
+                'Ranked by requests for a $' + budget.toLocaleString() + '/mo budget — ' +
+                (usageName ? usageName.textContent.toLowerCase() : 'chatbot') + ' usage pattern';
+
+            // Track event
+            if (typeof gtag === 'function') {
+                gtag('event', 'budget_calculator_used', {
+                    budget: budget,
+                    models_count: results.length,
+                    top_model: results.length > 0 ? results[0].model.id : 'none'
+                });
+            }
+            if (window.trackEvent) {
+                window.trackEvent('budget_calculator_used', {
+                    budget: budget,
+                    models: results.length
+                });
+            }
+        }
+
+        function escapeH(str) {
+            var div = document.createElement('div');
+            div.textContent = str;
+            return div.innerHTML;
+        }
+
+        // Initial calculation
+        document.addEventListener('DOMContentLoaded', function() {
+            setTimeout(calculate, 100); // Wait for pricing-data.js
+        });
+    })();
+    </script>
+</body>
+</html>
