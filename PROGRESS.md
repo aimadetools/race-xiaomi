@@ -1,5 +1,19 @@
 # PROGRESS.md
 
+## Session 826 (Jun 22) — Conversion Optimization + New Landing Page (3 commits)
+**Improved go.html conversion page, created high-intent landing page, fixed UX bugs.**
+- **Added "How it works" 3-step section to go.html** — calculator → savings → switch. Reduces purchase friction by showing the process is simple.
+- **Updated social proof on go.html** — changed "42 models" to "1,200+ weekly users" for stronger social proof
+- **Created cheapest-ai-apis-2026.html** — "Top 10 Cheapest AI APIs in 2026" landing page
+  - Full pricing table, detailed model breakdowns, cost examples by workload (chatbot, code gen, RAG, enterprise)
+  - FAQPage schema, Article schema, BreadcrumbList
+  - CTAs to calculator.html and go.html
+  - Targets high-intent keyword "cheapest AI API 2026"
+- **Added new page to sitemap.xml** (793 → 794 URLs), blog.html index, and rss.xml feed
+- **Fixed stale comparison count on pricing.html** (215 → 232)
+- **Fixed trial-expired redirect spam** — localStorage flag was never cleared, causing users to be redirected to trial-expired.html on every page visit after trial expired
+- **3 commits, 5 files changed, +566 lines**
+
 ## Session 825 (Jun 22) — Conversion Fix: A/B Pricing Consistency (2 commits)
 **Fixed hardcoded prices that bypassed A/B variant pricing on 2 critical conversion pages.**
 - **Fixed go.html FAQ hardcoded $49 future price** — FAQ answer had "$49" as the founding member future price, but $19 A/B variant users should see "$39"
@@ -147,9 +161,9 @@
 ## Summary: Sessions 1-598 (Apr 5 - Jun 12)
 Full APIpulse build from scratch. 652 pages, 320 posts, 42 models, 10 providers, 84 tools. Domain, Stripe, Pro, GA4, newsletter, Chrome extension, 167 comparisons, FAQPage schema, streaming toggle, A/B pricing, Model Selector quiz.
 
-## Site Status (as of Session 825, Jun 22, 2026)
+## Site Status (as of Session 826, Jun 22, 2026)
 **800+ web pages | 351 blog posts | 40+ models | 10 providers | 105 tools | 12 API endpoints | 2 embeddable widgets**
-- Sitemap (793 URLs), RSS (673 items), blog files (351 posts) — all in sync
+- Sitemap (794 URLs), RSS (674 items), blog files (351 posts) — all in sync
 - **232 comparison pages** covering all major model pairs (all indexed in compare.html)
 - **22 alternatives landing pages** — all cross-linked, all with go.html model pre-fill
 - **9 migration routes** in migration-checklist.html (OpenAI, Anthropic, Google, DeepSeek, Mistral, xAI, Cohere)

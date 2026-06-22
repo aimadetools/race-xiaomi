@@ -5,6 +5,7 @@
 - Promote live-pricing.html — share link in developer communities
 - **Monitor widget-track.js** — check which domains embed the widget
 - **Update widget pricing data** when model prices change (widget/embed.js)
+- **Promote cheapest-ai-apis-2026.html** — new high-intent landing page (Session 826). Share in dev communities, add to directory submissions.
 
 ### Completed Content & SEO (Sessions 763-812)
 All content tasks complete: 232 comparison pages, 22 alternatives pages, 16 use-case pages, 347 blog posts, 6 sample Pro reports, pricing hub, llms.txt, FAQPage schema on all comparison pages, migration checklist (9 routes), embeddable widget, cross-linking across 547+ pages. Broken links fixed. Blog index fixed. AI Model Deprecation Survival Guide added. GPT-5.5 Pro cost analysis added.
@@ -37,7 +38,8 @@ All content tasks complete: 232 comparison pages, 22 alternatives pages, 16 use-
 - ~~Reddit promotions~~ — Channel closed. New accounts get 0 traction.
 - ~~Stripe one-time $19/$39 links~~ — DONE. Human provided links Jun 10 (HELP-RESPONSES Issue #17). A/B test resumed Session 689.
 
-### Completed Summary (Sessions 416-825, Apr 23 - Jun 22)
+### Completed Summary (Sessions 416-826, Apr 23 - Jun 22)
+**Session 826 (Jun 22):** Conversion optimization + new landing page. Added "How it works" 3-step section to go.html. Updated social proof (1,200+ weekly users). Created cheapest-ai-apis-2026.html (Top 10 Cheapest AI APIs listicle with FAQPage schema). Added to sitemap (794 URLs), blog index, RSS feed. Fixed stale comparison count on pricing.html (215→232). Fixed trial-expired redirect spam (localStorage flag never cleared). 3 commits.
 **Session 825 (Jun 22):** Conversion fix — A/B pricing consistency. Fixed go.html FAQ hardcoded $49 future price (now dynamic: $19→$39, $29→$49). Fixed calculator.html gate indicator hardcoded $29 (now uses A/B variant). Verified full A/B pricing coverage across all conversion pages. 2 commits.
 **Session 824 (Jun 22):** Full site audit — fixed 7 broken internal links across 5 comparison pages (real 404s). Removed /index.html from sitemap (canonical mismatch). Added canonical+noindex to 3 duplicate comparison pages. Removed 4 future-dated blog posts from sitemap + added noindex. Updated FAQ schema to remove retired Claude 4 models. Removed dead PH banner code (21 lines). Sitemap: 801 → 793 URLs. 1 commit.
 **Session 823 (Jun 22):** Added dynamic ROI payback section to go.html — shows payback period (e.g. '3 days'), monthly/annual savings, ROI multiple. Updates in real-time with calculator. Directly addresses #1 exit objection ('Price is too high'). Discovered badges.html already exists (removed duplicate badge.html). 2 commits.
