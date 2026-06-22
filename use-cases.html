@@ -62,6 +62,18 @@
                 "position": 4,
                 "name": "Enterprise API Budget Planning",
                 "description": "Multi-team budget optimization strategies for enterprise AI deployments"
+            },
+            {
+                "@type": "ListItem",
+                "position": 5,
+                "name": "AI Agent Development",
+                "description": "Cost comparison for building AI agents with tool use and multi-step reasoning"
+            },
+            {
+                "@type": "ListItem",
+                "position": 6,
+                "name": "RAG Pipelines",
+                "description": "Embedding + generation model costs for retrieval-augmented generation"
             }
         ]
     }
@@ -345,6 +357,62 @@
             <div class="cta-inline">
                 <p>Find the best model for your extraction pipeline</p>
                 <a href="use-case-data-extraction.html" style="color:var(--accent);font-weight:600;margin-right:16px;">Read full guide →</a>
+                <a href="calculator.html" class="btn-primary">Try the Calculator</a>
+            </div>
+        </div>
+
+        <div class="use-case">
+            <div class="use-case-header">
+                <div class="use-case-icon">🤖</div>
+                <h2>AI Agent Development</h2>
+            </div>
+            <p>You're building AI agents that use tools, make API calls, and complete multi-step tasks autonomously. Each task requires 3-10 model calls — planning, execution, verification.</p>
+
+            <h3>The Challenge</h3>
+            <p>Agent workloads are 5-20x more expensive than chatbots because of the multi-call pattern. A single task can consume 2,500+ tokens across multiple API calls. Model selection and routing strategy matter enormously.</p>
+
+            <div class="cost-example">
+                <div class="label">Monthly cost for 100 tasks/day (5 calls/task, 500 in / 2K out per call)</div>
+                <div class="cost-row"><span class="name">DeepSeek V4 Flash</span><span class="value">$91.88/mo</span></div>
+                <div class="cost-row"><span class="name">GPT-5 Mini</span><span class="value">$618.75/mo</span></div>
+                <div class="cost-row"><span class="name">Claude Sonnet 4.6</span><span class="value">$5,437.50/mo</span></div>
+                <div class="cost-row cost-total"><span class="name">Potential savings with routing</span><span class="value" style="color:var(--green);">Up to 80%</span></div>
+            </div>
+
+            <h3>Recommendation</h3>
+            <p>Use <strong>model routing</strong>: cheap models (DeepSeek V4 Flash, GPT-5 Mini) for simple tool calls, premium models (Claude Sonnet 4.6) only for complex reasoning. This cuts costs by 60-80% vs using one model for everything.</p>
+
+            <div class="cta-inline">
+                <p>Find the best model for your agent workload</p>
+                <a href="use-case-agents.html" style="color:var(--accent);font-weight:600;margin-right:16px;">Read full guide →</a>
+                <a href="calculator.html" class="btn-primary">Try the Calculator</a>
+            </div>
+        </div>
+
+        <div class="use-case">
+            <div class="use-case-header">
+                <div class="use-case-icon">📚</div>
+                <h2>RAG Pipeline</h2>
+            </div>
+            <p>You're building a retrieval-augmented generation system that answers questions from your knowledge base. Two-model architecture: embedding + generation.</p>
+
+            <h3>The Challenge</h3>
+            <p>RAG has a two-part cost structure. The generation model dominates (85-95% of total cost), but embedding costs add up at scale. You need to optimize both.</p>
+
+            <div class="cost-example">
+                <div class="label">Monthly cost for 10K queries/day (5 chunks × 400 tokens)</div>
+                <div class="cost-row"><span class="name">DeepSeek V4 Flash</span><span class="value">$13.13/mo</span></div>
+                <div class="cost-row"><span class="name">GPT-5 Mini</span><span class="value">$90.60/mo</span></div>
+                <div class="cost-row"><span class="name">Claude Haiku 4.5</span><span class="value">$255.30/mo</span></div>
+                <div class="cost-row cost-total"><span class="name">Claude Sonnet 4.6</span><span class="value">$768.90/mo</span></div>
+            </div>
+
+            <h3>Recommendation</h3>
+            <p><strong>GPT-5 Mini + text-embedding-3-small</strong> for most RAG apps ($90.60/mo). For budget projects, <strong>DeepSeek V4 Flash</strong> at $13.13/mo is hard to beat. The generation model matters 10x more than the embedding model.</p>
+
+            <div class="cta-inline">
+                <p>Find the best RAG stack for your budget</p>
+                <a href="use-case-rag.html" style="color:var(--accent);font-weight:600;margin-right:16px;">Read full guide →</a>
                 <a href="calculator.html" class="btn-primary">Try the Calculator</a>
             </div>
         </div>
