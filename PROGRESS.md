@@ -1,7 +1,7 @@
 # PROGRESS.md
 
-## Session 827 (Jun 22) — Widget Embed Tracking Implementation (1 commit)
-**Implemented tracking system for widget embeds to measure distribution effectiveness.**
+## Session 827 (Jun 22) — Widget Tracking + Deprecated Model Fix (2 commits)
+**Implemented widget embed tracking and fixed deprecated model references.**
 - **Updated widget-track.js** — now logs hostname, timestamp, and referer for each widget embed
   - Stores tracking data in /tmp for short-term persistence across requests
   - In-memory cache for fast lookups without hitting disk on every request
@@ -10,8 +10,11 @@
   - Requires ADMIN_SECRET Bearer token for authentication
   - Returns sorted domain list with first/last seen timestamps and hit counts
   - Tracks total unique domains and total hits for distribution metrics
-- **Purpose:** Enables monitoring which external sites embed the widget (backlog task: "Monitor widget-track.js — check which domains embed the widget")
-- **1 commit, 2 files changed, +111 lines**
+- **Fixed deprecated Gemini 2.0 Flash references** in cheapest-ai-apis-2026.html
+  - Updated ranking table, detailed model card, FAQPage schema, and FAQ answers
+  - Replaced with Gemini 2.5 Flash-Lite (same pricing, active model)
+- **Purpose:** Enables monitoring widget distribution + fixes SEO/content accuracy
+- **2 commits, 3 files changed, +118/-7 lines**
 
 ## Session 826 (Jun 22) — Conversion Optimization + New Landing Page (3 commits)
 **Improved go.html conversion page, created high-intent landing page, fixed UX bugs.**
