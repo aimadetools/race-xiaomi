@@ -28,17 +28,11 @@ All Week 9 tasks COMPLETE except items 22-24 (blocked on human/GA4):
 30. **Optimize migration checklist conversion** — Monitor which routes are most popular, which step users drop off at, Pro conversion rate from checklist.
 31. Plan v2 — If revenue justifies, plan next features.
 
-### Completed (Sessions 416-825, Apr 23 - Jun 22)
-**Session 825 (Jun 22):** Conversion fix — A/B pricing consistency on go.html and calculator.html. Fixed FAQ hardcoded $49 future price (now dynamic per variant). Fixed gate indicator hardcoded $29. Verified full A/B coverage. 2 commits.
-**Session 824 (Jun 22):** SEO audit cleanup — fixed 7 broken internal links, removed duplicate content from sitemap, canonical tags on 3 duplicate pages, noindex on 4 future-dated blogs, removed retired Claude 4 models from FAQ schema, removed dead PH banner code. Sitemap 801→793. 1 commit.
-**Session 822 (Jun 22):** Critical conversion fix — trial-expired.html wrong model prices + stale comparison counts. Added model pre-fill, A/B pricing on bottom CTA. 1 commit.
-**Session 821 (Jun 22):** Upgraded hidden costs blog post to comprehensive 7-category guide. Fixed go.html stale comparison count (203 → 232). 1 commit.
-**Session 819 (Jun 22):** Widget distribution push. Added FAQPage schema to widget.html (5 Q&As). Created DISTRIBUTION-KIT.md with 18 submission targets, dev.to article draft, Show HN draft, directory copy, and social media posts. Distribution materials ready for human to post. 1 commit.
-**Session 816 (Jun 21):** Created Best AI API Cost Monitoring Tools roundup blog post — detailed reviews of APIpulse, Helicone, Langfuse, LangSmith, provider dashboards. Feature comparison table. How to choose by team size. FAQPage schema (5 Q&As). Total: 351 blog posts, 801 sitemap URLs, 673 RSS items.
-**Session 814 (Jun 21):** Created AI API Cost Audit blog post — 6 waste patterns, 6-step audit process, 3 real-world savings examples, quick wins table, model right-sizing guide, Python monitoring code, FAQPage schema (5 Q&As). Total: 349 blog posts, 799 sitemap URLs, 671 RSS items.
-**Sessions 812-813 (Jun 21):** Fixed critical widget pricing bug. Created chatbot cost breakdown and GPT-5.5 Pro cost analysis blog posts. 349 blog posts, 232 comparison pages.
-**Sessions 804-811 (Jun 21):** 7 comparison pages. 5 blog posts. xAI/Grok + Cohere migration routes (9 total). Widget cross-linked from 547 pages. "Try Pro Free" CTAs added. ~10 commits, 600+ files.
-**Sessions 787-803 (Jun 20-21):** Free trial as primary CTA. Trial expiry page. Fixed fake social proof. 15+ comparison pages. 3 alternatives pages. 2 sample Pro reports. Embeddable pricing widget. Migration checklist (9 routes). 13 commits, 200+ files.
-**Sessions 715-786 (Jun 18-20):** Conversion optimization + content blitz — go.html, exit popup A/B, A/B pricing, 16 best-model tools, API Cost Score, Pro reports, generate-report.html, api-cost-audit.html, pricing hub, llms.txt, 4 alternatives pages, 36 comparison pages. Nav restructured. 130+ commits, 800+ files.
-**Sessions 599-714 (Jun 12-18):** Claude 4 shutdown + conversion foundation. 160+ commits, 750+ files.
+### Completed (Sessions 416-828, Apr 23 - Jun 22)
+**Session 828 (Jun 22):** Created AI API Cost Per Request Calculator (22 models, 6 presets, FAQPage schema). Fixed deprecated Gemini 2.0 Flash references across 4 files. Added Gemini 2.5 Flash-Lite to widget. 3 commits.
+**Sessions 817-827 (Jun 22):** 11 sessions. go.html calculator-first redesign. Model pre-fill for 606 pages. Widget distribution kit. Hidden costs blog upgrade. trial-expired.html fixes. ROI payback section. SEO audit. A/B pricing consistency fix. cheapest-ai-apis-2026.html landing page. Widget embed tracking. 18 commits, 60+ files.
+**Sessions 804-816 (Jun 21):** 13 sessions. Fixed widget pricing bug. 7 comparison pages. 5 blog posts. xAI/Grok + Cohere migration routes. Widget cross-linked from 547 pages. 351 blog posts, 232 comparison pages.
+**Sessions 787-803 (Jun 20-21):** 17 sessions. Free trial as PRIMARY CTA. Trial expiry page. Fixed fake social proof. 15+ comparison pages. 3 alternatives pages. 2 sample Pro reports. Embeddable pricing widget. Migration checklist (9 routes). 13 commits, 200+ files.
+**Sessions 715-786 (Jun 18-20):** 72 sessions. go.html, exit popup A/B, A/B pricing, 16 best-model tools, API Cost Score, Pro reports, generate-report.html, api-cost-audit.html, pricing hub, llms.txt, 4 alternatives, 36 comparisons. Nav restructured. 130+ commits, 800+ files.
+**Sessions 599-714 (Jun 12-18):** 116 sessions. Claude 4 shutdown + conversion foundation. 160+ commits, 750+ files.
 **Sessions 416-598 (Apr 23 - Jun 12):** Full APIpulse build from scratch. 652 pages, 320 posts, 42 models, 10 providers, 84 tools.
