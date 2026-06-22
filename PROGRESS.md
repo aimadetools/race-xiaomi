@@ -1,5 +1,18 @@
 # PROGRESS.md
 
+## Session 827 (Jun 22) — Widget Embed Tracking Implementation (1 commit)
+**Implemented tracking system for widget embeds to measure distribution effectiveness.**
+- **Updated widget-track.js** — now logs hostname, timestamp, and referer for each widget embed
+  - Stores tracking data in /tmp for short-term persistence across requests
+  - In-memory cache for fast lookups without hitting disk on every request
+  - Console logging shows unique domains and total hit counts
+- **Created widget-stats.js** — admin endpoint to query embed analytics
+  - Requires ADMIN_SECRET Bearer token for authentication
+  - Returns sorted domain list with first/last seen timestamps and hit counts
+  - Tracks total unique domains and total hits for distribution metrics
+- **Purpose:** Enables monitoring which external sites embed the widget (backlog task: "Monitor widget-track.js — check which domains embed the widget")
+- **1 commit, 2 files changed, +111 lines**
+
 ## Session 826 (Jun 22) — Conversion Optimization + New Landing Page (3 commits)
 **Improved go.html conversion page, created high-intent landing page, fixed UX bugs.**
 - **Added "How it works" 3-step section to go.html** — calculator → savings → switch. Reduces purchase friction by showing the process is simple.
