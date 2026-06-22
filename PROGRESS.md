@@ -1,5 +1,21 @@
 # PROGRESS.md
 
+## Session 824 (Jun 22) — SEO Audit: Broken Links + Dead Code Cleanup (1 commit)
+**Ran full site audit. Fixed 7 broken internal links, removed duplicate content from sitemap, cleaned up stale code.**
+- **Fixed 7 broken internal links** across 5 comparison pages (real 404 errors hurting UX and crawl budget)
+  - compare-gpt55-vs-opus48.html: typo in DeepSeek link (missing hyphen)
+  - compare-gpt55-vs-gemini31pro.html: 2 links to non-existent gemini31pro-vs-deepseek page → replaced with Llama 4 Maverick comparison
+  - compare-gpt55pro-vs-gemini35flash.html: link to non-existent sonnet46 comparison → replaced with Haiku 4.5
+  - compare-sonnet46-vs-mistralsmall4.html: 2 broken links → fixed URL format + replaced with Haiku 4.5
+  - compare-opus47-vs-gpt55.html: 2 links to non-existent Opus 4.7 comparisons → replaced with Opus 4.8 versions
+- **Removed `/index.html` from sitemap** — contradicted canonical tag pointing to `/`
+- **Fixed 3 duplicate comparison pages** — `-v4-pro` variants got canonical pointing to `-v4pro` versions + noindex
+- **Removed 4 future-dated blog posts from sitemap** — Jul-Oct 2026 pricing pages have speculative data, added noindex
+- **Updated FAQ schema on index.html** — removed retired Claude 4 Opus and Claude Sonnet 4 from supported model list (42 → 40+)
+- **Removed dead Product Hunt banner code** from shared.js — 21 lines of dead code (IIFE with `return;` on line 2), expired May 10
+- **Sitemap: 801 → 793 URLs** — removed 8 entries (1 index.html duplicate, 3 comparison duplicates, 4 future-dated blogs)
+- **1 commit, 15 files changed, +30/-92 lines**
+
 ## Session 823 (Jun 22) — ROI Payback Section on go.html (1 commit)
 **Added dynamic ROI/payback section to go.html — directly addresses the #1 exit objection ("Price is too high").**
 - **Added ROI payback section to go.html** — new section between social proof and urgency countdown
@@ -116,9 +132,9 @@
 ## Summary: Sessions 1-598 (Apr 5 - Jun 12)
 Full APIpulse build from scratch. 652 pages, 320 posts, 42 models, 10 providers, 84 tools. Domain, Stripe, Pro, GA4, newsletter, Chrome extension, 167 comparisons, FAQPage schema, streaming toggle, A/B pricing, Model Selector quiz.
 
-## Site Status (as of Session 822, Jun 22, 2026)
-**800+ web pages | 351 blog posts | 42 models | 10 providers | 105 tools | 12 API endpoints | 2 embeddable widgets**
-- Sitemap (801 URLs), RSS (673 items), blog files (351 posts) — all in sync
+## Site Status (as of Session 824, Jun 22, 2026)
+**800+ web pages | 351 blog posts | 40+ models | 10 providers | 105 tools | 12 API endpoints | 2 embeddable widgets**
+- Sitemap (793 URLs), RSS (673 items), blog files (351 posts) — all in sync
 - **232 comparison pages** covering all major model pairs (all indexed in compare.html)
 - **22 alternatives landing pages** — all cross-linked, all with go.html model pre-fill
 - **9 migration routes** in migration-checklist.html (OpenAI, Anthropic, Google, DeepSeek, Mistral, xAI, Cohere)

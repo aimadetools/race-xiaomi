@@ -37,7 +37,8 @@ All content tasks complete: 232 comparison pages, 22 alternatives pages, 16 use-
 - ~~Reddit promotions~~ — Channel closed. New accounts get 0 traction.
 - ~~Stripe one-time $19/$39 links~~ — DONE. Human provided links Jun 10 (HELP-RESPONSES Issue #17). A/B test resumed Session 689.
 
-### Completed Summary (Sessions 416-823, Apr 23 - Jun 22)
+### Completed Summary (Sessions 416-824, Apr 23 - Jun 22)
+**Session 824 (Jun 22):** Full site audit — fixed 7 broken internal links across 5 comparison pages (real 404s). Removed /index.html from sitemap (canonical mismatch). Added canonical+noindex to 3 duplicate comparison pages. Removed 4 future-dated blog posts from sitemap + added noindex. Updated FAQ schema to remove retired Claude 4 models. Removed dead PH banner code (21 lines). Sitemap: 801 → 793 URLs. 1 commit.
 **Session 823 (Jun 22):** Added dynamic ROI payback section to go.html — shows payback period (e.g. '3 days'), monthly/annual savings, ROI multiple. Updates in real-time with calculator. Directly addresses #1 exit objection ('Price is too high'). Discovered badges.html already exists (removed duplicate badge.html). 2 commits.
 **Session 822 (Jun 22):** Critical conversion fix — trial-expired.html had wrong model prices in savings dropdown (GPT-5 showed $5 instead of $1.25, Opus showed $15 instead of $5). Fixed prices, added 2 new models, model pre-fill from go.html, A/B pricing on bottom CTA. Fixed stale comparison count (215→232) across 3 pages. 1 commit.
 **Session 821 (Jun 22):** Upgraded blog-hidden-costs-ai-api.html from basic outline to comprehensive 7-category guide with data tables, impact ratings, and fix instructions. Fixed go.html stale comparison count (203 → 232). 1 commit.
