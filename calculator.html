@@ -1045,7 +1045,7 @@
                 }
                 if (gateIndicator) {
                     if (remaining <= 0) {
-                        gateIndicator.innerHTML = '<span style="color:var(--accent);font-weight:600;">🔒 Free limit reached</span> — <a href="#" onclick="event.preventDefault();startTrial();" style="color:var(--accent);text-decoration:underline;font-weight:600;">Try Pro Free for 24h</a> or <a href="pricing.html" style="color:var(--text-muted);text-decoration:underline;">buy $29</a>';
+                        gateIndicator.innerHTML = '<span style="color:var(--accent);font-weight:600;">🔒 Free limit reached</span> — <a href="#" onclick="event.preventDefault();startTrial();" style="color:var(--accent);text-decoration:underline;font-weight:600;">Try Pro Free for 24h</a> or <a href="pricing.html" style="color:var(--text-muted);text-decoration:underline;">buy $' + (window._abPrice || 29) + '</a>';
                     } else if (remaining <= 2) {
                         gateIndicator.innerHTML = '💡 <strong>' + remaining + '</strong> free calculation' + (remaining === 1 ? '' : 's') + ' left — <a href="#" onclick="event.preventDefault();startTrial();" style="color:var(--accent);text-decoration:underline;font-weight:600;">Try Pro Free for 24h →</a>';
                     }
