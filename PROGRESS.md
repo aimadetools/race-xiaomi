@@ -1,7 +1,7 @@
 # PROGRESS.md
 
-## Session 842 (Jun 22) — 2 New Use-Case Pages (2 commits)
-**Created high-intent use-case pages for Automotive & Transportation and Telecommunications — two major verticals with strong AI adoption.**
+## Session 842 (Jun 22) — 3 New Use-Case Pages (3 commits)
+**Created high-intent use-case pages for Automotive & Transportation, Telecommunications, and Energy & Utilities — three major verticals with strong AI adoption.**
 - **Created use-case-automotive.html** — Best AI API for Automotive & Transportation 2026
   - 6 automotive AI use cases: predictive maintenance ($0.001–$0.008), fleet route optimization ($0.002–$0.015), warranty claims ($0.001–$0.008), parts inventory ($0.002–$0.012), customer service ($0.0004–$0.004), driver behavior scoring ($0.003–$0.02)
   - 9 models compared with predictive maintenance workload costs (50 and 200 vehicles/day)
@@ -12,9 +12,14 @@
   - 9 models compared with fraud detection workload costs (10K and 100K calls/day)
   - 4 budget tiers: regional carrier ($100–500/mo), national carrier ($500–3K/mo), global carrier ($3K–15K/mo)
   - Compliance section (FCC, Ofcom, GDPR, CPNI, CALEA, PCI DSS), ROI comparison, FAQPage schema (3 Q&As)
-- **Updated use-cases.html** — added Automotive and Telecom cards (position 23–24, 24 total use cases)
-- **Updated indexes** — sitemap (815 URLs), RSS (703 items)
-- **2 commits, 8 files changed, +1,435 lines**
+- **Created use-case-energy.html** — Best AI API for Energy & Utilities 2026
+  - 6 energy AI use cases: demand forecasting ($0.002–$0.015), grid optimization ($0.003–$0.025), predictive maintenance ($0.001–$0.008), DER dispatch ($0.002–$0.012), customer service ($0.0004–$0.004), regulatory reporting ($0.003–$0.02)
+  - 9 models compared with demand forecasting workload costs (100 and 1K forecasts/day)
+  - 4 budget tiers: municipal utility ($50–200/mo), regional utility ($200–1K/mo), national utility ($1K–5K/mo), global energy platform ($3K–15K/mo)
+  - Compliance section (NERC CIP, FERC, NIST, IEEE 1547, CEII protection), ROI comparison, FAQPage schema (3 Q&As)
+- **Updated use-cases.html** — added Automotive, Telecom, Energy cards (position 23–25, 25 total use cases)
+- **Updated indexes** — sitemap (816 URLs), RSS (704 items)
+- **3 commits, 12 files changed, +2,158 lines**
 
 ## Session 841 (Jun 22) — 3 New Use-Case Pages (1 commit)
 **Created high-intent use-case pages for Insurance, Logistics & Supply Chain, and Human Resources — three major verticals with strong commercial intent.**
@@ -59,11 +64,11 @@
 Full APIpulse build from scratch. 652 pages, 320 posts, 42 models, 10 providers, 84 tools. Domain, Stripe, Pro, GA4, newsletter, Chrome extension, 167 comparisons, FAQPage schema, streaming toggle, A/B pricing, Model Selector quiz.
 
 ## Site Status (as of Session 842, Jun 22, 2026)
-**826+ web pages | 354 blog posts | 40+ models | 10 providers | 107 tools | 12 API endpoints | 3 embeddable widgets**
-- Sitemap (815 URLs), RSS (703 items), blog files (354 posts) — all in sync
+**827+ web pages | 354 blog posts | 40+ models | 10 providers | 107 tools | 12 API endpoints | 3 embeddable widgets**
+- Sitemap (816 URLs), RSS (704 items), blog files (354 posts) — all in sync
 - **232 comparison pages** covering all major model pairs (all indexed in compare.html)
 - **22 alternatives landing pages** — all cross-linked, all with go.html model pre-fill
-- **24 use-case pages** — chatbot, code-gen, content-writing, customer-support, data-extraction, document-analysis, enterprise, agents, RAG, translation, startups, ecommerce, healthcare, education, finance, legal, manufacturing, marketing, real-estate, insurance, logistics, HR, automotive, telecom
+- **25 use-case pages** — chatbot, code-gen, content-writing, customer-support, data-extraction, document-analysis, enterprise, agents, RAG, translation, startups, ecommerce, healthcare, education, finance, legal, manufacturing, marketing, real-estate, insurance, logistics, HR, automotive, telecom, energy
 - **9 migration routes** in migration-checklist.html (OpenAI, Anthropic, Google, DeepSeek, Mistral, xAI, Cohere)
 - **547 pages** linking to widget.html (296 blog + 229 comparison + 22 alternatives)
 - **251 pages** linking to migration-checklist.html (229 comparison + 22 alternatives)

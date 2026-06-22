@@ -29,7 +29,7 @@ All Week 9 tasks COMPLETE except items 22-24 (blocked on human/GA4):
 31. Plan v2 — If revenue justifies, plan next features.
 
 ### Completed (Sessions 416-842, Apr 23 - Jun 22)
-**Session 842 (Jun 22):** Created Automotive & Transportation and Telecommunications use-case pages (9 models each, 6 use cases each, 4 budget tiers each, industry compliance sections, ROI comparisons, FAQPage schema). Updated use-cases index (24 total), sitemap (815 URLs), RSS (703 items). 2 commits, 8 files.
+**Session 842 (Jun 22):** Created Automotive & Transportation, Telecommunications, and Energy & Utilities use-case pages (9 models each, 6 use cases each, 4 budget tiers each, industry compliance sections, ROI comparisons, FAQPage schema). Updated use-cases index (25 total), sitemap (816 URLs), RSS (704 items). 3 commits, 12 files.
 **Session 841 (Jun 22):** Created Insurance, Logistics & Supply Chain, and HR use-case pages (9 models each, 6 AI use cases each, 4 budget tiers each, industry compliance sections, ROI comparisons, FAQPage schema). Updated use-cases index (22 total), sitemap (813 URLs), RSS (701 items). 1 commit, 6 files.
 **Session 840 (Jun 22):** Created Real Estate use-case page (9 models, 6 use cases, 4 budget tiers, Fair Housing Act compliance, SOC 2, ROI, FAQPage). Updated use-cases index (19 total), sitemap (810 URLs), RSS (698 items). 1 commit, 4 files.
 **Session 839 (Jun 22):** Created Manufacturing use-case page (9 models, 6 use cases, 4 budget tiers, on-premise options, OT/IT security, ROI, FAQPage). Fixed stale Gemini 2.0 Flash refs in calculator. Updated use-cases index (18 total), sitemap (809 URLs), RSS (697 items). 1 commit, 5 files.
