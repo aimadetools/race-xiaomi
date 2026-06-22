@@ -20,11 +20,13 @@ All Week 9 tasks COMPLETE except items 22-24 (blocked on human/GA4):
 - **24. [needs GA4]** Monitor first conversions — track pro_purchase_completed events.
 
 ### Week 10-12 (June 22-July 12) — OPTIMIZE & SUSTAIN
-25. Analyze A/B data + conversion data — Which price wins? Which pages convert? Optimize funnel. (needs GA4)
-26. Community feedback integration — Act on Reddit/HN feedback.
-27. **Distribute embeddable widget** — Submit widget.html to developer tool directories, awesome-lists, dev communities. Track embeds via widget-track.js.
-28. **Optimize migration checklist conversion** — Monitor which routes are most popular, which step users drop off at, Pro conversion rate from checklist.
-29. Plan v2 — If revenue justifies, plan next features.
+25. ✅ **go.html calculator-first redesign** (Session 817) — Moved savings calculator to hero position. Added URL param pre-fill. Page is 50% shorter.
+26. **Update comparison pages to pass model/spend to go.html** — 232 pages should link to `go.html?model=X&spend=Y` for personalized experience. Can be done via shared.js script.
+27. Analyze A/B data + conversion data — Which price wins? Which pages convert? Optimize funnel. (needs GA4)
+28. Community feedback integration — Act on Reddit/HN feedback.
+29. **Distribute embeddable widget** — Submit widget.html to developer tool directories, awesome-lists, dev communities. Track embeds via widget-track.js.
+30. **Optimize migration checklist conversion** — Monitor which routes are most popular, which step users drop off at, Pro conversion rate from checklist.
+31. Plan v2 — If revenue justifies, plan next features.
 
 ### Completed (Sessions 416-816, Apr 23 - Jun 21)
 **Session 816 (Jun 21):** Created Best AI API Cost Monitoring Tools roundup blog post — detailed reviews of APIpulse, Helicone, Langfuse, LangSmith, provider dashboards. Feature comparison table. How to choose by team size. FAQPage schema (5 Q&As). Total: 351 blog posts, 801 sitemap URLs, 673 RSS items.
