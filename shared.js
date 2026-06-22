@@ -1297,7 +1297,23 @@ document.addEventListener('DOMContentLoaded', function() {
     var price = window._abPrice || 29;
     upsell.style.cssText = 'text-align:center;margin-top:12px;padding:12px;background:rgba(99,102,241,0.06);border:1px solid rgba(99,102,241,0.15);border-radius:8px;font-size:13px;color:var(--text-secondary);';
     var blogPageName = location.pathname.replace(/^\//, '').replace(/\.html$/, '') || 'blog';
-    upsell.innerHTML = 'Want to save scenarios and export PDF reports? <a href="go.html?from=blog_inline_upsell_' + encodeURIComponent(blogPageName) + '" target="_blank" rel="noopener" style="color:var(--accent);font-weight:600;text-decoration:none;" onclick="if(window.trackEvent)window.trackEvent(\'pro_button_clicked\',{source:\'blog_inline_upsell\'})">Upgrade to Pro — $' + price + ' one-time</a>';
+    // Detect model from blog post filename for pre-fill
+    var modelParam = '';
+    if (typeof GO_MODEL_MAP !== 'undefined') {
+        var slug = blogPageName.replace(/^blog-/, '');
+        var slugParts = slug.split('-');
+        var found = false;
+        for (var len = slugParts.length; len > 0 && !found; len--) {
+            for (var start = 0; start <= slugParts.length - len && !found; start++) {
+                var candidate = slugParts.slice(start, start + len).join('-');
+                if (GO_MODEL_MAP[candidate]) {
+                    modelParam = '&model=' + GO_MODEL_MAP[candidate];
+                    found = true;
+                }
+            }
+        }
+    }
+    upsell.innerHTML = 'Want to save scenarios and export PDF reports? <a href="go.html?from=blog_inline_upsell_' + encodeURIComponent(blogPageName) + modelParam + '" target="_blank" rel="noopener" style="color:var(--accent);font-weight:600;text-decoration:none;" onclick="if(window.trackEvent)window.trackEvent(\'pro_button_clicked\',{source:\'blog_inline_upsell\'})">Upgrade to Pro — $' + price + ' one-time</a>';
     cta.parentNode.insertBefore(upsell, cta.nextSibling);
 });
 
@@ -1430,42 +1446,144 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 })();
 
+// Map comparison page model IDs → go.html model IDs
+// go.html only supports 8 models; map all comparison variants to the closest match
+var GO_MODEL_MAP = {
+    // OpenAI
+    'openai': 'openai-gpt5', 'chatgpt': 'openai-gpt5', 'gpt-5': 'openai-gpt5', 'gpt5': 'openai-gpt5', 'openai-gpt5': 'openai-gpt5', 'gpt5mini': 'openai-gpt5', 'gpt5-mini': 'openai-gpt5',
+    'gpt-55': 'openai-gpt55', 'gpt55': 'openai-gpt55', 'openai-gpt55': 'openai-gpt55', 'gpt-55-pro': 'openai-gpt55', 'gpt55-pro': 'openai-gpt55', 'gpt55pro': 'openai-gpt55',
+    'gpt-4o': 'openai-gpt4o', 'gpt4o': 'openai-gpt4o', 'openai-gpt4o': 'openai-gpt4o',
+    'gpt-4o-mini': 'openai-gpt4o', 'gpt4o-mini': 'openai-gpt4o', 'openai-gpt4o-mini': 'openai-gpt4o',
+    'gpt-5-mini': 'openai-gpt5', 'gpt5-mini': 'openai-gpt5', 'openai-gpt5-mini': 'openai-gpt5',
+    'gpt-53-codex': 'openai-gpt55', 'gpt53-codex': 'openai-gpt55', 'gpt53codex': 'openai-gpt55', 'openai-gpt53-codex': 'openai-gpt55', 'codex53': 'openai-gpt55',
+    'gpt-oss-120b': 'openai-gpt55', 'openai-gpt-oss-120b': 'openai-gpt55', 'gpt-oss': 'openai-gpt55', 'gpt-oss120b': 'openai-gpt55',
+    'gpt-oss-20b': 'openai-gpt4o', 'openai-gpt-oss-20b': 'openai-gpt4o',
+    // Anthropic
+    'anthropic': 'anthropic-haiku', 'claude': 'anthropic-haiku',
+    'anthropic-haiku': 'anthropic-haiku', 'claude-haiku': 'anthropic-haiku', 'haiku': 'anthropic-haiku', 'haiku45': 'anthropic-haiku', 'anthropic-haiku-45': 'anthropic-haiku', 'claudehaiku': 'anthropic-haiku',
+    'anthropic-sonnet46': 'anthropic-sonnet46', 'claude-sonnet46': 'anthropic-sonnet46', 'sonnet46': 'anthropic-sonnet46', 'anthropic-sonnet-46': 'anthropic-sonnet46', 'claudesonnet46': 'anthropic-sonnet46',
+    'claude-sonnet': 'anthropic-sonnet46', 'sonnet': 'anthropic-sonnet46', 'claude-sonnet4': 'anthropic-sonnet46', 'sonnet4': 'anthropic-sonnet46', 'claude4-sonnet': 'anthropic-sonnet46',
+    'anthropic-opus48': 'anthropic-opus48', 'claude-opus47': 'anthropic-opus48', 'claude-opus48': 'anthropic-opus48', 'opus47': 'anthropic-opus48', 'opus48': 'anthropic-opus48',
+    'claude-opus': 'anthropic-opus48', 'opus': 'anthropic-opus48', 'opus4': 'anthropic-opus48', 'anthropic-opus': 'anthropic-opus48', 'anthropic-opus47': 'anthropic-opus48', 'claude4-opus': 'anthropic-opus48',
+    // Google
+    'google': 'google-pro', 'gemini': 'google-pro',
+    'google-pro': 'google-pro', 'gemini-pro': 'google-pro', 'gemini-25-pro': 'google-pro', 'gemini25-pro': 'google-pro', 'pro25': 'google-pro', 'google-gemini25pro': 'google-pro',
+    'gemini-31-pro': 'google-pro', 'pro31': 'google-pro', 'google-gemini31pro': 'google-pro', 'google-gemini3-pro': 'google-pro', 'gemini31pro': 'google-pro',
+    'google-gemini35-flash': 'google-gemini35-flash', 'google-gemini35flash': 'google-gemini35-flash', 'gemini-35-flash': 'google-gemini35-flash', 'gemini35flash': 'google-gemini35-flash',
+    'gemini-flash': 'google-gemini35-flash', 'flash': 'google-gemini35-flash', 'google-flash': 'google-gemini35-flash', 'gemini3flash': 'google-gemini35-flash',
+    'gemini-flash-lite': 'google-gemini35-flash', 'flash-lite': 'google-gemini35-flash', 'google-flash-lite': 'google-gemini35-flash',
+    'gemini-25-flash': 'google-gemini35-flash',
+    // DeepSeek (map to cheapest go.html alt as fallback)
+    'deepseek-v4': 'anthropic-haiku', 'deepseek-v4-flash': 'anthropic-haiku', 'deepseekv4flash': 'anthropic-haiku', 'v4-flash': 'anthropic-haiku', 'deepseek-flash': 'anthropic-haiku', 'deepseek-v4flash': 'anthropic-haiku',
+    'deepseek-v4-pro': 'anthropic-haiku', 'deepseekv4pro': 'anthropic-haiku', 'v4-pro': 'anthropic-haiku', 'deepseek-pro': 'anthropic-haiku', 'deepseek-v4pro': 'anthropic-haiku',
+    'deepseek-v3': 'anthropic-haiku', 'deepseek': 'anthropic-haiku', 'deepseek-api': 'anthropic-haiku', 'v3': 'anthropic-haiku', 'deepseek-v32': 'anthropic-haiku',
+    // Mistral (map to cheapest go.html alt as fallback)
+    'mistral': 'anthropic-haiku', 'mistral-small': 'anthropic-haiku', 'mistral-mistral-small-4': 'anthropic-haiku', 'mistralsmall4': 'anthropic-haiku',
+    'mistral-large': 'anthropic-sonnet46', 'mistral-large3': 'anthropic-sonnet46', 'mistral-medium': 'anthropic-haiku', 'mistral-medium35': 'anthropic-haiku',
+    // xAI / Grok
+    'xai': 'openai-gpt55', 'grok3': 'openai-gpt55', 'grok3-mini': 'openai-gpt5', 'grok43': 'openai-gpt55', 'grok-build01': 'openai-gpt55',
+    // Meta / Llama
+    'llama4-maverick': 'anthropic-haiku', 'llama4maverick': 'anthropic-haiku', 'llama4-scout': 'anthropic-haiku', 'llama4scout': 'anthropic-haiku', 'llama4': 'anthropic-haiku', 'llama-8b': 'anthropic-haiku',
+    // Kimi
+    'kimik26': 'anthropic-sonnet46', 'kimi-k26': 'anthropic-sonnet46',
+    // Cohere
+    'cohere': 'anthropic-haiku',
+    // AI21
+    'ai21': 'anthropic-sonnet46', 'jamba17': 'anthropic-haiku',
+    // Moonshot
+    'moonshot': 'anthropic-sonnet46',
+    // Together
+    'together': 'anthropic-haiku',
+    // Roundup/non-vs pages (open-source, commercial, etc.)
+    'open-source': 'anthropic-haiku', 'commercial-llm': 'anthropic-sonnet46', 'command-a': 'anthropic-sonnet46',
+    // GPU/tier selectors (not model IDs — skip)
+    'a100': null, 'a10g': null, 'h100': null, 'l4': null, 'phi4-mini': null
+};
+
 // Auto-pre-fill go.html links with calculator data from the current page
 // When a page has a savings calculator (model selector + spend input),
 // all go.html links automatically get ?model=X&spend=Y params added.
-// This makes the go.html checkout experience personalized from the first frame.
+// Also pre-fills go.html links on comparison pages even before user interaction.
 (function() {
     document.addEventListener('DOMContentLoaded', function() {
         // Find calculator elements on this page (various IDs used across tools)
         var modelSel = document.querySelector('#model-select, #est-model, #model, #current-model');
         var spendInput = document.querySelector('#monthly-spend, #est-spend, #spend, #monthly-cost');
-        if (!modelSel || !spendInput) return;
 
         function updateGoLinks() {
-            var model = modelSel.value;
-            var spend = parseFloat(spendInput.value) || 0;
-            if (!model || spend <= 0) return;
+            var rawModel = modelSel ? modelSel.value : '';
+            var spend = spendInput ? (parseFloat(spendInput.value) || 0) : 0;
+            var model = GO_MODEL_MAP[rawModel] || rawModel;
 
             document.querySelectorAll('a[href*="go.html"]').forEach(function(a) {
                 try {
                     var url = new URL(a.href, location.href);
-                    // Only update links that go to go.html
                     if (!url.pathname.includes('go.html')) return;
-                    // Don't overwrite links that already have model/spend (from explicit params)
-                    if (url.searchParams.has('model') || url.searchParams.has('spend')) return;
-                    url.searchParams.set('model', model);
-                    url.searchParams.set('spend', Math.round(spend));
+                    // Don't overwrite links that already have explicit model param
+                    if (url.searchParams.has('model')) return;
+                    if (model) url.searchParams.set('model', model);
+                    if (spend > 0) url.searchParams.set('spend', Math.round(spend));
                     a.href = url.pathname + url.search;
                 } catch(e) {}
             });
         }
 
-        // Update on calculator interaction
-        modelSel.addEventListener('change', updateGoLinks);
-        spendInput.addEventListener('input', updateGoLinks);
-        spendInput.addEventListener('change', updateGoLinks);
+        if (modelSel) {
+            modelSel.addEventListener('change', updateGoLinks);
+        }
+        if (spendInput) {
+            spendInput.addEventListener('input', updateGoLinks);
+            spendInput.addEventListener('change', updateGoLinks);
+        }
 
-        // Initial update after a short delay (let page scripts initialize)
-        setTimeout(updateGoLinks, 500);
+        // Pre-fill go.html links from page context (comparison pages + blog posts)
+        // Even without calculator interaction, we can detect models from the page
+        function prefillFromPageContext() {
+            // Only run if no calculator exists or calculator has no model selected
+            if (modelSel && modelSel.value) return;
+
+            var path = location.pathname;
+            var goModel = null;
+
+            // 1. Comparison pages: extract from filename (compare-X-vs-Y.html)
+            var compareMatch = path.match(/compare-([^-]+(?:-[^-]+)*)-vs-([^-]+(?:-[^-]+)*)\.html/);
+            if (compareMatch) {
+                var m1 = compareMatch[1].toLowerCase();
+                var m2 = compareMatch[2].toLowerCase();
+                goModel = GO_MODEL_MAP[m1] || GO_MODEL_MAP[m2] || null;
+            }
+
+            // 2. Blog posts: extract model from blog filename slug
+            if (!goModel && path.includes('blog-')) {
+                var slug = path.replace(/^.*blog-/, '').replace(/\.html$/, '');
+                var slugParts = slug.split('-');
+                for (var len = slugParts.length; len > 0 && !goModel; len--) {
+                    for (var start = 0; start <= slugParts.length - len && !goModel; start++) {
+                        var candidate = slugParts.slice(start, start + len).join('-');
+                        if (GO_MODEL_MAP[candidate]) {
+                            goModel = GO_MODEL_MAP[candidate];
+                        }
+                    }
+                }
+            }
+
+            if (goModel) {
+                document.querySelectorAll('a[href*="go.html"]').forEach(function(a) {
+                    try {
+                        var url = new URL(a.href, location.href);
+                        if (!url.pathname.includes('go.html')) return;
+                        if (url.searchParams.has('model')) return;
+                        url.searchParams.set('model', goModel);
+                        a.href = url.pathname + url.search;
+                    } catch(e) {}
+                });
+            }
+        }
+
+        // Run pre-fill after a short delay
+        setTimeout(function() {
+            updateGoLinks();
+            prefillFromPageContext();
+        }, 300);
     });
 })();
