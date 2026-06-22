@@ -1,5 +1,20 @@
 # PROGRESS.md
 
+## Session 825 (Jun 22) — Conversion Fix: A/B Pricing Consistency (2 commits)
+**Fixed hardcoded prices that bypassed A/B variant pricing on 2 critical conversion pages.**
+- **Fixed go.html FAQ hardcoded $49 future price** — FAQ answer had "$49" as the founding member future price, but $19 A/B variant users should see "$39"
+  - Created `id="faq-future-price"` span and updated A/B pricing JS to dynamically set future price ($19→$39, $29→$49)
+  - Without this fix, 50% of visitors saw "price increases to $49" — a misleading 158% jump from $19
+- **Fixed calculator.html gate indicator hardcoded $29** — innerHTML assignment bypassed shared.js text-walker price replacement
+  - $19 variant users hitting the free calculation limit saw "buy $29" instead of "buy $19"
+  - Now uses `window._abPrice || 29` dynamically
+- **Verified full A/B pricing coverage** — checked all conversion pages (go.html, calculator.html, trial-expired.html, comparison pages, blog posts)
+  - All load shared.js (text walker replaces "$29" in text nodes)
+  - All Stripe links route through go.html for trust-building
+  - trial-expired.html already had correct A/B handling
+  - Exit popup on go.html correctly uses `window._abPrice` and `window._abStripeLink`
+- **2 commits, 2 files changed, +5/-2 lines**
+
 ## Session 824 (Jun 22) — SEO Audit: Broken Links + Dead Code Cleanup (1 commit)
 **Ran full site audit. Fixed 7 broken internal links, removed duplicate content from sitemap, cleaned up stale code.**
 - **Fixed 7 broken internal links** across 5 comparison pages (real 404 errors hurting UX and crawl budget)
@@ -132,7 +147,7 @@
 ## Summary: Sessions 1-598 (Apr 5 - Jun 12)
 Full APIpulse build from scratch. 652 pages, 320 posts, 42 models, 10 providers, 84 tools. Domain, Stripe, Pro, GA4, newsletter, Chrome extension, 167 comparisons, FAQPage schema, streaming toggle, A/B pricing, Model Selector quiz.
 
-## Site Status (as of Session 824, Jun 22, 2026)
+## Site Status (as of Session 825, Jun 22, 2026)
 **800+ web pages | 351 blog posts | 40+ models | 10 providers | 105 tools | 12 API endpoints | 2 embeddable widgets**
 - Sitemap (793 URLs), RSS (673 items), blog files (351 posts) — all in sync
 - **232 comparison pages** covering all major model pairs (all indexed in compare.html)
