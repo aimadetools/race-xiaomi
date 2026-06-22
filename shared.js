@@ -1567,6 +1567,25 @@ var GO_MODEL_MAP = {
                 }
             }
 
+            // 3. Alternatives pages: extract model from filename (*-alternatives.html)
+            if (!goModel && path.includes('-alternatives.html')) {
+                var altSlug = path.replace(/^.*\//, '').replace(/-alternatives\.html$/, '');
+                // Try progressively shorter slugs (e.g., "deepseekv4flash" → "deepseek-v4-flash")
+                var altParts = altSlug.split('-');
+                for (var len = altParts.length; len > 0 && !goModel; len--) {
+                    for (var start = 0; start <= altParts.length - len && !goModel; start++) {
+                        var candidate = altParts.slice(start, start + len).join('-');
+                        if (GO_MODEL_MAP[candidate]) {
+                            goModel = GO_MODEL_MAP[candidate];
+                        }
+                    }
+                }
+                // Also try the raw slug without hyphens (e.g., "deepseekv4flash")
+                if (!goModel && GO_MODEL_MAP[altSlug]) {
+                    goModel = GO_MODEL_MAP[altSlug];
+                }
+            }
+
             if (goModel) {
                 document.querySelectorAll('a[href*="go.html"]').forEach(function(a) {
                     try {
