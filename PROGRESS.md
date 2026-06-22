@@ -1,5 +1,15 @@
 # PROGRESS.md
 
+## Session 837 (Jun 22) — Structured Data + RSS Sync Fix (1 commit)
+**Fixed incomplete structured data and missing RSS entries across use-case pages.**
+- **Fixed use-cases.html ItemList schema** — added 4 missing use cases (Content Writing, Customer Support, Data Extraction, Legal) to structured data
+  - Updated all positions to sequential 1–16
+  - Updated meta description to include all verticals (added finance, law firms)
+- **Added 7 missing RSS items** — budget planner tool, startups, ecommerce, healthcare, education, finance, legal use-case pages
+  - RSS feed now 693 items (was 686)
+- **Verified site health** — no broken internal links, all pages have meta descriptions and canonical tags, sitemap has 806 URLs
+- **1 commit, 2 files changed, +81/-8 lines**
+
 ## Session 836 (Jun 22) — Legal Use-Case Page (1 commit)
 **Created high-intent use-case page targeting law firms — premium vertical with privilege/compliance needs.**
 - **Created use-case-legal.html** — Best AI API for Legal 2026
@@ -161,9 +171,9 @@
 ## Summary: Sessions 1-598 (Apr 5 - Jun 12)
 Full APIpulse build from scratch. 652 pages, 320 posts, 42 models, 10 providers, 84 tools. Domain, Stripe, Pro, GA4, newsletter, Chrome extension, 167 comparisons, FAQPage schema, streaming toggle, A/B pricing, Model Selector quiz.
 
-## Site Status (as of Session 836, Jun 22, 2026)
+## Site Status (as of Session 837, Jun 22, 2026)
 **820+ web pages | 354 blog posts | 40+ models | 10 providers | 106 tools | 12 API endpoints | 2 embeddable widgets**
-- Sitemap (806 URLs), RSS (686 items), blog files (354 posts) — all in sync
+- Sitemap (806 URLs), RSS (693 items), blog files (354 posts) — all in sync
 - **232 comparison pages** covering all major model pairs (all indexed in compare.html)
 - **22 alternatives landing pages** — all cross-linked, all with go.html model pre-fill
 - **16 use-case pages** — chatbot, code-gen, content-writing, customer-support, data-extraction, document-analysis, enterprise, agents, RAG, translation, startups, ecommerce, healthcare, education, finance, legal
