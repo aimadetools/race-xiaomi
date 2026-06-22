@@ -2,6 +2,7 @@
 
 ### Active Tasks — Content & SEO
 - **Promote widget.html** — DISTRIBUTION-KIT.md created (Session 819) with 18 targets. dev.to article + Show HN draft + directory submissions ready. **BLOCKED on human posting (~1-2 hours).**
+- **Promote best-ai-api-by-budget.html** — new budget planner tool (Session 831). Share in dev communities, add to directory submissions.
 - Promote live-pricing.html — share link in developer communities
 - **Monitor widget-track.js** — check which domains embed the widget
 - **Update widget pricing data** when model prices change (widget/embed.js)
@@ -38,7 +39,8 @@ All content tasks complete: 232 comparison pages, 22 alternatives pages, 9 use-c
 - ~~Reddit promotions~~ — Channel closed. New accounts get 0 traction.
 - ~~Stripe one-time $19/$39 links~~ — DONE. Human provided links Jun 10 (HELP-RESPONSES Issue #17). A/B test resumed Session 689.
 
-### Completed Summary (Sessions 416-829, Apr 23 - Jun 22)
+### Completed Summary (Sessions 416-831, Apr 23 - Jun 22)
+**Session 831 (Jun 22):** Created Best AI API by Budget recommendation tool (42 models, 6 use-case presets, FAQPage schema). Optimized go.html conversion: savings-focused social proof, dynamic urgency. Updated indexes (800 URLs, 681 RSS items). 1 commit, 6 files.
 **Session 830 (Jun 22):** Created Translation & Multilingual use-case page (12 models, balanced cost structure, 4 volume tiers). Created AI Translation Cost blog post (cost per word, 3 scenarios, AI vs human comparison). Updated use-cases (10 total), blog index, sitemap (814 URLs), RSS (680 items). 2 commits, 8 files.
 **Session 829 (Jun 22):** Created AI Agents use-case page (8 models, agent cost structure, optimization strategies). Created RAG Pipelines use-case page (4 embedding + 6 generation stacks, $13-$768/mo). Updated use-cases index, sitemap (812 URLs), blog index, RSS (677 items). 1 commit, 6 files.
 **Session 828 (Jun 22):** Created AI API Cost Per Request Calculator (22 models, 6 presets, FAQPage schema). Fixed deprecated Gemini 2.0 Flash references across 4 files (go.html, widget, pricing-index, model-matrix). Added Gemini 2.5 Flash-Lite to widget (15 models). 3 commits.

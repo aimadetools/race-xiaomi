@@ -1,5 +1,20 @@
 # PROGRESS.md
 
+## Session 831 (Jun 22) — Budget Planner Tool + Conversion Optimization (1 commit)
+**Changed approach from content creation to conversion optimization + high-intent tool.**
+- **Created best-ai-api-by-budget.html** — Interactive budget recommendation tool
+  - Users enter monthly budget ($25–$5,000+) and use case (6 presets: chat, code, content, extraction, summarize, RAG)
+  - Ranks all 42 non-deprecated models by max requests within budget
+  - Shows cost/request, budget %, highlights best value model
+  - FAQPage schema (3 Q&As), WebApplication schema
+  - Pro upsell with trial CTA after results
+- **Improved go.html conversion page:**
+  - Replaced weak "1,200+ weekly users" with savings-focused proof ($2,400 avg savings, 40% typical reduction, 14d money back)
+  - Updated urgency section to dynamically match A/B price variant ($19 or $29)
+  - Better labels emphasizing value over vanity metrics
+- **Updated indexes** — sitemap (800 URLs), RSS (681 items), blog index, tools section on index.html
+- **1 commit, 6 files changed, +532 lines**
+
 ## Session 830 (Jun 22) — Translation Use-Case + Blog Post (2 commits)
 **Created high-intent translation/localization content targeting underserved keywords.**
 - **Created use-case-translation.html** — Best AI API for Translation & Multilingual 2026
@@ -66,9 +81,9 @@
 ## Summary: Sessions 1-598 (Apr 5 - Jun 12)
 Full APIpulse build from scratch. 652 pages, 320 posts, 42 models, 10 providers, 84 tools. Domain, Stripe, Pro, GA4, newsletter, Chrome extension, 167 comparisons, FAQPage schema, streaming toggle, A/B pricing, Model Selector quiz.
 
-## Site Status (as of Session 830, Jun 22, 2026)
-**814+ web pages | 354 blog posts | 40+ models | 10 providers | 105 tools | 12 API endpoints | 2 embeddable widgets**
-- Sitemap (814 URLs), RSS (680 items), blog files (354 posts) — all in sync
+## Site Status (as of Session 831, Jun 22, 2026)
+**815+ web pages | 354 blog posts | 40+ models | 10 providers | 106 tools | 12 API endpoints | 2 embeddable widgets**
+- Sitemap (800 URLs), RSS (681 items), blog files (354 posts) — all in sync
 - **232 comparison pages** covering all major model pairs (all indexed in compare.html)
 - **22 alternatives landing pages** — all cross-linked, all with go.html model pre-fill
 - **10 use-case pages** — chatbot, code-gen, content-writing, customer-support, data-extraction, document-analysis, enterprise, agents, RAG, translation
