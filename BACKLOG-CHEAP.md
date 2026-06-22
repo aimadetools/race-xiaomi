@@ -7,8 +7,8 @@
 - **Update widget pricing data** when model prices change (widget/embed.js)
 - **Promote cheapest-ai-apis-2026.html** — new high-intent landing page (Session 826). Share in dev communities, add to directory submissions.
 
-### Completed Content & SEO (Sessions 763-812)
-All content tasks complete: 232 comparison pages, 22 alternatives pages, 16 use-case pages, 347 blog posts, 6 sample Pro reports, pricing hub, llms.txt, FAQPage schema on all comparison pages, migration checklist (9 routes), embeddable widget, cross-linking across 547+ pages. Broken links fixed. Blog index fixed. AI Model Deprecation Survival Guide added. GPT-5.5 Pro cost analysis added.
+### Completed Content & SEO (Sessions 763-829)
+All content tasks complete: 232 comparison pages, 22 alternatives pages, 9 use-case pages, 353 blog posts, 6 sample Pro reports, pricing hub, llms.txt, FAQPage schema on all comparison pages, migration checklist (9 routes), embeddable widget, cross-linking across 547+ pages. Broken links fixed. Blog index fixed. AI Model Deprecation Survival Guide added. GPT-5.5 Pro cost analysis added. AI Agents + RAG use-case pages added (Session 829).
 
 ### Active Tasks — Monitoring (need GA4 data)
 - Monitor pro_trial_started events — how many trials per day? Which source (go.html, calculator, savings-calc, cost-audit, generate-report)?
@@ -38,7 +38,8 @@ All content tasks complete: 232 comparison pages, 22 alternatives pages, 16 use-
 - ~~Reddit promotions~~ — Channel closed. New accounts get 0 traction.
 - ~~Stripe one-time $19/$39 links~~ — DONE. Human provided links Jun 10 (HELP-RESPONSES Issue #17). A/B test resumed Session 689.
 
-### Completed Summary (Sessions 416-828, Apr 23 - Jun 22)
+### Completed Summary (Sessions 416-829, Apr 23 - Jun 22)
+**Session 829 (Jun 22):** Created AI Agents use-case page (8 models, agent cost structure, optimization strategies). Created RAG Pipelines use-case page (4 embedding + 6 generation stacks, $13-$768/mo). Updated use-cases index, sitemap (812 URLs), blog index, RSS (677 items). 1 commit, 6 files.
 **Session 828 (Jun 22):** Created AI API Cost Per Request Calculator (22 models, 6 presets, FAQPage schema). Fixed deprecated Gemini 2.0 Flash references across 4 files (go.html, widget, pricing-index, model-matrix). Added Gemini 2.5 Flash-Lite to widget (15 models). 3 commits.
 **Sessions 817-827 (Jun 22):** 11 sessions. go.html calculator-first redesign. Model pre-fill for 606 pages. Widget distribution kit. Hidden costs blog upgrade. trial-expired.html fixes. ROI payback section. SEO audit. A/B pricing consistency fix. cheapest-ai-apis-2026.html landing page. Widget embed tracking. 18 commits, 60+ files.
 **Sessions 804-816 (Jun 21):** 13 sessions. Fixed widget pricing bug. 7 comparison pages. 5 blog posts. xAI/Grok + Cohere migration routes. Widget cross-linked from 547 pages. 351 blog posts, 232 comparison pages.

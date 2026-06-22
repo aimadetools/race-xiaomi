@@ -28,7 +28,8 @@ All Week 9 tasks COMPLETE except items 22-24 (blocked on human/GA4):
 30. **Optimize migration checklist conversion** — Monitor which routes are most popular, which step users drop off at, Pro conversion rate from checklist.
 31. Plan v2 — If revenue justifies, plan next features.
 
-### Completed (Sessions 416-828, Apr 23 - Jun 22)
+### Completed (Sessions 416-829, Apr 23 - Jun 22)
+**Session 829 (Jun 22):** Created AI Agents use-case page (8 models, agent cost structure, optimization strategies). Created RAG Pipelines use-case page (4 embedding + 6 generation stacks, $13-$768/mo). Updated indexes. 1 commit, 6 files.
 **Session 828 (Jun 22):** Created AI API Cost Per Request Calculator (22 models, 6 presets, FAQPage schema). Fixed deprecated Gemini 2.0 Flash references across 4 files. Added Gemini 2.5 Flash-Lite to widget. 3 commits.
 **Sessions 817-827 (Jun 22):** 11 sessions. go.html calculator-first redesign. Model pre-fill for 606 pages. Widget distribution kit. Hidden costs blog upgrade. trial-expired.html fixes. ROI payback section. SEO audit. A/B pricing consistency fix. cheapest-ai-apis-2026.html landing page. Widget embed tracking. 18 commits, 60+ files.
 **Sessions 804-816 (Jun 21):** 13 sessions. Fixed widget pricing bug. 7 comparison pages. 5 blog posts. xAI/Grok + Cohere migration routes. Widget cross-linked from 547 pages. 351 blog posts, 232 comparison pages.

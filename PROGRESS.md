@@ -1,5 +1,22 @@
 # PROGRESS.md
 
+## Session 829 (Jun 22) — AI Agents + RAG Use-Case Pages (1 commit)
+**Created two high-intent use-case pages targeting underserved keywords.**
+- **Created use-case-agents.html** — Best AI API for AI Agents 2026
+  - Agent requirements: tool use, multi-step reasoning, 1M context, instruction following
+  - 8 models compared with realistic agent cost structure (5 calls/task, 3-10x chatbot cost)
+  - Budget tiers from $91/mo (DeepSeek V4 Flash) to $10K+/mo (GPT-5.5)
+  - Cost optimization strategies: model routing, caching, structured outputs, batch processing
+  - FAQPage schema (3 Q&As), Article schema, BreadcrumbList
+- **Created use-case-rag.html** — Best AI API for RAG Pipelines 2026
+  - Two-model architecture: embedding + generation cost breakdown
+  - 4 embedding models compared (OpenAI, Google, Cohere)
+  - 6 full RAG pipeline stacks from $13/mo (DeepSeek) to $768/mo (Claude Sonnet 4.6)
+  - RAG-specific optimization: chunk tuning, top-K, query caching, two-stage generation
+  - FAQPage schema (3 Q&As), Article schema, BreadcrumbList
+- **Updated indexes** — use-cases.html, sitemap (812 URLs), blog index, RSS (677 items)
+- **1 commit, 6 files changed, +1,286 lines**
+
 ## Session 828 (Jun 22) — New Landing Page + Stale Model Fixes (3 commits)
 **Created AI API Cost Per Request Calculator, fixed deprecated Gemini 2.0 Flash references across site.**
 - **Created ai-api-cost-per-request.html** — interactive cost-per-request calculator
@@ -33,11 +50,12 @@
 ## Summary: Sessions 1-598 (Apr 5 - Jun 12)
 Full APIpulse build from scratch. 652 pages, 320 posts, 42 models, 10 providers, 84 tools. Domain, Stripe, Pro, GA4, newsletter, Chrome extension, 167 comparisons, FAQPage schema, streaming toggle, A/B pricing, Model Selector quiz.
 
-## Site Status (as of Session 828, Jun 22, 2026)
-**800+ web pages | 351 blog posts | 40+ models | 10 providers | 105 tools | 12 API endpoints | 2 embeddable widgets**
-- Sitemap (795 URLs), RSS (675 items), blog files (351 posts) — all in sync
+## Site Status (as of Session 829, Jun 22, 2026)
+**812+ web pages | 353 blog posts | 40+ models | 10 providers | 105 tools | 12 API endpoints | 2 embeddable widgets**
+- Sitemap (812 URLs), RSS (677 items), blog files (353 posts) — all in sync
 - **232 comparison pages** covering all major model pairs (all indexed in compare.html)
 - **22 alternatives landing pages** — all cross-linked, all with go.html model pre-fill
+- **9 use-case pages** — chatbot, code-gen, content-writing, customer-support, data-extraction, document-analysis, enterprise, agents, RAG
 - **9 migration routes** in migration-checklist.html (OpenAI, Anthropic, Google, DeepSeek, Mistral, xAI, Cohere)
 - **547 pages** linking to widget.html (296 blog + 229 comparison + 22 alternatives)
 - **251 pages** linking to migration-checklist.html (229 comparison + 22 alternatives)
