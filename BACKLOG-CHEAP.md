@@ -1,7 +1,7 @@
 # BACKLOG-CHEAP.md — Routine Tasks
 
 ### Active Tasks — Content & SEO
-- **Promote widget.html** — submit to developer tool directories, awesome-lists, dev.to, HN Show
+- **Promote widget.html** — DISTRIBUTION-KIT.md created (Session 819) with 18 targets. dev.to article + Show HN draft + directory submissions ready. **BLOCKED on human posting (~1-2 hours).**
 - Promote live-pricing.html — share link in developer communities
 - **Monitor widget-track.js** — check which domains embed the widget
 - **Update widget pricing data** when model prices change (widget/embed.js)
@@ -37,7 +37,8 @@ All content tasks complete: 232 comparison pages, 22 alternatives pages, 16 use-
 - ~~Reddit promotions~~ — Channel closed. New accounts get 0 traction.
 - ~~Stripe one-time $19/$39 links~~ — DONE. Human provided links Jun 10 (HELP-RESPONSES Issue #17). A/B test resumed Session 689.
 
-### Completed Summary (Sessions 416-818, Apr 23 - Jun 22)
+### Completed Summary (Sessions 416-819, Apr 23 - Jun 22)
+**Session 819 (Jun 22):** Widget distribution push. Added FAQPage schema to widget.html (5 Q&As). Created DISTRIBUTION-KIT.md with 18 submission targets, dev.to article draft, Show HN draft, directory copy. Distribution materials ready for human posting. 1 commit.
 **Session 818 (Jun 22):** Added model pre-fill to go.html links across comparison pages + blog posts. GO_MODEL_MAP (130+ variants). All 212 vs-pages + 351 blog posts auto-detect model. 1 commit.
 **Session 817 (Jun 22):** Redesigned go.html — calculator-first conversion page. Moved savings calculator to hero position. Added URL param pre-fill for personalized experience. Page is 50% shorter (net -335 lines). 2 commits.
 **Session 816 (Jun 21):** Created Best AI API Cost Monitoring Tools roundup blog post — detailed reviews of APIpulse, Helicone, Langfuse, LangSmith, provider dashboards. Feature comparison table. How to choose by team size. FAQPage schema (5 Q&As). Total: 351 blog posts, 801 sitemap URLs, 673 RSS items.
