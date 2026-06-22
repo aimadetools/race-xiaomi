@@ -460,6 +460,8 @@
         if (price === 19) {
             document.getElementById('trial-was').textContent = '$39';
         }
+        // Clear the redirect flag so users aren't spammed on future visits
+        localStorage.removeItem('apipulse_trial_expired');
         if (window.trackEvent) window.trackEvent('trial_expired_page_viewed');
     });
     </script>
