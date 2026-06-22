@@ -1429,3 +1429,43 @@ document.addEventListener('DOMContentLoaded', function() {
         cta.insertAdjacentElement('afterend', savingsLink);
     });
 })();
+
+// Auto-pre-fill go.html links with calculator data from the current page
+// When a page has a savings calculator (model selector + spend input),
+// all go.html links automatically get ?model=X&spend=Y params added.
+// This makes the go.html checkout experience personalized from the first frame.
+(function() {
+    document.addEventListener('DOMContentLoaded', function() {
+        // Find calculator elements on this page (various IDs used across tools)
+        var modelSel = document.querySelector('#model-select, #est-model, #model, #current-model');
+        var spendInput = document.querySelector('#monthly-spend, #est-spend, #spend, #monthly-cost');
+        if (!modelSel || !spendInput) return;
+
+        function updateGoLinks() {
+            var model = modelSel.value;
+            var spend = parseFloat(spendInput.value) || 0;
+            if (!model || spend <= 0) return;
+
+            document.querySelectorAll('a[href*="go.html"]').forEach(function(a) {
+                try {
+                    var url = new URL(a.href, location.href);
+                    // Only update links that go to go.html
+                    if (!url.pathname.includes('go.html')) return;
+                    // Don't overwrite links that already have model/spend (from explicit params)
+                    if (url.searchParams.has('model') || url.searchParams.has('spend')) return;
+                    url.searchParams.set('model', model);
+                    url.searchParams.set('spend', Math.round(spend));
+                    a.href = url.pathname + url.search;
+                } catch(e) {}
+            });
+        }
+
+        // Update on calculator interaction
+        modelSel.addEventListener('change', updateGoLinks);
+        spendInput.addEventListener('input', updateGoLinks);
+        spendInput.addEventListener('change', updateGoLinks);
+
+        // Initial update after a short delay (let page scripts initialize)
+        setTimeout(updateGoLinks, 500);
+    });
+})();
