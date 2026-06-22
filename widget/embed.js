@@ -10,7 +10,7 @@
 (function() {
   'use strict';
 
-  // Pricing data (per 1M tokens, USD) — last updated 2026-06-21 (fixed GPT-5.5 Pro $30/$180)
+  // Pricing data (per 1M tokens, USD) — last updated 2026-06-22 (added Gemini 2.5 Flash-Lite)
   var MODELS = [
     { name: 'GPT-5',           provider: 'OpenAI',     input: 1.25,  output: 10.00, context: '200K' },
     { name: 'GPT-5.5 Pro',     provider: 'OpenAI',     input: 30.00, output: 180.00, context: '1.05M' },
@@ -20,6 +20,7 @@
     { name: 'Claude Sonnet 4.6', provider: 'Anthropic', input: 3.00, output: 15.00, context: '1M' },
     { name: 'Claude Haiku 4.5', provider: 'Anthropic', input: 1.00,  output: 5.00,  context: '200K' },
     { name: 'Gemini 2.5 Pro',  provider: 'Google',     input: 1.25,  output: 10.00, context: '1M' },
+    { name: 'Gemini 2.5 Flash-Lite', provider: 'Google', input: 0.10, output: 0.40, context: '1M' },
     { name: 'Gemini 3.5 Flash', provider: 'Google',    input: 1.50,  output: 9.00,  context: '1M' },
     { name: 'DeepSeek V4 Flash', provider: 'DeepSeek', input: 0.14,  output: 0.28, context: '128K' },
     { name: 'DeepSeek V4 Pro', provider: 'DeepSeek',   input: 0.435, output: 0.87, context: '128K' },
