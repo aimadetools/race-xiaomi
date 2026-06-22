@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Use Cases — APIpulse</title>
-    <meta name="description" content="See how APIpulse helps chatbot builders, code generation tools, document analysis platforms, enterprise teams, healthcare organizations, education institutions, finance companies, law firms, marketing agencies, manufacturing operations, and real estate professionals optimize AI API costs.">
+    <meta name="description" content="See how APIpulse helps chatbot builders, code generation tools, document analysis platforms, enterprise teams, healthcare organizations, education institutions, finance companies, law firms, marketing agencies, manufacturing operations, real estate professionals, insurance companies, logistics providers, and HR teams optimize AI API costs.">
     <meta property="og:title" content="Use Cases — APIpulse">
     <meta property="og:description" content="Real-world scenarios for AI API cost optimization.">
     <meta property="og:type" content="website">
@@ -152,6 +152,24 @@
                 "position": 19,
                 "name": "Real Estate & Property",
                 "description": "AI API cost comparison for property listings, lead qualification, CMAs, document processing, and tenant screening"
+            },
+            {
+                "@type": "ListItem",
+                "position": 20,
+                "name": "Insurance",
+                "description": "AI API cost comparison for claims processing, underwriting, fraud detection, policy documents, and customer service"
+            },
+            {
+                "@type": "ListItem",
+                "position": 21,
+                "name": "Logistics & Supply Chain",
+                "description": "AI API cost comparison for route optimization, demand forecasting, document extraction, warehouse management, and supplier analysis"
+            },
+            {
+                "@type": "ListItem",
+                "position": 22,
+                "name": "Human Resources",
+                "description": "AI API cost comparison for resume screening, employee engagement, onboarding, performance reviews, and policy drafting"
             }
         ]
     }
@@ -771,6 +789,90 @@
             <div class="cta-inline">
                 <p>Find the best model for your real estate AI stack</p>
                 <a href="use-case-real-estate.html" style="color:var(--accent);font-weight:600;margin-right:16px;">Read full guide →</a>
+                <a href="best-ai-api-by-budget.html" class="btn-primary">Budget Planner</a>
+            </div>
+        </div>
+
+        <div class="use-case">
+            <div class="use-case-header">
+                <div class="use-case-icon">🛡️</div>
+                <h2>Insurance</h2>
+            </div>
+            <p>You're integrating AI into insurance operations — claims processing, underwriting, fraud detection, and policy documents. Carriers, agents, MGAs, and insurtech platforms need models that handle structured claims data accurately, produce explainable risk assessments, and comply with state insurance regulations.</p>
+
+            <h3>The Challenge</h3>
+            <p>Insurance AI must process claims quickly (real-time triage), handle numerical data accurately for underwriting, detect fraud patterns across thousands of claims, and comply with state insurance regulations and NAIC Model Laws. Wrong model choice risks claims delays, inaccurate risk selection, or regulatory penalties.</p>
+
+            <div class="cost-example">
+                <div class="label">Monthly cost for claims triage at 200 claims/day (1.5K in / 500 out)</div>
+                <div class="cost-row"><span class="name">DeepSeek V4 Flash</span><span class="value">$2.10/mo</span></div>
+                <div class="cost-row"><span class="name">GPT-4o mini</span><span class="value">$3.15/mo</span></div>
+                <div class="cost-row"><span class="name">Claude Haiku 4.5</span><span class="value">$24.00/mo</span></div>
+                <div class="cost-row cost-total"><span class="name">Claude Sonnet 4.6</span><span class="value">$90.00/mo</span></div>
+            </div>
+
+            <h3>Recommendation</h3>
+            <p><strong>Tiered claims strategy:</strong> Route 80% of routine claims intake to <strong>GPT-4o mini</strong> or <strong>DeepSeek V4 Flash</strong> for cost-effective triage. Reserve <strong>Claude Haiku 4.5</strong> for underwriting analysis and <strong>Claude Sonnet 4.6</strong> for complex fraud investigations. Requires SOC 2 compliant providers for policyholder data. Independent agency: $10–50/mo total.</p>
+
+            <div class="cta-inline">
+                <p>Find the best model for your insurance AI stack</p>
+                <a href="use-case-insurance.html" style="color:var(--accent);font-weight:600;margin-right:16px;">Read full guide →</a>
+                <a href="best-ai-api-by-budget.html" class="btn-primary">Budget Planner</a>
+            </div>
+        </div>
+
+        <div class="use-case">
+            <div class="use-case-header">
+                <div class="use-case-icon">🚛</div>
+                <h2>Logistics & Supply Chain</h2>
+            </div>
+            <p>You're integrating AI into logistics operations — route optimization, demand forecasting, document extraction, and warehouse management. Carriers, 3PLs, freight forwarders, and supply chain platforms need models that process shipping documents accurately, handle numerical forecasting data, and produce structured output for ERP integration.</p>
+
+            <h3>The Challenge</h3>
+            <p>Logistics AI must handle high-volume document extraction (BOL, invoices, customs declarations), process numerical data for demand forecasting and route optimization, and operate within warehouse/WMS systems. Wrong model choice risks data entry errors, inaccurate forecasts, or poor route plans that increase fuel costs.</p>
+
+            <div class="cost-example">
+                <div class="label">Monthly cost for document extraction at 500 docs/day (2K in / 450 out)</div>
+                <div class="cost-row"><span class="name">Gemini 2.5 Flash-Lite</span><span class="value">$5.70/mo</span></div>
+                <div class="cost-row"><span class="name">GPT-4o mini</span><span class="value">$8.55/mo</span></div>
+                <div class="cost-row"><span class="name">Claude Haiku 4.5</span><span class="value">$63.75/mo</span></div>
+                <div class="cost-row cost-total"><span class="name">Claude Sonnet 4.6</span><span class="value">$236.25/mo</span></div>
+            </div>
+
+            <h3>Recommendation</h3>
+            <p><strong>Two-tier strategy:</strong> Use <strong>Gemini 2.5 Flash-Lite</strong> for high-volume document extraction (cheapest at $5.70/mo for 500 docs/day) and <strong>GPT-4o mini</strong> for customer shipment inquiries. Add <strong>GPT-5 Mini</strong> for demand forecasting and <strong>Claude Haiku 4.5</strong> for supplier analysis. Self-host Mistral for air-gapped warehouse systems. Small fleet: $10–50/mo total.</p>
+
+            <div class="cta-inline">
+                <p>Find the best model for your logistics AI stack</p>
+                <a href="use-case-logistics.html" style="color:var(--accent);font-weight:600;margin-right:16px;">Read full guide →</a>
+                <a href="best-ai-api-by-budget.html" class="btn-primary">Budget Planner</a>
+            </div>
+        </div>
+
+        <div class="use-case">
+            <div class="use-case-header">
+                <div class="use-case-icon">👥</div>
+                <h2>Human Resources</h2>
+            </div>
+            <p>You're integrating AI into HR workflows — resume screening, employee engagement, onboarding, performance reviews, and policy drafting. HR teams, recruiters, and HR tech platforms need models that handle unstructured text (resumes, survey responses), produce structured candidate scores, and comply with EEOC, ADA, and GDPR requirements.</p>
+
+            <h3>The Challenge</h3>
+            <p>HR AI must screen resumes without introducing bias, handle sensitive employee data (PII, salary, medical info) securely, produce legally compliant policy content, and process engagement survey feedback accurately. Wrong model choice risks biased hiring decisions, compliance violations, or inaccurate employee analytics.</p>
+
+            <div class="cost-example">
+                <div class="label">Monthly cost for resume screening at 200 resumes/day (2K in / 400 out)</div>
+                <div class="cost-row"><span class="name">Mistral Small 4</span><span class="value">$1.92/mo</span></div>
+                <div class="cost-row"><span class="name">GPT-4o mini</span><span class="value">$3.24/mo</span></div>
+                <div class="cost-row"><span class="name">Claude Haiku 4.5</span><span class="value">$24.00/mo</span></div>
+                <div class="cost-row cost-total"><span class="name">Claude Sonnet 4.6</span><span class="value">$90.00/mo</span></div>
+            </div>
+
+            <h3>Recommendation</h3>
+            <p><strong>Two-tier strategy:</strong> Use <strong>Mistral Small 4</strong> for high-volume resume screening (cheapest at $1.92/mo for 200 resumes/day) and <strong>GPT-4o mini</strong> for onboarding Q&A chatbot. Add <strong>GPT-5 Mini</strong> for engagement analysis and <strong>Claude Haiku 4.5</strong> for performance reviews. Audit AI scoring for bias regularly. Small business: $10–50/mo total.</p>
+
+            <div class="cta-inline">
+                <p>Find the best model for your HR AI stack</p>
+                <a href="use-case-hr.html" style="color:var(--accent);font-weight:600;margin-right:16px;">Read full guide →</a>
                 <a href="best-ai-api-by-budget.html" class="btn-primary">Budget Planner</a>
             </div>
         </div>
