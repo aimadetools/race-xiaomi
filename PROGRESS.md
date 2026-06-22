@@ -1,5 +1,19 @@
 # PROGRESS.md
 
+## Session 840 (Jun 22) — Real Estate Use-Case Page (1 commit)
+**Created high-intent use-case page targeting real estate — premium vertical with Fair Housing Act compliance needs.**
+- **Created use-case-real-estate.html** — Best AI API for Real Estate 2026
+  - 6 real estate AI use cases: listing descriptions ($0.0002–$0.006), lead qualification ($0.0004–$0.004), CMAs ($0.003–$0.03), document processing, virtual staging descriptions, tenant screening
+  - 9 models compared with listing description workload costs (50 and 200 listings/day)
+  - 4 budget tiers: solo agent ($10–50/mo), boutique brokerage ($50–300/mo), regional brokerage ($300–2K/mo), national franchise/proptech ($2K–8K/mo)
+  - Fair Housing Act compliance section with AI content guidelines
+  - SOC 2 provider comparison for handling client financial data
+  - ROI comparison: listing descriptions (95–99%), lead qualification (97–99%), CMAs (99%+), document processing (99%+)
+  - FAQPage schema (3 Q&As), Article schema, BreadcrumbList
+- **Updated use-cases.html** — added Real Estate card (position 19, 19 total use cases)
+- **Updated indexes** — sitemap (810 URLs), RSS (698 items)
+- **1 commit, 4 files changed, +720 lines**
+
 ## Session 839 (Jun 22) — Manufacturing Use-Case + Calculator Fix (1 commit)
 **Created high-intent use-case page targeting manufacturing — major AI vertical with predictive maintenance and quality control.**
 - **Created use-case-manufacturing.html** — Best AI API for Manufacturing 2026
@@ -37,124 +51,8 @@
   - CTA block: "Stop Overpaying for AI APIs" with direct link to go.html
 - **2 commits, 38 files changed, +629 lines**
 
-## Session 837 (Jun 22) — Structured Data + RSS Sync Fix (1 commit)
-**Fixed incomplete structured data and missing RSS entries across use-case pages.**
-- **Fixed use-cases.html ItemList schema** — added 4 missing use cases (Content Writing, Customer Support, Data Extraction, Legal) to structured data
-  - Updated all positions to sequential 1–16
-  - Updated meta description to include all verticals (added finance, law firms)
-- **Added 7 missing RSS items** — budget planner tool, startups, ecommerce, healthcare, education, finance, legal use-case pages
-  - RSS feed now 693 items (was 686)
-- **Verified site health** — no broken internal links, all pages have meta descriptions and canonical tags, sitemap has 806 URLs
-- **1 commit, 2 files changed, +81/-8 lines**
-
-## Session 836 (Jun 22) — Legal Use-Case Page (1 commit)
-**Created high-intent use-case page targeting law firms — premium vertical with privilege/compliance needs.**
-- **Created use-case-legal.html** — Best AI API for Legal 2026
-  - 6 legal AI use cases with cost ranges: contract review ($0.005–$0.05/contract), legal research ($0.01–$0.05/query), due diligence ($0.002–$0.01/doc), client intake, brief drafting, compliance monitoring
-  - 9 models compared with contract review workload costs (50 and 200 contracts/day)
-  - 4 budget tiers: solo/small firm ($15–80/mo), mid-size firm ($80–500/mo), large firm ($500–3K/mo), enterprise/Am Law 200 ($2K–6K/mo)
-  - Attorney-client privilege compliance section with enterprise agreement requirements
-  - Provider comparison table with enterprise agreement status and legal strengths
-  - ROI comparison: AI vs paralegal (95–99% savings), associate research (99%), due diligence (99%), brief drafting (95–99%)
-  - Legal-specific optimization: complexity routing, playbook-driven review, template caching, batch due diligence
-  - FAQPage schema (3 Q&As), Article schema, BreadcrumbList
-  - Pro upsell + budget planner CTA
-- **Updated use-cases.html** — added Legal entry (position 13, 16 total use cases)
-- **Updated indexes** — sitemap (806 URLs), RSS (686 items)
-- **1 commit, 4 files changed, +706 lines**
-
-## Session 835 (Jun 22) — Education + Finance Use-Case Pages (2 commits)
-**Created two high-intent use-case pages targeting major verticals with compliance needs.**
-- **Created use-case-education.html** — Best AI API for Education 2026
-  - 6 education AI use cases: essay grading ($0.003–$0.03), tutoring ($0.001–$0.015), curriculum planning, student support, assessment generation, plagiarism detection
-  - 9 models compared with essay grading workload costs (30 and 500 essays/day)
-  - 4 budget tiers: individual teacher ($5–30/mo), school ($30–300/mo), district ($200–1.5K/mo), university ($1.5K–5K/mo)
-  - FERPA compliance section with School Official Agreement requirements
-  - ROI: AI vs TA grading (95–99% savings), tutoring (99%), curriculum (99%)
-  - FAQPage schema (3 Q&As), Article schema, BreadcrumbList
-- **Created use-case-finance.html** — Best AI API for Finance & Fintech 2026
-  - 6 finance AI use cases: fraud detection ($0.001–$0.01/txn), document analysis, KYC onboarding, financial advisory, compliance reports, market analysis
-  - 9 models compared with fraud detection workload costs (10K and 100K txns/day)
-  - 3 budget tiers: fintech startup ($60–500/mo), regional bank ($500–3K/mo), major bank ($3K–15K/mo)
-  - SOC 2 & PCI compliance section with provider verification guidance
-  - ROI: AI vs fraud analyst (88–99% savings), underwriter (95–99%), compliance officer (92–98%)
-  - FAQPage schema (3 Q&As), Article schema, BreadcrumbList
-- **Updated use-cases.html** — added Education (position 11) and Finance (position 12), 15 total use cases
-- **Updated indexes** — sitemap (805 URLs), RSS (685 items)
-- **2 commits, 8 files changed, +1,401 lines**
-
-## Session 834 (Jun 22) — Healthcare Use-Case Page (1 commit)
-**Created high-intent use-case page targeting healthcare organizations — premium vertical with high-value customers.**
-- **Created use-case-healthcare.html** — Best AI API for Healthcare 2026
-  - 6 healthcare AI use cases with cost ranges: clinical docs ($0.002–$0.015/visit), medical coding ($0.004–$0.008), patient triage, medication checks, prior auth, patient communication
-  - 9 models compared with clinical documentation workload costs (50 and 200 visits/day)
-  - 4 budget tiers: small practice ($15–80/mo), mid-size clinic ($80–500/mo), health system ($500–5K/mo), enterprise ($2K–8K/mo)
-  - HIPAA compliance section with BAA availability (OpenAI, Anthropic, Google)
-  - Provider comparison table with BAA status and healthcare strengths
-  - ROI comparison: AI vs human scribe (97–99% savings), coder (98–99%), prior auth nurse (99%)
-  - Healthcare-specific optimization: clinical complexity routing, template documentation, patient context caching, batch processing
-  - FAQPage schema (3 Q&As), Article schema, BreadcrumbList
-  - Pro upsell + budget planner CTA
-- **Updated use-cases.html** — added Healthcare entry (position 10, 13 total use cases)
-- **Updated indexes** — sitemap (803 URLs), RSS (683 items)
-- **1 commit, 4 files changed, +713 lines**
-
-## Session 833 (Jun 22) — E-Commerce Use-Case Page (1 commit)
-**Created high-intent use-case page targeting e-commerce founders — high-volume AI customers.**
-- **Created use-case-ecommerce.html** — Best AI API for E-Commerce 2026
-  - 6 e-commerce AI use cases with cost ranges: product descriptions ($0.0001–$0.002), chatbots ($0.005–$0.08), review analysis, search, recommendations, category tagging
-  - 10 models compared with real e-commerce workload costs (1K and 10K conversations/day)
-  - 4 budget tiers: $5–50 (small store), $50–300 (growing), $300–2K (established), $2K+ (enterprise)
-  - E-commerce-specific optimization: description caching, query routing, batch processing, context trimming
-  - FAQPage schema (3 Q&As), Article schema, BreadcrumbList
-  - Pro upsell + budget planner CTA
-- **Updated use-cases.html** — added E-Commerce entry (position 9, 12 total use cases)
-- **Updated indexes** — sitemap (802 URLs), RSS (682 items)
-- **Cross-linked** from existing blog-ai-api-cost-ecommerce.html
-- **1 commit, 5 files changed, +631 lines**
-
-## Session 832 (Jun 22) — Startups Use-Case Page (1 commit)
-**Created high-intent use-case page targeting startup founders — ideal $29 customer profile.**
-- **Created use-case-startups.html** — Best AI API for Startups 2026
-  - Provider comparison: OpenAI vs Anthropic vs Google with startup-focused lens (cheapest models, ecosystem, quality)
-  - 10 models compared with real workload costs (1K and 10K req/day scenarios)
-  - 4 budget tiers: $0-50 (pre-revenue), $50-500 (seed), $500-2K (Series A), $2K+ (scale)
-  - Cost optimization strategies: model routing, response caching, batch processing, prompt optimization
-  - When to upgrade signals (user complaints, revenue justifies, rate limits)
-  - FAQPage schema (3 Q&As), Article schema, BreadcrumbList
-  - Pro upsell + budget planner CTA
-- **Updated use-cases.html** — added Startups entry (position 8) with summary card
-- **Updated indexes** — sitemap (801 URLs), RSS (682 items)
-- **1 commit, 4 files changed, +652 lines**
-
-## Session 831 (Jun 22) — Budget Planner Tool + Conversion Optimization (1 commit)
-**Changed approach from content creation to conversion optimization + high-intent tool.**
-- **Created best-ai-api-by-budget.html** — Interactive budget recommendation tool
-  - Users enter monthly budget ($25–$5,000+) and use case (6 presets: chat, code, content, extraction, summarize, RAG)
-  - Ranks all 42 non-deprecated models by max requests within budget
-  - Shows cost/request, budget %, highlights best value model
-  - FAQPage schema (3 Q&As), WebApplication schema
-  - Pro upsell with trial CTA after results
-- **Improved go.html conversion page:**
-  - Replaced weak "1,200+ weekly users" with savings-focused proof ($2,400 avg savings, 40% typical reduction, 14d money back)
-  - Updated urgency section to dynamically match A/B price variant ($19 or $29)
-  - Better labels emphasizing value over vanity metrics
-- **Updated indexes** — sitemap (800 URLs), RSS (681 items), blog index, tools section on index.html
-- **1 commit, 6 files changed, +532 lines**
-
-## Session 830 (Jun 22) — Translation Use-Case + Blog Post (2 commits)
-**Created high-intent translation/localization content targeting underserved keywords.**
-- **Created use-case-translation.html** — Best AI API for Translation & Multilingual 2026
-  - 12 models compared with balanced input/output cost structure (1:1 ratio)
-  - Translation cost at scale: $6.30–$54,000/mo across 4 volume tiers (500–100K req/day)
-  - Budget tiers: internal/dev-facing ($6/mo), product localization ($34/mo), customer-facing ($188/mo), premium/regulated ($169/mo)
-  - Optimization strategies: two-tier routing, terminology glossaries, batch processing, translation memory
-  - FAQPage schema (3 Q&As), Article schema, BreadcrumbList
-- **Created blog-ai-translation-cost.html** — AI Translation API Cost Guide 2026
-  - Cost per word breakdown across 12 models ($0.0000021–$0.00009/word)
-  - 3 real-world scenarios: product localization, e-commerce feed, real-time chat
-  - AI vs human translation comparison (80x–25,000x cheaper)
-  - FAQPage schema (3 Q&As), BlogPosting schema
+## Summary: Sessions 828-837 (Jun 22) — Use-Case Blitz + Tools (10 sessions)
+10 sessions on Jun 22. Created 13 use-case pages (startups, ecommerce, healthcare, education, finance, legal, manufacturing, marketing, translation, AI agents, RAG, data extraction, document analysis). Created budget planner tool (best-ai-api-by-budget.html). Created AI API Cost Per Request Calculator. Fixed deprecated Gemini 2.0 Flash references. Fixed use-cases.html ItemList schema + missing RSS items. 12+ commits, 40+ files.
 - **Updated indexes** — use-cases.html (10 use cases), blog.html, sitemap (814 URLs), RSS (680 items)
 - **2 commits, 8 files changed, +956 lines**
 
@@ -208,12 +106,12 @@
 ## Summary: Sessions 1-598 (Apr 5 - Jun 12)
 Full APIpulse build from scratch. 652 pages, 320 posts, 42 models, 10 providers, 84 tools. Domain, Stripe, Pro, GA4, newsletter, Chrome extension, 167 comparisons, FAQPage schema, streaming toggle, A/B pricing, Model Selector quiz.
 
-## Site Status (as of Session 839, Jun 22, 2026)
-**820+ web pages | 354 blog posts | 40+ models | 10 providers | 107 tools | 12 API endpoints | 3 embeddable widgets**
-- Sitemap (809 URLs), RSS (697 items), blog files (354 posts) — all in sync
+## Site Status (as of Session 840, Jun 22, 2026)
+**821+ web pages | 354 blog posts | 40+ models | 10 providers | 107 tools | 12 API endpoints | 3 embeddable widgets**
+- Sitemap (810 URLs), RSS (698 items), blog files (354 posts) — all in sync
 - **232 comparison pages** covering all major model pairs (all indexed in compare.html)
 - **22 alternatives landing pages** — all cross-linked, all with go.html model pre-fill
-- **17 use-case pages** — chatbot, code-gen, content-writing, customer-support, data-extraction, document-analysis, enterprise, agents, RAG, translation, startups, ecommerce, healthcare, education, finance, legal, manufacturing
+- **19 use-case pages** — chatbot, code-gen, content-writing, customer-support, data-extraction, document-analysis, enterprise, agents, RAG, translation, startups, ecommerce, healthcare, education, finance, legal, manufacturing, marketing, real-estate
 - **9 migration routes** in migration-checklist.html (OpenAI, Anthropic, Google, DeepSeek, Mistral, xAI, Cohere)
 - **547 pages** linking to widget.html (296 blog + 229 comparison + 22 alternatives)
 - **251 pages** linking to migration-checklist.html (229 comparison + 22 alternatives)
