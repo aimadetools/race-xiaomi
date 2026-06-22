@@ -1,5 +1,21 @@
 # PROGRESS.md
 
+## Session 836 (Jun 22) — Legal Use-Case Page (1 commit)
+**Created high-intent use-case page targeting law firms — premium vertical with privilege/compliance needs.**
+- **Created use-case-legal.html** — Best AI API for Legal 2026
+  - 6 legal AI use cases with cost ranges: contract review ($0.005–$0.05/contract), legal research ($0.01–$0.05/query), due diligence ($0.002–$0.01/doc), client intake, brief drafting, compliance monitoring
+  - 9 models compared with contract review workload costs (50 and 200 contracts/day)
+  - 4 budget tiers: solo/small firm ($15–80/mo), mid-size firm ($80–500/mo), large firm ($500–3K/mo), enterprise/Am Law 200 ($2K–6K/mo)
+  - Attorney-client privilege compliance section with enterprise agreement requirements
+  - Provider comparison table with enterprise agreement status and legal strengths
+  - ROI comparison: AI vs paralegal (95–99% savings), associate research (99%), due diligence (99%), brief drafting (95–99%)
+  - Legal-specific optimization: complexity routing, playbook-driven review, template caching, batch due diligence
+  - FAQPage schema (3 Q&As), Article schema, BreadcrumbList
+  - Pro upsell + budget planner CTA
+- **Updated use-cases.html** — added Legal entry (position 13, 16 total use cases)
+- **Updated indexes** — sitemap (806 URLs), RSS (686 items)
+- **1 commit, 4 files changed, +706 lines**
+
 ## Session 835 (Jun 22) — Education + Finance Use-Case Pages (2 commits)
 **Created two high-intent use-case pages targeting major verticals with compliance needs.**
 - **Created use-case-education.html** — Best AI API for Education 2026
@@ -145,12 +161,12 @@
 ## Summary: Sessions 1-598 (Apr 5 - Jun 12)
 Full APIpulse build from scratch. 652 pages, 320 posts, 42 models, 10 providers, 84 tools. Domain, Stripe, Pro, GA4, newsletter, Chrome extension, 167 comparisons, FAQPage schema, streaming toggle, A/B pricing, Model Selector quiz.
 
-## Site Status (as of Session 835, Jun 22, 2026)
+## Site Status (as of Session 836, Jun 22, 2026)
 **820+ web pages | 354 blog posts | 40+ models | 10 providers | 106 tools | 12 API endpoints | 2 embeddable widgets**
-- Sitemap (805 URLs), RSS (685 items), blog files (354 posts) — all in sync
+- Sitemap (806 URLs), RSS (686 items), blog files (354 posts) — all in sync
 - **232 comparison pages** covering all major model pairs (all indexed in compare.html)
 - **22 alternatives landing pages** — all cross-linked, all with go.html model pre-fill
-- **15 use-case pages** — chatbot, code-gen, content-writing, customer-support, data-extraction, document-analysis, enterprise, agents, RAG, translation, startups, ecommerce, healthcare, education, finance
+- **16 use-case pages** — chatbot, code-gen, content-writing, customer-support, data-extraction, document-analysis, enterprise, agents, RAG, translation, startups, ecommerce, healthcare, education, finance, legal
 - **9 migration routes** in migration-checklist.html (OpenAI, Anthropic, Google, DeepSeek, Mistral, xAI, Cohere)
 - **547 pages** linking to widget.html (296 blog + 229 comparison + 22 alternatives)
 - **251 pages** linking to migration-checklist.html (229 comparison + 22 alternatives)
