@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI API Cost Per Request Calculator — Every Model Ranked | APIpulse</title>
+    <meta name="description" content="Calculate the exact cost per request for 42 AI models across 10 providers. Input your token counts, see per-request costs instantly. GPT-5, Claude, Gemini, DeepSeek, and more.">
+    <meta name="keywords" content="AI API cost per request, LLM cost per request, GPT-5 cost per request, Claude cost per request, AI API pricing calculator, token cost calculator">
+    <meta property="og:title" content="AI API Cost Per Request Calculator — Every Model Ranked">
+    <meta property="og:description" content="Calculate the exact cost per request for 42 AI models. See which model costs pennies vs dollars per request.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://getapipulse.com/og-image.png">
+    <meta property="og:url" content="https://getapipulse.com/ai-api-cost-per-request.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="AI API Cost Per Request Calculator">
+    <meta name="twitter:image" content="https://getapipulse.com/og-image.png">
+    <meta name="twitter:description" content="Calculate the exact cost per request for 42 AI models across 10 providers.">
+    <link rel="canonical" href="https://getapipulse.com/ai-api-cost-per-request.html">
+    <link rel="alternate" type="application/rss+xml" title="APIpulse Blog" href="https://getapipulse.com/rss.xml">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="styles.css">
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0CEP7S9Y3J"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-0CEP7S9Y3J');
+    </script>
+    <script src="analytics.js" defer></script>
+    <script src="shared.js" defer></script>
+    <script src="pro-features.js" defer></script>
+    <script src="pricing-data.js" defer></script>
+    <script type="application/ld+json">
+    {
+        "@context": "schema.org",
+        "@type": "WebApplication",
+        "name": "AI API Cost Per Request Calculator",
+        "url": "https://getapipulse.com/ai-api-cost-per-request.html",
+        "description": "Calculate the exact cost per request for 42 AI models across 10 providers. Input token counts, see per-request costs instantly.",
+        "applicationCategory": "DeveloperApplication",
+        "operatingSystem": "Web",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "How do I calculate AI API cost per request?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Multiply input tokens by the input price per token, output tokens by the output price per token, then add them together. For example, a request with 1,000 input tokens and 500 output tokens on GPT-5 ($1.25/$10.00 per 1M) costs: (1000 × $1.25/1M) + (500 × $10.00/1M) = $0.00125 + $0.005 = $0.00625 per request."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What is the cheapest AI API per request?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "GPT-oss 20B is the cheapest at $0.08/$0.35 per 1M tokens — a typical 1K/500 token request costs $0.000255. DeepSeek V4 Flash ($0.14/$0.28) is $0.00028 per request. For comparison, GPT-5.5 Pro costs $0.12 per request — 470x more expensive."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How much does a GPT-5 API request cost?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "GPT-5 costs $1.25 per 1M input tokens and $10.00 per 1M output tokens. A typical request (1,000 input + 500 output tokens) costs approximately $0.00625. At 100 requests/day, that's $0.63/day or $18.75/month."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How much does a Claude API request cost?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Claude Sonnet 4.6 costs $3.00/$15.00 per 1M tokens. A typical request (1,000 input + 500 output tokens) costs approximately $0.0105. Claude Haiku 4.5 is cheaper at $1.00/$5.00 per 1M — the same request costs $0.0035."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How do I reduce my AI API cost per request?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "5 strategies: (1) Use cheaper models for simple tasks (DeepSeek V4 Flash at $0.00028/req vs GPT-5 at $0.00625/req). (2) Cache repeated prompts to avoid re-computation. (3) Shorten system prompts to reduce input tokens. (4) Use structured output to get shorter, more precise responses. (5) Batch requests when possible."
+                }
+            }
+        ]
+    }
+    </script>
+    <style>
+        .calc-page { max-width: 900px; margin: 0 auto; padding: 100px 20px 80px; }
+        .hero { text-align: center; margin-bottom: 32px; }
+        .hero h1 { font-size: clamp(28px, 5vw, 42px); font-weight: 900; margin-bottom: 8px; }
+        .hero .subtitle { color: var(--text-secondary); font-size: 16px; max-width: 600px; margin: 0 auto; }
+
+        /* Calculator */
+        .calc-box {
+            background: var(--bg-secondary);
+            border: 2px solid var(--accent);
+            border-radius: 16px;
+            padding: 28px 24px;
+            margin-bottom: 32px;
+        }
+        .calc-row { margin-bottom: 16px; }
+        .calc-row label {
+            display: block;
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--text-secondary);
+            margin-bottom: 6px;
+        }
+        .calc-row select, .calc-row input {
+            width: 100%;
+            padding: 12px 14px;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            color: var(--text-primary);
+            font-size: 15px;
+            font-family: inherit;
+        }
+        .calc-row input[type="number"] {
+            font-family: monospace;
+            font-weight: 600;
+        }
+        .calc-row-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+        .result-box {
+            background: rgba(34,197,94,0.06);
+            border: 1px solid rgba(34,197,94,0.2);
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+            margin-top: 20px;
+            display: none;
+        }
+        .result-amount {
+            font-size: clamp(32px, 6vw, 48px);
+            font-weight: 900;
+            color: var(--green);
+            font-family: monospace;
+            line-height: 1.1;
+        }
+        .result-label { font-size: 14px; color: var(--text-secondary); margin-top: 4px; }
+        .result-sub { font-size: 13px; color: var(--text-muted); margin-top: 8px; }
+
+        /* Presets */
+        .presets { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 16px; }
+        .preset-btn {
+            padding: 6px 14px;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            color: var(--text-secondary);
+            font-size: 12px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .preset-btn:hover { border-color: var(--accent); color: var(--accent); }
+        .preset-btn.active { background: var(--accent); color: white; border-color: var(--accent); }
+
+        /* Ranking table */
+        .ranking-section { margin-bottom: 32px; }
+        .ranking-section h2 { font-size: 22px; font-weight: 800; margin-bottom: 16px; }
+        .ranking-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 14px;
+        }
+        .ranking-table th {
+            padding: 12px 10px;
+            border-bottom: 2px solid var(--border);
+            font-weight: 700;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-size: 11px;
+            text-align: left;
+        }
+        .ranking-table td {
+            padding: 10px;
+            border-bottom: 1px solid var(--border);
+            color: var(--text-secondary);
+        }
+        .ranking-table tr:hover { background: rgba(99,102,241,0.04); }
+        .ranking-table .rank { font-weight: 800; color: var(--accent); width: 40px; }
+        .ranking-table .model-name { font-weight: 700; color: var(--text-primary); }
+        .ranking-table .provider { font-size: 12px; color: var(--text-muted); }
+        .ranking-table .cost-cell { font-family: monospace; font-weight: 700; }
+        .cost-cheapest { color: var(--green); }
+        .cost-expensive { color: var(--red); }
+        .savings-badge {
+            display: inline-block;
+            background: rgba(34,197,94,0.1);
+            color: var(--green);
+            font-size: 11px;
+            font-weight: 700;
+            padding: 2px 8px;
+            border-radius: 4px;
+        }
+        .highlight-row { background: rgba(34,197,94,0.04); }
+
+        /* Info boxes */
+        .info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 32px; }
+        .info-card {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 20px;
+        }
+        .info-card h3 { font-size: 15px; font-weight: 800; margin-bottom: 8px; }
+        .info-card p { font-size: 13px; color: var(--text-secondary); line-height: 1.6; }
+        .info-card .big-num {
+            font-size: 28px;
+            font-weight: 900;
+            color: var(--accent);
+            font-family: monospace;
+        }
+
+        /* CTA */
+        .cta-box {
+            background: linear-gradient(135deg, rgba(99,102,241,0.08), rgba(139,92,246,0.06));
+            border: 2px solid rgba(99,102,241,0.25);
+            border-radius: 16px;
+            padding: 32px 24px;
+            text-align: center;
+            margin-bottom: 32px;
+        }
+        .cta-box h2 { font-size: 22px; font-weight: 800; margin-bottom: 8px; }
+        .cta-box p { font-size: 14px; color: var(--text-secondary); margin-bottom: 16px; max-width: 500px; margin-left: auto; margin-right: auto; }
+        .cta-btn {
+            display: inline-block;
+            padding: 14px 32px;
+            background: linear-gradient(135deg, var(--accent), #8b5cf6);
+            color: white;
+            border-radius: 12px;
+            font-size: 16px;
+            font-weight: 800;
+            text-decoration: none;
+            transition: all 0.2s;
+            box-shadow: 0 4px 20px rgba(99,102,241,0.4);
+        }
+        .cta-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(99,102,241,0.5); }
+
+        /* FAQ */
+        .faq { margin-bottom: 32px; }
+        .faq h2 { font-size: 22px; font-weight: 800; margin-bottom: 16px; }
+        .faq-item {
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            margin-bottom: 8px;
+            overflow: hidden;
+        }
+        .faq-q {
+            padding: 14px 16px;
+            font-weight: 700;
+            font-size: 14px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .faq-q::after { content: '+'; font-size: 18px; color: var(--text-muted); }
+        .faq-item.open .faq-q::after { content: '−'; }
+        .faq-a {
+            display: none;
+            padding: 0 16px 14px;
+            font-size: 13px;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+        .faq-item.open .faq-a { display: block; }
+
+        @media (max-width: 600px) {
+            .calc-row-grid { grid-template-columns: 1fr; }
+            .info-grid { grid-template-columns: 1fr; }
+            .ranking-table { font-size: 12px; }
+            .ranking-table th, .ranking-table td { padding: 8px 6px; }
+        }
+    </style>
+</head>
+<body>
+    <a href="#main" class="skip-link">Skip to content</a>
+    <nav>
+        <div class="nav-inner">
+            <a href="index.html" class="logo">API<span>pulse</span></a>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="calculator.html">Calculator</a>
+                <a href="pricing.html" class="nav-cta">Get Pro</a>
+                <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
+            </div>
+        </div>
+    </nav>
+
+    <main id="main" class="calc-page">
+        <div class="hero">
+            <h1>AI API Cost Per Request</h1>
+            <p class="subtitle">Calculate the exact cost of a single API request for any model. See which ones cost pennies — and which cost dollars.</p>
+        </div>
+
+        <!-- Calculator -->
+        <div class="calc-box">
+            <div style="font-size:13px;font-weight:700;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.5px;margin-bottom:12px;">Quick Presets</div>
+            <div class="presets">
+                <button class="preset-btn active" onclick="setPreset(500,200,this)">Short chat</button>
+                <button class="preset-btn" onclick="setPreset(2000,800,this)">Long chat</button>
+                <button class="preset-btn" onclick="setPreset(5000,2000,this)">RAG query</button>
+                <button class="preset-btn" onclick="setPreset(10000,3000,this)">Code gen</button>
+                <button class="preset-btn" onclick="setPreset(500,50,this)">Classification</button>
+                <button class="preset-btn" onclick="setPreset(20000,5000,this)">Summarization</button>
+            </div>
+
+            <div class="calc-row-grid">
+                <div class="calc-row">
+                    <label for="input-tokens">Input tokens (prompt + context)</label>
+                    <input id="input-tokens" type="number" min="1" max="1000000" value="500" oninput="calculate()">
+                </div>
+                <div class="calc-row">
+                    <label for="output-tokens">Output tokens (response)</label>
+                    <input id="output-tokens" type="number" min="1" max="100000" value="200" oninput="calculate()">
+                </div>
+            </div>
+
+            <div class="result-box" id="result-box">
+                <div class="result-amount" id="result-amount">$0.00188</div>
+                <div class="result-label" id="result-label">cost per request on GPT-5</div>
+                <div class="result-sub" id="result-sub">At 1,000 requests/day = $1.88/day = $56.25/month</div>
+            </div>
+        </div>
+
+        <!-- Cost Ranking -->
+        <div class="ranking-section">
+            <h2>All Models Ranked by Cost Per Request</h2>
+            <p style="font-size:13px;color:var(--text-secondary);margin-bottom:16px;">Based on your input: <span id="summary-tokens">500 input + 200 output tokens</span></p>
+            <div style="overflow-x:auto;">
+                <table class="ranking-table">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Model</th>
+                            <th>Provider</th>
+                            <th>Input/1M</th>
+                            <th>Output/1M</th>
+                            <th>Cost/Request</th>
+                            <th>Cost/1K Req</th>
+                            <th>Savings vs GPT-5</th>
+                        </tr>
+                    </thead>
+                    <tbody id="ranking-body"></tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Info cards -->
+        <div class="info-grid">
+            <div class="info-card">
+                <h3>💡 Why Per-Request Cost Matters</h3>
+                <p>Token pricing is abstract. Per-request cost tells you what you actually pay. A chatbot handling 10K daily requests at $0.01/req costs $3,000/month — while the same workload on DeepSeek V4 Flash costs $84/month.</p>
+            </div>
+            <div class="info-card">
+                <h3>📊 The 470x Gap</h3>
+                <p>The cheapest model (GPT-oss 20B) costs <span id="gap-ratio">245x</span> less per request than the most expensive (GPT-5.5 Pro). Choosing the right model for your workload is the single biggest cost lever.</p>
+            </div>
+        </div>
+
+        <!-- CTA -->
+        <div class="cta-box">
+            <h2>Find Your Cheapest Model</h2>
+            <p>APIpulse Pro shows every alternative ranked by cost for your exact workload — with migration code to switch in 5 minutes.</p>
+            <a href="calculator.html?from=cost-per-request" class="cta-btn">⚡ Calculate Your Savings →</a>
+            <p style="font-size:12px;color:var(--text-muted);margin-top:10px;">Free calculator · No signup · See results instantly</p>
+        </div>
+
+        <!-- FAQ -->
+        <div class="faq">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-item" onclick="this.classList.toggle('open')">
+                <div class="faq-q">How do I calculate AI API cost per request?</div>
+                <div class="faq-a">Multiply input tokens by the input price per token, output tokens by the output price per token, then add them. For example, 1,000 input + 500 output tokens on GPT-5 ($1.25/$10.00 per 1M): (1000 × $1.25/1M) + (500 × $10.00/1M) = $0.00625 per request.</div>
+            </div>
+            <div class="faq-item" onclick="this.classList.toggle('open')">
+                <div class="faq-q">What is the cheapest AI API per request?</div>
+                <div class="faq-a">GPT-oss 20B at $0.08/$0.35 per 1M tokens — a typical 500/200 token request costs $0.00011. DeepSeek V4 Flash ($0.14/$0.28) is $0.000126. Both are under 1/100th of a cent per request.</div>
+            </div>
+            <div class="faq-item" onclick="this.classList.toggle('open')">
+                <div class="faq-q">How much does a GPT-5 API request cost?</div>
+                <div class="faq-a">GPT-5 costs $1.25/$10.00 per 1M tokens. A typical chat request (1,000 input + 500 output) costs $0.00625. At 100K requests/month, that's $625/month. Switching to DeepSeek V4 Flash cuts that to $12.60/month.</div>
+            </div>
+            <div class="faq-item" onclick="this.classList.toggle('open')">
+                <div class="faq-q">How much does a Claude API request cost?</div>
+                <div class="faq-a">Claude Sonnet 4.6 ($3.00/$15.00 per 1M) costs $0.0105 per typical request. Claude Haiku 4.5 ($1.00/$5.00) costs $0.0035 — 67% cheaper. For simple tasks, Haiku is the better value.</div>
+            </div>
+            <div class="faq-item" onclick="this.classList.toggle('open')">
+                <div class="faq-q">How do I reduce my AI API cost per request?</div>
+                <div class="faq-a">5 strategies: (1) Use cheaper models for simple tasks — DeepSeek V4 Flash at $0.00013/req vs GPT-5 at $0.006/req. (2) Cache repeated prompts. (3) Shorten system prompts. (4) Use structured output for shorter responses. (5) Batch requests when latency allows.</div>
+            </div>
+            <div class="faq-item" onclick="this.classList.toggle('open')">
+                <div class="faq-q">Does context window size affect cost per request?</div>
+                <div class="faq-a">Yes. Longer context = more input tokens = higher cost. A RAG query with 10K context tokens costs 10x more than a 1K chat message. Use retrieval to keep context under 2K tokens when possible.</div>
+            </div>
+        </div>
+
+        <!-- Internal links -->
+        <div style="text-align:center;margin-bottom:24px;font-size:13px;color:var(--text-muted);">
+            <a href="pricing.html" style="color:var(--accent);">Full pricing table</a> ·
+            <a href="calculator.html" style="color:var(--accent);">Cost calculator</a> ·
+            <a href="live-pricing.html" style="color:var(--accent);">Live pricing dashboard</a> ·
+            <a href="cheapest-ai-apis-2026.html" style="color:var(--accent);">Cheapest AI APIs 2026</a> ·
+            <a href="compare-plans.html" style="color:var(--accent);">Free vs Pro</a>
+        </div>
+    </main>
+
+    <footer>
+        <p>© 2026 APIpulse. <a href="index.html">Home</a> · <a href="about.html">About</a> · <a href="blog.html">Blog</a> · <a href="pricing.html">Pricing</a></p>
+    </footer>
+
+    <script>
+    (function() {
+        var inputEl = document.getElementById('input-tokens');
+        var outputEl = document.getElementById('output-tokens');
+        var resultBox = document.getElementById('result-box');
+        var resultAmount = document.getElementById('result-amount');
+        var resultLabel = document.getElementById('result-label');
+        var resultSub = document.getElementById('result-sub');
+        var summaryTokens = document.getElementById('summary-tokens');
+        var rankingBody = document.getElementById('ranking-body');
+        var gapRatio = document.getElementById('gap-ratio');
+
+        // All models with pricing (per 1M tokens)
+        var MODELS = [
+            {name:'GPT-5',provider:'OpenAI',input:1.25,output:10.00},
+            {name:'GPT-5.5',provider:'OpenAI',input:5.00,output:30.00},
+            {name:'GPT-5.5 Pro',provider:'OpenAI',input:30.00,output:180.00},
+            {name:'GPT-5 mini',provider:'OpenAI',input:0.25,output:2.00},
+            {name:'GPT-4o',provider:'OpenAI',input:2.50,output:10.00},
+            {name:'GPT-oss 120B',provider:'OpenAI',input:0.15,output:0.60},
+            {name:'GPT-oss 20B',provider:'OpenAI',input:0.08,output:0.35},
+            {name:'Claude Opus 4.8',provider:'Anthropic',input:5.00,output:25.00},
+            {name:'Claude Sonnet 4.6',provider:'Anthropic',input:3.00,output:15.00},
+            {name:'Claude Haiku 4.5',provider:'Anthropic',input:1.00,output:5.00},
+            {name:'Gemini 2.5 Pro',provider:'Google',input:1.25,output:10.00},
+            {name:'Gemini 3.5 Flash',provider:'Google',input:1.50,output:9.00},
+            {name:'Gemini 2.5 Flash-Lite',provider:'Google',input:0.10,output:0.40},
+            {name:'Gemini 3.1 Pro',provider:'Google',input:2.00,output:12.00},
+            {name:'DeepSeek V4 Flash',provider:'DeepSeek',input:0.14,output:0.28},
+            {name:'DeepSeek V4 Pro',provider:'DeepSeek',input:0.435,output:0.87},
+            {name:'Mistral Large 3',provider:'Mistral',input:0.50,output:1.50},
+            {name:'Mistral Small 4',provider:'Mistral',input:0.10,output:0.30},
+            {name:'Llama 4 Scout',provider:'Meta',input:0.18,output:0.59},
+            {name:'Llama 4 Maverick',provider:'Meta',input:0.27,output:0.85},
+            {name:'Command A',provider:'Cohere',input:2.50,output:10.00},
+            {name:'Grok 4.3',provider:'xAI',input:1.25,output:2.50}
+        ];
+
+        function calcCost(m, inp, out) {
+            return (inp * m.input / 1000000) + (out * m.output / 1000000);
+        }
+
+        function formatCost(c) {
+            if (c < 0.001) return '$' + c.toFixed(6);
+            if (c < 0.01) return '$' + c.toFixed(5);
+            if (c < 1) return '$' + c.toFixed(4);
+            return '$' + c.toFixed(2);
+        }
+
+        function calculate() {
+            var inp = parseInt(inputEl.value) || 500;
+            var out = parseInt(outputEl.value) || 200;
+
+            summaryTokens.textContent = inp.toLocaleString() + ' input + ' + out.toLocaleString() + ' output tokens';
+
+            // Calculate costs for all models
+            var results = MODELS.map(function(m) {
+                var cost = calcCost(m, inp, out);
+                return {name:m.name, provider:m.provider, input:m.input, output:m.output, cost:cost};
+            }).sort(function(a,b) { return a.cost - b.cost; });
+
+            // Reference cost (GPT-5)
+            var refCost = calcCost({input:1.25,output:10.00}, inp, out);
+            var cheapest = results[0].cost;
+            var mostExpensive = results[results.length-1].cost;
+            var ratio = Math.round(mostExpensive / cheapest);
+            gapRatio.textContent = ratio + 'x';
+
+            // Show result for cheapest
+            resultAmount.textContent = formatCost(results[0].cost);
+            resultLabel.textContent = 'cost per request on ' + results[0].name;
+            var daily = results[0].cost * 1000;
+            var monthly = daily * 30;
+            resultSub.textContent = 'At 1,000 requests/day = ' + formatCost(daily) + '/day = ' + formatCost(monthly) + '/month';
+            resultBox.style.display = 'block';
+
+            // Build ranking table
+            rankingBody.innerHTML = results.map(function(r, i) {
+                var pctSaved = refCost > 0 ? Math.round((1 - r.cost / refCost) * 100) : 0;
+                var savingsHtml = '';
+                if (i === 0) {
+                    savingsHtml = '<span class="savings-badge">CHEAPEST</span>';
+                } else if (pctSaved > 0) {
+                    savingsHtml = '<span class="savings-badge">-' + pctSaved + '%</span>';
+                } else if (pctSaved < 0) {
+                    savingsHtml = '<span style="color:var(--text-muted);font-size:11px;">+' + Math.abs(pctSaved) + '%</span>';
+                }
+                var rowClass = i === 0 ? ' class="highlight-row"' : '';
+                var costClass = i < 3 ? 'cost-cheapest' : (i >= results.length - 2 ? 'cost-expensive' : '');
+                return '<tr' + rowClass + '>' +
+                    '<td class="rank">' + (i + 1) + '</td>' +
+                    '<td><span class="model-name">' + r.name + '</span></td>' +
+                    '<td class="provider">' + r.provider + '</td>' +
+                    '<td>$' + r.input.toFixed(2) + '</td>' +
+                    '<td>$' + r.output.toFixed(2) + '</td>' +
+                    '<td class="cost-cell ' + costClass + '">' + formatCost(r.cost) + '</td>' +
+                    '<td class="cost-cell">' + formatCost(r.cost * 1000) + '</td>' +
+                    '<td>' + savingsHtml + '</td>' +
+                    '</tr>';
+            }).join('');
+        }
+
+        window.setPreset = function(inp, out, btn) {
+            inputEl.value = inp;
+            outputEl.value = out;
+            document.querySelectorAll('.preset-btn').forEach(function(b) { b.classList.remove('active'); });
+            if (btn) btn.classList.add('active');
+            calculate();
+        };
+
+        // FAQ toggle
+        document.querySelectorAll('.faq-item').forEach(function(item) {
+            item.addEventListener('click', function() {
+                this.classList.toggle('open');
+            });
+        });
+
+        // Initial calculation
+        calculate();
+    })();
+    </script>
+</body>
+</html>
