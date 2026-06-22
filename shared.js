@@ -1212,27 +1212,6 @@ function renderPricingFreshness(containerId) {
         'Pricing updated ' + PRICING_LAST_UPDATED + '</span>';
 }
 
-// Product Hunt launch banner (auto-shows May 5-9, 2026) — expired
-(function() {
-    return; // Banner period ended
-    if (localStorage.getItem('apipulse_ph_banner_dismissed')) return;
-    var now = new Date();
-    var launchStart = new Date('2026-05-05T00:00:00');
-    var launchEnd = new Date('2026-05-10T00:00:00');
-    if (now < launchStart || now >= launchEnd) return;
-    if (window.location.pathname.includes('ph.html')) return;
-
-    var banner = document.createElement('div');
-    banner.id = 'ph-launch-banner';
-    banner.style.cssText = 'position:fixed;top:0;left:0;right:0;z-index:200;background:linear-gradient(135deg,#6366f1,#818cf8);color:white;padding:10px 16px;display:flex;align-items:center;justify-content:center;gap:12px;font-size:14px;font-weight:600;box-shadow:0 2px 12px rgba(99,102,241,0.3);';
-    banner.innerHTML = '<span>We just launched on Product Hunt!</span>' +
-        '<a href="ph.html" style="background:white;color:#6366f1;padding:6px 16px;border-radius:6px;font-size:13px;font-weight:700;text-decoration:none;">See Launch Page</a>' +
-        '<a href="https://www.producthunt.com/posts/apipulse" target="_blank" rel="noopener" style="background:rgba(255,255,255,0.2);color:white;padding:6px 16px;border-radius:6px;font-size:13px;font-weight:700;text-decoration:none;">Upvote on PH</a>' +
-        '<button onclick="document.getElementById(\'ph-launch-banner\').remove();localStorage.setItem(\'apipulse_ph_banner_dismissed\',\'1\');" style="background:none;border:none;color:rgba(255,255,255,0.7);font-size:18px;cursor:pointer;padding:0 4px;" aria-label="Dismiss">&times;</button>';
-    document.body.appendChild(banner);
-    // Push body content down so banner doesn't overlap nav
-    document.body.style.paddingTop = '44px';
-})();
 
 // Sticky Pro CTA bar — shows on scroll for non-pricing pages (respects A/B price variant)
 (function() {
