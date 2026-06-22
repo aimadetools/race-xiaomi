@@ -548,7 +548,7 @@
             <h3>Common Questions</h3>
             <div class="faq-item" onclick="this.classList.toggle('open')">
                 <div class="faq-q">Is this really a one-time payment?</div>
-                <div class="faq-a">Yes. $29 gets you lifetime access — no subscription, no recurring fees. The founding member price increases to $49 on July 12.</div>
+                <div class="faq-a" id="faq-price-answer">Yes. $29 gets you lifetime access — no subscription, no recurring fees. The founding member price increases to <span id="faq-future-price">$49</span> on July 12.</div>
             </div>
             <div class="faq-item" onclick="this.classList.toggle('open')">
                 <div class="faq-q">Can't I just check provider websites myself?</div>
@@ -631,6 +631,9 @@
             var badgeEl = document.getElementById('price-badge');
             if (wasEl) wasEl.textContent = '$' + futurePrice;
             if (badgeEl) badgeEl.textContent = 'Save ' + savingsPct + '%';
+            // Update FAQ future price to match variant
+            var faqFuture = document.getElementById('faq-future-price');
+            if (faqFuture) faqFuture.textContent = '$' + futurePrice;
 
             // Update Stripe links
             document.getElementById('buy-cta').href = stripeLink;
