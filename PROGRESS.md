@@ -1,5 +1,19 @@
 # PROGRESS.md
 
+## Session 820 (Jun 22) — Model Pre-fill Expansion (2 commits)
+**Extended go.html model pre-fill to migration checklist + all 22 alternatives pages.**
+- **Commit 1: Migration checklist model pre-fill**
+  - Added GO_MODEL_MAP to migration-checklist.html mapping target providers to go.html model values
+  - go.html CTA links auto-update when user selects a migration route
+  - Step 4 Pro gate, completion celebration, and bottom CTA all get `?from=migrate_XXX&spend=500&model=TARGET`
+- **Commit 2: Alternatives pages model pre-fill**
+  - Extended `prefillFromPageContext()` in shared.js to handle `*-alternatives.html` pages
+  - Extracts model slug from filename, looks up in GO_MODEL_MAP
+  - Works for all 22 alternatives pages automatically (gpt5 → openai-gpt5, opus48 → anthropic-opus48, etc.)
+  - Falls back to closest match for models not in go.html dropdown
+- **Total go.html model pre-fill coverage:** 232 comparison pages + 351 blog posts + 22 alternatives pages + migration checklist = **606 pages**
+- **2 commits, 2 files changed, +34 lines**
+
 ## Session 819 (Jun 22) — Widget Distribution Push (1 commit)
 **Created full distribution kit for the embeddable widget — FAQPage schema, dev.to article, Show HN draft, and 18-target submission checklist.**
 - **Added FAQPage schema to widget.html** — 5 Q&As covering embed process, pricing, compatibility, models, customization
@@ -63,15 +77,15 @@
 ## Summary: Sessions 1-598 (Apr 5 - Jun 12)
 Full APIpulse build from scratch. 652 pages, 320 posts, 42 models, 10 providers, 84 tools. Domain, Stripe, Pro, GA4, newsletter, Chrome extension, 167 comparisons, FAQPage schema, streaming toggle, A/B pricing, Model Selector quiz.
 
-## Site Status (as of Session 819, Jun 22, 2026)
+## Site Status (as of Session 820, Jun 22, 2026)
 **800+ web pages | 351 blog posts | 42 models | 10 providers | 105 tools | 12 API endpoints | 2 embeddable widgets**
 - Sitemap (801 URLs), RSS (673 items), blog files (351 posts) — all in sync
 - **232 comparison pages** covering all major model pairs (all indexed in compare.html)
-- **22 alternatives landing pages** — all cross-linked
+- **22 alternatives landing pages** — all cross-linked, all with go.html model pre-fill
 - **9 migration routes** in migration-checklist.html (OpenAI, Anthropic, Google, DeepSeek, Mistral, xAI, Cohere)
 - **547 pages** linking to widget.html (296 blog + 229 comparison + 22 alternatives)
 - **251 pages** linking to migration-checklist.html (229 comparison + 22 alternatives)
-- **go.html links pre-filled** — 232 comparison pages + 351 blog posts auto-detect model (Session 818)
+- **go.html links pre-filled** — 606 pages auto-detect model: 232 comparisons + 351 blogs + 22 alternatives + migration checklist (Sessions 818, 820)
 - **Free trial as PRIMARY CTA** — "Try Pro Free for 24 Hours" across conversion funnel
 - **A/B pricing test LIVE** — $19 vs $29 (50/50)
 - **Exit popup A/B test LIVE** — Loss-framed vs social-proof copy
