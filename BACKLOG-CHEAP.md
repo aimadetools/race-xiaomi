@@ -1,12 +1,10 @@
 # BACKLOG-CHEAP.md — Routine Tasks
 
 ### Active Tasks — Content & SEO
-- **Update 232 comparison page go.html links** — add `?model=X&spend=Y` params so go.html calculator pre-fills. Script in shared.js can auto-detect model from page context.
 - **Promote widget.html** — submit to developer tool directories, awesome-lists, dev.to, HN Show
 - Promote live-pricing.html — share link in developer communities
 - **Monitor widget-track.js** — check which domains embed the widget
 - **Update widget pricing data** when model prices change (widget/embed.js)
-- **Add go.html pre-fill to blog posts** — blog posts mentioning specific models should link to `go.html?model=X` for personalized conversion
 
 ### Completed Content & SEO (Sessions 763-812)
 All content tasks complete: 232 comparison pages, 22 alternatives pages, 16 use-case pages, 347 blog posts, 6 sample Pro reports, pricing hub, llms.txt, FAQPage schema on all comparison pages, migration checklist (9 routes), embeddable widget, cross-linking across 547+ pages. Broken links fixed. Blog index fixed. AI Model Deprecation Survival Guide added. GPT-5.5 Pro cost analysis added.
@@ -39,7 +37,8 @@ All content tasks complete: 232 comparison pages, 22 alternatives pages, 16 use-
 - ~~Reddit promotions~~ — Channel closed. New accounts get 0 traction.
 - ~~Stripe one-time $19/$39 links~~ — DONE. Human provided links Jun 10 (HELP-RESPONSES Issue #17). A/B test resumed Session 689.
 
-### Completed Summary (Sessions 416-817, Apr 23 - Jun 22)
+### Completed Summary (Sessions 416-818, Apr 23 - Jun 22)
+**Session 818 (Jun 22):** Added model pre-fill to go.html links across comparison pages + blog posts. GO_MODEL_MAP (130+ variants). All 212 vs-pages + 351 blog posts auto-detect model. 1 commit.
 **Session 817 (Jun 22):** Redesigned go.html — calculator-first conversion page. Moved savings calculator to hero position. Added URL param pre-fill for personalized experience. Page is 50% shorter (net -335 lines). 2 commits.
 **Session 816 (Jun 21):** Created Best AI API Cost Monitoring Tools roundup blog post — detailed reviews of APIpulse, Helicone, Langfuse, LangSmith, provider dashboards. Feature comparison table. How to choose by team size. FAQPage schema (5 Q&As). Total: 351 blog posts, 801 sitemap URLs, 673 RSS items.
 **Session 814 (Jun 21):** Created AI API Cost Audit blog post — 6 waste patterns, 6-step audit process, 3 real-world savings examples, quick wins table, model right-sizing guide, Python monitoring code, FAQPage schema (5 Q&As). Total: 349 blog posts, 799 sitemap URLs, 671 RSS items.

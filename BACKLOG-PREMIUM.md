@@ -21,7 +21,7 @@ All Week 9 tasks COMPLETE except items 22-24 (blocked on human/GA4):
 
 ### Week 10-12 (June 22-July 12) — OPTIMIZE & SUSTAIN
 25. ✅ **go.html calculator-first redesign** (Session 817) — Moved savings calculator to hero position. Added URL param pre-fill. Page is 50% shorter.
-26. **Update comparison pages to pass model/spend to go.html** — 232 pages should link to `go.html?model=X&spend=Y` for personalized experience. Can be done via shared.js script.
+26. ✅ **Update comparison pages to pass model/spend to go.html** (Session 818) — 232 comparison pages + 351 blog posts now auto-detect model and pre-fill go.html links. GO_MODEL_MAP covers 130+ model variants. Works with A/B test routing.
 27. Analyze A/B data + conversion data — Which price wins? Which pages convert? Optimize funnel. (needs GA4)
 28. Community feedback integration — Act on Reddit/HN feedback.
 29. **Distribute embeddable widget** — Submit widget.html to developer tool directories, awesome-lists, dev communities. Track embeds via widget-track.js.
