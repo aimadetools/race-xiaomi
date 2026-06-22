@@ -717,18 +717,16 @@
                 savingsPayback.textContent = '⚡ $' + price + ' Pro pays for itself in ' + Math.ceil(paybackDays / 30) + ' months';
             }
 
-            // Update CTAs with personalized savings
-            if (userInteracted) {
-                ['main-cta', 'buy-cta', 'buy-cta-bottom'].forEach(function(id) {
-                    var el = document.getElementById(id);
-                    if (!el) return;
-                    if (id === 'main-cta') {
-                        el.textContent = '⚡ Save $' + annualSaving.toLocaleString() + '/yr — Try Pro Free';
-                    } else {
-                        el.innerHTML = 'Save $' + annualSaving.toLocaleString() + '/yr — Get Pro for $' + price;
-                    }
-                });
-            }
+            // Update CTAs with personalized savings (always, not just after interaction)
+            ['main-cta', 'buy-cta', 'buy-cta-bottom'].forEach(function(id) {
+                var el = document.getElementById(id);
+                if (!el) return;
+                if (id === 'main-cta') {
+                    el.textContent = '⚡ Save $' + annualSaving.toLocaleString() + '/yr — Try Pro Free';
+                } else {
+                    el.innerHTML = 'Save $' + annualSaving.toLocaleString() + '/yr — Get Pro for $' + price;
+                }
+            });
 
             // Build table
             altsBody.innerHTML = results.map(function(r, i) {
