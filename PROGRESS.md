@@ -1,92 +1,28 @@
 # PROGRESS.md
 
-## Session 840 (Jun 22) — Real Estate Use-Case Page (1 commit)
-**Created high-intent use-case page targeting real estate — premium vertical with Fair Housing Act compliance needs.**
-- **Created use-case-real-estate.html** — Best AI API for Real Estate 2026
-  - 6 real estate AI use cases: listing descriptions ($0.0002–$0.006), lead qualification ($0.0004–$0.004), CMAs ($0.003–$0.03), document processing, virtual staging descriptions, tenant screening
-  - 9 models compared with listing description workload costs (50 and 200 listings/day)
-  - 4 budget tiers: solo agent ($10–50/mo), boutique brokerage ($50–300/mo), regional brokerage ($300–2K/mo), national franchise/proptech ($2K–8K/mo)
-  - Fair Housing Act compliance section with AI content guidelines
-  - SOC 2 provider comparison for handling client financial data
-  - ROI comparison: listing descriptions (95–99%), lead qualification (97–99%), CMAs (99%+), document processing (99%+)
-  - FAQPage schema (3 Q&As), Article schema, BreadcrumbList
-- **Updated use-cases.html** — added Real Estate card (position 19, 19 total use cases)
-- **Updated indexes** — sitemap (810 URLs), RSS (698 items)
-- **1 commit, 4 files changed, +720 lines**
+## Session 841 (Jun 22) — 3 New Use-Case Pages (1 commit)
+**Created high-intent use-case pages for Insurance, Logistics & Supply Chain, and Human Resources — three major verticals with strong commercial intent.**
+- **Created use-case-insurance.html** — Best AI API for Insurance 2026
+  - 6 insurance AI use cases: claims triage ($0.001–$0.008), underwriting ($0.002–$0.015), fraud detection ($0.003–$0.02), policy documents, customer FNOL, compliance review
+  - 9 models compared with claims triage workload costs (50 and 200 claims/day)
+  - 4 budget tiers: independent agent ($10–50/mo), regional carrier ($100–500/mo), national carrier ($500–3K/mo), global insurtech ($2K–8K/mo)
+  - Regulatory compliance section (NAIC, GDPR, HIPAA), ROI comparison, FAQPage schema (3 Q&As)
+- **Created use-case-logistics.html** — Best AI API for Logistics & Supply Chain 2026
+  - 6 logistics AI use cases: route optimization ($0.001–$0.008), demand forecasting ($0.003–$0.025), document extraction ($0.0005–$0.005), customer inquiries, warehouse analysis, supplier reports
+  - 9 models compared with document extraction workload costs (100 and 500 docs/day)
+  - 4 budget tiers: small fleet ($10–50/mo), regional 3PL ($100–500/mo), national provider ($500–3K/mo), global platform ($2K–8K/mo)
+  - ROI comparison, FAQPage schema (3 Q&As)
+- **Created use-case-hr.html** — Best AI API for Human Resources 2026
+  - 6 HR AI use cases: resume screening ($0.001–$0.008), engagement analysis ($0.002–$0.015), onboarding chatbot ($0.0004–$0.004), job descriptions, performance reviews, policy drafting
+  - 9 models compared with resume screening workload costs (50 and 200 resumes/day)
+  - 4 budget tiers: small business ($10–50/mo), mid-size company ($50–300/mo), enterprise ($300–2K/mo), global HR tech ($2K–8K/mo)
+  - Bias mitigation section (EEOC, ADA, GDPR), ROI comparison, FAQPage schema (3 Q&As)
+- **Updated use-cases.html** — added Insurance, Logistics, HR cards (position 20–22, 22 total use cases)
+- **Updated indexes** — sitemap (813 URLs), RSS (701 items)
+- **1 commit, 6 files changed, +2,175 lines**
 
-## Session 839 (Jun 22) — Manufacturing Use-Case + Calculator Fix (1 commit)
-**Created high-intent use-case page targeting manufacturing — major AI vertical with predictive maintenance and quality control.**
-- **Created use-case-manufacturing.html** — Best AI API for Manufacturing 2026
-  - 6 manufacturing AI use cases with cost ranges: predictive maintenance ($0.001–$0.008/analysis), quality control ($0.0005–$0.005/inspection), supply chain ($0.002–$0.02/forecast), production planning ($0.003–$0.025/plan), document processing, operator assistance
-  - 9 models compared with predictive maintenance workload costs (100 and 500 analyses/day)
-  - 4 budget tiers: small workshop ($10–80/mo), mid-size factory ($80–500/mo), large plant ($500–3K/mo), enterprise network ($1.5K–5K/mo)
-  - On-premise deployment options (DeepSeek, Mistral self-hostable; Google Vertex AI)
-  - OT/IT security section (IEC 62443, NIST frameworks)
-  - ROI comparison: AI vs traditional maintenance (95–99% savings), quality inspection (97–99%), demand forecasting (97–99%), production planning (98–99%)
-  - FAQPage schema (3 Q&As), Article schema, BreadcrumbList
-- **Fixed stale Gemini 2.0 Flash references** in calculator.html (replaced with Gemini 2.5 Flash-Lite and Gemini 3 Flash)
-- **Updated use-cases.html** — added Manufacturing card (position 18, 18 total use cases)
-- **Updated indexes** — sitemap (809 URLs), RSS (697 items)
-- **1 commit, 5 files changed, +733 lines**
-
-## Session 838 (Jun 22) — Calculator Widget + Conversion Fix (2 commits)
-**Created viral distribution tool + fixed conversion gap on 31 high-intent pages.**
-- **Created widget/calc-embed.js** — self-contained embeddable calculator widget
-  - 17 models across 7 providers (OpenAI, Anthropic, Google, DeepSeek, Mistral, Meta, xAI)
-  - Shadow DOM for style isolation, ~8KB gzipped, zero dependencies
-  - Two modes: floating (bottom-right corner) and inline (data attributes)
-  - Users select model, enter input/output tokens, see per-request and monthly cost
-  - "Compare all 42 models →" CTA links back to APIpulse (viral distribution)
-- **Created widget-calculator.html** — demo and documentation page
-  - Live demo of both floating and inline modes
-  - One-line install code with copy button
-  - Feature comparison: Calculator Widget vs Pricing Widget
-- **Created DISTRIBUTION-CALC-WIDGET.md** — distribution kit with social posts, directory targets
-- **Updated tools.html** — added calculator widget card (106 tools now)
-- **Updated widget.html** — cross-linked calculator widget
-- **Updated index.html** — added calculator widget to tools section
-- **Updated sitemap** (807 URLs), **RSS** (694 items)
-- **Fixed conversion gap** — added go.html Pro CTA to 31 high-intent pages (16 best-model-for + 15 use-case) that were missing conversion links
-  - Conversion funnel coverage increased from 57 to 88 pages (+54%)
-  - CTA block: "Stop Overpaying for AI APIs" with direct link to go.html
-- **2 commits, 38 files changed, +629 lines**
-
-## Summary: Sessions 828-837 (Jun 22) — Use-Case Blitz + Tools (10 sessions)
-10 sessions on Jun 22. Created 13 use-case pages (startups, ecommerce, healthcare, education, finance, legal, manufacturing, marketing, translation, AI agents, RAG, data extraction, document analysis). Created budget planner tool (best-ai-api-by-budget.html). Created AI API Cost Per Request Calculator. Fixed deprecated Gemini 2.0 Flash references. Fixed use-cases.html ItemList schema + missing RSS items. 12+ commits, 40+ files.
-- **Updated indexes** — use-cases.html (10 use cases), blog.html, sitemap (814 URLs), RSS (680 items)
-- **2 commits, 8 files changed, +956 lines**
-
-## Session 829 (Jun 22) — AI Agents + RAG Use-Case Pages (1 commit)
-**Created two high-intent use-case pages targeting underserved keywords.**
-- **Created use-case-agents.html** — Best AI API for AI Agents 2026
-  - Agent requirements: tool use, multi-step reasoning, 1M context, instruction following
-  - 8 models compared with realistic agent cost structure (5 calls/task, 3-10x chatbot cost)
-  - Budget tiers from $91/mo (DeepSeek V4 Flash) to $10K+/mo (GPT-5.5)
-  - Cost optimization strategies: model routing, caching, structured outputs, batch processing
-  - FAQPage schema (3 Q&As), Article schema, BreadcrumbList
-- **Created use-case-rag.html** — Best AI API for RAG Pipelines 2026
-  - Two-model architecture: embedding + generation cost breakdown
-  - 4 embedding models compared (OpenAI, Google, Cohere)
-  - 6 full RAG pipeline stacks from $13/mo (DeepSeek) to $768/mo (Claude Sonnet 4.6)
-  - RAG-specific optimization: chunk tuning, top-K, query caching, two-stage generation
-  - FAQPage schema (3 Q&As), Article schema, BreadcrumbList
-- **Updated indexes** — use-cases.html, sitemap (812 URLs), blog index, RSS (677 items)
-- **1 commit, 6 files changed, +1,286 lines**
-
-## Session 828 (Jun 22) — New Landing Page + Stale Model Fixes (3 commits)
-**Created AI API Cost Per Request Calculator, fixed deprecated Gemini 2.0 Flash references across site.**
-- **Created ai-api-cost-per-request.html** — interactive cost-per-request calculator
-  - 22 models ranked by cost/request with 6 quick presets (short chat, RAG, code gen, etc.)
-  - Full ranking table: cost/request, cost/1K requests, savings vs GPT-5
-  - FAQPage schema (6 Q&As), WebApplication schema
-  - Added to sitemap (795 URLs), blog index, RSS feed (675 items)
-  - Targets high-intent keyword "AI API cost per request"
-- **Fixed deprecated Gemini 2.0 Flash references** across 4 files
-  - go.html: replaced with Gemini 2.5 Flash-Lite (same $0.10/$0.40 pricing, current model)
-  - widget/embed.js: added Gemini 2.5 Flash-Lite as 15th model
-  - pricing-index.html: updated trending models set
-  - model-matrix.html: updated FAQPage schema answer
-- **3 commits, 6 files changed, +570/-4 lines**
+## Summary: Sessions 828-840 (Jun 22) — Use-Case Blitz + Tools (13 sessions)
+13 sessions on Jun 22. Created 19 use-case pages (startups, ecommerce, healthcare, education, finance, legal, manufacturing, marketing, translation, AI agents, RAG, data extraction, document analysis, content writing, customer support, enterprise, real estate). Created budget planner tool. Created AI API Cost Per Request Calculator. Created embeddable cost calculator widget. Fixed deprecated Gemini 2.0 Flash references. Fixed conversion gap on 31 high-intent pages. 15+ commits, 80+ files.
 
 ## Summary: Sessions 817-827 (Jun 22) — Conversion Optimization + Content
 11 sessions. go.html calculator-first redesign (817). Model pre-fill for 606 pages (818, 820). Widget distribution kit (819). Hidden costs blog upgrade (821). trial-expired.html fixes (822). ROI payback section (823). SEO audit — 7 broken links, sitemap cleanup (824). A/B pricing consistency fix (825). cheapest-ai-apis-2026.html landing page (826). Widget embed tracking (827). 18 commits, 60+ files.
@@ -106,12 +42,12 @@
 ## Summary: Sessions 1-598 (Apr 5 - Jun 12)
 Full APIpulse build from scratch. 652 pages, 320 posts, 42 models, 10 providers, 84 tools. Domain, Stripe, Pro, GA4, newsletter, Chrome extension, 167 comparisons, FAQPage schema, streaming toggle, A/B pricing, Model Selector quiz.
 
-## Site Status (as of Session 840, Jun 22, 2026)
-**821+ web pages | 354 blog posts | 40+ models | 10 providers | 107 tools | 12 API endpoints | 3 embeddable widgets**
-- Sitemap (810 URLs), RSS (698 items), blog files (354 posts) — all in sync
+## Site Status (as of Session 841, Jun 22, 2026)
+**824+ web pages | 354 blog posts | 40+ models | 10 providers | 107 tools | 12 API endpoints | 3 embeddable widgets**
+- Sitemap (813 URLs), RSS (701 items), blog files (354 posts) — all in sync
 - **232 comparison pages** covering all major model pairs (all indexed in compare.html)
 - **22 alternatives landing pages** — all cross-linked, all with go.html model pre-fill
-- **19 use-case pages** — chatbot, code-gen, content-writing, customer-support, data-extraction, document-analysis, enterprise, agents, RAG, translation, startups, ecommerce, healthcare, education, finance, legal, manufacturing, marketing, real-estate
+- **22 use-case pages** — chatbot, code-gen, content-writing, customer-support, data-extraction, document-analysis, enterprise, agents, RAG, translation, startups, ecommerce, healthcare, education, finance, legal, manufacturing, marketing, real-estate, insurance, logistics, HR
 - **9 migration routes** in migration-checklist.html (OpenAI, Anthropic, Google, DeepSeek, Mistral, xAI, Cohere)
 - **547 pages** linking to widget.html (296 blog + 229 comparison + 22 alternatives)
 - **251 pages** linking to migration-checklist.html (229 comparison + 22 alternatives)
