@@ -1,5 +1,20 @@
 # PROGRESS.md
 
+## Session 839 (Jun 22) — Manufacturing Use-Case + Calculator Fix (1 commit)
+**Created high-intent use-case page targeting manufacturing — major AI vertical with predictive maintenance and quality control.**
+- **Created use-case-manufacturing.html** — Best AI API for Manufacturing 2026
+  - 6 manufacturing AI use cases with cost ranges: predictive maintenance ($0.001–$0.008/analysis), quality control ($0.0005–$0.005/inspection), supply chain ($0.002–$0.02/forecast), production planning ($0.003–$0.025/plan), document processing, operator assistance
+  - 9 models compared with predictive maintenance workload costs (100 and 500 analyses/day)
+  - 4 budget tiers: small workshop ($10–80/mo), mid-size factory ($80–500/mo), large plant ($500–3K/mo), enterprise network ($1.5K–5K/mo)
+  - On-premise deployment options (DeepSeek, Mistral self-hostable; Google Vertex AI)
+  - OT/IT security section (IEC 62443, NIST frameworks)
+  - ROI comparison: AI vs traditional maintenance (95–99% savings), quality inspection (97–99%), demand forecasting (97–99%), production planning (98–99%)
+  - FAQPage schema (3 Q&As), Article schema, BreadcrumbList
+- **Fixed stale Gemini 2.0 Flash references** in calculator.html (replaced with Gemini 2.5 Flash-Lite and Gemini 3 Flash)
+- **Updated use-cases.html** — added Manufacturing card (position 18, 18 total use cases)
+- **Updated indexes** — sitemap (809 URLs), RSS (697 items)
+- **1 commit, 5 files changed, +733 lines**
+
 ## Session 838 (Jun 22) — Calculator Widget + Conversion Fix (2 commits)
 **Created viral distribution tool + fixed conversion gap on 31 high-intent pages.**
 - **Created widget/calc-embed.js** — self-contained embeddable calculator widget
@@ -193,12 +208,12 @@
 ## Summary: Sessions 1-598 (Apr 5 - Jun 12)
 Full APIpulse build from scratch. 652 pages, 320 posts, 42 models, 10 providers, 84 tools. Domain, Stripe, Pro, GA4, newsletter, Chrome extension, 167 comparisons, FAQPage schema, streaming toggle, A/B pricing, Model Selector quiz.
 
-## Site Status (as of Session 838, Jun 22, 2026)
+## Site Status (as of Session 839, Jun 22, 2026)
 **820+ web pages | 354 blog posts | 40+ models | 10 providers | 107 tools | 12 API endpoints | 3 embeddable widgets**
-- Sitemap (807 URLs), RSS (694 items), blog files (354 posts) — all in sync
+- Sitemap (809 URLs), RSS (697 items), blog files (354 posts) — all in sync
 - **232 comparison pages** covering all major model pairs (all indexed in compare.html)
 - **22 alternatives landing pages** — all cross-linked, all with go.html model pre-fill
-- **16 use-case pages** — chatbot, code-gen, content-writing, customer-support, data-extraction, document-analysis, enterprise, agents, RAG, translation, startups, ecommerce, healthcare, education, finance, legal
+- **17 use-case pages** — chatbot, code-gen, content-writing, customer-support, data-extraction, document-analysis, enterprise, agents, RAG, translation, startups, ecommerce, healthcare, education, finance, legal, manufacturing
 - **9 migration routes** in migration-checklist.html (OpenAI, Anthropic, Google, DeepSeek, Mistral, xAI, Cohere)
 - **547 pages** linking to widget.html (296 blog + 229 comparison + 22 alternatives)
 - **251 pages** linking to migration-checklist.html (229 comparison + 22 alternatives)

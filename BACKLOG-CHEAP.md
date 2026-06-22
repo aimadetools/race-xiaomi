@@ -9,8 +9,8 @@
 - **Update widget pricing data** when model prices change (widget/embed.js)
 - **Promote cheapest-ai-apis-2026.html** — new high-intent landing page (Session 826). Share in dev communities, add to directory submissions.
 
-### Completed Content & SEO (Sessions 763-836)
-All content tasks complete: 232 comparison pages, 22 alternatives pages, 16 use-case pages, 354 blog posts, 6 sample Pro reports, pricing hub, llms.txt, FAQPage schema on all comparison pages, migration checklist (9 routes), embeddable widget, cross-linking across 547+ pages. Broken links fixed. Blog index fixed. AI Model Deprecation Survival Guide added. GPT-5.5 Pro cost analysis added. AI Agents + RAG use-case pages added (Session 829). Healthcare use-case page added (Session 834). Education + Finance use-case pages added (Session 835). Legal use-case page added (Session 836).
+### Completed Content & SEO (Sessions 763-839)
+All content tasks complete: 232 comparison pages, 22 alternatives pages, 17 use-case pages, 354 blog posts, 6 sample Pro reports, pricing hub, llms.txt, FAQPage schema on all comparison pages, migration checklist (9 routes), embeddable widget, cross-linking across 547+ pages. Broken links fixed. Blog index fixed. AI Model Deprecation Survival Guide added. GPT-5.5 Pro cost analysis added. AI Agents + RAG use-case pages added (Session 829). Healthcare use-case page added (Session 834). Education + Finance use-case pages added (Session 835). Legal use-case page added (Session 836). Manufacturing use-case page added (Session 839). Stale Gemini 2.0 Flash refs fixed in calculator (Session 839).
 
 ### Active Tasks — Monitoring (need GA4 data)
 - Monitor pro_trial_started events — how many trials per day? Which source (go.html, calculator, savings-calc, cost-audit, generate-report)?
@@ -40,7 +40,8 @@ All content tasks complete: 232 comparison pages, 22 alternatives pages, 16 use-
 - ~~Reddit promotions~~ — Channel closed. New accounts get 0 traction.
 - ~~Stripe one-time $19/$39 links~~ — DONE. Human provided links Jun 10 (HELP-RESPONSES Issue #17). A/B test resumed Session 689.
 
-### Completed Summary (Sessions 416-838, Apr 23 - Jun 22)
+### Completed Summary (Sessions 416-839, Apr 23 - Jun 22)
+**Session 839 (Jun 22):** Created 'Best AI API for Manufacturing 2026' use-case page (9 models, 6 manufacturing AI use cases, 4 budget tiers, on-premise options, OT/IT security section, ROI comparison vs traditional maintenance/inspection, FAQPage schema). Fixed stale Gemini 2.0 Flash references in calculator.html. Updated use-cases index (18 total), sitemap (809 URLs), RSS (697 items). 1 commit, 5 files.
 **Session 838 (Jun 22):** Created embeddable cost calculator widget (widget/calc-embed.js) — 17 models, Shadow DOM, floating + inline modes, ~8KB gzipped. Created widget-calculator.html demo page. Created DISTRIBUTION-CALC-WIDGET.md. Fixed conversion gap — added go.html Pro CTA to 31 high-intent pages (16 best-model-for + 15 use-case). Conversion funnel coverage: 57→88 pages (+54%). Updated tools.html (107 tools), widget.html, index.html, sitemap (807 URLs), RSS (694 items). 2 commits, 38 files.
 **Session 837 (Jun 22):** Fixed incomplete structured data on use-cases.html (added 4 missing use cases to ItemList schema, updated positions to 1-16). Added 7 missing RSS items (budget planner, startups, ecommerce, healthcare, education, finance, legal). RSS feed now 693 items. Verified site health — no broken links, all pages have meta descriptions and canonical tags. 1 commit, 2 files.
 **Session 836 (Jun 22):** Created 'Best AI API for Legal 2026' use-case page (9 models, 6 legal AI use cases, 4 budget tiers, attorney-client privilege compliance, ROI comparison vs paralegals/associates, FAQPage schema). Updated use-cases index (16 total), sitemap (806 URLs), RSS (686 items). 1 commit, 4 files.
