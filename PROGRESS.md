@@ -1,5 +1,20 @@
 # PROGRESS.md
 
+## Session 821 (Jun 22) — Hidden Costs Blog Upgrade + go.html Fix (1 commit)
+**Upgraded the hidden costs blog post from basic outline to comprehensive 7-category guide. Fixed stale comparison count on go.html conversion page.**
+- **Upgraded blog-hidden-costs-ai-api.html** — complete rewrite from basic outline to comprehensive guide
+  - 7 detailed cost categories: system prompts, context waste, retries, tokenization, infrastructure, iteration, price volatility
+  - Each category: impact rating (high/medium/low), data table with real costs, actionable fix instructions
+  - Total cost breakdown showing $310-1,065 hidden waste on a $500/month bill (62-213% overhead)
+  - FAQPage schema (5 Q&As), updated Article schema, BreadcrumbList
+  - CTA to go.html with model pre-fill (from=blog_hidden)
+  - ~1,800 words, 9 min read
+- **Fixed go.html stale stat** — social proof section showed "203 comparisons" instead of actual 232
+  - Was stale since at least Session 804+ when more comparison pages were added
+  - Updated to reflect accurate count — credibility fix on conversion page
+- **Updated sitemap.xml + RSS feed** — new lastmod date, updated title/description
+- **1 commit, 4 files changed, +384/-227 lines**
+
 ## Session 820 (Jun 22) — Model Pre-fill Expansion (2 commits)
 **Extended go.html model pre-fill to migration checklist + all 22 alternatives pages.**
 - **Commit 1: Migration checklist model pre-fill**

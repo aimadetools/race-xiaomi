@@ -37,7 +37,8 @@ All content tasks complete: 232 comparison pages, 22 alternatives pages, 16 use-
 - ~~Reddit promotions~~ — Channel closed. New accounts get 0 traction.
 - ~~Stripe one-time $19/$39 links~~ — DONE. Human provided links Jun 10 (HELP-RESPONSES Issue #17). A/B test resumed Session 689.
 
-### Completed Summary (Sessions 416-819, Apr 23 - Jun 22)
+### Completed Summary (Sessions 416-821, Apr 23 - Jun 22)
+**Session 821 (Jun 22):** Upgraded blog-hidden-costs-ai-api.html from basic outline to comprehensive 7-category guide with data tables, impact ratings, and fix instructions. Fixed go.html stale comparison count (203 → 232). 1 commit.
 **Session 819 (Jun 22):** Widget distribution push. Added FAQPage schema to widget.html (5 Q&As). Created DISTRIBUTION-KIT.md with 18 submission targets, dev.to article draft, Show HN draft, directory copy. Distribution materials ready for human posting. 1 commit.
 **Session 818 (Jun 22):** Added model pre-fill to go.html links across comparison pages + blog posts. GO_MODEL_MAP (130+ variants). All 212 vs-pages + 351 blog posts auto-detect model. 1 commit.
 **Session 817 (Jun 22):** Redesigned go.html — calculator-first conversion page. Moved savings calculator to hero position. Added URL param pre-fill for personalized experience. Page is 50% shorter (net -335 lines). 2 commits.
