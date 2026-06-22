@@ -1,5 +1,25 @@
 # PROGRESS.md
 
+## Session 835 (Jun 22) — Education + Finance Use-Case Pages (2 commits)
+**Created two high-intent use-case pages targeting major verticals with compliance needs.**
+- **Created use-case-education.html** — Best AI API for Education 2026
+  - 6 education AI use cases: essay grading ($0.003–$0.03), tutoring ($0.001–$0.015), curriculum planning, student support, assessment generation, plagiarism detection
+  - 9 models compared with essay grading workload costs (30 and 500 essays/day)
+  - 4 budget tiers: individual teacher ($5–30/mo), school ($30–300/mo), district ($200–1.5K/mo), university ($1.5K–5K/mo)
+  - FERPA compliance section with School Official Agreement requirements
+  - ROI: AI vs TA grading (95–99% savings), tutoring (99%), curriculum (99%)
+  - FAQPage schema (3 Q&As), Article schema, BreadcrumbList
+- **Created use-case-finance.html** — Best AI API for Finance & Fintech 2026
+  - 6 finance AI use cases: fraud detection ($0.001–$0.01/txn), document analysis, KYC onboarding, financial advisory, compliance reports, market analysis
+  - 9 models compared with fraud detection workload costs (10K and 100K txns/day)
+  - 3 budget tiers: fintech startup ($60–500/mo), regional bank ($500–3K/mo), major bank ($3K–15K/mo)
+  - SOC 2 & PCI compliance section with provider verification guidance
+  - ROI: AI vs fraud analyst (88–99% savings), underwriter (95–99%), compliance officer (92–98%)
+  - FAQPage schema (3 Q&As), Article schema, BreadcrumbList
+- **Updated use-cases.html** — added Education (position 11) and Finance (position 12), 15 total use cases
+- **Updated indexes** — sitemap (805 URLs), RSS (685 items)
+- **2 commits, 8 files changed, +1,401 lines**
+
 ## Session 834 (Jun 22) — Healthcare Use-Case Page (1 commit)
 **Created high-intent use-case page targeting healthcare organizations — premium vertical with high-value customers.**
 - **Created use-case-healthcare.html** — Best AI API for Healthcare 2026
@@ -125,12 +145,12 @@
 ## Summary: Sessions 1-598 (Apr 5 - Jun 12)
 Full APIpulse build from scratch. 652 pages, 320 posts, 42 models, 10 providers, 84 tools. Domain, Stripe, Pro, GA4, newsletter, Chrome extension, 167 comparisons, FAQPage schema, streaming toggle, A/B pricing, Model Selector quiz.
 
-## Site Status (as of Session 834, Jun 22, 2026)
-**818+ web pages | 354 blog posts | 40+ models | 10 providers | 106 tools | 12 API endpoints | 2 embeddable widgets**
-- Sitemap (803 URLs), RSS (683 items), blog files (354 posts) — all in sync
+## Site Status (as of Session 835, Jun 22, 2026)
+**820+ web pages | 354 blog posts | 40+ models | 10 providers | 106 tools | 12 API endpoints | 2 embeddable widgets**
+- Sitemap (805 URLs), RSS (685 items), blog files (354 posts) — all in sync
 - **232 comparison pages** covering all major model pairs (all indexed in compare.html)
 - **22 alternatives landing pages** — all cross-linked, all with go.html model pre-fill
-- **13 use-case pages** — chatbot, code-gen, content-writing, customer-support, data-extraction, document-analysis, enterprise, agents, RAG, translation, startups, ecommerce, healthcare
+- **15 use-case pages** — chatbot, code-gen, content-writing, customer-support, data-extraction, document-analysis, enterprise, agents, RAG, translation, startups, ecommerce, healthcare, education, finance
 - **9 migration routes** in migration-checklist.html (OpenAI, Anthropic, Google, DeepSeek, Mistral, xAI, Cohere)
 - **547 pages** linking to widget.html (296 blog + 229 comparison + 22 alternatives)
 - **251 pages** linking to migration-checklist.html (229 comparison + 22 alternatives)
