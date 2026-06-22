@@ -654,6 +654,13 @@
         }
     };
 
+    // Map target provider → go.html model value (for pre-fill on CTA links)
+    var GO_MODEL_MAP = {
+        openai: 'openai-gpt5',
+        anthropic: 'anthropic-sonnet46',
+        google: 'google-pro'
+    };
+
     var completedSteps = new Set();
     var currentFrom = '';
     var currentTo = '';
@@ -743,6 +750,14 @@
             '<span class="comment">#    Search codebase for old model names</span>\n\n' +
             '<span class="comment"># 5. Deploy to staging first</span>\n' +
             '<span class="comment">#    Monitor for 24h before production</span></div>';
+
+        // Pre-fill go.html CTA links with target model + spend
+        var goModel = GO_MODEL_MAP[currentTo] || '';
+        var goSpend = '500';
+        document.querySelectorAll('a[href*="go.html?from=migrate_"]').forEach(function(link) {
+            var from = new URL(link.href).searchParams.get('from');
+            link.href = 'go.html?from=' + from + '&spend=' + goSpend + (goModel ? '&model=' + goModel : '');
+        });
 
         // Show checklist and reset
         document.getElementById('checklist-section').style.display = 'block';
