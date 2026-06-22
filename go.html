@@ -24,114 +24,112 @@
         .checkout-page {
             max-width: 640px;
             margin: 0 auto;
-            padding: 100px 24px 80px;
+            padding: 80px 20px 60px;
         }
 
-        /* Hero savings callout */
-        .savings-hero {
-            text-align: center;
-            margin-bottom: 32px;
+        /* Hero calculator section */
+        .hero-calc {
+            background: var(--bg-secondary);
+            border: 2px solid var(--accent);
+            border-radius: 16px;
+            padding: 28px 24px;
+            margin-bottom: 24px;
             animation: fadeIn 0.4s ease;
         }
-        .savings-hero .savings-amount {
-            font-size: clamp(36px, 6vw, 56px);
+        .hero-calc-title {
+            font-size: 28px;
+            font-weight: 900;
+            text-align: center;
+            margin-bottom: 4px;
+            line-height: 1.2;
+        }
+        .hero-calc-sub {
+            font-size: 15px;
+            color: var(--text-secondary);
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .calc-row {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            margin-bottom: 14px;
+        }
+        .calc-row label {
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--text-secondary);
+        }
+        .calc-row select, .calc-row input {
+            width: 100%;
+            padding: 12px 14px;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            color: var(--text-primary);
+            font-size: 15px;
+            font-family: inherit;
+        }
+        .calc-row input {
+            font-family: monospace;
+            font-weight: 600;
+        }
+        .calc-results {
+            display: none;
+            margin-top: 20px;
+            animation: fadeIn 0.3s ease;
+        }
+        .savings-display {
+            text-align: center;
+            padding: 20px;
+            background: rgba(34,197,94,0.06);
+            border: 1px solid rgba(34,197,94,0.2);
+            border-radius: 12px;
+            margin-bottom: 16px;
+        }
+        .savings-display .amount {
+            font-size: clamp(32px, 6vw, 48px);
             font-weight: 900;
             color: var(--green);
             font-family: monospace;
             line-height: 1.1;
         }
-        .savings-hero .savings-label {
-            font-size: 16px;
+        .savings-display .label {
+            font-size: 14px;
             color: var(--text-secondary);
             margin-top: 4px;
         }
-        .savings-hero .savings-sub {
-            font-size: 14px;
-            color: var(--text-muted);
+        .savings-display .payback {
+            font-size: 15px;
+            font-weight: 700;
+            color: var(--accent);
             margin-top: 8px;
         }
-
-        /* Product card */
-        .product-card {
-            background: var(--bg-secondary);
-            border: 2px solid var(--accent);
-            border-radius: 16px;
-            padding: 32px;
-            margin-bottom: 24px;
-        }
-        .product-card h2 {
-            font-size: 22px;
-            font-weight: 800;
-            margin-bottom: 4px;
-        }
-        .product-card .tagline {
-            font-size: 14px;
-            color: var(--text-secondary);
-            margin-bottom: 20px;
-        }
-
-        /* What you get */
-        .features-list {
-            list-style: none;
-            margin: 0 0 24px;
-        }
-        .features-list li {
-            display: flex;
-            align-items: flex-start;
-            gap: 12px;
-            padding: 10px 0;
-            border-bottom: 1px solid var(--border);
-            font-size: 14px;
-            line-height: 1.5;
-        }
-        .features-list li:last-child { border-bottom: none; }
-        .features-list .icon {
-            font-size: 18px;
-            flex-shrink: 0;
-            margin-top: 1px;
-        }
-        .features-list strong { color: var(--text-primary); }
-        .features-list .detail { color: var(--text-secondary); }
-
-        /* Price section */
-        .price-section {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 16px;
-            padding: 20px;
-            background: var(--bg-card);
-            border-radius: 12px;
-            margin-bottom: 20px;
-        }
-        .price-left {}
-        .price-amount {
-            font-size: 32px;
-            font-weight: 900;
-            color: var(--accent);
-        }
-        .price-type {
+        .alts-table {
+            width: 100%;
+            border-collapse: collapse;
             font-size: 13px;
-            color: var(--text-muted);
+            margin-bottom: 16px;
         }
-        .price-right {
-            text-align: right;
-        }
-        .price-was {
-            font-size: 14px;
-            color: var(--text-muted);
-            text-decoration: line-through;
-        }
-        .price-badge {
-            display: inline-block;
-            background: rgba(34,197,94,0.12);
-            color: var(--green);
-            font-size: 12px;
+        .alts-table th {
+            padding: 10px 8px;
+            border-bottom: 2px solid var(--border);
             font-weight: 700;
-            padding: 4px 10px;
-            border-radius: 6px;
-            margin-top: 4px;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-size: 11px;
+            text-align: left;
         }
+        .alts-table td {
+            padding: 10px 8px;
+            border-bottom: 1px solid var(--border);
+            color: var(--text-secondary);
+        }
+        .alts-table tr:last-child td { border-bottom: none; }
+        .alt-highlight { background: rgba(34,197,94,0.06); }
+        .alt-highlight td { color: var(--text-primary) !important; }
+        .alt-savings { color: var(--green) !important; font-weight: 600; }
 
         /* CTA button */
         .cta-btn {
@@ -158,58 +156,155 @@
             text-align: center;
             font-size: 13px;
             color: var(--text-muted);
-            margin-top: 12px;
+            margin-top: 10px;
         }
 
-        /* Social proof */
-        .social-proof {
+        /* Social proof row */
+        .proof-row {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 12px;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
             margin-bottom: 24px;
         }
-        .proof-card {
+        .proof-item {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 12px 8px;
+            text-align: center;
+        }
+        .proof-item .num {
+            font-size: 20px;
+            font-weight: 800;
+            color: var(--accent);
+        }
+        .proof-item .lbl {
+            font-size: 11px;
+            color: var(--text-muted);
+            margin-top: 2px;
+        }
+
+        /* What you get section */
+        .benefits {
+            margin-bottom: 24px;
+        }
+        .benefits h2 {
+            font-size: 18px;
+            font-weight: 800;
+            text-align: center;
+            margin-bottom: 16px;
+        }
+        .benefit-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            padding: 12px 0;
+            border-bottom: 1px solid var(--border);
+            font-size: 14px;
+        }
+        .benefit-item:last-child { border-bottom: none; }
+        .benefit-icon { font-size: 18px; flex-shrink: 0; margin-top: 1px; }
+        .benefit-item strong { color: var(--text-primary); }
+        .benefit-item .detail { color: var(--text-secondary); }
+
+        /* Free vs Pro compact */
+        .compare-compact {
             background: var(--bg-secondary);
             border: 1px solid var(--border);
             border-radius: 12px;
             padding: 16px;
-            text-align: center;
+            margin-bottom: 24px;
         }
-        .proof-num {
-            font-size: 24px;
-            font-weight: 800;
+        .compare-compact h3 {
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            text-align: center;
+            margin-bottom: 12px;
+        }
+        .compare-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px 0;
+            border-bottom: 1px solid var(--border);
+            font-size: 13px;
+        }
+        .compare-row:last-child { border-bottom: none; }
+        .compare-row .feature { color: var(--text-secondary); }
+        .compare-row .free { color: var(--text-muted); }
+        .compare-row .pro { color: var(--green); font-weight: 600; }
+
+        /* Price section */
+        .price-box {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+            padding: 20px;
+            background: var(--bg-card);
+            border-radius: 12px;
+            margin-bottom: 16px;
+        }
+        .price-amount {
+            font-size: 36px;
+            font-weight: 900;
             color: var(--accent);
         }
-        .proof-label {
-            font-size: 12px;
+        .price-type {
+            font-size: 13px;
             color: var(--text-muted);
+        }
+        .price-was {
+            font-size: 14px;
+            color: var(--text-muted);
+            text-decoration: line-through;
+        }
+        .price-badge {
+            display: inline-block;
+            background: rgba(34,197,94,0.12);
+            color: var(--green);
+            font-size: 12px;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 6px;
             margin-top: 4px;
         }
+
+        /* Urgency */
+        .urgency {
+            text-align: center;
+            font-size: 14px;
+            color: var(--red);
+            font-weight: 600;
+            margin-bottom: 16px;
+        }
+        .urgency span { font-family: monospace; font-weight: 800; }
 
         /* Guarantee */
         .guarantee {
             background: rgba(34,197,94,0.06);
             border: 1px solid rgba(34,197,94,0.2);
             border-radius: 12px;
-            padding: 20px;
+            padding: 16px;
             text-align: center;
             margin-bottom: 24px;
         }
-        .guarantee-icon { font-size: 28px; margin-bottom: 8px; }
-        .guarantee h3 { font-size: 16px; font-weight: 700; margin-bottom: 6px; }
-        .guarantee p { font-size: 13px; color: var(--text-secondary); line-height: 1.5; }
+        .guarantee h3 { font-size: 15px; font-weight: 700; margin-bottom: 4px; }
+        .guarantee p { font-size: 13px; color: var(--text-secondary); }
 
         /* FAQ */
         .faq { margin-bottom: 24px; }
         .faq h3 {
-            font-size: 18px;
+            font-size: 16px;
             font-weight: 700;
-            margin-bottom: 16px;
+            margin-bottom: 12px;
             text-align: center;
         }
         .faq-item {
             border-bottom: 1px solid var(--border);
-            padding: 14px 0;
+            padding: 12px 0;
         }
         .faq-item:last-child { border-bottom: none; }
         .faq-q {
@@ -228,207 +323,25 @@
             flex-shrink: 0;
             transition: transform 0.2s;
         }
-        .faq-item.open .faq-q::after {
-            content: '−';
-        }
+        .faq-item.open .faq-q::after { content: '−'; }
         .faq-a {
             display: none;
             font-size: 13px;
             color: var(--text-secondary);
             line-height: 1.6;
-            margin-top: 10px;
+            margin-top: 8px;
         }
         .faq-item.open .faq-a { display: block; }
-
-        /* Testimonial */
-        .testimonial {
-            background: var(--bg-secondary);
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            padding: 20px;
-            margin-bottom: 24px;
-            font-size: 14px;
-            line-height: 1.6;
-            color: var(--text-secondary);
-            font-style: italic;
-        }
-        .testimonial .author {
-            font-style: normal;
-            font-size: 13px;
-            color: var(--text-muted);
-            margin-top: 10px;
-            font-weight: 600;
-        }
-
-        /* Urgency */
-        .urgency-bar {
-            background: linear-gradient(135deg, rgba(239,68,68,0.08), rgba(220,38,38,0.08));
-            border: 1px solid rgba(239,68,68,0.2);
-            border-radius: 10px;
-            padding: 14px 20px;
-            text-align: center;
-            margin-bottom: 24px;
-            font-size: 14px;
-            font-weight: 600;
-            color: var(--red);
-        }
 
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(10px); }
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* Live Demo Section */
-        .demo-section {
-            background: var(--bg-secondary);
-            border: 1px solid var(--border);
-            border-radius: 16px;
-            padding: 28px 24px;
-            margin-bottom: 24px;
-            animation: fadeIn 0.5s ease;
-        }
-        .demo-title {
-            font-size: 20px;
-            font-weight: 800;
-            text-align: center;
-            margin-bottom: 4px;
-        }
-        .demo-subtitle {
-            font-size: 14px;
-            color: var(--text-secondary);
-            text-align: center;
-            margin-bottom: 16px;
-        }
-        .demo-scenario {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: 10px;
-            padding: 14px 16px;
-            font-size: 14px;
-            color: var(--text-secondary);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 8px;
-            margin-bottom: 16px;
-        }
-        .demo-scenario-cost {
-            font-family: monospace;
-            font-weight: 800;
-            font-size: 18px;
-            color: var(--red);
-        }
-        .demo-result {
-            background: var(--bg-card);
-            border: 1px solid rgba(34,197,94,0.2);
-            border-radius: 12px;
-            padding: 20px;
-            margin-bottom: 16px;
-        }
-        .demo-result-header {
-            font-size: 15px;
-            color: var(--text-primary);
-            margin-bottom: 8px;
-        }
-        .demo-savings-amount {
-            font-size: 22px;
-            font-weight: 900;
-            color: var(--green);
-            font-family: monospace;
-            margin-bottom: 16px;
-        }
-        .demo-table {
-            width: 100%;
-            border-collapse: collapse;
-            font-size: 13px;
-            margin-bottom: 16px;
-        }
-        .demo-table th {
-            padding: 10px 8px;
-            border-bottom: 2px solid var(--border);
-            font-weight: 700;
-            color: var(--text-muted);
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            font-size: 11px;
-            text-align: left;
-        }
-        .demo-table td {
-            padding: 10px 8px;
-            border-bottom: 1px solid var(--border);
-            color: var(--text-secondary);
-        }
-        .demo-table tr:last-child td { border-bottom: none; }
-        .demo-highlight {
-            background: rgba(34,197,94,0.06);
-        }
-        .demo-highlight td { color: var(--text-primary) !important; }
-        .demo-savings-cell {
-            color: var(--green) !important;
-            font-weight: 600;
-        }
-        .demo-code-header {
-            font-size: 12px;
-            color: var(--text-muted);
-            margin-bottom: 8px;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            font-weight: 600;
-        }
-        .demo-code {
-            background: var(--bg-secondary);
-            border: 1px solid var(--border);
-            border-radius: 10px;
-            padding: 16px;
-            font-family: monospace;
-            font-size: 13px;
-            line-height: 1.6;
-            color: var(--text-secondary);
-            overflow-x: auto;
-            margin-bottom: 16px;
-        }
-        .demo-code-comment { color: var(--text-muted); }
-        .demo-code-keyword { color: #c084fc; }
-        .demo-code-string { color: var(--green); }
-        .demo-locked {
-            background: var(--bg-secondary);
-            border: 1px dashed var(--border);
-            border-radius: 10px;
-            padding: 20px;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-        .demo-locked::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(to bottom, transparent 0%, var(--bg-secondary) 100%);
-            pointer-events: none;
-        }
-        .demo-locked-overlay { position: relative; z-index: 1; }
-        .demo-locked-icon { font-size: 24px; margin-bottom: 8px; }
-        .demo-locked-text {
-            font-size: 14px;
-            color: var(--text-secondary);
-            line-height: 1.5;
-        }
-        .demo-cta {
-            margin-bottom: 8px;
-        }
         @media (max-width: 600px) {
-            .demo-section { padding: 20px 16px; }
-            .demo-scenario { flex-direction: column; text-align: center; }
-            .demo-table { font-size: 12px; }
-            .demo-table th, .demo-table td { padding: 8px 4px; }
-        }
-
-        @media (max-width: 768px) {
-            .checkout-page { padding: 80px 16px 60px; }
-            .social-proof { grid-template-columns: 1fr; }
-            .price-section { flex-direction: column; text-align: center; }
-            .price-right { text-align: center; }
+            .checkout-page { padding: 70px 16px 40px; }
+            .proof-row { grid-template-columns: 1fr 1fr; }
+            .price-box { flex-direction: column; text-align: center; }
         }
     </style>
 </head>
@@ -446,213 +359,41 @@
     </nav>
 
     <main id="main" class="checkout-page">
-        <!-- Savings callout (personalized from URL params) -->
-        <div class="savings-hero" id="savings-hero" style="display:none;">
-            <div class="savings-amount" id="hero-savings">$0</div>
-            <div class="savings-label">Your estimated annual savings</div>
-            <div class="savings-sub" id="hero-sub">Based on your API usage</div>
-        </div>
 
-        <!-- Urgency bar with countdown -->
-        <div class="urgency-bar" id="urgency-bar">
-            ⏰ Price doubles to $49 on July 12 — <span id="countdown" style="font-family:monospace;font-weight:800;"></span> left at $29
-        </div>
+        <!-- HERO: Interactive Savings Calculator -->
+        <div class="hero-calc">
+            <div class="hero-calc-title">How much could YOU save?</div>
+            <div class="hero-calc-sub">Select your model and monthly spend — see instant savings</div>
 
-        <!-- Real savings example -->
-        <div style="background:var(--bg-secondary);border:1px solid rgba(34,197,94,0.2);border-radius:12px;padding:16px 20px;margin-bottom:24px;animation:fadeIn 0.5s ease;">
-            <div style="font-size:13px;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.5px;font-weight:600;margin-bottom:8px;">Real example: GPT-5 user spending $500/mo</div>
-            <div style="display:flex;flex-wrap:wrap;gap:12px;align-items:center;">
-                <div style="flex:1;min-width:140px;">
-                    <div style="font-size:12px;color:var(--text-muted);">Current: GPT-5</div>
-                    <div style="font-size:18px;font-weight:800;color:var(--red);font-family:monospace;">$500/mo</div>
-                </div>
-                <div style="font-size:20px;color:var(--text-muted);">→</div>
-                <div style="flex:1;min-width:140px;">
-                    <div style="font-size:12px;color:var(--text-muted);">Switch to: DeepSeek V4 Flash</div>
-                    <div style="font-size:18px;font-weight:800;color:var(--green);font-family:monospace;">$21/mo</div>
-                </div>
-                <div style="flex:1;min-width:140px;text-align:center;">
-                    <div style="font-size:12px;color:var(--text-muted);">You save</div>
-                    <div style="font-size:22px;font-weight:900;color:var(--green);font-family:monospace;">$5,748/yr</div>
-                </div>
+            <div class="calc-row">
+                <label for="est-model">Your current model</label>
+                <select id="est-model">
+                    <option value="openai-gpt5">GPT-5 (OpenAI) — $1.25 / $10.00 per 1M tokens</option>
+                    <option value="openai-gpt55">GPT-5.5 (OpenAI) — $5.00 / $30.00 per 1M tokens</option>
+                    <option value="openai-gpt4o">GPT-4o (OpenAI) — $2.50 / $10.00 per 1M tokens</option>
+                    <option value="anthropic-sonnet46">Claude Sonnet 4.6 (Anthropic) — $3.00 / $15.00 per 1M tokens</option>
+                    <option value="anthropic-opus48">Claude Opus 4.8 (Anthropic) — $5.00 / $25.00 per 1M tokens</option>
+                    <option value="anthropic-haiku">Claude Haiku 4.5 (Anthropic) — $1.00 / $5.00 per 1M tokens</option>
+                    <option value="google-pro">Gemini 2.5 Pro (Google) — $1.25 / $10.00 per 1M tokens</option>
+                    <option value="google-gemini35-flash">Gemini 3.5 Flash (Google) — $1.50 / $9.00 per 1M tokens</option>
+                </select>
             </div>
-            <div style="font-size:12px;color:var(--text-muted);margin-top:8px;">Based on 10M input + 5M output tokens/mo. Pro shows your exact savings for your workload.</div>
-        </div>
-
-        <!-- Product card -->
-        <div class="product-card">
-            <h2>APIpulse Pro</h2>
-            <p class="tagline">Find your savings in 5 minutes — see every cheaper alternative ranked by cost.</p>
-
-            <ul class="features-list">
-                <li>
-                    <span class="icon">📊</span>
-                    <div><strong>Full savings report</strong> — <span class="detail">Every alternative ranked by cost, not just the top 1. See exactly how much each model saves you.</span></div>
-                </li>
-                <li>
-                    <span class="icon">💻</span>
-                    <div><strong>Migration code snippets</strong> — <span class="detail">Copy-paste-ready code to switch models. No research needed.</span></div>
-                </li>
-                <li>
-                    <span class="icon">📋</span>
-                    <div><strong>Save 10 cost scenarios</strong> — <span class="detail">Compare configurations side by side. Present options to your team.</span></div>
-                </li>
-                <li>
-                    <span class="icon">📄</span>
-                    <div><strong>PDF report export</strong> — <span class="detail">Professional cost reports for investors, managers, or procurement.</span></div>
-                </li>
-                <li>
-                    <span class="icon">⚡</span>
-                    <div><strong>Personalized optimization tips</strong> — <span class="detail">Batch processing, caching, prompt compression — save up to 40%.</span></div>
-                </li>
-                <li>
-                    <span class="icon">🔔</span>
-                    <div><strong>Price change alerts</strong> — <span class="detail">Know instantly when providers drop prices or launch cheaper models.</span></div>
-                </li>
-            </ul>
-
-            <!-- Free vs Pro comparison -->
-            <div style="margin:24px 0;padding:20px;background:var(--bg-card);border-radius:12px;border:1px solid var(--border);">
-                <div style="font-size:13px;font-weight:700;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.5px;margin-bottom:16px;text-align:center;">Free vs Pro</div>
-                <table style="width:100%;border-collapse:collapse;font-size:14px;">
-                    <tr style="border-bottom:1px solid var(--border);">
-                        <td style="padding:10px 0;color:var(--text-secondary);">Alternatives shown</td>
-                        <td style="padding:10px 0;text-align:center;color:var(--text-muted);">Top 3 only</td>
-                        <td style="padding:10px 0;text-align:center;color:var(--green);font-weight:700;">ALL 15 ranked</td>
-                    </tr>
-                    <tr style="border-bottom:1px solid var(--border);background:rgba(99,102,241,0.04);">
-                        <td style="padding:10px 0;color:var(--text-primary);font-weight:600;">Migration code snippets</td>
-                        <td style="padding:10px 0;text-align:center;color:var(--text-muted);">✕</td>
-                        <td style="padding:10px 0;text-align:center;color:var(--green);font-weight:700;">✓ Pro</td>
-                    </tr>
-                    <tr style="border-bottom:1px solid var(--border);background:rgba(99,102,241,0.04);">
-                        <td style="padding:10px 0;color:var(--text-primary);font-weight:600;">Save & compare scenarios</td>
-                        <td style="padding:10px 0;text-align:center;color:var(--text-muted);">✕</td>
-                        <td style="padding:10px 0;text-align:center;color:var(--green);font-weight:700;">✓ 10 slots</td>
-                    </tr>
-                    <tr style="border-bottom:1px solid var(--border);background:rgba(99,102,241,0.04);">
-                        <td style="padding:10px 0;color:var(--text-primary);font-weight:600;">PDF report export</td>
-                        <td style="padding:10px 0;text-align:center;color:var(--text-muted);">✕</td>
-                        <td style="padding:10px 0;text-align:center;color:var(--green);font-weight:700;">✓ Pro</td>
-                    </tr>
-                    <tr style="background:rgba(99,102,241,0.04);">
-                        <td style="padding:10px 0;color:var(--text-primary);font-weight:600;">Price change alerts</td>
-                        <td style="padding:10px 0;text-align:center;color:var(--text-muted);">✕</td>
-                        <td style="padding:10px 0;text-align:center;color:var(--green);font-weight:700;">✓ Pro</td>
-                    </tr>
-                </table>
-            </div>
-
-            <!-- Price -->
-            <div class="price-section">
-                <div class="price-left">
-                    <div class="price-amount" id="checkout-price">$29</div>
-                    <div class="price-type">one-time payment</div>
-                </div>
-                <div class="price-right">
-                    <div class="price-was">$49</div>
-                    <div class="price-badge">Save 41%</div>
+            <div class="calc-row">
+                <label for="est-spend">Monthly API spend</label>
+                <div style="display:flex;align-items:center;gap:8px;">
+                    <span style="font-size:18px;font-weight:700;color:var(--text-muted);">$</span>
+                    <input id="est-spend" type="number" min="1" max="100000" value="100" style="flex:1;">
+                    <span style="font-size:13px;color:var(--text-muted);white-space:nowrap;">/month</span>
                 </div>
             </div>
 
-            <!-- Primary CTA: Free Trial -->
-            <button id="trial-btn" class="cta-btn" onclick="if(typeof startTrial==='function'){startTrial();window.location.href='calculator.html?from=go_trial';}else{window.location.href='calculator.html';}" style="cursor:pointer;margin-bottom:12px;">
-                ⚡ Try Pro Free for 24 Hours
-            </button>
-            <p class="cta-sub" style="margin-bottom:16px;">
-                ✅ No credit card needed   ·  ✅ Full Pro access instantly   ·  ✅ Cancel anytime
-            </p>
-            <!-- Secondary CTA: Buy Now -->
-            <a id="checkout-btn" href="https://buy.stripe.com/fZu7sL3Gw3GS0RQeoDeEo0a" target="_blank" rel="noopener" style="display:block;width:100%;padding:14px 32px;background:transparent;border:2px solid var(--accent);color:var(--accent);border-radius:12px;font-size:15px;font-weight:700;cursor:pointer;text-align:center;text-decoration:none;transition:all 0.2s;box-shadow:none;margin-bottom:12px;">
-                Or buy now — <span id="btn-price">$29</span> lifetime
-            </a>
-            <p class="cta-sub">
-                ✅ One-time payment   ·  ✅ Lifetime access   ·  ✅ 14-day money-back guarantee
-            </p>
-            <p style="text-align:center;font-size:12px;color:var(--text-muted);margin-top:8px;">
-                Founding member price — lock in $29 forever before it increases to $49
-            </p>
-
-            <!-- Trust badges -->
-            <div style="display:flex;justify-content:center;gap:20px;margin-top:16px;flex-wrap:wrap;">
-                <div style="display:flex;align-items:center;gap:6px;font-size:12px;color:var(--text-muted);">
-                    <span style="font-size:16px;">🔒</span> Stripe secure checkout
+            <div class="calc-results" id="calc-results">
+                <div class="savings-display">
+                    <div class="amount" id="savings-amount">$0/yr</div>
+                    <div class="label" id="savings-label">estimated annual savings</div>
+                    <div class="payback" id="savings-payback"></div>
                 </div>
-                <div style="display:flex;align-items:center;gap:6px;font-size:12px;color:var(--text-muted);">
-                    <span style="font-size:16px;">🛡️</span> 14-day guarantee
-                </div>
-                <div style="display:flex;align-items:center;gap:6px;font-size:12px;color:var(--text-muted);">
-                    <span style="font-size:16px;">⚡</span> Instant access
-                </div>
-            </div>
-
-            <!-- Sample report links -->
-            <div style="text-align:center;margin-top:16px;display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:center;">
-                <a href="generate-report.html" style="font-size:13px;color:var(--accent);text-decoration:underline;font-weight:700;">⚡ Generate your own free report</a>
-                <a href="sample-pro-report.html" style="font-size:13px;color:var(--text-muted);text-decoration:underline;">📋 GPT-5 report — save $2,112/yr</a>
-                <a href="sample-pro-report-claude-sonnet.html" style="font-size:13px;color:var(--text-muted);text-decoration:underline;">📋 Claude Sonnet 4.6 — save $2,004/yr</a>
-                <a href="sample-pro-report-gpt5-mini.html" style="font-size:13px;color:var(--text-muted);text-decoration:underline;">📋 GPT-5 mini — save $876/yr</a>
-                <a href="sample-pro-report-opus48.html" style="font-size:13px;color:var(--text-muted);text-decoration:underline;">📋 Claude Opus 4.8 — save $10,035/yr</a>
-            </div>
-        </div>
-
-        <!-- Social proof — real, verifiable stats only -->
-        <div class="social-proof">
-            <div class="proof-card">
-                <div class="proof-num">42</div>
-                <div class="proof-label">AI models compared</div>
-            </div>
-            <div class="proof-card">
-                <div class="proof-num">10</div>
-                <div class="proof-label">providers tracked</div>
-            </div>
-            <div class="proof-card">
-                <div class="proof-num">203</div>
-                <div class="proof-label">head-to-head comparisons</div>
-            </div>
-            <div class="proof-card">
-                <div class="proof-num" style="color:var(--green);">14 day</div>
-                <div class="proof-label">money-back guarantee</div>
-            </div>
-        </div>
-
-        <!-- INTERACTIVE SAVINGS ESTIMATOR -->
-        <div class="demo-section" id="savings-estimator">
-            <div class="demo-title">⚡ What Could YOU Save?</div>
-            <div class="demo-subtitle">Select your model and monthly spend — see instant savings:</div>
-
-            <div style="display:flex;flex-direction:column;gap:14px;margin-bottom:16px;">
-                <div>
-                    <label style="font-size:13px;font-weight:600;color:var(--text-secondary);display:block;margin-bottom:6px;">Your current model</label>
-                    <select id="est-model" style="width:100%;padding:10px 14px;background:var(--bg-card);border:1px solid var(--border);border-radius:8px;color:var(--text-primary);font-size:14px;cursor:pointer;">
-                        <option value="openai-gpt5">GPT-5 (OpenAI) — $1.25 / $10.00</option>
-                        <option value="openai-gpt55">GPT-5.5 (OpenAI) — $5.00 / $30.00</option>
-                        <option value="openai-gpt4o">GPT-4o (OpenAI) — $2.50 / $10.00</option>
-                        <option value="anthropic-sonnet46">Claude Sonnet 4.6 (Anthropic) — $3.00 / $15.00</option>
-                        <option value="anthropic-opus48">Claude Opus 4.8 (Anthropic) — $5.00 / $25.00</option>
-                        <option value="anthropic-haiku">Claude Haiku 4.5 (Anthropic) — $1.00 / $5.00</option>
-                        <option value="google-pro">Gemini 2.5 Pro (Google) — $1.25 / $10.00</option>
-                        <option value="google-gemini35-flash">Gemini 3.5 Flash (Google) — $1.50 / $9.00</option>
-                    </select>
-                </div>
-                <div>
-                    <label style="font-size:13px;font-weight:600;color:var(--text-secondary);display:block;margin-bottom:6px;">Monthly API spend</label>
-                    <div style="display:flex;align-items:center;gap:8px;">
-                        <span style="font-size:16px;font-weight:700;color:var(--text-muted);">$</span>
-                        <input id="est-spend" type="number" min="1" max="100000" value="100" style="flex:1;padding:10px 14px;background:var(--bg-card);border:1px solid var(--border);border-radius:8px;color:var(--text-primary);font-size:14px;font-family:monospace;">
-                        <span style="font-size:13px;color:var(--text-muted);white-space:nowrap;">/month</span>
-                    </div>
-                </div>
-            </div>
-
-            <div id="est-results" style="display:none;">
-                <div id="est-result-best" style="background:var(--bg-card);border:1px solid rgba(34,197,94,0.2);border-radius:12px;padding:16px;margin-bottom:12px;text-align:center;">
-                    <div style="font-size:13px;color:var(--text-muted);margin-bottom:4px;">You could save up to</div>
-                    <div id="est-savings-amount" style="font-size:32px;font-weight:900;color:var(--green);font-family:monospace;">$0/yr</div>
-                    <div id="est-savings-pct" style="font-size:14px;color:var(--text-secondary);margin-top:2px;"></div>
-                    <div id="est-payback" style="font-size:15px;font-weight:700;color:var(--accent);margin-top:8px;"></div>
-                </div>
-                <table class="demo-table" style="margin-bottom:12px;">
+                <table class="alts-table">
                     <thead>
                         <tr>
                             <th>Switch to</th>
@@ -661,126 +402,164 @@
                             <th>You save</th>
                         </tr>
                     </thead>
-                    <tbody id="est-alts-body"></tbody>
+                    <tbody id="alts-body"></tbody>
                 </table>
-                <div style="font-size:12px;color:var(--text-muted);text-align:center;margin-bottom:12px;">Pro shows all alternatives ranked by cost + migration code for each</div>
+                <div style="font-size:12px;color:var(--text-muted);text-align:center;margin-bottom:16px;">Pro shows all alternatives ranked by cost + migration code for each</div>
             </div>
 
-            <div id="est-cta-area">
-                <button class="cta-btn demo-cta" onclick="if(typeof startTrial==='function'){startTrial();window.location.href='calculator.html?from=go_estimator_trial';}else{window.location.href='calculator.html';}" style="cursor:pointer;margin-bottom:10px;">
-                    ⚡ Try Pro Free — See All Alternatives
-                </button>
-                <a id="checkout-btn-est" href="https://buy.stripe.com/fZu7sL3Gw3GS0RQeoDeEo0a" target="_blank" rel="noopener" style="display:block;padding:12px 24px;background:transparent;border:2px solid var(--accent);color:var(--accent);border-radius:10px;font-size:14px;font-weight:600;text-align:center;text-decoration:none;transition:all 0.2s;">
-                    Or buy now — <span id="btn-price-est">$29</span> lifetime
-                </a>
-                <p class="cta-sub" style="margin-top:10px;">No credit card for trial · 14-day money-back guarantee</p>
+            <!-- CTA: personalized based on calculator -->
+            <button id="main-cta" class="cta-btn" onclick="if(typeof startTrial==='function'){startTrial();window.location.href='calculator.html?from=go_hero_trial';}else{window.location.href='calculator.html';}" style="cursor:pointer;">
+                ⚡ Try Pro Free for 24 Hours
+            </button>
+            <p class="cta-sub">✅ No credit card · ✅ Full Pro access instantly · ✅ Cancel anytime</p>
+            <a id="buy-cta" href="https://buy.stripe.com/fZu7sL3Gw3GS0RQeoDeEo0a" target="_blank" rel="noopener" style="display:block;width:100%;padding:14px;background:transparent;border:2px solid var(--accent);color:var(--accent);border-radius:12px;font-size:15px;font-weight:700;text-align:center;text-decoration:none;margin-top:10px;">
+                Or buy now — <span id="cta-price">$29</span> lifetime
+            </a>
+            <p class="cta-sub" style="margin-top:8px;">
+                🔒 Stripe secure · 🛡️ 14-day guarantee · ⚡ Instant access
+            </p>
+        </div>
+
+        <!-- Social proof -->
+        <div class="proof-row">
+            <div class="proof-item">
+                <div class="num">42</div>
+                <div class="lbl">models</div>
+            </div>
+            <div class="proof-item">
+                <div class="num">10</div>
+                <div class="lbl">providers</div>
+            </div>
+            <div class="proof-item">
+                <div class="num">203</div>
+                <div class="lbl">comparisons</div>
+            </div>
+            <div class="proof-item">
+                <div class="num" style="color:var(--green);">14d</div>
+                <div class="lbl">guarantee</div>
             </div>
         </div>
 
-        <!-- What you get after purchase -->
-        <div style="background:var(--bg-secondary);border:1px solid var(--border);border-radius:12px;padding:20px;margin-bottom:24px;">
-            <div style="font-size:14px;font-weight:700;margin-bottom:12px;text-align:center;">⏱️ What happens after you buy?</div>
-            <div style="display:flex;flex-direction:column;gap:10px;">
-                <div style="display:flex;align-items:flex-start;gap:10px;font-size:13px;">
-                    <span style="background:var(--accent);color:white;width:22px;height:22px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;flex-shrink:0;">1</span>
-                    <div><strong>Instant access</strong> — <span class="detail">Your Pro dashboard unlocks immediately. No waiting, no approval.</span></div>
-                </div>
-                <div style="display:flex;align-items:flex-start;gap:10px;font-size:13px;">
-                    <span style="background:var(--accent);color:white;width:22px;height:22px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;flex-shrink:0;">2</span>
-                    <div><strong>Run your first savings report</strong> — <span class="detail">Enter your API usage, see every cheaper alternative ranked by cost with migration code.</span></div>
-                </div>
-                <div style="display:flex;align-items:flex-start;gap:10px;font-size:13px;">
-                    <span style="background:var(--accent);color:white;width:22px;height:22px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;flex-shrink:0;">3</span>
-                    <div><strong>Switch and save</strong> — <span class="detail">Copy the migration code, update your API calls, start saving from day one.</span></div>
-                </div>
-                <div style="display:flex;align-items:flex-start;gap:10px;font-size:13px;margin-top:4px;padding-top:10px;border-top:1px dashed var(--border);">
-                    <span style="font-size:16px;flex-shrink:0;">🛡️</span>
-                    <div><strong>Not satisfied?</strong> — <span class="detail">Full refund within 14 days, no questions asked. Zero risk.</span></div>
-                </div>
+        <!-- Urgency countdown -->
+        <div class="urgency">
+            ⏰ Founding member price ends July 12 — <span id="countdown"></span> left at $29
+        </div>
+
+        <!-- What you get -->
+        <div class="benefits">
+            <h2>What you get with Pro</h2>
+            <div class="benefit-item">
+                <span class="benefit-icon">📊</span>
+                <div><strong>Full savings report</strong> — <span class="detail">Every alternative ranked by cost. See exactly how much each model saves you.</span></div>
+            </div>
+            <div class="benefit-item">
+                <span class="benefit-icon">💻</span>
+                <div><strong>Migration code snippets</strong> — <span class="detail">Copy-paste-ready code to switch models. No research needed.</span></div>
+            </div>
+            <div class="benefit-item">
+                <span class="benefit-icon">📄</span>
+                <div><strong>PDF report export</strong> — <span class="detail">Professional cost reports for your team, investors, or procurement.</span></div>
+            </div>
+            <div class="benefit-item">
+                <span class="benefit-icon">🔔</span>
+                <div><strong>Price change alerts</strong> — <span class="detail">Know instantly when providers drop prices or launch cheaper models.</span></div>
             </div>
         </div>
 
-        <!-- Trust signals — real, verifiable accomplishments -->
-        <div style="background:var(--bg-secondary);border:1px solid var(--border);border-radius:12px;padding:20px;margin-bottom:24px;">
-            <div style="font-size:14px;font-weight:700;margin-bottom:12px;text-align:center;">What you get — built in the open</div>
-            <div style="display:flex;flex-direction:column;gap:8px;">
-                <div style="display:flex;align-items:center;gap:10px;font-size:13px;color:var(--text-secondary);">
-                    <span style="color:var(--green);">✓</span> <strong>42 models</strong> across 10 providers — OpenAI, Anthropic, Google, DeepSeek, Mistral, Meta & more
-                </div>
-                <div style="display:flex;align-items:center;gap:10px;font-size:13px;color:var(--text-secondary);">
-                    <span style="color:var(--green);">✓</span> <strong>203 head-to-head comparisons</strong> — every major model pair with pricing data
-                </div>
-                <div style="display:flex;align-items:center;gap:10px;font-size:13px;color:var(--text-secondary);">
-                    <span style="color:var(--green);">✓</span> <strong>105 interactive tools</strong> — calculators, recommendation engine, migration code generator
-                </div>
-                <div style="display:flex;align-items:center;gap:10px;font-size:13px;color:var(--text-secondary);">
-                    <span style="color:var(--green);">✓</span> Stripe secure checkout — payment info never touches our servers
-                </div>
-                <div style="display:flex;align-items:center;gap:10px;font-size:13px;color:var(--text-secondary);">
-                    <span style="color:var(--green);">✓</span> 14-day money-back guarantee — full refund, no questions asked
-                </div>
+        <!-- Free vs Pro -->
+        <div class="compare-compact">
+            <h3>Free vs Pro</h3>
+            <div class="compare-row">
+                <span class="feature">Alternatives shown</span>
+                <span class="free">Top 3</span>
+                <span class="pro">ALL ranked ✓</span>
+            </div>
+            <div class="compare-row">
+                <span class="feature">Migration code</span>
+                <span class="free">✕</span>
+                <span class="pro">✓ Pro</span>
+            </div>
+            <div class="compare-row">
+                <span class="feature">PDF export</span>
+                <span class="free">✕</span>
+                <span class="pro">✓ Pro</span>
+            </div>
+            <div class="compare-row">
+                <span class="feature">Save scenarios</span>
+                <span class="free">✕</span>
+                <span class="pro">✓ 10 slots</span>
+            </div>
+            <div class="compare-row">
+                <span class="feature">Price alerts</span>
+                <span class="free">✕</span>
+                <span class="pro">✓ Pro</span>
             </div>
         </div>
+
+        <!-- Price -->
+        <div class="price-box">
+            <div>
+                <div class="price-amount" id="price-display">$29</div>
+                <div class="price-type">one-time payment</div>
+            </div>
+            <div style="text-align:right;">
+                <div class="price-was" id="price-was">$49</div>
+                <div class="price-badge" id="price-badge">Save 41%</div>
+            </div>
+        </div>
+
+        <!-- Bottom CTA -->
+        <button class="cta-btn" onclick="if(typeof startTrial==='function'){startTrial();window.location.href='calculator.html?from=go_bottom_trial';}else{window.location.href='calculator.html';}" style="cursor:pointer;margin-bottom:10px;">
+            ⚡ Try Pro Free for 24 Hours
+        </button>
+        <a id="buy-cta-bottom" href="https://buy.stripe.com/fZu7sL3Gw3GS0RQeoDeEo0a" target="_blank" rel="noopener" style="display:block;width:100%;padding:14px;background:transparent;border:2px solid var(--accent);color:var(--accent);border-radius:12px;font-size:15px;font-weight:700;text-align:center;text-decoration:none;">
+            Or buy now — <span id="cta-price-bottom">$29</span> lifetime
+        </a>
 
         <!-- Guarantee -->
         <div class="guarantee">
-            <div class="guarantee-icon">🛡️</div>
-            <h3>14-Day Money-Back Guarantee</h3>
-            <p>If APIpulse Pro doesn't save you money within 14 days, email us and we'll refund every penny. No questions asked. Zero risk.</p>
+            <h3>🛡️ 14-Day Money-Back Guarantee</h3>
+            <p>If APIpulse Pro doesn't save you money within 14 days, email us for a full refund. No questions asked.</p>
         </div>
 
         <!-- FAQ -->
         <div class="faq">
             <h3>Common Questions</h3>
-
             <div class="faq-item" onclick="this.classList.toggle('open')">
                 <div class="faq-q">Is this really a one-time payment?</div>
-                <div class="faq-a">Yes. $29 gets you lifetime access — no subscription, no recurring fees, no "annual renewal." Pay once, use forever. The founding member price will increase after the race ends July 12.</div>
+                <div class="faq-a">Yes. $29 gets you lifetime access — no subscription, no recurring fees. The founding member price increases to $49 on July 12.</div>
             </div>
-
             <div class="faq-item" onclick="this.classList.toggle('open')">
                 <div class="faq-q">Can't I just check provider websites myself?</div>
-                <div class="faq-a">You could — but it takes 3-5 hours to compare 42 models across 10 providers manually. APIpulse does it in seconds, shows you the cheapest alternatives ranked by cost, gives you migration code, and tracks price changes. Most users save $720-2,400/year — $29 pays for itself in a day.</div>
+                <div class="faq-a">You could — but it takes 3-5 hours to compare 42 models across 10 providers. APIpulse does it in seconds with migration code included. Most users save $720+/year.</div>
             </div>
-
             <div class="faq-item" onclick="this.classList.toggle('open')">
                 <div class="faq-q">How does the 14-day guarantee work?</div>
-                <div class="faq-a">If you're not satisfied for any reason within 14 days, email support@getapipulse.com and we'll refund your $29 immediately. No questions, no forms, no hassle.</div>
+                <div class="faq-a">Email support@getapipulse.com within 14 days for a full refund. No questions, no forms, no hassle.</div>
             </div>
-
             <div class="faq-item" onclick="this.classList.toggle('open')">
-                <div class="faq-q">What exactly do I get after purchase?</div>
-                <div class="faq-a">Instant access to your Pro dashboard: full savings reports with all alternatives ranked by cost, copy-paste migration code snippets, 10 saved scenario slots, PDF report export, personalized optimization tips, and price change alerts. Everything is available immediately — no waiting for approval or activation.</div>
-            </div>
-
-            <div class="faq-item" onclick="this.classList.toggle('open')">
-                <div class="faq-q">Is this a real product? Why is it so cheap?</div>
-                <div class="faq-a">APIpulse is a real product with 42 models, 10 providers, 105 tools, and 341 blog posts — all freely available on getapipulse.com. The $29 founding member price is an early-bird rate for early adopters. The price will increase to $49 on July 12, 2026. Your purchase is lifetime — no renewal, no subscription.</div>
+                <div class="faq-q">What do I get after purchase?</div>
+                <div class="faq-a">Instant access: full savings reports, migration code, 10 saved scenarios, PDF export, and price change alerts. No waiting for approval.</div>
             </div>
         </div>
 
-        <!-- Bottom CTA -->
-        <button class="cta-btn" onclick="if(typeof startTrial==='function'){startTrial();window.location.href='calculator.html?from=go_trial_bottom';}else{window.location.href='calculator.html';}" style="cursor:pointer;margin-bottom:12px;">
-            ⚡ Try Pro Free for 24 Hours
-        </button>
-        <a id="checkout-btn-bottom" href="https://buy.stripe.com/fZu7sL3Gw3GS0RQeoDeEo0a" target="_blank" rel="noopener" style="display:block;width:100%;padding:14px 32px;background:transparent;border:2px solid var(--accent);color:var(--accent);border-radius:12px;font-size:15px;font-weight:700;cursor:pointer;text-align:center;text-decoration:none;transition:all 0.2s;box-shadow:none;margin-bottom:16px;">
-            Or buy now — <span id="btn-price-bottom">$29</span> lifetime
-        </a>
-        <p class="cta-sub">42 models · 203 comparisons · 14-day money-back guarantee</p>
+        <!-- Sample reports -->
+        <div style="text-align:center;margin-bottom:24px;">
+            <div style="font-size:13px;color:var(--text-muted);margin-bottom:8px;">See what Pro looks like:</div>
+            <div style="display:flex;flex-wrap:wrap;gap:8px 16px;justify-content:center;">
+                <a href="sample-pro-report.html" style="font-size:13px;color:var(--accent);text-decoration:underline;">GPT-5 report — save $2,112/yr</a>
+                <a href="sample-pro-report-claude-sonnet.html" style="font-size:13px;color:var(--accent);text-decoration:underline;">Claude Sonnet 4.6 — save $2,004/yr</a>
+                <a href="generate-report.html" style="font-size:13px;color:var(--accent);text-decoration:underline;font-weight:700;">Generate your free report →</a>
+            </div>
+        </div>
     </main>
 
     <footer>
-        <p>© 2026 APIpulse. <a href="index.html">Home</a> · <a href="about.html">About</a> · <a href="blog.html">Blog</a> · <a href="api-cost-audit.html">🔍 Cost Audit</a> · <a href="pricing.html">Pricing</a></p>
+        <p>© 2026 APIpulse. <a href="index.html">Home</a> · <a href="about.html">About</a> · <a href="blog.html">Blog</a> · <a href="pricing.html">Pricing</a></p>
     </footer>
 
     <script>
     (function() {
-        // Read URL params for personalization
-        var params = new URLSearchParams(window.location.search);
-        var savings = parseFloat(params.get('savings')) || 0;
-        var source = params.get('from') || '';
-        var altCount = parseInt(params.get('alts')) || 0;
-
         // Fix nav CTA on go.html — shared.js rewrites it to go.html?from=nav_cta,
         // creating a reload loop. Override to scroll to the main CTA instead.
         document.addEventListener('DOMContentLoaded', function() {
@@ -788,54 +567,30 @@
             if (navCta) {
                 navCta.addEventListener('click', function(e) {
                     e.preventDefault();
-                    var productCard = document.querySelector('.product-card');
-                    if (productCard) {
-                        productCard.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    var heroCalc = document.querySelector('.hero-calc');
+                    if (heroCalc) {
+                        heroCalc.scrollIntoView({ behavior: 'smooth', block: 'start' });
                     }
                 });
             }
         });
 
-        // Show personalized savings if available
-        if (savings > 0) {
-            var annual = Math.round(savings * 12);
-            document.getElementById('hero-savings').textContent = '$' + annual.toLocaleString() + '/yr';
-            if (altCount > 0) {
-                document.getElementById('hero-sub').textContent = altCount + ' cheaper alternatives found for your workload';
-            }
-            document.getElementById('savings-hero').style.display = 'block';
-
-            // Update CTA text to include savings
-            var price = window._abPrice || 29;
-            var ctaText = 'Save $' + annual.toLocaleString() + '/yr — Get Pro for $' + price;
-            document.getElementById('checkout-btn').innerHTML = ctaText;
-            document.getElementById('checkout-btn-bottom').innerHTML = ctaText;
-        }
-
-        // Countdown timer — time until founding member price ends (July 12, 2026)
+        // Countdown timer — founding member price ends July 12, 2026
         (function() {
             var deadline = new Date('2026-07-12T23:59:59Z');
             function updateCountdown() {
                 var now = new Date();
                 var diff = deadline - now;
-                var timeStr;
-                if (diff <= 0) {
-                    timeStr = '0 days';
-                } else {
-                    var days = Math.floor(diff / 86400000);
-                    var hours = Math.floor((diff % 86400000) / 3600000);
-                    var mins = Math.floor((diff % 3600000) / 60000);
-                    var secs = Math.floor((diff % 60000) / 1000);
-                    timeStr = days > 0
-                        ? days + 'd ' + hours + 'h ' + mins + 'm'
-                        : hours + 'h ' + mins + 'm ' + secs + 's';
-                }
-                document.getElementById('countdown').textContent = timeStr;
-                var bottom = document.getElementById('countdown-bottom');
-                if (bottom) bottom.textContent = timeStr;
+                var el = document.getElementById('countdown');
+                if (!el) return;
+                if (diff <= 0) { el.textContent = '0 days'; return; }
+                var days = Math.floor(diff / 86400000);
+                var hours = Math.floor((diff % 86400000) / 3600000);
+                var mins = Math.floor((diff % 3600000) / 60000);
+                el.textContent = days > 0 ? days + 'd ' + hours + 'h ' + mins + 'm' : hours + 'h ' + mins + 'm';
             }
             updateCountdown();
-            setInterval(updateCountdown, 1000);
+            setInterval(updateCountdown, 60000);
         })();
 
         // A/B pricing
@@ -844,64 +599,44 @@
             var stripeLink = window._abStripeLink || 'https://buy.stripe.com/fZu7sL3Gw3GS0RQeoDeEo0a';
 
             // Update prices
-            document.getElementById('checkout-price').textContent = '$' + price;
-            document.getElementById('btn-price').textContent = '$' + price;
-            document.getElementById('btn-price-bottom').textContent = '$' + price;
+            document.getElementById('cta-price').textContent = '$' + price;
+            document.getElementById('cta-price-bottom').textContent = '$' + price;
+            document.getElementById('price-display').textContent = '$' + price;
 
-            // Update "was" price and savings badge based on A/B variant
+            // Update "was" price and savings badge
             var futurePrice = price === 19 ? 39 : 49;
             var savingsPct = Math.round((1 - price / futurePrice) * 100);
-            var wasEl = document.querySelector('.price-was');
-            var badgeEl = document.querySelector('.price-badge');
+            var wasEl = document.getElementById('price-was');
+            var badgeEl = document.getElementById('price-badge');
             if (wasEl) wasEl.textContent = '$' + futurePrice;
             if (badgeEl) badgeEl.textContent = 'Save ' + savingsPct + '%';
 
             // Update Stripe links
-            document.getElementById('checkout-btn').href = stripeLink;
-            document.getElementById('checkout-btn-bottom').href = stripeLink;
-            var estBtn = document.getElementById('checkout-btn-est');
-            if (estBtn) estBtn.href = stripeLink;
-            // Note: btn-price-est span is replaced by calculate() innerHTML on load.
-            // Estimator CTA text is managed by calculate() — don't overwrite it here.
+            document.getElementById('buy-cta').href = stripeLink;
+            document.getElementById('buy-cta-bottom').href = stripeLink;
 
             // Track checkout page view
+            var params = new URLSearchParams(window.location.search);
             if (window.trackEvent) {
                 window.trackEvent('checkout_page_viewed', {
-                    source: source,
-                    savings: savings,
-                    price: price,
-                    alt_count: altCount
+                    source: params.get('from') || 'direct',
+                    price: price
                 });
             }
-
-            // Track CTA clicks
-            ['checkout-btn', 'checkout-btn-bottom', 'checkout-btn-est'].forEach(function(id) {
-                document.getElementById(id).addEventListener('click', function() {
-                    if (window.trackEvent) {
-                        window.trackEvent('checkout_cta_clicked', {
-                            source: source,
-                            savings: savings,
-                            price: price,
-                            button: id
-                        });
-                    }
-                });
-            });
         });
     })();
 
-    // Interactive Savings Estimator
+    // Savings Calculator
     (function() {
         var modelSel = document.getElementById('est-model');
         var spendInput = document.getElementById('est-spend');
-        var resultsDiv = document.getElementById('est-results');
-        var altsBody = document.getElementById('est-alts-body');
-        var savingsAmount = document.getElementById('est-savings-amount');
-        var savingsPct = document.getElementById('est-savings-pct');
+        var resultsDiv = document.getElementById('calc-results');
+        var altsBody = document.getElementById('alts-body');
+        var savingsAmount = document.getElementById('savings-amount');
+        var savingsLabel = document.getElementById('savings-label');
+        var savingsPayback = document.getElementById('savings-payback');
         if (!modelSel || !spendInput) return;
-        var userInteracted = false; // Track if user changed model/spend (vs auto-load)
 
-        // Pricing data (per 1M tokens)
         var models = {
             'openai-gpt5':           {name:'GPT-5',input:1.25,output:10.00,ratio:0.85},
             'openai-gpt55':          {name:'GPT-5.5',input:5.00,output:30.00,ratio:0.85},
@@ -912,7 +647,6 @@
             'google-pro':            {name:'Gemini 2.5 Pro',input:1.25,output:10.00,ratio:0.85},
             'google-gemini35-flash': {name:'Gemini 3.5 Flash',input:1.50,output:9.00,ratio:0.85}
         };
-        // Top 3 budget alternatives
         var alts = [
             {name:'DeepSeek V4 Flash',provider:'DeepSeek',input:0.14,output:0.28},
             {name:'GPT-oss 20B',provider:'OpenAI',input:0.08,output:0.35},
@@ -923,14 +657,11 @@
         ];
 
         function calcTokens(spend, inputPrice, outputPrice, ratio) {
-            // Assume ratio of input:output tokens = 0.85 (typical usage)
-            // Cost = (inputTokens/1M * inputPrice) + (outputTokens/1M * outputPrice)
-            // Let x = inputTokens/1M, then outputTokens/1M = x*ratio
-            // spend = x*inputPrice + x*ratio*outputPrice
-            // x = spend / (inputPrice + ratio*outputPrice)
             var x = spend / (inputPrice + ratio * outputPrice);
             return {inputM: x, outputM: x * ratio};
         }
+
+        var userInteracted = false;
 
         function calculate() {
             var model = models[modelSel.value];
@@ -938,10 +669,6 @@
             if (spend <= 0) { resultsDiv.style.display = 'none'; return; }
 
             var tokens = calcTokens(spend, model.input, model.output, model.ratio);
-            var bestSaving = 0;
-            var bestAlt = null;
-
-            // Calculate cost with each alt
             var results = alts.map(function(alt) {
                 var cost = tokens.inputM * alt.input + tokens.outputM * alt.output;
                 var saving = spend - cost;
@@ -950,66 +677,52 @@
               .sort(function(a,b) { return b.saving - a.saving; })
               .slice(0,3);
 
-            if (results.length === 0) {
-                resultsDiv.style.display = 'none';
-                return;
-            }
+            if (results.length === 0) { resultsDiv.style.display = 'none'; return; }
 
-            bestSaving = results[0].saving;
-            bestAlt = results[0];
-
-            // Update display
+            var bestSaving = results[0].saving;
+            var bestAlt = results[0];
             var annualSaving = Math.round(bestSaving * 12);
-            savingsAmount.textContent = '$' + annualSaving.toLocaleString() + '/yr';
-            savingsPct.textContent = 'Switch to ' + bestAlt.name + ' — save ' + Math.round(bestAlt.pct) + '%';
 
-            // Payback period: $29 Pro price ÷ monthly savings = months to pay back
+            savingsAmount.textContent = '$' + annualSaving.toLocaleString() + '/yr';
+            savingsLabel.textContent = 'switch to ' + bestAlt.name + ' — save ' + Math.round(bestAlt.pct) + '%';
+
+            // Payback
             var price = window._abPrice || 29;
             var paybackDays = Math.ceil((price / bestSaving) * 30);
-            var paybackEl = document.getElementById('est-payback');
-            if (paybackEl) {
-                if (paybackDays <= 1) {
-                    paybackEl.textContent = '⚡ $' + price + ' Pro pays for itself on day 1';
-                } else if (paybackDays <= 30) {
-                    paybackEl.textContent = '⚡ $' + price + ' Pro pays for itself in ' + paybackDays + ' days';
-                } else {
-                    var paybackMonths = Math.ceil(paybackDays / 30);
-                    paybackEl.textContent = '⚡ $' + price + ' Pro pays for itself in ' + paybackMonths + ' month' + (paybackMonths > 1 ? 's' : '');
-                }
+            if (paybackDays <= 1) {
+                savingsPayback.textContent = '⚡ $' + price + ' Pro pays for itself on day 1';
+            } else if (paybackDays <= 30) {
+                savingsPayback.textContent = '⚡ $' + price + ' Pro pays for itself in ' + paybackDays + ' days';
+            } else {
+                savingsPayback.textContent = '⚡ $' + price + ' Pro pays for itself in ' + Math.ceil(paybackDays / 30) + ' months';
             }
 
-            // Update ALL CTAs on page with personalized savings — not just the estimator CTA
-            // Users who interact with the estimator are high-intent; every CTA should reinforce their savings
-            // Only sync all CTAs after user interaction — auto-load uses GPT-5/$100 defaults which may
-            // be less accurate than savings passed via URL param from the savings calculator
+            // Update CTAs with personalized savings
             if (userInteracted) {
-                ['checkout-btn', 'checkout-btn-est', 'checkout-btn-bottom'].forEach(function(id) {
-                    var btn = document.getElementById(id);
-                    if (btn) {
-                        btn.innerHTML = 'Save $' + annualSaving.toLocaleString() + '/yr — Get Pro for $' + price;
+                ['main-cta', 'buy-cta', 'buy-cta-bottom'].forEach(function(id) {
+                    var el = document.getElementById(id);
+                    if (!el) return;
+                    if (id === 'main-cta') {
+                        el.textContent = '⚡ Save $' + annualSaving.toLocaleString() + '/yr — Try Pro Free';
+                    } else {
+                        el.innerHTML = 'Save $' + annualSaving.toLocaleString() + '/yr — Get Pro for $' + price;
                     }
                 });
-            } else {
-                // On auto-load, only update the estimator CTA (others may have URL-param-based text)
-                var estCtaBtn = document.getElementById('checkout-btn-est');
-                if (estCtaBtn) {
-                    estCtaBtn.innerHTML = 'Save $' + annualSaving.toLocaleString() + '/yr — Get Pro for $' + price;
-                }
             }
 
             // Build table
-            altsBody.innerHTML = results.map(function(r,i) {
-                var cls = i === 0 ? ' class="demo-highlight"' : '';
+            altsBody.innerHTML = results.map(function(r, i) {
+                var cls = i === 0 ? ' class="alt-highlight"' : '';
                 return '<tr' + cls + '><td>' + (i === 0 ? '<strong>' + r.name + '</strong>' : r.name) + '</td>' +
                     '<td>' + r.provider + '</td>' +
                     '<td><strong>$' + r.cost.toFixed(2) + '</strong></td>' +
-                    '<td class="demo-savings-cell">$' + r.saving.toFixed(2) + '/mo (' + Math.round(r.pct) + '%)</td></tr>';
+                    '<td class="alt-savings">$' + r.saving.toFixed(2) + '/mo (' + Math.round(r.pct) + '%)</td></tr>';
             }).join('');
 
             resultsDiv.style.display = 'block';
 
             // Track
-            if (window.trackEvent) {
+            if (window.trackEvent && userInteracted) {
                 window.trackEvent('savings_estimator_used', {
                     model: modelSel.value,
                     spend: spend,
@@ -1022,37 +735,23 @@
         spendInput.addEventListener('input', function() { userInteracted = true; calculate(); });
         // Auto-calculate on load
         calculate();
-
-        // Track estimator section visibility
-        var estSection = document.getElementById('savings-estimator');
-        if (estSection && window.IntersectionObserver) {
-            var estViewed = false;
-            new IntersectionObserver(function(entries) {
-                if (entries[0].isIntersecting && !estViewed) {
-                    estViewed = true;
-                    if (window.trackEvent) window.trackEvent('savings_estimator_viewed');
-                    if (typeof gtag === 'function') gtag('event', 'savings_estimator_viewed');
-                }
-            }, {threshold: 0.3}).observe(estSection);
-        }
     })();
 
     // Track demo section visibility
     (function() {
-        var demo = document.querySelector('.demo-section');
-        if (!demo || !window.IntersectionObserver) return;
+        var heroCalc = document.querySelector('.hero-calc');
+        if (!heroCalc || !window.IntersectionObserver) return;
         var viewed = false;
         new IntersectionObserver(function(entries) {
             if (entries[0].isIntersecting && !viewed) {
                 viewed = true;
-                if (window.trackEvent) window.trackEvent('demo_section_viewed');
-                if (typeof gtag === 'function') gtag('event', 'demo_section_viewed');
+                if (window.trackEvent) window.trackEvent('hero_calculator_viewed');
+                if (typeof gtag === 'function') gtag('event', 'hero_calculator_viewed');
             }
-        }, {threshold: 0.3}).observe(demo);
+        }, {threshold: 0.3}).observe(heroCalc);
     })();
 
     // Social proof notification — shows after 8 seconds
-    // Rotates between honest trust signals (no fake purchase claims)
     setTimeout(function() {
         if (sessionStorage.getItem('go_social_proof_shown')) return;
         sessionStorage.setItem('go_social_proof_shown', '1');
@@ -1060,7 +759,6 @@
             {icon: '📊', title: '42 models compared across 10 providers', sub: 'OpenAI, Anthropic, Google, DeepSeek, Mistral & more'},
             {icon: '⚡', title: 'Switch models in 5 minutes', sub: 'Migration code snippets included with Pro'},
             {icon: '💰', title: 'Save up to 40% on API costs', sub: 'Find cheaper alternatives for your exact workload'},
-            {icon: '🔒', title: 'Secure checkout via Stripe', sub: 'Your payment info never touches our servers'},
             {icon: '🛡️', title: '14-day money-back guarantee', sub: 'Zero risk — full refund, no questions asked'}
         ];
         var msg = messages[Math.floor(Math.random() * messages.length)];
@@ -1074,7 +772,6 @@
     }, 8000);
 
     // Exit popup — feedback survey + last-chance conversion
-    // Triggers: desktop mouseout, mobile back button, tab visibility change
     (function() {
         if (sessionStorage.getItem('go_exit_popup_shown')) return;
         var triggered = false;
@@ -1084,10 +781,8 @@
             sessionStorage.setItem('go_exit_popup_shown', '1');
 
             var price = window._abPrice || 29;
-            var savings = parseFloat(new URLSearchParams(window.location.search).get('savings')) || 0;
             var from = new URLSearchParams(window.location.search).get('from') || '';
 
-            // Step 1: Feedback survey
             var overlay = document.createElement('div');
             overlay.style.cssText = 'position:fixed;inset:0;background:rgba(0,0,0,0.7);z-index:10000;display:flex;align-items:center;justify-content:center;padding:20px;animation:fadeIn 0.3s ease;';
 
@@ -1104,7 +799,7 @@
             step1.innerHTML = '<div style="text-align:center;margin-bottom:16px;">' +
                 '<div style="font-size:36px;margin-bottom:8px;">🤔</div>' +
                 '<h3 style="font-size:20px;font-weight:800;margin-bottom:4px;">Quick question before you go</h3>' +
-                '<p style="font-size:14px;color:var(--text-secondary);">What stopped you from getting Pro today? (helps us improve)</p>' +
+                '<p style="font-size:14px;color:var(--text-secondary);">What stopped you from getting Pro today?</p>' +
                 '</div>';
 
             var reasons = [
@@ -1121,18 +816,10 @@
                 var btn = document.createElement('button');
                 btn.style.cssText = 'display:flex;align-items:center;gap:10px;width:100%;padding:12px 16px;background:var(--bg-secondary);border:1px solid var(--border);border-radius:10px;font-size:14px;color:var(--text-primary);cursor:pointer;transition:all 0.15s;text-align:left;';
                 btn.innerHTML = '<span style="font-size:18px;">' + r.icon + '</span> ' + r.label;
-                btn.onmouseover = function() { this.style.borderColor = 'var(--accent)'; this.style.background = 'var(--bg-tertiary, var(--bg-secondary))'; };
-                btn.onmouseout = function() { this.style.borderColor = 'var(--border)'; this.style.background = 'var(--bg-secondary)'; };
+                btn.onmouseover = function() { this.style.borderColor = 'var(--accent)'; };
+                btn.onmouseout = function() { this.style.borderColor = 'var(--border)'; };
                 btn.onclick = function() {
-                    // Track the feedback
-                    if (window.trackEvent) window.trackEvent('exit_survey_response', {
-                        reason: r.id,
-                        source: from,
-                        savings: savings,
-                        price: price,
-                        trigger: trigger || 'mouseout'
-                    });
-                    // Show step 2
+                    if (window.trackEvent) window.trackEvent('exit_survey_response', { reason: r.id, source: from, price: price, trigger: trigger || 'mouseout' });
                     showStep2(r.id);
                 };
                 btnContainer.appendChild(btn);
@@ -1141,7 +828,7 @@
 
             var skipLink = document.createElement('div');
             skipLink.style.cssText = 'text-align:center;margin-top:12px;';
-            skipLink.innerHTML = '<a href="#" id="exit-survey-skip" style="font-size:12px;color:var(--text-muted);text-decoration:underline;">Skip — just show me the deal</a>';
+            skipLink.innerHTML = '<a href="#" style="font-size:12px;color:var(--text-muted);text-decoration:underline;">Skip — just show me the deal</a>';
             skipLink.querySelector('a').onclick = function(e) {
                 e.preventDefault();
                 if (window.trackEvent) window.trackEvent('exit_survey_skipped', { source: from, trigger: trigger });
@@ -1154,7 +841,6 @@
             overlay.appendChild(card);
             document.body.appendChild(overlay);
 
-            // Step 2: Tailored response based on feedback
             function showStep2(reason) {
                 step1.remove();
                 var step2 = document.createElement('div');
@@ -1163,87 +849,49 @@
                 if (reason === 'too_expensive') {
                     step2.innerHTML =
                         '<div style="font-size:36px;margin-bottom:8px;">💰</div>' +
-                        '<h3 style="font-size:20px;font-weight:800;margin-bottom:8px;">We hear you — here\'s the math</h3>' +
-                        '<p style="font-size:14px;color:var(--text-secondary);line-height:1.5;margin-bottom:16px;">APIpulse Pro costs $' + price + ' <strong>once</strong>. The average user saves $720+/year on AI APIs. That\'s a 25× return — and it\'s lifetime access.</p>' +
-                        (savings > 0 ? '<p style="font-size:16px;font-weight:700;color:var(--green);margin-bottom:16px;">Your estimated savings: $' + (savings * 12).toFixed(0) + '/year</p>' : '') +
-                        '<a href="' + (window._abStripeLink || 'https://buy.stripe.com/fZu7sL3Gw3GS0RQeoDeEo0a') + '" target="_blank" rel="noopener" style="display:block;background:var(--accent);color:white;padding:14px 24px;border-radius:10px;font-size:16px;font-weight:700;text-decoration:none;transition:all 0.2s;box-shadow:0 4px 20px rgba(99,102,241,0.3);">Get Lifetime Access — $' + price + '</a>' +
-                        '<p style="font-size:12px;color:var(--text-muted);margin-top:8px;">14-day money-back guarantee · No questions asked</p>';
+                        '<h3 style="font-size:20px;font-weight:800;margin-bottom:8px;">Here\'s the math</h3>' +
+                        '<p style="font-size:14px;color:var(--text-secondary);line-height:1.5;margin-bottom:16px;">$' + price + ' <strong>once</strong>. Average user saves $720+/year. That\'s a 25× return — lifetime access.</p>' +
+                        '<a href="' + (window._abStripeLink || 'https://buy.stripe.com/fZu7sL3Gw3GS0RQeoDeEo0a') + '" target="_blank" rel="noopener" style="display:block;background:var(--accent);color:white;padding:14px 24px;border-radius:10px;font-size:16px;font-weight:700;text-decoration:none;box-shadow:0 4px 20px rgba(99,102,241,0.3);">Get Lifetime Access — $' + price + '</a>' +
+                        '<p style="font-size:12px;color:var(--text-muted);margin-top:8px;">14-day money-back guarantee</p>';
                 } else if (reason === 'not_sure_value' || reason === 'free_enough') {
                     step2.innerHTML =
                         '<div style="font-size:36px;margin-bottom:8px;">📊</div>' +
                         '<h3 style="font-size:20px;font-weight:800;margin-bottom:8px;">See it in action</h3>' +
-                        '<p style="font-size:14px;color:var(--text-secondary);line-height:1.5;margin-bottom:16px;">Our free savings calculator already shows you cheaper alternatives. Pro gives you the complete migration code, PDF reports, and real-time price alerts for 42 models.</p>' +
-                        '<div style="display:flex;flex-direction:column;gap:8px;">' +
-                        '<a href="generate-report.html" style="display:block;background:var(--bg-secondary);border:1px solid var(--accent);color:var(--accent);padding:12px 20px;border-radius:10px;font-size:14px;font-weight:600;text-decoration:none;">Generate Your Free Cost Report →</a>' +
+                        '<p style="font-size:14px;color:var(--text-secondary);line-height:1.5;margin-bottom:16px;">Our free calculator shows cheaper alternatives. Pro gives you migration code, PDF reports, and price alerts for 42 models.</p>' +
+                        '<a href="generate-report.html" style="display:block;background:var(--bg-secondary);border:1px solid var(--accent);color:var(--accent);padding:12px 20px;border-radius:10px;font-size:14px;font-weight:600;text-decoration:none;margin-bottom:8px;">Generate Your Free Cost Report →</a>' +
                         '<a href="' + (window._abStripeLink || 'https://buy.stripe.com/fZu7sL3Gw3GS0RQeoDeEo0a') + '" target="_blank" rel="noopener" style="display:block;background:var(--accent);color:white;padding:14px 24px;border-radius:10px;font-size:16px;font-weight:700;text-decoration:none;box-shadow:0 4px 20px rgba(99,102,241,0.3);">Get Pro — $' + price + ' lifetime</a>' +
-                        '</div>' +
                         '<p style="font-size:12px;color:var(--text-muted);margin-top:8px;">14-day money-back guarantee</p>';
                 } else if (reason === 'dont_trust') {
                     step2.innerHTML =
                         '<div style="font-size:36px;margin-bottom:8px;">🔒</div>' +
-                        '<h3 style="font-size:20px;font-weight:800;margin-bottom:8px;">Fair enough — here\'s our guarantee</h3>' +
-                        '<p style="font-size:14px;color:var(--text-secondary);line-height:1.5;margin-bottom:16px;">APIpulse compares 42 AI models across 10 providers with real-time pricing. We\'re used by 1,200+ developers. Stripe handles payment (you never share card details with us). And you get a <strong>14-day, no-questions-asked money-back guarantee</strong>.</p>' +
-                        '<div style="display:flex;flex-direction:column;gap:8px;">' +
-                        '<a href="how-it-works.html" style="display:block;background:var(--bg-secondary);border:1px solid var(--accent);color:var(--accent);padding:12px 20px;border-radius:10px;font-size:14px;font-weight:600;text-decoration:none;">See How It Works →</a>' +
+                        '<h3 style="font-size:20px;font-weight:800;margin-bottom:8px;">Fair enough</h3>' +
+                        '<p style="font-size:14px;color:var(--text-secondary);line-height:1.5;margin-bottom:16px;">42 models, 10 providers, real-time pricing. Stripe handles payment. <strong>14-day, no-questions-asked money-back guarantee.</strong></p>' +
+                        '<a href="how-it-works.html" style="display:block;background:var(--bg-secondary);border:1px solid var(--accent);color:var(--accent);padding:12px 20px;border-radius:10px;font-size:14px;font-weight:600;text-decoration:none;margin-bottom:8px;">See How It Works →</a>' +
                         '<a href="' + (window._abStripeLink || 'https://buy.stripe.com/fZu7sL3Gw3GS0RQeoDeEo0a') + '" target="_blank" rel="noopener" style="display:block;background:var(--accent);color:white;padding:14px 24px;border-radius:10px;font-size:16px;font-weight:700;text-decoration:none;box-shadow:0 4px 20px rgba(99,102,241,0.3);">Risk-Free: Get Pro — $' + price + '</a>' +
-                        '</div>' +
-                        '<p style="font-size:12px;color:var(--text-muted);margin-top:8px;">Stripe secure payment · Full refund within 14 days</p>';
+                        '<p style="font-size:12px;color:var(--text-muted);margin-top:8px;">Stripe secure · Full refund within 14 days</p>';
                 } else {
-                    // other / skipped
-                    var headline = savings > 0
-                        ? 'You\'re about to leave $' + (savings * 12).toFixed(0) + '/yr on the table'
-                        : 'Here\'s what you get for $' + price;
-                    var desc = savings > 0
-                        ? 'Pro shows you exactly how to save $' + (savings * 12).toFixed(0) + '/year on AI APIs. It costs $' + price + ' once — pays for itself in ' + Math.ceil(price / (savings || 10)) + ' days.'
-                        : 'Lifetime access to 42-model comparisons, migration code, PDF reports, and price alerts. $' + price + ' one-time. 14-day money-back guarantee.';
                     step2.innerHTML =
                         '<div style="font-size:36px;margin-bottom:8px;">💸</div>' +
-                        '<h3 style="font-size:20px;font-weight:800;margin-bottom:8px;">' + headline + '</h3>' +
-                        '<p style="font-size:14px;color:var(--text-secondary);line-height:1.5;margin-bottom:16px;">' + desc + '</p>' +
-                        '<a href="' + (window._abStripeLink || 'https://buy.stripe.com/fZu7sL3Gw3GS0RQeoDeEo0a') + '" target="_blank" rel="noopener" style="display:block;background:var(--accent);color:white;padding:14px 24px;border-radius:10px;font-size:16px;font-weight:700;text-decoration:none;transition:all 0.2s;box-shadow:0 4px 20px rgba(99,102,241,0.3);">Get Pro — $' + price + ' lifetime</a>' +
-                        '<p style="font-size:12px;color:var(--text-muted);margin-top:8px;">14-day money-back guarantee · No questions asked</p>';
+                        '<h3 style="font-size:20px;font-weight:800;margin-bottom:8px;">Here\'s what you get for $' + price + '</h3>' +
+                        '<p style="font-size:14px;color:var(--text-secondary);line-height:1.5;margin-bottom:16px;">Lifetime access to 42-model comparisons, migration code, PDF reports, and price alerts. One-time payment. 14-day guarantee.</p>' +
+                        '<a href="' + (window._abStripeLink || 'https://buy.stripe.com/fZu7sL3Gw3GS0RQeoDeEo0a') + '" target="_blank" rel="noopener" style="display:block;background:var(--accent);color:white;padding:14px 24px;border-radius:10px;font-size:16px;font-weight:700;text-decoration:none;box-shadow:0 4px 20px rgba(99,102,241,0.3);">Get Pro — $' + price + ' lifetime</a>' +
+                        '<p style="font-size:12px;color:var(--text-muted);margin-top:8px;">14-day money-back guarantee</p>';
                 }
 
                 card.appendChild(step2);
-
-                // Track step 2 shown
                 if (window.trackEvent) window.trackEvent('exit_survey_step2_shown', { reason: reason, source: from });
             }
 
-            // If triggered by back button, restore the current URL so the page stays
             if (trigger === 'backbutton') {
                 history.pushState(null, '', location.href);
             }
 
-            if (window.trackEvent) window.trackEvent('checkout_exit_popup_shown', { source: from, savings: savings, trigger: trigger || 'mouseout' });
+            if (window.trackEvent) window.trackEvent('checkout_exit_popup_shown', { source: from, trigger: trigger || 'mouseout' });
         }
 
-        // Desktop: mouse leaves viewport from top
         document.addEventListener('mouseout', function(e) { if (e.clientY <= 0) showExitPopup('mouseout'); });
-
-        // Mobile: back button interception — push a state so popstate fires instead of navigating away
         history.pushState(null, '', location.href);
-        window.addEventListener('popstate', function() {
-            showExitPopup('backbutton');
-        });
-
-        // Tab visibility change — catches mobile app switches, tab changes, and lock screen
-        document.addEventListener('visibilitychange', function() {
-            if (document.visibilityState === 'hidden') {
-                // Delay slightly to avoid false positives from normal tab switches
-                // Use sessionStorage to avoid re-triggering on same session
-                var hiddenAt = Date.now();
-                document.addEventListener('visibilitychange', function onReturn() {
-                    if (document.visibilityState === 'visible') {
-                        document.removeEventListener('visibilitychange', onReturn);
-                        // Only trigger if they were gone for 5+ seconds (likely considered leaving)
-                        if (Date.now() - hiddenAt >= 5000) {
-                            showExitPopup('tab_return');
-                        }
-                    }
-                }, { once: false });
-            }
-        });
+        window.addEventListener('popstate', function() { showExitPopup('backbutton'); });
     })();
     </script>
 </body>
