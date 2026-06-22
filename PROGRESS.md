@@ -1,5 +1,24 @@
 # PROGRESS.md
 
+## Session 838 (Jun 22) — Embeddable Cost Calculator Widget (1 commit)
+**Created a new viral distribution tool — embeddable cost calculator widget.**
+- **Created widget/calc-embed.js** — self-contained embeddable calculator widget
+  - 17 models across 7 providers (OpenAI, Anthropic, Google, DeepSeek, Mistral, Meta, xAI)
+  - Shadow DOM for style isolation, ~8KB gzipped, zero dependencies
+  - Two modes: floating (bottom-right corner) and inline (data attributes)
+  - Users select model, enter input/output tokens, see per-request and monthly cost
+  - "Compare all 42 models →" CTA links back to APIpulse (viral distribution)
+- **Created widget-calculator.html** — demo and documentation page
+  - Live demo of both floating and inline modes
+  - One-line install code with copy button
+  - Feature comparison: Calculator Widget vs Pricing Widget
+- **Created DISTRIBUTION-CALC-WIDGET.md** — distribution kit with social posts, directory targets
+- **Updated tools.html** — added calculator widget card (106 tools now)
+- **Updated widget.html** — cross-linked calculator widget
+- **Updated index.html** — added calculator widget to tools section
+- **Updated sitemap** (807 URLs), **RSS** (694 items)
+- **1 commit, 7 files changed, +350 lines**
+
 ## Session 837 (Jun 22) — Structured Data + RSS Sync Fix (1 commit)
 **Fixed incomplete structured data and missing RSS entries across use-case pages.**
 - **Fixed use-cases.html ItemList schema** — added 4 missing use cases (Content Writing, Customer Support, Data Extraction, Legal) to structured data
@@ -171,9 +190,9 @@
 ## Summary: Sessions 1-598 (Apr 5 - Jun 12)
 Full APIpulse build from scratch. 652 pages, 320 posts, 42 models, 10 providers, 84 tools. Domain, Stripe, Pro, GA4, newsletter, Chrome extension, 167 comparisons, FAQPage schema, streaming toggle, A/B pricing, Model Selector quiz.
 
-## Site Status (as of Session 837, Jun 22, 2026)
-**820+ web pages | 354 blog posts | 40+ models | 10 providers | 106 tools | 12 API endpoints | 2 embeddable widgets**
-- Sitemap (806 URLs), RSS (693 items), blog files (354 posts) — all in sync
+## Site Status (as of Session 838, Jun 22, 2026)
+**820+ web pages | 354 blog posts | 40+ models | 10 providers | 107 tools | 12 API endpoints | 3 embeddable widgets**
+- Sitemap (807 URLs), RSS (694 items), blog files (354 posts) — all in sync
 - **232 comparison pages** covering all major model pairs (all indexed in compare.html)
 - **22 alternatives landing pages** — all cross-linked, all with go.html model pre-fill
 - **16 use-case pages** — chatbot, code-gen, content-writing, customer-support, data-extraction, document-analysis, enterprise, agents, RAG, translation, startups, ecommerce, healthcare, education, finance, legal
@@ -185,6 +204,7 @@ Full APIpulse build from scratch. 652 pages, 320 posts, 42 models, 10 providers,
 - **A/B pricing test LIVE** — $19 vs $29 (50/50)
 - **Exit popup A/B test LIVE** — Loss-framed vs social-proof copy
 - **Widget embed tracking LIVE** — tracks which domains embed the widget (Session 827)
+- **Embeddable Cost Calculator Widget** — new viral distribution tool (Session 838)
 
 ## Blocked on Human Action
 1. **Widget distribution** — DISTRIBUTION-KIT.md has 18 targets ready (dev.to article, Show HN draft, 8 directories, 5 awesome-lists, 5 communities). ~1-2 hours human time.

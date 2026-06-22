@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free Embeddable AI Cost Calculator Widget — Add to Any Site | APIpulse</title>
+    <meta name="description" content="Free embeddable cost calculator widget for AI API pricing. One script tag — users calculate costs on your site. 17 models, 7 providers, zero dependencies.">
+    <meta name="keywords" content="AI cost calculator widget, embeddable API pricing calculator, LLM cost widget, AI API calculator embed">
+    <meta property="og:title" content="Free Embeddable AI Cost Calculator Widget | APIpulse">
+    <meta property="og:description" content="Add an AI API cost calculator to any site with one script tag. 17 models, instant results, free forever.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://getapipulse.com/widget-calculator.html">
+    <meta property="og:image" content="https://getapipulse.com/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Free Embeddable AI Cost Calculator Widget">
+    <meta name="twitter:image" content="https://getapipulse.com/og-image.png">
+    <link rel="canonical" href="https://getapipulse.com/widget-calculator.html">
+    <link rel="alternate" type="application/rss+xml" title="APIpulse Blog" href="https://getapipulse.com/rss.xml">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="styles.css">
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0CEP7S9Y3J"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-0CEP7S9Y3J');
+    </script>
+    <script src="analytics.js" defer></script>
+    <script src="dynamic-date.js" defer></script>
+    <script src="shared.js" defer></script>
+    <style>
+        .content { max-width: 900px; margin: 0 auto; padding: 120px 24px 80px; }
+        h1 { font-size: clamp(32px, 5vw, 48px); font-weight: 800; text-align: center; margin-bottom: 16px; }
+        .subtitle { text-align: center; color: var(--text-secondary); font-size: 18px; max-width: 600px; margin: 0 auto 40px; line-height: 1.6; }
+
+        /* Live demo */
+        .demo-section { margin-bottom: 48px; }
+        .demo-section h2 { font-size: 24px; font-weight: 800; margin-bottom: 16px; text-align: center; }
+
+        /* Code block */
+        .code-block {
+            background: #0f0f23; border: 1px solid var(--border);
+            border-radius: 12px; padding: 20px; margin-bottom: 16px;
+            font-family: 'SF Mono', Monaco, 'Cascadia Code', monospace;
+            font-size: 14px; color: #e2e8f0; overflow-x: auto;
+            position: relative;
+        }
+        .code-block .copy-btn {
+            position: absolute; top: 12px; right: 12px;
+            background: rgba(99,102,241,0.2); border: 1px solid rgba(99,102,241,0.3);
+            color: #818cf8; padding: 6px 12px; border-radius: 6px;
+            font-size: 12px; cursor: pointer; font-family: inherit;
+        }
+        .code-block .copy-btn:hover { background: rgba(99,102,241,0.3); }
+
+        /* Features grid */
+        .features { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-bottom: 48px; }
+        .feature-card {
+            background: var(--bg-card); border: 1px solid var(--border);
+            border-radius: 12px; padding: 24px;
+        }
+        .feature-card h3 { font-size: 16px; font-weight: 700; margin-bottom: 8px; display: flex; align-items: center; gap: 8px; }
+        .feature-card p { font-size: 14px; color: var(--text-secondary); line-height: 1.6; }
+
+        /* Inline embed container */
+        .inline-demo {
+            max-width: 420px; margin: 0 auto 48px;
+        }
+
+        /* CTA */
+        .widget-cta {
+            text-align: center; padding: 48px 24px;
+            background: var(--bg-secondary); border-radius: 16px;
+            margin-bottom: 48px;
+        }
+        .widget-cta h2 { font-size: 24px; font-weight: 800; margin-bottom: 12px; }
+        .widget-cta p { color: var(--text-secondary); margin-bottom: 20px; }
+        .widget-cta a {
+            display: inline-block; background: var(--accent); color: white;
+            padding: 14px 32px; border-radius: 10px; font-size: 16px; font-weight: 700;
+            text-decoration: none; transition: all 0.2s;
+        }
+        .widget-cta a:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(99,102,241,0.4); }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-inner">
+            <a href="index.html" class="logo">API<span>pulse</span></a>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="tools.html">Tools</a>
+                <a href="widget.html">Widgets</a>
+                <a href="pricing.html" class="nav-cta">Get Pro</a>
+                <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="content">
+        <h1>🧮 Free AI Cost Calculator Widget</h1>
+        <p class="subtitle">Add an interactive AI API cost calculator to any website with one script tag. Your visitors calculate costs instantly — zero dependencies, free forever.</p>
+
+        <!-- Live demo: floating -->
+        <div class="demo-section">
+            <h2>Live Demo — Floating Widget</h2>
+            <p style="text-align:center;color:var(--text-secondary);margin-bottom:16px;">Click the green button in the bottom-right corner ↓</p>
+        </div>
+
+        <!-- Installation code -->
+        <div class="demo-section">
+            <h2>One-Line Install</h2>
+            <div class="code-block">
+                <button class="copy-btn" onclick="navigator.clipboard.writeText(this.previousElementSibling.textContent||this.parentElement.querySelector('code')?.textContent||'');this.textContent='Copied!';setTimeout(()=>this.textContent='Copy',1500)">Copy</button>
+                <code>&lt;script src="https://getapipulse.com/widget/calc-embed.js" defer&gt;&lt;/script&gt;</code>
+            </div>
+            <p style="font-size:14px;color:var(--text-secondary);text-align:center;">Drop this before &lt;/body&gt; — a floating calculator appears in the bottom-right corner.</p>
+        </div>
+
+        <!-- Inline embed -->
+        <div class="demo-section">
+            <h2>Inline Embed</h2>
+            <p style="text-align:center;color:var(--text-secondary);margin-bottom:16px;">Embed directly in your content:</p>
+            <div class="code-block">
+                <button class="copy-btn" onclick="navigator.clipboard.writeText(this.previousElementSibling.textContent||this.parentElement.querySelector('code')?.textContent||'');this.textContent='Copied!';setTimeout(()=>this.textContent='Copy',1500)">Copy</button>
+                <code>&lt;div id="apipulse-calc" data-model="openai-gpt4o" data-tokens="100000"&gt;&lt;/div&gt;
+&lt;script src="https://getapipulse.com/widget/calc-embed.js" defer&gt;&lt;/script&gt;</code>
+            </div>
+            <div class="inline-demo">
+                <div id="apipulse-calc" data-model="openai-gpt4o" data-tokens="100000"></div>
+            </div>
+        </div>
+
+        <!-- Features -->
+        <div class="features">
+            <div class="feature-card">
+                <h3>⚡ Zero Dependencies</h3>
+                <p>Pure JavaScript, no frameworks. ~8KB gzipped. Loads async, won't block your page.</p>
+            </div>
+            <div class="feature-card">
+                <h3>🎨 Style Isolated</h3>
+                <p>Shadow DOM ensures our styles never conflict with yours. Drop in anywhere.</p>
+            </div>
+            <div class="feature-card">
+                <h3>📊 17 Models</h3>
+                <p>GPT-5, Claude Opus 4.8, Gemini 3.5 Flash, DeepSeek V4, Mistral, Llama 4, Grok 4.3 — all compared.</p>
+            </div>
+            <div class="feature-card">
+                <h3>🔗 Drives Traffic</h3>
+                <p>"Compare all 42 models →" links back to APIpulse. Free traffic for your site, free users for us.</p>
+            </div>
+            <div class="feature-card">
+                <h3>🌙 Dark Mode</h3>
+                <p>Automatically matches your site's color scheme. Looks great on any background.</p>
+            </div>
+            <div class="feature-card">
+                <h3>🆓 Free Forever</h3>
+                <p>No signup, no API key, no attribution required. Use it on any site, unlimited embeds.</p>
+            </div>
+        </div>
+
+        <!-- CTA -->
+        <div class="widget-cta">
+            <h2>Want the full pricing comparison?</h2>
+            <p>Compare 42 models across 10 providers. See migration code, savings reports, and optimization tips.</p>
+            <a href="calculator.html">Try APIpulse Calculator →</a>
+        </div>
+
+        <!-- Comparison with other widget -->
+        <div class="demo-section">
+            <h2>Calculator vs Pricing Widget</h2>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+                <div class="feature-card">
+                    <h3>🧮 Calculator Widget</h3>
+                    <p><strong>Interactive.</strong> Users enter their token counts and get instant cost estimates. Best for developer blogs, docs, and tutorials.</p>
+                    <p style="margin-top:8px;"><a href="widget-calculator.html" style="color:var(--accent);">This page →</a></p>
+                </div>
+                <div class="feature-card">
+                    <h3>📊 Pricing Widget</h3>
+                    <p><strong>Passive display.</strong> Shows a floating badge with live pricing. Click to expand the full table. Best for SaaS sites and landing pages.</p>
+                    <p style="margin-top:8px;"><a href="widget.html" style="color:var(--accent);">widget.html →</a></p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Load the floating widget demo -->
+    <script src="widget/calc-embed.js" defer></script>
+
+    <footer>
+        <div class="footer-inner">
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="calculator.html">Calculator</a>
+                <a href="compare.html">Compare</a>
+                <a href="tools.html">Tools</a>
+                <a href="blog.html">Blog</a>
+                <a href="widget.html">Widgets</a>
+                <a href="about.html">About</a>
+            </div>
+            <p class="footer-copy">&copy; 2026 APIpulse. Built for developers who care about AI costs.</p>
+        </div>
+    </footer>
+</body>
+</html>
