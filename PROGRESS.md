@@ -1,7 +1,7 @@
 # PROGRESS.md
 
-## Session 838 (Jun 22) — Embeddable Cost Calculator Widget (1 commit)
-**Created a new viral distribution tool — embeddable cost calculator widget.**
+## Session 838 (Jun 22) — Calculator Widget + Conversion Fix (2 commits)
+**Created viral distribution tool + fixed conversion gap on 31 high-intent pages.**
 - **Created widget/calc-embed.js** — self-contained embeddable calculator widget
   - 17 models across 7 providers (OpenAI, Anthropic, Google, DeepSeek, Mistral, Meta, xAI)
   - Shadow DOM for style isolation, ~8KB gzipped, zero dependencies
@@ -17,7 +17,10 @@
 - **Updated widget.html** — cross-linked calculator widget
 - **Updated index.html** — added calculator widget to tools section
 - **Updated sitemap** (807 URLs), **RSS** (694 items)
-- **1 commit, 7 files changed, +350 lines**
+- **Fixed conversion gap** — added go.html Pro CTA to 31 high-intent pages (16 best-model-for + 15 use-case) that were missing conversion links
+  - Conversion funnel coverage increased from 57 to 88 pages (+54%)
+  - CTA block: "Stop Overpaying for AI APIs" with direct link to go.html
+- **2 commits, 38 files changed, +629 lines**
 
 ## Session 837 (Jun 22) — Structured Data + RSS Sync Fix (1 commit)
 **Fixed incomplete structured data and missing RSS entries across use-case pages.**
