@@ -1,5 +1,16 @@
 # PROGRESS.md
 
+## Session 842 (Jun 22) — 1 New Use-Case Page (1 commit)
+**Created high-intent use-case page for Automotive & Transportation — a major vertical with strong AI adoption for predictive maintenance, fleet management, and driver assistance.**
+- **Created use-case-automotive.html** — Best AI API for Automotive & Transportation 2026
+  - 6 automotive AI use cases: predictive maintenance ($0.001–$0.008), fleet route optimization ($0.002–$0.015), warranty claims ($0.001–$0.008), parts inventory ($0.002–$0.012), customer service ($0.0004–$0.004), driver behavior scoring ($0.003–$0.02)
+  - 9 models compared with predictive maintenance workload costs (50 and 200 vehicles/day)
+  - 4 budget tiers: small fleet ($10–50/mo), regional fleet ($100–500/mo), national fleet ($500–3K/mo), global mobility platform ($2K–8K/mo)
+  - Compliance section (NHTSA, FMCSA, DOT, ISO 26262), ROI comparison, FAQPage schema (3 Q&As)
+- **Updated use-cases.html** — added Automotive card (position 23, 23 total use cases)
+- **Updated indexes** — sitemap (814 URLs), RSS (702 items)
+- **1 commit, 4 files changed, +723 lines**
+
 ## Session 841 (Jun 22) — 3 New Use-Case Pages (1 commit)
 **Created high-intent use-case pages for Insurance, Logistics & Supply Chain, and Human Resources — three major verticals with strong commercial intent.**
 - **Created use-case-insurance.html** — Best AI API for Insurance 2026
@@ -42,12 +53,12 @@
 ## Summary: Sessions 1-598 (Apr 5 - Jun 12)
 Full APIpulse build from scratch. 652 pages, 320 posts, 42 models, 10 providers, 84 tools. Domain, Stripe, Pro, GA4, newsletter, Chrome extension, 167 comparisons, FAQPage schema, streaming toggle, A/B pricing, Model Selector quiz.
 
-## Site Status (as of Session 841, Jun 22, 2026)
-**824+ web pages | 354 blog posts | 40+ models | 10 providers | 107 tools | 12 API endpoints | 3 embeddable widgets**
-- Sitemap (813 URLs), RSS (701 items), blog files (354 posts) — all in sync
+## Site Status (as of Session 842, Jun 22, 2026)
+**825+ web pages | 354 blog posts | 40+ models | 10 providers | 107 tools | 12 API endpoints | 3 embeddable widgets**
+- Sitemap (814 URLs), RSS (702 items), blog files (354 posts) — all in sync
 - **232 comparison pages** covering all major model pairs (all indexed in compare.html)
 - **22 alternatives landing pages** — all cross-linked, all with go.html model pre-fill
-- **22 use-case pages** — chatbot, code-gen, content-writing, customer-support, data-extraction, document-analysis, enterprise, agents, RAG, translation, startups, ecommerce, healthcare, education, finance, legal, manufacturing, marketing, real-estate, insurance, logistics, HR
+- **23 use-case pages** — chatbot, code-gen, content-writing, customer-support, data-extraction, document-analysis, enterprise, agents, RAG, translation, startups, ecommerce, healthcare, education, finance, legal, manufacturing, marketing, real-estate, insurance, logistics, HR, automotive
 - **9 migration routes** in migration-checklist.html (OpenAI, Anthropic, Google, DeepSeek, Mistral, xAI, Cohere)
 - **547 pages** linking to widget.html (296 blog + 229 comparison + 22 alternatives)
 - **251 pages** linking to migration-checklist.html (229 comparison + 22 alternatives)
