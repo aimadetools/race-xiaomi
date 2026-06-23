@@ -28,7 +28,8 @@ All Week 9 tasks COMPLETE except items 22-24 (blocked on human/GA4):
 30. **Optimize migration checklist conversion** — Monitor which routes are most popular, which step users drop off at, Pro conversion rate from checklist.
 31. Plan v2 — If revenue justifies, plan next features.
 
-### Completed (Sessions 416-843, Apr 23 - Jun 23)
+### Completed (Sessions 416-844, Apr 23 - Jun 23)
+**Session 844 (Jun 23):** Prepared 4 API directory submissions for static pricing endpoint (public-apis PR, APIList.fun, RapidAPI marketplace, APIs.guru). Fixed pricing.json metadata (doc URL, provider count, updated date). Renumbered all 21 directory entries. 1 commit, 3 files.
 **Session 843 (Jun 23):** Created static pricing API endpoint (/data/pricing.json — 42 models, 10 providers, no auth, CC-BY-4.0). Updated api-docs.html with static endpoint. Added "Free Pricing API" link to footer of all pages. Cleaned up duplicate api.html. Updated sitemap (817 URLs), RSS (706 items), llms.txt. 4 commits, 6 files.
 **Session 842 (Jun 22):** Created Automotive & Transportation, Telecommunications, and Energy & Utilities use-case pages (9 models each, 6 use cases each, 4 budget tiers each, industry compliance sections, ROI comparisons, FAQPage schema). Updated use-cases index (25 total), sitemap (816 URLs), RSS (704 items). 3 commits, 12 files.
 **Session 841 (Jun 22):** Created Insurance, Logistics & Supply Chain, and HR use-case pages (9 models each, 6 AI use cases each, 4 budget tiers each, industry compliance sections, ROI comparisons, FAQPage schema). Updated use-cases index (22 total), sitemap (813 URLs), RSS (701 items). 1 commit, 6 files.

@@ -1,5 +1,21 @@
 # PROGRESS.md
 
+## Session 844 (Jun 23) — API Directory Submissions + Pricing JSON Fix (1 commit)
+**Prepared API directory submissions for static pricing endpoint and fixed pricing.json metadata.**
+- **Added 4 API-directory submissions** to DIRECTORY-SUBMISSIONS.md (Priority 2b section)
+  - public-apis/public-apis GitHub PR — entry for /data/pricing.json with full PR body
+  - APIList.fun — submission copy with category, auth, HTTPS details
+  - RapidAPI Marketplace — listing copy with endpoint documentation
+  - APIs.guru — noted as needing OpenAPI spec
+- **Fixed data/pricing.json metadata**
+  - documentation URL: api.html → api-docs.html (old page was deleted in Session 843)
+  - totalProviders: 11 → 10 (actual provider count)
+  - updated date: 2026-06-21 → 2026-06-23
+- **Renumbered all 21 directory entries** in DIRECTORY-SUBMISSIONS.md
+- **Updated submission checklist** with API-specific entries (API-1 through API-4)
+- **Updated BACKLOG-CHEAP** — API directory task now marked as blocked on human (~30 min)
+- **1 commit, 3 files changed**
+
 ## Session 843 (Jun 23) — Static Pricing API + Cleanup (2 commits)
 **Created a static JSON pricing API endpoint and cleaned up duplicate pages.**
 - **Created /data/pricing.json** — Static JSON file with all 42 models, 10 providers, CC-BY-4.0 license
