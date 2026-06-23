@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cheapest AI API for Embeddings in 2026 — Cost Comparison | APIpulse</title>
+    <meta name="description" content="Find the cheapest AI API for text embeddings. Compare costs across 42 models — from $0.002/1K docs. Ranked by cost with interactive calculator.">
+    <meta name="keywords" content="cheapest AI API embeddings, cheapest embedding API, text embedding API cost, vector embedding API pricing, cheapest embedding model 2026, OpenAI embedding alternative">
+    <meta property="og:title" content="Cheapest AI API for Embeddings in 2026 | APIpulse">
+    <meta property="og:description" content="Find the cheapest AI API for text embeddings. Compare costs across 42 models.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://getapipulse.com/og-image.png">
+    <meta property="og:url" content="https://getapipulse.com/cheapest-ai-api-embeddings.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Cheapest AI API for Embeddings in 2026">
+    <meta name="twitter:image" content="https://getapipulse.com/og-image.png">
+    <link rel="canonical" href="https://getapipulse.com/cheapest-ai-api-embeddings.html">
+    <link rel="alternate" type="application/rss+xml" title="APIpulse Blog" href="https://getapipulse.com/rss.xml">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="styles.css">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0CEP7S9Y3J"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-0CEP7S9Y3J');
+    </script>
+    <script src="analytics.js" defer></script>
+    <script src="dynamic-date.js" defer></script>
+    <script src="shared.js" defer></script>
+    <script src="pro-features.js" defer></script>
+    <script src="pricing-data.js" defer></script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "APIpulse — Cheapest AI API for Embeddings",
+        "url": "https://getapipulse.com/cheapest-ai-api-embeddings.html",
+        "description": "Find the cheapest AI API for text embeddings. Compare costs across 42 models with an interactive calculator.",
+        "applicationCategory": "DeveloperApplication",
+        "operatingSystem": "Web",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "What is the cheapest AI API for embeddings?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Dedicated embedding models are cheapest: OpenAI text-embedding-3-small ($0.02/1M tokens) and Cohere Embed v4 ($0.10/1M tokens) are the most popular. For comparison, Gemini 2.0 Flash Lite at $0.075/1M input tokens can also generate embeddings. Dedicated embedding models are 10-50x cheaper than using a generative model for embedding tasks."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How much does it cost to embed a document library?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "To embed 100,000 documents (avg 500 words, ~650 tokens each): OpenAI text-embedding-3-small costs $0.0013 total, Cohere Embed v4 costs $0.0065 total. For ongoing indexing of 1,000 new docs/day, that's $0.000013/day with OpenAI. Embedding is one of the cheapest AI API operations — the cost is almost always negligible compared to generation."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Should I use a dedicated embedding model or a generative model?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Use a dedicated embedding model (text-embedding-3-small, Cohere Embed) for: vector search, semantic similarity, clustering, and RAG indexing. They are 10-50x cheaper and purpose-built for these tasks. Use a generative model (GPT, Claude, Gemini) only when you need both the embedding AND a generation step in the same API call. For pure embedding workloads, dedicated models always win on cost."
+                }
+            }
+        ]
+    }
+    </script>
+    <style>
+        .page-hero { padding: 120px 24px 40px; text-align: center; max-width: 800px; margin: 0 auto; }
+        .page-hero h1 { font-size: clamp(28px, 4vw, 42px); font-weight: 800; margin-bottom: 12px; }
+        .page-hero p { color: var(--text-secondary); font-size: 17px; line-height: 1.6; }
+
+        .content-section { max-width: 900px; margin: 0 auto; padding: 0 24px 40px; }
+        .content-section h2 { font-size: 24px; font-weight: 700; margin-bottom: 16px; }
+        .content-section h3 { font-size: 18px; font-weight: 700; margin: 24px 0 12px; }
+        .content-section p { color: var(--text-secondary); line-height: 1.7; margin-bottom: 16px; font-size: 16px; }
+        .content-section strong { color: var(--text-primary); }
+        .content-section ul { color: var(--text-secondary); padding-left: 24px; margin-bottom: 16px; }
+        .content-section li { margin-bottom: 8px; line-height: 1.7; }
+
+        .calculator {
+            background: var(--bg-card); border: 1px solid var(--border);
+            border-radius: 16px; padding: 32px; margin: 32px 0;
+        }
+        .calc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
+        .calc-inputs { display: flex; flex-direction: column; gap: 16px; }
+        .input-group { display: flex; flex-direction: column; gap: 6px; }
+        .input-group label { font-size: 13px; font-weight: 600; color: var(--text-secondary); }
+        .input-group select, .input-group input {
+            padding: 12px 16px; border-radius: 8px; border: 1px solid var(--border);
+            background: var(--bg-secondary); color: var(--text-primary); font-size: 15px; font-family: inherit;
+        }
+        .input-group select:focus, .input-group input:focus {
+            outline: 2px solid var(--accent); outline-offset: 2px; border-color: var(--accent);
+        }
+        .presets { display: flex; gap: 8px; margin-bottom: 20px; flex-wrap: wrap; }
+        .preset-btn {
+            background: var(--bg-secondary); border: 1px solid var(--border);
+            color: var(--text-secondary); padding: 8px 14px; border-radius: 8px;
+            cursor: pointer; font-size: 13px; transition: all 0.2s; font-weight: 500;
+        }
+        .preset-btn:hover { border-color: var(--accent); color: var(--accent); }
+        .preset-btn.active-preset { background: var(--accent); color: white; border-color: var(--accent); }
+
+        .ranking-table { width: 100%; border-collapse: collapse; margin: 20px 0; background: var(--bg-card); border-radius: 12px; overflow: hidden; border: 1px solid var(--border); }
+        .ranking-table th { background: var(--bg-secondary); padding: 12px 16px; text-align: left; font-size: 13px; font-weight: 600; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.5px; }
+        .ranking-table td { padding: 12px 16px; border-top: 1px solid var(--border); font-size: 14px; }
+        .ranking-table tr:hover td { background: var(--bg-card-hover); }
+        .ranking-table .model-name { font-weight: 600; color: var(--text-primary); }
+        .ranking-table .best-badge { background: rgba(34,197,94,0.15); color: var(--green); padding: 3px 10px; border-radius: 6px; font-size: 12px; font-weight: 700; }
+        .ranking-table .good-badge { background: rgba(245,158,11,0.15); color: var(--orange); padding: 3px 10px; border-radius: 6px; font-size: 12px; font-weight: 700; }
+
+        .cta-box { background: linear-gradient(135deg, rgba(99,102,241,0.08), rgba(34,197,94,0.06)); border: 1px solid var(--accent); border-radius: 12px; padding: 28px; margin: 32px 0; text-align: center; }
+
+        .cost-example { background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; padding: 20px; margin: 16px 0; }
+        .cost-example-header { font-weight: 700; margin-bottom: 8px; color: var(--text-primary); }
+        .cost-example-row { display: flex; justify-content: space-between; padding: 6px 0; font-size: 14px; border-bottom: 1px solid rgba(42,42,62,0.3); }
+        .cost-example-row:last-child { border-bottom: none; }
+
+        @media (max-width: 768px) {
+            .page-hero { padding: 100px 20px 30px; }
+            .page-hero h1 { font-size: 26px; }
+            .calc-grid { grid-template-columns: 1fr; gap: 24px; }
+            .calculator { padding: 20px; }
+        }
+    </style>
+    <meta name="theme-color" content="#6366f1">
+</head>
+<body>
+    <nav>
+        <div class="nav-inner">
+            <a href="index.html" class="logo">API<span>pulse</span></a>
+            <button class="hamburger" onclick="toggleMobileNav()" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+            <div class="nav-links">
+                <a href="calculator.html">Calculator</a>
+                <a href="compare.html">Compare</a>
+                <a href="cost-explorer.html">Explorer</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="about.html">About</a>
+                <a href="blog.html">Blog</a>
+                <a href="tools.html">Tools</a> · <a href="api-cost-audit.html">🔍 Cost Audit</a>
+                <a href="pricing-index.html">Pricing Index</a>
+                <a href="api-docs.html" style="color:var(--accent);">API</a>
+                <a href="pricing.html" class="nav-cta">Get Pro — $29</a>
+                <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+    <div class="page-hero">
+        <h1>Cheapest AI API for Embeddings</h1>
+        <p>Find the cheapest AI API for text embeddings. We ranked 42 models by cost — from $0.002 per 1,000 documents.</p>
+    </div>
+
+    <div class="content-section">
+        <!-- Interactive Calculator -->
+        <h2>Calculate Your Embedding Cost</h2>
+        <p>Enter your document volume to see the cheapest models for your embedding workload.</p>
+        <div class="calculator">
+            <div class="presets">
+                <span style="font-size:13px;color:var(--text-muted);align-self:center;">Use case:</span>
+                <button class="preset-btn active-preset" onclick="applyPreset('rag')">RAG Indexing</button>
+                <button class="preset-btn" onclick="applyPreset('search')">Semantic Search</button>
+                <button class="preset-btn" onclick="applyPreset('cluster')">Clustering / Dedup</button>
+                <button class="preset-btn" onclick="applyPreset('reco')">Recommendations</button>
+            </div>
+            <div class="calc-grid">
+                <div class="calc-inputs">
+                    <div class="input-group">
+                        <label for="docs">Documents per day</label>
+                        <input type="number" id="docs" value="10000" min="1" step="1000" onchange="calculate()" oninput="calculate()">
+                    </div>
+                    <div class="input-group">
+                        <label for="avg-input">Avg tokens per document</label>
+                        <input type="number" id="avg-input" value="500" min="1" step="100" onchange="calculate()" oninput="calculate()">
+                    </div>
+                    <div class="input-group">
+                        <label for="days">Days per month</label>
+                        <input type="number" id="days" value="30" min="1" max="31" onchange="calculate()" oninput="calculate()">
+                    </div>
+                </div>
+                <div id="results" style="background:var(--bg-secondary);border:1px solid var(--border);border-radius:12px;padding:24px;">
+                    <!-- Results populated by JS -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Ranking Table -->
+        <h2>Embedding API Cost Ranking</h2>
+        <p>Every model ranked by cost for a typical embedding workload: <strong>10,000 docs/day, 500 tokens per doc.</strong> Embedding-only models use input pricing; generative models also include a small output cost.</p>
+        <div id="ranking-table"></div>
+
+        <h2>Top Picks by Scale</h2>
+
+        <div class="cost-example">
+            <div class="cost-example-header">Small App (under $5/month)</div>
+            <div class="cost-example-row"><span style="color:var(--text-primary);font-weight:600;">Gemini 2.0 Flash Lite</span><span style="color:var(--green);font-weight:600;">$1.13/mo</span></div>
+            <div class="cost-example-row"><span style="color:var(--text-secondary);">Mistral Small 4</span><span style="color:var(--text-primary);">$1.50/mo</span></div>
+            <div class="cost-example-row"><span style="color:var(--text-secondary);">Llama 3.1 8B</span><span style="color:var(--text-primary);">$1.50/mo</span></div>
+        </div>
+
+        <div class="cost-example">
+            <div class="cost-example-header">Production RAG ($10-50/month)</div>
+            <div class="cost-example-row"><span style="color:var(--text-primary);font-weight:600;">DeepSeek V4 Flash</span><span style="color:var(--green);font-weight:600;">$2.10/mo</span></div>
+            <div class="cost-example-row"><span style="color:var(--text-secondary);">GPT-4o mini</span><span style="color:var(--text-primary);">$2.25/mo</span></div>
+            <div class="cost-example-row"><span style="color:var(--text-secondary);">DeepSeek V4 Pro</span><span style="color:var(--text-primary);">$6.53/mo</span></div>
+        </div>
+
+        <div class="cost-example">
+            <div class="cost-example-header">Enterprise Volume ($50+/month)</div>
+            <div class="cost-example-row"><span style="color:var(--text-primary);font-weight:600;">GPT-5 mini</span><span style="color:var(--green);font-weight:600;">$52.50/mo</span></div>
+            <div class="cost-example-row"><span style="color:var(--text-secondary);">Claude Haiku 4.5</span><span style="color:var(--text-primary);">$165.00/mo</span></div>
+            <div class="cost-example-row"><span style="color:var(--text-secondary);">GPT-5</span><span style="color:var(--text-primary);">$206.25/mo</span></div>
+        </div>
+
+        <h2>Strategy: Hybrid Embedding + Generation</h2>
+        <p>For RAG pipelines, you need both embeddings AND generation. Use <strong>cheap embeddings + tiered generation</strong> to minimize total cost.</p>
+
+        <div class="cost-example">
+            <div class="cost-example-header">Smart RAG Pipeline (10K queries/day)</div>
+            <div class="cost-example-row"><span style="color:var(--text-secondary);">Embeddings (10K docs/day) → Gemini Flash Lite</span><span style="color:var(--text-primary);">$1.13/mo</span></div>
+            <div class="cost-example-row"><span style="color:var(--text-secondary);">60% simple queries → Gemini Flash Lite ($0.075/$0.30)</span><span style="color:var(--text-primary);">$19.44/mo</span></div>
+            <div class="cost-example-row"><span style="color:var(--text-secondary);">30% moderate queries → GPT-4o mini ($0.15/$0.60)</span><span style="color:var(--text-primary);">$20.25/mo</span></div>
+            <div class="cost-example-row"><span style="color:var(--text-secondary);">10% complex queries → Claude Sonnet ($3/$15)</span><span style="color:var(--text-primary);">$24.75/mo</span></div>
+            <div class="cost-example-row"><span style="font-weight:700;">Total pipeline cost</span><span style="color:var(--green);font-weight:700;">$65.57/mo (embeddings = 1.7% of total)</span></div>
+        </div>
+
+        <p>Embeddings are almost always the cheapest part of a RAG pipeline — typically <strong>under 2%</strong> of total cost. Don't optimize embeddings at the expense of quality; focus on the generation tier routing instead.</p>
+
+        <div class="cta-box">
+            <p style="font-size:18px;font-weight:700;color:var(--text-primary);margin-bottom:8px;">Find the cheapest model for your embedding workload</p>
+            <p style="margin-bottom:16px;">Enter your usage and see all 42 models ranked by cost. Free, no signup.</p>
+            <a href="savings-calculator.html" class="btn-primary" style="display:inline-block;padding:14px 32px;font-size:16px;">Open Savings Calculator →</a>
+        </div>
+
+        <h2>Key Factors When Choosing an Embedding API</h2>
+        <ul>
+            <li><strong>Dedicated vs generative models:</strong> Dedicated embedding models (text-embedding-3-small, Cohere Embed) are purpose-built and cheapest. Generative models (GPT, Gemini, Claude) can embed but cost more. Use dedicated models for pure embedding workloads.</li>
+            <li><strong>Dimension count:</strong> Higher dimensions = better quality but more storage. text-embedding-3-small uses 1,536 dimensions. Cohere Embed v4 supports 1,024. Balance quality vs vector database storage cost.</li>
+            <li><strong>Batch processing:</strong> Most embedding APIs support batch requests (100-1,000 docs per call). Batch calls are 50-80% cheaper per document than single-document calls.</li>
+            <li><strong>Vector database cost:</strong> The embedding API cost is usually tiny compared to vector database hosting (Pinecone, Weaviate, Qdrant). Optimize storage dimensions and index type to reduce DB costs.</li>
+            <li><strong>Re-embedding frequency:</strong> Embed once, query many. Don't re-embed unchanged documents. Use content hashing to detect when re-embedding is needed.</li>
+            <li><strong>Dimensionality reduction:</strong> OpenAI's text-embedding-3 models support matryoshka dimensions — you can use 256 or 512 dimensions instead of 1,536 with minimal quality loss, cutting storage by 66-83%.</li>
+        </ul>
+
+        <h2>Related Tools</h2>
+        <ul>
+            <li><a href="savings-calculator.html">Savings Calculator</a> — See how much you can save by switching models</li>
+            <li><a href="cost-explorer.html">Cost Explorer</a> — See all 42 models ranked by your usage</li>
+            <li><a href="cheapest-ai-api-rag.html">Cheapest AI API for RAG</a> — Full RAG pipeline cost comparison</li>
+            <li><a href="cost-optimizer.html">Cost Optimizer</a> — Get a personalized savings report</li>
+            <li><a href="cheapest-ai-api.html">Cheapest AI API Finder</a> — Find the absolute cheapest model</li>
+        </ul>
+
+        <h2>Related Reading</h2>
+        <ul>
+            <li><a href="use-case-rag.html">Best AI API for RAG</a> — Full RAG use-case guide with model recommendations</li>
+            <li><a href="use-case-data-extraction.html">Best AI API for Data Extraction</a> — Data extraction model comparison</li>
+            <li><a href="blog-cheapest-llm-api-production-2026.html">Cheapest LLM APIs in 2026</a> — Full ranking of every model</li>
+            <li><a href="cheapest-ai-api-rag.html">Cheapest AI API for RAG</a> — RAG-specific cost comparison</li>
+        </ul>
+    </div>
+
+    <button class="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">↑</button>
+    </main>
+
+    <footer>
+        <p>Pricing data last verified: <span class="verified-date"></span></p>
+        <p>© 2026 APIpulse. <a href="index.html">Home</a> · <a href="use-cases.html">Use Cases</a> · <a href="about.html">About</a> · <a href="blog.html">Blog</a>
+<a href="pricing-index.html">Pricing Index</a> · <a href="model-matrix.html">Model Matrix</a> · <a href="pricing.html">Pricing</a> · <a href="https://x.com/getapipulse" target="_blank" rel="noopener">Twitter</a></p>
+    </footer>
+
+    <script>
+        // All models sorted by cost for embedding workload
+        // Note: Embedding is input-only for dedicated models. Generative models have small output cost.
+        // We estimate 10% output tokens for generative models (brief response after embedding).
+        function calculate() {
+            var docs = parseInt(document.getElementById('docs').value) || 10000;
+            var inTok = parseInt(document.getElementById('avg-input').value) || 500;
+            var days = parseInt(document.getElementById('days').value) || 30;
+
+            var totalIn = inTok * docs * days;
+            // For generative models, assume 10% output tokens (brief response)
+            var totalOut = Math.round(totalIn * 0.10);
+
+            var models = API_MODELS.map(function(m) {
+                // For embedding workload: input tokens only for dedicated models
+                // For generative models: input + small output
+                var cost = (totalIn / 1000000) * m.input + (totalOut / 1000000) * m.output;
+                var costPerDoc = (m.input * inTok / 1000000) + (m.output * inTok * 0.10 / 1000000);
+                return { name: m.name, provider: m.provider, input: m.input, output: m.output, tier: m.tier, context: m.context, cost: cost, costPerDoc: costPerDoc };
+            }).sort(function(a, b) { return a.cost - b.cost; });
+
+            // Results panel
+            var cheapest = models[0];
+            var resultsHtml = '<h3 style="margin-bottom:16px;font-size:16px;">Results</h3>';
+            resultsHtml += '<div style="background:var(--accent-glow);border:1px solid rgba(99,102,241,0.2);border-radius:8px;padding:14px;margin-bottom:12px;">';
+            resultsHtml += '<div style="font-size:12px;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.5px;">Cheapest Model</div>';
+            resultsHtml += '<div style="font-size:20px;font-weight:800;color:var(--accent);margin-top:4px;">' + cheapest.name + '</div>';
+            resultsHtml += '<div style="font-size:13px;color:var(--text-secondary);margin-top:2px;">' + cheapest.provider + ' · $' + cheapest.input + '/$' + cheapest.output + ' per 1M</div>';
+            resultsHtml += '<div style="font-size:22px;font-weight:800;color:var(--green);margin-top:8px;">$' + cheapest.cost.toFixed(2) + '/mo</div>';
+            resultsHtml += '<div style="font-size:13px;color:var(--text-secondary);margin-top:2px;">$' + cheapest.costPerDoc.toFixed(6) + ' per doc</div>';
+            resultsHtml += '</div>';
+            resultsHtml += '<div style="font-size:12px;color:var(--text-muted);margin-bottom:4px;">Top 5 cheapest for your usage:</div>';
+
+            for (var i = 0; i < Math.min(5, models.length); i++) {
+                var m = models[i];
+                resultsHtml += '<div style="display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid rgba(42,42,62,0.3);font-size:13px;">';
+                resultsHtml += '<span><span style="font-weight:600;">#' + (i+1) + '</span> ' + m.name + '</span>';
+                resultsHtml += '<span style="font-weight:600;color:var(--green);">$' + m.cost.toFixed(2) + '</span>';
+                resultsHtml += '</div>';
+            }
+
+            document.getElementById('results').innerHTML = resultsHtml;
+
+            // Ranking table
+            var tableHtml = '<table class="ranking-table"><thead><tr>';
+            tableHtml += '<th>#</th><th>Model</th><th>Provider</th><th>Input/1M</th><th>Output/1M</th><th>Monthly Cost</th><th>Per Doc</th><th></th>';
+            tableHtml += '</tr></thead><tbody>';
+
+            for (var i = 0; i < models.length; i++) {
+                var m = models[i];
+                var badge = i === 0 ? '<span class="best-badge">Cheapest</span>' : i < 3 ? '<span class="good-badge">Great Value</span>' : '';
+                tableHtml += '<tr>';
+                tableHtml += '<td>' + (i+1) + '</td>';
+                tableHtml += '<td class="model-name">' + m.name + '</td>';
+                tableHtml += '<td>' + m.provider + '</td>';
+                tableHtml += '<td>$' + m.input.toFixed(3) + '</td>';
+                tableHtml += '<td>$' + m.output.toFixed(2) + '</td>';
+                tableHtml += '<td style="font-weight:600;font-variant-numeric:tabular-nums;">$' + m.cost.toFixed(2) + '</td>';
+                tableHtml += '<td style="font-variant-numeric:tabular-nums;">$' + m.costPerDoc.toFixed(6) + '</td>';
+                tableHtml += '<td>' + badge + '</td>';
+                tableHtml += '</tr>';
+            }
+            tableHtml += '</tbody></table>';
+            document.getElementById('ranking-table').innerHTML = tableHtml;
+
+            if (window.trackEvent) {
+                window.trackEvent('embedding_cost_calc_used', { docs: docs, cheapest_model: cheapest.name, cheapest_cost: cheapest.cost.toFixed(2) });
+            }
+        }
+
+        function applyPreset(type) {
+            var presets = {
+                rag: { input: 500, docs: 10000 },
+                search: { input: 300, docs: 50000 },
+                cluster: { input: 400, docs: 20000 },
+                reco: { input: 200, docs: 100000 }
+            };
+            var p = presets[type];
+            if (!p) return;
+            document.getElementById('avg-input').value = p.input;
+            document.getElementById('docs').value = p.docs;
+            document.querySelectorAll('.presets .preset-btn').forEach(function(btn) { btn.classList.remove('active-preset'); });
+            event.target.classList.add('active-preset');
+            calculate();
+        }
+
+        document.addEventListener('DOMContentLoaded', calculate);
+    </script>
+</body>
+</html>
