@@ -1,5 +1,14 @@
 # PROGRESS.md
 
+## Session 856 (Jun 23) — Hub Cross-Linking + Count Fixes (2 commits)
+**Improved internal linking across 32 cheapest pages and fixed count mismatches.**
+- **Updated cheapest-ai-api.html** — Added "Browse by Industry" section (13 industry cards), "Browse by Use Case" section (17 use-case cards), and "Related Tools" section (6 cards: migration checklist, deprecation tracker, budget planner, 2026 hub, multi-model routing, cost audit)
+- **Fixed cheapest-ai-api.html hero** — Model count corrected from 34 to 42
+- **Fixed tools.html hero** — Tool count corrected from 135 to 138 (matches title and actual card count)
+- **Updated 31 cheapest pages** — Added migration checklist, deprecation tracker, and budget planner links to Related Tools section
+- **Updated cheapest-ai-api-2026.html** — Added Related Tools section with 6 links
+- **2 commits, 33 files changed, +273 lines**
+
 ## Session 855 (Jun 23) — 3 New Industry Cheapest Pages (1 commit)
 **Created high-intent landing pages for Enterprise, Logistics, and Energy — completing all 25 use-case → cheapest page pairs.**
 - **Created cheapest-ai-api-enterprise.html** — New high-intent landing page
@@ -71,7 +80,7 @@
 ## Summary: Sessions 1-598 (Apr 5 - Jun 12)
 Full APIpulse build from scratch. 652 pages, 320 posts, 42 models, 10 providers, 84 tools. Domain, Stripe, Pro, GA4, newsletter, Chrome extension, 167 comparisons, FAQPage schema, streaming toggle, A/B pricing, Model Selector quiz.
 
-## Site Status (as of Session 855, Jun 23, 2026)
+## Site Status (as of Session 856, Jun 23, 2026)
 **861+ web pages | 354 blog posts | 42 models | 10+ providers | 138 tools | 13 API endpoints | 3 embeddable widgets**
 - Sitemap (848 URLs), RSS (735 items), blog files (354 posts) — all in sync
 - **Static pricing API** at /data/pricing.json — 42 models, no auth, CC-BY-4.0
@@ -79,10 +88,10 @@ Full APIpulse build from scratch. 652 pages, 320 posts, 42 models, 10 providers,
 - **232 comparison pages** covering all major model pairs (all indexed in compare.html)
 - **22 alternatives landing pages** — all cross-linked, all with go.html model pre-fill
 - **25 use-case pages** — chatbot, code-gen, content-writing, customer-support, data-extraction, document-analysis, enterprise, agents, RAG, translation, startups, ecommerce, healthcare, education, finance, legal, manufacturing, marketing, real-estate, insurance, logistics, HR, automotive, telecom, energy
-- **32 use-case-specific cheapest pages** — chatbots, content-generation, coding, customer-support, data-extraction, RAG, translation, summarization, embeddings, code-review, image-generation, text-to-speech, speech-to-text, legal, healthcare, finance, agents, fine-tuning, moderation, document-analysis, ecommerce, marketing, education, startups, insurance, real-estate, hr, manufacturing, enterprise, logistics, energy, 2026-hub
+- **32 use-case-specific cheapest pages** — all cross-linked to migration checklist, deprecation tracker, and budget planner
 - **9 migration routes** in migration-checklist.html (OpenAI, Anthropic, Google, DeepSeek, Mistral, xAI, Cohere)
 - **547 pages** linking to widget.html (296 blog + 229 comparison + 22 alternatives)
-- **251 pages** linking to migration-checklist.html (229 comparison + 22 alternatives)
+- **282 pages** linking to migration-checklist.html (229 comparison + 22 alternatives + 31 cheapest pages)
 - **go.html links pre-filled** — 606 pages auto-detect model: 232 comparisons + 351 blogs + 22 alternatives + migration checklist (Sessions 818, 820)
 - **Free trial as PRIMARY CTA** — "Try Pro Free for 24 Hours" across conversion funnel
 - **A/B pricing test LIVE** — $19 vs $29 (50/50)
