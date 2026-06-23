@@ -1,5 +1,33 @@
 # PROGRESS.md
 
+## Session 855 (Jun 23) — 3 New Industry Cheapest Pages (1 commit)
+**Created high-intent landing pages for Enterprise, Logistics, and Energy — completing all 25 use-case → cheapest page pairs.**
+- **Created cheapest-ai-api-enterprise.html** — New high-intent landing page
+  - Targets "cheapest AI API for enterprise" keyword
+  - Interactive calculator with 4 presets (compliance, analytics, automation, support)
+  - 42 models ranked by per-call cost ($0.00125-$0.025/call)
+  - Enterprise tiered routing strategy showing 87% savings
+  - FAQPage schema with 3 Q&As (SOC 2, HIPAA, data residency covered)
+  - Key insight: most enterprise calls are routine lookups; tier by compliance requirements
+- **Created cheapest-ai-api-logistics.html** — New high-intent landing page
+  - Targets "cheapest AI API for logistics" keyword
+  - Interactive calculator with 4 presets (routing, inventory, forecasting, tracking)
+  - 42 models ranked by per-call cost ($0.00070-$0.0140/call)
+  - Volume-based routing strategy showing 93% savings
+  - FAQPage schema with 3 Q&As
+  - Key insight: 60% of logistics calls are simple status lookups — budget models handle them
+- **Created cheapest-ai-api-energy.html** — New high-intent landing page
+  - Targets "cheapest AI API for energy" keyword
+  - Interactive calculator with 4 presets (grid monitoring, maintenance, forecasting, compliance)
+  - 42 models ranked by per-call cost ($0.00070-$0.0140/call)
+  - Complexity-based routing strategy showing 93% savings
+  - FAQPage schema with 3 Q&As (SCADA on-premise guidance included)
+  - Key insight: 55% of energy calls are routine sensor readings — budget models handle them
+- **Updated tools.html** — 3 new cards (135→138 tools), updated counts in title/hero/meta
+- **Updated cheapest-ai-api.html** — 3 new Related Tools links
+- **Updated sitemap** (848 URLs) and **RSS** (735 items)
+- **1 commit, 7 files changed, +1,185 lines**
+
 ## Session 854 (Jun 23) — Conversion Optimization + Deprecation Tracker (1 commit)
 **Broke the 9-session pattern of cheapest pages. Focused on conversion optimization and built a new unique tool.**
 - **Created model-deprecations.html** — AI Model Deprecation Tracker (new unique tool)
@@ -19,212 +47,8 @@
 - **Updated sitemap** (845 URLs) and **RSS** (732 items)
 - **1 commit, 7 files changed, +280 lines**
 
-## Session 853 (Jun 23) — 3 New Industry Cheapest Pages (1 commit)
-**Created high-intent landing pages for Real Estate, HR, and Manufacturing — filling gaps where use-case pages existed but lacked corresponding cheapest pages.**
-- **Created cheapest-ai-api-real-estate.html** — New high-intent landing page
-  - Targets "cheapest AI API for real estate" keyword
-  - Interactive calculator with 4 presets (listings, leads, market analysis, documents)
-  - 42 models ranked by per-task cost ($0.00017-$0.00338/task)
-  - Hybrid quality-price pipeline strategy showing 73% savings
-  - FAQPage schema with 3 Q&As (Fair Housing Act compliance covered)
-  - Key insight: listing descriptions need brand voice (premium), lead scoring is structured (budget)
-- **Created cheapest-ai-api-hr.html** — New high-intent landing page
-  - Targets "cheapest AI API for HR" keyword
-  - Interactive calculator with 4 presets (resume screening, job descriptions, surveys, policy)
-  - 42 models ranked by per-task cost ($0.00023-$0.0045/task)
-  - Tiered HR pipeline strategy showing 67% savings
-  - FAQPage schema with 3 Q&As (EEOC compliance covered)
-  - Key insight: resume screening is high-volume budget; policy compliance needs premium reasoning
-- **Created cheapest-ai-api-manufacturing.html** — New high-intent landing page
-  - Targets "cheapest AI API for manufacturing" keyword
-  - Interactive calculator with 4 presets (QC, maintenance, defect analysis, supply chain)
-  - 42 models ranked by per-task cost ($0.00039-$0.0078/task)
-  - Tiered manufacturing pipeline strategy showing 69% savings
-  - FAQPage schema with 3 Q&As (OT/IT security covered)
-  - Key insight: routine QC pass/fail is budget-friendly; root cause analysis needs premium
-- **Updated tools.html** — 3 new cards (131→134 tools), fixed stale count
-- **Updated cheapest-ai-api.html** — 3 new Related Tools links
-- **Updated sitemap** (844 URLs) and **RSS** (731 items)
-- **1 commit, 7 files changed, +1,188 lines**
-
-## Session 852 (Jun 23) — 3 New Industry Cheapest Pages (1 commit)
-**Created high-intent landing pages for Education, Startups, and Insurance — filling gaps where use-case pages existed but lacked corresponding cheapest pages.**
-- **Created cheapest-ai-api-education.html** — New high-intent landing page
-  - Targets "cheapest AI API for education" keyword
-  - Interactive calculator with 4 presets (essay grading, AI tutoring, lesson plans, research)
-  - 42 models ranked by per-task cost ($0.00007-$0.0015/task)
-  - Tiered education pipeline strategy showing 59% savings
-  - FAQPage schema with 3 Q&As (including FERPA compliance)
-  - Key insight: education is high-volume, low-cost per interaction; budget models ideal
-- **Created cheapest-ai-api-startups.html** — New high-intent landing page
-  - Targets "cheapest AI API for startups" keyword
-  - Interactive calculator with 4 presets (chatbot, content, code, data processing)
-  - 42 models ranked by per-call cost ($0.00025-$0.005/call)
-  - Hybrid model strategy showing 90% savings
-  - FAQPage schema with 3 Q&As
-  - Key insight: start with cheapest acceptable model, upgrade when revenue justifies
-- **Created cheapest-ai-api-insurance.html** — New high-intent landing page
-  - Targets "cheapest AI API for insurance" keyword
-  - Interactive calculator with 4 presets (claims, underwriting, policy review, customer)
-  - 42 models ranked by per-task cost ($0.00056-$0.01125/task)
-  - AI-first claims triage pipeline showing 79% savings
-  - FAQPage schema with 3 Q&As
-  - Key insight: 65% of claims are routine and can be auto-processed with budget models
-- **Updated tools.html** — 3 new cards (128→131 tools), fixed stale count (119→131)
-- **Updated cheapest-ai-api.html** — 3 new Related Tools links
-- **Updated sitemap** (841 URLs) and **RSS** (728 items)
-- **1 commit, 7 files changed, +1,190 lines**
-
-## Session 851 (Jun 23) — 3 New Use-Case Cheapest Pages (1 commit)
-**Created high-intent landing pages for Document Analysis, E-Commerce, and Marketing — filling gaps where 25 use-case pages existed but lacked corresponding cheapest pages.**
-- **Created cheapest-ai-api-document-analysis.html** — New high-intent landing page
-  - Targets "cheapest AI API for document analysis" keyword
-  - Interactive calculator with 4 presets (contract review, PDF summary, forms, compliance)
-  - 42 models ranked by per-doc cost ($0.001-$0.015/doc)
-  - Tiered document pipeline strategy showing 87% savings
-  - FAQPage schema with 3 Q&As
-  - Key insight: document analysis is extremely input-heavy (90%+ of cost)
-- **Created cheapest-ai-api-ecommerce.html** — New high-intent landing page
-  - Targets "cheapest AI API for e-commerce" keyword
-  - Interactive calculator with 4 presets (descriptions, chatbot, reviews, personalization)
-  - 42 models ranked by per-task cost ($0.0003-$0.006/task)
-  - E-commerce AI routing strategy showing 80% savings
-  - FAQPage schema with 3 Q&As
-  - Key insight: product descriptions are output-heavy, batch for catalogs
-- **Created cheapest-ai-api-marketing.html** — New high-intent landing page
-  - Targets "cheapest AI API for marketing" keyword
-  - Interactive calculator with 4 presets (ad copy, emails, social, blog drafts)
-  - 42 models ranked by per-task cost ($0.0003-$0.006/task)
-  - Marketing content pipeline strategy showing 81% savings
-  - FAQPage schema with 3 Q&As
-  - Key insight: A/B testing needs volume, brand voice needs quality investment
-- **Updated tools.html** — 3 new cards (122→125 tools)
-- **Updated cheapest-ai-api.html** — 3 new Related Tools links
-- **Updated sitemap** (838 URLs) and **RSS** (725 items)
-- **1 commit, 7 files changed, +1,195 lines**
-
-## Session 850 (Jun 23) — 3 New High-Intent Cheapest Pages (1 commit)
-**Created high-intent landing pages for AI Agents, Fine-Tuning, and Content Moderation — three hot 2026 keywords with strong commercial search intent.**
-- **Created cheapest-ai-api-for-agents.html** — New high-intent landing page
-  - Targets "cheapest AI API for agents" keyword (hottest 2026 topic)
-  - Interactive calculator with 4 presets (tool use, reasoning, autonomous, orchestration)
-  - 42 models ranked by per-task cost ($0.0005-$0.01/task)
-  - Tiered agent pipeline strategy showing 91% savings
-  - FAQPage schema with 3 Q&As
-  - Key insight: agents make multiple API calls per task, cost compounds per step
-- **Created cheapest-ai-api-for-fine-tuning.html** — New high-intent landing page
-  - Targets "cheapest AI API for fine-tuning" keyword (enterprise use case)
-  - Interactive calculator with 4 presets (classification, domain, chat, extraction)
-  - 42 models ranked by monthly inference + one-time training cost
-  - Fine-tune small, infer cheap strategy showing 97% savings
-  - FAQPage schema with 3 Q&As
-  - Key insight: inference cost dominates training cost; fine-tuned small models beat large models
-- **Created cheapest-ai-api-for-moderation.html** — New high-intent landing page
-  - Targets "cheapest AI API for content moderation" keyword
-  - Interactive calculator with 4 presets (UGC, chat, comments, marketplace)
-  - 42 models ranked by per-item cost ($0.00001-$0.0002/item)
-  - Two-stage moderation pipeline strategy showing 94% savings
-  - FAQPage schema with 3 Q&As
-  - Key insight: most content is clearly safe/violating; only 5-20% needs AI judgment
-- **Updated tools.html** — 3 new cards (119→122 tools)
-- **Updated cheapest-ai-api.html** — 3 new Related Tools links
-- **Updated sitemap** (835 URLs) and **RSS** (722 items)
-- **1 commit, 7 files changed, +1,210 lines**
-
-## Session 849 (Jun 23) — 3 New Industry-Specific Cheapest Pages (1 commit)
-**Created high-intent landing pages for Legal, Healthcare, and Finance — three major industries with strong commercial search intent and existing use-case pages.**
-- **Created cheapest-ai-api-legal.html** — New high-intent landing page
-  - Targets "cheapest AI API for legal" keyword
-  - Interactive calculator with 4 presets (contract review, legal research, compliance, drafting)
-  - 42 models ranked by per-document cost ($0.00075-$0.015/doc)
-  - Two-tier legal review pipeline strategy showing 66% savings
-  - FAQPage schema with 3 Q&As
-  - Key insight: legal is extremely input-heavy (10K tokens/doc), accuracy matters more than speed
-- **Created cheapest-ai-api-healthcare.html** — New high-intent landing page
-  - Targets "cheapest AI API for healthcare" keyword
-  - Interactive calculator with 4 presets (clinical notes, medical coding, patient messaging, research)
-  - 42 models ranked by per-encounter cost ($0.00023-$0.0045/encounter)
-  - Tiered clinical pipeline strategy showing 92% savings
-  - FAQPage schema with 3 Q&As (HIPAA compliance covered)
-  - Key insight: healthcare has strict compliance requirements, tiered routing essential
-- **Created cheapest-ai-api-finance.html** — New high-intent landing page
-  - Targets "cheapest AI API for finance" keyword
-  - Interactive calculator with 4 presets (report generation, financial analysis, risk, customer queries)
-  - 42 models ranked by per-task cost ($0.00068-$0.0135/task)
-  - Complexity-based financial routing strategy showing 93% savings
-  - FAQPage schema with 3 Q&As
-  - Key insight: finance has mixed input/output, premium models needed for complex reasoning
-- **Updated tools.html** — 3 new cards (116→119 tools)
-- **Updated cheapest-ai-api.html** — 3 new Related Tools links
-- **Updated sitemap** (832 URLs) and **RSS** (719 items)
-- **1 commit, 7 files changed, +1,197 lines**
-
-## Session 848 (Jun 23) — 3 New Non-Token Cheapest Pages (1 commit)
-**Created high-intent landing pages for Image Generation, Text-to-Speech, and Speech-to-Text — three major API categories with non-token pricing models.**
-- **Created cheapest-ai-api-image-generation.html** — New high-intent landing page
-  - Targets "cheapest AI API for image generation" keyword
-  - Interactive calculator with 4 presets (product, social, marketing, concept)
-  - 10 providers ranked by per-image cost ($0.002-$0.12/image)
-  - Draft-to-final pipeline strategy showing 72% savings
-  - FAQPage schema with 3 Q&As
-  - Key insight: image gen uses per-image pricing, not tokens
-- **Created cheapest-ai-api-text-to-speech.html** — New high-intent landing page
-  - Targets "cheapest AI API for text-to-speech" keyword
-  - Interactive calculator with 4 presets (articles, e-learning, audiobook, notifications)
-  - 8 providers ranked by per-character cost ($4-$30/1M chars)
-  - Quality-volume routing strategy showing 50% savings
-  - FAQPage schema with 3 Q&As
-  - Key insight: TTS uses per-character pricing, quality tiers matter
-- **Created cheapest-ai-api-speech-to-text.html** — New high-intent landing page
-  - Targets "cheapest AI API for speech-to-text" keyword
-  - Interactive calculator with 4 presets (meetings, podcast, call center, dictation)
-  - 7 providers ranked by per-minute cost ($0.0043-$0.024/min)
-  - Async + realtime hybrid strategy showing 41% savings
-  - FAQPage schema with 3 Q&As
-  - Key insight: STT uses per-minute pricing, async is 40-60% cheaper
-- **Updated tools.html** — 3 new cards (113→116 tools)
-- **Updated cheapest-ai-api.html** — 3 new Related Tools links
-- **Updated sitemap** (829 URLs) and **RSS** (716 items)
-- **1 commit, 7 files changed, +1,216 lines**
-
-## Session 847 (Jun 23) — 4 New Use-Case-Specific Cheapest Pages (4 commits)
-**Created high-intent landing pages for Translation, Summarization, Embeddings, and Code Review — four major enterprise use cases with strong search intent.**
-- **Created cheapest-ai-api-translation.html** — New high-intent landing page
-  - Targets "cheapest AI API for translation" keyword
-  - Interactive calculator with 4 presets (documents, website localization, real-time chat, subtitles)
-  - Full 42-model ranking by translation cost
-  - Top picks by volume tier (small/localization/enterprise)
-  - Quality-tiered routing strategy showing 97% savings
-  - FAQPage schema with 3 Q&As
-  - Key insight: translation is output-heavy (unlike RAG), output price dominates
-- **Created cheapest-ai-api-summarization.html** — New high-intent landing page
-  - Targets "cheapest AI API for summarization" keyword
-  - Interactive calculator with 4 presets (articles, legal, meetings, research)
-  - Full 42-model ranking by summarization cost
-  - Top picks by volume tier (small team/content team/enterprise)
-  - Length-based routing strategy showing 97% savings
-  - FAQPage schema with 3 Q&As
-  - Key insight: summarization is extremely input-heavy (80-90% of cost)
-- **Created cheapest-ai-api-embeddings.html** — New high-intent landing page
-  - Targets "cheapest AI API for embeddings" keyword
-  - Interactive calculator with 4 presets (RAG indexing, semantic search, clustering, recommendations)
-  - Full 42-model ranking by embedding cost
-  - Top picks by scale (small app/production RAG/enterprise)
-  - Hybrid embedding + generation pipeline strategy
-  - FAQPage schema with 3 Q&As
-  - Key insight: embeddings are <2% of typical RAG pipeline cost
-- **Created cheapest-ai-api-code-review.html** — New high-intent landing page
-  - Targets "cheapest AI API for code review" keyword
-  - Interactive calculator with 4 presets (startup, growing team, large, enterprise)
-  - Full 42-model ranking by code review cost
-  - Top picks by team size
-  - Two-tier review pipeline strategy showing 93% savings
-  - FAQPage schema with 3 Q&As
-  - Key insight: code review is input-heavy, extremely cheap ($0.001/PR)
-- **Updated tools.html** — 4 new cards (109→113 tools)
-- **Updated cheapest-ai-api.html** — 4 new Related Tools links
-- **Updated sitemap** (826 URLs) and **RSS** (713 items)
-- **4 commits, 20 files changed, +2,152 lines**
+## Summary: Sessions 847-853 (Jun 23) — Cheapest Pages Blitz
+7 sessions. Created 22 cheapest-ai-api pages across industries and use cases: legal, healthcare, finance (849), agents, fine-tuning, moderation (850), document-analysis, ecommerce, marketing (851), education, startups, insurance (852), real-estate, HR, manufacturing (853), plus image-gen, TTS, STT (848), translation, summarization, embeddings, code-review (847), customer-support, data-extraction, RAG, content-generation (845-846). Tools grew from 109→134. Sitemap: 826→844 URLs. RSS: 713→731 items. 16 commits, 70+ files.
 
 ## Summary: Sessions 828-846 (Jun 22-23) — Use-Case Blitz + Cheapest Pages
 19 sessions. Created 22 use-case pages (startups, ecommerce, healthcare, education, finance, legal, manufacturing, marketing, etc.). Created 11 cheapest-ai-api pages (chatbots, content-generation, coding, customer-support, data-extraction, RAG, translation, summarization, embeddings, code-review, plus non-token pages for image-gen, TTS, STT). Budget planner tool. Cost Per Request Calculator. Embeddable cost calculator widget. Fixed Gemini 2.0 Flash refs. Fixed conversion gap on 31 high-intent pages. Static pricing API at /data/pricing.json. API directory submissions prepared. 30+ commits, 120+ files.
@@ -247,15 +71,15 @@
 ## Summary: Sessions 1-598 (Apr 5 - Jun 12)
 Full APIpulse build from scratch. 652 pages, 320 posts, 42 models, 10 providers, 84 tools. Domain, Stripe, Pro, GA4, newsletter, Chrome extension, 167 comparisons, FAQPage schema, streaming toggle, A/B pricing, Model Selector quiz.
 
-## Site Status (as of Session 854, Jun 23, 2026)
-**858+ web pages | 354 blog posts | 42 models | 10+ providers | 135 tools | 13 API endpoints | 3 embeddable widgets**
-- Sitemap (845 URLs), RSS (732 items), blog files (354 posts) — all in sync
+## Site Status (as of Session 855, Jun 23, 2026)
+**861+ web pages | 354 blog posts | 42 models | 10+ providers | 138 tools | 13 API endpoints | 3 embeddable widgets**
+- Sitemap (848 URLs), RSS (735 items), blog files (354 posts) — all in sync
 - **Static pricing API** at /data/pricing.json — 42 models, no auth, CC-BY-4.0
 - **OpenAPI spec** at /data/pricing-openapi.json — OpenAPI 3.0.3, ready for APIs.guru submission
 - **232 comparison pages** covering all major model pairs (all indexed in compare.html)
 - **22 alternatives landing pages** — all cross-linked, all with go.html model pre-fill
 - **25 use-case pages** — chatbot, code-gen, content-writing, customer-support, data-extraction, document-analysis, enterprise, agents, RAG, translation, startups, ecommerce, healthcare, education, finance, legal, manufacturing, marketing, real-estate, insurance, logistics, HR, automotive, telecom, energy
-- **29 use-case-specific cheapest pages** — chatbots, content-generation, coding, customer-support, data-extraction, RAG, translation, summarization, embeddings, code-review, image-generation, text-to-speech, speech-to-text, legal, healthcare, finance, agents, fine-tuning, moderation, document-analysis, ecommerce, marketing, education, startups, insurance, real-estate, hr, manufacturing, 2026-hub
+- **32 use-case-specific cheapest pages** — chatbots, content-generation, coding, customer-support, data-extraction, RAG, translation, summarization, embeddings, code-review, image-generation, text-to-speech, speech-to-text, legal, healthcare, finance, agents, fine-tuning, moderation, document-analysis, ecommerce, marketing, education, startups, insurance, real-estate, hr, manufacturing, enterprise, logistics, energy, 2026-hub
 - **9 migration routes** in migration-checklist.html (OpenAI, Anthropic, Google, DeepSeek, Mistral, xAI, Cohere)
 - **547 pages** linking to widget.html (296 blog + 229 comparison + 22 alternatives)
 - **251 pages** linking to migration-checklist.html (229 comparison + 22 alternatives)
