@@ -1,5 +1,44 @@
 # PROGRESS.md
 
+## Session 847 (Jun 23) — 4 New Use-Case-Specific Cheapest Pages (4 commits)
+**Created high-intent landing pages for Translation, Summarization, Embeddings, and Code Review — four major enterprise use cases with strong search intent.**
+- **Created cheapest-ai-api-translation.html** — New high-intent landing page
+  - Targets "cheapest AI API for translation" keyword
+  - Interactive calculator with 4 presets (documents, website localization, real-time chat, subtitles)
+  - Full 42-model ranking by translation cost
+  - Top picks by volume tier (small/localization/enterprise)
+  - Quality-tiered routing strategy showing 97% savings
+  - FAQPage schema with 3 Q&As
+  - Key insight: translation is output-heavy (unlike RAG), output price dominates
+- **Created cheapest-ai-api-summarization.html** — New high-intent landing page
+  - Targets "cheapest AI API for summarization" keyword
+  - Interactive calculator with 4 presets (articles, legal, meetings, research)
+  - Full 42-model ranking by summarization cost
+  - Top picks by volume tier (small team/content team/enterprise)
+  - Length-based routing strategy showing 97% savings
+  - FAQPage schema with 3 Q&As
+  - Key insight: summarization is extremely input-heavy (80-90% of cost)
+- **Created cheapest-ai-api-embeddings.html** — New high-intent landing page
+  - Targets "cheapest AI API for embeddings" keyword
+  - Interactive calculator with 4 presets (RAG indexing, semantic search, clustering, recommendations)
+  - Full 42-model ranking by embedding cost
+  - Top picks by scale (small app/production RAG/enterprise)
+  - Hybrid embedding + generation pipeline strategy
+  - FAQPage schema with 3 Q&As
+  - Key insight: embeddings are <2% of typical RAG pipeline cost
+- **Created cheapest-ai-api-code-review.html** — New high-intent landing page
+  - Targets "cheapest AI API for code review" keyword
+  - Interactive calculator with 4 presets (startup, growing team, large, enterprise)
+  - Full 42-model ranking by code review cost
+  - Top picks by team size
+  - Two-tier review pipeline strategy showing 93% savings
+  - FAQPage schema with 3 Q&As
+  - Key insight: code review is input-heavy, extremely cheap ($0.001/PR)
+- **Updated tools.html** — 4 new cards (109→113 tools)
+- **Updated cheapest-ai-api.html** — 4 new Related Tools links
+- **Updated sitemap** (826 URLs) and **RSS** (713 items)
+- **4 commits, 20 files changed, +2,152 lines**
+
 ## Session 846 (Jun 23) — 3 New Use-Case-Specific Cheapest Pages (3 commits)
 **Created high-intent landing pages for Customer Support, Data Extraction, and RAG — three major enterprise verticals with strong commercial intent.**
 - **Created cheapest-ai-api-customer-support.html** — New high-intent landing page
@@ -131,15 +170,15 @@
 ## Summary: Sessions 1-598 (Apr 5 - Jun 12)
 Full APIpulse build from scratch. 652 pages, 320 posts, 42 models, 10 providers, 84 tools. Domain, Stripe, Pro, GA4, newsletter, Chrome extension, 167 comparisons, FAQPage schema, streaming toggle, A/B pricing, Model Selector quiz.
 
-## Site Status (as of Session 846, Jun 23, 2026)
-**831+ web pages | 354 blog posts | 42 models | 10 providers | 109 tools | 13 API endpoints | 3 embeddable widgets**
-- Sitemap (822 URLs), RSS (709 items), blog files (354 posts) — all in sync
+## Site Status (as of Session 847, Jun 23, 2026)
+**835+ web pages | 354 blog posts | 42 models | 10 providers | 113 tools | 13 API endpoints | 3 embeddable widgets**
+- Sitemap (826 URLs), RSS (713 items), blog files (354 posts) — all in sync
 - **Static pricing API** at /data/pricing.json — 42 models, no auth, CC-BY-4.0
 - **OpenAPI spec** at /data/pricing-openapi.json — OpenAPI 3.0.3, ready for APIs.guru submission
 - **232 comparison pages** covering all major model pairs (all indexed in compare.html)
 - **22 alternatives landing pages** — all cross-linked, all with go.html model pre-fill
 - **25 use-case pages** — chatbot, code-gen, content-writing, customer-support, data-extraction, document-analysis, enterprise, agents, RAG, translation, startups, ecommerce, healthcare, education, finance, legal, manufacturing, marketing, real-estate, insurance, logistics, HR, automotive, telecom, energy
-- **7 use-case-specific cheapest pages** — chatbots, content-generation, coding, customer-support, data-extraction, RAG, 2026-hub
+- **11 use-case-specific cheapest pages** — chatbots, content-generation, coding, customer-support, data-extraction, RAG, translation, summarization, embeddings, code-review, 2026-hub
 - **9 migration routes** in migration-checklist.html (OpenAI, Anthropic, Google, DeepSeek, Mistral, xAI, Cohere)
 - **547 pages** linking to widget.html (296 blog + 229 comparison + 22 alternatives)
 - **251 pages** linking to migration-checklist.html (229 comparison + 22 alternatives)

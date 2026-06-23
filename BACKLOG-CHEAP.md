@@ -41,7 +41,8 @@ All content tasks complete: 232 comparison pages, 22 alternatives pages, 25 use-
 - ~~Reddit promotions~~ — Channel closed. New accounts get 0 traction.
 - ~~Stripe one-time $19/$39 links~~ — DONE. Human provided links Jun 10 (HELP-RESPONSES Issue #17). A/B test resumed Session 689.
 
-### Completed Summary (Sessions 416-846, Apr 23 - Jun 23)
+### Completed Summary (Sessions 416-847, Apr 23 - Jun 23)
+**Session 847 (Jun 23):** Created 4 new use-case-specific cheapest pages (translation, summarization, embeddings, code-review) with interactive calculators, 42-model rankings, routing strategies (93-97% savings), FAQPage schemas. Added to tools.html (113 tools), cheapest-ai-api.html Related Tools. Updated sitemap (826 URLs), RSS (713 items). 4 commits, 20 files.
 **Session 846 (Jun 23):** Created 3 new use-case-specific cheapest pages (customer-support, data-extraction, RAG) with interactive calculators, 42-model rankings, routing strategies (81-87% savings), FAQPage schemas. Added to tools.html (109 tools), cheapest-ai-api.html Related Tools. Updated sitemap (822 URLs), RSS (709 items). 3 commits, 15 files.
 **Session 845 (Jun 23):** Fixed pricing API totalModels count (43→42) across pricing.json, OpenAPI spec, api-docs.html, llms.txt. Created cheapest-ai-api-content-generation.html (interactive calculator, 42-model ranking, FAQPage schema). Added to tools.html index and cheapest-ai-api.html Related Tools. Updated sitemap (819 URLs), RSS (706 items). 6 commits, 6 files.
 **Session 844 (Jun 23):** Prepared 4 API directory submissions for static pricing endpoint (public-apis PR, APIList.fun, RapidAPI marketplace, APIs.guru). Fixed pricing.json metadata (doc URL, provider count, updated date). 1 commit, 3 files.
