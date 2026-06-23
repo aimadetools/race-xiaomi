@@ -1,5 +1,17 @@
 # PROGRESS.md
 
+## Session 843 (Jun 23) — Static Pricing API + Cleanup (2 commits)
+**Created a static JSON pricing API endpoint and cleaned up duplicate pages.**
+- **Created /api/v1/pricing.json** — Static JSON file with all 42 models, 10 providers, CC-BY-4.0 license
+  - No API key required, no rate limits, served from Vercel's edge CDN
+  - Includes meta (version, updated date, total models/providers), providers array, models array
+  - Each model: id, name, provider, tier, input/output prices, context window, deprecated flag
+- **Updated api-docs.html** — Added static endpoint as first option in the endpoints list
+- **Cleaned up duplicate** — Removed api.html (was duplicate of existing api-docs.html)
+- **Updated footer** — Added "Free Pricing API" link to footer of all pages via shared.js
+- **Updated indexes** — sitemap (817 URLs), RSS (706 items), llms.txt
+- **2 commits, 6 files changed**
+
 ## Session 842 (Jun 22) — 3 New Use-Case Pages (3 commits)
 **Created high-intent use-case pages for Automotive & Transportation, Telecommunications, and Energy & Utilities — three major verticals with strong AI adoption.**
 - **Created use-case-automotive.html** — Best AI API for Automotive & Transportation 2026
@@ -63,9 +75,10 @@
 ## Summary: Sessions 1-598 (Apr 5 - Jun 12)
 Full APIpulse build from scratch. 652 pages, 320 posts, 42 models, 10 providers, 84 tools. Domain, Stripe, Pro, GA4, newsletter, Chrome extension, 167 comparisons, FAQPage schema, streaming toggle, A/B pricing, Model Selector quiz.
 
-## Site Status (as of Session 842, Jun 22, 2026)
-**827+ web pages | 354 blog posts | 40+ models | 10 providers | 107 tools | 12 API endpoints | 3 embeddable widgets**
-- Sitemap (816 URLs), RSS (704 items), blog files (354 posts) — all in sync
+## Site Status (as of Session 843, Jun 23, 2026)
+**827+ web pages | 354 blog posts | 42 models | 10 providers | 107 tools | 13 API endpoints | 3 embeddable widgets**
+- Sitemap (817 URLs), RSS (706 items), blog files (354 posts) — all in sync
+- **Static pricing API** at /api/v1/pricing.json — 42 models, no auth, CC-BY-4.0
 - **232 comparison pages** covering all major model pairs (all indexed in compare.html)
 - **22 alternatives landing pages** — all cross-linked, all with go.html model pre-fill
 - **25 use-case pages** — chatbot, code-gen, content-writing, customer-support, data-extraction, document-analysis, enterprise, agents, RAG, translation, startups, ecommerce, healthcare, education, finance, legal, manufacturing, marketing, real-estate, insurance, logistics, HR, automotive, telecom, energy
