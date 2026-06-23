@@ -1,0 +1,181 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "APIpulse AI Pricing API",
+    "description": "Free, no-auth JSON API providing AI/LLM pricing data for 42+ models across 10 providers (OpenAI, Anthropic, Google, DeepSeek, Mistral, Cohere, Meta, Moonshot, xAI, AI21). CC-BY-4.0 licensed.",
+    "version": "1.0.0",
+    "contact": {
+      "name": "APIpulse",
+      "url": "https://getapipulse.com"
+    },
+    "license": {
+      "name": "CC BY 4.0",
+      "url": "https://creativecommons.org/licenses/by/4.0/"
+    }
+  },
+  "servers": [
+    {
+      "url": "https://getapipulse.com",
+      "description": "Production (Vercel Edge CDN)"
+    }
+  ],
+  "paths": {
+    "/data/pricing.json": {
+      "get": {
+        "operationId": "getPricingData",
+        "summary": "Get AI API pricing data for all models",
+        "description": "Returns complete pricing dataset including metadata, provider list, and per-model pricing (input/output token costs, context windows, tier classification, deprecation status). No authentication required. Cached at edge.",
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PricingResponse"
+                }
+              }
+            },
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "type": "string"
+                },
+                "description": "Cache control header (typically public, max-age=3600)"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "PricingResponse": {
+        "type": "object",
+        "required": ["meta", "providers", "models"],
+        "properties": {
+          "meta": {
+            "$ref": "#/components/schemas/Meta"
+          },
+          "providers": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Provider"
+            }
+          },
+          "models": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Model"
+            }
+          }
+        }
+      },
+      "Meta": {
+        "type": "object",
+        "properties": {
+          "service": {
+            "type": "string",
+            "example": "APIpulse AI Pricing API"
+          },
+          "version": {
+            "type": "string",
+            "example": "1.0.0"
+          },
+          "updated": {
+            "type": "string",
+            "format": "date",
+            "example": "2026-06-23"
+          },
+          "totalModels": {
+            "type": "integer",
+            "example": 43
+          },
+          "totalProviders": {
+            "type": "integer",
+            "example": 10
+          },
+          "license": {
+            "type": "string",
+            "example": "CC-BY-4.0"
+          },
+          "website": {
+            "type": "string",
+            "format": "uri",
+            "example": "https://getapipulse.com"
+          },
+          "documentation": {
+            "type": "string",
+            "format": "uri",
+            "example": "https://getapipulse.com/api-docs.html"
+          }
+        }
+      },
+      "Provider": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "example": "openai"
+          },
+          "name": {
+            "type": "string",
+            "example": "OpenAI"
+          },
+          "modelCount": {
+            "type": "integer",
+            "example": 9
+          }
+        }
+      },
+      "Model": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "example": "openai-gpt55"
+          },
+          "name": {
+            "type": "string",
+            "example": "GPT-5.5"
+          },
+          "provider": {
+            "type": "string",
+            "example": "openai"
+          },
+          "tier": {
+            "type": "string",
+            "enum": ["budget", "mid", "premium"],
+            "example": "premium"
+          },
+          "input": {
+            "type": "number",
+            "format": "float",
+            "description": "Input token price per 1M tokens (USD)",
+            "example": 5.00
+          },
+          "output": {
+            "type": "number",
+            "format": "float",
+            "description": "Output token price per 1M tokens (USD)",
+            "example": 30.00
+          },
+          "context": {
+            "type": "string",
+            "description": "Maximum context window size",
+            "example": "1.05M"
+          },
+          "deprecated": {
+            "type": "boolean",
+            "example": false
+          },
+          "replacement": {
+            "type": "string",
+            "description": "Model ID of the recommended replacement (only present when deprecated=true)",
+            "example": "anthropic-opus48"
+          }
+        }
+      }
+    }
+  }
+}

@@ -145,8 +145,8 @@
 ### API-4. APIs.guru
 - **URL:** https://apis.guru
 - **Submit:** https://github.com/APIs-guru/openapi-directory (submit via PR)
-- **Requirement:** OpenAPI 3.0 spec (need to create one for /data/pricing.json)
-- **Note:** Static JSON file — may need a thin server wrapper or just list as-is
+- **OpenAPI spec:** https://getapipulse.com/data/pricing-openapi.json (created Session 844)
+- **Note:** Submit PR with OpenAPI spec. Static JSON file — APIs.guru may accept it as-is.
 
 ---
 
