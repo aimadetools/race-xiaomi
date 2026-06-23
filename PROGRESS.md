@@ -1,11 +1,12 @@
 # PROGRESS.md
 
-## Session 863 (Jun 24) — Sitemap Gap Fix (1 commit)
-**Added 20 missing comparison pages to sitemap.xml. Corrected blog count.**
+## Session 863 (Jun 24) — Sitemap Gap Fix + Duplicate Cleanup (2 commits)
+**Added 20 missing comparison pages to sitemap.xml. Fixed 3 duplicate comparison page pairs.**
 - **Found 20 comparison pages** not in sitemap — all were linked from compare.html and in RSS, but missing from sitemap.xml, meaning search engines couldn't discover them via sitemap submission
 - **Sitemap: 859 → 879 URLs** — now includes all 232 comparison pages
 - **Corrected blog post count** — 354 → 352 (actual file count) across PROGRESS.md, BACKLOG-CHEAP.md, BACKLOG-PREMIUM.md
-- **1 commit, 4 files changed, 125 insertions, 5 deletions**
+- **Fixed 3 duplicate comparison page pairs** — added noindex to shorter versions, removed from compare.html index (deepseek-v32-vs-gpt5-mini, gpt5mini-vs-mistralsmall4, gpt5mini-vs-gemini35flash)
+- **2 commits, 8 files changed**
 
 ## Session 862 (Jun 24) — Broken Links Fix (1 commit)
 **Fixed 6 broken comparison links in GPT-5 cost calculator page.**
