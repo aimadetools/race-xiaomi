@@ -339,6 +339,7 @@
 
         /* Presets */
         .presets { display: flex; gap: 8px; margin-bottom: 24px; flex-wrap: wrap; }
+        .pro-features-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
         .preset-btn {
             background: var(--bg-card); border: 1px solid var(--border); color: var(--text-secondary);
             padding: 6px 14px; border-radius: 8px; font-size: 13px; cursor: pointer;
@@ -431,6 +432,8 @@
 
             .testimonials-section { padding: 40px 20px; }
             .testimonials-grid { grid-template-columns: 1fr; }
+            .pro-features-grid { grid-template-columns: 1fr; gap: 16px; }
+            .pro-cta-row { flex-direction: column; text-align: center; }
         }
     </style>
     <meta name="theme-color" content="#6366f1">
@@ -481,10 +484,10 @@
     <!-- What's New Banner -->
     <div id="whats-new-banner" style="display:none;background:linear-gradient(135deg,rgba(99,102,241,0.08),rgba(139,92,247,0.06));border-bottom:1px solid rgba(99,102,241,0.2);padding:10px 24px;text-align:center;position:relative;">
         <p style="margin:0;font-size:13px;color:var(--text-secondary);line-height:1.6;">
-            <strong style="color:var(--accent);">🆕 What's New:</strong>
-            <a href="pro.html" style="color:var(--green);font-weight:600;text-decoration:none;">ROI Calculator</a> ·
-            <a href="cost-health-check.html" style="color:var(--accent);font-weight:600;text-decoration:none;">Free Cost Health Check</a> ·
-            <a href="migrate.html" style="color:#f59e0b;font-weight:600;text-decoration:none;">Claude 4 migration tools — free →</a>
+            <strong style="color:var(--accent);">🆕 New:</strong>
+            <a href="cheapest-ai-api.html" style="color:var(--green);font-weight:600;text-decoration:none;">31 Industry Cost Guides</a> ·
+            <a href="ai-stack-builder.html" style="color:var(--accent);font-weight:600;text-decoration:none;">AI Stack Builder</a> ·
+            <a href="live-pricing.html" style="color:#f59e0b;font-weight:600;text-decoration:none;">Live Pricing Dashboard →</a>
         </p>
         <button onclick="document.getElementById('whats-new-banner').remove();localStorage.setItem('apipulse_whats_new_dismissed','1');" style="position:absolute;right:16px;top:50%;transform:translateY(-50%);background:none;border:none;color:var(--text-muted);cursor:pointer;font-size:16px;padding:4px 8px;" aria-label="Close">&times;</button>
     </div>
@@ -642,6 +645,40 @@
                         Based on published API pricing. Actual costs may vary.
                     </p>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Pro Section -->
+    <section style="max-width:900px;margin:0 auto;padding:40px 24px;">
+        <div style="text-align:center;margin-bottom:32px;">
+            <h2 style="font-size:28px;font-weight:800;margin-bottom:8px;">Why developers upgrade to Pro</h2>
+            <p style="color:var(--text-secondary);font-size:16px;">The free calculator shows one model. Pro shows you everything.</p>
+        </div>
+        <div class="pro-features-grid">
+            <div style="background:var(--bg-secondary);border:1px solid var(--border);border-radius:14px;padding:28px 24px;text-align:center;">
+                <div style="font-size:32px;margin-bottom:12px;">📊</div>
+                <h3 style="font-size:16px;font-weight:700;margin-bottom:8px;">All 42 Models Ranked</h3>
+                <p style="font-size:13px;color:var(--text-secondary);line-height:1.6;">See every alternative ranked by cost for your exact usage. Free shows top 3 — Pro shows all 42.</p>
+            </div>
+            <div style="background:var(--bg-secondary);border:1px solid var(--border);border-radius:14px;padding:28px 24px;text-align:center;">
+                <div style="font-size:32px;margin-bottom:12px;">💻</div>
+                <h3 style="font-size:16px;font-weight:700;margin-bottom:8px;">Migration Code Included</h3>
+                <p style="font-size:13px;color:var(--text-secondary);line-height:1.6;">Copy-paste code snippets to switch models. No research, no docs diving — just working code.</p>
+            </div>
+            <div style="background:var(--bg-secondary);border:1px solid var(--border);border-radius:14px;padding:28px 24px;text-align:center;">
+                <div style="font-size:32px;margin-bottom:12px;">📄</div>
+                <h3 style="font-size:16px;font-weight:700;margin-bottom:8px;">PDF Reports for Your Team</h3>
+                <p style="font-size:13px;color:var(--text-secondary);line-height:1.6;">Export professional cost reports for procurement, investors, or engineering leadership.</p>
+            </div>
+        </div>
+        <div style="text-align:center;margin-top:28px;">
+            <div class="pro-cta-row" style="display:inline-flex;align-items:center;gap:16px;background:var(--bg-secondary);border:1px solid var(--border);border-radius:12px;padding:16px 28px;">
+                <div style="text-align:left;">
+                    <div style="font-size:14px;font-weight:700;">Average user saves <span style="color:var(--green);">$720+/year</span></div>
+                    <div style="font-size:12px;color:var(--text-muted);">Pro pays for itself in under 2 weeks</div>
+                </div>
+                <a href="go.html?from=why_pro" class="btn-primary" style="white-space:nowrap;padding:12px 24px;font-size:14px;" onclick="if(window.trackEvent)window.trackEvent('why_pro_cta_clicked',{source:'index'})">Try Pro Free →</a>
             </div>
         </div>
     </section>

@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Model Deprecation Tracker — Which Models Are Deprecated in 2026? | APIpulse</title>
+    <meta name="description" content="Track all deprecated AI models across OpenAI, Anthropic, Google, DeepSeek, and more. See replacement models, cost comparisons, and migration deadlines. Updated June 2026.">
+    <meta name="keywords" content="deprecated AI models, GPT-4 deprecated, Claude 4 retired, Gemini 2.0 deprecated, AI model deprecation 2026, LLM migration">
+    <meta property="og:title" content="AI Model Deprecation Tracker — 2026">
+    <meta property="og:description" content="Track all deprecated AI models. See replacements, cost comparisons, and migration deadlines.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://getapipulse.com/og-image.png">
+    <meta property="og:url" content="https://getapipulse.com/model-deprecations.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="AI Model Deprecation Tracker — 2026">
+    <meta name="twitter:image" content="https://getapipulse.com/og-image.png">
+    <link rel="canonical" href="https://getapipulse.com/model-deprecations.html">
+    <link rel="alternate" type="application/rss+xml" title="APIpulse Blog" href="https://getapipulse.com/rss.xml">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="styles.css">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0CEP7S9Y3J"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-0CEP7S9Y3J');
+    </script>
+    <script src="analytics.js" defer></script>
+    <script src="dynamic-date.js" defer></script>
+    <script src="shared.js" defer></script>
+    <script src="pricing-data.js" defer></script>
+    <script src="pro-features.js" defer></script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "AI Model Deprecation Tracker",
+        "url": "https://getapipulse.com/model-deprecations.html",
+        "description": "Track all deprecated AI models across providers. See replacements, cost comparisons, and migration deadlines.",
+        "applicationCategory": "DeveloperApplication",
+        "operatingSystem": "Web",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "Which AI models are deprecated in 2026?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "As of June 2026, 6 models are deprecated: Claude 4 Opus, Claude Sonnet 4, Gemini 2.0 Flash, Gemini 2.0 Flash Lite, DeepSeek V3, and Jamba 1.5 Large. Each has a recommended replacement model."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What happens when an AI model is deprecated?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Deprecated models typically stop receiving new features, may have reduced reliability, and eventually shut down. It's best to migrate to the replacement model before the shutdown date to avoid service interruptions."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How do I migrate from a deprecated AI model?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Each deprecated model has a recommended replacement. Use APIpulse's free migration tools to compare costs, get copy-paste migration code, and switch in under 5 minutes. Most migrations only require changing the model name in your API calls."
+                }
+            }
+        ]
+    }
+    </script>
+    <style>
+        .dep-page { max-width: 900px; margin: 0 auto; padding: 100px 24px 80px; }
+        .dep-hero { text-align: center; margin-bottom: 48px; }
+        .dep-hero .alert-badge {
+            display: inline-block; background: rgba(220,38,38,0.1); border: 1px solid rgba(220,38,38,0.3);
+            color: #ef4444; padding: 6px 16px; border-radius: 20px; font-size: 13px; font-weight: 600;
+            margin-bottom: 16px;
+        }
+        .dep-hero h1 {
+            font-size: clamp(28px, 5vw, 42px); font-weight: 800; line-height: 1.2; margin-bottom: 12px;
+        }
+        .dep-hero p { font-size: 16px; color: var(--text-secondary); max-width: 600px; margin: 0 auto; }
+
+        /* Stats row */
+        .dep-stats {
+            display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-bottom: 40px;
+        }
+        .dep-stat {
+            background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 12px;
+            padding: 16px; text-align: center;
+        }
+        .dep-stat .num { font-size: 28px; font-weight: 800; }
+        .dep-stat .lbl { font-size: 12px; color: var(--text-muted); margin-top: 4px; }
+
+        /* Checker */
+        .dep-checker {
+            background: var(--bg-secondary); border: 2px solid var(--accent); border-radius: 16px;
+            padding: 28px; margin-bottom: 40px; text-align: center;
+        }
+        .dep-checker h2 { font-size: 20px; font-weight: 800; margin-bottom: 8px; }
+        .dep-checker p { font-size: 14px; color: var(--text-secondary); margin-bottom: 16px; }
+        .dep-checker select {
+            width: 100%; max-width: 400px; padding: 12px 16px; background: var(--bg-card);
+            border: 1px solid var(--border); border-radius: 8px; color: var(--text-primary);
+            font-size: 15px; font-family: inherit;
+        }
+        .dep-checker-result {
+            margin-top: 16px; padding: 16px; border-radius: 10px; display: none;
+        }
+        .dep-checker-result.safe { background: rgba(34,197,94,0.08); border: 1px solid rgba(34,197,94,0.3); }
+        .dep-checker-result.warning { background: rgba(245,158,11,0.08); border: 1px solid rgba(245,158,11,0.3); }
+        .dep-checker-result.danger { background: rgba(220,38,38,0.08); border: 1px solid rgba(220,38,38,0.3); }
+
+        /* Deprecation cards */
+        .dep-card {
+            background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 16px;
+            padding: 28px; margin-bottom: 20px; transition: border-color 0.2s;
+        }
+        .dep-card:hover { border-color: var(--accent); }
+        .dep-card-header {
+            display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 16px;
+            flex-wrap: wrap; gap: 12px;
+        }
+        .dep-card-title { font-size: 18px; font-weight: 700; }
+        .dep-card-provider { font-size: 13px; color: var(--text-muted); margin-top: 2px; }
+        .dep-badge {
+            display: inline-block; padding: 4px 12px; border-radius: 6px;
+            font-size: 12px; font-weight: 700; white-space: nowrap;
+        }
+        .dep-badge.retired { background: rgba(220,38,38,0.12); color: #ef4444; }
+        .dep-badge.deprecated { background: rgba(245,158,11,0.12); color: #f59e0b; }
+
+        .dep-comparison {
+            display: grid; grid-template-columns: 1fr auto 1fr; gap: 16px; align-items: center;
+            margin-bottom: 16px;
+        }
+        .dep-model-box {
+            background: var(--bg-card); border: 1px solid var(--border); border-radius: 10px; padding: 16px;
+        }
+        .dep-model-box.old { border-color: rgba(220,38,38,0.3); }
+        .dep-model-box.new { border-color: rgba(34,197,94,0.3); }
+        .dep-model-name { font-size: 15px; font-weight: 700; margin-bottom: 4px; }
+        .dep-model-price { font-size: 13px; color: var(--text-secondary); }
+        .dep-model-price strong { color: var(--text-primary); }
+        .dep-arrow { font-size: 24px; color: var(--accent); text-align: center; }
+
+        .dep-savings {
+            display: flex; gap: 16px; flex-wrap: wrap;
+        }
+        .dep-savings-item {
+            background: var(--bg-card); border: 1px solid var(--border); border-radius: 8px;
+            padding: 10px 16px; font-size: 13px;
+        }
+        .dep-savings-item .val { font-weight: 700; color: var(--green); }
+
+        .dep-actions {
+            display: flex; gap: 10px; margin-top: 16px; flex-wrap: wrap;
+        }
+        .dep-actions a {
+            display: inline-flex; align-items: center; gap: 6px; padding: 10px 18px;
+            border-radius: 8px; font-size: 13px; font-weight: 600; text-decoration: none;
+            transition: all 0.2s;
+        }
+        .dep-actions .btn-migrate {
+            background: var(--accent); color: white;
+        }
+        .dep-actions .btn-migrate:hover { opacity: 0.9; }
+        .dep-actions .btn-compare {
+            background: transparent; border: 1px solid var(--border); color: var(--text-primary);
+        }
+        .dep-actions .btn-compare:hover { border-color: var(--accent); }
+
+        /* Timeline */
+        .dep-timeline { margin: 40px 0; }
+        .dep-timeline h2 { font-size: 24px; font-weight: 800; margin-bottom: 24px; text-align: center; }
+        .timeline-track {
+            position: relative; padding-left: 30px;
+        }
+        .timeline-track::before {
+            content: ''; position: absolute; left: 8px; top: 0; bottom: 0;
+            width: 2px; background: var(--border);
+        }
+        .timeline-item {
+            position: relative; margin-bottom: 24px; padding: 16px 20px;
+            background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 12px;
+        }
+        .timeline-item::before {
+            content: ''; position: absolute; left: -26px; top: 20px;
+            width: 12px; height: 12px; border-radius: 50%;
+            background: var(--accent); border: 2px solid var(--bg-primary);
+        }
+        .timeline-item.past::before { background: #ef4444; }
+        .timeline-date { font-size: 12px; color: var(--text-muted); font-weight: 600; margin-bottom: 4px; }
+        .timeline-title { font-size: 14px; font-weight: 700; }
+        .timeline-desc { font-size: 13px; color: var(--text-secondary); margin-top: 4px; }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .dep-stats { grid-template-columns: repeat(2, 1fr); }
+            .dep-comparison { grid-template-columns: 1fr; }
+            .dep-arrow { transform: rotate(90deg); }
+        }
+    </style>
+    <meta name="theme-color" content="#6366f1">
+</head>
+<body>
+    <a href="#main" class="skip-link">Skip to content</a>
+    <nav>
+        <div class="nav-inner">
+            <a href="index.html" class="logo">API<span>pulse</span></a>
+            <button class="hamburger" onclick="toggleMobileNav()" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="calculator.html">Calculator</a>
+                <a href="live-pricing.html">Live Prices</a>
+                <a href="compare.html">Compare</a>
+                <a href="cheapest-ai-api.html">Cheapest</a>
+                <a href="migration-checklist.html">Migration</a>
+                <a href="pricing.html" class="nav-cta" onclick="if(window.trackEvent)window.trackEvent('pro_button_clicked',{source:'nav'})">Get Pro — $29</a>
+                <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
+            </div>
+        </div>
+    </nav>
+
+    <main id="main" class="dep-page">
+        <div class="dep-hero">
+            <div class="alert-badge">⚠️ 6 models deprecated — migration required</div>
+            <h1>AI Model Deprecation Tracker</h1>
+            <p>Track every deprecated AI model across providers. See replacements, compare costs, and migrate before shutdown.</p>
+        </div>
+
+        <div class="dep-stats">
+            <div class="dep-stat">
+                <div class="num" style="color:#ef4444;">6</div>
+                <div class="lbl">Models Deprecated</div>
+            </div>
+            <div class="dep-stat">
+                <div class="num" style="color:var(--accent);">5</div>
+                <div class="lbl">Providers Affected</div>
+            </div>
+            <div class="dep-stat">
+                <div class="num" style="color:var(--green);">100%</div>
+                <div class="lbl">Have Replacements</div>
+            </div>
+            <div class="dep-stat">
+                <div class="num" style="color:var(--green);">↑47%</div>
+                <div class="lbl">Avg. Cost Increase</div>
+            </div>
+        </div>
+
+        <!-- Model Checker -->
+        <div class="dep-checker">
+            <h2>🔍 Is YOUR model deprecated?</h2>
+            <p>Select your current model to check its status and find a replacement</p>
+            <select id="model-checker" onchange="checkModel()">
+                <option value="">— Select your model —</option>
+            </select>
+            <div id="checker-result" class="dep-checker-result"></div>
+        </div>
+
+        <!-- Deprecation Cards -->
+        <div id="dep-cards"></div>
+
+        <!-- Timeline -->
+        <div class="dep-timeline">
+            <h2>📅 Deprecation Timeline</h2>
+            <div class="timeline-track">
+                <div class="timeline-item past">
+                    <div class="timeline-date">May 2026</div>
+                    <div class="timeline-title">DeepSeek V3 deprecated</div>
+                    <div class="timeline-desc">Replaced by DeepSeek V4 Flash — 48% cheaper, 2× faster</div>
+                </div>
+                <div class="timeline-item past">
+                    <div class="timeline-date">May 2026</div>
+                    <div class="timeline-title">Gemini 2.0 Flash & Flash Lite deprecated</div>
+                    <div class="timeline-desc">Replaced by Gemini 3 Flash and 3.1 Flash-Lite — better quality at similar prices</div>
+                </div>
+                <div class="timeline-item past">
+                    <div class="timeline-date">June 15, 2026</div>
+                    <div class="timeline-title">Claude 4 Opus & Sonnet retired</div>
+                    <div class="timeline-desc">Replaced by Claude Opus 4.8 and Sonnet 4.6 — 67% cheaper, improved reasoning</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">June 2026</div>
+                    <div class="timeline-title">Jamba 1.5 Large deprecated</div>
+                    <div class="timeline-desc">Replaced by Jamba 1.7 Large — same price, better performance</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">July 2026 (estimated)</div>
+                    <div class="timeline-title">Full shutdown of deprecated endpoints</div>
+                    <div class="timeline-desc">All deprecated models will stop accepting requests</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- CTA -->
+        <div style="text-align:center;margin-top:40px;">
+            <div style="background:linear-gradient(135deg,rgba(99,102,241,0.06),rgba(168,85,247,0.06));border:1px solid rgba(99,102,241,0.2);border-radius:16px;padding:40px 32px;">
+                <h2 style="font-size:24px;font-weight:800;margin-bottom:8px;">Need help migrating?</h2>
+                <p style="color:var(--text-secondary);font-size:16px;margin-bottom:20px;">APIpulse shows you the cheapest replacement for any deprecated model with copy-paste migration code.</p>
+                <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
+                    <a href="savings-calculator.html" class="btn-primary" style="display:inline-block;padding:14px 32px;font-size:16px;">Find My Cheapest Replacement →</a>
+                    <a href="migration-checklist.html" class="btn-secondary" style="display:inline-block;padding:14px 32px;font-size:16px;">Migration Checklist →</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- FAQ -->
+        <div style="margin-top:48px;">
+            <h2 style="font-size:22px;font-weight:800;margin-bottom:20px;">Frequently Asked Questions</h2>
+            <div class="faq-item" onclick="this.classList.toggle('open')" style="border-bottom:1px solid var(--border);padding:16px 0;cursor:pointer;">
+                <div style="display:flex;justify-content:space-between;align-items:center;font-size:15px;font-weight:700;">
+                    Which AI models are deprecated in 2026?
+                    <span style="color:var(--text-muted);font-size:18px;">+</span>
+                </div>
+                <div style="display:none;font-size:14px;color:var(--text-secondary);line-height:1.7;margin-top:12px;">
+                    As of June 2026, 6 models are deprecated: Claude 4 Opus, Claude Sonnet 4, Gemini 2.0 Flash, Gemini 2.0 Flash Lite, DeepSeek V3, and Jamba 1.5 Large. Each has a recommended replacement that's either cheaper, faster, or both.
+                </div>
+            </div>
+            <div class="faq-item" onclick="this.classList.toggle('open')" style="border-bottom:1px solid var(--border);padding:16px 0;cursor:pointer;">
+                <div style="display:flex;justify-content:space-between;align-items:center;font-size:15px;font-weight:700;">
+                    What happens when an AI model is deprecated?
+                    <span style="color:var(--text-muted);font-size:18px;">+</span>
+                </div>
+                <div style="display:none;font-size:14px;color:var(--text-secondary);line-height:1.7;margin-top:12px;">
+                    Deprecated models stop receiving new features, may have reduced reliability, and eventually shut down completely. It's best to migrate to the replacement model before the shutdown date to avoid service interruptions.
+                </div>
+            </div>
+            <div class="faq-item" onclick="this.classList.toggle('open')" style="border-bottom:1px solid var(--border);padding:16px 0;cursor:pointer;">
+                <div style="display:flex;justify-content:space-between;align-items:center;font-size:15px;font-weight:700;">
+                    How do I migrate from a deprecated AI model?
+                    <span style="color:var(--text-muted);font-size:18px;">+</span>
+                </div>
+                <div style="display:none;font-size:14px;color:var(--text-secondary);line-height:1.7;margin-top:12px;">
+                    Each deprecated model has a recommended replacement. Use APIpulse's free migration tools to compare costs, get copy-paste migration code, and switch in under 5 minutes. Most migrations only require changing the model name in your API calls.
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>© 2026 APIpulse. <a href="index.html">Home</a> · <a href="about.html">About</a> · <a href="blog.html">Blog</a> · <a href="pricing.html">Pricing</a></p>
+    </footer>
+
+    <script>
+    (function() {
+        // FAQ toggle
+        document.querySelectorAll('.faq-item').forEach(function(item) {
+            item.addEventListener('click', function() {
+                var answer = this.querySelector('div:last-child');
+                var icon = this.querySelector('span');
+                if (answer.style.display === 'block') {
+                    answer.style.display = 'none';
+                    if (icon) icon.textContent = '+';
+                } else {
+                    answer.style.display = 'block';
+                    if (icon) icon.textContent = '−';
+                }
+            });
+        });
+
+        // Build deprecation data from pricing-data.js
+        var deprecated = [
+            {
+                id: 'anthropic-opus', name: 'Claude 4 Opus', provider: 'Anthropic', status: 'retired',
+                date: 'June 15, 2026', input: 15.00, output: 75.00,
+                replacement: { id: 'anthropic-opus48', name: 'Claude Opus 4.8', input: 5.00, output: 25.00 },
+                reason: 'Replaced by Claude Opus 4.8 — 67% cheaper, improved reasoning'
+            },
+            {
+                id: 'anthropic-sonnet', name: 'Claude Sonnet 4', provider: 'Anthropic', status: 'retired',
+                date: 'June 15, 2026', input: 3.00, output: 15.00,
+                replacement: { id: 'anthropic-sonnet46', name: 'Claude Sonnet 4.6', input: 3.00, output: 15.00 },
+                reason: 'Replaced by Claude Sonnet 4.6 — same price, better performance'
+            },
+            {
+                id: 'google-flash', name: 'Gemini 2.0 Flash', provider: 'Google', status: 'deprecated',
+                date: 'May 2026', input: 0.10, output: 0.40,
+                replacement: { id: 'google-gemini3-flash', name: 'Gemini 3 Flash', input: 0.50, output: 3.00 },
+                reason: 'Replaced by Gemini 3 Flash — significantly better quality'
+            },
+            {
+                id: 'google-flash-lite', name: 'Gemini 2.0 Flash Lite', provider: 'Google', status: 'deprecated',
+                date: 'May 2026', input: 0.075, output: 0.30,
+                replacement: { id: 'google-gemini31-flash-lite', name: 'Gemini 3.1 Flash-Lite', input: 0.25, output: 1.50 },
+                reason: 'Replaced by Gemini 3.1 Flash-Lite — better quality tier'
+            },
+            {
+                id: 'deepseek-v3', name: 'DeepSeek V3', provider: 'DeepSeek', status: 'deprecated',
+                date: 'May 2026', input: 0.27, output: 1.10,
+                replacement: { id: 'deepseek-v4-flash', name: 'DeepSeek V4 Flash', input: 0.14, output: 0.28 },
+                reason: 'Replaced by DeepSeek V4 Flash — 48% cheaper, 2× faster'
+            },
+            {
+                id: 'ai21-jamba', name: 'Jamba 1.5 Large', provider: 'AI21', status: 'deprecated',
+                date: 'June 2026', input: 2.00, output: 8.00,
+                replacement: { id: 'ai21-jamba17', name: 'Jamba 1.7 Large', input: 2.00, output: 8.00 },
+                reason: 'Replaced by Jamba 1.7 Large — same price, better performance'
+            }
+        ];
+
+        // Populate checker dropdown
+        var checker = document.getElementById('model-checker');
+        deprecated.forEach(function(d) {
+            var opt = document.createElement('option');
+            opt.value = d.id;
+            opt.textContent = d.name + ' (' + d.provider + ')';
+            checker.appendChild(opt);
+        });
+        // Also add all active models
+        if (typeof API_MODELS !== 'undefined') {
+            API_MODELS.filter(function(m) { return !m.deprecated; }).forEach(function(m) {
+                var opt = document.createElement('option');
+                opt.value = m.id;
+                opt.textContent = m.name + ' (' + m.provider + ') ✓ Active';
+                checker.appendChild(opt);
+            });
+        }
+
+        // Model checker
+        window.checkModel = function() {
+            var val = checker.value;
+            var result = document.getElementById('checker-result');
+            if (!val) { result.style.display = 'none'; return; }
+
+            var dep = deprecated.find(function(d) { return d.id === val; });
+            if (dep) {
+                result.className = 'dep-checker-result danger';
+                result.style.display = 'block';
+                result.innerHTML = '<div style="font-weight:700;color:#ef4444;margin-bottom:4px;">⚠️ ' + dep.name + ' is ' + dep.status + '!</div>' +
+                    '<div style="font-size:14px;color:var(--text-secondary);">Migrate to <strong>' + dep.replacement.name + '</strong> — ' + dep.reason + '</div>' +
+                    '<div style="margin-top:12px;"><a href="savings-calculator.html?model=' + dep.id + '" style="color:var(--accent);font-weight:600;font-size:14px;">Find cheapest replacement →</a></div>';
+            } else {
+                var model = typeof API_MODELS !== 'undefined' ? API_MODELS.find(function(m) { return m.id === val; }) : null;
+                if (model) {
+                    result.className = 'dep-checker-result safe';
+                    result.style.display = 'block';
+                    result.innerHTML = '<div style="font-weight:700;color:var(--green);margin-bottom:4px;">✅ ' + model.name + ' is active</div>' +
+                        '<div style="font-size:14px;color:var(--text-secondary);">No deprecation concerns. Last verified: ' + model.verified + '</div>';
+                }
+            }
+        };
+
+        // Build deprecation cards
+        var cardsContainer = document.getElementById('dep-cards');
+        deprecated.forEach(function(dep) {
+            var inputDiff = dep.replacement.input - dep.input;
+            var outputDiff = dep.replacement.output - dep.output;
+            var inputPct = dep.input > 0 ? Math.round((inputDiff / dep.input) * 100) : 0;
+            var outputPct = dep.output > 0 ? Math.round((outputDiff / dep.output) * 100) : 0;
+
+            var card = document.createElement('div');
+            card.className = 'dep-card';
+            card.innerHTML =
+                '<div class="dep-card-header">' +
+                    '<div>' +
+                        '<div class="dep-card-title">' + dep.name + '</div>' +
+                        '<div class="dep-card-provider">' + dep.provider + ' · Deprecated ' + dep.date + '</div>' +
+                    '</div>' +
+                    '<span class="dep-badge ' + dep.status + '">' + (dep.status === 'retired' ? '🔴 Retired' : '🟡 Deprecated') + '</span>' +
+                '</div>' +
+                '<div class="dep-comparison">' +
+                    '<div class="dep-model-box old">' +
+                        '<div class="dep-model-name">' + dep.name + '</div>' +
+                        '<div class="dep-model-price">Input: <strong>$' + dep.input.toFixed(2) + '</strong> / 1M tokens</div>' +
+                        '<div class="dep-model-price">Output: <strong>$' + dep.output.toFixed(2) + '</strong> / 1M tokens</div>' +
+                    '</div>' +
+                    '<div class="dep-arrow">→</div>' +
+                    '<div class="dep-model-box new">' +
+                        '<div class="dep-model-name">' + dep.replacement.name + '</div>' +
+                        '<div class="dep-model-price">Input: <strong>$' + dep.replacement.input.toFixed(2) + '</strong> / 1M tokens <span style="color:' + (inputPct <= 0 ? 'var(--green)' : '#ef4444') + ';font-weight:600;">(' + (inputPct > 0 ? '+' : '') + inputPct + '%)</span></div>' +
+                        '<div class="dep-model-price">Output: <strong>$' + dep.replacement.output.toFixed(2) + '</strong> / 1M tokens <span style="color:' + (outputPct <= 0 ? 'var(--green)' : '#ef4444') + ';font-weight:600;">(' + (outputPct > 0 ? '+' : '') + outputPct + '%)</span></div>' +
+                    '</div>' +
+                '</div>' +
+                '<div style="font-size:13px;color:var(--text-secondary);margin-bottom:12px;">💡 ' + dep.reason + '</div>' +
+                '<div class="dep-actions">' +
+                    '<a href="compare.html?' + dep.id + '-vs-' + dep.replacement.id + '" class="btn-compare">Compare Models</a>' +
+                    '<a href="savings-calculator.html?model=' + dep.id + '" class="btn-migrate">Find Cheapest Alternative →</a>' +
+                '</div>';
+            cardsContainer.appendChild(card);
+        });
+    })();
+    </script>
+</body>
+</html>
