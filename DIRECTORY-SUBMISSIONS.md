@@ -91,32 +91,68 @@
 
 ---
 
-## Priority 3 — GitHub Awesome Lists (PRs)
+## Priority 2b — Static Pricing API Directories (Session 844)
 
-### 13. public-apis/public-apis
+**Target:** Promote /data/pricing.json — free, no-auth, CC-BY-4.0 AI pricing data API (42 models, 10 providers).
+
+### API-1. PublicAPIs.com (public-apis/public-apis)
 - **Repo:** https://github.com/public-apis/public-apis
 - **Section:** Machine Learning
 - **Entry (add to table after "Groq"):**
   ```
-  | [APIpulse](https://getapipulse.com/api/pricing) | Free AI API pricing data for 42 models across 10 providers with embeddable widgets | No | Yes | Yes |
+  | [APIpulse Pricing](https://getapipulse.com/data/pricing.json) | Free AI API pricing data for 42 models across 10 providers (OpenAI, Anthropic, Google, DeepSeek, Mistral, Cohere, Meta, xAI, AI21) | No | Yes | Yes |
   ```
-- **PR Title:** Add APIpulse — Free AI API pricing data
-- **PR Description:**
+- **PR Title:** Add APIpulse — Free AI API pricing data (42 models, 10 providers)
+- **PR Body:**
   ```
-  ## Adding APIpulse
+  ## Adding APIpulse Pricing API
 
-  **APIpulse** provides free, no-auth REST API access to AI API pricing data for 42 models across 10 providers (OpenAI, Anthropic, Google, DeepSeek, Mistral, Cohere, Meta, Moonshot, xAI, AI21).
+  **APIpulse** provides free, no-auth JSON access to AI/LLM API pricing data.
 
-  - **Endpoint:** https://getapipulse.com/api/pricing
+  - **Endpoint:** https://getapipulse.com/data/pricing.json
   - **Docs:** https://getapipulse.com/api-docs.html
   - **Auth:** None required
   - **HTTPS:** Yes
   - **CORS:** Yes
+  - **License:** CC-BY-4.0
 
-  Includes embeddable widgets for pricing tables, model badges, and comparison charts.
+  Tracks 42 models across 10 providers (OpenAI, Anthropic, Google, DeepSeek, Mistral, Cohere, Meta, Moonshot, xAI, AI21). Updated regularly. Includes per-model input/output pricing, context windows, tier classification, and deprecation status.
   ```
 
-### 14b. awesome-chatgpt (127K stars)
+### API-2. APIList.fun
+- **URL:** https://apilist.fun
+- **Submit:** https://apilist.fun/submit-api (or use contact form)
+- **Copy:**
+  - **Name:** APIpulse Pricing API
+  - **URL:** https://getapipulse.com/data/pricing.json
+  - **Description:** Free, no-auth JSON API providing AI/LLM pricing data for 42 models across 10 providers. Includes input/output token pricing, context windows, tier classification, and deprecation status. CC-BY-4.0 license.
+  - **Category:** Artificial Intelligence, Data, Developer Tools
+  - **Auth:** None
+  - **HTTPS:** Yes
+
+### API-3. RapidAPI Marketplace
+- **URL:** https://rapidapi.com/hub
+- **Submit:** https://rapidapi.com/hub (create new API listing)
+- **Copy:**
+  - **Name:** AI API Pricing Data
+  - **Description:** Free AI/LLM pricing data for 42 models across 10 providers (OpenAI, Anthropic, Google, DeepSeek, Mistral, Cohere, Meta, xAI, AI21). Get per-model input/output pricing, context windows, tier classification, and deprecation status. No auth required. Data from getapipulse.com.
+  - **Category:** Data, Artificial Intelligence
+  - **Pricing:** Free
+  - **Base URL:** https://getapipulse.com/data/pricing.json
+  - **Endpoints:**
+    - `GET /data/pricing.json` — Full pricing dataset (42 models, 10 providers)
+
+### API-4. APIs.guru
+- **URL:** https://apis.guru
+- **Submit:** https://github.com/APIs-guru/openapi-directory (submit via PR)
+- **Requirement:** OpenAPI 3.0 spec (need to create one for /data/pricing.json)
+- **Note:** Static JSON file — may need a thin server wrapper or just list as-is
+
+---
+
+## Priority 3 — GitHub Awesome Lists (PRs)
+
+### 13. awesome-chatgpt (127K stars)
 - **Repo:** https://github.com/awesome-chatgpt/awesome-chatgpt
 - **Stars:** 127K+ (highest reach)
 - **Action:** Fork, add to "Tools" section, submit PR
@@ -133,18 +169,18 @@
   - Currently tracking Claude 4 deprecation with migration guides
   ```
 
-### 14c. Hannibal046/Awesome-LLM
+### 14. Hannibal046/Awesome-LLM
 - **Repo:** https://github.com/Hannibal046/Awesome-LLM
 - **Stars:** Popular LLM resource list
 - **Action:** Fork, add to "Tools" section, submit PR
 - **Entry:** `- [APIpulse](https://getapipulse.com) — Free LLM API pricing comparison across 42 models and 10 providers. Cost calculator, budget planner, embeddable widgets.`
 
-### 14. awesome-ai-tools
+### 15. awesome-ai-tools
 - **URL:** https://github.com/mahseema/awesome-ai-tools
 - **Action:** Fork, add to "Developer Tools" section, submit PR
 - **Entry:** `- [APIpulse](https://getapipulse.com) — Compare LLM API pricing across 42 models and 10 providers. Free cost calculator and budget planner.`
 
-### 15. awesome-developer-tools
+### 16. awesome-developer-tools
 - **URL:** https://github.com/agamm/awesome-developer-tools
 - **Action:** Fork, add to appropriate section, submit PR
 
@@ -152,7 +188,7 @@
 
 ## Priority 4 — Product Directories & Communities
 
-### 16. BetaList
+### 17. BetaList
 - **URL:** https://betalist.com/submit
 - **Copy:**
   - **Name:** APIpulse
@@ -160,21 +196,21 @@
   - **Tagline:** Know your AI API costs before you commit
   - **Description:** Free AI API cost calculator and budget planner for developers.
 
-### 17. Launching Next
+### 18. Launching Next
 - **URL:** https://launchingnext.com/submit/
 - **Copy:** Same as BetaList
 
-### 18. Indie Hackers
+### 19. Indie Hackers
 - **URL:** https://www.indiehackers.com/
 - **Action:** Post in "Show IH" with build story and link
 
-### 19. Hacker News (Show HN)
+### 20. Hacker News (Show HN)
 - **URL:** https://news.ycombinator.com/submit
 - **Title:** Show HN: APIpulse – Free AI API cost calculator (42 models, 10 providers)
 - **URL:** https://getapipulse.com
 - **Comment:** I built APIpulse to help developers compare LLM API pricing across providers. It has 42 models from 10 providers, interactive cost calculators, and budget planning tools. Free to use, Pro is $29 one-time. Happy to answer questions about the pricing data.
 
-### 20. RapidAPI Hub
+### 21. RapidAPI Hub
 - **URL:** https://rapidapi.com/hub
 - **Note:** List the free pricing API endpoint
 
@@ -209,16 +245,19 @@
 | 10 | devhunt.org | [ ] | | |
 | 11 | stackshare.io | [ ] | | |
 | 12 | devresourc.es | [ ] | | |
-| 13 | public-apis (PR) | [ ] | | |
-| 14 | awesome-ai-tools (PR) | [ ] | | |
-| 15 | awesome-developer-tools (PR) | [ ] | | |
-| 16 | betalist.com | [ ] | | |
-| 17 | launchingnext.com | [ ] | | |
-| 18 | indiehackers.com | [ ] | | |
-| 19 | HN Show | [ ] | | |
-| 20 | RapidAPI Hub | [ ] | | |
-| 21 | awesome-chatgpt (PR) | [ ] | | 127K stars — highest reach |
-| 22 | Awesome-LLM (PR) | [ ] | | Popular LLM resource list |
+| API-1 | public-apis (PR) | [ ] | | Static pricing API — /data/pricing.json |
+| API-2 | APIList.fun | [ ] | | Static pricing API |
+| API-3 | RapidAPI Marketplace | [ ] | | Static pricing API listing |
+| API-4 | APIs.guru (PR) | [ ] | | Needs OpenAPI spec |
+| 13 | awesome-chatgpt (PR) | [ ] | | 127K stars — highest reach |
+| 14 | Awesome-LLM (PR) | [ ] | | Popular LLM resource list |
+| 15 | awesome-ai-tools (PR) | [ ] | | |
+| 16 | awesome-developer-tools (PR) | [ ] | | |
+| 17 | betalist.com | [ ] | | |
+| 18 | launchingnext.com | [ ] | | |
+| 19 | indiehackers.com | [ ] | | |
+| 20 | HN Show | [ ] | | |
+| 21 | RapidAPI Hub | [ ] | | General listing (also API-3 for API-specific) |
 
 ---
 
@@ -228,9 +267,10 @@
 |------|------------|----------------------|-----------|
 | Priority 1 | 7 AI directories | 100-300 | High DA backlinks |
 | Priority 2 | 5 dev directories | 50-150 | Medium DA backlinks |
-| Priority 3 | 5 awesome lists | 50-200 | GitHub backlinks (127K+ star repos) |
+| Priority 2b | 4 API directories | 30-100 | API marketplace exposure |
+| Priority 3 | 4 awesome lists | 50-200 | GitHub backlinks (127K+ star repos) |
 | Priority 4 | 5 product dirs | 30-100 | Mixed backlinks |
-| **Total** | **22 listings** | **230-750** | **22+ backlinks** |
+| **Total** | **25 listings** | **260-850** | **25+ backlinks** |
 
 ---
 
