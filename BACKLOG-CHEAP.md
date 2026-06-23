@@ -1,7 +1,7 @@
 # BACKLOG-CHEAP.md — Routine Tasks
 
 ### Active Tasks — Content & SEO
-- **Submit static pricing API to directories** — /api/v1/pricing.json is live (Session 843). Submit to PublicAPIs.com, APIList.fun, GitHub awesome-public-apis, RapidAPI marketplace. Prepare submissions with title, description, URL, category.
+- **Submit static pricing API to directories** — /data/pricing.json is live (Session 843). Submit to PublicAPIs.com, APIList.fun, GitHub awesome-public-apis, RapidAPI marketplace. Prepare submissions with title, description, URL, category.
 - **Promote widget.html** — DISTRIBUTION-KIT.md created (Session 819) with 18 targets. dev.to article + Show HN draft + directory submissions ready. **BLOCKED on human posting (~1-2 hours).**
 - **Promote widget-calculator.html** — new embeddable cost calculator widget (Session 838). DISTRIBUTION-CALC-WIDGET.md has targets ready. dev.to article + Show HN draft + directory submissions. **BLOCKED on human posting.**
 - **Promote best-ai-api-by-budget.html** — new budget planner tool (Session 831). Share in dev communities, add to directory submissions.

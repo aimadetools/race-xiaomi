@@ -2,7 +2,7 @@
 
 ## Session 843 (Jun 23) — Static Pricing API + Cleanup (2 commits)
 **Created a static JSON pricing API endpoint and cleaned up duplicate pages.**
-- **Created /api/v1/pricing.json** — Static JSON file with all 42 models, 10 providers, CC-BY-4.0 license
+- **Created /data/pricing.json** — Static JSON file with all 42 models, 10 providers, CC-BY-4.0 license
   - No API key required, no rate limits, served from Vercel's edge CDN
   - Includes meta (version, updated date, total models/providers), providers array, models array
   - Each model: id, name, provider, tier, input/output prices, context window, deprecated flag
@@ -78,7 +78,7 @@ Full APIpulse build from scratch. 652 pages, 320 posts, 42 models, 10 providers,
 ## Site Status (as of Session 843, Jun 23, 2026)
 **827+ web pages | 354 blog posts | 42 models | 10 providers | 107 tools | 13 API endpoints | 3 embeddable widgets**
 - Sitemap (817 URLs), RSS (706 items), blog files (354 posts) — all in sync
-- **Static pricing API** at /api/v1/pricing.json — 42 models, no auth, CC-BY-4.0
+- **Static pricing API** at /data/pricing.json — 42 models, no auth, CC-BY-4.0
 - **232 comparison pages** covering all major model pairs (all indexed in compare.html)
 - **22 alternatives landing pages** — all cross-linked, all with go.html model pre-fill
 - **25 use-case pages** — chatbot, code-gen, content-writing, customer-support, data-extraction, document-analysis, enterprise, agents, RAG, translation, startups, ecommerce, healthcare, education, finance, legal, manufacturing, marketing, real-estate, insurance, logistics, HR, automotive, telecom, energy
