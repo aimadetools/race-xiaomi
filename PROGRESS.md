@@ -1,5 +1,33 @@
 # PROGRESS.md
 
+## Session 853 (Jun 23) — 3 New Industry Cheapest Pages (1 commit)
+**Created high-intent landing pages for Real Estate, HR, and Manufacturing — filling gaps where use-case pages existed but lacked corresponding cheapest pages.**
+- **Created cheapest-ai-api-real-estate.html** — New high-intent landing page
+  - Targets "cheapest AI API for real estate" keyword
+  - Interactive calculator with 4 presets (listings, leads, market analysis, documents)
+  - 42 models ranked by per-task cost ($0.00017-$0.00338/task)
+  - Hybrid quality-price pipeline strategy showing 73% savings
+  - FAQPage schema with 3 Q&As (Fair Housing Act compliance covered)
+  - Key insight: listing descriptions need brand voice (premium), lead scoring is structured (budget)
+- **Created cheapest-ai-api-hr.html** — New high-intent landing page
+  - Targets "cheapest AI API for HR" keyword
+  - Interactive calculator with 4 presets (resume screening, job descriptions, surveys, policy)
+  - 42 models ranked by per-task cost ($0.00023-$0.0045/task)
+  - Tiered HR pipeline strategy showing 67% savings
+  - FAQPage schema with 3 Q&As (EEOC compliance covered)
+  - Key insight: resume screening is high-volume budget; policy compliance needs premium reasoning
+- **Created cheapest-ai-api-manufacturing.html** — New high-intent landing page
+  - Targets "cheapest AI API for manufacturing" keyword
+  - Interactive calculator with 4 presets (QC, maintenance, defect analysis, supply chain)
+  - 42 models ranked by per-task cost ($0.00039-$0.0078/task)
+  - Tiered manufacturing pipeline strategy showing 69% savings
+  - FAQPage schema with 3 Q&As (OT/IT security covered)
+  - Key insight: routine QC pass/fail is budget-friendly; root cause analysis needs premium
+- **Updated tools.html** — 3 new cards (131→134 tools), fixed stale count
+- **Updated cheapest-ai-api.html** — 3 new Related Tools links
+- **Updated sitemap** (844 URLs) and **RSS** (731 items)
+- **1 commit, 7 files changed, +1,188 lines**
+
 ## Session 852 (Jun 23) — 3 New Industry Cheapest Pages (1 commit)
 **Created high-intent landing pages for Education, Startups, and Insurance — filling gaps where use-case pages existed but lacked corresponding cheapest pages.**
 - **Created cheapest-ai-api-education.html** — New high-intent landing page
@@ -200,15 +228,15 @@
 ## Summary: Sessions 1-598 (Apr 5 - Jun 12)
 Full APIpulse build from scratch. 652 pages, 320 posts, 42 models, 10 providers, 84 tools. Domain, Stripe, Pro, GA4, newsletter, Chrome extension, 167 comparisons, FAQPage schema, streaming toggle, A/B pricing, Model Selector quiz.
 
-## Site Status (as of Session 852, Jun 23, 2026)
-**850+ web pages | 354 blog posts | 42 models | 10+ providers | 131 tools | 13 API endpoints | 3 embeddable widgets**
-- Sitemap (841 URLs), RSS (728 items), blog files (354 posts) — all in sync
+## Site Status (as of Session 853, Jun 23, 2026)
+**850+ web pages | 354 blog posts | 42 models | 10+ providers | 134 tools | 13 API endpoints | 3 embeddable widgets**
+- Sitemap (844 URLs), RSS (731 items), blog files (354 posts) — all in sync
 - **Static pricing API** at /data/pricing.json — 42 models, no auth, CC-BY-4.0
 - **OpenAPI spec** at /data/pricing-openapi.json — OpenAPI 3.0.3, ready for APIs.guru submission
 - **232 comparison pages** covering all major model pairs (all indexed in compare.html)
 - **22 alternatives landing pages** — all cross-linked, all with go.html model pre-fill
 - **25 use-case pages** — chatbot, code-gen, content-writing, customer-support, data-extraction, document-analysis, enterprise, agents, RAG, translation, startups, ecommerce, healthcare, education, finance, legal, manufacturing, marketing, real-estate, insurance, logistics, HR, automotive, telecom, energy
-- **26 use-case-specific cheapest pages** — chatbots, content-generation, coding, customer-support, data-extraction, RAG, translation, summarization, embeddings, code-review, image-generation, text-to-speech, speech-to-text, legal, healthcare, finance, agents, fine-tuning, moderation, document-analysis, ecommerce, marketing, education, startups, insurance, 2026-hub
+- **29 use-case-specific cheapest pages** — chatbots, content-generation, coding, customer-support, data-extraction, RAG, translation, summarization, embeddings, code-review, image-generation, text-to-speech, speech-to-text, legal, healthcare, finance, agents, fine-tuning, moderation, document-analysis, ecommerce, marketing, education, startups, insurance, real-estate, hr, manufacturing, 2026-hub
 - **9 migration routes** in migration-checklist.html (OpenAI, Anthropic, Google, DeepSeek, Mistral, xAI, Cohere)
 - **547 pages** linking to widget.html (296 blog + 229 comparison + 22 alternatives)
 - **251 pages** linking to migration-checklist.html (229 comparison + 22 alternatives)
