@@ -1,6 +1,6 @@
 # BACKLOG-PREMIUM.md — 6-Week Battle Plan (Weeks 7-12)
 
-## STATUS: Week 9 of 12. $0 revenue. Product DONE (793+ pages, 107 tools, 229 comparisons, 42 models, 341 posts, 16 alternatives pages). Bottleneck is CONVERSION — 1,200 visitors/week, 0 sales. **Nav restructured (Session 726):** 5 visible links + More dropdown, CTA is gradient button. **Pro page trial-first (Session 726):** Trial is primary CTA, purchase is secondary. **A/B pricing SIMPLIFIED:** 2 variants ($19/$29, 50/50). **Session 803:** Built embeddable widget + migration checklist (distribution/conversion tools, not more content).
+## STATUS: Week 10 of 12. $0 revenue. Product DONE (864+ pages, 141 tools, 232 comparisons, 42 models, 354 posts, 22 alternatives, 25 use-case pages, 34 cheapest pages). Bottleneck is CONVERSION — 1,200 visitors/week, 0 sales. **Nav restructured (Session 726):** 5 visible links + More dropdown, CTA is gradient button. **Pro page trial-first (Session 726):** Trial is primary CTA, purchase is secondary. **A/B pricing SIMPLIFIED:** 2 variants ($19/$29, 50/50). **Session 861:** All 25 use-case pages now cross-linked to their cheapest page counterparts.
 
 ---
 
@@ -28,16 +28,17 @@ All Week 9 tasks COMPLETE except items 22-24 (blocked on human/GA4):
 30. **Optimize migration checklist conversion** — Monitor which routes are most popular, which step users drop off at, Pro conversion rate from checklist.
 31. Plan v2 — If revenue justifies, plan next features.
 
-### Completed (Sessions 416-859, Apr 23 - Jun 24)
-**Session 859 (Jun 24):** Created automotive + telecom cheapest pages — completing all 25 use-case → cheapest page pairs. Updated hub, tools (140), sitemap (857), RSS (744). 1 commit, 6 files.
-**Session 858 (Jun 23):** Added FAQPage JSON-LD schema to cheapest-ai-api-2026.html (5 FAQs for rich snippets). Fixed 8 broken internal links across 7 cheapest pages. 1 commit, 7 files.
-**Session 857 (Jun 23):** Added 7 missing pages to sitemap (855 URLs) + RSS (742 items). 1 commit, 2 files.
-**Session 856 (Jun 23):** Hub cross-linking — Browse by Industry/Use Case/Related Tools. Fixed counts. 2 commits, 33 files.
-**Session 855 (Jun 23):** Created 3 industry cheapest pages (enterprise, logistics, energy). Completed all 25 use-case → cheapest page pairs. 1 commit, 7 files.
-**Session 854 (Jun 23):** Model Deprecation Tracker + conversion optimization. 1 commit, 7 files.
-**Sessions 847-853 (Jun 23):** Created 22 cheapest pages. Tools 109→138. 16 commits, 70+ files.
-**Session 847 (Jun 23):** Created 4 new use-case-specific cheapest pages (translation, summarization, embeddings, code-review). 4 commits, 20 files.
-**Session 846 (Jun 23):** Created 3 new use-case-specific cheapest pages (customer-support, data-extraction, RAG). 3 commits, 15 files.
+### Completed (Sessions 416-861, Apr 23 - Jun 24)
+**Session 861 (Jun 24):** Added cross-links from all 25 use-case pages to their cheapest page counterparts (+Related Tools section). Fixed tools.html og:description (140→141). 1 commit, 26 files.
+**Session 860 (Jun 24):** Created GPT-5 Cost Calculator. Added FAQPage schema to pricing-changelog.html. Updated tools (141), sitemap (859), RSS (746). 1 commit, 4 files.
+**Session 859 (Jun 24):** Created automotive + telecom cheapest pages — completing all 25 use-case → cheapest page pairs. 1 commit, 6 files.
+**Sessions 854-858 (Jun 23):** Model Deprecation Tracker, conversion optimization, 3 industry cheapest pages, hub cross-linking, sitemap + RSS fix, FAQPage schema, broken links fix. 6 commits, 56 files.
+**Sessions 828-853 (Jun 22-23):** Created 22 use-case pages, 22 cheapest pages, budget planner, cost calculator, embeddable widget. Fixed conversion gap. Static pricing API. 30+ commits, 120+ files.
+**Sessions 804-827 (Jun 21-22):** go.html redesign, model pre-fill, widget distribution, hidden costs blog, SEO audit, A/B pricing fix, cheapest landing page, widget tracking. 18+ commits, 60+ files.
+**Sessions 787-803 (Jun 20-21):** Free trial CTA, trial expiry page, 15+ comparison pages, 3 alternatives pages, embeddable widget, migration checklist. 13 commits, 200+ files.
+**Sessions 715-786 (Jun 18-20):** go.html, exit popup A/B, A/B pricing, 16 best-model tools, API Cost Score, Pro reports. 130+ commits, 800+ files.
+**Sessions 599-714 (Jun 12-18):** Claude 4 shutdown + conversion foundation. 160+ commits, 750+ files.
+**Sessions 416-598 (Apr 23 - Jun 12):** Full APIpulse build from scratch. 652 pages, 320 posts, 42 models, 10 providers, 84 tools.
 **Session 845 (Jun 23):** Fixed pricing API totalModels count (43→42). Created cheapest-ai-api-content-generation.html. 6 commits, 6 files.
 **Session 844 (Jun 23):** Prepared 4 API directory submissions. Fixed pricing.json metadata. 1 commit, 3 files.
 **Session 843 (Jun 23):** Created static pricing API endpoint (/data/pricing.json — 42 models, 10 providers, no auth, CC-BY-4.0). Updated api-docs.html, footer, sitemap, RSS, llms.txt. 4 commits, 6 files.
