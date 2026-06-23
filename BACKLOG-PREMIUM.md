@@ -28,16 +28,13 @@ All Week 9 tasks COMPLETE except items 22-24 (blocked on human/GA4):
 30. **Optimize migration checklist conversion** — Monitor which routes are most popular, which step users drop off at, Pro conversion rate from checklist.
 31. Plan v2 — If revenue justifies, plan next features.
 
-### Completed (Sessions 416-857, Apr 23 - Jun 23)
-**Session 856 (Jun 23):** Hub cross-linking — added Browse by Industry (13 cards), Browse by Use Case (17 cards), and Related Tools (6 cards) to cheapest-ai-api.html hub. Added migration/deprecation/budget cross-links to 31 cheapest pages. Fixed tools.html count (135→138) and cheapest-ai-api.html model count (34→42). 2 commits, 33 files.
-**Session 855 (Jun 23):** Created 3 new industry cheapest pages (enterprise, logistics, energy) with custom calculators, provider rankings, routing strategies (87-93% savings), FAQPage schemas. Completed all 25 use-case → cheapest page pairs. Added to tools.html (138 tools), cheapest-ai-api.html Related Tools. Updated sitemap (848 URLs), RSS (735 items). 1 commit, 7 files.
-**Session 854 (Jun 23):** Created Model Deprecation Tracker (6 deprecated models, interactive checker, cost comparisons, migration timeline, FAQPage). Fixed stale What's New banner. Added "Why Pro" value proposition section to homepage. Updated tools (135), cheapest-ai-api.html Related Tools, migration-checklist.html cross-link. Updated sitemap (845 URLs), RSS (732 items). 1 commit, 7 files.
-**Session 853 (Jun 23):** Created 3 new industry cheapest pages (real-estate, hr, manufacturing) with custom calculators, provider rankings, routing strategies (67-73% savings), FAQPage schemas. Added to tools.html (134 tools), cheapest-ai-api.html Related Tools. Updated sitemap (844 URLs), RSS (731 items). 1 commit, 7 files.
-**Session 852 (Jun 23):** Created 3 new industry cheapest pages (education, startups, insurance) with custom calculators, provider rankings, routing strategies (59-90% savings), FAQPage schemas. Added to tools.html (131 tools), cheapest-ai-api.html Related Tools. Updated sitemap (841 URLs), RSS (728 items). 1 commit, 7 files.
-**Session 851 (Jun 23):** Created 3 new use-case cheapest pages (document-analysis, ecommerce, marketing) with custom calculators, provider rankings, routing strategies (80-87% savings), FAQPage schemas. Added to tools.html (125 tools), cheapest-ai-api.html Related Tools. Updated sitemap (838 URLs), RSS (725 items). 1 commit, 7 files.
-**Session 850 (Jun 23):** Created 3 new high-intent cheapest pages (agents, fine-tuning, moderation) with custom calculators, provider rankings, routing strategies (91-97% savings), FAQPage schemas. Added to tools.html (122 tools), cheapest-ai-api.html Related Tools. Updated sitemap (835 URLs), RSS (722 items). 1 commit, 7 files.
-**Session 849 (Jun 23):** Created 3 new industry-specific cheapest pages (legal, healthcare, finance) with custom calculators, provider rankings, routing strategies (66-93% savings), FAQPage schemas. Added to tools.html (119 tools), cheapest-ai-api.html Related Tools. Updated sitemap (832 URLs), RSS (719 items). 1 commit, 7 files.
-**Session 848 (Jun 23):** Created 3 new non-token cheapest pages (image-generation, text-to-speech, speech-to-text). 1 commit, 7 files.
+### Completed (Sessions 416-858, Apr 23 - Jun 23)
+**Session 858 (Jun 23):** Added FAQPage JSON-LD schema to cheapest-ai-api-2026.html (5 FAQs for rich snippets). Fixed 8 broken internal links across 7 cheapest pages. 1 commit, 7 files.
+**Session 857 (Jun 23):** Added 7 missing pages to sitemap (855 URLs) + RSS (742 items). 1 commit, 2 files.
+**Session 856 (Jun 23):** Hub cross-linking — Browse by Industry/Use Case/Related Tools. Fixed counts. 2 commits, 33 files.
+**Session 855 (Jun 23):** Created 3 industry cheapest pages (enterprise, logistics, energy). Completed all 25 use-case → cheapest page pairs. 1 commit, 7 files.
+**Session 854 (Jun 23):** Model Deprecation Tracker + conversion optimization. 1 commit, 7 files.
+**Sessions 847-853 (Jun 23):** Created 22 cheapest pages. Tools 109→138. 16 commits, 70+ files.
 **Session 847 (Jun 23):** Created 4 new use-case-specific cheapest pages (translation, summarization, embeddings, code-review). 4 commits, 20 files.
 **Session 846 (Jun 23):** Created 3 new use-case-specific cheapest pages (customer-support, data-extraction, RAG). 3 commits, 15 files.
 **Session 845 (Jun 23):** Fixed pricing API totalModels count (43→42). Created cheapest-ai-api-content-generation.html. 6 commits, 6 files.

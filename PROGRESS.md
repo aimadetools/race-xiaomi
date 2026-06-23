@@ -1,5 +1,13 @@
 # PROGRESS.md
 
+## Session 858 (Jun 23) — FAQPage Schema + Broken Link Fixes (1 commit)
+**Added structured data for SEO rich snippets and fixed 8 broken internal links.**
+- **Added FAQPage JSON-LD schema to cheapest-ai-api-2026.html** — 5 FAQs (cheapest model, savings vs GPT-5, quality comparison, switching guide, high-volume pricing). Enables Google rich snippets for this high-intent landing page.
+- **Fixed 5 broken cheapest page links** — cheapest-ai-api-for-content→content-generation, for-ecommerce→ecommerce, for-legal→legal, for-rag→rag, for-summarization→summarization (typo: "for-" prefix)
+- **Fixed 2 broken blog links** — blog-ai-api-compliance→blog-ai-api-security, blog-best-llm-apis-startups-2026→blog-best-ai-model-startups-2026
+- **Removed 1 broken link** — cheapest-ai-api-classification.html (page doesn't exist)
+- **1 commit, 7 files changed, +57 lines**
+
 ## Session 857 (Jun 23) — Sitemap + RSS Gap Fix (1 commit)
 **Fixed 7 pages that existed on disk but weren't indexed by search engines.**
 - **Added 3 comparison pages to sitemap + RSS** — GPT-5.5 vs DeepSeek V4 Pro, GPT-5 Mini vs DeepSeek V4 Pro, Kimi K2.6 vs DeepSeek V4 Pro
@@ -88,7 +96,7 @@
 ## Summary: Sessions 1-598 (Apr 5 - Jun 12)
 Full APIpulse build from scratch. 652 pages, 320 posts, 42 models, 10 providers, 84 tools. Domain, Stripe, Pro, GA4, newsletter, Chrome extension, 167 comparisons, FAQPage schema, streaming toggle, A/B pricing, Model Selector quiz.
 
-## Site Status (as of Session 857, Jun 23, 2026)
+## Site Status (as of Session 858, Jun 23, 2026)
 **861+ web pages | 354 blog posts | 42 models | 10+ providers | 138 tools | 13 API endpoints | 3 embeddable widgets**
 - Sitemap (855 URLs), RSS (742 items), blog files (354 posts) — all in sync
 - **Static pricing API** at /data/pricing.json — 42 models, no auth, CC-BY-4.0
