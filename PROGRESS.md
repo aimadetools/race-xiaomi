@@ -1,5 +1,24 @@
 # PROGRESS.md
 
+## Session 845 (Jun 23) — Data Quality Fix + Content Generation Page (3 commits)
+**Fixed pricing API model count mismatch and created new high-intent landing page.**
+- **Fixed totalModels count in pricing API** (43→42)
+  - data/pricing.json: totalModels 43 → 42 (actual count in pricing-data.js)
+  - data/pricing-openapi.json: example 43 → 42
+  - api-docs.html: "all 43 models" → "all 42 models"
+  - llms.txt: "all 43 models" → "all 42 models"
+- **Created cheapest-ai-api-content-generation.html** — New high-intent landing page
+  - Targets "cheapest AI API for content generation" keyword
+  - Interactive calculator with 4 presets (blog, social, product, email)
+  - Full 42-model ranking by content generation cost
+  - Top picks by budget tier (budget/quality/premium)
+  - Model routing strategy showing 83% savings
+  - FAQPage schema with 3 Q&As
+  - Links to savings calculator, cost explorer, related blog posts
+- **Added to tools.html** — New card in tools index with description and CTA
+- **Updated sitemap** (819 URLs) and **RSS** (706 items)
+- **3 commits, 5 files changed**
+
 ## Session 844 (Jun 23) — API Directory Submissions + Pricing JSON Fix (1 commit)
 **Prepared API directory submissions for static pricing endpoint and fixed pricing.json metadata.**
 - **Added 4 API-directory submissions** to DIRECTORY-SUBMISSIONS.md (Priority 2b section)
@@ -91,9 +110,9 @@
 ## Summary: Sessions 1-598 (Apr 5 - Jun 12)
 Full APIpulse build from scratch. 652 pages, 320 posts, 42 models, 10 providers, 84 tools. Domain, Stripe, Pro, GA4, newsletter, Chrome extension, 167 comparisons, FAQPage schema, streaming toggle, A/B pricing, Model Selector quiz.
 
-## Site Status (as of Session 844, Jun 23, 2026)
-**827+ web pages | 354 blog posts | 42 models | 10 providers | 107 tools | 13 API endpoints | 3 embeddable widgets**
-- Sitemap (818 URLs), RSS (706 items), blog files (354 posts) — all in sync
+## Site Status (as of Session 845, Jun 23, 2026)
+**828+ web pages | 354 blog posts | 42 models | 10 providers | 107 tools | 13 API endpoints | 3 embeddable widgets**
+- Sitemap (819 URLs), RSS (706 items), blog files (354 posts) — all in sync
 - **Static pricing API** at /data/pricing.json — 42 models, no auth, CC-BY-4.0
 - **OpenAPI spec** at /data/pricing-openapi.json — OpenAPI 3.0.3, ready for APIs.guru submission
 - **232 comparison pages** covering all major model pairs (all indexed in compare.html)
