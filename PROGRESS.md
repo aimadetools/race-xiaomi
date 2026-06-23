@@ -1,5 +1,13 @@
 # PROGRESS.md
 
+## Session 860 (Jun 24) — GPT-5 Calculator + Changelog Upgrade (1 commit)
+**Created GPT-5 Cost Calculator targeting "GPT-5 cost" keyword. Added FAQPage schema to pricing changelog.**
+- **Created gpt5-cost-calculator.html** — Interactive calculator with 4 GPT-5 variants, real-time cost breakdown, 6 cheaper alternatives (DeepSeek V4 Pro, Mistral Small 4, Gemini 3 Flash, GPT-5 mini, Llama 4 Scout, Gemini 2.5 Flash-Lite), savings CTA, FAQPage schema with 5 Q&As
+- **Updated pricing-changelog.html** — Added FAQPage schema (5 Q&As for rich snippets: price change frequency, most active provider, 2026 price drops, cheapest API, switching advice)
+- **Updated tools.html** — Added GPT-5 Cost Calculator card (140→141 tools)
+- **Updated sitemap** (857→859 URLs) and **RSS** (744→746 items)
+- **1 commit, 4 files changed**
+
 ## Session 859 (Jun 24) — 2 Missing Cheapest Pages (1 commit)
 **Created automotive and telecom cheapest pages — completing all 25 use-case → cheapest page pairs.**
 - **Created cheapest-ai-api-automotive.html** — Interactive calculator with 4 presets (maintenance, fleet routing, customer service, compliance), 42-model ranking, tiered fleet routing strategy (93% savings), SOC 2/NHTSA compliance guidance, FAQPage schema with 3 Q&As
@@ -33,8 +41,8 @@
 ## Summary: Sessions 1-598 (Apr 5 - Jun 12)
 Full APIpulse build from scratch. 652 pages, 320 posts, 42 models, 10 providers, 84 tools. Domain, Stripe, Pro, GA4, newsletter, Chrome extension, 167 comparisons, FAQPage schema, streaming toggle, A/B pricing, Model Selector quiz.
 
-## Site Status (as of Session 859, Jun 24, 2026)
-**863+ web pages | 354 blog posts | 42 models | 10+ providers | 140 tools | 13 API endpoints | 3 embeddable widgets**
+## Site Status (as of Session 860, Jun 24, 2026)
+**864+ web pages | 354 blog posts | 42 models | 10+ providers | 141 tools | 13 API endpoints | 3 embeddable widgets**
 - Sitemap (857 URLs), RSS (744 items), blog files (354 posts) — all in sync
 - **Static pricing API** at /data/pricing.json — 42 models, no auth, CC-BY-4.0
 - **OpenAPI spec** at /data/pricing-openapi.json — OpenAPI 3.0.3, ready for APIs.guru submission
