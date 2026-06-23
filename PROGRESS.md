@@ -1,5 +1,11 @@
 # PROGRESS.md
 
+## Session 862 (Jun 24) — Broken Links Fix (1 commit)
+**Fixed 6 broken comparison links in GPT-5 cost calculator page.**
+- **Fixed 6 broken comparison links** — GPT-5 cost calculator (Session 860) linked to comparison pages using incorrect filename slugs
+- **DeepSeek V4 Pro, Gemini 3 Flash, Gemini 3 Pro, GPT-5 mini, Llama 4 Scout, Mistral Small 4** — all comparison links now resolve correctly
+- **1 commit, 1 file changed, 6 insertions, 6 deletions**
+
 ## Session 861 (Jun 24) — Cross-Linking + Meta Fix (1 commit)
 **Added cross-links from all 25 use-case pages to their cheapest page counterparts. Fixed tools meta description.**
 - **Added "Related Tools" section to 23 use-case pages** — Each section links to: specific cheapest page, Cheapest AI API Finder, Migration Checklist
@@ -35,7 +41,7 @@ Created automotive + telecom cheapest pages — completing all 25 use-case → c
 ## Summary: Sessions 1-598 (Apr 5 - Jun 12)
 Full APIpulse build from scratch. 652 pages, 320 posts, 42 models, 10 providers, 84 tools. Domain, Stripe, Pro, GA4, newsletter, Chrome extension, 167 comparisons, FAQPage schema, streaming toggle, A/B pricing, Model Selector quiz.
 
-## Site Status (as of Session 861, Jun 24, 2026)
+## Site Status (as of Session 862, Jun 24, 2026)
 **864+ web pages | 354 blog posts | 42 models | 10+ providers | 141 tools | 13 API endpoints | 3 embeddable widgets**
 - Sitemap (859 URLs), RSS (746 items), blog files (354 posts) — all in sync
 - **Static pricing API** at /data/pricing.json — 42 models, no auth, CC-BY-4.0

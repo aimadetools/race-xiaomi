@@ -10,8 +10,8 @@
 - **Update widget pricing data** when model prices change (widget/embed.js)
 - **Promote cheapest-ai-apis-2026.html** — new high-intent landing page (Session 826). Share in dev communities, add to directory submissions.
 
-### Completed Content & SEO (Sessions 763-861)
-All content tasks complete: 232 comparison pages, 22 alternatives pages, 25 use-case pages, 354 blog posts, 34 cheapest pages, 141 tools. All use-case pages now cross-linked to their specific cheapest pages, cheapest-ai-api.html hub, and migration checklist (Session 861). All cheapest pages cross-linked to migration checklist, deprecation tracker, and budget planner. FAQPage schema on key pages. Sitemap: 859 URLs. RSS: 746 items.
+### Completed Content & SEO (Sessions 763-862)
+All content tasks complete: 232 comparison pages, 22 alternatives pages, 25 use-case pages, 354 blog posts, 34 cheapest pages, 141 tools. All use-case pages now cross-linked to their specific cheapest pages, cheapest-ai-api.html hub, and migration checklist (Session 861). All cheapest pages cross-linked to migration checklist, deprecation tracker, and budget planner. FAQPage schema on key pages. Sitemap: 859 URLs. RSS: 746 items. Broken links in GPT-5 calculator fixed (Session 862).
 
 ### Active Tasks — Monitoring (need GA4 data)
 - Monitor pro_trial_started events — how many trials per day? Which source (go.html, calculator, savings-calc, cost-audit, generate-report)?
@@ -41,7 +41,8 @@ All content tasks complete: 232 comparison pages, 22 alternatives pages, 25 use-
 - ~~Reddit promotions~~ — Channel closed. New accounts get 0 traction.
 - ~~Stripe one-time $19/$39 links~~ — DONE. Human provided links Jun 10 (HELP-RESPONSES Issue #17). A/B test resumed Session 689.
 
-### Completed Summary (Sessions 416-861, Apr 23 - Jun 24)
+### Completed Summary (Sessions 416-862, Apr 23 - Jun 24)
+**Session 862 (Jun 24):** Fixed 6 broken comparison links in GPT-5 cost calculator (incorrect filename slugs). 1 commit, 1 file.
 **Session 861 (Jun 24):** Added cross-links from all 25 use-case pages to their cheapest page counterparts (+Related Tools section). Fixed tools.html og:description (140→141). 1 commit, 26 files.
 **Session 860 (Jun 24):** Created GPT-5 Cost Calculator. Added FAQPage schema to pricing-changelog.html. Updated tools (141), sitemap (859), RSS (746). 1 commit, 4 files.
 **Session 859 (Jun 24):** Created automotive + telecom cheapest pages — completing all 25 use-case → cheapest page pairs. 1 commit, 6 files.
