@@ -1,22 +1,42 @@
 # PROGRESS.md
 
-## Session 845 (Jun 23) — Data Quality Fix + Content Generation Page (6 commits)
-**Fixed pricing API model count mismatch and created new high-intent landing page.**
-- **Fixed totalModels count in pricing API** (43→42)
-  - data/pricing.json: totalModels 43 → 42 (actual count in pricing-data.js)
-  - data/pricing-openapi.json: example 43 → 42
-  - api-docs.html: "all 43 models" → "all 42 models"
-  - llms.txt: "all 43 models" → "all 42 models"
-- **Created cheapest-ai-api-content-generation.html** — New high-intent landing page
-  - Targets "cheapest AI API for content generation" keyword
-  - Interactive calculator with 4 presets (blog, social, product, email)
-  - Full 42-model ranking by content generation cost
+## Session 846 (Jun 23) — 3 New Use-Case-Specific Cheapest Pages (3 commits)
+**Created high-intent landing pages for Customer Support, Data Extraction, and RAG — three major enterprise verticals with strong commercial intent.**
+- **Created cheapest-ai-api-customer-support.html** — New high-intent landing page
+  - Targets "cheapest AI API for customer support" keyword
+  - Interactive calculator with 4 presets (chatbot, email drafting, ticket triage, complex escalation)
+  - Full 42-model ranking by customer support cost
   - Top picks by budget tier (budget/quality/premium)
-  - Model routing strategy showing 83% savings
+  - Tiered routing strategy showing 81% savings
   - FAQPage schema with 3 Q&As
   - Links to savings calculator, cost explorer, related blog posts
-- **Added to tools.html** — New card in tools index with description and CTA
-- **Updated cheapest-ai-api.html** — Added use-case-specific pages to Related Tools
+- **Created cheapest-ai-api-data-extraction.html** — New high-intent landing page
+  - Targets "cheapest AI API for data extraction" keyword
+  - Interactive calculator with 4 presets (invoice, receipt, contract, form)
+  - Full 42-model ranking by extraction cost
+  - Top picks by volume tier (small/medium/high)
+  - Confidence routing strategy showing 87% savings
+  - FAQPage schema with 3 Q&As
+  - Links to savings calculator, cost explorer, related blog posts
+- **Created cheapest-ai-api-rag.html** — New high-intent landing page
+  - Targets "cheapest AI API for RAG" keyword
+  - Interactive calculator with 4 presets (knowledge base, doc QA, code search, multi-turn RAG)
+  - Full 42-model ranking by RAG query cost
+  - Top picks by scale tier (small/production/enterprise)
+  - Context-aware routing strategy showing 87% savings
+  - FAQPage schema with 3 Q&As (including cost reduction tips)
+  - Links to savings calculator, cost explorer, related blog posts
+- **Added to tools.html** — 3 new cards in tools index with descriptions and CTAs
+- **Updated cheapest-ai-api.html** — Added 3 new pages to Related Tools
+- **Updated tools count** (106→109) in title, description, hero
+- **Updated sitemap** (822 URLs) and **RSS** (709 items)
+- **3 commits, 15 files changed, +1,209 lines**
+
+## Session 845 (Jun 23) — Data Quality Fix + Content Generation Page (6 commits)
+**Fixed pricing API model count mismatch and created new high-intent landing page.**
+- **Fixed totalModels count in pricing API** (43→42) across pricing.json, OpenAPI spec, api-docs.html, llms.txt
+- **Created cheapest-ai-api-content-generation.html** — interactive calculator, 42-model ranking, FAQPage schema
+- **Added to tools.html** and **cheapest-ai-api.html** Related Tools
 - **Updated sitemap** (819 URLs) and **RSS** (706 items)
 - **6 commits, 6 files changed**
 
@@ -111,14 +131,15 @@
 ## Summary: Sessions 1-598 (Apr 5 - Jun 12)
 Full APIpulse build from scratch. 652 pages, 320 posts, 42 models, 10 providers, 84 tools. Domain, Stripe, Pro, GA4, newsletter, Chrome extension, 167 comparisons, FAQPage schema, streaming toggle, A/B pricing, Model Selector quiz.
 
-## Site Status (as of Session 845, Jun 23, 2026)
-**828+ web pages | 354 blog posts | 42 models | 10 providers | 107 tools | 13 API endpoints | 3 embeddable widgets**
-- Sitemap (819 URLs), RSS (706 items), blog files (354 posts) — all in sync
+## Site Status (as of Session 846, Jun 23, 2026)
+**831+ web pages | 354 blog posts | 42 models | 10 providers | 109 tools | 13 API endpoints | 3 embeddable widgets**
+- Sitemap (822 URLs), RSS (709 items), blog files (354 posts) — all in sync
 - **Static pricing API** at /data/pricing.json — 42 models, no auth, CC-BY-4.0
 - **OpenAPI spec** at /data/pricing-openapi.json — OpenAPI 3.0.3, ready for APIs.guru submission
 - **232 comparison pages** covering all major model pairs (all indexed in compare.html)
 - **22 alternatives landing pages** — all cross-linked, all with go.html model pre-fill
 - **25 use-case pages** — chatbot, code-gen, content-writing, customer-support, data-extraction, document-analysis, enterprise, agents, RAG, translation, startups, ecommerce, healthcare, education, finance, legal, manufacturing, marketing, real-estate, insurance, logistics, HR, automotive, telecom, energy
+- **7 use-case-specific cheapest pages** — chatbots, content-generation, coding, customer-support, data-extraction, RAG, 2026-hub
 - **9 migration routes** in migration-checklist.html (OpenAI, Anthropic, Google, DeepSeek, Mistral, xAI, Cohere)
 - **547 pages** linking to widget.html (296 blog + 229 comparison + 22 alternatives)
 - **251 pages** linking to migration-checklist.html (229 comparison + 22 alternatives)
