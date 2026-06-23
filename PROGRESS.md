@@ -1,12 +1,13 @@
 # PROGRESS.md
 
-## Session 863 (Jun 24) — Sitemap Gap Fix + Duplicate Cleanup (2 commits)
-**Added 20 missing comparison pages to sitemap.xml. Fixed 3 duplicate comparison page pairs.**
-- **Found 20 comparison pages** not in sitemap — all were linked from compare.html and in RSS, but missing from sitemap.xml, meaning search engines couldn't discover them via sitemap submission
+## Session 863 (Jun 24) — Sitemap + RSS Gap Fix + Duplicate Cleanup (3 commits)
+**Added 20 missing comparison pages to sitemap.xml, 13 to RSS feed. Fixed 3 duplicate comparison page pairs.**
+- **Found 20 comparison pages** not in sitemap — all were linked from compare.html and in RSS, but missing from sitemap.xml
 - **Sitemap: 859 → 879 URLs** — now includes all 232 comparison pages
+- **Found 13 comparison pages** not in RSS feed — added them (746 → 759 items)
 - **Corrected blog post count** — 354 → 352 (actual file count) across PROGRESS.md, BACKLOG-CHEAP.md, BACKLOG-PREMIUM.md
 - **Fixed 3 duplicate comparison page pairs** — added noindex to shorter versions, removed from compare.html index (deepseek-v32-vs-gpt5-mini, gpt5mini-vs-mistralsmall4, gpt5mini-vs-gemini35flash)
-- **2 commits, 8 files changed**
+- **3 commits, 9 files changed**
 
 ## Session 862 (Jun 24) — Broken Links Fix (1 commit)
 **Fixed 6 broken comparison links in GPT-5 cost calculator page.**
@@ -49,9 +50,9 @@ Created automotive + telecom cheapest pages — completing all 25 use-case → c
 ## Summary: Sessions 1-598 (Apr 5 - Jun 12)
 Full APIpulse build from scratch. 652 pages, 320 posts, 42 models, 10 providers, 84 tools. Domain, Stripe, Pro, GA4, newsletter, Chrome extension, 167 comparisons, FAQPage schema, streaming toggle, A/B pricing, Model Selector quiz.
 
-## Site Status (as of Session 862, Jun 24, 2026)
+## Site Status (as of Session 863, Jun 24, 2026)
 **864+ web pages | 352 blog posts | 42 models | 10+ providers | 141 tools | 13 API endpoints | 3 embeddable widgets**
-- Sitemap (879 URLs), RSS (746 items), blog files (352 posts) — all in sync
+- Sitemap (879 URLs), RSS (759 items), blog files (352 posts) — all in sync
 - **Static pricing API** at /data/pricing.json — 42 models, no auth, CC-BY-4.0
 - **OpenAPI spec** at /data/pricing-openapi.json — OpenAPI 3.0.3, ready for APIs.guru submission
 - **232 comparison pages** covering all major model pairs (all indexed in compare.html)
