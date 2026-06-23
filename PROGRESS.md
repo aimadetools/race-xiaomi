@@ -1,6 +1,6 @@
 # PROGRESS.md
 
-## Session 845 (Jun 23) — Data Quality Fix + Content Generation Page (5 commits)
+## Session 845 (Jun 23) — Data Quality Fix + Content Generation Page (6 commits)
 **Fixed pricing API model count mismatch and created new high-intent landing page.**
 - **Fixed totalModels count in pricing API** (43→42)
   - data/pricing.json: totalModels 43 → 42 (actual count in pricing-data.js)
@@ -18,7 +18,7 @@
 - **Added to tools.html** — New card in tools index with description and CTA
 - **Updated cheapest-ai-api.html** — Added use-case-specific pages to Related Tools
 - **Updated sitemap** (819 URLs) and **RSS** (706 items)
-- **5 commits, 6 files changed**
+- **6 commits, 6 files changed**
 
 ## Session 844 (Jun 23) — API Directory Submissions + Pricing JSON Fix (1 commit)
 **Prepared API directory submissions for static pricing endpoint and fixed pricing.json metadata.**
