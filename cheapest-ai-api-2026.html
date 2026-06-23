@@ -29,6 +29,55 @@
     <script src="shared.js" defer></script>
     <script src="pricing-data.js" defer></script>
     <script src="pro-features.js" defer></script>
+    <!-- FAQPage schema for rich snippets -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is the cheapest AI API available in 2026?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Mistral Small 4 and DeepSeek V4 Flash are the cheapest capable models at $0.10 per million input tokens. For a model with stronger capabilities, DeepSeek V4 Pro at $0.435/M input offers the best value. All prices are verified from provider APIs and updated daily."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How much can I save by switching from GPT-5?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Switching from GPT-5 ($1.25/M input) to DeepSeek V4 Pro ($0.435/M) saves 65% on input costs. For a typical workload of 10M input + 5M output tokens per month, that's approximately $3,480/year in savings. Switching to Mistral Small 4 saves 92% on input costs."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Are cheap AI models as good as expensive ones?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "It depends on the task. For chatbots, content writing, and simple analysis, budget models like DeepSeek V4 Pro perform comparably to GPT-5. For complex reasoning, code generation, and high-stakes decisions, premium models like Claude Opus 4.8 still lead. The key is matching the model to your specific use case."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I switch to a cheaper AI model?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Most cheap alternatives (DeepSeek, Mistral, Together) support OpenAI-compatible APIs, so switching often requires just changing the API endpoint and key. APIpulse Pro generates copy-paste migration code for your specific setup. Most developers complete the switch in under 5 minutes."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What's the cheapest AI API for high volume?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "For high-volume workloads (100K+ requests/day), Mistral Small 4 ($0.10/M) or DeepSeek V4 Flash ($0.10/M) are cheapest. At 100M input tokens/month, Mistral Small 4 costs $10 vs GPT-5's $125 — saving $1,380/year on input alone."
+          }
+        }
+      ]
+    }
+    </script>
     <style>
         .cheap-page { max-width: 1000px; margin: 0 auto; padding: 80px 24px 60px; }
 
