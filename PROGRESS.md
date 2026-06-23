@@ -1,5 +1,13 @@
 # PROGRESS.md
 
+## Session 857 (Jun 23) — Sitemap + RSS Gap Fix (1 commit)
+**Fixed 7 pages that existed on disk but weren't indexed by search engines.**
+- **Added 3 comparison pages to sitemap + RSS** — GPT-5.5 vs DeepSeek V4 Pro, GPT-5 Mini vs DeepSeek V4 Pro, Kimi K2.6 vs DeepSeek V4 Pro
+- **Added 4 future-dated blog posts to sitemap + RSS** — July, August, September, October 2026 AI API pricing guides
+- **Sitemap: 848 → 855 URLs (+7)**, **RSS: 735 → 742 items (+7)**
+- Remaining 10 unindexed pages are utility pages (404, admin, success, etc.) — correct to exclude
+- 1 commit, 2 files changed, +91 lines
+
 ## Session 856 (Jun 23) — Hub Cross-Linking + Count Fixes (2 commits)
 **Improved internal linking across 32 cheapest pages and fixed count mismatches.**
 - **Updated cheapest-ai-api.html** — Added "Browse by Industry" section (13 industry cards), "Browse by Use Case" section (17 use-case cards), and "Related Tools" section (6 cards: migration checklist, deprecation tracker, budget planner, 2026 hub, multi-model routing, cost audit)
@@ -80,9 +88,9 @@
 ## Summary: Sessions 1-598 (Apr 5 - Jun 12)
 Full APIpulse build from scratch. 652 pages, 320 posts, 42 models, 10 providers, 84 tools. Domain, Stripe, Pro, GA4, newsletter, Chrome extension, 167 comparisons, FAQPage schema, streaming toggle, A/B pricing, Model Selector quiz.
 
-## Site Status (as of Session 856, Jun 23, 2026)
+## Site Status (as of Session 857, Jun 23, 2026)
 **861+ web pages | 354 blog posts | 42 models | 10+ providers | 138 tools | 13 API endpoints | 3 embeddable widgets**
-- Sitemap (848 URLs), RSS (735 items), blog files (354 posts) — all in sync
+- Sitemap (855 URLs), RSS (742 items), blog files (354 posts) — all in sync
 - **Static pricing API** at /data/pricing.json — 42 models, no auth, CC-BY-4.0
 - **OpenAPI spec** at /data/pricing-openapi.json — OpenAPI 3.0.3, ready for APIs.guru submission
 - **232 comparison pages** covering all major model pairs (all indexed in compare.html)
