@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cheapest AI API for Fine-Tuning in 2026 — Cost Comparison | APIpulse</title>
+    <meta name="description" content="Find the cheapest AI API for fine-tuning. Compare 42 models for training and inference costs. Interactive calculator included.">
+    <meta name="keywords" content="cheapest AI API fine-tuning, fine-tuning LLM cost, model training API cost, custom model pricing, cheapest fine-tuning 2026, budget fine-tuning API">
+    <meta property="og:title" content="Cheapest AI API for Fine-Tuning in 2026 | APIpulse">
+    <meta property="og:description" content="Find the cheapest AI API for fine-tuning and custom models. Compare 42 models for training and inference costs.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://getapipulse.com/og-image.png">
+    <meta property="og:url" content="https://getapipulse.com/cheapest-ai-api-for-fine-tuning.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Cheapest AI API for Fine-Tuning in 2026">
+    <meta name="twitter:image" content="https://getapipulse.com/og-image.png">
+    <link rel="canonical" href="https://getapipulse.com/cheapest-ai-api-for-fine-tuning.html">
+    <link rel="alternate" type="application/rss+xml" title="APIpulse Blog" href="https://getapipulse.com/rss.xml">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="styles.css">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0CEP7S9Y3J"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-0CEP7S9Y3J');
+    </script>
+    <script src="analytics.js" defer></script>
+    <script src="dynamic-date.js" defer></script>
+    <script src="shared.js" defer></script>
+    <script src="pro-features.js" defer></script>
+    <script src="pricing-data.js" defer></script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "APIpulse — Cheapest AI API for Fine-Tuning",
+        "url": "https://getapipulse.com/cheapest-ai-api-for-fine-tuning.html",
+        "description": "Find the cheapest AI API for fine-tuning and custom models. Compare 42 models for training and inference costs.",
+        "applicationCategory": "DeveloperApplication",
+        "operatingSystem": "Web",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "What is the cheapest AI API for fine-tuning?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "The cheapest fine-tuning is with open-weight models on platforms like Together.ai or Lambda. Llama 3.1 8B costs ~$0.20 per million training tokens. For hosted fine-tuning, OpenAI charges $25/M training tokens for GPT-4o mini. After fine-tuning, inference costs depend on the base model — a fine-tuned GPT-4o mini costs $0.30/$1.20 per 1M tokens (3x the base price)."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How much does it cost to fine-tune an LLM?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Fine-tuning costs vary by dataset size and model. A typical 10K-example dataset (~5M tokens) costs: Llama 3.1 8B on Together.ai ~$1, GPT-4o mini on OpenAI ~$125, GPT-4o on OpenAI ~$750. Open-weight models on self-hosted GPUs are cheapest (~$0.20/M tokens). The ongoing inference cost after fine-tuning is often more important than the one-time training cost."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Is fine-tuning cheaper than using a larger model?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Often yes. Fine-tuning a small model (8B-70B) to match a large model's performance on a specific task can reduce inference costs by 50-90%. For example, a fine-tuned Llama 3.1 8B ($0.10/$0.10) can match GPT-4o ($2.50/$10.00) on classification tasks — a 25x cost reduction. The break-even point is usually 1-10M inference tokens/month, depending on the fine-tuning investment."
+                }
+            }
+        ]
+    }
+    </script>
+    <style>
+        .page-hero { padding: 120px 24px 40px; text-align: center; max-width: 800px; margin: 0 auto; }
+        .page-hero h1 { font-size: clamp(28px, 4vw, 42px); font-weight: 800; margin-bottom: 12px; }
+        .page-hero p { color: var(--text-secondary); font-size: 17px; line-height: 1.6; }
+
+        .content-section { max-width: 900px; margin: 0 auto; padding: 0 24px 40px; }
+        .content-section h2 { font-size: 24px; font-weight: 700; margin-bottom: 16px; }
+        .content-section h3 { font-size: 18px; font-weight: 700; margin: 24px 0 12px; }
+        .content-section p { color: var(--text-secondary); line-height: 1.7; margin-bottom: 16px; font-size: 16px; }
+        .content-section strong { color: var(--text-primary); }
+        .content-section ul { color: var(--text-secondary); padding-left: 24px; margin-bottom: 16px; }
+        .content-section li { margin-bottom: 8px; line-height: 1.7; }
+
+        .calculator {
+            background: var(--bg-card); border: 1px solid var(--border);
+            border-radius: 16px; padding: 32px; margin: 32px 0;
+        }
+        .calc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
+        .calc-inputs { display: flex; flex-direction: column; gap: 16px; }
+        .input-group { display: flex; flex-direction: column; gap: 6px; }
+        .input-group label { font-size: 13px; font-weight: 600; color: var(--text-secondary); }
+        .input-group select, .input-group input {
+            padding: 12px 16px; border-radius: 8px; border: 1px solid var(--border);
+            background: var(--bg-secondary); color: var(--text-primary); font-size: 15px; font-family: inherit;
+        }
+        .input-group select:focus, .input-group input:focus {
+            outline: 2px solid var(--accent); outline-offset: 2px; border-color: var(--accent);
+        }
+        .presets { display: flex; gap: 8px; margin-bottom: 20px; flex-wrap: wrap; }
+        .preset-btn {
+            background: var(--bg-secondary); border: 1px solid var(--border);
+            color: var(--text-secondary); padding: 8px 14px; border-radius: 8px;
+            cursor: pointer; font-size: 13px; transition: all 0.2s; font-weight: 500;
+        }
+        .preset-btn:hover { border-color: var(--accent); color: var(--accent); }
+        .preset-btn.active-preset { background: var(--accent); color: white; border-color: var(--accent); }
+
+        .ranking-table { width: 100%; border-collapse: collapse; margin: 20px 0; background: var(--bg-card); border-radius: 12px; overflow: hidden; border: 1px solid var(--border); }
+        .ranking-table th { background: var(--bg-secondary); padding: 12px 16px; text-align: left; font-size: 13px; font-weight: 600; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.5px; }
+        .ranking-table td { padding: 12px 16px; border-top: 1px solid var(--border); font-size: 14px; }
+        .ranking-table tr:hover td { background: var(--bg-card-hover); }
+        .ranking-table .model-name { font-weight: 600; color: var(--text-primary); }
+        .ranking-table .best-badge { background: rgba(34,197,94,0.15); color: var(--green); padding: 3px 10px; border-radius: 6px; font-size: 12px; font-weight: 700; }
+        .ranking-table .good-badge { background: rgba(245,158,11,0.15); color: var(--orange); padding: 3px 10px; border-radius: 6px; font-size: 12px; font-weight: 700; }
+
+        .cta-box { background: linear-gradient(135deg, rgba(99,102,241,0.08), rgba(34,197,94,0.06)); border: 1px solid var(--accent); border-radius: 12px; padding: 28px; margin: 32px 0; text-align: center; }
+
+        .cost-example { background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; padding: 20px; margin: 16px 0; }
+        .cost-example-header { font-weight: 700; margin-bottom: 8px; color: var(--text-primary); }
+        .cost-example-row { display: flex; justify-content: space-between; padding: 6px 0; font-size: 14px; border-bottom: 1px solid rgba(42,42,62,0.3); }
+        .cost-example-row:last-child { border-bottom: none; }
+
+        @media (max-width: 768px) {
+            .page-hero { padding: 100px 20px 30px; }
+            .page-hero h1 { font-size: 26px; }
+            .calc-grid { grid-template-columns: 1fr; gap: 24px; }
+            .calculator { padding: 20px; }
+        }
+    </style>
+    <meta name="theme-color" content="#6366f1">
+</head>
+<body>
+    <nav>
+        <div class="nav-inner">
+            <a href="index.html" class="logo">API<span>pulse</span></a>
+            <button class="hamburger" onclick="toggleMobileNav()" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+            <div class="nav-links">
+                <a href="calculator.html">Calculator</a>
+                <a href="compare.html">Compare</a>
+                <a href="cost-explorer.html">Explorer</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="about.html">About</a>
+                <a href="blog.html">Blog</a>
+                <a href="tools.html">Tools</a> · <a href="api-cost-audit.html">🔍 Cost Audit</a>
+                <a href="pricing-index.html">Pricing Index</a>
+                <a href="api-docs.html" style="color:var(--accent);">API</a>
+                <a href="pricing.html" class="nav-cta">Get Pro — $29</a>
+                <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+    <div class="page-hero">
+        <h1>Cheapest AI API for Fine-Tuning</h1>
+        <p>Find the cheapest AI API for fine-tuning and custom models. Compare 42 models for training and inference costs.</p>
+    </div>
+
+    <div class="content-section">
+        <!-- Interactive Calculator -->
+        <h2>Calculate Your Fine-Tuning Cost</h2>
+        <p>Enter your fine-tuning workload to see the cheapest models for training and inference.</p>
+        <div class="calculator">
+            <div class="presets">
+                <span style="font-size:13px;color:var(--text-muted);align-self:center;">Use case:</span>
+                <button class="preset-btn active-preset" onclick="applyPreset('classification')">Classification</button>
+                <button class="preset-btn" onclick="applyPreset('domain')">Domain Adaptation</button>
+                <button class="preset-btn" onclick="applyPreset('chat')">Chat Fine-Tuning</button>
+                <button class="preset-btn" onclick="applyPreset('extraction')">Data Extraction</button>
+            </div>
+            <div class="calc-grid">
+                <div class="calc-inputs">
+                    <div class="input-group">
+                        <label for="training-tokens">Training tokens (millions)</label>
+                        <input type="number" id="training-tokens" value="10" min="0.1" step="1" onchange="calculate()" oninput="calculate()">
+                    </div>
+                    <div class="input-group">
+                        <label for="epochs">Training epochs</label>
+                        <input type="number" id="epochs" value="3" min="1" step="1" onchange="calculate()" oninput="calculate()">
+                    </div>
+                    <div class="input-group">
+                        <label for="inference-tokens">Monthly inference tokens (millions)</label>
+                        <input type="number" id="inference-tokens" value="50" min="1" step="10" onchange="calculate()" oninput="calculate()">
+                    </div>
+                    <div class="input-group">
+                        <label for="input-ratio">Input / Output ratio (%)</label>
+                        <input type="number" id="input-ratio" value="70" min="10" max="95" step="5" onchange="calculate()" oninput="calculate()">
+                    </div>
+                </div>
+                <div id="results" style="background:var(--bg-secondary);border:1px solid var(--border);border-radius:12px;padding:24px;">
+                    <!-- Results populated by JS -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Ranking Table -->
+        <h2>Fine-Tuning Inference Cost Ranking</h2>
+        <p>Every model ranked by monthly inference cost after fine-tuning. <strong>Training is a one-time cost; inference is ongoing.</strong></p>
+        <div id="ranking-table"></div>
+
+        <h2>Top Picks by Budget</h2>
+
+        <div class="cost-example">
+            <div class="cost-example-header">Budget Fine-Tuning (under $50/month)</div>
+            <div class="cost-example-row"><span style="color:var(--text-primary);font-weight:600;">Llama 3.1 8B (Together.ai)</span><span style="color:var(--green);font-weight:600;">$5.00/mo inference</span></div>
+            <div class="cost-example-row"><span style="color:var(--text-secondary);">Training: ~$2 one-time</span><span style="color:var(--text-secondary);">Total Y1: $62</span></div>
+            <div class="cost-example-row"><span style="color:var(--text-secondary);">GPT-oss 20B (OpenAI)</span><span style="color:var(--text-primary);">$13.50/mo inference</span></div>
+        </div>
+
+        <div class="cost-example">
+            <div class="cost-example-header">Production Fine-Tuning ($50-200/month)</div>
+            <div class="cost-example-row"><span style="color:var(--text-primary);font-weight:600;">GPT-4o mini (OpenAI)</span><span style="color:var(--green);font-weight:600;">$27.00/mo inference</span></div>
+            <div class="cost-example-row"><span style="color:var(--text-secondary);">Training: ~$125 one-time</span><span style="color:var(--text-secondary);">Total Y1: $449</span></div>
+            <div class="cost-example-row"><span style="color:var(--text-secondary);">Mistral Small 4</span><span style="color:var(--text-primary);">$12.00/mo inference</span></div>
+        </div>
+
+        <div class="cost-example">
+            <div class="cost-example-header">Enterprise Fine-Tuning ($200+/month)</div>
+            <div class="cost-example-row"><span style="color:var(--text-primary);font-weight:600;">GPT-4o (OpenAI)</span><span style="color:var(--green);font-weight:600;">$187.50/mo inference</span></div>
+            <div class="cost-example-row"><span style="color:var(--text-secondary);">Training: ~$750 one-time</span><span style="color:var(--text-secondary);">Total Y1: $3,000</span></div>
+            <div class="cost-example-row"><span style="color:var(--text-secondary);">Claude Haiku 4.5</span><span style="color:var(--text-primary);">$90.00/mo inference</span></div>
+        </div>
+
+        <h2>Strategy: Fine-Tune Small, Infer Cheap</h2>
+        <p>The biggest mistake in fine-tuning is using expensive models. <strong>Fine-tune a small model on your specific task</strong> — it often matches large model performance at a fraction of the inference cost.</p>
+
+        <div class="cost-example">
+            <div class="cost-example-header">Fine-Tuning vs Large Model (Classification, 50M tokens/month)</div>
+            <div class="cost-example-row"><span style="color:var(--text-secondary);">Option A: GPT-4o (no fine-tune)</span><span style="color:var(--text-primary);">$187.50/mo</span></div>
+            <div class="cost-example-row"><span style="color:var(--text-secondary);">Option B: Fine-tuned GPT-4o mini</span><span style="color:var(--text-primary);">$27.00/mo + $125 training</span></div>
+            <div class="cost-example-row"><span style="color:var(--text-secondary);">Option C: Fine-tuned Llama 3.1 8B</span><span style="color:var(--text-primary);">$5.00/mo + $2 training</span></div>
+            <div class="cost-example-row"><span style="font-weight:700;">Savings (Option C vs A)</span><span style="color:var(--green);font-weight:700;">97% cheaper ($62 vs $2,250 Y1)</span></div>
+        </div>
+
+        <p>A fine-tuned 8B model can match GPT-4o on narrow tasks (classification, extraction, formatting) while costing <strong>97% less</strong> in inference. The training cost is negligible — $2-125 one-time vs hundreds per month in inference savings.</p>
+
+        <h2>Fine-Tuning Considerations</h2>
+        <ul>
+            <li><strong>Inference cost dominates:</strong> Training is a one-time cost. At 50M tokens/month, inference costs $60-1,800/month. Training costs $2-750 once. Always optimize for inference cost, not training cost.</li>
+            <li><strong>Open-weight models are cheapest:</strong> Llama, Mistral, and DeepSeek models on Together.ai or Lambda are 5-10x cheaper to fine-tune than OpenAI or Anthropic hosted models.</li>
+            <li><strong>Fine-tuning multiplier:</strong> Most providers charge 3-4x the base inference price for fine-tuned model inference. A $0.10/$0.30 base model costs $0.30/$1.20 when fine-tuned.</li>
+            <li><strong>Dataset quality > size:</strong> A high-quality 5K-example dataset often outperforms a noisy 50K dataset. Invest in data quality, not quantity — it also reduces training costs.</li>
+            <li><strong>Consider prompt engineering first:</strong> Before fine-tuning, try few-shot prompting with a larger model. If that works, it's zero training cost. Fine-tune only when prompts hit their limits.</li>
+        </ul>
+
+        <div class="cta-box">
+            <p style="font-size:18px;font-weight:700;color:var(--text-primary);margin-bottom:8px;">Find the cheapest model for your fine-tuning workload</p>
+            <p style="margin-bottom:16px;">Enter your training and inference volume to see all 42 models ranked by cost. Free, no signup.</p>
+            <a href="cost-explorer.html" class="btn-primary" style="display:inline-block;padding:14px 32px;font-size:16px;">Open Cost Explorer →</a>
+        </div>
+
+        <h2>Related Tools</h2>
+        <ul>
+            <li><a href="cost-explorer.html">Cost Explorer</a> — See all 42 models ranked by your usage</li>
+            <li><a href="cheapest-ai-api-for-agents.html">Cheapest for Agents</a> — AI agent API costs</li>
+            <li><a href="cheapest-ai-api-embeddings.html">Cheapest for Embeddings</a> — Embedding model costs</li>
+            <li><a href="cheapest-ai-api-for-coding.html">Cheapest for Coding</a> — Code generation costs</li>
+            <li><a href="cheapest-ai-api.html">Cheapest AI API Finder</a> — Find the absolute cheapest model</li>
+        </ul>
+
+        <h2>Related Reading</h2>
+        <ul>
+            <li><a href="blog-cheapest-llm-api-production-2026.html">Cheapest LLM APIs in 2026</a> — Full ranking of every model</li>
+            <li><a href="blog-cost-per-request.html">AI API Cost Per Request</a> — The metric developers actually need</li>
+            <li><a href="blog-how-to-reduce-ai-api-costs-50-percent.html">Cut Your AI API Bill by 50%</a> — Optimization strategies</li>
+            <li><a href="cheapest-ai-api-for-agents.html">Cheapest for Agents</a> — Multi-step agent costs</li>
+        </ul>
+    </div>
+
+    <button class="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">↑</button>
+    </main>
+
+    <footer>
+        <p>Pricing data last verified: <span class="verified-date"></span></p>
+        <p>© 2026 APIpulse. <a href="index.html">Home</a> · <a href="use-cases.html">Use Cases</a> · <a href="about.html">About</a> · <a href="blog.html">Blog</a>
+<a href="pricing-index.html">Pricing Index</a> · <a href="model-matrix.html">Model Matrix</a> · <a href="pricing.html">Pricing</a> · <a href="https://x.com/getapipulse" target="_blank" rel="noopener">Twitter</a></p>
+    </footer>
+
+    <script>
+        // Fine-tuning inference cost calculator
+        function calculate() {
+            var trainingTokensM = parseFloat(document.getElementById('training-tokens').value) || 10;
+            var epochs = parseInt(document.getElementById('epochs').value) || 3;
+            var inferenceTokensM = parseFloat(document.getElementById('inference-tokens').value) || 50;
+            var inputRatio = parseInt(document.getElementById('input-ratio').value) || 70;
+
+            var totalTrainingTokens = trainingTokensM * epochs * 1000000;
+            var monthlyInferenceIn = inferenceTokensM * (inputRatio / 100) * 1000000;
+            var monthlyInferenceOut = inferenceTokensM * (1 - inputRatio / 100) * 1000000;
+
+            var models = API_MODELS.map(function(m) {
+                // Fine-tuned inference typically costs 3x base price
+                var ftInput = m.input * 3;
+                var ftOutput = m.output * 3;
+                var monthlyCost = (monthlyInferenceIn / 1000000) * ftInput + (monthlyInferenceOut / 1000000) * ftOutput;
+                // Training cost estimate (rough: 5x inference input price per token for training)
+                var trainingCost = (totalTrainingTokens / 1000000) * m.input * 5;
+                return { name: m.name, provider: m.provider, input: m.input, output: m.output, ftInput: ftInput, ftOutput: ftOutput, tier: m.tier, context: m.context, monthlyCost: monthlyCost, trainingCost: trainingCost, y1Cost: monthlyCost * 12 + trainingCost };
+            }).sort(function(a, b) { return a.monthlyCost - b.monthlyCost; });
+
+            // Results panel
+            var cheapest = models[0];
+            var resultsHtml = '<h3 style="margin-bottom:16px;font-size:16px;">Results</h3>';
+            resultsHtml += '<div style="background:var(--accent-glow);border:1px solid rgba(99,102,241,0.2);border-radius:8px;padding:14px;margin-bottom:12px;">';
+            resultsHtml += '<div style="font-size:12px;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.5px;">Cheapest for Inference</div>';
+            resultsHtml += '<div style="font-size:20px;font-weight:800;color:var(--accent);margin-top:4px;">' + cheapest.name + '</div>';
+            resultsHtml += '<div style="font-size:13px;color:var(--text-secondary);margin-top:2px;">' + cheapest.provider + ' · FT: $' + cheapest.ftInput.toFixed(3) + '/$' + cheapest.ftOutput.toFixed(2) + ' per 1M</div>';
+            resultsHtml += '<div style="font-size:22px;font-weight:800;color:var(--green);margin-top:8px;">$' + cheapest.monthlyCost.toFixed(2) + '/mo inference</div>';
+            resultsHtml += '<div style="font-size:13px;color:var(--text-secondary);margin-top:2px;">$' + cheapest.trainingCost.toFixed(0) + ' training (one-time) · $' + cheapest.y1Cost.toFixed(0) + ' Year 1 total</div>';
+            resultsHtml += '</div>';
+            resultsHtml += '<div style="font-size:12px;color:var(--text-muted);margin-bottom:4px;">Top 5 cheapest for inference:</div>';
+
+            for (var i = 0; i < Math.min(5, models.length); i++) {
+                var m = models[i];
+                resultsHtml += '<div style="display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid rgba(42,42,62,0.3);font-size:13px;">';
+                resultsHtml += '<span><span style="font-weight:600;">#' + (i+1) + '</span> ' + m.name + '</span>';
+                resultsHtml += '<span style="font-weight:600;color:var(--green);">$' + m.monthlyCost.toFixed(2) + '/mo</span>';
+                resultsHtml += '</div>';
+            }
+
+            document.getElementById('results').innerHTML = resultsHtml;
+
+            // Ranking table
+            var tableHtml = '<table class="ranking-table"><thead><tr>';
+            tableHtml += '<th>#</th><th>Model</th><th>Provider</th><th>Base $/1M</th><th>FT $/1M</th><th>Monthly Inference</th><th>Training (1x)</th><th>Year 1 Total</th><th></th>';
+            tableHtml += '</tr></thead><tbody>';
+
+            for (var i = 0; i < models.length; i++) {
+                var m = models[i];
+                var badge = i === 0 ? '<span class="best-badge">Cheapest</span>' : i < 3 ? '<span class="good-badge">Great Value</span>' : '';
+                tableHtml += '<tr>';
+                tableHtml += '<td>' + (i+1) + '</td>';
+                tableHtml += '<td class="model-name">' + m.name + '</td>';
+                tableHtml += '<td>' + m.provider + '</td>';
+                tableHtml += '<td>$' + m.input.toFixed(3) + '/$' + m.output.toFixed(2) + '</td>';
+                tableHtml += '<td>$' + m.ftInput.toFixed(3) + '/$' + m.ftOutput.toFixed(2) + '</td>';
+                tableHtml += '<td style="font-weight:600;font-variant-numeric:tabular-nums;">$' + m.monthlyCost.toFixed(2) + '</td>';
+                tableHtml += '<td style="font-variant-numeric:tabular-nums;">$' + m.trainingCost.toFixed(0) + '</td>';
+                tableHtml += '<td style="font-weight:600;font-variant-numeric:tabular-nums;">$' + m.y1Cost.toFixed(0) + '</td>';
+                tableHtml += '<td>' + badge + '</td>';
+                tableHtml += '</tr>';
+            }
+            tableHtml += '</tbody></table>';
+            document.getElementById('ranking-table').innerHTML = tableHtml;
+
+            if (window.trackEvent) {
+                window.trackEvent('finetuning_calc_used', { training_tokens: trainingTokensM, inference_tokens: inferenceTokensM, cheapest_model: cheapest.name, cheapest_cost: cheapest.monthlyCost.toFixed(2) });
+            }
+        }
+
+        function applyPreset(type) {
+            var presets = {
+                classification: { training: 5, epochs: 3, inference: 50, ratio: 80 },
+                domain: { training: 20, epochs: 5, inference: 100, ratio: 70 },
+                chat: { training: 50, epochs: 3, inference: 200, ratio: 50 },
+                extraction: { training: 10, epochs: 3, inference: 30, ratio: 85 }
+            };
+            var p = presets[type];
+            if (!p) return;
+            document.getElementById('training-tokens').value = p.training;
+            document.getElementById('epochs').value = p.epochs;
+            document.getElementById('inference-tokens').value = p.inference;
+            document.getElementById('input-ratio').value = p.ratio;
+            document.querySelectorAll('.presets .preset-btn').forEach(function(btn) { btn.classList.remove('active-preset'); });
+            event.target.classList.add('active-preset');
+            calculate();
+        }
+
+        document.addEventListener('DOMContentLoaded', calculate);
+    </script>
+</body>
+</html>
