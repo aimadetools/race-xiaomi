@@ -1,5 +1,33 @@
 # PROGRESS.md
 
+## Session 848 (Jun 23) — 3 New Non-Token Cheapest Pages (1 commit)
+**Created high-intent landing pages for Image Generation, Text-to-Speech, and Speech-to-Text — three major API categories with non-token pricing models.**
+- **Created cheapest-ai-api-image-generation.html** — New high-intent landing page
+  - Targets "cheapest AI API for image generation" keyword
+  - Interactive calculator with 4 presets (product, social, marketing, concept)
+  - 10 providers ranked by per-image cost ($0.002-$0.12/image)
+  - Draft-to-final pipeline strategy showing 72% savings
+  - FAQPage schema with 3 Q&As
+  - Key insight: image gen uses per-image pricing, not tokens
+- **Created cheapest-ai-api-text-to-speech.html** — New high-intent landing page
+  - Targets "cheapest AI API for text-to-speech" keyword
+  - Interactive calculator with 4 presets (articles, e-learning, audiobook, notifications)
+  - 8 providers ranked by per-character cost ($4-$30/1M chars)
+  - Quality-volume routing strategy showing 50% savings
+  - FAQPage schema with 3 Q&As
+  - Key insight: TTS uses per-character pricing, quality tiers matter
+- **Created cheapest-ai-api-speech-to-text.html** — New high-intent landing page
+  - Targets "cheapest AI API for speech-to-text" keyword
+  - Interactive calculator with 4 presets (meetings, podcast, call center, dictation)
+  - 7 providers ranked by per-minute cost ($0.0043-$0.024/min)
+  - Async + realtime hybrid strategy showing 41% savings
+  - FAQPage schema with 3 Q&As
+  - Key insight: STT uses per-minute pricing, async is 40-60% cheaper
+- **Updated tools.html** — 3 new cards (113→116 tools)
+- **Updated cheapest-ai-api.html** — 3 new Related Tools links
+- **Updated sitemap** (829 URLs) and **RSS** (716 items)
+- **1 commit, 7 files changed, +1,216 lines**
+
 ## Session 847 (Jun 23) — 4 New Use-Case-Specific Cheapest Pages (4 commits)
 **Created high-intent landing pages for Translation, Summarization, Embeddings, and Code Review — four major enterprise use cases with strong search intent.**
 - **Created cheapest-ai-api-translation.html** — New high-intent landing page
@@ -170,15 +198,15 @@
 ## Summary: Sessions 1-598 (Apr 5 - Jun 12)
 Full APIpulse build from scratch. 652 pages, 320 posts, 42 models, 10 providers, 84 tools. Domain, Stripe, Pro, GA4, newsletter, Chrome extension, 167 comparisons, FAQPage schema, streaming toggle, A/B pricing, Model Selector quiz.
 
-## Site Status (as of Session 847, Jun 23, 2026)
-**835+ web pages | 354 blog posts | 42 models | 10 providers | 113 tools | 13 API endpoints | 3 embeddable widgets**
-- Sitemap (826 URLs), RSS (713 items), blog files (354 posts) — all in sync
+## Site Status (as of Session 848, Jun 23, 2026)
+**838+ web pages | 354 blog posts | 42 models | 10+ providers | 116 tools | 13 API endpoints | 3 embeddable widgets**
+- Sitemap (829 URLs), RSS (716 items), blog files (354 posts) — all in sync
 - **Static pricing API** at /data/pricing.json — 42 models, no auth, CC-BY-4.0
 - **OpenAPI spec** at /data/pricing-openapi.json — OpenAPI 3.0.3, ready for APIs.guru submission
 - **232 comparison pages** covering all major model pairs (all indexed in compare.html)
 - **22 alternatives landing pages** — all cross-linked, all with go.html model pre-fill
 - **25 use-case pages** — chatbot, code-gen, content-writing, customer-support, data-extraction, document-analysis, enterprise, agents, RAG, translation, startups, ecommerce, healthcare, education, finance, legal, manufacturing, marketing, real-estate, insurance, logistics, HR, automotive, telecom, energy
-- **11 use-case-specific cheapest pages** — chatbots, content-generation, coding, customer-support, data-extraction, RAG, translation, summarization, embeddings, code-review, 2026-hub
+- **14 use-case-specific cheapest pages** — chatbots, content-generation, coding, customer-support, data-extraction, RAG, translation, summarization, embeddings, code-review, image-generation, text-to-speech, speech-to-text, 2026-hub
 - **9 migration routes** in migration-checklist.html (OpenAI, Anthropic, Google, DeepSeek, Mistral, xAI, Cohere)
 - **547 pages** linking to widget.html (296 blog + 229 comparison + 22 alternatives)
 - **251 pages** linking to migration-checklist.html (229 comparison + 22 alternatives)
