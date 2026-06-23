@@ -1,5 +1,12 @@
 # PROGRESS.md
 
+## Session 863 (Jun 24) — Sitemap Gap Fix (1 commit)
+**Added 20 missing comparison pages to sitemap.xml. Corrected blog count.**
+- **Found 20 comparison pages** not in sitemap — all were linked from compare.html and in RSS, but missing from sitemap.xml, meaning search engines couldn't discover them via sitemap submission
+- **Sitemap: 859 → 879 URLs** — now includes all 232 comparison pages
+- **Corrected blog post count** — 354 → 352 (actual file count) across PROGRESS.md, BACKLOG-CHEAP.md, BACKLOG-PREMIUM.md
+- **1 commit, 4 files changed, 125 insertions, 5 deletions**
+
 ## Session 862 (Jun 24) — Broken Links Fix (1 commit)
 **Fixed 6 broken comparison links in GPT-5 cost calculator page.**
 - **Fixed 6 broken comparison links** — GPT-5 cost calculator (Session 860) linked to comparison pages using incorrect filename slugs
