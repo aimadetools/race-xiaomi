@@ -1,5 +1,13 @@
 # PROGRESS.md
 
+## Session 865 (Jun 24) — Deal Page Distribution + Exit Popup Fix (1 commit)
+**Added deal.html urgency banner to 20 highest-traffic comparison pages. Updated exit popups to link to deal page.**
+- **Added urgency banner to 20 comparison pages** — Brand comparisons (openai-vs-anthropic, gemini-vs-chatgpt, claude-vs-chatgpt, etc.) and flagship model matchups (gpt5-vs-sonnet46, gpt5-vs-gemini35flash, etc.)
+- **Updated exit popup CTAs** — Both deprecation and pro exit popups now link to deal.html instead of go.html (deal page has countdown timer + July 12 deadline — better for exit intent)
+- **Banner style** — Red urgency gradient matching homepage "What's New" banner, "🔥 Limited time: Pro lifetime access $29 — price goes up July 12 →"
+- **1 commit, 21 files changed, +162 lines**
+- **Key insight:** Comparison pages are highest-intent traffic (users actively comparing models) — deal page urgency banner should convert well here
+
 ## Session 864 (Jun 24) — Conversion Optimization: Deal Page + Urgency (6 commits)
 **Built focused conversion landing page with countdown timer. Fixed stale deprecation popup. Added urgency messaging across site.**
 - **Created deal.html** — Focused conversion page with countdown to July 12, savings calculator, testimonials, features grid, FAQ, dual CTAs (buy + trial)
@@ -60,7 +68,7 @@ Created automotive + telecom cheapest pages — completing all 25 use-case → c
 ## Summary: Sessions 1-598 (Apr 5 - Jun 12)
 Full APIpulse build from scratch. 652 pages, 320 posts, 42 models, 10 providers, 84 tools. Domain, Stripe, Pro, GA4, newsletter, Chrome extension, 167 comparisons, FAQPage schema, streaming toggle, A/B pricing, Model Selector quiz.
 
-## Site Status (as of Session 863, Jun 24, 2026)
+## Site Status (as of Session 865, Jun 24, 2026)
 **864+ web pages | 352 blog posts | 42 models | 10+ providers | 141 tools | 13 API endpoints | 3 embeddable widgets**
 - Sitemap (879 URLs), RSS (759 items), blog files (352 posts) — all in sync
 - **Static pricing API** at /data/pricing.json — 42 models, no auth, CC-BY-4.0
