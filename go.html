@@ -652,6 +652,7 @@
         });
 
         // Countdown timer — founding member price ends July 12, 2026
+        // Session 877: Post-expiry handling — update CTAs, hide trial, show $49
         (function() {
             var deadline = new Date('2026-07-12T23:59:59Z');
             function updateCountdown() {
@@ -659,7 +660,52 @@
                 var diff = deadline - now;
                 var el = document.getElementById('countdown');
                 if (!el) return;
-                if (diff <= 0) { el.textContent = '0 days'; return; }
+                if (diff <= 0) {
+                    // Post-expiry: update countdown, CTAs, and urgency text
+                    el.textContent = 'FOUNDING PRICE ENDED';
+                    el.style.color = '#94a3b8';
+                    // Update all price displays to $49
+                    var priceEls = document.querySelectorAll('#cta-price, #cta-price-bottom, #price-display');
+                    priceEls.forEach(function(p) { p.textContent = '$49'; });
+                    // Update "was" price and savings badge
+                    var wasEl = document.getElementById('price-was');
+                    if (wasEl) wasEl.textContent = '$79';
+                    var badgeEl = document.getElementById('price-badge');
+                    if (badgeEl) badgeEl.textContent = 'Save 38%';
+                    // Update urgency section
+                    var urgPrice = document.getElementById('urgency-price');
+                    if (urgPrice) urgPrice.textContent = '$49';
+                    var urgFuture = document.getElementById('urgency-future');
+                    if (urgFuture) urgFuture.textContent = '$79';
+                    // Update FAQ future price
+                    var faqFuture = document.getElementById('faq-future-price');
+                    if (faqFuture) faqFuture.textContent = '$79';
+                    // Hide trial CTAs (no more free trial after deal ends)
+                    var mainCta = document.getElementById('main-cta');
+                    if (mainCta) {
+                        mainCta.textContent = '⚡ Get Pro Lifetime Access — $49';
+                        mainCta.onclick = function() { window.location.href = window._abStripeLink || 'https://buy.stripe.com/fZu7sL3Gw3GS0RQeoDeEo0a'; };
+                    }
+                    // Update bottom trial CTA too
+                    var bottomCtas = document.querySelectorAll('.cta-btn');
+                    bottomCtas.forEach(function(btn) {
+                        if (btn.textContent.includes('Try Pro Free')) {
+                            btn.textContent = '⚡ Get Pro Lifetime Access — $49';
+                            btn.onclick = function() { window.location.href = window._abStripeLink || 'https://buy.stripe.com/fZu7sL3Gw3GS0RQeoDeEo0a'; };
+                        }
+                    });
+                    // Update urgency text
+                    var urgSection = document.querySelector('.urgency');
+                    if (urgSection) {
+                        urgSection.innerHTML = '⚡ Pro lifetime access — <strong>$49</strong> one-time payment. No subscription, no recurring fees.';
+                    }
+                    // Update FAQ answer
+                    var faqAnswer = document.getElementById('faq-price-answer');
+                    if (faqAnswer) {
+                        faqAnswer.textContent = 'Yes. $49 gets you lifetime access — no subscription, no recurring fees. One-time payment, instant access.';
+                    }
+                    return;
+                }
                 var days = Math.floor(diff / 86400000);
                 var hours = Math.floor((diff % 86400000) / 3600000);
                 var mins = Math.floor((diff % 3600000) / 60000);

@@ -9,7 +9,7 @@
     <!-- Open Graph / Social Sharing -->
     <meta property="og:type" content="product">
     <meta property="og:title" content="APIpulse Pro — Lifetime Access $29 (Limited Time)">
-    <meta property="og:description" content="Compare 42 AI models, get migration code, save up to $2,400/year on API costs. One-time payment, lifetime access. Price goes up July 12.">
+    <meta property="og:description" content="Compare 42 AI models, get migration code, save up to $2,400/year on API costs. One-time payment, lifetime access.">
     <meta property="og:image" content="https://getapipulse.com/og-image.png">
     <meta property="og:url" content="https://getapipulse.com/deal.html">
     <meta property="og:site_name" content="APIpulse">
@@ -1212,6 +1212,21 @@
                 subline: 'Compare 42 models, get migration code, save up to 40% on API costs. Price goes up July 12.'
             }
         };
+        // Session 877: Post-expiry headlines
+        var EXPIRED_VARIANTS = {
+            a: {
+                headline: 'Stop overpaying for AI APIs — <span>save up to 98%</span>',
+                subline: 'One-time payment $49 · Lifetime access · Compare 42 models across 10 providers'
+            },
+            b: {
+                headline: 'Save $600–$2,400/year on AI APIs.<br><span>Compare 42 models. Switch in minutes.</span>',
+                subline: 'Get personalized migration code, PDF reports, and price alerts. One-time payment $49, lifetime access.'
+            },
+            c: {
+                headline: 'Pro lifetime access <span>$49</span> — one-time payment',
+                subline: 'Compare 42 models, get migration code, save up to 40% on API costs. No subscription, no recurring fees.'
+            }
+        };
         var variant = localStorage.getItem(KEY);
         if (!variant || !VARIANTS[variant]) {
             var r = Math.random();
@@ -1219,7 +1234,8 @@
             localStorage.setItem(KEY, variant);
         }
         window.DEAL_HEADLINE_VARIANT = variant;
-        var v = VARIANTS[variant];
+        // Use expired variants after July 12
+        var v = window.DEAL_EXPIRED ? (EXPIRED_VARIANTS[variant] || EXPIRED_VARIANTS.a) : VARIANTS[variant];
         document.getElementById('deal-headline').innerHTML = v.headline;
         document.getElementById('deal-subline').textContent = v.subline;
         if (typeof gtag === 'function') {
@@ -1234,13 +1250,35 @@
         var diff = target - now;
 
         if (diff <= 0) {
+            // Session 877: Post-expiry — update main CTA, sticky CTAs, and exit popup
             document.getElementById('countdown-timer').textContent = 'EXPIRED';
+            document.getElementById('countdown-timer').style.color = '#94a3b8';
             document.getElementById('deal-price').textContent = '$49';
             document.getElementById('buy-btn').textContent = 'Get Pro Lifetime Access — $49';
             var wp = document.querySelector('.was-price');
             if (wp) wp.textContent = '$79';
             var badge = document.querySelector('.savings-badge');
-            if (badge) badge.textContent = 'Save $30 — introductory pricing';
+            if (badge) badge.textContent = 'Save $30 — one-time payment';
+            // Update mobile sticky CTA
+            var stickyLink = document.querySelector('.sticky-cta a');
+            if (stickyLink) stickyLink.textContent = 'Get Pro — $49 lifetime →';
+            // Update desktop sticky CTA
+            var dsPrice = document.querySelector('.desktop-sticky-price');
+            if (dsPrice) dsPrice.innerHTML = '$49 <span class="desktop-sticky-was">was $79</span>';
+            var dsCountdown = document.getElementById('desktop-countdown');
+            if (dsCountdown) dsCountdown.textContent = '';
+            // Update exit popup
+            var exitH3 = document.querySelector('.deal-exit-popup h3');
+            if (exitH3) exitH3.textContent = 'Get APIpulse Pro — lifetime access';
+            var exitP = document.querySelector('.deal-exit-popup p');
+            if (exitP) exitP.textContent = 'Pro is now $49 one-time (was $79). Most developers save $600–$2,400/yr — the tool pays for itself in days.';
+            var exitCta = document.querySelector('.deal-exit-popup .exit-cta');
+            if (exitCta) exitCta.textContent = 'Get Lifetime Access — $49 →';
+            var exitCountdown = document.getElementById('exit-countdown');
+            if (exitCountdown) exitCountdown.parentElement.style.display = 'none';
+            // Update hero section text
+            var heroSub = document.getElementById('deal-subline');
+            if (heroSub) heroSub.textContent = 'One-time payment · Lifetime access · Instant delivery';
             return;
         }
 
@@ -1395,13 +1433,19 @@
         }, { threshold: 0 });
         observer.observe(buyBtn);
 
-        // Desktop countdown timer
+        // Desktop countdown timer — Session 877: post-expiry handling
         var cdEl = document.getElementById('desktop-countdown');
         if (cdEl) {
             function updateDesktopCountdown() {
                 var target = new Date('2026-07-12T23:59:59Z').getTime();
                 var diff = target - Date.now();
-                if (diff <= 0) { cdEl.textContent = 'EXPIRED'; return; }
+                if (diff <= 0) {
+                    // Post-expiry: hide countdown, update sticky price
+                    cdEl.textContent = '';
+                    var dsPrice = document.querySelector('.desktop-sticky-price');
+                    if (dsPrice) dsPrice.innerHTML = '$49 <span class="desktop-sticky-was">was $79</span>';
+                    return;
+                }
                 var d = Math.floor(diff / 86400000);
                 var h = Math.floor((diff % 86400000) / 3600000);
                 var m = Math.floor((diff % 3600000) / 60000);

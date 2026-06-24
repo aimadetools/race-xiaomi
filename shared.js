@@ -28,11 +28,18 @@ const savedTheme = localStorage.getItem('theme') || 'dark';
 document.documentElement.setAttribute('data-theme', savedTheme);
 updateThemeIcon();
 
+// Deal expiry check — July 12, 2026 23:59:59 UTC
+// After expiry: price goes to $49, trial CTAs hidden, deal banners switched
+window.DEAL_DEADLINE = new Date('2026-07-12T23:59:59Z').getTime();
+window.DEAL_EXPIRED = Date.now() > window.DEAL_DEADLINE;
+window.DEAL_DAYS_LEFT = Math.max(0, Math.ceil((window.DEAL_DEADLINE - Date.now()) / 86400000));
+
 // A/B Pricing Test — $19 vs $29 (one-time payment links)
 // Session 722: Simplified from 3 variants to 2 to reduce decision paralysis.
 // Variant A = $19 (Budget), Variant B = $29 (Control)
 // NOTE: deal.html is EXCLUDED — it has its own $29-only conversion flow with countdown,
 // value stack, and savings calculator. Overriding the price there breaks the messaging.
+// Session 877: After July 12 expiry, all prices become $49 regardless of A/B variant.
 (function(){
     var DEAL_SKIP = location.pathname.indexOf('deal.html') !== -1;
     var VARIANTS = {A:{price:19,label:'Budget',futurePrice:39},B:{price:29,label:'Control',futurePrice:49}};
@@ -50,8 +57,15 @@ updateThemeIcon();
     }
     var v = VARIANTS[variant];
     window._abVariant = variant;
-    window._abPrice = v.price;
-    window._abStripeLink = STRIPE_LINKS[variant];
+
+    // Post-expiry: override to $49 regardless of A/B variant
+    if (window.DEAL_EXPIRED) {
+        window._abPrice = 49;
+        window._abStripeLink = STRIPE_LINKS[variant]; // keep same link, Stripe handles price
+    } else {
+        window._abPrice = v.price;
+        window._abStripeLink = STRIPE_LINKS[variant];
+    }
 
     // Skip price overrides on deal.html — it has its own $29 conversion flow
     if (DEAL_SKIP) return;
@@ -119,6 +133,18 @@ updateThemeIcon();
                 node.nodeValue = node.nodeValue.split('$29').join('$' + v.price);
             }
         });
+        // Session 877: Post-expiry — replace "price goes up July 12" across 693 pages
+        if (window.DEAL_EXPIRED) {
+            nodes.forEach(function(node) {
+                var val = node.nodeValue;
+                if (val.indexOf('price goes up July 12') !== -1) {
+                    node.nodeValue = val.replace(/price goes up July 12/g, 'one-time payment');
+                }
+                if (val.indexOf('expires July 12') !== -1) {
+                    node.nodeValue = val.replace(/expires July 12/g, 'lifetime access');
+                }
+            });
+        }
         // Update JSON-LD schema prices
         document.querySelectorAll('script[type="application/ld+json"]').forEach(function(s) {
             try {
@@ -393,17 +419,29 @@ document.addEventListener('DOMContentLoaded', () => {
         if (window.trackEvent) window.trackEvent('deprecation_banner_shown', { days_left: daysLeft });
     } else if (daysLeft <= 0 && daysLeft > -90) {
         // POST-DEPRECATION: Show deal urgency banner (conversion focus after deprecation)
+        // Session 877: After July 12 expiry, switch to post-deal messaging
         if (localStorage.getItem('apipulse_deprecation_retired_dismissed')) return;
         var banner = document.createElement('div');
         banner.id = 'deprecation-urgency-banner';
-        banner.style.cssText = 'background:linear-gradient(135deg,#dc2626,#b91c1c);color:white;padding:10px 16px;text-align:center;font-size:13px;font-weight:600;position:relative;z-index:9999;display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap;';
-        banner.innerHTML = '<span>🔥 Limited time: Pro lifetime access $29 — price goes up July 12</span>' +
-            '<a href="deal.html" style="color:white;text-decoration:underline;font-weight:700;">Get the deal →</a>' +
-            '<button onclick="document.getElementById(\'deprecation-urgency-banner\').remove();localStorage.setItem(\'apipulse_deprecation_retired_dismissed\',\'1\');" style="background:none;border:none;color:white;cursor:pointer;font-size:16px;padding:0 4px;opacity:0.8;position:absolute;right:12px;" aria-label="Dismiss">✕</button>';
+        var dealExpired = window.DEAL_EXPIRED;
+        if (dealExpired) {
+            // Post-expiry: show regular pricing, no urgency
+            banner.style.cssText = 'background:linear-gradient(135deg,#6366f1,#4f46e5);color:white;padding:10px 16px;text-align:center;font-size:13px;font-weight:600;position:relative;z-index:9999;display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap;';
+            banner.innerHTML = '<span>📊 APIpulse Pro — lifetime access, $49 one-time</span>' +
+                '<a href="go.html" style="color:white;text-decoration:underline;font-weight:700;">Get Pro →</a>' +
+                '<button onclick="document.getElementById(\'deprecation-urgency-banner\').remove();localStorage.setItem(\'apipulse_deprecation_retired_dismissed\',\'1\');" style="background:none;border:none;color:white;cursor:pointer;font-size:16px;padding:0 4px;opacity:0.8;position:absolute;right:12px;" aria-label="Dismiss">✕</button>';
+        } else {
+            // Pre-expiry: show deal urgency
+            banner.style.cssText = 'background:linear-gradient(135deg,#dc2626,#b91c1c);color:white;padding:10px 16px;text-align:center;font-size:13px;font-weight:600;position:relative;z-index:9999;display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap;';
+            var urgencyText = window.DEAL_DAYS_LEFT <= 1 ? 'FINAL DAY' : window.DEAL_DAYS_LEFT + ' days left';
+            banner.innerHTML = '<span>🔥 Limited time: Pro lifetime access $29 — <strong>' + urgencyText + '</strong></span>' +
+                '<a href="deal.html" style="color:white;text-decoration:underline;font-weight:700;">Get the deal →</a>' +
+                '<button onclick="document.getElementById(\'deprecation-urgency-banner\').remove();localStorage.setItem(\'apipulse_deprecation_retired_dismissed\',\'1\');" style="background:none;border:none;color:white;cursor:pointer;font-size:16px;padding:0 4px;opacity:0.8;position:absolute;right:12px;" aria-label="Dismiss">✕</button>';
+        }
         document.body.insertBefore(banner, document.body.firstChild);
         var nav = document.querySelector('nav');
         if (nav) nav.style.top = '0';
-        if (window.trackEvent) window.trackEvent('deal_banner_shown', { source: 'deprecation_banner' });
+        if (window.trackEvent) window.trackEvent('deal_banner_shown', { source: 'deprecation_banner', expired: dealExpired });
     }
 });
 
