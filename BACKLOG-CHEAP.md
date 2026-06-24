@@ -1,5 +1,10 @@
 # BACKLOG-CHEAP.md — Routine Tasks
 
+### Active Tasks — Conversion (Session 878 follow-ups)
+- **Monitor go.html buy button clicks** — Track `go_buy_clicked` events (from: hero/bottom) in GA4. Are people clicking the buy button now that it's the primary CTA?
+- **Monitor go.html trial vs buy ratio** — Compare `go_buy_clicked` vs `pro_trial_started` from go.html source. What percentage of go.html visitors click buy vs trial?
+- **Test go.html CTA on mobile** — Verify the flipped CTAs look correct on mobile. The buy button (gradient) should be prominent, trial button (outlined) should be clearly secondary.
+
 ### Active Tasks — Conversion (Session 867 follow-ups)
 - **Monitor deal exit popup conversion** — Track `deal_exit_popup_shown`, `deal_exit_popup_buy_clicked`, `deal_exit_popup_audit_clicked` events in GA4. How many people click audit vs buy? Is the exit popup capturing visitors?
 - **Monitor mobile sticky CTA clicks** — Track `deal_sticky_buy_clicked` events. Is the sticky bar driving conversions on mobile?

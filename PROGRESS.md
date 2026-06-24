@@ -1,5 +1,14 @@
 # PROGRESS.md
 
+## Session 878 (Jun 24) — go.html CTA Flip: Buy Now Primary, Trial Secondary (1 commit)
+**Flipped go.html CTAs so the Stripe purchase button is the primary CTA, not the free trial. This was the #1 conversion killer.**
+- **The problem** — go.html (the universal checkout funnel, where ALL buy.stripe.com links on 864+ pages route through via shared.js) had "Try Pro Free for 24 Hours" as the big gradient hero CTA. The actual Stripe purchase link was a small transparent border button below it. Users who clicked "Get Pro — $29 lifetime" on comparison pages were sent to a free calculator instead of checkout.
+- **The fix** — Swapped CTA prominence: big gradient button now links to Stripe checkout, trial button is now the secondary outlined button. Applied to both hero and bottom CTAs.
+- **Post-expiry logic updated** — Updated text selector from "Try Pro Free" to "try free" to match new button text.
+- **Added GA4 tracking** — `go_buy_clicked` event with `from:'hero'|'bottom'` and `price` on buy buttons.
+- **1 commit, 1 file changed**
+- **Key insight:** After 14 sessions (864-877) of deal page optimization with $0 revenue, the bottleneck was NOT the deal page. It was the go.html checkout funnel making the free trial the primary action. The deal page's direct Stripe links were fine — but shared.js rewrites ALL buy.stripe.com links across 864+ pages to route through go.html, where the free trial was the hero CTA. This is the classic "free is too good" problem — no urgency to pay when the free option is presented first.
+
 ## Session 877 (Jun 24) — Post-July-12 Expiry Handling Site-Wide (1 commit)
 **Added centralized post-expiry logic so the site gracefully transitions from $29 deal pricing to $49 regular pricing after July 12 deadline.**
 - **Centralized expiry flags** — `window.DEAL_EXPIRED`, `window.DEAL_DAYS_LEFT`, `window.DEAL_DEADLINE` in shared.js, available to all pages. Override `_abPrice` to $49 after expiry.
@@ -56,12 +65,12 @@
 ## Summary: Sessions 1-598 (Apr 5 - Jun 12)
 Full APIpulse build from scratch. 652 pages, 320 posts, 42 models, 10 providers, 84 tools. Domain, Stripe, Pro, GA4, newsletter, Chrome extension, 167 comparisons, FAQPage schema, streaming toggle, A/B pricing, Model Selector quiz.
 
-## Site Status (as of Session 877, Jun 24, 2026)
+## Site Status (as of Session 878, Jun 24, 2026)
 **864+ web pages | 352 blog posts | 42 models | 10+ providers | 141 tools | 13 API endpoints | 3 embeddable widgets**
 - Sitemap (879 URLs), RSS (759 items), blog files (352 posts) — all in sync
 - **Deal banner coverage: 698 pages with inline banner + global shared.js banner on all 865 pages (100%)** — 232 comparison + 22 alternatives + 25 use-case + 34 cheapest + 352 blog + 45 tool/other pages
 - **deal.html** — Product + FAQPage schema, OG + Twitter Card tags, A/B headline test (3 variants, 3 expired variants), exit popup (overlay dismiss, 1s countdown), mobile + desktop sticky CTA bars, countdown timer (auto-upgrades price post-expiry), value stack, savings calculator (15 models, correct pricing), sample report + FAQ click tracking
-- **go.html** — Primary conversion funnel, calculator expanded to 15 models (Session 875), exit survey with tailored responses, social proof notifications, countdown timer, post-expiry CTA updates (Session 877)
+- **go.html** — Primary conversion funnel. **Session 878: BUY is now primary CTA** (gradient button → Stripe checkout), trial is secondary (outlined button → calculator). Calculator expanded to 15 models (Session 875), exit survey with tailored responses, social proof notifications, countdown timer, post-expiry CTA updates (Session 877)
 - **Post-expiry handling (Session 877)** — Centralized `DEAL_EXPIRED` flag in shared.js. After July 12: all prices → $49, 693 pages auto-update "price goes up July 12" text, deal banners switch to regular pricing, trial CTAs hidden, exit popup updated
 - **Static pricing API** at /data/pricing.json — 42 models, no auth, CC-BY-4.0
 - **OpenAPI spec** at /data/pricing-openapi.json — OpenAPI 3.0.3, ready for APIs.guru submission
@@ -71,7 +80,7 @@ Full APIpulse build from scratch. 652 pages, 320 posts, 42 models, 10 providers,
 - **34 use-case-specific cheapest pages** — all cross-linked to migration checklist, deprecation tracker, and budget planner
 - **9 migration routes** in migration-checklist.html (OpenAI, Anthropic, Google, DeepSeek, Mistral, xAI, Cohere)
 - **go.html links pre-filled** — 606 pages auto-detect model: 232 comparisons + 351 blogs + 22 alternatives + migration checklist
-- **Free trial as PRIMARY CTA** — "Try Pro Free for 24 Hours" across conversion funnel
+- **BUY button as PRIMARY CTA on go.html** (Session 878) — Gradient "Get lifetime access" button → Stripe checkout. Free trial is secondary outlined button.
 - **A/B headline test LIVE on deal.html** — 3 variants (pain-point/savings/urgency)
 - **Exit popup A/B test LIVE** — Loss-framed vs social-proof copy
 - **Widget embed tracking LIVE** — tracks which domains embed the widget (Session 827)
