@@ -1,14 +1,17 @@
 # PROGRESS.md
 
-## Session 869 (Jun 24) — Deal Banner Gap Fill: 68 High-Intent Pages (1 commit)
-**Added inline deal urgency banner to 68 pages that were missing the conversion CTA.**
-- **25 use-case pages** — chatbot, healthcare, finance, ecommerce, legal, etc. All now show deal banner below nav.
-- **34 cheapest-ai-api pages** — all industry/use-case variants (automotive, telecom, RAG, embeddings, etc.)
+## Session 869 (Jun 24) — Deal Banner Gap Fill: 374 Pages (2 commits)
+**Added inline deal urgency banner to 374 pages that were missing the conversion CTA.**
+- **Commit 1: 68 high-intent pages** — 25 use-case + 34 cheapest-ai-api + 9 tool/hub pages
+- **Commit 2: 306 blog posts** — major organic traffic source, now all link to deal page
+- **25 use-case pages** — chatbot, healthcare, finance, ecommerce, legal, etc.
+- **34 cheapest-ai-api pages** — all industry/use-case variants
 - **9 tool/hub pages** — migration-checklist, tools, widget, widget-calculator, api-docs, budget planner, live-pricing, deprecation tracker, cheapest hub
+- **306 blog posts** — 312/352 total blog posts now have deal link (40 older posts without `<main>` tag skipped)
 - **Banner style** — Matches comparison page banner (red gradient, July 12 deadline, deal.html link)
-- **Combined with global shared.js banner**, all 864+ pages now have deal CTA coverage
-- **1 commit, 68 files changed, +544 lines**
-- **Key insight:** Session 865 added deal banners to 258 comparison + alternatives pages, but missed use-case and cheapest pages. These are high-intent traffic (users researching specific AI use cases or looking for cheapest options) — exactly the audience most likely to convert on a $29 lifetime deal.
+- **Total deal banner coverage:** 258 (comparison/alternatives) + 68 (use-case/cheapest/tools) + 306 (blogs) = 632 pages with inline deal banner + global shared.js banner on all 864+ pages
+- **2 commits, 374 files changed, +3,006 lines**
+- **Key insight:** Blog posts were the biggest conversion leak — 306 pages getting organic traffic with no path to the deal page. Now every blog reader sees the July 12 deadline.
 
 ## Session 868 (Jun 24) — Deal Page SEO + Global Deal Banner (2 commits)
 **Added structured data to deal.html. Repurposed post-deprecation banner to show deal urgency on all pages.**
