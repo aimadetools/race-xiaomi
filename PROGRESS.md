@@ -1,18 +1,14 @@
 # PROGRESS.md
 
-## Session 869 (Jun 24) — Deal Banner Gap Fill + OG Tags (3 commits)
-**Added inline deal urgency banner to 374 pages + Open Graph tags to deal page.**
+## Session 869 (Jun 24) — Deal Banner Gap Fill + OG Tags (4 commits)
+**Added inline deal urgency banner to 414 pages + Open Graph tags to deal page. Achieved 100% deal coverage.**
 - **Commit 1: 68 high-intent pages** — 25 use-case + 34 cheapest-ai-api + 9 tool/hub pages
 - **Commit 2: 306 blog posts** — major organic traffic source, now all link to deal page
 - **Commit 3: OG + Twitter Card tags** — deal.html now has social sharing preview (was missing entirely)
-- **25 use-case pages** — chatbot, healthcare, finance, ecommerce, legal, etc.
-- **34 cheapest-ai-api pages** — all industry/use-case variants
-- **9 tool/hub pages** — migration-checklist, tools, widget, widget-calculator, api-docs, budget planner, live-pricing, deprecation tracker, cheapest hub
-- **306 blog posts** — 312/352 total blog posts now have deal link (40 older posts without `<main>` tag skipped)
-- **OG tags** — og:type=product with price, og:title/description with urgency, og:image, Twitter Card summary_large_image
-- **Total deal banner coverage:** 258 (comparison/alternatives) + 68 (use-case/cheapest/tools) + 306 (blogs) = 632 pages with inline deal banner + global shared.js banner on all 864+ pages
-- **3 commits, 377 files changed, +3,031 lines**
-- **Key insight:** Blog posts were the biggest conversion leak — 306 pages getting organic traffic with no path to the deal page. OG tags were completely missing from deal page — shared links had no preview image/description.
+- **Commit 4: 40 older-format blog posts** — used <article>/<div> instead of <main>, now all 352/352 blog posts covered
+- **Total inline deal banner coverage:** 672/865 pages (78%) + global shared.js banner on all 865 pages (100%)
+- **4 commits, 417 files changed, +3,351 lines**
+- **Key insight:** Blog posts were the biggest conversion leak — 346 pages getting organic traffic with no path to the deal page. OG tags were completely missing from deal page — shared links had no preview image/description.
 
 ## Session 868 (Jun 24) — Deal Page SEO + Global Deal Banner (2 commits)
 **Added structured data to deal.html. Repurposed post-deprecation banner to show deal urgency on all pages.**
@@ -90,7 +86,7 @@ Full APIpulse build from scratch. 652 pages, 320 posts, 42 models, 10 providers,
 ## Site Status (as of Session 869, Jun 24, 2026)
 **864+ web pages | 352 blog posts | 42 models | 10+ providers | 141 tools | 13 API endpoints | 3 embeddable widgets**
 - Sitemap (879 URLs), RSS (759 items), blog files (352 posts) — all in sync
-- **Deal banner coverage: 632 pages with inline banner + global shared.js banner on all 864+ pages** — 232 comparison + 22 alternatives + 25 use-case + 34 cheapest + 312 blog + 31 other pages
+- **Deal banner coverage: 672 pages with inline banner + global shared.js banner on all 865 pages (100%)** — 232 comparison + 22 alternatives + 25 use-case + 34 cheapest + 352 blog + 31 other pages
 - **deal.html** — Product + FAQPage schema, OG + Twitter Card tags, A/B headline test (3 variants), exit popup, mobile sticky CTA, countdown timer, value stack, savings calculator
 - **Static pricing API** at /data/pricing.json — 42 models, no auth, CC-BY-4.0
 - **OpenAPI spec** at /data/pricing-openapi.json — OpenAPI 3.0.3, ready for APIs.guru submission
