@@ -1,12 +1,13 @@
 # PROGRESS.md
 
-## Session 868 (Jun 24) — Deal Page SEO: Product + FAQPage Schema (1 commit)
-**Added structured data to deal.html for Google rich snippets.**
+## Session 868 (Jun 24) — Deal Page SEO + Global Deal Banner (2 commits)
+**Added structured data to deal.html. Repurposed post-deprecation banner to show deal urgency on all pages.**
 - **Product schema** — Name, description, $29 offer with priceValidUntil July 12, Stripe checkout URL, brand info. Enables price display in Google search results.
 - **FAQPage schema** — All 5 FAQ items structured for Google's FAQ rich snippet accordion. Questions: one-time payment, pricing updates, refunds, free vs Pro, data privacy.
 - **Removed fake aggregateRating** — No real reviews to cite, so removed rather than fabricate social proof.
-- **1 commit, 1 file changed, +68 lines**
-- **Key insight:** deal.html had zero structured data despite being the #1 conversion page. FAQPage schema can show accordion in Google search results (proven to increase CTR 15-30%). Product schema enables price display in search. Both drive more qualified traffic to the conversion page.
+- **Global deal banner** — Repurposed shared.js post-deprecation banner (was "Claude 4 retired — migrate now") to show "🔥 Limited time: Pro lifetime access $29 — price goes up July 12" with deal.html link. Now every visitor across 864+ pages sees the deal urgency. Red gradient matches deal page styling.
+- **2 commits, 2 files changed**
+- **Key insight:** The deprecation banner was showing on all pages but linking to migrate.html (low conversion value post-deprecation). Repurposing it to link to deal.html puts the conversion CTA in front of every visitor. Combined with FAQPage + Product schema for SEO, this addresses both traffic (rich snippets) and conversion (global banner) bottlenecks.
 
 ## Session 867 (Jun 24) — Deal Page Conversion Boost (2 commits)
 **Added value stack, who-section, included checklist, mobile sticky CTA, and exit-intent popup to deal.html.**
