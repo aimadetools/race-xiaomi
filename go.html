@@ -339,9 +339,42 @@
         }
 
         @media (max-width: 600px) {
-            .checkout-page { padding: 70px 16px 40px; }
+            .checkout-page { padding: 70px 16px 80px; }
             .proof-row { grid-template-columns: 1fr 1fr; }
             .price-box { flex-direction: column; text-align: center; }
+        }
+
+        /* Mobile sticky buy CTA bar (Session 879) */
+        .go-sticky-bar {
+            display: none;
+            position: fixed;
+            bottom: 0; left: 0; right: 0;
+            background: var(--bg-card);
+            border-top: 1px solid var(--border);
+            padding: 10px 16px;
+            z-index: 9998;
+            box-shadow: 0 -4px 20px rgba(0,0,0,0.3);
+            animation: stickySlideUp 0.3s ease;
+        }
+        .go-sticky-bar.visible { display: flex; align-items: center; gap: 12px; }
+        .go-sticky-bar .sticky-price {
+            font-size: 20px; font-weight: 900; color: var(--accent); white-space: nowrap;
+        }
+        .go-sticky-bar .sticky-price small {
+            font-size: 12px; color: var(--text-muted); text-decoration: line-through; font-weight: 400;
+        }
+        .go-sticky-bar .sticky-buy {
+            flex: 1;
+            display: block;
+            padding: 12px 16px;
+            background: linear-gradient(135deg, var(--accent), #8b5cf6);
+            color: white; border: none; border-radius: 10px;
+            font-size: 15px; font-weight: 800; text-align: center;
+            text-decoration: none; cursor: pointer;
+            box-shadow: 0 4px 16px rgba(99,102,241,0.4);
+        }
+        @media (min-width: 601px) {
+            .go-sticky-bar { display: none !important; }
         }
     </style>
 </head>
@@ -583,7 +616,7 @@
 
         <!-- Bottom CTA: BUY is primary -->
         <a id="buy-cta-bottom" href="https://buy.stripe.com/fZu7sL3Gw3GS0RQeoDeEo0a" target="_blank" rel="noopener" class="cta-btn" onclick="if(window.trackEvent)window.trackEvent('go_buy_clicked',{from:'bottom',price:window._abPrice||29});if(typeof gtag==='function')gtag('event','deal_buy_click',{location:'go_bottom'});">
-            🔥 Get lifetime access — <span id="cta-price-bottom">$29</span> lifetime
+            🔥 Get lifetime access — <span id="cta-price-bottom">$29</span> <span style="font-size:14px;opacity:0.7;text-decoration:line-through;">$49</span>
         </a>
         <button class="cta-btn" onclick="if(typeof startTrial==='function'){startTrial();window.location.href='calculator.html?from=go_bottom_trial';}else{window.location.href='calculator.html';}" style="cursor:pointer;background:transparent;border:2px solid var(--accent);color:var(--accent);box-shadow:none;margin-top:10px;padding:14px 32px;font-size:15px;">
             Or try free for 24 hours
@@ -627,6 +660,14 @@
         </div>
     </main>
 
+    <!-- Mobile sticky buy CTA bar (Session 879) -->
+    <div class="go-sticky-bar" id="go-sticky-bar">
+        <div class="sticky-price"><span id="sticky-price">$29</span> <small id="sticky-was">$49</small></div>
+        <a href="https://buy.stripe.com/fZu7sL3Gw3GS0RQeoDeEo0a" target="_blank" rel="noopener" class="sticky-buy" id="go-sticky-buy" onclick="if(window.trackEvent)window.trackEvent('go_buy_clicked',{from:'mobile_sticky',price:window._abPrice||29});if(typeof gtag==='function')gtag('event','deal_buy_click',{location:'go_mobile_sticky'});">
+            🔥 Get lifetime access
+        </a>
+    </div>
+
     <footer>
         <p>© 2026 APIpulse. <a href="index.html">Home</a> · <a href="about.html">About</a> · <a href="blog.html">Blog</a> · <a href="pricing.html">Pricing</a></p>
     </footer>
@@ -664,6 +705,11 @@
                     // Update all price displays to $49
                     var priceEls = document.querySelectorAll('#cta-price, #cta-price-bottom, #price-display');
                     priceEls.forEach(function(p) { p.textContent = '$49'; });
+                    // Update mobile sticky bar
+                    var stickyPrice = document.getElementById('sticky-price');
+                    if (stickyPrice) stickyPrice.textContent = '$49';
+                    var stickyWas = document.getElementById('sticky-was');
+                    if (stickyWas) stickyWas.textContent = '$79';
                     // Update "was" price and savings badge
                     var wasEl = document.getElementById('price-was');
                     if (wasEl) wasEl.textContent = '$79';
@@ -886,15 +932,11 @@
                 roiMultiple.textContent = roiVal + '×';
             }
 
-            // Update CTAs with personalized savings (always, not just after interaction)
-            ['main-cta', 'buy-cta', 'buy-cta-bottom'].forEach(function(id) {
+            // Update BUY CTAs with personalized savings (Session 879: don't touch trial CTA)
+            ['buy-cta', 'buy-cta-bottom'].forEach(function(id) {
                 var el = document.getElementById(id);
                 if (!el) return;
-                if (id === 'main-cta') {
-                    el.textContent = '⚡ Save $' + annualSaving.toLocaleString() + '/yr — Try Pro Free';
-                } else {
-                    el.innerHTML = 'Save $' + annualSaving.toLocaleString() + '/yr — Get Pro for $' + price;
-                }
+                el.innerHTML = '🔥 Save $' + annualSaving.toLocaleString() + '/yr — Get Pro for $' + price;
             });
 
             // Build table
@@ -1079,6 +1121,35 @@
         document.addEventListener('mouseout', function(e) { if (e.clientY <= 0) showExitPopup('mouseout'); });
         history.pushState(null, '', location.href);
         window.addEventListener('popstate', function() { showExitPopup('backbutton'); });
+    })();
+
+    // Mobile sticky buy CTA bar (Session 879)
+    (function() {
+        var bar = document.getElementById('go-sticky-bar');
+        var heroCta = document.getElementById('buy-cta');
+        if (!bar || !heroCta || !window.IntersectionObserver) return;
+
+        // Update price and Stripe link from A/B test
+        var price = window._abPrice || 29;
+        var stripeLink = window._abStripeLink || 'https://buy.stripe.com/fZu7sL3Gw3GS0RQeoDeEo0a';
+        var priceEl = document.getElementById('sticky-price');
+        var wasEl = document.getElementById('sticky-was');
+        var buyBtn = document.getElementById('go-sticky-buy');
+        if (priceEl) priceEl.textContent = '$' + price;
+        if (wasEl) wasEl.textContent = '$' + (price === 19 ? 39 : 49);
+        if (buyBtn) buyBtn.href = stripeLink;
+
+        // Show bar when hero CTA scrolls out of view
+        var shown = false;
+        new IntersectionObserver(function(entries) {
+            if (!entries[0].isIntersecting && !shown) {
+                shown = true;
+                bar.classList.add('visible');
+            } else if (entries[0].isIntersecting) {
+                bar.classList.remove('visible');
+                shown = false;
+            }
+        }, {threshold: 0.1}).observe(heroCta);
     })();
     </script>
 </body>
