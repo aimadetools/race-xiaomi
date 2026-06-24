@@ -1,5 +1,15 @@
 # PROGRESS.md
 
+## Session 873 (Jun 24) — Deal Page Calculator Expansion + Mobile Fix (2 commits)
+**Fixed GPT-5 pricing bug (6x inflated), expanded calculator from 6 to 15 models, fixed mobile responsive grids.**
+- **Fixed GPT-5 price from $8.00/$24.00 to correct $1.25/$10.00** — Was 6x inflated compared to pricing-data.js. Savings estimates were wildly overstated. Could damage trust if visitors verified the math.
+- **Fixed Claude Opus 4.8 from $15/$75 to $5/$25** — Was using deprecated Claude 4 Opus pricing. Current Opus 4.8 is $5/$25.
+- **Expanded calculator from 6 to 15 models** — Added GPT-5.5, GPT-5 mini, DeepSeek V4 Pro/Flash, Gemini 3.1 Pro, Gemini 3 Flash, Claude Haiku 4.5, Mistral Large 3, Grok 4.3. Now covers all popular models across 7 providers.
+- **Added edge case handling** — DeepSeek V4 Flash users (already cheapest) see "You're already on the cheapest model" + Pro features pitch instead of $0 savings.
+- **Fixed mobile responsive grids** — "How it works" 3-column and "See Pro in action" 2-column grids now stack on mobile (<500px). Were broken on small screens.
+- **2 commits, 1 file changed**
+- **Key insight:** The deal page calculator had hardcoded prices that were never updated when pricing-data.js was corrected (Session 845). GPT-5 was $1.25/$10 but the deal page showed $8/$24. This inflated savings by 6x and could have destroyed trust for anyone who cross-checked.
+
 ## Session 872 (Jun 24) — Deal Page Conversion Boost + Homepage Fix (3 commits)
 **Added How it works, guarantee, activity counter, sample reports to deal page. Fixed homepage calculator conversion leak.**
 - **Added "How it works" 3-step section** — Enter usage → See savings → Switch in minutes. Reduces cognitive load for visitors who don't understand the product flow. Matches go.html's proven pattern.
@@ -19,76 +29,8 @@
 - **3 commits, 2 files changed**
 - **Key insight:** The shared.js A/B pricing test was silently corrupting the deal page's pricing — half of all visitors saw $19 instead of $29, breaking the countdown, value stack, and headline messaging. This was invisible because the deal page has its own A/B headline test that masked the issue.
 
-## Session 870 (Jun 24) — Deal Page UX Fixes (5 commits)
-**Fixed critical mobile UX bugs on deal page that were suppressing conversions.**
-- **Fix 1: Mobile exit popup velocity detection** — The exit popup fired every time users scrolled to the top of the page during normal scrolling, not just on rapid back-gestures. The old check (`now - lastScroll < 500`) was broken because `lastScroll` updated every scroll event (~16ms), making the time delta always < 500ms. Replaced with actual scroll velocity detection (>5000 px/sec upward).
-- **Fix 2: Double exit popup on deal.html** — shared.js global exit popup was NOT excluding deal.html, causing visitors to see TWO exit popups (deal-specific + generic email capture). They used different dismiss keys (`deal_exit_shown` vs `apipulse_popup_dismissed`) so both fired independently. Added deal.html to shared.js skip list + made deal popup set shared dismiss key.
-- **Fix 3: Double exit popup on go.html** — Same issue. go.html has its own exit popup + shared.js generic popup also fired. Added to skip list.
-- **Fix 4: Triple sticky bars on deal.html (mobile)** — deal.html has its own mobile sticky CTA, but shared.js injected TWO more sticky bars (time-based after 45s + scroll-based at 30%). On mobile, users saw up to THREE overlapping sticky elements. Added 'deal' to skip lists for both shared.js sticky bars.
-- **Fix 5: pricing.html double popup** — Added to shared.js exit popup skip list. Refactored skip list into array loop.
-- **5 commits, 2 files changed**
-- **Key insight:** The shared.js global exit popup and sticky bars were conflicting with page-specific versions on the three most important conversion pages (deal.html, go.html, pricing.html). This is a systemic issue — any page with its own exit popup or sticky CTA gets double/triple UI from shared.js.
-
-## Session 869 (Jun 24) — Deal Banner Full Coverage + OG Tags (7 commits)
-**Added inline deal urgency banner to 442 pages + Open Graph tags to deal page. Achieved 100% deal coverage.**
-- **Commit 1: 68 high-intent pages** — 25 use-case + 34 cheapest-ai-api + 9 tool/hub pages
-- **Commit 2: 306 blog posts** — major organic traffic source, now all link to deal page
-- **Commit 3: OG + Twitter Card tags** — deal.html now has social sharing preview (was missing entirely)
-- **Commit 4: 40 older-format blog posts** — used <article>/<div> instead of <main>, now all 352/352 blog posts covered
-- **Commit 5: 6 public pages** — about, api-cost-score, api-cost-card, api-cost-report, badges, 404
-- **Commit 6: 14 tool/provider pages** — budget planners, ai-stack-builder, provider pages, blog index, changelog, chrome-extension
-- **Total inline deal banner coverage:** 698/865 pages (81%) + global shared.js banner on all 865 pages (100%)
-- **7 commits, 442 files changed, +3,463 lines**
-- **Key insight:** Blog posts were the biggest conversion leak — 346 pages getting organic traffic with no path to the deal page. OG tags were completely missing from deal page — shared links had no preview image/description.
-
-## Session 868 (Jun 24) — Deal Page SEO + Global Deal Banner (2 commits)
-**Added structured data to deal.html. Repurposed post-deprecation banner to show deal urgency on all pages.**
-- **Product schema** — Name, description, $29 offer with priceValidUntil July 12, Stripe checkout URL, brand info. Enables price display in Google search results.
-- **FAQPage schema** — All 5 FAQ items structured for Google's FAQ rich snippet accordion. Questions: one-time payment, pricing updates, refunds, free vs Pro, data privacy.
-- **Removed fake aggregateRating** — No real reviews to cite, so removed rather than fabricate social proof.
-- **Global deal banner** — Repurposed shared.js post-deprecation banner (was "Claude 4 retired — migrate now") to show "🔥 Limited time: Pro lifetime access $29 — price goes up July 12" with deal.html link. Now every visitor across 864+ pages sees the deal urgency. Red gradient matches deal page styling.
-- **2 commits, 2 files changed**
-- **Key insight:** The deprecation banner was showing on all pages but linking to migrate.html (low conversion value post-deprecation). Repurposing it to link to deal.html puts the conversion CTA in front of every visitor. Combined with FAQPage + Product schema for SEO, this addresses both traffic (rich snippets) and conversion (global banner) bottlenecks.
-
-## Session 867 (Jun 24) — Deal Page Conversion Boost (2 commits)
-**Added value stack, who-section, included checklist, mobile sticky CTA, and exit-intent popup to deal.html.**
-- **Value stack section** — Shows total value ($624/yr) vs $29 price (95% off). Creates anchoring effect.
-- **"Who is this for?" section** — Targets 4 personas: developers, engineering leads, startup founders, data teams.
-- **"What's included" checklist** — 10 Pro features with checkmarks. Clear value proposition.
-- **Mobile sticky CTA bar** — Appears after scrolling past hero CTA. IntersectionObserver-based. Mobile only.
-- **Exit-intent popup** — Fires on mouse-leave (desktop) or rapid scroll-to-top (mobile). Once per session. Two paths: buy Pro ($29) or try free API Cost Audit first.
-- **2 commits, 1 file changed, +404 lines**
-- **Key insight:** The deal page is the #1 conversion bottleneck. These changes add proven SaaS conversion techniques: value anchoring ($624 value for $29), persona targeting, feature checklist, mobile sticky CTA, and exit-intent capture. The exit popup's secondary CTA (free audit) captures visitors not ready to buy.
-
-## Session 866 (Jun 24) — Deal Page Headline A/B Test (1 commit)
-**Implemented 3-variant headline A/B test on deal.html to optimize conversion.**
-- **3 headline variants tested:**
-  - A (control): "Stop overpaying for AI APIs. Save $600–$2,400/year." — pain-point + savings
-  - B: "Save $600–$2,400/year on AI APIs. Compare 42 models. Switch in minutes." — savings-first
-  - C: "Limited time: Pro lifetime access $29" — urgency + price-first
-- **GA4 tracking:** `deal_headline_assigned` (page load), `deal_buy_click` (hero + final CTA with variant), `deal_savings_calculated` (calculator with variant)
-- **Persistent assignment** via localStorage (`deal_headline_v2` key) — same visitor always sees same variant
-- **1 commit, 1 file changed, +46 lines**
-- **Key insight:** This is the #1 conversion bottleneck — 1,200 visitors/week, $0 revenue. Testing whether price-first urgency beats savings framing on the deal page.
-
-## Session 865 (Jun 24) — Deal Page Distribution + Exit Popup Fix (3 commits)
-**Added deal.html urgency banner to 258 pages (232 comparison + 26 alternatives). Updated exit popups to link to deal page.**
-- **Added urgency banner to ALL 232 comparison pages** — Every comparison page visitor now sees July 12 deadline urgency
-- **Added urgency banner to 26 alternatives pages** — High-intent traffic looking for cheaper model options
-- **Updated exit popup CTAs** — Both deprecation and pro exit popups now link to deal.html instead of go.html (deal page has countdown timer + July 12 deadline — better for exit intent)
-- **Banner style** — Red urgency gradient matching homepage "What's New" banner, "🔥 Limited time: Pro lifetime access $29 — price goes up July 12 →"
-- **3 commits, 239 files changed, +2,066 lines**
-- **Key insight:** Comparison pages are highest-intent traffic (users actively comparing models) — deal page urgency banner should convert well here. Total deal banner coverage: 258 pages + homepage + go.html + pricing + calculator + audit
-
-## Session 864 (Jun 24) — Conversion Optimization: Deal Page + Urgency (6 commits)
-**Built focused conversion landing page with countdown timer. Fixed stale deprecation popup. Added urgency messaging across site.**
-- **Created deal.html** — Focused conversion page with countdown to July 12, savings calculator, testimonials, features grid, FAQ, dual CTAs (buy + trial)
-- **Added countdown timer to go.html** — Urgency banner showing days/hours/mins until price increase
-- **Fixed stale deprecation popup** — Replaced outdated "Claude 4 is retired" messaging with general limited-time pricing urgency popup
-- **Added deal links across key pages** — Homepage banner, go.html nav, pricing.html nav, calculator.html nav, api-cost-audit.html upsell
-- **Updated all exit popup messaging** — Added specific "July 12" deadline instead of vague "soon"
-- **6 commits, 6 files changed**
-- **Key insight:** Shifted from content/SEO maintenance (last 3 sessions) to pure conversion optimization — the bottleneck is $0 revenue with 1,200 visitors/week
+## Summary: Sessions 864-870 (Jun 24) — Deal Page Build + UX Fixes
+7 sessions. Created deal.html (countdown, calculator, testimonials, FAQ, dual CTAs). Added headline A/B test (3 variants). Added urgency banners to 258 comparison + 26 alternatives pages. Added Product + FAQPage schema, OG tags. Repurposed global deprecation banner to deal urgency. Added value stack, who-section, included checklist, mobile sticky CTA, exit-intent popup. Fixed 5 critical UX bugs: mobile exit popup velocity, double exit popups on deal/go/pricing, triple sticky bars on deal mobile. Free vs Pro comparison table. Exempted deal.html from shared.js A/B pricing test. 28 commits, 450+ files.
 
 ## Summary: Sessions 859-863 (Jun 24) — Content Completion + SEO Fixes
 5 sessions. GPT-5 Cost Calculator + FAQPage schema on changelog (860). 2 missing cheapest pages completing all 25 pairs (859). Cross-linking 25 use-case pages to cheapest counterparts (861). Fixed 6 broken comparison links in GPT-5 calculator (862). Sitemap 859→879 URLs, RSS 746→759 items, fixed 3 duplicate pairs (863). 6 commits, 42 files.
@@ -114,11 +56,11 @@
 ## Summary: Sessions 1-598 (Apr 5 - Jun 12)
 Full APIpulse build from scratch. 652 pages, 320 posts, 42 models, 10 providers, 84 tools. Domain, Stripe, Pro, GA4, newsletter, Chrome extension, 167 comparisons, FAQPage schema, streaming toggle, A/B pricing, Model Selector quiz.
 
-## Site Status (as of Session 870, Jun 24, 2026)
+## Site Status (as of Session 873, Jun 24, 2026)
 **864+ web pages | 352 blog posts | 42 models | 10+ providers | 141 tools | 13 API endpoints | 3 embeddable widgets**
 - Sitemap (879 URLs), RSS (759 items), blog files (352 posts) — all in sync
 - **Deal banner coverage: 698 pages with inline banner + global shared.js banner on all 865 pages (100%)** — 232 comparison + 22 alternatives + 25 use-case + 34 cheapest + 352 blog + 45 tool/other pages
-- **deal.html** — Product + FAQPage schema, OG + Twitter Card tags, A/B headline test (3 variants), exit popup, mobile sticky CTA, countdown timer, value stack, savings calculator
+- **deal.html** — Product + FAQPage schema, OG + Twitter Card tags, A/B headline test (3 variants), exit popup, mobile sticky CTA, countdown timer, value stack, savings calculator (15 models, correct pricing)
 - **Static pricing API** at /data/pricing.json — 42 models, no auth, CC-BY-4.0
 - **OpenAPI spec** at /data/pricing-openapi.json — OpenAPI 3.0.3, ready for APIs.guru submission
 - **232 comparison pages** covering all major model pairs (all indexed in compare.html)

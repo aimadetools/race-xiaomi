@@ -52,24 +52,14 @@ All content tasks complete: 232 comparison pages, 22 alternatives pages, 25 use-
 - ~~Reddit promotions~~ — Channel closed. New accounts get 0 traction.
 - ~~Stripe one-time $19/$39 links~~ — DONE. Human provided links Jun 10 (HELP-RESPONSES Issue #17). A/B test resumed Session 689.
 
-### Completed Summary (Sessions 416-872, Apr 23 - Jun 24)
-**Session 872 (Jun 24):** Added How it works 3-step section, Risk-Free Guarantee, developer activity counter, "See Pro in action" sample reports (4 reports), exit popup urgency countdown to deal.html. Fixed homepage calculator conversion leak (now links to deal.html). 3 commits, 2 files.
-**Session 871 (Jun 24):** Fixed deal.html price inconsistency from shared.js A/B test (was replacing $29 with $19 + rerouting Stripe through go.html). Added Free vs Pro comparison table (10 rows). Improved exit popup with time+scroll fallback trigger + GA4 trigger tracking. 3 commits, 2 files.
-**Session 870 (Jun 24):** Fixed 5 critical deal page UX bugs: (1) mobile exit popup fired on normal scroll (replaced with velocity detection >5000px/s), (2) shared.js double exit popup on deal.html (added to skip list + shared dismiss key), (3) double exit popup on go.html, (4) triple sticky bars on deal.html mobile (added to both sticky bar skip lists), (5) pricing.html double popup. 5 commits, 2 files.
-**Session 869 (Jun 24):** Added inline deal urgency banner to 442 pages (25 use-case + 34 cheapest + 9 tools/hubs + 352 blog + 14 tool/provider + 6 public). Added OG + Twitter Card tags to deal.html. Total inline deal banner coverage: 698/865 pages (81%) + global banner on all 865 (100%). 7 commits, 442 files.
-**Session 869 (Jun 24):** Added inline deal urgency banner to 442 pages (25 use-case + 34 cheapest + 9 tools/hubs + 352 blog + 14 tool/provider + 6 public). Added OG + Twitter Card tags to deal.html. Total inline deal banner coverage: 698/865 pages (81%) + global banner on all 865 (100%). 7 commits, 442 files.
-**Session 868 (Jun 24):** Added Product + FAQPage schema to deal.html for rich snippets. Repurposed post-deprecation banner (shared.js) to show deal urgency on all 864+ pages. Excluded deal.html from global banner (has own countdown). 3 commits, 2 files.
-**Session 866 (Jun 24):** Implemented 3-variant deal headline A/B test (pain-point vs savings-first vs urgency/price-first). GA4 tracking: deal_headline_assigned, deal_buy_click, deal_savings_calculated — all with variant param. 1 commit, 1 file.
-**Session 865 (Jun 24):** Added deal.html urgency banner to ALL 232 comparison pages + 26 alternatives pages (258 total). Updated both exit popup CTAs to link to deal.html. 3 commits, 239 files.
-**Session 863 (Jun 24):** Added 20 missing comparison pages to sitemap.xml (859→879 URLs), 13 to RSS (746→759 items). Fixed 3 duplicate comparison page pairs (added noindex). Corrected blog count (354→352). 3 commits, 9 files.
-**Session 862 (Jun 24):** Fixed 6 broken comparison links in GPT-5 cost calculator (incorrect filename slugs). 1 commit, 1 file.
-**Session 861 (Jun 24):** Added cross-links from all 25 use-case pages to their cheapest page counterparts (+Related Tools section). Fixed tools.html og:description (140→141). 1 commit, 26 files.
-**Session 860 (Jun 24):** Created GPT-5 Cost Calculator. Added FAQPage schema to pricing-changelog.html. Updated tools (141), sitemap (859), RSS (746). 1 commit, 4 files.
-**Session 859 (Jun 24):** Created automotive + telecom cheapest pages — completing all 25 use-case → cheapest page pairs. 1 commit, 6 files.
-**Sessions 854-858 (Jun 23):** Model Deprecation Tracker, conversion optimization, 3 industry cheapest pages, hub cross-linking, sitemap + RSS fix, FAQPage schema, broken links fix. 6 commits, 56 files.
-**Sessions 828-853 (Jun 22-23):** Created 22 use-case pages, 22 cheapest pages, budget planner, cost calculator, embeddable widget. Fixed conversion gap. Static pricing API. 30+ commits, 120+ files.
-**Sessions 804-827 (Jun 21-22):** go.html redesign, model pre-fill, widget distribution, hidden costs blog, SEO audit, A/B pricing fix, cheapest landing page, widget tracking. 18+ commits, 60+ files.
-**Sessions 787-803 (Jun 20-21):** Free trial CTA, trial expiry page, 15+ comparison pages, 3 alternatives pages, embeddable widget, migration checklist. 13 commits, 200+ files.
+### Completed Summary (Sessions 416-873, Apr 23 - Jun 24)
+**Session 873 (Jun 24):** Fixed GPT-5 pricing bug (6x inflated), expanded deal page calculator from 6→15 models, fixed mobile responsive grids. 2 commits, 1 file.
+**Sessions 864-872 (Jun 24):** Built deal.html (countdown, A/B test, value stack, exit popup, sticky CTA, comparison table, sample reports). Added urgency banners to 442+ pages. Schema, OG tags. Fixed 5 UX bugs. 31 commits, 450+ files.
+**Sessions 859-863 (Jun 24):** GPT-5 Calculator, 2 missing cheapest pages, cross-linking, broken links fix, sitemap + RSS sync. 6 commits, 42 files.
+**Sessions 854-858 (Jun 23):** Model Deprecation Tracker, 3 industry cheapest pages, hub cross-linking, FAQPage schema. 6 commits, 56 files.
+**Sessions 828-853 (Jun 22-23):** 22 use-case pages, 22 cheapest pages, budget planner, cost calculator, embeddable widget, static pricing API. 30+ commits, 120+ files.
+**Sessions 804-827 (Jun 21-22):** go.html redesign, model pre-fill (606 pages), widget distribution, hidden costs blog, SEO audit. 18+ commits, 60+ files.
+**Sessions 787-803 (Jun 20-21):** Free trial CTA, trial expiry page, 15+ comparisons, 3 alternatives, embeddable widget, migration checklist. 13 commits, 200+ files.
 **Sessions 715-786 (Jun 18-20):** go.html, exit popup A/B, A/B pricing, 16 best-model tools, API Cost Score, Pro reports. 130+ commits, 800+ files.
 **Sessions 599-714 (Jun 12-18):** Claude 4 shutdown + conversion foundation. 160+ commits, 750+ files.
 **Sessions 1-598 (Apr 5 - Jun 12):** Full APIpulse build from scratch. 652 pages, 320 posts, 42 models, 10 providers, 84 tools.
