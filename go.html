@@ -352,6 +352,7 @@
             <a href="index.html" class="logo">API<span>pulse</span></a>
             <div class="nav-links">
                 <a href="index.html">Home</a>
+                <a href="deal.html" style="color:#dc2626;font-weight:700;">🔥 Deal</a>
                 <a href="pricing.html" class="nav-cta">Get Pro</a>
                 <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
             </div>
@@ -359,6 +360,31 @@
     </nav>
 
     <main id="main" class="checkout-page">
+
+        <!-- Urgency countdown -->
+        <div id="go-countdown" style="background:linear-gradient(135deg,#dc2626,#b91c1c);color:white;padding:12px 16px;border-radius:10px;text-align:center;margin-bottom:20px;display:none;">
+            <div style="font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:1px;opacity:0.9;">⏰ Early adopter pricing ends in</div>
+            <div style="font-size:clamp(22px,4vw,32px);font-weight:900;font-family:monospace;letter-spacing:1px;" id="go-timer">--D --H --M --S</div>
+        </div>
+        <script>
+        (function(){
+            var target = new Date('2026-07-12T23:59:59Z').getTime();
+            var now = new Date().getTime();
+            if (target > now) {
+                document.getElementById('go-countdown').style.display = 'block';
+                function tick() {
+                    var d = target - new Date().getTime();
+                    if (d <= 0) { document.getElementById('go-timer').textContent = 'EXPIRED'; return; }
+                    var dd = Math.floor(d / 86400000);
+                    var hh = Math.floor((d % 86400000) / 3600000);
+                    var mm = Math.floor((d % 3600000) / 60000);
+                    var ss = Math.floor((d % 60000) / 1000);
+                    document.getElementById('go-timer').textContent = dd + 'D ' + hh.toString().padStart(2,'0') + 'H ' + mm.toString().padStart(2,'0') + 'M ' + ss.toString().padStart(2,'0') + 'S';
+                }
+                tick(); setInterval(tick, 1000);
+            }
+        })();
+        </script>
 
         <!-- HERO: Interactive Savings Calculator -->
         <div class="hero-calc">

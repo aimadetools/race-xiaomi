@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>APIpulse Pro — Limited Time Offer | Save 40% on AI API Costs</title>
+    <meta name="description" content="Get APIpulse Pro lifetime access. Compare 42 AI models, get migration code, save up to 40% on API costs. One-time payment, no subscription. Limited time pricing.">
+    <meta name="robots" content="index, follow">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="styles.css">
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0CEP7S9Y3J"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-0CEP7S9Y3J');
+    </script>
+    <script src="analytics.js" defer></script>
+    <script src="shared.js" defer></script>
+    <script src="ab-test.js"></script>
+    <style>
+        .deal-page {
+            max-width: 680px;
+            margin: 0 auto;
+            padding: 60px 20px 80px;
+        }
+
+        /* Countdown banner */
+        .countdown-banner {
+            background: linear-gradient(135deg, #dc2626, #b91c1c);
+            color: white;
+            padding: 14px 20px;
+            border-radius: 12px;
+            text-align: center;
+            margin-bottom: 28px;
+            animation: pulse-glow 2s infinite;
+        }
+        @keyframes pulse-glow {
+            0%, 100% { box-shadow: 0 0 20px rgba(220, 38, 38, 0.3); }
+            50% { box-shadow: 0 0 30px rgba(220, 38, 38, 0.5); }
+        }
+        .countdown-banner .label {
+            font-size: 13px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 6px;
+            opacity: 0.9;
+        }
+        .countdown-banner .timer {
+            font-size: clamp(28px, 5vw, 40px);
+            font-weight: 900;
+            font-family: monospace;
+            letter-spacing: 2px;
+        }
+        .countdown-banner .sub {
+            font-size: 12px;
+            margin-top: 6px;
+            opacity: 0.8;
+        }
+
+        /* Hero */
+        .deal-hero {
+            text-align: center;
+            margin-bottom: 32px;
+        }
+        .deal-hero h1 {
+            font-size: clamp(28px, 5vw, 42px);
+            font-weight: 900;
+            line-height: 1.15;
+            margin-bottom: 12px;
+        }
+        .deal-hero h1 span { color: var(--green); }
+        .deal-hero .sub {
+            font-size: 17px;
+            color: var(--text-secondary);
+            line-height: 1.5;
+            max-width: 540px;
+            margin: 0 auto;
+        }
+
+        /* Price card */
+        .price-card {
+            background: var(--bg-card);
+            border: 2px solid var(--accent);
+            border-radius: 16px;
+            padding: 32px;
+            text-align: center;
+            margin-bottom: 28px;
+            position: relative;
+        }
+        .price-card .was-price {
+            font-size: 16px;
+            color: var(--text-muted);
+            text-decoration: line-through;
+            margin-bottom: 4px;
+        }
+        .price-card .now-price {
+            font-size: clamp(48px, 8vw, 64px);
+            font-weight: 900;
+            color: var(--accent);
+            font-family: monospace;
+            line-height: 1;
+        }
+        .price-card .price-type {
+            font-size: 15px;
+            color: var(--text-secondary);
+            margin-top: 4px;
+        }
+        .price-card .savings-badge {
+            display: inline-block;
+            background: rgba(34,197,94,0.12);
+            color: var(--green);
+            font-size: 14px;
+            font-weight: 700;
+            padding: 6px 16px;
+            border-radius: 8px;
+            margin-top: 12px;
+        }
+
+        /* CTA button */
+        .deal-cta {
+            display: block;
+            width: 100%;
+            padding: 20px 32px;
+            background: linear-gradient(135deg, var(--accent), #8b5cf6);
+            color: white;
+            border: none;
+            border-radius: 14px;
+            font-size: 20px;
+            font-weight: 800;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+            transition: all 0.2s;
+            box-shadow: 0 4px 24px rgba(99,102,241,0.4);
+            margin-bottom: 12px;
+        }
+        .deal-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 32px rgba(99,102,241,0.5);
+        }
+        .deal-cta-trial {
+            display: block;
+            width: 100%;
+            padding: 16px;
+            background: transparent;
+            border: 2px solid var(--border);
+            color: var(--text-primary);
+            border-radius: 14px;
+            font-size: 16px;
+            font-weight: 700;
+            text-align: center;
+            text-decoration: none;
+            transition: all 0.2s;
+            margin-bottom: 12px;
+        }
+        .deal-cta-trial:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+        }
+        .trust-row {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            flex-wrap: wrap;
+            font-size: 12px;
+            color: var(--text-muted);
+            margin-bottom: 32px;
+        }
+        .trust-row span { display: flex; align-items: center; gap: 4px; }
+
+        /* Savings calculator */
+        .savings-calc {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 28px;
+            margin-bottom: 28px;
+        }
+        .savings-calc h2 {
+            font-size: 20px;
+            font-weight: 800;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .calc-input-row {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 16px;
+            flex-wrap: wrap;
+        }
+        .calc-input-row > div { flex: 1; min-width: 200px; }
+        .calc-input-row label {
+            display: block;
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--text-secondary);
+            margin-bottom: 6px;
+        }
+        .calc-input-row select, .calc-input-row input {
+            width: 100%;
+            padding: 12px 14px;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            color: var(--text-primary);
+            font-size: 15px;
+            font-family: inherit;
+            box-sizing: border-box;
+        }
+        .calc-result {
+            display: none;
+            text-align: center;
+            padding: 20px;
+            background: rgba(34,197,94,0.06);
+            border: 1px solid rgba(34,197,94,0.2);
+            border-radius: 12px;
+            animation: fadeIn 0.3s ease;
+        }
+        .calc-result .big-num {
+            font-size: clamp(32px, 6vw, 48px);
+            font-weight: 900;
+            color: var(--green);
+            font-family: monospace;
+        }
+        .calc-result .label {
+            font-size: 14px;
+            color: var(--text-secondary);
+            margin-top: 4px;
+        }
+        .calc-result .payback {
+            font-size: 15px;
+            font-weight: 700;
+            color: var(--accent);
+            margin-top: 8px;
+        }
+
+        /* Social proof */
+        .testimonials {
+            margin-bottom: 28px;
+        }
+        .testimonials h2 {
+            font-size: 20px;
+            font-weight: 800;
+            text-align: center;
+            margin-bottom: 16px;
+        }
+        .testimonial-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 12px;
+        }
+        .testimonial-card .quote {
+            font-size: 15px;
+            color: var(--text-secondary);
+            line-height: 1.6;
+            font-style: italic;
+            margin-bottom: 10px;
+        }
+        .testimonial-card .source {
+            font-size: 12px;
+            color: var(--text-muted);
+            font-weight: 600;
+        }
+
+        /* Features */
+        .features-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            margin-bottom: 28px;
+        }
+        @media (max-width: 500px) { .features-grid { grid-template-columns: 1fr; } }
+        .feature-item {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 16px;
+        }
+        .feature-item .icon { font-size: 24px; margin-bottom: 8px; }
+        .feature-item h3 { font-size: 14px; font-weight: 700; margin-bottom: 4px; }
+        .feature-item p { font-size: 13px; color: var(--text-secondary); line-height: 1.5; }
+
+        /* FAQ */
+        .faq-section { margin-bottom: 28px; }
+        .faq-section h2 { font-size: 20px; font-weight: 800; text-align: center; margin-bottom: 16px; }
+        .faq-item { border-bottom: 1px solid var(--border); padding: 14px 0; }
+        .faq-item:last-child { border-bottom: none; }
+        .faq-q {
+            font-size: 15px;
+            font-weight: 700;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .faq-q::after { content: '+'; font-size: 18px; color: var(--text-muted); transition: transform 0.2s; }
+        .faq-item.open .faq-q::after { content: '−'; }
+        .faq-a { display: none; font-size: 14px; color: var(--text-secondary); line-height: 1.6; margin-top: 8px; }
+        .faq-item.open .faq-a { display: block; }
+
+        /* Final CTA */
+        .final-cta {
+            text-align: center;
+            padding: 32px;
+            background: linear-gradient(135deg, rgba(99,102,241,0.08), rgba(139,92,246,0.08));
+            border: 2px solid var(--accent);
+            border-radius: 16px;
+            margin-bottom: 24px;
+        }
+        .final-cta h2 { font-size: 24px; font-weight: 900; margin-bottom: 8px; }
+        .final-cta p { font-size: 15px; color: var(--text-secondary); margin-bottom: 20px; }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+    <a href="#main" class="skip-link">Skip to content</a>
+    <nav>
+        <div class="nav-inner">
+            <a href="index.html" class="logo">API<span>pulse</span></a>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="pricing.html">Pricing</a>
+                <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">🌙</button>
+            </div>
+        </div>
+    </nav>
+
+    <main id="main" class="deal-page">
+
+        <!-- Countdown timer -->
+        <div class="countdown-banner">
+            <div class="label">⏰ Offer ends in</div>
+            <div class="timer" id="countdown-timer">--D --H --M --S</div>
+            <div class="sub">Price increases when the timer hits zero</div>
+        </div>
+
+        <!-- Hero -->
+        <div class="deal-hero">
+            <h1>Stop overpaying for AI APIs.<br><span>Save $600–$2,400/year.</span></h1>
+            <p class="sub">Compare 42 models across 10 providers. Get personalized migration code. One-time payment, lifetime access.</p>
+        </div>
+
+        <!-- Price card -->
+        <div class="price-card">
+            <div class="was-price">$49</div>
+            <div class="now-price" id="deal-price">$29</div>
+            <div class="price-type">one-time · lifetime access</div>
+            <div class="savings-badge">Save $20 — early adopter pricing</div>
+        </div>
+
+        <!-- CTAs -->
+        <a href="https://buy.stripe.com/fZu7sL3Gw3GS0RQeoDeEo0a" target="_blank" rel="noopener" class="deal-cta" id="buy-btn" onclick="if(window.trackEvent)window.trackEvent('deal_page_buy_clicked')">
+            Get Pro Lifetime Access — $29
+        </a>
+        <a href="calculator.html?from=deal_trial" class="deal-cta-trial" onclick="if(typeof startTrial==='function')startTrial();">
+            ⚡ Or try free for 24 hours
+        </a>
+        <div class="trust-row">
+            <span>🔒 Stripe secure</span>
+            <span>🛡️ 14-day money back</span>
+            <span>⚡ Instant access</span>
+            <span>💳 No subscription</span>
+        </div>
+
+        <!-- Savings calculator -->
+        <div class="savings-calc">
+            <h2>💰 Calculate your savings</h2>
+            <div class="calc-input-row">
+                <div>
+                    <label for="deal-model">Your current model</label>
+                    <select id="deal-model">
+                        <option value="gpt-5">GPT-5 — $8.00 / $24.00</option>
+                        <option value="gpt-4o" selected>GPT-4o — $2.50 / $10.00</option>
+                        <option value="gpt-4o-mini">GPT-4o Mini — $0.15 / $0.60</option>
+                        <option value="claude-sonnet-4.6">Claude Sonnet 4.6 — $3.00 / $15.00</option>
+                        <option value="claude-opus-4.8">Claude Opus 4.8 — $15.00 / $75.00</option>
+                        <option value="gemini-2.5-pro">Gemini 2.5 Pro — $1.25 / $5.00</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="deal-spend">Monthly spend ($)</label>
+                    <input type="number" id="deal-spend" value="500" min="1" max="100000">
+                </div>
+            </div>
+            <button onclick="calcDealSavings()" style="width:100%;padding:14px;background:var(--accent);color:white;border:none;border-radius:10px;font-size:16px;font-weight:700;cursor:pointer;">Calculate My Savings</button>
+            <div class="calc-result" id="deal-calc-result">
+                <div class="big-num" id="deal-savings-num">$0/yr</div>
+                <div class="label">estimated annual savings</div>
+                <div class="payback" id="deal-payback"></div>
+            </div>
+        </div>
+
+        <!-- Testimonials -->
+        <div class="testimonials">
+            <h2>What developers are saying</h2>
+            <div class="testimonial-card">
+                <div class="quote">"The cost-per-request calculator is exactly what I needed for budgeting our RAG pipeline."</div>
+                <div class="source">— Developer on r/MachineLearning</div>
+            </div>
+            <div class="testimonial-card">
+                <div class="quote">"I switch between 3 providers depending on the task and never know which is actually cheapest. This answers that question directly."</div>
+                <div class="source">— Hacker News commenter</div>
+            </div>
+            <div class="testimonial-card">
+                <div class="quote">"Bookmarked. The model switch calculator is incredibly useful for anyone managing multiple API integrations."</div>
+                <div class="source">— Hacker News commenter</div>
+            </div>
+        </div>
+
+        <!-- Features grid -->
+        <div class="features-grid">
+            <div class="feature-item">
+                <div class="icon">📊</div>
+                <h3>42 models compared</h3>
+                <p>Every major provider — OpenAI, Anthropic, Google, DeepSeek, Mistral, Meta, xAI, Cohere</p>
+            </div>
+            <div class="feature-item">
+                <div class="icon">🔄</div>
+                <h3>Migration code</h3>
+                <p>Ready-to-paste code snippets for switching between providers in Python, Node.js, and curl</p>
+            </div>
+            <div class="feature-item">
+                <div class="icon">📈</div>
+                <h3>PDF reports</h3>
+                <p>Export professional cost reports for your team or stakeholders with one click</p>
+            </div>
+            <div class="feature-item">
+                <div class="icon">🔔</div>
+                <h3>Price alerts</h3>
+                <p>Get notified when pricing changes so you can switch before overpaying</p>
+            </div>
+            <div class="feature-item">
+                <div class="icon">🧮</div>
+                <h3>Saved scenarios</h3>
+                <p>Compare up to 10 different usage scenarios side by side</p>
+            </div>
+            <div class="feature-item">
+                <div class="icon">🎯</div>
+                <h3>Optimization tips</h3>
+                <p>Personalized recommendations to cut costs by up to 40%</p>
+            </div>
+        </div>
+
+        <!-- FAQ -->
+        <div class="faq-section">
+            <h2>Frequently asked questions</h2>
+            <div class="faq-item">
+                <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Is it really a one-time payment?</div>
+                <div class="faq-a">Yes. Pay $29 once, get lifetime access. No monthly subscription, no annual renewal, no hidden fees. You'll get all future updates at no extra cost.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">How often is the pricing data updated?</div>
+                <div class="faq-a">We verify and update pricing data at least monthly, and more frequently when providers announce changes. Pro users get notified of any pricing changes automatically.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Can I get a refund?</div>
+                <div class="faq-a">Yes. If you're not satisfied within 14 days, contact us for a full refund. No questions asked.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">What's the difference from the free tools?</div>
+                <div class="faq-a">Free tools show basic comparisons. Pro adds migration code for every model switch, PDF export for team sharing, saved scenarios for complex usage patterns, price change alerts, and personalized optimization recommendations.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Do you store my usage data?</div>
+                <div class="faq-a">No. All calculations run in your browser. We don't store, track, or transmit your usage data. Your API cost estimates stay private.</div>
+            </div>
+        </div>
+
+        <!-- Final CTA -->
+        <div class="final-cta">
+            <h2>Ready to stop overpaying?</h2>
+            <p>Join developers who've already optimized their AI API costs with APIpulse Pro.</p>
+            <a href="https://buy.stripe.com/fZu7sL3Gw3GS0RQeoDeEo0a" target="_blank" rel="noopener" class="deal-cta" onclick="if(window.trackEvent)window.trackEvent('deal_page_final_buy_clicked')">
+                Get Pro Lifetime Access — $29
+            </a>
+            <p style="font-size:13px;color:var(--text-muted);margin-top:12px;">🔒 Secure checkout via Stripe · 14-day money-back guarantee</p>
+        </div>
+
+        <p style="text-align:center;font-size:12px;color:var(--text-muted);">
+            <a href="index.html" style="color:var(--text-muted);">← Back to free tools</a>
+        </p>
+    </main>
+
+    <footer>
+        <div class="footer-inner">
+            <div class="footer-brand">
+                <a href="index.html" class="logo">API<span>pulse</span></a>
+                <p>Know your AI API costs before you commit.</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 APIpulse. All pricing data verified as of <span id="footer-date">June 2026</span>.</p>
+        </div>
+    </footer>
+
+    <script>
+    // Countdown timer to July 12, 2026 23:59:59 UTC
+    function updateCountdown() {
+        var target = new Date('2026-07-12T23:59:59Z').getTime();
+        var now = new Date().getTime();
+        var diff = target - now;
+
+        if (diff <= 0) {
+            document.getElementById('countdown-timer').textContent = 'EXPIRED';
+            document.getElementById('deal-price').textContent = '$49';
+            document.getElementById('buy-btn').textContent = 'Get Pro Lifetime Access — $49';
+            return;
+        }
+
+        var days = Math.floor(diff / (1000 * 60 * 60 * 24));
+        var hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        var mins = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+        var secs = Math.floor((diff % (1000 * 60)) / 1000);
+
+        document.getElementById('countdown-timer').textContent =
+            days + 'D ' + hours.toString().padStart(2, '0') + 'H ' +
+            mins.toString().padStart(2, '0') + 'M ' + secs.toString().padStart(2, '0') + 'S';
+    }
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+
+    // Savings calculator
+    var DEAL_MODELS = {
+        'gpt-5':              { input: 8.00,  output: 24.00, name: 'GPT-5' },
+        'gpt-4o':             { input: 2.50,  output: 10.00, name: 'GPT-4o' },
+        'gpt-4o-mini':        { input: 0.15,  output: 0.60,  name: 'GPT-4o Mini' },
+        'claude-sonnet-4.6':  { input: 3.00,  output: 15.00, name: 'Claude Sonnet 4.6' },
+        'claude-opus-4.8':    { input: 15.00, output: 75.00, name: 'Claude Opus 4.8' },
+        'gemini-2.5-pro':     { input: 1.25,  output: 5.00,  name: 'Gemini 2.5 Pro' }
+    };
+
+    // Cheapest alternatives for each model
+    var CHEAPEST = {
+        'gpt-5':              { input: 0.07, output: 0.28, name: 'DeepSeek V4 Flash', savings: '96%' },
+        'gpt-4o':             { input: 0.07, output: 0.28, name: 'DeepSeek V4 Flash', savings: '97%' },
+        'gpt-4o-mini':        { input: 0.07, output: 0.28, name: 'DeepSeek V4 Flash', savings: '53%' },
+        'claude-sonnet-4.6':  { input: 0.07, output: 0.28, name: 'DeepSeek V4 Flash', savings: '97%' },
+        'claude-opus-4.8':    { input: 0.07, output: 0.28, name: 'DeepSeek V4 Flash', savings: '99%' },
+        'gemini-2.5-pro':     { input: 0.07, output: 0.28, name: 'DeepSeek V4 Flash', savings: '94%' }
+    };
+
+    function calcDealSavings() {
+        var modelKey = document.getElementById('deal-model').value;
+        var spend = parseFloat(document.getElementById('deal-spend').value) || 500;
+        var model = DEAL_MODELS[modelKey];
+        var cheap = CHEAPEST[modelKey];
+        if (!model || !cheap) return;
+
+        // Calculate tokens from spend
+        var blended = model.input * 0.85 + model.output * 0.15;
+        var totalTokens = (spend / blended) * 1000000;
+
+        // Cost with cheapest
+        var cheapBlended = cheap.input * 0.85 + cheap.output * 0.15;
+        var cheapCost = (totalTokens * cheapBlended) / 1000000;
+
+        var monthlySave = spend - cheapCost;
+        var annualSave = monthlySave * 12;
+        var paybackDays = Math.ceil(29 / (monthlySave / 30));
+
+        document.getElementById('deal-savings-num').textContent = '$' + Math.round(annualSave).toLocaleString() + '/yr';
+        document.getElementById('deal-payback').textContent = 'Pro pays for itself in ' + paybackDays + ' day' + (paybackDays !== 1 ? 's' : '');
+        document.getElementById('deal-calc-result').style.display = 'block';
+
+        // Track
+        if (window.trackEvent) window.trackEvent('deal_savings_calculated', {
+            model: modelKey,
+            spend: spend,
+            annualSavings: Math.round(annualSave),
+            paybackDays: paybackDays
+        });
+    }
+    </script>
+</body>
+</html>

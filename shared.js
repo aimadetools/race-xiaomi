@@ -856,17 +856,18 @@ async function saveEmail(e) {
     if (window.location.pathname.includes('unsubscribe') || window.location.pathname.includes('ph.html')) return;
     if (localStorage.getItem('apipulse_popup_dismissed')) return;
 
-    // Deprecation-specific exit popup (shows on deprecation/migration/claude-4 pages)
+    // Limited-time pricing exit popup (replaces stale deprecation popup)
     var isDeprecationPage = window.location.pathname.includes('deprecation') || window.location.pathname.includes('migration') || window.location.pathname.includes('last-chance') || window.location.pathname.includes('survival') || window.location.pathname.includes('claude-4') || window.location.pathname.includes('shutdown');
-    var daysLeft = Math.ceil((new Date('2026-06-15T00:00:00Z') - new Date()) / 86400000);
+    var dealDeadline = new Date('2026-07-12T23:59:59Z');
+    var daysUntilDealEnd = Math.ceil((dealDeadline - new Date()) / 86400000);
 
-    if (isDeprecationPage && daysLeft <= 14) {
+    if (isDeprecationPage && daysUntilDealEnd > 0) {
         if (localStorage.getItem('apipulse_deprecation_popup_dismissed')) return;
         var depPopupShown = false;
         function showDeprecationPopup() {
             if (depPopupShown || localStorage.getItem('apipulse_deprecation_popup_dismissed')) return;
             depPopupShown = true;
-            if (window.trackEvent) window.trackEvent('deprecation_popup_shown', { days_left: daysLeft, timing_variant: window._abPopupTimingVariant });
+            if (window.trackEvent) window.trackEvent('urgency_popup_shown', { days_left: daysUntilDealEnd, timing_variant: window._abPopupTimingVariant });
 
             var price = window._abPrice || 29;
             var futurePrice = Math.round(price * 1.7);
@@ -877,19 +878,11 @@ async function saveEmail(e) {
             overlay.style.cssText = 'position:fixed;inset:0;background:rgba(0,0,0,0.7);z-index:9999;display:flex;align-items:center;justify-content:center;padding:20px;animation:fadeIn 0.3s ease;';
             var popup = document.createElement('div');
             popup.style.cssText = 'background:var(--bg-card);border:1px solid var(--red);border-radius:16px;padding:40px;max-width:440px;width:100%;position:relative;box-shadow:0 24px 64px rgba(0,0,0,0.5);';
-            var isPostShutdown = daysLeft <= 0;
             var popupTitle, popupIcon, popupDesc, popupHighlight;
-            if (isPostShutdown) {
-                popupIcon = '🔴';
-                popupTitle = 'Claude 4 is retired — your API calls are failing';
-                popupDesc = 'Claude 4 Opus and Sonnet 4 returned HTTP 410 errors since June 15. Pro shows you the cheapest replacement for your exact workload — most devs save 67-97%.';
-                popupHighlight = 'Stop losing money on failed API calls — find your cheapest alternative now';
-            } else {
-                popupIcon = '⏰';
-                popupTitle = daysLeft + ' Day' + (daysLeft === 1 ? '' : 's') + ' Until Claude 4 Dies';
-                popupDesc = 'Your API calls to Claude 4 Opus and Sonnet 4 will fail on June 15. Pro gives you personalized migration recommendations, saved scenarios, and cost reports — so you pick the right replacement.';
-                popupHighlight = 'Pro pays for itself in your first month of savings';
-            }
+            popupIcon = '⏰';
+            popupTitle = daysUntilDealEnd + ' Day' + (daysUntilDealEnd === 1 ? '' : 's') + ' Left at Early Adopter Price';
+            popupDesc = 'Early adopter pricing ends July 12. Pro shows you the cheapest model for your exact workload — most devs save 40-80% on their AI API costs.';
+            popupHighlight = 'Get lifetime access at $29 before the price increases to $49';
             popup.innerHTML = '<button id="exit-popup-close" style="position:absolute;top:12px;right:12px;background:none;border:none;color:var(--text-muted);font-size:20px;cursor:pointer;padding:4px 8px;border-radius:6px;" onmouseover="this.style.color=\'var(--text-primary)\'" onmouseout="this.style.color=\'var(--text-muted)\'">&times;</button>' +
                 '<div style="text-align:center;">' +
                 '<div style="font-size:40px;margin-bottom:16px;">' + popupIcon + '</div>' +
@@ -904,19 +897,19 @@ async function saveEmail(e) {
             document.body.appendChild(overlay);
 
             document.getElementById('exit-popup-close').addEventListener('click', function() {
-                if (window.trackEvent) window.trackEvent('deprecation_popup_dismissed', { days_left: daysLeft, timing_variant: window._abPopupTimingVariant });
+                if (window.trackEvent) window.trackEvent('urgency_popup_dismissed', { days_left: daysUntilDealEnd, timing_variant: window._abPopupTimingVariant });
                 overlay.remove();
                 localStorage.setItem('apipulse_deprecation_popup_dismissed', '1');
             });
             overlay.addEventListener('click', function(e) {
                 if (e.target === overlay) {
-                    if (window.trackEvent) window.trackEvent('deprecation_popup_dismissed', { days_left: daysLeft, timing_variant: window._abPopupTimingVariant });
+                    if (window.trackEvent) window.trackEvent('urgency_popup_dismissed', { days_left: daysUntilDealEnd, timing_variant: window._abPopupTimingVariant });
                     overlay.remove();
                     localStorage.setItem('apipulse_deprecation_popup_dismissed', '1');
                 }
             });
             document.getElementById('deprecation-popup-cta').addEventListener('click', function() {
-                if (window.trackEvent) window.trackEvent('deprecation_popup_cta_clicked', { days_left: daysLeft, price: price, timing_variant: window._abPopupTimingVariant });
+                if (window.trackEvent) window.trackEvent('urgency_popup_cta_clicked', { days_left: daysUntilDealEnd, price: price, timing_variant: window._abPopupTimingVariant });
             });
         }
 
