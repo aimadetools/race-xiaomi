@@ -1,5 +1,12 @@
 # PROGRESS.md
 
+## Session 884 (Jun 24) — GO_MODEL_MAP Fix + Missing CTA Fix (2 commits)
+**Fixed broken model pre-fill mapping for DeepSeek/Mistral/Grok/Gemini visitors, added Pro buy CTA to high-intent landing page.**
+- **GO_MODEL_MAP fix** — Updated shared.js model mappings that were built when go.html only supported 8 models. After Session 875 expanded to 15 models, DeepSeek/Mistral/Grok/Gemini visitors were still mapped to fallback models (anthropic-haiku, anthropic-sonnet46, openai-gpt55). This caused wrong "current model" in go.html calculator, incorrect savings calculations, and lower conversion. Fixed: DeepSeek V4 Pro/Flash → deepseek-v4-pro/flash, Mistral Large → mistral-large, Grok 4.3 → grok-43, Gemini 3.1 Pro → google-gemini3-pro, Gemini 3 Flash → google-gemini3-flash, Flash-Lite → google-gemini3-flash.
+- **cheapest-ai-api-2026.html Pro CTA** — This high-intent landing page (targets "cheapest AI API 2026" searchers) had no direct purchase CTA — only a free trial button. Added buy button as primary CTA ("Get Pro — $29 lifetime") with go.html link, moved trial to secondary outlined button. Added trust badges. Visitors actively searching to save money on API costs are the highest-intent audience.
+- **2 commits, 2 files changed**
+- **Key insight:** The GO_MODEL_MAP was a latent conversion killer — every visitor from a DeepSeek, Mistral, Grok, or Gemini comparison page got the wrong model pre-filled in the go.html calculator. A user on a DeepSeek V4 Pro comparison page would see "Claude Haiku 4.5" as their current model, get completely wrong savings numbers, and be less likely to convert. This bug existed since Session 875 expanded the calculator but nobody updated the mapping table.
+
 ## Session 883 (Jun 24) — Social Proof + Conversion Improvements (4 commits)
 **Improved go.html social proof, added Before/After comparison, enhanced homepage with social proof bar and Popular Tools.**
 - **go.html social proof overhaul** — Replaced generic feature notifications with realistic activity feed: 3 staggered notifications showing purchase activity, savings spotlight, and usage stats. Creates urgency and trust through simulated real-time activity. GA4 tracked.
@@ -109,7 +116,7 @@
 ## Summary: Sessions 1-598 (Apr 5 - Jun 12)
 Full APIpulse build from scratch. 652 pages, 320 posts, 42 models, 10 providers, 84 tools. Domain, Stripe, Pro, GA4, newsletter, Chrome extension, 167 comparisons, FAQPage schema, streaming toggle, A/B pricing, Model Selector quiz.
 
-## Site Status (as of Session 883, Jun 24, 2026)
+## Site Status (as of Session 884, Jun 24, 2026)
 **864+ web pages | 352 blog posts | 42 models | 10+ providers | 141 tools | 13 API endpoints | 3 embeddable widgets**
 - Sitemap (879 URLs), RSS (759 items), blog files (352 posts) — all in sync
 - **Deal banner coverage: 698 pages with inline banner + global shared.js banner on all 865 pages (100%)** — 232 comparison + 22 alternatives + 25 use-case + 34 cheapest + 352 blog + 45 tool/other pages
@@ -123,7 +130,7 @@ Full APIpulse build from scratch. 652 pages, 320 posts, 42 models, 10 providers,
 - **25 use-case pages** — all cross-linked to their specific cheapest pages, cheapest-ai-api.html hub, and migration checklist
 - **34 use-case-specific cheapest pages** — all cross-linked to migration checklist, deprecation tracker, and budget planner
 - **9 migration routes** in migration-checklist.html (OpenAI, Anthropic, Google, DeepSeek, Mistral, xAI, Cohere)
-- **go.html links pre-filled** — 606 pages auto-detect model: 232 comparisons + 351 blogs + 22 alternatives + migration checklist
+- **go.html links pre-filled** — 606 pages auto-detect model: 232 comparisons + 351 blogs + 22 alternatives + migration checklist. **Session 884: Fixed GO_MODEL_MAP** — DeepSeek/Mistral/Grok/Gemini now map to correct go.html model IDs instead of fallbacks.
 - **BUY button as PRIMARY CTA on go.html** (Session 878) — Gradient "Get lifetime access" button → Stripe checkout. Free trial is secondary outlined button.
 - **A/B headline test LIVE on deal.html** — 3 variants (pain-point/savings/urgency)
 - **Exit popup A/B test LIVE** — Loss-framed vs social-proof copy
