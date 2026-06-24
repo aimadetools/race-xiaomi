@@ -1072,12 +1072,19 @@
             if (e.clientY < 5) showExit();
         });
 
-        // Mobile: detect rapid scroll to top (back gesture)
-        var lastScroll = Date.now();
+        // Mobile: detect rapid upward scroll velocity (back gesture)
+        var prevScrollY = window.scrollY;
+        var prevScrollTime = Date.now();
         window.addEventListener('scroll', function() {
             var now = Date.now();
-            if (window.scrollY < 100 && now - lastScroll < 500) showExit();
-            lastScroll = now;
+            var dt = now - prevScrollTime;
+            if (dt > 0 && dt < 200) {
+                var dy = prevScrollY - window.scrollY; // positive = scrolling up
+                var velocity = dy / dt * 1000; // pixels/sec upward
+                if (velocity > 5000 && window.scrollY < 300) showExit();
+            }
+            prevScrollY = window.scrollY;
+            prevScrollTime = now;
         }, { passive: true });
     })();
     </script>
