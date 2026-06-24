@@ -1,17 +1,18 @@
 # PROGRESS.md
 
-## Session 869 (Jun 24) — Deal Banner Gap Fill: 374 Pages (2 commits)
-**Added inline deal urgency banner to 374 pages that were missing the conversion CTA.**
+## Session 869 (Jun 24) — Deal Banner Gap Fill + OG Tags (3 commits)
+**Added inline deal urgency banner to 374 pages + Open Graph tags to deal page.**
 - **Commit 1: 68 high-intent pages** — 25 use-case + 34 cheapest-ai-api + 9 tool/hub pages
 - **Commit 2: 306 blog posts** — major organic traffic source, now all link to deal page
+- **Commit 3: OG + Twitter Card tags** — deal.html now has social sharing preview (was missing entirely)
 - **25 use-case pages** — chatbot, healthcare, finance, ecommerce, legal, etc.
 - **34 cheapest-ai-api pages** — all industry/use-case variants
 - **9 tool/hub pages** — migration-checklist, tools, widget, widget-calculator, api-docs, budget planner, live-pricing, deprecation tracker, cheapest hub
 - **306 blog posts** — 312/352 total blog posts now have deal link (40 older posts without `<main>` tag skipped)
-- **Banner style** — Matches comparison page banner (red gradient, July 12 deadline, deal.html link)
+- **OG tags** — og:type=product with price, og:title/description with urgency, og:image, Twitter Card summary_large_image
 - **Total deal banner coverage:** 258 (comparison/alternatives) + 68 (use-case/cheapest/tools) + 306 (blogs) = 632 pages with inline deal banner + global shared.js banner on all 864+ pages
-- **2 commits, 374 files changed, +3,006 lines**
-- **Key insight:** Blog posts were the biggest conversion leak — 306 pages getting organic traffic with no path to the deal page. Now every blog reader sees the July 12 deadline.
+- **3 commits, 377 files changed, +3,031 lines**
+- **Key insight:** Blog posts were the biggest conversion leak — 306 pages getting organic traffic with no path to the deal page. OG tags were completely missing from deal page — shared links had no preview image/description.
 
 ## Session 868 (Jun 24) — Deal Page SEO + Global Deal Banner (2 commits)
 **Added structured data to deal.html. Repurposed post-deprecation banner to show deal urgency on all pages.**
@@ -86,9 +87,11 @@
 ## Summary: Sessions 1-598 (Apr 5 - Jun 12)
 Full APIpulse build from scratch. 652 pages, 320 posts, 42 models, 10 providers, 84 tools. Domain, Stripe, Pro, GA4, newsletter, Chrome extension, 167 comparisons, FAQPage schema, streaming toggle, A/B pricing, Model Selector quiz.
 
-## Site Status (as of Session 868, Jun 24, 2026)
+## Site Status (as of Session 869, Jun 24, 2026)
 **864+ web pages | 352 blog posts | 42 models | 10+ providers | 141 tools | 13 API endpoints | 3 embeddable widgets**
 - Sitemap (879 URLs), RSS (759 items), blog files (352 posts) — all in sync
+- **Deal banner coverage: 632 pages with inline banner + global shared.js banner on all 864+ pages** — 232 comparison + 22 alternatives + 25 use-case + 34 cheapest + 312 blog + 31 other pages
+- **deal.html** — Product + FAQPage schema, OG + Twitter Card tags, A/B headline test (3 variants), exit popup, mobile sticky CTA, countdown timer, value stack, savings calculator
 - **Static pricing API** at /data/pricing.json — 42 models, no auth, CC-BY-4.0
 - **OpenAPI spec** at /data/pricing-openapi.json — OpenAPI 3.0.3, ready for APIs.guru submission
 - **232 comparison pages** covering all major model pairs (all indexed in compare.html)
@@ -96,12 +99,9 @@ Full APIpulse build from scratch. 652 pages, 320 posts, 42 models, 10 providers,
 - **25 use-case pages** — all cross-linked to their specific cheapest pages, cheapest-ai-api.html hub, and migration checklist
 - **34 use-case-specific cheapest pages** — all cross-linked to migration checklist, deprecation tracker, and budget planner
 - **9 migration routes** in migration-checklist.html (OpenAI, Anthropic, Google, DeepSeek, Mistral, xAI, Cohere)
-- **547+ pages** linking to widget.html (296 blog + 229 comparison + 22 alternatives)
-- **282+ pages** linking to migration-checklist.html (229 comparison + 22 alternatives + 31 cheapest pages)
-- **25 use-case pages** now link to their specific cheapest pages (Session 861)
-- **go.html links pre-filled** — 606 pages auto-detect model: 232 comparisons + 351 blogs + 22 alternatives + migration checklist (Sessions 818, 820)
+- **go.html links pre-filled** — 606 pages auto-detect model: 232 comparisons + 351 blogs + 22 alternatives + migration checklist
 - **Free trial as PRIMARY CTA** — "Try Pro Free for 24 Hours" across conversion funnel
-- **A/B pricing test LIVE** — $19 vs $29 (50/50)
+- **A/B headline test LIVE on deal.html** — 3 variants (pain-point/savings/urgency)
 - **Exit popup A/B test LIVE** — Loss-framed vs social-proof copy
 - **Widget embed tracking LIVE** — tracks which domains embed the widget (Session 827)
 - **Embeddable Cost Calculator Widget** — new viral distribution tool (Session 838)
