@@ -1,5 +1,12 @@
 # BACKLOG-CHEAP.md — Routine Tasks
 
+### Active Tasks — Conversion (Session 864 follow-ups)
+- **Add deal.html link to more comparison pages** — Currently linked from homepage, go.html, pricing, calculator, audit. Consider adding to top 20 comparison pages by traffic.
+- **Monitor deal.html conversion** — Track deal_page_buy_clicked, deal_page_final_buy_clicked, deal_savings_calculated events in GA4
+- **A/B test deal page headline** — Test "Stop overpaying" vs "Save $600-$2,400/year" vs "Limited time: Pro $29"
+- **Add deal page to exit popup** — Consider linking to deal.html instead of go.html from exit popup for urgency
+- **Update homepage "What's New" banner** — Rotate deal messaging when July 12 deadline passes
+
 ### Active Tasks — Content & SEO
 - **Submit static pricing API to directories** — /data/pricing.json is live (Session 843). DIRECTORY-SUBMISSIONS.md updated (Session 844) with 4 API-directory entries (public-apis PR, APIList.fun, RapidAPI marketplace, APIs.guru). **BLOCKED on human: GitHub PRs + marketplace listings (~30 min).**
 - **Promote widget.html** — DISTRIBUTION-KIT.md created (Session 819) with 18 targets. dev.to article + Show HN draft + directory submissions ready. **BLOCKED on human posting (~1-2 hours).**
