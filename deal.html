@@ -746,11 +746,15 @@
                 </div>
             </div>
             <button onclick="calcDealSavings()" style="width:100%;padding:14px;background:var(--accent);color:white;border:none;border-radius:10px;font-size:16px;font-weight:700;cursor:pointer;">Calculate My Savings</button>
-            <div class="calc-result" id="deal-calc-result">
+            <div class="calc-result" id="deal-calc-result" style="display:block;">
                 <div class="big-num" id="deal-savings-num">$0/yr</div>
                 <div class="label">estimated annual savings</div>
                 <div class="payback" id="deal-payback"></div>
             </div>
+            <!-- Mid-page CTA at peak intent -->
+            <a href="https://buy.stripe.com/fZu7sL3Gw3GS0RQeoDeEo0a" target="_blank" rel="noopener" class="deal-cta" id="calc-cta-btn" style="display:none;margin-top:16px;text-align:center;" onclick="if(window.trackEvent)window.trackEvent('deal_page_buy_clicked',{variant:window.DEAL_HEADLINE_VARIANT||'unknown'});if(typeof gtag==='function')gtag('event','deal_buy_click',{variant:window.DEAL_HEADLINE_VARIANT||'unknown',location:'calculator'});">
+                Get Pro — $29 lifetime
+            </a>
         </div>
 
         <!-- Testimonials -->
@@ -1096,6 +1100,10 @@
         document.getElementById('deal-payback').textContent = 'Pro pays for itself in ' + paybackDays + ' day' + (paybackDays !== 1 ? 's' : '');
         document.getElementById('deal-calc-result').style.display = 'block';
 
+        // Show mid-page CTA after calculation (peak intent)
+        var calcCta = document.getElementById('calc-cta-btn');
+        if (calcCta) calcCta.style.display = 'block';
+
         // Track
         if (window.trackEvent) window.trackEvent('deal_savings_calculated', {
             model: modelKey,
@@ -1113,6 +1121,11 @@
             });
         }
     }
+
+    // Auto-calculate savings on page load — show compelling number immediately
+    document.addEventListener('DOMContentLoaded', function() {
+        calcDealSavings();
+    });
 
     // Mobile sticky CTA — show after scrolling past hero CTA
     (function() {
