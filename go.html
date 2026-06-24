@@ -503,6 +503,23 @@
             </div>
         </div>
 
+        <!-- Provider trust bar (Session 880) -->
+        <div style="text-align:center;margin-bottom:24px;">
+            <div style="font-size:11px;color:var(--text-muted);text-transform:uppercase;letter-spacing:1px;margin-bottom:10px;font-weight:600;">Compare models across 10 providers</div>
+            <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:8px;">
+                <span style="background:var(--bg-secondary);border:1px solid var(--border);border-radius:8px;padding:6px 14px;font-size:12px;font-weight:600;color:var(--text-secondary);">OpenAI</span>
+                <span style="background:var(--bg-secondary);border:1px solid var(--border);border-radius:8px;padding:6px 14px;font-size:12px;font-weight:600;color:var(--text-secondary);">Anthropic</span>
+                <span style="background:var(--bg-secondary);border:1px solid var(--border);border-radius:8px;padding:6px 14px;font-size:12px;font-weight:600;color:var(--text-secondary);">Google</span>
+                <span style="background:var(--bg-secondary);border:1px solid var(--border);border-radius:8px;padding:6px 14px;font-size:12px;font-weight:600;color:var(--text-secondary);">DeepSeek</span>
+                <span style="background:var(--bg-secondary);border:1px solid var(--border);border-radius:8px;padding:6px 14px;font-size:12px;font-weight:600;color:var(--text-secondary);">Mistral</span>
+                <span style="background:var(--bg-secondary);border:1px solid var(--border);border-radius:8px;padding:6px 14px;font-size:12px;font-weight:600;color:var(--text-secondary);">xAI</span>
+                <span style="background:var(--bg-secondary);border:1px solid var(--border);border-radius:8px;padding:6px 14px;font-size:12px;font-weight:600;color:var(--text-secondary);">Meta</span>
+                <span style="background:var(--bg-secondary);border:1px solid var(--border);border-radius:8px;padding:6px 14px;font-size:12px;font-weight:600;color:var(--text-secondary);">Cohere</span>
+                <span style="background:var(--bg-secondary);border:1px solid var(--border);border-radius:8px;padding:6px 14px;font-size:12px;font-weight:600;color:var(--text-secondary);">Together AI</span>
+                <span style="background:var(--bg-secondary);border:1px solid var(--border);border-radius:8px;padding:6px 14px;font-size:12px;font-weight:600;color:var(--text-secondary);">Groq</span>
+            </div>
+        </div>
+
         <!-- How It Works -->
         <div style="margin-bottom:24px;">
             <h2 style="font-size:18px;font-weight:800;text-align:center;margin-bottom:16px;">How it works</h2>
@@ -612,6 +629,24 @@
                 <div class="price-was" id="price-was">$49</div>
                 <div class="price-badge" id="price-badge">Save 41%</div>
             </div>
+        </div>
+
+        <!-- Everything included checklist (Session 880) -->
+        <div style="background:var(--bg-secondary);border:1px solid var(--border);border-radius:12px;padding:16px 20px;margin-bottom:16px;">
+            <div style="font-size:13px;font-weight:700;margin-bottom:10px;text-transform:uppercase;letter-spacing:0.5px;color:var(--text-muted);">Everything included:</div>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px 16px;font-size:13px;">
+                <span style="color:var(--green);">✓ 42-model cost comparison</span>
+                <span style="color:var(--green);">✓ Migration code snippets</span>
+                <span style="color:var(--green);">✓ PDF report export</span>
+                <span style="color:var(--green);">✓ 10 saved scenarios</span>
+                <span style="color:var(--green);">✓ Price change alerts</span>
+                <span style="color:var(--green);">✓ Budget planner access</span>
+                <span style="color:var(--green);">✓ Cost calculator tool</span>
+                <span style="color:var(--green);">✓ Lifetime updates</span>
+            </div>
+        </div>
+        <div style="text-align:center;margin-bottom:16px;font-size:12px;color:var(--text-muted);">
+            <span style="color:var(--green);font-weight:600;">🔒</span> Stripe secure checkout · <span style="color:var(--green);font-weight:600;">🛡️</span> 14-day money-back · <span style="color:var(--green);font-weight:600;">⚡</span> Instant access
         </div>
 
         <!-- Bottom CTA: BUY is primary -->
@@ -980,7 +1015,7 @@
         }, {threshold: 0.3}).observe(heroCalc);
     })();
 
-    // Social proof notification — shows after 8 seconds
+    // Social proof notification — shows after 3 seconds (Session 880: was 8s, most visitors leave before seeing it)
     setTimeout(function() {
         if (sessionStorage.getItem('go_social_proof_shown')) return;
         sessionStorage.setItem('go_social_proof_shown', '1');
@@ -998,7 +1033,7 @@
             '<div style="font-size:12px;color:var(--text-muted);">' + msg.sub + '</div></div>';
         document.body.appendChild(el);
         setTimeout(function() { el.style.opacity = '0'; el.style.transition = 'opacity 0.5s'; setTimeout(function() { el.remove(); }, 500); }, 6000);
-    }, 8000);
+    }, 3000);
 
     // Exit popup — feedback survey + last-chance conversion
     (function() {
