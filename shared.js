@@ -386,18 +386,18 @@ document.addEventListener('DOMContentLoaded', () => {
         if (nav) nav.style.top = '0';
         if (window.trackEvent) window.trackEvent('deprecation_banner_shown', { days_left: daysLeft });
     } else if (daysLeft <= 0 && daysLeft > -90) {
-        // POST-DEPRECATION: Show retirement notice for 90 days
+        // POST-DEPRECATION: Show deal urgency banner (conversion focus after deprecation)
         if (localStorage.getItem('apipulse_deprecation_retired_dismissed')) return;
         var banner = document.createElement('div');
         banner.id = 'deprecation-urgency-banner';
-        banner.style.cssText = 'background:#d97706;color:white;padding:10px 16px;text-align:center;font-size:13px;font-weight:600;position:relative;z-index:9999;display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap;';
-        banner.innerHTML = '<span>🔄 Claude 4 retired Jun 15 — find your next model in 5 minutes</span>' +
-            '<a href="migrate.html" style="color:white;text-decoration:underline;font-weight:700;">Migrate now — free tools →</a>' +
+        banner.style.cssText = 'background:linear-gradient(135deg,#dc2626,#b91c1c);color:white;padding:10px 16px;text-align:center;font-size:13px;font-weight:600;position:relative;z-index:9999;display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap;';
+        banner.innerHTML = '<span>🔥 Limited time: Pro lifetime access $29 — price goes up July 12</span>' +
+            '<a href="deal.html" style="color:white;text-decoration:underline;font-weight:700;">Get the deal →</a>' +
             '<button onclick="document.getElementById(\'deprecation-urgency-banner\').remove();localStorage.setItem(\'apipulse_deprecation_retired_dismissed\',\'1\');" style="background:none;border:none;color:white;cursor:pointer;font-size:16px;padding:0 4px;opacity:0.8;position:absolute;right:12px;" aria-label="Dismiss">✕</button>';
         document.body.insertBefore(banner, document.body.firstChild);
         var nav = document.querySelector('nav');
         if (nav) nav.style.top = '0';
-        if (window.trackEvent) window.trackEvent('deprecation_retired_banner_shown');
+        if (window.trackEvent) window.trackEvent('deal_banner_shown', { source: 'deprecation_banner' });
     }
 });
 
