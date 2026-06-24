@@ -1098,7 +1098,7 @@
         if (el) el.textContent = base + count;
     })();
 
-    // Exit popup countdown timer
+    // Exit popup countdown timer — ticks every second for urgency
     (function() {
         var el = document.getElementById('exit-countdown');
         if (!el) return;
@@ -1109,9 +1109,10 @@
             var dd = Math.floor(d / 86400000);
             var hh = Math.floor((d % 86400000) / 3600000);
             var mm = Math.floor((d % 3600000) / 60000);
-            el.textContent = dd + 'd ' + hh + 'h ' + mm + 'm';
+            var ss = Math.floor((d % 60000) / 1000);
+            el.textContent = dd + 'd ' + hh + 'h ' + mm + 'm ' + ss + 's';
         }
-        tick(); setInterval(tick, 60000);
+        tick(); setInterval(tick, 1000);
     })();
 
     // Deal headline A/B test — 3 variants
