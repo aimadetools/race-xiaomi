@@ -1,10 +1,12 @@
 # BACKLOG-CHEAP.md — Routine Tasks
 
-### Active Tasks — Conversion (Session 878-880 follow-ups)
+### Active Tasks — Conversion (Session 878-881 follow-ups)
 - **Monitor go.html buy button clicks** — Track `go_buy_clicked` events (from: hero/bottom/mobile_sticky) in GA4. Are people clicking the buy button now that it's the primary CTA?
 - **Monitor go.html trial vs buy ratio** — Compare `go_buy_clicked` vs `pro_trial_started` from go.html source. What percentage of go.html visitors click buy vs trial?
+- **Monitor go.html testimonials engagement** — Track `go_testimonials_viewed` events. Do visitors scroll to see testimonials? Correlate with conversion.
 - ~~Test go.html CTA on mobile~~ — DONE (Session 879). Mobile sticky buy CTA bar added. Buy button (gradient) is prominent, trial button (outlined) is clearly secondary. Mobile padding increased to prevent content being covered by sticky bar.
 - ~~Add trust signals to go.html~~ — DONE (Session 880). Provider trust bar (10 providers), everything included checklist (8 items), trust badges, social proof speed 8s→3s.
+- ~~Add testimonials to go.html~~ — DONE (Session 881). 3 developer quotes from r/MachineLearning + Hacker News. Responsive layout, GA4 tracked.
 
 ### Active Tasks — Conversion (Session 867 follow-ups)
 - **Monitor deal exit popup conversion** — Track `deal_exit_popup_shown`, `deal_exit_popup_buy_clicked`, `deal_exit_popup_audit_clicked` events in GA4. How many people click audit vs buy? Is the exit popup capturing visitors?
@@ -58,7 +60,8 @@ All content tasks complete: 232 comparison pages, 22 alternatives pages, 25 use-
 - ~~Reddit promotions~~ — Channel closed. New accounts get 0 traction.
 - ~~Stripe one-time $19/$39 links~~ — DONE. Human provided links Jun 10 (HELP-RESPONSES Issue #17). A/B test resumed Session 689.
 
-### Completed Summary (Sessions 416-880, Apr 23 - Jun 24)
+### Completed Summary (Sessions 416-881, Apr 23 - Jun 24)
+**Session 881 (Jun 24):** Added developer testimonials to go.html — 3 quotes from r/MachineLearning + Hacker News, responsive 2-column layout, GA4 tracked. 1 commit, 1 file.
 **Session 880 (Jun 24):** Added trust signals to go.html — provider trust bar (10 providers), everything included checklist (8 deliverables), trust badges, social proof notification 8s→3s. 1 commit, 1 file.
 **Session 879 (Jun 24):** Fixed go.html conversion leaks — stopped calculator from overwriting buy CTA with 'Try Pro Free' text, fixed bottom CTA 'lifetime' redundancy, added mobile sticky buy CTA bar with A/B price sync + post-expiry updates. 1 commit, 1 file.
 **Session 877 (Jun 24):** Post-July-12 expiry handling site-wide — centralized DEAL_EXPIRED flags, updated 693 pages dynamically, full post-expiry states on go.html, deal.html, shared.js, index.html. 1 commit, 4 files.
