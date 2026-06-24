@@ -1,12 +1,13 @@
 # PROGRESS.md
 
-## Session 865 (Jun 24) — Deal Page Distribution + Exit Popup Fix (1 commit)
-**Added deal.html urgency banner to 20 highest-traffic comparison pages. Updated exit popups to link to deal page.**
-- **Added urgency banner to 20 comparison pages** — Brand comparisons (openai-vs-anthropic, gemini-vs-chatgpt, claude-vs-chatgpt, etc.) and flagship model matchups (gpt5-vs-sonnet46, gpt5-vs-gemini35flash, etc.)
+## Session 865 (Jun 24) — Deal Page Distribution + Exit Popup Fix (3 commits)
+**Added deal.html urgency banner to 258 pages (232 comparison + 26 alternatives). Updated exit popups to link to deal page.**
+- **Added urgency banner to ALL 232 comparison pages** — Every comparison page visitor now sees July 12 deadline urgency
+- **Added urgency banner to 26 alternatives pages** — High-intent traffic looking for cheaper model options
 - **Updated exit popup CTAs** — Both deprecation and pro exit popups now link to deal.html instead of go.html (deal page has countdown timer + July 12 deadline — better for exit intent)
 - **Banner style** — Red urgency gradient matching homepage "What's New" banner, "🔥 Limited time: Pro lifetime access $29 — price goes up July 12 →"
-- **1 commit, 21 files changed, +162 lines**
-- **Key insight:** Comparison pages are highest-intent traffic (users actively comparing models) — deal page urgency banner should convert well here
+- **3 commits, 239 files changed, +2,066 lines**
+- **Key insight:** Comparison pages are highest-intent traffic (users actively comparing models) — deal page urgency banner should convert well here. Total deal banner coverage: 258 pages + homepage + go.html + pricing + calculator + audit
 
 ## Session 864 (Jun 24) — Conversion Optimization: Deal Page + Urgency (6 commits)
 **Built focused conversion landing page with countdown timer. Fixed stale deprecation popup. Added urgency messaging across site.**
