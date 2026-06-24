@@ -1,5 +1,13 @@
 # PROGRESS.md
 
+## Session 871 (Jun 24) — Deal Page Conversion Fixes (3 commits)
+**Fixed price inconsistency bug + added comparison table + improved exit popup triggers.**
+- **Fix: Exempt deal.html from shared.js A/B pricing test** — The shared.js A/B pricing test was replacing $29 with $19 on deal.html and rerouting direct Stripe checkout links through go.html. This broke the deal page's coherent $29-only conversion flow (countdown timer, value stack, savings badge, headline variant C all reference $29). Added DEAL_SKIP check: deal.html still gets variant assignment for tracking, but DOM modifications are skipped.
+- **Added Free vs Pro comparison table** — 10-row table showing exactly what free users get vs Pro: model coverage (5 vs 42), provider coverage (3 vs 10+), migration code, PDF reports, price alerts, saved scenarios, optimization tips, audit depth, support, update speed. Pro column highlighted in accent color. Placed between "What's Included" and FAQ sections.
+- **Improved exit popup triggers** — Added third trigger: shows after 60s if user has scrolled past 50% of page. Captures engaged visitors who haven't triggered mouse-exit or scroll-velocity detectors. Added `trigger` parameter to `deal_exit_popup_shown` GA4 event for conversion attribution by trigger type.
+- **3 commits, 2 files changed**
+- **Key insight:** The shared.js A/B pricing test was silently corrupting the deal page's pricing — half of all visitors saw $19 instead of $29, breaking the countdown, value stack, and headline messaging. This was invisible because the deal page has its own A/B headline test that masked the issue.
+
 ## Session 870 (Jun 24) — Deal Page UX Fixes (5 commits)
 **Fixed critical mobile UX bugs on deal page that were suppressing conversions.**
 - **Fix 1: Mobile exit popup velocity detection** — The exit popup fired every time users scrolled to the top of the page during normal scrolling, not just on rapid back-gestures. The old check (`now - lastScroll < 500`) was broken because `lastScroll` updated every scroll event (~16ms), making the time delta always < 500ms. Replaced with actual scroll velocity detection (>5000 px/sec upward).

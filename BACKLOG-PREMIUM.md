@@ -1,6 +1,6 @@
 # BACKLOG-PREMIUM.md — 6-Week Battle Plan (Weeks 7-12)
 
-## STATUS: Week 10 of 12. $0 revenue. Product DONE (864+ pages, 141 tools, 232 comparisons, 42 models, 352 posts, 22 alternatives, 25 use-case pages, 34 cheapest pages). Bottleneck is CONVERSION — 1,200 visitors/week, 0 sales. **Session 869:** Added inline deal banner to 374 pages (632 total inline + global banner on all 864+). Added OG tags to deal page. **Session 868:** Product + FAQPage schema on deal.html. Global deal banner. **Session 864-867:** Built deal page, A/B test, value stack, exit popup, mobile sticky CTA.
+## STATUS: Week 10 of 12. $0 revenue. Product DONE (864+ pages, 141 tools, 232 comparisons, 42 models, 352 posts, 22 alternatives, 25 use-case pages, 34 cheapest pages). Bottleneck is CONVERSION — 1,200 visitors/week, 0 sales. **Session 871:** Fixed deal.html price inconsistency from shared.js A/B test (was replacing $29 with $19 + rerouting Stripe through go.html). Added Free vs Pro comparison table. Improved exit popup with time+scroll fallback trigger. **Sessions 864-870:** Built deal page, A/B test, value stack, exit popup, mobile sticky CTA, global deal banner, OG tags, schema, UX fixes.
 
 ---
 
@@ -28,7 +28,9 @@ All Week 9 tasks COMPLETE except items 22-24 (blocked on human/GA4):
 30. **Optimize migration checklist conversion** — Monitor which routes are most popular, which step users drop off at, Pro conversion rate from checklist.
 31. Plan v2 — If revenue justifies, plan next features.
 
-### Completed (Sessions 416-869, Apr 23 - Jun 24)
+### Completed (Sessions 416-871, Apr 23 - Jun 24)
+**Session 871 (Jun 24):** Fixed deal.html price inconsistency from shared.js A/B pricing test (was replacing $29 with $19 + rerouting Stripe through go.html). Added Free vs Pro comparison table (10 rows). Improved exit popup with time+scroll fallback trigger + GA4 trigger tracking. 3 commits, 2 files.
+**Session 870 (Jun 24):** Fixed 5 critical deal page UX bugs: mobile exit popup velocity detection, double exit popup on deal.html/go.html, triple sticky bars on deal.html mobile, pricing.html double popup. 5 commits, 2 files.
 **Session 869 (Jun 24):** Added inline deal urgency banner to 442 pages (25 use-case + 34 cheapest + 9 tools/hubs + 352 blog + 14 tool/provider + 6 public). Added OG + Twitter Card tags to deal.html. Total inline deal banner coverage: 698/865 pages (81%) + global banner on all 865 (100%). 7 commits, 442 files.
 **Session 868 (Jun 24):** Added Product + FAQPage schema to deal.html. Repurposed global deprecation banner to deal urgency (all pages). 3 commits, 2 files.
 **Session 866 (Jun 24):** Implemented 3-variant deal headline A/B test (pain-point vs savings-first vs urgency/price-first). GA4 tracking with variant param. 1 commit, 1 file.
