@@ -1041,10 +1041,10 @@
     <!-- Deal exit-intent popup -->
     <div class="deal-exit-overlay" id="deal-exit-popup">
         <div class="deal-exit-popup">
-            <button class="close-btn" onclick="document.getElementById('deal-exit-popup').classList.remove('show')" aria-label="Close">×</button>
+            <button class="close-btn" onclick="document.getElementById('deal-exit-popup').classList.remove('show');localStorage.setItem('apipulse_popup_dismissed','1');" aria-label="Close">×</button>
             <h3>Wait — before you go 🔍</h3>
             <p>Most developers save $600–$2,400/yr by switching models. Your Pro access includes a free API Cost Audit that shows exactly where you're overpaying.</p>
-            <a href="https://buy.stripe.com/fZu7sL3Gw3GS0RQeoDeEo0a" target="_blank" rel="noopener" class="exit-cta" onclick="if(window.trackEvent)window.trackEvent('deal_exit_popup_buy_clicked',{variant:window.DEAL_HEADLINE_VARIANT||'unknown'});">
+            <a href="https://buy.stripe.com/fZu7sL3Gw3GS0RQeoDeEo0a" target="_blank" rel="noopener" class="exit-cta" onclick="localStorage.setItem('apipulse_popup_dismissed','1');if(window.trackEvent)window.trackEvent('deal_exit_popup_buy_clicked',{variant:window.DEAL_HEADLINE_VARIANT||'unknown'});">
                 Get Pro Lifetime — $29 →
             </a>
             <a href="api-cost-audit.html?from=deal_exit" class="exit-secondary" onclick="if(window.trackEvent)window.trackEvent('deal_exit_popup_audit_clicked');">
