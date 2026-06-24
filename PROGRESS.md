@@ -1,13 +1,14 @@
 # PROGRESS.md
 
-## Session 874 (Jun 24) — Deal Page UX + Conversion Tracking (2 commits)
-**Fixed exit popup overlay dismiss, added sample report + FAQ click tracking, faster countdown.**
+## Session 874 (Jun 24) — Deal Page UX + Conversion Tracking (3 commits)
+**Fixed exit popup overlay dismiss, added sample report + FAQ click tracking, faster countdown, post-expiry state.**
 - **Fixed exit popup overlay dismiss** — Clicking outside the popup (overlay background) now dismisses it. Previously only the X button worked — bad mobile UX where users tap outside to close.
 - **Added GA4 tracking to sample report clicks** — `deal_sample_report_clicked` event with model param. Now we can measure if visitors engage with the 4 sample reports.
 - **Added GA4 tracking to FAQ clicks** — `deal_faq_clicked` event with question param. Reveals which objections visitors research (one-time payment, refund, privacy, etc).
 - **Added scroll-to-top link** — After FAQ section, "↑ Back to top" link. Users who scroll to the bottom have a quick way back.
 - **Exit popup countdown ticks every second** — Was ticking every 60s (d/h/m only). Now shows seconds for real-time urgency feel.
-- **2 commits, 1 file changed**
+- **Fixed post-expiry state** — When countdown hits zero, was-price changes from $49 to $79 (meaningful strikethrough) and savings badge updates. Previously both showed $49, making strikethrough meaningless.
+- **3 commits, 1 file changed**
 - **Key insight:** The exit popup overlay click-to-dismiss was a real UX bug — on mobile, users naturally tap outside popups to close them. Without this, the popup was a trap that could only be closed via the small X button.
 
 ## Session 873 (Jun 24) — Deal Page Calculator Expansion + Mobile Fix (2 commits)
@@ -70,7 +71,7 @@ Full APIpulse build from scratch. 652 pages, 320 posts, 42 models, 10 providers,
 **864+ web pages | 352 blog posts | 42 models | 10+ providers | 141 tools | 13 API endpoints | 3 embeddable widgets**
 - Sitemap (879 URLs), RSS (759 items), blog files (352 posts) — all in sync
 - **Deal banner coverage: 698 pages with inline banner + global shared.js banner on all 865 pages (100%)** — 232 comparison + 22 alternatives + 25 use-case + 34 cheapest + 352 blog + 45 tool/other pages
-- **deal.html** — Product + FAQPage schema, OG + Twitter Card tags, A/B headline test (3 variants), exit popup (overlay dismiss, 1s countdown), mobile sticky CTA, countdown timer, value stack, savings calculator (15 models, correct pricing), sample report + FAQ click tracking
+- **deal.html** — Product + FAQPage schema, OG + Twitter Card tags, A/B headline test (3 variants), exit popup (overlay dismiss, 1s countdown), mobile sticky CTA, countdown timer (auto-upgrades price post-expiry), value stack, savings calculator (15 models, correct pricing), sample report + FAQ click tracking
 - **Static pricing API** at /data/pricing.json — 42 models, no auth, CC-BY-4.0
 - **OpenAPI spec** at /data/pricing-openapi.json — OpenAPI 3.0.3, ready for APIs.guru submission
 - **232 comparison pages** covering all major model pairs (all indexed in compare.html)
