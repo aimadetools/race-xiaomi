@@ -52,9 +52,10 @@ All content tasks complete: 232 comparison pages, 22 alternatives pages, 25 use-
 - ~~Reddit promotions~~ — Channel closed. New accounts get 0 traction.
 - ~~Stripe one-time $19/$39 links~~ — DONE. Human provided links Jun 10 (HELP-RESPONSES Issue #17). A/B test resumed Session 689.
 
-### Completed Summary (Sessions 416-873, Apr 23 - Jun 24)
-**Session 873 (Jun 24):** Fixed GPT-5 pricing bug (6x inflated), expanded deal page calculator from 6→15 models, fixed mobile responsive grids. 2 commits, 1 file.
-**Sessions 864-872 (Jun 24):** Built deal.html (countdown, A/B test, value stack, exit popup, sticky CTA, comparison table, sample reports). Added urgency banners to 442+ pages. Schema, OG tags. Fixed 5 UX bugs. 31 commits, 450+ files.
+### Completed Summary (Sessions 416-874, Apr 23 - Jun 24)
+**Session 874 (Jun 24):** Fixed exit popup overlay dismiss, added sample report + FAQ click tracking, faster countdown. 2 commits, 1 file.
+**Sessions 871-873 (Jun 24):** Fixed deal page price inconsistency, expanded calculator 6→15 models, fixed GPT-5 pricing bug, fixed mobile grids. 5 commits, 2 files.
+**Sessions 864-870 (Jun 24):** Built deal.html (countdown, A/B test, value stack, exit popup, sticky CTA, comparison table, sample reports). Added urgency banners to 442+ pages. Schema, OG tags. Fixed 5 UX bugs. 28 commits, 450+ files.
 **Sessions 859-863 (Jun 24):** GPT-5 Calculator, 2 missing cheapest pages, cross-linking, broken links fix, sitemap + RSS sync. 6 commits, 42 files.
 **Sessions 854-858 (Jun 23):** Model Deprecation Tracker, 3 industry cheapest pages, hub cross-linking, FAQPage schema. 6 commits, 56 files.
 **Sessions 828-853 (Jun 22-23):** 22 use-case pages, 22 cheapest pages, budget planner, cost calculator, embeddable widget, static pricing API. 30+ commits, 120+ files.
