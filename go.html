@@ -440,17 +440,14 @@
                 <div style="font-size:12px;color:var(--text-muted);text-align:center;margin-bottom:16px;">Pro shows all alternatives ranked by cost + migration code for each</div>
             </div>
 
-            <!-- CTA: personalized based on calculator -->
-            <button id="main-cta" class="cta-btn" onclick="if(typeof startTrial==='function'){startTrial();window.location.href='calculator.html?from=go_hero_trial';}else{window.location.href='calculator.html';}" style="cursor:pointer;">
-                ⚡ Try Pro Free for 24 Hours
-            </button>
-            <p class="cta-sub">✅ No credit card · ✅ Full Pro access instantly · ✅ Cancel anytime</p>
-            <a id="buy-cta" href="https://buy.stripe.com/fZu7sL3Gw3GS0RQeoDeEo0a" target="_blank" rel="noopener" style="display:block;width:100%;padding:14px;background:transparent;border:2px solid var(--accent);color:var(--accent);border-radius:12px;font-size:15px;font-weight:700;text-align:center;text-decoration:none;margin-top:10px;">
-                🔥 Get lifetime access now — <span id="cta-price">$29</span> <span style="font-size:12px;opacity:0.7;text-decoration:line-through;">$49</span>
+            <!-- CTA: BUY is primary, trial is secondary -->
+            <a id="buy-cta" href="https://buy.stripe.com/fZu7sL3Gw3GS0RQeoDeEo0a" target="_blank" rel="noopener" class="cta-btn" onclick="if(window.trackEvent)window.trackEvent('go_buy_clicked',{from:'hero',price:window._abPrice||29});if(typeof gtag==='function')gtag('event','deal_buy_click',{location:'go_hero'});">
+                🔥 Get lifetime access — <span id="cta-price">$29</span> <span style="font-size:14px;opacity:0.7;text-decoration:line-through;">$49</span>
             </a>
-            <p class="cta-sub" style="margin-top:8px;">
-                🔒 Stripe secure · 🛡️ 14-day guarantee · ⚡ Instant access
-            </p>
+            <p class="cta-sub">🔒 Stripe secure checkout · 🛡️ 14-day money-back guarantee · ⚡ Instant access</p>
+            <button id="main-cta" class="cta-btn" onclick="if(typeof startTrial==='function'){startTrial();window.location.href='calculator.html?from=go_hero_trial';}else{window.location.href='calculator.html';}" style="cursor:pointer;background:transparent;border:2px solid var(--accent);color:var(--accent);box-shadow:none;margin-top:10px;padding:14px 32px;font-size:15px;">
+                Or try free for 24 hours
+            </button>
         </div>
 
         <!-- Social proof — savings-focused -->
@@ -584,13 +581,13 @@
             </div>
         </div>
 
-        <!-- Bottom CTA -->
-        <button class="cta-btn" onclick="if(typeof startTrial==='function'){startTrial();window.location.href='calculator.html?from=go_bottom_trial';}else{window.location.href='calculator.html';}" style="cursor:pointer;margin-bottom:10px;">
-            ⚡ Try Pro Free for 24 Hours
-        </button>
-        <a id="buy-cta-bottom" href="https://buy.stripe.com/fZu7sL3Gw3GS0RQeoDeEo0a" target="_blank" rel="noopener" style="display:block;width:100%;padding:14px;background:transparent;border:2px solid var(--accent);color:var(--accent);border-radius:12px;font-size:15px;font-weight:700;text-align:center;text-decoration:none;">
-            Or buy now — <span id="cta-price-bottom">$29</span> lifetime
+        <!-- Bottom CTA: BUY is primary -->
+        <a id="buy-cta-bottom" href="https://buy.stripe.com/fZu7sL3Gw3GS0RQeoDeEo0a" target="_blank" rel="noopener" class="cta-btn" onclick="if(window.trackEvent)window.trackEvent('go_buy_clicked',{from:'bottom',price:window._abPrice||29});if(typeof gtag==='function')gtag('event','deal_buy_click',{location:'go_bottom'});">
+            🔥 Get lifetime access — <span id="cta-price-bottom">$29</span> lifetime
         </a>
+        <button class="cta-btn" onclick="if(typeof startTrial==='function'){startTrial();window.location.href='calculator.html?from=go_bottom_trial';}else{window.location.href='calculator.html';}" style="cursor:pointer;background:transparent;border:2px solid var(--accent);color:var(--accent);box-shadow:none;margin-top:10px;padding:14px 32px;font-size:15px;">
+            Or try free for 24 hours
+        </button>
 
         <!-- Guarantee -->
         <div class="guarantee">
@@ -689,9 +686,10 @@
                     // Update bottom trial CTA too
                     var bottomCtas = document.querySelectorAll('.cta-btn');
                     bottomCtas.forEach(function(btn) {
-                        if (btn.textContent.includes('Try Pro Free')) {
+                        if (btn.textContent.includes('try free') || btn.textContent.includes('Try Pro Free')) {
                             btn.textContent = '⚡ Get Pro Lifetime Access — $49';
                             btn.onclick = function() { window.location.href = window._abStripeLink || 'https://buy.stripe.com/fZu7sL3Gw3GS0RQeoDeEo0a'; };
+                            btn.style.cssText = 'cursor:pointer;';
                         }
                     });
                     // Update urgency text
