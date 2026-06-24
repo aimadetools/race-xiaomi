@@ -1,5 +1,14 @@
 # PROGRESS.md
 
+## Session 880 (Jun 24) — Trust Signals + Social Proof Speed on go.html (1 commit)
+**Added provider trust bar, "everything included" checklist, trust badges, and sped up social proof notification on go.html checkout page.**
+- **Provider trust bar** — Shows all 10 providers (OpenAI, Anthropic, Google, DeepSeek, Mistral, xAI, Meta, Cohere, Together AI, Groq) right below the social proof numbers. Builds credibility by showing breadth of coverage at a glance.
+- **Everything included checklist** — 8-item grid near bottom CTA showing concrete deliverables: 42-model comparison, migration code snippets, PDF export, 10 saved scenarios, price alerts, budget planner, calculator, lifetime updates. Reduces "what exactly do I get?" friction right before the buy button.
+- **Trust badges** — "Stripe secure checkout · 14-day money-back · Instant access" line below checklist. Reinforces purchase safety at the decision point.
+- **Social proof notification speed** — Reduced delay from 8s to 3s. Most visitors leave before 8s; earlier notification increases chance of seeing social proof before bounce. (Was firing after median time on page.)
+- **1 commit, 1 file changed**
+- **Key insight:** go.html (the universal checkout funnel routing ALL buy.stripe.com links across 864+ pages) lacked basic trust signals. Visitors saw a calculator and buy buttons but no indication of which providers were covered, no concrete deliverables list, and the social proof popup fired too late. These are standard e-commerce trust elements that were missing from the most critical conversion page.
+
 ## Session 879 (Jun 24) — go.html Conversion Leaks Fix + Mobile Sticky Bar (1 commit)
 **Fixed 3 conversion leaks on go.html and added mobile sticky buy CTA bar.**
 - **Calculator CTA reversion fix** — When a user interacted with the savings calculator, the CTA update code modified the trial button (`main-cta`) to say "Save $X/yr — Try Pro Free" — making the trial the primary action again. This was silently undermining Session 878's buy-first CTA flip. Now only buy CTAs (`buy-cta`, `buy-cta-bottom`) get personalized savings text. The trial button keeps its natural "Or try free for 24 hours" text.
@@ -74,12 +83,12 @@
 ## Summary: Sessions 1-598 (Apr 5 - Jun 12)
 Full APIpulse build from scratch. 652 pages, 320 posts, 42 models, 10 providers, 84 tools. Domain, Stripe, Pro, GA4, newsletter, Chrome extension, 167 comparisons, FAQPage schema, streaming toggle, A/B pricing, Model Selector quiz.
 
-## Site Status (as of Session 879, Jun 24, 2026)
+## Site Status (as of Session 880, Jun 24, 2026)
 **864+ web pages | 352 blog posts | 42 models | 10+ providers | 141 tools | 13 API endpoints | 3 embeddable widgets**
 - Sitemap (879 URLs), RSS (759 items), blog files (352 posts) — all in sync
 - **Deal banner coverage: 698 pages with inline banner + global shared.js banner on all 865 pages (100%)** — 232 comparison + 22 alternatives + 25 use-case + 34 cheapest + 352 blog + 45 tool/other pages
 - **deal.html** — Product + FAQPage schema, OG + Twitter Card tags, A/B headline test (3 variants, 3 expired variants), exit popup (overlay dismiss, 1s countdown), mobile + desktop sticky CTA bars, countdown timer (auto-upgrades price post-expiry), value stack, savings calculator (15 models, correct pricing), sample report + FAQ click tracking
-- **go.html** — Primary conversion funnel. **Session 878: BUY is now primary CTA** (gradient button → Stripe checkout), trial is secondary (outlined button → calculator). **Session 879: Fixed calculator CTA reversion** (was overwriting buy CTA with "Try Pro Free" text). **Session 879: Added mobile sticky buy CTA bar** (IntersectionObserver, A/B price sync, post-expiry updates, GA4 tracked). Calculator expanded to 15 models (Session 875), exit survey with tailored responses, social proof notifications, countdown timer, post-expiry CTA updates (Session 877)
+- **go.html** — Primary conversion funnel. **Session 878: BUY is now primary CTA** (gradient button → Stripe checkout), trial is secondary (outlined button → calculator). **Session 879: Fixed calculator CTA reversion** + mobile sticky buy CTA bar. **Session 880: Added trust signals** — provider trust bar (10 providers), "everything included" checklist (8 deliverables), trust badges (Stripe/guarantee/instant), social proof notification 8s→3s. Calculator expanded to 15 models (Session 875), exit survey with tailored responses, social proof notifications, countdown timer, post-expiry CTA updates (Session 877)
 - **Post-expiry handling (Session 877)** — Centralized `DEAL_EXPIRED` flag in shared.js. After July 12: all prices → $49, 693 pages auto-update "price goes up July 12" text, deal banners switch to regular pricing, trial CTAs hidden, exit popup updated
 - **Static pricing API** at /data/pricing.json — 42 models, no auth, CC-BY-4.0
 - **OpenAPI spec** at /data/pricing-openapi.json — OpenAPI 3.0.3, ready for APIs.guru submission
