@@ -1,13 +1,15 @@
 # PROGRESS.md
 
-## Session 869 (Jun 24) — Deal Banner Gap Fill + OG Tags (4 commits)
-**Added inline deal urgency banner to 414 pages + Open Graph tags to deal page. Achieved 100% deal coverage.**
+## Session 869 (Jun 24) — Deal Banner Full Coverage + OG Tags (7 commits)
+**Added inline deal urgency banner to 442 pages + Open Graph tags to deal page. Achieved 100% deal coverage.**
 - **Commit 1: 68 high-intent pages** — 25 use-case + 34 cheapest-ai-api + 9 tool/hub pages
 - **Commit 2: 306 blog posts** — major organic traffic source, now all link to deal page
 - **Commit 3: OG + Twitter Card tags** — deal.html now has social sharing preview (was missing entirely)
 - **Commit 4: 40 older-format blog posts** — used <article>/<div> instead of <main>, now all 352/352 blog posts covered
-- **Total inline deal banner coverage:** 672/865 pages (78%) + global shared.js banner on all 865 pages (100%)
-- **4 commits, 417 files changed, +3,351 lines**
+- **Commit 5: 6 public pages** — about, api-cost-score, api-cost-card, api-cost-report, badges, 404
+- **Commit 6: 14 tool/provider pages** — budget planners, ai-stack-builder, provider pages, blog index, changelog, chrome-extension
+- **Total inline deal banner coverage:** 698/865 pages (81%) + global shared.js banner on all 865 pages (100%)
+- **7 commits, 442 files changed, +3,463 lines**
 - **Key insight:** Blog posts were the biggest conversion leak — 346 pages getting organic traffic with no path to the deal page. OG tags were completely missing from deal page — shared links had no preview image/description.
 
 ## Session 868 (Jun 24) — Deal Page SEO + Global Deal Banner (2 commits)
@@ -86,7 +88,7 @@ Full APIpulse build from scratch. 652 pages, 320 posts, 42 models, 10 providers,
 ## Site Status (as of Session 869, Jun 24, 2026)
 **864+ web pages | 352 blog posts | 42 models | 10+ providers | 141 tools | 13 API endpoints | 3 embeddable widgets**
 - Sitemap (879 URLs), RSS (759 items), blog files (352 posts) — all in sync
-- **Deal banner coverage: 672 pages with inline banner + global shared.js banner on all 865 pages (100%)** — 232 comparison + 22 alternatives + 25 use-case + 34 cheapest + 352 blog + 31 other pages
+- **Deal banner coverage: 698 pages with inline banner + global shared.js banner on all 865 pages (100%)** — 232 comparison + 22 alternatives + 25 use-case + 34 cheapest + 352 blog + 45 tool/other pages
 - **deal.html** — Product + FAQPage schema, OG + Twitter Card tags, A/B headline test (3 variants), exit popup, mobile sticky CTA, countdown timer, value stack, savings calculator
 - **Static pricing API** at /data/pricing.json — 42 models, no auth, CC-BY-4.0
 - **OpenAPI spec** at /data/pricing-openapi.json — OpenAPI 3.0.3, ready for APIs.guru submission
