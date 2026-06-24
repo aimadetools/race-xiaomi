@@ -930,19 +930,19 @@
             <h2 style="font-size:20px;font-weight:800;text-align:center;margin-bottom:6px;">See Pro in action</h2>
             <p style="font-size:14px;color:var(--text-secondary);text-align:center;margin-bottom:16px;">Preview real savings reports — see exactly what you'll get</p>
             <div class="see-pro-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">
-                <a href="sample-pro-report.html" style="background:var(--bg-card);border:1px solid var(--border);border-radius:10px;padding:14px;text-decoration:none;display:block;" target="_blank">
+                <a href="sample-pro-report.html" style="background:var(--bg-card);border:1px solid var(--border);border-radius:10px;padding:14px;text-decoration:none;display:block;" target="_blank" onclick="if(typeof gtag==='function')gtag('event','deal_sample_report_clicked',{model:'gpt-5'});">
                     <div style="font-size:13px;font-weight:700;color:var(--text-primary);margin-bottom:2px;">GPT-5 Report</div>
                     <div style="font-size:12px;color:var(--green);font-weight:600;">Save $2,112/yr →</div>
                 </a>
-                <a href="sample-pro-report-claude-sonnet.html" style="background:var(--bg-card);border:1px solid var(--border);border-radius:10px;padding:14px;text-decoration:none;display:block;" target="_blank">
+                <a href="sample-pro-report-claude-sonnet.html" style="background:var(--bg-card);border:1px solid var(--border);border-radius:10px;padding:14px;text-decoration:none;display:block;" target="_blank" onclick="if(typeof gtag==='function')gtag('event','deal_sample_report_clicked',{model:'claude-sonnet-4.6'});">
                     <div style="font-size:13px;font-weight:700;color:var(--text-primary);margin-bottom:2px;">Claude Sonnet 4.6</div>
                     <div style="font-size:12px;color:var(--green);font-weight:600;">Save $2,004/yr →</div>
                 </a>
-                <a href="sample-pro-report-opus48.html" style="background:var(--bg-card);border:1px solid var(--border);border-radius:10px;padding:14px;text-decoration:none;display:block;" target="_blank">
+                <a href="sample-pro-report-opus48.html" style="background:var(--bg-card);border:1px solid var(--border);border-radius:10px;padding:14px;text-decoration:none;display:block;" target="_blank" onclick="if(typeof gtag==='function')gtag('event','deal_sample_report_clicked',{model:'claude-opus-4.8'});">
                     <div style="font-size:13px;font-weight:700;color:var(--text-primary);margin-bottom:2px;">Claude Opus 4.8</div>
                     <div style="font-size:12px;color:var(--green);font-weight:600;">Save $5,280/yr →</div>
                 </a>
-                <a href="sample-pro-report-gpt5-mini.html" style="background:var(--bg-card);border:1px solid var(--border);border-radius:10px;padding:14px;text-decoration:none;display:block;" target="_blank">
+                <a href="sample-pro-report-gpt5-mini.html" style="background:var(--bg-card);border:1px solid var(--border);border-radius:10px;padding:14px;text-decoration:none;display:block;" target="_blank" onclick="if(typeof gtag==='function')gtag('event','deal_sample_report_clicked',{model:'gpt-5-mini'});">
                     <div style="font-size:13px;font-weight:700;color:var(--text-primary);margin-bottom:2px;">GPT-5 Mini</div>
                     <div style="font-size:12px;color:var(--green);font-weight:600;">Save $1,440/yr →</div>
                 </a>
@@ -1033,25 +1033,30 @@
         <div class="faq-section">
             <h2>Frequently asked questions</h2>
             <div class="faq-item">
-                <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Is it really a one-time payment?</div>
+                <div class="faq-q" onclick="this.parentElement.classList.toggle('open');if(typeof gtag==='function')gtag('event','deal_faq_clicked',{question:'one-time-payment'});">Is it really a one-time payment?</div>
                 <div class="faq-a">Yes. Pay $29 once, get lifetime access. No monthly subscription, no annual renewal, no hidden fees. You'll get all future updates at no extra cost.</div>
             </div>
             <div class="faq-item">
-                <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">How often is the pricing data updated?</div>
+                <div class="faq-q" onclick="this.parentElement.classList.toggle('open');if(typeof gtag==='function')gtag('event','deal_faq_clicked',{question:'pricing-updates'});">How often is the pricing data updated?</div>
                 <div class="faq-a">We verify and update pricing data at least monthly, and more frequently when providers announce changes. Pro users get notified of any pricing changes automatically.</div>
             </div>
             <div class="faq-item">
-                <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Can I get a refund?</div>
+                <div class="faq-q" onclick="this.parentElement.classList.toggle('open');if(typeof gtag==='function')gtag('event','deal_faq_clicked',{question:'refund'});">Can I get a refund?</div>
                 <div class="faq-a">Yes. If you're not satisfied within 14 days, contact us for a full refund. No questions asked.</div>
             </div>
             <div class="faq-item">
-                <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">What's the difference from the free tools?</div>
+                <div class="faq-q" onclick="this.parentElement.classList.toggle('open');if(typeof gtag==='function')gtag('event','deal_faq_clicked',{question:'free-vs-pro'});">What's the difference from the free tools?</div>
                 <div class="faq-a">Free tools show basic comparisons. Pro adds migration code for every model switch, PDF export for team sharing, saved scenarios for complex usage patterns, price change alerts, and personalized optimization recommendations.</div>
             </div>
             <div class="faq-item">
-                <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Do you store my usage data?</div>
+                <div class="faq-q" onclick="this.parentElement.classList.toggle('open');if(typeof gtag==='function')gtag('event','deal_faq_clicked',{question:'privacy'});">Do you store my usage data?</div>
                 <div class="faq-a">No. All calculations run in your browser. We don't store, track, or transmit your usage data. Your API cost estimates stay private.</div>
             </div>
+        </div>
+
+        <!-- Scroll to top -->
+        <div style="text-align:center;margin-bottom:24px;">
+            <a href="#main" style="font-size:13px;color:var(--text-muted);text-decoration:none;">↑ Back to top</a>
         </div>
 
         <!-- Final CTA -->
@@ -1318,9 +1323,11 @@
         var KEY = 'deal_exit_shown';
         if (sessionStorage.getItem(KEY)) return;
 
+        var popup = document.getElementById('deal-exit-popup');
+
         function showExit(trigger) {
             sessionStorage.setItem(KEY, '1');
-            document.getElementById('deal-exit-popup').classList.add('show');
+            popup.classList.add('show');
             if (typeof gtag === 'function') {
                 gtag('event', 'deal_exit_popup_shown', {
                     variant: window.DEAL_HEADLINE_VARIANT || 'unknown',
@@ -1328,6 +1335,14 @@
                 });
             }
         }
+
+        // Clicking overlay background dismisses popup (better mobile UX)
+        popup.addEventListener('click', function(e) {
+            if (e.target === popup) {
+                popup.classList.remove('show');
+                sessionStorage.setItem(KEY, '1');
+            }
+        });
 
         // Desktop: detect mouse leaving viewport
         document.addEventListener('mouseout', function(e) {
