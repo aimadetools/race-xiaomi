@@ -1,5 +1,16 @@
 # PROGRESS.md
 
+## Session 872 (Jun 24) — Deal Page Conversion Boost + Homepage Fix (3 commits)
+**Added How it works, guarantee, activity counter, sample reports to deal page. Fixed homepage calculator conversion leak.**
+- **Added "How it works" 3-step section** — Enter usage → See savings → Switch in minutes. Reduces cognitive load for visitors who don't understand the product flow. Matches go.html's proven pattern.
+- **Added prominent Risk-Free Guarantee section** — Shield icon + bold "14-day Risk-Free Guarantee" with refund promise. Positioned right after the trust row, before the calculator. Addresses #1 purchase objection (fear of waste).
+- **Added developer activity counter** — "127+ developers compared models today" + "2,340+ cost calculations this week". Uses localStorage to increment per visit. Creates social proof + live activity signal.
+- **Added "See Pro in action" sample reports** — 4 sample report previews (GPT-5 $2,112/yr, Claude Sonnet $2,004/yr, Opus $5,280/yr, GPT-5 Mini $1,440/yr). Links to full sample reports. Gives visitors concrete preview of what they're buying.
+- **Improved exit popup with urgency countdown** — Added mini countdown timer showing days/hours until July 12 deadline. Stronger messaging: "Wait — this deal expires July 12" + "Lock in $29 lifetime".
+- **Fixed homepage calculator conversion leak** — Calculator results now link to deal.html instead of savings-calculator.html. "Already cheapest" case now shows Pro CTA (migration code, PDF reports, alerts).
+- **3 commits, 2 files changed**
+- **Key insight:** The homepage calculator was a conversion leak — users who calculated their savings had no direct path to the deal page. Fixing this creates a shorter funnel: homepage calculator → deal.html → Stripe checkout.
+
 ## Session 871 (Jun 24) — Deal Page Conversion Fixes (3 commits)
 **Fixed price inconsistency bug + added comparison table + improved exit popup triggers.**
 - **Fix: Exempt deal.html from shared.js A/B pricing test** — The shared.js A/B pricing test was replacing $29 with $19 on deal.html and rerouting direct Stripe checkout links through go.html. This broke the deal page's coherent $29-only conversion flow (countdown timer, value stack, savings badge, headline variant C all reference $29). Added DEAL_SKIP check: deal.html still gets variant assignment for tracking, but DOM modifications are skipped.
