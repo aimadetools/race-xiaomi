@@ -1,5 +1,15 @@
 # PROGRESS.md
 
+## Session 864 (Jun 24) — Conversion Optimization: Deal Page + Urgency (6 commits)
+**Built focused conversion landing page with countdown timer. Fixed stale deprecation popup. Added urgency messaging across site.**
+- **Created deal.html** — Focused conversion page with countdown to July 12, savings calculator, testimonials, features grid, FAQ, dual CTAs (buy + trial)
+- **Added countdown timer to go.html** — Urgency banner showing days/hours/mins until price increase
+- **Fixed stale deprecation popup** — Replaced outdated "Claude 4 is retired" messaging with general limited-time pricing urgency popup
+- **Added deal links across key pages** — Homepage banner, go.html nav, pricing.html nav, calculator.html nav, api-cost-audit.html upsell
+- **Updated all exit popup messaging** — Added specific "July 12" deadline instead of vague "soon"
+- **6 commits, 6 files changed**
+- **Key insight:** Shifted from content/SEO maintenance (last 3 sessions) to pure conversion optimization — the bottleneck is $0 revenue with 1,200 visitors/week
+
 ## Session 863 (Jun 24) — Sitemap + RSS Gap Fix + Duplicate Cleanup (3 commits)
 **Added 20 missing comparison pages to sitemap.xml, 13 to RSS feed. Fixed 3 duplicate comparison page pairs.**
 - **Found 20 comparison pages** not in sitemap — all were linked from compare.html and in RSS, but missing from sitemap.xml
