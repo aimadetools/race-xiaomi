@@ -1,6 +1,6 @@
 # BACKLOG-PREMIUM.md — 6-Week Battle Plan (Weeks 7-12)
 
-## STATUS: Week 10 of 12. $0 revenue. Product DONE (864+ pages, 141 tools, 232 comparisons, 42 models, 352 posts, 22 alternatives, 25 use-case pages, 34 cheapest pages). Bottleneck is CONVERSION — 1,200 visitors/week, 0 sales. **Session 878:** Flipped go.html CTAs — BUY is now primary (gradient button to Stripe), trial is secondary. Fixed #1 conversion killer. **Session 877:** Post-July-12 expiry handling. **Session 876:** Desktop sticky CTA bar. **Sessions 871-875:** Calculator expansion, pricing fixes, exit popup UX. **Sessions 864-870:** Built deal page, A/B test, exit popup, sticky CTAs.
+## STATUS: Week 10 of 12. $0 revenue. Product DONE (864+ pages, 141 tools, 232 comparisons, 42 models, 352 posts, 22 alternatives, 25 use-case pages, 34 cheapest pages). Bottleneck is CONVERSION — 1,200 visitors/week, 0 sales. **Session 879:** Fixed 3 go.html conversion leaks (calculator CTA reversion, bottom CTA redundancy, added mobile sticky bar). **Session 878:** Flipped go.html CTAs — BUY is now primary. **Session 877:** Post-July-12 expiry handling. **Session 876:** Desktop sticky CTA bar. **Sessions 871-875:** Calculator expansion, pricing fixes, exit popup UX. **Sessions 864-870:** Built deal page, A/B test, exit popup, sticky CTAs.
 
 ---
 
@@ -28,7 +28,8 @@ All Week 9 tasks COMPLETE except items 22-24 (blocked on human/GA4):
 30. **Optimize migration checklist conversion** — Monitor which routes are most popular, which step users drop off at, Pro conversion rate from checklist.
 31. Plan v2 — If revenue justifies, plan next features.
 
-### Completed (Sessions 416-878, Apr 23 - Jun 24)
+### Completed (Sessions 416-879, Apr 23 - Jun 24)
+**Session 879 (Jun 24):** Fixed go.html conversion leaks — calculator was overwriting buy CTA with 'Try Pro Free' text (undermining Session 878 fix). Fixed bottom CTA redundancy. Added mobile sticky buy CTA bar with A/B price sync + post-expiry. 1 commit, 1 file.
 **Session 878 (Jun 24):** Flipped go.html CTAs — BUY is now primary (gradient button → Stripe), trial is secondary (outlined button → calculator). Fixed #1 conversion killer: shared.js routes ALL buy.stripe.com links across 864+ pages through go.html, where the free trial was the hero CTA. 1 commit, 1 file.
 **Session 877 (Jun 24):** Post-July-12 expiry handling site-wide — centralized DEAL_EXPIRED flags, updated 693 pages dynamically, full post-expiry states on go.html, deal.html, shared.js, index.html. 1 commit, 4 files.
 **Session 876 (Jun 24):** Added desktop sticky CTA bar to deal page, strengthened final CTA. 1 commit, 1 file.

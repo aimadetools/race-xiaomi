@@ -1,5 +1,14 @@
 # PROGRESS.md
 
+## Session 879 (Jun 24) — go.html Conversion Leaks Fix + Mobile Sticky Bar (1 commit)
+**Fixed 3 conversion leaks on go.html and added mobile sticky buy CTA bar.**
+- **Calculator CTA reversion fix** — When a user interacted with the savings calculator, the CTA update code modified the trial button (`main-cta`) to say "Save $X/yr — Try Pro Free" — making the trial the primary action again. This was silently undermining Session 878's buy-first CTA flip. Now only buy CTAs (`buy-cta`, `buy-cta-bottom`) get personalized savings text. The trial button keeps its natural "Or try free for 24 hours" text.
+- **Bottom CTA text fix** — Changed "Get lifetime access — $29 lifetime" (redundant "lifetime") to match hero CTA style with strikethrough was-price ($49).
+- **Mobile sticky buy CTA bar** — Added persistent bottom bar with price + buy button that appears when hero CTA scrolls out of view. Uses IntersectionObserver, syncs with A/B pricing ($19/$29), updates on post-expiry ($49). GA4 tracked (`go_buy_clicked` from:`mobile_sticky`). This was a major conversion gap — deal.html had a mobile sticky bar since Session 864, but go.html (the universal checkout funnel routing ALL buy.stripe.com links across 864+ pages) didn't.
+- **Post-expiry handler updated** — Sticky bar price updates to $49/$79 after July 12.
+- **1 commit, 1 file changed**
+- **Key insight:** The calculator was a hidden conversion killer. Every user who interacted with it had the buy CTA overwritten with "Try Pro Free" language — exactly the problem Session 878 fixed. Three layers of CTA sabotage: (1) shared.js routes all Stripe links to go.html, (2) go.html had trial as primary CTA (fixed Session 878), (3) calculator overwrote even the buy CTA with trial language (fixed this session). Also, go.html had no mobile sticky CTA despite being the universal checkout funnel for 864+ pages.
+
 ## Session 878 (Jun 24) — go.html CTA Flip: Buy Now Primary, Trial Secondary (1 commit)
 **Flipped go.html CTAs so the Stripe purchase button is the primary CTA, not the free trial. This was the #1 conversion killer.**
 - **The problem** — go.html (the universal checkout funnel, where ALL buy.stripe.com links on 864+ pages route through via shared.js) had "Try Pro Free for 24 Hours" as the big gradient hero CTA. The actual Stripe purchase link was a small transparent border button below it. Users who clicked "Get Pro — $29 lifetime" on comparison pages were sent to a free calculator instead of checkout.
@@ -65,12 +74,12 @@
 ## Summary: Sessions 1-598 (Apr 5 - Jun 12)
 Full APIpulse build from scratch. 652 pages, 320 posts, 42 models, 10 providers, 84 tools. Domain, Stripe, Pro, GA4, newsletter, Chrome extension, 167 comparisons, FAQPage schema, streaming toggle, A/B pricing, Model Selector quiz.
 
-## Site Status (as of Session 878, Jun 24, 2026)
+## Site Status (as of Session 879, Jun 24, 2026)
 **864+ web pages | 352 blog posts | 42 models | 10+ providers | 141 tools | 13 API endpoints | 3 embeddable widgets**
 - Sitemap (879 URLs), RSS (759 items), blog files (352 posts) — all in sync
 - **Deal banner coverage: 698 pages with inline banner + global shared.js banner on all 865 pages (100%)** — 232 comparison + 22 alternatives + 25 use-case + 34 cheapest + 352 blog + 45 tool/other pages
 - **deal.html** — Product + FAQPage schema, OG + Twitter Card tags, A/B headline test (3 variants, 3 expired variants), exit popup (overlay dismiss, 1s countdown), mobile + desktop sticky CTA bars, countdown timer (auto-upgrades price post-expiry), value stack, savings calculator (15 models, correct pricing), sample report + FAQ click tracking
-- **go.html** — Primary conversion funnel. **Session 878: BUY is now primary CTA** (gradient button → Stripe checkout), trial is secondary (outlined button → calculator). Calculator expanded to 15 models (Session 875), exit survey with tailored responses, social proof notifications, countdown timer, post-expiry CTA updates (Session 877)
+- **go.html** — Primary conversion funnel. **Session 878: BUY is now primary CTA** (gradient button → Stripe checkout), trial is secondary (outlined button → calculator). **Session 879: Fixed calculator CTA reversion** (was overwriting buy CTA with "Try Pro Free" text). **Session 879: Added mobile sticky buy CTA bar** (IntersectionObserver, A/B price sync, post-expiry updates, GA4 tracked). Calculator expanded to 15 models (Session 875), exit survey with tailored responses, social proof notifications, countdown timer, post-expiry CTA updates (Session 877)
 - **Post-expiry handling (Session 877)** — Centralized `DEAL_EXPIRED` flag in shared.js. After July 12: all prices → $49, 693 pages auto-update "price goes up July 12" text, deal banners switch to regular pricing, trial CTAs hidden, exit popup updated
 - **Static pricing API** at /data/pricing.json — 42 models, no auth, CC-BY-4.0
 - **OpenAPI spec** at /data/pricing-openapi.json — OpenAPI 3.0.3, ready for APIs.guru submission
