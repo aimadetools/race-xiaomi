@@ -1,5 +1,16 @@
 # PROGRESS.md
 
+## Session 866 (Jun 24) — Deal Page Headline A/B Test (1 commit)
+**Implemented 3-variant headline A/B test on deal.html to optimize conversion.**
+- **3 headline variants tested:**
+  - A (control): "Stop overpaying for AI APIs. Save $600–$2,400/year." — pain-point + savings
+  - B: "Save $600–$2,400/year on AI APIs. Compare 42 models. Switch in minutes." — savings-first
+  - C: "Limited time: Pro lifetime access $29" — urgency + price-first
+- **GA4 tracking:** `deal_headline_assigned` (page load), `deal_buy_click` (hero + final CTA with variant), `deal_savings_calculated` (calculator with variant)
+- **Persistent assignment** via localStorage (`deal_headline_v2` key) — same visitor always sees same variant
+- **1 commit, 1 file changed, +46 lines**
+- **Key insight:** This is the #1 conversion bottleneck — 1,200 visitors/week, $0 revenue. Testing whether price-first urgency beats savings framing on the deal page.
+
 ## Session 865 (Jun 24) — Deal Page Distribution + Exit Popup Fix (3 commits)
 **Added deal.html urgency banner to 258 pages (232 comparison + 26 alternatives). Updated exit popups to link to deal page.**
 - **Added urgency banner to ALL 232 comparison pages** — Every comparison page visitor now sees July 12 deadline urgency
@@ -69,7 +80,7 @@ Created automotive + telecom cheapest pages — completing all 25 use-case → c
 ## Summary: Sessions 1-598 (Apr 5 - Jun 12)
 Full APIpulse build from scratch. 652 pages, 320 posts, 42 models, 10 providers, 84 tools. Domain, Stripe, Pro, GA4, newsletter, Chrome extension, 167 comparisons, FAQPage schema, streaming toggle, A/B pricing, Model Selector quiz.
 
-## Site Status (as of Session 865, Jun 24, 2026)
+## Site Status (as of Session 866, Jun 24, 2026)
 **864+ web pages | 352 blog posts | 42 models | 10+ providers | 141 tools | 13 API endpoints | 3 embeddable widgets**
 - Sitemap (879 URLs), RSS (759 items), blog files (352 posts) — all in sync
 - **Static pricing API** at /data/pricing.json — 42 models, no auth, CC-BY-4.0

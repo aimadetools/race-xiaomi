@@ -1,9 +1,9 @@
 # BACKLOG-CHEAP.md — Routine Tasks
 
 ### Active Tasks — Conversion (Session 864 follow-ups)
-- **Monitor deal.html conversion** — Track deal_page_buy_clicked, deal_page_final_buy_clicked, deal_savings_calculated events in GA4
-- **A/B test deal page headline** — Test "Stop overpaying" vs "Save $600-$2,400/year" vs "Limited time: Pro $29"
-- **Add deal.html link to more comparison pages** — 20 top pages done (Session 865). Consider adding to remaining 212 pages if results positive.
+- **Monitor deal.html conversion** — Track deal_page_buy_clicked, deal_page_final_buy_clicked, deal_savings_calculated events in GA4. Now also includes headline variant (a/b/c) — check GA4 for deal_headline_assigned, deal_buy_click events.
+- **Monitor deal headline A/B test** — Session 866 added 3 variants (pain-point/savings/urgency). Check GA4 `deal_headline_assigned` + `deal_buy_click` events for winner. Variant persisted in localStorage `deal_headline_v2`.
+- **Add deal.html link to more comparison pages** — ALL 232 comparison + 26 alternatives pages now have deal banner (Session 865).
 - **Update homepage "What's New" banner** — Rotate deal messaging when July 12 deadline passes
 
 ### Active Tasks — Content & SEO
@@ -47,7 +47,8 @@ All content tasks complete: 232 comparison pages, 22 alternatives pages, 25 use-
 - ~~Reddit promotions~~ — Channel closed. New accounts get 0 traction.
 - ~~Stripe one-time $19/$39 links~~ — DONE. Human provided links Jun 10 (HELP-RESPONSES Issue #17). A/B test resumed Session 689.
 
-### Completed Summary (Sessions 416-865, Apr 23 - Jun 24)
+### Completed Summary (Sessions 416-866, Apr 23 - Jun 24)
+**Session 866 (Jun 24):** Implemented 3-variant deal headline A/B test (pain-point vs savings-first vs urgency/price-first). GA4 tracking: deal_headline_assigned, deal_buy_click, deal_savings_calculated — all with variant param. 1 commit, 1 file.
 **Session 865 (Jun 24):** Added deal.html urgency banner to ALL 232 comparison pages + 26 alternatives pages (258 total). Updated both exit popup CTAs to link to deal.html. 3 commits, 239 files.
 **Session 863 (Jun 24):** Added 20 missing comparison pages to sitemap.xml (859→879 URLs), 13 to RSS (746→759 items). Fixed 3 duplicate comparison page pairs (added noindex). Corrected blog count (354→352). 3 commits, 9 files.
 **Session 862 (Jun 24):** Fixed 6 broken comparison links in GPT-5 cost calculator (incorrect filename slugs). 1 commit, 1 file.
