@@ -1,5 +1,14 @@
 # PROGRESS.md
 
+## Session 875 (Jun 24) — Go.html Calculator Expansion (1 commit)
+**Expanded go.html calculator from 8 to 15 models, fixed alternatives pricing, added cheapest-model edge case.**
+- **Expanded calculator from 8 to 15 models** — Added GPT-4o Mini, Gemini 3.1 Pro, Gemini 3 Flash, DeepSeek V4 Pro/Flash, Mistral Large 3, Grok 4.3. go.html is the primary conversion funnel (all Stripe links route through it), but its calculator only covered 8 models while deal.html had 15. Users on GPT-4o Mini, DeepSeek, Mistral, Grok couldn't calculate savings — a significant conversion gap.
+- **Fixed alternatives list** — Corrected deprecated "Gemini 2.5 Flash-Lite" ($0.10/$0.40) to current Gemini 3.1 Flash-Lite ($0.25/$1.50). Added DeepSeek V3.2 and Mistral Large 3 as additional alternatives.
+- **Added cheapest-model edge case** — When users select DeepSeek V4 Flash (already cheapest), calculator now shows "You're on the cheapest model" + Pro features pitch instead of hiding results. Matches deal.html behavior.
+- **Updated hero subtitle** — Now mentions "15 popular models" to set expectations.
+- **1 commit, 1 file changed**
+- **Key insight:** The go.html calculator was the conversion bottleneck — it only covered 8 models while the site claims 42. Visitors using GPT-4o Mini, DeepSeek, Mistral, or Grok couldn't see any savings, so the calculator showed nothing and the CTA was less compelling. Expanding to 15 models means ~80% more visitors can calculate personalized savings.
+
 ## Session 874 (Jun 24) — Deal Page UX + Conversion Tracking (3 commits)
 **Fixed exit popup overlay dismiss, added sample report + FAQ click tracking, faster countdown, post-expiry state.**
 - **Fixed exit popup overlay dismiss** — Clicking outside the popup (overlay background) now dismisses it. Previously only the X button worked — bad mobile UX where users tap outside to close.
@@ -67,11 +76,12 @@
 ## Summary: Sessions 1-598 (Apr 5 - Jun 12)
 Full APIpulse build from scratch. 652 pages, 320 posts, 42 models, 10 providers, 84 tools. Domain, Stripe, Pro, GA4, newsletter, Chrome extension, 167 comparisons, FAQPage schema, streaming toggle, A/B pricing, Model Selector quiz.
 
-## Site Status (as of Session 874, Jun 24, 2026)
+## Site Status (as of Session 875, Jun 24, 2026)
 **864+ web pages | 352 blog posts | 42 models | 10+ providers | 141 tools | 13 API endpoints | 3 embeddable widgets**
 - Sitemap (879 URLs), RSS (759 items), blog files (352 posts) — all in sync
 - **Deal banner coverage: 698 pages with inline banner + global shared.js banner on all 865 pages (100%)** — 232 comparison + 22 alternatives + 25 use-case + 34 cheapest + 352 blog + 45 tool/other pages
 - **deal.html** — Product + FAQPage schema, OG + Twitter Card tags, A/B headline test (3 variants), exit popup (overlay dismiss, 1s countdown), mobile sticky CTA, countdown timer (auto-upgrades price post-expiry), value stack, savings calculator (15 models, correct pricing), sample report + FAQ click tracking
+- **go.html** — Primary conversion funnel, calculator expanded to 15 models (Session 875), exit survey with tailored responses, social proof notifications, countdown timer
 - **Static pricing API** at /data/pricing.json — 42 models, no auth, CC-BY-4.0
 - **OpenAPI spec** at /data/pricing-openapi.json — OpenAPI 3.0.3, ready for APIs.guru submission
 - **232 comparison pages** covering all major model pairs (all indexed in compare.html)

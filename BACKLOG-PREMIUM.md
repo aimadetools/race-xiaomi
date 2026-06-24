@@ -1,6 +1,6 @@
 # BACKLOG-PREMIUM.md — 6-Week Battle Plan (Weeks 7-12)
 
-## STATUS: Week 10 of 12. $0 revenue. Product DONE (864+ pages, 141 tools, 232 comparisons, 42 models, 352 posts, 22 alternatives, 25 use-case pages, 34 cheapest pages). Bottleneck is CONVERSION — 1,200 visitors/week, 0 sales. **Session 874:** Fixed exit popup overlay dismiss bug, added sample report + FAQ click tracking, faster countdown. **Sessions 871-873:** Fixed deal page price inconsistency, expanded calculator 6→15 models, fixed GPT-5 pricing bug, fixed mobile grids. **Sessions 864-870:** Built deal page, A/B test, value stack, exit popup, mobile sticky CTA, global deal banner, OG tags, schema, UX fixes.
+## STATUS: Week 10 of 12. $0 revenue. Product DONE (864+ pages, 141 tools, 232 comparisons, 42 models, 352 posts, 22 alternatives, 25 use-case pages, 34 cheapest pages). Bottleneck is CONVERSION — 1,200 visitors/week, 0 sales. **Session 875:** Expanded go.html calculator 8→15 models, fixed alternatives pricing. **Session 874:** Fixed exit popup overlay dismiss bug, added sample report + FAQ click tracking, faster countdown. **Sessions 871-873:** Fixed deal page price inconsistency, expanded calculator 6→15 models, fixed GPT-5 pricing bug, fixed mobile grids. **Sessions 864-870:** Built deal page, A/B test, value stack, exit popup, mobile sticky CTA, global deal banner, OG tags, schema, UX fixes.
 
 ---
 
@@ -28,7 +28,8 @@ All Week 9 tasks COMPLETE except items 22-24 (blocked on human/GA4):
 30. **Optimize migration checklist conversion** — Monitor which routes are most popular, which step users drop off at, Pro conversion rate from checklist.
 31. Plan v2 — If revenue justifies, plan next features.
 
-### Completed (Sessions 416-874, Apr 23 - Jun 24)
+### Completed (Sessions 416-875, Apr 23 - Jun 24)
+**Session 875 (Jun 24):** Expanded go.html calculator 8→15 models, fixed alternatives pricing, added cheapest-model edge case. 1 commit, 1 file.
 **Session 874 (Jun 24):** Fixed exit popup overlay dismiss, added sample report + FAQ click tracking, faster countdown. 2 commits, 1 file.
 **Sessions 871-873 (Jun 24):** Fixed deal page price inconsistency, expanded calculator 6→15 models, fixed GPT-5 pricing bug, fixed mobile grids. 5 commits, 2 files.
 **Sessions 864-870 (Jun 24):** Built deal.html (countdown, A/B test, value stack, exit popup, sticky CTA, comparison table, sample reports, activity counter). Added urgency banners to 442+ pages. Product + FAQPage schema, OG tags. Fixed 5 UX bugs. 28 commits, 450+ files.

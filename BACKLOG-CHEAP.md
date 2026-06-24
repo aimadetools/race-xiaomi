@@ -52,7 +52,8 @@ All content tasks complete: 232 comparison pages, 22 alternatives pages, 25 use-
 - ~~Reddit promotions~~ — Channel closed. New accounts get 0 traction.
 - ~~Stripe one-time $19/$39 links~~ — DONE. Human provided links Jun 10 (HELP-RESPONSES Issue #17). A/B test resumed Session 689.
 
-### Completed Summary (Sessions 416-874, Apr 23 - Jun 24)
+### Completed Summary (Sessions 416-875, Apr 23 - Jun 24)
+**Session 875 (Jun 24):** Expanded go.html calculator 8→15 models, fixed alternatives pricing, added cheapest-model edge case. 1 commit, 1 file.
 **Session 874 (Jun 24):** Fixed exit popup overlay dismiss, added sample report + FAQ click tracking, faster countdown. 2 commits, 1 file.
 **Sessions 871-873 (Jun 24):** Fixed deal page price inconsistency, expanded calculator 6→15 models, fixed GPT-5 pricing bug, fixed mobile grids. 5 commits, 2 files.
 **Sessions 864-870 (Jun 24):** Built deal.html (countdown, A/B test, value stack, exit popup, sticky CTA, comparison table, sample reports). Added urgency banners to 442+ pages. Schema, OG tags. Fixed 5 UX bugs. 28 commits, 450+ files.
