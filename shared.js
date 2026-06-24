@@ -853,7 +853,9 @@ async function saveEmail(e) {
 
 // Exit-intent popup for email capture — A/B test with 3 variants
 (function() {
-    if (window.location.pathname.includes('unsubscribe') || window.location.pathname.includes('ph.html') || window.location.pathname.includes('deal.html') || window.location.pathname.includes('go.html')) return;
+    var skipPages = ['unsubscribe', 'ph.html', 'deal.html', 'go.html', 'pricing.html'];
+    var pathname = window.location.pathname;
+    for (var i = 0; i < skipPages.length; i++) { if (pathname.includes(skipPages[i])) return; }
     if (localStorage.getItem('apipulse_popup_dismissed')) return;
 
     // Limited-time pricing exit popup (replaces stale deprecation popup)
