@@ -31,7 +31,10 @@ updateThemeIcon();
 // A/B Pricing Test — $19 vs $29 (one-time payment links)
 // Session 722: Simplified from 3 variants to 2 to reduce decision paralysis.
 // Variant A = $19 (Budget), Variant B = $29 (Control)
+// NOTE: deal.html is EXCLUDED — it has its own $29-only conversion flow with countdown,
+// value stack, and savings calculator. Overriding the price there breaks the messaging.
 (function(){
+    var DEAL_SKIP = location.pathname.indexOf('deal.html') !== -1;
     var VARIANTS = {A:{price:19,label:'Budget',futurePrice:39},B:{price:29,label:'Control',futurePrice:49}};
     var STRIPE_LINKS = {
         A: 'https://buy.stripe.com/bJecN55OEa5g1VUbcreEo0i', // $19 one-time
@@ -49,6 +52,9 @@ updateThemeIcon();
     window._abVariant = variant;
     window._abPrice = v.price;
     window._abStripeLink = STRIPE_LINKS[variant];
+
+    // Skip price overrides on deal.html — it has its own $29 conversion flow
+    if (DEAL_SKIP) return;
 
     // Update all CTAs on this page to use variant price and link
     document.addEventListener('DOMContentLoaded', function() {
