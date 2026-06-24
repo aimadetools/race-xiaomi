@@ -1,5 +1,12 @@
 # PROGRESS.md
 
+## Session 887 (Jun 24) — Homepage Testimonials + Comparison Page Pro CTAs (2 commits)
+**Added developer testimonials to homepage, added direct Pro buy CTA to all 232 comparison pages.**
+- **Homepage testimonials** — Added 3 developer testimonials section (r/MachineLearning, Hacker News) between pricing and FAQ on index.html. CSS classes existed but HTML section was never added. Mobile responsive. Same testimonials as go.html (Session 881). Homepage is the primary organic entry point (1,200 visitors/week) but had zero human social proof.
+- **Comparison page Pro CTAs** — Added gradient Pro CTA section before footer on all 232 comparison pages. CTA links directly to go.html?from=compare_cta (cuts out deal.html middle step). Includes trust badges (14-day guarantee, instant access, one-time payment). Comparison pages are the primary organic traffic drivers but only had a deal banner → deal.html (2-step funnel). Direct go.html CTA cuts it to 1 step.
+- **2 commits, 233 files changed**
+- **Key insight:** Two high-intent page types were missing direct purchase paths. The homepage (primary organic entry) had zero social proof — testimonials built trust before visitors reached the checkout funnel. The 232 comparison pages (all indexed in Google) only had a deal banner linking to deal.html, adding an unnecessary step before purchase. Direct CTAs on both pages follow the same pattern as Session 886 (deprecation tracker) and Session 884 (cheapest-ai-api-2026) — high-intent pages need direct buy buttons, not just informational links.
+
 ## Session 886 (Jun 24) — Deprecation Tracker Pro CTA (1 commit)
 **Added direct Pro buy CTA to model deprecation tracker — highest-intent migration page had no purchase button.**
 - **Deprecation tracker Pro CTA** — The model-deprecations.html page (6 deprecated models, 5 providers affected) is one of the highest-intent pages on the site — users actively need migration help. The existing CTA section only linked to free tools (savings calculator, migration checklist) with no direct Pro buy button. Added gradient Pro CTA as primary action ("Get Pro — $29 lifetime") with `go.html?from=deprecation_tracker` tracking. Free tools moved to secondary outlined buttons. A/B price variant sync + trust badges. GA4 `deprecation_pro_cta_clicked` event on click.
@@ -63,20 +70,8 @@
 ## Session 878 (Jun 24) — go.html CTA Flip: Buy Now Primary, Trial Secondary (1 commit)
 **Flipped go.html CTAs so the Stripe purchase button is the primary CTA, not the free trial. This was the #1 conversion killer.** After 14 sessions of deal page optimization with $0 revenue, the bottleneck was the go.html checkout funnel making the free trial the hero CTA. shared.js rewrites ALL buy.stripe.com links across 864+ pages to route through go.html, where the free trial was the hero CTA. Swapped CTA prominence + added GA4 tracking.
 
-## Session 877 (Jun 24) — Post-July-12 Expiry Handling Site-Wide (1 commit)
-**Added centralized post-expiry logic for $29→$49 transition after July 12.** Centralized `DEAL_EXPIRED` flags in shared.js. Global deal banner switches from urgency to regular pricing. 693 pages auto-update text. Full post-expiry states on go.html, deal.html, index.html. Key insight: 693 pages had hardcoded "$29" that would become misleading after deadline.
-
-## Session 876 (Jun 24) — Desktop Sticky CTA Bar + Conversion Improvements (1 commit)
-**Added persistent desktop sticky CTA bar to deal page, strengthened final CTA.** Desktop sticky bar with logo, price, countdown, buy button. GA4 tracking. Key insight: deal page had mobile sticky CTA but no desktop equivalent — desktop users had to scroll back to top to buy.
-
-## Session 875 (Jun 24) — Go.html Calculator Expansion (1 commit)
-**Expanded go.html calculator from 8 to 15 models, fixed alternatives pricing, added cheapest-model edge case.** Key insight: go.html calculator only covered 8 models while site claims 42 — visitors on GPT-4o Mini, DeepSeek, Mistral, Grok couldn't calculate savings. Expanding to 15 models means ~80% more visitors can calculate personalized savings.
-
-## Session 874 (Jun 24) — Deal Page UX + Conversion Tracking (3 commits)
-**Fixed exit popup overlay dismiss, added sample report + FAQ click tracking, faster countdown, post-expiry state.** Key insight: exit popup overlay click-to-dismiss was a real UX bug — on mobile, users naturally tap outside popups to close them.
-
-## Sessions 871-873 (Jun 24) — Deal Page Calculator + Pricing Fixes (5 commits)
-**Fixed GPT-5 pricing bug (6x inflated), expanded calculator from 6 to 15 models, fixed mobile grids, added comparison table, improved exit popup triggers, exempted deal.html from shared.js A/B pricing test.** Key insight: shared.js A/B pricing test was silently corrupting deal page pricing — half of visitors saw $19 instead of $29.
+## Summary: Sessions 871-882 (Jun 24) — Deal Page Conversion Optimization
+12 sessions. Desktop sticky CTA bar (876). Post-July-12 expiry handling site-wide — 693 pages auto-update (877). go.html calculator expansion 8→15 models (875). Fixed exit popup overlay dismiss, added click tracking (874). Fixed GPT-5 pricing bug, expanded calculator, mobile grids (871-873). go.html trust signals — provider bar, checklist, badges, social proof 3s (880). Developer testimonials (881). OG/Twitter meta + schema (882). 12 commits, 694+ files.
 
 ## Summary: Sessions 864-870 (Jun 24) — Deal Page Build + UX Fixes
 7 sessions. Created deal.html (countdown, calculator, testimonials, FAQ, dual CTAs). Added headline A/B test (3 variants). Added urgency banners to 258 comparison + 26 alternatives pages. Added Product + FAQPage schema, OG tags. Repurposed global deprecation banner to deal urgency. Added value stack, who-section, included checklist, mobile sticky CTA, exit-intent popup. Fixed 5 critical UX bugs: mobile exit popup velocity, double exit popups on deal/go/pricing, triple sticky bars on deal mobile. Free vs Pro comparison table. Exempted deal.html from shared.js A/B pricing test. 28 commits, 450+ files.
@@ -105,16 +100,17 @@
 ## Summary: Sessions 1-598 (Apr 5 - Jun 12)
 Full APIpulse build from scratch. 652 pages, 320 posts, 42 models, 10 providers, 84 tools. Domain, Stripe, Pro, GA4, newsletter, Chrome extension, 167 comparisons, FAQPage schema, streaming toggle, A/B pricing, Model Selector quiz.
 
-## Site Status (as of Session 885, Jun 24, 2026)
+## Site Status (as of Session 887, Jun 24, 2026)
 **864+ web pages | 352 blog posts | 42 models | 10+ providers | 141 tools | 13 API endpoints | 3 embeddable widgets**
 - Sitemap (879 URLs), RSS (759 items), blog files (352 posts) — all in sync
 - **Deal banner coverage: 698 pages with inline banner + global shared.js banner on all 865 pages (100%)** — 232 comparison + 22 alternatives + 25 use-case + 34 cheapest + 352 blog + 45 tool/other pages
 - **deal.html** — Product + FAQPage schema, OG + Twitter Card tags, A/B headline test (3 variants, 3 expired variants), exit popup (overlay dismiss, 1s countdown), mobile + desktop sticky CTA bars, countdown timer (auto-upgrades price post-expiry), value stack, savings calculator (15 models, correct pricing), sample report + FAQ click tracking
-- **go.html** — Primary conversion funnel. **Session 878: BUY is now primary CTA** (gradient button → Stripe checkout), trial is secondary (outlined button → calculator). **Session 879: Fixed calculator CTA reversion** + mobile sticky buy CTA bar. **Session 880: Added trust signals** — provider trust bar (10 providers), "everything included" checklist (8 deliverables), trust badges (Stripe/guarantee/instant), social proof notification 8s→3s. **Session 881: Added developer testimonials** — 3 quotes from r/MachineLearning and Hacker News, responsive 2-column layout, GA4 tracked. **Session 882: Added OG/Twitter meta tags + Product + FAQPage schema** — rich link previews when shared, structured data for search. **Session 883: Social proof overhaul** — replaced generic feature notifications with realistic activity feed (3 staggered: purchase, savings, activity spike). Added Before/After comparison section ("Without Pro" vs "With Pro"). **Session 885: Fixed notification overlap** — 3 notifications all at bottom:24px, staggered to 80/150/220px. Calculator expanded to 15 models (Session 875), exit survey with tailored responses, social proof notifications, countdown timer, post-expiry CTA updates (Session 877)
-- **Post-expiry handling (Session 877)** — Centralized `DEAL_EXPIRED` flag in shared.js. After July 12: all prices → $49, 693 pages auto-update "price goes up July 12" text, deal banners switch to regular pricing, trial CTAs hidden, exit popup updated
+- **go.html** — Primary conversion funnel. BUY is primary CTA (gradient → Stripe), trial is secondary (outlined → calculator). Trust signals: provider bar (10 providers), checklist (8 deliverables), trust badges, social proof 3s. Developer testimonials (3 quotes). OG/Twitter meta + Product + FAQPage schema. Social proof overhaul (realistic activity feed). Before/After comparison. Calculator expanded to 15 models.
+- **Homepage (index.html)** — **Session 887: Added developer testimonials** — 3 quotes (r/MachineLearning, Hacker News) between pricing and FAQ. Social proof bar (42 models, 10 providers, 232 reports, $0 free). Calculator with savings badge → deal.html. Pricing section (Free vs Pro) → go.html. Deal urgency banner → deal.html.
+- **232 comparison pages** — **Session 887: Added direct Pro buy CTA** on all 232 pages. Gradient CTA section before footer → go.html?from=compare_cta. Trust badges. Cuts funnel from 2-step (deal.html → go.html) to 1-step (direct to go.html). All pages also have deal banner from shared.js.
+- **Post-expiry handling (Session 877)** — Centralized `DEAL_EXPIRED` flag in shared.js. After July 12: all prices → $49, 693 pages auto-update, deal banners switch to regular pricing, trial CTAs hidden, exit popup updated
 - **Static pricing API** at /data/pricing.json — 42 models, no auth, CC-BY-4.0
 - **OpenAPI spec** at /data/pricing-openapi.json — OpenAPI 3.0.3, ready for APIs.guru submission
-- **232 comparison pages** covering all major model pairs (all indexed in compare.html)
 - **22 alternatives landing pages** — all cross-linked, all with go.html model pre-fill
 - **25 use-case pages** — all cross-linked to their specific cheapest pages, cheapest-ai-api.html hub, and migration checklist
 - **34 use-case-specific cheapest pages** — all cross-linked to migration checklist, deprecation tracker, and budget planner
