@@ -602,6 +602,86 @@
             .deal-page { padding-bottom: 100px; }
         }
 
+        /* Desktop sticky CTA bar */
+        .desktop-sticky-cta {
+            display: none;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(15,15,25,0.95);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-top: 1px solid rgba(99,102,241,0.3);
+            padding: 0;
+            z-index: 100;
+            box-shadow: 0 -4px 30px rgba(0,0,0,0.4);
+        }
+        .desktop-sticky-inner {
+            max-width: 900px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 12px 24px;
+            gap: 16px;
+        }
+        .desktop-sticky-left {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            flex: 1;
+            min-width: 0;
+        }
+        .desktop-sticky-logo {
+            font-size: 15px;
+            font-weight: 800;
+            color: white;
+            white-space: nowrap;
+        }
+        .desktop-sticky-logo span { color: var(--accent); }
+        .desktop-sticky-price {
+            font-size: 18px;
+            font-weight: 800;
+            color: var(--green);
+            white-space: nowrap;
+        }
+        .desktop-sticky-was {
+            font-size: 13px;
+            font-weight: 500;
+            color: var(--text-muted);
+            text-decoration: line-through;
+            margin-left: 4px;
+        }
+        .desktop-sticky-countdown {
+            font-size: 13px;
+            font-weight: 600;
+            color: #f59e0b;
+            font-family: monospace;
+            white-space: nowrap;
+        }
+        .desktop-sticky-btn {
+            display: inline-block;
+            padding: 10px 24px;
+            background: linear-gradient(135deg, var(--accent), #8b5cf6);
+            color: white;
+            border-radius: 10px;
+            font-size: 14px;
+            font-weight: 700;
+            text-decoration: none;
+            white-space: nowrap;
+            transition: transform 0.15s, box-shadow 0.15s;
+            box-shadow: 0 2px 12px rgba(99,102,241,0.3);
+        }
+        .desktop-sticky-btn:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 20px rgba(99,102,241,0.5);
+        }
+        @media (min-width: 769px) {
+            .desktop-sticky-cta.visible { display: block; }
+            .deal-page { padding-bottom: 80px; }
+        }
+
         /* Deal exit popup */
         .deal-exit-overlay {
             display: none;
@@ -1062,11 +1142,11 @@
         <!-- Final CTA -->
         <div class="final-cta">
             <h2>Ready to stop overpaying?</h2>
-            <p>Join developers who've already optimized their AI API costs with APIpulse Pro.</p>
+            <p>Every day you wait is money left on the table. Most developers save $600–$2,400/yr — the tool pays for itself in days.</p>
             <a href="https://buy.stripe.com/fZu7sL3Gw3GS0RQeoDeEo0a" target="_blank" rel="noopener" class="deal-cta" onclick="if(window.trackEvent)window.trackEvent('deal_page_final_buy_clicked',{variant:window.DEAL_HEADLINE_VARIANT||'unknown'});if(typeof gtag==='function')gtag('event','deal_buy_click',{variant:window.DEAL_HEADLINE_VARIANT||'unknown',location:'final'});">
                 Get Pro Lifetime Access — $29
             </a>
-            <p style="font-size:13px;color:var(--text-muted);margin-top:12px;">🔒 Secure checkout via Stripe · 14-day money-back guarantee</p>
+            <p style="font-size:13px;color:var(--text-muted);margin-top:12px;">🔒 Secure checkout via Stripe · 14-day money-back guarantee · Price increases to $49 on July 12</p>
         </div>
 
         <p style="text-align:center;font-size:12px;color:var(--text-muted);">
@@ -1297,6 +1377,40 @@
         }, { threshold: 0 });
         observer.observe(buyBtn);
     })();
+
+    // Desktop sticky CTA — show after scrolling past hero CTA
+    (function() {
+        var sticky = document.getElementById('desktop-sticky-cta');
+        var buyBtn = document.getElementById('buy-btn');
+        if (!sticky || !buyBtn) return;
+
+        var observer = new IntersectionObserver(function(entries) {
+            entries.forEach(function(e) {
+                if (e.isIntersecting) {
+                    sticky.classList.remove('visible');
+                } else {
+                    sticky.classList.add('visible');
+                }
+            });
+        }, { threshold: 0 });
+        observer.observe(buyBtn);
+
+        // Desktop countdown timer
+        var cdEl = document.getElementById('desktop-countdown');
+        if (cdEl) {
+            function updateDesktopCountdown() {
+                var target = new Date('2026-07-12T23:59:59Z').getTime();
+                var diff = target - Date.now();
+                if (diff <= 0) { cdEl.textContent = 'EXPIRED'; return; }
+                var d = Math.floor(diff / 86400000);
+                var h = Math.floor((diff % 86400000) / 3600000);
+                var m = Math.floor((diff % 3600000) / 60000);
+                cdEl.textContent = '⏰ ' + d + 'd ' + h + 'h ' + m + 'm left';
+            }
+            updateDesktopCountdown();
+            setInterval(updateDesktopCountdown, 60000);
+        }
+    })();
     </script>
 
     <!-- Mobile sticky CTA -->
@@ -1304,6 +1418,20 @@
         <a href="https://buy.stripe.com/fZu7sL3Gw3GS0RQeoDeEo0a" target="_blank" rel="noopener" onclick="if(window.trackEvent)window.trackEvent('deal_sticky_buy_clicked',{variant:window.DEAL_HEADLINE_VARIANT||'unknown'});">
             Get Pro — $29 lifetime →
         </a>
+    </div>
+
+    <!-- Desktop sticky CTA bar -->
+    <div class="desktop-sticky-cta" id="desktop-sticky-cta">
+        <div class="desktop-sticky-inner">
+            <div class="desktop-sticky-left">
+                <span class="desktop-sticky-logo">API<span>pulse</span> Pro</span>
+                <span class="desktop-sticky-price">$29 <span class="desktop-sticky-was">was $49</span></span>
+                <span class="desktop-sticky-countdown" id="desktop-countdown"></span>
+            </div>
+            <a href="https://buy.stripe.com/fZu7sL3Gw3GS0RQeoDeEo0a" target="_blank" rel="noopener" class="desktop-sticky-btn" onclick="if(window.trackEvent)window.trackEvent('deal_sticky_buy_clicked',{variant:window.DEAL_HEADLINE_VARIANT||'unknown',platform:'desktop'});if(typeof gtag==='function')gtag('event','deal_buy_click',{variant:window.DEAL_HEADLINE_VARIANT||'unknown',location:'desktop_sticky'});">
+                Get Lifetime Access →
+            </a>
+        </div>
     </div>
 
     <!-- Deal exit-intent popup -->
