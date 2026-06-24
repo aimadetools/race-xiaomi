@@ -345,8 +345,8 @@
 
         <!-- Hero -->
         <div class="deal-hero">
-            <h1>Stop overpaying for AI APIs.<br><span>Save $600–$2,400/year.</span></h1>
-            <p class="sub">Compare 42 models across 10 providers. Get personalized migration code. One-time payment, lifetime access.</p>
+            <h1 id="deal-headline">Stop overpaying for AI APIs.<br><span>Save $600–$2,400/year.</span></h1>
+            <p class="sub" id="deal-subline">Compare 42 models across 10 providers. Get personalized migration code. One-time payment, lifetime access.</p>
         </div>
 
         <!-- Price card -->
@@ -358,7 +358,7 @@
         </div>
 
         <!-- CTAs -->
-        <a href="https://buy.stripe.com/fZu7sL3Gw3GS0RQeoDeEo0a" target="_blank" rel="noopener" class="deal-cta" id="buy-btn" onclick="if(window.trackEvent)window.trackEvent('deal_page_buy_clicked')">
+        <a href="https://buy.stripe.com/fZu7sL3Gw3GS0RQeoDeEo0a" target="_blank" rel="noopener" class="deal-cta" id="buy-btn" onclick="if(window.trackEvent)window.trackEvent('deal_page_buy_clicked',{variant:window.DEAL_HEADLINE_VARIANT||'unknown'});if(typeof gtag==='function')gtag('event','deal_buy_click',{variant:window.DEAL_HEADLINE_VARIANT||'unknown',location:'hero'});">
             Get Pro Lifetime Access — $29
         </a>
         <a href="calculator.html?from=deal_trial" class="deal-cta-trial" onclick="if(typeof startTrial==='function')startTrial();">
@@ -479,7 +479,7 @@
         <div class="final-cta">
             <h2>Ready to stop overpaying?</h2>
             <p>Join developers who've already optimized their AI API costs with APIpulse Pro.</p>
-            <a href="https://buy.stripe.com/fZu7sL3Gw3GS0RQeoDeEo0a" target="_blank" rel="noopener" class="deal-cta" onclick="if(window.trackEvent)window.trackEvent('deal_page_final_buy_clicked')">
+            <a href="https://buy.stripe.com/fZu7sL3Gw3GS0RQeoDeEo0a" target="_blank" rel="noopener" class="deal-cta" onclick="if(window.trackEvent)window.trackEvent('deal_page_final_buy_clicked',{variant:window.DEAL_HEADLINE_VARIANT||'unknown'});if(typeof gtag==='function')gtag('event','deal_buy_click',{variant:window.DEAL_HEADLINE_VARIANT||'unknown',location:'final'});">
                 Get Pro Lifetime Access — $29
             </a>
             <p style="font-size:13px;color:var(--text-muted);margin-top:12px;">🔒 Secure checkout via Stripe · 14-day money-back guarantee</p>
@@ -503,6 +503,38 @@
     </footer>
 
     <script>
+    // Deal headline A/B test — 3 variants
+    (function() {
+        var KEY = 'deal_headline_v2';
+        var VARIANTS = {
+            a: {
+                headline: 'Stop overpaying for AI APIs.<br><span>Save $600–$2,400/year.</span>',
+                subline: 'Compare 42 models across 10 providers. Get personalized migration code. One-time payment, lifetime access.'
+            },
+            b: {
+                headline: 'Save $600–$2,400/year on AI APIs.<br><span>Compare 42 models. Switch in minutes.</span>',
+                subline: 'Get personalized migration code, PDF reports, and price alerts. One-time payment, lifetime access.'
+            },
+            c: {
+                headline: 'Limited time: Pro lifetime access <span>$29</span>',
+                subline: 'Compare 42 models, get migration code, save up to 40% on API costs. Price goes up July 12.'
+            }
+        };
+        var variant = localStorage.getItem(KEY);
+        if (!variant || !VARIANTS[variant]) {
+            var r = Math.random();
+            variant = r < 0.34 ? 'a' : r < 0.67 ? 'b' : 'c';
+            localStorage.setItem(KEY, variant);
+        }
+        window.DEAL_HEADLINE_VARIANT = variant;
+        var v = VARIANTS[variant];
+        document.getElementById('deal-headline').innerHTML = v.headline;
+        document.getElementById('deal-subline').textContent = v.subline;
+        if (typeof gtag === 'function') {
+            gtag('event', 'deal_headline_assigned', { variant: variant });
+        }
+    })();
+
     // Countdown timer to July 12, 2026 23:59:59 UTC
     function updateCountdown() {
         var target = new Date('2026-07-12T23:59:59Z').getTime();
@@ -576,8 +608,17 @@
             model: modelKey,
             spend: spend,
             annualSavings: Math.round(annualSave),
-            paybackDays: paybackDays
+            paybackDays: paybackDays,
+            variant: window.DEAL_HEADLINE_VARIANT || 'unknown'
         });
+        if (typeof gtag === 'function') {
+            gtag('event', 'deal_savings_calculated', {
+                variant: window.DEAL_HEADLINE_VARIANT || 'unknown',
+                model: modelKey,
+                spend: spend,
+                annualSavings: Math.round(annualSave)
+            });
+        }
     }
     </script>
 </body>
