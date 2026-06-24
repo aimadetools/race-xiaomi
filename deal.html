@@ -1156,22 +1156,25 @@
     </div>
 
     <script>
-    // Deal exit-intent popup — desktop only, fires once per session
+    // Deal exit-intent popup — fires once per session, 3 trigger types
     (function() {
         var KEY = 'deal_exit_shown';
         if (sessionStorage.getItem(KEY)) return;
 
-        function showExit() {
+        function showExit(trigger) {
             sessionStorage.setItem(KEY, '1');
             document.getElementById('deal-exit-popup').classList.add('show');
             if (typeof gtag === 'function') {
-                gtag('event', 'deal_exit_popup_shown', { variant: window.DEAL_HEADLINE_VARIANT || 'unknown' });
+                gtag('event', 'deal_exit_popup_shown', {
+                    variant: window.DEAL_HEADLINE_VARIANT || 'unknown',
+                    trigger: trigger
+                });
             }
         }
 
         // Desktop: detect mouse leaving viewport
         document.addEventListener('mouseout', function(e) {
-            if (e.clientY < 5) showExit();
+            if (e.clientY < 5) showExit('mouse_exit');
         });
 
         // Mobile: detect rapid upward scroll velocity (back gesture)
@@ -1183,11 +1186,24 @@
             if (dt > 0 && dt < 200) {
                 var dy = prevScrollY - window.scrollY; // positive = scrolling up
                 var velocity = dy / dt * 1000; // pixels/sec upward
-                if (velocity > 5000 && window.scrollY < 300) showExit();
+                if (velocity > 5000 && window.scrollY < 300) showExit('scroll_velocity');
             }
             prevScrollY = window.scrollY;
             prevScrollTime = now;
         }, { passive: true });
+
+        // Fallback: show after 60s if user has scrolled past 50% of page
+        // Captures engaged visitors who haven't triggered exit intent
+        var startTime = Date.now();
+        var maxScroll = 0;
+        window.addEventListener('scroll', function() {
+            var scrollPct = window.scrollY / (document.body.scrollHeight - window.innerHeight);
+            if (scrollPct > maxScroll) maxScroll = scrollPct;
+        }, { passive: true });
+        setTimeout(function() {
+            if (sessionStorage.getItem(KEY)) return;
+            if (maxScroll > 0.5) showExit('time_scroll');
+        }, 60000);
     })();
     </script>
 </body>
