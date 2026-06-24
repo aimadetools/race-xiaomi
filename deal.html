@@ -484,6 +484,73 @@
             .deal-page { padding-bottom: 100px; }
         }
 
+        /* Deal exit popup */
+        .deal-exit-overlay {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.7);
+            z-index: 200;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        .deal-exit-overlay.show { display: flex; }
+        .deal-exit-popup {
+            background: var(--bg-primary);
+            border: 2px solid var(--accent);
+            border-radius: 20px;
+            padding: 32px 28px;
+            max-width: 440px;
+            width: 100%;
+            text-align: center;
+            position: relative;
+            animation: fadeIn 0.3s ease;
+        }
+        .deal-exit-popup .close-btn {
+            position: absolute;
+            top: 12px;
+            right: 16px;
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: var(--text-muted);
+        }
+        .deal-exit-popup h3 {
+            font-size: 22px;
+            font-weight: 900;
+            margin-bottom: 8px;
+        }
+        .deal-exit-popup p {
+            font-size: 15px;
+            color: var(--text-secondary);
+            line-height: 1.5;
+            margin-bottom: 20px;
+        }
+        .deal-exit-popup .exit-cta {
+            display: block;
+            width: 100%;
+            padding: 14px;
+            background: linear-gradient(135deg, var(--accent), #8b5cf6);
+            color: white;
+            border: none;
+            border-radius: 12px;
+            font-size: 16px;
+            font-weight: 700;
+            cursor: pointer;
+            text-decoration: none;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+        .deal-exit-popup .exit-secondary {
+            display: block;
+            font-size: 13px;
+            color: var(--text-muted);
+            text-decoration: none;
+        }
+        .deal-exit-popup .exit-secondary:hover { color: var(--accent); }
+
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(10px); }
             to { opacity: 1; transform: translateY(0); }
@@ -888,5 +955,49 @@
             Get Pro — $29 lifetime →
         </a>
     </div>
+
+    <!-- Deal exit-intent popup -->
+    <div class="deal-exit-overlay" id="deal-exit-popup">
+        <div class="deal-exit-popup">
+            <button class="close-btn" onclick="document.getElementById('deal-exit-popup').classList.remove('show')" aria-label="Close">×</button>
+            <h3>Wait — before you go 🔍</h3>
+            <p>Most developers save $600–$2,400/yr by switching models. Your Pro access includes a free API Cost Audit that shows exactly where you're overpaying.</p>
+            <a href="https://buy.stripe.com/fZu7sL3Gw3GS0RQeoDeEo0a" target="_blank" rel="noopener" class="exit-cta" onclick="if(window.trackEvent)window.trackEvent('deal_exit_popup_buy_clicked',{variant:window.DEAL_HEADLINE_VARIANT||'unknown'});">
+                Get Pro Lifetime — $29 →
+            </a>
+            <a href="api-cost-audit.html?from=deal_exit" class="exit-secondary" onclick="if(window.trackEvent)window.trackEvent('deal_exit_popup_audit_clicked');">
+                Or try the free API Cost Audit first →
+            </a>
+        </div>
+    </div>
+
+    <script>
+    // Deal exit-intent popup — desktop only, fires once per session
+    (function() {
+        var KEY = 'deal_exit_shown';
+        if (sessionStorage.getItem(KEY)) return;
+
+        function showExit() {
+            sessionStorage.setItem(KEY, '1');
+            document.getElementById('deal-exit-popup').classList.add('show');
+            if (typeof gtag === 'function') {
+                gtag('event', 'deal_exit_popup_shown', { variant: window.DEAL_HEADLINE_VARIANT || 'unknown' });
+            }
+        }
+
+        // Desktop: detect mouse leaving viewport
+        document.addEventListener('mouseout', function(e) {
+            if (e.clientY < 5) showExit();
+        });
+
+        // Mobile: detect rapid scroll to top (back gesture)
+        var lastScroll = Date.now();
+        window.addEventListener('scroll', function() {
+            var now = Date.now();
+            if (window.scrollY < 100 && now - lastScroll < 500) showExit();
+            lastScroll = now;
+        }, { passive: true });
+    })();
+    </script>
 </body>
 </html>
