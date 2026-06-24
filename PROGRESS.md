@@ -1,5 +1,11 @@
 # PROGRESS.md
 
+## Session 886 (Jun 24) — Deprecation Tracker Pro CTA (1 commit)
+**Added direct Pro buy CTA to model deprecation tracker — highest-intent migration page had no purchase button.**
+- **Deprecation tracker Pro CTA** — The model-deprecations.html page (6 deprecated models, 5 providers affected) is one of the highest-intent pages on the site — users actively need migration help. The existing CTA section only linked to free tools (savings calculator, migration checklist) with no direct Pro buy button. Added gradient Pro CTA as primary action ("Get Pro — $29 lifetime") with `go.html?from=deprecation_tracker` tracking. Free tools moved to secondary outlined buttons. A/B price variant sync + trust badges. GA4 `deprecation_pro_cta_clicked` event on click.
+- **1 commit, 1 file changed**
+- **Key insight:** The deprecation tracker is a problem-aware page — visitors already know they have a deprecated model and need to migrate. The CTA only offered free tools, missing the conversion opportunity. Users on this page have the highest urgency (deprecated model = service interruption risk) and are the most likely to pay for migration help. This is the same pattern as Session 884's cheapest-ai-api-2026 fix — high-intent pages need direct buy CTAs, not just free tool links.
+
 ## Session 885 (Jun 24) — Social Proof Notification Fix + Audit (1 commit)
 **Fixed overlapping social proof notifications on go.html, audited deal.html and key pages for bugs.**
 - **Notification stacking fix** — The 3 social proof notifications on go.html (Session 883) all rendered at `bottom:24px`, overlapping each other so users only saw the last one. Fixed positioning to stagger vertically at 80px, 150px, 220px — above the mobile sticky CTA bar (z-index 9998) and properly spaced for readability. This was a conversion bug: the purchase activity and savings notifications were invisible.
@@ -52,42 +58,16 @@
 - **Key insight:** go.html (the universal checkout funnel routing ALL buy.stripe.com links across 864+ pages) lacked basic trust signals. Visitors saw a calculator and buy buttons but no indication of which providers were covered, no concrete deliverables list, and the social proof popup fired too late. These are standard e-commerce trust elements that were missing from the most critical conversion page.
 
 ## Session 879 (Jun 24) — go.html Conversion Leaks Fix + Mobile Sticky Bar (1 commit)
-**Fixed 3 conversion leaks on go.html and added mobile sticky buy CTA bar.**
-- **Calculator CTA reversion fix** — When a user interacted with the savings calculator, the CTA update code modified the trial button (`main-cta`) to say "Save $X/yr — Try Pro Free" — making the trial the primary action again. This was silently undermining Session 878's buy-first CTA flip. Now only buy CTAs (`buy-cta`, `buy-cta-bottom`) get personalized savings text. The trial button keeps its natural "Or try free for 24 hours" text.
-- **Bottom CTA text fix** — Changed "Get lifetime access — $29 lifetime" (redundant "lifetime") to match hero CTA style with strikethrough was-price ($49).
-- **Mobile sticky buy CTA bar** — Added persistent bottom bar with price + buy button that appears when hero CTA scrolls out of view. Uses IntersectionObserver, syncs with A/B pricing ($19/$29), updates on post-expiry ($49). GA4 tracked (`go_buy_clicked` from:`mobile_sticky`). This was a major conversion gap — deal.html had a mobile sticky bar since Session 864, but go.html (the universal checkout funnel routing ALL buy.stripe.com links across 864+ pages) didn't.
-- **Post-expiry handler updated** — Sticky bar price updates to $49/$79 after July 12.
-- **1 commit, 1 file changed**
-- **Key insight:** The calculator was a hidden conversion killer. Every user who interacted with it had the buy CTA overwritten with "Try Pro Free" language — exactly the problem Session 878 fixed. Three layers of CTA sabotage: (1) shared.js routes all Stripe links to go.html, (2) go.html had trial as primary CTA (fixed Session 878), (3) calculator overwrote even the buy CTA with trial language (fixed this session). Also, go.html had no mobile sticky CTA despite being the universal checkout funnel for 864+ pages.
+**Fixed 3 conversion leaks on go.html and added mobile sticky buy CTA bar.** Calculator CTA reversion fix (calculator was overwriting buy CTA with "Try Pro Free" — undermined Session 878's fix). Bottom CTA text fix. Mobile sticky buy CTA bar with A/B price sync + post-expiry updates. Key insight: three layers of CTA sabotage across shared.js, go.html, and calculator.
 
 ## Session 878 (Jun 24) — go.html CTA Flip: Buy Now Primary, Trial Secondary (1 commit)
-**Flipped go.html CTAs so the Stripe purchase button is the primary CTA, not the free trial. This was the #1 conversion killer.**
-- **The problem** — go.html (the universal checkout funnel, where ALL buy.stripe.com links on 864+ pages route through via shared.js) had "Try Pro Free for 24 Hours" as the big gradient hero CTA. The actual Stripe purchase link was a small transparent border button below it. Users who clicked "Get Pro — $29 lifetime" on comparison pages were sent to a free calculator instead of checkout.
-- **The fix** — Swapped CTA prominence: big gradient button now links to Stripe checkout, trial button is now the secondary outlined button. Applied to both hero and bottom CTAs.
-- **Post-expiry logic updated** — Updated text selector from "Try Pro Free" to "try free" to match new button text.
-- **Added GA4 tracking** — `go_buy_clicked` event with `from:'hero'|'bottom'` and `price` on buy buttons.
-- **1 commit, 1 file changed**
-- **Key insight:** After 14 sessions (864-877) of deal page optimization with $0 revenue, the bottleneck was NOT the deal page. It was the go.html checkout funnel making the free trial the primary action. The deal page's direct Stripe links were fine — but shared.js rewrites ALL buy.stripe.com links across 864+ pages to route through go.html, where the free trial was the hero CTA. This is the classic "free is too good" problem — no urgency to pay when the free option is presented first.
+**Flipped go.html CTAs so the Stripe purchase button is the primary CTA, not the free trial. This was the #1 conversion killer.** After 14 sessions of deal page optimization with $0 revenue, the bottleneck was the go.html checkout funnel making the free trial the hero CTA. shared.js rewrites ALL buy.stripe.com links across 864+ pages to route through go.html, where the free trial was the hero CTA. Swapped CTA prominence + added GA4 tracking.
 
 ## Session 877 (Jun 24) — Post-July-12 Expiry Handling Site-Wide (1 commit)
-**Added centralized post-expiry logic so the site gracefully transitions from $29 deal pricing to $49 regular pricing after July 12 deadline.**
-- **Centralized expiry flags** — `window.DEAL_EXPIRED`, `window.DEAL_DAYS_LEFT`, `window.DEAL_DEADLINE` in shared.js, available to all pages. Override `_abPrice` to $49 after expiry.
-- **Global deal banner** — shared.js post-deprecation banner switches from red urgency ("$29 — price goes up July 12") to indigo regular pricing ("$49 one-time") after expiry. Also adds dynamic countdown ("X days left").
-- **693 pages auto-update** — Text walker replaces "price goes up July 12" → "one-time payment" and "expires July 12" → "lifetime access" across all deal banner pages.
-- **go.html full post-expiry** — Countdown shows "FOUNDING PRICE ENDED", all CTAs switch from "Try Pro Free" trial to "$49 buy", urgency/FAQ sections update, price displays change from $29→$49/$49→$79.
-- **deal.html post-expiry** — Main countdown, mobile sticky CTA, desktop sticky CTA price, exit popup content, headline A/B test variants (3 new expired variants), OG meta tag all update. Desktop countdown hides, exit popup countdown badge hidden.
-- **index.html** — "What's New" banner switches from deal urgency to regular Pro messaging. **Session 883: Added social proof bar** (4 stats), Popular Tools section (4 tool cards), improved bottom CTA with specific savings range ($720–2,400/yr).
-- **1 commit, 4 files changed**
-- **Key insight:** The deal deadline (July 12) was approaching with no auto-expiry logic. 693 pages had hardcoded "$29" and "expires July 12" text that would become misleading after the deadline. Without this fix, visitors after July 12 would see stale pricing, broken urgency messaging, and confused CTAs — a conversion-killing UX bug.
+**Added centralized post-expiry logic for $29→$49 transition after July 12.** Centralized `DEAL_EXPIRED` flags in shared.js. Global deal banner switches from urgency to regular pricing. 693 pages auto-update text. Full post-expiry states on go.html, deal.html, index.html. Key insight: 693 pages had hardcoded "$29" that would become misleading after deadline.
 
 ## Session 876 (Jun 24) — Desktop Sticky CTA Bar + Conversion Improvements (1 commit)
-**Added persistent desktop sticky CTA bar to deal page, strengthened final CTA.**
-- **Desktop sticky CTA bar** — Fixed bottom bar with logo, price ($29 was $49), countdown timer, and buy button. Appears after scrolling past hero CTA via IntersectionObserver. Previously only mobile had a sticky CTA — desktop users who scrolled through the full page (value stack, testimonials, comparison table, FAQ) had no persistent buy button. Major conversion gap.
-- **Desktop countdown timer** — Shows days/hours left until July 12 deadline, updates every 60s. Creates urgency without being distracting.
-- **GA4 tracking** — `deal_sticky_buy_clicked` with `platform:'desktop'` and `deal_buy_click` with `location:'desktop_sticky'`. Can now measure desktop sticky CTA engagement separately from mobile.
-- **Strengthened final CTA** — Added urgency copy: "Every day you wait is money left on the table." Added price increase reminder in footer text: "Price increases to $49 on July 12."
-- **1 commit, 1 file changed**
-- **Key insight:** The deal page had a mobile sticky CTA (Session 864) but no desktop equivalent. Desktop users who scrolled through 1000+ lines of content (value stack, testimonials, comparison table, FAQ) had to scroll back to the top to buy. The sticky bar keeps the purchase option visible at all times — a standard e-commerce pattern that was missing.
+**Added persistent desktop sticky CTA bar to deal page, strengthened final CTA.** Desktop sticky bar with logo, price, countdown, buy button. GA4 tracking. Key insight: deal page had mobile sticky CTA but no desktop equivalent — desktop users had to scroll back to top to buy.
 
 ## Session 875 (Jun 24) — Go.html Calculator Expansion (1 commit)
 **Expanded go.html calculator from 8 to 15 models, fixed alternatives pricing, added cheapest-model edge case.** Key insight: go.html calculator only covered 8 models while site claims 42 — visitors on GPT-4o Mini, DeepSeek, Mistral, Grok couldn't calculate savings. Expanding to 15 models means ~80% more visitors can calculate personalized savings.
