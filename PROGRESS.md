@@ -1,5 +1,15 @@
 # PROGRESS.md
 
+## Session 870 (Jun 24) — Deal Page UX Fixes (5 commits)
+**Fixed critical mobile UX bugs on deal page that were suppressing conversions.**
+- **Fix 1: Mobile exit popup velocity detection** — The exit popup fired every time users scrolled to the top of the page during normal scrolling, not just on rapid back-gestures. The old check (`now - lastScroll < 500`) was broken because `lastScroll` updated every scroll event (~16ms), making the time delta always < 500ms. Replaced with actual scroll velocity detection (>5000 px/sec upward).
+- **Fix 2: Double exit popup on deal.html** — shared.js global exit popup was NOT excluding deal.html, causing visitors to see TWO exit popups (deal-specific + generic email capture). They used different dismiss keys (`deal_exit_shown` vs `apipulse_popup_dismissed`) so both fired independently. Added deal.html to shared.js skip list + made deal popup set shared dismiss key.
+- **Fix 3: Double exit popup on go.html** — Same issue. go.html has its own exit popup + shared.js generic popup also fired. Added to skip list.
+- **Fix 4: Triple sticky bars on deal.html (mobile)** — deal.html has its own mobile sticky CTA, but shared.js injected TWO more sticky bars (time-based after 45s + scroll-based at 30%). On mobile, users saw up to THREE overlapping sticky elements. Added 'deal' to skip lists for both shared.js sticky bars.
+- **Fix 5: pricing.html double popup** — Added to shared.js exit popup skip list. Refactored skip list into array loop.
+- **5 commits, 2 files changed**
+- **Key insight:** The shared.js global exit popup and sticky bars were conflicting with page-specific versions on the three most important conversion pages (deal.html, go.html, pricing.html). This is a systemic issue — any page with its own exit popup or sticky CTA gets double/triple UI from shared.js.
+
 ## Session 869 (Jun 24) — Deal Banner Full Coverage + OG Tags (7 commits)
 **Added inline deal urgency banner to 442 pages + Open Graph tags to deal page. Achieved 100% deal coverage.**
 - **Commit 1: 68 high-intent pages** — 25 use-case + 34 cheapest-ai-api + 9 tool/hub pages
@@ -85,7 +95,7 @@
 ## Summary: Sessions 1-598 (Apr 5 - Jun 12)
 Full APIpulse build from scratch. 652 pages, 320 posts, 42 models, 10 providers, 84 tools. Domain, Stripe, Pro, GA4, newsletter, Chrome extension, 167 comparisons, FAQPage schema, streaming toggle, A/B pricing, Model Selector quiz.
 
-## Site Status (as of Session 869, Jun 24, 2026)
+## Site Status (as of Session 870, Jun 24, 2026)
 **864+ web pages | 352 blog posts | 42 models | 10+ providers | 141 tools | 13 API endpoints | 3 embeddable widgets**
 - Sitemap (879 URLs), RSS (759 items), blog files (352 posts) — all in sync
 - **Deal banner coverage: 698 pages with inline banner + global shared.js banner on all 865 pages (100%)** — 232 comparison + 22 alternatives + 25 use-case + 34 cheapest + 352 blog + 45 tool/other pages

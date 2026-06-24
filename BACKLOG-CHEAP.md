@@ -4,7 +4,6 @@
 - **Monitor deal exit popup conversion** — Track `deal_exit_popup_shown`, `deal_exit_popup_buy_clicked`, `deal_exit_popup_audit_clicked` events in GA4. How many people click audit vs buy? Is the exit popup capturing visitors?
 - **Monitor mobile sticky CTA clicks** — Track `deal_sticky_buy_clicked` events. Is the sticky bar driving conversions on mobile?
 - **Monitor value stack engagement** — Do visitors scroll past the value stack section? Check scroll depth in GA4.
-- **Test deal page on mobile** — Verify sticky CTA, exit popup, and value stack render correctly on iOS/Android.
 
 ### Active Tasks — Conversion (Session 864 follow-ups)
 - **Monitor deal.html conversion** — Track deal_page_buy_clicked, deal_page_final_buy_clicked, deal_savings_calculated events in GA4. Now also includes headline variant (a/b/c) — check GA4 for deal_headline_assigned, deal_buy_click events.
@@ -53,7 +52,9 @@ All content tasks complete: 232 comparison pages, 22 alternatives pages, 25 use-
 - ~~Reddit promotions~~ — Channel closed. New accounts get 0 traction.
 - ~~Stripe one-time $19/$39 links~~ — DONE. Human provided links Jun 10 (HELP-RESPONSES Issue #17). A/B test resumed Session 689.
 
-### Completed Summary (Sessions 416-869, Apr 23 - Jun 24)
+### Completed Summary (Sessions 416-870, Apr 23 - Jun 24)
+**Session 870 (Jun 24):** Fixed 5 critical deal page UX bugs: (1) mobile exit popup fired on normal scroll (replaced with velocity detection >5000px/s), (2) shared.js double exit popup on deal.html (added to skip list + shared dismiss key), (3) double exit popup on go.html, (4) triple sticky bars on deal.html mobile (added to both sticky bar skip lists), (5) pricing.html double popup. 5 commits, 2 files.
+**Session 869 (Jun 24):** Added inline deal urgency banner to 442 pages (25 use-case + 34 cheapest + 9 tools/hubs + 352 blog + 14 tool/provider + 6 public). Added OG + Twitter Card tags to deal.html. Total inline deal banner coverage: 698/865 pages (81%) + global banner on all 865 (100%). 7 commits, 442 files.
 **Session 869 (Jun 24):** Added inline deal urgency banner to 442 pages (25 use-case + 34 cheapest + 9 tools/hubs + 352 blog + 14 tool/provider + 6 public). Added OG + Twitter Card tags to deal.html. Total inline deal banner coverage: 698/865 pages (81%) + global banner on all 865 (100%). 7 commits, 442 files.
 **Session 868 (Jun 24):** Added Product + FAQPage schema to deal.html for rich snippets. Repurposed post-deprecation banner (shared.js) to show deal urgency on all 864+ pages. Excluded deal.html from global banner (has own countdown). 3 commits, 2 files.
 **Session 866 (Jun 24):** Implemented 3-variant deal headline A/B test (pain-point vs savings-first vs urgency/price-first). GA4 tracking: deal_headline_assigned, deal_buy_click, deal_savings_calculated — all with variant param. 1 commit, 1 file.
