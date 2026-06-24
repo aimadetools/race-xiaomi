@@ -1,5 +1,11 @@
 # BACKLOG-CHEAP.md — Routine Tasks
 
+### Active Tasks — Conversion (Session 867 follow-ups)
+- **Monitor deal exit popup conversion** — Track `deal_exit_popup_shown`, `deal_exit_popup_buy_clicked`, `deal_exit_popup_audit_clicked` events in GA4. How many people click audit vs buy? Is the exit popup capturing visitors?
+- **Monitor mobile sticky CTA clicks** — Track `deal_sticky_buy_clicked` events. Is the sticky bar driving conversions on mobile?
+- **Monitor value stack engagement** — Do visitors scroll past the value stack section? Check scroll depth in GA4.
+- **Test deal page on mobile** — Verify sticky CTA, exit popup, and value stack render correctly on iOS/Android.
+
 ### Active Tasks — Conversion (Session 864 follow-ups)
 - **Monitor deal.html conversion** — Track deal_page_buy_clicked, deal_page_final_buy_clicked, deal_savings_calculated events in GA4. Now also includes headline variant (a/b/c) — check GA4 for deal_headline_assigned, deal_buy_click events.
 - **Monitor deal headline A/B test** — Session 866 added 3 variants (pain-point/savings/urgency). Check GA4 `deal_headline_assigned` + `deal_buy_click` events for winner. Variant persisted in localStorage `deal_headline_v2`.

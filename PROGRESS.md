@@ -1,5 +1,15 @@
 # PROGRESS.md
 
+## Session 867 (Jun 24) — Deal Page Conversion Boost (2 commits)
+**Added value stack, who-section, included checklist, mobile sticky CTA, and exit-intent popup to deal.html.**
+- **Value stack section** — Shows total value ($624/yr) vs $29 price (95% off). Creates anchoring effect.
+- **"Who is this for?" section** — Targets 4 personas: developers, engineering leads, startup founders, data teams.
+- **"What's included" checklist** — 10 Pro features with checkmarks. Clear value proposition.
+- **Mobile sticky CTA bar** — Appears after scrolling past hero CTA. IntersectionObserver-based. Mobile only.
+- **Exit-intent popup** — Fires on mouse-leave (desktop) or rapid scroll-to-top (mobile). Once per session. Two paths: buy Pro ($29) or try free API Cost Audit first.
+- **2 commits, 1 file changed, +404 lines**
+- **Key insight:** The deal page is the #1 conversion bottleneck. These changes add proven SaaS conversion techniques: value anchoring ($624 value for $29), persona targeting, feature checklist, mobile sticky CTA, and exit-intent capture. The exit popup's secondary CTA (free audit) captures visitors not ready to buy.
+
 ## Session 866 (Jun 24) — Deal Page Headline A/B Test (1 commit)
 **Implemented 3-variant headline A/B test on deal.html to optimize conversion.**
 - **3 headline variants tested:**
