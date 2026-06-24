@@ -1,5 +1,15 @@
 # PROGRESS.md
 
+## Session 869 (Jun 24) — Deal Banner Gap Fill: 68 High-Intent Pages (1 commit)
+**Added inline deal urgency banner to 68 pages that were missing the conversion CTA.**
+- **25 use-case pages** — chatbot, healthcare, finance, ecommerce, legal, etc. All now show deal banner below nav.
+- **34 cheapest-ai-api pages** — all industry/use-case variants (automotive, telecom, RAG, embeddings, etc.)
+- **9 tool/hub pages** — migration-checklist, tools, widget, widget-calculator, api-docs, budget planner, live-pricing, deprecation tracker, cheapest hub
+- **Banner style** — Matches comparison page banner (red gradient, July 12 deadline, deal.html link)
+- **Combined with global shared.js banner**, all 864+ pages now have deal CTA coverage
+- **1 commit, 68 files changed, +544 lines**
+- **Key insight:** Session 865 added deal banners to 258 comparison + alternatives pages, but missed use-case and cheapest pages. These are high-intent traffic (users researching specific AI use cases or looking for cheapest options) — exactly the audience most likely to convert on a $29 lifetime deal.
+
 ## Session 868 (Jun 24) — Deal Page SEO + Global Deal Banner (2 commits)
 **Added structured data to deal.html. Repurposed post-deprecation banner to show deal urgency on all pages.**
 - **Product schema** — Name, description, $29 offer with priceValidUntil July 12, Stripe checkout URL, brand info. Enables price display in Google search results.

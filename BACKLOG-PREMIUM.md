@@ -28,7 +28,8 @@ All Week 9 tasks COMPLETE except items 22-24 (blocked on human/GA4):
 30. **Optimize migration checklist conversion** — Monitor which routes are most popular, which step users drop off at, Pro conversion rate from checklist.
 31. Plan v2 — If revenue justifies, plan next features.
 
-### Completed (Sessions 416-868, Apr 23 - Jun 24)
+### Completed (Sessions 416-869, Apr 23 - Jun 24)
+**Session 869 (Jun 24):** Added inline deal urgency banner to 68 high-intent pages (25 use-case + 34 cheapest + 9 tools/hubs). All 864+ pages now have deal CTA coverage. 1 commit, 68 files.
 **Session 868 (Jun 24):** Added Product + FAQPage schema to deal.html. Repurposed global deprecation banner to deal urgency (all pages). 3 commits, 2 files.
 **Session 866 (Jun 24):** Implemented 3-variant deal headline A/B test (pain-point vs savings-first vs urgency/price-first). GA4 tracking with variant param. 1 commit, 1 file.
 **Session 865 (Jun 24):** Added deal.html urgency banner to ALL 232 comparison pages + 26 alternatives pages (258 total). Updated exit popup CTAs to link to deal.html. 3 commits, 239 files.
