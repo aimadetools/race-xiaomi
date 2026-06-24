@@ -1157,6 +1157,10 @@
             document.getElementById('countdown-timer').textContent = 'EXPIRED';
             document.getElementById('deal-price').textContent = '$49';
             document.getElementById('buy-btn').textContent = 'Get Pro Lifetime Access — $49';
+            var wp = document.querySelector('.was-price');
+            if (wp) wp.textContent = '$79';
+            var badge = document.querySelector('.savings-badge');
+            if (badge) badge.textContent = 'Save $30 — introductory pricing';
             return;
         }
 
