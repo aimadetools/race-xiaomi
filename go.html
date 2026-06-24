@@ -389,19 +389,26 @@
         <!-- HERO: Interactive Savings Calculator -->
         <div class="hero-calc">
             <div class="hero-calc-title">How much could YOU save?</div>
-            <div class="hero-calc-sub">Select your model and monthly spend — see instant savings</div>
+            <div class="hero-calc-sub">Select your model and monthly spend — see instant savings across 15 popular models</div>
 
             <div class="calc-row">
                 <label for="est-model">Your current model</label>
                 <select id="est-model">
                     <option value="openai-gpt5">GPT-5 (OpenAI) — $1.25 / $10.00 per 1M tokens</option>
                     <option value="openai-gpt55">GPT-5.5 (OpenAI) — $5.00 / $30.00 per 1M tokens</option>
-                    <option value="openai-gpt4o">GPT-4o (OpenAI) — $2.50 / $10.00 per 1M tokens</option>
-                    <option value="anthropic-sonnet46">Claude Sonnet 4.6 (Anthropic) — $3.00 / $15.00 per 1M tokens</option>
+                    <option value="openai-gpt4o" selected>GPT-4o (OpenAI) — $2.50 / $10.00 per 1M tokens</option>
+                    <option value="openai-gpt4o-mini">GPT-4o Mini (OpenAI) — $0.15 / $0.60 per 1M tokens</option>
                     <option value="anthropic-opus48">Claude Opus 4.8 (Anthropic) — $5.00 / $25.00 per 1M tokens</option>
+                    <option value="anthropic-sonnet46">Claude Sonnet 4.6 (Anthropic) — $3.00 / $15.00 per 1M tokens</option>
                     <option value="anthropic-haiku">Claude Haiku 4.5 (Anthropic) — $1.00 / $5.00 per 1M tokens</option>
+                    <option value="google-gemini3-pro">Gemini 3.1 Pro (Google) — $2.00 / $12.00 per 1M tokens</option>
+                    <option value="google-gemini3-flash">Gemini 3 Flash (Google) — $0.50 / $3.00 per 1M tokens</option>
                     <option value="google-pro">Gemini 2.5 Pro (Google) — $1.25 / $10.00 per 1M tokens</option>
                     <option value="google-gemini35-flash">Gemini 3.5 Flash (Google) — $1.50 / $9.00 per 1M tokens</option>
+                    <option value="deepseek-v4-pro">DeepSeek V4 Pro — $0.44 / $0.87 per 1M tokens</option>
+                    <option value="deepseek-v4-flash">DeepSeek V4 Flash — $0.14 / $0.28 per 1M tokens</option>
+                    <option value="mistral-large">Mistral Large 3 — $0.50 / $1.50 per 1M tokens</option>
+                    <option value="grok-43">Grok 4.3 (xAI) — $1.25 / $2.50 per 1M tokens</option>
                 </select>
             </div>
             <div class="calc-row">
@@ -737,19 +744,28 @@
             'openai-gpt5':           {name:'GPT-5',input:1.25,output:10.00,ratio:0.85},
             'openai-gpt55':          {name:'GPT-5.5',input:5.00,output:30.00,ratio:0.85},
             'openai-gpt4o':          {name:'GPT-4o',input:2.50,output:10.00,ratio:0.85},
-            'anthropic-sonnet46':    {name:'Claude Sonnet 4.6',input:3.00,output:15.00,ratio:0.85},
+            'openai-gpt4o-mini':     {name:'GPT-4o Mini',input:0.15,output:0.60,ratio:0.85},
             'anthropic-opus48':      {name:'Claude Opus 4.8',input:5.00,output:25.00,ratio:0.85},
+            'anthropic-sonnet46':    {name:'Claude Sonnet 4.6',input:3.00,output:15.00,ratio:0.85},
             'anthropic-haiku':       {name:'Claude Haiku 4.5',input:1.00,output:5.00,ratio:0.85},
+            'google-gemini3-pro':    {name:'Gemini 3.1 Pro',input:2.00,output:12.00,ratio:0.85},
+            'google-gemini3-flash':  {name:'Gemini 3 Flash',input:0.50,output:3.00,ratio:0.85},
             'google-pro':            {name:'Gemini 2.5 Pro',input:1.25,output:10.00,ratio:0.85},
-            'google-gemini35-flash': {name:'Gemini 3.5 Flash',input:1.50,output:9.00,ratio:0.85}
+            'google-gemini35-flash': {name:'Gemini 3.5 Flash',input:1.50,output:9.00,ratio:0.85},
+            'deepseek-v4-pro':       {name:'DeepSeek V4 Pro',input:0.435,output:0.87,ratio:0.85},
+            'deepseek-v4-flash':     {name:'DeepSeek V4 Flash',input:0.14,output:0.28,ratio:0.85},
+            'mistral-large':         {name:'Mistral Large 3',input:0.50,output:1.50,ratio:0.85},
+            'grok-43':               {name:'Grok 4.3',input:1.25,output:2.50,ratio:0.85}
         };
         var alts = [
             {name:'DeepSeek V4 Flash',provider:'DeepSeek',input:0.14,output:0.28},
             {name:'GPT-oss 20B',provider:'OpenAI',input:0.08,output:0.35},
-            {name:'Gemini 2.5 Flash-Lite',provider:'Google',input:0.10,output:0.40},
             {name:'Mistral Small 4',provider:'Mistral',input:0.10,output:0.30},
+            {name:'Gemini 3.1 Flash-Lite',provider:'Google',input:0.25,output:1.50},
             {name:'Llama 4 Scout',provider:'Meta (Together)',input:0.18,output:0.59},
-            {name:'DeepSeek V4 Pro',provider:'DeepSeek',input:0.435,output:0.87}
+            {name:'DeepSeek V4 Pro',provider:'DeepSeek',input:0.435,output:0.87},
+            {name:'DeepSeek V3.2',provider:'DeepSeek',input:0.23,output:0.34},
+            {name:'Mistral Large 3',provider:'Mistral',input:0.50,output:1.50}
         ];
 
         function calcTokens(spend, inputPrice, outputPrice, ratio) {
@@ -773,7 +789,17 @@
               .sort(function(a,b) { return b.saving - a.saving; })
               .slice(0,3);
 
-            if (results.length === 0) { resultsDiv.style.display = 'none'; return; }
+            if (results.length === 0) {
+                // User is on the cheapest model — show Pro features pitch instead
+                savingsAmount.textContent = 'You\'re on the cheapest model';
+                savingsAmount.style.fontSize = 'clamp(18px, 3vw, 24px)';
+                savingsLabel.textContent = 'Pro still gives you migration code, PDF reports, price alerts & 42-model tracking';
+                savingsPayback.textContent = '';
+                altsBody.innerHTML = '<tr><td colspan="4" style="text-align:center;color:var(--text-muted);padding:16px;">Pro helps you track price changes and get migration code when cheaper models launch</td></tr>';
+                resultsDiv.style.display = 'block';
+                return;
+            }
+            savingsAmount.style.fontSize = '';
 
             var bestSaving = results[0].saving;
             var bestAlt = results[0];
