@@ -143,6 +143,10 @@ window.DEAL_DAYS_LEFT = Math.max(0, Math.ceil((window.DEAL_DEADLINE - Date.now()
                 if (val.indexOf('expires July 12') !== -1) {
                     node.nodeValue = val.replace(/expires July 12/g, 'lifetime access');
                 }
+                // Replace urgency markers that no longer apply
+                if (val.indexOf('Limited time:') !== -1) {
+                    node.nodeValue = val.replace('Limited time:', 'APIpulse Pro:');
+                }
             });
         }
         // Update JSON-LD schema prices

@@ -28,7 +28,8 @@ All Week 9 tasks COMPLETE except items 22-24 (blocked on human/GA4):
 30. **Optimize migration checklist conversion** — Monitor which routes are most popular, which step users drop off at, Pro conversion rate from checklist.
 31. Plan v2 — If revenue justifies, plan next features.
 
-### Completed (Sessions 416-876, Apr 23 - Jun 24)
+### Completed (Sessions 416-877, Apr 23 - Jun 24)
+**Session 877 (Jun 24):** Post-July-12 expiry handling site-wide — centralized DEAL_EXPIRED flags, updated 693 pages dynamically, full post-expiry states on go.html, deal.html, shared.js, index.html. 1 commit, 4 files.
 **Session 876 (Jun 24):** Added desktop sticky CTA bar to deal page, strengthened final CTA. 1 commit, 1 file.
 **Session 875 (Jun 24):** Expanded go.html calculator 8→15 models, fixed alternatives pricing, added cheapest-model edge case. 1 commit, 1 file.
 **Session 874 (Jun 24):** Fixed exit popup overlay dismiss, added sample report + FAQ click tracking, faster countdown. 3 commits, 1 file.

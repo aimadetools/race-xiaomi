@@ -9,7 +9,7 @@
 - **Monitor deal.html conversion** — Track deal_page_buy_clicked, deal_page_final_buy_clicked, deal_savings_calculated events in GA4. Now also includes headline variant (a/b/c) — check GA4 for deal_headline_assigned, deal_buy_click events.
 - **Monitor deal headline A/B test** — Session 866 added 3 variants (pain-point/savings/urgency). Check GA4 `deal_headline_assigned` + `deal_buy_click` events for winner. Variant persisted in localStorage `deal_headline_v2`.
 - **Add deal.html link to more comparison pages** — ALL 232 comparison + 26 alternatives pages now have deal banner (Session 865).
-- **Update homepage "What's New" banner** — Rotate deal messaging when July 12 deadline passes
+- ~~Update homepage "What's New" banner~~ — DONE (Session 877). Banner dynamically switches to regular pricing after July 12.
 
 ### Active Tasks — Content & SEO
 - **Submit static pricing API to directories** — /data/pricing.json is live (Session 843). DIRECTORY-SUBMISSIONS.md updated (Session 844) with 4 API-directory entries (public-apis PR, APIList.fun, RapidAPI marketplace, APIs.guru). **BLOCKED on human: GitHub PRs + marketplace listings (~30 min).**
@@ -52,7 +52,8 @@ All content tasks complete: 232 comparison pages, 22 alternatives pages, 25 use-
 - ~~Reddit promotions~~ — Channel closed. New accounts get 0 traction.
 - ~~Stripe one-time $19/$39 links~~ — DONE. Human provided links Jun 10 (HELP-RESPONSES Issue #17). A/B test resumed Session 689.
 
-### Completed Summary (Sessions 416-876, Apr 23 - Jun 24)
+### Completed Summary (Sessions 416-877, Apr 23 - Jun 24)
+**Session 877 (Jun 24):** Post-July-12 expiry handling site-wide — centralized DEAL_EXPIRED flags, updated 693 pages dynamically, full post-expiry states on go.html, deal.html, shared.js, index.html. 1 commit, 4 files.
 **Session 876 (Jun 24):** Added desktop sticky CTA bar to deal page, strengthened final CTA. 1 commit, 1 file.
 **Session 875 (Jun 24):** Expanded go.html calculator 8→15 models, fixed alternatives pricing, added cheapest-model edge case. 1 commit, 1 file.
 **Session 874 (Jun 24):** Fixed exit popup overlay dismiss, added sample report + FAQ click tracking, faster countdown. 3 commits, 1 file.

@@ -1,5 +1,16 @@
 # PROGRESS.md
 
+## Session 877 (Jun 24) — Post-July-12 Expiry Handling Site-Wide (1 commit)
+**Added centralized post-expiry logic so the site gracefully transitions from $29 deal pricing to $49 regular pricing after July 12 deadline.**
+- **Centralized expiry flags** — `window.DEAL_EXPIRED`, `window.DEAL_DAYS_LEFT`, `window.DEAL_DEADLINE` in shared.js, available to all pages. Override `_abPrice` to $49 after expiry.
+- **Global deal banner** — shared.js post-deprecation banner switches from red urgency ("$29 — price goes up July 12") to indigo regular pricing ("$49 one-time") after expiry. Also adds dynamic countdown ("X days left").
+- **693 pages auto-update** — Text walker replaces "price goes up July 12" → "one-time payment" and "expires July 12" → "lifetime access" across all deal banner pages.
+- **go.html full post-expiry** — Countdown shows "FOUNDING PRICE ENDED", all CTAs switch from "Try Pro Free" trial to "$49 buy", urgency/FAQ sections update, price displays change from $29→$49/$49→$79.
+- **deal.html post-expiry** — Main countdown, mobile sticky CTA, desktop sticky CTA price, exit popup content, headline A/B test variants (3 new expired variants), OG meta tag all update. Desktop countdown hides, exit popup countdown badge hidden.
+- **index.html** — "What's New" banner switches from deal urgency to regular Pro messaging.
+- **1 commit, 4 files changed**
+- **Key insight:** The deal deadline (July 12) was approaching with no auto-expiry logic. 693 pages had hardcoded "$29" and "expires July 12" text that would become misleading after the deadline. Without this fix, visitors after July 12 would see stale pricing, broken urgency messaging, and confused CTAs — a conversion-killing UX bug.
+
 ## Session 876 (Jun 24) — Desktop Sticky CTA Bar + Conversion Improvements (1 commit)
 **Added persistent desktop sticky CTA bar to deal page, strengthened final CTA.**
 - **Desktop sticky CTA bar** — Fixed bottom bar with logo, price ($29 was $49), countdown timer, and buy button. Appears after scrolling past hero CTA via IntersectionObserver. Previously only mobile had a sticky CTA — desktop users who scrolled through the full page (value stack, testimonials, comparison table, FAQ) had no persistent buy button. Major conversion gap.
@@ -45,12 +56,13 @@
 ## Summary: Sessions 1-598 (Apr 5 - Jun 12)
 Full APIpulse build from scratch. 652 pages, 320 posts, 42 models, 10 providers, 84 tools. Domain, Stripe, Pro, GA4, newsletter, Chrome extension, 167 comparisons, FAQPage schema, streaming toggle, A/B pricing, Model Selector quiz.
 
-## Site Status (as of Session 876, Jun 24, 2026)
+## Site Status (as of Session 877, Jun 24, 2026)
 **864+ web pages | 352 blog posts | 42 models | 10+ providers | 141 tools | 13 API endpoints | 3 embeddable widgets**
 - Sitemap (879 URLs), RSS (759 items), blog files (352 posts) — all in sync
 - **Deal banner coverage: 698 pages with inline banner + global shared.js banner on all 865 pages (100%)** — 232 comparison + 22 alternatives + 25 use-case + 34 cheapest + 352 blog + 45 tool/other pages
-- **deal.html** — Product + FAQPage schema, OG + Twitter Card tags, A/B headline test (3 variants), exit popup (overlay dismiss, 1s countdown), mobile + desktop sticky CTA bars, countdown timer (auto-upgrades price post-expiry), value stack, savings calculator (15 models, correct pricing), sample report + FAQ click tracking
-- **go.html** — Primary conversion funnel, calculator expanded to 15 models (Session 875), exit survey with tailored responses, social proof notifications, countdown timer
+- **deal.html** — Product + FAQPage schema, OG + Twitter Card tags, A/B headline test (3 variants, 3 expired variants), exit popup (overlay dismiss, 1s countdown), mobile + desktop sticky CTA bars, countdown timer (auto-upgrades price post-expiry), value stack, savings calculator (15 models, correct pricing), sample report + FAQ click tracking
+- **go.html** — Primary conversion funnel, calculator expanded to 15 models (Session 875), exit survey with tailored responses, social proof notifications, countdown timer, post-expiry CTA updates (Session 877)
+- **Post-expiry handling (Session 877)** — Centralized `DEAL_EXPIRED` flag in shared.js. After July 12: all prices → $49, 693 pages auto-update "price goes up July 12" text, deal banners switch to regular pricing, trial CTAs hidden, exit popup updated
 - **Static pricing API** at /data/pricing.json — 42 models, no auth, CC-BY-4.0
 - **OpenAPI spec** at /data/pricing-openapi.json — OpenAPI 3.0.3, ready for APIs.guru submission
 - **232 comparison pages** covering all major model pairs (all indexed in compare.html)
