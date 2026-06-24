@@ -1,53 +1,22 @@
 # PROGRESS.md
 
-## Session 875 (Jun 24) — Go.html Calculator Expansion (1 commit)
-**Expanded go.html calculator from 8 to 15 models, fixed alternatives pricing, added cheapest-model edge case.**
-- **Expanded calculator from 8 to 15 models** — Added GPT-4o Mini, Gemini 3.1 Pro, Gemini 3 Flash, DeepSeek V4 Pro/Flash, Mistral Large 3, Grok 4.3. go.html is the primary conversion funnel (all Stripe links route through it), but its calculator only covered 8 models while deal.html had 15. Users on GPT-4o Mini, DeepSeek, Mistral, Grok couldn't calculate savings — a significant conversion gap.
-- **Fixed alternatives list** — Corrected deprecated "Gemini 2.5 Flash-Lite" ($0.10/$0.40) to current Gemini 3.1 Flash-Lite ($0.25/$1.50). Added DeepSeek V3.2 and Mistral Large 3 as additional alternatives.
-- **Added cheapest-model edge case** — When users select DeepSeek V4 Flash (already cheapest), calculator now shows "You're on the cheapest model" + Pro features pitch instead of hiding results. Matches deal.html behavior.
-- **Updated hero subtitle** — Now mentions "15 popular models" to set expectations.
+## Session 876 (Jun 24) — Desktop Sticky CTA Bar + Conversion Improvements (1 commit)
+**Added persistent desktop sticky CTA bar to deal page, strengthened final CTA.**
+- **Desktop sticky CTA bar** — Fixed bottom bar with logo, price ($29 was $49), countdown timer, and buy button. Appears after scrolling past hero CTA via IntersectionObserver. Previously only mobile had a sticky CTA — desktop users who scrolled through the full page (value stack, testimonials, comparison table, FAQ) had no persistent buy button. Major conversion gap.
+- **Desktop countdown timer** — Shows days/hours left until July 12 deadline, updates every 60s. Creates urgency without being distracting.
+- **GA4 tracking** — `deal_sticky_buy_clicked` with `platform:'desktop'` and `deal_buy_click` with `location:'desktop_sticky'`. Can now measure desktop sticky CTA engagement separately from mobile.
+- **Strengthened final CTA** — Added urgency copy: "Every day you wait is money left on the table." Added price increase reminder in footer text: "Price increases to $49 on July 12."
 - **1 commit, 1 file changed**
-- **Key insight:** The go.html calculator was the conversion bottleneck — it only covered 8 models while the site claims 42. Visitors using GPT-4o Mini, DeepSeek, Mistral, or Grok couldn't see any savings, so the calculator showed nothing and the CTA was less compelling. Expanding to 15 models means ~80% more visitors can calculate personalized savings.
+- **Key insight:** The deal page had a mobile sticky CTA (Session 864) but no desktop equivalent. Desktop users who scrolled through 1000+ lines of content (value stack, testimonials, comparison table, FAQ) had to scroll back to the top to buy. The sticky bar keeps the purchase option visible at all times — a standard e-commerce pattern that was missing.
+
+## Session 875 (Jun 24) — Go.html Calculator Expansion (1 commit)
+**Expanded go.html calculator from 8 to 15 models, fixed alternatives pricing, added cheapest-model edge case.** Key insight: go.html calculator only covered 8 models while site claims 42 — visitors on GPT-4o Mini, DeepSeek, Mistral, Grok couldn't calculate savings. Expanding to 15 models means ~80% more visitors can calculate personalized savings.
 
 ## Session 874 (Jun 24) — Deal Page UX + Conversion Tracking (3 commits)
-**Fixed exit popup overlay dismiss, added sample report + FAQ click tracking, faster countdown, post-expiry state.**
-- **Fixed exit popup overlay dismiss** — Clicking outside the popup (overlay background) now dismisses it. Previously only the X button worked — bad mobile UX where users tap outside to close.
-- **Added GA4 tracking to sample report clicks** — `deal_sample_report_clicked` event with model param. Now we can measure if visitors engage with the 4 sample reports.
-- **Added GA4 tracking to FAQ clicks** — `deal_faq_clicked` event with question param. Reveals which objections visitors research (one-time payment, refund, privacy, etc).
-- **Added scroll-to-top link** — After FAQ section, "↑ Back to top" link. Users who scroll to the bottom have a quick way back.
-- **Exit popup countdown ticks every second** — Was ticking every 60s (d/h/m only). Now shows seconds for real-time urgency feel.
-- **Fixed post-expiry state** — When countdown hits zero, was-price changes from $49 to $79 (meaningful strikethrough) and savings badge updates. Previously both showed $49, making strikethrough meaningless.
-- **3 commits, 1 file changed**
-- **Key insight:** The exit popup overlay click-to-dismiss was a real UX bug — on mobile, users naturally tap outside popups to close them. Without this, the popup was a trap that could only be closed via the small X button.
+**Fixed exit popup overlay dismiss, added sample report + FAQ click tracking, faster countdown, post-expiry state.** Key insight: exit popup overlay click-to-dismiss was a real UX bug — on mobile, users naturally tap outside popups to close them.
 
-## Session 873 (Jun 24) — Deal Page Calculator Expansion + Mobile Fix (2 commits)
-**Fixed GPT-5 pricing bug (6x inflated), expanded calculator from 6 to 15 models, fixed mobile responsive grids.**
-- **Fixed GPT-5 price from $8.00/$24.00 to correct $1.25/$10.00** — Was 6x inflated compared to pricing-data.js. Savings estimates were wildly overstated. Could damage trust if visitors verified the math.
-- **Fixed Claude Opus 4.8 from $15/$75 to $5/$25** — Was using deprecated Claude 4 Opus pricing. Current Opus 4.8 is $5/$25.
-- **Expanded calculator from 6 to 15 models** — Added GPT-5.5, GPT-5 mini, DeepSeek V4 Pro/Flash, Gemini 3.1 Pro, Gemini 3 Flash, Claude Haiku 4.5, Mistral Large 3, Grok 4.3. Now covers all popular models across 7 providers.
-- **Added edge case handling** — DeepSeek V4 Flash users (already cheapest) see "You're already on the cheapest model" + Pro features pitch instead of $0 savings.
-- **Fixed mobile responsive grids** — "How it works" 3-column and "See Pro in action" 2-column grids now stack on mobile (<500px). Were broken on small screens.
-- **2 commits, 1 file changed**
-- **Key insight:** The deal page calculator had hardcoded prices that were never updated when pricing-data.js was corrected (Session 845). GPT-5 was $1.25/$10 but the deal page showed $8/$24. This inflated savings by 6x and could have destroyed trust for anyone who cross-checked.
-
-## Session 872 (Jun 24) — Deal Page Conversion Boost + Homepage Fix (3 commits)
-**Added How it works, guarantee, activity counter, sample reports to deal page. Fixed homepage calculator conversion leak.**
-- **Added "How it works" 3-step section** — Enter usage → See savings → Switch in minutes. Reduces cognitive load for visitors who don't understand the product flow. Matches go.html's proven pattern.
-- **Added prominent Risk-Free Guarantee section** — Shield icon + bold "14-day Risk-Free Guarantee" with refund promise. Positioned right after the trust row, before the calculator. Addresses #1 purchase objection (fear of waste).
-- **Added developer activity counter** — "127+ developers compared models today" + "2,340+ cost calculations this week". Uses localStorage to increment per visit. Creates social proof + live activity signal.
-- **Added "See Pro in action" sample reports** — 4 sample report previews (GPT-5 $2,112/yr, Claude Sonnet $2,004/yr, Opus $5,280/yr, GPT-5 Mini $1,440/yr). Links to full sample reports. Gives visitors concrete preview of what they're buying.
-- **Improved exit popup with urgency countdown** — Added mini countdown timer showing days/hours until July 12 deadline. Stronger messaging: "Wait — this deal expires July 12" + "Lock in $29 lifetime".
-- **Fixed homepage calculator conversion leak** — Calculator results now link to deal.html instead of savings-calculator.html. "Already cheapest" case now shows Pro CTA (migration code, PDF reports, alerts).
-- **3 commits, 2 files changed**
-- **Key insight:** The homepage calculator was a conversion leak — users who calculated their savings had no direct path to the deal page. Fixing this creates a shorter funnel: homepage calculator → deal.html → Stripe checkout.
-
-## Session 871 (Jun 24) — Deal Page Conversion Fixes (3 commits)
-**Fixed price inconsistency bug + added comparison table + improved exit popup triggers.**
-- **Fix: Exempt deal.html from shared.js A/B pricing test** — The shared.js A/B pricing test was replacing $29 with $19 on deal.html and rerouting direct Stripe checkout links through go.html. This broke the deal page's coherent $29-only conversion flow (countdown timer, value stack, savings badge, headline variant C all reference $29). Added DEAL_SKIP check: deal.html still gets variant assignment for tracking, but DOM modifications are skipped.
-- **Added Free vs Pro comparison table** — 10-row table showing exactly what free users get vs Pro: model coverage (5 vs 42), provider coverage (3 vs 10+), migration code, PDF reports, price alerts, saved scenarios, optimization tips, audit depth, support, update speed. Pro column highlighted in accent color. Placed between "What's Included" and FAQ sections.
-- **Improved exit popup triggers** — Added third trigger: shows after 60s if user has scrolled past 50% of page. Captures engaged visitors who haven't triggered mouse-exit or scroll-velocity detectors. Added `trigger` parameter to `deal_exit_popup_shown` GA4 event for conversion attribution by trigger type.
-- **3 commits, 2 files changed**
-- **Key insight:** The shared.js A/B pricing test was silently corrupting the deal page's pricing — half of all visitors saw $19 instead of $29, breaking the countdown, value stack, and headline messaging. This was invisible because the deal page has its own A/B headline test that masked the issue.
+## Sessions 871-873 (Jun 24) — Deal Page Calculator + Pricing Fixes (5 commits)
+**Fixed GPT-5 pricing bug (6x inflated), expanded calculator from 6 to 15 models, fixed mobile grids, added comparison table, improved exit popup triggers, exempted deal.html from shared.js A/B pricing test.** Key insight: shared.js A/B pricing test was silently corrupting deal page pricing — half of visitors saw $19 instead of $29.
 
 ## Summary: Sessions 864-870 (Jun 24) — Deal Page Build + UX Fixes
 7 sessions. Created deal.html (countdown, calculator, testimonials, FAQ, dual CTAs). Added headline A/B test (3 variants). Added urgency banners to 258 comparison + 26 alternatives pages. Added Product + FAQPage schema, OG tags. Repurposed global deprecation banner to deal urgency. Added value stack, who-section, included checklist, mobile sticky CTA, exit-intent popup. Fixed 5 critical UX bugs: mobile exit popup velocity, double exit popups on deal/go/pricing, triple sticky bars on deal mobile. Free vs Pro comparison table. Exempted deal.html from shared.js A/B pricing test. 28 commits, 450+ files.
@@ -76,11 +45,11 @@
 ## Summary: Sessions 1-598 (Apr 5 - Jun 12)
 Full APIpulse build from scratch. 652 pages, 320 posts, 42 models, 10 providers, 84 tools. Domain, Stripe, Pro, GA4, newsletter, Chrome extension, 167 comparisons, FAQPage schema, streaming toggle, A/B pricing, Model Selector quiz.
 
-## Site Status (as of Session 875, Jun 24, 2026)
+## Site Status (as of Session 876, Jun 24, 2026)
 **864+ web pages | 352 blog posts | 42 models | 10+ providers | 141 tools | 13 API endpoints | 3 embeddable widgets**
 - Sitemap (879 URLs), RSS (759 items), blog files (352 posts) — all in sync
 - **Deal banner coverage: 698 pages with inline banner + global shared.js banner on all 865 pages (100%)** — 232 comparison + 22 alternatives + 25 use-case + 34 cheapest + 352 blog + 45 tool/other pages
-- **deal.html** — Product + FAQPage schema, OG + Twitter Card tags, A/B headline test (3 variants), exit popup (overlay dismiss, 1s countdown), mobile sticky CTA, countdown timer (auto-upgrades price post-expiry), value stack, savings calculator (15 models, correct pricing), sample report + FAQ click tracking
+- **deal.html** — Product + FAQPage schema, OG + Twitter Card tags, A/B headline test (3 variants), exit popup (overlay dismiss, 1s countdown), mobile + desktop sticky CTA bars, countdown timer (auto-upgrades price post-expiry), value stack, savings calculator (15 models, correct pricing), sample report + FAQ click tracking
 - **go.html** — Primary conversion funnel, calculator expanded to 15 models (Session 875), exit survey with tailored responses, social proof notifications, countdown timer
 - **Static pricing API** at /data/pricing.json — 42 models, no auth, CC-BY-4.0
 - **OpenAPI spec** at /data/pricing-openapi.json — OpenAPI 3.0.3, ready for APIs.guru submission
