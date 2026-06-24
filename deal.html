@@ -506,6 +506,42 @@
         .feature-item h3 { font-size: 14px; font-weight: 700; margin-bottom: 4px; }
         .feature-item p { font-size: 13px; color: var(--text-secondary); line-height: 1.5; }
 
+        /* Free vs Pro comparison */
+        .compare-section { margin-bottom: 28px; }
+        .compare-section h2 { font-size: 20px; font-weight: 800; text-align: center; margin-bottom: 16px; }
+        .compare-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 14px;
+        }
+        .compare-table th, .compare-table td {
+            padding: 12px 14px;
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+        }
+        .compare-table th {
+            font-size: 13px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--text-muted);
+            background: var(--bg-card);
+        }
+        .compare-table td:first-child { color: var(--text-secondary); }
+        .compare-table .pro-col {
+            color: var(--accent);
+            font-weight: 600;
+            background: rgba(99,102,241,0.04);
+        }
+        .compare-table th.pro-col {
+            color: var(--accent);
+            background: rgba(99,102,241,0.08);
+        }
+        .compare-table tbody tr:hover { background: rgba(99,102,241,0.02); }
+        @media (max-width: 500px) {
+            .compare-table th, .compare-table td { padding: 10px 8px; font-size: 13px; }
+        }
+
         /* FAQ */
         .faq-section { margin-bottom: 28px; }
         .faq-section h2 { font-size: 20px; font-weight: 800; text-align: center; margin-bottom: 16px; }
@@ -839,6 +875,72 @@
                     <span>Priority email support</span>
                 </div>
             </div>
+        </div>
+
+        <!-- Free vs Pro comparison -->
+        <div class="compare-section">
+            <h2>Free vs Pro</h2>
+            <table class="compare-table">
+                <thead>
+                    <tr>
+                        <th>Feature</th>
+                        <th>Free</th>
+                        <th class="pro-col">Pro</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Model pricing comparisons</td>
+                        <td>Top 5 models</td>
+                        <td class="pro-col"><strong>All 42 models</strong></td>
+                    </tr>
+                    <tr>
+                        <td>Provider coverage</td>
+                        <td>3 providers</td>
+                        <td class="pro-col"><strong>10+ providers</strong></td>
+                    </tr>
+                    <tr>
+                        <td>Migration code</td>
+                        <td>—</td>
+                        <td class="pro-col">✓ Python, Node, curl</td>
+                    </tr>
+                    <tr>
+                        <td>PDF cost reports</td>
+                        <td>—</td>
+                        <td class="pro-col">✓ Unlimited exports</td>
+                    </tr>
+                    <tr>
+                        <td>Price change alerts</td>
+                        <td>—</td>
+                        <td class="pro-col">✓ Email notifications</td>
+                    </tr>
+                    <tr>
+                        <td>Saved scenarios</td>
+                        <td>—</td>
+                        <td class="pro-col">✓ Up to 10</td>
+                    </tr>
+                    <tr>
+                        <td>Optimization tips</td>
+                        <td>Generic</td>
+                        <td class="pro-col">✓ Personalized</td>
+                    </tr>
+                    <tr>
+                        <td>API Cost Score audit</td>
+                        <td>Basic grade</td>
+                        <td class="pro-col">✓ Full breakdown</td>
+                    </tr>
+                    <tr>
+                        <td>Support</td>
+                        <td>Community</td>
+                        <td class="pro-col">✓ Priority email</td>
+                    </tr>
+                    <tr>
+                        <td>Pricing data updates</td>
+                        <td>Delayed</td>
+                        <td class="pro-col">✓ Instant</td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
 
         <!-- FAQ -->
