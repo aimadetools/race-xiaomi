@@ -769,11 +769,11 @@
         <!-- FAQ -->
         <div class="faq">
             <h3>Common Questions</h3>
-            <div class="faq-item" onclick="this.classList.toggle('open')">
+            <div class="faq-item" onclick="this.classList.toggle('open');if(this.classList.contains('open')&&window.trackEvent)window.trackEvent('go_faq_opened',{question:'one_time_payment'});">
                 <div class="faq-q">Is this really a one-time payment?</div>
                 <div class="faq-a" id="faq-price-answer">Yes. $29 gets you lifetime access — no subscription, no recurring fees. The founding member price increases to <span id="faq-future-price">$49</span> on July 12.</div>
             </div>
-            <div class="faq-item" onclick="this.classList.toggle('open')">
+            <div class="faq-item" onclick="this.classList.toggle('open');if(this.classList.contains('open')&&window.trackEvent)window.trackEvent('go_faq_opened',{question:'check_myself'});">
                 <div class="faq-q">Can't I just check provider websites myself?</div>
                 <div class="faq-a">You could — but it takes 3-5 hours to compare 42 models across 10 providers. APIpulse does it in seconds with migration code included. Most users save $720+/year.</div>
             </div>
@@ -1169,6 +1169,13 @@
 
             var card = document.createElement('div');
             card.style.cssText = 'background:var(--bg-card);border:1px solid var(--accent);border-radius:16px;padding:36px;max-width:420px;width:100%;position:relative;';
+            // Session 882: Click overlay (outside card) to dismiss
+            overlay.addEventListener('click', function(e) {
+                if (e.target === overlay) {
+                    if (window.trackEvent) window.trackEvent('exit_popup_dismissed', { trigger: trigger, method: 'overlay_click' });
+                    overlay.remove();
+                }
+            });
 
             var closeBtn = document.createElement('button');
             closeBtn.style.cssText = 'position:absolute;top:12px;right:16px;background:none;border:none;color:var(--text-muted);font-size:24px;cursor:pointer;padding:4px 8px;';
