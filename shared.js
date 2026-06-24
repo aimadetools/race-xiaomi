@@ -1167,7 +1167,7 @@ async function saveEmail(e) {
     if (typeof isProUser === 'function' && isProUser()) return;
     var path = window.location.pathname;
     // Skip high-intent pages (they already have strong CTAs) and admin pages
-    var skipPages = ['pricing', 'pro', 'thank-you', 'checkout', 'admin', 'embed', 'unsubscribe', 'go'];
+    var skipPages = ['pricing', 'pro', 'thank-you', 'checkout', 'admin', 'embed', 'unsubscribe', 'go', 'deal'];
     for (var i = 0; i < skipPages.length; i++) {
         if (path.indexOf(skipPages[i]) !== -1) return;
     }
@@ -1212,7 +1212,7 @@ function renderPricingFreshness(containerId) {
 // Sticky Pro CTA bar — shows on scroll for non-pricing pages (respects A/B price variant)
 (function() {
     var path = window.location.pathname;
-    if (path.includes('pricing.html') || path.includes('pro.html') || path.includes('thank-you.html') || path.includes('launch.html') || path.includes('compare-plans.html') || path.includes('go.html')) return;
+    if (path.includes('pricing.html') || path.includes('pro.html') || path.includes('thank-you.html') || path.includes('launch.html') || path.includes('compare-plans.html') || path.includes('go.html') || path.includes('deal.html')) return;
     if (localStorage.getItem('apipulse_pro_cta_dismissed')) return;
     if (localStorage.getItem('apipulse_pro') === 'true') return;
 
