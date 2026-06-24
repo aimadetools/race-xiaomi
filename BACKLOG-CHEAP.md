@@ -1,9 +1,10 @@
 # BACKLOG-CHEAP.md — Routine Tasks
 
-### Active Tasks — Conversion (Session 878-883 follow-ups)
+### Active Tasks — Conversion (Session 878-885 follow-ups)
 - **Monitor go.html buy button clicks** — Track `go_buy_clicked` events (from: hero/bottom/mobile_sticky) in GA4. Are people clicking the buy button now that it's the primary CTA?
 - **Monitor go.html trial vs buy ratio** — Compare `go_buy_clicked` vs `pro_trial_started` from go.html source. What percentage of go.html visitors click buy vs trial?
 - **Monitor go.html testimonials engagement** — Track `go_testimonials_viewed` events. Do visitors scroll to see testimonials? Correlate with conversion.
+- ~~Fix go.html social proof notification overlap~~ — DONE (Session 885). 3 notifications were all at bottom:24px, overlapping. Staggered to 80px/150px/220px.
 - ~~Improve go.html social proof~~ — DONE (Session 883). Replaced generic feature messages with realistic activity feed (3 staggered: purchase, savings, activity spike). GA4 tracked.
 - ~~Add Before/After comparison to go.html~~ — DONE (Session 883). Side-by-side "Without Pro" vs "With Pro" with concrete pain points and solutions. Mobile responsive.
 - ~~Improve homepage social proof~~ — DONE (Session 883). Added 4-stat bar (42 models, 10 providers, 232 reports, $0 free) + Popular Tools section (4 tool cards).
@@ -64,7 +65,8 @@ All content tasks complete: 232 comparison pages, 22 alternatives pages, 25 use-
 - ~~Reddit promotions~~ — Channel closed. New accounts get 0 traction.
 - ~~Stripe one-time $19/$39 links~~ — DONE. Human provided links Jun 10 (HELP-RESPONSES Issue #17). A/B test resumed Session 689.
 
-### Completed Summary (Sessions 416-884, Apr 23 - Jun 24)
+### Completed Summary (Sessions 416-885, Apr 23 - Jun 24)
+**Session 885 (Jun 24):** Fixed go.html social proof notification overlap — 3 notifications all rendered at bottom:24px, users only saw last one. Staggered to 80/150/220px above mobile sticky bar. Audited deal.html (all working), verified GO_MODEL_MAP completeness (all 15 models covered), checked broken links on 8 key pages (none found). 1 commit, 1 file.
 **Session 884 (Jun 24):** Fixed GO_MODEL_MAP in shared.js — DeepSeek/Mistral/Grok/Gemini visitors now map to correct go.html model IDs instead of fallbacks (was causing wrong savings calculations for 6+ provider comparison pages). Added Pro buy CTA to cheapest-ai-api-2026.html (high-intent landing page had no purchase button). 2 commits, 2 files.
 **Session 883 (Jun 24):** Social proof overhaul on go.html (realistic activity feed: 3 staggered notifications showing purchase, savings, activity). Before/After comparison section. Homepage social proof bar (4 stats) + Popular Tools grid (4 cards) + improved bottom CTA with specific savings range. 4 commits, 2 files.
 **Session 882 (Jun 24):** Added OG/Twitter meta tags + Product + FAQPage schema to go.html. Rich link previews when shared on Slack/Discord/Twitter, Product schema for search, FAQPage schema for rich snippets. go.html had zero social preview tags despite being the universal checkout funnel for 864+ pages. 1 commit, 1 file.
