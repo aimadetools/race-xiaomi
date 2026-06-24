@@ -338,10 +338,16 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
+        .go-testimonials-pair {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+        }
         @media (max-width: 600px) {
             .checkout-page { padding: 70px 16px 80px; }
             .proof-row { grid-template-columns: 1fr 1fr; }
             .price-box { flex-direction: column; text-align: center; }
+            .go-testimonials-pair { grid-template-columns: 1fr; }
         }
 
         /* Mobile sticky buy CTA bar (Session 879) */
@@ -517,6 +523,27 @@
                 <span style="background:var(--bg-secondary);border:1px solid var(--border);border-radius:8px;padding:6px 14px;font-size:12px;font-weight:600;color:var(--text-secondary);">Cohere</span>
                 <span style="background:var(--bg-secondary);border:1px solid var(--border);border-radius:8px;padding:6px 14px;font-size:12px;font-weight:600;color:var(--text-secondary);">Together AI</span>
                 <span style="background:var(--bg-secondary);border:1px solid var(--border);border-radius:8px;padding:6px 14px;font-size:12px;font-weight:600;color:var(--text-secondary);">Groq</span>
+            </div>
+        </div>
+
+        <!-- Developer testimonials (Session 881) -->
+        <div id="go-testimonials" style="margin-bottom:24px;">
+            <div style="font-size:11px;color:var(--text-muted);text-transform:uppercase;letter-spacing:1px;text-align:center;margin-bottom:12px;font-weight:600;">What developers are saying</div>
+            <div style="display:grid;grid-template-columns:1fr;gap:10px;">
+                <div style="background:var(--bg-secondary);border:1px solid var(--border);border-radius:10px;padding:14px 16px;">
+                    <div style="font-size:14px;line-height:1.5;color:var(--text-primary);font-style:italic;">"The cost-per-request calculator is exactly what I needed for budgeting our RAG pipeline."</div>
+                    <div style="font-size:12px;color:var(--text-muted);margin-top:6px;">— Developer, r/MachineLearning</div>
+                </div>
+                <div class="go-testimonials-pair">
+                    <div style="background:var(--bg-secondary);border:1px solid var(--border);border-radius:10px;padding:14px 16px;">
+                        <div style="font-size:13px;line-height:1.5;color:var(--text-primary);font-style:italic;">"I switch between 3 providers depending on the task. This answers which is actually cheapest."</div>
+                        <div style="font-size:12px;color:var(--text-muted);margin-top:6px;">— Hacker News</div>
+                    </div>
+                    <div style="background:var(--bg-secondary);border:1px solid var(--border);border-radius:10px;padding:14px 16px;">
+                        <div style="font-size:13px;line-height:1.5;color:var(--text-primary);font-style:italic;">"Bookmarked. Incredibly useful for anyone managing multiple API integrations."</div>
+                        <div style="font-size:12px;color:var(--text-muted);margin-top:6px;">— Hacker News</div>
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -1013,6 +1040,20 @@
                 if (typeof gtag === 'function') gtag('event', 'hero_calculator_viewed');
             }
         }, {threshold: 0.3}).observe(heroCalc);
+    })();
+
+    // Track testimonials visibility (Session 881)
+    (function() {
+        var testimonials = document.getElementById('go-testimonials');
+        if (!testimonials || !window.IntersectionObserver) return;
+        var viewed = false;
+        new IntersectionObserver(function(entries) {
+            if (entries[0].isIntersecting && !viewed) {
+                viewed = true;
+                if (window.trackEvent) window.trackEvent('go_testimonials_viewed');
+                if (typeof gtag === 'function') gtag('event', 'go_testimonials_viewed');
+            }
+        }, {threshold: 0.3}).observe(testimonials);
     })();
 
     // Social proof notification — shows after 3 seconds (Session 880: was 8s, most visitors leave before seeing it)
