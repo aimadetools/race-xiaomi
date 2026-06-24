@@ -1470,7 +1470,7 @@ document.addEventListener('DOMContentLoaded', function() {
 })();
 
 // Map comparison page model IDs → go.html model IDs
-// go.html only supports 8 models; map all comparison variants to the closest match
+// go.html supports 15 models (Session 875); map all comparison variants to the closest match
 var GO_MODEL_MAP = {
     // OpenAI
     'openai': 'openai-gpt5', 'chatgpt': 'openai-gpt5', 'gpt-5': 'openai-gpt5', 'gpt5': 'openai-gpt5', 'openai-gpt5': 'openai-gpt5', 'gpt5mini': 'openai-gpt5', 'gpt5-mini': 'openai-gpt5',
@@ -1491,20 +1491,20 @@ var GO_MODEL_MAP = {
     // Google
     'google': 'google-pro', 'gemini': 'google-pro',
     'google-pro': 'google-pro', 'gemini-pro': 'google-pro', 'gemini-25-pro': 'google-pro', 'gemini25-pro': 'google-pro', 'pro25': 'google-pro', 'google-gemini25pro': 'google-pro',
-    'gemini-31-pro': 'google-pro', 'pro31': 'google-pro', 'google-gemini31pro': 'google-pro', 'google-gemini3-pro': 'google-pro', 'gemini31pro': 'google-pro',
+    'gemini-31-pro': 'google-gemini3-pro', 'pro31': 'google-gemini3-pro', 'google-gemini31pro': 'google-gemini3-pro', 'google-gemini3-pro': 'google-gemini3-pro', 'gemini31pro': 'google-gemini3-pro',
     'google-gemini35-flash': 'google-gemini35-flash', 'google-gemini35flash': 'google-gemini35-flash', 'gemini-35-flash': 'google-gemini35-flash', 'gemini35flash': 'google-gemini35-flash',
-    'gemini-flash': 'google-gemini35-flash', 'flash': 'google-gemini35-flash', 'google-flash': 'google-gemini35-flash', 'gemini3flash': 'google-gemini35-flash',
-    'gemini-flash-lite': 'google-gemini35-flash', 'flash-lite': 'google-gemini35-flash', 'google-flash-lite': 'google-gemini35-flash',
+    'gemini-flash': 'google-gemini3-flash', 'flash': 'google-gemini3-flash', 'google-flash': 'google-gemini3-flash', 'gemini3flash': 'google-gemini3-flash',
+    'gemini-flash-lite': 'google-gemini3-flash', 'flash-lite': 'google-gemini3-flash', 'google-flash-lite': 'google-gemini3-flash',
     'gemini-25-flash': 'google-gemini35-flash',
-    // DeepSeek (map to cheapest go.html alt as fallback)
-    'deepseek-v4': 'anthropic-haiku', 'deepseek-v4-flash': 'anthropic-haiku', 'deepseekv4flash': 'anthropic-haiku', 'v4-flash': 'anthropic-haiku', 'deepseek-flash': 'anthropic-haiku', 'deepseek-v4flash': 'anthropic-haiku',
-    'deepseek-v4-pro': 'anthropic-haiku', 'deepseekv4pro': 'anthropic-haiku', 'v4-pro': 'anthropic-haiku', 'deepseek-pro': 'anthropic-haiku', 'deepseek-v4pro': 'anthropic-haiku',
-    'deepseek-v3': 'anthropic-haiku', 'deepseek': 'anthropic-haiku', 'deepseek-api': 'anthropic-haiku', 'v3': 'anthropic-haiku', 'deepseek-v32': 'anthropic-haiku',
-    // Mistral (map to cheapest go.html alt as fallback)
-    'mistral': 'anthropic-haiku', 'mistral-small': 'anthropic-haiku', 'mistral-mistral-small-4': 'anthropic-haiku', 'mistralsmall4': 'anthropic-haiku',
-    'mistral-large': 'anthropic-sonnet46', 'mistral-large3': 'anthropic-sonnet46', 'mistral-medium': 'anthropic-haiku', 'mistral-medium35': 'anthropic-haiku',
-    // xAI / Grok
-    'xai': 'openai-gpt55', 'grok3': 'openai-gpt55', 'grok3-mini': 'openai-gpt5', 'grok43': 'openai-gpt55', 'grok-build01': 'openai-gpt55',
+    // DeepSeek (go.html supports deepseek-v4-pro + deepseek-v4-flash since Session 875)
+    'deepseek-v4': 'deepseek-v4-flash', 'deepseek-v4-flash': 'deepseek-v4-flash', 'deepseekv4flash': 'deepseek-v4-flash', 'v4-flash': 'deepseek-v4-flash', 'deepseek-flash': 'deepseek-v4-flash', 'deepseek-v4flash': 'deepseek-v4-flash',
+    'deepseek-v4-pro': 'deepseek-v4-pro', 'deepseekv4pro': 'deepseek-v4-pro', 'v4-pro': 'deepseek-v4-pro', 'deepseek-pro': 'deepseek-v4-pro', 'deepseek-v4pro': 'deepseek-v4-pro',
+    'deepseek-v3': 'deepseek-v4-flash', 'deepseek': 'deepseek-v4-flash', 'deepseek-api': 'deepseek-v4-flash', 'v3': 'deepseek-v4-flash', 'deepseek-v32': 'deepseek-v4-flash',
+    // Mistral (go.html supports mistral-large since Session 875)
+    'mistral': 'mistral-large', 'mistral-small': 'mistral-large', 'mistral-mistral-small-4': 'mistral-large', 'mistralsmall4': 'mistral-large',
+    'mistral-large': 'mistral-large', 'mistral-large3': 'mistral-large', 'mistral-medium': 'mistral-large', 'mistral-medium35': 'mistral-large',
+    // xAI / Grok (go.html supports grok-43 since Session 875)
+    'xai': 'grok-43', 'grok3': 'grok-43', 'grok3-mini': 'grok-43', 'grok43': 'grok-43', 'grok-build01': 'grok-43',
     // Meta / Llama
     'llama4-maverick': 'anthropic-haiku', 'llama4maverick': 'anthropic-haiku', 'llama4-scout': 'anthropic-haiku', 'llama4scout': 'anthropic-haiku', 'llama4': 'anthropic-haiku', 'llama-8b': 'anthropic-haiku',
     // Kimi
