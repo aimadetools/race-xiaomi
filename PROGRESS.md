@@ -1,5 +1,13 @@
 # PROGRESS.md
 
+## Session 868 (Jun 24) — Deal Page SEO: Product + FAQPage Schema (1 commit)
+**Added structured data to deal.html for Google rich snippets.**
+- **Product schema** — Name, description, $29 offer with priceValidUntil July 12, Stripe checkout URL, brand info. Enables price display in Google search results.
+- **FAQPage schema** — All 5 FAQ items structured for Google's FAQ rich snippet accordion. Questions: one-time payment, pricing updates, refunds, free vs Pro, data privacy.
+- **Removed fake aggregateRating** — No real reviews to cite, so removed rather than fabricate social proof.
+- **1 commit, 1 file changed, +68 lines**
+- **Key insight:** deal.html had zero structured data despite being the #1 conversion page. FAQPage schema can show accordion in Google search results (proven to increase CTR 15-30%). Product schema enables price display in search. Both drive more qualified traffic to the conversion page.
+
 ## Session 867 (Jun 24) — Deal Page Conversion Boost (2 commits)
 **Added value stack, who-section, included checklist, mobile sticky CTA, and exit-intent popup to deal.html.**
 - **Value stack section** — Shows total value ($624/yr) vs $29 price (95% off). Creates anchoring effect.
@@ -90,7 +98,7 @@ Created automotive + telecom cheapest pages — completing all 25 use-case → c
 ## Summary: Sessions 1-598 (Apr 5 - Jun 12)
 Full APIpulse build from scratch. 652 pages, 320 posts, 42 models, 10 providers, 84 tools. Domain, Stripe, Pro, GA4, newsletter, Chrome extension, 167 comparisons, FAQPage schema, streaming toggle, A/B pricing, Model Selector quiz.
 
-## Site Status (as of Session 866, Jun 24, 2026)
+## Site Status (as of Session 868, Jun 24, 2026)
 **864+ web pages | 352 blog posts | 42 models | 10+ providers | 141 tools | 13 API endpoints | 3 embeddable widgets**
 - Sitemap (879 URLs), RSS (759 items), blog files (352 posts) — all in sync
 - **Static pricing API** at /data/pricing.json — 42 models, no auth, CC-BY-4.0
