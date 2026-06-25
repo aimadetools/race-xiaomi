@@ -557,7 +557,7 @@
             </div>
 
             <!-- CTA: BUY is primary, trial is secondary -->
-            <a id="buy-cta" href="https://buy.stripe.com/fZu7sL3Gw3GS0RQeoDeEo0a" target="_blank" rel="noopener" class="cta-btn" onclick="if(window.trackEvent)window.trackEvent('go_buy_clicked',{from:'hero',price:window._abPrice||29});if(typeof gtag==='function')gtag('event','deal_buy_click',{location:'go_hero'});">
+            <a id="buy-cta" href="https://buy.stripe.com/fZu7sL3Gw3GS0RQeoDeEo0a" target="_blank" rel="noopener" class="cta-btn" onclick="if(window.trackBeginCheckout)window.trackBeginCheckout(window._abPrice||29,'go_hero');if(window.trackEvent)window.trackEvent('go_buy_clicked',{from:'hero',price:window._abPrice||29});if(typeof gtag==='function')gtag('event','deal_buy_click',{location:'go_hero'});">
                 🔥 Get lifetime access — <span id="cta-price">$29</span> <span style="font-size:14px;opacity:0.7;text-decoration:line-through;">$49</span>
             </a>
             <p class="cta-sub">🔒 Stripe secure checkout · 🛡️ 14-day money-back guarantee · ⚡ Instant access</p>
@@ -781,7 +781,7 @@
         </div>
 
         <!-- Bottom CTA: BUY is primary -->
-        <a id="buy-cta-bottom" href="https://buy.stripe.com/fZu7sL3Gw3GS0RQeoDeEo0a" target="_blank" rel="noopener" class="cta-btn" onclick="if(window.trackEvent)window.trackEvent('go_buy_clicked',{from:'bottom',price:window._abPrice||29});if(typeof gtag==='function')gtag('event','deal_buy_click',{location:'go_bottom'});">
+        <a id="buy-cta-bottom" href="https://buy.stripe.com/fZu7sL3Gw3GS0RQeoDeEo0a" target="_blank" rel="noopener" class="cta-btn" onclick="if(window.trackBeginCheckout)window.trackBeginCheckout(window._abPrice||29,'go_bottom');if(window.trackEvent)window.trackEvent('go_buy_clicked',{from:'bottom',price:window._abPrice||29});if(typeof gtag==='function')gtag('event','deal_buy_click',{location:'go_bottom'});">
             🔥 Get lifetime access — <span id="cta-price-bottom">$29</span> <span style="font-size:14px;opacity:0.7;text-decoration:line-through;">$49</span>
         </a>
         <button class="cta-btn" onclick="if(typeof startTrial==='function'){startTrial();window.location.href='calculator.html?from=go_bottom_trial';}else{window.location.href='calculator.html';}" style="cursor:pointer;background:transparent;border:2px solid var(--accent);color:var(--accent);box-shadow:none;margin-top:10px;padding:14px 32px;font-size:15px;">
@@ -829,7 +829,7 @@
     <!-- Mobile sticky buy CTA bar (Session 879) -->
     <div class="go-sticky-bar" id="go-sticky-bar">
         <div class="sticky-price"><span id="sticky-price">$29</span> <small id="sticky-was">$49</small></div>
-        <a href="https://buy.stripe.com/fZu7sL3Gw3GS0RQeoDeEo0a" target="_blank" rel="noopener" class="sticky-buy" id="go-sticky-buy" onclick="if(window.trackEvent)window.trackEvent('go_buy_clicked',{from:'mobile_sticky',price:window._abPrice||29});if(typeof gtag==='function')gtag('event','deal_buy_click',{location:'go_mobile_sticky'});">
+        <a href="https://buy.stripe.com/fZu7sL3Gw3GS0RQeoDeEo0a" target="_blank" rel="noopener" class="sticky-buy" id="go-sticky-buy" onclick="if(window.trackBeginCheckout)window.trackBeginCheckout(window._abPrice||29,'go_mobile_sticky');if(window.trackEvent)window.trackEvent('go_buy_clicked',{from:'mobile_sticky',price:window._abPrice||29});if(typeof gtag==='function')gtag('event','deal_buy_click',{location:'go_mobile_sticky'});">
             🔥 Get lifetime access
         </a>
     </div>
