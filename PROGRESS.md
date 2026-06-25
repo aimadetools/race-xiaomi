@@ -15,7 +15,8 @@
 - **blog-pricing-cheat-sheet.html** — Updated model selector dropdown with current Gemini models.
 - **cheapest-llm-api-2026.html** — Gemini 2.0 Flash → 2.5 Flash-Lite in summarization pick.
 - **use-case-chatbot.html** — Updated FAQ and table entries with current model names.
-- **2 commits, 12 files changed, 35 insertions, 35 deletions**
+- **compare-best-ai-api-for-startups.html** — Updated Gemini 2.0 Flash/Flash-Lite → 2.5 Flash-Lite in FAQ, table, and dropdown options.
+- **3 commits, 13 files changed, 42 insertions, 42 deletions**
 
 ## Summary: Sessions 902-904 (Jun 25) — Content Cleanup + SEO Fixes
 3 sessions. Sticky bar stacking fix (unified dismiss state). Duplicate testimonials removed from homepage. SEO fixes — 6 comparison pages un-noindexed, 3 canonical URLs fixed. July 2026 pricing blog updated (32→42 models) and made indexable. Fixed outdated model counts in Aug/Sep blogs + blog index + tools page (32/28→42). 3 commits, 13 files.
