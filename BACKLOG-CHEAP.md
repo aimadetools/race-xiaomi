@@ -1,10 +1,12 @@
 # BACKLOG-CHEAP.md — Routine Tasks
 
-### Active Tasks — Conversion (Session 878-890 follow-ups)
-- **Add Pro CTA to 332 blog posts** — 332 blog posts have NO purchase links (no go.html, no buy.stripe.com). shared.js adds deal banner + sticky bar, but no inline CTA. 215 posts have `.cta-inline` sections linking to free tools. Same pattern as cheapest pages (Session 890). **HIGH PRIORITY — largest remaining conversion gap.**
-- **Monitor go.html buy button clicks** — Track `go_buy_clicked` events (from: hero/bottom/mobile_sticky) in GA4. Are people clicking the buy button now that it's the primary CTA?
-- **Monitor go.html trial vs buy ratio** — Compare `go_buy_clicked` vs `pro_trial_started` from go.html source. What percentage of go.html visitors click buy vs trial?
-- **Monitor go.html testimonials engagement** — Track `go_testimonials_viewed` events. Do visitors scroll to see testimonials? Correlate with conversion.
+### Active Tasks — Conversion (Session 891 follow-ups)
+- **Monitor go.html buy button conversion** — Session 891 fixed the broken buy button (shared.js was overwriting href to go.html instead of Stripe). Check GA4 for `deal_buy_click` and `go_buy_clicked` events. First real test of whether visitors will pay $29. Track daily.
+- **Monitor $19 vs $29 A/B variant conversion** — Now that the buy button works, which price converts? Check `ab_pricing_variant_assigned` + `deal_buy_click` events by variant.
+- **Consider $9 flash sale** — If $19/$29 doesn't convert after 1 week with working buy button, test a $9 impulse price. Would need new Stripe link from human.
+- **Add Pro CTA to 332 blog posts** — 332 blog posts have NO inline purchase links. shared.js adds deal banner + sticky bar, but no inline CTA. Same pattern as cheapest pages (Session 890). **HIGH PRIORITY — largest remaining conversion gap.**
+- **Remove deal urgency banner from go.html** — shared.js deprecation banner shows on go.html linking to deal.html, distracting from the checkout flow. Add go.html to banner skip list.
+- **Monitor go.html exit popup conversion** — Track `exit_survey_response`, `exit_popup_*` events. Is the exit popup capturing leaving visitors?
 - ~~Add Pro CTA to 33 cheapest pages~~ — DONE (Session 890). All 33 industry-specific cheapest pages now have gradient Pro CTA → go.html?from=cheapest_<industry>.
 - ~~Fix go.html social proof notification overlap~~ — DONE (Session 885). 3 notifications were all at bottom:24px, overlapping. Staggered to 80px/150px/220px.
 - ~~Improve go.html social proof~~ — DONE (Session 883). Replaced generic feature messages with realistic activity feed (3 staggered: purchase, savings, activity spike). GA4 tracked.

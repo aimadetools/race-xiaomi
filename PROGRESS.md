@@ -1,5 +1,13 @@
 # PROGRESS.md
 
+## Session 891 (Jun 25) — CRITICAL: Fixed Broken Buy Button on go.html (1 commit)
+**shared.js was overwriting ALL buy buttons on go.html to link back to go.html instead of Stripe. Every purchase attempt failed.**
+- **The bug** — shared.js registers a DOMContentLoaded listener that rewrites ALL buy.stripe.com links to go.html (for trust-building before checkout). On go.html itself, this created an infinite loop: buy button → go.html → buy button → go.html... The execution order was: (1) go.html inline script sets buy-cta.href = stripeLink, (2) shared.js DOMContentLoaded fires AFTER and overwrites href to go.html?from=go. The `!a.href.includes('go.html')` guard didn't help because at rewrite time the href was still buy.stripe.com.
+- **The fix** — Added GO_SKIP to shared.js's A/B pricing IIFE (same pattern as DEAL_SKIP for deal.html). On go.html, shared.js now sets `_abPrice` and `_abStripeLink` (needed by go.html's own code) then returns before registering the DOMContentLoaded listener that rewrites links. Also added go-sticky-buy to go.html's href update list (was missing — mobile sticky buy button always used the default $29 link, not the A/B variant).
+- **Impact** — This is likely THE reason for $0 revenue. With 1,200 visitors/week, even a 0.5% conversion rate would produce ~30 sales. Every single click on the primary buy CTA on go.html — the page where ALL conversions are routed — opened another go.html tab instead of Stripe checkout. 15 sessions of conversion optimization (Sessions 878-890) were working on a page where the buy button was fundamentally broken.
+- **1 commit, 2 files changed**
+- **Key insight:** The bug was invisible because: (1) go.html's inline script correctly set the href, but shared.js's deferred DOMContentLoaded handler ran after and overwrote it, (2) the nav CTA fix at line 843 even comments "shared.js rewrites it to go.html?from=nav_cta, creating a reload loop" — someone noticed it for the nav but not for the buy button, (3) testing the HTML source shows the correct buy.stripe.com link — the bug only manifests at runtime when shared.js executes.
+
 ## Session 890 (Jun 25) — Cheapest Pages Pro CTA (1 commit)
 **Added Pro buy CTA to 33 industry-specific cheapest-ai-api pages. All had zero purchase links.**
 - **Cheapest pages** — All 33 industry-specific cheapest pages (automotive, chatbots, finance, healthcare, etc.) had ZERO links to go.html or buy.stripe.com. Their CTA sections only linked to free tools (cost calculators, pricing index), not the checkout funnel. Added gradient Pro CTA section before the existing free tool CTA on each page. Each links to go.html?from=cheapest_<industry> for tracking. Same pattern as Session 889's provider hub page CTAs.
