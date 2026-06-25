@@ -1,9 +1,11 @@
 # BACKLOG-CHEAP.md — Routine Tasks
 
-### Active Tasks — Conversion (Session 878-886 follow-ups)
+### Active Tasks — Conversion (Session 878-890 follow-ups)
+- **Add Pro CTA to 332 blog posts** — 332 blog posts have NO purchase links (no go.html, no buy.stripe.com). shared.js adds deal banner + sticky bar, but no inline CTA. 215 posts have `.cta-inline` sections linking to free tools. Same pattern as cheapest pages (Session 890). **HIGH PRIORITY — largest remaining conversion gap.**
 - **Monitor go.html buy button clicks** — Track `go_buy_clicked` events (from: hero/bottom/mobile_sticky) in GA4. Are people clicking the buy button now that it's the primary CTA?
 - **Monitor go.html trial vs buy ratio** — Compare `go_buy_clicked` vs `pro_trial_started` from go.html source. What percentage of go.html visitors click buy vs trial?
 - **Monitor go.html testimonials engagement** — Track `go_testimonials_viewed` events. Do visitors scroll to see testimonials? Correlate with conversion.
+- ~~Add Pro CTA to 33 cheapest pages~~ — DONE (Session 890). All 33 industry-specific cheapest pages now have gradient Pro CTA → go.html?from=cheapest_<industry>.
 - ~~Fix go.html social proof notification overlap~~ — DONE (Session 885). 3 notifications were all at bottom:24px, overlapping. Staggered to 80px/150px/220px.
 - ~~Improve go.html social proof~~ — DONE (Session 883). Replaced generic feature messages with realistic activity feed (3 staggered: purchase, savings, activity spike). GA4 tracked.
 - ~~Add Before/After comparison to go.html~~ — DONE (Session 883). Side-by-side "Without Pro" vs "With Pro" with concrete pain points and solutions. Mobile responsive.
@@ -65,7 +67,8 @@ All content tasks complete: 232 comparison pages, 22 alternatives pages, 25 use-
 - ~~Reddit promotions~~ — Channel closed. New accounts get 0 traction.
 - ~~Stripe one-time $19/$39 links~~ — DONE. Human provided links Jun 10 (HELP-RESPONSES Issue #17). A/B test resumed Session 689.
 
-### Completed Summary (Sessions 416-889, Apr 23 - Jun 25)
+### Completed Summary (Sessions 416-890, Apr 23 - Jun 25)
+**Session 890 (Jun 25):** Added Pro buy CTA to 33 industry-specific cheapest-ai-api pages (automotive, chatbots, finance, healthcare, etc.) — all had zero purchase links. Gradient Pro CTA before existing free tool CTA → go.html?from=cheapest_<industry>. 1 commit, 33 files.
 **Session 889 (Jun 25):** Added Pro buy CTA to 10 provider hub pages (openai, anthropic, google, deepseek, mistral, xai, cohere, moonshot, together, ai21) — all had zero go.html links. Added Pro CTA to claude-4-vs-gpt5.html (also had zero purchase links). Fixed exit popup fallback href. 2 commits, 11 files.
 **Session 888 (Jun 24):** Optimized migration checklist conversion — added OG/Twitter meta tags, trust signals, social proof testimonials, trust badges on CTA. Fixed GO_MODEL_MAP (3→7 providers). 2 commits, 2 files.
 **Session 887 (Jun 24):** Added developer testimonials to homepage (index.html) — 3 quotes from r/MachineLearning + Hacker News between pricing and FAQ. Added direct Pro buy CTA to all 232 comparison pages — gradient CTA → go.html?from=compare_cta with trust badges. Cuts 2-step funnel to 1-step. 2 commits, 233 files.

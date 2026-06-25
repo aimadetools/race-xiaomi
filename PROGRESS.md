@@ -1,5 +1,13 @@
 # PROGRESS.md
 
+## Session 890 (Jun 25) — Cheapest Pages Pro CTA (1 commit)
+**Added Pro buy CTA to 33 industry-specific cheapest-ai-api pages. All had zero purchase links.**
+- **Cheapest pages** — All 33 industry-specific cheapest pages (automotive, chatbots, finance, healthcare, etc.) had ZERO links to go.html or buy.stripe.com. Their CTA sections only linked to free tools (cost calculators, pricing index), not the checkout funnel. Added gradient Pro CTA section before the existing free tool CTA on each page. Each links to go.html?from=cheapest_<industry> for tracking. Same pattern as Session 889's provider hub page CTAs.
+- **Conversion leak impact** — These 33 pages target long-tail SEO queries like "cheapest AI API for healthcare", "cheapest AI API for finance", etc. Visitors are actively searching for the cheapest API for their specific use case — they're the highest-intent audience for Pro (saves 60-99% on API costs). The only purchase-adjacent link was the nav CTA (pricing.html → shared.js rewrites to go.html) and the deal banner (from shared.js), both easy to miss.
+- **1 commit, 33 files changed**
+- **Key insight:** The same pattern Session 884 found on cheapest-ai-api-2026.html (no inline Pro CTA, only free tool links) existed on all 33 industry-specific cheapest pages. These pages are the most targeted — visitors searching "cheapest AI API for [industry]" are already cost-conscious and looking for savings. The Pro product (42-model comparison, migration code, PDF reports) is exactly what they need. Sending them to a free calculator instead of the checkout funnel is a missed conversion opportunity.
+- **Remaining gap:** 332 blog posts also lack inline Pro CTAs (shared.js adds deal banner + sticky bar, but no inline CTA). Blog posts have `.cta-inline` sections linking to free tools. This is a larger project for a future session.
+
 ## Session 889 (Jun 25) — Provider Hub Pages Pro CTA Fix (2 commits)
 **Added Pro buy CTAs to 10 provider hub pages + claude-4-vs-gpt5.html. All had zero purchase links.**
 - **Provider hub pages** — All 10 provider hub pages (openai, anthropic, google, deepseek, mistral, xai, cohere, moonshot, together, ai21) had ZERO links to go.html. Their CTA sections only linked to the calculator, not the checkout funnel. Added gradient Pro CTA section before the existing calculator CTA on each page. Each links to go.html?from=<provider>_page for tracking. Same pattern as Session 887's comparison page CTAs.
@@ -118,8 +126,8 @@
 ## Summary: Sessions 1-598 (Apr 5 - Jun 12)
 Full APIpulse build from scratch. 652 pages, 320 posts, 42 models, 10 providers, 84 tools. Domain, Stripe, Pro, GA4, newsletter, Chrome extension, 167 comparisons, FAQPage schema, streaming toggle, A/B pricing, Model Selector quiz.
 
-## Site Status (as of Session 889, Jun 25, 2026)
-**864+ web pages | 352 blog posts | 42 models | 10+ providers | 141 tools | 13 API endpoints | 3 embeddable widgets**
+## Site Status (as of Session 890, Jun 25, 2026)
+**865 web pages | 352 blog posts | 42 models | 10+ providers | 141 tools | 13 API endpoints | 3 embeddable widgets**
 - Sitemap (879 URLs), RSS (759 items), blog files (352 posts) — all in sync
 - **Deal banner coverage: 698 pages with inline banner + global shared.js banner on all 865 pages (100%)** — 232 comparison + 22 alternatives + 25 use-case + 34 cheapest + 352 blog + 45 tool/other pages
 - **deal.html** — Product + FAQPage schema, OG + Twitter Card tags, A/B headline test (3 variants, 3 expired variants), exit popup (overlay dismiss, 1s countdown), mobile + desktop sticky CTA bars, countdown timer (auto-upgrades price post-expiry), value stack, savings calculator (15 models, correct pricing), sample report + FAQ click tracking
@@ -127,6 +135,7 @@ Full APIpulse build from scratch. 652 pages, 320 posts, 42 models, 10 providers,
 - **Homepage (index.html)** — **Session 887: Added developer testimonials** — 3 quotes (r/MachineLearning, Hacker News) between pricing and FAQ. Social proof bar (42 models, 10 providers, 232 reports, $0 free). Calculator with savings badge → deal.html. Pricing section (Free vs Pro) → go.html. Deal urgency banner → deal.html.
 - **232 comparison pages** — **Session 887: Added direct Pro buy CTA** on all 232 pages. Gradient CTA section before footer → go.html?from=compare_cta. Trust badges. Cuts funnel from 2-step (deal.html → go.html) to 1-step (direct to go.html). All pages also have deal banner from shared.js.
 - **10 provider hub pages** — **Session 889: Added Pro buy CTA** on all 10 pages (openai, anthropic, google, deepseek, mistral, xai, cohere, moonshot, together, ai21). Gradient CTA before calculator section → go.html?from=<provider>_page. These pages previously had zero go.html links — only linked to calculator.
+- **33 cheapest-ai-api pages** — **Session 890: Added Pro buy CTA** on all 33 industry-specific cheapest pages (automotive, chatbots, finance, healthcare, etc.). Gradient CTA before existing free tool CTA → go.html?from=cheapest_<industry>. These pages previously had zero purchase links — only linked to free calculators.
 - **Post-expiry handling (Session 877)** — Centralized `DEAL_EXPIRED` flag in shared.js. After July 12: all prices → $49, 693 pages auto-update, deal banners switch to regular pricing, trial CTAs hidden, exit popup updated
 - **Static pricing API** at /data/pricing.json — 42 models, no auth, CC-BY-4.0
 - **OpenAPI spec** at /data/pricing-openapi.json — OpenAPI 3.0.3, ready for APIs.guru submission
