@@ -111,6 +111,55 @@
             .switch-card { flex-direction: column; text-align: center; }
         }
     </style>
+    <!-- FAQPage Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "How much can I save by switching AI API providers?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Most developers save 40-90% by switching to a cheaper AI model. For example, switching from GPT-5 ($1.25/$10 per 1M tokens) to DeepSeek V4 Pro ($0.435/$0.87 per 1M tokens) saves 92% on input costs. The exact savings depend on your current model, usage volume, and which tasks can use cheaper models."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Which AI model is the cheapest in 2026?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Gemini 2.0 Flash is the cheapest capable model at $0.10/$0.40 per 1M tokens (input/output). For even lower costs, Mistral Small 4 offers $0.10/$0.30 per 1M tokens. DeepSeek V4 Flash at $0.14/$0.28 per 1M tokens is another excellent budget option with strong performance."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How do I switch to a cheaper AI API?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Most AI API migrations take under 5 minutes. Simply change the model ID in your code (e.g., from 'gpt-5' to 'deepseek-v4-pro'), update the API endpoint if switching providers, and test with a few requests. The APIpulse migration checklist provides copy-paste code for every provider switch."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Is APIpulse free to use?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes. APIpulse's cost calculator, model comparisons, and migration tools are completely free. Pro ($29 one-time) adds advanced features like cost efficiency scoring, model routing guides, and personalized savings reports across 42 models."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How accurate are the AI API savings calculations?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "APIpulse uses verified pricing data from 10 providers, updated daily. Calculations are based on official per-token rates. Actual savings may vary slightly depending on your specific usage patterns, batch processing discounts, and volume pricing agreements."
+                }
+            }
+        ]
+    }
+    </script>
 </head>
 <body>
     <div class="save-page">

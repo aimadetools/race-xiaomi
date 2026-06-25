@@ -72,6 +72,55 @@
             .pro-upsell-grid { grid-template-columns: 1fr !important; padding: 24px !important; gap: 20px !important; }
         }
     </style>
+    <!-- FAQPage Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "Why is Claude 4 API returning 410 errors?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Claude 4 Opus and Claude Sonnet 4 were retired by Anthropic on June 15, 2026. All API calls to these models now return HTTP 410 Gone errors. You need to update your code to use Claude Opus 4.8 or Claude Sonnet 4.6 instead."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How do I fix Claude 4 API errors?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Change the model ID in your code. Replace 'claude-4-opus' with 'claude-opus-4-8' or 'claude-sonnet-4' with 'claude-sonnet-4-6'. The API endpoint and authentication stay the same. The migration takes about 60 seconds."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What are the cheapest alternatives to Claude 4?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "The 5 cheapest alternatives ranked by total cost: Gemini 2.0 Flash ($0.50/1M tokens, 99% cheaper), DeepSeek V4 Flash ($0.42/1M tokens, 99% cheaper), GPT-4o mini ($0.75/1M tokens, 99% cheaper), Claude Haiku 4.5 ($6.00/1M tokens, 93% cheaper), and GPT-5 ($11.25/1M tokens, 87% cheaper)."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How much can I save by switching from Claude 4?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Most developers save 87-99% by switching from Claude 4 to a cheaper alternative. For example, switching from Claude 4 Opus ($15/$75 per 1M tokens) to DeepSeek V4 Pro ($0.435/$0.87 per 1M tokens) saves 97% on input costs. The exact savings depend on your usage volume and which alternative you choose."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How long does Claude 4 migration take?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Most migrations take under 5 minutes. The process is: update the model ID in your code, test with a few requests to verify quality, then deploy to production. If you're switching providers (not just models), you'll also need to update the API endpoint and authentication."
+                }
+            }
+        ]
+    }
+    </script>
 </head>
 <body>
     <nav>

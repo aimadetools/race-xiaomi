@@ -184,6 +184,47 @@
         .tip-text { font-size: 13px; color: var(--text-secondary); line-height: 1.5; }
         .tip-text strong { color: var(--text-primary); }
     </style>
+    <!-- FAQPage Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "What is included in the free API cost report?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "The free report includes: your current monthly cost breakdown, the cheapest alternative model for your workload, estimated savings (monthly and annual), a cost efficiency score (A-F grade), and copy-paste migration code to switch providers."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How accurate are the cost savings estimates?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Estimates are based on verified per-token pricing from 10 providers, updated daily. Actual savings depend on your specific usage patterns, batch discounts, and volume pricing. Most users find estimates within 10% of actual costs."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Do I need to create an account to generate a report?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "No. Enter your model and monthly spend, and the report generates instantly in your browser. No signup, no email, no credit card required. The report is free forever."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Which AI models does the report compare?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "The report compares 42 models across 10 providers: OpenAI (GPT-5, GPT-4o, GPT-4o mini), Anthropic (Claude Opus 4.8, Sonnet 4.6, Haiku 4.5), Google (Gemini 2.5 Pro, 3.5 Flash), DeepSeek (V4 Pro, V4 Flash), Mistral (Large 3, Small 4), Cohere, Moonshot, Together, AI21, and xAI."
+                }
+            }
+        ]
+    }
+    </script>
 </head>
 <body>
     <a href="#main" class="skip-link">Skip to content</a>
