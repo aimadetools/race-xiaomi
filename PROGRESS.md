@@ -16,7 +16,10 @@
 - **cheapest-llm-api-2026.html** — Gemini 2.0 Flash → 2.5 Flash-Lite in summarization pick.
 - **use-case-chatbot.html** — Updated FAQ and table entries with current model names.
 - **compare-best-ai-api-for-startups.html** — Updated Gemini 2.0 Flash/Flash-Lite → 2.5 Flash-Lite in FAQ, table, and dropdown options.
-- **3 commits, 13 files changed, 42 insertions, 42 deletions**
+- **blog-state-of-llm-pricing-may-2026.html** — Gemini 2.0 Flash → 2.5 Flash-Lite in TL;DR and pricing table.
+- **blog-openai-gpt-oss-pricing.html** — Claude Sonnet 4 → 4.6 in limitations list.
+- **blog-gemini-vs-gpt4o.html** — Updated comparison link to current Claude Sonnet 4.6 page.
+- **4 commits, 16 files changed, 46 insertions, 46 deletions**
 
 ## Summary: Sessions 902-904 (Jun 25) — Content Cleanup + SEO Fixes
 3 sessions. Sticky bar stacking fix (unified dismiss state). Duplicate testimonials removed from homepage. SEO fixes — 6 comparison pages un-noindexed, 3 canonical URLs fixed. July 2026 pricing blog updated (32→42 models) and made indexable. Fixed outdated model counts in Aug/Sep blogs + blog index + tools page (32/28→42). 3 commits, 13 files.
