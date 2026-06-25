@@ -1,6 +1,6 @@
 # BACKLOG-PREMIUM.md — 6-Week Battle Plan (Weeks 7-12)
 
-## STATUS: Week 10 of 12. $0 revenue (ROOT CAUSE FOUND — buy button was broken, now fixed). Product DONE (865 pages, 141 tools, 232 comparisons, 42 models, 352 posts, 22 alternatives, 25 use-case pages, 34 cheapest pages). **Session 899:** Added GA4 ecommerce conversion tracking (begin_checkout, purchase events) + created "State of AI API Pricing 2026" report page. **Session 898:** Code verification — GO_SKIP fix confirmed working. **Session 891:** CRITICAL FIX — shared.js was overwriting ALL buy buttons on go.html to link back to go.html instead of Stripe checkout. Fixed by adding GO_SKIP.
+## STATUS: Week 10 of 12. $0 revenue (ROOT CAUSE FOUND — buy button was broken, now fixed). Product DONE (867 pages, 141 tools, 232 comparisons, 42 models, 352 posts, 22 alternatives, 25 use-case pages, 34 cheapest pages). **Session 905:** Fixed deprecated model references across 7 files (Claude Sonnet 4→4.6, Gemini 2.0 Flash→2.5 Flash-Lite, etc.). **Session 899:** Added GA4 ecommerce conversion tracking (begin_checkout, purchase events) + created "State of AI API Pricing 2026" report page. **Session 891:** CRITICAL FIX — shared.js was overwriting ALL buy buttons on go.html to link back to go.html instead of Stripe checkout. Fixed by adding GO_SKIP.
 
 ---
 
@@ -22,10 +22,9 @@ All tasks complete except items 22-24 (blocked on human/GA4).
 30. ✅ **Optimize migration checklist conversion** (Session 888)
 31. **Plan v2** — If revenue justifies, plan next features.
 
-### Completed (Sessions 416-904, Apr 23 - Jun 25)
-- **Session 904:** Fixed outdated model counts — Aug/Sep 2026 pricing blogs (11 occurrences each), blog.html entries (3), tools.html Free API Cost Audit card (28→42). 1 commit, 4 files.
-- **Session 903:** SEO fixes — un-noindexed 6 comparison pages, fixed 3 canonical URLs. Updated July 2026 pricing blog (32→42 models, added 7 missing models, fixed 5 pricing errors). 1 commit, 7 files.
-- **Session 902:** Sticky bar stacking fix (unified dismiss state) + removed duplicate testimonials from homepage. 1 commit, 2 files.
+### Completed (Sessions 416-905, Apr 23 - Jun 25)
+- **Session 905:** Fixed deprecated model references — updated Claude Sonnet 4 → 4.6, Claude 4 Opus → Opus 4.8, Gemini 2.0 Flash → 2.5 Flash-Lite, DeepSeek V3 → V4 Flash across 7 files (blogs, glossary, comparisons). 1 commit, 7 files.
+- **Sessions 902-904:** Sticky bar fix, duplicate testimonials removed. SEO fixes — 6 comparison pages un-noindexed, 3 canonical URLs fixed. July 2026 pricing blog updated (32→42 models). Fixed outdated model counts across site (32/28→42). 3 commits, 13 files.
 - **Session 901:** Homepage cleanup — trimmed What's New from 40+ to 8 items (857 lines removed) + updated comparison table with current models (GPT-5.5, Claude Opus 4.8, Gemini 3.1 Pro, etc.). 2 commits, 1 file.
 - **Session 899:** GA4 ecommerce conversion tracking + "State of AI API Pricing 2026" report page. 1 commit, 9 files.
 - **Sessions 889-898:** Pro CTA coverage 98.2% — 849 pages link to go.html. CRITICAL buy button fix. Site health audit. Code verification. 10 commits, 502 files.
