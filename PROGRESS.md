@@ -1,5 +1,13 @@
 # PROGRESS.md
 
+## Session 895 (Jun 25) — FAQPage Schema + Stripe Link Routing (1 commit)
+**Added FAQPage structured data to 4 high-value content pages + routed 2 direct Stripe links through go.html.**
+- **FAQPage schema** — Added structured data to save-on-ai-apis.html (5 Q&As on savings, cheapest models, switching, accuracy), claude-4-survival-kit.html (5 Q&As on 410 errors, fixes, alternatives, savings, migration time), generate-report.html (4 Q&As on report contents, accuracy, accounts, models), widget-calculator.html (4 Q&As on embedding, models, pricing, customization). Enables rich FAQ snippets in Google search results.
+- **Stripe link routing** — Updated about.html and migrate.html Pro CTAs to route through go.html instead of direct buy.stripe.com links. Ensures trust-building checkout funnel (social proof, testimonials, FAQ) before Stripe.
+- **Sitemap + RSS** — Updated lastmod dates for all 6 modified pages. Updated RSS lastBuildDate to Jun 25.
+- **Total structured data: 851/865 pages (98.4%)** — 14 pages without are non-commercial (404, admin, privacy, terms, etc.)
+- **1 commit, 8 files changed, 189 insertions**
+
 ## Session 894 (Jun 25) — Pro CTA Coverage: 69 Remaining Tool/Calculator Pages (1 commit)
 **Added gradient Pro CTA sections to 69 remaining tool/calculator pages with zero purchase links.**
 - **Conversion leak closure** — 69 tool/calculator pages (calculator, model-selector, tools, use-cases, cheapest-ai-api, budget-planner, 15 Claude pages, 12 cost calculators, 8 model tools, widget pages, etc.) had ZERO links to go.html. Added gradient Pro CTA section linking to go.html with personalized from-parameter tracking.
@@ -66,9 +74,10 @@
 ## Summary: Sessions 1-598 (Apr 5 - Jun 12)
 Full APIpulse build from scratch. 652 pages, 320 posts, 42 models, 10 providers, 84 tools. Domain, Stripe, Pro, GA4, newsletter, Chrome extension, 167 comparisons, FAQPage schema, streaming toggle, A/B pricing, Model Selector quiz.
 
-## Site Status (as of Session 894, Jun 25, 2026)
+## Site Status (as of Session 895, Jun 25, 2026)
 **865 web pages | 352 blog posts | 42 models | 10+ providers | 141 tools | 13 API endpoints | 3 embeddable widgets**
 - Sitemap (879 URLs), RSS (759 items), blog files (352 posts) — all in sync
+- **Structured data: 851/865 pages (98.4%)** — FAQPage schema added to save-on-ai-apis, claude-4-survival-kit, generate-report, widget-calculator (Session 895). 14 pages without are non-commercial (404, admin, privacy, terms, etc.)
 - **Pro CTA coverage: 97.6% — 844 pages link to go.html** — 232 comparison + 352 blog + 33 cheapest + 10 provider hub + 22 alternatives + 25 use-case + 32 tool/content pages (Session 893) + 69 remaining tool/calculator pages (Session 894) + deprecation tracker + migration checklist + cheapest-ai-api-2026 + claude-4-vs-gpt5. Only 21 pages without go.html — all legitimately non-commercial (404, admin, legal, newsletter, post-purchase, API docs).
 - **Deal banner coverage: 698 pages with inline banner + global shared.js banner on all 865 pages (100%)** — 232 comparison + 22 alternatives + 25 use-case + 34 cheapest + 352 blog + 45 tool/other pages
 - **deal.html** — Product + FAQPage schema, OG + Twitter Card tags, A/B headline test (3 variants, 3 expired variants), exit popup (overlay dismiss, 1s countdown), mobile + desktop sticky CTA bars, countdown timer (auto-upgrades price post-expiry), value stack, savings calculator (15 models, correct pricing), sample report + FAQ click tracking
