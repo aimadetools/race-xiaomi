@@ -19,21 +19,8 @@
 - **Duplicate testimonials removed** — Homepage had two identical testimonials sections (Session 883 + Session 887). Removed the redundant second section, reducing page length by ~40 lines.
 - **1 commit, 2 files changed, 12 insertions, 42 deletions**
 
-## Session 901 (Jun 25) — Homepage Cleanup + Comparison Table Update (2 commits)
-**Removed 857 lines (31%) from homepage + updated comparison table with current models.**
-- **What's New section** — Replaced 40+ items with 8 focused, recent items. Added links to blog.html and changelog.html.
-- **Comparison table** — Replaced outdated table with 19 current models across 10 providers. Added GPT-5.5, Claude Opus 4.8, Sonnet 4.6, Gemini 3.1 Pro, Llama 4 Scout. Highlighted DeepSeek V4 Flash as cheapest.
-- **2 commits, 1 file changed, 59 insertions, 965 deletions**
-
-## Session 900 (Jun 25) — Social Proof Page + Finder Updates (1 commit)
-**Created 'Why Developers Choose APIpulse' conversion page + updated cheapest-model-finder.**
-- **why-apipulse.html** — New social proof page addressing "is it worth $29?" objection. Before/after comparison, 4 real cost examples, 6 Pro features, FAQPage schema.
-- **cheapest-model-finder.html** — Added deal urgency banner, updated nav.
-- **Distribution** — Added to sitemap, RSS feed, blog.html, homepage What's New section.
-- **1 commit, 6 files changed, 446 insertions**
-
 ## Summary: Sessions 889-901 (Jun 25) — Conversion Optimization + Site Health
-13 sessions. Homepage cleanup (857 lines removed, comparison table updated). GA4 ecommerce tracking (begin_checkout, purchase events). "State of AI API Pricing 2026" report page. why-apipulse.html social proof page. Pro CTA coverage 98.2% — 849 pages link to go.html. CRITICAL buy button fix (GO_SKIP). Site health audit. FAQPage schema + Stripe link routing. 25 commits, 540+ files.
+13 sessions. Homepage cleanup (857 lines removed from What's New + comparison table updated with current models). Social proof page (why-apipulse.html). GA4 ecommerce tracking. "State of AI API Pricing 2026" report. Pro CTA coverage 98.2%. CRITICAL buy button fix (GO_SKIP). Site health audit. FAQPage schema + Stripe link routing. 25 commits, 540+ files.
 
 ## Summary: Sessions 878-888 (Jun 24-25) — go.html Conversion Overhaul
 11 sessions. Flipped CTAs (buy primary, trial secondary). Trust signals, provider bar, checklist, badges, developer testimonials, Before/After comparison, social proof. GO_MODEL_MAP fix for DeepSeek/Mistral/Grok/Gemini. 232 comparison page CTAs. Homepage testimonials. Migration checklist optimization. 18 commits, 250+ files.
