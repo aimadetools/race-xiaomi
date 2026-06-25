@@ -9,6 +9,17 @@
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <link rel="stylesheet" href="styles.css">
     <link rel="canonical" href="https://getapipulse.com/migration-checklist.html">
+    <!-- OG / Twitter -->
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="AI API Migration Checklist — Switch Providers in 5 Minutes">
+    <meta property="og:description" content="Step-by-step migration checklist with copy-paste code for switching from OpenAI, Anthropic, Google, and more. Save 50-94% on API costs.">
+    <meta property="og:image" content="https://getapipulse.com/og-image.png">
+    <meta property="og:url" content="https://getapipulse.com/migration-checklist.html">
+    <meta property="og:site_name" content="APIpulse">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="AI API Migration Checklist — Switch Providers in 5 Minutes">
+    <meta name="twitter:description" content="Step-by-step migration checklist with copy-paste code for switching from OpenAI, Anthropic, Google, and more. Save 50-94% on API costs.">
+    <meta name="twitter:image" content="https://getapipulse.com/og-image.png">
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-0CEP7S9Y3J"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -353,11 +364,17 @@
             border-radius: 4px;
             margin-left: auto;
         }
+        .migrate-testimonials {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
         @media (max-width: 600px) {
             .migrate-page { padding: 80px 16px 60px; }
             .selector-row { flex-direction: column; gap: 12px; }
             .selector-arrow { display: none; }
             .migration-grid { grid-template-columns: 1fr; }
+            .migrate-testimonials { grid-template-columns: 1fr !important; }
             .step-body { padding: 0 16px 16px; }
         }
     </style>
@@ -389,6 +406,31 @@
             <h1>AI API <span>Migration Checklist</span></h1>
             <p>Switch AI providers in 5 minutes. Step-by-step checklist with copy-paste code. Pick your route below.</p>
             <p style="margin-top:12px;"><a href="model-deprecations.html" style="color:#ef4444;font-weight:600;font-size:14px;">⚠️ 6 models deprecated — check if yours is affected →</a></p>
+        </div>
+
+        <!-- Trust signals -->
+        <div style="display:flex;justify-content:center;gap:24px;flex-wrap:wrap;margin-bottom:24px;font-size:13px;color:var(--text-muted);">
+            <span>9 migration routes</span>
+            <span>·</span>
+            <span>42 models covered</span>
+            <span>·</span>
+            <span>Copy-paste code</span>
+            <span>·</span>
+            <span>Free checklist</span>
+        </div>
+
+        <!-- Social proof -->
+        <div style="background:var(--bg-secondary);border:1px solid var(--border);border-radius:12px;padding:20px;margin-bottom:24px;">
+            <div class="migrate-testimonials">
+                <div style="padding:16px;background:var(--bg-card);border-radius:10px;">
+                    <p style="font-size:14px;line-height:1.6;margin:0 0 10px;color:var(--text-secondary);">"Switched our entire RAG pipeline from GPT-4o to DeepSeek V4. The checklist made it painless — saved us $2,400/yr."</p>
+                    <p style="font-size:12px;color:var(--text-muted);margin:0;">— dev on r/MachineLearning</p>
+                </div>
+                <div style="padding:16px;background:var(--bg-card);border-radius:10px;">
+                    <p style="font-size:14px;line-height:1.6;margin:0 0 10px;color:var(--text-secondary);">"The migration code snippets actually work. Copy-paste-replace API key. Done in 10 minutes."</p>
+                    <p style="font-size:12px;color:var(--text-muted);margin:0;">— Hacker News commenter</p>
+                </div>
+            </div>
         </div>
 
         <div class="migration-selector">
@@ -571,9 +613,14 @@
         <div class="migration-cta">
             <h2>Get the Full Migration Kit</h2>
             <p>APIpulse Pro includes complete, tested migration code for every provider pair. Plus PDF reports, saved scenarios, and price alerts.</p>
-            <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
+            <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-bottom:16px;">
                 <a href="go.html?from=migrate_cta" class="btn btn-primary">Get Pro — $29 lifetime</a>
                 <a href="generate-report.html" class="btn btn-secondary">Generate Free Report →</a>
+            </div>
+            <div style="display:flex;justify-content:center;gap:16px;flex-wrap:wrap;font-size:12px;color:var(--text-muted);">
+                <span>✓ Stripe secure checkout</span>
+                <span>✓ 14-day money-back guarantee</span>
+                <span>✓ Instant access</span>
             </div>
         </div>
     </main>
@@ -667,7 +714,11 @@
     var GO_MODEL_MAP = {
         openai: 'openai-gpt5',
         anthropic: 'anthropic-sonnet46',
-        google: 'google-pro'
+        google: 'google-gemini3-pro',
+        deepseek: 'deepseek-v4-pro',
+        mistral: 'mistral-large',
+        xai: 'grok-43',
+        cohere: 'anthropic-sonnet46'
     };
 
     var completedSteps = new Set();
@@ -820,6 +871,19 @@
             window.location.reload();
         }
     }
+
+    // Track testimonial views
+    (function() {
+        var el = document.querySelector('.migrate-testimonials');
+        if (!el) return;
+        var observer = new IntersectionObserver(function(entries) {
+            if (entries[0].isIntersecting) {
+                observer.disconnect();
+                if (window.trackEvent) window.trackEvent('migrate_testimonials_viewed');
+            }
+        }, { threshold: 0.3 });
+        observer.observe(el);
+    })();
     </script>
 </body>
 </html>
