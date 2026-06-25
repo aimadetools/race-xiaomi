@@ -1213,8 +1213,10 @@ async function saveEmail(e) {
 
 // Time-based sticky bottom CTA bar — catches passive visitors who don't trigger exit intent
 // Shows after 45s on content pages (blog, tools, guides) — not on pricing/pro/checkout
+// Session 902: Skip if scroll-triggered sticky-pro-cta is already visible (prevents stacking)
 (function() {
     if (localStorage.getItem('apipulse_sticky_bar_dismissed')) return;
+    if (localStorage.getItem('apipulse_pro_cta_dismissed')) return; // Session 902: unified dismiss
     if (typeof isProUser === 'function' && isProUser()) return;
     var path = window.location.pathname;
     // Skip high-intent pages (they already have strong CTAs) and admin pages
@@ -1225,14 +1227,16 @@ async function saveEmail(e) {
     var price = window._abPrice || 29;
     setTimeout(function() {
         if (localStorage.getItem('apipulse_sticky_bar_dismissed')) return;
+        if (localStorage.getItem('apipulse_pro_cta_dismissed')) return; // Session 902: unified dismiss
         if (document.getElementById('sticky-bottom-bar')) return;
+        if (document.getElementById('sticky-pro-cta')) return; // Session 902: don't stack
         var bar = document.createElement('div');
         bar.id = 'sticky-bottom-bar';
         bar.style.cssText = 'position:fixed;bottom:0;left:0;right:0;z-index:9999;background:linear-gradient(135deg,rgba(15,15,20,0.97),rgba(25,25,35,0.97));backdrop-filter:blur(12px);border-top:1px solid rgba(99,102,241,0.3);padding:12px 20px;display:flex;align-items:center;justify-content:center;gap:16px;flex-wrap:wrap;box-shadow:0 -4px 20px rgba(0,0,0,0.3);animation:stickySlideUp 0.4s ease;';
         var stickyPageName = location.pathname.replace(/^\//, '').replace(/\.html$/, '') || 'home';
         bar.innerHTML = '<span style="font-size:14px;color:var(--text-secondary);">💡 Developers using APIpulse save an average of <strong style="color:var(--green);">40% on API costs</strong></span>' +
             '<a href="go.html?from=sticky_bottom_bar_' + encodeURIComponent(stickyPageName) + '" target="_blank" rel="noopener" style="display:inline-block;background:var(--accent);color:white;padding:8px 20px;border-radius:8px;text-decoration:none;font-size:13px;font-weight:700;white-space:nowrap;" onclick="if(window.trackEvent)window.trackEvent(\'pro_button_clicked\',{source:\'sticky_bottom_bar\'})">Get Pro — $' + price + ' One-Time</a>' +
-            '<button onclick="document.getElementById(\'sticky-bottom-bar\').remove();localStorage.setItem(\'apipulse_sticky_bar_dismissed\',\'1\');if(window.trackEvent)window.trackEvent(\'sticky_bar_dismissed\');" style="background:none;border:none;color:var(--text-muted);cursor:pointer;font-size:18px;padding:4px 8px;line-height:1;" aria-label="Close">×</button>';
+            '<button onclick="document.getElementById(\'sticky-bottom-bar\').remove();localStorage.setItem(\'apipulse_sticky_bar_dismissed\',\'1\');localStorage.setItem(\'apipulse_pro_cta_dismissed\',\'1\');if(window.trackEvent)window.trackEvent(\'sticky_bar_dismissed\');" style="background:none;border:none;color:var(--text-muted);cursor:pointer;font-size:18px;padding:4px 8px;line-height:1;" aria-label="Close">×</button>';
         document.body.appendChild(bar);
         if (window.trackEvent) window.trackEvent('sticky_bar_shown', { page: path, price: price });
     }, 45000);
@@ -1261,10 +1265,12 @@ function renderPricingFreshness(containerId) {
 
 
 // Sticky Pro CTA bar — shows on scroll for non-pricing pages (respects A/B price variant)
+// Session 902: Uses unified dismiss state with sticky-bottom-bar to prevent stacking
 (function() {
     var path = window.location.pathname;
     if (path.includes('pricing.html') || path.includes('pro.html') || path.includes('thank-you.html') || path.includes('launch.html') || path.includes('compare-plans.html') || path.includes('go.html') || path.includes('deal.html')) return;
     if (localStorage.getItem('apipulse_pro_cta_dismissed')) return;
+    if (localStorage.getItem('apipulse_sticky_bar_dismissed')) return; // Session 902: unified dismiss
     if (localStorage.getItem('apipulse_pro') === 'true') return;
 
     var price = window._abPrice || 29;
@@ -1277,6 +1283,10 @@ function renderPricingFreshness(containerId) {
         var scrollPct = window.scrollY / (document.documentElement.scrollHeight - window.innerHeight);
         if (scrollPct < 0.3) return;
         shown = true;
+
+        // Session 902: Remove sticky-bottom-bar if it exists (prevent stacking)
+        var existingBottomBar = document.getElementById('sticky-bottom-bar');
+        if (existingBottomBar) existingBottomBar.remove();
 
         var bar = document.createElement('div');
         bar.id = 'sticky-pro-cta';
@@ -1306,7 +1316,7 @@ function renderPricingFreshness(containerId) {
         var stickyProPageName = location.pathname.replace(/^\//, '').replace(/\.html$/, '') || 'home';
         bar.innerHTML = '<span style="color:white;font-size:14px;font-weight:600;">' + barMsg + '</span>' +
             '<a href="go.html?from=' + encodeURIComponent(ctaContext + '_' + stickyProPageName) + '" target="_blank" rel="noopener" style="background:white;color:#4f46e5;padding:8px 20px;border-radius:8px;font-size:13px;font-weight:700;text-decoration:none;white-space:nowrap;" onclick="if(window.trackEvent)window.trackEvent(\'pro_button_clicked\',{source:\'' + ctaContext + '\',variant:\'' + variant + '\',price:' + price + '})">Get Pro — $' + price + ' one-time</a>' +
-            '<button onclick="document.getElementById(\'sticky-pro-cta\').remove();localStorage.setItem(\'apipulse_pro_cta_dismissed\',\'1\');" style="background:none;border:none;color:rgba(255,255,255,0.7);font-size:18px;cursor:pointer;padding:0 4px;" aria-label="Dismiss">&times;</button>';
+            '<button onclick="document.getElementById(\'sticky-pro-cta\').remove();localStorage.setItem(\'apipulse_pro_cta_dismissed\',\'1\');localStorage.setItem(\'apipulse_sticky_bar_dismissed\',\'1\');" style="background:none;border:none;color:rgba(255,255,255,0.7);font-size:18px;cursor:pointer;padding:0 4px;" aria-label="Dismiss">&times;</button>';
         document.body.appendChild(bar);
         requestAnimationFrame(function() { bar.style.transform = 'translateY(0)'; });
         if(window.trackEvent) window.trackEvent('sticky_cta_shown', {variant: variant, price: price, context: ctaContext});
