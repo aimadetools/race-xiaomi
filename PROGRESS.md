@@ -1,5 +1,12 @@
 # PROGRESS.md
 
+## Session 904 (Jun 25) — Fix Outdated Model Counts (1 commit)
+**Updated "32 models" → "42 models" across 4 files (35 lines).**
+- **August/September 2026 pricing blogs** — Both future-dated posts (noindexed) had 11 occurrences each of "32 models" in titles, meta descriptions, OG tags, Twitter cards, structured data, stat cards, and body text. Updated all to 42 (matching pricing.json: 36 active + 6 deprecated).
+- **blog.html** — 3 entries for July/Aug/Sep pricing reports still said "32 models" in titles and summaries. July blog file was already correct (Session 903) but the blog.html card wasn't updated.
+- **tools.html** — Free API Cost Audit card said "28 models across 8 providers" → "42 models across 10 providers."
+- **1 commit, 4 files changed, 35 insertions, 35 deletions**
+
 ## Session 903 (Jun 25) — SEO Fixes + July 2026 Pricing Blog Update (1 commit)
 **Un-noindexed 6 comparison pages + updated July 2026 pricing blog from 32→42 models.**
 - **Comparison page SEO fix** — 6 comparison pages with full content had `noindex` tags wasting crawl budget. Removed noindex, fixed 3 broken canonical URLs (were pointing to redirect targets). Pages now indexable by Google.
@@ -46,13 +53,13 @@
 ## Summary: Sessions 1-598 (Apr 5 - Jun 12)
 Full APIpulse build from scratch. 652 pages, 320 posts, 42 models, 10 providers, 84 tools. Domain, Stripe, Pro, GA4, newsletter, Chrome extension, 167 comparisons, FAQPage schema, streaming toggle, A/B pricing, Model Selector quiz.
 
-## Site Status (as of Session 903, Jun 25, 2026)
+## Site Status (as of Session 904, Jun 25, 2026)
 **867 web pages | 352 blog posts | 42 models | 10+ providers | 141 tools | 13 API endpoints | 3 embeddable widgets**
 - Sitemap (882 URLs), RSS (761 items), blog files (352 posts) — all in sync
 - **Structured data: 852/867 pages (98.3%)** — FAQPage schema on key pages. 15 pages without are non-commercial.
 - **Pro CTA coverage: 98.2% — 849 pages link to go.html** — Only 16 pages without — all non-commercial.
 - **Deal banner coverage: 698 pages with inline banner + global shared.js banner on all 867 pages (100%)**
-- **SEO fixes (Session 903)** — 6 comparison pages un-noindexed, 3 canonical URLs fixed. July 2026 pricing blog updated (32→42 models) and made indexable.
+- **SEO fixes (Session 903-904)** — 6 comparison pages un-noindexed, 3 canonical URLs fixed. July 2026 pricing blog updated (32→42 models) and made indexable. Aug/Sep blogs + blog index + tools page model counts corrected (32/28→42).
 - **deal.html** — Product + FAQPage schema, A/B headline test (3 variants, 3 expired), exit popup, sticky CTAs, countdown timer (expires Jul 12 → $49), savings calculator (15 models)
 - **go.html** — Primary conversion funnel. BUY is primary CTA (gradient → Stripe), trial is secondary. Trust signals, testimonials, Before/After, social proof, FAQPage schema. **CRITICAL FIX: GO_SKIP prevents shared.js from overwriting buy buttons.**
 - **Homepage (index.html)** — Developer testimonials (single section), social proof bar, calculator with savings badge → deal.html, pricing → go.html, deal urgency banner → deal.html. Duplicate testimonials removed (Session 902).
