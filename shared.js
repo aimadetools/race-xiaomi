@@ -405,7 +405,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Don't show on deprecation/migration/emergency pages (they have their own urgency)
     var path = window.location.pathname;
-    if (path.includes('deprecation') || path.includes('migration') || path.includes('claude-4-is-down') || path.includes('deal.html')) return;
+    if (path.includes('deprecation') || path.includes('migration') || path.includes('claude-4-is-down') || path.includes('deal.html') || path.includes('go.html')) return;
 
     if (daysLeft > 0 && daysLeft <= 14) {
         // PRE-DEPRECATION: Show countdown banner
