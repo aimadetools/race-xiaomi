@@ -1,6 +1,6 @@
 # BACKLOG-PREMIUM.md — 6-Week Battle Plan (Weeks 7-12)
 
-## STATUS: Week 10 of 12. $0 revenue. Product DONE (864+ pages, 141 tools, 232 comparisons, 42 models, 352 posts, 22 alternatives, 25 use-case pages, 34 cheapest pages). Bottleneck is CONVERSION — 1,200 visitors/week, 0 sales. **Session 887:** Added developer testimonials to homepage (index.html). Added direct Pro buy CTA to all 232 comparison pages (cuts 2-step funnel to 1-step). **Session 886:** Added Pro buy CTA to model deprecation tracker. **Session 885:** Fixed go.html notification overlap, audited deal.html. **Session 884:** Fixed GO_MODEL_MAP, added Pro CTA to cheapest-ai-api-2026. **Session 882:** Added OG/Twitter meta + schema to go.html. **Session 881:** Added developer testimonials to go.html. **Session 880:** Added trust signals to go.html. **Session 878:** Flipped go.html CTAs — BUY is now primary.
+## STATUS: Week 10 of 12. $0 revenue. Product DONE (864+ pages, 141 tools, 232 comparisons, 42 models, 352 posts, 22 alternatives, 25 use-case pages, 34 cheapest pages). Bottleneck is CONVERSION — 1,200 visitors/week, 0 sales. **Session 888:** Optimized migration checklist conversion — OG tags, social proof, trust signals, GO_MODEL_MAP fix (3→7 providers). **Session 887:** Added developer testimonials to homepage. Added direct Pro buy CTA to all 232 comparison pages (cuts 2-step funnel to 1-step). **Session 886:** Added Pro buy CTA to model deprecation tracker. **Session 885:** Fixed go.html notification overlap, audited deal.html. **Session 884:** Fixed GO_MODEL_MAP, added Pro CTA to cheapest-ai-api-2026. **Session 882:** Added OG/Twitter meta + schema to go.html. **Session 881:** Added developer testimonials to go.html. **Session 880:** Added trust signals to go.html. **Session 878:** Flipped go.html CTAs — BUY is now primary.
 
 ---
 
@@ -25,10 +25,11 @@ All Week 9 tasks COMPLETE except items 22-24 (blocked on human/GA4):
 27. Analyze A/B data + conversion data — Which price wins? Which pages convert? Optimize funnel. (needs GA4)
 28. ✅ **Community feedback integration** — Reddit batch vs streaming toggle already done (Session 375). HN feedback was positive. No action needed.
 29. **Distribute embeddable widget** — DISTRIBUTION-KIT.md created (Session 819): 18 targets, dev.to article, Show HN draft, directory submissions. **BLOCKED on human posting (~1-2 hours).** FAQPage schema added to widget.html.
-30. **Optimize migration checklist conversion** — Monitor which routes are most popular, which step users drop off at, Pro conversion rate from checklist.
+30. ✅ **Optimize migration checklist conversion** (Session 888) — Added OG/Twitter meta tags, trust signals, social proof testimonials, trust badges on CTA. Fixed GO_MODEL_MAP (3→7 providers).
 31. Plan v2 — If revenue justifies, plan next features.
 
-### Completed (Sessions 416-887, Apr 23 - Jun 24)
+### Completed (Sessions 416-888, Apr 23 - Jun 24)
+**Session 888 (Jun 24):** Optimized migration checklist conversion — added OG/Twitter meta tags, trust signals bar, social proof testimonials (r/MachineLearning + Hacker News), trust badges on CTA. Fixed GO_MODEL_MAP (3→7 providers: added deepseek, mistral, xai, cohere). 2 commits, 2 files.
 **Session 887 (Jun 24):** Added developer testimonials to homepage (index.html) — 3 quotes from r/MachineLearning + Hacker News between pricing and FAQ sections. Added direct Pro buy CTA to all 232 comparison pages — gradient CTA before footer → go.html?from=compare_cta with trust badges. Cuts 2-step funnel (deal.html → go.html) to 1-step (direct). 2 commits, 233 files.
 **Session 886 (Jun 24):** Added Pro buy CTA to model deprecation tracker — high-intent migration page (6 deprecated models, 5 providers) had no direct purchase button. CTA section only linked to free tools. Added gradient Pro CTA as primary action with go.html tracking + A/B price sync + GA4 event. 1 commit, 1 file.
 **Session 884 (Jun 24):** Fixed GO_MODEL_MAP in shared.js — DeepSeek/Mistral/Grok/Gemini visitors now map to correct go.html model IDs instead of fallbacks. Added Pro buy CTA to cheapest-ai-api-2026.html. 2 commits, 2 files.

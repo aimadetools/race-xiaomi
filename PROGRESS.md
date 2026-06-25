@@ -1,5 +1,15 @@
 # PROGRESS.md
 
+## Session 888 (Jun 24) — Migration Checklist Conversion Optimization (2 commits)
+**Added OG/Twitter meta tags, social proof testimonials, trust signals to migration-checklist.html. Fixed incomplete GO_MODEL_MAP (3→7 providers).**
+- **OG/Twitter meta tags** — Added og:type (article), og:title, og:description, og:image, og:url, og:site_name, Twitter Card (summary_large_image). Migration checklist had zero social sharing previews despite being a high-intent page for developers actively switching providers.
+- **Trust signals** — Added trust bar below hero (9 migration routes, 42 models covered, copy-paste code, free checklist). Immediate credibility signal.
+- **Social proof testimonials** — Added 2 developer testimonials from r/MachineLearning and Hacker News. 2-column grid, mobile responsive (stacks to 1-column at 600px). GA4 tracked via IntersectionObserver (`migrate_testimonials_viewed` event).
+- **Trust badges on CTA** — Added "Stripe secure checkout · 14-day money-back · Instant access" to bottom CTA section.
+- **GO_MODEL_MAP fix** — Expanded from 3→7 providers. Added deepseek → deepseek-v4-pro, mistral → mistral-large, xai → grok-43, cohere → anthropic-sonnet46. Without this, visitors migrating to DeepSeek/Mistral/xAI/Cohere got wrong model pre-fill on go.html CTA links, causing incorrect savings calculations.
+- **2 commits, 2 files changed** (migration-checklist.html + sitemap.xml lastmod update)
+- **Key insight:** The migration checklist had the same pattern as go.html before Session 882 — zero social sharing previews and no social proof despite being a high-intent page. The GO_MODEL_MAP was a silent conversion killer: visitors from DeepSeek/Mistral/xAI/Cohere migration routes clicked "Get Pro" CTAs that linked to go.html with the wrong model pre-filled, resulting in incorrect savings calculations and lower conversion likelihood. This is the same bug class as Session 884's shared.js GO_MODEL_MAP fix.
+
 ## Session 887 (Jun 24) — Homepage Testimonials + Comparison Page Pro CTAs (2 commits)
 **Added developer testimonials to homepage, added direct Pro buy CTA to all 232 comparison pages.**
 - **Homepage testimonials** — Added 3 developer testimonials section (r/MachineLearning, Hacker News) between pricing and FAQ on index.html. CSS classes existed but HTML section was never added. Mobile responsive. Same testimonials as go.html (Session 881). Homepage is the primary organic entry point (1,200 visitors/week) but had zero human social proof.
@@ -100,7 +110,7 @@
 ## Summary: Sessions 1-598 (Apr 5 - Jun 12)
 Full APIpulse build from scratch. 652 pages, 320 posts, 42 models, 10 providers, 84 tools. Domain, Stripe, Pro, GA4, newsletter, Chrome extension, 167 comparisons, FAQPage schema, streaming toggle, A/B pricing, Model Selector quiz.
 
-## Site Status (as of Session 887, Jun 24, 2026)
+## Site Status (as of Session 888, Jun 24, 2026)
 **864+ web pages | 352 blog posts | 42 models | 10+ providers | 141 tools | 13 API endpoints | 3 embeddable widgets**
 - Sitemap (879 URLs), RSS (759 items), blog files (352 posts) — all in sync
 - **Deal banner coverage: 698 pages with inline banner + global shared.js banner on all 865 pages (100%)** — 232 comparison + 22 alternatives + 25 use-case + 34 cheapest + 352 blog + 45 tool/other pages
@@ -114,7 +124,7 @@ Full APIpulse build from scratch. 652 pages, 320 posts, 42 models, 10 providers,
 - **22 alternatives landing pages** — all cross-linked, all with go.html model pre-fill
 - **25 use-case pages** — all cross-linked to their specific cheapest pages, cheapest-ai-api.html hub, and migration checklist
 - **34 use-case-specific cheapest pages** — all cross-linked to migration checklist, deprecation tracker, and budget planner
-- **9 migration routes** in migration-checklist.html (OpenAI, Anthropic, Google, DeepSeek, Mistral, xAI, Cohere)
+- **9 migration routes** in migration-checklist.html (OpenAI, Anthropic, Google, DeepSeek, Mistral, xAI, Cohere). **Session 888:** Added OG/Twitter meta tags, trust signals, social proof testimonials, trust badges on CTA. Fixed GO_MODEL_MAP (3→7 providers).
 - **go.html links pre-filled** — 606 pages auto-detect model: 232 comparisons + 351 blogs + 22 alternatives + migration checklist. **Session 884: Fixed GO_MODEL_MAP** — DeepSeek/Mistral/Grok/Gemini now map to correct go.html model IDs instead of fallbacks.
 - **BUY button as PRIMARY CTA on go.html** (Session 878) — Gradient "Get lifetime access" button → Stripe checkout. Free trial is secondary outlined button.
 - **A/B headline test LIVE on deal.html** — 3 variants (pain-point/savings/urgency)
